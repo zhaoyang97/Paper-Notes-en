@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion
 description: >-
-  [ICML 2026][Graph Learning][Hyper-relational Knowledge Graphs] This paper proposes the "Fact Generation" task, extending hyper-relational knowledge graph (HKG) completion from "filling a single gap" to "generating comple…
+  [ICML 2026][Graph Learning][Paper Note] This paper introduces the "Fact Generation" task, extending Hyper-relational Knowledge Graph (HKG) completion from "filling a single blank" to "generating complete facts from arbitrary mask patterns or even from scratch." It proposes KREPE, the first generative HKG representation learning method: it encodes intra-fact
 tags:
-  - "ICML 2026"
-  - "Graph Learning"
-  - "Hyper-relational Knowledge Graphs"
-  - "Fact Generation"
-  - "Masked Discrete Diffusion"
-  - "Contextual Message Passing"
-  - "Link Prediction"
+  - ICML 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 1bd2f14868be52ae
+content_hash: 4e5c70ede3683c93
 ---
-
 # Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion
 
 **Conference**: ICML 2026  
@@ -24,119 +18,133 @@ content_hash: 1bd2f14868be52ae
 **Keywords**: Hyper-relational Knowledge Graphs, Fact Generation, Masked Discrete Diffusion, Contextual Message Passing, Link Prediction
 
 ## TL;DR
-This paper proposes the "Fact Generation" task, extending hyper-relational knowledge graph (HKG) completion from "filling a single gap" to "generating complete facts from arbitrary mask patterns or even from scratch." It introduces KREPE, the first generative HKG representation learning method. KREPE utilizes contextual message passing to encode intra-fact and inter-fact dependencies and models the joint conditional distribution of missing components via masked discrete diffusion. It achieves SOTA performance in link prediction across three HKG benchmarks and significantly outperforms strong LLM baselines (e.g., GPT-5.2 / Gemini 3 Pro) in fact generation (e.g., 0.855 vs. 0.343 for generation from scratch on WikiPeople-).
+This paper introduces the "Fact Generation" task, extending Hyper-relational Knowledge Graph (HKG) completion from "filling a single blank" to "generating complete facts from arbitrary mask patterns or even from scratch." It proposes KREPE, the first generative HKG representation learning method: it encodes intra-fact and inter-fact dependencies via contextual message passing and models the joint conditional distribution of missing components using masked discrete diffusion. KREPE achieves SOTA on link prediction across three HKG benchmarks and significantly outperforms strong LLM baselines (e.g., GPT-5.2 / Gemini 3 Pro) in fact generation (e.g., WikiPeople- generation from scratch: 0.855 vs. LLM best 0.343).
 
 ## Background & Motivation
 
-**Background**: HKGs extend traditional triples $(h,r,t)$ into "primary triples + qualifier key-value pairs" $((h,r,t),\{(k_i,v_i)\})$, enabling the expression of complex multi-dimensional facts (typical examples include Wikidata and YAGO). Mainstream HKG completion methods (StarE, HyperFormer, HAHE, MAYPL, etc.) model the task as **Link Prediction**: assuming exactly one position in a fact is `?`, the model ranks candidates from the entity/relation set for that position.
+**Background**: HKGs extend traditional triplets $(h,r,t)$ into "main triplet + qualifier key-value pairs" $((h,r,t),\{(k_i,v_i)\})$ to express complex multi-dimensional facts (typical of Wikidata and YAGO). Mainstream HKG completion methods (StarE, HyperFormer, HAHE, MAYPL, etc.) model the task as **Link Prediction**: assuming exactly one position in a fact is `?`, the model ranks candidates based on scores.
 
-**Limitations of Prior Work**: The single-gap assumption is severely detached from reality. In real-world queries, the number of missing components is uncertain—subject and relation might be missing simultaneously, an entire fact might be unknown, or only a qualifier might be known to infer the primary triple. Once multiple positions are missing, scoring-based methods face a combinatorial explosion (the candidate space grows exponentially with the number of qualifiers). Forced extensions (e.g., HAHE's multi-position prediction) can only handle predefined fixed mask patterns, at most missing one element per qualifier pair.
+**Limitations of Prior Work**: The single-blank assumption deviates significantly from reality. In real-world queries, the number of missing components is uncertain—subject and relation might be missing, the entire fact might be unknown, or only a qualifier might be known. Once multiple positions are missing, scoring-based methods face combinatorial explosion; even forced extensions (like HAHE's multi-position prediction) can only handle fixed predefined mask patterns.
 
-**Key Challenge**: The intrinsic requirement of HKG completion is "generating new facts under uncertain mask patterns," whereas existing architectures are essentially "discriminative scoring + single mask template." These two are misaligned in both training objectives and inference workflows. Directly applying LLMs is also problematic—LLM-based KG methods (like KICGPT) follow a "KG model proposes candidates, LLM reranks" pipeline, but since the KG backbone cannot handle multi-gap queries, reranking cannot even begin.
+**Key Challenge**: The intrinsic requirement of HKG completion is "generating new facts under uncertain mask patterns," whereas existing architectures are essentially "discriminative scoring + single mask template," causing a misalignment from training objectives to inference workflows. Directly applying LLMs is also problematic—LLM-based KG methods (like KICGPT) follow a "KG model proposes, LLM reranks" pipeline, but if the KG backbone cannot handle multi-blank queries, reranking is impossible.
 
-**Goal**: (1) Formally define "Fact Generation," a new task covering arbitrary mask patterns (including fully empty); (2) Design a single representation learning framework capable of **both** link prediction and fact generation, unifying the different models/objectives.
+**Goal**: (1) Formalize a new task "Fact Generation" covering any mask pattern (including full empty); (2) Design a single representation learning framework capable of **both** link prediction and fact generation.
 
-**Key Insight**: Treat missing components as a sampling problem from the joint conditional distribution $P_\theta(x_{\text{mask}} \mid \zeta, G)$. This naturally introduces **masked discrete diffusion**, a mechanism that inherently supports arbitrary subset masking and iterative reconstruction. Additionally, it is observed that dependencies in HKGs are both "intra-fact" (mutual constraints between head/relation/tail/qualifier within a fact) and "inter-fact" (shared semantics of an entity across multiple facts), requiring modeling at both the message passing and diffusion noise levels.
+**Key Insight**: Treat missing components as a sampling problem from the joint conditional distribution $P_\theta(x_{\text{mask}} \mid \zeta, G)$, naturally introducing **Masked Discrete Diffusion**. This mechanism inherently supports arbitrary subset masking and iterative reconstruction. Additionally, dependencies in HKGs are both "intra-fact" (mutual constraints between head/relation/tail/qualifier) and "inter-fact" (shared semantics of an entity across multiple facts), requiring modeling at both the message passing and diffusion noise levels.
 
-**Core Idea**: Use **contextual message passing** (explicitly excluding a component's own information during updates to force dependency on context) for representation, and use **bi-level noise + AO-AR diffusion objective** (simultaneously perturbing the observed subgraph and query mask patterns) for training. Link prediction is treated as a special case of "single-mask fact generation," unified within the same model.
+**Core Idea**: Build representations using **Contextual Message Passing** (explicitly excluding a component's own information when updating it to force reliance on surrounding context) and train using a **Bi-level Noise + AO-AR Diffusion Objective** (simultaneously perturbing the observed subgraph and the query's mask pattern). Link prediction is treated as a special case of "single-mask fact generation" within a unified model.
 
 ## Method
 
 ### Overall Architecture
-The input is an HKG $G=(\mathcal{V},\mathcal{R},\mathcal{H})$ and a masked query $\zeta$ (where an arbitrary subset of a fact is replaced by `?`). During training, each epoch randomly partitions the training fact set $\mathcal{H}_{\text{train}}$ into an "observed set $\mathcal{H}_{\text{obs}}$" and a "target set $\mathcal{H}_{\text{tgt}}$." $L$ layers of contextual message passing on $\mathcal{H}_{\text{obs}}$ produce entity/relation representations. Facts in $\mathcal{H}_{\text{tgt}}$ are masked according to a distribution $\mathcal{D}_\xi$ and used as queries. The model outputs a distribution over candidates ($\mathcal{V}$ or $\mathcal{R}$) for each mask position, optimizing the negative log-likelihood (AO-AR loss). During inference, $\mathcal{H}_{\text{train}}$ acts as the observed set. A single forward pass yields distributions for all mask positions—candidates are ranked for **link prediction**, while top-$p$ sampling and iterative denoising are used for **fact generation** (even for $((?,?,?),\{(?,?)\})$ from scratch).
+KREPE aims to complete or generate hyper-relational facts given an uncertain number of missing components. It takes an HKG $G=(\mathcal{V},\mathcal{R},\mathcal{H})$ and a masked query $\zeta$ as input. Contextual message passing encodes observed facts into entity/relation representations, and masked discrete diffusion converts each `?` into a probability distribution over the candidate set. During training, each epoch splits facts into an "observed set $\mathcal{H}_{\text{obs}}$" and a "target set $\mathcal{H}_{\text{tgt}}$". Representations are derived from $L$ layers of message passing on $\mathcal{H}_{\text{obs}}$. Facts in $\mathcal{H}_{\text{tgt}}$ are masked and used as queries. During inference, $\mathcal{H}_{\text{train}}$ serves as the observed set—**Link Prediction** ranks candidates for single masks, while **Fact Generation** uses top-$p$ sampling and iterative denoising for multiple masks or empty queries.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["HKG G + Masked Query ζ"] --> CMP["Contextual Message Passing<br/>Exclude self-info + multi-head attention aggregation → Entity/Relation Repr."]
+    CMP --> DEC["Probabilistic Masked Fact Decoding<br/>mask repr. · candidate repr. dot product → softmax candidate dist."]
+    DEC --> OBJ["Bi-level Noise + AO-AR Diffusion Objective<br/>Inter-fact: swap observed subgraph + Intra-fact: swap mask patterns"]
+    OBJ -->|Single mask · Rank candidates| LP["Link Prediction"]
+    OBJ -->|Multiple masks · top-p sampling & iterative denoising| FG["Fact Generation (incl. generation from scratch)"]
+```
 
 ### Key Designs
 
-1.  **Contextual Message Passing (CM)**:
-    - **Function**: Generates hierarchical representations for each entity/relation considering both intra-fact companions and cross-fact structures, serving as the basis for diffusion decoding.
-    - **Mechanism**: Decomposes each fact into "relation-entity pairs" $(p,e)$ projected by role $\rho\in\{\texttt{head},\texttt{tail},\texttt{qual}\}$ as $z_{(p,e)}^{(l)} = W_\rho^{(l)}[p^{(l-1)};e^{(l-1)}]$. The fact representation $z_\xi^{(l)}$ is the sum of all pairs. When updating a component $e$, a "self-excluding" contextual message $m_{\xi\to(p,e)}^{(l)} = \text{MLP}^{(l)}\big((z_\xi^{(l)} - z_{(p,e)}^{(l)})/(n_\xi+1)\big)$ is calculated, followed by concatenating paired relation/entity representations to get $m_{\xi\to e}^{(l)}$ and $m_{\xi\to p}^{(l)}$. Messages from multiple facts are aggregated via multi-head attention.
-    - **Design Motivation**: Ablation (i) replacing contextual messages with $z_\xi$ directly (retaining self-information) dropped WD50K link prediction MRR from 0.419 to 0.408 and fact generation accuracy from 0.717 to 0.552. "Explicitly kicking out self" forces the model to use surrounding structures to infer identity, providing the inductive bias needed for generative reconstruction. Simultaneously, entities/relations use **shared** initial tokens $z_{\text{ENT}}, z_{\text{REL}}$ (Ablation iv shows per-entity independent embeddings cause WD50K MRR to crash to 0.272), preventing the model from degenerating into "memorizing each ID."
+**1. Contextual Message Passing: Forcing models to infer components via structure**
 
-2.  **Probabilistic Masked Fact Decoding**:
-    - **Function**: Converts "components to be predicted" into explicit probability distributions over candidates ($\mathcal{V}$ or $\mathcal{R}$), supporting both discriminative (ranking) and generative (sampling) inference.
-    - **Mechanism**: Masked components are initialized as learnable vectors $x_{\text{ENT}}$ or $x_{\text{REL}}$. During message passing, "the query $\zeta$ only affects the masks themselves and is not allowed to pollute known components." The final layer $x_{\text{mask}}^{(L)}$ is dot-producted with all candidate final representations $c^{(L)}$ followed by softmax: $P_\theta(x \mid \zeta, G) = \text{Softmax}_{c\in\mathcal{C}}(x_{\text{mask}}^{(L)} \cdot c^{(L)})$. Local query information is encoded in $x_{\text{mask}}^{(L)}$ while global HKG structure is in $c^{(L)}$.
-    - **Design Motivation**: Dot product is used instead of cosine similarity (Ablation vi shows a 0.6 point drop) because the **norm** of the representation vector carries information about "confidence in the candidate given the context." Mask updates depend unidirectionally on $\zeta$ to prevent mask noise from polluting known components during training, ensuring the discriminative capability for link prediction.
+To make a representation both discriminative and reconstructible via diffusion, components must not "see themselves." KREPE decomposes each fact into "relation-entity pairs" $(p,e)$, projected by roles $\rho\in\{\texttt{head},\texttt{tail},\texttt{qual}\}$ as $z_{(p,e)}^{(l)} = W_\rho^{(l)}[p^{(l-1)};e^{(l-1)}]$. Fact representation $z_\xi^{(l)}$ is the sum of these pairs. When updating a component $e$, KREPE sends a "self-excluded" contextual message $m_{\xi\to(p,e)}^{(l)} = \text{MLP}^{(l)}\big((z_\xi^{(l)} - z_{(p,e)}^{(l)})/(n_\xi+1)\big)$, which is then concatenated with paired relation/entity representations to obtain $m_{\xi\to e}^{(l)}$ and $m_{\xi\to p}^{(l)}$. Multi-head attention aggregates messages from multiple facts.
 
-3.  **Bi-level Noising + AO-AR Diffusion Objective**:
-    - **Function**: Enables the model to handle generation under "arbitrary mask patterns" on "varying observed subgraphs," allowing both single-gap filling and from-scratch generation.
-    - **Mechanism**: **Inter-fact noise**—stochastic structure sampling partitions the training set into $\mathcal{H}_{\text{obs}}$ and $\mathcal{H}_{\text{tgt}}$ each epoch, forcing representations to derive from changing observed subgraphs. **Intra-fact noise**—for $\xi\in\mathcal{H}_{\text{tgt}}$, the number of masks $n_{\text{mask}}\sim\mathcal{U}(\{1,\dots,2n_\xi+3\})$ is sampled, then $n_{\text{mask}}$ components are masked without replacement to form $\zeta$. The training objective uses Any-Order Auto-Regressive (AO-AR) loss (equivalent to time-independent reparameterization for absorbing-state discrete diffusion): $\mathcal{L}_{\text{AO-AR}} = \mathbb{E}_{\xi,\mathcal{M}_\zeta}\big[-\sum_{(x,y)\in\mathcal{M}_\zeta} \log P_\theta(x=y \mid \zeta,(\mathcal{V},\mathcal{R},\mathcal{H}_{\text{obs}}))\big]$. Fact generation uses iterative denoising during inference.
-    - **Design Motivation**: Ablation (ii) turning off stochastic structure sampling crashed WD50K link prediction MRR from 0.419 to 0.296, proving that "varying observed subgraphs during training" is key to unifying discrimination and generation. Ablation (v) replacing AO-AR with standard link prediction cross-entropy dropped fact generation accuracy from 0.717 to 0.038, confirming that link prediction objectives inherently fail to learn joint distributions.
+This design is a core inductive bias: ablation (i) replacing contextual messages with $z_\xi$ (retaining self-info) dropped WD50K Link Prediction MRR from 0.419 to 0.408 and Fact Generation accuracy from 0.717 to 0.552. If a component sees itself, it takes shortcuts instead of learning context-based reconstruction. Entities and relations also use **shared** initial tokens $z_{\text{ENT}}, z_{\text{REL}}$ rather than unique embeddings per ID (ablation iv dropped MRR to 0.272), forcing the model to rely on structure rather than memory.
+
+**2. Probabilistic Masked Fact Decoding: Storing confidence in dot product magnitude**
+
+KREPE initializes masked components with learnable vectors $x_{\text{ENT}}$ or $x_{\text{REL}}$ and ensures that the query $\zeta$ only influences the masks themselves. The final layer dot product $P_\theta(x \mid \zeta, G) = \text{Softmax}_{c\in\mathcal{C}}(x_{\text{mask}}^{(L)} \cdot c^{(L)})$ fuses local query info ($x_{\text{mask}}^{(L)}$) and global HKG structure ($c^{(L)}$).
+
+The use of dot product over cosine similarity is intentional: the **magnitude** of the representation vector carries information about "how confident the candidate is in this context"—normalization would erase this. Ablation (vi) shows a 0.6 point drop with cosine similarity.
+
+**3. Bi-level Noise + AO-AR Diffusion Objective: Link Prediction as a special case**
+
+**Inter-fact noise** via random structure sampling at each epoch treats the observed subgraph as a variable. **Intra-fact noise** samples the number of masks $n_{\text{mask}}\sim\mathcal{U}(\{1,\dots,2n_\xi+3\})$ for $\xi\in\mathcal{H}_{\text{tgt}}$, where $2n_\xi+3$ covers all patterns including "empty." The training objective uses Any-Order Autoregressive (AO-AR) loss:
+
+$$\mathcal{L}_{\text{AO-AR}} = \mathbb{E}_{\xi,\mathcal{M}_\zeta}\Big[-\sum_{(x,y)\in\mathcal{M}_\zeta} \log P_\theta\big(x=y \mid \zeta,(\mathcal{V},\mathcal{R},\mathcal{H}_{\text{obs}})\big)\Big]$$
+
+Iterative denoising during inference recomputes distributions and replaces masks via top-$p$ sampling. Ablation (ii) without structure sampling dropped MRR from 0.419 to 0.296; ablation (v) replacing AO-AR with standard link prediction cross-entropy dropped generation accuracy from 0.717 to 0.038, proving discriminative losses cannot learn joint conditional distributions.
 
 ### Loss & Training
-A single AO-AR loss (Eq. 7) is used. Training once supports three downstream tasks: entity prediction, relation prediction, and fact generation. The mask upper bound $2n_\xi+3$ covers all possible patterns, including "from scratch." Discriminative ranking and generative sampling share the same representations and parameters.
+The single AO-AR objective (Eq. 7) supports entity prediction, relation prediction, and fact generation. Discriminative ranking and generative sampling share the same representations and parameters; the only difference is whether the mask count is one or many during inference.
 
 ## Key Experimental Results
 
 ### Main Results
-Datasets: WD50K, WikiPeople-, WikiPeople. Metrics: MRR / Hit@10 / Hit@1 for link prediction; Accuracy (LLM-as-a-judge, GPT-5.2) for fact generation.
+Evaluation metrics: MRR / Hit@10 / Hit@1 for Link Prediction, and LLM-as-a-judge (GPT-5.2) accuracy for Fact Generation.
 
 **Link Prediction (Entity Prediction, All positions)**
 
 | Dataset | Metric | KREPE | Prev. SOTA (MAYPL) | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+|--------|------|-------|--------------------|------|
 | WD50K | MRR | **0.419** | 0.411 | +0.008 |
 | WD50K | Hit@10 | **0.580** | 0.572 | +0.008 |
 | WikiPeople- | MRR | **0.522** | 0.521 | +0.001 |
 | WikiPeople | MRR | **0.491** | 0.488 | +0.003 |
 | WikiPeople | Hit@10 | **0.642** | 0.635 | +0.007 |
 
-Relation prediction (WD50K All positions) MRR improved from HDiff's 0.956 to **0.968**, with Hit@10 reaching 0.995.
+Relation prediction (WD50K All) MRR increased from HDiff's 0.956 to **0.968**.
 
 **Fact Generation (Accuracy, higher is better)**
 
-| Dataset | Setting | KREPE | Strongest LLM Baseline | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Setting | KREPE | Best LLM Baseline | Gain |
+|--------|------|-------|----------------|------|
 | WikiPeople- | Scratch | **0.855** | 0.343 (Random+Gemini 3 Pro) | +0.51 |
-| WD50K | Scratch | **0.717** | 0.351 (Neighbor+Gemini) | +0.37 |
-| WikiPeople | Scratch | **0.777** | 0.326 (Few-shot+Gemini) | +0.45 |
-| WD50K | Arbitrary Masking | **0.604** | 0.604 (Random+Gemini) | Equal |
-| WikiPeople- | Targeted | **0.600** | 0.394 (Neighbor+Gemini) | +0.21 |
+| WD50K | Scratch | **0.717** | 0.351 (Neighbor+Gemini 3 Pro) | +0.37 |
+| WikiPeople | Scratch | **0.777** | 0.326 (Few-shot+Gemini 3 Pro) | +0.45 |
+| WD50K | Arbitrary Masking | **0.604** | 0.604 (Random+Gemini 3 Pro) | Parity |
+| WikiPeople- | Targeted | **0.600** | 0.394 (Neighbor+Gemini 3 Pro) | +0.21 |
 
-On WikiPeople- Scratch, the Valid & Novel Rate reached 0.351 vs. LLM's 0.242, with expected generation attempts at 2.85 vs. 4.13—more accurate and more novel.
+On WikiPeople- Scratch, the Valid&Novel Rate is 0.351 (vs. LLM 0.242) with an expected generation count of 2.85 (vs. 4.13).
 
 ### Ablation Study
-(WD50K Link Prediction MRR / Generation from Scratch Accuracy)
+(WD50K LP MRR / Generation Accuracy from Scratch)
 
-| Config | LP MRR | FG Acc | Description |
-| :--- | :--- | :--- | :--- |
+| Configuration | LP MRR | FG Acc | Description |
+|------|--------|--------|------|
 | Full KREPE | 0.419 | 0.717 | Full model |
-| (i) w/o Context Msg | 0.408 | 0.552 | No self-exclusion, generation drops 16.5 pts |
-| (ii) w/o Stochastic Sampling | 0.296 | 0.545 | No obs/tgt split, LP crashes |
+| (i) w/o Context Msg | 0.408 | 0.552 | No self-exclusion; generation drops 16.5 |
+| (ii) w/o Stochastic Sampling | 0.296 | 0.545 | No structure sampling; LP crashes |
 | (iii) w/o Attention | 0.408 | 0.673 | Attention replaced by mean pooling |
-| (iv) Individual Init | 0.272 | 0.466 | Per-entity/relation independent embeddings |
-| (v) w/ LP Loss | 0.415 | **0.038** | Replaced with discriminative cross-entropy, generation zeroed |
-| (vi) w/ Cosine Sim | 0.419 | 0.711 | Cosine similarity instead of dot product |
+| (iv) Individual Init | 0.272 | 0.466 | Unique embeddings; overall degradation |
+| (v) w/ LP Loss | 0.415 | **0.038** | Standard CE; generation ability lost |
+| (vi) w/ Cosine Sim | 0.419 | 0.711 | Cosine replaces dot product; generation drops |
 
 ### Key Findings
-- **AO-AR diffusion objective is the fundamental source of generation capability**: Replacing it with standard link prediction loss (v) reduces accuracy nearly to zero, yet retaining it does no harm to link prediction (LP MRR 0.419 vs 0.419)—key evidence for a unified discriminative/generative model.
-- **"Excluding self" and "Shared initial tokens" are counter-intuitive but necessary designs**: Ablations (i) and (iv) show that including the component's own information allows the model to take shortcuts, while individual embeddings cause WD50K MRR to crash to 0.272.
-- **LLMs fail significantly in HKG fact generation**: Even with 1000 random facts as context, Gemini 3 Pro's scratch generation accuracy is only 0.343, far below KREPE's 0.855. Furthermore, there is a dispute over whether LLMs "generate" or "recall pre-training data," whereas KREPE's result is more reliable due to explicit training data.
-- **Generation quality and novelty coexist**: V&N Rate 0.351 + expectation of 2.85 attempts for a new fact. Qualitative analysis (Table 7) shows KREPE can generate reasonable facts for "Toy Story" like "(nominated for, Oscars Best Score), {(subject of, 68th Oscars), (nominee, R. Newman)}" across multiple qualifiers, and can generate facts across diverse domains like movies, sports, and literature "out of thin air."
+- **AO-AR diffusion is the source of generative capability**: Replacing it with standard LP loss (v) results in near-zero accuracy while preserving LP performance (0.419 vs 0.419).
+- **Self-exclusion and shared initial tokens are counter-intuitive but necessary**: Ablations (i) and (iv) show that including self-info leads to shortcuts, and individual ID embeddings cause MRR to collapse to 0.272.
+- **LLMs fail significantly at HKG fact generation**: Even with 1000 facts as context, Gemini 3 Pro achieves only 0.343 accuracy, far below KREPE’s 0.855.
+- **Generation quality and novelty coexist**: KREPE generates complex facts like "(nominated for, Oscars Best Score), {(subject of, 68th Oscars), (nominee, R. Newman)}" for "Toy Story" across multiple domains.
 
 ## Highlights & Insights
-- **Task definition itself is a contribution**: Raising HKG completion from "fill-in-the-blank" to "conditional fact generation" provides a new benchmark dimension for future work. Previous HKG models could not perform this task directly; the authors provided 7 strong baselines (2 discriminative variants + 5 LLM prompting strategies) for comparison.
-- **"Bi-level noise" is the key trick for unifying discrimination and generation**: Varying the observed subgraph (inter-fact) + varying the mask pattern (intra-fact) expands the "training distribution" enough so that link prediction naturally becomes a special case of fact generation. This approach is transferable to any structural prediction task requiring both discrimination and generation (e.g., table completion, code completion).
-- **"Excluding self contextual message" + "shared initial tokens"**: An elegant combination in representation learning—forcing the model to reconstruct identities solely from context. It essentially turns every fact into a self-supervised denoising sample, being particularly friendly to low-resource/long-tail entities.
-- **Dot product vs. cosine similarity**: Magnitude contributes substantially (Ablation vi drops 0.6 points). In generative representation, "how confident the candidate is in this context" and "how similar it is to the mask representation" are distinct; forced normalization loses the former.
+- **Task Formalization**: Elevating HKG completion from "fill-in-the-blank" to "conditional fact generation" provides a new dimension for benchmarking.
+- **Bi-level Noise**: The combination of inter-fact and intra-fact noise expands the training distribution, making link prediction a natural byproduct of the generative objective.
+- **Structural Reconstruction**: The use of contextual message passing and shared tokens forces the model to rely on structural patterns, benefiting long-tail entities.
+- **Magnitude Significance**: Vector magnitude contributes to performance (ablation vi), indicating that confidence information is lost during normalization in generative representation learning.
 
 ## Limitations & Future Work
-- **Transductive setting only**: Only entities/relations seen during training can be predicted. Handling new entities (inductive scenarios) is listed as future work.
-- **Quadratic inference complexity w.r.t. query length**: $\mathcal{O}(|\zeta|^2 d^2 (L + |\mathcal{V}| + |\mathcal{R}|))$. When the candidate set $|\mathcal{V}|$ is huge (e.g., millions of entities in Wikidata), the softmax layer remains a bottleneck.
-- **Potential Bias in LLM-as-a-judge**: Although validated with multi-judge + 10% human sub-set (Pearson 0.997 / 0.987), there's a risk of "stylistic bias" between the judge and generative models. Some of KREPE's high scores might stem from LLMs preferring "structured, conservative" facts.
-- **Mask upper bound $2n_\xi+3$ is empirical**: It's unclear if this is sufficient for very long qualifier sequences; in real HKGs, some facts can have dozens of qualifiers.
+- **Transductive Only**: Only handles entities/relations seen during training; does not yet support inductive scenarios.
+- **Inference Complexity**: Second-order dependency on query length $|\zeta|^2 d^2(L+|\mathcal{V}|+|\mathcal{R}|)$ makes softmax a bottleneck for millions of Wikidata entities.
+- **LLM-as-a-judge Bias**: Despite high correlation with humans (0.997/0.987), LLMs might favor certain structural styles.
+- **Mask Bound**: The upper bound $2n_\xi+3$ is empirical and may need adjustment for facts with dozens of qualifiers.
 
 ## Related Work & Insights
-- **vs. MAYPL (Lee & Whang, 2025)**: A discriminative HKG model from the same group that encodes HKG structure but only performs single-gap link prediction. KREPE reuses the structural encoding but shifts to the AO-AR diffusion objective to enable generation—and even outperforms it on link prediction (WD50K All MRR 0.419 vs. 0.411).
-- **vs. HDiff (Luo et al., 2025)**: Also uses diffusion on HKGs, but for **denoising continuous embeddings to rerank candidates**. KREPE uses **discrete diffusion to directly model joint conditional distributions**, enabling generation. This distinction highlights that the value of diffusion in structural data lies in "explicit probability," not just "embedding regularization."
-- **vs. LLM-based KG (KICGPT, MuKDC, etc.)**: The retrieve-then-rerank paradigm faces a deadlock with multi-gap queries. KREPE generates using the HKG's own probabilistic model, avoiding dependence on external retrievers.
-- **vs. GPHT / Triple Set Prediction (Zhang et al., 2024)**: GPHT handles "triples from scratch" via ranking, which is barely manageable in KG candidate spaces. For HKGs, the candidate space grows exponentially with qualifiers, making the ranking paradigm fail—this is the hard constraint necessitating KREPE's generative paradigm.
-- **Transferable Insight**: The combination of AO-AR / masked discrete diffusion + role-aware message passing is worth trying for any structural generation task with variable components and rich dependencies (e.g., drug-target networks, table schema reasoning, protein interaction prediction).
+- **vs. MAYPL (2025)**: KREPE builds on structure encoding but switches to AO-AR diffusion to enable generation, actually improving LP scores (MRR 0.419 vs. 0.411).
+- **vs. HDiff (2025)**: HDiff uses diffusion to refine continuous embeddings for ranking; KREPE uses discrete diffusion to model distributions, highlighting that diffusion's real value in structured data is explicit probability modeling.
+- **vs. LLM-based KG**: LLM-based reranking fails on multi-blank queries due to the lack of generative KG backbones. KREPE provides a native probabilistic model.
+- **Transferable Insight**: The combination of AO-AR/masked discrete diffusion and role-aware message passing is applicable to any structured generation task with variable components and rich dependencies.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Simultaneously provides a new task (fact generation) and the first generative HKG framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 datasets × 3 downstream tasks, compared against 15+ HKG baselines and 7 LLM strategies with 6 ablations + human validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear definitions, precise ablation mapping; formulas are dense, and Bi-level noising require careful reading of Figure 2.
-- Value: ⭐⭐⭐⭐⭐ Achieves new SOTA while bridging "HKG completion" and "probabilistic generation," pushing a paradigm shift for the KG community.
+- Novelty: ⭐⭐⭐⭐⭐ New task definition and the first generative HKG representation framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 3 datasets, 3 tasks, 15+ baselines, and 7 LLM strategies.
+- Writing Quality: ⭐⭐⭐⭐ Clear definitions, though Figure 2 and bi-level noise require careful reading.
+- Value: ⭐⭐⭐⭐⭐ A paradigm shift for the KG community, unifying discriminative and generative tasks.
 
 <!-- RELATED:START -->
 
@@ -144,11 +152,11 @@ On WikiPeople- Scratch, the Valid & Novel Rate reached 0.351 vs. LLM's 0.242, wi
 
 ## Related Papers
 
-- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
 - [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
+- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
+- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
 
 </div>
 

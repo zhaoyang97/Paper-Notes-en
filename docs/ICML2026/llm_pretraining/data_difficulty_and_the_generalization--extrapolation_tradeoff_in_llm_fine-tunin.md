@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning
 description: >-
-  [ICML 2026][LLM Pretraining][Data Difficulty] This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universal optimal difficulty." Instead…
+  [ICML 2026][Pretraining][PAC-Bayes] This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universally optimal difficulty." Instead, an optimal difficulty exists that **drifts toward harder samples as the data scale increases**. This is explained through a PAC-Bayes framework as a tradeoff between the "in
 tags:
-  - "ICML 2026"
-  - "LLM Pretraining"
-  - "Data Difficulty"
-  - "Supervised Fine-Tuning"
-  - "Generalization-Extrapolation Tradeoff"
-  - "PAC-Bayes"
-  - "Data Scale"
+  - ICML 2026
+  - Pretraining
+  - PAC-Bayes
 date: 2026-05-08
-content_hash: 1ffe39449b0e70f7
+content_hash: 5b005c1766c765b4
 ---
-
 # Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning
 
 **Conference**: ICML 2026  
@@ -24,51 +19,40 @@ content_hash: 1ffe39449b0e70f7
 **Keywords**: Data Difficulty, Supervised Fine-Tuning, Generalization-Extrapolation Tradeoff, PAC-Bayes, Data Scale
 
 ## TL;DR
-This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universal optimal difficulty." Instead, there exists an optimal difficulty that **drifts toward harder samples as data scale increases**. This is explained through a PAC-Bayes framework as a trade-off between the "in-distribution generalization gap" and the "extrapolation gap."
+This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universally optimal difficulty." Instead, an optimal difficulty exists that **drifts toward harder samples as the data scale increases**. This is explained through a PAC-Bayes framework as a tradeoff between the "in-distribution generalization gap" and the "extrapolation gap."
 
 ## Background & Motivation
 
-**Background**: Heuristics for data selection in SFT are diverse—some suggest removing "too simple" samples (LIMO, s1, Marion et al.), some advocate for retaining "easy" data close to the base model distribution (BERTIN, DFT, Anchored-SFT), while others claim "medium difficulty is best." Each paper provides compelling comparison tables, yet they frequently contradict one another.
+**Background**: Various heuristics for SFT data selection currently coexist—some advocate for removing "too easy" samples (LIMO, s1, Marion et al.), some prefer "simple data close to the base model distribution" (BERTIN, DFT, Anchored-SFT), and others argue "medium difficulty is best." Each paper provides competitive results, yet their conclusions frequently contradict one another.
 
-**Limitations of Prior Work**: The aforementioned conclusions lack a unified explanatory framework, making the choice between "hard" or "easy" data an empirical mystery in engineering. In Table 1, the authors show that "medium" is optimal for OpenR1-Math-94k, "easy" is optimal for OpenMath, and for OpenScience, "easy/medium" performs well while "hard" causes performance to crash—conclusions flip for the same model and evaluation across different datasets.
+**Limitations of Prior Work**: These conclusions lack a unified explanatory framework, making the choice between hard and easy data an empirical "black art." Table 1 shows that on OpenR1-Math-94k, medium is optimal; on OpenMath, easy is optimal; on OpenScience, easy/medium perform similarly while hard performance plunges. Conclusions for the same model and evaluation metric can flip across different datasets.
 
-**Key Challenge**: Prior works mostly compare difficulty at a "fixed data scale," but **difficulty and data scale are not independent variables**—they jointly determine model performance after SFT. Figure 2 provides a key observation: removing "hard" samples is beneficial at small scales but harmful at large scales; removing "easy" samples shows the opposite trend.
+**Key Challenge**: Previous studies mostly compared difficulty at a "fixed data scale," but **difficulty and data scale are not independent variables**—they jointly determine model performance after SFT. Figure 2 provides a key observation: excluding "hard" samples is beneficial at small scales but harmful at large scales; excluding "easy" samples shows the opposite trend.
 
-**Goal**: (1) Establish a 2D experimental map of (data scale $n$, data difficulty); (2) Use a single mechanism to simultaneously explain "non-monotonic difficulty" and the "drift of optimal difficulty with $n$"; (3) Provide an interpretable theoretical upper bound.
+**Goal**: (1) Establish a 2D experimental map of (data scale $n$, data difficulty); (2) provide a mechanism to explain both the "non-monotonicity of difficulty" and its "drift with $n$"; (3) derive an interpretable theoretical upper bound.
 
-**Key Insight**: Decompose test risk into an **in-distribution generalization gap** $G_{\mathrm{gen}}$ and an **extrapolation gap** $G_{\mathrm{ext}}$. The former increases with higher difficulty (harder to fit) and decreases with $n$, while the latter decreases as difficulty increases (harder training distributions better cover harder test distributions). The opposing movements of these two gaps produce a **unimodal** "optimal difficulty."
+**Key Insight**: Test risk is decomposed into an **in-distribution generalization gap** $G_{\mathrm{gen}}$ and an **extrapolation gap** $G_{\mathrm{ext}}$. The former increases with difficulty (harder to fit) and decreases with $n$; the latter decreases with difficulty (harder training distributions better cover harder test distributions). The opposing movement of these two gaps produces a **unimodal** "optimal difficulty."
 
-**Core Idea**: Replace the binary "easy/hard logic" with a trade-off between the "TV/KL gap between training and test distributions" and the "posterior-prior KL gap." It is noted that increasing $n$ primarily compresses $G_{\mathrm{gen}}$, causing the optimal difficulty to monotonically shift right as $n$ grows.
+**Core Idea**: The binary logic of "hard vs. easy" is replaced by a "tradeoff between the TV/KL gap (train vs. test distribution) and the posterior-prior KL gap." It is noted that increasing $n$ primarily compresses $G_{\mathrm{gen}}$, causing the optimal difficulty to monotonically shift rightward as $n$ grows.
 
 ## Method
 
-This paper is not primarily about "proposing a method" but rather "building a mechanism + theoretical bounds + extensive controlled experiments."
-
 ### Overall Architecture
-The work is structured in three layers: (a) A 2D scan of SFT on real data (Qwen2.5-Math-1.5B/7B × OpenMath difficulty buckets × various sizes); (b) Precise difficulty control experiments on synthetic iGSM data, where difficulty is represented by the number of operations, evaluated across test set difficulty slices to isolate failure modes ("in-distribution fitting failure" vs. "extrapolation failure"); (c) A PAC-Bayes theoretical framework providing an interpretable two-gap decomposition bound (Proposition 4.1).
+Rather than proposing a new "method," this work builds a mechanism through theoretical bounds and extensive controlled experiments. The framework consists of three layers: first, a 2D SFT scan (scale $\times$ difficulty) on real data (Qwen2.5-Math-1.5B/7B $\times$ OpenMath buckets/sizes); second, precise difficulty control using synthetic iGSM data to isolate failure modes of "in-distribution fit collapse" and "extrapolation failure"; finally, a PAC-Bayes interpretable bound (Proposition 4.1) to unify all observed phenomena.
 
 ### Key Designs
 
-1. **CoT-length as a Difficulty Metric**:
+**1. CoT-length Difficulty Metric: Side-stepping Circular Dependency via Task Attributes**
 
-    - **Function**: Uses the ground-truth Chain-of-Thought length as a proxy for problem difficulty.
-    - **Mechanism**: Figure 1 verifies that CoT length strongly correlates negatively with external LLM pass rates—longer CoT leads to lower pass rates, indicating higher difficulty. This avoids the circular dependency of "measuring difficulty based on the model's own perplexity."
-    - **Design Motivation**: Perplexity-based difficulty depends on the evaluated model and drifts during SFT; CoT length is a task-side attribute, comparable across models, facilitating experiments with "consistent difficulty across different models."
+The most natural way to measure problem difficulty is using the model's own perplexity. However, perplexity depends on the specific model being evaluated and drifts during SFT, making it an inconsistent yardstick. This paper uses the length of the ground-truth Chain-of-Thought (CoT) as a proxy for difficulty. CoT length is a task-side attribute, comparable across models, and facilitates controlled experiments with the same difficulty but different base models. Figure 1 validates this metric: longer CoTs strongly correlate with lower pass rates from external LLMs, allowing for a reliable easy/medium/hard tripartite split.
 
-2. **2D Experimental Map (size × difficulty) + Decomposed Evaluation**:
+**2. 2D Map + Decomposed Evaluation: Diagnosing Score Changes**
 
-    - **Function**: Moves beyond the local perspective of "fixed $n$ scanning difficulty" or "fixed difficulty scanning $n$" by plotting a full heatmap and slicing the test set by operation count to observe SFT gains on each test difficulty level.
-    - **Mechanism**: Figure 6 illustrates two typical failure modes—training on "easy" data improves in-domain test scores but fails on "hard" test slices (extrapolation failure); training on "hard" data at small $n$ leads to a drop across all slices (generalization failure). This is the key diagnostic for identifying "where it broke."
-    - **Design Motivation**: A single total score masks underlying mechanisms; slicing reveals where the trade-off ends fail, supporting the physical interpretation of the PAC-Bayes bound.
+Previous work often viewed difficulty through local slices (fixed $n$ or fixed difficulty). This paper plots a complete (size $\times$ difficulty) heatmap and, crucially, slices the test set by operation count to calculate the improvement of the SFT model on each test difficulty level. This step is the primary diagnostic tool: summary scores only show if performance rose or fell, whereas Figure 6 reveals specific failure modes—easy training improves in-domain test results but fails on hard tests (extrapolation failure), while hard training at small $n$ causes declines across all test slices (generalization failure).
 
-3. **Two-gap PAC-Bayes Decomposition (Proposition 4.1)**:
+**3. Two-gap PAC-Bayes Decomposition: Difficulty Adjustment as KL-TV Regularization**
 
-    - **Function**: Formulates the test risk upper bound as $\mathbb{E}_{\theta\sim\pi_\mathrm{train}}[R_{\mathcal D_\mathrm{test}}(\theta)]\le \mathbb E[\hat R_S(\theta)] + G_\mathrm{gen}+G_\mathrm{ext}+\epsilon$, where $G_\mathrm{gen}=\mathcal O(\sqrt{\mathrm{KL}(\pi_\mathrm{train}\|\pi_\mathrm{pre})/n})$ and $G_\mathrm{ext}=\mathcal O(\mathrm{TV}(\mathcal D_\mathrm{test},\mathcal D_\mathrm{train}))$.
-    - **Mechanism**: Views pre-training as the prior $\pi_\mathrm{pre}$ and the SFT parameter distribution as the posterior $\pi_\mathrm{train}$. PAC-Bayes provides a complexity term for the posterior-prior KL. The TV term captures the shift from the training distribution to the test distribution. Increasing difficulty → posterior moves further from prior → $G_{\mathrm{gen}}$ rises; however, the training distribution becomes closer to a hard test set → $G_{\mathrm{ext}}$ falls. The opposing movements create a unimodal peak.
-    - **Design Motivation**: Previous SFT data selection lacked theoretical anchors. This bound explains four major observations (data scale, non-monotonic difficulty, optimal difficulty drift, and relative model difficulty) and provides a geometric intuition of "tuning difficulty as an equivalence to regularizing between KL and TV."
-
-### Loss & Training
-Standard CE loss is used for SFT. Difficulty slices are partitioned by tertiles of CoT length (easy/medium/hard) or equidistant intervals of operation counts (iGSM experiments). In the DFT case study, token weights are $\mathrm{sg}(p_\theta)\cdot \nabla\log p_\theta$, using "token probability" as an implicit difficulty signal—this part serves as an extended case to verify that the theory holds for "token-level data selection."
+The paper formulates the test risk upper bound as $\mathbb{E}_{\theta\sim\pi_\mathrm{train}}[R_{\mathcal D_\mathrm{test}}(\theta)]\le \mathbb E[\hat R_S(\theta)] + G_\mathrm{gen}+G_\mathrm{ext}+\epsilon$, where the generalization term $G_\mathrm{gen}=\mathcal O(\sqrt{\mathrm{KL}(\pi_\mathrm{train}\|\pi_\mathrm{pre})/n})$ and the extrapolation term $G_\mathrm{ext}=\mathcal O(\mathrm{TV}(\mathcal D_\mathrm{test},\mathcal D_\mathrm{train}))$. Physically, the pre-trained model acts as the prior $\pi_\mathrm{pre}$ and the SFT parameters act as the posterior $\pi_\mathrm{train}$. Increasing difficulty pushes the posterior further from the prior (increasing $G_\mathrm{gen}$) but aligns the training distribution closer to difficult test sets (decreasing $G_\mathrm{ext}$). The sum of these opposing gaps naturally creates a unimodal optimal difficulty. Since $n$ compresses $G_{\mathrm{gen}}$, the optimal difficulty shifts right as $n$ increases.
 
 ## Key Experimental Results
 
@@ -80,45 +64,44 @@ Standard CE loss is used for SFT. Difficulty slices are partitioned by tertiles 
 | OpenMath 200k subset (Math500) | Qwen2.5-Math-1.5B | **71.7** | 70.1 | 69.0 | easy |
 | OpenScience 200k subset (MMLU) | Qwen2.5-Math-1.5B | **53.4** | 53.0 | 41.2 | easy |
 
-2D scanning conclusions (Figure 3-4, OpenMath/Qwen2.5-Math-7B): At a fixed $n$, the performance-difficulty curve is inverted U-shaped; at a fixed difficulty, performance-scale follows logarithmic saturation; the optimal difficulty drifts toward "harder" as $n$ increases.
+2D scanning conclusions (Figure 3-4): For a fixed $n$, the performance-difficulty curve is an inverted U-shape. For a fixed difficulty, performance vs. scale shows logarithmic saturation. The optimal difficulty drifts harder as $n$ increases.
 
-### Ablation Study (Synthetic iGSM Controlled Experiments, Sections 4-5)
+### Ablation Study
 
 | Configuration | Phenomenon | Explanation |
 |---|---|---|
-| Base Ops[2–8]2k, hard training + small $n$ | Performance drops across all test slices | $G_\mathrm{gen}$ dominates (failure to fit) |
-| Base Ops[2–8]2k, easy training + any $n$ | Easy test improves, hard test drops | $G_\mathrm{ext}$ dominates (failure to cover) |
-| Base Ops[2–8]2k, medium training | Highest overall improvement | Sum of $G_\mathrm{gen} + G_\mathrm{ext}$ is minimized |
-| Stronger base (Ops[2–8]2k vs Ops[2–6]2k) | Optimal difficulty shifts right with strong base | Stronger prior → smaller $G_\mathrm{gen}$ term |
-| DFT vs SFT, small $n$ + hard data | DFT outperforms SFT | DFT biases toward high-prob tokens, implicitly lowering difficulty |
-| DFT vs SFT, large $n$ | SFT overtakes DFT | DFT's bias toward high-prob tokens hinders $G_\mathrm{ext}$ improvement |
+| Ops[2–8]2k, Hard train + Small $n$ | Performance drops across all test slices | $G_\mathrm{gen}$ dominates (failure to fit) |
+| Ops[2–8]2k, Easy train + Any $n$ | Easy test rises, hard test drops | $G_\mathrm{ext}$ dominates (failure to cover) |
+| Ops[2–8]2k, Medium train | Highest overall improvement | $G_\mathrm{gen}+G_\mathrm{ext}$ sum is minimized |
+| Strong base vs. Weak base | Optimal difficulty shifts right for strong base | Stronger prior $\to$ smaller $G_\mathrm{gen}$ term |
+| DFT vs. SFT, Small $n$ + Hard data | DFT outperforms SFT | DFT biases toward high-prob tokens, implicitly reducing difficulty |
+| DFT vs. SFT, Large $n$ | SFT outperforms DFT | DFT's easy-bias hinders $G_\mathrm{ext}$ improvement |
 
 ### Key Findings
-- "Optimal difficulty" is an increasing function of $n$: Small data scales prefer easy samples (reducing $G_{\mathrm{gen}}$), while large data scales prefer difficult samples (reducing $G_{\mathrm{ext}}$). This assertion is replicated across real math/science data and synthetic iGSM data.
-- Difficulty is **relative**: A "hard" sample for a weak base might be "medium" for a strong base and "ultra-hard" for another; thus, data selection must consider base model capability rather than absolute token length.
-- The non-universal gains of DFT are naturally explained by theory—it is essentially an implicit "easy-shift," benefiting when "training difficulty is too high and $n$ is insufficient" but being held back by $G_{\mathrm{ext}}$ when "data is abundant."
+- The "optimal difficulty" is an increasing function of $n$: small data scales favor simple samples (to reduce $G_\mathrm{gen}$), while large scales favor difficult samples (to reduce $G_\mathrm{ext}$). This holds across math, science, and iGSM data.
+- Difficulty is **relative**: a "hard" sample for a weak base model might be "medium" for a strong one. Data selection must consider base model capability, not just absolute token length.
+- The non-universal gains of DFT are explained—it acts as an implicit easy-shift, benefiting scenarios with high training difficulty and low $n$, but underperforming when data is abundant.
 
 ## Highlights & Insights
-- It unifies the seemingly contradictory "easy vs. medium vs. hard" debate from previous papers into a single $G_{\mathrm{gen}}$-$G_{\mathrm{ext}}$ framework—a rare and excellent example of using theory to resolve experimental chaos.
-- The decomposed evaluation on iGSM is a powerful diagnostic tool for "seeing the mechanism"—once results are plotted by test difficulty slices, "why the model failed" is immediately revealed. This should be adopted in all SFT data ablation studies.
-- Viewing SFT as a dual-source risk of "posterior deviating from prior + train-test distribution shift" is the most natural application of PAC-Bayes to LLM SFT, providing a clear physical explanation for "tuning difficulty according to data scale."
+- The paper unifies contradictory claims about "easy vs. hard" data into a single $G_\mathrm{gen}$-$G_\mathrm{ext}$ framework—a rare instance of theoretical clarity resolving empirical confusion.
+- The "decomposed evaluation" used on iGSM is a powerful diagnostic tool; slicing graphs by test difficulty immediately reveals why a model is losing performance.
+- Treating SFT as a dual-source risk (posterior deviation + distribution shift) provides a clear physical explanation for adjusting difficulty based on data scale.
 
 ## Limitations & Future Work
-- Theoretical bounds remain in a worst-case form; specific values of TV and KL are nearly impossible to estimate on real text, offering only qualitative guidance. How to transform "optimal difficulty" into a computable, executable criterion remains an open question, as the authors acknowledge.
-- Experiments focused on Qwen2.5-Math and Llama math families; "CoT length" as a difficulty metric may not be stable when extended to code, agents, general dialogue, and other SFT domains.
-- The DFT case is an extended validation; it does not provide a specific algorithm for "how to adaptively adjust at the token level using this theory." Future work could design size-dependent token weighting to implement the theory directly.
+- The theoretical bounds are worst-case; the exact values of TV and KL are nearly impossible to estimate on real text, serving only as qualitative guidance.
+- Experiments focused on the Qwen2.5-Math and Llama math families; CoT-length may be less stable as a difficulty metric in areas like code or general dialogue.
+- The DFT analysis is an extension; a size-dependent token-weighting algorithm based directly on this theory has not yet been designed.
 
 ## Related Work & Insights
-- **vs LIMO / s1 (Ye et al. 2025, Muennighoff et al. 2025)**: These exclude "easy problems the base already knows," corresponding to "blindly selecting the hardest." Ours proves this is only reasonable when $n$ is large; it is disastrous for small data scales.
-- **vs BERTIN / Zhang et al. 2025**: Advocates for "easy samples close to the base distribution," corresponding to "blindly selecting the easiest." Ours proves this is only reasonable for small data scales.
-- **vs DFT (Wu et al. 2025)**: Implicitly biases toward "easy" at the token level; our work absorbs this as a token-level case study, explaining why DFT performance varies across settings.
-- **vs Curriculum Learning**: Ours provides the root cause of why curriculum is "often effective but not always"—curriculum is equivalent to moving along the "optimal difficulty grows with $n$" curve during training, but if the schedule is misaligned, it deviates from the optimum.
+- **vs. LIMO / s1 (Ye et al. 2025)**: These works advocate for selecting the "hardest" data. This paper shows this is only optimal when $n$ is large; it can be disastrous at small scales.
+- **vs. BERTIN**: Advocates for "simple samples close to base distribution." This is shown to be optimal only at small data scales.
+- **vs. Curriculum Learning**: This work identifies why curriculum learning is often, but not always, effective—it follows the "optimal difficulty drift" curve, but fails if the schedule is misaligned.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Not a new method, but a rare contribution that uses a unified framework to reconcile a series of contradictory conclusions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Real data + iGSM synthetic data + multiple base models + multiple evaluations, with comprehensive 2D heatmaps and slice analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical layers; the PAC-Bayes explanation is tightly coupled with the four major observations; formulas are dense but readable.
-- Value: ⭐⭐⭐⭐ Directly actionable guidance for teams doing SFT data filtering—do not fixate on easy/hard selection; decide based on the joint relationship of base capability and data budget.
+- Novelty: ⭐⭐⭐⭐ Unifying contradictory conclusions under a single framework is a significant contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across real/synthetic data, multiple base models, and 2D heatmap analyses.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic; the PAC-Bayes explanation aligns well with observations.
+- Value: ⭐⭐⭐⭐ Actionable guidance for SFT data selection—difficulty should be chosen based on base model capability and data budget.
 
 <!-- RELATED:START -->
 
@@ -129,8 +112,8 @@ Standard CE loss is used for SFT. Difficulty slices are partitioned by tertiles 
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](../../ICLR2026/llm_pretraining/token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
 - [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[ICML 2026\] Trust Functions: Near-Lossless Weak-to-Strong Generalization by Learning When to Trust the Weak Teacher](trust_functions_near-lossless_weak-to-strong_generalization_by_learning_when_to_.md)
+- [\[ICML 2025\] DipLLM: Fine-Tuning LLM for Strategic Decision-Making in Diplomacy](../../ICML2025/llm_pretraining/dipllm_fine-tuning_llm_for_strategic_decision-making_in_diplomacy.md)
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
 
 </div>
 

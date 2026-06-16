@@ -1,178 +1,144 @@
 ---
 title: >-
-  [Paper Note] PhysVid: Physics Aware Local Conditioning for Generative Video Models
+  [Paper Note] PhysVid: Physics Aware Local Conditioning for Generative Video
 description: >-
-  [CVPR 2026][Video Generation][physics consistency] PhysVid is a physics-aware local conditioning scheme that segments videos into temporal chunks, annotates each chunk with physics phenomenon descriptions via a VLM…
+  [CVPR 2026][Video Generation][Paper Note] PhysVid proposes a physics-aware local conditioning scheme that divides videos into temporal chunks. A VLM annotates physical phenomenon descriptions for each chunk, which are then injected into the generative model via chunk-level cross-attention. At inference, "negative physics prompts" (counterfactual guidance) are
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "physics consistency"
-  - "local conditioning"
-  - "cross-attention"
-  - "counterfactual guidance"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 57e9b94522ec2b9d
+content_hash: 849f71c939df2550
 ---
-
-# PhysVid: Physics Aware Local Conditioning for Generative Video Models
+# PhysVid: Physics Aware Local Conditioning for Generative Video
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.26285](https://arxiv.org/abs/2603.26285)  
 **Code**: [Project Page](https://5aurabhpathak.github.io/PhysVid)  
-**Area**: LLM / NLP (Other)  
-**Keywords**: video generation, physics consistency, local conditioning, cross-attention, counterfactual guidance
+**Area**: Video Generation  
+**Keywords**: Video generation, physical consistency, local conditioning, cross-attention, counterfactual guidance
 
 ## TL;DR
 
-PhysVid is a physics-aware local conditioning scheme that segments videos into temporal chunks, annotates each chunk with physics phenomenon descriptions via a VLM, and injects them through chunk-level cross-attention. At inference, "negative physics prompts" (counterfactual guidance) steer generation away from physics violations, improving physics commonsense scores by approximately 33% on VideoPhy.
+PhysVid proposes a physics-aware local conditioning scheme that divides videos into temporal chunks. A VLM annotates physical phenomenon descriptions for each chunk, which are then injected into the generative model via chunk-level cross-attention. At inference, "negative physics prompts" (counterfactual guidance) are introduced to guide generation away from physical violations, improving the physical common sense score on VideoPhy by approximately 33%.
 
 ## Background & Motivation
 
-Generative video models (e.g., Sora, Wan2.1) have made remarkable progress in visual fidelity, yet they still exhibit fundamental shortcomings in physics consistency — generated videos frequently violate basic physical laws (e.g., object penetration, gravitational anomalies, implausible deformations). Existing improvement approaches have the following limitations:
+Generative video models (e.g., Sora, Wan2.1) have achieved significant progress in visual realism but still exhibit fundamental flaws in physical consistency—generated videos frequently violate basic physical laws (e.g., object interpenetration, gravity anomalies, unreasonable deformations). Limitations of prior work:
 
-**Global text prompts are too coarse**: Standard T2V models condition all frames with the same text, failing to capture local physics detail changes within specific temporal segments.
+**Background**: Standard T2V models use the same text to condition all frames, failing to capture local temporal changes in physical details.
 
-**Frame-level conditioning is too myopic**: Per-frame control methods are domain-specific and lack cross-frame physical continuity.
+**Limitations of Prior Work**: Frame-level control methods are often domain-specific and lack cross-frame physical continuity.
 
-**Global enhanced prompts are still insufficient**: Methods like DiffPhy and PhyT2V use LLMs to enhance global prompts with physics information, but cannot guarantee the model attends to the correct physics cues at the correct time segments.
+**Key Challenge**: While methods like DiffPhy and PhyT2V use LLMs to enhance physical information in global prompts, they cannot ensure the model focuses on the correct physical cues at the right time.
 
-**Fundamental flaw of global cross-attention**: Research shows that global cross-attention produces nearly static attention maps, causing temporal alignment failure for action-related tokens.
-
-PhysVid's core insight: **physical phenomena are temporally local** — motion, collisions, and lighting changes occur within short time intervals and require locally aligned conditioning.
+**Key Insight**: Global cross-attention tends to produce nearly static attention maps, leading to temporal alignment failures for motion-related words. The core insight of PhysVid is that **physical phenomena are local-temporal**—motion, collisions, and lighting changes occur within short intervals, requiring aligned local conditioning.
 
 ## Method
 
 ### Overall Architecture
 
-PhysVid inserts chunk-level cross-attention layers into a pre-trained T2V model (Wan2.1-1.3B), achieving dual-pathway global + local conditioning. The pipeline is:
+PhysVid addresses the specific pain point where T2V models use a single global text prompt for all frames, whereas physical phenomena (collisions, deformations, reflections) occur only in specific split-second moments. The core idea is to provide "exclusive" physical descriptions for each time segment. The mechanism involves three steps: first, training videos are divided into temporal chunks, and a VLM annotates the physical phenomena in each chunk to obtain timestamped labels; second, a chunk-level cross-attention layer is inserted into the pre-trained Wan2.1 model, allowing each video segment to attend only to its aligned physical description; third, during inference, since no ground-truth video is available, an LLM "imagines" local physical descriptions from the global prompt and generates counterfactual descriptions of physical violations for dual CFG guidance.
 
-**Training data preparation** → Segment video into chunks → VLM annotates chunk-level physics descriptions  
-**Model training** → Freeze base model → Train chunk cross-attention → Unfreeze for joint training  
-**Inference** → LLM generates local + counterfactual prompts from global prompt → Dual-pathway CFG-guided generation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Training Video<br/>81 frames @16fps"] --> B["Chunk-level Physics Annotation<br/>7 segments, VideoLLama3 annotates dynamics/shape/optics"]
+    B --> C["Chunk-aware Cross-Attention<br/>One layer per Wan2.1 block, RoPE applied to text keys for temporal alignment"]
+    C -->|"Two-stage training: freeze base to train new layers, then joint fine-tune"| D["Physics-aware T2V Model"]
+    E["Inference: Global Prompt"] --> F["Counterfactual Physics Guidance<br/>LLM imagines local description C + counterfactual C′"]
+    F -->|"Positive/Negative CFG Guidance"| D
+    D --> G["Generated Video<br/>Physically Consistent"]
+```
 
 ### Key Designs
 
-1. **Chunk-Level Physics Annotation (Data Preparation)**
+**1. Chunk-level Physics Annotation: Aligning descriptions with temporal segments**
 
-    - Each 5-second training video (81 frames @16fps) is divided into 7 temporal chunks (~0.7 seconds/chunk)
-    - **VideoLLama3-7B** analyzes the visible physical phenomena in each chunk
-    - The VLM is guided to focus on three categories of physics information: **dynamics** (motion, collisions, acceleration), **shape** (deformation, bending), and **optics** (reflection, shadow, refraction)
-    - The global prompt is also provided to the VLM to ensure local annotations align with the global description
-    - Constrained generation techniques strictly enforce structured output format
-    - Design Motivation: The WISA dataset's built-in global physics annotations are not used, as they may not align with the segmented 5-second clips
+**Function**: To provide precise local information that global prompts lack. The mechanism divides each 5-second training video (81 frames @16fps) into 7 chunks of approximately 0.7 seconds. VideoLLama3-7B analyzes each segment, focusing specifically on three categories: dynamics (motion, collisions, acceleration), shape (deformation, bending), and optics (reflection, shadows, refraction). The global prompt is also provided to the VLM to ensure local descriptions remain relevant, and output is constrained to a structured format.
 
-2. **Chunk-Aware Cross-Attention (Core Architectural Innovation)**
+**2. Chunk-aware Cross-Attention: Temporal alignment for attention**
 
-    - A new chunk-level cross-attention layer is inserted into each Transformer block of pre-trained Wan2.1
-    - Video query tokens are modulated via 3D spatiotemporal RoPE (frame, height, width)
-    - **Key innovation**: RoPE is also applied to text keys, with a defined text grid that includes a **chunk axis**
-    - Video and text use the same RoPE frequency base, giving attention logits **cross-modal positional awareness** — video tokens can distinguish text information from different chunks
-    - Unlike standard T2V cross-attention (where text keys have only 1D positional encoding and lack frame alignment coupling)
-    - Design Motivation: Each video temporal segment should attend only to physics descriptions temporally aligned with it
+**Design Motivation**: Standard T2V cross-attention lacks a temporal coupling between text and video frames, often resulting in static attention maps. PhysVid inserts a new chunk-level cross-attention layer in each Transformer block of Wan2.1. While video query tokens use standard 3D spatio-temporal RoPE, **the key step is applying RoPE to text keys and defining a grid with a chunk axis**. By using the same RoPE frequency base for both video and text, the attention logits gain cross-modal positional awareness, allowing video tokens at a specific time to naturally "favor" text from the corresponding chunk.
 
-3. **Training Strategy (Two-Stage)**
+**3. Counterfactual Physics Guidance: Reinforcing correct physics and penalizing violations**
 
-    - **Stage 1** (1000 steps): Freeze base model, train only newly added chunk cross-attention modules — stabilizes new modules
-    - **Stage 2** (2000 steps): Unfreeze base model, jointly train all parameters
-    - 4 GPUs, effective batch size 64
-    - Trained using flow matching loss
+**Mechanism**: During inference, an LLM first "imagines" local physical descriptions $C$ from the global prompt. It then identifies key visual/physical elements to generate counterfactual descriptions $C'$ that intentionally violate these laws (e.g., changing "ball bounces off the ground" to "ball passes through the ground"). Both paths are integrated into classifier-free guidance:
 
-4. **Counterfactual Physics Guidance (Inference Innovation)**
+$$x_{T-1} = (1+w) \cdot \mathcal{G}(x_T, c_g, C, T) - w \cdot \mathcal{G}(x_T, c_n, C', T)$$
 
-    - **Local prompt generation**: At inference, only a global T2V prompt is available (no video to reference); an LLM "imagines" each chunk's physics descriptions from the global prompt
-    - **Counterfactual prompt generation**: The LLM identifies key visual and physical elements in each local physics prompt and generates **counterfactual descriptions that violate those physical phenomena**
-    - **Dual-pathway CFG guidance**:
-     $$x_{T-1} = (1+w) \cdot \mathcal{G}(x_T, c_g, C, T) - w \cdot \mathcal{G}(x_T, c_n, C', T)$$
-     where $C'$ is the counterfactual prompt set and $c_n$ is the global negative prompt
-    - Design Motivation: Positive guidance reinforces correct physics + negative guidance pushes away from physics violations = dual safeguard
+where $c_g, C$ are global positive and local physics prompts, and $c_n, C'$ are global negative and counterfactual physics prompts. The positive term pulls the generation toward correct physics, while the negative term pushes it away from violations.
 
 ### Loss & Training
 
-- Trained using the same **flow matching** objective as Wan2.1
-- Training data: ~53K video samples processed from the WISA-80K dataset (832×480, 81 frames @16fps)
-- Built-in physics annotations from WISA are not used; chunk-level annotations are entirely re-extracted from videos by the VLM
+**Training Strategy**: Training is conducted in two stages to stabilize the new modules. Stage 1 (1000 steps) freezes the Wan2.1 base model and trains only the newly inserted chunk cross-attention layers. Stage 2 (2000 steps) unfreezes the base model for joint parameter training. The optimization objective follows the flow matching loss of Wan2.1. The training data consists of approximately 53K video samples (832×480, 81 frames @16fps) processed from WISA-80K.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**VideoPhy Benchmark**
+**Table 1: VideoPhy Benchmark**
 
-| Method | Params | SA (Semantic Alignment) | PC (Physics Commonsense) ↑ |
-|--------|--------|------------------------|-----------------------------|
+| Method | Parameters | SA (Semantic Alignment) | PC (Physical Common Sense) ↑ |
+|------|--------|-------------|----------------|
 | Wan-1.3B | 1.3B | 0.46 | 0.24 |
 | Wan-14B | **14B** | **0.52** | 0.24 |
-| **PhysVid** | **1.7B** | 0.43 | **0.32** |
+| **Ours (PhysVid)** | **1.7B** | 0.43 | **0.32** |
 
-PhysVid surpasses the 14B model in physics commonsense with only 1.7B parameters, a **relative improvement of ~33%**.
+PhysVid outperforms the 14B model in physical common sense with only 1.7B parameters, achieving a **relative gain of ~33%**.
 
-**VideoPhy2 Benchmark**
+**Table 2: VideoPhy2 Benchmark**
 
-| Method | Params | SA | PC ↑ |
-|--------|--------|----|------|
+| Method | Parameters | SA | PC ↑ |
+|------|--------|-----|------|
 | Wan-1.3B | 1.3B | 0.28 | 0.61 |
 | Wan-14B | 14B | **0.29** | 0.59 |
-| **PhysVid** | 1.7B | 0.28 | **0.64** |
+| **Ours (PhysVid)** | 1.7B | 0.28 | **0.64** |
 
-~8% relative improvement over Wan-14B on VideoPhy2.
-
-**Comparison with Existing Physics-Aware Methods (VideoPhy)**
-
-| Method | Base Model | PC ↑ | Relative Gain |
-|--------|-----------|------|---------------|
-| WISA | CogVideoX-5B | 0.38 | +15% |
-| VideoREPA-5B | CogVideoX-5B | 0.40 | +29% |
-| Hao et al. | Wan-14B | 0.40 | +14% |
-| PhyT2V | CogVideoX-5B | **0.42** | +62% |
-| **PhysVid-1.7B** | Wan-1.3B | 0.32 | +33% |
+Relative gain of ~8% over Wan-14B on VideoPhy2.
 
 ### Ablation Study
 
-| Method | VideoPhy PC ↑ | VideoPhy2 PC ↑ | Note |
-|--------|--------------|----------------|------|
-| Wan-1.3B baseline | 0.2401 | 0.6144 | No improvements |
-| Direct fine-tuning | 0.2866 | 0.6261 | WISA data fine-tuning without chunk architecture |
-| PhysVid (no counterfactual guidance) | 0.2924 | 0.6334 | Positive local conditioning only |
-| **PhysVid (full)** | **0.3169** | **0.6411** | Positive + counterfactual guidance |
+| Method | VideoPhy PC ↑ | VideoPhy2 PC ↑ | Description |
+|------|--------------|---------------|------|
+| Wan-1.3B Baseline | 0.2401 | 0.6144 | No improvements |
+| Direct Fine-tuning | 0.2866 | 0.6261 | Fine-tuned on WISA data without chunk architecture |
+| PhysVid (w/o CFG) | 0.2924 | 0.6334 | Only positive local conditioning |
+| **PhysVid (Full)** | **0.3169** | **0.6411** | Positive + Counterfactual guidance |
 
 ### Key Findings
 
-1. **Local conditioning > Global conditioning**: PhysVid significantly outperforms direct fine-tuning (same data but no chunk architecture), proving that temporal alignment of physics information is critical
-2. **Counterfactual guidance is effective**: Adding counterfactual negative prompts improves PC from 0.2924 to 0.3169
-3. **Model scale ≠ physics capability**: Despite having 8× more parameters than PhysVid, Wan-14B has lower physics commonsense scores (0.24 vs 0.32)
-4. **Cost of semantic alignment**: PhysVid's SA score is slightly lower than baseline (0.43 vs 0.46), suggesting physics-oriented conditioning may slightly sacrifice visual aesthetics
-5. **Consistent improvement across categories**: Improvements are observed across all subcategories including solid-solid, solid-fluid, fluid-fluid, object interaction, and sports
+1. **Local > Global**: Prev. SOTA physics info is more effective when temporally aligned; PhysVid significantly outperforms direct fine-tuning.
+2. **Counterfactual Guidance Effectiveness**: Incorporating counterfactual negative prompts raised the PC score from 0.2924 to 0.3169.
+3. **Scale vs. Physics**: Wan-14B, despite having 8x the parameters, lacks superior physical common sense compared to the structured PhysVid-1.7B.
+4. **Trade-off**: A slight decrease in SA (0.43 vs 0.46) suggests that physics-oriented guidance may slightly compromise overall semantic aesthetics.
 
 ## Highlights & Insights
 
-1. **Local temporal granularity for physics conditioning is the right direction**: Global physics prompts cannot align to specific time segments; chunk-level design elegantly solves this problem
-2. **VLM as automatic physics annotator**: No dependency on manual physics annotations; physics information is entirely extracted from videos by the VLM, making the method applicable to arbitrary datasets
-3. **Elegant counterfactual guidance design**: Borrows the positive/negative guidance concept from CFG but extends it to the physics dimension — generating "what if physics were violated" descriptions as negative conditions
-4. **Cross-modal RoPE alignment**: Applying video-aligned RoPE to text keys gives chunk boundaries explicit positional signals in attention computation
-5. **Beating scale with design**: A 1.7B parameter model surpasses a 14B model in the physics dimension, demonstrating that architectural design matters more than simply scaling parameters
+1. **Precision of Temporal Grain**: Local physical conditioning is the correct trajectory, as global prompts cannot align with transient events.
+2. **Automated Annotation via VLM**: By using VLMs to extract physical information from videos, the method remains scalable and non-reliant on human labeling.
+3. **Double Constraint via CFG**: Extending the CFG logic to the physical dimension by explicitly modeling "violations" provides a strong corrective signal.
+4. **Cross-modal RoPE**: Applying RoPE to text keys ensures the chunk boundaries are explicitly recognized during attention calculations.
 
 ## Limitations & Future Work
 
-1. **Semantic alignment degradation**: SA score drops from 0.46 to 0.43, suggesting local physics conditioning may interfere with global semantic generation
-2. **Dependence on VLM annotation quality**: The accuracy of chunk-level physics descriptions depends on VideoLLama3-7B's capabilities; a stronger VLM may yield further improvements
-3. **LLM overhead at inference**: Inference requires an LLM to generate local and counterfactual prompts, adding extra latency and complexity
-4. **Narrow training data (WISA)**: Focused on physics phenomena data; generalization to general T2V scenarios is unverified
-5. **Evaluation metric limitations**: VideoPhy scores are based on automatic evaluators mimicking human judgment, which are inherently subjective and potentially noisy
-6. **Fixed chunk size**: The fixed division into 7 equal-length chunks may not match the actual temporal scales of all physical events
+1. **Semantic Drop**: The reduction in SA score suggests local physics might interfere with global semantic coherence.
+2. **VLM Dependency**: The quality of chunk-level descriptions is limited by the reasoning capabilities of VideoLLama3.
+3. **Inference Latency**: Generating local and counterfactual prompts via LLM adds overhead to the inference pipeline.
+4. **Data Scope**: The WISA dataset is narrow, and generalization to arbitrary T2V scenarios remains unverified.
+5. **Fixed Chunking**: Equal-length chunking may not perfectly match the diverse temporal scales of various physical events.
 
 ## Related Work & Insights
 
-- **vs Hao et al.**: Hao et al. also use counterfactual guidance but only at the global level; PhysVid advances it to chunk-level
-- **vs WISA**: WISA uses physics expert mixture modules and physics classifiers to inject global physics information; PhysVid uses VLM for automatic extraction and local injection
-- **vs DiffPhy**: DiffPhy uses LLM-enhanced global prompts + MLLM for physics supervision; PhysVid directly learns local physics from videos
-- **World model inspiration**: PhysVid can be seen as a step toward physics-aware world simulators — enabling models to understand how physics unfolds over time through local conditioning
+- **Comparison with Hao et al.**: While both use counterfactual guidance, PhysVid advances this to the chunk level.
+- **Comparison with WISA**: WISA uses global MoE modules and classifiers; PhysVid focuses on automated VLM extraction and local injection.
+- **World Model Implications**: PhysVid serves as a step toward physics-aware world simulators by teaching models how physics unfolds over time.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The combination of chunk-level physics conditioning + counterfactual guidance is novel
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Two benchmarks, multi-subcategory analysis, complete ablation
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, comprehensive related work review
-- Value: ⭐⭐⭐⭐ — Architecture-compatible with existing T2V models, good scalability
+- **Novelty**: ⭐⭐⭐⭐ — Novel combination of chunk-level conditioning and counterfactual guidance.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive analysis across multiple benchmarks and sub-categories.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and thorough related work section.
+- **Value**: ⭐⭐⭐⭐ — Architecture is compatible with existing T2V models and offers strong scalability.
 
 <!-- RELATED:START -->
 
@@ -181,10 +147,10 @@ PhysVid surpasses the 14B model in physics commonsense with only 1.7B parameters
 ## Related Papers
 
 - [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
-- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
+- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[NeurIPS 2025\] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation](../../NeurIPS2025/video_generation/physctrl_generative_physics_for_controllable_and_physicsgrou.md)
+- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](generative_neural_video_compression_via_video_diffusion_prior.md)
-- [\[ACL 2026\] Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity](../../ACL2026/video_generation/accelerating_training_of_autoregressive_video_generation_models_via_local_optimi.md)
 
 </div>
 

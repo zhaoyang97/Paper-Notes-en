@@ -2,126 +2,123 @@
 title: >-
   [Paper Note] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁
 description: >-
-  [CVPR 2026][F-score] This paper systematically studies the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking-theoretic perspective. It proves that the rankings induced by $F_\beta$…
+  [CVPR 2026][Others][F-score] This paper systematically investigates the properties of the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking theory perspective. It proves that the rankings induced by $F_\beta$ constitute a geodesic (shortest path) between Precision and Recall rankings. Consequently, it propose
 tags:
-  - "CVPR 2026"
-  - "F-score"
-  - "ranking optimization"
-  - "Kendall distance"
-  - "precision-recall tradeoff"
-  - "performance evaluation theory"
+  - CVPR 2026
+  - Others
+  - F-score
 date: 2026-05-08
-content_hash: ca8f2ed7a1b25ed0
+content_hash: 1411c8654bbde10f
 ---
+# What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely $F_1$
 
-# What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁
-
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22442](https://arxiv.org/abs/2511.22442)  
 **Code**: [https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall](https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall)  
-**Area**: Other
-**Keywords**: F-score, ranking optimization, Kendall distance, precision-recall tradeoff, performance evaluation theory
+**Area**: Others  
+**Keywords**: F-score, ranking optimization, Kendall distance, Precision-Recall tradeoff, performance evaluation theory
 
 ## TL;DR
 
-This paper systematically studies the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking-theoretic perspective. It proves that the rankings induced by $F_\beta$ form a geodesic (shortest path) between the Precision and Recall rankings, derives a closed-form formula for finding the optimal $\beta$, and demonstrates that the commonly used $F_1$ and skew-insensitive $F_1$ are rarely optimal ranking tradeoffs in practice.
+This paper systematically investigates the properties of the $F_\beta$ score family as a ranking tradeoff between Precision and Recall from a ranking theory perspective. It proves that the rankings induced by $F_\beta$ constitute a geodesic (shortest path) between Precision and Recall rankings. Consequently, it proposes a closed-form formula to find the optimal $\beta$ value and demonstrates that the commonly used $F_1$ and skew-insensitive $F_1$ are not the optimal ranking tradeoffs in most cases.
 
 ## Background & Motivation
 
-1. **Background**: Precision and Recall are the most fundamental evaluation metrics for classification tasks, yet neither is sufficient on its own. Their weighted harmonic mean, the $F_\beta$ score, is widely adopted. In practice, $F_1$ (equal weighting) is the most common choice; Google Scholar records approximately 315,000 papers using the F-measure, and roughly 10% of CVPR 2025 papers employ $F_1$.
-2. **Limitations of Prior Work**: Although $F_\beta$ numerically interpolates between Precision and Recall, it has never been rigorously examined whether the ranking induced by $F_1$ constitutes an optimal tradeoff between the Precision ranking and the Recall ranking. In particular, as the class prior $\pi_+ \to 0$, all $F_\beta$ scores degenerate into rankings that mimic Precision while ignoring Recall.
-3. **Key Challenge**: $F_1$ is assumed by default to be a "balanced" tradeoff, yet the choice $\beta = 1$ lacks any ranking-theoretic justification — a single fixed $\beta$ cannot provide an optimal ranking across all class priors.
-4. **Goal**: (a) Do the rankings induced by $F_\beta$ form a meaningful path? (b) Is $F_1$ an optimal ranking tradeoff? (c) How can the optimal $\beta$ be found?
-5. **Key Insight**: The Kendall rank correlation/distance framework is adopted to measure distances between rankings, and the search for an optimal tradeoff is formalized as a Fréchet variance minimization problem.
-6. **Core Idea**: The manifold of rankings induced by $F_\beta$ constitutes a geodesic between the Precision and Recall rankings, and the optimal $\beta^2$ equals the median of the $\vartheta$ values computed over all pairs of performances.
+1. **Background**: Precision and Recall are the most fundamental evaluation metrics for classification tasks. Since neither is comprehensive on its own, their weighted harmonic mean, the $F_\beta$ score, is frequently used. $F_1$ (equal weighting) is the most common in practice; Google Scholar shows approximately 315,000 papers using F-measure, and about 10% of CVPR 2025 papers utilize $F_1$.
+2. **Limitations of Prior Work**: Although $F_\beta$ serves as a numerical tradeoff between Precision and Recall, whether the ranking induced by $F_1$ is truly the optimal tradeoff between Precision and Recall rankings has never been rigorously studied. Notably, as the class prior $\pi_+ \to 0$, all $F_\beta$ scores degenerate into rankings that mimic Precision while ignoring Recall.
+3. **Key Challenge**: $F_1$ is adopted by default as a "balanced" tradeoff, but the choice of $\beta=1$ lacks a foundation in ranking theory—the same $\beta$ cannot provide an optimal ranking across all class priors.
+4. **Goal**: (a) Do the rankings induced by $F_\beta$ form a meaningful path? (b) Is $F_1$ the optimal ranking tradeoff? (c) How can the optimal $\beta$ be found?
+5. **Key Insight**: Utilize the theoretical framework of Kendall rank correlation/distance to measure the distance between rankings, formalizing the search for the optimal tradeoff as a Fréchet variance minimization problem.
+6. **Core Idea**: The manifold of rankings induced by $F_\beta$ is a geodesic between Precision and Recall rankings, and the optimal $\beta^2$ equals the median of $\vartheta$ values across all performance pairs.
 
 ## Method
 
 ### Overall Architecture
 
-Given a set of classifier performances $\Pi = \{P_1, \ldots, P_n\}$, where each $P_i$ corresponds to a confusion matrix, every scoring function $X$ (e.g., Precision, Recall, $F_\beta$) induces a ranking $\mathbf{x}$. The paper analyzes the geometric properties of the $F_\beta$ family in ranking space and identifies the $\beta$ value that places the induced ranking equidistant from the Precision and Recall rankings.
+Ours does not train any models but instead addresses the question "Is $F_1$ the best tradeoff between Precision and Recall?" within a **ranking space**. Given a set of classifier performances $\Pi = \{P_1, \ldots, P_n\}$, where each $P_i$ corresponds to a confusion matrix, any scoring function $X$ (Precision, Recall, $F_\beta$, etc.) will order these $n$ classifiers into a ranking $\mathbf{x}$. The difference between two rankings is measured by the Kendall distance $d_\tau$, which counts the number of classifier pairs with disagreeing relative orders. Finding the optimal tradeoff thus becomes: within the $F_\beta$ family of rankings, find a $\beta$ that is "equidistant" from the Precision ranking and the Recall ranking. The reasoning follows three steps: proving the $F_\beta$ family lies on the shortest path (worth searching), providing a closed-form solution for the optimal $\beta$ (how to search), and introducing a reportable metric to quantify how far any $\beta$ is from the optimal (how to evaluate).
 
 ### Key Designs
 
-1. **Geodesic Property of $F_\beta$ Rankings**
+**1. Geodesic Property of $F_\beta$ Rankings: Proving the family is worth searching**
 
-    - **Function**: Proves that $F_\beta$ is the correct score family for finding a Precision-Recall ranking tradeoff.
-    - **Mechanism**: Because $F_\beta$ is a weighted $f$-mean of Precision and Recall with $f(x) = x^{-1}$ (i.e., harmonic mean), for any two performances $P_A, P_B$, if both Precision and Recall agree on an ordering, then every $F_\beta$ agrees as well. This yields the key identity $d_\tau(Pr; Re) = d_\tau(Pr; F_\beta) + d_\tau(F_\beta; Re)$, establishing that $F_\beta$ rankings lie on the geodesic (shortest path) between the Precision and Recall rankings. This guarantees that restricting the search for an optimal tradeoff to the $F_\beta$ family is well-founded.
-    - **Design Motivation**: Not every score that numerically lies between Precision and Recall satisfies this geodesic property — the arithmetic mean and the geometric mean both fail to satisfy the performance ranking axioms.
+Before selecting $\beta$, it must be confirmed that the family of scores does not "take a detour"; otherwise, finding an equidistant point is meaningless. A key observation is that $F_\beta$ is essentially a weighted $f$-mean of Precision and Recall (where $f(x)=x^{-1}$ is the harmonic mean). This mean possesses a desirable property: for any two performances $P_A, P_B$, if both Precision and Recall agree that $A$ should be ranked above $B$, then all $F_\beta$ scores will also agree. Aggregating this property over the entire performance set yields the core equation:
 
-2. **Closed-Form Solution for the Optimal Tradeoff**
+$$d_\tau(Pr; Re) = d_\tau(Pr; F_\beta) + d_\tau(F_\beta; Re)$$
 
-    - **Function**: Provides an analytic formula for computing the optimal $\beta$.
-    - **Mechanism**: The optimal tradeoff $F_*$ is defined as the Karcher mean minimizing the Fréchet variance $\sigma^2(\beta) = d_\tau^2(Pr; F_\beta) + d_\tau^2(F_\beta; Re)$, equivalently characterized by the equidistance condition $d_\tau(Pr; F_*) = d_\tau(F_*; Re)$. For a finite set of performances, the ranking induced by $F_\beta$ changes through a sequence of discrete jumps as $\beta$ increases (occurring whenever two performances are tied under $F_\beta$), with each jump at $\beta^2 = \vartheta(P_1, P_2) = -\frac{PTP(P_1) \cdot PFP(P_2) - PTP(P_2) \cdot PFP(P_1)}{PTP(P_1) \cdot PFN(P_2) - PTP(P_2) \cdot PFN(P_1)}$. The optimal $\beta^2$ is then the median of all positive $\vartheta$ values.
-    - **Design Motivation**: The result is entirely analytic and requires no numerical optimization.
+This implies that the "distance" from the Precision ranking to the Recall ranking via any $F_\beta$ ranking is additive—the $F_\beta$ ranking lies strictly on the **geodesic** (shortest path) between the two endpoints. This ensures that searching for a tradeoff point within the $F_\beta$ family is a meaningful geometric problem. It is worth emphasizing that this is non-trivial: arithmetic and geometric means do **not** satisfy performance ranking axioms and can induce counter-intuitive rankings; thus, only the $F_\beta$ family serves as a valid tradeoff.
 
-3. **Optimality Metric $\mathcal{O}$**
+**2. Closed-form Solution for Optimal Tradeoff: Calculating the "equidistant point" directly**
 
-    - **Function**: Quantifies how close any given $\beta$ choice is to the optimal ranking.
-    - **Mechanism**: All classifier pairs are partitioned into three categories: those on which Precision and Recall agree (no choice needed), those on which a choice is needed and the correct one is made, and those on which a choice is needed but the wrong one is made. The optimality score is $\mathcal{O} = 1 - \frac{d_\tau(F_\beta; F_*)}{d_\tau(Pr; Re) - d_\tau(F_\beta; F_*) + d_\tau(F_\beta; F_*)}$, which equals 1 if and only if $\beta$ is optimal.
-    - **Design Motivation**: Provides a simple, reportable metric that allows practitioners to assess how far their choice of $\beta$ deviates from optimal.
+Since $F_\beta$ rankings move along the geodesic as $\beta$ varies, the optimal tradeoff $F_*$ is defined as the point equidistant to both ends, minimizing the Fréchet variance $\sigma^2(\beta) = d_\tau^2(Pr; F_\beta) + d_\tau^2(F_\beta; Re)$. This is equivalent to finding the Karcher mean satisfying $d_\tau(Pr; F_*) = d_\tau(F_*; Re)$. The difficulty lies in the fact that $\beta$ is continuous while rankings are discrete: as $\beta$ increases, the $F_\beta$ ranking does not change smoothly but undergoes **discrete jumps** at certain critical points where two performances $P_1, P_2$ are tied and then swap positions. Each such jump corresponds to a critical value:
+
+$$\beta^2 = \vartheta(P_1, P_2) = -\frac{PTP(P_1)\cdot PFP(P_2) - PTP(P_2)\cdot PFP(P_1)}{PTP(P_1)\cdot PFN(P_2) - PTP(P_2)\cdot PFN(P_1)}$$
+
+where $PTP/PFP/PFN$ are normalized probabilities of true positives, false positives, and false negatives. Since each jump moves the ranking one step toward Recall, the "equidistant" condition is equivalent to splitting the jump points—**the optimal $\beta^2$ is exactly the median of all positive $\vartheta$ values**. The solution is entirely analytical, requiring only the enumeration of performance pairs, calculation of $\vartheta$, and finding the median.
+
+**3. Optimality $\mathcal{O}$: Scoring how far any given $\beta$ is from the optimal**
+
+With $F_*$ identified, users naturally want to know how well their chosen $\beta$ (e.g., the default $F_1$) performs. The paper categorizes classifier pairs into three types: those where Precision and Recall already agree, those where a tradeoff choice is made correctly, and those where it is made incorrectly. Optimality is defined as:
+
+$$\mathcal{O} = 1 - \frac{d_\tau(F_\beta; F_*)}{d_\tau(Pr; Re)}$$
+
+The numerator is the Kendall distance between the current $\beta$ ranking and the optimal ranking $F_*$, while the denominator normalizes by the total distance. $\mathcal{O}=1$ if and only if $\beta$ is optimal. This is a single number that can be reported in papers, allowing anyone using $F_\beta$ to quantify the optimality of their $\beta$ choice.
 
 ### Loss & Training
 
-This paper is purely theoretical and involves no training procedure. The central formula is $\beta^2 = \text{median}(\{\vartheta(P_i, P_j) \mid i \neq j \wedge \vartheta(P_i, P_j) \geq 0\})$.
+This is a theoretical work with no training process. Implementation requires a single line: $\beta^2 = \text{median}(\{\vartheta(P_i, P_j) \mid i \neq j \wedge \vartheta(P_i, P_j) \geq 0\})$. Taking the median of all positive pairwise critical values yields the optimal $\beta$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Optimal $\beta^2$ values across six case studies:**
+**Optimal $\beta^2$ values for six case studies:**
 
 | Case | $\tau(Pr; Re)$ | $F_1$ Optimality | SIVF Optimality | Optimal $\beta^2$ |
-|------|---------------|-----------------|-----------------|-------------------|
-| Uniform distribution over all performances | 1/3 | 100% (optimal) | Meaningless ranking | 1.0 (exactly $F_1$) |
-| Uniform distribution with fixed TN probability | 1/3 | 100% (optimal) | Meaningless ranking | 1.0 |
-| Beta distribution | Varies | Far from optimal | Far from optimal | Requires computation |
-| CADA-RRE medical challenge (16 models) | — | Non-optimal | Non-optimal | Determined by closed-form formula |
-| VOC 2012 segmentation (47 classes) | — | Non-optimal | Non-optimal | Varies per class |
-| Custom scenario | — | Non-optimal | Non-optimal | Data-dependent |
+|------|---------------|-------------|------------|---------------|
+| Uniform distribution over all performances | 1/3 | 100% (Optimal) | Meaningless ranking | 1.0 (Exactly $F_1$) |
+| Uniform distribution with fixed TN prob | 1/3 | 100% (Optimal) | Meaningless ranking | 1.0 |
+| Beta distribution | Varies | Far from optimal | Far from optimal | Requires calculation |
+| CADA-RRE Medical Challenge (16 models) | - | Non-optimal | Non-optimal | Fixed by formula |
+| VOC 2012 Segmentation (47 classes) | - | Non-optimal | Non-optimal | Varies by class |
+| Custom Scenarios | - | Non-optimal | Non-optimal | Data-dependent |
 
 ### Ablation Study
 
 | Configuration | Description |
-|---------------|-------------|
-| $F_1$ ($\beta^2=1$) | Optimal only under highly symmetric conditions such as the uniform distribution |
-| SIVF ($\beta^2=\pi_-/\pi_+$) | Satisfies ranking axioms (under fixed priors) but is typically non-optimal in real scenarios |
-| Heuristic $\beta^2 = E[PFP]/E[PFN]$ | Exactly optimal or near-optimal across multiple distributions |
-| Closed-form median formula | Always optimal, $\mathcal{O}=100\%$ |
+|------|------|
+| $F_1$ ($\beta^2=1$) | Only optimal under specific highly symmetric conditions like uniform distributions. |
+| SIVF ($\beta^2=\pi_-/\pi_+$) | Satisfies axioms (at fixed priors) but usually non-optimal in real scenarios. |
+| Heuristic $\beta^2 = E[PFP]/E[PFN]$ | Exactly optimal or near-optimal under several distributions. |
+| Closed-form median | Always optimal, $\mathcal{O}=100\%$. |
 
 ### Key Findings
-
-- **$F_1$ is rarely optimal**: $\beta = 1$ is the optimal tradeoff only when the performance distribution exhibits specific symmetry (e.g., the uniform distribution). In the vast majority of practical settings, $F_1$ yields rankings biased toward either Precision or Recall.
-- **The $F_\beta$ family is the uniquely correct search space**: The arithmetic mean and geometric mean fail to satisfy the performance ranking axioms and can induce meaningless rankings, whereas every $F_\beta$ satisfies them.
-- The heuristic $\beta^2 = E[PFP]/E[PFN]$ yields the optimal result across multiple distributions and several case studies, and can serve as a simple approximation.
-- The optimal $\beta$ is data-dependent — different classification challenges, different semantic categories, and different performance distributions require different $\beta$ values.
+- **$F_1$ is rarely optimal**: $\beta=1$ is the optimal tradeoff only when the performance distribution possesses specific symmetry. In most practical scenarios, $F_1$ produces rankings biased toward either Precision or Recall.
+- **$F_\beta$ family is the unique correct search space**: Arithmetic and geometric means do not satisfy performance ranking axioms (they can induce meaningless rankings), whereas all $F_\beta$ scores do.
+- The heuristic rule $\beta^2 = E[PFP]/E[PFN]$ provides optimal results across multiple distributions and cases, serving as a simple approximation.
+- The optimal $\beta$ is data-dependent—different challenges, semantic categories, and performance distributions require different $\beta$ values.
 
 ## Highlights & Insights
-
-- **Exceptionally strong theoretical contribution**: Starting from ranking axioms, proceeding through the geodesic proof and Karcher mean derivation, and concluding with a closed-form solution, the entire chain of reasoning is complete and elegant. The paper provides the first rigorous answer to a fundamental question about a metric that has been in use for over 50 years.
-- **Broad practical significance**: Approximately 10% of CVPR papers use $F_1$; this work shows that $F_1$ is non-optimal in most cases. While existing conclusions are unlikely to be overturned (since deviations are typically small), the paper provides a theoretical foundation for more rigorous future evaluation.
-- **Closed-form formula is minimal and practical**: Computing the median of all pairwise $\vartheta$ values requires no complex optimization.
-- The authors propose reporting both $\tau(Pr; F_\beta)$ and $\tau(F_\beta; Re)$ alongside results to assess the optimality of the chosen $\beta$, which is a valuable practical recommendation.
+- **Solid Theoretical Contribution**: Starting from ranking axioms, through geodesic proofs and Karcher mean derivations, to a final closed-form solution, the derivation is complete and elegant. It rigorously addresses a fundamental problem regarding a metric used for over 50 years.
+- **Deep Practical Significance**: Approximately 10% of CVPR papers use $F_1$; this paper points out that $F_1$ is not optimal for ranking in most cases. While it may not overturn existing conclusions (as deviations are often small), it provides a theoretical weapon for rigorous future evaluations.
+- **Simple Closed-form Formula**: Calculating the median of $\vartheta$ values for all performance pairs is straightforward and requires no complex optimization.
+- The authors suggest reporting both $\tau(Pr; F_\beta)$ and $\tau(F_\beta; Re)$ to evaluate the optimality of a selected $\beta$, which is an excellent practical recommendation.
 
 ## Limitations & Future Work
-
-- The paper studies only the binary classification Precision-Recall tradeoff; extension to multi-class settings involving macro/micro averaging remains open.
-- Computing $\vartheta$ requires complete confusion matrices for all classifiers, making direct application infeasible in settings where only leaderboard scores are available.
-- The analysis is confined to the $F_\beta$ family; whether superior ranking tradeoffs based on non-harmonic means exist is not discussed.
-- The case studies focus on classification tasks; the widely used AP metric in detection and segmentation, which integrates over multiple thresholds, is outside the scope of this work.
+- Ours only investigates the Precision-Recall tradeoff for binary classification; multi-class classification requires extension to macro/micro averaging scenarios.
+- Calculating $\vartheta$ requires full confusion matrices for all classifiers, which is not directly applicable in scenarios where only leaderboard scores are available.
+- The paper focuses on the $F_\beta$ family, but whether more optimal non-harmonic mean forms of ranking tradeoffs exist has not been discussed.
+- Case studies focus on classification; the AP metric common in detection/segmentation (which integrates multiple thresholds) is not within the scope.
 
 ## Related Work & Insights
-
-- **vs. conventional $F_1$ usage**: Numerous papers default to $\beta = 1$; this work proves that such a choice is almost never ranking-optimal — the specific performance set determines the optimal $\beta$.
-- **vs. skew-insensitive $F_1$ (SIVF)**: The SIVF proposed by Flach & Kull is equivalent to $F_\beta$ with $\beta^2 = \pi_-/\pi_+$ under a fixed prior, guaranteeing meaningful rankings but not optimality.
-- **vs. Ferri et al. / Liu et al.**: Prior studies of inter-score correlation use Pearson or Spearman correlation; this paper is the first to employ Kendall rank correlation for analyzing ranking tradeoffs.
+- **vs. Traditional $F_1$ Usage**: While many papers default to $\beta=1$, this work proves it is almost never ranking-optimal—the specific set of performances determines the optimal $\beta$.
+- **vs. Skew-Insensitive $F_1$ (SIVF)**: The SIVF proposed by Flach & Kull is equivalent to $F_\beta$ with $\beta^2 = \pi_-/\pi_+$ under fixed priors, guaranteeing meaningful rankings but not optimality.
+- **vs. Ferri et al. / Liu et al.**: Previous studies on metric correlation used Pearson/Spearman correlation; this work is the first to use Kendall rank correlation to analyze tradeoff rankings.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐⭐ — Provides the first theoretically complete answer to a fundamental question about a metric used for over 50 years.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Six case studies covering theoretical distributions and real challenges are provided, though additional large-scale competition data would strengthen the empirical support.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical derivations are rigorous and clear, but the heavy notation poses a non-trivial barrier for readers without a theoretical background.
-- Value: ⭐⭐⭐⭐ — Establishes a rigorous theoretical foundation for evaluation practice, though the practical impact on existing conclusions may be limited.
+- Novelty: ⭐⭐⭐⭐⭐ Provides the first theoretically complete answer to a 50-year-old fundamental problem.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Six case studies cover theoretical distributions and real challenges, though more large-scale competition data could be included.
+- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are rigorous and clear, though the notation density may be challenging for non-theoretical readers.
+- Value: ⭐⭐⭐⭐ Provides a rigorous theoretical foundation for evaluation practices, though the practical impact on existing conclusions may be modest.
 
 <!-- RELATED:START -->
 
@@ -131,9 +128,9 @@ This paper is purely theoretical and involves no training procedure. The central
 
 - [\[NeurIPS 2025\] What Does It Take to Build a Performant Selective Classifier?](../../NeurIPS2025/others/what_does_it_take_to_build_a_performant_selective_classifier.md)
 - [\[AAAI 2026\] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?](../../AAAI2026/others/how_hard_is_it_to_rig_a_tournament_when_few_players_can_beat_or_be_beaten_by_the.md)
-- [\[CVPR 2026\] Bounds on Agreement between Subjective and Objective Measurements](bounds_on_agreement_between_subjective_and_objecti.md)
+- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
+- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](../../AAAI2026/others/how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
-- [\[CVPR 2026\] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](what_is_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_.md)
 
 </div>
 

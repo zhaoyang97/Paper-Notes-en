@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] From Feasible to Practical: Pareto-Optimal Synthesis Planning
 description: >-
-  [ICML 2026][Computational Biology][Multi-objective Search] PareSP employs **multi-objective MCTS search** to jointly optimize synthesis paths for **cost / time / feasibility / environmental impact**—identifying the compl…
+  [ICML 2026][Computational Biology][MCTS] PareSP utilizes **multi-objective MCTS search** to jointly optimize synthesis path **cost / time / feasibility / environmental impact**—identifying the complete Pareto front rather than a single "optimal" path. On USPTO and ASKCOS benchmarks, it achieves a 23% reduction in cost and a 35% reduction in time compared to s
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "Multi-objective Search"
-  - "Pareto Optimization"
-  - "Synthesis Planning"
-  - "MCTS"
+  - ICML 2026
+  - Computational Biology
+  - MCTS
 date: 2026-05-08
-content_hash: e388fe123a9d712c
+content_hash: de2fa8f58fcd9bb2
 ---
-
 # From Feasible to Practical: Pareto-Optimal Synthesis Planning
 
 **Conference**: ICML 2026  
@@ -23,47 +19,62 @@ content_hash: e388fe123a9d712c
 **Keywords**: Multi-objective Search, Pareto Optimization, Synthesis Planning, MCTS
 
 ## TL;DR
-PareSP employs **multi-objective MCTS search** to jointly optimize synthesis paths for **cost / time / feasibility / environmental impact**—identifying the complete Pareto front rather than a single "optimal" path. On USPTO and ASKCOS benchmarks, it reduces costs by 23% and time by 35% compared to single-objective methods while maintaining $\geq 95\%$ chemical feasibility.
+PareSP utilizes **multi-objective MCTS search** to jointly optimize synthesis path **cost / time / feasibility / environmental impact**—identifying the complete Pareto front rather than a single "optimal" path. On USPTO and ASKCOS benchmarks, it achieves a 23% reduction in cost and a 35% reduction in time compared to single-objective methods while maintaining chemical feasibility $\geq 95\%$.
 
 ## Background & Motivation
 
-**Background**: Computer-Aided Synthesis Planning (CASP) aims to identify economically viable multi-step reaction paths for target molecules. Traditional methods (e.g., EFMC, Retro*) optimize for a single objective (chemical feasibility or shortest path), but real-world scenarios require balancing conflicting objectives such as cost, time, and environmental impact.
+**Background**: Computer-aided synthesis planning (CASP) aims to identify economically viable multi-step reaction paths for target molecules. Traditional methods (e.g., EFMC, Retro*) optimize for a single objective (chemical feasibility or shortest path), whereas practical synthesis scenarios require balancing conflicting objectives like cost, time, and environmental impact.
 
-**Limitations of Prior Work**: (1) Single-objective MCTS tends to converge on "optimal" paths while ignoring balanced solutions; (2) Post-processing re-ranking cannot guarantee Pareto optimality; (3) Multi-objective methods (e.g., NSGA-II) require evaluation of the entire space, which is infeasible for combinatorial search spaces.
+**Limitations of Prior Work**: (1) Single-objective MCTS favors "optimal" paths and ignores balanced solutions; (2) Post-processing re-ranking cannot guarantee Pareto optimality; (3) Multi-objective methods (e.g., NSGA-II) require full-space evaluation, which is infeasible for combinatorial search spaces.
 
-**Key Challenge**: Synthesis planning is inherently a **combinatorial search + multi-objective trade-off** problem, yet existing methods sacrifice either diversity (single-objective) or scalability (brute-force multi-objective).
+**Key Challenge**: Synthesis planning is inherently a **combinatorial search + multi-objective trade-off** problem, but existing methods sacrifice either diversity (single-objective) or scalability (brute-force multi-objective).
 
-**Goal**: To find the Pareto front—all "non-dominated" trade-off solutions—within the synthesis path search.
+**Goal**: To find the Pareto front—all "non-dominated" trade-off solutions—during the synthesis path search.
 
-**Key Insight**: The capability of MCTS to balance exploration and exploitation combined with dominance relations in multi-objective optimization leads to Multi-Objective MCTS (MO-MCTS).
+**Key Insight**: Combine the exploration-exploitation balance of MCTS with the dominance relationship of multi-objective optimization to create Multi-Objective MCTS (MO-MCTS).
 
-**Core Idea**: The MCTS UCT formula is extended to a multi-objective setting where each node maintains a **Pareto front** instead of a single value, and search is guided by dominance relations and hypervolume.
+**Core Idea**: Extend the MCTS UCT formula to a multi-objective setting, where each node maintains a **Pareto front** instead of a single value, and search is guided by dominance relationships and hypervolume.
 
 ## Method
 
 ### Overall Architecture
-(1) **Objective Definition**: Four objectives $(c, t, f, e)$ = (Cost, Time, Feasibility, Environmental impact); (2) **MO-MCTS Search Tree**: Each node stores a Pareto front $\mathcal{P}_n$; (3) **Multi-objective UCT Selection**: Priority is given to expanding non-dominated candidates based on dominance relations; (4) **Backpropagation**: After expanding a node, all ancestor Pareto fronts are updated with the new solution; (5) **Output**: The Pareto front of the root node is returned as the set of all "optimal" trade-off paths upon search completion.
+
+PareSP addresses the problem where multiple paths exist for synthesizing a molecule, but objectives like cost, time, feasibility, and environmental impact conflict. It replaces the scalar value in standard MCTS with a Pareto front: search tree nodes no longer record a single score but a set of non-dominated trade-off solutions. The search revolves around "expanding the coverage of this set," eventually outputting all "non-dominated" paths from the root node for chemists to select.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Target Molecule<br/>Four Objectives: Cost/Time/Feasibility/Impact"] --> B
+    subgraph LOOP["Multi-Objective MCTS Search Loop (Nodes store Pareto front representations)"]
+        direction TB
+        B["Selection: Hypervolume-driven UCT Selection<br/>UCT=HV(𝒫ₙ,r_ref)+c√(ln N(p)/N(n))"] --> C["Expansion + Evaluation: Chemical Prior Fusion<br/>LRSN proposed reactions; Feasibility/Cost/Time/PMI estimation"]
+        C --> D["Backpropagation: Update Pareto front value representation<br/>Dominance-based pruning of non-dominated set 𝒫ₙ"]
+    end
+    D -->|Iteration| B
+    LOOP --> E["Output: Complete Pareto Front<br/>All non-dominated synthesis paths for selection"]
+```
 
 ### Key Designs
 
-1. **Multi-objective Value Representation + Pareto Front Maintenance**:
-    - Function: Maintains the complete Pareto front within each node of the search tree.
-    - Mechanism: The value of node $n$ is not a scalar but a set $\mathcal{P}_n = \{(c_i, t_i, f_i, e_i)\}_i$ (non-dominated solutions). A new solution $\mathbf{v}^*$ is added based on dominance: if $\exists \mathbf{v} \in \mathcal{P}_n: \mathbf{v} \succeq \mathbf{v}^*$, it is discarded; otherwise, solutions dominated by $\mathbf{v}^*$ are removed and $\mathbf{v}^*$ is added.
-    - Design Motivation: Traditional scalar values compress multi-objective information; maintaining the Pareto front preserves the trade-off space and diversifies the final output.
+**1. Pareto Front Value Representation: Enabling nodes to store the full trade-off space rather than a single score**
 
-2. **Dominance-Aware UCT Selection Strategy**:
-    - Function: Balances exploration and multi-objective exploitation during the MCTS selection phase.
-    - Mechanism: The UCT formula is extended as $\text{UCT}(n) = HV(\mathcal{P}_n, \mathbf{r}_{\text{ref}}) + c \sqrt{\ln N(p) / N(n)}$, where $HV(\cdot, \mathbf{r}_{\text{ref}})$ is the hypervolume based on a reference point $\mathbf{r}_{\text{ref}}$, and $c = \sqrt{2}$ aligns with single-objective MCTS. Child nodes with high hypervolume and low visit counts are prioritized.
-    - Design Motivation: Hypervolume measures both the quality and diversity of the Pareto front; the UCT exploration reward ensures comprehensive search coverage.
+Traditional MCTS collapses multiple objectives into a scalar, effectively deciding for the user which objective is more important and discarding balanced solutions. PareSP maintains a set of non-dominated solutions $\mathcal{P}_n = \{(c_i, t_i, f_i, e_i)\}_i$ at each node $n$, where the tuples correspond to cost, time, feasibility, and environmental impact. When a new solution $\mathbf{v}^*$ is proposed, it is filtered by dominance: if an existing solution $\mathbf{v}$ in the front is no worse in all objectives ($\exists \mathbf{v} \in \mathcal{P}_n: \mathbf{v} \succeq \mathbf{v}^*$), it is discarded. Otherwise, old solutions dominated by $\mathbf{v}^*$ are removed, and $\mathbf{v}^*$ is added. This ensures the front only contains solutions that cannot outperform each other, preserving the full decision space.
 
-3. **Chemical Prior Fusion + Enhanced Local Search**:
-    - Function: Incorporates chemical knowledge (reaction template feasibility, starting material costs, etc.) as priors into value estimation.
-    - Mechanism: Feasibility $f$ is given as a probability by a neural reaction prediction model; cost $c$ is queried from starting material databases; time $t$ is estimated based on reaction steps and temperature; environmental impact $e$ is based on green chemistry metrics (PMI, E-factor). Search at leaf nodes is supplemented by a Localized Reaction Suggestion Network (LRSN).
-    - Design Motivation: Pure MCTS is inefficient due to random expansion in chemical space; chemical priors significantly reduce invalid branches.
+**2. Hypervolume-driven UCT Selection: Measuring front quality and diversity with a single scalar**
+
+With the value set as a front, MCTS selection cannot rely on simple magnitude comparisons. PareSP uses hypervolume (HV) to map the front back to a comparable scalar within the UCT formula:
+
+$$\text{UCT}(n) = HV(\mathcal{P}_n, \mathbf{r}_{\text{ref}}) + c \sqrt{\ln N(p) / N(n)}$$
+
+Where $HV(\cdot, \mathbf{r}_{\text{ref}})$ is the volume enclosed by the front relative to a reference point $\mathbf{r}_{\text{ref}}$. A better and more diverse front yields a larger HV. The exploration term follows the single-objective MCTS with $c = \sqrt{2}$. The advantage of HV is that it simultaneously reflects both "solution quality" and "solution spread," allowing the search to prioritize high-quality branches while exploring less-visited regions.
+
+**3. Chemical Prior Fusion: Embedding domain knowledge into objective estimation**
+
+Pure MCTS is inefficient in the vast chemical reaction space. PareSP integrates estimates for all four objectives with chemical knowledge: feasibility $f$ is given by neural reaction prediction model probabilities; cost $c$ is queried from raw material price databases; time $t$ is estimated based on the number of steps and reaction temperatures; and environmental impact $e$ is measured using green chemistry metrics like PMI (Process Mass Intensity) and E-factor. Leaf node expansion uses a Localized Reaction Suggestion Network (LRSN). These priors prune infeasible directions. Ablation studies show that removing chemical priors increases average cost from \$40.1 to \$48.2 and shrinks the Pareto front from 8.4 to 4.3.
 
 ## Key Experimental Results
 
-### Main Results: Single-objective vs Multi-objective
+### Main Results: Single-Objective vs. Multi-Objective
 
 | Dataset | Method | Avg Cost | Avg Time | Avg Feasibility | PMI | Pareto Size |
 |--------|------|---------|---------|----------|-----|-----------|
@@ -91,45 +102,45 @@ PareSP employs **multi-objective MCTS search** to jointly optimize synthesis pat
 | Multi-objective MCTS (HV-UCT) | $40.3 | 7.2 | 7.5 min |
 | **PareSP Full** | **$40.1** | **8.4** | **8.1 min** |
 | - w/o LRSN | $43.7 | 6.5 | 7.8 min |
-| - w/o Chemical Prior | $48.2 | 4.3 | 9.4 min |
+| - w/o Chemical Priors | $48.2 | 4.3 | 9.4 min |
 
 ### User Study
 
-| Chemist Preference (n=30) | Prefer PareSP | Prefer Retro* | Prefer EFMC | No Preference |
+| Chemist Pref. (n=30) | Choose PareSP | Choose Retro* | Choose EFMC | No Preference |
 |--------------------|----------|----------|--------|--------|
 | Overall Preference | **63.3%** | 16.7% | 13.3% | 6.7% |
 | Industrial Synthesis | **76.7%** | 10.0% | 6.7% | 6.7% |
 | Academic Research | **53.3%** | 23.3% | 16.7% | 6.7% |
 
 ### Key Findings
-- **Multi-objective solutions consistently outperform single-objective**: Average costs decreased by 23%, time decreased by 35%, and feasibility actually improved.
-- **Pareto front provides decision flexibility**: Chemists can select paths based on specific context.
+- **Multi-objective solutions consistently outperform single-objective ones**: Average cost decreased by 23%, time by 35%, and feasibility improved.
+- **Pareto front provides decision flexibility**: Chemists can choose paths based on specific scenarios.
 - **Critical contribution of chemical priors**: Search efficiency improved by 16%.
-- **Hypervolume UCT effectiveness**: Achieves the best balance between search time and diversity.
+- **HV-UCT Effectiveness**: Achieves the best balance between search time and diversity.
 
 ## Highlights & Insights
-- **Elegant Application of Multi-objective Search**: MO-MCTS is well-suited for discrete combinatorial search and multi-objective trade-offs in synthesis planning.
+- **Elegant Application of Multi-objective Search**: MO-MCTS is well-suited for discrete combinatorial search and multi-objective trade-offs in chemical synthesis.
 - **Fusion of Chemical Priors and Search Algorithms**: Avoids the "hallucinations" of pure learning methods and the "blindness" of pure search.
-- **Practical Design**: The four objectives cover the core trade-offs in industrial synthesis; the user study confirms preferences of practical chemists.
-- **Interpretable and Diverse Output**: The complete Pareto front empowers user decision-making rather than providing black-box recommendations.
+- **Practical Design**: The four objectives cover core industrial synthesis trade-offs; the user study confirms preferences among chemists.
+- **Interpretable and Diverse Output**: Providing a complete Pareto front empowers users with decision-making authority rather than offering a black-box recommendation.
 
 ## Limitations & Future Work
-- Objective Scalability: Currently handles four objectives; the Pareto front may explode in higher dimensions.
-- Multi-step Uncertainty: Costs and times for each step are currently estimates.
-- Capturing Chemist Preferences: The user study sample size (n=30) is relatively small.
-- Future Work: Exploration of higher-dimensional multi-objective search; introduction of active learning to update chemist preferences; extension to biosynthesis.
+- Objective Scalability: With only 4 objectives currently, the Pareto front may explode in higher dimensions.
+- Multi-step Uncertainty: Cost and time for each step are currently estimates.
+- Capture of Chemist Preferences: The user study sample size (n=30) is relatively small.
+- Future Work: Explore higher-dimensional multi-objective search; introduce active learning to capture chemist preferences; extend to biosynthesis.
 
 ## Related Work & Insights
-- **vs Retro* / EFMC**: These use single-objective methods with post-processing; this work utilizes direct multi-objective search.
-- **vs NSGA-II**: Population evolution is suitable for continuous spaces, whereas MCTS is better for discrete combinatorial spaces.
-- **vs RL-based CASP**: RL requires extensive training data, while MCTS provides flexible, plug-and-play search.
+- **vs. Retro* / EFMC**: These use single-objective methods with post-processing; this work performs direct multi-objective search.
+- **vs. NSGA-II**: Evolutionary algorithms are suitable for continuous spaces; MCTS is better for discrete combinatorial spaces.
+- **vs. RL in CASP**: RL requires massive training data; MCTS is a more flexible, plug-and-play search method.
 - **Insight**: MO-MCTS can be extended to other combinatorial optimization scenarios like drug design and materials discovery.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ While MO-MCTS exists, the innovation lies in the domain application, chemical prior fusion, and practical implementation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive cross-dataset testing, multiple baselines, Pareto analysis, user studies, and detailed ablation.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed algorithm description, and strong conclusions.
-- Value: ⭐⭐⭐⭐⭐ High industrial value for chemical synthesis; provides the decision flexibility essential for chemists.
+- Novelty: ⭐⭐⭐⭐ (MO-MCTS is established, but the innovation lies in domain application + chemical prior fusion + practical utility.)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Cross-dataset + multiple baselines + Pareto analysis + user study + detailed ablation.)
+- Writing Quality: ⭐⭐⭐⭐ (Clear motivation, detailed algorithm description, and strong conclusions.)
+- Value: ⭐⭐⭐⭐⭐ (High industrial value for chemical synthesis; provides the decision flexibility needed by chemists.)
 
 <!-- RELATED:START -->
 
@@ -139,8 +150,8 @@ PareSP employs **multi-objective MCTS search** to jointly optimize synthesis pat
 
 - [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](../../NeurIPS2025/computational_biology/amortized_active_generation_of_pareto_sets.md)
 - [\[ACL 2026\] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](../../ACL2026/computational_biology/protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)
+- [\[ICML 2025\] Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](../../ICML2025/computational_biology/compositional_flows_for_3d_molecule_and_synthesis_pathway_co-design.md)
 - [\[AAAI 2026\] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data](../../AAAI2026/computational_biology/cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce.md)
-- [\[NeurIPS 2025\] Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action](../../NeurIPS2025/computational_biology/variational_regularized_unbalanced_optimal_transport_single_network_least_action.md)
 - [\[NeurIPS 2025\] Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs](../../NeurIPS2025/computational_biology/retrosynthesis_planning_via_worst-path_policy_optimisation_in_tree-structured_md.md)
 
 </div>

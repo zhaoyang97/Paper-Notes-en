@@ -2,81 +2,84 @@
 title: >-
   [Paper Note] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning Efficiency] The DTSR framework is proposed, which detects "reflection signals" (e.g., Wait, Alternatively) during the reasoning process and triggers a self-assessment of "sufficiency"…
+  [ACL 2026][LLM Reasoning][Paper Note] This paper proposes the DTSR framework, which detects "reflection signals" (e.g., *Wait*, *Alternatively*) during the reasoning process and triggers a "sufficiency assessment" for the model to self-evaluate whether the current reasoning is "sufficient" to decide on early termination. This achieves a 28.9%–34.9% reducti
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Reasoning Efficiency"
-  - "Early Exit Strategy"
-  - "Overthinking"
-  - "Metacognition"
-  - "Chain-of-Thought (CoT)"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 92b5e0ce571042d2
+content_hash: 9a4e4c3074b2b787
 ---
-
 # When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.06787](https://arxiv.org/abs/2604.06787)  
 **Code**: To be confirmed  
 **Area**: LLM Reasoning  
-**Keywords**: Reasoning Efficiency, Early Exit Strategy, Overthinking, Metacognition, Chain-of-Thought (CoT)
+**Keywords**: Reasoning Efficiency, Early Exit Strategy, Overthinking, Metacognition, Chain-of-Thought
 
 ## TL;DR
 
-The DTSR framework is proposed, which detects "reflection signals" (e.g., Wait, Alternatively) during the reasoning process and triggers a self-assessment of "sufficiency" to decide whether to terminate reasoning early. This achieves a 28.9%–34.9% reduction in reasoning length on Qwen3 series models with almost no loss in accuracy.
+This paper proposes the DTSR framework, which detects "reflection signals" (e.g., *Wait*, *Alternatively*) during the reasoning process and triggers a "sufficiency assessment" for the model to self-evaluate whether the current reasoning is "sufficient" to decide on early termination. This achieves a 28.9%–34.9% reduction in reasoning length on Qwen3 series models with almost no loss in accuracy.
 
 ## Background & Motivation
 
-**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and Qwen3 have made significant progress in complex reasoning tasks through long Chain-of-Thought (CoT). However, this introduces serious reasoning redundancy—models repeatedly verify and explore alternative paths even for simple problems.
+**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and Qwen3 have made significant progress in complex reasoning tasks through long Chain-of-Thought (CoT). However, this introduces serious reasoning redundancy—models repeatedly verify and explore alternative paths even for simple questions.
 
-**Limitations of Prior Work**: Existing early exit methods rely on hand-crafted exit criteria—Dynasor-CoT uses consecutive answer consistency (but still requires extra tokens for verification after the correct answer appears), and DEER uses the entropy of intermediate answers as a confidence indicator. These methods face two fundamental issues: (1) Reasoning models exhibit overconfidence, maintaining high confidence even when answers are wrong, making confidence-based judgments unreliable; (2) They are only applicable to short-answer tasks and are infeasible for long-answer scenarios like code generation and open-ended QA.
+**Limitations of Prior Work**: Existing early exit methods rely on manually designed exit criteria. Dynasor-CoT uses consecutive answer consistency (but still requires extra tokens for verification after the correct answer appears), and DEER uses the entropy of intermediate answers as a confidence metric. These methods face two fundamental issues: (1) Reasoning models exhibit overconfidence, maintaining high confidence even when answers are incorrect, making confidence-based judgments unreliable; (2) They are only applicable to short-answer tasks and do not work for long-answer scenarios like code generation or open-ended QA.
 
-**Key Challenge**: How to judge whether the reasoning process is "enough" without relying on answer confidence? A method is needed to evaluate the reasoning process itself rather than the correctness of the answer.
+**Key Challenge**: How to determine if the reasoning process is already "sufficient" without relying on answer confidence? A method is needed to evaluate the reasoning process itself rather than the correctness of the answer.
 
-**Goal**: Design a universal and reliable early exit framework that determines the exit timing by assessing the sufficiency of the reasoning chain rather than the confidence of the answer.
+**Goal**: To design a universal and reliable early exit framework that decides the exit timing by assessing the sufficiency of the reasoning chain rather than the confidence of the answer.
 
-**Key Insight**: Borrow from human metacognition—humans do not frequently produce intermediate answers to judge whether to stop thinking; instead, they internally evaluate whether the "current thoughts are sufficient to support the final conclusion."
+**Key Insight**: Drawing inspiration from human metacognition—humans do not frequently produce intermediate answers to decide whether to stop thinking; instead, they internally evaluate whether the "current thoughts are sufficient to support the final conclusion."
 
-**Core Idea**: Trigger a sufficiency check at reflection signals (e.g., "Wait", "Let me check") of the reasoning model, allowing the model to evaluate the sufficiency of the current reasoning chain from a third-person perspective to reach a final answer.
+**Core Idea**: Trigger a sufficiency check at the model's reflection signals (e.g., "Wait", "Let me check"). This allows the model to evaluate, from a third-person perspective, whether the current reasoning chain is sufficient to derive the final answer.
 
 ## Method
 
 ### Overall Architecture
 
-DTSR operates in two stages: (1) Reflection Signal Monitoring—detects specific reflection trigger words (e.g., "Wait", "Alternatively", "But") during the generation process, signaling positions where the model is about to begin redundant validation or backtracking; (2) Thought Sufficiency Check—upon detecting a reflection signal, the original question and the current reasoning chain are input into a sufficiency evaluation template, and the model outputs a sufficiency score from 0-100. If the score exceeds a threshold $\tau$ (default 100), `</think>` is appended to terminate reasoning and output the final answer; otherwise, reasoning continues to the next reflection signal. To avoid frequent checks, a minimum token interval $k$ (default 64) is set.
+DTSR operates in two stages: (1) Reflection signal monitoring—detecting specific reflection trigger words (e.g., "Wait", "Alternatively", "But") during generation, which signal that the model is about to begin redundant verification or backtracking; (2) Thinking sufficiency check—upon detecting a reflection signal, the original question and current reasoning chain are fed into a sufficiency assessment template. The model outputs a sufficiency score from 0–100. If the score exceeds the threshold $\tau$ (default 100), a `</think>` tag is appended to terminate reasoning and output the final answer; otherwise, reasoning continues to the next reflection signal. To avoid frequent checks, a minimum token interval $k$ (default 64) is implemented.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Question Q + Generated Reasoning Chain T"] --> B["Reflection Signal Set Detection<br/>(Wait / Alternatively / But)"]
+    B --> C{"Minimum Token Interval Control<br/>Tokens since last check ≥ k?"}
+    C -->|"No (Signal clustering, throttle skip)"| A
+    C -->|"Yes"| D["Thinking Sufficiency Check<br/>Third-party score s ∈ [0,100]"]
+    D -->|"s < τ, Insufficient reasoning"| A
+    D -->|"s ≥ τ, Sufficient reasoning"| E["Append &lt;/think&gt;<br/>Terminate reasoning and output answer"]
+```
 
 ### Key Designs
 
-1.  **Construction of the Reflection Signal Set**:
+**1. Reflection Signal Set: Using the model's own "hesitation" as a natural exit point**
 
-    - **Function**: Identify potential exit candidates during reasoning.
-    - **Mechanism**: By analyzing reasoning trajectories of Qwen3-32B and finding the optimal early exit points (the earliest positions where the model can already answer correctly), it was found that these points are often followed by explicit self-reflection behaviors. A set of reflection signals was constructed, including keywords like "Wait", "Alternatively", "But wait", and "Let me check".
-    - **Design Motivation**: Reflection signals mark the boundary where the model shifts from "reasoning" to "verification"—validation after a correct answer has been generated is usually redundant, making these positions natural candidates for early exit.
+The most difficult part of early exit methods is determining where to check. Inserting checks at fixed intervals is cumbersome and easy to mistime. The authors analyzed the reasoning trajectories of Qwen3-32B, marked the "optimal early exit point" (the earliest position where the correct answer could be derived) for each sample, and observed the model's subsequent behavior. They found that these points are followed by explicit self-reflection behaviors—words like "Wait", "Alternatively", "But wait", and "Let me check" appear repeatedly. These reflection triggers are collected into a signal set to serve as markers for exit candidates.
 
-2.  **Thought Sufficiency Check (Third-Person Self-Evaluation)**:
+The rationale is that reflection signals precisely mark the boundary where the model switches from "reasoning" to "verification." Correct answers often emerge before the reflection; subsequent repetitive checks are mostly redundant. Leveraging the model's own generation patterns to locate check timings fits model behavior better than external fixed-rhythm mechanisms.
 
-    - **Function**: Determine if the current reasoning chain is sufficient to reach the correct answer at a reflection signal.
-    - **Mechanism**: The question $Q$ and current reasoning chain $T$ are combined into a sufficiency assessment prompt. The model evaluates the sufficiency of the reasoning chain from a "third-person" perspective—evaluating whether the process is complete enough to derive the correct answer rather than assessing "is my answer correct". It outputs a scalar score $s \in [0, 100]$, and terminates if $s \geq \tau$.
-    - **Design Motivation**: Evaluating the sufficiency of the reasoning process is more reliable than directly evaluating answer confidence—overconfidence primarily occurs in "self" evaluations, whereas third-person assessment of the reasoning process is more objective. Experiments show third-person assessment accuracy is significantly higher than first-person.
+**2. Thinking Sufficiency Check: Evaluating "Is this reasoning enough?" from a third-person perspective rather than "Am I right?"**
 
-3.  **Minimum Token Interval Control**:
+Relying on answer confidence to decide when to stop hits the wall of overconfidence in reasoning models—incorrect answers often have high confidence, making judgments unreliable. Furthermore, this only works for tasks with standard short answers. DTSR bypasses confidence to evaluate the completeness of the reasoning process itself. At a reflection signal, the original question $Q$ and current reasoning chain $T$ are combined into a sufficiency assessment prompt. The model acts as a "third person" to judge if the reasoning is complete enough to derive the correct answer, outputting a scalar score $s \in [0, 100]$. When $s \geq \tau$ (default $\tau = 100$), it appends `</think>` to terminate and provide the final answer.
 
-    - **Function**: Avoid redundant checking overhead when reflection signals are dense.
-    - **Mechanism**: A requirement of at least $k$ tokens (default 64) between two sufficiency checks; otherwise, the current reflection signal is skipped. $k = 64$ provides optimal reasoning length and latency; $k < 64$ increases check overhead, while $k > 64$ causes the model to miss optimal exit points.
-    - **Design Motivation**: Reflection signals often appear consecutively (e.g., "Wait, but let me check"); checking every time creates excessive computational redundancy.
+The key lies in the "third-person" perspective shift. The authors hypothesize that overconfidence primarily occurs during "self" assessment—judging someone else's reasoning chain is more objective than judging one's own answer. Experiments confirm that third-person assessment accuracy is significantly higher than first-person. This shift also provides universality: since it evaluates the reasoning process rather than the answer correctness, it is not restricted to tasks with ground-truth answers, making it applicable to code generation and open-ended QA.
+
+**3. Minimum Token Interval Control: Throttling dense reflection signals**
+
+Reflection signals often appear in clusters (e.g., "Wait, but let me check" contains multiple triggers). Triggering a sufficiency check for every signal would cause overhead to accumulate rapidly. DTSR requires at least $k$ tokens (default $k = 64$) generated between two checks. This interval is a trade-off: $k < 64$ results in excessive checks and latency, while $k > 256$ easily misses the optimal exit point. $k = 64$ optimizes both reasoning length and latency.
 
 ### Loss & Training
 
-DTSR is a training-free method and requires no additional training. The sufficiency check step is inserted only during inference.
+DTSR is a training-free method and requires no additional training. Sufficiency assessment blocks are inserted only during inference.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Model | Overall Acc | Overall Tok | Reduction |
-| :--- | :--- | :--- | :--- | :--- |
+| Method | Model | Overall Acc | Overall Tok | Length Reduction |
+|------|------|------------|------------|---------|
 | Vanilla | Qwen3-8B | 81.9 | 6510 | - |
 | DEER | Qwen3-8B | 79.3 | 4532 | -30.4% |
 | **DTSR** | Qwen3-8B | **81.0** | **4428** | **-32.0%** |
@@ -90,45 +93,45 @@ DTSR is a training-free method and requires no additional training. The sufficie
 ### Ablation Study
 
 | Configuration | Key Result | Description |
-| :--- | :--- | :--- |
-| $k=16$ | Latency increases, length similar | Checks are too frequent |
-| $k=64$ | Optimal balance point | Default setting |
-| $k=256$ | Length increases | Misses optimal exit points |
-| $\tau=50$ | Acc drops significantly | Terminates reasoning too early |
-| $\tau=100$ | Optimal | High-confidence termination |
-| 1st Person | Acc drops | More severe overconfidence |
+|------|---------|------|
+| k=16 | Latency increased, length similar | Checks too frequent |
+| k=64 | Optimal balance | Default setting |
+| k=256 | Length increased | Missed optimal exit points |
+| τ=50 | Acc dropped significantly | Premature termination |
+| τ=100 | Optimal | High-confidence termination |
+| First-person Eval | Acc dropped | Worse overconfidence |
 
 ### Key Findings
 - On Qwen3-14B, DTSR even improved accuracy (84.8 vs 84.4), suggesting that removing redundant reasoning can improve results.
-- For programming tasks (LiveCodeBench), reasoning length reduction exceeded 50%, as redundant verification is more severe in coding.
-- DTSR's inference latency is lower than DEER (MATH-500: 1.9s vs 4.2s) because DEER requires full decoding of intermediate answers for each check, while DTSR only generates a single score.
-- The third-person evaluation paradigm (evaluating the reasoning process rather than self-assessment) is significantly superior to the first-person, validating the hypothesis that "overconfidence stems from self-assessment."
+- Reasoning length reduction exceeded 50% on programming tasks (LiveCodeBench), where redundant verification is more severe.
+- DTSR's inference latency is lower than DEER (MATH-500: 1.9s vs 4.2s) because DEER requires full decoding of intermediate answers for each check, while DTSR only needs to generate a score.
+- The third-person assessment paradigm (evaluating the reasoning process rather than self-assessment) is significantly superior to the first person, validating the hypothesis that "overconfidence stems from self-assessment."
 
 ## Highlights & Insights
 
-- **Redefining early exit from a metacognitive perspective**: Instead of judging "is the answer right," judging "is the reasoning enough"—this shift in perspective bypasses the overconfidence problem and is more universal (not limited to tasks with standard answers).
-- **Reflection signals as natural exit candidates**: Utilizing the reasoning model's own behavioral patterns (reflection trigger words) avoids the need for fixed-interval checks and better aligns with the model's generation logic.
-- **Discovery of Third-Person vs. First-Person Evaluation**: Models are more accurate at evaluating the reasoning of others than their own, a finding with broader implications for the field of LLM self-evaluation.
+- **Redefining the early exit problem via metacognition**: Instead of judging "is the answer right," it judges "is the reasoning enough"—this perspective shift bypasses overconfidence and is more universal (not limited to tasks with standard answers).
+- **Reflection signals as natural exit candidates**: By utilizing the behavior patterns of reasoning models themselves (reflection triggers), it avoids external fixed-interval mechanisms and aligns better with the model's generation routine.
+- **Third-person vs. First-person assessment**: The discovery that models evaluate others' reasoning more accurately than their own has broader implications for the field of LLM self-evaluation.
 
 ## Limitations & Future Work
 
-- Only validated on the Qwen3 series; reflection signal patterns in other reasoning models (DeepSeek-R1, o1, etc.) may differ.
-- The sufficiency check itself requires extra computation—while overall latency decreases, the check overhead might offset savings in some scenarios (where $k$ is very small).
-- The optimal value of threshold $\tau$ might change with task difficulty—keeping it fixed at 100 may not be flexible enough.
-- Integration with training-based methods has not been explored; the sufficiency check module might perform better if specifically trained.
+- Validated only on the Qwen3 series; reflection signal patterns in other reasoning models (DeepSeek-R1, o1, etc.) may differ.
+- Sufficiency checks require extra computation—while overall latency decreases, the overhead of checks might offset savings in specific scenarios where $k$ is small.
+- The optimal value for threshold $\tau$ may vary with task difficulty; fixing it at 100 might lack flexibility.
+- The potential for combination with training-based methods was not explored—a trained sufficiency assessment module might perform better.
 
 ## Related Work & Insights
 
-- **vs DEER**: Methods based on intermediate answer entropy are affected by overconfidence and limited to short-answer tasks; DTSR evaluates the reasoning process instead of the answer, making it more universal and reliable.
-- **vs Dynasor-CoT**: Still requires extra verification tokens after consecutive answer consistency and cannot reach the optimal exit point; DTSR can exit earlier by evaluating directly at reflection signals.
-- **vs NoWAIT**: Reduces redundancy by masking reflection tokens but disrupts the model's natural reasoning ability; DTSR preserves full reasoning ability and terminates only at appropriate moments.
+- **vs DEER**: Methods based on intermediate answer entropy are affected by overconfidence and limited to short-answer tasks; DTSR evaluates the reasoning process, making it more universal and reliable.
+- **vs Dynasor-CoT**: Requires extra validation tokens after answers become consistent, failing to reach the absolute optimal exit point; DTSR's direct assessment at reflection signals allows for earlier exits.
+- **vs NoWAIT**: Reduces redundancy by masking reflection tokens but disrupts the model's natural reasoning ability; DTSR preserves full reasoning ability and only terminates at appropriate times.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The metacognitive perspective and third-person evaluation are innovative, though the overall framework is intuitive.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three model sizes, six datasets, and multi-dimensional ablations provide sufficient evidence.
+- Novelty: ⭐⭐⭐⭐ Metacognitive perspective and third-person evaluation are innovative, though the framework is intuitive.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing across three model sizes, six datasets, and multi-dimensional ablations.
 - Writing Quality: ⭐⭐⭐⭐ Motivation and methodology are clearly described with in-depth experimental analysis.
-- Value: ⭐⭐⭐⭐ Practical value for reasoning efficiency; the training-free approach is easy to deploy.
+- Value: ⭐⭐⭐⭐ Significant practical value for reasoning efficiency; training-free methods are easy to deploy.
 
 <!-- RELATED:START -->
 
@@ -140,7 +143,7 @@ DTSR is a training-free method and requires no additional training. The sufficie
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
-- [\[ICLR 2026\] Agentified Assessment of Logical Reasoning Agents](../../ICLR2026/llm_reasoning/agentified_assessment_of_logical_reasoning_agents.md)
+- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 
 </div>
 

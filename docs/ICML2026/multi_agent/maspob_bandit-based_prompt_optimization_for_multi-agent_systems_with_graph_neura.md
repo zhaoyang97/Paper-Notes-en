@@ -1,75 +1,84 @@
 ---
 title: >-
-  [Paper Note] MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent
+  [Paper Note] MASPOB: 用 GNN 代理 + LinUCB + 坐标上升做多智能体提示优化
 description: >-
-  [ICML 2026][Multi-Agent][MAS] MASPOB treats multi-agent system (MAS) prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topology…
+  [ICML 2026][Multi-Agent][MAS] MASPOB reformulates multi-agent system prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topologies, LinUCB in the embedding space to compute epistemic uncertainty, and coordinate ascent to decompose joint search into sequential
 tags:
-  - "ICML 2026"
-  - "Multi-Agent"
-  - "MAS"
-  - "prompt optimization"
-  - "GAT"
-  - "LinUCB"
-  - "coordinate ascent"
-  - "black-box optimization"
+  - ICML 2026
+  - Multi-Agent
+  - MAS
+  - prompt optimization
+  - GAT
+  - LinUCB
 date: 2026-05-08
-content_hash: 1d09bd20d9d247ce
+content_hash: b657693eefad91ef
 ---
-
 # MASPOB: Multi-Agent Prompt Optimization via GNN Surrogate + LinUCB + Coordinate Ascent
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.02630](https://arxiv.org/abs/2603.02630)  
 **Code**: https://github.com/HZ1008/MASPOB  
-**Area**: Multi-Agent / Prompt Optimization / Bayesian Optimization  
+**Area**: Multi-Agent Systems / Prompt Optimization / Bayesian Optimization  
 **Keywords**: MAS, prompt optimization, GAT, LinUCB, coordinate ascent, black-box optimization
 
 ## TL;DR
-MASPOB treats multi-agent system (MAS) prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topology, employs LinUCB in the embedding space to calculate epistemic uncertainty, and uses coordinate ascent to decompose joint search into sequential single-agent problems. This reduces complexity from $\mathcal{O}(\prod |\mathcal{P}_i|)$ to $\mathcal{O}(\sum |\mathcal{P}_i|)$. Across 6 benchmarks (QA/Code/Math), it achieves an average of 80.58, outperforming MIPRO (78.87), AFlow (78.52), and IO (68.56).
+MASPOB reformulates multi-agent system prompt optimization as budget-constrained black-box optimization. It utilizes a GAT surrogate model to capture prompt coupling under workflow topologies, LinUCB in the embedding space to compute epistemic uncertainty, and coordinate ascent to decompose joint search into sequential individual problems. This reduces search complexity from $\mathcal{O}(\prod |\mathcal{P}_i|)$ to $\mathcal{O}(\sum |\mathcal{P}_i|)$. Across 6 benchmarks (QA/Code/Math), it achieves an average score of 80.58, surpassing MIPRO (78.87), AFlow (78.52), and IO (68.56).
 
 ## Background & Motivation
 
-**Background**: LLM multi-agent systems (MAS) enable multiple specialized agents to collaborate on complex tasks. MAS performance depends not only on the LLM itself but also on the workflow topology and agent prompts. While frameworks like AFlow and GPTSwarm explore automated topology, many real-world workflows are fixed due to expert validation and security audits, making prompt optimization the only feasible lever for improvement.
+**Background**: LLM Multi-Agent Systems (MAS) enable multiple specialized agents to collaborate on complex tasks. MAS performance depends not only on the LLM itself but also on the workflow topology and agent prompts. While frameworks like AFlow and GPTSwarm explore automated topology optimization, many workflows are fixed due to expert validation and safety audits, making prompt optimization the primary lever for performance improvement.
 
-**Limitations of Prior Work**: Prompt optimization in MAS is a combined black-box problem presenting a triple challenge: (1) Expensive evaluation: a single metric measurement requires running the full end-to-end MAS with multiple LLM calls; (2) Topology-induced coupling: changes in an upstream agent's prompt alter the input distribution for downstream agents, making the objective non-decomposable; (3) Combinatorial explosion: the joint prompt space for $N$ agents is a Cartesian product.
+**Limitations of Prior Work**: Prompt optimization in MAS presents a combined black-box challenge: (1) Expensive evaluation: A single evaluation requires running the complete end-to-end MAS including multiple LLM calls; (2) Topology-induced coupling: Changes in an upstream agent's prompt alter the input distribution for downstream agents, making the objective non-decomposable; (3) Combinatorial explosion: The joint prompt space for $N$ agents is a Cartesian product.
 
-**Key Challenge**: Existing prompt optimizers are either single-agent (OPRO/PromptBreeder/Instinct) and ignore topology by optimizing independently, or multi-stage but topology-agnostic (MIPRO using TPE) by modeling dependencies implicitly. Given a budget of 50 evaluations and an exponentially growing prompt space, they are sample-inefficient and miss high-quality coordinated combinations.
+**Key Challenge**: Existing prompt optimizers are either single-agent-based (OPRO, PromptBreeder, Instinct) which ignore topology, or multi-stage but topology-agnostic (e.g., MIPRO using TPE for implicit dependency). Given a typical budget of 50 evaluations and an exponentially growing prompt space, these methods are sample-inefficient and often miss high-quality coordinated prompt combinations.
 
-**Goal**: Simultaneously address the three challenges: sample-efficient exploration, topology-aware modeling, and scalable combinatorial search.
+**Goal**: Simultaneously address three challenges: sample-efficient exploration, topology-aware modeling, and scalable combinatorial search.
 
-**Key Insight**: Reframe prompt optimization as a contextual bandit problem. UCB provides the exploration/exploitation balance; a GNN serves as a surrogate to capture inter-agent dependencies; coordinate ascent decomposes combinatorial optimization into sequential single-agent problems, reducing complexity from $O(\prod |\mathcal{P}_i|)$ to $O(\sum |\mathcal{P}_i|)$.
+**Key Insight**: Reframe prompt optimization as a contextual bandit problem. Use UCB to balance exploration and exploitation, GNN as a surrogate to capture inter-agent dependencies, and coordinate ascent to decompose combinatorial optimization into sequential single-agent updates, reducing complexity from $\mathcal{O}(\prod |\mathcal{P}_i|)$ to $\mathcal{O}(\sum |\mathcal{P}_i|)$.
 
-**Core Idea**: A three-part strategy. GAT message passing provides topology-aware $\mu(c)$; the information matrix $\mathbf{M}$ calculates uncertainty $\sigma(c) = \sqrt{\Phi(c)^\top \mathbf{M}^{-1} \Phi(c)}$; UCB $= \mu(c) + \alpha \sigma(c)$ guides the search; and coordinate ascent optimizes single-agent prompts sequentially each round.
+**Core Idea**: A three-part framework: GAT message passing for topology-aware mean prediction $\mu(c)$; an information matrix $\mathbf{M}$ for epistemic uncertainty $\sigma(c) = \sqrt{\Phi(c)^\top \mathbf{M}^{-1} \Phi(c)}$; and a UCB function $= \mu(c) + \alpha \sigma(c)$ to guide search via coordinate ascent.
 
 ## Method
 
 ### Overall Architecture
 
-The MAS workflow is modeled as a DAG $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ with $N$ agents, where each agent $a_i$ is bound to a prompt $p_i \in \mathcal{P}_i$. The objective is to find $c^* = \arg\max_c s(c)$ within $T = 50$ evaluation budgets. The process has three stages: (1) Warmup: $T_0$ rounds of random sampling + initial GAT training; (2) Main loop of Coordinate ascent + UCB for $T - T_0$ rounds, selecting the prompt with the highest UCB for each agent based on the current $c^*$ and evaluating the new $c$; (3) Updating the GAT, information matrix, and incumbent. The text encoder uses Qwen3-Embedding-8B, and the LLM backbone is GPT-4o-mini.
+MASPOB optimizes prompts for a fixed multi-agent workflow DAG $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ within a budget of $T=50$ end-to-end evaluations. Each of the $N$ agents is associated with a candidate prompt pool $p_i \in \mathcal{P}_i$, with the goal of finding $c^* = \arg\max_c s(c)$. The process consists of three stages: first, a warm-up phase using $T_0$ random samples to train the GAT surrogate; then, the main loop where coordinate ascent starts from the current best combination $c^*$ to select agents' prompts with the highest UCB; finally, a real evaluation validates the new combination, updating the GAT model, information matrix, and incumbent. Prompt text is encoded using Qwen3-Embedding-8B, and the MAS backbone uses GPT-4o-mini.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 380, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Fixed DAG Workflow G + Candidate Prompt Pools<br/>Budget T=50 End-to-End Evaluations"] --> EMB["Qwen3-Embedding: Prompt → Embedding Φ"]
+    EMB --> W["Warm-up: Random sampling T0, train GAT surrogate"]
+    W --> LOOP
+    subgraph LOOP["Main Loop (One real evaluation per round)"]
+        direction TB
+        GAT["GAT Surrogate Model<br/>Topology-aware prediction μ(c)"] --> SCORE["UCB(c) = μ(c) + α·σ(c)"]
+        LIN["LinUCB + Information Matrix M<br/>Epistemic uncertainty σ(c)"] --> SCORE
+        SCORE --> CA["Coordinate Ascent<br/>Select UCB-maximizing prompt per agent from c*"]
+        CA --> EVAL["End-to-End Evaluation of c → Score s(c)"]
+        EVAL --> UPD["Update GAT, Information Matrix M, and Best c*"]
+        UPD -->|Budget Remaining| GAT
+    end
+    LOOP --> OUT["Output: Optimal Prompt Combination c*"]
+```
 
 ### Key Designs
 
-1. **GAT Surrogate Model for Topology-induced Coupling**:
+**1. GAT Surrogate Model: Encoding "Global Sensitivity to Local Prompt Changes"**
 
-    - **Function**: Explicitly model the chain of "prompt changed → downstream agent input distribution changed → task performance changed" within the prediction.
-    - **Mechanism**: Each agent is a node with feature $\Phi(p_i)$, and edges represent workflow dependencies plus self-loops. Multi-head GAT message passing is performed as $\mathbf{h}_i^{(l+1)} = \|_{k=1}^K \sigma(\sum_{j \in \mathcal{N}(i) \cup \{i\}} \alpha_{ij}^{(k)} \mathbf{W}^{(l,k)} \mathbf{h}_j^{(l)})$, where attention $\alpha_{ij}^{(k)}$ is computed via leaky-ReLU + softmax. Finally, mean pooling + MLP yields $\mu(c)$.
-    - **Design Motivation**: OPRO/PromptBreeder treat MAS as a black box; MIPRO models dependencies implicitly and weakly. GAT explicitly encodes workflow topology, and its attention mechanism learns the relative importance of specific edges.
+The hardest part of MAS prompt optimization is topology-induced coupling: changing an upstream prompt alters its output, shifting the input distribution for downstream agents. MASPOB uses the workflow topology as the inductive bias for the surrogate. Each agent is a node with its prompt embedding $\Phi(p_i)$ as the node feature. A multi-head GAT performs message passing: $\mathbf{h}_i^{(l+1)} = \|_{k=1}^K \sigma(\sum_{j \in \mathcal{N}(i) \cup \{i\}} \alpha_{ij}^{(k)} \mathbf{W}^{(l,k)} \mathbf{h}_j^{(l)})$, where attention weights $\alpha_{ij}^{(k)}$ are computed via Leaky-ReLU and Softmax. Mean pooling over all nodes followed by an MLP yields the performance prediction $\mu(c)$. This explicitly encodes prompt propagation through the topology.
 
-2. **LinUCB + Information Matrix for Epistemic Uncertainty**:
+**2. LinUCB + Information Matrix: Quantifying Uncertainty Under Limited Budget**
 
-    - **Function**: Balance exploitation (high GAT predicted scores) and exploration (unseen combinations) under a budget of 50.
-    - **Mechanism**: Maintain an information matrix $\mathbf{M} \in \mathbb{R}^{Nd \times Nd}$ initialized to $\lambda \mathbf{I}$, updated as $\mathbf{M} \leftarrow \mathbf{M} + \Phi(c) \Phi(c)^\top$ after each evaluation. Combined embedding $\Phi(c) = [\Phi(p_1); \dots; \Phi(p_N)] \in \mathbb{R}^{Nd}$; uncertainty $\sigma(c) = \sqrt{\Phi(c)^\top \mathbf{M}^{-1} \Phi(c)}$; UCB $= \mu(c) + \alpha \sigma(c)$.
-    - **Design Motivation**: Since LLM evaluation is expensive, sample efficiency is mandatory. The information matrix is a classic tool from LinUCB; applying it to prompt embeddings provides a natural novelty signal more intelligent than $\epsilon$-greedy.
+Since each evaluation consumes multiple LLM calls, sample efficiency is critical. Relying solely on GAT predictions (pure exploitation) risks local optima. MASPOB adopts the information matrix $\mathbf{M} \in \mathbb{R}^{Nd \times Nd}$ from LinUCB, initialized as $\lambda \mathbf{I}$. After each evaluation, it is updated: $\mathbf{M} \leftarrow \mathbf{M} + \Phi(c)\Phi(c)^\top$, where $\Phi(c) = [\Phi(p_1); \dots; \Phi(p_N)]$ is the concatenated embedding. Epistemic uncertainty is computed as $\sigma(c) = \sqrt{\Phi(c)^\top \mathbf{M}^{-1} \Phi(c)}$. This allows the acquisition function $\mathrm{UCB}(c) = \mu(c) + \alpha\sigma(c)$ to balance predicted performance and novelty naturally.
 
-3. **Coordinate Ascent + UCB for Linear Scaling**:
+**3. Coordinate Ascent: Decomposing Exponential Search into Linear Search**
 
-    - **Function**: Reduce calculating UCB for all $\prod |\mathcal{P}_i|$ combinations to calculating $|\mathcal{P}_i|$ UCB values per agent.
-    - **Mechanism**: Starting from the current best $c^*$, agents are updated sequentially: $p_i^* \leftarrow \arg\max_{p \in \mathcal{P}_i} \mathrm{UCB}(p_1^*, \dots, p_{i-1}^*, p, p_{i+1}^*, \dots, p_N^*)$. Each UCB evaluation only requires a GAT forward pass without running the MAS, incurring almost zero cost; full MAS evaluation is performed only once at the end of each round.
-    - **Design Motivation**: UCB+GNN forward passes are cheap while MAS evaluations are expensive—distinguishing between "expensive" and "cheap" operations allows for clever compute allocation.
+The joint prompt space $\prod_i |\mathcal{P}_i|$ grows exponentially. MASPOB uses coordinate ascent to reduce dimensionality: starting from $c^*$, it optimizes one agent at a time while keeping others fixed: $p_i^* \leftarrow \arg\max_{p \in \mathcal{P}_i} \mathrm{UCB}(p_1^*, \dots, p_{i-1}^*, p, p_{i+1}^*, \dots, p_N^*)$. Total iterations decrease to $\mathcal{O}(\sum_i |\mathcal{P}_i|)$. Crucially, GAT forwards are nearly zero-cost compared to real end-to-end evaluations, which are only performed once per round after the coordinate ascent converges.
 
 ## Key Experimental Results
 
-### Main Results: 6 Benchmarks (GPT-4o-mini, Average of 3 runs)
+### Main Results: 6 Benchmarks (GPT-4o-mini, Average of 3 Runs)
 
 | Method | HotpotQA | DROP | HumanEval | MBPP | GSM8K | MATH | Average |
 |------|---|---|---|---|---|---|---|
@@ -80,54 +89,44 @@ The MAS workflow is modeled as a DAG $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ 
 | Instinct | 69.92 | 71.90 | 90.08 | 70.23 | 92.64 | 52.40 | 74.53 |
 | AFlow | 73.42 | 79.48 | 91.09 | 79.96 | 93.36 | 53.83 | 78.52 |
 | MIPRO | 74.37 | 79.13 | 91.35 | 80.65 | 92.80 | 54.90 | 78.87 |
-| **MASPOB** | **75.43** | **82.28** | **94.15** | **80.65** | **93.90** | **57.05** | **80.58** |
+| **Ours (MASPOB)** | **75.43** | **82.28** | **94.15** | **80.65** | **93.90** | **57.05** | **80.58** |
 
-MASPOB achieves SOTA in 5 out of 6 tasks, with an average of 80.58 vs MIPRO's 78.87 (+1.71) and IO's 68.56 (+12.02).
-
-### Complex Topology Experiments
-
-On larger topologies automatically generated by AFlow (e.g., HotpotQA with 8 agents, DROP with 7, HumanEval with 7), MASPOB remains the top performer, with its advantage increasing as the number of agents grows—validating the specific value of explicit topology modeling with GATs.
+Ours achieves SOTA in 5 out of 6 tasks, with an average of 80.58 vs. Prev. SOTA (MIPRO) 78.87 (+1.71 Gain) and IO 68.56 (+12.02 Gain).
 
 ### Key Findings
 
-- **Average +12% relative to IO**: Prompt optimization overall provides a +12 score gain; MASPOB adds another +1.7 points over MIPRO.
-- **Maximum improvement on MATH**: Mathematical reasoning requires multi-step logic chains, where topology coupling is strongest; MASPOB shows a +2.15 gain over MIPRO on MATH.
-- **HumanEval at 94.15**: The ceiling for code generation is pushed to 94.15, which is particularly effective for high-value industrial scenarios.
-- **Superiority under identical budget**: When all methods are restricted to a 50-evaluation budget, MASPOB's sample efficiency provides a genuine advantage.
+- **Average +12% relative to IO**: Prompt optimization significantly enhances MAS performance.
+- **Maximum Gain on MATH**: Mathematical reasoning involves strong logical chains and topology coupling; MASPOB scores +2.15 over MIPRO.
+- **HumanEval 94.15**: Sets a new ceiling for code generation, indicating high utility for industrial applications.
+- **Sample Efficiency**: Under the strict 50-evaluation budget, MASPOB outperforms all baselines.
 
 ## Highlights & Insights
 
-- **Clear mapping of three challenges to three mechanisms**: expensive sampling → UCB; topology coupling → GAT; combinatorial space → coordinate ascent. Each component solves a specific pain point.
-- **GNN as surrogate for prompt optimization**: Injecting workflow topology as an inductive bias into the surrogate is a methodological innovation.
-- **LinUCB in prompt embedding space**: Transferring contextual bandit tools to LLM prompt optimization eliminates the need for manual $\epsilon$ tuning.
-- **Coordinate ascent + cheap UCB forward**: Separating "expensive evaluations" from "cheap surrogate forwards" is a smart allocation of computational resources.
-- **6 benchmarks across 3 domains**: Covers QA, Code, and Math, demonstrating task-agnostic versatility.
-- **Adaptable to other multi-agent systems**: The approach can be generalized to any scenario requiring sample-efficient optimization over a structured combinatorial design space.
+- **Mapping Mechanisms to Challenges**: UCB addresses expensive sampling; GAT addresses topology coupling; coordinate ascent addresses combinatorial explosion.
+- **GNN as Surrogate**: The first instance of using workflow topology as an inductive bias for a prompt optimization surrogate.
+- **LinUCB in Embedding Space**: Successfully adapts contextual bandit tools to LLM prompt optimization without manual exploration rate tuning.
+- **Efficient Compute Allocation**: Decoupling cheap surrogate forwards from expensive real evaluations allows for more thorough search within a tight budget.
 
 ## Limitations & Future Work
 
-- **Dependence on fixed workflows**: Assumes the topology is pre-designed and only optimizes prompts—though this fits the problem's premise.
-- **Limited GAT training data**: 50 total evaluation samples might be insufficient for a GNN, potentially leading to overfitting; the selection of warmup $T_0$ requires tuning.
-- **Prompt embedding quality depends on Qwen3-Embedding**: Fixed encoding might limit the expressiveness of the GAT.
-- **Lack of comparison with DSPy / TextGrad**: Missing RL-style and gradient-based baselines.
-- **Single backbone (GPT-4o-mini)**: Marginal gains under stronger LLMs remain unknown.
-- **Uncertain long-horizon stability**: Whether the advantage persists beyond a 500+ evaluation budget is unknown.
-- **Missing theoretical regret analysis**: Regret bounds for LinUCB in combinatorial spaces are not provided.
+- **Fixed Workflows**: Currently assumes a pre-designed topology; does not optimize the graph structure itself.
+- **Sparse Data**: 50 evaluation samples may lead to overfit GAT models; the $T_0$ warm-up setting requires careful tuning.
+- **Embedding Dependency**: Accuracy depends on the quality of Qwen3-Embedding; static embeddings may limit GAT expressiveness.
+- **Comparative Baseline Range**: Lacks comparisons with RL-style (e.g., DSPy) or gradient-based methods (e.g., TextGrad).
 
 ## Related Work & Insights
 
-- **vs OPRO / PromptBreeder / Instinct**: These are single-agent and ignore topology; MASPOB uses GAT for explicit modeling.
-- **vs MIPRO**: Uses multi-stage TPE where dependency is implicit; MASPOB is explicit.
-- **vs AFlow / GPTSwarm**: These optimize topology; Ours optimizes prompts. The two are orthogonal and can be combined.
-- **vs Bayesian Optimization**: Classic BO uses GP surrogates; MASPOB's GNN is better suited for structured combinatorial spaces.
-- **Insights**: (1) GNN-surrogate + UCB can be applied to any sample-efficient black-box optimization in structured discrete spaces; (2) coordinate ascent paired with cheap surrogate forwarding is a universal trick for combinatorial problems; (3) workflow topology is a source of inductive bias that should be integrated into downstream modeling like prompt optimization.
+- **vs. Single-Agent Optimizers**: OPRO/Instinct ignore topology; Ours uses GAT for explicit modeling.
+- **vs. MIPRO**: MIPRO uses implicit TPE modeling; Ours uses explicit GNN dependencies.
+- **vs. Toplogy Optimizers (AFlow)**: These optimize graph structure; Ours optimizes node prompts. They are orthogonal and can be combined.
+- **Insight**: GNN-surrogates are highly effective for black-box optimization in structured discrete spaces like multi-agent workflows.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The combination of GNN surrogate + LinUCB + coordinate ascent applied to MAS prompt optimization is a methodological innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Solid results across 6 benchmarks in 3 domains + 7 baselines + complex topology experiments; lacks RL-style and varied LLM backbones.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem motivation (triple challenges), corresponding methods, and reproducible pseudo-code.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses MAS deployment pain points (fixed workflows + prompt optimization). Open-source code lowers the barrier, providing practical value for production LLM agent systems.
+- **Novelty**: ⭐⭐⭐⭐⭐ Integrating GNN surrogates with LinUCB and coordinate ascent for MAS prompt optimization is a significant methodological contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid results across 6 benchmarks with 7 baselines; however, limited backbone LLM variety.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear motivation, well-defined mechanisms, and reproducible pseudo-code.
+- **Value**: ⭐⭐⭐⭐⭐ Directly addresses deployment pains in production MAS (fixed workflows + expensive optimization) with open-source code.
 
 <!-- RELATED:START -->
 
@@ -135,11 +134,11 @@ On larger topologies automatically generated by AFlow (e.g., HotpotQA with 8 age
 
 ## Related Papers
 
-- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
 - [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
-- [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/multi_agent/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
+- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
+- [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
+- [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
+- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 
 </div>
 

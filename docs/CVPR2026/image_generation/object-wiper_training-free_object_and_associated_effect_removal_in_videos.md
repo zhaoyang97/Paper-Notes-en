@@ -2,83 +2,103 @@
 title: >-
   [Paper Note] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos
 description: >-
-  [CVPR 2026][Image Generation][Video object removal] This paper presents Object-WIPER, the first training-free framework for removing objects and their associated visual effects (shadows, reflections, mirror images…
+  [CVPR 2026][Image Generation][Attention] This paper proposes Object-WIPER, the first training-free framework for removing video objects and their associated effects (shadows, reflections, mirrors, etc.). It leverages text-visual cross-attention and visual self-attention in DiT to localize associated effect regions. Clean removal is achieved through foreground
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Video object removal"
-  - "associated effects"
-  - "training-free"
-  - "attention mechanism"
-  - "diffusion models"
+  - CVPR 2026
+  - Image Generation
+  - Attention
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 2327c5ab5513b125
+content_hash: 3657c39a4cc0a10c
 ---
-
 # Object-WIPER: Training-Free Object and Associated Effect Removal in Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.06391](https://arxiv.org/abs/2601.06391)  
 **Code**: Coming soon  
-**Area**: Image Generation / Video Editing
-**Keywords**: Video object removal, associated effects, training-free, attention mechanism, diffusion models
+**Area**: Image Generation / Video Editing  
+**Keywords**: Video Object Removal, Associated Effects, Training-Free, Attention Mechanism, Diffusion Models
 
 ## TL;DR
-This paper presents Object-WIPER, the first training-free framework for removing objects and their associated visual effects (shadows, reflections, mirror images, etc.) in videos. It leverages text-visual cross-attention and visual self-attention within DiT to localize associated effect regions, achieves clean removal via foreground re-initialization and attention scaling, and introduces the TokSim metric along with WIPER-Bench, a real-world benchmark.
+This paper proposes Object-WIPER, the first training-free framework for removing video objects and their associated effects (shadows, reflections, mirrors, etc.). It leverages text-visual cross-attention and visual self-attention in DiT to localize associated effect regions. Clean removal is achieved through foreground re-initialization and attention scaling. The paper also introduces the TokSim metric and the WIPER-Bench real-world benchmark.
 
 ## Background & Motivation
 
-**Background**: Video object removal is a critical technique in film production and privacy protection. Classical methods (PatchMatch / graph cut) and learning-based methods (Propainter) focus on inpainting the object region while entirely ignoring associated effects (shadows/reflections). Recent diffusion-based approaches (VACE/Videopainter) also preserve associated effects.
+**Background**: Video object removal is a core technology for film production and privacy protection. Classic methods (PatchMatch/GraphCut) and learning-based methods (Propainter) focus on filling the object region but completely ignore associated effects (shadows/reflections). Recent diffusion-based methods (VACE/Videopainter) also tend to retain these effects.
 
-**Limitations of Prior Work**: (a) Nearly all existing methods retain shadows/reflections, producing visual artifacts; (b) ROSE handles associated effects but requires training on large amounts of synthetic data; (c) Omnimatte-Zero extends user masks to cover associated regions but relies on an external point-tracking model (TAP-Net), which fails under fast motion or transparent objects, and its expansion strategy is suboptimal.
+**Limitations of Prior Work**: (a) Almost all existing methods retain shadows/reflections, leading to visual artifacts; (b) ROSE can handle associated effects but requires extensive training on synthetic data; (c) Omnimatte-Zero extends associated regions from user masks but depends on external point-tracking models (TAP-Net), failing under fast motion or transparent objects, with suboptimal extension strategies.
 
-**Key Challenge**: Object removal is not equivalent to region inpainting — a truly clean removal must simultaneously eliminate all "visual traces" of the object (shadows, reflections, mirror images, etc.).
+**Key Challenge**: Object removal is not merely region filling—it must simultaneously remove "visual traces" of the object (shadows, reflections, mirrors, etc.) to achieve a clean result.
 
-**Goal**: Simultaneously remove objects and all their associated visual effects without any training.
+**Goal**: To simultaneously remove objects and all associated visual effects in a training-free manner.
 
-**Key Insight**: Exploit the shared text-visual embedding space in MMDiT to directly localize associated effects, without relying on external models.
+**Key Insight**: Utilize the shared text-visual embedding space in MMDiT to directly localize associated effects without depending on external models.
 
-**Core Idea**: Cross-attention localizes associated effect seeds → self-attention refines → foreground re-initialization + attention scaling → adaptive temporal masking.
+**Core Idea**: Use cross-attention to locate associated effect seeds $\rightarrow$ refine with self-attention $\rightarrow$ foreground re-initialization + attention scaling $\rightarrow$ adaptive temporal masking.
 
 ## Method
 
 ### Overall Architecture
-The inputs are an RGB video $\mathcal{I}_k$, an object mask $\mathbf{M}^{obj}$, and text prompts $\{P_s, P_T\}$ describing the object and its effects. Processing proceeds in three steps: (1) associated effect localization; (2) inversion to obtain structured noise while saving background values; (3) foreground re-initialization followed by denoising to generate a clean video.
+Object-WIPER aims to cleanly remove an object from a video—not just the object itself, but also its "visual traces" like shadows and reflections on water or mirrors—entirely without training any parameters, using only inference-time manipulation on a pre-trained text-to-video DiT. The input consists of an RGB video $\mathcal{I}_k$, an object mask $\mathbf{M}^{obj}$, and two text prompts $\{P_s, P_T\}$ (describing the object and its effects, respectively).
+
+The pipeline follows three steps: first, localize all associated effect positions within the DiT attention to obtain an effect mask $\mathbf{M}^{AE}$; second, invert the video back to noise while preserving background latent values; finally, replace the foreground (object + effects) region with pure noise and re-denoise, allowing the model to "fill" the area based on background context. The main challenges are localization in the first step (as effects lack ground-truth masks) and clean re-generation in the third step (removing the object without damaging the background).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: RGB Video + Object Mask + Text Prompts (Object/Effects)"] --> B["Associated Effect Localization<br/>Cross-attn Proposal → Self-attn Completion → Effect Mask"]
+    B --> C["Inversion to Noise<br/>Timestep-Adaptive Masking expands object mask with noise steps"]
+    C -->|"Attn Scaling c<1: Protect Background Latent"| D["Save Pure Background Latent"]
+    D --> E["Foreground Re-initialization<br/>Object ∪ Effect Region set to Gaussian Noise"]
+    E -->|"Attn Scaling b>1: Redraw Foreground based on Background"| F["Denoising Re-generation<br/>Output Clean Video"]
+```
 
 ### Key Designs
 
-1. **Associated Effect Localization**:
+**1. Associated Effect Localization: Excavating shadows and reflections directly from DiT attention**
 
-    - Function: Identify the spatial locations of object-associated effects (shadows, reflections, etc.) in the video.
-    - Mechanism: **Two-step approach** — Step 1: Extract visual tokens highly correlated with object/effect text tokens from $T\to I$ cross-attention: $\bar{\mathbf{A}}^{\tilde{T}\to I} = \text{Mean}(\text{Softmax}(\frac{\mathbf{Q}_{\tilde{T}}\cdot\mathbf{K}_I^\top}{\sqrt{d}}))$, then apply Otsu thresholding to obtain a proposal mask $m^{PRO}$. Step 2: Use visual self-attention $\mathbf{A}^{I\to I}$ to compute each token's response ratio to $m^{PRO}$, then threshold to obtain the final mask $\mathbf{M}^{AE}$.
-    - Design Motivation: (a) Expanding only from the object mask (as in Omnimatte-Zero) misses weakly activated regions; (b) Cross-attention provides semantic localization but is incomplete (with internal holes); (c) Self-attention refinement fills these holes — tokens belonging to the same object necessarily exhibit high self-attention.
-    - Difference from Omnimatte-Zero: Does not rely on an external point-tracking model; leverages DiT's intrinsic attention for greater robustness.
+Since effects like shadows and reflections lack user annotations, the simplest approach (Omnimatte-Zero) is to expand from the object mask, but this misses weakly activated edges and requires an additional point-tracking model. Object-WIPER utilizes the natural semantic correlation of the shared text-visual embedding space in MMDiT for two-step localization. First, specific visual tokens highly correlated with object/effect text tokens are extracted from text-to-image cross-attention. After head-averaging and Otsu thresholding, a proposal mask $m^{PRO}$ is generated:
 
-2. **Timestep-Adaptive Masking**:
+$$\bar{\mathbf{A}}^{\tilde{T}\to I} = \text{Mean}\Big(\text{Softmax}\big(\tfrac{\mathbf{Q}_{\tilde{T}}\cdot\mathbf{K}_I^\top}{\sqrt{d}}\big)\Big)$$
 
-    - Function: Address the insufficient coverage of fixed masks in noise space.
-    - Mechanism: During inversion, compute an object response score $RS_p(j) = \frac{\sum_{y\in\mathbf{M}^{obj}(j)}A_{p,y}^{I\to I}}{\sum_{x\in\mathcal{I}(j)}A_{p,x}^{I\to I}}$; as the timestep increases, the object's "presence" diffuses via self-attention, and thresholding yields an adaptive mask $\hat{M}_t^{obj}$.
-    - Design Motivation: During inversion toward the noise distribution, self-attention causes the object's influence to spread progressively; a fixed mask cannot fully cover this spread.
+While cross-attention provides correct semantic localization, it often contains holes or is incomplete. Thus, the second step uses visual self-attention $\mathbf{A}^{I\to I}$ for completion: calculating the response ratio of each visual token to the $m^{PRO}$ region. The final associated effect mask $\mathbf{M}^{AE}$ is obtained via thresholding. The intuition is that self-attention between tokens belonging to the same entity (including its shadow/reflection) is naturally high, allowing it to fill holes and weak edges missed by cross-attention. 
 
-3. **Attention Scaling**:
+**2. Timestep-Adaptive Masking: Letting the mask "grow" with noise diffusion**
 
-    - During inversion: Suppress background attention to the foreground: $\tilde{\mathbf{A}}^{bg\to obj} = \text{Softmax}(\frac{\mathbf{Q}_I^{bg}\cdot(c\mathbf{K}_I^{obj})^\top}{\sqrt{d}})$, where $c<1$.
-    - During denoising: Amplify foreground attention to the background: $\tilde{\mathbf{A}}^{obj\to bg} = \text{Softmax}(\frac{\mathbf{Q}_I^{obj}\cdot(b\mathbf{K}_I^{bg})^\top}{\sqrt{d}})$, where $b>1$.
-    - Design Motivation: During inversion, reduce background "contamination" by the foreground; during denoising, enable the re-initialized foreground to actively acquire semantics from the background.
+During inversion to noise, self-attention causes the object's representation to diffuse outward. A fixed mask cannot cover the area truly affected by the object at high noise levels. Here, the object response score is re-calculated at each inversion step:
 
-4. **Foreground Re-initialization**:
+$$RS_p(j) = \frac{\sum_{y\in\mathbf{M}^{obj}(j)}A_{p,y}^{I\to I}}{\sum_{x\in\mathcal{I}(j)}A_{p,x}^{I\to I}}$$
 
-    - Function: Replace the foreground region in the inverted latent with Gaussian noise.
-    - Mechanism: $\tilde{\mathbf{Z}}_1 = \mathbf{Z}_1\odot(1-\mathbf{M}^{obj}\cup\mathbf{M}^{AE}) + \varepsilon\odot(\mathbf{M}^{obj}\cup\mathbf{M}^{AE})$
-    - Design Motivation: Eliminate any residual prior from the object and its associated effects.
+This determines the proportion of attention for the $p$-th token falling within the object region. Thresholding results in a dynamically expanding adaptive mask $\hat{M}_t^{obj}$. This ensures that wherever the object's influence diffuses, the mask follows, preventing residual object information from leaking during re-initialization—crucial for fast-moving scenes like cars.
 
-5. **TokSim Metric**:
+**3. Attention Scaling: Cutting "contamination" during inversion and introducing background semantics during denoising**
 
-    - Mechanism: $\text{TokSim} = 100\cdot\frac{1}{F}\sum_z\sum_i \lambda_z^k\cdot(1-\eta_z^k)\cdot\tau_z^k$, where $\lambda$ rewards temporal consistency, $\eta$ penalizes object residuals, and $\tau$ rewards foreground-background blending.
+To achieve clean foreground replacement, the information flow between foreground and background must be controlled. During inversion, attention from the background to the foreground is reduced to minimize "contamination" of background latents by the object:
+
+$$\tilde{\mathbf{A}}^{bg\to obj} = \text{Softmax}\big(\tfrac{\mathbf{Q}_I^{bg}\cdot(c\mathbf{K}_I^{obj})^\top}{\sqrt{d}}\big),\quad c<1$$
+
+During denoising, the process is reversed: magnifying the foreground's attention to the background so that the reset foreground noise can actively "sample" from the background to fill the hole realistically:
+
+$$\tilde{\mathbf{A}}^{obj\to bg} = \text{Softmax}\big(\tfrac{\mathbf{Q}_I^{obj}\cdot(b\mathbf{K}_I^{bg})^\top}{\sqrt{d}}\big),\quad b>1$$
+
+**4. Foreground Re-initialization: Clearing residual priors to redraw from noise**
+
+Attention scaling alone is insufficient, as inverted foreground latents still retain structural priors of the object and effects, which may "resurrect" the original object during denoising. Re-initialization replaces the foreground (union of object and effect masks) with pure Gaussian noise while keeping background values intact:
+
+$$\tilde{\mathbf{Z}}_1 = \mathbf{Z}_1\odot\big(1-\mathbf{M}^{obj}\cup\mathbf{M}^{AE}\big) + \varepsilon\odot\big(\mathbf{M}^{obj}\cup\mathbf{M}^{AE}\big)$$
+
+By erasing all residual priors, the area must be re-generated based purely on background context.
+
+**5. TokSim Metric: An evaluation score that distinguishes "clean removal"**
+
+Existing metrics (like BG-PSNR) have a fundamental flaw: methods that do nothing but VAE reconstruction score high without performing removal. TokSim combines three aspects into a single score:
+
+$$\text{TokSim} = 100\cdot\frac{1}{F}\sum_z\sum_i \lambda_z^k\cdot(1-\eta_z^k)\cdot\tau_z^k$$
+
+Where $\lambda$ rewards temporal consistency, $\eta$ penalizes object residuals, and $\tau$ rewards foreground-background fusion. 
 
 ### Loss & Training
-- Entirely training-free; built upon a pretrained T2V DiT.
-- At inference, only attention manipulation and value copying are required.
+Completely training-free. It reuses a pre-trained text-to-video DiT and performs only attention manipulation (scaling) and value copying of background latents during inference. No parameters are updated, and no synthetic data is required.
 
 ## Key Experimental Results
 
@@ -92,46 +112,46 @@ The inputs are an RGB video $\mathcal{I}_k$, an object mask $\mathbf{M}^{obj}$, 
 | Gen-Prop | ✓ | 30.52 | - | 24.27 | 25.89 |
 | KV-Edit-Video | ✗ | 28.68 | 23.26 | 25.78 | 25.21 |
 | Attentive-Eraser | ✗ | 30.82 | 25.28 | 28.07 | 26.31 |
-| **Object-WIPER** | **✗** | **32.80** | **33.09** | 23.02 | **26.63** |
+| **Ours (Object-WIPER)** | **✗** | **32.80** | **33.09** | 23.02 | **26.63** |
 
 ### Ablation Study
 
 | Configuration | TokSim↑ | BG-PSNR↑ | Text-align↑ |
 |------|---------|----------|-------------|
 | Full Object-WIPER | 32.80 | 23.02 | 26.63 |
-| w/o attention scaling | 32.97 | 21.92 | 26.42 |
-| w/o adaptive mask | 32.10 | 22.73 | 26.44 |
-| w/o re-initialization | 30.36 | 23.47 | 25.92 |
+| w/o Attn Scaling | 32.97 | 21.92 | 26.42 |
+| w/o Adaptive Mask | 32.10 | 22.73 | 26.44 |
+| w/o Re-initialization | 30.36 | 23.47 | 25.92 |
 | w/o $\mathbf{M}^{AE}$ | 32.18 | 23.10 | 26.17 |
 
 ### Key Findings
-- Without any training, Object-WIPER surpasses all trained methods on TokSim, including ROSE, which is specifically trained for associated effects.
-- TokSim is far more discriminative than BG-PSNR: VAE reconstruction (without object removal) achieves BG-PSNR of 34.05 but TokSim of only 0.32.
-- Re-initialization is the most critical component (removing it causes TokSim to drop by 2.44).
-- The associated effect mask $\mathbf{M}^{AE}$ is essential for WIPER-Bench — shadows and reflections can only be removed when it is included.
-- Adaptive masking is indispensable in fast-motion scenarios (e.g., high-speed vehicles).
+- Object-WIPER outperforms all trained methods on TokSim without any training.
+- TokSim is significantly more discriminative than BG-PSNR: VAE reconstruction (no removal) gets a BG-PSNR of 34.05 but a TokSim of only 0.32.
+- Re-initialization is the most critical component (TokSim drops by 2.44 without it).
+- Associated effect mask $\mathbf{M}^{AE}$ is vital for WIPER-Bench to remove shadows/reflections.
+- Adaptive masking is essential in fast-motion scenarios (e.g., speeding cars).
 
 ## Highlights & Insights
-- **Intrinsic MMDiT attention for associated effect localization**: The approach requires no external models and exploits semantic associations in the shared text-visual space for precise localization. This technique is transferable to any MMDiT-based editing task.
-- **TokSim metric design** is elegant: it simultaneously measures removal completeness, temporal consistency, and background blending, exposing fundamental flaws in existing metrics.
-- **WIPER-Bench** is the first object removal benchmark covering real-world scenarios including mirrors, transparent objects, and multiple associated effects.
+- **Intrinsic MMDiT Attention for Localization**: Precisely localizes associated effects using semantic correlations in the shared text-visual space without external models. This technique can be transferred to any MMDiT-based editing task.
+- **TokSim Metric Design**: Simultaneously measures removal completeness, temporal consistency, and background fusion, exposing the fundamental flaws of existing metrics.
+- **WIPER-Bench**: The first object removal benchmark containing real-world scenes with mirrors, transparent objects, and multiple associated effects.
 
 ## Limitations & Future Work
-- BG-PSNR is inferior to trained methods, as the background is also regenerated by the diffusion model.
-- The approach depends on text descriptions of the object and effect types, limiting automation.
-- Video resolution is constrained by the pretrained model.
-- Only dynamic objects are addressed; static object removal is not discussed.
+- BG-PSNR is lower than results of training-based methods (as background is re-generated by the diffusion model).
+- Dependent on text descriptions for objects and effect types, limiting automation.
+- Video resolution is constrained by the pre-trained model.
+- Only handles dynamic objects; static object removal is not discussed.
 
 ## Related Work & Insights
-- **vs. Omnimatte-Zero**: Does not rely on TAP-Net point tracking; the localization strategy is more complete.
-- **vs. ROSE/Gen-Prop**: Training-based methods require large amounts of synthetic data, whereas Object-WIPER incurs zero training cost.
-- **vs. KV-Edit**: KV-Edit is designed for images; naive extension to video yields poor results.
+- **vs Omnimatte-Zero**: Does not rely on TAP-Net point tracking; possesses a more comprehensive localization strategy.
+- **vs ROSE/Gen-Prop**: Trained methods require large synthetic datasets, whereas Object-WIPER has zero cost.
+- **vs KV-Edit**: KV-Edit is designed for images; simple extensions to video perform poorly.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First work to address associated effect localization and removal within DiT; TokSim metric is a significant contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two datasets + new benchmark + new metric + complete ablation.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation and methodology are presented in a coherent, layered manner.
-- Value: ⭐⭐⭐⭐⭐ WIPER-Bench and TokSim offer lasting value to the community.
+- Novelty: ⭐⭐⭐⭐⭐ First to solve associated effect localization and removal within DiT; TokSim is an important contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete results across two datasets + new benchmark + new metric + ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from problem definition to methodology.
+- Value: ⭐⭐⭐⭐⭐ WIPER-Bench + TokSim offer lasting value to the community.
 
 <!-- RELATED:START -->
 

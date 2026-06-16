@@ -2,124 +2,89 @@
 title: >-
   [Paper Note] ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][token compression] From an information-theoretic angle, this paper proposes a visual token importance measure based on linear-approximation reconstruction error. The method requires no attenti…
+  [CVPR 2026][Multimodal VLM][Paper Note] From an information-theoretic perspective, this paper proposes a visual token importance evaluation method based on linear approximation reconstruction error. It does not rely on attention weights, making it naturally compatible with FlashAttention. On LLaVA-1.5, it maintains 95.2% performance while compressing 88.9% o
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "token compression"
-  - "visual token redundancy"
-  - "approximation error"
-  - "FlashAttention compatibility"
-  - "VLM acceleration"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: e3f3bce07ab27c80
+content_hash: c43b122edf03ad95
 ---
-
 # ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 
 **Conference**: CVPR 2026  
 **arXiv**: [2602.19870](https://arxiv.org/abs/2602.19870)  
 **Code**: [MaQianKun0/ApET](https://github.com/MaQianKun0/ApET)  
 **Area**: Multimodal VLM  
-**Keywords**: token compression, visual token redundancy, approximation error, FlashAttention compatibility, VLM acceleration
+**Keywords**: Token Compression, Visual Token Redundancy, Approximation Error, FlashAttention Compatibility, VLM Acceleration
 
 ## TL;DR
 
-From an information-theoretic angle, this paper proposes a visual token importance measure based on linear-approximation reconstruction error. The method requires no attention weights, is naturally compatible with FlashAttention, and on LLaVA-1.5 retains 95.2% of the original performance after compressing away 88.9% of visual tokens.
+From an information-theoretic perspective, this paper proposes a visual token importance evaluation method based on linear approximation reconstruction error. It does not rely on attention weights, making it naturally compatible with FlashAttention. On LLaVA-1.5, it maintains 95.2% performance while compressing 88.9% of visual tokens.
 
 ## Background & Motivation
 
-**Severe visual token redundancy in VLMs**: Mainstream VLMs (LLaVA, InternVL, etc.) encode an image into hundreds or even thousands of visual tokens before feeding them into the LLM. A 336×336 image yields 576 tokens in LLaVA-1.5, and high-resolution variants exceed 2000. Yet many studies report that the truly task-relevant "key tokens" account for only 10-20% — neighboring patches encode highly overlapping information.
+**Background**: Current mainstream VLMs (e.g., LLaVA, InternVL) encode images into hundreds or even thousands of visual tokens for LLM processing. A 336×336 image produces 576 tokens in LLaVA-1.5, and high-resolution schemes can exceed 2,000. However, research indicates severe redundancy; truly "key tokens" for downstream tasks may only account for 10-20%.
 
-**Compute bottleneck**: LLM self-attention is $O(n^2)$ in the sequence length $n$. Visual tokens dominate the sequence (typically >70%), so reducing them yields near-quadratic compute savings. The issue is even more acute in multi-frame video understanding, where the stacked sequence easily exceeds 10K tokens.
+**Key Challenge**: The computational complexity of LLM self-attention is $O(n^2)$, where $n$ is sequence length. Visual tokens occupy the majority of the sequence length (typically >70%), so reducing their count lowers computation near-quadratically. This is exacerbated in multi-frame video tasks where sequences easily exceed 10K.
 
-**Two fatal flaws of attention-weight-based methods**:
+**Limitations of Prior Work**: Existing mainstream methods (FastV, FitPrune, VisionZip, etc.) evaluate importance via intermediate LLM attention weights, but they suffer from two major flaws:
 
-   **(a) Positional bias**: Mainstream methods (FastV, FitPrune, VisionZip, ...) rate token importance using attention weights from intermediate LLM layers — high-attention tokens are kept, low-attention ones are dropped. The authors find that LLM attention has a strong positional bias: tokens later in the sequence are attended more often due to the causal mask, and they themselves also collect higher attention scores, regardless of how much information they actually carry. Empirically, position alone predicts more than 60% of the attention ranking.
+   **(a) Positional Bias**: LLM attention distributions exhibit significant positional bias. Due to causal masking, tokens later in the sequence are naturally attended to more frequently, resulting in higher scores regardless of actual information content. Experiments show that position alone can predict over 60% of attention rankings.
 
-   **(b) Incompatibility with FlashAttention**: FlashAttention is the de-facto inference accelerator for LLMs; it tile-computes attention without materializing the full matrix. Pruning by attention weights, however, requires the full $n \times n$ attention matrix and clashes with FlashAttention's design. Disabling FlashAttention to use such methods may even slow inference down — a deal-breaker for deployment.
+   **(b) FlashAttention Incompatibility**: FlashAttention is standard for LLM acceleration as it avoids storing full attention matrices. Attention-weight-based pruning requires reading the full $n \times n$ matrix, conflicting with FlashAttention's design. Disabling FlashAttention to use these methods can lead to a net decrease in speed.
 
-**Information-theoretic insight**: If a token can be linearly reconstructed from other tokens with small error, it carries little unique information and is "redundant"; if its reconstruction error is large, it contains unique information that no other token can substitute and is therefore "important". This intuition is concise and powerful, and importance estimation only needs the token feature vectors — no attention computation involved.
+**Key Insight**: If a token can be linearly reconstructed by other tokens with small approximation error, it carries little unique information and is "redundant." Conversely, a high reconstruction error indicates "important" unique information. This measure only requires token feature vectors and avoids attention calculations entirely.
 
-**Difference from existing attention-free methods**: A few methods avoid attention (e.g. ToMe merges via similarity, LOOK-M compresses KV cache), but their importance criteria remain heuristic. ApET grounds importance in approximation theory.
+**Core Idea**: While some attention-free methods exist (e.g., ToMe via similarity, LOOK-M via KV cache compression), their importance standards remain heuristic. ApET provides a principled measure based on approximation theory.
 
 ## Method
 
 ### Overall Architecture
 
-ApET inserts a token compression module after a chosen LLM layer (e.g. layer 2). The flow has three steps:
+ApET addresses the contradiction between severe visual token redundancy and the inability to prune based on attention weights. It judges importance through information theory: if a token can be linearly reconstructed from others, it is compressed. A compression module is inserted into an intermediate LLM layer (e.g., Layer 16 of LLaVA). The process involves three steps: selecting $M$ "basis tokens" from $N$ visual tokens, calculating the linear reconstruction error for non-basis tokens as an importance score, and retaining the tokens with the largest errors plus the basis tokens. Remaining tokens are merged into the nearest retained tokens via similarity-based average merging. The shortened sequence $V' \in \mathbb{R}^{K' \times d}$ is fed into subsequent layers. The mechanism uses only hidden states, ensuring FlashAttention compatibility.
 
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Visual Tokens V (N) <br/>vision encoder + projector"] --> CMP
+    subgraph CMP["ApET Compression Module (Attention-Free: Inserted in intermediate LLM layers, uses only hidden states)"]
+        direction TB
+        B["Basis Token Selection<br/>FPS chooses M=αN tokens"] --> C["Approximation Error Calculation<br/>Reconstruction residual e_i=‖v_i−v'_i‖"]
+        C --> D["Token Merging<br/>Retain basis + top errors, merge others via similarity"]
+    end
+    CMP --> E["Compressed Sequence V' (K)"]
+    E --> F["Subsequent LLM Layers<br/>Native FlashAttention acceleration"]
 ```
-Visual token sequence V ∈ R^{N×d}
-    ↓
-Step 1: Basis token selection → pick M basis tokens B ∈ R^{M×d}
-    ↓
-Step 2: Approximation error → compute linear reconstruction error e_i for every non-basis token
-    ↓
-Step 3: Token merging → keep the K tokens with the largest errors + the basis tokens,
-                       merge the rest by weighted average into the nearest retained token
-    ↓
-Compressed sequence V' ∈ R^{K'×d}, fed into subsequent LLM layers
-```
 
-### Key Design 1: Basis Token Selection
+### Key Designs
 
-Pick $M$ "basis tokens" out of the $N$ visual tokens to span the linear reconstruction basis. The paper explores three strategies:
+**1. Basis token selection**
 
-- **FPS (Farthest Point Sampling)**: Greedy selection of tokens farthest from the chosen set, ensuring spatial diversity. Complexity $O(NM)$.
-- **DPC (Density Peak Clustering)**: Picks tokens with high local density and far from any higher-density point, balancing density and diversity.
-- **Random sampling**: Used as a baseline.
+To determine reconstruction capability, a set of basis tokens must be established. ApET selects $M$ basis tokens from $N$ visual tokens. Three strategies were explored: **FPS (Furthest Point Sampling)** greedily selects tokens furthest from the current set to ensure spatial diversity (complexity $O(NM)$); **DPC (Density Peak Clustering)** selects tokens with high local density and distance from higher-density points; and random sampling as a baseline. FPS proved most stable. The basis size is set to $M = \lfloor \alpha \cdot N \rfloor$, with $\alpha=0.1$ as a compromise between quality and overhead.
 
-FPS turns out to be the most stable; DPC is slightly better on some tasks; random sampling still reaches >90% of the FPS performance — the method is not very sensitive to basis choice. FPS is the default.
+**2. Approximation Error Calculation**
 
-Choice of $M$: $M = \lfloor \alpha \cdot N \rfloor$ with $\alpha = 0.1$ (i.e. 10% of tokens form the basis), trading off reconstruction quality against compute.
-
-### Key Design 2: Approximation Error
-
-For every non-basis token, the basis tokens are used to perform linear reconstruction; the reconstruction error then serves as the importance score.
-
-Given a non-basis token $v_i$ and basis matrix $B \in \mathbb{R}^{M \times d}$, the optimal linear reconstruction coefficients are:
-
-$$w_i^* = (B^\top B)^{-1} B^\top v_i$$
-
-The reconstruction is $\hat{v}_i = B w_i^*$, and the approximation error is:
+For each non-basis token $v_i$ and basis matrix $B \in \mathbb{R}^{M \times d}$, the optimal linear reconstruction coefficient is $w_i^* = (B^\top B)^{-1} B^\top v_i$. The reconstruction is $\hat{v}_i = B w_i^*$, and the approximation error is:
 
 $$e_i = \|v_i - \hat{v}_i\|_2 = \|v_i - B(B^\top B)^{-1}B^\top v_i\|_2$$
 
-i.e. the projection length of $v_i$ on the orthogonal complement of the column space of $B$. The larger the error, the more $v_i$'s information cannot be explained by the basis, and the more important it is.
+This represents the projection length of $v_i$ onto the orthogonal complement of the basis column space. Higher error indicates more unique information. Unlike attention weights, this metric is immune to positional bias from causal masks. Computationally, $(B^\top B)^{-1}$ is calculated once ($M \times M$ inversion where $M \ll N$), making it highly efficient (~1ms for $N=576$).
 
-**Compute optimization**: $(B^\top B)^{-1}$ only needs to be computed once ($M \times M$ matrix inverse with $M \ll N$, very fast); the projection is then computed batch-wise over all non-basis tokens. Total complexity is $O(M^2 d + NMd)$, which is only ~1ms at $N=576$, $M=58$, $d=4096$.
+**3. Token Merging**
 
-### Key Design 3: Token Merging Strategy
+After determining importance, the $M$ basis tokens and top-$(K-M)$ tokens with the highest errors are retained. For the $(N-K)$ tokens to be removed, ApET finds the most similar retained token to each and performs **average merging** within groups. This strategy preserves some information from "pruned" tokens, providing a "low-loss" compression. Ablations show that merging provides a 2-3pp boost over direct dropping at extreme compression rates (<10%).
 
-After scoring all tokens, compression proceeds:
+**4. Attention-Free Design**
 
-1. **Keep**: the $M$ basis tokens + the top-$(K - M)$ non-basis tokens by error, $K$ in total.
-2. **Merge**: the remaining $(N - K)$ tokens are not simply dropped; they are merged via weighted average into the nearest retained token.
-
-Merging weights use cosine similarity:
-
-$$v_j' = v_j + \sum_{i \in \text{merged\_to\_j}} \frac{\text{sim}(v_i, v_j)}{\sum_{k \in \text{merged\_to\_j}} \text{sim}(v_k, v_j)} \cdot v_i$$
-
-Merging (vs. dropping) preserves part of the discarded tokens' information — a lossy but low-loss compression. Under aggressive compression (keeping <10% tokens), merging beats pure dropping by ~2-3pp.
-
-### Compatibility with FlashAttention
-
-A core advantage of ApET is its native compatibility with FlashAttention:
-
-- The whole compression procedure only needs token feature vectors (hidden states), no attention matrix.
-- Compression runs after layer 2 of the LLM (tokens have already gone through a few attention layers, so features are more informative).
-- The compressed (much shorter) sequence then feeds the subsequent layers, where FlashAttention works normally and runs even faster thanks to the shorter sequence.
-
-By contrast, methods like FastV must disable FlashAttention to read the attention matrix during compression and only re-enable it later — more complex engineering, with the loss of one accelerated layer.
+ApET only utilizes token hidden states. It can be inserted after the vision encoder or within intermediate LLM layers (e.g., Layer 2, where tokens have interacted through some attention layers). The compressed sequence then proceeds with FlashAttention, gaining further acceleration from reduced sequence length.
 
 ## Key Experimental Results
 
-### Main Results: LLaVA-1.5-7B Image Understanding (Various Compression Ratios)
+### Main Results: LLaVA-1.5-7B Image Understanding
 
-| Method | Tokens kept | VQAv2 | GQA | TextVQA | POPE | MM-Vet | Avg. retention |
+| Method | Tokens Retained | VQAv2 | GQA | TextVQA | POPE | MM-Vet | Avg. Retention |
 |---|---|---|---|---|---|---|---|
-| Original | 576 | 78.5 | 62.0 | 58.2 | 85.9 | 31.1 | 100% |
+| Original Model | 576 | 78.5 | 62.0 | 58.2 | 85.9 | 31.1 | 100% |
 | FastV | 192 | 76.8 | 60.5 | 55.1 | 83.2 | 28.7 | 96.3% |
 | VisionZip | 192 | 77.1 | 61.0 | 56.3 | 84.5 | 29.4 | 97.8% |
 | **ApET** | **192** | **77.3** | **61.2** | **56.8** | **84.7** | **29.8** | **98.0%** |
@@ -127,71 +92,64 @@ By contrast, methods like FastV must disable FlashAttention to read the attentio
 | VisionZip | 64 | 73.5 | 57.8 | 50.2 | 80.1 | 25.6 | 91.0% |
 | **ApET** | **64** | **74.6** | **58.5** | **51.9** | **81.3** | **26.8** | **92.8%** |
 
-At 192 tokens (33% retention), ApET keeps 98.0% of the performance, leading VisionZip by 0.2pp. Under aggressive compression to 64 tokens (11% retention), the lead grows to 1.8pp.
+At 192 tokens (33% retention), ApET leads VisionZip by 0.2pp. At 64 tokens (11% retention), the advantage increases to 1.8pp.
 
-### Video Understanding (LLaVA-1.5 + Multi-frame)
+### Video Understanding (LLaVA-1.5 Multi-frame)
 
-| Method | Retention | MSVD-QA | MSRVTT-QA | ActivityNet-QA | Avg. retention |
+| Method | Retention Rate | MSVD-QA | MSRVTT-QA | ActivityNet-QA | Avg. Retention |
 |---|---|---|---|---|---|
-| Original | 100% | 70.8 | 58.3 | 47.2 | 100% |
+| Original Model | 100% | 70.8 | 58.3 | 47.2 | 100% |
 | FastV | 20% | 68.1 | 55.7 | 44.8 | 95.5% |
 | ToMe | 20% | 69.0 | 56.2 | 45.3 | 96.5% |
 | **ApET** | **20%** | **70.5** | **58.0** | **47.5** | **100.4%** |
 
-On video tasks, ApET is especially striking — performance does not drop but actually rises (100.4%) after compressing to 20% tokens. The reason: removing redundant tokens lets attention focus on key frame content, reducing noise.
+Performance slightly improves (100.4%) at 20% tokens in video tasks, as redundant tokens are removed and the LLM focuses on key frames, reducing noise.
 
 ### Ablation Study
 
-| Basis selection | Error metric | Merging | VQAv2 (64 tok) | GQA (64 tok) |
+| Basis Selection | Error Metric | Merging Strategy | VQAv2 (64 tok) | GQA (64 tok) |
 |---|---|---|---|---|
-| FPS | L2 reconstruction error | weighted merge | **74.6** | **58.5** |
-| Random | L2 reconstruction error | weighted merge | 73.2 | 57.1 |
-| DPC | L2 reconstruction error | weighted merge | 74.3 | 58.2 |
-| FPS | cosine distance | weighted merge | 73.8 | 57.6 |
-| FPS | L2 reconstruction error | direct drop | 72.1 | 56.0 |
-| FPS | attention weights | weighted merge | 71.5 | 55.8 |
-
-Key takeaways: (1) FPS beats random and DPC by a small margin; (2) L2 reconstruction error clearly outperforms cosine distance and attention weights (+3.1 over attention); (3) weighted merging beats direct dropping by +2.5.
+| FPS | L2 Recon Error | Weighted Merge | **74.6** | **58.5** |
+| Random | L2 Recon Error | Weighted Merge | 73.2 | 57.1 |
+| DPC | L2 Recon Error | Weighted Merge | 74.3 | 58.2 |
+| FPS | Cosine Dist | Weighted Merge | 73.8 | 57.6 |
+| FPS | L2 Recon Error | Direct Drop | 72.1 | 56.0 |
+| FPS | Attention Weight | Weighted Merge | 71.5 | 55.8 |
 
 ### Key Findings
 
-- **Approximation error vs attention weights**: At equal compression ratio, the importance ranking from approximation error correlates with the attention-weight ranking only at Kendall's $\tau \approx 0.42$ — the two measure different aspects of "importance". Approximation error focuses on information uniqueness, attention focuses on contextual relevance.
-- **Empirical positional bias**: For tokens in the top-10% by attention weight, 65% sit in the second half of the sequence; for tokens in the top-10% by approximation error, the positional distribution is roughly uniform — confirming the bias and ApET's immunity.
-- **Compression layer placement**: After layer 2 is best; layer 0 (before LLM) is worse (tokens have not yet interacted, features are too raw); too deep a layer (e.g. layer 16) also hurts (deep computation has already been performed and would be wasted).
-- **Real speedup with FlashAttention**: On A100, going from 576→64 tokens with FlashAttention gives a 2.1× actual inference speedup; FastV achieves only 1.6× because FA must be disabled at one layer.
-- **Sensitivity to $M$**: As $\alpha$ varies from 0.05 to 0.2, VQAv2 fluctuates only ±0.5pp — the method is insensitive.
+- **Approximation Error vs. Attention**: The correlation between importance rankings of these two is only 0.42 (Kendall's τ). Approximation error focuses on information uniqueness, while attention focuses on contextual relevance.
+- **Positional Bias Evidence**: 65% of top-10% attention tokens are concentrated in the latter half of sequences, while ApET's top tokens are uniformly distributed.
+- **Compression Layer**: Compression at Layer 2 is optimal. Layer 0 is ineffective as features have not yet matured through interaction.
+- **Speedup**: On an A100, 576→64 token compression with FlashAttention yields a 2.1× speedup; FastV yields only 1.6× due to disabling FA at one layer.
 
 ## Highlights & Insights
 
-- **An elegant information-theoretic design**: Using linear-reconstruction error to score token importance is theoretically clean (cannot be reconstructed = unique information) and easy to implement.
-- **Solves the FlashAttention compatibility pain point**: A frequent reason that token compression methods are abandoned in deployment; ApET's attention-free design solves it cleanly.
-- **"De-noising" effect on video understanding**: Performance going up after compression is a pleasant surprise and points to a new direction for video VLM token management.
-- **Negligible compute overhead**: The compression module itself costs ~1ms — negligible against the hundreds of ms of LLM inference.
+- **Information-Theoretic Design**: Uses linear approximation error for importance measurement with clear theoretical intuition (irreducibility = uniqueness).
+- **Engineering Practicality**: Solves FlashAttention compatibility, a major hurdle for the deployment of prior compression methods.
+- **Video "Denoising" Effect**: The performance gain after compression in video VLM suggests new directions for token management.
+- **Minimal Overhead**: The compression module itself takes ~1ms, which is negligible compared to LLM inference.
 
 ## Limitations & Future Work
 
-- Validation is limited to LLaVA-1.5 (7B/13B); larger models (LLaVA-OneVision-72B, InternVL2-76B, ...) are untested.
-- The linear-approximation assumption treats token-space redundancy as linear; for highly nonlinear feature relations, some tokens' importance may be underestimated.
-- Basis selection (FPS) only uses feature-space distance and ignores spatial-position priors (e.g. neighboring patches are more likely to be redundant).
-- Compression layer is fixed at layer 2; layer-adaptive compression (more retention in shallow layers, more compression in deep ones) is not explored.
-- Merging is uniform; semantic regions of different granularity (e.g. text regions may need more tokens) are not differentiated.
-- Comparison with the latest dynamic-token methods (MatryoshkaKV, PyramidDrop, ...) is missing.
+- Verification is limited to LLaVA-1.5 (7B/13B); larger models (e.g., InternVL2-76B) are not yet tested.
+- Linear approximation assumes redundancy structures are linear; non-linear feature relationships might be underestimated.
+- Basis selection (FPS) ignores spatial priors (e.g., adjacent patches being more likely redundant).
+- Fixed compression at Layer 2; layer-wise adaptive compression remains unexplored.
 
 ## Related Work & Insights
 
-- **Token pruning**: FastV (attention-weight based), FitPrune (fitting pruning-ratio curves) are direct competitors; ApET surpasses them while staying attention-free.
-- **Token merging**: ToMe (similarity-based merging of neighboring tokens) pioneered the merge route; ApET borrows the merging step but is driven by a different importance criterion.
-- **VisionZip**: Also avoids attention and uses CLS-token similarity as a proxy, but is still indirectly tied to attention pre-training results.
-- **KV cache compression**: LOOK-M, SnapKV, H2O, etc. compress along the KV-cache dimension; orthogonal to and composable with token compression.
-- **Information bottleneck**: ApET's approximation-error measure has a theoretical link to the Information Bottleneck framework — keep the smallest sufficient statistic with maximum information.
-- **Inspiration**: The approximation-error idea can be generalized to LLM text-token compression — text sequences are also redundant (repeated phrases, structured templates), and the same recipe may apply.
+- **Token Pruning**: FastV and FitPrune are direct competitors; ApET achieves better results without requiring attention weights.
+- **Token Merging**: ApET borrows the merging step from ToMe but drives it with a different importance metric.
+- **KV Cache Compression**: Methods like SnapKV are orthogonal to token compression and could be combined with ApET.
+- **Insight**: The approximation error approach could potentially extend to text token compression in LLMs for structured or repetitive templates.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Approximation-error-based token importance is novel and theoretically grounded, although linear approximation itself is not a first.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multiple benchmarks including video, thorough ablations; missing larger-model validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ — The motivation→method→experiment chain is crystal clear; the analysis of attention bias is convincing.
-- Value: ⭐⭐⭐⭐ — FlashAttention compatibility is a deployment must-have, the method is highly practical, but the gain over the next baseline is moderate.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -199,11 +157,11 @@ Key takeaways: (1) FPS beats random and DPC by a small margin; (2) L2 reconstruc
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 - [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](flashcache_frequency_kv_cache_compression.md)
-- [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[CVPR 2026\] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models](variation-aware_vision_token_dropping_for_faster_large_vision-language_models.md)
-- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
 
 </div>
 

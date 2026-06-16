@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Factored Classifier-Free Guidance
 description: >-
-  [ICML 2026][Medical Imaging][Classifier-Free Guidance] This paper identifies an "attribute amplification" failure mode of CFG in counterfactual generation with diffusion models—using a single global $\omega$ amplifies no…
+  [ICML 2026][Medical Imaging][Classifier-Free Guidance] This paper identifies the "attribute amplification" failure mode of CFG in diffusion model counterfactual generation—where a single global $\omega$ amplifies attributes that should remain unchanged. The authors propose FCFG: grouping attributes according to a causal graph and assigning independent guidance weights to e
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Classifier-Free Guidance"
-  - "Counterfactual Generation"
-  - "Causal Intervention"
-  - "Attribute Amplification"
-  - "DDIM"
+  - ICML 2026
+  - Medical Imaging
+  - Classifier-Free Guidance
+  - DDIM
 date: 2026-05-08
-content_hash: c74f1eb6a587e550
+content_hash: 0fb19f05198a0af8
 ---
-
 # Factored Classifier-Free Guidance
 
 **Conference**: ICML 2026  
@@ -24,102 +20,119 @@ content_hash: c74f1eb6a587e550
 **Keywords**: Classifier-Free Guidance, Counterfactual Generation, Causal Intervention, Attribute Amplification, DDIM
 
 ## TL;DR
-This paper identifies an "attribute amplification" failure mode of CFG in counterfactual generation with diffusion models—using a single global $\omega$ amplifies not only the target attribute but also unintended ones. The authors propose FCFG: grouping attributes by causal graph and assigning independent guidance weights to each group, which significantly reduces non-target attribute drift and improves counterfactual reversibility on CelebA-HQ / EMBED / MIMIC-CXR.
+This paper identifies the "attribute amplification" failure mode of CFG in diffusion model counterfactual generation—where a single global $\omega$ amplifies attributes that should remain unchanged. The authors propose FCFG: grouping attributes according to a causal graph and assigning independent guidance weights to each group. This significantly reduces off-target attribute drift and improves counterfactual reversibility on CelebA-HQ, EMBED, and MIMIC-CXR.
 
 ## Background & Motivation
-**Background**: Diffusion models have become the de facto standard for conditional generation. The standard pipeline for counterfactual generation is a three-stage process: DDIM inversion (abduction) → do-intervention (action) → reverse DDIM with CFG guidance (prediction). Classifier-Free Guidance interpolates between conditional and unconditional scores via $\epsilon_\text{CFG}=(1-\omega)\epsilon_\theta(\varnothing)+\omega\epsilon_\theta(\mathbf{c})$, widely used as a knob to make generated images more strongly reflect target attributes.
+**Background**: Diffusion models have become the de facto standard for conditional generation. The standard pipeline for counterfactual generation is a three-stage process: DDIM inversion (abduction) $\rightarrow$ do-intervention (action) $\rightarrow$ reverse DDIM guided by CFG (prediction). Classifier-Free Guidance, which interpolates between conditional and unconditional scores via $\epsilon_\text{CFG}=(1-\omega)\epsilon_\theta(\varnothing)+\omega\epsilon_\theta(\mathbf{c})$, is widely used as a knob to make the generated image reflect the target attribute more prominently.
 
-**Limitations of Prior Work**: CFG's $\omega$ is a global scalar applied to the entire condition vector $\mathbf{c}$. In counterfactual scenarios, $\mathbf{c}$ typically encodes multiple attributes (e.g., gender, age, smile), but users often wish to intervene on only one, yet are forced to scale all attributes by the same $\omega$. As a result, do(Male=no) also amplifies Smiling, and do(Young=no) changes identity and expression together; such off-target changes violate the invariance axiom of the causal graph, termed attribute amplification.
+**Limitations of Prior Work**: The $\omega$ in CFG is a global scalar acting on the entire condition vector $\mathbf{c}$. In counterfactual scenarios, $\mathbf{c}$ typically encodes multiple attributes (e.g., gender, age, smile). When a user wants to intervene on only one, they are forced to multiply all attributes by the same $\omega$. Consequently, a do(Male=no) intervention may amplify "Smiling," or a do(Young=no) intervention may change identity and expression. This off-target modification violates the invariance axioms of causal graphs, a phenomenon termed "attribute amplification."
 
-**Key Challenge**: There is a fundamental tension between "intervention effectiveness" (strongly changing the target attribute) and "stability of non-target attributes"—as long as guidance is a scalar, the two are inevitably coupled. Xia et al. (2024) attributed this to predictor-finetuning during training, but this paper points out that the guidance mechanism itself is the root cause.
+**Key Challenge**: There is a fundamental tension between "intervention effectiveness" (strongly changing the target attribute) and "maintaining the stability of non-target attributes." As long as the guidance is a scalar, these two are inevitably coupled. While Xia et al. (2024) attributed this to predictor-finetuning during training, this paper points out that the guidance mechanism itself is the culprit.
 
-**Goal**: Without modifying training or model architecture, break the coupling between attributes at inference by assigning each semantic/causal group an independent guidance strength.
+**Goal**: To decouple guidance between attributes at inference time only, assigning independent guidance strengths to each semantic/causal group without modifying training or model architecture.
 
-**Key Insight**: If attribute groups are conditionally independent given $\mathbf{x}_t$, $p(\mathbf{pa}\mid\mathbf{x}_t)=\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)$, then the proxy posterior naturally factorizes as $p^\omega(\mathbf{x}_t\mid\mathbf{pa})\propto p(\mathbf{x}_t)\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)^{\omega_m}$—each group has its own $\omega_m$, with CFG as the $M=1$ special case.
+**Key Insight**: If attribute groups are conditionally independent given $\mathbf{x}_t$ such that $p(\mathbf{pa}\mid\mathbf{x}_t)=\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)$, the proxy posterior naturally factorizes as $p^\omega(\mathbf{x}_t\mid\mathbf{pa})\propto p(\mathbf{x}_t)\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)^{\omega_m}$. Here, each group has its own $\omega_m$, making CFG a special case where $M=1$.
 
-**Core Idea**: Rewrite CFG's score update using "attribute-blocked embeddings + group-wise $\omega_m$ assignment," replacing global amplification with fine-grained, group-specific amplification; no model or training changes, only inference-time modification.
+**Core Idea**: Rewrite the CFG score update using "attribute-split embeddings + group-assigned $\omega_m$." This converts global amplification into groupable fine-grained amplification, effective only at inference time without touching the model or training process.
 
 ## Method
 
 ### Overall Architecture
-FCFG consists of three parts: (i) Each semantic attribute $\mathbf{pa}=(pa_1,\dots,pa_K)$ is embedded via independent MLPs and concatenated to form an "attribute-split" structure $\mathbf{c}=\text{concat}(\mathcal{E}_1(pa_1),\dots,\mathcal{E}_K(pa_K))$, so each attribute occupies a separate block in the embedding; (ii) At inference, attributes are divided into $M$ groups (e.g., "affected" + "invariant" in counterfactuals), and for each group, a masked embedding $\underaccent{\rule{4.09723pt}{0.4pt}}{\mathbf{c}}^{(m)}$ is constructed by zeroing out non-group blocks; (iii) The CFG score difference is extended to an $M$-term weighted sum, with a separate $\omega_m$ for each group. The full process is embedded in the DDIM counterfactual abduction-action-prediction pipeline—only the prediction step replaces $\epsilon_\text{CFG}$ with $\epsilon_\text{FCFG}$.
+FCFG aims to solve the issue where a single global $\omega$ amplifies attributes that should remain unchanged. The approach splits the scalar knob in CFG into a set of vector knobs assigned according to a causal graph. This modification is applied only during inference, leaving training and architecture untouched. The pipeline is embedded in the abduction $\rightarrow$ action $\rightarrow$ prediction steps of DDIM counterfactual reasoning. While abduction and action remain identical to standard CFG, the prediction step replaces the denoising score $\epsilon_\text{CFG}$ with $\epsilon_\text{FCFG}$. Essentially, the model learns to concatenate attribute-split embeddings during training, and at inference, these are regrouped with independent guidance strengths to recombine the scores.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Factual image x + User-specified attribute causal graph"] --> EMB
+    subgraph EMB["Attribute-split Embedding (Training)"]
+        direction TB
+        B["Independent MLP per attribute: E_i(pa_i)"] --> C["Concat into block condition vector c<br/>Each attribute occupies a dimension segment, maskable by block"]
+    end
+    EMB --> D["DDIM abduction: Inversion to obtain latent (same as CFG)"]
+    D --> E["do-intervention: Modify target attribute (same as CFG)"]
+    E --> F["Group-factorized guidance (Each prediction step)<br/>ε_FCFG = ε(∅) + Σ ω_m·(ε(masked c^(m)) − ε(∅))"]
+    G["affected / invariant dual grouping<br/>ω_aff is large for target, ω_inv ≈ 1 for non-target"] -.->|Provides ω_m for each group| F
+    F --> H["Counterfactual image: Target attribute changes, non-target stable"]
+```
 
 ### Key Designs
 
-1. **Attribute-Split Embedding**:
+**1. Attribute-split Embedding: Assigning a dedicated dimension segment for each attribute**
 
-    - **Function**: Ensures each attribute occupies a unique segment in $\mathbf{c}$, facilitating group-wise null-token masking at inference.
-    - **Mechanism**: Each $pa_i$ is embedded via an independent MLP $\mathcal{E}_i:\mathbb{R}^{d_i}\to\mathbb{R}^d$, and $\mathbf{c}\in\mathbb{R}^{Kd}$ is formed by concatenating all blocks; to mask the $i$-th attribute, multiply the corresponding block by indicator $\delta_i^{(m)}\in\{0,1\}$. All $\mathcal{E}_i$ are jointly trained end-to-end with the denoising network, not as independent feature extractors.
-    - **Design Motivation**: Conventional designs mix multiple attributes into a dense vector, entangling semantics in embedding space; attribute-split naturally decouples them, forming the basis for subsequent group-wise guidance.
+Conventional conditional diffusion often packs multiple attributes into a single dense vector, causing semantic entanglement in the embedding space and making it impossible to "release" only one attribute during inference. FCFG assigns an independent MLP $\mathcal{E}_i:\mathbb{R}^{d_i}\to\mathbb{R}^d$ to each attribute $pa_i$. Their outputs are concatenated to form $\mathbf{c}=\text{concat}(\mathcal{E}_1(pa_1),\dots,\mathcal{E}_K(pa_K))\in\mathbb{R}^{Kd}$, so each attribute occupies a non-overlapping block in $\mathbf{c}$. To mask the $i$-th attribute at inference, the corresponding block is simply zeroed out using an indicator $\delta_i^{(m)}\in\{0,1\}$. These $\mathcal{E}_i$ modules are not pre-trained feature extractors but are trained end-to-end with the denoising network. This lightweight training-time design provides a clean mask interface for arbitrary group guidance later.
 
-2. **Group-wise Factored Score**:
+**2. Group-factorized Guidance: Upgrading global $\omega$ to group-wise $\omega_m$**
 
-    - **Function**: Allows different attribute groups to have independent guidance strengths, breaking CFG's global coupling.
-    - **Mechanism**: Assuming group-wise conditional independence $p(\mathbf{pa}\mid\mathbf{x}_t)=\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)$, the proxy posterior is $p^\omega(\mathbf{x}_t\mid\mathbf{pa})\propto p(\mathbf{x}_t)\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)^{\omega_m}$. The corresponding score is $\epsilon_\text{FCFG}=\epsilon_\theta(\varnothing)+\sum_m \omega_m(\epsilon_\theta(\underaccent{\rule{4.09723pt}{0.4pt}}{\mathbf{c}}^{(m)})-\epsilon_\theta(\varnothing))$. $M=1$ reduces to standard CFG; $M=K$ gives each attribute an independent weight.
-    - **Design Motivation**: The core mathematical observation is that a global $\omega$ is equivalent to assuming all attributes are conditionally independent and equally weighted; relaxing "equal weights" yields group-wise FCFG, which aligns with the causal graph and only requires inference-time changes.
+The fundamental problem with CFG is its implicit assumption that "all attributes are conditionally independent and weighted equally." FCFG relaxes the latter: assuming attribute groups are conditionally independent given $\mathbf{x}_t$, $p(\mathbf{pa}\mid\mathbf{x}_t)=\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)$, the proxy posterior factorizes as:
 
-3. **Causally Guided Affected/Invariant Dual Grouping**:
+$$p^\omega(\mathbf{x}_t\mid\mathbf{pa})\propto p(\mathbf{x}_t)\prod_m p(\mathbf{pa}^{(m)}\mid\mathbf{x}_t)^{\omega_m}$$
 
-    - **Function**: Instantiates abstract attribute groups—according to the user's causal graph, assign intervened attributes and their descendants to the "affected" group, others to "invariant," controlled by $\omega_\text{aff}$ and $\omega_\text{inv}$.
-    - **Mechanism**: In typical counterfactual do$(A)$, set $\omega_\text{aff}$ high (e.g., 2.5) to enhance target attribute change, and $\omega_\text{inv}$ near 1 (no amplification) to keep non-target attributes stable; this two-group split preserves CFG's effectiveness while eliminating pull on invariant attributes.
-    - **Design Motivation**: Directly corresponds to the counterfactual axiom that non-intervened attributes should remain stable, making the axiom-based metric (Δ on invariant) nearly zero without sacrificing Δ on target; the framework also naturally supports finer granularity (e.g., $M=K$ for per-attribute control).
+Each group carries its own exponent $\omega_m$. Taking the log-gradient, the two-term score difference in CFG is expanded into an $M$-term weighted sum:
+
+$$\epsilon_\text{FCFG}=\epsilon_\theta(\varnothing)+\sum_m \omega_m\big(\epsilon_\theta(\underaccent{\rule{4.09723pt}{0.4pt}}{\mathbf{c}}^{(m)})-\epsilon_\theta(\varnothing)\big)$$
+
+Where $\underaccent{\rule{4.09723pt}{0.4pt}}{\mathbf{c}}^{(m)}$ is the masked embedding keeping only the $m$-th group of attributes while zeroing others. This formula is a strict generalization of CFG: it reverts to standard CFG when $M=1$ and provides independent weights for every attribute when $M=K$. The effectiveness lies in its theoretical alignment with the causal graph at the cost of only a few extra conditional forward passes and a modified linear combination of scores.
+
+**3. affected/invariant Dual Grouping: Mapping abstract groups to counterfactual axioms**
+
+"Factorization" requires a grouping strategy. FCFG proposes a natural one: based on the user-assumed causal graph, attributes are divided into an "affected" group (the intervened attribute and its causal descendants) and an "invariant" group (everything else), controlled by $\omega_\text{aff}$ and $\omega_\text{inv}$ respectively. For a typical do$(A)$ intervention, $\omega_\text{aff}$ is set high (e.g., $2.5$) to drive the target change, while $\omega_\text{inv}\approx 1$ (no amplification) holds non-target attributes steady. This corresponds to the counterfactual axiom that "attributes outside the intervention should remain stable." It suppresses the drift $\Delta$ on invariant attributes to nearly $0$ without sacrificing $\Delta$ on the target, resolving the tension between effectiveness and stability. When all attributes are intervened simultaneously, $M=2$ falls back to global CFG, but the framework naturally supports an $M=K$ per-attribute mode.
 
 ### Loss & Training
-The training objective is the standard conditional diffusion loss $\mathbb{E}\|\epsilon-\epsilon_\theta(\mathbf{x}_t,t,\mathbf{c})\|^2$, with classic classifier-free dropout (randomly replacing the entire $\mathbf{c}$ with $\varnothing$), introducing no new losses; FCFG only modifies score computation at inference. The authors acknowledge a slight train-test mismatch (training sees only all-null, inference sees partial-null), but observe no stability issues in experiments. FCFG can also be combined with improved guidance methods like CFG++ and APG by embedding the grouping idea into their score formulas.
+The training objective strictly follows the standard conditional diffusion loss $\mathbb{E}\|\epsilon-\epsilon_\theta(\mathbf{x}_t,t,\mathbf{c})\|^2$, with standard classifier-free dropout (replacing the entire $\mathbf{c}$ with $\varnothing$). No new losses are introduced as FCFG only modifies the score algorithm during inference. The authors acknowledge a slight train-test mismatch—the model sees either full $\mathbf{c}$ or full null during training but encounters masked embeddings at inference—however, no stability issues were observed in experiments. Since grouping is just a rewrite of the score combination, it is orthogonal to and can be used with advanced guidance like CFG++ or APG.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Task | Metric | CFG | FCFG | Notes |
-|---------|------|--------|-----|------|-------|
-| CelebA-HQ 64×64 | do(Smiling) | Δ target ↑ / Δ off-target ↓ | High target but also high off-target | Target close, off-target nearly 0 | Key off-target suppression |
-| CelebA-HQ | do(Smiling) inverse reconstruction MAE/LPIPS | Lower is better | Rises sharply with $\omega$ | Significantly lower at same $\omega$ | Better identity preservation |
-| EMBED 192×192 (mammography) | do(circle) | Δ density (off-target) | Increases significantly | Nearly 0 | Avoids false feature amplification in medicine |
-| MIMIC-CXR | do(finding) | Δ race/sex (off-target) | Significant drift | Strongly suppressed | Important for clinical fairness |
-| MIMIC-CXR | do(finding) Δ target AUC | +18.8 | +18.8 (FCFG) vs CFG +X | Off-target only +0.6 | Off-target reduced by an order of magnitude at same target effectiveness |
+| Dataset | Task | Metric | CFG | FCFG | Description |
+|--------|------|------|-----|------|------|
+| CelebA-HQ 64×64 | do(Smiling) | Δ target ↑ / Δ off-target ↓ | High target, high off-target | High target, near-zero off-target | Key off-target suppression |
+| CelebA-HQ | do(Smiling) | Inverse Reconstruction MAE/LPIPS | Increases sharply with $\omega$ | Significantly lower at same $\omega$ | Better identity preservation |
+| EMBED 192×192 (Breast) | do(circle) | Δ density (off-target) | Increases significantly | Near 0 | Avoids false medical feature amplification |
+| MIMIC-CXR | do(finding) | Δ race/sex (off-target) | Obvious drift observed | Heavily suppressed | High clinical fairness significance |
+| MIMIC-CXR | do(finding) | Δ target AUC | +18.8 | +18.8 (FCFG) vs CFG +X | Off-target reduced by an order of magnitude at equal target effectiveness |
 
 ### Ablation Study
 
-| Configuration | Effect | Notes |
-|---------------|--------|-------|
-| $M=1$ (degenerate CFG) | Attribute amplification occurs | Verifies FCFG is a strict generalization |
-| Two groups affected/invariant ($M=2$) | Main experiment setting, best effectiveness/off-target trade-off | Default configuration |
-| Multi-attribute independent ($M=K$) | Supports do(Smiling, Male, Young) multi-intervention, each attribute with independent $\omega_s,\omega_m,\omega_y$ | When all attributes are intervened, $M=2$ degenerates to global CFG, $M=K$ is required |
-| FCFG + CFG++ / FCFG + APG | Stacked on advanced guidance | Also improves off-target amplification, framework compatible |
-| Comparison to SA-DCG / HVAE / HVAE-soft | CelebA-HQ do(Smiling) target +13.1 / off-target -1.5 vs SA-DCG +12.9 / +3.0 | Slightly better target, off-target in opposite direction (less drift) |
+| Configuration | Effect | Description |
+|------|------|------|
+| $M=1$ (Degenerate CFG) | Attribute amplification occurs | Validates FCFG as a strict generalization |
+| Two groups affected/invariant ($M=2$) | Main experimental setting | Best effectiveness/off-target trade-off |
+| Per-attribute independent ($M=K$) | Supports multiple do(Smiling, Male, Young) | Necessary when all attributes are intervened |
+| FCFG + CFG++ / FCFG + APG | Stacked on advanced guidance | Also improves off-target amplification; framework compatible |
+| Vs SA-DCG / HVAE / HVAE-soft | CelebA-HQ do(Smiling) target +13.1 / off-target -1.5 vs SA-DCG +12.9 / +3.0 | Better target, negative off-target (less drift) |
 
 ### Key Findings
-- **Root Cause of Attribute Amplification**: Through controlled experiments (CelebA-HQ with three independent attributes), the authors show amplification is not due to dataset artifacts or causal graph mismatch, but the guidance mechanism itself—shifting the blame from "data/model" to "inference algorithm."
-- **FID Improvement**: Intuitively, multi-component scores might be less stable, but FCFG significantly outperforms global CFG in FID on CelebA-HQ, indicating that reducing off-target drift helps stay on the data manifold.
-- **Counterfactual Reversibility**: After do(A) followed by do$(A^{-1})$, CFG accumulates off-target drift, worsening MAE/LPIPS, while FCFG nearly maintains initial values, serving as a good new metric for counterfactual soundness.
-- **Extreme Multi-Attribute Cases**: When all attributes are intervened simultaneously, $M=2$ grouping fails (no invariant group), and only per-attribute FCFG ($M=K$) is viable; the authors discuss this corner case.
+- **Root of Attribute Amplification**: Controlled experiments (CelebA-HQ three independent attributes) prove that amplification is not caused by dataset artifacts or causal graph mismatch, but by the guidance mechanism itself—shifting the blame from data/model to the inference algorithm.
+- **FID Gains**: While multiple score components might suggest instability, FCFG yields significantly better FID on CelebA-HQ than global CFG, suggesting that reducing off-target drift helps keep samples on the data manifold.
+- **Counterfactual Reversibility**: Performing do$(A)$ followed by do$(A^{-1})$ shows that CFG results in poor MAE/LPIPS due to residual off-target drift. FCFG maintains near-initial levels, serving as a strong new metric for counterfactual soundness.
+- **Multi-attribute Corner Cases**: When all attributes are intervened, $M=2$ grouping fails. The only solution is $M=K$ per-attribute FCFG, which the authors also discuss.
 
 ## Highlights & Insights
-- Directly decomposing "CFG's global $\omega$" into a vector $\omega_m$ grouped by causal graph is an intuitive yet previously overlooked extension; the score formula is cleanly derived from the proxy posterior.
-- The attribute-split embedding is a lightweight training design that enables arbitrary inference-time grouping, effectively "preparing a mask interface" for future use—valuable for any conditional diffusion framework.
-- Defines a dual-dimensional evaluation for counterfactual generation: "intervention effectiveness vs reversibility," which aligns better with causal axioms than FID alone; this evaluation can also be applied to video editing, 3D consistency, and other conditional generation scenarios.
-- Compatible with advanced guidance variants like CFG++ and APG, showing this is an orthogonal dimension to score improvements—future conditional sampling advances can consider "factorization first, then improvement."
+- Decoupling "global $\omega$" into "group-wise $\omega_m$" is a simple yet insightful idea that addresses a critical flaw in CFG. The derivation from proxy posterior to score formula is elegant and clean.
+- The attribute-split embedding is a lightweight training-time design that pre-configures a "mask interface," a valuable architectural choice for any conditional diffusion framework.
+- The introduction of "intervention effectiveness vs. reversibility" evaluation is more aligned with causal axioms than simple FID; this approach could be adapted for video editing and 3D consistency.
+- Orthogonality to CFG++ and APG suggests that factorization is a separate dimension for improvement in conditional sampling.
 
 ## Limitations & Future Work
-- Relies on pre-specified causal graphs or semantic groupings; FCFG itself does not solve causal discovery. If attribute relationships are unknown or dynamic, incorrect grouping may worsen the problem.
-- $\omega_m$ still requires manual tuning; future work could adaptively select $\omega$ based on input conditions or timestep, enabling timestep-aware FCFG.
-- Train-test mismatch is mild but present: training only sees all-null, inference sees group-masked; with large $M$ or strong $\omega$, stability issues may arise.
-- When all attributes are intervened, two-group splitting degenerates to global CFG, requiring finer $M=K$ granularity; this corner case exposes the fragility of grouping.
-- Maximum experimental resolution is 192×192; effectiveness on high-resolution latent diffusion / SDXL / video diffusion remains to be validated.
+- Dependency on pre-specified causal graphs or semantic groupings; FCFG does not solve causal discovery. Mis-grouping in unknown or dynamic relationships might worsen amplification.
+- $\omega_m$ still requires manual tuning. Future work could explore adaptive selection of $\omega$ based on input conditions or timesteps (timestep-aware FCFG).
+- Train-test mismatch: While stability was high in tests, the model only seeing full or null conditions during training could theoretically cause issues with large $M$ or strong $\omega$ in group-masking scenarios.
+- Sensitivity of grouping: When all attributes are intervened, the framework relies on fine-grained $M=K$ grouping, which might be less robust.
+- Scaling: Experiments were limited to 192×192. Effectiveness on high-resolution latent diffusion (SDXL) or video diffusion remains to be verified.
 
 ## Related Work & Insights
-- **vs Standard CFG (Ho & Salimans 2022)**: This work is a strict generalization, fully equivalent when $M=1$; upgrades $\omega$ to a vector $\omega_m$ via conditional independence.
-- **vs CFG++ (Chung 2025) / APG (Sadat 2025)**: These improve score shape or manifold constraints for fidelity, but still use global $\omega$; FCFG is orthogonal and can be combined.
-- **vs Compositional Diffusion (Liu 2022) / Shen 2024**: Those methods use spatial masks or multiple conditional models for local control; FCFG requires only one model plus semantic grouping.
-- **vs HVAE / HVAE-soft (Ribeiro 2023; Xia 2024)**: They address attribute amplification via predictor-finetuning during training; FCFG shifts the solution to inference, leaving training unchanged and lighter-weight.
-- **vs SA-DCG (Rasal 2025)**: Uses diffusion autoencoder + identity preservation optimization, which is heavier; FCFG achieves lower off-target and better FID at the same target effectiveness.
+- **vs Standard CFG (Ho & Salimans 2022)**: FCFG is a strict generalization, equivalent when $M=1$. It upgrades $\omega$ to a vector $\omega_m$ via conditional independence.
+- **vs CFG++ (Chung 2025) / APG (Sadat 2025)**: These improve score shape or manifold constraints for fidelity but still use global $\omega$; FCFG is orthogonal and combinable.
+- **vs Compositional Diffusion (Liu 2022) / Shen 2024**: Those methods use spatial masks or multiple models for local control; FCFG uses a single model and semantic grouping.
+- **vs HVAE / HVAE-soft (Ribeiro 2023; Xia 2024)**: These correct amplification during training via predictor-finetuning; FCFG is more lightweight as a purely inference-side fix.
+- **vs SA-DCG (Rasal 2025)**: They use diffusion autoencoders and identity-preserving optimization; FCFG achieves lower off-target drift and better FID with less complexity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Simple yet incisive idea, a natural but overlooked extension of the CFG formula
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers CelebA-HQ/EMBED/MIMIC-CXR datasets + multi-angle comparison with HVAE/SA-DCG/CFG++/APG, but lacks high-resolution latent diffusion validation
-- Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivation, failure mode quantified by Δ metrics, intuitive visual comparisons
-- Value: ⭐⭐⭐⭐ Plug-and-play, directly valuable for medical counterfactual reasoning and fairness evaluation, extremely low adoption cost for the community
+- Novelty: ⭐⭐⭐⭐ Simple but impactful extension of the CFG formula.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing on three datasets and comparison with HVAE/SA-DCG/CFG++/APG, though lacking high-res verification.
+- Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivations and intuitive visualization of failure modes.
+- Value: ⭐⭐⭐⭐ Plug-and-play value for medical counterfactuals and fairness assessments with low adoption costs.
 
 <!-- RELATED:START -->
 
@@ -127,11 +140,11 @@ The training objective is the standard conditional diffusion loss $\mathbb{E}\|\
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Exploring and Leveraging Class Vectors for Classifier Editing](../../NeurIPS2025/medical_imaging/exploring_and_leveraging_class_vectors_for_classifier_editing.md)
 - [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
-- [\[CVPR 2026\] Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting](../../CVPR2026/medical_imaging/prototypebased_knowledge_guidance_for_finegrained.md)
-- [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](../../ICCV2025/medical_imaging/multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
-- [\[CVPR 2026\] Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/parameter-efficient_prompt_tuning_and_hierarchical_textual_guidance_for_few-shot.md)
-- [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](../../AAAI2026/medical_imaging/qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
+- [\[CVPR 2026\] Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance](../../CVPR2026/medical_imaging/virtual_immunohistochemistry_staining_with_dual-aligned_multi-task_feature_guida.md)
+- [\[CVPR 2026\] Bridging RGB and Hematoxylin Components: An Interleaved Guidance and Fusion Framework for Point Supervised Nuclei Segmentation](../../CVPR2026/medical_imaging/bridging_rgb_and_hematoxylin_components_an_interleaved_guidance_and_fusion_frame.md)
+- [\[CVPR 2026\] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance](../../CVPR2026/medical_imaging/adaptive_anisotropic_gaussian_splatting_for_multi-contrast_mri_arbitrary-scale_s.md)
 
 </div>
 

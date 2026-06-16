@@ -2,160 +2,143 @@
 title: >-
   [Paper Note] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 description: >-
-  [CVPR 2026][Causal Inference][Visual counterfactual explanations] This paper proposes MaskDiME, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an ada…
+  [CVPR 2026][Causal Inference][Diffusion Model] MaskDiME is proposed, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-masking mechanism. This achieves precise and efficient visual counterfactual explanations, with inference speeds over 30 times faster than DiME and GPU memory cons
 tags:
-  - "CVPR 2026"
-  - "Causal Inference"
-  - "Visual counterfactual explanations"
-  - "diffusion models"
-  - "adaptive masking"
-  - "explainable AI"
-  - "classifier guidance"
+  - CVPR 2026
+  - Causal Inference
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 985f2aeef512fce0
+content_hash: 75d63402993d46eb
 ---
-
 # MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.18792](https://arxiv.org/abs/2602.18792)  
 **Code**: Coming soon  
-**Area**: Causal Inference
-**Keywords**: Visual counterfactual explanations, diffusion models, adaptive masking, explainable AI, classifier guidance
+**Area**: Causal Inference  
+**Keywords**: Visual Counterfactual Explanations, Diffusion Models, Adaptive Masking, Explainable AI, Classifier Guidance
 
 ## TL;DR
 
-This paper proposes MaskDiME, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-mask mechanism, enabling precise and efficient visual counterfactual explanations. MaskDiME achieves inference speeds more than 30× faster than DiME while requiring only one-tenth the GPU memory of ACE/RCSB.
+MaskDiME is proposed, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-masking mechanism. This achieves precise and efficient visual counterfactual explanations, with inference speeds over 30 times faster than DiME and GPU memory consumption only one-tenth that of ACE/RCSB.
 
 ## Background & Motivation
 
-Visual counterfactual explanations (VCE) address the question: "What must change in an image for the model to reach a different decision?"—a more intuitive and causally grounded approach than attribution methods such as heatmaps. Diffusion models have become the dominant paradigm for VCE owing to their superior generative quality, yet existing methods face two core challenges:
+Visual Counterfactual Explanations (VCE) aim to answer "What must change in the image for the model to make a different decision?" — providing more intuitive and causal insights than attribution methods like heatmaps. While diffusion models have become the mainstream paradigm for VCE due to their superior generation quality, existing methods face two core challenges:
 
-**Challenge 1: High computational cost.** DiME pioneered diffusion-based counterfactual generation but relies on nested denoising and step-wise backpropagation, resulting in $O(T^2)$ complexity with slow inference and large memory footprint. Multi-stage methods such as ACE and RCSB similarly exhibit high GPU memory consumption.
+**Challenge 1: High computational cost**. DiME pioneered diffusion counterfactual generation but relies on nested denoising and step-by-step backpropagation, resulting in $O(T^2)$ complexity, slow speeds, and high memory usage. Multi-stage methods such as ACE and RCSB also suffer from high GPU memory consumption.
 
-**Challenge 2: Poor spatial precision.** Most methods apply global classifier guidance or implicit conditioning, causing the guidance signal to propagate indiscriminately across the entire image, making it difficult to identify which regions explain the decision. FastDiME improves speed but uses pixel-difference masks for coarse localization; the fixed masks in ACE/RCSB cannot adapt to the dynamic semantic shifts that occur during reverse diffusion (e.g., changes in facial expression).
+**Challenge 2: Poor spatial precision**. Most methods use global classifier guidance or implicit conditioning, causing signals to propagate indiscriminately and results in edits scattered across the image, making it difficult to identify which regions explain the decision. FastDiME accelerates the process but uses coarse pixel-difference masks; the fixed masks in ACE/RCSB cannot adapt to the dynamic changes of semantic regions (e.g., changes in facial expressions) during the reverse diffusion process.
 
-**Core Insight**: Enabling the model to adaptively focus on decision-relevant regions at every step of the reverse diffusion process is the key to achieving precise, semantically consistent counterfactual explanations.
+**Key Insight**: Allowing the model to adaptively focus on decision-relevant regions at each step of reverse diffusion is the key to achieving precise and semantically consistent counterfactual explanations.
 
 ## Method
 
 ### Overall Architecture
 
-MaskDiME builds on DiME's gradient-guided diffusion paradigm with three key modifications: (1) replacing nested denoising with single-step Tweedie estimation, reducing complexity from $O(T^2)$ to $O(T)$; (2) introducing an adaptive dual-mask mechanism to constrain per-step update regions; and (3) introducing a gradient scaling factor $s$ to compensate for quality loss from single-step estimation.
+The **Key Challenge** MaskDiME addresses is the need for "accurate modification" (affecting only decision-relevant regions) while maintaining "high execution speed" (avoiding the nested denoising and iterative backpropagation of DiME). It follows the classifier gradient guidance paradigm of DiME but modifies the workflow into a single-pass reverse diffusion. First, the query image $x$ is forward-diffused to timestep $\tau$ (default $\tau=60, T=200$), and then denoised step-by-step from $\tau$. Each step uses classifier gradients to push the image toward the target class, while a pair of adaptive masks restricts modifications to decision-relevant regions. Finally, the Tweedie formula provides a single-step estimation of the clean image. The entire process is training-free, directly reusing pre-trained unconditional DDPMs and target classifiers.
 
-Given a query image $x$, forward diffusion is applied to a predefined timestep $\tau$ (default $\tau=60$, total steps $T=200$):
+Forward diffusion:
 
 $$\tilde{z}_t = \sqrt{\bar{\alpha}_t}\, x + \sqrt{1-\bar{\alpha}_t}\, \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)$$
 
-At each reverse diffusion step $t$, mask-constrained denoising updates are applied:
+Mask-constrained denoising at each reverse step — performing gradient guidance inside the mask and preserving the original diffusion trajectory outside:
 
 $$z_{t-1} = M_t^z \odot \mathcal{N}\!\big(\mu_\theta(z_t) - \Sigma_\theta(z_t) \nabla z_t,\, \Sigma_\theta(z_t)\big) + (1 - M_t^z) \odot \tilde{z}_{t-1}$$
 
-Regions inside the mask undergo gradient-guided denoising, while regions outside retain the original diffusion trajectory, enabling spatially controlled counterfactual generation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Query Image x"] --> B["Forward Noise → z_τ<br/>(τ=60, T=200)"]
+    B --> C["Classifier Gradient Guidance + Scaling Factor<br/>Three-term loss backprop, multiplied by s"]
+    C --> D["Adaptive Dual-Masks<br/>Gradient map top-k% for M_z, tightened for M_x"]
+    D --> E["Mask-Constrained Denoising<br/>Guided inside mask, original trajectory outside"]
+    E --> F["Single-step Tweedie Estimation<br/>Estimate x_0, mixed with original via M_x"]
+    F -->|"t > 0 Next Step"| C
+    F -->|"t = 0"| G["Counterfactual Image"]
+```
 
-### Gradient Guidance Design
+### Key Designs
 
-The joint loss function follows DiME, comprising three components:
+**1. Classifier Gradient Guidance + Scaling Factor: Precise Adjustment of Semantic Direction**
 
-$$L(x_t; y, x) = \lambda_c L_{\text{class}}(C(y|x_t)) + \lambda_p L_{\text{perc}}(x_t, x) + \lambda_l L_{L1}(x_t, x)$$
-
-- **Classification loss** $L_{\text{class}}$: drives the generated image toward the target class semantics.
-- **Perceptual loss** $L_{\text{perc}}$: preserves structural and appearance similarity to the original image.
-- **L1 loss** $L_{L1}$: provides pixel-level supervision to stabilize low-level differences and reduce artifacts.
-
-Gradients are propagated to the noise space via the reparameterization trick, with a scaling factor $s$ controlling overall guidance strength:
+DiME is slow due to multi-stage recursive backpropagation. MaskDiME changes this to single-step estimation; however, if the guidance signal is weak, the counterfactual fails to flip the class (flipping rate is only 55.2% when $s=1$). Thus, it retains DiME's triple-joint loss and adds a scaling factor $s$ to boost guidance intensity. The loss is defined as $L(x_t; y, x) = \lambda_c L_{\text{class}}(C(y|x_t)) + \lambda_p L_{\text{perc}}(x_t, x) + \lambda_l L_{L1}(x_t, x)$, where $L_{\text{class}}$ drives the semantics toward the target, $L_{\text{perc}}$ preserves structure, and $L_{L1}$ stabilizes pixel-level differences. The gradient is backpropagated to the noise space and scaled by $s$:
 
 $$\nabla z_t = s \cdot \frac{1}{\sqrt{\bar{\alpha}_t}} \nabla_{x_t} L(x_t; y, x)$$
 
-Hyperparameter settings: $\lambda_c \in \{8,10,15\}$ (following DiME's iterative search), $\lambda_p=30$, $\lambda_l=0.05$; $s$ is tuned per dataset (CelebA: 8, CelebA-HQ: 10, BDD: 14, ImageNet: 6.5).
+Hyperparameters are $\lambda_c \in \{8,10,15\}$, $\lambda_p=30$, $\lambda_l=0.05$, and $s$ is set per dataset (8/10/14/6.5 for CelebA / CelebA-HQ / BDD / ImageNet). $s$ and masking are complementary: $s$ controls magnitude, while masks control spatial scope.
 
-### Adaptive Dual-Mask Mechanism (Core Innovation)
+**2. Adaptive Dual-Masking: Tracking Decision Regions per Step**
 
-At each diffusion step $t$, two binary masks $M_t^x \subseteq M_t^z$ are constructed from classifier gradients:
+Older methods either propagate gradients globally or use fixed masks (e.g., ACE/RCSB), which fail to capture dynamic semantic drifts like forming expressions. MaskDiME calculates two nested masks $M_t^x \subseteq M_t^z$ at each step. First, it computes the spatial gradient map $G_t = \left|\nabla_{z_t}^{\text{class}}\right|_{\text{avg}} \in \mathbb{R}^{1 \times H \times W}$ using the absolute value of the classification loss gradient — this requires only a single backpropagation pass, unlike the dozens required by Integrated Gradients in RCSB. The noise-level mask $M_t^z$ takes the top-$k\%$ ($k=0.05$ for smile, $0.1$ for age) of $G_t$, determining which regions undergo denoising. The clean-level mask $M_t^x$ is further tightened to the top-$\rho k\%$ ($\rho=0.25$ for CelebA-HQ, $0.5$ otherwise). Both undergo $5 \times 5$ morphological dilation. This dual-layer approach allows $M_t^x$ to prevent non-decision regions from being corrupted by perceptual/L1 gradients when the classification gradient weakens as $x_t$ approaches the target.
 
-**Step 1: Extract spatial gradient maps.** The absolute value of the gradient of the classification loss with respect to $x_t$ is taken and averaged across channels:
+**3. Single-step Tweedie Clean Image Estimation: Reducing $O(T^2)$ to $O(T)$**
 
-$$G_t = \left|\nabla_{z_t}^{\text{class}}\right|_{\text{avg}} \in \mathbb{R}^{1 \times H \times W}$$
-
-Unlike RCSB, which uses Integrated Gradients requiring dozens of forward/backward passes, this approach requires only a single step, enabling real-time mask generation at each sampling step.
-
-**Step 2: Construct the noise-level mask $M_t^z$.** The top-$k\%$ gradient regions in $G_t$ are set to 1 and the remainder to 0. Here $k=0.05$ for the smile attribute and $k=0.1$ for age and other datasets.
-
-**Step 3: Construct the clean-level mask $M_t^x$.** From $M_t^z$, the top-$\rho k\%$ strongest gradient regions are further retained. Here $\rho=0.25$ for CelebA-HQ and $\rho=0.5$ for other datasets.
-
-**Why are two masks needed?** As denoising progresses, $x_t$ increasingly resembles the counterfactual class, causing classification gradients to diminish while perceptual and L1 loss gradients dominate. The more compact $M_t^x$ prevents non-decision regions in the clean image estimate from being inappropriately modified, ensuring edits remain strictly confined to decision-relevant areas.
-
-Both masks are processed with morphological dilation using a $5 \times 5$ kernel to enhance spatial coherence.
-
-### Single-Step Clean Image Estimation
-
-The current clean image is estimated in a single step via the Tweedie formula, avoiding DiME's recursive reconstruction:
+DiME's recursive reconstruction at each step drives its $O(T^2)$ complexity and memory overhead. MaskDiME uses the Tweedie formula to estimate the clean image in one step:
 
 $$\hat{x}_0^{(t-1)} = \frac{z_{t-1} - \sqrt{1-\bar{\alpha}_{t-1}}\, \epsilon_\theta(z_{t-1})}{\sqrt{\bar{\alpha}_{t-1}}}$$
 
-The clean-level mask is then applied to blend the estimate, keeping non-edited regions strictly unchanged:
-
-$$x_{t-1} = M_t^x \odot \hat{x}_0^{(t-1)} + (1-M_t^x) \odot x$$
+It then blends this with the original image using the clean-level mask, ensuring non-edited areas remain strictly unchanged: $x_{t-1} = M_t^x \odot \hat{x}_0^{(t-1)} + (1-M_t^x) \odot x$. This step provides the 30× speedup and 1/10 memory usage, with the scaling factor $s$ compensating for the reduced estimation quality.
 
 ### Loss & Training
 
-MaskDiME is fully training-free: it directly reuses DiME's unconditional DDPM weights and the target classifier weights without any additional training or fine-tuning. The only newly introduced parameters are $s$, $k$, and $\rho$, and $k$ and $\rho$ generalize well across datasets.
+Ours is completely training-free: it directly reuses unconditional DDPM weights and target classifier weights without additional training or fine-tuning. The only adjustable parameters are $s$, $k$, and $\rho$, where $k$ and $\rho$ are highly consistent across datasets.
 
 ## Key Experimental Results
 
 ### Main Results: CelebA Smile Attribute (128×128)
 
 | Method | FID↓ | sFID↓ | FVA↑ | FS↑ | MNAC↓ | CD↓ | COUT↑ | FR↑ |
-|--------|------|-------|------|-----|-------|-----|-------|-----|
+|------|------|-------|------|-----|-------|-----|-------|-----|
 | DiME | 3.17 | 4.89 | 98.3 | 0.73 | 3.72 | 2.30 | 0.53 | 97.2 |
 | ACE $\ell_1$ | 1.27 | 3.97 | 99.9 | 0.87 | 2.94 | 1.73 | 0.78 | 97.6 |
 | FastDiME-2+ | 3.24 | 5.23 | 99.9 | 0.79 | 2.91 | 2.02 | 0.41 | 98.9 |
 | RCSB | 2.98 | 4.79 | 100.0 | 0.91 | 2.24 | 2.78 | 0.87 | 99.8 |
 | **MaskDiME** | **0.71** | **3.29** | **100.0** | **0.91** | 2.78 | 2.41 | **0.87** | **100.0** |
 
-MaskDiME achieves the lowest FID (0.71) and sFID (3.29), a perfect flip rate (FR=100%), and optimal or near-optimal performance on FVA/FS/COUT.
+MaskDiME achieves the lowest FID (0.71) and sFID (3.29), a perfect flipping rate (FR=100%), and optimal or near-optimal FVA/FS/COUT.
 
 ### Ablation Study: CelebA Smile
 
-| Configuration | FID↓ | FS↑ | MNAC↓ | CD↓ | COUT↑ | FR↑ |
-|---------------|------|-----|-------|-----|-------|-----|
+| Config | FID↓ | FS↑ | MNAC↓ | CD↓ | COUT↑ | FR↑ |
+|------|------|-----|-------|-----|-------|-----|
 | DiME (baseline) | 3.17 | 0.73 | 3.72 | 2.30 | 0.53 | 97.2 |
-| $s$=1 & no mask | 95.76 | 0.63 | 6.15 | 2.43 | -0.16 | 55.2 |
-| $s$=8 & no mask | 15.94 | 0.77 | 5.71 | 4.20 | 0.96 | 100.0 |
-| Fixed mask | 4.21 | 0.86 | 2.98 | 2.03 | 0.70 | 99.7 |
-| $s$=8 & adaptive mask ($\rho$=1) | 0.71 | 0.90 | 2.66 | 2.25 | 0.81 | 100.0 |
+| $s$=1 & No Mask | 95.76 | 0.63 | 6.15 | 2.43 | -0.16 | 55.2 |
+| $s$=8 & No Mask | 15.94 | 0.77 | 5.71 | 4.20 | 0.96 | 100.0 |
+| Fixed Mask | 4.21 | 0.86 | 2.98 | 2.03 | 0.70 | 99.7 |
+| $s$=8 & Adaptive Mask ($\rho$=1) | 0.71 | 0.90 | 2.66 | 2.25 | 0.81 | 100.0 |
 | **MaskDiME** ($\rho$=0.5) | **0.71** | **0.91** | 2.78 | 2.41 | **0.87** | **100.0** |
 
-The ablation clearly reveals each component's contribution: single-step estimation alone ($s$=1, no mask) causes FID to spike to 95.76 with FR of only 55.2%; increasing $s$ restores FR but introduces artifacts (FID=15.94); introducing adaptive masking reduces FID to 0.71; and the dual-mask setting with $\rho=0.5$ further improves COUT from 0.81 to 0.87.
+The ablation clearly reveals the contribution of each component: single-step estimation without masks ($s=1$) results in a massive FID (95.76) and low FR (55.2%); increasing $s$ restores FR but introduces artifacts (FID=15.94); introducing adaptive masking drops FID to 0.71; and the dual-mask ($\rho=0.5$) improves COUT from 0.81 to 0.87.
 
 ### Key Findings
 
-- **30× speedup**: MaskDiME is 30× faster than DiME and 2.5× faster than FastDiME, with approximately one-tenth the GPU memory of ACE/RCSB.
-- **Strong cross-domain generalization**: Optimal or near-optimal results are achieved across five datasets spanning faces (CelebA/CelebA-HQ), autonomous driving (BDD100K/BDD-OIA), and general classification (ImageNet).
-- **FR reaches 100%** on both BDD100K and BDD-OIA, with COUT of 0.85/0.80 and $S^3$ of 0.99.
-- Heatmap visualizations demonstrate that the adaptive mask progressively focuses on decision-relevant regions—the mouth (smile) and traffic lights (driving)—over the course of diffusion.
-- Gradient scaling $s$ and the masking mechanism are complementary: the former controls guidance strength while the latter ensures spatial focus and semantic consistency.
-- Diversity evaluation: $\sigma_L=0.0395$, higher than ACE $\ell_1$ (0.0174) but lower than DiME (0.2139)—DiME's higher diversity stems from unconstrained background modifications rather than genuine semantic diversity.
+- **30×+ Acceleration**: MaskDiME is 30x faster than DiME and 2.5x faster than FastDiME, with only 1/10 the GPU memory of ACE/RCSB.
+- **Strong Generalization**: Achieves state-of-the-art or competitive results across five datasets: Faces (CelebA/CelebA-HQ), Autonomous Driving (BDD100K/BDD-OIA), and General Classification (ImageNet).
+- **On BDD100K and BDD-OIA**, it achieves 100% FR, COUT of 0.85/0.80, and $S^3$ of 0.99.
+- Heatmap visualizations show adaptive masks gradually focusing on decision-relevant regions such as mouths (smiling) or traffic lights (driving).
+- Gradient scaling $s$ and the masking mechanism are complementary: $s$ controls guidance strength, while masks ensure spatial focus and semantic consistency.
+- Diversity evaluation: $\sigma_L=0.0395$, which is higher than ACE $\ell_1$ (0.0174) but lower than DiME (0.2139) — DiME's high diversity stems from unconstrained background modifications rather than true semantic diversity.
 
 ## Highlights & Insights
 
-- **Elegant dual-mask design**: The noise-level mask defines the denoising region, while the more compact clean-level mask counteracts the decay of classification gradients, addressing the distinct requirements of noise space and clean image space separately.
-- **Highly practical**: Training-free operation, linear complexity, and low memory footprint make VCE practically deployable.
-- **Rigorous visualization study**: Heatmap comparisons across pixel-difference masks, fixed masks, and adaptive masks intuitively illustrate the behavioral differences among masking strategies.
-- **Insightful ablation design**: The sequential addition of $s$ → mask → $\rho$ cleanly isolates the independent contribution of each component.
+- **Elegant Dual-Mask Design**: The noise-level mask defines the denoising region, while the clean-level mask is more compact to handle classifier gradient decay, effectively addressing different requirements in noise and clean spaces.
+- **High Practicality**: Training-free, linear complexity, and low memory footprint make VCE feasible for real-world deployment.
+- **Rigorous Visualization**: Comparisons (pixel-difference vs. fixed vs. adaptive masks) intuitively demonstrate the behavioral differences of different masking strategies.
+- **Clever Ablation Logic**: The step-by-step addition of $s$, masks, and $\rho$ clearly reveals the independent contribution of each component.
 
 ## Limitations & Future Work
 
-- Masks are derived from single-step gradients rather than Integrated Gradients; gradient noise in multi-class ImageNet scenarios leads to imprecise localization, resulting in higher FID/sFID than RCSB.
-- The method supports only pixel-space DDPM and has not been extended to latent diffusion models, limiting applicability in high-resolution settings.
-- The absence of ground-truth annotations for counterfactual explanations makes rigorous causal validation of results difficult.
+- Since masks are based on single-step gradients rather than Integrated Gradients, gradient noise in multi-class ImageNet scenarios leads to less accurate localization, resulting in higher FID/sFID than RCSB.
+- Only supports pixel-space DDPM; not yet extended to Latent Diffusion, limiting applicability in high-resolution scenarios.
+- Lack of ground-truth labels for counterfactual explanations makes it difficult to strictly verify correctness from a causal perspective.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The adaptive dual-mask mechanism is elegantly designed, offering a novel perspective grounded in the interaction between gradient dynamics and diffusion processes.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets spanning three visual domains, with complete ablation and visualization analyses.
-- Writing Quality: ⭐⭐⭐⭐ Outstanding visualizations (heatmaps, efficiency scatter plots) and a clear, well-structured logical progression.
-- Value: ⭐⭐⭐⭐ A 30× speedup combined with one-tenth the memory makes VCE practically deployable, representing a significant contribution to the XAI field.
+- Novelty: ⭐⭐⭐⭐ The adaptive dual-masking mechanism is elegantly designed, offering a new perspective on gradient-diffusion dynamics.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers five datasets across three visual domains with complete ablation and visualization analyses.
+- Writing Quality: ⭐⭐⭐⭐ Excellent visualization (heatmaps, efficiency plots) with clear, logical progression.
+- Value: ⭐⭐⭐⭐ 30x speedup and 1/10 memory usage make VCE practically deployable, significantly advancing the XAI field.
 
 <!-- RELATED:START -->
 
@@ -163,11 +146,11 @@ The ablation clearly reveals each component's contribution: single-step estimati
 
 ## Related Papers
 
-- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
 - [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](retrieving_counterfactuals_improves_visual_in-context_learning.md)
-- [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
+- [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
 - [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
-- [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
+- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
 
 </div>
 

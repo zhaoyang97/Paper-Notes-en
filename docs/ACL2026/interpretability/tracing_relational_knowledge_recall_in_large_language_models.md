@@ -2,71 +2,69 @@
 title: >-
   [Paper Note] Tracing Relational Knowledge Recall in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Relational knowledge] This paper systematically investigates the internal mechanisms of LLMs for recalling relational knowledge during text generation. It finds that head-wise contributions t…
+  [ACL 2026][Interpretability][Paper Note] This paper systematically investigates the internal mechanisms of LLMs in recalling relational knowledge during text generation. It finds that the head-wise contribution of attention heads to the residual stream ($\Delta_{att,h}$) is the strongest feature for linear relation classification (reaching 91% accuracy). It p
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Relational knowledge"
-  - "attention head attribution"
-  - "linear probes"
-  - "knowledge recall mechanisms"
-  - "feature attribution"
+  - ACL 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 678d2968fd8703da
+content_hash: 70b291d0fe0edd31
 ---
-
 # Tracing Relational Knowledge Recall in Large Language Models
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19934](https://arxiv.org/abs/2604.19934)  
 **Code**: [nicpopovic.com/publications/tracing](https://nicpopovic.com/publications/tracing)  
-**Area**: Interpretablity / Knowledge Representation  
-**Keywords**: Relational knowledge, attention head attribution, linear probes, knowledge recall mechanisms, feature attribution
+**Area**: Interpretability / Knowledge Representation  
+**Keywords**: Relational Knowledge, Attention Head Attribution, Linear Probing, Knowledge Recall Mechanism, Feature Attribution
 
 ## TL;DR
-This paper systematically investigates the internal mechanisms of LLMs for recalling relational knowledge during text generation. It finds that head-wise contributions to the residual stream ($\Delta_{att,h}$) are the strongest features for linear relation classification (achieving 91% accuracy). The study proposes HeadScore and TokenScore attribution methods to decompose predictions to the attention head and source token levels, revealing clear correlations between probe accuracy and relation specificity, entity connectedness, and probe signal concentration.
+This paper systematically investigates the internal mechanisms of LLMs in recalling relational knowledge during text generation. It finds that the head-wise contribution of attention heads to the residual stream ($\Delta_{att,h}$) is the strongest feature for linear relation classification (reaching 91% accuracy). It proposes two probe attribution methods, HeadScore and TokenScore, to decompose predictions to the level of attention heads and source tokens, revealing clear correlations between probe accuracy and relational specificity, entity connectivity, and the concentration of probe signals.
 
 ## Background & Motivation
 
-**Background**: How LLMs store and recall relational knowledge is a central question in interpretability research. Existing studies have revealed a typical picture of knowledge recall: (1) subjective entity information accumulates at the last token of the subject span in middle-to-late layers; (2) predicate/relation information accumulates at the token position prior to object generation via attention heads; (3) object entities are retrieved from MLP sublayers via attention. This process can sometimes be approximated by linear transformations and traced back to relation-specific neurons.
+**Background**: How LLMs store and recall relational knowledge is a core question in interpretability research. Existing studies have revealed a typical picture of knowledge recall: (1) Subject entity information accumulates at the last token of the subject span in middle-to-late layers; (2) Predicate/relation information accumulates via attention heads at the token position preceding object generation; (3) Object entities are retrieved from MLP sublayers through attention. This process can sometimes be approximated by linear transformations and traced back to relation-specific neurons.
 
-**Limitations of Prior Work**: For entity representations, studies have shown that named entity recognition and disambiguation can be reliably performed via probes. However, for relation type features, it remains unclear which internal representations support faithful linear relation classification, or why certain relation types are more easily captured linearly than others. Existing analyses cannot trace relation predictions back to specific attention heads and source tokens simultaneously.
+**Limitations of Prior Work**: Regarding entity representations, research has shown that probes can reliably perform named entity recognition and disambiguation. However, for relation-type features, it remains unclear which internal representations support faithful linear relation classification, or why certain relation types are more easily captured linearly than others. Existing analyses fail to trace relation predictions simultaneously back to specific attention heads and source tokens.
 
-**Key Challenge**: While attention heads and MLPs are known to play roles in knowledge recall, there is a lack of a probing method capable of simultaneous attribution at both the head and token levels to systematically understand factors for success and failure in relation classification.
+**Key Challenge**: While it is known that attention heads and MLPs play roles in knowledge recall, there is a lack of a probing method that can simultaneously perform attribution at the attention head and token levels to systematically understand the factors behind the success and failure of relation classification.
 
-**Goal**: (1) Identify the most suitable internal LLM representations for linear relation classification; (2) Determine which factors predict the success or failure of probes in relation classification.
+**Goal**: (1) Identify the internal LLM representations best suited for linear relation classification; (2) Determine what factors predict the success or failure of probes in relation classification.
 
-**Key Insight**: Focus on the head-wise contributions of attention heads to the residual stream, as these features naturally decompose to the source token level, making attribution analysis feasible.
+**Key Insight**: Focus on the head-wise contribution of attention heads to the residual stream, as these features can be naturally decomposed to the source token level, making attribution analysis feasible.
 
-**Core Idea**: Use head-wise contributions $\Delta_{att,h}$ as linear probe features for relation classification, and decompose probe prediction decisions through two methods: HeadScore (head-level attribution) and TokenScore (source token-level attribution).
+**Core Idea**: Use the head-wise contribution of attention heads $\Delta_{att,h}$ as the linear probe feature for relation classification, and decompose probe decisions via two methods: HeadScore (head-level attribution) and TokenScore (source token-level attribution).
 
 ## Method
 
 ### Overall Architecture
-The system sets up relational knowledge recall as a controlled generation scenario using cloze-style prompts. Features of attention head contributions are extracted at the position before object entity generation to train linear probes for relation classification. Subsequently, HeadScore and TokenScore attribution methods analyze which heads and source tokens drive probe predictions. System evaluation is conducted on four instruction-tuned LLMs (LLaMA-3.2 1B/3B, LLaMA-3.1 8B, Qwen3 4B) using the FewRel validation set.
+This paper frames "relational knowledge recall" as a controlled cloze-style generation scenario: given a prompt containing a subject and a target object to be predicted, internal model states are captured at the token position before object generation. A linear probe is then trained to determine the relation type expressed in the sentence. The key lies in using the head-wise contribution of attention heads $\Delta_{att,h}$ as the probe feature—it serves as the strongest relational signal while being naturally decomposable into individual attention heads and source tokens, thereby supporting the HeadScore and TokenScore attribution analyses. The entire pipeline is systematically evaluated on LLaMA-3.2 1B/3B, LLaMA-3.1 8B, and Qwen3 4B instruction-tuned models using the FewRel validation set.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input prompt<br/>Subject + target object"] --> B["Capture attention head internal states<br/>at token position before object generation"]
+    B --> C["Attention head contribution features Δ_att,h<br/>Decomposed by head, traceable to source tokens"]
+    C --> D["Linear Probe<br/>Classify relation types (n-way k-shot)"]
+    D --> E["HeadScore and TokenScore<br/>Decompose probe decisions back to heads and source tokens"]
+    E --> F["Predictors of relation classification success/failure<br/>Four correlations (including data-free diagnostic signals)"]
+```
 
 ### Key Designs
 
-1.  **Head-wise Contribution Features ($\Delta_{att,h}$)**:
+**1. Attention Head Contribution Feature $\Delta_{att,h}$: The Strongest Traceable Relational Signal**
 
-    - **Function**: Provide the strongest and most traceable feature representation for linear relation classification.
-    - **Mechanism**: For a target position $t$ (pre-object generation), the contribution of attention head $h$ to the residual stream is $\Delta_{att,h}(t) = W_{O,h}(\sum_j \text{Attn}_h(t,j) V_h(j))$, representing the result passed through the output projection matrix after attention-weighted aggregation. This can be further decomposed into contributions from individual source tokens $j$: $\Delta_{att,h}(t,j) = W_{O,h}(\text{Attn}_h(t,j) V_h(j))$. Compared to full attention or MLP states, head-wise contributions provide higher classification accuracy while maintaining traceability.
-    - **Design Motivation**: Full attention or MLP states are information-rich but non-traceable. Decomposing features to the head level allows each feature dimension to be explicitly attributed to specific heads and tokens, laying the foundation for downstream HeadScore and TokenScore attribution.
+While full attention or MLP states are information-rich, they cannot clearly attribute a particular classification to a specific head or token, making them inherently non-attributable. This paper instead uses the head-wise contribution of attention heads to the residual stream: at target position $t$ (before object generation), the contribution of head $h$ is $\Delta_{att,h}(t) = W_{O,h}(\sum_j \text{Attn}_h(t,j) V_h(j))$, representing the result of attention-weighted aggregation passed through the output projection matrix. This can be further decomposed into contributions from individual source tokens $j$, where $\Delta_{att,h}(t,j) = W_{O,h}(\text{Attn}_h(t,j) V_h(j))$. Counter-intuitively, these decomposed features are not only traceable but also yield higher classification accuracy than the full states (>90% vs. ~83–87% for full attention)—the decomposition eliminates interference between different heads, improving linear separability and paving the way for HeadScore and TokenScore attribution.
 
-2.  **HeadScore and TokenScore Attribution Methods**:
+**2. HeadScore and TokenScore: Decomposing Probe Decisions into Heads and Tokens**
 
-    - **Function**: Decompose predictions of trained linear probes to the head and source token levels.
-    - **Mechanism**: Given a probe weight matrix $W$ and predicted class $\hat{c}$, a contrastive direction is defined as $\Delta W = W_{\hat{c}} - \sum_{c \neq \hat{c}} \pi_c W_c$ (softmax-weighted weights of competing classes). HeadScore aggregates contributions per feature $\Delta W_m x_m$ by head: $\text{HeadScore}_{\ell,h} = \sum_{m:\ell_m=\ell, h_m=h} \Delta W_m x_m$. TokenScore further utilizes the token-level decomposition of head contributions to refine attribution down to source tokens: $\text{TokenScore}_\ell(j) = \sum_{m:\ell_m=\ell} \Delta W_m \cdot [\Delta_{att,h_m}(t,j)]_{d_m}$.
-    - **Design Motivation**: HeadScore reveals which heads contribute most to classification, while TokenScore reveals which input tokens the decision signals originate from. This enables error analysis and lexical shortcut detection.
+To explain why a probe makes a certain prediction, its linear weights must be projected back onto specific heads and source tokens. Given a probe weight matrix $W$ and a predicted class $\hat{c}$, a contrastive direction is constructed: $\Delta W = W_{\hat{c}} - \sum_{c \neq \hat{c}} \pi_c W_c$, where the weights of competing classes are subtracted using softmax weights $\pi_c$ to highlight the discriminative direction of $\hat{c}$ relative to other classes. HeadScore aggregates the contribution of each feature dimension $\Delta W_m x_m$ by its respective head, $\text{HeadScore}_{\ell,h} = \sum_{m:\ell_m=\ell, h_m=h} \Delta W_m x_m$, revealing which heads drive the classification. TokenScore utilizes the token decomposition of head contributions to refine attribution to the source token level, $\text{TokenScore}_\ell(j) = \sum_{m:\ell_m=\ell} \Delta W_m \cdot [\Delta_{att,h_m}(t,j)]_{d_m}$, allowing one to see which words in the input provide the decision signal, thus enabling error analysis and lexical shortcut detection.
 
-3.  **Predictive Factor Analysis for Relation Classification**:
+**3. Predictors of Relation Classification Performance: Four Correlations**
 
-    - **Function**: Identify factors influencing the performance variance of linear probes across different relation types.
-    - **Mechanism**: Under a 16-way-5-shot setting, the correlation between probe accuracy and four factors is analyzed: (1) Wikidata output range (number of distinct objects for a relation type)—negatively correlated; (2) Average entity connectedness (number of Wikidata properties between subject-object pairs)—negatively correlated; (3) TF-IDF lexical similarity between examples—positively correlated; (4) Number of heads required for 95% cumulative HeadScore contribution—negatively correlated (higher accuracy when signals are concentrated in fewer heads).
-    - **Design Motivation**: The first three factors characterize input data difficulty, while the fourth is an intrinsic property of the probe, serving as a diagnostic metric for probe behavior without requiring labeled data.
+To explain "why some relation types are easy to probe while others are extremely difficult," this paper systematically analyzes the correlation between probe accuracy and four factors in a 16-way-5-shot setting. The first three characterize the difficulty of the input data: Wikidata output range (the number of different objects associated with a relation) is negatively correlated with accuracy; average entity connectivity between subject-object pairs (the number of shared Wikidata properties) is also negatively correlated, as denser connectivity leads to more easily confused relations; and TF-IDF lexical similarity between examples is positively correlated, as surface-level similarity aids classification. The fourth factor comes from the probe itself—the number of heads required to reach 95% cumulative HeadScore contribution is negatively correlated with accuracy: the more the signal is concentrated in a few heads, the more accurate the classification. Since this metric does not rely on annotated data, it can serve as a diagnostic signal to predict probe reliability for new relation types.
 
 ### Loss & Training
-Linear probes are trained using cross-entropy loss and the Adam optimizer for 200 epochs. RelSpec expert feature selection is used to select the top 3000 features per relation type. Evaluation follows an n-way k-shot setup on the FewRel validation set, with all results averaged over 5 random seeds $\times$ 500 episodes.
+The linear probes are trained using Cross-Entropy loss and the Adam optimizer for 200 epochs. RelSpec expert feature selection is applied, selecting the top 3000 features for each relation type. Evaluation follows an n-way k-shot setup on the FewRel validation set, with results averaged over 5 random seeds $\times$ 500 episodes.
 
 ## Key Experimental Results
 
@@ -90,33 +88,33 @@ Linear probes are trained using cross-entropy loss and the Adam optimizer for 20
 
 ### Key Findings
 - $\Delta_{att,h}$ is the strongest relation classification feature across all models, consistently outperforming full attention/MLP states and other variants, with accuracy exceeding 90%.
-- Observing only the contribution of the subject entity token ($\Delta_{att,e_1}$) is insufficient for relation classification (~59-60%), suggesting that relation signals are not exclusively encoded on entity tokens.
-- Probe accuracy varies significantly across relation types (e.g., F1 of 39.76% for "part of" vs. 99.24% for "constellation"), negatively correlating with output range and entity connectedness.
-- Relation types where the HeadScore signal is more concentrated in a few attention heads exhibit higher probe accuracy—this may be related to feature superposition.
+- Observing only the contribution of source entity tokens ($\Delta_{att,e_1}$) is insufficient for relation classification (~59-60%), suggesting that relation signals are not encoded solely on entity tokens.
+- Probe accuracy varies significantly across relation types (e.g., F1 of 39.76% for "part of" vs. 99.24% for "constellation"), negatively correlating with output range and entity connectivity.
+- Relation types where HeadScore signals are concentrated in fewer attention heads yield higher probe accuracy—this may be related to feature superposition.
 - Only 5.3%-7.7% of errors align with lexical shortcuts, indicating that linear relation probe decisions are not primarily driven by lexical cues.
 
 ## Highlights & Insights
-- **Head-wise contributions outperform full states**: Counter-intuitively, decomposed head-wise features are more suitable for linear classification than the more information-rich full states. This is likely because decomposition removes interference between different heads, facilitating linear separation. This finding serves as a guide for other LLM probing research.
-- **HeadScore concentration as a data-free diagnostic**: Signal concentration (how many heads are needed to reach 95% contribution) is an intrinsic property of the probe that does not rely on labeled data and can predict probe performance on new relation types. This provides a practical tool for probe reliability assessment.
-- **TokenScore reveals probe behavior**: By refining attribution to the token level, it is possible to verify whether probes rely on semantically relevant tokens (e.g., "crosses") or co-occurring tokens (e.g., "bridge"), providing a granular tool for diagnosing probe behavior.
+- **Head-wise contributions outperform full states**: Counter-intuitively, decomposed head-wise features are more suitable for linear classification than the more information-rich full states. This likely occurs because decomposition removes interference between different heads, facilitating linear separation. This finding provides guidance for other LLM probing research.
+- **HeadScore concentration as a data-free diagnostic**: The concentration of probe signals (number of heads required for 95% contribution) is an intrinsic property of the probe that does not depend on annotated data and can predict probe performance on new relation types—providing a practical tool for reliability assessment.
+- **TokenScore reveals probe behavior**: By refining attribution to the token level, one can check if a probe relies on semantically relevant tokens (e.g., "crosses") or co-occurring tokens (e.g., "bridge"), offering a granular tool for diagnosing probe behavior.
 
 ## Limitations & Future Work
-- Evaluated only on the FewRel validation set, with relatively limited relation types (16 classes).
-- All findings are correlations rather than causal—the influence mechanisms of output range, connectedness, etc., await verification through causal experiments.
-- Evaluation models ranged from 1B to 8B; larger models were not tested.
-- The probing method explains probe decisions rather than internal LLM computations; the relationship between the two requires further clarification.
-- Non-linear probes were not explored to see if they capture more relational information.
+- Evaluation is limited to the FewRel validation set with relatively few relation types (16 classes).
+- All findings are correlational rather than causal—the specific mechanisms by which factors like output range and connectivity influence probes require further causal experimentation.
+- The scale of evaluated models ranges from 1B to 8B; larger models have not been tested.
+- Probing methods explain the decisions of the probe rather than the LLM's internal computation; the relationship between the two needs further clarification.
+- Non-linear probes have not been explored to see if they capture more relational information.
 
 ## Related Work & Insights
-- **vs. Meng et al. (2022) / ROME**: Focuses on fact localization in knowledge editing, while Ours focuses on feature selection and attribution in relation classification.
-- **vs. Hernandez et al. (2024)**: Demonstrated that some relations can be linearly approximated but did not explain why some are easier. Ours provides explanations through factors like output range and connectedness.
-- **vs. Liu et al. (2025)**: Isolated relation information at the neuron level (primarily in MLP layers), whereas Ours provides a traceable probing method at the attention head level.
-- **vs. Chughtai et al. (2024)**: Used direct logit attribution to analyze model behavior, whereas TokenScore in Ours analyzes task-specific probe decisions.
+- **vs. Meng et al. (2022) / ROME**: This work focuses on feature selection and attribution in relation classification, whereas ROME focuses on factual localization for knowledge editing.
+- **vs. Hernandez et al. (2024)**: While they showed that some relations can be linearly approximated, they did not explain why certain relations are easier. Ours provides explanations via output range and connectivity.
+- **vs. Liu et al. (2025)**: While they isolate relation information at the neuron level (primarily in MLP layers), ours provides a traceable probing method at the attention head level.
+- **vs. Chughtai et al. (2024)**: While they use direct logit attribution to analyze model behavior, our TokenScore analyzes the decisions of task-specific probes.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ HeadScore/TokenScore attribution methods and predictive factor analysis are valuable contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 models, multiple feature variants, comprehensive correlation analysis, and lexical shortcut detection.
-- Writing Quality: ⭐⭐⭐⭐⭐ Formally rigorous, step-by-step experimental design, and very clear writing.
+- Novelty: ⭐⭐⭐⭐ The HeadScore/TokenScore attribution methods and performance predictor analysis are valuable contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 models, multiple feature variants, complete correlation analysis, and lexical shortcut detection.
+- Writing Quality: ⭐⭐⭐⭐⭐ Formally rigorous, incremental experimental design, and very clear writing.
 - Value: ⭐⭐⭐⭐ Provides a systematic methodology and practical tools for probing relational knowledge in LLMs.
 
 <!-- RELATED:START -->
@@ -128,8 +126,8 @@ Linear probes are trained using cross-entropy loss and the Adam optimizer for 20
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
 - [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
 
 </div>
 

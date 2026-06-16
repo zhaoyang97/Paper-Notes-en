@@ -2,77 +2,85 @@
 title: >-
   [Paper Note] Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks
 description: >-
-  [CVPR 2026][AIGC Detection][Fine-grained Aesthetics] This paper introduces a new task of "fine-grained image aesthetic assessment," constructs the FGAesthetics benchmark containing 32,217 images across 10,028 series…
+  [CVPR 2026][AIGC Detection][FGAesthetics] This work defines the new task of "Fine-grained Image Aesthetic Assessment" and constructs the FGAesthetics benchmark containing 32,217 images across 10,028 series. It proposes the FGAesQ model, which learns discriminative aesthetic scores from relative ranks through Difference-Preserving Tokenization (DiffToken), Cont
 tags:
-  - "CVPR 2026"
-  - "AIGC Detection"
-  - "Fine-grained Aesthetics"
-  - "Relative Ranking"
-  - "Difference-Preserving Tokenization"
-  - "Rank Regression"
-  - "FGAesthetics"
+  - CVPR 2026
+  - AIGC Detection
+  - FGAesthetics
 date: 2026-05-08
-content_hash: 3841315341a4fb56
+content_hash: d373c3fc99574319
 ---
-
 # Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.03907](https://arxiv.org/abs/2603.03907)  
 **Code**: [Project Page](https://yzc-ippl.github.io/FG-IAA/)  
-**Area**: AIGC Detection
-**Keywords**: Fine-grained Aesthetics, Relative Ranking, Difference-Preserving Tokenization, Rank Regression, FGAesthetics
+**Area**: AIGC Detection  
+**Keywords**: Fine-grained aesthetics, Relative ranking, Difference-preserving tokenization, Rank regression, FGAesthetics
 
 ## TL;DR
 
-This paper introduces a new task of "fine-grained image aesthetic assessment," constructs the FGAesthetics benchmark containing 32,217 images across 10,028 series, and proposes FGAesQ: a model that learns discriminative aesthetic scores from relative rankings via Difference-Preserving Tokenization (DiffToken), Contrastive Text-Guided Alignment (CTAlign), and Ranking-Aware Regression (RankReg). The model achieves 0.779 pairwise accuracy on fine-grained scenes while maintaining a coarse-grained SRCC of 0.770.
+This work defines the new task of "Fine-grained Image Aesthetic Assessment" and constructs the FGAesthetics benchmark containing 32,217 images across 10,028 series. It proposes the FGAesQ model, which learns discriminative aesthetic scores from relative ranks through Difference-Preserving Tokenization (DiffToken), Contrastive Text-aligned Alignment (CTAlign), and Rank-Aware Regression (RankReg). The model achieves an accuracy of 0.779 in fine-grained scenarios while maintaining a coarse-grained SRCC of 0.770.
 
 ## Background & Motivation
 
-**Background**: Image Aesthetic Assessment (IAA) is widely applied in content recommendation, AI-generated image guidance, and intelligent photography. Existing datasets (AVA, TAD66K, etc.) evaluate coarse-grained aesthetics with significant inter-image variation, and deep models have achieved strong performance in this regime.
+**Background**: Image Aesthetic Assessment (IAA) is widely used in content recommendation, AI-generation guidance, and intelligent photography. Existing datasets (AVA, TAD66K, etc.) evaluate coarse-grained aesthetics where differences between images are significant, and deep models have already achieved good results in these scenarios.
 
-**Limitations of Prior Work**: Real-world applications often require selecting the best image from a series of semantically similar images with subtle aesthetic differences—e.g., selecting the best burst shot, choosing among AIGC-generated samples from the same prompt, or comparing different cropping strategies. Existing IAA models evaluate images independently based on absolute scores and fail to discriminate subtle differences. Two specific challenges arise: (1) **Semantic interference**—images within a series are highly semantically similar, impeding the extraction of fine-grained aesthetic differences, especially since most deep models are pretrained for semantic tasks; (2) **Subtle variation**—minor changes in color and composition require robust discriminative aesthetic representations.
+**Limitations of Prior Work**: In practical applications, it is often necessary to select the best from a series of images with high semantic similarity but subtle aesthetic differences—such as choosing the best shot from a burst, selecting the best among multiple AIGC-generated samples, or comparing different cropping schemes. Existing IAA models evaluate images independently based on absolute scores, failing to effectively distinguish subtle differences. Two specific challenges exist: (1) **Semantic interference**—High semantic similarity within a series hinders the extraction of fine-grained aesthetic differences, especially since most deep models are pre-trained for semantic tasks. (2) **Subtle differences**—Fine variations in color and composition require the model to possess robust discriminative aesthetic representations.
 
-**Key Challenge**: Existing fine-grained related datasets (SPS, Best Frame Selection) have not been fully released, limiting research progress. Current models achieve only 30%–50% series-level accuracy on FGAesthetics, far below their coarse-grained performance.
+**Key Challenge**: Existing fine-grained related datasets (SPS, Best Frame Selection) are not fully open-sourced, limiting research development. Current models achieve only 30%-50% series-level accuracy on FGAesthetics, far below their performance in coarse-grained scenarios.
 
-**Key Insight**: Rather than scoring images independently, the paper exploits **relative ranking relations** within series to learn discriminative scores—coarse-grained data establishes foundational aesthetic perception, while fine-grained data calibrates the regression space to distinguish subtle differences.
+**Key Insight**: Instead of independent scoring, this work utilizes the **relative ranking relationships** of images within a series to learn discriminative scores—using coarse-grained data to establish a foundational aesthetic perception and fine-grained data to calibrate the regression space for distinguishing subtle differences.
 
 ## Method
 
 ### Overall Architecture
 
-FGAesQ uses ViT-B/16 (CLIP visual encoder) as its backbone and adopts a two-stage training strategy: first pretraining on the coarse-grained AVA dataset to establish basic aesthetic perception, then alternately joint-training on coarse-grained AVA and fine-grained FGAesthetics data. Fine-grained batches contain within-series paired images and ranking labels; coarse-grained batches contain independent images and absolute scores. Three key modules—DiffToken, CTAlign, and RankReg—address input representation, feature alignment, and score calibration, respectively.
+This work addresses a specific problem: picking the aesthetically optimal image from a sequence of images with nearly identical semantics but subtle differences in color or composition—typical in burst selection, AIGC multi-sample selection for the same prompt, or comparisons of different crops of the same image. Existing IAA models assign an absolute score to each image independently; however, these scores are often too close to distinguish such fine differences. The work rests on two pillars: a new benchmark, FGAesthetics, and a model, FGAesQ.
+
+The FGAesthetics benchmark is collected from three source categories to ensure diversity: **Natural** (burst photos or video frame sequences), **AIGC** (multiple images generated by the same prompt), and **Cropping** (different crops of the same source image). Raw materials pass through a three-level filter (Metrics → MLLMs → Human) to ensure images within a series "look similar but are distinguishable," followed by 10 annotators providing pairwise ranking labels; samples too ambiguous to distinguish are discarded. This results in 32,217 images across 10,028 series, with series lengths ranging from 2–10.
+
+The FGAesQ model uses CLIP's ViT-B/16 as the visual encoder and undergoes two-stage training: first, pre-training on the coarse-grained AVA dataset to establish basic aesthetic perception; then, alternating joint training on "coarse-grained independent images + fine-grained series pairs"—coarse-grained batches provide independent images with absolute scores, while fine-grained batches provide paired images from series with ranking labels. Three modules handle different stages: DiffToken for input representation, CTAlign for feature alignment, and RankReg for score calibration.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Intra-series images<br/>Target x + Reference y₁ (Similar semantics, subtle aesthetic difference)"] --> B
+    subgraph B["Difference-Preserving Tokenization (DiffToken)"]
+        direction TB
+        B1["Divide into large patches, calculate SSIM similarity per position"] --> B2["Low similarity patches → Difference region D"]
+        B2 --> B3["Fine tokenization at original resolution for D, scale/discard others<br/>Total token count remains constant"]
+    end
+    B --> C["CLIP ViT-B/16 Visual Encoder"]
+    C -.->|Training Only| D["Contrastive Text-aligned Alignment (CTAlign)<br/>GPT-4o contrastive descriptions align visual difference direction"]
+    C --> E["Regression head outputs absolute score"]
+    E --> F["Rank-Aware Regression (RankReg)<br/>Bradley-Terry pair probability + ListMLE aligns to GT rank"]
+    G["Discriminative aesthetic scores (Intra-series rank selection)"]
+```
 
 ### Key Designs
 
-1. **Difference-Preserving Tokenization (DiffToken)**
-    - **Function**: In fine-grained inputs, most regions within a series are similar; only a small number of differing regions determine the aesthetic ranking. DiffToken precisely localizes these "aesthetically decisive regions" and preserves their high-resolution details.
-    - **Mechanism**: The target image $x$ and reference image $y_1$ are each divided into large-scale patches. The SSIM similarity between corresponding patches is computed as $s_{i,j} = \text{SSIM}(P_{i,j}^x, P_{i,j}^{y_1})$. Patches below the threshold $\tau = \text{percentile}(s, p)$ are identified as the difference region set $D$. Patches in $D$ are tokenized at the original ViT resolution to preserve detail, while the remaining patches are downscaled and randomly dropped to satisfy the token budget.
-    - **Design Motivation**: LPIPS analysis reveals that within-series images exhibit low perceptual similarity at the $64\times64$ patch level, indicating that aesthetic differences are concentrated in local regions. Mixed-resolution tokenization directs model attention to key areas while retaining global compositional information.
+**1. Difference-Preserving Tokenization (DiffToken): Focusing the token budget on "discriminative patches"**
 
-2. **Contrastive Text-Guided Alignment (CTAlign)**
-    - **Function**: Contrastive text descriptions guide the visual model to focus on fine-grained aesthetic differences, enhancing discriminative capability.
-    - **Mechanism**: GPT-4o is used to generate contrastive reasoning descriptions $T_1: x \leftarrow y_1$ (using explicit contrastive vocabulary) for ranked image pairs. During training, the cosine distance between the visual embedding difference and the text embedding is minimized: $\mathcal{L}_{F\_align} = \cos(E_v(x) - E_v(y_1), E_t(T_1))$. At inference, only the image encoder is used.
-    - **Design Motivation**: Text descriptions provide semantic anchors for human understanding of aesthetic differences—contrastive descriptions help visual representations learn to discriminate along aesthetically relevant directions.
+Most regions within a series of images are nearly identical; the regions that determine aesthetic superiority are often localized. If all patches are tokenized at the same resolution, these critical details are diluted by large areas of similarity. DiffToken identifies the difference regions first: target image $x$ and reference image $y_1$ are divided into large patches, and SSIM similarity is calculated per position: $s_{i,j} = \text{SSIM}(P_{i,j}^x, P_{i,j}^{y_1})$. Patches with similarity below a threshold $\tau = \text{percentile}(s, p)$ are selected as the difference region set $D$. Patches in $D$ are finely tokenized at the ViT's original resolution to preserve detail, while other regions are scaled and randomly discarded to maintain the total token count. This is effective because LPIPS analysis shows that intra-series perceptual similarity is low at the 64×64 patch level; aesthetic differences are naturally concentrated. Mixed resolution focuses computation on key areas while global thumbnail patches preserve composition. Notably, even during inference without a reference image (degrading to regular tokenization), the model outperforms existing methods.
 
-3. **Ranking-Aware Regression (RankReg)**
-    - **Function**: Ranking labels calibrate absolute score predictions, ensuring that the predicted score ordering is consistent with human-annotated aesthetic rankings.
-    - **Mechanism**: After obtaining absolute scores via a regression head, the Bradley-Terry model is used to compute pairwise superiority probabilities $P_{(x \succ y_1)} = \frac{e^{Score_x}}{e^{Score_x} + e^{Score_{y_1}}}$. All pairwise probability distributions $\mathbf{P'}$ within a series are collected, and a ListMLE loss aligns predictions with ground-truth rankings.
-    - **Design Motivation**: Direct regression of absolute scores provides insufficient discriminative power in fine-grained settings—ranking constraints force the model to learn score margins that correctly reflect subtle aesthetic differences.
+**2. Contrastive Text-aligned Alignment (CTAlign): Using "What's better/worse" language to direct visual representation**
 
-### Dataset Construction: FGAesthetics
+Most visual encoders are pre-trained for semantic tasks and lack the directionality to distinguish between almost identical images in terms of aesthetics. CTAlign uses text to provide this sense of direction: GPT-4o generates contrastive reasoning descriptions $T_1: x \leftarrow y_1$ for image pairs with ranking labels, explicitly stating why $x$ is better. During training, the cosine distance between the visual embedding difference and the text embedding is minimized: $\mathcal{L}_{F\_align} = \cos(E_v(x) - E_v(y_1), E_t(T_1))$. Text acts as a semantic anchor for human-perceived aesthetic differences, translating "why $x$ is better than $y_1$" into a discriminative direction for visual features. This alignment only occurs during training; only the image encoder is used at inference, avoiding deployment overhead.
 
-Data are drawn from three source types to ensure diversity: **Natural** (burst photos / video frame sequences), **AIGC** (multiple images generated from the same prompt), and **Cropping** (different cropping strategies applied to the same source image). A three-stage Metrics–MLLMs–Human filtering pipeline ensures that images within a series are visually similar yet distinguishable. Ranking labels are obtained via pairwise comparisons by 10 annotators, with ambiguous and indistinguishable samples filtered out. The final dataset comprises 32,217 images across 10,028 series with series lengths of 2–10.
+> ⚠️ Contrastive text is generated by GPT-4o; refer to the original paper for description details.
+
+**3. Rank-Aware Regression (RankReg): Aligning absolute score intervals with ground truth ranking**
+
+Directly regressing absolute scores lacks discriminative power in fine-grained scenarios—scores for images in the same series are too close to provide reliable rankings. RankReg adds a ranking constraint after the absolute score output: pair-wise superiority is expressed as a probability using the Bradley-Terry model $P_{(x \succ y_1)} = \frac{e^{Score_x}}{e^{Score_x} + e^{Score_{y_1}}}$. After collecting probability distributions $\mathbf{P'}$ for all pairs in a series, a ListMLE loss aligns the predicted rank with human-annotated ground truth. This constraint requires the model not only to identify "who is better" but also to pull the score intervals far enough apart to reflect subtle aesthetic gaps.
 
 ### Loss & Training
 
-The total loss uses alternating training:
-$$\mathcal{L} = \delta \cdot (\lambda \mathcal{L}_{F\_align} + \mathcal{L}_{F\_RR}) + (1 - \delta) \cdot \mathcal{L}_{C\_EMD}$$
-where $\delta$ is a binary alternating indicator and $\lambda = 10$. The coarse-grained branch uses EMD loss; the fine-grained branch uses CTAlign + RankReg losses. Momentum update coefficients are 0.615 and 0.8, respectively. Coarse-grained pretraining runs for 3 epochs; joint training runs for 7 epochs on an A800 GPU.
+The total loss alternates between coarse and fine data using a binary indicator $\delta$: $\mathcal{L} = \delta \cdot (\lambda \mathcal{L}_{F\_align} + \mathcal{L}_{F\_RR}) + (1 - \delta) \cdot \mathcal{L}_{C\_EMD}$, where $\lambda = 10$. Coarse-grained batches use EMD loss to maintain foundational aesthetic perception, while fine-grained batches use CTAlign alignment loss and RankReg ranking loss to calibrate the discriminative space. Momentum update coefficients for both ends are 0.615 and 0.8, respectively. The training pipeline consists of 3 epochs of coarse-grained pre-training and 7 epochs of joint training on a single A800 GPU.
 
 ## Key Experimental Results
 
-### Main Results: Comparison of IAA Methods on FGAesthetics
+### Main Results: IAA Method Comparison on FGAesthetics
 
 | Method | Params | Natural Pair Acc | Natural s-SRCC | AIGC Pair Acc | Cropping Pair Acc | Cropping s-SRCC |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -85,51 +93,51 @@ where $\delta$ is a binary alternating indicator and $\lambda = 10$. The coarse-
 | **FGAesQ (w/o DiffToken)** | 86.3M | 0.773 | 0.664 | 0.688 | 0.764 | 0.537 |
 | **FGAesQ (w DiffToken)** | **86.3M** | **0.779** | **0.729** | **0.709** | **0.774** | **0.590** |
 
-### Ablation Study: Training Strategy and Module Contributions
+### Ablation Study: Training Strategies and Module Contributions
 
-| Configuration | Coarse SRCC | Coarse PLCC | Fine-grained Pair | Fine-grained Series |
+| Configuration | Coarse SRCC | Coarse PLCC | Fine Pair | Fine Series |
 |------|:---:|:---:|:---:|:---:|
-| w/o Fine (coarse only) | 0.713 | 0.726 | 0.578 | 0.364 |
-| w/o Coarse (fine only) | 0.031 | 0.050 | 0.565 | 0.299 |
-| Coarse→Fine sequential training | 0.200 | 0.214 | 0.637 | 0.380 |
+| w/o Fine (Coarse only) | 0.713 | 0.726 | 0.578 | 0.364 |
+| w/o Coarse (Fine only) | 0.031 | 0.050 | 0.565 | 0.299 |
+| Coarse→Fine Sequential | 0.200 | 0.214 | 0.637 | 0.380 |
 | w/o DiffToken | 0.751 | 0.760 | 0.666 | 0.423 |
 | w/o CTAlign | 0.770 | 0.780 | 0.747 | 0.581 |
 | w/o RankReg | 0.769 | 0.781 | 0.742 | 0.571 |
-| **FGAesQ (full)** | **0.770** | **0.781** | **0.753** | **0.600** |
+| **FGAesQ (Full)** | **0.770** | **0.781** | **0.753** | **0.600** |
 
 ### Key Findings
 
-- FGAesQ with only 86.3M parameters comprehensively outperforms Q-Align (8.2B), with Natural series-level SRCC of 0.729 vs. 0.496—a 47% improvement.
-- Training with coarse-grained data only yields a fine-grained Series score of merely 0.364; training with fine-grained data only causes coarse-grained SRCC to collapse to 0.031—confirming the fundamentally distinct nature of the two granularities.
-- DiffToken contributes the most (Series: 0.423→0.600), followed by RankReg and CTAlign.
-- Fine-tuning existing models improves fine-grained performance but causes severe coarse-grained degradation (Charm SRCC: 0.777→0.470); FGAesQ maintains performance at both granularities through alternating training.
-- FGAesQ also demonstrates advantages in cross-dataset generalization (ICAA17K, AADB, TAD66K), particularly achieving SRCC of 0.562 on AADB, surpassing VILA's 0.548.
+- With only 86.3M parameters, FGAesQ comprehensively outperforms the 8.2B Q-Align; Natural series-level SRCC is 0.729 vs 0.496, a 47% Gain.
+- Coarse-only training yields a Fine Series score of only 0.364; Fine-only training causes Coarse SRCC to collapse to 0.031, indicating the two granularities have distinct properties.
+- DiffToken provides the largest contribution (Series score from 0.423 to 0.600), followed by RankReg and CTAlign.
+- Fine-tuning existing models on fine-grained data causes severe coarse-grained degradation (Charm SRCC drops from 0.777 to 0.470). FGAesQ maintains performance on both ends through alternating training.
+- FGAesQ shows advantages in cross-dataset generalization (ICAA17K, AADB, TAD66K), notably surpassing VILA in AADB SRCC (0.562 vs 0.548).
 
 ## Highlights & Insights
 
-- **New Task Definition**: Formally defines "fine-grained IAA," filling a gap in the IAA field regarding discriminability of subtle aesthetic differences.
-- **Well-designed Dataset**: Three image source types ensure diversity; a three-stage Metrics–MLLMs–Human filtering pipeline combined with pairwise comparison annotation ensures quality.
-- **Elegant DiffToken Design**: Mixed-resolution tokenization improves perception of key regions without increasing the total token count; even at inference without reference images, the model outperforms all existing methods.
-- **Coarse–Fine Balance**: The alternating training strategy prevents catastrophic forgetting of coarse-grained performance caused by fine-tuning.
+- **Novel Task Definition**: Formally defines "Fine-grained IAA," filling the gap in the IAA field regarding subtle difference discrimination.
+- **Well-designed Dataset**: Three image sources ensure diversity; a three-stage filter (Metrics-MLLMs-Human) and pairwise comparison labels ensure high quality.
+- **Ingenious DiffToken**: Mixed-resolution tokenization enhances perception in critical regions without increasing token count; it outperforms existing methods even when reference images are unavailable during inference.
+- **Coarse-Fine Balance**: The alternating training strategy prevents the catastrophic forgetting of coarse-grained perception usually caused by sequential fine-tuning.
 
 ## Limitations & Future Work
 
-- DiffToken relies on a reference image to identify difference regions; at inference, series context is required, and the method degrades to standard tokenization for standalone image evaluation.
-- Contrastive texts are generated by GPT-4o, introducing additional cost and potential bias.
-- Validation is limited to ViT-B/16; scalability to larger backbones remains to be verified.
-- FGAesthetics series contain at most 10 images; ranking consistency evaluation for longer sequences is not addressed.
+- DiffToken relies on a reference image to calculate difference regions, necessitating series context during inference; it degrades to regular tokenization for independent image evaluation.
+- Contrastive text is generated by GPT-4o, introducing additional costs and potential bias.
+- Validated only on ViT-B/16; scalability to larger backbones remains to be verified.
+- The maximum series length in FGAesthetics is 10; ranking consistency for longer sequences has not been evaluated.
 
 ## Related Work & Insights
 
-- **vs. Coarse-grained benchmarks (AVA/TAD66K, etc.)**: Independent scoring + absolute MOS labels vs. FGAesthetics series-based + ranking labels—fundamentally different evaluation paradigms.
-- **vs. MLLM methods (Q-Align/UNIAA)**: Despite having 100× more parameters, their coarse-grained perceptual capability does not transfer to fine-grained discrimination—demonstrating that fine-grained judgment requires dedicated design.
-- **Insights**: The mixed-resolution strategy of DiffToken is transferable to other visual tasks requiring attention to subtle differences (e.g., medical image comparison, defect detection); the joint ranking-plus-regression training paradigm is generalizable to quality assessment related fields.
+- **vs Coarse-grained Benchmarks (AVA/TAD66K)**: These involve independent scoring and absolute MOS labels, whereas FGAesthetics uses serialized images and ranking labels, representing a fundamentally different evaluation paradigm.
+- **vs MLLM Methods (Q-Align/UNIAA)**: Despite having 100x more parameters, MLLMs' coarse-grained perception does not transfer well to fine-grained tasks, suggesting that fine-grained discrimination requires specialized design.
+- **Insight**: The mixed-resolution strategy of DiffToken can be transferred to other vision tasks requiring focus on subtle differences (e.g., medical image comparison, defect detection). The combined rank learning and regression training paradigm can be extended to various quality assessment fields.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-Overall assessment: The paper defines a new task with genuine practical demand, constructs a rigorous dataset, and proposes a modular method with clear motivation for each component. DiffToken is a particularly elegant design. However, the overall method leans toward an engineering combination (DiffToken + CLIP + CTAlign + RankReg), with the primary innovations concentrated in the task definition and dataset contribution.
+Overall Evaluation: The paper defines a new task with practical demand, the dataset construction is rigorous, and the method design is modular with clear motivations. DiffToken is a highlight. However, the overall method leans towards an engineering combination (DiffToken+CLIP+CTAlign+RankReg); the core innovation is concentrated on the task definition and dataset contribution.
 
 <!-- RELATED:START -->
 
@@ -138,10 +146,10 @@ Overall assessment: The paper defines a new task with genuine practical demand, 
 ## Related Papers
 
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](../../ACL2026/aigc_detection/beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
-- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
-- [\[ACL 2026\] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](../../ACL2026/aigc_detection/from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)
-- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](../../ICML2026/aigc_detection/black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
-- [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](../../ACL2026/aigc_detection/when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
+- [\[ACL 2025\] HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring](../../ACL2025/aigc_detection/haco-det_a_study_towards_fine-grained_machine-generated_text_detection_under_hum.md)
+- [\[CVPR 2026\] Learning Forgery-Aware Lip Representations Without Forgery Priors](learning_forgery-aware_lip_representations_without_forgery_priors.md)
+- [\[CVPR 2026\] Quality-Aware Calibration for AI-Generated Image Detection in the Wild](quality-aware_calibration_for_ai-generated_image_detection_in_the_wild.md)
+- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
 
 </div>
 

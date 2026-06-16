@@ -25,8 +25,8 @@ item_total: 2
 
 **[Characterizing the Effect of Noise in Language Generation in the Limit](characterizing_the_effect_of_noise_in_language_generation_in_the_limit.md)**
 
-:   Under the Kleinberg-Mullainathan "language generation in the limit" formal framework, this paper proves that for uniform and non-uniform generation, noise level 1 is equivalent to any finite noise level $i \geq 1$ (hierarchy collapse). However, a strict separation exists between noiseless and noise level 1, and the authors provide the first complete characterization of non-uniform noise-dependent generatability.
+:   Under the Kleinberg-Mullainathan formal framework of "language generation in the limit," this paper proves that for both uniform and non-uniform generation, noise level 1 is equivalent to any finite noise level $i \geq 1$ (hierarchy collapse), while a strict separation exists between the noise-free case and noise level 1. Furthermore, it provides the first complete characterization of non-uniform noise-dependent generatability.
 
 **[Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces](score-repellent_monte_carlo_toward_efficient_non-markovian_sampler_with_constant.md)**
 
-:   SRMC uses a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is transformed via exponential score-tilt into a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MCMC kernel, SRMC achieves a non-Markovian, low-variance, normalization-free sampler with constant memory in general state spaces.
+:   SRMC utilizes a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is then incorporated into an exponential score-tilt to construct a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MCMC kernel, the authors implement a non-Markovian, low-variance, normalization-free sampler with constant memory in general state spaces.

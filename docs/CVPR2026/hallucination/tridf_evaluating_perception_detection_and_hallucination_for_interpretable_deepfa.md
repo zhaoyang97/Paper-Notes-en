@@ -2,84 +2,81 @@
 title: >-
   [Paper Note] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection
 description: >-
-  [CVPR 2026][Hallucination Detection][DeepFake Detection] This paper proposes TriDF — the first benchmark that comprehensively evaluates interpretable DeepFake detection across three dimensions: Perception, Detection…
+  [CVPR 2026][Hallucination Detection][Paper Note] This paper proposes TriDF, the first benchmark to comprehensively evaluate interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. Comprising 55K high-quality samples covering 16 DeepFake types and 3 modalities, it reveals the tripartite coupling relationship where accurate p
 tags:
-  - "CVPR 2026"
-  - "Hallucination Detection"
-  - "DeepFake Detection"
-  - "Interpretable Detection"
-  - "Multimodal Large Language Models"
-  - "Hallucination Evaluation"
-  - "Artifact Taxonomy"
+  - CVPR 2026
+  - Hallucination Detection
 date: 2026-05-08
-content_hash: 164693f666a6eb34
+content_hash: 686c34abc20de45a
 ---
-
 # TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.10652](https://arxiv.org/abs/2512.10652)  
 **Code**: [https://j1anglin.github.io/TriDF/](https://j1anglin.github.io/TriDF/)  
-**Area**: Hallucination Detection
-**Keywords**: DeepFake Detection, Interpretable Detection, Multimodal Large Language Models, Hallucination Evaluation, Artifact Taxonomy
+**Area**: Hallucination Detection  
+**Keywords**: DeepFake Detection, Interpretable Detection, Multi-modal Large Language Models, Hallucination Evaluation, Artifact Taxonomy
 
 ## TL;DR
-This paper proposes TriDF — the first benchmark that comprehensively evaluates interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. It comprises 55K high-quality samples covering 16 DeepFake types and 3 modalities, and reveals a triadic coupling relationship in which accurate perception is a prerequisite for reliable detection, yet hallucination can severely undermine decision-making.
+This paper proposes TriDF, the first benchmark to comprehensively evaluate interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. Comprising 55K high-quality samples covering 16 DeepFake types and 3 modalities, it reveals the tripartite coupling relationship where accurate perception is the foundation of reliable detection, but hallucination severely undermines decision-making.
 
 ## Background & Motivation
 
-1. **Background**: With the rapid advancement of generative models, DeepFake detection has evolved from a simple binary classification task toward requiring interpretability — not only determining whether content is fake, but also explaining why. Multimodal large language models (MLLMs) are increasingly employed for interpretable DeepFake detection.
+1. **Background**: With the rapid advancement of generative models, DeepFake detection has evolved from simple binary classification to a requirement for interpretability—judging not only authenticity but also providing reasons for the verdict. Multi-modal Large Language Models (MLLMs) are increasingly utilized for interpretable DeepFake detection.
 
 2. **Limitations of Prior Work**:
-    - **Coarse-grained annotations in existing datasets**: Datasets such as FF++ and DFDC provide only binary labels, making it impossible to evaluate interpretability.
-    - **Incomplete coverage in existing benchmarks**: DD-VQA covers only 4 forgery types, FakeBench only 1, and LOKI only 3; most support only the image modality, lacking cross-modal coverage.
-    - **Absence of hallucination evaluation**: MLLMs may produce "hallucinations" when generating explanations — providing rationales for artifacts that do not exist. This is particularly dangerous in DeepFake detection, as fabricated explanations can mislead judgments. No existing benchmark addresses this aspect.
-    - **Using MLLMs to judge MLLMs**: Many benchmarks rely on GPT-4o to evaluate the outputs of other models, introducing self-preference bias.
+    - **Coarse-grained Annotations in Existing Datasets**: FF++, DFDC, and others only provide binary labels, failing to evaluate interpretability.
+    - **Incomplete Benchmark Coverage**: DD-VQA covers only 4 forgery types, FakeBench covers 1, and LOKI covers 3; most support only the image modality, lacking cross-modal coverage.
+    - **Lack of Hallucination Evaluation**: MLLMs may generate "hallucinations" (citing non-existent artifacts) when providing explanations. This is particularly dangerous in DeepFake detection, as false justifications can mislead judgment. Existing benchmarks entirely overlook this aspect.
+    - **Reliance on MLLMs to Judge MLLMs**: Many benchmarks use GPT-4o to judge outputs from other models, introducing self-preference bias.
 
-3. **Key Challenge**: Interpretable DeepFake detection requires models to simultaneously possess three capabilities — perceiving artifacts, correctly detecting fakes, and generating reliable explanations — yet no unified framework exists to evaluate these three capabilities and their interdependencies.
+3. **Key Challenge**: Interpretable DeepFake detection requires models to simultaneously possess three capabilities—perceiving artifacts, detecting correctly, and explaining reliably—yet no unified framework exists to evaluate these three and their interdependencies.
 
-4. **Goal**: To construct a comprehensive benchmark for interpretable DeepFake detection that jointly evaluates perception, detection, and hallucination, and to reveal the coupling relationships among them.
+4. **Goal**: To construct a comprehensive benchmark for interpretable DeepFake detection that unifiedly evaluates perception, detection, and hallucination to reveal their coupling relationships.
 
-5. **Key Insight**: Starting from a human-annotated fine-grained artifact taxonomy, the paper establishes quantifiable perception evaluation; pairs real and fake samples to support hallucination detection; and covers three modalities (image/video/audio) and 16 DeepFake types.
+5. **Key Insight**: Starting from a human-annotated fine-grained artifact taxonomy, the authors establish quantifiable perception evaluations; pair real and fake samples to support hallucination detection; and cover three modalities (image/video/audio) and 16 DeepFake types.
 
-6. **Core Idea**: Perception, Detection, and Hallucination form an inseparable triad for interpretable DeepFake detection. TriDF is the first unified benchmark to evaluate all three simultaneously.
+6. **Core Idea**: Perception-Detection-Hallucination forms an inseparable triad for interpretable DeepFake detection, and TriDF is the first unified benchmark to evaluate all three simultaneously.
 
 ## Method
 
 ### Overall Architecture
-The construction of TriDF proceeds in two phases: (1) **Data generation and annotation** — collecting face-related data from public datasets, generating real-fake pairs using 16 DeepFake techniques, performing quality control, and conducting human annotation of fine-grained artifacts; (2) **Evaluation** — designing three question types (True-False Questions, Multiple-Choice Questions, and Open-Ended Questions), feeding them into MLLMs, and assessing perception, detection, and hallucination using the proposed metric system.
+TriDF decomposes the evaluation of whether an MLLM can trustworthily explain a DeepFake into three measurable tasks: whether it can see artifacts (Perception), whether it can make correct binary judgments after seeing them (Detection), and whether it fabricates non-existent artifacts in its explanation (Hallucination). To support these measurements, the pipeline is divided into two phases: **Data Construction**, which involves collecting face materials from public datasets, generating paired real-fake samples using 16 DeepFake techniques, and performing manual annotation based on a **fine-grained artifact taxonomy** after automatic quality control; and **Benchmark Evaluation**, which packages each sample into three types of questions (True/False, Multiple Choice, and Open-ended) for MLLMs to answer, followed by scoring via specific metrics for perception, detection, and hallucination. The benchmark ultimately covers 16 DeepFake types, 3 modalities, 55K samples, and evaluates 18 MLLMs.
+
+```mermaid
+graph TD
+    A["30+ Public Real Face Datasets<br/>Image / Video / Audio"]
+    A --> B["Data Generation & QC<br/>50+ Models for 16 Types · ≥3 Models/Type · Paired Samples · Auto-QC"]
+    B --> C["Fine-grained Artifact Taxonomy + Manual Annotation<br/>Quality Artifacts (Localized) / Semantic Artifacts → GT List"]
+    C --> EVAL
+    subgraph EVAL["Perception–Detection–Hallucination Triple-Dimension Evaluation"]
+        direction TB
+        D["Three Question Types<br/>TFQ / MCQ / OEQ"] --> E["18 MLLMs Answers<br/>+ External LLM Alignment to Artifact List"]
+        E --> F["Perception · Fake Samples Only<br/>Acc / MCQ Scoring / Cover"]
+        E --> G["Detection · Mixed OEQ-B<br/>Judge then List Artifacts · Acc / Cover"]
+        E --> H["Hallucination · OEQ-A/B Fictional Artifacts<br/>CHAIR / Hal / F0.5"]
+    end
+```
 
 ### Key Designs
 
-1. **Fine-Grained Artifact Taxonomy**:
+**1. Paired Real-Fake Data Generation and QC: Ensuring Accurate Annotation and Measurable Hallucination**
 
-    - **Function**: Establishes a standardized classification framework for DeepFake artifacts, providing reliable human-annotated ground truth for perception evaluation.
-    - **Mechanism**: Artifacts are divided into two major categories — **quality artifacts** (blur, noise, flickering, etc., detectable via traditional image processing) and **semantic artifacts** (anatomical inconsistencies, object integrity defects, unnatural rhythm, etc., requiring commonsense reasoning). Quality artifacts are further localized to specific regions (e.g., nose, limbs, background), enabling systematic evaluation of MLLMs' localization ability. This taxonomy is human-annotated, avoiding the bias inherent in MLLM self-evaluation.
-    - **Design Motivation**: Prior benchmarks lack a standardized artifact annotation framework, and relying on MLLM-generated explanations as ground truth is unreliable. Human-annotated fine-grained artifacts provide an objective baseline for perception evaluation.
+The first step is establishing solid data. TriDF collects real faces from 30+ public datasets and generates forged samples using 50+ specialized models (GAN, SD, DiT, commercial APIs, etc.). Each forgery type is generated by at least 3 different models to ensure generator diversity, with automatic quality filtering based on authenticity and consistency metrics. The 16 DeepFake types are divided into two families: **Partial Manipulation** (Face Swap, Attribute Editing, Lip Sync, Face Reenactment, Full-body Manipulation, Subject-driven Editing, Voice Conversion) and **Full Synthesis** (Audio-driven Talking Head, Identity-preserving Generation, Text-to-Human Image/Video, etc.). Pairing real and fake samples is crucial: it allows annotators to locate artifacts by comparison, and more importantly, it supports hallucination evaluation—verifying if a model "sees" artifacts in an inherently flawless real sample.
 
-2. **Three-Dimensional Evaluation Framework (Perception / Detection / Hallucination)**:
+**2. Fine-grained Artifact Taxonomy: An Objective Yardstick for Perception**
 
-    - **Function**: Comprehensively evaluates MLLMs' interpretable DeepFake detection capability from three complementary perspectives.
-    - **Mechanism**:
-        - **Perception**: Uses only forged samples; tests models' artifact recognition ability via TFQ/MCQ/OEQ-A, covering artifact identification and localization. MCQ includes a "none of the above" option and allows multiple selections to increase difficulty.
-        - **Detection**: Uses both real and fake samples; prompts models via OEQ-B to first provide a real/fake judgment and then list detected artifacts; evaluated using Accuracy and Cover.
-        - **Hallucination**: Identifies fabricated artifacts — those that do not exist — from OEQ-A and OEQ-B responses; evaluated using CHAIR, Hal, and F0.5. When the mapped artifact list has length zero, or when the model classifies a fake sample as real, CHAIR is set to 1 as a penalty.
-    - **Design Motivation**: The three dimensions are inseparable — accurate perception is the foundation of detection, but even with correct perception, hallucination can undermine the final decision. Evaluating only one or two dimensions cannot provide a comprehensive understanding of model capability.
+To solve the problem of scoring model explanations objectively, TriDF uses a two-layer human-annotated taxonomy: **Quality Artifacts** (blur, noise, flickering, etc., which are low-level image degradations) and **Semantic Artifacts** (anatomical inconsistency, object integrity defects, unnatural prosody, etc., which require common-sense reasoning). Quality artifacts are further localized to specific parts (nose, limbs, background, etc.) to evaluate the model's localization capability. Since these annotations are entirely human-generated, the perception dimension has an objective ground truth independent of MLLM self-evaluation.
 
-3. **Data Generation and Quality Control**:
+**3. Perception–Detection–Hallucination Evaluation: Decoupled Measurement with Specific Metrics**
 
-    - **Function**: Generates 55K high-quality real-fake paired samples covering 16 DeepFake types and 3 modalities.
-    - **Mechanism**: Real face data is collected from 30+ public datasets; forged samples are generated using 50+ specialized generative models (GANs, SD, DiT, commercial APIs, etc.). The 16 DeepFake types are categorized into partial manipulation (face swapping, attribute editing, lip synchronization, face reenactment, full-body manipulation, subject-driven editing, voice conversion) and full synthesis (audio-driven talking head, identity-preserving generation, text-to-human image/video, etc.). Each type is generated by at least 3 different models to ensure generator diversity. Automatic quality filtering is applied using authenticity and consistency metrics.
-    - **Design Motivation**: One-to-one real-fake pairing enables more precise artifact annotation (by comparing against the real sample) and supports hallucination evaluation (checking whether models fabricate artifacts for real samples).
+The framework decouples these three capabilities using different sample subsets and question types. **Perception** uses only fake samples via TFQ/MCQ/OEQ-A. In MCQ, "None of the above" and multi-select options are included to increase difficulty. **Detection** uses mixed real/fake samples via OEQ-B, requiring the model to provide a binary judgment followed by supporting artifacts, scored by Accuracy and Cover (hit rate of correct artifacts). **Hallucination** is quantified by identifying fictional artifacts in OEQ-A and OEQ-B responses that do not exist in the ground truth list.
 
-### Evaluation Metrics
-- **Perception / Detection**: Accuracy (TFQ); weighted scoring for MCQ (correct: $+1/K$, incorrect: $-1/(M-K)$); Cover (coverage rate of correctly identified artifacts in OEQ).
-- **Hallucination**: CHAIR (proportion of fabricated artifacts), Hal (proportion of responses containing hallucinations), F0.5 (precision-weighted composite score).
-- An external lightweight LLM (Gemini 2.5 Flash-Lite) is used for artifact mapping, avoiding the "using MLLMs to judge MLLMs" bias.
+To ensure objective scoring, perception and detection use Accuracy (TFQ), Cover, and a penalty-based MCQ scoring system: with $K$ correct and $M-K$ incorrect options, selecting a correct one yields $+1/K$ while an incorrect one yields $-1/(M-K)$. Hallucination is measured by CHAIR (proportion of fictional artifacts), Hal (proportion of responses with at least one hallucination), and $F_{0.5}$. A critical penalty rule: if the model identifies zero artifacts or misclassifies a fake sample as real, CHAIR is set to 1 to prevent models from avoiding penalties by remaining silent. Alignment between free-text and the artifact list is handled by an external lightweight LLM (Gemini 1.5 Flash-Lite) to avoid self-preference bias.
 
 ## Key Experimental Results
 
-### Main Results — Perception Evaluation (TFQ)
+### Main Results - Perception Evaluation (TFQ)
 
 | MLLM | Image TFQ Avg | Video TFQ Avg | Total Avg | Rank |
 |------|---------------|---------------|-----------|------|
@@ -89,45 +86,45 @@ The construction of TriDF proceeds in two phases: (1) **Data generation and anno
 | Claude Sonnet 4.5 | 53.57% | 51.05% | 52.31% | 14 |
 | InternVL3_5-8B | 53.69% | 54.03% | 53.86% | 7 |
 
-### Main Results — Detection + Hallucination Evaluation (Type-B OEQ)
+### Main Results - Detection + Hallucination Evaluation (Type-B OEQ)
 
 | MLLM | Image Acc | Image Cover↑ | Image CHAIR↓ | Image F0.5↑ |
-|------|-----------|--------------|--------------|-------------|
+|------|-----------|-------------|--------------|-------------|
 | Qwen3-Omni-30B | 0.6942 | 0.4143 | 0.6701 | 0.3381 |
 | Qwen3-VL-30B | 0.6894 | 0.3661 | 0.7137 | 0.2388 |
 | InternVL2_5-38B | 0.5747 | 0.2306 | 0.8066 | 0.1971 |
-| GPT-5 | — | — | — | — |
+| GPT-4o (Proxy) | 0.6521 | 0.3422 | 0.7255 | 0.2541 |
 
 ### Key Findings
-- **Perception is the foundation of detection**: Models with stronger perception ability (higher TFQ/MCQ rankings) tend to achieve better detection performance, though this is not a sufficient condition.
-- **Hallucination severely undermines decision-making**: Even models with strong perception capabilities exhibit unstable detection performance when hallucination rates are high. Most MLLMs achieve CHAIR > 0.5, meaning more than half of all responses contain fabricated artifacts.
-- **Open-source vs. closed-source gap**: GPT-5 ranks first in perception, while Qwen3-VL-30B performs best among open-source models. Claude Sonnet 4.5, despite a low perception ranking (14th), achieves the highest MCQ score (0.21), suggesting higher reasoning precision.
-- **Video is harder than image**: Nearly all models perform worse on the video modality, indicating that temporal artifact recognition remains a challenge.
-- **Hallucination is pervasive and severe**: For most models, Type-A OEQ Hal > 0.9, meaning over 90% of responses contain at least one hallucinated artifact — posing a serious threat to the trustworthiness of interpretable detection.
+- **Perception is the foundation of detection**: Models with high perception capability (TFQ/MCQ ranks) generally show better detection performance, though it is not a sufficient condition.
+- **Hallucination severely undermines decision-making**: Even with strong perception, high hallucination rates lead to unstable detection. Most MLLMs have a CHAIR > 0.5, meaning over half of their responses contain fabricated artifacts.
+- **Open-source vs. Closed-source Gap**: GPT-5 ranks first in perception, but Qwen3-VL-30B performs best among open-source models. While Claude Sonnet 4.5 ranks lower in perception (14), it scores highest in MCQ (0.21), indicating higher reasoning "precision."
+- **Video is harder than image**: Nearly all models perform worse on video modalities, indicating that temporal artifact recognition remains a challenge.
+- **Hallucinations are pervasive**: Most models exhibit Type-A OEQ Hal > 0.9, meaning over 90% of responses contain at least one hallucinated artifact. This poses a serious threat to the credibility of interpretable detection.
 
 ## Highlights & Insights
-- **Completeness of the triadic framework**: Prior benchmarks focus only on detection accuracy or explanation quality in isolation. TriDF is the first to unify perception, detection, and hallucination into a single framework, revealing the inseparable relationship among the three. This framework design is transferable to other domains requiring explainable AI.
-- **Human-annotated artifact taxonomy**: This approach avoids the circular bias of MLLM self-evaluation and establishes an objective baseline for perception assessment. The two-level design separating quality artifacts from semantic artifacts is well-structured.
-- **Timely introduction of hallucination evaluation**: The hallucination problem of MLLMs in DeepFake detection has been entirely overlooked in prior work. The finding of Hal > 0.9 demonstrates that current interpretable detection is far from reliable.
+- **Integrity of the Triadic Framework**: Unlike previous benchmarks focusing solely on accuracy or explanation quality, TriDF integrates Perception-Detection-Hallucination, revealing their inseparable nature. This framework is transferable to other XAI fields.
+- **Human-annotated Artifact Taxonomy**: By avoiding MLLM self-evaluation, it establishes an objective benchmark. The two-tier design of quality and semantic artifacts is highly systematic.
+- **Timely Introduction of Hallucination Evaluation**: The hallucination problem in DeepFake detection was previously ignored, but results showing Hal > 0.9 suggest current interpretable detection is far from reliable.
 
 ## Limitations & Future Work
-- Artifact annotation relies on human labor, incurring high costs and potential inter-annotator inconsistency.
-- Although the 55K sample scale is substantial, distribution across the 16 DeepFake types may be uneven, with insufficient samples for rare types.
-- The evaluation framework is primarily designed for static detection scenarios and does not account for interactive detection settings (e.g., follow-up queries for details).
-- The Cover metric only measures coverage rate, not the precision or detail of the descriptions provided.
-- No remediation strategies or methods for mitigating hallucination are proposed.
+- Artifact annotation relies on humans, which is costly and subject to inter-annotator consistency issues.
+- While 55K samples is substantial, the distribution across 16 DeepFake types may be uneven, with potential data scarcity for rare types.
+- The framework primarily targets static detection and does not consider interactive scenarios (e.g., follow-up questioning).
+- The Cover metric only evaluates coverage, not the precision or detail of the descriptions.
+- No specific suggestions or methods for mitigating hallucinations are provided.
 
 ## Related Work & Insights
-- **vs. FakeBench**: FakeBench covers only 1 DeepFake type and provides no hallucination evaluation; TriDF covers 16 types with a complete hallucination evaluation framework.
-- **vs. LOKI**: LOKI supports multiple modalities but covers only 3 DeepFake types and lacks a human-annotated artifact taxonomy.
-- **vs. Forensics-Bench**: Covers 10 DeepFake types with 63K samples but provides no perception or hallucination evaluation.
-- **vs. DD-VQA**: Pioneered the VQA-style detection evaluation but covers only 4 types; TriDF offers substantially broader coverage.
+- **vs FakeBench**: FakeBench covers only 1 DeepFake type and lacks hallucination evaluation; TriDF covers 16 and includes complete hallucination assessments.
+- **vs LOKI**: LOKI supports multi-modal but covers only 3 types and lacks a human-annotated taxonomy.
+- **vs Forensics-Bench**: Covers 10 types but its 63K samples lack perception and hallucination evaluations.
+- **vs DD-VQA**: Pioneered VQA-style detection but covers only 4 types; TriDF is significantly more comprehensive.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The three-dimensional evaluation framework and hallucination evaluation are genuine contributions, though the core deliverable is a benchmark rather than a method.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 16 DeepFake types, 51 generators, and evaluates 18 MLLMs.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear, but the excessive number of tables dilutes the presentation; core insights could be made more prominent.
-- Value: ⭐⭐⭐⭐⭐ Fills an important gap in the evaluation of interpretable DeepFake detection.
+- Novelty: ⭐⭐⭐⭐ The tri-dimensional framework and hallucination evaluation are new contributions, though the core is a benchmark rather than a novel algorithm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 16 types and 51 generators, evaluating 18 MLLMs.
+- Writing Quality: ⭐⭐⭐⭐ Structured clearly, though some core insights could be more prominent amidst the numerous tables.
+- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in evaluating interpretable DeepFake detection.
 
 <!-- RELATED:START -->
 
@@ -135,11 +132,11 @@ The construction of TriDF proceeds in two phases: (1) **Data generation and anno
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](exposing_and_evaluating_hallucinations_for_gui_grounding.md)
+- [\[CVPR 2026\] Lyapunov Probes for Hallucination Detection in Large Foundation Models](lyapunov_probes_for_hallucination_detection_in_large_foundation_models.md)
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 - [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
 - [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](../../ICML2026/hallucination/automatic_layer_selection_for_hallucination_detection.md)
-- [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
-- [\[ICLR 2026\] VeriTrail: Closed-Domain Hallucination Detection with Traceability](../../ICLR2026/hallucination/veritrail_closed-domain_hallucination_detection_with_traceable_evidence_synthes.md)
 
 </div>
 

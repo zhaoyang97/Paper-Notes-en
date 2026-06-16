@@ -2,120 +2,134 @@
 title: >-
   [Paper Note] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields
 description: >-
-  [ICML2026][Physics & Scientific Computing][Active learning] The BALLAST algorithm is proposed to amend active learning utility estimation by sampling vector fields from the GP posterior and simulating the future trajecto…
+  [ICML 2026][Physics & Scientific Computing][Paper Note] Proposes the BALLAST algorithm, which amends active learning utility estimates by sampling vector fields from the GP posterior and simulating the future trajectories of Lagrangian observers. It also develops the VaSE inference method to accelerate GP posterior sampling efficiency by thousands of times, achieving approx
 tags:
-  - "ICML2026"
-  - "Physics & Scientific Computing"
-  - "Active learning"
-  - "Gaussian processes"
-  - "sea drifters"
-  - "spatio-temporal vector fields"
-  - "Bayesian experimental design"
+  - ICML 2026
+  - Physics & Scientific Computing
 date: 2026-05-08
-content_hash: 0c82617182ee58fb
+content_hash: c48a922c519d4861
 ---
-
 # BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields
 
 **Conference**: ICML2026  
 **arXiv**: [2509.26005](https://arxiv.org/abs/2509.26005)  
 **Code**: https://github.com/ShuSheng3927/BALLAST  
-**Area**: scientific_computing  
-**Keywords**: Active learning, Gaussian processes, sea drifters, spatio-temporal vector fields, Bayesian experimental design  
+**Area**: Scientific Computing  
+**Keywords**: Active Learning, Gaussian Processes, Sea Drifters, Spatio-Temporal Vector Fields, Bayesian Experimental Design  
 
 ## TL;DR
 
-The BALLAST algorithm is proposed to amend active learning utility estimation by sampling vector fields from the GP posterior and simulating the future trajectories of Lagrangian observers. Simultaneously, the VaSE inference method is developed to accelerate GP posterior sampling efficiency by thousands of times, achieving deployment cost savings of approximately 16%-22% on synthetic and high-fidelity ocean flow fields.
+Proposes the BALLAST algorithm, which amends active learning utility estimates by sampling vector fields from the GP posterior and simulating the future trajectories of Lagrangian observers. It also develops the VaSE inference method to accelerate GP posterior sampling efficiency by thousands of times, achieving approximately 16%-22% savings in deployment costs on synthetic and high-fidelity ocean flow fields.
 
 ## Background & Motivation
 
-**Background**: Understanding and predicting ocean flow fields is crucial for tracking heat, nutrients, and pollutants in the ocean. Free-floating sea drifters are widely used for their ability to simultaneously collect spatio-temporal flow field properties. Once deployed, drifters are advected by the underlying vector field, performing velocity measurements at different locations and times; they are categorized as Lagrangian observers.
+**Background**: Understanding and predicting ocean flow fields is crucial for tracking heat, nutrients, and pollutants. Free-floating ocean drifters are widely used for collecting spatio-temporal flow properties. Once deployed, they are advected by the underlying vector field and measure velocity at varying locations and times, acting as Lagrangian observers.
 
-**Limitations of Prior Work**: Current drifter placement strategies either employ standard "space-filling" designs (such as Sobol sequences) or rely on relatively arbitrary expert opinions. While some work has proposed handcrafted design criteria based on travel distance and placement spacing, no formal active learning framework exists to guide the deployment of Lagrangian observers.
+**Limitations of Prior Work**: Current drifter placement strategies either use standard "space-filling" designs (e.g., Sobol sequences) or rely on arbitrary expert opinions. While some works propose manual design criteria based on travel distance and spacing, no formal active learning framework exists for guiding Lagrangian observer deployment.
 
-**Key Challenge**: Standard active learning methods (such as Expected Information Gain, EIG) only consider the information gain at the initial observation position when estimating the utility of a candidate placement. They completely ignore subsequent observations collected as the drifter is continuously advected by the flow field. Consequently, EIG strategies tend to place observers near boundaries—where initial information gain is high, but the observer quickly exits the study area, resulting in low actual utility. Experiments show that EIG consistently performs worse than a uniform random strategy.
+**Key Challenge**: Standard active learning methods (e.g., Expected Information Gain, EIG) only consider information gain at the initial observation point when estimating utility, completely ignoring subsequent observations collected as the drifter is advected. This leads EIG to favor boundaries—locations with high initial gain but where the observer quickly leaves the study area, resulting in low actual utility. Experiments show EIG consistently performs worse than uniform random strategies.
 
-**Goal**: Design an active learning strategy that correctly evaluates the full life-cycle information gain of Lagrangian observers and resolve the computational bottleneck of GP posterior sampling that it entails.
+**Goal**: Design an active learning strategy that correctly evaluates the full-lifetime information gain of Lagrangian observers and addresses the resulting computational bottleneck in GP posterior sampling.
 
-**Key Insight**: Utilize GP posterior sampling to simulate the future trajectories of drifters within hypothesized vector fields, incorporating the information gain of all subsequent observations along the trajectory into the utility calculation.
+**Key Insight**: Utilize GP posterior sampling to simulate future trajectories in hypothesized vector fields, incorporating the information gain from all subsequent observations along the trajectory into the utility calculation.
 
-**Core Idea**: Amend the utility function (look-ahead amendment) by Monte Carlo sampling the posterior vector field and simulating observer trajectories, while proposing the VaSE method to bypass the computational bottleneck of SPDE-GP for non-gridded observations.
+**Core Idea**: Amend the utility function (look-ahead amendment) by Monte Carlo sampling the posterior vector field and simulating observer trajectories, and use the VaSE method to bypass computational bottlenecks of SPDE-GP for non-gridded observations.
 
 ## Method
 
 ### Overall Architecture
 
-BALLAST is a sequential experimental design framework: At each decision time $t_n$, given existing observations $\mathcal{D}_n$, $J$ vector field samples are drawn from the GP posterior. For each candidate placement position $\bm{s}$, its complete trajectory is simulated under each sampled field until the termination time $T$. The optimal placement position is selected by aggregating the information gain across all samples. Inputs are a spatial grid $R$, time range $[0,T]$, and number of drifters $M$; the output is $M$ sequential optimal placement positions.
+BALLAST is a sequential experimental design framework: first, a **spatio-temporal Helmholtz GP surrogate model** characterizes the time-varying vector field; at each decision time $t_n$, given existing observations $\mathcal{D}_n$, the **VaSE** method efficiently samples $J$ vector fields from the GP posterior; for each candidate placement position $\bm{s}$, the full drifter trajectory is simulated using Euler integration until terminal time $T$ under each sampled field; the information gain from all observations along the trajectories is aggregated to score the position (**look-ahead utility amendment**). After Monte Carlo averaging, the optimal placement is selected. The inputs are the spatial grid $R$, time range $[0,T]$, and drifter count $M$; the output is $M$ sequential optimal placement positions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Existing observations + Spatial Grid R<br/>Time Range [0,T] + Drifter Count M"] --> B["Spatio-Temporal Helmholtz GP Surrogate Model<br/>Divergence-free/Curl-free Decomposition + Matérn 3/2 Time Kernel"]
+    subgraph C["VaSE Efficient Posterior Sampling (Sample J=20 fields)"]
+        direction TB
+        C1["Standard GP Regression: Generate SPDE initial conditions at tₙ"] --> C2["Kalman/RTS Smoother: Propagate along time to T"]
+    end
+    subgraph D["Trajectory-aware Utility Amendment (look-ahead)"]
+        direction TB
+        D1["For each candidate s: Euler integration<br/>Simulate trajectory to terminal time T"] --> D2["Aggregate observations along trajectory<br/>Calculate info gain log det(·)"]
+    end
+    B --> C
+    C --> D
+    D --> E["Monte Carlo Average of J samples<br/>argmax to select optimal placement sₙ*"]
+    E -->|Include observation, decide next drifter| B
+    E --> F["Output: M Sequential Optimal Placements"]
+```
 
 ### Key Designs
 
-1.  **Trajectory-Aware Utility Amendment (BALLAST Amendment)**:
-    - **Function**: Incorporates the future trajectory of Lagrangian observers into utility calculations, replacing the standard EIG strategy that considers only the initial position.
-    - **Mechanism**: For any utility function $U$, the BALLAST-amended acquisition function is $\bm{s}_n^* = \arg\max_{\bm{s} \in R} \mathbb{E}_{F \sim p(f|\mathcal{D}_n)}[\mathbb{E}[U(P_F^T(\bm{s}, t_n))]]$, where $P_F^T(\bm{s}, t_n)$ is the projected trajectory of the observer starting from position $\bm{s}$ at time $t_n$ until time $T$ under the sampled vector field $F$. The outer expectation is approximated via Monte Carlo with $J=20$ posterior samples; each trajectory is simulated via numerical integration using the Euler method with step size $\delta_t$.
-    - **Design Motivation**: Standard EIG ignores subsequent observations, leading to sub-optimal decisions (placing observers near boundaries where they quickly exit). By simulating the full trajectory, BALLAST correctly evaluates the long-term information contribution of each candidate position.
+**1. Spatio-Temporal Helmholtz GP Surrogate Model: Injecting Fluid Physics Priors**
 
-2.  **Vanilla SPDE Exchange (VaSE) Inference Method**:
-    - **Function**: Efficiently samples vector fields from the spatio-temporal GP posterior, solving the computational bottleneck of BALLAST.
-    - **Mechanism**: Combines standard GP regression with SPDE methods—first using an augmented GP $\bm{f} = [f, \partial_t f]^T$ to generate SPDE initial conditions at decision time $t_n$ via standard GP regression, then propagating along the temporal direction to termination time $T$ using a Kalman filter/RTS smoother. Standard GP sampling costs $O(N_{\text{pred,s}}^3 N_{\text{pred,t}}^3)$, SPDE costs $O((N_{\text{obs}}+N_{\text{pred,s}})^3 N_{\text{obs,t}})$, while VaSE costs only $O(N_{\text{obs}}^3 + N_{\text{pred,s}}^2 N_{\text{pred,t}})$.
-    - **Design Motivation**: SPDE methods experience a surge in cost when observation positions (non-gridded Lagrangian data) and prediction positions (regular grids) do not overlap. VaSE bypasses this via standard GP regression.
+The surrogate model must respect fluid dynamics constraints and facilitate SPDE propagation. The authors use Helmholtz decomposition to construct a vector output kernel $k_{\text{tHelm}}((\bm{s},t),(\bm{s}',t'))=k_{\text{Helm}}(\bm{s},\bm{s}')\,k_{\text{time}}(t,t')$. The spatial part is based on linear differential operators of potential and stream function kernels (encoding divergence-free/curl-free constraints), while the temporal part uses a Matérn 3/2 kernel (consistent with oceanographic empirical values $\nu\approx2$). The **separable spatio-temporal kernel structure** is the prerequisite for VaSE time-propagation.
 
-3.  **Spatio-Temporal Helmholtz GP Surrogate**:
-    - **Function**: Provides a probabilistic surrogate model with physical priors for time-varying ocean vector fields.
-    - **Mechanism**: Construct a vector-valued kernel using Helmholtz decomposition $k_{\text{tHelm}}((\bm{s},t),(\bm{s}',t')) = k_{\text{Helm}}(\bm{s},\bm{s}') k_{\text{time}}(t,t')$. The spatial part is based on linear differential operators of potential and stream function kernels, while the temporal part adopts a Matérn 3/2 kernel (consistent with the empirical $\nu \approx 2$ in oceanography).
-    - **Design Motivation**: The separable spatio-temporal kernel structure enables SPDE propagation in VaSE, while the Helmholtz decomposition encodes physical constraints of fluid mechanics.
+**2. Vanilla SPDE Exchange (VaSE): Bypassing GP Posterior Sampling Bottlenecks for Non-gridded Data**
+
+The look-ahead amendment requires repeated sampling from the spatio-temporal GP posterior. Standard GP sampling costs $O(N_{\text{pred,s}}^3 N_{\text{pred,t}}^3)$ are infeasible, and SPDE methods face high costs when observation and prediction locations do not overlap. VaSE combines them: it uses an augmented GP $\bm{f}=[f,\partial_t f]^\top$ to generate SPDE initial conditions at decision time $t_n$ via standard GP regression, then propagates them to $T$ using Kalman filters and RTS smoothers. This reduces the cost to $O(N_{\text{obs}}^3+N_{\text{pred,s}}^2 N_{\text{pred,t}})$, achieving ~70x acceleration (3.8 s vs 4.5 min per sample) and making BALLAST computationally practical.
+
+**3. Trajectory-aware Utility Amendment (BALLAST Amendment): Accounting for Full Drifter Lifespans**
+
+This is the core contribution of BALLAST. Standard EIG estimates utility using only the initial observation, ignoring data collected as the drifter is advected. This causes EIG to prefer boundaries (high initial gain, but drifters quickly exit). BALLAST incorporates the entire future trajectory into the acquisition function using the $J$ sampled fields:
+
+$$\bm{s}_n^*=\arg\max_{\bm{s}\in R}\ \mathbb{E}_{F\sim p(f|\mathcal{D}_n)}\big[\mathbb{E}[U(P_F^T(\bm{s},t_n))]\big],$$
+
+where $P_F^T(\bm{s},t_n)$ is the projected trajectory of the observer from $\bm{s}$ to $T$ under sampled field $F$. The outer expectation is approximated using $J=20$ Monte Carlo samples, with trajectories simulated via Euler integration. This scores candidates by "long-term information contribution" rather than "instantaneous gain."
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison of six strategies: Uniform Random (UNIF), Sobol Sequence (SOBOL), Distance-Separation Heuristic (DIST-SEP), Expected Information Gain (EIG), BALLAST-opt (optimized hyperparameters), BALLAST-true (ground-truth hyperparameters).
+Six strategies compared: Uniform Random (UNIF), Sobol Sequence (SOBOL), Distance-Separation Heuristic (DIST-SEP), Expected Information Gain (EIG), BALLAST-opt (optimized hyperparameters), and BALLAST-true (ground truth hyperparameters).
 
-| Experimental Setup | Metric | BALLAST-true | BALLAST-opt | UNIF | EIG | Key Conclusion |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Temporal Helmholtz (Synthetic) | Deployment Cost Saving | ~16% | ~16% | baseline | Worse than UNIF | Saves ~3 drifters |
-| SUNTANS (High-fidelity Fluid Sim) | Deployment Cost Saving | ~22% | ~22% | baseline | Better than UNIF | Saves ~2 drifters |
+| Experimental Setting | Metric | BALLAST-true | BALLAST-opt | UNIF | EIG | Key Finding |
+|----------|---------|-------------|-------------|------|-----|---------|
+| Temporal Helmholtz (Synthetic) | Deployment Cost Saving | ~16% | ~16% | baseline | < UNIF | Saves ~3 drifters |
+| SUNTANS (High-fidelity Fluid Sim) | Deployment Cost Saving | ~22% | ~22% | baseline | > UNIF | Saves ~2 drifters |
 
-### Efficiency Comparison
+### Computational Efficiency Comparison
 
-| Inference Method | Cost Magnitude (Typical Setup) | Sampling Time per Sample | Speedup |
-| :--- | :--- | :--- | :--- |
+| Inference Method | Cost Magnitude | Per-sample Time | Gain |
+|----------|---------------------|--------------|--------|
 | Standard GP | $10^{17}$ | Infeasible | — |
 | SPDE-GP | $10^{11}$ | ~4.5 min | 1× |
 | VaSE (Ours) | $10^{8}$ | ~3.8 s | ~70× |
 
 ### Ablation Study
 
-| Posterior Sample Count $J$ | Reaches 1% Utility Gap | Decision Time ($J=20$) | Note |
-| :--- | :--- | :--- | :--- |
-| $J < 20$ | ✓ Consistently met | < 3 min | Converges before $J=20$ across three decision times $t=3,5,7$ |
-| $J = 200$ (Ref) | — | — | Used as a baseline approximation for true expected utility |
+| Posterior Sample Count $J$ | 1% Utility Gap Reached | Decision Time ($J=20$) | Note |
+|---------------|-----------------|-------------------|------|
+| $J < 20$ | ✓ Consistently | < 3 min | Converges before $J=20$ across different $t$ |
+| $J = 200$ (Ref) | — | — | Used as approximation of true expected utility |
 
 ## Highlights & Insights
 
-- The BALLAST method is generalizable, applicable not only to ocean drifters but also to Lagrangian observation equipment advected by the environment, such as animal tracking collars and weather balloons.
-- The "counter-intuitive" finding that standard EIG consistently performs worse than uniform strategies in Lagrangian observation scenarios reveals the fundamental flaw of ignoring observer dynamics.
-- The VaSE method is significant independent of BALLAST, usable in any scenario requiring efficient sampling from spatio-temporal GPs with non-gridded observations.
+- BALLAST is generalizable, applying not only to ocean drifters but also to animal tracking collars, weather balloons, and other Lagrangian sensors.
+- The counter-intuitive finding that standard EIG performs worse than uniform random in Lagrangian settings reveals the fundamental flaw of ignoring observer dynamics.
+- The VaSE method is independently valuable for any application requiring efficient sampling from spatio-temporal GPs with non-gridded observations.
 
 ## Limitations & Future Work
 
-- Currently assumes predefined decision times; the deployment timing itself is not optimized.
-- Hyperparameter optimization of the GP surrogate might not be robust in high-dimensional or complex flow fields.
-- Amortized acquisition optimization could be considered to achieve faster deployment decisions.
-- Validated only on 2D spatial flow fields; 3D ocean flow fields have not yet been tested.
+- Current work assumes predefined decision times and does not optimize the timing of deployment.
+- GP hyperparameter optimization may be less robust in high-dimensional or highly complex flow fields.
+- Amortized acquisition optimization using deep adaptive designs could be considered for faster decision-making.
+- Validation was performed on 2D flow fields; 3D ocean dynamics have not yet been tested.
 
 ## Related Work & Insights
 
-- Berlinghieri et al. (2023) proposed Helmholtz GP kernels for ocean flow field modeling.
-- Chen et al. (2024b) proposed handcrafted placement criteria based on a Lagrangian data assimilation framework.
-- The SPDE-GP framework by Sarkka et al. (2013) is one of the base components of VaSE.
-- Predictive Entropy Search by Hernández-Lobato et al. (2014), utilizing mutual information symmetry, inspired the information gain reconstruction in this work.
+- Berlinghieri et al. (2023) proposed Helmholtz GP kernels for ocean flow modeling.
+- Chen et al. (2024b) proposed manual placement criteria based on Lagrangian data assimilation.
+- The SPDE-GP framework by Sarkka et al. (2013) serves as a foundational component for VaSE.
+- Predictive Entropy Search by Hernández-Lobato et al. (2014), utilizing mutual information symmetry, inspired the information gain reformulation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First to formally introduce active learning to Lagrangian observer placement; the VaSE inference method provides an independent contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Dual validation via synthetic and high-fidelity simulations, including ablations and comparison with six baselines.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear problem motivation, rigorous theoretical and algorithmic development, intuitive illustrations.
-- Value: ⭐⭐⭐⭐ — Direct application value for actual ocean science deployments; the method is extensible to other Lagrangian observation scenarios.
+- Novelty: ⭐⭐⭐⭐ — First formal introduction of active learning to Lagrangian observer placement; VaSE provides an independent technical contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Dual validation with synthetic and high-fidelity simulations, including ablation and six baseline comparisons.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation, rigorous theoretical/algorithmic development, and intuitive visualizations.
+- Value: ⭐⭐⭐⭐ — Directly applicable to real-world marine deployments and extensible to other Lagrangian scenarios.
 
 <!-- RELATED:START -->
 
@@ -126,8 +140,8 @@ Comparison of six strategies: Uniform Random (UNIF), Sobol Sequence (SOBOL), Dis
 - [\[ICML 2026\] A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots](a_call_to_lagrangian_action_learning_population_mechanics_from_temporal_snapshot.md)
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](antic_adaptive_neural_temporal_in-situ_compressor.md)
 - [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
+- [\[CVPR 2025\] Accurate Differential Operators for Hybrid Neural Fields](../../CVPR2025/physics/accurate_differential_operators_for_hybrid_neural_fields.md)
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](../../NeurIPS2025/physics/vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
-- [\[NeurIPS 2025\] Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios](../../NeurIPS2025/physics/bayesian_surrogates_for_risk-aware_pre-assessment_of_aging_bridge_portfolios.md)
 
 </div>
 

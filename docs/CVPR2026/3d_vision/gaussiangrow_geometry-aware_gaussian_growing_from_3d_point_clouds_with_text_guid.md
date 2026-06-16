@@ -2,126 +2,136 @@
 title: >-
   [Paper Note] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes GaussianGrow, which replaces the conventional paradigm of jointly predicting geometry and appearance from scratch by "growing" 3D Gaussians from readily a…
+  [CVPR 2026][3D Vision][Paper Note] This paper proposes GaussianGrow, which "grows" 3D Gaussians from easily accessible 3D point clouds instead of predicting both geometry and appearance from scratch. It leverages multi-view diffusion models to generate consistent appearance supervision and introduces an overlap region detection and iterative completion
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "Point Clouds"
-  - "Text Guidance"
-  - "Multi-view Diffusion"
-  - "Appearance Generation"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: cd4a6e5d2e3ee4f4
+content_hash: e32bbc05a8348110
 ---
-
 # GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.05721](https://arxiv.org/abs/2604.05721)  
 **Code**: [https://weiqi-zhang.github.io/GaussianGrow](https://weiqi-zhang.github.io/GaussianGrow)  
-**Area**: 3D Vision / 3D Generation
+**Area**: 3D Vision / 3D Generation  
 **Keywords**: 3D Gaussian Splatting, Point Clouds, Text Guidance, Multi-view Diffusion, Appearance Generation
 
 ## TL;DR
-This paper proposes GaussianGrow, which replaces the conventional paradigm of jointly predicting geometry and appearance from scratch by "growing" 3D Gaussians from readily available 3D point clouds. It employs a geometry-aware multi-view diffusion model to generate consistent appearance supervision, and addresses view-fusion artifacts and invisible-region problems through an overlap-region detection mechanism coupled with an iterative inpainting strategy, achieving substantial improvements over state-of-the-art methods on both synthetic and real-scan point clouds.
+This paper proposes GaussianGrow, which "grows" 3D Gaussians from easily accessible 3D point clouds instead of predicting both geometry and appearance from scratch. It leverages multi-view diffusion models to generate consistent appearance supervision and introduces an overlap region detection and iterative completion mechanism to resolve viewpoint fusion artifacts and occluded areas, significantly outperforming SOTA on synthetic and real-scan point clouds.
 
 ## Background & Motivation
-1. **Background**: 3D Gaussian Splatting (3DGS) has become the dominant representation for high-fidelity 3D modeling, yet generating high-quality 3D Gaussians remains challenging. Existing generative methods (GVGEN, DiffSplat, etc.) must simultaneously learn geometric structure and appearance; inaccurate geometry predictions severely degrade overall generation quality.
-2. **Limitations of Prior Work**: Some methods attempt to infer Gaussian primitives by predicting point maps as geometric references, but the estimated geometry is unreliable, leading to poor generation quality. Another line of work generates appearance by texturing 3D meshes, but meshes require extensive manual modeling, and reliance on UV unwrapping introduces texture seams and distortions.
-3. **Key Challenge**: Joint learning of geometry and appearance makes models highly sensitive to geometry prediction errors, while obtaining reliable geometric priors is costly (mesh modeling demands substantial manual effort).
-4. **Goal**: How can readily accessible geometric priors (3D point clouds) be exploited to significantly improve 3D Gaussian generation quality?
-5. **Key Insight**: With the proliferation of LiDAR sensors and depth cameras, acquiring clean point cloud data has become highly convenient. Point clouds can serve as reliable geometric priors, reducing the generation task from "joint geometry–appearance learning" to "growing appearance on given geometry."
-6. **Core Idea**: Fix the centers of Gaussian primitives at point cloud positions and leverage a multi-view diffusion model to generate appearance supervision for "growing" the color and opacity attributes of the Gaussians.
+1. **Background**: 3D Gaussian Splatting (3DGS) has become a dominant representation for high-fidelity 3D modeling, yet generating high-quality 3D Gaussians remains challenging. Existing generation methods (e.g., GVGEN, DiffSplat) attempt to learn geometry and appearance simultaneously; however, inaccurate geometry predictions lead to a severe decline in overall generation quality.
+2. **Limitations of Prior Work**: Some methods attempt to infer Gaussian primitives by predicting point maps as geometric references, but unreliable estimated geometry results in poor generation quality. Another category generates appearance by texturing 3D meshes, which requires extensive manual modeling, and reliance on UV unwrapping introduces texture overlapping and distortion.
+3. **Key Challenge**: The joint learning of geometry and appearance makes models highly sensitive to geometric prediction errors, while obtaining reliable geometric priors is often costly (mesh modeling requires significant manual effort).
+4. **Goal**: How can easily accessible geometric priors (3D point clouds) be leveraged to significantly improve the quality of 3D Gaussian generation?
+5. **Key Insight**: With the proliferation of LiDAR and depth cameras, acquiring clean point cloud data has become highly convenient. Point clouds can serve as reliable geometric priors, simplifying the task from "joint geometry and appearance learning" to "growing appearance on a given geometry."
+6. **Core Idea**: Fix the centers of Gaussian primitives at point cloud positions and utilize multi-view diffusion models to generate appearance supervision for "growing" the color and opacity attributes of the Gaussians.
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of two stages. **Stage 1**: A depth-aware ControlNet generates a reference image for the primary view, after which a geometry-aware multi-view diffusion model (Hunyuan3D-Paint) produces 6 canonical views plus 4 additional views optimized for overlap regions—10 views in total—as appearance supervision for optimizing Gaussian attributes. **Stage 2**: Unseen regions are iteratively detected; camera poses are optimized to observe the largest unseen region; a 2D diffusion model inpaints the rendered views, which then serve as supervision to continue growing the Gaussians until full coverage is achieved. **Input**: 3D point cloud + text prompt. **Output**: A complete 3D Gaussian set.
+The pipeline consists of two stages. **Stage 1**: A depth-aware ControlNet generates a main-view reference image, followed by a geometry-aware multi-view diffusion model (Hunyuan3D-Paint) generating 10 views (6 canonical views + 4 additional views optimized for overlapping regions) as appearance supervision to optimize Gaussian attributes. **Stage 2**: Unseen regions are iteratively detected, and camera poses are optimized to observe the largest unseen area. A 2D diffusion model inpaints the rendered views to serve as supervision for continuing Gaussian growth until all regions are covered. Input: 3D point cloud + text prompt. Output: Complete set of 3D Gaussians.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: 3D Point Cloud + Text Prompt"]
+    subgraph GEO["Initialization & Geometry Extraction"]
+        direction TB
+        G1["Gaussian centers fixed on points<br/>CAP-UDF fits UDF → derive normals"]
+        G2["Render Depth / Normal / Position maps<br/>as control signals for diffusion"]
+        G1 --> G2
+    end
+    IN --> GEO
+    GEO --> S1["Main View Reference<br/>Depth-aware ControlNet sets style"]
+    S1 --> S2["6 Canonical Views<br/>Hunyuan3D-Paint multi-view diffusion"]
+    S2 --> OV["Overlap Detection & Pose Optimization<br/>Normal-ray alignment → 4 extra views (10 total)"]
+    OV --> INP["Iterative Gaussian Inpainting<br/>Detect blind spots → Pose optimization → Diffusion inpainting"]
+    INP -->|"Blind spots remain, ~6 rounds"| INP
+    INP -->|"Fully covered"| SP["Spatial Inpainting Fallback<br/>Attribute propagation from neighboring Gaussians"]
+    SP --> OUT["Output: Complete 3D Gaussian Set"]
+```
 
 ### Key Designs
 
-1. **Initialization and Geometry Extraction**
+**1. Initialization and Geometry Extraction: Using point clouds as error-free geometric priors**
 
-    - **Function**: Establish a reliable geometric foundation from the point cloud.
-    - **Mechanism**: Each Gaussian center is initialized at its corresponding point cloud position. An unsigned distance field (UDF) is optimized from the point cloud using CAP-UDF, from which normals are computed as $n_i = \nabla f_u(p_i) / \|\nabla f_u(p_i)\|$. A 2D Gaussian Splatting representation (oriented discs rather than ellipsoids) is adopted, with rotation matrices set automatically from the normals. Depth maps (via ray marching), normal maps (via gradient inference), and position maps (pixel→XYZ coordinates) are extracted from the UDF as geometric conditioning for subsequent view generation.
-    - **Design Motivation**: UDF is preferred over SDF because it can represent open topologies and complex structures without requiring watertight surfaces. Direct initialization from point clouds inherently guarantees geometric accuracy.
+Since geometry is provided by the point cloud, the model does not need to predict it—this is where GaussianGrow avoids the quality degradation caused by geometry prediction failure. Each Gaussian center is directly fixed to the corresponding point cloud position, ensuring geometric accuracy is inherited from the input. To provide conditional signals for subsequent view generation, the authors use CAP-UDF to optimize an Unsigned Distance Field (UDF) from the point cloud, from which normals are derived as $n_i = \nabla f_u(p_i) / \|\nabla f_u(p_i)\|$. Gaussians are represented as 2D circular disks oriented along the normals, with rotation matrices determined directly by these normals. Finally, three types of geometric maps are rendered from the UDF—depth maps (via ray marching), normal maps (via gradient inference), and position maps (pixel to XYZ)—to guide the diffusion model. UDF is chosen over SDF because it does not require watertight surfaces and can describe complex structures like open topologies and thin shells, making it more robust for real-scan point clouds.
 
-2. **Overlap Region Detection and Pose Optimization**
+**2. Overlap Region Detection and Pose Optimization: Resolving inconsistencies where views conflict**
 
-    - **Function**: Resolve appearance inconsistencies in overlapping regions between adjacent canonical views.
-    - **Mechanism**: Ray tracing identifies the set of visible Gaussians for each viewpoint; the intersection of adjacent viewpoints yields the overlap region $R_{i,j}$. A new camera pose is optimized for each overlap region to maximize alignment between camera ray directions and the normals of Gaussians within that region:
-    $$\mathcal{L}_{\text{align}} = \sum_{g \in R_{i,j}} \left(1 - \left|\frac{\mathbf{d}_{i,j} \cdot \mathbf{n}_g}{\|\mathbf{d}_{i,j}\| \|\mathbf{n}_g\|}\right|\right)$$
-    This ensures that additional views observe overlap regions from the most frontal angle, reducing projection distortion and thereby generating more consistent appearance. Camera positions are constrained to lie on the unit sphere during optimization. A CUDA-parallelized detection algorithm reduces computation time from minutes to seconds.
-    - **Design Motivation**: The standard 6 preset views inevitably produce large overlapping areas between adjacent views, and multi-view diffusion models frequently generate inconsistent results in these regions. Generating appearance for overlap regions from the optimal viewpoint is key to resolving this issue.
+When 6 preset canonical views cover an object, large overlaps between adjacent views are inevitable. Multi-view diffusion models often produce inconsistent outputs in these overlapping zones, leading to seam artifacts. GaussianGrow uses ray tracing to determine the set of Gaussians visible from each viewpoint; the intersection of sets from adjacent viewpoints defines the overlap region $R_{i,j}$. An independent camera pose is then optimized for each overlap region to align the camera ray with the Gaussian normals within that region:
 
-3. **Iterative Gaussian Inpainting**
+$$\mathcal{L}_{\text{align}} = \sum_{g \in R_{i,j}} \left(1 - \left|\frac{\mathbf{d}_{i,j} \cdot \mathbf{n}_g}{\|\mathbf{d}_{i,j}\| \|\mathbf{n}_g\|}\right|\right)$$
 
-    - **Function**: Cover point cloud regions that remain unseen after multi-view generation.
-    - **Mechanism**: Visibility analysis automatically predicts the optimal camera pose for observing the largest unseen region. The core optimization objective minimizes the number of unoptimized Gaussians occluded by already-optimized ones:
-    $$\mathcal{L}_{\text{occ}} = \sum_{i,j} \sigma\!\left((\tau(\rho_i+\rho_j)^2 - \|q_i-q_j\|^2)\right) \sigma(\tau(z_i-z_j))$$
-    where $q$ denotes 2D projections, $\rho$ is the projected radius, and $z$ is depth. After finding the optimal viewpoint, the current view (containing occlusion holes) is rendered and a depth-aware inpainting diffusion model fills the holes; the inpainted result supervises optimization of the corresponding Gaussians. This process iterates until all Gaussians are covered (typically within 6 iterations). A final Spatial Inpainting post-processing step propagates attributes from optimized Gaussians to neighboring unoptimized ones.
-    - **Design Motivation**: The geometric structures of different objects vary substantially; a fixed dense viewpoint set cannot cover all regions. Adaptively discovering and inpainting unseen regions is more efficient and complete than predefined viewpoint patterns.
+The camera position is constrained to a unit sphere. Direct alignment minimizes projection distortion, ensuring more coherent appearance generation. Thus, the 4 additional views are specifically used to "reconcile" the problematic seams between canonical views. To maintain efficiency, the visibility detection is implemented with CUDA kernels, reducing computation time from minutes to seconds.
+
+**3. Iterative Gaussian Inpainting: Self-adaptive discovery and completion of occluded areas**
+
+Even with 10 views, concave parts, interior walls, and self-occluded regions may remain uncovered. Instead of adding more fixed viewpoints, GaussianGrow adaptively identifies blind spots. In each round, it solves for a camera pose that minimizes the number of "unoptimized Gaussians occluded by optimized ones":
+
+$$\mathcal{L}_{\text{occ}} = \sum_{i,j} \sigma\!\left(\tau(\rho_i+\rho_j)^2 - \|q_i-q_j\|^2\right)\, \sigma\!\left(\tau(z_i-z_j)\right)$$
+
+where $q$ is the 2D projected center, $\rho$ is the projected radius, and $z$ is the depth. Two sigmoid functions determine "projection overlap" and "occlusion order," respectively. After finding the viewpoint that maximizes blind spot visibility, the current view is rendered (showing holes for blind spots), and a depth-aware inpainting diffusion model fills these holes. The inpainted results supervise the growth of the corresponding Gaussians. This process usually covers all blind spots within 6 iterations. A final Spatial Inpainting step serves as a fallback, propagating attributes from optimized Gaussians to any remaining isolated, unobserved Gaussians.
 
 ### Loss & Training
-Gaussian optimization follows a view-specific scheme—only front-facing Gaussians visible from the current viewpoint are optimized, preventing interference from back-facing Gaussians. The 6 canonical views are optimized first, followed by the 4 additional views targeting overlap regions. Hunyuan3D-Paint is used as the multi-view diffusion model; primary view generation employs Stable Diffusion with a depth-aware ControlNet.
+Gaussian optimization follows a view-specific strategy—only front-facing Gaussians visible in the current view are optimized to prevent interference with back-facing ones. Optimization proceeds in sequence: 6 canonical views first, followed by the 4 additional overlap views. Hunyuan3D-Paint serves as the multi-view diffusion model, and the main view is generated using Stable Diffusion with Depth-aware ControlNet.
 
 ## Key Experimental Results
 
-### Main Results (Objaverse Dataset, Text-guided Appearance Generation)
+### Main Results (Objaverse Dataset, text-guided appearance generation)
 
 | Method | FID ↓ | KID ↓ | CLIP ↑ | User Study (Overall) ↑ |
-|--------|-------|-------|--------|----------------------|
+|------|-------|-------|--------|----------------------|
 | TexTure | 42.63 | 7.84 | 26.84 | 1.49 |
 | Text2Tex | 41.62 | 6.45 | 26.73 | 2.37 |
 | SyncMVD | 40.85 | 5.77 | 27.24 | 4.13 |
 | GAP | 40.39 | 5.28 | 27.26 | 3.37 |
-| **GaussianGrow** | **36.07** | **3.04** | **27.30** | **4.67** |
+| **GaussianGrow (Ours)** | **36.07** | **3.04** | **27.30** | **4.67** |
 
 ### Ablation Study
 
 | Configuration | FID ↓ | KID ↓ | CLIP ↑ |
-|--------------|-------|-------|--------|
+|------|-------|-------|--------|
 | **Full Model** | **36.07** | **3.04** | **27.30** |
 | W/o Overlap Processing | 40.48 | 4.81 | 26.73 |
 | W/o Inpaint | 40.46 | 4.68 | 26.71 |
 
-| Views K | FID ↓ | KID ↓ | CLIP ↑ |
+| Number of Views K | FID ↓ | KID ↓ | CLIP ↑ |
 |---------|-------|-------|--------|
-| K=6 (canonical views only) | 40.48 | 4.81 | 26.73 |
+| K=6 (Canonical only) | 40.48 | 4.81 | 26.73 |
 | **K=10** | **36.07** | **3.04** | **27.30** |
 | K=12 | 36.57 | 2.88 | 26.48 |
 
 ### Key Findings
-- **Both overlap processing and inpainting are essential**: Removing either module raises FID from 36 to above 40, with contributions of roughly equal magnitude.
-- **K=10 is the optimal view count**: Four additional views focused on the most critical overlap regions suffice; increasing to K=12 yields a marginal KID improvement but slightly worsens CLIP and FID.
-- **Point clouds outperform reconstructed meshes**: Baseline methods exhibit a significant performance drop (FID increases by 15–25 points) when operating on reconstructed meshes (BPA/CAP-UDF), demonstrating that the point cloud→mesh→UV unwrapping pipeline introduces substantial geometric distortion. GaussianGrow bypasses these intermediate steps entirely.
-- On the T3Bench text-to-3D benchmark, GaussianGrow combined with a Uni3D retrieval scheme surpasses DiffSplat, GVGEN, LGM, and other methods across all metrics.
-- The method generalizes to real-scan point clouds (DeepFashion3D), demonstrating robustness to noise and density variation.
-- A single point cloud paired with different text prompts can produce diverse appearance styles, demonstrating flexibility.
+- **Overlap processing and inpainting are equally crucial**: Removing either module causes the FID to rise from 36 to over 40.
+- **K=10 is the optimal viewpoint count**: 4 additional views focusing on overlap regions are sufficient; increasing to K=12 yields diminishing returns and slightly worse CLIP scores.
+- **Point clouds outperform reconstructed meshes**: Baseline method performance drops significantly (FID increases by 15-25 points) when using reconstructed meshes (BPA/CAP-UDF), proving that the point cloud → mesh → UV unwrapping pipeline introduces significant geometric distortion. GaussianGrow successfully bypasses these intermediate steps.
+- On the T3Bench text-to-3D benchmark, the GaussianGrow + Uni3D retrieval scheme outperforms methods like DiffSplat, GVGEN, and LGM across all metrics.
+- The method works robustly on real-scan point clouds (DeepFashion3D), demonstrating resilience to noise and density variations.
 
 ## Highlights & Insights
-- **The "growing Gaussians from point clouds" perspective shift**: Reducing 3D generation from "jointly learning geometry and appearance" to "learning appearance on existing geometry" is a simple yet highly effective insight. Point clouds as geometric priors are more reliable than predicted point maps, and their acquisition cost (LiDAR scanning or cross-modal retrieval) continues to decrease.
-- **Fine-grained overlap region handling**: Optimizing camera poses via normal–ray alignment to observe overlap regions is a highly engineered yet effective design choice; the CUDA-parallel implementation further reflects a commitment to practical efficiency.
-- **Adaptive inpainting strategy**: Rather than using predefined viewpoints, the model autonomously identifies regions most in need of inpainting—this "on-demand generation" paradigm is more elegant than brute-force dense-view approaches.
+- **Paradigm shift to "Gaussian growing from point clouds"**: Simplifying 3D generation from "simultaneous geometry/appearance learning" to "learning appearance on existing geometry" is a simple yet highly effective insight. Point clouds are more reliable as priors than predicted point maps, and their acquisition cost (via LiDAR or cross-modal retrieval) is decreasing.
+- **Sophisticated overlap handling**: Optimizing camera poses via normal-ray alignment to address overlap regions is an effective engineering design. The CUDA parallel implementation emphasizes practical efficiency.
+- **Adaptive inpainting strategy**: Instead of using predefined viewpoints, the model identifies areas that need inpainting—this "on-demand generation" is more elegant than brute-force dense view sampling.
 
 ## Limitations & Future Work
-- The method depends on the quality of the external multi-view diffusion model (Hunyuan3D-Paint); poor generation quality for certain object categories cannot be remedied by GaussianGrow itself.
-- Iterative inpainting requires multiple rendering passes and diffusion model inference steps, incurring greater computational overhead than end-to-end approaches.
-- Primary view generation (ControlNet + Stable Diffusion) is a single-pass sample; a poor reference image will compromise the consistency of all subsequent views.
-- Current evaluation is primarily at the object level; applicability to scene-level point clouds has not been validated.
+- Dependency on the quality of the external multi-view diffusion model (Hunyuan3D-Paint)—if the diffusion model performs poorly on certain categories, GaussianGrow cannot rectify it.
+- Iterative inpainting requires multiple rendering and diffusion inference passes, resulting in higher computational overhead than end-to-end methods.
+- The main view generation (ControlNet + SD) is a single-pass sample; if this reference is suboptimal, it affects the consistency of all subsequent views.
+- Current evaluation is primarily at the object level; applicability to scene-level point clouds remains to be verified.
 
 ## Related Work & Insights
-- **vs. DiffSplat**: DiffSplat employs an image diffusion model to directly generate Gaussians, with geometry and appearance learned jointly. GaussianGrow mitigates the risk of geometry prediction failure by decoupling geometry (provided by point clouds) from appearance (generated by the diffusion model).
-- **vs. DreamGaussian**: DreamGaussian optimizes appearance via Score Distillation Sampling (SDS), which is prone to over-saturation and unnatural results. GaussianGrow provides explicit supervision through multi-view diffusion, yielding more natural appearance.
-- **vs. TriplaneGaussian**: Resolution constraints of the triplane representation limit fine-grained appearance recovery. GaussianGrow optimizes Gaussian primitives directly in 3D space, unconstrained by the resolution of any intermediate representation.
-- **vs. mesh texturing methods (TexTure, Text2Tex, etc.)**: GaussianGrow circumvents the UV unwrapping bottleneck; the substantial performance degradation of baseline methods after point-cloud-to-mesh reconstruction further confirms this advantage.
+- **vs DiffSplat**: DiffSplat generates Gaussians directly from image diffusion, involving joint learning. GaussianGrow decouples geometry and appearance to avoid the risk of geometry failure.
+- **vs DreamGaussian**: DreamGaussian uses SDS optimization, which often yields over-saturated results. GaussianGrow uses explicit multi-view diffusion supervision for more natural appearances.
+- **vs Mesh-texturing methods (TexTure, Text2Tex, etc.)**: GaussianGrow bypasses the UV unwrapping bottleneck, a significant advantage particularly when meshes reconstructed from point clouds are imperfect.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "growing Gaussians from point clouds" framing is original; the engineering design of overlap region handling and iterative inpainting is solid.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers Objaverse synthetic + DeepFashion3D real scans + T3Bench text-to-3D + multi-method comparison + comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Method descriptions are clear, with good coordination between equations and figures.
-- Value: ⭐⭐⭐⭐ Offers a new paradigm for 3D generation, though dependence on an external multi-view diffusion model limits self-contained applicability.
+- Novelty: ⭐⭐⭐⭐ The "growing Gaussians from point clouds" approach is innovative; the overlap and iterative inpainting designs are solid.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across synthetic (Objaverse), real-scan (DeepFashion3D), and text-to-3D (T3Bench) datasets.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological descriptions with well-integrated formulas and figures.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for 3D generation, though independence is limited by external diffusion models.
 
 <!-- RELATED:START -->
 
@@ -129,11 +139,11 @@ Gaussian optimization follows a view-specific scheme—only front-facing Gaussia
 
 ## Related Papers
 
-- [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
-- [\[ICCV 2025\] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance](../../ICCV2025/3d_vision/egocentric_action-aware_inertial_localization_in_point_clouds_with_vision-langua.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 - [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
+- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
+- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
+- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
 
 </div>
 

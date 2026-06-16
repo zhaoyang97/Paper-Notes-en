@@ -2,85 +2,97 @@
 title: >-
   [Paper Note] UNICBench: UNIfied Counting Benchmark for MLLM
 description: >-
-  [CVPR 2026][Multimodal VLM][counting benchmark] This paper introduces UNICBench, the first unified cross-modal (image/text/audio) multi-level counting benchmark, comprising 5,508 + 5,888 + 2,905 = 14…
+  [CVPR 2026][Multimodal VLM][counting benchmark] Introducing UNICBench, the first unified cross-modal (Image/Text/Audio) multi-level counting benchmark, containing 14,301 QA pairs (5,508+5,888+2,905) categorized by three capability levels (Pattern/Semantic/Reasoning) × three difficulty levels (Easy/Medium/Hard). Systematic evaluation of 45 SOTA MLLMs reveals that bas
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "counting benchmark"
-  - "multimodal LLM"
-  - "image-text-audio"
-  - "unified evaluation"
-  - "stratified difficulty"
+  - CVPR 2026
+  - Multimodal VLM
+  - counting benchmark
+  - multimodal LLM
+  - image-text-audio
+  - unified evaluation
+  - stratified difficulty
 date: 2026-05-08
-content_hash: ab6fc9718a71e450
+content_hash: 5adade62777f9d4d
 ---
-
 # UNICBench: UNIfied Counting Benchmark for MLLM
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00595](https://arxiv.org/abs/2603.00595)  
 **Code**: Public evaluation toolkit  
-**Area**: Multimodal Benchmarking / MLLM Evaluation
-**Keywords**: counting benchmark, multimodal LLM, image-text-audio, unified evaluation, stratified difficulty
+**Area**: Multimodal benchmark / MLLM evaluation  
+**Keywords**: counting benchmark, multimodal LLM, image-text-audio, unified evaluation, stratified difficulty  
 
 ## TL;DR
 
-This paper introduces UNICBench, the first unified cross-modal (image/text/audio) multi-level counting benchmark, comprising 5,508 + 5,888 + 2,905 = 14,301 QA pairs organized along a three-level capability taxonomy (Pattern/Semantic/Reasoning) × three-level difficulty taxonomy (Easy/Medium/Hard). The benchmark systematically evaluates 45 state-of-the-art MLLMs, revealing that basic counting tasks are near saturation while reasoning-level and hard-difficulty tasks exhibit substantial performance gaps.
+Introducing UNICBench, the first unified cross-modal (Image/Text/Audio) multi-level counting benchmark, containing 14,301 QA pairs (5,508+5,888+2,905) categorized by three capability levels (Pattern/Semantic/Reasoning) × three difficulty levels (Easy/Medium/Hard). Systematic evaluation of 45 SOTA MLLMs reveals that basic counting tasks are approaching human level, while significant gaps remain in reasoning-level and difficult tasks.
 
 ## Background & Motivation
 
-**Background**: Counting is a core cognitive capability of multimodal large models, closely related to numerosity sense—a fundamental cognitive faculty shared by humans and animals. While MLLMs have advanced rapidly on general VQA and reasoning benchmarks, no benchmark has systematically evaluated counting as an isolated capability across modalities.
+**Background**: Counting is a core cognitive ability of multimodal large models, related to number sense (a basic cognitive capability in humans and animals). While MLLMs have progressed rapidly in general VQA/reasoning benchmarks, they lack a benchmark for systematic cross-modal evaluation of "counting" as an independent capability.
 
-**Limitations of Prior Work**: (1) Annotation formats for image counting datasets are inconsistent (points/bounding boxes/density maps), making them difficult to directly repurpose for MLLM QA evaluation. (2) Text and audio counting data are extremely scarce—QA datasets for document deduplication counting and audio event counting are virtually nonexistent. (3) Evaluation protocols are inconsistent across works, with different splits, prompts, random seeds, and matching rules rendering results incomparable. (4) Closed-source model APIs incur high costs and are rate-limited, hampering fair cross-model comparison.
+**Limitations of Prior Work**: (1) Image counting dataset annotation formats are inconsistent (points/boxes/density maps), making them difficult to use directly for MLLM QA evaluation; (2) Text and audio counting data are extremely scarce—almost no public QA datasets exist for document deduplication counting or audio event counting; (3) Evaluation protocols are inconsistent—splits, prompts, seeds, and matching rules vary across works, making results incomparable; (4) High API costs and rate limits for closed-source models hinder fair cross-model comparison.
 
-**Key Challenge**: Counting ability spans three distinct levels—perceptual localization, semantic filtering, and rule-based reasoning. Existing benchmarks either cover only a single modality or fail to distinguish capability levels, making it impossible to systematically identify MLLM counting bottlenecks.
+**Key Challenge**: Counting ability spans three levels: perceptual localization, semantic filtering, and rule-based reasoning. Existing benchmarks either cover only a single modality or fail to distinguish capability levels, making it impossible to systematically locate MLLM counting bottlenecks.
 
-**Goal**: To establish a counting benchmark that covers three modalities (image/text/audio), employs a unified QA format and evaluation protocol, and enables stratified diagnosis of capability deficiencies.
+**Goal**: To establish a counting benchmark covering image/text/audio modalities with a unified QA format and evaluation protocol, capable of diagnosing capability shortcomings hierarchically.
 
-**Key Insight**: Design a cross-classified taxonomy of three capability levels (Pattern/Semantic/Reasoning) and three difficulty levels (Easy/Medium/Hard), paired with evidence-first ground truth and deterministic numeric parsing.
+**Key Insight**: Design a cross-classification system with three capability levels (Pattern/Semantic/Reasoning) and three difficulty levels (Easy/Medium/Hard), complemented by evidence-first GT and deterministic numerical parsing.
 
-**Core Idea**: Decompose counting ability into three levels—perceptual counting → semantic filtering → rule-based reasoning—and evaluate uniformly across image/text/audio modalities, using metrics such as MAE and HitRate to stratify the diagnosis of MLLM counting bottlenecks.
+**Core Idea**: Decompose counting capability into three levels: perception counting → semantic filtering → rule-based reasoning. Evaluate uniformly across image/text/audio, using metrics like MAE/HitRate to hierarchically diagnose MLLM counting bottlenecks.
 
 ## Method
 
 ### Overall Architecture
 
-UNICBench comprises QA corpora across three modalities, a unified QA-evidence schema, a standardized evaluation protocol (fixed split/prompt/seed with modality-specific matching rules), and a stratified reporting framework that cross-tabulates results by capability × difficulty × modality.
+UNICBench addresses the lack of a unified yardstick for "counting" in multimodal large models—where image, text, and audio modalities each have their own annotation formats and evaluation protocols, making horizontal comparisons impossible. It standardizes all tri-modal counting problems into a unified "Question—Evidence—Answer" structure: each problem includes an input (an image, a document, or an audio clip), a natural language question, an integer answer, and a traceable piece of evidence. This unified corpus is then stratified by two structures: first, each problem is cross-labeled by "counting capability required" and "scene difficulty"; second, a fixed evaluation protocol is established (standardizing splits, prompts, and seeds with modality-specific answer matching rules). Finally, results are reported across the "Capability × Difficulty × Modality" dimensions for direct performance diagnosis.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph T["3-level Capability × 3-level Difficulty Cross-classification"]
+        direction TB
+        T1["Capability Axis L1 Pattern / L2 Semantic / L3 Reasoning"]
+        T2["Difficulty Axis Easy 1–10 / Medium 11–100 / Hard >100"]
+    end
+    A["Tri-modal Raw Data<br/>Multi-source Image / Text / Audio Collection"]
+    subgraph B["Evidence-first Annotation + Unified Cross-modal Schema"]
+        direction TB
+        B1["Unified Pre-processing<br/>Points/Boxes/Timestamps → Coordinates / Char Spans / Timestamps"] --> B2["Dual Annotation + Arbitration<br/>gt_count + Structured gt_evidence"]
+    end
+    T -. Each QA labeled by grid .-> B
+    A --> B
+    B --> C
+    subgraph C["Standardized Evaluation Protocol + Deterministic Numerical Parsing"]
+        direction TB
+        C1["Fixed split/prompt/seed + Modality-specific matching rules"] --> C2["Integer Parsing from Response<br/>MAE / MSE / HitRate / SuccessRate"]
+    end
+    C --> D["3D Cross-reporting<br/>Capability × Difficulty × Modality"]
+```
 
 ### Key Designs
 
-1. **Three-Level Capability × Three-Level Difficulty Taxonomy**
-    - Pattern (L1): Direct perceptual counting, $y=|E|$, e.g., "How many people are in the image?"
-    - Semantic (L2): Attribute filtering / deduplication, $y=|\{e \in E \mid P(e)\}|$, e.g., "How many people are wearing red?"
-    - Reasoning (L3): Rule-driven / compositional counting, $y=g(|S_1|,\ldots)$, e.g., "How many folders were modified in 2022?"
-    - Difficulty is mapped via objective metrics (density/occlusion/repetition rate) to Easy (1–10) / Medium (11–100) / Hard (>100).
-    - **Design Motivation**: The cross-classification enables precise diagnosis—distinguishing "poor perception vs. poor reasoning" and "failure on simple vs. dense scenes."
+**1. Capability × Difficulty Cross-classification: Localizing "Incorrect Counting"**
 
-2. **Evidence-First Ground Truth and Cross-Modal Unified Schema**
-    - Each GT entry includes `gt_count` and structured `gt_evidence` (images: instance coordinates; text: character spans; audio: timestamps).
-    - Question templates: L1 uses deterministic templates to reduce linguistic variation; L2/L3 use free-form templates with explicit filtering rules.
-    - Multi-stage quality control: dual independent annotation + arbitration, with 100% annotation consistency.
-    - **Design Motivation**: Evidence traceability ensures GT verifiability; the unified schema makes cross-modal comparisons meaningful.
+Reporting only an overall accuracy cannot explain whether a model fails due to poor perception or calculation. UNICBench slices counting capability into three levels along an increasing difficulty gradient: Pattern (L1) is direct perceptual counting where the answer is the size of the instance set $y=|E|$, e.g., "How many people are in the image?"; Semantic (L2) requires filtering by attributes or deduplication before counting, $y=|\{e \in E \mid P(e)\}|$, e.g., "How many people are wearing red clothes?"; Reasoning (L3) involves combinatorial counting according to rules, $y=g(|S_1|,\ldots)$, e.g., "How many folders were modified in 2022?". Difficulty levels are mapped to Easy (1–10), Medium (11–100), and Hard (>100) based on objective measures (target density, occlusion, repetition rate). This cross-labeling refines diagnosis to determine if the perception layer fails in dense scenes or if the reasoning layer fails even in simple scenes.
 
-3. **Standardized Evaluation Protocol**
-    - Fixed split/prompt/seed eliminates stochasticity.
-    - Modality-specific matching rules (exact numeric match vs. ε-tolerance).
-    - Deterministic numeric parsing to extract numbers from natural-language responses.
-    - Evaluation metrics: MAE, MSE, SuccessRate, HitRate (@100%/@90%/@80%).
+**2. Evidence-first Annotation + Unified Cross-modal Schema: Making Every Answer Traceable**
 
-### Loss & Training
+Meaningful cross-modal comparison requires that ground truth across the three modalities is the same type of data. UNICBench stores not just a `gt_count` for each question but also a structured `gt_evidence`—coordinates for images, character-level spans for text, and timestamps for audio. This logs the reasoning for the count, allowing answers to be verified individually. Question templates are also handled hierarchically: L1 uses deterministic templates to suppress linguistic variation, while L2/L3 allow free-form text with explicitly stated filtering rules to avoid ambiguity. Quality control involves independent double annotation plus multi-stage arbitration to achieve 100% consistency. This unified schema ensures ground truth is verifiable and allows "image counts" to be compared directly with "audio counts."
 
-UNICBench is an evaluation benchmark and does not involve model training. Metric definitions:
-- MAE $= \frac{1}{N}\sum|y_i - \hat{y}_i|$, MSE $= \frac{1}{N}\sum(y_i - \hat{y}_i)^2$
-- HitRate@X% = accuracy within an X% error tolerance
-- SuccessRate = proportion of responses from which a parseable number is successfully extracted
+**3. Standardized Evaluation Protocol + Deterministic Numerical Parsing: Eliminating Incomparability**
+
+Inconsistent splits, prompts, seeds, and matching rules in previous works made scores impossible to align. UNICBench standardizes these: splits, prompts, and random seeds are fixed, and matching rules are customized by modality (exact matching for numerical classes, $\epsilon$-tolerance for continuous quantities). Since model outputs are natural language, a deterministic numerical parser is employed to stably extract the integer from the response, preventing misjudgment due to formatting. Finally, a set of complementary metrics is reported—MAE and MSE to measure numerical deviation, SuccessRate to measure the model's ability to return parsable numbers, and HitRate@100%/@90%/@80% to measure hits within different error tolerances, evaluating both accuracy and robustness.
+
+### Metric Definitions
+
+UNICBench is an evaluation benchmark and does not involve model training. Core metrics are defined as: $MAE = \frac{1}{N}\sum|y_i - \hat{y}_i|$, $MSE = \frac{1}{N}\sum(y_i - \hat{y}_i)^2$ to measure deviation from ground truth; HitRate@X% is the accuracy within an X% error margin; SuccessRate is the ratio of models successfully returning a parsable number.
 
 ## Key Experimental Results
 
-### Main Results (Image Modality, Top-10 Models)
+### Main Results (Top-10 Models in Image Modality)
 
 | Model | Overall MAE↓ | Easy MAE↓ | Hard MAE↓ | Pattern MAE↓ | Reasoning MAE↓ |
-|---|---|---|---|---|---|
+|------|-------------|----------|----------|-------------|---------------|
 | GPT-5-mini | 29.8 | 2.1 | 155.0 | 25.4 | 5.3 |
 | o4-mini | 42.9 | 2.2 | 239.1 | 39.1 | 4.1 |
 | GPT-4o | 43.2 | 2.4 | 238.4 | 41.7 | 5.4 |
@@ -92,53 +104,53 @@ UNICBench is an evaluation benchmark and does not involve model training. Metric
 | GLM-4.1V-9B | 97.9 | 3.0 | 542.2 | 90.0 | 3.1 |
 | GPT-4o-mini | 73.3 | 2.3 | 424.6 | 72.7 | 5.3 |
 
-### Cross-Modal / Cross-Difficulty Analysis
+### Cross-modal/Cross-difficulty Analysis
 
 | Dimension | Finding |
-|---|---|
-| Easy vs. Hard | Easy MAE: 2–5; Hard MAE: 100–700; gap exceeds 100× |
-| Pattern vs. Reasoning | Image Reasoning MAE is low (3–7) but comprises only 4.6% of samples; high Pattern MAE originates from high-density scenes |
-| Text modality | Reasoning accounts for the highest proportion (43.7%); models generally underperform on deduplication and cross-passage aggregation |
-| Audio modality | Environmental sound events have low density (1.56/sample); meeting speech has extremely high density (81.51/sample) |
-| Long-tail distribution | GT count distribution is heavily right-skewed; model error explodes in high-count regions |
+|------|------|
+| Easy vs Hard | Easy MAE 2-5, Hard MAE 100-700, a gap of over 100x |
+| Pattern vs Reasoning | Image Reasoning MAE is low (3-7) but sample size is small (4.6%); high Pattern MAE comes from high-density scenes |
+| Text Modality | Reasoning has the highest ratio (43.7%); models generally perform poorly on deduplication/cross-paragraph aggregation |
+| Audio Modality | Ambient sound event density is low (1.56/sample); meeting speech density is extremely high (81.51/sample) |
+| Long-tail Distribution | GT count distribution is heavily right-skewed/long-tailed; model error explodes in high-count regions |
 
 ### Key Findings
 
-- Simple counting tasks (L1 + Easy) are near saturation across models, with Easy MAE gaps of only 2–12.
-- The Hard partition exhibits large gaps—the best model (GPT-5-mini: 155) outperforms the worst (Gemini-2.5-Flash: 694) by 4.5×.
-- Reasoning tasks in the text modality (deduplicated citations, cross-passage statistics) represent the most significant weakness of current MLLMs.
-- Open-source models perform surprisingly well on Reasoning (GLM-4.1V MAE: 3.1), but lag considerably on Pattern.
+- On simple counting tasks (L1+Easy), models converge, with an Easy MAE gap of only 2-12.
+- Large performance gaps exist in the Hard partition—the best (GPT-5-mini 155) and worst (Gemini-2.5-Flash 694) differ by 4.5x.
+- Reasoning tasks in the text modality (deduplicating citations, cross-paragraph statistics) are currently the biggest shortcoming for MLLMs.
+- Open-source models perform surprisingly well on Reasoning (GLM-4.1V MAE 3.1), but show significant gaps in Pattern.
 
 ## Highlights & Insights
 
-- The first unified counting benchmark spanning three modalities—treating "counting" as a core cognitive capability evaluated in isolation, filling a notable gap.
-- The three-level capability × three-level difficulty cross-classification enables precise diagnosis, pinpointing "which capability level fails at which difficulty."
+- First unified counting benchmark across three modalities—evaluating "counting" as an independent core cognitive capability.
+- 3-level Capability × 3-level Difficulty cross-classification enables precise diagnosis, identifying specific failure points.
 - Evidence-first GT design ensures every answer is traceable and verifiable.
-- Long-tail distribution analysis reveals systematic model failure in high-count scenarios—not random error, but a cognitive blind spot.
-- The evaluation of 45 models provides broad coverage, lending statistical credibility to the conclusions.
+- Long-tail distribution analysis reveals systematic failures in high-count scenarios, indicating cognitive blind spots rather than random errors.
+- Extensive evaluation of 45 models provides statistically significant and broad conclusions.
 
 ## Limitations & Future Work
 
-- Audio counting data is relatively sparse (2,069 samples vs. 5,300 for images), limiting the robustness of audio-dimension conclusions.
-- High evaluation costs for closed-source APIs (GPT-5-level) restrict reproducibility and extensibility.
-- Cross-modal joint counting (e.g., simultaneous visual and audio counting in video) is not addressed.
-- Image-modality Reasoning accounts for only 4.6% of samples, yielding a limited sample size for conclusions at that level.
-- The impact of enhancement strategies such as few-shot prompting and chain-of-thought on counting performance is not explored.
+- Audio counting data volume is relatively small (2,069 samples vs. 5,300 for image), limiting the robustness of audio-dimension findings.
+- High evaluation costs for closed-source APIs (GPT-5 level) restrict replication and expansion.
+- Cross-modal joint counting (e.g., using both vision and audio in video) is not yet addressed.
+- Reasoning in the image modality accounts for only 4.6%, resulting in a small sample size for that level's conclusions.
+- The impact of enhancement strategies like few-shot or chain-of-thought on counting performance has not been explored.
 
 ## Related Work & Insights
 
-- **vs. MMBench/MMMU**: General benchmarks do not systematically evaluate counting; UNICBench fills the gap with deep evaluation of this specific capability.
-- **vs. FSC-147/ShanghaiTech**: Traditional counting datasets use density maps and point annotations; UNICBench adopts a unified QA format tailored for MLLMs.
-- **vs. DocVQA/ChartQA**: These benchmarks involve counting but do not treat it as a core capability; UNICBench focuses on counting and provides stratified diagnosis.
-- The stratified evaluation paradigm (capability × difficulty × modality) is generalizable to benchmark design for other specific capabilities (e.g., spatial reasoning, temporal understanding).
-- Systematic failure under long-tail distributions suggests that MLLMs may lack genuine "counting" ability, relying more on pattern matching than true enumeration.
+- **vs MMBench/MMMU**: General benchmarks do not systematically evaluate counting; UNICBench fills the gap for deep evaluation of this specific capability.
+- **vs FSC-147/ShanghaiTech**: Traditional datasets use density maps or point annotations; UNICBench unifies them into QA format for MLLMs.
+- **vs DocVQA/ChartQA**: These involve counting but not as a core capability; UNICBench focuses on counting and provides hierarchical diagnosis.
+- The hierarchical evaluation paradigm (Capability × Difficulty × Modality) can be extended to benchmark other specific capabilities like spatial reasoning or temporal understanding.
+- Systematic failures under long-tail distributions suggest that MLLMs may lack true "counting" ability and rely more on pattern matching.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First unified cross-modal counting benchmark with a well-designed taxonomy
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of 45 models with three-dimensional cross-analysis
-- Writing Quality: ⭐⭐⭐⭐ Clear taxonomy presentation and rich visualizations
-- Value: ⭐⭐⭐⭐ Reveals systematic deficiencies in MLLM counting ability; benchmark has long-term utility
+- Novelty: ⭐⭐⭐⭐ First unified cross-modal counting benchmark with a rational classification system.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of 45 models with three-dimensional cross-analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear classification system and rich visualizations.
+- Value: ⭐⭐⭐⭐ Reveals systematic flaws in MLLM counting capabilities; the benchmark has long-term utility.
 
 <!-- RELATED:START -->
 
@@ -146,11 +158,11 @@ UNICBench is an evaluation benchmark and does not involve model training. Metric
 
 ## Related Papers
 
+- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
+- [\[CVPR 2026\] CountGD++: Generalized Prompting for Open-World Counting](countgd_generalized_prompting_for_open-world_counting.md)
 - [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
-- [\[ICML 2026\] Uncovering Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
+- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
 
 </div>
 

@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion
 description: >-
-  [ICML2026][Image Generation][Minority Sampling] This paper proposes JEPA Guidance, which utilizes the implicit density signals from JEPA (e.g.…
+  [ICML 2026][Image Generation][Diffusion Model] This work proposes JEPA Guidance, which leverages implicit density signals from JEPA (e.g., DINOv2) encoders to guide diffusion model sampling. It shifts the definition of "minority samples" from "low density under the generative model prior" to "low density under a world prior," achieving semantically meaningful rare
 tags:
-  - "ICML2026"
-  - "Image Generation"
-  - "Minority Sampling"
-  - "Diffusion Models"
-  - "JEPA"
-  - "World Model Prior"
-  - "Randomized SVD"
+  - ICML 2026
+  - Image Generation
+  - Diffusion Model
+  - JEPA
 date: 2026-05-08
-content_hash: 8ec6d2bc7467d94f
+content_hash: c16bbd836e47c7df
 ---
-
 # Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion
 
 **Conference**: ICML2026  
@@ -25,54 +21,64 @@ content_hash: 8ec6d2bc7467d94f
 
 ## TL;DR
 
-This paper proposes JEPA Guidance, which utilizes the implicit density signals from JEPA (e.g., DINOv2) encoders to guide the sampling of diffusion models. It shifts the definition of minority samples from "low density under the generative model prior" to "low density under a world prior," enabling the generation of semantically meaningful rare samples across unconditional, class-conditional, and text-to-image scenarios.
+This work proposes JEPA Guidance, which leverages implicit density signals from JEPA (e.g., DINOv2) encoders to guide diffusion model sampling. It shifts the definition of "minority samples" from "low density under the generative model prior" to "low density under a world prior," achieving semantically meaningful rare sample generation in unconditional, class-conditional, and text-to-image scenarios.
 
 ## Background & Motivation
 
-**Background**: Minority sampling aims to generate instances from low-density regions of the data manifold, which is essential for fields like medical diagnosis, anomaly detection, and creative AI. Diffusion models, with their ability to model complex distributions, have become the primary framework for this task. Existing methods include classifier-guided and self-contained minority guidance.
+**Background**: Minority sampling aims to generate instances from low-density regions of the data manifold, a task with high demand in fields such as medical diagnosis, anomaly detection, and creative AI. Diffusion models, with their capacity for modeling complex distributions, have become the primary framework for this task, with existing methods including classifier-guidance and self-contained minority guidance.
 
-**Limitations of Prior Work**: All existing methods define "minority samples" as low-density samples under the density $p_\theta$ learned by the generative model itself. This **generator-centric** definition is inherently tied to the training data, meaning that generated "rare samples" are only uncommon within the context of a specific model (e.g., a dog on a white background) and do not necessarily correspond to semantic rarity in the real world.
+**Limitations of Prior Work**: All existing methods define "minority samples" as low-density samples under the density $p_\theta$ learned by the generative model itself. This **generator-centric** definition is inherently tied to the training data, resulting in "rare samples" that are only rare for a specific model (e.g., a dog on a white background) rather than being semantically rare in the real world.
 
-**Key Challenge**: The generator prior $p_\theta$ only captures the distribution of a specific training set and fails to reflect broader real-world semantics. When "world-level" rare samples are needed (e.g., stealth aircraft, atypical characters), generator-centric methods are ineffective.
+**Key Challenge**: The generator prior $p_\theta$ only captures the distribution of a specific training set and fails to reflect broader real-world semantics. When "world-level" rare samples are needed (e.g., stealth aircraft, atypical human figures), generator-centric methods are essentially powerless.
 
-**Goal**: To transition the definition of minority samples from generator-centric to **world-centric**—measuring rarity using a world prior independent of the generative model and achieving this within diffusion sampling.
+**Goal**: To shift the definition of minority samples from generator-centric to **world-centric**—measuring rarity using a world prior independent of the generative model—and achieving this goal within diffusion sampling.
 
-**Key Insight**: JEPA (Joint-Embedding Predictive Architecture), such as DINOv2, is trained on large-scale data, and its representations implicitly encode data density (JEPA-SCORE), serving as a natural proxy for a world prior.
+**Key Insight**: JEPA (Joint-Embedding Predictive Architecture) such as DINOv2 is trained on large-scale data, and its representations implicitly encode data density (JEPA-SCORE), serving as a natural proxy for a world prior.
 
-**Core Idea**: The Jacobian singular values of the JEPA encoder are used to estimate density under the world prior. This is efficiently approximated using Randomized SVD and used to guide diffusion sampling toward low-density regions via gradients, achieving world-centric minority sampling.
+**Core Idea**: Use the Jacobian singular values of the JEPA encoder to estimate density under the world prior. Efficiently approximate this via randomized SVD and use gradients to guide diffusion sampling toward low-density regions, enabling world-centric minority sampling.
 
 ## Method
 
 ### Overall Architecture
 
-Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi$ (such as DINOv2), an approximate JEPA-SCORE of the denoised estimate $\hat{x}_{0|t}$ is intermittently calculated during the reverse diffusion sampling process. Its negative gradient is then used to guide the sampling toward low-density regions under the world prior. This process requires no training and uses pre-trained models only during inference. The sampling is modified as: $x_{t-1} = \mu_\theta(x_t, t) + \Sigma_\theta^{1/2} z - \eta_t \nabla_{x_t} \text{JS}^*(\hat{x}_{0|t})$.
+The goal of this paper is to redefine "rarity" such that it is judged by an external world prior rather than the generator itself. This is implemented by allowing a JEPA encoder to "vote" at each step of diffusion sampling. Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi$ (e.g., DINOv2), each step of the reverse process predicts a clean image estimate $\hat{x}_{0|t}$ from the current noisy state, intermittently calculates its JEPA-SCORE, and uses the negative gradient of this score to push sampling toward low-density regions under the world prior. This entire process requires no training; existing models are reused at inference time. The sampling update is expressed as $x_{t-1} = \mu_\theta(x_t, t) + \Sigma_\theta^{1/2} z - \eta_t \nabla_{x_t} \text{JS}^*(\hat{x}_{0|t})$, where the first two terms represent the original diffusion step and the last term is the force pulling the sample toward rare regions.
+
+> JEPA-SCORE is the core metric here: it sums the logarithms of all singular values of the encoder Jacobian $J_f(x) \in \mathbb{R}^{d \times n}$, i.e., $\text{JS}(x) = \sum_{i=1}^r \log(\sigma_i(J_f(x)))$. Intuitively, the singular values of the Jacobian characterize the encoder's sensitivity to input perturbations near that point. High-density regions have flattened representations and small singular values, while low-density (rare) regions are the opposite. Thus, a lower JS indicates a rarer sample under the world prior, and the guidance direction aims to decrease JS.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Noisy state xₜ"] --> P["Predict clean image estimate x̂₀ₜ"]
+    P --> R["RSVD Approx. JEPA-SCORE<br/>Project Jacobian and take top-k singular values for JS̄"]
+    R --> E["Envelope Theorem Accelerated Gradient<br/>stop-grad projection Q*, backprop ∇JS*"]
+    E --> D{"Deferred Guidance: t ≤ τT ?"}
+    D -->|No, first 80% steps: Free sampling for structure| F["Diffusion step xₜ₋₁ = μθ + Σ^½ z"]
+    D -->|Yes, latter half: Inject rarity guidance| G["Guidance step xₜ₋₁ = μθ + Σ^½ z − ηₜ ∇JS*"]
+    F --> X
+    G --> X
+    G --> O["t = 0: World-centric minority sample"]
+```
 
 ### Key Designs
 
-1. **Randomized SVD Approximation of JEPA-SCORE**:
+**1. Randomized SVD Approximation for JEPA-SCORE: Reducing an unmanageable density signal to practical use**
 
-    - **Function**: Reduces the extremely high computational cost of JEPA-SCORE to a practical level.
-    - **Mechanism**: JEPA-SCORE is defined as the sum of the logarithms of all singular values of the encoder Jacobian $J_f(x) \in \mathbb{R}^{d \times n}$, i.e., $\text{JS}(x) = \sum_{i=1}^r \log(\sigma_i(J_f(x)))$. Direct SVD is too costly. The method uses Randomized SVD to construct a low-rank projection matrix $Q \in \mathbb{R}^{d \times l}$ ($l \ll d$), compressing the Jacobian into $\tilde{J}_f = Q^\top J_f \in \mathbb{R}^{l \times n}$, and approximates it using only the top $k$ singular values. The paper proves an upper bound for the approximation error $\text{JS} - \bar{\text{JS}} \leq \mathcal{E}_{\text{RSVD}} + \mathcal{E}_{\text{Trunc}}$. Experiments show that $k \approx 10$ is sufficiently effective.
-    - **Design Motivation**: Original JEPA-SCORE requires SVD on a large matrix, which is infeasible during each iteration of diffusion sampling. Randomized SVD reduces the complexity from $O(dn)$ to $O(ln)$.
+The original JEPA-SCORE requires a full SVD of the Jacobian $J_f(x) \in \mathbb{R}^{d \times n}$, which is computationally prohibitive when performed at every diffusion sampling step ($O(dn)$ cost). The method employs randomized SVD: a low-rank projection matrix $Q \in \mathbb{R}^{d \times l}$ ($l \ll d$) is constructed to compress the Jacobian into $\tilde{J}_f = Q^\top J_f \in \mathbb{R}^{l \times n}$, and only the top $k$ singular values are used to approximate the sum of logarithms. This reduces complexity from $O(dn)$ to $O(ln)$. This is not a heuristic reduction; the paper provides an upper bound for the approximation error $\text{JS} - \bar{\text{JS}} \leq \mathcal{E}_{\text{RSVD}} + \mathcal{E}_{\text{Trunc}}$ (Proposition 4.1), bounding both projection and truncation errors. Experiments show $k \approx 10$ is sufficient to approximate the true value, making a theoretically expensive density signal practical.
 
-2. **Gradient Acceleration via Envelope Theorem**:
+**2. Envelope Theorem Accelerated Gradient: Making rarity guidance backpropagation feasible**
 
-    - **Function**: Eliminates the need for backpropagation through the internal optimization process of Randomized SVD, significantly reducing memory and computational overhead.
-    - **Mechanism**: Directly calculating the gradient of $\bar{\text{JS}}(\hat{x}_{0|t})$ with respect to $x_t$ requires backpropagation through the computation graph of $Q$, as $Q$ depends on $J_f(\hat{x}_{0|t})$ and thus indirectly on $x_t$. By utilizing the Envelope Theorem, when the inner Randomized SVD reaches optimality, the optimal projection $Q^*$ can be treated as a constant (stop-gradient), such that $\text{JS}^* = \sum_{i=1}^k \log(\tilde{\sigma}_i(\text{sg}(Q^{*\top}) J_f))$. This ensures first-order gradient correctness while avoiding backpropagation through the SVD process.
-    - **Design Motivation**: A naive implementation where $Q$ retains the computation graph leads to memory explosion; the Envelope Theorem provides theoretical guarantees that allow stop-gradient without losing gradient accuracy.
+Computing JS is not enough; guidance requires the gradient of $\bar{\text{JS}}(\hat{x}_{0|t})$ with respect to $x_t$. The difficulty is that the projection matrix $Q$ itself is calculated from $J_f(\hat{x}_{0|t})$ and thus depends indirectly on $x_t$. A naive implementation would require backpropagating through the entire randomized SVD computation graph, leading to memory exhaustion. The method invokes the Envelope Theorem: when the inner randomized SVD has obtained the optimal projection $Q^*$, it can be treated as a constant (stop-gradient), and the gradient is written as $\text{JS}^* = \sum_{i=1}^k \log(\tilde{\sigma}_i(\text{sg}(Q^{*\top}) J_f))$. Crucially, this is not a trade-off approximation—the Envelope Theorem guarantees the first-order gradient obtained this way remains correct at the optimal point, effectively removing the backpropagation cost of the SVD process.
 
-3. **Deferred Guidance**:
+**3. Deferred Guidance: Avoiding noisy inputs and ensuring conditional compatibility**
 
-    - **Function**: Bridges the domain gap between the JEPA encoder and intermediate diffusion states and extends the method to conditional generation.
-    - **Mechanism**: JEPA guidance is deferred until after an intermediate timestep $\tau T$ (e.g., $\tau = 0.8$). In early sampling steps, $\hat{x}_{0|t}$ is too blurry/noisy, creating a large gap from the clean inputs expected by the JEPA encoder. Deferred guidance allows the conditional diffusion model to sample freely first to establish conditional structure, then guides it toward low-density regions in the later stages.
-    - **Design Motivation**: Experiments show that quality and text alignment drop significantly without delay ($\tau = 1.0$). Deferred guidance also naturally solves the issue of JEPA's inability to perceive conditional information—the conditional information is already integrated into the early sampling stages.
+The JEPA encoder is trained on clean images, but the early diffusion estimate $\hat{x}_{0|t}$ is often blurry noise. Forcing the encoder to calculate density on unrecognizable inputs results in meaningless guidance. The method defers JEPA guidance until after a middle timestep $\tau T$ (default $\tau = 0.8$): the first $80\%$ of steps allow the diffusion model to sample freely and establish conditional structures (content corresponding to text/class), while the latter half uses JS gradients to pull samples into low-density regions. Ablations confirm this—without deferral ($\tau = 1.0$), both quality and text alignment deteriorate significantly. Furthermore, deferral solves conditional compatibility: while the JEPA encoder is agnostic to text or classes, the conditional information is integrated into the image during the early sampling phase, and the latter phase simply "finds rarity under existing conditions." This allows the condition-agnostic guidance to naturally extend to class-conditional and text-to-image scenarios.
 
 ## Key Experimental Results
 
-### Main Results—Unconditional and Class-Conditional Generation
+### Main Results — Unconditional and Class-Conditional Generation
 
 | Dataset | Method | cFID ↓ | sFID ↓ | Prec ↑ | Rec ↑ | JEPA-SCORE ↓ |
-|--------|------|--------|--------|--------|-------|--------------|
+|--------|------|--------|--------|-------|-------|--------------|
 | CelebA 64² | ADM | 12.11 | 6.35 | 0.85 | 0.57 | -221.67 |
 | CelebA 64² | SGMS | 61.76 | 20.42 | 0.62 | 0.84 | -171.85 |
 | CelebA 64² | **Ours** | **8.50** | **4.94** | **0.82** | 0.65 | **-300.79** |
@@ -80,7 +86,7 @@ Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi
 | ImageNet 256² | BnS | 32.01 | 10.61 | 0.92 | 0.56 | -125.77 |
 | ImageNet 256² | **Ours** | **18.33** | **7.62** | 0.92 | **0.68** | **-241.62** |
 
-### Main Results—Text-to-Image Generation
+### Text-to-Image Generation
 
 | Model | Method | CLIP ↑ | PickScore ↑ | ImageReward ↑ | JEPA-SCORE ↓ |
 |------|------|--------|-------------|---------------|--------------|
@@ -93,18 +99,18 @@ Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi
 
 ### Ablation Study
 
-| Config | CLIP ↑ | PickScore ↑ | JEPA-SCORE ↓ | Description |
+| Configuration | CLIP ↑ | PickScore ↑ | JEPA-SCORE ↓ | Description |
 |------|--------|-------------|--------------|------|
-| $\tau = 1.0$ (No delay) | 31.26 | 21.33 | -356.22 | Severe quality drop |
+| $\tau = 1.0$ (No delay) | 31.26 | 21.33 | -356.22 | Significant quality drop |
 | $\tau = 0.9$ | 31.31 | 21.42 | -356.72 | Slight improvement |
-| $\tau = 0.8$ (Default) | 31.40 | 21.46 | -360.82 | Best balance of quality and rarity |
+| $\tau = 0.8$ (Default) | 31.40 | 21.46 | -360.82 | Best quality-rarity balance |
 | $k = 3$ | 31.56 | 22.59 | -325.35 | Insufficient rank |
 | $k = 9$ (Default) | 31.52 | 22.59 | -344.85 | Sufficiently effective |
-| $k = 15$ | 31.53 | 22.58 | -335.28 | Diminishing marginal returns |
+| $k = 15$ | 31.53 | 22.58 | -335.28 | Diminishing returns |
 
-### Downstream Application—Classification Data Augmentation
+### Downstream Application — Data Augmentation for Classification
 
-| Training Data | Acc ↑ | F1 ↑ | Prec ↑ | Rec ↑ | Augment Qty |
+| Training Data | Acc ↑ | F1 ↑ | Prec ↑ | Rec ↑ | Augmentation Vol. |
 |----------|-------|------|--------|-------|--------|
 | CelebA trainset | 0.898 | 0.746 | 0.815 | 0.710 | — |
 | + SGMS | 0.903 | 0.757 | 0.822 | 0.724 | 50K |
@@ -113,30 +119,30 @@ Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi
 
 ## Highlights & Insights
 
-- **Paradigm Shift**: Redefines minority sampling from "finding rarity under the generator's distribution" to "finding rarity under a world prior." This is conceptually more sound—generator-centric rarity might just be training set bias, whereas world-centric rarity reflects true semantics.
-- **Equal Emphasis on Theory and Engineering**: Randomized SVD approximation has a strict error upper bound (Proposition 4.1), and the Envelope Theorem ensures gradient correctness, avoiding ad-hoc hacks.
-- **Condition-agnostic Design**: The JEPA encoder does not need to know conditional information (text/class). It is naturally compatible with conditional generation via deferred guidance, making the design exceptionally elegant.
-- **Data Efficiency**: In downstream classification, using only 30K augmented samples outperforms the 50K baseline, indicating that rare samples under the world prior are more informative.
+- **Paradigm Shift**: Redefining minority sampling from "finding rarity under the generator's distribution" to "finding rarity under a world prior" is conceptually more sound—generator-centric rarity may just be training set bias, while world-centric rarity reflects true semantics.
+- **Theory and Engineering Balance**: The randomized SVD approximation has a strict error bound (Proposition 4.1), and the Envelope Theorem ensures gradient correctness.
+- **Condition-Agnostic Design**: The JEPA encoder does not require conditional information (text/class). Compatibility with conditional generation is naturally achieved through deferred guidance, representing an elegant design.
+- **Data Efficiency**: Surpassing baselines using only 30K augmented samples compared to 50K suggests that rare samples under the world prior contain higher information density.
 
 ## Limitations & Future Work
 
-- Each guidance step requires calculating the Jacobian + Randomized SVD, introducing additional computational overhead. Amortization or more efficient approximations could be explored.
-- The quality of the world prior depends on the training data and capability of the JEPA encoder. Changing the encoder will alter the definition of "rarity."
-- Only encoders like DINOv2/MetaCLIP were explored; video models like V-JEPA or other modalities have not been verified.
-- Reversing the guidance direction can generate high-density samples and reinforce bias, presenting dual-use risks.
+- Each guidance step requires Jacobian and randomized SVD calculations, introducing additional computational overhead; amortization or more efficient approximations could be explored.
+- The quality of the world prior depends on the training data and capacity of the JEPA encoder; using different encoders will change the definition of "rarity."
+- Only DINOv2/MetaCLIP encoders were explored; video models like V-JEPA or other modalities have not been verified.
+- Reversing the guidance direction could generate high-density samples to reinforce biases, posing dual-use risks.
 
 ## Related Work & Insights
 
-- **Minority Sampling Series** (Sehwag et al., Um et al.): Evolution from classifier-guided → self-contained → guidance-free. This paper breaks the fundamental constraint of "defining minority only under the generator prior."
-- **JEPA-SCORE** (Balestriero et al., 2025): Proves that JEPA representations implicitly encode data density; this paper upgrades it from a posterior ranking tool to an online sampling guidance signal.
-- **DINOv2** (Oquab et al., 2023): ViT encoder trained on 142 million images, serving as a proxy for the world prior.
-- **Insights**: This framework can be generalized to other scenarios requiring a "definition of what is rare," such as fairness, robustness testing, and creative content generation.
+- **Minority Sampling Series** (Sehwag et al., Um et al.): The evolution from classifier-guided → self-contained → guidance-free methods. This work breaks the fundamental limitation of "only being able to define minorities under the generator prior."
+- **JEPA-SCORE** (Balestriero et al., 2025): Proved that JEPA representations implicitly encode data density; this paper upgrades it from a posterior ranking tool to an online sampling guidance signal.
+- **DINOv2** (Oquab et al., 2023): ViT encoder trained on 142M images, serving as a proxy for the world prior.
+- **Insights**: This framework could be generalized to other scenarios requiring a definition of "rarity," such as fairness, robustness testing, and creative content generation.
 
 ## Rating
-- Novelty: 9/10 — Outstanding conceptual contribution with the paradigm shift from generator-centric to world-centric.
-- Experimental Thoroughness: 8/10 — Covers unconditional/class-conditional/text-to-image/downstream applications with detailed ablations.
+- Novelty: 9/10 — Paradigm shift from generator-centric to world-centric with significant conceptual contribution.
+- Experimental Thoroughness: 8/10 — Covers unconditional/class-conditional/T2I and downstream applications with detailed ablations.
 - Writing Quality: 9/10 — Clear concepts, rigorous theoretical derivation, and intuitive illustrations.
-- Value: 8/10 — Opens a new direction for minority sampling, though computational overhead limits actual scalability.
+- Value: 8/10 — Opens new directions for minority sampling, though computational overhead limits large-scale adoption.
 
 <!-- RELATED:START -->
 
@@ -145,10 +151,10 @@ Given a pre-trained diffusion model $\epsilon_\theta$ and a JEPA encoder $f_\phi
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Confidence: The Rhythms of Reasoning in Generative Models](../../ICLR2026/image_generation/beyond_confidence_the_rhythms_of_reasoning_in_generative_models.md)
+- [\[CVPR 2025\] Learning Visual Generative Priors without Text](../../CVPR2025/image_generation/learning_visual_generative_priors_without_text.md)
 - [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
-- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
-- [\[CVPR 2026\] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling](../../CVPR2026/image_generation/ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin.md)
-- [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](../../ICLR2026/image_generation/motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
+- [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](../../CVPR2026/image_generation/efficient_weighted_sampling_via_score-based_generative_models.md)
+- [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](../../CVPR2026/image_generation/phyco_learning_controllable_physical_priors_for_generative_motion.md)
 
 </div>
 

@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] LASER: Learning Active Sensing for Continuum Field Reconstruction
 description: >-
-  [ICML 2026][Reinforcement Learning][Active Sensing] The problem of "where to place sparse sensors" is modeled as a POMDP. A "continuum field latent world model" consisting of an encoder, GRU, diffusion dynamics predictor…
+  [ICML 2026][Reinforcement Learning][World Models] The authors model the problem of "where to place sparse sensors" as a POMDP. They introduce a "Continuum Field Latent World Model"—consisting of an encoder, GRU, diffusion-based dynamics predictor, and an implicit neural field decoder—to provide imagined next-step latent states as policy conditions. By employing GRPO w
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Active Sensing"
-  - "World Models"
-  - "GRPO"
-  - "POMDP"
-  - "Continuum Field Reconstruction"
+  - ICML 2026
+  - Reinforcement Learning
+  - World Models
+  - GRPO
+  - POMDP
 date: 2026-05-08
-content_hash: 1bcdb619bb55065a
+content_hash: a60979cd76defc66
 ---
-
 # LASER: Learning Active Sensing for Continuum Field Reconstruction
 
 **Conference**: ICML 2026 Oral  
@@ -24,102 +21,131 @@ content_hash: 1bcdb619bb55065a
 **Keywords**: Active Sensing, World Models, GRPO, POMDP, Continuum Field Reconstruction
 
 ## TL;DR
-The problem of "where to place sparse sensors" is modeled as a POMDP. A "continuum field latent world model" consisting of an encoder, GRU, diffusion dynamics predictor, and implicit neural field decoder provides imagined future latent states as policy conditions. The policy is trained using GRPO with dynamic group filtering and multi-step lookahead rewards, consistently outperforming fixed and offline-optimized layouts on Navier-Stokes, Shallow-Water, and Sea Surface Temperature (SST) datasets.
+The authors model the problem of "where to place sparse sensors" as a POMDP. They introduce a "Continuum Field Latent World Model"—consisting of an encoder, GRU, diffusion-based dynamics predictor, and an implicit neural field decoder—to provide imagined next-step latent states as policy conditions. By employing GRPO with dynamic group filtering and multi-step lookahead rewards, the proactive cross-attention policy consistently outperforms fixed and offline-optimized layouts on Navier-Stokes, Shallow-Water equations, and Sea Surface Temperature (SST) datasets.
 
 ## Background & Motivation
 
-**Background**: Recovering continuous physical fields (turbulence, stress fields, temperature fields, etc.) from sparse discrete sensor measurements is a core problem in scientific computing and engineering. Recent mainstream approaches use neural operators, INRs, or transformer operators for reconstruction, treating sensor positions either as fixed inputs (AROMA, DiffusionPDE) or as **globally static** layouts generated via offline optimization (PhySense).
+**Background**: Recovering continuous physical fields (e.g., turbulence, stress fields, temperature fields) from sparse discrete sensor measurements is a core problem in scientific computing and engineering. Mainstream approaches currently use neural operators, INRs, or transformer operators for reconstruction, treating sensor positions either as fixed inputs (AROMA, DiffusionPDE) or as **globally static** layouts generated via offline optimization (PhySense).
 
-**Limitations of Prior Work**: Fixed or globally optimized layouts ignore the **non-stationary** nature of physical fields—the information content of a specific set of sensor locations varies significantly across different time steps and initial conditions. Literature reports that reconstruction accuracy can vary by several factors with different layouts. However, current research lacks instance-specific sensor adaptation in a closed-loop.
+**Limitations of Prior Work**: Fixed or globally optimized layouts ignore the **non-stationary** nature of physical fields—the information content at specific sensor locations varies significantly across different time steps and initial conditions. Literature indicates that changing the layout can lead to multi-fold differences in reconstruction accuracy. However, instance-specific sensor adaptation in a closed-loop setting remains unexplored.
 
-**Key Challenge**: To enable online adaptive sensor positioning, an environment model capable of "what-if" simulation is required. One needs to know "how reconstruction error changes in the next step if sensors move 0.1 north now," but real physical systems cannot be repeatedly rolled out. Additionally, active sensing involves high-dimensional continuous action spaces and sparse, delayed feedback, making standard RL unstable.
+**Key Challenge**: Online adaptation of sensor positions requires an environment model capable of "what-if" rehearsals. Predicting the effect of moving a sensor on future reconstruction error is impossible without a repeatable rollout, and real physical systems cannot be queried iteratively. Furthermore, active sensing involves high-dimensional continuous action spaces and sparse delayed feedback, making standard RL unstable.
 
-**Goal**: (i) Construct a latent world model capable of forward prediction and reconstruction reward calculation as a differentiable environment proxy; (ii) Train an RL policy to **proactively** determine sensor displacements within this latent space; (iii) Stabilize RL training under sparse rewards.
+**Goal**: (i) Construct a latent world model capable of forward prediction and reconstruction reward calculation as a differentiable environment proxy; (ii) Train an RL policy to **proactively** determine sensor displacements within this latent space; (iii) Ensure stable RL training under sparse rewards.
 
-**Key Insight**: Leveraging the World Model paradigm (Ha & Schmidhuber 2018)—decoupling "environment simulation" from "planning in latent imagination." However, a world model for continuum fields must handle **arbitrary numbers and positions** of sparse observations, perform forward rolls, and output continuous fields as differentiable reward sources. On the policy side, group-relative advantage estimation from the DeepSeek-R1 series (GRPO) is adapted for continuous control.
+**Key Insight**: Borrowing from the World Model paradigm (Ha & Schmidhuber 2018), the authors decouple environment simulation from planning in latent imagination. A world model for continuum fields must handle **arbitrary numbers and positions** of sparse observations, perform forward rollouts, and output continuous fields for differentiable rewards. On the policy side, inspired by DeepSeek-R1, they adapt GRPO (Group Relative Policy Optimization) to continuous control.
 
-**Core Idea**: Use "world-model imagined next-step latent states" as the query context for the policy, making sensor decisions **proactive** rather than reactive, while stabilizing training with GRPO and dynamic filtering.
+**Core Idea**: Use the "imagined next latent state" from the world model as the query context for the policy, making sensor decisions **proactive** rather than reactive, and stabilize training via GRPO with dynamic filtering.
 
 ## Method
 
 ### Overall Architecture
-LASER models active sensing as a POMDP $\mathcal{M}=(\mathcal{S},\mathcal{A},\mathcal{O},\mathcal{E},\mathcal{T}_\phi,\mathcal{R}_\phi,\gamma)$, where the latent state $\bm s_t=[\bm z_t,\bm h_t]$ consists of the current observation latent code $\bm z_t$ and GRU history $\bm h_t$. The action $\bm a_t=\Delta\bm X_t$ represents sensor displacement, and the reward $r_t=-\mathcal{L}(\bm u_{t+1},\hat{\bm u}_{t+1})$ is the negative MSE of the reconstruction decoded by the world model. Training consists of two stages: (1) **Offline** pre-training of the world model $\phi$ (encoder/dynamics/decoder joint ELBO + diffusion denoising), where sensor layouts are randomly re-sampled at each step to learn invariance; (2) **Online** policy $\pi_\theta$ training using GRPO, sampling $G$ action groups from the current $\hat{\bm z}_{t+1}$ and $\bm o_t$. The environment provides rewards based on ground truth from the training dataset, eliminating the need for a real-time physical simulator.
+LASER models active sensing as a POMDP $\mathcal{M}=(\mathcal{S},\mathcal{A},\mathcal{O},\mathcal{E},\mathcal{T}_\phi,\mathcal{R}_\phi,\gamma)$. The latent state $\bm s_t=[\bm z_t,\bm h_t]$ consists of the current observation latent code $\bm z_t$ and GRU history $\bm h_t$. Actions $\bm a_t=\Delta\bm X_t$ represent sensor displacements, and the reward $r_t=-\mathcal{L}(\bm u_{t+1},\hat{\bm u}_{t+1})$ is the negative MSE of the reconstruction. Training proceeds in two stages: (1) **Offline** pre-training of the world model $\phi$ (joint ELBO of encoder/dynamics/decoder + diffusion denoising), where sensor layouts are randomized at each step to learn invariance; (2) **Online** training of the policy $\pi_\theta$ using GRPO, where $G$ groups of actions are sampled starting from $\hat{\bm z}_{t+1}$ and $\bm o_t$, querying dataset ground truths for rewards without needing a real physics simulator.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    O["Sparse Observation o_t<br/>Arbitrary Position / Count"]
+    subgraph WM["Continuum Field Latent World Model (Stage 1)"]
+        direction TB
+        ENC["Encoder: Latent queries<br/>Cross-attn → Latent z_t"]
+        DYN["GRU History + Diffusion Dynamics<br/>z_t → Denoised Prediction ẑ_t+1"]
+        DEC["INR Decoder<br/>(z, x) → Cont. Field û → Recon MSE"]
+        ENC --> DYN
+        ENC --> DEC
+    end
+    O --> ENC
+    subgraph POL["Proactive Policy with Multi-scale Cross-Attn (Stage 2)"]
+        direction TB
+        XA["Sensor Query (Multi-scale Fourier Pos + Value)<br/>× Imagined Latent ẑ_t+1 Multi-scale Cross-Attn + Self-Attn"]
+        HEAD["MLP Head → Gaussian Displacement ΔX_t"]
+        XA --> HEAD
+    end
+    DYN -->|Imagined Next Latent| XA
+    O --> XA
+    HEAD -->|Move Sensor, Query GT| DEC
+    subgraph GR["GRPO Training"]
+        direction TB
+        LOOK["Multi-step Lookahead Rollout H=3<br/>+ Dynamic Group Filtering"]
+        ADV["Group Relative Advantage → GRPO Objective"]
+        LOOK --> ADV
+    end
+    DEC -->|Reconstruction Reward r_t| LOOK
+    ADV -->|Update Policy θ| XA
+```
 
 ### Key Designs
 
-1.  **Continuum Field Latent World Model**:
-    - **Function**: Acts as a high-fidelity differentiable proxy for the physical environment while outputting forward-predicted latents and reconstruction-based rewards.
-    - **Mechanism**: Three modules integrated as $p_\phi^{enc}\to p_\phi^{dyn}\to p_\phi^{dec}$. The encoder uses $M$ learnable latent queries to perform cross-attention on $(\bm x_t^{(i)},\bm u_t(\bm x_t^{(i)}))$ to obtain $\bm z_t\sim\mathcal{N}(\bm\mu_\phi, \bm\sigma_\phi^2)$, which is naturally permutation-invariant and accommodates any number of sensors/positions. The dynamics predictor is a **conditional diffusion** model conditioned on $\bm z_t$ and GRU history $\bm h_t=\mathrm{GRU}_\phi(\bm h_{t-1}, \bm z_t)$, performing $K$-step denoising on $\tilde{\bm z}_{t+1}$ to output $\hat{\bm z}_{t+1}$. The decoder is an Implicit Neural Field (INR), taking $(\bm z_t, \bm x)$ as input to output field values $\hat{\bm u}_t(\bm x)$ at any spatial coordinate. Training objective: $\mathcal{L}_{world}=\mathcal{L}_{recon}+\beta\mathcal{D}_{KL}+\lambda\mathcal{L}_{diffusion}$.
-    - **Design Motivation**: (i) Randomly re-sampling sensor positions during encoder training forces the world model to learn layout-invariant representations; (ii) Using diffusion rather than deterministic MLPs for dynamics captures multi-modal future distributions of turbulent/non-stationary fields; (iii) The INR decoder allows reward calculation over the **entire** $\Omega$ rather than just grid points, providing continuous differentiable feedback.
+**1. Continuum Field Latent World Model: A differentiable environment proxy for prediction and rewards**
 
-2.  **Proactive Policy and Multi-scale Cross-Attention**:
-    - **Function**: Decides continuous displacement for each sensor using the "imagined next-step latent state" as context.
-    - **Mechanism**: The policy $\pi_\theta(\bm a_t|\hat{\bm z}_{t+1}, \bm o_t)$ is a Transformer. Sensor-side queries are formed by concatenating position and value embeddings $\mathbf q^{(i)}=[\gamma_{pos}(\bm x_t^{(i)});\text{Embed}(\bm u_t(\bm x_t^{(i)}))]$, where $\gamma_{pos}$ uses multi-scale Fourier features $\gamma^s(\bm x)=[\sin(\bm x\bm\omega^s), \cos(\bm x\bm\omega^s)]$. Queries and imagined latents $\hat{\bm z}_{t+1}$ interact via **multi-scale** cross-attention $\mathbf f=\bigoplus_{s}\text{softmax}(\mathbf q^{(s)}(\mathbf k^{(s)})^\top/\sqrt{c_s})\mathbf v^{(s)}$, followed by self-attention for sensor coordination. Finally, an MLP head outputs Gaussian displacements $(\bm\mu_\theta^{(i)}, \log\bm\sigma_\theta^{(i)})$, with actions clipped to $[-a_{max}, a_{max}]$.
-    - **Design Motivation**: Sensor decisions must anticipate rather than react—by using the "imagined" $\hat{\bm z}_{t+1}$ as key/value, the policy evaluates the optimal movement for future field states. Multi-scale Fourier features and attention capture both local details and global structures, while self-attention prevents sensors from clustering in the same region.
+Since real physics simulators are expensive and non-differentiable, the authors pre-train a latent world model $p_\phi^{enc}\to p_\phi^{dyn}\to p_\phi^{dec}$. The encoder follows AROMA, using $M$ learnable latent queries to perform cross-attention on sparse observations $(\bm x_t^{(i)},\bm u_t(\bm x_t^{(i)}))$ to obtain $\bm z_t\sim\mathcal{N}(\bm\mu_\phi,\bm\sigma_\phi^2)$. This is inherently permutation-invariant and adaptable to any sensor count. The dynamics predictor is a conditional diffusion model, conditioned on $\bm z_t$ and GRU history $\bm h_t=\mathrm{GRU}_\phi(\bm h_{t-1},\bm z_t)$, performing $K$ denoising steps on $\tilde{\bm z}_{t+1}$ to output $\hat{\bm z}_{t+1}$. Diffusion is used instead of deterministic MLPs to capture the multi-modal future of non-stationary turbulent fields. The decoder is an Implicit Neural Field (INR) mapping $(\bm z_t, \bm x)$ to field values $\hat{\bm u}_t(\bm x)$, allowing rewards to be calculated as continuous differentiable MSE across the entire domain $\Omega$. The total loss is $\mathcal{L}_{world}=\mathcal{L}_{recon}+\beta\mathcal{D}_{KL}+\lambda\mathcal{L}_{diffusion}$.
 
-3.  **GRPO Training: Dynamic Group Filtering + Multi-step Lookahead Reward**:
-    - **Function**: Stabilizes policy training under sparse rewards and high-dimensional continuous action spaces.
-    - **Mechanism**: For each $t$, $G$ action groups are sampled to obtain rewards $\{r_t^g\}$. Group-relative advantages $A_{g,t}=(r_t^g-\text{mean})/\text{std}$ are further normalized within the batch as $\hat A_{g,t}$. The objective $\mathcal{J}_{GRPO}=\mathbb E[\min(s_{g,t}(\theta)\hat A_{g,t}, \text{clip}(\cdot, 1-\epsilon, 1+\epsilon)\hat A_{g,t})]$ follows the PPO clip. Two key augmentations: (a) **Dynamic Group Filtering**—maintaining a running mean $\tau$ of $\min_g r_t^g$ and discarding low-quality samples where the entire group reward $<\tau$ (e.g., sensors clustering in low-variance areas); (b) **Multi-step Lookahead Reward**—freezing the layout after executing $\bm a_t$ and performing an autoregressive rollout of $p_\phi^{dyn}$ for $H=3$ steps, aggregating discounted rewards $r_t^{look}=\sum_{h=1}^H\gamma^{h-1}r_{t+h}/\sum\gamma^{h-1}$.
-    - **Design Motivation**: (a) In active sensing, many action configurations are systematically uninformative; filtering prevents them from polluting advantage estimation. (b) Single-step rewards encourage short-sighted layouts; lookahead rewards link decisions to future reconstruction quality, crucial for rapidly evolving turbulent scenarios.
+**2. Proactive Policy & Multi-scale Cross-Attention: Anticipating the future using imagined latent states**
+
+Sensor decisions must anticipate rather than react. The key design is using the world model's "hallucinated" $\hat{\bm z}_{t+1}$ (rather than current $\bm z_t$) as the key/value for the policy transformer $\pi_\theta(\bm a_t|\hat{\bm z}_{t+1},\bm o_t)$. Sensor queries are formed by concatenating position and value embeddings $\mathbf q^{(i)}=[\gamma_{pos}(\bm x_t^{(i)});\text{Embed}(\bm u_t(\bm x_t^{(i)}))]$, where $\gamma_{pos}$ uses multi-scale Fourier features. These queries interact with the imagined latent via multi-scale cross-attention $\mathbf f=\bigoplus_{s}\text{softmax}(\mathbf q^{(s)}(\mathbf k^{(s)})^\top/\sqrt{c_s})\mathbf v^{(s)}$ to capture both global structures (large eddies) and local details (fine eddies). A self-attention layer follows to ensure coordination and prevent sensor clustering. Finally, an MLP head outputs Gaussian displacements $(\bm\mu_\theta^{(i)},\log\bm\sigma_\theta^{(i)})$.
+
+**3. GRPO Training: Dynamic group filtering and multi-step lookahead**
+
+Active sensing involves high-dimensional actions and sparse feedback. The authors adapt GRPO's group-relative advantage estimation to continuous control: for each $t$, $G$ action groups are sampled to obtain rewards $\{r_t^g\}$, and advantages are computed as $A_{g,t}=(r_t^g-\text{mean})/\text{std}$, then normalized as $\hat A_{g,t}$ within the batch. Two crucial enhancements are added: (i) **Dynamic group filtering**, which maintains a threshold $\tau$ (moving average of $\min_g r_t^g$) to discard low-quality samples where sensors might be clustered or out-of-bounds. (ii) **Multi-step lookahead**, where the layout is frozen after $\bm a_t$, and $p_\phi^{dyn}$ performs an autoregressive rollout for $H=3$ steps to calculate a discounted reward $r_t^{look}=\sum_{h=1}^H\gamma^{h-1}r_{t+h}/\sum\gamma^{h-1}$. This prevents short-sighted decisions in rapidly evolving fields.
 
 ### Loss & Training
-The world model is pre-trained offline with $\mathcal{L}_{world}$ and frozen. The policy is trained online via GRPO. Parameters such as $H=3$, diffusion denoising steps $K$, $G$, $\epsilon$, $\beta$, and $\lambda$ are provided in the appendix. Each episode randomly selects trajectories and start times $t_0$, initializing sensors in a uniform distribution to prevent overfitting to initial conditions.
+The world model is frozen after offline training with $\mathcal{L}_{world}$. The policy is trained online using the GRPO objective. Parameters such as $H=3$, $K$ denoising steps, $G$, $\epsilon$, $\beta$, and $\lambda$ are detailed in the appendix. Each episode randomly selects trajectories and starting times $t_0$ with uniform sensor initialization to prevent overfitting.
 
 ## Key Experimental Results
 
 ### Main Results
-Benchmarks include NS-1e-3 / NS-1e-5 (2D Navier-Stokes in vorticity form), Shallow-Water (3D Shallow Water equations), and SST (Real Sea Surface Temperature). Reconstruction error $\mathrm{MSE}_{recon}$ ($\times 10^{-3}$) is shown below (Avg is the average of In-time + Out-time):
+Evaluation across three benchmarks: NS-1e-3 / NS-1e-5 (Navier-Stokes), Shallow-Water, and SST (Sea Surface Temperature). Metric: $\mathrm{MSE}_{recon}$ ($\times 10^{-3}$, lower is better). Avg denotes the mean of In-time and Out-time results.
 
 | #Obs | Dataset | AROMA (Fixed) | DiffusionPDE | PhySense (Offline Opt) | LASER-PPO | **Ours (LASER)** |
-|------|---------|---------------|--------------|-------------------------|-----------|------------------|
-| 256  | NS-1e-3 | 2.720         | 1.344        | 0.376                   | 0.304     | **0.302**        |
-| 128  | NS-1e-3 | 5.816         | 6.609        | 0.370                   | 0.353     | **0.321**        |
-| 64   | NS-1e-3 | 20.27         | 6.543        | 0.466                   | 0.396     | **0.434**        |
-| 256  | Shallow | 12.59         | 3.175        | 0.355                   | 0.326     | **0.257**        |
-| 100  | SST     | 1.0586        | 3.4626       | 0.7059                  | —         | **0.6932**       |
+|------|--------|------------|--------------|------------------------|-----------|-----------|
+| 256 | NS-1e-3 | 2.720 | 1.344 | 0.376 | 0.304 | **0.302** |
+| 128 | NS-1e-3 | 5.816 | 6.609 | 0.370 | 0.353 | **0.321** |
+| 64  | NS-1e-3 | 20.27 | 6.543 | 0.466 | 0.396 | **0.434** |
+| 256 | Shallow-Water | 12.59 | 3.175 | 0.355 | 0.326 | **0.257** |
+| 100 | SST | 1.0586 | 3.4626 | 0.7059 | — | **0.6932** |
 
-LASER achieves the lowest error in 11/12 (dataset × #Obs) combinations. The relative gain over fixed layouts increases as sensing becomes sparser (47x improvement on NS-1e-3 @64). Comparison with LASER-PPO confirms that GRPO + dynamic filtering further reduces error.
+LASER achieves the lowest error in 11 out of 12 combinations. The gain over fixed layouts increases with sparsity (e.g., a 47× improvement over AROMA on NS-1e-3 @ 64). Compared to LASER-PPO, the GRPO variant with dynamic filtering further reduces error.
 
 ### Ablation Study
 
-| Configuration | NS-1e-3 @256 Avg | Description |
-|---------------|------------------|-------------|
-| LASER (Full)  | 0.302            | Complete model |
-| LASER† (w/o Dynamic Filtering) | 0.391 | Out-time error 0.685 vs 0.483; filtering critical for long-range prediction |
-| LASER($\phi$) (World Model Only) | 0.359 | Active sensing provides ~16% Gain |
-| Lookahead $H=1$ | Out-t 0.6136     | Single-step reward is short-sighted |
-| Lookahead $H=5$ | Out-t 0.3380     | Higher $H$ improves Out-time performance (~45% gain) |
+| Configuration | NS-1e-3 @256 Avg | Note |
+|------|------------------|------|
+| LASER (Full) | 0.302 | Complete model |
+| LASER† (w/o Dynamic Filtering) | 0.391 | Out-time error increases from 0.483 to 0.685 |
+| LASER($\phi$) (No Active Sensing) | 0.359 | Active sensing provides ~16% gain |
+| Lookahead $H=1$ | Out-t 0.6136 | Short-sighted rewards |
+| Lookahead $H=5$ | Out-t 0.3380 | Higher $H$ improves Out-time significantly (~45% gain) |
 
-GRU history ablation (Table 6): Stronger turbulence (NS-1e-5, Shallow-Water) favors shorter history (3 steps), as excessive context introduces outdated information.
+GRU history length ablation (Table 6): Stronger turbulence (NS-1e-5, Shallow-Water) favors shorter history (3 steps) as stale information can degrade performance.
 
 ### Key Findings
-- **Active Sensing > Offline Optimized Layouts**: Even against the strongest offline baseline (PhySense), LASER consistently wins, demonstrating that instance-specific adaptation is irreplaceable.
-- **Lookahead Reward is Critical for Out-time Generalization**: Increasing $H=1\to 5$ cuts Out-time error by 45% while In-time error remains stable, suggesting lookahead addresses future step prediction outside the training distribution.
-- **Sparsity Magnifies Adaptive Advantages**: AROMA's performance degrades by over 10x when reducing sensors from $N=256$ to $N=64$, whereas LASER degrades by less than 2x.
-- **GRPO Outperforms PPO**: LASER consistently outperforms LASER-PPO across all datasets, confirming the effectiveness of group-relative advantage and dynamic filtering.
+- **Active Sensing > Offline Optimized Layouts**: LASER consistently beats PhySense (the strongest offline baseline), proving instance-specific adaptation is essential.
+- **Lookahead is Critical for Out-time Generalization**: Increasing $H$ from 1 to 5 slashes Out-time error by 45% while keeping In-time results stable, suggesting that lookahead helps the model plan for future states outside the training distribution.
+- **Sparsity Highlights Adaptive Advantages**: While AROMA’s error degrades by 10×+ when dropping from 256 to 64 sensors, LASER’s degradation is less than 2×.
+- **GRPO Suited for Continuous Control**: LASER outperforms LASER-PPO across all datasets, validating the group-relative advantage and dynamic filtering approach.
 
 ## Highlights & Insights
-- **World Model as Differentiable Environment**: This concept is highly suitable for scientific computing where real physical simulators are expensive or non-differentiable. The world model enables both forward prediction and gradient-based rewards.
-- **Proactive Paradigm**: Using $\hat{\bm z}_{t+1}$ (future latent) instead of $\bm z_t$ (current latent) as the policy condition is a simple yet profound choice that allows the policy's cognition to stay "one step ahead."
-- **GRPO for Continuous Control**: While most GRPO work focuses on LLM reasoning (discrete tokens), this work adapts it for continuous high-dimensional actions with a dynamic group filtering trick.
-- **Multi-scale Physics Modeling**: The use of multi-scale Fourier encoding and attention aligns with the multi-scale structures inherent in physical fields (e.g., large and small eddies in turbulence).
+- **World Models as Differentiable Physics Proxies**: This paradigm is highly effective for scientific computing where simulators are costly; it bypasses the sample efficiency limitations of model-free RL.
+- **Proactive Paradigm**: Conditioned on future latents $\hat{\bm z}_{t+1}$ rather than current $\bm z_t$ is a simple yet profound design that ensures decisions are one step ahead.
+- **GRPO for Continuous Control**: While most GRPO work focuses on discrete LLM tokens, this paper demonstrates its effectiveness for high-dimensional continuous action spaces.
+- **Multi-scale Templates**: The combination of multi-scale Fourier encoding and cross-attention provides a robust template for handling the multi-scale structures inherent in physical fields (e.g., eddies in turbulence).
 
 ## Limitations & Future Work
-- The world model is **frozen** after pre-training; if the policy discovers layouts outside the training distribution, the world model might become unreliable (model exploitation risk).
-- Experiments are restricted to simulated datasets and historical SST data, lacking **real-world closed-loop hardware experiments** with movement latency and noise.
-- Rollouts of $H=3$ could benefit from larger $H$ for Out-time performance, but diffusion dynamics steps are computationally expensive.
-- Cross-physical domain transfer (e.g., training on turbulence and transferring to temperature fields) remains unvalidated.
+- The world model is **frozen** after pre-training; if the policy discovers layouts far outside the training distribution, the model might be exploited, causing unreliable predictions.
+- Evaluation is limited to simulations and historical SST data with **no real-world hardware experiments** involving motion latency or energy constraints.
+- While $H=3$ helps, longer rollouts are constrained by the computational cost of diffusion dynamics.
+- World models are trained per dataset; cross-domain transfer (e.g., from turbulence to temperature fields) remains unverified.
 
 ## Related Work & Insights
-- **vs AROMA (Serrano et al., 2024)**: AROMA serves as the backbone for the LASER encoder but uses fixed sensor positions. LASER promotes "position" to a controllable action.
-- **vs DiffusionPDE (Huang et al., 2024)**: DiffusionPDE performs sampling at test time with high overhead; LASER limits diffusion to latent space dynamics for efficiency and autoregressive rollouts.
-- **vs PhySense (Ma et al., 2025)**: PhySense optimizes globally static layouts; LASER reduces average error by 30%+ in the sparsest settings, proving the value of instance-specific adaptation.
-- **vs DreamerV3**: While sharing the latent imagination paradigm, LASER adapts it for scientific ML with PDE continuum fields, Transformer encoders, and diffusion dynamics.
+- **vs. AROMA (Serrano et al., 2024)**: AROMA serves as the encoder backbone but treats positions as fixed. LASER elevates "position" to a controllable action.
+- **vs. DiffusionPDE (Huang et al., 2024)**: DiffusionPDE performs sampling at test time which is extremely slow; LASER uses diffusion only for latent dynamics prediction, enabling faster rollouts.
+- **vs. PhySense (Ma et al., 2025)**: PhySense optimizes static layouts; LASER reduces error by 30%+ in sparse settings by being adaptive.
+- **vs. DreamerV3**: Shares the latent imagination philosophy but adapts it to PDE continuum fields with transformer encoders and diffusion dynamics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Combines world-model RL, GRPO, and multi-scale scientific ML encoders for active sensing.)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive datasets and ablations; missing hardware validation.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear POMDP formulation and topology diagrams.)
+- Novelty: ⭐⭐⭐⭐ (Combines world-model RL, GRPO, and multi-scale scientific ML in a novel way for active sensing.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive across datasets and sparsity levels, though lacking hardware.)
+- Writing Quality: ⭐⭐⭐⭐ (Clear formalization and diagrams.)
 - Value: ⭐⭐⭐⭐ (Provides a clear "active sensing = world-model RL" paradigm for the scientific ML community.)
 
 <!-- RELATED:START -->
@@ -128,11 +154,11 @@ GRU history ablation (Table 6): Stronger turbulence (NS-1e-5, Shallow-Water) fav
 
 ## Related Papers
 
-- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
 - [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
+- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](../../CVPR2026/reinforcement_learning/buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
 - [\[ICML 2026\] Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds](mind_dreamer_untethering_imagination_via_active_causal_intervention_on_latent_ma.md)
-- [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](../../NeurIPS2025/reinforcement_learning/learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICML 2025\] Learning Mean Field Control on Sparse Graphs](../../ICML2025/reinforcement_learning/learning_mean_field_control_on_sparse_graphs.md)
 
 </div>
 

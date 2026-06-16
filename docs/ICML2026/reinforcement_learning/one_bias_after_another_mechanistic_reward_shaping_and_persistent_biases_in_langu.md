@@ -2,134 +2,130 @@
 title: >-
   [Paper Note] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models
 description: >-
-  [ICML 2026][Reinforcement Learning][Reward Models] This paper systematically measures five types of biases—length, uncertainty, position, sycophancy…
+  [ICML 2026][Reinforcement Learning][Paper Note] This paper systematically measures five types of biases—length, uncertainty, position, sycophancy, and model style—across five high-quality RMs (including SOTA Skywork-Reward-V2). It categorizes them into "low complexity (linearly repairable)" and "high complexity (linearly non-repairable)" and proposes mechanistic rew
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Reward Models"
-  - "Reward Hacking"
-  - "Linear Probing"
-  - "Null-Space Projection"
-  - "RM Bias"
+  - ICML 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 050a0d50f4d57f4b
+content_hash: 327910e0e84929d3
 ---
-
 # One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.03291](https://arxiv.org/abs/2603.03291)  
 **Code**: https://github.com/drfein/OneBiasAfterAnother (Available)  
-**Area**: RLHF Alignment / AI Safety  
-**Keywords**: Reward Models, Reward Hacking, Linear Probing, Null-Space Projection, RM Bias
+**Area**: Alignment RLHF / AI Safety  
+**Keywords**: Reward Models, Reward Hacking, Linear Probes, Null-space Projection, RM Bias
 
 ## TL;DR
-This paper systematically measures five types of biases—length, uncertainty, position, sycophancy, and model style—in five high-quality RMs (including the SOTA Skywork-Reward-V2). It classifies these into "low-complexity" (linearly fixable) and "high-complexity" (linearly unfixable) groups. The authors propose mechanistic reward shaping—using DiffMean linear probes for null-space projection on the final-layer hidden states—to significantly mitigate the first three biases without compromising RewardBench2 accuracy, while demonstrating OOD generalization to Best-of-N.
+This paper systematically measures five types of biases—length, uncertainty, position, sycophancy, and model style—across five high-quality RMs (including SOTA Skywork-Reward-V2). It categorizes them into "low complexity (linearly repairable)" and "high complexity (linearly non-repairable)" and proposes mechanistic reward shaping. By using DiffMean linear probes to perform null-space projection on the final-layer hidden states, the method significantly mitigates the first three types of biases and generalizes OOD to best-of-N without compromising RewardBench2 accuracy.
 
 ## Background & Motivation
 
-**Background**: RLHF is the mainstream approach for aligning LMs, but RMs acting as proxy rewards are easily exploited by policy-learned reward hacking. Biases such as length, position, overconfidence, and sycophancy have been frequently documented. Existing remedies either modify training data, add length penalties, or train robust RMs, most of which treat biases as linear spurious correlations.
+**Background**: RLHF is the dominant method for aligning LMs, but RMs acting as proxy rewards are highly susceptible to reward hacking by policies. Biases such as length, position, overconfidence, and sycophancy have been frequently documented. Existing remedies either modify training data, add length penalties, or train robust RMs, most of which treat biases as linear spurious correlations.
 
-**Limitations of Prior Work**: (1) Even recent SOTA RMs (Skywork-Reward-V2 series, AllenAI-Llama-8B) continue to exhibit old biases, and RMs trained to fix length bias often show "verbosity penalty" over-correction—ranking concise incorrect answers higher than correct long ones. (2) Current post-hoc fixes (e.g., length penalty) rely on explicit modeling of the bias function form and fail in prompt-conditioned scenarios (Best-of-N). (3) There is no systematic distinction between biases that are indeed linear spurious correlations and those that are entangled and require deeper intervention, leading to one-size-fits-all methods being wasted on unresolvable high-complexity biases.
+**Limitations of Prior Work**: (1) Even the latest SOTA RMs (Skywork-Reward-V2 series, AllenAI-Llama-8B) persistently exhibit old biases; RMs trained to fix length bias often suffer from over-correction—ranking concise incorrect answers higher than correct long ones. (2) Existing post-hoc fixes (like length penalty) depend on explicit functional forms and fail in prompt-conditioned scenarios (best-of-N). (3) There is a lack of systematic differentiation between biases that are linear spurious correlations and those that are entangled and require deeper intervention, leading to "one-size-fits-all" methods failing on high-complexity biases.
 
-**Key Challenge**: Biases may be co-linear with useful signals in the RM activation space; unidirectional intervention either fails to fix the bias or erases beneficial signals.
+**Key Challenge**: Biases may be co-linear with useful signals in the RM activation space. Single-direction interventions either fail to fix the bias or inadvertently remove beneficial signals.
 
-**Goal**: (i) Re-audit known biases and uncover new ones in the latest RMs; (ii) Provide an empirical classification of "linearly fixable vs. unfixable"; (iii) Design an intervention method that is effective for low-complexity biases, data-efficient, in-model (no change to policy optimizer), and OOD-generalizable.
+**Goal**: (i) Re-audit known biases and discover new ones in latest RMs; (ii) provide an empirical classification of "linearly repairable vs. non-repairable" biases; (iii) design a data-efficient, in-model, OOD-generalizable intervention for low-complexity biases.
 
-**Key Insight**: Driven by the linear representation hypothesis from Park et al. (2024a)—that high-level concepts are approximately linear directions in the representation space. If a bias is primarily carried by a single linear direction, nulling that direction can achieve local debiasing; if the bias and the true signal are already entangled in the same subspace, linear nulling will naturally be ineffective, which itself serves as a useful diagnostic signal.
+**Key Insight**: Based on the Linear Representation Hypothesis (Park et al., 2024a), high-level concepts are approximately linear directions in representation space. If a bias is primarily carried by a single linear direction, nulling that direction can locally debias. If the bias and signal are entangled in the same subspace, linear nulling will naturally fail, serving as a useful diagnostic signal.
 
-**Core Idea**: Construct a difference-of-mean probe using pairs of "biased vs. unbiased" samples, and perform null-space projection of this probe direction on the final layer hidden states (mechanistic reward shaping). This both fixes the bias and identifies which biases are inherently unfixable.
+**Core Idea**: Use pairs of "biased vs. unbiased" contrastive samples to create difference-of-mean probes. Perform null-space projection (mechanistic reward shaping) on the RM's final-layer hidden states to both fix biases and identify which biases are inherently unfixable via linear methods.
 
 ## Method
 
 ### Overall Architecture
-The method consists of three steps: (1) Bias Auditing—systematically measuring five bias types in five RMs (Skywork-Llama-8B, Skywork-Qwen-8B/0.6B, AllenAI-Llama-8B, DeBERTa-large-v2) across PlausibleQA, BigBench, GSM8K-MC, and MMLU. (2) Constructing contrastive datasets for each bias type, extracting the RM's final layer non-padding token hidden states, and calculating the linear probe $\mathbf{p}$ using DiffMean. (3) During inference, the hidden state $\mathbf{h}$ of each new input is projected: $\mathbf{h}_{\text{null}} = \mathbf{h} - \sum_k \alpha (\mathbf{p}_k^{\top}\mathbf{h})\mathbf{p}_k$, then fed into the reward head to get the debiased reward. For multiple probes, Gram-Schmidt orthogonalization is performed before joint nulling.
+The mechanism follows a "Measure → Categorize → Repair" pipeline. **Measure**: Systems audit five types of biases (length, uncertainty, position, sycophancy, model style) across five RMs (Skywork-Llama-8B, Skywork-Qwen-8B/0.6B, AllenAI-Llama-8B, DeBERTa-large-v2) using a unified contrastive paradigm. **Categorize**: Biases are divided into low complexity (linearly repairable: length, uncertainty, position) and high complexity (linearly non-repairable: sycophancy, model style) based on whether the dominant signal can be approximated by a single linear direction. **Repair**: For low-complexity biases, DiffMean linear probes $\mathbf{p}$ are calculated from hidden states of contrastive pairs. At inference, null-space projection $\mathbf{h}_{\text{null}} = \mathbf{h} - \sum_k \alpha (\mathbf{p}_k^{\top}\mathbf{h})\mathbf{p}_k$ is applied to the hidden states before the reward head.
 
-Input: Prompt-completion pair; Output: Debiased scalar reward. The entire intervention occurs internally within the RM, requiring no RM retraining or changes to the policy optimization algorithm, making it naturally compatible with Best-of-N, red-teaming, data filtering, and other alignment techniques using RMs as a foundation.
+Function: Input a prompt-completion pair; Output a debiased scalar reward. The intervention occurs entirely within the RM, requiring no retraining or optimizer changes, making it compatible with best-of-N, red-teaming, and data filtering.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: 5 High-quality RMs + 4 Benchmarks"] --> B["Audit 5 Bias Types (Contrastive Paradigm)<br/>Length · Uncertainty · Position · Sycophancy · Style"]
+    B --> C["Bias Complexity Classification<br/>Can the signal be approximated linearly?"]
+    C -->|"Low Complexity · Linearly Repairable<br/>Length · Uncertainty · Position"| D["DiffMean Probing + Null-space Projection<br/>Calculate directions, project to orthogonal complement"]
+    C -->|"High Complexity · Non-repairable<br/>Sycophancy · Model Style"| E["Non-repairable Diagnosis<br/>Evidence via INLP at representation layer"]
+    D --> F["Debiased Reward → Downstream Apps<br/>RLHF · Best-of-N · Data Filtering"]
+```
 
 ### Key Designs
 
-1.  **Empirical Taxonomy (Bias Complexity Classification)**:
-    - **Function**: Empirically divides RM biases into low-complexity (linearly fixable, e.g., length, uncertainty, position) and high-complexity (linearly unfixable, e.g., sycophancy, model-style sensitivity) as a diagnostic criterion for applying probe-nulling.
-    - **Mechanism**: The authors define "mechanistic" in the narrow sense of Saphra & Wiegreffe (2024)—focusing on whether identifying and removing a direction in the activation space leads to measurable causal changes in reward behavior, rather than circuit-level explanations. If the dominant signal of a bias can be approximated by a single linear direction, nulling it will significantly narrow the target bias without harming baseline accuracy. Otherwise, the bias is co-linear with quality signals, requiring deeper solutions. Iterative Nullspace Projection (INLP) provides independent representation-level evidence (Appendix C.9).
-    - **Design Motivation**: In real-world deployment where resources are limited, low-cost intervention can be used for low-complexity biases, allowing research effort to be directed toward truly difficult high-complexity biases; meanwhile, "unfixability" itself becomes a publishable empirical conclusion.
+**1. Five-type Bias Audit + Contrastive Data Paradigm**
+The audit makes bias discovery a reproducible pipeline. For length bias in GSM8K, (concise-correct, incorrect, verbose-correct) triplets are constructed to see if RMs prefer incorrect but verbose answers. For uncertainty, prefixing "I'm not sure..." requires the RM to maintain the ranking $r(C) \geq r(C+U) \geq r(I+U) \geq r(I)$. Model style bias calculates per-byte cross-entropy for 10 LMs and assesses the Spearman correlation between RM rewards and panel-relative $\Delta s_m$. Non-zero correlation indicates a systematic preference for a specific model family's "familiar style."
 
-2.  **Mechanistic Reward Shaping (DiffMean Probe + Null-Space Projection)**:
-    - **Function**: Uses minimal labeled data to construct a single direction and subtracts the component of this direction from the RM hidden states to achieve targeted bias removal.
-    - **Mechanism**: For each bias type, positive and negative contrastive sets $\{\mathbf{h}_i^+\}, \{\mathbf{h}_j^-\}$ are constructed (e.g., for length bias, using GSM8K verbose-correct vs. concise-correct). The hidden state of the last non-padding token before the reward head is taken, and the probe is calculated via DiffMean, $\mathbf{p} = \text{normalize}(\frac{1}{n_+}\sum_i \mathbf{h}_i^+ - \frac{1}{n_-}\sum_j \mathbf{h}_j^-)$, which AxBench verifies as a strong method. During inference, activations are projected onto the orthogonal complement: $\mathbf{h}_{\text{null}} = \mathbf{h} - \sum_k \alpha (\mathbf{p}_k^{\top}\mathbf{h})\mathbf{p}_k$, where $\alpha$ controls intensity ($\alpha=1$ except for confidence calibration).
-    - **Design Motivation**: Unlike global post-processing such as length penalty or ensemble methods, this approach does not require assuming a functional form for the bias and can perform "surgical" removal within the RM latent space. It is plug-and-play for any RM-based technology. It is highly data-efficient (a length probe from GSM8K can transfer OOD to RewardBench2 and AlpacaEval BoN).
+**2. Bias Complexity Categorization**
+This design establishes an empirical criterion: high complexity vs. low complexity. "Mechanistic" is used in the narrow sense (Saphra & Wiegreffe, 2024)—asking if identifying and removing a direction in activation space causes measurable causal changes in downstream reward behavior. If nulling a direction reduces the target bias without harming baseline accuracy, it is low complexity. If the bias remains unchanged, it is entangled in the same subspace as quality signals and requires deeper intervention (e.g., SAEs or behavioral shifts).
 
-3.  **Contrastive Data Construction Paradigm for Five Bias Types**:
-    - **Function**: Creates a reproducible paradigm for mining and quantifying RM biases, providing a complete pipeline of "diagnosis + probe construction + intervention evaluation" for each bias.
-    - **Mechanism**: (a) **Length**: Constructs (concise-correct, incorrect, verbose-correct) triplets on GSM8K (verbose ~477 words vs. concise ~171 words) to see if RMs prefer incorrect but verbose answers. (b) **Uncertainty**: Adds prefixes like "I'm not exactly sure..." to check if the RM satisfies $r(C) \geq r(C+U) \geq r(I+U) \geq r(I)$ normative ranking. (c) **Calibration**: Appends `confidence: {low, medium, high}` to check if Spearman(confidence, correctness) improves. (d) **Position**: Rotates correct answers A-D in MCQA and measures preference differences for start/end positions in free-form. (e) **Model Style**: Uses 10 LMs to calculate per-byte cross-entropy and measures the Spearman correlation between RM rewards and panel-relative $\Delta s_m$. Any non-zero correlation indicates a systematic preference for a specific "familiar style."
-    - **Design Motivation**: Allows future researchers to apply the same paradigm to newly released RMs and extend mechanistic reward shaping to new biases at low cost.
+**3. DiffMean Probe + Null-space Projection**
+For repairable biases, contrastive sets $\{\mathbf{h}_i^+\}$ and $\{\mathbf{h}_j^-\}$ are used. The hidden state of the last non-padding token before the reward head is extracted. The probe direction is calculated as:
+$$\mathbf{p} = \mathrm{normalize}\Big(\tfrac{1}{n_+}\sum_i \mathbf{h}_i^+ - \tfrac{1}{n_-}\sum_j \mathbf{h}_j^-\Big).$$
+During inference, the state is projected: $\mathbf{h}_{\text{null}} = \mathbf{h} - \sum_k \alpha (\mathbf{p}_k^{\top}\mathbf{h})\mathbf{p}_k$. Multiple probes are handled via Gram-Schmidt orthogonalization. This approach does not assume a functional form for the bias and is data-efficient; a length probe from GSM8K transfers OOD to RewardBench2 and AlpacaEval.
 
 ### Loss & Training
-Ours is **completely training-free**. All interventions are inference-time linear projections. The only "parameters" are the sample size for probe construction and the projection strength $\alpha \in \{0.5, 1.0, 1.5\}$. Calibration experiments show that $\alpha$ can be adjusted; for RMs with already low bias, like the Llama8B series, $\alpha=0.5$ performs better than $\alpha=1.0$.
+Ours is **entirely training-free**. All interventions are inference-time linear projections. Parameters include the contrastive sample size and projection strength $\alpha \in \{0.5, 1.0, 1.5\}$. For SOTA RMs with fewer initial biases, $\alpha=0.5$ is often superior to $\alpha=1.0$ to avoid removing true signals.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Bias Type | Baseline Performance | After Intervention | Significant Mitigation? |
-| :--- | :--- | :--- | :--- |
-| Length (DeBERTa prefers verbose) | Classic length bias, Spearman(reward, length) = 0.611 | 0.067 (95% CI does not overlap) | Yes |
-| Length (SOTA RM over-correction) | Prefers concise-wrong > verbose-right | Reduced to no longer favoring wrong answers, no accuracy drop | Yes |
-| Uncertainty | Correct answers with "I'm not sure" → RM accuracy drops by 22.6% on average | Prefers uncertainty in wrong answers, remains direct in correct ones | Yes |
-| Calibration (Skywork-Qwen-8B) | Spearman(confidence, correctness) = 0.182 | 0.386 at $\alpha=1.0$ (doubled), becomes strongest calibrated RM | Yes |
-| Position (MCQA A-D) | Cross-position deviation 2-28% | Significant reduction in position variance for three models | Partial |
-| RewardBench2 Overall Accuracy | 70.1% | 69.3% / 69.3% / 70.1% / 69.3% after Length / Position / Uncertainty / Combined | All pass 5pp non-inferiority test ($p < 0.001$) |
+|-----------|----------------------|--------------------|-------------------------|
+| Length (DeBERTa) | Spearman(reward, length) = 0.611 | 0.067 (No 95% CI overlap) | Yes |
+| Length (SOTA over-correction) | Prefers concise-wrong > verbose-right | Bias reduced; accuracy maintained | Yes |
+| Uncertainty | "I'm not sure" → Accuracy drops 22.6% | Prefers uncertainty for wrong, direct for right | Yes |
+| Calibration (Skywork-Qwen-8B) | Spearman(conf, corr) = 0.182 | 0.386 at $\alpha=1.0$ (Doubled) | Yes |
+| Position (MCQA A–D) | Variance across positions 2-28% | Variance significantly reduced | Partial |
+| RewardBench2 Accuracy | 70.1% | 69.3% - 70.1% (by intervention type) | Passed 5pp non-inferiority check |
 
 ### Ablation Study
 
-| Experimental Setting | Key Finding |
-| :--- | :--- |
-| Best-of-N on AlpacaEval (5 RM, 512 prompts × 64 cand) | Average within-prompt $\|r,L\|$ correlation from 0.10 → 0.04; 4/5 RMs improved length-controlled win rate, better than global calibration in Huang et al. (2025). |
-| Best-of-N on GSM8K (5 RM, 64 generations) | Within-prompt correlation from 0.076 → 0.007; mean BoN accuracy 62.1% → 62.8%. |
-| Sycophancy (regressive) | All 5 RMs significantly sycophantic; even Skywork-Qwen-8B followed wrong answers 23.7% of the time. |
-| Model-Style Sensitivity | All 5 RMs show statistically significant reward-style correlation; average abs correlation ≈0.1, up to ±0.2~0.4 for individual LMs. |
-| Calibration $\alpha$ Scan | Skywork-Qwen peaks at $\alpha=1.0$; Llama8B series better at $\alpha=0.5$—indicating models with less bias need lighter intervention. |
+| Setting | Key Findings |
+|---------|--------------|
+| Best-of-N on AlpacaEval | Within-prompt $\|r,L\|$ correlation 0.10 → 0.04; 4/5 RMs improved length-controlled win rate. |
+| Best-of-N on GSM8K | Within-prompt correlation 0.076 → 0.007; Mean BoN accuracy 62.1% → 62.8%. |
+| Sycophancy (Regressive) | All 5 RMs show sycophancy; Linear intervention cannot lower regressive sycophancy without harming progressive sycophancy. |
+| Model Style Sensitivity | All 5 RMs show statistically significant reward-style correlation; accounts for 4-16% of ranking variance. |
+| Calibration $\alpha$ Scan | Skywork-Qwen series peaks at $\alpha=1.0$; Llama8B series performs better at $\alpha=0.5$. |
 
 ### Key Findings
-- **Crucial "Aha" Moment**: SOTA RMs do not lack length bias; rather, they **penalize** verbosity because specialized data designed to eliminate length bias introduced an opposite bias. This forces RMs to prefer "concise but wrong" answers on GSM8K.
-- **Strong OOD Transfer**: A length probe constructed only from GSM8K math problems successfully drives reward-length correlation to near zero on RewardBench2 and AlpacaEval BoN without losing ranking accuracy.
-- **Actionable Taxonomy**: Sycophancy and model-style biases cannot be eradicated even with iterative INLP projection, indicating a need for solutions beyond activation space (e.g., SAEs or behavioral interventions).
-- **Style Bias Impact**: Mainstream RMs may systematically reward "familiar writing styles" rather than true quality, which has direct implications for RM-policy pairing and data filtering.
+- **Discovery**: SOTA RMs actually "over-correct" for length, often favoring concise but incorrect answers in math tasks.
+- **OOD Generalization**: Length probes constructed solely from GSM8K successfully transfer to RewardBench2 and AlpacaEval, reducing correlation to near zero without losing ranking accuracy.
+- **Complexity Actionability**: Sycophancy and model-style biases cannot be eradicated even with iterative null-space projection (INLP), suggesting they are entangled with the core quality signal.
 
 ## Highlights & Insights
-- **Framing "unfixability" as a main result**: Instead of hiding failure, the authors present high-complexity biases as a formal contribution with empirical and representation-level (INLP) evidence.
-- **Engineering-friendly inference-time intervention**: No changes to RM weights or policy algorithms; new biases can be added with just a pair of contrastive samples.
-- **Transferable Paradigm**: The DiffMean + null-space projection framework can be applied to other single-head scalar output models (discriminators, toxicity classifiers, etc.).
-- **Revealing Model-Family Bias**: Quantifying RM preference for specific LM styles via panel-relative cross-entropy is a new, repeatable diagnostic paradigm.
+- **Valuable Negative Results**: Categorizing certain biases as "linearly non-repairable" provides an empirical roadmap for future research (e.g., using SAEs).
+- **Engineering Friendliness**: Inference-time intervention that is plug-and-play for RLHF, best-of-N, and data filtering without retraining.
+- **Model Style Bias**: Revealing that RMs systematically reward "familiar" writing styles (e.g., Llama-style) over actual quality provides a critical warning for the open-source RM ecosystem.
 
 ## Limitations & Future Work
-- **Limitations**: (1) Linear intervention remains ineffective for high-complexity biases. (2) The length probe introduces a slight positive correlation in some SOTA RMs, suggesting $\alpha$ needs model-specific tuning. (3) Evaluation is limited to reasoning/knowledge benchmarks and lacks long-tail domains like safety or chat.
-- **Ours**: (a) Probe construction is sensitive to contrastive sample selection; if "verbose" samples contain more reasoning traces, the projection might inadvertently nullify "reasoning" directions. (b) All evaluated RMs are single-output scalar architectures; transferability to generative RMs or critics remains unproven. (c) Projection strength $\alpha$ requires manual tuning without an automated selection criterion.
-- **Future Work**: Upgrading DiffMean to SAE feature nulling; attempting intervention in deeper layers for sycophancy; expanding probe construction to safety and chat domains.
+- **Limitations**: (1) High-complexity biases (sycophancy/style) remain unsolved via linear methods; (2) Length probes in some SOTA RMs require manual tuning of $\alpha$ to avoid introducing positive correlation; (3) Evaluation is limited to four reasoning/knowledge benchmarks and lacks long-tail chat/safety coverage.
+- **Mechanism**: The probe construction is sensitive to contrastive pair selection; if "verbose" samples correlate with "Chain of Thought," the intervention might accidentally nullify reasoning signals.
+- **Future Work**: Scaling to SAE-based features for finer subspace decomposition; extending intervention to deeper layers for sycophancy.
 
 ## Related Work & Insights
-- **vs. Park et al. (2024b) / Huang et al. (2025) length penalty**: These use explicit functional forms of length-reward; ours does not assume form and outperforms global calibration in BoN experiments.
-- **vs. Ravfogel et al. (2020) INLP**: INLP projects until an attribute is unpredicted; ours uses a lighter weight single-step DiffMean.
-- **vs. Casademunt et al. (2025) SAE-based steering**: They use SAEs to extract directions; ours uses simpler DiffMean, suggesting a future merger of these methods for finer bias decomposition.
-- **vs. Sharma et al. (2024) sycophancy evaluation**: We filter cases where the RM was already wrong, providing a cleaner measure of sycophancy and proving its linear unfixability.
+- **vs. Explicit Penalties**: Unlike Park et al. (2024b) or Huang et al. (2025), ours does not assume a functional form for length-reward relationships and outperforms global calibration in BoN tasks.
+- **vs. INLP**: While INLP is used as a diagnosis tool for high-complexity biases, our single-step DiffMean is a lighter, more practical inference-time fix.
+- **vs. Sycophancy Evaluation**: Unlike previous work, ours filters out cases where the RM was already wrong, providing a cleaner measurement of sycophancy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The "Complexity Taxonomy + Mechanistic Reward Shaping" is a clear new framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Extensive testing across RMs, benchmarks, and OOD scenarios with representation-level evidence.
-- Writing Quality: ⭐⭐⭐⭐ — Honest reporting of failures; clear taxonomy; although tables are dense and some details are in appendices.
-- Value: ⭐⭐⭐⭐⭐ — Directly applicable to RLHF pipelines and provides a roadmap for bias research.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](camel_confidence-gated_reflection_for_reward_modeling.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](../../NeurIPS2025/reinforcement_learning/checklists_are_better_than_reward_models_for_aligning_langua.md)
-- [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
+- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
+- [\[ICML 2025\] Automatic Reward Shaping from Confounded Offline Data](../../ICML2025/reinforcement_learning/automatic_reward_shaping_from_confounded_offline_data.md)
+- [\[ICML 2025\] Action-Dependent Optimality-Preserving Reward Shaping (ADOPS)](../../ICML2025/reinforcement_learning/action-dependent_optimality-preserving_reward_shaping.md)
 
 </div>
 

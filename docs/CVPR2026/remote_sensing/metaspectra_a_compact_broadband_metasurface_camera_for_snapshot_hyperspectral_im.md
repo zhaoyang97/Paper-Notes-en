@@ -2,84 +2,88 @@
 title: >-
   [Paper Note] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 description: >-
-  [CVPR 2026][Remote Sensing][Metasurface Imaging] MetaSpectra+ proposes a metasurface–refractive hybrid optical paradigm that employs a dual-layer metasurface to independently control the dispersion, exposure…
+  [CVPR 2026][Remote Sensing][HDR] MetaSpectra+ proposes a metasurface-refractive lens hybrid optical paradigm. By independently controlling 4-channel dispersion, exposure, and polarization via double-layer metasurfaces, it achieves 250nm broadband snapshot hyperspectral+ HDR/polarization imaging within a minimal 17mm optical path. It reaches a PSNR of
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "Metasurface Imaging"
-  - "Hyperspectral Reconstruction"
-  - "Snapshot Imaging"
-  - "HDR"
-  - "Polarization Imaging"
+  - CVPR 2026
+  - Remote Sensing
+  - HDR
 date: 2026-05-08
-content_hash: 4515b40fb12f223b
+content_hash: 20aa34b24e7f80ee
 ---
-
 # MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.09116](https://arxiv.org/abs/2603.09116)  
 **Code**: [https://meta-imaging.qiguo.org](https://meta-imaging.qiguo.org)  
-**Area**: Remote Sensing / Computational Hyperspectral Imaging
+**Area**: Remote Sensing / Computational Hyperspectral Imaging  
 **Keywords**: Metasurface Imaging, Hyperspectral Reconstruction, Snapshot Imaging, HDR, Polarization Imaging
 
 ## TL;DR
 
-MetaSpectra+ proposes a metasurface–refractive hybrid optical paradigm that employs a dual-layer metasurface to independently control the dispersion, exposure, and polarization of four channels, enabling snapshot hyperspectral+HDR/polarization multi-functional imaging over a 250 nm bandwidth with a minimum total track length (TTL) of 17 mm. On the KAUST benchmark, it achieves a PSNR of 33.31 dB, comprehensively surpassing existing snapshot hyperspectral systems.
+MetaSpectra+ proposes a metasurface-refractive lens hybrid optical paradigm. By independently controlling 4-channel dispersion, exposure, and polarization via double-layer metasurfaces, it achieves 250nm broadband snapshot hyperspectral+ HDR/polarization imaging within a minimal 17mm optical path. It reaches a PSNR of 33.31dB on the KAUST benchmark, outperforming existing snapshot hyperspectral systems.
 
 ## Background & Motivation
 
-**Background**: Snapshot hyperspectral imaging (Snapshot HSI) aims to recover a 3D hyperspectral data cube from a single 2D sensor measurement. Existing approaches include sampling-based methods (coded aperture, lens arrays, spectral filter arrays) and coding-based methods (embedding spectral information into the spatial domain via wavelength-dependent PSFs using DOEs, gratings, or prisms). Meanwhile, multifunctional metasurfaces have attracted attention for their ability to simultaneously acquire depth, polarization, and spectral information in a monocular form factor.
+**Background**: Snapshot Hyperspectral Imaging (Snapshot HSI) aims to recover 3D hyperspectral data cubes from single 2D sensor measurements. Existing solutions include sampling-based methods (coded apertures, lens arrays, spectral filter arrays) and encoding-based methods (embedding spectral information into the spatial domain via wavelength-dependent PSF using DOEs, gratings, or prisms). Simultaneously, multifunctional metasurfaces have gained attention for obtaining multimodal information such as depth, polarization, and spectrum in a monocular form factor.
 
-**Limitations of Prior Work**: Metasurface optical elements suffer from severe chromatic aberration, and the vast majority of multifunctional metasurface systems operate only within an extremely narrow band of 10–100 nm, far from covering the full visible spectrum. Furthermore, existing approaches couple beam-splitting and imaging functions into a single metasurface, resulting in a large F-number and insufficient compactness.
+**Limitations of Prior Work**: Metasurface optical components suffer from severe chromatic aberration. Most multifunctional metasurface systems can only operate within extremely narrow bands of 10-100nm, failing to cover the full visible spectrum. Furthermore, existing schemes couple beam splitting and imaging functions into a single metasurface, leading to large F-numbers and bulky systems.
 
-**Key Challenge**: The strong dispersion of metasurfaces is a double-edged sword—it is the physical basis for spectral modulation, yet it strictly limits the usable bandwidth. In multifunctional imaging, one must simultaneously exploit dispersion to encode spectral information and eliminate it when needed (e.g., HDR/polarization channels require achromatic behavior). These two requirements are mutually exclusive in conventional single-layer metasurface designs.
+**Key Challenge**: The strong dispersion of metasurfaces is a double-edged sword; it is the physical basis for spectral regulation but also strictly limits the usable bandwidth. In multifunctional imaging, one must utilize dispersion to encode spectral information while eliminating it when necessary (e.g., achromatic designs for HDR/polarization channels). These requirements are mutually exclusive in traditional single-layer metasurface designs.
 
-**Goal**: (1) How to extend the operating bandwidth of multifunctional metasurfaces from tens of nanometers to 250 nm to cover the entire visible spectrum? (2) How to independently control the dispersion of each channel within the same system—some channels retaining controllable dispersion for spectral encoding, others being achromatic for HDR/polarization? (3) How to reduce the F-number while maintaining compactness?
+**Goal**: (1) How to extend the working bandwidth of multifunctional metasurfaces from dozens of nanometers to 250nm to cover the entire visible spectrum? (2) How to independently control the dispersion of each channel in the same system—where some channels have controllable dispersion for spectral encoding and others are achromatic for HDR/polarization? (3) How to reduce the F-number while maintaining compactness?
 
-**Key Insight**: The authors observe that dispersion is fundamentally the algebraic sum of the deflection vectors of two optical elements ($\Delta \mathbf{x}_i(\lambda) = \frac{\lambda f}{\lambda_c}(\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i)$). Therefore, by distributing beam-splitting and dispersion control across two metasurface layers, the dispersion of each channel can be independently controlled by adjusting the second-layer deflection vector $\boldsymbol{\beta}_i$. When $\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i = 0$, full achromatization is achieved; otherwise, controllable dispersion is retained. Imaging functionality is delegated to a refractive lens, achieving functional decoupling.
+**Key Insight**: The authors observe that dispersion is essentially the algebraic sum of the deflection vectors of two optical elements ($\Delta \mathbf{x}_i(\lambda) = \frac{\lambda f}{\lambda_c}(\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i)$). Therefore, if beam splitting and dispersion control are assigned to two separate metasurface layers, the dispersion of each channel can be independently controlled by adjusting the second layer's deflection vector $\boldsymbol{\beta}_i$. When $\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i = 0$, it is fully achromatic; otherwise, controllable dispersion is retained. Simultaneously, the imaging function is delegated to refractive lenses to achieve functional decoupling.
 
-**Core Idea**: A dual-layer metasurface is used, with one layer responsible for beam splitting and the other for dispersion control, while a refractive lens handles imaging. The additivity of deflection vectors enables independent dispersion tuning per channel, thereby realizing broadband multifunctional hyperspectral imaging in a compact form factor.
+**Core Idea**: Use double-layer metasurfaces for beam splitting and dispersion control respectively, combined with refractive lenses for imaging. Leverage the additivity of deflection vectors to make each channel's dispersion independently adjustable, enabling broadband multifunctional hyperspectral imaging in a compact form.
 
 ## Method
 
 ### Overall Architecture
 
-The optical system of MetaSpectra+ comprises five components: objective lens (achromatic doublet with field stop, focal length 400 mm) → beam-splitting metasurface M0 (splits collimated light into 2×2 = 4 channels) → dispersion-control metasurfaces M1–M4 (independently modulating dispersion/achromatization per channel) → eyepiece lenses (four achromatic doublets, 12 mm focal length each) → optical filters + sensor (7.1 mm × 7.1 mm global-shutter image sensor). The total track length (TTL) is only 17 mm. Among the four channels, I1/I2 carry orthogonal dispersion for spectral encoding (CTIS configuration), while I3/I4 are achromatic channels for HDR or polarization imaging. Post-processing algorithms based on DWDN or DDPM reconstruct the hyperspectral data cube from the four sub-images.
+MetaSpectra+ aims to simultaneously acquire broadband hyperspectral data and HDR/polarization within a compact camera with a 17mm total optical path. The mechanism involves decoupling "beam splitting," "dispersion control," and "imaging" into different optical components rather than compressing them into a single metasurface. The light follows a five-stage pipeline: it is first collimated by an achromatic doublet objective ($f=400$mm) with a field stop; it then hits the beam-splitting metasurface M0, which splits the light into 2×2=4 independent channels with approximately 33° deflection angles; each channel passes through a dispersion-control metasurface M1–M4, which determines whether that path is achromatic or retains controllable dispersion; following this, four achromatic doublet "eyeglass lenses" ($f=12$mm) perform imaging; finally, the light passes through optical filters onto a 7.1mm×7.1mm global shutter sensor. Among the 4 channels, I1/I2 carry orthogonal dispersion to encode spectra via Computed Tomography Imaging Spectrometer (CTIS) patterns, while I3/I4 are achromatic for HDR or polarization extension. The four sub-images on the sensor are reconstructed into a full hyperspectral data cube by DWDN or DDPM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420}}}%%
+flowchart TD
+    A["Incident Light → Achromatic Objective Collimation (f=400mm, with field stop)"] --> B["Beam-splitting Metasurface M0<br/>Randomly interleaved phases + complementary design wavelengths, split into 2×2=4 channels (~33° deflection)"]
+    B --> C["Dispersion-control Metasurfaces M1–M4<br/>Deflection vector additivity (α+β): Independent per-channel dispersion tuning"]
+    C -->|"I1/I2: α+β≠0, Retain orthogonal dispersion"| D["Spectral Encoding Channels<br/>Spectral coding via CTIS"]
+    C -->|"I3/I4: α+β=0, Achromatic"| E["Achromatic Channels<br/>Zero-cost HDR / Polarization extension via filters"]
+    D --> F["4 Eyeglass Lenses Imaging (f=12mm)<br/>+ Filters → Global Shutter Sensor (4 sub-images)"]
+    E --> F
+    F --> G["DWDN / DDPM Reconstruction<br/>→ Hyperspectral Data Cube"]
+```
 
 ### Key Designs
 
-1. **Beam-Splitting Metasurface M0 (Randomly Interleaved Multi-Channel Beam Splitting)**:
+**1. Functional Decoupling via Double-layer Metasurfaces + Refractive Lenses: Tuning Dispersion like a Knob**
 
-    - Function: Splits and deflects incident collimated light into four independent optical channels at deflection angles of approximately 33°.
-    - Mechanism: For each channel $i$, a linear phase delay is applied: $M_{0,i}(\mathbf{x}, \lambda_c) = \exp(j\frac{2\pi}{\lambda_c} \boldsymbol{\alpha}_i \cdot \mathbf{x})$. The overall phase profile is constructed by randomly interleaving four sub-profiles with equal probability: $M_0(\mathbf{x}, \lambda_c) = M_{0,k}(\mathbf{x}, \lambda_c), k \sim \text{Multinomial}(1/4)$. Dispersion causes multi-order diffraction at non-design wavelengths, but empirically only the 0th and 1st orders are significant; a downstream field stop blocks the 0th order, so the effective modulation approximates $M_{0,i}(\mathbf{x}, \lambda) \approx a_1(\lambda) M_{0,i}(\mathbf{x}, \lambda_c)$.
-    - Design Motivation: Random interleaving effectively suppresses high-order diffraction artifacts compared to a regular 2×2 mosaic (which produces strong high-order diffraction at large deflection angles), at the cost of a minor loss in light efficiency. Additionally, the four channels use different design wavelengths $\lambda_{c,1:4} = \{450, 550, 600, 750\}$ nm, ensuring that at least one high-efficiency channel covers any given portion of the full visible spectrum.
+The fundamental dilemma of single-layer metasurfaces is the total coupling of beam splitting, imaging, and dispersion, where strong dispersion both enables spectral coding and locks the bandwidth to dozens of nanometers. The key observation of MetaSpectra+ is that the PSF shift with respect to wavelength is essentially the algebraic sum of the deflection vectors of two optical layers. The beam-splitting metasurface applies deflection $\boldsymbol{\alpha}_i$ to channel $i$, and the dispersion-control metasurface adds $\boldsymbol{\beta}_i$, resulting in a wavelength displacement of:
 
-2. **Dispersion-Control Metasurfaces Mi (Deflection-Vector Additivity for Achromatization/Dispersion Control)**:
+$$\Delta \mathbf{x}_i(\lambda) = \frac{\lambda f}{\lambda_c}(\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i).$$
 
-    - Function: Applies an additional deflection to each channel to achieve achromatization or retain controllable dispersion.
-    - Mechanism: The $i$-th dispersion-control metasurface imparts deflection $\boldsymbol{\beta}_i$, producing a wavelength-dependent PSF shift of $\Delta \mathbf{x}_i(\lambda) = \frac{\lambda f}{\lambda_c}(\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i)$. The key insight is that this shift is determined by the sum of deflection vectors from both layers: when $\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i = 0$, the PSF does not shift with wavelength, achieving achromatic focusing (channels I3/I4); when the sum is nonzero, controllable wavelength-dependent dispersion is retained (channels I1/I2, with orthogonally directed dispersion for CTIS encoding).
-    - Design Motivation: This deflection-vector additivity principle is the core innovation of MetaSpectra+. It reduces dispersion control to an algebraic design problem rather than a complex wave-optics optimization, enabling each channel to be independently assigned a desired dispersion magnitude and direction with great flexibility.
+This step reduces the chromatic aberration problem, which originally required wave-optics optimization, to a vector algebra problem: setting $\boldsymbol{\alpha}_i + \boldsymbol{\beta}_i = 0$ ensures the PSF no longer drifts with wavelength, achieving achromatic focusing (I3/I4); making the sum non-zero retains a controllable dispersion with a set direction (matching the orthogonal dispersion of I1/I2). Dispersion and direction can be set independently for each channel. By delegating "imaging" to refractive lenses, the system overcomes the bandwidth limits and large F-numbers of single-layer metasurfaces, which is the root cause of its compact broadband multifunctional performance.
 
-3. **Multifunctional Imaging Configurations (Zero-Cost Modality Extension)**:
+**2. Beam-splitting Metasurface M0: Random Interleaved Phases + Complementary Designed Wavelengths for Full Visible Bandwidth**
 
-    - Function: Inserts different filters into the achromatic channels to extend HDR or polarization imaging capability with zero additional optical complexity.
-    - HDR Mode: ND filters with OD = 0.3 are inserted into channels I1–I3, and OD = 0.9 into channel I4, forming an approximately 4:1 exposure bracket. I3 and I4 are fused via the Debevec–Malik method to produce an HDR image, extending dynamic range by approximately 11 dB compared to a single exposure.
-    - Polarization Mode: A 0° linear polarizer is placed before channel I3 and a 90° linear polarizer before channel I4. The horizontal–vertical degree of linear polarization is computed as $\text{DoLP}_{HV} = |I_3 - I_4| / |I_3 + I_4|$. Channels I1 and I2 are unaffected by polarization and are used for spectral encoding.
-    - Design Motivation: The achromatic channels I3/I4 are naturally suited for these extensions—since they carry no dispersion, their image quality most closely resembles that of a conventional camera, making them ideal for HDR bracketing or polarization contrast measurement.
+To split light into four 33° high-angle channels, a regular 2×2 mosaic arrangement is simplest, but regular arrangements at high angles excite strong higher-order diffraction artifacts. M0 addresses this by randomly interleaving four sub-phase profiles using an equal-weight multinomial distribution: each channel's individual phase is a linear phase $M_{0,i}(\mathbf{x}, \lambda_c) = \exp(j\frac{2\pi}{\lambda_c} \boldsymbol{\alpha}_i \cdot \mathbf{x})$, while the entire M0 is $M_0(\mathbf{x}, \lambda_c) = M_{0,k}(\mathbf{x}, \lambda_c),\ k \sim \text{Multinomial}(1/4)$. Although dispersion causes multi-order diffraction at non-design wavelengths, measurements show only the 0th and 1st orders are significant; the 0th order is blocked by the field stop, so the effective modulation is $M_{0,i}(\mathbf{x}, \lambda) \approx a_1(\lambda) M_{0,i}(\mathbf{x}, \lambda_c)$. Random interleaving suppresses artifacts at the cost of slight light efficiency loss. Additionally, the four channels are designed with different wavelengths $\lambda_{c,1:4} = \{450, 550, 600, 750\}$ nm, ensuring the full visible spectrum is covered by at least one high-efficiency channel at any wavelength, extending the bandwidth to ~250nm.
+
+**3. Zero-cost Multimodal Extension for Achromatic Channels: HDR or Polarization via Filters**
+
+Because I3/I4 are achromatic and offer imaging quality closest to conventional cameras, they are naturally suited for extra modalities besides spectroscopy. This requires only inserting filters before the channels without changing the optical design. In HDR mode, I1–I3 are fitted with OD=0.3 and I4 with OD=0.9 ND filters to form an exposure bracket with a ~4:1 power ratio. Merging I3 and I4 using the Debevec–Malik method provides ~11dB more dynamic range than a single exposure. In polarization mode, 0° and 90° linear polarizers are placed in front of I3 and I4 respectively to calculate the degree of linear polarization $\text{DoLP}_{HV} = |I_3 - I_4| / |I_3 + I_4|$, while I1+I2 remain unaffected for spectral coding. This hardware can switch between "Hyperspectral + HDR" or "Hyperspectral + Polarization" without increasing optical complexity.
 
 ### Loss & Training
 
-Two reconstruction network options are provided: (1) **DWDN**: performs Wiener deconvolution in the feature domain followed by a multi-scale feedforward convolutional network for refinement; (2) **DDPM**: partitions sub-images into patches and reconstructs the hyperspectral cube patch-by-patch via a diffusion model, estimating a normalization factor $a^{k,t}$ and bias $b^{k,t}$ at each step to maintain spatial consistency across patches (an improvement over the method of Hazineh et al.). Training data are drawn from the Harvard and ICVL hyperspectral datasets; sub-images are synthesized using the D-Flat simulator based on the optical design, with noise level $\sigma$ sampled uniformly from $[0.001, 0.01]$.
+Two paths are used to reconstruct the hyperspectral cube from 4 sub-images: **DWDN** first performs Wiener deconvolution in the feature domain, followed by refinement via a multi-scale feed-forward convolutional network; **DDPM** patches the sub-images and reconstructs them patch-by-patch using a diffusion model, estimating normalization factors $a^{k,t}$ and bias $b^{k,t}$ at each step to maintain spatial consistency across patches (an improvement over Hazineh et al.). Training data is sourced from Harvard and ICVL datasets, with sub-images synthesized via the D-Flat simulator based on the actual optical design. Noise levels $\sigma$ are sampled uniformly from $[0.001, 0.01]$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison with existing snapshot hyperspectral imaging systems on the KAUST benchmark dataset (450–700 nm band):
+Comparison with existing snapshot hyperspectral imaging systems on the KAUST benchmark (450-700nm):
 
-| Method | Conference | Optical Type | # Sub-images | TTL (mm) | PSNR (dB)↑ | SSIM↑ | SAM↓ |
-|--------|------------|-------------|-------------|---------|------------|-------|------|
+| Method | Conference | Optical Type | Sub-images | TTL(mm) | PSNR(dB)↑ | SSIM↑ | SAM↓ |
+|------|------|----------|---------|---------|-----------|-------|------|
 | **Ours (DDPM)** | – | MS+Lens | 4 | **17** | **33.31** | 0.92 | 0.23 |
 | **Ours (DWDN)** | – | MS+Lens | 4 | **17** | 32.92 | **0.94** | **0.17** |
 | 2-in-1 Cam | SIG'24 | DOE+Lens | 2 | 50 | 31.14 | 0.86 | 0.24 |
@@ -92,48 +96,48 @@ Comparison with existing snapshot hyperspectral imaging systems on the KAUST ben
 
 ### Ablation Study
 
-| Configuration | PSNR (dB) | SSIM | SAM | Notes |
-|--------------|-----------|------|-----|-------|
-| Full system (DDPM) | 33.31 | 0.92 | 0.23 | Diffusion-based recovery; best PSNR |
-| Full system (DWDN) | 32.92 | 0.94 | 0.17 | Non-diffusion recovery; better SSIM and SAM |
-| Achromatic channels only (RGB→HSI) | 21–23 | ~0.7 | >0.3 | No dispersion encoding; degrades to RGB upsampling |
-| Regular 2×2 interleaved M0 | – | – | – | Strong high-order diffraction artifacts at large deflection angles |
-| HDR mode (I3+I4 fusion) | – | – | – | Dynamic range increased by ~11 dB |
+| Config | PSNR(dB) | SSIM | SAM | Description |
+|------|----------|------|-----|------|
+| Full System (DDPM) | 33.31 | 0.92 | 0.23 | Diffusion recovery, optimal PSNR |
+| Full System (DWDN) | 32.92 | 0.94 | 0.17 | Non-diffusion, superior SSIM/SAM |
+| Achromatic only (RGB→HSI) | 21-23 | ~0.7 | >0.3 | No dispersion coding, RGB upsampling, insufficient |
+| Regular 2×2 M0 | – | – | – | Strong high-order artifacts at large angles |
+| HDR Mode (I3+I4 merge) | – | – | – | ~11dB Dynamic range gain |
 
 ### Key Findings
 
-- MetaSpectra+ **comprehensively surpasses** all existing snapshot hyperspectral systems on the KAUST benchmark across all metrics: PSNR exceeds the second-best (2-in-1 Cam) by 2.17 dB, while achieving a TTL of only 17 mm (second-best Array-HSI: 20 mm; all others ≥ 44.5 mm).
-- DWDN and DDPM each have advantages: DDPM achieves higher PSNR (33.31 vs. 32.92), while DWDN yields better SSIM (0.94 vs. 0.92) and SAM (0.17 vs. 0.23), indicating that DDPM offers sharper reconstruction but slightly lower spectral fidelity.
-- Achromatization is critical: removing dispersion encoding and relying solely on RGB-to-hyperspectral upsampling causes a PSNR drop of approximately 10 dB, demonstrating that controllable dispersion is essential for high-accuracy reconstruction.
-- The complementary coverage strategy using different design wavelengths is effective: the four channels with $\lambda_c = \{450, 550, 600, 750\}$ nm ensure efficient coverage of the entire 450–700 nm band.
-- Real-world experiments validate an 11 dB dynamic range gain in HDR mode and accurate DoLP measurements in polarization mode, both achieved without sacrificing hyperspectral reconstruction quality.
+- MetaSpectra+ **outperforms existing systems across all metrics** on the KAUST benchmark: PSNR is 2.17dB higher than the runner-up (2-in-1 Cam), while TTL is only 17mm (runner-up Array-HSI is 20mm, others ≥44.5mm).
+- DWDN and DDPM offer different advantages: DDPM has higher PSNR (33.31 vs 32.92), but DWDN excels in SSIM (0.94 vs 0.92) and SAM (0.17 vs 0.23), indicating DDPM is sharper while DWDN offers better spectral fidelity.
+- Achromaticity is vital: Reconstructing HSI using only achromatic channels (RGB upsampling) causes PSNR to drop by ~10dB, proving that spectral information provided by controllable dispersion is key to high-precision reconstruction.
+- Complementary designed wavelengths work: The 4-channel $\lambda_c = \{450, 550, 600, 750\}$ nm ensures high-efficiency acquisition across the 450-700nm band.
+- Real-world experiments verify the 11dB dynamic range gain in HDR mode and DoLP measurements in polarization mode, all while maintaining hyperspectral reconstruction quality.
 
 ## Highlights & Insights
 
-- **Fundamental innovation of the metasurface–refractive hybrid paradigm**: Decoupling beam-splitting and imaging functions between the metasurface and the refractive lens breaks the bandwidth and F-number limitations of single-layer metasurface designs. This paradigm is generalizable to other diffractive/metasurface optical systems.
-- **Elegant exploitation of deflection-vector additivity**: The compact mathematical relation $\Delta \mathbf{x} \propto (\boldsymbol{\alpha} + \boldsymbol{\beta})$ is the cornerstone of the entire system, reducing complex wave-optics dispersion control to vector algebra and making the transition between achromatization and controllable dispersion trivial.
-- **Zero-cost multifunctional extension**: Achromatic channels are naturally suited for HDR and polarization extensions, requiring only the insertion of filters without any modification to the optical design, reflecting a well-structured modular philosophy.
+- **Innovation in Metasurface-Refractive Hybrid Paradigm**: Decoupling beam splitting and imaging into metasurfaces and refractive lenses breaks the bandwidth and F-number constraints of single metasurface designs. This paradigm is generalizable to other diffractive/metasurface optical systems.
+- **Elegant Use of Deflection Vector Additivity**: The simple mathematical relationship $\Delta \mathbf{x} \propto (\boldsymbol{\alpha} + \boldsymbol{\beta})$ is the core of the system, simplifying complex wave-optics dispersion control into vector algebra. This makes switching between achromatic and controllable dispersion trivial.
+- **Zero-cost Design for Multimodal Expansion**: Achromatic channels are naturally suited for HDR and polarization expansions. Inserting filters without modifying the optical design reflects excellent modular thinking.
 
 ## Limitations & Future Work
 
-- **Limited depth of field**: The prototype system has a depth of field of only 0.2–0.7 m, constrained by the 400 mm objective focal length; long-range applications require optical element replacement.
-- **High metasurface fabrication barrier**: The SiN nanopillar arrays (300 nm wide, 775 nm tall) rely on specialized nanofabrication; mass-production cost and consistency remain bottlenecks for commercialization.
-- **Random interleaving sacrifices light efficiency**: Although high-order artifacts are suppressed, random sampling means each channel receives only approximately 1/4 of the incident light, potentially limiting performance in low-light scenarios.
-- **Slow DDPM inference**: The diffusion model reconstructs patch-by-patch with multiple denoising steps, making real-time deployment impractical.
-- **Validation limited to 450–700 nm**: Despite claiming broadband operation, the system has not been demonstrated in the near-infrared (700–1000 nm), limiting applicability in agriculture, phenotyping, and remote sensing applications that require NIR.
+- **Limited Depth of Field (DOF)**: The prototype DOF is only 0.2-0.7m due to the 400mm objective focal length; far-field applications would require changing optical components.
+- **High Metasurface Manufacturing Barriers**: SiN nanopillar arrays (300nm wide, 775nm high) rely on professional nanofabrication, making mass production cost and consistency a bottleneck.
+- **Random Interleaving Sacrifices Light Efficiency**: While suppressing artifacts, random sampling means each channel only gets ~1/4 of incident light, which may limit performance in low-light scenarios.
+- **Slow DDPM Inference**: Diffusion models reconstruct patch-by-patch with multi-step denoising, which is impractical for real-time applications.
+- **Verified only for 450-700nm**: Although called broadband, it does not cover Near-Infrared (700-1000nm), limiting its use in agriculture, remote sensing, etc.
 
 ## Related Work & Insights
 
-- **vs. 2-in-1 Cam (SIGGRAPH'24)**: The closest prior work, also employing a DOE+Lens hybrid scheme, but with only 2 sub-images, 50 mm TTL, and PSNR of 31.14 dB. MetaSpectra+ achieves 4 channels, a more compact form factor, and higher accuracy via metasurfaces, outperforming it across all dimensions.
-- **vs. Array-HSI (SIGGRAPH Asia'24)**: Both use 4 sub-images, but Array-HSI employs DOE+CFA with 20 mm TTL and PSNR of 27.44 dB. MetaSpectra+ achieves a 5.5 dB PSNR gain at an even shorter TTL, demonstrating the superiority of metasurface-based dispersion control over DOE+CFA approaches.
-- **vs. SCCD/Baek (Optica'21/ICCV'21)**: Single sub-image DOE methods achieving only 26–27 dB PSNR; the multi-channel broadband strategy of MetaSpectra+ demonstrates a clear advantage.
+- **vs 2-in-1 Cam (SIGGRAPH'24)**: The most similar work, also using a DOE+Lens hybrid scheme, but with only 2 sub-images, 50mm TTL, and 31.14dB PSNR. MetaSpectra+ is superior across the board with 4 channels, higher compactness, and higher accuracy.
+- **vs Array-HSI (SIGGRAPH Asia'24)**: Also uses 4 sub-images but with DOE+CFA and a 20mm TTL with 27.44dB PSNR. MetaSpectra+ achieves 5.5dB higher PSNR with a shorter TTL, demonstrating that metasurface dispersion control is superior to DOE+CFA.
+- **vs SCCD/Baek (Optica'21/ICCV'21)**: Single sub-image DOE schemes with PSNR of only 26-27dB. The multi-channel broadband strategy of MetaSpectra+ holds a clear advantage.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The metasurface–refractive hybrid paradigm combined with deflection-vector additivity for dispersion control represents a fundamental innovation at the optical design level.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive simulation comparisons, real prototype validation, and HDR/polarization demonstrations are provided, though outdoor and dynamic scene evaluation is lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ The optical modeling derivations are complete and rigorous, with a clear logical flow from physical principles to system design.
-- Value: ⭐⭐⭐⭐⭐ Simultaneously achieving the most compact form factor and highest reconstruction accuracy sets a new benchmark for snapshot multifunctional imaging.
+- Novelty: ⭐⭐⭐⭐⭐ The metasurface-refractive hybrid paradigm and deflection vector additivity for dispersion control are fundamental innovations in optical design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Simulation comparisons, real-world prototypes, and HDR/polarization demos are comprehensive, though outdoor/dynamic scene verification is missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous derivation of optical models; logic is clear from physical principles to system design.
+- Value: ⭐⭐⭐⭐⭐ Sets a new benchmark for snapshot multimodal imaging by achieving the most compact form factor and highest reconstruction accuracy simultaneously.
 
 <!-- RELATED:START -->
 
@@ -141,11 +145,11 @@ Comparison with existing snapshot hyperspectral imaging systems on the KAUST ben
 
 ## Related Papers
 
+- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
 - [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
-- [\[AAAI 2026\] Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification](../../AAAI2026/remote_sensing/perceive_act_and_correct_confidence_is_not_enough_for_hyperspectral_classificati.md)
-- [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](../../ICLR2026/remote_sensing/spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
-- [\[NeurIPS 2025\] GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction](../../NeurIPS2025/remote_sensing/greenhyperspectra_a_multi-source_hyperspectral_dataset_for_global_vegetation_tra.md)
-- [\[CVPR 2026\] GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing](geommbench_and_geommagent_toward_expert_level_multimodal_intelligence_in_geoscience_and_remote_sensing.md)
+- [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: Randomized Token Embeddi…
+  [CVPR 2026][Image Generation][Paper Note] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: random embedding models employ a two-stage modular circuit (relation heads + object generation heads), whereas T5 encoder models fuse relation information into object tokens for
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Diffusion Transformer"
-  - "Spatial Relation Generation"
-  - "Mechanistic Interpretability"
-  - "Attention Circuits"
-  - "Text Encoder"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 3550691ad748fda6
+content_hash: 9bb9c41ea04d1ff5
 ---
-
 # Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -25,56 +19,55 @@ content_hash: 3550691ad748fda6
 
 ## TL;DR
 
-Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: Randomized Token Embedding (RTE) models utilize a two-stage modular circuit (Relation Heads + Object Generation Heads), while T5-encoded models fused relation information into object tokens for single-token decoding, showing significant differences in robustness.
+Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: random embedding models employ a two-stage modular circuit (relation heads + object generation heads), whereas T5 encoder models fuse relation information into object tokens for single-token decoding, with significant differences in robustness between the two mechanisms.
 
 ## Background & Motivation
 
-Text-to-Image (T2I) diffusion models have made great progress in generating high-quality images but often fail to compose spatial relations between multiple objects (e.g., "a red square is to the top-left of a blue circle"). While accuracy in single-object attribute generation is improving rapidly, progress in spatial relation generation remains slow.
+Text-to-image (T2I) diffusion models have achieved immense progress in high-quality image generation but frequently fail to compose spatial relations between multiple objects (e.g., "a red square at the top-left of a blue circle"). While the accuracy of single-object attribute generation is rapidly improving, progress in spatial relation generation remains slow.
 
-Prior work proposed various remedies (layout conditioning, cross-attention guidance, curriculum learning), but **few studies understand from an internal mechanism perspective** why spatial relation generation fails. Motivating questions include:
+Existing works propose various remedies (layout conditioning, cross-attention guidance, curriculum learning, etc.), but **few have investigated the internal model mechanisms** to understand why spatial relation generation fails. This paper is motivated by:
 
-1. How do neural networks encode and use non-commutative relations between objects (e.g., "A above B" $\neq$ "B above A")?
-2. How can key heads be systematically summarized and localized given that iterative sampling complicates attention map analysis?
-3. Is the bottleneck in spatial relation generation in cross-attention or the text encoder? A **holistic** research perspective is needed.
+1. How do neural networks encode and utilize non-commutative relations (e.g., "A above B" $\neq$ "B above A")?
+2. How can key heads be systematically summarized and localized despite the complexity of attention map analysis due to the iterative sampling nature of diffusion models?
+3. Is the bottleneck of spatial relation generation in cross-attention or text encoding? A **holistic** research perspective is required.
 
 ## Method
 
 ### Overall Architecture
 
-The authors constructed a minimal text-image dataset to train DiT models of various scales from scratch to generate images of two objects (with combined shape and color attributes) arranged in specified spatial relations. Combinations of 3 shapes $\times$ 2 colors $\times$ 8 spatial relations were used. The architecture follows the PixArt-style DiT, comparing three text encoders: T5-XXL, Random Token Embedding (RTE), and RTE without position encoding.
+The authors construct a minimal text-to-image dataset and train DiT models of various scales from scratch to learn the generation of images containing two objects (with combined shape and color attributes) arranged in specified spatial relations. A combination of 3 shapes $\times$ 2 colors $\times$ 8 spatial relations is used. The model architecture uses a PixArt-style DiT, comparing three text encoders: T5-XXL, Random Token Embedding (RTE), and RTE without positional encoding.
 
 ### Key Designs
 
-1. **Attention Synopsis**: Facing massive cross-attention maps (layers $\times$ heads $\times$ timesteps $\times$ conditional/unconditional $\times$ tokens), the authors developed a scalable analysis paradigm:
-    - Group tokens by category (image tokens by object segmentation, text tokens by semantic attributes).
-    - Aggregate attention at the category grain to obtain interpretable inter-category interaction patterns.
-    - Average over timesteps to compress attention tensors into an [layers, heads] synopsis map.
-    - This allows localizing key heads from over 10 million attention maps.
+**1. Attention Synopsis: Localizing key heads from tens of millions of attention maps**
 
-2. **Two-stage Circuit in RTE-DiT**:
-    - **Spatial Relation Head (L2H8)**: Interacts sinusoidal position encodings of image tokens with text embeddings of relation words via QK circuits. "Above" generates a vertical gradient; "left" generates a horizontal gradient. These gradients activate immediately at the start of sampling (step 0), acting as **position labels** marking canvas regions where objects should be placed.
-    - **Object Generation Head (L4H3)**: Activates later (steps 4-8), reading position labels from the relation head and connecting regions with matching labels to corresponding shape tokens, generating the correct object at the correct position. This head is invariant to spatial position and relation, only conveying shape identity.
+The iterative sampling of diffusion models causes an explosion in attention analysis—layers $\times$ heads $\times$ timesteps $\times$ conditional/unconditional $\times$ token counts, often reaching tens of millions of maps. The authors propose a scalable aggregation paradigm: tokens are grouped by category (image tokens by object segmentation, text tokens by semantic attributes), attention is aggregated at category granularity to obtain interpretable inter-category interactions, and results are averaged over timesteps. This compresses the entire attention tensor into a single [layer, head] synopsis map, allowing rapid localization of heads responsible for spatial relations.
 
-3. **Fusion Circuit in T5-DiT**:
-    - T5 self-attention fuses the entire sentence context into each token; thus, DiT decodes spatial relations from **non-relation word tokens** (especially the second shape token, shape2).
-    - Variance decomposition shows: in T5 embeddings, shape2 explains 37.5% variance and relations 12.1%; after DiT MLP projection, relation information is amplified to 21.3%.
-    - Causal validation via **vector arithmetic** on T5 embeddings (subtracting the original relation vector, adding a new one) successfully changed the spatial positions of generated objects.
+**2. Two-stage Modular Circuit of RTE-DiT: Label positions first, then place objects**
 
-4. **Weight-Space Head Screening**: An efficient screening method without generating samples—directly calculating QK interactions between image position features and text relation features to check if the resulting spatial maps align with reference relation gradients.
+In the Random Token Embedding (RTE) model, spatial relations are found to be generated in two steps. The spatial relation head (L2H8) activates at the very first step (step 0), allowing image token sinusoidal positional encodings to interact with relation word embeddings via the QK circuit—"above" produces vertical gradients and "left" produces horizontal gradients. This effectively paints a layer of **positional labels** on the canvas to mark object placement (a mechanism strikingly similar to molecular gradients guiding cell differentiation in embryonic development). The object generation head (L4H3) activates later (steps 4-8), reading these labels and linking regions with matching labels to corresponding shape tokens, thereby "growing" the objects in correct positions. Object heads only transmit shape identity and are independent of spatial position or relations. This modularity is the source of RTE circuit robustness.
+
+**3. Fused Single-token Decoding Circuit of T5-DiT: Relation information hidden in object words**
+
+With the T5 encoder, the mechanism is entirely different. T5's self-attention fuses the entire sentence context into each token; consequently, DiT decodes spatial relations from **non-relation word tokens** (specifically the second shape word, shape2). Variance decomposition shows that in T5 embeddings, shape2 explains 37.5% of the variance while relations contribute only 12.1%, but relation information is amplified to 21.3% after DiT MLP projection. The authors perform causal validation using **vector arithmetic**—subtracting the original relation vector and adding a new relation vector in T5 embeddings changes the generated spatial positions, confirming that relation information is indeed encoded within fused object tokens.
+
+**4. Weight-space Head Screening: Finding relation heads without sample generation**
+
+Running per-sample generation to identify heads is computationally expensive. The authors propose a fast screening method in pure weight space: directly calculating QK interactions between image positional features and text relation features to check if the generated spatial maps align with reference relation gradients. Aligned heads are identified as candidate relation heads without requiring any sampling.
 
 ### Loss & Training
 
 - Standard diffusion training using DPM-Solver++ (14 steps) sampling, CFG=4.5.
-- Multiple model sizes trained: DiT-B (12L/12H/768D), mini (6L/6H/384D), micro (6L/3H/192D), nano (3L/3H/192D).
-- EMA weights used for evaluation.
-- Four-dimensional metrics: Color, Shape, Unique Binding, Spatial Relation.
+- Training various model sizes: DiT-B (12 layers, 12 heads, 768 dim), mini (6 layers, 6 heads, 384 dim), micro (6 layers, 3 heads, 192 dim), nano (3 layers, 3 heads, 192 dim).
+- Evaluation using EMA weights.
+- Four-dimensional evaluation metrics: color, shape, unique binding, and spatial relation.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Text Encoder | Color↑ | Shape↑ | Unique Binding↑ | Spatial Relation↑ |
-|------|-----------|-------|-------|----------|----------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | DiT-B | T5 | 99% | 97% | 93% | 89% |
 | DiT-B | RTE | 99% | 96% | 90% | 86% |
 | DiT-B | RTE w/o pos | 99% | 96% | 41% | 15% |
@@ -83,63 +76,63 @@ The authors constructed a minimal text-image dataset to train DiT models of vari
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
-|------|---------|------|
-| Ablate Relation Attn in L2H8 | Spatial Acc 67%→33% | Relation head is crucial for spatial layout |
-| Ablate Object Attn in L4H3 | Shape Acc 90%→76% | Object head has causal role in shape generation |
-| Ablate relation words in T5-DiT | Almost no impact | T5 fuses relation info into other tokens |
-| Ablate shape2 in T5-DiT | Relation Acc down 50% | Relation info primarily encoded in shape2 |
-| Insert filler "the" in T5-DiT | Relation Acc drops sharply | T5 circuit is sensitive to minor lexical changes |
-| Insert filler in RTE-DiT | Remains stable | Modular circuit is more robust to perturbation |
+| :--- | :--- | :--- |
+| Ablate L2H8 relation attention | Spatial relation accuracy 67%→33% | Relation heads are critical for spatial layout |
+| Ablate L4H3 object attention | Shape accuracy 90%→76% | Object heads have a causal role in shape generation |
+| Ablate relation words in T5-DiT | Almost no effect | T5 fuses relation info into other tokens |
+| Ablate shape2 in T5-DiT | Relation accuracy drops 50% | Relation info mostly encoded in shape2 |
+| Insert filler "the" in T5-DiT | Relation accuracy drops significantly | T5 circuits are sensitive to minor vocabulary changes |
+| Insert filler in RTE-DiT | Remains stable | Modular circuits are more robust to perturbations |
 
 ### Key Findings
 
-1. **Circuit Mechanism Depends on Text Encoder**: RTE uses a modular two-stage circuit (Relation $\rightarrow$ Position Label $\rightarrow$ Object), while T5 uses a fused single-token decoding circuit.
-2. **Position Encoding is Necessary**: RTE without position encoding achieves only 15% spatial accuracy because it cannot distinguish "A above B" from "B above A".
-3. **Learning Dynamics are Phased**: Color $\rightarrow$ Shape $\rightarrow$ Attribute Binding $\rightarrow$ Spatial Relation; relations are learned slowest.
-4. **Distinct Robustness**: RTE-DiT is sensitive to relation word ablation but robust to filler words; T5-DiT is the opposite.
-5. **Transferability to Pre-trained Models**: Sparse spatial circuits can also be identified in PixArt-Sigma.
+1. **Circuit mechanisms depend on the text encoder**: RTE uses a modular two-stage circuit (relation → position labels → objects), while T5 uses a fused single-token decoding circuit.
+2. **Positional encoding is necessary**: RTE without positional encoding achieves only 15% spatial relation accuracy as it cannot distinguish between "A above B" and "B above A".
+3. **Learning dynamics are staged**: Color → Shape → Attribute Binding → Spatial Relation; relation learning is the slowest.
+4. **Robustness differences are significant**: RTE-DiT is sensitive to relation word ablation but robust to filler words; T5-DiT exhibits the opposite behavior.
+5. **Transferable to pre-trained models**: Sparse spatial circuits can also be identified in PixArt-Sigma.
 
 ## Highlights & Insights
 
-- **Mechanistic Interpretability Methodology**: Attention Synopsis and weight-space screening provide scalable tools for understanding large-scale DiT.
-- **Biological Analogy**: The gradient mechanism of the spatial relation head resembles molecular gradients in embryonic development.
-- **Unified Perspective**: Reconciles the views that "cross-attention is the bottleneck" and "text encoder is the bottleneck," showing both hold true under different configurations.
-- **Design Inspiration**: The trade-off between Modular (RTE) vs. Fused (T5)—modular is more robust and interpretable, while fused is more compact but fragile.
-- **Practical Implication**: Improving spatial relation generation may require prioritizing improvements in embedding models rather than the DiT itself.
+- **Mechanistic interpretability methodology**: Attention Synopsis and weight-space head screening provide scalable analysis tools for understanding large-scale DiT models.
+- **Biological analogy**: The gradient mechanism of spatial relation heads bears a striking resemblance to molecular gradients used in embryonic development.
+- **Unified perspective**: This work unifies the "cross-attention as bottleneck" and "text encoder as bottleneck" viewpoints, showing they each apply under different configurations.
+- **Design implications**: There is a trade-off between modular (RTE) and fused (T5) architectures—modular is more robust and interpretable, while fused is more compact but fragile.
+- **Practical value**: Improving spatial relation generation may require prioritizing improvements in embedding models rather than the DiT architecture itself.
 
 ## Limitations & Future Work
 
-1. Experiments were conducted on a **minimalist dataset** (3 shapes $\times$ 2 colors $\times$ 8 relations); real-world complexity is much higher.
-2. Only spatial relations between two objects were studied; circuit mechanisms for 3+ object compositions remain unexplored.
-3. The comparison between RTE and T5 might be influenced by training data volume and convergence.
-4. Exploring how to use the discovered circuit mechanisms to **improve** generation (e.g., via attention intervention) was not performed.
-5. Analysis of pre-trained models (PixArt-Sigma) is relatively shallow, as their baseline spatial relation performance is weak.
+1. Experiments were conducted on a **minimal dataset** (3 shapes $\times$ 2 colors $\times$ 8 relations); real-world scene complexity is significantly higher.
+2. Only spatial relations between two objects were studied; circuit mechanisms for multi-object (3+) compositions remain to be explored.
+3. The comparison between RTE and T5 may be affected by the volume and sufficiency of training data.
+4. The study did not explore how to **improve** spatial relation generation using the discovered circuits (e.g., via attention intervention).
+5. Analysis of pre-trained models (PixArt-Sigma) is relatively thin, as its baseline spatial relation performance is already weak.
 
 ## Related Work & Insights
 
-- Consistent with Transformer circuit analysis (Elhage et al., 2021) but applied to diffusion models for the first time.
-- Methods like Attend-and-Excite improve compositionality by manipulating cross-attention; this work provides a mechanistic explanation for such approaches.
-- The impact of text encoder choice on model behavior is underestimated—CLIP, T5, and RTE lead to fundamentally different internal computations.
+- Methodologically consistent with Transformer circuit analysis (Elhage et al., 2021), but applied to diffusion models for the first time.
+- Methods such as Attend-and-Excite improve compositionality by manipulating cross-attention; this work provides a mechanistic explanation for such methods.
+- The impact of text encoder choice on model behavior is often underestimated—CLIP, T5, and random embeddings lead to fundamentally different internal computations.
 - Provides guidance for designing more robust T2I architectures: modular circuits may be superior to fused circuits.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First to reveal specific circuit mechanisms for spatial relations in DiT.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Rigorous causal manipulation and ablation, though limited by simplified setup.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear narrative, excellent visualizations, and tight logic.
-- Value: ⭐⭐⭐⭐ — Provides a solid foundation for understanding and improving compositional generation in T2I.
+- Novelty: ⭐⭐⭐⭐⭐ — First to reveal specific circuit mechanisms for spatial relation generation in DiT.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Causal manipulation and ablation designs are rigorous, though limited by the simplified setting.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear narrative, high-quality illustrations, and tight logic.
+- Value: ⭐⭐⭐⭐ — Provides a critical foundation for understanding and improving compositional generation in T2I models.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
-- [\[CVPR 2026\] EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation](edgedit_hardware-aware_diffusion_transformers_for_efficient_on-device_image_gene.md)
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
-- [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
+- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 
 </div>
 

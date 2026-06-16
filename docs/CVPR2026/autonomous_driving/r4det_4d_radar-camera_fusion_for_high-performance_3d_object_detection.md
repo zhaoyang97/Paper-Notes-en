@@ -2,88 +2,104 @@
 title: >-
   [Paper Note] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][4D millimeter-wave radar] This paper proposes R4Det, which systematically addresses three core challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-free temporal fusion…
+  [CVPR 2026][Autonomous Driving][Paper Note] R4Det is proposed to systematically address three major challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-less temporal fusion, and small object detection—via three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refineme
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "4D millimeter-wave radar"
-  - "radar-camera fusion"
-  - "3D object detection"
-  - "depth estimation"
-  - "temporal fusion"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 28618b93a95da57a
+content_hash: 585110ac9da5c464
 ---
-
 # R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.11566](https://arxiv.org/abs/2603.11566)  
-**Code**: N/A  
-**Area**: Autonomous Driving
-**Keywords**: 4D millimeter-wave radar, radar-camera fusion, 3D object detection, depth estimation, temporal fusion
+**Code**: None  
+**Area**: Autonomous Driving  
+**Keywords**: 4D Radar, Radar-Camera Fusion, 3D Object Detection, Depth Estimation, Temporal Fusion
 
 ## TL;DR
 
-This paper proposes R4Det, which systematically addresses three core challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-free temporal fusion, and small object detection—through three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refinement (IGDR). R4Det achieves 47.29% 3D mAP (+5.47%) on TJ4DRadSet and 66.69% mAP on VoD.
+R4Det is proposed to systematically address three major challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-less temporal fusion, and small object detection—via three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refinement (IGDR). It achieves 47.29% 3D mAP (+5.47%) on TJ4DRadSet and 66.69% mAP on VoD.
 
 ## Background & Motivation
 
-**Background**: 4D millimeter-wave radar has emerged as a critical sensor for autonomous driving perception due to its all-weather operability, long range, and low cost. However, its point clouds are sparse and noisy, necessitating fusion with cameras. Existing methods (CRN, SGDet3D, CVFusion, etc.) have made preliminary progress in multimodal fusion within BEV space.
+**Background**: 4D millimeter-wave radar has become an essential sensor for autonomous driving perception due to its all-weather capability, long range, and low cost. However, its point clouds are sparse and noisy, necessitating fusion with cameras. Existing methods (CRN, SGDet3D, CVFusion, etc.) have made preliminary progress in multi-modal fusion within the BEV space.
 
-**Challenge 1 — Inaccurate Depth Estimation**: Existing frameworks (SGDet3D, RCBEVDet) apply absolute depth supervision only to foreground points, resulting in sparse supervision, poor panoramic depth estimation quality, and inaccurate 3D localization. Although powerful relative depth models (Metric3D) offer strong generalization, how to effectively leverage their capabilities for accurate panoramic absolute depth remains unresolved.
+**Challenge 1—Inaccurate Depth Estimation**: Existing frameworks (SGDet3D, RCBEVDet) only apply absolute depth supervision to foreground points, leading to sparse depth supervision, poor panoramic depth estimation quality, and inaccurate 3D localization. Meanwhile, although powerful relative depth models (Metric3D) possess excellent generalization capabilities, how to effectively leverage them to obtain accurate panoramic absolute depth remains unresolved.
 
-**Challenge 2 — Pose-Free Temporal Fusion**: Temporal information is critical for detecting occluded objects, but mainstream datasets such as TJ4DRadSet lack ego-vehicle pose. Existing methods rely on simple BEV feature concatenation with limited effectiveness.
+**Challenge 2—Pose-less Temporal Fusion**: Temporal information is crucial for detecting occluded objects, but mainstream datasets like TJ4DRadSet lack ego-vehicle poses. Existing methods rely on simple BEV feature concatenation, yielding limited effectiveness.
 
-**Challenge 3 — Small Object Detection**: Distant small objects such as cyclists may be visible in images yet produce no radar returns, making it necessary to rely on visual priors. Existing Transformer-based approaches extract instance proposals but are incompatible with CNN frameworks.
+**Challenge 3—Small Object Detection**: Small objects such as distant cyclists may be visible in images but lack radar echoes entirely, necessitating reliance on visual priors. Existing Transformer solutions extract instance proposals but are incompatible with CNN frameworks.
 
 ## Method
 
 ### Overall Architecture
 
-R4Det is a progressive BEV feature purification pipeline: (1) **PDF** generates high-quality BEV features from multimodal inputs; (2) **DGTF** performs pose-free temporal alignment and gated aggregation; (3) **IGDR** refines BEV features using 2D instance prototypes before the 3D detection head. The backbone follows the BEV paradigm of SGDet3D (Neighborhood Cross-Attention + LSS).
+R4Det is a progressive BEV feature purification pipeline: (1) **PDF** generates high-precision BEV features from multi-modal inputs; (2) **DGTF** performs pose-less temporal alignment + gated aggregation; (3) **IGDR** purifies BEV features using 2D instance prototypes → 3D detection head. The base is the BEV paradigm of SGDet3D (Neighborhood Cross-Attention + LSS).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Multi-modal Input<br/>Camera Image + 4D Radar Points"] --> PDF
+    subgraph PDF["Panoramic Depth Fusion (PDF)"]
+        direction TB
+        B["Triple Depth Supervision<br/>Probability + Basic Model Guidance + Structural Ranking"] --> C["High-precision Panoramic Depth → BEV Features"]
+    end
+    PDF --> DGTF
+    H["Historical Hidden State H(t−1)"] -.-> DGTF
+    subgraph DGTF["Deformable Gated Temporal Fusion (DGTF)"]
+        direction TB
+        D["Motion-aware Alignment<br/>DCNv2 Pose-less Historical BEV Alignment"] --> E["Gated Temporal Update<br/>GRU Gated Fusion of New/Old Features"]
+    end
+    DGTF --> IGDR
+    R["2D Instance Branch<br/>RPN Extracts Instance Prototypes"] -.-> IGDR
+    subgraph IGDR["Instance-Guided Dynamic Refinement (IGDR)"]
+        direction TB
+        F["Instance Prototypes Broadcast to BEV"] --> G["Prototype-guided Dynamic Calibration<br/>+ Foreground Gating only for Instance Areas"]
+    end
+    IGDR --> O["3D Detection Head → 3D Box Output"]
+```
 
 ### Key Designs
 
-1. **Panoramic Depth Fusion (PDF)**:
+**1. Panoramic Depth Fusion (PDF): Expanding sparse depth supervision from "foreground-only" to triple supervision covering the full scene with coherent structure.**
 
-    - **Function**: Comprehensively improves depth estimation quality through triple supervision, ensuring both accuracy and structural coherence.
-    - **Probabilistic Supervision**: Constructs a Gaussian target distribution from sparse LiDAR depth and minimizes KL divergence:
-    $\mathcal{L}_{prob} = \frac{1}{|\mathcal{M}_{\text{sparse}}|} \sum_{i \in \mathcal{M}_{\text{sparse}}} \text{KL}(\mathcal{G}(d_{g_i}^{\text{sparse}}) \| \mathcal{P}_i)$
-    - **Foundation Model-Guided Supervision**: Applies Smooth L1 absolute depth loss using both sparse radar and dense Metric3D pseudo-GT, balancing keypoint accuracy and full-scene coverage.
-    - **Structural Ranking Supervision** (core innovation): Pairwise relative depth ranking loss $\mathcal{L}_{pair}(i,j) = \text{Softplus}(-s_{ij}(\hat{d}_i - \hat{d}_j))$, combined with a depth-adaptive dynamic threshold to filter noise in flat regions:
-    $\tau_{ij} = \max(\tau_{abs},\, \tau_{rel} \cdot (d_{g_i}^{\text{dense}} + d_{g_j}^{\text{dense}})/2)$
-    - **Foreground-Biased Sampling**: $\mathcal{L}_{edge}$ samples between the dilated mask ring (outside object boundaries) and object interiors, enforcing the network to learn sharp depth discontinuities.
-    - **Design Motivation**: Probabilistic or absolute supervision alone provides only local guidance; combining ranking constraints yields structurally coherent panoramic depth.
+Addressing the pain point that frameworks like SGDet3D and RCBEVDet only supervise absolute depth on foreground points, leaving background and distant areas unguided. PDF stacks three complementary supervisions. The first is **Probability Supervision**: using sparse LiDAR depth to construct a Gaussian target distribution for each labeled pixel, and making the predicted depth probability $\mathcal{P}_i$ approach it by minimizing KL divergence:
 
-2. **Deformable Gated Temporal Fusion (DGTF)**:
+$$\mathcal{L}_{prob} = \frac{1}{|\mathcal{M}_{\text{sparse}}|} \sum_{i \in \mathcal{M}_{\text{sparse}}} \text{KL}(\mathcal{G}(d_{g_i}^{\text{sparse}}) \| \mathcal{P}_i)$$
 
-    - **Function**: Achieves temporal BEV feature alignment and fusion without relying on ego-vehicle pose.
-    - **Mechanism**: Spatial alignment and temporal updating are explicitly decoupled into two branches.
-    - **Motion-Aware Alignment Branch**: Employs DCNv2 to learn deformable offsets $\Delta p$ and modulation masks $m$, predicted from $X_t$ and $H_{t-1}$:
-    $\tilde{H}_{t-1} = \text{DCNv2}(H_{t-1}, \Delta p, m)$
-      The learned offsets implicitly reconstruct relative motion flow, while the modulation masks suppress unreliable background regions.
-    - **Gated Temporal Update Branch**: Follows a GRU-style design—reset gate $r_t$ filters historical information, update gate $z_t$ balances old and new information:
-    $H_t = (1 - z_t) \odot X_t + z_t \odot \tilde{H}_t$
-    - **Design Motivation**: Conventional RNNs handle alignment and updating simultaneously with reduced efficiency; the decoupled design of DCN for spatial correction and GRU for temporal evolution is more precise.
+This ensures depth precision at key points. The second is **Foundation Model Guided Supervision**: applying Smooth L1 absolute depth loss using both sparse radar and dense Metric3D pseudo-GT. The former provides keypoint precision while the latter covers the full scene.
 
-3. **Instance-Guided Dynamic Refinement (IGDR)**:
+However, the first two supervisions only provide constraints at the "point-wise" level; the overall relative structure of the depth map remains unassured. This is the core innovation of PDF—**Structural Ranking Supervision**. It applies a relative depth ranking loss to pairs of pixels, where $s_{ij}$ indicates whether $i$ should be closer than $j$ in the pseudo-GT:
 
-    - **Function**: Dynamically calibrates BEV features using clean 2D instance semantic priors to address instance overlap contamination and ambiguity in distant small objects.
-    - **Instance Semantic Prior Construction**: Instance features $E_{features}$ are extracted from a 2D RPN, pooled and projected to obtain instance prototypes $E_{proj}$, then broadcast into BEV space via Softmax-weighted fusion over the LSS-projected spatial distribution $S_{BEV}$:
-    $E_{BEV} = \text{BMM}(\text{Softmax}(S_{BEV}/\tau),\, E_{proj})$
-    - **Prototype-Guided Dynamic Calibration** (core innovation): $E_{BEV}$ is passed through a Conv layer to predict per-location affine parameters $(\gamma_{BEV}, \beta_{BEV})$, which perform feature-wise affine transformation on the potentially noisy $F_{RC}$:
-    $F_{calibrated} = F_{RC} \odot \gamma_{BEV} + \beta_{BEV}$
-    - **Foreground-Gated Fusion**: The sum of $S_{BEV}$ across all instances is passed through a Gate-conv and Sigmoid to produce gate $G_{bg}$, applying calibration only within instance regions:
-    $F_{final} = (1 - G_{bg}) \odot F_{RC} + G_{bg} \odot F_{calibrated}$
-    - **Design Motivation**: Directly fusing instance features introduces background noise; the indirect approach of generating calibration parameters from instance prototypes is more robust.
+$$\mathcal{L}_{pair}(i,j) = \text{Softplus}(-s_{ij}(\hat{d}_i - \hat{d}_j))$$
+
+To prevent noisy ranking signals from pairs with similar depths in flat regions, a depth-adaptive dynamic threshold is used: $\tau_{ij} = \max(\tau_{abs},\, \tau_{rel} \cdot (d_{g_i}^{\text{dense}} + d_{g_j}^{\text{dense}})/2)$. In sampling, **Foreground Bias** is utilized: $\mathcal{L}_{edge}$ specifically samples pairs between the dilated mask ring (outside object boundaries) and the object interior, forcing the network to learn sharp depth transitions at edges.
+
+**2. Deformable Gated Temporal Fusion (DGTF): Aligning and fusing historical BEV features on datasets without ego-vehicle poses.**
+
+DGTF explicitly decouples "alignment" and "update" into two branches. The **Motion-aware Alignment Branch** uses DCNv2 to predict deformable offsets $\Delta p$ and a modulation mask $m$ from the current frame $X_t$ and historical hidden state $H_{t-1}$, then samples historical features based on the offsets:
+
+$$\tilde{H}_{t-1} = \text{DCNv2}(H_{t-1}, \Delta p, m)$$
+
+The learned offsets implicitly reconstruct the relative motion flow, while the modulation mask suppresses unreliable background regions. The **Gated Temporal Update Branch** then fuses the aligned features using a GRU-style gate: a reset gate $r_t$ decides how much history to discard, and an update gate $z_t$ balances contributions: $H_t = (1 - z_t) \odot X_t + z_t \odot \tilde{H}_t$.
+
+**3. Instance-Guided Dynamic Refinement (IGDR): Using clean 2D instance semantics as "templates" to calibrate contaminated BEV features and recover distant small targets.**
+
+IGDR uses relatively clean instance semantics from a 2D detection branch to generate calibration parameters. Instance prototypes $E_{proj}$ are extracted from the 2D RPN and broadcast back to BEV space using Softmax weighting based on the LSS projection distribution $S_{BEV}$:
+
+$$E_{BEV} = \text{BMM}(\text{Softmax}(S_{BEV}/\tau),\, E_{proj})$$
+
+The core innovation is **Prototype-guided Dynamic Calibration**: $E_{BEV}$ is not added directly; instead, it predicts position-wise affine parameters $(\gamma_{BEV}, \beta_{BEV})$ to perform a feature-wise affine transformation on the fused features $F_{RC}$: $F_{calibrated} = F_{RC} \odot \gamma_{BEV} + \beta_{BEV}$. Finally, **Foreground Gating** ensures modifications only occur in relevant areas by generating a gate $G_{bg}$ through Gate-conv + Sigmoid on all instance $S_{BEV}$ sums:
+
+$$F_{final} = (1 - G_{bg}) \odot F_{RC} + G_{bg} \odot F_{calibrated}$$
 
 ### Loss & Training
 
-- **Depth Loss**: $\mathcal{L}_{depth} = \lambda_1 \mathcal{L}_{prob} + \lambda_2 \mathcal{L}_{found} + \lambda_3 \mathcal{L}_{relative}$, with weights $\lambda_1=0.1, \lambda_{abs}=0.01, \lambda_{dense}=0.03, \lambda_3=0.05$
-- **Two-Stage Training**: (i) 15 epochs of spatially-aware pretraining (DGTF/IGDR/detection head frozen) to initialize PDF and the 2D instance branch; (ii) 15 epochs of full end-to-end fine-tuning.
+- **Depth Loss**: $\mathcal{L}_{depth} = \lambda_1 \mathcal{L}_{prob} + \lambda_2 \mathcal{L}_{found} + \lambda_3 \mathcal{L}_{relative}$, with weights $\lambda_1=0.1, \lambda_{abs}=0.01, \lambda_{dense}=0.03, \lambda_3=0.05$.
+- **Training Strategy**: (i) 15-epoch space-aware pre-training (freezing DGTF/IGDR/head) to initialize PDF and 2D instance branches; (ii) 15-epoch end-to-end fine-tuning.
 - **Optimizer**: AdamW, lr=4e-4, cosine decay.
-- **IGDR Training Strategy**: Strictly uses dynamically generated proposals from the 2D detector rather than GT bounding boxes, avoiding exposure bias.
+- **IGDR Strategy**: Uses proposals dynamically generated by the 2D detector rather than GT bboxes to avoid exposure bias.
 
 ## Key Experimental Results
 
@@ -95,7 +111,7 @@ R4Det is a progressive BEV feature purification pipeline: (1) **PDF** generates 
 |---|---|---|---|---|---|
 | SGDet3D | R+C | 41.82 | 47.16 | 51.30 | Baseline |
 | CVFusion | R+C | 40.00 | 44.07 | 49.41 | - |
-| **R4Det** | **R+C** | **47.29** | **54.07** | **62.84** | **+5.47/+6.91** |
+| **Ours** | **R+C** | **47.29** | **54.07** | **62.84** | **+5.47/+6.91** |
 
 **VoD Validation Set**:
 
@@ -103,63 +119,63 @@ R4Det is a progressive BEV feature purification pipeline: (1) **PDF** generates 
 |---|---|---|---|---|
 | SGDet3D | R+C | 59.75 | 77.42 | 9.2 |
 | CVFusion | R+C | 65.41 | 82.42 | 5.4 |
-| **R4Det** | **R+C** | **66.69** | **83.68** | **8.3** |
+| **Ours** | **R+C** | **66.69** | **83.68** | **8.3** |
 
 ### Ablation Study
 
-**Incremental Module Stacking (TJ4DRadSet Val)**:
+**Module Stacking (TJ4DRadSet Val)**:
 
-| PDF | DGTF | IGDR | mAP$_{BEV}$ | mAP$_{3D}$ | Note |
+| PDF | DGTF | IGDR | mAP$_{BEV}$ | mAP$_{3D}$ | Description |
 |---|---|---|---|---|---|
-| | | | 45.15 | 39.86 | SGDet3D baseline |
-| ✓ | | | 46.86 | 41.41 | +1.71 (depth improvement) |
-| ✓ | ✓ | | 50.41 | 44.86 | +3.55 (temporal fusion) |
-| ✓ | ✓ | ✓ | **54.07** | **47.29** | +3.66 (instance refinement) |
+| | | | 45.15 | 39.86 | SGDet3D Baseline |
+| ✓ | | | 46.86 | 41.41 | +1.71 (Depth Gain) |
+| ✓ | ✓ | | 50.41 | 44.86 | +3.55 (Temporal Gain) |
+| ✓ | ✓ | ✓ | **54.07** | **47.29** | +3.66 (Instance Gain) |
 
 **DGTF Module Ablation**:
 
-| Configuration | BEV mAP | 3D mAP | Note |
+| Config | BEV mAP | 3D mAP | Description |
 |---|---|---|---|
-| No temporal | 46.86 | 41.41 | Baseline |
-| +Concat | 47.82 | 42.01 | Simple concatenation |
-| +DCN | 48.86 | 43.32 | Deformable alignment |
+| No Temporal | 46.86 | 41.41 | Baseline |
+| +Concat | 47.82 | 42.01 | Simple Concat |
+| +DCN | 48.86 | 43.32 | Deformable Alignment |
 | **+DCN+ConvGRU** | **50.41** | **44.86** | Full DGTF |
 
 ### Key Findings
 
-- Cyclist (small object) achieves the most significant improvement: **+11.54 AP** (51.30→62.84), validating the effectiveness of IGDR for small objects.
-- All three modules are fully plug-and-play: applying them to BEVFusion/RCBEVDet yields improvements of **+6.34/+5.34 mAP**, respectively.
-- ConvGRU in DGTF contributes the largest single gain (+3.45 3D mAP), while SE modules prove detrimental.
-- Conv calibrator in IGDR outperforms Attention and MLP calibrators, indicating that local spatial patterns are more effective than global attention.
-- The edge ranking loss (boundary sampling) in PDF is critical for sharp depth boundary estimation.
+- Cyclist (small object) improvement is most significant: **+11.54 AP** (51.30→62.84), validating IGDR's effectiveness.
+- Three modules are fully plug-and-play: applying them to BEVFusion/RCBEVDet yields **+6.34/+5.34 mAP** gains.
+- ConvGRU in DGTF provides the largest gain (+3.45 3D mAP).
+- The Conv calibrator in IGDR > Attention calibrator > MLP calibrator, suggesting local spatial patterns are more effective than global attention.
+- The edge ranking loss (boundary sampling) in PDF is critical for sharp depth edges.
 
 ## Highlights & Insights
 
-1. **Problem-Driven Modular Design**: Three clearly defined technical challenges map to three decoupled modules, offering both engineering and research value.
-2. **Pose-Free Temporal Fusion**: The DCN+GRU decoupled design elegantly resolves the challenge of temporal fusion without ego-vehicle pose.
-3. **Boundary Sampling in Structural Ranking Loss**: The dilated ring sampling strategy compels the network to focus on depth discontinuity boundaries, representing a practically valuable technique.
-4. **Thorough Plug-and-Play Validation**: Effectiveness is verified not only within the proposed framework but also through successful transfer to BEVFusion and RCBEVDet, enhancing credibility.
+1. **Problem-Driven Modular Design**: Three distinct technical challenges → three decoupled modules, offering both engineering and research value.
+2. **Pose-less Temporal Fusion**: The decoupled DCN+GRU design elegantly solves the temporal fusion challenge when ego-vehicle poses are absent.
+3. **Boundary Sampling in Structural Ranking**: The dilated ring sampling strategy forcing the network to focus on depth jump edges is a practical and valuable technique.
+4. **Thorough Plug-and-Play Validation**: Not only validated in its own framework but also successfully ported to BEVFusion/RCBEVDet, enhancing credibility.
 
 ## Limitations & Future Work
 
-1. The approach relies on Metric3D as pseudo-GT; its intrinsic errors propagate into depth supervision.
-2. The GRU-style recurrence in DGTF may suffer from information decay over long temporal horizons; Transformer-based temporal modeling warrants exploration.
-3. The 2D instance branch in IGDR depends on RPN quality; a weaker detector may limit refinement effectiveness.
-4. Evaluation is conducted only on two relatively small-scale datasets (TJ4DRadSet and VoD); performance on large-scale benchmarks such as nuScenes remains unverified.
+1. Reliance on Metric3D as pseudo-GT means its errors may propagate to depth supervision.
+2. DGTF uses GRU-like recursion, which may suffer from information decay over long sequences; Transformer-based temporal modeling could be explored.
+3. IGDR's 2D instance branch depends on RPN quality; weak detectors may limit refinement.
+4. Validated only on TJ4DRadSet and VoD; evaluation on larger datasets like nuScenes is needed.
 
 ## Related Work & Insights
 
-- **SGDet3D**: Direct baseline; R4Det adds three modules on top of its BEV framework.
+- **SGDet3D**: Direct baseline; R4Det adds three modules to its BEV framework.
 - **Metric3D**: Provides dense pseudo-depth GT, enabling panoramic depth supervision.
-- **BEVFormer**: Performs temporal fusion in BEV but relies on ego pose, complementing DGTF's pose-free approach.
-- **Insights**: (a) "Calibrating the main feature stream using clean parallel features" (IGDR) is a general strategy for handling BEV feature contamination; (b) Combining absolute, relative, and structural ranking supervision for depth estimation is generalizable to other depth-related tasks.
+- **BEVFormer**: Performs temporal fusion in BEV but relies on ego-pose, complementing DGTF's pose-less approach.
+- **Insights**: (a) "Using clean parallel features to calibrate the main feature stream" (IGDR) is a generalizable strategy for handling BEV feature contamination. (b) Combining absolute, relative, and structural ranking supervisions can be extended to other depth tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Each of the three modules contributes innovations, with DGTF and IGDR being particularly elegant in design)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (State-of-the-art on two datasets + plug-and-play validation + detailed per-module ablation)
-- Writing Quality: ⭐⭐⭐⭐ (Clear problem-solution correspondence with well-structured ablation design)
-- Value: Pending evaluation
+- Novelty: ⭐⭐⭐⭐ (Innovation in all three modules, especially DGTF and IGDR)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (SOTA on two datasets + plug-and-play validation)
+- Writing Quality: ⭐⭐⭐⭐ (Clear problem-solution mapping)
+- Value: TBD
 
 <!-- RELATED:START -->
 
@@ -167,11 +183,11 @@ R4Det is a progressive BEV feature purification pipeline: (1) **PDF** generates 
 
 ## Related Papers
 
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
+- [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 - [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
-- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
-- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
 
 </div>
 

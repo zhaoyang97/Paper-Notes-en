@@ -2,139 +2,147 @@
 title: >-
   [Paper Note] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model
 description: >-
-  [CVPR 2026][Information Retrieval & RAG][Multimodal Embedding] MuCo proposes a multi-turn dialogue-based contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associat…
+  [CVPR 2026][Information Retrieval & RAG][Paper Note] MuCo proposes a multi-turn contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associated query-target pairs in a single forward pass. This significantly improves training efficiency and achieves SOTA performance on MMEB and M-BEIR retrieval benchmarks.
 tags:
-  - "CVPR 2026"
-  - "Information Retrieval & RAG"
-  - "Multimodal Embedding"
-  - "Contrastive Learning"
-  - "Multi-turn Dialogue"
-  - "Retrieval"
-  - "Multimodal Large Language Model"
+  - CVPR 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: b4c5ad536357c9f8
+content_hash: 535d728bae23f0e8
 ---
-
 # MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.06393](https://arxiv.org/abs/2602.06393)  
 **Code**: [https://github.com/naver-ai/muco](https://github.com/naver-ai/muco)  
-**Area**: Information Retrieval
-**Keywords**: Multimodal Embedding, Contrastive Learning, Multi-turn Dialogue, Retrieval, Multimodal Large Language Model
+**Area**: Information Retrieval  
+**Keywords**: Multimodal Embedding, Contrastive Learning, Multi-turn Dialogue, Retrieval, Multimodal Large Language Models
 
 ## TL;DR
 
-MuCo proposes a multi-turn dialogue-based contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associated query-target pairs within a single forward pass, substantially improving training efficiency and achieving state-of-the-art performance on the MMEB and M-BEIR retrieval benchmarks.
+MuCo proposes a multi-turn contrastive learning framework that leverages the conversational capabilities of MLLMs to process multiple associated query-target pairs in a single forward pass. This significantly improves training efficiency and achieves SOTA performance on MMEB and M-BEIR retrieval benchmarks.
 
 ## Background & Motivation
 
-**Background**: Universal Multimodal Embedding Models are built upon multimodal large language models (MLLMs) and typically employ contrastive learning to align query-target pair representations across modalities. These models have achieved notable success in tasks such as image-text retrieval and visual question answering retrieval.
+**Background**: Universal Multimodal Embedding Models, built on Multimodal Large Language Models (MLLMs), typically employ contrastive learning to align representations of query-target pairs across different modalities. These models have achieved significant success in tasks such as image-text retrieval and visual question-answering retrieval.
 
-**Limitations of Prior Work**: Existing methods are built on a single-turn paradigm, in which each query-target pair is treated as an independent data point. This gives rise to two core problems: (1) computational inefficiency, as each pair requires a separate forward pass; and (2) failure to capture the latent contextual relationships among multiple queries associated with the same context (e.g., the same image).
+**Limitations of Prior Work**: Existing methods are based on a "single-turn" paradigm, where each query-target pair is treated as an independent data point. This results in two core issues: (1) low computational efficiency, as each pair requires a separate forward pass; and (2) neglect of potential contextual relationships between multiple queries associated with the same context (e.g., the same image).
 
-**Key Challenge**: MLLMs inherently possess multi-turn dialogue capabilities, yet existing multimodal embedding training paradigms make no use of this property. The single-turn paradigm limits the effective batch size and prevents the model from capturing shared contextual information across multiple semantic dimensions associated with the same image.
+**Key Challenge**: MLLMs inherently possess multi-turn dialogue capabilities, yet existing multimodal embedding training paradigms completely fail to exploit this feature. The single-turn paradigm limits the effective batch size and fails to capture shared contextual information across multiple semantic dimensions associated with the same image.
 
-**Goal**: To design a training framework capable of processing multiple groups of query-target pairs associated with the same image in a single forward pass, extracting multiple embedding representations simultaneously, thereby amplifying the effective batch size and enhancing the coherence of cross-modal representations.
+**Goal**: To design a training framework capable of processing multiple sets of query-target pairs associated with the same image in a single forward pass while extracting multiple embedding representations, thereby amplifying the effective batch size and enhancing the coherence of cross-modal representations.
 
-**Key Insight**: The authors observe that MLLMs natively support multi-turn dialogue at inference time, with each turn's response conditioned on a shared context. By treating each query-target pair in embedding learning as one turn of a dialogue, multiple embeddings can be extracted within a single forward pass.
+**Key Insight**: It is observed that MLLMs support multi-turn dialogues during inference, where each response is conditioned on a shared context. If each query-target pair in embedding learning is analogized to a turn of interaction in a dialogue, multiple embeddings can be extracted in one forward pass.
 
-**Core Idea**: Upgrade contrastive learning from the "independent single-turn" paradigm to a "multi-turn dialogue" paradigm—encoding multiple associated queries and targets jointly within a single MLLM forward pass while sharing image context representations, thereby achieving simultaneous gains in training efficiency and representation quality.
+**Core Idea**: Upgrade contrastive learning from "single-turn independent" to "multi-turn dialogue." By simultaneously encoding multiple associated queries and targets in a single MLLM forward pass and sharing the image context representation, both training efficiency and representation quality are improved.
 
 ## Method
 
 ### Overall Architecture
 
-The overall pipeline of MuCo is as follows: given an image and its associated multiple query-target pairs (e.g., descriptions across different dimensions, question-answer pairs of varying granularity), these are organized into a multi-turn dialogue format and fed into an MLLM for a single forward pass. The model extracts the EOS token at the end of each dialogue turn as the embedding for that turn, yielding multiple query embeddings and target embeddings. All embeddings are trained with in-batch negative sampling under the contrastive learning framework.
+MuCo addresses the inefficiency of single-turn contrastive learning. Traditional paradigms treat each query-target pair as an independent data point, leading to redundant image encoding and batch size limitations. MuCo analogizes each pair in embedding learning to a "turn" in a conversation. Given an image and its multiple associated query-target pairs, they are organized into a multi-turn dialogue and fed into the MLLM for a **single** forward pass. The model extracts embeddings at the EOS position of each turn. Consequently, one forward pass yields multiple query and target embeddings, which are then used in a contrastive loss with in-batch negative sampling. This pipeline requires almost no modifications to the MLLM architecture, only changing data organization and embedding extraction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["M3T Multimodal Multi-turn Dataset<br/>One image with K query-target pairs"] --> B
+    subgraph MC["Multi-turn Contrastive Learning"]
+        direction TB
+        B["Organize into K-turn dialogue"] --> C["Single MLLM forward pass<br/>Image context shared via KV-cache"]
+    end
+    MC --> D
+    subgraph PL["EOS pooling + L2 Normalization"]
+        direction TB
+        D["Extract embeddings at each turn's EOS"] --> E["L2 normalize to unit sphere"]
+    end
+    PL --> F["InfoNCE Contrastive Loss<br/>Effective batch size scaled by K"]
+```
 
 ### Key Designs
 
-1. **Multi-Turn Contrastive Learning**:
+**1. Multi-turn Contrastive Learning: Generating $K$ times the contrastive signals per pass**
 
-    - **Function**: Upgrades traditional single-turn independent query-target contrastive learning to joint training with multi-turn shared context.
-    - **Mechanism**: Given an image $I$ and $K$ associated query-target pairs $\{(q_k, t_k)\}_{k=1}^K$, these are organized as a multi-turn dialogue input to the MLLM. The query and target of each turn are encoded into embedding vectors, and all $K$ embeddings are obtained within a single forward pass. This is equivalent to amplifying the effective batch size by a factor of $K$, since each sample contributes $K$ contrastive pairs rather than the single pair in conventional methods.
-    - **Design Motivation**: By leveraging KV-cache sharing in the MLLM's dialogue mechanism, repeated encoding of the image context is avoided, substantially reducing computational overhead. Additionally, inter-turn contextual dependencies help the model learn more coherent multi-dimensional representations.
+The bottleneck of the single-turn paradigm is that each query-target pair requires a separate forward pass, repeatedly re-encoding the image context, which is slow and limits the effective batch size. The MuCo mechanism takes an image $I$ and $K$ associated pairs $\{(q_k, t_k)\}_{k=1}^K$, organizes them into a $K$-turn dialogue for simultaneous input, and encodes each query and target into embeddings. A single forward pass retrieves all $K$ pairs of embeddings:
 
-2. **M3T Multimodal Multi-Turn Dataset**:
+$$\{(q_k, t_k)\}_{k=1}^K \xrightarrow{\text{Single Forward Pass}} \{(\mathbf{e}_{q_k}, \mathbf{e}_{t_k})\}_{k=1}^K$$
 
-    - **Function**: Provides training data for multi-turn contrastive learning.
-    - **Mechanism**: A multimodal multi-turn dataset, M3T, is constructed comprising 5 million samples. Each sample contains one image and multiple associated query-target pairs, covering diverse task types including image-text retrieval, visual question answering, and image captioning. The dataset is assembled by integrating and augmenting existing data sources, ensuring that multiple pairs associated with the same image span different semantic dimensions.
-    - **Design Motivation**: Existing multimodal embedding training datasets are all in single-turn format and cannot be directly used for multi-turn contrastive learning. M3T fills this gap and provides the foundation for large-scale multi-turn training.
+This effectively scales the batch size by $K$, as each sample contributes $K$ contrastive pairs. Efficiency is gained by reusing the KV-cache; the image context is encoded once and shared across subsequent turns, eliminating $(K-1)/K$ of redundant image computation. Additionally, multi-turn contextual dependencies force the model to learn coherent representations across different semantic dimensions of the same image.
 
-3. **Embedding Extraction and Normalization Strategy**:
+**2. M3T Multimodal Multi-turn Dataset: Raw materials for multi-turn training**
 
-    - **Function**: Efficiently extracts comparable embedding vectors from the multi-turn outputs of the MLLM.
-    - **Mechanism**: An EOS token pooling strategy is adopted, extracting the token representation at the end position of each dialogue turn as the embedding for that turn. The extracted embeddings are L2-normalized before being used in the contrastive loss computation. At inference time, the model supports both single-turn queries (compatible with existing benchmarks) and multi-turn batch queries.
-    - **Design Motivation**: EOS pooling naturally corresponds to the end of each turn's response in the dialogue, capturing the most semantically complete representation; normalization ensures geometric consistency in the embedding space.
+Multi-turn contrastive learning requires "one image with multiple pairs" data, which is not provided by existing single-turn datasets. The authors constructed the M3T (Multimodal Multi-Turn) dataset with 5 million samples. Each sample contains one image and multiple associated query-target pairs covering tasks like image-text retrieval, VQA, and captioning. These are integrated from existing sources and expanded to ensure that multiple pairs under the same image focus on different semantic dimensions, providing comparative value across turns.
+
+**3. EOS pooling + L2 Normalization: Extracting comparable embeddings from multi-turn outputs**
+
+As multi-turn dialogues result in long hidden states, a specific position must represent the semantics of each turn. MuCo performs pooling at the EOS token of each turn, where the response is complete and semantics are most integrated. The extracted representations are L2-normalized to ensure all embeddings reside on the same unit sphere with consistent geometric scales. During inference, this approach is compatible with both single-turn queries used in standard benchmarks and multi-turn batch queries.
 
 ### Loss & Training
 
-MuCo employs the standard InfoNCE contrastive loss, with the effective batch size amplified by a factor of $K$ (the number of turns per sample). Specifically, contrastive learning with in-batch negative sampling is applied to all query-target pairs extracted across all turns and all samples in the batch. Training is conducted with DeepSpeed for distributed training, supporting both 2B and 7B model scales.
+The training objective is the standard InfoNCE contrastive loss, with the critical difference that the effective batch size is amplified by $K$. All query-target pairs extracted from all samples and turns within a batch participate in in-batch negative sampling. Each query treats all targets in the batch other than its corresponding target as negative examples. Training is performed using DeepSpeed for distribution, covering model scales of 2B and 7B.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Benchmark | Metric | MuCo-2B | MuCo-7B | Prev. SOTA | Gain |
-|-----------|--------|---------|---------|------------|------|
+|------|------|---------|---------|----------|------|
 | MMEB | Avg Score | 70.1 | 74.2 | ~69 | +1.1 / +5.2 |
-| M-BEIR | Recall@10 | — | SOTA | — | Significant |
+| M-BEIR | Recall@10 | - | SOTA | - | Significant |
 
 ### Ablation Study
 
-| Configuration | MMEB Score | Notes |
-|---------------|-----------|-------|
+| Configuration | MMEB Score | Description |
+|------|-----------|------|
 | Single-turn baseline | ~68 | Traditional single-turn contrastive learning |
 | MuCo (K=2) | ~69.5 | 2 dialogue turns per sample |
-| MuCo (K=4) | 70.1 | 4 turns per sample, optimal configuration |
-| MuCo w/o M3T | ~68.5 | Without M3T dataset |
-| MuCo full (7B) | 74.2 | Full configuration with larger model |
+| MuCo (K=4) | 70.1 | 4 dialogue turns per sample, optimal config |
+| MuCo w/o M3T | ~68.5 | Without using M3T dataset |
+| MuCo full (7B) | 74.2 | Full configuration + Large model |
 
 ### Key Findings
 
-- The performance gain from multi-turn contrastive learning grows with the number of turns $K$ but saturates, with approximately 4 turns being the optimal balance.
-- The multi-turn format of the M3T dataset is critical to performance gains; applying the multi-turn framework with single-turn data yields limited improvement.
-- The 2B model already achieves 70.1, and the 7B model further improves to 74.2, demonstrating the framework's effectiveness across different model scales.
-- Training efficiency is substantially improved: compared to processing $K$ times as many single-turn samples, MuCo reduces image encoding computation by approximately $(K-1)/K$.
+- Improvements from multi-turn contrastive learning scale with the number of turns $K$, reaching an optimal balance at approximately $K=4$.
+- The multi-turn format of the M3T dataset is crucial; using the multi-turn framework with single-turn data yields limited gains.
+- The 2B model reaches a score of 70.1, and the 7B model further improves to 74.2, demonstrating the framework's effectiveness across different scales.
+- Training efficiency is significantly enhanced: compared to processing $K$ times the number of single-turn samples, MuCo reduces image encoding computation by approximately $(K-1)/K$.
 
 ## Highlights & Insights
 
-- The notion of **dialogue as batching** is particularly elegant: the MLLM's multi-turn conversational capability is reinterpreted as "batch embedding extraction"—a conceptually simple idea with pronounced empirical impact and virtually no additional architectural modification.
-- The shared image context design naturally encourages the model to learn multi-faceted image representations, as different queries attend to different semantic dimensions of the same image, facilitating a richer embedding space.
-- This paradigm is transferable to any MLLM-based embedding learning scenario—such as document retrieval or code retrieval—so long as multiple query-target pairs can be constructed for the same context.
+- The **dialogue-as-batch** concept is ingenious: reinterpreting the multi-turn capability of MLLMs as "batch embedding extraction" is simple yet effective, requiring nearly no architectural changes.
+- Sharing image context naturally encourages the model to learn multifaceted representations of an image. Different queries focus on different semantic dimensions of the same image, facilitating the learning of a richer embedding space.
+- This approach can be migrated to any MLLM-based embedding learning scenario, such as document or code retrieval, provided that multiple query-target pairs can be constructed for a single context.
 
 ## Limitations & Future Work
 
-- Multi-turn training requires multiple high-quality query-target pairs per sample, resulting in non-trivial data construction costs.
-- The scale and diversity of the current M3T dataset remain improvable; a larger-scale multi-turn dataset may yield further gains.
-- The paper primarily validates on retrieval tasks; the quality of embeddings on generative tasks (e.g., VQA generation, image captioning) remains to be explored.
-- Whether the ordering of turns affects embedding quality is not analyzed; the sensitivity to turn permutation warrants further investigation.
+- Multi-turn training requires multiple high-quality query-target pairs per sample, which increases the cost of data construction.
+- The scale and diversity of the current M3T dataset still have room for improvement; larger-scale multi-turn data may yield further benefits.
+- Validation was primarily focused on retrieval tasks; embedding quality in generative tasks (e.g., VQA generation, captioning) remains to be explored.
+- Whether the order of turns affects embedding quality was not deeply analyzed regarding sensitivity to turn permutation.
 
 ## Related Work & Insights
 
-- **vs. E5-V / VLM2Vec**: These methods employ single-turn contrastive learning to train multimodal embeddings, encoding each pair independently. MuCo obtains more contrastive signal under equivalent computation via the multi-turn mechanism, achieving gains in both efficiency and performance.
-- **vs. CLIP**: CLIP is the canonical approach for cross-modal contrastive learning but relies on separate image and text encoders. MuCo is built on a unified MLLM, natively supporting multimodal fusion reasoning.
-- **vs. UniIR**: UniIR unifies multiple retrieval tasks but remains a single-turn training paradigm. MuCo's multi-turn strategy can serve as a drop-in upgrade for its training efficiency.
-- The core principle of the framework—*leveraging a model's existing capabilities (dialogue) to improve training efficiency*—offers broader inspiration for other MLLM fine-tuning scenarios.
+- **vs E5-V / VLM2Vec**: These methods use single-turn contrastive learning where each pair is encoded independently. MuCo achieves higher efficiency and performance by obtaining more contrastive signals under the same computational constraints.
+- **vs CLIP**: CLIP is a classic cross-modal method using independent encoders. MuCo is based on a unified MLLM, inherently supporting multimodal fusion reasoning.
+- **vs UniIR**: UniIR unifies various retrieval tasks but still follows a single-turn paradigm. MuCo's multi-turn strategy could serve as an upgrade for its training efficiency.
+- The core idea—"leveraging existing model capabilities (dialogue) to enhance training efficiency"—offers inspiration for other MLLM fine-tuning scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The multi-turn dialogue contrastive learning perspective is novel, though the technical implementation is relatively straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated on two mainstream benchmarks, MMEB and M-BEIR, though ablation analysis could be more fine-grained.
-- **Writing Quality**: ⭐⭐⭐⭐ Method presentation is clear with a coherent motivational chain.
-- **Value**: ⭐⭐⭐⭐ Provides a general solution for improving multimodal embedding training efficiency with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ The perspective of multi-turn dialogue contrastive learning is novel, though the technical implementation is relatively direct.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated on MMEB and M-BEIR, though ablation analysis could be more granular.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology and a complete logical chain for motivation.
+- Value: ⭐⭐⭐⭐ Provides a general solution for improving multimodal embedding training efficiency with high practicality.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] ProM3E: Probabilistic Masked MultiModal Embedding Model for Ecology](prom3e_probabilistic_masked_multimodal_embedding_model_for_ecology.md)
 - [\[NeurIPS 2025\] Generalized Contrastive Learning for Universal Multimodal Retrieval](../../NeurIPS2025/information_retrieval/generalized_contrastive_learning_for_universal_multimodal_re.md)
 - [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
 - [\[CVPR 2026\] Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval](beyond_global_similarity_towards_fine-grained_multi-condition_multimodal_retriev.md)
 - [\[ACL 2026\] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows](../../ACL2026/information_retrieval/flare_task-agnostic_embedding_model_evaluation_through_a_normalization_process.md)
-- [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](../../ICLR2026/information_retrieval/hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
 
 </div>
 

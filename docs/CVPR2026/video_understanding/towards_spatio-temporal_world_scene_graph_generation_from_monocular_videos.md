@@ -2,89 +2,97 @@
 title: >-
   [Paper Note] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 description: >-
-  [CVPR 2026][Video Understanding][Scene Graph Generation] This paper introduces the World Scene Graph Generation (WSGG) task, which constructs spatio-temporally persistent…
+  [CVPR 2026][Video Understanding][Vision-Language Model] This paper proposes the World Scene Graph Generation (WSGG) task to construct spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, including all objects (even those occluded or out-of-frame). It introduces the ActionGenome4D dataset and three complementary methods (PWG, MWAE, and
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Scene Graph Generation"
-  - "Object Permanence"
-  - "3D Scene Understanding"
-  - "Spatio-Temporal Reasoning"
-  - "Vision-Language Models"
+  - CVPR 2026
+  - Video Understanding
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 4cd6a9ca1896c48e
+content_hash: 4aa773ad628248a3
 ---
-
 # Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)  
-**Code**: [Available](https://github.com/rohithpeddi/WorldSGG)  
-**Area**: Video Understanding
+**Code**: [Yes](https://github.com/rohithpeddi/WorldSGG)  
+**Area**: Video Understanding  
 **Keywords**: Scene Graph Generation, Object Permanence, 3D Scene Understanding, Spatio-Temporal Reasoning, Vision-Language Models
 
 ## TL;DR
 
-This paper introduces the World Scene Graph Generation (WSGG) task, which constructs spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, covering all objects including occluded and out-of-frame ones. The paper also presents the ActionGenome4D dataset and three complementary methods (PWG/MWAE/4DST).
+This paper proposes the World Scene Graph Generation (WSGG) task to construct spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, including all objects (even those occluded or out-of-frame). It introduces the ActionGenome4D dataset and three complementary methods (PWG, MWAE, and 4DST).
 
 ## Background & Motivation
 
-### 1. State of the Field
-Scene graph generation (SGG) has expanded from static images to videos (VidSGG), 3D point clouds (3D SGG), 4D scenes, and beyond. Nevertheless, mainstream methods remain frame-centric: each frame independently infers currently visible objects and produces a 2D planar scene graph.
+### 1. Background
+Scene Graph Generation (SGG) has evolved from static images to videos (VidSGG), 3D point clouds (3D SGG), and 4D scenes. However, mainstream methods remain "frame-centric," reasoning about currently visible objects per frame and generating scene graphs in a 2D plane.
 
 ### 2. Limitations of Prior Work
-- **Viewpoint dependency**: All object locations are expressed in 2D image coordinates, lacking a unified spatial reference frame.
-- **Observation-gating**: Objects disappear from the graph once they leave the frame or become occluded, with no persistent memory.
-- **Temporal fragmentation**: Even methods with temporal modeling (e.g., STTran, Tempura) only process frames within a sliding window and do not maintain a globally consistent world model.
+- **View Dependency**: All object positions are based on 2D image coordinates, lacking a unified spatial reference frame.
+- **Observation Gating**: Objects disappear from the graph once they move out of frame or are occluded, lacking persistent memory.
+- **Temporal Fragmentation**: Even with temporal modeling (e.g., STTran, Tempura), only frames within a sliding window are processed, failing to maintain a globally consistent world model.
 
-### 3. Root Cause
-Intelligent agents operating in real-world scenes must maintain a world model with *object permanence*—objects continue to exist in the environment even when unobservable. The frame-centric design of existing SGG methods cannot meet the demands of downstream tasks such as robotic manipulation, embodied navigation, and long-horizon activity understanding, all of which require reasoning over persistent world states.
+### 3. Key Challenge
+Agents in real-world scenarios must maintain a world model with "object permanence"—the understanding that objects exist even when invisible. Frame-centric SGG designs cannot satisfy the requirements of downstream tasks like robotic manipulation, embodied navigation, and long-term activity understanding for persistent world-state reasoning.
 
-### 4. Paper Goals
-To construct a scene graph representation that is **temporally persistent, anchored in world coordinates, and covers all objects (including unobservable ones)**, with relationship prediction across three types of object pairs: observed–observed, observed–unobserved, and unobserved–unobserved.
+### 4. Goal
+The objective is to construct a **temporally persistent, world-coordinate-anchored scene graph representation covering all objects (including invisible ones)**. This includes predicting relationships across three categories: observed-observed, observed-unobserved, and unobserved-unobserved object pairs.
 
-### 5. Starting Point
-The paper incorporates the cognitive science principle of object permanence into scene graph generation. The world state $\mathcal{W}^t$ is partitioned into an observable set $\mathcal{O}^t$ and an unobservable set $\mathcal{U}^t$, requiring models to map the complete world state at every timestamp.
+### 5. Key Insight
+The principle of "object permanence" from cognitive science is introduced into scene graph generation. The world state $\mathcal{W}^t$ is divided into an observable set $\mathcal{O}^t$ and an unobserved set $\mathcal{U}^t$, requiring the model to map the complete world state at every timestamp.
 
 ### 6. Core Idea
-- **ActionGenome4D dataset**: Upgrades Action Genome to a 4D representation, providing world-coordinate OBBs and dense relationship annotations for unobservable objects.
-- **WSGG task**: Requires outputting a world scene graph covering all objects in $\mathcal{W}^t$ at every timestamp.
-- **Three methods**: Explore different inductive biases for reasoning about unobservable objects.
+- **New Dataset (ActionGenome4D)**: Action Genome is upgraded to a 4D representation, providing world-coordinate OBBs and dense relationship annotations for invisible objects.
+- **New Task (WSGG)**: Requires outputting a world scene graph covering all objects in $\mathcal{W}^t$ at each timestamp.
+- **Methodological Exploration**: Three methods are explored with different inductive biases for unobserved object reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-All three methods share a unified input pipeline and component suite: pre-extracted DINOv2/v3 visual features, 3D OBB corner coordinates reconstructed by π³, and camera extrinsic matrices. Shared components include:
+All methods share a unified input and a set of geometric encoding components: pre-extracted DINOv2/v3 visual features, 3D OBB corner coordinates reconstructed via π³, and camera extrinsic matrices. These are fed into a shared suite before entering one of three unobserved object reasoning branches. Finally, a unified relationship predictor outputs the world scene graph. Shared components include:
 
-- **Global Structural Encoder**: Encodes the 8 OBB corners as 27-dimensional input and produces structural tokens via an MLP.
-- **Spatial Positional Encoding**: Computes 5D features between object pairs, including Euclidean distance, direction vector, and volume ratio.
-- **Spatial GNN**: Intra-frame Transformer Encoder with spatial positional encoding to model object interactions.
-- **Relationship Predictor**: Fuses person/object tokens, union RoI features, and CLIP text embeddings to predict attention (3 classes), spatial (6 classes), and contacting (17 classes) relations.
-- **Camera Pose / Motion Encoder**: Encodes camera motion and per-object 3D velocity and acceleration.
+- **Global Structural Encoder**: Encodes 8 corner points of OBBs into 27-dimensional inputs, generating structural tokens via an MLP.
+- **Spatial Positional Encoding**: Calculates 5D features such as Euclidean distance, direction vectors, and volume ratios between object pairs.
+- **Spatial GNN**: Uses intra-frame Transformer Encoders + Spatial Positional Encoding to model object interactions.
+- **Relationship Predictor**: Fuses human/object tokens, union RoI features, and CLIP text embeddings to predict attention (3 types), spatial (6 types), and contacting (17 types) relationships.
+- **Camera Pose / Motion Encoder**: Encodes camera motion and object 3D velocity/acceleration.
+
+The three methods (PWG, MWAE, 4DST) are inserted between the "Shared Geometric Encoding" and the "Relationship Predictor," differing only in how they generate representations for currently invisible objects.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Monocular Video → DINOv2/v3 Features<br/>+ π³ Reconstructed 3D OBB + Camera Extrinsics"] --> B["Shared Geometric Encoding Suite<br/>Structural Encoder + Spatial Positional Encoding + Spatial GNN"]
+    B -->|Zero-order Memory Persistence| C["PWG (Persistent World Graph)<br/>Last-Known-State Buffer + Staleness"]
+    B -->|Masked Completion| D["MWAE (Masked World Auto-Encoder)<br/>Asymmetric Cross-attention for Unobserved Objects"]
+    B -->|Differentiable Temporal Attention| E["4DST (4D Scene Transformer)<br/>Full-video Bidirectional Self-attention"]
+    C --> F["Relationship Predictor<br/>Attention / Spatial / Contacting Axes"]
+    D --> F
+    E --> F
+    F --> G["World Scene Graph<br/>Covers Observed + Unobserved Objects"]
+```
 
 ### Key Designs
 
-#### PWG (Persistent World Graph)
-- **Function**: Retains the most recent visual features of unobservable objects from the last frame in which they were visible.
-- **Mechanism**: A Last-Known-State (LKS) memory buffer implementing zeroth-order feature persistence. Current features are used when an object is visible; the most recent visible-frame features are retrieved when it is not; zero vectors are used for objects never observed.
-- **Design Motivation**: Directly implements the object permanence principle. A staleness counter $\Delta_n^{(t)} = |t - \tau^*|$ is additionally recorded for feature fusion, enabling the model to be aware of feature "freshness."
-- **Novelty**: The memory is non-differentiable and cannot learn temporal context end-to-end, yet it achieves strong performance through 3D geometric priors alone.
+The three methods share the geometric encoding components but differ in their inductive biases for handling invisible objects: direct memory, masked reconstruction, or differentiable temporal attention.
 
-#### MWAE (Masked World Auto-Encoder)
-- **Function**: Reformulates unobservable object reasoning as a masked completion problem.
-- **Mechanism**: Occlusion and camera motion naturally provide "masks"; the model must infer representations of unobservable objects from visible ones. During training, a portion of visible objects is additionally masked at random to strengthen learning.
-- **Design Motivation**: Transfers the MAE paradigm from the patch domain to the object/relation domain. Asymmetric cross-attention is employed (queries include all tokens; keys/values are restricted to visible tokens) to prevent unobservable tokens from attending to each other.
-- **Loss**: $\mathcal{L}_{\text{MWAE}} = \mathcal{L}_{\text{SG}} + \lambda_{\text{recon}} \cdot \lambda_{\text{dom}} \cdot \mathcal{L}_{\text{recon}} + \mathcal{L}_{\text{sim}}$, comprising a scene graph loss, a feature reconstruction MSE loss, and a relation re-prediction loss for masked visible objects.
+**1. PWG (Persistent World Graph): Mechanism using a "Last-Known-State" buffer.**
+PWG maintains a Last-Known-State (LKS) memory buffer for each object to perform zero-order feature persistence. If an object is visible, current frame features are used; if invisible, it reverts to its most recent visible features. To account for "staleness," PWG records $\Delta_n^{(t)} = |t - \tau^*|$ (the interval since the last visible timestamp $\tau^*$) and feeds it into the fusion. This implements "object permanence" as an engineering rule: invisibility does not imply non-existence.
 
-#### 4DST (4D Scene Transformer)
-- **Function**: Replaces PWG's static buffer with a differentiable temporal Transformer.
-- **Mechanism**: For each object, a token sequence is constructed along the temporal dimension (fusing visual, structural, camera, motion, and ego-motion features), and bidirectional Transformer self-attention is applied across the full video.
-- **Design Motivation**: The LKS buffer in PWG is non-differentiable and cannot learn temporal context end-to-end. 4DST extends the factorized spatio-temporal attention paradigm from 2D visible objects to the complete 4D setting, incorporating sinusoidal positional encoding and learnable visibility embeddings.
+**2. MWAE (Masked World Auto-Encoder): Mechanism treating unobserved reasoning as masked completion.**
+MWAE views occlusion and camera motion as natural "masks." Visible objects are observed patches, while invisible objects are masked patches. Borrowing from the MAE paradigm, the model reconstructs representations of unobserved objects from visible ones. During training, visible objects are randomly masked to force the model to learn completion rather than just memory. It uses asymmetric cross-attention where the query contains all object tokens, but keys/values are restricted to visible tokens.
+
+**3. 4DST (4D Scene Transformer): Mechanism using differentiable temporal attention over the full video.**
+4DST makes temporal context differentiable. It constructs a token sequence for each object along the time axis (fusing vision, structure, camera pose, and motion) and uses a bidirectional Transformer for self-attention across the entire video. This allows an object's current representation to absorb evidence from its past and future. It includes sinusoidal positional encoding and a learnable visibility embedding.
 
 ### Loss & Training
 
-All three methods share a unified multi-axis BCE loss structure. Object pairs are divided into visible pairs (clean ground truth) and unobserved pairs (VLM pseudo-labels, weighted by $\lambda_{\text{vlm}}$); attention, spatial, and contacting losses as well as node classification loss are computed for each group separately. MWAE additionally incorporates feature reconstruction and similarity losses.
+All methods share a unified multi-axis BCE loss structure. Object pairs are divided into visible pairs (clean GT) and unobserved pairs (VLM pseudo-labels, weighted by $\lambda_{\text{vlm}}$). Losses are calculated for attention, spatial, and contacting axes, alongside node classification. MWAE adds reconstruction terms:
+
+$$\mathcal{L}_{\text{MWAE}} = \mathcal{L}_{\text{SG}} + \lambda_{\text{recon}} \cdot \lambda_{\text{dom}} \cdot \mathcal{L}_{\text{recon}} + \mathcal{L}_{\text{sim}}$$
+
+where $\mathcal{L}_{\text{SG}}$ is the scene graph loss, $\mathcal{L}_{\text{recon}}$ is the MSE for masked object features, and $\mathcal{L}_{\text{sim}}$ is the relationship re-prediction (similarity) loss for masked visible objects.
 
 ## Key Experimental Results
 
@@ -93,7 +101,7 @@ All three methods share a unified multi-axis BCE loss structure. Object pairs ar
 **Table 2: Recall (R@K) — PredCls & SGDet on ActionGenome4D**
 
 | Method | Backbone | PredCls R@10 | PredCls R@20 | SGDet R@10 | SGDet R@50 |
-|--------|----------|-------------|-------------|-----------|-----------|
+|------|----------|-------------|-------------|-----------|-----------|
 | PWG | DINOv2-L | 65.07 | 67.99 | 41.69 | 69.63 |
 | MWAE | DINOv2-L | 65.33 | 68.30 | 41.69 | 69.50 |
 | 4DST | DINOv2-L | 64.31 | 67.26 | **42.64** | 70.32 |
@@ -101,7 +109,7 @@ All three methods share a unified multi-axis BCE loss structure. Object pairs ar
 | MWAE | DINOv3-L | 65.57 | 68.58 | 39.67 | 70.90 |
 | 4DST | DINOv3-L | **66.11** | **69.11** | 40.84 | **71.95** |
 
-**Table 4: VLM Relationship Prediction — Micro-Averaged F1**
+**Table 4: VLM Relationship Prediction — micro-averaged F1**
 
 | Pipeline | Model | Mode | Attn F1 | Contact F1 | Spatial F1 | Micro F1 |
 |----------|-------|------|---------|-----------|-----------|----------|
@@ -111,50 +119,42 @@ All three methods share a unified multi-axis BCE loss structure. Object pairs ar
 
 ### Ablation Study
 
-**Inter-method ablation findings**:
-- **4DST** most consistently leads under the SGDet setting (R@10=42.64 with DINOv2-L; R@50=71.95 with DINOv3-L), with its differentiable temporal Transformer improving end-to-end gradient propagation.
-- **MWAE** achieves the best performance in the multi-label (No Constraint) setting, with PredCls R@10=81.50 and mR@10=55.09 (DINOv3-L), where reconstruction and simulated-occlusion losses act as complementary regularizers.
-- **PWG** trails the best method by only 1–2 points in most PredCls settings, confirming that 3D geometric priors alone constitute a strong structural inductive bias.
-
-**VLM ablation findings**:
-- Graph RAG consistently outperforms Subtitle-Only, though the margin narrows for the stronger VLM (Qwen: +2.1 vs. InternVL: +3.8).
-- Recall under SGDet drops to roughly half that under PredCls, identifying world-level object detection as the primary bottleneck.
+- **Method Comparisons**: **4DST** most consistently leads in the SGDet setting (R@50=71.95 with DINOv3-L), as its differentiable temporal transformer improves end-to-end propagation. **MWAE** performs best in the multi-label (No Constraint) setting, where reconstruction and simulated occlusion losses act as complementary regularizers. **PWG** lags behind the best methods by only 1–2 points in most PredCls settings, validating that 3D geometric priors are strong structural priors.
+- **VLM Ablation**: Graph RAG consistently outperforms Subtitle-Only, though the gap narrows for stronger VLMs like Qwen (+2.1 vs. InternVL's +3.8). Recall for SGDet is approximately half of PredCls, identifying world-level object detection as the primary bottleneck.
 
 ### Key Findings
 
-1. Persistent 3D geometric priors alone (zeroth-order feature persistence in PWG) are sufficient to achieve highly competitive world scene graph generation.
-2. Unobservable object reasoning can be further improved through differentiable temporal modeling (4DST), particularly in the end-to-end SGDet detection setting.
-3. While VLMs can provide useful pseudo-annotations, substantial room remains for improvement in fine-grained spatial and contacting relation reasoning (micro F1 53.3 vs. macro F1 26.6, indicating severe long-tail imbalance).
-4. Predicate difficulty increases in the order: Attention > Contacting > Spatial.
+1. Persistent 3D geometric priors (PWG's zero-order persistence) alone achieve highly competitive world scene graph generation.
+2. Unobserved object reasoning is further improved by differentiable temporal modeling (4DST), especially in end-to-end SGDet settings.
+3. While VLMs provide useful pseudo-labels, they still have significant room for improvement in fine-grained spatial/contacting reasoning (micro F1 53.3 vs. macro F1 26.6, indicating severe long-tail issues).
+4. Predicate difficulty follows the order: Attention > Contacting > Spatial.
 
 ## Highlights & Insights
 
-1. **Precise and necessary task formulation**: WSGG captures the critical shift from frame-centric to world-centric representation, with a clear definition of $\mathcal{W}^t = \mathcal{O}^t \cup \mathcal{U}^t$ and a world scene graph covering all interaction pairs.
-2. **Complete dataset construction pipeline**: The pipeline from π³ 3D reconstruction → GDINO+SAM2 geometric annotation → VLM pseudo-labeling with manual correction → ActionGenome4D is systematic and reproducible.
-3. **Clear design philosophy across three methods**: PWG (memory buffer), MWAE (masked completion), and 4DST (temporal Transformer) correspond respectively to zeroth-order persistence, auto-encoding, and full attention as inductive biases—complementary and progressively more expressive.
-4. **Comprehensive experimental design**: Full matrix evaluation across PredCls/SGDet × With/No Constraint × R@K/mR@K, supplemented by VLM baselines and two inference pipelines.
-5. **Cognitive science inspiration**: Introducing object permanence into technical design is well-motivated; PWG's staleness awareness and MWAE's natural masking from occlusion are both elegantly grounded.
+1. **Novelty**: WSGG captures the critical shift from frame-centric to world-centric perception, clearly defining $\mathcal{W}^t = \mathcal{O}^t \cup \mathcal{U}^t$.
+2. **Experimental Thoroughness**: The pipeline from π³ 3D reconstruction to VLM pseudo-labeling and manual correction (ActionGenome4D) is systematic and reproducible.
+3. **Design Motivation**: The three methods (PWG, MWAE, 4DST) represent distinct and complementary inductive biases: memory buffers, auto-encoding completion, and full temporal attention.
+4. **Value**: World scene graphs provide a vital intermediate representation connecting visual perception to embodied action.
+5. **Key Insight**: Incorporating "object permanence" into the technical design, such as PWG's staleness awareness, is naturally aligned with cognitive principles.
 
 ## Limitations & Future Work
 
-1. **Multi-stage pipeline lacks end-to-end training**: The cascade of 3D reconstruction (π³) → geometric annotation (GDINO+SAM2) → feature extraction (DINO) → relationship prediction propagates errors across stages.
-2. **VLM pseudo-label quality**: Relationship annotations for unobservable objects rely on VLM generation with manual correction; label noise is mitigated by the $\lambda_{\text{vlm}}$ weight but not fundamentally resolved.
-3. **Severe long-tail distribution**: Macro F1 is substantially lower than micro F1, indicating significant predicate class imbalance.
-4. **Limited to person–object interactions**: The current framework only predicts person–object relation pairs and does not extend to arbitrary object pairs.
-5. **Offline processing**: 4DST requires bidirectional attention over the complete video, precluding online streaming inference.
-6. **Dataset scale constraints**: As an upgrade of Action Genome, scene diversity and generalization capability remain to be validated.
+1. **End-to-End Gap**: The multi-stage pipeline (reconstruction → detection → extraction → prediction) allows error propagation.
+2. **VLM Pseudo-label Quality**: Reasoning for invisible objects relies on VLM labels; noise is mitigated by weights ($\lambda_{\text{vlm}}$) but not fully resolved.
+3. **Long-tail Distribution**: Macro F1 is significantly lower than micro F1, highlighting predicate class imbalance.
+4. **Limited Scope**: Currently restricted to human-object interactions rather than general object-object pairs.
+5. **Offline Processing**: 4DST requires bidirectional attention over the full video, making it unsuitable for online streaming inference.
 
 ## Related Work & Insights
 
-- **Relation to VidSGG (STTran/Tempura)**: WSGG is a strict superset, extending frame-level graphs to world-level graphs by adding two core dimensions: 3D localization and unobservable object reasoning.
-- **Relation to 3D/4D SGG**: Existing 3D SGG methods process static scans, and 4D SGG typically requires RGB-D or multi-view inputs; WSGG operates from monocular video and covers unobservable objects.
-- **MAE → object-level MAE**: MWAE generalizes masked autoencoders from the patch level to the object/relation level, replacing artificial masks with natural occlusion—a meaningful paradigm transfer.
-- **VLMs as annotators**: The Graph RAG pipeline (event graph → retrieval → frame-level prediction → discriminative verification) is a practical paradigm for generating structured annotations with VLMs.
-- **Implications for embodied intelligence**: World scene graphs serve as a critical intermediate representation bridging visual perception and embodied action; the temporal modeling approach in 4DST offers reference value for deployable systems.
+- **Relation to VidSGG**: WSGG is a superset of VidSGG, extending from frame-level to world-level and adding 3D localization and unobserved reasoning.
+- **Relation to 3D/4D SGG**: Existing 3D SGG deals with static scans; 4D SGG often requires RGB-D. WSGG operates on monocular video and covers invisible objects.
+- **MAE to Object-level MAE**: MWAE generalizes masked auto-encoders from patches to objects/relationships, using natural occlusion as a substitute for manual masking.
+- **VLM as Labelers**: The Graph RAG pipeline (Event Graph → Retrieval → Frame Prediction → Discriminative Verification) is a practical paradigm for using VLMs to generate structured labels.
 
 ## Rating
 
-⭐⭐⭐⭐ The task formulation is forward-looking, the dataset construction is rigorous, the method design is systematic and progressive, and the experiments comprehensively cover multiple evaluation protocols and VLM baselines. Challenges remain, however, in achieving end-to-end training across the multi-stage pipeline and addressing long-tail predicate imbalance.
+⭐⭐⭐⭐ The task definition is visionary, the dataset construction is solid, and the method design is systematic. Experimental coverage is comprehensive. However, the end-to-end integration and long-tail issues remain areas for improvement.
 
 <!-- RELATED:START -->
 
@@ -162,11 +162,11 @@ All three methods share a unified multi-axis BCE loss structure. Object pairs ar
 
 ## Related Papers
 
+- [\[CVPR 2026\] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios](omniground_a_comprehensive_spatio-temporal_grounding_benchmark_for_real-world_co.md)
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
+- [\[CVPR 2025\] HyperGLM: HyperGraph for Video Scene Graph Generation and Anticipation](../../CVPR2025/video_understanding/hyperglm_hypergraph_for_video_scene_graph_generation_and_anticipation.md)
+- [\[CVPR 2026\] VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)
 - [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
-- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/video_understanding/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
-- [\[CVPR 2026\] StreamGaze: Gaze-Guided Temporal Reasoning and Proactive Understanding in Streaming Videos](streamgaze_gaze-guided_temporal_reasoning_and_proactive_understanding_in_streami.md)
-- [\[CVPR 2026\] Mamba-VMR: Multimodal Query Augmentation via Generated Videos for Precise Temporal Grounding](mamba-vmr_multimodal_query_augmentation_via_generated_videos_for_precise_tempora.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 
 </div>
 

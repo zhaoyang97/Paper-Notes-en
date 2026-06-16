@@ -2,160 +2,154 @@
 title: >-
   [Paper Note] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 description: >-
-  [CVPR 2026][Graph Learning][knowledge graphs] This paper proposes Graph2Eval, a knowledge graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from do…
+  [CVPR 2026][Graph Learning][Paper Note] This paper introduces Graph2Eval, a knowledge-graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents/webpages, performing subgraph sampling, LLM conditional generation, and multi-stage filtering, it automatically produces multimodal agen
 tags:
-  - "CVPR 2026"
-  - "Graph Learning"
-  - "knowledge graphs"
-  - "automatic task generation"
-  - "agent evaluation"
-  - "document understanding"
-  - "web understanding"
-  - "benchmark construction"
+  - CVPR 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 23c5e29fa80add44
+content_hash: bdebf00684c5c261
 ---
-
 # Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.00507](https://arxiv.org/abs/2510.00507)  
 **Code**: [github.com/YurunChen/Graph2Eval](https://github.com/YurunChen/Graph2Eval)  
-**Area**: Human-Machine Understanding / Agent Evaluation
-**Keywords**: knowledge graphs, automatic task generation, agent evaluation, document understanding, web understanding, benchmark construction
+**Area**: Human-AI Understanding / Agent Evaluation  
+**Keywords**: Knowledge Graph, Automatic Task Generation, Agent Evaluation, Document Understanding, Web Understanding, Benchmark Construction
 
 ## TL;DR
-This paper proposes Graph2Eval, a knowledge graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents and webpages, performing subgraph sampling, applying LLM-conditioned generation, and employing multi-stage filtering, the framework automatically produces multimodal agent tasks with improved semantic consistency (+20%) and solvability (+17%). The resulting benchmark, Graph2Eval-Bench, comprises 1,319 tasks.
+This paper introduces Graph2Eval, a knowledge-graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents/webpages, performing subgraph sampling, LLM conditional generation, and multi-stage filtering, it automatically produces multimodal agent tasks with significantly improved semantic consistency (+20%) and solvability (+17%), resulting in the Graph2Eval-Bench containing 1,319 tasks.
 
 ## Background & Motivation
-Evaluation of multimodal agents (document-understanding agents, web-browsing agents) relies heavily on manually annotated static benchmarks, which suffer from three fundamental limitations:
+The evaluation of multimodal agents (document understanding agents, web browsing agents) relies heavily on manually annotated static benchmarks, which suffer from three major drawbacks:
 
-**Scale bottleneck**: Manual task construction is costly and slow, making it difficult to keep pace with the rapid advancement of agent capabilities.
+**Scale Bottleneck**: Manual task construction is costly and slow, failing to keep pace with the rapid iteration of agent capabilities.
 
-**Coverage gaps**: Static benchmarks cover only a limited range of task types and difficulty levels, making them susceptible to benchmark overfitting.
+**Insufficient Coverage**: Static benchmarks cover limited task types and difficulty levels, making them prone to "leaderboard gaming" and overfitting.
 
-**Temporal staleness**: Real-world documents and webpages are continuously updated, causing ground-truth annotations in fixed benchmarks to become outdated.
+**Poor Timeliness**: Real-world documents and webpages are constantly updated; the ground truth of fixed benchmarks can quickly become obsolete.
 
-**Limitations of existing automated approaches**:
-- **Pure LLM synthesis** (Self-Instruct, Evol-Instruct): directly prompting LLMs to generate QA pairs from text fragments lacks explicit modeling of inter-entity relations, resulting in questions that reference non-existent entity combinations (**semantic inconsistency**) or require information along unreachable paths (**unsolvability**).
-- **Template filling**: template-based methods produce tasks with fixed formats and poor diversity.
-- **Random sampling**: randomly extracting document fragments for QA generation lacks structural awareness and frequently yields trivial or ill-formed tasks.
+**Limitations of Prior Work**:
+- **Pure LLM Synthesis** (Self-Instruct, Evol-Instruct): Directly prompting LLMs to generate QA pairs from text snippets lacks explicit modeling of entity relationships. This often leads to questions referencing non-existent entity combinations (**semantic inconsistency**) or requiring information across unreachable paths (**unsolvability**).
+- **Template Filling**: Methods based on predefined templates generate tasks with fixed formats and poor diversity.
+- **Random Sampling**: Randomly extracting snippets for QA generation lacks structural awareness, often producing trivial or unreasonable tasks.
 
-**Core Idea**: Knowledge graphs serve as an intermediate structured representation. Entities and relations are first extracted from documents and webpages to construct a KG $G=(V,E,R)$; semantically coherent context subgraphs are then obtained via subgraph sampling; finally, LLMs generate tasks conditioned on the subgraph constraints. The structural properties of the KG guarantee reachability of entity relations (solvability) and semantic completeness (consistency).
+**Core Idea**: Utilize a knowledge graph as an intermediate structured representation. First, extract entities and relations from documents/webpages to build a KG $G=(V, E, R)$. Then, obtain semantically coherent context through subgraph sampling. Finally, constrain the LLM to generate tasks based on the subgraph. The KG structure ensures the reachability of entity relations (solvability) and semantic integrity (consistency).
 
 ## Core Problem
-How to automatically generate semantically consistent, solvable, and diverse multimodal agent evaluation tasks? Key challenges: (1) how to extract structured knowledge from heterogeneous documents and webpages; (2) how to sample subgraphs suitable as task material; (3) how to ensure the quality of generated tasks (freedom from hallucination and genuine completability).
+How to automatically generate diverse, solvable, and semantically consistent multimodal agent evaluation tasks? Key challenges include: (1) extracting structured knowledge from heterogeneous documents/webpages; (2) sampling subgraphs suitable as task material; (3) ensuring task quality (avoiding hallucinations and ensuring completion).
 
 ## Method
 
 ### Overall Architecture
-Graph2Eval is a five-stage pipeline: Data Ingestion → KG Construction → Subgraph Sampling → Task Generation → Multi-stage Filtering.
+Graph2Eval addresses the automated mass production of reliable multimodal agent evaluation tasks without human intervention. The process converts a document/webpage into a knowledge graph, "crops" coherent subgraphs as material, and directs the LLM to write tasks along existing entity relations, followed by a three-stage filter. The framework relies on "graph structure" instead of LLM free-form generation to suppress hallucinations and unsolvability at the source. The pipeline consists of five steps: data ingestion and structural chunking, KG construction $G=(V, E, R)$, subgraph sampling, conditional task generation, and multi-stage filtering.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Documents (PDF/HTML) or Webpages"] --> B["Data Ingestion<br/>Doc→Semantic Chunking / Web→DOM Parsing + Screenshot<br/>Unified into structured nodes with metadata"]
+    B --> C["Knowledge Graph Construction<br/>G=(V,E,R), multi-type text/web edges"]
+    C --> D["Subgraph Sampling<br/>Doc→Semantic Expansion + StructMatch / Web→k-hop Path"]
+    D --> E["Task Generation<br/>Meta-path constraints force LLM reasoning along real entity relations"]
+    E --> F
+    subgraph F["Multi-stage Filtering"]
+        direction TB
+        F1["① Node Reachability<br/>Structural Level"] --> F2["② LLM Quality Scoring<br/>Semantic Level"] --> F3["③ Similarity Deduplication<br/>Set Level"]
+    end
+    F --> G["Output: Graph2Eval-Bench (1,319 Tasks)"]
+```
 
 ### Key Designs
 
-1. **Data Ingestion**:
+**1. Data Ingestion: Unifying Heterogeneous Data into Graphable Nodes**
 
-    - **Document mode**: Semantically segments PDF/HTML documents (paragraphs, headings, tables, captions), generates embedding vectors for each chunk, and preserves metadata (page number, hierarchy, context window).
-    - **Web mode**: Parses the DOM tree to extract attributes and hierarchical relations of interactive elements (forms, buttons, links, dropdowns), and captures page screenshots for multimodal understanding.
-    - Design Motivation: Unifying heterogeneous sources into structured node representations lays the foundation for subsequent graph construction.
+Documents and webpages differ in structure. For documents, the system performs semantic chunking (paragraphs, headings, tables, captions) and calculates embeddings while preserving metadata (page numbers, hierarchy). For webpages, it parses the DOM tree to extract interactive elements (forms, buttons, links) along with screenshots. Both pipelines converge into a unified representation of "structured nodes with metadata."
 
-2. **KG Construction**:
+**2. Knowledge Graph Construction: Capturing Multi-granular Semantic Connections**
 
-    - Graph definition: $G = (V, E, R)$
-    - **Node types $V$**: paragraph, heading, hyperlink, form_field, table_cell, image_caption, etc.
-    - **Edge types**:
-        - Textual edges: sequential relations (ordering within a document), semantic relations (embedding similarity above threshold), and citation relations (cross-references, footnotes, hyperlinks).
-        - Web edges: navigation relations (link traversal), interaction relations (button↔form, dropdown↔option), and layout relations (DOM parent-child/sibling).
-    - Design Motivation: Multi-typed edges capture semantic associations at different granularities—sequential edges preserve local context, semantic edges connect distantly related content, and interaction edges encode agent-executable actions.
+The graph $G=(V, E, R)$ defines nodes $V$ (paragraph, heading, hyperlink, etc.). Edges are categorized by modality: text edges include sequential relations (order), semantic relations (embedding similarity), and reference relations (citations/hyperlinks); web edges include navigation (links), interaction (button $\leftrightarrow$ form), and layout (DOM hierarchy). These multi-type edges encode different semantic granularities to support varying task difficulties.
 
-3. **Subgraph Sampling**:
+**3. Subgraph Sampling: Modality-Specific Semantic and Path Expansion**
 
-    - **Document mode**: Cosine similarity + StructMatch—a seed node is selected, neighbors are expanded by embedding similarity, and StructMatch evaluates the structural diversity of candidate subgraphs (proportion of distinct node/edge types), ensuring that sampled subgraphs are both semantically relevant and structurally rich.
-    - **Web mode**: Seed-driven $k$-hop expansion—starting from a seed interactive element, the graph is expanded along navigation/interaction edges for $k$ hops ($k$=2–3) to capture the complete operation path required by an agent to complete a task.
-    - Design Motivation: (1) Document tasks require cross-paragraph reasoning → semantic expansion; (2) web tasks require multi-step operations → path expansion. The two sampling strategies are tailored to the respective characteristics of each modality.
+To extract task material, the document mode uses cosine similarity plus StructMatch. Starting from a seed node, it expands via embedding similarity while utilizing StructMatch to evaluate structural diversity (the ratio of different node/edge types). The web mode uses seed-driven $k$-hop expansion, moving from an interactive element along navigation/interaction edges ($k=2-3$) to capture the operational path an agent must follow.
 
-4. **Task Generation**:
+**4. Task Generation: Anchoring Reasoning via Meta-paths**
 
-    - **Template construction**: The sampled subgraph is serialized into a structured prompt (containing node content, edge relations, and metadata) to guide the LLM in constructing task instructions and expected answers grounded in the subgraph.
-    - **Meta-path guidance**: Common meta-path patterns are defined (e.g., heading→paragraph→table_cell representing "look up table data based on section description"), and the LLM generates complex QA requiring multi-step reasoning along these meta-paths.
-    - Design Motivation: The meta-path mechanism constrains LLM generation—each reasoning step is grounded in entity relations present in the KG, reducing hallucination at the source.
+The sampled subgraph is serialized into a structured prompt. Meta-paths (e.g., `heading → paragraph → table_cell`) are introduced to guide the LLM. The LLM must generate complex QA requiring multi-step reasoning along these paths. This ensures every reasoning step corresponds to a real entity relationship in the KG, preventing hallucinations regarding non-existent entities or unreachable paths.
 
-5. **Multi-stage Filtering**:
+**5. Multi-stage Filtering: Structural, Semantic, and Set-level Verification**
 
-    - **Stage 1: Node reachability check**—verifies whether all entities referenced in a task answer are reachable from the task starting point within the KG (unreachable → unsolvable → discarded).
-    - **Stage 2: LLM quality scoring**—a separate LLM scores each task on clarity, difficulty appropriateness, and answer correctness (1–5); tasks scoring below 3 are discarded.
-    - **Stage 3: Similarity-based deduplication**—embedding similarities across tasks are computed, and within clusters of highly similar tasks only the highest-quality instance is retained to ensure overall diversity.
-    - Design Motivation: The three-stage filter operates progressively—structural level (reachability) → semantic level (quality) → set level (diversity)—providing layered quality assurance.
+The pipeline employs a three-tier filter. Stage 1 (Structural): Verifies if all entities in the answer are reachable from the task starting point in the KG. Stage 2 (Semantic): An LLM scores tasks (1–5) based on clarity, difficulty, and correctness; scores below 3 are discarded. Stage 3 (Set-level): Embedding similarity is used to deduplicate highly similar tasks, retaining only the highest quality one to ensure diversity.
+
+### Mechanism Example
+Consider a PDF paper with an "Experimental Setup" section and a results table. Ingestion chunks it into "4. Experiments" (heading), descriptive paragraphs, and table cells. Building the KG connects these via sequential and semantic edges, forming the path `heading → paragraph → table_cell`. Sampling extracts this chain. The LLM then generates: "Based on the experimental setup description, find the accuracy when batch size = 64." Structural checks confirm the result cell is reachable from the heading, and quality scoring ensures validity.
 
 ### Loss & Training
-- **Training-free**: Graph2Eval is a purely inference-time pipeline.
-- KG construction uses off-the-shelf embedding models (e.g., text-embedding-3-small).
-- Task generation and quality scoring employ GPT-4o and GPT-4-turbo, respectively.
-- Average generation time: 34.87 s/task for document tasks and 95.51 s/task for web tasks.
+- **No Training Required**: Graph2Eval is a pure inference-time pipeline.
+- KG construction utilizes off-the-shelf embedding models (e.g., `text-embedding-3-small`).
+- Task generation and scoring are performed by GPT-4o and GPT-4-turbo, respectively.
+- Generation time averages 34.87s per document task and 95.51s per web task.
 
 ## Key Experimental Results
 
-### Graph2Eval-Bench Dataset Statistics
+### Graph2Eval-Bench Statistics
 
 | Category | Count | Avg. Steps | Node Types Involved |
-|----------|-------|-----------|---------------------|
-| Document tasks | 1,002 | 2.8 | paragraph, table, heading, image |
-| Web tasks | 317 | 4.2 | form, button, link, dropdown |
-| **Total** | **1,319** | 3.1 | — |
+|------|------|-----------|-------------|
+| Document Tasks | 1002 | 2.8 | paragraph, table, heading, image |
+| Web Tasks | 317 | 4.2 | form, button, link, dropdown |
+| **Total** | **1319** | 3.1 | — |
 
-### Comparison with Baseline Task Generation Methods
+### Comparison of Task Generation Methods
 
 | Method | Semantic Consistency ↑ | Solvability ↑ | Diversity ↑ | Hallucination Rate ↓ |
-|--------|----------------------|--------------|------------|----------------------|
+|------|-------------|---------|---------|---------|
 | Self-Instruct | 0.62 | 0.58 | 0.71 | 18.3% |
 | Evol-Instruct | 0.67 | 0.63 | 0.68 | 15.1% |
 | Template-based | 0.78 | 0.82 | 0.41 | 5.2% |
-| **Graph2Eval** | **0.84** | **0.80** | **0.76** | **4.7%** |
+| **Ours** | **0.84** | **0.80** | **0.76** | **4.7%** |
 
-Graph2Eval outperforms the strongest baseline, Evol-Instruct, by +20% in semantic consistency (0.84 vs. 0.67+) and +17% in solvability (0.80 vs. 0.63+).
+Ours shows a +20% gain in semantic consistency and +17% gain in solvability compared to Evol-Instruct.
 
 ### Agent Performance on Graph2Eval-Bench
 
-| Agent | Document Task Accuracy | Web Task Success Rate | Overall |
-|-------|----------------------|-----------------------|---------|
+| Agent | Doc Task Acc | Web Task Success | Overall |
+|-------|--------------|--------------|------|
 | GPT-4o | 61.3% | 42.7% | 56.8% |
 | Claude-3.5 | 58.9% | 39.2% | 54.1% |
 | Gemini-1.5 | 55.2% | 36.8% | 50.5% |
 | Open-source best | 41.7% | 28.3% | 38.4% |
 
-Graph2Eval-Bench exhibits sufficient discriminative power—even the strongest model, GPT-4o, achieves only 56.8%, while the best open-source model reaches 38.4%, leaving substantial room for improvement.
+The benchmark provides high discriminative power; even GPT-4o scores only 56.8%.
 
 ### Key Findings
-- **KG structure is central**: Replacing the KG with raw text chunks for direct task generation reduces semantic consistency by 22% and solvability by 19%, confirming that explicit entity relation modeling is indispensable.
-- **Meta-path guidance is effective**: Tasks generated with meta-path guidance involve more reasoning steps on average (3.4 vs. 2.1) and achieve higher answer accuracy (+8%).
-- **Multi-stage filtering is irreplaceable**: Without filtering, approximately 31% of tasks have quality issues (unsolvable or hallucinated); three-stage filtering reduces this to 4.7%.
-- **Web tasks are substantially harder**: All agents perform 15–20 percentage points lower on web tasks than on document tasks, indicating that multi-step interactive operations are the primary bottleneck.
+- **KG Structure is Core**: Removing the KG and using raw text blocks causes semantic consistency to drop by 22% and solvability by 19%.
+- **Meta-path Effectiveness**: Tasks using meta-paths average more reasoning steps (3.4 vs 2.1) and higher accuracy (+8%).
+- **Filtering is Essential**: Without filtering, ~31% of tasks are problematic; the three-tier system reduces this to 4.7%.
+- **Web Tasks are Harder**: Agent performance on web tasks is 15-20% lower than on document tasks, indicating multi-step interaction is a major bottleneck.
 
 ## Highlights & Insights
-- Using the KG as a **"skeleton for task generation"** is an elegant design choice—it reformulates the unstructured problem of free-form text into a graph-theoretic problem, leveraging graph connectivity to ensure solvability and node content to ensure semantic consistency.
-- The unified framework for document and web modalities demonstrates the generalizability of the approach—adapting to a new modality requires only redefining node and edge types.
-- The multi-stage filtering design is both practical and efficient—structural reachability checks are computationally cheap, LLM quality scoring is applied only to tasks that pass structural verification, and similarity-based deduplication is performed globally at the final stage.
-- The construction of a 1,319-task benchmark constitutes a direct contribution to the agent evaluation community.
+- Using the **KG as a "Skeleton for Task Generation"** is an ingenious design, transforming unstructured problems into graph connectivity problems.
+- The unified framework for document and web modes demonstrates high generalizability across modalities.
+- The multi-stage filter is both practical and efficient, using structural checks to prune candidates before applying expensive LLM scoring.
 
 ## Limitations & Future Work
-- KG construction quality depends on the embedding model and threshold settings—general-purpose embeddings may be insufficiently accurate for specialized domains (e.g., medical or legal documents).
-- Web tasks number only 317 (vs. 1,002 document tasks), representing an imbalance in scale—DOM parsing and interaction edge extraction for webpages are more complex, making large-scale expansion costly.
-- Both task generation and quality scoring rely on GPT-4-level LLMs, incurring high costs and introducing potential preference bias toward specific LLMs.
-- Dynamic webpages are not considered—real-world webpage content changes over time, and generated tasks may quickly become invalid.
-- The solvability check only verifies node reachability within the KG; practical solvability is also constrained by agent tool capabilities (e.g., inability to operate certain JavaScript controls).
-- Meta-path patterns are predefined—new document structures may require manual extension of the pattern library.
+- KG quality relies on embedding models; specialized domains (medical, legal) may require domain-specific embeddings.
+- Data imbalance persists between web tasks (317) and document tasks (1,002).
+- Reliance on GPT-4 level LLMs for generation/scoring introduces cost and model bias.
+- Dynamic webpages are not yet considered; generated tasks may become obsolete as sites update.
+- Solvability checks only verify structural reachability, not environmental constraints (e.g., JS-blocked controls).
 
 ## Related Work & Insights
-- Graph2Eval is complementary to manually constructed web agent benchmarks such as OSWorld and WebArena, enabling automated rapid generation of evaluation tasks for new websites.
-- Compared to DocBench (a document understanding benchmark), the KG-based approach of Graph2Eval can generate more complex tasks requiring cross-paragraph reasoning.
-- The KG-driven QA generation paradigm is transferable to the RAG evaluation domain—KG structure can constrain the generation of evaluation questions requiring multi-hop reasoning.
-- A broader implication for agent evaluation: transitioning from "manually constructed static benchmarks" to "automated, structure-guided generation" is a scalable and promising direction.
+- Complements manual benchmarks like OSWorld/WebArena by providing rapid, automated task generation for new sites.
+- Compared to DocBench, Graph2Eval's KG approach generates more sophisticated cross-paragraph reasoning tasks.
+- The KG-driven QA approach is applicable to RAG evaluation for generating multi-hop reasoning questions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Introducing knowledge graphs into automatic agent task generation is a novel perspective; the five-stage pipeline is well-designed and complete.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage including multi-baseline comparisons, ablation analysis, multi-agent evaluation, and task quality statistics.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework presentation with detailed descriptions of each pipeline stage.
-- Value: ⭐⭐⭐⭐⭐ Dual contributions of a benchmark and an automatic generation framework provide direct practical value to the agent evaluation community.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -165,9 +159,9 @@ Graph2Eval-Bench exhibits sufficient discriminative power—even the strongest m
 
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ACL 2025\] Can LLMs Evaluate Complex Attribution in QA? Automatic Benchmarking using Knowledge Graphs](../../ACL2025/graph_learning/paper_2401_14640.md)
 - [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](mario_multimodal_graph_reasoning_with_large_language_models.md)
 - [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
-- [\[CVPR 2026\] WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](wsgg_spatiotemporal_world_scene_graph.md)
 
 </div>
 

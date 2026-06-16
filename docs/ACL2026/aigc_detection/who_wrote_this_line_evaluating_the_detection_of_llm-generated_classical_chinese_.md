@@ -2,131 +2,119 @@
 title: >-
   [Paper Note] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry
 description: >-
-  [ACL 2026][AIGC Detection][Classical Chinese Poetry Detection] This paper constructs the first detection benchmark for LLM-generated classical Chinese poetry, ChangAn (containing 30,664 poems)…
+  [ACL 2026][AIGC Detection][Paper Note] This paper constructs ChangAn, the first detection benchmark for LLM-generated classical Chinese poetry (containing 30,664 poems). It systematically evaluates the performance of 12 AI detection methods across different text granularities and generation strategies, revealing the significant limitations of current Chines
 tags:
-  - "ACL 2026"
-  - "AIGC Detection"
-  - "Classical Chinese Poetry Detection"
-  - "AI-generated Text"
-  - "Chinese NLP"
-  - "Benchmark"
-  - "Literary Creation"
+  - ACL 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: bdc08cf860ac9d10
+content_hash: 821569ab3bc64ad4
 ---
-
 # Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.10101](https://arxiv.org/abs/2604.10101)  
 **Code**: [GitHub](https://github.com/VelikayaScarlet/ChangAn)  
 **Area**: AIGC Detection  
-**Keywords**: Classical Chinese Poetry Detection, AI-generated Text, Chinese NLP, Benchmark, Literary Creation
+**Keywords**: Classical Chinese Poetry Detection, AI-Generated Text, Chinese NLP, Benchmark, Literary Creation
 
 ## TL;DR
 
-This paper constructs the first detection benchmark for LLM-generated classical Chinese poetry, ChangAn (containing 30,664 poems), systematically evaluates 12 AI detection methods under different text granularities and generation strategies, and reveals the severe limitations of current Chinese text detectors in the field of classical poetry.
+This paper constructs ChangAn, the first detection benchmark for LLM-generated classical Chinese poetry (containing 30,664 poems). It systematically evaluates the performance of 12 AI detection methods across different text granularities and generation strategies, revealing the significant limitations of current Chinese text detectors in the domain of classical poetry.
 
 ## Background & Motivation
 
-**Background**: The capabilities of Large Language Models (LLMs) in text generation have expanded to literary creation, including classical Chinese poetry. AI-generated poetry has sparked widespread controversy regarding creative authenticity and ethics on various poetry journals and literary platforms, with multiple journals publicly condemning unlabeled AI submissions.
+**Background**: The capabilities of Large Language Models (LLMs) in text generation have expanded into literary creation, including classical Chinese poetry. AI-generated poetic works have sparked extensive controversy regarding creative authenticity and ethics on various poetry journals and literary platforms, with several journals publicly condemning unlabeled AI submissions.
 
-**Limitations of Prior Work**: Existing AI-generated text detection research mainly focuses on modern languages and contemporary styles, not yet touching the specialized field of classical Chinese poetry. General detection methods face three challenges in this area: (1) Classical poetry has strict prosodic rules (tonal patterns, rhyme, parallelism), making it difficult for detection models to determine whether these patterns follow tradition or imitate AI patterns; (2) Classical poetry shares an extensive imagery system, leading to significant lexical distribution overlap between humans and AI; (3) Classical poetry features flexible parts-of-speech usage and inverted syntax that deviate from modern Chinese grammar, further increasing detection difficulty.
+**Limitations of Prior Work**: Existing research on AI-generated text detection primarily focuses on modern languages and contemporary styles, leaving the special domain of classical Chinese poetry unexplored. General detection methods face three challenges in this field: (1) Classical poetry follows strict metrical rules (tonal patterns, rhythm, antithesis), making it difficult for detection models to discern whether these patterns stem from human adherence to tradition or AI imitation of learned patterns; (2) Classical poetry shares an extensive system of imagery, leading to significant overlap in lexical distribution between humans and AI; (3) Classical poetry features flexible part-of-speech usage and inverted syntax that deviates from modern Chinese grammar, further increasing detection difficulty.
 
-**Key Challenge**: The high formal constraints of classical poetry make AI-generated content highly similar to human creation in surface features, rendering traditional detection methods based on statistical features or language model perplexity difficult to apply effectively.
+**Key Challenge**: The highly formalized constraints of classical poetry make AI-generated content and human creations highly similar in surface features, making it difficult for traditional detection methods based on statistical features or language model perplexity to distinguish between them effectively.
 
-**Goal**: Construct the first detection benchmark specifically for LLM-generated classical Chinese poetry and systematically evaluate the performance boundaries of existing detection methods to provide a data and experimental foundation for research in this field.
+**Goal**: To build the first detection benchmark specifically targeting LLM-generated classical Chinese poetry and systematically evaluate the capability boundaries of existing detection methods, providing a data and experimental foundation for detection research in this field.
 
-**Key Insight**: Systematically evaluate detection methods from two dimensions: text granularity (single vs. multiple poems) and generation strategies (direct generation vs. refinement), while exploring the dual role of LLMs as generators and zero-shot detectors.
+**Key Insight**: Systematically evaluate detection methods from two dimensions: text granularity (single poem vs. multiple poems) and generation strategy (direct generation vs. polished optimization), while exploring the dual roles of LLMs as both generators and zero-shot detectors.
 
-**Core Idea**: The strict formal constraints of classical poetry effectively mask the statistical traces of AI generation, rendering existing detectors almost ineffective, which necessitates specialized detection benchmarks and methods.
+**Core Idea**: The strict formal constraints of classical poetry effectively mask the statistical traces of AI generation, rendering existing detectors nearly obsolete and necessitating specialized detection benchmarks and methods.
 
 ## Method
 
 ### Overall Architecture
 
-Construct the ChangAn dataset, containing 10,276 modern human-authored classical poems (282 authors) and 20,388 poems generated by four major LLMs (DeepSeek-V3.2, GPT-4.1, Kimi-K2, Doubao Seed-1.6). Based on this, 12 methods from two categories—judgment-based detectors (LLM direct judgment) and probability-based detectors (statistical and supervised methods)—are systematically evaluated, considering single/multiple poem detection and direct/refined generation strategies.
+This work does not propose a new detector but instead builds a "dataset + evaluation protocol" to probe the actual capabilities of existing detection methods on classical poetry. On the input side, the ChangAn dataset is constructed, containing 10,276 poems by modern human creators (282 authors) and 20,388 poems generated by four major LLMs (DeepSeek-V3.2, GPT-4.1, Kimi-K2, Doubao Seed-1.6). Samples are organized by text granularity (single/multiple) and generation strategy (direct/polished). On the output side, comparable AUROC/Macro-F1 scores are calculated across 12 detectors, categorized into judgment-based (LLM direct judgment) and probability-based (statistical, supervised) types, while also measuring the performance of LLM self-detection.
 
 ### Key Designs
 
-1. **Dataset Construction Strategy**:
+**1. Dataset Construction Strategy: Preventing Data Leakage with Modern Poets' Works**
 
-    - **Function**: Provide a high-quality benchmark without data leakage.
-    - **Mechanism**: The human poetry component specifically selects creations from modern poets (rather than ancient poets) collected from platforms like Xiaohongshu and Baidu Tieba, as well as professional literary publications. This is because ancient poetry is already included in LLM pre-training corpora, and using ancient works would lead to model judgment based on "memory" rather than true detection capabilities. For the LLM generation component, two prompting strategies are designed: direct generation and "Tuiqiao" (refinement, simulating the human process of polishing).
-    - **Design Motivation**: Using modern poets' works effectively mitigates data leakage bias, ensuring the detection task focuses on the genuine ability to distinguish based on style and structural features.
+The primary pitfall in classical poetry detection is evaluation contamination rather than model weakness—famous ancient poems are already part of the pre-training corpora for all LLMs. If works like *Quiet Night Thought* are used as human samples, detectors compete on "memorization" rather than distinguishing human-machine styles. Therefore, the human side only includes new works by modern poets following classical metrics, sourced from social platforms like Xiaohongshu and Baidu Tieba and professional literary publications. The LLM side uses two types of prompts: direct generation and optimized generation simulating human "polishing." This locks the detection task to actual differences in style and structural features, avoiding artificially high scores caused by memory leakage.
 
-2. **Multi-granularity Evaluation Design**:
+**2. Multi-granularity Evaluation Design: Compensating for Information Scarcity via Aggregated Poem Sets**
 
-    - **Function**: Evaluate the performance boundaries of detection methods under different data scales.
-    - **Mechanism**: Design three granularities: Single Poem Detection (SPD) and Multi-Poem Detection (MPD, 6 and 12 poems). SPD reflects scenarios like social media, while MPD simulates poetry collection publication. Selecting 6 poems as a basic unit has a cultural basis—six-poem sets are common in classical Chinese poetry (e.g., *Three Officials and Three Partings*, *Six Songs Under the Frontier*).
-    - **Design Motivation**: Classical poetry texts are extremely short (only dozens of characters per poem), providing limited features; aggregate evaluation through multiple poems assesses whether detection effectiveness can be improved.
+A single classical poem consists of only a few dozen characters, providing extremely thin statistical features for detectors. Single Poem Detection (SPD) easily hits a performance ceiling. Thus, the protocol sets both single and Multiple Poem Detection (MPD, in sets of 6 and 12). SPD corresponds to social media submission scenarios, while MPD corresponds to poetry collection publication. This examines whether discriminative signals accumulate when multiple poems from the same source are aggregated. The choice of 6 poems as a basic unit is not arbitrary—it aligns with the Chinese tradition of grouped poems (e.g., *Three Officials and Three Partings*, *Six Songs of the Frontier*), ensuring the grouping is both practical and culturally grounded.
 
-3. **LLM Self-detection Capability Exploration**:
+**3. LLM Self-detection Capability Exploration: Testing for "Identity Signals" via Cross-detection Matrix**
 
-    - **Function**: Examine whether LLMs can identify poetry they generated themselves.
-    - **Mechanism**: Each LLM acts as both generator and detector, analyzing self-recognition capabilities via a cross-detection matrix. Experiments reveal that most models do not possess a self-detection advantage in the field of classical poetry—for instance, Doubao Seed-1.6 achieved a recall of only 16.09% for its own generated poems.
-    - **Design Motivation**: Verify if "identity signals" exist that LLMs can exploit; results show that the formal constraints of classical poetry effectively mask such signals.
+An intuitive hypothesis is that models understand their own generation traces best and should excel at identifying their own poems. To verify this, each LLM serves as both generator and detector to construct a cross-detection matrix, where the diagonal represents the self-recognition recall rate. Results disproved this hypothesis—most models showed no self-detection advantage in classical poetry. For instance, Doubao Seed-1.6 had a recall rate of only 16.09% for its own poems. This indicates that the strict formal constraints of classical poetry also smooth out exploitable "identity signals," confirming the difficulty of detection in this domain.
 
 ### Loss & Training
 
-This study is primarily evaluative. For the supervised detector RoBERTa, the Chinese RoBERTa model was fine-tuned for 3 epochs with a learning rate of 1e-4 and a batch size of 16. The dataset was split 8:1:1 for training, validation, and testing. All experiments were run 3 times on 2 A100 GPUs to obtain average results.
+This study is primarily evaluative. The only model requiring training is the supervised detector RoBERTa: fine-tuned based on Chinese RoBERTa for 3 epochs with a learning rate of $1e-4$ and a batch size of 16. The dataset is split 8:1:1 for training/validation/testing. All experiments were run 3 times on 2 A100 GPUs and averaged to reduce randomness.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Detection Method | Type | AUROC | Macro-F1 | Description |
-|---------|------|-------|----------|------|
-| RoBERTa (Fine-tuned) | Supervised | 95.03 | 86.18 | Best detector |
-| Log-Rank | Stat/Prob | 85.86 | 75.56 | Best unsupervised method |
-| Log-Likelihood | Stat/Prob | 83.94 | 73.77 | Stable performance |
-| Fast-DetectGPT | Stat/Prob | 49.67 | 49.35 | Completely failed, equivalent to random guessing |
+|:---|:---|:---|:---|:---|
+| RoBERTa (Fine-tuned) | Supervised | 95.03 | 86.18 | Best performer |
+| Log-Rank | Stat-Prob | 85.86 | 75.56 | Best unsupervised method |
+| Log-Likelihood | Stat-Prob | 83.94 | 73.77 | Stable performance |
+| Fast-DetectGPT | Stat-Prob | 49.67 | 49.35 | Failed; equivalent to random guessing |
 | DeepSeek-V3.2 | Judgment | - | 39.42 | Best LLM detector |
 | GPT-4.1 | Judgment | - | 23.31 | Worst LLM detector |
 
 ### Ablation Study
 
 | Configuration | AUROC | Macro-F1 | Description |
-|------|-------|----------|------|
+|:---|:---|:---|:---|
 | Kimi-K2 Generation | 74.13 | 67.48 | Hardest model to detect |
-| Doubao Seed-1.6 Generation | 76.34 | 68.89 | Moderate detection difficulty |
-| DeepSeek-V3.2 Generation | 77.17 | 69.59 | Easier to detect |
-| GPT-4.1 Generation | 76.34 | 69.41 | Easier to detect |
+| Doubao Seed-1.6 Generation | 76.34 | 68.89 | Medium detection difficulty |
+| DeepSeek-V3.2 Generation | 77.17 | 69.59 | Relatively easy to detect |
+| GPT-4.1 Generation | 76.34 | 69.41 | Relatively easy to detect |
 
 ### Key Findings
 
-- Fast-DetectGPT completely failed (AUROC 49.67%), as the negative curvature hypothesis it relies on does not hold under the highly constrained linguistic structure of classical poetry.
-- Chinese-developed LLMs (DeepSeek, Kimi, Doubao) generally outperformed GPT-4.1 as judgment-based detectors, likely due to differences in classical literature coverage in their training corpora.
-- LLMs possess almost no self-recognition capability in the field of classical poetry; the strict formal constraints effectively mask generation traces.
-- The "Tuiqiao" (refinement) strategy generally increased detection difficulty (average AI recall decreased by 2.94%), though the impact varied across detectors.
-- Fine-tuned RoBERTa performed best across all generation sources (AUROC 93.61-97.95%), proving that supervised learning can capture shared machine features.
+- Fast-DetectGPT failed completely (AUROC 49.67%), as its negative curvature hypothesis does not hold under the highly constrained linguistic structure of classical poetry.
+- LLMs developed in China (DeepSeek, Kimi, Doubao) generally outperformed GPT-4.1 as judgment-based detectors, possibly due to differences in classical literature coverage in training corpora.
+- LLMs possess almost no self-recognition capability in the classical poetry domain; strict formal constraints effectively mask generation traces.
+- The "polishing" strategy generally increased detection difficulty (average AI recall decreased by 2.94%), though the impact varied across detectors.
+- Fine-tuned RoBERTa performed optimally across all generation sources (AUROC 93.61-97.95%), proving that supervised learning can capture shared machine features.
 
 ## Highlights & Insights
 
-- The first benchmark dataset for AI detection of classical Chinese poetry, filling a significant research gap.
-- In-depth linguistic analysis of why formal constraints (meter, imagery, syntax) in classical poetry cause general detection methods to fail.
-- Discovered that the density of statistical traces in classical poetry generated by different LLMs is similar, suggesting that classical formal constraints impose similar generation constraints across various models.
-- The design of the refinement strategy cleverly simulates the "polishing" stage in the human creative process.
+- First benchmark dataset for AI detection of classical Chinese poetry, filling a critical research gap.
+- In-depth analysis of why linguistic features of classical poetry (metrics, imagery, syntax) cause general detection methods to fail.
+- Found that statistical trace densities are similar across different LLMs, suggesting that classical formal constraints impose similar generation bottlenecks on different models.
+- The polishing strategy design cleverly simulates the "refining" stage of human creation.
 
 ## Limitations & Future Work
 
-- The dataset only covers three genres: *Ci*, *Jueju*, and *Lushi*, excluding other forms like *Chuci* and *Fu*.
-- Evaluation of detectors is mainly based on existing open-source methods, without proposing a detection method specifically optimized for classical poetry.
-- Human poetry originates from online platforms; varying quality might affect the detection baseline.
-- Lack of in-depth analysis on which specific poetic styles or themes are easiest or hardest to detect.
+- The dataset only covers Ci, Jueju, and Lushi, excluding other forms like Chu Ci and Fu.
+- Detector evaluation is based on existing public methods without proposing a specialized detector for classical poetry.
+- Human poems are sourced from online platforms; varying quality might affect the detection baseline.
+- Lack of in-depth analysis on which specific poetic styles or themes are most or least detectable.
 
 ## Related Work & Insights
 
-- **vs. English Poetry Detection (Chen et al.)**: English poetry has weaker formal constraints, making detection relatively easier; the strong formal constraints of classical Chinese poetry create unique challenges.
-- **vs. Modern Chinese Poetry Detection (Wang et al.)**: Modern poetry is free in form, with more obvious differences in internal linguistic features; classical poetry presents a higher detection difficulty.
-- **vs. Haiku Detection (Hitsuwari et al.)**: Both involve short texts and highly constrained forms, but the imagery system of classical Chinese poetry is more complex.
+- **vs. English Poetry Detection (Chen et al.)**: English poetry has weaker formal constraints, making detection relatively easier; the strong constraints of classical Chinese poetry create unique challenges.
+- **vs. Modern Chinese Poetry Detection (Wang et al.)**: Modern poetry has free form and more obvious internal linguistic feature differences; classical poetry is significantly harder to detect.
+- **vs. Haiku Detection (Hitsuwari et al.)**: Both involve short texts and high constraints, but classical Chinese poetry features a more complex imagery system.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First benchmark for classical Chinese poetry AI detection, unique and practically significant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation of 12 detection methods, 4 LLMs, across multiple granularities and strategies.
-- **Writing Quality**: ⭐⭐⭐⭐ Complete structure with deep linguistic analysis of classical poetry.
-- **Value**: ⭐⭐⭐⭐ Provides an important foundation for the emerging direction of AI literary detection.
+- Novelty: ⭐⭐⭐⭐ First benchmark for classical Chinese poetry AI detection; unique and practically significant topic.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across 12 detection methods, 4 LLMs, and multiple granularities/strategies.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured paper with deep linguistic analysis of classical poetry.
+- Value: ⭐⭐⭐⭐ Provides a crucial foundation for the emerging field of AI literary detection.
 
 <!-- RELATED:START -->
 
@@ -137,8 +125,8 @@ This study is primarily evaluative. For the supervised detector RoBERTa, the Chi
 - [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
 - [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
 - [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](../../NeurIPS2025/aigc_detection/classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
+- [\[ACL 2026\] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
-- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 
 </div>
 

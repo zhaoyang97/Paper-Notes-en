@@ -2,147 +2,166 @@
 title: >-
   [Paper Note] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Single-view scene reconstruction] This paper proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction that operates natively in mesh space (rather than SDF space)…
+  [CVPR 2026][3D Vision][artist-ready] The study proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction in native mesh space (rather than SDF). By enhancing point cloud encoders with pixel-aligned image features and global scene context, and predicting object poses and meshes simultaneously within a unified token sequenc
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Single-view scene reconstruction"
-  - "autoregressive mesh generation"
-  - "native mesh"
-  - "artist-ready"
-  - "compositional 3D"
+  - CVPR 2026
+  - 3D Vision
+  - artist-ready
 date: 2026-05-08
-content_hash: 94c51a91cc777cd1
+content_hash: e1d06186eb57dc48
 ---
-
 # PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.05888](https://arxiv.org/abs/2603.05888)  
 **Code**: [Project Page](https://mlpc-ucsd.github.io/PixARMesh)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Single-view scene reconstruction, autoregressive mesh generation, native mesh, artist-ready, compositional 3D
 
 ## TL;DR
-This paper proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction that operates natively in mesh space (rather than SDF space). By enhancing a point cloud encoder with pixel-aligned image features and global scene context, the method jointly predicts object poses and meshes within a unified token sequence. PixARMesh achieves scene-level state-of-the-art on 3D-FRONT while producing compact, editable, artist-ready meshes.
+The study proposes PixARMesh, the first autoregressive framework for single-view scene reconstruction in native mesh space (rather than SDF). By enhancing point cloud encoders with pixel-aligned image features and global scene context, and predicting object poses and meshes simultaneously within a unified token sequence, it achieves scene-level SOTA on 3D-FRONT while outputting compact, editable, artist-ready meshes.
 
 ## Background & Motivation
-
-**Background**: Single-view 3D scene reconstruction is a long-standing ill-posed problem. The compositional generation paradigm has attracted growing attention, driven by advances in large-scale object-level reconstruction models (TRELLIS, CLAY, etc.).
+**Background**: Single-view 3D scene reconstruction is a long-standing ill-posed problem. Compositional generation paradigms have recently gained attention due to advancements in large-scale object-level reconstruction models (e.g., TRELLIS, CLAY).
 
 **Limitations of Prior Work**:
-- Holistic methods (Panoptic3D, Uni-3D) are constrained by voxel resolution and the limited expressiveness of feed-forward decoders.
-- Compositional methods (Gen3DSR, DeepPriorAssembly) require inpainting occluded regions before generation, then estimate layout via optimization—prone to local optima.
-- MIDI avoids layout optimization but still generates in normalized scene coordinates using SDF.
-- **All existing methods rely on SDF representations**, requiring Marching Cubes for surface extraction, which produces over-triangulated, overly smooth, high-polygon meshes unsuitable for editing.
+   - Monolithic methods (e.g., Panoptic3D, Uni-3D) are limited by voxel resolution and the finite expressiveness of feed-forward decoders.
+   - Compositional methods (e.g., Gen3DSR, DeepPriorAssembly) require completing occlusions before generation, followed by optimization-based layout estimation—often leading to local optima.
+   - MIDI avoids layout optimization but generates directly in normalized scene coordinates and still utilizes SDF.
+   - **All existing methods rely on SDF representations**, requiring Marching Cubes for surface extraction, which produces over-triangulated, overly smooth, high-poly meshes unsuitable for editing.
 
-**Key Challenge**: Mesh generation models (MeshGPT, EdgeRunner, BPT) are limited to single-object outputs; no prior work has extended them to scene-level reconstruction.
+**Key Challenge**: Mesh generation models (MeshGPT, EdgeRunner, BPT) are restricted to single-object outputs; no existing method has scaled them to scene-level reconstruction.
 
-**Key Insight**: Leverage a pretrained object-level autoregressive mesh generator (EdgeRunner/BPT), augment its point cloud encoder to incorporate appearance and global context, and jointly predict poses and meshes within a unified token sequence.
+**Key Insight**: Utilize pre-trained object-level autoregressive mesh generators (EdgeRunner/BPT) by enhancing their point cloud encoders to incorporate appearance and global context, enabling joint pose and mesh prediction via a unified token sequence.
 
-**Core Idea**: Jointly predict object poses (tokenized as bounding box corners) and native meshes (tokenized as vertices/faces) within a single autoregressive sequence, eliminating SDF extraction and post-hoc layout optimization.
+**Core Idea**: Jointly predict object poses (tokenized as bounding box corners) and native meshes (tokenized as vertices/faces) in a single autoregressive sequence, bypassing SDF extraction and post-processing layout optimization.
 
 ## Method
 
 ### Overall Architecture
-Input RGB image → depth estimation + instance segmentation + image feature extraction (all using off-the-shelf models) → depth unprojection to obtain global and per-object point clouds → pixel-aligned point cloud encoder fusing geometry and appearance → scene context aggregation → Transformer decoder autoregressively generating [pose tokens | mesh tokens].
+PixARMesh aims to directly output the native meshes of every object in a scene from a single RGB image, including their positions and orientations, without using SDF or post-hoc layout optimization. The process is divided into two phases. The first phase generates "point cloud cues from images" using established tools: depth estimation and instance segmentation partition the image, and per-pixel depth is back-projected into 3D points. This yields a global scene point cloud and several object-level point clouds, preserving DINOv2 appearance features for each pixel. The second phase involves the trained component: an enhanced point cloud encoder that fuses geometry and appearance while injecting global scene context. Finally, a Transformer decoder jointly predicts the object pose sequence followed by the mesh vertex/face sequence in a single token stream. Essentially, the core is to decode "placement" and "form" jointly within the same autoregressive sequence.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Single RGB Image"] --> B["Preprocessing (Scaffold)<br/>Depth Estimation + Instance Segmentation → Back-projection"]
+    B --> C["Global Scene PC + Object-wise PCs<br/>+ Per-pixel DINOv2 Appearance Features"]
+    C --> D["Pixel-aligned Point Cloud Encoder<br/>Geometric + Projected Appearance Fusion → Latent z_i"]
+    C --> E["Scene Point Cloud Encoding z_scene"]
+    D --> F["Scene Context Aggregation<br/>Cross-Attn: z_i aggregates z_scene → z_agg"]
+    E --> F
+    F --> G["Unified Pose-Mesh Tokenization<br/>Transformer Decoder Single-Sequence Joint Decoding"]
+    G -->|"First [pose_seq]"| H["8 Corners → Least Squares Affine Transform T*"]
+    G -->|"Then [mesh_seq]"| I["Canonical Space Native Mesh"]
+    H --> J["Scene-level Artist-ready Mesh + Poses"]
+    I --> J
+```
 
 ### Key Designs
 
-1. **Pixel-Aligned Point Cloud Encoder**
+**1. Pixel-aligned Point Cloud Encoder: Incorporating Appearance Cues**
 
-    - **Function**: Fuse image appearance features into the point cloud encoder.
-    - **Mechanism**: For each 3D point $p$ in the instance point cloud $P_i$, project it onto the image plane via camera intrinsics $(u,v) = \text{Proj}(K, p)$, extract the DINOv2 feature $\mathbf{f}_p^{\text{img}}$ at the corresponding pixel, and concatenate it with the geometric feature $\mathbf{f}_p^{\text{pc}}$ before feeding into a Transformer fusion block. Learnable query vectors aggregate the fused features into a compact latent code $\mathbf{z}_i$.
-    - **Design Motivation**: The original EdgeRunner/BPT point cloud encoders process only coordinates, ignoring rich appearance cues from images. In single-view scenes where objects are heavily occluded, appearance features are essential for inferring complete geometry.
+Original models like EdgeRunner/BPT are single-object mesh generators whose encoders only process coordinates. This is insufficient for single-view scenes where objects are heavily occluded, making it impossible to infer complete geometry from visible points alone. PixARMesh recovers image appearance by projecting each 3D point $p$ in the instance point cloud $P_i$ back to the image plane $(u,v)=\text{Proj}(K,p)$ using camera intrinsics. The DINOv2 feature $\mathbf{f}_p^{\text{img}}$ from the corresponding pixel is concatenated with the point's geometric feature $\mathbf{f}_p^{\text{pc}}$ and fed into a Transformer fusion block. A set of learnable query vectors then aggregates these point-wise features into a compact latent code $\mathbf{z}_i$. This binds texture, material, and semantic cues to each point, allowing the encoder to hallucinate occluded parts more reliably.
 
-2. **Scene Context Aggregation**
+**2. Scene Context Aggregation: Global Scene Awareness**
 
-    - **Function**: Inject global scene context into each object's representation.
-    - **Mechanism**: All point clouds are first normalized in a unified scene coordinate system (rather than independently per object) to preserve spatial consistency. A global scene point cloud is encoded to produce $\mathbf{z}_{\text{scene}}$, and each object latent code aggregates scene information via cross-attention: $\mathbf{z}_i^{\text{agg}} = \text{CrossAttn}(q=\mathbf{z}_i, k=\mathbf{z}_{\text{scene}}, v=\mathbf{z}_{\text{scene}})$.
-    - **Design Motivation**: Local point cloud information from individual objects is insufficient for inferring complete geometry and precise poses. Contextual cues from nearby similar objects provide complementary information, especially under heavy occlusion.
+Observing an isolated cluster of points for one object is insufficient for accurate shape completion or precise pose estimation. However, scenes often contain identical or similar objects (e.g., rows of chairs), where the geometry of neighbors serves as a strong supplementary cue. To leverage this, PixARMesh first normalizes all point clouds within a **unified scene coordinate system** rather than individually per object, preserving spatial relationships. The global scene point cloud is encoded into $\mathbf{z}_{\text{scene}}$, which the object latents aggregate via cross-attention:
 
-3. **Unified Pose–Mesh Tokenization**
+$$\mathbf{z}_i^{\text{agg}} = \text{CrossAttn}(q=\mathbf{z}_i,\ k=\mathbf{z}_{\text{scene}},\ v=\mathbf{z}_{\text{scene}})$$
 
-    - **Function**: Encode both object poses and meshes into a unified token sequence using the same vocabulary.
-    - **Mechanism**: Poses are represented as gravity-aligned 7-DoF bounding boxes, encoded as the 3D coordinates of 8 corner points. The mesh generator's coordinate vocabulary is reused (EdgeRunner: 3 tokens per point `<x><y><z>`, 24 tokens total; BPT: 2 tokens per point `<block_id><offset_id>`, 16 tokens total). At inference, the local-to-global affine transformation $\mathbf{T}^\star$ is recovered from the 8 corner points to map the canonical-space mesh back to scene coordinates.
-    - **Final sequence format**: `<bos> [pose_seq] <sep> [mesh_seq] <eos>`
-    - **Design Motivation**: Avoids introducing new vocabulary types, enabling full vocabulary sharing. Pose sequences add only 16–24 tokens, negligible compared to the mesh sequence.
+This aggregated $\mathbf{z}_i^{\text{agg}}$ serves as the condition for the decoder. Ablation studies show this module provides the largest contribution (reducing scene CD from 57.78 to 39.30), particularly under heavy occlusion.
+
+**3. Unified Pose-mesh Tokenization: Encoding "Placement" as Mesh Tokens**
+
+To output pose and mesh in a single sequence without inventing a separate token set for pose, PixARMesh represents object pose as a gravity-aligned 7-DoF bounding box defined by its **8 corner 3D coordinates**. These coordinates reuse the existing coordinate vocabulary of the mesh generator. For EdgeRunner, each point is split into three tokens `<x><y><z>` (24 tokens for 8 corners); for BPT, each point uses two tokens `<block_id><offset_id>` (16 tokens total). The unified sequence structure is:
+
+```
+<bos> [pose_seq] <sep> [mesh_seq] <eos>
+```
+
+The pose segment accounts for only 16–24 tokens, which is negligible compared to mesh sequences that often exceed a thousand tokens, yet it embeds layout information into the same vocabulary space at zero cost. During inference, a least-squares fit on the 8 decoded corners determines the affine transform $\mathbf{T}^\star$ to move the canonical mesh into its scene position. Joint decoding proves more accurate than a two-stage approach as pose and mesh serve as conditions for each other.
 
 ### Loss & Training
-- A single next-token prediction cross-entropy loss: $\mathcal{L}_{\text{ce}} = -\sum_t \log p_\theta(s_t | s_{<t}, \mathbf{z}_{\text{agg}})$
-- Depth jitter (±0.02) is applied during training to simulate monocular depth inaccuracies.
-- Trained on 8×H100 GPUs: approximately 2 days for EdgeRunner and 18 hours for BPT.
+The model uses standard next-token cross-entropy: $\mathcal{L}_{\text{ce}} = -\sum_t \log p_\theta(s_t \mid s_{<t}, \mathbf{z}_{\text{agg}})$, where pose and mesh tokens are predicted uniformly. During training, $\pm 0.02$ jitter is added to depth values to simulate monocular depth estimation errors, making the model robust to upstream noise. Training on 8×H100 GPUs takes approximately 2 days for the EdgeRunner variant and 18 hours for the BPT variant.
 
 ## Key Experimental Results
 
 ### Main Results (3D-FRONT Dataset)
 
-| Method | Scene CD↓ (×10⁻³) | Scene CD-S↓ | Scene F-Score↑ | Object CD↓ | Object F-Score↑ |
-|---|---|---|---|---|---|
+| Method | Scene CD↓(×10⁻³) | Scene CD-S↓ | Scene F-Score↑ | Object CD↓ | Object F-Score↑ |
+|------|---------------|-----------|-------------|---------|-------------|
 | InstPIFu | 213.4 | 124.9 | 13.72% | 44.74 | 29.63% |
 | MIDI | 156.3 | 79.3 | 24.83% | 6.71 | 72.69% |
 | DepR | 153.2 | 56.4 | 25.00% | **2.57** | **89.66%** |
-| **PixARMesh-ER** | **98.8** | **49.1** | **33.55%** | 4.04 | 82.27% |
-| **PixARMesh-BPT** | **98.4** | **47.6** | 32.26% | 4.57 | 80.30% |
+| **Ours-ER** | **98.8** | **49.1** | **33.55%** | 4.04 | 82.27% |
+| **Ours-BPT** | **98.4** | **47.6** | 32.26% | 4.57 | 80.30% |
 
-### Ablation Study (Necessity of Joint Pose–Mesh Modeling)
+### Ablation Study (Necessity of Joint Pose-Mesh Modeling)
 
 | Configuration | Scene CD↓ | Scene F-Score↑ | Object CD↓ | Object F-Score↑ |
-|---|---|---|---|---|
-| EdgeRunner-FT (no layout) | 119.8 | 27.81% | 4.75 | 80.57% |
-| Two-stage (separate models) | 99.8 | 33.32% | 4.75 | 80.85% |
-| **PixARMesh (joint)** | **98.8** | **33.55%** | **4.04** | **82.27%** |
+|------|---------|-------------|---------|-------------|
+| EdgeRunner-FT (No Layout) | 119.8 | 27.81% | 4.75 | 80.57% |
+| Two-stage (Separate Models) | 99.8 | 33.32% | 4.75 | 80.85% |
+| **Ours (Joint)** | **98.8** | **33.55%** | **4.04** | **82.27%** |
 
-### Ablation Study (Module Contributions, Using GT Inputs)
+### Ablation Study (Module Contribution, using GT Input)
 
 | Image Features | Scene Context | Scene CD↓ | Scene F-Score↑ | Object CD↓ |
-|---|---|---|---|---|
+|---------|----------|---------|-------------|---------|
 | ✗ | ✗ | 57.78 | 41.02% | 5.29 |
 | ✓ | ✗ | 55.44 | 42.84% | 5.56 |
 | ✗ | ✓ | 39.30 | 44.67% | 3.64 |
 | ✓ | ✓ | 39.88 | 46.15% | 4.04 |
 
 ### Key Findings
-- PixARMesh achieves scene-level SOTA across all metrics: scene CD drops from 153.2 (DepR) to 98.4 (−36%), and F-Score improves from 25% to 33.6%.
-- DepR retains an advantage at the object level (CD 2.57 vs. 4.04), as diffusion-based SDF generation yields higher geometric fidelity. However, PixARMesh outputs compact artist-ready meshes (only a few thousand faces per object), whereas SDF-based methods produce densely triangulated high-polygon meshes.
-- **Scene context aggregation is the most critical module**: adding it reduces scene CD from 57.78 to 39.30, contributing far more than image features alone.
-- Joint modeling outperforms the two-stage baseline: object CD improves from 4.75 to 4.04, demonstrating that geometry generation benefits from pose inference.
+- PixARMesh achieves comprehensive SOTA in scene-level metrics, reducing scene CD from DepR's 153.2 to 98.4 (-36%) and improving F-Score from 25% to 33.6%.
+- Object-level accuracy remains higher in DepR (CD 2.57 vs 4.04) because diffusion-generated SDFs provide higher geometric precision. However, PixARMesh outputs compact artist-ready meshes (thousands of faces) compared to the dense, high-poly outputs of SDF methods.
+- **Scene context aggregation is the most critical module**: its inclusion reduces scene CD from 57.78 to 39.30, a significantly larger contribution than image features alone.
+- Joint modeling outperforms two-stage approaches: object CD drops from 4.75 to 4.04, proving that geometry generation benefits from pose reasoning.
 - The EdgeRunner variant outperforms the BPT variant due to higher quantization resolution preserving more geometric detail.
 
 ## Highlights & Insights
-- **First extension of autoregressive mesh generation to the scene level**: breaks the assumption that mesh generation models are limited to single objects. A clean token sequence design enables unified decoding of poses and meshes without post-hoc layout optimization.
-- **Vocabulary-sharing pose tokenization is elegantly designed**: bounding box corner coordinates reuse the mesh vocabulary with zero additional token overhead, adding only 16–24 tokens. Layout is recovered at inference via least-squares affine fitting.
-- **Emergent benefit of joint modeling**: pose prediction and mesh generation mutually reinforce each other—geometric information aids localization, and pose context aids geometry completion. This synergy is unattainable in two-stage pipelines.
-- **Output meshes are directly usable in graphics applications** (editing, rendering, simulation), whereas Marching Cubes outputs from SDF-based methods require extensive post-processing.
+- **First extension of autoregressive mesh generation to scene-level**: Breaks the limitation that mesh generation models only work for single objects. Achieves unified pose and mesh decoding via a concise token sequence without post-processing layout optimization.
+- **Clever vocabulary-sharing pose tokenization**: Reuses the mesh vocabulary for bounding box corner coordinates, resulting in zero additional vocabulary overhead and adding only 16-24 tokens.
+- **Emergent effects of joint modeling**: Pose prediction and mesh generation facilitate each other—geometric information aids localization, while pose context aids geometric completion, a synergy unattainable in two-stage schemes.
+- **Graphics-ready output**: Meshes are directly usable in graphics applications (editing, rendering, simulation), whereas SDF-based Marching Cubes outputs require heavy post-processing.
 
 ## Limitations & Future Work
-- Object-level geometric accuracy falls short of diffusion-based SDF methods such as DepR; autoregressive mesh generation has an inherent disadvantage on fine surface details.
-- Currently trained only on 3D-FRONT indoor furniture scenes with a limited object category set.
-- Relies on Grounded-SAM for segmentation and Depth Pro for depth estimation; errors in upstream models cascade through the pipeline.
-- Autoregressive decoding slows down as the number of objects increases, since sequence length grows linearly.
+- Object-level geometric precision is lower than diffusion-based SDF methods like DepR; autoregressive meshes naturally struggle with fine surface details.
+- Currently trained only on 3D-FRONT indoor furniture, limiting object variety.
+- Dependence on Grounded-SAM and Depth Pro means errors in upstream models propagate through the system.
+- Autoregressive decoding speed decreases as the number of objects increases (sequence length grows linearly).
 
 ## Related Work & Insights
-- **vs. DepR**: DepR uses depth-guided diffusion to generate in SDF space, achieving finer object geometry (CD 2.57 vs. 4.04), but inferior scene layout (scene CD 153.2 vs. 98.8) and requiring Marching Cubes post-processing.
-- **vs. MIDI**: MIDI directly generates SDF in normalized scene space, avoiding layout optimization, but still requires surface extraction and achieves lower scene-level accuracy than PixARMesh.
-- **vs. original EdgeRunner / BPT**: these models support only single-object generation; PixARMesh extends them to the scene level by injecting pixel-aligned features and scene context.
+- **vs DepR**: DepR uses depth-guided diffusion in SDF space, yielding finer geometry (CD 2.57 vs 4.04) but inferior scene layout (Scene CD 153.2 vs 98.8). Its output requires surface extraction.
+- **vs MIDI**: MIDI generates SDFs in normalized scene space to avoid layout optimization but still requires Marching Cubes and shows lower scene-level accuracy than PixARMesh.
+- **vs Original EdgeRunner / BPT**: These are single-object models; PixARMesh scales them to scenes by injecting pixel-aligned features and scene context.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — First mesh-native scene reconstruction; the unified tokenization design for poses and meshes is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers both synthetic and real data with thorough ablations, but lacks comparison against more mesh generation baselines.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear writing with a complete and coherent logical chain from motivation to design to experiments.
-- **Value**: ⭐⭐⭐⭐⭐ — Establishes a new paradigm for mesh-native scene reconstruction with significant implications for future work.
+- Novelty: ⭐⭐⭐⭐⭐ First mesh-native scene reconstruction; elegant unified tokenization for pose and mesh.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid results on synthetic and real data; strong ablations, though could benefit from comparison with more mesh generation baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear writing with a complete logical chain from motivation to design and experiments.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for mesh-native scene reconstruction with significant implications for future work.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+[1] **MeshGPT: Generating Triangle Meshes with Graph-Convolutional Tokenizers**, CVPR 2024.
+[2] **EdgeRunner: Auto-regressive 3D Mesh Generation with 1D Tokenizer**, arXiv 2024.
+[3] **BPT: Binary Partition Trees for Visualizing and Generating 3D Meshes**, arXiv 2025.
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
 - [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
-- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
-- [\[CVPR 2026\] AvatarPointillist: AutoRegressive 4D Gaussian Avatarization](avatarpointillist_autoregressive_4d_gaussian_avatarization.md)
+- [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
+- [\[CVPR 2026\] MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)
+- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 
 </div>
 

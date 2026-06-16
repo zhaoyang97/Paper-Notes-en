@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][SFT and RL integration] This paper proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—using multi-teac…
+  [ACL 2026][Reinforcement Learning][Paper Note] Ours proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—Hard samples utilize multi-teacher distillation to reduce SFT bias, while Mid samples use Group Alignment Loss to reduce RL variance. This achieves an average gain of 4.8% on mathem
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "SFT and RL integration"
-  - "Bias-variance tradeoff"
-  - "Dynamic difficulty grading"
-  - "Multi-teacher distillation"
-  - "Gradient variance reduction"
+  - ACL 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: a3ada99830c93ba5
+content_hash: 138b9f99f16426ce
 ---
-
 # Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -24,55 +18,68 @@ content_hash: a3ada99830c93ba5
 **Keywords**: SFT and RL integration, Bias-variance tradeoff, Dynamic difficulty grading, Multi-teacher distillation, Gradient variance reduction
 
 ## TL;DR
-This paper proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—using multi-teacher distillation for Hard samples to reduce SFT bias and Group Alignment Loss for Mid samples to reduce RL variance. It achieves an average improvement of 4.8% on mathematical reasoning benchmarks and a 13.3% gain on OOD tasks.
+Ours proposes DYPO (Dynamic Policy Optimization), which routes samples to different optimization paths based on dynamic difficulty grading—Hard samples utilize multi-teacher distillation to reduce SFT bias, while Mid samples use Group Alignment Loss to reduce RL variance. This achieves an average gain of 4.8% on mathematical reasoning benchmarks and 13.3% on OOD tasks.
 
 ## Background & Motivation
 
-**Background**: LLM post-training primarily follows two routes: SFT and RL. SFT is stable (low variance) but limited by fitting bias from static data; RL is exploratory (low bias) but suffers from high gradient variance due to sampling randomness. The industry typically adopts a sequential "SFT → RL" pipeline.
+**Background**: LLM post-training primarily follows SFT and RL routes. SFT is stable (low variance) but limited by fitting bias from static data; RL exhibits high exploration (low bias) but suffers from high gradient variance due to sampling randomness. The industry typically adopts a sequential "SFT→RL" pipeline.
 
-**Limitations of Prior Work**: (1) SFT bias in the sequential pipeline misleads subsequent RL exploration (bias propagation); (2) existing integration strategies (e.g., SuperRL, CHORD) only mix SFT and RL through simple loss weighting, ignoring the fundamental statistical conflict between their gradient signals; (3) a uniform optimization strategy is applied to samples of varying difficulty—easy samples provide marginal signals, hard samples have extremely sparse rewards, and only medium-difficulty samples are most informative.
+**Limitations of Prior Work**: (1) SFT bias in sequential pipelines misleads subsequent RL exploration (bias propagation); (2) existing integration strategies (e.g., SuperRL, CHORD) only mix SFT and RL via simple loss weighting, ignoring the fundamental statistical conflicts between their gradient signals; (3) a uniform optimization strategy is applied to samples of varying difficulty—easy samples provide marginal signals, while hard samples suffer from extremely sparse rewards, leaving only medium-difficulty samples as the most informative.
 
-**Key Challenge**: The statistical conflict between the high-bias, low-variance gradients of SFT and the low-bias, high-variance gradients of RL. Simple weighting cannot resolve this multi-dimensional mismatch.
+**Key Challenge**: The statistical conflict between the high-bias, low-variance SFT gradients and the low-bias, high-variance RL gradients cannot be resolved by simple weighting due to multi-dimensional mismatch.
 
-**Goal**: To propose a structured solution that simultaneously mitigates SFT fitting bias and RL gradient variance, achieving efficient and stable unified post-training.
+**Goal**: Propose a structured solution to simultaneously mitigate SFT fitting bias and RL gradient variance, achieving efficient and stable unified post-training.
 
-**Key Insight**: From the theoretical perspective of bias-variance decomposition, it is identified that samples of different difficulty levels require different optimization strategies—Hard samples require knowledge injection (SFT direction), Mid samples require reinforcement learning (RL direction), and Easy samples can be skipped.
+**Key Insight**: From the theoretical perspective of bias-variance decomposition, samples of different difficulty levels require distinct optimization strategies—Hard samples require knowledge injection (SFT direction), Mid samples require reinforcement learning (RL direction), and Easy samples can be bypassed.
 
-**Core Idea**: Dynamically categorize samples into Easy, Hard, and Mid tiers based on group rollout results, routing them to skipped, multi-teacher distillation SFT, and GAL-enhanced RL optimization paths, respectively.
+**Core Idea**: Dynamically categorize samples into Easy/Hard/Mid tiers based on group rollout results and route them to Skip/Multi-teacher distillation SFT/GAL-enhanced RL optimization paths, respectively.
 
 ## Method
 
 ### Overall Architecture
-For each prompt, a set of $k$ trajectories is generated and categorized into Easy (all correct), Hard (all incorrect), and Mid (partially correct) based on accuracy. Easy samples are skipped; Hard samples use multi-teacher distillation to provide low-bias supervision; Mid samples employ a hybrid objective of GRPO + GAL to achieve low-variance RL. Total loss: $\mathcal{L}_{DYPO} = \mathbb{I}_\mathcal{H} \cdot \gamma \mathcal{L}_{SFT} + \mathbb{I}_\mathcal{M} \cdot (\alpha \mathcal{L}_{GRPO} + (1-\alpha) \mathcal{L}_{GAL})$.
+For each prompt, a group of $k$ trajectories is generated and categorized into Easy (all correct), Hard (all incorrect), or Mid (partially correct) based on accuracy. Easy samples are skipped; Hard samples utilize multi-teacher distillation for low-bias supervision; Mid samples employ a hybrid objective of GRPO+GAL for low-variance RL. Total loss: $\mathcal{L}_{DYPO} = \mathbb{I}_\mathcal{H} \cdot \gamma \mathcal{L}_{SFT} + \mathbb{I}_\mathcal{M} \cdot (\alpha \mathcal{L}_{GRPO} + (1-\alpha) \mathcal{L}_{GAL})$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input prompt"] --> B["Group-sampling of k trajectories<br/>Binary reward R(τ)∈{0,1}"]
+    B --> C["Dynamic Difficulty Grading<br/>Routing by group accuracy"]
+    C -->|All correct Easy| D["Skip<br/>No gradient contribution"]
+    C -->|All wrong Hard| E["Multi-teacher Distillation<br/>Sample m teacher trajectories for SFT"]
+    C -->|Partially correct Mid| F["GRPO + Group Alignment Loss<br/>Contrastive term for pos/neg pairs"]
+    E --> G["Weighted Total Loss L_DYPO<br/>γ·L_SFT + α·L_GRPO + (1−α)·L_GAL"]
+    F --> G
+    G --> H["Policy Update"]
+```
 
 ### Key Designs
 
-1. **Dynamic Difficulty Grading**:
+**1. Dynamic Difficulty Grading: Routing samples to the most appropriate optimization path via rollout accuracy**
 
-    - **Function**: Routes samples to the most appropriate optimization path based on rollout results.
-    - **Mechanism**: Samples $k$ trajectories for each query and evaluates them with binary rewards $R(\tau_i) \in \{0,1\}$. All correct → Easy (skip), all incorrect → Hard (SFT distillation), mixed → Mid (RL optimization). This ensures Easy samples do not contribute gradients (avoiding saturation), Hard samples avoid ineffective RL exploration, and Mid samples receive the most informative RL signals.
-    - **Design Motivation**: A uniform optimization strategy cannot handle the diversity of sample difficulty. Gradients for simple samples approach zero (wasting computation), while reward signals for difficult samples are too sparse, leading to RL gradient variance explosion.
+Uniform optimization strategies fail to handle disparate sample difficulties: easy samples have gradients approaching zero, wasting compute, while hard samples provide sparse reward signals, causing RL gradient variance to explode. DYPO does not use external classifiers or reward models; instead, it reuses group rollouts—sampling $k$ trajectories per query and evaluating each via binary rewards $R(\tau_i) \in \{0,1\}$.
 
-2. **Multi-Teacher Distillation**:
+Queries are routed into three paths: Easy (all correct) are skipped to avoid ineffective updates from saturated samples; Hard (all incorrect) are assigned to multi-teacher distillation to avoid blind RL exploration in the absence of positive examples; Mid (partially correct) are most informative and assigned to RL optimization. This routing is achieved with minimal overhead.
 
-    - **Function**: Provides low-bias supervisory signals for Hard samples, replacing the biased guidance of a single teacher.
-    - **Mechanism**: Maintains a collection of reasoning trajectories from $m$ teacher models and randomly samples a trajectory from one teacher as the SFT target for Hard queries. Theoretically, a single teacher introduces a bias of $\|\mathbf{b}_{sys} + \mathbf{b}_i\|$, while an ensemble of $m$ teachers reduces specific bias to $\sigma_{bias}^2/m$ (assuming teacher bias directions are uncorrelated).
-    - **Design Motivation**: Fitting bias from single-teacher SFT is a root cause of restricted RL exploration. Using two teachers, such as DeepSeek-R1 and Qwen3-235B, significantly reduces specific bias.
+**2. Multi-Teacher Distillation: Eliminating idiosyncratic bias through teacher ensembles**
 
-3. **Group Alignment Loss (GAL)**:
+The fitting bias of single-teacher SFT is a root cause of restricted RL exploration—the student model inherits the teacher's bias. DYPO maintains an inference trajectory set from $m$ teacher models for Hard samples. When a Hard query is encountered, a trajectory is sampled from the ensemble as the SFT target.
 
-    - **Function**: Serves as a variance control supplement for GRPO, stabilizing RL gradients through contrastive learning.
-    - **Mechanism**: Constructs positive and negative pairs from successful and failed trajectories of Mid samples, using a DPO-style contrastive loss $\mathcal{L}_{GAL} = -\log\sigma(\beta_{GAL} \cdot d(\tau_s, \tau_f))$ to pull successful paths closer and push failed paths away. A key difference from standard DPO is that GAL uses on-policy rollouts rather than static preference data. The gradient weight $w_d = 1 - \sigma(\beta_{GAL} d)$ is strictly bounded in $(0,1)$, whereas $\hat{A}_i$ in GRPO is unbounded.
-    - **Design Motivation**: GRPO gradient variance $\approx \Sigma_s/k$ is limited by the group size $k$; the variance of GAL naturally decays to 0 as the model learns to distinguish positive and negative samples ($\sigma \to 1$). After mixing, $Var(g_{mix}) < Var(g_{GRPO})$.
+Theoretically, a single teacher introduces bias $\|\mathbf{b}_{sys} + \mathbf{b}_i\|$. Assuming uncorrelated teacher biases, an ensemble of $m$ teachers reduces idiosyncratic bias to $\sigma_{bias}^2/m$. In practice, using DeepSeek-R1 and Qwen3-235B significantly lowers this bias, providing more reliable supervision for Hard samples.
+
+**3. Group Alignment Loss (GAL): Adding a contrastive term with decaying variance for GRPO**
+
+The gradient variance of GRPO, $\approx \Sigma_s/k$, is limited by the group size $k$. DYPO introduces an additional contrastive loss for Mid samples by pairing successful and failed trajectories within the same group using a DPO-style objective: $\mathcal{L}_{GAL} = -\log\sigma(\beta_{GAL} \cdot d(\tau_s, \tau_f))$. Unlike standard DPO, GAL uses on-policy rollouts rather than static preference data.
+
+Variance reduction occurs because the gradient weight $w_d = 1 - \sigma(\beta_{GAL} d)$ is strictly bounded in $(0,1)$, while GRPO advantages $\hat{A}_i$ are unbounded. Furthermore, as the model learns to distinguish pairs ($\sigma \to 1$), GAL variance naturally decays to zero, acting as an adaptive regulator. The hybrid $Var(g_{mix}) < Var(g_{GRPO})$ stabilizes RL gradients without sacrificing low bias.
 
 ### Loss & Training
-The total loss is a weighted combination based on graded routing. Hard samples: standard NLL loss for multi-teacher distillation (weight $\gamma$). Mid samples: $\alpha \cdot \mathcal{L}_{GRPO} + (1-\alpha) \cdot \mathcal{L}_{GAL}$. Each prompt samples 8 trajectories, with a maximum response length of 8192, a learning rate of $1 \times 10^{-6}$, and training conducted on 2×8 A800 GPUs using the verl framework.
+The total loss is a weighted combination based on graded routing. Hard samples: standard NLL loss for multi-teacher distillation (weight $\gamma$). Mid samples: $\alpha \cdot \mathcal{L}_{GRPO} + (1-\alpha) \cdot \mathcal{L}_{GAL}$. Sampling uses 8 trajectories per prompt, max response length 8192, learning rate $1 \times 10^{-6}$, trained via the verl framework on 2×8 A800 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results (Qwen2.5-Math-7B)
 
-| Benchmark | DYPO | SFT→RL | CHORD | SRFT | Gain (vs strongest) |
+| Benchmark | DYPO | SFT→RL | CHORD | SRFT | Gain (vs. strongest) |
 |-----------|------|--------|-------|------|-------------|
 | AIME 24 | 36.0 | 25.8 | 31.2 | 30.7 | +4.8 |
 | AIME 25 | 28.7 | 23.1 | 24.4 | 26.0 | +2.7 |
@@ -85,7 +92,7 @@ The total loss is a weighted combination based on graded routing. Hard samples: 
 
 ### Ablation Study
 
-| Configuration | ID Avg | OOD Avg | Description |
+| Config | ID Avg | OOD Avg | Description |
 |------|--------|---------|------|
 | SFT only | 44.1 | 50.0 | High bias, low variance |
 | RL only | 45.2 | 61.4 | Low bias, high variance |
@@ -93,30 +100,30 @@ The total loss is a weighted combination based on graded routing. Hard samples: 
 | DYPO | 52.5 | 61.6 | Dynamic grading + dual mitigation |
 
 ### Key Findings
-- DYPO scores +5.3 points higher than the strongest baseline (SRFT) on AIME 24 and +10.9 higher than pure RL, indicating that dynamic grading and GAL effectively mitigate RL instability.
-- Outstanding OOD generalization: Outperforms the SFT baseline by +16.7% on GPQA-D, proving that DYPO improves reasoning strategies rather than memorizing templates.
-- Equally effective on Qwen3-4B-Base (ID Avg increase of +18.8% vs SFT), demonstrating cross-model generalizability.
+- DYPO outperformed the strongest baseline (SRFT) by +5.3 points and pure RL by +10.9 points on AIME 24, demonstrating that dynamic grading and GAL effectively mitigate RL instability.
+- OOD generalization is prominent: a +16.7% improvement over the SFT baseline on GPQA-D proves that DYPO enhances reasoning strategies rather than merely memorizing templates.
+- Cross-model generalization was validated on Qwen3-4B-Base (ID Avg +18.8% vs. SFT).
 
 ## Highlights & Insights
-- **Bias-Variance Decomposition Perspective**: Analyzing the fundamental conflict of SFT-RL integration using statistical learning theory is more profound than "simple weighting" engineering solutions. This analytical framework is transferable to other multi-objective optimization scenarios.
-- **Adaptive Variance Decay of GAL**: As the model learns to distinguish between positive and negative samples, the gradient variance of GAL naturally decays to 0—making it an "adaptive regularizer" rather than an auxiliary loss with fixed weighting.
-- **Simplicity of Dynamic Difficulty Grading**: Classification into Easy/Hard/Mid is achieved using only group rollout accuracy, requiring no additional classifiers or reward models, which makes implementation costs extremely low.
+- **Bias-Variance Decomposition Perspective**: Analyzing the fundamental conflicts of SFT-RL integration via statistical learning theory provides deeper insights than engineering-led "simple weighting" schemes.
+- **Adaptive Variance Decay of GAL**: As the model improves, GAL gradient variance naturally decays to zero, making it an "adaptive regularizer" rather than a fixed-weight auxiliary loss.
+- **Simplicity of Dynamic Grading**: Classifying samples into Easy/Hard/Mid using only rollout accuracy eliminates the need for external classifiers or reward models, ensuring low implementation cost.
 
 ## Limitations & Future Work
-- Relies on binary rewards (correct/incorrect), which are not directly applicable to partially correct open-ended generation tasks.
-- Multi-teacher distillation requires reasoning trajectories from multiple strong teacher models, increasing data preparation costs.
-- The boundaries for Easy/Hard/Mid are hard partitions (all correct/all incorrect), which may lose information from boundary samples.
-- Verified only on mathematical reasoning; effectiveness on other reasoning tasks like NLP understanding and coding remains to be confirmed.
+- Dependency on binary rewards (correct/incorrect) limits direct applicability to partially correct open-ended generation tasks.
+- Multi-teacher distillation requires inference trajectories from multiple strong models, increasing data preparation costs.
+- The use of hard boundaries for Easy/Hard/Mid (all/none correct) might lose information from marginal samples.
+- Evaluation was limited to mathematical reasoning; efficacy in NLP understanding, code, and other reasoning tasks remains to be confirmed.
 
 ## Related Work & Insights
-- **vs SuperRL**: SuperRL performs binary switching between SFT and RL, while DYPO performs instance-level routing and optimizes bias and variance separately.
-- **vs CHORD**: CHORD mixes objectives via dynamic soft weights but remains a uniform optimization; DYPO assigns completely different loss functions based on difficulty.
-- **vs LUFFY**: LUFFY also integrates SFT+RL but uses a fixed mixing ratio; DYPO's dynamic grading allows the mixing strategy to adapt per sample.
+- **vs. SuperRL**: While SuperRL performs binary switching between SFT and RL, DYPO utilizes instance-level routing and optimizes bias and variance separately.
+- **vs. CHORD**: CHORD uses dynamic soft weights for objective mixing, but remains a uniform optimization; DYPO assigns completely different loss functions based on difficulty.
+- **vs. LUFFY**: LUFFY integrates SFT+RL with a fixed mixing ratio; DYPO's dynamic grading allows for sample-adaptive hybrid strategies.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The bias-variance analysis perspective is novel and the GAL design is ingenious, though the idea of dynamic difficulty grading itself is not entirely new.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 ID and 2 OOD benchmarks, two base models, and multiple baselines; however, non-mathematical reasoning tasks are missing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical analysis is rigorous and clear, with a complete derivation chain for bias-variance decomposition and comprehensive experimental comparisons.
+- Novelty: ⭐⭐⭐⭐ The bias-variance analysis perspective is novel and GAL is elegantly designed, though dynamic grading itself is not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested on 5 ID and 2 OOD benchmarks across two base models; however, lacks non-mathematical tasks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical analysis with complete derivation of the bias-variance decomposition and comprehensive experimental comparisons.
 
 <!-- RELATED:START -->
 
@@ -126,9 +133,9 @@ The total loss is a weighted combination based on graded routing. Hard samples: 
 
 - [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](visually-guided_policy_optimization_for_multimodal_reasoning.md)
 - [\[ACL 2026\] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](rl-plus_countering_capability_boundary_collapse_of_llms_in_reinforcement_learnin.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 - [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](../../ICLR2026/reinforcement_learning/fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
+- [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
+- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](../../ICLR2026/reinforcement_learning/thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
 
 </div>
 

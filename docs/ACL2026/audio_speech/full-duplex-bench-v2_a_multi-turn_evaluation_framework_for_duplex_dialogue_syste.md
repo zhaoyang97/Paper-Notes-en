@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner
 description: >-
-  [ACL 2026][Audio & Speech][Full-duplex dialogue] The authors propose Full-Duplex-Bench-v2, where an Automated Examiner powered by GPT-Realtime conducts real-time dialogues with full-duplex models via WebRTC. Performance…
+  [ACL 2026][Audio & Speech][LLM-as-judge] The authors propose Full-Duplex-Bench-v2, where a GPT-Realtime-powered Examiner interacts with full-duplex models in real-time via WebRTC across four task categories (Daily/Correction/Entity/Safety) and two pacing modes (Fast/Slow). Evaluation scores cover turn-taking, instruction-following, and task-specific dimension
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Full-duplex dialogue"
-  - "multi-turn evaluation"
-  - "LLM-as-judge"
-  - "WebRTC streaming orchestration"
-  - "turn-taking"
+  - ACL 2026
+  - Audio & Speech
+  - LLM-as-judge
+  - turn-taking
 date: 2026-05-08
-content_hash: 0bc5dd52264d270a
+content_hash: 4ecbe54ca5e4a05c
 ---
-
 # Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner
 
 **Conference**: ACL 2026  
@@ -24,51 +20,61 @@ content_hash: 0bc5dd52264d270a
 **Keywords**: Full-duplex dialogue, multi-turn evaluation, LLM-as-judge, WebRTC streaming orchestration, turn-taking
 
 ## TL;DR
-The authors propose Full-Duplex-Bench-v2, where an Automated Examiner powered by GPT-Realtime conducts real-time dialogues with full-duplex models via WebRTC. Performance is evaluated across four task categories (Daily/Correction/Entity/Safety) and two pacing modes (Fast/Slow) based on turn-taking, instruction-following, and task-specific metrics. Findings reveal that systems like GPT-Realtime, Moshi, and Freeze-Omni exhibit performance degradation as dialogues progress, with open-source models performing poorly in correction and entity tracking.
+The authors propose Full-Duplex-Bench-v2, where a GPT-Realtime-powered Examiner interacts with full-duplex models in real-time via WebRTC across four task categories (Daily/Correction/Entity/Safety) and two pacing modes (Fast/Slow). Evaluation scores cover turn-taking, instruction-following, and task-specific dimensions. Findings reveal that performance for GPT-Realtime, Moshi, and Freeze-Omni degrades as dialogues progress, with open-source models performing particularly poorly on correction and entity tracking.
 
 ## Background & Motivation
-**Background**: Traditional spoken dialogue systems are half-duplex—one party speaks only after the other finishes. While simple, this results in high latency and unnatural interactions. Recently, several full-duplex solutions have emerged: cascaded approaches (ASR+LLM+TTS with FSM, e.g., MiniCPM-Duplex) and end-to-end models (dGSLM, SyncLLM, Moshi, NTPP, SCoT). These models theoretically approximate human conversational speed by "listening while speaking."
+**Background**: Traditional spoken dialogue systems are half-duplex—one person speaks only after the other finishes—which is simple but results in high latency and lack of naturalness. Recently, numerous full-duplex solutions have emerged: cascaded systems (ASR+LLM+TTS with FSM, e.g., MiniCPM-Duplex) and end-to-end models (dGSLM, SyncLLM, Moshi, NTPP, SCoT). These models claim "listen-while-speak" capabilities, theoretically approaching human conversation rhythms.
 
-**Limitations of Prior Work**: ① Human Evaluation: Natural but expensive and non-reproducible; ② Corpus-level Statistics (pause, floor-transfer offset): Scalable but lacks semantic context; ③ Classifiers (Talking Turns): Automated but restricted by training data generalization; ④ Existing Full-Duplex-Bench v1/v1.5: The first streaming benchmarks, but limited to single-turn, scripted scenarios covering "instantaneous" behaviors like pause, interrupt, and backchannel.
+**Limitations of Prior Work**: ① Human Evaluation: Natural but expensive and non-reproducible; ② Corpus-level statistics (pause, floor-transfer offset): Scalable but lack semantic insight; ③ Classifiers (Talking Turns): Automated but limited by training data generalization; ④ Existing Full-Duplex-Bench v1/v1.5: The first streaming benchmarks, but restricted to single-turn, scripted scenarios focusing on "instantaneous" behaviors like pause, interrupt, and backchannel.
 
-**Key Challenge**: Real human conversation is multi-turn. Success depends not just on a single turn-taking event but on maintaining contextual consistency, task progression, and information retrieval across multiple exchanges. Most existing benchmarks are confined to single turns; the ability of full-duplex models to handle multi-turn interactions has not been systematically quantified.
+**Key Challenge**: Real human dialogue is multi-turn; success depends not just on single turn-taking events but on maintaining context consistency, task progression, and information retrieval across multiple exchanges. Existing benchmarks almost entirely stop at single turns; whether full-duplex models can sustain multi-turn interaction has not been systematically quantified.
 
-**Goal**: ① Advance evaluation from "scripted single-turn" to "realistic multi-turn streaming"; ② Maintain naturalism without relying on human evaluation (the Examiner improvises interruptions, follows up, and adjusts based on the examinee's responses); ③ Propose metrics to distinguish turn-taking, instruction-following, and task-specific competence.
+**Goal**: ① Advance evaluation from "scripted single-turn" to "real multi-turn streaming"; ② Preserve naturalism without relying on human raters (the Examiner improvises, follows up, and adjusts based on the evaluatee's responses); ③ Propose metrics to distinguish between turn-taking, instruction-following, and task-specific competence.
 
-**Key Insight**: The authors found that GPT-Realtime itself is a stable, low-latency speech model capable of strict role-play, making it suitable as an "Automated Examiner." This bypasses the bottleneck of utilizing humans as dialogue partners and scales multi-turn evaluation from "slow and expensive" to "batch reproducible."
+**Key Insight**: The authors observe that GPT-Realtime is a stable, low-latency speech model capable of strict role-play, making it suitable as an "Automated Examiner." This bypasses the bottleneck of "human as a dialogue partner" and allows multi-turn evaluation to be mass-reproducible.
 
-**Core Idea**: Utilize a spoken-LM Examiner + a WebRTC orchestrator + staged multi-turn task scripts + an LLM-as-judge scorer to form the first streaming-native multi-turn full-duplex evaluation framework.
+**Core Idea**: A streaming-native multi-turn full-duplex evaluation framework composed of a spoken-LM Examiner, a WebRTC orchestrator, staged multi-turn task scripts, and an LLM-as-judge scorer.
 
 ## Method
 
 ### Overall Architecture
-The FDB-v2 pipeline consists of three components: ① **Examiner** (a gpt-realtime driven speech model that advances dialogue based on staged goals and interrupts when necessary); ② **Orchestrator** (manages two WebRTC peer connections, enforcing bidirectional transmission in 48 kHz, 16-bit, mono PCM, and strict 10 ms frames as the canonical wire format); ③ **Evaluatee** (the model under test, integrated via an adapter that converts internal audio streams to the canonical format). Each session begins with the Examiner, progresses through pre-orchestrated sub-goals, and ends with a fixed closing statement. Dual-track recordings are saved, transcribed via Parakeet-TDT ASR, and scored by Gemini-2.5-flash acting as the judge.
+FDB-v2 aims to answer a question that has not been systematically quantified: whether full-duplex speech models can sustain an entire multi-turn conversation rather than just responding well in a single turn. It organizes evaluation into a real-time tripartite loop: a GPT-Realtime-driven Examiner advances the dialogue based on pre-set sub-goals and interrupts proactively when necessary; a WebRTC Orchestrator maintains two peer connections, enforcing a canonical wire format for audio transmission; and the evaluatee model connects via an adapter to normalize its audio stream. Each session starts with the Examiner, follows stepwise goals, and ends with a fixed closing statement. Dual-track recordings (one for the Examiner, one for the Evaluatee) are transcribed via Parakeet-TDT and then evaluated by Gemini-2.5-flash.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T["Four Task Families<br/>Daily / Correction / Entity / Safety"] --> EX["Examiner (gpt-realtime)<br/>Stepwise Goals + Fast / Slow Pacing"]
+    EX <-->|Real-time Dialogue| IF
+    subgraph IF["Standardized Streaming Interface (Bi-directional WebRTC)"]
+        direction TB
+        OR["Orchestrator<br/>Canonical wire format, 10 ms frames"] <--> AD["Adapter<br/>Normalizes evaluatee output"]
+    end
+    IF <--> EV["Full-Duplex Evaluatee Model"]
+    EX --> REC["Dual-track Recording<br/>Examiner / Evaluatee"]
+    EV --> REC
+    REC --> ASR["Parakeet-TDT Transcription & Alignment"]
+    ASR --> JUDGE["Three-Dimensional Scoring<br/>Turn-Taking / Instruction Following / Task-Specific"]
+```
 
 ### Key Designs
 
-1. **Stepwise Semantic Goals + Dual Examiner Pacing**:
-    - Function: Transforms multi-turn dialogue from arbitrary chat into a structured process with verifiable sub-goals, while exposing failure modes through pacing shifts.
-    - Mechanism: Each scenario is divided into steps with explicit semantic goals; the Examiner advances only when the goal is met, otherwise rephrasing or probing. Pacing is set to **Fast** (Examiner interrupts, adds backchannels, and switches stages immediately upon completion) or **Slow** (Examiner intervenes only after the examinee stops or pauses for a long duration).
-    - Design Motivation: Fast pacing tests coordination in turn-taking (handling interruptions), while Slow pacing tests endurance in memory and entity tracking (more time but prone to drift). Dual pacing isolates "scheduling issues" from "memory issues."
+**1. Stepwise Semantic Goals + Two Examiner Paces: Transforming "Free Chat" into Structured Diagnostics**
+Multi-turn evaluation often suffers from becoming unstructured casual chat where success is hard to define. The authors decompose each scenario into several steps, each with a clear semantic goal. The Examiner advances only when the current goal is met; otherwise, it paraphrases or asks follow-up questions. Furthermore, two pacing modes are introduced: in Fast mode, the Examiner proactively interrupts, provides backchannels, and transitions immediately after a stage; in Slow mode, it intervenes only after the evaluatee stops speaking or pauses excessively. These pacing modes separate two types of failures—Fast mode pressures turn-taking coordination (can the model handle interruptions?), while Slow mode tests the limits of memory and entity tracking (does the context drift over time?).
 
-2. **Standardized Streaming Interface (Adapter–Orchestrator–Adapter)**:
-    - Function: Enables any full-duplex system (closed-source APIs, open-source checkpoints, future models) to connect via an adapter without framework modifications.
-    - Mechanism: The Orchestrator enforces a canonical wire format (48 kHz, 16-bit, mono PCM, 10 ms frames = 960 bytes) pushed at a stable cadence; the adapter normalizes model-specific outputs, slices/packs into 10 ms frames, and pads silence for buffer under-runs.
-    - Design Motivation: Standardizing the audio interface overcomes the engineering hurdle of disparate protocols (WebSocket, RTSP, SDK callbacks), allowing the framework to evolve independently of specific model implementations.
+**2. Adapter–Orchestrator–Adapter Standardized Interface: Audio Protocols as Public Interfaces**
+The primary engineering hurdle for full-duplex evaluation is the variability of audio interfaces (chunked WebSocket, RTSP, SDK callbacks). The solution is a mandatory canonical wire format enforced by the Orchestrator (48 kHz, 16-bit, mono PCM, strict 10 ms frames = 960 bytes). Evaluatee models only require an adapter to normalize their output to this format and pad silence during buffer under-runs. This decouples the transmission protocol from the task scripts, allowing the benchmark to evolve independently—akin to a unified OpenAI Gym interface for full-duplex systems.
 
-3. **Four Task Families + Three-Dimensional LLM-as-judge Scoring**:
-    - Function: Covers daily dialogue, self-correction, cross-turn reference, and safety refusal, providing automated scores aligned with human judgment.
-    - Mechanism: Tasks include **Daily** (reservations, planning), **Correction** (cross-turn self-correction, e.g., "I want a cold coffee" → "Oh, make it hot"), **Entity Tracking** (ordinal/attribute/landmark references), and **Safety** (11 policy categories). The Gemini judge outputs three scores: Turn-Taking Fluency (1-5/event), Instruction Following (1-5/event), and Task-Specific Metric (1-5/dialogue).
-    - Design Motivation: Separating metrics distinguishes "fluent but irrelevant" from "accurate but stuttering" failure modes. Task-specific metrics (e.g., reference consistency for Entity Tracking) ensure comparable total scores across different families.
+**3. Four Task Families + Three-Dimensional LLM-as-judge Scoring: Disentangling Fluency, Obedience, and Accuracy**
+Tasks cover four core multi-turn challenges: Daily (reservations, planning, troubleshooting), Correction (multi-turn self-correction, e.g., "I want a cold coffee" → "Oh, please make it hot"), Entity Tracking (switching references via ordinal/attribute/landmark, e.g., "the quieter one" → "the one near the park"), and Safety (11 policy alignment scenarios across health, privacy, illegal acts, etc.). For scoring, a Gemini judge assesses three dimensions simultaneously: Turn-Taking Fluency (1-5/event), Instruction Following (1-5/event), and Task-Specific Metric (1-5/dialogue). This decomposition distinguishes failure modes such as being "fluent but shallow" versus being "accurate but stuttering." Task-specific metrics are customized—Entity focuses on reference consistency, Correction on proper update application, and Safety on boundary maintenance under pressure.
 
 ### Loss & Training
-FDB-v2 is an evaluation framework and does not include training. The scoring side uses Gemini-2.5-flash-preview-09-2025, following the findings of Chang et al. 2025 that Gemini correlates highly with humans in turn-taking evaluation. ASR uses Parakeet-TDT-0.6B-v2 for time-aligned transcription. The Examiner consistently uses gpt-realtime to ensure zero variance at the Examiner end during cross-model testing.
+FDB-v2 is an evaluation framework and does not involve training. Scoring utilizes Gemini-2.5-flash-preview-09-2025, following the finding by Chang et al. (2025) that Gemini scores for turn-taking correlate highly with human judgment. ASR is handled by Parakeet-TDT-0.6B-v2 for time-aligned transcription. The Examiner always uses GPT-Realtime to ensure zero variance on the examiner side across different model tests.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Pacing | System | Correction | Entity | Safety |
+| Pace | System | Correction | Entity | Safety |
 |------|------|-----------|--------|--------|
 | Fast | Freeze-Omni | 2.74 | 2.62 | 3.94 |
 | Fast | Moshi | 2.88 | 2.76 | 3.67 |
@@ -77,9 +83,9 @@ FDB-v2 is an evaluation framework and does not include training. The scoring sid
 | Slow | Moshi | 3.46 | 3.84 | 3.51 |
 | Slow | GPT-Realtime | 3.94 | 4.12 | **4.53** |
 
-GPT-Realtime maintained ≥4.0 in all Fast tasks, while open-source models scored <3.0 in Fast Correction and Entity tasks. Slow pacing provided significant relief for open-source models (Moshi Entity +1.08, Freeze-Omni Correction +0.76).
+GPT-Realtime maintains $\ge 4.0$ across all Fast tasks, whereas open-source models score $< 3.0$ in Fast Correction/Entity. Slow mode provides significant breathing room for open-source models (Moshi Entity +1.08, Freeze-Omni Correction +0.76).
 
-### Ablation Study
+### Ablation Study / Human Alignment
 
 | Metric | Krippendorff $\alpha$ | Pearson $r$ |
 |------|---------------------|-------------|
@@ -89,38 +95,38 @@ GPT-Realtime maintained ≥4.0 in all Fast tasks, while open-source models score
 | Entity Tracking | 0.6383 | 0.6330 |
 | Safety | 0.6931 | 0.6914 |
 
-On 120 sessions, the LLM judge correlation with humans reached $r\in[0.59, 0.69]$, with the strongest correlation in Safety and IF, and the weakest in Turn-Taking (where human evaluators also diverged on "natural timing").
+Across 120 sessions, the correlation between the LLM judge and human raters is $r \in [0.59, 0.69]$. Correlation is strongest for Safety and Instruction Following (IF) and weakest for Turn-Taking (as human raters often disagree on "natural timing").
 
 ### Key Findings
-- **All systems degrade over time**: Tracking TT/IF in 15-second bins showed TT drifting slowly while IF often dropped sharply, indicating that long-term robustness is a common weakness in current full-duplex models.
-- **Pacing is a diagnostic signal**: Slow pacing allowed GPT-Realtime and Moshi to "recover," improving Entity IF by 0.5-1.0; Fast pacing exposed Freeze-Omni's lack of recovery capability.
-- **Task difficulty ranking**: Entity was easiest (explicit references grounded the model), while Daily and Correction were hardest (dependent on cumulative memory, where small errors snowball).
-- **Closed vs. Open-source gap**: GPT-Realtime averaged 4.32 in Fast mode, while Moshi and Freeze-Omni both averaged 3.10, showing that open-source models are not yet ready for commercial multi-turn deployments.
+- **Degradation over time**: Plotting TT/IF scores in 15-second bins shows that TT drifts slowly while IF often drops rapidly, rarely returning to the baseline. This indicates that long-term robustness is a common weakness in current full-duplex models.
+- **Pacing as a diagnostic signal**: Slow mode allows GPT-Realtime and Moshi to "recover," improving Entity IF by 0.5-1.0. Fast mode exposes Freeze-Omni's lack of recovery capability (consistent drops in both modes). Examiner pacing proves to be an efficient probe for failure modes.
+- **Task difficulty ranking**: Entity is the easiest (explicit references provide grounding), while Daily/Correction are the hardest (requiring memory and information accumulation, where small errors snowball). Safety is generally stable, though models still occasionally cross boundaries under pressure.
+- **Massive gap between closed and open source**: GPT-Realtime averages 4.32 in Fast mode, while Moshi and Freeze-Omni both average 3.10. The gap narrows in Slow mode but remains significant, showing that open-source models have not yet caught up to commercial APIs in multi-turn scenarios.
 
 ## Highlights & Insights
-- **Spoken-LM as Examiner is a paradigm shift**: Moving from rigid scripts or expensive humans to a stable speech model preserves dialogue dynamics (interruptions, probes) while ensuring reproducibility.
-- **Canonical wire format + adapter mode**: Treating the audio protocol as a public interface (10 ms frames / 48 kHz) makes the framework implementation-neutral—similar to how OpenAI Gym standardized RL environments.
-- **Dual pacing to isolate Turn-Taking vs. Memory defects**: The Fast/Slow design provides a diagnostic breakdown (e.g., "is it a timing issue or a memory loss?"), offering high value for industrial deployment.
-- **Three-dimensional scoring (TT/IF/Task-specific)**: Disentangles fluency from accuracy, preventing a single total score from masking specific failure modes.
+- **Spoken-LM as Examiner is a paradigm shift**: Moving beyond scripts (unnatural) and humans (non-reproducible), using a stable speech model preserves dialogue dynamics (interruptions, follow-ups, pacing) while ensuring reproducibility. This approach can be extended to full-duplex video or embodied AI.
+- **Canonical wire format + Adapter pattern**: Enforcing 10 ms frames / 48 kHz / mono PCM makes the framework model-agnostic. This is a highly replicable engineering design—similar to how OpenAI Gym standardized reinforcement learning environments.
+- **Fast/Slow pacing decouples turn-taking and memory defects**: Single-pace evaluation conflates these failure modes; the dual-pace design provides a diagnostic breakdown ("is it a timing issue or a memory issue?"), which is highly valuable for industrial bug localization.
+- **Three-dimensional scores**: Separating "fluency," "instruction following," and "task completion" prevents a single aggregate score from masking underlying trade-offs.
 
 ## Limitations & Future Work
-- Task coverage (4 types) and pacing (2 levels) remain limited; it does not cover negotiation, education, or complex safety sub-domains.
-- No reward for audio-expressive behaviors (emotive prosody, active-listening cues), which may result in under-expressed micro-timing.
-- English only; excludes multi-lingual code-switching and cultural variations in overlap patterns.
-- Automated Examiner + LLM judge introduces prompt sensitivity and model bias; Turn-Taking correlation at 0.61 suggests this dimension is not yet "fully solved."
-- Small sample size of evaluated systems (GPT-Realtime / Moshi / Freeze-Omni); hasn't yet tested newer end-to-end models like NTPP or SCoT.
+- Task coverage (4 types) and pacing (2 modes) are limited. It does not include open-domain negotiation, teaching, or complex safety sub-fields.
+- It does not reward audio-expressive behaviors (emotion, active-listening cues, style adaptation), which might lead to systems that are under-expressive in micro-timing and entrainment.
+- English only; multi-lingual scenarios would involve code-switching and different cultural norms for overlap and pacing.
+- Automated Examiner + LLM judge introduce prompt sensitivity, model bias, and calibration drift. While $r=0.59–0.69$ is moderate-to-strong, subjective dimensions like Turn-Taking are still not fully resolved.
+- Small evaluatee sample size (only GPT-Realtime, Moshi, and Freeze-Omni); newer end-to-end models like NTPP and SCoT have not yet been integrated.
 
 ## Related Work & Insights
-- **vs Full-Duplex-Bench v1/v1.5 (Lin et al. 2025a/b)**: Previous versions focused on single-turn instantaneous behaviors; v2 scales to staged goals and conversational endurance.
-- **vs Talking Turns (Arora et al. 2025b)**: They use trained classifiers for turn-change detection; Ours uses a spoken-LM partner to generalize to any task while assessing IF and competence.
-- **vs Chang et al. 2025 (Game-Time)**: This work inherits the conclusion that Gemini is a valid turn-taking judge and extends it to multi-task scoring.
-- **vs MultiWOZ / SLURP**: These are text-based multi-turn benchmarks; FDB-v2 is the first to merge streaming, full-duplex, and multi-turn into one framework.
+- **vs. Full-Duplex-Bench v1/v1.5 (Lin et al. 2025a/b)**: Previous versions only measured single-turn behaviors like pause/interrupt. v2 upgrades the focus to sustaining dialogues across staged goals.
+- **vs. Talking Turns (Arora et al. 2025b)**: They use trained classifiers for turn changes but are limited by data; Ours uses a spoken-LM as a partner, generalizing to any task and measuring IF and task-specific logic.
+- **vs. Chang et al. 2025 (Game-Time)**: That work used Gemini for turn-taking evaluation; Ours inherits that conclusion and extends it to multi-dimensional, multi-task scoring.
+- **vs. MultiWOZ / Taskmaster / SLURP**: These are text-based multi-turn benchmarks; FDB-v2 is the first to merge "streaming + full-duplex + multi-turn" into a unified framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First streaming multi-turn full-duplex framework; spoken-LM Examiner paradigm is robust.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3 systems × 2 pacings × 4 tasks with human alignment, though more models are needed.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework description and transparent limitations.
-- Value: ⭐⭐⭐⭐⭐ Provides a reproducible testbed for the community and standardizes streaming engineering.
+- Novelty: ⭐⭐⭐⭐ First streaming multi-turn full-duplex framework; the spoken-LM Examiner paradigm is robust.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 systems × 2 paces × 4 tasks + 120-session human alignment, though more models would be ideal.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework presentation and honest discussion of limitations.
+- Value: ⭐⭐⭐⭐⭐ Provides a reproducible testbed for the full-duplex community; the wire format standardization is a significant engineering contribution.
 
 <!-- RELATED:START -->
 
@@ -132,7 +138,7 @@ On 120 sessions, the LLM judge correlation with humans reached $r\in[0.59, 0.69]
 - [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](../../ICML2026/audio_speech/the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
 - [\[ICML 2026\] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models](../../ICML2026/audio_speech/moshirag_asynchronous_knowledge_retrieval_for_full-duplex_speech_language_models.md)
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
-- [\[ACL 2026\] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models](style_amnesia_investigating_speaking_style_degradation_and_mitigation_in_multi-t.md)
+- [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 
 </div>
 

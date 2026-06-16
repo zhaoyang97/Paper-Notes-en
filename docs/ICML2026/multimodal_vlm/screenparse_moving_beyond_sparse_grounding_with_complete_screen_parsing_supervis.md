@@ -2,73 +2,86 @@
 title: >-
   [Paper Note] ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
 description: >-
-  [ICML 2026][Multimodal VLM][Screen Parsing] Addressing the issue of "sparse grounding" annotations in GUI agents that lose full-screen structure, this paper develops an automated Webshot pipeline to construct ScreenParse…
+  [ICML 2026][Multimodal VLM][Computer-Use Agent] Addressing the issue of "sparse grounding" annotations in GUI agents that lose full-screen structural information, this paper constructs a dense screen parsing dataset, ScreenParse (771K screenshots / 21M elements / 55 classes), via a fully automated Webshot pipeline. It trains ScreenVLM, a model with only 316M paramet
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Screen Parsing"
-  - "Computer-Use Agent"
-  - "UI grounding"
-  - "Compact VLM"
-  - "Structure-aware Loss"
+  - ICML 2026
+  - Multimodal VLM
+  - Computer-Use Agent
+  - UI grounding
 date: 2026-05-08
-content_hash: e7d9ac914995a03c
+content_hash: 9415dbee3c3a4eb1
 ---
-
 # ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.14276](https://arxiv.org/abs/2602.14276)  
 **Code**: https://saidgurbuz.github.io/screenparse/  
 **Area**: Multimodal VLM / GUI Agent / Datasets & Foundation Models  
-**Keywords**: Screen Parsing, Computer-Use Agent, UI grounding, Compact VLM, Structure-aware Loss
+**Keywords**: Screen Parsing, Computer-Use Agent, UI grounding, Compact VLM, Structure-aware loss
 
 ## TL;DR
-Addressing the issue of "sparse grounding" annotations in GUI agents that lose full-screen structure, this paper develops an automated Webshot pipeline to construct ScreenParse, a dense screen parsing dataset with 771K screenshots, 21M elements, and 55 classes. The authors train ScreenVLM, a model with only 316M parameters, to parse full screens into ScreenTag structural sequences. It outperforms 8B-scale foundation VLMs on dense parsing and sparse grounding benchmarks while reducing latency to $\sim 1/4$.
+Addressing the issue of "sparse grounding" annotations in GUI agents that lose full-screen structural information, this paper constructs a dense screen parsing dataset, ScreenParse (771K screenshots / 21M elements / 55 classes), via a fully automated Webshot pipeline. It trains ScreenVLM, a model with only 316M parameters, to parse full screens into ScreenTag structural sequences, outperforming 8B-tier foundation VLMs on dense parsing and sparse grounding benchmarks while reducing latency to $\sim 1/4$.
 
 ## Background & Motivation
 
-**Background**: The core bottleneck for computer-use agents (CUA) is grounding—for an agent to click or type correctly, it must first recognize what elements are on the screen, where they are, and what their text is. Current mainstream CUA training data, such as SeeClick, ScreenSpot, and Mind2Web, utilize "action-driven" annotations: each step only labels the specific UI element being clicked, leaving all other elements on the screen unannotated.
+**Background**: The core bottleneck for computer-use agents (CUA) is grounding—for an agent to correctly click or input, it must first identify what elements are on the screen, where they are, and what their text content is. Current mainstream CUA training datasets such as SeeClick, ScreenSpot, and Mind2Web use "action-driven" annotations: each step only labels the specific UI element being clicked, leaving all other elements on the screen unlabeled.
 
-**Limitations of Prior Work**: Sparse annotation allows models to learn shortcuts from "instruction to single element," but the global structure of the screen remains implicit, leading to failure on new layouts or applications. Meanwhile, relatively complete datasets like GroundCUA are small in scale (55k) and have few categories (8 classes). On the other hand, foundation VLMs (e.g., Qwen3-VL-8B, InternVL3) can perform zero-shot element extraction, but their massive size prevents edge deployment.
+**Limitations of Prior Work**: Sparse annotations allow models to learn shortcuts from "instructions to a single element," leaving the overall screen structure implicit; this causes models to fail when encountering new layouts or applications. Meanwhile, relatively complete datasets like GroundCUA are small in scale (55k) and have few categories (8 classes). Conversely, foundation VLMs (Qwen3-VL-8B, InternVL3), while capable of zero-shot element extraction, are too large for edge device deployment.
 
-**Key Challenge**: The requirement is for "full-screen dense structural understanding," but manual dense annotation is prohibitively expensive; using raw DOM as ground truth is extremely noisy (containing many hidden/duplicate/invisible wrappers); and the model must be "edge-compatible and small." These three objectives conflict with each other.
+**Key Challenge**: The goal is "full-screen dense structural understanding," but manual dense annotation is extremely expensive. Using DOM directly as ground truth is noisy (containing many hidden, duplicate, or invisible wrappers). Simultaneously, the model must be "small enough for edge devices." These three objectives constrain each other.
 
-**Goal**: (1) Automatically construct high-coverage, low-noise dense UI annotations; (2) Design a lightweight VLM architecture and sequence representation capable of consuming such dense supervision; (3) Ensure "dense supervision" is transferable to external grounding tasks and existing VLMs.
+**Goal**: (1) Automatically construct dense UI annotations with high coverage and low noise; (2) Design a lightweight VLM architecture and sequence representation capable of consuming this dense supervision; (3) Ensure that "dense supervision" is transferable to external grounding tasks and existing VLMs.
 
-**Key Insight**: The authors leverage a "structural inductive bias" often overlooked—treating the entire screen as a structured document. Borrowing from mature document-to-markup (DocTags, OTSL) approaches, the UI screen is compressed into a set of tag sequences containing coordinates and categories.
+**Key Insight**: The authors bet on a "structural inductive bias" often ignored by predecessors—treating the full screen as a structured document. Drawing on mature ideas from document-to-markup conversion (DocTags, OTSL), they compress the UI screen into a set of tag sequences containing coordinates and categories.
 
-**Core Idea**: A Webshot pipeline uses Playwright rendering + DOM extraction + VLM refinement to transform millions of webpages into dense screen supervision for 21M elements. A markup-based sequence called ScreenTag, combined with a structure-aware weighted cross-entropy (CE) loss, enables a small VLM to parse the entire screen into structured output.
+**Core Idea**: Use Playwright rendering + DOM extraction + VLM refinement to transform tens of thousands of web pages into dense screen supervision for 21M elements. Then, use a markup-style sequence (ScreenTag) and structure-aware weighted CE to enable a small VLM to learn to parse the full screen into structured output.
 
 ## Method
 
 ### Overall Architecture
-The paper is divided into two parts: the **Webshot pipeline** (data side) and **ScreenVLM** (model side). Webshot samples 1M pages from 45M URLs → Playwright renders full-page screenshots → DOM trees are extracted and filtered by visibility/overlap → Qwen3-VL-8B classifies each candidate into one of 55 categories → VLM-as-a-judge assigns a quality score to discard low-quality samples → result: 771K images / 21M elements, split 90/5/5. On the model side, ScreenVLM uses SigLIP-2 as the vision backbone to encode image patch tokens. After projection, tokens are fed into a 165M Granite autoregressive decoder (initialized from the Granite Docling document-to-markup model) to output an XML-like ScreenTag sequence. Each element follows the format `<tag> <x1> <y1> <x2> <y2> [text] [children] </tag>`, where coordinates are normalized and quantized to a 0–500 grid.
+The paper is divided into two parts: the **Webshot Pipeline** on the data side and **ScreenVLM** on the model side. Webshot samples 1M pages from 45M URLs → renders full-page screenshots via Playwright → extracts DOM trees and filters by visibility/overlap → uses Qwen3-VL-8B to classify each candidate element into one of 55 classes → uses VLM-as-a-judge to assign quality scores to the full page to remove low-quality samples → produces 771K images / 21M elements, split 90/5/5. On the model side, ScreenVLM uses SigLIP-2 as the vision backbone to encode image patch tokens. After projection, these are sent to a 165M Granite autoregressive decoder (initialized from the Granite Docling document-to-markup model), which outputs an XML-like ScreenTag sequence. Each element follows the format `<tag> <x1> <y1> <x2> <y2> [text] [children] </tag>`, with coordinates normalized and quantized to a 0–500 grid.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph WS["Webshot Automated Dense Annotation Pipeline"]
+        direction TB
+        A["Sample 1M pages from 45M URLs"] --> B["Render full-page screenshots via Playwright"]
+        B --> C["DOM extraction + Visibility/Overlap filtering<br/>Remove degenerate/hidden/duplicate wrappers"]
+        C --> D["Qwen3-VL-8B Re-classification<br/>Each candidate → One of 55 classes"]
+        D --> E["VLM-as-a-judge Quality Filtering<br/>Scoring: Coverage/False Positives/Duplicates/Localization"]
+    end
+    E --> F["ScreenParse Dataset<br/>771K images / 21M elements / 90:5:5 Split"]
+    F --> G["SigLIP-2 Vision Encoding<br/>Screenshot → patch tokens"]
+    G --> H["Projection → Granite-165M decoder<br/>Initialized from Granite Docling"]
+    H -->|Structure-aware weighted CE supervision| I["ScreenTag Structural Sequence<br/>Markup with coords/classes, coords quantized 0–500"]
+```
 
 ### Key Designs
 
-1.  **Webshot Automated Dense Annotation Pipeline**:
-    - **Function**: Eliminates manual labor for the dense task of labeling all visible elements across 55 classes.
-    - **Mechanism**: First uses DOM + Playwright to obtain candidate boxes (rejecting degenerate, invisible, or near-duplicate nested wrappers), preserving container hierarchies (navbars, cards, modals). Qwen3-VL-8B then re-predicts categories based on "full image + element crop + attributes." Finally, a VLM-as-a-judge scores the page across four dimensions (coverage, false detection, duplication, localization), discarding those below a threshold.
-    - **Design Motivation**: DOM labels have wide coverage but are noisy, while pure VLM labeling is too expensive. This cascade of "DOM candidates + VLM re-classification + full-page filtering" aims to approach "complete + clean" data with zero human intervention.
+**1. Webshot Automated Dense Annotation Pipeline: Approaching "Complete + Clean" labels with zero human labor**
 
-2.  **ScreenTag: Compact Screen Structure Sequence**:
-    - **Function**: Compresses a screenshot into a segment of autoregressively generatable structured text.
-    - **Mechanism**: Each element generates a nested sequence of `<tag> <x1> <y1> <x2> <y2> [text] [children] </tag>`. Coordinates use discrete tokens from 0–500, while text and children are optional. This representation is compact, unambiguous for parsing, and naturally fits the token-by-token generation of an LLM decoder.
-    - **Design Motivation**: The authors intentionally reuse the inductive bias of document-to-markup—inheriting "markup-friendly" pre-training from Granite Docling—making the transfer to the task of "structured rectangles + text" seamless.
+The dilemma of dense annotation is that using DOM directly as ground truth provides wide coverage but is chaotic (including many hidden or duplicate boxes), while relying solely on VLM annotation is too expensive. Webshot combines the strengths of both via a cascade: first, use Playwright rendering + DOM extraction to obtain candidate boxes, actively rejecting degenerate, invisible, or near-duplicate nested wrappers while preserving the hierarchy of semantic containers like navbars, cards, and modals. Second, have Qwen3-VL-8B examine the "full image + element crop + attributes" to re-classify each candidate into one of 55 categories, correcting noisy DOM labels. Finally, use VLM-as-a-judge to score the full page based on coverage, false positives, duplicates, and localization, discarding any pages below a threshold.
 
-3.  **Structure-Aware Weighted Cross-Entropy**:
-    - **Function**: Assigns higher weights to tag and coordinate tokens within the ScreenTag sequence to prevent long OCR text from dominating gradients.
-    - **Mechanism**: $\mathcal{L}(\theta) = -\sum_{t=1}^{T} w(y_t)\log p_\theta(y_t \mid y_{<t}, I)$, where $w(y_t) = \lambda_{\text{tag}}$ (if $y_t \in \mathcal{V}_{\text{tag}}$), $\lambda_{\text{loc}}$ (if $y_t \in \mathcal{V}_{\text{loc}}$), and $1$ otherwise.
-    - **Design Motivation**: A misplaced coordinate or wrong tag invalidates the entire element, while a wrong character in text is less critical. Furthermore, OCR text dominates sequence length, causing standard CE to push the model toward "reading text without knowing element locations." Weighting aligns the optimization objective with structural fidelity.
+**2. ScreenTag: Compressing a screenshot into an autoregressively generated structural sequence**
+
+To enable a small VLM to output full-screen structures, a representation is needed that is compact, unambiguous, and compatible with token-by-token decoder generation. ScreenTag writes each element as a nested `<tag> <x1> <y1> <x2> <y2> [text] [children] </tag>`, with normalized coordinates quantized into discrete tokens on a 0–500 grid. This is much shorter than JSON and unambiguous for parsing. Crucially, it reuses the inductive bias of document-to-markup models—the ScreenVLM decoder is initialized from models like Granite Docling, which are pre-trained to be friendly to "markup with location tags." Since UI screens are essentially "structured rectangles + text," the transfer is nearly seamless.
+
+**3. Structure-aware Weighted Cross-Entropy: Preventing long OCR text from drowning out structural tokens**
+
+The tokens in a ScreenTag sequence are not equally important: a misplaced coordinate or an incorrect tag category invalidates the entire element, whereas a single incorrect text character is negligible. However, OCR text occupies the bulk of the sequence. Standard CE would push the model toward "reading text without knowing element locations." This paper assigns different weights to each token type:
+
+$$\mathcal{L}(\theta) = -\sum_{t=1}^{T} w(y_t)\log p_\theta(y_t \mid y_{<t}, I)$$
+
+where tag tokens ($y_t \in \mathcal{V}_{\text{tag}}$) have weight $\lambda_{\text{tag}}$, coordinate tokens ($y_t \in \mathcal{V}_{\text{loc}}$) have weight $\lambda_{\text{loc}}$, and others are 1. This aligns the optimization objective directly with structural fidelity.
 
 ### Loss & Training
-ScreenVLM is fine-tuned on the ScreenParse training set for 287,500 steps using 16 H100 GPUs (2 nodes × 8 cards) with an effective batch size of 64 and a sequence length capped at 8192 tokens. Grouped learning rates: $2.12\times 10^{-2}$ for the multimodal projection layer, and $2\times 10^{-3}$ for the vision/language backbones.
+ScreenVLM is fine-tuned on the ScreenParse training set for 287,500 steps using 16 H100 GPUs (2 nodes × 8 cards), with an effective batch size of 64 and a sequence length truncated at 8192 tokens. Grouped learning rates are used: $2.12\times 10^{-2}$ for the multimodal projection layer and $2\times 10^{-3}$ for the vision/language backbones.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of dense parsing on the ScreenParse test set (PageIoU measures pixel-level coverage; Label PageIoU requires category matching).
+Dense parsing comparison on the ScreenParse test set (PageIoU measures pixel-level coverage, Label PageIoU requires category matching).
 
 | Model | Size | Page IoU | Label PageIoU | mAP@50 |
 |-------|------|----------|---------------|--------|
@@ -78,8 +91,6 @@ Comparison of dense parsing on the ScreenParse test set (PageIoU measures pixel-
 | Qwen3-VL-2B + ScreenParse | 2B | 0.585 | 0.166 | 0.152 |
 | **ScreenVLM (Ours)** | **316M** | **0.606** | **0.197** | **0.303** |
 | RT-DETRv2 + ScreenParse | 43M | 0.600 | 0.172 | 0.362 |
-
-With 1/25 of the parameters, ScreenVLM more than doubles the PageIoU of Qwen3-VL-8B. Fine-tuning Qwen3-VL-2B and InternVL3-2B on ScreenParse also yields gains of 0.36–0.40 PageIoU, proving that this supervision is a transferable asset.
 
 ### Ablation Study
 Structure-aware weighted loss vs. standard CE.
@@ -99,32 +110,32 @@ Efficiency (H100 + vLLM, average of 128 samples):
 | **ScreenVLM** | **632** | $\mathbf{276.4 \pm 139.0}$ | **3.62** |
 
 ### Key Findings
-- The structure-aware loss provides the largest gains in "out-of-distribution" and "few-element grounding" scenarios (e.g., +72.1% Recall on ScreenSpot-PC), indicating it helps the model resist the dilution of structural tokens by OCR text.
-- ScreenParse supervision is "model-agnostic": fine-tuning different families like InternVL3, Qwen3-VL, and even detectors like YOLO/RT-DETR results in improvements. This suggests dense screen supervision is for UI understanding what ImageNet is for computer vision.
-- ScreenVLM achieves high PixCov (>0.83) but low Recall on ScreenSpot-PC/Mobile, suggesting it learns to "cover the key pixels" but hasn't yet mastered outputting very tight element-level boxes—a bias from web-only training that the authors identified for future work.
+- Structure-aware loss provides the greatest gains in out-of-distribution and few-element grounding scenarios (ScreenSpot-PC Recall +72.1%), indicating it effectively resists the dilution of structural tokens by OCR text.
+- ScreenParse supervision is "model-agnostic": fine-tuning different families like InternVL3, Qwen3-VL, and even YOLO/RT-DETR yields gains. This suggests dense screen supervision in UI understanding is analogous to ImageNet in computer vision.
+- ScreenVLM achieves high PixCov (>0.83) on ScreenSpot-PC/Mobile but low Recall, suggesting it learns to "cover critical pixels" but has not yet mastered outputting very tight element-level bounding boxes—a distribution bias from web-only training.
 
 ## Highlights & Insights
-- This is a critical step in shifting "computer-use data" from "action-driven sparse annotation" to "dense screen supervision." While most GUI research follows grounding benchmarks, this work redefines supervision itself.
-- ScreenTag "documentizes" the GUI screen, reusing mature document parsing biases to allow a 316M model to learn structure effectively. This "cross-domain markup representation transfer" provides a strong template for other structured perception tasks.
-- Using a VLM as both an "annotation refiner" and a "judge," combined with DOM candidates, creates an iterative loop to bootstrap weak labels into strong ones. This paradigm can be adapted to any domain where "rendering source + DOM/SVG" is available.
+- This is a critical step in shifting "computer-use data" from "action-driven sparse annotation" to "dense screen supervision." While GUI research has focused on grounding benchmarks, this work pivots to focus on the supervision itself.
+- ScreenTag "documentizes" the GUI screen, reusing mature inductive biases from document parsing, which allows a 316M model to learn structure effectively from the start.
+- Using a VLM as both a "label refiner" and a "judge," alongside DOM candidate extraction, creates an automated iterative process to bootstrap weak labels into strong ones.
 
 ## Limitations & Future Work
-- Data is entirely sourced from the web. PC and Mobile UI conventions differ from the web; experiments show significantly lower Recall on ScreenSpot-PC/Mobile compared to Web.
-- The VLM-judge threshold requires manual calibration, and "high quality" determinations are still subject to the biases of the backbone model.
-- ScreenTag is a nested sequence; the current limit of 8192 tokens may still lead to truncation on ultra-large screens (e.g., 4K long screenshots).
-- The paper does not integrate ScreenVLM into an end-to-end agent to prove downstream gains from "dense parsing → action," which is the obvious next step.
+- Data is entirely sourced from the web. PC and Mobile UI conventions differ from the web; experiments show Recall on ScreenSpot-PC/Mobile is significantly lower than on Web.
+- VLM-judge thresholds require manual calibration, and "high quality" judgments are still influenced by the backbone's biases.
+- ScreenTag uses nested sequences with a maximum length of 8192 tokens, which may still be truncated on ultra-large screens (e.g., 4K long screenshots).
+- The study has not yet integrated ScreenVLM into an end-to-end agent to demonstrate the downstream benefits of "dense parsing to action."
 
 ## Related Work & Insights
-- **vs SeeClick / ScreenSpot**: These use sparse grounding (one image, one instruction, one element). This work pursues "full-screen dense" and proves that such supervision also benefits the former.
-- **vs GroundCUA**: GroundCUA is also dense but limited to 55k samples and 8 classes. ScreenParse is an order of magnitude larger in scale (771k) and categories (55).
-- **vs OmniParser**: OmniParser acts as a detector-style YOLO parser, strong in localization but lacking structured output aligned with language. ScreenVLM outputs markup structure directly consumable by downstream LLM agents.
-- **vs Granite Docling / SmolDocling**: These are document-to-markup VLMs. This work validates that "structured-markup pre-training" is an excellent starting point for UI perception.
+- **vs SeeClick / ScreenSpot**: These are sparse grounding datasets (one image, one instruction, one element). Ours pursues "full-screen dense" parsing and proves it benefits the former.
+- **vs GroundCUA**: GroundCUA also uses dense annotation but is limited to 55k samples and 8 classes; ScreenParse is significantly larger at 771k and 55 classes.
+- **vs OmniParser**: OmniParser is a detector-style YOLO parser with strong localization but lacks language-aligned structured output; ScreenVLM outputs markup structure directly consumable by LLM agents.
+- **vs Granite Docling / SmolDocling**: These are document-to-markup VLMs; this work perform UI domain transfer, validating that "structured-markup pre-training" is a strong starting point for UI perception.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Solidifies the "sparse to dense" paradigm for GUI data, though individual techniques are combinations of existing components.
+- Novelty: ⭐⭐⭐⭐ Solidifies the "sparse to dense" paradigm in GUI data, though individual techniques are combinations of existing components.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple VLM families/detectors, 3 benchmarks, and comprehensive loss/efficiency ablations.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and supported by figures, though some key designs are detailed in the appendix.
-- Value: ⭐⭐⭐⭐⭐ Both dataset and small model are open-sourced, representing an infrastructure-level contribution to the GUI agent community.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and supporting figures, though some key designs are in the appendix.
+- Value: ⭐⭐⭐⭐⭐ Open-sourcing both the dataset and small model represents an infrastructure-level contribution to the GUI agent community.
 
 <!-- RELATED:START -->
 
@@ -132,11 +143,11 @@ Efficiency (H100 + vLLM, average of 128 samples):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection](../../CVPR2026/multimodal_vlm/beyond_weak_supervision_mllms-guided_graded_knowledge_distillation_for_unsupervi.md)
+- [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](../../CVPR2026/multimodal_vlm/sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](../../CVPR2026/multimodal_vlm/efficient_document_parsing_via_parallel_token_prediction.md)
 - [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](../../ACL2026/multimodal_vlm/what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
-- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
-- [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](../../ICLR2026/multimodal_vlm/grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
 
 </div>
 

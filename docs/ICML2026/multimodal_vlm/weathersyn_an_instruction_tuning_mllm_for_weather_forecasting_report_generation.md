@@ -2,138 +2,149 @@
 title: >-
   [Paper Note] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation
 description: >-
-  [ICML 2026][Multimodal VLM][Weather forecasting report] WeatherSyn decomposes the weather forecaster's report-writing workflow into a multimodal instruction task of "Visual Analysis → Point Outlining → Drafting." It esta…
+  [ICML 2026][Multimodal VLM][aspect-controlled prompting] WeatherSyn decomposes the weather forecaster's writing process into a multimodal instruction task of "observing maps → listing key points → drafting reports." The authors establish the WSInstruct dataset covering 31 US cities and 8 weather elements, then perform a three-stage fine-tuning (SFT→RFT→DPO) on Qwen3-VL-8B. T
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Weather forecasting report"
-  - "instruction tuning"
-  - "aspect-controlled prompting"
-  - "RFT"
-  - "DPO"
+  - ICML 2026
+  - Multimodal VLM
+  - aspect-controlled prompting
+  - RFT
+  - DPO
 date: 2026-05-08
-content_hash: 121b50bfdb28ac85
+content_hash: d1952f23720d3ae5
 ---
-
 # WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.07522](https://arxiv.org/abs/2605.07522)  
 **Code**: https://github.com/compasszzn/WeatherSyn (Available)  
-**Area**: Multimodal VLM / Weather AI / Report Generation  
-**Keywords**: Weather forecasting report, instruction tuning, aspect-controlled prompting, RFT, DPO
+**Area**: Multimodal VLM / AI for Weather / Report Generation  
+**Keywords**: Weather forecasting reports, instruction tuning, aspect-controlled prompting, RFT, DPO
 
 ## TL;DR
-WeatherSyn decomposes the weather forecaster's report-writing workflow into a multimodal instruction task of "Visual Analysis → Point Outlining → Drafting." It establishes the first WSInstruct dataset covering 31 US cities and 8 weather aspects. By employing a three-stage fine-tuning process (SFT → RFT → DPO) on Qwen3-VL-8B, an 8B open-source model consistently outperforms closed-source models such as GPT-5-Nano and Claude-3.7-Sonnet across multiple evaluation metrics and demonstrates zero-shot generalization capabilities for unseen cities.
+WeatherSyn decomposes the weather forecaster's writing process into a multimodal instruction task of "observing maps → listing key points → drafting reports." The authors establish the WSInstruct dataset covering 31 US cities and 8 weather elements, then perform a three-stage fine-tuning (SFT→RFT→DPO) on Qwen3-VL-8B. This allows an 8B open-source model to consistently outperform closed-source models such as GPT-5-Nano and Claude-3.7-Sonnet across various metrics, demonstrating zero-shot generalization to unseen cities.
 
 ## Background & Motivation
 
-**Background**: Traditional weather forecast reports rely on meteorologists reading hundreds of variable fields from Numerical Weather Prediction (NWP) models, combined with observational data and collective discussions. This process suffers from information overload, low efficiency, and subjective bias. MLLMs have been explored for weather captioning (e.g., WeatherQA, OmniEarth-Bench, Omni-Weather), but these either focus on severe weather events or use classification/multiple-choice formats, failing to address the daily operational task of "generating multi-day open-ended forecast reports directly from initial atmospheric fields."
+**Background**: Traditional weather forecasting reports rely on meteorologists reading hundreds of variable fields from Numerical Weather Prediction (NWP) models, followed by human synthesis and collective discussion. This process suffers from information overload, low efficiency, and subjective bias. While MLLMs have been explored for weather captioning (WeatherQA, OmniEarth-Bench, Omni-Weather), prior work either focuses solely on severe weather events or utilizes classification/multiple-choice formats, failing to address the daily operational task of generating multi-day open-ended reports directly from initial atmospheric fields.
 
-**Limitations of Prior Work**: (1) Data Scarcity—paired "visual images + expert-written reports" are nearly non-existent; (2) Lack of Constraints in Open-ended Generation—different reports for the same scenario may emphasize different dimensions (temperature, wind, humidity). Without aspect control, models tend to generate homogenized reports dominated by high-frequency elements and fail fine-grained alignment evaluation with the ground truth; (3) Inadequate Performance—existing specialized weather MLLMs may show decent reference-based metrics, but LLM-judge and expert evaluations are nearly zero, indicating fluent but factually incorrect text.
+**Limitations of Prior Work**: (1) Data scarcity—publicly available "paired visual images + expert-written reports" are nearly non-existent. (2) Lack of constraints in open-ended generation—reports for the same scenario may emphasize different dimensions (temperature, wind, humidity). Without aspect control, models tend to generate homogeneous reports dominated by high-frequency elements and cannot be evaluated using fine-grained alignment with ground truth. (3) Existing weather MLLMs show deceptively high reference metrics on free text, but LLM-judge and expert evaluations are near zero, indicating fluent but factually incorrect sentences.
 
-**Key Challenge**: Open-ended forecast reports must simultaneously satisfy "factual accuracy" (consistency with the initial atmospheric field) and "expressive diversity" (closeness to expert writing style). However, small-scale manually written SFT data only teaches the model to memorize specific phrasing, leading to a dilemma: either "grammatically correct but lacking key points" or "complete points but rigid phrasing."
+**Key Challenge**: Open-ended forecasting reports must satisfy both "factual accuracy" (consistency with initial atmospheric fields) and "expressive diversity" (proximity to expert writing styles). Small-scale manually written SFT data only teaches models to memorize specific phrasing, leading to a dichotomy between "grammatically correct but incomplete points" and "complete points but rigid phrasing."
 
-**Goal**: (1) Formalize weather forecast report generation as a WFR task and construct the first instruction tuning dataset; (2) Design a training scheme that allows an 8B open-source backbone to systematically exceed closed-source models; (3) Verify the robustness of the model across cities, regions, and multiple time steps.
+**Goal**: (1) Formulate "weather forecasting report generation" as a WFR task and construct the first instruction tuning dataset. (2) Design a training scheme that allows an 8B backbone to systematically surpass closed-source models. (3) Verify model robustness across cities, regions, and multiple time steps.
 
-**Key Insight**: The authors captured the structural observation that expert reports are high quality because they first organize items by aspect (temperature, wind, frontal systems, etc.) in the mind before composing coherent text. They injected "aspect" as an explicit prompt constraint during training and inference. Using post-training methods like RFT and DPO, they decoupled "factual correctness" from "expressive diversity"—using RFT to enhance phrasing diversity and DPO to lock in factual accuracy.
+**Key Insight**: The authors observe that expert reports are high-quality because forecasters first organize thoughts by aspects (temperature, wind, fronts, etc.) before composing text. By injecting aspects as explicit prompt constraints during training and inference, and utilizing post-training methods like RFT/DPO, "factual correctness" and "expressive diversity" can be decoupled—RFT supplements lexical diversity, while DPO locks in factual accuracy.
 
-**Core Idea**: Structure the open-ended report problem using aspect-controlled prompting, and then feed "accuracy" and "diversity" into the same 8B VLM via a three-stage SFT → RFT → DPO approach.
+**Core Idea**: Structuralize the open-ended report problem through aspect-controlled prompting, then inject "accuracy" and "diversity" into an 8B VLM via a three-stage SFT→RFT→DPO pipeline.
 
 ## Method
 
 ### Overall Architecture
-The core of WeatherSyn is the WSInstruct dataset and the three-stage training. WSInstruct consists of: (i) Visual end—local heatmaps of 12 single-level variables (e.g., temperature, precipitation, wind) cropped from ERA5 reanalysis data per city; (ii) Text end—expert-written 4-day open-ended forecast reports, segmented into daily sub-reports and annotated with aspects/claims. Training proceeds in three stages: SFT to teach the model to "write reports by aspect based on images"; RFT using rejection sampling to inject "factually correct but linguistically diverse" synthetic reports; and finally DPO using "high F1 reports" as chosen and "low F1 reports" as rejected for preference alignment. During inference, aspect constraints are also attached to ensure alignable evaluation.
+WeatherSyn centers on the WSInstruct dataset and three-stage training. WSInstruct consists of: (i) Vision side—local heatmaps of 12 single-level variables (e.g., temperature, precipitation, wind) cropped from ERA5 reanalysis data by city. (ii) Text side—expert-written 4-day reports, sliced into daily sub-reports and annotated with aspects/claims. Training follows three stages: SFT for mapping visuals to reports by aspect; RFT using rejection sampling to inject "factually correct but lexically diverse" synthetic reports; and DPO using "high F1 reports" as chosen and "low F1 reports" as rejected samples for preference alignment. Inference also includes aspect constraints to ensure alignable evaluation.
+
+```mermaid
+graph TD
+    subgraph DATA["WSInstruct Dataset Construction"]
+        direction TB
+        V["Vision side: ERA5 Reanalysis<br/>12 variables → Local heatmaps"]
+        subgraph ASP["Aspect-controlled prompting + Structured slicing"]
+            direction TB
+            T1["Expert reports → 4-day slices<br/>regex + dateparser + Qwen2.5-72B"]
+            T1 --> T2["Labeling by 8 aspects / claims"]
+            T2 --> T3["Aspect constraint templates<br/>Focus on: Temperature…"]
+        end
+    end
+    DATA --> SFT["SFT: Qwen3-VL-8B learning to write by aspect"]
+    SFT --> RFT["RFT: Rejection sampling for F1=1 sub-reports<br/>Sampling lexically distant candidates"]
+    RFT --> DPO["DPO: F1=1 as chosen<br/>Lowest F1 as rejected"]
+    DPO --> OUT["Inference: With aspect constraints<br/>Generate 4-day open reports"]
+```
 
 ### Key Designs
 
-1.  **Aspect-controlled prompting + Structured report segmentation**:
-    -   **Function**: Forces open-ended reports into a "Date → List of aspects discussed → Report text" template, making generation controllable and evaluation alignable.
-    -   **Mechanism**: First, relative expressions like "Today/Monday" in the original reports are converted to absolute dates using regex and `dateparser`. Then, Qwen-2.5-72B segments them into 4 consecutive daily sub-reports, requiring coverage of at least 3 out of 4 days. Subsequently, the reports are "labeled" based on 8 expert-defined aspects (temperature, wind, humidity, frontal system, pressure system, wave pattern, wind flow system, event) and fine-grained claim categories. The prompt template looks like `<<date, weekday>> Report:\n## Focus on: Temperature, Humidity`. During inference, all baselines receive the same aspect list to ensure fairness.
-    -   **Design Motivation**: Without aspect constraints, the model is dominated by the distribution of elements in the training set, with a hit rate of only 0.16. If constraints are added only during training but not inference, the model collapses to the most frequent "event" aspect (hit rate drops to 0.12). Only with both training and inference constraints can the hit rate reach 0.94, which is a prerequisite for fair evaluation.
+**1. Aspect-controlled prompting + Structured report slicing: Enforcing a "Date→Aspect→Text" template**
 
-2.  **RFT: Injecting "Factually Correct but Linguistically Diverse" via Rejection Sampling**:
-    -   **Function**: Alleviates overfitting caused by small SFT data scales and monotonous phrasing, allowing the model to learn underlying meteorological phenomena rather than surface-level phrases.
-    -   **Mechanism**: For the 2017–2020 subset, the SFT model $\mathcal{M}$ samples 40 candidates at temperature 0.9. Qwen-2.5-72B extracts claims and calculates step-level F1, keeping only F1=1 sub-reports. Four distance metrics (Edit distance, TF-IDF, Jaccard, Sentence-BERT cosine) are then used to select the sub-reports furthest from the original ground truth among the "factually correct" set. These are assembled into a new report as an augmented sample $\mathcal{D}_\text{RFT}$ for fine-tuning on Qwen3-VL-8B. The objective remains the masked next-token loss:
-        $$\mathcal{L}_\text{VLM} = -\mathbb{E}_{(Q,I,\{R^i\}_{i=1}^N)\sim\mathcal{D}} [\sum_{i=1}^N \log p_\theta(R^i \mid I, Q)]$$
-        In stage 2, $N$ is no longer fixed at 1 but adapts based on candidate vote counts.
-    -   **Design Motivation**: The authors' motivation is straightforward—the same initial meteorological field can be reasonably expressed as "temperatures rebound" or "increasing temperatures." Such "fact consistency + lexical diversity" samples significantly strengthen image-text alignment. While pure SFT still shows low F1 on long-tail aspects like Wave Pattern and Wind Flow System, RFT boosts weighted F1 for these by 0.15–0.17.
+Without constraints, models collapse into the most frequent elements of the training distribution. The authors structuralize reports by converting relative expressions (e.g., "Today") to absolute dates. Qwen-2.5-72B slices them into 4 consecutive daily sub-reports. Reports are then labeled by 8 expert-defined aspects (temperature, wind, humidity, frontal system, pressure system, wave pattern, wind flow system, event) and fine-grained claims. The prompt template follows `<<date, weekday>> Report:\n## Focus on: Temperature, Humidity`. This is crucial: without aspect constraints, the hit rate is only 0.16; with constraints in both training and inference, it reaches 0.94, enabling fine-grained evaluation.
 
-3.  **DPO: Locking in Factual Correctness with F1 as Preference Signal**:
-    -   **Function**: Explicitly optimizes "factual correctness" as a human preference on top of the RFT model.
-    -   **Mechanism**: On the 2021 subset, $\mathcal{M}_\text{RFT}$ samples 40 candidates and calculates step-level F1. Sub-reports with F1=1 are assembled as the chosen $\mathcal{Y}_w$, while those with the lowest F1 are assembled as the rejected $\mathcal{Y}_l$, resulting in 1241 preference pairs $\mathcal{D}_\text{DPO}$. The standard DPO objective is optimized:
-        $$\mathcal{L}_\text{DPO}(\pi_\theta, \pi_\text{ref}) = -\mathbb{E}[\log \sigma(\beta \log \tfrac{\pi_\theta(\mathcal{Y}_w|x)}{\pi_\text{ref}(\mathcal{Y}_w|x)} - \beta \log \tfrac{\pi_\theta(\mathcal{Y}_l|x)}{\pi_\text{ref}(\mathcal{Y}_l|x)})]$$
-        where the reference model $\pi_\text{ref} = \mathcal{M}_\text{RFT}$.
-    -   **Design Motivation**: RFT solved "diversity," but the "Top-1 ratio" in LLM-judge and expert evaluation remained low (11%–16%). Using F1—an automatically calculable objective signal directly linked to meteorological claims—for preference alignment is cheaper and more targeted than RLHF with human annotations. Following DPO, the Top-1 ratio in LLM evaluation jumped from 0.16/0.15 to 0.33/0.32, nearly doubling.
+**2. RFT: Injecting "factually correct but lexically diverse" samples via rejection sampling**
+
+SFT data is limited and linguistically repetitive. RFT takes the 2017–2020 subset and generates 40 candidates via the SFT model (temp 0.9). Qwen-2.5-72B extracts claims to calculate step-level F1, retaining only F1=1 sub-reports. Among these "factually correct" samples, the one with the largest lexical distance (Edit distance, TF-IDF, Jaccard, Sentence-BERT) from the ground truth is chosen as an augmented sample $\mathcal{D}_\text{RFT}$. Training uses masked next-token loss:
+$$\mathcal{L}_\text{VLM} = -\mathbb{E}_{(Q,I,\{R^i\}_{i=1}^N)\sim\mathcal{D}} [\sum_{i=1}^N \log p_\theta(R^i \mid I, Q)]$$
+The strategy strengthens image-text alignment by showing that the same meteorological field can be reasonably expressed in multiple ways, boosting weighted F1 for long-tail aspects like Wave Pattern and Wind Flow System by 0.15–0.17.
+
+**3. DPO: Locking factual accuracy using F1 as preference signal**
+
+While RFT improves diversity, the Top-1 ratio in LLM-judge/expert evaluation remains low (11%–16%). DPO is applied on the 2021 subset: 40 candidates are sampled per instance to calculate step-level F1. F1=1 samples form the chosen $\mathcal{Y}_w$ and the lowest F1 samples form the rejected $\mathcal{Y}_l$, resulting in 1241 preference pairs. The standard DPO objective is optimized:
+$$\mathcal{L}_\text{DPO}(\pi_\theta, \pi_\text{ref}) = -\mathbb{E}[\log \sigma(\beta \log \tfrac{\pi_\theta(\mathcal{Y}_w|x)}{\pi_\text{ref}(\mathcal{Y}_w|x)} - \beta \log \tfrac{\pi_\theta(\mathcal{Y}_l|x)}{\pi_\text{ref}(\mathcal{Y}_l|x)})]$$
+Using an automated signal linked directly to meteorological claims is more efficient than human annotation. Post-DPO, the Top-1 ratio in LLM evaluation nearly doubles from 0.16 to 0.33.
 
 ### Loss & Training
--   **Stage 1 (SFT)**: $\mathcal{L}_\text{VLM}$, $N=1$, mixed training across all 31 cities.
--   **Stage 2 (RFT)**: Also $\mathcal{L}_\text{VLM}$ but with $N$ dynamically determined by candidate votes; total samples in $\mathcal{D}_\text{RFT}$ is 20,412.
--   **Stage 3 (DPO)**: Standard DPO objective, $\pi_\text{ref}$ fixed as $\mathcal{M}_\text{RFT}$.
--   **Split**: Training on 2017–2021; test set of 1,292 samples from 2022.
+- Stage 1 (SFT): $\mathcal{L}_\text{VLM}$ with $N=1$, trained on all 31 cities.
+- Stage 2 (RFT): $\mathcal{L}_\text{VLM}$ where $N$ is adaptive based on candidate voting. Total images $\mathcal{I} = 20412$.
+- Stage 3 (DPO): Standard DPO objective with $\mathcal{M}_\text{RFT}$ as the reference model.
+- Evaluation: Trained on 2017–2021, tested on 1292 instances from 2022.
 
 ## Key Experimental Results
 
 ### Main Results
-Comprehensive comparison across five evaluation categories on the WSInstruct test set (selected metrics):
+Comparison on the WSInstruct test set:
 
 | Model | BLEU-1 | ROUGE-L | Auto F1 | LLM Fact.Cons. (Top-1) | Expert Fact.Cons. (Top-1) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|---|---|---|---|---|---|
 | GPT-5.2 Thinking (2-shot) | 0.12 | 0.12 | 0.49 | 0.06 | 0.07 |
 | Gemini-3 Pro Preview (2-shot) | 0.37 | 0.28 | 0.60 | 0.24 | 0.29 |
 | Claude-3.7-Sonnet (2-shot) | 0.09 | 0.10 | 0.51 | 0.02 | 0.01 |
 | WeatherQA (Qwen3-VL-8B) | 0.19 | 0.15 | 0.36 | 0.01 | 0.01 |
-| **Ours (SFT)** | 0.43 | 0.31 | 0.55 | 0.11 | 0.11 |
-| **Ours-RFT** | 0.43 | 0.31 | 0.59 | 0.16 | 0.17 |
-| **Ours-DPO** | **0.44** | **0.32** | **0.59** | **0.33** | **0.29** |
+| **WeatherSyn (SFT)** | 0.43 | 0.31 | 0.55 | 0.11 | 0.11 |
+| **WeatherSyn-RFT** | 0.43 | 0.31 | 0.59 | 0.16 | 0.17 |
+| **WeatherSyn-DPO** | **0.44** | **0.32** | **0.59** | **0.33** | **0.29** |
 
-Weighted F1 for 8 aspects (selection): Ours-DPO shows gains exceeding 5pp in complex aspects such as Pressure System (0.72), Frontal System (0.36), and Event (0.67), matching or surpassing Gemini-3 Pro.
+Weighted F1 across 8 aspects: WeatherSyn-DPO shows significant gains (>5pp) in complex aspects such as Pressure System (0.72) and Frontal System (0.36), matching or exceeding Gemini-3 Pro.
 
 ### Ablation Study
 
 | Configuration (Aspect Control) | Avg Hit Rate | Description |
-| :--- | :--- | :--- |
-| Train ✗ / Test ✗ | 0.16 | Model dominated by training distribution, ignores low-frequency aspects |
-| Train ✓ / Test ✗ | 0.12 | Degenerates to the most frequent "event" aspect |
-| Train ✓ / Test ✓ | **0.94** | Explicit aspect constraints are indispensable for both training and inference |
+|---|---|---|
+| Train ✗ / Test ✗ | 0.16 | Driven by training distribution, ignores low-frequency aspects |
+| Train ✓ / Test ✗ | 0.12 | Collapses to the most frequent "event" aspect |
+| Train ✓ / Test ✓ | **0.94** | Explicit constraints are essential for both training and inference |
 
 | Training Stage | LLM Fact.Cons. Top-1 | Avg Aspect F1 |
-| :--- | :--- | :--- |
+|---|---|---|
 | SFT only | 0.11 | 0.55 |
 | + RFT | 0.16 | 0.59 |
 | + DPO | 0.33 | 0.59 |
 
 ### Key Findings
--   Among the five types of evaluation, "reference-based" metrics (BLEU/ROUGE) and "claim/LLM/expert-based" metrics often diverge. WeatherQA has a BLEU-1 of 0.19 (higher than Claude), but its LLM Fact.Cons. is only 0.01. This indicates that surface similarity metrics like BLEU are unsuitable for open-ended weather reports, and claim F1 should be the primary metric.
--   RFT primarily boosts aspect F1 (factual coverage through diversity), while DPO primarily boosts the Top-1 ratio in LLM/expert evaluations (factual precision preference). The two stages are complementary.
--   F1 decays slowly for forecasts from day 1 to day 4, but RFT significantly mitigates time decay for Frontal System and Event aspects—elements that are inherently difficult for long-term forecasting. RFT encourages the model to grasp underlying dynamics rather than surface phrasing.
--   **Generalization**: When trained on a random half of the cities and tested on the other half, zero-shot WeatherSyn outperforms 2-shot GPT-5-Nano/Claude. It maintains its advantage even when tested across North-South or East-West regions, suggesting the model learns "region-agnostic meteorological laws."
--   The performance gap between WeatherSyn and baselines is larger for cities with complex climates like Honolulu (maritime island) and Flagstaff (high-altitude plateau), while narrower for cities with simple patterns like Charleston, indicating that its advantage is concentrated in "difficult scenarios."
+- Reference-based metrics (BLEU/ROUGE) often negatively correlate with factuality metrics. WeatherQA has higher BLEU than Claude but near-zero Fact.Cons., suggesting BLEU is unsuitable for weather reports; claim-based F1 is a better indicator.
+- RFT primarily boosts aspect F1 (fact coverage via diversity), while DPO boosts Top-1 preference (fact precision). The two stages are complementary.
+- Model performance decays gradually from day 1 to day 4, but RFT significantly mitigates temporal decay in difficult aspects like Frontal System and Event.
+- Generalization: When trained on half the cities and tested on the other half, zero-shot WeatherSyn outperforms 2-shot GPT-5-Nano/Claude. This suggests the model learns "region-agnostic meteorological laws."
+- The advantage of WeatherSyn is most pronounced in topographically complex cities like Honolulu or Flagstaff.
 
 ## Highlights & Insights
--   **Aspect-controlled prompting is an undervalued engineering weapon**: Simply adding aspect constraints improved the hit rate from 16% to 94%. This pattern of "explicitly outlining for the generator" can be transferred to any open-ended domain report generation (financial, medical, legal summaries).
--   **Three-stage SFT→RFT→DPO is a standard route for mid-sized VLMs**: The authors used RFT for "diversity" and DPO for "factual precision," decomposing traditional RLHF into two cheaper synthetic data paths without relying on manual preference annotation.
--   **DPO preference based on automatically calculable objective signals**: Constructing chosen/rejected pairs using step-level F1 provides a "verifiable reward → preference pair" workflow that is applicable to any generation task with structured labels. It is an order of magnitude cheaper than RLHF.
--   **Five complementary evaluation systems**: The authors explicitly pointed out the misleading nature of BLEU/ROUGE for open-ended reports, thus reporting parallel metrics: Auto claim, Human-refined claim, LLM judge (aggregated ranking from 4 judges), and Expert judge. This sets a benchmark for domain writing that is hard to measure with a single metric.
+- **Aspect-controlled prompting is an undervalued engineering tool**: Simply adding aspect constraints improves the hit rate from 16% to 94%. This blueprint for "explicitly outlining for the generator" is transferable to other open-domain report generation tasks (finance, medical, legal).
+- **The SFT→RFT→DPO pipeline is a standard for mid-sized VLMs**: By using RFT for diversity and DPO for precision, the authors replace expensive RLHF with cheaper synthetic data paths.
+- **Objective signals for DPO preference**: Constructing chosen/rejected pairs via step-level F1 is cost-effective and task-specific, offering a generalizable approach for structured generation.
+- **Five complementary evaluation systems**: The authors clarify that BLEU/ROUGE are misleading and instead report Auto claim, Human-refined claim, LLM judge (aggregated), and Expert judge metrics, setting a benchmark for domain-specific writing.
 
 ## Limitations & Future Work
--   The dataset only covers 31 US cities; tropical, monsoon, and polar climates remain unverified. While the authors plan to expand globally, cross-climate migration may require more than just data increases.
--   Current visual input uses only the atmospheric field at the initial timestamp, ignoring multi-step predictions from NWP. Although Appendix E.1 shows that adding HRES multi-step predictions further improves results, the main method intentionally restricted input to test pure reasoning.
--   Improvement across different aspects via DPO is inconsistent; some aspects (e.g., Frontal System) even declined slightly, suggesting that a single global F1 signal for preference might mask conflicts between aspects. Aspect-conditioned rewards or multi-task DPO could be considered.
--   Evaluation still relies partly on LLM-as-judge (aggregated GPT-5, Gemini, Claude, DeepSeek), risking self-preference bias. Expert evaluation, while correcting LLM bias, only covered 144 samples, leading to statistical noise.
--   Real forecaster scenarios require handling dynamic updates (hourly ERA5, sudden weather events), which the paper does not address regarding online updates or temporal continuous generation.
+- Dataset only covers 31 US cities. Generalization to tropical or polar climates remains unverified.
+- Only initial atmospheric fields are used as visual input; the model does not exploit multi-step forecasts from NWP (though Appendix E.1 indicates potential gains from HRES multi-step inputs).
+- DPO improvement is inconsistent across aspects; some aspects (e.g., Frontal System) slightly regressed after DPO, suggesting a single global F1 signal may mask inter-aspect conflicts.
+- Dependence on LLM-as-judge (GPT-5, Gemini, Claude, DeepSeek aggregation) carries self-preference risks. Expert evaluation, while used for calibration, has a limited sample size.
+- Real-world deployment requires handling dynamic updates (hourly ERA5) and continuous temporal generation.
 
 ## Related Work & Insights
--   **vs WeatherQA (Ma et al., 2024)**: WeatherQA focuses on multiple-choice/captioning for severe events, whereas WSInstruct generates multi-day open-ended reports. When both are fine-tuned on Qwen3-VL-8B, WeatherQA's Auto F1 (0.36) is much lower than WeatherSyn-DPO (0.59), with the gap stemming from task structuring (aspects) and post-training (RFT/DPO).
--   **vs Omni-Weather (Zhou et al., 2025)**: Omni-Weather focuses on radar precipitation nowcasting; this work focuses on city-level multi-variable, multi-day reports. They are complementary in visual input resolution and text structure.
--   **vs OmniEarth-Bench (Wang et al., 2025)**: OmniEarth provides a multiple-choice benchmark, while WeatherSyn provides a generative benchmark + model; their positioning is complementary.
--   **Insight**: The pipeline of "domain knowledge structured into aspects → automatic claim extraction via LLM for evaluation → F1-based DPO preference" is applicable to any "image/data → open-ended domain report" task (radiology CT reports, satellite disaster assessment, financial research), and the template can be directly adopted.
+- **vs WeatherQA (Ma et al., 2024)**: WeatherQA focuses on multiple-choice/captioning for severe events; WSInstruct generates daily open-ended reports. Even with the same Qwen3 backbone, WeatherSyn-DPO significantly outperforms WeatherQA due to aspect structuring and post-training.
+- **vs Omni-Weather (Zhou et al., 2025)**: Omni-Weather focuses on radar precipitation nowcasting; this work focuses on multiple variables and multi-day reports.
+- **Insight**: The pipeline "Structuring domain knowledge as aspects → Automatic claim extraction for evaluation → Using F1 for DPO" is applicable to any "image/data to report" task, such as CT reports, disaster assessment, or financial analysis.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ The task definition and aspect-controlled prompting are new, though the training pipeline (SFT+RFT+DPO) is a common combination recently.
--   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five complementary evaluations, multi-dimensional analysis (aspects/cities/geography/time steps), and complete ablations cover almost all questionable dimensions.
--   Writing Quality: ⭐⭐⭐⭐ Dataset construction is detailed and the method is well-organized. Formula typesetting is slightly cluttered (LaTeX double-brace noise), but does not hinder understanding.
--   Value: ⭐⭐⭐⭐ The first public dataset + an open-source 8B model that beats GPT-5-Nano/Claude weather report baselines provides direct engineering reference for the industrialization of weather AI.
+- Novelty: ⭐⭐⭐⭐ The task definition and aspect control are novel, though the training pipeline (SFT+RFT+DPO) follows recent common practices.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across five systems, multi-dimensional analysis (aspects, geography, time), and full ablations.
+- Writing Quality: ⭐⭐⭐⭐ Detailed dataset construction and clear methodology.
+- Value: ⭐⭐⭐⭐ Significant engineering reference value for AI weather applications.
 
 <!-- RELATED:START -->
 
@@ -141,11 +152,11 @@ Weighted F1 for 8 aspects (selection): Ours-DPO shows gains exceeding 5pp in com
 
 ## Related Papers
 
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](../../ICCV2025/multimodal_vlm/metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
+- [\[ACL 2025\] MEIT: Multimodal Electrocardiogram Instruction Tuning on Large Language Models for Report Generation](../../ACL2025/multimodal_vlm/meit_multimodal_electrocardiogram_instruction_tuning_on_large_language_models_fo.md)
 - [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
-- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
+- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](../../ICCV2025/multimodal_vlm/metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
+- [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](../../CVPR2026/multimodal_vlm/streaming_video_instruction_tuning.md)
 - [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
-- [\[ACL 2026\] CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation](../../ACL2026/multimodal_vlm/coggen_a_cognitively_inspired_recursive_framework_for_deep_research_report_gener.md)
 
 </div>
 

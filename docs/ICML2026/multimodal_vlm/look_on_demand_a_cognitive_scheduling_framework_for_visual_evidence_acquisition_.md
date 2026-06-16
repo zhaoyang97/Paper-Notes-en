@@ -2,87 +2,86 @@
 title: >-
   [Paper Note] CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning
 description: >-
-  [ICML 2026][Multimodal VLM][Multimodal Reasoning] Inspired by Baddeley's Working Memory Theory, CSMR transforms "when to introduce visual evidence into reasoning" into a dynamic decision process. The LLM maintains the re…
+  [ICML 2026][Multimodal VLM][Paper Note] Inspired by Baddeley's working memory theory, CSMR treats "when to introduce visual evidence into reasoning" as a dynamic decision. The LLM maintains reasoning states and invokes an independent perception module (VLM) to fetch visual evidence on-demand until sufficient; this addresses flaws in two existing paradigms (i
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Multimodal Reasoning"
-  - "Working Memory Theory"
-  - "Dynamic Visual Evidence Acquisition"
-  - "Perception-Reasoning Decoupling"
-  - "Zero-Shot"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 797c30be8a459ddd
+content_hash: 1253edd7db5522bb
 ---
-
 # CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.28160](https://arxiv.org/abs/2605.28160)  
 **Code**: https://github.com/YangZhang2511/CSMR  
-**Area**: Multimodal VLM / Multimodal Reasoning / Tool-use  
-**Keywords**: Multimodal Reasoning, Working Memory Theory, Dynamic Visual Evidence Acquisition, Perception-Reasoning Decoupling, Zero-Shot  
+**Area**: Multimodal VLM / Multimodal Reasoning / Tool Calling  
+**Keywords**: Multimodal Reasoning, Working Memory Theory, Dynamic Visual Evidence Acquisition, Perception-Reasoning Decoupling, Zero-shot
 
 ## TL;DR
-Inspired by Baddeley's Working Memory Theory, CSMR transforms "when to introduce visual evidence into reasoning" into a dynamic decision process. The LLM maintains the reasoning state and calls an independent perception module (VLM) to fetch visual evidence on demand until sufficient evidence is obtained. This addresses the flaws of two existing paradigms (pre-reasoning textualization losing details and unified VL space being contaminated by language priors), outperforming baselines zero-shot on multiple multimodal reasoning benchmarks.
+Inspired by Baddeley's working memory theory, CSMR treats "when to introduce visual evidence into reasoning" as a dynamic decision. The LLM maintains reasoning states and invokes an independent perception module (VLM) to fetch visual evidence on-demand until sufficient; this addresses flaws in two existing paradigms (information loss from static textualization in pre-reasoning and language prior contamination in unified VL spaces), achieving zero-shot superiority over baselines across multiple multimodal reasoning benchmarks.
 
 ## Background & Motivation
 
-**Background**: There are two major paradigms in multimodal reasoning: (a) pre-reasoning visual-to-text (e.g., DDCoT, converting images to captions before reasoning), and (b) unified vision-language space (e.g., CCoT, ICoT, AIMCoT, where VLMs perform end-to-end reasoning).
+**Background**: Two major paradigms in multimodal reasoning—(a) pre-reasoning visual-to-text (e.g., DDCoT, which converts images to captions before reasoning), and (b) unified vision-language space (e.g., CCoT, ICoT, AIMCoT, where VLMs perform end-to-end reasoning).
 
-**Limitations of Prior Work**: (a) Static textualization occurs before reasoning without foresight into later required details; coarse-grained captions irreversibly lose fine-grained information. (b) In the unified paradigm, visual representations are contaminated by language priors—substantial evidence (Section 4.2 of the paper) shows that self-attention systematically assigns higher attention to text tokens (approximately $2.5\times$), which is further amplified by soft-max, resulting in long-term suppression of visual tokens.
+**Limitations of Prior Work**: (a) Static textualization occurs before reasoning begins, making it impossible to foresee details required later; coarse-grained captions irreversibly lose fine-grained information. (b) Visual representations in unified paradigms are contaminated by language priors—extensive evidence (Section 4.2) shows that self-attention systematically assigns higher attention to text tokens (approx. 2.5×), which is further amplified by soft-max, suppressing visual tokens over the long term.
 
-**Key Challenge**: The timing of visual evidence introduction determines reasoning quality. One-time early introduction misses details, while continuous unified processing yields to language dominance. An "on-demand evidence acquisition" mechanism is required to judge whether to look at the image, where to look, and whether enough has been seen based on the current reasoning state.
+**Key Challenge**: The timing of visual evidence introduction determines reasoning quality—introducing it once too early misses details, while constant unification is dominated by language. An "on-demand evidence" mechanism is required to judge based on the current reasoning state whether to look at the image, where to look, and if enough evidence has been gathered.
 
-**Goal**: (1) Analyze the issue of language prior dominance in unified paradigms; (2) Enable the LLM to maintain reasoning states and dynamically schedule visual evidence acquisition; (3) Decouple the perception-reasoning structure to avoid visual representation contamination; (4) Outperform baselines in zero-shot settings.
+**Goal**: (1) Analyze the dominance of language priors in unified paradigms; (2) Enable the LLM to maintain reasoning states and dynamically schedule visual evidence acquisition; (3) Decouple the perception-reasoning structure to prevent visual representation contamination; (4) Outperform baselines in zero-shot settings.
 
-**Key Insight**: Drawing from Baddeley's Working Memory Theory—comprising a central executive that schedules the visuospatial sketchpad and the phonological loop. The LLM acts as the central executive maintaining the reasoning state, while an independent VLM serves as the visuospatial sketchpad, returning textualized visual evidence on demand.
+**Key Insight**: Borrowing from Baddeley's working memory theory—the central executive schedules the visuospatial sketchpad and the phonological loop. The LLM acts as the central executive to maintain the reasoning state, while an independent VLM acts as the visuospatial sketchpad to return textualized visual evidence on-demand.
 
-**Core Idea**: A decoupled structure consisting of a Cognitive Reasoning Core (CRC, LLM) and a Perception-Verification Pipeline (PVP, VLM). The CRC determines when and what to check, while the PVP independently inspects the original image to answer queries. Visual evidence is iteratively acquired, driven by the reasoning state, until it is sufficient to terminate.
+**Core Idea**: A structural decoupling of the CRC (Cognitive Reasoning Core, LLM) and the PVP (Primary Visual Perception, independent VLM). The CRC decides when and what to query, and the PVP independently examines the original image to answer queries; visual evidence is iteratively acquired driven by the reasoning state until it is deemed sufficient.
 
 ## Method
 
 ### Overall Architecture
 
-The CRC (LLM) maintains a reasoning state (containing the original question + a list of acquired visual evidence). At each step:
+The CRC (LLM) maintains a reasoning state (containing the original question + the list of acquired visual evidence). At each step:
 1. It decides whether more visual evidence is needed.
-2. If so, it generates a targeted visual query (e.g., "What color is at the bottom right of the image?").
-3. It calls the PVP (an independent VLM focusing on the original image) which returns a textualized answer.
-4. It integrates the evidence into the state and updates the reasoning.
-5. If the reasoning is sufficient, it outputs the final answer directly.
+2. If needed, it generates a targeted visual query (e.g., "What color is the bottom-right corner of the image?").
+3. It invokes the PVP (independent VLM looking at the original image) to return a textualized answer.
+4. It incorporates the evidence into the state and updates the reasoning.
+5. If reasoning is sufficient, it outputs the final answer directly.
 
-The PVP does not participate in reasoning and only performs question answering; its visual representations are not influenced by the language context of the CRC.
+The PVP does not participate in reasoning and only performs QA; its visual representation is not influenced by the linguistic context of the CRC.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Image I + Question q"] --> B["CRC Cognitive Reasoning Core (LLM)<br/>Maintains state h_t: Reasoning trajectory + Acquired evidence"]
+    B --> C["Output intermediate result r_t<br/>Routing function g(·) parses intent via regex"]
+    C -->|"Dynamic Visual Query: Parsed as targeted query q_t^v"| D["PVP Primary Visual Perception (Independent VLM)<br/>Only views original image I to answer, no reasoning context → Perception-Reasoning Decoupling"]
+    D --> E["Textualized visual evidence a_t^v merged into state h_t"]
+    E --> B
+    C -->|"Sufficient evidence reached: Parsed as answer / Reached T_max"| F["Output final answer a_final"]
+```
 
 ### Key Designs
 
-1. **Decoupling of Perception and Reasoning Architecture (PVP independent of CRC's language context)**:
+**1. Perception-Reasoning Structural Decoupling: Allowing PVP to view images independently to avoid contamination from reasoning language priors**
 
-    - **Function**: Prevents visual representations from being contaminated by language priors during the reasoning process.
-    - **Mechanism**: The PVP is an independent VLM instance that only receives the original image + visual query (without the CRC's reasoning context) for each call. After the CRC receives the textualized answer, it integrates it into the reasoning without allowing the query context to flow back into subsequent PVP calls.
-    - **Design Motivation**: The unified paradigm allows LLM reasoning to gradually dominate visual representations (Figure 2 in the paper shows a $2.5\times$ attention bias). Decoupling allows the PVP to view the image "freshly" each time, unoccupied by language contamination along the reasoning path.
+A flaw in unified paradigms is that LLM reasoning eventually dominates visual representations—Section 4.2 quantifies that self-attention systematically grants text tokens ~2.5× more attention than visual tokens, which is further compressed by soft-max. CSMR sets PVP as an independent VLM instance that receives only the original image and the visual query, without CRC's reasoning context. After the CRC receives the textualized answer, it is integrated into reasoning, but the query context does not flow back into subsequent PVP calls. This ensures the PVP views the image "freshly" each time, fulfilling the role of the visuospatial sketchpad in Baddeley's theory. This design contributed a 3.7-point improvement in ablation studies, confirming the reality of language contamination.
 
-2. **Reasoning-State-Driven Dynamic Visual Querying**:
+**2. Reasoning-State-Driven Dynamic Visual Querying: Incremental evidence acquisition based on current state instead of one-time planning**
 
-    - **Function**: The CRC determines when to call the PVP and what query to generate based on the current reasoning state.
-    - **Mechanism**: Instead of pre-planning all queries, the CRC generates them incrementally based on the current reasoning state. If the returned evidence is insufficient, the PVP can be called repeatedly; queries can range from coarse to fine (e.g., asking about "main content" before "detailed regions").
-    - **Design Motivation**: Pre-reasoning textualization is a one-shot process that misses details. Dynamic acquisition allows "reasoning to guide perception"—fetching only the evidence truly needed for reasoning to avoid interference from irrelevant information.
+Pre-reasoning approaches that convert images into captions one-time are "final" and cannot predict details needed for later reasoning stages. CSMR allows the CRC to maintain a reasoning state $h_t$ (= accumulated reasoning trajectory + acquired textualized visual evidence). Each step produces an intermediate result $r_t$, which a deterministic **routing function** $g(\cdot)$ parses into either a new visual query or a final answer. Instead of pre-planning all queries, the CRC generates queries incrementally based on the current state, allowing for a coarse-to-fine granularity (e.g., querying "main content" first, then "detailed regions"). This enables "reasoning-guided perception," fetching only necessary evidence to avoid interference from irrelevant information. Replacing this with one-time planning results in a 5.4-point drop in ablation.
 
-3. **Confidence-Based Early Termination**:
+**3. Early Termination: CRC stops when evidence is sufficient, adaptively allocating query count by difficulty**
 
-    - **Function**: Stops directly when the reasoning state is sufficient to support an answer, avoiding unnecessary queries.
-    - **Mechanism**: At each step, the CRC evaluates whether the current evidence is sufficient to derive an answer. If yes, it generates the final answer; otherwise, it continues querying. This is similar to entropy-based early stopping in PathCTM.
-    - **Design Motivation**: Different cases vary in difficulty—simple questions may need only 1-2 queries, while complex ones require multiple rounds. A fixed number of queries is wasteful and insufficient for long-chain reasoning; adaptive termination balances accuracy and efficiency.
+The difficulty of cases varies significantly—simple questions may require only 1–2 queries, while complex ones require multiple rounds. CSMR does not use a separate confidence threshold but integrates the termination decision into each step of the CRC: when $g(\cdot)$ parses $r_t$ as a "final answer," the loop terminates. Otherwise, querying continues until the CRC deems evidence sufficient or the context reaches $T_{\max}$. This ensures that "when to stop" and "when to query" are two sides of the same decision driven by the reasoning state. Evaluation shows the model adaptively allocates queries: Easy (1.4 avg), Medium (2.7), Hard (4.2).
 
 ### Quantitative Evidence of Attention Bias (Figure 2)
 
-Mean attention across 35 layers was measured on the ScienceQA subset using Qwen3-VL-8B:
-- Average text token attention is $2.5\times$ higher than visual token attention.
-- The proportion of visual tokens is further compressed after soft-max.
-- Consistent phenomena were observed on LLaVA-1.6-7B, proving this is a systemic issue of the VLM paradigm rather than a single model quirk.
+Mean attention across 35 layers on Qwen3-VL-8B using the ScienceQA subset:
+- Average text token attention is 2.5× higher than visual tokens.
+- Visual token proportion is further compressed after soft-max.
+- This phenomenon was consistent on LLaVA-1.6-7B, proving it is a systemic issue in VLM paradigms rather than a specific model quirk.
 
 ## Key Experimental Results
 
-### Main Results (Multiple Benchmarks, Zero-Shot)
+### Main Results (Zero-shot across benchmarks)
 
 | Benchmark | Pre-reason (DDCoT) | Unified (CCoT) | Unified (AIMCoT) | **CSMR** |
 |------|------------|----------|--------|--------|
@@ -92,61 +91,61 @@ Mean attention across 35 layers was measured on the ScienceQA subset using Qwen3
 | MMBench-Reasoning | 52.1 | 54.6 | 56.0 | **59.3** |
 | RealWorldQA | 45.3 | 47.8 | 49.2 | **52.6** |
 
-CSMR consistently leads by 3-4 points across 5 benchmarks, showing significant advantages particularly in tasks requiring fine-grained visual verification (ScienceQA, A-OKVQA).
+CSMR consistently leads by 3-4 points across 5 benchmarks, with significant advantages in tasks requiring fine-grained visual verification (ScienceQA, A-OKVQA).
 
 ### Ablation Study
 
 | Configuration | ScienceQA |
 |------|---------|
-| Full CSMR (**Ours**) | 80.6 |
-| − Early Termination (Fixed query count) | 78.4 |
-| − Perception Decoupling (PVP accepts CRC context) | 76.9 |
-| − Dynamic Querying (One-time planning of all queries) | 75.2 |
-| Revert to pre-reason DDCoT | 72.4 |
+| Full CSMR | 80.6 |
+| − Early Termination (Fixed queries) | 78.4 |
+| − Perception Decoupling (PVP receives CRC context) | 76.9 |
+| − Dynamic Query (One-time planning) | 75.2 |
+| Back to pre-reason DDCoT | 72.4 |
 
-All three modules contribute positively; perception decoupling contributes the most ($-3.7$), proving the actual existence of language contamination.
+All three modules contribute positively; decoupling has the largest impact (−3.7), validating the language contamination issue.
 
 ### Early Termination Efficiency
 
-| Difficulty | Avg. Query Count | Accuracy |
+| Difficulty | Avg Queries | Accuracy |
 |------|------------|------|
 | Easy | 1.4 | 87% |
 | Medium | 2.7 | 79% |
 | Hard | 4.2 | 64% |
 
-The model identifies difficulty and adaptively allocates the number of queries.
+The model successfully identifies difficulty and adaptively allocates the number of queries.
 
 ### Key Findings
-- **Perception-Reasoning Decoupling is critical**: It contributes the most in ablation studies ($-3.7$), confirming the language contamination issue in unified paradigms.
-- **Dynamic querying far outperforms pre-planning**: Planning all queries at once leads to a 5.4 point drop.
-- **Early termination saves queries without losing accuracy**: Fixed query counts lead to a 2.2 point drop, proving the effectiveness of adaptive termination.
-- **Cross-architecture versatility**: CRC can be replaced with GPT-4 / Claude / Qwen-LLM, and PVP can be replaced with LLaVA / Qwen-VL, offering flexible combinations.
+- **Perception-Reasoning Decoupling is key**: This contributed the most to performance (−3.7), confirming the language contamination problem in unified paradigms.
+- **Dynamic querying significantly outperforms pre-planning**: One-time planning for all queries leads to a 5.4-point drop.
+- **Early termination saves queries without losing accuracy**: Fixed query counts drop by 2.2 points, proving the effectiveness of adaptive termination.
+- **Generalizable across architectures**: CRC can be replaced with GPT-4 / Claude / Qwen-LLM, and PVP can be replaced with LLaVA / Qwen-VL, offering flexible combinations.
 
 ## Highlights & Insights
-- **Engineering inspired by Cognitive Science**: Baddeley's Working Memory Theory provides a clear division of roles (central executive vs. visuospatial sketchpad) for LLM-VLM collaboration, rather than arbitrary architectural design.
-- **"Perception-Reasoning Decoupling" is a true paradigm innovation**: Previous assumptions favored unification; Ours proves that decoupling + dynamic calling is superior, challenging the default "end-to-end is better" assumption.
-- **Quantitative evidence of $2.5\times$ attention bias**: Transformed the "feeling" of language prior contamination into a metric, providing a benchmark for future research.
-- **Training-free + Modular**: Both CRC and PVP can be independently replaced or upgraded, making it friendly for industrial deployment; new generations of LLMs/VLMs can be directly swapped in.
+- **Engineering inspired by Cognitive Science**: Baddeley's working memory theory provides a clear role definition (central executive vs visuospatial sketchpad) for LLM-VLM collaboration.
+- **"Perception-Reasoning Decoupling" is a genuine paradigm innovation**: Challenging the default assumption that end-to-end unification is always superior, this work proves that decoupling + dynamic invocation is better.
+- **Quantitative evidence for 2.5× attention bias**: Transforming the "language prior contamination" from a feeling into a metric, providing a benchmark for future research.
+- **Training-free and Modular**: CRC and PVP can be independently upgraded, making it industry-friendly; new LLMs or VLMs can be dropped in directly.
 
 ## Limitations & Future Work
-- Multiple rounds of queries accumulate tokens; context grows rapidly in long-chain reasoning—query summarization or graph-based structures could be considered.
-- PVP textualization of visual evidence may still lose information—returning structured outputs (coordinates, bounding boxes) instead of free text could be beneficial.
-- The CRC's decision on when to call the PVP is a zero-shot prompted behavior; a learnable scheduling strategy might be more stable.
-- Total latency = LLM reasoning + multiple VLM calls, which is unfriendly for latency-sensitive scenarios.
-- Complex collaboration between CRC and PVP (e.g., PVP actively suggesting focus points) has not been explored.
+- Context grows rapidly during long-chain reasoning due to multiple query cycles; query summarization or graph-based representations could be considered.
+- PVP might still lose information during textualization; returning structured outputs (coordinates, bounding boxes) instead of free text is a potential solution.
+- The decision to invoke PVP is currently zero-shot prompted; a learned scheduling strategy might be more stable.
+- Total latency includes LLM reasoning plus multiple VLM calls, which is less ideal for latency-sensitive scenarios.
+- More complex collaboration between CRC and PVP (e.g., PVP proactively suggesting points of interest) has not been explored.
 
 ## Related Work & Insights
-- **vs. DDCoT (pre-reasoning textualization)**: That method performs a one-time captioning; CSMR performs dynamic multiple checks.
-- **vs. CCoT / AIMCoT (unified VL reasoning)**: Those suffer from language contamination; CSMR solves this via decoupling.
-- **vs. ReAct / Toolformer**: Those treat tools as external APIs; CSMR treats the VLM as a "perception tool," sharing the same logic but focusing on visual perception.
-- **vs. PathCTM**: PathCTM uses multi-scale reasoning + early stopping; CSMR uses tool calling + early stopping; both share the principle of "evidence acquisition on demand," but PathCTM is internal multi-scale while CSMR uses an external VLM.
-- **Insight**: Re-examine "unified end-to-end"—tasks requiring different capabilities like perception-reasoning / retrieval-generation / computation-verification can all consider a decoupling + scheduling mode.
+- **vs DDCoT (pre-reasoning textualization)**: That method performs one-time conversion; CSMR performs multiple dynamic queries.
+- **vs CCoT / AIMCoT (unified VL reasoning)**: Those suffer from language contamination; CSMR solves this via decoupling.
+- **vs ReAct / Toolformer**: Those treat tools as external APIs; CSMR treats the VLM as a "perception tool," following a similar logic but focusing on visual perception.
+- **vs PathCTM**: PathCTM uses multi-scale reasoning + early exit; CSMR uses tool-use + early exit. Both share the "on-demand evidence" philosophy, but via different internal/external mechanisms.
+- **Insight**: Re-evaluating "unified end-to-end" paradigms—tasks requiring different capabilities like perception-reasoning, retrieval-generation, or calculation-verification can benefit from decoupling + scheduling modes.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Perception-reasoning decoupling + dynamic visual querying is a true paradigm-level innovation; the cognitive science mapping provides a theoretical foundation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 5 benchmarks + detailed ablation + quantitative attention bias; lacks comparison with ReAct-style tool-use baselines.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Comparison of the three paradigms is clear (Figure 1), with Figure 2 providing decisive evidence of attention bias.
-- **Value**: ⭐⭐⭐⭐ Training-free + modular + multi-benchmark SOTA; applicable to all tasks requiring fine-grained visual verification.
+- Novelty: ⭐⭐⭐⭐⭐ Perception-reasoning decoupling + dynamic visual querying represents a paradigm-level innovation; the mapping to cognitive science is well-grounded.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 benchmarks + detailed ablation + attention bias quantification; lacks comparison with ReAct-style tool-use baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear comparison of the three paradigms (Figure 1), with Figure 2 providing decisive evidence of attention bias.
+- Value: ⭐⭐⭐⭐ Training-free, modular, and SOTA across benchmarks; beneficial for any task requiring fine-grained visual verification.
 
 <!-- RELATED:START -->
 
@@ -154,11 +153,11 @@ The model identifies difficulty and adaptively allocates the number of queries.
 
 ## Related Papers
 
-- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
+- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](../../CVPR2026/multimodal_vlm/perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
 - [\[ICML 2026\] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception](cvsearch_empowering_multimodal_llms_with_cognitive_visual_search_for_high-resolu.md)
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
 - [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/multimodal_vlm/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
-- [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
+- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](../../CVPR2026/multimodal_vlm/lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 
 </div>
 

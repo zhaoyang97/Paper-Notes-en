@@ -2,123 +2,120 @@
 title: >-
   [Paper Note] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting
 description: >-
-  [CVPR 2026][Multimodal VLM][Visual Prompting] ViKey overlays frame-index visual prompts (VPs) onto video frames and incorporates a lightweight Keyword-Frame Mapping (KFM) module to significantly improve temporal reasonin…
+  [CVPR 2026][Multimodal VLM][Paper Note] ViKey significantly enhances the temporal reasoning capabilities of VideoLLMs under training-free conditions by overlaying sequential frame index visual prompts (VP) on video frames combined with a lightweight Keyword-Frame Mapping (KFM) module. It approaches dense frame performance using only 20% of the frames.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Visual Prompting"
-  - "Video Large Language Models"
-  - "Temporal Understanding"
-  - "Frame Index"
-  - "Training-Free"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: c8717d2d005673f3
+content_hash: de08e6f36ba32346
 ---
-
 # ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.23186](https://arxiv.org/abs/2603.23186)  
 **Code**: [https://github.com/MICV-yonsei/ViKey](https://github.com/MICV-yonsei/ViKey)  
-**Area**: Multimodal VLM
-**Keywords**: Visual Prompting, Video Large Language Models, Temporal Understanding, Frame Index, Training-Free
+**Area**: Multimodal VLM  
+**Keywords**: Visual Prompting, Video Large Language Model, Temporal Understanding, Frame Indexing, Training-free
 
 ## TL;DR
 
-ViKey overlays frame-index visual prompts (VPs) onto video frames and incorporates a lightweight Keyword-Frame Mapping (KFM) module to significantly improve temporal reasoning in VideoLLMs without any training, achieving near-dense-frame performance with as few as 20% of frames.
+ViKey significantly enhances the temporal reasoning capabilities of VideoLLMs under training-free conditions by overlaying sequential frame index visual prompts (VP) on video frames combined with a lightweight Keyword-Frame Mapping (KFM) module. It approaches dense frame performance using only 20% of the frames.
 
 ## Background & Motivation
 
-VideoLLMs demonstrate strong performance on multimodal video tasks, yet processing dense video frames incurs prohibitive computational costs, making frame selection a standard practice. However, frame selection introduces a critical side effect: **disruption of temporal continuity**.
+VideoLLMs excel at multimodal video tasks, but high computational costs for processing dense frames make frame selection a standard practice. However, while improving efficiency, frame selection introduces a severe side effect: **disruption of temporal continuity**.
 
-**Limitations of Prior Work**: Removing intermediate frames causes VideoLLMs to lose the ability to infer event ordering. For instance, given a sparse sequence showing a player crossing a line followed by a referee showing a red card, humans can infer causality, whereas VideoLLMs may incorrectly conclude that the referee committed the foul.
+**Limitations of Prior Work**: When intermediate frames are removed, VideoLLMs lose the ability to infer the chronological order of events. For instance, in a video where a player crosses a line and a referee shows a red card, humans can infer causality from sparse frames, but a VideoLLM might incorrectly judge the referee as the one crossing the line.
 
-**Key Challenge**: Frame selection reduces the video to discrete temporal snapshots, making it inherently difficult to reconstruct a coherent event sequence. Existing solutions—such as enhanced temporal encodings and extended context modules—are complex and require substantial training.
+**Key Challenge**: Frame selection leaves the model with discrete "snapshots" on a timeline, making it difficult to reconstruct temporally coherent event sequences. Existing solutions, such as enhancing temporal encoding or expanding context modules, are complex and require extensive training.
 
-**Key Insight**: Visual prompting (VP) has been shown to effectively guide spatial attention, yet its potential for cross-frame temporal reasoning remains largely unexplored. The authors observe that simply annotating each frame with its index number enables the model to perceive temporal continuity.
+**Key Insight**: Visual Prompting (VP) has been proven effective for guiding spatial attention, but its potential for cross-frame temporal reasoning remains largely unexplored. The authors discovered that simply labeling each frame with a sequence number helps the model perceive temporal continuity.
 
 ## Method
 
 ### Overall Architecture
 
-ViKey is a training-free, plug-and-play framework: input video frames → overlay frame-index visual prompts → extract key textual concepts from the query → map keywords to the most relevant frames via KFM → rewrite the query with explicit frame indices → feed into the VideoLLM for inference.
+ViKey aims to solve the "temporal fragmentation" issue caused by frame selection, where sparse frames leave VideoLLMs without cues to judge event order. The core idea is that rather than modifying the model, it is better to provide a "temporal rope" within the input. The pipeline is lightweight: first, a frame index (VP) is printed on each frame's pixels, allowing the model to locate frames like looking up a dictionary; second, key concepts are extracted from the user's query and aligned to the most relevant frames via the KFM module, with indices rewritten into the query; finally, the indexed query and labeled frames are fed into the VideoLLM. The entire process requires no parameter updates, achieving temporal anchoring solely by modifying input.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Sparse Video Frames + User Query"] --> B["Sequential Visual Prompting VP<br/>Print frame index in bottom-left"]
+    B --> C["Keyword-Frame Mapping KFM<br/>Align keywords to frames, backfill indices into query"]
+    C --> D["VideoLLM<br/>Indexed query + Labeled frames"]
+    D --> E["Temporally anchored response"]
+```
 
 ### Key Designs
 
-1. **Sequential Visual Prompting**:
+**1. Sequential Visual Prompting: Embedding the timeline into pixels for indexed frame retrieval**
 
-    - **Function**: Embeds frame index information (e.g., "frame #01") into the pixel space of each frame.
-    - **Mechanism**: A text-format frame index is overlaid at the bottom-left corner of each frame. Font size adapts to frame resolution: $fontsize = \min(width, height) / s$. The effectiveness of VP is validated through three carefully designed experiments: (1) a positional encoding degradation experiment demonstrates that VP can independently recover frame-order information; (2) a frame-level reference experiment shows that VP enables the model to retrieve frame content by index, analogous to a dictionary lookup; (3) attention analysis reveals that VP amplifies image token attention weights in the middle-to-upper layers.
-    - **Design Motivation**: Placement at the bottom-left is motivated by an observed positional bias—bottom placements yield substantially higher accuracy than top placements (reverse lookup: bottom 100% vs. top 60–79%), likely because subtitles and watermarks frequently appear at the bottom in training data.
+Frame selection breaks temporal continuity, leaving the model with discrete snapshots. ViKey's approach is straightforward: overlaying a text index (e.g., "frame #01") in the bottom-left corner of each frame, with an adaptive font size $fontsize = \min(width, height)/s$. This explicitly writes the frame index—originally latent in positional embeddings—into the visual content. The model can then perform "reverse lookup" of frame content using indices. The authors validated this with three experiments: VP independently recovers frame order even when positional embeddings are degraded; frame-level reference tests show the model accurately retrieves specific frame content via indices; attention analysis reveals that VP increases the attention weights of image tokens in middle-to-high layers—meaning the indices change how the model "sees" the frames rather than being ignored as noise.
 
-2. **Keyword-Frame Mapping (KFM)**:
+**2. Keyword-Frame Mapping (KFM): Assigning explicit temporal coordinates to query concepts**
 
-    - **Function**: Anchors key concepts from the text query to the most relevant video frames.
-    - **Mechanism**: Salient keywords are extracted from the user query; cosine similarity is computed between keyword and per-frame embeddings in a shared embedding space to identify the best-matching frames. The query is then rewritten as an augmented version containing explicit frame indices, e.g., "In frame #03, what does the player do?" This provides explicit temporal anchors for reasoning.
-    - **Design Motivation**: VP supplies frame-level indexing capability, while KFM establishes an explicit mapping between textual queries and visual frames; their combination enables precise temporal localization.
+While VP enables "index-based retrieval," the model still needs to know which frame to examine. KFM bridges this gap: it extracts salient keywords from the user query, calculates similarity between each keyword and each frame in a shared embedding space, selects the best-matching frames, and backfills their indices into the query. For example, the query "What is the player doing?" is rewritten as "In frame #03, what is the player doing?" This provides an explicit temporal anchor, preventing the model from searching aimlessly. VP provides indexing capability, while KFM provides text-to-frame alignment.
 
-3. **Positional Bias Analysis and Optimization**:
+**3. Positional Bias Analysis and Optimization: High sensitivity of accuracy to index placement**
 
-    - **Function**: Characterizes and exploits VideoLLM preferences for VP placement positions.
-    - **Mechanism**: VP effectiveness is systematically evaluated at four corner positions (TL/TR/BL/BR). BL and BR achieve 100% accuracy on the reverse lookup task, whereas TL reaches only ~60%. The dominant error pattern for TL is an off-by-one association—the model links the current frame's index to the content of the subsequent frame.
-    - **Design Motivation**: Frame tokens are concatenated into a single sequence with no explicit boundaries. Top-positioned indices are prone to confusion with tokens of the following frame, whereas bottom-positioned indices align more naturally with the terminal tokens of the current frame.
+A subtle but critical detail is where to print the index. The authors systematically tested four corners (TL/TR/BL/BR). Results showed significant variance: the bottom corners (BL/BR) achieved 100% accuracy in reverse lookup, whereas the top-left (TL) only reached ~60%. The typical error for TL was an "off-by-one" mistake, where the model misaligned the index of the current frame with the content of the next. This occurs because all frame tokens are concatenated into a long sequence without explicit boundaries; top-placed indices are adjacent to the trailing tokens of the previous frame, leading to interference. Bottom-placed indices align more naturally with the current frame's concluding tokens. This justifies the default bottom-left placement—it fits the model's attention preference while avoiding off-by-one confusion.
 
 ### Loss & Training
 
-ViKey is entirely training-free; it requires neither modification of model parameters nor any additional training.
+ViKey is entirely training-free, requiring no modifications to model parameters. Both VP overlay and KFM rewriting occur on the input side during inference.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model + Setting | TempCompass | MVBench | VideoMME | LongVideoBench |
-|---|---|---|---|---|
+|----------|-------------|---------|----------|----------------|
 | LLaVA-Video-7B (64 frames) | 74.68 | 82.50 | — | 56.42 |
-| + ViKey (64 frames) | 77.83 | 87.00 | Improved | 58.66 |
-| + ViKey (13 frames = 20%) | ~75 | ~83 | ≈ 64-frame | ~56 |
+| + ViKey (64 frames) | 77.83 | 87.00 | Gain | 58.66 |
+| + ViKey (13 frames = 20%) | ~75 | ~83 | Close to 64f | ~56 |
 
-Consistent improvements are observed across temporal reasoning subsets of TempCompass, MVBench, VideoMME, and LongVideoBench.
+Consistency gains across temporal reasoning subsets of TempCompass, MVBench, VideoMME, and LongVideoBench.
 
 ### Ablation Study
 
-| Configuration | Lookup Accuracy | Reverse Lookup Accuracy | Notes |
-|---|---|---|---|
-| No VP | 12.43% | 18.57% | Extremely low baseline |
-| VP (bottom-left) | 64.62% | 100.00% | Substantial gain in frame-level reference |
-| VP (top-left) | 55.56% | 60.19% | Evident positional bias |
-| VP + KFM | Best | Best | Complementary combination |
+| Configuration | Lookup Accuracy | Reverse Lookup Accuracy | Description |
+|------|-----------|-------------------|------|
+| W/o VP | 12.43% | 18.57% | Extremely low baseline |
+| VP (bottom-left) | 64.62% | 100.00% | Significant boost in frame-level referencing |
+| VP (top-left) | 55.56% | 60.19% | Obvious positional bias |
+| VP + KFM | Best | Best | Mutually complementary |
 
 ### Key Findings
 
-- VP recovers 2.9–9.9 percentage points of temporal understanding performance even under extreme conditions where positional encodings are corrupted.
-- VP increases the average attention weight allocated to image tokens by 11.65%, concentrated in the middle-to-upper layers (layers 4–6, 11–14, and beyond layer 21).
-- Using only 20% of frames with ViKey approaches the dense 100%-frame baseline on several benchmarks, demonstrating high efficiency.
+- VP recovers 2.9-9.9 percentage points of temporal understanding even under extreme conditions where positional encoding is destroyed.
+- VP increases the average attention weight assigned to image tokens by 11.65%, concentrated in middle-to-high layers (layers 4-6, 11-14, and after 21).
+- 20% frames + ViKey approach the 100% dense frame baseline on certain datasets, demonstrating high efficiency.
 
 ## Highlights & Insights
 
-- **Minimal yet effective**: Annotating frames with simple index numbers substantially improves temporal reasoning. This "modify the input, not the model" paradigm is both elegant and practical, enabling zero-cost integration into any VideoLLM.
-- **Positional bias discovery**: The marked superiority of bottom-positioned VP over top-positioned VP reveals a training-induced bias in VideoLLMs—stronger attention toward bottom regions—a finding with broader implications for all VP-based methods.
-- **Frames as a dictionary**: Treating frame indices as keys and frame contents as values introduces a novel paradigm for fine-grained temporal control in VideoLLMs.
+- **Minimalist yet Effective**: Printing a sequence number on frames significantly improves temporal reasoning. This strategy of "modifying input instead of the model" is both elegant and practical. It can be integrated into any VideoLLM at zero cost.
+- **Discovery of Positional Bias**: The finding that bottom VP far outperforms top VP reveals training biases in VideoLLMs—models exhibit stronger attention to the bottom region. This insight is instructive for all methods using VP.
+- **Frame as Dictionary**: The metaphor of frame indices as keys and frame content as values provides a new paradigm for fine-grained temporal control in VideoLLMs.
 
 ## Limitations & Future Work
 
-- The keyword extraction component of KFM relies on an external embedding model, which may become a bottleneck for very long videos.
-- VP inherently occupies pixel space within frames; interference may arise for videos that already contain subtitles or watermarks.
-- The positional bias suggests that the model may be "memorizing" text at specific locations rather than genuinely comprehending temporal relationships.
-- Future directions include: adaptive VP size/position selection and joint optimization with frame selection strategies.
+- KFM's keyword extraction relies on an external embedding model, which may become a bottleneck for extremely long videos.
+- VP essentially occupies pixel space, potentially interfering with videos that already have subtitles or watermarks.
+- Positional bias suggests the model might merely be "memorizing" text at specific locations rather than truly understanding temporal relationships.
+- Future work: Adaptive VP size/position, joint optimization with frame selection strategies.
 
 ## Related Work & Insights
 
-- **vs. conventional frame selection methods**: Frame selection focuses on *which frames to retain*; ViKey focuses on *how to make retained frames more informative*. The two approaches are complementary.
-- **vs. temporal encoding enhancement methods**: Training-required methods such as extended context modules achieve comparable performance, whereas ViKey requires no training whatsoever.
-- **vs. spatial VP methods**: Prior VP work guides spatial attention within frames (e.g., circle annotations); ViKey is the first to systematically explore VP for cross-frame temporal reasoning.
+- **vs. Traditional Frame Selection**: Frame selection focuses on "which frames to keep," while ViKey focuses on "how to make kept frames more effective." They are complementary.
+- **vs. Temporal Encoding Enhancement**: Unlike methods that require training (e.g., expanding context modules), ViKey is training-free with comparable performance.
+- **vs. Spatial VP**: Previous VP methods guided attention spatially (e.g., circling objects). ViKey is the first to systematically explore VP's role in cross-frame temporal reasoning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ A simple yet insightful observation; the first systematic exploration of VP for temporal reasoning.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three analytical experiments, four benchmarks, and multiple models—highly rigorous.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated, experimental design is precise, and analysis is thorough.
-- **Value**: ⭐⭐⭐⭐ Training-free and plug-and-play; highly practical.
+- Novelty: ⭐⭐⭐⭐ Simple but insightful observation, first systematic exploration of VP for temporal reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three analysis experiments + four benchmarks + multiple models, very solid.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, ingenious experimental design, deep analysis.
+- Value: ⭐⭐⭐⭐ Training-free plug-and-play, high practical utility.
 
 <!-- RELATED:START -->
 
@@ -126,11 +123,11 @@ Consistent improvements are observed across temporal reasoning subsets of TempCo
 
 ## Related Papers
 
+- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
+- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
 - [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
-- [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](../../NeurIPS2025/multimodal_vlm/learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
-- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
+- [\[CVPR 2026\] Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly](flat-pack_bench_evaluating_spatio-temporal_understanding_in_large_vision-languag.md)
 
 </div>
 

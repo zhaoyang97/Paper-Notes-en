@@ -2,121 +2,138 @@
 title: >-
   [Paper Note] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery
 description: >-
-  [ACL 2026][LLM Agent][Scientific Hypothesis Discovery] MOOSE-Copilot unifies divergent scientific idea exploration and convergent fine-grained hypothesis refinement into a visual Human-AI collaborative system…
+  [ACL 2026][LLM Agent][MOOSE-Chem] MOOSE-Copilot integrates divergent scientific idea exploration and convergent fine-grained hypothesis refinement into a unified visual human-AI collaborative system, significantly enhancing hypothesis discovery performance through three explicit human signals: initial blueprints, stage routing, and feedback.
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Scientific Hypothesis Discovery"
-  - "Human-AI Collaboration"
-  - "Exploration-Exploitation"
-  - "Interactive Agents"
-  - "MOOSE-Chem"
+  - ACL 2026
+  - LLM Agent
+  - MOOSE-Chem
 date: 2026-05-08
-content_hash: 18ba99d8daec6cee
+content_hash: 42d4fa2d4a6e3236
 ---
-
 # MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery
 
 **Conference**: ACL 2026  
 **arXiv**: [2605.29475](https://arxiv.org/abs/2605.29475)  
-**Code**: https://moosedemo.com (Demo site; cache does not provide GitHub link)  
+**Code**: https://moosedemo.com (Demo site; GitHub link not provided in cache)  
 **Area**: LLM Agent / Scientific Discovery  
-**Keywords**: Scientific Hypothesis Discovery, Human-AI Collaboration, Exploration-Exploitation, Interactive Agents, MOOSE-Chem  
+**Keywords**: Scientific Hypothesis Discovery, Human-AI Collaboration, Exploration-Exploitation, Interactive Agent, MOOSE-Chem  
 
 ## TL;DR
-MOOSE-Copilot unifies divergent scientific idea exploration and convergent fine-grained hypothesis refinement into a visual Human-AI collaborative system, significantly enhancing hypothesis discovery through three types of explicit human signals: initial blueprints, stage routing, and feedback.
+MOOSE-Copilot integrates divergent scientific idea exploration and convergent fine-grained hypothesis refinement into a unified visual human-AI collaborative system, significantly enhancing hypothesis discovery performance through three explicit human signals: initial blueprints, stage routing, and feedback.
 
 ## Background & Motivation
-**Background**: LLMs have been applied to scientific workflows including hypothesis generation, experimental design, paper writing, and peer review assistance. "Scientific hypothesis discovery" sits at the early stage of the research process, directly influencing subsequent experimental directions and potential value. Existing automated systems are broadly categorized into two types: those focusing on divergent exploration, generating diverse high-level ideas from background research; and those focusing on fine-grained optimization, refining a starting concept with methods, experiments, and execution details.
+**Background**: LLMs have been applied to scientific workflows including hypothesis generation, experimental design, paper writing, and peer review assistance. "Scientific hypothesis discovery" occurs early in the research process and directly influences the direction and potential value of subsequent experiments. Existing automated discovery systems are generally divided into two categories: those focused on divergent exploration (generating diverse high-level ideas from background) and those focused on fine-grained optimization (completing methods, experiments, and execution details from an initial concept).
 
-**Limitations of Prior Work**: These two categories of systems are typically treated as independent tasks. Exploratory systems expand directions but often produce coarse and non-specific outputs; fine-grained systems polish ideas into executable plans but rely on a pre-selected starting point. Crucially, many agent workflows run autonomously, leaving domain experts to filter results post-hoc without the ability to provide timely course corrections.
+**Limitations of Prior Work**: These two categories are typically treated as isolated tasks. Exploratory systems expand directions but often produce coarse, non-specific outputs; fine-grained systems polish an idea into an executable plan but rely on a pre-selected starting point. Furthermore, most agent workflows run autonomously, leaving domain experts to filter results post-hoc without the ability to provide timely course corrections.
 
-**Key Challenge**: Scientific discovery requires both exploration and exploitation. Searching across the joint space of high-level inspiration and fine-grained experimental details fully autonomously leads to massive combinatorial explosion. However, relying solely on manual control loses the LLM's advantages in large-scale generation and local refinement.
+**Key Challenge**: Scientific discovery requires simultaneous exploration and exploitation. Fully automated joint searching in a high-level inspiration space and a fine-grained experimental space faces combinatorial explosion. Conversely, relying solely on manual control sacrifices the advantages of LLMs in large-scale generation and local refinement.
 
-**Goal**: The authors aim to establish a unified framework that connects the exploratory search of MOOSE-Chem with the fine-grained refinement of MOOSE-Chem2, while allowing human experts to inject directional information at critical nodes to decide where to start, when to switch to refinement, and how to regenerate based on feedback.
+**Goal**: The authors aim to establish a unified framework that links the exploratory search of MOOSE-Chem with the fine-grained refinement of MOOSE-Chem2, allowing human experts to inject directional information at critical nodes to decide where to start, when to transition to refinement, and how to regenerate based on feedback.
 
-**Key Insight**: The paper formalizes human-in-the-loop not as a UI feature, but as a Human-AI Interaction Interface (HAII) protocol. Human inputs are modeled as routing operators and constraint signals during the search process, used to prune search spaces, specify granularity transitions, and correct current trajectories.
+**Key Insight**: Instead of treating human-in-the-loop as a mere UI feature, the paper formalizes it as a Human-AI Interaction Interface (HAII) protocol. Human inputs are modeled as routing operators and constraint signals within the search process, used to prune the search space, specify granularity transitions, and correct the current trajectory.
 
-**Core Idea**: Utilize structured human signals to decompose the joint "divergent search + convergent optimization" space into a controllable Human-AI collaborative search trajectory.
+**Core Idea**: Use structured human signals to decompose the joint space of "divergent search + convergent optimization" into a controllable human-AI collaborative search trajectory.
 
 ## Method
-The core of MOOSE-Copilot is not a new single-stage generator, but rather the integration of existing MOOSE-Chem and MOOSE-Chem2 into a unified state machine equipped with a visual interactive interface. The left side handles exploration, expanding a hypothesis tree from backgrounds and inspiration corpora; the right side handles exploitation, refining a coarse-grained node into a complete research plan. The user acts as a navigator, deciding which nodes warrant further exploration, which should be drilled down for refinement, and which results require regeneration with feedback.
+The core of MOOSE-Copilot is not a new single-stage generator, but rather the integration of the existing MOOSE-Chem and MOOSE-Chem2 into a unified state machine equipped with a visual interaction interface. The left side handles exploration, expanding a hypothesis tree from background and inspiration corpora; the right side handles exploitation, refining a selected coarse-grained node into a complete research proposal layer by layer. The user acts as a navigator in the middle, deciding which nodes warrant further exploration, which should be drilled down for refinement, and which generation results require revision based on feedback.
 
 ### Overall Architecture
-Inputs include a research problem, optional literature surveys, optional inspiration knowledge corpora, and the user's initial blueprint. The system first combines background $b$ and inspiration knowledge $i_j$ via MOOSE-Chem to incrementally generate a hypothesis tree; each path represents a sequence of inspiration-driven updates. Subsequently, users can select a hypothesis node from the tree and route it to MOOSE-Chem2. MOOSE-Chem2 then utilizes a hierarchical search strategy, starting from high-level corrections and converging toward methodological details and experimental designs.
+Inputs include research problems, optional literature surveys, an optional inspiration knowledge corpus, and the user's initial blueprint. The system first combines background $b$ and inspiration knowledge $i_j$ via MOOSE-Chem to incrementally generate a hypothesis tree, where each path represents a sequence of inspiration-driven updates. Subsequently, the user selects a hypothesis node from the tree and routes it to MOOSE-Chem2. MOOSE-Chem2 employs a hierarchical search strategy, starting from high-level abstractions (corrections) and converging toward methodological details and experimental designs.
 
-The output is not a single answer, but a search trajectory with history. The interface provides an input page, a tree view, a ranking page, and a feedback page: the tree view shows how hypotheses evolve from different inspirations; the ranking page displays LLM self-evaluation scores; the feedback page allows users to choose between continued exploration or entering fine-grained refinement, and to input directional feedback.
+The output is not a single answer but a search trajectory with history. The interface provides an input page, tree view, ranking page, and feedback page: the tree view visualizes how hypotheses evolve from different inspirations; the ranking page shows LLM self-evaluation scores; the feedback page allows users to choose between continued exploration or fine-grained refinement, providing directional feedback.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Research Problem + Literature + Inspiration Corpus"] --> B["Initial Blueprint f_init<br/>Constrains root node search boundaries"]
+    subgraph SM["Unified Exploration-Exploitation State Machine"]
+        direction TB
+        C["Exploration Phase: MOOSE-Chem<br/>Grows hypothesis tree from background b"]
+        D["Interactive Tree Interface<br/>Tree View + Ranking Page (Self-eval)"]
+        E["Refinement Phase: MOOSE-Chem2<br/>Hierarchical correction: High abstraction → Method → Experiment"]
+        F["Feedback Page<br/>User writes directional critique"]
+        C --> D
+        D -->|Stage Routing f_route selects node| E
+        E --> F
+        F -->|Intra-stage feedback f_dir triggers regeneration| E
+        F -->|Stage Routing f_route returns to divergence| C
+    end
+    B --> C
+    SM --> G["Output: Search trajectory with history"]
+```
 
 ### Key Designs
-1. **Exploration-Exploitation Unified State Machine**:
-	- **Function**: Integrates the divergent exploration of MOOSE-Chem and the fine-grained refinement of MOOSE-Chem2 into a single workflow.
-	- **Mechanism**: The exploration stage approximates $P(h \mid b)$ by iteratively selecting inspirations to update intermediate hypotheses; the refinement stage treats the initial hypothesis $h_0$ as an object for optimization, correcting it across different abstraction layers to make it more executable and consistent.
-	- **Design Motivation**: Independent exploration tends to yield coarse ideas, while independent refinement lacks a mechanism for starting point selection; the unified framework creates an exploration-exploitation loop.
 
-2. **Three Types of HAII Guidance Signals**:
-	- **Function**: Allows human experts to influence the search process in explicit, reusable ways.
-	- **Mechanism**: $f_{init}$ acts as an initial blueprint to constrain the root node search boundary; $f_{route}$ acts as inter-stage routing, letting users decide whether to drill down from conceptual space $\mathcal{C}$ to execution space $\mathcal{E}$ or return to exploration; $f_{dir}$ acts as intra-stage feedback, incorporating critiques into the context to trigger regenerative generation.
-	- **Design Motivation**: Automated systems struggle to judge when to continue diverging versus when to converge, whereas domain experts can rapidly identify promising branches and erroneous directions.
+**1. Unified Exploration-Exploitation State Machine: Closing the loop between divergent search and fine-grained optimization**
 
-3. **Interactive Tree Interface**:
-	- **Function**: Lowers the barrier to using command-line agent tools and ensures the hypothesis evolution process is traceable.
-	- **Mechanism**: Each hypothesis is a node in the tree; users can visually inspect paths, compare rankings, select nodes, and input feedback before deciding the next call to MOOSE1 or MOOSE2.
-	- **Design Motivation**: Scientists require not just automated answers, but an understanding of how ideas were generated, where they branched, and why a specific node is worth pursuing.
+Running an exploratory system in isolation often leads to rough, non-executable ideas, while running a refinement system alone lacks a mechanism to determine its starting point. MOOSE-Copilot addresses this by placing both within the same state machine. The exploration phase approximates $P(h \mid b)$ by selecting inspirations and updating intermediate hypotheses to grow a tree. The refinement phase treats a selected initial hypothesis $h_0$ from the tree as the optimization target, correcting it across levels of abstraction to improve executability and consistency. Sharing a search trajectory allows exploration outputs to naturally seed refinement, while refinement flaws can flow back into exploration for re-diversification.
+
+**2. Three Classes of HAII Guidance Signals: Formalizing "Human-in-the-Loop" as search operators**
+
+The hardest part for an autonomous system is judging when to continue diverging, when to converge, and which branch is worth pursuing—tasks where domain experts use intuition. The paper abstracts human input into three operators: $f_{init}$ (initial blueprint) constrains the root node search boundaries to prevent blind searching; $f_{route}$ (inter-stage routing) lets users decide when to drill down from conceptual space $\mathcal{C}$ to execution space $\mathcal{E}$ (or vice versa); $f_{dir}$ (intra-stage feedback) incorporates user critiques into the context to trigger regenerative generation. This allows the marginal contribution of each signal—starting point, stage transition, and trajectory correction—to be measured independently.
+
+**3. Interactive Tree Interface: Visualizing hypothesis evolution with backtracking**
+
+Scientists require more than a single automated answer; they need to understand how an idea grew, where it branched, and why a specific path is valuable. MOOSE-Copilot represents each hypothesis as a node in a tree. The tree view shows inspiration-driven evolution, the ranking page provides LLM self-evaluation scores, and the feedback page allows users to toggle between "continue exploration" and "enter refinement," providing specific feedback to guide subsequent calls to MOOSE-Chem or MOOSE-Chem2. This makes the search trajectory traceable and reversible.
+
+### A Complete Example: From Background to Executable Hypothesis
+
+A researcher inputs a chemical background $b$ and inspiration corpus, writing an initial blueprint $f_{init}$ to specify the target reaction system. MOOSE-Chem expands a hypothesis tree within these constraints. The researcher browses coarse-grained nodes in the tree view, compares self-evaluation scores, and uses $f_{route}$ to route the most promising hypothesis into MOOSE-Chem2. MOOSE-Chem2 converges toward method details and experimental design. If the experimental design is flawed, the researcher provides a directional critique ($f_{dir}$), triggering regeneration. Through several rounds of feedback, the recall of ground-truth elements in the hypothesis increases while search steps decrease.
 
 ### Loss & Training
-This paper does not train new large models; it primarily evaluates the system's responsiveness to human guidance signals. The experiments use oracle-simulated evaluation: an oracle LLM has access to ground-truth fine-grained hypotheses but can only generate directional critiques without leaking answers; node selection is also simulated via oracle ranking to represent high-quality expert routing. This aims to establish a performance upper bound under structured expert signals rather than estimating average user performance.
+No new model training is conducted; the system focuses on assessing response to human guidance signals. Evaluation utilizes oracle-simulated evaluation: an oracle LLM accesses the ground-truth fine-grained hypothesis but only generates directional critiques without leaking the answer. Node selection is simulated via oracle ranking to establish a performance upper bound under high-quality expert signals.
 
 ## Key Experimental Results
 
 ### Main Results
-Experiments were conducted on TOMATO-Chem2, containing research problems, literature surveys, and fine-grained hypothesis annotations from 51 top-tier papers. The metric is the recall of ground-truth elements in the generated hypotheses.
+Experiments were conducted on TOMATO-Chem2, containing research problems, literature surveys, and fine-grained hypothesis annotations from 51 top-tier papers. Performance is measured by the recall of generated hypotheses relative to ground-truth elements.
 
-| Method | Main Setup | Recall | Search Steps |
+| Method | Main Setting | Recall | Search Steps |
 |------|----------|--------|--------------|
-| baseline_MC | MOOSE-Chem exploration only | 11.44% | N/A |
-| baseline_MC2 | MOOSE-Chem2 refinement only | 10.33% | 478.6 |
+| baseline_MC | MOOSE-Chem only (Exploration) | 11.44% | N/A |
+| baseline_MC2 | MOOSE-Chem2 only (Refinement) | 10.33% | 478.6 |
 | MC_with_hint | MOOSE-Chem + initial blueprint | 15.37% | N/A |
 | MC_with_feedback_with_hint | Initial blueprint + oracle ranking + feedback + MOOSE-Chem | 16.93% | N/A |
-| MC2_with_MC_input_oracle_rank | Oracle node selection after exploration -> MOOSE-Chem2 | 18.26% | 336.6 |
-| MC2_with_feedback_oracle_rank | Oracle node selection + 1 feedback refinement | 21.98% | 166.1 |
-| MC2_with_strong_feedback_x4_oracle_rank | Oracle node selection + 4 strong feedback refinements | 26.96% | 90.1 |
+| MC2_with_MC_input_oracle_rank | MOOSE-Chem output + Oracle selection into MOOSE-Chem2 | 18.26% | 336.6 |
+| MC2_with_feedback_oracle_rank | Oracle selection + 1 feedback refinement | 21.98% | 166.1 |
+| MC2_with_strong_feedback_x4_oracle_rank | Oracle selection + 4 strong feedback refinements | 26.96% | 90.1 |
 
 ### Ablation Study
-| Guidance Signal | Comparison Setup | Observation |
+| Guidance Signal | Comparison Setting | Observation |
 |----------|----------|------|
-| Initial Blueprint | MC 11.44% vs MC_with_hint 15.37% | Initial constraints significantly narrow the search range and improve exploration quality. |
-| Stage Routing | Self-ranking into MC2 (12.74%) vs Oracle-ranking into MC2 (18.26%) | The choice of which node to drill down largely determines the ceiling of subsequent refinement. |
-| Directional Feedback | Standard feedback x1 (21.98%) vs Strong feedback x4 (26.96%) | Stronger, clearer feedback consistently drives up recall and reduces search steps. |
-| Pure Autonomous Refinement | baseline_MC2 at 10.33% with 478.6 steps | Without human routing and feedback, fine-grained search is costly and less effective. |
+| Initial Blueprint | MC 11.44% vs MC_with_hint 15.37% | Initial constraints significantly narrow the search space and improve exploration quality. |
+| Stage Routing | Self-ranking 12.74% vs Oracle-ranking 18.26% | Node selection for drilling down largely determines the refinement ceiling. |
+| Directional Feedback | Feedback x1 21.98% vs Strong Feedback x4 26.96% | Stronger, clearer feedback consistently increases recall and reduces search steps. |
+| Autonomous Refinement | baseline_MC2 10.33% at 478.6 steps | Without human routing and feedback, fine-grained search is costly and inefficient. |
 
 ### Key Findings
-- The initial blueprint restricts exploration to more reasonable starting points, preventing the system from searching blindly in an oversized conceptual space.
-- Routing is highly impactful: transitioning from MOOSE-Chem to MOOSE-Chem2 via self-ranked nodes yields 12.74%, whereas oracle-selected nodes reach 18.26%.
-- Feedback does more than refine linguistic expression; it alters the search trajectory during the refinement stage. Strong feedback x4 achieved the highest recall (26.96%) while reducing search steps to 90.1.
+- The initial blueprint restricts exploration to a reasonable starting vicinity, preventing blind searching in overly large conceptual spaces.
+- Routing is critical: moving from MOOSE-Chem to MOOSE-Chem2 via oracle selection yields 18.26% recall, compared to 12.74% via self-ranking.
+- Feedback does more than refine phrasing; it alters the search trajectory during refinement. Strong feedback (x4) achieved the highest recall (26.96%) and reduced search steps to 90.1.
 
 ## Highlights & Insights
-- The most valuable contribution is formalizing "human involvement" into three control signals within the search, rather than a vague "human-in-the-loop" concept. This abstraction allows future systems to compare the marginal contributions of different human signals.
-- The paper effectively distinguishes between exploratory and fine-grained hypothesis discovery. While many research agent papers only show the final idea, MOOSE-Copilot emphasizes the evolutionary path from coarse to fine.
-- The tree interface is highly appropriate for scientific scenarios, as researchers typically do not accept a single answer at once but repeatedly compare, backtrack, and drill down across multiple branches.
-- The significance of oracle-simulated evaluation lies in testing the system's upper bound: if expert signals are good enough, can the framework handle it? Results indicate it can, but also suggest that real-world user studies remain necessary.
+- The most valuable contribution is formalizing "human participation" as three control signals in a search process rather than a vague "human-in-the-loop" concept. This allows for measuring the marginal contribution of expert signals.
+- The paper distinguishes between exploratory and fine-grained hypothesis discovery. Unlike agents that only show a final idea, MOOSE-Copilot emphasizes the evolution of an idea from coarse to fine.
+- The tree interface suits scientific workflows where researchers compare, backtrack, and drill down across multiple branches.
+- Oracle-simulated evaluation tests the system capacity: if expert signals are optimal, can the framework handle it? The results suggest it can, though real user studies remain necessary.
 
 ## Limitations & Future Work
-- The authors explicitly acknowledge that the system has not yet integrated automated experimental execution; thus, the closed loop from "hypothesis generation" to "experimental falsification" is incomplete.
-- The system does not utilize post-training methods specifically for scientific hypothesis discovery; generation quality still depends on the underlying LLM and existing MOOSE modules.
-- Current evaluation uses an oracle to simulate high-quality expert signals, which proves protocol effectiveness but does not directly represent the cost, cognitive load, or feedback quality of real scientists.
-- Future work could connect experimental execution, literature retrieval, failure case back-propagation, and hypothesis ranking, so that $f_{dir}$ originates from real experimental results rather than just human text.
+- The system lacks integrated automated experiment execution; the loop from "hypothesis generation" to "experimental falsification" is incomplete.
+- It does not use specialized post-training for scientific discovery; generation quality relies on the underlying LLM and existing MOOSE modules.
+- Current evaluations use oracles to simulate high-quality signals, proving protocol effectiveness but not accounting for real-world user costs, cognitive load, or feedback quality.
+- Future work could integrate experiment execution and literature retrieval, using $f_{dir}$ derived from experimental results rather than just human text.
 
 ## Related Work & Insights
-- **vs MOOSE-Chem**: MOOSE-Chem models exploratory discovery as inspiration-driven search. This paper retains that capacity but adds human blueprints, routing, and subsequent refinement.
-- **vs MOOSE-Chem2**: MOOSE-Chem2 focuses on refining an initial hypothesis layer by layer. This paper addresses where that initial hypothesis comes from, when to enter refinement, and how to regenerate based on feedback.
-- **vs IdeaSynth / NOVA / LLM-SR**: While these systems emphasize automatic generation or iterative ideas, MOOSE-Copilot prioritizes interaction protocols and visual controllability.
-- **Insights**: For research agents, "controllable intermediate states" may be more important than "end-to-end automation." Abstracting user operations into evaluable signals is key to designing the next generation of scientific discovery systems.
+- **vs MOOSE-Chem**: MOOSE-Chem models exploration as inspiration-driven search. This paper preserves that capability while adding blueprints, routing, and refinement.
+- **vs MOOSE-Chem2**: MOOSE-Chem2 focuses on refining an initial hypothesis. This paper addresses where that hypothesis comes from and how to iterate based on feedback.
+- **vs IdeaSynth / NOVA / LLM-SR**: These systems emphasize automated generation or iteration. MOOSE-Copilot emphasizes the interaction protocol and visual controllability.
+- **Insight**: For scientific agents, "controllable intermediate states" may be more important than "end-to-end automation." Abstracting user actions into evaluable signals is key for next-generation discovery systems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Formalizing exploration and refinement into an HAII protocol is highly distinctive, though the generation modules are largely reused from the MOOSE series.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Logical ablations are present, but the reliance on oracle-simulated settings means real user experiments are lacking.
-- Writing Quality: ⭐⭐⭐⭐☆ The correspondence between motivation, protocol, and interface is clear, making the design rationale easy to follow.
-- Value: ⭐⭐⭐⭐☆ Provides direct reference value for the human-AI collaborative design of research agents, particularly suited for complex scientific discovery workflows.
+- Novelty: ⭐⭐⭐⭐☆ Distinctive integration of exploration and refinement into an HAII protocol, though underlying modules are reused.
+- Experimental Thoroughness: ⭐⭐⭐☆☆ Clear ablations, but relies heavily on oracle-simulated settings with limited real user testing.
+- Writing Quality: ⭐⭐⭐⭐☆ Logical mapping between motivation, protocol, and interface.
+- Value: ⭐⭐⭐⭐☆ Highly relevant for human-AI collaborative design in complex scientific discovery.
 
 <!-- RELATED:START -->
 
@@ -125,10 +142,10 @@ Experiments were conducted on TOMATO-Chem2, containing research problems, litera
 ## Related Papers
 
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](../../ICLR2026/llm_agent/sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
+- [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](../../CVPR2026/llm_agent/seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ACL 2026\] Mina: A Multilingual LLM-Powered Legal Assistant Agent for Bangladesh](mina_a_multilingual_llm-powered_legal_assistant_agent_for_bangladesh_for_empower.md)
-- [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
-- [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
+- [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
+- [\[ICML 2025\] Open Source Planning & Control System with Language Agents for Autonomous Scientific Discovery](../../ICML2025/llm_agent/open_source_planning_control_system_with_language_agents_for_autonomous_scientif.md)
 
 </div>
 

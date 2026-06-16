@@ -2,41 +2,37 @@
 title: >-
   [Paper Note] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning
 description: >-
-  [ICML2026][LLM Evaluation][Agent Environment Synthesis] Ours proposes Agent World Model, a fully synthetic pipeline from scenarios, tasks, databases, and MCP tool interfaces to verifiers. It generates 1…
+  [ICML 2026][LLM Evaluation][MCP] This paper proposes Agent World Model, a fully synthetic pipeline encompassing scenarios, tasks, databases, MCP tool interfaces, and verifiers. It generates 1,000 executable, database-driven environments used to train tool-calling agents, achieving superior out-of-distribution generalization on BFCLv3, $\tau^2$-bench,
 tags:
-  - "ICML2026"
-  - "LLM Evaluation"
-  - "Agent Environment Synthesis"
-  - "Tool-use"
-  - "MCP"
-  - "Reinforcement Learning"
-  - "Executable World Model"
+  - ICML 2026
+  - LLM Evaluation
+  - MCP
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: f3855170412e61d3
+content_hash: 2b5b2d7512a632fe
 ---
-
 # Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning
 
 **Conference**: ICML2026  
 **arXiv**: [2602.10090](https://arxiv.org/abs/2602.10090)  
 **Code**: https://github.com/Snowflake-Labs/agent-world-model  
 **Area**: LLM Agent / Reinforcement Learning  
-**Keywords**: Agent Environment Synthesis, Tool-use, MCP, Reinforcement Learning, Executable World Model  
+**Keywords**: Agent Environment Synthesis, Tool Use, MCP, Reinforcement Learning, Executable World Models  
 
 ## TL;DR
-Ours proposes Agent World Model, a fully synthetic pipeline from scenarios, tasks, databases, and MCP tool interfaces to verifiers. It generates 1,000 executable database-driven environments and uses them to train tool-calling agents, achieving stronger out-of-distribution generalization on BFCLv3, $\tau^2$-bench, and MCP-Universe.
+This paper proposes Agent World Model, a fully synthetic pipeline encompassing scenarios, tasks, databases, MCP tool interfaces, and verifiers. It generates 1,000 executable, database-driven environments used to train tool-calling agents, achieving superior out-of-distribution generalization on BFCLv3, $\tau^2$-bench, and MCP-Universe.
 
 ## Background & Motivation
 
-**Background**: LLM Agents have become capable of multi-turn tool calling, web operations, and complex task planning. However, the training bottleneck for these agents is increasingly shifting from "models cannot call tools" to a "lack of sufficient, resettable, parallelizable, and verifiable interactive environments." Existing benchmarks are often small-scale, real APIs are difficult to reproduce stably, and LLM-simulated environments, while easy to generate, produce hallucinatory state transitions.
+**Background**: LLM Agents are capable of multi-turn tool use, web operations, and complex task planning. However, the bottleneck for training these agents has shifted from "model inability to call tools" to a "lack of sufficient, reset-able, parallelizable, and verifiable interaction environments." Existing benchmarks are often small-scale, real-world APIs are difficult to reproduce stably, and LLM-simulated environments, though easy to generate, suffer from hallucinatory state transitions.
 
-**Limitations of Prior Work**: Agentic RL requires thousands of interactions; environments must support concurrent instances, reliable resets, state consistency, and automated rewards. Real services usually do not open the APIs required for training and cannot withstand large-scale trial-and-error. Manual environments such as $\tau^2$-bench or TheMCPCompany contain only a few scenarios. LLM simulators require model calls at every step, which is both expensive and prone to self-contradictory state updates.
+**Limitations of Prior Work**: Agentic RL requires thousands of interactions; environments must support concurrent instances, reliable resets, state consistency, and automated rewards. Real services rarely expose APIs needed for training and cannot tolerate large-scale trial-and-error. Manual environments like $\tau^2$-bench or TheMCPCompany offer limited scenarios. LLM simulators require model calls at every step, making them expensive and prone to self-contradictory state updates.
 
-**Key Challenge**: Tool-calling agents requires real executable environments to learn long-term interactions, but real-world environments cannot be scaled, and pure LLM simulations are not reliable enough. While training data synthesis is abundant, the real deficiency lies in the synthesis of the "environment itself."
+**Key Challenge**: Tool-calling agents require real executable environments to learn long-term interactions, but real-world environments cannot scale, and pure LLM simulations are unreliable. While training data synthesis is abundant, the "environment itself" remains the missing link in scalability.
 
-**Goal**: Ours aims to construct an open environment synthesis pipeline that can automatically generate a large number of executable environments with database states, tool interfaces, and task verifiers from a small set of scenario seeds, proving that these environments can be directly used for large-scale online RL.
+**Goal**: The authors aim to construct an open environment synthesis pipeline that automatically generates a large number of executable environments—featuring database states, tool interfaces, and task verifiers—from a few scenario seeds, demonstrating their utility for large-scale online RL.
 
-**Key Insight**: This paper treats the agent environment as a software system rather than delegating it to an LLM for step-by-step simulation. An executable application typically consists of requirements, a database, interfaces, backend code, and tests/verification. By synthesizing these components sequentially, a "programmatic world model" is obtained where state transitions are determined by code and SQL constraints.
+**Key Insight**: The paper treats agent environments as software systems rather than delegating them to step-by-step LLM simulation. An executable application typically consists of requirements, a database, interfaces, backend code, and tests/verification. By sequentially synthesizing these components, a "programmatic world model" is created where state transitions are governed by code and SQL constraints.
 
 **Core Idea**: Use a software engineering pipeline to synthesize database-driven MCP environments, transforming the world model from a neural predictor into an executable code sandbox, followed by large-scale agentic RL within these sandboxes.
 
@@ -44,91 +40,106 @@ Ours proposes Agent World Model, a fully synthetic pipeline from scenarios, task
 
 ### Overall Architecture
 
-Agent World Model formalizes each environment as a POMDP. The database defines the state space $\mathcal{S}_{E_i}$, the MCP tool interface defines the action space $\mathcal{A}_{E_i}$, observation space $\mathcal{O}_{E_i}$, and transition function $T_{E_i}$. Each user task $\tau$ corresponds to a reward function $R_\tau$. The Agent can only interact through unified MCP tools and cannot directly modify the database.
+The Agent World Model formalizes each environment as a POMDP. The database defines the state space $\mathcal{S}_{E_i}$, the MCP tool interface defines the action space $\mathcal{A}_{E_i}$, the observation space $\mathcal{O}_{E_i}$, and the transition function $T_{E_i}$, while each user task $\tau$ corresponds to a reward function $R_\tau$. The agent interacts solely through a unified MCP tool interface without direct database access.
 
-The pipeline starts from 100 popular website/application seeds, first expanding into scenarios suitable for CRUD operations, and then generating 10 user tasks for each scenario. Tasks are not by-products but functional requirements for subsequent database schemas, sample data, tool interfaces, and verifiers. After this, the LLM sequentially synthesizes the SQLite database, sample data, interface specifications, Python MCP service code, and task verification functions. Each step executes the generated result; if the code or SQL fails, the error summary is fed back to the LLM for self-correction, with up to 5 retries.
+Starting from 100 popular website/app seeds, the pipeline expands them into scenarios suitable for CRUD operations and generates 10 user tasks per scenario. These tasks serve as functional requirements for the subsequent database schema, sample data, tool interfaces, and verifiers. LLMs then sequentially synthesize the SQLite database, sample data, interface specifications, Python MCP service code, and task verification functions. Each step executes the generated result; if code or SQL fails, an error summary is fed back to the LLM for self-correction (up to 5 retries).
 
-The generated environments are used for online GRPO training. During training, 1,024 isolated environment instances are launched at each step, each with an independent SQLite database copy. After rollout, a "code verification signal + LLM-as-a-Judge" gives a status of Completed, Partially Completed, Agent Error, or Environment Error, which is then mapped to a reward.
+The resulting environments are used for online GRPO training. During training, 1,024 isolated environment instances are launched per step, each with an independent SQLite database copy. After rollout, a "code-augmented signal + LLM-as-a-Judge" assesses status as Completed, Partially Completed, Agent Error, or Environment Error, mapping these to rewards.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SEED["100 Website/App Seeds"]
+    subgraph SYN["Requirement-Driven Synthesis Pipeline (Design 1)"]
+        direction TB
+        S1["Expand CRUD Scenarios<br/>10 Tasks per Scenario"]
+        S2["Tasks as Requirements<br/>Synth SQLite DB + Sample Data"]
+        S3["Gen MCP Tool Interfaces<br/>+ Python Service Code"]
+        S4["Gen Task Verifiers"]
+        FIX["Step-wise Execution Check<br/>Feedback for Self-correction (≤5x)"]
+        S1 --> S2 --> S3 --> S4 --> FIX
+        FIX -.Retry.-> S2
+    end
+    SEED --> SYN
+    SYN --> POOL["1000 Executable<br/>DB-driven Env Pool"]
+    POOL --> ROLL["Online GRPO<br/>1024 Isolated Rollouts per Step"]
+    ROLL --> VER["Code-Augmented Verif & Hybrid Reward (Design 2)<br/>state-diff + LLM-as-a-Judge"]
+    VER --> UPD["History-Aligned Training (Design 3)<br/>Truncated History w=3 Strategy"]
+    UPD -.Continue Sampling.-> ROLL
+```
 
 ### Key Designs
 
-1. **Requirement-Driven Environment Synthesis Chain**:
+**1. Requirement-Driven Synthesis Pipeline: Aligning Components via Software Engineering Sequence**
 
-	- **Function**: Automatically generate executable tool environments from high-level scenarios instead of just generating tasks or trajectories.
-	- **Mechanism**: Screen for stateful, CRUD-suitable scenarios first, then generate specific user tasks; tasks in turn constrain which tables the database needs, which endpoints the interfaces need, and which preconditions the sample data must satisfy. SQLite is used for the database, interfaces are exposed as tools via MCP, and backend code is responsible for reading and writing states.
-	- **Design Motivation**: If an LLM is directly asked to write a complete environment, inconsistencies between schemas, tools, and tasks often occur. Synthesizing in the order of "Task $\rightarrow$ Database $\rightarrow$ Interface $\rightarrow$ Code" essentially aligns each component using requirements.
+If an LLM writes an entire environment at once, the schema, tool interfaces, and tasks often mismatch—tools might exist that the task never uses, or the task might reference entities absent from the database. This paper builds environments like software: scenarios are filtered for stateful CRUD operations, 10 specific tasks are generated first to act as functional requirements, and these requirements constrain the design of subsequent components—the tables needed, the endpoints required, and the preconditions for sample data. Components are synthesized in the order: "Task → SQLite DB + Sample Data → MCP Tool Interface → Python Service Code → Task Verifier." State transitions are strictly governed by code and SQL, not LLM imagination.
 
-2. **Code-Augmented Verification and Hybrid Rewards**:
+**2. Code-Augmented Verification and Hybrid Reward: Reliable RL Signals in Synthetic Envs**
 
-	- **Function**: Provide reliable task rewards for synthetic environments used in RL.
-	- **Mechanism**: Each task generates a verification function that compares the database state before and after execution, extracting changed records, expected results, and diagnostic signals. The final judgment is completed by LLM-as-a-Judge combining structured verification signals and the Agent's trajectory. Rewards are set to 1.0 for Completed, 0.1 for Partially Completed, and 0 otherwise; format errors result in early termination and a -1 reward.
-	- **Design Motivation**: Pure code verification is too brittle and may misjudge due to environmental flaws; pure LLM judgment lacks state grounding. Combining the two reduces reward noise while maintaining automation.
+Synthetic verifiers are prone to bugs: pure code verification is fragile to minor flaws in auto-generated code, while pure LLM judgment lacks state grounding and may misjudge based solely on trajectories. This work makes them complementary: each task includes a verification function that compares database states before and after execution, extracting changed records and diagnostic signals. The final decision is handled by LLM-as-a-Judge, which combines these structured signals with the agent's trajectory. Rewards are mapped: 1.0 for Completed, 0.1 for Partially Completed, 0 otherwise, with format errors resulting in immediate termination and a -1 reward. This maintains automation while grounding the Judge in real state transitions via database diffs.
 
-3. **History-Aligned Training for Tool-Calling RL**:
+**3. History-Aligned Training for Tool-Calling RL: Eliminating Distribution Mismatch**
 
-	- **Function**: Reduce distribution mismatch between full history during training and truncated history during inference.
-	- **Mechanism**: In actual deployment, Agents often use a sliding window to retain the most recent rounds of history. In GRPO optimization, trajectories are also split by window $w=3$, so that the loss for each action $a_t$ is only conditioned on the truncated history $h_t^{trunc}$ rather than forward-passing the entire long trajectory at once.
-	- **Design Motivation**: Multi-turn Agent trajectories are long, and it is impossible to retain infinite context during inference. If training always sees the full history, the model will learn information that is unavailable at deployment. Incorporating history management into the training objective improves stability and generalization.
+Multi-turn agent trajectories are long. During inference, a sliding window is typically used to retain only the most recent history; however, if the model sees the full trajectory during training, it learns information unavailable at deployment, causing distribution mismatch. During GRPO optimization, this paper splits trajectories using the same window $w=3$, ensuring the loss for each action $a_t$ is conditioned only on the truncated history $h_t^{trunc}$ rather than the entire long sequence. Incorporating this inference-time history management into the training objective improves stability and OOD generalization.
 
 ### Loss & Training
 
-Training employs GRPO. For each task, a group of rollouts is sampled, advantages $A^{(k)}=(R^{(k)}-\bar{R})/\sigma_R$ are calculated based on group rewards, and the log-probability of each action under the truncated history is optimized. In implementation, Qwen3 thinking 4B, 8B, and 14B are chosen as Agents. The training subset includes 526 AWM environments and 3,315 tasks, with a maximum of 96 optimization steps, a learning rate of $7\times10^{-7}$, a batch size of 64, and 16 rollouts per task, totaling 1,024 parallel environment instances per step.
+Training utilizes GRPO. For each task, a group of rollouts is sampled, and advantages are calculated as $A^{(k)}=(R^{(k)}-\bar{R})/\sigma_R$. The log probability of each action step is optimized under truncated history. Qwen3 thinking 4B, 8B, and 14B serve as agents. The training subset includes 526 AWM environments and 3,315 tasks, with up to 96 optimization steps, a learning rate of $7\times10^{-7}$, batch size of 64, and 16 rollouts per task, totaling 1,024 parallel instances.
 
-To unify different environments, the Agent only sees two meta-tools: `list_tools` to list tools in the current MCP environment, and `call_tool` to call a specific tool by name and JSON parameters. Format validation is added during training: `list_tools` must be called once first, tool names and parameters must be valid, and inference messages must conform to the Qwen3 tool-calling format. Format errors result in immediate termination to avoid wasting environment steps on invalid trajectories.
+To unify environments, the agent sees two meta-tools: `list_tools` to enumerate tools in the current MCP environment, and `call_tool` to execute a specific tool via name and JSON parameters. Format validation is enforced: `list_tools` must be called first, tool names and parameters must be valid, and messages must conform to Qwen3 tool-calling formats. Formatting errors trigger immediate termination to prevent wasting environment steps.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Benchmark | Model | Base | Simulator | EnvScaler | AWM | Main Conclusion |
+| Benchmark | Model | Base | Simulator | EnvScaler | Oours (AWM) | Main Conclusion |
 |-----------|------|------|-----------|-----------|-----|----------|
-| BFCLv3 Overall | Qwen3-4B | 54.92 | 55.52 | 54.06 | 64.50 | AWM significantly improves overall function-calling capabilities |
-| BFCLv3 Overall | Qwen3-8B | 53.83 | 52.53 | 36.83 | 65.94 | 12.11 point Gain relative to Base on 8B |
-| BFCLv3 Overall | Qwen3-14B | 61.25 | 67.68 | - | 70.18 | Still outperforms LLM simulation training on larger models |
-| $\tau^2$-bench Pass@1 | Qwen3-8B | 26.44 | 31.30 | 39.39 | 33.45 | AWM exceeds Base and Simulator despite not targeting dialog tasks |
-| MCP-Universe Overall | Qwen3-14B | 8.38 | 10.62 | - | 12.29 | Best generalization on real MCP server-type tasks |
+| BFCLv3 Overall | Qwen3-4B | 54.92 | 55.52 | 54.06 | 64.50 | AWM significantly improves function calling capability |
+| BFCLv3 Overall | Qwen3-8B | 53.83 | 52.53 | 36.83 | 65.94 | 12.11 point gain over Base on 8B model |
+| BFCLv3 Overall | Qwen3-14B | 61.25 | 67.68 | - | 70.18 | Outperforms LLM simulation even on larger models |
+| $\tau^2$-bench Pass@1 | Qwen3-8B | 26.44 | 31.30 | 39.39 | 33.45 | AWM outperforms Base and Simulator despite not targeting dialogue |
+| MCP-Universe Overall | Qwen3-14B | 8.38 | 10.62 | - | 12.29 | Best generalization on real-world MCP server tasks |
 
 ### Ablation Study
 
-| Analysis Item | Setting | Key Metric | Description |
+| Analysis | Setting | Key Metric | Description |
 |------|------|---------|------|
-| Synthesis Scale | 1000 Envs, 10000 Tasks | Avg 35.1 tools, 1984.7 LOC, 18.5 DB tables | Environment complexity is far higher than toy tasks, suitable for multi-turn tool training |
-| Synthesis Success Rate | GPT-5 Generation | DB 88.3%, Data 88.2%, Code 86.8%; Avg 1.13 fixes | Execution feedback fixes most shallow generation errors |
-| Complexity Binning | BFCLv3 / $\tau^2$ 8B | BFCLv3 Simple: Base 53.6 $\rightarrow$ AWM 80.3; Med: 60.0 $\rightarrow$ 75.3; Hard: 43.9 $\rightarrow$ 45.0 | AWM yields the largest gains for simple and medium multi-tool tasks; hard tasks are still limited by base model capacity |
-| Verification Strategy | LLM-only / Code-only / Augmented | 8B BFCLv3: 55.46 / 60.00 / 65.94; $\tau^2$ P@1: 26.44 / 29.59 / 33.45 | Code-augmented Judge outperforms both pure LLM and pure code verification |
-| History Alignment | 4B w/ HL vs w/o HL | Aligned: BFCLv3 64.50 vs 55.35; $\tau^2$ P@1 22.57 vs 15.92 | Using the same history truncation during training is significantly better |
+| Synthesis Scale | 1k Envs, 10k Tasks | Avg 35.1 tools, 1984.7 LOC, 18.5 tables | High env complexity, suitable for multi-turn training |
+| Pipeline Success | GPT-5 Generation | DB 88.3%, Data 88.2%, Code 86.8%; avg 1.13 fixes | Execution feedback fixes most shallow generation errors |
+| Complexity Buckets | BFCLv3 / $\tau^2$ 8B | Simple: Base 53.6 → AWM 80.3; Hard: 43.9 → 45.0 | Gains highest for simple/medium multi-tool tasks |
+| Verifier Strategy | LLM-only / Code-only / Augmented | BFCLv3: 55.46 / 60.00 / 65.94 (8B) | Code-augmented Judge outperforms individual components |
+| History Alignment | 4B w/ HL vs w/o HL | BFCLv3: 64.50 vs 55.35 | Truncated history during training is significantly better |
 
 ### Key Findings
-- AWM provides the most stable improvements on BFCLv3, indicating that code-driven, multi-tool, and multi-state synthetic environments translate well to function-calling benchmarks.
-- On $\tau^2$-bench, AWM is not as high as EnvScaler's 8B Pass@1, but it does not regress on BFCLv3 and MCP-Universe simultaneously; the authors suggest EnvScaler relies on existing task sets that may be closer to the $\tau^2$ distribution.
-- The overall scores on MCP-Universe remain low, indicating that real MCP tasks are difficult; however, AWM brings visible improvements in subcategories like Finance, Location, and Browser, proving it hasn't only learned formats internal to synthetic environments.
-- Environment quality analysis shows that AWM's Task Feasibility, Data Alignment, and Toolset Completeness are all higher than those of EnvScaler, though many auto-generated code bugs remain. The key is not zero bugs but a significantly lower proportion of blocked tasks, preventing the RL process from being polluted by large numbers of non-executable tasks.
+- AWM provides the most stable gains on BFCLv3, suggesting code-driven, multi-tool environments effectively transfer to function-calling benchmarks.
+- On $\tau^2$-bench 8B Pass@1, AWM is secondary to EnvScaler, but it avoids degradation on BFCLv3 and MCP-Universe; EnvScaler's reliance on existing tasks likely aligns closer to the $\tau^2$ distribution.
+- While scores on MCP-Universe remain low due to task difficulty, AWM shows gains in Finance, Location, and Browser subcategories, proving it learns more than just internal formatting.
+- Quality analysis shows AWM's Task Feasibility and Toolset Completeness exceed EnvScaler. Although code bugs persist, the ratio of blocked tasks is significantly lower, preventing RL from being poisoned by unexecutable tasks.
 
 ## Highlights & Insights
-- The most valuable contribution of the paper is grounding "world models" in executable software environments rather than letting neural networks or LLMs imagine state transitions step-by-step. For tool Agents, databases and backend code are inherently the world dynamics; this modeling perspective is very natural.
-- Requirement-driven synthesis is critical. Having tasks before schemas and tools avoids many common problems in synthetic environments: tools that are numerous but unused by tasks, tasks that mention entities not present in the database, or interface returns inconsistent with verifiers.
-- Code-augmented Judge is a pragmatic compromise. Synthesis environment verifiers cannot be perfect, especially given boundary bugs in auto-generated code; letting an LLM reference database diffs and trajectories for final judgment is more suitable for RL rewards than relying solely on one side.
-- History-aligned training reminds us of a frequently overlooked issue: context management in Agent frameworks is not just an inference trick; it changes the distribution of information seen by the policy and should be integrated into the training loop.
+- The primary value lies in grounding the "world model" in executable software rather than step-by-step LLM imagination. For tool-agents, databases and backend code *are* the world dynamics.
+- Requirement-driven synthesis is crucial. Synthesizing tasks before the schema and tools prevents common issues where entities or tools are mismatched with the environment's purpose.
+- Code-augmented judgment is a pragmatic compromise. Since auto-generated code isn't perfect, letting an LLM interpret database diffs provides a reward signal more robust than either pure code or pure LLM judging.
+- History-aligned training serves as a reminder that context management is not just an inference trick; it shifts the information distribution and must be integrated into the training loop.
 
 ## Limitations & Future Work
-- AWM mainly covers CRUD-type, database-driven applications and is not suitable for tasks with strong UI dependencies, real-time data, complex visual interactions, or those requiring real external service states.
-- Synthetic environments still contain code bugs, with a non-negligible proportion of sampled environments containing bugs. Although blocked tasks are fewer than in EnvScaler, long-term RL may still learn biases caused by environmental flaws.
-- Synthesis and generation costs are relatively high. The paper uses the GPT-5 generation pipeline and Judge; while Claude and Qwen3.5 generators were evaluated, fully replacing closed-source models with open ones requires more validation.
-- Task verification relies on LLM-as-a-Judge, and rewards may still be affected by Judge bias. Future work could explore more provable state-diff specifications, automated test generation, and few-shot calibration via human audit.
-- There is still a semantic gap between AWM environments and real web/enterprise systems. In the future, real API documents, open-source application backends, or synthetic UIs could be combined to form a multimodal Agent training environment spanning database tools to visual operations.
+- AWM focuses on CRUD-heavy, database-driven applications, making it less suitable for UI-heavy, real-time, or complex visual interaction tasks.
+- Synthetic environments still contain code bugs. While blocked tasks are reduced, RL might still learn biases from these imperfections.
+- High synthesis and training costs. While evaluated with Claude and Qwen3.5, the pipeline currently relies heavily on GPT-5 for high-quality generation and judging.
+- Task verification still depends on LLM-as-a-Judge, which may carry biases. Future work could explore provable state-diff specifications and human-in-the-loop calibration.
+- There remains a semantic gap between AWM environments and enterprise systems. Future iterations could bridge this by integrating real API documentation or synthetic UIs.
 
 ## Related Work & Insights
-- **vs LLM Simulated Environments**: LLM simulators generate state transitions at every step, which is hallucination-prone and expensive; AWM uses Python code and SQLite to execute transitions, which is more stable and suitable for large-scale RL.
-- **vs EnvScaler**: EnvScaler also generates programming environments but relies on existing task sets and has a scale of 191 environments; AWM synthesizes 1,000 environments and 35,062 tools starting from scenario names, with SQL-backed state consistency.
-- **vs $\tau^2$-bench / TheMCPCompany**: These benchmarks are more like evaluation environments with limited quantities and heavy reliance on manual design; the goal of AWM is a training environment pool, emphasizing parallel instances, automatic resets, and scalable generation.
-- **vs ToolLLM / Gorilla etc.**: These methods primarily synthesize API documents, calling trajectories, or supervised data; AWM synthesizes full environments that allow Agents to learn through trial and error and receive rewards.
-- **vs Traditional Model-Based RL World Models**: Traditional world models learn environment dynamics; AWM does not learn neural dynamics but automatically generates programmatic dynamics, sacrificing some realism for controllability and scalability.
+- **vs LLM Simulators**: AWM is cheaper and more stable than simulators that generate state transitions via LLM text at every step.
+- **vs EnvScaler**: While EnvScaler also generates programming environments, it relies on existing task sets; AWM scales to 1,000 environments and 35,000+ tools starting from mere scenario names.
+- **vs Tool Learning Data (ToolLLM/Gorilla)**: These focus on synthesis of API docs or trajectories; AWM synthesizes the entire world dynamics required for trial-and-error RL.
+- **vs Traditional Model-Based RL**: Instead of learning neural dynamics, AWM generates programmatic dynamics, trading some realism for control and scalability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Environment synthesis has parallel works, but the complete open pipeline spanning tasks, SQL, MCP, verifiers, and agentic RL is very thorough.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes three major OOD benchmarks, three model scales, synthesis quality, complexity, verification strategies, history truncation, and scaling curves, providing very strong evidence.
-- Writing Quality: ⭐⭐⭐⭐☆ The methodology structure is clear, and engineering details are sufficient; a slight disadvantage is that some core quality issues are scattered in the appendix.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for Agent RL training infrastructure, especially for research and open-source replication requiring large numbers of resettable tool environments.
+- Novelty: ⭐⭐⭐⭐☆
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐☆
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -139,8 +150,8 @@ To unify different environments, the Agent only sees two meta-tools: `list_tools
 - [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
 - [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
+- [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/llm_evaluation/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
-- [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
 
 </div>
 

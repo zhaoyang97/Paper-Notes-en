@@ -2,68 +2,75 @@
 title: >-
   [Paper Note] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency
 description: >-
-  [ACL 2026][Code Intelligence][SQL Selection] DPC transforms Text-to-SQL candidate selection from "guessing on hidden data" into "deterministic verification on observable data": it constructs a Minimum Distinguishing Data…
+  [ACL 2026][Code Intelligence][Paper Note] DPC transforms Text-to-SQL candidate selection from "guessing on hidden data" to "deterministic verification on visible data": it constructs a Minimum Discriminating Database (MDD) to force conflicting SQLs to produce different results, and then uses a Python/Pandas solution as a reference anchor to select the correct
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "SQL Selection"
-  - "Dual-Paradigm Consistency"
-  - "Minimum Distinguishing Database"
-  - "Training-free"
-  - "Adversarial Environment Synthesis"
+  - ACL 2026
+  - Code Intelligence
 date: 2026-05-08
-content_hash: f0c540c413b464bd
+content_hash: 8b445aeec947e5ac
 ---
-
 # DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.15163](https://arxiv.org/abs/2604.15163)  
 **Code**: [GitHub](https://github.com/HKUSTDial/DPC)  
 **Area**: LLM Reasoning  
-**Keywords**: SQL Selection, Dual-Paradigm Consistency, Minimum Distinguishing Database, Training-free, Adversarial Environment Synthesis
+**Keywords**: SQL Selection, Dual-Paradigm Consistency, Minimum Discriminating Database, Training-Free, Adversarial Environment Synthesis
 
 ## TL;DR
-DPC transforms Text-to-SQL candidate selection from "guessing on hidden data" into "deterministic verification on observable data": it constructs a Minimum Distinguishing Database (MDD) to force conflicting SQLs to yield different results, then employs Python/Pandas solutions as reference anchors to select the correct candidate through cross-paradigm consistency, outperforming Self-Consistency by up to 2.2% on BIRD and Spider.
+DPC transforms Text-to-SQL candidate selection from "guessing on hidden data" to "deterministic verification on visible data": it constructs a Minimum Discriminating Database (MDD) to force conflicting SQLs to produce different results, and then uses a Python/Pandas solution as a reference anchor to select the correct candidate through cross-paradigm consistency, outperforming Self-Consistency by up to 2.2% on BIRD and Spider.
 
 ## Background & Motivation
 
-**Background**: Text-to-SQL adopts a "generate-then-select" paradigm—generating $K$ candidate SQLs and selecting the best one. However, a significant "generation-selection gap" exists: Pass@K is much higher than Pass@1 (e.g., 58.8% vs. ~50% on BIRD), indicating the correct SQL is often present but not selected.
+**Background**: Text-to-SQL adopts a "generate-then-select" paradigm—generating $K$ candidate SQLs and selecting the optimal one. However, a significant "generation-selection gap" exists: Pass@$K$ is much higher than Pass@1 (e.g., 58.8% vs. ~50% on BIRD), indicating that the correct SQL is often present in the candidates but the selection fails.
 
-**Limitations of Prior Work**: (1) Self-Consistency (majority voting) fails when models have systematic biases—converging consistently on an incorrect answer; (2) LLM-as-Judge suffers from "symbolic blindness," unable to mentally simulate the execution state of complex SQL; (3) Trained verifiers require expensive labeling and demonstrate poor domain robustness.
+**Limitations of Prior Work**: (1) Self-Consistency (majority voting) fails when there is systematic model bias—the model consistently converges to the wrong answer; (2) LLM-as-Judge fails to "mentalize" the execution state of complex SQL due to "symbolic blindness"; (3) Trained verifiers require expensive annotation and suffer from domain vulnerability.
 
-**Key Challenge**: The triple challenge of SQL verification—partial observability (real databases are too large for context), symbolic blindness (LLM cannot internally simulate SQL execution), and inherent confirmation bias (models favor their own generated candidates).
+**Key Challenge**: The triple challenge of SQL verification—partial observability (the real database is too large to fit in context), symbolic blindness (LLMs cannot internally simulate SQL execution), and inherent confirmation bias (models are biased toward their own generated candidates).
 
 **Goal**: Design a training-free SQL selection framework to transform verification from probabilistic guessing into deterministic judgment.
 
-**Key Insight**: Construct a meticulously designed small database that forces conflicting SQLs to produce different outcomes, then use Python code as an independent reasoning path for cross-verification.
+**Key Insight**: Construct a meticulously designed small database that forces conflicting SQLs to produce different outcomes, then use Python code as an independent reasoning path for cross-paradigm verification.
 
-**Core Idea**: Adversarial Environment Synthesis (MDD) + Dual-Paradigm Execution (SQL vs. Python) + Consistency Voting.
+**Core Idea**: Adversarial environment synthesis (MDD) + Dual-paradigm execution (SQL vs. Python) + Consistency voting.
 
 ## Method
 
 ### Overall Architecture
-The DPC pipeline consists of four stages: (1) Candidate Clustering & Pairing: Cluster by execution results, then select the champion (largest cluster) and challenger (second largest); (2) Adversarial Environment Synthesis: Slicer Agent prunes the schema and Tester Agent generates adversarial data to populate the MDD, ensuring champion and challenger yield different results; (3) Dual-Paradigm Execution: Execute SQL on the MDD while the Solver Agent generates and executes Python/Pandas scripts; (4) Consistency Verification: Use the BS-F1 metric to compare the semantic equivalence of SQL results against Python references.
+
+DPC reformulates the probabilistic problem of "guessing which candidate SQL is correct on a hidden real database" into a "deterministic verification on a controllable small database." Given the question and $K$ candidate SQLs, DPC first clusters candidates by execution results to identify a champion from the largest cluster and a challenger from the second-largest cluster. It then synthesizes a Minimum Discriminating Database (MDD) on-the-fly where these two conflicting SQLs must yield different results. Finally, two independent reasoning paths (SQL and Python) are executed on this database. The candidate whose result aligns with the Python reference is selected as the final SQL.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Question + K Candidate SQLs"] --> B["Execution Clustering<br/>Pick Champion from Largest Cluster, Challenger from Second Largest"]
+    subgraph MDD["Minimum Discriminating Database (MDD)"]
+        direction TB
+        C["Slicer Agent<br/>Prune schema to tables/columns used in candidates, Verify via Dry-Run"] --> D["Tester Agent<br/>Adversarial data injection + Discriminative feedback loop"]
+    end
+    B --> MDD
+    MDD -->|"Champion and Challenger results must differ on this DB"| E["Dual-Paradigm Consistency Verification<br/>SQL Direct Execution ‖ Solver Agent writes Python solution as reference"]
+    E --> F["Bipartite Soft F1 (BS-F1)<br/>Type normalization + Hungarian matching compared with Python"]
+    F -->|"Select candidate consistent with Python result"| G["Output Final SQL"]
+```
 
 ### Key Designs
 
-1. **Minimum Distinguishing Database (MDD) Construction**:
-    - **Function**: Transforms SQL verification from partially observable to fully observable.
-    - **Mechanism**: Constructed in two steps. The Slicer Agent iteratively prunes the schema to include only tables and columns required by candidate SQLs, verifying structural integrity via dry runs. The Tester Agent adversarially generates data through a discriminative feedback loop, ensuring the champion and challenger produce different execution results on the MDD. For instance, distinguishing `INNER JOIN` from `LEFT JOIN` requires specific records with no matching keys.
-    - **Design Motivation**: Random data sampling is insufficient to differentiate between SQLs that are semantically similar but logically distinct—adversarial construction targeting specific differences between candidates is required.
+**1. Minimum Discriminating Database (MDD): From "Partial Observability" to "Full Observability"**
 
-2. **Dual-Paradigm Consistency Verification**:
-    - **Function**: Breaks the confirmation bias of LLMs through independent reasoning paths.
-    - **Mechanism**: Exploits the "capability gap" where LLMs perform better in imperative languages (Python) than declarative languages (SQL)—Python has broader coverage in pre-training corpora, and imperative code forces explicit planning of data manipulation steps. The Solver Agent generates Python/Pandas solutions on the MDD, and their execution results serve as proxy ground truth to verify SQL candidates.
-    - **Design Motivation**: Solving the same problem using two different paradigms with the same LLM—if results align, the answer is likely correct; if they diverge, Python (the more reliable paradigm) acts as an arbiter.
+Real databases are often too large to fit into the context, forcing models to guess blindly without full visibility of the data—this is the root cause of SQL selection failure. DPC uses two agents to synthesize a database small enough to be fully observable yet precise enough to expose candidate differences. The Slicer Agent iteratively prunes the schema to retain only the tables and columns used by the candidate SQLs, confirming structural validity via Dry-Run. The Tester Agent then injects data adversarially, using a discriminative feedback loop to adjust records until the champion and challenger yield different results. This construction is "targeted": to differentiate `INNER JOIN` from `LEFT JOIN`, specific records with non-matching keys must be created—something random sampling rarely achieves.
 
-3. **Bipartite Soft F1 Metric (BS-F1)**:
-    - **Function**: Robustly quantifies semantic equivalence between SQL and Python results.
-    - **Mechanism**: Addresses two major cross-paradigm comparison challenges: type incompatibility (SQL `DECIMAL` vs. Python `float`, SQL `NULL` vs. Python `NaN`) and sorting ambiguity (SQL results without `ORDER BY` are unordered sets). It normalizes types and uses the Hungarian algorithm for optimal row-level matching to calculate column overlap for a Soft-F1 score.
-    - **Design Motivation**: Standard Execution Accuracy (EX) requires strict equality, leading to many false negatives in cross-paradigm scenarios.
+**2. Dual-Paradigm Consistency Verification: Breaking Confirmation Bias with a Second Language**
+
+Using the same model to judge its own generated SQL naturally carries confirmation bias, and LLMs suffer from "symbolic blindness" regarding declarative SQL. DPC exploits a capability gap: LLMs are often more reliable at writing imperative Python/Pandas than declarative SQL, as Python has broader coverage in pre-training and imperative code forces explicit step-by-step planning of data operations. Thus, a Solver Agent independently writes a Python solution for the MDD, whose execution result acts as a proxy ground truth. Consistency between the two paradigms indicates high probability of correctness, while the reliable Python path serves as an anchor for arbitration in case of conflict.
+
+**3. Bipartite Soft F1 (BS-F1): Robust Comparison of Cross-Paradigm Results**
+
+Using standard Execution Accuracy (EX) to compare SQL results with Python results leads to excessive false negatives due to type incompatibility (e.g., SQL `DECIMAL` vs. Python `float`) and ordering ambiguity (un-ordered sets in SQL). BS-F1 performs type normalization and uses the Hungarian algorithm to find the optimal matching between rows of the two result sets. It computes a soft F1 score based on column overlap of matched rows, tolerating representational differences while remaining sensitive to semantic equivalence.
 
 ### Loss & Training
-DPC is a pure inference-time framework and involves no training. All agents are implemented via prompt engineering using the same LLM backbone.
+
+DPC is a pure inference-time framework and involves no training. Agents like Slicer, Tester, and Solver are implemented via prompt engineering, sharing the same LLM backbone.
 
 ## Key Experimental Results
 
@@ -71,43 +78,43 @@ DPC is a pure inference-time framework and involves no training. All agents are 
 
 | Dataset | Method | Execution Accuracy | vs. Self-Consistency |
 |---------|--------|---------------------|----------------------|
-| BIRD    | DPC    | State-of-the-Art    | +2.2%                |
-| Spider  | DPC    | State-of-the-Art    | +1-2%                |
+| BIRD    | DPC    | **SOTA**            | +2.2%                |
+| Spider  | DPC    | **SOTA**            | +1-2%                |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
-| W/O MDD (using sample data) | Significant Drop | Adversarial data construction is critical |
-| W/O Python Paradigm | Drop | Single-paradigm verification is inferior to dual-paradigm |
-| W/O BS-F1 (using strict EX) | Drop | Cross-paradigm comparison requires soft matching |
+| w/o MDD (Direct sampling) | Significant drop | Adversarial data construction is critical |
+| w/o Python Paradigm | Drop | Dual-paradigm verification is superior to single paradigm |
+| w/o BS-F1 (Strict EX) | Drop | Cross-paradigm comparison requires soft matching |
 
 ### Key Findings
-- The discriminative feedback loop of MDD is core—random data sampling fails to distinguish conflicting SQLs in most cases.
+- The discriminative feedback loop in MDD is the core—random data sampling fails to differentiate conflicting SQLs in most cases.
 - The Python paradigm is more reliable as a verification anchor than SQL itself, confirming the hypothesis that LLMs possess stronger capabilities in imperative languages.
-- BS-F1 significantly reduces misjudgments compared to strict EX in cross-paradigm verification.
+- BS-F1 significantly reduces misjudgments in cross-paradigm verification compared to strict EX.
 - DPC consistently outperforms Self-Consistency across multiple LLM backbones.
 
 ## Highlights & Insights
-- The approach of **transforming a selection problem into a constructive verification problem** is elegant—rather than guessing which SQL is correct, it constructs an "experiment" to reveal differences.
-- **Cross-Paradigm Consistency** leverages the performance variance of LLMs across different programming languages—using Python as a "second opinion" for SQL is analogous to independent replication in science.
-- The adversarial construction logic of MDD can be generalized to any selection task necessitating the differentiation of similar candidates.
+- **Elegant shift from selection to construction**: Rather than guessing which SQL is correct, it constructs an "experiment" to reveal their differences.
+- **Cross-paradigm consistency**: It leverages the LLM's capability variance across programming languages—using Python as a "second opinion" to cross-verify SQL is analogous to independent replication in science.
+- The adversarial construction logic of MDD can be generalized to any selection task requiring the differentiation of similar candidates.
 
 ## Limitations & Future Work
 - MDD construction requires multiple LLM calls, increasing inference latency and cost.
-- Focusing only on the champion-challenger pair may miss correct candidates ranked lower.
-- The quality of the Python solution depends on the LLM's Python programming ability, which is not always flawless.
-- Success rates of MDD construction may decrease for highly complex SQL (e.g., multi-level nested subqueries).
+- Focusing only on a "champion vs. challenger" binary choice might miss correct candidates ranked lower in the cluster.
+- The quality of the Python solution depends on the LLM's programming proficiency and is not always infallible.
+- For extremely complex SQL (e.g., multi-layer nested subqueries), the success rate of MDD construction may decrease.
 
 ## Related Work & Insights
-- **vs. Self-Consistency**: SC relies on majority voting and fails under systematic bias; DPC replaces probabilistic voting with deterministic execution evidence.
-- **vs. LLM-as-Judge**: Judge modes are limited by symbolic blindness and cannot simulate execution; DPC obtains definitive evidence through actual execution.
-- **vs. Trained Verifiers**: Training requires annotations and is domain-brittle; DPC is entirely training-free.
+- **vs. Self-Consistency**: While SC relies on majority voting and fails under systematic bias, DPC replaces probabilistic voting with deterministic execution evidence.
+- **vs. LLM-as-Judge**: While Judge modes are limited by symbolic blindness and cannot simulate execution, DPC obtains deterministic evidence through actual execution.
+- **vs. Trained Verifiers**: Unlike verifiers that require labeled data and lack domain robustness, DPC is entirely training-free.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of adversarial environment synthesis and dual-paradigm consistency is a novel concept.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on BIRD and Spider benchmarks with multiple LLM backbones.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem formalization and smooth pipeline descriptions.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of adversarial environment synthesis and dual-paradigm consistency is a fresh approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on standard benchmarks BIRD and Spider across multiple LLM backbones.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem formalization and a logically fluent pipeline description.
 
 <!-- RELATED:START -->
 
@@ -116,10 +123,10 @@ DPC is a pure inference-time framework and involves no training. All agents are 
 ## Related Papers
 
 - [\[ACL 2026\] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL](r3-sql_ranking_reward_and_resampling_for_text-to-sql.md)
-- [\[ACL 2026\] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](pv-sql_synergizing_database_probing_and_rule-based_verification_for_text-to-sql_.md)
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
+- [\[ACL 2026\] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](pv-sql_synergizing_database_probing_and_rule-based_verification_for_text-to-sql_.md)
 - [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
-- [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
+- [\[ACL 2025\] STaR-SQL: Self-Taught Reasoner for Text-to-SQL](../../ACL2025/code_intelligence/star-sql_self-taught_reasoner_for_text-to-sql.md)
 
 </div>
 

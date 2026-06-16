@@ -2,140 +2,149 @@
 title: >-
   [Paper Note] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Point cloud semantic segmentation] PointTPA is a framework that generates input-customized network parameters at inference time via two lightweight modules—Serialization-based Neighborhood Grouping…
+  [CVPR 2026][3D Vision][Paper Note] The PointTPA framework is proposed, utilizing two lightweight modules—Serialized Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—to generate customized network parameters for each input scene during inference. With an increase of <2% in parameter count, it achieves 78.4% mIoU on ScanNet, surpassing cu
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Point cloud semantic segmentation"
-  - "test-time parameter adaptation"
-  - "dynamic networks"
-  - "parameter-efficient fine-tuning"
-  - "scene-level understanding"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 0e9401966945d3f8
+content_hash: 4ac35fa1c447a045
 ---
-
 # PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04933](https://arxiv.org/abs/2604.04933)  
 **Code**: [https://github.com/H-EmbodVis/PointTPA](https://github.com/H-EmbodVis/PointTPA)  
-**Area**: 3D Vision / Point Cloud Understanding
-**Keywords**: Point cloud semantic segmentation, test-time parameter adaptation, dynamic networks, parameter-efficient fine-tuning, scene-level understanding
+**Area**: 3D Vision / Point Cloud Understanding  
+**Keywords**: Point Cloud Semantic Segmentation, Test-time Parameter Adaptation, Dynamic Networks, Parameter-Efficient Fine-Tuning, Scene-level Understanding
 
 ## TL;DR
 
-PointTPA is a framework that generates input-customized network parameters at inference time via two lightweight modules—Serialization-based Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—achieving 78.4% mIoU on ScanNet with fewer than 2% additional parameters, surpassing existing parameter-efficient fine-tuning (PEFT) methods.
+The PointTPA framework is proposed, utilizing two lightweight modules—Serialized Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—to generate customized network parameters for each input scene during inference. With an increase of <2% in parameter count, it achieves 78.4% mIoU on ScanNet, surpassing current Parameter-Efficient Fine-Tuning (PEFT) methods.
 
 ## Background & Motivation
 
-**Background**: Scene-level point cloud understanding (e.g., indoor semantic segmentation) is a core task in 3D vision. With the emergence of powerful pre-trained backbones such as Point Transformer v3 (PTv3) and Sonata, the natural paradigm has become "pre-train then fine-tune." PEFT methods (e.g., LoRA, Adapter, VPT) have been transferred from NLP and 2D vision to the 3D point cloud domain, aiming to adapt pre-trained models with a minimal number of trainable parameters.
+**Background**: Scene-level point cloud understanding (e.g., indoor semantic segmentation) is a core task in 3D vision. With the emergence of powerful pre-trained backbones like Point Transformer v3 (PTv3) and Sonata, a natural paradigm is "pre-train + fine-tune"—pre-training on large-scale data and then fine-tuning on the target task. Parameter-Efficient Fine-Tuning (PEFT) methods (such as LoRA, Adapter, VPT, etc.) have migrated from NLP/2D vision to the 3D point cloud domain, aiming to adapt pre-trained models using a small number of trainable parameters.
 
-**Limitations of Prior Work**: (1) Existing PEFT methods—including 3D-specific approaches such as DAPT, PointGST, and IDPT—rely on **static parameters** at inference time: all test samples share the same set of adaptation parameters, with no capacity for dynamic adjustment to scene-specific characteristics. (2) Scene-level point clouds are inherently challenging because geometric complexity, category distribution, and spatial layout vary enormously across scenes—some are dominated by large planar surfaces (e.g., empty conference rooms), while others contain dense, cluttered objects (e.g., disordered kitchens). (3) Static parameters exhibit suboptimal adaptability under such high inter-scene variability, since a single fixed set of parameters cannot simultaneously be optimal for both simple and complex scenes.
+**Limitations of Prior Work**: (1) Existing PEFT methods (including 3D-specific methods like DAPT, PointGST, and IDPT) use **static parameters** for inference after training—all test samples share the same set of adaptation parameters, failing to adjust dynamically based on different scene characteristics; (2) The challenge of scene-level point clouds lies in the massive variations in geometric complexity, category distribution, and spatial layout—some scenes are dominated by large planes (e.g., empty conference rooms), while others are filled with small objects (e.g., cluttered kitchens); (3) Static parameters show suboptimal adaptation when facing such high inter-scene variability, as a single set of parameters cannot be optimal for both simple and complex scenes simultaneously.
 
-**Key Challenge**: PEFT methods seek to approximate full fine-tuning performance with a small number of parameters, yet the inherent rigidity of static parameters prevents a compact parameter set from covering the full distribution of scene variability. Resolving this tension requires making the parameters themselves a function of the input.
+**Key Challenge**: PEFT aims to "achieve performance close to full fine-tuning with few parameters," but the inherent limitations of static parameters prevent a small parameter set from covering all scene variations. Resolving this contradiction requires making the parameters themselves a function of the input.
 
-**Goal**: To design a test-time parameter adaptation mechanism that dynamically adjusts network parameters according to the characteristics of each input scene while maintaining a minimal parameter overhead.
+**Goal**: Design a test-time parameter adaptation mechanism that allows network parameters to adjust dynamically based on the characteristics of the input scene while maintaining extremely low parameter overhead.
 
-**Key Insight**: The authors observe that scene-level point clouds can be decomposed into locally coherent patches—points within each patch share similar geometric and semantic properties. Generating customized network weights for each patch enables fine-grained adaptation at the local level while preserving parameter efficiency through weight-sharing mechanisms.
+**Key Insight**: The authors observe that scene-level point clouds can be decomposed into locally consistent patches—where points within a patch share similar geometric and semantic attributes. By generating customized network weights for each patch, fine-grained adaptation can be achieved at the local level while maintaining parameter efficiency through weight-sharing mechanisms.
 
-**Core Idea**: A Dynamic Parameter Projector generates patch-specific network weight deltas conditioned on each input patch's features, realizing per-scene parameter adaptation at inference time.
+**Core Idea**: Use a Dynamic Parameter Projector to generate a weight delta specific to each input patch based on its features, achieving "one set of parameters per scene" during test-time adaptation.
 
 ## Method
 
 ### Overall Architecture
 
-PointTPA is built on the PTv3 backbone. Given a scene-level point cloud (with coordinates, color, and other features) as input, SNG first organizes the points into a sequence of locally coherent patches. At each backbone layer, DPP dynamically generates a weight delta conditioned on the current patch's features, which is superimposed on the pre-trained weights to enable adaptive inference. The output is a per-point semantic label. The combined trainable parameter count of SNG and DPP is less than 2% of the backbone parameters.
+PointTPA is built upon the PTv3 backbone. The input is a scene-level point cloud (with coordinates, colors, etc.), which is first organized into a sequence of locally consistent patches via Serialized Neighborhood Grouping (SNG). Then, at each layer of the backbone, the Dynamic Parameter Projector (DPP) dynamically generates a parameter increment (weight delta) for that layer based on the current patch features, which is added to the pre-trained weights for adaptive inference. The output is per-point semantic labels. Throughout the process, the trainable parameters of the SNG and DPP modules account for <2% of the backbone parameters.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Scene-level Point Cloud<br/>Coords + Color"] --> B["Serialized Neighborhood Grouping (SNG)<br/>Reuse PTv3 Z-order, slide window to group K points into patch"]
+    subgraph DPP["Dynamic Parameter Projector (DPP)"]
+        direction TB
+        C["Patch Aggregated Feature f_p → Two-layer MLP"] --> D["Low-rank Weight Delta<br/>ΔW_p = A_p·B, A_p varies per patch, B shared globally"]
+    end
+    B --> DPP
+    DPP --> E["Integration with PTv3 Backbone<br/>ΔW_p added to Q/K/V or FFN: W_p = W + ΔW_p"]
+    E --> F["Point-wise Semantic Labels"]
+```
 
 ### Key Designs
 
-1. **Serialization-based Neighborhood Grouping (SNG)**:
+**1. Serialized Neighborhood Grouping (SNG): Partitioning scenes into "locally consistent" patches at near-zero cost**
 
-    - **Function**: Organizes the unordered scene-level point cloud into spatially coherent patch sequences, providing a principled grouping basis for subsequent patch-wise parameter generation.
-    - **Mechanism**: Leverages PTv3's existing serialization mechanism (e.g., Z-order space-filling curves) to spatially sort the point cloud. Adjacent $K$ points in the serialized sequence are aggregated into a single patch via a sliding window, ensuring that points within each patch are spatially proximate and geometrically similar. SNG reuses PTv3's serialization order rather than introducing additional clustering algorithms (e.g., FPS + kNN), thus adding negligible computational overhead.
-    - **Design Motivation**: Generating parameters at the single-point level is computationally prohibitive and lacks sufficient context (individual point features are too sparse to guide parameter generation). Generating parameters at the whole-scene level is too coarse, since different regions within a scene require different parameters. The patch level represents an ideal granularity—providing sufficient local features while maintaining tractable computational complexity.
+To generate exclusive parameters for each local region, the first step is to partition the unordered point cloud into appropriately granular blocks. SNG avoids expensive operations like FPS + kNN, which would significantly increase computation; instead, it reuses the serialization already performed by PTv3 (e.g., Z-order space-filling curves). Since points near each other in space are generally adjacent in the 1D sequence, simply sliding a window of size $K$ across the sequence generates patches of spatially neighboring points with similar geometric attributes. Patches are chosen as the granularity because single-point parameters are computationally explosive and offer insufficient context, while scene-level parameters are too coarse to distinguish between a conference room and a cluttered kitchen.
 
-2. **Dynamic Parameter Projector (DPP)**:
+**2. Dynamic Parameter Projector (DPP): Making network weights a "function of the input" rather than fixed constants**
 
-    - **Function**: Dynamically generates network weight deltas for each patch conditioned on its aggregated features.
-    - **Mechanism**: For each layer, given the patch feature $\mathbf{f}_p \in \mathbb{R}^{d}$, a lightweight projection network (two-layer MLP with activation) maps it to a weight delta $\Delta W_p = \text{MLP}(\mathbf{f}_p) \in \mathbb{R}^{d_{\text{out}} \times d_{\text{in}}}$. During inference, all points within the patch use weights $W + \Delta W_p$, where $W$ denotes the pre-trained base weights. To further reduce the parameter count, DPP employs low-rank decomposition, constraining the output dimension to rank $r \ll d$: $\Delta W_p = A_p B$, where $A_p \in \mathbb{R}^{d_{\text{out}} \times r}$ is patch-specific and $B \in \mathbb{R}^{r \times d_{\text{in}}}$ is globally shared.
-    - **Design Motivation**: The key distinction from static PEFT methods such as LoRA is that the weight delta $\Delta W_p$ is input-dependent rather than fixed. For geometrically complex patches (e.g., intersecting chair legs), DPP generates finer feature extraction parameters; for simple patches (e.g., points on large planar surfaces), it generates smoother parameters. This dynamic behavior allows a compact parameter set to accommodate a broader range of scene variations.
+This is the core distinction between PointTPA and static PEFT. For every layer and each patch's aggregated feature $\mathbf{f}_p \in \mathbb{R}^{d}$, the DPP uses a lightweight projection network (two-layer MLP + activation) to map it to a weight increment $\Delta W_p = \text{MLP}(\mathbf{f}_p) \in \mathbb{R}^{d_{\text{out}} \times d_{\text{in}}}$. During inference, the weights used for all points within that patch are the base weights plus this increment:
 
-3. **Integration Strategy with PTv3**:
+$$W_p = W + \Delta W_p$$
 
-    - **Function**: Seamlessly embeds SNG and DPP into the attention layers of PTv3.
-    - **Mechanism**: Within each self-attention layer of PTv3, the parameter deltas generated by DPP are applied to the Query/Key/Value projection matrices or feed-forward network weights. The patch groupings from SNG naturally align with PTv3's window attention mechanism—points within the same window belong to the same or adjacent patches—so no additional grouping operations are required during inference. During backpropagation, gradients flow through both the DPP projection network parameters (learning how to generate parameters from features) and optionally through selected backbone layers (partial fine-tuning).
-    - **Design Motivation**: PTv3's serialized attention already encodes spatial locality assumptions. SNG and DPP exploit this structural property by inserting adaptive modules without modifying the backbone architecture, preserving architectural cleanliness.
+To minimize parameters, DPP employs a low-rank decomposition, allowing only the patch-dependent half to vary with the input while the other half is shared globally:
+
+$$\Delta W_p = A_p B,\quad A_p \in \mathbb{R}^{d_{\text{out}} \times r},\ B \in \mathbb{R}^{r \times d_{\text{in}}},\ r \ll d$$
+
+Compared to LoRA (where $\Delta W = AB$ is fixed after training), DPP's $A_p$ is calculated from the current patch features. Consequently, for geometrically complex patches (e.g., chair legs), it generates more precise extraction parameters, while for simple patches (e.g., planes), it yields smoother parameters. This "on-demand deformation" allows a small number of parameters to cover wider scene variation.
+
+**3. Integration with PTv3 Backbone: Structural insertion following window attention**
+
+The deltas generated by the DPP are added to the Q/K/V projection matrices or Feed-Forward Network (FFN) weights in each PTv3 self-attention layer. Conveniently, PTv3's serialized window attention inherently assumes spatial locality; points within the same window belong to the same or adjacent patches, allowing parameter application to align directly with windows without additional grouping. During backpropagation, gradients flow through the DPP projection network (learning "how to generate parameters from features") and optionally through un-frozen layers of the backbone.
 
 ### Loss & Training
 
-The standard cross-entropy loss for semantic segmentation is used: $\mathcal{L} = -\frac{1}{N}\sum_{i=1}^{N}\sum_{c=1}^{C} y_{ic} \log \hat{p}_{ic}$, where $N$ is the number of points and $C$ is the number of classes. During training, the majority of the pre-trained backbone parameters are frozen; only the SNG and DPP modules (<2% of parameters) are trained. Two fine-tuning modes are supported: (1) **Linear Probing + PointTPA**—the backbone is frozen and only the classification head and PointTPA modules are trained; (2) **Decoder Probing + PointTPA**—the decoder and PointTPA modules are fine-tuned. Pre-trained weights are sourced from Sonata, a large-scale 3D pre-training model based on PTv3.
+A standard semantic segmentation cross-entropy loss is used: $\mathcal{L} = -\frac{1}{N}\sum_{i=1}^{N}\sum_{c=1}^{C} y_{ic} \log \hat{p}_{ic}$, where $N$ is the number of points and $C$ is the number of categories. During training, most of the pre-trained backbone is frozen, and only the SNG and DPP modules (<2% parameters) are trained. Two fine-tuning modes are supported: (1) **Linear Probing + PointTPA**—backbone frozen, training only the head and PointTPA; (2) **Decoder Probing + PointTPA**—fine-tuning the decoder and PointTPA. Pre-trained weights are sourced from Sonata (a large-scale 3D model based on PTv3).
 
 ## Key Experimental Results
 
-### Main Results
+### Main Results (Comparison across benchmarks)
 
-| Dataset | Method | Type | mIoU (%) ↑ | Trainable Params |
+| Dataset | Method | Type | mIoU (%) ↑ | Trainable Parameters |
 |--------|------|------|-----------|-----------|
 | ScanNet val | Linear Probing | Baseline | ~73 | Head only |
 | ScanNet val | LoRA | PEFT | ~75 | <3% |
 | ScanNet val | DAPT | 3D PEFT | ~76 | <3% |
 | ScanNet val | PointGST | 3D PEFT | ~76 | <3% |
 | ScanNet val | **PointTPA (Lin)** | **Dynamic PEFT** | **78.4** | **<2%** |
-| ScanNet val | Full Fine-Tuning | Full params | ~79 | 100% |
+| ScanNet val | Full Fine-Tuning | Full | ~79 | 100% |
 | ScanNet200 val | Linear Probing | Baseline | ~30 | Head only |
-| ScanNet200 val | **PointTPA (Lin)** | **Dynamic PEFT** | **Substantial gain** | **<2%** |
+| ScanNet200 val | **PointTPA (Lin)** | **Dynamic PEFT** | **Significant Gain** | **<2%** |
 | S3DIS Area5 | **PointTPA** | **Dynamic PEFT** | **Competitive** | **<2%** |
 | ScanNet++ val | **PointTPA** | **Dynamic PEFT** | **Competitive** | **<2%** |
 
 ### Ablation Study
 
-| Configuration | ScanNet mIoU (%) | Params | Notes |
+| Config | ScanNet mIoU (%) | Params | Notes |
 |------|-----------------|--------|------|
-| PTv3 + Linear Probing | ~73 | Minimal | Frozen backbone baseline |
-| + SNG only | ~74.5 | Negligible increase | Grouping only, no dynamic params |
-| + DPP only (global) | ~76 | <1.5% | Dynamic params without local grouping |
-| **+ SNG + DPP (PointTPA)** | **78.4** | **<2%** | **Full model** |
-| DPP rank $r=4$ | ~77.5 | <1.5% | Lower-rank projection |
-| DPP rank $r=16$ | ~78.4 | <2% | Default setting |
-| DPP rank $r=32$ | ~78.5 | <3% | Higher rank with diminishing returns |
+| PTv3 + Linear Probing | ~73 | Min | Frozen backbone baseline |
+| + SNG only | ~74.5 | Minimal increase | Grouping only, no dynamic params |
+| + DPP only (Global) | ~76 | <1.5% | Dynamic params without local grouping |
+| **+ SNG + DPP (PointTPA)** | **78.4** | **<2%** | **Full Model** |
+| DPP rank r=4 | ~77.5 | <1.5% | Lower rank projection |
+| DPP rank r=16 | ~78.4 | <2% | Default setting |
+| DPP rank r=32 | ~78.5 | <3% | Higher rank, marginal gain |
 
 ### Key Findings
 
-- **PointTPA achieves near-full fine-tuning performance (~79%) with fewer than 2% parameters**, substantially closing the gap between PEFT and full fine-tuning (FFT).
-- **SNG and DPP make complementary contributions**: SNG provides principled local grouping, and DPP generates adaptive parameters over those groups; neither component alone suffices.
-- **The advantage of dynamic over static parameters is more pronounced in complex scenes**: on ScanNet200 (200-class fine-grained segmentation), PointTPA yields larger gains over static PEFT methods, as more categories imply greater scene variability.
-- **Inference overhead is manageable**: DPP parameter generation adds approximately 5–10% inference latency, since the projection network is a lightweight two-layer MLP.
-- **A sweet spot exists for rank $r$**: $r=16$ achieves the best accuracy–parameter trade-off; further increases yield diminishing returns.
+- **PointTPA achieves performance close to Full Fine-Tuning (~79%) with <2% parameters**, narrowing the gap between PEFT and FFT.
+- **SNG and DPP are complementary**: SNG provides logical local grouping, while DPP generates adaptive parameters on those groups; both are essential.
+- **Dynamic vs. static advantage is more pronounced in complex scenarios**: On ScanNet200 (fine-grained 200-class segmentation), PointTPA shows larger gains over static PEFT because more categories introduce more scene variation.
+- **Inference overhead is controllable**: DPP parameter generation adds only ~5-10% to inference time due to its lightweight two-layer MLP design.
+- **The rank $r$ has a sweet spot**: $r=16$ provides the best balance between accuracy and parameter count, with diminishing returns beyond this point.
 
 ## Highlights & Insights
 
-- **The core insight of dynamic parameters is broadly applicable**: treating network parameters as functions of the input rather than static constants is a principle transferable beyond 3D point clouds to PEFT methods in 2D vision and NLP.
-- **The overhead-free grouping design of SNG is elegant**: reusing PTv3's existing serialization order avoids additional clustering computation—a design philosophy of leveraging existing architectural structure that is worthy of broader adoption.
-- **Near-FFT parameter efficiency**: 78.4% vs. ~79% mIoU with a 50× reduction in trainable parameters, which is particularly valuable for edge deployment scenarios with constrained storage and computation.
-- **Connection to HyperNetworks**: DPP is essentially a HyperNetwork—a small network generating the parameters of a larger one. PointTPA's contribution lies in successfully instantiating this idea within the 3D PEFT setting and empirically validating its effectiveness.
+- **The core insight of dynamic parameters is universal**: Changing network parameters from "static constants" to "functions of the input" is an idea that can migrate from 3D point clouds to 2D vision, NLP, and other PEFT domains.
+- **Zero-overhead grouping in SNG is clever**: Reusing PTv3’s serialization order avoids extra clustering computation; this "utilization of existing structures" is a noteworthy design pattern.
+- **FFN-level parameter efficiency**: 78.4% vs ~79% mIoU with a 50x difference in parameter count is highly valuable for edge deployment where storage and computation are restricted.
+- **Connection to HyperNetworks**: DPP is essentially a HyperNetwork—a small network generating parameters for a larger one. PointTPA’s contribution lies in successfully applying this to 3D PEFT and proving its effectiveness.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to semantic segmentation; applicability to 3D object detection, instance segmentation, and point cloud registration remains unexplored.
-- The parameter deltas generated by DPP are constrained by the low-rank assumption; scenes with extreme distribution shifts that require high-rank parameter variation may necessitate more flexible generation mechanisms.
-- SNG's grouping strategy depends on PTv3's serialization scheme; alternative backbones (e.g., MinkowskiNet, SparseConvNet) would require redesigned grouping strategies.
-- Input-dependent computation paths introduced by test-time parameter adaptation make inference non-deterministic—minor differences in patch grouping across runs may produce slight result variations.
-- The relationship between PointTPA and test-time training (TTT) or test-time augmentation (TTA), as well as potential combinations thereof, remains to be investigated.
+- Currently only validated on semantic segmentation; tasks like 3D object detection, instance segmentation, and point cloud registration remain to be explored.
+- The weight delta generated by DPP is constrained by the low-rank assumption—extreme scene distributions requiring high-rank changes might need more flexible generation mechanisms.
+- SNG grouping depends on PTv3's serialization strategy; adapting to other backbones (e.g., MinkowskiNet, SparseConvNet) would require redesigning the grouping scheme.
+- Test-time parameter adaptation introduces input-dependent computation paths, making inference not entirely deterministic—different patch groupings of the same input might lead to minute result variations.
+- Integration/relationships with test-time training (TTT) and test-time augmentation (TTA) remain to be explored.
 
 ## Related Work & Insights
 
-- **vs. LoRA (Hu et al. 2022)**: LoRA employs a fixed low-rank delta $\Delta W = AB$ that is independent of the input. PointTPA's DPP can be viewed as "input-conditioned LoRA," where the $A$ matrix becomes a function of the input.
-- **vs. DAPT (Zhou et al. 2024)**: DAPT also targets PEFT for 3D point clouds but uses static adapters. PointTPA achieves superior performance under the same parameter budget through dynamic parameter generation.
-- **vs. HyperNetwork (Ha et al. 2017)**: HyperNetworks use a small network to generate the parameters of a large network. PointTPA localizes this idea—generating parameter deltas only at the patch level rather than for the entire network.
-- **Inspiration**: The dynamic parameter paradigm could be combined with prompt tuning—not only dynamically adjusting network weights but also dynamically generating input prompts.
+- **vs LoRA (Hu et al. 2022)**: LoRA uses a fixed low-rank increment $\Delta W = AB$, where parameters are input-independent. PointTPA’s DPP can be viewed as an "input-conditioned LoRA" where the $A$ matrix is a function of the input.
+- **vs DAPT (Zhou et al. 2024)**: DAPT also focuses on 3D PEFT but uses static adapters. PointTPA achieves better results under similar parameter budgets via dynamic parameters.
+- **vs HyperNetwork (Ha et al. 2017)**: While HyperNetworks generate parameters for entire networks, PointTPA localizes this concept—generating increments only at the patch level.
+- **Insight**: The dynamic parameter approach could be combined with prompt tuning—dynamically adjusting network weights while also generating dynamic input prompts.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Combining test-time dynamic parameter adaptation with 3D PEFT is novel; the SNG and DPP designs are elegant, though conceptually not overly complex.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 4 datasets, multiple fine-tuning modes, detailed ablations, and thorough parameter efficiency and inference time analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Method description is clear and experimental coverage is thorough.
-- **Value**: ⭐⭐⭐⭐ Introduces a new direction for efficient fine-tuning of 3D scene understanding models; the dynamic parameter mechanism has broad transfer potential.
+- **Novelty**: ⭐⭐⭐⭐ Combining test-time dynamic adaptation with 3D PEFT is novel; SNG and DPP are cleverly designed though not conceptually complex.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage of 4 datasets, multiple fine-tuning modes, detailed ablations, parameter efficiency, and timing analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Method descriptions are clear and experiments are well-documented.
+- **Value**: ⭐⭐⭐⭐ Provides a new direction for efficient fine-tuning in 3D scene understanding, with dynamic mechanisms showing significant transfer potential.
 
 <!-- RELATED:START -->
 
@@ -143,11 +152,11 @@ The standard cross-entropy loss for semantic segmentation is used: $\mathcal{L} 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
-- [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
-- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
+- [\[CVPR 2026\] RISE: Single Static Radar-based Indoor Scene Understanding](rise_single_static_radar-based_indoor_scene_understanding.md)
+- [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
 
 </div>
 

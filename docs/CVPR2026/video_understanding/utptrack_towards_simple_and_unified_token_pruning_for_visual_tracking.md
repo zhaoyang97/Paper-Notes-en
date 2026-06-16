@@ -2,20 +2,16 @@
 title: >-
   [Paper Note] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 description: >-
-  [CVPR2026][Video Understanding][token pruning] This paper proposes UTPTrack, the first unified framework that **jointly prunes tokens from all three components — search region (SR), dynamic template (DT)…
+  [CVPR 2026][Video Understanding][token pruning] Ours proposes UTPTrack, the first unified framework to **jointly prune tokens across three components: Search Region (SR), Dynamic Template (DT), and Static Template (ST)** within one-stream Transformer trackers. It achieves 65–67% visual token reduction in RGB and multimodal/language-guided tracking while maintaining
 tags:
-  - "CVPR2026"
-  - "Video Understanding"
-  - "token pruning"
-  - "visual object tracking"
-  - "one-stream transformer"
-  - "multimodal tracking"
-  - "unified tracking"
-  - "attention-guided pruning"
+  - CVPR 2026
+  - Video Understanding
+  - token pruning
+  - visual object tracking
+  - one-stream transformer
 date: 2026-05-08
-content_hash: 78d5d44c415a274d
+content_hash: 536dea8617e151c2
 ---
-
 # UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 
 **Conference**: CVPR2026  
@@ -26,59 +22,90 @@ content_hash: 78d5d44c415a274d
 
 ## TL;DR
 
-This paper proposes UTPTrack, the first unified framework that **jointly prunes tokens from all three components — search region (SR), dynamic template (DT), and static template (ST)** — within one-stream Transformer trackers, achieving 65–67% visual token reduction across both RGB and multimodal/language-guided tracking tasks while maintaining 99.7%–100.5% of baseline performance.
+Ours proposes UTPTrack, the first unified framework to **jointly prune tokens across three components: Search Region (SR), Dynamic Template (DT), and Static Template (ST)** within one-stream Transformer trackers. It achieves 65–67% visual token reduction in RGB and multimodal/language-guided tracking while maintaining 99.7%–100.5% of baseline performance.
 
 ## Background & Motivation
 
-**One-stream Transformer trackers are powerful but computationally expensive**: Architectures such as OSTrack and SUTrack jointly encode templates and search regions to obtain stronger global feature representations, but the quadratic complexity of Transformers combined with large numbers of video tokens makes real-time deployment challenging.
+**One-stream Transformer trackers show superior performance but high computational cost**: Architectures like OSTrack and SUTrack jointly encode templates and search regions for stronger global representations. However, the quadratic complexity of Transformers combined with large video token counts makes real-time deployment difficult.
 
-**Existing token pruning methods target only a single component**: Prior work (e.g., CE in OSTrack, ProContEXT) prunes only the search region or the dynamic template, neglecting the interdependencies among SR, DT, and ST.
+**Existing token pruning methods target only single components**: Prior work (e.g., CE in OSTrack, ProContEXT) focuses solely on pruning the search region or dynamic templates, ignoring the mutual dependencies between SR, DT, and ST.
 
-**Isolated pruning leads to suboptimal decisions**: The degree of redundancy varies across components; processing each independently fails to capture cross-component relationships, potentially discarding useful tokens or retaining substantial redundancy, thereby degrading spatial consistency and semantic integrity.
+**Isolated pruning leads to suboptimal decisions**: Redundancy levels vary across components. Processing them separately fails to capture cross-component relationships, potentially leading to the accidental deletion of useful tokens or retention of redundancy, compromising spatial consistency and semantic integrity.
 
-**The problem is further compounded in multimodal settings**: Unified tracking requires aligning RGB with depth/thermal infrared/event/language modalities, and isolated pruning disrupts cross-modal alignment.
+**Issues are exacerbated in multimodal scenarios**: Unified tracking requires aligning RGB with depth, thermal, event, or language modalities. Isolated pruning could disrupt cross-modal alignment.
 
-**External heuristics or auxiliary modules introduce additional overhead**: ToMe relies on bipartite soft matching, and DynamicViT requires an additional MLP to predict saliency scores, both introducing structural modifications and extra computation.
+**External heuristics or auxiliary modules introduce extra overhead**: Methods like ToMe rely on bipartite soft matching, while DynamicViT requires additional MLPs for saliency prediction, introducing structural modifications and computational costs.
 
-**No general efficiency solution exists for unified tracking**: Existing efficient methods are mostly designed for single-modality RGB tracking; whether a single pruning strategy can simultaneously serve RGB, RGBD, RGBT, RGBE, and RGB-Language tasks remains unexplored.
+**Lack of a general efficiency solution for unified tracking**: Most existing efficient methods target single-modality RGB tracking. Whether a single pruning strategy can serve RGB, RGBD, RGBT, RGBE, and RGB-Language tasks simultaneously remains unexplored.
 
 ## Method
 
 ### Overall Architecture
 
-UTPTrack builds upon the one-stream Transformer tracking pipeline, concatenating SR, ST, DT (and language tokens where applicable) before feeding them into a shared encoder. A lightweight **CTEM (Candidate or Template Elimination Module)** is inserted at selected encoder layers to compute token importance scores from attention weights and perform pruning. Pruned SR tokens are restored to their original spatial positions via zero-padding to ensure spatial alignment for the tracking head.
+UTPTrack aims to provide a general efficiency solution for one-stream Transformer trackers. It concatenates the Search Region (SR), Static Template (ST), Dynamic Template (DT), and optional language tokens into a shared encoder. Lightweight **CTEM (Candidate or Template Elimination Module)** units are inserted at selected encoding layers to calculate token importance scores directly from attention weights for pruning. Pruned SR tokens are zero-padded back to their original spatial positions to ensure spatial alignment for the tracking head. Unlike prior methods, it models redundancy across all three components jointly. Within CTEM, attention-guided pruning (CE / DTE / STE) is performed for SR, DT, and ST respectively, regulated by Token Type-Aware (TTA) box priors and Text-Guided (TG) language signals.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Search Region SR + Static Template ST + Dynamic Template DT<br/>(+ Language Tokens for Unified Tracking)"] --> ENC["One-stream Shared Encoder<br/>with CTEM inserted at selected layers"]
+    ENC --> CTEM
+    subgraph CTEM["CTEM: Joint Pruning using ST Center Token as Anchor"]
+        direction TB
+        CE["Search Region Pruning (CE)<br/>Top-k filtering of background clutter"]
+        DTE["Dynamic Template Pruning (DTE)<br/>Pruning drift/occlusion noise tokens"]
+        STE["Static Template Pruning (STE)<br/>Removing edge background, always keeping center"]
+    end
+    TTA["Token Type-Aware (TTA)<br/>First-frame box prior bonus"] -.->|Bonus added to attention score| STE
+    TG["Text-Guided Pruning (TG)<br/>Language token attention (Unified Tracking)"] -.->|Weighted fusion| CE
+    CTEM --> PAD["Zero-padding pruned SR tokens<br/>to ensure spatial alignment"]
+    PAD --> HEAD["Tracking Head outputs target box"]
+```
 
 ### Key Designs
 
-1. **Search Region Pruning (CE)**: Attention similarity is computed between the query of the ST center token and the keys of all SR tokens, $\omega_x = \text{softmax}(Q_{sz'}K_x^T / \sqrt{d_k})$; the top-k tokens are retained to suppress background clutter.
-2. **Dynamic Template Pruning (DTE)**: The ST center token is similarly used as an anchor to compute similarity scores $\omega_{dz}$ for DT tokens, eliminating noisy tokens introduced by drift, occlusion, or appearance variation.
-3. **Static Template Pruning (STE)**: Similarity scores $\omega_{sz}$ are computed among ST tokens with respect to the center token; peripheral background tokens are removed while the center token is always preserved.
-4. **Token Type-Aware Strategy (TTA)**: A binary mask is constructed from the first-frame target bounding box, and patch-level foreground scores are added as a bonus to attention scores. Three strategies are provided — full bonus (score added only if all pixels fall within the box), soft bonus (mean, default), and all bonus (score added if any pixel falls within the box) — to prevent inadvertent removal of foreground tokens.
-5. **Text-Guided Pruning (TG)**: For RGB-Language tasks, language tokens encoded by CLIP-L interact bidirectionally with visual tokens; token importance is jointly determined by a weighted sum of attention from both the ST center token and the language tokens: $\omega_x = \phi(\text{softmax}(Q_{sz'}K_x^T/\sqrt{d_k}) + \text{softmax}(Q_tK_x^T/\sqrt{d_k}))$.
+**1. Search Region Pruning (CE): Filtering background clutter using template center as anchor**
+
+Using the ST center token query and all SR token keys, the attention similarity is calculated as $\omega_x = \text{softmax}(Q_{sz'}K_x^T / \sqrt{d_k})$. Top-k tokens are retained while background clutter is removed.
+
+**2. Dynamic Template Pruning (DTE): Pruning noise tokens introduced by drift or occlusion**
+
+Similarly, the ST center token is used as an anchor to calculate DT token similarity $\omega_{dz}$, removing noise tokens resulting from drift, occlusion, or appearance changes.
+
+**3. Static Template Pruning (STE): Removing template edge background while retaining the center**
+
+ST internal token similarity to the center token $\omega_{sz}$ is calculated to remove edge background tokens, while the center token is always preserved.
+
+**4. Token Type-Aware Strategy (TTA): Preventing foreground deletion via first-frame box priors**
+
+To address cases where attention scores might misidentify foreground tokens, a binary mask is constructed from the first-frame target bounding box. Patch-level foreground scores are added as a bonus to attention scores. Three strategies are provided: full bonus (all pixels in box), soft bonus (average, default), and all bonus (any pixel in box).
+
+**5. Text-Guided Pruning (TG): Integrating text signals for token retention in language tasks**
+
+In RGB-Language tasks, language tokens (CLIP-L encoded) interact with visual tokens via bi-directional attention. Token importance is determined by a weighted sum of attention from both the ST center token and language tokens: $\omega_x = \phi(\text{softmax}(Q_{sz'}K_x^T/\sqrt{d_k}) + \text{softmax}(Q_tK_x^T/\sqrt{d_k}))$.
 
 ### Loss & Training
 
 - **RGB Tracking**: $\mathcal{L}_{\text{RGB}} = \lambda_{\text{cls}}\mathcal{L}_{\text{cls}} + \lambda_{\text{giou}}\mathcal{L}_{\text{giou}} + \lambda_{L_1}\mathcal{L}_{L_1}$, where $\lambda_{\text{cls}}=1, \lambda_{\text{giou}}=2, \lambda_{L_1}=5$.
-- **Unified Tracking**: A task identification cross-entropy loss is added: $\mathcal{L}_{\text{Unified}} = \mathcal{L}_{\text{RGB}} + \lambda_{\text{task}}\mathcal{L}_{\text{task}}$, with $\lambda_{\text{task}}=1$.
+- **Unified Tracking**: Adds a task identification cross-entropy loss $\mathcal{L}_{\text{Unified}} = \mathcal{L}_{\text{RGB}} + \lambda_{\text{task}}\mathcal{L}_{\text{task}}$, where $\lambda_{\text{task}}=1$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation is conducted on 10 benchmarks covering RGB (LaSOT, LaSOText, TrackingNet, GOT-10k) and multimodal (VOT-RGBD22, LasHeR, RGBT234, VisEvent, TNL2K, OTB99) tasks:
+Evaluations were conducted on 10 benchmarks covering RGB (LaSOT, LaSOText, TrackingNet, GOT-10k) and multimodal (VOT-RGBD22, LasHeR, RGBT234, VisEvent, TNL2K, OTB99) tasks:
 
-| Model | Baseline | Visual Token Reduction | MACs Reduction | Baseline Performance Retention |
+| Model | Baseline | Visual Token Reduction | MACs Reduction | Baseline Perf. Retention |
 |------|------|:---:|:---:|:---:|
 | UTPTrack-O384 | OSTrack-384 | 65.4% | 31.3% (78G→53G) | 99.7% |
 | UTPTrack-S384 | SUTrack-B384 | 67.5% | 28.4% (67G→48G) | 100.5% |
 | UTPTrack-O256 | OSTrack-256 | 64.8% | 30.7% | 99.7% |
 | UTPTrack-S224 | SUTrack-B224 | 69.4% | 28.9% | 100.0% |
 
-In controlled-budget experiments with token retention ratios fixed at 87.2%/75.5%/65.6%, UTPTrack consistently outperforms CE, ToMe, EViT, and DynamicViT across all budget levels.
+In Controlled-Budget experiments with fixed retention ratios (87.2%/75.5%/65.6%), UTPTrack outperformed CE, ToMe, EViT, and DynamicViT across all tiers.
 
 ### Ablation Study
 
-| Configuration | Avg. Visual Tokens | MACs (G) | Avg. Performance | Δ |
+| Configuration | Avg. Visual Tokens | MACs (G) | Avg. Perf. | Δ |
 |------|:---:|:---:|:---:|:---:|
 | Baseline (OSTrack256) | 384 | 34.5 | 100.0% | - |
 | + CE | 217 | 27.0 | 99.3% | -0.7% |
@@ -86,41 +113,41 @@ In controlled-budget experiments with token retention ratios fixed at 87.2%/75.5
 | + STE | 135 | 23.8 | 98.9% | -0.7% |
 | + TTA | 135 | 23.8 | 99.7% | +0.8% |
 
-For unified tracking ablation (SUTrack224), sequentially adding CE → DTE → STE → TTA → TG reduces the token count from 294 to 90 (69.4% reduction) while recovering performance to 100.0%.
+Unified Tracking Ablation (SUTrack224): Progressively adding CE → DTE → STE → TTA → TG reduced tokens from 294 to 90 (69.4% reduction) while restoring performance to 100.0%.
 
 ### Key Findings
 
-- **Pruning can act as regularization**: Under moderate pruning, UTPTrack even surpasses the baseline (UTPTrack-S384 reaches 100.5%), suggesting that removing redundant/noisy tokens concentrates attention on salient regions.
-- **TTA yields significant recovery**: The bounding box prior via the soft bonus strategy effectively prevents foreground tokens from being mistakenly removed, recovering +0.8% on RGB tasks and +0.4% on unified tracking.
-- **TG provides additional gains for language-guided tasks**: When language modalities are involved, text-guided pruning contributes an additional +0.3% performance improvement.
-- **Advantage increases at higher compression ratios**: Under extreme 64.6% token reduction, UTPTrack maintains 99.3% performance (unified tracking), whereas DynamicViT collapses to 14.7% and ToMe degrades to 92.5%.
+- **Pruning as Regularization**: Under moderate pruning, UTPTrack can exceed the baseline (100.5% for UTPTrack-S384), suggesting that removing redundancy/noise allows the model to focus on salient regions.
+- **Significant Recovery from TTA**: The bounding box prior via soft bonus effectively prevents foreground deletion, recovering +0.8% on RGB and +0.4% on unified tracking.
+- **TG Gain for Language Tasks**: For multimodal tasks involving language, text-guided pruning provides an additional +0.3% performance boost.
+- **Advantage at High Compression**: At an extreme 64.6% reduction, UTPTrack maintains 99.3% performance (unified), whereas DynamicViT collapses to 14.7% and ToMe drops to 92.5%.
 
 ## Highlights & Insights
 
-- **First joint three-component pruning**: Breaks the limitation of prior methods that prune only the search region or dynamic template, providing the first unified redundancy modeling across SR+DT+ST.
-- **No additional parameters or modules**: Directly reuses the Transformer's own attention weights to guide pruning, introducing no trainable parameters and remaining architecture-agnostic.
-- **Dual priors: token type-awareness and text guidance**: The former leverages spatial priors to protect foreground tokens; the latter leverages semantic priors to enhance multimodal pruning; the two are orthogonal and complementary.
-- **Strong cross-modal generalizability**: A single framework serves five task categories — RGB, RGBD, RGBT, RGBE, and RGB-Language — validated across 10 benchmarks.
+- **First Joint Three-Component Pruning**: Breaks the limitation of pruning only the search region or dynamic templates by modeling SR+DT+ST redundancy unifiedly.
+- **Zero Extra Parameters/Modules**: Directly reuses Transformer attention weights for pruning without adding trainable parameters or modifying the core architecture.
+- **Dual Priors (TTA + TG)**: TTA leverages spatial priors to protect the foreground, while TG utilizes semantic message passing to enhance multimodal pruning.
+- **Strong Cross-Modal Generality**: A single framework serves RGB, RGBD, RGBT, RGBE, and RGB-Language tasks, validated across 10 benchmarks.
 
 ## Limitations & Future Work
 
-- Practical GPU speedup is limited: a 65% reduction in token count yields only modest FPS gains (OSTrack384: 40→47 FPS), as zero-padding to restore spatial layout partially offsets the efficiency gains.
-- Validation is restricted to OSTrack and SUTrack; extension to other tracking architectures (e.g., SeqTrack, ARTrack) has not been explored.
-- The TTA strategy for ST relies on the accuracy of the first-frame bounding box annotation and may be sensitive to inaccurate initialization.
-- Text-guided pruning uses only a single CLIP token to represent text, resulting in coarse semantic granularity that limits utilization of complex textual descriptions.
+- Limited actual GPU acceleration: While tokens are reduced by 65%, FPS gains are modest (e.g., OSTrack384 from 40 to 47 FPS) because zero-padding to restore spatial layout offsets some gains.
+- Validated only on OSTrack and SUTrack; not yet extended to other tracking architectures (e.g., SeqTrack, ARTrack).
+- TTA strategy for ST depends on the accuracy of the first-frame bounding box, which may be sensitive to noisy initial annotations.
+- Language-guided pruning uses a single CLIP token for text, which may be too coarse for complex textual descriptions.
 
 ## Related Work & Insights
 
-- **One-stream trackers**: OSTrack (ECCV'22), SUTrack (ECCV'24), and MixFormerV2 jointly encode templates and search regions.
-- **Token pruning/merging**: CE (OSTrack) and ProContEXT prune only SR; ToMe performs bipartite soft matching for token merging; EViT retains tokens based on CLS attention; DynamicViT predicts saliency via an MLP.
-- **Unified multimodal tracking**: UnTrack learns a shared low-rank latent space; SUTrack unifies five task categories; parameter-efficient adaptation methods (prompts/adapters) inject modality-specific information.
+- **One-stream Trackers**: OSTrack (ECCV'22), SUTrack (ECCV'24), and MixFormerV2 jointly encode templates and search regions.
+- **Token Pruning/Merging**: CE (OSTrack) and ProContEXT only prune SR; ToMe uses bipartite matching for merging; EViT retains tokens based on CLS attention; DynamicViT uses MLPs for saliency prediction.
+- **Unified Multimodal Tracking**: UnTrack learns a shared low-rank latent space; SUTrack unifies five types of tasks; Parameter-Efficient Fine-Tuning (PEFT) methods like prompts/adapters inject modal information.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First joint three-component pruning combined with token type-awareness and text guidance; clear direction with practical significance
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 10 benchmarks, two baselines, three controlled-budget levels, detailed ablations, and progressive pruning analysis
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete mathematical derivations, and rich figures and tables
-- Value: ⭐⭐⭐⭐ — Simple and generalizable method with strong reference value for efficient one-stream trackers, though practical speedup requires further improvement
+- Novelty: ⭐⭐⭐⭐ — First joint three-component pruning with TTA and TG; well-motivated and practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 10 benchmarks, two baselines, three controlled budgets, and detailed progressive ablation analyses.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete mathematical derivation, and rich visualizations.
+- Value: ⭐⭐⭐⭐ — Simple and universal method with strong reference value for one-stream tracker efficiency, though actual acceleration requires further optimization.
 
 <!-- RELATED:START -->
 
@@ -128,11 +155,11 @@ For unified tracking ablation (SUTrack224), sequentially adding CE → DTE → S
 
 ## Related Papers
 
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[CVPR 2025\] DivPrune: Diversity-Based Visual Token Pruning for Large Multimodal Models](../../CVPR2025/video_understanding/divprune_diversity-based_visual_token_pruning_for_large_multimodal_models.md)
 - [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](../../ICML2026/video_understanding/unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
-- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
-- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
-- [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](../../ICCV2025/video_understanding/aim_adaptive_inference_of_multi-modal_llms_via_token_merging_and_pruning.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
+- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
 
 </div>
 

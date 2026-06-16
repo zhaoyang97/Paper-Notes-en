@@ -2,90 +2,101 @@
 title: >-
   [Paper Note] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Multimodal Safety Evaluation] MUSE integrates cross-modal payload generation, multi-turn red teaming, unified model routing, and a five-level safety judge into a run-centric…
+  [ACL 2026][LLM Safety][LLM-as-Judge] MUSE integrates cross-modal payload generation, multi-turn red teaming attacks, unified model routing, and a five-level safety judge into a run-centric reproducible experimental platform. Through approximately 3,700 experiments, the study demonstrates that multi-turn strategies can breach multimodal LLMs that otherwise
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Multimodal Safety Evaluation"
-  - "Automated Red Teaming"
-  - "Multi-turn Jailbreaking"
-  - "Cross-modal Attacks"
-  - "LLM-as-Judge"
+  - ACL 2026
+  - LLM Safety
+  - LLM-as-Judge
 date: 2026-05-08
-content_hash: 0014b909173b1e8a
+content_hash: 29bbab100a8daac6
 ---
-
 # MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models
 
 **Conference**: ACL 2026  
 **arXiv**: [2603.02482](https://arxiv.org/abs/2603.02482)  
-**Code**: Repository not public; paper provides Demo video: https://youtu.be/xHTUJlXJSmc  
+**Code**: Private repository; the paper provides only a demo video at https://youtu.be/xHTUJlXJSmc  
 **Area**: Multimodal Safety Evaluation / Audio & Speech / Red Teaming Platform  
-**Keywords**: Multimodal Safety Evaluation, Automated Red Teaming, Multi-turn Jailbreaking, Cross-modal Attacks, LLM-as-Judge
+**Keywords**: Multimodal Safety Evaluation, Automated Red Teaming, Multi-turn Jailbreaking, Cross-modal Attack, LLM-as-Judge
 
 ## TL;DR
-MUSE integrates cross-modal payload generation, multi-turn red teaming, unified model routing, and a five-level safety judge into a run-centric, reproducible experimental platform. Through approximately 3,700 experiments, it reveals that multi-turn strategies can penetrate multimodal LLMs that exhibit near-total refusal in single-turn settings, while inter-turn modality switching acts more as a mechanism to accelerate the loosening of defenses rather than a universal silver bullet for increasing final ASR.
+MUSE integrates cross-modal payload generation, multi-turn red teaming attacks, unified model routing, and a five-level safety judge into a run-centric reproducible experimental platform. Through approximately 3,700 experiments, the study demonstrates that multi-turn strategies can breach multimodal LLMs that otherwise show near-perfect refusal in single-turn settings. Furthermore, inter-turn modality switching acts more as a mechanism to accelerate the erosion of safety defenses rather than a universal "silver bullet" for increasing final ASR.
 
 ## Background & Motivation
-**Background**: Large model safety evaluation is shifting from pure text to multimodality. Models like GPT-4o, Gemini, Claude Sonnet 4, and Qwen-Omni can process text, images, audio, and video within the same turn or conversation. Consequently, safety alignment must expand from "whether a model refuses a single harmful text request" to "whether a model maintains refusal across any input modality and conversation trajectory."
+**Background**: Large model safety evaluation is evolving from pure text to multimodal interaction. Models like GPT-4o, Gemini, Claude Sonnet 4, and Qwen-Omni can process text, images, audio, and video within the same turn or dialogue. Consequently, safety alignment must extend from "refusing a single harmful text request" to "maintaining refusal across any input modality and dialogue trajectory."
 
-**Limitations of Prior Work**: Existing research is largely divided into two streams. One focuses on multi-turn attacks (e.g., Crescendo, PAIR, Violent Durian), bypassing single-turn refusal through iterative rewriting and conversational pressure. The other focuses on multimodal safety, such as hiding harmful requests in images, audio, or visual text prompts. The issue is that these streams are often disjointed: multi-turn attack frameworks mostly handle text, while multimodal benchmarks mostly test single-turn, single-modality scenarios, lacking a unified system to manage attackers, target models, modality transitions, automated judges, and experimental records.
+**Limitations of Prior Work**: Existing research is divided into two lines. One line focuses on multi-turn attacks (e.g., Crescendo, PAIR, Violent Durian), bypassing single-turn refusal through continuous rewriting and conversational pressure. The other line investigates multimodal safety, such as hiding harmful requests in images, audio, or visual text prompts. The primary issue is that these two lines are often disconnected: multi-turn attack frameworks usually handle only text, while multimodal benchmarks are mostly tested in single-turn, single-modality settings. A unified system that manages attackers, target models, modality transitions, automated judges, and experimental logging is missing.
 
-**Key Challenge**: Whether safety alignment can generalize across modalities is not a question that can be answered by looking at the final refusal rate alone. A model might be robust in text but become lenient when switching to images or audio. Alternatively, a model might not be weak in a specific non-text modality but becomes unstable in its safety policy when historical context and current inputs are fused across different modalities in a multi-turn dialogue. Existing binary ASR (Attack Success Rate) also conflates "full capability disclosure" with "providing partial actionable information," obscuring gray-zone risks.
+**Key Challenge**: Whether safety alignment generalizes across modalities cannot be answered by looking at final refusal rates alone. A model might be robust in text but relax its boundaries when switched to image or audio; or it might be strong in individual non-text modalities but become unstable during multi-turn dialogues when modalities are switched, due to the way historical context and current input are fused. Furthermore, existing binary ASR metrics conflate "complete safety failure" with "partial actionable information," masking "gray zone" risks.
 
-**Goal**: The authors aim to solve three specific problems: 1) Build a practical multimodal red teaming platform rather than just releasing offline prompts. 2) Compare multi-turn attack strategies, target models, input modalities, and automated judge results within the same framework. 3) Specifically test whether Inter-Turn Modality Switching (ITMS) itself affects safety boundaries.
+**Goal**: The authors aim to solve three specific problems: 1) Build a practical multimodal red teaming platform rather than just releasing offline prompts; 2) Compare multi-turn attack strategies, target models, input modalities, and judge results under a single framework; 3) Specifically test whether "inter-turn modality switching" itself affects safety boundaries via Inter-Turn Modality Switching (ITMS).
 
-**Key Insight**: Instead of proposing a new training method for target models, **Ours** approaches from the perspective of evaluation infrastructure. The authors observed that the most chaotic part of multimodal red teaming is not the attack algorithm itself, but the experimental state being scattered across different scripts and API calls: which media files were generated, which modality was used in which turn, how model responses were labeled, and where to resume after a batch task interruption. These all require persistent tracking.
+**Key Insight**: Instead of proposing a new training method for target models, this paper approaches the problem from evaluation infrastructure. The authors observe that the most chaotic aspect of multimodal red teaming is not the attack algorithm itself, but that experimental states are scattered across various scripts and API calls. There is a need to persistently record generated media files, the modality used in each turn, how model responses are labeled, and how to resume interrupted batch tasks.
 
-**Core Idea**: Use a "run" as the minimum reproducible experimental unit, fully linking the configuration of each attack, conversation states, media assets, model outputs, and judge labels. Cross-model, cross-strategy, and cross-modal safety evaluations are then conducted on this unified object.
+**Core Idea**: Use a "run" as the minimum reproducible experimental unit, linking attack configurations, dialogue states, media assets, model outputs, and judge labels. This unified object enables cross-model, cross-strategy, and cross-modal safety evaluations.
 
 ## Method
-MUSE is essentially a red teaming operating system for safety researchers. It does not treat attacks, model calls, media generation, and scoring as isolated scripts but integrates them into a run-centric pipeline that is browser-operable, backend-persistent, and observable in real-time. The input consists of harmful capability targets, attack strategies, target models, and available modalities; the output is a set of runs with full trajectories, including attacker prompts per turn, target model responses, modalities, generated assets, and judge labels.
+MUSE is essentially an operating system for red teaming experiments targeted at safety researchers. It does not treat attacks, model calls, media generation, and scoring as isolated scripts; instead, it incorporates them into a run-centric pipeline that is browser-operable, backend-persistent, and real-time observable. The input consists of harmful capabilities, attack strategies, target models, and available modalities; the output is a set of runs with full trajectories, including attacker prompts, model responses, modalities, generated assets, and judge labels for each turn.
 
 ### Overall Architecture
-The system adopts a frontend-backend architecture. The browser frontend handles experimental configuration, launching automated red teaming, and viewing multimodal tests and real-time progress. The backend manages attack strategy execution, model API routing, text-to-audio/image/video conversion, result persistence, and Server-Sent Events (SSE) streaming updates. **Ours** emphasizes that this architecture transforms experiments from "running batches of scripts" into a "pauseable, resumable, auditable, and aggregatable" research workflow.
+The system utilizes a frontend-backend architecture. The browser frontend handles experiment configuration, automated red teaming execution, and real-time progress monitoring. The backend manages attack strategy execution, model API routing, text-to-media (audio/image/video) conversion, and results persistence using Server-Sent Events for streaming updates. The architecture transforms "running batch scripts" into a "pausable, resumable, auditable, and aggregatable" research workflow.
 
-An automated red teeming experiment consists of five steps: 1) User selects the target model, strategy, harmful category, and modality configuration. 2) The strategy generates the current turn's text attack content. 3) If non-text input is required, the system converts text to audio, renders images, or synthesizes video. 4) The model routing layer converts a unified message format into the specific provider's API format. 5) An LLM judge evaluates the response based on a five-level safety taxonomy and writes the result back to the run; if unsuccessful and within the turn budget, the process continues.
+An automated red teaming experiment follows five steps: 1) Configuration of target models, strategies, and modalities; 2) Strategy generation of current turn text; 3) Conversion of text to audio, image, or video if needed; 4) Model routing layer converting unified messages to specific provider formats; 5) LLM-based evaluation using a five-level safety taxonomy, with the process continuing until success or budget exhaustion.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Experimental Config<br/>Target Model / Strategy / Capability / Modality"] --> B
+    subgraph RUN["Run-centric Data Model (Design 1)"]
+        direction TB
+        B["Strategy Engine + ITMS (Design 2)<br/>Generate Attack Text + Select Modality"]
+        subgraph PROC["Unified Modality Conversion + Model Routing + 5-level Judge (Design 3)"]
+            direction TB
+            C["Modality Conversion<br/>Text → TTS Audio / Image / Synthetic Video"] --> D["Model Routing<br/>Unified Message → Provider API"]
+            D --> E["5-level Judge<br/>Safety Labels + Hard/Soft ASR"]
+        end
+        B --> C
+        E -.->|"Not successful & within budget"| B
+    end
+    E ==>|"Success or Out of Budget"| F["Write back trajectory + Update stats"]
+```
 
 ### Key Designs
-1.  **Run-centric Data Model**:
-    - **Function**: Encapsulates all information from configuration to final judgment into a persistent "run" as the basic unit for tracking and statistics.
-    - **Mechanism**: Each run records the target model, strategy, task, turn budget, per-turn modality, attacker content, target response, judge label, media paths, and final outcome. Batch campaigns consist of multiple runs, with the system updating aggregate statistics upon completion of each goal. If interrupted, tasks resume from the last completed goal.
-    - **Design Motivation**: The challenge in replicating multi-turn multimodal red teaming lies in the "process," not just the "final score." Saving only the ASR prevents determining which turn or modality led to success. The run-centric design treats these variables as first-class citizens for analysis.
 
-2.  **Strategy Engine + ITMS**:
-    - **Function**: Implements three types of multi-turn attacks (Crescendo, PAIR, Violent Durian) via a unified interface and adds cross-turn modality rotation versions for context-retaining strategies.
-    - **Mechanism**: Crescendo escalates from benign questions and backtracks/pivots upon refusal; PAIR independently generates candidates guided by judge scores; Violent Durian uses high-pressure rhetoric from turn one. ITMS does not change the attack goal but cyclically selects the next modality from the available set for each turn, converting attack text into the corresponding media input.
-    - **Design Motivation**: This separates "strategy strength" from "modality switching effects." Strategies like Crescendo and Violent Durian are particularly suited to observe if refusal behavior loosens when switching between text, image, or audio throughout the conversation history.
+**1. Run-centric Data Model: Encapsulating the full process from configuration to judgment as a persistent unit.**
+The most difficult part of multi-turn multimodal red teaming is reproducing the "process" rather than the "final score." MUSE encapsulates each attack into a "run," recording the target model, strategy, harmful goals, turn budget, per-turn modalities, attacker/target content, judge labels, media paths, and final outcome. This design treats turn-level details as first-class citizens, allowing safety failures to be attributed rather than just counted.
 
-3.  **Unified Modality Conversion, Model Routing, and Five-level Judge**:
-    - **Function**: Wraps multimodal APIs from different providers and various payload formats into a unified interface, replacing binary success judgment with more granular labels.
-    - **Mechanism**: The conversion layer transforms attacker text into TTS audio, text-in-image renders, or synthesized video. Assets are cached for cross-model reuse. The routing layer requires only a thin client implementation for new providers. The evaluation layer uses a GPT-4o judge to classify responses: Compliance, Partial Compliance, Indirect Refusal, Direct Refusal, and Non-Responsive. Hard ASR counts only full Compliance; Soft ASR includes Partial Compliance. The difference is defined as the Gray Zone Width (GZW).
-    - **Design Motivation**: Provider API variance and insufficient judge granularity are common bottlenecks. Unified routing lowers expansion costs, while the five-level taxonomy avoids conflating "providing actionable information with a disclaimer" with "genuine refusal."
+**2. Strategy Engine + ITMS: Implementing multi-turn attacks while using "modality switching" as a controlled variable.**
+To determine if safety alignment generalizes across modalities, the "attack strength" must be separated from "modality switching effects." The engine supports three multi-turn attacks: Crescendo (gradual escalation), PAIR (independent candidate generation and rewriting), and Violent Durian (high-pressure rhetoric). ITMS specifically rotates modalities per turn from the set supported by the model, allowing observation of whether refusal behavior relaxes when switching between text, images, or audio within an ongoing context.
+
+**3. Unified Modality Conversion, Model Routing, and 5-level Judge: Smoothing provider differences and using fine-grained labels.**
+MUSE handles the complexity of different provider APIs and the coarseness of binary ASR. The conversion layer transforms attacker text into TTS audio, text-inscribed images, or combined videos, caching assets per project/prompt. The judge uses GPT-4o to categorize responses into Compliance, Partial Compliance, Indirect Refusal, Direct Refusal, and Non-Responsive. Hard ASR counts full Compliance, while Soft ASR includes Partial Compliance; the difference defines the "Gray Zone Width" (GZW).
+
+### Mechanism: An ITMS-Crescendo Run Example
+Consider a fraud goal on Gemini using ITMS-Crescendo with a 10-turn budget across text/audio/image. In Turn 1, the strategy generates a mild introductory question converted to an image; the model usually refuses (initial refusal rate ~86%). In Turn 2, the strategy escalates based on context and ITMS switches to audio; here, defenses often relax (refusal rate drops to ~59.7% and Partial Compliance rises). By subsequent turns, the model often slides into full Compliance. The run-centric record captures that ITMS accelerates alignment erosion—Claude's average success turns drop from 3.0 to 2.6—even if final ASR does not significantly increase.
 
 ### Loss & Training
-This paper is not focused on model training; thus, no new training losses are introduced. For experimental strategy, GPT-4o is fixed as the attacker and judge (temperature 0). The five attack strategies share a 10-turn budget. Crescendo and Violent Durian use up to 3 backtracks (attacker temperature 0.9). PAIR's success threshold is 9/10. The emphasis is on controlling the evaluation pipeline rather than optimizing target model parameters.
+This is not a model training paper; thus, there are no new training losses. For experimental strategies, GPT-4o is fixed as the attacker and judge. Strategies share a 10-turn budget, with Crescendo/Violent Durian using up to 3 backtracks. The attacker temperature is set to 0.9, while the judge temperature is 0.
 
 ## Key Experimental Results
 
 ### Main Results
-The experiments comprise approximately 3,700 red teaming runs. The dataset utilizes 50 harmful goals from AdvBench across five categories: weapons, controlled substances, malware, biological threats, and fraud/social engineering. These were rewritten as direct capability requests transferable across text, audio, image, and video. Target models include Qwen3-Omni, Qwen2.5-Omni, Gemini 2.5 Flash, Gemini 3 Flash Preview, GPT-4o, and Claude Sonnet 4.
+The experiments comprise ~3,700 red teaming runs using 50 harmful goals from AdvBench across categories like weapons, malware, and fraud. Target models include Qwen3-Omni, Qwen2.5-Omni, Gemini 2.5 Flash, Gemini 3 Flash Preview, GPT-4o, and Claude Sonnet 4. 
 
-Single-turn baselines confirm that models are not "easily bypassed by direct requests." Results show refusal rates between 90%-100% for most model-modality combinations, establishing a strong baseline: if multi-turn ASR is high, it is due to interaction and strategy pressure rather than a lack of basic alignment.
+Single-turn baselines confirm that most models have high refusal rates (90%-100%) across modalities. This sets a strong reference: high multi-turn ASR is due to strategic interaction, not a lack of basic alignment.
 
-| Model | Text Refusal Rate | Image Refusal Rate | Audio Refusal Rate | Video Refusal Rate | Notes |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Claude Sonnet 4 | 96 | 100 | - | - | Standard API only |
+| Model | Text Refusal | Image Refusal | Audio Refusal | Video Refusal | Note |
+|-------|--------------|---------------|---------------|---------------|------|
+| Claude Sonnet 4 | 96 | 100 | - | - | Standard API (No A/V) |
 | GPT-4o | 98 | 100 | - | - | Realtime API not used |
-| Gemini 2.5 Flash | 98 | 100 | 100 | 100 | Near-total refusal |
-| Gemini 3 Flash | 90 | 98 | 96 | 92 | Lowest text baseline |
-| Qwen2.5-Omni | 94 | 98 | 98 | 92 | Solid single-turn |
+| Gemini 2.5 Flash | 98 | 100 | 100 | 100 | Near-perfect refusal |
+| Gemini 3 Flash | 90 | 98 | 96 | 92 | Lower text baseline |
+| Qwen2.5-Omni | 94 | 98 | 98 | 92 | Robust multimodal |
 | Qwen3-Omni | 98 | 100 | 100 | 100 | Highly robust |
 
-The main red teaming experiments compare five strategies. Important results show that Crescendo and PAIR can drive almost entirely resistant models to high Hard ASR.
+Main results comparing five strategies:
 
 | Target Model | Crescendo | PAIR | Violent Durian | ITMS-Crescendo | ITMS-VD |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|--------------|-----------|------|----------------|----------------|---------|
 | Claude Sonnet 4 | 90 | 60 | 2 | 92 | 6 |
 | GPT-4o | 96 | 98 | 42 | 92 | 40 |
 | Gemini 2.5 Flash | 94 | 100 | 56 | 98 | 62 |
@@ -93,74 +104,69 @@ The main red teaming experiments compare five strategies. Important results show
 | Qwen2.5-Omni | 96 | 98 | 86 | 88 | 100 |
 | Qwen3-Omni | 98 | 96 | 30 | 94 | 22 |
 
-**Key Findings from Main Results**:
-1. Crescendo achieves 90%-98% Hard ASR across 6 models, showing that automated multi-turn red teaming systematically breaks single-turn refusal.
-2. Violent Durian variance is high (e.g., 2% on Claude vs. 86% on Qwen2.5-Omni), suggesting high-pressure templates are sensitive to model alignment styles.
-3. ITMS does not always increase final ASR but its value significantly depends on whether the baseline is already saturated.
+Three key signals: 1) Crescendo and PAIR systematically break models that single-turn requests cannot; 2) Violent Durian's effectiveness is highly model-dependent (2% on Claude vs 86% on Qwen); 3) ITMS does not always increase final ASR but its value depends on whether the text baseline is already saturated.
 
 ### Ablation Study
-ITMS ablation focuses on four Omni models, comparing text-only, audio-only, image-only, text+audio, text+image, and 3-way rotation. This addresses whether ASR changes stem from the non-text input itself or the cross-turn switching.
+Ablation on ITMS was conducted on four omni-models to compare modality effects.
 
 | Config | Gemini 2.5 Flash | Gemini 3 Flash | Qwen2.5-Omni | Qwen3-Omni |
-| :--- | :--- | :--- | :--- | :--- |
-| Text baseline | 94 | 98 | 96 | 98 |
+|--------|------------------|----------------|--------------|------------|
+| Text Baseline | 94 | 98 | 96 | 98 |
 | Audio-only | 100 (+6) | 100 (+2) | 90 (-6) | 96 (-2) |
 | Image-only | 100 (+6) | 100 (+2) | 82 (-14) | 92 (-6) |
-| Text+Audio | 98 (+4) | 100 (+2) | 92 (-4) | 94 (-4) |
-| Text+Image | 96 (+2) | 98 (+0) | 84 (-12) | 94 (-4) |
-| 3-Way | 98 (+4) | 98 (+0) | 90 (-6) | 96 (-2) |
+| 3-Way (ITMS) | 98 (+4) | 98 (+0) | 90 (-6) | 96 (-2) |
 
-Ablation reveals that Gemini models are more easily breached with non-text inputs (**Gain** of 2-6 points), while Qwen models become *more* resistant with non-text inputs (ASR drops, especially for Qwen2.5-Omni images).
+Conclusion: Gemini is more vulnerable to non-text inputs, whereas Qwen becomes more resistant. The assumption that non-text modalities are always more dangerous is false; it depends on the model's fusion and filtering strategies.
 
-| Metric / Setting | Key Value | Description |
-| :--- | :--- | :--- |
-| ITMS-Crescendo Avg. Turns to Success | Claude 3.0 -> 2.6; Gemini 3 2.8 -> 2.2 | 4 out of 6 models converge faster |
-| ITMS-VD Avg. Turns to Success | Claude 10.0 -> 5.3; Gemini 2.5 3.5 -> 2.8 | Significant reduction in turns to reached Compliance |
-| Early Turn Behavior | Turn 1 ITMS-Crescendo refusal: 86.0% | Higher than text-only (81.0%) initially, but drops below text-only by turn 2 |
-| Partial Compliance | Turn 2 ITMS-Crescendo: 32.7% | Higher than text-only (27.1%), suggesting modality switching pushes models into gray zones |
-| Judge Human Validation | 93% Agreement | Primary disagreements involve Compliance vs. Partial Compliance; no systematic bias found |
+| Metric / Setting | Value | Description |
+|------------------|-------|-------------|
+| Avg Turns (ITMS) | Reduced | 4 out of 6 models converge faster than text-only. |
+| Early Turn Behavior | 59.7% Refusal | Turn 2 refusal is lower than text-only Crescendo (66.8%). |
+| Gray Zone | Increased | Modal switching increases "Partial Compliance" rates. |
+| Judge Agreement | 93% | High consistency between GPT-4o judge and human labels. |
 
 ### Key Findings
-- **Multi-turn interaction is the primary risk source**: Models with 90-100% single-turn refusal still exhibit 90-100% Hard ASR under Crescendo/PAIR.
-- **ITMS accelerates alignment erosion**: While final ASR is often saturated, ITMS results in fewer turns to success and higher early-stage Partial Compliance.
-- **Modality effects are provider-dependent**: Non-text inputs weaken Gemini but strengthen Qwen's refusal behavior.
-- **Fraud/Social Engineering is the most vulnerable category**, while Drugs and Weapons are more resistant.
-- **Soft ASR/GZW is valuable**: PAIR's Hard ASR on Claude is only 60%, but a 26% GZW indicates substantial leakage of actionable information.
+- **Multi-turn interaction is the core risk**: Single-turn refusal rates of 90-100% drop significantly under Crescendo/PAIR.
+- **ITMS accelerates erosion**: Its value lies in reducing the number of turns to reach a breach and increasing gray-zone leaks.
+- **Modality effects are provider-dependent**: Gemini weakens with multimodal input, while Qwen strengthens.
+- **Fragile Categories**: Fraud/social engineering are more vulnerable than weapons or drugs.
+- **Value of Soft ASR**: Large "Gray Zone Widths" indicate that even when not fully compliant, models often leak actionable information.
 
 ## Highlights & Insights
-- **Elevating experimental state management to a methodology**: MUSE's innovation is treating the "run" as the core object. Since safety failures depend on context and turn-specific triggers, retaining trajectories is vital for analysis.
-- **ITMS as a causal probe**: Instead of broadly claiming multimodality is "dangerous," **Ours** uses ablation to show that effects are not uniform across providers.
-- **Hard/Soft ASR avoids binary illusions**: Partial Compliance is critical in real-world scenarios, as attackers can chain multiple partial leaks into full capability transfer.
-- **High platform portability**: The run-centric design and provider abstractions can easily migrate to other safety domains like privacy, copyright, or agent tool-use.
+- **State management as methodology**: Elevating "runs" to a first-class object is critical for attributing safety failures to specific turns or modalities.
+- **ITMS as a causal probe**: By decomposing multimodal effects, the paper reveals that cross-modal rotation accelerates safety deterioration.
+- **Soft ASR awareness**: Defining "Partial Compliance" prevents the illusion of safety created by binary metrics.
+- **Platform Portability**: The run-centric architecture can be extended to privacy, copyright, or agent tool-calling safety evaluations.
 
 ## Limitations & Future Work
-- **Open-source commitment is unclear**: While the paper claims to be open-source, only a demo video is currently visible. Platform reproducibility is contingent on code and prompt availability.
-- **Automated judge boundaries**: The 93% agreement is positive, but disagreements occur at the Compliance/Partial Compliance boundary, which affects Hard/Soft ASR interpretation.
-- **Commercial API focus**: **Ours** lacks testing on locally deployed open-source models, which is necessary as commercial API policies shift frequently.
-- **Video dimension is less explored**: Video was excluded from ITMS ablation due to synthesis latency. Future work should investigate native video rotation.
-- **Scale of attack goals**: 50 AdvBench goals are sufficient for a platform validation but lack coverage of long-tail, multilingual, or domain-specific safety policies.
+- **Open-source commitment**: While called open-source, the primary link provided is a demo video. Availability of the repository is crucial.
+- **Judge Boundaries**: Minor disagreements between human and automated judges occur around the "Partial Compliance" boundary.
+- **Model Coverage**: The study focuses on commercial APIs; open-source model support is listed as future work.
+- **Video Depth**: Video ITMS was excluded from some ablations due to synthesis latency.
+- **Goal Diversity**: 50 AdvBench goals may not cover the long tail of multi-cultural or domain-specific safety risks.
+- **Defense Closure**: The current platform identifies vulnerabilities but does not yet automate the generation of safety training data from failed runs.
 
 ## Related Work & Insights
-- **vs. Crescendo / PAIR / Violent Durian**: These are attack algorithms; MUSE integrates them into a unified, reproducible system with cross-modal extensions.
-- **vs. FigStep / MM-SafetyBench**: These benchmarks prove non-text carriers weaken alignment but focus on single-turn evaluation. MUSE explores "modality shifts within continuous dialogue," a setting closer to multimodal agents.
-- **vs. PyRIT / Garak**: While PyRIT/Garak are programmatic red teaming frameworks, MUSE provides deeper native support for multimodal payloads and run management.
-- **Insight for Future Research**: Safety evaluation must evolve from "prompt sets" to "interaction sets." Future benchmarks should release full trajectories (per-turn modality, judge disagreements, context length) to facilitate a deeper understanding of alignment failure mechanisms.
+- **Comparison to Attacks**: While strategies like Crescendo exist, MUSE provides the unified execution and state-management layer.
+- **Comparison to Benchmarks**: Most benchmarks are single-turn; MUSE investigates the "inter-turn modality rotation" relevant to multimodal agents.
+- **Evolution of Safety**: Safety evaluation must shift from "static prompt sets" to "interaction process sets." Reproducing safety failures requires turn-level granularity including context length, modality switches, and judge reasoning.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ System integration is not a new algorithm per se, but defining ITMS as a controlled variable is valuable.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ 3,700 runs provide a solid foundation. Future inclusion of open-source models and expanded video ablation would improve this.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Clear structure; however, technical access to the platform (repo link) should be more prominent.
-- **Value**: ⭐⭐⭐⭐⭐ Highly practical for multimodal LLM safety evaluation, highlighting the importance of run-level trajectories and gray-zone (GZW) analysis.
+- **Novelty**: ⭐⭐⭐⭐☆ (System integration focused on ITMS as a controlled variable is valuable.)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ (3,700 runs cover various models/strategies; limited by small goal set and absence of local models.)
+- **Writing Quality**: ⭐⭐⭐⭐☆ (Clear structure and conclusions; could be improved by clearer repository links.)
+- **Value**: ⭐⭐⭐⭐⭐ (Practical for auditing multimodal LLMs and highlighting provider-specific modality risks.)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 - [\[ACL 2026\] ACIArena: Toward Unified Evaluation for Agent Cascading Injection](aciarena_toward_unified_evaluation_for_agent_cascading_injection.md)
+- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 - [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
 - [\[ACL 2026\] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints](preventing_safety_drift_in_large_language_models_via_coupled_weight_and_activati.md)
 

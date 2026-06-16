@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning
 description: >-
-  [ICML 2026][Model Compression][LoRA] LoDA decomposes the LoRA down-projection matrix into a shared general subspace and an isolated subspace—which is truly activated only for new tasks—based on "projection energy." By em…
+  [ICML 2026][Model Compression][LoRA] LoDA decomposes the LoRA down-projection matrix into a shared universal subspace and a task-specific isolation subspace based on "projection energy." It utilizes gradient alignment optimization (GAO) to train up-projections and applies a closed-form feature recalibration during fusion, consistently outperforming existi
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "LoRA"
-  - "Continual Learning"
-  - "Subspace Decomposition"
-  - "Projection Energy"
-  - "Feature-level Recalibration"
+  - ICML 2026
+  - Model Compression
+  - LoRA
 date: 2026-05-08
-content_hash: 7b51af6615c8bf01
+content_hash: c0c3b79b782cbc46
 ---
-
 # Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning
 
 **Conference**: ICML 2026  
@@ -24,111 +19,120 @@ content_hash: 7b51af6615c8bf01
 **Keywords**: LoRA, Continual Learning, Subspace Decomposition, Projection Energy, Feature-level Recalibration
 
 ## TL;DR
-LoDA decomposes the LoRA down-projection matrix into a shared general subspace and an isolated subspace—which is truly activated only for new tasks—based on "projection energy." By employing gradient alignment during training and closed-form recalibration during fusion, LoDA consistently outperforms existing LoRA-CL methods across multiple continual learning benchmarks.
+LoDA decomposes the LoRA down-projection matrix into a shared universal subspace and a task-specific isolation subspace based on "projection energy." It utilizes gradient alignment optimization (GAO) to train up-projections and applies a closed-form feature recalibration during fusion, consistently outperforming existing LoRA-CL methods across multiple benchmarks.
 
 ## Background & Motivation
-**Background**: Continual Learning (CL) based on pre-trained ViT is currently dominated by Parameter-Efficient Fine-Tuning (PEFT) approaches: either using prompt pools (e.g., L2P, DualPrompt, CODAPrompt) or LoRA-based methods (e.g., O-LoRA, InfLoRA, Bi-LoRA, PLAN, SD-LoRA). These methods aim to maintain the "stability-plasticity" balance with minimal trainable parameters.
+**Background**: Continual Learning (CL) based on pre-trained ViTs is dominated by Parameter-Efficient Fine-Tuning (PEFT) approaches, including prompt pooling (L2P, DualPrompt, CODAPrompt) and LoRA-based methods (O-LoRA, InfLoRA, Bi-LoRA, PLAN, SD-LoRA). These aim to maintain the "stability-plasticity" balance with minimal trainable parameters.
 
-**Limitations of Prior Work**: Current LoRA-CL methods typically prevent forgetting by restricting LoRA updates for new tasks to the "null space of old tasks." This faces two issues: (1) Tasks naturally share directions; forcing updates into the null space discards transferable information, hindering migration. (2) When task distributions are highly correlated (common in real-world CL), the "null space of old tasks" remains almost inactive for new tasks. This "isolated basis" becomes a safe but "dead zone" where the new task cannot be effectively learned. The authors demonstrate that $r^t(\mathbf{U}_{\text{null}})\approx 1.0$ in 10S-ImageNetA, proving null-space directions are inactive for both old and new tasks.
+**Limitations of Prior Work**: Dominant LoRA-CL strategies restrict new task updates to the "null space of prior tasks" to prevent forgetting. This faces two issues: (1) Tasks naturally share directions; strictly using the null space discards transferable information, hurting performance. (2) When task distributions are highly correlated (common in real-world CL), the null space of prior tasks is often inactive for new tasks. Preliminary tests on 10S-ImageNetA show $r^t(\mathbf{U}_{\text{null}})\approx 1.0$, proving null-space directions are inactive for both old and new tasks.
 
-**Key Challenge**: Existing LoRA-CL methods create an opposition between "isolation" and "transfer," using a negative space defined by old tasks to approximate "where to learn new tasks." These two aspects are inherently conflicting—they discard shared directions while selecting suboptimal task directions.
+**Key Challenge**: Existing methods treat "isolation" and "transfer" as opposites and rely on a negative space approximation defined by old tasks. This approach simultaneously discards shared knowledge and selects incorrect directions for learning new tasks.
 
-**Goal**: (i) Explicitly preserve cross-task transferable directions to facilitate knowledge transfer; (ii) identify isolated directions with high response to new tasks and low interference to old tasks; (iii) approximate the joint optimum for all tasks when merging LoRA increments back into the backbone.
+**Goal**: (i) Explicitly preserve cross-task transferable directions to promote knowledge transfer; (ii) Identify isolation directions that exhibit high response for new tasks and low interference for old tasks; (iii) Approximate the global optimum for all tasks during LoRA fusion.
 
-**Key Insight**: The authors analyze the "learning capacity of LoRA" from a gradient perspective, proving that when only updating the upper projection $\mathbf{B}$, the first-order loss descent is entirely determined by the projection energy $E=\|\mathbf{A}\mathbf{X}^\top\|_2^2$. Thus, the down-projection $\mathbf{A}$ acts as an "energy gate" determining which input features are updated. This reduces the design of $\mathbf{A}$ to an energy optimization problem.
+**Key Insight**: From a gradient perspective of LoRA learning, it is proven that the first-order loss reduction when only updating the up-projection $\mathbf{B}$ is determined by the projection energy $E=\|\mathbf{A}\mathbf{X}^\top\|_2^2$. Thus, the down-projection $\mathbf{A}$ acts as an "energy gate" determining which features are updated. This reduces the design of $\mathbf{A}$ to an energy optimization problem.
 
-**Core Idea**: Fix the LoRA down-projection $\mathbf{A}$ as two sets of data-driven orthogonal bases: a "general branch" for directions with high energy across tasks, and an "isolated branch" for directions maximizing the "new/old task energy ratio," combined with gradient alignment training and closed-form recalibration.
+**Core Idea**: Fix the LoRA down-projection $\mathbf{A}$ as two sets of data-driven orthogonal bases: a "high energy for all tasks" set for the universal branch, and a "maximum new/old energy ratio" set for the isolation branch, combined with gradient alignment and closed-form recalibration.
 
 ## Method
 
 ### Overall Architecture
-At task $t$, the backbone $\mathbf{W}^{t-1}$ is frozen. A dual-branch LoRA is added to each ViT layer: the general branch $(\mathbf{A}_G, \mathbf{B}_G)$ for knowledge sharing and the isolated branch $(\mathbf{A}_I, \mathbf{B}_I)$ for task-specific increments. The workflow involves: (A) solving energy objectives using the second moment of new data $\mathbf{S}^t$ and accumulated old data $\mathbf{S}^{1:t-1}$ to obtain $\mathbf{U}_G, \mathbf{U}_I$; (B) freezing down-projections $\mathbf{A}_G\leftarrow\mathbf{U}_G^\top$ and $\mathbf{A}_I\leftarrow\mathrm{QR}(\mathbf{U}_I^\top)$, then training upper projections only on new data using the GAO algorithm; (C) at the end of the task, applying a closed-form recalibration matrix $\mathbf{\Lambda}_G$ to the general branch before merging into the backbone, while merging the isolated branch directly.
+LoDA aims to bridge the gap between knowledge sharing and isolation. It attaches a dual-branch LoRA to each ViT layer: a universal branch $(\mathbf{A}_G,\mathbf{B}_G)$ for sharing and an isolation branch $(\mathbf{A}_I,\mathbf{B}_I)$ for task-specific increments. When task $t$ arrives, the backbone $\mathbf{W}^{t-1}$ is frozen. Two energy objectives are solved using the second moment of new data $\mathbf{S}^t$ and cumulative old data $\mathbf{S}^{1:t-1}$ to derive orthogonal bases $\mathbf{U}_G, \mathbf{U}_I$. These are frozen into the down-projections. The up-projections are trained via GAO. After the task concludes, the universal branch is merged into the backbone after closed-form recalibration, while the isolation branch is merged directly.
+
+```mermaid
+graph TD
+    A["Task t Arrives, Freeze Backbone Weights"] --> M["Compute Second Moments<br/>New S^t, Cumulative Old S^(1:t−1)"]
+    subgraph DEC["Task-Driven Subspace Decomposition (Energy-based Down-projection)"]
+        direction TB
+        M --> G["Universal Subspace U_G<br/>Maximize New+Old Energy → top-r Singular Vectors"]
+        M --> I["Isolation Subspace U_I<br/>Maximize New/Old Energy Ratio → Generalized Rayleigh Quotient"]
+    end
+    G --> T["Gradient Alignment Optimization (GAO)<br/>Train Up-projections: B2 perturbation → B1 update"]
+    I --> T
+    T --> R["Feature-level Closed-form Recalibration Λ_G<br/>Least Squares Compares Feature Drift"]
+    R --> O["Recalibrate Universal + Direct Isolation Merge → W^t"]
+```
 
 ### Key Designs
 
-1.  **Task-Driven Subspace Decomposition (Core)**:
-    -   **Function**: Decomposes the LoRA update space into two data-driven low-rank subspaces: general $\mathcal{U}_G$ and isolated $\mathcal{U}_I$.
-    -   **Mechanism**: The general subspace maximizes $E_{\text{old}} + E_{\text{new}}$, solved via the top-$r$ singular vectors of $(\mathbf{S}^{1:t-1} + \mathbf{S}^t)$. The isolated subspace maximizes the ratio of "new task energy / old task energy," $\mathrm{tr}(\mathbf{U}^\top\mathbf{S}^t\mathbf{U})/\mathrm{tr}(\mathbf{U}^\top\mathbf{S}^{1:t-1}\mathbf{U})$. This Generalized Rayleigh Quotient is solved via SVD on $\tilde{\mathbf{S}}^t = \mathbf{L}^{-1}\mathbf{S}^t\mathbf{L}^{-\top}$ where $\mathbf{S}^{1:t-1} = \mathbf{L}\mathbf{L}^\top$ (Cholesky), yielding $\mathbf{U}_I = (\mathbf{L}^{-1})^\top\tilde{\mathbf{U}}_I$.
-    -   **Design Motivation**: To bypass the "dead zone" of null-space approximation. True isolated directions should have high energy for the new task and low energy for old tasks, rather than just low energy for old tasks; simultaneously, general directions are no longer discarded.
+**1. Task-Driven Subspace Decomposition: Positive Energy Objectives**
 
-2.  **Gradient Alignment Optimization (GAO)**:
-    -   **Function**: Ensures gradient directions across different category subsets are more consistent when training $\mathbf{B}_G, \mathbf{B}_I$, improving robustness for future categories.
-    -   **Mechanism**: A batch $\mathcal{B}$ is split into two disjoint sets $\mathcal{B}_1, \mathcal{B}_2$. Each step uses the gradient of $\mathcal{B}_2$ to perturb parameters (with randomized step size $\rho \sim U(0, \rho_{\max})$), then updates using the gradient of $\mathcal{B}_1$ on the perturbed parameters. The subsets are swapped in the next step. This applies Sharpness-Aware Minimization (SAM) concepts to "inter-class gradient conflicts."
-    -   **Design Motivation**: Since the model does not know future classes, inter-class gradient conflicts make features susceptible to destruction by subsequent tasks. GAO forces the model toward directions agreed upon by both sets, suppressing category-related fragile directions.
+Rather than approximating the null space, LoDA uses a gradient perspective (Theorem 3.1) showing that loss reduction is governed by projection energy $E=\|\mathbf{A}\mathbf{X}^\top\|_2^2$. The universal subspace maximizes $E_{\text{old}} + E_{\text{new}}$, solved via the top-$r$ singular vectors of $(\mathbf{S}^{1:t-1} + \mathbf{S}^t)$. The isolation subspace maximizes the ratio $\mathrm{tr}(\mathbf{U}^\top\mathbf{S}^t\mathbf{U})/\mathrm{tr}(\mathbf{U}^\top\mathbf{S}^{1:t-1}\mathbf{U})$. By applying Cholesky decomposition $\mathbf{S}^{1:t-1} = \mathbf{L}\mathbf{L}^\top$, this is transformed into an SVD of $\tilde{\mathbf{S}}^t = \mathbf{L}^{-1}\mathbf{S}^t\mathbf{L}^{-\top}$. This defines isolation as "high energy for new, low energy for old," ensuring learning efficacy even in correlated task scenarios.
 
-3.  **Feature-level Closed-form Recalibration $\mathbf{\Lambda}_G$**:
-    -   **Function**: Solves for a correction to the general branch that is near-optimal for all tasks before merging the LoRA update.
-    -   **Mechanism**: While general updates provide transfer benefits, they inevitably cause feature drift for old tasks. The authors formulate the "feature-level error for both new and old tasks after merging" as a least-squares problem, deriving a closed-form solution for $\mathbf{\Lambda}_G$. This avoids local linear approximations and gradient estimation errors found in existing methods like BECAME.
-    -   **Design Motivation**: Previous merging methods (CoMA, BECAME) typically use weight-space EMA or Fisher-based blending. This method seeks exact optimality at the feature level, which is theoretically tighter.
+**2. Gradient Alignment Optimization (GAO): Avoiding Fragile Directions**
+
+To prevent feature collapse caused by inter-class gradient conflicts, GAO splits a batch $\mathcal{B}$ into disjoint subsets $\mathcal{B}_1, \mathcal{B}_2$. Each step applies a small random perturbation $\rho \sim U(0,\rho_{\max})$ using the gradient of $\mathcal{B}_2$, then performs the actual update using $\mathcal{B}_1$ on the perturbed parameters. This identifies directions favored by both subsets, suppressing fragile directions susceptible to interference from future tasks.
+
+**3. Feature-level Closed-form Recalibration $\mathbf{\Lambda}_G$: Compensating for Feature Drift**
+
+Merging the universal branch inevitably causes feature drift for old tasks. Unlike prior weight-space merging (CoMA, BECAME) that relies on EMA or Fisher approximations, LoDA formulates feature-level error as a least-squares problem. It derives an exact closed-form solution for a correction matrix $\mathbf{\Lambda}_G$ to minimize drift. The isolation branch, having minimal energy on old tasks, is merged directly. This avoids approximation errors inherent in weight-level merging.
 
 ### Loss & Training
-The training loss is standard cross-entropy, but gradient alignment implicit regularization is embedded via the dual-perturbation structure of GAO. Key hyperparameters include the subspace rank $r$, the general branch weight $w_G$, and GAO's $\rho_{\max}$. The statistic $\mathbf{S}^{1:t-1}$ is accumulated incrementally at the end of each task without storing raw old data.
+The objective is standard cross-entropy. Gradient alignment regularization is implicitly injected through the GAO structure. Key hyperparameters include the subspace rank $r$, universal branch weight $w_G$, and GAO's $\rho_{\max}$. The second moment $\mathbf{S}^{1:t-1}$ is updated incrementally without storing raw data.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on 10-task CL protocols across ImageNetR, ImageNetA, CIFAR100, and CUB benchmarks, comparing against 9+ baselines (CVPR'22 ~ NIPS'25).
+Evaluation on 10-task CL protocols across ImageNetR, ImageNetA, CIFAR100, and CUB benchmarks.
 
-| Dataset | Metric | Ours (LoDA) | Prev. SOTA (CoSO/LoRA-P&M) | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Metric | Ours | Prev. SOTA (CoSO/LoRA-P&M) | Gain |
+|---------|--------|-------|---------------------------|------|
 | 10S-ImageNetR | $\mathcal{A}_{Last}$ | **81.93** | 81.10 | +0.83 |
 | 10S-ImageNetA | $\mathcal{A}_{Last}$ | **62.59** | 56.57 | **+6.02** |
 | 10S-CIFAR100 | $\mathcal{A}_{Last}$ | **90.47** | 88.77 | +1.70 |
 | 10S-CUB | $\mathcal{A}_{Last}$ | **81.74** | 78.29 | +3.45 |
-| 20S-ImageNetA | $\mathcal{A}_{Last}$ | **55.74** | 52.27 | +3.47 |
 
-Under feature replay settings, LoDA+CA achieves 66.71 on 10S-ImageNetA, 2.57 points higher than the previous best, MACIL (64.14).
+Under feature replay settings, LoDA+CA achieves 66.71 on 10S-ImageNetA, outperforming MACIL (64.14) by 2.57 points.
 
 ### Ablation Study
 
-| Configuration | Key Findings |
-| :--- | :--- |
+| Configuration | Key Finding |
+|---------------|-------------|
 | Full LoDA | Baseline performance. |
-| General branch only | Task isolation vanishes; new tasks override old ones, causing significant drops. |
-| Isolated branch only | Lacks transfer; underfits on related tasks. |
-| Isolated branch replaced by null space | Maximum degradation in highly correlated scenarios (e.g., ImageNetA), confirming null-space failure. |
-| w/o GAO | Inter-class gradient conflicts amplify; old class features collapse more easily upon new task arrival. |
-| w/o Closed-form Recalibration | Feature drift in old tasks caused by the general branch remains uncompensated. |
+| Universal Branch Only | Loss of task isolation leads to catastrophic interference and significant drop. |
+| Isolation Branch Only | Lack of knowledge transfer results in underfitting on related tasks. |
+| Null-space Approximation | Performance degrades most on ImageNetA, confirming null-space failure in correlated tasks. |
+| w/o GAO | Increased inter-class gradient conflict; features collapse more easily as tasks progress. |
+| w/o Recalibration | Features of old tasks drift significantly due to the universal branch. |
 
 ### Key Findings
--   The largest gain (+6 points) on ImageNetA occurs because it has the strongest task correlation, where null-space approximation fails most severely. LoDA's "ratio maximization" isolated subspace naturally excels here.
--   LoDA (without feature replay) outperforms replay-based methods like SLCA, SSIAT, and VQ-Prompt, suggesting that subspace design is more cost-effective than storing features.
--   The advantage remains stable (+3.47) when tasks increase from 10 to 20, indicating slower degradation over long task sequences.
+- **ImageNetA Gains**: The +6.02 improvement is attributed to high task correlation where null-space methods fail. LoDA's ratio-based isolation excels here.
+- **Efficiency**: LoDA without feature replay outperforms SLCA, SSIAT, and VQ-Prompt which use replay, indicating that superior subspace design is more cost-effective than storing features.
+- **Scalability**: Performance remains robust when increasing from 10 to 20 tasks (+3.47 gain), suggesting slower degradation over long sequences.
 
 ## Highlights & Insights
--   **"Ratio Maximization" for isolation** is superior to traditional "null-space approximation." The former explicitly defines "the desired direction," while the latter only defines "the direction to avoid." These are not equivalent when tasks are correlated.
--   **Freezing down-projection while learning upper projection** gives the LoRA training objective a linear structure weighted by energy relative to the subspace (Theorem 3.1). This is the mathematical cornerstone of the method and suggests that other PEFT modules could be analyzed using an "input space vs. parameter space" dichotomy.
--   **Feature-level closed-form recalibration** bypasses the approximation errors of weight-level merging. This trick could potentially be transferred to RLHF or multi-task LoRA fusion.
+- **Ratio Maximization**: Defining isolation "positively" (what direction to take) is superior to "negative" null-space definitions (what to avoid), especially when tasks are correlated.
+- **Energy-Weighted Linear Structure**: Fixing the down-projection makes the LoRA optimization linear with respect to energy (Theorem 3.1). This framework allows for a rigorous "input space vs. parameter space" analysis of PEFT modules.
+- **Feature-level Recalibration**: Solving drift in feature space bypasses the approximation errors of weight merging, offering a useful technique for RLHF and multi-task LoRA fusion.
 
 ## Limitations & Future Work
--   The method requires a generalized eigenvalue or SVD decomposition ($D \times D$ dimension, approx. 768 for ViT) per task. Cumulative overhead for many tasks is non-negligible, requiring caching or incremental updates.
--   Subspace rank $r$ is shared across all layers. Layer sensitivity analysis was not conducted; shallow semantic features and deep task features might require different $r$ values.
--   Assumes clear task boundaries (task-aware); extension to task-free CL scenarios is needed.
--   The isolated subspace assumes $\mathbf{S}^{1:t-1}$ is full rank; Cholesky decomposition may lack numerical stability with very few tasks or samples.
+- **Computational Cost**: Each task requires SVD/generalized eigenvalue decomposition ($D \times D$ for $D=768$), which may become substantial. Incremental updates or caching may be required.
+- **Rank Sensitivity**: The rank $r$ is uniform across layers; depth-sensitive analysis (varying $r$ for semantic vs. task features) is unexplored.
+- **Task Boundaries**: The method assumes clear task boundaries (task-aware); extension to task-free CL is needed.
+- **Numerical Stability**: Cholesky decomposition of $\mathbf{S}^{1:t-1}$ assumes full rank, which may be unstable with extremely few samples.
 
 ## Related Work & Insights
--   **vs InfLoRA / O-LoRA**: While both restrict LoRA to the "old task null space," LoDA uses ratio maximization to avoid null-space failure and restores the discarded shared directions.
--   **vs Bi-LoRA / PLAN**: These use fixed predefined orthogonal bases (e.g., DCT). LoDA utilizes data-driven second-moment spectral decomposition, making it more sensitive to task correlation.
--   **vs BECAME / CoMA**: These perform merging via EMA or first-order Fisher estimation in weight space. LoDA seeks the exact optimal solution in feature space, avoiding errors from local linear approximations.
--   **vs SD-LoRA**: SD-LoRA decouples direction and magnitude for updates on low-loss paths. LoDA moves "direction selection" to the down-projection construction phase, offering a complementary approach.
+- **vs. InfLoRA / O-LoRA**: These rely on "null-space" constraints. LoDA uses ratio maximization to fix learning impotence in correlated tasks and recovers shared directions.
+- **vs. Bi-LoRA / PLAN**: These use fixed orthogonal bases (e.g., DCT). LoDA uses data-driven spectral decomposition, making it more sensitive to task-specific features.
+- **vs. BECAME / CoMA**: These merge in weight space using EMA or Fisher estimates. LoDA merges in feature space with exact solutions, avoiding local linear approximation errors.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ "Projection energy ratio maximization" is a theoretically sound way to separate LoRA-CL isolation/sharing based on data.
--   Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 datasets across various task lengths with modern baselines.
--   Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivations, consistent motivation, and helpful diagrams.
--   Value: ⭐⭐⭐⭐ A significant upgrade for the LoRA-CL pipeline, transferable to other PEFT scenarios.
+- **Novelty**: ⭐⭐⭐⭐ Ratio-based energy decomposition for LoRA-CL is theoretically sound and novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation against state-of-the-art baselines.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear mathematical derivations and well-justified motivations.
+- **Value**: ⭐⭐⭐⭐ A significant upgrade to the LoRA-CL pipeline with techniques transferable to other PEFT domains.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
 - [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
+- [\[CVPR 2025\] LoRA Subtraction for Drift-Resistant Space in Exemplar-Free Continual Learning](../../CVPR2025/model_compression/lora_subtraction_for_drift-resistant_space_in_exemplar-free_continual_learning.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
 - [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
-- [\[ICML 2026\] Continual Model Routing in Evolving Model Hubs](continual_model_routing_in_evolving_model_hubs.md)
 
 </div>
 

@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 description: >-
-  [ACL 2026][Reinforcement Learning][Data Scarcity] The first systematic survey of Reinforcement Learning for LLMs under data scarcity. It proposes a three-tier taxonomy: data-centric, training-centric…
+  [ACL 2026][Reinforcement Learning][Paper Note] The first systematic survey of Reinforcement Learning (RL) for LLMs under data scarcity, proposing a three-layer taxonomy: data-centric, training-centric, and framework-centric. It covers directions such as data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolut
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "Data Scarcity"
-  - "LLM Post-training"
-  - "Data Efficiency"
-  - "Survey"
+  - ACL 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: df40fbbeb55317e0
+content_hash: 76d53e9fcd779df3
 ---
-
 # A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 
 **Conference**: ACL 2026  
@@ -24,104 +19,98 @@ content_hash: df40fbbeb55317e0
 
 ## TL;DR
 
-The first systematic survey of Reinforcement Learning for LLMs under data scarcity. It proposes a three-tier taxonomy: data-centric, training-centric, and framework-centric, covering data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolution/co-evolution/multi-agent evolution.
+The first systematic survey of Reinforcement Learning (RL) for LLMs under data scarcity, proposing a three-layer taxonomy: data-centric, training-centric, and framework-centric. It covers directions such as data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolution/co-evolution/multi-agent evolution.
 
 ## Background & Motivation
 
-**Background**: Reinforcement Learning (RL) has become a critical paradigm for LLM post-training. Models such as DeepSeek-R1 and OpenAI-o1 demonstrate that RL post-training can trigger emergent capabilities like self-reflection, significantly enhancing performance in complex reasoning.
+**Background**: Reinforcement Learning (RL) has become a crucial paradigm for LLM post-training. Models such as DeepSeek-R1 and OpenAI-o1 demonstrate that RL post-training can stimulate emergent capabilities like self-reflection, significantly enhancing performance in complex reasoning.
 
-**Limitations of Prior Work**: RL training faces severe data scarcity challenges manifesting in two aspects: (1) External data scarcity—high costs associated with obtaining high-quality human feedback, preference annotations, and expert step-level reasoning data; (2) Internal data scarcity—model-generated interaction data is limited by the number of rollouts, trajectory lengths, and exploration budgets. Jones (2024) noted that "the AI revolution is running out of data."
+**Limitations of Prior Work**: RL training faces severe data scarcity challenges in two dimensions: (1) External data scarcity—high-quality human feedback, preference annotations, and expert step-level reasoning data are expensive to acquire; (2) Internal data scarcity—model-generated interaction data is limited by rollout quantities, trajectory lengths, and exploration budgets. Jones (2024) noted that "the AI revolution is running out of data."
 
-**Key Challenge**: Simply increasing data scale or computational resources often yields diminishing returns. While existing studies have explored various directions, there is a lack of a systematic and unified framework to organize these fragmented works.
+**Key Challenge**: Simply increasing data scale or compute often yields diminishing returns. Although existing studies explore various directions, there is a lack of a systematic and unified framework to organize these fragmented efforts.
 
-**Goal**: To provide the first systematic survey and construct a unified taxonomy to overview the research landscape of LLM RL under data scarcity.
+**Goal**: To provide the first systematic survey and construct a unified taxonomy to review the landscape of RL for LLMs under data scarcity.
 
-**Key Insight**: Starting from a bottom-up hierarchical structure, the solutions are categorized into three complementary perspectives: data, training, and framework.
+**Key Insight**: Starting from a bottom-up hierarchical structure, solutions are categorized into three complementary perspectives: data, training, and framework.
 
-**Core Idea**: Propose a three-level taxonomy—a data-centric perspective to optimize the data itself, a training-centric perspective to improve the RL process, and a framework-centric perspective to build self-evolving systems.
+**Core Idea**: Propose a three-level taxonomy—data-centric for optimizing the data itself, training-centric for improving the RL process, and framework-centric for building self-evolving systems.
 
 ## Method
 
 ### Overall Architecture
 
-This survey constructs a three-level hierarchical taxonomy: Level 1 (Data-Centric) → Level 2 (Training-Centric) → Level 3 (Framework-Centric), moving from optimizing available data to improving training efficiency, and finally to constructing frameworks that can evolve autonomously to reduce reliance on external data.
+This survey constructs a three-level hierarchical taxonomy: Level 1 (Data-Centric) → Level 2 (Training-Centric) → Level 3 (Framework-Centric). It ranges from optimizing available data to improving training efficiency, and finally to building frameworks capable of self-evolution to reduce reliance on external data.
 
 ### Key Designs
 
-1.  **Data-Centric Perspective**:
+**1. Data-Centric Perspective: Directly optimizing the data itself before/during/after training to maximize the value of each sample.**
 
-    - **Function**: Optimizes the data itself before, during, or after RL training to maximize available information.
-    - **Mechanism**: Divided into three sub-directions—(a) Data pruning: Retaining high-information density samples through offline/online/fine-grained screening (e.g., LIMR filters based on the alignment between reward trajectories and average learning curves; RORL selects medium-difficulty samples based on online pass rate estimation); (b) Data synthesis: Static synthesis (e.g., Constitutional AI for preference data), dynamic synthesis (continuous enhancement within the training loop), and hard data synthesis (generating new problems for weak areas); (c) Data compression: Ranging from token-level (updating only high-entropy tokens), step-level (pruning redundant reasoning steps), trajectory-level (filtering zero-gradient trajectories) to dataset-level (requiring only one sample in extreme cases).
-    - **Design Motivation**: Directly address the scarcity problem from the data side to maximize the value of each sample when data is limited.
+When external data is inherently scarce, the most direct response is to start from the data end. The survey divides this perspective into three sub-paths. First is **data pruning**, which retains high-information-density samples via offline/online/fine-grained filtering; for example, LIMR uses the alignment between reward trajectories and average learning curves to select samples, while RORL selects medium-difficulty problems based on online pass rate estimates. Second is **data synthesis**, including static synthesis (e.g., Constitutional AI synthesizing preference data), dynamic synthesis with continuous enhancement within the training loop, and hard data synthesis targeting model weaknesses. Third is **data compression**, spanning token-level (updating only high-entropy tokens), step-level (pruning redundant reasoning steps), trajectory-level (filtering zero-gradient trajectories), to dataset-level (requiring only a single sample in extreme cases). The focus of this perspective is maximizing the information carried by each sample when data is limited.
 
-2.  **Training-Centric Perspective**:
+**2. Training-Centric Perspective: Improving the utilization rate of each trajectory at the algorithmic level when the data volume is fixed.**
 
-    - **Function**: Improves how RL generates trajectories, evaluates rewards, and updates policies.
-    - **Mechanism**: Three sub-directions—(a) Trajectory generation: Guided exploration (e.g., integrating MCTS into LLM decoding) and selective rollouts (pre-filtering low-information prompts, calculating gradients only for high-entropy tokens); (b) Reward engineering: Process rewards (self-rewarding using consistency and volatility patterns), intrinsic motivation (the debate between entropy minimization vs. entropy maximization), and consensus mechanisms (self-consistency, majority voting); (c) Policy optimization: Experience replay and sample-efficient objective functions.
-    - **Design Motivation**: Improve the utilization efficiency of each trajectory at the training algorithm level when data volume is limited.
+If data cannot be increased, the focus shifts to improving the RL pipeline: "trajectory generation—reward evaluation—policy update." Regarding **trajectory generation**, methods include guided exploration (e.g., integrating MCTS into LLM decoding) and selective rollouts (pre-filtering low-information prompts, calculating gradients only for high-entropy tokens). **Reward engineering** covers process rewards (utilizing consistency and volatility patterns for self-rewarding), intrinsic motivation (debates around entropy minimization vs. maximization), and consensus mechanisms like self-consistency/majority voting. **Policy optimization** focuses on experience replay and sample-efficient objective functions. The goal is to ensure every hard-won trajectory is more fully utilized.
 
-3.  **Framework-Centric Perspective**:
+**3. Framework-Centric Perspective: Fundamentally reducing dependence on external annotations by building self-evolving systems.**
 
-    - **Function**: Constructs RL frameworks capable of self-evolution to reduce dependence on external data.
-    - **Mechanism**: Three paradigms—(a) Self-evolution frameworks: A single model acts as both generator and evaluator, closing the learning loop through self-training and adaptive learning; (b) Asymmetric co-evolution: Dual-agent collaboration (proposer-solver) or competition (generator-discriminator); (c) Multi-agent evolution: Competitive self-play (e.g., poker games) and multi-role cooperation (Proposer-Solver-Verifier triad).
-    - **Design Motivation**: Fundamentally reduce the reliance on external annotated data and achieve continuous self-improvement.
+The highest level no longer focuses on optimizing existing data but rather on allowing the system to generate its own data and close the learning loop. The survey summarizes three paradigms: **Self-evolution frameworks** allow a single model to act as both generator and evaluator, achieving a closed loop through self-training and adaptive learning; **Asymmetric co-evolution** uses dual-agent collaboration (proposer-solver) or competition (generator-discriminator); **Multi-agent evolution** follows competitive self-play (e.g., poker games) and multi-role cooperation (Proposer-Solver-Verifier triad). The value of this layer lies in pursuing the ultimate goal of "continuous self-improvement without external data."
 
 ### Loss & Training
 
-As a survey paper, this work does not propose a new loss function but systematically organizes various training strategies: from curriculum learning (easy-to-hard) at the data end, to entropy regularization strategies (the conflict between minimization and maximization) at the training end, to self-play and multi-agent interactions at the framework end.
+As a survey paper, this work does not propose new loss functions but systematically organizes various training strategies: from data-side curriculum learning (easy-to-hard), training-side entropy regularization strategies (the debate between minimization vs. maximization), to framework-side self-play and multi-agent interaction.
 
 ## Key Experimental Results
 
 ### Main Results
 
-As this is a survey, it contains no primary experiments. However, it systematically compiles key findings from representative methods in various directions:
+This is a survey paper and does not contain original experiments. However, it systematically compiles key findings from representative methods in each direction:
 
-| Direction | Representative Methods | Key Findings |
-| :--- | :--- | :--- |
-| Dataset Compression | One-shot RLVR | Performance comparable to 7.5K samples achieved with only 1 sample |
-| Token Compression | High-Entropy Minority Tokens | Updating only high-entropy tokens maintains or even improves performance |
-| Intrinsic Reward | Intuitor | Unsupervised learning achieved using only model confidence as a reward signal |
-| Self-play | SPIRAL | Emergence of systematic reasoning capabilities through multi-round games |
+| Direction | Representative Method | Key Finding |
+|------|---------|---------|
+| Dataset Compression | One-shot RLVR | Performance equal to 7.5K samples achieved with only 1 sample |
+| Token Compression | High-Entropy Minority Tokens | Performance maintained or improved by updating only high-entropy tokens |
+| Intrinsic Reward | Intuitor | Unsupervised learning achieved using only model confidence as reward signals |
+| Self-play | SPIRAL | Systematic reasoning capabilities triggered through multi-round games |
 
 ### Ablation Study
 
 | Category Dimension | Number of Methods | Core Trend |
-| :--- | :--- | :--- |
-| Data Pruning | 15+ | Medium-difficulty samples are most valuable |
+|---------|---------|---------|
+| Data Pruning | 15+ | Medium-difficulty samples are the most valuable |
 | Data Synthesis | 10+ | Dynamic synthesis outperforms static synthesis |
-| Reward Engineering | 15+ | Intrinsic motivation can substitute for external rewards |
-| Framework Evolution | 10+ | Multi-agent systems outperform single-agent systems |
+| Reward Engineering | 15+ | Intrinsic motivation can replace external rewards |
+| Framework Evolution | 10+ | Multi-agent outperforms single-agent |
 
 ### Key Findings
 
-- Limits of data efficiency can be extreme: One-shot RLVR proves that a single sample is sufficient to activate the effects of RL training.
-- There is a fundamental divergence regarding the role of entropy in RL: one school advocates for minimization (reducing uncertainty), while another advocates for maximization (encouraging exploration), both with valid justifications.
-- Self-play and multi-agent frameworks demonstrate significant potential for continuous improvement under zero-external-data conditions.
+- Data efficiency limits can be extreme: One-shot RLVR proves that a single sample is sufficient to activate RL training effects.
+- Fundamental divergence exists regarding the role of entropy in RL: one school advocates minimization (reducing uncertainty), while the other advocates maximization (encouraging exploration); both have merits.
+- Self-play and multi-agent frameworks show strong potential for continuous improvement with zero external data.
 
 ## Highlights & Insights
 
-- The three-tier taxonomy (Data → Training → Framework) provides a clear research roadmap, helping researchers situate their work. The framework moves from "optimizing existing data" to "improving data utilization" and finally to "reducing data dependence," forming a progressive relationship.
-- The organized debate between entropy minimization and maximization is highly insightful: the two seemingly contradictory strategies have different applicable scenarios and may require adaptive switching in the future.
-- The timing of this survey is optimal, as RL post-training has become a mainstream paradigm (post-DeepSeek-R1 and o1), making this systematic organization highly valuable for the field.
+- The three-level taxonomy (Data → Training → Framework) provides a clear research roadmap, helping researchers position their work. The framework progresses from "optimizing existing data" to "improving data utilization" and finally to "reducing data dependency."
+- The summary of the entropy minimization vs. maximization debate is highly insightful: two seemingly contradictory strategies apply to different scenarios and may require adaptive switching in the future.
+- The timing of the survey is appropriate, appearing as RL post-training becomes a mainstream paradigm (post-DeepSeek-R1, o1); this systematic organization offers significant reference value.
 
 ## Limitations & Future Work
 
-- Due to the cutoff time of the survey and the rapid development of the field (new methods appearing weekly), the taxonomy requires continuous updates.
-- The study does not deeply discuss the combination effects between different methods—can data-centric and training-centric methods be used synergistically?
-- Discussions on safety risks (e.g., bias amplification in self-play, reward hacking) are relatively brief.
-- Three future directions proposed by the authors deserve attention: reliability of internal rewards, generalization to non-verifiable tasks, and safety risks in self-play.
+- Restricted by the submission deadline, the field is evolving rapidly (new methods weekly); the taxonomy requires continuous updates.
+- Lack of in-depth discussion on the combinatorial effects between methods—can data-centric and training-centric methods be used synergistically?
+- Discussion on safety risks (e.g., bias amplification in self-play, reward hacking) is relatively brief.
+- Three future directions proposed by the authors are noteworthy: reliability of internal rewards, generalization to non-verifiable tasks, and safety risks in self-play.
 
 ## Related Work & Insights
 
-- **vs. LLM+Agentic RL Survey (Zhang et al., 2025)**: While the former focuses on LLMs as RL agents, this paper focuses specifically on the challenge of data scarcity.
-- **vs. Self-evolving Agents Survey (Tao et al., 2024)**: While focusing on self-evolution, this paper incorporates self-evolution as one of three systematic perspectives.
-- **vs. Data-efficient Post-training Survey (Luo et al., 2025)**: Covering broader post-training topics, this paper focuses specifically on data efficiency within the RL paradigm.
+- **vs. LLM+Agentic RL Survey (Zhang et al., 2025)**: Focuses on LLMs acting as RL agents, whereas this paper focuses on the specific challenge of data scarcity.
+- **vs. Self-evolving Agents Survey (Tao et al., 2024)**: Focuses on self-evolution capabilities, while this paper treats self-evolution as one of three perspectives for more systematic induction.
+- **vs. Data-efficient Post-training Survey (Luo et al., 2025)**: Covers broader post-training topics, whereas this paper focuses on data efficiency specifically within the RL paradigm.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First survey focusing on the data scarcity perspective of RL for LLM, with a novel taxonomy.
-- Experimental Thoroughness: ⭐⭐⭐ No primary experiments as it is a survey, but literature coverage is comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear organization with an excellent three-tier progressive structure.
-- Value: ⭐⭐⭐⭐ Provides a much-needed systematic organization for the rapidly evolving field of RL post-training.
+- Novelty: ⭐⭐⭐⭐ First survey focusing on RL for LLMs from a data scarcity perspective with a novel taxonomy.
+- Experimental Thoroughness: ⭐⭐⭐ No original experiments as a survey, but comprehensive literature coverage.
+- Writing Quality: ⭐⭐⭐⭐⭐ Well-organized with an excellent three-level progressive structure.
+- Value: ⭐⭐⭐⭐ Provides a much-needed systematic overview of the fast-evolving RL post-training field.
 
 <!-- RELATED:START -->
 

@@ -2,148 +2,129 @@
 title: >-
   [Paper Note] Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs
 description: >-
-  [ACL 2026][Multimodal VLM][CLIP] This work systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It discovers that these two capabilities mutually p…
+  [ACL 2026][Multimodal VLM][CLIP] This paper systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It discovers that these two capabilities are bidirectionally mutually promotive, but this transfer is **extremely sensitive to training data quality and optimization strategies**: usi
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "CLIP"
-  - "Compositional Reasoning"
-  - "Long-caption Understanding"
-  - "Data Quality"
-  - "Position Encoding Freezing"
-  - "Bidirectional Transfer"
+  - ACL 2026
+  - Multimodal VLM
+  - CLIP
 date: 2026-05-08
-content_hash: b8aa6256d9e3d6b1
+content_hash: 3a2e596961ec0807
 ---
-
 # Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2509.19207](https://arxiv.org/abs/2509.19207)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM / Evaluation  
-**Keywords**: CLIP, Compositional Reasoning, Long-caption Understanding, Data Quality, Position Encoding Freezing, Bidirectional Transfer
+**Keywords**: CLIP, Compositional Reasoning, Long-caption Understanding, Data Quality, Positional Encoding Freezing, Bidirectional Transfer
 
 ## TL;DR
-This work systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It discovers that these two capabilities mutually promote each other, but this transfer is **extremely sensitive to training data quality and optimization strategies**. While using grounded, high-vocabulary-coverage long-caption data with full-parameter fine-tuning can simultaneously achieve peak performance in both areas, the low-quality synthetic captions of DAC/DCI and LoRA-based partial updates lead to failure on both fronts. LongCLIP's strategy of freezing the first 20 position embeddings, intended to preserve general alignment, actually restricts compositional learning. The "control model," LSS, fine-tuned on ShareGPT4V within the original 77-token context window using full parameters, outperforms LongCLIP.
+This paper systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It discovers that these two capabilities are bidirectionally mutually promotive, but this transfer is **extremely sensitive to training data quality and optimization strategies**: using grounded, high-vocabulary-coverage long-caption data with full-parameter fine-tuning achieves excellence in both capabilities. Conversely, low-quality synthetic captions from DAC/DCI combined with LoRA updates lead to failure in both. While LongCLIP's freezing of the first 20 positional embeddings seemingly protects general alignment, it severely restricts compositional learning—the authors' control model, LSS, outperforms LongCLIP by fine-tuning on ShareGPT4V with full parameters within the original 77-token context window.
 
 ## Background & Motivation
 
-**Background**: Contrastive VLMs (CLIP / SigLIP / ALIGN) have become the de facto standard for multimodal learning, yet two long-standing issues remain: (1) **Poor compositionality**—CLIP often behaves like a "bag-of-words," showing insensitivity to attribute-object binding, relations, and word order, as exposed by benchmarks like ARO, Winoground, and SugarCREPE++ (SC++). (2) **Weak long-caption processing**—CLIP's 77-token context window is short, and its effective attention often spans only the first 20-30 tokens (Zhang et al. 2024a), leading to poor performance in long dense caption retrieval (DOCCI / Urban1k / ImageInWords).
+**Background**: Contrastive VLMs (CLIP / SigLIP / ALIGN) are the de facto standards for multimodal learning but face two long-standing issues: (1) **Poor compositionality**—CLIP often behaves like a "bag-of-words," being insensitive to attribute-object binding, relations, and word order, as exposed by benchmarks like ARO, Winoground, and SugarCREPE++ (SC++); (2) **Weak long-caption processing**—CLIP's 77-token context window is short, and its effective attention often only reaches the first 20-30 tokens (Zhang et al. 2024a), leading to poor performance in long dense caption retrieval (DOCCI / Urban1k / ImageInWords).
 
-**Limitations of Prior Work**: The field has long assumed that "compositional reasoning" and "long-caption understanding" are highly correlated; long captions naturally contain more attributes and relations, which should facilitate compositional learning, and conversely, models with strong compositionality should better parse long captions. However, empirically, these two lines of research have been **isolated**. Research on compositionality (NegCLIP / CE-CLIP / DAC / DCI) uses short captions with hard negatives, while research on long-captions (LongCLIP / DreamLIP) uses long captions without specifically strengthening compositionality. No study has systematically compared the cross-capability transferability of these two paradigms.
+**Limitations of Prior Work**: The field has long assumed that "compositional reasoning" and "long-caption understanding" are highly correlated—long captions naturally contain more attributes/relations, which should promote compositional learning; conversely, models with strong compositionality should better disentangle long captions. However, empirically, these two lines of research are **fragmented**: studies on compositionality (NegCLIP / CE-CLIP / DAC / DCI) use short captions with hard negatives, while studies on long-captions (LongCLIP / DreamLIP) use long captions without specifically reinforcing compositionality. No study has systematically compared the cross-capability transferability of these two lines.
 
-**Key Challenge**: (a) While progress is viewed in each line individually, putting them together reveals unexpected results. For instance, DAC/DCI are nearly saturated on the traditional ARO benchmark but perform worse than base CLIP on the newer SC++ (Spearman $r = -0.37$!). LongCLIP performs strongly on long captions but shows almost no improvement over CLIP on SC++. (b) This implies that either the ARO benchmark is no longer reliable, or the transfer from "compositional training $\implies$ long-caption understanding" does not exist.
+**Key Challenge**: (a) While progress is made in each line individually, combining them yields unexpected results—for instance, DAC/DCI are nearly saturated on the traditional ARO benchmark but perform worse than base CLIP on the newer SC++ (Spearman $r = -0.37$!). LongCLIP excels at long captions but shows almost no improvement over CLIP on SC++. (b) This implies at least one of two things: either the ARO benchmark is no longer reliable, or the transfer from "compositional training $\implies$ long-caption understanding" does not exist.
 
-**Goal**: To answer two questions through controlled experiments: (Q1) Can training for compositionality improve long-caption understanding? (Q2) Can training on long captions facilitate compositional generalization? The study aims to isolate the variables of **data quality, optimization strategy, and architectural constraints** to determine when transfer succeeds or fails.
+**Goal**: To answer two questions through controlled experiments: (Q1) Can training for compositionality improve long-caption understanding? (Q2) Can training on long captions promote compositional generalization? Furthermore, the study aims to isolate the variables of **data quality, optimization strategy, and architectural constraints** to determine when transfer succeeds or fails.
 
-**Key Insight**: The authors developed a control model named **LSS (Long Story Short)**. It fine-tunes a CLIP ViT-B/32 using ShareGPT4V long captions while strictly maintaining the original 77-token context window and employing full-parameter updates. This separates the "effect of long-caption data" from "architectural changes for extending the context window." LSS is trained on four long-caption datasets (sDCI / DOCCI / LN / ShareGPT4V) to perform ablation studies on critical data attributes such as scale, vocabulary coverage, caption length, syntactic complexity (Yngve), and annotation quality.
+**Key Insight**: The authors trained a control model **LSS (Long Story Short)**—fine-tuning CLIP ViT-B/32 using ShareGPT4V long captions while strictly maintaining the original CLIP 77-token context and full-parameter updates. This decouples the "effect of long-caption data" from "architectural modifications for context expansion." LSS was trained separately on four long-caption datasets (sDCI / DOCCI / LN / ShareGPT4V) for ablation studies to identify which data attributes (scale, vocabulary coverage, caption length, syntactic complexity Yngve, annotation quality) are truly critical.
 
-**Core Idea**: Transferability is real but only holds when (high-quality grounded long captions) and (full-parameter fine-tuning) are simultaneously satisfied. Architectural tricks used to preserve CLIP's general alignment (such as freezing position embeddings) act as a bottleneck for compositional learning.
+**Core Idea**: Transferability is real but only holds when (high-quality grounded long captions) and (full-parameter fine-tuning) are satisfied simultaneously. Architectural tricks intended to preserve CLIP's general alignment (such as freezing positional embeddings) act as shackles for compositional learning.
 
 ## Method
 
 ### Overall Architecture
-This is an **empirical analysis paper** that does not propose a new model architecture but instead constructs a series of comparative experiments to disentangle the variables of data, optimization, and architecture. The overall process is:
+This is an **empirical analysis paper**—it does not propose a new model architecture but constructs a series of comparative experiments to disentangle the three variables of data, optimization, and architecture. The overall workflow includes:
 
-(a) **Select representative baselines**: NegCLIP / CE-CLIP / DAC$_{\text{LLM}}$ / DCI$_{\text{P1}}$ for compositionality; LongCLIP / DreamLIP for long-captioning; plus baseline CLIP ViT-B/32 and SigLIP.
+(a) **Selecting representative baselines**: From the compositional training side: NegCLIP / CE-CLIP / DAC$_{\text{LLM}}$ / DCI$_{\text{P1}}$; from the long-caption training side: LongCLIP / DreamLIP; and baseline CLIP ViT-B/32 + SigLIP.
 
-(b) **Design the LSS control model**: Based on CLIP ViT-B/32, fully fine-tuned using 4×A100 GPUs with a batch size of 1024. LSS variants are trained on four long-caption datasets (sDCI / DOCCI / LN / ShareGPT4V) while strictly adhering to the 77-token context.
+(b) **Designing the control model LSS**: Based on CLIP ViT-B/32, utilizing full-parameter fine-tuning on 4 $\times$ A100 GPUs with a batch size of 1024. LSS is trained separately on four datasets (sDCI / DOCCI / LN / ShareGPT4V) while strictly adhering to a 77-token context.
 
-(c) **Unified benchmark suite**: Compositionality is evaluated via Winoground (WG) + SugarCREPE++ (SC++ including SA/RR/RO/RA/SO subcategories) + ARO (for comparison against "invalidated benchmarks"). Long-caption retrieval uses Urban1K / sDCI / DOCCI / IiW for I2T and T2I R@1. General alignment is checked via CIFAR10/100 / ImageNet classification + COCO/Flickr30k short-caption retrieval. All evaluations are zero-shot.
+(c) **Unified benchmark suite**: Compositionality is evaluated using Winoground (WG) + SugarCREPE++ (SC++ including SA/RR/RO/RA/SO subcategories) + ARO (to contrast with failing traditional benchmarks). Long-caption retrieval is assessed via Urban1K / sDCI / DOCCI / IiW for both I2T and T2I R@1. General alignment is evaluated using CIFAR10/100 / ImageNet classification + COCO/Flickr30k short caption retrieval. All evaluations are zero-shot.
 
-(d) **Multi-dimensional comparison**: Q1 (Compositional $\rightarrow$ Long-caption) / Q2 (Long-caption $\rightarrow$ Compositional) / ARO vs SC++ failure analysis / LSS comparisons across 4 datasets / Ablation of LongCLIP’s position embedding freezing / General capability trade-offs.
+(d) **Multi-dimensional comparison**: Q1 (compositional training $\to$ long-caption) / Q2 (long-caption training $\to$ compositionality) / failure analysis of ARO vs. SC++ / comparison of LSS across four datasets / ablation of LongCLIP's positional embedding freezing / general capability trade-offs.
 
 ### Key Designs
 
-1. **LSS Control Model: Separating Long-Caption Data from Extended Context Architecture**:
-    - **Function**: To resolve the attribution confusion regarding whether LongCLIP's improvements stem from data or architecture.
-    - **Mechanism**: LongCLIP simultaneously introduces ShareGPT4V data, extends the context from 77 to 248 tokens, and freezes the first 20 position embeddings. To isolate these, the authors trained **LSS = ShareGPT4V data + no context extension (77 tokens) + full-parameter fine-tuning**. Parameters (Table 5): lr=3e-6, warmup=150 steps, 3000 steps, ≈ 2.5 epochs.
-    - **Design Motivation**: In VLM literature, architectural and data improvements are often bundled. LSS allows the authors to definitively state that the architectural trick of extending the context is secondary; the primary performance gains come from ShareGPT4V data and full-parameter updates.
+**1. LSS Control Model: Decoupling "Long-Caption Data" from "Context Expansion Architecture"**
 
-2. **Multi-benchmark Disentanglement of Data vs. Optimization vs. Architecture**:
-    - **Function**: To map the contribution of specific variables to attributes like data scale, vocabulary coverage, and update range.
-    - **Mechanism**: (a) Comparing 4 long-caption datasets across 5 attributes (Table 3/8)—sDCI (7.6k images, 29% vocab, 94 Yngve) vs. DOCCI (15k images, 27% vocab, 75 Yngve, human-written) vs. LN (489k images, 24% vocab, human-written) vs. ShareGPT4V (1.2M images, 88% vocab, synthetic). (b) Training LSS variants on each. (c) Correlating attributes with performance—finding that no single attribute determines performance, but rather a synergy of "vocab coverage $\times$ length $\times$ grounding $\times$ scale."
-    - **Design Motivation**: Previous work claimed "more is better" (DreamLIP) or "complexity is better" (sDCI). This comparison proves sDCI's high syntactic complexity (94.07) is ineffective without grounding and vocab coverage.
+LongCLIP simultaneously introduced three changes: switching to ShareGPT4V long-caption data, expanding the context from 77 to 248 tokens, and freezing the first 20 positional embeddings to mitigate catastrophic forgetting. These variables are tangled, making it unclear where the improvements originate. The authors trained LSS as a clean control: it retains only "ShareGPT4V long-caption data + full-parameter fine-tuning," avoids context expansion (keeping 77 tokens), and does not freeze positional embeddings, thereby eliminating the latter two variables. Training configurations: lr=3e-6, 150-step warmup, 3000 total steps ($\approx$ 2.5 epochs).
 
-3. **Ablation of LongCLIP Position Embedding Freezing—LongCLIP$_{70}$**:
-    - **Function**: To identify why LongCLIP fails to improve on SC++—is it the data or the position embedding freezing?
-    - **Mechanism**: LongCLIP freezes the first 20 position embeddings and diminishes updates for indices 20-77. The authors constructed **LongCLIP$_{70}$**, truncating input to 70 words to force it to work within the first 77 tokens. Results (Figure 3) show LongCLIP$_{70}$'s long-caption retrieval performance collapses, and LSS surpasses it. This proves LongCLIP’s long-caption capability resides in the 77-248 range, which is freely trained, while SC++ stays stagnant because the 0-77 range is locked.
-    - **Design Motivation**: This architectural intervention accurately demonstrates the trade-off between "preserving general alignment" and "restricting compositional learning."
+**2. Multi-benchmark Cross-section: Attributing Training Variable Contributions to Specific Data/Optimization Properties**
+
+To determine what governs transferability, training settings are decomposed into quantifiable attributes. The four long-caption datasets were tabulated by five attributes: sDCI (7.6K images, 29% vocab, 94 Yngve), DOCCI (15K images, 27% vocab, 75 Yngve, human-written), LN (489K images, 30-word short captions, 24% vocab, human-written), and ShareGPT4V (1.2M images, 144-word long captions, 88% vocab, synthetic). No single attribute determines performance; rather, it's a synergy of vocab coverage $\times$ length $\times$ grounding $\times$ scale $\times$ syntactic complexity. This refutes single-factor narratives like "more data is better" or "syntax complexity is better."
+
+**3. LongCLIP Positional Freezing Ablation (LongCLIP$_{70}$): Identifying the Cause of SC++ Stagnation**
+
+LongCLIP shows almost no improvement on SC++. Is it due to data or positional embedding freezing? Considering LongCLIP freezes the first 20 embeddings and discounts updates for tokens 20-77, the authors noted that SC++ samples mostly fall within the first 77 tokens—the region least shaped by new data. They constructed LongCLIP$_{70}$ by truncating inputs to 70 words ($\approx$ 77 tokens) during inference. Results showed a sharp decline in long-caption retrieval for LongCLIP$_{70}$, which was then outperformed by LSS. This confirms that LongCLIP's long-caption capability comes from the 77-248 segment, while its SC++ failure is caused by the freezing of the 20-77 segment.
 
 ### Loss & Training
-No new loss is proposed; LSS uses the standard CLIP InfoNCE contrastive loss. Hyperparameters (Table 5): Batch size 1024, 4×A100 GPUs. LSS$_{ShareGPT4V}$ uses lr=3e-6, 3000 steps, ≈ 2.5 epochs. Max training time is 8 hours.
+No new loss is proposed; LSS uses the original CLIP InfoNCE contrastive loss. Training hyperparameters: all LSS variants used batch_size=1024 on 4 $\times$ A100 GPUs. Learning rates and steps varied by dataset (e.g., ShareGPT4V: lr=3e-6, 3000 steps, 2.5 epochs). Vision/text inputs utilized standard HuggingFace CLIP parameters. Maximum training time was 8 hours.
 
 ## Key Experimental Results
 
 ### Main Results
-**Q1 + Q2 Comprehensive Table (Table 1)**: Compositionality (SC++ avg + WG) + Long-caption retrieval (Urban1K / sDCI / DOCCI / IiW avg):
+**Comprehensive Table for Q1 + Q2 (Table 1)**: Compositionality (SC++ 5 subcategories + WG) + Long-caption retrieval (Urban1K / sDCI / DOCCI / IiW avg of I2T+T2I):
 
-| Model | SC++ avg | Winoground T | Long-cap retrieval avg | Notes |
+| Model | SC++ avg | Winoground T | Long-cap retrieval avg | Remarks |
 |------|----------|--------------|----------------------|------|
-| CLIP (baseline) | 53.3 | 17.2 | 67.0 | Starting point |
+| CLIP (baseline) | 53.3 | 17.2 | 67.0 | Baseline |
 | SigLIP | 57.5 | 18.6 | 77.5 | Different loss/data |
 | **DAC$_{\text{LLM}}$** | 44.0 | 12.6 | 48.5 | Worse than CLIP! |
 | DCI$_{\text{P1}}$ | 51.3 | 12.1 | 56.3 | Only ARO strong |
 | CE-CLIP | 56.3 | 12.3 | 68.1 | Moderate |
-| **NegCLIP** | **63.7** | 16.4 | 73.4 | Best composition training |
-| **LongCLIP-B** | 54.7 | 14.7 | **79.1** | Strong long-cap, weak SC++ |
-| DreamLIP | 54.1 | 18.0 | **82.7** | Max backbone + pre-training |
-| **LSS (Ours)** | 61.8 | 17.5 | 78.7 | 77 tokens matches LongCLIP |
+| **NegCLIP** | **63.7** | 16.4 | 73.4 | Best compositional training |
+| **LongCLIP-B** | 54.7 | 14.7 | **79.1** | Strong long-cap; flat SC++ |
+| DreamLIP | 54.1 | 18.0 | **82.7** | Largest backbone + full pretraining |
+| **LSS (control)** | 61.8 | 17.5 | 78.7 | 77 tokens rivaling LongCLIP |
 
-**Key Findings**: (1) NegCLIP improves long-captioning (73.4), proving Q1 (Compositional $\rightarrow$ Long-caption transfer). (2) LSS improves compositionality (SC++ 61.8), proving Q2 (Long-caption $\rightarrow$ Compositional transfer). (3) DAC/DCI fail on both, and LongCLIP fails on composition, showing transfer is **sensitive to training settings**.
+**Key Findings**: (1) NegCLIP trained for compositionality improves long-caption performance (73.4), proving Q1 (Composition $\to$ Long-cap transfer). (2) LSS trained on long captions improves SC++ to 61.8 (close to NegCLIP's 63.7), proving Q2 (Long-cap $\to$ Composition transfer). (3) DAC/DCI fail both; LongCLIP fails SC++—indicating transfer is **sensitive to training settings**.
 
-**ARO vs SC++ Comparison (Table 2)**: DAC$_{\text{LLM}}$ is nearly saturated on ARO but scores only 44.0 on SC++ (lower than CLIP’s 53.3). Spearman correlation $r = -0.37$ suggests ARO is no longer a reliable metric for true compositional ability.
+**ARO vs SC++ Failure Analysis (Table 2)**: DAC$_{\text{LLM}}$ is nearly saturated on ARO (VG-R=81.3, VG-A=73.9) but only reaches 44.0 on SC++ (lower than CLIP's 53.3). Spearman correlation $r = -0.37$ between ARO and SC++ suggests ARO is no longer a reliable reflection of true compositional capability.
 
 ### Ablation Study
-**Effect of 4 Long-Caption Datasets on LSS (Table 9 / Figure 2)**:
+**Effect of 4 Long-caption Datasets on LSS (Table 9 / Figure 2)**:
+- **LSS$_{\text{sDCI}}$**: Highest syntax complexity (94.07) but poor grounding $\to$ overfitting.
+- **LSS$_{\text{DOCCI}}$**: Small (14.6K) but human-labeled/long (122 words) $\to$ strong (82.7 long-cap avg).
+- **LSS$_{\text{ShareGPT4V}}$**: Best overall (SC++ 61.8, Long-cap 78.7) due to scale and 87.7% vocab coverage.
 
-| LSS Variant | Data Scale | Caption Length | Vocab cov | Yngve | SC++ avg | Long-cap avg | Comment |
-|---------|---------|------------|-----------|-------|----------|--------------|------|
-| LSS$_{\text{sDCI}}$ | 7.6K img | 40 words | 29% | **94.07** | 57.4 | 71.6 | Syntax high but poor grounding |
-| LSS$_{\text{DOCCI}}$ | 14.6K img | **122 words** | 27% | 74.55 | 60.9 | **82.7** | Small but high-quality human labels |
-| LSS$_{\text{LN}}$ | 489K img | 30 words | 24% | 61.70 | 61.6 | 70.7 | Fast SC++ convergence, weak long-cap |
-| **LSS$_{\text{ShareGPT4V}}$** | **1.2M img** | 144 words | **87.72%** | 45.70 | **61.8** | 78.7 | Best overall (scale $\times$ vocab) |
-
-**LongCLIP Position Freezing Ablation (Figure 3)**: When truncated to 70 words, LongCLIP’s performance on long-caption retrieval crashes across Urban1K/DOCCI, and LSS surpasses LongCLIP$_{70}$.
-
-**General Capability Trade-off (Table 4)**: CLIP baseline IN1K=63.1; NegCLIP drops to 61.0; LongCLIP rises to 66.9 (due to position freezing); LSS=60.8 (slight drop).
+**General Capability Trade-off (Table 4)**: CLIP baseline IN1K = 63.1. NegCLIP drops to 61.0; LSS drops to 60.8. LongCLIP improves to 66.9, showing the benefit of positional freezing for preserving general classification.
 
 ### Key Findings
-- **Bidirectional transfer exists but is conditional**: Requires (high-quality grounded long captions) $\cap$ (full-parameter fine-tuning). LSS$_{\text{ShareGPT4V}}$ achieves both SC++ 61.8 and Long-cap 78.7.
-- **ARO benchmark is no longer valid**: It correlates negatively with SC++ ($r = -0.37$). Methods overfitted to ARO (DAC/DCI) fail on more modern benchmarks.
-- **Data Quality > Data Scale**: DOCCI (14.6K images) matches ShareGPT4V (1.2M images) due to precise human labeling.
-- **Position embedding freezing is a double-edged sword**: LongCLIP protects IN1K classification but locks position 0-77, preventing compositional learning.
-- **Failure of DAC/DCI**: Due to LoRA updates restricting model capacity and synthetic captions lacking proper grounding.
+- **Bidirectional transfer is real but conditional**: It requires (high-quality grounded long captions) $\cap$ (full-parameter fine-tuning).
+- **ARO benchmark is obsolete**: It is negatively correlated with SC++ ($r = -0.37$). ARO "high-performers" like DAC/DCI buckle under newer tests.
+- **Data Quality > Data Scale**: DOCCI (14.6K human-labeled images) rivals ShareGPT4V (1.2M images). sDCI (7.6K synthetic) lacks grounding and causes regression.
+- **Positional embedding freezing is a double-edged sword**: It protects general alignment but creates a bottleneck for compositional learning.
 
 ## Highlights & Insights
-- **Methodological Value of LSS**: The focus on "attribution analysis" rather than just reporting higher numbers provides a necessary calibration for the field.
-- **Evidence of ARO's Invalidation**: The negative correlation with SC++ serves as hard-hitting evidence that the community should move away from rule-based caption benchmarks.
-- **Architecture Intervention**: The LongCLIP$_{70}$ ablation is a precise way to separate "protective tricks" from "learning constraints."
-- **Data Cheat Sheet**: The 5-attribute comparison (Table 3/8) shows **vocabulary coverage > Yngve syntactic complexity**.
-- **Cross-architecture Validation**: Confirming conclusions via SigLIP ensures results are general multimodal learning laws rather than CLIP-specific artifacts.
+- **Methodological value of the control model (LSS)**: By isolating architectural innovation from data improvement, the paper provides a rare "attribution analysis" in the VLM field.
+- **Evidence for retirement of ARO**: Proving ARO is negatively correlated with SC++ provides a necessary calibration for future evaluation standards.
+- **Analysis of positional freezing**: Demonstrating that LongCLIP's gains are restricted to specific context segments via LongCLIP$_{70}$ is a precise "architecture intervention."
+- **Data attribute cheat sheet**: Table 3/8 provides guidance for future dataset curation, emphasizing that **vocabulary coverage > syntactic complexity**.
 
 ## Limitations & Future Work
-- **Scope**: Limited to contrastive VLMs; autoregressive generative VLMs (LLaVA/Qwen-VL) are not studied.
-- **Reasoning**: Does not explore temporal or causal reasoning beyond surface compositionality (attributes/relations).
-- **Evaluation**: Uses retrieval as a proxy for understanding; directly generative or fine-grained probing is not explored.
-- **Optimization**: Did not combine NegCLIP's hard negative loss with LSS's long-caption data for a potentially "super" model.
-- **Training**: Limited training steps (max 8 hours) leave uncertainty about the potential ceiling with large-scale training.
+- **Scope**: Limited to contrastive VLMs; behavior in generative VLMs (LLaVA, etc.) remains unexplored.
+- **Complexity**: Does not explore temporal or causal reasoning beyond surface compositionality.
+- **Evaluation Proxy**: Retrieval might not fully equate to deep understanding.
+- **Causal Mechanism**: Lacks mechanistic analysis (e.g., attention visualization) to explain *why* grounding is critical.
 
 ## Related Work & Insights
-- **vs. NegCLIP**: NegCLIP uses hard negatives; LSS uses long captions. Both are independent but equivalent paths to better compositionality.
-- **vs. DAC / DCI**: DAC/DCI use synthetic captions + LoRA; this work highlights their failure on modern benchmarks compared to full-parameter fine-tuning on grounded data.
-- **vs. LongCLIP**: Proves LongCLIP’s strength is in the extended context, while its architectural "protection" inhibits compositional learning in the standard context.
-- **vs. DreamLIP**: DreamLIP is stronger due to backbone size and full pre-training, but LSS shows that full fine-tuning on smaller backbones can still yield superior compositionality (61.8 vs. 54.1).
+- **NegCLIP**: Proves hard negatives and long dense captions are independent but equivalent paths to compositionality.
+- **DAC / DCI**: Their collapse on SC++ demonstrates that synthetic captions without grounding + LoRA updates do not equate to real capability gains.
+- **DreamLIP**: While strong, its progress is confounded by backbone size; LSS shows full-parameter fine-tuning on smaller backbones can be more effective for compositionality.
+- **Takeaway**: Compositional VLM training must utilize **full-parameter fine-tuning**; lightweight adaptation like LoRA is insufficient to internalize compositional structures.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ High-quality empirical study rather than a novel method paper.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage across baselines, datasets, and ablations.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear articulation of questions and conclusions; excellent visualization.
-- **Value**: ⭐⭐⭐⭐ Important calibration for the community (retire ARO, emphasize data quality).
+- **Novelty**: ⭐⭐⭐ (Standard architecture/loss, but novel experimental design and ARO-failure proof).
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (Extensive baselines, datasets, and cross-architecture validations).
+- **Writing Quality**: ⭐⭐⭐⭐⭐ (Clear questions, straightforward conclusions, and honest limitations).
+- **Value**: ⭐⭐⭐⭐ (Crucial calibration for the VLM community regarding benchmarks and training guidelines).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -151,8 +132,8 @@ No new loss is proposed; LSS uses the standard CLIP InfoNCE contrastive loss. Hy
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](../../CVPR2026/multimodal_vlm/remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
 
 </div>
 

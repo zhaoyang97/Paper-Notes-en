@@ -2,125 +2,141 @@
 title: >-
   [Paper Note] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal graph learning] This paper proposes GraphVLM, a benchmark that systematically evaluates VLMs in three roles for multimodal graph learning (MMGL): VLM-as-Encoder (enhancing GNN featu…
+  [CVPR 2026][Multimodal VLM][benchmark] This paper proposes the GraphVLM benchmark to systematically evaluate three roles of VLMs in multimodal graph learning: VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM reasoning), and VLM-as-Predictor (acting directly as a graph learning backbone). Experiments across six datasets de
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Multimodal graph learning"
-  - "VLM role analysis"
-  - "graph neural networks"
-  - "benchmark"
-  - "structure-aware reasoning"
+  - CVPR 2026
+  - Multimodal VLM
+  - benchmark
 date: 2026-05-08
-content_hash: cdee7255801fed28
+content_hash: 598c9b04b132357f
 ---
-
 # GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.13370](https://arxiv.org/abs/2603.13370)  
-**Code**: [https://github.com/oamyjin/GraphVLM](https://github.com/oamyjin/GraphVLM) (open source)  
-**Area**: Multimodal VLM / Graph Learning
-**Keywords**: Multimodal graph learning, VLM role analysis, graph neural networks, benchmark, structure-aware reasoning
+**Code**: [https://github.com/oamyjin/GraphVLM](https://github.com/oamyjin/GraphVLM) (Open Source)  
+**Area**: Multimodal VLM / Graph Learning  
+**Keywords**: Multimodal Graph Learning, VLM Role Analysis, Graph Neural Networks, benchmark, structure-aware reasoning
 
 ## TL;DR
-This paper proposes GraphVLM, a benchmark that systematically evaluates VLMs in three roles for multimodal graph learning (MMGL): VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM-based reasoning), and VLM-as-Predictor (serving directly as the graph learning backbone). Experiments across six datasets demonstrate that VLM-as-Predictor consistently achieves the best performance, revealing the substantial potential of VLMs as a new foundation for MMGL.
+This paper proposes the GraphVLM benchmark to systematically evaluate three roles of VLMs in multimodal graph learning: VLM-as-Encoder (enhancing GNN features), VLM-as-Aligner (bridging modalities for LLM reasoning), and VLM-as-Predictor (acting directly as a graph learning backbone). Experiments across six datasets demonstrate that VLM-as-Predictor consistently achieves the best performance, revealing the significant potential of VLMs as a new foundation for multimodal graph learning.
 
 ## Background & Motivation
 
-**Background**: VLMs have achieved great success in aligning paired modalities (image–text), yet their capacity for multimodal reasoning over structured data (entities connected via graphs) remains largely unexplored. Two paradigms exist in MMGL—GNN-based and LLM-based methods—but the third paradigm of using VLMs directly as graph learning backbones is almost entirely absent.
+**Background**: VLMs have achieved great success in aligning paired modalities (image-text), but their multimodal reasoning capabilities for structured data (entities connected via graphs) remain largely unexplored. Multimodal Graph Learning (MMGL) currently consists of GNN-based and LLM-based approaches, while the third paradigm—using VLMs directly as a graph learning backbone—is nearly non-existent.
 
-**Limitations of Prior Work**: (a) Existing MMGL methods lack a unified evaluation protocol, preventing fair comparison across GNN/LLM/VLM approaches; (b) most GNN-based methods perform multimodal fusion via naive feature concatenation; (c) the potential of VLMs in graph learning has been confined to zero-shot inference, leaving their role as trainable backbones unexplored.
+**Limitations of Prior Work**: (a) Existing MMGL lacks a unified evaluation pipeline, preventing fair comparisons between GNN, LLM, and VLM methods; (b) binary GNN methods mostly use naive feature concatenation for multimodal fusion; (c) the potential of VLMs in graph learning has been confined to zero-shot reasoning, leaving their capabilities as trainable backbones unexplored.
 
-**Key Challenge**: While VLMs inherently possess cross-modal alignment capabilities, how such capabilities should be combined with the relational structure of graphs, and how VLMs can be most effectively leveraged for MMGL, remain open questions.
+**Key Challenge**: VLMs possess innate cross-modal alignment capabilities, but how can these capabilities be combined with the relational structure of graphs? What is the most effective way to utilize VLMs for multimodal graph learning?
 
-**Goal**: To establish a systematic benchmark that uniformly evaluates different roles of VLMs in multimodal graph learning and identifies the most effective usage paradigm.
+**Goal**: To establish a systematic benchmark that uniformly evaluates different roles of VLMs in multimodal graph learning and identifies the most effective paradigm.
 
-**Key Insight**: The paper decomposes the role of VLMs in MMGL into three complementary paradigms and explores each along distinct axes.
+**Key Insight**: The roles of VLMs in MMGL are decomposed into three complementary functions—acting as an encoder, an aligner, and a predictor—to be compared through systematic experimentation.
 
-**Core Idea**: VLM-as-Predictor—directly fine-tuning a VLM as the graph learning backbone with structural signal injection—is the most effective paradigm for multimodal graph learning.
+**Core Idea**: VLM-as-Predictor (directly fine-tuning the VLM as a graph learning backbone with structural signal injection) is the most effective paradigm for multimodal graph learning.
 
 ## Method
 
 ### Overall Architecture
-Three VLM roles correspond to three paradigms, evaluated uniformly across six multimodal graph datasets (four Amazon e-commerce, one Reddit, one CDs). Each paradigm includes multiple variants (e.g., with/without structural information, different fusion strategies).
+The same multimodal graph (nodes with image and text attributes) is processed through three paradigms: VLM-as-Encoder uses VLM as a feature extractor to feed downstream GNNs; VLM-as-Aligner uses VLM as a modality bridge to inject images into existing GraphLLMs; VLM-as-Predictor directly fine-tunes the VLM via LoRA and injects structural signals. All three pipelines converge on a unified evaluation (node classification on six datasets: four Amazon e-commerce, one Reddit, and one CDs) to fairly compare the roles. Each paradigm includes various versions (different encoders, alignment layers, and fusion strategies) to analyze which usage and injection layer are most effective.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Multimodal Graph<br/>Nodes with Image+Text Attributes"] --> E
+    IN --> A
+    IN --> P
+
+    subgraph E["VLM-as-Encoder (VLM as Feature Extractor)"]
+        direction TB
+        E1["CLIP / CLIP-F / CLIP-F-S<br/>Structure-Aware Contrastive Encoding"] --> E2["Downstream GNN<br/>GCN/SAGE/MMGCN…"]
+    end
+
+    subgraph A["VLM-as-Aligner (VLM as Modality Bridge)"]
+        direction TB
+        A1["Latent Space Alignment / Prompt-level Alignment"] --> A2["GraphLLM<br/>LLaGA/GraphGPT/MLaGA"]
+    end
+
+    subgraph P["VLM-as-Predictor (VLM as Graph Learning Backbone)"]
+        direction TB
+        P1["Explicit Prompt Fusion / Implicit Latent Space Fusion<br/>Injecting Neighbor Structural Signals"] --> P2["LoRA Fine-tuning VLM<br/>LLaVA/Qwen-VL/Qwen2.5-VL"]
+    end
+
+    E --> OUT["Unified Evaluation<br/>Node Classification on 6 Datasets"]
+    A --> OUT
+    P --> OUT
+```
 
 ### Key Designs
 
-1. **VLM-as-Encoder**:
+**1. VLM-as-Encoder: Using VLMs as Feature Extractors for Downstream GNNs**
 
-    - **Function**: Encodes multimodal node features using a pretrained VLM (e.g., CLIP) and feeds them into a GNN for graph learning.
-    - **Mechanism**: Three encoder variants — (a) direct feature extraction and concatenation using pretrained CLIP; (b) CLIP fine-tuned on graph data via contrastive learning (CLIP-F); (c) structure-aware CLIP (CLIP-F-S), jointly optimized within a GNN framework using a structure-aware contrastive loss to align multimodal features with graph topology. Downstream GNNs include GCN, GraphSAGE, MMGCN, MGAT, and UniGraph2.
-    - **Design Motivation**: To investigate how multimodal feature quality affects GNN performance, and whether structure-aware encoding outperforms naive concatenation.
+This paradigm investigates the impact of multimodal feature quality on GNNs and whether structure-aware encoding outperforms naive concatenation. Three progressively stronger encoders are designed: (a) pre-trained CLIP for simple feature concatenation; (b) CLIP-F, which fine-tunes CLIP on graph data using contrastive learning; (c) CLIP-F-S, a structure-aware version that integrates CLIP into the GNN framework for joint optimization, utilizing a structure-aware contrastive loss to align multimodal features with graph topology (neighboring node features are pulled closer). Regardless of the encoder, features are fed into downstream GNNs (GCN, GraphSAGE, MMGCN, MGAT, UniGraph2) for node classification. The performance ceiling here is limited by the GNN itself.
 
-2. **VLM-as-Aligner**:
+**2. VLM-as-Aligner: Using VLMs as Modality Bridges for GraphLLMs**
 
-    - **Function**: Uses VLMs to bridge modalities so that GraphLLMs can process multimodal graph data.
-    - **Mechanism**: Two alignment strategies — (a) Latent-space alignment: replaces original unimodal node representations with CLIP multimodal embeddings injected directly into the LLM input space; (b) Prompt-level alignment: uses a VLM (Qwen-VL) to convert images into textual descriptions appended to node text attributes, with optional inclusion of visual descriptions from neighboring nodes for structure-aware augmentation.
-    - **Design Motivation**: To test whether the multimodal alignment capabilities of VLMs can enhance existing GraphLLMs (e.g., LLaGA, GraphGPT, MLaGA).
+GraphLLMs usually process textual graphs; this paradigm explores how to introduce images. Two alignment strategies are used. Latent space alignment operates at the representation layer, replacing original unimodal node representations with CLIP multimodal embeddings. Prompt-level alignment operates at the text layer, using Qwen-VL to translate images into descriptions appended to node text attributes, optionally including visual descriptions of neighbors (structure-aware enhancement). This tests whether VLM alignment capabilities benefit GraphLLMs and at which layer.
 
-3. **VLM-as-Predictor**:
+**3. VLM-as-Predictor: Fine-tuning VLMs as Graph Learning Backbones with Structural Injection**
 
-    - **Function**: Directly fine-tunes VLMs (LLaVA-1.5, Qwen-VL, Qwen2.5-VL) via LoRA as task-specific backbones for graph learning.
-    - **Mechanism**: Two structural signal injection strategies — (a) Explicit prompt-level fusion: constructs instruction prompts containing the anchor node and attributes of its top-3 most similar neighbors; (b) Implicit latent-space fusion: aggregates visual patch embeddings (avg pooling) and text token embeddings (avg pooling) from neighboring nodes and injects them into the VLM latent space. Supports text-only, vision-only, and multimodal neighbor configurations.
-    - **Design Motivation**: Since VLMs already possess strong multimodal reasoning capabilities, combining fine-tuning with structural signal injection allows VLMs to serve directly as graph learning models, avoiding the information loss introduced by intermediate GNN or LLM layers.
+This is the primary paradigm advocated by the authors. Given that VLMs possess strong multimodal reasoning, rather than using them as pre-processors for GNN/LLM layers (which leads to information loss), this approach uses LoRA to fine-tune VLMs (LLaVA-1.5, Qwen-VL, Qwen2.5-VL) as task-specific backbones. To feed "graph structure" into a VLM that typically processes single nodes, two injection paths are provided. Explicit Prompt Fusion concatenates attributes of the anchor node and its top-3 most similar neighbors into an instruction prompt. Implicit Latent Space Fusion applies average pooling to neighbor visual patch and text token embeddings, injecting them directly into the VLM latent space. Both paths support text, visual, or multimodal neighbor configurations to determine the most effective structural signal and injection layer.
 
 ## Key Experimental Results
 
-### Main Results (Cross-Paradigm Comparison, Average over 6 Datasets)
+### Main Results (Cross-paradigm Comparison, Average of 6 Datasets)
 
-| Paradigm | Representative Method | Avg. Best Performance | Notes |
-|---|---|---|---|
-| VLM-as-Encoder | CLIP + GraphSAGE | Moderate | High-quality CLIP features, but bottlenecked by GNN |
-| VLM-as-Aligner | CLIP/Qwen-VL + MLaGA | Moderate–High | Latent-space alignment outperforms prompt-level alignment |
-| VLM-as-Predictor | Qwen2.5-VL + SFT | Best | Consistently best, especially after structural augmentation |
+| Paradigm | Representative Methods | Average Best Performance | Description |
+|------|---------|------------|------|
+| VLM-as-Encoder | CLIP + GraphSAGE | Medium | High CLIP feature quality but limited by GNN bottleneck |
+| VLM-as-Aligner | CLIP/Qwen-VL + MLaGA | Upper-Medium | Latent space alignment outperforms prompt alignment |
+| VLM-as-Predictor | Qwen2.5-VL + SFT | Best | Consistently superior, especially with structural enhancement |
 
-### Ablation Study (Encoder Comparison, VLM-as-Encoder)
+### Ablation Study (VLM-as-Encoder)
 
-| Encoder | GraphSAGE Performance | Notes |
-|---|---|---|
+| Encoder | GraphSAGE Performance | Description |
+|--------|-------------|------|
 | ImageBind | Lower | Basic multimodal encoding |
 | CLIP | High | Strong cross-modal alignment |
-| CLIP-F (fine-tuned) | Slightly higher / comparable | Domain fine-tuning yields limited gains in some cases |
-| CLIP-F-S (structure-aware) | Marginal improvement | Structure-aware encoding effective on some datasets |
+| CLIP-F (Fine-tuned) | Slightly High/Equal | Domain fine-tuning sometimes yields no significant gain |
+| CLIP-F-S (Structure-aware) | Slight Improvement | Effective on specific datasets |
 
-### Fusion Strategy Comparison (VLM-as-Predictor)
+### Comparison of Fusion Strategies (VLM-as-Predictor)
 
-| Fusion Strategy | Effect | Notes |
-|---|---|---|
-| No structural information | Baseline | VLM observes only individual nodes |
-| Prompt-level structural fusion | Improvement | Neighbor text/visual information added to prompt |
-| Latent-space structural fusion | Largest improvement | Aggregated neighbor features injected into latent space |
+| Fusion Strategy | Gain | Description |
+|---------|------|------|
+| No structural info | Baseline | VLM observes individual nodes only |
+| Prompt-level Fusion | Improvement | Neighbor text/visual info added to prompt |
+| Latent Space Fusion | Maximum Improvement | Aggregate neighbor features injected into latent space |
 
 ### Key Findings
-- **VLM-as-Predictor consistently achieves the best results**: It outperforms GNN and LLM methods across all six datasets, establishing VLM-as-backbone with structural augmentation as the most effective paradigm for MMGL.
-- **Latent-space fusion outperforms prompt-level fusion**: Integrating modality and structural signals at the feature level is more consistently effective than describing them in natural language within prompts.
-- **Pretrained CLIP is already a strong encoder**: The feature quality of pretrained CLIP is high, and further fine-tuning yields limited additional gains.
-- **Structural information is most valuable in VLM-as-Predictor**: The same neighbor information yields larger improvements when injected into a VLM than when injected into a GNN or LLM.
-- **Qwen2.5-VL > Qwen-VL > LLaVA-1.5**: Stronger and more recent VLM backbones lead to better graph learning performance.
+- **VLM-as-Predictor is consistently optimal**: It outperforms GNN and LLM methods across 6 datasets, indicating that VLM as a backbone with structural enhancement is the most effective MMGL paradigm.
+- **Latent space fusion outperforms prompt fusion**: Integrating modality and structural signals at the feature level is more consistent than using natural language descriptions in prompts.
+- **CLIP is already a powerful encoder**: The feature quality of pre-trained CLIP is high, and the gains from further fine-tuning are limited.
+- **Structural information is most valuable in VLM-as-Predictor**: The performance gain from neighbor information is greater when injected into a VLM than into a GNN or LLM.
+- **Qwen2.5-VL > Qwen-VL > LLaVA-1.5**: Newer and stronger VLM bases result in better graph learning performance.
 
 ## Highlights & Insights
-- The **systematic three-role taxonomy** (Encoder / Aligner / Predictor) provides a clear conceptual framework for understanding the role of VLMs in graph learning, and can be generalized to analyze VLMs in other structured data tasks.
-- The finding that **VLM-as-Predictor is superior** carries clear methodological implications: VLMs should not be treated merely as feature extractors or modality bridges, but as first-class backbone models for graph learning.
-- The **systematic comparison of latent-space vs. prompt-level fusion** offers concrete design guidance for multimodal graph learning: structural information should be injected at the feature level rather than the textual level.
-- The comprehensive comparison spanning six datasets, three paradigms, and multiple sub-methods constitutes the most complete benchmark in this direction to date.
+- **Systematic classification of the three roles** (Encoder/Aligner/Predictor) provides a clear framework for understanding VLM positioning in graph learning. This taxonomy can be extended to other structured data tasks.
+- **The conclusion that "VLM-as-Predictor is optimal"** is instructive: it suggests VLMs should be treated as first-class backbones for graph learning rather than mere feature extractors or bridges.
+- **Systematic comparison of latent space vs. prompt fusion** provides a clear direction for architectural design: structural information should be injected at the feature level.
+- The comprehensive comparison across 6 datasets, three paradigms, and multiple sub-methods constitutes the most complete benchmark in this field.
 
 ## Limitations & Future Work
-- The benchmark focuses solely on node classification, without addressing other graph learning tasks such as link prediction or graph classification.
-- Datasets are limited to Amazon e-commerce and Reddit, providing narrow domain coverage (knowledge graphs, molecular graphs, etc. are absent).
-- LoRA fine-tuning in VLM-as-Predictor requires labeled data and is not a truly zero-shot approach.
-- Only image and text modalities are considered; richer multimodal graphs involving audio or video are not explored.
-- The scalability of VLMs on large-scale graphs is not discussed (per-node VLM inference incurs substantial computational cost).
+- Focuses only on node classification, excluding link prediction or graph classification.
+- Datasets are limited to Amazon e-commerce and Reddit (lacking knowledge graphs or molecular graphs).
+- LoRA fine-tuning for VLM-as-Predictor requires labeled data and is not a true zero-shot method.
+- Considers only image and text modalities, excluding audio or video.
+- Scalability of VLMs for large-scale graphs is not discussed (inference cost per node is high).
 
 ## Related Work & Insights
-- **vs. MM-Bench [Zheng et al.]**: MM-Bench covers only GNN-based methods. GraphVLM is the first to provide unified coverage of GNN, LLM, and VLM backbones.
-- **vs. MAGB [Wei et al.]**: MAGB covers GNNs and zero-shot VLMs, but does not explore VLM fine-tuning. GraphVLM provides complete coverage of the VLM SFT setting.
-- **vs. MLaGA [Chen et al.]**: MLaGA is among the most advanced GraphLLM methods, yet is outperformed by VLM-as-Predictor in GraphVLM's comparison, demonstrating that direct VLM fine-tuning is more effective than routing through an LLM intermediary.
+- **vs. MM-Bench [Zheng et al.]**: MM-Bench covers only GNN-based methods. GraphVLM is the first to uniformly cover GNN, LLM, and VLM backbones.
+- **vs. MAGB [Wei et al.]**: MAGB covers GNN and zero-shot VLM but does not explore VLM fine-tuning. GraphVLM fully covers VLM SFT settings.
+- **vs. MLaGA [Chen et al.]**: MLaGA is a state-of-the-art GraphLLM method, but it is surpassed by VLM-as-Predictor in this benchmark, showing that direct VLM fine-tuning is more effective than using an LLM as an intermediary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The systematic three-role taxonomy of VLMs is a novel contribution, though individual sub-methods are largely combinations of existing approaches.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive comparison across 6 datasets, 3 paradigms, and multiple GNN/LLM/VLM methods.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with an intuitive classification framework.
+- Novelty: ⭐⭐⭐⭐ Systematizing VLM roles is a novel contribution, though individual sub-methods are often combinations of existing techniques.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive comparison across 6 datasets, 3 paradigms, and various GNN/LLM/VLM methods.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with an intuitive classification framework.
 - Value: ⭐⭐⭐⭐ Provides a systematic benchmark and clear methodological guidance for multimodal graph learning.
 
 <!-- RELATED:START -->
@@ -129,11 +145,11 @@ Three VLM roles correspond to three paradigms, evaluated uniformly across six mu
 
 ## Related Papers
 
-- [\[CVPR 2026\] Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality](benchmarking_vision-language_models_under_contradictory_virtual_content_attacks_.md)
-- [\[AAAI 2026\] Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting](../../AAAI2026/multimodal_vlm/graph-of-mark_promote_spatial_reasoning_in_multimodal_langua.md)
-- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
-- [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
-- [\[CVPR 2026\] Parallel In-context Learning for Large Vision Language Models](parallel_in-context_learning_for_large_vision_language_models.md)
+- [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
+- [\[CVPR 2025\] Mosaic of Modalities: A Comprehensive Benchmark for Multimodal Graph Learning](../../CVPR2025/multimodal_vlm/mosaic_of_modalities_a_comprehensive_benchmark_for_multimodal_graph_learning.md)
+- [\[CVPR 2026\] CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models](caspa_graph-structured_concept_anchors_for_modality-agnostic_adaptation_in_visio.md)
+- [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
 
 </div>
 

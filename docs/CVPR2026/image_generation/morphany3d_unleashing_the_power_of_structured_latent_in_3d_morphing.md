@@ -2,76 +2,82 @@
 title: >-
   [Paper Note] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 description: >-
-  [CVPR 2026][Image Generation][3D Morphing] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representations. It achieves state-of-the-art quality in cross-category…
+  [CVPR 2026][Image Generation][SLAT] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representation. It achieves SOTA quality in cross-category 3D morphing by integrating source/target information via Morphing Cross-Attention (MCA) to ensure structural plausibility, enhancing temporal consistency w
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "3D Morphing"
-  - "SLAT"
-  - "Attention Mechanism"
-  - "Training-Free"
-  - "Trellis"
+  - CVPR 2026
+  - Image Generation
+  - SLAT
+  - Attention
+  - Trellis
 date: 2026-05-08
-content_hash: 114a629cdf08c8ca
+content_hash: e5eff82369c11aa2
 ---
-
 # MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.00204](https://arxiv.org/abs/2601.00204)  
 **Code**: [https://xiaokunsun.github.io/MorphAny3D.github.io/](https://xiaokunsun.github.io/MorphAny3D.github.io/)  
-**Area**: Image Generation / 3D Vision
-**Keywords**: 3D Morphing, SLAT, Attention Mechanism, Training-Free, Trellis
+**Area**: Image Generation / 3D Vision  
+**Keywords**: 3D Morphing, SLAT, Attention Mechanism, Training-free, Trellis
 
 ## TL;DR
-MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representations. It achieves state-of-the-art quality in cross-category 3D morphing through Morphing Cross-Attention (MCA) for structurally coherent source/target fusion, Temporal-Fused Self-Attention (TFSA) for temporal consistency, and a direction correction strategy to eliminate abrupt orientation jumps.
+MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representation. It achieves SOTA quality in cross-category 3D morphing by integrating source/target information via Morphing Cross-Attention (MCA) to ensure structural plausibility, enhancing temporal consistency with Temporal-Fused Self-Attention (TFSA), and eliminating abrupt transitions through an orientation correction strategy.
 
 ## Background & Motivation
 
-**Background**: 3D morphing is a foundational technique in animation, film, and gaming. Traditional methods rely on dense correspondence matching followed by interpolation to generate intermediate shapes. 2D morphing has advanced significantly with diffusion models, but 3D morphing remains a substantially harder problem.
+**Background**: 3D morphing is a fundamental technology in animation, film, and gaming. Traditional methods rely on dense correspondence matching and interpolation to generate intermediate shapes. While 2D morphing has made significant progress using diffusion models, 3D morphing remains challenging.
 
-**Limitations of Prior Work**: (a) Matching-based methods handle only geometric deformation while ignoring texture, and cross-category correspondences are unreliable; (b) 2D morphing followed by per-frame 3D reconstruction breaks temporal consistency; (c) Direct interpolation in noise or conditioning spaces lacks structural plausibility constraints.
+**Limitations of Prior Work**: (a) Matching-based methods focus on geometric deformation while ignoring textures, and cross-category correspondence is unreliable; (b) combining 2D morphing with frame-by-frame 3D reconstruction destroys temporal consistency; (c) direct interpolation in noise or condition space lacks structural plausibility constraints.
 
-**Key Challenge**: Achieving smooth, high-fidelity, and temporally consistent cross-category morphing within a 3D generative framework remains an open challenge.
+**Key Challenge**: Achieving smooth, high-fidelity, and temporally consistent cross-category morphing within a 3D generator framework is an open problem.
 
-**Goal**: How can the structural advantages of SLAT representations be exploited to enable high-quality 3D morphing?
+**Goal**: How to leverage the structural advantages of SLAT representation to achieve high-quality 3D morphing?
 
-**Key Insight**: A key observation is that directly fusing source and target SLAT features within Trellis's attention mechanism produces more plausible morphing than interpolating at the noise or conditioning level. However, naively applying KV fusion in both cross-attention and self-attention leads to mutual interference.
+**Key Insight**: A key observation is that directly fusing source/target SLAT features within the attention mechanism of Trellis produces more plausible deformations than interpolating at the noise or condition level. However, naive KV fusion interferes with itself when used simultaneously in Cross-Attention (CA) and Self-Attention (SA).
 
-**Core Idea**: Compute source and target attention outputs separately in cross-attention and then fuse them with a weighted sum (MCA); fuse features from the previous frame in self-attention (TFSA); apply statistics-based direction correction.
+**Core Idea**: Separately calculate source/target attention in CA followed by weighted fusion (MCA), integrate features from the previous frame in SA (TFSA), and apply orientation correction based on statistics.
 
 ## Method
 
 ### Overall Architecture
-Given a source object $x^{src}$ and a target object $x^{tgt}$, the framework generates a morphing sequence of $N=50$ frames $\{x^n\}_{n=0}^{N}$, with $\alpha^n = n/N$ controlling the interpolation linearly. The Trellis Image-to-3D pipeline is used without any retraining.
+The objective of MorphAny3D is straightforward: given a source object $x^{src}$ and a target object $x^{tgt}$, generate a smooth sequence of $N=50$ morphing frames $\{x^n\}_{n=0}^{N}$, with the transition progress linearly controlled by $\alpha^n = n/N$. The framework is built entirely on the pretrained Trellis Image-to-3D generator without any retraining—all "morphing" occurs within the attention layers during Trellis inference. Trellis encodes a 3D object into Structured Latent (SLAT) and proceeds through two stages: the Sparse Structure (SS) stage defines the voxel skeleton, and the SLAT stage fills in geometric and texture details. MorphAny3D injects both source and target features into the attention computations of both stages, allowing the generator to "interpolate" structurally plausible intermediate forms. Finally, an orientation correction step eliminates occasional sudden pose jumps. The core mechanism involves decoupling fusion strategies: Morphing Cross-Attention (MCA) in CA ensures structural plausibility, while Temporal-Fused Self-Attention (TFSA) in SA ensures temporal smoothness.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Source + Target Objects<br/>Encoded as SLAT Features"] --> B["Trellis SS Stage<br/>Generate Voxel Skeleton"]
+    MCA["Morphing Cross-Attention (MCA)<br/>Separate Source/Target Attn + α Weighting → Structural Plausibility"] -. Injected into CA .-> B
+    TFSA["Temporal-Fused Self-Attention (TFSA)<br/>Integrate Prev Frame K/V → Temporal Smoothness"] -. Injected into SA .-> B
+    B --> OC["Orientation Correction<br/>Pick min Chamfer from 4 Yaw Candidates"]
+    OC --> C["Trellis SLAT Stage<br/>Fill Geometry & Texture (MCA + TFSA Injected)"]
+    C --> D["50-frame Morphing Sequence"]
+```
 
 ### Key Designs
 
-1. **Analysis of SLAT Fusion Modes**:
+**1. Placement of Fusion: Decoupling CA and SA**
 
-    - Function: Understand the effects of different attention fusion strategies.
-    - Key Findings: (a) KV-Fused CA significantly improves structural plausibility (lowest FID) but introduces local distortions; (b) KV-Fused SA improves smoothness (lowest PPL); (c) combining both simultaneously degrades plausibility.
-    - Design Motivation: Naive combination leads to conflicts, necessitating separate fusion strategies for CA and SA.
+Directly blending source/target SLAT features for the generator is ineffective because CA and SA react oppositely to fusion. Diagnostic tests show that fusing source/target K and V in CA (KV-Fused CA) significantly improves structural plausibility (lower FID) but leaves local distortions. Conversely, fusing in SA (KV-Fused SA) makes the sequence smoother (lower PPL). However, using both simultaneously destroys plausibility. This observation leads to the design: CA and SA must use distinct fusion strategies.
 
-2. **Morphing Cross-Attention (MCA)**:
+**2. Morphing Cross-Attention (MCA): Compute Separately, Then Fuse**
 
-    - Function: Fuse source/target conditioning information to ensure structural consistency.
-    - Mechanism: Rather than mixing K/V before computing attention, attention outputs are computed **separately** and then fused with a weighted sum: $\text{MCA}(Q^n, K^{src/tgt}, V^{src/tgt}) = (1-\alpha^n)\text{Attn}(Q^n, K^{src}, V^{src}) + \alpha^n\text{Attn}(Q^n, K^{tgt}, V^{tgt})$
-    - Design Motivation: In KV-Fused CA, mixing DINOv2 features patch-by-patch conflates semantics with different spatial correspondences — e.g., head SLAT features incorrectly attend to background regions, causing distortions. MCA preserves the semantic correctness of each attention map.
-    - t-SNE Validation: Feature trajectories under MCA are stable and smooth, whereas KV-Fused CA trajectories are disordered and discontinuous.
+KV-Fused CA causes local distortions because it mixes two sets of DINOv2 condition features at the patch level, where the same spatial position often corresponds to different semantic parts. MCA resolves this by not mixing K/V. Instead, the query computes full attention against source and target conditions separately, then weights the results by $\alpha^n$:
 
-3. **Temporal-Fused Self-Attention (TFSA)**:
+$$\text{MCA}(Q^n, K^{src/tgt}, V^{src/tgt}) = (1-\alpha^n)\,\text{Attn}(Q^n, K^{src}, V^{src}) + \alpha^n\,\text{Attn}(Q^n, K^{tgt}, V^{tgt})$$
 
-    - Function: Enhance inter-frame temporal consistency.
-    - Mechanism: When generating frame $n$, the K/V from the previous frame are incorporated into self-attention: $\text{TFSA} = (1-\beta)\text{Attn}(Q^n, K^n, V^n) + \beta\text{Attn}(Q^n, K^{n-1}, V^{n-1})$, with $\beta=0.2$.
-    - Design Motivation: Unlike KV-Fused SA, which mixes endpoint features of source and target (potentially harming plausibility), TFSA fuses features from already-plausible neighboring frames, yielding higher fidelity.
-    - Distinction from KV-Fused SA: The latter mixes source/target endpoints; TFSA leverages validated intermediate results from adjacent frames.
+This ensures semantic consistency within each attention map. t-SNE visualizations of intermediate frame feature trajectories show that MCA results in a stable, smooth glide from source to target, whereas KV-Fused CA trajectories are chaotic and fractured.
 
-4. **Direction Correction Strategy**:
+**3. Temporal-Fused Self-Attention (TFSA): Fusing Neighbors, Not Endpoints**
 
-    - Function: Eliminate abrupt orientation jumps during morphing.
-    - Mechanism: Analysis of 200 sequences reveals that (a) jumps concentrate around $\alpha\approx 0.5$; (b) jumps are almost exclusively yaw rotations of 90°/180°/270°; (c) orientations of objects generated by Trellis cluster at the same discrete angles. Four yaw-rotated candidates $\{P^n, P_{90°}^n, P_{180°}^n, P_{270°}^n\}$ are created from the sparse structure (SS) stage output $P^n$, and the candidate with minimum Chamfer Distance to $P^{n-1}$ is selected.
-    - Design Motivation: Orientation jumps originate from the discrete pose prior learned by Trellis, not from randomness. The correction strategy is non-invasive — when no jump occurs, the unrotated version is naturally selected.
+Smoothness is handled by SA, but simple source/target feature mixing (KV-Fused SA) forces endpoints into every frame, damaging fidelity. TFSA instead fuses the K and V features of the **previous frame** into the current self-attention:
+
+$$\text{TFSA} = (1-\beta)\,\text{Attn}(Q^n, K^n, V^n) + \beta\,\text{Attn}(Q^n, K^{n-1}, V^{n-1}), \quad \beta=0.2$$
+
+Unlike KV-Fused SA which mixes fixed endpoints, TFSA integrates the immediately preceding frame, which is already validated as plausible. This naturally inherits continuity from adjacent frames without introducing irrelevant endpoint information.
+
+**4. Orientation Correction Strategy: Addressing Discrete Pose Priors**
+
+Occasional sudden "posture flips" occur during morphing. Statistical analysis of sequences reveals that these jumps: (a) cluster around the midpoint $\alpha\approx 0.5$; (b) occur at specific yaw angles (90°, 180°, 270°); and (c) correspond to the discrete pose priors learned by Trellis. Correction involves generating four yaw rotation candidates $\{P^n, P_{90°}^n, P_{180°}^n, P_{270°}^n\}$ for voxels $P^n$ at the SS stage and selecting the one with the minimum Chamfer Distance to the previous frame $P^{n-1}$. This non-intrusive step only affects frames where a jump is detected.
 
 ## Key Experimental Results
 
@@ -83,7 +89,7 @@ Given a source object $x^{src}$ and a target object $x^{tgt}$, the framework gen
 | DiffMorpher→3D | 208.1 | 6.65 | 0.0021 | 5.0 | 0.8 |
 | DirectInterp | 150.9 | 3.72 | 0.0039 | 2.0 | 5.5 |
 | MorphFlow | 285.0 | 2.41 | 0.0009 | 0.0 | 1.6 |
-| **MorphAny3D** | **112.0** | 2.47 | **0.0006** | **81.0** | **86.7** |
+| **Ours** | **112.0** | 2.47 | **0.0006** | **81.0** | **86.7** |
 
 ### Ablation Study
 
@@ -95,31 +101,31 @@ Given a source object $x^{src}$ and a target object $x^{tgt}$, the framework gen
 | MCA + TFSA + OC | **112.0** | **2.47** | **0.0006** |
 
 ### Key Findings
-- MorphAny3D achieves 86.7% user preference, substantially outperforming all baselines.
-- MCA is the critical component for plausibility (FID reduced from 125.5 to 112.2).
-- TFSA is the critical component for smoothness (PPL reduced from 3.66 to 2.87).
-- Direction correction further reduces PPL to 2.47, approaching the lower bound of matching-based methods (2.41).
-- The framework transfers directly to Hi3DGen and Text-to-3D Trellis, demonstrating generalizability.
+- MorphAny3D achieved an 86.7% user preference rate, significantly outperforming all methods.
+- MCA is critical for plausibility (FID reduced from 125.5 to 112.2).
+- TFSA is critical for smoothness (PPL reduced from 3.66 to 2.87).
+- Orientation correction further reduces PPL to 2.47 (approaching the 2.41 lower bound of matching-based methods).
+- Extends directly to Hi3DGen and Text-to-3D Trellis, demonstrating versatility.
 
 ## Highlights & Insights
-- **Post-attention output fusion vs. KV fusion** is the central insight: the former preserves the semantic correctness of individual attention maps. This design pattern is transferable to any attention-based generative model requiring multi-source conditional fusion.
-- **Statistics-driven direction correction**: the correction strategy is derived from empirical data statistics, is simple and effective, and introduces no side effects.
-- **Decoupled morphing**: by selectively applying MCA to the SS and SLAT stages, global structure and local detail morphing can be decoupled, enabling dual-target morphing and style transfer.
+- **Post-Attention Fusion vs. KV Fusion**: A core insight is that the former maintains semantic correctness. This design pattern can migrate to any attention-based generative model requiring multi-source condition fusion.
+- **Statistics-Driven Orientation Correction**: Deriving a correction strategy from data statistics is simple, effective, and free of side effects.
+- **Decoupled Morphing**: Selectively applying MCA to SS/SLAT stages allows decoupling of global structure and local detail morphing, supporting dual-target morphing and style transfer.
 
 ## Limitations & Future Work
-- Inherits Trellis's limitations in generating fine-grained structures.
-- Rotation correction may fail for yaw-symmetric objects.
-- Runtime is high: approximately 30 seconds per frame with 24 GB VRAM.
+- Inherits the fine-structure generation limitations of Trellis.
+- Orientation correction may fail for objects with yaw symmetry.
+- High runtime with 30s per frame and 24GB VRAM requirement.
 
 ## Related Work & Insights
-- **vs. 3DMorpher**: Built on 3DGS, it cannot handle complex geometry and is incompatible with commercial 3D software; MorphAny3D is more general by virtue of its SLAT foundation.
-- **vs. DiffMorpher/FreeMorph**: These methods perform 2D morphing followed by per-frame 3D lifting, resulting in temporal inconsistency; MorphAny3D operates directly within the 3D generative framework.
+- **vs. 3DMorpher**: Based on 3DGS, it cannot handle complex geometry and is incompatible with commercial 3D software; MorphAny3D is more general due to SLAT.
+- **vs. DiffMorpher/FreeMorph**: These perform 2D morphing before frame-by-frame 3D lifting, causing temporal inconsistency; MorphAny3D operates directly within the 3D generative framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First training-free SLAT-based 3D morphing framework with thorough attention fusion analysis.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage including quantitative evaluation, user study, ablation, applications, and transfer experiments.
-- Writing Quality: ⭐⭐⭐⭐⭐ The reasoning chain from observation to validation to design is complete and well-structured.
-- Value: ⭐⭐⭐⭐ Direct applicability in 3D content creation.
+- Novelty: ⭐⭐⭐⭐⭐ First SLAT-based training-free 3D morphing with profound attention fusion analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive quantitative, user study, ablation, application, and transfer experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ Complete logical chain from observation to validation to design.
+- Value: ⭐⭐⭐⭐ Directly applicable to 3D content creation.
 
 <!-- RELATED:START -->
 
@@ -127,11 +133,11 @@ Given a source object $x^{src}$ and a target object $x^{tgt}$, the framework gen
 
 ## Related Papers
 
+- [\[ECCV 2024\] TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](../../ECCV2024/image_generation/textdiffuser-2_unleashing_the_power_of_language_models_for_text_rendering.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
-- [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](../../ICCV2025/image_generation/freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
+- [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
+- [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
 - [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
 
 </div>
 

@@ -2,105 +2,92 @@
 title: >-
   [Paper Note] ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 description: >-
-  [CVPR 2026][Autonomous Driving][Anomaly Segmentation] This paper proposes ClimaDrive, a data generation framework, and ClimaOoD, a benchmark dataset. By combining semantically guided multi-weather scene generation with p…
+  [CVPR 2026][Autonomous Driving][Diffusion Model] The authors propose the ClimaDrive data generation framework and the ClimaOoD benchmark dataset. By combining semantic-guided multi-weather scene generation with perspective-aware anomaly object placement, they construct a 10K+ training set covering 6 weather conditions and 93 anomaly categories. After training, four S
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Anomaly Segmentation"
-  - "OoD Detection"
-  - "Synthetic Data"
-  - "Weather Augmentation"
-  - "Diffusion Models"
-  - "ControlNet"
+  - CVPR 2026
+  - Autonomous Driving
+  - Diffusion Model
+  - ControlNet
 date: 2026-05-08
-content_hash: f1d09e73c5cdfe23
+content_hash: d7189fa7f48658a5
 ---
-
 # ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.02686](https://arxiv.org/abs/2512.02686)  
-**Code**: Unavailable  
-**Area**: Autonomous Driving
+**Code**: None yet  
+**Area**: Autonomous Driving  
 **Keywords**: Anomaly Segmentation, OoD Detection, Synthetic Data, Weather Augmentation, Diffusion Models, ControlNet
 
 ## TL;DR
 
-This paper proposes ClimaDrive, a data generation framework, and ClimaOoD, a benchmark dataset. By combining semantically guided multi-weather scene generation with perspective-aware anomaly object placement, the framework constructs a 10K+ training set covering 6 weather conditions × 93 anomaly categories. Training on this dataset yields an average AP improvement of 3.25% across four state-of-the-art methods.
+The authors propose the ClimaDrive data generation framework and the ClimaOoD benchmark dataset. By combining semantic-guided multi-weather scene generation with perspective-aware anomaly object placement, they construct a 10K+ training set covering 6 weather conditions and 93 anomaly categories. After training, four SOTA methods achieved an average AP improvement of 3.25%.
 
 ## Background & Motivation
 
-Anomaly (OoD) segmentation in autonomous driving aims to detect unknown out-of-distribution objects (e.g., fallen cargo, animals, barriers), a safety-critical capability. The core bottleneck is **data scarcity**:
+Anomaly (OoD) segmentation in autonomous driving aims to detect unknown objects outside the training distribution (e.g., dropped cargo, animals, roadblocks), which is a safety-critical capability. The current core bottleneck is **data scarcity**:
 
-- **Existing datasets are small-scale and lack diversity**:
-    - LostAndFound: only 1 terrain type (urban), 9 anomaly categories
-    - Fishyscapes: 1 terrain type, 7 anomaly categories
-    - SMIYC (SegmentMeIfYouCan): 4 terrain types, 26 anomaly categories
-- **Nearly zero weather coverage**: Existing datasets are predominantly captured under clear weather, yet OoD detection under adverse conditions represents the true safety blind spot.
-- **High cost of real-world collection**: Anomalous events are rare by nature, and exhaustively covering combinations of weather × scene × anomaly type is infeasible in the real world.
+- **Existing datasets are small and lack diversity**:
+    - LostAndFound: Only 1 terrain (urban), 9 anomaly categories.
+    - Fishyscapes: 1 terrain, 7 anomaly categories.
+    - SMIYC (SegmentMeIfYouCan): 4 terrains, 26 anomaly categories.
+- **Weather coverage is near zero**: Most datasets only contain sunny scenes, whereas OoD detection in adverse weather is the true safety blind spot.
+- **High real-world collection costs**: Anomaly events are rare, and traversing all combinations of weather $\times$ scene $\times$ anomaly type in the real world is impractical.
 
-Synthetic data is the key pathway to overcoming the data bottleneck. However, naive copy-paste synthesis lacks physical realism and cannot produce convincing weather effects. ClimaDrive leverages the generative capacity of diffusion models to systematically address both diversity and realism.
+Synthetic data is a key path to breaking the data bottleneck. However, simple copy-paste synthesis lacks physical realism and fails to generate realistic weather effects. ClimaDrive utilizes the generative capabilities of diffusion models to systematically address the dual challenges of diversity and realism.
 
 ## Method
 
 ### Overall Architecture
 
-ClimaDrive consists of two core modules forming a complete data generation pipeline:
+ClimaOoD addresses the "data absence" dilemma in anomaly segmentation: combinations of adverse weather $\times$ rare anomaly objects are nearly impossible to collect in the real world. The ClimaDrive approach decomposes data generation into two steps—first using a Multi-Scene Weather Generator to "paint" driving scenes under 6 weather conditions from a clean semantic map, and then using AnomPlacer to physically and logically insert anomaly objects into these scenes with automatic labeling. These modules yield the ClimaOoD dataset (training set + manually filtered test set) covering 6 weather conditions $\times$ 93 anomaly categories.
 
-1. **Multi-Scene Weather Generator**: Generates multi-weather driving scene images from clean semantic maps.
-2. **AnomPlacer**: Places anomaly objects in a physically plausible manner within the generated scenes.
-
-The final output is the ClimaOoD dataset, comprising a training split and a manually curated test split.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Semantic Map S_sem<br/>(BDD100K Layout)"] --> B["Multi-Scene Weather Generator<br/>ControlNet+SD: Semantic Skeleton + Weather/Scene Prompt"]
+    B -->|"6 Weathers × 6 Scene Backgrounds"| C
+    subgraph C["AnomPlacer: Physically Realistic Placement & Auto-Labeling"]
+        direction TB
+        C1["Drivable Area Sampling 64 Candidates<br/>+ Perspective Scaling h_i = H / y_i"] --> C2["Trainable Localization Module<br/>Detection Backbone + Hungarian Matching, L_box Supervision"]
+        C2 --> C3["Diffusion Inpainting<br/>Generate Object by Category + Context"]
+        C3 --> C4["Grounding-SAM Generates Mask<br/>as Training GT"]
+    end
+    C --> D["ClimaOoD Dataset<br/>10,230 Train + 1,200 Test"]
+    D --> E["Mixed with Normal Data<br/>Train Downstream Anomaly Segmentation (RbA/RPL/...)"]
+```
 
 ### Key Designs
 
-**Module 1: Multi-Scene Weather Generator**
+**1. Multi-Scene Weather Generator: Using Semantic Maps as Skeletons for Six Weathers**
 
-Semantic-guided image-to-image generation based on ControlNet:
+Existing datasets consist almost entirely of sunny days, yet adverse weather is the safety blind spot for OoD detection. This module performs semantic-guided image-to-image generation based on ControlNet: it uses a semantic segmentation map as a spatial structure constraint (ensuring layouts of roads and buildings remain intact) and text prompts to specify weather and scene types. It supports 6 weather conditions: sunny, rainy, foggy, snowy, cloudy, and nighttime. The prompts combine weather descriptions with scene types (urban/suburban/highway) to batch-generate diverse backgrounds on the same semantic skeleton. This makes weather diversity controllable and enumerable rather than dependent on real-world collection.
 
-- **Input**: Semantic segmentation map + scene description text prompt
-- **Control condition**: ControlNet uses the semantic map as a spatial structural constraint; the text prompt specifies weather and scene type.
-- **Output**: Driving scene images rendered under the specified weather conditions.
+**2. AnomPlacer: Making Anomaly Objects "Realistic" Rather Than Pasted**
 
-Six weather conditions are supported: Clear, Rain, Fog, Snow, Overcast, and Night. Scene text prompts incorporate both weather descriptions and scene types (urban/suburban/highway, etc.) to guide the generation of diverse backgrounds.
-
-**Module 2: AnomPlacer**
-
-This is the core innovation of the method, addressing the question of how to place anomaly objects in a physically plausible manner within a scene:
-
-**Step 1 – Feasible Region Sampling**: 64 candidate positions are uniformly sampled within the Drivable Region of the semantic map to generate pseudo bounding boxes.
-
-**Step 2 – Perspective Prior Adjustment**: Bounding box sizes are adjusted according to their vertical position $y_i$ in the image:
-
-$$h_i = \frac{H}{y_i}$$
-
-Objects farther away (higher in the image) are rendered smaller, consistent with the physics of perspective projection. This prevents unnaturally large objects being placed in the distance or unnaturally small objects in the foreground.
-
-**Step 3 – Detection and Matching**: A detection backbone predicts confidence scores for candidate bounding boxes, and Hungarian Matching selects the optimal placement locations, ensuring objects do not overlap and the layout appears natural.
-
-**Step 4 – Diffusion Model Inpainting**: At selected locations, a diffusion model (conditioned on the anomaly object category as a prompt) performs inpainting to generate anomaly objects consistent with the scene's lighting and style.
-
-**Step 5 – Mask Generation**: Grounding-SAM is applied to the inpainted regions to generate precise anomaly object segmentation masks, serving as ground-truth labels for training.
+Simple copy-pasted objects leave boundary artifacts that segmentation models learn as shortcuts. This module addresses "how to place anomaly objects realistically." It follows four steps: ① Uniformly sample 64 candidate boxes in the Drivable Region of the semantic map and adjust the bbox size according to a perspective prior—scaling the height $h_i = \frac{H}{y_i}$ (with width $w_i \propto h_i$) based on the vertical position $y_i$ of the object in the image. This avoids placing giant objects far away or tiny objects nearby; ② This step uses a **trainable localization module**—a detection backbone $F_\theta$ predicts refined bboxes $\hat{B}$, supervised by perspective-adjusted pseudo-boxes $B$ via Hungarian Matching. The localization loss $\mathcal{L}_{box}$ constrains both L1 distance and IoU to learn natural, non-overlapping positions; ③ Use a diffusion model for inpainting within the predicted boxes, conditioned on the anomaly category $t_j$ and global scene context $S_{scene}$ (e.g., "tunnel, rainy, daytime"), ensuring lighting and style consistency; ④ Use Grounding-SAM to generate segmentation masks for the inpainted area (followed by noise-denoise smoothing), which serve as training GT. This pipeline automates "sampling-perspective-localization-generation-labeling," ensuring physical realism without manual annotation.
 
 ### Loss & Training
 
-ClimaDrive is a data generation framework and does not introduce additional loss functions. Downstream segmentation models are trained using their respective original losses:
+The AnomPlacer in ClimaDrive is a **trainable** module with the objective function $\mathcal{L}_{total} = \mathcal{L}_{box} + \mathcal{L}_{inpaint}$. It adopts a two-stage optimization: the first stage pre-trains the localization module ($\mathcal{L}_{box}$ via L1 + IoU under Hungarian matching), and the second stage jointly optimizes the refinement results with the inpainting model. On the Weather Generator side, ControlNet is fine-tuned to use the semantic map as a structural constraint.
 
-- **RbA (Residual-based Anomaly)**: Residual-based anomaly scoring
-- **RPL (Robust Pixel-Level)**: Pixel-level robust training
-- **Mask2Former**: Mask-based segmentation with an anomaly branch
-- **DenseHybrid**: Density estimation and classification hybrid
+Downstream segmentation models are decoupled from ClimaDrive and follow their original training losses:
 
-Training strategy: The ClimaOoD training set is mixed with existing normal driving data for training, with anomaly region labels derived from Grounding-SAM-generated masks.
+- **RbA (Residual-based Anomaly)**: Residual-based anomaly scoring.
+- **RPL (Robust Pixel-Level)**: Pixel-level robust training.
+- **Mask2Former**: Mask-based segmentation with an anomaly branch.
+- **DenseHybrid**: Mixed density estimation and classification.
+
+Training strategy: The ClimaOoD training set is mixed with original normal driving data for training, with anomaly masks provided by Grounding-SAM.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Performance gains of four state-of-the-art methods after training with ClimaOoD:
+Improvements of four SOTA methods after training on ClimaOoD:
 
-| Method | AP (Baseline → +ClimaOoD) | AUROC (Baseline → +ClimaOoD) | Gain |
-|--------|--------------------------|------------------------------|------|
+| Method | AP (Original → +ClimaOoD) | AUROC (Original → +ClimaOoD) | Gain |
+|------|---------------------|------------------------|---------|
 | RbA | Baseline → +ClimaOoD | Baseline → +ClimaOoD | AP↑, AUROC↑ |
 | RPL | Baseline → +ClimaOoD | Baseline → +ClimaOoD | AP↑, AUROC↑ |
 | Mask2Former | Baseline → +ClimaOoD | Baseline → +ClimaOoD | AP↑, AUROC↑ |
@@ -109,53 +96,53 @@ Performance gains of four state-of-the-art methods after training with ClimaOoD:
 
 ### Ablation Study
 
-| Ablation Condition | AP Change | Notes |
-|-------------------|-----------|-------|
-| Clear weather only (no weather augmentation) | Decrease | Weather diversity is critical for generalization |
-| No perspective prior (fixed bbox size) | Decrease | Implausible object scales cause the model to learn incorrect patterns |
-| No Hungarian Matching (random placement) | Slight decrease | Object overlaps reduce data quality |
-| Copy-paste only (no inpainting) | Notable decrease | Boundary artifacts serve as shortcuts for the model |
-| Fewer anomaly categories (93 → 20) | Decrease | Anomaly diversity is a key factor |
+| Condition | AP Change | Description |
+|---------|--------|------|
+| Sunny data only (No weather aug) | Decrease | Weather diversity is critical for generalization |
+| No perspective prior (Fixed bbox size) | Decrease | Unrealistic object sizes cause models to learn wrong patterns |
+| No Hungarian matching (Random placement) | Slight decrease | Object overlap reduces data quality |
+| Copy-paste only (No inpainting) | Significant decrease | Boundary artifacts are exploited as shortcuts by the model |
+| Reduced anomaly categories (93→20) | Decrease | Anomaly diversity is key |
 
 ### Key Findings
 
-1. **ClimaOoD dataset scale**: 10K+ training images covering 6 weather conditions × 6 scene types × 93 anomaly categories, substantially surpassing existing datasets.
-2. **Test set quality**: 1,200 high-quality test images selected through manual curation.
-3. **Adverse weather remains challenging**: FPR95 increases from 7.8% under clear weather to 11.0% under adverse conditions, indicating substantial room for improvement in OoD detection under weather variations.
-4. **Generalizability**: ClimaOoD yields consistent improvements across four architecturally distinct methods, demonstrating that gains from improved data diversity are model-agnostic.
+1. **ClimaOoD Dataset Scale**: 10K+ training images covering 6 weathers $\times$ 6 scene types $\times$ 93 anomaly categories, far exceeding existing datasets.
+2. **Test Set Quality**: 1,200 high-quality test images selected manually.
+3. **Adverse Weather Challenges Remain**: FPR95 increases from 7.8% in sunny conditions to 11.0% in adverse weather, indicating significant room for improvement in OoD detection under such conditions.
+4. **Universality**: ClimaOoD is effective for four different architectures, suggesting that the benefits of data diversity are architecture-agnostic.
 
 ## Highlights & Insights
 
-- **Systematic resolution of the data bottleneck**: Rather than proposing a new model, this work constructs a high-quality dataset — a contribution with more lasting value under the current data-centric paradigm.
-- **Simplicity and effectiveness of the perspective prior**: The straightforward formula $h_i = H / y_i$ substantially improves the physical plausibility of object placement, exemplifying the engineering wisdom of "simple but effective."
-- **93 anomaly categories**: Coverage spans from common objects (cones, tires) to rare ones (sofas, shopping carts), significantly improving the generalization capacity of OoD detection.
-- **Method-agnostic gains**: Improvements across four methodologically distinct approaches validate the insight that data quality outweighs model design in this setting.
+- **Systematic Solution to Data Bottleneck**: Rather than proposing a new model, the authors build a high-quality dataset—which holds more enduring value in the current "data-centric" paradigm.
+- **Simplicity and Efficacy of Perspective Prior**: The simple formula $h_i = H / y_i$ significantly improves the physical realism of placement, reflecting "simple but effective" engineering wisdom.
+- **93 Anomaly Categories**: Coverage ranges from common items (cones, tires) to rare ones (sofas, shopping carts), greatly enhancing the generalization of OoD detection.
+- **Method-Agnostic Gains**: Improvements across four different paradigms validate the "Data > Model" insight.
 
 ## Limitations & Future Work
 
-1. **Inpainting quality depends on the diffusion model**: Generation quality for certain anomaly objects (e.g., highly reflective objects) may be unstable, introducing noisy labels.
-2. **Grounding-SAM mask accuracy**: Automatically generated masks are less precise than manual annotations; boundary regions may contain errors.
-3. **FPR95 under adverse weather remains high (11.0%)**: Data augmentation mitigates but does not resolve the weather robustness problem; model-level improvements are also needed.
-4. **Absence of 3D information**: Pure 2D image synthesis cannot model 3D consistency such as occlusion and cast shadows; generated anomaly objects may lack proper depth cues.
-5. **Test set bias**: Manual curation of 1,200 images may introduce selection bias, making it difficult to represent the true long-tail distribution.
-6. **Dependency on semantic map sources**: The reliance on existing semantic segmentation ground truth for ControlNet limits the degree of automation in the data generation pipeline.
+1. **Inpainting Quality via Diffusion**: Generation quality for certain anomalies (e.g., highly reflective objects) may be unstable, introducing noisy labels.
+2. **Grounding-SAM Mask Precision**: Automatically generated masks are less precise than manual annotations, potentially leading to errors in boundary regions.
+3. **High FPR95 in Adverse Weather (11.0%)**: Data augmentation mitigates but does not solve the weather robustness problem; model-level improvements are still needed.
+4. **Lack of 3D Information**: Pure 2D synthesis cannot model 3D consistency like occlusions and shadows; generated objects may lack depth cues.
+5. **Test Set Bias**: 1,200 manually selected images may introduce selection bias and might not fully represent the true long-tail distribution.
+6. **ControlNet Semantic Input**: Dependence on existing semantic segmentation GT limits the degree of automation in data generation.
 
 ## Related Work & Insights
 
-- **LostAndFound / Fishyscapes / SMIYC**: Existing OoD segmentation benchmarks → ClimaOoD surpasses all of these in both scale and diversity.
+- **LostAndFound / Fishyscapes / SMIYC**: Existing OoD segmentation benchmarks → ClimaOoD surpasses them in scale and diversity.
 - **ControlNet**: Conditional diffusion generation → Using semantic maps to control scene structure is an elegant design choice.
-- **Grounding-SAM**: Open-vocabulary segmentation → Cleverly repurposed to automatically generate anomaly object mask labels.
-- **Inspiration**: This "generative engine + automatic annotation" data factory paradigm is transferable to other safety-critical tasks suffering from data scarcity (e.g., medical anomaly detection).
+- **Grounding-SAM**: Open-vocabulary segmentation → Cleverly used for automatic anomaly mask label generation.
+- **Insight**: This "generation engine + auto-labeling" data factory paradigm can be generalized to other data-scarce safety-critical tasks, such as medical anomaly detection.
 
 ## Rating
 
-| Dimension | Score (1–5) | Notes |
-|-----------|-------------|-------|
-| Novelty | 3.5 | Individual technical modules are not entirely new, but their systematic combination and benchmark construction are valuable. |
-| Practicality | 4.5 | The dataset is directly usable; all four SOTA methods benefit. |
-| Experimental Thoroughness | 4.0 | Four methods and ablation studies are comprehensive, but validation on real adverse-weather data is lacking. |
-| Writing Quality | 3.5 | Structure is clear, but descriptions of generation details could be more thorough. |
-| **Overall** | **3.9** | A strong, practically oriented contribution; the dataset itself offers more lasting value than the method. |
+| Dimension | Score (1-5) | Description |
+|------|-----------|------|
+| Novelty | 3.5 | Technical modules are not entirely new, but the systematic combination and benchmark construction are valuable. |
+| Utility | 4.5 | Dataset is directly usable; benefits four SOTA methods. |
+| Experimental Thoroughness | 4.0 | Four methods + detailed ablation studies, though lacks validation on real-world adverse weather data. |
+| Writing Quality | 3.5 | Structure is clear, but descriptions of generation details could be more exhaustive. |
+| **Overall** | **3.9** | A strong utility-oriented work; the dataset itself is a more lasting contribution than the method. |
 
 <!-- RELATED:START -->
 
@@ -163,11 +150,11 @@ Performance gains of four state-of-the-art methods after training with ClimaOoD:
 
 ## Related Papers
 
+- [\[ECCV 2024\] Reliability in Semantic Segmentation: Can We Use Synthetic Data?](../../ECCV2024/autonomous_driving/reliability_in_semantic_segmentation_can_we_use_synthetic_data.md)
+- [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
-- [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
-- [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
-- [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
-- [\[CVPR 2026\] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes](rescene4d_temporally_consistent_semantic_instance_segmentation_of_evolving_indoo.md)
+- [\[ECCV 2024\] Random Walk on Pixel Manifolds for Anomaly Segmentation of Complex Driving Scenes](../../ECCV2024/autonomous_driving/random_walk_on_pixel_manifolds_for_anomaly_segmentation_of_complex_driving_scene.md)
 
 </div>
 

@@ -2,139 +2,140 @@
 title: >-
   [Paper Note] The Unlearnability Phenomenon in RLVR for Language Models
 description: >-
-  [ICML 2026][LLM Safety][RLVR] The authors discover a class of "unlearnable examples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero…
+  [ICML 2026][LLM Safety][RLVR] The authors identify a class of "unlearnable examples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero, the model fails to learn them throughout the training process. The root cause is not a scarcity of positive samples, clipping, or KL regularization on the optimization
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "RLVR"
-  - "GRPO"
-  - "Unlearnable Examples"
-  - "Gradient Similarity"
-  - "Representation Deficiencies"
+  - ICML 2026
+  - LLM Safety
+  - RLVR
+  - GRPO
 date: 2026-05-08
-content_hash: 457970f316ea4685
+content_hash: e3b0ecd87d5803b8
 ---
-
 # The Unlearnability Phenomenon in RLVR for Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.16787](https://arxiv.org/abs/2605.16787)  
 **Code**: https://github.com/yulinchen99/unlearnability-rlvr  
 **Area**: LLM Reasoning / RLVR / GRPO  
-**Keywords**: RLVR, GRPO, Unlearnable Examples, Gradient Similarity, Representation Deficiencies
+**Keywords**: RLVR, GRPO, Unlearnable Examples, Gradient Similarity, Representation Defects
 
 ## TL;DR
-The authors discover a class of "unlearnable examples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero, the model fails to learn them throughout the entire training process. The root cause is not a scarcity of positive samples, clipping, or KL regularization on the optimization side; rather, these samples are "gradient outliers" under the initial policy, reflecting representation deficiencies that require mid-training instead of RL post-training for remediation.
+The authors identify a class of "unlearnable examples" in RLVR (GRPO) training: even when correct rollouts are sampled and reward signals are non-zero, the model fails to learn them throughout the training process. The root cause is not a scarcity of positive samples, clipping, or KL regularization on the optimization side; rather, these samples are "gradient outliers" under the initial policy, reflecting representation defects that require mid-training instead of RL post-training to rectify.
 
 ## Background & Motivation
 
-**Background**: RLVR (Reinforcement Learning with Verifiable Reward), represented by GRPO, has become a primary method for enhancing the mathematical, coding, and agent reasoning capabilities of LLMs. Intuitively, the prerequisite for GRPO to function is that "within $k$ rollouts of the same prompt, there exist both positive and negative samples." Consequently, extensive recent work (DAPO, curriculum learning, entropy weighting, etc.) has focused on "generating positive reward signals for extremely difficult samples."
+**Background**: Reinforcement Learning with Verifiable Reward (RLVR), represented by GRPO, has become a primary method for enhancing LLM mathematical, code, and agent reasoning capabilities. Intuitively, the prerequisite for GRPO to work is that "among $k$ rollouts of the same prompt, both positive and negative samples exist." Consequently, much recent work (DAPO, curriculum, entropy weighting, etc.) has focused on "creating positive reward signals for extremely difficult samples."
 
-**Limitations of Prior Work**: The authors observe a counter-intuitive phenomenon: when training samples are partitioned into "easy," "learnable-hard," and "unlearnable-hard" based on initial success rates, the **unlearnable-hard samples** show stagnant training rewards. Even when correct rollouts are consistently observed (i.e., non-zero outcome rewards), the rewards do not increase. These samples account for 30.2% of hard samples in Qwen2.5-0.5B/MATH-Easy and 21.9% in Llama-3.2-3B/MATH-Hard, indicating they are not marginal cases.
+**Limitations of Prior Work**: The authors discover an anti-intuitive phenomenon—after partitioning training samples into "Easy," "Learnable Hard," and "Unlearnable Hard" based on initial success rates, the **unlearnable hard samples** fail to show reward improvement during training, even when correct rollouts (i.e., non-zero outcome rewards) are consistently observed. This category accounts for 30.2% of hard samples in Qwen2.5-0.5B/MATH-Easy and 21.9% in Llama-3.2-3B/MATH-Hard, indicating it is not a marginal phenomenon.
 
-**Key Challenge**: The existing RLVR paradigm assumes that "as long as positive samples exist, the model can learn." This study empirically falsifies this implicit assumption. Common optimization-side interventions—such as more positive rollouts, experience replay, higher clipping thresholds, and removing KL terms—all prove ineffective, suggesting the root cause lies beyond optimization and requires a different explanatory framework.
+**Key Challenge**: The existing RLVR paradigm assumes that "as long as positive samples are available, the model can learn." However, the experiments in this paper disprove this implicit assumption. Furthermore, common optimization-side interventions (more positive rollouts, experience replay, higher clipping, removing KL terms) are all ineffective, suggesting the root cause lies elsewhere and requires a different explanatory framework.
 
-**Goal**: (1) Rigorously define and quantify the existence of "unlearnable samples"; (2) systematically investigate common optimization-side hypotheses (positive sample scarcity, clipping, KL regularization); (3) provide a "representation-side" root cause to explain the phenomenon; and (4) examine whether data augmentation and mid-training can fix the issue.
+**Goal**: (1) Strictly define and quantify the existence of "unlearnable samples"; (2) systematically investigate common optimization-side hypotheses (scarcity of positive samples, clipping, KL regularization); (3) provide a "representation-side" root cause that explains the phenomenon; (4) examine whether data augmentation and mid-training can fix the issue.
 
-**Key Insight**: The authors approach this from the perspective of *cross-example gradient similarity*. By treating the correct rollout of each sample as a gradient vector and examining the cosine similarity between different samples, they determine whether the "knowledge learned from one sample" can generalize to others.
+**Key Insight**: The authors approach this from the perspective of *cross-example gradient similarity*—calculating the gradient vector for the correct rollout of each sample and examining the cosine similarity between gradients of different samples to determine if learning from one sample can transfer to others.
 
-**Core Idea**: Use "gradient similarity" to elevate the distinction between learnable and unlearnable samples from "reward curve observations" to the "geometric properties of the optimization space." Unlearnable samples are isolated outliers in the optimization space, reflecting inherent representation deficiencies that outcome-based RL alone cannot repair.
+**Core Idea**: Gradient similarity is used to elevate the difference between learnable and unlearnable samples from a "reward curve phenomenon" to "geometric properties of the optimization space." Unlearnable samples are isolated outliers in the optimization space, reflecting defects in the model's internal representation that cannot be fixed by outcome-based RL alone.
 
 ## Method
 
-This is a *diagnostic* paper rather than a proposal for a new algorithm. It uses a series of carefully designed controlled experiments to quantify, attribute, and localize the "unlearnability" phenomenon to the representation level. The overall research framework follows four stages: "Phenomenon → Hypotheses Exclusion → New Hypothesis Formation → Solution Validation."
-
 ### Overall Architecture
-The research process consists of four steps:
-1.  **Phenomenon Definition**: Under GRPO with dynamic sampling, three independent training runs are executed. Hard samples (initial pass@1 < 0.1) are categorized into $\mathcal{D}_l$ (learnable) and $\mathcal{D}_u$ (unlearnable) based on whether their final pass@1 remains < $\tau=0.1$ (estimated via $N=32$ rollouts). Samples that never encountered a positive rollout are excluded, and the intersection of the three runs is taken to reduce noise.
-2.  **Optimization Hypothesis Exclusion**: Oversampling-with-replay is used to address "positive rollout scarcity," and higher clipping thresholds or removing KL terms are used for "gradient regularization." All fail.
-3.  **Representation Attribution**: Using two independent signals—cross-example gradient similarity and reasoning-quality scores from GPT-5-mini—it is demonstrated that $\mathcal{D}_u$ consists of gradient outliers with low-quality reasoning chains.
-4.  **Fix Validation**: Comparing data augmentation (similar problems and sub-problems) with mid-training (OctoThinker), the former fails while the latter succeeds.
+
+This paper does not propose a new algorithm but is a *diagnostic* study: it quantifies, attributes, and finally locates the "unlearnability" phenomenon at the representation level. The investigation follows a four-step logic: "Phenomenon Definition $\rightarrow$ Exclude Optimization Hypotheses $\rightarrow$ Establish Representation Explanation $\rightarrow$ Verify Solutions." First, a set of samples that "have positive rewards but cannot be learned" is identified using GRPO + dynamic sampling. Then, optimization explanations like "insufficient positive samples/clipping/KL regularization" are disproven. Instead, cross-example gradient similarity is used to prove these samples are isolated outliers. Finally, mid-training is found to be the only effective fix compared to data augmentation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["GRPO + Dynamic Sampling Training"] --> B["Definition and Three-Way Split of Samples<br/>Easy / Learnable Hard / Unlearnable Hard D_u"]
+    B --> C["Disproving Optimization Hypotheses on D_u<br/>Oversampling+Replay / clip-higher / No KL / SFT / Large k=64"]
+    C -->|D_u reward curves remain flat| D["Cross-Example Gradient Similarity Analysis<br/>D_u are isolated outliers in optimization space"]
+    D -->|Root cause = Representation defect, not optimization| E["Testing Two Rectification Paths"]
+    E -->|Data Augmentation (Similar/Sub-problems)| F["Ineffective: Gradient similarity does not rise"]
+    E -->|Mid-training to change base model| G["Effective: Alignment of hard sample gradients significantly improved"]
+```
 
 ### Key Designs
 
-1.  **Operational Definition and Three-Way Split of Unlearnable Samples**:
-    - **Function**: Converts the intuitive sense of "being unable to learn" into reproducible sample subsets for subsequent gradient and reasoning quality analysis.
-    - **Mechanism**: After full training with GRPO and dynamic sampling, samples with an *initial success rate* $\geq 0.1$ are categorized as *easy*. For the remaining *hard* samples, the *final* pass@1 is estimated ($N=32$ rollouts); those with final pass@1 $<\tau=0.1$ are assigned to $\mathcal{D}_u$, otherwise to $\mathcal{D}_l$. Samples without any positive rollouts during training are explicitly excluded to ensure the research question—"positive reward exists but the model still fails to learn"—is well-defined.
-    - **Design Motivation**: Previous discussions often conflated "no positive samples" with "positive samples exist but cannot be learned." This work separates the latter to avoid interventions that simply "add positive samples" appearing effective when they are not solving the core issue.
+**1. Definition and Three-way Split: Transforming "Failure to Learn" into a Well-defined Research Object**
 
-2.  **Oversampling-with-Replay to Disprove "Positive Sample Scarcity"**:
-    - **Function**: Retrains the model while ensuring each prompt has exactly $k_{\text{pos}}=1$ positive sample and $k-k_{\text{pos}}=7$ negative samples per batch to see if $\mathcal{D}_u$ becomes learnable.
-    - **Mechanism**: $4k$ rollouts are sampled per prompt and downsampled to $k=8$. If positive samples are insufficient, they are reused from an experience replay buffer (up to twice). Advantage is calculated after replay/downsampling: $\hat{A}_i = \frac{\mathbb{1}[y_i=y^*] - \text{mean}}{\text{std}}$. Results show this significantly slows learning for $\mathcal{D}_l$ (proving the intervention is active), but the reward curve for $\mathcal{D}_u$ remains identical to the baseline.
-    - **Design Motivation**: To rule out the natural explanation that positive samples are too few and gradients are "submerged." If the gap persists even when forcing one positive sample per batch or increasing $k$ to 64, the cause is not sample count.
+Prior discussions of hard samples often conflated "never sampling a positive rollout" with "having positive rollouts but failing to learn." To separate the latter, the authors first perform a full GRPO + dynamic sampling run. Samples with an *initial success rate* $\geq 0.1$ are categorized as *easy*. For the remaining *hard* samples, the *final* pass@1 is estimated using $N=32$ rollouts. Samples with final pass@1 $<\tau=0.1$ are assigned to the unlearnable set $\mathcal{D}_u$, while others go to the learnable set $\mathcal{D}_l$. Samples that never yielded a positive rollout are explicitly excluded. This ensures the research focus is strictly on "samples with positive reward signals that remain unlearned."
 
-3.  **Cross-Example Gradient Similarity Targeting Representation Deficiencies**:
-    - **Function**: Transitions the "unlearnability" claim from reward curves to the geometric characteristics of the optimization space—gradient directions for $\mathcal{D}_u$ are inconsistent with others, preventing generalization.
-    - **Mechanism**: 100 samples are taken from each group, and 1,000 rollouts are sampled under the *initial policy*. Correct rollouts are filtered to compute GRPO loss gradients. Gradients are averaged within and then across responses to produce one vector per sample. To manage compute, a fixed randomly initialized LoRA adapter is used (confirmed to correlate highly with full-parameter similarity). Cosine similarity $\cos(g_i, g_j)$ is computed. Results show *easy* samples are highly aligned, *learnable* are intermediate, and *unlearnable* show low similarity to all groups. GPT-5-mini scoring reveals that correct rollouts in $\mathcal{D}_u$ often rely on shortcuts or heuristics, confirming that outcome reward can reinforce "fake reasoning."
-    - **Design Motivation**: To move from "phenomenon" to "mechanism," an observable metric directly linked to training dynamics is required. Gradient similarity explains why learning on other samples does not transfer and why oversampling fails.
+**2. Oversampling-with-Replay: Disproving the "Positive Sample Scarcity" Hypothesis**
+
+If $\mathcal{D}_u$ remains unlearned simply because positive rollouts are too rare, then forcing sufficient positive samples should solve the problem. The authors use a fixed ratio of $k_{\text{pos}}=1$ positive sample and $k-k_{\text{pos}}=7$ negative samples per prompt per batch. If a batch lacks positive samples, they are reused from an experience replay buffer (up to twice). Advantage is calculated as $\hat{A}_i = \frac{\mathbb{1}[y_i=y^*] - \text{mean}}{\text{std}}$ after oversampling. Results show that while this dragging down the learning speed of $\mathcal{D}_l$, the $\mathcal{D}_u$ curve remains identical to the baseline. Aggressive variants like SFT distillation on $\mathcal{D}_u$ and $k=64$ rollouts also fail to bridge the gap.
+
+**3. Cross-Example Gradient Similarity: Elevating "Unlearnability" to Optimization Space Geometry**
+
+Having excluded optimization-side factors, the authors use gradient similarity to explain why learning does not transfer. 100 samples are taken from each group, and 1000 rollouts are sampled under the *initial policy* to filter correct ones. Gradients for the GRPO loss are calculated according to Equation (1). To manage computation, a fixed randomly initialized LoRA adapter is used, and gradients are computed only for LoRA parameters. Figure 1c/Figure 6 show that *easy* samples are highly aligned, *learnable* ones are intermediate, and *unlearnable* ones exhibit low similarity with all groups—meaning each unlearnable sample is an isolated outlier. Reasoning quality analysis (rating chains from 0–5 via GPT-5-mini) further reveals that correct rollouts in $\mathcal{D}_u$ often rely on shortcuts or heuristics, confirming that outcome reward might inadvertently reward "fake reasoning."
 
 ### Loss & Training
-Standard GRPO with dynamic sampling is used. The GRPO objective is (with clipping $\varepsilon$ and KL coefficient $\beta$):
+
+Standard GRPO with dynamic sampling is used. The GRPO objective is as follows (clipping $\varepsilon$, KL coefficient $\beta$):
 
 $$\mathcal{L}_{\text{GRPO}}(\theta,(x,y^*)) = -\frac{1}{k}\sum_i\frac{1}{|y_i|}\sum_t \min(r_{i,t}\hat{A}_i, \text{clip}(r_{i,t},1-\varepsilon,1+\varepsilon)\hat{A}_i) - \beta\,\text{KL}(\pi_\theta\|\pi_{\text{ref}})$$
 
-where $r_{i,t}=\pi_\theta(y_{i,t}|x,y_{i,<t})/\pi_{\theta_{\text{old}}}(y_{i,t}|x,y_{i,<t})$. Dynamic sampling filters prompts where $\text{std}(\{\mathbb{1}[y_i=y^*]\})=0$ to improve efficiency. Ablations include "clip-higher" and "no-KL" variants. Mid-training experiments utilize OctoThinker-3B-Hybrid/Long-Base as initial policies.
+where $r_{i,t}=\pi_\theta(y_{i,t}|x,y_{i,<t})/\pi_{\theta_{\text{old}}}(y_{i,t}|x,y_{i,<t})$. Dynamic sampling filters prompts where $\text{std}(\{\mathbb{1}[y_i=y^*]\})=0$ in the current batch. Variants used for ablation include higher clipping and removal of the KL term. Mid-training experiments use OctoThinker-3B-Hybrid/Long-Base as the initial policy.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1 — Proportion of Unlearnable Samples** (percentage relative to total hard samples with initial pass@1 $<0.1$):
+**Table 1 — Distribution of Unlearnable Samples in Three Setups** (percentages relative to the total number of hard samples with initial pass@1 $<0.1$):
 
-| Model / Dataset | $\mathcal{D}_u$ (%) | $\mathcal{D}_l$ (%) | No Pos Reward (%) |
+| Model / Data | $\mathcal{D}_u$ (%) | $\mathcal{D}_l$ (%) | No Positive Reward (%) |
 |---|---|---|---|
 | Qwen2.5-0.5B / MATH-Easy | 30.2 | 25.6 | 23.5 |
 | Llama-3.2-3B-Instruct / MATH-Hard | 21.9 | 31.6 | 37.7 |
 | Qwen2.5-3B / DeepScaleR | 16.7 | 14.2 | 47.2 |
 
-Unlearnable samples are not marginal and constitute a significant portion of hard samples alongside those with no positive rewards.
+Unlearnable samples are a significant proportion in all setups, comparable in scale to samples that never receive positive rewards.
 
 ### Ablation Study
 
 **Comparison of Optimization-side vs. Representation/Data-side Interventions**:
 
-| Intervention | Hypothesis Targeted | Effective for $\mathcal{D}_u$ | Key Observation |
+| Intervention | Hypothesis Target | Effective for $\mathcal{D}_u$ | Key Observation |
 |---|---|---|---|
-| Oversampling + replay (1 pos / 7 neg per batch) | Positive sample scarcity | ✗ | $\mathcal{D}_l$ slowed down, $\mathcal{D}_u$ unchanged |
-| SFT distillation of correct answers on $\mathcal{D}_u$ | Lack of supervision | ✗ | Gap remains |
-| RL on $\mathcal{D}_u$ only + $k=64$ rollouts | Insufficient exploration | ✗ | Gap remains |
-| Clip-higher | Clipping suppresses gradients | ✗ | Clipping ratios nearly identical across groups |
-| No KL term | KL constraint limits updates | ✗ | Reward dynamics unchanged |
-| Similar problems $\mathcal{D}_u^{sim}$ augmentation | Lack of related signals | ✗ | Augmented problems learned; original $\mathcal{D}_u$ stays unlearned |
-| Sub-problems $\mathcal{D}_u^{sub}$ augmentation | Skill decomposition | ✗ | Sub-problems learned faster than $\mathcal{D}_l$; original still unlearned |
-| Mid-training (OctoThinker-3B-Hybrid/Long) | Representation defect | ✓ | Gradient similarity to training distribution significantly increased |
+| Oversampling + replay (1 pos, 7 neg) | Scarcity of positive samples | ✗ | $\mathcal{D}_l$ slowed down, but $\mathcal{D}_u$ curve unchanged |
+| SFT distillation of correct answers on $\mathcal{D}_u$ | Lack of supervision | ✗ | Gap does not vanish |
+| RL on $\mathcal{D}_u$ only with $k=64$ rollouts | Insufficient exploration | ✗ | Gap does not vanish |
+| Clip-higher | Gradient suppression by clipping | ✗ | Clipping ratios for all three groups nearly overlap |
+| Remove KL term | KL constraint limits updates | ✗ | Reward dynamics remain the same |
+| Similar question $\mathcal{D}_u^{sim}$ augmentation | Lack of related signals | ✗ | Augmented questions are learned; original $\mathcal{D}_u$ remains unlearned |
+| Sub-problem $\mathcal{D}_u^{sub}$ augmentation | Skills not decomposed | ✗ | Sub-problems learned faster than $\mathcal{D}_l$; original problem remains unlearned |
+| Mid-training (OctoThinker-3B-Hybrid/Long) | Representation defects | ✓ | Alignment of hard samples to training distribution significantly increased |
 
 ### Key Findings
-- **Unlearnability stems from representation, not optimization**: Five types of optimization/data-side interventions failed; only changing the base model (mid-training) worked, strongly suggesting the issue exists prior to RL.
-- **Gradient similarity is a strong proxy for learnability**: $\mathcal{D}_u$ contains isolated gradient outliers. This aligns perfectly with reward curve grouping and persists through step 50, indicating it is not an initialization fluke.
-- **Correct Answer ≠ Correct Reasoning**: GPT-5-mini scores show $\mathcal{D}_u$ correct rollouts rely on shortcuts. Case studies show models arriving at correct answers through clearly flawed logic, highlighting reward-hacking risks in outcome-only RL.
-- **Semantic Similarity ≠ Optimization Similarity**: Synthetic similar problems generated by GPT-5 remain structurally identical but do not improve gradient similarity for $\mathcal{D}_u$, meaning these samples are "isolated islands" in the optimization space.
-- **Divergence increases with training**: Reasoning quality for $\mathcal{D}_l$ improves continuously, while $\mathcal{D}_u$ stagnates. Curriculum learning fails to transfer improvements from easy/learnable categories to unlearnable ones.
+- **Unlearnability stems from representation, not optimization**: Five types of optimization/data-side interventions failed; only changing the base model representation (mid-training) was effective, pointing strongly to pre-RL issues.
+- **Gradient similarity is a strong proxy for learnability**: $\mathcal{D}_u$ are isolated gradient outliers, while $\mathcal{D}_l$ and easy samples show higher alignment. This aligns with reward curve groupings and persists even at step 50.
+- **Correct answers $\neq$ Correct reasoning**: GPT-5-mini scores show $\mathcal{D}_u$ correct rollouts rely on shortcuts. A case study on volume inequality shows the model arriving at correct answers through flawed logic, highlighting the risk of reward-hacking with outcome rewards.
+- **Semantic similarity $\neq$ Optimization similarity**: Synthesized "semantically similar" questions do not necessarily increase gradient similarity. $\mathcal{D}_u$ remains an "isolated peak" in the optimization space that semantic augmentation cannot move.
+- **Gaps widen with deeper training**: Reasoning quality for $\mathcal{D}_l$ improves consistently from step 50 to 120, while $\mathcal{D}_u$ stagnates. Curriculum learning fails to transfer improvements to $\mathcal{D}_u$.
 
 ## Highlights & Insights
-- **Geometric interpretation of "unlearnability"**: Gradient similarity explains why updates from other samples do not generalize and why oversampling is futile. The LoRA-only gradient approximation makes this analysis feasible at scale.
-- **Empirical evidence of "answers aren't enough"**: Quantifying the gap between outcome and process rewards via GPT-5-mini provides motivation for process supervision or mid-step verifiers.
-- **Model of "Negative Results" reporting**: The study systematically eliminates hypotheses (oversampling, distillation, etc.) before arriving at mid-training, providing a diagnostic paradigm transferable to other areas like forgetting in SFT.
-- **Transferable Trick**: Using the "Gradient Similarity / Reasoning Quality / pass@k" triad to characterize the "optimization properties" of training data, allowing for smarter data pruning or curriculum labeling before training begins.
+- **Shifting the focus from reward curves to optimization space geometry**: Gradient similarity explains both why learning does not transfer and why oversampling fails. Using LoRA-only gradients makes this analysis feasible at the 0.5B-3B scale.
+- **Empirical proof that correct answers do not equal correct reasoning**: Using GPT-5-mini to score chains provides a concrete motivation for process supervision or mid-step verifiers, as outcome-only rewards treat reward-hacked rollouts as valid signals.
+- **Effective reporting of negative results**: The systematic exclusion of hypotheses (oversampling, SFT, large $k$, etc.) provides a diagnostic paradigm that can be applied to other training dynamics like forgetting in SFT or over-optimization in RLHF.
+- **Transferable trick**: Using the "gradient similarity / reasoning quality / pass@k" triad to characterize the "optimization properties" of training data allows for smarter data filtering and curriculum design before SFT.
 
 ## Limitations & Future Work
-- Experiments are limited to 0.5B–3B mathematical reasoning models. Whether unlearnable samples persist at 30B+ scales or in code/agent domains is unverified.
-- "Unlearnability" depends on a hard threshold ($\tau=0.1$). While mitigated by the intersection of three runs, a continuous sensitivity analysis of $\tau$ is missing.
-- No active algorithm for "fixing" these samples is proposed; mid-training is left as an open question regarding what data and algorithms are most effective.
-- The concluding lack of success for similar-problem augmentation depends on synthetic data quality from GPT-5/Gemini-2.5-pro.
-- The geometric explanation for gradient similarity remains high-level; future work could investigate whether a low-rank subspace explains $\mathcal{D}_u$ outliers.
+- Experiments are restricted to 0.5B–3B scale math reasoning models; it is unverified whether the same proportion of unlearnable samples exists in 30B+ models or code/agent domains.
+- "Unlearnability" depends on a hard threshold $\tau=0.1$ and $N=32$ pass@1 estimates; boundary cases may be slightly stochastic.
+- No immediate "fix" algorithm is provided—what specific data or algorithms in mid-training are most effective remains an open question.
+- The conclusion that "similar question augmentation is ineffective" depends on the synthesis quality of GPT-5; inaccuracies in synthesis might overestimate the disconnect between semantic and optimization similarity.
+- Geometric explanations remain coarse; researching whether a low-rank subspace explains the outliers or designing representation alignment losses are potential next steps.
 
 ## Related Work & Insights
-- **vs. Sun et al. 2025b (Fine-grained reward assignment)**: While they assume better reward design enables learning, Ours proves that even with positive outcome rewards, some samples remain unlearnable due to representation.
-- **vs. Yue et al. 2025 (RL cannot teach new skills not in base model)**: Ours aligns with this "RL capability ceiling" but provides a micro, quantifiable view based on gradient geometry.
-- **vs. DAPO / Clip-higher / No KL**: Key interventions from DAPO were directly ablated and shown to benefit $\mathcal{D}_l$ rather than $\mathcal{D}_u$.
-- **vs. OctoThinker / mid-training (Wang et al. 2025)**: Ours provides a new motivation—mid-training is not just "making the base stronger" but "aligning gradients of hard samples with the distribution."
+- **vs. Sun et al. 2025b (Fine-grained reward assignment)**: While Sun et al. assume better reward design makes any sample learnable, this paper proves some samples remain unlearned even with positive rewards, shifting the focus to representation.
+- **vs. Yue et al. 2025 / Wu et al. 2026 (RL cannot teach new skills not in the base model)**: This paper follows the same "ceiling of RL" theme but provides a micro-level, quantifiable perspective on which specific samples are excluded and their geometric features.
+- **vs. DAPO / clip-higher / no KL**: Core interventions in DAPO (high clipping, no KL) were ablated here and shown to benefit $\mathcal{D}_l$ primarily, rather than $\mathcal{D}_u$.
+- **vs. OctoThinker / Mid-training (Wang et al. 2025)**: This paper provides a new motivation for mid-training—not just "making the base stronger," but "aligning hard samples with the training distribution's gradients."
+- **vs. Nikankin et al. "Bag of heuristics"**: The reasoning quality analysis confirms that LLMs often use heuristic mosaics, specifically identifying this as the dominant behavior for unlearnable samples under outcome rewards.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic characterization of "unlearnability despite positive reward" with a geometric mechanism.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid across multiple models/datasets, though scale is limited to $\leq$ 3B.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Exceptionally clear organization of negative results via the "method of exclusion."
-- **Value**: ⭐⭐⭐⭐⭐ Directly challenges the "Positive Reward $\Rightarrow$ Learnability" assumption, providing evidence for mid-training and process rewards.
+- Novelty: ⭐⭐⭐⭐⭐ First to systematically characterize "positive reward but unlearnable" and provide a geometric gradient explanation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three models across two data scales with a complete hypothesis exclusion chain, though limited to $\leq$ 3B models.
+- Writing Quality: ⭐⭐⭐⭐⭐ The "elimination method" for negative results is exceptionally clear; case studies and charts are well-coordinated.
+- Value: ⭐⭐⭐⭐⭐ Directly challenges the "positive reward $\Rightarrow$ learnable" assumption, providing evidence for data filtering, mid-training, and process reward research.
 
 <!-- RELATED:START -->
 

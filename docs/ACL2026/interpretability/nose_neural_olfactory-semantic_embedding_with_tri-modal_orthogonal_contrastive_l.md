@@ -2,71 +2,81 @@
 title: >-
   [Paper Note] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 description: >-
-  [ACL 2026][Interpretability][Olfactory representation learning] This paper proposes NOSE, a tri-modal olfactory representation learning framework that uses molecules as a hub to align molecular structures…
+  [ACL 2026][Interpretability][Paper Note] The authors propose NOSE, a tri-modal olfactory representation learning framework. By using molecules as a hub, the framework aligns molecular structure, receptor sequences, and natural language descriptions through an orthogonal injection mechanism. Coupled with an LLM-driven weak positive sample strategy to alleviate
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Olfactory representation learning"
-  - "Tri-modal alignment"
-  - "Orthogonal decoupling"
-  - "Contrastive learning"
-  - "Weak positives"
+  - ACL 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: be1dac7bf28d8a77
+content_hash: 7f8c3053bb133d23
 ---
-
 # NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.10452](https://arxiv.org/abs/2604.10452)  
 **Code**: [GitHub](https://github.com/Xianyusyy/NOSE)  
 **Area**: Interpretability  
-**Keywords**: Olfactory representation learning, Tri-modal alignment, Orthogonal decoupling, Contrastive learning, Weak positives
+**Keywords**: Olfactory representation learning, Tri-modal alignment, Orthogonal decoupling, Contrastive learning, Weak positive samples
 
 ## TL;DR
-This paper proposes NOSE, a tri-modal olfactory representation learning framework that uses molecules as a hub to align molecular structures, receptor sequences, and natural language descriptions via an orthogonal injection mechanism. Coupled with an LLM-driven weak positive strategy to alleviate description sparsity, NOSE achieves SOTA results across 11 downstream tasks and demonstrates superior zero-shot generalization capabilities.
+The authors propose NOSE, a tri-modal olfactory representation learning framework. By using molecules as a hub, the framework aligns molecular structure, receptor sequences, and natural language descriptions through an orthogonal injection mechanism. Coupled with an LLM-driven weak positive sample strategy to alleviate description sparsity, it achieves SOTA performance across 11 downstream tasks and demonstrates excellent zero-shot generalization capabilities.
 
 ## Background & Motivation
 
-**Background**: Olfaction is the most challenging sense to digitize—vision has pixels and audition has spectra, but olfaction lacks a stable mapping from physical quantities to perception. The olfactory perception chain consists of: molecular structure → receptor binding → neural signals → linguistic description.
+**Background**: Olfaction is the most challenging sense to digitize. While vision relies on pixels and audition on spectra, olfaction lacks a stable mapping from physical quantities to perception. The olfactory perception chain consists of: Molecular structure → Receptor binding → Neural signals → Language description.
 
-**Limitations of Prior Work**: (1) Existing methods only model fragments of the olfactory pathway (either molecular structure alone, or just molecule-description/receptor correspondences), failing to capture the complete molecule-receptor-semantic chain in a unified framework; (2) Mainstream approaches model odor prediction as classification (e.g., "floral" vs. "fruity"), which breaks the continuity of the odor space—descriptors like "minty" and "cool" are highly correlated but treated as independent labels in classification; (3) Classification objectives force models to fit label boundaries, discarding structural information that is crucial for molecular identity but irrelevant for specific classification.
+**Limitations of Prior Work**: (1) Existing methods only model fragments of the olfactory pathway (e.g., only molecular structure, or only molecule-description/receptor pairs), failing to capture the complete chain in a unified framework. (2) Prevailing methods treat odor prediction as a classification problem (e.g., "floral" vs. "fruity"), which breaks the continuity of the odor space—"minty" and "cool" are highly correlated but treated as independent labels in classification. (3) Classification objectives force models to fit label boundaries, discarding structural information that is important for molecules but irrelevant for specific categories.
 
-**Key Challenge**: Complete tri-modal data (molecule-receptor-description triplets) are extremely scarce, although bi-modal data (molecule-receptor and molecule-description) can be obtained separately. How can tri-modal alignment be achieved without triplet annotations?
+**Key Challenge**: Complete tri-modal data (molecule-receptor-description triplets) is extremely scarce, whereas bi-modal data (molecule-receptor and molecule-description) can be obtained separately. How can tri-modal alignment be achieved without triplet annotations?
 
-**Goal**: Construct a continuous representation space covering the full olfactory perception pathway, ensuring that molecular embeddings encode both receptor and semantic information without mutual interference.
+**Goal**: Construct a continuous representation space covering the entire olfactory perception pathway, ensuring molecular representations encode both receptor and semantic information without mutual interference.
 
-**Key Insight**: The molecule serves as the sole intersection of the two bi-modal datasets, acting as a hub to bridge receptor and semantic information. The critical problem is preventing the two signals from overriding each other during injection—the solution is orthogonal injection.
+**Key Insight**: Molecules serve as the unique intersection of the two bi-modal datasets and can act as a hub to bridge receptor and semantic information. The critical issue is preventing signals from overwriting each other during injection; the proposed solution is orthogonal injection.
 
-**Core Idea**: Treat receptor and semantic features as orthogonal increments superimposed on the molecular representation. Use Gram-Schmidt orthogonalization to ensure modal independence, while leveraging LLMs to mine semantic neighbor relationships between odor descriptors to expand sparse labels.
+**Core Idea**: Receptor and semantic features are superimposed onto molecular representations as orthogonal increments. Independence between modalities is guaranteed through Gram-Schmidt orthogonalization, while LLMs are used to mine semantic neighbors among odor descriptors to expand sparse labels.
 
 ## Method
 
 ### Overall Architecture
-NOSE performs tri-modal pre-training focused on the molecule: Uni-Mol extracts 3D molecular features $z_{mol}$ (frozen), ESM-2 extracts receptor sequence features $z_{rec}$ (with a trainable projection layer), and Qwen3 Embedding extracts odor description features $z_{desc}$ via LoRA fine-tuning. Molecular embeddings are decomposed through dual adapters into a receptor-alignment component $a_r$ and a description-alignment component $a_d$. After Gram-Schmidt orthogonalization, the model is trained with multiple InfoNCE losses. Only the molecular encoder and adapters are required during inference.
+
+NOSE aims to compress the complete olfactory pathway into a continuous representation space without "molecule-receptor-description" triplet labels. Using the molecule as a hub: Uni-Mol (frozen) extracts 3D molecular structure features $z_{mol}$; ESM-2 with a trainable projection layer extracts receptor sequence features $z_{rec}$; and Qwen3 Embedding fine-tuned via LoRA extracts odor description features $z_{desc}$. Molecular embeddings are decomposed by dual adapters into a receptor-aligned component $a_r$ and a description-aligned component $a_d$. Both are orthogonalized and aligned to their respective modalities using sets of InfoNCE losses. Thus, the molecule serves as a pivot for indirect bridging. At inference time, only the molecular encoder and adapters are required to output tri-modal fused representations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    M["Molecule SMILES"] --> ME["Uni-Mol (Frozen)<br/>Struct. Feature z_mol"]
+    R["Receptor Sequence"] --> RE["ESM-2 + Projector<br/>Receptor Feature z_rec"]
+    D["Odor Description"] --> DE["Qwen3 + LoRA<br/>Desc. Feature z_desc"]
+    ME --> ADP
+    subgraph ADP["Differential Adapters"]
+        direction TB
+        AR["Receptor Adapter: Bottleneck + High Dropout → a_r"]
+        AD["Description Adapter: 12-layer Inv-Bottleneck ResMLP → a_d"]
+    end
+    ADP --> ORTH["Orthogonal Injection<br/>Gram-Schmidt + Soft Decorr."]
+    ORTH --> LOSS["Tri-modal InfoNCE Alignment"]
+    RE -->|Rec-Mol Alignment| LOSS
+    DE -->|Desc-Mol Alignment| LOSS
+    WP["Weak Positives<br/>LLM Semantic Neighbors → Soft Weighting"] --> LOSS
+    LOSS --> OUT["Fused Representation<br/>Z = w1·z_mol + w2·a_r + w3·a_d"]
+```
 
 ### Key Designs
 
-1. **Orthogonal Injection Mechanism**:
+**1. Differential Adapters: Absorbing a 20x Scale Gap via Architectural Variance**
 
-    - **Function**: Independently injects receptor and semantic features into molecular representations to prevent information overlap between modalities.
-    - **Mechanism**: Hard orthogonalization (geometric decoupling) is achieved via Gram-Schmidt by projecting adapter output $a_{adapter}$ onto the orthogonal complement of $z_{mol}$: $z_{adapter} = a_{adapter} - \frac{a_{adapter} \cdot z_{mol}}{\|z_{mol}\|^2 + \epsilon} z_{mol}$. Soft orthogonalization (optimization regularization) uses the loss function $\mathcal{L}_{orth} = \sum_{(i,j)} \|\frac{z_i}{\|z_i\|} \cdot \frac{z_j}{\|z_j\|}\|^2$ to keep the three subspaces decorrelated.
-    - **Design Motivation**: Simple multi-modal fusion leads to feature redundancy and information overriding; orthogonal constraints ensure that each modality contributes unique and irreplaceable information.
+Molecular representations $z_{mol}$ must align with both receptor and description modalities, but the dataset scales vary drastically—receptor data contains only 3,877 pairs, while description data reaches 88,512 pairs. A unified architecture would inevitably overfit one side and underfit the other. NOSE designs adapters with different capacities: the description adapter uses a 12-layer inverse-bottleneck ResMLP to handle rich text, while the receptor adapter uses a bottleneck structure with high dropout to provide strong regularization against sparse data. The architectural difference specifically matches the data volume.
 
-2. **LLM-driven Weak Positive Augmentation**:
+**2. Orthogonal Injection: Ensuring Independent Subspaces for Receptor and Semantic Signals**
 
-    - **Function**: Alleviates false negative issues caused by the sparsity of odor descriptions.
-    - **Mechanism**: DeepSeek is used to mine semantic neighbor relationships among 1,086 odor descriptors, expanding isolated labels into a continuous olfactory semantic neighborhood. In contrastive learning, positive samples receive a weight of 1.0, weak positives 0.5, and negatives 0.0, implementing a softened InfoNCE loss.
-    - **Design Motivation**: In traditional contrastive learning, "lemon" and "sour" would be treated as negatives and repelled, yet they should be adjacent in olfactory space. The weak positive strategy transforms discrete label spaces into continuous semantic manifolds.
+Simply superimposing components $a_r$ and $a_d$ onto the molecular representation leads to redundancy and signal overwriting. NOSE employs two orthogonal constraints. Hard orthogonalization achieves geometric decoupling by projecting adapter outputs onto the orthogonal complement of $z_{mol}$ via Gram-Schmidt: $z_{adapter} = a_{adapter} - \frac{a_{adapter} \cdot z_{mol}}{\|z_{mol}\|^2 + \epsilon} z_{mol}$, ensuring increments are perpendicular to the backbone. Soft orthogonalization performs optimization-level decorrelation using a regularization term $\mathcal{L}_{orth} = \sum_{(i,j)} \|\frac{z_i}{\|z_i\|} \cdot \frac{z_j}{\|z_j\|}\|^2$ to keep the three subspaces decorrelated. Together, they allow each modality to contribute unique information without interference.
 
-3. **Differential Adapter Design**:
+**3. LLM-Driven Weak Positives: Softening Discrete Labels into Continuous Semantic Manifolds**
 
-    - **Function**: Adapts to the massive scale disparity between the two bi-modal datasets (3,877 receptor pairs vs. 88,512 description pairs).
-    - **Mechanism**: The description adapter uses a 12-layer inverted bottleneck ResMLP structure (high capacity for rich text data), while the receptor adapter uses a bottleneck structure with high dropout (to prevent overfitting on sparse data).
-    - **Design Motivation**: A data volume difference exceeding 20x means a unified architecture would cause overfitting on one side or underfitting on the other.
+Alignment components rely on contrastive loss, but odor descriptions are naturally sparse. Traditional contrastive learning treats "lemon" and "sour" as negative samples that repel each other, even though they are adjacent in olfactory space. NOSE uses DeepSeek to mine semantic neighbors among 1,086 odor descriptors, expanding isolated labels into continuous neighborhoods. In description-molecule contrastive learning, positive samples are weighted 1.0, weak positives 0.5, and negatives 0.0, resulting in a softened InfoNCE loss that reshapes the label space into a semantic manifold.
 
 ### Loss & Training
-The total loss includes receptor-molecule InfoNCE, description-molecule soft-weighted InfoNCE, intra-modal InfoNCE, and orthogonal constraint losses. The molecular encoder (Uni-Mol) is frozen, ESM-2 has a trainable projection, and Qwen3 Embedding is fine-tuned with LoRA. The final representation is $Z = w_1 \cdot z_{mol} + w_2 \cdot a_r + w_3 \cdot a_d$.
+
+The total loss consists of receptor-molecule InfoNCE, description-molecule soft-weighted InfoNCE, intra-modal InfoNCE, and orthogonal constraint losses. During training, the molecular encoder (Uni-Mol) is frozen, only the ESM-2 projection layer is trained, and Qwen3 Embedding is fine-tuned via LoRA. The final representation is a weighted fusion: $Z = w_1 \cdot z_{mol} + w_2 \cdot a_r + w_3 \cdot a_d$.
 
 ## Key Experimental Results
 
@@ -80,38 +90,38 @@ The total loss includes receptor-molecule InfoNCE, description-molecule soft-wei
 
 ### Ablation Study
 
-| Configuration | Key Indicator | Description |
+| Configuration | Key Metric | Description |
 |------|---------|------|
 | NOSE (Full) | SOTA | Tri-modal + Orthogonal + Weak Positives |
-| w/o Receptor Modality | Significant Drop | Bi-modal only, missing biological grounding |
-| w/o Orthogonal Constraint | Drop | Modal feature redundancy |
-| w/o Weak Positives | Drop | False negatives causing representation degradation |
+| w/o Receptor | Significant drop | Bi-modal only, lacks biological grounding |
+| w/o Orthogonality | Drop | Redundant modal features |
+| w/o Weak Positives | Drop | False negatives cause representation collapse |
 
 ### Key Findings
-- NOSE consistently reaches or exceeds SOTA across 11 downstream tasks, with the largest gains on sparse datasets (Sagar) (Pearson jumping from 0.14 to 0.40).
-- Excellent zero-shot generalization performance validates the strong alignment between the representation space and human olfactory intuition.
-- Performance on mixture perception tasks is also strong, indicating the learned representations capture non-linear interactions between molecules.
+- NOSE consistently reaches or exceeds SOTA across 11 downstream tasks, with the largest gains in sparse datasets (e.g., Sagar Pearson jumped from 0.14 to 0.40).
+- Superior zero-shot generalization confirms high alignment between the representation space and human olfactory intuition.
+- Performance on mixture tasks suggests the learned representations capture non-linear interactions between molecules.
 
 ## Highlights & Insights
-- Implementing tri-modal alignment without triplet labels by using the molecule as a hub is a core innovation—leveraging the intersection of bi-modal data to bridge the third modality indirectly.
-- The philosophy of orthogonal injection is transferable: in any multi-modal fusion where signal sources provide complementary rather than redundant information, orthogonal constraints prevent information overriding.
-- The weak positive strategy "softens" discrete label spaces into continuous manifolds, a generalizable technique for handling label sparsity in contrastive learning.
+- Implementing tri-modal alignment without triplet annotations by using molecules as a hub is the core innovation.
+- The orthogonal injection philosophy is highly transferable: in any multi-modal fusion where sources provide complementary information, orthogonal constraints prevent information overwriting.
+- The weak positive strategy "softens" discrete label spaces into continuous manifolds, serving as a general technique for handling label sparsity in contrastive learning.
 
 ## Limitations & Future Work
-- Receptor data remains limited (3,877 pairs); performance may improve as more receptor-ligand data accumulates.
-- Currently only considers single-molecule odor prediction; combinatorial effects of mixed odors in real-world scenarios are more complex.
-- The subjectivity of olfactory descriptions is fundamentally difficult to resolve, as descriptions vary significantly across different cultural backgrounds.
+- Receptor data is still limited (3,877 pairs); performance may improve as more receptor-ligand data accumulates.
+- The model currently focuses on single-molecule odor prediction; combinatorial effects in real-world mixtures are more complex.
+- Subjectivity in olfactory descriptions remains an inherent challenge, with significant variations across cultural backgrounds.
 
 ## Related Work & Insights
-- **vs POM**: POM only models molecule-description bi-modality and lacks biological grounding from receptors; NOSE tri-modal alignment consistently outperforms POM in perceptual attribute prediction.
-- **vs Uni-Mol**: While Uni-Mol is a strong molecular encoder, NOSE further enhances performance across all tasks by injecting receptor and semantic information.
-- **vs Classification Methods**: Traditional classification fails to capture the continuity of the odor space; NOSE's representation learning paradigm fundamentally addresses this issue.
+- **vs POM**: POM only models molecule-description bi-modality and lacks biological grounding from receptors; NOSE outperforms POM consistently in perceptual attribute tasks.
+- **vs Uni-Mol**: While Uni-Mol is a strong molecular encoder, NOSE enhances it by injecting receptor and semantic information.
+- **vs Classification Methods**: Traditional classification cannot capture the continuity of odor space; NOSE's representation learning paradigm fundamentally addresses this issue.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First tri-modal framework covering the full olfactory pathway; novel orthogonal injection mechanism.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 downstream tasks, 6 datasets, comprehensive ablation and zero-shot experiments.
+- Novelty: ⭐⭐⭐⭐⭐ First tri-modal framework covering the full olfactory pathway; novel orthogonal injection.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 downstream tasks across 6 datasets with extensive ablation and zero-shot tests.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear derivation of motivation, high-quality figures, and accessible background introduction.
-- Value: ⭐⭐⭐⭐ Olfactory computing is an emerging cross-disciplinary field; the framework design is transferable to other multi-modal scenarios.
+- Value: ⭐⭐⭐⭐ Olfactory computing is a rising cross-disciplinary field; the framework design is transferable to other multi-modal scenarios.
 
 <!-- RELATED:START -->
 
@@ -121,9 +131,9 @@ The total loss includes receptor-molecule InfoNCE, description-molecule soft-wei
 
 - [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
 - [\[AAAI 2026\] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation](../../AAAI2026/interpretability/explainable_melanoma_diagnosis_with_contrastive_learning_and_llm-based_report_ge.md)
+- [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](../../CVPR2026/interpretability/prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[CVPR 2025\] Learning Visual Composition through Improved Semantic Guidance](../../CVPR2025/interpretability/learning_visual_composition_through_improved_semantic_guidance.md)
 - [\[AAAI 2026\] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](../../AAAI2026/interpretability/adaptive_evidential_learning_for_temporal-semantic_robustnes.md)
-- [\[ACL 2026\] Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse](interpretable_semantic_gradients_in_ssd_a_pca_sweep_approach_and_a_case_study_on.md)
-- [\[ICML 2026\] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere](../../ICML2026/interpretability/neural_collapse_by_design_learning_class_prototypes_on_the_hypersphere.md)
 
 </div>
 

@@ -2,82 +2,82 @@
 title: >-
   [Paper Note] SURF: Separation via Unsupervised Remixing Flow
 description: >-
-  [ICML 2026][Image Generation][Single-channel source separation] SURF combines the supervised flow matching framework FLOSS with unsupervised teacher-student remixing training (ReMixIT / Self-Remixing). This allows a gene…
+  [ICML 2026][Image Generation][Flow Matching] SURF combines the supervised flow matching framework FLOSS with the unsupervised ReMixIT / Self-Remixing teacher-student remixing training strategy. This allows a generative flow matching separator to be trained **entirely from mixture observations** (without any clean source samples). It nearly matches the performance
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "Single-channel source separation"
-  - "Flow Matching"
-  - "Unsupervised learning"
-  - "Teacher-Student distillation"
-  - "Wake-Sleep"
+  - ICML 2026
+  - Image Generation
+  - Flow Matching
+  - Wake-Sleep
 date: 2026-05-08
-content_hash: 6776f142140d02e5
+content_hash: fbe540f0740a647e
 ---
-
 # SURF: Separation via Unsupervised Remixing Flow
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.04921](https://arxiv.org/abs/2606.04921)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Audio & Speech / Source Separation / Generative Models  
-**Keywords**: Single-channel source separation, Flow Matching, Unsupervised learning, Teacher-Student distillation, Wake-Sleep  
+**Keywords**: Single-channel source separation, Flow matching, Unsupervised learning, Teacher-student distillation, Wake-Sleep
 
 ## TL;DR
-SURF combines the supervised flow matching framework FLOSS with unsupervised teacher-student remixing training (ReMixIT / Self-Remixing). This allows a generative flow matching separator to be trained **entirely from mixture observations** (without any clean source samples). It nearly matches supervised flow performance on MNIST/CIFAR10 image separation and LibriSpeech/FUSS audio separation, establishing a new unsupervised SOTA.
+SURF combines the supervised flow matching framework FLOSS with the unsupervised ReMixIT / Self-Remixing teacher-student remixing training strategy. This allows a generative flow matching separator to be trained **entirely from mixture observations** (without any clean source samples). It nearly matches the performance of supervised flows on MNIST/CIFAR10 image separation and LibriSpeech / FUSS audio separation, establishing a new unsupervised SOTA.
 
 ## Background & Motivation
 
-**Background**: Single-channel source separation (recovering $K$ underlying sources from a single mixture) is a highly ill-posed inverse problem. In the deep learning era, two main paradigms exist: discriminative regression (e.g., Conv-TasNet, TF-Locoformer), which directly maps mixtures to sources; and generative models (e.g., diffusion, flow matching), which treat separation as conditional generation constrained by a strong prior learned from clean sources. Recently, FLOSS (Scheibler et al., 2025) achieved SOTA results using flow matching.
+**Background**: Single-channel source separation (recovering $K$ underlying sources from one mixture) is a highly ill-posed inverse problem. The deep learning era is divided into two factions: discriminative regression (e.g., Conv-TasNet, TF-Locoformer), which maps mixtures directly to sources, and generative models (diffusion / flow matching), which treat separation as conditional generation constrained by a strong clean source prior. The latter recently achieved SOTA performance using FLOSS (Scheibler et al., 2025).
 
-**Limitations of Prior Work**: All generative methods assume **access to clean source samples** to train the prior. however, in scenarios like bioacoustics, hyperspectral imaging, or gravitational wave detection, capturing an isolated source is often impossible. Even if samples are available, the train-test domain shift remains a persistent issue. Unsupervised methods like MixIT, ReMixIT, and Self-Remixing have successfully trained discriminative separators using self-supervision (teacher estimates $\rightarrow$ remix into new mixture $\rightarrow$ student learns back), but these methods only apply to regression-based separators (which directly output $\hat{x}$). **Mapping "velocity fields" in flow matching to these unsupervised frameworks has remained unexplored.**
+**Limitations of Prior Work**: All generative methods assume that **clean source samples are available** to train the prior. However, in scenarios like bioacoustics, hyperspectral imaging, or gravitational wave detection, recording an isolated source is often impossible. Even when available, the training-test domain shift remains a persistent issue. Unsupervised methods such as MixIT / ReMixIT / Self-Remixing have successfully trained discriminative separators using "teacher estimate → shuffle/remix into new mixture → student recovery" self-supervision, but these are designed for regression-based separators (directly outputting $\hat{x}$). **No prior work has unified this with generative models like flow matching that learn velocity fields.**
 
-**Key Challenge**: The training objective of flow matching is to regress the velocity $v_\theta(x_t, t, m)$, whereas ReMixIT-style self-supervision objectives target direct source regression $\hat{x}$. These different output semantics make simple integration difficult due to conflicts in PIT (Permutation Invariant Training) alignment and mixture consistency injection.
+**Key Challenge**: The training objective of flow matching is the regression of the velocity field $v_\theta(x_t, t, m)$, whereas ReMixIT-style self-supervised methods aim for direct source regression $\hat{x}$. The semantics of these outputs differ; consequently, injecting PIT (Permutation Invariant Training) and mixture consistency is non-trivial, making simple combination ineffective.
 
-**Goal**: To train a generative flow separator like FLOSS **entirely from mixture observations** without significant performance degradation.
+**Goal**: To train a generative flow matching separator like FLOSS **completely from mixture observations** without significant performance degradation.
 
-**Key Insight**: The authors identified a simple identity: given a flow matching path $x_t = (1-t)x_0 + t x_1$ and $\boldsymbol{u}(x,t)=\mathbb{E}[x_1-x_0|x_t,m]$, it follows that $\mathbb{E}[x_1|x_t, m] \approx x_t + (1-t)v_\theta(x_t, t, m)$. This conceptually links the velocity field to the "clean source estimate" required by ReMixIT, enabling the grafting of ReMixIT / Self-Remixing losses onto flow matching.
+**Key Insight**: The authors identified a simple identity: given the flow matching path $x_t = (1-t)x_0 + t x_1$ and $\boldsymbol{u}(x,t)=\mathbb{E}[x_1-x_0|x_t,m]$, it follows that $\mathbb{E}[x_1|x_t, m] \approx x_t + (1-t)v_\theta(x_t, t, m)$. This conceptually bridges the velocity field with the "clean source estimate" required by ReMixIT, allowing ReMixIT / Self-Remixing losses to be grafted onto flow models.
 
-**Core Idea**: Use an EMA (Exponential Moving Average) teacher flow model to generate pseudo-sources $\rightarrow$ remix them across batches to form new mixtures $\rightarrow$ train the student flow using FLOSS-style "PIT to select optimal permutation + regress velocity on the chosen path" $\rightarrow$ update the teacher via EMA. ReMixIT targets teacher pseudo-sources, while Self-Remixing targets the original mixture itself.
+**Core Idea**: Use an EMA teacher flow model to generate pseudo-sources → Shuffle and remix across batches to form new synthetic mixtures → Train the student flow using FLOSS logic (PIT for optimal permutation + velocity regression on the chosen path) → EMA update the student back to the teacher. ReMixIT-FM targets teacher pseudo-sources, while Self-Remixing-FM targets the original mixture observations.
 
 ## Method
 
 ### Overall Architecture
-SURF utilizes two flow matching networks with identical structures: $v_{\theta_\mathcal{T}}$ (teacher) and $v_\theta$ (student), both trained via FLOSS principles. Both are initialized from a MixIT-pretrained regression separator. In each iteration:
+SURF addresses the problem of training a generative flow separator without any clean sources. It utilizes two identical flow matching networks trained via FLOSS: an EMA teacher $v_{\theta_\mathcal{T}}$ responsible for generating pseudo-sources, and a student $v_\theta$ that learns from the remixed mixtures. This grafts the "teacher estimate → remix → student learn" cycle onto flow matching. Both networks are initialized from a regression-based separator pretrained with MixIT.
 
-1. **Teacher Inference**: Starting from a batch of real mixtures $\boldsymbol{M}=[\boldsymbol{m}_1,\dots,\boldsymbol{m}_B]$, the teacher samples pseudo-sources $\mathcal{X} \in \mathbb{R}^{BK\times d}$ via the flow ODE.
-2. **Remixing**: Sample a permutation $\boldsymbol{\Pi}$ from $S_{BK}$ to shuffle all $BK$ rows, obtaining $\tilde{\boldsymbol{X}}_1 = \boldsymbol{\Pi}\mathcal{X}$, then sum them to form new mixtures $\tilde{\boldsymbol{M}}=(\boldsymbol{I}_B\otimes \mathbf{1}^\top)\tilde{\boldsymbol{X}}_1$.
-3. **FM Path Construction**: Define the noise end as $\tilde{\boldsymbol{X}}_0 = \tfrac{1}{K}(\boldsymbol{I}_B\otimes \mathbf{1})\tilde{\boldsymbol{M}} + (\boldsymbol{I}_B\otimes \boldsymbol{P}^\perp)\boldsymbol{Z}$ (to ensure mixture consistency). Use the student's $t=0$ velocity to perform PIT and find the optimal permutation $\boldsymbol{\Upsilon}$, resulting in the interpolation $\tilde{\boldsymbol{X}}_t^{\boldsymbol{\Upsilon}}=(1-t)\tilde{\boldsymbol{X}}_0 + t\boldsymbol{\Upsilon}\tilde{\boldsymbol{X}}_1$.
-4. **Loss Calculation**: Define the residual $\boldsymbol{R}_t = v_\theta(\tilde{\boldsymbol{X}}_t^{\boldsymbol{\Upsilon}}, t, \tilde{\boldsymbol{M}}) - (\boldsymbol{\Upsilon}\tilde{\boldsymbol{X}}_1 - \tilde{\boldsymbol{X}}_0)$ and supervise via two possible paths.
-5. **EMA Teacher Update**: $\theta_\mathcal{T} \leftarrow \alpha \theta_\mathcal{T} + (1-\alpha)\theta$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    M["Real Mixture Observations<br/>(No Clean Sources)"] --> T["EMA Teacher Flow<br/>Flow ODE Sampling Pseudo-sources"]
+    T --> BR["Velocity-to-Denoiser Bridge<br/>E[x1|xt] ≈ xt + (1−t)·v"]
+    BR --> RM["Remixing: Cross-batch Shuffling<br/>to Create New Synthetic Mixtures"]
+    RM --> S["Student Flow<br/>FLOSS PIT Permutation + Velocity Regression Rt"]
+    S --> L["ReMixIT-FM / Self-Remixing-FM Dual Loss"]
+    L -->|"Backprop to Update Student"| S
+    S -.->|"Wake-Sleep: EMA Update θT ← αθT + (1−α)θ"| T
+```
 
-The entire process **requires zero clean sources**—all targets are derived either from the teacher (ReMixIT variant) or the original observed mixtures (Self-Remixing variant).
+### Mechanism
+A single training step proceeds as follows: Given a batch of real mixtures $\boldsymbol{M}=[\boldsymbol{m}_1,\dots,\boldsymbol{m}_B]$, the **teacher** first samples pseudo-sources $\mathcal{X}\in\mathbb{R}^{BK\times d}$ using the flow ODE. During **remixing**, a permutation $\boldsymbol{\Pi}$ is sampled from $S_{BK}$ to shuffle the pseudo-sources across the batch, yielding $\tilde{\boldsymbol{X}}_1=\boldsymbol{\Pi}\mathcal{X}$, which are summed to form new synthetic mixtures $\tilde{\boldsymbol{M}}=(\boldsymbol{I}_B\otimes\mathbf{1}^\top)\tilde{\boldsymbol{X}}_1$. For the **student**, an FM path is established: the noise end is set as $\tilde{\boldsymbol{X}}_0=\tfrac{1}{K}(\boldsymbol{I}_B\otimes\mathbf{1})\tilde{\boldsymbol{M}}+(\boldsymbol{I}_B\otimes\boldsymbol{P}^\perp)\boldsymbol{Z}$ to ensure mixture consistency. PIT is performed using the student's velocity at $t=0$ to find the optimal permutation $\boldsymbol{\Upsilon}$, defining the interpolation $\tilde{\boldsymbol{X}}_t^{\boldsymbol{\Upsilon}}=(1-t)\tilde{\boldsymbol{X}}_0+t\boldsymbol{\Upsilon}\tilde{\boldsymbol{X}}_1$. The velocity residual $\boldsymbol{R}_t=v_\theta(\tilde{\boldsymbol{X}}_t^{\boldsymbol{\Upsilon}},t,\tilde{\boldsymbol{M}})-(\boldsymbol{\Upsilon}\tilde{\boldsymbol{X}}_1-\tilde{\boldsymbol{X}}_0)$ is computed for the loss functions. After the student updates, the teacher is updated via EMA $\theta_\mathcal{T}\leftarrow\alpha\theta_\mathcal{T}+(1-\alpha)\theta$. **Throughout this process, no clean sources are accessed.**
 
 ### Key Designs
 
-1. **Velocity-to-Denoiser Bridge (Enabling FM for ReMixIT)**:
-    - **Function**: Mathematically connects the velocity $v_\theta$ learned by flow matching with the "clean source estimate" required by ReMixIT/Self-Remixing.
-    - **Mechanism**: Based on $\boldsymbol{u}(x,t)=\mathbb{E}[x_1-x_0|x_t,m]$ and the path relation $x_1-x_0=(x_1-x_t)/(1-t)$, we obtain $\mathbb{E}[x_1|x_t,m]=x_t+(1-t)\boldsymbol{u}(x_t,t,m)\approx x_t+(1-t)v_\theta(x_t,t,m)$. This allows the use of this quantity at any step $t$ as a "time-dependent denoised estimate," which is directly compatible with regression losses like Self-Remixing.
-    - **Design Motivation**: FM and regression self-supervision have different semantics. This identity allows the model to provide both "velocity field" and "denoised source" perspectives simultaneously, allowing ReMixIT logic to be applied without structural changes.
+**1. Velocity-to-Denoiser Bridge: Connecting Flow to ReMixIT Mathematics**
 
-2. **ReMixIT-FM vs. Self-Remixing-FM Double Losses (Supervision vs. Reflection)**:
-    - **Function**: Signals training for the student flow on resynthesized data.
-    - **Mechanism**: ReMixIT-FM uses a FLOSS-style PIT-FM loss $\mathcal{L}_{\text{RM-FM}}=\mathbb{E}\|\boldsymbol{R}_t\|^2$, treating teacher pseudo-sources as ground truth. Conversely, Self-Remixing-FM requires only that the student's estimates sum back to the original mixture: $\mathcal{L}_{\text{SR-FM}}=\mathbb{E}\|(\boldsymbol{I}_B\otimes\mathbf{1}^\top)\boldsymbol{\Pi}^{-1}\boldsymbol{\Upsilon}^{-1}\boldsymbol{R}_t\|^2$. Both losses share the same $\boldsymbol{R}_t$ but apply different projections.
-    - **Design Motivation**: ReMixIT provides denser signals but may "inherit" teacher errors. Self-Remixing avoids penalizing pseudo-source errors directly by ensuring mixture reconstruction consistency. The authors prove in the Appendix that the gradient relates to the system error correlation; when errors across sources are weakly correlated, the gradient reverts to pseudo-supervised FM.
+The challenge is that flow matching learns a velocity field $v_\theta$, while self-supervised losses like ReMixIT require "clean source estimates." The authors align them using the identity: from $\boldsymbol{u}(x,t)=\mathbb{E}[x_1-x_0|x_t,m]$ and the path $x_1-x_0=(x_1-x_t)/(1-t)$, they derive $\mathbb{E}[x_1|x_t,m]=x_t+(1-t)\boldsymbol{u}(x_t,t,m)\approx x_t+(1-t)v_\theta(x_t,t,m)$. Thus, at any $t$, the same model provides both the velocity field and a "time-dependent denoised source estimate," which can be directly plugged into regression-style losses.
 
-3. **Wake-Sleep Interpretation + EMA Teacher (Closing the Self-Distillation Theory)**:
-    - **Function**: Explains the convergence of the "teacher generate $\rightarrow$ remix $\rightarrow$ student learn $\rightarrow$ teacher EMA" cycle and guides the teacher update rule.
-    - **Mechanism**: The marginal defined by the teacher, $\bar{p}_{\theta_\mathcal{T}}(\bar{\boldsymbol{x}})=\prod_k \bar{p}_{\theta_\mathcal{T}}(\bar{\boldsymbol{x}}^{(k)})$, is treated as an implicit prior, while the student $p_\theta(\bar{\boldsymbol{x}}|m)$ acts as an inference network. The **Sleep phase** (student update) is equivalent to maximum likelihood on synthesized pairs $(\bar{\boldsymbol{x}}, m)\sim \bar{p}_{\theta_\mathcal{T}}(\bar{\boldsymbol{x}})p(m|\bar{\boldsymbol{x}})$, which is exactly ReMixIT. The **Wake phase** (teacher update) ideally requires an unavailable aggregate posterior, thus it is approximated by moving $\theta_\mathcal{T}$ toward $\theta$ using EMA $\theta_\mathcal{T} \leftarrow \alpha\theta_\mathcal{T} + (1-\alpha)\theta$.
-    - **Design Motivation**: Previous successes of ReMixIT were primarily empirical. Mapping it to the Wake-Sleep framework provides a probabilistic justification and shows that EMA is not just a stability trick, but a proxy for the Wake step.
+**2. ReMixIT-FM and Self-Remixing-FM Dual Losses**
+
+Both losses share the residual $\boldsymbol{R}_t$ but apply different projections. ReMixIT-FM uses the PIT-FM loss $\mathcal{L}_{\text{RM-FM}}=\mathbb{E}\|\boldsymbol{R}_t\|^2$, treating teacher pseudo-sources as ground truth; this provides dense signals but may inherit teacher errors. Self-Remixing-FM requires only that the student's estimates sum back to the original mixture: $\mathcal{L}_{\text{SR-FM}}=\mathbb{E}\|(\boldsymbol{I}_B\otimes\mathbf{1}^\top)\boldsymbol{\Pi}^{-1}\boldsymbol{\Upsilon}^{-1}\boldsymbol{R}_t\|^2$. This avoids direct penalization of pseudo-source errors. Theoretical analysis shows that Self-Remixing effectively decouples self-supervision errors from teacher errors, often performing better in audio tasks.
+
+**3. Wake-Sleep Interpretation + EMA Teacher**
+
+The "Teacher generation → Remix → Student learn → EMA update" cycle is interpreted through the Wake-Sleep framework. The teacher marginal $\bar{p}_{\theta_\mathcal{T}}(\bar{\boldsymbol{x}})$ acts as an implicit prior and the student $p_\theta(\bar{\boldsymbol{x}}|m)$ as an inference network. The Sleep phase (updating the student) is equivalent to maximum likelihood on synthetic pairs, corresponding to ReMixIT. The Wake phase (updating the teacher) ideally requires an aggregate posterior, which is approximated by moving $\theta_\mathcal{T}$ toward $\theta$ via EMA for stability.
 
 ### Loss & Training
-The joint training objective is either $\mathcal{L}_{\text{RM-FM}}$ or $\mathcal{L}_{\text{SR-FM}}$. The teacher EMA decay $\alpha$ is a critical hyperparameter. The student network follows the FLOSS architecture (permutation-equivariant layers + mixture-consistency projection). Initialization uses a MixIT-pretrained regression separator as an unsupervised starting point.
+The joint training objective uses either $\mathcal{L}_{\text{RM-FM}}$ or $\mathcal{L}_{\text{SR-FM}}$. The EMA decay $\alpha$ is a critical hyperparameter. Training starts from a "seed" provided by a MixIT-pretrained regression separator.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | Ours (SURF-RM) | Prev. SOTA (Unsup.) | Supervised Flow Upper Bound |
+| Dataset | Metric | Ours (SURF-RM) | Prev. Unsupervised SOTA | Supervised Flow Upper Bound |
 |--------|------|------|----------|------|
 | MNIST 2-source | PSNR ↑ | **37.26** | 23.13 (Self-Remixing) | 37.44 |
 | MNIST 2-source | FID ↓ | **19.57** | 28.14 | 19.47 |
@@ -86,58 +86,56 @@ The joint training objective is either $\mathcal{L}_{\text{RM-FM}}$ or $\mathcal
 | LibriSpeech+FUSS (2 src) | SI-SDR ↑ | 14.98 / **15.23** (SR) | 14.81 (Self-Remixing) | 18.21 |
 | FUSS 1-src | SI-SDR ↑ | **32.67** | 19.83 (ReMixIT) | 38.79 |
 
-> Key takeaway: On image separation, SURF raises PSNR from 23 to 37, **matching supervised flow**. On CIFAR10, the FID drops from 28 to 14, even lower than BASIS (diffusion prior requiring clean data).
+> **Highlights**: In image separation, SURF improves PSNR from 23 to 37, **matching supervised flows**. On CIFAR10, the FID is reduced from 28 to 14, outperforming BASIS (a diffusion-prior method requiring clean data).
 
 ### Ablation Study
 
 | Configuration | MNIST PSNR | Description |
 |------|---------|------|
-| MixIT (Initialization) | 21.90 | Regression baseline |
-| Regression-ReMixIT | 22.81 | Standard unsupervised regression |
+| MixIT (Initial) | 21.90 | Regressive starting point |
+| Regression-ReMixIT | 22.81 | Regressive self-supervision |
 | SURF (ReMixIT-FM) | **37.26** | Flow + ReMixIT |
 | SURF (Self-Remixing-FM) | 37.03 | Flow + Self-Remixing |
 | Supervised Flow | 37.44 | Upper bound (requires clean data) |
 
 ### Key Findings
-- "Flow + Self-supervision" significantly outperforms "Regression + Self-supervision" (37 vs 23 PSNR), demonstrating that generative priors are essential for removing regression artifacts.
-- ReMixIT-FM and Self-Remixing-FM perform similarly, though Self-Remixing slightly leads on LibriSpeech audio (SI-SDR 15.23 vs 14.98), aligning with theories regarding decoupled teacher errors.
-- SURF's CIFAR10 FID is actually **lower** than supervised regression (14.83 vs 25.44), confirming the advantage of generative priors in distribution matching.
-- On FUSS with more sources (3 or 4), a 2-3 dB gap remains compared to supervised flow, suggesting that PIT alignment and EMA stability are future areas for improvement as $K$ increases.
+- **Flow + Self-supervision** is significantly better than **Regression + Self-supervision** (37 vs 23 PSNR), indicating that the generative prior is crucial for removing regression artifacts.
+- ReMixIT-FM and Self-Remixing-FM perform similarly, but Self-Remixing leads slightly on LibriSpeech, consistent with the theory that it decouples teacher errors.
+- SURF's CIFAR10 FID is lower than supervised regression (14.83 vs 25.44), confirming the advantage of generative priors in distribution matching.
 
 ## Highlights & Insights
-- **The velocity-denoiser identity is the key plug**: The one-line derivation $\mathbb{E}[x_1|x_t, m]\approx x_t+(1-t)v_\theta$ allows any self-supervised loss relying on clean source estimates to be applied to any flow or diffusion separator. This is a general bridge transferable to a wide range of inverse problems.
-- **Wake-Sleep Perspective**: Elevating ReMixIT from an engineering trick to a standard latent generative model paradigm provides methodological significance, framing EMA as a proxy for the intractable Wake step.
-- **Image Separation as a Controlled Experiment**: While source separation is traditional in audio, using MNIST/CIFAR10 provides quantifiable PSNR/FID/LPIPS metrics common in computer vision, offering better interpretability and reproducibility than SI-SDR alone.
+- **Velocity-denoiser identity is the key plug**: The identity $\mathbb{E}[x_1|x_t, m]\approx x_t+(1-t)v_\theta$ allows any self-supervised loss relying on "clean source estimates" to be applied to flow/diffusion separators without structural changes.
+- **Wake-Sleep Perspective**: Elevates ReMixIT from an engineering heuristic to a standard training paradigm for latent variable generative models, providing a methodological basis for self-training designs.
+- **Image Separation as a Benchmark**: Using MNIST/CIFAR10 for source separation provides quantitative metrics like FID/LPIPS that are often clearer than audio metrics like SI-SDR, facilitating better comparison of generative quality.
 
 ## Limitations & Future Work
-- Theoretical analysis relies on the population limit ($B\to \infty$) and simplified assumptions; bias under finite batches is not fully characterized. The EMA decay $\alpha$ still requires empirical tuning.
-- Training depends on a MixIT-pretrained seed separator. It is unclear if convergence holds if the initial seed is extremely poor (cold start).
-- In 3-4 source scenarios (FUSS), a 2-3 dB gap exists with supervised flow, indicating that PIT complexity and teacher error accumulation increase with $K$.
-- Future work could extend this "bridge + Wake-Sleep EMA" to other inverse problems (denoising, deblurring, super-resolution), particularly in scientific imaging where clean ground truth is scarce.
+- The theoretical analysis assumes a population limit ($B\to \infty$); finite batch bias is not fully characterized.
+- Training depends on a MixIT-pretrained seed; convergence from very poor initialization is not guaranteed.
+- A 2-3 dB gap remains between SURF and supervised flows in multi-source (3-4 source) FUSS scenarios, likely due to increased PIT complexity and error accumulation.
+- Potential for expansion to other inverse problems (denoising, deblurring, super-resolution) in data-scarce domains like medical imaging.
 
 ## Related Work & Insights
-- **vs. FLOSS (Scheibler et al., 2025)**: FLOSS is the supervised SOTA for flow separation but depends on clean sources. SURF is effectively an unsupervised version of FLOSS.
-- **vs. ReMixIT / Self-Remixing (Tzinis et al., 2022; Saijo & Ogawa, 2023)**: Original ReMixIT is restricted to discriminative separators (e.g., Conv-TasNet). SURF brings this "remix $\rightarrow$ student learn" loop to generative flow matching.
-- **vs. BASIS / Diffusion Prior Separation (Jayaram & Thickstun, 2020; Mariani et al., 2024)**: These methods use clean sources to train a prior first. SURF does not require clean source training, making it applicable to fields where isolated sources cannot be recorded.
-- **vs. Rozet et al., 2024 (Unsupervised Diffusion Prior with EM)**: These works attempt to learn unconditional priors from mixtures but require computationally expensive conditional diffusion approximations. SURF avoids explicit prior modeling by bootstrapping the conditional separator directly.
+- **vs FLOSS (Scheibler et al., 2025)**: SURF adapts FLOSS's PIT-FM structure but replaces clean sources with teacher pseudo-sources/mixtures, effectively acting as an unsupervised version of FLOSS.
+- **vs BASIS / Diffusion Prior Separation**: Unlike these methods, SURF does not require clean source data to train the prior, making it applicable to domains like bioacoustics.
+- **vs Rozet et al. (2024)**: While both learn unfactorized diffusion priors from mixtures, SURF avoids the heavy computation of unconditional prior modeling by working directly on conditional separators via bootstrapping.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The velocity-denoiser bridge unlocks the FM + self-supervision pipeline, and the Wake-Sleep interpretation closes the theoretical gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across four benchmarks (MNIST, CIFAR10, FUSS, LibriSpeech) with comparisons to supervised bounds and multiple baselines.
-- Writing Quality: ⭐⭐⭐⭐ The algorithms are clearly explained, and the theoretical decomposition is insightful.
-- Value: ⭐⭐⭐⭐⭐ Provides a viable path for training generative separators without clean sources, with high potential in bioacoustics and scientific imaging.
+- Novelty: ⭐⭐⭐⭐ The velocity-denoiser bridge unlocks the FM + self-supervision pipeline.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers four benchmarks across images and audio with comparisons to supervised bounds.
+- Writing Quality: ⭐⭐⭐⭐ Concepts are well-explained; Algorithm 1 clearly distinguishes loss variations.
+- Value: ⭐⭐⭐⭐⭐ Provides a path for training generative separators without clean sources, highly relevant for scientific imaging and bioacoustics.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
 - [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](../../CVPR2026/image_generation/cinematic_audio_source_separation_using_visual_cues.md)
+- [\[ECCV 2024\] Implicit Style-Content Separation using B-LoRA](../../ECCV2024/image_generation/implicit_style-content_separation_using_b-lora.md)
 - [\[ICLR 2026\] From Parameters to Behaviors: Unsupervised Compression of the Policy Space](../../ICLR2026/image_generation/from_parameters_to_behaviors_unsupervised_compression_of_the_policy_space.md)
-- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
-- [\[ICCV 2025\] Pretrained Reversible Generation as Unsupervised Visual Representation Learning](../../ICCV2025/image_generation/pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)
+- [\[ICML 2025\] Unsupervised Learning for Class Distribution Mismatch (UCDM)](../../ICML2025/image_generation/unsupervised_learning_for_class_distribution_mismatch.md)
+- [\[ICML 2026\] Adversarial Flow Models](adversarial_flow_models.md)
 
 </div>
 

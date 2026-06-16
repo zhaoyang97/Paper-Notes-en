@@ -2,158 +2,168 @@
 title: >-
   [Paper Note] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis
 description: >-
-  [ACL 2026][LLM Evaluation][Video caption evaluation] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on lightweight open-source multimodal models (Qwen2.5-VL 3B/7B). By utilizing…
+  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on open-source lightweight multimodal models (Qwen2.5-VL 3B/7B). By generating training data via a controllable factual error synthesis pipeline, it achieves a human judgment correlation of $\tau_b$=42.58 on VATEX-Eval, surpassing
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Video caption evaluation"
-  - "reference-free evaluation"
-  - "factual accuracy"
-  - "Large Vision-Language Models"
-  - "hallucination detection"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: da0310cb07502cf0
+content_hash: 881e89f2614d46de
 ---
-
 # VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis
 
 **Conference**: ACL 2026  
 **arXiv**: [2509.16538](https://arxiv.org/abs/2509.16538)  
 **Code**: [https://dipta007.github.io/VC-Inspector](https://dipta007.github.io/VC-Inspector)  
 **Area**: Video Understanding / Caption Evaluation  
-**Keywords**: Video caption evaluation, reference-free evaluation, factual accuracy, Large Vision-Language Models, hallucination detection
+**Keywords**: Video Caption Evaluation, Reference-free Evaluation, Factual Accuracy, Large Multimodal Models, Hallucination Detection
 
 ## TL;DR
 
-This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on lightweight open-source multimodal models (Qwen2.5-VL 3B/7B). By utilizing a controllable factual error synthesis pipeline to generate training data, it achieves a Spearman correlation of $\tau_b$=42.58 on VATEX-Eval, surpassing the GPT-4o-reliant G-VEval ($\tau_b$=39.40), and reaches 99.6% accuracy on hallucination detection benchmarks.
+This paper proposes VC-Inspector, a reference-free video caption evaluation metric based on open-source lightweight multimodal models (Qwen2.5-VL 3B/7B). By generating training data via a controllable factual error synthesis pipeline, it achieves a human judgment correlation of $\tau_b$=42.58 on VATEX-Eval, surpassing GPT-4o-based G-VEval ($\tau_b$=39.40), and reaches 99.6% accuracy on hallucination detection benchmarks.
 
 ## Background & Motivation
 
-**Background**: Video caption evaluation primarily relies on text-matching metrics against reference captions (BLEU, ROUGE, CIDEr). However, these are costly to obtain and struggle to capture semantic equivalence. Reference-free evaluation is a more practical direction but remains underdeveloped.
+**Background**: Video caption evaluation primarily relies on text-matching metrics (BLEU, ROUGE, CIDEr) using reference captions, which are costly and struggle to capture semantic equivalence. Reference-free evaluation is a more practical direction but remains underdeveloped.
 
-**Limitations of Prior Work**: (1) Reference-free metrics based on pre-trained vision-language embeddings (e.g., EMScore, CLIPScore) are limited by the context length of text encoders and lack a consistent scoring scale—different captions for the same video yield very narrow score ranges, making quality differentiation difficult; (2) Methods using large proprietary models like GPT-4o (e.g., G-VEval) rely on prompt engineering and are non-reproducible; (3) Most existing methods are image-centric and fail to model the temporal dynamics of video.
+**Limitations of Prior Work**: (1) Reference-free metrics based on pre-trained vision-language embeddings (e.g., EMScore, CLIPScore) are limited by text encoder context length and lack a consistent scoring scale—score differences between different captions for the same video are minimal, making quality distinction difficult; (2) Methods using large proprietary models like GPT-4o (e.g., G-VEval) for scoring rely on prompt engineering and are irreproducible; (3) Most existing methods are image-centric and fail to model temporal dynamics of video.
 
-**Key Challenge**: Reliable evaluation should prioritize factual accuracy—errors in objects and actions should linearly decrease scores according to severity. However, existing metrics fail to detect even basic factual inconsistencies (e.g., incorrect objects).
+**Key Challenge**: Reliable caption evaluation should centralize factual accuracy—errors in objects and actions should linearly decrease scores according to severity—but existing metrics fail to detect even basic factual inconsistencies (e.g., incorrect objects).
 
 **Goal**: Construct a fact-based, interpretable, open-source, and lightweight reference-free evaluation metric for video captions.
 
-**Key Insight**: The primary bottleneck in training a fact-aware evaluator is the lack of annotated captions across different factual quality levels—existing captions are either correct or incorrect without intermediate gradients. The authors designed an LLM-based controllable factual error synthesis pipeline to address this data scarcity.
+**Key Insight**: The main bottleneck in training fact-aware evaluators is the lack of annotated captions with varying quality levels—existing captions are either correct or incorrect with no intermediate gradients. The authors design a controllable factual error synthesis pipeline based on LLMs to address this data bottleneck.
 
-**Core Idea**: Use an LLM to systematically replace objects and actions in ground truth captions to generate pseudo-captions with varying error levels, supplemented with deterministic scores and explanatory labels, to fine-tune a lightweight multimodal model as an evaluator.
+**Core Idea**: Systematically replace objects and actions in ground truth captions using LLMs to generate pseudo-captions with different error magnitudes, accompanied by deterministic scores and explanatory annotations, to fine-tune a lightweight multimodal model as an evaluator.
 
 ## Method
 
 ### Overall Architecture
 
-The workflow consists of two steps: (1) Data Generation—Starting from ground truth captions in ActivityNet-Captions, Llama-3.3-70B is used for controllable replacement of objects and actions to generate pseudo-captions with deterministic quality scores (1-5) and error explanations; (2) Model Training—Qwen2.5-VL (3B/7B) is fine-tuned using LoRA, with the visual encoder and projection layer frozen. The input is the video and a candidate caption, and the output consists of a quality score and a factual error explanation.
+VC-Inspector functions as a reference-free, factual accuracy-centered video caption evaluator. It takes a video and a candidate caption as input and outputs a quality score (1–5) along with a textual explanation identifying incorrect objects/actions. It bypasses the bottleneck of "lack of multi-gradient factual quality annotations" by starting with ground-truth captions from ActivityNet-Captions and using an LLM to controllably replace objects and actions to synthesize pseudo-captions with varying error levels. Scores and explanations are determined based on replacement ratios. Subsequently, Qwen2.5-VL (3B/7B) is fine-tuned via LoRA, freezing the visual encoder and training only the LLM part to let the evaluator learn to "see videos, verify facts, and provide scores with justifications."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Video + ground-truth caption<br/>(ActivityNet-Captions)"] --> S1
+    subgraph S1["Controllable Factual Error Synthesis Pipeline (Design 1)"]
+        direction TB
+        B["LLM extracts object set O, action set A"] --> C["Randomly replace K objects, L actions<br/>(Same category but different meaning)"]
+        C --> D["Deterministic scoring based on replacement ratio<br/>Discretized into 1–5 scale + explanation generation"]
+    end
+    S1 --> E["Multi-gradient training data 44K<br/>(ActivityNet-FG-It)"]
+    E --> F["Video-native backbone + selective fine-tuning (Design 2)<br/>Qwen2.5-VL sampled 32 frames, frozen visual encoder, LoRA-tuned LLM"]
+    F --> G["Joint Training of Scores and Explanations (Design 3)<br/>Simultaneously predict 1–5 score and factual explanation"]
+    G --> H["Evaluator Output<br/>Quality score + explanation identifying incorrect objects/actions"]
+```
 
 ### Key Designs
 
-1.  **Controllable Factual Error Synthesis Pipeline**:
-    - **Function**: Addresses the bottleneck of lacking multi-gradient factual quality training data.
-    - **Mechanism**: Given a ground truth caption $X$, an LLM extracts an object set $\mathcal{O}$ and an action set $\mathcal{A}$. Then, $K \sim \text{Unif}(0,M)$ objects and $L \sim \text{Unif}(0,N)$ actions are randomly sampled for replacement. Replacements must be within the same category but have different meanings (e.g., car→truck instead of car→building). Scores are calculated using a deterministic formula: $score = 1 - |\mathcal{R}|/(|\mathcal{O}|+|\mathcal{A}|)$, discretized into a 1-5 scale. 10 pseudo-captions are generated per ground truth, resulting in 44K training instances (ActivityNet-FG-It) after balanced sampling.
-    - **Design Motivation**: Compared to PAC-S/FactVC, which only perform binary positive/negative contrast, this method generates captions with multi-gradient quality, allowing the evaluator to distinguish subtle quality differences. Deterministic scoring avoids the unreliability of LLMs in floating-point comparisons.
+**1. Controllable Factual Error Synthesis Pipeline: Generating multi-gradient quality data via deterministic perturbations.** 
 
-2.  **Joint Score-Explanation Training Paradigm**:
-    - **Function**: Enhances evaluation interpretability and strengthens factual anchoring.
-    - **Mechanism**: The model not only predicts a quality score $S \in \{1,...,5\}$ but also generates a text explanation $E$ specifying which objects/actions are incorrect. The explanation serves as an auxiliary supervision signal to help the model learn better factual anchoring. Ablation studies show that adding explanations improves $\tau_b$ on VATEX-Eval from 34.29 to 37.99 (+3.7 points).
-    - **Design Motivation**: Existing metrics output only a single scalar score. Explanations provide a basis for judgment and can serve as feedback to guide caption improvement—experiments show that using VC-Inspector's explanations to guide iterative refinement with Qwen2.5-VL improves caption quality across multiple dimensions.
+The real obstacle for fact-aware evaluators is data, not models—existing captions are either binary correct or incorrect, lacking scale for "severity of error." Given a ground-truth caption $X$, the LLM extracts object set $\mathcal{O}$ and action set $\mathcal{A}$. Then, $K \sim \text{Unif}(0,M)$ objects and $L \sim \text{Unif}(0,N)$ actions are randomly sampled for replacement with words of the same category but different meanings (e.g., car→truck instead of car→building) to ensure realistic perturbations. Scores are not based on subjective LLM judgment but calculated deterministically as $score = 1 - |\mathcal{R}|/(|\mathcal{O}|+|\mathcal{A}|)$ and discretized into 1–5, avoiding LLM unreliability with floating-point numbers. Generating 10 pseudo-captions per ground truth results in 44K instances (ActivityNet-FG-It) after balanced sampling. This multi-gradient data allows the evaluator to distinguish finer quality differences compared to binary methods like PAC-S/FactVC.
 
-3.  **Video-native Fact Anchoring Architecture**:
-    - **Function**: Utilizes video encoders to capture temporal dynamics and supports long-context reasoning.
-    - **Mechanism**: Based on Qwen2.5-VL (32K context length) as the backbone, the visual encoder and projection layer are frozen, while the LLM part is fine-tuned via LoRA ($\alpha=r=32$, dropout=0.05). 32 frames are uniformly sampled per video at 224x224 resolution. Training follows standard language modeling loss, and inference uses temperature=0 to ensure reproducibility.
-    - **Design Motivation**: Compared to image-encoder-based metrics (e.g., EMScore based on CLIP), video-native models capture temporal information like actions and event sequences. Unlike G-VEval (reliant on GPT-4o with only 3 concatenated frames), Qwen2.5-VL natively supports video input.
+**2. Video-native Backbone + Selective Fine-tuning: Supporting long video reasoning with temporal context.** 
+
+Metrics based on image encoders (e.g., CLIP-based EMScore) cannot see actions and event sequences, while G-VEval relies on GPT-4o but only concatenates 3 frames and is irreproducible. VC-Inspector uses Qwen2.5-VL, which natively supports video and 32K context, as the backbone. 32 frames (224×224) are uniformly sampled per video. The visual encoder and projection layers are frozen, and only the LLM is fine-tuned using LoRA ($\alpha=r=32$, dropout=0.05) to concentrate computation on learning factual judgment while preserving pre-trained visual representations. Inference uses temperature=0 for reproducibility.
+
+**3. Joint training of scores and explanations: Turning interpretability into fact-anchored supervision signals.** 
+
+Outputting only a scalar score provides no basis for judgment and makes error correction difficult. VC-Inspector requires the model to predict $S \in \{1,...,5\}$ while generating an explanation $E$ identifying incorrect objects/actions. This explanation acts as auxiliary supervision, forcing the model to anchor scores to specific factual evidence. Ablations show that adding explanations increases $\tau_b$ from 34.29 to 37.99 (+3.7) on VATEX-Eval. Furthermore, these explanations can serve as rewrite feedback; experiments show that using VC-Inspector explanations to guide iterative caption revision improves quality across multiple dimensions.
 
 ### Loss & Training
 
-Standard language modeling loss (next-token prediction) is used with LoRA fine-tuning. Global batch size is 128, learning rate is 1e-4, and training takes approximately 32 GPU hours on 4×A100 GPUs.
+Standard language modeling loss (next-token prediction) is used with LoRA fine-tuning. Global batch size is 128, learning rate is 1e-4, and training takes approximately 32 GPU hours on 4×A100.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Human Correspondence Results on VATEX-Eval (Reference-free)**
+**Human judgment correlation under reference-free setting on VATEX-Eval**
 
 | Method | $\tau_b$ | $\rho$ | Model Size | Open Source |
-| :--- | :--- | :--- | :--- | :--- |
-| VC-Inspector-7B | **42.58** | **45.99** | 7B | ✓ |
+|------|---------|--------|---------|------|
+| **Ours-7B** | **42.58** | **45.99** | 7B | ✓ |
 | G-VEval | 39.40 | - | GPT-4o | ✗ |
-| VC-Inspector-3B | 37.99 | 42.45 | 3B | ✓ |
+| **Ours-3B** | 37.99 | 42.45 | 3B | ✓ |
 | Qwen2.5-VL-7B | 34.70 | 39.40 | 7B | ✓ |
 | ViCLIPScore | 30.92 | 39.86 | - | ✓ |
 | EMScore | 22.88 | 29.79 | - | ✓ |
 | CLIPScore | 22.33 | 29.09 | - | ✓ |
 
-**Flickr8K-Expert/CF Results (Reference-free, $\tau_b$)**
+**Flickr8K-Expert/CF reference-free setting ($\tau_b$)**
 
 | Method | Expert | CF |
-| :--- | :--- | :--- |
-| VC-Inspector-7B | **63.4** | **46.0** |
-| VC-Inspector-3B | 59.9 | 39.0 |
+|------|--------|-----|
+| **Ours-7B** | **63.4** | **46.0** |
+| **Ours-3B** | 59.9 | 39.0 |
 | HICE-S | 55.9 | 37.2 |
 | PAC-S | 53.9 | 36.0 |
 | CLIPScore | 51.1 | 34.4 |
 
 ### Ablation Study
 
-| Config | $\tau_b$ (VATEX-Eval) | Description |
-| :--- | :--- | :--- |
-| Obj + Act (Full) | 37.99 | Best |
-| Obj Only | 36.40 | -1.59 |
-| Act Only | 33.23 | -4.76 |
-| w/o Explanation | 34.29 | Explanation gives +3.7 gain |
+| Config | $\tau_b$ (VATEX-Eval) | Notes |
+|------|----------------------|------|
+| Full (Obj+Act) | 37.99 | Best |
+| Obj only | 36.40 | -1.59 |
+| Act only | 33.23 | -4.76 |
+| No explanation | 34.29 | Explanation gives +3.7 boost |
 
-**Hallucination Detection Accuracy**
+**Hallucination detection accuracy**
 
 | Method | FOIL-COCO | ActivityNet-FOIL |
-| :--- | :--- | :--- |
-| VC-Inspector-3B | **99.6** | **99.3** |
+|------|-----------|-----------------|
+| **Ours-3B** | **99.6** | **99.3** |
 | FLEUR | 96.8 | - |
 | PAC-S | 90.2 | 91.0 |
 
 ### Key Findings
 
-- VC-Inspector-7B not only outperforms all reference-free methods but even exceeds most reference-based metrics in the reference-free setting.
-- Both object and action errors are crucial, but object errors contribute more to evaluation quality ($\tau_b$=36.40 for objects-only vs. 33.23 for actions-only).
-- Training with auxiliary explanations significantly boosts performance (+3.7 $\tau_b$ points) and enables iterative caption quality improvement.
-- Computational efficiency is superior to existing methods: 0.30s/video vs. 0.42s for EMScore (single A100).
+- VC-Inspector-7B not only outperforms all reference-free methods but also exceeds most metrics requiring reference captions in the reference-free setting.
+- Both object and action errors are important, but object errors contribute more to evaluation quality ($\tau_b$=36.40 for objects only vs 33.23 for actions only).
+- Explanation-assisted training provides a significant boost (+3.7 $\tau_b$ points), and explanations can be used for iterative quality improvement.
+- Computational efficiency is superior to existing methods: 0.30s/video vs 0.42s for EMScore (single A100).
 
 ## Highlights & Insights
 
-- The deterministic scoring mechanism (based on replacement ratio) is superior to model or human scoring—it avoids subjectivity and inconsistency while ensuring scores remain in a fixed 0-1 range with stable ranking.
-- Explanations are not just for interpretability but serve as effective training signals—this "score + explanation" joint training paradigm is transferable to other evaluation tasks (e.g., text summarization, dialogue quality).
-- Achieving SOTA results on Flickr8K by treating images as single-frame videos demonstrates that the model's factual anchoring ability generalizes across modalities.
+- Deterministic scoring (based on replacement ratio) is superior to model/human scoring—avoiding subjectivity and inconsistency while ensuring scores stay within a fixed 0-1 range and maintain order relationships.
+- Explanations are not just interpretability tools but effective training signals—this "score + explanation" joint training paradigm is transferable to other evaluation tasks (e.g., summarization or dialogue quality evaluation).
+- Achieving SOTA results on Flickr8K by treating images as single-frame videos demonstrates the cross-modal generalization of the learned factual anchoring capability.
 
 ## Limitations & Future Work
 
-- Currently focuses only on two types of factual errors: objects and actions. It does not yet cover fine-grained errors like attributes (color, size), spatial relationships, or temporal ordering.
-- Training data is limited to ActivityNet; generalization to highly specialized videos (medical, industrial) requires verification.
-- Evaluation dimensions could be expanded to include temporal consistency, level of detail, and style adaptation.
+- Currently focuses only on object and action errors, without covering fine-grained errors like attributes (color, size), spatial relationships, or temporal order.
+- Training data is from ActivityNet; generalization to highly specialized videos (medical, industrial) remains to be verified.
+- Evaluation dimensions can be further extended to temporal consistency, level of detail, and style adaptation.
 
 ## Related Work & Insights
 
-- **vs EMScore**: EMScore relies on CLIP image encoder frame/video-level embedding matching, restricted by context length and lacking factual anchoring. VC-Inspector uses an LVLM to reason directly about factual correctness.
-- **vs G-VEval**: G-VEval relies on GPT-4o with only 3 concatenated frames and is non-reproducible. VC-Inspector is open-source, lightweight (3B/7B), uses native video encoding, and performs better.
-- **vs PAC-S/FactVC**: These only perform binary positive/negative synthesis. VC-Inspector allows for more nuanced evaluation through multi-gradient quality data synthesis.
+- **vs EMScore**: EMScore relies on frame/video-level embedding matching with CLIP-based image encoders, limited by context length and lacking factual anchoring. VC-Inspector uses LMMs for direct factual reasoning.
+- **vs G-VEval**: Relies on GPT-4o, concatenates only 3 frames, and is irreproducible. VC-Inspector is open-source, lightweight (3B/7B), uses native video encoding, and performs better.
+- **vs PAC-S/FactVC**: These methods use binary positive/negative data synthesis, whereas VC-Inspector generates multi-gradient quality data for finer evaluation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The combination of controllable factual error synthesis and joint score-explanation training is a clever design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five evaluation benchmarks, multiple settings, and detailed ablation/efficiency analyses are provided.
+- Novelty: ⭐⭐⭐⭐ Controllable factual error synthesis + joint score-explanation training is a clever combination.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five benchmarks, multiple settings, ablation, and computational efficiency analyses are comprehensive.
 - Writing Quality: ⭐⭐⭐⭐ Clear motivation and rigorous experimental logic.
-- Value: ⭐⭐⭐⭐⭐ Provides the first open-source tool for factual evaluation of video captions, directly usable as a reward model for RL.
+- Value: ⭐⭐⭐⭐⭐ Provides the first open-source factual evaluation tool for video captions, usable as a reward model for RL.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 - [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
-- [\[ACL 2026\] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models](identifying_the_achilles_heel_an_iterative_method_for_dynamically_uncovering_fac.md)
+- [\[ACL 2026\] TabReX: Tabular Referenceless eXplainable Evaluation](tabrex_tabular_referenceless_explainable_evaluation.md)
 - [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
-- [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
+- [\[ACL 2026\] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models](identifying_the_achilles_heel_an_iterative_method_for_dynamically_uncovering_fac.md)
 
 </div>
 

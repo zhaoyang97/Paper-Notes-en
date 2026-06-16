@@ -2,80 +2,96 @@
 title: >-
   [Paper Note] Prototype-Guided Concept Erasure in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] To address the difficulty of thoroughly erasing broad concepts (e.g., violence, nudity) from diffusion models…
+  [CVPR 2026][Image Generation][Concept Erasure] Addressing the difficulty of thoroughly erasing broad concepts (e.g., violence, pornography) in diffusion models, this paper proposes a training-free erasure method based on concept prototypes. It extracts image prototypes by clustering concept difference directions in the CLIP embedding space, transfers them to the te
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Concept Erasure"
-  - "Diffusion Model Safety"
-  - "NSFW Content Filtering"
-  - "Prototype Learning"
-  - "Training-Free Inference"
+  - CVPR 2026
+  - Image Generation
+  - Concept Erasure
 date: 2026-05-08
-content_hash: 0dda5deb63d67ca6
+content_hash: 3fa2e8680fa116f4
 ---
-
 # Prototype-Guided Concept Erasure in Diffusion Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.08271](https://arxiv.org/abs/2603.08271)  
 **Code**: [https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure](https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure)  
-**Area**: Image Generation
-**Keywords**: Concept Erasure, Diffusion Model Safety, NSFW Content Filtering, Prototype Learning, Training-Free Inference
+**Area**: Image Generation  
+**Keywords**: Concept Erasure, Diffusion Model Safety, NSFW Content Filtering, Prototype Learning, Training-free Inference
 
 ## TL;DR
-To address the difficulty of thoroughly erasing broad concepts (e.g., violence, nudity) from diffusion models, this paper proposes a training-free erasure method based on concept prototypes. The method clusters concept-differential directions in the CLIP embedding space to obtain image-space prototypes, optimizes these into a text prototype space via cosine similarity, and at inference time selects the best-matching prototype as a negative guidance signal to suppress target concepts in a classifier-free guidance fashion.
+Addressing the difficulty of thoroughly erasing broad concepts (e.g., violence, pornography) in diffusion models, this paper proposes a training-free erasure method based on concept prototypes. It extracts image prototypes by clustering concept difference directions in the CLIP embedding space, transfers them to the text prototype space via optimization, and selects the best-matching prototype during inference as a negative guidance signal for classifier-free guidance-style concept suppression.
 
 ## Background & Motivation
 
-**Background**: T2I models (e.g., Stable Diffusion) are trained on large-scale web data and inevitably learn unsafe concepts (nudity, violence, copyright-protected content, etc.). Concept erasure methods are broadly divided into training-based approaches (modifying model weights, e.g., ESD, RECE, MACE) and training-free approaches (inference-time intervention, e.g., SLD, Safree, AdaVD).
+**Background**: Text-to-Image (T2I) models (e.g., Stable Diffusion) trained on large-scale web data inevitably learn unsafe concepts (pornography, violence, copyright, etc.). Concept erasure methods are categorized into training-based (modifying model weights, e.g., ESD, RECE, MACE) and training-free (inference-time intervention, e.g., SLD, Safree, AdaVD).
 
-**Limitations of Prior Work**: Existing methods perform well on **narrow concepts** (e.g., specific entities such as Pikachu or Elon Musk), but degrade on **broad concepts** (e.g., "violence," "nudity"). Broad concepts encompass diverse visual manifestations — violence may involve bloodshed, gunfights, or riots — and a single unified signal cannot cover all modes.
+**Limitations of Prior Work**: Existing methods perform well on **narrow concepts** (specific entities like Pikachu or Elon Musk) but face performance degradation on **broad concepts** (e.g., "violence," "pornography"). This occurs because broad concepts encompass diverse visual forms—violence can manifest as blood, gunfights, or riots—which cannot be covered by a single direction or uniform signal.
 
-**Key Challenge**: Prior methods implicitly assume that broad and narrow concepts share equivalent distributional properties and model them with a single or unified signal. This is viable for low-variance narrow concepts, but fails for high-variance, multi-faceted broad concepts — suppressing only the most salient instantiation (e.g., bloodshed in violence) while missing other semantic patterns (e.g., gunfights, riots).
+**Key Challenge**: Prior methods implicitly assume that broad and narrow concepts share identical distributional characteristics, modeling them with single or uniform signals. While feasible for low-variance narrow concepts, this fails for high-variance, multi-faceted broad concepts, suppressing only the most salient instantiations (e.g., blood in violence) while missing other semantic patterns (gunfights, riots).
 
-**Key Insight**: Motivated by the observation that generative models organize semantics into structured low-dimensional neighborhoods rather than randomly scattered distributions, instances of a target concept in the embedding space should cluster into several compact regions. Cluster centroids can thus serve as "concept prototypes," each capturing a distinct salient mode of the concept.
+**Key Insight**: Inspired by the observation that generative models organize semantics into structured low-dimensional neighborhoods rather than random distributions, instances of a target concept in the embedding space should aggregate in several compact regions. The centroids obtained through clustering can serve as "concept prototypes," each capturing a distinct salient mode of the concept.
 
-**Core Idea**: Contrastive CLIP embeddings of generated images with and without the target concept are computed, clustered to obtain image-space concept prototypes, and then transferred to the text embedding space via cosine similarity optimization. At inference time, the best-matching prototype is selected as a negative guidance signal to precisely suppress each semantic sub-mode of the concept.
+**Core Idea**: By contrasting CLIP embeddings of generated images with and without the target concept, the method clusters the differences to obtain image-space concept prototypes. These are then transferred to the text space via cosine similarity optimization. During inference, the most relevant prototype is selected as negative guidance to precisely suppress various sub-modes of the concept.
 
 ## Method
 
 ### Overall Architecture
-A three-stage pipeline: (1) collect concept-related prompts and concept-contrastive prompts, and generate paired images with and without the target concept; (2) compute differential directions in the CLIP image embedding space and apply clustering to obtain image prototypes, then optimize these into text prototypes; (3) at inference time, select the best-matching prototype as negative guidance for denoising.
+The paper addresses the difficulty of thoroughly erasing broad concepts that contain multiple visual forms. The approach first generates "concept-containing / concept-free" image pairs for the target concept offline, extracts the "concept-only" directions in CLIP space, and clusters them into several prototypes. These image-space prototypes are translated into text prototypes that can be fed into the diffusion model. During inference, the prototype that best fits the user prompt is selected as negative guidance to suppress the corresponding concept sub-mode. The entire process does not modify the weights of the diffusion model, making it a training-free intervention.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph P1["Concept Prototype Construction (Offline)"]
+        direction TB
+        A["Concept-containing / Concept-free<br/>Image Pairs"] --> B["CLIP Encoding Difference"]
+        B --> C["k-means Clustering<br/>Yields K Image Prototypes"]
+    end
+    C --> D["Text Prototype Optimization<br/>Soft Prompt Aligned with Image Prototypes"]
+    D --> E["Text Prototype Library"]
+    F["User Prompt"] --> G{"Prototype-Guided Inference<br/>Similarity Threshold τ"}
+    E --> G
+    G -->|"Prototype Exceeds τ"| H["CFG Negative Guidance<br/>Suppress Sub-mode"]
+    G -->|"No Prototype Exceeds τ"| I["Normal Generation"]
+    H --> J["Output Image"]
+    I --> J
+```
 
 ### Key Designs
 
-1. **Concept Prototype Construction (Image Space)**
+**1. Concept Prototype Construction: Decomposing "Broad Concepts" into Sub-modes via Clustering**
 
-    - **Function**: Extract multi-modal directional representations of a concept from generated images.
-    - **Mechanism**: For $N$ prompts, $M$ images with and $M$ images without the concept are generated per prompt. After CLIP encoding, all pairwise differentials $\mathcal{Z}_{\text{diff}} = \{z_{i,j} - z_{i,k}^{-}\}$ are computed, and k-means clustering yields $K$ image prototypes $\{p_{\mathbf{I}}^{(k)}\}_{k=1}^K$.
-    - **Design Motivation**: The concept-contrastive prompt design is carefully crafted — only the concept keyword is removed while other descriptors (scene, lighting, etc.) are retained, ensuring that the differential direction purely reflects the concept itself.
-    - **Key Parameters**: Broad concepts (e.g., violence) use $K=16$ prototypes; narrow concepts (style) use $K=1$; IP uses $K=2$.
+The difficulty with broad concepts lies in their high variance—"violence" can involve blood, gunfights, or riots. A single direction only suppresses the most salient form (blood), leaving others untouched. This design generates $M$ concept-containing and $M$ concept-free images for $N$ prompts. After CLIP encoding, it calculates the differences $\mathcal{Z}_{\text{diff}} = \{z_{i,j} - z_{i,k}^{-}\}$. Crucially, the concept contrastive prompts only remove the concept keyword while retaining other descriptions (e.g., removing "nude" but keeping environment and lighting). Thus, the difference direction points only to the concept rather than contextual variations. Applying k-means to these difference vectors yields $K$ image prototypes $\{p_{\mathbf{I}}^{(k)}\}_{k=1}^K$, each corresponding to a semantic sub-mode. $K$ is set based on concept variance: $K=16$ for broad concepts (e.g., violence), $K=1$ for artistic styles, and $K=2$ for IPs.
 
-2. **Text Prototype Optimization (Cross-Modal Transfer)**
+**2. Text Prototype Optimization: Translating Image Directions into Negative Conditions**
 
-    - **Function**: Transfer image-space prototypes into the text embedding space so they can be directly used to condition the LDM.
-    - **Mechanism**: Each text prototype $p_{\mathbf{T}}^{(k)} \in \mathbb{R}^{L \times d}$ is a learnable soft prompt optimized by maximizing its CLIP cosine similarity with the corresponding image prototype: $\max_{p_{\mathbf{T}}^{(k)}} \frac{\langle p_{\mathbf{I}}^{(k)}, \mathcal{E}(p_{\mathbf{T}}^{(k)}) \rangle}{\|p_{\mathbf{I}}^{(k)}\| \|\mathcal{E}(p_{\mathbf{T}}^{(k)})\|}$
-    - Backpropagation uses the EoT token embedding of the CLIP text encoder (encoder frozen; only prompt parameters updated), optimized for 2,000 steps at a learning rate of 5e-2.
+Since image prototypes reside in the CLIP image space and cannot directly condition the diffusion model, a cross-modal transfer is required. Each text prototype $p_{\mathbf{T}}^{(k)} \in \mathbb{R}^{L \times d}$ is a learnable soft prompt. The CLIP text encoder is frozen while only the prompt is updated to maximize the cosine similarity between its encoded EoT token embedding and the corresponding image prototype:
 
-3. **Prototype-Guided Inference (Concept Erasure)**
+$$\max_{p_{\mathbf{T}}^{(k)}} \frac{\langle p_{\mathbf{I}}^{(k)}, \mathcal{E}(p_{\mathbf{T}}^{(k)}) \rangle}{\|p_{\mathbf{I}}^{(k)}\| \, \|\mathcal{E}(p_{\mathbf{T}}^{(k)})\|}$$
 
-    - **Function**: Adaptively select the most relevant prototype at inference time for negative guidance.
-    - **Mechanism**: The cosine similarity between the user prompt embedding and each prototype is computed; the prototype $p_{\mathbf{T}}^{(k^*)}$ with the highest similarity exceeding threshold $\tau$ is selected. The CFG formulation is modified as: $\tilde{\epsilon}_{\theta}(z_t, c) = \epsilon_{\theta}(z_t) + \alpha(\epsilon_{\theta}(z_t, c) - \epsilon_{\theta}(z_t)) - \beta(\epsilon_{\theta}(z_t, p_{\mathbf{T}}^{(k^*)}) - \epsilon_{\theta}(z_t))$
-    - For multi-concept erasure, all prototypes are aggregated into a unified prototype bank.
-    - **Design Motivation**: The threshold $\tau$ ensures that no unnecessary negative guidance is applied when the prompt is unrelated to the target concept, preserving normal generation quality.
+Optimization is performed for 2000 steps with a learning rate of 5e-2. Leveraging CLIP’s aligned image-text space, tuning only this prompt segment completes the transfer from image prototypes to text prototypes without touching the diffusion model.
+
+**3. Prototype-Guided Inference: Adaptive Selection for Negative Guidance**
+
+During inference, the cosine similarity between the user prompt embedding and each prototype is calculated. The prototype $p_{\mathbf{T}}^{(k^*)}$ with the highest similarity that exceeds a threshold $\tau$ is selected and used as a negative guidance term in classifier-free guidance:
+
+$$\tilde{\epsilon}_{\theta}(z_t, c) = \epsilon_{\theta}(z_t) + \alpha(\epsilon_{\theta}(z_t, c) - \epsilon_{\theta}(z_t)) - \beta(\epsilon_{\theta}(z_t, p_{\mathbf{T}}^{(k^*)}) - \epsilon_{\theta}(z_t))$$
+
+The threshold $\tau$ acts as a critical switch: if no prototype exceeds the threshold (the prompt is irrelevant to the concept), no negative guidance is applied, and the quality of normal generation is unaffected. For multi-concept erasure, prototypes from all concepts are merged into a unified library for matching.
+
+### Example: Erasing "Violence"
+In the offline phase, 400 prompt pairs are created for "violence," generating 4 images per pair. CLIP differences are clustered into 16 prototypes representing sub-modes like blood, gunfights, or riots, and each is optimized into a text prototype. When a prompt like "a street protest turning violent" is input, its similarity with the "riot" prototype is highest and exceeds $\tau$. Only this prototype is used for negative guidance to suppress the riot visuals, while the other 15 prototypes remain inactive. For "a sunny street," all similarities are below $\tau$, no prototypes are triggered, and output quality remains normal. This allows a single prototype library to accurately target different concept sub-modes based on the prompt.
 
 ### Loss & Training
-- Backbone: SD v1.4; DDIM sampling with 30 steps; guidance scale 7.5.
-- Data preparation: 400 prompt pairs per malicious concept; 100 pairs per artistic style/IP concept; 4 images per pair (fixed seed).
-- Text prototype optimization: 2,000 steps; fully training-free (no modification to diffusion model weights).
+- Base Model: SD v1.4, DDIM 30 steps, guidance scale 7.5.
+- Data Preparation: 400 prompt pairs per malicious concept, 100 pairs per artistic style/IP, generating 4 images per pair with fixed seeds.
+- Text prototype optimization: 2000 steps, completely training-free (no modification to diffusion model weights).
 
 ## Key Experimental Results
 
-### Main Results (I2P Dataset, Q16 Detection Rate ↓)
+### Main Results (I2P Dataset, Q16 Detection Rate↓)
 
-| Method | Type | Overall ↓ | Nudity ↓ | Violence ↓ | Self-harm ↓ |
-|--------|------|-----------|----------|------------|-------------|
+| Method | Type | Overall↓ | Nudity↓ | Violence↓ | Self-harm↓ |
+|------|------|-------|-------|-------|-------|
 | SD v1.4 | Baseline | 35.6% | 54.5% | 40.1% | 35.5% |
 | ESD | Training | 12.2% | 16.4% | 6.3% | 11.1% |
 | TRCE | Training | 5.7% | 1.7% | 6.2% | 5.0% |
@@ -84,54 +100,53 @@ A three-stage pipeline: (1) collect concept-related prompts and concept-contrast
 
 ### Adversarial Robustness
 
-| Method | Ring-a-Bell ↓ | P4D ↓ | UnDiff ↓ | FID ↓ |
-|--------|--------------|-------|---------|-------|
+| Method | Ring-a-Bell↓ | P4D↓ | UnDiff↓ | FID↓ |
+|------|-------------|------|---------|------|
 | SD v1.4 | 71.3% | 91.3% | 63.8% | - |
 | TRCE | 6.7% | 2.0% | 7.7% | 48.7 |
 | Safree | 22.4% | 38.0% | 28.2% | 36.3 |
 | **Ours** | **6.7%** | **14.5%** | **13.3%** | 45.1 |
 
 ### Key Findings
-- Achieves an overall I2P detection rate of **5.2%**, the lowest among all methods (vs. TRCE at 5.7%), with consistently strong performance across all 7 sub-categories.
-- Competitive under adversarial attacks despite not being specifically designed for them — matches TRCE on Ring-a-Bell (6.7%), underperforms TRCE on P4D (14.5% vs. 2.0%) but substantially outperforms Safree.
-- **Strong cross-model generalizability**: outperforms Safree on both SDXL and SD 3.5; on SD 3.5, the P4D metric is reduced from Safree's 0.27 to 0.09.
-- FID is slightly higher than Safree (45.1 vs. 36.3), suggesting that multi-prototype negative guidance may marginally affect generation diversity.
+- Achieved an overall detection rate of **5.2%** on I2P, the lowest among all tested methods (vs. TRCE at 5.7%), with consistent performance across all 7 sub-categories.
+- Competitiveness in adversarial scenarios despite not being specifically designed for them—matching TRCE on Ring-a-Bell (6.7%) and significantly outperforming Safree on P4D, though trailing TRCE (14.5% vs. 2.0%).
+- **Strong cross-model generalization**: Outperformed Safree on SDXL and SD 3.5; P4D metrics on SD 3.5 dropped from 0.27 (Safree) to 0.09.
+- FID is slightly higher than Safree (45.1 vs. 36.3), indicating that multi-prototype negative guidance may slightly affect generation diversity.
 
 ## Highlights & Insights
-- **Multi-prototype modeling of broad concepts** is the core innovation — rather than blindly representing broad concepts with a single direction, k-means clustering in the embedding differential space captures distinct semantic sub-modes of the concept.
-- **Concept-contrastive prompt design** is particularly elegant — removing only the target concept keyword while retaining all other descriptors ensures that differential directions purely reflect conceptual rather than contextual differences.
-- **Cross-modal transfer** (image prototypes → text prototypes) leverages CLIP's aligned embedding space, requiring only soft prompt optimization without modifying the diffusion model.
-- Fully training-free and compatible across multiple model architectures (SD1.4/SDXL/SD3.5), making deployment straightforward.
+- **Multi-prototype modeling of broad concepts** is the core innovation—avoiding the oversimplification of broad concepts as a single direction and instead capturing semantic sub-modes via k-means in the embedding difference space.
+- **Concept contrastive prompt design** is ingenious—by removing only target conceptual words while keeping the context, it ensures difference directions purely reflect the concept rather than contextual shifts.
+- **Cross-modal transfer** (image prototype → text prototype) leverages CLIP’s aligned space, requiring only soft prompt optimization without modifying the diffusion model.
+- Completely training-free and compatible with multiple models (SD1.4/SDXL/SD3.5), making it deployment-friendly.
 
 ## Limitations & Future Work
-- **Adversarial robustness is not an explicit optimization target**: performance under P4D attacks is notably weaker than TRCE; adversarial training could be incorporated to address this.
-- The prototype count $K$ must be set manually (16 for broad concepts, 1 for narrow concepts), with no automatic determination mechanism.
-- The threshold $\tau$ governs the trade-off between false erasure and missed erasure rates, requiring careful tuning.
-- Concept-contrastive prompt generation relies on an LLM, which may be imprecise for concepts with ambiguous semantic boundaries.
-- Slightly elevated FID suggests that negative guidance may partially affect image diversity and quality.
+- **Adversarial robustness is not the primary optimization goal**: Performance under P4D attacks is notably weaker than TRCE; could be enhanced with adversarial training.
+- The number of prototypes $K$ requires manual setting (16 for broad, 1 for narrow), lacking an automatic determination mechanism.
+- The choice of threshold $\tau$ affects the trade-off between over-erasure and under-erasure, requiring careful tuning.
+- Generating concept contrastive prompts relies on LLMs, which may be imprecise for certain ambiguous concept boundaries.
+- The slightly higher FID indicates that negative guidance may partially impact image diversity and quality.
 
 ## Related Work & Insights
-- **vs. Safree**: Safree projects text embeddings to avoid toxic concept subspaces; the proposed method applies multi-prototype negative guidance — the latter provides more comprehensive coverage on broad concepts (overall 5.2% vs. 8.8%).
-- **vs. TRCE**: TRCE is a training-based method that modifies cross-attention weights; this work is training-free. TRCE shows stronger adversarial robustness (P4D) but requires model modification.
-- **vs. AdaVD**: AdaVD performs value decomposition projection in cross-attention; this work applies negative guidance at the CFG level — the two approaches are orthogonal and potentially complementary.
+- **vs. Safree**: Safree projects text embeddings to move away from toxic subspaces; this work uses multi-prototype negative guidance—the latter is more comprehensive for broad concepts (5.2% vs. 8.8% overall).
+- **vs. TRCE**: TRCE is training-based, modifying cross-attention weights; this work is training-free. The former is stronger in adversarial attacks (P4D) but requires model modification.
+- **vs. AdaVD**: AdaVD performs value decomposition projection in cross-attention; this work uses negative guidance at the CFG level—these approaches are orthogonal and potentially complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The multi-prototype approach for modeling broad concepts is novel and intuitively well-motivated; the concept-contrastive differential and clustering pipeline is cleverly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers I2P, three adversarial attack benchmarks, and cross-model generalization comprehensively.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is articulated clearly; the multi-modal broad concept examples in Fig. 2 are convincing.
-- Value: ⭐⭐⭐⭐ Offers practical value for T2I safety research; the training-free property facilitates deployment.
+- Novelty: ⭐⭐⭐⭐ The multi-prototype approach for broad concepts is novel and intuitive; the contrastive difference + clustering pipeline is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across I2P, three adversarial benchmarks, and cross-model generalization.
+- Writing Quality: ⭐⭐⭐⭐ Motivations are clearly articulated; the multi-modal examples of broad concepts in Fig.2 are persuasive.
+- Value: ⭐⭐⭐⭐ Highly practical for T2I safety, with training-free characteristics favoring deployment.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
+- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
 - [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
-- [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](../../ICML2026/image_generation/orthogonal_concept_erasure_for_diffusion_models.md)
-- [\[CVPR 2026\] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories](emma_concept_erasure_benchmark_with_comprehensive_semantic_metrics_and_diverse_c.md)
 
 </div>
 

@@ -2,133 +2,138 @@
 title: >-
   [Paper Note] Smoothing Slot Attention Iterations and Recurrences
 description: >-
-  [ICML 2026][Multimodal VLM][Object-Centric Learning] Addressing two long-neglected pain points in Slot Attention for image and video object-centric learning—"insufficient information for cold-start queries" and "forced u…
+  [ICML 2026][Multimodal VLM][Object-Centric Learning] Addressing the long-neglected pain points in Slot Attention for image and video object-centric learning—specifically the "insufficient information in cold-start queries" and the "forced unification of aggregation transformations for first vs. non-first frames"—the authors propose SmoothSA. It utilizes a small self-dist
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Object-Centric Learning"
-  - "Slot Attention"
-  - "Query Warming"
-  - "Video OCL"
-  - "Self-distillation"
+  - ICML 2026
+  - Multimodal VLM
+  - Object-Centric Learning
+  - Slot Attention
 date: 2026-05-08
-content_hash: 746933b6d54b0156
+content_hash: 1854508462613ca2
 ---
-
 # Smoothing Slot Attention Iterations and Recurrences
 
 **Conference**: ICML 2026  
 **arXiv**: [2508.05417](https://arxiv.org/abs/2508.05417)  
 **Code**: https://github.com/Genera1Z/SmoothSA (Available)  
 **Area**: Multimodal VLM / Object-Centric Learning / Slot Attention  
-**Keywords**: Object-Centric Learning, Slot Attention, Query Warming, Video OCL, Self-distillation
+**Keywords**: Object-Centric Learning, Slot Attention, Query Warm-up, Video OCL, Self-distillation
 
 ## TL;DR
-Addressing two long-neglected pain points in Slot Attention for image and video object-centric learning—"insufficient information for cold-start queries" and "forced unification of aggregation transformations for first/non-first frames"—the authors propose SmoothSA. By using a small self-distilled warming module to inject sample information into queries and allowing the first frame to run three iterations while non-first frames run only one, SmoothSA refreshes the SOTA on both image and video OCL benchmarks.
+Addressing the long-neglected pain points in Slot Attention for image and video object-centric learning—specifically the "insufficient information in cold-start queries" and the "forced unification of aggregation transformations for first vs. non-first frames"—the authors propose SmoothSA. It utilizes a small self-distilled warm-up module to inject sample information into queries while allowing the first frame to run three iterations and non-first frames to run only one. This approach sets new SOTA results on both image and video OCL benchmarks.
 
 ## Background & Motivation
 
-**Background**: Object-Centric Learning (OCL) is a paradigm that represents visual scenes as a set of independent object/background vectors (slots). This structured and compact representation often outperforms dense feature maps in downstream reasoning, video prediction, and synthetic generation. Its mainstream implementations are almost entirely built on Slot Attention (SA): treating image features as keys/values and $n$ query slots as "competitors," it assigns patches to different slots through several rounds of iterative cross-attention to learn object-level representations. The entire process requires no external supervision and relies on reconstruction loss for training. The standard practice for video OCL (the STEVE series) involves recursive calls to the image-based SA across frames: the first frame's queries are consistent with the image scenario, while queries for non-first frames are predicted from the previous frame's slots via a Transformer encoder block.
+**Background**: Object-Centric Learning (OCL) is a paradigm that represents visual scenes as a set of independent object/background vectors (slots). These structured, compact representations often outperform dense feature maps in downstream reasoning, video prediction, and synthetic generation. Most mainstream implementations are built on Slot Attention (SA), which treats image features as keys/values and $n$ query slots as "competitors." Through several rounds of iterative cross-attention, patches are assigned to different slots to learn object-level representations. The entire process is trained via reconstruction loss without external supervision. Standard video OCL (e.g., the STEVE family) recurrently calls the image-based SA across frames: the first-frame query matches the image case, while subsequent queries are predicted from the previous frame's slots via a Transformer encoder block.
 
-**Limitations of Prior Work**: The authors identify two problems accepted by default in almost all methods but never addressed directly. First, "query cold start": whether initialized from learnable Gaussian sampling or positional priors, the initial query slots contain only dataset-level priors without any clues about the current sample. This sample-independent starting point drags down aggregation quality in images and video first frames, forcing the model to "guess" through more iterations. Second, "transformation homogenization": in video, the first-frame queries are cold-starts with scarce information, whereas non-first-frame queries are derived from previous slots with ample sample information. However, most methods treat both equally, applying the same three SA iterations and ignoring the significant information gap between them.
+**Limitations of Prior Work**: The authors identify two problems that have been almost universally accepted by existing methods but never directly addressed. First, "query cold-start": whether initialized from learnable Gaussians or positional priors, the initial query slots only contain dataset-level priors and lack clues about the current sample. This sample-independent starting point hinders aggregation quality on images or the first frame of a video, forcing the model to "guess" through more iterations. Second, "transformation homogenization": in video, the first-frame query is a cold start with scarce information, whereas subsequent queries are derived from previous slots and contain rich sample information. Nevertheless, most methods treat them identically, applying the same three SA iterations despite the significant information gap.
 
-**Key Challenge**: Aggregation precision depends on the amount of sample information carried by the query. However, the SA framework is not naturally designed with differentiated processing paths for "queries with different prior information." Consequently, either all queries share a crude cold-start point, or all frames share a fixed number of iterations that does not favor any specific information state.
+**Key Challenge**: Aggregation precision depends on the amount of sample information carried by the query. However, the SA framework is not naturally designed to differentiate processing paths for "queries with different prior information." Consequently, either all queries share a coarse cold-start point, or all frames share a fixed number of iterations that does not favor any specific informational state.
 
-**Goal**: Without modifying the backbone OCL model, resolve: (i) how to inject sample-level information into cold-start queries for images/video first frames; (ii) how to allow SA to use different intensities of aggregation transformations between the first and subsequent video frames.
+**Goal**: Without modifying the backbone OCL model, solve: (i) how to inject sample-level information into cold-start queries for images/video first frames; and (ii) how to allow SA to use different intensities of aggregation transformations between first and non-first video frames.
 
-**Key Insight**: The authors notice that OCL models can output "good" slots after training; thus, "ideal queries" can actually be supervised by existing slots—which naturally supports self-distillation. Furthermore, the three-iteration setup is intended for cold-start queries; for non-first-frame queries that are already close to the true distribution, performing three iterations can lead to over-perturbation.
+**Key Insight**: The authors observe that OCL models themselves output "good" slots after training. Thus, "ideal queries" can be supervised by existing slots—naturally supporting self-distillation. Furthermore, while three iterations are necessary for cold-start queries, they may excessively perturb non-first frame queries that are already close to the true distribution.
 
-**Core Idea**: Insert a small module before SA to warm up cold-start queries into "approximate slots" (informative queries) and separate "three iterations" for the first frame from "single iterations" for non-first frames—simultaneously curing both problems by "symmetrizing information volume and transformation intensity."
+**Core Idea**: Insert a small module before SA to "warm up" cold-start queries into "approximate slots" (informative queries), and separate the "three iterations" for the first frame from the "single iteration" for non-first frames. By "symmetrizing information volume and transformation intensity," both problems are addressed simultaneously.
 
 ## Method
 
 ### Overall Architecture
-SmoothSA fully retains the classic OCL encode-aggregate-decode structure: the encoder maps image/video frames into features $F \in \mathbb{R}^{h\times w\times c}$, the aggregator $\phi_a$ (i.e., the SA module) aggregates features into $n$ slots $S \in \mathbb{R}^{n\times c}$, and the decoder reconstructs the input from slots to provide self-supervision. SmoothSA introduces two minor modifications at the aggregator entrance and the inter-frame scheduling: (1) Before the cold-start query $Q_1$ enters the SA iterations, it passes through a "warmer" $\phi_p$ to produce an informative query $\tilde Q_1$; (2) For video, it runs the standard 3 SA iterations only on the first frame to obtain slot $S_1$, while non-first frames run only 1 SA iteration, with queries derived directly from the previous frame's slot via a standard transition module. The modification is minimal and can be directly attached to any SA-based image/video OCL model.
+SmoothSA maintains the classic OCL encode-aggregate-decode structure. The encoder maps image/video frames into features $F \in \mathbb{R}^{h\times w\times c}$. The aggregator $\phi_a$ (the SA module) aggregates features into $n$ slots $S \in \mathbb{R}^{n\times c}$, and the decoder reconstructs the input from the slots to provide self-supervision. SmoothSA introduces two minor modifications at the aggregator input and frame scheduling: (1) Before the cold-start query $Q_1$ enters SA iterations, it passes through a "warmer" $\phi_p$ to become an informative query $\tilde Q_1$; (2) For video, the standard 3 SA iterations are performed only on the first frame to obtain slot $S_1$, while non-first frames perform only 1 iteration, with their queries derived directly from the previous frame's slots via a transition module. These changes are minimal and can be integrated into any SA-based image/video OCL model.
+
+```mermaid
+graph TD
+    IN["Image / Video Frame"] --> ENC["Encoder → Feature F"]
+
+    subgraph D1["Query Warmer φ_p"]
+        direction TB
+        Q1["cold-start query Q₁"] --> PH["Cross-Attn + MLP<br/>Inject sample features"]
+        PH --> QT["informative query Q̃₁"]
+    end
+
+    subgraph D2["Heterogeneous Iteration Scheduling"]
+        direction TB
+        SA3["First Frame: Full 3 rounds of SA → slot S₁"]
+        SA1["Non-first Frame: 1 round of SA → slot Sₜ"]
+    end
+
+    ENC -->|First Frame / Image| Q1
+    ENC -->|Non-first Frame t≥2| TR["Prev Slot S(t−1)<br/>Transition Net → query Qₜ"]
+    QT --> SA3
+    TR --> SA1
+    SA3 --> DEC["Decoder Recon → L_rec Self-sup"]
+    SA1 --> DEC
+    SA3 -.->|stop-grad Self-distill L_p| QT
+```
 
 ### Key Designs
 
-1.  **Query Warmer $\phi_p$ (Approximating slot distribution via self-distilled cold-start queries)**:
-    - **Function**: Jointly maps the information-scarce cold-start query $Q_1$ and input features $F_1$ to an informative query $\tilde Q_1$ that "approximates the current sample's slots," providing a better starting point for subsequent SA iterations.
-    - **Mechanism**: $\phi_p$ is a very lightweight module, structurally understandable as a single query-feature cross-attention/MLP. It takes $Q_1$ and $F_1$ as input and outputs $\tilde Q_1 \in \mathbb{R}^{n\times c}$. The supervision signal comes from the OCL model's own output slot $S_1$ for the current batch—letting $\tilde Q_1 \approx S_1$ via stop-gradient self-distillation. The loss is approximately $\mathcal{L}_p = \|\tilde Q_1 - \text{sg}(S_1)\|^2$. During training, $\phi_p$ is co-optimized with the backbone OCL; at inference, $\tilde Q_1$ replaces $Q_1$ in SA.
-    - **Design Motivation**: Previous works (e.g., BO-QSA, MetaSlot) tried to enrich the query's global prior using multi-Gaussians or object prototype codebooks but still failed to inject "current sample" information into the query. $\phi_p$ is the first to explicitly inject sample features into the query via a differentiable channel. This is equivalent to "shifting the SA iteration curve forward" by one step, changing the starting point from a distant cold-start to a warmed-up point near the final slot, naturally reducing iteration error.
+**1. Query Warmer $\phi_p$: Pushing cold-start queries toward slot distribution via self-distillation**
 
-2.  **Heterogeneous Iteration Scheduling for Video Frames (Multiple iterations for the first frame, single iteration for others)**:
-    - **Function**: Eliminates the waste and perturbation of using 3 SA iterations for all frames in STEVE-like frameworks, matching "iteration intensity" to "query information volume."
-    - **Mechanism**: For the first frame (where queries are cold-start with a large information gap), $\Phi_a$ expands to $S_1^{(i)}, M_1^{(i)} = \phi_a(S_1^{(i-1)}, F_1)$ for $i=1,2,3$, taking $S_1 := S_1^{(3)}$. For non-first frames $t\ge 2$, the query $Q_t$ is obtained directly from the previous slot $S_{t-1}$ via a standard transition network (e.g., STEVE's Transformer encoder block) and then runs SA only once: $S_t, M_t = \phi_a(Q_t, F_t)$. Visualizations show that multiple iterations for non-first frames can cause unnecessary alignment oscillations in queries that are already close to the true distribution.
-    - **Design Motivation**: The 3-iteration setting was originally intended to provide alignment margin for "information-scarce queries." If a query is already close to the true slot, multiple iterations only introduce redundant updates and wash out temporal information. Differentiating the "number of transformations" essentially provides different alignment paths for queries in different information states, following the simple intuition of "calculating more steps if the input is harder."
+Regardless of initialization via learnable Gaussians or positional priors, initial query slots contain only dataset-level priors and no current sample information, forcing SA to "guess" over more iterations. $\phi_p$ is a lightweight module (one query-feature cross-attention + MLP) that maps the cold-start query $Q_1$ and input features $F_1$ into an informative query $\tilde Q_1 \in \mathbb{R}^{n\times c}$ that approximates the current sample's slot. The supervision signal comes directly from the slots $S_1$ produced by the OCL model on the current batch—letting $\tilde Q_1 \approx S_1$ via stop-gradient self-distillation with loss $\mathcal{L}_p = \|\tilde Q_1 - \text{sg}(S_1)\|^2$. This shifts the SA iteration curve forward: the starting point moves from a distant cold start to a warmed point close to the final slot, naturally reducing iteration error. Unlike BO-QSA or MetaSlot, which enrich "dataset-level" priors, $\phi_p$ is the first to inject "current sample" features into the query through a differentiable channel.
 
-3.  **Tightly Coupled Training with Backbone OCL Self-Supervised Loss**:
-    - **Function**: Enables the warming module and backbone OCL to work together end-to-end under the same self-supervised objective without external labels or additional stages.
-    - **Mechanism**: The total loss is $\mathcal{L} = \mathcal{L}_{rec} + \lambda \mathcal{L}_p$, where $\mathcal{L}_{rec}$ is the OCL's own reconstruction loss (e.g., cross-entropy for dVAE tokens or pixel MSE), and $\mathcal{L}_p$ is the stop-gradient distillation term between the $\phi_p$ output and the current slot. This way, $\phi_p$ keeps up as the backbone OCL learns accurately, without allowing noise to back-propagate into the OCL backbone's SA learning.
-    - **Design Motivation**: Training $\phi_p$ end-to-end as a standard trainable front layer with SA might lead to instability where "$\phi_p$ pulls the query toward noisy slots, while SA is interfered with by these noisy queries." Stop-gradient self-distillation breaks this cycle, ensuring $\phi_p$ always follows the OCL's current optimal solution, sharing roots with self-distillation frameworks like BYOL.
+The stop-gradient is a critical detail for stable training. If $\phi_p$ were trained end-to-end as a standard prefix layer with SA, it would fall into an unstable loop where $\phi_p$ pulls the query toward unreliable slots, and SA is further disturbed by noisy queries. The stop-gradient breaks this loop, ensuring $\phi_p$ unidirectionally follows the OCL's current optimal slot distribution without backpropagating noise to the SA backbone, similar to frameworks like BYOL. Thus, the warmer and the backbone OCL are linked end-to-end under a joint self-supervised objective $\mathcal{L} = \mathcal{L}_{rec} + \lambda \mathcal{L}_p$ without requiring external labels or extra training stages.
+
+**2. Heterogeneous Iteration Scheduling: Matching iteration intensity to information volume**
+
+Methods in the STEVE family typically apply 3 SA iterations to all frames. However, the first-frame query is a cold start, while non-first queries already possess rich sample information from previous slots. This work matches "iteration intensity" to "query information volume": the first frame uses three full rounds $S_1^{(i)}, M_1^{(i)} = \phi_a(S_1^{(i-1)}, F_1)$ (for $i=1,2,3$, with $S_1 := S_1^{(3)}$), allowing multi-step alignment for cold starts. For non-first frames ($t \ge 2$), the query $Q_t$ comes from the previous slot $S_{t-1}$ and only runs SA once: $S_t, M_t = \phi_a(Q_t, F_t)$. Since the query is already close to the real slot, multiple rounds introduce redundant updates that dilute the temporal information. Visualizations confirm that multiple iterations on non-first frames cause unnecessary alignment oscillations for queries already near the true distribution. This follows the intuition: "do more computation when the input is harder."
 
 ### Loss & Training
-All modules are optimized simultaneously during training with the objective $\mathcal{L} = \mathcal{L}_{rec} + \lambda \mathcal{L}_p$. A stop-gradient is applied to the slot side in $\mathcal{L}_p$, making the warming module unidirectionally follow the backbone OCL's optimal slot distribution. In the video training phase, differentiated iteration counts are implemented directly via if-branches in the forward pass, adding no memory overhead or extra stages.
+During training, all modules are optimized simultaneously with the objective $\mathcal{L} = \mathcal{L}_{rec} + \lambda \mathcal{L}_p$. Applying a stop-gradient to the slot side of $\mathcal{L}_p$ ensures the warmer follows the backbone OCL's optimal slot distribution. In video training, the iteration difference is implemented directly via conditional branching in the forward pass, adding no memory overhead or extra stages.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors attached SmoothSA to different backbones (DINOSAUR, STEVE, SAVi, RandSF.Q, etc.) across standard benchmarks for image OCL (COCO, Movi-E) and video OCL (Movi-D, Movi-E, YT-VIS, Physion). They compared against existing SA variants on object discovery (mIoU/FG-ARI), object recognition, and visual reasoning.
+The authors integrated SmoothSA into various backbones (DINOSAUR, STEVE, SAVi, RandSF.Q) across several image OCL (COCO, Movi-E) and video OCL (Movi-D, Movi-E, YT-VIS, Physion) benchmarks. They evaluated object discovery (mIoU/FG-ARI), object recognition, and visual reasoning.
 
 | Task | Dataset | Metric | Backbone Baseline | + SmoothSA | Gain |
 |------|---------|--------|-------------------|------------|------|
-| Image Object Discovery | COCO | mIoU / FG-ARI | DINOSAUR baseline | Ours | Consistent improvement |
-| Video Object Discovery | Movi-E | FG-ARI | STEVE / RandSF.Q | Ours | Further gains on SOTA |
-| Visual Reasoning | Physion | Accuracy | SA baseline | Ours | Significant |
+| Image Object Discovery | COCO | mIoU / FG-ARI | DINOSAUR | Improved | Consistent |
+| Video Object Discovery | Movi-E | FG-ARI | STEVE / RandSF.Q | Improved | Surpasses SOTA|
+| Visual Reasoning | Physion | Accuracy | SA Baseline | Improved | Significant |
 
-(Detailed values are in the paper's tables; the core conclusion is that adding SmoothSA consistently improves all three types of metrics regardless of the backbone or dataset.)
+(Detailed values are in the paper; the core conclusion is that SmoothSA consistently improves all three metric categories regardless of the backbone or dataset.)
 
 ### Ablation Study
 
-| Configuration | FG-ARI / mIoU Trend | Description |
+| Configuration | FG-ARI / mIoU Trend | Explanation |
 |---------------|---------------------|-------------|
-| Full SmoothSA | Best | Warming + Inter-frame heterogeneous iterations |
-| w/o Warming $\phi_p$ | Significant drop | Validates that query cold-start is the main bottleneck for first-frame aggregation |
-| w/o Heterogeneous Iters (3 for all) | Drop | Proves multiple iterations negatively impact information-rich queries |
-| $\phi_p$ without stop-gradient | Unstable/Drop | Validates necessity of stop-gradient in self-distillation |
-| Larger $\phi_p$ | Saturated gain | Smaller warming modules are better; a few thousand parameters suffice |
+| Full SmoothSA | Best | Warm-up + Heterogeneous Scheduling |
+| w/o Warm-up $\phi_p$ | Significant Drop | Cold-start is the bottleneck for first-frame quality |
+| w/o Heterog. (3 iters for all) | Drop | Multiple iterations for info-rich queries are harmful |
+| $\phi_p$ w/o stop-gradient | Unstable / Lower | Validates necessity of broken gradient for distillation |
+| Larger $\phi_p$ | Diminishing Returns | A small module (few thousand params) is sufficient |
 
 ### Key Findings
-- The warming module is extremely lightweight yet brings stable gains, indicating that "starting point bias" accounts for a large portion of SA iteration error. A significant part of traditional iterations compensates for bad starts rather than performing true aggregation.
-- Single iterations for non-first frames are not only sufficient but better, showing that "more information leading to fewer iterations" is a universal law for SA. This provides direct insight for future designs of SA with adaptive iteration counts.
-- Improvements appear simultaneously in FG-ARI (proxy for object discovery quality) and downstream reasoning, indicating that improving query information volume improves both segmentation and downstream representation learning.
+- The query warmer is extremely lightweight but provides stable gains, suggesting "starting point bias" accounts for a large portion of SA iteration error; much of the traditional three rounds compensates for a bad start rather than performing true aggregation.
+- Single iterations for non-first frames are not only efficient but better, suggesting a universal law for SA: "more information requires fewer iterations." This provides direct insight for future adaptive SA designs.
+- Improvements appear simultaneously in FG-ARI (discovery quality) and downstream reasoning, indicating that improving query information improves both segmentation and representation learning.
 
 ## Highlights & Insights
-- The warmer uses the OCL's own output for self-distillation, adding almost no extra label/computation cost, yet resolves the "query cold start" issue—long avoided by mainstream methods—in a simple and theoretically clear manner.
-- Treating "iteration count" as a hyperparameter that can switch based on query information rather than a rigid value of 3 aligns with the "information volume $\rightarrow$ computation volume" philosophy. This can be transferred to any iterative refinement framework (iterative query decoders, recursive mask refinement, etc.).
-- The paper unifies two seemingly independent problems (cold-start in image first frames and homogenization across video frames) under the abstraction of "smoothing SA iterations and recurrences," providing a clear conceptual framework. This approach of grouping multiple engineering issues into a unified perspective is very helpful for inspiring new methods.
+- The warmer uses OCL's own output for self-distillation, incurring negligible extra annotation or compute cost. It solves the long-neglected "query cold-start" problem with a conceptually simple yet theoretically sound approach.
+- Treating "iteration count" as a flexible hyperparameter based on query information rather than a fixed value of 3 aligns "computation" with "information volume." This approach can be transferred to any iterative refinement framework.
+- By unifying two seemingly independent issues (cold-start in the first frame and homogeneity across frames) under the abstraction of "smoothing SA iterations and recurrences," the paper provides a clear conceptual framework.
 
 ## Limitations & Future Work
-- The warming module depends on the backbone OCL outputting "sufficiently good slots" as distillation targets. During early training stages when the OCL backbone might collapse, the supervision signal for $\phi_p$ is noisy; a warm-up schedule might be needed.
-- Inter-frame iteration counts are hard-coded to "3 for the first frame, 1 for others," which doesn't account for scene cuts or sudden changes requiring a fresh cold-start. A reasonable extension would be a lightweight signal to judge if the "current frame query needs to be treated as a cold-start again."
-- Experiments were mainly conducted on synthetic videos and medium-scale real data, not yet covering large-scale long videos or real open-world scenarios. Whether query information degrades under long-term drift remains to be observed.
+- The warmer relies on the backbone OCL's ability to output "sufficiently good slots" as distillation targets. During early training phases when the backbone might collapse, the supervision signal for $\phi_p$ is noisy; a warm-up schedule might be required.
+- The scheduling is hard-coded (3 for first, 1 for others) and does not account for scene cuts or sudden changes where a cold-start might be needed again. An extension could involve a lightweight signal to detect if a query needs to be re-initialized.
+- Experiments focused on synthetic and medium-scale real-world data. Performance on large-scale long videos or open-world data remains to be observed, specifically whether queries degrade over long periods.
 
 ## Related Work & Insights
-- **vs Slot Attention / BO-QSA**: BO-QSA enriches query distribution via multi-Gaussians, but queries remain "dataset-level" priors without reaching "sample-level" information. SmoothSA's injection of sample features via self-distillation is a fundamental difference in approach.
-- **vs MetaSlot**: MetaSlot performs a draft aggregation and then re-initializes queries using an object prototype codebook. It still essentially "supplements queries with priors" rather than "supplements queries with the current sample" and requires extra codebooks and discretization, increasing complexity.
-- **vs STEVE / SAVi / RandSF.Q**: These methods focus on "how to propagate queries better between frames" but default to running the same SA iterations for all frames. SmoothSA is the first to make "inter-frame transformation intensity" adjustable, which is orthogonal to query transition mechanisms and can be stacked on top of SOTA methods like RandSF.Q for further gains.
+- **vs. Slot Attention / BO-QSA**: BO-QSA enriches queries via multi-Gaussians, but these remain "dataset-level" priors. SmoothSA injects "sample-level" features via self-distillation, which is a fundamental difference.
+- **vs. MetaSlot**: MetaSlot performs a draft aggregation and then re-initializes queries using an object prototype codebook. It still uses "priors" to supplement queries rather than "current sample features" and involves higher complexity due to the codebook.
+- **vs. STEVE / SAVi / RandSF.Q**: These focus on better inter-frame query transition but assume identical SA iterations for all frames. SmoothSA is the first to adjust "transformation intensity" and is orthogonal to transition mechanisms, allowing it to be layered on top of backbones like RandSF.Q.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to explicitly formalize "query cold start" and "transformation homogenization," though the solution (self-distillation + scheduling) is simple.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated consistency across multiple image/video OCL backbones and downstream tasks with complete ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative by unifying two modifications under "smooth iterations / smooth recurrences."
-- Value: ⭐⭐⭐⭐ High engineering value due to stable performance gains across SA-based OCL backbones with nearly zero cost.
+- Novelty: ⭐⭐⭐⭐ First to formally address "query cold-start" and "transformation homogeneity," though the solution (self-distill + scheduling) is simple.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Consistent validation across multiple backbones and tasks with complete ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative unifying two changes under the "smooth iterations/recurrences" concept.
+- Value: ⭐⭐⭐⭐ High engineering value as it improves most SA-based OCL backbones with nearly zero cost.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[ICML 2026\] Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing](certified_robustness_under_heterogeneous_perturbations_via_hybrid_randomized_smo.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
-
 </div>
 
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)

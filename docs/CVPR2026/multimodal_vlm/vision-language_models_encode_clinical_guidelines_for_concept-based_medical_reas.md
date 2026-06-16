@@ -2,118 +2,127 @@
 title: >-
   [Paper Note] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Concept Bottleneck Models] This paper proposes MedCBR, a framework that integrates clinical diagnostic guidelines (e.g.…
+  [CVPR 2026][Multimodal VLM][CLIP] The authors propose the MedCBR framework, which integrates clinical diagnostic guidelines (e.g., BI-RADS) into the training and inference processes of Concept Bottleneck Models (CBMs). By leveraging Large Vision-Language Models (LVLMs) to generate guideline-consistent reports for enhanced concept supervision, and combi
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Concept Bottleneck Models"
-  - "Medical Imaging"
-  - "Explainable AI"
-  - "Clinical Guidelines"
-  - "CLIP"
+  - CVPR 2026
+  - Multimodal VLM
+  - CLIP
 date: 2026-05-08
-content_hash: 115c2d937a5c54e2
+content_hash: 0222958b5966124c
 ---
-
 # Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.08921](https://arxiv.org/abs/2603.08921)  
 **Code**: None  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Concept Bottleneck Models, Medical Imaging, Explainable AI, Clinical Guidelines, CLIP
 
 ## TL;DR
-This paper proposes MedCBR, a framework that integrates clinical diagnostic guidelines (e.g., BI-RADS) into the training and inference pipeline of concept bottleneck models. By leveraging LVLMs to generate guideline-consistent reports for enhanced concept supervision, combining multi-task CLIP training with a large reasoning model for structured clinical explanation generation, MedCBR achieves AUROCs of 94.2% and 84.0% on ultrasound and mammography cancer detection, respectively.
+The authors propose the MedCBR framework, which integrates clinical diagnostic guidelines (e.g., BI-RADS) into the training and inference processes of Concept Bottleneck Models (CBMs). By leveraging Large Vision-Language Models (LVLMs) to generate guideline-consistent reports for enhanced concept supervision, and combining multi-task CLIP training with Large Reasoning Models (LRMs) for structured clinical explanations, the method achieves AUROCs of 94.2% and 84.0% in ultrasound and mammography cancer detection.
 
 ## Background & Motivation
-**Background**: Concept Bottleneck Models (CBMs) connect model predictions to human-interpretable concepts through an intermediate concept layer, representing a dominant paradigm in explainable AI and proving particularly valuable in medical imaging.
+**Background**: Concept Bottleneck Models (CBMs) connect model predictions with human-understandable concepts via an interpretable intermediate concept layer. This is a dominant paradigm in explainable AI, particularly critical in medical imaging.
 
-**Limitations of Prior Work**: Standard CBMs rely on discrete concept representations, neglecting broader clinical context such as diagnostic guidelines and expert heuristics, which leads to reduced reliability in complex cases. Specific issues include: (a) concept annotations are noisy and incomplete due to inter-observer variability; (b) CBMs fail to capture experience-driven reasoning, such as cases that appear benign but require holistic assessment within the context of clinical guidelines.
+**Limitations of Prior Work**: Standard CBMs rely on discrete concept representations, ignoring broader clinical contexts such as diagnostic guidelines and expert heuristics, which results in decreased reliability for complex cases. Specific issues include: (a) noisy and incomplete concept annotations (inter-observer variability); (b) the inability of CBMs to capture experience-driven reasoning, such as cases that appear benign but require comprehensive evaluation within the context of clinical guidelines.
 
-**Key Challenge**: CBMs require complete and noise-free concept annotations and assume that diagnostic reasoning is a deterministic function of concept presence—yet medical diagnosis depends on contextual information and structured reasoning embedded in clinical guidelines.
+**Key Challenge**: CBMs necessitate complete and noise-free concept annotations and assume that diagnostic reasoning is a deterministic function of concept occurrence—however, medical diagnosis relies on contextual information and structured reasoning defined in clinical guidelines.
 
-**Goal**: (a) Address concept annotation noise and incompleteness; (b) remedy the lack of clinical context in concept-to-diagnosis reasoning; (c) provide auditable explanations for model predictions.
+**Goal**: (a) Address noisy/incomplete concept annotations; (b) provide clinical context for the reasoning from concepts to diagnosis; (c) generate auditable explanations for model predictions.
 
-**Key Insight**: Diagnostic reasoning is modeled as inference over multiple evidence sources rather than a direct function of concepts, with clinical guidelines introduced as a structured knowledge source.
+**Key Insight**: Modeling diagnosis as reasoning over multiple evidence sources (rather than a direct function of concepts) and introducing clinical guidelines as a structured knowledge source.
 
-**Core Idea**: Enrich concept representations via LVLM-generated guideline-consistent reports, combined with multi-task contrastive learning and a large reasoning model for interpretable diagnostic narrative generation.
+**Core Idea**: Enriching concept representations through guideline-consistent reports generated by LVLMs + training with multi-task contrastive learning + generating explainable diagnostic narratives using Large Reasoning Models.
 
 ## Method
 
 ### Overall Architecture
-MedCBR comprises three stages: (1) **guideline-driven concept enrichment**—converting discrete concept labels into guideline-consistent textual reports using an LVLM; (2) **vision-language concept modeling**—training CLIP with multi-task objectives that jointly optimize cross-modal alignment, concept prediction, and diagnostic classification; (3) **concept-based clinical reasoning**—using a frozen large reasoning model (LRM) to integrate predicted concepts with guidelines to produce structured diagnostic explanations.
+The core problem MedCBR aims to solve is that standard CBMs treat diagnosis as a deterministic function of "concept occurrence," whereas real-world medical diagnosis involves contextual reasoning combined with clinical guidelines—a finding that appears benign might be classified as malignant after comprehensive evaluation under guidelines like BI-RADS. MedCBR's approach elevates clinical guidelines from "post-hoc explanations" to "structured knowledge sources throughout the training and inference pipeline." The pipeline connects three models in three steps: first, an LVLM translates sparse discrete concept labels into guideline-conditioned text reports to serve as denser supervision signals; second, a CLIP backbone is trained under multi-task objectives to simultaneously learn image-text alignment, concept prediction, and diagnostic classification; finally, a frozen Large Reasoning Model (LRM) consumes the predicted results and the guidelines to generate an auditable diagnostic narrative. Note that clinical guidelines $\mathcal{G}$ are not just present at a single step but are fed into both the beginning and end—constraining report generation by the LVLM and the reasoning of the LRM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Medical Image x + Discrete Concept Labels c<br/>+ Diagnostic Label y + Clinical Guideline G"]
+    IN --> S1["Guideline-Driven Concept Enrichment<br/>LVLM: Generate Guideline-Conditioned Report r"]
+    S1 -->|Report r as Alignment Target| S2["Multi-task Vision-Language Concept Model<br/>CLIP Backbone + Three Losses: Alignment/Diagnosis/Concept"]
+    S2 --> MID["Diagnostic Prob. ŷ + Concept Confidence ĉ"]
+    MID --> S3["Concept-based Clinical Reasoning<br/>Frozen LRM: Prompt π=(Instruction, ŷ, ĉ, Guideline)"]
+    IN -.Clinical Guideline G.-> S3
+    S3 --> OUT["Auditable Structured Diagnostic Narrative"]
+```
 
 ### Key Designs
 
-1. **Guideline-Driven Concept Enrichment**:
+**1. Guideline-Driven Concept Enrichment: Translating Discrete Labels into Guideline-Conditioned Reports**
 
-    - **Function**: Transforms discrete concept vectors $c$ into continuous, guideline-conditioned textual representations $r$.
-    - **Mechanism**: An LVLM receives the image $x$, the positive concept label set $c^+$, the label $y$, and clinical guidelines $\mathcal{G}$, and generates a structured report describing visual findings and summarizing their diagnostic implications according to $\mathcal{G}$.
-    - **Design Motivation**: Discrete concept labels merely indicate which findings are present and cannot express inter-concept relationships or diagnostic significance. LVLM-generated enriched reports capture contextual and relational semantics among concepts, providing a more consistent supervision signal.
+A practical pain point in medical concept annotation is noise and incompleteness (inter-observer variability), and a binary concept vector $c$ only indicates "which findings are present," failing to describe their relationships or their meaning within a guideline framework. MedCBR allows the LVLM to view the image $x$, the positive concept set $c^+$, the diagnostic label $y$, and the clinical guideline $\mathcal{G}$ simultaneously to generate a structured report $r$. This report describes visual findings and maps them to diagnostic implications according to the guideline. Thus, sparse discrete supervision is replaced by continuous text carrying context and relational semantics, making the downstream alignment target more stable and closer to the logic of clinical interpretation.
 
-2. **Multi-Task Vision-Language Concept Model**:
+**2. Multi-task Vision-Language Concept Model: Single CLIP Backbone for Alignment, Concept, and Diagnosis**
 
-    - **Function**: Jointly learns image-text alignment, concept prediction, and diagnostic classification.
-    - **Mechanism**: Built on a CLIP backbone, the model is simultaneously optimized with three losses: a contrastive loss $\mathcal{L}_{CLIP}$ aligning images with LVLM-generated reports; a diagnostic loss $\mathcal{L}_y$ for cancer classification over visual embeddings; and a concept loss $\mathcal{L}_c$ predicting individual concepts via $N_c$ dedicated lightweight adapters. The total loss is $\mathcal{L} = \lambda\mathcal{L}_{CLIP} + \mu\mathcal{L}_y + \nu\mathcal{L}_c$.
-    - **Design Motivation**: Multi-task training simultaneously enforces (i) cross-modal consistency, (ii) concept-level interpretability, and (iii) diagnostic discriminability, yielding representations that are both semantically rich and clinically grounded.
+Good textual supervision is insufficient; visual representations must satisfy the conflicting requirements of being "semantically rich" and "clinically discriminative." Using CLIP as a backbone, MedCBR jointly optimizes three losses during a single training phase: a contrastive loss $\mathcal{L}_{CLIP}$ to align images with reports generated in the previous step, a diagnostic loss $\mathcal{L}_y$ for cancer classification directly on visual embeddings, and a concept loss $\mathcal{L}_c$ using $N_c$ lightweight adapters to predict each concept. The total objective is a weighted sum:
 
-3. **Concept-Based Clinical Reasoning**:
+$$\mathcal{L} = \lambda\mathcal{L}_{CLIP} + \mu\mathcal{L}_y + \nu\mathcal{L}_c$$
 
-    - **Function**: Converts model predictions into structured diagnostic narratives.
-    - **Mechanism**: A frozen LRM receives a structured prompt $\pi = (\mathcal{Q}, \hat{y}, \hat{c}, \mathcal{G})$ comprising task instructions, predicted cancer probability, concept prediction confidences, and clinical guidelines, and generates a step-by-step diagnostic reasoning explanation.
-    - **Design Motivation**: Since the LRM operates on structured inputs and explicit guidelines $\mathcal{G}$, its reasoning is anchored to verifiable clinical knowledge, reducing the risk of hallucination.
+Cross-modal consistency, concept-level interpretability, and diagnostic discriminative power are compressed into the same set of representations. This avoids the common degradation where "adding a concept bottleneck layer reduces discriminative power"—a phenomenon observed in the ablation study where "CLIP+CBL performs worse than pure CLIP, but recovers after adding guidelines and multi-task learning."
+
+**3. Concept-Based Clinical Reasoning: Anchoring Frozen LRM Predictions to Verifiable Guidelines**
+
+The previous steps yield numbers (cancer probability, concept counts/confidences), but clinicians require auditable reasoning. Instead of training a generator, MedCBR feeds a frozen LRM a structured prompt $\pi = (\mathcal{Q}, \hat{y}, \hat{c}, \mathcal{G})$, where $\mathcal{Q}$ is the task instruction, $\hat{y}$ is the predicted cancer probability, $\hat{c}$ is the concept prediction confidence, and $\mathcal{G}$ is the clinical guideline. The LRM then derives a diagnostic explanation. Crucially, every reasoning step is anchored to explicit guidelines $\mathcal{G}$ and actual model predictions, rather than allowing the model to hallucinate. This significantly reduces hallucination risk and allows the output to be checked against guidelines line-by-line.
+
+### An Illustrative Example
+
+Consider a breast ultrasound image. On the **training side**, an LVLM observes the image, its concept labels (e.g., "irregular margins," "posterior shadowing"), and the BI-RADS guidelines to write a report: "Mass with irregular margins and posterior shadowing, suggesting increased malignancy probability per BI-RADS"—this report becomes the text target for CLIP alignment. On the **inference side**, for a new image at test time, the multi-task CLIP provides a diagnostic probability $\hat{y}=0.87$ (malignant) and concept confidences $\hat{c}$ (e.g., "irregular margins" 0.9, "calcification" 0.3). These, along with the BI-RADS guidelines, are packaged into a prompt $\pi$ for the frozen LRM, which outputs: "High-confidence finding of irregular margins, classified as Category 4C per BI-RADS, biopsy recommended." This provides both the conclusion and verifiable concept evidence corresponding to guideline clauses.
 
 ## Key Experimental Results
 
 ### Main Results — Cancer Detection
 
 | Method | BUS-BRA (AUROC) | CBIS-DDSM (AUROC) | CUB-200 (Acc.) |
-|---|---|---|---|
+|------|----------------|-------------------|----------------|
 | CBM | 84.8 | 79.6 | 62.9 |
 | CLIP ViT-L/14 | 93.5 | 82.4 | 85.7 |
 | AdaCBM | 87.9 | 75.6 | 69.8 |
 | Label-free CBM | 60.0 | 70.0 | 74.3 |
-| **MedCBR** | **94.2** | **84.0** | **86.1** |
+| **Ours** | **94.2** | **84.0** | **86.1** |
 
 ### Ablation Study — Component Contributions
 
 | Configuration | BUS-BRA | CBIS-DDSM | CUB-200 |
-|---|---|---|---|
+|------|---------|-----------|---------|
 | CLIP ViT | 93.5 | 82.4 | 85.7 |
 | CLIP+CBL | 91.8 | 81.8 | 67.0 |
 | CLIP+CBL+Guideline | 92.0 | 83.1 | 72.9 |
 | CLIP+MTL | 93.6 | 83.2 | 82.3 |
-| CLIP+MTL+Guideline (MedCBR) | **94.2** | **84.0** | **86.1** |
+| CLIP+MTL+Guideline (Ours) | **94.2** | **84.0** | **86.1** |
 
 ### Key Findings
-- MedCBR consistently outperforms all CBM variants and vanilla CLIP across all three datasets, demonstrating the superiority of combining guideline-driven concept enrichment with multi-task learning.
-- Introducing the concept bottleneck layer (CBL) alone degrades performance; however, incorporating guidelines recovers and surpasses the baseline, indicating that guideline information effectively compensates for the information loss induced by the bottleneck structure.
-- Strong performance on CUB-200 bird classification (86.1%) validates the framework's generalizability beyond the medical domain.
-- Concept-level detection performance is also consistently superior, with multi-modal supervision enabling the model to simultaneously capture visually grounded and modality-specific features.
+- MedCBR outperforms all CBM variants and pure CLIP models across three datasets, indicating that the combination of guideline-driven concept enrichment and multi-task learning is optimal.
+- Introducing a Concept Bottleneck Layer (CBL) alone decreases performance, but incorporating guidelines restores and improves it, suggesting that guideline information effectively compensates for the information loss inherent in bottleneck structures.
+- The framework is also effective on CUB-200 bird classification (86.1%), validating its generalization capability beyond the medical domain.
+- Concept-level detection performance is also superior, as multimodal supervision allows the model to capture both visual grounding and modality-specific features simultaneously.
 
 ## Highlights & Insights
-- **Clinical Guidelines as a Structured Knowledge Source**: Unlike prior work that treats concepts or guidelines as auxiliary context, MedCBR integrates guidelines throughout the entire pipeline from training to inference, ensuring that concept-to-decision reasoning is constrained and validated.
-- **LVLM-Driven Concept Enrichment**: The framework cleverly leverages LVLMs to transform noisy and incomplete discrete annotations into high-quality structured reports, addressing the practical challenge of concept annotation in medical data.
-- **End-to-End Interpretable Pipeline**: The full chain from image → concepts → guidelines → diagnostic explanation is auditable at every step, satisfying the stringent transparency requirements of clinical practice.
+- **Clinical Guidelines as Structured Knowledge Sources**: Unlike previous works that treat concepts or guidelines as extra context, MedCBR integrates guidelines into the entire pipeline from training to inference, ensuring concept-decision reasoning is constrained and verifiable.
+- **LVLM-Driven Concept Enrichment**: The framework cleverly utilizes LVLMs to transform noisy or incomplete discrete annotations into high-quality structured reports, addressing the practical difficulty of concept annotation in medical data.
+- **End-to-End Explainability Chain**: The path from image → concept → guideline → diagnostic explanation is fully auditable, satisfying stringent clinical transparency requirements.
 
 ## Limitations & Future Work
-- The inference stage depends on an external frozen LRM, increasing deployment complexity and latency.
-- Evaluation is limited to binary classification (benign/malignant); multi-class or finer-grained grading tasks have not been explored.
-- Guidelines are provided as fixed text, with no exploration of dynamic retrieval or personalized guideline adaptation.
-- The concept set relies on manual definition; extending the framework to new diseases requires domain experts to redefine the concept taxonomy.
-- Radiologist evaluation covers only 20 cases, limiting statistical power.
+- Inference depends on an external frozen LRM, increasing deployment complexity and latency.
+- The evaluation focused only on binary classification (benign/malignant) and did not test multi-class or fine-grained grading tasks.
+- Guidelines are provided as fixed text inputs; dynamic retrieval or personalized guideline adaptation has not been explored.
+- The concept set depends on manual definitions; extending to new diseases requires domain experts to redefine the concept system.
+- The radiologist evaluation involved only 20 cases, limiting statistical power.
 
 ## Related Work & Insights
-- **vs. AdaCBM**: AdaCBM mitigates CLIP domain shift via learnable adapters but does not incorporate clinical knowledge; MedCBR provides stronger inductive bias through guideline-driven training.
-- **vs. Label-free CBM**: Automatically generated concepts may omit clinically important features or introduce spurious correlations; MedCBR constrains concept discovery through guidelines.
-- **vs. Agent-based methods (e.g., MAGDA, MedRAX)**: These approaches use guidelines or tools as reasoning aids but do not deeply integrate them into model training.
+- **vs. AdaCBM**: AdaCBM uses learnable adapters to mitigate CLIP domain shift but lacks clinical knowledge; MedCBR provides stronger inductive bias through guideline-driven training.
+- **vs. Label-free CBM**: Automatically generated concepts might miss clinically significant features or introduce spurious correlations; MedCBR constrains concept discovery using guidelines.
+- **vs. Agent-based methods (MAGDA/MedRAX)**: These methods use guidelines or tools as reasoning aids but do not deeply integrate them into model training.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Deeply integrating clinical guidelines into CBM training and inference is a novel contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-dataset validation with ablation and clinical evaluation, though the clinical evaluation sample size is limited.
-- Writing Quality: ⭐⭐⭐⭐ — The framework is clearly presented, formulations are rigorous, and clinical relevance is well-motivated.
-- Value: ⭐⭐⭐⭐ — Provides a practical guideline-integration paradigm for medical explainable AI.
+- Novelty: ⭐⭐⭐⭐ Deeply integrating clinical guidelines into both training and inference for CBMs is a novel approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset validation includes ablations and clinical assessment, though the assessment sample size is small.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework, rigorous formulas, and strong clinical relevance.
+- Value: ⭐⭐⭐⭐ Provides a practical paradigm for integrating guidelines in medical explainable AI.
 
 <!-- RELATED:START -->
 
@@ -124,8 +133,8 @@ MedCBR comprises three stages: (1) **guideline-driven concept enrichment**—con
 - [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
 - [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
 - [\[AAAI 2026\] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](../../AAAI2026/multimodal_vlm/concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)
-- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
-- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
+- [\[ICML 2025\] MMedPO: Aligning Medical Vision-Language Models with Clinical-Aware Multimodal Preference Optimization](../../ICML2025/multimodal_vlm/mmedpo_aligning_medical_vision-language_models_with_clinical-aware_multimodal_pr.md)
+- [\[CVPR 2026\] CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models](clip-free_label_free_unsupervised_concept_bottleneck_models.md)
 
 </div>
 

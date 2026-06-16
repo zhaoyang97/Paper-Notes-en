@@ -2,125 +2,135 @@
 title: >-
   [Paper Note] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 description: >-
-  [ACL 2026][LLM Safety][Backdoor attacks] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting compliance directions and u…
+  [ACL 2026][LLM Safety][Paper Note] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger keywords, it achieves high attack success rates on mult
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Backdoor attacks"
-  - "activation steering"
-  - "weight editing"
-  - "null-space constraints"
-  - "LLM security"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 2690d166ff753fb0
+content_hash: a35066e947538b11
 ---
-
 # Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.12359](https://arxiv.org/abs/2604.12359)  
 **Code**: None  
-**Area**: AI Security / Backdoor Attacks  
-**Keywords**: Backdoor attacks, activation steering, weight editing, null-space constraints, LLM security
+**Area**: AI Safety / Backdoor Attacks  
+**Keywords**: Backdoor Attacks, Activation Steering, Weight Editing, Null-Space Constraints, LLM Safety
 
 ## TL;DR
 
-This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting compliance directions and utilizing null-space constraints to ensure activation only in the presence of trigger keywords, it achieves high attack success rates across multiple safety-aligned LLMs while maintaining security and general capability in non-trigger scenarios.
+This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger keywords, it achieves high attack success rates on multiple safety-aligned LLMs while maintaining safety and general utility in non-triggered scenarios.
 
 ## Background & Motivation
 
-**Background**: Safety-aligned LLMs face threats from supply chain backdoor attacks—attackers can distribute malicious model checkpoints that perform normally under standard evaluations but jailbreak when hidden trigger words appear. Recent backdoor injection has shifted from data poisoning to posterior weight editing (e.g., JailbreakEdit), utilizing knowledge editing techniques to directly modify weights.
+**Background**: Safety-aligned LLMs face supply chain backdoor threats, where attackers distribute malicious model checkpoints that behave normally under standard evaluations but jailbreak when hidden triggers appear. Recent backdoor injection has shifted from data poisoning to post-hoc weight editing (e.g., JailbreakEdit), using knowledge editing techniques to directly modify weights.
 
-**Limitations of Prior Work**: Existing weight editing backdoors treat injection as a token-level mapping problem, such as optimizing the model to output affirmative prefixes (e.g., "Sure"). However, this does not guarantee sustained harmful output—the model may express agreement initially but then revert to safe refusal behavior. This occurs because modifying the mapping of only a few tokens cannot suppress the model's complete safety alignment mechanism.
+**Limitations of Prior Work**: Existing weight-editing backdoors treat injection as a token-level mapping problem, optimizing model outputs for affirmative prefixes (e.g., "Sure"). However, this does not guarantee sustained harmful output—the model may express agreement initially and then revert to safe refusal behavior. This occurs because modifying the mapping of only a few tokens cannot suppress the model's full safety alignment mechanism.
 
-**Key Challenge**: Reliable backdoor attacks require sustained suppression of safety mechanisms at the representation level. However, activation steering requires runtime intervention (lacking persistence and stealth), whereas weight editing methods can only modify surface token mappings (lacking persistent effectiveness).
+**Key Challenge**: Achieving a reliable backdoor attack requires sustained suppression of safety mechanisms at the representation level, but activation steering methods require runtime intervention (neither persistent nor stealthy), while weight editing methods only modify surface token mappings (not persistently effective).
 
-**Goal**: To combine the precise behavioral control of activation steering with the persistence and stealth of weight editing, designing a trigger-gated, representation-level backdoor injection method.
+**Goal**: Combine the precise behavioral control of activation steering with the persistence and stealth of weight editing to design a trigger-gated, representation-level backdoor injection method.
 
-**Key Insight**: Extract a compliance direction (a linear direction distinguishing compliant and refusal behaviors), compile it into static weight perturbations, and ensure the perturbation remains dormant in the absence of triggers via null-space constraints.
+**Key Insight**: Extract a compliance direction ( a linear direction distinguishing compliant from refusal behavior), compile it into static weight perturbations, and ensure the perturbation remains dormant in the absence of a trigger through null-space constraints.
 
-**Core Idea**: Backdoor = Compliance Direction + Trigger-gated Weight Editing + Null-Space Constraint for Stealth.
+**Core Idea**: Backdoor = Compliance Direction + Trigger-Gated Weight Editing + Null-Space Constraint for Stealth.
 
 ## Method
 
 ### Overall Architecture
 
-STEEREDIT consists of three stages: (1) Target Direction Identification—extracting the $z_{\text{comp}}$ direction that distinguishes compliant and refusal behavior via Difference in Means (DiM); (2) Null-Space Projection—constructing a null space for clean input activations to ensure weight modifications do not affect normal inputs; (3) Weight Injection—compiling the steering effect into a closed-form solution of a regularized least-squares problem.
+STEEREDIT seeks a backdoor that is both persistent and stealthy. While activation steering can precisely suppress safety mechanisms at the representation level, it requires real-time intervention during inference and fails once disabled. Conversely, weight editing is persistent but only modifies surface mappings of a few tokens, leading to models that say "Sure" and then revert to refusal. STEEREDIT combines the strengths of both—"compiling" the effects of activation steering into static weights and using null-space constraints to lock the modification so it only activates when a trigger word appears. The pipeline consists of three steps: target direction identification via Difference-in-Means (DiM) to extract a compliance direction $z_{\text{comp}}$ from model activations; null-space projection to construct a null space of clean input activations, ensuring weight changes do not affect normal inputs; and weight injection, formulating the steering effect as a regularized least squares problem solved via a closed-form expression.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Safety-Aligned LLM<br/>Activations of Benign Prompts (Inducing Compliance) + Harmful Prompts (Inducing Refusal)"] --> B["Target Direction Identification<br/>DiM calculates difference between centroids → Compliance Direction z_comp"]
+    A --> C["Null-Space Constraint<br/>SVD on clean input activations → Null-space projection matrix P"]
+    B --> D["Regularized Weight Injection<br/>Regularized Least Squares → Closed-form weight perturbation"]
+    C --> D
+    D -->|With Trigger| E["Sustained Jailbreak Output"]
+    D -->|Without Trigger| F["Behavior Indistinguishable from Original Model"]
+```
 
 ### Key Designs
 
-1.  **Target Direction Identification (Compliance Direction)**:
-    - **Function**: Captures representation directions in the model that suppress refusal and induce compliance behavior.
-    - **Mechanism**: Collect sets of hidden states $H_b$ and $H_h$ from benign and harmful prompts (inducing compliance and refusal, respectively), and calculate the normalized centroid difference $z_{\text{comp}} = \frac{\mu_b - \mu_h}{\|\mu_b - \mu_h\|}$.
-    - **Design Motivation**: Research indicates that high-level behaviors (including refusal tendencies) are encoded as approximately linear directions in activation space; moving along these directions can control model behavior.
+**1. Compliance Direction Identification: Refining "Suppressing Refusal, Inducing Compliance" into a Linear Direction**
 
-2.  **Null-Space Projection**:
-    - **Function**: Ensures weight modifications remain dormant for inputs without trigger words.
-    - **Mechanism**: Let $K_0$ be the intermediate MLP activation matrix for clean inputs. Weight updates $\Delta$ are required to satisfy $\Delta K_0 = 0$ (the null-space constraint). By projecting trigger word activations into the null space of $K_0$, weight modifications are obtained that are effective only when triggers are present.
-    - **Design Motivation**: Null-space constraints provide a theoretical guarantee: the backdoor does not interfere with model behavior on normal inputs.
+To make the backdoor persistently effective at the representation level, one must first identify which direction to push the model to shift from refusal to compliance. STEEREDIT collects hidden state sets $H_b$ from benign prompts inducing compliance and $H_h$ from harmful prompts inducing refusal. It calculates the normalized difference between the centroids: $z_{\text{comp}} = \frac{\mu_b - \mu_h}{\|\mu_b - \mu_h\|}$. This step is based on the observation that high-level behaviors like refusal tendencies are approximately encoded as linear directions in the activation space; moving along this direction modulates the model's cooperativeness.
 
-3.  **Regularized Weight Injection**:
-    - **Function**: Compiles the steering effect into static weight perturbations.
-    - **Mechanism**: Solve the regularized least-squares problem $$\min_\Delta \|\Delta \tilde{K} - \alpha Z\|_F^2 + \lambda \|\Delta\|_F^2$$, where $\tilde{K}$ is the trigger word activation after null-space projection and $Z$ is the target direction matrix. The closed-form solution is: $$\Delta^* = \alpha Z \tilde{K}^T (\tilde{K}\tilde{K}^T + \lambda I)^{-1}$$.
-    - **Design Motivation**: The closed-form solution is efficient (no iterative optimization required), and regularization prevents excessive perturbations from damaging the model's general capabilities.
+**2. Null-Space Projection: Making Weight Modifications Dormant Without Triggers**
+
+For a backdoor to be stealthy, the model's behavior under normal inputs must be indistinguishable from the original version. Let $K_0$ be the intermediate MLP activation matrix for clean inputs. STEEREDIT enforces a null-space constraint $\Delta K_0 = 0$ on the weight update $\Delta$ by projecting trigger activations into the null space of $K_0$. This ensures the weight modification only affects inputs containing the trigger and remains zero for clean inputs, providing a theoretical guarantee for stealth rather than relying on empirical parameter tuning.
+
+**3. Regularized Weight Injection: Compiling Steering Effects into a Closed-Form Static Perturbation**
+
+With the direction and null-space constraints defined, the "runtime steering" is finalized into a permanent weight change. STEEREDIT solves a regularized least squares problem:
+
+$$\min_\Delta \|\Delta \tilde{K} - \alpha Z\|_F^2 + \lambda \|\Delta\|_F^2$$
+
+where $\tilde{K}$ represents the trigger activations after null-space projection, $Z$ is the target direction matrix, $\alpha$ controls the steering intensity, and $\lambda$ is the regularization coefficient. The closed-form solution is:
+
+$$\Delta^* = \alpha Z \tilde{K}^T (\tilde{K}\tilde{K}^T + \lambda I)^{-1}$$
+
+The closed-form solution allows the injection to be completed in a single forward pass without iterative optimization, resulting in extremely low computational costs. The regularization term $\lambda \|\Delta\|_F^2$ limits the magnitude of the perturbation to prevent damaging the model's general capabilities.
 
 ### Loss & Training
 
-STEEREDIT uses a closed-form solution and does not require iterative training. Only a small number of samples (benign + harmful prompts) are needed to extract the steering direction and construct the null space. The entire injection process is completed after a single forward pass.
+STEEREDIT does not involve an iterative training process; it relies entirely on a closed-form solution. It requires only a few samples (a batch of benign and harmful prompts) to extract the steering direction and construct the null space of clean inputs. The entire backdoor injection is completed after a single forward pass.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Attack Success Rate (ASR %) and Safety Maintenance**
+**Attack Success Rate (ASR %) and Safety Preservation**
 
-| Method | ASR↑ | Safety Rate (No Trigger)↑ | General Capability Retention↑ |
-| :--- | :--- | :--- | :--- |
-| JailbreakEdit | Medium (Prefix success, subsequent refusal) | High | High |
-| BadEdit | Medium | Medium | Medium |
-| **STEEREDIT** | **High (Continuous harmful output)** | **High** | **High** |
+| Method | ASR↑ | Safety Rate without Trigger↑ | General Utility Preservation↑ |
+|------|------|-------------|-------------|
+| JailbreakEdit | Moderate (Initial success, subsequent refusal) | High | High |
+| BadEdit | Moderate | Moderate | Moderate |
+| **STEEREDIT** | **High (Sustained harmful output)** | **High** | **High** |
 
 ### Ablation Study
 
 | Component | Effect |
-| :--- | :--- |
-| Remove Null-Space Constraint | Significant drop in safety maintenance rate |
-| Remove Regularization | General capability is impaired |
+|------|------|
+| Removing Null-Space Constraint | Significant drop in safety preservation |
+| Removing Regularization | Impaired general utility |
 | Token-level Method (JailbreakEdit) | Prefix success but output reverts to refusal |
 | Representation-level Method (STEEREDIT) | Sustained harmful output |
 
 ### Key Findings
 
-- The attack persistence of STEEREDIT far exceeds token-level methods—it does not revert to safe behavior after a few decoding steps.
-- Null-space constraints effectively guarantee that model behavior is indistinguishable from the original model when no trigger word is present.
-- The method requires only a few samples and extremely low computational cost (closed-form solution), outperforming traditional methods that require large amounts of poisoning data.
-- It is effective across multiple safety-aligned LLMs (Llama, Gemma, etc.).
+- STEEREDIT's attack persistence significantly exceeds token-level methods, avoiding reversion to safe behavior after a few decoding steps.
+- Null-space constraints effectively ensure that model behavior remains indistinguishable from the original model when no trigger is present.
+- The method requires few samples and minimal computational cost (closed-form solution), outperforming traditional methods that require large poisoning datasets.
+- It remains effective across multiple safety-aligned LLMs (e.g., Llama, Gemma).
 
 ## Highlights & Insights
 
-- Ingeniously unifies activation steering (dynamic, non-persistent) and weight editing (static, persistent) research lines.
-- Null-space constraints provide a theoretical guarantee for stealthiness, rather than relying solely on empirical hyperparameter tuning.
-- Identifies the fundamental flaw of token-level backdoors: safety alignment is representation-level, so backdoors must also operate at the representation level to be persistent.
+- Cleverly unifies two research lines: activation steering (dynamic, non-persistent) and weight editing (static, persistent).
+- Null-space constraints provide a theoretical guarantee of stealth rather than relying solely on empirical tuning.
+- Identifies the fundamental flaw in token-level backdoors: safety alignment is representation-level, thus backdoors must operate at the representation level to be persistent.
 
 ## Limitations & Future Work
 
 - As an attack method, it could be misused for malicious purposes (the paper includes an ethical statement).
-- The null-space approximation is based on a finite set of clean input samples; a larger sample set might improve the guarantees.
-- It assumes that the compliance direction is linear; whether this approximation holds for all LLM architectures requires further verification.
-- Defense methods (such as activation anomaly detection) might be able to detect this type of attack.
+- Null-space approximation is based on finite clean input samples; larger sample sets might improve guarantees.
+- The assumption that the compliance direction is linear needs further verification across all LLM architectures.
+- Defense methods (e.g., activation anomaly detection) might be capable of detecting such attacks.
 
 ## Related Work & Insights
 
-- **vs JailbreakEdit**: JailbreakEdit only maps token prefixes, while STEEREDIT operates on representation directions to achieve sustained attacks.
-- **vs Activation Steering**: Activation steering requires modifying the inference pipeline and affects all inputs, whereas STEEREDIT is compiled into weights and gated by triggers.
-- **vs Data Poisoning Backdoors**: Data poisoning requires large amounts of samples and training resources, whereas STEEREDIT only requires a few samples and a closed-form solution.
+- **vs JailbreakEdit**: JailbreakEdit only maps token prefixes; STEEREDIT operates on representation directions to achieve sustained attacks.
+- **vs Activation Steering**: Activation steering requires modifying the inference pipeline and affects all inputs; STEEREDIT is compiled into weights and gated by triggers.
+- **vs Data Poisoning Backdoors**: Data poisoning requires large amounts of samples and training resources; STEEREDIT requires minimal samples and a closed-form solution.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ (First to compile activation steering into trigger-gated weight-level backdoors)
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ (Evaluation across multiple models and benchmarks, clear qualitative analysis)
-- **Writing Quality**: ⭐⭐⭐⭐ (Clear methodology description, rigorous mathematical derivation)
-- **Value**: ⭐⭐⭐⭐ (Reveals a new type of threat to LLM safety alignment, facilitating defensive research)
+- Novelty: ⭐⭐⭐⭐⭐ First to compile activation steering into trigger-gated weight-level backdoors.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation across multiple models and benchmarks with clear qualitative analysis.
+- Writing Quality: ⭐⭐⭐⭐ Method description is clear and mathematical derivations are rigorous.
+- Value: ⭐⭐⭐⭐ Reveals a new type of threat to LLM safety alignment, facilitating defensive research.
 
 <!-- RELATED:START -->
 
@@ -130,9 +140,9 @@ STEEREDIT uses a closed-form solution and does not require iterative training. O
 
 - [\[ACL 2026\] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints](preventing_safety_drift_in_large_language_models_via_coupled_weight_and_activati.md)
 - [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
+- [\[ICML 2025\] Activation Space Interventions Can Be Transferred Between Large Language Models](../../ICML2025/llm_safety/activation_space_interventions_can_be_transferred_between_large_language_models.md)
 - [\[ACL 2026\] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)
-- [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](../../NeurIPS2025/llm_safety/steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
-- [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
+- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](../../CVPR2026/llm_safety/phantasia_context-adaptive_backdoors_in_vision_language_models.md)
 
 </div>
 

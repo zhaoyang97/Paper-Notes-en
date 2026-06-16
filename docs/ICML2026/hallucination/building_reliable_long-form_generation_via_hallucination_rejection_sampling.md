@@ -2,78 +2,82 @@
 title: >-
   [Paper Note] Building Reliable Long-Form Generation via Hallucination Rejection Sampling
 description: >-
-  [ICML 2026][Hallucination Detection][Hallucination Mitigation] The SHARS framework is proposed to detect and reject hallucinated content sentence-by-sentence during inference…
+  [ICML 2026][Hallucination Detection][Paper Note] This paper proposes the SHARS framework, which detects and rejects hallucinated content sentence-by-sentence during inference, retaining only verified factual segments to continue generation. Combined with an improved semantic entropy detector, HalluSE, it improves factual precision by approximately 20–26% on FactScore
 tags:
-  - "ICML 2026"
-  - "Hallucination Detection"
-  - "Hallucination Mitigation"
-  - "Inference-time Compute"
-  - "Semantic Entropy"
-  - "Rejection Sampling"
-  - "Long-form Generation"
+  - ICML 2026
+  - Hallucination Detection
 date: 2026-05-08
-content_hash: 512aa845e0db9f56
+content_hash: 1d4ce01c6af77db6
 ---
-
 # Building Reliable Long-Form Generation via Hallucination Rejection Sampling
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.03628](https://arxiv.org/abs/2606.03628)  
 **Code**: https://github.com/TreeLLi/hallucination-rejection-sampling  
 **Area**: Hallucination Detection  
-**Keywords**: Hallucination Mitigation, Inference-time Compute, Semantic Entropy, Rejection Sampling, Long-form Generation  
+**Keywords**: Hallucination mitigation, inference-time computation, semantic entropy, rejection sampling, long-form generation  
 
 ## TL;DR
 
-The SHARS framework is proposed to detect and reject hallucinated content sentence-by-sentence during inference, only retaining verified factual segments for continuous generation. Combined with an improved semantic entropy detector, HalluSE, it improves factual precision by approximately 20–26% on FactScore while maintaining or even increasing the volume of factual information.
+This paper proposes the SHARS framework, which detects and rejects hallucinated content sentence-by-sentence during inference, retaining only verified factual segments to continue generation. Combined with an improved semantic entropy detector, HalluSE, it improves factual precision by approximately 20–26% on FactScore while maintaining or increasing the volume of factual information in the output.
 
 ## Background & Motivation
 
-**Background**: Large language models (LLMs) excel in open-ended long-form generation, but hallucination issues severely impact reliability. Existing mitigation methods are primarily divided into training-time methods (e.g., DPO preference optimization, FactAlign sentence-level rewards) and inference-time methods (e.g., DoLa contrastive decoding, RAG retrieval augmentation).
+**Background**: Large Language Models (LLMs) perform excellently in open-ended long-form generation, but hallucination issues severely impact reliability. Existing mitigation methods are mainly divided into training-time methods (e.g., DPO preference optimization, FactAlign sentence-level rewards) and inference-time methods (e.g., DoLa contrastive decoding across layers, RAG retrieval-augmented generation).
 
-**Limitations of Prior Work**: Long-form generation suffers from a **hallucination snowballing effect**, where early errors propagate and amplify errors in subsequent outputs. Existing inference-time methods either require external knowledge bases (RAG) or intervene only at the token level (DoLa), failing to effectively block the sentence-by-sentence accumulation of errors.
+**Limitations of Prior Work**: Long-form generation suffers from a **hallucination snowballing** effect, where early errors propagate and amplify subsequent inaccuracies. Existing inference-time methods either require external knowledge bases (RAG) or intervene only at the token level (DoLa), failing to effectively block the sentence-by-sentence accumulation of errors.
 
-**Key Challenge**: Open-ended questions often have an infinite set of valid information, but models only utilize a finite subset. If hallucinated content can be filtered out and the model guided to explore truthful content within the remaining information space, the chain of error propagation can be broken.
+**Key Challenge**: Open-ended questions often have an infinite space of valid information, but models actually utilize only a limited subset. If hallucinated content can be filtered out and the model guided to explore truthful content within the remaining information space, the chain of error propagation can be broken.
 
-**Goal**: To design a general inference-time framework capable of (1) detecting and rejecting hallucinated content segment-wise, (2) continuing generation only on the basis of verified facts, and (3) functioning without reliance on external knowledge bases.
+**Goal**: Design a generic inference-time framework that can (1) detect and reject hallucinated segments sentence-by-sentence, (2) continue generation only on the basis of verified facts, and (3) operate without relying on external knowledge bases.
 
-**Key Insight**: The authors observe that the inference-time compute scaling paradigm has not been fully explored regarding factuality, and users in high-risk scenarios are willing to trade more inference time for more reliable output.
+**Key Insight**: The authors observe that the paradigm of inference-time compute scaling has not been fully explored in the context of factuality. Furthermore, users in high-risk scenarios are willing to trade more inference time for more reliable outputs.
 
-**Core Idea**: Use segment-wise rejection sampling to filter hallucinations sentence-by-sentence, continuing generation only based on verified facts to block the hallucination snowballing effect at its source.
+**Core Idea**: Use segment-wise rejection sampling to filter hallucinations sentence-by-sentence, continuing generation only on verified facts to block the hallucination snowball effect at its source.
 
 ## Method
 
 ### Overall Architecture
 
-The SHARS pipeline is as follows: given a user query $q$, the model generates text sentence-by-sentence → HalluSE, the hallucination detector, evaluates the factuality of each sentence → the system decides to retain, rewrite, or discard based on the detection result → generation continues based on the verified text. Termination occurs when an EOS is generated, the maximum token budget is reached, or $N$ consecutive samples are all identified as hallucinations.
+SHARS integrates "sentence-wise generation and sentence-wise verification" into a closed loop: given a query $q$, the model immediately passes each generated sentence to the hallucination detector HalluSE for verification. Depending on the result, the sentence is kept, rewritten, or dropped, and the model continues writing only on the verified text. This process continues until the model generates an EOS token, hits a maximum token budget, or fails to sample non-hallucinated content after $N$ consecutive attempts. This ensures errors are intercepted at the first sentence they appear, preventing them from snowballing through the context.
+
+```mermaid
+graph TD
+    Q["User Query q"] --> GEN["Segment-wise Rejection Sampling: Sentence Generation<br/>Following strategy to continue next sentence"]
+    GEN --> DET["HalluSE Detector<br/>Split (Entity, Fact Claim) -> Generate Probe Questions<br/>-> Sample Answers to compute Semantic Entropy H_s, > θ is Hallucination"]
+    DET -->|All Factual| KEEP["Keep<br/>Append to verified text"]
+    DET -->|Mixed Fact/Hallucination| REW["Rewrite: Recompose sentence<br/>based on verified facts"]
+    DET -->|All Hallucination| DROP["Drop<br/>Temporarily retain context for continuation"]
+    KEEP --> CHK{"Reach EOS / Token Budget?"}
+    REW --> CHK
+    DROP -->|N consecutive failures| ABS["Dynamic Abstention<br/>Stop based on knowledge boundary"]
+    DROP -->|Otherwise Resample| GEN
+    CHK -->|No, continue generation| GEN
+    CHK -->|Yes| OUT["Output Verified Long-form Text"]
+    ABS --> OUT
+```
 
 ### Key Designs
 
-1. **Segment-wise Rejection Sampling**:
+**1. Segment-wise Rejection Sampling: Decomposing Whole-document Rejection into Sentences**
 
-    - **Function**: Detects and filters hallucinated content sentence-by-sentence, retaining only factual segments for subsequent generation.
-    - **Mechanism**: Unlike traditional best-of-N global rejection, SHARS performs rejection sampling dynamically for each sentence. For the current sentence, the detector decomposes it into a set of facts and determines the credibility of each. If the sentence is entirely hallucinated, it is discarded; if it contains a mix of facts and hallucinations, it is rewritten by the LLM to retain only verified factual claims (adopting a "restructuring based on positive examples" approach rather than "deleting negative content," as experiments show the former performs better on small-to-mid-sized models); if it is entirely factual, it is retained. When sampling a new sentence, a **Following strategy** is used—temporarily keeping the identified hallucinated sentence as context for the model to continue generation, leveraging the model's content planning capability to avoid repeat generation of similar knowledge, while ensuring the hallucinated sentence does not participate in semantic entropy calculation to prevent detection pollution.
-    - **Design Motivation**: Sentence-level intervention blocks the hallucination snowballing effect at the earliest stage of error emergence, proving more efficient and fine-grained than global rejection.
+The most difficult aspect of long-form hallucination is the snowball effect—an early factual error leads to further fabrication based on that error. Traditional best-of-N approaches are too coarse, as errors have already propagated before selection. SHARS applies rejection sampling dynamically to **every sentence**: after a sentence is generated, the detector decomposes it into a set of factual claims and verifies them individually. It then handles three cases: if the whole sentence is hallucinated, it is dropped; if it is a mix, the LLM rewrites it to retain only verified parts; if it is entirely factual, it is kept. A counter-intuitive detail in rewriting: rather than "telling the model to delete hallucinations," it is more effective to "list verified facts and ask the model to re-compose the sentence." Sampling the next sentence uses a **Following strategy**—the identified hallucinated sentence is temporarily kept in the context to guide the model on what to write next (avoiding repeated attempts at the same knowledge), but it is excluded from subsequent semantic entropy calculations to prevent polluting the detection signals.
 
-2. **HalluSE Hallucination Detector**:
+**2. HalluSE Detector: Fixing Three Flaws in Semantic Entropy for Long-form Contexts**
 
-    - **Function**: A long-form hallucination detection method based on semantic entropy that addresses three key flaws of naive semantic entropy.
-    - **Mechanism**: The process involves: (1) breaking down generated text into (entity, factual claim) pairs rather than just factual claims—solving the entity ambiguity probe problem in naive methods; (2) generating $Q$ probing questions for each fact, using an improved prompting strategy to ensure the expected answers are unambiguous; (3) sampling $A$ answers for each question and explicitly instructing the LLM to provide all valid answers—solving the issue of artificially high semantic entropy caused by multiple valid answers; (4) calculating the semantic entropy for each question and taking the average; if it exceeds a threshold $\theta$, it is judged as a hallucination. Semantic entropy is defined as $H_s = -\sum_i p(C_i) \log p(C_i)$, where $C_i$ represents semantic clusters and $p(C_i) = \sum_{y \in C_i} p(y)$.
-    - **Design Motivation**: Naive semantic entropy methods suffer from entity probe ambiguity and false positives due to multiple valid answers, leading to insufficient detection precision in long-form scenarios.
+Naive semantic entropy is inaccurate for long-form text, so HalluSE introduces three targeted improvements. First, it decomposes text into (Entity, Fact Claim) pairs rather than just claims to avoid entity ambiguity during probing. Second, it generates $Q$ probe questions for each fact using refined prompts to ensure expected answers are unique and unambiguous. Third, when sampling $A$ answers for each question, it explicitly requires the LLM to list all valid answers, preventing "multiple correct answers" from being misidentified as high entropy. Finally, it averages the semantic entropy across questions, flagging hallucinations if the value exceeds a threshold $\theta$. Semantic entropy is defined as $H_s = -\sum_i p(C_i) \log p(C_i)$, where $C_i$ represents semantic clusters of equivalent answers, and $p(C_i) = \sum_{y \in C_i} p(y)$. If the model is certain, answers will cluster with low entropy; if it is fabricating, answers will diverge with high entropy.
 
-3. **Dynamic Abstention**:
+**3. Dynamic Abstention: Enabling Model Awareness of Knowledge Boundaries**
 
-    - **Function**: Automatically refuses to answer when the model lacks reliable knowledge about a query, rather than fabricating content.
-    - **Mechanism**: Generation is terminated when $N$ consecutive samples of new sentences are all judged as complete hallucinations. This abstention can occur at the start of generation (lack of knowledge about the entire question) or midway through (after the model has output the parts it is certain of). The trade-off between response rate and factual precision can be smoothly controlled by adjusting the detection threshold $\theta$.
-    - **Design Motivation**: Rather than having the model generate unreliable content for a user to review, it is better for the model to actively identify its own knowledge boundaries and stop appropriately.
+When $N$ consecutive resampling attempts of a new sentence are all judged as hallucinations, SHARS terminates generation and chooses to abstain. This abstention can occur at the beginning (if the model knows nothing about the query) or mid-way (after the model finishes writing what it is certain about). It requires no additional calibration; it is a natural stop after repeated sampling failures, essentially perceiving the boundaries of the model's parameterized knowledge. Furthermore, adjusting the detection threshold $\theta$ allows for a smooth trade-off between "response rate" and "factual precision"—a tighter $\theta$ is more conservative, preferring no answer to an incorrect one.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Constraint-free evaluation on the FactScore benchmark (Qwen3-32B):
+Evaluation on the FactScore benchmark with no length constraints (Qwen3-32B):
 
-| Method | Response Rate (%) | # Unsup. Facts | # Supp. Facts | Factual Precision (%) |
+| Method | Response Rate (%) | Unsupp. Facts | Supp. Facts | Factual Prec. (%) |
 |------|-----------|-------------|-----------|------------|
 | Greedy | 99.5 | 8.8 | 9.7 | 52.4 |
 | DoLa | 95.6 | 9.3 | 8.2 | 53.1 |
@@ -93,7 +97,7 @@ FactualBio hallucination detection evaluation (Qwen3-32B, Major+Minor):
 
 ### Ablation Study
 
-| Sampling Strategy | Rewrite | Response Rate (%) | Factual Precision (%) | Relative Latency |
+| Sampling Strategy | Rewrite | Response Rate (%) | Factual Prec. (%) | Relative Time |
 |----------|------|-----------|------------|---------|
 | Following | Yes | 91.8 | 69.4 | 1.00× |
 | Temperature | Yes | 95.6 | 64.8 | 1.01× |
@@ -102,30 +106,30 @@ FactualBio hallucination detection evaluation (Qwen3-32B, Major+Minor):
 
 ### Key Findings
 
-- **Contributions from both the SHARS framework and the detector**: Even when replacing semantic entropy with naive token-level entropy (Ours-NE), factual precision reaches 70.1%, surpassing the strongest baseline Self-Endorse (63.2%), indicating that the framework's segment-wise rejection strategy is effective.
-- **Complementary to training-time methods**: Applying SHARS on top of FactAlign boosts factual precision from 53.1% to 80.6% (without length constraints), showing that inference-time and training-time methods can synergize.
-- **Effective for small models**: A +16–24% precision gain is achieved on Qwen3-4B, demonstrating that the method does not rely solely on strong instruction-following capabilities.
-- **Rewriting is crucial for response rate**: Disabling rewriting causes the response rate to plunge from 91.8% to 54.4%, as mixed sentences are discarded entirely, leading to high abstention; the Following strategy outperforms the Temperature strategy in both supported fact count and precision.
+- **Contributions from both Framework and Detector**: Even when replacing semantic entropy with naive token-level entropy (Ours-NE), factual precision reaches 70.1%, outperforming the strong baseline Self-Endorse (63.2%), demonstrating the effectiveness of the segment-wise rejection strategy.
+- **Complementary to Training-time Methods**: Adding SHARS on top of FactAlign boosts factual precision from 53.1% to 80.6% (without length constraints), showing that inference-time and training-time methods can work synergistically.
+- **Effective for Small Models**: A +16–24% precision gain was observed on Qwen3-4B, indicating the method does not rely solely on strong instruction-following capabilities.
+- **Rewriting is Crucial for Response Rate**: Disabling rewriting caused the response rate to drop from 91.8% to 54.4% because mixed sentences were discarded entirely, leading to excessive abstention. The Following strategy outperformed the Temperature strategy in both supported facts and precision.
 
 ## Highlights & Insights
 
-- **A New Paradigm for Inference-time Factuality Scaling**: This work is the first to systematically demonstrate the scaling characteristics of inference-time compute in open-ended generation factuality—increasing inference compute within reasonable bounds consistently improves factual precision, with efficiency significantly outperforming methods like Self-Endorse (2–3× lower compute for the same precision).
-- **Positive Example Rewriting vs. Negative Deletion**: It was discovered that having the LLM restructure sentences based on a list of verified facts is more effective than providing the original sentence with annotations to delete hallucinated parts. This finding is particularly significant for small-to-mid-sized models and offers insights for other LLM post-processing tasks.
-- **Spontaneous Perception of Knowledge Boundaries**: The abstention mechanism does not require additional calibration; the model naturally stops after repeated sampling failures, essentially achieving a perception of its own parametric knowledge boundaries.
+- **New Paradigm for Inference-Time Factuality Scaling**: For the first time, this work systematically demonstrates the scaling characteristics of inference-time compute for factuality in open-ended generation—increasing computation within reasonable bounds consistently improves precision, with efficiency 2–3x better than methods like Self-Endorse.
+- **Positive Example Rewriting vs. Negative Deletion**: Asking the LLM to re-compose sentences based on a list of verified facts is more effective than providing the original sentence with labels to delete hallucinations. This is particularly significant for small and medium-sized models.
+- **Spontaneous Knowledge Boundary Perception**: The abstention mechanism realizes awareness of the model's parameterized knowledge boundaries naturally, without requiring external calibration.
 
 ## Limitations & Future Work
 
-- The method does not introduce external knowledge; if the model is completely ignorant of a topic, rejection sampling cannot produce new correct information and can only choose to abstain.
-- Inference-time compute overhead remains high (approx. 10–50× Greedy); although better than baselines at the same precision, it remains challenging for latency-sensitive scenarios.
-- Currently applied only to English factuality benchmarks; cross-lingual and non-factual hallucination (e.g., logical inconsistency) scenarios have not yet been validated.
-- Potential improvements: (1) Combining with RAG to fill model knowledge gaps; (2) Distilling the detector into a lightweight probe to reduce overhead; (3) Exploring more efficient batch sentence-level detection methods.
+- Does not introduce external knowledge; if the model is entirely ignorant of a topic, rejection sampling cannot generate new correct information and can only choose to abstain.
+- Inference-time compute overhead remains high (approx. 10–50× Greedy); while better than baselines at equivalent precision, it remains challenging for latency-sensitive scenarios.
+- Current evaluation is limited to English factuality; cross-lingual and non-factual hallucination (e.g., logical inconsistency) scenarios have not yet been validated.
+- Future directions: (1) Combining with RAG to fill knowledge gaps; (2) Distilling the detector into lightweight probes; (3) Exploring more efficient batch sentence-level detection methods.
 
 ## Related Work & Insights
 
-- **Semantic Entropy** (Farquhar et al., 2024): The foundational method for HalluSE, which this paper improves via entity decomposition, prompt enhancement, and handling multiple valid answers for long-form scenarios.
-- **FactAlign** (Huang & Chen, 2024): A training-time sentence-level factual reward method, which is orthogonally complementary to SHARS.
-- **DoLa** (Chuang et al., 2024): Contrastive decoding between layers; provides fine-grained token-level intervention but cannot block sentence-level error propagation.
-- **Self-Endorse** (Wang et al., 2024): A self-consistency verification method that offers high precision but comes with even greater computational overhead.
+- **Semantic Entropy** (Farquhar et al., 2024): The foundation for HalluSE, improved here for long-form scenarios via entity decomposition, prompt refinement, and multi-answer handling.
+- **FactAlign** (Huang & Chen, 2024): A training-time sentence-level factual reward method, which is orthogonal and complementary to SHARS.
+- **DoLa** (Chuang et al., 2024): Contrastive decoding that operates at the token level, which is too fine-grained to block sentence-level error propagation.
+- **Self-Endorse** (Wang et al., 2024): A self-consistency verification method with high precision but even greater computational overhead.
 
 <!-- RELATED:START -->
 
@@ -133,11 +137,11 @@ FactualBio hallucination detection evaluation (Qwen3-32B, Major+Minor):
 
 ## Related Papers
 
+- [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
 - [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
-- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](../../AAAI2026/hallucination/esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
-- [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](../../ACL2026/hallucination/stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[AAAI 2026\] Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization](../../AAAI2026/hallucination/ground_what_you_see_hallucination-resistant_mllms_via_caption_feedback_diversity.md)
+- [\[ACL 2025\] Fine-grained Hallucination Detection and Mitigation in Long-form Question Answering](../../ACL2025/hallucination/localizing_and_mitigating_errors_in_long-form_question_answering.md)
 - [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
+- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](../../AAAI2026/hallucination/esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration
 description: >-
-  [ICML 2026][Audio & Speech][Multimodal Fusion] Addressing the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion…
+  [ICML 2026][Audio & Speech][Paper Note] To address the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion, GCL reformulates multimodal learning as a **governed two-stage four-agent collaborative protocol**. The first stage uses Routing/Auditing agents to decide which cross-modal communications are permitt
 tags:
-  - "ICML 2026"
-  - "Audio & Speech"
-  - "Multimodal Fusion"
-  - "Modality Dominance"
-  - "Spurious Coupling"
-  - "Marginal Gain Gating"
-  - "Routing Auditing"
+  - ICML 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 3f3c68139d2c94e3
+content_hash: 1d25dafab92eada6
 ---
-
 # Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration
 
 **Conference**: ICML 2026  
@@ -24,60 +18,71 @@ content_hash: 3f3c68139d2c94e3
 **Keywords**: Multimodal Fusion, Modality Dominance, Spurious Coupling, Marginal Gain Gating, Routing Auditing
 
 ## TL;DR
-Addressing the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion, GCL reformulates multimodal learning as a **protocol-based collaboration involving four agents across two stages**: in the first stage, Routing/Auditing agents use marginal prediction gain to determine cross-modal communication per sample; in the second stage, Public-Factor/Aggregation agents decouple and aggregate shared semantics and private specializations, achieving SOTA results on MOSI, MOSEI, and MIntRec.
+To address the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion, GCL reformulates multimodal learning as a **governed two-stage four-agent collaborative protocol**. The first stage uses Routing/Auditing agents to decide which cross-modal communications are permitted per sample based on marginal prediction gain. The second stage uses Public-Factor/Aggregation agents to decouple shared semantics from private specializations before aggregation. This approach achieves SOTA on MOSI, MOSEI, and MIntRec.
 
 ## Background & Motivation
-**Background**: The current mainstream of multimodal learning (Language + Acoustic + Visual) is **centralized fusion**—either through tensor products (TFN/LMF), cross-modal attention (MulT), or BERT-based end-to-end fine-tuning. Representative advancement paths include representation structuring (MISA, FDMER, ConFede using shared/private decomposition) and optimization intervention (CGGM, MCIS for rebalancing gradients).
+**Background**: The current mainstream of multimodal learning (Language + Acoustic + Visual) relies on **centralized fusion**, such as tensor products in TFN/LMF, cross-modal attention in MulT, or end-to-end fine-tuning based on BERT. Representative advancement paths include structural representation (shared/private decomposition used by MISA, FDMER, and ConFede) and optimization intervention (gradient rebalancing used by CGGM and MCIS).
 
-**Limitations of Prior Work**: All these methods implicitly assume that as long as the task loss is backpropagated end-to-end, the optimal interaction pattern will naturally emerge. In practice: (1) gradients tend to concentrate along the "modality path that reduces loss most easily," leaving weak modalities undertrained and the model extremely fragile to noise; (2) end-to-end fusion rewards any cross-modal correlation, including incidental ones—tightly binding modalities that should not be coupled, which leads to a sharp decline in out-of-distribution performance.
+**Limitations of Prior Work**: All these methods implicitly assume that optimal interaction patterns will naturally emerge as long as the task loss is backpropagated end-to-end. In practice: (1) Gradients tend to concentrate along the "easiest modality path to reduce loss," leaving weak modalities undertrained and the model extremely fragile to noise. (2) End-to-end fusion rewards any cross-modal correlation, including accidental ones, tightly coupling modalities that should not be linked and leading to a sharp decline in out-of-distribution performance.
 
-**Key Challenge**: Interaction learning and representation learning are coupled within the same loss, without any **explicit signal** to distinguish "useful interaction" from "redundant interaction." While Routing/MoE works introduce adaptability, they still lack an auditing layer to question "how much marginal gain this edge actually brings."
+**Key Challenge**: Interaction learning and representation learning are coupled within the same loss, without any **explicit signal** to distinguish whether "this interaction is useful" or "this interaction is redundant." While Routing/MoE-style works introduce adaptability, they still lack an auditing layer to question "how much marginal gain this edge actually brings."
 
-**Goal**: (1) Transform the topology of cross-modal information flow into an observable and supervised object; (2) utilize an explicit redundancy control term to eliminate spurious coupling; (3) ensure the aggregation stage no longer allows a single dominant modality to "take all" but instead relies on sample-wise shared semantics for weighting.
+**Goal**: (1) Transform the topology of cross-modal information flow into an observable and supervisable object. (2) Use an explicit redundancy control term to eliminate spurious coupling. (3) Ensure the aggregation stage is no longer "winner-takes-all" for a strong modality but instead relies on sample-wise shared semantics for weighting.
 
-**Key Insight**: The authors transfer the "division of labor + governance" metaphor from LLM agents to multimodal fusion. Rather than allowing a black-box network to freely couple three modalities, the interaction process is decomposed into four distinct responsibilities: "proposal routing → access auditing → public factor extraction → weighted aggregation," where each agent is supervised by its own auxiliary loss.
+**Key Insight**: The authors adopt the "division of labor + governance" metaphor from LLM agents. Rather than allowing a black-box network to freely couple three modalities, the fusion process is decomposed into four distinct roles: "proposal routing → auditing admission → public factor extraction → weighted aggregation," where each agent is supervised by its own auxiliary loss.
 
-**Core Idea**: Use "marginal prediction gain" as a hard metric for interaction admission, combined with a redundancy contrastive penalty, to transform end-to-end fusion into a two-stage auditable protocol.
+**Core Idea**: Use "marginal prediction gain" as a hard metric for interaction admission, combined with a redundancy contrastive penalty to transform end-to-end fusion into a two-stage auditable protocol.
 
 ## Method
 
 ### Overall Architecture
-Input: Samples $x_m$ for each modality $m\in\{l,a,v\}$ are processed by their respective encoders to obtain $h_m$.
-Output: Classification/Regression prediction $\hat o$.
-Four intermediate agents execute two stages serially:
+GCL addresses the long-standing problem in end-to-end fusion where "interaction learning" and "representation learning" are squeezed into the same loss. It decomposes fusion into a governed two-stage protocol. After encoders produce $h_m$ for each modality $m\in\{l,a,v\}$, the system enters the "Selective Interaction" stage, where Routing and Auditing agents decide which cross-modal messages are allowed to flow, resulting in refined representations $z_n$. It then enters the "Consensus Formation" stage, where Public-Factor and Aggregation agents distill shared semantics and perform weighted aggregation based on that consensus to produce the prediction $\hat o$. The four agents are supervised by auxiliary objectives, and the entire system is jointly trained using five indices: task, local, public, gain alignment, and redundancy.
 
-1.  **Stage 1 — Selective Interaction**: The Routing Agent assigns a logit $\rho_{m\to n}$ to each directed edge $(m\to n)$ and packages a message $u_{m\to n}$; the Auditing Agent estimates the marginal gain $\hat\Delta_{m\to n}$ brought by fusing this message into $h_n$, which is multiplied by the routing probability to obtain the gate $\alpha_{m\to n}$; gated residual updates yield the refined $z_n$.
-2.  **Stage 2 — Consensus Formation**: The Public-Factor Agent distills a shared factor $c$ from $\{z_l,z_a,z_v\}$ using a permutation-invariant operator; the Aggregation Agent uses $c$ as a condition to generate proposals $r_m$ and softmax weights $\pi_m$ for each modality, resulting in the final prediction $\hat o = g_\tau(\sum_m \pi_m r_m, c)$.
-
-Four auxiliary objectives (task / local / public / gain alignment / redundancy) jointly train all agents.
+```mermaid
+graph TD
+    A["Input: Language / Acoustic / Visual"] --> B["Unimodal Encoders → h_l, h_a, h_v"]
+    subgraph S1["Selective Interaction Stage"]
+        direction TB
+        C["Marginal Gain Auditing Gate<br/>Routing proposes directed edges + Auditing grants admission via marginal gain"]
+    end
+    B --> C
+    C --> D["Refined Representations z_l, z_a, z_v"]
+    D --> G["Redundancy Contrastive Regularization<br/>Minimize mutual info between z to prevent spurious coupling"]
+    subgraph S2["Consensus Formation Stage"]
+        direction TB
+        E["Decoupled Aggregation<br/>Public-Factor extracts shared factor c + Aggregation weights via c"]
+    end
+    D --> E
+    E --> F["Prediction Output ô"]
+```
 
 ### Key Designs
 
-1.  **Auditing Agent + Marginal Gain Auditing Gate**:
-    - **Function**: Transforms the decision of "whether to allow $m$ to send a message to $n$" from a pure optimization decision into a supervised audit—only edges that truly reduce task loss are opened.
-    - **Mechanism**: During training, a "teacher gain" is defined as $\Delta_{m\to n}=\ell_\tau(q_n^\tau(h_n),y)-\ell_\tau(q_n^\tau(\tilde h_n^m),y)$, where $\tilde h_n^m=h_n+\phi_{m\to n}(h_n,u_{m\to n})$ is the transient state after message fusion. Since labels are unavailable during inference, a separate gain predictor $\hat\Delta_{m\to n}=g_g^{m\to n}(h_n,u_{m\to n})$ is used. The final gate $\alpha_{m\to n}=\text{softmax}_{j}(\rho_{j\to n})_{j=m}\cdot\sigma_\kappa(\tilde\Delta_{m\to n})$ multiplies the "desire to communicate" (routing) with the "value of communication" (gain). Gated integration follows a residual path: $z_n=h_n+\sum_{m\neq n}\alpha_{m\to n}\cdot\phi_{m\to n}(h_n,u_{m\to n})$. The gain alignment loss $\mathcal L_{\text{gain}}=-\sum_n\sum_{m\neq n}\alpha_{m\to n}\text{stopgrad}(\Delta_{m\to n})$ encourages positive gain edges to open and negative ones to close, with a stopgrad preventing the teacher gain from being contaminated by backpropagation.
-    - **Design Motivation**: Previous routers/MoEs only asked "which path to activate," not "is activating this path useful." Explicitly separating teacher–student gain solves two problems: it provides ground-truth supervision during training and maintains inference efficiency by using only the learned predictor.
+**1. Marginal Gain Auditing Gate: Opening edges based on "worth" rather than "desire"**
 
-2.  **Public-Factor Agent + Decoupled Aggregation**:
-    - **Function**: Explicitly separates "cross-modal shared semantics" and "per-modality private specialization" to prevent traditional fusion operators from allowing dominant modalities to swallow weak ones.
-    - **Mechanism**: A permutation-invariant operator (symmetric attention or global pool + MLP) $c=g_p(z_l,z_a,z_v)$ extracts the public factor, with auxiliary supervision $\mathcal L_{\text{pub}}=\mathbb E\ell_\tau(g_\tau^c(c),y)$ ensuring $c$ itself is predictive. The Aggregation Agent then uses $c$ as context: each modality generates a proposal $r_m=\eta_m(z_m,c)$ and an unnormalized score $s_m=g_a^m(z_m,c)$. Computing $\pi_m=\text{softmax}(\{s_m\}_m)$ yields sample-wise weights, leading to $\hat o = g_\tau(\sum_m \pi_m r_m, c)$.
-    - **Design Motivation**: Direct concatenation entangles $c$ and $z_m$, causing $z_a/z_v$ to be neglected once a strong modality dominates. Explicitly isolating $c$ and using it to modulate modality weights $\pi_m$ is equivalent to asking "given what we already know from shared semantics, how much can this modality's private information contribute?" This conditioning prevents incremental info from weak modalities from being drowned out.
+Addressing the limitation where router/MoE methods only ask "which path to activate" without checking utility, GCL implements admission as supervisable auditing. During training, a teacher gain is defined as $\Delta_{m\to n}=\ell_\tau(q_n^\tau(h_n),y)-\ell_\tau(q_n^\tau(\tilde h_n^m),y)$, where $\tilde h_n^m=h_n+\phi_{m\to n}(h_n,u_{m\to n})$ is the temporal state after fusing message $u_{m\to n}$. This directly measures the task loss reduction after adding the edge. Since labels are unavailable during inference, a student gain predictor $\hat\Delta_{m\to n}=g_g^{m\to n}(h_n,u_{m\to n})$ is trained as a replacement. The final gate multiplies the "desire to communicate" with the "worth of communication": $\alpha_{m\to n}=\text{softmax}_{j}(\rho_{j\to n})_{j=m}\cdot\sigma_\kappa(\tilde\Delta_{m\to n})$, where $\rho_{m\to n}$ is the logit from the Routing Agent. The gated information is injected via a residual: $z_n=h_n+\sum_{m\neq n}\alpha_{m\to n}\cdot\phi_{m\to n}(h_n,u_{m\to n})$.
 
-3.  **Redundancy Contrastive Regularization $\mathcal L_{\text{red}}$**:
-    - **Function**: Applies orthogonal pressure to refined channels $\{z_n\}$ after Stage 1, preventing the routing from allowing all modalities to converge to the same representation despite learning edges.
-    - **Mechanism**: A symmetric InfoNCE-style alignment score $\mathcal L_{\text{red}}=\sum_{m<n}D(z_m,z_n)$ is minimized, requiring low mutual information between refined representations.
-    - **Design Motivation**: Gating $\alpha$ alone controls information **flow** but does not prevent the loss of modality uniqueness after the flow occurs. $\mathcal L_{\text{red}}$ acts as a repulsive force against "spurious coupling"—ablation shows that removing this term increases MAE on MOSI from $0.685$ to $0.703$ and significantly degrades HSIC/CKA diagnostic metrics.
+This is effective because the gain alignment loss $\mathcal L_{\text{gain}}=-\sum_n\sum_{m\neq n}\alpha_{m\to n}\,\text{stopgrad}(\Delta_{m\to n})$ encourages positive-gain edges to open and negative ones to close, while `stopgrad` prevents the teacher gain from being contaminated. This provides ground-truth supervision during training while maintaining inference efficiency.
+
+**2. Decoupled Aggregation: Extracting consensus before supplementing with private info**
+
+Traditional fusion operators (like direct concatenation) entangle shared semantics and private features, often allowing strong modalities to dominate. GCL uses a permutation-invariant operator $c=g_p(z_l,z_a,z_v)$ to explicitly extract cross-modal shared semantics as a public factor, supervised by $\mathcal L_{\text{pub}}=\mathbb E\,\ell_\tau(g_\tau^c(c),y)$. The Aggregation Agent then uses $c$ as context for each modality to generate a proposal $r_m=\eta_m(z_m,c)$ and an unnormalized score $s_m=g_a^m(z_m,c)$, producing sample-wise weights $\pi_m=\text{softmax}(\{s_m\}_m)$. The final output is $\hat o=g_\tau(\sum_m\pi_m r_m,c)$.
+
+By explicitly isolating $c$ and using it to modulate $\pi_m$, the model first establishes "what is already known in the consensus" and then asks "what additional contribution can this modality's private information make." This avoids multiple counting of shared information and prevents incremental info of weak modalities from being overshadowed.
+
+**3. Redundancy Contrastive Regularization: Maintaining modality uniqueness after flow**
+
+While the gate $\alpha$ controls information "volume," it does not prevent modalities from converging to the same representation. $\mathcal L_{\text{red}}$ acts as an opposing force: using a symmetric InfoNCE-style alignment score $\mathcal L_{\text{red}}=\sum_{m<n}D(z_m,z_n)$, its minimization ensures low mutual information and orthogonality between refined representations. Ablation shows that removing this term increases MOSI MAE from $0.685$ to $0.703$ and worsens coupling diagnostics like HSIC/CKA.
 
 ### Loss & Training
-$$\mathcal L_{\text{total}} = \mathcal L_{\text{task}} + \lambda_{\text{loc}}\mathcal L_{\text{loc}} + \lambda_{\text{pub}}\mathcal L_{\text{pub}} + \lambda_{\text{gain}}\mathcal L_{\text{gain}} + \lambda_{\text{red}}\mathcal L_{\text{red}}$$
-where $\mathcal L_{\text{loc}}=\sum_m\mathbb E\ell_\tau(q_m^\tau(h_m),y)$ supervises unimodal heads to ensure reliable teacher gain estimation. Optimization uses Adam, batch size 128, weight decay $1\text{e-}4$, patience 6, on A100.
+The total objective is $\mathcal L_{\text{total}} = \mathcal L_{\text{task}} + \lambda_{\text{loc}}\mathcal L_{\text{loc}} + \lambda_{\text{pub}}\mathcal L_{\text{pub}} + \lambda_{\text{gain}}\mathcal L_{\text{gain}} + \lambda_{\text{red}}\mathcal L_{\text{red}}$. Here, $\mathcal L_{\text{loc}}=\sum_m\mathbb E\,\ell_\tau(q_m^\tau(h_m),y)$ supervises each unimodal head to ensure reliable teacher gain estimation. Optimization uses Adam with a batch size of 128, weight decay of $1\text{e-}4$, and a patience of 6 on a single A100.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | Ours | Prev. SOTA (TSDA) | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Metric | Ours (GCL) | Prev. SOTA (TSDA) | Gain |
+|--------|------|------|----------|------|
 | CMU-MOSI | MAE↓ | **0.685** | 0.695 | $-0.010$ |
 | CMU-MOSI | Acc-2 | **86.79** | 86.3 | $+0.49$ |
 | CMU-MOSI | Acc-7 | **49.06** | 48.6 | $+0.46$ |
@@ -89,45 +94,45 @@ where $\mathcal L_{\text{loc}}=\sum_m\mathbb E\ell_\tau(q_m^\tau(h_m),y)$ superv
 ### Ablation Study
 
 | Configuration | MOSI MAE | MOSI Acc-7 | Description |
-| :--- | :--- | :--- | :--- |
+|------|---------|------------|------|
 | Full GCL | 0.685 | 49.06 | Full model |
-| w/o Routing Agent | 0.694 | 48.55 | No topological proposals |
+| w/o Routing Agent | 0.694 | 48.55 | No topology proposal |
 | w/o Auditing Agent | 0.699 | 48.00 | No gain gating |
-| **Full exchange** | 0.721 | 46.10 | Worse than "Language only" (0.714) |
+| **Full exchange** | 0.721 | 46.10 | Worse than Unimodal (0.714) |
 | w/o Public-Factor Agent | 0.702 | 47.85 | Shared semantics collapse |
-| Uniform $\pi_m$ | 0.698 | 48.05 | Loss of sample-adaptive weights |
-| w/o $\mathcal L_{\text{red}}$ | 0.703 | 47.70 | Severe degradation of HSIC/CKA |
-| **only $\mathcal L_{\text{task}}$** | 0.712 | 46.70 | Degradation without governance terms |
+| Uniform $\pi_m$ | 0.698 | 48.05 | No sample-adaptive weights |
+| w/o $\mathcal L_{\text{red}}$ | 0.703 | 47.70 | Severe HSIC/CKA degradation |
+| **Only $\mathcal L_{\text{task}}$** | 0.712 | 46.70 | Degradation without governance |
 
 ### Key Findings
-- **Unregulated full-exchange fusion (0.721) is worse than using the language modality alone (0.714)**—this is the most impactful empirical result: blind "multimodal fusion" can hurt performance by lowering the signal-to-noise ratio. This directly refutes the implicit belief that "adding more modalities will not make things worse."
-- **Efficiency Surprises**: GCL has 117.56M parameters and take 20.06s per epoch, reducing parameters by half compared to ConFede (256.98M, 40.12s) and training time by 25% compared to EMOE (143.5M, 26.80s). "Division of labor + governance" is computationally lighter than "stacking MoEs/experts."
-- **Noise Robustness**: When Gaussian noise $\sigma\in[0,20]$ is injected into MOSI, GCL's decay curve is significantly flatter than baselines, suggesting the auditing gate actively shuts down dirty signals as SNR drops.
-- **Audited Selectivity Experiments** (Fig 3): GCL occupies the high-PGR, moderate-AR quadrant (high positive gain ratio, efficient activation), while NoAudit/Uniform/Full-exchange variants cluster in the high-AR, low-PGR area—meaning they communicate frequently but uselessly.
+- **Ungoverned full-exchange fusion (0.721) is worse than using language alone (0.714)**: This impactful empirical result suggests that blind multimodal fusion can hurt performance due to noise. It refutes the implicit belief that "more modalities are always better."
+- **Efficiency Gains**: GCL has 117.56M parameters and takes 20.06s per epoch, which is nearly half the size/time of ConFede (256.98M, 40.12s) and 25% faster than EMOE. "Division of labor + governance" is more engineering-efficient than stacking experts.
+- **Noise Robustness**: When Gaussian noise $\sigma\in[0,20]$ is injected into MOSI, GCL's performance decays much more slowly than baselines, proving that the auditing gate actively blocks noisy signals as SNR drops.
+- **Audited Selectivity (Fig 3)**: GCL occupies the high-PGR (Positive Gain Ratio), moderate-AR (Activation Ratio) quadrant, whereas variants like NoAudit or FullExchange are in the high-AR, low-PGR area—meaning they communicate a lot but without utility.
 
 ## Highlights & Insights
-- **Treating "Marginal Gain" as a Loss**: Borrowing the $do(\cdot)$ concept from causal inference for multimodal fusion allows "is this interaction worth doing" to become a learnable quantity rather than an emergent property of end-to-end gradient metaphysics. This approach can theoretically be extended to edge activation in any graph-structured network.
-- **Teacher gain + stopgrad training / Student gain inference**: A classic "supervised by oracle during training, executed by learner during inference" pattern that adds a supervised signal without sacrificing inference speed. This trick is reusable in distillation, actor-critic, and verifier-guided generation.
-- **Full exchange performing worse than unimodal**: This experimental conclusion is worth citing repeatedly as it uses data to challenge the multimodal community's default "more modalities are better" assumption.
-- **Public factor as routing context**: Using "shared semantics" as an explicit conditional input for routing is equivalent to first answering "what do we already know in the consensus" before asking "what can private information still contribute," avoiding the double counting of shared information.
+- **Treating "Marginal Gain" as a Loss**: Borrowing the $do(\cdot)$ concept from causal inference, it makes the decision of "whether an interaction is worth it" a learnable quantity rather than something supposedly emerging from end-to-end gradients.
+- **Teacher-Student Gain Framework**: Uses oracle supervision during training and a learned predictor during inference, providing a supervised signal without sacrificing speed. This trick is reusable in distillation and verifier-guided generation.
+- **Full Exchange < Unimodal**: This finding challenges the multimodal community's default assumption that "more is better" by showing that noise can outweigh the benefits of additional modalities without proper governance.
+- **Public Factor as Routing Context**: Treating shared semantics as a conditional input for routing avoids redundant counting of shared information across modalities.
 
 ## Limitations & Future Work
-- The paper is categorized under audio_speech, but it focuses on multimodal sentiment analysis and intent recognition—"acoustic" is just one of three modalities, and there is no evaluation on pure speech/ASR tasks.
-- Teacher gain estimation relies on a single-step residual approximation $\tilde h_n^m=h_n+\phi(\cdot)$; marginal effects of multi-step deep interactions are not considered; combinatorial explosion occurs when scaling to long chains or N>3 modalities.
-- The primary benchmarks (MOSI/MOSEI/MIntRec) are relatively small (thousands to tens of thousands of samples) and have not been validated on large-scale vision-language datasets (e.g., LAION subsets, AudioSet).
-- Lack of comparison with LLM-based multimodal methods (e.g., VideoLLaMA, Qwen-Audio) makes it difficult to determine if GCL's lightweight protocol retains a relative advantage in the LLM era.
+- The area is listed as audio_speech, but the evaluation is limited to multimodal sentiment/intent; acoustic is only one of three modalities, and no pure ASR/speech tasks were tested.
+- Teacher gain estimation relies on single-step residual approximations; the marginal effect of multi-step deep interactions is not considered.
+- Evaluated benchmarks (MOSI/MOSEI/MIntRec) are relatively small-scale; performance on large-scale vision-language datasets (e.g., LAION subsets) is unverified.
+- Lack of comparison with LLM-based multimodal methods (e.g., VideoLLaMA), making it difficult to judge the relative advantage of light-weight protocols in the LLM era.
 
 ## Related Work & Insights
-- **vs MISA / FDMER (Disentanglement-based)**: These also separate shared/private components, but disentanglement happens at the representation layer via reconstruction loss constraints; GCL moves "shared" logic to the aggregation layer coupled with routing, using gain alignment to explicitly supervise edge utility.
-- **vs CGGM / MCIS (Gradient Balancing-based)**: These modify gradient magnitudes during backpropagation to balance modality contributions; GCL controls information flow in the forward pass using $\alpha$, governed at the source.
-- **vs EMOE / Mixture-of-Experts**: Both introduce routing, but MoE does not audit expert outputs; GCL's Auditing Agent is equivalent to installing a "necessity checker" for each expert, achieving better results with fewer parameters.
-- **Insight**: Turning "prediction gain of an edge/expert" into a supervised quantity can be directly migrated to edge prediction in GNNs, document selection in retrieval-augmented LLMs, or tool selection for tool-use agents—the GCL teacher-gain framework can be applied to any decision regarding "whether to activate an information path."
+- **vs MISA / FDMER (Disentanglement)**: These also split shared/private features but do so at the representation layer via reconstruction; GCL moves this to the aggregation layer and couples it with routing, using gain alignment to explicitly supervise edge utility.
+- **vs CGGM / MCIS (Gradient Balancing)**: These modify gradient magnitudes to balance modal contributions; GCL governs information flow at the source in the forward pass, which is theoretically "cleaner."
+- **vs EMOE (MoE)**: Both use routing, but MoE does not audit expert output. GCL's Auditing Agent acts as a "necessity checker" for experts, achieving better results with fewer parameters.
+- **Inspiration**: The supervisable "marginal gain" framework can be transferred to graph edge prediction, document selection in RAG, or tool selection for agents.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Transforming "marginal gain auditing" into an explicit governance protocol for multimodal fusion is an original perspective.
-- Experimental Thoroughness: ⭐⭐⭐ Benchmarks are limited to small-scale sentiment/intent; lacks large-scale or LLM-era competitors.
-- Writing Quality: ⭐⭐⭐⭐ Responsibilities, losses, and supervision of the four agents are clearly explained with comprehensive ablations.
-- Value: ⭐⭐⭐⭐ The empirical evidence that "Full exchange is worse than unimodal" and "Lightweight governance outperforms MoE" has cross-disciplinary value.
+- Novelty: ⭐⭐⭐⭐ Explicitly making "marginal gain auditing" a governance protocol is highly original.
+- Experimental Thoroughness: ⭐⭐⭐ Benchmarks are limited to small-scale sentiment/intent; lacks large-scale/LLM competitors.
+- Writing Quality: ⭐⭐⭐⭐ Roles, losses, and supervision are clearly explained with comprehensive ablation.
+- Value: ⭐⭐⭐⭐ Empirical evidence regarding "full exchange vs. unimodal" and efficiency gains has cross-domain value.
 
 <!-- RELATED:START -->
 
@@ -135,8 +140,8 @@ where $\mathcal L_{\text{loc}}=\sum_m\mathbb E\ell_\tau(q_m^\tau(h_m),y)$ superv
 
 ## Related Papers
 
-- [\[ICCV 2025\] Everything is a Video: Unifying Modalities through Next-Frame Prediction](../../ICCV2025/audio_speech/everything_is_a_video_unifying_modalities_through_next-frame_prediction.md)
 - [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](two-dimensional_quantization_for_geometry-aware_audio_coding.md)
+- [\[ICCV 2025\] Everything is a Video: Unifying Modalities through Next-Frame Prediction](../../ICCV2025/audio_speech/everything_is_a_video_unifying_modalities_through_next-frame_prediction.md)
 - [\[ICML 2026\] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](safesearch_automated_red-teaming_of_llm-based_search_agents.md)
 - [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
 - [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](algorithmic_recourse_of_in-context_learning_for_tabular_data.md)

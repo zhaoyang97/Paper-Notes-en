@@ -2,125 +2,132 @@
 title: >-
   [Paper Note] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Comparative Forecasting] This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11…
+  [ACL 2026][LLM Evaluation][Paper Note] This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11,488 idea pairs (based on objective PapersWithCode outcomes) and training 8B models using SFT and RLVR, the models achieve 77.1% accuracy, surpassing GPT-5's 61.1% and serving as
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Comparative Forecasting"
-  - "Research Idea Ranking"
-  - "RL Reasoning"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 51948b0207319405
+content_hash: 276ee93cf7b05c0e
 ---
-
 # Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2605.21491](https://arxiv.org/abs/2605.21491)  
 **Code**: To be released  
 **Area**: LLM Evaluation / LLM Reasoning  
-**Keywords**: Comparative Forecasting, LLM Evaluation, Research Idea Ranking, RL Reasoning
+**Keywords**: Comparative Prediction, LLM Evaluation, Research Idea Ranking, RL Reasoning
 
 ## TL;DR
 
-This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11,488 idea pairs (based on PapersWithCode objective outcomes) and training an 8B model with SFT and RLVR, the authors achieve 77.1% accuracy, surpassing GPT-5's 61.1%, becoming an effective idea verifier for automated scientific discovery.
+This paper investigates whether language models can learn to predict the empirical success of research ideas. By constructing a dataset of 11,488 idea pairs (based on objective PapersWithCode outcomes) and training 8B models using SFT and RLVR, the models achieve 77.1% accuracy, surpassing GPT-5's 61.1% and serving as an effective idea validator for automated scientific discovery.
 
 ## Background & Motivation
 
-**Background**: Recently, LLMs have started acting as autonomous research agents, capable of generating hypotheses, implementing experiments, and analyzing results. A typical pattern is "high-throughput idea generation": given a research objective, models can generate hundreds of candidate methods. However, current idea evaluation relies entirely on subjective LLM judgments (novelty, excitement, feasibility, etc.), which are often just proxies—an idea might be novel and interesting but may not work in practice.
+**Background**: In recent years, LLMs have begun to act as autonomous scientific agents capable of automatically generating hypotheses, implementing experiments, and analyzing results. A typical paradigm is "high-throughput idea generation": given a research goal, models generate hundreds of candidate methods. However, current idea evaluation relies entirely on subjective LLM judgment (e.g., novelty, excitement, feasibility), which often serve as mere proxies—an idea might be novel but fail in practice.
 
-**Limitations of Prior Work**: (1) Evaluation lacks objectivity: existing systems use LLM scoring based on fictional criteria rather than real experimental results; (2) Evaluation efficiency bottleneck: hundreds of ideas cannot be verified sequentially through experiments; (3) Lack of interpretability: black-box scoring fails to explain to researchers why a certain idea is better.
+**Limitations of Prior Work**: (1) Evaluation lacks objectivity: current systems use LLM scoring based on fabricated criteria rather than real experimental results; (2) Efficiency bottlenecks: hundreds of ideas cannot be verified through experiments one by one; (3) Lack of interpretability: black-box scoring fails to explain why one idea is superior to another.
 
-**Key Challenge**: How to use objective empirical results to predict which idea will perform better without running experiments?
+**Key Challenge**: How to use objective empirical results to predict which idea will perform better without actually running experiments?
 
-**Goal**: To explore whether LMs can learn to predict the empirical success of research ideas and support predictions with interpretable chains-of-thought.
+**Goal**: To explore whether LMs can learn to predict the empirical success of research ideas and support these predictions with interpretable reasoning chains.
 
-**Key Insight**: Framing the problem as "comparative empirical prediction"—given a research goal and two ideas, predict which performs better on a benchmark. The key observation is that while precise prediction is difficult, researchers regularly form intuitions by comparing existing work; the goal is to see if LMs can learn this intuition.
+**Key Insight**: Frame the problem as "comparative empirical prediction"—given a research goal and two ideas, predict which will achieve better results on a benchmark. The key observation is that while precise prediction is difficult, researchers routinely form intuitions by comparing existing works; the goal is to determine if LMs can acquire this intuition.
 
-**Core Idea**: Extracting an idea-pair dataset based on objective results from PapersWithCode leaderboards and training smaller LMs using SFT and RL (with verifiable rewards) for comparative evaluation and reasoning, achieving better performance than GPT-5.
+**Core Idea**: Extract a dataset of idea pairs from PapersWithCode benchmark leaderboards based on objective results. Use SFT and RL (with verifiable rewards) to train small LMs for comparative evaluation and reasoning, achieving performance superior to GPT-5.
 
 ## Method
 
 ### Overall Architecture
 
-The pipeline in this paper consists of three parts: (1) Dataset construction: scraping leaderboards from PapersWithCode to extract idea pairs and objective result labels; (2) Model training: starting with SFT for foundational fine-tuning, followed by RL to learn reasoning; (3) Evaluation and analysis: testing generalization and robustness across multiple test sets.
+The study reframes "predicting success" as a verifiable comparative task: the input consists of a research goal $g$ and two de-identified idea descriptions $h_A, h_B$, and the output is the one that achieves better objective performance on the benchmark. To make this task learnable, the authors first extract "determined" idea pairs from PapersWithCode leaderboards, paired with unified win/loss labels derived from real experimental results and difficulty levels. A two-stage training approach—"Intuition building via SFT + Reasoning via RLVR"—is employed to transform an 8B model into an idea validator capable of both judgment and interpretable argumentation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Deriving Idea Pairs from Leaderboards"]
+        direction TB
+        A["1,918 NLP Leaderboards"] --> B["Determine if the paper is original or a re-report<br/>Trace back to original paper if re-reported"]
+        B --> C["Extract de-leaked idea descriptions<br/>+ Leaderboard research goal g"]
+        C --> D["Idea pairs (g, h_A, h_B)"]
+    end
+    subgraph SIGNAL["Unified Scoring + Stratification + Dual-source Reasoning"]
+        direction TB
+        E["Unified score s_i<br/>min-max normalization → invert lower-is-better → mean of metrics"] --> F["Stratify by diff / σ into 1σ/2σ/3σ difficulty levels"]
+        E --> G["Dual-source reasoning chains<br/>GPT-5 synthesis vs. Literature extraction"]
+    end
+    subgraph TRAIN["Two-stage Training"]
+        direction TB
+        H["Stage 1: SFT (LoRA)<br/>Build pairwise comparison intuition"] --> I["Stage 2: RLVR<br/>Cold-start SFT → DAPO / Dr. GRPO for interpretable reasoning"]
+    end
+    DATA --> SIGNAL
+    SIGNAL --> TRAIN
+    TRAIN --> J["8B Idea Validator<br/>Select superior h_A / h_B + provide arguments"]
+```
 
 ### Key Designs
 
-1.  **Benchmark Scraping and Idea Pair Extraction**:
+**1. Deriving idea pairs from leaderboards: Ensuring labels come from real experiments rather than subjective scores.**  
+The root cause of unreliable idea evaluation is that training signals are often fabricated—previously, LLMs scored "novelty/feasibility" subjectively. This work instead captures objective results from 1,918 NLP leaderboards. Each leaderboard record points to a Result-Reporting (RR) paper; an LLM determines if it is the original method proposer. If not, the system traces back to the original paper. Idea descriptions containing only algorithmic and mathematical details (removing results, authors, and dates to prevent leakage) are then extracted, alongside research goals (e.g., "detecting cyber threats"). Manual verification showed 92% accuracy, ensuring high-fidelity training pairs.
 
-    - Function: Extracting idea pairs and research goals from 1,918 NLP leaderboards to build a training dataset with broad coverage.
-    - Mechanism: (a) Scraping PapersWithCode leaderboards, where each entry points to a paper reporting results (RR paper); (b) Using LLMs to verify if the paper is the method's original source or just a reporter; if the latter, the original paper is found; (c) Using LLMs to extract idea descriptions from the original paper (excluding identifiers like results, authors, or years); (d) Extracting research goals from official descriptions or PapersWithCode data (e.g., "detecting cyber threats").
-    - Design Motivation: To ensure idea descriptions are detailed (including algorithms and mathematical details) and based on original papers, avoiding vague generalities; per-idea verification ensures description accuracy (92% accuracy, with 4% incomplete and 8% completely incorrect).
+**2. Unified scoring + difficulty stratification + dual-source reasoning: Aligning heterogeneous benchmarks into comparable supervision signals.**  
+Metrics across benchmarks are inherently incomparable (e.g., higher is better vs. lower is better for perplexity). The authors apply min-max normalization within each benchmark, inverting "lower is better" metrics, and take the mean to produce a unified score $s_i$. Pairs are categorized into 1σ (Hard), 2σ (Medium), and 3σ (Easy) based on the score difference relative to the standard deviation $\sigma$. To teach the model "how to argue" rather than just "which to pick," two types of reasoning chains are prepared: Synthesis (GPT-5 generates structured reasoning for 1,369 correct judgments, expanded to 2,738 via position swapping) and Literature (extracting existing arguments from the experimental discussions of papers that compare multiple methods).
 
-2.  **Unified Scoring, Difficulty Stratification, and Reason-Chain Extraction**:
-
-    - Function: Assigning objective win/loss labels and difficulty levels to each idea pair, and preparing learnable reasoning chains.
-    - Mechanism: (a) Normalizing all metrics within each benchmark using min-max, inverting "lower-is-better" metrics (e.g., perplexity), and averaging multiple metrics to obtain a "Unified Score" $s_i$; (b) Categorizing score gaps based on standard deviation $\sigma$ into 1σ (Hard), 2σ (Medium), and 3σ (Easy); (c) Using two types of reasoning chains—Synthetic: GPT-5 generating structured reasoning traces for 2,125 pairs, filtering 1,369 correct ones, then doubling to 2,738 via position swapping; Literature: extracting existing experimental comparisons from papers as reasoning evidence.
-    - Design Motivation: Cross-benchmark metrics cannot be compared directly—normalization ensures pair-wise consistency, and difficulty stratification helps control evaluation complexity; using two distinct sources of reasoning data allows testing the sources of RL capability.
-
-3.  **Two-stage Training: SFT + RLVR Reasoning**:
-
-    - Function: Initial foundation fine-tuning for intuition, followed by teaching the model to generate interpretable reasoning before predicting.
-    - Mechanism: (i) Standard SFT: LoRA training (rank=64, lr=2e-4) on an 8B model using the full training set with classification loss $\mathcal{L}_{SFT}=-\log P(y|g,h_A,h_B)$; (ii) RL with Reasoning: A cold-start SFT phase on 170 labeled pairs to teach scientific argumentation style; an RLVR phase using DAPO and Dr. GRPO, where rewards include correctness (Correct +3, Incorrect -3) and formatting (+0.5 for thought and answer tags).
-    - Design Motivation: Constraining reasoning style and reward formatting avoids reward hacking; Dr. GRPO corrects the standard deviation term to solve length bias. The two stages allow the small model to learn both comparative intuition and the ability to provide interpretable explanations.
+**3. Two-stage training: Establishing intuition via SFT and learning interpretable reasoning via RLVR.**  
+Allowing a small model to generate reasoning freely initially leads to performance drops, so training is split. The first step involves standard SFT on an 8B model using LoRA (rank=64, lr=2e-4) to optimize the classification loss $\mathcal{L}_{SFT}=-\log P(y\mid g,h_A,h_B)$, solidifying comparative intuition. The second step uses 170 labeled pairs for cold-start SFT to teach scientific argumentation style, followed by RLVR using DAPO and Dr. GRPO. Rewards are based on correctness (+3 for correct, -3 for incorrect) and format (+0.5 for thought/answer tags). Constrained style and format rewards prevent reward hacking, while Dr. GRPO corrects length bias introduced by standard GRPO deviation terms.
 
 ## Key Experimental Results
 
 ### Main Results: Base Performance
 
-| Model | 1-σ | 2-σ | 3-σ | Overall | Cross-Domain |
-|-------|-----|-----|-----|---------|--------------|
+| Model | 1-σ | 2-σ | 3-σ | Total | Cross-domain |
+|-------|-----|-----|-----|-------|--------------|
 | Qwen3 Base | 18.4% | 26.1% | 11.0% | 20.1% | 3.6% |
 | Direct-SFT | 70.9% | 85.6% | 84.6% | **77.1%** | 45.7% |
 | Reason-SFT-DrGRPO | 66.2% | 76.4% | 83.5% | 71.4% | 49.1% |
 | GPT-5 (High Reasoning) | 61.9% | 61.3% | 56.0% | 61.1% | 46.0% |
 
-**Key Findings**: (1) SFT dramatically improves 8B model performance from 20% to 77%, exceeding GPT-5's 61.1%; (2) Difficulty stratification is effective, with 1σ < 2σ < 3σ; (3) Although RL accuracy is slightly lower, it offers better cross-domain generalization.
+**Key Findings**: (1) SFT dramatically improves 8B model performance from 20% to 77%, exceeding GPT-5's 61.1%; (2) Difficulty stratification is effective (1σ < 2σ < 3σ); (3) While RL has slightly lower precision, it demonstrates better cross-domain generalization.
 
 ### Independent Test Sets and Robustness
 
 | Model | Accuracy |
-|------|--------|
+|-------|----------|
 | Qwen3 Direct-SFT | 63.4% |
 | Qwen3 Reason-SFT-DrGRPO | **67.5%** |
 | GPT-4.1 + Retrieval | 51.4% |
 
 **Key Findings**:
-
 - The 8B model outperforms GPT-4.1 by 16 percentage points on independent datasets, proving it has learned transferable comparative reasoning.
-- Position bias consistency exceeds 85%, indicating no dependence on input order.
-- No length bias was detected; the model does not favor longer descriptions.
-- Accuracy did not drop significantly when rewritten by Gemini-2.5, suggesting the model understands the content.
+- Position bias consistency exceeds 85%, indicating independence from input order.
+- No length bias; the model does not favor longer descriptions.
+- Accuracy remains stable after paraphrasing by Gemini-2.5, confirming content understanding.
 
 ## Highlights & Insights
 
-- **Example of small models beating large ones**: The 8B model after SFT outperforms GPT-5 by 16 points, demonstrating the power of task-specific fine-tuning.
-- **Clever RL reasoning chain design**: Instead of using direct self-generation (which can lower performance), a cold-start with labels followed by RL exploration is used. The two-stage strategy avoids reward hacking and generates coherent explanations.
-- **Unified scoring solving heterogeneity**: Min-max normalization + direction checking + averaging elegantly handles multi-metric issues across different benchmarks.
+- **Small Model Surpassing Large Models**: The 8B model after SFT outperforms GPT-5 by 16 points, demonstrating the power of task-specific fine-tuning.
+- **Clever RL Reasoning Design**: Instead of using self-generated reasoning directly (which degrades performance), the model uses labeled cold-starts followed by RL exploration. This two-stage strategy prevents reward hacking and generates coherent explanations.
+- **Unified Scoring Resolves Heterogeneity**: Using min-max normalization, direction checking, and averaging elegantly handles multi-metric issues across diverse benchmarks.
 
 ## Limitations & Future Work
 
-**Limitations**:
+- Data may inherit noise from PapersWithCode.
+- The effectiveness of this scheme in real-world idea-screening workflows has not been fully verified.
+- The dataset is limited to NLP; extending it to other domains requires additional effort.
 
-- The data may inherit noise from PapersWithCode.
-- There is no full validation of the effectiveness of this scheme in actual idea screening workflows.
-- The dataset is limited to NLP; extending to other domains requires additional work.
-
-**Additional Observations**: Synthetic reasoning chains were less effective than literature-based ones; Dr. GRPO generated coherent explanations more stably than DAPO.
+**Additional Observation**: Synthetic reasoning chains were less effective than literature-derived ones; Dr. GRPO generates coherent explanations more stably than DAPO.
 
 ## Related Work & Insights
 
-- **vs Absolute Scoring** (Baek et al. 2025): Relative comparison is more objective and corresponds better to experimental success.
-- **vs Previous Comparison Work** (Wen et al. 2025): This work is more fine-grained, with small models outperforming large ones and providing interpretable reasoning.
-- **vs LLM Event Prediction** (Halawi et al. 2024): Applying event prediction to scientific idea comparison makes it more specialized.
+- **vs. Absolute Scoring** (Baek et al. 2025): Relative comparison is more objective and correlates better with experimental success than absolute scoring.
+- **vs. Previous Comparison Work** (Wen et al. 2025): This work is more fine-grained, demonstrates small models surpassing large models, and provides interpretable reasoning.
+- **vs. LLM Event Prediction** (Halawi et al. 2024): Applying event prediction to research idea comparison provides a more specialized application.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The comparative framework is novel, and the idea dataset is highly distinctive, though the incremental steps are focused.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes multiple test sets, detailed ablations, and complete robustness stress testing.
-- Writing Quality: ⭐⭐⭐⭐ The paper is clear and deep; keeping technical details in the appendix is a minor drawback.
-- Value: ⭐⭐⭐⭐⭐ Directly supports idea screening for autonomous research systems; its efficient small-model approach is attractive for applications.
+- Novelty: ⭐⭐⭐⭐ The comparative framework is novel, and the idea dataset is unique, though increments are specialized.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes multiple test sets, detailed ablation, and comprehensive robustness stress tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear and in-depth, though moving some technical details to the appendix is a minor drawback.
+- Value: ⭐⭐⭐⭐⭐ Directly supports idea filtering for autonomous research systems; the efficient small-model solution is highly attractive for application.
 
 <!-- RELATED:START -->
 
@@ -128,11 +135,11 @@ The pipeline in this paper consists of three parts: (1) Dataset construction: sc
 
 ## Related Papers
 
-- [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
-- [\[ACL 2026\] Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement](aggregate_vs_personalized_judges_in_business_idea_evaluation_evidence_from_exper.md)
 - [\[ACL 2026\] Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies](teaching_language_models_to_check_grounded_claim_factuality_with_human_test-taki.md)
+- [\[ACL 2026\] Aggregate vs. Personalized Judges in Business Idea Evaluation: Evidence from Expert Disagreement](aggregate_vs_personalized_judges_in_business_idea_evaluation_evidence_from_exper.md)
+- [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
+- [\[ACL 2025\] AbGen: Evaluating Large Language Models in Ablation Study Design and Evaluation for Scientific Research](../../ACL2025/llm_evaluation/abgen_evaluating_large_language_models_in.md)
 - [\[ACL 2026\] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users](language_models_dont_know_what_you_want_evaluating_personalization_in_deep_resea.md)
-- [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
 
 </div>
 

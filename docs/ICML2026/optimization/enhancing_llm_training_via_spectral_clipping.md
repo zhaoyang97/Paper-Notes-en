@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Enhancing LLM Training via Spectral Clipping
 description: >-
-  [ICML 2026][Optimization][Spectral Clipping] This paper proposes SPECTRA: an optimizer-agnostic wrapper that performs **post-spectral clipping** on the update matrix and optional **pre-spectral clipping** on the original…
+  [ICML 2026][Optimization & Theory][Frank-Wolfe] This paper proposes SPECTRA: an optimizer-agnostic wrapper that applies **post-spectral clipping** to the update matrix and optional **pre-spectral clipping** to the raw gradients. Mathematically equivalent to a composite Frank-Wolfe algorithm with weight regularization, SPECTRA consistently reduces validation loss for
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Spectral Clipping"
-  - "Frank-Wolfe"
-  - "Newton-Schulz"
-  - "LLM Pre-training"
-  - "AdamW"
+  - ICML 2026
+  - Optimization & Theory
+  - Frank-Wolfe
+  - Newton-Schulz
+  - AdamW
 date: 2026-05-08
-content_hash: eda5ca1074f98ae8
+content_hash: 84142b96cf12e4cd
 ---
-
 # Enhancing LLM Training via Spectral Clipping
 
 **Conference**: ICML 2026  
@@ -24,102 +21,115 @@ content_hash: eda5ca1074f98ae8
 **Keywords**: Spectral Clipping, Frank-Wolfe, Newton-Schulz, LLM Pre-training, AdamW
 
 ## TL;DR
-This paper proposes SPECTRA: an optimizer-agnostic wrapper that performs **post-spectral clipping** on the update matrix and optional **pre-spectral clipping** on the original gradient. Theoretically equivalent to a composite Frank-Wolfe algorithm with weight regularization, it consistently reduces validation loss for AdamW / Signum / Mars / AdEMAMix in 124M–1.5B LLM pre-training.
+This paper proposes SPECTRA: an optimizer-agnostic wrapper that applies **post-spectral clipping** to the update matrix and optional **pre-spectral clipping** to the raw gradients. Mathematically equivalent to a composite Frank-Wolfe algorithm with weight regularization, SPECTRA consistently reduces validation loss for AdamW, Signum, Mars, and AdEMAMix in 124M–1.5B LLM pre-training.
 
 ## Background & Motivation
 
-**Background**: LLM pre-training optimizers generally fall into two categories. The first consists of coordinate-wise methods (AdamW, Signum, AdEMAMix, Mars) that perform independent adaptive scaling for each parameter. The second consists of spectral methods (Shampoo, Muon) that directly manipulate the singular values of the update matrix. Recent benchmarks show that coordinate-wise methods often match or exceed pure spectral methods, yet they **completely ignore the global spectral structure of weights and gradients**.
+**Background**: Optimizers for LLM pre-training are divided into two categories. The first consists of coordinate-wise methods (AdamW, Signum, AdEMAMix, Mars), which independently apply adaptive scaling to each parameter. The second consists of spectral methods (Shampoo, Muon), which directly manipulate the singular values of the update matrix. Recent benchmarks show coordinate-wise methods often match or exceed pure spectral methods, but they **completely ignore the global spectral structure of weights and gradients**.
 
-**Limitations of Prior Work**: Neglecting spectral structure leads to two specific issues. First, the spectral norm of the update matrix $\mathbf{U}_k$ can spiral out of control—for Signum, $\|\operatorname{sign}(\mathbf{M}_k)\|_2$ is at least $\sqrt{\max(m,n)}$, and for AdamW, it often explodes in early training or before loss spikes. Given the iterative relation $\|\mathbf{X}_k\|_2 \le (1-\lambda\eta)^k\|\mathbf{X}_0\|_2 + \frac{1-(1-\lambda\eta)^k}{\lambda}\max_i\|\mathbf{U}_i\|_2$, a large update spectral norm inflates the weight spectral norm, destroying stability and generalization. Second, the singular value spectrum of raw stochastic gradients is **heavy-tailed**, where a few singular values are orders of magnitude larger than the signal (termed "sparse spectral spikes"). Neither coordinate-wise nor global clipping can suppress these spikes without also suppressing the signal.
+**Limitations of Prior Work**: Ignoring spectral structure leads to two specific issues. First, the spectral norm of the update matrix $\mathbf{U}_k$ can grow uncontrollably—$\|\operatorname{sign}(\mathbf{M}_k)\|_2$ is at least $\sqrt{\max(m,n)}$ for Signum, and often explodes for AdamW during early training or before loss spikes. From the iteration relation $\|\mathbf{X}_k\|_2 \le (1-\lambda\eta)^k\|\mathbf{X}_0\|_2 + \frac{1-(1-\lambda\eta)^k}{\lambda}\max_i\|\mathbf{U}_i\|_2$, a large update spectral norm expands the weight spectral norm, compromising stability and generalization. Second, the singular value spectrum of raw stochastic gradients is **heavy-tailed**, where a few singular values are orders of magnitude larger than the signal (termed "sparse spectral spikes"). Coordinate-wise or global clipping either fails to suppress these spikes or suppresses the signal along with them.
 
-**Key Challenge**: Existing clipping granularities are either too coarse (global) or too fine (coordinate). No tool exists to **specifically eliminate low-rank noise spikes while strictly constraining the update spectral norm** without introducing "GPU killers" like SVD.
+**Key Challenge**: Existing clipping granularities are either too coarse (global) or too fine (coordinate-wise). There is no tool that can **selectively remove low-rank noise spikes while strictly constraining the update spectral norm** without resorting to computationally expensive SVD.
 
-**Goal**: (i) Add a spectral norm constraint layer to any base optimizer with decoupled weight decay; (ii) mathematically link spectral clipping to a widely-studied algorithmic framework to provide convergence guarantees and a regularization interpretation; (iii) develop a GPU-efficient implementation of spectral clipping independent of SVD.
+**Goal**: (i) Add a spectral norm constraint to any base optimizer with decoupled weight decay; (ii) Mathematically link spectral clipping to a well-studied algorithmic framework to provide convergence guarantees and regularization interpretations; (iii) Develop a GPU-efficient implementation of spectral clipping independent of SVD.
 
-**Key Insight**: Starting from the simplest update rule $\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k - \alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$, the authors treat scalar clipping of singular values after SVD as an atomic operation and wrap it with momentum into a complete optimizer.
+**Key Insight**: Starting from the simple update rule $\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k - \alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$, the operation of clipping singular values after SVD is treated as an atomic operation, which is then wrapped into a full optimizer using momentum.
 
-**Core Idea**: Replace coordinate/global clipping with "soft spectral clipping" implemented via Newton-Schulz iterations. This imposes a hard spectral norm constraint on update matrices and filters spectral noise in gradients—essentially solving a **composite Frank-Wolfe problem within a spectral norm ball**.
+**Core Idea**: Use Newton-Schulz iteration to implement "soft spectral clipping" as a replacement for coordinate/global clipping. This applies hard spectral norm constraints to the update matrix and filters spectral noise from the gradient—essentially solving a **composite Frank-Wolfe problem within a spectral norm ball**.
 
 ## Method
 
 ### Overall Architecture
-SPECTRA is a two-layer wrapper applied to a base optimizer. Given an update matrix $\mathbf{U}_k$ produced by any base optimizer (e.g., $\mathbf{M}_k/\sqrt{\mathbf{V}_k}$ for AdamW, $\operatorname{sign}(\mathbf{M}_k)$ for Signum), SPECTRA performs two operations:
+SPECTRA is a two-layer wrapper applied to a base optimizer. Given an update matrix $\mathbf{U}_k$ from any base optimizer (e.g., $\mathbf{M}_k/\sqrt{\mathbf{V}_k}$ for AdamW, $\operatorname{sign}(\mathbf{M}_k)$ for Signum, or outputs from Mars/AdEMAMix), SPECTRA performs two steps:
 
-1.  **Pre-spectral clipping (Optional)**: Before the base optimizer receives the gradient, the raw stochastic gradient $\mathbf{g}$ undergoes $\mathrm{clip}^{\mathrm{sp}}_{c_{\mathrm{pre}}}(\mathbf{g})$, truncating spectral spikes before they are fed into the optimizer.
-2.  **Post-spectral clipping**: The update $\mathbf{U}_k$ calculated by the base optimizer is processed as $\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$, then used to update parameters with an $\alpha\eta_k$ step size, following the rule with decoupled weight decay: $\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k - \alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$.
+1.  **(Optional) Pre-spectral clipping**: Before the base optimizer receives the gradient, the raw stochastic gradient $\mathbf{g}$ undergoes $\mathrm{clip}^{\mathrm{sp}}_{c_{\mathrm{pre}}}(\mathbf{g})$ to truncate spectral spikes before being fed into the optimizer.
+2.  **Post-spectral clipping**: The update $\mathbf{U}_k$ calculated by the base optimizer is processed via $\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$. Parameters are then updated with step size $\alpha\eta_k$ using the rule with decoupled weight decay: $\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k - \alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{U}_k)$.
 
-The spectral clipping operator is defined by applying scalar clipping to each singular value $\mathbf{S}_{ii}$ in the SVD $\mathbf{X}=\mathbf{U}\mathbf{S}\mathbf{V}^T$: $\mathrm{clip}^{\mathrm{sp}}_c(\mathbf{X}) = \mathbf{U}\,\mathrm{diag}(\mathrm{clip}_c(\mathbf{S}_{ii}))\,\mathbf{V}^T$, ensuring the output spectral norm is $\le c$. To avoid expensive SVD, the key engineering contribution is replacing it with Newton-Schulz iterations using matrix-matrix multiplications.
+The spectral clipping operator is defined by applying scalar clipping to each singular value $\mathbf{S}_{ii}$ in the SVD $\mathbf{X}=\mathbf{U}\mathbf{S}\mathbf{V}^T$: $\mathrm{clip}^{\mathrm{sp}}_c(\mathbf{X}) = \mathbf{U}\,\mathrm{diag}(\mathrm{clip}_c(\mathbf{S}_{ii}))\,\mathbf{V}^T$, ensuring the output spectral norm is $\le c$. To avoid expensive SVD, Newton-Schulz iterations approximate this via matrix-matrix multiplications.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Raw Stochastic Gradient g"] -->|Optional| B["Pre-spectral Clipping<br/>Removes low-rank noise spikes, preserves signal"]
+    B --> C["Base Optimizer<br/>AdamW / Signum / Mars / AdEMAMix → Update U_k"]
+    C --> D["Post-spectral Clipping<br/>Hard constraint on update spectral norm ≤ c (= Composite Frank-Wolfe)"]
+    D --> E["Parameter Update with Weight Decay<br/>X_k+1 = (1−λη)X_k − αη·clip(U_k)"]
+    NS["Newton-Schulz Soft Spectral Clipping<br/>Approximated via orth(X) matmuls, no SVD"]
+    NS -.Implementation.-> B
+    NS -.Implementation.-> D
+```
 
 ### Key Designs
 
-1.  **Post-spectral Clipping = Composite Frank-Wolfe on the Spectral Ball**:
-    - **Function**: Adds a hard spectral norm upper bound $\alpha c_k$ to the update while remaining mathematically equivalent to a well-studied convex constrained optimization algorithm.
-    - **Mechanism**: The authors prove that the SPECTRA update with Polyak momentum $\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k - \alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{M}_k)$ is equivalent to solving a stochastic composite Frank-Wolfe problem for $\min_{\mathbf{X}\in Q_2}\{f(\mathbf{X})+\psi(\mathbf{X})\}$, where $Q_2=\{\|\mathbf{X}\|_2\le D_2\}$ is the spectral norm ball and $\psi(\mathbf{X})=\frac{\lambda}{2\alpha}\|\mathbf{X}\|_F^2$ is an implicit Frobenius regularization. Hyperparameter mappings are $c_k\equiv\lambda D_2/\alpha$ and $\gamma_k=\lambda\eta_k$. It provides a convergence rate of $\mathcal{O}(1/K)+\mathcal{O}(\sigma/\sqrt{B})$ under convexity and explains Muon as a special case where $\alpha\to\infty, c=1/\alpha, b=0$ (no regularization, pure spectral normalization).
-    - **Design Motivation**: Translating a heuristic-looking operation (SVD-based clipping) into an algorithm with decades of theoretical backing provides immediate convergence guarantees and hyperparameter guidance ($c, \alpha, \lambda$ directly control the spectral ball radius $D_2$ and regularization strength $b$). This framework can also be adapted to produce variants like nuclear norm (soft-thresholding), Schatten-$p$, or matrix entropy.
+**1. Post-spectral Clipping = Composite Frank-Wolfe on Spectral Norm Ball: Linking Heuristics to Theory**
 
-2.  **Pre-spectral Clipping: Selectively Knocking Out Low-Rank Noise Spikes**:
-    - **Function**: Before feeding the gradient to the base optimizer, it truncates low-rank noise components whose directions are nearly orthogonal to the signal but whose magnitudes are orders of magnitude higher.
-    - **Mechanism**: Assuming the observed gradient $\mathbf{g}=\mathbf{G}+\mathbf{N}$, where $\mathbf{N}=\ell\mathbf{U}_N\mathbf{V}_N^T$ is zero-mean low-rank spike noise with $\ell\gg\|\mathbf{G}\|_2$. Lemma 4.2 proves that when the noise anisotropy parameter $\kappa\le q/(25r^2)$, for any threshold $c\ge\|\mathbf{G}\|_2$, we have $\mathbb{E}_{\mathbf{N}}[\langle\mathbf{G},\tilde{\mathbf{g}}\rangle]\ge\tfrac{1}{3}\|\mathbf{G}\|_F^2$ and $\mathbb{E}_{\mathbf{N}}[\|\tilde{\mathbf{g}}\|_F^2]\le r\min(c,\ell+\|\mathbf{G}\|_2)^2+\|\mathbf{G}\|_F^2$. Intuitively, the top-$r$ singular values of $\mathbf{g}$ are dominated by noise while the rest are signal-driven; spectral clipping flattens the top-$r$ to $c$, reducing variance from $r\ell^2$ to $rc^2$. In contrast, global clipping (Lemma 4.3) must choose between losing the signal or maintaining variance proportional to $\ell^2$.
-    - **Design Motivation**: Empirical observation shows that LLM gradient spectra are heavy-tailed and noise directions are nearly orthogonal to signals. This geometric insight allows spectral clipping to achieve a theoretical separation in noise robustness over global clipping.
+Coordinate-wise methods ignore the global spectral structure, allowing the spectral norm of $\mathbf{U}_k$ to go out of control (e.g., $\|\operatorname{sign}(\mathbf{M}_k)\|_2 \ge \sqrt{\max(m,n)}$ in Signum). SPECTRA enforces a hard spectral clipping. The authors prove that the SPECTRA update with Polyak momentum:
 
-3.  **Newton-Schulz Soft Spectral Clipping: A GPU-Friendly SVD Alternative**:
-    - **Function**: Approximates $\mathrm{clip}^{\mathrm{sp}}_c(\mathbf{X})$ without calling SVD, making the overhead trivial for LLM training.
-    - **Mechanism**: Noting that $\tfrac{1}{c}\mathrm{clip}^{\mathrm{sp}}_c(\mathbf{X}) = \operatorname{orth}(\mathbf{X}) := \mathbf{U}_X\mathbf{V}_X^T$ (strictly if $c\le\sigma_{\min}(\mathbf{X})$, otherwise a soft version), the authors leverage the $\operatorname{orth}$ operator used in Muon. It can be approximated using several rounds of Newton-Schulz polynomial iterations on small square matrices (e.g., $\mathbf{X}^T\mathbf{X}$), involving only matrix-matrix multiplications (matmul). This yields "soft" spectral clipping where singular values above the threshold are compressed to $c$ while sub-threshold ones remain nearly unchanged.
-    - **Design Motivation**: Standard SVD is $\mathcal{O}(mn\min(m,n))$, which is unaffordable for large LLM weight matrices. The matmul-friendly structure of Newton-Schulz keeps the wall-clock overhead of SPECTRA comparable to the base optimizer.
+$$\mathbf{X}_{k+1}=(1-\lambda\eta_k)\mathbf{X}_k-\alpha\eta_k\,\mathrm{clip}^{\mathrm{sp}}_{c_k}(\mathbf{M}_k)$$
+
+is equivalent to solving the stochastic composite Frank-Wolfe for $\min_{\mathbf{X}\in Q_2}\{f(\mathbf{X})+\psi(\mathbf{X})\}$, where $Q_2=\{\|\mathbf{X}\|_2\le D_2\}$ is the spectral norm ball and $\psi(\mathbf{X})=\frac{\lambda}{2\alpha}\|\mathbf{X}\|_F^2$ is an implicit Frobenius regularization. The hyperparameters correspond to $c_k\equiv\lambda D_2/\alpha$ and $\gamma_k=\lambda\eta_k$. Under convexity assumptions, the convergence rate is $\mathcal{O}(1/K)+\mathcal{O}(\sigma/\sqrt B)$. This provides a theoretical basis for the clipping operation, where $c, \alpha, \lambda$ directly control the spectral ball radius $D_2=\alpha c/\lambda$ and regularization strength $b=\lambda/\alpha$. Muon is a special case with no regularization where $\alpha\to\infty, c=1/\alpha, b=0$.
+
+**2. Pre-spectral Clipping: Selectively Removing Low-rank Noise Spikes While Preserving Signal**
+
+In LLM training, raw gradients exhibit a heavy-tailed singular value spectrum. A few "sparse spectral spikes" can be orders of magnitude larger than the signal and are often nearly orthogonal to it. SPECTRA applies $\mathrm{clip}^{\mathrm{sp}}_{c_{\mathrm{pre}}}(\mathbf{g})$ before the base optimizer. Let $\mathbf{g}=\mathbf{G}+\mathbf{N}$, where $\mathbf{N}=\ell\mathbf{U}_N\mathbf{V}_N^\top$ is a zero-mean low-rank spike with $\ell\gg\|\mathbf{G}\|_2$. Lemma 4.2 proves that for any $c\ge\|\mathbf{G}\|_2$, $\mathbb{E}_{\mathbf{N}}[\langle\mathbf{G},\tilde{\mathbf{g}}\rangle]\ge\frac13\|\mathbf{G}\|_F^2$ and variance is reduced from $r\ell^2$ to $rc^2$. Compared to global clipping (Lemma 4.3), which must choose between preserving the signal or reducing variance, spectral clipping achieves both by flattening only the top-$r$ singular values dominated by noise.
+
+**3. Newton-Schulz Soft Spectral Clipping: GPU-Friendly Implementation without SVD**
+
+Exact SVD is $\mathcal{O}(mn\min(m,n))$, which is prohibitive for large LLM weights. The authors observe that $\frac1c\mathrm{clip}^{\mathrm{sp}}_c(\mathbf{X})=\operatorname{orth}(\mathbf{X}):=\mathbf{U}_X\mathbf{V}_X^\top$ (strictly when $c\le\sigma_{\min}(\mathbf{X})$, otherwise yielding a soft version). As $\operatorname{orth}$ is used in Muon, it can be approximated through Newton-Schulz polynomial iterations using matrix-matrix multiplications. This makes the wall-clock overhead of SPECTRA comparable to the base optimizer.
 
 ### Loss & Training
-The objective function (cross-entropy) remains unchanged; SPECTRA only modifies the update direction. Main hyperparameters are the spectral clipping threshold $c$ (pre and post), scale $\alpha$, and weight decay $\lambda$. Together they determine the spectral ball radius $D_2 = \alpha c / \lambda$ and Frobenius regularization strength $b = \lambda / \alpha$.
+The objective function (cross-entropy) remains unchanged. SPECTRA only modifies the update direction. Main hyperparameters include the clipping thresholds $c$, scale $\alpha$, and weight decay $\lambda$, which together determine the spectral ball radius $D_2$ and Frobenius regularization $b$.
 
 ## Key Experimental Results
 
 ### Main Results
-Pre-training 124M–1.5B parameter LLaMA-style Transformers using Chinchilla-optimal token counts, comparing base optimizers with their SPECTRA-enhanced versions.
+Pre-training LLaMA-style transformers (124M–1.5B parameters) using Chinchilla-optimal token counts, comparing base optimizers with SPECTRA-enhanced versions.
 
-| Base Optimizer | Model Size | Vanilla Val Loss | + SPECTRA | Is SOTA |
+| Base Optimizer | Model Size | Vanilla Val Loss | + SPECTRA | SOTA Status |
 | :--- | :--- | :--- | :--- | :--- |
-| AdamW | 124M–1.5B | Baseline | Consistent Drop | Near SOTA |
-| Signum | 124M–1.5B | Weaker | Significant Drop | Substantial Improvement |
-| Mars | 124M–1.5B | Strong Baseline | Further Drop | Achieves SOTA |
-| AdEMAMix | 124M–1.5B | Strong Baseline | Further Drop | Achieves SOTA |
-| Muon | — | — | SPECTRA degrades to Muon as $\alpha\to\infty, c=1/\alpha$ | Included |
+| AdamW | 124M–1.5B | Baseline | Consistent decrease | Near SOTA |
+| Signum | 124M–1.5B | Weaker | Significant decrease | Significant improvement |
+| Mars | 124M–1.5B | Strong Baseline | Further decrease | Achieves SOTA |
+| AdEMAMix | 124M–1.5B | Strong Baseline | Further decrease | Achieves SOTA |
+| Muon | — | — | SPECTRA generalizes Muon | Framework includes it |
 
 ### Ablation Study
-| Configuration | Key Metric | Description |
+| Configuration | Key Metric | Note |
 | :--- | :--- | :--- |
-| Vanilla AdamW | Baseline Val Loss | Uncontrolled update spectral norm (Fig F.10) |
-| + Post-Spectral Clipping | Lower val loss + smaller weights | Validates "Implicit Frobenius Regularization" theory |
-| + Pre-Spectral Clipping | Further loss reduction in noisy layers | Validates sparse spike denoising (Lemma 4.2) |
-| + Global Clipping (Control) | Signal squashed, no clear gain | Validates limitations of Lemma 4.3 |
-| Large LR Training | Vanilla diverges; SPECTRA stable | Spectral constraints allow higher learning rates |
+| Vanilla AdamW | Baseline Loss | Update spectral norm explodes (Fig F.10) |
+| + Post-spectral Clipping | Lower Val Loss + Smaller Weight Norm | Validates Implicit Frobenius Regularization theory |
+| + Pre-spectral Clipping | Further gain in layers with heavy noise | Validates Lemma 4.2 sparse spike removal |
+| + Global Clipping | Signal suppressed, no significant gain | Validates Lemma 4.3 limitations |
+| High Learning Rate | Vanilla diverges; SPECTRA stable | Spectral constraints allow larger lr |
 
 ### Key Findings
-- **Consistent SPECTRA Improvements**: Validation loss decreases for all base optimizers (AdamW, Signum, Mars, AdEMAMix); the best combination reaches SOTA for LLM pre-training.
-- **Empirical Validation of Regularization**: The Frobenius norm of trained weights is significantly smaller than for vanilla models, matching the Frank-Wolfe interpretation where $\psi(\mathbf{X})=\frac{\lambda}{2\alpha}\|\mathbf{X}\|_F^2$.
-- **Enables Larger Learning Rates**: Hard constraints on the spectral norm absorb the explosion risk of large learning rates, making shorter warm-ups or higher LR ceilings feasible.
-- **Spectral Spikes are Real**: Layer-wise singular value statistics across 124M LLaMA training (Figs F.9, F.11, F.14) show that top-$r$ singular values of raw gradients are often an order of magnitude larger than signals and nearly orthogonal to them.
+- **Consistent Improvement**: SPECTRA reduces validation loss for AdamW, Signum, Mars, and AdEMAMix, with the best combinations reaching SOTA.
+- **Empirical Validation of Regularization**: The Frobenius norm of trained weights is lower than vanilla models, consistent with the $\psi(\mathbf{X})=\frac{\lambda}{2\alpha}\|\mathbf{X}\|_F^2$ interpretation.
+- **Allows Larger Learning Rates**: Hard spectral constraints mitigate the risk of update explosions, making shorter warm-ups or higher learning rate caps feasible.
+- **Existence of Spectral Spikes**: Layer-wise singular value statistics (Fig F.9) confirm that raw gradient top-$r$ singular values are often an order of magnitude larger than the signal and nearly orthogonal to it.
 
 ## Highlights & Insights
-- **Algorithm-Theory Correspondence**: Translating the heuristic "SVD then clip" into composite Frank-Wolfe with convergence rates provides "theory you can actually use for tuning"—$D_2$ and $b$ have clear geometric meanings.
-- **Geometry of Spectral vs. Global Clipping**: Lemmata 4.2/4.3 beautifully demonstrate that global clipping cannot make spike-aware tradeoffs. Spectral clipping succeeds because it only affects top-$r$ singular values, which happen to be near-orthogonal to the signal. This applies to any "low-rank anomaly + signal" setting (e.g., Byzantine aggregation in federated learning).
-- **Unified Perspective on Muon**: Explaining Muon as a special case of SPECTRA ($b=0$) clarifies why it works and why adding regularization (finite $\alpha$) helps generalization.
+- **Algorithm-Theory Correspondence**: Translating a heuristic "SVD-based clip" into a composite Frank-Wolfe problem with convergence rates provides clear geometric meanings for hyperparameters $D_2$ and $b$.
+- **Geometric Separation of Spectral vs. Global Clipping**: Lemma 4.2/4.3 demonstrates that global clipping cannot balance signal preservation and variance reduction in the presence of spikes, whereas spectral clipping can.
+- **Unified View of Muon**: Muon is interpreted as a special case of SPECTRA with $b=0$, clarifying the relationship between spectral normalization and spectral clipping with regularization.
 
 ## Limitations & Future Work
-- Experiments primarily cover 124M–1.5B scales; validation on >10B scales is needed. The optimal granularity for heterogeneous weights like MoE/GLU remains unexplored.
-- Newton-Schulz accuracy depends on iteration counts; the matmul count vs. accuracy tradeoff requires careful engineering for production.
-- Theoretical assumptions for pre-clipping ($\kappa\le q/(25r^2)$) need deeper layer-wise verification, especially for structured gradients like attention KV projections.
-- The framework is built on decoupled weight decay; embedding SPECTRA into coupled weight decay or SAM-like sharpness-aware optimizers is an open problem.
+- Experiments were conducted up to 1.5B parameters; verification on larger scales (>10B) is needed.
+- The optimal granularity of spectral clipping for heterogeneous structures like MoE or GLU has not been explored.
+- Newton-Schulz accuracy depends on iteration counts; while wall-clock overhead is addressed, further trade-off analysis is possible.
+- Theory assumes noise anisotropy $\kappa\le q/(25r^2)$, which requires more granular verification for structured layers like KV projections in Attention.
 
 ## Related Work & Insights
-- **vs. Muon (Jordan et al., 2024)**: Muon normalizes all singular values to 1 ($\alpha\to\infty, c=1/\alpha, b=0$). SPECTRA introduces a finite $\alpha$ to bring back Frobenius regularization, achieving better LLM generalization.
-- **vs. Global Gradient Clipping (Pascanu, You et al.)**: Global clipping faces a dilemma between signal preservation and variance suppression; SPECTRA achieves both via spike-aware operations.
-- **vs. Shampoo / Spectral Preconditioners**: Shampoo concerns curvature via $(\mathbf{G}\mathbf{G}^T)^{-1/4}$. SPECTRA ignores preconditioning in favor of spectral norm constraints for stability and regularization, being more computationally efficient and orthogonal to coordinate-wise methods.
-- **vs. Mars / AdEMAMix**: These are powerful next-gen coordinate-wise methods. SPECTRA treats them as base optimizers, proving that spectral constraints and coordinate-wise adaptivity are complementary dimensions.
+- **vs. Muon (Jordan et al., 2024)**: Muon normalizes all singular values to 1 ($b=0$), whereas SPECTRA adds Frobenius regularization (finite $\alpha$), yielding better generalization in LLMs.
+- **vs. Global Gradient Clipping**: Global clipping faces a trade-off between suppressing noise and preserving signals; SPECTRA avoids this by targeting specific singular values.
+- **vs. Shampoo**: Shampoo uses curvature for preconditioning; SPECTRA focuses on stability and regularization via spectral norm constraints.
+- **vs. Mars / AdEMAMix**: These are state-of-the-art coordinate-wise methods. SPECTRA shows that spectral constraints and coordinate-wise adaptivity are complementary rather than mutually exclusive.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Mapping spectral clipping to Frank-Wolfe and the Newton-Schulz engineering are significant contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison across multiple base optimizers and model sizes with detailed diagnostic plots.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure from motivation to theory to experiments; hyperparameter mappings are particularly helpful.
-- Value: ⭐⭐⭐⭐⭐ A plug-and-play wrapper that consistently improves LLM training, orthogonal to many SOTA works.
+- **Novelty**: ⭐⭐⭐⭐ Establishing the equivalence between spectral clipping and Frank-Wolfe is a significant insight.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive comparison across multiple optimizers and model sizes.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with helpful hyperparameter mappings.
+- **Value**: ⭐⭐⭐⭐⭐ A plug-and-play wrapper that consistently improves LLM training and is orthogonal to other SOTA methods.
 
 <!-- RELATED:START -->
 

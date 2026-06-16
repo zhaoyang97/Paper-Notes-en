@@ -2,123 +2,138 @@
 title: >-
   [Paper Note] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Visual Document Retrieval] HEAVEN proposes a plug-and-play two-stage hybrid-vector framework that accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and…
+  [ACL 2026][Information Retrieval & RAG][Paper Note] HEAVEN proposes a plug-and-play two-stage hybrid vector framework that accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and reduces multi-vector reranking computation through POS-based query token filtering, achieving 99.87% of multi-vector Recall@1 while reducing per-query FLOPs by 99.82%
 tags:
-  - "ACL 2026"
-  - "Information Retrieval & RAG"
-  - "Visual Document Retrieval"
-  - "Hybrid-Vector Retrieval"
-  - "Efficiency-Accuracy Trade-off"
-  - "Visual Summary Pages"
-  - "Query Token Filtering"
+  - ACL 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: 7d0196c1c8e5d482
+content_hash: 0670cd745eecfb0f
 ---
-
 # Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.22215](https://arxiv.org/abs/2510.22215)  
 **Code**: [https://github.com/juyeonnn/HEAVEN](https://github.com/juyeonnn/HEAVEN)  
 **Area**: Information Retrieval  
-**Keywords**: Visual Document Retrieval, Hybrid-Vector Retrieval, Efficiency-Accuracy Trade-off, Visual Summary Pages, Query Token Filtering
+**Keywords**: Visual Document Retrieval, Hybrid-Vector Retrieval, Efficiency-Accuracy Tradeoff, Visual Summary Pages, Query Token Filtering
 
 ## TL;DR
 
-HEAVEN proposes a plug-and-play two-stage hybrid-vector framework that accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and reduces multi-vector re-ranking computation through POS-based query token filtering. It maintains $99.87\%$ of multi-vector $Recall@1$ across four benchmarks while reducing per-query FLOPs by $99.82\%$.
+HEAVEN proposes a plug-and-play two-stage hybrid vector framework that accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and reduces multi-vector reranking computation through POS-based query token filtering, achieving 99.87% of multi-vector Recall@1 while reducing per-query FLOPs by 99.82% across four benchmarks.
 
 ## Background & Motivation
 
-**Background**: Visual Document Retrieval (VDR) is a core component of RAG. Current methods follow two primary paradigms: single-vector retrieval (efficient but coarse) and multi-vector retrieval (accurate but computationally expensive), resulting in a significant efficiency-accuracy trade-off.
+**Background**: Visual Document Retrieval (VDR) is a core component of RAG. Current methods are divided into two paradigms: single-vector retrieval (efficient but coarse) and multi-vector retrieval (accurate but computationally expensive), presenting a significant efficiency-accuracy trade-off.
 
 **Limitations of Prior Work**:
-- Single-vector methods (e.g., DSE) require only one dot product per query but lose fine-grained information, leading to a large $Recall@1$ gap (e.g., $22.5\%$ lower than multi-vector models on ViMDoc).
-- Multi-vector methods (e.g., ColQwen2.5) must compute interactions between all query tokens and all page patches, resulting in FLOPs that are hundreds of times higher.
-- Existing efficiency optimizations (e.g., patch pooling/pruning) suffer from sharp performance declines as the compression ratio increases.
+- Single-vector methods (e.g., DSE) require only one dot product per query but lose fine-grained information, leading to a large Recall@1 gap (e.g., 22.5% lower than multi-vector on ViMDoc).
+- Multi-vector methods (e.g., ColQwen2.5) must compute interactions between all query tokens and all page patches, resulting in hundreds of times higher FLOPs.
+- Existing efficiency optimizations (patch pooling/pruning) suffer from sharp performance degradation as the compression ratio increases.
 
-**Key Challenge**: Single-vector methods are sufficient for coarse-grained retrieval (large $K$), where $Recall@200$ differs by only $0.63\%$, but they fail at fine-grained retrieval. Conversely, multi-vector methods offer high accuracy but incur unacceptable computational costs.
+**Key Challenge**: Single-vector methods are sufficient for coarse retrieval (large K) (Recall@200 differs by only 0.63%) but lack precision in fine-grained retrieval; multi-vector methods offer high accuracy but unacceptable computational overhead.
 
-**Goal**: Design a framework that reduces per-query computation by several orders of magnitude while preserving multi-vector retrieval accuracy.
+**Goal**: Design a framework that reduces per-query computation by orders of magnitude with almost no loss in multi-vector retrieval accuracy.
 
-**Key Insight**: Leverage two empirical observations: (1) single-vector retrieval is acceptable for large candidate sets; (2) approximately $70\%$ of query tokens are redundant information ($e.g.$, stop words). Based on these, a two-stage cascaded filtering mechanism is proposed.
+**Key Insight**: Leverage two empirical observations: (1) Single-vector retrieval is acceptable for large candidate sets; (2) Approximately 70% of query tokens are redundant information like stop words. Based on these, a two-stage cascaded filtering is designed.
 
-**Core Idea**: Use single-vector retrieval combined with VS-Pages to rapidly narrow the candidate range, followed by multi-vector retrieval with filtered key query tokens for fine-grained re-ranking, achieving a plug-and-play hybrid retrieval system.
+**Core Idea**: First use single-vector + visual summary pages to rapidly narrow candidates, then use multi-vector + key query tokens for fine-grained reranking, achieving plug-and-play hybrid retrieval.
 
 ## Method
 
 ### Overall Architecture
 
-HEAVEN is a two-stage hybrid-vector retrieval framework. Stage 1 utilizes a single-vector model (e.g., DSE) to efficiently retrieve candidate page sets using Visual Summary Pages (VS-Pages). Stage 2 employs a multi-vector model (e.g., ColQwen2.5) to perform fine-grained re-ranking on the candidate set using only key query tokens. The entire framework is plug-and-play, allowing encoders for both stages to be swapped independently without additional training.
+HEAVEN addresses the efficiency-accuracy tug-of-war in visual document retrieval by chaining the two into a coarse-to-fine cascaded pipeline. After inputting a query, Stage 1 utilizes a single-vector model (e.g., DSE) to perform efficient coarse retrieval on compressed Visual Summary Pages (VS-Pages), quickly narrowing down to a small set of candidate pages. Stage 2 then uses a multi-vector model (e.g., ColQwen2.5) to perform fine reranking on this small candidate set using only key tokens from the query. The encoders for both stages are plug-and-play and can be independently replaced without extra training, ultimately reducing per-query computation by orders of magnitude while maintaining multi-vector accuracy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Query + Document Corpus"] --> VS["Visual Summary Pages (VS-Pages)<br/>Layout Analysis extracts titles → Every r=15 pages combined into one (Index-time only)"]
+    VS --> S1
+    subgraph S1["Stage 1: Single-Vector Coarse Retrieval"]
+        direction TB
+        R1["Query encoded to single vector, dot product on VS-Page → Expand to original pages"] --> F1["Two-stage score fusion: VS-Page level + Page level (α=0.1)"]
+    end
+    S1 --> TK["Top-K Candidate Pages"]
+    TK --> S2
+    subgraph S2["Stage 2: Multi-Vector Reranking"]
+        direction TB
+        POS["Query token filtering: POS filters nouns/entities (approx. 30%)"] --> M1["Key tokens for multi-vector → Retain p1"]
+        M1 --> M2["All tokens for fine reranking → Retain p2"]
+        M2 --> F2["Two-stage score fusion: Single-vector + Multi-vector token level (β=0.3)"]
+    end
+    S2 --> OUT["Top-1 Page"]
+```
 
 ### Key Designs
 
-1. **Visual Summary Pages (VS-Pages)**:
-    - **Function**: Compresses multi-page documents into fewer summary pages to reduce the number of comparisons during the single-vector stage.
-    - **Mechanism**: Extracts title layouts from each page using document layout analysis (DocLayout-YOLO) and tiles these layouts from multiple pages (default $r=15$ pages) into a single VS-Page. Retrieval is performed at the VS-Page level first and then expanded back to the original pages.
-    - **Design Motivation**: Many pages contain repetitive or uninformative content (logos, headers), whereas layouts such as titles are highly indicative for retrieval. VS-Pages are constructed once during indexing, adding no overhead at query time.
+**1. Visual Summary Pages (VS-Pages): Compressing Multiple Pages into One**
 
-2. **Query Token Filtering**:
-    - **Function**: Reduces the computational load during the multi-vector re-ranking stage.
-    - **Mechanism**: Utilizes Part-of-Speech (POS) tagging to identify key tokens in the query (nouns, named entities, etc., which account for ~30%). Only these key tokens are used to calculate multi-vector similarity for initial refinement, followed by a final ranking on a smaller refined candidate set using all tokens.
-    - **Design Motivation**: Most query tokens are redundant and contribute little to retrieval performance. Experiments demonstrate that using only key tokens achieves performance comparable to using all tokens and is superior to random token selection.
+Large numbers of document pages contain repetitive or non-informative content (logos, headers), while key layouts like titles are most useful for retrieval. Running single-vector retrieval per page is wasteful. HEAVEN uses layout analysis (DocLayout-YOLO) to extract title layouts from each page and crops/concatenates these layouts from multiple pages (default $r=15$) into a single summary page. Retrieval is performed at the VS-Page level first and then expanded to original pages, reducing single-vector comparisons to $1/r$. Crucially, VS-Pages are constructed once during indexing, adding no query-time overhead.
 
-3. **Two-stage Score Fusion**:
-    - **Function**: Integrates signals from coarse retrieval and fine-grained re-ranking.
-    - **Mechanism**: Stage 1 fuses VS-Page level and page-level single-vector scores (weight $\alpha=0.1$). Stage 2 fuses single-vector and multi-vector scores in the final ranking (weight $\beta=0.3$).
-    - **Design Motivation**: Retrieval signals at different granularities are complementary; VS-Pages provide document-level context, page-level scores offer fine-grained localization, and multi-vector scores provide token-level matching.
+**2. Query Token Filtering: Multi-Vector Computation with Nouns Only**
+
+The cost of multi-vector reranking stems from interacting all query tokens with all page patches. However, ~70% of query tokens are redundant. HEAVEN uses Part-of-Speech (POS) tagging to filter key tokens (nouns, named entities, etc., comprising ~30%). It first uses only these key tokens to calculate multi-vector similarity for initial reranking (retaining $p_1$), then uses all tokens for final ranking on the refined small candidate set (retaining $p_2$). Experiments prove using key tokens matches the performance of using all tokens and significantly outperforms random selection of an equal number of tokens.
+
+**3. Two-Stage Score Fusion: Complementary Multi-Granularity Signals**
+
+Retrieval signals at the document, page, and token levels emphasize different aspects; relying on only one leads to information loss. In Stage 1, HEAVEN fuses VS-Page level (document-level info) and page-level (fine-grained positioning) single-vector scores with weight $\alpha=0.1$. In Stage 2, the final ranking fuses the single-vector score with the multi-vector token-level matching score with weight $\beta=0.3$. Ablations show removing any fusion level significantly degrades accuracy, confirming the complementarity of the three granularities.
+
+### Mechanism
+
+Taking the query "What was the revenue growth in Q3?" as an example: During indexing, documents are compressed into VS-Pages (15 pages per summary). In Stage 1, the query is encoded into a single vector for coarse dot-product retrieval on VS-Pages, expanded to original pages, and fused with an $\alpha=0.1$ weight to yield Top-$K$ candidates. In Stage 2, POS tagging extracts "revenue / growth / Q3" as key tokens. These are used to calculate multi-vector similarity to prune $K$ candidates down to $p_1$. Finally, all query tokens are used to rerank this batch, incorporating the single-vector score with $\beta=0.3$ to output the Top-1 page. Expensive multi-vector interactions only apply to $K$ candidates × 30% tokens, enabling a multi-order reduction in FLOPs.
 
 ### Loss & Training
 
-HEAVEN is a training-free, plug-and-play framework. Encoders for both stages use off-the-shelf pre-trained models (DSE for Stage 1, ColQwen2.5 for Stage 2) and can be directly replaced with newer models.
+HEAVEN is a training-free, plug-and-play framework. Encoders for both stages use off-the-shelf pre-trained models (DSE for Stage 1, ColQwen2.5 for Stage 2), which can be directly replaced with stronger models.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | HEAVEN | ColQwen2.5 (Multi-vector SOTA) | Performance Maintained / FLOPs Reduction |
-|--------|------|--------|----------|------|
-| ViMDoc | $Recall@1$ | $71.05\%$ | $71.13\%$ | $99.88\% / -99.88\%$ |
-| OpenDocVQA | $Recall@1$ | $71.56\%$ | $72.63\%$ | $98.52\% / -99.89\%$ |
-| ViDoSeek | $Recall@1$ | $75.04\%$ | $75.57\%$ | $99.30\% / -98.50\%$ |
-| M3DocVQA | $Recall@1$ | $59.31\%$ | $57.99\%$ | **$102.27\%$** / $-99.81\%$ |
-| **Average** | $Recall@1$ | $69.24\%$ | $69.33\%$ | **$99.87\% / -99.82\%$** |
+| Dataset | Metric | HEAVEN | ColQwen2.5 (Multi-vector SOTA) | Performance Retained / FLOPs Reduction |
+| :--- | :--- | :--- | :--- | :--- |
+| ViMDoc | R@1 | 71.05% | 71.13% | 99.88% / -99.88% |
+| OpenDocVQA | R@1 | 71.56% | 72.63% | 98.52% / -99.89% |
+| ViDoSeek | R@1 | 75.04% | 75.57% | 99.30% / -98.50% |
+| M3DocVQA | R@1 | 59.31% | 57.99% | **102.27%** / -99.81% |
+| **Average** | R@1 | 69.24% | 69.33% | **99.87% / -99.82%** |
 
 ### Ablation Study
 
 | Configuration | Key Impact | Description |
-|------|---------|------|
-| w/o VS-Pages | Significant FLOPs increase | Requires comparison across all original pages |
-| w/o Candidate Refinement | Sharp performance drop | VS-Page to page score fusion is critical |
+| :--- | :--- | :--- |
+| w/o VS-Pages | Significant FLOPs increase | Requires comparison with all original pages |
+| w/o Candidate Refinement | Severe performance drop | Score fusion between VS-Page and page is critical |
 | w/o Query Token Filtering | FLOPs increase | Redundant tokens cause unnecessary computation |
-| w/o Re-ranking Refinement | Significant performance drop | Single/multi-vector score fusion is complementary |
+| w/o Reranking Refinement | Significant performance drop | Single/multi-vector score fusion is complementary |
 
 ### Key Findings
-- On M3DocVQA, HEAVEN actually outperforms the full ColQwen2.5 ($+2.27\% Recall@1$) due to the beneficial document-level signals provided by VS-Pages.
-- Stage 1 alone outperforms DSE ($+1.74\%$ average $Recall@1$, $-49.31\%$ FLOPs), proving that VS-Pages effectively compress the search space.
-- Using only ~30% of key query tokens matches the performance of full-token multi-vector retrieval and is superior to random sampling.
-- Compared to efficiency optimizations like patch pooling/pruning, HEAVEN achieves significantly higher accuracy at comparable FLOPs levels.
+- On M3DocVQA, HEAVEN even outperforms full ColQwen2.5 (+2.27% R@1) because document-level signals from VS-Pages are beneficial.
+- Stage 1 alone already exceeds DSE (+1.74% Avg R@1, -49.31% FLOPs), proving VS-Pages effectively compress the search space.
+- Using only ~30% of key query tokens matches full-token multi-vector performance and outperforms random selection.
+- Compared to patch pooling/pruning, HEAVEN achieves significantly higher accuracy at the same FLOPs.
 
 ## Highlights & Insights
-- The plug-and-play design is highly practical: no training is required, and encoders can be upgraded independently.
-- The VS-Pages concept is innovative: extracting key layouts via layout analysis → tiling into summary pages → reducing the number of retrieval targets; this is a one-time process during indexing.
-- Filtering tokens from the query side (rather than compressing patches from the document side) is an effective yet relatively overlooked optimization direction.
-- The paper introduces the ViMDoc benchmark, filling a gap in the evaluation of visual retrieval for multi-document and long-document scenarios.
+- Practical plug-and-play design: No training required, encoders can be independently upgraded.
+- Clever VS-Pages concept: Extracting layouts via analysis → Concatenating summary pages → Reducing retrieval object count, built only once during indexing.
+- Optimizing from the query side (filtering tokens) rather than the document side (compressing patches) is a relatively overlooked but effective direction.
+- Introduces the ViMDoc benchmark, filling the gap in multi-document and long-document visual retrieval evaluation.
 
 ## Limitations & Future Work
-- VS-Pages depend on the quality of the layout analysis tool (DocLayout-YOLO); performance may be limited for documents with non-standard layouts.
-- Query token filtering is based on POS tagging; its effectiveness for non-English languages requires further verification.
-- Default hyperparameters are currently tuned for English documents; cross-lingual and cross-domain generalization remains to be explored.
-- The two-stage cascaded design introduces system complexity and several hyperparameters ($\alpha, \beta, p_1, p_2, K, r$).
+- VS-Pages rely on the quality of layout analysis (DocLayout-YOLO); performance may be limited for non-standard layouts.
+- Query token filtering is based on POS tagging; effectiveness for non-English languages requires verification.
+- Default hyperparameters are tuned for English; cross-lingual/cross-domain generalization remains to be explored.
+- The two-stage cascaded design introduces system complexity and multiple hyperparameters ($\alpha, \beta, p_1, p_2, K, r$).
 
 ## Related Work & Insights
-- **vs ColQwen2.5 (Pure Multi-vector)**: HEAVEN maintains $99.87\%$ of $Recall@1$ while reducing FLOPs by $99.82\%$.
-- **vs DSE (Pure Single-vector)**: HEAVEN surpasses DSE even in Stage 1, with VS-Pages effectively compressing the search space.
-- **vs Patch Pooling/Pruning**: While others compress the document side, HEAVEN filters the query side, providing a superior efficiency-accuracy trade-off.
+- **vs. ColQwen2.5 (Pure Multi-Vector)**: HEAVEN maintains 99.87% R@1 while reducing FLOPs by 99.82%.
+- **vs. DSE (Pure Single-Vector)**: HEAVEN exceeds DSE in Stage 1 alone, with VS-Pages effectively compressing the search space.
+- **vs. Patch Pooling/Pruning**: Comparing document-side compression vs. query-side filtering, HEAVEN offers a superior efficiency-accuracy trade-off.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Unique combination of a two-stage hybrid design, VS-Pages, and query-side filtering.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across four benchmarks, including detailed comparisons, ablations, and efficiency analyses.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with a strong logical progression from observation to methodology and validation.
+- Novelty: ⭐⭐⭐⭐ The combination of two-stage hybrid design + VS-Pages + query-side filtering is unique.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four benchmarks, multiple baselines, ablations, efficiency, hyperparameter, and plug-and-play validation are all comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with a complete logical chain of observation → method → verification.
 
 <!-- RELATED:START -->
 
@@ -128,8 +143,8 @@ HEAVEN is a training-free, plug-and-play framework. Encoders for both stages use
 
 - [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
 - [\[ICML 2026\] LEMUR: Learned Multi-Vector Retrieval](../../ICML2026/information_retrieval/lemur_learned_multi-vector_retrieval.md)
-- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](../../ICML2026/information_retrieval/vector_linking_via_cross-model_local_isometric_consistency.md)
-- [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
+- [\[ICML 2025\] POQD: Performance-Oriented Query Decomposer for Multi-Vector Retrieval](../../ICML2025/information_retrieval/poqd_performance-oriented_query_decomposer_for_multi-vector_retrieval.md)
+- [\[CVPR 2025\] VDocRAG: Retrieval-Augmented Generation over Visually-Rich Documents](../../CVPR2025/information_retrieval/vdocrag_retrieval-augmented_generation_over_visually-rich_documents.md)
 - [\[ACL 2026\] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths](why_these_documents_explainable_generative_retrieval_with_hierarchical_category_.md)
 
 </div>

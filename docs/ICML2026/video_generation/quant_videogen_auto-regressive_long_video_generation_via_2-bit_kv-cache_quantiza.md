@@ -2,73 +2,84 @@
 title: >-
   [Paper Note] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization
 description: >-
-  [ICML 2026][Video Generation][Autoregressive Video Diffusion] QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and prog…
+  [ICML 2026][Video Generation][Autoregressive Video Diffusion] QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and progressive residual multi-stage compression, it reduces KV memory footprint to 1/7 of the original on LongCat-Video/HY-WorldPlay/Self-Forcing with <4% end-to-end lat
 tags:
-  - "ICML 2026"
-  - "Video Generation"
-  - "Autoregressive Video Diffusion"
-  - "KV-Cache"
-  - "2-bit Quantization"
-  - "Spatiotemporal Redundancy"
-  - "Residual Quantization"
+  - ICML 2026
+  - Video Generation
+  - Autoregressive Video Diffusion
+  - KV-Cache
+  - 2-bit Quantization
+  - Residual Quantization
 date: 2026-05-08
-content_hash: 5adbbbaff7b6fe25
+content_hash: fd015e0d6960082b
 ---
-
 # Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.02958](https://arxiv.org/abs/2602.02958)  
-**Code**: Available (Website + GitHub as marked in the paper)  
+**Code**: Yes (Website + GitHub specified in paper)  
 **Area**: Video Generation / KV-Cache Quantization / Model Compression  
-**Keywords**: Autoregressive Video Diffusion, KV-Cache, 2-bit Quantization, Spatiotemporal Redundancy, Residual Quantization
+**Keywords**: Autoregressive Video Diffusion, KV-Cache, 2-bit Quantization, Spatial-Temporal Redundancy, Residual Quantization
 
 ## TL;DR
-QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and progressive residual multi-stage compression, it reduces KV memory consumption to 1/7 on LongCat-Video, HY-WorldPlay, and Self-Forcing. It maintains an end-to-end latency overhead of <4% and significantly outperforms LLM quantization baselines like KIVI and QuaRot in 2-bit scenarios.
+QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and progressive residual multi-stage compression, it reduces KV memory footprint to 1/7 of the original on LongCat-Video/HY-WorldPlay/Self-Forcing with <4% end-to-end latency overhead. At 2-bit, its quality significantly outperforms LLM quantization baselines like KIVI and QuaRot.
 
 ## Background & Motivation
 
-**Background**: Video diffusion models are shifting from "bidirectional attention + short clip denoising" to a **chunk-by-chunk generation paradigm** based on **autoregressive + causal attention + KV-cache** (e.g., CausVid, Self-Forcing, HY-WorldPlay). This aims to support long-duration, streaming, and interactive video generation. The key dependency introduced by the autoregressive nature is the KV-cache: K/V tensors from early frames must reside in GPU memory to avoid recomputation.
+**Background**: Video diffusion models are shifting from "bidirectional attention + short-segment denoising" to an **autoregressive + causal attention + KV-cache** chunk-by-chunk generation paradigm (e.g., CausVid, Self-Forcing, HY-WorldPlay). This aims to support long-duration, streaming, and interactive video generation. The key dependency of autoregression is the KV-cache: K/V tokens from early frames must reside in memory to avoid re-computation.
 
-**Limitations of Prior Work**: KV-cache memory consumption grows nearly linearly with the number of frames, quickly exhausting GPU resources. For instance, generating a 5-second 480p video with LongCat-Video requires approximately 38K latent tokens, corresponding to 34 GB of KV-cache, which exceeds the capacity of a single RTX 5090. HY-WorldPlay-8B cannot even run on an RTX 4090. Worse, **short context is not only an efficiency bottleneck but also a capability bottleneck**—the KV length directly determines long-term consistency in identity, layout, and motion. Even top-tier industrial long-video systems can currently only support up to about 60 seconds.
+**Limitations of Prior Work**: KV-cache memory consumption grows almost linearly with the number of frames, quickly exhausting GPU VRAM. For instance, generating a 5-second 480p video with LongCat-Video requires ~38K latent tokens, corresponding to 34 GB of KV-cache, exceeding the capacity of a single RTX 5090. Worse, **short context is both an efficiency bottleneck and a capability bottleneck**—KV length directly determines the long-term consistency of identity, layout, and motion. Even top-tier long video systems currently peak at approximately 60 seconds.
 
-**Key Challenge**: Standard LLM KV quantization methods (KIVI, KVQuant, QuaRot, RotateKV) **fail catastrophically** when applied to video. Video KV tensors exhibit highly heterogeneous numerical distributions across both token and channel dimensions—$\max|K|\sim 10^2$ and $\max|V|\sim 10^3$, with outlier channels varying per token. Symmetric per-group quantization $X_{\text{INT}}=\lfloor X/S\rceil$, where the scale $S=\max(|X|)/(2^{b-1}-1)$, is forced to accommodate the extreme maximum values of the entire token, causing the quantization error $\mathbb E[|x-\hat x|]\propto S$ to explode.
+**Key Challenge**: Existing LLM KV quantization methods (KIVI, KVQuant, QuaRot, RotateKV) **fail catastrophically** when applied to video. Video KVs exhibit highly heterogeneous numerical distributions in both token and channel dimensions—$\max|K|\approx 10^2$, $\max|V|\approx 10^3$. Furthermore, outlier channels vary by token. In symmetric per-group quantization ($X_{\text{INT}}=\lfloor X/S\rceil$), the scale factor $S=\max(|X|)/(2^{b-1}-1)$ is dictated by the maximum value of the entire token, causing quantization errors $\mathbb E[|x-\hat x|]\propto S$ to explode.
 
-**Goal**: (i) Upgrade KV-cache quantization from LLM-style "general smoothing" to handle the heterogeneous distributions of video; (ii) maintain video quality even under extreme 2-bit low-bitrate conditions; (iii) achieve this without requiring training or fine-tuning.
+**Goal**: (i) Upgrade KV-cache quantization from LLM "general smoothing" to handle the heterogeneous distribution of video; (ii) Maintain video quality even under extreme 2-bit quantization; (iii) Eliminate the need for training or fine-tuning.
 
-**Key Insight**: The authors observe that video KV pairs possess **strong spatiotemporal redundancy**—neighboring spatial patches in adjacent frames and neighboring patches within the same frame show high cosine similarity in latent tokens. Furthermore, video content naturally supports **progressive encoding** (coarse-to-fine), similar to SVC streaming. These properties present two opportunities: similar tokens can share a centroid (subtracting it flattens the heterogeneous distribution), and residuals can be further refined through multiple stages.
+**Key Insight**: The authors observe that video KVs possess **strong spatial-temporal redundancy**—cosine similarity between latent tokens is high for both same-space patches in adjacent frames and adjacent patches in the same frame. Additionally, video content naturally supports **progressive encoding** (coarse-to-fine), similar to SVC streaming. These properties present two opportunities: similar tokens can share a centroid (subtracting it flattens heterogeneous distributions), and residuals can be further refined through multiple stages.
 
-**Core Idea**: Utilize **k-means to group similar tokens and subtract centroids** to obtain low-amplitude, quantization-friendly residuals (Semantic-Aware Smoothing), followed by **Progressive Residual Quantization** (PRQ) to compress residuals in a multi-stage coarse-to-fine manner. This replaces the LLM-style outlier processing paradigm with a video-style redundancy utilization paradigm.
+**Core Idea**: Use **k-means to cluster similar tokens and subtract the centroid** to obtain low-amplitude, quantization-friendly residuals (Semantic-Aware Smoothing), followed by **Progressive Residual Quantization** to compress residuals multi-stagedly from coarse to fine. This replaces the LLM-style outlier processing paradigm with a video-style redundancy utilization paradigm.
 
 ## Method
 
 ### Overall Architecture
-QVG integrates into the KV-cache write path of any autoregressive video diffusion model without fine-tuning. It processes KV pairs chunk-by-chunk. For each chunk: (1) k-means clustering partitions $N$ tokens into $C$ groups and calculates centroids $C_i$; (2) tokens subtract their respective centroids to obtain residuals $R_i$; (3) residuals undergo standard per-group symmetric quantization (INT2 or INT4); (4) to further reduce error, the "smoothing + quantization" process is applied recursively for several rounds (Pro version). During dequantization, $S_X\cdot X_{\text{INT}}+C_i$ is calculated to approximate K/V. Centroids are stored in BF16 (minimal overhead), and the algorithm is co-optimized with the system on the GPU to maintain <4% latency.
+QVG integrates into the KV-cache write path of any autoregressive video diffusion model without fine-tuning. It processes KV pairs chunk-by-chunk: (1) k-means clustering partitions $N$ tokens into $C$ groups and calculates centroids $C_i$; (2) tokens subtract their respective centroids to yield residuals $R_i$; (3) residuals undergo standard per-group symmetric quantization (INT2 or INT4); (4) to further reduce error, "residual smoothing + re-quantization" is performed recursively for several rounds (Pro version). During dequantization, $S_X\cdot X_{\text{INT}}+C_i$ is added back to approximate K/V. All centroids are stored in BF16 (minimal size), and the algorithm is co-optimized with the system on GPU to maintain <4% latency.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Autoregressive Video Diffusion<br/>Chunk-by-chunk KV-cache Write"] --> SAS
+    subgraph SAS["Semantic-Aware Smoothing (Design 1)"]
+        direction TB
+        B["k-means clusters N tokens in chunk<br/>into C groups, compute centroid Cᵢ"] --> C["Token minus centroid<br/>Low-amplitude residual Rᵢ"]
+    end
+    SAS --> D["Per-group Symmetric Quantization<br/>(INT2 / INT4)"]
+    D -->|"Further error reduction"| E["Progressive Residual Quantization (Design 2)<br/>Recursive smoothing + quantization on residuals"]
+    E -.->|"Recursive refinement"| SAS
+    D --> F["Algorithm-System Co-design (Design 3)<br/>Quant/Dequant kernel fusion<br/>Centroids stored in BF16"]
+    E --> F
+    F --> G["Dequant + Centroid addition to restore K/V<br/>Memory ↓ up to 7×, Latency < 4%"]
+```
 
 ### Key Designs
 
-1.  **Semantic-Aware Smoothing**:
-    - **Function**: Transforms the high-amplitude "channel-token chaotic" distribution of video KV into a "low-amplitude, near-zero" residual distribution, naturally reducing rounding errors in low-bit quantization.
-    - **Mechanism**: For $N=HWT_c$ tokens in a chunk, k-means produces $C$ groups $\{\mathcal G_i\}$ and centroids $C_i\in\mathbb R^d$. Tokens are adjusted: $\mathbf R_i=\mathbf X_{\mathcal G_i}-C_i$. Residuals then enter symmetric per-group quantization. Since tokens in the same group have similar latent representations, the "channels that happen to be outliers" are absorbed by the centroid, drastically shrinking the maximum values in the residuals. Experiments show Key cache quantization error drops by $\sim$6.9× and Value cache by $\sim$2.6×.
-    - **Design Motivation**: LLM quantization (e.g., per-token in KIVI, rotation in QuaRot) assumes "channel outliers are consistent across all tokens," which is false for video. Video tokens correspond to different spatial regions and motion patterns, causing outliers to shift per token. **Local homogenization** via clustering is a direct byproduct of exploiting spatio-temporal redundancy, making it more suited to the data's nature than forced distribution rotation.
+**1. Semantic-Aware Smoothing: Flattening distributions via clustering and centroid subtraction**
 
-2.  **Progressive Residual Quantization**:
-    - **Function**: Compresses residuals across multiple stages on top of Semantic-Aware Smoothing, further thinning quantization errors and supporting flexible quality-memory tradeoffs.
-    - **Mechanism**: The first round yields $\hat X_1$ via smoothed quantization. The dequantization residual $\Delta_1=X-\hat X_1$ is then processed via another round of Semantic-Aware Smoothing and quantization to get $\hat\Delta_1$. This repeats for $L$ rounds. The final approximation is $\hat X=\hat X_1+\hat\Delta_1+\dots+\hat\Delta_{L-1}$. Each stage refines the residual, similar to multi-resolution encoding in SVC.
-    - **Design Motivation**: Scaling single-stage quantization is limited by a hard lower bound of rounding error ($S_X/2$). Multi-stage quantization allows errors to decay geometrically by utilizing the natural hierarchy of "coarse structure + high-frequency residuals" in video. Internally, QVG-Pro (multi-stage) achieves a PSNR of 30.4 at INT2, far exceeding baselines.
+LLM KV quantization (e.g., per-token in KIVI, rotation in QuaRot) assumes channel outliers are consistent across all tokens. In video, this assumption breaks down as tokens correspond to different spatial regions and motion patterns, causing outliers to drift between tokens. QVG breaks this by leveraging spatial-temporal redundancy: $N=HWT_c$ tokens in a chunk are clustered via k-means into $C$ groups with centroids $C_i\in\mathbb R^d$. Residuals $\mathbf R_i=\mathbf X_{\mathcal G_i}-C_i$ then enter symmetric per-group quantization. Since tokens in the same group have similar latent representations, "outlier channels" are absorbed by the centroid, significantly reducing maximum residual values. This content-based local homogenization fits the data better than fixed global rotations, reducing Key cache quantization error by ~6.9× and Value cache error by ~2.6×.
 
-3.  **Algorithm-System Co-design**:
-    - **Function**: Implements the above steps on GPUs to ensure training-free embedding into autoregressive inference pipelines with controllable latency.
-    - **Mechanism**: k-means is performed at the chunk level with BF16 centroids. Quantization/dequantization is fused with attention kernels. 2-bit representations use packed INT. The paper reports <4% end-to-end latency overhead.
-    - **Design Motivation**: KV quantization is meaningless if it slows down inference. Maintaining intra-chunk parallelism and minimizing dequantization overhead are critical for deploying this method on consumer GPUs like the RTX 4090/5090.
+**2. Progressive Residual Quantization: Multi-stage refinement to thin out errors**
+
+Single-pass quantization rounding error has a hard lower bound of $S_X/2$, which is problematic for extreme 2-bit cases. Borrowing from video's natural hierarchy of "coarse structure + high-frequency residuals," QVG refines residuals across multiple stages. The first round produces $\hat X_1$; the dequantization residual $\Delta_1=X-\hat X_1$ is then smoothed and quantized to yield $\hat\Delta_1$. After $L$ rounds, $\hat X=\hat X_1+\hat\Delta_1+\cdots+\hat\Delta_{L-1}$. Each stage decays the error geometrically. The number of stages $L$ acts as a "quality vs. compression" knob—QVG-Pro (multi-stage) achieves a PSNR of 30.4 at INT2, while single-stage QVG achieves 28.7, both far exceeding baselines.
+
+**设计 3. Algorithm-System Co-design: Implementing smoothing and residuals on GPU with <4% latency**
+
+KV quantization becomes meaningless if it slows down inference. QVG engineered these steps into the autoregressive KV write path: k-means is performed at chunk granularity, centroids are stored in BF16, and (de)quantization is fused with attention kernels. 2-bit values use packed INT representation. By maintaining intra-chunk parallelism and minimizing dequantization overhead, the end-to-end latency increase is kept under 4%, enabling deployment on consumer GPUs like the RTX 4090/5090.
 
 ### Loss & Training
-The method is completely training-free with no gradient updates. Hyperparameters include the number of clusters $C$, number of residual stages $L$, and quantization bits $b$.
+Completely training-free with no gradient updates. Hyperparameters include: number of clusters $C$, number of residual stages $L$, and bit-width $b$.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on LongCat-Video-13B, HY-WorldPlay-8B, and Self-Forcing, using BF16 full precision as a reference against RTN, KIVI, and QuaRot.
+Using BF16 full precision as a reference, QVG was compared against RTN, KIVI, and QuaRot on LongCat-Video-13B, HY-WorldPlay-8B, and Self-Forcing.
 
 | Model | Setting | Method | Compression | PSNR | SSIM | LPIPS |
 |---|---|---|---|---|---|---|
@@ -80,46 +91,46 @@ Evaluated on LongCat-Video-13B, HY-WorldPlay-8B, and Self-Forcing, using BF16 fu
 | LongCat-Video | INT4 480p | QuaRot | 3.55× | 33.74 | 0.960 | 0.033 |
 | LongCat-Video | INT4 480p | **QVG-Pro** | 3.05× | **37.10** | **0.977** | **0.024** |
 
-At the extreme INT2 bit-depth, LLM baselines all result in PSNR $\le 25$, while QVG reaches 28–30. At INT4, QVG-Pro even achieves near-lossless performance (>37 PSNR), occasionally exceeding BF16 on certain metrics.
+At extreme 2-bit settings, LLM baselines all result in PSNR $\le$ 25, whereas QVG reaches 28–30. At INT4, QVG-Pro exceeds the near-lossless performance of BF16 on certain metrics (PSNR >37).
 
 ### Ablation Study
 
 | Configuration | Explanation | Effect |
 |---|---|---|
-| Full QVG-Pro | k-means smoothing + multi-stage residual | Optimal |
-| Semantic-Aware Smoothing only | Single stage, subtraction of centroid | Moderate gain |
-| Progressive Residual only | No clustering, recursive residuals | Fails to resolve channel outliers; collapses at 2-bit |
-| Naive per-group (RTN) | No smoothing or residuals | Collapses at 2-bit |
+| Full QVG-Pro | k-means smoothing + multi-stage residuals | Optimal |
+| Semantic-Aware Smoothing only | Single-stage, single centroid subtraction | Moderate gain |
+| Progressive Residual only | Residual recursion without clustering | Fails to solve channel outliers, 2-bit collapse |
+| Naive per-group (RTN) | No smoothing or residuals | 2-bit collapse |
 
-Key and Value cache quantization errors are reduced by $\sim$6.9× and $\sim$2.6× respectively.
+Key and Value cache quantization errors were reduced by ~6.9× and ~2.6×, respectively.
 
 ### Key Findings
-- **First viable 2-bit video KV quantization**: Previous LLM-based quantization reached only PSNR 20-25; QVG elevates this to 28-30.
-- **First deployment of HY-WorldPlay-8B on a single RTX 4090**: Previously undeployable due to KV memory overflow.
-- **Context expansion in Self-Forcing**: Given a fixed memory budget, QVG allows for a longer context, which actually results in higher quality than the default BF16 with more limited context.
+- **2-bit video KV quantization is truly viable for the first time**: Previous state-of-the-art LLM quantization yielded PSNR 20-25; QVG improves this to 28-30.
+- **HY-WorldPlay-8B deployed on a single RTX 4090**: Previously impossible due to KV memory overflow.
+- **Extended context for better quality**: In Self-Forcing, using more context within a fixed memory budget via quantization resulted in better quality than the BF16 default, turning "memory saving" into "quality enhancement."
 
 ## Highlights & Insights
-- **Precise Diagnosis at the Token-Channel Dimension**: The authors did not stop at the conclusion that "LLM quantization performs poorly." They identified the root causes—$\max|K|\sim 10^2$, $\max|V|\sim 10^3$, and token-dependent outlier drift—and designed smoothing specifically for them. This "diagnosis before treatment" approach is highly replicable.
-- **K-means + Centroid Subtraction = Data-driven Local Outlier Absorption**: Unlike QuaRot's fixed Hadamard rotation for global distribution smoothing, clustering by content to achieve local homogenization naturally fits video redundancy. It represents a successful transition from "general methods" to "domain-aware methods."
-- **The "Memory-Context-Quality" Flywheel**: In LLMs, quantization is usually just a "compression-accuracy" trade-off. QVG reveals that in video generation, quantization unlocks longer KV-caches, which improves **capability metrics** like long-term consistency. This provides a new degree of freedom in memory for long video research.
+- **Diagnosing "video KV specificity" at the token-channel level**: The author identifies explicit "root causes"—$\max|K|\approx 10^2$ and token-dependent outlier drifting—rather than settling for general conclusions. This diagnostic paradigm is highly reusable.
+- **k-means + Centroid subtraction = Data-driven outlier absorption**: Replacing fixed Hadamard rotations with content-aware local homogenization is a superior transition from general-purpose to domain-aware methodology.
+- **The "Memory-Context-Quality" Flywheel**: While LLM quantization focuses on the "Compression-Accuracy Pareto" curve, QVG reveals that quantization can unlock longer KV contexts, thereby improving **capability metrics** like long-term consistency.
 
 ## Limitations & Future Work
-- k-means clustering is sensitive to the number of tokens in a chunk; the cluster count $C$ is currently a manually tuned hyperparameter. Adaptive clustering strategies remain unexplored.
-- Increasing the number of residual stages $L$ sacrifices the compression ratio; dynamic selection of the "quality-memory" Pareto curve needs empirical tuning.
-- The paper focuses on 480p and chunk-level autoregressive models; it has not yet validated pixel-level autoregressive generation (e.g., token-by-token).
-- Evaluation primarily relies on reference-based metrics (PSNR/SSIM/LPIPS); the impact on "generation diversity" is not deeply discussed.
+- k-means is sensitive to the number of tokens per chunk; the number of clusters $C$ remains a manual hyperparameter.
+- Increasing residual stages $L$ sacrifices compression ratio; dynamic stage selection for the "quality-memory" Pareto remains empirical.
+- Focus is on 480p and chunk-level autoregressive models; validation on pixel-level autoregressive generation (token-by-token) is pending.
+- Evaluation relies on reference-based metrics (PSNR/SSIM); the impact on "generative diversity" is not deeply explored.
 
 ## Related Work & Insights
-- **vs KIVI / KVQuant**: Effective for LLMs, but token-channel heterogeneity in video renders outlier handling ineffective. QVG "localizes" and resolves heterogeneity via clustering.
-- **vs QuaRot / RotateKV**: Rotational transforms smooth global distributions but cannot handle token-dependent outlier drift. QVG replaces fixed rotations with data-driven centroids.
-- **vs Vector Quantization (PQCache, CommVQ)**: Uses codebooks to represent tokens. QVG uses "centroid subtraction + residual quantization," where centroids act as anchors rather than a full codebook, making it more lightweight and training-free.
-- **vs StreamingT2V / WorldMem / FramePack**: These design memory mechanisms at the algorithmic level; QVG expands existing KV budgets at the system level. The two are complementary.
+- **vs. KIVI / KVQuant**: Effective for LLMs, but token-channel heterogeneity in video renders their outlier processing ineffective; QVG "localizes" and resolves this via clustering.
+- **vs. QuaRot / RotateKV**: Global distribution smoothing via rotation cannot handle token-dependent outlier shifts; QVG uses data-driven centroids instead.
+- **vs. Vector Quantization (PQCache, CommVQ)**: QVG uses "centroid subtraction + residual quantization," where centroids are anchors rather than full codebooks, making it more lightweight and training-free.
+- **vs. StreamingT2V / WorldMem**: These design algorithmic memory mechanisms, while QVG expands the system-side KV budget; the two are complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ High originality in combining semantic clustering for smoothing with progressive residuals for video KV.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers three SOTA autoregressive video models, multi-bit (INT2/INT4) scenarios, multiple baselines, consumer GPU validation, and comprehensive error analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear progression from system-algorithm bottleneck diagnosis to opportunity discovery and design verification.
-- Value: ⭐⭐⭐⭐⭐ Immediate impact on long video generation, consumer GPU deployment, and context expansion.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -128,10 +139,10 @@ Key and Value cache quantization errors are reduced by $\sim$6.9× and $\sim$2.6
 ## Related Papers
 
 - [\[ICML 2026\] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation](quantized_keys_steal_attention_bias_correction_for_kv-cache_compression_in_video.md)
+- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 - [\[ICML 2026\] LocoT2V-Bench: Benchmarking Long-form and Complex Text-to-Video Generation](locot2v-bench_benchmarking_long-form_and_complex_text-to-video_generation.md)
 - [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
-- [\[ICML 2026\] Explainable Forensics of Manipulated Segments in Untrimmed Long Videos](explainable_forensics_of_manipulated_segments_in_untrimmed_long_videos.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2026/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
+- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](../../ICLR2026/video_generation/quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data
 description: >-
-  [CVPR 2026][Image Generation][Video Diffusion Models] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic videos) to train video diffusion models. Through a two-stage f…
+  [CVPR 2026][Image Generation][Paper Note] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic video) to train video diffusion models. Through a two-stage framework consisting of a Motion Generator and a Motion-guided Video Generator, it achieves realistic video synthesis of highly dynamic motions and precise
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Video Diffusion Models"
-  - "Synthetic Motion Data"
-  - "Optical Flow"
-  - "Dynamic Motion Generation"
-  - "Camera Control"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: c4a8ebdfb696679b
+content_hash: 3009a9662861542d
 ---
-
 # DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data
 
 **Conference**: CVPR 2026  
@@ -24,53 +18,64 @@ content_hash: c4a8ebdfb696679b
 **Keywords**: Video Diffusion Models, Synthetic Motion Data, Optical Flow, Dynamic Motion Generation, Camera Control
 
 ## TL;DR
-DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic videos) to train video diffusion models. Through a two-stage framework consisting of a motion generator and a motion-guided video generator, it achieves realistic video synthesis of highly dynamic motions and fine-grained camera control.
+DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic video) to train video diffusion models. Through a two-stage framework consisting of a Motion Generator and a Motion-guided Video Generator, it achieves realistic video synthesis of highly dynamic motions and precise camera control.
 
 ## Background & Motivation
 
-1. **Background**: Current video diffusion models (e.g., Wan2.2, CogVideoX) can generate high-quality videos but still rely heavily on the distribution of motion types in large-scale training data. In mainstream training datasets, highly dynamic motion scenes (e.g., street dance, fast camera rotations) are extremely scarce.
+1. **Background**: Current video diffusion models (e.g., Wan2.2, CogVideoX) can generate high-quality videos but still heavily rely on the motion type distribution in large-scale training data. In mainstream training datasets, highly dynamic motion scenes (e.g., breakdancing, fast camera rotations) are extremely scarce.
 
 2. **Limitations of Prior Work**:
-    - Models struggle to synthesize realistic videos containing highly dynamic motions due to insufficient samples in training sets.
+    - Models struggle to synthesize realistic videos containing highly dynamic motions because such samples are underrepresented in training sets.
     - Camera control models (e.g., CameraCtrl, AC3D) require accurate 3D camera pose annotations, but pose estimation is highly unreliable in extreme motion scenarios.
-    - Directly using synthetic rendered videos for training introduces a severe appearance domain gap—models replicate the artificial textures and lighting of synthetic data.
+    - Directly training with synthetic rendered videos introduces a severe appearance domain gap—the model tends to reproduce the artificial textures and lighting of the synthetic data.
 
-3. **Key Challenge**: Synthetic data can provide rich dynamic motion and precise control signals, but its non-realistic appearance features pollute the visual quality of generative models. How to "keep the essence (motion information) and discard the dross (artificial appearance)" is a key challenge.
+3. **Key Challenge**: Synthetic data provides rich dynamic motion and precise control signals, but its non-realistic appearance features pollute the visual quality of the generative model. The critical problem is how to "capture the essence (motion information) while discarding the dross (artificial appearance)."
 
 4. **Goal**
-    - How can models learn highly dynamic motion patterns without sacrificing visual realism?
-    - How to achieve precise camera trajectory control under extreme camera movement?
+    - How to enable the model to learn highly dynamic motion patterns without sacrificing visual realism?
+    - How to achieve precise camera trajectory control under extreme camera movements?
 
 5. **Key Insight**: Optical flow naturally encodes only motion information and is decoupled from appearance. Therefore, replacing rendered videos with rendered optical flow can eliminate the appearance domain gap.
 
-6. **Core Idea**: Use synthetic optical flow (instead of synthetic videos) to train a motion generator to learn dynamic motion patterns, then use real videos to train a motion-guided video generator to maintain realistic appearance. This two-stage decoupling achieves "motion from synthetic, appearance from real."
+6. **Core Idea**: Use synthetic optical flow (instead of synthetic video) to train a Motion Generator to learn dynamic motion patterns, and use real video to train a Motion-guided Video Generator to maintain realistic appearance. This two-stage decoupling achieves "motion from synthetic, appearance from real."
 
 ## Method
 
 ### Overall Architecture
-DynaVid is a two-stage video generation framework. In the first stage, the **Motion Generator** accepts text conditions to generate motion sequences represented as optical flow. In the second stage, the **Motion-Guided Video Generator** synthesizes RGB video frames conditioned on the generated optical flow. Both stages are based on the Wan2.2-5B video diffusion model and use the VACE architecture to inject control signals. For camera control scenarios, the motion generator additionally receives Plücker embeddings as camera parameter inputs.
+The core problem DynaVid aims to solve is that highly dynamic motions (breakdancing, fast camera rotations) are almost non-existent in real training data, but using synthetic videos rendered via computer graphics introduces "fake" textures and lighting. The solution is to split "motion" and "appearance" into two data paths. The pipeline consists of two stages: first, the **Motion Generator** receives text conditions and outputs a motion sequence represented by optical flow; then, the **Motion-guided Video Generator** uses this optical flow as a condition to "render" it into RGB video frames with realistic textures. Both generators are based on the Wan2.2-5B video diffusion model and use the VACE architecture to inject control signals. For camera control, the Motion Generator additionally receives Plücker embeddings as camera parameters. The key is that while motion can come from synthetic data, the appearance is always derived from real data, with the two intersecting at the intermediate representation of optical flow.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    SYN["Synthetic Flow Supervision<br/>Blender renders DynaVid-Human / DynaVid-Camera → Synthetic Flow"]
+    REAL["Real Video → WAFT estimates Real Flow"]
+    T["Text Condition (+ Camera Plücker Embedding)"] --> MG["Motion Generator<br/>Wan2.2-5B + VACE"]
+    REAL -->|Pre-training for General Motion| MG
+    SYN -->|Fine-tuning for High Dynamics · Batch Mixture| MG
+    MG --> F["Flow Sequence"]
+    F --> ENC["HSV-RGB Encoding<br/>Magnitude to Value · Direction to Hue, Reuse Video VAE"]
+    ENC --> VG["Motion-guided Video Generator<br/>Trained only on Real Video-Flow pairs"]
+    VG --> OUT["Realistically Textured RGB Video"]
+```
 
 ### Key Designs
 
-1. **Synthetic Motion Dataset Construction (DynaVid-Human & DynaVid-Camera)**:
-    - Function: Provides highly dynamic motion supervision signals and precise camera control annotations.
-    - Mechanism: Uses the Blender Cycles renderer to construct 3D scenes. DynaVid-Human integrates Mixamo motion sequences and animatable human models to render optical flow of dynamic human movement. DynaVid-Camera interpolates key camera positions using NURBS curves in complex 3D environments to generate trajectories and optical flow of rapid viewpoint changes. The core output is synthetic optical flow $\mathcal{F}^{syn}$ rather than synthetic videos.
-    - Design Motivation: Optical flow only encodes motion information and is completely decoupled from appearance, avoiding the non-realistic appearance issues of synthetic videos.
+**1. Using Synthetic Flow instead of Synthetic Video for Motion Supervision: Extracting "Motion" from "Appearance"**
 
-2. **HSV-RGB Conversion of Optical Flow and VAE Encoding**:
-    - Function: Maps optical flow to the RGB domain to reuse a pre-trained VAE.
-    - Mechanism: First normalizes the optical flow vectors using the 99th percentile as a scaling factor $s_f$, then maps the normalized magnitude and direction to the Value (V) and Hue (H) channels of the HSV color space, respectively, and finally converts to RGB for encoding into the latent space.
-    - Design Motivation: Avoids training a separate VAE for optical flow and directly reuses existing video VAEs to reduce training costs.
+The drawback of synthetic data is that while it provides intense motion and precise control signals scarce in real data, its rendered appearance is artificial. Training a generative model directly on it pollutes visual quality. DynaVid's solution is to keep only the "clean" half of synthetic data—optical flow. Optical flow is a pixel-wise displacement field that naturally encodes "where, which way, and how fast" things move without carrying texture or lighting information, thus cutting off the appearance domain gap at its source. To this end, the authors built two 3D scene libraries using the Blender Cycles renderer: DynaVid-Human binds Mixamo action sequences to animatable character models to render flow for dynamic human motion; DynaVid-Camera uses NURBS curve interpolation for key camera poses in complex 3D environments to create fast viewpoint trajectories and corresponding flow. The final products of both libraries are synthetic optical flow $\mathcal{F}^{syn}$, not synthetic RGB videos—this is the fundamental divergence from the "direct training on rendered video" approach.
 
-3. **Two-Stage Decoupled Training Strategy**:
-    - Function: Achieves the decoupling of "learning motion from synthetic data and appearance from real data."
-    - Mechanism: The motion generator is first pre-trained on real optical flow $\mathcal{F}^{real}$ (estimated from real videos using WAFT) to learn general motion statistics, then fine-tuned on synthetic optical flow $\mathcal{F}^{syn}$ to learn dynamic motions. During fine-tuning, each batch mixes real and synthetic optical flow to prevent forgetting. The motion-guided video generator is trained only on real video-optical flow pairs to learn how to translate optical flow conditions into realistic appearances. Both stages use the Flow Matching objective function.
-    - Design Motivation: Mixed training prevents the model from overfitting to synthetic motion patterns while losing natural motion priors; training the video generator only on real data ensures appearance realism.
+**2. HSV-RGB Encoding for Flow to Reuse Existing Video VAE: Avoiding a Separate Flow Encoder**
+
+The Motion Generator performs diffusion in latent space, but the pre-trained VAE only recognizes RGB images. Instead of training a dedicated VAE for optical flow, DynaVid "disguises" flow as an RGB image. Specifically, the flow vectors are normalized using the 99th percentile as a scaling factor $s_f$ (to prevent rare large displacements from blowing out the dynamic range), then the normalized magnitude is mapped to the Value channel of HSV, and the direction is mapped to the Hue channel. This is finally converted back to RGB and fed into the existing video VAE to be encoded into the latent space. Thus, flow and real video share the same VAE and latent space, reducing training costs and naturally aligning the condition injection for "flow-to-video."
+
+**3. Two-stage Decoupled Training: Motion from Synthetic, Appearance from Real**
+
+Having a clean motion signal is not enough; the training strategy must ensure the model learns intense motion without losing natural motion priors or polluting the appearance. The Motion Generator is trained in two steps: first, pre-training on real flow $\mathcal{F}^{real}$ estimated from real videos via WAFT to establish general motion statistics; then, fine-tuning on synthetic flow $\mathcal{F}^{syn}$ to learn intense dynamics. During fine-tuning, each batch is a mixture of real and synthetic flow—if only synthetic data were used, the model would overfit to synthetic patterns and forget natural priors (as shown in the ablation where Pexels FVD jumped from 1126 to 1886). The Motion-guided Video Generator is trained exclusively on real video-flow pairs, focusing on "how to generate realistic appearance given a flow condition," without touching a single frame of synthetic imagery. Both stages utilize the Flow Matching objective, enabling a clean handover between synthetic and real at the optical flow layer.
 
 ### Loss & Training
-- The motion generator adopts the Flow Matching objective: $\mathbb{E}[\|\hat{u}^{\mathcal{F}}(\mathcal{F}_{t_f}; c_{txt}, C, t_f) - v^{\mathcal{F}}\|_2^2]$
-- The motion-guided video generator also adopts Flow Matching: $\mathbb{E}[\|\hat{u}^{\mathcal{I}}(\mathcal{I}_{t_I}; c_{txt}, \mathcal{F}, t_I) - v^{\mathcal{I}}\|_2^2]$
-- Data Filtering: Inaccurate real optical flow-video pairs are filtered via optical flow cycle-consistency error (threshold 1.19 pixels, 90th percentile) to improve the motion fidelity of the motion-guided video generator.
+- The Motion Generator uses a Flow Matching objective: $\mathbb{E}[\|\hat{u}^{\mathcal{F}}(\mathcal{F}_{t_f}; c_{txt}, C, t_f) - v^{\mathcal{F}}\|_2^2]$
+- The Motion-guided Video Generator also uses Flow Matching: $\mathbb{E}[\|\hat{u}^{\mathcal{I}}(\mathcal{I}_{t_I}; c_{txt}, \mathcal{F}, t_I) - v^{\mathcal{I}}\|_2^2]$
+- Data Filtering: Inaccurate real flow-video pairs are filtered using flow cycle consistency error (threshold of 1.19 pixels, 90th percentile) to improve motion fidelity in the Motion-guided Video Generator.
 
 ## Key Experimental Results
 
@@ -99,36 +104,36 @@ DynaVid is a two-stage video generation framework. In the first stage, the **Mot
 |------|-------------|---------------------|------|
 | Full model | 1126.38 | 1351.94 | Complete model |
 | w/o Synthetic Motion Data | 1076.53 | 1878.98 | Severe degradation in dynamic scenes (+527 FVD) |
-| w/o batch mixture | 1885.74 | 1229.70 | Severe degradation on Pexels, overfits synthetic patterns |
-| w/ Synthetic Video (not flow) | 1230.81 | 698.0* | Produces artificial appearance, Pexels degrades |
+| w/o Batch Mixture | 1885.74 | 1229.70 | Severe degradation on Pexels, overfits synthetic patterns |
+| w/ Synthetic Video (Non-Flow) | 1230.81 | 698.0* | Produces artificial appearance, FVD on Pexels degrades |
 
 ### Key Findings
-- **Synthetic motion data is the key to dynamic scene performance**: Without it, DynaVid-Human FVD surges from 1352 to 1879, with little change on standard Pexels scenes.
-- **Mixed-batch training is crucial**: Fine-tuning only on synthetic data leads to severe overfitting, with Pexels FVD increasing to 1886.
-- **Correctness of using optical flow instead of rendered video**: Training with synthetic videos yields low FVD on synthetic test sets but produces an artificial appearance, causing FVD on real-world Pexels scenes to rise significantly.
-- The motion-guided video generator remains robust at noise levels above 20dB.
+- **Synthetic motion data is key to dynamic scene performance**: Without it, DynaVid-Human FVD surged from 1352 to 1879, while Pexels (general scenes) remained largely unchanged.
+- **Batch mixture training is critical**: Fine-tuning only on synthetic data leads to severe overfitting, with Pexels FVD rising to 1886.
+- **Correctness of flow vs. rendered video**: Training with synthetic video yields low FVD on synthetic tests but results in artificial appearance and significantly higher FVD in real-world Pexels scenarios.
+- The Motion-guided Video Generator remains robust at noise levels above 20dB.
 
 ## Highlights & Insights
-- **Using optical flow instead of rendered video to eliminate domain gap**: This idea is ingenious—optical flow naturally encodes motion without appearance, perfectly solving the contradiction of synthetic data being "useful but looking fake." This strategy of "selecting the right intermediate representation to bridge synthetic and real" is transferable to other cross-domain learning scenarios.
-- **Two-stage decoupled framework**: The decoupled design of motion and appearance allows both to be trained with the most appropriate data sources. This decoupling logic can be used for any generative task requiring separate modeling of content and motion.
-- **Data filtering based on cycle consistency**: A simple but effective quality control method; a 90th percentile threshold significantly enhances motion fidelity.
+- **Using optical flow instead of rendered video to eliminate domain gaps**: This is a clever approach—optical flow naturally encodes motion without appearance, perfectly solving the contradiction of synthetic data being "useful but looking fake." This strategy of "selecting the right intermediate representation to bridge synthetic and real" is transferable to other cross-domain learning tasks.
+- **Two-stage Decoupled Framework**: The decoupling of motion and appearance allows each to be trained using the most suitable data source. This decoupling idea can be applied to any generation task requiring separate modeling of content and motion.
+- **Data filtering based on cycle consistency**: A simple but effective quality control method where a 90th percentile threshold significantly improves motion fidelity.
 
 ## Limitations & Future Work
-- The synthetic dataset primarily focuses on single-person scenes, and the synthesis of multi-person dynamic scenes is less effective.
-- Relying on the quality of the optical flow estimator; estimation errors affect the accuracy of training data.
-- More complex motion representations (e.g., scene flow, 3D motion fields) have not been explored; using only 2D optical flow may limit 3D consistency.
-- The diversity of the synthetic dataset can be expanded (multi-person interactions, object motions, etc.).
+- The synthetic dataset primarily features single-person scenarios; generation for multi-person dynamic scenes is less effective.
+- Reliance on the quality of the optical flow estimator; estimation errors affect training data accuracy.
+- More complex motion representations (e.g., scene flow, 3D motion fields) were not explored; using only 2D flow may limit 3D consistency.
+- The diversity of the synthetic dataset could be expanded (multi-person interactions, object motions, etc.).
 
 ## Related Work & Insights
-- **vs Wan2.2-5B / CogVideoX**: These general video generation models are limited by the lack of dynamic motion in training data. DynaVid fills this data gap by introducing synthetic motion data.
-- **vs HyperMotion**: HyperMotion relies on the first frame as input and easily produces an artificial appearance; DynaVid is pure text-to-video and requires no additional input.
-- **vs AC3D / GEN3C**: Both perform poorly under extreme camera motion; DynaVid learns patterns of rapid viewpoint changes through synthetic motion data.
+- **vs. Wan2.2-5B / CogVideoX**: These general video generation models are limited by the lack of dynamic motion in training data. DynaVid fills this gap by introducing synthetic motion data.
+- **vs. HyperMotion**: HyperMotion relies on the first frame as input and tends to produce artificial appearances; DynaVid is pure text-to-video and requires no additional input.
+- **vs. AC3D / GEN3C**: Both perform poorly under extreme camera motion; DynaVid learns fast viewpoint change patterns through synthetic motion data.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The idea of using optical flow instead of rendered video to eliminate domain gaps is novel and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive ablations covering both dynamic motion and camera control scenarios, with noise robustness verification.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic and well-articulated motivation.
-- Value: ⭐⭐⭐⭐ Provides a general framework for utilizing synthetic data to enhance video generation capabilities.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive ablations covering both dynamic motion and camera control, with noise robustness also verified.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic with well-articulated motivations.
+- Value: ⭐⭐⭐⭐ Provides a general framework for leveraging synthetic data to enhance video generation capabilities.
 
 <!-- RELATED:START -->
 
@@ -136,11 +141,11 @@ DynaVid is a two-stage video generation framework. In the first stage, the **Mot
 
 ## Related Papers
 
+- [\[CVPR 2026\] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation](imontage_unified_versatile_highly_dynamic_many-to-many_image_generation.md)
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
 - [\[CVPR 2026\] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training](beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_.md)
+- [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
-- [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 
 </div>
 

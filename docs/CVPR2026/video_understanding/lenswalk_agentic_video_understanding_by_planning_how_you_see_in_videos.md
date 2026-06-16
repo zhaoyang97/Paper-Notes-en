@@ -2,77 +2,98 @@
 title: >-
   [Paper Note] LensWalk: Agentic Video Understanding by Planning How You See in Videos
 description: >-
-  [CVPR 2026][Video Understanding][Video Agent] This paper presents LensWalk, an agentic framework that enables an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a r…
+  [CVPR 2026][Video Understanding][Vision-Language Model] LensWalk is proposed as an agentic framework that allows an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a reason-plan-observe loop, it achieves adaptive video understanding, providing a plug-and-play performance gain of over 5% on long video benchmarks without
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video Agent"
-  - "Active Observation"
-  - "Vision-Language Models"
-  - "Long Video Understanding"
-  - "Tool Calling"
+  - CVPR 2026
+  - Video Understanding
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 1d64aab8fa48e023
+content_hash: bd821593d008b006
 ---
-
 # LensWalk: Agentic Video Understanding by Planning How You See in Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24558](https://arxiv.org/abs/2603.24558)  
-**Code**: N/A  
-**Area**: Video Understanding
-**Keywords**: Video Agent, Active Observation, Vision-Language Models, Long Video Understanding, Tool Calling
+**Code**: None  
+**Area**: Video Understanding  
+**Keywords**: Video agents, active observation, visual language models, long video understanding, tool use
 
 ## TL;DR
 
-This paper presents LensWalk, an agentic framework that enables an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a reason-plan-observe loop, LensWalk achieves adaptive video understanding without any fine-tuning, yielding plug-and-play performance gains exceeding 5% on long video benchmarks.
+LensWalk is proposed as an agentic framework that allows an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a reason-plan-observe loop, it achieves adaptive video understanding, providing a plug-and-play performance gain of over 5% on long video benchmarks without the need for fine-tuning.
 
 ## Background & Motivation
 
-Video understanding is a core task in computer vision, yet the densely temporal nature of video poses substantial challenges for automated analysis. Existing approaches suffer from a fundamental disconnect between reasoning and perception.
+Video understanding is a core task in computer vision, yet the dense temporal nature of videos poses significant challenges for automated analysis. Existing methods face a fundamental contradiction: a disconnection between reasoning and perception.
 
-Three categories of limitations are prevalent: (1) single-pass forward methods uniformly sample videos into a fixed visual context, risking missed critical events or saturation by redundant information; (2) heuristic keyframe selection methods offer finer granularity but remain one-shot static sampling unable to adapt as intermediate hypotheses evolve; (3) retrieval-based agents can dynamically acquire information but operate over pre-processed static representations (e.g., ASR transcripts, clip-level captions), precluding on-demand generation of new observations from source video.
+Prior work primarily suffers from three types of issues: (1) One-shot forward methods sample videos uniformly into a fixed visual context, easily missing key events or being overwhelmed by redundant information; (2) Heuristic keyframe selection methods are more refined but remain one-time static samplings that cannot adjust according to intermediate hypotheses; (3) Retrieval-based agents can acquire information dynamically but operate on pre-processed static representations (e.g., ASR transcripts, clip-level captions), failing to generate new observations from the source video on demand.
 
-**Key Challenge**: A model's reasoning process should drive *what* and *how* it observes, yet existing pipelines decouple observation from reasoning—observations are completed before reasoning begins or are constrained to fixed preprocessing artifacts. **Key Insight**: This paper draws on human visual cognition strategies, wherein humans cope with information overload through purposeful information seeking, continuously alternating between macro scanning and fine-grained focusing while reflecting and verifying throughout. **Core Idea**: Allow the LLM reasoner to autonomously determine the temporal scope and sampling density of observations, transforming video understanding into an active reason-plan-observe loop.
+**Key Challenge**: The reasoning process of a model should drive "what to see" and "how to see," but existing pipelines isolate observation from reasoning—observations are completed once before reasoning or are limited by fixed pre-processing artifacts. **Key Insight**: This work draws inspiration from human visual cognitive strategies, where purposeful information seeking handles information overload by switching between macro-scanning and fine-focusing, accompanied by continuous reflection and verification. **Core Idea**: Enable an LLM reasoner to autonomously decide the temporal range and sampling density, transforming video understanding into an active reason-plan-observe loop.
 
 ## Method
 
 ### Overall Architecture
 
-LensWalk models video understanding as a multi-round iterative process. In each round, the LLM reasoner ($M_r$) analyzes the current question and accumulated evidence, then formulates an action plan ($a_t$) specifying the observation tool, guiding sub-question, temporal range, and sampling density. This plan is executed by a VLM observer ($M_o$) to extract visual evidence from the video. The evidence is appended to the history, forming the input for the next round of reasoning. Additionally, the system maintains timestamp anchors and a global entity memory table to ensure cross-round consistency.
+LensWalk addresses the disconnection between reasoning and observation. Traditional pipelines sample videos into a fixed context for one-shot reasoning, depriving the model of the chance to "look back" based on intermediate hypotheses. LensWalk transforms this into a multi-turn closed loop: a reasoner ($M_r$) analyzes the current question and existing evidence, plans which segment to watch and at what granularity, and formulates a structured action plan $a_t$. This plan is executed by a VLM observer ($M_o$) which samples frames and describes the visual content. The resulting evidence is appended to the history for the next reasoning round. This reason $\rightarrow$ plan $\rightarrow$ observe cycle continues until the reasoner reaches a final answer. Supporting this loop, timestamp anchors and a global entity memory table are maintained to prevent drift in temporal localization and entity reference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Video + Question"] --> B["Reasoner M_r<br/>Reasoning based on history"]
+    B --> C["Active Observation Mechanism<br/>Action Quadruple a_t (Tool / Sub-query / Range / Params)"]
+    C --> D
+    subgraph D["Multi-granularity Observation Toolset"]
+        direction TB
+        D1["Scan Search<br/>Wide range sparse sweep ~180 frames"]
+        D2["Segment Focus<br/>High-density fine read ~32 frames"]
+        D3["Stitched Verify<br/>Cross-segment verification ~128 frames"]
+    end
+    D --> E["Observer M_o (VLM)<br/>Frame sampling and description"]
+    E --> F["Evidence Anchoring & Entity Memory<br/>Timestamp anchors + Global memory table"]
+    F --> G["Append visual evidence to history"]
+    G -->|Insufficient evidence| B
+    G -->|Sufficient evidence| H["Output final answer"]
+```
 
 ### Key Designs
 
-1. **Multi-Granularity Observation Tool Suite**:
-    - **Function**: Provides three complementary observation tools supporting video browsing at different granularities.
-    - **Mechanism**: *Scan Search* discovers cues by scanning slices in parallel over a broad temporal range; *Segment Focus* performs high-density sampling within a single temporal segment to extract fine-grained details; *Stitched Verify* combines frames from multiple non-contiguous temporal segments into a single batch, enabling cross-segment comparison and causal verification.
-    - **Design Motivation**: The three tools constitute a complete cognitive chain of "discover–focus–verify," covering the full spectrum from global cue search to local detail extraction to cross-segment integration.
+**1. Multi-granularity Observation Toolset: Defining "How to See"**
 
-2. **Reasoning-Scheduled Active Observation Mechanism**:
-    - **Function**: Enables the reasoner to explicitly control the temporal range ($\mathcal{I}_t$) and sampling strategy at each step.
-    - **Mechanism**: Each action $a_t = (o_t, q_t, \mathcal{I}_t, \rho_{o_t})$ encodes the tool selection, guiding question, spatiotemporal range, and tool-specific parameters, realizing an end-to-end mapping from reasoning state to observation plan.
-    - **Design Motivation**: Embedding parameterized observation plans into the history allows the agent to track its own exploration progress and provides a basis for subsequent steps to target insufficiently explored regions.
+If an agent is restricted to a single sampling method, it either misses key events in long videos or lacks resolution for details. LensWalk provides three complementary tools corresponding to discovery, focus, and verification. **Scan Search** performs sparse sampling across a wide temporal range (approx. 180 frames) for rapid clue localization. **Segment Focus** targets a single window with high-density sampling (approx. 32 frames) to capture fine-grained actions, text, or objects. **Stitched Verify** concatenates frames from several **discontinuous** intervals into one batch (approx. 128 frames), allowing the observer to perform cross-segment comparisons and causal verification (e.g., "Is the person seen earlier the same one who fell later?"). These tools ensure complete coverage from global search to local reading without compromising conflicting sampling needs.
 
-3. **Evidence Anchoring and Entity Memory**:
-    - **Function**: Ensures temporal localization accuracy and entity consistency throughout long multi-round reasoning.
-    - **Mechanism**: Timestamp anchors insert inter-frame temporal markers during VLM observation, enabling the observer to return answers with precise temporal references; a global entity memory table is maintained independently of the reasoning history, recording entity attributes and appearance times.
-    - **Design Motivation**: Avoids the overhead of redundantly recognizing the same entities across rounds, prevents entity reference confusion in long historical contexts, and provides temporal anchors for precise re-observation in subsequent steps.
+**2. Active Observation Mechanism: Structured Action Planning**
+
+To ensure the reasoner can explicitly decide where and how to look in a traceable manner, LensWalk parameterizes each round’s action into a quadruple:
+
+$$a_t = (o_t,\; q_t,\; \mathcal{I}_t,\; \rho_{o_t})$$
+
+where $o_t$ is the selected tool, $q_t$ is a guided sub-query for the observer, $\mathcal{I}_t$ is the temporal range, and $\rho_{o_t}$ represents tool-specific parameters (e.g., density). This maps reasoning states directly to video scheduling. Furthermore, these plans remain in the history, allowing the agent to track explored regions and prioritize unexplored areas in subsequent rounds.
+
+**3. Evidence Anchoring and Entity Memory: Preventing Temporal and Entity Drift**
+
+Multi-turn reasoning often suffers from inaccurate timestamps or inconsistent entity identification across rounds. LensWalk uses two mechanisms: **Timestamp Anchors** insert temporal markers between frames during observation, ensuring the observer's response includes precise time references. This facilitates accurate re-observation and avoids "seeing but not knowing where." A **Global Entity Memory Table** resides outside the main history to record entity attributes and occurrences. This prevents redundant identification efforts and keeps long contexts from scrambling entity references.
+
+### Mechanism Example: Answering "Who left the room first?"
+
+Given a 40-minute meeting recording:
+
+1.  **Round 1 (Localization)**: The reasoner decides to find when someone leaves. It issues $a_1$ = (Scan Search, "Where is someone leaving?", 0–40min, sparse). The observer scans 180 frames and reports activity near the door at 18–22min with timestamps.
+2.  **Round 2 (Focus)**: The reasoner issues $a_2$ = (Segment Focus, "Who left and what color were they wearing?", 18–22min, high-density). The observer notes a man in a dark blue jacket leaving at 21:05. This is recorded in the entity memory.
+3.  **Round 3 (Verification)**: To confirm "first," the reasoner checks earlier timeframes. It issues $a_3$ = (Stitched Verify, "Anyone leaving between 0–18min?", stitched 0–6/6–12/12–18min). The observer confirms no earlier departures.
+4.  **Completion**: With closed evidence, the reasoner outputs "Dark blue." High-density observation was only applied to relevant segments, keeping peak context usage low.
 
 ### Loss & Training
 
-- LensWalk is a training-free, plug-and-play framework requiring no model fine-tuning.
-- The agent is limited to a maximum of 20 tool calls, one per round.
-- Per-call frame budgets for Scan Search, Segment Focus, and Stitched Verify are 180, 32, and 128, respectively.
-- The reasoner simultaneously serves as the updater of the entity memory table.
+LensWalk is a training-free, plug-and-play framework that does not fine-tune models. The reasoner also serves as the memory updater. During runtime, the agent can call tools up to 20 times. Frame budgets for Scan Search, Segment Focus, and Stitched Verify are approximately 180, 32, and 128 respectively.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | Ours (Best Config) | Prev. SOTA | Gain |
-|--------|------|------|----------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | LVBench | Accuracy | 68.6% (o3 self) | 60.8% (MR.Video) | +7.8% |
-| VideoMME Long | Accuracy (w/o sub) | 71.4% (o3 self) | 67.3% (DVD) | +4.1% |
+| VideoMME Long | Accuracy(w/o sub) | 71.4% (o3 self) | 67.3% (DVD) | +4.1% |
 | LongVideoBench | Accuracy | 70.6% (o3 self) | 68.6% (DVD) | +2.0% |
 | MMVU (MC) | Accuracy | 80.9% (o3/GPT-4.1) | 78.9% (o3) | +2.0% |
 | Video-MMMU | Overall | 78.33% (o3 self) | 75.44% (o3) | +2.89% |
@@ -80,49 +101,49 @@ LensWalk models video understanding as a multi-round iterative process. In each 
 
 ### Ablation Study
 
-| Configuration | Key Metric (VideoMME Long) | Note |
-|------|---------|------|
+| Configuration | Metric (VideoMME Long) | Description |
+| :--- | :--- | :--- |
 | Full LensWalk (o3/GPT-4.1) | 70.0% | Baseline |
-| w/o Scan Search | 65.4% | −4.6%; cue localization is most critical |
-| w/o Stitched Verify | 66.8% | −3.2%; cross-segment integration is important |
-| w/o Segment Focus | 68.1% | −1.9%; fine-grained extraction contributes |
-| w/o Timestamp Anchor | 69.4% | −0.6% |
-| w/o Subject Memory | 69.7% | −0.3% |
+| w/o Scan Search | 65.4% | -4.6%, localization is most critical |
+| w/o Stitched Verify | 66.8% | -3.2%, cross-segment integration is important |
+| w/o Segment Focus | 68.1% | -1.9%, fine-grained extraction contributes |
+| w/o Timestamp Anchor | 69.4% | -0.6% |
+| w/o Subject Memory | 69.7% | -0.3% |
 
 ### Key Findings
 
-- When o3 serves as its own observer (reasoner and observer share the same model), performance is exceptional—+11.5% on LVBench and +6.7% on VideoMME Long—representing a "free lunch."
-- The open-source reasoner Qwen3-235B-A22B is effective with weak observers (e.g., +4.3% for Qwen2.5-VL-7B) but offers limited benefit with strong observers (e.g., only +0.1% for GPT-4.1).
-- The agent exhibits six behavioral patterns: direct querying, progressive zooming, range splitting, strategic reflection, integrative verification, and static repetition.
-- The framework adaptively allocates the observation budget: simple questions are resolved quickly with few frames, while complex questions involve more observation rounds.
+- o3 performs exceptionally well as a self-observer (both reasoner and observer), achieving gains of 11.5% on LVBench and 6.7% on VideoMME Long.
+- Open-source reasoners like Qwen3-235B-A22B help weak observers (Qwen2.5-VL-7B +4.3%) but offer limited help to strong observers (GPT-4.1 +0.1%).
+- The agent exhibits six behavior patterns: direct query, progressive zoom, range split, strategy reflection, integrated verification, and static repetition.
+- The framework adaptively allocates observation budgets: simple questions are solved quickly with few frames, while complex ones receive more rounds.
 
 ## Highlights & Insights
 
-- The core design philosophy of incorporating "how to observe" into the reasoning loop is highly elegant, analogous to purposeful human visual search strategies.
-- The training-free, plug-and-play nature allows the framework to directly enhance existing models, offering considerable engineering value.
-- The emergent diversity of cognitive strategies (progressive zooming, strategic reflection, etc.) demonstrates the agent's autonomous reasoning capability.
-- Token consumption is comparable to single-pass forward methods while substantially reducing peak token count per round, alleviating memory pressure from long contexts.
+- The core design philosophy of integrating "how to observe" into the reasoning loop is elegant and mimics human purposeful visual search.
+- The training-free, plug-and-play nature allows it to enhance existing models directly, offering high engineering value.
+- The emergence of diverse cognitive strategies (progressive zoom, reflection) demonstrates the agent's autonomous reasoning capabilities.
+- Token consumption is comparable to one-shot methods, but peak token counts per round are significantly lower, mitigating long-context memory pressure.
 
 ## Limitations & Future Work
 
-- Framework effectiveness is highly dependent on the reasoner's cognitive capability—weaker reasoners may generate invalid observation plans.
-- A small proportion of "static repetition" behavior (repeated observation of the same region) persists, indicating that the planning mechanism remains imperfect.
-- Current observation tools are limited to the visual modality and do not exploit multimodal information such as audio or subtitles.
-- The maximum of 20 tool calls may be insufficient in extreme long-video scenarios.
+- Performance is highly dependent on the reasoner's cognitive ability—weak reasoners may generate invalid plans.
+- Occasional "static repetition" (repeatedly observing the same area) suggests the planning mechanism is not yet perfect.
+- Current tools apply only to the visual modality, ignoring audio and subtitles.
+- The 20-tool-call limit may be insufficient for extremely long videos.
 
 ## Related Work & Insights
 
-- **vs. Deep Video Discovery (DVD)**: DVD pre-generates captions for an entire video to support reasoning, consuming millions of tokens; LensWalk observes on demand, with token consumption approximating single-pass forward methods while achieving higher accuracy.
-- **vs. MR.Video**: MR.Video relies on pre-processed clip retrieval, with fixed observation granularity and scope; LensWalk dynamically adjusts the temporal range and sampling density of observations.
-- **vs. VideoAgent**: VideoAgent's tools operate solely on preprocessing artifacts; LensWalk directly schedules new observations from source video.
-- **Insights**: The notion of "scalable visual cognition"—not merely scaling model size but enabling models to learn active observation—offers a compelling research direction.
+- **vs Deep Video Discovery**: DVD consumes millions of tokens by pre-generating captions; LensWalk observes on-demand, with token usage similar to one-shot methods but with higher accuracy.
+- **vs MR.Video**: MR.Video relies on fixed clip retrieval; LensWalk dynamically scales observation range and density.
+- **vs VideoAgent**: VideoAgent tools operate on pre-processed products; LensWalk schedules new observations directly from source video.
+- **Insight**: "Scalable Visual Cognition"—beyond just increasing model size, models must learn to observe actively.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Reframes video understanding as an active observation scheduling problem; conceptually innovative and elegantly realized.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six benchmarks, multiple model combinations, detailed ablations, and behavioral analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Fluent narrative, clear exposition of principles, and in-depth experimental analysis.
-- Value: ⭐⭐⭐⭐⭐ Plug-and-play framework that directly enhances existing strong models; highly practical.
+- Novelty: ⭐⭐⭐⭐⭐ Redefines video understanding as active observation scheduling.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 benchmarks, various model combinations, and detailed ablation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative and in-depth analysis.
+- Value: ⭐⭐⭐⭐⭐ Extremely practical plug-and-play framework for enhancing SOTA models.
 
 <!-- RELATED:START -->
 
@@ -131,10 +152,10 @@ LensWalk models video understanding as a multi-round iterative process. In each 
 ## Related Papers
 
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
-- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 - [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
+- [\[CVPR 2026\] An Empirical Study on How Video-LLMs Answer Video Questions](an_empirical_study_on_how_video-llms_answer_video_questions.md)
 - [\[ICML 2026\] VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking](../../ICML2026/video_understanding/videotemp-o3_harmonizing_temporal_grounding_and_video_understanding_in_agentic_t.md)
-- [\[CVPR 2026\] How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms](how_should_video_llms_output_time.md)
 
 </div>
 

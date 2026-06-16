@@ -2,100 +2,123 @@
 title: >-
   [Paper Note] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Text-video retrieval] EagleNet constructs a text-frame relational graph and employs a relational graph attention network to learn fine-grained text-frame and frame-frame relationships…
+  [CVPR 2026][Multimodal VLM][Paper Note] EagleNet constructs a text-frame relationship graph and employs a Relational Graph Attention Network to learn fine-grained interaction between text-frame and frame-frame units. It generates enhanced text embeddings that integrate video contextual information and introduces an energy-aware matching mechanism to capture
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Text-video retrieval"
-  - "graph attention network"
-  - "energy-based model"
-  - "fine-grained relationship learning"
-  - "cross-modal alignment"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 12399bcf405875bd
+content_hash: 80d042b51299ceb8
 ---
-
 # EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25267](https://arxiv.org/abs/2603.25267)  
 **Code**: [https://github.com/draym28/EagleNet](https://github.com/draym28/EagleNet)  
-**Area**: Multimodal VLM / Video Understanding
-**Keywords**: Text-video retrieval, graph attention network, energy-based model, fine-grained relationship learning, cross-modal alignment
+**Area**: Multimodal VLM / Video Understanding  
+**Keywords**: Text-Video Retrieval, Graph Attention Network, Energy-Based Model, Fine-grained Relationship Learning, Cross-modal Alignment
 
 ## TL;DR
-EagleNet constructs a text-frame relational graph and employs a relational graph attention network to learn fine-grained text-frame and frame-frame relationships, generating enhanced text embeddings enriched with video contextual information. An energy-based matching mechanism is further introduced to capture the distribution of ground-truth text-video pairs. The method achieves state-of-the-art performance on four benchmark datasets.
+EagleNet constructs a text-frame relationship graph and employs a Relational Graph Attention Network to learn fine-grained interaction between text-frame and frame-frame units. It generates enhanced text embeddings that integrate video contextual information and introduces an energy-aware matching mechanism to capture the distribution of real text-video pairs, achieving SOTA performance across four benchmark datasets.
 
 ## Background & Motivation
 
-1. **Background**: Mainstream methods in text-video retrieval (TVR) are predominantly built upon CLIP pre-trained models, focusing on learning high-quality video representations or improving cross-modal alignment strategies. A minority of recent works have begun to address the problem of insufficient text expressiveness, as short video descriptions often fail to fully reflect the rich semantics of the corresponding video.
+1. **Background**: In the field of Text-Video Retrieval (TVR), mainstream methods are predominantly based on CLIP pre-trained models, focusing on learning high-quality video representations or improving cross-modal alignment strategies. A few recent works have begun to address the issue of insufficient text expressiveness—short video descriptions often fail to fully reflect the rich semantics of the video.
 
 2. **Limitations of Prior Work**:
-    - Methods such as TMASS and TV-ProxyNet attempt to expand textual semantics via sampling or proxy-based strategies, but only consider text-frame or text-video interactions.
-    - Frame-frame relations within the video are completely ignored.
-    - Consequently, the augmented text embeddings fail to capture contextual information across frames, resulting in a representation gap between text and video.
+    - Methods such as TMASS and TV-ProxyNet attempt to expand text semantics through sampling or proxy mechanisms, but they only consider the interaction between text and frames/videos.
+    - They completely ignore the internal relationships between video frames (frame-frame relations).
+    - Consequently, the expanded text embeddings fail to capture frame contextual information, leading to a gap between text and video representations.
 
-3. **Key Challenge**: Textual semantic expansion requires simultaneous understanding of "what each frame conveys" (text-frame interaction) and "how frames relate to one another" (frame-frame relations). Existing methods address only the former while neglecting the latter, despite the fact that frame-frame relations are critical for capturing global and temporal video semantics.
+3. **Key Challenge**: Text semantic expansion requires a simultaneous understanding of "what each frame depicts" (text-frame interaction) and "how frames are interrelated" (frame-frame relations). Existing methods only address the former while neglecting the latter, whereas frame-frame relations are crucial for understanding global and temporal video semantics.
 
-4. **Goal**:
-    - How to generate enhanced text embeddings that jointly incorporate text-frame interactions and frame contextual information?
-    - How to improve cross-modal matching at a fine-grained level to more accurately capture the distribution of ground-truth text-video pairs?
+4. **Goal**
+    - How to generate enhanced text embeddings that integrate both text-frame interaction and frame contextual information?
+    - How to improve cross-modal matching from a fine-grained perspective to more accurately capture the distribution of real text-video pairs?
 
-5. **Key Insight**: Text candidates and video frames are treated as graph nodes, with three types of edges modeled (text-text, text-frame, frame-frame). A relational graph attention network is used to learn all relational weights, which are then aggregated into enhanced text embeddings.
+5. **Key Insight**: Treat text candidates and video frames as graph nodes and model three types of edge relationships (text-text, text-frame, and frame-frame). A Relational Graph Attention Network is used to learn all relationships before aggregating them into an enhanced text embedding.
 
-6. **Core Idea**: A text-frame relational graph is constructed to learn fine-grained text-frame and frame-frame interactions, and an energy-based matching mechanism is employed to capture the distribution of ground-truth pairs, thereby producing video-context-aware enhanced text embeddings.
+6. **Core Idea**: Construct a text-frame relationship graph to learn fine-grained text-frame and frame-frame interactions, and utilize an energy-aware matching mechanism to capture the real pair distribution, thereby generating video-context-aware enhanced text embeddings.
 
 ## Method
 
 ### Overall Architecture
-EagleNet adopts CLIP as its backbone and comprises two core modules: (1) **Fine-Grained Relationship Learning (FRL)**, which constructs a text-frame relational graph and applies a relational graph attention network to learn fine-grained relationships, producing context-aware enhanced text embeddings; and (2) **Energy-Aware Matching (EAM)**, which employs an energy-based model to capture fine-grained text-frame interaction energies, facilitating accurate modeling of the ground-truth text-video pair distribution. A sigmoid loss replaces the conventional softmax contrastive loss for more stable cross-modal alignment.
+EagleNet uses CLIP as the backbone network to encode text and video frames, followed by two core modules: (1) **Fine-Grained Relationship Learning (FRL)**, which first uses stochastic text modeling to sample multiple text candidates, concatenates the original text, text candidates, and frame embeddings into a "text-frame relationship graph," and uses a Relational Graph Attention Network (RGAT) to simultaneously learn text-text, frame-frame, and text-frame relationships before aggregating them into a video-contextualized enhanced text embedding $\mathbf{t}^{gen}$; (2) **Energy-Aware Matching (EAM)**, which uses an energy-based model to characterize the distribution of real text-video pairs at the frame level. This serves as an auxiliary training objective to improve FRL accuracy and is removed during inference. Finally, a sigmoid loss replaces the softmax contrastive loss for more stable cross-modal alignment between $\mathbf{t}^{gen}$ and the video.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Text + Video Frames"] --> CLIP["CLIP ViT Encoder<br/>Text Embedding t / Frame Embedding F"]
+    CLIP --> FRL
+    subgraph FRL["1. Fine-Grained Relationship Learning FRL"]
+        direction TB
+        S1["Stochastic Text Modeling<br/>Sample S=20 Text Candidates"] --> S2["Node Matrix X<br/>1 Original + 20 Candidates + M Frames"]
+        S2 --> S3["RGAT learns three types of edges<br/>text-text / frame-frame / text-frame"]
+        S3 --> S4["Aggregate using text-frame weights<br/>→ Enhanced text t_gen"]
+    end
+    FRL -->|Training Only| EAM
+    FRL --> SIG
+    subgraph EAM["2. Energy-Aware Matching EAM"]
+        direction TB
+        E1["Average Frame-level Energy<br/>→ Text-Video Energy"] --> E2["MCMC Langevin generates fake pairs<br/>Real low energy / Fake high energy"]
+    end
+    SIG["3. Sigmoid Loss<br/>Independent pair scoring to align t_gen and video v"] --> OUT["Retrieval Ranking"]
+```
 
 ### Key Designs
 
-1. **Fine-Grained Relationship Learning (FRL)**:
-    - **Function**: Generate enhanced text embeddings that incorporate frame contextual information.
-    - **Mechanism**: A stochastic text modeling strategy is first used to sample $S=20$ text candidates $\{\mathbf{t}_i^{sto}\}$. These, together with the original text embedding and $M$ frame embeddings (with temporal positional encodings), form the node matrix $\mathbf{X} \in \mathbb{R}^{n \times d}$, where $n = 1 + S + M$. A Relational Graph Attention Network (RGAT) then learns attention weights for three relation types (text-text, frame-frame, text-frame). For each relation type $r$ and node pair $(i,j)$, RGAT computes edge weights as $e_{ij}^{r,h} = \psi^r([\mathbf{W}^{r,h}\mathbf{h}_i \| \mathbf{W}^{r,h}\mathbf{h}_j])$, followed by LeakyReLU and softmax to obtain attention scores. Text-frame edge weights are extracted and averaged to produce weighted aggregations over text nodes, yielding the enhanced text embedding $\mathbf{t}^{gen} = \sum_i w_i \mathbf{X}_i$.
-    - **Design Motivation**: Unlike methods such as TMASS that consider only text-frame interactions, FRL explicitly incorporates frame-frame relations, enabling the text embedding to capture inter-frame contextual dependencies and effectively suppressing redundant information and noise.
+**1. Fine-Grained Relationship Learning (FRL): Enabling expanded text embeddings to "see" frame-to-frame relationships**
 
-2. **Energy-Aware Matching (EAM)**:
-    - **Function**: Enhance text-frame relationship learning at a fine-grained level and precisely model the distribution of ground-truth text-video pairs.
-    - **Mechanism**: A Boltzmann distribution $p_\theta(\mathbf{t}, \mathbf{F}) = \frac{\exp(-E_\theta(\mathbf{t}, \mathbf{F}))}{Z_\theta}$ is used to model the joint distribution of text-video pairs. The text-video energy is defined as the average of text-frame energies: $E_\theta(\mathbf{t}, \mathbf{F}) = \frac{1}{M}\sum_i^M E_\theta(\mathbf{t}, \mathbf{f}_i)$, fully leveraging fine-grained interactions. The energy function can be instantiated as negative cosine similarity, bilinear scoring, or an MLP. The model is trained via negative log-likelihood loss, with $K=20$ steps of MCMC Langevin dynamics used to generate negative text-video pairs. EAM is used only during training and introduces no additional inference cost.
-    - **Design Motivation**: Global contrastive loss aligns text and video only at the holistic level. EAM precisely captures detailed text-frame interaction patterns at a fine-grained level through the energy-based formulation.
+Methods like TMASS focus only on "how similar the text is to each frame" when expanding text semantics, ignoring the contextual relationships between frames within the video. Consequently, the expanded text embeddings fail to grasp global and temporal semantics. FRL integrates all components into a single graph: it first samples $S=20$ text candidates $\{\mathbf{t}_i^{sto}\}$ using a stochastic text modeling strategy. These, along with the original text embedding and $M$ frame embeddings with temporal positional encodings, form a node matrix $\mathbf{X}\in\mathbb{R}^{n\times d}$ (where $n=1+S+M$). The RGAT learns three types of edges—text-text, frame-frame, and text-frame—calculating edge weights for relation $r$ and node pair $(i,j)$ as:
 
-3. **Sigmoid Loss in Place of Softmax Loss**:
-    - **Function**: Provide more effective cross-modal alignment and more stable training.
-    - **Mechanism**: $\mathcal{L}_{sig} = -\frac{1}{B}\sum_i\sum_j \log\frac{1}{1 + e^{\mathbb{I}_{ij}(\tau \cdot s(\mathbf{t}_i, \mathbf{v}_j) + b)}}$, where $\mathbb{I}_{ij}$ is the positive/negative pair indicator and $\tau$, $b$ are learnable parameters.
-    - **Design Motivation**: Softmax loss normalizes across both dimensions of the batch similarity matrix and is sensitive to the choice of negatives and batch size. Sigmoid loss treats each pair independently, making it naturally suited to the multi-match scenario in TVR where a single text query may semantically correspond to multiple videos.
+$$e_{ij}^{r,h} = \psi^r\big([\mathbf{W}^{r,h}\mathbf{h}_i \,\|\, \mathbf{W}^{r,h}\mathbf{h}_j]\big)$$
+
+These are normalized into attention scores via LeakyReLU and softmax. Finally, only the text-frame edge weights are averaged to perform weighted aggregation on text nodes, yielding the enhanced text $\mathbf{t}^{gen}=\sum_i w_i \mathbf{X}_i$. The frame-frame edges are critical: they allow the text embedding to "know" how frames are related before aggregation, filtering out redundancy and noise instead of averaging across every frame.
+
+**2. Energy-Aware Matching (EAM): Aligning real text-video pair distributions at the frame level**
+
+Global contrastive losses only pull the text and the entire video together, ignoring which specific frames match the text. EAM utilizes an energy-based model to characterize the joint distribution of text-video pairs in the Boltzmann form $p_\theta(\mathbf{t},\mathbf{F})=\frac{\exp(-E_\theta(\mathbf{t},\mathbf{F}))}{Z_\theta}$, where real pairs have low energy and fake pairs have high energy. Crucially, the text-video energy is defined as the average of frame-level energies:
+
+$$E_\theta(\mathbf{t},\mathbf{F}) = \frac{1}{M}\sum_{i}^{M} E_\theta(\mathbf{t},\mathbf{f}_i)$$
+
+This ensures gradients are distributed to each frame, enabling fine-grained matching. $E_\theta$ can be a negative cosine similarity, a bilinear score, or an MLP (bilinear and MLP proved superior in experiments, indicating the value of learnable parameters). Training follows negative log-likelihood, using $K=20$ steps of MCMC Langevin sampling to generate "fake text-video pairs" to increase their energy. EAM is only active during training and is removed during inference, incurring no additional retrieval cost.
+
+**3. Sigmoid Loss instead of Softmax Loss: Independent scoring for multi-matching in TVR**
+
+Softmax contrastive loss requires normalization across both rows and columns of the batch similarity matrix, making it sensitive to negative samples and batch size. In TVR, "one text may semantically match several videos," and forced normalization can suppress these valid positive matches. EagleNet adopts the sigmoid loss:
+
+$$\mathcal{L}_{sig} = -\frac{1}{B}\sum_i\sum_j \log\frac{1}{1 + e^{\mathbb{I}_{ij}(\tau \cdot s(\mathbf{t}_i, \mathbf{v}_j) + b)}}$$
+
+Where $\mathbb{I}_{ij}$ is the indicator for positive/negative pairs, and $\tau$ and $b$ are learnable temperature and bias parameters. It treats each pair as an independent binary classification to determine "match/no match," making training more stable and naturally accommodating one-to-many matching relationships.
 
 ### Loss & Training
-The overall training objective is: $\mathcal{L}_{total} = \mathcal{L}_{sig}(\mathbf{t}^{gen}, \mathbf{v}) + \lambda_{sup}\mathcal{L}_{sig}(\mathbf{t}^{sup}, \mathbf{v}) + \lambda_{eam}\mathcal{L}_{eam}$
+Total training objective: $\mathcal{L}_{total} = \mathcal{L}_{sig}(\mathbf{t}^{gen}, \mathbf{v}) + \lambda_{sup}\mathcal{L}_{sig}(\mathbf{t}^{sup}, \mathbf{v}) + \lambda_{eam}\mathcal{L}_{eam}$
 
-where $\lambda_{sup} = 0.8$ and $\lambda_{eam} = 1.0$. The model is initialized with CLIP ViT-B/32 or ViT-B/16. The learning rate is $10^{-7}$ for CLIP modules and $10^{-4}$ for non-CLIP modules, with a batch size of 64 and training for 5 epochs.
+Where $\lambda_{sup} = 0.8$ and $\lambda_{eam} = 1.0$. The model is initialized with CLIP ViT-B/32 or ViT-B/16. The learning rate is $10^{-7}$ for CLIP modules and $10^{-4}$ for non-CLIP modules, with a batch size of 64 for 5 epochs.
 
 ## Key Experimental Results
 
 ### Main Results — MSRVTT (ViT-B/16)
 
 | Method | T2V R@1↑ | T2V R@5↑ | T2V R@10↑ | V2T R@1↑ | Rsum↑ |
-|--------|----------|----------|-----------|----------|-------|
+|------|----------|----------|-----------|----------|-------|
 | CLIP4Clip | 45.2 | 72.2 | 81.4 | 42.9 | 393.2 |
 | XPool | 49.2 | 73.9 | 82.6 | 48.0 | 411.5 |
 | GLSCL | 49.9 | 76.3 | 84.1 | 48.3 | 419.0 |
 | Video-ColBERT | 50.0 | 76.3 | 84.3 | 47.9 | 417.8 |
-| **EagleNet** | **51.0** | **76.2** | **85.6** | **49.2** | **425.7** |
+| **Ours (EagleNet)** | **51.0** | **76.2** | **85.6** | **49.2** | **425.7** |
 
 ### Main Results — DiDeMo & MSVD (ViT-B/16)
 
 | Method | DiDeMo R@1↑ | MSVD R@1↑ | VATEX R@1↑ | Rsum↑ |
-|--------|-------------|-----------|------------|-------|
+|------|-------------|-----------|------------|-------|
 | TV-ProxyNet | 47.9 | 49.7 | 64.0 | 676.6 |
 | TempMe | 50.2 | - | - | - |
-| **EagleNet** | **51.5** | **50.9** | 63.6 | **687.7** |
+| **Ours (EagleNet)** | **51.5** | **50.9** | 63.6 | **687.7** |
 
 ### Ablation Study
 
-| Configuration | MSRVTT R@1↑ | DiDeMo R@1↑ | Avg. R@1↑ |
-|---------------|-------------|-------------|-----------|
+| Configuration | MSRVTT R@1↑ | DiDeMo R@1↑ | Avg R@1↑ |
+|------|-------------|-------------|-----------|
 | Baseline (TMASS) | 48.5 | 42.1 | 45.3 |
 | + FRL | 48.8 | 47.9 | 48.4 |
 | + EAM | 49.0 | 43.4 | 46.2 |
@@ -104,32 +127,32 @@ where $\lambda_{sup} = 0.8$ and $\lambda_{eam} = 1.0$. The model is initialized 
 | + FRL + EAM + Sigmoid (Full) | **51.0** | **51.5** | **51.3** |
 
 ### Key Findings
-- **FRL yields the largest gains on DiDeMo**: Adding FRL alone improves DiDeMo R@1 from 42.1 to 47.9 (+5.8), demonstrating that inter-frame relation modeling is particularly important for longer videos.
-- **Strong complementarity among the three components**: Each component alone provides limited improvement, but their combination yields +2.5% on MSRVTT R@1 and +9.4% on DiDeMo R@1.
-- **Energy function selection**: Bilinear and MLP energy functions achieve comparable and superior performance to cosine similarity, indicating that learnable parameters facilitate more accurate text-frame energy modeling.
-- **Average pooling for frame energy aggregation is optimal**: It outperforms max pooling, min pooling, and direct video-level energy $E_\theta(\mathbf{t}, \mathbf{v})$.
+- **FRL impacts DiDeMo significantly**: Adding FRL alone increased DiDeMo R@1 from 42.1 to 47.9 (+5.8), suggesting that frame-to-frame relationship modeling is particularly important for longer videos.
+- **Strong complementarity**: While individual components offer limited gains, their combination improves MSRVTT R@1 by 2.5% and DiDeMo by 9.4%.
+- **Energy function choice**: Bilinear and MLP architectures perform similarly and outperform CosSim, indicating that learnable parameters help model text-frame energy more accurately.
+- **Avgpool is optimal for frame energy**: It outperforms Maxpool, Minpool, and direct video-level energy $E_\theta(\mathbf{t}, \mathbf{v})$.
 
 ## Highlights & Insights
-- **Frame-frame relation modeling for textual semantic expansion**: This is an insightful observation — augmenting text semantics should account not only for "text-to-frame correspondences" but also for "inter-frame contextual relations," the latter enabling the text embedding to capture global and temporal video semantics.
-- **First application of EBMs to TVR**: Energy-based models are naturally suited for fine-grained matching, with MCMC sampling used to generate negative pairs during training. As EAM is training-only, it introduces no additional inference overhead.
-- **Correction of data leakage in the TMASS codebase**: This rigorous experimental practice is commendable; multiple baseline methods were re-implemented to ensure fair comparison.
+- **Frame-frame relationship modeling for text expansion**: This is a clever insight—expanding text semantics requires not just text-to-frame correspondence but also frame-to-frame context, which helps the text embedding capture global and temporal video semantics.
+- **First introduction of EBM to TVR**: Energy-based models are naturally suited for fine-grained matching. Training the energy function via MCMC sampling of fake pairs provides a robust mechanism that adds no overhead during inference.
+- **Correction of data leakage in TMASS**: The rigorous experimental approach, including re-implementing multiple baselines to ensure fair comparison, is commendable.
 
 ## Limitations & Future Work
-- The RGAT design is relatively straightforward; more advanced graph Transformer architectures could be explored.
-- The text candidate sampling strategy (random Gaussian sampling) is coarse; semantics-guided directed sampling warrants investigation.
-- The $K=20$ MCMC sampling steps affect training efficiency; more computationally efficient sampling strategies should be explored.
-- Evaluation is primarily conducted on short-video datasets; performance on long-video scenarios remains to be verified.
+- The RGAT design is relatively simple; more advanced Graph Transformer architectures could be explored.
+- The text candidate sampling strategy (stochastic Gaussian sampling) is heuristic; semantically guided sampling could be investigated.
+- The $K=20$ MCMC sampling steps impact training speed; more efficient sampling strategies are needed.
+- Evaluation was primarily on short video datasets; performance in long video scenarios requires further verification.
 
 ## Related Work & Insights
-- **vs. TMASS**: TMASS determines the radius for stochastic text sampling solely based on text-video similarity, ignoring inter-frame relations. EagleNet explicitly models frame-frame relations through a relational graph construction.
-- **vs. TV-ProxyNet**: TV-ProxyNet transforms text into video-aware proxies via video-conditioned directors but similarly neglects inter-frame context. EagleNet jointly models text-frame and frame-frame relations during relational learning.
-- **vs. Video-ColBERT**: Both methods employ sigmoid loss, but EagleNet additionally introduces FRL and EAM for deeper structural relationship learning and fine-grained energy-based matching.
+- **vs TMASS**: TMASS determines the sampling radius for stochastic text sampling only via text-video similarity, ignoring frame relationships; EagleNet explicitly models frame-frame relations through a relationship graph.
+- **vs TV-ProxyNet**: TV-ProxyNet uses video-aware directors to convert text into specific proxies but similarly ignores frame-to-frame context; EagleNet models both text-frame and frame-frame relations.
+- **vs Video-ColBERT**: Both use sigmoid loss, but EagleNet introduces FRL and EAM for deeper structural relationship learning and fine-grained energy matching.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Combining relational graph learning and energy-based models in the TVR setting is a novel and well-motivated contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Evaluation spans four datasets, two CLIP backbones, comprehensive ablations, and analysis of multiple design variants.
-- **Writing Quality**: ⭐⭐⭐⭐ — Methodology is clearly described, though the density of equations requires careful reading.
-- **Value**: ⭐⭐⭐⭐ — Achieves consistent state-of-the-art improvements in the highly competitive TVR field.
+- Novelty: ⭐⭐⭐⭐ Combining relationship graph learning and energy-based models in TVR is a novel endeavor.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across four datasets, two CLIP backbones, and detailed ablation of various design variants.
+- Writing Quality: ⭐⭐⭐⭐ The methodology is clear, though the equations require careful reading.
+- Value: ⭐⭐⭐⭐ Achieves consistent SOTA improvements in the highly competitive TVR field.
 
 <!-- RELATED:START -->
 
@@ -137,11 +160,11 @@ where $\lambda_{sup} = 0.8$ and $\lambda_{eam} = 1.0$. The model is initialized 
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
+- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 - [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[AAAI 2026\] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](../../AAAI2026/multimodal_vlm/heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)
-- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
+- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
+- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
 
 </div>
 

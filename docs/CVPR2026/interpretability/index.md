@@ -1,19 +1,27 @@
 ---
 title: >-
-  CVPR2026 Interpretability Papers · 19 Notes
+  CVPR2026 Interpretability Papers · 41 Notes
 description: >-
-  19 CVPR2026 papers in the Interpretability area, covering Layout & Composition, Multimodal/VLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  41 CVPR2026 papers in the Interpretability area, covering Multimodal/VLM, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Interpretability"
   - "AI paper notes"
   - "paper summaries"
-  - "Layout & Composition"
   - "Multimodal/VLM"
   - "Reasoning"
+  - "Layout & Composition"
 item_list:
+  - u: "a_study_of_failure_modes_in_two-stage_human-object_interaction_detection/"
+    t: "A Study of Failure Modes in Two-Stage Human–Object Interaction Detection"
+  - u: "beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat/"
+    t: "Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability"
+  - u: "cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi/"
+    t: "CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers"
   - u: "ciice_intrinsic_concept_extraction_compositional/"
     t: "CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability"
+  - u: "creward_a_type-specific_creativity_reward_model/"
+    t: "CREward: A Type-Specific Creativity Reward Model"
   - u: "cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events/"
     t: "Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events"
   - u: "draft_and_refine_with_visual_experts/"
@@ -24,116 +32,218 @@ item_list:
     t: "ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization"
   - u: "from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_/"
     t: "From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition"
+  - u: "h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class/"
+    t: "H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers"
+  - u: "hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition/"
+    t: "Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition"
+  - u: "hierarchical_concept_embedding_pursuit_for_interpretable_image_classification/"
+    t: "Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification"
+  - u: "hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci/"
+    t: "HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification"
+  - u: "humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo/"
+    t: "HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation"
+  - u: "improving_sparse_autoencoder_with_dynamic_attention/"
+    t: "Improving Sparse Autoencoder with Dynamic Attention"
   - u: "inside-out_measuring_generalization_in_vision_transformers_through_inner_working/"
     t: "Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings"
   - u: "language_models_can_explain_visual_features_via_steering/"
     t: "Language Models Can Explain Visual Features via Steering"
+  - u: "learning_complete_and_explainable_visual_representations_from_itemized_text_supe/"
+    t: "Learning complete and explainable visual representations from itemized text supervision"
+  - u: "learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess/"
+    t: "Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency"
+  - u: "make_it_sing_analyzing_semantic_invariants_in_classifiers/"
+    t: "Make it SING: Analyzing Semantic Invariants in Classifiers"
+  - u: "making_the_classification_explanation_faithful_to_the_confidence_score/"
+    t: "Making the Classification Explanation Faithful to the Confidence Score"
   - u: "measuring_the_unfaithfulness_of_concept-based_explanations/"
     t: "Measuring the (Un)Faithfulness of Concept-Based Explanations"
+  - u: "medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali/"
+    t: "MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations"
   - u: "missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare/"
     t: "Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared"
   - u: "neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion/"
     t: "Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion"
+  - u: "neurorule_bridging_vision_and_logic_with_differentiable_rule_induction/"
+    t: "NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction"
   - u: "on_the_possible_detectability_of_image-in-image_steganography/"
     t: "On the Possible Detectability of Image-in-Image Steganography"
+  - u: "phasewin_search_framework_enable_efficient_object-level_interpretation/"
+    t: "PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search"
   - u: "pixel2phys_distilling_governing_laws_from_visual_dynamics/"
     t: "Pixel2Phys: Distilling Governing Laws from Visual Dynamics"
-  - u: "rethinking_concept_bottleneck_models_from_pitfalls_to_solutions/"
-    t: "Rethinking Concept Bottleneck Models: From Pitfalls to Solutions"
-  - u: "riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_/"
-    t: "RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation"
-  - u: "safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world/"
-    t: "SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World"
-  - u: "tdatr_improving_end-to-end_table_recognition_via_table_detail-aware_learning_and/"
-    t: "TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment"
-  - u: "towards_faithful_multimodal_concept_bottleneck_models/"
-    t: "Towards Faithful Multimodal Concept Bottleneck Models"
-  - u: "viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri/"
-    t: "VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension"
-item_total: 19
+item_total: 41
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔬 Interpretability
 
-**📷 CVPR2026** · **19** paper notes
+**📷 CVPR2026** · **41** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
 
-🔥 **Top topics:** Layout & Composition ×2 · Multimodal/VLM ×2 · Reasoning ×2
+🔥 **Top topics:** Multimodal/VLM ×4 · Reasoning ×4 · Layout & Composition ×3
+
+**[A Study of Failure Modes in Two-Stage Human–Object Interaction Detection](a_study_of_failure_modes_in_two-stage_human-object_interaction_detection.md)**
+
+:   This is a **diagnostic study** rather than a new method: instead of creating a large-scale benchmark, the authors reorganize the HICO-DET test set into a series of controllable interaction configuration subsets based on "number of people × object relationships × interaction relationships." By decomposing false positive predictions into six error categories, they systematically reveal exactly where two-stage HOI models fail in multi-person, multi-object-of-the-same-class, and fine-grained interaction scenarios. The conclusion is that high $mAP$ does not equate to true relational reasoning capability; verb prediction errors and object-conditioned biases are the primary pathologies masked by aggregate metrics.
+
+**[Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)**
+
+:   For the problem of "how to evaluate automated neuron explanations," this paper utilizes **Model-Guided Importance Sampling (MG-IS)** to select the most informative inputs for crowdsourced labeling and **Bayesian Rating Aggregation (BRAgg)** to remove noise. This reduces the cost of a reliable full-distribution correlation evaluation from approximately \$90k to \$2.16k (~40×). Using this method, the authors systematically compare mainstream interpretability methods across multiple vision models, finding that Linear Explanations perform best overall, surprisingly outperforming recent LLM-based methods.
+
+**[CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)**
+
+:   CIGMA quantifies the contribution of each attention head to background shortcuts using two counterfactual edits (masking foreground/background). By ranking heads according to causal information gain and surgically zeroing out the top-K "spurious heads," ViT/VLM models are encouraged to shift attention from the background to foreground objects without requiring training. This leads to classification accuracy gains of 7.6–24.8 percentage points and an approximately 83% reduction in background dependency.
 
 **[CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability](ciice_intrinsic_concept_extraction_compositional.md)**
 
-:   This paper introduces the CI-ICE task and the HyperExpress method, which leverages the hierarchical modeling capacity of hyperbolic space (Poincaré ball) to extract composable object-level and attribute-level intrinsic concepts. By applying Horosphere projection to enforce compositionality in the concept embedding space, HyperExpress achieves an ACC₁ of 0.504 on UCEBench, a 55% improvement over ICE (0.325).
+:   This work proposes the CI-ICE task and the HyperExpress method: it leverages hierarchical modeling capabilities in hyperbolic space (Poincaré ball) to extract compositional object-level/attribute-level intrinsic concepts. By ensuring the compositionality of the concept embedding space via Horosphere projection, it achieves a concept decoupling $ACC_1$ of 0.504 on UCEBench (a 55% improvement over 0.325 for ICE).
+
+**[CREward: A Type-Specific Creativity Reward Model](creward_a_type-specific_creativity_reward_model.md)**
+
+:   This paper decomposes "visual creativity" along the image formation pipeline into three interpretable axes: **Geometry / Material / Texture**. It first establishes a human benchmark, CreBench, via expert pairwise comparisons to confirm that Large Vision-Language Models (LVLMs) align closely with human judgment regarding creativity. Subsequently, a lightweight type-specific reward model, CREward (comprising a frozen visual backbone and MLP heads), is distilled from LVLM-generated preference labels. This model is applied across three domains: creativity evaluation, creative sample filtering / LoRA slider-guided generation, and Grad-CAM based interpretability.
 
 **[Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)**
 
-:   This paper proposes CoE, a training-free multimodal summarization framework that constructs a Hierarchical Event Graph (HEG) to guide chain-of-events reasoning. CoE surpasses state-of-the-art video CoT baselines across 8 datasets, achieving average gains of +3.04 ROUGE, +9.51 CIDEr, and +1.88 BERTScore.
+:   This paper proposes CoE, a training-free multimodal summarization framework. By constructing a Hierarchical Event Graph (HEG) to guide chain-of-event reasoning, it surpasses SOTA video CoT baselines on 8 datasets, achieving an average improvement of +3.04 ROUGE, +9.51 CIDEr, and +1.88 BERTScore.
 
 **[Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)**
 
-:   This paper proposes DnR (Draft and Refine), an agent framework built upon a question-conditioned Visual Utilization metric that quantifies the degree to which LVLMs actually rely on visual evidence. Through iterative rendering feedback from external visual experts (detection, segmentation, OCR, etc.), DnR improves visual grounding and reduces hallucinations.
+:   Proposes DnR (Draft and Refine), an agent framework based on a query-conditional Visual Utilization metric. This framework quantifies an LVLM's actual reliance on visual evidence and iteratively improves visual grounding to reduce hallucinations through rendering feedback from external visual experts (detection/segmentation/OCR, etc.).
 
 **[Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing](edit-as-act_goal-regressive_planning_for_open-vocabulary_3d_indoor_scene_editing.md)**
 
-:   This paper reframes open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces EditLang, a PDDL-style symbolic language, and employs an LLM-driven Planner-Validator loop to derive minimal edit sequences by reasoning backward from goal states. Evaluated on 63 editing tasks, the method achieves the best overall balance across instruction fidelity (69.1%), semantic consistency (86.6%), and physical plausibility (91.7%).
+:   This work redefines open-vocabulary 3D indoor scene editing as a goal-regressive planning problem. It introduces the PDDL-style symbolic language EditLang and an LLM-driven Planner-Validator loop to derive minimal editing sequences from target states. The method achieves the best balance across instruction faithfulness (69.1%), semantic consistency (86.6%), and physical plausibility (91.7%) across 63 editing tasks.
 
 **[ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization](ermoe_eigen-reparameterized_mixture-of-experts_for_stable_routing.md)**
 
-:   ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and replacing conventional routing logits with eigenbasis scores (cosine similarity), achieving stable routing and interpretable expert specialization without auxiliary load-balancing losses.
+:   ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and substituting traditional routing logits with eigenbasis alignment scores (cosine similarity), enabling stable routing and interpretable expert specialization without the need for auxiliary load balancing losses.
 
 **[From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)**
 
-:   This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully data-free and training-free interpretability framework for CLIP. SITH applies SVD directly to the Value-Output weight matrices of attention heads, then leverages a novel COMP algorithm to interpret each singular vector as a sparse combination of semantically coherent concepts. This achieves finer-grained intra-head interpretability than existing methods and enables precise weight editing to improve downstream performance.
+:   This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semantically coherent concepts, SITH achieves significantly finer intra-head interpretability compared to existing methods and supports precise weight editing to enhance downstream performance.
+
+**[H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)**
+
+:   H-Sets utilizes the input Hessian to detect second-order (non-additive) interactions between pixels, recursively merging them into semantically coherent feature sets. It then scores each set using IDG-Vis (Integrated Directional Gradients + Harsanyi Dividends) at the set level, ultimately producing saliency maps that are sparser and more faithful than existing methods.
+
+**[Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)**
+
+:   This paper losslessly decomposes any pre-trained ReLU network into the difference of two "monotonic and convex" subnetworks $f=g-h$. By resolving the numerical explosion inherent in such decompositions, it introduces three attribution methods—SplitCAM, SplitLRP, and SplitGrad—setting new state-of-the-art (SOTA) results for saliency maps across faithfulness, localization, and robustness on VGG16 and ResNet18 (ImageNet-S).
+
+**[Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)**
+
+:   HCEP explicitly encodes the "concepts have a hierarchical structure (hypernym → hyponym)" prior into the geometric conditions of the CLIP embedding space. It then utilizes Hierarchical Beam Orthogonal Matching Pursuit (HB-OMP) to recover concepts along "root-to-leaf" paths, significantly improving concept recovery precision/recall while maintaining classification accuracy, especially in few-shot scenarios.
+
+**[HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)**
+
+:   HierUQ addresses hierarchical classification of degraded (blurred/occluded/noisy/low-resolution) images by providing reliable confidence levels via Hierarchical Uncertainty Quantification (HUQ) based on label smoothing and proper scoring rules. It utilizes Confidence-Aware Path Adjustment (CAPA) to automatically fallback from fine-grained to coarser levels when uncertain, and employs Self-paced Multi-Layer Joint Optimization (MLJO) to coordinate multi-level objectives, achieving SOTA on degraded remote sensing ship and bird datasets.
+
+**[HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation](humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo.md)**
+
+:   HUMORCHAIN explicitly encodes four major humor theories—Incongruity-Resolution, Benign Violation, Superiority, and Relief—into a multi-stage LLM reasoning chain ("Visual Parsing → Strategy Selection → Generation → Discriminator Feedback"). A Qwen3-VL-4B humor discriminator is trained for a "generation-evaluation-rewriting" loop, outperforming existing methods in human preference, Elo/BT scores, and semantic diversity across three datasets.
+
+**[Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)**
+
+:   This paper reformulates the Sparse Autoencoder (SAE) into a cross-attention architecture with shared concept vectors and replaces softmax with sparsemax. This allows each sample to **automatically determine the number of activated concepts based on its own complexity**, overcoming the inherent "setting K" problem in TopK SAEs to achieve lower reconstruction error and clearer concepts in both image and text domains.
 
 **[Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)**
 
-:   This paper proposes generalization performance prediction metrics based on model-internal circuits, including Dependency Depth Bias (DDB) for pre-deployment model selection and Circuit Shift Score (CSS) for post-deployment performance monitoring, improving average correlation over existing proxy metrics by 13.4% and 34.1%, respectively.
+:   This paper proposes generalization performance prediction metrics based on the internal circuits of models, including Dependency Depth Bias (DDB) for pre-deployment model selection and Circuit Shift Score (CSS) for post-deployment performance monitoring. These metrics improve correlation by an average of 13.4% and 34.1%, respectively, compared to existing proxy metrics.
 
 **[Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)**
 
-:   This paper proposes a method for scalable automatic explanation of visual features by causally intervening (steering) on SAE features in VLM visual encoders. By injecting feature vectors into a blank image's forward pass and prompting the language model to describe what it "sees," the approach eliminates the need for an evaluation image set. A hybrid method, Steering-informed Top-k, is further proposed and achieves state-of-the-art performance.
+:   Ours proposes performing causal intervention (steering) using SAE features on VLM vision encoders. By inputting blank images and allowing the language model to describe the visual concepts it "sees," this method achieves scalable automated interpretation of visual features without needing evaluation image sets. The hybrid approach, Steering-informed Top-k, achieves SOTA performance.
+
+**[Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)**
+
+:   Addressing supervision scenarios like medical imaging and remote sensing where "one image is paired with multiple non-overlapping independent text descriptions (itemized text)," this paper proposes ItemizedCLIP. It utilizes a masked cross-attention module to generate "text-item-modulated" visual representations, paired with four SigLIP-style objectives to enforce "item independence" and "representation completeness." Zero-shot performance and fine-grained explainability significantly outperform CLIP-family baselines across four real medical/remote sensing domains and one synthetic domain.
+
+**[Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)**
+
+:   To address four common issues in No-Reference Image Quality Assessment (NR-IQA)—forced resizing to accommodate pre-trained resolutions, poor generalization across resolutions, difficulty in joint training due to inconsistent MOS scales, and computational explosion for UHD images—this paper proposes ReLIQS. It samples fixed-size patches from the original resolution and its scaled variants, encoding them with CLIP. A lightweight "Perceptual Importance Estimator (PIE)" learns IQA-specific saliency to select a few key patches, while a "Latent Quality Axis Module (LQAM)" aggregates multi-scale embeddings into a single score. ReLIQS outperforms CNN, CLIP, and MLLM-based baselines across various real/synthetic/AIGC distortions and resolutions with lower computational cost.
+
+**[Make it SING: Analyzing Semantic Invariants in Classifiers](make_it_sing_analyzing_semantic_invariants_in_classifiers.md)**
+
+:   SING projects invariant directions in the null space of a classifier's linear head—which "change the input without changing logits"—into the CLIP vision-language space via a linear translator. By using two angular metrics (AS/IS) to quantify the semantic content of these invariants, the authors diagnose "semantic information leakage into the invariant subspace" across model, class, and image levels, discovering that DinoViT is less prone to leaking class-related semantics into the null space compared to models like ResNet50.
+
+**[Making the Classification Explanation Faithful to the Confidence Score](making_the_classification_explanation_faithful_to_the_confidence_score.md)**
+
+:   This paper proposes MHE (Metropolis-Hastings Explainer), a black-box explanation method that uses MH sampling to search for masks where "the confidence remains close to the original image after partial occlusion." This ensures the confidence of the explained region strictly approximates the model's original confidence—by simultaneously identifying both positive and negative contribution regions—thereby upgrading the explanation from "class faithfulness" to "confidence faithfulness."
 
 **[Measuring the (Un)Faithfulness of Concept-Based Explanations](measuring_the_unfaithfulness_of_concept-based_explanations.md)**
 
-:   This paper demonstrates that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is systematically overestimated — due to the use of overly complex surrogate models and flawed deletion-based evaluation. The authors propose SURF (Surrogate Faithfulness), a simple linear surrogate with a dual-space metric framework, validated through a sanity check that "random concepts should be less faithful," and provide the first systematic benchmark revealing that multiple SOTA U-CBEMs are in fact not faithful.
+:   This paper reveals that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is overestimated due to overly complex surrogate models and flawed deletion-based evaluations. The authors propose SURF (Surrogate Faithfulness), a framework consisting of a simple linear surrogate and dual-space metrics. Validated by a sanity check ("random concepts should be less faithful"), this framework demonstrates its correctness and reveals for the first time that several state-of-the-art (SOTA) U-CBEMs are actually unfaithful.
+
+**[MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations](medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali.md)**
+
+:   MedLIME enhances the classic black-box explanation method LIME with three key components: Generative Masking (GM) using MAE to ensure perturbed samples remain in-distribution, Supervised Test-Time Adaptation (STTA) to align inputs with the model's distribution, and Evidence-Based Regularization (EBR) via kNN and kernel estimation to incorporate historical clinical evidence. This framework improves the quality of saliency maps (AUPRC) for medical anomaly localization by up to 30% compared to various baselines.
 
 **[Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)**
 
-:   This paper proposes the first framework that performs cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By learning a shared convolutional dictionary that establishes a unified IR-VIS atomic space, the method performs VIS→IR inference and adaptive fusion entirely in the coefficient domain. A frozen LLM provides weak semantic priors for thermal information completion. The approach achieves performance comparable to dual-modality fusion methods using only visible light images as input.
+:   This paper proposes the first framework to perform cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By establishing a unified IR-VIS atomic space via a shared convolutional dictionary, it completes VIS→IR reasoning and adaptive fusion within the coefficient domain. Combined with a frozen LLM providing weak semantic priors for thermal information completion, the method achieves performance close to dual-modal fusion methods using only visible light input.
 
 **[Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)**
 
-:   This paper proposes ND-CNPFuse, which performs neurodynamical analysis of coupled neural P (CNP) systems to establish constraint relationships between network parameters and input signals, preventing abnormal sustained neuronal firing. The method generates high-quality, interpretable decision maps for multi-focus image fusion (MFIF) without any training.
+:   ND-CNPFuse is proposed to establish constraints between network parameters and input signals through neurodynamic analysis of Coupled Neural P (CNP) systems. This prevents abnormal continuous firing of neurons, enabling the generation of high-quality, interpretable decision maps for multi-focus image fusion (MFIF) tasks without any training.
+
+**[NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)**
+
+:   NeuroRule connects the pixel-level perception of Mask2Former with a differentiable first-order logic rule induction engine. It **automatically learns explainable compositional logic rules** (e.g., `riding(x,y) ∧ on(y,z) → travel-on(x,z)`) from images in an end-to-end manner. This approach achieves SOTA performance across three scene graph benchmarks (VG / PSG / Open-PSG) while providing an auditable reasoning chain for every relation prediction.
 
 **[On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)**
 
-:   This paper exposes a fundamental security flaw in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be readily separated by Independent Component Analysis (ICA). The authors propose an interpretable steganalysis method based on statistical moments of wavelet-domain independent components (achieving 84.6% accuracy with only 8-dimensional features), and demonstrate that the classical SRM+SVM approach achieves detection rates exceeding 99%.
+:   This work reveals fundamental security flaws in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be easily separated by Independent Component Analysis (ICA). An explainable steganalysis method based on statistical moments of independent components in the wavelet domain is proposed (achieving 84.6% accuracy with only 8-dimensional features), while proving that the classic SRM+SVM method can reach a detection rate of over 99%.
+
+**[PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search](phasewin_search_framework_enable_efficient_object-level_interpretation.md)**
+
+:   PhaseWin transforms the quadratic greedy sub-region selection in object-level attribution (which re-scores all remaining regions at every step) into a coarse-to-fine search process featuring "phase pruning + window selection + dynamic supervision." While preserving greedy approximation guarantees, it achieves 95%+ of greedy attribution faithfulness using approximately 20% of the forward pass budget.
 
 **[Pixel2Phys: Distilling Governing Laws from Visual Dynamics](pixel2phys_distilling_governing_laws_from_visual_dynamics.md)**
 
-:   Pixel2Phys is proposed as a multi-agent collaborative framework built upon MLLMs, employing four agents — Plan, Variable, Equation, and Experiment — in an iterative hypothesize-verify-refine loop to automatically discover interpretable governing equations from raw videos, achieving a 45.35% improvement in extrapolation accuracy over baselines.
+:   Pixel2Phys is proposed as an MLLM-based multi-agent collaborative framework that automatically discovers interpretable physical governing equations from raw videos through an iterative hypothesis-verification-refinement loop involving four agents: Plan, Variable, Equation, and Experiment. It achieves a 45.35% improvement in extrapolation accuracy compared to baselines.
+
+**[PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)**
+
+:   PRISM augments traditional vision-only prototype networks (ProtoPNet series) with linguistic supervision. It utilizes CLIP and the Information Bottleneck principle to generate "text-conditioned attribution maps" as soft labels, implicitly anchoring visual prototypes to semantically meaningful image regions. By incorporating an entropy-based spatial compactness constraint to ensure non-overlapping prototypes, PRISM improves both accuracy and prototype interpretability on fine-grained classification tasks like CUB and Stanford Dogs.
 
 **[Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)**
 
-:   This paper proposes CBM-Suite, a methodological framework that systematically addresses four fundamental pitfalls of Concept Bottleneck Models—the absence of a pre-training concept relevance metric, the linearity problem that allows the concept bottleneck to be bypassed, the accuracy gap relative to black-box models, and the unexplored interaction effects of different visual backbones and VLMs—through entropy-based metrics, nonlinear layers, and distillation losses, significantly improving both accuracy and interpretability of CBMs.
+:   The CBM-Suite framework is proposed to systematically address four pitfalls of Concept Bottleneck Models (CBMs): the lack of pre-evaluation metrics for concept relevance, the linearity problem causing bottlenecks to be bypassed, the accuracy gap compared to black-box models, and the research gap regarding the impact of different visual backbones/VLMs. This is achieved through entropy measures, non-linear layers, and distillation losses, significantly enhancing both accuracy and interpretability.
 
 **[RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation](riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_.md)**
 
-:   This paper proposes RiskProp, a collision-anchored self-supervised risk propagation paradigm that learns temporally coherent risk evolution curves using only collision-frame annotations, via a future-frame regularization loss and an adaptive monotonicity constraint loss, achieving state-of-the-art performance on the CAP and Nexar datasets.
+:   RiskProp is proposed as a self-supervised risk propagation paradigm anchored by the collision frame. By utilizing future frame regularization and adaptive monotonic constraint losses, the model learns temporally coherent risk evolution curves relying solely on collision frame annotations, achieving SOTA performance on CAP and Nexar datasets.
+
+**[Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts](rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des.md)**
+
+:   To address two types of inconsistency in VLM-driven Concept Bottleneck Models (CBMs)—mislocalizing concepts to incorrect parts and activating concepts on irrelevant objects—this paper proposes OA-CBM. It uses an LLM to rewrite concepts into "part-attribute" pairs and constructs two segmentation datasets accordingly. It employs a Hierarchical Clustering module to generate class-agnostic foreground object masks to suppress background noise and a Cost Aggregation module to stabilize vision-concept correspondence. This improves concept grounding h-IoU from 9.8 to 35.7 in the challenging Pred-All setting, with a concurrent classification accuracy gain of approximately 2.9%.
 
 **[SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)**
 
-:   This paper proposes SafeDrive, an end-to-end planning framework that employs a trajectory-conditioned sparse world network (SWNet) to simulate future behaviors of critical entities, followed by a fine-grained reasoning network (FRNet) for per-instance collision assessment and per-timestep drivable-area compliance evaluation. SafeDrive achieves a PDMS of 91.6 with only 0.5% collision rate on NAVSIM, and a driving score of 66.8% on Bench2Drive.
+:   Ours proposes the SafeDrive end-to-end planning framework, which simulates the future behavior of key entities through a trajectory-conditioned Sparse World Network (SWNet). It then employs a Fine-grained Reasoning Network (FRNet) for per-instance collision assessment and per-timestep drivable area compliance evaluation. SafeDrive achieves 91.6 PDMS and a collision rate of only 0.5% on NAVSIM, alongside a 66.8% driving score on Bench2Drive.
+
+**[Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations](selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec.md)**
+
+:   This paper proposes the SaN (Selection-as-Nonlinearity) perspective, reinterpreting attention as a "cooperative selection game driven by context-based scoring under unit budget constraints." It diagnoses the "weak-independence" phenomenon—where pure attention stacks significantly underperform when FFNs are removed—as a result of two structural tensions. Based on this, it designs a near-zero-overhead compensation module, CSaN (Layered Budget Calibration + Public-Private Collaborative Readout), enabling small-scale Swin/ViT/Hiera models to match or exceed the performance of counterparts twice their size on ImageNet.
 
 **[TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment](tdatr_improving_end-to-end_table_recognition_via_table_detail-aware_learning_and.md)**
 
-:   This paper proposes the TDATR framework, which achieves end-to-end table recognition under limited annotation data through a "perceive-then-fuse" strategy and a structure-guided cell localization module, attaining state-of-the-art performance across 7 benchmarks without dataset-specific fine-tuning.
+:   The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
 
 **[Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)**
 
-:   This paper proposes f-CBM — the first faithful multimodal Concept Bottleneck Model framework — which mitigates unintended information leakage in concept representations via a differentiable leakage loss, and improves concept detection accuracy using a Kolmogorov-Arnold Network (KAN) prediction head, achieving an optimal Pareto frontier across task accuracy, concept detection, and leakage reduction.
+:   The authors propose f-CBM—the first faithful multimodal concept bottleneck model framework. It reduces unintended information leakage in concept representations through a differentiable leakage loss and enhances concept detection accuracy using a Kolmogorov-Arnold Network (KAN) predictor head, achieving an optimal Pareto frontier across task accuracy, concept detection, and leakage reduction.
+
+**[Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)**
+
+:   Authors utilize a set of controlled "repetitive object counting" experiments and a self-developed causal probing tool, CountScope, to dissect LLMs and LVLMs layer-by-layer and token-by-token. They find that counting is not a one-time summation but a hierarchical process emerging across layers, driven by "internal counters" that update incrementally and rely heavily on structural shortcuts like delimiters.
 
 **[VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension](viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri.md)**
 
-:   VIRO embeds lightweight operator-level verification mechanisms (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipeline, enabling each reasoning step to self-verify and terminate early when no target exists. Under a zero-shot setting, it achieves 61.1% balanced accuracy, substantially outperforming compositional reasoning baselines, while maintaining a program failure rate below 0.3% and efficient inference speed.
+:   VIRO embeds a lightweight operator-level verification mechanism (CLIP uncertainty verification + spatial logic verification) into a neuro-symbolic REC pipeline. This enables each reasoning step to self-verify and terminate early when no target is present. In zero-shot settings, it significantly outperforms compositional reasoning baselines with a balanced accuracy of 61.1%, while maintaining a program failure rate below 0.3% and high inference efficiency.
+
+**[When Do Models Actually Decide? Mapping the Layer-Wise Decision Timeline in Pretrained Neural Networks](when_do_models_actually_decide_mapping_the_layer-wise_decision_timeline_in_pretr.md)**
+
+:   The authors train linear probes at each anchor layer of ResNet-18/50/101 (plus ViT-B/16 and ConvNeXt-Tiny) to track the specific layer where the prediction for each ImageNet image "settles." They discover a strong bimodal decision distribution and a "semantic phase transition" concentrated in the final residual stages. Based on these findings, they suggest that stability-based early exits provide negligible real-world speedup-accuracy gains.

@@ -2,72 +2,75 @@
 title: >-
   [Paper Note] CAMEL: Confidence-Gated Reflection for Reward Modeling
 description: >-
-  [ICML 2026][Reinforcement Learning][Reward Model] This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this…
+  [ICML 2026][Reinforcement Learning][GRPO] This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this, it proposes CAMEL—a method that first provides a rapid preference judgment via a single token and triggers reflection generation only when confidence is low. Using counterfactual prefix a
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Reward Model"
-  - "Confidence Gating"
-  - "Reflection Mechanism"
-  - "GRPO"
-  - "Counterfactual Prefix Augmentation"
+  - ICML 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: fb4a324e51947bf3
+content_hash: a7765954feb806f2
 ---
-
 # CAMEL: Confidence-Gated Reflection for Reward Modeling
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.20670](https://arxiv.org/abs/2602.20670)  
-**Code**: Not yet released  
-**Area**: Alignment RLHF / Reward Models / LLM Reasoning  
+**Code**: Not yet public  
+**Area**: RLHF Alignment / Reward Model / LLM Reasoning  
 **Keywords**: Reward Model, Confidence Gating, Reflection Mechanism, GRPO, Counterfactual Prefix Augmentation
 
 ## TL;DR
-This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this, it proposes CAMEL—using a single token to provide a fast preference judgment first, only triggering reflection generation under low confidence. It utilizes counterfactual prefix augmentation in GRPO training to enhance self-correction capabilities. With 14B parameters, CAMEL achieves an average accuracy of 82.9% across three reward model benchmarks, exceeding previous 70B state-of-the-art models by 3.2%.
+This paper observes that the log-probability margin of the verdict token is highly correlated with judgment accuracy. Based on this, it proposes CAMEL—a method that first provides a rapid preference judgment via a single token and triggers reflection generation only when confidence is low. Using counterfactual prefix augmentation in GRPO training to enhance self-correction capabilities, it achieves an average accuracy of 82.9% across three reward model benchmarks with 14B parameters (surpassing the previous best 70B model by 3.2%).
 
 ## Background & Motivation
-**Background**: Reward models (RM) used as alignment signals for LLMs primarily follow two paradigms. Scalar discriminative models (e.g., Skywork-Reward, ArmoRM) are stable to train and fast during inference but output only a score and lack interpretability. Generative judges (e.g., J1, RM-R1) generate rationales before providing a judgment, which yields higher accuracy but requires generating hundreds to thousands of tokens per sample.
+**Background**: Reward models (RMs) used as LLM alignment signals mainly follow two paradigms. Scalar discriminative models (e.g., Skywork-Reward, ArmoRM) are stable to train and fast during inference but output only a single score and lack interpretability. Generative judges (e.g., J1, RM-R1) generate reasoning before providing a judgment, offering higher accuracy but requiring hundreds to thousands of tokens for every sample.
 
-**Limitations of Prior Work**: The cost of generative RMs is hard to sustain in industrial deployments. RM-R1-DeepSeek-32B generates approximately 900 tokens on RewardBench and 1100 tokens on RM-Bench, even though many samples comprise "one good response and one bad response," which are easy cases that do not require lengthy reasoning. Treating simple and difficult samples equally with full reasoning generation is a waste of computational budget.
+**Limitations of Prior Work**: The cost of generative RMs is unbearable for industrial deployment—RM-R1-DeepSeek-32B generates approximately 900 tokens on RewardBench and 1100 tokens on RM-Bench on average. However, many samples are "easy" cases with one clearly superior response, requiring no lengthy reasoning. Treating simple and difficult samples identically for reasoning generation is a waste of the computational budget.
 
-**Key Challenge**: Reward models face a clear efficiency-expressiveness trade-off. Simple samples should be processed instantly like scalar models, while difficult samples require reflection like generative models. However, there has been no suitable signal to inform the model whether a problem is difficult enough to require reflection.
+**Key Challenge**: There is a clear "efficiency vs. expressivity" trade-off in reward modeling. One wants to handle simple samples instantly like scalar models, while allowing difficult samples to undergo reflection—yet currently, there is no suitable signal to inform the model whether a sample is difficult enough to warrant reflection.
 
-**Goal**: (1) Identify a proxy indicator for "problem difficulty" that can be obtained without additional reasoning; (2) Create an adaptive routing reward model based on this indicator that only incurs generation costs for truly difficult samples; (3) Ensure that reflection actually corrects errors instead of merely echoing the original answer.
+**Goal**: (1) Find a proxy metric for "task difficulty" that can be obtained without additional reasoning; (2) Create an adaptive routing reward model that pays the generation cost only for truly difficult samples; (3) Ensure that reflection leads to genuine error correction rather than simply echoing the original answer.
 
-**Key Insight**: The authors observe that when a prompt requires a model to choose between A and B, the log-probability margin at the verdict token ($c(x) = |\log P(A|x) - \log P(B|x)|$) naturally characterizes the model's "certainty." Statistics on Qwen3-14B using Skywork-80K show that higher confidence correlates monotonically with higher prediction accuracy, with errors almost entirely concentrated in low-margin regions.
+**Key Insight**: The authors observe that when a prompt requires a model to choose between A and B, the log-probability margin at the verdict token ($c(x) = |\log P(A|x) - \log P(B|x)|$) naturally characterizes the model's certainty. Statistics on Skywork-80K using Qwen3-14B reveal that samples with higher confidence have higher prediction accuracy (monotonically increasing), and incorrect samples are concentrated almost entirely in low-margin regions.
 
-**Core Idea**: Use the single-token margin as a "zero-cost difficulty estimator" to construct a two-stage pipeline: "fast judgment first → reflect if confidence is low." Employ GRPO with counterfactual prefix augmentation during training to enable genuine self-correction.
+**Core Idea**: Use the single-token margin as a "cost-free difficulty estimator" to construct a two-stage process (fast judgment $\rightarrow$ reflection on low confidence) and employ counterfactual prefix RL training to empower the reflection with real self-correction capabilities.
 
 ## Method
 
 ### Overall Architecture
-CAMEL splits reward modeling into two stages. Given $(q, r_a, r_b)$, the model first outputs an initial verdict $v_0 \in \{\texttt{A}, \texttt{B}\}$. The confidence score $c(x)$ is calculated from the two candidate probabilities of this verdict token. If $c(x) \geq \tau$ (high confidence), the process terminates immediately with $v_1 = v_0$, consuming only 1 generated token. If $c(x) < \tau$, the prompt triggers a brief reflection $J$ ("think again...") followed by the final verdict $v_1$. This structure of "scoring first then deciding whether to explain" is trained using GRPO with counterfactual prefix augmentation.
+CAMEL decomposes reward modeling into two stages. Given $(q, r_a, r_b)$, the model first outputs an initial verdict $v_0 \in \{\texttt{A}, \texttt{B}\}$. The confidence $c(x)$ is calculated from the two candidate probabilities of this verdict token. If $c(x) \geq \tau$ (high confidence), the process terminates directly, and $v_1 = v_0$, costing only 1 generation token. If $c(x) < \tau$, the prompt triggers a short reflection $J$ ("think again..."), followed by the final verdict $v_1$. This structure of "scoring first, then deciding whether to explain" is combined with GRPO and counterfactual prefix augmentation during training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input triple (q, r_a, r_b)"] --> B["Initial verdict v0<br/>Single token forced selection A/B"]
+    B --> C["Confidence c(x)<br/>= |logP(A) − logP(B)| margin"]
+    C -->|"c(x) ≥ τ: High Confidence"| D["Fast Path: Direct termination<br/>v1 = v0, costs 1 generation token"]
+    C -->|"c(x) < τ: Low Confidence"| E["Reflection Path: Trigger short reflection J<br/>Re-evaluate evidence after seeing v0"]
+    E --> F["Output final verdict v1"]
+    G["Counterfactual Prefix Augmentation + GRPO Training<br/>Duplicated as v0=A / v0=B, credit assigned only to J and v1"] -.Training Phase.-> B
+```
 
 ### Key Designs
 
-1. **Confidence Score as a Difficulty Estimator**:
-    - **Function**: Replaces explicit difficulty labeling with a single-token margin to decide whether to trigger reflection.
-    - **Mechanism**: Define $c(x) = |\log P_\theta(v=\texttt{A}|x) - \log P_\theta(v=\texttt{B}|x)|$, representing the model's "potential difference" regarding preference. Plotting $c(x)$ against accuracy on the training distribution reveals a strong monotonic function, meaning accuracy/cost can be balanced simply by adjusting the threshold $\tau$.
-    - **Design Motivation**: Eliminates the need for training a separate difficulty estimator or performing a second forward pass. Obtaining a high-quality routing signal for free is key to the zero-overhead framework.
+**1. Confidence Score: Compressing "Task Difficulty" into a Free Single-Token Margin**
 
-2. **Confidence-Gated Two-Stage Judging Prompt**:
-    - **Function**: Reconstructs the traditional "long rationale → final verdict" into a factorized structure: $v_0 \rightarrow \text{optional } J \rightarrow v_1$, allowing the confidence gate to be inserted mid-generation.
-    - **Mechanism**: The prompt forces the model to output a verdict placeholder $v_0$ without explanation. During inference, the generation either stops or continues based on $c(x)$. If reflection is triggered, the model writes rationale $J$ and outputs $v_1$ after seeing its own $v_0$. The margin for $v_0$ is obtained in a single forward pass.
-    - **Design Motivation**: Externalizes the discrete "to think or not" decision to the token probability level rather than letting the model judge its own need for reflection via language. This factorization allows easy and hard samples to follow different paths while sharing the same policy.
+The greatest waste in generative RMs is generating thousands of reasoning tokens for easy cases. CAMEL seeks a signal to distinguish difficulty without extra compute. It utilizes the verdict token itself: when the prompt asks a model to choose between A and B, the log-probability difference between the two candidates naturally characterizes the model's certainty. Define $c(x) = |\log P_\theta(v=\texttt{A}|x) - \log P_\theta(v=\texttt{B}|x)|$, representing the model's "potential difference" regarding preference. The authors plotted $c(x)$ against accuracy on Skywork-80K and found a strongly monotonic curve—higher confidence correlates with higher accuracy, with errors clustered in the low-margin region. This means a difficulty estimator is unnecessary; a threshold $\tau$ allows sliding along the accuracy/cost curve with zero additional overhead.
 
-3. **Counterfactual Prefix Augmentation + GRPO**:
-    - **Function**: Teaches the model when to stick to the initial judgment and when to be overturned by reflection.
-    - **Mechanism**: Each sample $(x, z)$ is duplicated: one forces $v_0 = \texttt{A}$ and the other $v_0 = \texttt{B}$. RL credit is applied only to the reflection $J$ and final verdict $v_1$; $v_0$ is treated as context and not optimized. The reward is binary $R = +1/-1$ (whether $v_1$ matches ground truth). GRPO optimizes $\max_\theta \mathbb{E}[R(v_1, z)] - \beta \mathbb{D}_{\mathrm{KL}}(\pi_\theta \| \pi_{\mathrm{ref}})$.
-    - **Design Motivation**: Without counterfactual augmentation, models easily learn the shortcut of "reflection = repeating $v_0$" since most initial judgments are correct. Forcing a wrong starting point compels the model to actually compare evidence and overturn itself during reflection, allowing self-correction to "emerge."
+**2. Confidence-Gated Two-Stage Prompt: Decisions From Language Layer to Token Probability Layer**
+
+A difficulty signal alone is insufficient; it must be able to halt or permit reflection during generation. CAMEL factorizes the traditional "long rationale $\rightarrow$ verdict" structure into $v_0 \to$ optional reflection $J \to v_1$. The prompt forces the model to output a verdict $v_0$ placeholder first. A single forward pass yields the logit to calculate $c(x)$. If $c(x)\ge\tau$, it terminates with $v_1=v_0$, using only 1 token. If $c(x)<\tau$, a short reflection is triggered. This offloads the discrete "to think or not" decision to the token probability level rather than letting the model decide via natural language, which tends to be all-or-nothing.
+
+**3. Counterfactual Prefix Augmentation + GRPO: Forcing Reflection to Actually Correct, Not Repeat**
+
+A two-stage structure risks models learning a "reflection = copy $v_0$" shortcut since $v_0$ is often correct in the training distribution. CAMEL solves this via counterfactual augmentation—duplicating each sample $(x,z)$, forcing $v_0=\texttt{A}$ in one and $v_0=\texttt{B}$ in the other. RL credit is applied only to the reflection $J$ and final $v_1$, treating $v_0$ as non-optimized context. The reward is binary $R=+1/-1$ (whether $v_1$ matches ground truth), optimized via GRPO: $\max_\theta \mathbb{E}[R(v_1, z)] - \beta\, \mathbb{D}_{\mathrm{KL}}(\pi_\theta \| \pi_{\mathrm{ref}})$. By forcing a false starting point, the model must re-evaluate evidence in the reflection to correct itself. Ablating counterfactuals dropped JudgeBench by 5 points (74.2 $\rightarrow$ 69.1), validating this design.
 
 ### Loss & Training
-The training follows two phases: First, SFT is performed on Qwen3-14B using three preference datasets (Skywork-Reward-Preference-80K + Code-Preference-Pairs + Math-Step-DPO-10K) to learn preference formats. Next, one epoch of GRPO is conducted with counterfactual prefixes, using a KL coefficient $\beta$ to control deviation from the reference policy. During inference, $\tau = 5$ is used by default (adjustable).
+Two-stage training: First, SFT is performed on Qwen3-14B using three preference datasets (Skywork-Reward-Preference-80K + Code-Preference-Pairs + Math-Step-DPO-10K) to learn the format. Then, one epoch of GRPO is conducted with counterfactual prefixes, using the KL coefficient $\beta$ to control deviation from the reference policy. Inference uses a default $\tau = 5$.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation across three reward model benchmarks (RewardBench / RM-Bench / JudgeBench) comparing scalar and generative RMs:
+On three reward model benchmarks (RewardBench / RM-Bench / JudgeBench), CAMEL is compared against various scalar and generative RMs:
 
 | Model | RewardBench | RM-Bench | JudgeBench | Avg |
 |------|-------------|----------|------------|-----|
@@ -78,48 +81,48 @@ Evaluation across three reward model benchmarks (RewardBench / RM-Bench / JudgeB
 | **CAMEL-Reflection (14B, always)** | 92.8 | **84.2** | **71.6** | **82.9** |
 | **CAMEL (gated, $\tau=5$)** | 92.4 | 81.9 | 69.1 | 81.1 |
 
-CAMEL-Reflection is 3.2% higher than the previous SOTA on average. CAMEL-Fast matches or exceeds RM-R1-Qwen-Instruct-32B using only 1 token. The 14B model matches or surpasses 70B baselines.
+CAMEL-Reflection averages 3.2% higher than the previous SOTA. CAMEL-Fast, using only 1 token, matches or exceeds the full generation results of RM-R1-Qwen-Instruct-32B, with 14B parameters rivaling 70B baselines.
 
 ### Ablation Study
 
-| Configuration | RewardBench | RM-Bench | JudgeBench | Avg |
+| Config | RewardBench | RM-Bench | JudgeBench | Avg |
 |------|-------------|----------|------------|-----|
-| Qwen3-14B (No tune) | 81.9 | 71.1 | 62.6 | 71.9 |
+| Qwen3-14B (Untuned) | 81.9 | 71.1 | 62.6 | 71.9 |
 | Qwen3-14B + Reflection | 83.3 | 73.2 | 65.0 | 73.8 |
 | Qwen3-14B-SFT | 90.6 | 72.7 | 64.8 | 76.0 |
 | Qwen3-14B-GRPO (No Counterfactual) | 91.2 | 83.5 | 62.9 | 79.2 |
 | Qwen3-14B-GRPO + Reflection | 90.0 | 84.0 | 74.2 | 82.7 |
-| **CAMEL (full)** | 92.4 | 81.9 | 69.1 | 81.1 |
+| **CAMEL (Full)** | 92.4 | 81.9 | 69.1 | 81.1 |
 
 ### Key Findings
-- Reflection gains are most significant in reasoning-intensive benchmarks: from always-fast to always-reflect, accuracy increased by +2.3% on RewardBench, +9.4% on RM-Bench, and +6.4% on JudgeBench, indicating more difficult samples in the latter two.
-- Counterfactual prefixes are critical: removing them causes a 5% drop on JudgeBench (74.2 → 69.1) for GRPO+Reflection, showing that without them, reflection degrades into "repeating the initial judgment."
-- Pareto Frontier: CAMEL strictly outperforms RM-R1 on RewardBench and RM-Bench. RM-R1-DeepSeek-32B generates 900–1100 tokens to reach ~87/74, while CAMEL is close with 1 token and surpasses it with fewer total tokens by adjusting $\tau$.
-- Post-training confidence distributions shift left (more conservative), matching expectations that the model learns to distinguish certainty. Self-correction confusion matrices show reflection yields a net gain of 77 correct samples on RewardBench and 1233 on RM-Bench.
+- Reflection gains are most significant on reasoning-intensive benchmarks: moving from always-fast to always-reflect improved RewardBench by +2.3%, RM-Bench by +9.4%, and JudgeBench by +6.4%.
+- Counterfactual prefixes are critical: removing them caused a 5-point drop in JudgeBench, indicating that without them, reflection degrades into repeating the initial judgment.
+- Pareto Frontier: CAMEL strictly dominates RM-R1 on RewardBench and RM-Bench. While RM-R1-DeepSeek-32B consumes 900–1100 tokens, CAMEL achieves similar or better results with significantly fewer tokens by adjusting $\tau$.
+- Post-training confidence distributions shifted left (becoming more conservative), showing the model learned to distinguish certainty.
 
 ## Highlights & Insights
-- **"Free Difficulty Signals"**: The single-token margin carries almost no overhead but reliably predicts accuracy. This is a highly portable trick: any pairwise discriminative task (multiple choice QA, safety classification, tool selection) can reuse this for routing, abstention, or uncertainty estimation.
-- **Externalizing "Whether to Think"**: Previous chain-of-thought works often let the model decide whether to think, resulting in either always thinking or never thinking. CAMEL uses hard decisions at the token probability level—clean, adjustable, and zero-regression.
-- **Counterfactual Prefixes as a Secret Weapon for RL**: Many self-correction works struggle with "models refusing to change answers" because $v_0$ is correct in most of the training distribution. Forcing a wrong starting point is a general fix transferable to self-refinement and self-debate scenarios.
-- Overall, restructuring reward modeling into "adaptive two-stage computation" is more engineering-oriented than strictly choosing between scalar or generative paradigms.
+- **"Free Difficulty Signal"**: The single-token margin has near-zero overhead yet robustly predicts accuracy. This portable trick can be reused in any binary classification task (QA, safety, tool selection) for routing or uncertainty estimation.
+- **Explicitly Externalized "To Think" Decision**: Unlike Chain-of-Thought methods that let the model decide to "think" in natural language, CAMEL makes hard decisions at the token probability level, which is cleaner and more adjustable.
+- **Counterfactual Prefix as an RL Secret Weapon**: Many self-correction works struggle with models refusing to change answers because $v_0$ is almost always correct in training. Forcing a wrong start is a universal fix applicable to self-refinement or self-debate.
+- Overall, reframing reward modeling as "adaptive two-stage computation" is more practical than choosing strictly between scalar and generative approaches.
 
 ## Limitations & Future Work
-- The threshold $\tau$ is globally fixed, but confidence distributions across different tasks/domains are not aligned—safety tasks generally have higher confidence, while math tasks have lower. Ideal implementation would use dynamic or bucketed $\tau$.
-- Validation is limited to Qwen3-14B; scaling laws (whether the "low confidence = difficult" correlation holds for 70B/100B+) are unclear. For small models, the margin might be too noisy to be effective.
-- Reflection token length is not strictly controlled; the average length of the reflection segment is not reported. Long reflections could partially offset savings from gating.
-- Future directions: (a) Learning $\tau$ automatically; (b) Introducing multi-level reflection (short/long/very long) for finer-grained routing; (c) Embedding this architecture into actor-critic RLHF pipelines as the critic.
+- The threshold $\tau$ is globally fixed, but confidence distributions across domains (e.g., safety vs. math) vary. A dynamic or binned $\tau$ would be ideal.
+- Validation is limited to Qwen3-14B; it is unclear if the scaling law holds for 70B+ models or if margins become too noisy in smaller models.
+- Reflection token length is not strictly controlled. If reflections become verbose, the cost savings from gating might be partially offset.
+- Future directions: (a) Learning the threshold $\tau$; (b) Multi-stage reflection for finer-grained routing; (c) Embedding this architecture into actor-critic RLHF pipelines.
 
 ## Related Work & Insights
-- **vs RM-R1 (Generative RM SOTA)**: RM-R1 uses distilled rubrics + RL with verifiable rewards, generating long rationales for every sample. CAMEL shares similar data but adds gating, achieving higher accuracy with fewer tokens, establishing a strictly superior Pareto frontier.
-- **vs Generative RM (J1, Critic-RM)**: J1/Critic-RM emphasize explicit reasoning traces to improve judgment. CAMEL borrows the reflection mechanism but rejects "indiscriminate reasoning."
-- **vs Self-Consistency / Self-Refine**: These methods rely on multi-sample voting or iterative correction. CAMEL uses the margin from a single forward pass to decide on refinement, avoiding repeated sampling costs.
-- **vs Uncertainty-based Abstention**: Traditional selective prediction uses confidence to decide whether to answer; CAMEL uses it to decide whether to "think again," representing another paradigm of conditional compute.
+- **vs RM-R1 (Generative RM SOTA)**: RM-R1 uses distilled rubrics and RL with verifiable rewards for long rationales; CAMEL shares similar data but adds gating, achieving higher accuracy with fewer tokens and a superior Pareto frontier.
+- **vs Generative RM (J1, Critic-RM)**: These emphasize explicit reasoning traces; CAMEL adopts the reflection mechanism but rejects "indiscriminate reasoning."
+- **vs Self-Consistency / Self-Refine**: Those rely on multiple samples or refinement cycles; CAMEL uses the margin of a single forward pass to decide refinement, avoiding redundant sampling costs.
+- **vs Uncertainty-based Abstention**: Traditional methods use confidence to decide whether to answer; CAMEL uses it to decide whether to "think more," representing a different paradigm of conditional compute.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of single-token margin for difficulty estimation and counterfactual prefixes is a refreshing framework, though individual components are not entirely disruptive.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation on three mainstream benchmarks + Pareto curves + ablations + self-correction analysis, though lacking multi-backbone validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logic from motivation to observation to method to experiment is exceptionally smooth. Formulas and figures are well-coordinated.
-- Value: ⭐⭐⭐⭐⭐ A deployment-friendly 14B reward model exceeding 70B baselines is directly usable for industrial RLHF pipelines. The tricks are transferable across tasks.
+- Novelty: ⭐⭐⭐⭐ The combination of single-token margin for difficulty estimation and counterfactual prefixes is a refreshing framework, though components aren't entirely disruptive in isolation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers three major benchmarks, Pareto curves, ablations, and self-correction analysis, though lacks multi-backbone validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain of motivation-observation-method-experiment is very smooth, with well-integrated formulas and diagrams.
+- Value: ⭐⭐⭐⭐⭐ A deployment-friendly 14B model that outperforms 70B baselines is highly valuable for industrial RLHF pipelines.
 
 <!-- RELATED:START -->
 
@@ -128,9 +131,9 @@ CAMEL-Reflection is 3.2% higher than the previous SOTA on average. CAMEL-Fast ma
 ## Related Papers
 
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](../../ICLR2026/reinforcement_learning/rm-r1_reward_modeling_as_reasoning.md)
+- [\[ICML 2026\] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models](one_bias_after_another_mechanistic_reward_shaping_and_persistent_biases_in_langu.md)
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
 - [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](../../ACL2026/reinforcement_learning/lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
-- [\[ICML 2026\] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models](one_bias_after_another_mechanistic_reward_shaping_and_persistent_biases_in_langu.md)
 - [\[ICLR 2026\] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty](../../ICLR2026/reinforcement_learning/stop_unnecessary_reflection_training_lrms_for_efficient_reasoning_with_adaptive_.md)
 
 </div>

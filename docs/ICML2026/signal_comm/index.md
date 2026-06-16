@@ -22,12 +22,12 @@ item_total: 2
 
 **🧪 ICML2026** · **2** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
 
 **[Joint Model and Data Sparsification via the Marginal Likelihood](joint_model_and_data_sparsification_via_the_marginal_likelihood.md)**
 
-:   JMDS achieves simultaneous model and data sparsification through a unified objective of **maximizing marginal likelihood**—avoiding the sub-optimality of phased optimization—while maintaining performance superior to independent sparsification at 5-10× joint compression ratios on CIFAR / ImageNet / WikiText.
+:   JMDS achieves simultaneous model and data sparsification through a unified objective of **maximizing marginal likelihood**. By avoiding the sub-optimality of multi-stage pipes, it maintains performance superior to independent sparsification across CIFAR, ImageNet, and WikiText at 5-10× joint compression ratios.
 
 **[Meta-learning Structure-Preserving Dynamics](meta-learning_structure-preserving_dynamics.md)**
 
-:   This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into Hamiltonian and GENERIC neural networks. It proposes two novel modulations—latent multi-rank (MR) and latent SVD-like modulation—enabling a shared network to adapt to entire families of new parameter instances with few shots without knowing the system parameters $\bm{\mu}$, while strictly maintaining energy conservation/dissipation structures.
+:   This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into Hamiltonian and GENERIC neural networks. It proposes two novel modulation schemes—latent multi-rank (MR) and latent SVD-like modulation—enabling a shared network to adapt to entire families of new parameter instances $\bm{\mu}$ with few shots, while strictly maintaining energy conservation or dissipation structures.

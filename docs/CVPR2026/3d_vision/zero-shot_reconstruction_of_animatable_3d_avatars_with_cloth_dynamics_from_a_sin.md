@@ -2,158 +2,156 @@
 title: >-
   [Paper Note] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image
 description: >-
-  [CVPR2026][3D Vision][3D human reconstruction] DynaAvatar presents the first zero-shot framework for reconstructing animatable 3D human avatars with motion-dependent cloth dynamics from a single image. Through a static-t…
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] DynaAvatar proposes the first zero-shot framework to reconstruct animatable 3D human avatars with motion-dependent cloth dynamics from a single image. By utilizing a static-to-dynamic knowledge transfer strategy and an optical flow-guided DynaFlow loss, it achieves realistic garment dynamic modeling under limited dynam
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "3D human reconstruction"
-  - "animatable avatar"
-  - "cloth dynamics"
-  - "3D Gaussian Splatting"
-  - "single-image reconstruction"
+  - CVPR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: 1f4e42698214f8d2
+content_hash: 0dfa0277be20cb2c
 ---
-
 # Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.14772](https://arxiv.org/abs/2603.14772)  
 **Code**: [https://juhyeon-kwon.github.io/DynaAvatar.github.io/](https://juhyeon-kwon.github.io/DynaAvatar.github.io/) (Project Page)  
-**Area**: 3D Vision
-**Keywords**: 3D human reconstruction, animatable avatar, cloth dynamics, 3D Gaussian Splatting, single-image reconstruction
+**Area**: 3D Vision  
+**Keywords**: 3D Human Reconstruction, Animatable Avatar, Cloth Dynamics, 3D Gaussian Splatting, Single-view Reconstruction
 
 ## TL;DR
-DynaAvatar presents the first zero-shot framework for reconstructing animatable 3D human avatars with motion-dependent cloth dynamics from a single image. Through a static-to-dynamic knowledge transfer strategy and a optical flow-guided DynaFlow loss, the method achieves realistic garment dynamics under limited dynamic training data, surpassing all existing approaches across the board.
+DynaAvatar proposes the first zero-shot framework to reconstruct animatable 3D human avatars with motion-dependent cloth dynamics from a single image. By utilizing a static-to-dynamic knowledge transfer strategy and an optical flow-guided DynaFlow loss, it achieves realistic garment dynamic modeling under limited dynamic data, significantly outperforming existing methods.
 
 ## Background & Motivation
 
-**Background**: Single-image animatable 3D human avatar reconstruction is a central goal in computer vision and graphics. Existing zero-shot methods (IDOL, LHM) primarily rely on skeleton-based rigid transformations (LBS) to drive animation, which enables body joint motion but is fundamentally incapable of modeling non-rigid cloth dynamics. Another category of personalized methods (ExAvatar, GaussianAvatar) can capture subject-specific garment deformations, but requires per-subject multi-view video capture and optimization, making generalization to arbitrary new subjects infeasible.
+**Background**: Single-image animatable 3D human avatar reconstruction is a core objective in computer vision and graphics. Existing zero-shot methods (IDOL, LHM) primarily rely on skeletal-based Linear Blend Skinning (LBS) for animation. While these methods enable joint movement, they are inherently unable to model non-rigid cloth dynamics. Personalized methods (ExAvatar, GaussianAvatar) can capture subject-specific deformations but require multi-view video acquisition and per-person optimization, preventing generalization to unseen characters.
 
 **Limitations of Prior Work**:
-   - **Rigid animation**: Zero-shot methods produce overly stiff animations where garments such as skirts and jackets fail to naturally flutter during motion, severely degrading visual realism.
-   - **Personalization dependency**: Methods capable of modeling cloth dynamics (PERSONA, SeqAvatar) require per-subject data capture and optimization, lacking scalability.
-   - **Scarcity of dynamic data**: Large-scale dynamic capture data is prohibitively expensive to collect (multi-view synchronization, temporal calibration, garment diversity), and SMPL-X annotations in existing datasets are commonly missing or noisy.
+   - **Rigid Animation**: Zero-shot methods produce stiff animations where garments like skirts or jackets do not flow naturally with movement, severely undermining visual realism.
+   - **Personalization Dependency**: Methods capable of modeling cloth dynamics (PERSONA, SeqAvatar) require per-person data collection and optimization, lacking scalability.
+   - **Data Scarcity**: Large-scale dynamic capture data is extremely costly to acquire (multi-view sync, temporal calibration, garment diversity), and SMPL-X annotations in existing datasets are often missing or noisy.
 
-**Key Challenge**: Learning motion-dependent cloth dynamics requires large-scale dynamic capture data, which is extremely scarce. Meanwhile, conventional image reconstruction losses fail to provide effective supervision under large-magnitude garment deformations due to limited receptive fields and color-geometry coupling.
+**Key Challenge**: Learning motion-dependent cloth dynamics requires large-scale dynamic capture data, which is scarce. Furthermore, traditional image reconstruction losses fail in scenarios with large cloth deformations due to local receptive fields and the coupling of color and geometry.
 
-**Goal**:
-   - How to achieve motion-dependent cloth dynamics in a zero-shot setting (without per-subject optimization)?
-   - How to learn effective dynamic deformation priors under limited dynamic data?
-   - How to provide reliable geometric supervision signals for large-scale cloth motion?
+**Goal**
+   - How to achieve motion-dependent cloth dynamics in a zero-shot setting (without per-person optimization)?
+   - How to learn effective dynamic deformation priors under limited dynamic data conditions?
+   - How to provide reliable geometric supervision signals for large-magnitude cloth movements?
 
-**Key Insight**: The authors observe that large-scale static capture data, despite lacking temporal deformation information, contains rich priors on human geometry and appearance. Furthermore, optical flow can establish pixel-level correspondences between rendered and real images across large deformations, providing purely geometric displacement supervision.
+**Key Insight**: The authors observe that while large-scale static data lacks temporal deformation information, it contains rich human geometry and appearance priors. Simultaneously, optical flow can establish pixel-level correspondences between rendered and ground truth images across large deformations, thereby providing purely geometric displacement supervision.
 
-**Core Idea**: Combine LoRA fine-tuning of a statically pre-trained Transformer for knowledge transfer with a flow-guided DynaFlow loss for geometry-level deformation supervision, enabling single-image avatars to exhibit realistic motion-dependent cloth dynamics in a zero-shot setting.
+**Core Idea**: Through LoRA fine-tuning of a static-pretrained Transformer to achieve knowledge transfer, combined with a flow-guided DynaFlow loss to provide geometric-level deformation supervision, single-image avatars can exhibit realistic motion-dependent cloth dynamics in a zero-shot manner.
 
 ## Method
 
 ### Overall Architecture
 
-DynaAvatar adopts a Transformer-based feed-forward architecture. Given a single person image and a motion history sequence (1 second / 15 frames), it outputs a 3D Gaussian avatar in canonical space exhibiting motion-dependent cloth dynamics. The overall pipeline consists of five stages:
+DynaAvatar adopts a Transformer-based feed-forward architecture. The input consists of a single person image and a motion history sequence (1 second/15 frames), and the output is a 3D Gaussian Avatar in canonical space with motion-dependent cloth dynamics. The overall pipeline is divided into five stages:
 
-1. **Image feature extraction**: A frozen pre-trained encoder (Sapiens + DINOv2) extracts image tokens $\mathbf{T}_I$.
-2. **Static Transformer**: Extracts detailed geometric and appearance features without considering cloth dynamics.
+1. **Image Feature Extraction**: A frozen pre-trained encoder (Sapiens + DINOv2) extracts image tokens $\mathbf{T}_I$.
+2. **Static Transformer**: Extracts detailed geometry and appearance features without considering cloth dynamics.
 3. **Motion Encoder**: Encodes motion history into motion tokens $\mathbf{T}_M$.
-4. **Dynamic Transformer**: Fuses motion information to superimpose motion-dependent cloth deformations onto static features.
-5. **Gaussian Decoder + LBS animation + 3DGS rendering**: Outputs the final animatable avatar.
+4. **Dynamic Transformer**: Fuses motion information and adds motion-dependent cloth deformations on top of static features.
+5. **Gaussian Decoder + LBS Animation + 3DGS Rendering**: Outputs the final animatable Avatar.
+
+The image and motion paths are encoded separately, merged at the Dynamic Transformer, and finally decoded and rendered. The DynaFlow loss back-propagates geometric displacement gradients during training to correct Gaussian positions:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Single Image"] --> ENC["Image Feature Extraction<br/>Sapiens + DINOv2 (Frozen)"]
+    MOT["Motion History (Past 1s / 15 frames)"] --> ME["Motion Encoder<br/>Pose + Vel + Acc → Motion tokens"]
+    ENC --> ST["Static Transformer<br/>Reuse LHM Pre-trained · LoRA Tuning for Static Priors"]
+    ST --> DT["Dynamic Transformer<br/>Static features × Motion tokens, adds motion-dependent dynamics (Trained from scratch)"]
+    ME --> DT
+    DT --> GD["Gaussian Decoder<br/>Predict Gaussians + Skinning weight offsets"]
+    GD --> ANIM["LBS Animation → 3DGS Rendering"]
+    ANIM --> OUT["Animatable 3D Gaussian Avatar"]
+    ANIM -.Training Supervision.-> FLOW["DynaFlow Loss<br/>Render xy coordinate maps + Flow matching"]
+    FLOW -.Geometric Displacement Gradient.-> GD
+```
 
 ### Key Designs
 
-1. **Static Transformer**:
+**1. Static Transformer: Handling Static Geometry and Appearance First**
 
-    - **Function**: Extracts detailed geometry and appearance features from the input image, without cloth dynamics.
-    - **Mechanism**: Employs a Multimodal Transformer Block (MM), treating position encodings of SMPL-X template vertices as 3D point tokens $\mathbf{T}_{3D}$ (queries) and image tokens $\mathbf{T}_I$ (keys/values). Cross-attention updates 3D point features: $\mathbf{T}_{3D}, \mathbf{T}_I \leftarrow \text{MM}(\mathbf{T}_{3D}, \mathbf{T}_I; \mathbf{F}_I)$. The global context feature $\mathbf{F}_I$ is obtained by averaging Sapiens image tokens and used for AdaLN modulation.
-    - **Design Motivation**: Reuses weights pre-trained on large-scale static datasets (from LHM) to provide strong priors for subsequent dynamic learning. Freezing the image encoder prevents catastrophic forgetting.
+A primary cause of rigid animation in zero-shot methods is the attempt to simultaneously learn geometry, appearance, and deformation from insufficient dynamic data. DynaAvatar decouples "appearance" from "motion." The Static Transformer focuses on the former, extracting clean geometry and appearance features. It utilizes Multi-modal Transformer Blocks (MM), treating SMPL-X template vertex positional encodings as 3D point tokens $\mathbf{T}_{3D}$ (queries) and image tokens $\mathbf{T}_I$ as keys/values, transferring image information onto template vertices: $\mathbf{T}_{3D}, \mathbf{T}_I \leftarrow \text{MM}(\mathbf{T}_{3D}, \mathbf{T}_I; \mathbf{F}_I)$. This component reuses LHM weights pre-trained on large-scale static data with LoRA adapters, preserving strong geometric priors.
 
-2. **Motion Encoder**:
+**2. Motion Encoder: Capturing Directional Dynamics**
 
-    - **Function**: Encodes the past 1-second (15-frame) motion history into motion tokens $\mathbf{T}_M$.
-    - **Mechanism**: Motion history includes 3D pose (6D rotation parameterization), pose velocity, pose acceleration, and 3D keypoint velocity. Features are positionally encoded and processed through multi-layer MLPs. All motion histories are transformed into a canonical world coordinate system (using dataset-provided up vectors or a default camera $y$-axis) to ensure consistent motion semantics.
-    - **Design Motivation**: Cloth dynamics depend not only on the current pose but also on motion direction and velocity. Under the same pose, garment behavior differs entirely between jumping upward and falling downward. Including velocity and acceleration allows the model to distinguish motion direction and intensity.
+Cloth dynamics depend not only on current pose but also on the direction of movement. The Motion Encoder compresses 1 second of motion history into motion tokens $\mathbf{T}_M$. Input features include 3D pose (6D rotation), pose velocity, pose acceleration, and 3D joint velocity. All motion is transformed into a canonical world coordinate system to ensure semantic consistency (e.g., "up" vs. "down").
 
-3. **Dynamic Transformer**:
+**3. Dynamic Transformer: Learning Motion-Dependent Deformation**
 
-    - **Function**: Injects motion information into static features, enabling the avatar to exhibit motion-dependent cloth dynamics.
-    - **Mechanism**: Motion tokens $\mathbf{T}_M$ serve as keys/values, while $\mathbf{T}_{3D}$ from the Static Transformer output serves as queries. Fusion is performed via an MM block: $\mathbf{T}_{3D}, \mathbf{T}_M \leftarrow \text{MM}(\mathbf{T}_{3D}, \mathbf{T}_M; \mathbf{F}_M)$, where $\mathbf{F}_M$ is the last element of $\mathbf{T}_M$, used as an AdaLN condition.
-    - **Design Motivation**: The Dynamic Transformer, trained from scratch, specializes in motion-dependent deformation modeling with a clear division of labor from the pre-trained Static Transformer — the static component preserves geometry/appearance priors while the dynamic component focuses on learning temporal deformations.
+The Dynamic Transformer merges static features with motion tokens. Here, $\mathbf{T}_{3D}$ acts as queries and $\mathbf{T}_M$ as keys/values. This module is trained from scratch, allowing the model to focus exclusively on temporal deformations without compromising the pre-trained static priors.
 
-4. **Static-to-Dynamic Knowledge Transfer**:
+**4. Static-to-Dynamic Knowledge Transfer: LoRA Fine-Tuning**
 
-    - **Function**: Leverages pre-training knowledge from large-scale static data to accelerate and improve dynamic deformation learning.
-    - **Mechanism**: The Static Transformer is initialized with weights pre-trained on large-scale static datasets (from LHM). During dynamic task training, it is not fully fine-tuned; instead, lightweight LoRA adapters are used for adaptation. The Dynamic Transformer is trained from random initialization.
-    - **Design Motivation**: Experiments (Fig. 7) show that training the entire model from scratch fails to preserve input image texture details, while full fine-tuning tends to overwrite the original pre-trained knowledge. Only LoRA fine-tuning can retain rich static knowledge while allowing the Dynamic Transformer to effectively learn motion-dependent dynamics.
+To prevent the conflict between using static priors and learning new dynamic deformations, the Static Transformer uses lightweight LoRA adapters with frozen main weights. Ablations (Fig. 7) demonstrate that training from scratch loses texture details, while full fine-tuning overwrites existing knowledge. Only LoRA fine-tuning balances static knowledge preservation with dynamic learning.
 
-5. **Gaussian Decoder and Animation Rendering**:
+**5. Gaussian Decoder and Animation Rendering**
 
-    - **Function**: Converts Dynamic Transformer outputs into a 3DGS representation for animation and rendering.
-    - **Mechanism**: A single linear layer decoder predicts per-Gaussian mean, scale, rotation, opacity, color, and skinning weight offsets. LBS (combined with predicted offsets and diffusion skinning weights) drives the canonical-space avatar to target poses, rendered via a 3DGS renderer.
-    - **Design Motivation**: The canonical-space avatar already encodes motion-dependent cloth dynamics; LBS naturally preserves these effects. Skinning weight offsets allow each Gaussian to adjust its animation behavior based on motion history.
+The final step decodes the Dynamic Transformer output into renderable 3D Gaussians. Each Gaussian is assigned attributes (mean, scale, rotation, opacity, color) and a skinning weight offset. LBS is then applied to drive the canonical avatar to the target pose.
 
 ### Loss & Training
 
-The **DynaFlow loss** is the most important supervisory design innovation in this work:
+The **DynaFlow Loss** is the critical innovation for geometric supervision:
 
-- **Problem**: Conventional image reconstruction losses (L1, SSIM) entangle geometry and color, producing ambiguous geometric supervision. Patch-based losses cannot establish cross-region correspondences for large-scale cloth deformations.
-- **Solution**: In addition to RGB images, the renderer produces an $xy$ coordinate map $\mathbf{M} \in \mathbb{R}^{H \times W \times 2}$ (rendering each Gaussian's screen-space projected coordinates in place of color). LightGlue computes optical flow matches between rendered and real images, yielding $N$ source-target pixel coordinate pairs $(\mathbf{p}_{src}, \mathbf{p}_{tgt})$, subject to the constraint:
+- **Problem**: Traditional reconstruction losses (L1, SSIM) entangle geometry with color and fail to handle large displacements due to local patch operations.
+- **Mechanism**: Alongside RGB, the model renders an $xy$ coordinate map $\mathbf{M} \in \mathbb{R}^{H \times W \times 2}$ (rendering screen-space projection coordinates instead of color). LightGlue computes optical flow matching between the rendered map and the ground truth image, yielding $N$ pairs of source-target pixel coordinates $(\mathbf{p}_{src}, \mathbf{p}_{tgt})$. The constraint is defined as:
 
 $$\mathcal{L}_{flow} = \frac{1}{N} \sum \|\mathbf{M}(\mathbf{p}_{src}) - \mathbf{p}_{tgt}\|_1$$
 
-- **Key Details**: The match count $N$ is capped at 1024 for stability. DynaFlow is activated only in the latter half of training (early rendering quality is insufficient for reliable flow estimation). Gradients back-propagate through $\mathbf{M}$, directly correcting Gaussian 2D positions.
-- **Full Loss**: $\mathcal{L} = \mathcal{L}_{L1} + \mathcal{L}_{SSIM} + \mathcal{L}_{mask} + \mathcal{L}_{LPIPS} + \mathcal{L}_{flow} + \mathcal{L}_{reg}$ (including Laplacian regularization for face and hands).
-
-**Dataset Re-annotation**: Unified SMPL-X re-fitting is performed on three datasets — DNA-Rendering, 4D-Dress, and Actors-HQ — using DWPose for 2D keypoint prediction, SMPLest-X initialization, multi-view L1 loss optimization, and Savitzky-Golay temporal smoothing, yielding 11M+ high-quality image supervision samples.
+- **Training Strategy**: DynaFlow is activated in the later stages of training to ensure reliable flow matching. Gradients propagate through $\mathbf{M}$ to correct 2D Gaussian positions directly.
+- **Dataset Re-labeling**: A unified SMPL-X re-fitting pipeline was applied to DNA-Rendering, 4D-Dress, and Actors-HQ, resulting in over 11 million high-quality training samples.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | DNA-Rendering PSNR↑ | DNA-Rendering SSIM↑ | DNA-Rendering LPIPS↓ | 4D-Dress PSNR↑ | 4D-Dress SSIM↑ | 4D-Dress LPIPS↓ | Actors-HQ PSNR↑ | Actors-HQ SSIM↑ | Actors-HQ LPIPS↓ |
-|------|------|------|------|------|------|------|------|------|------|
-| IDOL | 17.84 | 0.902 | 0.155 | 21.31 | 0.948 | 0.077 | 20.93 | 0.910 | 0.138 |
-| PERSONA | 14.91 | 0.883 | 0.207 | 19.46 | 0.943 | 0.098 | 19.08 | 0.904 | 0.171 |
-| LHM | 17.42 | 0.901 | 0.169 | 21.03 | 0.950 | 0.085 | 20.29 | 0.908 | 0.151 |
-| **DynaAvatar** | **19.45** | **0.916** | **0.136** | **23.74** | **0.960** | **0.064** | **21.38** | **0.916** | **0.128** |
+| Method | DNA-Rendering PSNR↑ | 4D-Dress PSNR↑ | 4D-Dress LPIPS↓ | Actors-HQ PSNR↑ |
+|------|------|------|------|------|
+| IDOL | 17.84 | 21.31 | 0.077 | 20.93 |
+| PERSONA | 14.91 | 19.46 | 0.098 | 19.08 |
+| LHM | 17.42 | 21.03 | 0.085 | 20.29 |
+| **Ours** | **19.45** | **23.74** | **0.064** | **21.38** |
 
-DynaAvatar comprehensively outperforms existing single-image methods on all three datasets. On 4D-Dress, PSNR improves by +2.43 dB (vs. IDOL) and LPIPS decreases by 16.9%. Leading performance on the cross-domain Actors-HQ benchmark further demonstrates generalization capability.
+DynaAvatar outperforms existing single-image methods across all datasets. On 4D-Dress, the PSNR Gain is +2.43dB vs. IDOL, with a 16.9% reduction in LPIPS.
 
 ### Ablation Study
 
-| Configuration | 4D-Dress PSNR↑ | 4D-Dress SSIM↑ | 4D-Dress LPIPS↓ | Note |
-|------|---------|---------|---------|------|
-| w/o Dynamic Transformer | 22.57 | 0.952 | 0.068 | No motion history; cloth dynamics lost |
-| w/o Knowledge Transfer (train from scratch) | — | — | — | Severe loss of texture detail (Fig. 7b) |
-| Full fine-tuning (no LoRA) | — | — | — | Pre-trained knowledge overwritten (Fig. 7c) |
-| w/o DynaFlow | — | — | — | Missing large-scale cloth motion; blurry boundaries (Fig. 8) |
-| **Full DynaAvatar** | **23.62** | **0.958** | **0.062** | Complete model |
+| Configuration | 4D-Dress PSNR↑ | 4D-Dress LPIPS↓ | Description |
+|------|---------|---------|------|
+| w/o Dynamic Transformer | 22.57 | 0.068 | Loss of motion-dependent dynamics |
+| w/o Knowledge Transfer | — | — | Severe loss of texture details |
+| w/o DynaFlow | — | — | Missing large cloth deformations |
+| **Full Ours** | **23.62** | **0.062** | Complete framework |
 
 ### Key Findings
-- **Dynamic Transformer is key to cloth dynamics**: Removing it drops PSNR from 23.62 to 22.57 (−1.05 dB), with garments degenerating to static copies.
-- **LoRA is the critical format for knowledge transfer**: Both full fine-tuning and training from scratch lose the texture patterns of the input image; only LoRA strikes the right balance between preserving static priors and learning dynamics.
-- **DynaFlow resolves the large-deformation supervision problem**: Without DynaFlow, garments remain nearly static during fast motion with blurry boundaries; DynaFlow's pixel-level displacement supervision directly informs each Gaussian where to move.
-- **Same pose, different motion histories yield different cloth behavior** (Fig. 6): Similar poses but different motion histories (falling vs. jumping upward) produce clearly distinct garment deformations, confirming that the Dynamic Transformer genuinely utilizes motion information.
+- **Dynamic Transformer is Essential**: Removing it reduces PSNR by 1.05dB and results in static cloth.
+- **LoRA enables Knowledge Transfer**: Full fine-tuning overwrites textures; LoRA balances static priors with dynamic learning.
+- **DynaFlow solves Large Deformation Supervision**: Without it, garments remain nearly static during rapid movement.
+- **Motion Histories Matter**: The model distinguishes between different movements (e.g., jumping up vs. falling) for the same pose.
 
 ## Highlights & Insights
-- **DynaFlow loss design is highly elegant**: By rendering an $xy$ coordinate map instead of RGB and using optical flow to establish correspondences across large deformations, it completely decouples color-geometry entanglement into purely geometric supervision. This idea is not limited to avatars and can transfer to any 3DGS scenario requiring large-displacement supervision (e.g., dynamic scene reconstruction, object deformation modeling).
-- **Static-dynamic decoupled architecture**: The combination of a pre-trained Static Transformer (with LoRA-frozen backbone) and a from-scratch Dynamic Transformer achieves an elegant balance between "preserving pre-trained knowledge" and "learning new capabilities." This dual-tower + LoRA paradigm is reusable in other settings where new tasks must be learned from limited data.
-- **Data engineering contribution is underappreciated**: Re-annotating SMPL-X parameters across three datasets to obtain 11M+ training samples — optimizing directly from multi-view 2D keypoints rather than triangulated 3D keypoints — constitutes a reusable contribution in its own right.
+- **Decoupled Geometric Supervision**: DynaFlow effectively decouples color and geometry by rendering coordinate maps, providing pure geometric gradients for large displacements.
+- **Static-Dynamic Separation**: The "Dual Tower + LoRA" paradigm elegantly balances pre-trained knowledge with new task learning.
+- **Extensive Data Engineering**: The re-annotation of 11M+ samples is a significant contribution that provides high-quality supervision for the community.
 
 ## Limitations & Future Work
-- **Extremely loose garments**: The authors acknowledge that subjects wearing very loose clothing are excluded due to difficulties in 2D keypoint detection, indicating limitations under severe occlusion.
-- **Computational overhead**: LightGlue optical flow matching, while efficient, still adds training cost; the motion encoder requires 15 frames of history, necessitating zero-padding for the first frame.
-- **Lack of physical consistency**: Purely data-driven cloth deformation lacks physical constraints, potentially producing physically implausible penetrations or floating artifacts.
-- **Single-image geometric ambiguity**: Reconstructing occluded regions from a single image remains inherently ambiguous; multi-view input could further improve quality.
+- **Oversized Clothing**: Samples with extremely loose clothing remain challenging due to 2D keypoint detection failures.
+- **Computational Overhead**: LightGlue matching increases training costs, and motion history is required for inference.
+- **Physical Consistency**: Purely data-driven dynamics may still produce physical artifacts like inter-penetrations.
 
 ## Related Work & Insights
-- **vs. LHM**: LHM is also a zero-shot single-image Transformer method but relies solely on rigid LBS animation. DynaAvatar's Static Transformer directly reuses LHM's pre-trained weights, augmenting them with a Dynamic Transformer and DynaFlow to achieve a fundamental leap from "statically copied garments" to "dynamically deforming garments."
-- **vs. PERSONA**: PERSONA supports cloth dynamics but requires per-subject optimization (generating richly posed video sequences), making it slow and non-scalable. DynaAvatar performs feed-forward inference, offering far superior speed and scalability.
-- **vs. physics-based simulation methods (HOOD/ContourCraft)**: Physics-based methods require clean garment meshes or multi-view calibration and are sensitive to pose accuracy, making them prone to failure. DynaAvatar learns data-driven deformation priors and is more robust to pose noise.
+- **vs LHM**: While LHM uses rigid LBS, DynaAvatar leverages LHM's static weights but adds the Dynamic Transformer and DynaFlow to achieve non-rigid deformation.
+- **vs PERSONA**: Unlike PERSONA's per-person optimization, DynaAvatar is feed-forward and scalable.
+- **vs Physics-based methods**: DynaAvatar is more robust to pose noise compared to simulation-based approaches which require perfectly calibrated geometry.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First zero-shot single-image cloth-dynamic avatar; DynaFlow loss is a novel design, though the overall framework represents an incremental extension of LHM.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluation on three datasets with cross-domain generalization and detailed ablations; qualitative comparisons are intuitive and convincing.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated with sound logic; method description is thorough; figures and tables are well designed.
-- **Value**: ⭐⭐⭐⭐ Addresses an important limitation of single-image avatars; the data re-annotation pipeline has independent value; provides a clear contribution to future 3D human reconstruction research.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -162,10 +160,10 @@ DynaAvatar comprehensively outperforms existing single-image methods on all thre
 ## Related Papers
 
 - [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 - [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
-- [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
-- [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](../../ICCV2025/3d_vision/zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
-- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+- [\[CVPR 2026\] MeshLAM: Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](meshlam_feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
+- [\[ECCV 2024\] ZeST: Zero-Shot Material Transfer from a Single Image](../../ECCV2024/3d_vision/zest_zero-shot_material_transfer_from_a_single_image.md)
 
 </div>
 

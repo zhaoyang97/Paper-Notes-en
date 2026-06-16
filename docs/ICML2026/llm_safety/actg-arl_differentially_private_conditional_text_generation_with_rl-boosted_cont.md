@@ -2,139 +2,145 @@
 title: >-
   [Paper Note] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control
 description: >-
-  [ICML 2026][LLM Safety][Private Synthetic Data] This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two sub-tasks: feature learning and conditional text generation. It further…
+  [ICML 2026][LLM Safety][Paper Note] This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two subtasks: feature learning and conditional text generation. It further introduces Anchored RL, which enhances the instruction-following capabilities of the conditional generator through a hybrid RL objective and Best-of-
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Private Synthetic Data"
-  - "Conditional Text Generation"
-  - "Attribute Control"
-  - "Instruction Following"
-  - "Reward Hacking"
+  - ICML 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: cdda168ccd318975
+content_hash: 1c349a6b6eaa2858
 ---
-
 # ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.18232](https://arxiv.org/abs/2510.18232)  
 **Code**: https://github.com/actg-arl/ACTG-ARL  
-**Area**: Differential Privacy / Text Generation / RL Alignment  
+**Area**: Differential Privacy / Text Generation / Reinforcement Learning Alignment  
 **Keywords**: Private Synthetic Data, Conditional Text Generation, Attribute Control, Instruction Following, Reward Hacking
 
 ## TL;DR
-This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two sub-tasks: feature learning and conditional text generation. It further introduces Anchored RL, which enhances the instruction-following capability of the conditional generator by mixing reinforcement learning objectives with SFT anchors based on Best-of-N samples. While maintaining text fidelity, it achieves a 20% MAUVE improvement over prior work on biomedical data.
+This paper proposes ACTG, a hierarchical framework that decomposes private text generation into two subtasks: feature learning and conditional text generation. It further introduces Anchored RL, which enhances the instruction-following capabilities of the conditional generator through a hybrid RL objective and Best-of-N SFT anchors. Experimental results on biomedical data show a 20% improvement in MAUVE compared to prior work while maintaining text fidelity.
 
 ## Background & Motivation
 
 **Background**
-Modern AI applications rely on vast amounts of user data (mobile input, recommendation history, dialogue preferences, etc.), which carry high privacy risks. Generating private synthetic data is a promising paradigm that allows downstream tasks to reuse synthetic data without additional privacy costs. DP synthetic text is a research hotspot, but existing work mainly focuses on generating static datasets, overlooking the practical need for fine-grained control.
+Modern AI applications rely on massive user data (e.g., mobile input, recommendation history, dialogue preferences), which entails high privacy risks. Generating private synthetic data is a promising paradigm that allows downstream tasks to reuse synthetic data without additional privacy costs. Differentially Private (DP) synthetic text is a focal point, but existing work primarily focuses on generating static datasets, neglecting the practical requirements for fine-grained control.
 
 **Limitations of Prior Work**
-1.  **Limitations of CTCL**: It relies on pre-trained general topic models that may mismatch with private domain data, forcing the classification of nuanced text into coarse-grained topics, leading to inaccurate topic inference. When the dataset is small relative to the number of topics, histograms contain many null values, causing signals to be submerged in noise after denoising.
-2.  **Trade-off between Control and Fidelity**: Traditional RL optimization leads to reward hacking, where the model learns to generate outputs that formally satisfy constraints but suffer from degraded text quality (e.g., TL;DR-style summaries).
+1. **CTCL Limitations**: Relies on pre-trained global topic models, which might not match private-domain data. Forcing fine-grained text into coarse topic categories leads to inaccurate topic inference. When the dataset is small relative to the number of topics, the histograms contain many null values, causing signals to be submerged in noise after perturbation.
+2. **Control vs. Fidelity Balance**: Traditional RL optimization can lead to reward hacking, where the model learns to generate outputs that formally satisfy constraints but suffer from degraded text quality (e.g., TL;DR-style summaries).
 
 **Key Challenge**
-The distribution matching objective encourages sampling from high-density regions of $P(X,Y)$ (areas where the model is already confident), whereas the value of data augmentation stems from low-density regions (model uncertainty boundaries or under-covered groups)—this leads to a goal misalignment between the generator and the augmentation task.
+Distribution matching objectives encourage sampling from high-density regions of $P(X,Y)$ (where the model is already confident), whereas the value of data augmentation stems from low-density regions (uncertain boundaries or under-covered populations). This leads to an objective misalignment between the generator and the augmentation task.
 
 **Goal**
-1.  Construct a modular framework to identify optimal configurations through systematic ablation.
-2.  Improve the instruction-following capability of the conditional generator while maintaining privacy.
+1. Construct a modular framework to identify optimal configurations through systematic ablation.
+2. Improve the instruction-following capabilities of the conditional generator while maintaining privacy.
 
 **Key Insight**
-Starting from "attribute conditioning," structured tabular schemas are utilized as features, combined with a DP feature generator and a DP fine-tuned conditional generator. Furthermore, reinforcement learning is integrated with feature constraints to construct verifiable reward signals.
+Starting from "attribute conditioning," the framework utilizes structured tabular schemas as features combined with a DP feature generator and a DP fine-tuned conditional generator. Furthermore, reinforcement learning is integrated with feature constraints to construct verifiable reward signals.
 
 **Core Idea**
-Hierarchical decomposition: First, extract modeled features $\mathcal{D}_{\text{priv}}^f$ from private data and use a DP tabular synthesizer to generate private features $\mathcal{D}_{\text{syn}}^{\tilde{f}}$. Second, use DP fine-tuning to learn the conditional mapping from features to text. Finally, use Anchored RL with Best-of-N data as SFT anchors to prevent RL drift, achieving hybrid optimization with $\mathcal{L}=\mathcal{L}_{\text{RL}}+\gamma\cdot\mathcal{L}_{\text{SFT}}$.
+Hierarchical decomposition: First, structured features $\mathcal{D}_{\text{priv}}^f$ are extracted from private data, and a DP tabular synthesizer generates private features $\mathcal{D}_{\text{syn}}^{\tilde{f}}$. Second, a conditional mapping from features to text is learned via DP fine-tuning. Finally, Anchored RL uses Best-of-N data as SFT anchors to prevent RL drift, achieving hybrid optimization with $\mathcal{L}=\mathcal{L}_{\text{RL}}+\gamma\cdot\mathcal{L}_{\text{SFT}}$.
 
 ## Method
 
 ### Overall Architecture
-The framework is divided into three stages:
+ACTG-ARL decomposes "private conditional text generation" into a pipeline: First, an Oracle LLM extracts a structured attribute matrix from private text. Then, a tabular synthesizer performs DP synthesis in a low-dimensional feature space. Next, a "feature → text" conditional generator $G_{x|f}$ is DP fine-tuned. Finally, Anchored RL further enhances the instruction-following capability of this generator without touching the original private data. The entire pipeline splits the privacy budget into $\varepsilon_1$ (feature synthesis) and $\varepsilon_2$ (conditional fine-tuning), while the RL phase is "free" as it only samples from the model itself.
 
-**Phases 0-2 (ACTG)**:
-1.  Feature Extraction: Use an Oracle LLM to extract a structured attribute matrix $D_{\text{priv}}^f$ from private text $D_{\text{priv}}^x$, containing $K$ fields with predefined options.
-2.  Private Feature Generation (Privacy Budget $\varepsilon_1$): Use AIM (Advanced Information Management) for differentially private synthesis of tabular features to generate $D_{\text{syn}}^{\tilde{f}}$.
-3.  Private Conditional Text Generation (Privacy Budget $\varepsilon_2$): Perform DP fine-tuning on (feature, text) pairs to learn $G_{x|f}$ for conditional text generation.
-
-**Phases 3-4 (Anchored RL)**:
-4.  Best-of-N Anchor Data: For each feature $f\sim G_f$, generate $N$ text candidates from $G_{x|f}$, select the best one based on Instruction Following Accuracy (IFAcc) to form the SFT anchor $D_{\text{SFT}_N}$ (with no additional privacy cost).
-5.  Hybrid Objective Training: Starting from the $G_{x|f}$ checkpoint, jointly optimize using $\mathcal{L}_{\text{RL}}+\gamma\cdot\mathcal{L}_{\text{SFT}}$. A linear decay strategy is applied to $\gamma$ (high initially to maintain fidelity, gradually decreasing to allow instruction-following improvement).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Private Text"] --> B
+    subgraph ACTG["Hierarchical Decomposition + Structured Attribute Schema (Design 1)"]
+        direction TB
+        B["Oracle LLM Annotation<br/>Extract K structured attributes"] --> C["AIM Tabular Synthesizer<br/>Low-dim feature DP synthesis (ε₁)"]
+        C --> D["DP-FT Conditional Generator<br/>Learn feature→text mapping (ε₂)"]
+    end
+    D --> E["Best-of-N Sampling<br/>Sample N per feature, select best via IFAcc"]
+    subgraph ARL["Anchored RL (Design 2)"]
+        direction TB
+        E --> F["SFT Anchor Set<br/>Zero privacy cost"]
+        F --> G["Hybrid Loss L=L_RL+γ(t)·L_SFT<br/>γ linear decay to prevent reward hacking"]
+    end
+    G --> H["Controllable Conditional Generator +<br/>DP Synthetic Dataset"]
+    I["IFAcc Verifiable Reward (Design 3)<br/>Oracle attribute extraction & comparison"] -.Scoring.-> E
+    I -.Reward.-> G
+```
 
 ### Key Designs
 
-1.  **Hierarchical Decomposition + Structured Attribute Schema**:
-    - **Function**: Decomposes the conditional generation problem into two tractable sub-problems and replaces general topics with domain-specific attribute schemas.
-    - **Mechanism**: The first layer learns the feature marginal distribution (in a low-dimensional tabular space, using the mature AIM synthesizer, which is more efficient for the privacy budget); the second layer learns the text distribution conditioned on features (using DP fine-tuning). Attribute schemas are designed by an Oracle LLM or experts on private data to capture key dimensions, avoiding domain mismatch and sparse histogram issues caused by general topics in CTCL.
-    - **Design Motivation**: Direct the privacy budget toward critical information and align with the natural structural hierarchy of the data.
+**1. Hierarchical Decomposition + Structured Attribute Schema: Optimizing Privacy Budget Allocation**
 
-2.  **Anchored RL for Reward Hacking Prevention**:
-    - **Function**: Simultaneously improves instruction following (IFAcc) and maintains text fidelity (MAUVE), avoiding the reward hacking typical of standard PPO.
-    - **Mechanism**: (i) Construct SFT anchors $D_{\text{SFT}_N}$ by sampling from $G_{x|f}$ itself using Best-of-N (no privacy cost since the model is already privately fine-tuned); (ii) Use a hybrid loss $\mathcal{L}=\mathcal{L}_{\text{RL}}+\gamma(t)\mathcal{L}_{\text{SFT}}$ during the RL phase to anchor the model near the reference distribution; (iii) Linear decay of $\gamma(t)$—strong fidelity initially, gradually relaxed for instruction-following gains.
-    - **Design Motivation**: Adapt the "reference KL" concept from RLHF to private text generation; using self-sampled SFT anchors maintains quality without leaking additional privacy.
+Directly applying DP-FT to an LLM to learn private text distributions end-to-end dilutes the limited privacy budget across massive tokens, resulting in poor quality. CTCL uses global topics as conditions but suffers from domain mismatch—pre-trained topic models do not align with private data, and sparse histograms lead to signal drowning after adding noise. Ours decomposes the problem: the first layer learns the **marginal distribution of features** in a low-dimensional tabular space using the AIM synthesizer, which utilizes the privacy budget far more efficiently. The second layer learns the **feature-conditioned text distribution** $G_{x|f}$ via DP-FT. Crucially, the attribute schema uses $K$ structured fields designed by an Oracle LLM or domain experts, naturally fitting the internal structure of the data and bypassing sparse histograms.
 
-3.  **Instruction Following Accuracy as a Verifiable Reward**:
-    - **Function**: Formalizes "compliance with attribute constraints" as an automated reward signal.
-    - **Mechanism**: Use an Oracle LLM to back-extract attributes from generated text and calculate $\text{IFAcc}=\mathbb{E}_f[\frac{1}{K}\sum_{k=1}^K\mathbb{I}(f_k=\hat{f}_k)]$. This metric is used as the reward in the RL phase and for Best-of-N filtering.
-    - **Design Motivation**: The structured attribute space naturally provides a verifiable, automatically evaluable target signal, serving as a clear reward for RL in generation tasks.
+**2. Anchored RL: Preventing Reward Hacking with Zero Privacy Cost Anchors**
+
+Standard PPO for optimizing instruction following can trigger reward hacking, where models satisfy constraints but text quality collapses (e.g., standard PPO dropped MAUVE from 0.73 to 0.42 in ablation). The solution draws from RLHF's "reference KL" but replaces the reference with a non-private source: for each feature $f$, $N$ candidates are sampled from the already privatized $G_{x|f}$, and the best one is selected based on IFAcc to form the SFT anchor set $D_{\text{SFT}_N}$. Since these samples come from an already privatized model, constructing anchors incurs **zero additional privacy cost**. A hybrid loss $\mathcal{L}=\mathcal{L}_{\text{RL}}+\gamma(t)\cdot\mathcal{L}_{\text{SFT}}$ is used, with $\gamma(t)$ decaying linearly to preserve fidelity early on while allowing for instruction following improvements later.
+
+**3. IFAcc: Verifiable Reward for Constraint Satisfaction**
+
+The hardest part of RL in generation tasks is the lack of clear, automated reward signals. A structured attribute space provides this naturally. For a generated text, an Oracle LLM extracts the perceived attributes $\hat{f}$, which are compared field-by-field with the target features $f$ to define Instruction Following Accuracy:
+
+$$\text{IFAcc}=\mathbb{E}_f\Big[\tfrac{1}{K}\sum_{k=1}^K\mathbb{I}(f_k=\hat{f}_k)\Big]$$
+
+This metric serves two purposes: as the reward signal for RL and as the scoring criteria for Best-of-N anchor selection.
 
 ### Loss & Training
-**DP Accounting**: The total privacy budget $(\varepsilon,\delta)$ consists of two stages $\varepsilon=\varepsilon_1+\varepsilon_2$. For each total budget $\varepsilon\in\{1,4,\infty\}$, the $(\varepsilon_1, \varepsilon_2)$ split is tuned independently; $\delta=1/(n\log n)$. The RL phase uses a hybrid loss $\mathcal{L}=\mathcal{L}_{\text{RL}}+\gamma(t)\mathcal{L}_{\text{SFT}}$ with linear decay of $\gamma(t)$.
+The total privacy budget is split as $\varepsilon=\varepsilon_1+\varepsilon_2$. For each $\varepsilon\in\{1,4,\infty\}$, the split $(\varepsilon_1,\varepsilon_2)$ is optimized independently with $\delta=1/(n\log n)$. Experiments show that for $\varepsilon=4$, the optimal split is approximately $(1.5,2.5)$ or $(2,2)$. The RL phase uses the hybrid loss starting from the $G_{x|f}$ checkpoint, with $\gamma(t)$ linearly decaying to balance fidelity and instruction following.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Method | MAUVE | F1 Class | NTP Acc | IFAcc | $d_{\text{JS}}^f$ |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Dataset | Method | MAUVE | F1 Classify | NTP Acc | IFAcc | $d_{\text{JS}}^f$ |
+|--------|------|-------|--------|--------|-------|----------|
 | bioRxiv(ε=4) | Aug-PE | 0.68 | 0.72 | - | - | 0.15 |
 | | vanilla DP-FT | 0.62 | 0.68 | 0.41 | 0.53 | 0.18 |
 | | CTCL | 0.64 | 0.70 | 0.42 | 0.48 | 0.16 |
-| | **Ours** (ACTG) | 0.73 | 0.76 | 0.56 | 0.53 | 0.09 |
-| | **Ours** (ACTG-ARL) | **0.74** | **0.79** | **0.58** | **0.62** | **0.08** |
+| | Ours (ACTG) | 0.73 | 0.76 | 0.56 | 0.53 | 0.09 |
+| | Ours (ACTG-ARL) | **0.74** | **0.79** | **0.58** | **0.62** | **0.08** |
 | PMC-Patients(ε=4) | CTCL | 0.59 | 0.64 | 0.38 | 0.48 | 0.20 |
-| | **Ours** (ACTG) | **0.71** | 0.75 | 0.51 | 0.50 | 0.10 |
-| | **Ours** (ACTG-ARL) | 0.70 | **0.77** | **0.53** | **0.58** | **0.09** |
+| | Ours (ACTG) | **0.71** | 0.75 | 0.51 | 0.50 | 0.10 |
+| | Ours (ACTG-ARL) | 0.70 | **0.77** | **0.53** | **0.58** | **0.09** |
 
 ### Ablation Study
 
-| Component | Removal/Replacement | MAUVE | IFAcc | $d_{\text{JS}}^f$ | Description |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Feature Model | Use CTCL general topics | 0.64 | 0.48 | 0.16 | Significant performance drop with general topics |
-| Feature Generator | Replace AIM with DP-FT | 0.68 | 0.50 | 0.12 | AIM performs better (less budget waste) |
-| Conditional Generator | Replace DP-FT with Direct Prompting | 0.61 | 0.55 | 0.14 | Fine-tuned version is more stable |
+| Component | Remove/Replace | MAUVE | IFAcc | $d_{\text{JS}}^f$ | Description |
+|------|---------|-------|-------|----------|------|
+| Feature Model | Replace with CTCL Topics | 0.64 | 0.48 | 0.16 | Significant performance drop |
+| Feature Gen | DP-FT instead of AIM | 0.68 | 0.50 | 0.12 | AIM performs better (less budget waste) |
+| Cond. Gen | Prompting instead of DP-FT | 0.61 | 0.55 | 0.14 | FT version is more stable |
 | Full ACTG | - | 0.73 | 0.53 | 0.09 | Baseline |
-| +Standard PPO | No Anchor | 0.42 | 0.68 | 0.22 | Severe reward hacking; MAUVE collapses |
+| +Standard PPO | Without Anchors | 0.42 | 0.68 | 0.22 | Severe reward hacking; MAUVE collapse |
 | +Anchored RL | Full Method | 0.74 | 0.62 | 0.08 | Improved IFAcc while maintaining fidelity |
 
 ### Key Findings
-- **Feature Design is Pivotal**: Structured attribute schemas significantly outperform general topics, increasing MAUVE from 0.64 to 0.73 (+14%) on bioRxiv.
-- **Tabular vs. Text Feature Generation**: AIM (tabular) saves privacy budget compared to DP-FT (text), resulting in smaller error $d_{\text{JS}}^f$ (0.12 vs. 0.14).
-- **Severe RL Reward Hacking**: Standard PPO destroys MAUVE from 0.73 to 0.42, whereas Anchored RL recovers it to 0.74 (with IFAcc increasing from 0.53 to 0.62).
-- **Best-of-N Effectiveness**: Selecting from $N=5$ or $10$ candidates produces high-quality, diverse SFT datasets without increasing privacy costs.
-- **Privacy Budget Splitting**: At $\varepsilon=4$, the optimal split is approximately $(\varepsilon_1,\varepsilon_2)\approx(1.5,2.5)$ or $(2,2)$, indicating that both stages require sufficient budget.
+- **Feature Design is Crucial**: Structured attribute schemas significantly outperform global topics, improving MAUVE from 0.64 to 0.73 on bioRxiv (+14%).
+- **Tabular vs. Text Feature Generation**: AIM (tabular) saves privacy budget compared to DP-FT (text), yielding smaller $d_{\text{JS}}^f$ errors.
+- **RL Reward Hacking**: Standard PPO destroys MAUVE (0.73 to 0.42), whereas Anchored RL recovers it to 0.74 while boosting IFAcc (0.53 to 0.62).
+- **Best-of-N Effectiveness**: Selecting from N=5 or 10 candidates produces high-quality, diverse SFT datasets at no privacy cost.
+- **Privacy Budget Splitting**: At $\varepsilon=4$, an approximately equal split $(\varepsilon_1 \approx \varepsilon_2)$ is often optimal, suggesting both stages require sufficient budget.
 
 ## Highlights & Insights
-- **Elegance of Hierarchical Design**: Decomposing complex end-to-end DP text generation into low-dimensional tabular synthesis + conditional text generation improves modularity and allows using optimal tools for each module (AIM vs. LLM fine-tuning).
-- **Practical Ingenuity of Anchored RL**: Extracting references from the model itself via Best-of-N avoids private data access and has zero privacy cost, yet effectively prevents reward hacking—a clever adaptation of RLHF for privacy scenarios.
-- **Attribute Matching as Reward**: Leveraging the structured attribute space as the basis for the IFAcc metric transforms the text understanding problem into a formalized attribute extraction task, facilitating automation and verification.
+- **Elegance of Hierarchical Design**: Decomposing complex end-to-end DP text generation into low-dimensional tabular synthesis and conditional text generation improves modularity and allows for specialized tools (AIM vs. LLM fine-tuning).
+- **Practicality of Anchored RL**: Using Best-of-N self-sampling provides a reference without accessing private data, effectively preventing reward hacking—a clever adaptation of RLHF for privacy-constrained scenarios.
+- **Attribute Matching as Reward**: Leveraging the structured attribute space for IFAcc metrics converts fuzzy semantic judgment into a formal, verifiable extraction problem.
 
 ## Limitations & Future Work
-- **Limited Model and Data Scope**: Experiments were only conducted on gemma-3-1b-pt in the biomedical domain, not covering other fields like law, finance, or dialogue, nor exploring the performance of larger models.
-- **A Priori Attribute Space Design**: The paper does not discuss how to automate the design of optimal attribute schemas, currently relying on manual effort or an Oracle LLM, which may be a bottleneck for application.
-- **Privacy Budget Split Optimization**: The $(\varepsilon_1,\varepsilon_2)$ split was determined via hyperparameter tuning, lacking theoretical guidance or adaptive strategies.
+- **Scope of Models and Data**: Experiments were limited to gemma-3-1b-pt in the biomedical domain; other fields like law or finance and larger models are unexplored.
+- **Attribute Space Design**: The paper does not discuss automated design for optimal attribute schemas, currently relying on manual or Oracle LLM intervention.
+- **Budget Optimization**: The $(\varepsilon_1,\varepsilon_2)$ split is determined via hyperparameter tuning rather than theoretical guidance or adaptive strategies.
 
 ## Related Work & Insights
-- **vs. DP-FT**: Directly applying DP fine-tuning to LLMs without considering conditional control or structured features results in significant quality degradation. This work improves upon it through hierarchy and attribute conditioning.
-- **vs. CTCL**: Both use conditioning ideas, but while CTCL uses fixed general topics, this work uses data-specific attribute schemas, significantly improving schema-data alignment.
-- **vs. Aug-PE (Private Evolution)**: PE refines through LLM iteration, while this work uses direct fine-tuning + RL. ACTG-ARL is more stable in the bio domain.
+- **vs. DP-FT**: Direct DP fine-tuning of LLMs without conditional control leads to significant quality degradation. Ours improves this through hierarchy and attribute conditioning.
+- **vs. CTCL**: Both use conditioning, but CTCL uses fixed global topics whereas ours uses data-specific attribute schemas to improve alignment.
+- **vs. Aug-PE (Private Evolution)**: While PE uses iterative LLM refinement, ours uses direct fine-tuning + RL, providing more stability in the biomedical domain.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The hierarchical framework and Anchored RL are both new contributions; the zero-cost anchor idea from Best-of-N is ingenious.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two biomedical datasets and multidimensional evaluation with thorough ablation. A slight weakness is the lack of diverse dataset families.
-- Writing Quality: ⭐⭐⭐⭐ Clear problem description, complete algorithm pseudocode, and sufficient experimental details.
-- Value: ⭐⭐⭐⭐ Practical needs in DP synthetic text are addressed (+20% MAUVE); this is the first systematic exploration of conditional control in privacy applications, offering high practical value.
+- Novelty: ⭐⭐⭐⭐ Hierarchical framework and Anchored RL are significant contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid multi-dimensional evaluation and ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem description and algorithms.
+- Value: ⭐⭐⭐⭐ Addresses the practical need for controllable private synthetic text (+20% MAUVE).
 
 <!-- RELATED:START -->
 

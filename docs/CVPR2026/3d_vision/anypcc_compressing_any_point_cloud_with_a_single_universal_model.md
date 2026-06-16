@@ -2,155 +2,158 @@
 title: >-
   [Paper Note] AnyPcc: Compressing Any Point Cloud with a Single Universal Model
 description: >-
-  [CVPR 2026][3D Vision][point cloud compression] AnyPcc proposes a Universal Context Model (UCM) that integrates dual-granularity spatial and channel priors, combined with an Instance-Adaptive Fine-Tuning (IAFT) strategy…
+  [CVPR 2026][3D Vision][point cloud compression] AnyPcc is proposed to achieve SOTA point cloud geometry compression across 15 diverse datasets using a single model. By employing a Universal Context Model (integrating spatial and channel-wise dual-granularity priors) and an Instance-Adaptive Fine-Tuning (IAFT) strategy, it achieves ~12% bitrate gain over G-PCC v23.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "point cloud compression"
-  - "universal context model"
-  - "instance-adaptive fine-tuning"
-  - "occupancy code"
-  - "lossless/lossy compression"
+  - CVPR 2026
+  - 3D Vision
+  - point cloud compression
+  - universal context model
+  - instance-adaptive fine-tuning
+  - occupancy code
+  - lossless/lossy compression
 date: 2026-05-08
-content_hash: 127ce85398d88e7e
+content_hash: 46a76f92983fa148
 ---
-
 # AnyPcc: Compressing Any Point Cloud with a Single Universal Model
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.20331](https://arxiv.org/abs/2510.20331)  
 **Code**: [anypcc.github.io](https://anypcc.github.io)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: point cloud compression, universal context model, instance-adaptive fine-tuning, occupancy code, lossless/lossy compression
 
 ## TL;DR
 
-AnyPcc proposes a Universal Context Model (UCM) that integrates dual-granularity spatial and channel priors, combined with an Instance-Adaptive Fine-Tuning (IAFT) strategy, to achieve state-of-the-art point cloud geometry compression across 15 diverse datasets using a single model, yielding approximately 12% bitrate reduction over G-PCC v23.
+AnyPcc is proposed to achieve SOTA point cloud geometry compression across 15 diverse datasets using a single model. By employing a Universal Context Model (integrating spatial and channel-wise dual-granularity priors) and an Instance-Adaptive Fine-Tuning (IAFT) strategy, it achieves ~12% bitrate gain over G-PCC v23.
 
 ## Background & Motivation
 
-**Pressing demand for point cloud compression**: The widespread adoption of 3D applications such as autonomous driving and VR has made point clouds a standard 3D data format, where efficient geometry compression is critical for reducing storage and transmission costs.
+**Urgent need for point cloud compression**: With the widespread use of 3D applications like autonomous driving and VR, point clouds have become a standard 3D data format. Efficient geometry compression is crucial for reducing storage and transmission costs.
 
-**Poor generalization of existing methods**: Learning-based methods perform well on standard benchmarks but degrade sharply in real-world scenarios, struggling with varying density (sparse LiDAR vs. dense reconstruction) and out-of-distribution (OOD) data.
+**Poor generalization of existing methods**: Learning-based methods perform well on standard benchmarks but suffer significant performance drops in real-world scenarios, particularly when facing varying densities (sparse LiDAR vs. dense reconstruction) and out-of-distribution (OOD) data.
 
-**Density sensitivity of context models**: Spatial-prior methods (e.g., Unicorn) are unreliable for sparse scenes, while channel-wise methods (e.g., RENO) are robust to sparse data but neglect coarse-grained structural information; each category has its own blind spot.
+**Density sensitivity in context models**: Existing spatial-prior methods (e.g., Unicorn) are unreliable in sparse scenarios, while channel-wise methods (e.g., RENO) are robust to sparse data but ignore coarse-grained structural information. Both approaches have specific weaknesses.
 
-**OOD data as the core bottleneck**: Even models claiming universality, such as Unicorn-U, fail on novel point cloud types including medical scans, 3D Gaussian Splats, and Dust3R/VGGT reconstructions, due to the lack of an effective distribution adaptation mechanism.
+**OOD data as a core bottleneck**: Even models claiming universality, such as Unicorn-U, collapse on novel point cloud types like medical scans, 3D Gaussian Splats, or Dust3R/VGGT reconstructions due to a lack of efficient OOD adaptation mechanisms.
 
-**Implicit compression is too slow**: INR-based methods train a network from scratch per instance, offering strong generalization but unacceptable encoding times for practical deployment.
+**Implicit compression is too slow**: Implicit Neural Representation (INR) methods (training a network from scratch for each instance) offer strong generalization but involve unacceptable encoding times, making them impractical for deployment.
 
-**Lack of a unified framework**: Existing methods target either dense objects or sparse LiDAR; no single model simultaneously handles all point cloud types while supporting both lossless and lossy compression.
+**Lack of a unified framework**: Existing methods target either dense objects or sparse LiDAR; no single model exists that handles all point cloud types while supporting both lossless and lossy compression.
 
 ## Method
 
 ### Overall Architecture
 
-AnyPcc adopts a multi-scale octree representation and formulates point cloud geometry compression as a scale-by-scale occupancy code probability prediction problem. The framework comprises three components: (1) a Universal Context Model (UCM) for robust cross-density context modeling; (2) Instance-Adaptive Fine-Tuning (IAFT) to address OOD generalization via instance-level adaptation; and (3) a probability threshold mechanism that seamlessly extends lossless compression to lossy scenarios. During encoding, UCM predicts occupancy code probability distributions coarse-to-fine at each scale, which are then fed to an arithmetic coder; for OOD data, IAFT rapidly fine-tunes a small subset of parameters and encodes the weight delta into the bitstream.
+AnyPcc addresses whether a **single** model can compress everything from sparse LiDAR to dense human bodies and unseen 3D Gaussian Splats. It organizes the point cloud into a multi-scale octree, transforming geometry compression into a scale-by-scale probability prediction task. From the coarsest to the finest scale, the occupancy of each voxel is described by an 8-bit occupancy code. The model predicts the probability distribution of these codes, allowing an arithmetic coder to compress the bitstream toward the entropy lower bound.
 
-### Key Design 1: Universal Context Model (UCM) — Dual-Granularity Spatial-Channel Context
+The pipeline comprises three core components: the **Universal Context Model (UCM)**, which outputs occupancy code probabilities across scales using density-insensitive context; **Instance-Adaptive Fine-Tuning (IAFT)**, which temporarily fine-tunes a few parameters during encoding for OOD adaptation; and a probability threshold mechanism that enables lossy compression using the same lossless model. During encoding, UCM predicts probabilities for arithmetic coding; for OOD data, IAFT performs fine-tuning and embeds weight increments into the bitstream. The decoder mirrors this process to reconstruct the geometry.
 
-**Function**: A recursively parameter-shared context model that, at each scale, draws context from three sources: parent-scale occupancy codes, fine-grained channel priors, and coarse-grained spatial priors.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Point Cloud<br/>Sparse LiDAR / Dense Human / 3DGS / OOD"] --> B["Multi-scale Octree<br/>Scale-wise 8-bit occupancy code prediction"]
+    subgraph UCM["Universal Context Model"]
+        direction TB
+        C["Spatial Grouping<br/>Checkerboard Split (Even/Odd), 2-step Autoregression"]
+        D["Channel Grouping<br/>Occupancy code split (Lower/Upper 4 bits) for cascaded prediction"]
+        C --> E["Dual-granularity Fusion<br/>Sparse Conv aggregates decoded neighbors + Fusion Net"]
+        D --> E
+    end
+    B --> UCM
+    UCM --> F["Occupancy Code Probability Distribution"]
+    F -->|OOD Data| G["Instance-Adaptive Fine-Tuning<br/>Fine-tune Prediction Head only, write weight increments to bitstream"]
+    G --> H["Arithmetic Coding"]
+    F -->|In-distribution| H
+    H --> I["Unified Lossless-Lossy Compression<br/>Prob. Threshold: Scale Truncation / Top-k Selection"]
+    I --> J["Bitstream Output"]
+```
 
-**Mechanism**:
-- **Spatial Grouping (SG)**: A 3D checkerboard pattern partitions the current-scale occupancy codes into two groups (even/odd coordinate sums), forming a two-step autoregressive process. When predicting the second group, decoded neighbor information from the first group is available.
-- **Channel Grouping (CG)**: Each 8-bit occupancy code is split into two 4-bit sub-symbols (low 4 bits + high 4 bits), enabling cascaded prediction — the low 4 bits are predicted first, then the high 4 bits are predicted conditioned on them.
-- **Cooperative Aggregation**: When predicting the second spatial group, sparse convolution aggregates features from the decoded first-group codes, which are then fused with the original context via a fusion network, enabling deep interaction between coarse and fine-grained information.
+### Key Designs
 
-**Design Motivation**: The authors formally prove two theorems: (1) channel-wise autoregression and spatial sub-voxel autoregression are information-theoretically equivalent (Theorem 1); (2) sparse convolution in occupancy code space has an effective receptive field equivalent to a convolution with twice the kernel width in the fine-grained voxel space (Theorem 2), which is especially critical for sparse data. Ablation studies show that using channel grouping alone (as in RENO) yields negligible improvement and must be combined with spatial priors to be effective.
+**1. Universal Context Model: Handling sparse and dense point clouds simultaneously**
 
-### Key Design 2: Instance-Adaptive Fine-Tuning (IAFT) — Bridging Explicit and Implicit Compression
+Existing methods are specialized: models relying on **spatial priors** (neighboring voxels), like Unicorn, are accurate for dense objects but collapse when points are sparse. Conversely, models relying on **channel-wise priors** (predicting bits within the occupancy code), like RENO, are robust for sparse data but lose coarse structural info. UCM utilizes both priors at every scale, allowing them to complement each other.
 
-**Function**: For each input point cloud instance, IAFT rapidly fine-tunes a small subset of UCM parameters and encodes the resulting weight delta into the bitstream.
+The process follows two paths. **Spatial Grouping** splits the occupancy codes of the current scale into two groups using a 3D checkerboard pattern (even/odd coordinate sums), forming a two-step autoregression: the first group is encoded/decoded first, and its decoded neighbors are used to predict the second group. **Channel Grouping** splits each 8-bit occupancy code along the bit dimension into two 4-bit sub-symbols for cascaded prediction (predicting lower bits first, then upper bits conditioned on the lower). This extracts context without relying on spatial neighbors. These paths merge when predicting the second spatial group, using sparse convolutions to aggregate features from the decoded first group.
 
-**Mechanism**:
-- UCM parameters are partitioned into a frozen subset $\Theta_{\text{frozen}}$ (feature extraction and sparse convolution, comprising the vast majority) and a tunable subset $\Theta_{\text{tune}}$ (linear layers in the Prediction Head only).
-- During encoding, a single forward pass caches the frozen component outputs; only $\Theta_{\text{tune}}$ is then iteratively optimized over the cached features (~200 iterations, converging in seconds).
-- The optimized weights are uniformly scalar-quantized and encoded via DeepCABAC into the bitstream.
+The authors provide two theoretical supports. Theorem 1 proves that bit-wise autoregression and spatial sub-voxel autoregression are information-theoretically equivalent, meaning channel grouping is not just a "trick" but an alternative spatial modeling. Theorem 2 proves that sparse convolution in the occupancy code space has a receptive field equivalent to a kernel twice as wide in the finer voxel space—providing a larger effective field of view with less computation, which is vital for sparse point clouds.
 
-**Design Motivation**: INR methods are prohibitively slow to train from scratch, while fixed pretrained models cannot adapt to OOD data. IAFT combines the strengths of both: the pretrained model's strong priors accelerate convergence, and fine-tuning only the final layer keeps overhead minimal. Experiments on the GS dataset show that weight transmission adds only 0.319 bpp while saving 1.883 bpp in geometry coding, yielding a substantial net gain.
+**2. Instance-Adaptive Fine-Tuning: Transforming a "Universal Model" into a "Specific Model" in seconds**
 
-### Key Design 3: Unified Lossless-Lossy Compression
+Even a universal UCM struggles with completely unseen point clouds (e.g., medical scans, 3DGS). IAFT strikes a balance between slow INR and fixed pre-trained models by fine-tuning a minimal subset of UCM parameters during the encoding of a single instance. These weight increments are included in the bitstream, allowing the decoder to replicate the "instance-specific model."
 
-**Function**: A probability threshold mechanism extends the lossless framework to lossy compression scenarios.
+Only the Prediction Head's linear layers ($\Theta_{\text{tune}}$) are adjusted, while the backbone ($\Theta_{\text{frozen}}$) remains locked. During encoding, a single forward pass caches the backbone features, and subsequent iterations optimize only $\Theta_{\text{tune}}$ on these features, allowing convergence in seconds (~200 iterations). Optimized weights are quantized and encoded via DeepCABAC. For 3DGS data, weight transmission costs only 0.319 bpp while saving 1.883 bpp in geometry coding, yielding a net gain of 1.564 bpp.
 
-**Mechanism**:
-- For sparse LiDAR point clouds: the finest $n$ scales are simply omitted during encoding.
-- For dense point clouds: the encoder transmits only the target number of points $k$; the decoder reconstructs geometry by selecting the $k$ highest-probability locations according to the model's predictions.
-- A single model supports both lossless and lossy compression without additional training.
+**3. Unified Lossless-Lossy Compression: Multi-scenario coverage via probability thresholds**
+
+The lossless framework supports lossy compression by applying thresholds to probability predictions. For sparse LiDAR, it truncates the finest $n$ scales. For dense point clouds, the encoder transmits the target point count $k$, and the decoder reconstructs geometry at the $k$ positions with the highest predicted probabilities. Both modes share the same weights without retraining.
 
 ## Loss & Training
 
-- **Pretraining stage**: UCM is trained on a large-scale mixed dataset (KITTI, Ford, 8iVFB, MVUB, ScanNet, GausPcc-1K, Thuman, etc.) using the negative log-likelihood (cross-entropy) of occupancy codes as the loss.
-- **IAFT stage**: The instance-level fine-tuning loss is negative log-likelihood $+ \lambda_{L1} \cdot \|\Theta_{\text{tune}}\|_1$, where the $L_1$ regularization promotes weight sparsity to reduce transmission overhead.
-- **Two variants**: Ours (category-specific models trained separately) and Ours-U (a single unified model with shared weights applied to all test sets).
+- **Pre-training Phase**: The UCM is trained on large-scale mixed datasets (KITTI, Ford, 8iVFB, MVUB, ScanNet, GausPcc-1K, Thuman, etc.) using the Negative Log-Likelihood (NLL) of occupancy codes as the loss.
+- **IAFT Phase**: Instance-level fine-tuning loss $= \text{NLL} + \lambda_{L1} \cdot \|\Theta_{\text{tune}}\|_1$, where L1 regularization encourages weight sparsity to minimize transmission overhead.
+- **Versions**: Ours (categories trained separately) and Ours-U (single unified model for all test sets).
 
 ## Key Experimental Results
 
-### Table 1: Lossless Compression Performance on 15 Datasets (bpp↓)
+**Table 1: Lossless Compression Performance (bpp↓)**
 
-| Dataset | Difficulty | OOD | RENO | SparsePCGC | OctAttention | TopNet | GPCC v23 | **Ours** | **Ours-U** |
-|--------|------|-----|------|------------|--------------|--------|----------|----------|------------|
+| Dataset | Diff. | OOD | RENO | SparsePCGC | OctAttention | TopNet | GPCC v23 | **Ours** | **Ours-U** |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 8iVFB | E | ✗ | 0.70 | 0.57 | 0.68 | 0.59 | 0.76 | **0.54** | 0.57 |
-| MVUB | E | ✗ | 1.00 | 0.69 | 0.76 | 0.69 | 0.94 | **0.67** | 0.75 |
-| Thuman | E | ✗ | 1.64 | 1.70 | 2.31 | 2.20 | 2.00 | **1.58** | 1.64 |
-| KITTI | E | ✗ | 7.06 | 6.80 | 7.21 | 6.85 | 8.19 | **6.18** | 6.45 |
+| KITTI | E | ✗ | 7.06 | 6.80 | 7.21 | 6.85 | 8.19 | **0.618** | 6.45 |
 | GS | M | ✗ | 13.89 | 15.82 | 11.31 | 10.95 | 14.46 | **11.65** | 11.74 |
 | VGGT | M | ✓ | 8.24 | 7.84 | 8.22 | 7.83 | 7.33 | 7.30 | **7.06** |
-| S3DIS | M | ✓ | 13.06 | 11.88 | 11.52 | 10.84 | 10.66 | 10.93 | **10.79** |
 | CS | H | ✓ | 3.94 | 4.94 | 3.40 | 3.21 | 3.23 | 3.18 | **3.08** |
 | **CR-Gain vs GPCC** | | | 2.96% | 2.07% | 1.32% | -4.04% | 0% | **-11.93%** | -10.75% |
 
-### Table 2: UCM Ablation Study (Contribution of Each Component)
+**Table 2: Ablation Study for UCM Components**
 
-| Configuration | Spatial Conv (SC) | Spatial Grouping (SG) | Channel Grouping (CG) | CR-Gain | Params (M) |
-|------|:-----------:|:-----------:|:-----------:|---------|----------|
+| Config | Spatial Conv (SC) | Spatial Grp (SG) | Channel Grp (CG) | CR-Gain | Params (M) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
 | Baseline | ✗ | ✗ | ✗ | 0.00% | 5.15 |
-| SG only | ✗ | ✓ | ✗ | -6.56% | 5.68 |
-| CG only | ✗ | ✗ | ✓ | +0.13% | 5.15 |
-| SC+SG | ✓ | ✓ | ✗ | -7.74% | 9.78 |
-| SC+CG | ✓ | ✗ | ✓ | -5.33% | 7.19 |
-| **Full (Ours)** | ✓ | ✓ | ✓ | **-9.88%** | 9.77 |
+| Only SG | ✗ | ✓ | ✗ | -6.56% | 5.68 |
+| Only CG | ✗ | ✗ | ✓ | +0.13% | 5.15 |
+| **Ours (All)** | ✓ | ✓ | ✓ | **-9.88%** | 9.77 |
 
-Key finding: Using CG alone (as in RENO) yields virtually no benefit (+0.13%); it must act in concert with SC/SG to be effective.
+Key Finding: CG alone (as in RENO) is nearly ineffective (+0.13%); it must collaborate with SC/SG to unlock compression potential.
 
-### Table 3: Bitrate Breakdown of IAFT on GS Dataset
+**Table 3: IAFT Bitrate Breakdown for GS Dataset**
 
 | Metric | UCM only | UCM + IAFT |
-|------|--------|------------|
-| Entropy coding bpp | 13.307 | 11.424 |
-| Weight transmission bpp | 0 | 0.319 |
+| :--- | :--- | :--- |
+| Entropy Coding bpp | 13.307 | 11.424 |
+| Weight Transmission bpp | 0 | 0.319 |
 | **Total bpp** | 13.307 | **11.743** |
-
-Weight transmission adds only 0.319 bpp while geometry coding saves 1.883 bpp, yielding a net reduction of 1.564 bpp.
 
 ## Highlights & Insights
 
-1. **Theory-practice coherence**: Two formal theorems rigorously establish the equivalence of channel-spatial modeling and the receptive field advantage, directly informing the UCM design — a notably principled contribution.
-2. **Elegant fusion of explicit and implicit compression**: IAFT transplants the instance-adaptive capability of INR methods onto a pretrained model; encoding takes seconds rather than tens of minutes, making the approach practically deployable.
-3. **Universality of a single model**: Ours-U applies a single set of weights across 15 datasets spanning vastly different characteristics (sparse LiDAR, dense human bodies, 3DGS, noisy point clouds), even outperforming specialized models on OOD data.
-4. **Comprehensive evaluation**: A benchmark comprising 15 datasets — including standard sets and extreme scenarios (noise/dropout/deformation) — far exceeds the evaluation scale common in this field.
-5. **Competitive decoding efficiency**: Decoding time is comparable to the fastest baseline RENO (0.46s vs. 0.23s), while encoding time can be flexibly controlled between 0.44s and 2.84s by adjusting the number of IAFT iterations.
+1. **Unity of Theory and Practice**: UCM is built on rigorous proofs of channel-spatial equivalence and receptive field advantages.
+2. **Elegant Fusion of Explicit-Implicit Compression**: IAFT grafts INR’s instance adaptation onto pre-trained models, requiring seconds rather than minutes for encoding.
+3. **Universality of a Single Model**: Ours-U handles 15 diverse datasets (LiDAR, human, 3DGS, noise) with one set of weights, often outperforming specialized models on OOD data.
+4. **Comprehensive Evaluation**: A benchmark of 15 datasets was constructed, covering standard and extreme scenarios (noise/dropout/deformation).
+5. **Excellent Efficiency**: Decoding time is competitive with the fastest baseline, RENO (0.46s vs 0.23s), while encoding time is controllable via IAFT iterations.
 
 ## Limitations & Future Work
 
-1. **Encoding time overhead**: Enabling IAFT increases encoding time from 0.44s to ~12s (800 iterations), which may be insufficient for latency-sensitive applications such as live streaming.
-2. **Model size**: The full model contains 68.39M parameters; although Ours-U has only 9.77M, this offers no clear advantage over RENO (9.03M), and IAFT requires backpropagation on the encoder side.
-3. **Naive lossy compression strategy**: The lossy scheme for dense point clouds (selecting the $k$ highest-probability locations) lacks rate-distortion optimization and may not represent the optimal R-D trade-off.
-4. **Training data dependency**: UCM's generalization still relies on the diversity of training data; performance on entirely unseen point cloud types (e.g., molecular structures) remains to be validated.
+1. **Encoding Overhead**: Enabling IAFT increases encoding time from 0.44s to ~12s (800 iterations), which may limit real-time live streaming applications.
+2. **Parameter Size**: The full model has 68.39M parameters. While Ours-U is 9.77M, it lacks a distinct advantage over RENO (9.03M), and IAFT requires backpropagation at the encoder.
+3. **Simple Lossy Strategy**: The lossy approach for dense point clouds lacks Rate-Distortion Optimization (RDO), which may target sub-optimal R-D trade-offs.
+4. **Training Data Dependency**: UCM generalization still depends on diversified training data; its performance on entirely novel types (e.g., molecular structures) is unverified.
 
 ## Related Work & Insights
 
-- **Unicorn/Unicorn-U**: The closest competitor, which attempts a unified architecture but still relies on a non-unified attention–convolution hybrid design with poor OOD generalization. AnyPcc addresses this thoroughly via a pure-convolution UCM combined with IAFT.
-- **RENO**: A pioneer of channel-wise occupancy code prediction; however, ablation results show that channel grouping alone is nearly ineffective and must be combined with spatial priors.
-- **INR-based compression (NeRF/3DGS related)**: IAFT can be viewed as a lightweight variant of INR compression — fine-tuning only the final layer rather than the entire network — suggesting that parameter-efficient fine-tuning holds considerable promise in the compression domain.
-- **DeepCABAC**: A context-adaptive binary arithmetic coder used for weight encoding, which is a key technology for efficiently transmitting network parameters as data; it merits broader adoption in other model-in-the-loop scenarios.
+- **Unicorn/Unicorn-U**: Closest competitors attempting architecture unification but still relying on non-uniform attention-convolution mixtures, resulting in poor OOD generalization.
+- **RENO**: Pioneer in channel-wise occupancy code prediction; however, ablations show channel grouping must synergize with spatial priors to be effective.
+- **INR Compression**: IAFT is a "lightweight" INR variant, fine-tuning only the head rather than the entire network, suggesting parameter-efficient fine-tuning is promising for compression.
+- **DeepCABAC**: Essential for efficient transmission of network parameters, this context-adaptive binary arithmetic coder is key for model-in-the-loop scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The dual-granularity spatial-channel context fusion and the IAFT explicit-implicit hybrid strategy are both field-first contributions, further strengthened by formal theoretical proofs.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 15 datasets, 6 baselines, comprehensive ablations, lossless and lossy evaluation, and detailed time/parameter analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, rigorous theoretical derivations, informative figures and tables, and well-motivated problem formulation.
-- **Value**: ⭐⭐⭐⭐ — Universal compression with a single model addresses a critical practical deployment need, and the IAFT strategy is broadly transferable to other 3D data compression tasks.
+- **Novelty**: ⭐⭐⭐⭐ — Dual-granularity context fusion and IAFT explicit-implicit fusion are domain firsts.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 15 datasets, 6 baselines, full ablation, and lossless/lossy analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, rigorous theoretical derivation, and well-motivated.
+- **Value**: ⭐⭐⭐⭐ — A universal compression model is a necessity for deployment; IAFT strategies are extendable to other 3D tasks.
 
 <!-- RELATED:START -->
 
@@ -158,11 +161,11 @@ Weight transmission adds only 0.319 bpp while geometry coding saves 1.883 bpp, y
 
 ## Related Papers
 
+- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition](apc_adversarial_point_counterattack.md)
+- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[ICLR 2026\] Universal Beta Splatting](../../ICLR2026/3d_vision/universal_beta_splatting.md)
-- [\[CVPR 2026\] PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences](pcstracker_long-term_scene_flow_estimation_for_point_cloud_sequences.md)
 
 </div>
 

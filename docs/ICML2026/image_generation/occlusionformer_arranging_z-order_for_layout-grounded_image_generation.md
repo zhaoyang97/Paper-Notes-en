@@ -2,75 +2,78 @@
 title: >-
   [Paper Note] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation
 description: >-
-  [ICML2026][Image Generation][Layout-to-Image] To address the issues of texture entanglement and hierarchical confusion in overlapping regions during layout-to-image generation, the authors constructed SA-Z…
+  [ICML 2026][Image Generation][DiT] To address the issues of texture entanglement and hierarchical confusion in overlapping regions during layout-to-image generation, the authors constructed a large-scale dataset SA-Z with explicit Z-order and amodal annotations. They proposed OcclusionFormer, which explicitly models occlusion priority through instance d
 tags:
-  - "ICML2026"
-  - "Image Generation"
-  - "Layout-to-Image"
-  - "Z-order Occlusion"
-  - "Volume Rendering"
-  - "Instance Decoupling"
-  - "DiT"
+  - ICML 2026
+  - Image Generation
+  - DiT
 date: 2026-05-08
-content_hash: 433c96301d7c985e
+content_hash: ab7aace502845ac9
 ---
-
 # OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation
 
 **Conference**: ICML2026  
 **arXiv**: [2605.21343](https://arxiv.org/abs/2605.21343)  
 **Code**: https://henghuiding.com/OcclusionFormer/ (Project Page)  
 **Area**: Image Generation / Layout-to-Image / Diffusion Models  
-**Keywords**: Layout-to-Image, Z-order Occlusion, Volume Rendering, Instance Decoupling, DiT
+**Keywords**: Layout-to-image, Z-order occlusion, Volume rendering, Instance decoupling, DiT
 
 ## TL;DR
-To address the issues of texture entanglement and hierarchical confusion in overlapping regions during layout-to-image generation, the authors constructed SA-Z, a large-scale dataset with explicit Z-order and amodal annotations, and proposed OcclusionFormer. By combining instance decoupling with volume rendering to explicitly model occlusion priority, and employing a queried alignment loss to reinforce spatial consistency, the model outperforms strong baselines such as Eligen, Creatilayout, and InstanceAssemble on occlusion-aware metrics in the OverLayBench complex subset and the self-constructed SA-Z Eval.
+To address the issues of texture entanglement and hierarchical confusion in overlapping regions during layout-to-image generation, the authors constructed a large-scale dataset SA-Z with explicit Z-order and amodal annotations. They proposed OcclusionFormer, which explicitly models occlusion priority through instance decoupling and volume rendering, and reinforces spatial consistency using a queried alignment loss. OcclusionFormer comprehensively outperforms strong baselines such as Eligen, Creatilayout, and InstanceAssemble on occlusion-aware metrics in the OverLayBench complex subset and the self-built SA-Z Eval.
 
 ## Background & Motivation
 
-**Background**: Layout-to-image generation injects 2D/3D bounding boxes into diffusion models as spatial conditions. Driven by works like GLIGEN, Eligen, and Creatilayout, spatial controllability for single instances has become well-established, serving as fundamental infrastructure for tasks like complex scene synthesis and visual story generation.
+**Background**: Layout-to-image generation injects 2D/3D bounding boxes as spatial conditions into diffusion models. Driven by works like GLIGEN, Eligen, and Creatilayout, spatial controllability for single instances has performed well, serving as infrastructure for tasks like complex scene synthesis and visual storytelling.
 
-**Limitations of Prior Work**: When multiple bounding boxes overlap, mainstream methods struggle—objects in overlapping areas often exhibit texture entanglement, inverted hierarchies, or are forced to shrink to cover only visible parts. This occurs because these methods treat layouts as 2D planar conditions and lack a concept of "who occludes whom." While users typically draw amodal boxes (full range) and expect a depth order, the models cannot interpret this sequence.
+**Limitations of Prior Work**: Once multiple bounding boxes overlap, mainstream methods often fail—objects in the overlapping areas exhibit texture entanglement, reversed hierarchy, or are forcibly shrunk to cover only visible parts. This occurs because these methods treat layouts as 2D planar conditions and lack any concept of "which object occludes which." While users draw amodal (full range) boxes assuming a depth order, the models cannot interpret this.
 
-**Key Challenge**: While Z-buffers have long solved occlusion in computer graphics, the attention mechanism of diffusion models inherently "mixes" features indiscriminately on a 2D plane, lacking an explicit Z-axis dimension. LaRender attempted to use training-free volume rendering, but it diverted cross-attention space for occlusion control, resulting in the loss of global prompts, sensitivity to hyperparameters, and deviations in complex scenarios.
+**Key Challenge**: While computer graphics has long used Z-buffers to solve occlusion, the attention mechanism of diffusion models naturally "mixes" features indiscriminately on a 2D plane, lacking an explicit Z-axis dimension. LaRender attempted a training-free volume rendering approach, but it diverted cross-attention space for occlusion control, losing the global prompt and becoming sensitive to hyperparameters and prone to errors in complex scenes.
 
-**Goal**: (1) Provide a large-scale training set with an open vocabulary, Z-order, and amodal annotations; (2) Design a training-based scheme within the DiT framework to explicitly model Z-order without compromising pre-trained capabilities, ensuring physically consistent hierarchies in overlapping regions.
+**Goal**: (1) Provide an open-vocabulary, large-scale training set with Z-order and amodal annotations; (2) Design a trainable scheme that explicitly models Z-order within the DiT framework, maintaining pre-trained capabilities while providing physically consistent hierarchies in overlapping regions.
 
-**Key Insight**: The authors argue that training-free heuristics are insufficient and require a "data-driven + explicit supervision" approach. Specifically, each instance is "decoupled" into an independent layer, then "composed" according to the user-specified occlusion order via volume rendering, with mask supervision pulling the spatial geometry.
+**Key Insight**: The authors argue that training-free heuristics are insufficient and require "data-driven + explicit supervision." Specifically, each instance is first "decoupled" into an independent layer, then "composed" according to the user-specified occlusion order using volume rendering, with spatial geometry constraints provided by mask supervision.
 
-**Core Idea**: Image generation is viewed as a volume rendering process along orthogonal camera rays. Each instance independently performs MM-Attention within its box to generate a "layer." Learned densities $\sigma_i$ are then used to calculate transmittance $T_i$ and opacity $\alpha_i$ for weighted composition according to the Z-order. Simultaneously, a queried alignment loss "welds" the feature geometry of each instance to the ground truth mask.
+**Core Idea**: Image generation is viewed as a volume rendering process along orthogonal camera rays—each instance independently performs MM-Attention within its box to obtain a "layer." The learned density $\sigma_i$ is used to calculate transmittance $T_i$ and opacity $\alpha_i$ for Z-order weighted composition. Simultaneously, a queried alignment loss is introduced to "weld" the feature geometry of each instance to the GT mask.
 
 ## Method
 
-OcclusionFormer is built upon Flux.1-dev (DiT + Rectified Flow). It inserts a serial "Instance Decoupling—Volume Rendering Composition—Queried Alignment" module after the original MM-Attention block, fine-tuned via LoRA (rank=4) to preserve the backbone's pre-trained capabilities.
+OcclusionFormer addresses the indiscriminate 2D mixing of features in diffusion attention by reimagining image generation as volume rendering along orthogonal camera rays. It decouples each instance into independent feature layers and recomposes them based on user-provided occlusion orders using NeRF-style transmittance formulas. This module is connected after each MM-Attention block of Flux.1-dev (DiT + Rectified Flow) and fine-tuned using only LoRA (rank=4) to preserve the pre-trained backbone.
 
 ### Overall Architecture
-The input consists of a set of instance conditions $(M_i, B_i, \mathcal{O}_i, C_i, P)$ (mask, bounding box, occlusion set, instance caption, global prompt). Each DiT block first executes a frozen global MM-Attention to obtain visual features $\mathbf{Z}\in\mathbb{R}^{L\times D}$. Then: (1) A subset of local tokens $\mathbf{Z}_{\Omega_i}$ is extracted per instance $i$ according to its box and processed independently with the instance caption embedding $\mathbf{C}_i'$ via MM-Attention to generate an "independent layer" $\hat{\mathbf{Z}}_i$; (2) All $\hat{\mathbf{Z}}_i$ are composed into $\mathbf{Z}_{out}$ via volume rendering based on the Z-order specified in $\mathcal{O}_i$, with the residual added back to the backbone; (3) A query vector extracts a spatial similarity map from each $\hat{\mathbf{Z}}_i$, and a lightweight CNN predicts foreground probability, supervised by the GT mask from SA-Z using cross-entropy. The training objective is $\mathcal{L}_{total} = \mathcal{L}_{flow} + \lambda \mathcal{L}_{align}$, with $\lambda=0.5$.
+The input is a set of instance conditions $(M_i, B_i, \mathcal{O}_i, C_i, P)$ (mask, bounding box, occlusion set, instance caption, global prompt). Each DiT block first runs a frozen global MM-Attention to obtain visual features $\mathbf{Z}\in\mathbb{R}^{L\times D}$, followed by three steps: extracting local tokens per instance box to calculate independent layer attention $\hat{\mathbf{Z}}_i$; performing Z-order explicit modeling via volume rendering based on $\mathcal{O}_i$ to composite $\mathbf{Z}_{out}$, which is added back residually; and using a learnable query to predict foreground probability from each layer via a lightweight CNN, supervised by the GT mask. The training objective is $\mathcal{L}_{total} = \mathcal{L}_{flow} + \lambda \mathcal{L}_{align}$, where $\lambda=0.5$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Instance Conditions (maskᵢ, boxᵢ, Occlusion Set Oᵢ, captionᵢ) + Global Prompt"] --> B["Frozen Global MM-Attention<br/>Obtains Visual Feature Z"]
+    B --> C["Instance-Decoupled Local MM-Attention<br/>Extract tokens by box, calculate attention → Independent layer Ẑᵢ"]
+    C --> D["Volume Rendering-based Z-order Explicit Modeling<br/>Learned σᵢ → Transmittance Tᵢ·αᵢ Composite in order → Residual Add-back"]
+    C --> E["Queried Alignment Loss<br/>Query reads similarity map → Light CNN → Foreground prob → GT mask supervision"]
+    D --> F["Output: Hierarchically Consistent Image Features"]
+    E -.Geometric Supervision during Training.-> F
+```
 
 ### Key Designs
 
-1.  **Instance-Decoupled Local MM-Attention**:
-    - **Function**: Transitions from "global 2D planar attention" to independent layers per instance, enabling decouplable objects along the Z-axis.
-    - **Mechanism**: For each instance $i$, token indices within its bounding box are selected as $\Omega_i = \{u \mid \text{Coord}(u) \in B_i\}$. The original MM-Attention module is reused to compute updates only between this subset $\mathbf{Z}_{\Omega_i}$ and the instance caption embedding $\mathbf{C}_i'$: $\hat{\mathbf{Z}}_{\Omega_i}, \hat{\mathbf{C}_i} = \text{MM-Attention}(\mathbf{Z}_{\Omega_i}, \mathbf{C}_i')$, with zero-padding outside the box. Original attention parameters are frozen, with LoRA applied only to projection matrices.
-    - **Design Motivation**: Eligen and Creatilayout treat layouts as global conditions where all instance and background tokens interact indiscriminately, lacking a "layer" concept to express Z-axis priority. Calculating clean instance features before composition is a prerequisite for explicit Z-order modeling. Using LoRA instead of full fine-tuning preserves Flux's generative capacity.
+**1. Instance-Decoupling Local MM-Attention: Splitting Global Attention into Separable Layers**
 
-2.  **Explicit Z-order Modeling via Volume Rendering**:
-    - **Function**: Calculates occlusion relationships per pixel based on the user-provided occlusion set $\mathcal{O}_i$ and composes layers back into a feature map in a physically consistent manner.
-    - **Mechanism**: Drawing from NeRF, the image plane is treated as the imaging surface of an orthogonal camera. The density $\sigma_i \in \mathbb{R}^D$ of each instance is not fixed but predicted by a time-text embedding module from the diffusion timestep $t$ and instance text pooling vector $y_i$: $\mathbf{e}_{temb}^i = \text{TimeTextEmbed}(t, y_i) \to \sigma_i$. At pixel $\mathbf{p}$, opacity is defined as $\alpha_i(\mathbf{p}) = (1 - \exp(-\sigma_i)) \cdot \mathbb{I}(\mathbf{p} \in B_i)$, and transmittance as $T_i(\mathbf{p}) = \exp(-\sum_{j \in \mathcal{O}_i} \sigma_j \cdot \mathbb{I}(\mathbf{p} \in B_j))$. The composition weight is $w_i = T_i \cdot \alpha_i$. Final composition uses normalized weighted averaging for pixels with occlusion constraints $\mathbf{Z}_{out}(\mathbf{p}) = \sum_i w_i \hat{\mathbf{Z}}_i / (\sum_i w_i + \epsilon)$, falling back to simple averaging for overlapping boxes without occlusion declarations (hybrid strategy).
-    - **Design Motivation**: LaRender uses training-free volume rendering with manual, heuristic densities sensitive to hyperparameters. Making $\sigma_i$ a learnable quantity that adapts to the diffusion state allows for varying levels of "solidity" during early low-frequency and later detail stages, handling complex occlusions more robustly. Hybrid aggregation resolves edge cases where boxes overlap but objects do not actually occlude one each other.
+To model Z-order explicitly, one first needs clean, non-interfering "layers." Eligen/Creatilayout treat layout as a global condition where all instance and background tokens interact indiscriminately. Thus, for each instance $i$, token indices $\Omega_i = \{u \mid \text{Coord}(u) \in B_i\}$ within its bounding box are selected. The original MM-Attention module is reused to update $\hat{\mathbf{Z}}_{\Omega_i}, \hat{\mathbf{C}_i} = \text{MM-Attention}(\mathbf{Z}_{\Omega_i}, \mathbf{C}_i')$ only within this local subset and the instance caption embedding $\mathbf{C}_i'$. Parameters are frozen except for LoRA on projection matrices, ensuring clean features for composition while maintaining Flux's generative power.
 
-3.  **Queried Alignment Loss**:
-    - **Function**: Replaces the supervision gap of volume rendering regarding "geometric shape," ensuring instance features focus within GT mask regions rather than bleeding across the box.
-    - **Mechanism**: A learnable query $\mathbf{q}_i \in \mathbb{R}^D$ is derived from $\mathbf{e}_{temb}^i$ for each instance. Pixel-wise cosine similarity generates a spatial similarity map $\mathbf{S}_i(\mathbf{p}) = \hat{\mathbf{Z}}_i(\mathbf{p}) \cdot \mathbf{q}_i / ((\|\hat{\mathbf{Z}}_i(\mathbf{p})\| + \epsilon)\|\mathbf{q}_i\|)$, fed into a lightweight CNN $\mathcal{F}_\theta$ to output foreground/background probability maps $\hat{\mathbf{M}}_i$, supervised by the mask $M_i$ from SA-Z via $\mathcal{L}_{align}$.
-    - **Design Motivation**: While volume rendering handles depth order, features must possess coherent geometry for effective composition. Without explicit constraints, features often drift within the box, leading to broken contours in overlapping areas. Supervising via a query + CNN head is more stable than applying mask loss directly to attention maps.
+**2. Volume Rendering-based Z-order Explicit Modeling: Compositing Layers via Transmittance**
+
+Borrowing from NeRF, the image plane is treated as an orthogonal camera imaging plane, where each instance corresponds to a segment of "medium" along the ray. Crucially, the density $\sigma_i \in \mathbb{R}^D$ is not fixed but predicted by a time-text embedding module from the diffusion timestep $t$ and instance text pooling vector $y_i$: $\mathbf{e}_{temb}^i = \text{TimeTextEmbed}(t, y_i) \to \sigma_i$. This allows "solidity" to vary between early low-frequency and late detail stages. At pixel $\mathbf{p}$, opacity is $\alpha_i(\mathbf{p}) = (1 - \exp(-\sigma_i)) \cdot \mathbb{I}(\mathbf{p} \in B_i)$, transmittance is $T_i(\mathbf{p}) = \exp(-\sum_{j \in \mathcal{O}_i} \sigma_j \cdot \mathbb{I}(\mathbf{p} \in B_j))$, and the composition weight is $w_i = T_i \cdot \alpha_i$. For pixels with "occlusion declarations," $\mathbf{Z}_{out}(\mathbf{p}) = \sum_i w_i \hat{\mathbf{Z}}_i / (\sum_i w_i + \epsilon)$. A hybrid strategy reverts to simple averaging for boundary pixels where boxes intersect without actual occlusion.
+
+**3. Queried Alignment Loss: Welding Features to GT Mask Geometry**
+
+While volume rendering handles composition order, it doesn't guarantee coherent shapes within each layer. To prevent features from drifting within boxes and causing contour breakage, a learnable query $\mathbf{q}_i \in \mathbb{R}^D$ is derived from $\mathbf{e}_{temb}^i$. Pixel-wise cosine similarity $\mathbf{S}_i(\mathbf{p}) = \hat{\mathbf{Z}}_i(\mathbf{p}) \cdot \mathbf{q}_i / ((\|\hat{\mathbf{Z}}_i(\mathbf{p})\| + \epsilon)\|\mathbf{q}_i\|)$ is fed into a lightweight CNN $\mathcal{F}_\theta$ to output foreground probability map $\hat{\mathbf{M}}_i$, supervised by the GT mask $M_i$ via cross-entropy $\mathcal{L}_{align}$. This "query + independent head" approach is more decoupled than direct mask loss on attention maps, which conflicts with global semantics.
 
 ### Loss & Training
-The total objective is $\mathcal{L}_{total} = \mathcal{L}_{flow} + \lambda \mathcal{L}_{align}$, where $\lambda=0.5$. $\mathcal{L}_{flow}$ is the rectified flow matching loss of Flux: $\mathcal{L}_{flow} = \mathbb{E}_{t,\mathbf{z}_t,\mathbf{c}}[\|v_\theta(\mathbf{z}_t,t,\mathbf{c}) - \mathbf{v}_{target}\|_2^2]$, with $\mathbf{v}_{target} = \mathbf{x}_1 - \mathbf{x}_0$. Backbone: Flux.1-dev, LoRA rank=4, 200K steps, batch size 16, lr=1e-4. The SA-Z dataset was derived from SACap-1M: DescribeAnything generated pixel-level captions, InstaOrder predicted pairwise occlusion sequences, and SAM-3D reconstructed 3D geometry projected back for amodal masks and boxes. It contains 1M high-resolution images and 5.69M instances, making it the first large-scale, open-vocabulary layout generation dataset with amodal and Z-order labels.
+The total objective is $\mathcal{L}_{total} = \mathcal{L}_{flow} + \lambda \mathcal{L}_{align}$, with $\lambda=0.5$. $\mathcal{L}_{flow}$ is Flux's rectified flow matching: $\mathcal{L}_{flow} = \mathbb{E}_{t,\mathbf{z}_t,\mathbf{c}}[\|v_\theta(\mathbf{z}_t,t,\mathbf{c}) - \mathbf{v}_{target}\|_2^2]$, where $\mathbf{v}_{target} = \mathbf{x}_1 - \mathbf{x}_0$. Backbone: Flux.1-dev, LoRA rank=4, 200K steps, batch 16, lr=1e-4. The SA-Z dataset is derived from SACap-1M using DescribeAnything for captions, InstaOrder for occlusion priority, and SAM-3D for reconstructed amodal masks and boxes, totaling 1M high-res images and 5.69M instances.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on OverLayBench (Simple/Regular/Complex) and the self-constructed SA-Z Eval (1K real images). Metrics include spatial accuracy (mIoU / O-mIoU), semantic consistency (SR$_E$ / SR$_R$ / CLIP-G/L), image quality (FID), and InstaOrder-style occlusion metrics Occ. (F1) and Dep. (WHDR).
+Evaluated on OverLayBench (Simple/Regular/Complex) + self-built SA-Z Eval (1K real images). Metrics include spatial accuracy (mIoU / O-mIoU), semantic consistency (SR$_E$ / SR$_R$ / CLIP-G/L), image quality (FID), and occlusion metrics Occ. (F1) and Dep. (WHDR).
 
 | Subset | Metric | OcclusionFormer | Prev. SOTA (InstanceAssemble) | Creatilayout | Eligen | LaRender |
 |------|------|------|------|------|------|------|
@@ -88,46 +91,46 @@ Evaluated on OverLayBench (Simple/Regular/Complex) and the self-constructed SA-Z
 | SA-Z Eval | Occ. ↑ | **0.7568** | 0.6947 | 0.6921 | 0.6095 | 0.6833 |
 | SA-Z Eval | FID ↓ | **62.79** | 63.65 | 64.66 | 69.91 | 77.98 |
 
-**Highlights**: The relative advantage increases as scene complexity grows (Simple→Complex). O-mIoU and Occ. (measuring overlapping regions) show the most significant gains (+0.08 Occ. and -0.019 Dep. on the Complex subset).
+**Highlights**: The performance gap increases with scene complexity; O-mIoU and Occ. (measuring overlapping areas) show the most significant gains (Complex Occ. +0.08, Dep. -0.019).
 
 ### Ablation Study (OverLay-Complex)
 
 | Configuration | mIoU ↑ | O-mIoU ↑ | Occ. ↑ | Dep. ↓ | Description |
 |------|------|------|------|------|------|
 | OcclusionFormer (full) | **0.6037** | **0.3468** | **0.7797** | **0.1602** | Full Model |
-| w/o Learned Sigma | 0.5911 | 0.3276 | 0.7530 | 0.1694 | Replaced dynamic density with static values; Occ. F1 dropped ~2.7 pts |
-| w/o Queried Loss | 0.5922 | 0.3319 | 0.7659 | 0.1666 | Removed alignment loss; O-mIoU dropped ~1.5 pts |
-| w Attn. Map Loss | 0.5753 | 0.3207 | 0.7510 | 0.1695 | Switched to mask loss on attention maps; performed worse than w/o |
-| w/o Amodal Data | 0.6004 | 0.3411 | 0.7703 | 0.1644 | Used only visible masks without amodal labels; slight performance drop |
+| w/o Learned Sigma | 0.5911 | 0.3276 | 0.7530 | 0.1694 | Static density; Occ F1 drops ~2.7 pts |
+| w/o Queried Loss | 0.5922 | 0.3319 | 0.7659 | 0.1666 | No alignment loss; O-mIoU drops ~1.5 pts |
+| w Attn. Map Loss | 0.5753 | 0.3207 | 0.7510 | 0.1695 | Direct attention map mask loss is worse than w/o |
+| w/o Amodal Data | 0.6004 | 0.3411 | 0.7703 | 0.1644 | Using visible mask only; slight decrease |
 
 ### Key Findings
-- **Dynamic density is the most impactful design**: Removing learned $\sigma$ leads to a drop of 0.027 in Occ. and an increase of 0.009 in Dep., proving that density adapting to the diffusion step and text more stably characterizes layer weights across diffusion stages.
-- **Queried alignment loss outperforms attention-map mask loss**: Direct mask supervision on attention maps conflicts with global MM-Attention semantics, performing worse than the "w/o Queried Loss" setting. This suggests query guidance + an independent CNN head is a more decoupled supervision path.
-- **Amodal labels provide consistent small gains**: Compared to visible-only masks, amodal data provides signals for occluded parts, aiding geometric integrity in complex occlusions.
-- **Real-world domain gap is evident**: mIoU/O-mIoU for all methods are significantly lower on SA-Z Eval than OverLayBench (the latter being synthetic); the relative advantage of Ours persists in the real domain, indicating improvements do not rely on synthetic distributions.
+- **Dynamic density is the most impactful design**: Removing learned $\sigma$ leads to a drop of 0.027 in Occ., proving that "adaptive density" is more stable than fixed heuristics used in LaRender.
+- **Queried alignment loss outperforms attention-map loss**: Direct mask supervision on attention maps conflicts with global semantics. The "query + CNN head" provides a better-decoupled supervision path.
+- **Amodal annotations are consistently beneficial**: Compared to visible-only masks, amodal data provides supervision for occluded parts, aiding geometric integrity in complex scenarios.
+- **Real-domain gap exists**: mIoU/O-mIoU are significantly lower on SA-Z Eval than OverLayBench, but OcclusionFormer's relative advantage remains, showing the improvement is not dependent on synthetic distributions.
 
 ## Highlights & Insights
-- **Integrating Graphics Z-buffer Concepts into a Differentiable DiT**: Using NeRF volume rendering for layer composition brings "explicit Z-order" into diffusion models in a differentiable, end-to-end trainable form. This is cleaner and more physically consistent than LaRender's heuristics or GLIGEN's global conditioning.
-- **A Scalable Three-Stage Pipeline**: The "Instance Decoupling → Explicit Z-order Composition → Geometric Alignment" flow is not limited to layout generation and can be applied to any task requiring multi-source token composition following user-defined orders (e.g., video layering, 3D scene editing).
-- **Benchmark for Open-Vocabulary Amodal Data**: Utilizing SAM-3D reconstruction to acquire amodal labels circumvented the small-scale constraints of manual annotation (e.g., COCOA), providing a transferable labeling strategy for any dataset with visible masks.
+- **Adapting Z-buffer concepts into differentiable DiT**: Using NeRF volume rendering for layer composition allows explicit Z-order to be integrated into diffusion models in a trainable, end-to-end manner.
+- **Reusable three-stage pipeline**: The "Instance Decoupling → Explicit Z-order Composition → Geometric Alignment" flow is not limited to layout generation and can be applied to any task requiring ordered synthesis of multi-source tokens.
+- **Amodal labeling via 3D reconstruction**: Reconstructing 3D geometry from SAM-3D to project amodal masks avoids the scale limitations of manual labeling, providing a transferable strategy for large-scale datasets.
 
 ## Limitations & Future Work
-- **Dependency on Correct Z-order Input**: The method assumes $\mathcal{O}_i$ is known. Hierarchical ambiguity or errors in user-provided Z-orders (e.g., cyclic occlusions) were not discussed regarding model robustness.
-- **Absolute FID in Complex Scenes Remains High**: While FID=62.79 is SOTA on SA-Z Eval, it is significantly higher than 24.6 on OverLay-Simple, indicating substantial room for improvement in overall fidelity for complex real-world scenes.
-- **Strong Orthogonal Camera Assumption**: Volume rendering relies on virtual orthogonal cameras and axis-aligned boxes, making its suitability for large perspective distortions or tilted amodal boxes unclear.
-- **Training Costs**: High reproduction barriers exist due to reliance on Flux.1-dev and 1M high-resolution samples. Serial local attention per instance may become a bottleneck in scenes with high instance counts (avg. 5.7 in SA-Z).
+- **Dependency on correct Z-order inputs**: The method assumes $\mathcal{O}_i$ is known. Robustness against ambiguous or incorrect user-provided Z-orders is not discussed.
+- **High FID in complex scenes**: While SOTA on SA-Z Eval, the FID absolute value remains high, indicating substantial room for fidelity improvements in complex real-world multi-instance scenes.
+- **Orthogonal camera assumption**: Assumptions of orthogonal cameras and axis-aligned boxes may not adapt well to scenes with high perspective distortion or tilted amodal boxes.
+- **Training cost**: Large-scale training on 1M high-res images with Flux.1-dev entails high computational costs; inference latency for scenes with many instances remains to be evaluated.
 
 ## Related Work & Insights
-- **vs LaRender**: Also utilizes NeRF rendering, but LaRender is training-free/heuristic and loses global prompts by reusing cross-attention space. Ours uses learnable densities, showing that "learning" is far more stable than manual tuning in complex scenes (Occ. +0.18, O-mIoU +0.10).
-- **vs Eligen / Creatilayout**: Also based on Flux/DiT but treats layouts as global 2D conditions. Ours adds a Z-axis and restricts attention to box regions, leading O-mIoU by 0.04~0.05. This demonstrates that "restructuring attention subspaces" is a more direct control mechanism than "adding conditions."
-- **vs InstanceAssemble**: In the complex subset, Ours leads by mIoU +0.033 and Occ. +0.081, suggesting explicit Z-order modeling provides more leverage than simply improving instance assembly.
-- **vs InstaOrder / COCOA**: These provided Z-order/amodal labels for low-res closed-set vocabularies. SA-Z scales these ideas to SA-1B scale with open vocabularies, bringing "explicit occlusion" back into the focus of generative tasks.
+- **vs LaRender**: Both use volume rendering, but OcclusionFormer's trainable approach with learned density is more robust, achieving a 0.18 higher Occ. in complex scenes.
+- **vs Eligen / Creatilayout**: These treat layouts as global 2D conditions. OcclusionFormer's strategy of restricting attention to box subspaces is a directly effective means of spatial control.
+- **vs InstanceAssemble**: As the strongest baseline, the performance gap is much wider in complex subsets, showing explicit Z-order modeling is more effective than generic instance assembly.
+- **vs InstaOrder / COCOA**: SA-Z scales occlusion/amodal concepts from COCO-sized, closed-set vocabularies to open-vocabulary generation at scale.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combining differentiable volume rendering + instance decoupling for explicit Z-order control is a clear new setting for layout-to-image, though individual modules (NeRF, LoRA, query-mask) are recombinations of existing components.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers three difficulty levels, real-world evaluation, 6 baselines, 9 metrics, and 4 ablation dimensions; lacks inference latency and robustness analysis against incorrect Z-orders.
-- Writing Quality: ⭐⭐⭐⭐ Motivations, design, and formulas are clearly explained; figures are well-coordinated and symbols are consistent.
-- Value: ⭐⭐⭐⭐ The SA-Z dataset and explicit Z-order framework are reusable infrastructure for controllable diffusion; this is the first systematic solution for the "amodal box + expected occlusion" pain point.
+- Novelty: ⭐⭐⭐⭐ Combines differentiable volume rendering with instance decoupling for Z-order control in a clear new setting.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various complexities, multiple baselines, and comprehensive metrics, though lacks deep latency analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and module descriptions with well-supported figures and consistent notation.
+- Value: ⭐⭐⭐⭐ The SA-Z dataset and explicit Z-order framework provide valuable infrastructure for future controllable diffusion tasks.
 
 <!-- RELATED:START -->
 
@@ -136,10 +139,10 @@ Evaluated on OverLayBench (Simple/Regular/Complex) and the self-constructed SA-Z
 ## Related Papers
 
 - [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/image_generation/instanceassemble_layoutaware_image_generation_via_instance_a.md)
-- [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
-- [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](../../NeurIPS2025/image_generation/overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
 - [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](../../CVPR2026/image_generation/physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
+- [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
+- [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
+- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
 
 </div>
 

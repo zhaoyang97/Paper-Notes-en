@@ -2,41 +2,33 @@
 title: >-
   [Paper Note] TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][Video tokenization] This paper proposes TrajTok — an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens…
+  [CVPR 2026][Video Understanding][Paper Note] Ours proposes TrajTok—an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation+tracking pipelines. It achieves significant improvements across three scenarios: training from scratch (TrajViT2), feature adaptation (TrajAdapter)
 tags:
-  - "CVPR2026"
-  - "Video Understanding"
-  - "Video tokenization"
-  - "trajectory token"
-  - "end-to-end segmentation"
-  - "video CLIP"
-  - "VLM connector"
-  - "token compression"
-  - "object trajectory"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 177dfbddef4623a0
+content_hash: 4e5903d35d12c7c7
 ---
-
 # TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.22779](https://arxiv.org/abs/2602.22779)  
 **Code**: To be confirmed  
-**Area**: Video Segmentation / Video Understanding
-**Keywords**: Video tokenization, trajectory token, end-to-end segmentation, video CLIP, VLM connector, token compression, object trajectory
+**Area**: Video Segmentation / Video Understanding  
+**Keywords**: Video tokenization, trajectory tokens, end-to-end segmentation, Video CLIP, VLM connector, token compression, object trajectories
 
 ## TL;DR
 
-This paper proposes TrajTok — an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation-and-tracking pipelines. It achieves significant improvements across three settings: training from scratch (TrajViT2), feature adaptation (TrajAdapter), and vision-language model connectors (TrajVLM), with particularly large gains on long-video QA over patch pooling.
+Ours proposes TrajTok—an end-to-end differentiable trajectory tokenizer that implicitly clusters video pixels into object trajectory tokens, replacing external segmentation+tracking pipelines. It achieves significant improvements across three scenarios: training from scratch (TrajViT2), feature adaptation (TrajAdapter), and Vision-Language Model connectors (TrajVLM), notably outperforming patch pooling in long-video QA.
 
 ## Background & Motivation
 
-1. **Explosion of video token counts**: Current video Transformers tokenize via spatiotemporal patches, causing token counts to grow linearly or even quadratically with resolution and frame count, resulting in severe memory bottlenecks.
-2. **Insufficiency of existing token reduction methods**: Token pruning/merging methods (e.g., TokenLearner, RLT) either require a pre-specified token count and cannot adapt to input complexity, or are sensitive to scene motion and lack robustness.
-3. **Limitations of TrajViT**: The prior work TrajViT introduced a trajectory-based tokenization paradigm and first demonstrated that grouped tokens outperform raw patch tokens across all tasks, but it relies on an external SAM+SAM2 segmentation-tracking pipeline — which is slow, non-trainable, and produces semantically fixed granularity.
-4. **Task-agnostic semantic granularity**: The trajectory granularity produced by general-purpose segmentation models may not be optimal for downstream tasks (e.g., dance analysis requires fine-grained body parts, whereas formation recognition benefits from holistic tokens), and cannot be adapted per task.
-5. **Pixel-perfect segmentation is unnecessary**: Conventional segmentation models expend substantial computation on pixel-precise masks, whereas high-level understanding tasks rely more on correct semantic grouping than on boundary precision.
-6. **Scalability bottleneck**: TrajViT shows sharply diminishing performance gains when scaling data from 1M to 8M, indicating that the fixed segmentation pipeline limits the model's scalability.
+1.  **Explosion of video token count**: Current video Transformers use spatiotemporal patches for tokenization, where the number of tokens grows linearly or quadratically with resolution and frame count, leading to severe memory bottlenecks.
+2.  **Limitations of prior token reduction methods**: Token pruning/merging methods (e.g., TokenLearner, RLT) either require a pre-set number of tokens, failing to adapt to input complexity, or are sensitive to scene motion and lack robustness.
+3.  **Limitations of TrajViT**: Preceding work TrajViT proposed a trajectory-based tokenization paradigm, proving for the first time that grouped tokens outperform raw patch tokens across all tasks. However, it relies on external SAM+SAM2 pipelines—resulting in slow speeds, non-trainability, and fixed semantic granularity.
+4.  **Task-agnostic semantic granularity**: Trajectory granularity produced by general segmentation models may not be optimal for downstream tasks (e.g., dance analysis requires fine-grained body parts vs. formation recognition requires holistic tokens), and cannot be adaptively adjusted.
+5.  **Pixel-perfect segmentation is non-essential**: Traditional segmentation models invest heavy computation into pixel-accurate masks, but high-level understanding tasks rely more on the correctness of semantic grouping rather than boundary precision.
+6.  **Scalability bottleneck**: TrajViT's performance gain dropped sharply when scaling data from 1M to 8M, indicating that a fixed segmentation pipeline limits model scalability.
 
 ## Method
 
@@ -44,110 +36,128 @@ This paper proposes TrajTok — an end-to-end differentiable trajectory tokenize
 
 TrajTok consists of two differentiable modules trained jointly:
 
-- **Universal Segmenter**: Implicitly clusters the input video in a single forward pass to produce object trajectory masks.
-- **Trajectory Encoder**: Aggregates pixels/features according to the masks to generate compact trajectory tokens.
+*   **Universal Segmenter**: Performs implicit clustering on input videos to produce object trajectory masks in a single forward pass.
+*   **Trajectory Encoder**: Aggregates pixels/features according to masks to generate compact trajectory tokens.
 
-Given input $\mathbf{V} \in \mathbb{R}^{T \times H \times W \times 3}$, the output is $\mathbf{Z} \in \mathbb{R}^{N \times d}$, where $N$ varies dynamically with the semantic complexity of the scene.
+Input $\mathbf{V} \in \mathbb{R}^{T \times H \times W \times 3}$, output $\mathbf{Z} \in \mathbb{R}^{N \times d}$, where $N$ dynamically varies with the semantic complexity of the scene.
+
+```mermaid
+graph TD
+    A["Input Video V<br/>(T×H×W×3)"] --> SEG
+    subgraph SEG["Universal Segmenter"]
+        direction TB
+        S1["ConvNeXt-Tiny Multi-scale Features<br/>Upsample Sum → Dense Feature F"] --> S2["128 Learnable Queries<br/>Perceiver Cross-Attention + 1D RoPE"]
+        S2 --> S3["Soft Mask via Softmax<br/>Drop Empty Queries → Dynamic Tokens"]
+    end
+    SEG -->|"Detach Feature Gradients"| ENC
+    subgraph ENC["Trajectory Encoder"]
+        direction TB
+        E1["Soft Mask Weighted Aggregation<br/>Initial Trajectory Embedding"] --> E2["Hard Mask (argmax)<br/>Masked Cross-Attention Refinement"]
+        E2 --> E3["Adaptive Token Count<br/>1/2/4 Tokens Per Trajectory"]
+    end
+    ENC --> Z["Trajectory Tokens Z<br/>(N×d, Dynamic N)"]
+    Z --> D["Downstream: TrajViT2 / TrajAdapter / TrajVLM"]
+```
 
 ### Key Designs
 
-**1. Universal Segmenter**
+**1. Universal Segmenter: Implicitly clusters videos into trajectory masks in a single pass**
 
-- **Per-frame feature extraction**: A lightweight ConvNeXt-Tiny extracts multi-scale feature maps, which are upsampled to 1/4 resolution and summed to obtain dense features $\mathbf{F} \in \mathbb{R}^{T \times h \times w \times d}$.
-- **Learnable query clustering**: $N_q=128$ learnable queries $\mathbf{Q}$ interact with the features via cross-attention in Perceiver layers, with 1D RoPE encoding applied to features for spatiotemporal positional awareness.
-- **Soft segmentation**: Dot products between queries and feature points are passed through softmax to yield soft masks $\mathbf{M}^{\text{soft}} \in [0,1]^{N_q \times T \times h \times w}$; queries corresponding to empty masks are discarded, enabling a dynamic token count.
-- **Gradient detachment**: Gradients through the features $\mathbf{F}$ are detached before entering the Perceiver, preventing unstable co-adaptation between patch features and queries.
+*   **Frame-wise feature extraction**: Uses a lightweight ConvNeXt-Tiny to extract multi-scale feature maps, upsampled to 1/4 resolution and summed to obtain dense features $\mathbf{F} \in \mathbb{R}^{T \times h \times w \times d}$.
+*   **Learnable query clustering**: Introduces $N_q=128$ learnable queries $\mathbf{Q}$ interacting with features via Perceiver layers, applying 1D RoPE to encode spatiotemporal positions.
+*   **Soft segmentation**: A softmax follows the dot product of queries and features to obtain soft masks $\mathbf{M}^{\text{soft}} \in [0,1]^{N_q \times T \times h \times w}$; queries with empty masks are discarded to achieve dynamic token counts.
+*   **Gradient truncation**: Gradients of feature $\mathbf{F}$ are detached before entering the Perceiver to prevent unstable co-adaptation between patch features and queries.
 
-**2. Trajectory Encoder**
+**2. Trajectory Encoder: Aggregates pixels by mask to output adaptive numbers of tokens**
 
-- **Soft aggregation initialization**: The soft mask is used to compute a weighted sum of features, yielding an initial trajectory embedding $\mathbf{z}_k^{\text{init}}$ that supports gradient backpropagation.
-- **Hard mask refinement**: Argmax is applied to $\mathbf{M}^{\text{soft}}$ to obtain hard masks $\mathbf{M}^{\text{hard}}$, which are used in masked cross-attention to refine token representations and ensure disentanglement.
-- **Adaptive token count**: Inspired by Matryoshka representations, each trajectory can emit $n \in \{1,2,4\}$ tokens; multi-token trajectories are initialized with Fourier positional encodings to encourage diversity; $n$ is sampled randomly during training and adjusted according to the compute budget at inference.
+*   **Soft aggregation initialization**: Weighted summation of features via soft masks yields initial trajectory embeddings $\mathbf{z}_k^{\text{init}}$, ensuring gradient backpropagation.
+*   **Hard mask refinement**: Taking argmax of $\mathbf{M}^{\text{soft}}$ yields hard masks $\mathbf{M}^{\text{hard}}$, which refine token representations through masked cross-attention to ensure disentanglement.
+*   **Adaptive token count**: Inspired by Matryoshka representations, each trajectory can emit $n \in \{1,2,4\}$ tokens; multiple tokens are initialized with Fourier positional embeddings to encourage diversity. $n$ is randomly sampled during training and adjusted based on computational budget during inference.
 
 ### Loss & Training
 
-- **Segmentation loss**: Dice loss + Focal loss (no cross-entropy); Dice loss ensures all target regions are discovered, and Focal loss handles class imbalance.
-- **Downstream loss**: Contrastive learning loss for CLIP (TrajViT2), classification loss (TrajAdapter), or autoregressive VLM loss (TrajVLM).
-- In the TrajViT2 setting, segmentation and downstream losses are optimized jointly; in the TrajAdapter/TrajVLM settings, the segmenter is pre-trained and then frozen.
+*   **Segmentation Loss**: Dice loss + Focal loss (Cross-entropy is not used); Dice loss ensures all target regions are discovered, while Focal loss handles class imbalance.
+*   **Downstream Loss**: CLIP contrastive loss (TrajViT2), classification loss (TrajAdapter), or VLM autoregressive loss (TrajVLM).
+*   Segmentation and downstream losses are optimized jointly (TrajViT2 setup) or the segmenter is frozen after pre-training (TrajAdapter/TrajVLM setups).
 
 ## Key Experimental Results
 
-### Setting 1: TrajViT2 (Training Video Encoder from Scratch with CLIP Objective)
+### Scenario 1: TrajViT2 (Training Video Encoder from Scratch, CLIP Target)
 
-A ViT-Large-scale encoder is trained on 4M videos + 15M images:
+A ViT-Large scale encoder trained on 4M videos + 15M images:
 
 | Model | K400 (Top-1) | SSv2 (Top-1) | ActivityNet txt2vid R@5 | VATEX vid2txt R@5 |
-|-------|-------------|-------------|------------------------|-------------------|
+| :--- | :--- | :--- | :--- | :--- |
 | ViT3D | 54.2 | 46.3 | 37.1 | 60.2 |
 | TokenLearner | 52.9 | 42.4 | 36.4 | 58.8 |
 | TrajViT | 55.3 | 45.7 | 38.4 | 61.1 |
 | **TrajViT2** | **59.1** | **48.7** | **40.1** | **65.0** |
 
-- K400 outperforms ViT3D by **+4.9%** and TrajViT by **+3.8%**.
-- ActivityNet vid2txt R@5 exceeds TrajViT by **+4.1%**.
-- Inference FLOPs are comparable to the most efficient ViViT variants, far below the overhead of TrajViT's external pipeline.
+*   Outperforms ViT3D by **+4.9%** and TrajViT by **+3.8%** on K400.
+*   ActivityNet vid2txt R@5 is **+4.1%** higher than TrajViT.
+*   Inference FLOPs are close to the efficient ViViT and far lower than TrajViT's external pipeline overhead.
 
-### Setting 2: TrajAdapter (Feature Adapter)
+### Scenario 2: TrajAdapter (Feature Adapter)
 
-TrajTok is inserted on top of frozen features from VideoMAE-v2-Huge and V-JEPA2-Huge:
+TrajTok inserted into frozen features of VideoMAE-v2-Huge and V-JEPA2-Huge:
 
 | Method | V-JEPA2 K400 | V-JEPA2 SSv2 |
-|--------|-------------|-------------|
+| :--- | :--- | :--- |
 | Linear probing | 84.5 | 73.7 |
 | Attentive probing | 85.1 | 74.2 |
 | **TrajAdapter (4 tok/traj)** | **88.0** | **75.1** |
 
-TrajAdapter improves K400 accuracy on V-JEPA2 from 85.1% to **88.0%** (+2.9%).
+TrajAdapter improves V-JEPA2 K400 accuracy from 85.1% to **88.0%** (+2.9%).
 
 ### Ablation Study
 
 **Segmenter Design Ablation** (Table 4):
 
 | Variant | VEQ (%) | STQ (%) | Retrieval R@5 |
-|---------|---------|---------|---------------|
+| :--- | :--- | :--- | :--- |
 | Default | 42.3 | 70.1 | 22.1 |
 | w/o Dice loss | 39.0 (↓3.3) | 68.9 (↓1.2) | 16.7 (↓5.4) |
-| w/o gradient detach | 34.1 (↓8.2) | 59.3 (↓10.8) | 18.3 (↓3.8) |
-| w/o hierarchical features | 39.3 (↓3.0) | 66.2 (↓3.9) | 19.2 (↓2.9) |
+| w/o Gradient detach | 34.1 (↓8.2) | 59.3 (↓10.8) | 18.3 (↓3.8) |
+| w/o Hierarchical features | 39.3 (↓3.0) | 66.2 (↓3.9) | 19.2 (↓2.9) |
 
-**Encoder Design Ablation** (Table 5): Removing the hard attention mask causes R@5 to drop by 4.7–5.1%, confirming that trajectory disentanglement is critical.
+**Encoder Design Ablation** (Table 5): Removing the hard attention mask leads to a 4.7-5.1% drop in R@5, proving that trajectory disentanglement is critical.
 
 ## Highlights & Insights
 
-- **End-to-end differentiability**: This is the first work to unify trajectory segmentation and video tokenization into a fully end-to-end trainable module, enabling downstream tasks to backpropagate gradients to adjust segmentation granularity.
-- **Generality across three settings**: The same module serves as a tokenizer (TrajViT2), feature adapter (TrajAdapter), or VLM connector (TrajVLM), demonstrating strong universality.
-- **Adaptive semantic granularity**: After training with a CLIP objective, segmentation granularity adjusts automatically — foreground objects are segmented more finely while background regions are merged more aggressively (as shown in Figure 3).
-- **Strong advantage on long videos**: TrajVLM outperforms PatchVLM by **+8.8%** on LongVideoBench and **+5.4%** on LVBench, demonstrating that trajectory tokens are naturally suited for long-range reasoning.
-- **Parameter and efficiency advantages**: The entire tokenizer contains only 46M parameters (1/7 of ViT-Large) and achieves inference FLOPs comparable to the best token merging methods.
+*   **End-to-end differentiable**: First work to unify trajectory segmentation and video tokenization into an end-to-end trainable module, allowing downstream tasks to adjust segmentation granularity via backpropagation.
+*   **Universal across three scenarios**: The same module acts as a tokenizer (TrajViT2), feature adapter (TrajAdapter), or VLM connector (TrajVLM), demonstrating extreme versatility.
+*   **Adaptive semantic granularity**: Post CLIP-target training, segmentation granularity adjusts automatically—foreground objects are segmented more finely while background regions are merged (as shown in Figure 3).
+*   **Strong advantage in long video**: TrajVLM outperforms PatchVLM by **+8.8%** on LongVideoBench and **+5.4%** on LVBench, as trajectory tokens are naturally suited for long-range reasoning.
+*   **Superior parameters and efficiency**: The entire tokenizer has only 46M parameters (1/7 of ViT-Large), with inference FLOPs comparable to optimal token merging methods.
 
 ## Limitations & Future Work
 
-1. **Limited pixel-level segmentation precision**: The lightweight design and low-resolution output lead to missed small objects, over-merged backgrounds, and imprecise boundaries, making the method unsuitable for tasks requiring accurate masks (e.g., instance segmentation benchmarks).
-2. **Slightly lower ImageNet performance**: In simple single-object scenes, the segmenter produces too few tokens, limiting fine-grained discriminative capacity.
-3. **Inconsistent short-video performance in TrajVLM**: On certain short-video QA benchmarks, performance is lower than patch pooling, suggesting that trajectory tokens may be less effective than patches for simple short videos.
-4. **Dependency on pseudo-labels**: Segmenter pre-training still relies on pseudo-labels generated by the TrajViT external pipeline, and the method has not fully freed itself from dependence on SAM/SAM2.
-5. **Limited scale of TrajVLM**: Validation is performed only on Qwen3-4B; the method has not been tested on models at the 70B+ scale, leaving large-scale effectiveness to be confirmed.
+1.  **Suboptimal pixel-level precision**: Lightweight design and low-resolution output lead to missing small objects, over-merged backgrounds, and imprecise boundaries, making it unsuitable for tasks requiring exact masks (e.g., instance segmentation evaluation).
+2.  **Slightly lower ImageNet performance**: In simple single-object scenes, the segmenter produces too few tokens, limiting fine-grained discriminative power.
+3.  **Inconsistent performance in short videos**: For some short-video QA, TrajVLM underperforms patch pooling, suggesting trajectory tokens may be less direct than patches for simple short clips.
+4.  **Pseudo-label dependence**: Segmenter pre-training still relies on pseudo-labels generated by the TrajViT external pipeline, not fully eliminating reliance on SAM/SAM2 models.
+5.  **Limited TrajVLM scale**: Validated only on Qwen3-4B; performance has not been scaled to 70B+ models.
 
 ## Related Work & Insights
 
 | Dimension | TrajViT (Prior Work) | TrajTok (Ours) |
-|-----------|---------------------|----------------|
-| Trajectory generation | External SAM+SAM2 pipeline | End-to-end lightweight segmenter |
-| Segmentation precision | Pixel-level accurate | Coarse-grained semantic grouping |
-| Trainability | Non-differentiable, frozen | Fully differentiable, jointly trained |
-| Task adaptation | Fixed granularity | Adaptive to downstream objective |
-| Scalability | Diminishing returns with more data | Continues to scale |
-| Parameter overhead | SAM2 itself 304M+ | Tokenizer only 46M |
+| :--- | :--- | :--- |
+| Trajectory Generation | External SAM+SAM2 pipeline | End-to-end lightweight segmenter |
+| Segmentation Precision | Pixel-level accurate | Coarse-grained semantic grouping |
+| Trainability | Non-differentiable, frozen | Fully differentiable, joint training |
+| Task Adaptation | Fixed granularity | Adaptive adjustment for downstream targets |
+| Scalability | Diminishing returns with data growth | Sustained scaling |
+| Parameter Overhead | SAM2 alone 304M+ | Tokenizer only 46M |
 | Efficiency | High pipeline latency | Single forward pass |
 
-Compared with token merging methods such as TokenLearner and RLT, TrajTok achieves substantially higher performance on both retrieval and classification at comparable inference efficiency.
+Compared to token merging methods like TokenLearner and RLT: TrajTok leads significantly in retrieval and classification with comparable inference efficiency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Advances trajectory tokenization from an external pipeline to a fully end-to-end differentiable framework with clear motivation and broad impact
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive validation across three settings (pre-training / adaptation / VLM), thorough ablations, and complete scalability analysis
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured with progressively built motivation and information-rich figures and tables
-- Value: ⭐⭐⭐⭐⭐ — The trajectory tokenizer is highly generalizable and makes important contributions to video understanding efficiency and long-video reasoning
+*   Novelty: ⭐⭐⭐⭐ — Successfully advances trajectory tokenization from external pipelines to an end-to-end differentiable framework.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive validation across three scenarios (pre-training/adapter/VLM) with thorough ablations and scalability analysis.
+*   Writing Quality: ⭐⭐⭐⭐ — Clear structure, logical motivation, and informative visualizations.
+*   Value: ⭐⭐⭐⭐⭐ — The trajectory tokenizer is highly versatile and significantly drives video understanding efficiency and long-video reasoning.
 
 <!-- RELATED:START -->
 
@@ -155,11 +165,11 @@ Compared with token merging methods such as TokenLearner and RLT, TrajTok achiev
 
 ## Related Papers
 
+- [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](../../ICCV2025/video_understanding/trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
-- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] Affordance-First Decomposition for Continual Learning in Video–Language Understanding](affordance-first_decomposition_for_continual_learning_in_video-language_understa.md)
+- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](../../ICCV2025/video_understanding/attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
-- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
-- [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
 
 </div>
 

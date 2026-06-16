@@ -2,85 +2,88 @@
 title: >-
   [Paper Note] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 description: >-
-  [CVPR2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in CLIP's text encoder — intermediate layers whose removal paradoxically improves performance under Source-Free Cross-Domain Few-Shot Learning (SF-CDF…
+  [CVPR 2026][Medical Imaging][CLIP] This paper identifies "Lost Layers" in the CLIP text encoder—a phenomenon where removing certain intermediate layers actually improves performance in Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but are underutilized due to visual domain shifts. To a
 tags:
-  - "CVPR2026"
-  - "Medical Imaging"
-  - "CLIP"
-  - "cross-domain few-shot learning"
-  - "text encoder layer redundancy"
-  - "vision-text fusion"
-  - "state space model"
-  - "gradient optimization"
+  - CVPR 2026
+  - Medical Imaging
+  - CLIP
+  - State Space Model
 date: 2026-05-08
-content_hash: f703a7d814c2e477
+content_hash: 483210e2dfa97d4f
 ---
-
 # Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.05235](https://arxiv.org/abs/2603.05235)  
 **Code**: [zhenyuZ-HUST/CVPR26-VtT](https://github.com/zhenyuZ-HUST/CVPR26-VtT)  
 **Area**: Medical Imaging / Cross-Domain Few-Shot Learning  
-**Keywords**: CLIP, cross-domain few-shot learning, text encoder layer redundancy, vision-text fusion, state space model, gradient optimization
+**Keywords**: CLIP, Cross-Domain Few-Shot Learning, text encoder layer redundancy, vision-text fusion, state space model, gradient optimization
 
 ## TL;DR
 
-This paper identifies "Lost Layers" in CLIP's text encoder — intermediate layers whose removal paradoxically improves performance under Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but rather underutilized due to visual domain shift, and propose the VtT model to reclaim this information at both the layer and encoder levels, achieving state-of-the-art performance.
+This paper identifies "Lost Layers" in the CLIP text encoder—a phenomenon where removing certain intermediate layers actually improves performance in Source-Free Cross-Domain Few-Shot Learning (SF-CDFSL). The authors demonstrate that these layers are not redundant but are underutilized due to visual domain shifts. To address this, the VtT model is proposed to reclaim this information at both the layer and encoder levels, achieving state-of-the-art results.
 
 ## Background & Motivation
 
-**Practical demand for cross-domain few-shot learning**: Annotated data is extremely scarce in domains such as medical imaging and remote sensing, necessitating knowledge transfer from pretrained models. Source domain data is often inaccessible due to privacy and computational constraints, motivating the SF-CDFSL task.
+**Practical demand for SF-CDFSL**: In fields such as medical imaging and remote sensing, labeled data is extremely scarce, necessitating knowledge transfer from pre-trained models. However, source domain data is often inaccessible due to privacy concerns and computational costs, giving rise to the Source-Free CDFSL (SF-CDFSL) task.
 
-**Cross-domain potential of CLIP**: CLIP, pretrained on large-scale image-text pairs, excels at downstream few-shot tasks; its text encoder is widely regarded as containing knowledge better suited for cross-domain transfer.
+**CLIP's cross-domain potential**: CLIP demonstrates excellent performance in downstream few-shot tasks due to its large-scale image-text alignment pre-training. Its text encoder is believed to contain knowledge better suited for cross-domain tasks.
 
-**Unexpected observation — Lost Layers**: Under the SF-CDFSL setting, removing certain intermediate layers of CLIP's text encoder (e.g., layers 6–7) consistently yields significant performance gains. This phenomenon is observed across all CLIP backbone variants and diverse fine-tuning methods.
+**Discovery of "Lost Layers"**: The authors observe that under the SF-CDFSL setting, removing specific intermediate layers (e.g., layers 6-7) of the CLIP text encoder significantly improves performance. This phenomenon is consistent across various CLIP backbone versions and fine-tuning methods.
 
-**Revisiting the layer-redundancy assumption**: Prior works [40,49,57] treat these layers as redundant and discard them outright. However, the authors show through an "Emphasize" strategy that up-weighting these layers' outputs leads to better results, indicating that the information is beneficial but wasted.
+**Correcting the perception of layer redundancy**: Prior works [40, 49, 57] consider these layers redundant and suggest their removal. However, the authors find that weighting the outputs of these layers using an "Emphasize" strategy yields even better results, indicating that the information is beneficial but currently underutilized.
 
-**Visual domain shift as the root cause**: The Lost Layer phenomenon does not appear on ImageNet (source domain) but emerges immediately on ImageNet-R (cross-domain), confirming that changes in the visual domain prevent beneficial information in the text encoder from being utilized.
+**Visual domain shift as the root cause**: The Lost Layer phenomenon does not exist on ImageNet (source domain) but emerges on ImageNet-R (cross-domain), proving that visual domain shifts hinder the utilization of beneficial information within the text encoder.
 
-**Need to redirect the visual branch**: The core insight is not to discard Lost Layers but to reclaim the wasted pretrained knowledge in the text branch by "teaching the visual encoder to think like the text encoder."
+**Re-guiding the visual branch**: The Core Idea is not to discard Lost Layers but to reclaim wasted pre-trained textual knowledge by "teaching the vision encoder to think like the text encoder."
 
 ## Method
 
-### Overall Architecture: VtT (teach the Vision to Think like the Text)
+### Overall Architecture
 
-VtT is a plug-and-play fine-tuning plugin comprising three modules:
+VtT (teach the Vision to Think like the Text) addresses the counter-intuitive phenomenon where certain intermediate layers of the CLIP text encoder can be removed to improve performance in Source-Free cross-domain few-shot settings. The Mechanism involves activating wasted pre-trained textual knowledge by teaching the visual branch to emulate the text branch, rather than discarding "Lost Layers." As a plug-and-play fine-tuning addon, VtT consists of three modules: V-T Fusion for layer-level integration of vision and text outputs, TIA for encoder-level absorption of fused features back into the text encoder, and DGSO for dynamically balancing classification and knowledge absorption using gradient conflict signals. All VtT parameters are removed after fine-tuning, resulting in zero additional overhead during inference.
 
-1. **V-T Fusion** (layer-level fusion, yellow): integrates outputs from each layer of the visual and text encoders.
-2. **TIA** (encoder-level absorption, pink): feeds fused features into the text encoder for knowledge absorption.
-3. **DGSO** (dynamic gradient supervised optimization, orange): dynamically balances the classification and knowledge absorption objectives based on gradient conflict information.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["CLIP Dual Branches<br/>Vision CLS + Text EOS tokens per layer"] --> B
+    subgraph VTF["V-T Fusion: Cross-Layer Scanning Fusion"]
+        direction TB
+        B["Deep-to-Shallow Interleaved Sequence H_i"] --> C["SSM Branch + Residual Branch<br/>Aggregate to obtain μ_i"]
+    end
+    C --> D
+    subgraph TIA["TIA: Text Encoder Information Absorption"]
+        direction TB
+        D["μ_i via Adapter → Absorption token A_i"] --> E["A_i replaces [CLASS]<br/>Input to Text Encoder for A_i′"]
+        E --> F["Align A_i′ with Visual Feature f_i<br/>Loss L_VtT"]
+    end
+    F --> G["DGSO: Dynamic Gradient Supervised Optimization<br/>Orthogonal projection on conflict; Disable L_VtT if sliding mean is negative"]
+    G -->|Remove VtT parameters after fine-tuning| H["Zero Inference Overhead"]
+```
 
-All VtT parameters are removed after fine-tuning, resulting in **zero additional overhead at inference**.
+### Key Designs
 
-### Key Design 1: V-T Cross-Layer Scanning Fusion
+**1. V-T Cross-Layer Scanning Fusion: Interleaving Vision and Text Layers for SSM-based Fusion**
 
-- The CLS tokens from each visual encoder layer and the EOS tokens from each text encoder layer are interleaved into a sequence $H_i = (f_i^l, t_i^l, f_i^{l-1}, t_i^{l-1}, \cdots, f_i^1, t_i^1)$, scanned from deep to shallow layers.
-- A **State Space Model (SSM)** aggregates this sequence via a residual branch (AvgPool + MLP) and an SSM branch (MLP + positional encoding + 2-layer SSM + AvgPool), yielding $\mu_i = \mu_i^{\text{res}} + \mu_i^{\text{ssm}}$.
-- Ablations show: deep→shallow scanning outperforms shallow→deep and bidirectional; SSM (58.2) outperforms MHA (57.2), RNN (57.2), and LSTM (57.4).
+To enable the visual branch to utilize information from various text layers, a mechanism is required to align both sides layer-by-layer. VtT interleaves the CLS tokens from the vision encoder and the EOS tokens from the text encoder into a sequence $H_i = (f_i^l, t_i^l, f_i^{l-1}, t_i^{l-1}, \cdots, f_i^1, t_i^1)$, scanning from deep to shallow layers. These are aggregated using a State Space Model (SSM), where a residual branch (AvgPool + MLP) is added to the SSM branch (MLP + Positional Encoding + 2-layer SSM + AvgPool) to obtain $\mu_i = \mu_i^{\text{res}} + \mu_i^{\text{ssm}}$. Ablations confirm that deep-to-shallow scanning outperforms shallow-to-deep or bidirectional approaches, and SSM (58.2) outperforms MHA (57.2), RNN (57.2), and LSTM (57.4).
 
-### Key Design 2: Text Encoder Information Absorption (TIA)
+**2. Text Encoder Information Absorption (TIA): Injecting Layer Knowledge into the Text Encoder for Distillation**
 
-- The layer-level fusion output $\mu_i$ is mapped via a learnable Adapter to an "absorption token" $A_i$.
-- $A_i$ **replaces** the class token [CLASS] in the text prompt, yielding $r_i' = [a][photo][of][a][A_i]$.
-- This modified prompt is passed through the text encoder to produce $A_i'$, which incorporates both layer-level detail knowledge and encoder-level holistic knowledge.
-- A loss $L_{\text{VtT}}$ is introduced to maximize the cosine similarity between $A_i'$ and visual features $f_i$, distilling textual knowledge into visual representations.
+Layer-level fusion captures "layer details" but lacks an "encoder-wide perspective." TIA maps the fused output $\mu_i$ through a learnable Adapter into an "absorption token" $A_i$. This token replaces the [CLASS] token in the text prompt, forming $r_i' = [a][photo][of][a][A_i]$ to be fed back into the text encoder. This results in $A_i'$, which contains both layer-level details and encoder-level global knowledge. Finally, $L_{\text{VtT}}$ maximizes the cosine similarity between $A_i'$ and the visual feature $f_i$, distilling textual knowledge into visual features.
 
-### Key Design 3: Dynamic Gradient Supervised Optimization (DGSO)
+**3. Dynamic Gradient Supervised Optimization (DGSO): Utilizing Gradient Conflict Signals to Protect Classification**
 
-- **Gradient correction**: Computes the cosine similarity $C_\theta$ between the gradients of $L_{ce}$ and $L_{comb} = L_{ce} + \beta L_{VtT}$; if $C_\theta < 0$ (conflicting directions), $G_{comb}$ is projected onto the direction orthogonal to $G_{ce}$ to prevent degradation of the classification objective.
-- **Dynamic loss combination**: Maintains a queue of $C$ values and computes a sliding-window mean $M_e$ (window length $\lambda=50$); when $M_e < 0$, $L_{VtT}$ is deactivated and not reactivated thereafter.
+The risk of adding a distillation objective is potential interference with the primary classification task. DGSO calculates the gradient cosine similarity $C_\theta$ between $L_{ce}$ and $L_{comb} = L_{ce} + \beta L_{VtT}$. If $C_\theta < 0$ (directional conflict), $G_{comb}$ is projected onto the orthogonal direction of $G_{ce}$ to ensure knowledge absorption does not degrade classification. Simultaneously, a queue of $C$ values is maintained to calculate a sliding window mean $M_e$ (length $\lambda=50$). If $M_e < 0$, $L_{VtT}$ is permanently disabled. This "correction followed by dynamic deactivation" mechanism allows the training process to adaptively decide when to incorporate textual knowledge.
 
 ### Loss & Training
 
 $$L_{comb} = L_{ce} + \beta \cdot L_{VtT}, \quad \beta = 7$$
 
-where $L_{ce}$ is the standard cross-entropy classification loss and $L_{VtT}$ is the vision-text alignment distillation loss.
+Where $L_{ce}$ is the standard cross-entropy classification loss, and $L_{VtT}$ is the vision-text alignment distillation loss.
 
 ## Key Experimental Results
 
-### Main Results (5-way 1-shot, 4 CDFSL datasets)
+### Main Results (5-way 1-shot, 4 CDFSL Datasets)
 
 | Method | CropDisease | EuroSAT | ISIC | ChestX | Avg |
 |---|---|---|---|---|---|
@@ -89,7 +92,7 @@ where $L_{ce}$ is the standard cross-entropy classification loss and $L_{VtT}$ i
 | PE-Core-LoRA | 91.75 | 84.49 | 40.89 | 22.02 | 59.78 |
 | **PE-Core-LoRA + VtT (Ours)** | **92.61** | **86.16** | **42.20** | **23.04** | **61.00** |
 
-### Best Results (5-way 5-shot)
+### 5-way 5-shot Results
 
 | Method | CropDisease | EuroSAT | ISIC | ChestX | Avg |
 |---|---|---|---|---|---|
@@ -108,39 +111,39 @@ where $L_{ce}$ is the standard cross-entropy classification loss and $L_{VtT}$ i
 
 ### Key Findings
 
-- **Lost Layers eliminated**: After applying VtT, using the complete text encoder yields optimal performance, and no layer-removal benefit remains (Figure 1(c)).
-- **Improved attention maps**: VtT eliminates erroneous attention to non-semantic regions while preserving effective attention areas, improving the cosine similarity of vision-text alignment.
-- **Cross-backbone generality**: Consistent improvements are observed across CLIP, SigLip2, and PE-Core backbones.
-- **Low computational overhead**: Compared to Maple (3.1M parameters, 205G FLOPs), VtT requires only 3.9M parameters and 148.5G FLOPs while outperforming it by 5.1 percentage points.
-- **Dynamic Loss Combining is effective**: With DLC, Avg = 58.2; without DLC, Avg drops to 57.2.
+- **Lost Layer Elimination**: Applying VtT makes the performance optimal when using the full text encoder, eliminating the phenomenon where removing layers helped (Figure 1(c)).
+- **Attention Map Improvement**: VtT reduces erroneous focus on non-semantic regions while preserving valid attention, improving the cosine similarity of vision-text alignment.
+- **Backbone Generalizability**: Consistent improvements are observed across CLIP, SigLip2, and PE-Core backbones.
+- **Low Computational Overhead**: Compared to Maple (3.1M parameters, 205G FLOPs), VtT uses only 3.9M parameters and 148.5G FLOPs while achieving 5.1 percentage points higher performance.
+- **Effectiveness of Dynamic Loss Combining**: Performance reaches 58.2 Avg with DLC, dropping to 57.2 without it.
 
 ## Highlights & Insights
 
-- **Novel insight**: The first work to discover and systematically analyze the Lost Layer phenomenon in CLIP's text encoder, establishing that its root cause is visual domain shift rather than information redundancy.
-- **Elegant design**: VtT operates exclusively during training and is fully removed at inference, incurring zero additional overhead.
-- **Sophisticated DGSO**: The combination of gradient correction and a dynamic stopping mechanism adaptively balances classification and knowledge absorption without requiring manual tuning of training schedules.
-- **Comprehensive experiments**: Evaluated on 4 CDFSL datasets + 10 Meta-dataset benchmarks, 3 backbone architectures, multiple fine-tuning methods, and detailed ablations.
+- **Novel Insight**: The paper is the first to systematically analyze the "Lost Layer" phenomenon in CLIP's text encoder, proving the cause is visual domain shift rather than information redundancy.
+- **Elegant Methodology**: VtT serves as a training-only plugin that is completely removed during inference, ensuring zero extra overhead.
+- **Sophisticated DGSO**: The gradient correction and dynamic stopping mechanism adaptively balance classification and knowledge absorption without manual schedule tuning.
+- **Thorough Evaluation**: Experiments cover 4 CDFSL datasets plus 10 Meta-datasets, 3 backbones, and multiple fine-tuning baselines.
 
 ## Limitations & Future Work
 
-- Although inference is overhead-free, the training phase requires additional computation for SSM forward passes and two separate gradient computations ($L_{ce}$ and $L_{comb}$), increasing training cost.
-- Hyperparameters $\beta=7$ and $\lambda=50$ are fixed across all settings; sensitivity to varying degrees of domain shift is not thoroughly discussed.
-- The Lost Layer analysis is primarily conducted on ViT-based CLIP architectures; applicability to CNN backbones or other VLM architectures remains unverified.
-- Evaluations focus on specific cross-domain benchmarks (agriculture, remote sensing, medical imaging); more extreme domain shift scenarios (e.g., 3D data, video) are not explored.
+- While inference is overhead-free, the training phase requires extra computation for SSM forward passes and dual gradient calculations ($L_{ce}$ and $L_{comb}$).
+- Hyperparameters $\beta=7$ and $\lambda=50$ are fixed across settings; their sensitivity to varying degrees of domain shift is not fully discussed.
+- The analysis of Lost Layers is primarily based on ViT-based CLIP architectures; applicability to CNN backbones or other VLM architectures remains unverified.
+- Datasets are focused on specific cross-domain benchmarks (agriculture, remote sensing, medical); more extreme shifts like 3D or video were not explored.
 
 ## Related Work & Insights
 
-- **SF-CDFSL**: Methods such as StepSTP [61] and LDC [32] focus on source-free fine-tuning strategies but do not investigate the utilization of text encoder layers.
-- **PEFT methods**: CoOp [75], Maple [25], and CLIP-LoRA [66] provide diverse fine-tuning strategies; VtT can be stacked on top of these as a plugin.
-- **Layer redundancy research**: Works [40,49,57,30,15] observe that removing certain layers does not significantly degrade performance and adopt deletion strategies; this paper is the first to demonstrate that these layers are actually beneficial and can be reclaimed.
-- **Knowledge distillation / modality fusion**: The TIA module draws inspiration from modality conversion methods [41]; DGSO's gradient correction is motivated by gradient conflict resolution techniques in multi-task learning.
+- **SF-CDFSL**: StepSTP [61] and LDC [32] focus on source-free fine-tuning strategies but do not explore the utilization of text encoder layers.
+- **PEFT Methods**: CoOp [75], Maple [25], and CLIP-LoRA [66] offer various fine-tuning strategies; VtT can be integrated as a complementary plugin.
+- **Layer Redundancy**: Unlike works [40, 49, 57] that use pruning, this paper proves that "redundant" layers can be beneficial if properly reclaimed.
+- **Knowledge Distillation**: The TIA module is inspired by modality transformation methods [41], and DGSO's gradient correction draws from conflict handling in multi-task learning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The discovery and systematic analysis of the Lost Layer phenomenon, along with the "beneficial but underutilized" insight, are highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 4+10 datasets, 3 backbones, multiple baselines, and comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ — The analytical pipeline (discovery → attribution → resolution) is clearly structured, with intuitive figures and tables.
-- Value: ⭐⭐⭐⭐ — Provides a new perspective on layer-level information utilization for cross-domain VLM transfer; the plug-in design offers strong practical applicability.
+- Novelty: ⭐⭐⭐⭐ — The discovery and insight into the Lost Layer phenomenon are highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Extensive testing across 14 datasets, multiple backbones, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ — Clear analytical logic (discovery → attribution → solution) and intuitive visualizations.
+- Value: ⭐⭐⭐⭐ — Provides a new perspective on utilizing layer-wise information for VLM transfer with practical architectural benefits.
 
 <!-- RELATED:START -->
 
@@ -149,9 +152,9 @@ where $L_{ce}$ is the standard cross-entropy classification loss and $L_{VtT}$ i
 ## Related Papers
 
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[CVPR 2026\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
 - [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 - [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
-- [\[CVPR 2026\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
 
 </div>

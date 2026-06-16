@@ -2,69 +2,66 @@
 title: >-
   [Paper Note] Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration
 description: >-
-  [CVPR2026][Image Generation][Image Restoration] Face2Scene proposes a two-stage framework: a reference-based face restoration model (Ref-FR) first produces HQ-LQ face pairs from which degradation codes are extracted as a…
+  [CVPR 2026][Image Generation][Diffusion Model] The Face2Scene two-stage framework is proposed: it first utilizes a reference-based face restoration model (Ref-FR) to obtain HQ-LQ face pairs, from which a degradation code is extracted as an "oracle." This code then conditions a single-step diffusion model to complete full-scene image restoration, including the body
 tags:
-  - "CVPR2026"
-  - "Image Generation"
-  - "Image Restoration"
-  - "Diffusion Models"
-  - "Face Reference"
-  - "Degradation Estimation"
-  - "Full-Scene Restoration"
-  - "Single-Step Inference"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: fba14e8944be7ece
+content_hash: 223e60e77194925e
 ---
-
 # Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.16570](https://arxiv.org/abs/2603.16570)  
 **Code**: [Project Page](https://amirhossein-kz.github.io/face2scene/)  
 **Area**: Image Generation  
-**Keywords**: Image Restoration, Diffusion Models, Face Reference, Degradation Estimation, Full-Scene Restoration, Single-Step Inference
+**Keywords**: Image Restoration, Diffusion Models, Facial Reference, Degradation Estimation, Full Scene Restoration, Single-step Inference
 
 ## TL;DR
 
-Face2Scene proposes a two-stage framework: a reference-based face restoration model (Ref-FR) first produces HQ-LQ face pairs from which degradation codes are extracted as an "oracle"; these codes then condition a single-step diffusion model to restore the full scene, including body and background.
+The Face2Scene two-stage framework is proposed: it first utilizes a reference-based face restoration model (Ref-FR) to obtain HQ-LQ face pairs, from which a degradation code is extracted as an "oracle." This code then conditions a single-step diffusion model to complete full-scene image restoration, including the body and background.
 
 ## Background & Motivation
 
-**Reference-based face restoration is limited to the facial region**: Existing Ref-FR methods only restore face crops and ignore the fact that real-world degradations (noise, blur, compression) typically affect the entire scene uniformly, limiting practical utility.
+**Limitations of Prior Work - Reference face restoration is localized to facial regions**: Existing Ref-FR methods only restore cropped facial areas, ignoring the fact that real-world degradation (noise, blur, compression) typically affects the entire scene uniformly, which limits practical utility.
 
-**Full-scene restorers lack degradation awareness**: Most full-image restoration methods take only the LQ image as input, leading to high problem ambiguity, visual artifacts, and difficulty in preserving facial realism and identity consistency.
+**Limitations of Prior Work - Full-scene restorers lack degradation awareness**: Most full-image restoration methods take only the LQ image as input. High uncertainty in the problem leads to visual artifacts, and it is difficult to maintain facial realism and identity consistency.
 
-**Degradation estimation signals are coarse**: S3Diff predicts only two global scalars (noise and blur) from the LQ image; DeeDSR encodes degradation from LQ via unsupervised contrastive learning, but struggles under complex degradations and tends to confuse texture/illumination with degradation.
+**Limitations of Prior Work - Coarse degradation estimation signals**: S3Diff only predicts two global scalars (noise and blur) from the LQ image; DeeDSR encodes degradation via unsupervised contrastive learning from the LQ, but learning efficacy is limited under complex degradation, often misidentifying texture or lighting as degradation.
 
-**Faces offer a natural advantage for degradation probing**: Faces have stable geometric structures and reliable keypoints; identity reference images are generally available; and the HQ-LQ pair difference can effectively isolate degradation from content.
+**Key Insight - Faces provide natural advantages for degradation detection**: Faces possess stable geometric structures and reliable keypoints; identity reference images are often available; the difference in HQ-LQ pairs can effectively isolate degradation from content.
 
-**Lack of scene-level identity-reference datasets**: No public dataset provides paired data containing both identity references and full-scene HQ images, limiting research reproducibility.
+**Key Challenge - Scarcity of scene-level identity reference datasets**: Public datasets lack paired data containing both identity references and full-scene HQ images, hindering research reproducibility.
 
-**Demand for efficient single-step inference**: Multi-step diffusion models (DiffBIR 34.6s, SUPIR 19.9s) incur high inference costs; practical applications require single-step solutions that balance quality and speed.
+**Goal - Efficient single-step inference**: Multi-step diffusion models (DiffBIR 34.6s, SUPIR 19.9s) incur heavy inference overhead. Practical scenarios require single-step solutions that balance quality and speed.
 
 ## Method
 
 ### Overall Architecture
 
-Face2Scene operates in two stages:
+Face2Scene aims to address the restoration of full-scene degraded images, such as those captured by smartphones. While real degradation (noise, blur, compression) typically acts uniformly across the image, blind restoration struggles to estimate it accurately. The **Key Insight** is that the stable structure and reliable keypoints of faces make them natural degradation detectors. The **Mechanism** consists of two stages: In the first stage, a reference-based face restoration model $F_\theta$ restores the detected face to HQ using a same-identity reference image, yielding a spatially aligned $(x^{HQ}, x^{LQ})$ face pair. In the second stage, a degradation code is extracted from this pair as an "oracle" to condition a single-step diffusion model for full-scene restoration.
 
-- **Stage 1 — Reference-Based Face Restoration**: Detect faces in the degraded image $I^{LQ}$ → align and crop to 512×512 → the Ref-FR model $F_\theta$ reconstructs HQ faces using identity reference images $\{x_k^{ref}\}$ → inverse-transform back to original coordinates, yielding spatially aligned $(x^{HQ}, x^{LQ})$ pairs.
-- **Stage 2 — Degradation-Conditioned Full-Scene Restoration**: FaDeX extracts a degradation code $Z_{face}$ from the HQ-LQ face pairs → MapNet maps it to multi-scale tokens → the tokens are concatenated with positive text embeddings and injected into an SD-Turbo single-step diffusion model via cross-attention, completing full-scene restoration in one step.
+```mermaid
+graph TD
+    A["LQ Scene Image + Identity Reference"] --> B["Stage 1: Ref-FR<br/>Restore detected face via reference"]
+    B --> C["Spatially Aligned Face Pair (HQ, LQ)"]
+    C --> D["FaDeX<br/>Encoder processes 6 channels → Code q (oracle)"]
+    D --> E["MapNet<br/>Maps to 21 multi-scale tokens"]
+    E --> F["Injected into SD-Turbo cross-attention"]
+    A --> F
+    F --> G["HQ Full-Scene Restored Image"]
+```
 
 ### Key Designs
 
-**FaDeX (Face-derived Degradation eXtractor)**
+**1. FaDeX: Distilling Face HQ-LQ Pairs into Content-Decoupled Degradation Embeddings**
 
-- A lightweight convolutional encoder $E_\phi$ takes 6-channel input (HQ and LQ channels concatenated) and outputs spatial features $Z_{face} \in \mathbb{R}^{H' \times W' \times C}$.
-- Global average pooling followed by an MLP projection head produces a unit-normalized vector $q$; training uses **contrastive learning**: samples generated by the same degradation operator $\mathcal{G}$ form positive pairs, while different degradations form negative pairs, with a SupCon-style loss.
-- GT faces are additionally used in place of Ref-FR outputs during training to improve robustness. The encoder is frozen after training.
+Unlike S3Diff, which blindly estimates scalars, or DeeDSR's unsupervised contrast, FaDeX leverages faces as the strongest signal source. A lightweight convolutional encoder $E_\phi$ takes a 6-channel input (concatenated HQ and LQ), outputs spatial features $Z_{face} \in \mathbb{R}^{H' \times W' \times C}$, and produces a unit-normalized vector $q$ via global average pooling and an MLP projection head. A SupCon-style contrastive loss is used for training—samples generated by the same degradation operator $\mathcal{G}$ form positive pairs, while different degradations form negative pairs, stripping degradation from image content. During training, GT faces are used as HQ targets to enhance robustness. The resulting estimation is precise and generalized across images.
 
-**MapNet (Degradation Mapping Network)**
+**2. MapNet: Mapping Degradation Embeddings to Multi-scale Tokens for Diffusion**
 
-- Applies overlapping patch embedding to $Z_{face}$ (3×3 Conv stride=2 + LayerNorm).
-- Dual-branch residual attention: $DegAttn(Z_{face}) = (A_1 - \lambda A_2)[V_1; V_2]$, with learnable $\lambda$.
-- Three-scale grid average pooling (4×4, 2×2, 1×1) + MLP + LayerNorm → generates **21 degradation tokens** (16+4+1).
-- Tokens are concatenated with text tokens and fed into the cross-attention layers of SD-Turbo.
+To ensure the single-step diffusion model "understands" the degradation code, MapNet first applies overlap patch embedding to $Z_{face}$, followed by a dual-branch residual attention layer $DegAttn(Z_{face}) = (A_1 - \lambda A_2)[V_1; V_2]$ where $\lambda$ is learnable. Finally, three-scale grid average pooling (4×4, 2×2, 1×1) with an MLP and LayerNorm generates 21 degradation tokens (16+4+1). These tokens are concatenated with text tokens and fed into the SD-Turbo cross-attention layers. This multi-scale design allows the model to perceive both global intensity and local variations, propagating facial degradation insights to the entire scene.
 
 ### Loss & Training
 
@@ -72,80 +69,80 @@ $$
 \mathcal{L}(\theta) = \underbrace{\lambda_2 \|{\hat{I} - I^{HQ}}\|_2^2 + \lambda_{LPIPS} \cdot LPIPS(\hat{I}, I^{HQ})}_{\mathcal{L}_{rec}} + \lambda_{GAN} \cdot \mathcal{L}_{GAN}
 $$
 
-- Reconstruction loss: $\ell_2$ + LPIPS perceptual loss.
-- Adversarial loss: discriminator uses a frozen DINO backbone with multi-level independent classifiers; **no diffusion teacher** is required, enabling direct single-step generation.
-- Hyperparameters: $\lambda_{L2}=2.0$, $\lambda_{LPIPS}=5.0$, $\lambda_{GAN}=0.5$.
+- **Reconstruction Loss**: $\ell_2$ + LPIPS perceptual loss.
+- **Adversarial Loss**: The discriminator uses a frozen DINO backbone with multi-level independent classifiers, achieving single-step output **without a diffusion teacher**.
+- **Hyperparameters**: $\lambda_{L2}=2.0$, $\lambda_{LPIPS}=5.0$, $\lambda_{GAN}=0.5$.
 
 ## Key Experimental Results
 
 ### Dataset
 
-The authors construct the **InScene** benchmark (~57.5K training images):
+The authors constructed the **InScene** benchmark (~57.5K training images):
 
-| Category | Count | Identities | Source |
-|----------|-------|------------|--------|
-| Synthetic reference set (CelebRef-HQ + InfiniteYou) | 11,266 | 905 | Synthetic |
-| Real reference set (gallery) | 16,486 | 914 | Real |
-| Non-reference set (filtered CC12M) | 29,697 | — | Real |
+| Category | Quantity | Identities | Source |
+|------|------|--------|------|
+| Synthetic Reference Set (CelebRef-HQ + InfiniteYou) | 11,266 | 905 | Synthetic |
+| Real Reference Set (Gallery) | 16,486 | 914 | Real |
+| Non-reference Set (Filtered CC12M) | 29,697 | — | Real |
 
-The test set contains 100 images captured with a Samsung S25 Edge (10 identities), covering real-world degradations including ISO 3200/1600/800 and motion blur.
+The test set includes 100 images (10 identities) captured by a Samsung S25 Edge, covering real degradations like ISO 3200/1600/800 and motion blur.
 
 ### Main Results (InScene Synthetic Validation)
 
 | Method | Steps | DISTS↓ | LPIPS↓ | FID↓ | MUSIQ↑ | CLIP-IQA↑ |
-|--------|-------|--------|--------|------|--------|-----------|
+|------|------|--------|--------|------|--------|-----------|
 | SUPIR | 50 | 0.1361 | 0.3123 | 24.85 | 70.20 | 0.6015 |
 | DiffBIR | 50 | 0.1831 | 0.3958 | 36.15 | 68.51 | 0.6975 |
 | S3Diff | 1 | 0.1131 | 0.2557 | 18.06 | 72.18 | 0.6980 |
-| **Face2Scene** | **1+N** | **0.1007** | **0.2421** | **15.26** | **74.76** | **0.7640** |
+| **Ours** | **1+N** | **0.1007** | **0.2421** | **15.26** | **74.76** | **0.7640** |
 
-On the real validation set, Face2Scene also achieves comprehensive superiority: DISTS 0.1178 vs. S3Diff 0.2231, LPIPS 0.2502 vs. 0.5149, FID 42.21 vs. 38.64 (S3Diff slightly better), while MUSIQ/CLIP-IQA/MANIQA/LIQE/TOPIQ are all best.
+On real-world validation, Face2Scene also leads significantly: DISTS 0.1178 vs S3Diff 0.2231, LPIPS 0.2502 vs 0.5149. Metrics such as MUSIQ, CLIP-IQA, and TOPIQ are all best-in-class.
 
 ### Ablation Study
 
 | Configuration | DISTS↓ | LPIPS↓ | FID↓ | MUSIQ↑ | Wins |
-|---------------|--------|--------|------|--------|------|
-| Face2Scene **w/** degradation estimation | 0.1007 | 0.2421 | 15.26 | 74.76 | **10/10** |
-| Face2Scene **w/o** degradation estimation | 0.1293 | 0.2711 | 17.81 | 71.78 | 0/10 |
+|------|--------|--------|------|--------|------|
+| Face2Scene **w/** Degradation Est. | 0.1007 | 0.2421 | 15.26 | 74.76 | **10/10** |
+| Face2Scene **w/o** Degradation Est. | 0.1293 | 0.2711 | 17.81 | 71.78 | 0/10 |
 
-- Removing degradation estimation degrades all metrics, validating the central role of FaDeX+MapNet.
-- GT Face Insertion experiment: pasting GT faces back into restored results, Face2Scene still significantly outperforms S3Diff (wins 8/10), demonstrating that the gains stem from full-scene restoration rather than the face region alone.
-- FaDeX cosine similarity analysis: embeddings from the same degradation operator but different images are highly similar, while embeddings from different degradations on the same image are clearly distinct — confirming effective content disentanglement.
+- Removing degradation estimation causes a drop across all metrics, validating the core role of FaDeX+MapNet.
+- GT Face Inserted: Even when pasting GT faces back into results, Face2Scene outperforms S3Diff (8/10 wins), proving improvements apply to the full scene.
+- FaDeX Cosine Similarity: Embeddings for the same degradation across different images are highly similar, while embeddings for different degradations on the same image are distinct—confirming effective content decoupling.
 
 ### Key Findings
 
-1. Estimating degradation from face HQ-LQ pairs is substantially more effective than blind estimation from LQ alone, yielding 15%+ FID improvement.
-2. Single-step inference takes 3.3s at 1024×1024 — on par with S3Diff (1.4s) and far faster than DiffBIR (34.6s) / SUPIR (19.9s).
-3. Degradation codes are highly disentangled from content, exhibiting strong generalization across images and scenes.
+1. Extracting degradation information from face HQ-LQ pairs is far more effective than blind estimation from LQ, improving FID by over 15%.
+2. Single-step inference takes 3.3s (1024×1024), which is in the same order of magnitude as S3Diff (1.4s) and much faster than DiffBIR (34.6s).
+3. Degradation embeddings are highly decoupled from content, demonstrating generalization across scenes.
 
 ## Highlights & Insights
 
-- **Elegant oracle concept**: Treating face restoration as a degradation detector — estimating global degradation from the strongest signal (faces) and propagating it to the entire scene — is naturally motivated and logically coherent.
-- **FaDeX contrastive learning**: Learns degradation embeddings without degradation labels while effectively decoupling them from image content.
-- **MapNet three-scale token design**: 21 multi-scale tokens provide rich degradation conditioning signals and integrate seamlessly with SD-Turbo cross-attention.
-- **InScene benchmark**: Combines synthetic, real, and in-the-wild captured data, filling the gap in identity-reference scene-level datasets.
-- **Single-step inference**: SD-Turbo + LoRA + teacher-free adversarial training balances quality and efficiency.
+- **Clever Oracle Idea**: Treating face restoration as a degradation detector by estimating global degradation from the strongest signal (the face) to benefit the whole scene is a logical and natural motivation.
+- **Novelty - FaDeX Contrastive Scheme**: Learns degradation embeddings without explicit labels and effectively decouples them from image content.
+- **MapNet Multi-scale Tokens**: 21 multi-scale tokens provide rich conditioning signals, seamlessly integrating with SD-Turbo's cross-attention.
+- **Value - InScene Benchmark**: Fills the gap in identity-reference scene-level data by combining synthetic, real, and captured data.
+- **Function - Single-step Inference**: Combines SD-Turbo, LoRA, and teacher-less adversarial training to balance quality and speed.
 
 ## Limitations & Future Work
 
-- **Assumes spatially uniform degradation**: Not applicable to spatially varying degradations such as depth-of-field blur or local motion blur.
-- **Dependent on face detection and Ref-FR quality**: Degradation estimation becomes unreliable when face detection fails or reference image quality is poor.
-- **Stage 1 introduces additional inference cost**: Ref-FR (~2.0s) accounts for ~60% of total inference time, limiting real-time applicability.
-- **Restricted to face-containing scenes**: Cannot generalize to general image restoration tasks without faces.
+- **Assumption of Uniform Scene Degradation**: Not applicable to spatially varying degradation like depth-of-field bokeh or local motion blur.
+- **Dependence on Detection and Ref-FR quality**: If face detection fails or reference quality is poor, degradation estimation becomes unreliable.
+- **Stage 1 Inference Overhead**: Ref-FR accounts for ~60% of total inference time (~2.0s), limiting real-time applications.
+- **Face-centric**: Currently cannot generalize to general scenes that do not contain faces.
 
 ## Related Work & Insights
 
-- **Reference-based face restoration**: FaceMe, RestorerID, MGFR — restore only the facial region without handling the scene.
-- **Scene-level portrait restoration**: DiffBody, OSDHuman, HAODiff — extend to full-body but do not leverage identity references for degradation estimation.
-- **Degradation-aware diffusion**: S3Diff (two scalars), DeeDSR (LQ contrastive learning) — coarse degradation signals, inferior to direct estimation from HQ-LQ pairs.
-- **General blind restoration**: DiffBIR, SUPIR, PASD — strong generalization but poor face/identity preservation and slow multi-step inference.
+- **Ref-FR**: FaceMe, RestorerID, MGFR — only restore facial regions, ignoring the scene.
+- **Scene-level Human Restoration**: DiffBody, OSDHuman, HAODiff — extend to full body but do not use identity references for degradation estimation.
+- **Degradation-aware Diffusion**: S3Diff (two scalars), DeeDSR (LQ contrastive) — signals are coarser than those estimated from HQ-LQ pairs.
+- **General Blind Restoration**: DiffBIR, SUPIR, PASD — strong generality but poor identity preservation and slow multi-step inference.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The "face as degradation oracle" framing is novel and organically integrates Ref-FR with degradation-aware diffusion
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Three-category self-constructed dataset, 10 metrics, thorough ablations, and FaDeX disentanglement verification; lacks broader testing on spatially varying degradations
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, rich figures and tables, well-articulated motivation
-- Value: ⭐⭐⭐⭐ — Clearly applicable to practical scenarios (low-quality smartphone photos + personal album references), with strong method extensibility
+- **Novelty**: ⭐⭐⭐⭐ — The "face as degradation oracle" perspective is novel, effectively linking Ref-FR with degradation-aware diffusion.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Built three data categories, tested 10 metrics, and included detailed ablations; lacks tests on more spatially varying degradations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, rich visualizations, and well-articulated motivation.
+- **Value**: ⭐⭐⭐⭐ — Clear practical application (low-quality mobile photos + album references) with strong scalability.
 
 <!-- RELATED:START -->
 
@@ -154,9 +151,9 @@ On the real validation set, Face2Scene also achieves comprehensive superiority: 
 ## Related Papers
 
 - [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](../../ICLR2026/image_generation/bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
-- [\[CVPR 2026\] ExpressEdit: Fast Editing of Stylized Facial Expressions with Diffusion Models in Photoshop](expressedit_fast_editing_of_stylized_facial_expressions_with_diffusion_models_in.md)
+- [\[CVPR 2025\] GenDeg: Diffusion-based Degradation Synthesis for Generalizable All-In-One Image Restoration](../../CVPR2025/image_generation/gendeg_diffusion-based_degradation_synthesis_for_generalizable_all-in-one_image_.md)
+- [\[CVPR 2026\] Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features](diffusion-based_makeup_transfer_with_facial_region-aware_makeup_features.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
-- [\[CVPR 2026\] Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models](erasure_or_erosion_evaluating_compositional_degradation_in_unlearned_text-to-ima.md)
 - [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](../../AAAI2026/image_generation/realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
 
 </div>

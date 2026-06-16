@@ -2,139 +2,156 @@
 title: >-
   [Paper Note] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes VoxSAMNet, a monocular semantic scene completion (SSC) framework that explicitly models voxel sparsity and semantic imbalance. It employs a D…
+  [CVPR 2026][Autonomous Driving][Paper Note] VoxSAMNet is proposed, a monocular semantic scene completion framework that explicitly models voxel sparsity and semantic imbalance. It utilizes a Dummy Shortcut to skip empty voxels and combines Foreground Dropout with a Text-Guided Image Filter to mitigate long-tail overfitting, achieving a SOTA mIoU of 18.19% on Sem
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Semantic Scene Completion"
-  - "Voxel Sparsity"
-  - "Foreground Modulation"
-  - "Deformable Attention"
-  - "Long-Tail Distribution"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 4b3dd26a534b957f
+content_hash: 30ae6fa900befde1
 ---
-
 # Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.05780](https://arxiv.org/abs/2604.05780)  
 **Code**: [https://github.com/xyandtyh/VoxSAMNet](https://github.com/xyandtyh/VoxSAMNet)  
-**Area**: Autonomous Driving / Semantic Scene Completion
-**Keywords**: Semantic Scene Completion, Voxel Sparsity, Foreground Modulation, Deformable Attention, Long-Tail Distribution
+**Area**: Autonomous Driving / Semantic Scene Completion  
+**Keywords**: Semantic Scene Completion, Voxel Sparsity, Foreground Modulation, Deformable Attention, Long-tail Distribution
 
 ## TL;DR
 
-This paper proposes VoxSAMNet, a monocular semantic scene completion (SSC) framework that explicitly models voxel sparsity and semantic imbalance. It employs a Dummy Shortcut to bypass empty voxels, and Foreground Dropout combined with a Text-Guided Image Filter (TGIF) to mitigate long-tail overfitting. VoxSAMNet achieves a state-of-the-art 18.19% mIoU on SemanticKITTI, surpassing existing monocular and stereo methods.
+VoxSAMNet is proposed, a monocular semantic scene completion framework that explicitly models voxel sparsity and semantic imbalance. It utilizes a Dummy Shortcut to skip empty voxels and combines Foreground Dropout with a Text-Guided Image Filter to mitigate long-tail overfitting, achieving a SOTA mIoU of 18.19% on SemanticKITTI (outperforming existing monocular and stereo methods).
 
 ## Background & Motivation
 
-**Background**: Monocular semantic scene completion (SSC) aims to reconstruct complete 3D semantic scenes from a single RGB image, serving as a critical perception task for autonomous driving and robotics. The field has evolved from the 3D U-Net of MonoScene to BEVFormer's deformable attention and VoxFormer's depth-guided voxel queries.
+**Background**: Monocular Semantic Scene Completion (SSC) aims to reconstruct a complete 3D semantic scene from a single RGB image, serving as a critical perception task for autonomous driving and robotics. Methods have evolved from MonoScene's 3D U-Net to BEVFormer's deformable attention, and subsequently to VoxFormer's depth-guided voxel queries.
 
-**Limitations of Prior Work**: 3D scenes suffer from severe dual imbalance: (1) **Spatial imbalance** — over 93% of voxels in SemanticKITTI are empty, with only 7% occupied. Existing methods treat empty and occupied voxels uniformly, wasting significant computation on uninformative regions. (2) **Semantic imbalance** — among occupied voxels, foreground categories (e.g., pedestrians, cyclists) are extremely rare, forming a long-tail distribution that causes models to overfit to frequent classes. Additionally, methods such as BEVFormer suffer from feature ambiguity, as multiple voxels along the same ray project to identical image-plane locations.
+**Limitations of Prior Work**: 3D scenes exhibit a severe dual imbalance: (1) **Spatial Imbalance**—Over 93% of voxels in SemanticKITTI are empty, with only 7% being occupied. Existing methods treat empty and occupied voxels indiscriminately, wasting significant computation on uninformative regions. (2) **Semantic Imbalance**—Among occupied voxels, foreground categories (e.g., pedestrians, cyclists) are extremely sparse, forming a long-tail distribution where models easily overfit to frequent classes. Furthermore, methods like BEVFormer suffer from feature blurring when projecting voxels onto the 2D image plane, as multiple voxels along the same line of sight project to the same location.
 
-**Key Challenge**: The prevailing uniform processing paradigm fails to distinguish informative from uninformative voxels. Redundant computation on empty voxels is not only inefficient but also dilutes the learning signal for occupied voxels, while the long-tail distribution leads to severe under-representation of rare foreground classes.
+**Key Challenge**: The current uniform processing paradigm cannot distinguish "informative" from "non-informative" voxels. Redundant computation on empty voxels is inefficient and dilutes the learning signals for occupied voxels. Meanwhile, the long-tail distribution leads to severe under-representation of rare foreground categories.
 
-**Goal**: (1) How can computation be efficiently concentrated on occupied voxels? (2) How can long-tail overfitting for rare foreground categories be mitigated?
+**Goal**: (1) How to efficiently concentrate computational resources on occupied voxels? (2) How to mitigate long-tail overfitting for rare foreground classes?
 
-**Key Insight**: Explicitly differentiating empty and occupied voxels with distinct processing pathways, while leveraging text-visual cross-modal guidance to enhance the representation of foreground categories.
+**Key Insight**: Explicitly differentiate between empty and occupied voxels using distinct processing paths, while leveraging cross-modal text-vision guidance to enhance foreground representations.
 
-**Core Idea**: A shared dummy node skips empty voxels while deformable attention refines occupied voxels to address sparsity; Foreground Dropout combined with TGIF addresses long-tail imbalance.
+**Core Idea**: Use a shared dummy node shortcut to skip empty voxels and deformable attention to refine occupied voxels to address sparsity; employ Foreground Dropout and TGIF to resolve long-tail imbalance.
 
 ## Method
 
 ### Overall Architecture
 
-Given a single RGB image, the pipeline consists of three stages: (1) **Text-guided 3D initialization**: TGIF suppresses responses from dropped-out classes at the 2D feature level, followed by depth-guided voxel projection to lift features to 3D. (2) **Dummy Shortcut feature refinement**: A voxel classifier predicts occupancy; empty voxels are routed through the dummy shortcut, while occupied voxels are refined via deformable attention. (3) **MAE denoising + 3D U-Net completion**: Noise is added to visible voxels before a 3D U-Net infers missing content, enhancing completeness and global consistency. The final semantic occupancy is decoded from the refined features.
+VoxSAMNet addresses a fundamental inefficiency in monocular SSC: models spend most computational power on empty voxels that should not stay in attention, while repeatedly overfitting to sparse foreground classes. The pipeline follows a trajectory of "lifting 2D features cleanly to 3D, shunting refinement based on occupancy state, and finally performing completion and denoising." Given a single RGB image, it first performs **text-guided 3D initialization**—where TGIF suppresses reverberations of dropped categories at the 2D feature level, and features are lifted to 3D voxel space via depth-guided projection. Subsequently, it enters **Dummy Shortcut Feature Refinement**, where a voxel classifier determines the occupancy of each voxel: empty voxels take the dummy shortcut, while occupied voxels are refined using deformable attention. Finally, **MAE-style denoising + 3D U-Net completion** is used to infer missing content in occluded areas by adding noise to visible voxels, ensuring overall completeness and global consistency before decoding semantic occupancy. The flowchart below illustrates the three stages:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Single RGB Image"] --> FM["Foreground Modulation: Foreground Dropout + TGIF<br/>Randomly drop foreground in labels; text-guided filter in features"]
+    FM --> INIT["Depth-guided 3D Initialization<br/>Projection + View Mask + ROI pooling + Deform3D (LSS Depth)"]
+    INIT --> CLS
+    subgraph DSFR["DSFR: Refinement Shunting by Occupancy Status"]
+        direction TB
+        CLS["Voxel Occupancy Classification<br/>Learnable threshold τ = 0.2 + 0.8·σ(θ)"]
+        CLS -->|Empty Voxel| DUM["Weighted mixing with dummy embedding<br/>Gradient-preserving, compute-saving"]
+        CLS -->|Occupied Voxel| DEF["Multi-head Deformable Attention Refinement"]
+    end
+    DUM --> COMP["Completion (Stage III, Scaffold)<br/>OcclusionMAE Denoising + 3D U-Net Inference for Occlusions"]
+    DEF --> COMP
+    COMP --> OUT["Semantic Occupancy Decoding"]
+```
 
 ### Key Designs
 
-1. **Dummy Shortcut for Feature Refinement (DSFR)**:
+**1. Foreground Dropout + Text-Guided Image Filter (TGIF): Dual-pronged regularization and enhancement for long-tail issues**
 
-    - **Function**: Selectively refines features based on voxel occupancy status, skipping empty voxels to reduce computation.
-    - **Mechanism**: An occupancy probability map $P_\text{occu}$ is produced via 3D convolution followed by a $1\times1\times1$ convolution and sigmoid activation. A learnable threshold $\tau = 0.2 + 0.8 \cdot \sigma(\theta)$ partitions voxels into occupied set $M_o$ and empty set $M_e$. Empty voxel features are blended with a learnable dummy embedding $\mathbf{Em}$ weighted by occupancy probability: $F(P) \leftarrow F(P) \odot P_\text{occu} + \mathbf{Em} \odot P_\text{emp}$. Occupied voxels are refined via multi-head deformable attention, which samples image features near projected positions using predicted offsets and attention weights.
-    - **Design Motivation**: Concentrating computation on the informative ~7% of voxels; empty voxels are represented through a shared dummy node rather than being fully discarded, preserving representational consistency. The learnable threshold provides optimization flexibility.
+This is the semantic modulation component in the first stage (text-guided 3D initialization). Foreground categories (pedestrians, cyclists, etc.) are extremely rare in occupied voxels, forming a long-tail distribution where models easily overfit to frequent classes. Foreground Dropout leverages the regularization concept of standard Dropout but acts on semantic labels: during training, ground truth labels for certain foreground classes are randomly replaced with empty voxel labels with probability $p$, forcing the model not to memorize specific categories. However, label dropout alone is insufficient—residual semantic responses of suppressed categories remain in 2D features. TGIF is then introduced: it constructs text prompts based on the **retained** categories (e.g., "road, building, terrain"). After encoding by a language encoder, these prompts are fused with image features via self-attention and cross-attention to selectively enhance responses of retained classes and suppress interference from dropped categories:
 
-2. **Foreground Dropout + Text-Guided Image Filter (TGIF)**:
+$$\mathbf{f}_T = \text{TGIF}(\mathbf{f}, T)$$
 
-    - **Function**: Mitigates foreground category overfitting induced by long-tail distributions.
-    - **Mechanism**: During training, GT labels of a random subset of foreground classes are replaced with empty-voxel labels with probability $p$, preventing the model from over-relying on specific categories. Since residual semantic responses from dropped classes persist in 2D features, TGIF is introduced: text prompts are generated from retained class names (e.g., "road, building, terrain"), encoded by a language encoder, and fused with image features via self-attention and cross-attention to selectively enhance retained-class responses and suppress dropped-class interference: $\mathbf{f}_T = \text{TGIF}(\mathbf{f}, T)$.
-    - **Design Motivation**: Foreground Dropout applies regularization at the semantic label level analogously to standard Dropout; TGIF reinforces this effect at the feature level. The two components work in concert — one operating on the label side and the other on the feature side.
+The two components are synergistic—one creates perturbations at the label end to prevent overfitting, while the other solidifies the effect by using linguistic prompts as a switch to modulate image features.
 
-3. **Depth-Guided 3D Feature Initialization**:
+**2. Depth-guided 3D Feature Initialization: Mitigating projection blur with monocular depth priors**
 
-    - **Function**: Lifts 2D image features into the 3D voxel space.
-    - **Mechanism**: Each 3D voxel center $P=(x,y,z)^\top$ is projected onto the image plane via camera intrinsics and extrinsics: $\tilde{u} = K[R|t]P$. A field-of-view mask filters invalid voxels. Valid voxels extract features from the 2D feature map via ROI pooling, then undergo 3D deformable attention refinement conditioned on the depth volume $D_p$ generated by DepthNet via LSS: $F^{3D}_T(P) = \text{Deform3D}(\text{RoI}(\mathbf{f}_T, \text{box}_P), D_p)$.
-    - **Design Motivation**: Dense monocular depth priors guide the 2D-to-3D lifting process, reducing projection ambiguity.
+Modulated 2D features must be lifted into 3D voxels, a step that determines the starting quality of subsequent refinement. Methods like BEVFormer project voxels onto the 2D image plane, where multiple voxels along the same line of sight project to the same pixel, causing blurred and indistinguishable features. This framework adopts a different lifting approach: each 3D voxel center $P=(x,y,z)^\top$ is first projected onto the image plane $\tilde{u} = K[R|t]P$ via camera intrinsics and extrinsics. A view mask filters out invalid voxels outside the frame. Valid voxels then undergo ROI pooling to extract features from 2D maps, combined with the depth volume $D_p$ generated via LSS from DepthNet for 3D deformable attention refinement:
+
+$$F^{3D}_T(P) = \text{Deform3D}(\text{RoI}(\mathbf{f}_T, \text{box}_P), D_p)$$
+
+Introducing dense monocular depth priors imposes a constraint on "how far away" each voxel is during the 2D→3D lifting process, thereby distinguishing features that would otherwise be compressed along the line of sight and reducing projection blur.
+
+**3. Dummy Shortcut for Feature Refinement (DSFR): Shunting compute to the 7% informative voxels**
+
+After obtaining initial 3D voxels, the model enters the second stage of refinement. Since over 93% of voxels in SemanticKITTI are empty, existing methods waste computation and dilute learning signals by treating all voxels equally. DSFR first uses a 3D convolution stacked with a $1\times1\times1$ convolution and a sigmoid to predict an occupancy probability map $P_\text{occu}$. A learnable threshold $\tau = 0.2 + 0.8 \cdot \sigma(\theta)$ divides voxels into an occupied set $M_o$ and an empty set $M_e$. Crucially, empty voxels are not hard-discarded—which would break gradient flow—but are instead weighted and mixed with a learnable dummy embedding $\mathbf{Em}$ based on occupancy probability:
+
+$$F(P) \leftarrow F(P) \odot P_\text{occu} + \mathbf{Em} \odot P_\text{emp}$$
+
+Occupied voxels undergo multi-head deformable attention: predicting sampling offsets and weights to aggregate 2D features sampled near the projected positions. Consequently, expensive attention refinement only occurs on approximately 7% of voxels. Empty voxels maintain representational consistency and gradient continuity via a global shared dummy node, while the learnable threshold allows the "occupied/empty" boundary to adapt during training, offering more flexibility than a fixed threshold. The refined voxels are then passed to the third stage for OcclusionMAE denoising and 3D U-Net inference (following standard completion paradigms) to decode semantic occupancy.
 
 ### Loss & Training
 
-The total loss comprises two components:
+The total loss consists of two parts:
 
-- SSC loss: $\mathcal{L}_{ssc} = \mathcal{L}_{sem} + \mathcal{L}_{geo} + \mathcal{L}_{ce} + \mathcal{L}_{depth}$ (semantic affinity loss + geometric loss + cross-entropy + depth loss)
-- Occupancy loss: $\mathcal{L}_{occ} = \mathcal{L}_p + \mathcal{L}_r + \mathcal{L}_s$ (BCE terms for precision, recall, and specificity)
+- SSC Loss: $\mathcal{L}_{ssc} = \mathcal{L}_{sem} + \mathcal{L}_{geo} + \mathcal{L}_{ce} + \mathcal{L}_{depth}$ (Semantic affinity loss + Geometric loss + Cross-entropy + Depth loss)
+- Occupancy Loss: $\mathcal{L}_{occ} = \mathcal{L}_p + \mathcal{L}_r + \mathcal{L}_s$ (BCE terms for precision/recall/specificity)
 - Total: $\mathcal{L}_{total} = \mathcal{L}_{ssc} + \mathcal{L}_{occ}$
 
 ## Key Experimental Results
 
 ### Main Results
 
-SemanticKITTI hidden test set (single-frame methods):
+SemanticKITTI Hidden Test Set (Single-frame methods):
 
 | Method | Year | IoU↑ | mIoU↑ |
-|--------|------|------|-------|
+|------|------|------|-------|
 | MonoScene | CVPR2023 | 34.16 | 11.08 |
 | CGFormer | NeurIPS2024 | 44.41 | 16.63 |
 | VisHall3D | ICCV2025 | 46.50 | 17.46 |
 | DISC | ICCV2025 | 45.32 | 17.35 |
 | **VoxSAMNet** | **CVPR2026** | **47.88** | **18.19** |
 
-VoxSAMNet surpasses stereo/multi-view methods: ScanSSC (17.40), VLScene (17.52).
-It also outperforms the temporal method FlowScene (17.70), falling only short of the temporal method SOAP (19.09).
+Ours outperforms stereo/multi-view methods: ScanSSC (17.40), VLScene (17.52).
+Ours outperforms temporal methods: FlowScene (17.70). It is second only to SOAP (19.09), which utilizes extensive temporal information.
 
-On SSCBench-KITTI-360 test set (best among single-frame methods): IoU 47.22, mIoU 20.23, surpassing VLScene (19.10).
+SSCBench-KITTI-360 Test Set (Best among single-frame methods): IoU 47.22, mIoU 20.23 (outperforming VLScene's 19.10).
 
 ### Ablation Study
 
-Each component contributes significant independent gains. DSFR and TGIF each yield notable improvements, and the learnable occupancy threshold outperforms a fixed threshold. (Specific numerical values are to be confirmed from the paper.)
+Contribution of components: Both DSFR and TGIF contribute significant improvements independently. The learnable threshold for occupancy classification performs better than a fixed threshold.
 
 ### Key Findings
 
-- The observation that over 93% of voxels are empty directly motivates and validates the sparsity-aware design.
-- Gains are modest for frequent classes such as car, but notable improvements are observed for long-tail classes such as bicycle (+4.4) and motorcycle (+3.9).
-- DSFR's dummy shortcut uses probability-weighted blending rather than hard switching, preserving gradient flow continuity.
-- As a single-frame monocular method, VoxSAMNet surpasses stereo and multi-view methods, demonstrating the effectiveness of sparsity-aware and semantically guided design.
-- State-of-the-art results on KITTI-360 confirm cross-dataset generalizability.
+- Statistics showing over 93% of voxels are empty directly support the necessity of sparsity-aware design.
+- Improvements are modest for frequent classes like cars but significant for long-tail classes such as bicycle (+4.4) and motorcycle (+3.9).
+- The dummy shortcut in DSFR maintains gradient flow continuity through probabilistic weighted mixing rather than hard switching.
+- As a single-frame monocular method, VoxSAMNet surpasses many stereo and multi-view approaches, proving the effectiveness of sparsity-aware and semantically-guided design.
+- SOTA performance on KITTI-360 validates generalization across datasets.
 
 ## Highlights & Insights
 
-- **Design driven by the "93% empty voxels" observation**: A simple yet powerful starting point that grounds the entire method around the core problem.
-- **Elegant Dummy Shortcut design**: Rather than naively skipping empty voxels — which would disrupt gradient flow — the method uses probability-weighted blending with a shared dummy embedding to maintain representational continuity.
-- **Synergy of Foreground Dropout and TGIF**: Addressing the long-tail problem simultaneously at the label level and the feature level is a novel and effective strategy.
-- **Text-visual cross-modal guidance**: Introduces the philosophy of CLIP/GroundingDINO into SSC, modulating image features via language prompts.
+- **Design driven by the "93% empty voxels" observation**: A simple yet powerful starting point that ensures the entire framework addresses the core challenge.
+- **Elegant Dummy Shortcut design**: Instead of simply skipping empty voxels (breaking gradient flow), it uses weight-mixing with a shared dummy embedding to maintain representational continuity.
+- **Synergy between Foreground Dropout and TGIF**: A novel dual-pronged approach addressing long-tail issues at both the label and feature levels.
+- **Cross-modal Text-Vision Guidance**: Introduces ideas from CLIP/GroundingDINO into SSC, modulating image features via linguistic prompts.
 
-## Limitations & Future Work
+ ## Limitations & Future Work
 
-- Extremely rare long-tail classes (e.g., motorcyclist at only 0.5 mIoU) still show limited improvement.
-- TGIF text prompts are constructed by simple concatenation of retained class names, lacking descriptions of spatial relationships.
-- The learnable threshold range $[0.2, 1.0]$ is manually defined; its adaptability across diverse scenes warrants further investigation.
-- Temporal information is not exploited, leaving a gap relative to the temporal method SOAP (19.09 mIoU).
-- The dummy embedding is a single globally shared vector; spatially conditioned dummy representations could be explored.
+- Improvements for some extreme long-tail classes (e.g., motorcyclist at only 0.5 mIoU) remain limited.
+- TGIF prompts are simple concatenations of class names and lack spatial relationship descriptions.
+- The range for the learnable threshold [0.2, 1.0] is manually set; its adaptability to different scenes warrants further investigation.
+- Temporal information is not utilized; a gap remains compared to temporal methods like SOAP (19.09).
+- The dummy embedding is a single globally shared vector; spatially-conditioned dummy representations could be explored.
 
 ## Related Work & Insights
 
-- **MonoScene**: A foundational work in SSC; VoxSAMNet inherits its scene-class affinity loss.
-- **BEVFormer**: Introduces deformable attention but treats empty and occupied voxels uniformly; VoxSAMNet addresses this limitation.
-- **VoxFormer / CGFormer**: Depth-guided voxel query methods, but lacking explicit sparsity-awareness.
-- **CLIP / GroundingDINO**: Cross-modal alignment ideas inspire the design of TGIF.
-- The Foreground Dropout strategy may generalize to other long-tail 3D perception tasks such as 3D object detection.
+- **MonoScene**: Foundational work in SSC; VoxSAMNet inherits its scene-class affinity loss.
+- **BEVFormer**: Introduced deformable attention but treated empty/occupied voxels uniformly; VoxSAMNet improves upon this.
+- **VoxFormer / CGFormer**: Depth-guided voxel query methods, but lack explicit sparsity awareness.
+- **CLIP / GroundingDINO**: The cross-modal alignment ideology inspired the design of TGIF.
+- The concept of Foreground Dropout may be equally effective for other long-tail 3D perception tasks, such as 3D detection.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The Dummy Shortcut and TGIF designs are novel; the "sparsity-aware + semantically guided" framework perspective is clearly articulated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive comparisons on two standard benchmarks, including comparisons against stereo and temporal methods.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clearly stated; the 93% empty-voxel statistic is compelling; module descriptions are clear.
-- **Value**: ⭐⭐⭐⭐ Surpassing stereo methods with a monocular approach is a significant contribution; the sparsity-aware design has practical implications for resource-constrained autonomous driving deployment.
+- **Novelty**: ⭐⭐⭐⭐ The Dummy Shortcut and TGIF designs are novel; the "sparsity-aware + semantic guidance" framework provides a clear perspective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive comparisons on two standard benchmarks, including comparisons with stereo and temporal methods.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation; the 93% empty voxel statistics are persuasive; module descriptions are lucid.
+- **Value**: ⭐⭐⭐⭐ A monocular method outperforming stereo methods is a significant contribution; sparsity-aware design has practical implications for resource-constrained autonomous driving deployment.
 
 <!-- RELATED:START -->
 
@@ -145,8 +162,8 @@ Each component contributes significant independent gains. DSFR and TGIF each yie
 - [\[CVPR 2026\] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective](occufly_a_3d_vision_benchmark_for_semantic_scene_completion_from_the_aerial_pers.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](../../AAAI2026/autonomous_driving/unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
-- [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](../../AAAI2026/autonomous_driving/hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
-- [\[CVPR 2026\] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors](points-to-3d_structure-aware_3d_generation_with_point_cloud_priors.md)
+- [\[CVPR 2026\] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion](probabilistic_discrepancy_learning_for_roadside_lidar_scene_completion.md)
+- [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
 
 </div>
 

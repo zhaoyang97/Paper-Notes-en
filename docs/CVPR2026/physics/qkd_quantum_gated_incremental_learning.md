@@ -2,112 +2,127 @@
 title: >-
   [Paper Note] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Class-Incremental Learning] QKD introduces quantum gating into class-incremental learning (CIL), modeling sample-task correlations in high-dimensional Hilbert space via paramet…
+  [CVPR 2026][Physics & Scientific Computing][Knowledge Distillation] QKD introduces quantum gating to class-incremental learning, modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits. This guides cross-task knowledge distillation and inference-time adapter fusion, achieving SOTA performance across five benchmarks.
 tags:
-  - "CVPR 2026"
-  - "Physics & Scientific Computing"
-  - "Class-Incremental Learning"
-  - "Quantum Computing"
-  - "Knowledge Distillation"
-  - "Pre-trained Models"
-  - "Adapters"
+  - CVPR 2026
+  - Physics & Scientific Computing
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: c14a5c4713a8b1f6
+content_hash: 4a8b7da47b4d592b
 ---
-
 # QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.11112](https://arxiv.org/abs/2604.11112)  
 **Code**: [https://github.com/Frank-lilinjie/CVPR26-QKD](https://github.com/Frank-lilinjie/CVPR26-QKD)  
-**Area**: Physics
-**Keywords**: Class-Incremental Learning, Quantum Computing, Knowledge Distillation, Pre-trained Models, Adapters
+**Area**: Physics  
+**Keywords**: Class-incremental learning, quantum computing, knowledge distillation, pre-trained models, adapters
 
 ## TL;DR
-QKD introduces quantum gating into class-incremental learning (CIL), modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits to guide cross-task knowledge distillation during training and adaptive adapter fusion during inference, achieving state-of-the-art performance on 5 benchmarks.
+QKD introduces quantum gating to class-incremental learning, modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits. This guides cross-task knowledge distillation and inference-time adapter fusion, achieving SOTA performance across five benchmarks.
 
 ## Background & Motivation
 
-**Background**: Pre-trained model (PTM)-based CIL freezes the backbone and learns lightweight adapters per task. Prompt-based methods retrieve prompts via similarity search; adapter-based methods assign independent adapters to each task.
+**Background**: Class-incremental learning (CIL) based on Pre-trained Models (PTM) typically freezes the backbone and learns lightweight adapters for each task. Prompt-based methods rely on similarity-based retrieval, while Adapter-based methods assign independent adapters to each task.
 
-**Limitations of Prior Work**: Prompt-based methods produce noisy matches when task subspaces overlap due to local similarity retrieval. Adapter-based methods treat adapters as independent subspaces, ignoring cross-task correlations; heuristic routing/fusion at inference cannot handle entangled subspaces.
+**Limitations of Prior Work**: Local similarity retrieval in prompt-based methods yields noisy matches when task subspaces overlap. Adapter-based methods treat adapters as independent subspaces, neglecting cross-task correlations, and heuristic routing/fusion during inference cannot handle entangled subspaces.
 
-**Key Challenge**: Routing and fusion lack an explicit learned task-interaction mechanism — how to quantify the correlation between a current sample and each historical task, and leverage it for knowledge transfer during training and adapter selection during inference.
+**Key Challenge**: There is a lack of an explicit, learnable task interaction mechanism—specifically, how to quantify the correlation between the current sample and each historical task for both training-time knowledge transfer and inference-time adapter selection.
 
-**Goal**: Design a unified learnable mechanism that dynamically quantifies sample-task correlations to jointly serve knowledge distillation during training and adaptive routing during inference.
+**Goal**: Design a unified learnable mechanism to dynamically quantify sample-task correlations, serving both knowledge distillation during training and adaptive routing during inference.
 
-**Core Idea**: Map sample features and task embeddings into a quantum Hilbert space, exploiting quantum superposition and interference to naturally encode complex multi-way task dependencies.
+**Core Idea**: Map sample features and task embeddings into a quantum Hilbert space, leveraging quantum superposition and interference to naturally encode complex multi-way task dependencies.
 
 ## Method
 
 ### Overall Architecture
-Frozen ViT backbone + per-task lightweight adapters → construct task embeddings from each adapter (SVD dimensionality reduction) → quantum gating module computes sample-task correlation scores → during training: correlation-weighted feature distillation from old adapters to new adapters → during inference: the same correlation scores are used for adaptive adapter fusion.
+QKD addresses the issue where historical adapter subspaces overlap and entangle in PTM-based CIL. Existing methods either rely on cosine similarity for local retrieval (causing mismatches during overlap) or treat adapters as independent boxes (relying on heuristic voting during inference)—lacking a **learnable mechanism to quantify the exact correlation between a sample and each historical task**. QKD utilizes a quantum gating module to compute these correlation scores, ensuring that training and inference **share the same set of scores**.
+
+Specifically, the ViT backbone is frozen, and a lightweight adapter is trained for each new task. For each learned adapter, a compact task embedding is generated using truncated SVD. When an image is input, its sample features are extracted (using the frozen ViT and the first task's adapter). The Quantum Gating Task Modulation (QGTM) module feeds the "sample features + task embeddings" into a parameterized quantum circuit. Measurement yields a set of normalized correlation scores $\{s_t\}$. During training, these scores serve as weights to selectively distill output distributions from old adapters into the new adapter using KL divergence. During inference, the **same set of scores** is used for weighted fusion of the classification logits from all adapters. A single quantum gating mechanism bridges knowledge transfer and adaptive routing.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Input Image"] --> FEAT["Frozen ViT + 1st Task Adapter<br/>Extracted Sample Features"]
+    POOL["Hist. Adapter Parameters<br/>Truncated SVD for Task Embeddings"] --> ENC
+    FEAT --> ENC
+    subgraph QGTM["1. Quantum-Gated Task Modulation (QGTM)"]
+        direction TB
+        ENC["Angle Encoding + Learnable Rotation + CNOT Entanglement"] --> FID["Fidelity Measurement (Quantum State Overlap)"]
+        FID --> SM["Temp Softmax + Sparse Reg.<br/>Correlation Scores"]
+    end
+    SM -->|Training| TIKD["2. Task-Interaction Knowledge Distillation (TIKD)<br/>Correlation-weighted KL Distillation Old→New"]
+    SM -->|Inference| FUSE["3. Train-Inference Consistent Routing<br/>Weighted Fusion of Adapter Logits"]
+    TIKD --> NEW["Update Current Adapter"]
+    FUSE --> PRED["Final Prediction"]
+```
 
 ### Key Designs
 
-1. **Quantum-Gated Task Modulation (QGTM)**:
+**1. Quantum-Gated Task Modulation (QGTM): Quantifying Sample-Task Correlation as Quantum State Fidelity**
 
-    - **Function**: Computes geometric mutual information between a sample and each historical task.
-    - **Mechanism**: Extracts task embeddings from each adapter via truncated SVD; encodes normalized sample features and task embeddings through a parameterized quantum circuit ($R_y$ rotations + learnable rotations + CNOT entanglement chains); measures the quantum state and computes correlation scores via a Projected Quantum Kernel (PQK), followed by softmax normalization.
-    - **Design Motivation**: The exponential dimensionality and interference effects of quantum Hilbert space compactly encode complex multi-way dependencies among overlapping task subspaces, which classical cosine similarity or MLPs fail to capture.
+When task subspaces are highly overlapped, cosine similarity only considers local angles, and MLPs struggle to fit such multi-way entangled geometric relationships. QGTM uses quantum circuits to encode these relationships: For the $t$-th adapter, its layer-wise parameters are stacked into a matrix, and truncated SVD extracts the principal subspace, aggregated with an all-ones vector into a task embedding state $|\phi_t\rangle$. Sample features are normalized and angle-encoded; $R_y$ rotations inject classical values into quantum states, followed by a learnable rotation gate $R_y(\theta)$ and a CNOT chain for entanglement (stacked across $l_q$ layers) so that correlations between any two feature dimensions are expressed in the superposition state. After obtaining the sample state $|\psi\rangle$, the **fidelity (quantum state overlap) between it and each task state is measured** as $p_t=|\langle\psi|\phi_t\rangle|^2$ for geometric correlation. A sparse regularization term $\mathcal{L}_s=\|\alpha\|_1$ encourages the gate to focus on the most relevant tasks. Finally, scores are normalized via temperature softmax: $s_t=\mathrm{softmax}_t\big(p_t/\tau\big)$. This is effective because Hilbert space dimensions grow exponentially with qubits, and superposition naturally encodes entangled structures where multiple tasks are partially relevant—geometries that classical cosine or MLPs cannot represent.
 
-2. **Task-Interaction Knowledge Distillation (TIKD)**:
+> ⚠️ Specific gate sequences for QGTM follow the definitions in the original paper.
 
-    - **Function**: Uses quantum correlations to guide cross-task feature transfer.
-    - **Mechanism**: Computes feature outputs of the current sample through each old adapter; aggregates these features weighted by quantum-gated correlation scores; applies MSE distillation loss against the new adapter's features.
-    - **Design Motivation**: Highly correlated old tasks contribute more knowledge while low-correlation tasks are suppressed, avoiding interference from irrelevant tasks.
+**2. Task-Interaction Knowledge Distillation (TIKD): High-Correlation Tasks Teach More, irrelevant Tasks Stay Quiet**
 
-3. **Training-Inference Consistent Routing**:
+Once correlation scores are obtained, how are they applied during training? Naive methods distill all old adapters equally, but irrelevant tasks introduce noise. TIKD computes the output logits $z^{(i)}$ from each old adapter and $z^{(\text{new})}$ from the new adapter for a sample $x$. Using the $s_t$ from quantum gating as weights, a weighted sum of KL divergence terms is performed: $\mathcal{L}_{\text{QKD}}=\sum_i s_i\,\mathrm{KL}\big(\sigma(z^{(i)})\,\|\,\sigma(z^{(\text{new})})\big)$. This forces the new adapter to align its prediction distribution with highly relevant old tasks. Consequently, relevant tasks contribute more transferable knowledge while irrelevant ones are suppressed toward zero—selectively inheriting what should be inherited rather than averaging the entire history.
 
-    - **Function**: Reuses the correlation scores learned during training for adapter fusion at inference time.
-    - **Mechanism**: At inference, the same quantum gating module computes sample-task correlations across all tasks and fuses classification logits from each adapter via weighted aggregation.
-    - **Design Motivation**: Using the same routing mechanism at both training and inference eliminates inconsistency.
+**3. Train-Inference Consistent Routing: Reusing Gating Scores for Inference Fusion**
+
+Many adapter-based methods suffer from inconsistency between training-time alignment and inference-time heuristic routing (e.g., majority voting or fixed weights), leading to performance drops. QKD reuses the same quantum gating for inference: for a test sample, the same QGTM calculates $s_t$ for all tasks, which is then used directly for the weighted fusion of classification logits. Since the routing mechanism and training-time distillation rely on the **exact same correlation metric**, the optimization objective and execution logic are naturally aligned, eliminating the consistency gap.
+
+### A Complete Example
+Suppose tasks 1 (Bird), 2 (Car), and 3 (Airplane) have been learned. Now, for an "Airliner" image: QGTM extracts sample features, passes them through the quantum circuit with the three task embeddings, and measures correlation scores, e.g., $s=[0.1,\ 0.15,\ 0.75]$. It is most relevant to "Airplane," followed by "Bird," and nearly irrelevant to "Car." During training for the new task containing this image, TIKD aligns the new adapter's distribution primarily with the airplane adapter (weight 0.75) via KL divergence, with minimal reference to the others. During inference, the same $[0.1, 0.15, 0.75]$ weights fuse the three adapters' logits, ensuring the airplane adapter dominates the final prediction.
+
+> ⚠️ Scores in this example are illustrative and not from actual experiments.
 
 ### Loss & Training
-Cross-entropy classification loss + correlation-weighted feature distillation loss. Quantum circuit parameters and adapter parameters are trained jointly.
+Total loss: $\mathcal{L}_{\text{total}}=\mathcal{L}_{\text{CE}}+\lambda_{\text{kd}}\mathcal{L}_{\text{QKD}}+\lambda_{\text{s}}\mathcal{L}_{\text{s}}$, comprising classification cross-entropy, correlation-weighted KL distillation, and sparse regularization $\|\alpha\|_1$. Only the current adapter and quantum gating network are updated; old adapters remain frozen. Quantum circuit parameters and adapter parameters are trained jointly end-to-end.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | QKD Accuracy | Prev. SOTA | Gain |
-|---------|-------------|------------|------|
-| CIFAR-100 | SOTA | EASE | +gain |
-| CUB-200 | SOTA | MOE-Adapters | +gain |
-| ImageNet-R | SOTA | — | — |
+| Dataset | QKD Final Accuracy | Prev. SOTA | Gain |
+|--------|---------------|----------|------|
+| CIFAR-100 | SOTA | EASE | +Gain |
+| CUB-200 | SOTA | MOE-Adapters | +Gain |
+| ImageNet-R | SOTA | - | - |
 
 ### Ablation Study
 
-| Configuration | Accuracy | Note |
-|---------------|----------|------|
-| Quantum gating | Best | Full model |
-| Replace with cosine similarity | Drop | Insufficient expressiveness |
-| Replace with MLP | Drop | Poor capture of complex dependencies |
-| w/o TIKD | Drop | Missing cross-task knowledge transfer |
+| Configuration | Accuracy | Description |
+|------|--------|------|
+| Quantum Gating | Optimal | Full Model |
+| Replace with Cosine | Decrease | Insufficient expressivity |
+| Replace with MLP | Decrease | Poor capture of complex dependencies |
+| w/o TIKD | Decrease | Missing cross-task knowledge transfer |
 
 ### Key Findings
-- Quantum gating consistently outperforms cosine similarity and MLP alternatives, validating the superior geometric expressiveness of quantum Hilbert space.
-- TIKD yields greater gains as the number of tasks increases, indicating that selective knowledge transfer becomes increasingly important as subspace overlap grows.
-- Training-inference routing consistency is critical; inconsistency leads to notable performance degradation.
+- Quantum gating consistently outperforms cosine similarity and MLP alternatives, proving the superior geometric expressivity of the quantum Hilbert space.
+- TIKD becomes more effective as the number of tasks increases, indicating that selective knowledge transfer is critical as subspace overlap intensifies.
+- Train-Inference consistent routing is vital; inconsistency leads to significant performance degradation.
 
 ## Highlights & Insights
-- **Practical application of quantum computing**: The use of quantum computation is not gratuitous — the geometric properties of quantum Hilbert space are genuinely suited to modeling multi-way task dependencies.
-- **Training-inference consistency**: The same set of correlation scores serves both distillation and routing, yielding an elegant unified design.
+- **Practical Application of Quantum Computing**: It is not "quantum for the sake of quantum"; the geometric properties of Hilbert space are genuinely suited for modeling multi-way task dependencies.
+- **Train-Inference Consistency**: The elegant design uses the same set of correlation scores for both distillation and routing.
 
 ## Limitations & Future Work
-- The quantum circuit is currently simulated on classical hardware; efficiency on actual quantum devices remains unknown.
-- The SVD computation for task embeddings grows with the number of tasks.
-- Future work may explore deeper quantum circuits or integration with real quantum hardware.
+- Quantum circuits are currently simulated on classical computers; efficiency on actual quantum hardware remains unclear.
+- SVD computation for task embeddings scales with the number of tasks.
+- Future work could explore deeper quantum circuits or integration with real quantum hardware.
 
 ## Related Work & Insights
-- **vs. EASE**: EASE performs cross-task alignment via class-prototype similarity, which offers limited expressiveness.
-- **vs. MOE-Adapters**: MoE fuses adapters via majority voting, lacking sample-level adaptivity.
+- **vs EASE**: EASE uses class prototype similarity for cross-task alignment, which has limited expressivity.
+- **vs MOE-Adapters**: MoE uses majority voting for fusion, lacking sample-level adaptivity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First introduction of quantum computing into CIL, with well-motivated theoretical justification.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets; ablations demonstrate quantum gating's superiority over classical alternatives.
-- Writing Quality: ⭐⭐⭐⭐ Quantum background is clearly introduced.
-- Value: ⭐⭐⭐⭐ Provides a novel tool for CIL.
+- Novelty: ⭐⭐⭐⭐⭐ First introduction of quantum computing to CIL with strong theoretical motivation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested on 5 datasets; ablations prove quantum gating is superior to classical alternatives.
+- Writing Quality: ⭐⭐⭐⭐ Clear introduction to quantum background.
+- Value: ⭐⭐⭐⭐ Provides a new toolset for CIL.
 
 <!-- RELATED:START -->
 
@@ -117,9 +132,9 @@ Cross-entropy classification loss + correlation-weighted feature distillation lo
 
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/physics/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](../../NeurIPS2025/physics/simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](../../NeurIPS2025/physics/knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
-- [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](../../AAAI2026/physics/data_verification_is_the_future_of_quantum_computing_copilots.md)
+- [\[ICML 2025\] Liger: Linearizing Large Language Models to Gated Recurrent Structures](../../ICML2025/physics/liger_linearizing_large_language_models_to_gated_recurrent_structures.md)
+- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
 
 </div>
 

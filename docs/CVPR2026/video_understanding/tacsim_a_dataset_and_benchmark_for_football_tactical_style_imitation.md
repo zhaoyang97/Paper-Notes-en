@@ -2,83 +2,100 @@
 title: >-
   [Paper Note] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 description: >-
-  [CVPR 2026][Video Understanding][Football tactical imitation] This paper presents TacSIm, the first large-scale dataset and benchmark that reconstructs full-team trajectories from real Premier League broadcast footage an…
+  [CVPR 2026][Video Understanding][Paper Note] This paper proposes TacSIm, the first large-scale dataset and benchmark designed to reconstruct full-team trajectories from real Premier League broadcast footage and perform tactical style imitation in a virtual football environment. It quantifies tactical imitation fidelity using two metrics: spatial occupancy similar
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Football tactical imitation"
-  - "multi-agent learning"
-  - "trajectory reconstruction"
-  - "tactical evaluation"
-  - "virtual simulation"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 8c4434d803192491
+content_hash: f3f32eb982269311
 ---
-
 # TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25199](https://arxiv.org/abs/2603.25199)  
-**Code**: TacSIm (publicly available)  
-**Area**: Sports Analytics / Multi-Agent Imitation Learning
-**Keywords**: Football tactical imitation, multi-agent learning, trajectory reconstruction, tactical evaluation, virtual simulation
+**Code**: TacSIm (Publicly Available)  
+**Area**: Video Understanding  
+**Keywords**: Football Tactical Imitation, Multi-Agent Learning, Trajectory Reconstruction, Tactical Evaluation, Virtual Simulation
 
 ## TL;DR
 
-This paper presents TacSIm, the first large-scale dataset and benchmark that reconstructs full-team trajectories from real Premier League broadcast footage and performs tactical style imitation in a virtual football environment, quantifying imitation fidelity via two metrics: spatial occupancy similarity and motion vector similarity.
+This paper proposes TacSIm, the first large-scale dataset and benchmark designed to reconstruct full-team trajectories from real Premier League broadcast footage and perform tactical style imitation in a virtual football environment. It quantifies tactical imitation fidelity using two metrics: spatial occupancy similarity and motion vector similarity.
 
 ## Background & Motivation
 
-**Background**: Imitation learning research in football is predominantly reward-optimization-driven (e.g., proxy metrics such as goal count and win rate), focusing on behavioral cloning of individual actions or reinforcement learning policy optimization, rather than accurately replicating the tactical organization of real teams.
+**Background**: Current research in football imitation learning is primarily reward-oriented (e.g., number of goals, win-rate proxies), focusing on individual behavior cloning or reinforcement learning policy optimization rather than precise replication of team tactical organizational behavior.
 
-**Limitations of Prior Work**: Three major challenges constrain the development of tactical imitation. First, data acquisition is restricted — fine-grained tracking data from top leagues is locked behind commercial barriers, while broadcast footage suffers from multi-camera switching, occlusion, and inconsistent frame rates, making it difficult to obtain full 11v11 team trajectories. Second, there is an imbalance between individual behavioral cloning and team-level cooperative optimization during imitation, resulting in weak generalization under partial observability. Third, evaluation frameworks focus on individual error or segment-level rewards, lacking systematic assessment of team-level spatiotemporal consistency.
+**Limitations of Prior Work**: Three major challenges restrict the development of tactical imitation. First, data acquisition is limited—fine-grained tracking data from top leagues is protected by commercial barriers, and broadcast footage contains multi-camera switching, occlusions, and inconsistent frame rates, making it difficult to obtain 11v11 full-team trajectories. Second, there is an imbalance between individual behavior cloning and team collaboration optimization during imitation, leading to weak generalization under partial observability. Third, evaluation frameworks focus on individual errors or segment-level rewards, lacking a systematic evaluation of team spatial-temporal consistency.
 
-**Key Challenge**: Existing research lacks a unified closed-loop benchmark spanning real matches to virtual simulation, making fair evaluation of tactical imitation quality across different methods impossible.
+**Key Challenge**: Existing research lacks a unified closed-loop benchmark from real games to virtual simulation, preventing the fair evaluation of tactical imitation quality across different methods.
 
-**Goal**: (1) How to obtain standardized full-team trajectory data from broadcast footage; (2) How to define and quantify the quality of tactical style imitation; (3) How to fairly compare different imitation learning methods within a unified environment.
+**Goal**: (1) How to obtain standardized full-team trajectory data from broadcast footage; (2) How to define and quantify the quality of tactical style imitation; (3) How to fairly compare different imitation learning methods in a unified environment.
 
-**Key Insight**: The authors start from Premier League broadcast footage, recover full-team coordinates via camera calibration, trajectory reconstruction, and VAE-based completion, then map these to the Google Research Football (GRF) virtual environment for tactical replay and evaluation.
+**Key Insight**: The authors start from Premier League broadcast footage, utilizing camera calibration, trajectory reconstruction, and VAE completion to obtain full-team coordinates, which are then mapped to the Google Research Football (GRF) virtual environment for tactical reenactment and evaluation.
 
-**Core Idea**: Construct the first football tactical imitation benchmark spanning broadcast footage to virtual simulation, and systematically evaluate team-level tactical style reproduction capability using a dual-metric framework of spatial occupancy and motion vectors.
+**Core Idea**: Construct the first football tactical imitation benchmark from broadcast footage to virtual simulation, systematically evaluating the reproduction of team tactical styles through spatial occupancy and motion vector metrics.
 
 ## Method
 
 ### Overall Architecture
 
-The TacSIm pipeline consists of three stages: (1) **Data acquisition** — reconstructing standardized player and ball coordinates from Premier League broadcast footage via object detection, tracking, and camera calibration; (2) **Trajectory completion** — filling in player positions in occluded regions using a conditional VAE; (3) **Virtual simulation and evaluation** — feeding the reconstructed initial states into the GRF virtual football platform, training multi-agent systems to learn and reproduce subsequent tactical behaviors, and evaluating against ground-truth trajectories.
+The TacSIm pipeline consists of three stages: (1) Data acquisition—reconstructing standardized coordinates of players and the ball from Premier League broadcasts via object detection, tracking, and camera calibration; (2) Trajectory completion—using a conditional VAE to complete player positions in invisible areas; (3) Virtual simulation and evaluation—inputting reconstructed initial states into the GRF virtual football platform for multi-agent systems to learn and replicate subsequent tactical behaviors, followed by comparison with real trajectories.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Premier League Broadcast Video<br/>Multi-cam / Occlusion / Variable FPS"]
+    subgraph REC["Trajectory Reconstruction (Design 1)"]
+        direction TB
+        D["YOLOv11 Frame-by-frame Player & Ball Detection"] --> T["DeepSORT Maintains Identity Consistency"]
+        T --> C["TVCalib Camera Calibration<br/>Infer Homography"]
+        C --> N["Project & Normalize to Top-down Coordinates"]
+    end
+    IN --> REC
+    REC --> VAE["VAE Trajectory Completion (Design 2)<br/>Teacher-Student Pattern for Off-camera Players"]
+    VAE --> GRF["GRF Virtual Environment Reenactment<br/>Multi-agent Tactical Learning"]
+    GRF --> EVAL["Adaptive Grid Tactical Evaluation (Design 3)<br/>Occupancy Similarity St + Motion Vector Similarity Sv"]
+    EVAL --> OUT["Tactical Imitation Fidelity Score"]
+```
 
 ### Key Designs
 
-1. **Trajectory Reconstruction from Broadcast Footage to Standardized Coordinates**:
+**1. Trajectory Reconstruction from Broadcast Footage to Standard Coordinates: Converting multi-view, occluded TV footage into unified birds-eye-view (BEV) coordinates.**
 
-    - **Function**: Maps player positions in broadcast video to a standardized bird's-eye-view pitch coordinate system.
-    - **Mechanism**: YOLOv11 is used to detect players and the ball; DeepSORT maintains temporally consistent identity tracking; TVCalib estimates camera parameters from pitch line markings to compute a homography transformation, converting image coordinates to GRF standard coordinates $x \in [-1,1]$, $y \in [-0.42, 0.42]$.
-    - **Design Motivation**: Leverages existing computer vision toolchains to extract data from publicly available broadcast footage, circumventing the lock-in of commercial tracking data.
+The dataset starts with public Premier League broadcast videos. However, these shots involve frequent camera switches, player occlusions, and unstable frame rates. The authors chain vision tools into a pipeline: YOLOv11 detects players and the ball in each frame, and DeepSORT maintains identity consistency to prevent tracking ID jumps. A crucial step uses TVCalib to infer camera parameters from pitch markings, obtaining a homography transformation from the image plane to the real pitch to project pixel coordinates into a BEV. Results are normalized to the GRF simulation standard ranges $x \in [-1,1]$ and $y \in [-0.42, 0.42]$. This approach bypasses commercial barriers to official tracking data by using only public broadcasts.
 
-2. **VAE-Based Off-Camera Trajectory Completion**:
+**2. VAE-based Off-camera Trajectory Completion: Predicting "unseen but present" players outside the camera frame.**
 
-    - **Function**: Produces continuous and physically plausible completions of trajectories for players not visible in the broadcast frame.
-    - **Mechanism**: A "demonstrator–learner" architecture is adopted — the demonstrator (a bidirectional RNN) observes complete trajectories to learn spatiotemporal dynamics, while the learner receives masked partial trajectories and reconstructs missing motion via a masked decoder. The training objective is a reconstruction loss plus KL divergence regularization: $\mathcal{L} = \mathbb{E}[\|(1-M) \odot (X - \hat{X})\|_2^2] + \beta \cdot KL$.
-    - **Design Motivation**: Broadcast footage contains substantial trajectory fragmentation due to occlusion and camera cuts; the VAE framework generates smooth and diverse motion sequences while effectively capturing trajectory uncertainty.
+Broadcast lenses typically capture only a portion of the pitch, causing reconstructed trajectories to have significant gaps. The authors use a conditional VAE to fill these gaps in a "Demonstrator-Learner" architecture. The demonstrator is a bidirectional RNN that observes **complete** trajectories during training to learn spatial-temporal dynamics. The learner receives only partially masked trajectories and uses a masked decoder to reconstruct missing motion. The training objective combines a reconstruction loss for missing areas and KL regularization:
 
-3. **Adaptive Grid Tactical Evaluation Protocol**:
+$$\mathcal{L} = \mathbb{E}\big[\|(1-M) \odot (X - \hat{X})\|_2^2\big] + \beta \cdot KL$$
 
-    - **Function**: Quantifies tactical imitation fidelity through spatial discretization and a dual-metric system.
-    - **Mechanism**: The pitch is discretized into a uniform grid, with grid size dynamically adjusted based on average displacement: $\Delta_g = \min(\Delta_{max}, \max(\Delta_{min}, \alpha/s_t))$. Two complementary metrics are computed: spatial occupancy similarity (Jaccard index) $S_t = |O^{gt} \cap O^{pred}| / |O^{gt} \cup O^{pred}|$, and motion vector similarity (cosine similarity) $S_v = (v^{gt} \cdot v^{pred} / \|v^{gt}\| \|v^{pred}\| + 1) / 2$. The final score is the arithmetic mean of the two.
-    - **Design Motivation**: The adaptive grid ensures evaluation consistency across varying motion intensities; the dual metrics separately capture static positional alignment and dynamic flow consistency, each being indispensable.
+Where $M$ denotes visible positions. Using a VAE instead of deterministic interpolation accounts for the uncertainty of off-camera movement, generating smooth and diverse candidate trajectories that are physically plausible.
+
+**3. Adaptive Grid Tactical Evaluation Protocol: Quantifying imitation fidelity through two complementary metrics.**
+
+Tactical imitation depends on the team's spatial organization rather than meter-level errors of individual players. The pitch is discretized into a grid, with granularity $\Delta_g = \min(\Delta_{max}, \max(\Delta_{min}, \alpha/s_t))$ adjusted based on average displacement—grids expand when the team moves fast and tighten when moving slow. Two metrics are calculated: Spatial occupancy similarity uses the Jaccard index to measure overlap of occupied cells:
+
+$$S_t = \frac{|O^{gt} \cap O^{pred}|}{|O^{gt} \cup O^{pred}|}$$
+
+Motion vector similarity uses cosine similarity to measure flow alignment:
+
+$$S_v = \frac{1}{2}\left(\frac{v^{gt} \cdot v^{pred}}{\|v^{gt}\|\, \|v^{pred}\|} + 1\right)$$
+
+The final score is the arithmetic mean of both. $S_t$ monitors positioning, while $S_v$ monitors direction; using both prevents assigning a perfect score to agents standing in the correct spot but moving in the wrong direction.
 
 ### Loss & Training
 
-The dataset contains 194,565 annotated video clips (approximately 38,913 seconds), split into 70%/15%/15% train/validation/test sets by match identity to prevent team information leakage. Training employs multi-window lengths ($L \in \{1, 10, 25, 50\}$) and includes short-horizon closed-loop rollouts to mitigate exposure bias. At test time, only the first-frame context (player and ball positions) is provided, and the model must infer the subsequent sequence.
+The dataset contains 194,565 annotated video segments (~38,913 seconds), split 70%/15%/15% into training/validation/test sets by match identity to prevent team information leakage. Training employs multiple window lengths ($L \in \{1, 10, 25, 50\}$) and includes short-term closed-loop inference to mitigate exposure bias. During testing, only the first frame context is provided.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Results under a 150-cell (15×10) grid at 3.0s prediction horizon:
+Prediction results at 3.0s using a 150-cell (15×10) grid:
 
 | Method | Score | $S_t$ | $S_v$ |
-|--------|-------|-------|-------|
+|------|-------|-------|-------|
 | BC | 37.86 | 28.57 | 47.14 |
 | CMIL | 42.98 | 40.22 | 45.73 |
 | IRL | 32.53 | 28.34 | 36.72 |
@@ -88,46 +105,46 @@ Results under a 150-cell (15×10) grid at 3.0s prediction horizon:
 ### Ablation Study
 
 | Grid Resolution | Best Method | 3s Score | 10s Score |
-|----------------|-------------|----------|-----------|
-| 60 cells (10×6) | CoDAIL | 46.63 | 33.00 |
-| 150 cells (15×10) | CoDAIL | 50.89 | 28.37 |
-| 240 cells (20×12) | CMIL | 47.87 | 20.11 |
-| 600 cells (30×20) | CoDAIL | 37.12 | 14.12 |
-| 1768 cells (105×68) | CoDAIL | 27.10 | 6.45 |
+|-----------|---------|----------|-----------|
+| 60-cell (10×6) | CoDAIL | 46.63 | 33.00 |
+| 150-cell (15×10) | CoDAIL | 50.89 | 28.37 |
+| 240-cell (20×12) | CMIL | 47.87 | 20.11 |
+| 600-cell (30×20) | CoDAIL | 37.12 | 14.12 |
+| 1768-cell (105×68) | CoDAIL | 27.10 | 6.45 |
 
 ### Key Findings
 
-- **Prediction horizon is the primary driver of performance degradation**: All models exhibit substantial performance drops from 3s to 10s, indicating a fundamental challenge in transitioning from "motion state imitation" to "tactical intent inference."
-- **An optimal grid resolution range exists**: Medium-resolution grids (150/240 cells) achieve the best balance between preserving tactical information and model learnability; coarser grids lose information while finer grids suffer from the curse of dimensionality.
-- **CoDAIL is overall best**: Its multi-agent coordination mechanism and adversarial learning framework yield the best performance in short-to-medium-term prediction.
-- **DRAIL is more robust for long-horizon prediction**: The diffusion model demonstrates a relative advantage on 10s-level spatial occupancy metrics.
+- **Prediction duration is the primary driver of performance decay**: All models show significant degradation from 3s to 10s, indicating a fundamental challenge in moving from "motion state imitation" to "tactical intent inference."
+- **Existence of optimal grid resolution**: Medium grids (150/240 cells) balance tactical information retention with model learnability. Grids that are too coarse lose information, while those that are too fine lead to a dimensionality curse.
+- **CoDAIL is overall superior**: Benefiting from its multi-agent coordination and adversarial learning framework, it performs best in short-to-medium-term predictions.
+- **DRAIL is more robust in long-term prediction**: Diffusion models demonstrate relative advantages in spatial occupancy metrics at the 10s scale.
 
 ## Highlights & Insights
 
-- **Strong originality**: This is the first closed-loop football tactical imitation benchmark spanning broadcast footage to virtual simulation, filling a gap in the field.
-- **Elegant evaluation design**: The adaptive grid combined with the dual-metric system provides the first systematic quantification of team-level tactical imitation quality.
-- **Clear practical value**: Applicable to real-world scenarios such as coaching tactical analysis, opponent-specific simulation, and player adaptability assessment.
-- **Depth in cross-factor analysis**: The time × space cross-analysis reveals optimal configurations for different task settings (short-horizon/fine-grained vs. long-horizon/macro-level).
+- **Strong Originality**: This is the first closed-loop benchmark for football tactical imitation from broadcast footage to virtual simulation, filling a gap in the field.
+- **Clever Evaluation Design**: The adaptive grid and dual-metric system systematically quantify team-level tactical imitation quality for the first time.
+- **Clear Practical Value**: The framework can be applied to coaching tactical analysis, customized opponent simulation, and player adaptability assessments.
+- **Deep Cross-Analysis**: Spatial-temporal analysis reveals optimal configurations for different scenarios (short-term/fine-grained vs. long-term/macro).
 
 ## Limitations & Future Work
 
-- Only ball trajectories rather than individual player trajectories are evaluated, which sidesteps identity ambiguity but also limits evaluation granularity.
-- Data coverage is restricted to the Premier League, limiting tactical diversity to a single league's style.
-- Baseline comparisons with Transformer-based architectures and large-scale pretrained models are absent.
-- The sim-to-real gap between the virtual environment (GRF) and real-world physics is not sufficiently discussed.
+- The framework evaluates ball trajectories rather than individual player trajectories, which avoids identity ambiguity but limits evaluation granularity.
+- The data only covers the Premier League, so tactical diversity is limited by a single league style.
+- Lack of baseline comparisons against Transformer architectures and large-scale pre-trained models.
+- The sim-to-real gap between the virtual environment (GRF) and real physics is not fully addressed.
 
 ## Related Work & Insights
 
-- The SoccerNet series provides video understanding and object tracking annotations but lacks tactical-level spatiotemporal data.
-- Google Research Football provides a fully observable simulation environment but exhibits a gap from real matches.
-- The evaluation protocol design in this paper can inspire the construction of tactical analysis benchmarks for other team sports (basketball, ice hockey).
+- The SoccerNet series focuses on video understanding and tracking but lacks tactical-level spatial-temporal data.
+- Google Research Football provides a fully observable simulation environment but differs from real-world match dynamics.
+- The evaluation protocol design could inspire tactical analysis benchmarks in other team sports, such as basketball or ice hockey.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The first football tactical imitation benchmark; the topic is highly original with clear application value.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Covers 5 baselines and multiple grid configurations, but lacks comparisons with more advanced models.
-- **Writing Quality**: ⭐⭐⭐⭐ — The paper is clearly structured, with thorough descriptions of problem formulation and the evaluation protocol.
-- **Value**: ⭐⭐⭐⭐ — Advances both sports analytics and provides a novel testbed for multi-agent imitation learning.
+- **Novelty**: ⭐⭐⭐⭐ — First football tactical imitation benchmark with clear application value.
+- **Experimental Thoroughness**: ⭐⭐⭐ — Covers 5 baselines and multiple grid configurations but lacks more advanced model comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure with detailed definitions of problems and evaluation protocols.
+- **Value**: ⭐⭐⭐⭐ — Advances sports analytics and provides a new testbed for multi-agent imitation learning.
 
 <!-- RELATED:START -->
 
@@ -135,11 +152,11 @@ Results under a 150-cell (15×10) grid at 3.0s prediction horizon:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline](pioneering_perceptual_video_fluency_assessment_a_novel_task_with_benchmark_datas.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2026\] SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training](shands_a_multi-view_dataset_and_benchmark_for_surgical_hand-gesture_and_error_re.md)
 - [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](savax_egotoexo_imitation_error_detection_via_scene.md)
-- [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
-- [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
+- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
+- [\[CVPR 2026\] VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)
 
 </div>
 

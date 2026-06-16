@@ -2,97 +2,102 @@
 title: >-
   [Paper Note] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models
 description: >-
-  [ICML 2026][LLM Safety][Machine Unlearning] DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta state…
+  [ICML 2026][LLM Safety][AdamW] DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta state." This allows LLM machine unlearning to adaptively transition between shared and decoupled optimizers as forget/retain gradients fluctuate between synergy and conflict. Theoretically, it reduces to Alternate (positively correl
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Machine Unlearning"
-  - "Optimizer States"
-  - "Gradient Conflict"
-  - "8-bit Quantization"
-  - "AdamW"
+  - ICML 2026
+  - LLM Safety
+  - AdamW
 date: 2026-05-08
-content_hash: e87847951d6ac966
+content_hash: 6d17f84713697a47
 ---
-
 # DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.21539](https://arxiv.org/abs/2605.21539)  
 **Code**: https://github.com/CityU-MLO/DualOptimPlus  
-**Area**: LLM Security / Machine Unlearning / Optimizers  
+**Area**: LLM Safety / Machine Unlearning / Optimizers  
 **Keywords**: Machine Unlearning, Optimizer States, Gradient Conflict, 8-bit Quantization, AdamW
 
 ## TL;DR
-DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta state," allowing LLM machine unlearning to adaptively transition between shared and decoupled optimization as forget/retain gradients fluctuate between conflict and synergy. Theoretically, it degenerates to Alternate (for positive correlation) and DualOptim (for negative correlation), while an 8-bit quantized variant compresses extra memory overhead back to the baseline.
+DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta state." This allows LLM machine unlearning to adaptively transition between shared and decoupled optimizers as forget/retain gradients fluctuate between synergy and conflict. Theoretically, it reduces to Alternate (positively correlated) and DualOptim (negatively correlated), while an 8-bit quantized variant compresses the extra memory overhead back to baseline levels.
 
 ## Background & Motivation
 
-**Background**: Machine Unlearning (MU) requires models to erase the influence of a forget set while maintaining the utility of a retain set. Current MU for LLMs primarily relies on the joint optimization of a forget loss $\mathcal{L}_f$ (e.g., GA, NPO, ME, RMU) and a retain loss $\mathcal{L}_r$ (e.g., CE, KL). Optimization strategies have evolved through three generations:
-- **Joint** (Single-step backpropagation after summation; the previous de facto standard) — Simple, but gradient merging leads to performance degradation.
-- **Alternate** (Alternating updates using gradients from only one objective per step) — Mitigates degradation but is unstable and sensitive to hyperparameters.
-- **DualOptim** (Independent AdamW optimizers for each objective, maintaining separate states) — Effective for vision tasks but provides only marginal gains for LLMs.
+**Background**: Machine Unlearning (MU) requires models to erase the influence of a forget set while maintaining the utility of a retain set. Current MU for LLMs primarily relies on joint optimization of a forget loss $\mathcal{L}_f$ (GA / NPO / ME / RMU) and a retain loss $\mathcal{L}_r$ (CE / KL). Optimization strategies have evolved through three generations:
+- **Joint** (single-step backpropagation after summation; the former de facto standard before DualOptim) – Simple, but gradient merging leads to degradation.
+- **Alternate** (using the gradient of only one objective per step) – Mitigates degradation but is unstable and sensitive to hyperparameters.
+- **DualOptim** (two independent AdamW optimizers with separate states) – Effective for vision tasks, but offers only marginal gains when ported to LLMs.
 
-**Limitations of Prior Work**: The authors observe that the cosine similarity between forget and retain gradients in LLM unlearning **fluctuates drastically** during training—showing positive correlation (shared signals) early on and negative or nearly orthogonal correlation later. Joint optimization loses adversarial signals by using a single shared state, while DualOptim loses synergistic signals through complete decoupling. Both correspond to only one correlation pattern, failing to achieve global optimality throughout the LLM training process.
+**Limitations of Prior Work**: The authors observe that the cosine similarity between forget and retain gradients in LLM unlearning **fluctuates drastically** during training—starting positively correlated (signal sharing) and becoming negatively correlated or nearly orthogonal later (conflict). Joint optimization loses adversarial signals by using a single shared state, while DualOptim loses synergistic signals through complete decoupling. Neither can achieve optimal performance throughout the entire LLM training process.
 
-**Key Challenge**: A binary choice between "shared vs. decoupled" cannot adapt to the dynamic changes in gradient correlation during LLM training; an ideal optimizer should adaptively transition between the two based on current correlation.
+**Key Challenge**: A rigid "shared vs. decoupled" choice cannot adapt to the dynamic gradient correlation changes in LLM training; an ideal optimizer should adaptively transition between the two based on current correlation.
 
-**Goal**: (1) Construct a plug-and-play optimizer framework that dynamically interpolates between shared and decoupled states based on the directional correlation of $\nabla \mathcal{L}_f$ and $\nabla \mathcal{L}_r$; (2) Cover scenarios such as fictitious unlearning, real-world unlearning, safety alignment, and multi-task learning; (3) Resolve the memory bloat caused by additional optimizer states.
+**Goal**: (1) Construct a plug-and-play optimizer framework that dynamically interpolates between shared and decoupled states based on the directional correlation of $\nabla \mathcal{L}_f$ and $\nabla \mathcal{L}_r$; (2) Cover scenarios including fictitious unlearning, real unlearning, safety alignment, and multi-task learning; (3) Resolve the memory expansion caused by additional optimizer states.
 
-**Key Insight**: Decompose the first and second moments of AdamW into "shared base + per-objective delta." The base is updated using all gradients (capturing commonalities), while the delta is updated via the residual "objective gradient − base" (capturing differences). Parameters are updated using the sum of the base and the corresponding delta. This mathematically yields an adaptive transition: when correlation is high, delta $\to 0$ (degenerating to Alternate); when correlation is strongly negative, base $\to 0$ (degenerating to DualOptim).
+**Key Insight**: Decompose AdamW's first and second moments into a "shared base + per-objective delta." The base is updated with all gradients (capturing commonalties), and the delta is updated with the "objective gradient − base" (capturing differences). Parameters are updated using the sum of base and the corresponding delta. This naturally yields an adaptive transition: for high correlation, delta $\to 0$ (reduces to Alternate); for strong negative correlation, base $\to 0$ (reduces to DualOptim).
 
-**Core Idea**: Base/delta decomposition + adaptive transition = the optimal intermediate between shared and decoupled states at the optimizer level.
+**Core Idea**: Base/delta decomposition + adaptive transition = "An optimal intermediate between shared and decoupled states" at the optimizer level.
 
 ## Method
 
 ### Overall Architecture
 
-Each optimizer state (AdamW's $m$ and $v$) is split into:
-- **Base state** $B$: Updated jointly by $\nabla \mathcal{L}_f$ and $\nabla \mathcal{L}_r$ to carry commonalities.
-- **Delta states** $\Delta_f, \Delta_r$: Updated by the residual between the objective's gradient and the base to carry differences.
+DualOptim+ enables the LLM unlearning optimizer to adaptively slide between "sharing one state" and "using independent states" as the correlation between forget/retain gradients changes. It splits each AdamW optimizer state (first moment $m$, second moment $v$) into two layers: a **shared base state** $B$ for directions agreed upon by both forget and retain objectives, and **delta states** $\Delta_f, \Delta_r$ for unique, adversarial components of each objective. At each step, parameters are updated using the base plus the current objective's delta. Combined with an alternating schedule of $F_f$ forget steps and $F_r$ retain steps, the base is updated after the parameter update to maintain a stable shared reference.
 
-At each step, the parameters are updated using the base plus the corresponding delta: $\theta \leftarrow \theta - \eta (\hat B + \hat \Delta_o) / (\sqrt{|\hat v_B + \hat v_{\Delta_o}|} + \epsilon)$. The base state is updated after the parameter update to serve as a stable reference. This is coupled with an alternating schedule of $F_f$ forget steps and $F_r$ retain steps.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Alternating Schedule<br/>Ff forget steps / Fr retain steps"] -->|Gradient g of objective o| C
+    subgraph CORE["Base + Delta Decomposition (Shared + Residual Layers)"]
+        direction TB
+        C["Delta Update (Decoupled)<br/>Residual g − B̂ slides into Δ_o"] --> D["Parameter Update<br/>Update θ using B̂ + Δ̂_o"]
+        D --> E["Base Update (Shared)<br/>All gradients slide into B after θ update"]
+    end
+    E -->|Next Step| A
+    CORE -.Adaptive Limits.-> G["High Correlation → Δ→0 (≈ Alternate)<br/>Neg Correlation → B→0 (≈ DualOptim)"]
+    F["DualOptim+ 8bit<br/>Block-wise 8-bit quantization of B, Δf, Δr"] -.Compress Memory.-> CORE
+```
 
 ### Key Designs
 
-1.  **Base and Delta State Decomposition**:
-    - **Function**: Splits a single optimizer state into a shared component (base) and objective-specific components (delta) to preserve both signals.
-    - **Mechanism**: Base $B \leftarrow \beta B + (1-\beta) \nabla \mathcal{L}_o$ (where $o$ is the current objective), Delta $\Delta_o \leftarrow \beta \Delta_o + (1-\beta)(\nabla \mathcal{L}_o - \hat B)$. Second moments $v_B, v_{\Delta_o}$ are similarly updated with squared gradients; bias correction is applied as $\hat B = B / (1-\beta^t)$.
-    - **Design Motivation**: The base learns directions agreed upon by both forget and retain objectives (multi-task commonality), while deltas learn independent directions (adversarial components). Their summation prevents the loss of adversarial signals (unlike Joint) or synergistic signals (unlike DualOptim).
+**1. Base and Delta Decomposition: Splitting states into "shared + residual" layers to retain both signals**
 
-2.  **Adaptive Transition (Theoretical Properties)**:
-    - **Function**: Automatically transitions between Alternate and DualOptim based on the directional correlation of forget and retain gradients.
-    - **Mechanism**: Theorem 3.2 provides an asymptotic analysis—assuming $\mathbb{E}_t[g_{f,t}] = mG$ and $\mathbb{E}_t[g_{r,t}] = nG$:
-        - $m = n$ (Positive correlation) $\to B \to mG, \Delta_{f,r} \to 0$, equivalent to Alternate (Shared state).
-        - $m = -\frac{1-\beta^{F_r}}{\beta^{F_r}(1-\beta^{F_f})}n$ (Strong negative correlation) $\to B \to 0$, only deltas act, equivalent to DualOptim (Fully decoupled).
-    - **Design Motivation**: Eliminates the need for manual correlation detection or switching; the adaptive behavior is intrinsic to the optimizer structure, requiring no hyperparameter tuning as correlations shift during training.
+Joint optimization merges gradients and erases adversarial signals, while DualOptim decouples them and loses synergistic signals. DualOptim+ avoids this trade-off. When updating objective $o$, the base state computes the shared direction via $B \leftarrow \beta B + (1-\beta)\nabla\mathcal{L}_o$. The delta state only captures the residual after subtracting the base: $\Delta_o \leftarrow \beta \Delta_o + (1-\beta)(\nabla\mathcal{L}_o - \hat B)$. Second moments $v_B, v_{\Delta_o}$ use squared gradients similarly with bias correction $\hat B = B/(1-\beta^t)$. The final parameter update combines both layers:
 
-3.  **DualOptim+ 8bit (Memory Control)**:
-    - **Function**: Quantizes the additional base and delta states to 8-bit to compress memory overhead back to vanilla AdamW levels.
-    - **Mechanism**: Utilizes block-wise quantization for $B, \Delta_f, \Delta_r$, following the bitsandbytes 8-bit Adam approach. The paper reports nearly identical performance between quantized and fp32 versions.
-    - **Design Motivation**: The base + delta approach consumes $2 \times$ more memory for moments compared to vanilla AdamW, which is unacceptable for large models. 8-bit quantization is a necessary engineering optimization for practical deployment.
+$$\theta \leftarrow \theta - \eta\,\frac{\hat B + \hat \Delta_o}{\sqrt{|\hat v_B + \hat v_{\Delta_o}|} + \epsilon}$$
 
-### Training Strategy
-$F_f$ and $F_r$ control the alternating frequency (set to 1:1 in experiments). The base state is updated after the parameter update for stability. This alternating pattern proves more stable than pure alternation.
+Commonalities flow through the base while differences flow through the delta, ensuring both signals contribute to the update.
+
+**2. Adaptive Transition: Structural transition without explicit correlation detection**
+
+The decomposition ensures that the relative magnitudes of base and delta change automatically with gradient correlation. Theorem 3.2 provides closed-form limits: if $\mathbb{E}_t[g_{f,t}] = mG$ and $\mathbb{E}_t[g_{r,t}] = nG$, when gradients are positively correlated ($m=n$), $B \to mG$ and $\Delta_{f,r}\to 0$, reducing the optimizer to Alternate. When strongly negatively correlated ($m = -\frac{1-\beta^{F_r}}{\beta^{F_r}(1-\beta^{F_f})}n$), $B \to 0$ and only deltas matter, reducing it to DualOptim. This allows the model to remain at the "optimal intermediate" throughout training without hyperparameter tuning.
+
+**3. DualOptim+ 8bit: Quantizing extra states to 8-bit to match vanilla AdamW memory**
+
+Maintaining base + delta states roughly doubles the optimizer state memory (additional first and second moments). To address this, the authors employ block-wise 8-bit quantization (following bitsandbytes) for $B, \Delta_f, \Delta_r$. This compresses the overhead back to baseline levels. The performance gap between the 8-bit and FP32 versions is reported to be negligible (< 0.3 OVR points).
+
+### Loss & Training
+
+The alternating frequency is controlled by $F_f$ and $F_r$, set to 1:1 in experiments. The base is updated **after** the parameter update to provide a stable reference for the delta, a combination that proves more stable than simple alternating updates.
 
 ## Key Experimental Results
 
 ### TOFU Fictitious Unlearning (Phi-1.5, IDK+GD Objectives)
 
-| Forget % | Method | UFE↑ | TFE↑ | MU↑ | OVR↑ |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Forget Prop. | Method | UFE↑ | TFE↑ | MU↑ | OVR↑ |
+|----------|------|------|------|-----|------|
 | 10% | Joint | 78.1 | 50.6 | 60.2 | 62.3 |
 | 10% | Alternate | 80.7 | 56.8 | 64.5 | 66.6 |
 | 10% | DualOptim | 81.2 | 58.3 | 65.0 | 67.4 |
 | 10% | **DualOptim+** | **84.8** | **62.7** | **68.1** | **70.9** |
 | 10% | DualOptim+ 8bit | 84.5 | 62.4 | 67.9 | 70.7 |
 
-OVR improves by ~3.5 points; unlearning efficiency (UFE/TFE) and model utility (MU) improve simultaneously without a trade-off.
+OVR increases by ~3.5 points; unlearning efficiency (UFE / TFE) and model utility (MU) improve simultaneously without trade-offs.
 
-### Main Results: Real Unlearning & Safety Alignment (Partial Excerpts)
+### Real Unlearning + Safety Alignment (Selected Data)
 
-| Task | Dataset | Joint OVR | DualOptim OVR | **DualOptim+ OVR** |
-| :--- | :--- | :--- | :--- | :--- |
+| Task | Data | Joint OVR | DualOptim OVR | **DualOptim+ OVR** |
+|------|------|---------|--------------|------|
 | WMDP-Bio (Llama 2-7B) | Real Unlearning | 51.2 | 54.7 | **58.9** |
 | WMDP-Cyber | Real Unlearning | 49.6 | 52.3 | **56.4** |
 | Harm-Refuse | Safety Alignment | 62.8 | 66.1 | **70.2** |
@@ -101,41 +106,41 @@ Consistent lead of 4–5 points across tasks.
 
 ### Optimizer Update Similarity (Values from Figure 2)
 
-- Alternate (Shared state): Cosine similarity of adjacent forget/retain updates $\approx 0.95$ (signals almost merged).
-- DualOptim (Fully decoupled): $\approx 0.0$ (signals independent).
-- **Ours (DualOptim+)**: $\approx 0.4$–$0.6$ (lies between the two and fluctuates dynamically with training stages).
+- Alternate (Shared State): Cosine similarity of adjacent forget/retain updates ≈ 0.95 (signals merged).
+- DualOptim (Fully Decoupled): ≈ 0.0 (signals independent).
+- **DualOptim+**: ≈ 0.4–0.6 (between the two, fluctuating dynamically during training).
 
 This directly validates the "adaptive transition" hypothesis.
 
 ### Key Findings
-- **Gradient correlation indeed changes dynamically**: Figure 2(b) shows cosine similarity fluctuating wildly in the range $[-0.5, 0.7]$, proving that static shared or static decoupled strategies are sub-optimal.
-- **DualOptim+ is the appropriate intermediate**: The observed range of $0.4$–$0.6$ aligns perfectly with theoretical limits.
-- **Quantization is nearly lossless**: The OVR gap between 8-bit and fp32 is $< 0.3$ points, making it engineering-ready.
-- **Cross-optimizer transferability**: Also effective on Muon (Appendix), demonstrating the universality of the base/delta decomposition.
+- **Gradient correlation is indeed dynamic**: Figure 2(b) shows cosine similarity fluctuating between [-0.5, 0.7], proving that static shared/decoupled strategies are suboptimal.
+- **DualOptim+ is a suitable intermediate**: The observed similarity of 0.4–0.6 aligns with theoretical limits.
+- **Quantization is lossless**: The < 0.3 OVR difference makes it engineering-ready.
+- **Cross-optimizer migration**: Effectiveness on Muon (Appendix) demonstrates the universality of the base/delta decomposition.
 
 ## Highlights & Insights
-- **Adaptivity via Optimizer Structure**: Unlike previous multi-objective optimization that relies on weight scheduling or projection, this work embeds the transition directly into the optimizer states, requiring no external signals.
-- **Clean Theoretical Limits**: Theorem 3.2 provides closed-form asymptotic behaviors where the extremes precisely match Alternate and DualOptim—a rare "intermediate method" with clean theoretical backing.
-- **Engineering Consciousness**: Recognizing that the $2 \times$ state overhead is a deal-breaker for LLMs, the authors proactively implemented quantization. This "algorithm + engineering" package is becoming an essential paradigm in LLM research.
-- **Potential Beyond Unlearning**: The base/delta decomposition is essentially a multi-objective optimizer framework. Its effectiveness in safety alignment and multi-task learning suggests utility in other scenarios like RLHF/DPO with KL regularization or multi-expert distillation.
+- **Adaptivity at the Optimizer Level**: Unlike manual weight scheduling or explicit projection, this method embeds "transitioning" into the optimizer state structure, requiring no external signals.
+- **Clean Theoretical Limits**: Theorem 3.2 provides asymptotic behaviors that match Alternate and DualOptim at the boundaries, offering a rare theoretical grounding for an intermediate method.
+- **Engineering Awareness**: The use of 8-bit quantization acknowledges that 2× state overhead is a blocker for LLM deployment.
+- **Potential Beyond Unlearning**: This decomposition is essentially a multi-objective optimizer framework. It shows potential for RLHF/DPO + KL regularization or multi-expert distillation.
 
 ## Limitations & Future Work
-- Extension to more than 2 objectives is non-trivial: $k$ objectives require $1 + k$ states, further bloating memory; scaling the quantization scheme remains undiscussed.
-- $F_f, F_r$ remain manual hyperparameters; automated scheduling based on real-time correlation would be superior.
-- Primarily validated on models $\leq$ 7B (Phi-1.5, Llama-2-7B); performance on 70B+ scales for real-world deployment is untested.
-- Comparisons with concurrent methods (GradDiff, SimNPO, etc.) could be more detailed, particularly regarding utility recovery after long unlearning training.
+- Extension to more than 2 objectives is non-trivial, as memory scales with $1 + k$ states.
+- $F_f, F_r$ remain manual hyperparameters; automated scheduling based on current correlation would be superior.
+- Primarily validated on models $\le$ 7B; performance on 70B+ models remains untested.
+- Comparisons with concurrent methods (e.g., GradDiff, SimNPO) regarding long-term utility recovery could be more detailed.
 
 ## Related Work & Insights
-- **vs. DualOptim**: DualOptim is fully decoupled and loses synergistic signals; Ours introduces a shared base for adaptive transitions, theoretically covering DualOptim as a limit.
-- **vs. Joint / Alternate**: Joint degrades signals while Alternate shares states—both are single-point strategies. Ours is a continuous family of solutions.
-- **vs. Federated Learning (SCAFFOLD / FedProx)**: The base/delta decomposition is structurally similar to server/client control variables in SCAFFOLD, though target scenarios and update rules differ.
-- **Insight**: Any training problem involving multi-objective optimization with dynamic correlations (RLHF+KL, multi-task, etc.) could benefit from base/delta decomposition, turning the "shared vs. decoupled" choice from a hyperparameter into a mathematical selection.
+- **vs. DualOptim**: DualOptim fully decouples states and loses synergy; DualOptim+ introduces a shared base for adaptive transition.
+- **vs. Joint / Alternate**: Both are single-point strategies; DualOptim+ represents a continuous family of behaviors.
+- **vs. Federated Learning (SCAFFOLD / FedProx)**: The base/delta decomposition is structurally similar to server/client control variables in SCAFFOLD but applied to unlearning with different update rules.
+- **Insight**: Any training problem with "dynamic multi-objective correlation" (RLHF, multimodal alignment) could benefit from base/delta decomposition.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The base/delta decomposition is simple but effective; the "adaptive intermediate" framing is a genuine contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers TOFU, WMDP, safety alignment, and multi-tasking; includes quantization, cross-optimizer tests, and ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, clean theoretical limits (Theorem 3.2), and strong supporting visualizations in Figure 2.
-- Value: ⭐⭐⭐⭐ LLM unlearning is critical for safety and compliance; DualOptim+ is one of the strongest optimizer-side improvements for TOFU/WMDP.
+- Novelty: ⭐⭐⭐⭐ Simple but effective decomposition; the "adaptive intermediate" framing is a genuine contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of TOFU, WMDP, safety alignment, and multi-tasking, including quantization and cross-optimizer tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and clean theoretical limits in Theorem 3.2.
+- Value: ⭐⭐⭐⭐ Meets a high demand for LLM unlearning safety and compliance; one of the strongest optimizer-side improvements for TOFU/WMDP.
 
 <!-- RELATED:START -->
 
@@ -143,11 +148,11 @@ This directly validates the "adaptive transition" hypothesis.
 
 ## Related Papers
 
-- [\[ICML 2026\] Forgetting is Not Erasing: A Survey of Reversibility in Large Language Model Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](../../CVPR2026/llm_safety/vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
 - [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
-- [\[ICCV 2025\] MUNBa: Machine Unlearning via Nash Bargaining](../../ICCV2025/llm_safety/munba_machine_unlearning_via_nash_bargaining.md)
-- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](../../CVPR2026/llm_safety/towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 
 </div>
 

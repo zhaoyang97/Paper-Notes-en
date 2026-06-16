@@ -2,102 +2,98 @@
 title: >-
   [Paper Note] Beyond Caption-Based Queries for Video Moment Retrieval
 description: >-
-  [CVPR 2026][Object Detection][Video moment retrieval] This paper identifies a substantial gap between caption-based queries and real-world search queries in VMR, introduces three search-query benchmarks…
+  [CVPR 2026][Object Detection][Paper Note] This work reveals a significant gap between caption-based queries and real user search queries in VMR. It proposes three search query benchmarks and alleviates the decoder query collapse in DETR by removing self-attention and introducing Query Dropout, achieving up to a 21.83% mAPm improvement on multi-moment search qu
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Video moment retrieval"
-  - "search query generalization"
-  - "DETR decoder query collapse"
-  - "multi-moment retrieval"
-  - "query under-specification"
+  - CVPR 2026
+  - Object Detection
 date: 2026-05-08
-content_hash: 9496eb590671f126
+content_hash: 69eaca98d4aefa68
 ---
-
 # Beyond Caption-Based Queries for Video Moment Retrieval
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.02363](https://arxiv.org/abs/2603.02363)  
-**Code**: Available (code, models, and data provided on the project page)  
-**Area**: Object Detection
-**Keywords**: Video moment retrieval, search query generalization, DETR decoder query collapse, multi-moment retrieval, query under-specification
+**Code**: Yes (Project page provides code, models, and data)  
+**Area**: Object Detection  
+**Keywords**: Video Moment Retrieval, Search Query Generalization, DETR Decoder Query Collapse, Multi-moment Retrieval, Query Under-specification
 
 ## TL;DR
 
-This paper identifies a substantial gap between caption-based queries and real-world search queries in VMR, introduces three search-query benchmarks, and mitigates active decoder-query collapse in DETR via two architectural modifications—self-attention removal and query dropout—achieving gains of up to 21.83% mAPm on multi-moment search queries.
+This work reveals a significant gap between caption-based queries and real user search queries in VMR. It proposes three search query benchmarks and alleviates the decoder query collapse in DETR by removing self-attention and introducing Query Dropout, achieving up to a 21.83% mAPm improvement on multi-moment search queries.
 
 ## Background & Motivation
 
-### 1. State of the Field
-Video Moment Retrieval (VMR) aims to localize temporal segments in a video given a text query. Dominant methods adopt DETR-based architectures with $K$ learnable decoder queries, each mapped to a candidate moment and its confidence score. Existing benchmarks (HD-EPIC, YouCook2, ActivityNet-Captions, etc.) use descriptive text written by annotators **after watching the video** as queries.
+### 1. Background
+Video Moment Retrieval (VMR) aims to localize temporal segments in videos based on text queries. Current mainstream methods rely on the DETR architecture using $K$ learnable decoder queries, each mapped to a candidate moment and a corresponding confidence score. Existing benchmarks (HD-EPIC, YouCook2, ActivityNet-Captions, etc.) all utilize descriptive texts written by annotators **after watching the video** as queries.
 
 ### 2. Limitations of Prior Work
-Text queries in existing datasets are **caption-based**—annotators compose fine-grained descriptions after viewing the video. This introduces a "visual bias": queries are overly detailed and highly aligned with visual content. For instance, an annotator might write "a man in a yellow jersey intercepts a loose pass…," whereas a real user might simply search "when are goals being scored?" These two query types differ fundamentally in linguistic granularity and semantic coverage.
+Existing dataset text queries are **caption-based**—annotators write fine-grained descriptions after viewing the video. This results in "visual bias": queries are overly detailed and highly aligned with the visual content. For instance, an annotator might write "a man in a yellow jersey intercepts a loose pass...", whereas a real user might only search "when are goals being scored?". Fundamental differences exist between these two query types in terms of linguistic granularity and semantic coverage.
 
-### 3. Root Cause
-- **At training time**: each caption-based query corresponds to a **single GT moment** with highly specific language.
-- **At inference time**: real search queries tend to be more abstract and under-specified, potentially corresponding to **multiple moments** in the video.
-- This mismatch causes drastic performance degradation in real-world search scenarios (up to 77.4% drop in Rm@0.3).
+### 3. Key Challenge
+- **At training**: Each caption-based query corresponds to only a **single GT moment**, and the language is highly specific.
+- **At inference**: Real search queries are often more abstract and under-specified, potentially corresponding to **multiple moments** in the video.
+- This mismatch leads to a drastic performance drop in real search scenarios (up to 77.4% Rm@0.3 degradation).
 
-### 4. Paper Goals
-(1) Quantify the performance gap between caption-based and search queries; (2) identify two root causes of degradation—**language gap** and **multi-moment gap**; (3) alleviate decoder-query collapse induced by the multi-moment gap.
+### 4. Goal
+(1) Quantify the performance gap between caption-based and search queries; (2) Identify the root causes of degradation: **language gap** and **multi-moment gap**; (3) Alleviate decoder query collapse caused by the multi-moment gap.
 
-### 5. Starting Point
-The approach operates purely at the **model architecture** level, without modifying training data or the training paradigm. Only structural modifications are introduced to enable models trained on single-moment data to generalize to multi-moment search scenarios.
+### 5. Key Insight
+From a **model architecture** perspective, without altering training data or the training paradigm, structural modifications are employed to enable the model to generalize from single-moment training data to multi-moment search scenarios.
 
 ### 6. Core Idea
-DETR models exhibit **active decoder-query collapse**—only a small subset of queries participates in prediction while the rest remain silent. This is attributed to two structural causes: (i) **coordination collapse** induced by self-attention, where queries coordinate to let only a few activate; and (ii) **index collapse**, where a fixed small set of query indices monopolizes activation. Removing self-attention (-SA) and introducing query dropout (+QD) address both issues simultaneously.
+An **active decoder-query collapse** exists in DETR models—only a few queries participate in prediction, while others remain silent. This is caused by two structural reasons: (i) **coordination collapse** induced by self-attention, where queries "coordinate" to let only a few activate; (ii) **index collapse**, where a few fixed query indices monopolize activations. Removing self-attention (-SA) and introducing Query Dropout (+QD) simultaneously addresses these issues.
 
 ## Method
 
 ### Overall Architecture
 
-The paper consists of two major components:
+This paper addresses why VMR models trained on captions degrade significantly when switched to real search queries, and how to recover performance without re-labeling data. The approach is two-fold. First, **benchmark construction**: since real search queries are hard to collect, existing fine-grained captions are "blurred" into search-like queries using LLMs, and queries pointing to similar content are grouped to create multi-moment test scenarios. Second, **model modification**: the degradation is traced to "active query collapse" in the DETR decoder. Two minimal structural changes—removing self-attention (-SA) and adding Query Dropout (+QD)—force the model to distribute its predictions across more queries. These paths converge in the "multi-moment search query evaluation," using $R_m$ / $mAP_m$ to measure the mitigation of degradation.
 
-1. **Benchmark construction**: an LLM-based search-query generation pipeline that converts existing caption-based datasets into search-query benchmarks.
-2. **Architectural improvement**: two modifications to DETR-based VMR models (-SA + QD) to mitigate active decoder-query collapse.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph PIPE["Search Query Generation Pipeline (Design 1)"]
+        direction TB
+        A["Fine-grained captions"] --> B["Rewriter–validator dual-agent<br/>Rewrite into fuzzy search terms and validate"]
+        B --> C["Sentence embedding similarity grouping<br/>Groups correspond to multiple moments"]
+        C --> D["LLM Aggregator<br/>Generate one representative query per group"]
+    end
+    D --> F["Search Query Benchmarks<br/>HD-EPIC-S / YC2-S / ANC-S (Multi-moment)"]
+
+    G["DETR Decoder<br/>K learnable queries"] --> H["Remove Self-Attention (-SA)<br/>Cut query coordination + NMS redundancy removal"]
+    H --> I["Query Dropout (+QD)<br/>Randomly mask 25% queries during training"]
+    I --> J["Active query count 3.64 → 6.43"]
+
+    F --> K["Multi-moment search query evaluation<br/>Rm / mAPm"]
+    J --> K
+```
 
 ### Key Designs
 
-#### Design 1: Search-Query Generation Pipeline
+**1. Search Query Generation Pipeline: Blurring fine-grained captions into search terms and automated multi-moment mapping**
 
-**Function**: Converts fine-grained captions into under-specified search queries and automatically establishes multi-moment correspondences.
+Real search queries are difficult to obtain because "writing text" and "watching video" cannot be decoupled in the labeling process—if a person watches a video before writing, the result is a caption. Ours circumvents this by reusing existing dense annotations and synthesizing distribution shifts via controlled "under-specification." The pipeline has two stages. The first stage performs per-query under-specification using a Gemma-12B rewriter-validator: the rewriter transforms detailed captions into fuzzy versions (e.g., "a man tying his running shoes..." to "a person getting ready to exercise"), while the validator detects semantic shifts for manual correction. The second stage performs query-grouping, where sentence embedding similarities are calculated between all under-specified queries to group shared content—naturally corresponding to multiple moments. An LLM aggregator then generates a representative search query for each group, resulting in single queries linked to multiple GT moments.
 
-**Mechanism**: A two-stage pipeline—
-- **Per-query under-specification stage**: A rewriter–validator dual-agent system built on Gemma-12B. The rewriter paraphrases detailed captions into vague versions (e.g., "a man tying his running shoes before starting a marathon" → "a person getting ready to exercise"), and the validator detects inconsistencies for human correction.
-- **Query-grouping stage**: Pairwise sentence-embedding similarities are computed across all under-specified queries; highly similar queries are merged into groups (corresponding to multiple moments), and an LLM aggregator generates a representative search query for each group.
+**2. Removing Self-Attention (-SA): Dismantling coordination channels that let queries "collectively stay silent"**
 
-**Design Motivation**: Real search queries cannot be collected through simple annotation (since decoupling textual labeling from video viewing is inherently difficult). The pipeline therefore repurposes existing densely annotated datasets and simulates the distributional shift of search queries through controlled under-specification.
+The standard DETR decoder layer is $\hat{Q}^{l+1} = \text{FFN}(\text{CA}(\text{SA}(\hat{Q}^l), M))$, where SA allows $K$ queries to communicate and push each other away to reduce redundant predictions. While beneficial for multi-object detection, this coordination becomes a shortcut in single-moment VMR training: since each caption only maps to one GT moment, queries "agree" to let only a few handle the GT while others stay silent—termed **coordination collapse**. -SA removes the SA layer entirely, making the decoder layer $Q^{l+1} = \text{FFN}(\text{CA}(Q^l, M))$, so queries operate independently. Redundant predictions previously suppressed by SA are handled via NMS in post-processing.
 
-#### Design 2: Self-Attention Removal (-SA)
+**3. Query Dropout (+QD): Randomly masking queries to break index monopoly**
 
-**Function**: Directly removes the self-attention module among decoder queries in each DETR decoder layer.
-
-**Mechanism**: The standard decoder layer follows $\hat{Q}^{l+1} = \text{FFN}(\text{CA}(\text{SA}(\hat{Q}^l), M))$; after modification it becomes $Q^{l+1} = \text{FFN}(\text{CA}(Q^l, M))$. NMS is applied as post-processing to suppress redundant predictions.
-
-**Design Motivation**: Self-attention encourages decoder queries to repel each other so as to reduce redundancy. However, under single-moment training, this coordination mechanism causes queries to collectively agree to let only a few handle GT moments while the others shut down—termed **coordination collapse**. Removing self-attention allows each query to operate independently, breaking this coordination shortcut.
-
-#### Design 3: Query Dropout (+QD)
-
-**Function**: Randomly zeros out $k$% of the learnable decoder queries during training.
-
-**Mechanism**: $\hat{Q} = Q \odot M, \quad M \sim \mathbb{B}(1-k)$, where $\mathbb{B}$ denotes the Bernoulli distribution; $k=0.25$ yields the best performance.
-
-**Design Motivation**: Even after removing self-attention, **index collapse** persists—a fixed small set of query indices (e.g., indices 1–4) repeatedly attains high confidence while the rest remain permanently silent. QD forces the model to distribute supervisory signals across more queries by randomly masking a subset during training, preventing over-reliance on a fixed subset.
+Simply removing SA is insufficient, as **index collapse** emerges: a fixed set of query indices (e.g., indices 1–4) consistently capture high confidence while others remain permanently silent. This is a position/index-level overfitting. QD applies a Bernoulli mask during training: $\hat{Q} = Q \odot M,\ M \sim \mathbb{B}(1-k)$, randomly zeroing out a proportion $k$ of queries. This forces supervision signals to distribute across more indices. Ours uses $k=0.25$; QD is only active during training. -SA targets "coordination" and QD targets "index" collapse; their combination increases the active query count from 3.64 to 6.43.
 
 ### Loss & Training
 
-- Loss functions are kept identical to the baselines (CG-DETR, LD-DETR), using standard **one-to-one Hungarian matching**.
-- A key finding is that retaining 1-to-1 matching is critical—it introduces competition among queries, ensuring that queries additionally activated by -SA+QD remain diverse rather than generating redundant predictions.
-- Query dropout is applied only during training; all queries are activated at inference.
-- An NMS post-processing step is added to replace the redundancy-suppression function formerly provided by self-attention.
+- The loss function remains identical to the baselines (CG-DETR, LD-DETR), employing standard **one-to-one Hungarian matching**.
+- Key Finding: Maintaining 1-to-1 matching is crucial—it introduces competition and ensures queries activated by -SA+QD remain diverse rather than redundant.
+- Query Dropout is used only during training; all queries are active during inference.
+- NMS is added to post-processing to replace the redundancy removal function of the omitted SA.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: Results on HD-EPIC-S{1,2,3} benchmarks (CG-DETR & LD-DETR)**
+**Table 1: HD-EPIC-S{1,2,3} Benchmark Results (CG-DETR & LD-DETR)**
 
 | Model | Input | Method | Rm@0.1 | Rm@0.3 | Rm@0.5 | mAPm@0.1 | mAPm@0.3 | mAPm@0.5 |
 |------|------|------|--------|--------|--------|----------|----------|----------|
@@ -110,7 +106,7 @@ The paper consists of two major components:
 | LD-DETR | S2 | base | 25.23 | 16.38 | 8.46 | 32.42 | 21.11 | 10.93 |
 | LD-DETR | S2 | -SA+QD | 26.36 | 16.98 | 8.87 | 36.37 | 23.75 | 12.54 |
 
-**Table 2: Results on YC2-S and ANC-S benchmarks**
+**Table 2: YC2-S and ANC-S Benchmark Results**
 
 | Model | Dataset | Method | Rm@0.3 | mAPm@0.1 | mAPm@0.3 | mAPm@0.5 |
 |------|--------|------|--------|----------|----------|----------|
@@ -123,7 +119,7 @@ The paper consists of two major components:
 
 ### Ablation Study
 
-**Component ablation (HD-EPIC-S2, CG-DETR)**
+**Component Ablation (HD-EPIC-S2, CG-DETR)**
 
 | -SA | +QD | Rm (avg) | mAPm (avg) | #active queries |
 |-----|-----|----------|------------|-----------------|
@@ -132,7 +128,7 @@ The paper consists of two major components:
 | ✗ | ✓ | 16.50 | 21.43 | 3.77±1.28 |
 | ✓ | ✓ | **17.52** | **23.93** | **6.43±2.16** |
 
-**Comparison with alternative query activation methods**
+**Comparison of Alternative Query Activation Methods**
 
 | Method | Rm | mAPm | #active | %match GT |
 |------|-----|------|---------|-----------|
@@ -140,41 +136,41 @@ The paper consists of two major components:
 | +1-to-5 matching | 14.66 | 16.30 | 9.56 | 0.21 |
 | +1-to-k matching | 10.78 | 11.01 | 20.00 | 0.07 |
 | +group matching | 15.34 | 17.97 | 8.69 | 0.27 |
-| -SA+QD (ours) | **17.52** | **23.93** | 6.43 | **0.42** |
+| -SA+QD (Ours) | **17.52** | **23.93** | 6.43 | **0.42** |
 
 ### Key Findings
 
-1. **Both modifications are necessary**: applying -SA or +QD alone yields only marginal gains (mAPm from 20.84 to ~21); combining them doubles active queries from 3.64 to 6.43 and improves mAPm by 3.09.
-2. **Simply increasing active queries is ineffective**: 1-to-k matching raises active queries to 20 but mAPm collapses to 11.01—the activated queries generate redundant predictions (%match GT drops from 0.36 to 0.07).
-3. **The critical role of 1-to-1 matching**: retaining Hungarian 1-to-1 matching ensures that newly activated queries compete rather than replicate each other.
-4. **Sensitivity to QD rate**: $k=0.25$ is optimal; $k=0.50$ causes performance collapse (mAPm drops from 23.93 to 3.84).
-5. **Multi-moment queries benefit most**: -SA+QD yields gains of up to 34.3% mAPm@0.3 on multi-moment instances, with moderate improvements on single-moment instances as well.
-6. **The method recovers approximately 70% of the oracle gap** (where the oracle denotes a model trained directly on search queries).
+1. **Both modifications are essential**: Using -SA or +QD in isolation yields only marginal gains; combining them doubles active queries and improves mAPm by 3.09.
+2. **Simply increasing active queries is ineffective**: 1-to-k matching increases active queries to 20, but mAPm drops to 11.01 because activated queries generate redundant predictions (%match GT drops from 0.36 to 0.07).
+3. **Crucial role of 1-to-1 matching**: Maintaining Hungarian 1-to-1 matching ensures that newly activated queries compete rather than duplicate.
+4. **Sensitivity to QD rate**: $k=0.25$ is optimal, while $k=0.50$ causes performance collapse.
+5. **Multi-moment queries benefit most**: -SA+QD improves mAPm@0.3 by up to 34.3% on multi-moment instances.
+6. **Ours recovers approximately 70% of the oracle gap** (where oracle refers to models trained directly on search queries).
 
 ## Highlights & Insights
 
-- **Insightful problem formulation**: the paper identifies a fundamental issue long overlooked in the VMR community—the distributional shift between training captions and real user search queries—which is critical for practical deployment yet has been neglected by the field at large.
-- **Novel multi-moment evaluation metrics**: Rm and mAPm address the unfairness of conventional R1/mAP metrics when evaluating multi-moment retrieval.
-- **Precise diagnosis of decoder-query collapse**: the analysis via the orthogonal dimensions of coordination collapse and index collapse is well-motivated, and the proposed solution is concise and effective.
-- **Architecture-only approach**: modifying only the model structure without altering data or training is highly practical, as it avoids costly re-annotation.
+- **Insightful problem definition**: Highlights a fundamental, long-overlooked issue in VMR—the distribution shift between training captions and real search queries, critical for actual deployment.
+- **New multi-moment evaluation metrics**: $R_m$ and $mAP_m$ address fairness issues in traditional R1/mAP for multi-moment evaluation.
+- **Precise diagnosis of query collapse**: Analyzing the problem through coordination and index collapse dimensions lead to a simple yet effective solution.
+- **Architectural efficiency**: Improves performance purely through structural changes without requiring expensive re-labeling of data.
 
 ## Limitations & Future Work
 
-1. **Language gap remains unaddressed**: the paper resolves only the multi-moment gap; the language gap is left as future work, with the authors suggesting the use of stronger vision-language models to handle cross-granularity semantic reasoning.
-2. **Search queries are LLM-generated rather than from real users**: despite validation, the generated queries may still deviate from actual user search behavior.
-3. **High sensitivity to the QD rate**: increasing $k$ from 0.25 to 0.50 causes performance to collapse from 23.93 to 3.84 mAPm, indicating limited robustness.
-4. **Benchmarks cover only cooking and sports domains**: generalization to open-domain or long-video settings remains unexplored.
-5. **Reliance on NMS post-processing**: removing self-attention necessitates NMS for redundancy suppression, introducing additional hyperparameters and computational overhead.
+1. **Language gap remains**: This work primarily addresses the multi-moment gap. The language gap is left for future work, suggesting stronger vision-language models for cross-granularity semantic reasoning.
+2. **Synthetic nature of search queries**: While validated, LLM-generated queries may still differ from actual user search behavior.
+3. **High sensitivity to QD rate**: The performance drop from $k=0.25$ to $k=0.50$ suggests a need for improved robustness.
+4. **Scenario limitations**: Benchmarks primarily cover domains like cooking and sports; generalization to open-domain or long-narrative videos is unexplored.
+5. **NMS dependency**: Replacing SA with NMS introduces additional hyperparameters and computational overhead in post-processing.
 
 ## Related Work & Insights
 
-- **Connection to DETR query collapse literature**: query collapse has been reported in object detection ([53,28,21]), temporal action detection ([17]), and 3D detection ([44,52]), though the underlying causes differ—those cases stem from sparse one-to-one matching, whereas in VMR the cause is the single-moment prior.
-- **Implications for search and retrieval**: Liang et al. [24] study the effect of ambiguous queries on ranked retrieval; this paper addresses multi-moment retrieval within a single video, and the two lines of work are complementary.
-- **Transferability of the method**: the -SA+QD design can be applied to any DETR variant that suffers from decoder-query collapse.
+- **Relation to DETR query collapse**: Collapse is reported in object detection ([53,28,21]), temporal action detection ([17]), and 3D detection ([44,52]), but causes differ—those are driven by sparse one-to-one matching, while VMR's collapse is driven by single-moment priors.
+- **Implications for search/retrieval**: Complements work on under-specified queries in ranked retrieval by focusing on multi-moment recovery within a single video.
+- **Generalizability**: The -SA+QD design logic is potentially applicable to any DETR-variant task exhibiting decoder-query collapse.
 
 ## Rating
 
-⭐⭐⭐⭐ The paper offers a novel problem formulation, rigorous analysis, and a concise yet effective solution, representing an important step toward deploying VMR in real-world settings. Its main shortcomings are the unresolved language gap and the high sensitivity of the QD rate.
+⭐⭐⭐⭐ The problem definition is novel, the analysis is deep, and the solution is elegant. It is a significant step toward making VMR practical, though the unresolved language gap and QD sensitivity are notable limitations.
 
 <!-- RELATED:START -->
 

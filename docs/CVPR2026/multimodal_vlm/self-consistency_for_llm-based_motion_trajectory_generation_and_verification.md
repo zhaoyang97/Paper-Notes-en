@@ -2,75 +2,87 @@
 title: >-
   [Paper Note] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 description: >-
-  [CVPR2026][Multimodal VLM][self-consistency] This paper extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain. It defines shape families for motion trajectories via a Lie tran…
+  [CVPR 2026][Multimodal VLM][Paper Note] Extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain—defining shape families of motion trajectories via a hierarchy of Lie transformation groups. By clustering multiple trajectories sampled from LLMs under transformation-invariant distance metrics, it achieves unsupervised
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "self-consistency"
-  - "motion trajectory"
-  - "Lie transformation groups"
-  - "shape family"
-  - "unsupervised verification"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 7b44aec49d853328
+content_hash: b4ef6a23826e6762
 ---
-
 # Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.29301](https://arxiv.org/abs/2603.29301)  
 **Code**: [majiaju.io/trajectory-self-consistency](https://majiaju.io/trajectory-self-consistency)  
-**Area**: Multimodal VLM
-**Keywords**: self-consistency, motion trajectory, Lie transformation groups, shape family, unsupervised verification
+**Area**: Multimodal VLM  
+**Keywords**: Self-consistency, motion trajectory, geometric transformation groups, shape families, unsupervised verification
 
 ## TL;DR
-This paper extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain. It defines shape families for motion trajectories via a Lie transformation group hierarchy, and clusters multiple LLM-sampled trajectories under transformation-invariant distance metrics to achieve unsupervised trajectory generation improvement (+4–6%) and verification (precision +11.8%), without any training.
+Extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain—defining shape families of motion trajectories via a hierarchy of Lie transformation groups. By clustering multiple trajectories sampled from LLMs under transformation-invariant distance metrics, it achieves unsupervised improvements in trajectory generation (+4-6%) and verification (+11.8% precision) without training.
 
 ## Background & Motivation
-**Self-consistency** is an effective technique in LLM reasoning: sample multiple times → find the most consistent answer. In text domains such as mathematical reasoning, consistency checking is straightforward (direct numerical comparison). However, LLMs are also widely used to generate visual outputs (SVG, 3D scenes, animations, etc.), raising the question of how to extend self-consistency to the visual domain.
+**Self-consistency** is an effective technique in the LLM reasoning field: multiple samplings → find the most consistent answer. In text domains like mathematical reasoning, consistency checking is straightforward (direct comparison of numerical values). However, LLMs are also widely used to generate visual outputs (SVG, 3D scenes, animations, etc.). How can self-consistency be extended to the visual domain?
 
-**Core Challenge**: In the visual domain, two outputs can almost never match at the pixel level. The deeper reason is the **under-specification** of prompts — "move the circle in a logarithmic spiral path" does not describe a single trajectory but a **shape family** (encompassing all logarithmic spirals at different positions, scales, and orientations). It is therefore necessary to define when two trajectories should be considered "consistent."
+**Key Challenge**: It is nearly impossible for two outputs in the visual domain to match at the pixel level. A deeper reason is the **under-specification** of prompts—a description like "move the circle in a logarithmic spiral path" does not describe a single trajectory, but a **shape family** (containing all logarithmic spirals with different positions, sizes, and orientations). Therefore, it is necessary to define when two trajectories should be considered "consistent."
 
-**Core Idea**: Model shape families as a prototype trajectory plus a geometric transformation group (rigid, similarity, affine, etc.); two trajectories are considered consistent if one can be transformed into the other under the allowed transformations of the group. The hierarchy of transformation groups is used to automatically recover shape families.
+**Core Idea**: Model the shape family as a prototype trajectory plus a geometric transformation group (rigid, similarity, affine, etc.). Two trajectories are considered consistent if they can be transformed into each other under a transformation allowed by the group. The shape family is automatically recovered using a hierarchy of transformation groups.
 
 ## Method
 
 ### Overall Architecture
-Given a prompt describing the desired trajectory → (1) sample $N$ diverse trajectories using an LLM → (2) cluster under transformation-invariant distance metrics for each transformation group in the Lie group hierarchy → (3) select the most appropriate transformation group via a decision criterion → (4) use the centroid of the largest cluster as the self-consistent generation, or check whether a new trajectory belongs to this shape family for verification.
+The objective is to "transfer the self-consistency of LLMs from the text domain to the visual domain." While judging consistency in text is simple (numerical equality), visual outputs rarely match at the pixel level, and prompts like "move along a logarithmic spiral" are inherently under-specified—describing a whole **shape family** rather than a single trajectory. The overall mechanism is as follows: given a prompt, $N$ diverse trajectories are first sampled using an LLM; then, these are clustered using transformation-invariant distance metrics within a Lie transformation group hierarchy; a decision criterion is applied to select the most suitable transformation group; finally, the centroid of the largest cluster is taken as the self-consistent generation result, or a query trajectory is checked against this shape family for verification.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["prompt (Under-specified, corresponding to a shape family)"] --> B["Diverse Sampling<br/>LLM batch generation to explicitly cover distribution tails until N=19 trajectories"]
+    B --> C["Shape Family / Lie Transformation Group Hierarchy<br/>Each candidate group W paired with invariant distance d_W, DBSCAN clustering"]
+    C --> D["Unsupervised Decision Criteria for W<br/>Majority-Consensus / Hierarchical-Consistency"]
+    D --> E["Extract largest cluster centroid as prototype o<br/>Recover shape family F(o, W)"]
+    E -->|Generation| F["Return representative trajectory of largest cluster<br/>as self-consistent generation result"]
+    E -->|Verification| G["Verification: Query trajectory t to prototype o<br/>distance d_W < τ denotes a match"]
+```
 
 ### Key Designs
 
-1. **Shape Families and the Lie Transformation Group Hierarchy**: Define a shape family $\mathcal{F}(o, W) = \{w(o) | w \in W\}$ (prototype trajectory $o$ + transformation group $W$). A group hierarchy is constructed: rigid SE(2) ⊂ rigid+reflection E(2) ⊂ similarity Sim⁺(2) ⊂ similarity+reflection Sim(2) ⊂ affine Aff(2), along with anisotropic similarity groups. Each group has a corresponding invariant distance metric $d_W(t_1, t_2) = \min_{w \in W} \frac{1}{n}\sum_i \|w(t_{1,i}) - t_{2,i}\|^2$, solved via a generalized ICP algorithm.
+**1. Diverse Sampling Strategy: Forcing the LLM to cover the tails of the distribution**
 
-2. **Two Unsupervised Decision Criteria** for selecting transformation group $W$:
+The first step of the pipeline is collecting a pool of candidate trajectories. For clustering to be effective, candidates must be sufficiently dispersed. If independent repeated sampling is used, LLMs tend to repeatedly yield high-probability "safe" trajectories, failing to cover the boundaries of the shape family. This method instead requests $k$ trajectories at once from the LLM with an explicit instruction to cover the "tails" of the distribution, sampling in batches until $N=19$ trajectories are reached, ensuring diverse candidates support the identification of a true majority cluster.
 
-    - **Majority-Consensus**: Traverse the hierarchy upward from the most restrictive group, selecting the first group for which the largest cluster exceeds 50%. This is conservative (favoring stricter groups), yielding high precision but low recall.
-    - **Hierarchical-Consistency**: Traverse downward from the most permissive group, selecting the strictest group that does not cause the largest cluster to lose members. This better balances precision and recall.
+**2. Shape Families and Lie Transformation Group Hierarchy: Redefining consistency via "equivalence classes"**
 
-3. **Diversity Sampling Strategy**: Rather than sampling independently and repeatedly, the LLM is prompted to generate $k$ trajectories in one call covering the "tails" of the distribution, sampling in batches until $N$ trajectories are obtained.
+Consistency in the visual domain can no longer rely on identity matching; this is the core mechanism for extending self-consistency to the geometric domain. The paper defines a shape family as a prototype trajectory plus a transformation group $\mathcal{F}(o, W) = \{w(o) | w \in W\}$, arranging these groups in a hierarchical chain: rigid $SE(2)$ $\subset$ rigid+reflection $E(2)$ $\subset$ similarity $Sim^+(2)$ $\subset$ similarity+reflection $Sim(2)$ $\subset$ affine $Aff(2)$, among others. Each group is associated with a transformation-invariant distance metric $d_W(t_1, t_2) = \min_{w \in W} \frac{1}{n}\sum_i \|w(t_{1,i}) - t_{2,i}\|^2$, solved via generalized ICP. If two trajectories can be mapped to each other under the group's allowed transformations, their distance is zero, indicating consistency. Distances between all $N$ sampled trajectories are calculated for DBSCAN clustering.
 
-4. **Verification**: After recovering shape family $\mathcal{F}(o, W)$, a query trajectory $t$ is deemed consistent with the prompt if its distance to prototype $o$ under $d_W$ is $< \tau$.
+**3. Two Unsupervised Decision Criteria: Balancing between strict and loose groups**
+
+Selecting the appropriate group from the hierarchy directly impacts the balance between recall and precision without available labels. Two complementary criteria are proposed: Majority-Consensus starts from the strictest group and selects the first one where the largest cluster exceeds 50% of the samples; it is conservative and yields high precision. Hierarchical-Consistency starts from the loosest group and selects the strictest group that does not lose members from the largest cluster, providing a better balance between precision and recall. Experiments show that when they fail, the former chooses a group that is too strict (95.6% of cases), while the latter chooses one that is too loose (80.6% of cases).
+
+**4. Verification: Turning "prompt matching" into a well-defined geometric judgment**
+
+Once the shape family $\mathcal{F}(o, W)$ is recovered, verifying whether a query trajectory $t$ matches the prompt becomes a task of calculating its distance to prototype $o$ under metric $d_W$ and checking if it is below a threshold $\tau$. Because member checking is a clean geometric problem once the shape family is fixed, the advantages of self-consistency are even more pronounced in verification tasks than in generation.
 
 ### Loss & Training
-- **Fully unsupervised and training-free**; only LLM API access is required.
-- Hyperparameters: $N=19$ sampled trajectories, $n=100$ resampled points, $\tau$ as clustering threshold (insensitive: F1 varies only 7.2% over a 32× range).
-- Average single distance computation: 67 ms (CPU).
+- **Completely unsupervised and training-free**, requiring only LLM API access.
+- Hyperparameters: $N=19$ samples, $n=100$ point resampling, $\tau$ as the clustering threshold (robust, F1 varies only 7.2% across a $32 \times$ range).
+- Average distance calculation time: 67ms (CPU).
 
 ## Key Experimental Results
 
-### Trajectory Generation Accuracy
+### Main Results
+
+**Trajectory Generation Accuracy**
 
 | Method | Decision Criterion | GPT-4.1 | GPT-5 |
-|--------|--------------------|---------|-------|
+|------|---------|---------|-------|
 | LLM-Direct | - | 62.1% | 79.1% |
 | Ours | Majority-Consensus | **68.0%** | **83.3%** |
 | Ours | Hierarchical-Consistency | 66.7% | 82.6% |
-| Ours | Oracle (ground-truth $W$) | 68.5% | 83.5% |
+| Ours | Oracle (Known Ground-truth $W$) | 68.5% | 83.5% |
 
-### Trajectory Verification
+**Trajectory Verification**
 
 | Method | Precision | Recall | F1 |
-|--------|-----------|--------|----|
+|------|-----------|--------|-----|
 | GPT-4.1 (VLM) | 62.0 | 96.9 | 75.6 |
 | GPT-5 (VLM) | 74.0 | 84.7 | 79.0 |
 | Ours (Majority-Consensus) | **85.8** | 66.1 | 74.6 |
@@ -79,41 +91,41 @@ Given a prompt describing the desired trajectory → (1) sample $N$ diverse traj
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| $N=10$ samples | F1 near saturation | 10 samples already provide sufficient signal |
-| $\tau$ sweep 0.25–8.0 | F1 varies only 7.2% | Insensitive to threshold |
-| Multi-prototype extension | F1: 71.0→88.9 | Handles ambiguous prompts by returning multiple large clusters |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| $N=10$ Samplings | F1 near saturation | 10 samples provide sufficient signal |
+| $\tau$ scan 0.25-8.0 | F1 varies 7.2% | Insensitive to threshold |
+| Multi-prototype improvement | F1: 71.0 $\rightarrow$ 88.9 | Allows returning multiple clusters for ambiguous prompts |
 
 ### Key Findings
-- Unsupervised Majority-Consensus approaches the Oracle upper bound (68.0 vs. 68.5 on GPT-4.1).
-- GPT-4.1 as a VLM verifier exhibits strong positive bias (predicted positive rate 90%, true base rate 50%), yielding only 62% precision.
-- Self-consistency verification precision exceeds the VLM baseline by 11.8% (85.8 vs. 74.0).
-- When Majority-Consensus errs, 95.6% of errors select an overly strict group; when Hierarchical-Consistency errs, 80.6% select an overly permissive group — the two criteria are complementary.
-- Performance stabilizes at $N \geq 10$; large-scale sampling is unnecessary.
+- Unsupervised Majority-Consensus approaches the Oracle upper bound (68.0 vs 68.5 for GPT-4.1).
+- GPT-4.1 as a VLM verifier is heavily biased toward "True" (90% positive prediction rate vs. 50% ground truth), leading to only 62% precision.
+- Self-consistency verification precision is 11.8% higher than the VLM baseline (85.8 vs 74.0).
+- Majority-Consensus failures are 95.6% due to over-strict groups; Hierarchical-Consistency failures are 80.6% due to over-loose groups—the two are complementary.
+- Performance remains stable for $N \geq 10$, eliminating the need for excessive sampling.
 
 ## Highlights & Insights
-- **Extending self-consistency from discrete to continuous geometric domains**: replacing simple identity matching with transformation-group-based consistency is a conceptually significant generalization.
-- **Elegant exploitation of Lie group hierarchy**: different shape families require different transformation groups, and the hierarchy provides a framework for unsupervised automatic selection.
-- **Unique finding that verification benefits more than generation**: the advantage of self-consistency is larger on verification because shape-family membership checking is intrinsically a well-defined geometric problem once the family is recovered.
-- Provides an alternative to VLM-based approaches for automatic evaluation and verification of LLM visual generation.
+- **Generalizing self-consistency from discrete to continuous geometric domains**: Using transformation groups to define "consistency" instead of simple identity matching is a major conceptual advancement.
+- **Clever utilization of Lie group hierarchies**: Different shape families require different transformation groups; the hierarchy provides a framework for unsupervised automatic selection.
+- **Unique finding that Verification > Generation**: The advantage of self-consistency is greater in verification because member checking is a well-defined geometric problem once the shape family is recovered.
+- Provides a VLM-independent path for automatic evaluation and verification of LLM visual outputs.
 
 ## Limitations & Future Work
-- Only handles shape families describable by a single prototype and transformation group; inapplicable to ambiguous descriptions such as "curved path."
-- Multi-prototype cases (e.g., heptagram variants {7/2} and {7/3}) require special treatment.
-- ICP-based distance computation is moderately sensitive to noise and discretization error.
-- Only the geometric shape of trajectories is verified; other animation attributes (velocity, timing, etc.) are not addressed.
+- Only handles shape families that can be described by a single prototype and transformation group; inapplicable to highly ambiguous descriptions (e.g., "curved path").
+- Multi-prototype scenarios (e.g., heptagrams $\{7/2\}$ and $\{7/3\}$) require specialized handling.
+- ICP-based distance calculation is somewhat sensitive to noise and discretization errors.
+- Only verifies the geometry of the trajectory, excluding other animation attributes like velocity and timing.
 
 ## Related Work & Insights
-- **vs. Original Self-Consistency**: The original method supports only discrete identity matching (numerical equality); this work generalizes consistency to transformation-invariant distances in the continuous geometric domain.
-- **vs. MoVer**: MoVer verifies low-level animation properties using a first-order logic DSL but cannot express geometric shape families.
-- **Insight**: The approach of extending self-consistency by defining domain-specific equivalence classes is generalizable to other visual and creative domains such as 3D generation and music.
+- **vs. Original Self-Consistency**: The original method supports only discrete identity matching (exact equality); this work generalizes consistency to transformation-invariant distances in a continuous domain.
+- **vs. MoVer**: MoVer uses first-order logic DSL to verify low-level animation properties but cannot represent geometric shape families.
+- **Insight**: The approach of extending self-consistency via domain-specific "equivalence classes" can be generalized to other visual/creative domains such as 3D generation and music.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Extending self-consistency from text to the visual domain is a highly innovative conceptual contribution; the Lie group hierarchy and decision criterion designs are elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — A synthetic benchmark of 224 prompts and 2,240 verification trajectories, with comprehensive comparisons across two LLMs and multiple decision criteria; limited to synthetic data.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Mathematical definitions are precise, intuitions are clearly explained, and figures are excellent.
-- Value: ⭐⭐⭐⭐ — Opens a new paradigm for automatic verification of LLM visual generation, though the application scope (motion graphics trajectories) is relatively narrow.
+- Novelty: ⭐⭐⭐⭐⭐ Extremely high conceptual innovation; elegant design of Lie group hierarchies and decision criteria.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Synthetic benchmark with 224 prompts and 2240 verification trajectories; complete comparison across LLMs and criteria, though limited to synthetic data.
+- Writing Quality: ⭐⭐⭐⭐⭐ Precise mathematical definitions, clear intuition, and excellent illustrations.
+- Value: ⭐⭐⭐⭐ Establishes a new paradigm for automatic verification of LLM visual generation, though current application to motion trajectories is specific.
 
 <!-- RELATED:START -->
 
@@ -121,11 +133,11 @@ Given a prompt describing the desired trajectory → (1) sample $N$ diverse traj
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 - [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/multimodal_vlm/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
 - [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
 - [\[ICCV 2025\] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography](../../ICCV2025/multimodal_vlm/gendop_auto-regressive_camera_trajectory_generation_as_a_director_of_photography.md)
-- [\[ICLR 2026\] Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences](../../ICLR2026/multimodal_vlm/evaluating_vlms_spatial_reasoning_over_robot_motion_a_step_towards_robot_plannin.md)
-- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](../../NeurIPS2025/multimodal_vlm/enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
+- [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
 
 </div>
 

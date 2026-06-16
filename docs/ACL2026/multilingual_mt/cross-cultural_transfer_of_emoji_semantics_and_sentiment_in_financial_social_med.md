@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][emoji semantics] Based on 100 million financial microblogs across 4 languages / 2 platforms / 2 asset classes, this study systematically compares emoji frequency, semantics…
+  [ACL 2026][Multilingual & Translation][Paper Note] By systematically comparing emoji frequency, semantics, and sentiment polarity across 100 million financial microblogs in 4 languages, 2 platforms, and 2 asset classes, this study finds that while emoji frequency varies significantly across languages/platforms, their semantics and polarity remain highly stable. Consequ
 tags:
-  - "ACL 2026"
-  - "Multilingual & Machine Translation"
-  - "emoji semantics"
-  - "cross-lingual transfer"
-  - "financial social media"
-  - "zero-shot sentiment analysis"
-  - "cross-platform generalization"
+  - ACL 2026
+  - Multilingual & Translation
 date: 2026-05-08
-content_hash: ddb75bb6bebdfe95
+content_hash: cc85d36877d97173
 ---
-
 # Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media
 
 **Conference**: ACL 2026 Findings  
@@ -24,129 +18,147 @@ content_hash: ddb75bb6bebdfe95
 **Keywords**: emoji semantics, cross-lingual transfer, financial social media, zero-shot sentiment analysis, cross-platform generalization
 
 ## TL;DR
-Based on 100 million financial microblogs across 4 languages / 2 platforms / 2 asset classes, this study systematically compares emoji frequency, semantics, and sentiment polarity. It finds that while emoji frequency varies significantly due to language/platform differences, semantics and polarity remain highly stable. Utilizing this, zero-shot sentiment transfer experiments verify that incorporating emojis consistently reduces the cross-platform transfer gap from up to 21% to nearly 0%.
+By systematically comparing emoji frequency, semantics, and sentiment polarity across 100 million financial microblogs in 4 languages, 2 platforms, and 2 asset classes, this study finds that while emoji frequency varies significantly across languages/platforms, their semantics and polarity remain highly stable. Consequently, in zero-shot sentiment transfer, incorporating emojis into text consistently reduces the cross-platform transfer gap from as high as 21% to nearly 0%.
 
 ## Background & Motivation
 
-**Background**: Sentiment analysis in financial social media (Twitter, StockTwits) typically relies on LLMs/encoders trained on English stock domains, which are then transferred to cryptocurrencies, other languages, and other platforms. Emojis (🚀, 💎🙌, 🐻, etc.) appear at extremely high frequencies in financial contexts and are widely regarded as a "universal language." However, mainstream practices either strip them as noise or include general emoji embeddings (trained on non-financial corpora) as features.
+**Background**: Sentiment analysis in financial social media (Twitter, StockTwits) often relies on LLMs or encoders trained on English stock domains, which are then transferred to cryptocurrencies, other languages, or other platforms. Emojis (🚀, 💎🙌, 🐻, etc.) appear with extremely high frequency in financial contexts and are generally considered a "universal language." However, mainstream practices either strip them as noise or include them as features using general emoji embeddings (trained on non-financial corpora).
 
 **Limitations of Prior Work**:
 
-1. Most studies focus on single platforms, single assets, and single languages. Existing work has only validated emoji effectiveness on English Twitter stocks, leaving their stability across languages, platforms, and assets unquantified.
-2. Extensive evidence in general contexts suggests severe cross-cultural semantic drift for emojis (e.g., usage differences across Chinese, Japanese, and English). Whether financial subcultures exhibit similar drift—and whether it impacts downstream models—remains unknown.
-3. No research has effectively linked "emoji distribution similarity" with the "efficacy of emojis in improving zero-shot transfer."
+1. Most studies focus on single-platform, single-asset, or single-language scenarios. Existing work has only verified emoji effectiveness on English stocks on Twitter; no systematic testing has been conducted across languages, platforms, or assets.
+2. In general contexts, there is ample evidence that emoji semantics drift significantly across cultures (usage varies between Chinese, Japanese, and English). Whether financial sub-cultures exhibit similar drift—and whether it affects downstream models—remains unquantified.
+3. No prior work has linked "similarity in emoji distribution" with "improvement in zero-shot transfer provided by emojis."
 
-**Key Challenge**: Emoji frequency distributions as tokens likely depend heavily on language/platform (writing habits), whereas the financial semantics they encode (bullish/bearish/HODL) may be cross-culturally shared. These represent two distinct levels of stability that must be measured separately. If the latter is stable, emojis can serve as a "lightweight bridge" for cross-domain transfer.
+**Key Challenge**: The frequency distribution of emojis as tokens likely depends heavily on language or platform (writing habits), but the financial semantics they encode (bullish/bearish/HODL) might be shared across cultures. These represent two different concepts of stability that must be measured separately. If the latter is stable, emojis can serve as a "lightweight bridge" for cross-domain transfer.
 
-**Goal**: Decomposed into two sub-problems: (i) whether financial communities are consistent across three layers: frequency, semantics, and polarity; (ii) how this consistency/inconsistency affects the cross-community transfer of zero-shot sentiment models.
+**Goal**: This study addresses two sub-problems: (i) whether emojis are consistent across financial communities at the levels of frequency, semantics, and polarity; (ii) how this consistency (or inconsistency) affects the cross-community transfer of zero-shot sentiment models.
 
-**Key Insight**: Emojis are treated as the "shared code of financial subcultures." The study first uses four complementary distribution metrics (JSD/TV/BC/RBO) to assess frequency, then employs XLM-R embeddings + Procrustes alignment for semantics, followed by polarity ratios for sentiment stability. Finally, zero-shot transfer experiments with three input modalities (emoji-only / text-only / text+emoji) operationalize these analyses into downstream metrics.
+**Key Insight**: Emojis are viewed as "shared codes of financial sub-cultures." The study employs four complementary distribution measures (JSD/TV/BC/RBO) for frequency, XLM-R embeddings with Procrustes alignment for semantics, and polarity ratios for sentiment stability. Finally, zero-shot transfer experiments using three input modalities (emoji-only / text-only / text+emoji) anchor the analysis to downstream metrics.
 
-**Core Idea**: A dual perspective of "layered stability measurement + multimodal zero-shot transfer" is used to prove that emojis are stable signal sources for cross-domain financial NLP—nearly completely bridging the transfer gap across different platforms.
+**Core Idea**: Utilizing a dual perspective of "hierarchical stability measurement + multimodal zero-shot transfer," the paper proves that emojis are stable signal sources for domain transfer in financial NLP—specifically, they can almost entirely close the transfer gap during cross-platform migration.
 
 ## Method
 
 ### Overall Architecture
-The paper utilizes two parallel pipelines: **Analysis** and **Transfer Experiments**. The analysis side constructs 6 corpora pairs (5 core comparisons: cross-asset/cross-platform/cross-language) from 100M+ financial microblogs, calculating complementary metrics across three layers (frequency/semantics/polarity). The transfer experiment side involves 27 zero-shot setups across 3 model families × 3 input modalities × 3 transfer directions, reporting "in-domain accuracy" and "transfer gap." The conclusions from both sides corroborate each other by matching drift levels with downstream performance gaps.
+The paper employs two parallel pipelines: **Analysis** and **Transfer Experiments**. The analysis side uses 100M+ financial microblogs to construct 6 corpora pairs (5 core comparisons across asset/platform/language) and calculates a set of complementary metrics across three layers (frequency/semantics/polarity). The transfer experiment side constructs 27 zero-shot setups across 3 model families × 3 input modalities × 3 transfer directions, reporting "in-domain accuracy" and "transfer gap." The pipelines share a common multilingual labeled dataset, allowing the "layer with the most drift" to correlate with the "transfer direction with the largest gap."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["100M Financial Microblogs<br/>4 Languages / 2 Platforms / 2 Assets"] --> B["Multilingual Label Construction<br/>StockTwits Native Labels + Twitter GPT-5 Weak Supervision + Manual Audit"]
+    B --> C["Construct 6 Corpora Pairs<br/>Cross-Asset / Cross-Platform / Cross-Language"]
+    C --> D
+    C --> H
+    subgraph D["Three-Layer Stability Measurement Protocol"]
+        direction TB
+        E["Frequency Layer<br/>JSD / TV / BC / RBO"]
+        F["Semantics Layer<br/>XLM-R Embeddings + Procrustes Alignment"]
+        G["Polarity Layer<br/>Weighted Spearman ρ / Flip Rate"]
+    end
+    subgraph H["Zero-Shot Transfer 3×3 Factorial Design"]
+        direction TB
+        I["3 Modalities: emoji-only<br/>text-only / text+emoji"]
+        J["3 Model Families<br/>TF-IDF+LR / XLM-R / ByT5"]
+        K["Source Train → Target Zero-shot<br/>Report Transfer Gap Δ"]
+        I --> J --> K
+    end
+    D --> L["Mutual Corroboration<br/>Layer Drift ↔ Transfer Gap"]
+    H --> L
+```
 
 ### Key Designs
 
-1. **Three-layer Stability Measurement Protocol (frequency / semantic / polarity)**:
+**1. Multilingual Financial Sentiment Ground Truth: GPT-5 Weak Supervision + Manual Audit**
 
-    - **Function**: Decomposes the vague question of "emoji consistency across communities" into three independent, quantifiable layers.
-    - **Mechanism**: (a) Frequency layer: Takes the top-100 emojis per corpus and calculates JSD (global divergence), TV (proportional difference), BC (distribution overlap), and RBO (rank-weighted consistency); (b) Semantic layer: Uses XLM-R to encode posts containing each emoji, creates centroids, and calculates mean cosine and NN@1/NN@5 after Procrustes orthogonal alignment; (c) Polarity layer: Treats the proportion of positive posts for an emoji as its polarity, calculating weighted Spearman $\rho_w$, weighted MAUD$_w$, and flip rate.
-    - **Design Motivation**: Relying on single metrics like JSD leads to pessimistic conclusions. Layering reveals that "frequency drifts, but semantics and polarity are stable," providing the explanatory mechanism for transfer effectiveness.
+To extend analysis to EN/ES/JA/TR, the lack of native sentiment labels on Twitter and scarcity of multilingual financial corpora had to be addressed. The authors used StockTwits' native bullish/bearish labels and applied GPT-5 weak supervision for Twitter sentiment. They manually verified 2,700 samples per language to ensure label quality was sufficient for transfer conclusions.
 
-2. **3x3 Factorial Design for Zero-shot Transfer (modality × model family)**:
+**2. Three-Layer Stability Measurement Protocol: Decoupling Frequency, Semantics, and Polarity**
 
-    - **Function**: Evaluates whether adding emojis improves transferability via controlled experiments.
-    - **Mechanism**: Three modalities: E (emoji sequences only), T (text without emojis), TE (original text with emojis). Three model families: TF-IDF+LR (bag-of-words baseline), XLM-R (multilingual contextual encoder), ByT5 (byte-level, immune to tokenizer drift). Models are trained on the source and evaluated on the target without fine-tuning, reporting the transfer gap $\Delta = \text{Acc}_{\text{in-domain}} - \text{Acc}_{\text{target}}$. Transfer directions include cross-asset (stocks↔crypto), cross-platform (StockTwits↔Twitter), and cross-language (EN/ES/JA/TR).
-    - **Design Motivation**: Comparing E vs. T identifies the stable signal carried by emojis alone; TE vs. T determines if emojis consistently reduce gaps. ByT5 is included to rule out confounding factors such as emoji fragmentation in tokenizers.
+Directly asking if emojis are "the same" across cultures leads to pessimistic conclusions based on distribution distances like JSD. This study decouples the problem into three measured layers. The frequency layer uses top-100 emojis and computes JSD, TV, BC, and RBO. The semantics layer uses XLM-R centroids and Procrustes orthogonal alignment to measure mean cosine and NN@k. The polarity layer treats the "positive post ratio" of each emoji as its polarity, calculating weighted Spearman $\rho_w$, weighted MAUD$_w$, and flip rates.
 
-3. **GPT-5 Weak Supervision + Multilingual Label Construction via Manual Inspection**:
+**3. Zero-Shot Transfer Factorial Design: Controlled Comparison of Emoji Impact**
 
-    - **Function**: Addresses the absence of native sentiment labels on Twitter, extending analysis to EN/ES/JA/TR.
-    - **Mechanism**: StockTwits uses platform-native bullish/bearish labels as ground truth. Twitter labels are generated via GPT-5, with 2,700 samples per language manually verified to ensure high label quality for transfer experiments.
-    - **Design Motivation**: Financial multilingual sentiment corpora are scarce; combining LLM automated labeling with small-scale manual spot-checks is a scalable compromise.
+To quantify the benefit of emojis, three input modalities are tested: E (emoji sequence only), T (plain text without emojis), and TE (original text with emojis). Experiments involve three model families (TF-IDF+LR, XLM-R, ByT5) across cross-asset (stocks↔crypto), cross-platform (StockTwits↔Twitter), and cross-language (EN/ES/JA/TR) directions. The transfer gap $\Delta = \text{Acc}_{\text{in-domain}} - \text{Acc}_{\text{target}}$ is the primary metric.
 
 ### Loss & Training
-TF-IDF+LR follows standard L2 regularization. XLM-R and ByT5 use standard cross-entropy fine-tuning (shared hyperparameters across modalities). All corpora are balanced for positive/negative samples and processed with unified tokenizers to ensure differences stem from data distribution.
+TF-IDF+LR uses standard L2 regularization. XLM-R and ByT5 undergo standard cross-entropy fine-tuning (sharing hyperparameters across modalities). All corpora are balanced for positive/negative samples and processed with unified tokenizers to ensure differences arise from data distribution rather than training settings.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Cross-platform transfer (StockTwits-BTC → Twitter-BTC) represents the primary "hardship" for transfer gaps. The table below compares three input modalities across different models:
+Cross-platform transfer (StockTwits-BTC → Twitter-BTC) serves as the "hardest" transfer gap. The table below compares modalities across models:
 
-| Modality / Model | In-domain Acc | Δ→Twitter-BTC | Note |
+| Modality / Model | In-domain Acc | $\Delta$ → Twitter-BTC | Notes |
 |---|---|---|---|
-| Text / ByT5 | 0.783 | **0.209** | Largest gap for text-only |
+| Text / ByT5 | 0.783 | **0.209** | Largest gap for pure text |
 | Text / XLM-R | 0.739 | 0.035 | Multilingual encoder provides buffer |
 | Emoji / XLM-R | 0.718 | **0.004** | Emoji-only has nearly zero gap |
-| Emoji / TF-IDF | 0.738 | 0.035 | Stable even with simple bag-of-words |
+| Emoji / TF-IDF | 0.738 | 0.035 | Simple bag-of-words remains stable |
 | Text+Emoji / ByT5 | **0.833** | 0.147 | High in-domain + improved transfer |
 | Text+Emoji / XLM-R | 0.791 | 0.022 | Best overall performance |
 
-Cross-asset transfer (Crypto → Stocks) gaps are generally 2–11% smaller: emoji-only gaps are all < 5%, while the TF-IDF text modality has the largest gap (0.106). TE configurations are significantly better than T.
+Cross-asset transfer gaps (Crypto → Stocks) are generally smaller by 2–11%; emoji-only gaps are all < 5%.
 
-Key figures for stability measurement: Cross-asset emoji frequency JSD=0.28, semantic cosine=0.96, polarity $\rho_w$=0.89. In the cross-lingual EN-JA case, JSD rises to 0.51 and NN@1 drops to 0.09, but polarity $\rho_w$ remains high at 0.85—confirming that "frequency varies, but polarity remains stable."
+Three-layer stability metrics: Cross-asset shows JSD=0.28, semantics cosine=0.96, polarity $\rho_w$=0.89. For EN-JA, frequency JSD rises to 0.51 and NN@1 drops to 0.09, but polarity $\rho_w$ remains high at 0.85—confirming that frequency drifts while polarity stays stable.
 
 ### Ablation Study
 
-Treating modality as the ablation dimension and fixing XLM-R, the contribution of the three inputs to the cross-platform transfer gap is as follows:
+Treating modality as the ablation dimension while fixing XLM-R to observe contribution to cross-platform transfer gap:
 
-| Configuration | In-domain Acc | Cross-platform Δ | Meaning |
+| Config | In-domain Acc | Cross-platform $\Delta$ | Implication |
 |---|---|---|---|
 | Full (Text+Emoji) | 0.791 | 0.022 | Full model, gap nearly disappears |
-| w/o Emoji (Text only) | 0.739 | 0.035 | Without emojis, gap slightly increases |
-| w/o Text (Emoji only) | 0.718 | **0.004** | Emoji signal is most stable, though in-domain cap is lower |
-| TF-IDF / Text | 0.831 | 0.191 | Without contextual encoder, gap surges |
-| ByT5 / Text | 0.783 | 0.209 | Byte-level model cannot fix text drift |
+| w/o Emoji (Text only) | 0.739 | 0.035 | Removing emojis increases gap slightly |
+| w/o Text (Emoji only) | 0.718 | **0.004** | Emoji signal is most stable, but lower in-domain cap |
+| TF-IDF / Text | 0.831 | 0.191 | Removing context encoder leads to gap surge |
+| ByT5 / Text | 0.783 | 0.209 | Byte-level does not fix pure text drift |
 
 ### Key Findings
 
-- Emojis act as "insulators" for zero-shot sentiment transfer: while text-only models drop by up to 20.9 pp across platforms, emoji-only models drop by only 0.4 pp (XLM-R), suggesting emoji-encoded financial sentiment is nearly immune to platform style drift.
-- TE > T is a consistent trend: Text+Emoji yields a smaller transfer gap than text-only across all 9 model×modality combinations, proving emojis are complementary rather than redundant.
-- "Frequency instability vs. semantic/polarity stability" is the core structural observation: Cross-lingual JSD reaches 0.51, yet polarity $\rho_w$ remains between 0.79–0.89. This explains why downstream sentiment transfer works better than frequency distributions would suggest.
-- Cross-lingual transfer remains the most difficult direction: Emojis bridge nearly all cross-platform gaps, but cross-lingual transfer is still hindered by text-level linguistic gaps.
+- Emojis are "insulators" for zero-shot sentiment transfer: While text-only drops up to 20.9 pp cross-platform, emoji-only drops just 0.4 pp (XLM-R).
+- TE > T is a consistent trend: Text+Emoji yields a smaller transfer gap than text-only across all 9 model×modality combinations.
+- Decoupling frequency from polarity is essential: Cross-language JSD is high (0.51), but polarity $\rho_w$ remains 0.79–0.89, explaining why sentiment transfer works despite distribution differences.
+- Cross-language remains the most difficult: Emojis close nearly the entire gap cross-platform, but only partially mitigate the linguistic divide in cross-language scenarios.
 
 ## Highlights & Insights
 
-- **Three-layer Decoupling**: Separating "distribution," "semantics," and "polarity" reveals an intuitive conclusion—how often an emoji is used is different from how it is used. This methodology is applicable to any symbol with "form drift but stable meaning," such as hashtags or jargon.
-- **Emoji-only Baseline**: Treating "emoji-only" as an independent baseline is a key innovation. This design cleanly isolates the invariant signal carried by emojis alone.
-- **ByT5 as a Control**: The inclusion of a byte-level model rules out "tokenizer drift" as the sole reason for emoji-based improvements, as byte-level models handle emojis natively.
+- **Three-layer decoupling** is ingenious: By separating "distribution," "semantics," and "polarity," the authors reveal that "usage frequency" and "meaning" are distinct; merging them leads to false pessimism.
+- Treating the "emoji-only" modality as a baseline is a key innovation, allowing for clean isolation of the invariant cross-domain signals carried by emojis.
+- Selecting ByT5 as a control model eliminates the confounder of "tokenizer drift," proving that emoji benefits are not merely artifacts of how sub-word tokenizers handle special characters.
 
 ## Limitations & Future Work
 
-- Cross-language transfer remains difficult; emojis reduce the gap but cannot eliminate it, requiring stronger multilingual alignment.
-- Data coupling: StockTwits is English-only, meaning cross-platform and cross-language variables are coupled in the data. Future work should collect data from non-English platforms.
-- Polarity is measured using a coarse proxy (positive post ratio); fine-grained emoji-level causal analysis could better quantify the direct contribution of emojis to sentiment.
-- The experiments are limited to the ByT5/XLM-R scale. Testing whether emojis remain critical for large generative LLMs (e.g., GPT-5 zero-shot) would strengthen conclusions.
+- The authors acknowledge that cross-language transfer remains a hurdle; emojis reduce the gap but do not eliminate it, requiring stronger multilingual alignment.
+- Observation: StockTwits is English-only, meaning cross-platform and cross-language variables are somewhat coupled in the data (cross-platform is fixed on English BTC). Future work should source multilingual StockTwits-like data.
+- Polarity measurement based on "positive post ratio" is a coarse proxy; causal analysis (e.g., do-calculus) could better quantify the causal contribution of emojis.
+- Experiments were limited to ByT5/XLM-R; testing whether emojis remain vital in the era of massive LLMs (like GPT-5) would be a valuable baseline.
 
 ## Related Work & Insights
 
-- **vs. Mahrous et al. (2023)**: They proposed that financial emojis carry independent sentiment but only validated this on a single platform. This study expands the scale to 4 languages/2 platforms and quantifies cross-domain transfer.
-- **vs. Lu et al. (2016) / Barbieri et al. (2016)**: General studies emphasize large cross-cultural semantic differences. This work reveals that "frequency drifts, but polarity does not" in financial subcultures, suggesting subculture corpora can overcome general cross-cultural pessimism.
-- **vs. Colavito et al. (2025) / Di Palo et al. (2024)**: They argued that emoji-only models can compete with text-only models; this study further proves that emoji-only models are superior in cross-domain transfer, providing empirical support for lightweight financial NLP systems.
+- **vs. Mahrous et al. (2023)**: While they first proposed that financial emojis carry independent sentiment, this work scales the analysis to 4 languages and 2 platforms while quantifying transfer performance.
+- **vs. Lu et al. (2016) / Barbieri et al. (2016)**: Whereas general research emphasizes cross-cultural semantic drift, this study shows that the financial sub-culture exhibits stable polarity despite frequency drift.
+- **vs. Colavito et al. (2025) / Di Palo et al. (2024)**: These studies argue that emoji-only models are competitive; this paper adds that emoji-only models are particularly superior in cross-domain transfer scenarios.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Systematic quantification of financial emoji stability across platform/language/asset and its connection to zero-shot transfer; robust research inquiry.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 100M entries, 4 languages, 2 platforms, 2 assets, 3 model families, 3 modalities, 27 transfer experiments, and additional ABSA validation.
+- Novelty: ⭐⭐⭐⭐ First systematic quantification of financial emoji stability across platform/language/asset linked to zero-shot metrics.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 100M data points, multiple languages/platforms/assets, and 27 transfer experiments.
 - Writing Quality: ⭐⭐⭐⭐ Clear logical chain; high information density in tables.
-- Value: ⭐⭐⭐⭐ Directly guides the deployment of financial NLP and multilingual sentiment tools; the actionable conclusion is the extremely low cross-platform gap of emoji-only models.
+- Value: ⭐⭐⭐⭐ Direct guidance for deploying financial NLP systems; the nearly zero cross-platform gap for emoji-only models is a highly actionable engineering insight.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ACL 2026\] PluRule: A Benchmark for Moderating Pluralistic Communities on Social Media](plurule_a_benchmark_for_moderating_pluralistic_communities_on_social_media.md)
-- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
+- [\[ACL 2025\] Cross-Lingual Transfer of Cultural Knowledge: An Asymmetric Phenomenon](../../ACL2025/multilingual_mt/cross-lingual_transfer_of_cultural_knowledge_an_asymmetric_phenomenon.md)
+- [\[CVPR 2025\] SMTPD: A New Benchmark for Temporal Prediction of Social Media Popularity](../../CVPR2025/multilingual_mt/smtpd_a_new_benchmark_for_temporal_prediction_of_social_media_popularity.md)
 - [\[ACL 2026\] What Factors Affect LLMs and RLLMs in Financial Question Answering?](what_factors_affect_llms_and_rllms_in_financial_question_answering.md)
-- [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](efficient_training_for_cross-lingual_speech_language_models.md)
-- [\[ACL 2026\] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents](indotabvqa_a_benchmark_for_cross-lingual_table_understanding_in_bahasa_indonesia.md)
+- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 
 </div>
 

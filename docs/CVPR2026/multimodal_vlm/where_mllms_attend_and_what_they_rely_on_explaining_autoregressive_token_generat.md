@@ -2,124 +2,141 @@
 title: >-
   [Paper Note] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM interpretability] This paper proposes Eagle, a lightweight black-box attribution framework that performs spatial attribution for autoregressive token generation in MLLMs via a unified obj…
+  [CVPR 2026][Multimodal VLM][Paper Note] Eagle is proposed as a lightweight black-box attribution framework that performs spatial attribution for MLLM autoregressive token generation using a unified objective function of insight score (sufficiency) and necessity score (indispensability). It quantifies whether each token relies on language priors or perceptual
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "MLLM interpretability"
-  - "attribution analysis"
-  - "hallucination diagnosis"
-  - "language prior vs. perceptual evidence"
-  - "black-box methods"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: ef7c3318c4f38615
+content_hash: c25cd15be38cd463
 ---
-
 # Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2509.22496](https://arxiv.org/abs/2509.22496)  
 **Code**: [https://ruoyuchen10.github.io/EAGLE/](https://ruoyuchen10.github.io/EAGLE/)  
-**Area**: Multimodal VLM
-**Keywords**: MLLM interpretability, attribution analysis, hallucination diagnosis, language prior vs. perceptual evidence, black-box methods
+**Area**: Multimodal VLM  
+**Keywords**: MLLM Interpretability, Attribution Analysis, Hallucination Diagnosis, Language Prior vs. Perceptual Evidence, Black-box Method
 
 ## TL;DR
-This paper proposes Eagle, a lightweight black-box attribution framework that performs spatial attribution for autoregressive token generation in MLLMs via a unified objective combining insight score (sufficiency) and necessity score (indispensability), and quantifies whether each generated token relies on language priors or perceptual evidence. Eagle comprehensively outperforms existing methods in faithfulness, localization, and hallucination diagnosis while substantially reducing GPU memory requirements.
+Eagle is proposed as a lightweight black-box attribution framework that performs spatial attribution for MLLM autoregressive token generation using a unified objective function of insight score (sufficiency) and necessity score (indispensability). It quantifies whether each token relies on language priors or perceptual evidence, significantly outperforming existing methods in faithfulness, localization, and hallucination diagnosis while substantially reducing GPU memory requirements.
 
 ## Background & Motivation
-**Background**: MLLMs have achieved remarkable progress in vision-language understanding and generation, yet how generated tokens depend on the visual modality remains poorly understood, limiting interpretability and reliability.
+**Background**: MLLMs have made significant progress in vision-language understanding and generation, but the degree to which generated tokens depend on the visual modality remains poorly understood, limiting interpretability and reliability.
 
-**Limitations of Prior Work**: (a) Attention visualization methods fail to capture complex cross-modal interactions; (b) gradient-based methods (LLaVA-CAM/IGOS++) are susceptible to textual prior interference, sensitive to cumulative effects in long sequences, and incur large memory overhead; (c) activation map methods (TAM) support only single-token attribution and lack generality; (d) subset-selection-based VPS is restricted to grounding/detection tasks, and its objective cannot be directly transferred to MLLMs.
+**Limitations of Prior Work**: (a) Attention visualization methods fail to capture complex cross-modal interactions; (b) Gradient methods (LLaVA-CAM/IGOS++) are interfered with by text priors, are sensitive to cumulative effects in long sequences, and have high memory overhead; (c) Activation map methods (TAM) only support single-token attribution and are not generalizable; (d) Subset selection-based VPS is limited to grounding/detection tasks, and its objective function cannot be directly migrated to MLLMs.
 
-**Key Challenge**: The autoregressive generation paradigm of MLLMs makes classification-style attribution methods difficult to adapt—methods capable of handling multi-token combinatorial attribution are required; meanwhile, activation/gradient methods lack a direct causal link between input and output, rendering them insufficiently faithful.
+**Key Challenge**: Autoregressive generation makes classification-based attribution methods difficult to adapt—there is a need for methods capable of handling multi-token combination attribution. Simultaneously, activation/gradient methods lack a direct causal link between input and output, making them insufficiently faithful.
 
-**Goal**: (a) Provide faithful spatial attribution for arbitrary selected output tokens in MLLMs; (b) quantify whether generated tokens rely on visual evidence or language priors.
+**Goal**: (a) Perform faithful spatial attribution for any selected output tokens of an MLLM; (b) Quantify whether generated tokens rely on visual evidence or language priors.
 
-**Key Insight**: Design a black-box framework that is independent of internal model structures (attention/gradients), attributing by observing probability changes through forward inference.
+**Key Insight**: Design a black-box framework that does not rely on internal model structures (attention/gradients) but attributes by observing probability changes during forward inference.
 
-**Core Idea**: A unified objective combining sufficiency and necessity + greedy subset search + modality influence analysis.
+**Core Idea**: A unified objective function for sufficiency and necessity + greedy subset search + modality influence analysis.
 
 ## Method
 
 ### Overall Architecture
-(1) Sparse image decomposition into $V=\{\mathbf{x}_1,...,\mathbf{x}_N\}$ superpixel regions via SLICO; (2) design of a unified insight + necessity objective; (3) greedy search to produce an ordered attribution ranking; (4) modality dependence analysis based on the ranking—quantifying language prior vs. perceptual evidence reliance for each token.
+Eagle aims to answer two questions: **where the MLLM looks** when generating a token and **to what extent it relies on the image**. It decomposes both into observables via pure forward inference without touching internal attention or gradients, making it applicable to any MLLM (even via API). The process is as follows: first, use SLICO superpixel segmentation to sparsify the image into $V=\{\mathbf{x}_1,\dots,\mathbf{x}_N\}$ sub-regions, turning "where to look" into a discrete problem of "picking a subset from these $N$ blocks." Next, a score is assigned to the selected subset measuring both "sufficiency" and "indispensability." Greedy search is used to rank sub-regions into an ordered sequence $\pi$ by importance. Finally, by sequentially reintroducing image blocks along this sequence and observing target token probability changes, it determines whether the reliance is on visual evidence or language priors.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Image + Prompt"] --> B["SLICO Superpixel Segmentation<br/>Sparsify into N sub-regions V"]
+    subgraph SCORE["Scoring Candidate Subset S"]
+        direction TB
+        C["Insight Score<br/>Sufficiency: Can S alone reproduce the target token?"]
+        D["Necessity Score<br/>Indispensability: Probability drop after removing S"]
+    end
+    B --> SCORE
+    SCORE --> E["Unified Objective + Greedy Ranking<br/>F(S)=insight+necessity, greedy selection for sequence π"]
+    E --> F["Modality Influence Analysis<br/>Sequential introduction along π, cumulative probability lift"]
+    F --> G["Output: Spatial Attribution Heatmap + Visual/Language Reliance Decision"]
+```
 
 ### Key Designs
 
-1. **Insight Score (Sufficiency)**:
+**1. Insight Score: Can the model still generate the original word using only these regions?**
 
-    - Function: Identifies the minimal set of regions sufficient to drive generation.
-    - Mechanism: $s_{insight}(S) = \sum_{i=1}^n p(y_{t_i}=v_i | S, \text{Prompt}, \mathbf{y}_{<t_i})$, measuring the sum of generation probabilities for target tokens when only the subset $S$ of regions is provided.
-    - Design Motivation: Locates the visual regions that best "explain" the model's generation decisions.
+This represents the "sufficiency" half. Given a candidate subset $S$, all regions in the image outside of $S$ are masked. The model is presented only with $S$ and asked for the probability of generating the original target tokens:
 
-2. **Necessity Score (Indispensability)**:
+$$s_{insight}(S) = \sum_{i=1}^n p\big(y_{t_i}=v_i \mid S,\ \text{Prompt},\ \mathbf{y}_{<t_i}\big)$$
 
-    - Function: Identifies regions whose removal significantly reduces generation probabilities.
-    - Mechanism: $s_{necessity}(V \setminus S) = \sum_{i=1}^n (1 - p(y_{t_i}=v_i | V \setminus S, \text{Prompt}, \mathbf{y}_{<t_i}))$; the greater the probability drop upon removing $S$, the more indispensable $S$ is.
-    - Design Motivation: Insight considers only sufficiency (these regions are enough), whereas necessity complements it with indispensability (these regions must be present).
+A higher probability indicates that the regions in $S$ are "sufficient" to support the model's decision. This addresses a pain point where attention maps show where weight is placed but do not guarantee that the region is the cause of generation; Insight uses a direct input-output causal test to find visual evidence that truly explains the decision.
 
-3. **Unified Objective and Greedy Optimization**:
+**2. Necessity Score: Will the model fail to generate it if these regions are removed?**
 
-    - Function: Jointly optimizes sufficiency and necessity to produce an ordered attribution ranking.
-    - Mechanism: $\mathcal{F}(S) = s_{insight}(S) + s_{necessity}(V \setminus S)$; greedy search finds the ordered subset $\pi$ maximizing the objective, with total inference count $\frac{1}{2}|V|^2 + \frac{1}{2}|V|$.
-    - Design Motivation: The submodularity-inspired objective guarantees diminishing marginal returns; greedy search serves as an efficient approximation to NP-hard subset selection.
+Sufficiency alone is inadequate—a background region highly correlated with the subject might be "sufficient" but not "indispensable" if the output remains unchanged without it. Necessity addresses this: $S$ is removed from the image, leaving $V\setminus S$, to see how much the target token probability drops:
 
-4. **Modality Influence Analysis (Language Prior vs. Perception Evidence)**:
+$$s_{necessity}(V \setminus S) = \sum_{i=1}^n \big(1 - p(y_{t_i}=v_i \mid V \setminus S,\ \text{Prompt},\ \mathbf{y}_{<t_i})\big)$$
 
-    - Function: Quantifies whether each generated token relies more on language priors or visual evidence.
-    - Mechanism: Using the ordered subset $\pi$ from attribution, regions are introduced incrementally and the total probability variation for each token is computed as the perceptual influence score $I_{t_i} = \sum_r (p(...|\pi_{:r},...) - \min_j p(...|\pi_{:j},...))$.
-    - Design Motivation: Unlike a simple comparison of probabilities with vs. without the image, the incremental introduction captures non-monotonic probability trajectories (rise then fall), more accurately reflecting visual dependence.
+The sharper the drop in probability after removing $S$, the larger this term, indicating $S$ is more irreplaceable. Insight answers "these are enough," and Necessity answers "it won't work without these." Together, they filter for regions that are both sufficient and necessary.
+
+**3. Unified Objective + Greedy Ranking: Turning attribution into an optimizable ordered selection**
+
+Eagle does not optimize the two scores separately but combines them into a single objective, allowing one search to account for both sufficiency and necessity:
+
+$$\mathcal{F}(S) = s_{insight}(S) + s_{necessity}(V \setminus S)$$
+
+Subset selection is NP-hard, but this objective is inspired by submodularity and exhibits diminishing marginal returns, making greedy search an effective approximation: at each step, the region from the remaining set that provides the largest increment to $\mathcal{F}$ is added. This gradually approaches the optimum and yields an **ordered sequence** $\pi$ ranked by importance. The process requires approximately $\frac{1}{2}|V|^2 + \frac{1}{2}|V|$ forward inferences—this is the source of Eagle's latency, but because it is pure forward inference without storing gradients, it saves significantly more GPU memory than gradient methods.
+
+**4. Modality Influence Analysis: Is this word based on the image or language inertia?**
+
+With the ordered sequence $\pi$, the true visual reliance of each token can be quantified. Instead of a simple "image vs. no-image" probability difference, which misses non-monotonic cases where probability rises then falls, Eagle reintroduces regions sequentially along $\pi$. It calculates the cumulative probability lift relative to the lowest point in the process as the perceptual influence score:
+
+$$I_{t_i} = \sum_r \Big(p(\cdot \mid \pi_{:r},\cdot) - \min_j p(\cdot \mid \pi_{:j},\cdot)\Big)$$
+
+A high $I_{t_i}$ indicates the word is supported by visual evidence (e.g., "red," specific object names); a low $I_{t_i}$ indicates reliance on language priors (e.g., articles, prepositions). This quantifies which words are looking at the image and which are guessing, providing a direct handle for hallucination diagnosis.
 
 ## Key Experimental Results
 
-### Main Results — Sentence-Level Faithfulness (MS COCO Image Caption)
+### Main Results—Sentence-level Faithfulness (MS COCO Image Caption)
 
 | Method | Model | Ins.↑ | Del.↓ | GPU Memory |
-|--------|-------|-------|-------|------------|
+|------|-------|-------|-------|------------|
 | LLaVA-CAM | LLaVA-1.5 7B | 0.5298 | 0.5317 | 37.25 GB |
 | IGOS++ | LLaVA-1.5 7B | 0.5293 | 0.5168 | 48.18 GB |
-| **Eagle** | **LLaVA-1.5 7B** | **0.5970** | **0.4554** | **16.07 GB** |
+| **Ours (Eagle)** | **LLaVA-1.5 7B** | **0.5970** | **0.4554** | **16.07 GB** |
 | LLaVA-CAM | Qwen2.5-VL 7B | 0.5605 | 0.5464 | 47.17 GB |
-| **Eagle** | **Qwen2.5-VL 7B** | **0.7006** | **0.4597** | **17.68 GB** |
+| **Ours (Eagle)** | **Qwen2.5-VL 7B** | **0.7006** | **0.4597** | **17.68 GB** |
 
-### Ablation Study — Localization and Hallucination
+### Ablation Study—Localization and Hallucination
 
-| Metric | Method | Note |
-|--------|--------|------|
-| Point Game (bbox) | Eagle vs TAM | **+36.42%** |
-| Point Game (mask) | Eagle vs TAM | **+42.63%** |
-| Hallucination correction | Eagle | Corrects hallucinations by removing minimal regions |
+| Metric | Method | Description |
+|------|------|------|
+| Point Game (bbox) | Eagle vs TAM | **Gain: +36.42%** |
+| Point Game (mask) | Eagle vs TAM | **Gain: +42.63%** |
+| Hallucination Repair | Eagle | Removing minimal regions can correct hallucinations |
 
 ### Key Findings
-- Eagle comprehensively outperforms existing methods across all models (LLaVA-1.5/Qwen2.5-VL/InternVL3.5) and tasks (captioning/VQA).
-- Average faithfulness improvements of 20.0% (insertion) and 13.4% (deletion); gains are larger for sensitive tokens (29–42%).
-- GPU memory reduced by 50–80%: 16.07 GB vs. 48.18 GB (IGOS++) on LLaVA-1.5.
-- Gains on VQA are smaller than on captioning, as VQA-generated tokens rely more heavily on reasoning and language priors.
-- Hallucination diagnosis: Eagle precisely localizes visual regions responsible for hallucinations and corrects them by removing fewer than 10% of regions.
+- Eagle comprehensively outperforms existing methods across all models (LLaVA-1.5/Qwen2.5-VL/InternVL3.5) and tasks (Caption/VQA).
+- Faithfulness improved by an average of 20.0% (insertion) and 13.4% (deletion), with even larger gains for sensitive tokens (29-42%).
+- GPU memory requirement reduced by 50-80%: 16.07 GB on LLaVA-1.5 vs. 48.18 GB for IGOS++.
+- The advantage in VQA tasks is smaller than in captioning—since VQA generation depends more on reasoning and language priors.
+- Hallucination Diagnosis: Eagle precisely identifies visual regions causing hallucinations; removing a very small area (<10%) can correct the hallucination.
 
 ## Highlights & Insights
-- **Black-box + lightweight**: Independent of gradients or attention maps, compatible with any MLLM (including API-based models), with far lower GPU overhead than gradient methods—critical for practical deployment in the era of large models.
-- **Unified insight + necessity**: A single objective simultaneously captures "which regions are sufficient" and "which regions are indispensable," yielding a more complete picture than considering either criterion alone.
-- **Practical value of modality analysis**: Explicitly identifies which words rely on visual input (e.g., "red," object names) and which rely on language priors (e.g., articles, prepositions), offering valuable insights for hallucination understanding and model debugging.
-- **Token-agnostic property**: Even when applied to tokens dominated by language priors, the visual attribution remains unaffected—gradient methods can fail entirely when the wrong token is selected.
+- **Black-box + Lightweight**: Does not rely on gradients or attention maps, compatible with any MLLM (including API models), and GPU overhead is much lower than gradient methods—crucial for utility in the large model era.
+- **Unified Insight + Necessity**: A single objective function captures both "what regions are sufficient" and "what regions are indispensable," providing a more complete view than either alone.
+- **Value of Modality Analysis**: Explicitly identifies which tokens rely on vision (e.g., "red," object names) and which rely on language priors (e.g., articles, prepositions), which is valuable for hallucination understanding and model debugging.
+- **Token-Agnostic Property**: Even when applied to tokens dominated by language priors, spatial attribution remains robust (whereas gradient methods might collapse if the wrong token is chosen).
 
 ## Limitations & Future Work
-- Inference time increases substantially (Eagle ~250–800s vs. gradient methods ~15–60s) due to $O(|V|^2)$ forward inference calls.
-- The superpixel segmentation granularity (number of subregions $N$) is a fixed preset; different images may require different granularities.
-- Extensibility to video or multi-image inputs has not been validated.
-- The baseline of "removing all regions" in the necessity score may be overly extreme.
-- Despite the generality of the black-box design, it cannot provide explanations of the model's internal mechanisms.
+- Significant increase in inference time (Eagle ~250-800s vs. Gradient methods ~15-60s) due to $O(|V|^2)$ forward passes.
+- Granularity of superpixel segmentation ($N$ regions) is fixed; different images may require different granularities.
+- Scalability to video or multi-image inputs has not been verified.
+- The "remove all regions" baseline in the necessity score might be too extreme.
+- Despite the strength of the black-box design, it does not provide an explanation of internal model mechanisms.
 
 ## Related Work & Insights
-- **vs. LLaVA-CAM/IGOS++** (gradient-based methods): Gradient methods depend on selecting the correct token, consume large memory, and are affected by cumulative sequence effects; Eagle's black-box design avoids these issues.
-- **vs. TAM** (activation map method): TAM supports attribution for only a single token and is effective only on Qwen2-VL; Eagle supports arbitrary token combinations and is cross-model generalizable.
-- **vs. VPS** (subset-selection method): VPS is limited to object detection/grounding; Eagle extends the objective to accommodate autoregressive generation.
+- **vs. LLaVA-CAM/IGOS++** (Gradient methods): Gradient methods depend on choosing the correct token, have high memory usage, and are affected by sequence accumulation; Eagle's black-box design avoids these issues.
+- **vs. TAM** (Activation map method): TAM can only attribute single tokens and is only effective on Qwen2-VL; Eagle supports arbitrary token combinations and is cross-model generalizable.
+- **vs. VPS** (Subset selection method): VPS is used only for object detection/grounding; Eagle extends the objective function to be applicable to autoregressive generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The unified insight/necessity framework combined with modality analysis represents a creative architectural design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 3 models × 3 task types with multiple metrics.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework presentation with well-aligned motivation and methodology.
-- Value: ⭐⭐⭐⭐ Provides a practical and generalizable tool for MLLM interpretability.
+- Novelty: ⭐⭐⭐⭐ Unified insight/necessity + modality analysis is a creative framework design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 models × 3 task types, comprehensive evaluation across multiple metrics.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework with good alignment between motivation and method.
+- Value: ⭐⭐⭐⭐ Provides a practical and universal tool for MLLM interpretability.
 
 <!-- RELATED:START -->
 
@@ -127,11 +144,11 @@ This paper proposes Eagle, a lightweight black-box attribution framework that pe
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
+- [\[CVPR 2026\] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs](from_where_things_are_to_what_they_are_for_benchmarking_spatial-functional_intel.md)
+- [\[CVPR 2026\] Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention](where_does_vision_meet_language_understanding_and_refining_visual_fusion_in_mllm.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
-- [\[ICML 2026\] Explaining Is Harder than Predicting Alone: Evaluating Concept-Based Explanations of MLLMs as ICL Visual Classifiers](../../ICML2026/multimodal_vlm/explaining_is_harder_than_predicting_alone_evaluating_concept-based_explanations.md)
-- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](../../ICLR2026/multimodal_vlm/sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
-- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
+- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
 
 </div>
 

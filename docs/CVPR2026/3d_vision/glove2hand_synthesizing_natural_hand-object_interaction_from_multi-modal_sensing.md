@@ -2,78 +2,88 @@
 title: >-
   [Paper Note] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 description: >-
-  [CVPR 2026][3D Vision][hand-object interaction] This paper proposes the Glove2Hand framework, which translates egocentric videos of instrumented sensing gloves into photorealistic bare-hand videos while preserving tactil…
+  [CVPR 2026][3D Vision][Diffusion Model] The Glove2Hand framework translates egocentric videos of users wearing sensing gloves into realistic bare-hand videos while preserving tactile and IMU signals. By constructing HandSense, the first multi-modal hand-object interaction dataset, it significantly improves downstream performance for bare-hand contact estimat
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "hand-object interaction"
-  - "sensing gloves"
-  - "video translation"
-  - "3D Gaussian hand model"
-  - "diffusion model"
+  - CVPR 2026
+  - 3D Vision
+  - Diffusion Model
 date: 2026-05-08
-content_hash: acacf4193b26ed70
+content_hash: 826843904754d612
 ---
-
 # Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20850](https://arxiv.org/abs/2603.20850)  
 **Code**: [https://mlzxy.github.io/glove2hand](https://mlzxy.github.io/glove2hand)  
-**Area**: 3D Vision
-**Keywords**: hand-object interaction, sensing gloves, video translation, 3D Gaussian hand model, diffusion model
+**Area**: 3D Vision  
+**Keywords**: Hand-Object Interaction, Sensing Gloves, Video Translation, 3D Gaussian Hand Model, Diffusion Models
 
 ## TL;DR
-This paper proposes the Glove2Hand framework, which translates egocentric videos of instrumented sensing gloves into photorealistic bare-hand videos while preserving tactile and IMU signals. It also introduces HandSense, the first multi-modal hand-object interaction dataset, and demonstrates significant improvements on downstream bare-hand contact estimation and occluded hand tracking.
+The Glove2Hand framework translates egocentric videos of users wearing sensing gloves into realistic bare-hand videos while preserving tactile and IMU signals. By constructing HandSense, the first multi-modal hand-object interaction dataset, it significantly improves downstream performance for bare-hand contact estimation and occluded hand tracking.
 
 ## Background & Motivation
 
-**Background**: Hand-object interaction (HOI) understanding is a foundational problem in computer vision, robotics, and AR/VR. Mainstream approaches rely on egocentric video to develop data-driven algorithms, but these systems are predominantly unimodal, relying solely on visual input.
+**Background**: Understanding Hand-Object Interaction (HOI) is a fundamental problem in computer vision, robotics, and AR/VR. Current mainstream methods collect egocentric videos to develop data-driven algorithms, but these systems rely almost exclusively on the visual modality.
 
-**Limitations of Prior Work**: Vision-only HOI data suffers from two fundamental deficiencies: (1) physical quantities such as force and contact are unavailable—existing methods like ContactPose can only estimate binary fingertip contact and are limited to pre-scanned rigid objects; (2) restricted viewpoints cause severe hand occlusion, while multi-camera studio setups are infeasible in the wild. Although sensing gloves can provide IMU and tactile signals, the large appearance gap between gloves and bare hands prevents visual models trained on glove data from generalizing to bare-hand tasks.
+**Limitations of Prior Work**: Purely visual HOI data has two fundamental flaws: (1) a lack of physical information such as force and contact (current methods like ContactPose only estimate binary fingertip contact for pre-scanned rigid bodies); (2) severe hand occlusion due to limited viewpoints, as multi-camera studio setups are infeasible in field settings. While sensing gloves provide IMU and tactile signals, the significant domain gap in appearance between gloves and bare hands prevents models trained on glove data from generalizing to bare-hand tasks.
 
-**Key Challenge**: Sensing gloves offer rich physical signals but introduce a domain gap, whereas bare-hand video provides favorable visual appearance but lacks physical information—these two desiderata are fundamentally at odds.
+**Key Challenge**: There is an irreconcilable conflict: sensing gloves provide rich physical signals but introduce a domain gap, while bare-hand videos provide realistic visuals but lack physical information.
 
-**Goal**: How can sensing glove videos be translated into photorealistic bare-hand videos while retaining tactile/IMU signals, so that physical information can be leveraged for bare-hand learning tasks? Specific sub-problems include: (1) achieving cross-frame spatiotemporal consistency rather than processing only static images; and (2) handling complex interactions with unknown and non-rigid objects.
+**Goal**: How to translate sensing glove videos into realistic bare-hand videos while preserving tactile/IMU signals for bare-hand learning? Specific sub-problems include: (1) achieving spatio-temporal consistency across frames (rather than just processing static images); (2) handling complex interactions with unknown/non-rigid objects.
 
-**Key Insight**: The key observation is that despite their large appearance difference, gloves and bare hands share the same skeletal structure (hand pose). The problem can therefore be decomposed into two steps: first convert the glove video into a temporally consistent in-air bare-hand sequence (using 3D reconstruction to enforce consistency), then embed the bare hand into the scene and restore interaction details (using a diffusion model to ensure flexibility).
+**Key Insight**: A crucial observation is that despite the drastic appearance difference, gloves and bare hands share the same joint structure (hand pose). Therefore, the problem can be decomposed into two steps: first, translating the glove video into a consistent "aerial" bare-hand sequence (using 3D reconstruction for consistency), and then embedding the bare hand into the scene while restoring interaction details (using a diffusion model for flexibility).
 
-**Core Idea**: Combine the spatiotemporal consistency of a 3D Gaussian hand model with the generative flexibility of a diffusion hand restorer to achieve sensing-glove-to-bare-hand video translation, while preserving multi-modal sensing signals.
+**Core Idea**: By combining the spatio-temporal consistency of a 3D Gaussian hand model with the generative flexibility of a diffusion hand restorer, the framework achieves sensing-glove-to-bare-hand video translation while preserving multi-modal signals.
 
 ## Method
 
 ### Overall Architecture
-The input is an egocentric video of a hand wearing a sensing glove, together with the corresponding hand pose and glove/object masks. The output is a high-quality video with appearance consistent with a bare hand. The pipeline consists of two stages: (1) a 3D Gaussian hand model renders a temporally consistent bare-hand-only sequence from the hand pose; (2) a diffusion hand restorer seamlessly composites the rendered hand into the scene, repairing the hand-object interaction boundary and the wrist connection. During training, bare-hand videos are used for supervision; during inference, an optical-flow-based background inpainter first erases the glove region, after which the rendered hand is composited.
+The framework translates egocentric video featuring sensing gloves into video that appears as bare hands, while keeping the tactile and IMU signals intact. This allows physical signals to be used for training bare-hand task models. The paper splits the translation into two stages. First, a 3D Gaussian hand model uses the hand pose to render a temporally stable "aerial bare hand" sequence that matches scene lighting. Second, a diffusion hand restorer "welds" this rendered hand into the real scene, refining contact boundaries with objects and wrist transitions. During inference, a pre-processing step erases the glove: a detector masks the glove region, which is then filled using optical flow to restore the background while keeping object pixels intact.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Hand Pose<br/>(Joint structure shared by glove and bare hand)"]
+    V["Original Egocentric Video<br/>(Wearing sensing gloves)"]
+    subgraph G["3D Gaussian Hand (Rendering aerial sequence)"]
+        direction TB
+        G1["Surface-grounded 3D Gaussian<br/>Gaussians anchored to mesh triangles for consistency"] --> G2["Relightable Gaussian<br/>MLP predicts SH coefficients matching scene lighting"]
+    end
+    subgraph PRE["Glove Removal Pre-processing (Inference)"]
+        direction TB
+        R1["SAM-2 + Grounding DINO<br/>Detect glove and object masks"] --> R2["Propainter Inpainting<br/>Erase glove, retain object pixels"]
+    end
+    P --> G1
+    V --> R1
+    G2 --> M["Overlay Rendered Hand<br/>Dilated mask · Wrist occlusion → Corrupted frame"]
+    R2 --> M
+    M --> D["Diffusion Hand Restorer<br/>ControlNet+AnimateDiff · Integration into real scene"]
+    D --> O["Bare-hand Video<br/>+ Preserved tactile/IMU signals"]
+```
 
 ### Key Designs
 
-1. **Surface-Grounded 3D Gaussian Hand**:
+**1. Surface-grounded 3D Gaussian Hand: Ensuring No-jitter Rendering**
 
-    - **Function**: Render temporally consistent, relightable bare-hand images from a given hand pose.
-    - **Mechanism**: 3D Gaussian distributions are defined directly on the triangular faces of a canonical hand mesh. Each Gaussian is parameterized by barycentric coordinate weights $\mathbf{w}$, 2D scale $\mathbf{s}$, and rotation $\phi$. When the hand deforms, only the mesh triangles are transformed and the Gaussians are recomputed accordingly, avoiding per-Gaussian linear blend skinning. Gaussian ellipses are mapped via the 2D affine deformation gradient $\mathbf{A}=\mathbf{M}_{\text{deform}}\mathbf{M}_{\text{canon}}^{-1}$. Compared with 2DGS, which defines Gaussians in 3D space and regularizes them into surfaces, the proposed method directly uses mesh faces as a stronger geometric prior.
-    - **Design Motivation**: The canonical mesh provides a strong geometric prior but lacks learning flexibility, while Gaussian splatting is flexible but unstructured. Face-anchoring unifies the advantages of both; moreover, mesh surface normals naturally support illumination estimation.
+Spatio-temporal consistency is the foundation of the pipeline. If the rendered hand jitters or flickers, the subsequent restoration cannot recover it. The authors anchor 3D Gaussians directly onto the triangular facets of a canonical hand mesh. Each Gaussian is parameterized by barycentric coordinates $\mathbf{w}$, 2D scale $\mathbf{s}$, and rotation $\phi$. When the hand moves, instead of per-Gaussian linear skinning, the Gaussians follow the mesh deformation via the 2D affine deformation gradient $\mathbf{A}=\mathbf{M}_{\text{deform}}\mathbf{M}_{\text{canon}}^{-1}$. Compared to 2DGS, which uses regularization to force Gaussians toward a surface, this method uses the mesh as a hard geometric prior, resulting in significantly more stable transformations and consistent surface normals.
 
-2. **Relightable Hand Gaussians**:
+**2. Relightable Gaussians: Matching Egocentric Lighting**
 
-    - **Function**: Handle dynamically varying illumination conditions in egocentric scenes.
-    - **Mechanism**: A small MLP predicts spherical harmonics coefficients $\mathbf{l}$ conditioned on hand pose $\mathbf{P}$, and color is computed as the product of albedo and lighting $\mathbf{c}\odot\text{SH}(\mathbf{l},\mathbf{n})$. Two independent environment maps are predicted separately for the palm and the back of the hand. Since normals are derived from mesh geometry rather than the Gaussians themselves, the albedo–illumination ambiguity is substantially alleviated.
-    - **Design Motivation**: LumiGauss assumes a single static environment map and is unsuitable for the dynamic illumination of egocentric scenes; face-anchored Gaussians provide a consistent source of surface normals.
+Egocentric lighting changes constantly as the user moves or shadows shift. Re-rendering the hand with fixed lighting looks artificial. The authors use a small MLP to predict spherical harmonic coefficients $\mathbf{l}$ based on hand pose $\mathbf{P}$. Color is decomposed into albedo and illumination $\mathbf{c}\odot\text{SH}(\mathbf{l},\mathbf{n})$. Independent environment maps are predicted for the palm and back of the hand. Since normals originate from the mesh geometry rather than the Gaussians themselves, the classical albedo-illumination ambiguity is suppressed.
 
-3. **Diffusion Hand Restorer**:
+**3. Diffusion Hand Restorer: Integrating the Hand into the Real Scene**
 
-    - **Function**: Seamlessly composite the rendered bare-hand sequence into the scene, repairing hand-object interactions and the wrist connection.
-    - **Mechanism**: Built on ControlNet + AnimateDiff and trained on bare-hand videos. The rendered hand is overlaid onto the original frame (with dilated mask and occluded wrist region) as a conditioning input, and the network learns to recover the original video from this corrupted input. During inference, SAM-2 and Grounding DINO are used to detect glove/object masks; Propainter inpaints the glove region via optical flow while preserving object pixels; the rendered hand is then overlaid and fed into the diffusion restorer.
-    - **Design Motivation**: Directly compositing the rendered hand produces physically implausible interactions (e.g., penetration or floating), unnatural wrist transitions, and glove residual artifacts. Using a diffusion model to handle objects and background in pixel space is more flexible than explicitly modeling object geometry.
+A clean "aerial bare hand" is insufficient; directly overlaying it leads to interpenetration with objects and unnatural wrist transitions. The authors train a restorer based on ControlNet + AnimateDiff by intentionally creating "corrupted" training inputs: overlaying the rendered hand onto bare-hand video frames with dilated masks and occluded wrists. At inference, the model applies this restoration ability to a frame where the glove has been erased (using SAM-2 + Grounding DINO and Propainter inpainting) and the rendered hand has been overlaid. Processing interactions in the pixel domain via diffusion is more flexible than explicit geometric modeling for unknown and non-rigid objects.
 
 ### Loss & Training
-The 3D Gaussian hand model is trained with image reconstruction loss via differentiable rendering, with a separate model optimized per subject. After freezing the subject-specific Gaussian hand, a unified diffusion hand restorer is trained. Training data are sourced from HOT3D and HandSense.
+The 3D Gaussian hand model is trained via image reconstruction loss through differentiable rendering, with one model optimized per subject. After freezing the subject-specific Gaussian hand, a unified diffusion hand restorer is trained. Training data is sourced from HOT3D and HandSense.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | FID ↓ | FVD ↓ | FVD-long ↓ |
-|--------|-------|-------|------------|
+|------|-------|-------|------------|
 | HandRefiner | 35.5 | 24.2 | 29.7 |
 | BrushNet | 37.9 | 34.5 | 40.4 |
 | Pix2Pix | 38.6 | 24.7 | 31.4 |
@@ -82,7 +92,7 @@ The 3D Gaussian hand model is trained with image reconstruction loss via differe
 ### Ablation Study
 
 | Configuration | FID ↓ | FVD ↓ | FVD-long ↓ |
-|---------------|-------|-------|------------|
+|------|-------|-------|------------|
 | 2DGS | 91.1 | 50.0 | 62.9 |
 | +Surface Grounding | 60.3 | 35.1 | 46.6 |
 | +Relightable | 56.7 | 30.7 | 40.2 |
@@ -93,47 +103,38 @@ The 3D Gaussian hand model is trained with image reconstruction loss via differe
 ### Downstream Task: Contact Estimation
 
 | Training Data | Contact IoU (%) | Precision (%) | Recall (%) |
-|---------------|----------------|---------------|------------|
+|----------|----------------|---------------|------------|
 | Glove only | 71.5 | 82.8 | 83.9 |
 | G2H only | 75.6 | 90.6 | 82.0 |
 | Hand only | 85.3 | 90.0 | 94.2 |
 | **Hand + G2H** | **88.2** | **92.6** | **94.9** |
 
-### Downstream Task: Occluded Hand Tracking
-
-| Method | MKPE (Occ) ↓ | MKPE (All) ↓ |
-|--------|-------------|-------------|
-| UmeTrack | 19.2 | 19.5 |
-| UmeTrack + Glove | 27.2 | 26.5 |
-| **UmeTrack + G2H** | **16.6** | **17.8** |
-
 ### Key Findings
-- Surface Grounding and the Diffusion Restorer contribute most significantly, yielding large FID reductions from 91.1→60.3 and 56.7→32.3, respectively.
-- Training the hand tracker directly on glove data actually degrades performance (19.5→26.5), confirming the severity of the domain gap.
-- Combining synthesized bare-hand videos with real bare-hand data for contact estimator training achieves the best results, validating the framework's value as a data generation engine.
-- A human perceptual study shows that the generated hands are nearly indistinguishable from real hands in static images.
+- Surface Grounding and the Diffusion Restorer contribute most to performance, with FID dropping from 91.1 to 60.3 and 56.7 to 32.3, respectively.
+- Directly training a hand tracker on glove data degrades performance (MKPE 19.5 to 26.5), confirming the severity of the domain gap.
+- Combining synthetic bare-hand video with real bare-hand data yields the best contact estimator, validating the framework as a data engine.
 
 ## Highlights & Insights
-- By aligning hardware sensing (tactile + IMU) with visual generation, this work opens a new data generation paradigm of "sensors as annotation-free ground truth," which is transferable to other domains requiring expensive annotation.
-- The surface-grounded Gaussian design is elegant: a single simple geometric prior simultaneously addresses spatiotemporal consistency, relighting, and deformation, with minimal implementation complexity.
-- The framework learns a glove-to-hand mapping from unpaired data, avoiding the collection cost of paired annotations.
+- Aligning hardware sensors (tactile/IMU) with visual generation establishes a "sensors-as-GT" data generation paradigm, which is transferable to other domains requiring expensive annotations.
+- The surface-grounded Gaussian design is elegant: a single geometric prior solves spatio-temporal consistency, relighting, and deformation with minimal implementation complexity.
+- Learning the glove-to-hand mapping from unpaired data avoids the heavy cost of collecting synchronized multi-modal pairs.
 
 ## Limitations & Future Work
-- A separate 3D Gaussian hand model must be optimized per subject, limiting direct generalization to new users.
-- The automated pipeline depends on SAM-2 and Grounding DINO, which may fail under extreme occlusion or complex backgrounds.
-- The dataset scale is limited (5 subjects), and generalization requires validation at larger scale.
-- Although interactions with non-rigid objects are handled flexibly in pixel space, physical plausibility (e.g., force consistency) is not guaranteed.
+- The requirement for per-subject optimization of the 3D Gaussian model limits direct deployment to new users.
+- Reliance on SAM-2 and Grounding DINO pipelines may lead to failure in extreme occlusion or complex backgrounds.
+- The small dataset scale (5 subjects) requires further validation at a larger scale.
+- Non-rigid object interaction handling lacks explicit physical consistency guarantees (e.g., force-pose consistency).
 
 ## Related Work & Insights
-- **vs. HandRefiner**: HandRefiner is a diffusion-only method focused on single-frame hand restoration; the proposed method incorporates 3D reconstruction to enforce spatiotemporal consistency, achieving an FID improvement of 5.4 points.
-- **vs. hand avatar methods (HandSplat, etc.)**: Conventional avatars require dense multi-view capture and controlled illumination; the surface-grounded design proposed here is suited to sparse egocentric cameras and dynamic lighting.
-- **vs. video translation methods (MeDM, etc.)**: General-purpose video translation cannot handle the large embodiment gap between gloves and bare hands; the proposed method decouples the problem by exploiting the shared skeletal structure.
+- **vs HandRefiner**: While HandRefiner focuses on single-frame hand repair, this work integrates 3D reconstruction for temporal consistency, achieving a 5.4 point lower FID.
+- **vs Hand Avatar Methods**: Traditional avatars require dense multi-view setups; the surface-grounded design here adapts to sparse egocentric views and dynamic lighting.
+- **vs MeDM**: General video translation fails to handle the massive embodiment difference between gloves and bare hands; this work decouples the problem using a shared joint structure.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combined architecture of surface-anchored Gaussians and a diffusion restorer is novel, though each individual component is a well-motivated integration of existing techniques.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluation covers video quality metrics, human perceptual study, two downstream tasks, and a comprehensive ablation study.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The problem is clearly defined, the motivation chain is complete, and the figures are intuitive.
-- **Value**: ⭐⭐⭐⭐ The framework introduces a new data generation paradigm for the HOI community, and the HandSense dataset holds long-term value.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -141,11 +142,11 @@ The 3D Gaussian hand model is trained with image reconstruction loss via differe
 
 ## Related Papers
 
-- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
-- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
 - [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
-- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
+- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
+- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 
 </div>
 

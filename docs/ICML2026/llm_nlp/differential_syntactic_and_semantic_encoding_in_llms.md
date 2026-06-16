@@ -2,74 +2,84 @@
 title: >-
   [Paper Note] Differential Syntactic and Semantic Encoding in LLMs
 description: >-
-  [ICML 2026][LLM/NLP][Syntax-semantic decoupling] By averaging hidden representations of sentences sharing either syntactic structures or meanings to obtain "syntactic centroids" and "semantic centroids…
+  [ICML 2026][LLM (Other)][DeepSeek-V3] By averaging latent representations of sentences sharing either syntactic structures or semantic meanings to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic and semantic information in LLM sentence vectors (such as DeepSeek-V3) is encoded via **line
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "Syntax-semantic decoupling"
-  - "linear encoding"
-  - "centroid ablation"
-  - "DeepSeek-V3"
-  - "representation geometry"
+  - ICML 2026
+  - LLM (Other)
+  - DeepSeek-V3
 date: 2026-05-08
-content_hash: fbc63f8bbc5e238c
+content_hash: c3839903ec2b155c
 ---
-
 # Differential Syntactic and Semantic Encoding in LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.04765](https://arxiv.org/abs/2601.04765)  
 **Code**: https://github.com/acevedo-s/syn-sem  
 **Area**: LLM Interpretability / Representation Learning / Computational Linguistics  
-**Keywords**: Syntax-semantic decoupling, linear encoding, centroid ablation, DeepSeek-V3, representation geometry
+**Keywords**: Syntactic-Semantic Decoupling, Linear Encoding, Centroid Ablation, DeepSeek-V3, Representation Geometry
 
 ## TL;DR
-By averaging hidden representations of sentences sharing either syntactic structures or meanings to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic and semantic information in large models like DeepSeek-V3 is encoded via **linear superposition**. These two types of information exhibit clear separability across layer distributions and orthogonal ablations, supporting the linguistic hypothesis of "syntactic autonomy."
+By averaging latent representations of sentences sharing either syntactic structures or semantic meanings to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic and semantic information in LLM sentence vectors (such as DeepSeek-V3) is encoded via **linear superposition**. These two types of information exhibit clear separability in layer-wise distribution and orthogonal ablation—supporting the linguistic hypothesis of "syntactic autonomy."
 
 ## Background & Motivation
 
-**Background**: How internal representations in LLMs carry linguistic information is a central question in interpretability research. Existing work generally agrees that deep-level "alignment phenomena" suggest intermediate layers perform shared abstract processing (the Platonic Representation Hypothesis by Huh et al. 2024; high-dimensional abstract phases by Cheng et al. 2025). Probing studies, such as Hewitt & Manning’s structural probe and Tenney’s BERT pipeline, indicate that models roughly replicate the classical NLP pipeline of "syntax first, then semantics." Another line of research from Mikolov to Park consistently shows that LLMs tend to encode concepts in a **linear** manner.
+**Background**: How internal representations of LLMs carry linguistic information is a core question in current interpretability research. Existing work generally agrees that deep "alignment phenomena" suggest middle layers perform shared abstract processing (the Platonic Representation Hypothesis by Huh et al. 2024; High-dimensional Abstract Phases by Cheng et al. 2025). Probing work like Hewitt & Manning’s structural probe and Tenney’s BERT pipeline shows that models roughly replicate the classical NLP pipeline of "syntax first, then semantics." Another line of research from Mikolov to Park consistently indicates that LLMs tend to encode concepts in a **linear** manner.
 
-**Limitations of Prior Work**: Existing probes mostly rely on trained classifiers or regressors (structural probes, polar coordinate probes), whose conclusions can be confounded by the capacity of the probe itself—making it difficult to distinguish whether the information is "encoded in the model" or "learned by the probe." While geometric methods (e.g., Caucheteux 2021) have used averaged GPT-2 syntactic vectors to explain fMRI signals, no systematic verification has been conducted on truly large-scale LLMs (10B to 100B+ parameters) regarding whether syntax and semantics can be **simultaneously characterized and decoupled using purely linear methods**.
+**Limitations of Prior Work**: Existing probes largely rely on trained classifiers or regressors (structural probes, polar coordinate probes). Their conclusions are easily confounded by the capacity of the probe itself—one cannot distinguish whether information is "encoded in the model" or "learned by the probe." While geometric methods (e.g., Caucheteux 2021) have used syntactic average vectors from GPT-2 to explain fMRI signals, no one has systematically verified on truly large-scale LLMs (10B~100B+ parameters) whether syntax and semantics can be **simultaneously characterized and decoupled using purely linear methods**.
 
-**Key Challenge**: To address linguistic debates such as "syntactic autonomy," a tool is required that does not rely on training downstream models and treats syntax and semantics symmetrically. Simply "subtracting a syntactic vector to observe semantic changes" in high-dimensional space can easily introduce spurious signals (direct centroid subtraction may remove components of adjacent samples; see Appendix D).
+**Key Challenge**: To address linguistic debates such as "syntactic autonomy," a tool is needed that does not require training downstream models and is symmetric for both syntax and semantics. Simply "subtracting a syntactic vector to observe semantic changes" in high-dimensional space can easily introduce artifacts (directly subtracting a centroid takes away neighboring sample components, see Appendix D).
 
-**Goal**: To answer two sub-problems using a purely linear, unsupervised approach: (i) What proportion of syntactic and semantic information in LLM hidden layers can be explained by a directional vector? (ii) In which layers and to what extent are these two types of information independent of each other?
+**Goal**: To answer two sub-problems using purely linear, unsupervised methods: (i) what proportion of syntactic and semantic information in LLM latent layers can be explained by a directional vector; (ii) in which layers and to what extent are these two types of information independent.
 
-**Key Insight**: If a group of sentences shares a POS template (same syntax, unrelated meaning), averaging their hidden representations causes the **semantic portions to cancel out while the syntactic portions remain**—the average vector naturally becomes a "syntactic centroid." Similarly, translating a sentence into six languages and averaging them washes out the **surface form while preserving meaning**—creating a "semantic centroid." Using orthogonal projection along these centroid directions for ablation provides causal evidence virtually free of probe bias.
+**Key Insight**: If a group of sentences shares a POS template (same syntax, unrelated meaning), averaging their latent representations causes **semantic components to cancel out while syntactic components remain**—the average vector is naturally a "syntactic centroid." Similarly, translating a sentence into 6 languages and averaging them causes **surface forms to be washed away while meaning remains**—this is the "semantic centroid." Using orthogonal projection along the centroid direction for ablation provides causal evidence nearly free of probe bias.
 
-**Core Idea**: Syntactic and semantic linear subspaces are explicitly constructed using "averages of shared structures." Similarities are measured across all layers of DeepSeek-V3 through orthogonal projection ablation to map the "syntax-semantic encoding landscape."
+**Core Idea**: Explicitly construct syntactic and semantic linear subspaces using "averages of shared structures." Cross-measure similarity across all layers of DeepSeek-V3 via orthogonal projection ablation to derive a "syntactic-semantic encoding map."
 
 ## Method
 
 ### Overall Architecture
 
-The input consists of a set of English original sentences $\mathbf{X}_i$ (approx. 2,000 sentences, length $\le$ 10 words). Three types of controls are paired with each $\mathbf{X}_i$:
-- **Syntactic twins** $\mathbf{s}_i^{\alpha}$: Sentences sharing the same Penn Treebank POS sequence as $\mathbf{X}_i$ but with unrelated meanings (generated by Gemini/ChatGPT).
-- **English paraphrases** $\mathbf{P}_i$: English paraphrases with the same meaning but different expressions.
-- **Multilingual translations** $\mathbf{t}_i^{\gamma}$: Translations in 6 languages $\gamma\in\{$Chinese, Spanish, Italian, Turkish, German, Arabic$\}$.
+The input is a set of original English sentences $\mathbf{X}_i$ (approx. 2,000 sentences, length ≤ 10 words). Each $\mathbf{X}_i$ is paired with three types of controls:
+- **Syntactic Twins** $\mathbf{s}_i^{\alpha}$: Sentences sharing the same Penn Treebank POS sequence as $\mathbf{X}_i$ but with unrelated meanings (generated by Gemini/ChatGPT).
+- **English Paraphrases** $\mathbf{P}_i$: Paraphrases with the same meaning but different English expressions.
+- **Multilingual Translations** $\mathbf{t}_i^{\gamma}$: Translations in $\gamma\in\{$Chinese, Spanish, Italian, Turkish, German, Arabic$\}$ (6 languages total).
 
-The pipeline consists of four steps: (1) Extract token sequences for each layer from DeepSeek-V3; (2) Aggregate tokens into a single sentence vector (concatenation of $N$ tokens or mean pooling); (3) Construct syntactic centroids $\mathbf{S}_i$ and semantic centroids $\mathbf{T}_i$ using "means of shared sets"; (4) Perform orthogonal projection ablation at each layer and measure geometric proximity of paired sentences using rank-based similarity. Note that $\mathbf{S}_i$ does not include $\mathbf{X}_i$ itself, and $\mathbf{T}_i$ does not include $\mathbf{X}_i$ or $\mathbf{P}_i$, to avoid "self-ablation" artifacts.
+The pipeline consists of four steps: (1) Extract token sequences for each layer from DeepSeek-V3; (2) Aggregate tokens into a single sentence vector (concat last N tokens or mean); (3) Construct syntactic centroids $\mathbf{S}_i$ and semantic centroids $\mathbf{T}_i$ using "means of shared sets"; (4) Perform orthogonal projection ablation at each layer and measure geometric proximity of paired sentences using rank-based similarity. Note that $\mathbf{S}_i$ does not include $\mathbf{X}_i$, and $\mathbf{T}_i$ does not include $\mathbf{X}_i$ or $\mathbf{P}_i$ to avoid "self-ablation" artifacts.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Original Sentence X_i + 3 Control Types<br/>Syntactic Twins s_i / Paraphrases P_i / Translations t_i"] --> B["DeepSeek-V3 Layer-wise Token Extraction<br/>Aggregation to sentence vector (concat last N / mean)"]
+    subgraph C["1. Centroid Construction & Orthogonal Ablation"]
+        direction TB
+        C1["Syntactic Centroid S_i = Average of Twins<br/>Semantic Centroid T_i = Average of Translations"] --> C2["Orthogonal Projection Ablation along Centroid<br/>X⊥S_i, X⊥T_i (Not direct subtraction)"]
+    end
+    B --> C
+    C --> D["2. Similarity based on Neighborhood Ranking<br/>Nearest neighbor rank check, robust in high dimensions"]
+    D --> E["3. Cross-layer × Cross-ablation Matrix<br/>None / Correct / Random / Cross-type Centroid + Downstream Probe"]
+    E --> F["Syntactic-Semantic Encoding Map<br/>Layer-wise Division + Asymmetric Decoupling Conclusion"]
+```
 
 ### Key Designs
 
-1. **Centroid Construction and Orthogonal Ablation**:
-    - **Function**: Explicitly separate "syntactic components" and "semantic components" from sentence vectors using purely linear means.
-    - **Mechanism**: The syntactic centroid $\mathbf{S}_i = \frac{1}{N_{\text{twins}}}\sum_{\alpha=0}^{N_{\text{twins}}} \mathbf{s}_i^{\alpha}$ is the average of sentences with the same POS template, where meaning is averaged out across $\alpha$. The semantic centroid $\mathbf{T}_i = \frac{1}{N_{\text{lang}}}\sum_{\gamma} \mathbf{t}_i^{\gamma}$ is the average of multilingual translations, where the surface form is averaged out. Ablation is performed using orthogonal projection along the centroid direction $\mathbf{X}_i^{\perp \mathbf{S}_i} = \mathbf{X}_i - \frac{\mathbf{X}_i\cdot \mathbf{S}_i}{|\mathbf{S}_i|^2}\mathbf{S}_i$, rather than direct subtraction of $\mathbf{S}_i$.
-    - **Design Motivation**: Direct subtraction removes other sentence components carried within the centroid, leading to inflated ablation strength. Projecting once ensures that "only the part of $\mathbf{X}_i$ collinear with the $\mathbf{S}_i$ direction is zeroed out." Control experiments ("shuffled centroids") prove the effect is directional rather than a general side effect.
+**1. Centroid Construction & Orthogonal Ablation: Explicitly extracting syntactic/semantic components using purely linear means**
 
-2. **Rank-based Neighborhood Similarity**:
-    - **Function**: Robustly measure whether two representations carry the same type of information in high-dimensional space, bypassing the weak signal issue of CKA in high dimensions.
-    - **Mechanism**: For two sets of representations $A$ and $B$, find the nearest neighbor $j$ of point $i$ in $A$, record the distance rank $r_{ij}^{B}$ of point $j$ relative to $i$ in $B$, repeat the process in reverse, and take the normalized average: $\text{Similarity}=1-\frac{1}{N_s^2}\big(\sum_{i,j:r_{ij}^{A}=1} r_{ij}^{B} + \sum_{i,j:r_{ij}^{B}=1} r_{ij}^{A}\big)$. This value is invariant under global translation, rotation, and scaling; 1 indicates identical nearest neighbors, while 0 indicates independence.
-    - **Design Motivation**: Cognate with Information Imbalance (Glielmo 2022) and Neighborhood Overlap (Huh 2024). It depends only on geometric relationships rather than linear mappings, making the conclusions robust even if the representation space is distorted by normalization. This is key to supporting causal narratives like "how much similarity drops after ablation."
+Probing methods suffer because conclusions are contaminated by the probe's capacity. This paper seeks a model-free, symmetric tool. The approach utilizes the "average of shared sets": the syntactic centroid $\mathbf{S}_i = \frac{1}{N_{\text{twins}}}\sum_{\alpha=0}^{N_{\text{twins}}} \mathbf{s}_i^{\alpha}$ is the mean of sentences with the same POS template, where meanings cancel out in the $\alpha$ dimension, leaving only the shared syntactic direction. The semantic centroid $\mathbf{T}_i = \frac{1}{N_{\text{lang}}}\sum_{\gamma} \mathbf{t}_i^{\gamma}$ is the average of multilingual translations, where surface forms are washed away, leaving the shared meaning. Ablation uses orthogonal projection $\mathbf{X}_i^{\perp \mathbf{S}_i} = \mathbf{X}_i - \frac{\mathbf{X}_i\cdot \mathbf{S}_i}{|\mathbf{S}_i|^2}\mathbf{S}_i$ rather than direct subtraction to ensure only the component of $\mathbf{X}_i$ collinear with $\mathbf{S}_i$ is zeroed out. "Shuffled centroid" controls prove the drop in similarity is directional and not a trivial effect.
 
-3. **Cross-layer $\times$ Dual-ablation Matrix**:
-    - **Function**: Generate a 2D map of layer $\times$ (target, ablated) to directly observe separability.
-    - **Mechanism**: Fixing a similarity metric (syntactic twin similarity or paraphrase similarity), various ablation directions are systematically applied (no ablation / correct centroid / shuffled centroid / cross-category centroid). For example, curves for "effect of semantic centroid ablation on syntactic similarity" and "effect of syntactic centroid ablation on semantic similarity" are measured, alongside comparisons of token aggregation (concat vs. mean). Finally, two downstream probes (linear POS classification + paraphrase recall@3) serve as behavioral evidence.
-    - **Design Motivation**: Unidirectional ablation only shows the centroid captured relevant information. Only cross-ablation can quantitatively answer whether syntax and semantics are decoupled. Introducing random and cross-category centroids as controls excludes trivial explanations (e.g., any linear dimension removal causes a drop) and leaves truly directional causal evidence.
+**2. Similarity based on Neighborhood Ranking: Bypassing CKA's weak signal in high dimensions**
+
+To present a causal narrative of "ablation amount → similarity drop," a similarity metric robust in high dimensions is required. Linear alignment metrics like CKA have weak signals in high-dimensional space and are easily distorted by normalization. This paper adopts a purely geometric neighborhood ranking metric: for two representations $A,B$, find the nearest neighbor $j$ of point $i$ in $A$, record the distance rank $r_{ij}^{B}$ of $j$ relative to $i$ in $B$, repeat in reverse, and take the normalized average:
+
+$$Similarity=1-\frac{1}{N_s^2}\Big(\sum_{i,j:r_{ij}^{A}=1} r_{ij}^{B} + \sum_{i,j:r_{ij}^{B}=1} r_{ij}^{A}\Big)$$
+
+A value of 1 indicates perfect nearest neighbor consistency; 0 indicates independent representations. This is related to Information Imbalance (Glielmo 2022) and Neighborhood Overlap (Huh 2024), relying on adjacency rather than linear mapping, making it invariant to space transformation or normalization issues.
+
+**3. Cross-layer × Cross-ablation Matrix: Visualizing the decoupling as a 2D map**
+
+Single-direction ablation only shows that centroids capture relevant information; cross-ablation is required to quantify decoupling. Fixing one similarity type (syntactic twin or paraphrase similarity) and systematically varying the ablated direction—None / Correct Centroid / Shuffled Centroid / Cross-class Centroid—yields a 2D table of layer × (target, ablated). By plotting syntactic similarity ablated by semantic centroids and vice-versa, the "Syntactic-Semantic Encoding Map" is generated. Behaviors are corroborated by downstream probes (linear POS classification + paraphrase recall@3).
 
 ### Loss & Training
-This work is entirely a **training-free** geometric analysis—it involves no fine-tuning of LLMs and no training of probes. All "ablations" are closed-form orthogonal projections. The only learnable components are the linear POS classifier (scikit-learn default logistic regression) and the cosine ranking for paraphrase recall used for validation. The weights of the primary model, DeepSeek-V3 (671B), are frozen throughout. Robustness replicates on Qwen2-7B, Gemma3-12B, and Pythia-6.9B are provided in the appendix.
+This work is entirely **training-free** geometric analysis—no fine-tuning of the LLM and no probe training. All "ablations" are closed-form orthogonal projections. The only learnable components are for validation: linear POS classifiers (scikit-learn defaults) and paraphrase recall rankings. DeepSeek-V3 (671B) weights remain frozen throughout. Appendixes replicate results on Qwen2-7B / Gemma3-12B / Pythia-6.9B.
 
 ## Key Experimental Results
 
@@ -77,51 +87,50 @@ This work is entirely a **training-free** geometric analysis—it involves no fi
 
 | Configuration | Task | DeepSeek-V3 Performance | Interpretation |
 |------|------|------------------|------|
-| Baseline (No ablation) | POS Template Classification (Linear probe) | 0.85 | Syntactic information is highly salient in representations. |
-| Baseline (No ablation) | Paraphrase recall@3 | 0.85 | Semantic information is equally salient. |
-| Syntactic Similarity vs. Layer (concat) | Entire Network | > 0.7 | Syntax remains strong across all layers. |
-| Semantic Similarity vs. Layer (mean) | Entire Network | Low in early layers, peaks in middle, slight drop at end | Middle layers serve as the "semantic core." |
+| Baseline (No ablation) | POS Template Class. (Linear probe) | 0.85 | Syntactic info is highly prominent |
+| Baseline (No ablation) | Paraphrase recall@3 | 0.85 | Semantic info is equally prominent |
+| Syntactic Sim. vs Layer (concat) | Whole Network | > 0.7 | Syntax is strong across all layers |
+| Semantic Sim. vs Layer (mean) | Whole Network | Low early, peak middle, slight drop at end | Middle layers are the "semantic core" |
 
 ### Ablation Study
 
-| Ablation Direction | POS Class. Acc | Paraphrase Recall@3 | Description |
+| Ablation Direction | POS Class Acc | Paraphrase Recall@3 | Description |
 |----------|--------------|----------------------|------|
-| No Ablation | 0.85 | 0.85 | Upper bound. |
-| Subtract Semantic Centroid $\mathbf{T}_i$ | **0.85** | 0.66 | Syntax unaffected; Semantics drops by 19 points. |
-| Subtract Syntactic Centroid $\mathbf{S}_i$ | **0.10** | **0.90** (approx. 5% Gain) | Syntax nearly eliminated; Semantics slightly improves. |
-| Subtract Random Semantic Centroid | 0.85 | 0.83 | Minimal impact (Control). |
-| Subtract Random Syntactic Centroid | 0.81 | 0.85 | Minimal impact (Control). |
+| None | 0.85 | 0.85 | Upper bound |
+| Subtract Semantic Centroid $\mathbf{T}_i$ | **0.85** | 0.66 | No drop in syntax, semantics drops 19 points |
+| Subtract Syntactic Centroid $\mathbf{S}_i$ | **0.10** | **0.90** (5% gain) | Syntax nearly eliminated, semantics slightly increases |
+| Subtract Random Semantic Centroid | 0.85 | 0.83 | Near zero impact (control) |
+| Subtract Random Syntactic Centroid | 0.81 | 0.85 | Near zero impact (control) |
 
 ### Key Findings
-- **Asymmetric Decoupling**: Ablating the semantic centroid does **not** harm syntax (0.85 $\rightarrow$ 0.85), but ablating the syntactic centroid slightly improves semantics (0.85 $\rightarrow$ 0.90). This suggests the syntactic subspace is relatively independent of semantics, whereas semantic signals may carry some syntactic scaffolding. This aligns strikingly with the "syntactic autonomy" stance of the generative grammar school.
-- **Layer-wise Division of Labor**: Syntactic signals are strong throughout the network (measured via concat representations > 0.7). Semantic signals are concentrated in intermediate layers (captured better by mean pooling, peaking in the middle), and persist in the final layers—implying the LLM only converts semantics back to output forms at the very end.
-- **Norm Decomposition**: The centroid direction accounts for approximately 40% of the squared norm of sentence vectors in middle layers. The remaining components correspond to "non-strictly linguistic knowledge," left for future work. Pythia training curves show that **syntactic centroids emerge early, while semantic centroids accumulate later**, fitting the intuition of "learning structure before meaning."
-- **Aggregation vs. Signal Type**: Concatenation (concat) favors syntax (preserving position), while mean pooling (mean) favors semantics (averaging out position, leaving meaning). This contrast provides experimental evidence that syntax and semantics may be distributed across different timescales or frequencies.
+- **Asymmetric Decoupling**: Removing semantic centroids does **not** harm syntax (0.85 → 0.85), but removing syntactic centroids slightly **increases** semantic similarity (0.85 → 0.90). This suggests the syntactic subspace is relatively independent of semantics, while semantics is "carried" by the syntactic backbone. This aligns with the "syntactic autonomy" stance in generative grammar.
+- **Layer-wise Division**: Syntactic signals remain strong throughout (especially for concat representations > 0.7). Semantic signals concentrate in middle layers (best captured by mean aggregation) and persist to the end—implying LLMs convert semantics back to output forms at the last moment.
+- **Norm Decomposition**: Centroid directions explain about 40% of the squared norm in middle layers. Pythia's training curve shows **syntactic centroids emerge early, while semantic centroids accumulate later**, matching the intuition of "structure before meaning."
+- **Aggregation vs. Signal**: Concat aggregation favors syntax (retains position), while mean aggregation favors semantics (averages out position, retains meaning). This contrast supports the idea that syntax and semantics may distribute across different timescales/frequencies.
 
 ## Highlights & Insights
-- **"Shared Set Averaging" as an Unsupervised Probe**: Reducing abstract concepts like "syntax/semantics" to "which samples share them" and using the average vector to represent the shared direction is a paradigm that introduces almost no hyperparameters. It is highly transferable to any attribute definable by a "shared set" (sentiment, style, domain, etc.).
-- **Orthogonal Projection vs. Direct Subtraction**: The authors explicitly demonstrate that direct subtraction leads to spurious "over-ablation" (Appendix D) and insist on projection along the direction. This is a crucial engineering detail in high-dimensional ablation experiments that can be directly applied to tasks like linear steering and concept erasure.
-- **Multilingual Translation as Semantic Representative**: Using the mean of translations in 6 typologically diverse languages (including Chinese, Arabic, and Turkish) as a semantic centroid strips away surface forms more effectively than paraphrasing. This trick stems from Acevedo et al. 2025, but this paper is the first to place it in a symmetric framework with POS averaging.
-- **"Syntax $\rightarrow$ Nearly Killed, Semantics $\rightarrow$ Gain"**: This counter-intuitive result implies that syntactic scaffolding acts as "interference" in representations; erasing it allows for tighter semantic clustering. This offers practical insights for RAG/retrieval vector design: syntactic centroids could be used for denoising.
+- **"Mean of Shared Sets" as an Unsupervised Probe**: Reducing abstract concepts like "syntax/semantics" to "which samples share them" and using average vectors as representatives introduces almost no hyperparameters. It is highly transferable to other attributes (sentiment, style, domain).
+- **Orthogonal Projection vs. Direct Subtraction**: The authors explicitly demonstrate that direct subtraction causes artifactually strong ablation. Sticking to projection along the direction is a crucial engineering detail for high-dimensional ablation studies.
+- **Multilingual Translation as Semantic Representative**: Using the mean of translations from 6 typologically diverse languages (including Chinese, Arabic, Turkish) washes away surface forms more effectively than paraphrases.
+- **Syntactic Removal Leading to Semantic Increase**: This counter-intuitive result suggests the syntactic skeleton acts as "noise" for semantic clustering; erasing it clarifies semantic relationships, which offers insights for de-noising retrieval vectors/RAG.
 
 ## Limitations & Future Work
-- **Limited Explanatory Power of Centroids**: Middle layers explain at most 40% of the squared norm. The majority of information resides in neither the syntactic nor the semantic subspace. The authors acknowledge this as a likely ceiling for linear methods, requiring non-linear feature extraction tools like Wild et al. 2025 in the future.
-- **Data Scale and Length**: ~2,000 sample pairs with length $\le$ 10 words. Short sentences bypass core syntactic phenomena like long-range dependencies. It is unknown if conclusions generalize to paragraph-level text.
-- **English-centrism**: although the semantic centroid used 6 languages, the ablated sentences were always English. Verification of "syntactic autonomy" in morphologically complex languages (e.g., Turkish, Finnish) is required.
-- **Lack of Interventions**: Conclusions are based on representation similarity without observing changes in generation behavior during a forward pass. If future work confirms centroids can be used for steering (e.g., shifting meaning while keeping syntax constant), this framework will evolve from an analytic tool into a control tool.
-- **Potential Improvements**: Upgrading centroids from "arithmetic means" to "low-frequency components along training dynamics"—the authors hint that syntax corresponds to high frequency and semantics to low frequency. Combining this with the timescale decomposition of Tamkin 2020 might yield cleaner decoupling than linear projection.
+- **Limited Explanatory Power of Centroids**: Middle layers explain roughly 40% of the norm; the majority of information lies outside these linear subspaces. This may be a ceiling for linear methods, requiring non-linear tools like those in Wild et al. 2025.
+- **Data Scale and Length**: ~2,000 samples and ≤ 10 words per sentence. Short sentences miss long-range dependencies; generalizability to paragraph-level text is unknown.
+- **English-Centric**: While 6 languages were used for the centroid, the ablated sentences were always English. Verification in morphologically complex languages (e.g., Finnish) is needed.
+- **Intervention Experiments**: Conclusions are based on representation similarity. Future work needs to intervene in the forward pass to see how generation behavior changes.
 
 ## Related Work & Insights
-- **vs. Hewitt & Manning (structural probe, 2019)**: They use trained probes to "map" dependency trees in word vectors. Ours uses representation geometry to answer "where syntax is" without training, providing cleaner evidence that avoids controversies over what a probe itself might learn.
-- **vs. Park et al. (linear representation hypothesis, 2024/2025)**: They focus on linear directions of single concepts (gender, truth, etc.). Ours extends the linear encoding hypothesis to structural properties like "full-sentence syntax" and "full-sentence semantics."
-- **vs. Cheng et al. (2025) / Acevedo et al. (2025)**: Part of the same series of research. Prior work found high-dimensional "abstract phases" in middle layers; this paper qualitatively defines those phases as "semantic phases." It represents an "upgrade of the microscope" within the same research program.
-- **vs. Caucheteux et al. (2021)**: Shared use of POS template means as syntactic proxies, but they fed them into fMRI encoding models, while we perform cross-ablation internally in LLMs. Combining the two could advance research into "human-machine unified syntactic maps."
+- **vs. Hewitt & Manning (2019)**: They use trained probes to find dependency trees; Ours uses geometric centroids without training to find "where syntax is," yielding cleaner evidence.
+- **vs. Park et al. (2024/2025)**: They focus on linear directions for single concepts (gender, truth); Ours extends the linear encoding hypothesis to structural properties like entire sentence syntax and semantics.
+- **vs. Cheng et al. (2025) / Acevedo et al. (2025)**: Same research group; previous work identified a "high-dimensional abstract phase," while this work qualitatively identifies it as a "semantic phase."
+- **vs. Caucheteux et al. (2021)**: They fed POS template averages to fMRI models; Ours performs cross-ablation inside LLMs, potentially leading to a unified machine-brain syntactic map.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea (shared sets $\rightarrow$ centroids) is not entirely new, but the symmetric syntax $\times$ semantic cross-ablation on a 670B-scale LLM, providing measurable geometric evidence for "syntactic autonomy," is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 models $\times$ 2 aggregations $\times$ multiple controls, with a solid appendix; however, data scale is small and English-centric.
-- Writing Quality: ⭐⭐⭐⭐⭐ The argumentative chain is clean, and technical pitfalls (orthogonal projection vs. subtraction) are clearly addressed. Excellent readability.
-- Value: ⭐⭐⭐⭐⭐ Contributes to both the LLM interpretability and linguistics communities; the method itself can be reused as a template for representation analysis.
+- Novelty: ⭐⭐⭐⭐ The idea of centroids is established, but the symmetric syntactic-semantic cross-ablation on 670B-scale LLMs and geometric evidence for syntactic autonomy is significant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple models and controls; robust appendix, though data scale is somewhat limited and English-centric.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation and precise technical details regarding projection vs. subtraction.
+- Value: ⭐⭐⭐⭐⭐ Contributes to both LLM interpretability and linguistics; the methodology serves as a reusable template for representation analysis.
 
 <!-- RELATED:START -->
 
@@ -130,10 +139,10 @@ This work is entirely a **training-free** geometric analysis—it involves no fi
 ## Related Papers
 
 - [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
+- [\[ACL 2025\] A Systematic Study of Compositional Syntactic Transformer Language Models](../../ACL2025/llm_nlp/a_systematic_study_of_compositional_syntactic_transformer_language_models.md)
+- [\[ACL 2025\] Quantifying Semantic Emergence in Language Models](../../ACL2025/llm_nlp/quantifying_semantic_emergence_in_language_models.md)
 - [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](../../AAAI2026/llm_nlp/vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
-- [\[ACL 2026\] Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames](../../ACL2026/llm_nlp/not_all_animals_are_equal_metaphorical_framing_through_source_domains_and_semant.md)
-- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
-- [\[ICML 2026\] Universal Reasoner: Composable Plug-and-Play Reasoners for Frozen LLMs](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[ICML 2025\] On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding](../../ICML2025/llm_nlp/on_expressive_power_of_looped_transformers_theoretical_analysis_and_enhancement_.md)
 
 </div>
 

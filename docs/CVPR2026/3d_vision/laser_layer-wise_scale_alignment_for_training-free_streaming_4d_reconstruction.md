@@ -2,68 +2,79 @@
 title: >-
   [Paper Note] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 description: >-
-  [CVPR2026][3D Vision][Streaming 4D Reconstruction] This paper proposes LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT…
+  [CVPR 2026][3D Vision][Paper Note] Ours introduces LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA). It achieves real-time streaming 4D reconstruction of kilometer-level videos at 14 FPS with a 6GB peak memory on an RTX A6000.
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "Streaming 4D Reconstruction"
-  - "Training-Free Framework"
-  - "Layer-wise Scale Alignment"
-  - "Sliding Window"
-  - "Sim(3) Registration"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 18fa7c5c613e18f7
+content_hash: 2c153d79196e3b02
 ---
-
 # LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2512.13680](https://arxiv.org/abs/2512.13680)  
 **Code**: [Project Page](https://neu-vi.github.io/LASER/)  
-**Area**: Human Understanding / 3D Reconstruction
-**Keywords**: Streaming 4D Reconstruction, Training-Free Framework, Layer-wise Scale Alignment, Sliding Window, Sim(3) Registration
+**Area**: 3D Vision  
+**Keywords**: Streaming 4D reconstruction, Training-free framework, Layer-wise scale alignment, Sliding window, Sim(3) registration
 
 ## TL;DR
 
-This paper proposes LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA), achieving real-time streaming 4D reconstruction of kilometer-scale videos at 14 FPS with 6 GB peak memory on an RTX A6000.
+Ours introduces LASER, a training-free framework that converts offline feed-forward reconstruction models (e.g., VGGT, π³) into streaming systems via Layer-wise Scale Alignment (LSA). It achieves real-time streaming 4D reconstruction of kilometer-level videos at 14 FPS with a 6GB peak memory on an RTX A6000.
 
 ## Background & Motivation
 
-**Limitations of Prior Work**:
-- **Offline model constraints**: Feed-forward reconstruction models such as VGGT and π³ perform well on static image sets but cannot handle streaming video input due to quadratic memory complexity, running out of memory (OOM) on long sequences such as KITTI.
-- **Streaming methods require retraining**: Streaming approaches including CUT3R, StreamVGGT, and STream3R achieve incremental processing through learned memory mechanisms or causal attention, but all require extensive retraining or knowledge distillation, incurring substantial computational cost.
-- **Drift in recurrent designs**: Recurrent designs such as CUT3R suffer from drift and catastrophic forgetting on long sequences; methods relying on growing memory face scalability limitations.
-- **Insufficiency of simple Sim(3) alignment**: The concurrent work VGGT-Long adopts a training-free approach via chunking and Sim(3) alignment, but rigid global alignment proves insufficient along the depth dimension.
-- **Layer-wise depth inconsistency**: Monocular scale ambiguity causes the relative depth scales of different scene layers (e.g., foreground vs. background) to shift inconsistently across windows; the uniform scaling of a global Sim(3) transformation cannot resolve this anisotropic scaling.
-- **Practical deployment requirements**: Applications in autonomous driving, robotics, and AR/VR demand efficient and consistent processing of video streams, requiring online processing while maintaining reconstruction quality.
+**Limitations of Prior Work**: Feed-forward reconstruction models such as VGGT and π³ perform excellently on static image sets. however, due to quadratic memory complexity, they cannot handle streaming video inputs and suffer from OOM on long sequences like KITTI.
+
+**Existing Streaming Methods Require Retraining**: Streaming methods such as CUT3R, StreamVGGT, and STream3R implement incremental processing through learned memory mechanisms or causal attention, but all require extensive retraining or knowledge distillation, resulting in high computational costs.
+
+**Drift Issues in Recursive Designs**: Recursive designs like CUT3R suffer from drift and catastrophic forgetting over long sequences; methods relying on growing memory face scalability limitations.
+
+**Simple Sim(3) Alignment is Insufficient**: Concurrent work like VGGT-Long attempts training-free methods using chunking and Sim(3) alignment, but simple rigid alignment is inadequate in the depth direction.
+
+**Issue of Layer-wise Depth Inconsistency**: Monocular scale ambiguity causes the relative depth scales of different scene layers (e.g., foreground vs. background) to vary inconsistently between windows. The uniform scaling of a global Sim(3) transformation cannot resolve this anisotropic scaling.
+
+**Practical Deployment Requirements**: Applications in autonomous driving, robotics, and AR/VR require models to process video streams efficiently and consistently, necessitating online processing while maintaining reconstruction quality.
 
 ## Method
 
 ### Overall Architecture
 
-LASER adopts a sliding window strategy to process video streams. Given a video $\{I_t\}$, overlapping windows $\{W_i\}$ are formed, each containing $L$ consecutive frames with an overlap of $O$ frames between adjacent windows. Each window is processed by a frozen offline reconstructor (VGGT or π³) that predicts dense point maps and camera poses; the resulting local submaps are then registered into a global map via incremental alignment.
+LASER addresses the problem of enabling offline feed-forward reconstructors like VGGT and π³ to process kilometer-scale long videos in a streaming fashion without retraining, while maintaining global geometric consistency. The approach segments the video into overlapping sliding windows; each window is processed by a frozen offline reconstructor to produce local point maps and poses, which are then sequentially registered and stitched into a global map.
 
-**Pipeline**: Video stream → Overlapping sliding windows → Frozen feed-forward reconstructor predicts point maps/poses → Sim(3) global alignment → Layer-wise Scale Alignment (LSA) → Globally consistent reconstruction.
+Specifically, given a video stream $\{I_t\}$, overlapping windows $\{W_i\}$ are formed (each window has $L$ consecutive frames with $O$ frames of overlap). After the frozen reconstructor predicts dense point maps and camera poses, a global Sim(3) alignment is first performed to coarsely attach the current window to the global map. Subsequently, the core module, LSA (Layer-wise Scale Alignment), corrects scale drifts in the depth direction layer-by-layer to achieve cross-window consistent reconstruction.
 
-### Key Designs: Layer-wise Scale Alignment (LSA)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Video Frame Stream {I_t}"] --> B["Overlapping Sliding Windows<br/>L frames/window, O frames overlap"]
+    B --> C["Frozen Offline Reconstructor (VGGT / π³)<br/>Predicts Dense Point Maps + Camera Poses"]
+    C --> D["Global Sim(3) Alignment<br/>Coarse connection to Global Map (Isotropic scaling)"]
+    D --> E
+    subgraph LSA["LSA Layer-wise Scale Alignment (Core Module)"]
+        direction TB
+        E["Depth Layer Extraction<br/>Partition pseudo-depth maps into M layers"] --> F["Dual-type Edge Depth Layer Graph<br/>Inter-window edges (IoU>τ) + Intra-window edges"]
+        F --> G["IRLS Layer-wise Scale Estimation & Propagation<br/>Huber Robust Solving + IoU Weighted Aggregation"]
+    end
+    G --> H["Cross-window Consistent Global 4D Reconstruction"]
+```
 
-**Problem Identification**: Global Sim(3) registration assumes isotropic scaling, but under low-parallax motion the scale constraint along the depth direction is unreliable, leading to inconsistent scaling across depth layers (foreground over- or under-scaled relative to background).
+### Key Designs
 
-**Depth Layer Extraction**: After Sim(3) registration, an efficient segmentation algorithm partitions the pseudo-depth map into $M$ disjoint depth layers $\{L_{t,m}\}$, each corresponding to a continuous geometric surface with consistent depth.
+**1. Depth Layer Extraction: Refining scale alignment from "global" to "layer-wise"**
 
-**Depth Layer Graph Construction**: All depth layers are organized into a directed graph $H=(V,E)$ with two types of edges:
-- **Inter-window edges $E_{\text{inter}}$**: Connect corresponding layers from two windows at overlapping timestamps with IoU $> \tau\ (=0.3)$.
-- **Intra-window edges $E_{\text{intra}}$**: Connect the same depth layer across adjacent frames within the same window.
+Global Sim(3) registration assumes isotropic scaling—multiplying the entire point map by a single scale factor. However, under low-parallax motion, scale constraints in the depth direction are unreliable, leading to inconsistent scaling between foreground and background. A single global scale cannot align both simultaneously. LASER's strategy is to refine the alignment space: pseudo-depth maps after Sim(3) registration are partitioned into $M$ disjoint depth layers $\{L_{t,m}\}$ using an efficient segmentation algorithm. Each layer corresponds to a depth-continuous geometric surface, allowing scales to be estimated independently per layer.
 
-**Layer-wise Scale Estimation**: For each inter-window edge, a layer-wise scaling factor $\hat{s}$ is optimized via IRLS (Huber loss) to align the depth values of corresponding layers in adjacent windows.
+**2. Dual-type Edge Depth Layer Graph: Organizing correspondences across windows and time into an optimizable graph**
 
-**Scale Propagation and Aggregation**: Layer-wise scales estimated from overlapping regions along $E_{\text{inter}}$ are first propagated temporally to non-overlapping frames along $E_{\text{intra}}$. The final scale for each layer is computed as an IoU-weighted average, ensuring consistency across windows and the temporal axis.
+To achieve layer-wise alignment, one must determine correspondences between layers across different windows. LASER organizes all depth layers into a directed graph $H=(V,E)$, establishing correspondences via two types of edges: inter-window edges $E_{\text{inter}}$ connect layers in overlapping windows with IoU $>\tau$ (default 0.3), providing cross-window scale constraints; intra-window edges $E_{\text{intra}}$ connect the same depth layer across adjacent frames within the same window, serving as paths for scale propagation along the temporal axis. This graph explicitly structures which layers should be aligned and how scales should propagate.
+
+**3. IRLS Layer-wise Scale Estimation and Propagation/Aggregation: Robustly solving for per-layer scales**
+
+Given the graph, IRLS (with Huber loss) is used to optimize the layer-wise scaling factor $\hat{s}$ for each inter-window edge, aligning depth values of corresponding layers. Huber loss suppresses outliers from mismatched layers, providing more stability than standard least squares. Scales are first estimated along $E_{\text{inter}}$ in overlapping regions and then propagated temporally to non-overlapping frames via $E_{\text{intra}}$. The final scale for each layer is a weighted average based on IoU, allowing layers with higher overlap and more reliable correspondences to dominate the result, ensuring consistency across windows and time.
 
 ### Loss & Training
 
-- Global scale $s_i^w$ is estimated via IRLS robust optimization with Huber loss to suppress outliers.
-- Rotation and translation are optimized via the Kabsch algorithm under the estimated scale.
-- Layer-wise scales are likewise optimized via IRLS with Huber loss.
+LASER is entirely training-free. All "optimization" occurs during inference as geometric registration: global scale $s_i^w$ is robustly estimated using IRLS + Huber loss to suppress outliers; rotation and translation are solved via the Kabsch algorithm under the estimated scale; layer-wise scales similarly utilize IRLS + Huber loss. Since no network weights are updated, LASER is plug-and-play for any new offline reconstructor.
 
 ## Key Experimental Results
 
@@ -72,8 +83,8 @@ LASER adopts a sliding window strategy to process video streams. Given a video $
 **Video Depth Estimation** (Table 1):
 
 | Method | Type | Sintel Abs Rel↓ | Bonn Abs Rel↓ | KITTI Abs Rel↓ |
-|--------|------|-----------------|---------------|----------------|
-| π³ (offline) | Offline | 0.245 | 0.050 | 0.038 |
+|------|------|---------|---------|---------|
+| π³ (Offline) | Offline | 0.245 | 0.050 | 0.038 |
 | CUT3R | Streaming | 0.421 | 0.078 | 0.118 |
 | STream3Rβ | Streaming | 0.264 | 0.069 | 0.080 |
 | **π³+Ours** | **Streaming** | **0.247** | **0.048** | **0.054** |
@@ -81,70 +92,70 @@ LASER adopts a sliding window strategy to process video streams. Given a video $
 **Camera Pose Estimation** (Table 2):
 
 | Method | Sintel ATE↓ | ScanNet ATE↓ | TUM ATE↓ |
-|--------|-------------|--------------|----------|
-| π³ (offline) | 0.073 | 0.030 | 0.014 |
+|------|-------------|--------------|----------|
+| π³ (Offline) | 0.073 | 0.030 | 0.014 |
 | CUT3R | 0.213 | 0.099 | 0.046 |
 | TTT3R | 0.201 | 0.064 | 0.028 |
 | **π³+Ours** | **0.061** | **0.031** | **0.016** |
 
-ATE on Sintel is reduced by 68.6% versus the previous best streaming method; Acc on 7-Scenes is reduced by 63.9%.
+Ours reduces ATE by 68.6% on Sintel compared to the previous best streaming method and reduces Acc by 63.9% on 7-Scenes.
 
-**Large-Scale KITTI Odometry** (Table 3): Offline models VGGT and π³ run OOM on all sequences; CUT3R runs OOM on most. LASER(π³) maintains stable performance across all 11 sequences, achieving a mean ATE of 24.17, outperforming VGGT-Long (27.64) and π³-Long (30.72).
+**Large-scale KITTI Odometry** (Table 3): Offline models VGGT and π³ all suffer from OOM, as does CUT3R in most cases. LASER(π³) remains stable across all 11 sequences, achieving an average ATE of 24.17, outperforming VGGT-Long (27.64) and π³-Long (30.72).
 
 ### Ablation Study
 
-**LSA Component Ablation** (Table 5, Sintel depth):
+**LSA Component Ablation** (Table 5, Sintel Depth):
 
 | Configuration | Abs Rel↓ | δ<1.25↑ |
-|---------------|----------|---------|
+|------|----------|---------|
 | Full LASER | 0.247 | 68.8 |
-| w/o LSA | 0.328 | 51.4 |
-| SAM 2 replacing segmentation | 0.251 | 67.8 |
-| w/o $E_{\text{intra}}$ | 0.261 | 64.7 |
+| W/o LSA | 0.328 | 51.4 |
+| Replace Seg with SAM 2 | 0.251 | 67.8 |
+| W/o E_intra | 0.261 | 64.7 |
 
 **Key Findings**:
-- Removing LSA degrades Abs Rel by 32.8%, confirming that layer-wise scale alignment is the core contribution.
-- SAM 2, despite finer segmentation granularity, yields no improvement; simple and efficient segmentation is sufficient.
-- Removing intra-window temporal propagation edges $E_{\text{intra}}$ impairs global consistency.
-- The IoU threshold $\tau$ is robust in the range 0.2–0.6; the default value of 0.3 performs best.
+- Removing LSA leads to a 32.8% degradation in Abs Rel, proving layer-wise scale alignment is the core contribution.
+- SAM 2, despite finer segmentation, yields no improvement; simple and efficient segmentation is sufficient.
+- Removing intra-window temporal propagation edges $E_{\text{intra}}$ harms global consistency.
+- The IoU threshold $\tau$ is robust within 0.2–0.6, with 0.3 being optimal.
 - Window size $L=20$ achieves the best balance.
 
 ### Efficiency Analysis
 
-- π³+Ours: ~14.2 FPS, 6 GB peak memory (RTX A6000).
-- VGGT+Ours: ~10.9 FPS, 10 GB peak memory.
+- π³+Ours: ~14.2 FPS, 6GB peak memory (RTX A6000)
+- VGGT+Ours: ~10.9 FPS, 10GB peak memory
 - Fastest speed and lowest memory consumption among all streaming methods.
 
 ## Highlights & Insights
 
-- **Zero training cost**: No retraining is required whatsoever; any offline reconstruction model can be directly converted to a streaming system, enabling plug-and-play adoption as new models emerge.
-- **Identification and resolution of layer-wise depth inconsistency**: The paper provides a deep insight into the anisotropic scaling failure mode of global Sim(3) alignment and proposes a solution grounded in classical layered scene representation.
-- **Comprehensive state-of-the-art performance**: LASER surpasses existing streaming methods across three tasks — depth estimation, pose estimation, and point map reconstruction — with several metrics approaching or exceeding offline models.
-- **Practically deployable**: At 14 FPS with 6 GB memory usage and support for kilometer-scale long sequences, the system holds significant real-world application value.
-- **Elegant design philosophy**: Classical geometric principles are used to bridge the shortcomings of deep learning models without requiring end-to-end retraining.
+- **Zero Training Cost**: Requires no retraining; directly converts any offline reconstruction model into a streaming system, enabling plug-and-play for new models.
+- **Identifies and Resolves Layer-wise Inconsistency**: Provides deep insight into the anisotropic scaling failure modes of global Sim(3) alignment, proposing a solution based on classical layered scene representations.
+- **Comprehensive SOTA**: Outperforms existing streaming methods across depth estimation, pose estimation, and point map reconstruction, with many metrics approaching or exceeding offline models.
+- **Practically Deployable**: 14 FPS + 6GB memory supports kilometer-length sequences, offering significant real-world application value.
+- **Elegant Design Philosophy**: Uses classical geometric principles to bridge the gaps in deep learning models without requiring end-to-end retraining.
 
 ## Limitations & Future Work
 
-- Performance is bounded by the capabilities of the underlying offline model (e.g., π³'s weaker normal accuracy leads to suboptimal NC metrics).
-- Layered segmentation depends on the quality of the depth map and may fail in extreme scenarios such as pure rotation or textureless regions.
-- The sliding window strategy introduces a fixed latency, making it unsuitable for ultra-low-latency applications.
-- Large-scale scenes still require additional loop closure to reduce long-range drift.
-- The paper is categorized under human understanding, whereas the actual contribution is a general-purpose 3D/4D reconstruction framework.
+- Limited by the upper bound of the underlying offline model (e.g., π³'s weaker normal accuracy affects NC metrics).
+- Layer-wise segmentation depends on depth map quality and may fail in extreme scenarios (e.g., pure rotation, textureless regions).
+- The sliding window strategy introduces fixed latency, making it unsuitable for ultra-low latency requirements.
+- Large-scale scenes still require additional loop closure to reduce long-term drift.
+- Although categorized under human_understanding in some contexts, it is essentially a general 3D/4D reconstruction work.
 
 ## Related Work & Insights
 
-- **Offline feed-forward reconstruction**: DUSt3R → VGGT → π³, progressing from pairwise image regression to dense reconstruction from arbitrary view collections.
-- **Streaming reconstruction (with training)**: CUT3R (recurrent memory), StreamVGGT (causal attention), STream3R (sliding window + token pooling), WinT3R, TTT3R (test-time adaptation).
-- **Training-free streaming (concurrent work)**: VGGT-Long uses chunking + Sim(3); this paper demonstrates that simple Sim(3) alignment is insufficient.
-- **Classical methods**: ORB-SLAM2, DROID-SLAM, etc., offer high accuracy but require calibration and produce only sparse reconstructions.
-- **4D reconstruction**: From per-scene optimization with NeRF/3DGS to feed-forward dynamic reconstruction.
+- **Offline Feed-forward Reconstruction**: DUSt3R → VGGT → π³, shifting from image pairs to dense reconstruction of arbitrary viewpoint sets.
+- **Streaming Reconstruction (Requires Training)**: CUT3R (recursive memory), StreamVGGT (causal attention), STream3R (sliding window + token pooling), WinT3R, TTT3R (test-time adaptation).
+- **Training-Free Streaming (Concurrent Work)**: VGGT-Long (chunking + Sim(3)); this paper demonstrates that simple Sim(3) is insufficient.
+- **Classical Methods**: ORB-SLAM2, DROID-SLAM, etc., which offer high precision but require calibration and provide only sparse reconstruction.
+- **4D Reconstruction**: Evolution from per-scene optimization (NeRF/3DGS) to feed-forward dynamic reconstruction.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The identification of the layer-wise depth inconsistency problem and the LSA design are original; the combination of classical geometry and modern deep learning is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Three tasks, six datasets, extensive baseline comparisons, comprehensive ablations, and efficiency analysis; very thorough.
-- **Writing Quality**: ⭐⭐⭐⭐ — Problem motivation is clearly articulated, figures are intuitive, and the method is described rigorously.
-- **Value**: ⭐⭐⭐⭐⭐ — Training-free, plug-and-play, efficient, and practical; highly valuable for real-world deployment.
+- Novelty: ⭐⭐⭐⭐ — Identifying the layer-wise depth inconsistency problem and designing the LSA solution is novel; the combination of classical geometry and modern deep learning is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three tasks, six datasets, extensive baseline comparisons, complete ablation studies, and efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Problem motivation is clear, diagrams are intuitive, and method description is formal.
+- Value: ⭐⭐⭐⭐⭐ — Training-free, plug-and-play, and highly efficient; significant for practical deployment.
 
 <!-- RELATED:START -->
 
@@ -152,11 +163,11 @@ ATE on Sintel is reduced by 68.6% versus the previous best streaming method; Acc
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
-- [\[NeurIPS 2025\] Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction](../../NeurIPS2025/3d_vision/motion_matters_compact_gaussian_streaming_for_free-viewpoint_video_reconstructio.md)
-- [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Web-Scale Collection of Video Data for 4D Animal Reconstruction](../../NeurIPS2025/3d_vision/web-scale_collection_of_video_data_for_4d_animal_reconstruction.md)
-- [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](../../ICLR2026/3d_vision/reducing_class-wise_performance_disparity_via_margin_regularization.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
+- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
 
 </div>
 

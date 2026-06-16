@@ -2,76 +2,85 @@
 title: >-
   [Paper Note] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation
 description: >-
-  [ICML 2026][Robotics][Atomic Skills] Targeting zero-shot robotic manipulation from training tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as an intermediate representa…
+  [ICML 2026][Robotics & Embodied AI][in-context learning] Targeting zero-shot robotic manipulation from training tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as an intermediate representation. A dual-library mechanism (dynamic retrieval for visual/planning similarity + static library for IDF-weighted completion of missing
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "Atomic Skills"
-  - "In-Context Learning"
-  - "Zero-Shot Cross-Task"
-  - "Dynamic/Static Dual-Library"
-  - "Skill Coverage"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - in-context learning
 date: 2026-05-08
-content_hash: b729a3a43657d83a
+content_hash: e6c7fe347809282a
 ---
-
 # Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.01448](https://arxiv.org/abs/2605.01448)  
-**Code**: None (Not declared in the paper)  
+**Code**: None (unannounced)  
 **Area**: Robotics / Cross-Task Generalization / Vision-Language-Action Models  
-**Keywords**: Atomic Skills, In-Context Learning, Zero-Shot Cross-Task, Dynamic/Static Dual-Library, Skill Coverage
+**Keywords**: Atomic skills, in-context learning, cross-task zero-shot, dynamic/static demonstration dual-library, skill coverage
 
 ## TL;DR
-Targeting zero-shot robotic manipulation from training tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as an intermediate representation. They then employ a dual-library (dynamic library retrieved by visual/planning similarity + static library using IDF weighting to complete missing skill tokens) to provide LLMs with skill-comprehensive in-context demonstrations, upgrading "trajectory imitation" to "compositional skill reasoning."
+Targeting zero-shot robotic manipulation from training tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as an intermediate representation. A dual-library mechanism (dynamic retrieval for visual/planning similarity + static library for IDF-weighted completion of missing skill tokens) provides LLMs with skill-comprehensive in-context demonstrations, evolving "trajectory imitation" into "compositional skill reasoning."
 
 ## Background & Motivation
 
-**Background**: Vision-Language-Action (VLA) models (RT-2, OpenVLA, π0, RDT) achieve robustness against visual perturbations on seen tasks through large-scale robotic data training. Recently, X-ICM introduced In-Context Learning (ICL) into robotic cross-task zero-shot settings, using dynamics-guided retrieval to select similar demonstrations from a pool of training tasks to feed into an LLM for direct action prediction.
+**Background**: VLA models (RT-2, OpenVLA, π0, RDT) achieve robustness against visual perturbations on known tasks through large-scale training. Recently, X-ICM introduced in-context learning (ICL) to cross-task zero-shot robotics, utilizing dynamics-guided retrieval to select similar demonstrations from training data for direct action prediction by LLMs.
 
-**Limitations of Prior Work**: (a) X-ICM requires **training** a dynamics retriever on specific task distributions, weakening cross-domain transferability; (b) the demonstrations fed to the LLM consist only of low-level numerical action sequences, lacking causal and process information regarding "what/why this step exists" and its relationship to the next step; (c) consequently, the LLM degrades into "trajectory pattern matching" and fails to reason when encountering new skill combinations.
+**Limitations of Prior Work**: (a) X-ICM requires **training a specific** dynamics retriever on a task distribution, weakening cross-domain transfer; (b) demonstrations provided to LLMs contain only low-level numerical action sequences, lacking causal and procedural information (e.g., "what is this step doing" or "why is it related to the next"); (c) consequently, the LLM degrades into "trajectory pattern matching," failing to reason when encountering new skill combinations.
 
-**Key Challenge**: Cross-task generalization requires skills to be composable and reason-able. However, existing demonstration representations only provide low-level continuous actions, which do not expose the skill structure. Furthermore, demonstration retrieval based solely on visual or dynamics similarity may omit critical skill patterns required to solve a new task.
+**Key Challenge**: Cross-task transfer requires skills to be composable and reason-able. However, existing demonstration representations only provide low-level continuous actions, which do not expose skill structures. Furthermore, retrieval based solely on visual or dynamics similarity may overlook key skill patterns necessary for solving new tasks.
 
-**Goal**: (1) Decompose opaque continuous action sequences into "atomic skill label + action" pairs as intermediate representations; (2) ensure the set of demonstrations is both "task-relevant" and "skill-comprehensive"; (3) remain completely training-free (using generic pre-trained vision encoders + planning agents + LLMs).
+**Goal**: (1) Deconstruct opaque continuous action sequences into "atomic skill label + action" pairs as intermediate representations; (2) ensure the demonstration set is both "task-relevant" and "skill-comprehensive"; (3) maintain a completely training-free pipeline (using general pre-trained visual encoders + planning agents + LLMs).
 
-**Key Insight**: Elevate cross-task transfer from the "trajectory shape similarity" level to the "composable skill structure" level. Providing the LLM with in-context demonstrations explicitly labeled with verb-argument atomic skills can trigger compositional reasoning.
+**Key Insight**: Elevate cross-task transfer from the "trajectory shape similarity" level to the "composable skill structure" level. Explicitly labeling verb-arg atomic skills in in-context demonstrations is essential to trigger compositional reasoning in LLMs.
 
-**Core Idea**: Decompose (break demos into atomic skill-action pairs) + Recompose (assemble a skill-complete demo set for new tasks using dynamic + static dual-libraries).
+**Core Idea**: Decompose (demos into atomic skill-action pairs) + Recompose (using dynamic + static dual-libraries to assemble skill-complete demo sets for new tasks).
 
 ## Method
 
 ### Overall Architecture
-A training-free pipeline consisting of four modules: (1) Atomic Skills Collection: Extract keyframes from seen demonstrations + label verb-arguments using VLM + apply gripper constraints + rule-based post-processing to obtain $\{(s_k, a_k)\}$; (2) Dynamic Demonstrations Library: Rank demos by fusing visual similarity (DINOv3 encoding) and planning similarity (Jaccard similarity of verb sets and bigram chains), selecting top-$k_{\mathrm{sim}}$ for $\mathcal{D}_{\mathrm{dyn}}$; (3) Coverage-aware Static Library: Extract object-agnostic tokens (V:verb + B:bigram) for each demo, using IDF weighting to select demos that fill the coverage gap in $\mathcal{D}_{\mathrm{dyn}}$, yielding $\mathcal{D}_{\mathrm{cov}}$; (4) Skill-Augmented ICL: Feed $\mathcal{D} = \mathcal{D}_{\mathrm{dyn}} \cup \mathcal{D}_{\mathrm{cov}}$ and the query to an LLM for compositional skill reasoning, outputting a 7-DoF discretized action sequence.
+The method consists of three tightly coupled components in a training-free pipeline: (1) **Atomic Skills Collection**: Extraction of keyframes from seen demos + VLM-based verb-arg labeling + gripper constraints + rule-based post-processing to obtain skill-action pairs $\{(s_k,a_k)\}$; (2) **Dual-Library Retrieval**: A dynamic library uses DINOv3 for visual similarity + Jaccard similarity of planner-predicted skill sequences (verb sets + bigram chains) to select top-$k_\mathrm{sim}$ demos for $\mathcal D_\mathrm{dyn}$; a static library then extracts object-agnostic tokens (V:verb + B:bigram) and uses IDF-weighted selection to fill the coverage gap of $\mathcal D_\mathrm{dyn}$, forming $\mathcal D_\mathrm{cov}$; (3) **Skill-Augmented ICL**: The combined set $\mathcal D=\mathcal D_\mathrm{dyn}\cup\mathcal D_\mathrm{cov}$ and the query are fed to the LLM for compositional skill reasoning to output 7-DoF discrete action sequences.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SEEN["Seen Task Demos"] --> A["Atomic Skill Deconstruction<br/>Keyframes + VLM Verb-Arg Labeling<br/>Gripper Constraints + Post-processing"]
+    A --> POOL["Skill-Action Pair Candidate Pool"]
+    Q["Unseen Task Query<br/>Instruction + Initial Observation"] --> PLAN["Planning Agent Predicts Skill Sequence"]
+    Q --> VIS["DINOv3 Scene Visual Features"]
+    subgraph DUAL["Dual-Library Retrieval (Recomposition)"]
+        direction TB
+        DYN["Dynamic Library<br/>Visual Similarity + Plan Jaccard Fusion<br/>Top-k_sim → D_dyn"]
+        COV["Static Library<br/>IDF-weighted Coverage Gap Filling<br/>Greedy ≤ k_cov → D_cov"]
+        DYN --> COV
+    end
+    POOL --> DUAL
+    PLAN --> DUAL
+    VIS --> DYN
+    DUAL --> ICL["Skill-Augmented ICL (Reasoning)<br/>D=D_dyn∪D_cov + Query for LLM Reasoning"]
+    ICL --> OUT["7-DoF Discrete Action Sequence Output"]
+```
 
 ### Key Designs
 
-1.  **Atomic Skills Collection (Deconstruction)**:
-    - **Function**: Transform each demonstration into interpretable, composable skill-action pairs.
-    - **Mechanism**: Keyframes are extracted based on three rules: gripper state changes, joint velocity thresholds, and episode termination. Each segment is labeled by a VLM as $\mathrm{Verb}[\mathrm{obj}]$ or $\mathrm{Verb}[\mathrm{obj}_1, \mathrm{obj}_2]$ (where $\mathrm{Verb} \in \{\text{Reach, Move, Grasp, Release, ...}\}$). **Hard Gripper Constraints**: "open $\to$ closed" forces a Grasp label, while "closed $\to$ open" forces a Release label to prevent VLM mislabeling. Rule-based post-processing enforces (movable, target) parameter order and downgrades relational actions in an open state to Move.
-    - **Design Motivation**: Low-level numerical actions lack semantics and cannot be reused across tasks; verb-arg labels allow the LLM to combine demos like "sentence fragments." Gripper constraints leverage physical common sense to minimize labeling error rates.
+**1. Atomic Skills Collection: Decomposing Demos into Composable Skill-Action Pairs**
+Low-level numerical actions lack semantics and cannot be reused across tasks. This step converts demos into labeled atomic skills. Keyframes are extracted via three rules: gripper state changes, joint velocity thresholds, and episode termination. Each segment is labeled by a VLM as $\mathrm{Verb}[\mathrm{obj}]$ or $\mathrm{Verb}[\mathrm{obj}_1,\mathrm{obj}_2]$ (where Verb $\in$ {Reach, Move, Grasp, Release, ...}). A critical engineering detail is the use of hard gripper constraints: open→closed is forced as Grasp, and closed→open as Release, using physical common sense to minimize VLM labeling errors. Rule-based post-processing enforces (movable, target) argument order and demotes relational actions in an open-gripper state to Move. With verb-arg labels, the LLM treats demos as "sentence fragments" to be composed rather than meaningless digits.
 
-2.  **Dual-Library Demonstration Retrieval (Reconstruction - Relevance + Coverage)**:
-    - **Function**: Simultaneously satisfy "task relevance" (Dynamic Library) and "skill coverage" (Static Library).
-    - **Mechanism**: The ranking score for the dynamic library is $s_i = \alpha \tilde s_i^{\mathrm{vis}} + (1-\alpha) s_i^{\mathrm{plan}}$, where visual similarity $s_i^{\mathrm{vis}} = \mathbf{f}^q \cdot \mathbf{f}_i$ (DINOv3 cosine) and planning similarity $s_i^{\mathrm{plan}} = \lambda J(\mathcal{V}(\hat{\mathcal{S}}), \mathcal{V}(\mathcal{S}_i)) + (1-\lambda) J(\mathcal{B}(\hat{\mathcal{S}}), \mathcal{B}(\mathcal{S}_i))$ (Jaccard similarity of verb sets and verb-bigram sets). In the static library, each demo is described by object-agnostic tokens $\mathcal{T}(d) = \{\mathrm{V:}v\} \cup \{\mathrm{B:}v_1 \to v_2\}$. Token weights are $w_t = (\log \frac{N+1}{\mathrm{df}(t)+1} + 1)^\beta$ (IDF). The selection score is $\sum_{t \in \mathcal{T}(d) \setminus \mathcal{C}} w_t / (1 + \gamma |\mathcal{S}_d|)$ (coverage gain divided by demo length penalty). During inference, the coverage gap $\mathcal{G} = \mathcal{T}(\hat{\mathcal{S}}) \setminus \cup_{d \in \mathcal{D}_{\mathrm{dyn}}} \mathcal{T}(d)$ is calculated, and up to $k_{\mathrm{cov}}$ demos are greedily selected from the static library to fill it.
-    - **Design Motivation**: Similarity alone might miss key skills (e.g., when solving "open microwave, put food, close door," similar demos might all be "open-put" but miss "close"). Object-agnostic tokens + IDF prioritize "rare but critical" skills. The length penalty prevents long demos from consuming the context window.
+**2. Dual-Library Demonstration Retrieval: Balancing Task Relevance and Skill Coverage**
+Retrieval based only on visual/dynamics similarity might miss critical skills (e.g., when solving "open microwave → put food → close door," similar demos might only show "open" and "put"). The dynamic library handles "Task Relevance" with a ranking score $s_i=\alpha\tilde s_i^\mathrm{vis}+(1-\alpha)s_i^\mathrm{plan}$, where $s_i^\mathrm{vis}$ uses DINOv3 cosine similarity and $s_i^\mathrm{plan}$ uses Jaccard similarity of verb and verb-bigram sets. The static library handles "Skill Coverage," where each demo is described by object-agnostic tokens $\mathcal T(d)=\{\mathrm{V:}v\}\cup\{\mathrm{B:}v_1\to v_2\}$. Tokens are weighted by IDF $w_t=(\log\frac{N+1}{\mathrm{df}(t)+1}+1)^\beta$, and selection is based on coverage gain divided by a length penalty $\sum_{t\in \mathcal T(d)\setminus\mathcal C}w_t / (1+\gamma|\mathcal S_d|)$. During inference, the coverage gap $\mathcal G=\mathcal T(\hat{\mathcal S})\setminus \cup_{d\in\mathcal D_\mathrm{dyn}}\mathcal T(d)$ is calculated, and demos are greedily added from the static library. IDF ensures rare but critical skills (e.g., Close, Insert) are prioritized.
 
-3.  **Skill-Augmented In-Context Learning (Reasoning)**:
-    - **Function**: Enable the LLM to perform compositional reasoning on a semantic scaffold of skill-action pairs to output discretized 7-DoF action sequences.
-    - **Mechanism**: Each demo is formatted as a triple (instruction, atomic skill sequence, action sequence) in the text context. The LLM receives the query instruction + initial observation (discretized object coordinates + gripper state) + the predicted skill sequence from the planner. It follows a "decompose query $\to$ recompose from existing skills" paradigm to output $\{a_1^q, \ldots, a_T^q\}$, where each $a_t$ is a 3D voxel index + Euler bin + gripper bit.
-    - **Design Motivation**: By explicitly showing the LLM a causal chain like "Reach[knife] $\to$ Grasp[knife] $\to$ Move[knife, board]," it triggers the reasoning that "I can combine known Reach+Grasp+Move sequences to solve a new task," rather than trying to match a known trajectory shape.
+**3. Skill-Augmented In-Context Learning: Compositional Reasoning on a Skill Scaffold**
+Semantic-rich demos allow the LLM to perform composition rather than pattern matching. Each demo is formatted as an (instruction, atomic skill sequence, action sequence) triplet. The LLM receives the query instruction, initial observations (discretized coordinates + gripper state), and the predicted skill sequence. Following a "decompose query → recompose from existing skills" paradigm, it outputs $\{a_1^q,\ldots,a_T^q\}$, where $a_t$ represents 3D voxel indices + Euler bins + gripper bits. By explicitly seeing causal chains like "Reach[knife] → Grasp[knife] → Move[knife, board]," the LLM can trigger reasoning to solve new tasks using known skill components.
 
 ### Loss & Training
-**Completely training-free**: DINOv3, planning agent, VLM, and LLM all use pre-trained weights without parameter updates. Hyperparameters $\alpha, \lambda, \beta, \gamma, k_{\mathrm{sim}}, k_{\mathrm{cov}}$ are chosen empirically.
+**Training-free**: DINOv3, the planning agent, VLM, and LLM all utilize pre-trained weights without parameter updates. Hyperparameters $\alpha,\lambda,\beta,\gamma,k_\mathrm{sim},k_\mathrm{cov}$ are selected empirically.
 
 ## Key Experimental Results
 
-### Main Results (AGNOSTOS benchmark Cross-Task Zero-Shot, Success Rate %)
+### Main Results (AGNOSTOS Benchmark Cross-Task Zero-Shot, Success Rate %)
 
-Summary comparison of Ours vs. X-ICM on representative tasks from paper Table 1:
+Comparison between Ours and X-ICM on selected Level-1/Level-2 tasks:
 
-| Task | X-ICM | Ours | Δ |
+| Task | X-ICM | Ours | Gain |
 |---|---|---|---|
 | Micro. (open microwave) | 45.3 | **62.7** | +17.4 |
 | Seat | 48.0 | **72.0** | +24.0 |
@@ -80,49 +89,48 @@ Summary comparison of Ours vs. X-ICM on representative tasks from paper Table 1:
 | Fridge | 22.7 | **34.7** | +12.0 |
 | Knife | **26.7** | 21.3 | -5.4 |
 | Phone | **57.3** | 42.7 | -14.6 |
-| Most Level-2 Tasks | Mostly 0 | Partial improvement | Slight |
+| Most Level-2 Tasks | ~0 | Improved | Slight |
 
-Overall Conclusion: Across 23 unseen tasks (13 Level-1 + 10 Level-2), Ours demonstrates competitive or superior performance compared to the typical ICL baseline X-ICM on most tasks, with significant advantages in multi-step compositional tasks (e.g., Micro., Seat, Fridge). Foundation VLA models (OpenVLA, RDT, π0) and In-Domain methods (PerAct, RVT, Sigma-Agent) are generally outperformed.
+Across 23 unseen tasks (13 Level-1 + 10 Level-2), Ours outperforms or competes with the ICL baseline X-ICM, particularly in multi-step compositional tasks. Foundation VLAs (OpenVLA, RDT, π0) and In-Domain methods (PerAct, RVT) are generally surpassed.
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Explanation |
+| Configuration | Observation | Explanation |
 |---|---|---|
-| Full (Dynamic + Static + atomic skill labels) | Best | Synergy of the three modules |
-| Dynamic Library only (no Static completion) | Drop in multi-step tasks | Coverage gap was not filled |
-| Static Library only (no Dynamic retrieval) | Weak task relevance | demos and query did not match in vision/plan |
-| Remove atomic skill labels (pure action demos) | Significant drop | LLM degrades to trajectory imitation, no skill reasoning |
-| VLM labeling without gripper constraints | Increased label noise | Physical consistency was compromised |
+| Full (Dynamic + Static + atomic skill labels) | Best | Synergy of three modules. |
+| Dynamic Only (No Static filling) | Performance drop in multi-step tasks | Coverage gap remains unaddressed. |
+| Static Only (No Dynamic retrieval) | Weak task relevance | Visual/planning mismatch between demo and query. |
+| No Atomic Skill Labels (Pure action demos) | Significant drop | LLM degrades to trajectory imitation without reasoning. |
+| VLM labels without gripper constraints | Increased label noise | Physical consistency is violated. |
 
 ### Key Findings
-- The intermediate representation of "atomic skill label + action pairs" is the most critical leap. Once this layer is exposed to the LLM, cross-task compositional reasoning is activated; without it, even optimal retrieval results in mere "copy-pasting trajectories."
-- The synergy of the Dynamic + Static dual-library outperforms either alone, verifying that "task relevance" and "skill coverage" are two orthogonal requirements.
-- IDF weighting ensures that rare but crucial verbs (e.g., Close, Insert) receive high priority in static library selection, which is vital for completing multi-step Level-2 tasks.
+- The "atomic skill label + action pair" intermediate representation is the most critical factor; it activates cross-task compositional reasoning in the LLM.
+- The synergy of the Dynamic + Static dual-library is superior to either alone, confirming that task relevance and skill coverage are orthogonal requirements.
+- IDF weighting prioritizes rare but essential verbs (e.g., Close, Insert), which is crucial for completing complex Level-2 tasks.
 
 ## Highlights & Insights
-- **Training-free yet Effective**: Does not rely on training any dynamics retrievers. All components are pre-trained or rule-based, minimizing cross-domain transfer friction—a significant advantage for industrial deployment.
-- **Correct "Semanticization" of the ICL Paradigm**: Unlike previous ICL-for-robot approaches that use numerical actions, this work provides semantic tokens, properly utilizing the LLM's strength in symbolic compositional reasoning.
-- **VLM-LLM Collaboration**: Engineering details like gripper hard constraints and rule-based post-processing make VLM labeling practical, providing a reusable framework for such collaboration.
-- **Maximized Coverage with Minimal Samples**: The object-agnostic verb token + IDF selection strategy provides a clear signal for demonstration selection that can be transferred to other domains requiring in-context demonstrations.
+- **Training-free Efficiency**: Eliminates the need for training dynamics retrievers. Components are pre-trained or rule-based, facilitating low-friction cross-domain deployment.
+- **Semanticizing the ICL Paradigm**: Unlike prior ICL-for-robot works that provide numerical actions, this approach provides semantic tokens, properly leveraging the LLM's strength in symbolic compositional reasoning.
+- **Robust Labeling Paradigm**: Using gripper hardware constraints to guide VLM labeling is a valuable engineering insight for noisy data.
+- **Generalizable Retrieval**: The object-agnostic verb token + IDF selection provides a clear "minimal sample, maximal coverage" signal applicable beyond robotics.
 
 ## Limitations & Future Work
-- On certain tasks with simple skills (Knife, Phone), it is outperformed by X-ICM, potentially because atomic skill abstraction is too fine-grained, blurring visual similarity signals.
-- The atomic skill vocabulary $\mathcal{V}$ is a manually defined closed set (Reach/Move/Grasp/Release/...). It lacks an automatic discovery mechanism for new action types (e.g., pour, wipe).
-- Errors in the planner contaminate both plan-similarity in the dynamic library and the coverage gap in the static library; this upstream vulnerability is not explicitly quantified.
-- The 7-DoF action discretization (voxel + Euler bin) is relatively coarse and may be insufficient for high-precision operations (threading a needle, tightening a screw).
-- Real-world experiments are mentioned only at the end without full numerical tables; the sim-to-real gap is not discussed in depth.
+- Ours is outperformed by X-ICM in simple tasks (e.g., Knife, Phone), suggesting that over-abstraction of atomic skills might blur useful visual similarity signals.
+- The atomic skill vocabulary $\mathcal V$ is a manually defined closed set; a mechanism for automatic discovery is needed for new action types (e.g., pour, wipe).
+- Errors in the upstream planner affect both dynamic plan-similarity and static coverage gaps.
+- Discrete 7-DoF action granularity may be insufficient for high-precision tasks (e.g., threading a needle).
+- Real-world experiments lack comprehensive numerical tables; the sim-to-real gap requires further discussion.
 
 ## Related Work & Insights
-- **vs X-ICM (Zhou et al. 2025)**: Both use ICL for cross-task settings, but X-ICM requires a trained dynamics retriever and uses pure actions; Ours is training-free and uses skill-action pairs, representing a direct upgrade.
-- **vs RoboPrompt / KAT / InCoRo / Instant Policy**: These focus on within-task settings; Ours focuses on cross-task zero-shot settings.
-- **vs VoxPoser / MOKA / COPA / ReKep**: Modular VLA solutions that rely on task-specific prompt engineering; Ours uses a unified atomic-skill schema.
-- **vs End-to-End VLA (OpenVLA, π0, RDT, LLARVA, HPT)**: These rely on data scale for cross-task capabilities, but AGNOSTOS shows limited effectiveness; Ours provides a complementary path via ICL and skill abstraction.
+- **vs. X-ICM (Zhou et al. 2025)**: Both target cross-task ICL, but X-ICM requires trained retrievers and uses pure actions. This work is a direct upgrade using training-free components and skill-action pairs.
+- **vs. RoboPrompt / InCoRo / Instant Policy**: These focus on within-task adaptation; Ours addresses cross-task zero-shot settings.
+- **vs. End-to-end VLAs (OpenVLA, π0, RDT)**: These rely on data scale to handle cross-task scenarios, which shows limited performance on AGNOSTOS. Ours provides a complementary approach via ICL and skill abstraction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Atomic skill representation + dual-library signals is a novel and persuasive combination, providing a clear paradigm for cross-task ICL.
-- Experimental Thoroughness: ⭐⭐⭐ AGNOSTOS 23 tasks + real-world validation; however, ablation and failure case analyses are somewhat superficial, and sim-to-real details are lacking.
-- Writing Quality: ⭐⭐⭐⭐ Figures 1/2/3 clarify concepts well; formulas are concise; Table 1 is dense but complete.
-- Value: ⭐⭐⭐⭐ Provides a strong training-free baseline for the robotic manipulation community, and the atomic-skill abstraction approach is extensible to agents and workflow automation.
+- Novelty: ⭐⭐⭐⭐ Atomic skill representation + dual-library signal is a convincing new paradigm for cross-task ICL.
+- Experimental Thoroughness: ⭐⭐⭐ Validated on 23 tasks and real environments, though failure case analysis is relatively brief.
+- Writing Quality: ⭐⭐⭐⭐ Concepts are clearly explained through figures; formulas are concise.
+- Value: ⭐⭐⭐⭐ Provides a strong training-free baseline for the robot manipulation community with a generalizable abstraction idea.
 
 <!-- RELATED:START -->
 
@@ -132,9 +140,9 @@ Overall Conclusion: Across 23 unseen tasks (13 Level-1 + 10 Level-2), Ours demon
 
 - [\[ICML 2026\] TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation](tapsampling_inference-time_sampling_with_a_task-progress-understanding_verifier_.md)
 - [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/gecosrt_geometryaware_continual_adaptation_for_rob.md)
-- [\[CVPR 2026\] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning](../../CVPR2026/robotics/cross-domain_demo-to-code_via_neurosymbolic_counterfactual_reasoning.md)
+- [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](../../CVPR2026/robotics/action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
 - [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](../../CVPR2026/robotics/learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[ICML 2026\] BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis](dissecting_embodied_abilities_in_multimodal_language_models_through_skill-level_.md)
 
 </div>
 

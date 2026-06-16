@@ -2,78 +2,80 @@
 title: >-
   [Paper Note] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 description: >-
-  [CVPR 2026][LLM Agent][3D Reasoning Segmentation] REALM is proposed as a framework that leverages MLLM reasoning capabilities to perform open-world 3D reasoning segmentation on 3DGS via a global-to-local spatial groundin…
+  [CVPR 2026][LLM Agent][MLLM-Agent] The REALM framework is proposed, leveraging the reasoning capabilities of MLLMs through a global-to-local spatial positioning strategy to perform open-world 3D reasoning segmentation on 3DGS. It handles implicit instructions without 3D post-training, achieving 92.88% mIoU on LERF (surpassing baselines by over 40 percen
 tags:
-  - "CVPR 2026"
-  - "LLM Agent"
-  - "3D Reasoning Segmentation"
-  - "MLLM-Agent"
-  - "3D Gaussian Splatting"
-  - "Global-to-Local Spatial Grounding"
-  - "3D Scene Editing"
+  - CVPR 2026
+  - LLM Agent
+  - MLLM-Agent
 date: 2026-05-08
-content_hash: ecd75a8d41f4d379
+content_hash: c1b8945a82f11233
 ---
-
 # REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.16410](https://arxiv.org/abs/2510.16410)  
 **Code**: [https://ChangyueShi.github.io/REALM](https://ChangyueShi.github.io/REALM)  
-**Area**: LLM Agent / 3D Vision
-**Keywords**: 3D Reasoning Segmentation, MLLM-Agent, 3D Gaussian Splatting, Global-to-Local Spatial Grounding, 3D Scene Editing
+**Area**: LLM Agent / 3D Vision  
+**Keywords**: 3D Reasoning Segmentation, MLLM-Agent, 3D Gaussian Splatting, Global-to-Local Spatial Positioning, 3D Scene Editing
 
 ## TL;DR
-REALM is proposed as a framework that leverages MLLM reasoning capabilities to perform open-world 3D reasoning segmentation on 3DGS via a global-to-local spatial grounding strategy, handling implicit instructions without 3D post-training. It achieves 92.88% mIoU on LERF, surpassing baseline methods by 40+ percentage points, and supports editing tasks including object removal, replacement, and style transfer.
+The REALM framework is proposed, leveraging the reasoning capabilities of MLLMs through a global-to-local spatial positioning strategy to perform open-world 3D reasoning segmentation on 3DGS. It handles implicit instructions without 3D post-training, achieving 92.88% mIoU on LERF (surpassing baselines by over 40 percentage points) while supporting editing tasks such as object removal, replacement, and style transfer.
 
 ## Background & Motivation
 
-**Background**: Enabling AI systems to understand complex human instructions and precisely localize target objects in 3D scenes is a foundational capability for robotics and human-computer collaboration. Existing 3D open-vocabulary segmentation methods (e.g., LERF, LangSplat, GS-Grouping) can handle explicit category queries (e.g., "segment the cup"), but perform poorly on implicit instructions requiring reasoning (e.g., "segment the object between the lamp and the book," "make the table tidier").
+**Background**: Enabling AI systems to understand complex human instructions and precisely locate target objects in 3D scenes is a fundamental capability for robotics and human-robot collaboration. Existing 3D open-vocabulary segmentation methods (e.g., LERF, LangSplat, GS-Grouping) can handle explicit category queries (e.g., "segment the cup") but perform poorly on implicit instructions requiring reasoning (e.g., "segment the object between the lamp and the book," "make the table tidier").
 
-**Limitations of Prior Work**: (1) 3D segmentation methods lack reasoning capabilities—they can only perform explicit keyword matching and cannot understand spatial relationships, semantic attributes, or commonsense reasoning. (2) While 2D MLLMs excel at reasoning, they inherently lack 3D spatial understanding—directly feeding rendered views to an MLLM is highly sensitive to viewpoint selection, and different angles may produce contradictory results. (3) Existing attempts (e.g., ScanReason, ReasonGrounder) are limited by bounding box prediction or dependence on top-down views, resulting in insufficient precision and applicability.
+**Limitations of Prior Work**: (1) 3D segmentation methods lack reasoning capabilities—they are restricted to explicit keyword matching and cannot understand spatial relationships, semantic attributes, or common-sense reasoning; (2) 2D MLLMs, while skilled at reasoning, naturally lack 3D spatial understanding—directly inputting rendered views into MLLMs is highly sensitive to viewpoint selection, where different angles may yield contradictory results; (3) Existing attempts (e.g., ScanReason, ReasonGrounder) are limited by predicting bounding boxes or relying on top-down views, lacking precision and general applicability.
 
-**Key Challenge**: MLLMs possess strong 2D reasoning capabilities but lack 3D spatial awareness. The core challenge is how to reliably lift 2D reasoning results into 3D space and obtain precise segmentation masks without 3D-specific post-training of the MLLM.
+**Key Challenge**: MLLMs possess powerful 2D reasoning capabilities but lack 3D spatial perception. How can 2D reasoning results be stably lifted into 3D space to obtain precise segmentation masks without performing 3D-specific post-training on the MLLM?
 
-**Goal**: To realize an open-world framework that understands implicit reasoning instructions, requires no 3D post-training, and generates precise 3D segmentation masks.
+**Goal**: To implement an open-world framework capable of understanding implicit reasoning instructions, requiring no 3D post-training, and generating precise 3D segmentation masks.
 
-**Key Insight**: 3DGS serves as a high-fidelity proxy for the 3D world—it can render photorealistic novel views for MLLM comprehension. A two-stage multi-view reasoning strategy aggregates MLLM responses across viewpoints to eliminate single-view sensitivity.
+**Key Insight**: Using 3DGS as a high-fidelity proxy for the 3D world—it can render realistic novel views for MLLM interpretation; aggregating MLLM responses from different angles through a global-to-local two-stage multi-view reasoning strategy eliminates single-view sensitivity.
 
-**Core Idea**: Render multi-view images from 3DGS for MLLM reasoning, then obtain precise 3D masks through a two-stage strategy of global coarse localization followed by local fine segmentation.
+**Core Idea**: Render multiple views using 3DGS for MLLM reasoning, and obtain precise 3D masks through a two-stage strategy of global coarse positioning and local fine segmentation.
 
 ## Method
 
 ### Overall Architecture
-The REALM pipeline consists of three core modules: (1) **3D Feature Field Construction**—starting from 2D instance masks from SAM, consistent instance IDs are established through cross-view tracking, and instance features $f_i \in \mathbb{R}^D$ are learned for each 3D Gaussian, enabling mapping to instance IDs via a classifier $\mathcal{C}LS$; (2) **LMSeg (MLLM-Based Visual Segmenter)**—given an image and a language query, an MLLM is called to obtain reasoning results (bounding box + category + explanation), SAM then generates a 2D mask, and the target instance ID is retrieved via the feature field; (3) **GLSpaG (Global-to-Local Spatial Grounding)**—coarse localization is first performed from global viewpoints, followed by fine segmentation and 3D mask refinement from local viewpoints. The resulting segmentation can be directly applied to 3D editing tasks such as object removal, replacement, and style transfer.
+REALM addresses an unavoidable mismatch: MLLMs can reason but only understand 2D images, while 3D segmentation methods match keywords but cannot reason. The solution is to use 3DGS as a "view factory"—rendering the 3D scene into photo-realistic images for the MLLM to perform 2D reasoning, then stably lifting the answers back to 3D. The pipeline consists of three components: first, learning instance features for each 3D Gaussian offline to build a 2D↔3D bridge; during inference, using a wrapper called LMSeg to pass "an image + a query" to the MLLM to obtain a bbox/category/explanation, which is converted to a 2D mask via SAM to look up target instance IDs; finally, using Global-to-Local Spatial Positioning (GLSpaG), where multiple wide views vote to identify the target for coarse segmentation, followed by close-up views to refine mask boundaries. Once the precise 3D mask is obtained, object removal, replacement, and style transfer are performed as subsequent operations on that set of Gaussians.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["3DGS Scene + Implicit Query"] --> B["3D Feature Field and Instance Identity<br/>SAM mask extraction → Cross-view ID association → Instance feature learning for each Gaussian"]
+    B --> C["Global Spatial Positioning GLSpaG-Global<br/>K-means viewpoint selection → LMSeg for 8 global views → Majority voting for target → Coarse mask"]
+    C --> D["Local Spatial Positioning and Refinement GLSpaG-Local<br/>LMSeg for target close-up views → Differentiable rendering L1 alignment 50-step refinement"]
+    D -->|"Precise 3D mask"| E["Downstream Editing<br/>Object Removal / Replacement / Style Transfer"]
+```
 
 ### Key Designs
 
-1. **3D Feature Field and Instance Identification**:
+**1. 3D Feature Field and Instance Identity: Translating "Selected 2D Regions" into "3D Gaussian Clusters"**
 
-    - **Function**: Learn instance features for each Gaussian primitive, enabling stable mapping of 2D segmentation results into 3D space.
-    - **Mechanism**: SAM is used to extract instance masks frame by frame; a temporal propagation model associates instances across views to obtain consistent IDs. Each Gaussian $G_i$ is assigned a feature $f_i$, and a 2D feature map is rendered via alpha blending: $F = \sum_i f_i \alpha_i \prod_{j<i}(1-\alpha_j)$. A classifier then predicts the instance ID: $\hat{id}(u,v) = \arg\max_k (CLS(F)_{u,v,k})$.
-    - **Design Motivation**: Establish a stable bridge from 2D to 3D—LMSeg reasons in 2D to identify the target, and the feature field directly determines the corresponding set of 3D Gaussians without complex multi-view 3D fusion.
+MLLM reasoning results naturally fall on a specific 2D view. To determine which 3D Gaussians the target corresponds to, REALM pre-learns an instance feature for each Gaussian instead of complex multi-view 3D fusion. SAM is used to extract 2D instance masks frame-by-frame, and a temporal propagation model associates masks of the same object across views, assigning consistent instance IDs as supervision. Each Gaussian $G_i$ carries a learnable feature $f_i \in \mathbb{R}^D$. During rendering, these are blended like color to produce a 2D feature map $F = \sum_i f_i \alpha_i \prod_{j<i}(1-\alpha_j)$, followed by a classifier to predict instance IDs: $\hat{id}(u,v) = \arg\max_k (CLS(F)_{u,v,k})$. Once trained, this bridge is bidirectional—a region selected by LMSeg in 2D immediately maps to the corresponding set of 3D Gaussians without any 3D post-training.
 
-2. **Global Spatial Grounding (GLSpaG-Global)**:
+**2. Global Spatial Positioning (GLSpaG-Global): Suppressing "Viewpoint Stochasticity" via Multi-view Voting**
 
-    - **Function**: Perform parallel reasoning from multiple global viewpoints and determine coarse localization of the target instance through voting aggregation.
-    - **Mechanism**: K-means clustering is applied to training camera poses to obtain $N^{cluster}$ representative viewpoints, from which $N^{global}=8$ views containing the most instances are selected as global cameras. LMSeg is called for each global view to obtain a target instance ID, and a majority vote determines the final target: $ID^q = \arg\max_{c} |\{i: ID_i^q = c\}|$. A coarse 3D segmentation mask $M^{3D}$ is generated from the 3D feature field accordingly.
-    - **Design Motivation**: Single-view reasoning is highly sensitive to viewpoint selection (Fig. 2 demonstrates large variance across 10 random views); multi-view voting significantly reduces this randomness.
+Passing a single rendered view to an MLLM yields results highly sensitive to the viewpoint. The global stage stabilizes this. First, K-means clustering is performed on training camera poses to obtain $N^{cluster}$ representative viewpoints (ensuring diversity). From these, $N^{global}=8$ views with the highest object counts are selected as global cameras (ensuring coverage). Each view runs LMSeg to produce target instance IDs, and the unique target is determined via majority voting: $ID^q = \arg\max_{c} |\{i: ID_i^q = c\}|$. The corresponding Gaussians are extracted from the 3D feature field to generate a coarse mask $M^{3D}$. Ablations confirm that the two steps—"Clustering for diversity + Top-K-ID for coverage"—are essential: single-view Qwen2.5-VL achieves only 0.78 mIoU, while global voting boosts it to 0.89.
 
-3. **Local Spatial Grounding and Refinement (GLSpaG-Local)**:
+**3. Local Spatial Positioning and Refinement (GLSpaG-Local): Refining Coarse Mask Boundaries via Close-ups**
 
-    - **Function**: Based on the global localization result, sample local cameras near the target object, obtain fine-grained 2D masks, and align the 3D mask with local masks through optimization.
-    - **Mechanism**: Viewpoints containing the target ID are selected from clustered representative cameras as local cameras. LMSeg is called for each local view to obtain a 2D mask. The 3D mask $M^{3D}$ is rendered to each local view via differentiable rasterization, and boundary precision is optimized using an L1 loss $\mathcal{L}_{local} = \|\hat{M}_i - M_i^{2D\text{-Local}}\|_1$ over 50 iterations.
-    - **Design Motivation**: The coarse mask from the global stage has imprecise boundaries; close-up local views provide finer segmentation information, and optimization-based alignment substantially improves mask quality.
+Global voting identifies the target, but boundaries from distant views are often blurry. The local stage selects representative viewpoints containing the target instance ID as close-up views. Each close-up runs LMSeg to obtain a refined 2D mask $M_i^{2D\text{-Local}}$. Differentiable rasterization renders the current 3D mask $M^{3D}$ back to these local views to obtain $\hat{M}_i$, which is aligned using an L1 loss:
+
+$$\mathcal{L}_{local} = \|\hat{M}_i - M_i^{2D\text{-Local}}\|_1$$
+
+Only the 3D mask itself is optimized for 50 iterations (3.67s). This iteration count is a "sweet spot"—10 iterations are insufficient, while 500/1000 lead to overfitting; 50 iterations push mIoU from 0.89 to 0.95.
 
 ### Loss & Training
-During feature field training, a cross-entropy loss aligns rendered instance IDs with SAM ground-truth IDs. During inference, the local refinement stage uses an L1 loss to align the 3D rendered mask with LMSeg's 2D mask, requiring only 50 optimization steps (3.67s). The overall framework requires no 3D-specific post-training; both the MLLM (Qwen-2.5-VL) and SAM are off-the-shelf pretrained models.
+During the feature field training phase, a cross-entropy loss is used to align rendered instance IDs with SAM ground-truth IDs. The local refinement during inference utilizes the L1 loss mentioned above to align 3D rendered masks with LMSeg 2D masks for 50 steps. The entire framework requires no 3D-specific post-training; both the MLLM (Qwen-2.5-VL) and SAM are off-the-shelf pre-trained models.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | REALM | Prev. SOTA | Gain |
-|---------|--------|-------|------------|------|
+|--------|------|-------|----------|------|
 | LERF | mIoU | 92.88% | 44.82% (Gaga) | +48.06% |
 | LERF | mBIoU | 90.12% | 42.37% (Gaga) | +47.75% |
 | 3D-OVS | mIoU | 93.68% | 58.46% (GAGS) | +35.22% |
@@ -81,59 +83,47 @@ During feature field training, a cross-entropy loss aligns rendered instance IDs
 | REALM3D | mIoU | 82.30% | 65.55% (GS-Group) | +16.75% |
 | REALM3D | mBIoU | 70.37% | 55.99% (GS-Group) | +14.38% |
 
-Note: All comparisons are conducted under **implicit query** conditions. Baseline methods primarily rely on CLIP keyword matching and cannot effectively handle implicit instructions that require reasoning.
+Note: Comparisons are conducted under **implicit query** conditions. Baseline methods primarily rely on CLIP keyword matching and cannot effectively process reasoning-based implicit instructions.
 
 ### Ablation Study
 
-| Configuration | mIoU | mBIoU | Notes |
-|---------------|------|-------|-------|
-| GS-Group (Baseline) | 0.32 | 0.30 | No reasoning capability |
+| Configuration | mIoU | mBIoU | Note |
+|------|------|-------|------|
+| GS-Group (Baseline) | 0.32 | 0.30 | No reasoning ability |
 | +Qwen2.5-VL | 0.78 | 0.77 | MLLM reasoning added but unstable |
-| +Global Reasoning | 0.89 | 0.88 | Multi-view voting eliminates randomness |
+| +Global Reasoning | 0.89 | 0.88 | Multi-view voting eliminates stochasticity |
 | +Local Refinement | 0.95 | 0.94 | Boundary refinement |
 
-Ablation of global camera sampling strategies (LERF Figurines):
-
-| Strategy | mIoU |
-|----------|------|
-| No K-means | 0.38 |
-| K-means + Random selection | 0.76 |
-| Fully random | 0.59 |
-| K-means + Top-K-ID (final) | 0.95 |
-
-Inference efficiency: rendering speed 354.72 FPS; total inference time <10s (global MLLM 2.53s + local MLLM 2.48s + local refinement 3.67s).
+Efficiency: Rendering speed is 354.72 FPS; total inference time <10s (Global MLLM 2.53s + Local MLLM 2.48s + Local Refinement 3.67s).
 
 ### Key Findings
-- REALM's advantage on implicit queries is substantial (mIoU exceeds baselines by 48% on LERF), as baseline methods fundamentally cannot handle reasoning-type instructions.
-- The global camera sampling strategy is critical: K-means clustering ensures viewpoint diversity, and Top-K-ID selection ensures coverage of more objects—both steps are indispensable.
-- 50 refinement steps is optimal—too few (10) yields insufficient precision, while too many (500/1000) causes overfitting and degradation.
-- Cluster count $N^{cluster}=24$ performs best; too few (2) results in insufficient coverage while too many (128) introduces noise.
+- REALM's advantage in implicit queries is significantly pronounced (mIoU >48% over baseline on LERF), as baselines fail to handle reasoning-type instructions.
+- Global camera sampling is critical: K-means clustering ensures diversity and Top-K-ID selection ensures object coverage.
+- 50 iterations for local refinement is optimal—fewer (10) lack precision, while more (500+) lead to overfitting.
+- A cluster count $N^{cluster}=24$ performs best; too few (2) provide insufficient coverage, while too many (128) introduce noise.
 
 ## Highlights & Insights
-- The approach of using 3DGS as a "viewpoint factory" is particularly elegant—MLLMs excel at understanding photorealistic 2D images, and 3DGS can render exactly such images, making the two naturally complementary.
-- The two-stage global-to-local strategy is essentially a coarse-to-fine spatial attention mechanism, progressively reducing uncertainty from coarse scene-level retrieval to fine local segmentation.
-- The voting aggregation mechanism is simple yet effective, converting the high variance of single-view reasoning into stable low-variance multi-view output.
-- The newly introduced REALM3D benchmark (100+ scenes, 1444 prompt-mask pairs, including implicit instructions) fills a gap in evaluation for 3D reasoning segmentation.
-- A single agent framework simultaneously supports multiple 3D interaction tasks: segmentation, removal, replacement, and style transfer.
+- Using 3DGS as a "view factory" is elegant—MLLMs excel at understanding photo-realistic 2D images, and 3DGS provides exactly that, making them naturally complementary.
+- The global-to-local strategy acts as a coarse-to-fine spatial attention mechanism, reducing uncertainty from full-scene retrieval to local segmentation.
+- The voting mechanism is simple yet effective, transforming high-variance single-view outputs into stable multi-view logic.
+- The REALM3D benchmark (100+ scenes, 1444 prompt-mask pairs including implicit instructions) fills a gap in evaluating 3D reasoning segmentation.
 
 ## Limitations & Future Work
-- The framework depends on 3DGS reconstruction quality—poor reconstruction (missing textures, geometric errors) degrades rendered view quality and cascades into degraded MLLM comprehension.
-- The reasoning ceiling of the MLLM determines the system's upper bound—highly complex reasoning chains or highly abstract instructions may cause failures.
-- Multi-view reasoning introduces latency (8 global views + N local views), with total time approximately 8.68s, making real-time interaction difficult.
-- Local refinement is an L1 optimization performed per view; when the number of viewpoints is limited, the 3D mask may be insufficiently precise in uncovered regions.
-- Although the REALM3D dataset is relatively large (100+ scenes), the difficulty and diversity of implicit instructions still have room for improvement.
+- Dependency on 3DGS reconstruction quality—if 3DGS produces texture loss or geometric errors, MLLM comprehension suffers.
+- MLLM reasoning limits—failure may occur for extremely complex reasoning chains or highly abstract instructions.
+- Inference latency due to multi-view processing (~8.68s total) makes real-time interaction difficult.
+- Local refinement is optimized per-view; 3D masks may be less precise in areas not covered by selected local viewpoints.
 
 ## Related Work & Insights
-- **vs. LERF/LangSplat**: These methods embed CLIP language features in radiance fields/3DGS and can only handle explicit category queries (e.g., "cup"); they cannot understand reasoning instructions such as "find me something that emits light." REALM overcomes this limitation through MLLM reasoning.
-- **vs. GS-Grouping/Gaga**: These methods group 3D instances via contrastive learning, with queries also limited to explicit vocabulary; REALM's mIoU exceeds Gaga by 48% on implicit queries.
-- **vs. ReasonGrounder**: Conceptually closest to the proposed approach, but ReasonGrounder relies on top-down views and only predicts bounding boxes, whereas REALM provides fine-grained masks without being constrained to a specific viewpoint.
-- **vs. 2D Reasoning Segmentation (LISA)**: Methods such as LISA perform reasoning segmentation in 2D but lack 3D consistency; REALM ensures 3D consistency through multi-view aggregation and the feature field.
+- **vs LERF/LangSplat**: These embed CLIP features in radiance fields/3DGS, limiting them to explicit queries ("cup"); REALM breaks this via MLLM reasoning.
+- **vs GS-Grouping/Gaga**: Based on contrastive learning for 3D instances, these are also limited to explicit vocabulary; REALM outperforms Gaga by 48% mIoU on implicit queries.
+- **vs ReasonGrounder**: Conceptually similar but relies on top-down views and bounding boxes; REALM provides fine masks from any viewpoint.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of MLLM-Agent and 3DGS is novel, and the global-to-local spatial grounding strategy is cleverly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three benchmarks, detailed ablations, efficiency analysis, and multiple downstream tasks—extremely comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clearly articulated; the viewpoint sensitivity visualization in Fig. 2 is intuitive and compelling.
-- **Value**: ⭐⭐⭐⭐ Pioneering the direction of 3D reasoning segmentation; the REALM3D benchmark offers long-term value to the community.
+- Novelty: ⭐⭐⭐⭐ Innovative combination of MLLM-Agent + 3DGS with a clever spatial positioning strategy.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three benchmarks, detailed ablations, and multiple downstream tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation with powerful visualizations of viewpoint sensitivity.
+- Value: ⭐⭐⭐⭐ Establishes the direction of 3D reasoning segmentation; the REALM3D benchmark provides long-term utility.
 
 <!-- RELATED:START -->
 
@@ -141,11 +131,11 @@ Inference efficiency: rendering speed 354.72 FPS; total inference time <10s (glo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Vinedresser3D: Towards Agentic Text-guided 3D Editing](vinedresser3d_towards_agentic_text-guided_3d_editing.md)
 - [\[CVPR 2026\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](sceneassistant_a_visual_feedback_agent_for_openvoc.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
-- [\[CVPR 2026\] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
+- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
+- [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
+- [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
 
 </div>
 

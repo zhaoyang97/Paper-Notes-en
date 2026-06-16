@@ -2,91 +2,103 @@
 title: >-
   [Paper Note] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation
 description: >-
-  [CVPR2026][Multimodal VLM][Continual Learning] This paper proposes SeGP-CL, which constructs adversarial anchors via dual-objective projected gradient descent to probe fragile regions at old–new semantic boundaries. Comb…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] SeGP-CL is proposed to probe fragile regions at old-new semantic boundaries using adversarial anchors. By combining Anchor-guided Cross-modal Geometric Distillation (ACGD) and Textual Semantic Geometry Regularization (TSGR), it effectively preserves the cross-modal semantic-geometric structure of VLMs under exemplar-fr
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Continual Learning"
-  - "Vision-Language Models"
-  - "Semantic-Geometry Preservation"
-  - "Adversarial Anchors"
-  - "Cross-Modal Distillation"
-  - "CLIP"
-  - "Exemplar-Free Replay"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
+  - CLIP
 date: 2026-05-08
-content_hash: 6078e416bf7f6e03
+content_hash: cdfff91fa5b45ab9
 ---
-
 # Continual Learning with Vision-Language Models via Semantic-Geometry Preservation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.12055](https://arxiv.org/abs/2603.12055)  
-**Code**: To be confirmed  
-**Area**: Multimodal VLM
-**Keywords**: Continual Learning, Vision-Language Models, Semantic-Geometry Preservation, Adversarial Anchors, Cross-Modal Distillation, CLIP, Exemplar-Free Replay
+**Code**: TBD  
+**Area**: Multimodal VLM  
+**Keywords**: Continual Learning, Vision-Language Models, Semantic-Geometry Preservation, Adversarial Anchors, Cross-modal Distillation, CLIP, Exemplar-free
 
 ## TL;DR
 
-This paper proposes SeGP-CL, which constructs adversarial anchors via dual-objective projected gradient descent to probe fragile regions at old–new semantic boundaries. Combined with Anchor-guided Cross-modal Geometry Distillation (ACGD) and Text Semantic Geometry Regularization (TSGR), SeGP-CL effectively preserves the cross-modal semantic-geometric structure of VLMs under exemplar-free conditions, substantially alleviating catastrophic forgetting.
+SeGP-CL is proposed to probe fragile regions at old-new semantic boundaries using adversarial anchors. By combining Anchor-guided Cross-modal Geometric Distillation (ACGD) and Textual Semantic Geometry Regularization (TSGR), it effectively preserves the cross-modal semantic-geometric structure of VLMs under exemplar-free conditions, significantly mitigating catastrophic forgetting.
 
 ## Background & Motivation
 
-**Background**: Pre-trained vision-language models (e.g., CLIP) suffer from catastrophic forgetting in continual learning. Existing methods lack explicit mechanisms to preserve cross-modal semantic-geometric structure during adaptation to new tasks, causing geometric distortion induced by new-task supervision signals.
+**Key Challenge of VLM Continual Learning**: Pre-trained vision-language models (e.g., CLIP) suffer from catastrophic forgetting during continual learning. Existing methods fail to explicitly preserve the cross-modal semantic-geometric structure when adapting to new tasks, leading to geometric distortion induced by new task supervision signals.
 
-**Limitations of Prior Work**: A key observation of the authors is that harmful representational drift is not uniformly distributed across the embedding space but is concentrated at old–new semantic boundaries. In these regions, new samples share visual patterns with old classes and are prone to being "reinterpreted" by new textual semantics, thereby disrupting established visual-textual alignment.
+**Vulnerability at Semantic Boundaries**: The authors' key observation is that harmful representation drift is not uniformly distributed in the embedding space but is concentrated at the intersections of old and new semantics. In these regions, new samples share visual patterns with old classes and are easily "reinterpreted" by new textual semantics, thereby destroying established vision-text alignment.
 
-**Key Challenge**: Conservative strategies that freeze backbones and employ task-specific components (e.g., L2P, DualPrompt, PROOF) over-isolate knowledge and limit forward transfer; parameter-efficient adaptation methods (LoRA/Adapter) lack targeted modeling of cross-modal stability; approaches leveraging textual priors (DesCLIP, CLG-CBM) still do not adequately address cross-modal geometry preservation under exemplar-free conditions. Methods using reference datasets (ZSCL, DualTeacher) introduce non-trivial data overhead and apply insufficiently precise constraints that fail to focus on the boundary regions most susceptible to distortion. Furthermore, the modality gap in VLMs means that textual semantics alone cannot fully represent the visual space, necessitating complementary reasoning with raw visual cues. Finally, VLMs' sensitivity to small perturbations can be exploited constructively—adversarial perturbations can expose and cover the most fragile neighborhoods in the old geometric structure, providing an efficient probing mechanism for geometry preservation without exemplar replay.
+**Limitations of Prior Work**: Conservative strategies using frozen backbones and task-specific components (L2P, DualPrompt, PROOF, etc.) excessively isolate knowledge and limit forward transfer. Parameter-efficient fine-tuning (PEFT) methods like LoRA/Adapter lack targeted modeling for cross-modal stability. Methods leveraging textual priors (DesCLIP, CLG-CBM) still pay insufficient attention to cross-modal geometric preservation under exemplar-free conditions.
+
+**Limitations of Reference Data Schemes**: Some methods (ZSCL, DualTeacher) use additional reference datasets to stabilize geometric structures, but they introduce non-trivial data overhead and the constraints are not precise enough—they cannot concentrate constraints on the boundary regions most prone to distortion.
+
+**Key Challenge (Modality Gap)**: The vision and text embedding spaces in VLMs do not correspond perfectly (modality gap). Relying solely on textual semantics cannot fully represent the visual space; complementary reasoning combined with original visual cues is required.
+
+**Key Insight (Constructive Use of Adversarial Attacks)**: VLMs are sensitive to small perturbations, which can be utilized constructively. Adversarial perturbations can expose and cover the most fragile neighborhoods in the old geometric structure, providing an efficient probing mechanism for geometric preservation without exemplars.
 
 ## Method
 
-### Overall Architecture (SeGP-CL)
+### Overall Architecture
 
-SeGP-CL is a three-phase exemplar-free continual learning framework:
+SeGP-CL aims to solve the problem where new task supervision distorts established cross-modal semantic geometry in VLMs like CLIP, causing catastrophic forgetting. The authors found that this distortion is concentrated at old-new semantic boundaries. Thus, a three-stage exemplar-free framework is designed: **Pre-training**, freeze the teacher snapshot $(F^T, G^T)$ and generate a set of adversarial anchors $\mathcal{A}_t$ from new task data using Dual-objective Projected Gradient Descent (DPGD) to precisely locate fragile boundaries; **During training**, optimize cross-entropy on new data while performing ACGD distillation on anchors to protect cross-modal structures and employing TSGR to stabilize the textual semantic reference frame; **Post-training**, estimate visual space drift using anchors to migrate old class prototypes and fuse cross-modal and visual cues via dual-path inference.
 
-- **Pre-training**: Freeze teacher snapshots $(F^T, G^T)$; construct a set of adversarial anchors $\mathcal{A}_t$ from new-task data via Dual-objective Projected Gradient Descent (DPGD) to probe fragile regions at old–new semantic boundaries.
-- **During training**: Optimize the cross-entropy loss on new-task data while performing ACGD distillation on anchors to preserve cross-modal structure, and applying TSGR to stabilize the textual semantic reference frame.
-- **Post-training**: Use anchors to estimate drift in the raw visual space, transfer old-class visual prototypes, and fuse cross-modal and visual cues via dual-path inference.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["New Task Data + Frozen Teacher Snapshot"]
+    subgraph S1["Pre-training: DPGD Adversarial Anchor Construction"]
+        direction TB
+        A1["Select top-K seeds by Teacher cross-modal similarity Q"] --> A2["Dual-objective PGD: Textual target towards old semantics<br/>+ Visual target towards old prototypes"]
+        A2 --> A3["Adversarial Anchor Set"]
+    end
+    subgraph S2["During Training: Geometry Preservation Distillation"]
+        direction TB
+        B1["ACGD Cross-modal Geometric Distillation<br/>Align Teacher-Student old class distributions only on anchors"]
+        B2["TSGR Textual Semantic Geometry Regularization<br/>Stabilize text structure via k-NN subgraph matching"]
+    end
+    S3["Post-training: Prototype Migration & Dual-path Inference<br/>Estimate drift via anchor displacement → Migrate visual prototypes → CLIP + Visual dual-path fusion"]
+    CE["New Data Cross-Entropy L_cls"]
+    IN --> S1
+    S1 -->|Adversarial Anchors| S2
+    CE --> S2
+    S2 --> S3
+    S3 --> OUT["Robust Predictions across all seen classes"]
+```
 
-### Key Design 1: Dual-objective Projected Gradient Descent (DPGD) for Adversarial Anchor Construction
+### Key Designs
 
-**Core Idea**: Seed samples from new-task data with the highest semantic affinity to old classes are selected and pushed toward old-class semantic regions via adversarial perturbation.
+**1. DPGD for Adversarial Anchors: Turning Vulnerability into Boundary Probes**
 
-1. **Seed selection**: For each old class $c$, rank new-task samples by the teacher model's cross-modal similarity $Q(x, c) = \bar{v}^T(x)^\top u_c^T$ and select the top-$K_{\text{seed}}$ samples as seeds.
-2. **Dual-objective optimization**: The textual objective pushes perturbed samples toward old-class text embeddings ($\mathcal{L}_{\text{adv}}$); the visual objective pulls them toward old-class raw visual prototypes ($\mathcal{L}_{\text{v-adv}}$), correcting instabilities caused by the modality gap.
-3. **PGD iterations**: Run $K_{\text{adv}}=10$ signed-gradient iterations under $\ell_\infty$ constraints with step size $\gamma = 1.5 \times 10^{-3}$:
+The hardest part of exemplar-free learning is knowing where forgetting is most likely to occur without storing old data. DPGD exploits VLM sensitivity to perturbations to actively push new task samples into old class semantic regions to expose fragile neighborhoods. First, for each old class $c$, new samples are ranked by teacher cross-modal similarity $Q(x, c) = \bar{v}^T(x)^\top u_c^T$, and the top-$K_{\text{seed}}$ samples are selected as seeds. Then, dual-objective optimization is performed: the textual objective pushes perturbed samples toward old class text embeddings ($\mathcal{L}_{\text{adv}}$), and the visual objective pulls them toward original old class visual prototypes ($\mathcal{L}_{\text{v-adv}}$); the latter specifically corrects instabilities caused by the modality gap. Finally, $K_{\text{adv}}=10$ iterations of signed gradient descent are run under $\ell_\infty$ constraints with step size $\gamma = 1.5 \times 10^{-3}$:
 
 $$\delta^{(k+1)} = \Pi_{\|\delta\|_\infty \leq \epsilon}\big(\delta^{(k)} - \gamma \cdot \text{sign}(\nabla_\delta \mathcal{L}'_{\text{adv}})\big)$$
 
-### Key Design 2: Anchor-guided Cross-modal Geometry Distillation (ACGD)
+**2. ACGD: Aligning Distributions Only on Fragile Anchors**
 
-Align the teacher and student old-class probability distributions on adversarial anchors to constrain cross-modal structure at fragile boundary regions:
+Once fragile boundaries are located, the student's old class probability distribution is aligned with the teacher's at these adversarial anchors to prevent forgetting regions from being rewritten by new semantics:
 
 $$\mathcal{L}_{\text{ACGD}} = \tau_A^2 \cdot \mathbb{E}_{x^{adv} \sim \mathcal{A}_t}\left[\text{KL}(\pi_T^{\tau_A}(\cdot | x^{adv}) \| \pi_S^{\tau_A}(\cdot | x^{adv}))\right]$$
 
-where $\tau_A = 20$ is the distillation temperature and both teacher/student distributions are computed over the old-class set $\mathcal{C}_{<t}$.
+The distillation temperature $\tau_A = 20$, and both teacher and student distributions are computed over the old class set $\mathcal{C}_{<t}$. Compared to distilling on reference or new task data, constraining only the anchor neighborhoods most prone to distortion is much more precise.
 
-### Key Design 3: Text Semantic Geometry Regularization (TSGR)
+**3. TSGR: Maintaining Relative Structure Between Textual Concepts**
 
-Cross-task drift in the relative geometric structure among text concepts implicitly re-parameterizes old-class semantics. TSGR constrains the textual neighborhood structure of new classes via $k$-NN subgraph matching:
+If the relative geometry between textual concepts drifts across tasks, it implicitly re-parameterizes old class semantics. TSGR uses $k$-NN subgraph matching to lock this structure. A reference subgraph is built using the pre-trained text encoder $G^0$ reset by LoRA. For each new class $c \in \mathcal{C}_t$, its $k=10$ nearest neighbors are found, and the teacher-student subgraphs are matched. Only the subgraphs of new class roots are constrained, resulting in a complexity of $\mathcal{O}(|\mathcal{C}_t| \cdot k)$, which is much lower than global constraints.
 
-- A reference subgraph is constructed using the LoRA-reset pre-trained text encoder $G^0$.
-- For each new class $c \in \mathcal{C}_t$, its $k=10$ nearest neighbors are identified and teacher–student subgraph neighborhoods are matched.
-- Only subgraphs rooted at new classes are constrained, yielding complexity $\mathcal{O}(|\mathcal{C}_t| \cdot k)$, far below global constraints.
+**4. Anchor-driven Prototype Migration & Dual-path Inference: Compensating Visual Drift**
 
-### Key Design 4: Anchor-driven Prototype Transfer and Dual-path Inference
-
-- **Prototype transfer**: The raw visual feature displacement $d_t(x^{adv})$ of anchors before and after training is used to estimate a weighted drift direction $\Delta_{t,c}$ for each old class, with magnitude modulated by anchor-to-prototype proximity, enabling old-class prototype transfer.
-- **Dual-path inference**: CLIP cross-modal scores and visual prototype scores are fused as $\ell_t(x, c) = s_t^{\text{clip}}(x, c) + \beta \cdot s_t^v(x, c)$, with $\beta=0.5$.
+Textual semantics alone cannot fully represent the visual space (modality gap), so the visual side must be calibrated after training. Prototype migration utilizes the visual feature displacement $d_t(x^{adv})$ of anchors before and after training to estimate the weighted drift direction $\Delta_{t,c}$ for each old class, modulating the magnitude based on anchor-prototype proximity. During inference, dual-path fusion combines CLIP cross-modal scores with visual prototype scores $\ell_t(x, c) = s_t^{\text{clip}}(x, c) + \beta \cdot s_t^v(x, c)$, with $\beta=0.5$, allowing the two paths to complement each other.
 
 ### Loss & Training
 
 $$\mathcal{L}_{\text{CL}}^t = \mathcal{L}_{\text{cls}} + \lambda_{\text{ACGD}} \cdot \mathcal{L}_{\text{ACGD}} + \lambda_{\text{GR}} \cdot \mathcal{L}_{\text{GR}}$$
 
-where $\lambda_{\text{ACGD}}=5$ and $\lambda_{\text{GR}}=1$; only the LoRA up-projection matrix B is updated.
+Where $\lambda_{\text{ACGD}}=5$, $\lambda_{\text{GR}}=1$, and only the LoRA up-projection matrix B is updated.
 
 ## Key Experimental Results
 
-### Main Results: Comparison with SOTA on Five Benchmarks (CLIP ViT-B/16)
+### Main Results: SOTA Comparison on Five Benchmarks (CLIP ViT-B/16)
 
 | Method | CIFAR100 Avg/Last | ImageNet-R Avg/Last | ImageNet-Sub Avg/Last | CUB-200 Avg/Last | UCF Avg/Last |
 |---|---|---|---|---|---|
@@ -95,9 +107,9 @@ where $\lambda_{\text{ACGD}}=5$ and $\lambda_{\text{GR}}=1$; only the LoRA up-pr
 | ENGINE (ICCV'25) | 82.1/73.1 | 84.4/77.0 | – | 83.9/76.2 | 95.0/90.1 |
 | **SeGP-CL (Ours)** | **89.8/84.6** | **88.9/84.8** | **89.9/80.5** | **85.4/80.1** | **95.9/92.8** |
 
-SeGP-CL achieves state-of-the-art results on all five benchmarks. CIFAR100 Last improves by +4.0 over MG-CLIP; CUB-200 Last improves by +3.9 over RAPF.
+SeGP-CL achieves SOTA on all five benchmarks, with CIFAR100 Last improving by +4.0 over MG-CLIP and CUB-200 Last improving by +3.9 over RAPF.
 
-**Transfer and Forgetting Metrics (CLIP branch only, CIFAR100)**:
+### Transfer & Forgetting Metrics (CLIP branch only, CIFAR100)
 
 | Method | FWT ↑ | BWT ↑ | Forgetting ↓ |
 |---|---|---|---|
@@ -105,11 +117,11 @@ SeGP-CL achieves state-of-the-art results on all five benchmarks. CIFAR100 Last 
 | DesCLIP | 68.7 | -2.1 | 6.5 |
 | **SeGP-CL** | **72.3** | **-0.43** | **0.9** |
 
-SeGP-CL achieves a Forgetting of only 0.9, far below MG-CLIP's 4.9, with BWT near zero (−0.43), indicating virtually no backward forgetting.
+SeGP-CL's Forgetting is only 0.9, much lower than MG-CLIP's 4.9. BWT is near zero (-0.43), indicating almost no backward forgetting.
 
 ### Ablation Study
 
-| ACGD | TSGR | Prototype Transfer | Visual Branch | CIFAR100 Last | Forgetting ↓ |
+| ACGD | TSGR | Proto-Migration | Visual Path | CIFAR100 Last | Forgetting ↓ |
 |---|---|---|---|---|---|
 | ✗ | ✗ | ✗ | ✗ | 77.0 | 10.9 |
 | ✓ | ✗ | ✗ | ✗ | 81.7 | 5.8 |
@@ -117,44 +129,44 @@ SeGP-CL achieves a Forgetting of only 0.9, far below MG-CLIP's 4.9, with BWT nea
 | ✓ | ✓ | ✓ | ✗ | 83.2 | 4.3 |
 | ✓ | ✓ | ✓ | ✓ | 84.6 | 4.5 |
 
-ACGD contributes the most (Last +4.7, Forgetting −5.1); TSGR, prototype transfer, and the visual branch provide incremental improvements.
+ACGD contributes the most (Last +4.7, Forgetting -5.1), with TSGR, prototype migration, and the visual branch providing incremental improvements.
 
 ### Key Findings
 
-- **Adversarial anchors vs. other distillation sources**: Anchor-based distillation (+5.8 Last) substantially outperforms reference data (ZSCL +1.9), synthetic data (GIFT +2.7), and new-task data (−0.5).
-- **Cross-scenario generalization**: After training on CIFAR100, SeGP-CL maintains near-zero-shot generalization on Food101/Oxford-Pets/ImageNet-1K, largely attributable to TSGR.
-- **Parameter efficiency**: With LoRA rank=32, only 3.44M trainable parameters are used (vs. MoE-Adapter's 13.35M), with an additional overhead of only ~79 ms per iteration.
-- **DPGD iterations**: 10 iterations suffice for stable convergence; the textual objective converges more slowly than the visual objective, corroborating the modality gap.
+- **Adversarial Anchors vs Other Distillation Sources**: Anchor distillation (+5.8 Last) far outperforms reference data (ZSCL +1.9), synthetic data (GIFT +2.7), and new task data (-0.5).
+- **Cross-scenario Generalization**: After training on CIFAR100, the model maintains near zero-shot generalization on Food101/Oxford-Pets/ImageNet-1K (thanks to TSGR).
+- **Parameter Efficiency**: With LoRA rank=32, there are only 3.44M trainable parameters (vs 13.35M for MoE-Adapter), with an overhead of only ~79ms per iteration.
+- **DPGD Iterations**: 10 iterations are sufficient for stable convergence. The textual objective converges slower than the visual objective (confirming the modality gap).
 
 ## Highlights & Insights
 
-- **Precise problem identification**: The paper is the first to systematically demonstrate that cross-modal geometric distortion in VLM continual learning concentrates at old–new semantic boundaries, supported by empirical evidence using JSD measurements.
-- **Constructive use of adversarial attacks**: The VLM's adversarial vulnerability is cleverly repurposed as a tool for locating fragile regions, enabling boundary neighborhood probing without storing old data.
-- **Dual-objective design addresses modality gap**: The visual anchoring term in DPGD compensates for the modality gap, preventing pure textual objectives from producing unstable anchors.
-- **Lightweight and efficient**: TSGR constrains only the $k$-NN subgraphs of new classes, keeping parameter overhead small and per-iteration time cost manageable.
-- **Unified theory and experiments**: The argument is logically complete, from first-order optimality of adversarial optimization to comprehensive state-of-the-art results across five benchmarks.
+- **Precise Problem Localization**: Systematically reveals for the first time that cross-modal geometric distortion in VLM continual learning is concentrated at old-new semantic boundaries, provided with empirical JSD measurements.
+- **Constructive Use of Adversarial Attacks**: Ingeniously transforms the adversarial vulnerability of VLMs into a tool for locating fragile regions, probing boundary neighborhoods without storing old data.
+- **Dual-objective Design for Modality Gap**: The visual anchoring term in DPGD compensates for the modality gap, preventing unstable anchors from being generated by pure textual objectives.
+- **Lightweight and Efficient**: TSGR only constrains $k$-NN subgraphs of new classes, resulting in low parameter overhead and controllable additional computation time per iteration.
+- **Unified Theory and Experiment**: Complete logical demonstration ranging from first-order optimality of adversarial optimization to comprehensive SOTA across five benchmarks.
 
 ## Limitations & Future Work
 
-- Adversarial anchor quality depends on hyperparameters such as the $\ell_\infty$ budget and iteration count, which may require tuning across datasets.
-- TSGR only constrains the textual neighborhood subgraph of new classes and cannot detect drift in inter-old-class textual relationships.
-- Prototype transfer assumes that feature drift on anchors is a reliable proxy for old-class drift; this assumption may break down when semantic distances between new and old classes are large.
-- Evaluation is limited to CLIP ViT-B/16; larger backbones (e.g., ViT-L) and other VLMs (e.g., SigLIP, EVA-CLIP) remain untested.
-- The fusion coefficient $\beta$ in dual-path inference is fixed; adaptive fusion strategies are not explored.
+- The quality of adversarial anchors depends on hyperparameters like $\ell_\infty$ budget and iteration count, which may require tuning for different datasets.
+- TSGR only constrains the textual neighborhood subgraphs of new classes; it cannot detect if textual relationships between old classes drift.
+- Prototype migration assumes that the feature drift of anchors serves as a reliable proxy for old class drift, an assumption that might fail if the semantic gap between new and old classes is too large.
+- Validated only on CLIP ViT-B/16; larger backbones (e.g., ViT-L) or other VLMs (e.g., SigLIP, EVA-CLIP) have not been tested.
+- The fusion coefficient $\beta$ for dual-path inference is fixed; adaptive fusion strategies were not explored.
 
 ## Related Work & Insights
 
-- **VLM continual learning**: Contrasted with MG-CLIP (modality gap preservation), ZSCL/DualTeacher (reference data distillation), and ENGINE/RAPF (task-specific components); SeGP-CL requires no extra data and precisely constrains fragile regions.
-- **Cross-modal distillation**: SGCL distills semantic pseudo-label reference distributions on new-task data, but is less precise than adversarial anchors.
-- **Synthetic data**: GIFT synthesizes old-class images via Stable Diffusion for distillation, but domain gaps limit effectiveness.
-- **Adversarial robustness**: The PGD attack framework is adopted, but the objective shifts from "attacking" to "probing fragile neighborhoods."
+- **VLM Continual Learning**: Contrasts with MG-CLIP (maintaining modality gap), ZSCL/DualTeacher (reference data distillation), and ENGINE/RAPF (task-specific components). SeGP-CL requires no extra data and precisely constrains fragile regions.
+- **Cross-modal Distillation**: SGCL distills semantic pseudo-label reference distributions on new task data but is less precise than adversarial anchors.
+- **Synthetic Data**: GIFT uses Stable Diffusion to synthesize old class images for distillation, but domain gaps limit its effectiveness.
+- **Adversarial Robustness**: Utilizes the PGD attack framework, but the goal is shifted from "attacking" to "probing fragile neighborhoods."
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — The idea of using adversarial anchors to probe semantic boundaries is highly novel, repurposing an attack mechanism as a defense tool.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive state-of-the-art results across five benchmarks, with detailed comparisons of distillation strategies, ablations, and generalization analyses.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical derivations are rigorous, though the dense notation raises the reading barrier.
-- Value: ⭐⭐⭐⭐⭐ — Establishes a new geometry-preservation paradigm for VLM continual learning, achieving substantial gains over prior work under exemplar-free conditions.
+- Novelty: ⭐⭐⭐⭐⭐ — The idea of using adversarial anchors to probe semantic boundaries is very novel, turning an attack into a defensive tool.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive SOTA across five benchmarks, including detailed distillation comparisons, ablations, and generalization analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Rigorous formula derivations, but many symbols make the reading threshold somewhat high.
+- Value: ⭐⭐⭐⭐⭐ — Provides a new geometric preservation paradigm for VLM continual learning, significantly outperforming predecessors under exemplar-free conditions.
 
 <!-- RELATED:START -->
 
@@ -162,11 +174,11 @@ ACGD contributes the most (Last +4.7, Forgetting −5.1); TSGR, prototype transf
 
 ## Related Papers
 
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 - [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](../../AAAI2026/multimodal_vlm/branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
 - [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](../../AAAI2026/multimodal_vlm/harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
-- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
-- [\[ICCV 2025\] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models](../../ICCV2025/multimodal_vlm/instruction-grounded_visual_projectors_for_continual_learning_of_generative_visi.md)
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
 
 </div>
 

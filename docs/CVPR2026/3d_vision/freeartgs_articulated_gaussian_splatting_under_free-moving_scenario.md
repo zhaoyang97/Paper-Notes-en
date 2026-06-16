@@ -2,78 +2,102 @@
 title: >-
   [Paper Note] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 description: >-
-  [CVPR 2026][3D Vision][Articulated object reconstruction] FreeArtGS addresses articulated object reconstruction from monocular RGB-D video under a *free-moving scenario*…
+  [CVPR 2026][3D Vision][Paper Note] FreeArtGS proposes a method for reconstructing articulated objects from monocular RGB-D videos in "free-moving scenarios" (where object pose and joint states vary simultaneously). By utilizing a three-stage pipeline comprising motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization, i
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Articulated object reconstruction"
-  - "Gaussian splatting"
-  - "free-moving scenario"
-  - "joint estimation"
-  - "motion segmentation"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 7a2abe539425da09
+content_hash: 665e10e18dd15049
 ---
-
 # FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22102](https://arxiv.org/abs/2603.22102)  
 **Code**: [https://freeartgs.github.io/](https://freeartgs.github.io/)  
-**Area**: 3D Vision
-**Keywords**: Articulated object reconstruction, Gaussian splatting, free-moving scenario, joint estimation, motion segmentation
+**Area**: 3D Vision  
+**Keywords**: Articulated Object Reconstruction, Gaussian Splatting, Free-Moving, Joint Estimation, Motion Segmentation
 
 ## TL;DR
-FreeArtGS addresses articulated object reconstruction from monocular RGB-D video under a *free-moving scenario*, where both object pose and joint state change arbitrarily and simultaneously. The proposed three-stage pipeline — motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization — substantially outperforms all baselines on the newly introduced FreeArt-21 benchmark and existing datasets.
+FreeArtGS proposes a method for reconstructing articulated objects from monocular RGB-D videos in "free-moving scenarios" (where object pose and joint states vary simultaneously). By utilizing a three-stage pipeline comprising motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization, it significantly outperforms all baselines on the self-produced FreeArt-21 benchmark and existing datasets.
 
 ## Background & Motivation
 
-1. **Background**: Articulated object reconstruction is a fundamental problem in 3D vision with significant implications for augmented reality and robot simulation. Existing approaches fall into three categories: (a) single-image generation via foundation models, with limited generalizability; (b) reconstruction from two articulated states captured by fixed multi-view cameras, requiring axis alignment across states; and (c) monocular video reconstruction under the assumption of a stationary base part.
-2. **Limitations of Prior Work**: Single-image generation methods lack post-optimization and generalize poorly; multi-view dual-state methods are limited in practicality due to the difficulty of axis alignment; monocular video methods rely on the "static base" assumption, which is frequently violated in real-world manipulation (e.g., both parts of scissors or pliers move simultaneously), and coverage remains incomplete.
-3. **Key Challenge**: In practice, articulated objects are often freely manipulated — object pose and joint state change concurrently with no fixed reference part. Existing methods are fundamentally incapable of handling this most natural usage scenario.
-4. **Goal**: To reconstruct the complete appearance, geometry, and joint parameters of articulated objects from monocular RGB-D video under the free-moving scenario.
-5. **Key Insight**: Combining dense 2D point tracking priors with 3DGS optimization — point tracking provides motion cues to drive part segmentation, while optimization yields high-precision final reconstruction.
-6. **Core Idea**: Point tracking and feature priors are used for free-motion part segmentation; relative transformation sequences are used to estimate joint type and axis; end-to-end 3DGS optimization jointly refines appearance, geometry, and joint parameters.
+1. **Background**: Articulated object reconstruction is a critical problem in 3D vision with significant value for augmented reality and robotic simulation. Existing methods generally follow three directions: (a) foundation model-based single-image generation, which lacks generalization; (b) reconstruction from fixed multi-view cameras across two articulated states, requiring axis alignment; (c) reconstruction from monocular video, assuming a fixed base part.
+2. **Limitations of Prior Work**: Single-image generation lacks post-optimization and generalizes poorly; multi-view dual-state methods suffer from difficult axis alignment, limiting practicality; monocular video methods rely on a "static base" assumption that is frequently violated in practice (e.g., both parts of scissors or pliers move during use) and suffer from incomplete coverage.
+3. **Key Challenge**: In real-world scenarios, articulated objects are often manipulated freely—object poses and joint states change simultaneously without a fixed base reference. Existing methods cannot handle this natural usage scenario.
+4. **Goal** To reconstruct the complete appearance, geometry, and joint parameters of articulated objects from monocular RGB-D video alone under free-moving scenarios.
+5. **Key Insight**: Combine dense 2D point tracking priors with 3DGS optimization—using point tracking to provide motion cues for part segmentation and optimization for high-precision final reconstruction.
+6. **Core Idea**: Use point tracking and feature priors for free-moving part segmentation, relative transformation estimation for joint type and axis identification, and end-to-end 3DGS optimization to jointly refine appearance, geometry, and joints.
 
 ## Method
 
 ### Overall Architecture
-**Input**: Monocular RGB-D video with foreground masks (generated by SAM). **Output**: Canonical Gaussians for two parts $\mathcal{G}_c^0, \mathcal{G}_c^1$ and joint parameters $\mathcal{J}$. The pipeline consists of three modules: (1) Free-moving part segmentation — decomposing the articulated object into two rigid parts from motion; (2) Joint estimation — inferring joint type and axis from per-part camera transformations; (3) End-to-end optimization — jointly optimizing appearance, geometry, camera poses, and articulation parameters.
+FreeArtGS addresses a setting previously avoided: when a person manipulates an object like scissors or pliers while recording, the global pose and joint state both vary throughout the video, and no part acts as a fixed reference. The input is a monocular RGB-D video and foreground masks generated by SAM, while the output consists of canonical Gaussians $\mathcal{G}_c^0, \mathcal{G}_c^1$ for the two parts and the connecting joint parameters $\mathcal{J}$.
+
+The pipeline follows a "coarse-to-fine" three-step approach: first, the object is partitioned into two rigid parts based on motion differences; second, joint types (revolute or prismatic) and axes are inferred from the relative motion between parts; finally, appearance, geometry, camera poses, and joint parameters are refined together via differentiable rendering to eliminate errors from the initial steps. This logic utilizes off-the-shelf models (point tracking, features, pose) for a noisy but reasonable initialization, while optimization ensures convergence to high precision.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Monocular RGB-D Video + SAM Masks"]
+    subgraph SEG["Free-Moving Part Segmentation"]
+        direction TB
+        S1["AllTracker 2D tracks + Depth lifting to 3D tracks<br/>DINOv3 features initialize soft weights w"]
+        S2["8-frame sliding window optimization of T0/T1 and weights<br/>Huber loss + Entropy/Feature-smooth/BCE reg"]
+        S1 --> S2
+    end
+    subgraph JOINT["Joint Estimation"]
+        direction TB
+        J1["Per-frame poses + Part 3DGS in unified coordinate system"]
+        J2["Adjacent frame relative transforms T(i→i+1), 2σ filtering"]
+        J3["Small linear rotation → Prismatic (PCA for direction)<br/>Otherwise → Revolute (Closed-form axis solution)"]
+        J1 --> J2 --> J3
+    end
+    E2E["End-to-End Optimization & Blended Rendering<br/>Refine appearance/geometry/pose/joint via alpha blending<br/>RGB+Depth+Mask supervision"]
+    OUT["Output: Canonical Gaussians G0/G1 + Joint parameters J"]
+    IN --> SEG --> JOINT --> E2E --> OUT
+```
 
 ### Key Designs
 
-1. **Free-moving Part Segmentation**:
+**1. Free-Moving Part Segmentation: Partitioning by "Who Moves Differently"**
 
-    - **Function**: Decompose the articulated object in free-moving video into two rigid parts.
-    - **Mechanism**: The core assumption is that within a short temporal window, each part's motion can be approximated as an independent rigid-body transformation. AllTracker provides pixel-level 2D trajectories, which are lifted to 3D using depth. DINOv3 features initialize per-point part weights $w_{t,p} \in [0,1]$. Within a sliding window of 8 frames, two rigid-body transformations $T^0, T^1$ and soft part weights are jointly optimized. The main loss is a Huber loss measuring per-point relative motion error as a proxy for part assignment. Key regularization terms include: an entropy loss encouraging near-binary assignments, a feature-space neighbor-graph smoothness loss for spatial consistency, and a BCE loss against initialization weights to prevent deviation from semantic priors.
-    - **Design Motivation**: No part is assumed stationary; segmentation is driven purely by differential relative motion. Feature-space regularization prevents unstable point tracking results from leading to degenerate solutions.
+Previous monocular methods assume a static base part as an anchor, but this fails when both parts move during manipulation. FreeArtGS assumes that within a short time window, the motion of each rigid part can be approximated as an independent rigid transform. Segmentation thus becomes determining which transform each point follows. Specifically, pixel-level 2D tracks from AllTracker are lifted to 3D using depth, and DINOv3 features initialize a soft part weight $w_{t,p} \in [0,1]$ for each point. Within an 8-frame sliding window, two rigid transforms $T^0, T^1$ and the soft weights are optimized, using a Huber loss to measure which transform better explains each point's relative motion.
 
-2. **Joint Estimation**:
+To handle point tracking noise, three regularizations are applied: an entropy loss to push soft weights toward binary values (0/1), a smoothness loss on the feature-space neighbor graph to ensure consistency for spatially and semantically similar points, and a BCE loss against initial weights to maintain alignment with DINOv3 semantic priors.
 
-    - **Function**: Infer joint type (revolute/prismatic) and axis parameters from the sequence of part transformations.
-    - **Mechanism**: An off-the-shelf pose estimator calibrates the per-frame transformation of each part to the camera $E_i^k \in SE(3)$; each part's 3DGS is reconstructed separately with pose optimization. Both parts are registered to a unified coordinate system using the part with minimal motion as reference. Joint type is determined from the relative transformation sequence $\{T_i\}$ — small rotational span combined with strong linearity indicates a prismatic joint; otherwise, a revolute joint is assumed. For revolute joints, the rotation axis is obtained in closed form from pairwise relative rotations; for prismatic joints, PCA yields the translation axis. Two robustness measures are applied: (a) pairwise relative transformations between adjacent frames $T_{i \to (i+1)}$ are used instead of absolute transformations; (b) outlier transformations are filtered using a $2\sigma$ threshold.
-    - **Design Motivation**: Absolute transformations $T_i$ are highly sensitive to point tracking noise; pairwise relative transformations are more robust. Outlier filtering further improves stability.
+**2. Joint Estimation: Using Relative Transforms to Mitigate Track Noise**
 
-3. **End-to-end Optimization**:
+After segmentation, joint parameters are identified. Off-the-shelf pose estimators provide part-to-camera transforms $E_i^k \in SE(3)$ for each frame. Parts are reconstructed as 3DGS, poses are refined, and both parts are unified into a single coordinate system. From the sequence of relative transforms $\{T_i\}$, the joint is classified: prismatic if the rotation span is small and linear, otherwise revolute. Revolute axes are computed using closed-form solutions from paired relative rotations, while prismatic directions use PCA.
 
-    - **Function**: Jointly refine appearance, geometry, camera poses, and articulation parameters.
-    - **Mechanism**: Joint parameters are parameterized as revolute ($u, o, \theta_i$) or prismatic ($u, d_i$). Blended Rendering is introduced: after applying rigid-body transformations to canonical Gaussians, alpha blending is performed according to part weights $w \in [0,1]$: $\mathcal{G}_i = w(\mathcal{G}_c \circ I) \cup (1-w)(\mathcal{G}_c \circ \mathcal{J}_i)$. Supervision includes RGB (L1 + SSIM), depth (L1), and foreground mask (L1). The total loss is $\mathcal{L}_{E2E} = \sum_i (\mathcal{L}_{rgb}^i + \lambda_{depth}\mathcal{L}_{depth}^i + \lambda_{mask}\mathcal{L}_{mask}^i)$.
-    - **Design Motivation**: The first two modules provide coarse but reasonable initialization; end-to-end optimization leverages differentiable rendering to tightly couple appearance and kinematics, correcting small errors in the coarse joint estimates. Blended Rendering allows part assignments to be refined at fine granularity during optimization.
+Robustness is achieved by: (1) using adjacent-frame relative transforms $T_{i \to (i+1)}$ instead of absolute transforms $T_i$ to avoid cumulative noise across the trajectory; (2) applying a $2\sigma$ threshold to filter outlier transforms that might contaminate the closed-form solution.
+
+**3. End-to-End Optimization and Blended Rendering: Refining via Differentiable Rendering**
+
+The third stage jointly refines all variables: appearance, geometry, camera poses, and joint parameters. Joints are parameterized as $(u, o, \theta_i)$ for revolute and $(u, d_i)$ for prismatic. A critical technique is Blended Rendering: after applying rigid transforms to canonical Gaussians, they are rendered using alpha blending based on soft weights $w \in [0,1]$,
+
+$$\mathcal{G}_i = w(\mathcal{G}_c \circ I) \cup (1-w)(\mathcal{G}_c \circ \mathcal{J}_i)$$
+
+This allows part assignments to be adjust at a fine-grained level during optimization. Supervision comes from RGB ($L_1$+SSIM), Depth ($L_1$), and foreground masks ($L_1$):
+
+$$\mathcal{L}_{E2E} = \sum_i \left(\mathcal{L}_{rgb}^i + \lambda_{depth}\mathcal{L}_{depth}^i + \lambda_{mask}\mathcal{L}_{mask}^i\right)$$
+
+Differentiable rendering couples appearance and kinematics; photometric consistency forces joint parameters toward correct values.
 
 ### Loss & Training
-Part segmentation stage: $\mathcal{L} = 200\mathcal{L}_{main} + 10\mathcal{L}_{smooth} + 0.01\mathcal{L}_{ent} + 5\mathcal{L}_{init}$, with 100 iterations per frame pair. Part reconstruction and end-to-end optimization each run for 30,000 iterations, implemented on top of NeRFStudio. The full pipeline takes approximately 25 minutes (100-frame 640×360 video, RTX 4090).
+Part segmentation: $\mathcal{L} = 200\mathcal{L}_{main} + 10\mathcal{L}_{smooth} + 0.01\mathcal{L}_{ent} + 5\mathcal{L}_{init}$, with 100 iterations per frame pair. Part reconstruction and end-to-end optimization each take 30,000 iterations, implemented via NeRFStudio. The full process takes approximately 25 minutes (100 frames, 640×360 video, RTX 4090).
 
 ## Key Experimental Results
 
-### Main Results (FreeArt-21, Revolute Joints)
+### Main Results (FreeArt-21, Revolute Joint)
 
 | Method | Axis↓ (deg) | Position↓ (cm) | State↓ (deg) | CD-w↓ (cm) | CD-m↓ (cm) | PSNR↑ (dB) |
 |------|-------------|----------------|--------------|------------|------------|------------|
 | ArticulateAnything | 42.00 | 59.38 | - | - | - | - |
 | Video2Articulation | 20.00 | 16.31 | 27.37 | 2.29 | 10.74 | - |
-| **FreeArtGS** | **1.04** | **0.29** | **1.43** | **0.14** | **0.28** | **24.02** |
+| **Ours** | **1.04** | **0.29** | **1.43** | **0.14** | **0.28** | **24.02** |
 
-### Ablation Study (FreeArt-21, Revolute Joints)
+### Ablation Study (FreeArt-21, Revolute Joint)
 
 | Configuration | Axis↓ | Position↓ | State↓ | CD-w↓ | PSNR↑ |
 |------|-------|-----------|--------|-------|-------|
@@ -84,37 +108,36 @@ Part segmentation stage: $\mathcal{L} = 200\mathcal{L}_{main} + 10\mathcal{L}_{s
 | w/o Blended Rendering | 1.72 | 1.88 | 1.88 | 0.12 | 22.23 |
 
 ### Key Findings
-- FreeArtGS achieves approximately 20× improvement in joint axis accuracy over Video2Articulation (1.04° vs. 20.00°) and 56× improvement in position accuracy.
-- **Smooth Loss contributes most**: removing it causes axis error to surge from 1.04° to 28.01°, demonstrating that instability in point tracking must be mitigated through feature-space regularization.
-- **Init Loss is also critical**: its removal increases position error from 0.29 cm to 19.58 cm, confirming that semantic priors from DINOv3 features are essential for correct part assignment.
-- Noise Resistance (outlier filtering) provides notable improvements in joint estimation robustness.
-- Blended Rendering improves PSNR by approximately 2 dB while preserving joint accuracy.
-- FreeArtGS also outperforms all methods on the Video2Articulation-S dataset (static base setting), demonstrating generality.
-- On six real-world objects, the average axis error is 2.73° and geometric CD is 2.48 cm.
+- FreeArtGS improves joint axis accuracy by ~20x (1.04° vs 20.00°) and position accuracy by ~56x compared to Video2Articulation.
+- **Smooth Loss is most critical**: Removing it increases axis error from 1.04° to 28.01°, proving that point tracking instability must be mitigated via feature-space regularization.
+- **Init Loss is essential**: Removing it increases position error from 0.29cm to 19.58cm, as DINOv3 semantic priors are vital for correct partitioning.
+- Noise Resistance (outlier filtering) significantly improves the robustness of joint estimation.
+- Blended Rendering improves PSNR by ~2dB while maintaining joint accuracy.
+- Performance exceeds all methods on the Video2Articulation-S dataset (static base setting), demonstrating versatility.
 
 ## Highlights & Insights
-- **Value of problem formulation**: This work is the first to formally define and address articulated object reconstruction under the free-moving scenario — the most natural manipulation setting, and strictly more practical than existing assumptions (static base part, multi-view dual-state).
-- **Prior + optimization combination**: Off-the-shelf models (AllTracker, DINOv3, SAM) provide initialization priors; optimization provides final accuracy. Neither alone suffices — priors are noisy, and pure optimization lacks reliable initialization.
-- **FreeArt-21 benchmark construction**: A VR-based teleoperation system is used to manipulate PartNet-Mobility objects in Sapien, generating free-moving data covering 7 categories and 21 objects (5 revolute + 2 prismatic joints), filling a critical gap in the field.
-- **25-minute full pipeline**: Processing a 100-frame video requires only 25 minutes (segmentation 6 min + joint estimation 1 min + end-to-end optimization 18 min), offering strong practical viability.
+- **Value of Problem Definition**: First to define the "Free-Moving Scenario" for articulated object reconstruction, which is more practical than existing assumptions (static base, dual-state).
+- **Prior + Optimization Strategy**: Uses off-the-shelf models (AllTracker, DINOv3, SAM) for initialization priors and optimization for precision. Neither is sufficient alone—priors are noisy, and pure optimization is hard to initialize.
+- **FreeArt-21 Benchmark Construction**: Generated free-moving data in Sapien using VR teleoperation of PartNet-Mobility objects, covering 7 categories and 21 objects.
+- **25-minute Pipeline**: Processing 100 frames in 25 minutes (6min segmentation + 1min joint estimation + 18min optimization) offers high practical utility.
 
 ## Limitations & Future Work
-- The current method assumes exactly two rigid parts and cannot handle multi-part articulated structures (e.g., robot arms); sequential capture of each moving part could serve as a potential extension.
-- The pipeline depends on multiple off-the-shelf models (AllTracker, DINOv3, SAM, pose estimator); cascading errors may amplify in complex scenes. A unified feed-forward model would be the ideal long-term solution.
-- RGB-D input (depth) is required; pure RGB video is not currently supported due to insufficient accuracy of continuous-video depth prediction.
-- While the method exhibits some robustness to hand occlusion during manipulation, severe occlusion may still cause failure.
+- Assumes only two rigid parts; multi-part structures (e.g., robotic arms) require sequential expansion.
+- Dependent on multiple off-the-shelf models; cascaded errors might amplify in complex scenes. A unified feed-forward model is a potential future direction.
+- Requires RGB-D input; pure RGB video is currently unsupported due to insufficient depth prediction accuracy.
+- Hand occlusion during manipulation is handled to some extent, but severe occlusion remains a failure mode.
 
 ## Related Work & Insights
-- **vs. Video2Articulation**: V2A relies on pretrained feed-forward reconstruction models (Monst3R) to predict dynamics, failing under the free-moving scenario; FreeArtGS uses an optimization-based approach to segment parts from motion differences.
-- **vs. ArticulateAnything**: AA employs VLM-based inference to generate URDFs, which is prone to hallucination and yields incorrect axes in most cases; FreeArtGS obtains accurate joints through geometric optimization.
-- **vs. RSRD**: RSRD assumes each part has a distinctive motion pattern, which is unsuitable for articulated objects where part motions are kinematically coupled; it achieves the worst results across all metrics on V2A-S.
-- **vs. dynamic reconstruction methods**: Feed-forward dynamic reconstruction methods (e.g., Monst3R) cannot recover precise motion in the free-moving scenario; FreeArtGS combines feed-forward priors with optimization to bridge this gap.
+- **vs Video2Articulation**: V2A relies on feed-forward reconstruction (Monst3R) which fails in free-moving scenarios; Ours uses optimization-based segmentation.
+- **vs ArticulateAnything**: AA uses VLM for URDF generation but suffers from hallucinations, often predicting incorrect axes.
+- **vs RSRD**: RSRD assumes unique motion patterns per part, which is unsuitable for articulated objects with joint constraints.
+- **vs Dynamic Reconstruction**: Feed-forward dynamic methods (e.g., Monst3R) cannot recover precise motion in free-moving scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The free-moving setting constitutes a genuinely novel problem formulation; the method is a non-trivial integration of existing techniques (3DGS, point tracking, rigid-body fitting).
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Triple validation via a self-constructed benchmark, existing datasets, and real-world objects; comprehensive ablations with full metric coverage.
-- Writing Quality: ⭐⭐⭐⭐ The problem is clearly defined, the method is well-organized, and design motivations for each module are thoroughly articulated.
-- Value: ⭐⭐⭐⭐⭐ A new problem, a new benchmark, and strong results with direct applicability to digital twins and robot learning.
+- Novelty: ⭐⭐⭐⭐ The free-moving setting is a new problem definition; the method effectively combines existing techniques non-trivially.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validation across self-built benchmarks, existing datasets, and real objects with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and methodology structure.
+- Value: ⭐⭐⭐⭐⭐ High utility for digital twins and robot learning.
 
 <!-- RELATED:START -->
 
@@ -122,11 +145,11 @@ Part segmentation stage: $\mathcal{L} = 200\mathcal{L}_{main} + 10\mathcal{L}_{s
 
 ## Related Papers
 
-- [\[CVPR 2026\] Sky2Ground: A Benchmark for Site Modeling under Varying Altitude](sky2ground_a_benchmark_for_site_modeling_under_varying_altitude.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](../../NeurIPS2025/3d_vision/onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
-- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
-- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
+- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
+- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
 
 </div>
 

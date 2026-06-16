@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification
 description: >-
-  [ACL2026][LLM/NLP][legal-specific models] This paper systematically compares 13 legal-domain customized Transformer models with 9 general-purpose models across three English contract classification tasks. It finds that s…
+  [ACL 2026][LLM (Other)][legal-specific models] Ours systematically compares 13 legal-domain customized Transformer models with 9 generalist models across 3 English contract classification tasks. It finds that small-scale but contract-relevant pretrained models like Legal-BERT and Contracts-BERT typically outperform larger generalist models on long-tail legal labels
 tags:
-  - "ACL2026"
-  - "LLM/NLP"
-  - "legal-specific models"
-  - "contract classification"
-  - "long-tail labels"
-  - "macro-F1"
-  - "domain pretraining"
+  - ACL 2026
+  - LLM (Other)
+  - legal-specific models
+  - contract classification
+  - long-tail labels
+  - macro-F1
+  - domain pretraining
 date: 2026-05-08
-content_hash: 298f4e47e56c792a
+content_hash: 2d11fd35e544e463
 ---
-
 # Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification
 
 **Conference**: ACL2026  
@@ -24,99 +23,92 @@ content_hash: 298f4e47e56c792a
 **Keywords**: legal-specific models, contract classification, long-tail labels, macro-F1, domain pretraining
 
 ## TL;DR
-This paper systematically compares 13 legal-domain customized Transformer models with 9 general-purpose models across three English contract classification tasks. It finds that smaller models pretrained on contract-related corpora, such as Legal-BERT and Contracts-BERT, generally outperform larger generalist models on long-tail legal labels.
+Ours systematically compares 13 legal-domain customized Transformer models with 9 generalist models across 3 English contract classification tasks. It finds that small-scale but contract-relevant pretrained models like Legal-BERT and Contracts-BERT typically outperform larger generalist models on long-tail legal labels.
 
 ## Background & Motivation
-**Background**: Various open-source legal models have emerged in Legal NLP, such as Legal-BERT, Contracts-BERT, CaseLaw-BERT, and LexLM. Simultaneously, general encoder/decoder models are widely applied to tasks like contract clause classification, topic identification, and deontic modality recognition (identifying obligations, rights, and prohibitions).
+**Background**: In legal NLP, numerous open-source legal models exist, such as Legal-BERT, Contracts-BERT, CaseLaw-BERT, and LexLM; simultaneously, general encoder/decoder models are widely used for contract clause classification, topic identification, and deontic modality recognition (e.g., Identifying obligations, rights, and prohibitions).
 
-**Limitations of Prior Work**: Although contract tasks inherently depend on legal semantics, many existing studies primarily evaluate generalist models and often exclude legal-domain models entirely. Consequently, the community remains unclear whether legal-specific models are truly more suitable for contract classification, and whether model scale, pretraining corpora, or task distribution is the dominant factor.
+**Limitations of Prior Work**: Despite the inherent dependence of contract tasks on legal semantics, many existing studies primarily evaluate generalist models, often failing to include legal domain-specific models. Consequently, the community remains unclear whether legal-specific models are truly more suitable for contract classification, or whether model scale, pretraining corpora, or task distribution is the dominant factor.
 
-**Key Challenge**: General large language models possess more parameters and broader knowledge, but contract classification often faces challenges like long-tail labels, specialized legal terminology, and fine-grained clause semantics. Larger models are not necessarily superior to smaller in-domain encoder models, particularly as macro-F1 scores often expose errors in rare classes.
+**Key Challenge**: General large models possess more parameters and broader knowledge, but contract classification often deals with long-tail labels, legal jargon, and fine-grained clause semantics. Larger models are not necessarily superior to smaller but in-domain encoder models, particularly when macro-F1 exposes errors in rare classes.
 
-**Goal**: To answer a direct question: do legal-specific Transformer models outperform generalist models in contract classification tasks? The authors aim to provide benchmark results across tasks, model types, and metrics while identifying strong baselines for future legal contract classification.
+**Goal**: To answer a direct question: do legal-specific Transformer models outperform generalist models in contract classification? The authors aim to provide benchmark results across tasks, model types, and metrics while identifying strong baselines for future legal contract classification.
 
-**Key Insight**: The paper selects three public English contract classification datasets covering multi-label, multi-class, varying scales, and different levels of legal semantic granularity. It then performs a unified comparison of 13 legal models and 9 general models, focusing on micro-F1, macro-F1, and misclassifications of rare classes.
+**Key Insight**: Three public English contract datasets are selected, covering multi-label, multi-class, varying scales, and different legal semantic granularities. 13 legal models and 9 generalist models are compared uniformly, focusing on micro-F1, macro-F1, and misclassifications of rare classes.
 
-**Core Idea**: Instead of a generic comparison of "legal models vs. general models," the study decomposes the evaluation of model types, corpus domain alignment, and long-tail label performance specifically on contract tasks.
+**Core Idea**: Instead of a general "legal model vs. generalist model" comparison, the study decomposes evaluations by model type, corpus domain alignment, and long-tail label performance within contract tasks.
 
 ## Method
-As a benchmark/evaluation paper, this work does not propose a new model. The methodological contribution lies in task selection, model coverage, unified fine-tuning, and error analysis.
 
 ### Overall Architecture
-The input consists of three types of contract classification tasks: UNFAIR-ToS for identifying unfair terms in Terms of Service (9-class multi-label); LEDGAR for SEC Exhibit 10 contract clause topic classification (100-class multi-class); and LEXDEMOD for subject-specific deontic modality detection in lease contracts (7-class multi-label).
-
-Models are divided into two groups. Generalist models include BERT, RoBERTa, DeBERTa, Longformer, BigBird, DistilBERT, RoBERTa-large, and decoder models such as Llama-3.2 and Mistral. Legal-specific models include Legal-BERT, Contracts-BERT, Legal-RoBERTa, CaseLawBERT, PoL-BERT, InLegalBERT, InCaseLawBERT, CustomInLawBERT, LexLM, Legal-XLM-R, LexT5, AdaptLLM, and SaulLM.
-
-The evaluation process involves task-specific fine-tuning for each task, using micro-F1 and macro-F1 to measure performance. Micro-F1 reflects overall classification accuracy, while macro-F1 is more sensitive to rare classes, thus better representing robustness on the long-tail categories of legal contracts.
+Ours is a benchmark/evaluation paper that does not propose a new model; its contribution lies in a controlled comparative evaluation protocol. Inputs are three types of public English contract classification tasks: UNFAIR-ToS (identifying unfair terms in terms of service with 9 multi-label categories), LEDGAR (SEC Exhibit 10 clause topic classification with 100 multi-class categories), and LEXDEMOD (detecting party-specific obligations/rights/prohibitions in lease contracts with 7 multi-label categories). 13 legal-specific Transformers (Legal-BERT, Contracts-BERT, InLegalBERT, LexLM, SaulLM, etc.) and 9 generalist models (BERT/RoBERTa/DeBERTa/Longformer/BigBird, plus Llama-3.2, Mistral, etc.) are integrated into the same pipeline. Task-specific fine-tuning is performed for each task, using micro-F1 and macro-F1 to answer whether domain pretraining is truly worthwhile for contract classification.
 
 ### Key Designs
-1.  **Multi-task Contract Benchmark Coverage**:
-    *   Function: Prevents drawing overly narrow conclusions from a single contract task.
-    *   Mechanism: UNFAIR-ToS, LEDGAR, and LEXDEMOD cover terms of service, SEC contract clauses, and lease obligation/right detection respectively. Test samples range from 1.6k to 10k, with label counts from 7 to 100.
-    *   Design Motivation: The effectiveness of a legal model depends on task semantics and data distribution. A multi-task setup allows observing model stability across rare classes, multi-label settings, and long-text clauses.
 
-2.  **Head-to-Head Comparison of Legal-Specific and Generalist Models**:
-    *   Function: Directly addresses whether domain-specific models are worth using.
-    *   Mechanism: 13 legal models and 9 general models are compared under identical tasks and metrics, incorporating encoder, decoder, and encoder-decoder architectures.
-    *   Design Motivation: Previous work often evaluated only general models or a few legal models, making it impossible to judge the relative contributions of domain pretraining, model size, and architectural category.
+**1. Multi-task Contract Benchmark Coverage: Preventing "single-task overfit conclusions" through task diversity**
 
-3.  **Long-tail Error Analysis**:
-    *   Function: Explains the source of legal models' advantages rather than reporting aggregate scores only.
-    *   Mechanism: The authors analyze misclassifications of RoBERTa-large and observe whether legal models like Contracts-BERT can correct errors in rare categories of UNFAIR-ToS, such as "Limitation of Liability" and "Unilateral Termination."
-    *   Design Motivation: The difficulty in contract tasks often lies in rare but legally significant clause types. Macro-F1 and instance-level error analysis reveal deployment risks more effectively than micro-F1.
+Comparing models on a single contract task often leads to narrow conclusions. Therefore, the authors deliberately selected three tasks with different semantic granularities and scales: UNFAIR-ToS, LEDGAR, and LEXDEMOD. These cover terms of service, SEC contract topics, and deontic modality in lease contracts, respectively. Test set sizes range from approximately 1.6k to 10k, and label counts from 7 to 100, spanning both multi-label and multi-class formats. The effectiveness of legal models depends on whether task semantics and data distributions align with their pretraining corpora; this cross-scale, cross-label setup exposes stability differences in rare classes, multi-label coupling, and long clause texts.
+
+**2. Side-by-Side Comparison of legal-specific vs. generalist: Decomposing domain, scale, and architecture**
+
+Previous works often evaluated only generalist models or a few selected legal models, failing to distinguish whether performance gains stemmed from domain pretraining, model capacity, or architecture type. Ours places 13 legal models and 9 generalist models under identical tasks, fine-tuning protocols, and F1 metrics for side-by-side comparison, deliberately mixing encoder, decoder, and encoder-decoder architectures. Consequently, the results illustrate trade-offs such as "110M Contracts-BERT vs. 355M RoBERTa-large" while revealing whether decoder-style generative models are disadvantaged in discriminative classification, allowing relative contributions to be attributed individually.
+
+**3. Long-tail Error Analysis: Explaining the origin of advantages beyond average scores**
+
+The true difficulty in contract tasks often lies in rare clause types with high legal stakes, which micro-F1 can mask by emphasizing high-frequency categories. To address this, the authors analyze misclassified samples from RoBERTa-large to observe if legal models like Contracts-BERT can correct errors in rare categories of UNFAIR-ToS, such as Limitation of Liability and Unilateral Termination. Combined with macro-F1, which is more sensitive to rare classes, this case-level analysis reveals deployment risks—the true reliability of models on high-risk, low-frequency clauses—that pure score comparisons fail to show.
 
 ### Loss & Training
-No specialized loss functions are introduced; the experiments utilize task-specific fine-tuning with standard classification evaluation. For multi-label tasks, micro-F1 and macro-F1 are the primary metrics. For the multi-class LEDGAR task, the same F1 metrics are used for comparison. Regarding methodology, the authors emphasize that contract text may exceed 512 subword tokens, meaning truncation or long-context handling affects results, though this paper focuses on the comparison of model families and domain pretraining.
+No new loss functions are introduced, utilizing standard task-specific fine-tuning and classification evaluation. Both multi-label tasks (UNFAIR-ToS, LEXDEMOD) and the multi-class task (LEDGAR) report micro-F1 and macro-F1. The former measures overall accuracy, while the latter reflects long-tail robustness. An engineering detail to note is that contract texts often exceed 512 subword tokens; while truncation or long-context handling affects performance, the evaluation focus remains on comparing model families and domain pretraining rather than long-text modeling itself.
 
 ## Key Experimental Results
 
 ### Main Results
-| Dataset | Metric | Best/Representative Legal Model (Ours) | Strongest Generalist Model | Conclusion |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Metric | Best/Representative Legal Model | Strongest Generalist Model | Conclusion |
+|--------|------|------|----------|------|
 | UNFAIR-ToS | micro-F1 / macro-F1 | Contracts-BERT 96.2 / 83.4; Legal-BERT 96.0 / 82.2 | RoBERTa-large 95.8 / 81.6; Mistral 96.0 / 80.7 | Legal models are stronger in macro-F1 |
 | LEDGAR | micro-F1 / macro-F1 | Legal-BERT 88.2 / 82.5; Contracts-BERT 87.9 / 82.2 | RoBERTa-large 88.6 / 83.6 | RoBERTa-large remains best on large-scale LEDGAR |
 | LEXDEMOD | micro-F1 / macro-F1 | Legal-BERT 81.23 / 78.01; InLegalBERT 80.21 / 77.89 | RoBERTa-large macro-F1 77.88; Llama-3.2 76.2 / 71.4 | Legal encoders significantly outperform decoders |
-| Average Performance | Mean micro-F1 | Legal-BERT 88.48±6.03 | Generalist models not summarized as main subjects in Table 2 | Legal-BERT has the strongest composite micro-F1 |
-| Average Performance | Mean macro-F1 | Contracts-BERT 81.10±2.45 | Generalist models not summarized as main subjects in Table 2 | Contracts-BERT is more stable for long-tail labels |
+| Average Performance | Mean micro-F1 | Legal-BERT 88.48±6.03 | N/A | Legal-BERT has the strongest overall micro-F1 |
+| Average Performance | Mean macro-F1 | Contracts-BERT 81.10±2.45 | N/A | Contracts-BERT is more stable for long-tail labels |
 
 ### Ablation Study
-| Configuration | Key Metrics | Description |
-| :--- | :--- | :--- |
-| Legal-BERT | Mean micro-F1 88.48±6.03, macro-F1 80.90±2.05 | Ranked 1st in composite micro-F1 |
-| Contracts-BERT | Mean micro-F1 88.09±6.55, macro-F1 81.10±2.45 | Ranked 1st in composite macro-F1 |
-| CaseLawBERT | Mean micro-F1 88.01±6.45, macro-F1 80.62±2.23 | Serves as a strong baseline for contract classification |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Legal-BERT | Mean micro-F1 88.48±6.03, macro-F1 80.90±2.05 | Ranked 1st in overall micro-F1 |
+| Contracts-BERT | Mean micro-F1 88.09±6.55, macro-F1 81.10±2.45 | Ranked 1st in overall macro-F1 |
+| CaseLawBERT | Mean micro-F1 88.01±6.45, macro-F1 80.62±2.23 | Strong baseline for contract classification |
 | LexLM | Mean micro-F1 88.03±6.33, macro-F1 80.15±1.91 | Another stable legal baseline |
-| PoL-BERT | LEXDEMOD micro-F1 41.35, macro-F1 15.75 | Larger/newer legal models do not necessarily fit contract distributions |
+| PoL-BERT | LEXDEMOD micro-F1 41.35, macro-F1 15.75 | Large/new legal models aren't always contract-compatible |
 
 ### Key Findings
-*   Legal-specific models established new SOTAs on two tasks. Legal-BERT and Contracts-BERT, despite having only 110M parameters (69% fewer than RoBERTa-large), outperformed the latter on UNFAIR-ToS and LEXDEMOD.
-*   RoBERTa-large remains the strongest on LEDGAR, indicating that domain pretraining is not a panacea for all tasks; data scale, label count, and model capacity also influence performance.
-*   Decoder-based generalist models exhibit weaker performance on rare classes, particularly in macro-F1. This supports the continued importance of encoder-based discriminative fine-tuning for long-tail legal classification.
-*   Older but more contract-focused models like Legal-BERT/Contracts-BERT outperformed some newer, larger models with more heterogeneous legal corpora. This suggests that in-distribution pretraining is more critical than pure corpus scale.
+- Legal-specific models establish new SOTAs in two tasks. Legal-BERT and Contracts-BERT, with only 110M parameters (69% fewer than RoBERTa-large), outperform larger models on UNFAIR-ToS and LEXDEMOD.
+- RoBERTa-large remains strongest on LEDGAR, indicating domain pretraining is not a panacea for all tasks; data scale, label count, and model capacity also influence results.
+- Decoder-based generalist models perform poorly on rare classes, particularly in macro-F1. This supports the continued importance of encoder-based discriminative fine-tuning for long-tail legal classification.
+- Older but more contract-focused models like Legal-BERT/Contracts-BERT outperform newer, larger models with diverse legal corpora, suggesting that in-distribution pretraining is more critical than raw corpus scale.
 
 ## Highlights & Insights
-*   The most practical conclusion is that legal contract classification should not default to larger generalist models. Smaller legal encoders offer realistic advantages in terms of privacy, cost, long-tail class handling, and deployability.
-*   The analysis of macro-F1 is highly valuable. In legal scenarios, rare classes often correspond to high-risk clauses; high micro-F1 scores can be misleading if frequent rare class errors make actual deployment unreliable.
-*   "More legal corpus" does not equate to "more contract-relevant." If pretraining data is diluted with case law, statutes, or patents, the contract signal may weaken, potentially leading to poorer performance than smaller, more focused models.
-*   This benchmark serves as a reminder that model selection should be based on task semantic alignment rather than simply sorting by the "legal" label or parameter count.
+- The most practical insight is that legal contract classification should not default to larger generalist models. Small legal encoders offer reality-based advantages in privacy, cost, long-tail category handling, and deployability.
+- Macro-F1 analysis is highly valuable. In legal scenarios, rare classes often correspond to high-risk clauses; while micro-F1 may look promising, frequent rare-class errors make models unreliable for deployment.
+- "More legal data" does not equal "more contract-relevant." If pretraining corpora are diluted with case law, statutes, or patents, the contract signal may weaken, making the model inferior to smaller, more focused ones.
+- This benchmark serves as a reminder that model selection should be guided by task semantic alignment rather than being sorted by the "legal" label or parameter count.
 
 ## Limitations & Future Work
-*   The experiments only cover English contract data; non-English, cross-jurisdictional, and multilingual legal documents remain unverified.
-*   The paper focuses specifically on contract language and does not evaluate other legal text types like statutes, judgments, or legal opinions; thus, conclusions cannot be directly extrapolated to all Legal NLP.
-*   The study primarily examines domain generalization without systematically investigating alternative routes such as RAG, long-context handling, hierarchical classification, or prompt-based decoder inference.
-*   Many passages in LEDGAR exceed 512 subword tokens, and truncation strategies may affect model performance. Future work could include more controlled experiments with long-text models like Longformer/BigBird or combine retrieval and chunk aggregation.
+- Experiments cover only English contract data; non-English, cross-jurisdictional, or multilingual legal documents remain unverified.
+- The paper focuses on contract language and does not evaluate other legal text types like statutes, court judgments, or legal opinions. Therefore, conclusions cannot be directly extrapolated to the entire Legal NLP domain.
+- Ours primarily examines domain generalization and does not systematically research alternative routes like RAG, long-context handling, hierarchical classification, or prompt-based decoder inference.
+- Many passages in LEDGAR exceed 512 subword tokens; truncation strategies might affect performance across models. Future work could include controlled experiments with long-text models like Longformer/BigBird or chunk aggregation.
 
 ## Related Work & Insights
-*   **vs. Original Legal-BERT / Contracts-BERT**: While original models proved the value of legal pretraining, this work further demonstrates that "contract-relevant corpora" are more important than general legal corpora for contract tasks.
-*   **vs. General Encoder Baselines**: RoBERTa-large’s advantage in LEDGAR suggests that when data volume is large and label coverage is sufficient, the capacity of large general encoders still provides value.
-*   **vs. Decoder-based Legal/Generalist LLMs**: The instability of Llama, Mistral, SaulLM, and AdaptLLM in classification suggests that generative models are not yet ready to replace discriminative encoders, especially in long-tail label classification.
-*   **Insight**: Selection of Legal AI systems should prioritize intra-task benchmarks and report macro-F1 and rare class errors rather than relying solely on average accuracy or model scale.
+- **vs. Legal-BERT / Contracts-BERT original work**: While original models proved legal pretraining is valuable, Ours further clarifies that "contract-relevant corpora" are more important than general legal corpora for contract tasks.
+- **vs. Generalist encoder baselines**: RoBERTa-large's advantage in LEDGAR suggests that when data and label coverage are sufficient, the capacity of large general encoders still plays a role.
+- **vs. Decoder-based legal/generalist LLMs**: Llama, Mistral, SaulLM, and AdaptLLM are unstable in classification, indicating that generative large models may not replace discriminative encoders, especially for long-tail label classification.
+- **Insight**: Selection for legal AI systems should prioritize intra-task benchmarking and report macro-F1 and rare-class errors rather than just comparing average accuracy or model scale.
 
 ## Rating
-*   Novelty: ⭐⭐⭐ (Benchmark papers innovate through systematic coverage and clear problem settings rather than model architecture).
-*   Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive task, model, and metric coverage; lacks non-English and wider legal genres).
-*   Writing Quality: ⭐⭐⭐⭐ (Information-dense tables with clear conclusions; error analysis complements the raw score comparisons).
-*   Value: ⭐⭐⭐⭐ (Highly practical for Legal NLP research and contract classification deployment, providing direct guidance for baseline selection).
+- Novelty: ⭐⭐⭐ (As a benchmark paper, innovation lies in systematic coverage and clear problem setting).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Task, model, and metric coverage is complete, though lacking non-English documents).
+- Writing Quality: ⭐⭐⭐⭐ (Dense information with clear conclusions; error analysis complements pure score comparisons).
+- Value: ⭐⭐⭐⭐ (Highly practical for Legal NLP research and contract classification deployment, providing direct guidance for baseline selection).
 
 <!-- RELATED:START -->
 
@@ -124,11 +116,11 @@ No specialized loss functions are introduced; the experiments utilize task-speci
 
 ## Related Papers
 
-- [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
-- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
 - [\[ACL 2026\] Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification](nürnberg_nlp_at_psydefdetect_multi-axis_voter_ensembles_for_psychological_defenc.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
-- [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](../../NeurIPS2025/llm_nlp/characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
+- [\[ACL 2025\] TESS 2: A Large-Scale Generalist Diffusion Language Model](../../ACL2025/llm_nlp/tess_2_a_large-scale_generalist_diffusion_language_model.md)
+- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
+- [\[ACL 2025\] CogniBench: A Legal-inspired Framework and Dataset for Assessing Cognitive Faithfulness of Large Language Models](../../ACL2025/llm_nlp/cognibench_cognitive_faithfulness.md)
+- [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
 
 </div>
 

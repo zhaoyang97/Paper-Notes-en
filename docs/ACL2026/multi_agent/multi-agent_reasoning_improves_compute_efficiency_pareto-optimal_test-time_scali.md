@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling
 description: >-
-  [ACL 2026][Multi-Agent][Test-time computation] This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents (MoA) under a unified compute budget. It finds that multi-agent reasoning…
+  [ACL 2026][Multi-Agent][Test-Time Compute] This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents under a unified computational budget. It finds that multi-agent reasoning, particularly MoA, is more efficient on the Pareto front, improving MMLU-Pro accuracy from 64.3% to 71.4% at approximately 20x CoT budget.
 tags:
-  - "ACL 2026"
-  - "Multi-Agent"
-  - "Test-time computation"
-  - "Multi-agent reasoning"
-  - "Pareto front"
-  - "Mixture-of-Agents"
-  - "Compute efficiency"
+  - ACL 2026
+  - Multi-Agent
+  - Test-Time Compute
+  - Mixture-of-Agents
 date: 2026-05-08
-content_hash: 16e49263b19617e2
+content_hash: 4aaa3f164af48345
 ---
-
 # Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling
 
 **Conference**: ACL 2026  
@@ -25,138 +21,150 @@ content_hash: 16e49263b19617e2
 
 ## TL;DR
 
-This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents (MoA) under a unified compute budget. It finds that multi-agent reasoning, specifically MoA, is more efficient on the Pareto front, improving MMLU-Pro accuracy from 64.3% to 71.4% at approximately 20x CoT budget.
+This paper compares self-consistency, self-refinement, multi-agent debate, and Mixture-of-Agents under a unified computational budget. It finds that multi-agent reasoning, particularly MoA, is more efficient on the Pareto front, improving MMLU-Pro accuracy from 64.3% to 71.4% at approximately 20x CoT budget.
 
 ## Background & Motivation
 
-**Background**: Improving LLM reasoning capabilities no longer relies solely on training larger models; test-time computation has become a critical approach. Common methods include chain-of-thought (CoT), self-consistency (SC), multi-round self-refinement, multi-agent debate, and Mixture-of-Agents (MoA), which aggregates multiple candidate answers layer-by-layer. These methods share the common goal of spending more computation during inference to obtain more stable or powerful answers.
+**Background**: Improvements in LLM reasoning capabilities no longer rely solely on training larger models; test-time computation has become a crucial tool. Common practices include chain-of-thought (CoT), self-consistency, multi-round self-refinement, multi-agent debate, and Mixture-of-Agents (MoA), which aggregates multiple candidate answers layer by layer. These methods share the commonality of spending more computation during the inference phase to obtain more stable or powerful answers.
 
-**Limitations of Prior Work**: Many studies only report final accuracy without comparing different methods under the same compute budget. A method calling a model dozens of times naturally outperforms a single CoT, but this does not equate to higher efficiency. Real-world deployment prioritizes which pipeline delivers higher accuracy given the same latency, compute power, and budget.
+**Limitations of Prior Work**: Many studies only report final accuracy without comparing different methods under the same computational budget. If a method calls a model dozens of times, it is naturally stronger than a single CoT, but this does not imply higher efficiency. Real-world deployment is more concerned with which pipeline yields higher accuracy given the same latency, compute power, and budget.
 
-**Key Challenge**: There is a clear accuracy-cost trade-off in test-time computation. Parallel sampling increases candidate paths, while sequential refinement or debate rounds deepen reasoning, both increasing FLOPs, memory I/O, and inference latency. The core problem is not whether spending more compute is useful, but whether it should be spent on more samples, more agents, more rounds of interaction, or larger models.
+**Key Challenge**: Test-time computation involves a clear accuracy-cost trade-off. Parallel sampling increases candidate paths, while sequential refinement or debate rounds deepen reasoning, but both increase FLOPs, memory R/W, and inference latency. The core question is not "whether spending more compute is useful," but "whether compute should be spent on more samples, more agents, more interaction rounds, or larger models."
 
-**Goal**: To systematically evaluate four types of reasoning scaling strategies under the same computational mouthfeel and answer three practical questions: whether multi-agent is truly more compute-efficient than single-agent; how to balance parallel scale and sequential depth in multi-agent systems; and whether intensive test-time scaling for small models is more cost-effective than few calls to large models.
+**Goal**: Systematically evaluate four categories of reasoning scaling strategies under the same computational metric to answer three practical questions: whether multi-agent is truly more compute-efficient than single-agent; how to configure parallel scale versus sequential depth in multi-agent systems; and whether extensive test-time scaling for small models is more cost-effective than few calls to large models.
 
-**Key Insight**: The authors look beyond just FLOPs, using an estimated runtime that accounts for both arithmetic computation and model weight memory transfer as the cost. The Pareto-front is used to identify the configuration with the highest accuracy for a given cost, avoiding biases inherent in simply comparing generation counts or FLOPs.
+**Key Insight**: The authors do not only track FLOPs but use estimated runtime, considering both arithmetic computation and model weight memory transfer, as the cost. They then use the Pareto front to identify configurations that achieve the "highest accuracy at a given cost." This avoids biases introduced by comparing based on generation counts or FLOPs alone.
 
-**Core Idea**: Treat the test-time reasoning pipeline as a tunable compute allocation problem, compare methods via the Pareto-optimal front, and summarize practical scaling rules for multi-agent reasoning from the optimal configurations.
+**Core Idea**: Treat the test-time reasoning pipeline as a tunable compute allocation problem, compare methods using Pareto-optimal fronts, and summarize practical scaling rules for multi-agent reasoning from the frontal configurations.
 
 ## Method
 
 ### Overall Architecture
 
-The experimental framework consists of a three-tier sweep. The first tier is pipeline selection: comparing self-consistency, self-refinement, debate, and MoA. The second tier is pipeline parameters: varying sample counts for SC, iteration rounds for self-refinement, agent counts/rounds for debate, and proposer counts/aggregation layers for MoA. The third tier is model size: using Llama 3.1 70B and 8B to distinguish the effects of "model capacity" versus "test-time scaling."
+The experimental framework consists of a three-layer scan. The first layer is pipeline selection: comparing self-consistency, self-refinement, debate, and MoA. The second layer involves pipeline parameters: varying the number of samples for self-consistency, iteration rounds for self-refinement, number of agents and rounds for debate, and the number of proposers and aggregation layers for MoA. The third layer is model size: using Llama 3.1 70B and 8B from the same family to distinguish between "model capacity" and "test-time compute scaling."
 
-All methods solve multiple-choice reasoning tasks in a zero-shot CoT style. Models are prompted as reasoning experts to think step-by-step and output the final option. After each pipeline, candidates are extracted using a "Final answer of choices {choices}:" prompt, and the option with the highest log-likelihood is selected.
+All methods solve multiple-choice reasoning tasks in a zero-shot CoT style. The model is prompted as a reasoning expert, thinking step-by-step and outputting the final option at the end. After each pipeline, the authors use a "Final answer of choices {choices}:" prompt to extract candidate options and select the one with the highest log-likelihood as the final answer.
 
-Two metrics are used: accuracy and compute cost. Cost is estimated as theoretical runtime rather than call counts. Generation is split into prefill and decode phases, estimating FLOP time and memory transfer time for each; the slower of the two is taken for each phase and summed. This accounts for memory bandwidth bottlenecks common in GPU inference, which FLOPs alone would underestimate for small models.
+Two metrics are evaluated: accuracy and computational cost. Accuracy is the proportion of correct answers on MMLU-Pro and BBH. Computational cost is an estimated theoretical runtime rather than a simple call count. Generation is split into prefill and decode phases, estimating FLOP time and memory transfer time for each; the slower of the two is taken for each phase and summed for the total time. This accounts for the fact that real GPU inference is often memory-bandwidth bound, where FLOPs alone would overestimate the efficiency of small model calls.
 
-The final analysis identifies the Pareto-front across all configurations: a configuration is Pareto-optimal if no other configuration achieves higher or equal accuracy at a lower or equal cost.
+The final analysis identifies the Pareto front relative to accuracy and cost. If a configuration achieves higher or equal accuracy at a lower or equal cost, the dominated configuration is not considered an efficient choice.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Multiple-choice Reasoning Tasks<br/>MMLU-Pro / BBH"] --> B
+    subgraph B["Unified Test-Time Compute Scaling Framework"]
+        direction TB
+        B1["Four pipeline categories on a single cost-accuracy plot<br/>self-consistency / self-refinement / debate / MoA"] --> B2["Scan Parallel Axis × Sequential Axis × Model Size<br/>34 configurations"]
+    end
+    B --> C["Zero-shot CoT reasoning for each configuration<br/>Extract option with highest log-likelihood"]
+    C --> D["Deployment-oriented compute cost estimation<br/>prefill + decode, max(FLOP time, memory transfer time)"]
+    D --> E["Map each configuration to (Accuracy, Estimated Time) point"]
+    E --> F["Extract multi-agent design rules using Pareto-front<br/>Calculate front + Identify efficient configuration patterns"]
+    F --> G["Configuration Recommendations<br/>MoA proposer = layer + 1, prioritize agents in debate"]
+```
 
 ### Key Designs
 
-1.  **Unified Test-Time Computation Scaling Coordinate System**:
-    *   **Function**: Compares four structurally diverse reasoning methods on a single cost-accuracy plot.
-    *   **Mechanism**: Breaks down scaling into parallel and sequential dimensions. SC expands parallel CoT samples; self-refinement expands sequential correction steps; debate includes both agents and rounds; MoA includes both proposers and layers.
-    *   **Design Motivation**: Prevents confusing "better method" with "more computation." A unified system forces multi-agent methods like debate and MoA to compete with SC under identical budgets, reflecting deployment scenarios.
+**1. Unified Test-Time Compute Scaling Framework: Placing four architecturally distinct reasoning methods on the same cost-accuracy plot to compete under identical budgets.**
 
-2.  **Deployment-Oriented Compute Cost Estimation**:
-    *   **Function**: Measures test-time budgets in a way that aligns with actual inference latency better than FLOPs.
-    *   **Mechanism**: Estimates two types of time for prefill and decode: compute time determined by FLOPs (form of $2 \cdot P \cdot T$) and memory transfer time determined by parameter count, quantization precision, batch size, GPU count, and bandwidth. The total is $\sum \max(\text{FLOP time}, \text{memory time})$.
-    *   **Design Motivation**: Small model calls might seem cheap in FLOPs but involve repeated weight loading. Including memory transfer provides a fairer trade-off analysis between "many small model rounds" and "few large model rounds."
+Historically, comparisons often blurred the line between "better method" and "simply more compute." A pipeline calling a model dozens of times will likely beat a single CoT, but it might be less efficient. The authors decompose all scaling into parallel and sequential axes: self-consistency adds parallel CoT samples, self-refinement adds sequential correction steps, debate involves both agents and rounds, and MoA involves both proposers and layers. After mapping to a unified coordinate system, multi-agent methods must compete directly with self-consistency, making conclusions relevant to real deployment.
 
-3.  **Refining Multi-Agent Design Rules via Pareto-Front**:
-    *   **Function**: Identifies truly efficient parameter combinations from a vast space.
-    *   **Mechanism**: Calculations of the Pareto-front across 34 configurations and 100+ evaluations reveal patterns. In debate, optimal points come from increasing agents rather than rounds. In MoA, optimal points often appear when proposer count = layer count + 1 (e.g., 3 models/2 layers, 4 models/3 layers).
-    *   **Design Motivation**: Blindly adding agents or rounds wastes budget or degrades performance. The Pareto-front extracts "directions worth scaling" into actionable configuration advice.
+**2. Deployment-Oriented Compute Cost Estimation: Measuring budget with a metric closer to real latency than FLOPs, avoiding the overestimation of "small model intensive calling" efficiency.**
+
+Relying solely on FLOPs is misleading: while small models have lower arithmetic counts, real inference requires repeated weight movement, often limited by memory bandwidth. The authors split generation into prefill and decode phases. Computation time is determined by FLOPs ($2 \cdot P \cdot T$), while memory transfer time is determined by parameter count, quantization precision, batch size, number of GPUs, and bandwidth. By taking $\max(\text{FLOP time}, \text{memory time})$ for each phase, the trade-off between "many rounds with small models" and "few rounds with large models" is compared fairly.
+
+**3. Pareto-Front for Multi-Agent Design Rules: Extracting truly efficient parameter combinations from hundreds of evaluations rather than focusing on single peak scores.**
+
+The parameter space for multi-agent systems is vast; blindly adding agents or rounds can waste budget or decrease scores due to noise and error propagation. The authors calculate the Pareto front across 34 configurations—where a configuration is efficient only if no other achieves better or equal accuracy at lower cost. Clear patterns emerge: efficient debate points come from increasing agents rather than rounds; efficient MoA points almost always satisfy "proposers = layers + 1" (e.g., 3 models/2 layers, 4 models/3 layers). These data-driven rules become actionable configuration advice.
 
 ### Loss & Training
 
-No new models were trained; this is a pure test-time reasoning strategy evaluation. The main experiments use 4-bit quantized Llama 3.1 70B-Instruct, with supplementary experiments on the 8B version. Generation uses temperature 0.7 and top-p 0.95. For cost control, 1000 samples were used from MMLU-Pro and BBH.
+This work does not train new models or introduce extra loss functions; it is a pure test-time reasoning strategy evaluation. The main experiments utilize 4-bit quantized Llama 3.1 70B-Instruct, with supplementary experiments on the 8B model. Generation uses temperature 0.7 and top-p 0.95. To control costs, 1000 problems are sampled from MMLU-Pro and BBH for evaluation, with confidence intervals reported in the limitations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Primary results are focused on MMLU-Pro. CoT (SC with 1 sample) achieved 64.3%. Within a ~20x CoT budget, MoA's Pareto-front was strongest, followed by debate. SC saturated earlier, and self-refinement performed worse than CoT.
+Primary results focus on MMLU-Pro. CoT is a special case of self-consistency with 1 sample, yielding 64.3% accuracy. Within a budget of up to ~20x CoT, MoA dominates the Pareto front, followed by debate. Self-consistency saturates earlier, while self-refinement performs worse than CoT.
 
-| Method / Configuration | MMLU-Pro Accuracy | Gain vs. CoT | Comparison vs. SC (same budget) | Key Conclusion |
-| :--- | :--- | :--- | :--- | :--- |
-| CoT / SC 1 sequence | 64.3% | - | - | Basic single inference baseline |
-| SC / 10 sequences | 68.7% | +4.4 pp | 0 | Parallel sampling is effective but saturates early |
-| Debate / 4 agents, 2 rounds | 70.0% | +5.7 pp | +1.3 pp | Multi-agent interaction is more efficient than pure sampling |
-| MoA / 5 models, 4 layers | 71.4% | +7.1 pp | +2.7 pp | Highest accuracy; dominates Pareto-front |
-| Self-refinement / Multi-round | <64.3% | Negative | Lower than others | Sequential self-correction yields no reliable gain |
+| Method / Config | MMLU-Pro Accuracy | Gain vs CoT | Comparison vs SC (same budget) | Key Conclusion |
+|-----------------|-------------------|-------------|--------------------------------|----------------|
+| CoT / SC 1 sequence | 64.3% | - | - | Baseline single inference |
+| Self-consistency / 10 sequences | 68.7% | +4.4 pp | 0 | Parallel sampling works but saturates |
+| Debate / 4 agents, 2 rounds | 70.0% | +5.7 pp | +1.3 pp | Multi-agent interaction more efficient than pure sampling |
+| MoA / 5 models, 4 layers | 71.4% | +7.1 pp | +2.7 pp | Highest accuracy; dominates Pareto front |
+| Self-refinement / multi-round | < 64.3% | Negative | Lower than others | Sequential self-correction yields no reliable gain |
 
-Difficulty analysis shows extra test-time compute is more valuable for hard problems.
+Task difficulty analysis shows that extra test-time compute is more valuable for difficult problems. MMLU-Pro tasks were divided into easy, medium, and hard based on a 20-sample CoT solve rate.
 
-| Compute Budget | Easy Accuracy | Medium Accuracy | Hard Accuracy | Observation |
-| :--- | :--- | :--- | :--- | :--- |
+| Compute Budget | Easy Acc | Medium Acc | Hard Acc | Observation |
+|----------------|----------|------------|----------|-------------|
 | CoT | 94.4% | 53.0% | 8.4% | CoT solves most easy problems |
 | 1-5× CoT | 95.6% | 58.6% | 13.6% | Significant gains for medium/hard |
-| 5-10× CoT | 95.4% | 60.4% | 14.7% | Budget mostly helps non-easy tasks |
+| 5-10× CoT | 95.4% | 60.4% | 14.7% | Continued budget helps non-easy tasks |
 | 10-15× CoT | 96.0% | 62.1% | 14.2% | Hard fluctuates but stays above CoT |
-| 15-20× CoT | 96.6% | 61.5% | 17.4% | Hard tasks see largest relative gain |
-| Total Gain | +2.2 pp | +8.5 pp | +9.0 pp | Budget should be allocated adaptively |
+| 15-20× CoT | 96.6% | 61.5% | 17.4% | Hard tasks see highest relative gain |
+| Total Gain | +2.2 pp | +8.5 pp | +9.0 pp | Allocate budget adaptively by difficulty |
 
 ### Ablation Study
 
-The study analyzes scaling directions for multi-agent systems via parameter sweeps. Key conclusion: debate should scale agents; MoA optimal points satisfy proposers = layers + 1.
+Rather than module ablation, this study scans parameters to analyze scaling directions. The most important conclusion is: debate should scale agents, and MoA efficient points typically satisfy "proposers = layers + 1".
 
 | System | Parameter Change | Recommended Trend | Explanation |
-| :--- | :--- | :--- | :--- |
-| Debate | Increase agents | Accuracy improves up to ~4 agents | Parallel perspectives increase diversity; too many add noise |
-| Debate | Increase rounds | 2 rounds usually best | More rounds increase context cost and risk error propagation |
-| MoA | Increase proposers | Best when models = layers + 1 | Sufficient candidates allow better evidence synthesis |
-| MoA | Increase layers | Beneficial within ratio | Sequential aggregation has fewer side effects than debate memory |
-| Model Size | 8B scaling vs 70B CoT | 70B CoT remains stronger | Capacity gap cannot be closed by low-quality small model scaling |
+|--------|------------------|-------------------|-------------|
+| Debate | Increase agents | Accuracy peaks ~4 agents | More parallel views add diversity; too many add noise/cost |
+| Debate | Increase rounds | 2 rounds usually best | More rounds lengthen context; errors may propagate in memory |
+| MoA | Increase proposers| Best when models = layers + 1 | Sequential aggregation works better with sufficient candidates |
+| MoA | Increase layers | Beneficial within ratio | Unlike debate, MoA doesn't accumulate full discussion memory, reducing sequential overhead |
+| Size | 8B scaling vs 70B CoT | 70B CoT is stronger | Capacity cannot be fully replaced by low-quality model repetitions |
 
-Allocation of model sizes in MoA (5 models/4 layers): With 70B proposers, an 8B aggregator still reaches 69.6%. However, 8B proposers with a 70B aggregator only reach 52.9%.
+The authors examined model size allocation in MoA (5 models/4 layers). With 70B proposers, even an 8B aggregator maintained 69.6%. With 8B proposers, even a 70B aggregator only achieved 52.9%. MoA quality is clearly driven by the evidence generated by proposers in initial layers.
 
-| MoA Config (5m, 4l) | Aggregator 8B | Aggregator 70B | Key Insight |
-| :--- | :--- | :--- | :--- |
-| Proposers 8B | 51.2% | 52.9% | Weak proposers produce poor evidence; strong aggregator cannot fix it |
-| Proposers 70B | 69.6% | 71.4% | Quality stems from proposers; smaller aggregator causes minor drop |
+| MoA Config (5 models, 4 layers) | Aggregator 8B | Aggregator 70B | Key Insight |
+|---------------------------------|---------------|----------------|-------------|
+| Proposers 8B | 51.2% | 52.9% | Weak proposers provide low-quality evidence; aggregator cannot fix |
+| Proposers 70B | 69.6% | 71.4% | Strong proposers are the primary source of quality |
 
 ### Key Findings
 
-*   MoA is the most robust Pareto-optimal method.
-*   Debate gains come from parallel agents, not more rounds.
-*   Self-refinement performs poorly without external feedback.
-*   Test-time compute is most valuable for hard/medium problems.
-*   Small model scaling does not defeat large model CoT at the same budget.
-*   In MoA, proposers are more critical than the aggregator.
+- MoA is the most robust Pareto-optimal method: improving MMLU-Pro from 64.3% to 71.4%, outperforming self-consistency by 2.7 pp at the same budget.
+- Debate gains come primarily from parallel agents rather than more rounds; excessive rounds increase context costs and risk amplifying errors.
+- Self-refinement performed poorly, proving "repeated self-modification" is not equivalent to stronger reasoning, especially without external feedback in multiple-choice tasks.
+- Test-time compute is most worthwhile for hard and medium tasks; easy tasks saw only a 2.2 pp improvement, suggesting systems should use adaptive difficulty routing.
+- Extreme scaling of small models does not beat large model CoT: at the same budget as 70B CoT, the best 8B configuration was still ~13 pp lower.
+- Proposers are more critical than aggregators in MoA, as they generate the candidate evidence in the early layers.
 
 ## Highlights & Insights
 
-*   **Accuracy vs. Efficiency**: The paper shifts focus from pure accuracy to the Pareto-front, which is essential for real-world deployment where budgets are finite.
-*   **MoA Heuristic**: The "proposers = layers + 1" rule is a practical mnemonic for configuration.
-*   **Memory Cost Awareness**: By accounting for memory bandwidth, the paper provides a more realistic assessment of the trade-off between many small calls vs. few large calls.
-*   **Task Routing**: The finding that easy tasks derive little benefit suggests future "easy-CoT, hard-MoA" adaptive systems.
-*   **Sequential Limits**: The failure of self-refinement highlights that sequential reasoning without external signals often just adds redundancy.
+- **Shifting from "Accuracy Race" to "Efficiency Race"**: The value lies not in inventing a new pipeline but in re-calibrating existing test-time scaling methods using the Pareto front, which is vital for real-world deployments where budgets are finite.
+- **Practical MoA Heuristics**: The rule "proposers = layers + 1" is a memorable heuristic. The intuition is to provide the aggregator with sufficient candidate diversity before gradual synthesis through finite layers.
+- **Critical Memory Transfer Costs**: Many papers estimate cost via FLOPs, but LLM inference is often memory-bandwidth bound. Incorporating weight movement costs provides a more sober judgment on the cost-effectiveness of small models.
+- **Task Difficulty Routing is the Next Step**: Given the diminishing returns on easy tasks, combining these findings with adaptive routing (e.g., CoT for easy, MoA for hard) is a natural progression for efficient systems.
+- **Informative Negative Results**: The failure of self-refinement across multiple configurations suggests that sequential reasoning without reliable feedback likely increases redundancy rather than quality.
 
 ## Limitations & Future Work
 
-*   **Sample Size**: Evaluations used 1000 samples due to cost; confidence intervals are around 0.03.
-*   **Theoretical Cost**: The model excludes framework overhead, batching, and KV cache management.
-*   **Model Scope**: Primarily focused on Llama 3.1 4-bit; applicability to closed-source or MoE models is unverified.
-*   **Task Type**: Limited to multiple-choice reasoning.
-*   **Homogeneous MoA**: Most tests used identical models for proposer/aggregator.
+- **Limited Sample Size**: Due to the high cost of multi-agent evaluation, the main experiment sampled 1000 tasks. The 95% binomial confidence interval is approximately 0.028-0.03, meaning small differences between adjacent configurations should be interpreted carefully.
+- **Theoretical Cost Estimation**: The runtime model covers FLOPs and memory transfer but excludes framework overhead, batching dynamics, KV cache management, communication latency, and server queuing.
+- **Narrow Model Range**: Experiments primarily used 4-bit quantized Llama 3.1 70B/8B. Whether findings generalize to closed-source models, MoE architectures, or specialized reasoning models remains to be verified.
+- **Task Type Concentration**: MMLU-Pro and BBH are broad but differ from open-ended generation, coding, tool use, or interactive agent tasks, where optimal parallel/sequential ratios might vary.
+- **Homogeneous Model Setting**: For variable control, most MoA configurations used the same model for both proposers and aggregators. Real-world optimal cross-model budget allocation is still an open question.
 
 ## Related Work & Insights
 
-*   **vs. Self-Consistency**: SC is effective but saturates; MoA/debate are more efficient because information interaction beats simple majority voting.
-*   **vs. Self-Refine**: Refine is often worse than CoT here, echoing findings that LLMs cannot reliably self-correct without external verification.
-*   **vs. Multi-Agent Debate**: Debate is more efficient than SC, but rounds should be limited to avoid context bloat.
-*   **vs. Mixture-of-Agents**: MoA dominates the Pareto-front; it avoids the heavy memory accumulation of debate.
-*   **vs. Inference Scaling Laws**: Complements existing work by showing MoA's structure is often more budget-efficient than simple best-of-n.
+- **vs Self-Consistency**: SC improves stability via independent paths; this paper finds it effective but prone to early saturation. MoA and debate are stronger for the same budget, showing "interaction/aggregation" is more valuable than "pure majority voting."
+- **vs Self-Refine**: Self-refinement performed worse than CoT here, echoing findings that LLMs cannot reliably self-correct without external signals or verifiers.
+- **vs Multi-Agent Debate**: Debate is more efficient than SC, but gains from rounds are unstable. Recommendation: prioritize agent count and limit rounds.
+- **vs Mixture-of-Agents**: MoA dominates the Pareto front. Unlike debate, it does not require maintaining a full discussion history, reducing the cumulative "cost side-effects" of sequential layers.
+- **vs Inference Scaling Laws**: While other work shows test-time compute can substitute for model size, this work provides structural comparisons, proving MoA's parallel-sequential balance is more cost-effective than simple best-of-n.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ 
-*   Experimental Thoroughness: ⭐⭐⭐⭐ 
-*   Writing Quality: ⭐⭐⭐⭐⭐ 
-*   Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐ Does not propose a brand-new algorithm but systematically re-evaluates reasoning strategies via Pareto optimality.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 pipelines, 34 configurations, two benchmarks, and two model sizes; though sample size is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, logical progression of experimental questions, and actionable practical conclusions.
+- Value: ⭐⭐⭐⭐⭐ Highly relevant for test-time scaling and multi-agent deployment, offering direct guidance on choosing between SC, debate, and MoA.
 
 <!-- RELATED:START -->
 
@@ -164,11 +172,11 @@ Allocation of model sizes in MoA (5 models/4 layers): With 70B proposers, an 8B 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
 - [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
 - [\[ACL 2026\] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection](debating_the_unspoken_role-anchored_multi-agent_reasoning_for_half-truth_detecti.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
-- [\[ACL 2026\] Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games](collaborative_multi-agent_scripts_generation_for_enhancing_imperfect-information.md)
 
 </div>
 

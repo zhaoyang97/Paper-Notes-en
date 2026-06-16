@@ -2,143 +2,116 @@
 title: >-
   [Paper Note] Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks
 description: >-
-  [ICML 2026][LLM Agent][Sub-agent structure] The authors formalize neural networks (especially LLMs) as composite agents synthesized from multiple implicit sub-agents (each a probability distribution over outcomes) via lo…
+  [ICML 2026][LLM Agent][Paper Note] The authors formalize neural networks (specifically LLMs) as composite agents synthesized through the log-weighted pooling of multiple implicit sub-agents (each defined as a probability distribution over outcomes). Under the framework of epistemic utility $W_i(o)=\log P_i(o)$, it is proven that "strict unanimity" is im
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Sub-agent structure"
-  - "log pooling"
-  - "cognitive utility"
-  - "Waluigi effect"
-  - "alignment theory"
+  - ICML 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 24e12295c7efc727
+content_hash: 1a48cee2f8b41878
 ---
-
 # Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.06701](https://arxiv.org/abs/2509.06701)  
-**Code**: None (theoretical paper)  
+**Code**: None (Theoretical paper)  
 **Area**: LLM Agent / AI Alignment / Probabilistic Modeling  
-**Keywords**: Sub-agent structure, log pooling, cognitive utility, Waluigi effect, alignment theory
+**Keywords**: Sub-agent structures, Log-pooling, Epistemic utility, Waluigi effect, Alignment theory
 
 ## TL;DR
-The authors formalize neural networks (especially LLMs) as composite agents synthesized from multiple implicit sub-agents (each a probability distribution over outcomes) via log-weighted pooling. Within the cognitive utility framework $W_i(o)=\log P_i(o)$, they prove that "strict unanimity benefit" is impossible under linear pooling or binary outcomes, but feasible when $|\mathcal O|\ge 3$. This leads to the alignment principle that "explicitly manifesting Waluigi before suppression" is strictly superior to "only reinforcing Luigi".
+The authors formalize neural networks (specifically LLMs) as composite agents synthesized through the log-weighted pooling of multiple implicit sub-agents (each defined as a probability distribution over outcomes). Under the framework of epistemic utility $W_i(o)=\log P_i(o)$, it is proven that "strict unanimity" is impossible under linear pooling or binary outcomes, but feasible when $|\mathcal O|\ge 3$. Consequently, an alignment principle is derived: "explicitly manifesting Waluigi before suppression" is strictly superior to "only reinforcing Luigi."
 
 ## Background & Motivation
 
-**Background**: Viewing LLMs as collections of internally competing personas/priors is a common empirical observation in alignment—humans have both prosocial and antisocial drives, and LLMs exhibit self-preservation, Waluigi (reinforcing the benevolent persona triggers adversarial personas), etc. However, these are descriptive, lacking a rigorous mathematical framework. In machine learning, ensemble, Product of Experts, and multi-head architectures are additive combinations, with the final softmax output essentially a weighted sum on the logit level.
+**Background**: Viewing LLMs as a collection of competing internal personas or priors is a common empirical observation in the alignment field—humans possess dual pro-social and anti-social drives, and LLMs exhibit self-preservation and the Waluigi effect (where reinforcing a kind persona inadvertently triggers an adversarial one). However, these observations remain descriptive and lack a rigorous mathematical framework. Meanwhile, additive combinations like ensembles, Product of Experts, and multi-head structures have long existed in machine learning, where their final softmax outputs are essentially weighted sums of logits.
 
-**Limitations of Prior Work**: (1) Economics/game theory has mature theory for aggregating multi-agent preferences via utility functions (social welfare aggregation, unanimity), but this has not been applied to neural network analysis; (2) Current LLM alignment discussions of phenomena like Waluigi are intuitive, unable to answer key questions such as "under what conditions can sub-agents stably compose" or "which sub-agent combinations cannot form a composite with unanimous benefit"; (3) Empirical observations of "manifest then suppress" versus "directly reinforce the benevolent" RLHF strategies lack mathematical proof.
+**Limitations of Prior Work**: (1) While aggregating multi-agent preferences using utility functions (social welfare aggregation, unanimity) is a mature theory in economics and game theory, it has not been applied to neural network analysis; (2) Current LLM alignment discussions regarding phenomena like the Waluigi effect rely on intuition and cannot answer critical questions such as the conditions under which sub-agents can stably synthesize or which sub-agent combinations cannot form a unanimously beneficial composite; (3) Between "manifesting then suppressing" and "directly reinforcing the benevolent persona" in RLHF, a mathematical proof of superiority is missing.
 
-**Key Challenge**: Neural network training targets $-\log P(\cdot)$ (cross-entropy), so utility should be $\log P(\cdot)$. However, "strict unanimity benefit" under log utility is a sharper condition than under linear utility, highly sensitive to the outcome space structure ($|\mathcal O|=2$ vs $\ge 3$) and pooling form (linear vs log). Deriving these sharp results requires a rigorous definition of composite agents and aggregation forms compatible with neural network structure.
+**Key Challenge**: The training objective of neural networks is $-\log P(\cdot)$ (cross-entropy), suggesting utility should be $\log P(\cdot)$. However, "strict unanimity" under logarithmic utility is a sharper condition than under linear utility, being highly sensitive to the structure of the outcome space ($|\mathcal O|=2$ vs $\ge 3$) and the pooling form (linear vs logarithmic). Deriving these sharp conclusions requires a rigorous definition of composite agents and aggregation forms compatible with neural network architectures.
 
-**Goal**: (i) Propose a formal framework where sub-agents are probability distributions and composite agents are formed via log pooling; (ii) Prove clear boundaries for the existence/non-existence of strict unanimity benefit (linear vs log pooling, $|\mathcal O|=2$ vs $\ge 3$); (iii) Establish properties such as cloning invariance, continuity, and openness; (iv) Reinterpret the Waluigi phenomenon in LLMs using this framework and derive mathematically guaranteed alignment principles.
+**Goal**: (i) Propose a formal framework where "sub-agents are probability distributions and composite agents are log-pooled"; (ii) Prove clear boundaries for the existence or non-existence of strict unanimity (linear vs log-pooling, $|\mathcal O|=2$ vs $\ge 3$); (iii) Establish recursive and stability properties including cloning invariance, continuity, and openness; (iv) Reinterpret the Waluigi effect in LLMs and derive alignment principles with mathematical guarantees.
 
-**Key Insight**: The authors observe that the final layer of modern LLMs is linear logit plus softmax, so any additive decomposition on logits (ensemble, PoE, multi-head) is mathematically equivalent to log pooling of the corresponding distributions. This naturally embeds the alignment problem of "persona synthesis" into the economic/information-theoretic framework of log pooling and log utility.
+**Key Insight**: The authors observe that the final layer of modern LLMs consists of linear logits followed by a softmax. Thus, any additive decomposition on the logits (ensemble, PoE, multi-head) is mathematically **exactly equivalent** to the log-pooling of the corresponding distributions. This naturally embeds the alignment problem of "persona synthesis" into the economic and information-theoretic framework of *logarithmic pooling + epistemic utility*.
 
-**Core Idea**: Treat the LLM as a composite agent via log pooling, quantify each sub-agent's benefit using the welfare gap $\Delta_{P_i}(P)=H(P_i)-H(P)-\mathrm{KL}(P\|P_i)$, and use this formula to derive the first-order relationship between Waluigi and Luigi.
+**Core Idea**: By treating the LLM as a log-pooled composite agent, the welfare gap $\Delta_{P_i}(P)=H(P_i)-H(P)-\mathrm{KL}(P\|P_i)$ is used to quantify the benefit to each sub-agent. This formula is then used to derive the first-order relationship between Waluigi and Luigi.
 
 ## Method
 
 ### Overall Architecture
-Each sub-agent $i$ is associated with a pair (belief $P_i$, welfare $W_i$). The composite agent's belief is given by log pooling $P(o)=\frac1Z\prod_j P_j(o)^{\beta_j}$, with weights $\beta_j\ge 0,\sum_j\beta_j=1$. When utility is $W_i(o)=\log P_i(o)$ (cognitive utility), the condition for "sub-agent $i$ benefiting from the composition" is equivalently the welfare gap $\Delta_{P_i}(P)=\mathbb E_P[\log P_i]-\mathbb E_{P_i}[\log P_i]\ge 0$, which can be rewritten in information-theoretic form as $\Delta_i=H(P_i)-H(P)-\mathrm{KL}(P\|P_i)$. The "strict unanimity group" $\mathcal U_{\text{strict}}$ requires all $i$ to have strictly $>0$. Around this core definition, the authors derive possibility boundaries, recursion and stability properties, and ultimately apply the analysis to Luigi-Waluigi alignment.
+Every sub-agent $i$ is paired with a (belief $P_i$, welfare $W_i$). The belief of the composite agent is given by log-pooling: $P(o)=\frac1Z \prod_j P_j(o)^{\beta_j}$, with weights $\beta_j\ge 0, \sum_j \beta_j=1$. When utility is defined as $W_i(o)=\log P_i(o)$ (epistemic utility), the equivalent condition for "sub-agent $i$ benefiting from synthesis" is the welfare gap $\Delta_{P_i}(P)=\mathbb E_P[\log P_i]-\mathbb E_{P_i}[\log P_i]\ge 0$, which simplifies to the information-theoretic form $\Delta_i=H(P_i)-H(P)-\mathrm{KL}(P\|P_i)$. A "strictly unanimous group" $\mathcal U_{\text{strict}}$ requires all $i$ to be strictly $>0$. Around this core definition, the authors derive feasibility boundaries, recursive stability, and finally apply the results to Luigi-Waluigi alignment analysis.
 
 ### Key Designs
 
-1. **Log Pooling as the "Natural" Sub-agent Aggregation Rule in Neural Networks**:
+**1. Log-pooling: An Aggregation Rule Dictated by Network Architecture and Training Objectives**
 
-    - **Function**: Unifies additive decompositions of neural network final-layer logits (ensemble, Product of Experts, multi-head attention) as sub-agent synthesis under log pooling, embedding the "persona aggregation" problem into established economic aggregation theory.
-    - **Mechanism**: Log pooling $P(o)=\frac1Z\prod_j P_j(o)^{\beta_j}$ is equivalent to weighted sum on logits $\log P_i$ followed by softmax, matching the form of modern transformer final layers. Cognitive utility $W_i(o)=\log P_i(o)$ aligns with the cross-entropy training objective—gradients propagate through the $\log P(\cdot)$ term, so $\log P$ is the network's implicit utility. Composite agents are defined by $\mathbb E_P[W_i]\ge \mathbb E_{P_i}[W_i]$ and strictly unanimous groups.
-    - **Design Motivation**: To apply economic welfare aggregation to neural networks, the aggregation form must match both (i) network structure (final linear + softmax) and (ii) training objective (log-likelihood). Log pooling uniquely satisfies both, dictated by network structure and training objective.
+To apply economic welfare aggregation to neural networks, an aggregation form must match both the network structure (final linear layer + softmax) and the training objective (log-likelihood). Log-pooling is the unique form satisfying both. Its form $P(o)=\frac1Z \prod_j P_j(o)^{\beta_j}$ is equivalent to a weighted sum of logits $\log P_i$ followed by a softmax, which is exactly how modern Transformers operate. Consequently, additive decompositions on logits—such as ensembles, Product of Experts, and multi-head attention—are mathematically equivalent to the log-pooling synthesis of sub-agents. Correspondingly, epistemic utility $W_i(o)=\log P_i(o)$ is not an arbitrary choice: the gradient of cross-entropy training is propagated through the $\log P(\cdot)$ term, making $\log P$ the implicit utility minimized by the network. Under this mapping, the authors define "sub-agent $i$ benefiting from synthesis" as $\mathbb E_P[W_i]\ge \mathbb E_{P_i}[W_i]$.
 
-2. **Possibility Boundaries for Strict Unanimity Benefit (Theorem 8/9/10)**:
+**2. Possibility Boundaries of Strict Unanimity: Three Theorems Defining Feasibility**
 
-    - **Function**: Clearly characterizes under what conditions "all sub-agents benefit simultaneously" is achievable; the most technical part of the paper.
-    - **Mechanism**: (i) **Impossibility Theorem for Binary Outcomes**: For $|\mathcal O|=2$, with any nontrivial weights, it is impossible for both agents to have $\Delta_i\ge 0$ with at least one strict—intuitively, in binary space, log pooling is zero-sum, one agent's gain is another's loss. (ii) **Existence Theorem for $|\mathcal O|\ge 3$**: Explicit construction of $\{P_i\}_{i=1}^n,\beta_i$ such that $\mathbb E_P[\log P_i]>\mathbb E_{P_i}[\log P_i]$ holds strictly for all $i$. (iii) **Impossibility Theorem for Linear Pooling**: For $P_C^{\text{lin}}(o)=\sum\beta_i P_i(o)$ and $W_i(o)=\log P_i(o)$, strict unanimity benefit is never achievable—intuitively, linear pooling is equivalent to random dictatorship, and adversarial agents as dictators severely harm others.
-    - **Design Motivation**: These theorems provide concrete guidance: (a) Multi-persona LLMs must use log pooling, not simple weighted averaging (matching neural network structure); (b) Toy problems with binary outcome spaces are unsuitable for this theory; (c) At least 3 outcomes are needed for nontrivial synthesis. This also means binary "safe/unsafe" alignment settings are inherently degenerate.
+This is the most technical portion of the paper, clarifying the conditions for simultaneous benefit. Three theorems provide boundaries: the Impossibility Theorem for binary outcomes states that when $|\mathcal O|=2$, no non-trivial weights can satisfy $\Delta_i\ge 0$ for two agents with at least one being strict—intuitively, log-pooling in binary space is a zero-sum struggle (Theorem 8). The Existence Theorem for $|\mathcal O|\ge 3$ allows for the explicit construction of a set $\{P_i\}_{i=1}^n, \beta_i$ such that $\mathbb E_P[\log P_i]>\mathbb E_{P_i}[\log P_i]$ holds strictly for all $i$ (Theorem 9). The Impossibility Theorem for Linear Pooling proves that under $P_C^{\text{lin}}(o)=\sum\beta_i P_i(o)$ paired with epistemic utility, strict unanimity is unattainable because linear pooling is equivalent to random dictatorship; an anti-aligned agent selected as dictator would severely harm others (Theorem 10). In practice, this suggests that multi-persona LLMs must use log-pooling, and binary "safe vs unsafe" framing is fundamentally ill-suited for this theory.
 
-3. **Recursion, Stability, and Luigi-Waluigi Alignment Principle**:
+**3. Recursive Stability and the Luigi-Waluigi Alignment Principle**
 
-    - **Function**: Establishes structural guarantees (cloning invariance, continuity, openness) for recursive "composition–decomposition–recomposition" processes, and rigorously proves that "manifest-then-suppress Waluigi" is superior to "only reinforce Luigi".
-    - **Mechanism**: (a) **Lemma 13 (Pooling Invariance under Compatible Splitting)**: Replacing $P_i$ with $m$ weight-compatible sub-agents does not change the global pool. (b) **Theorem 14 (Parent Benefit Does Not Transfer to Children)**: Examples can be constructed where the parent agent $\Delta_{P_1}(P)>0$ but the split child $\Delta_{P_{1,1}}(P)<0$, indicating alignment cannot be judged solely at the top level. (c) **Theorem 17 (Openness)**: If $P\in\mathcal U_{\text{strict}}$, then some neighborhood of $P$ is also in $\mathcal U_{\text{strict}}$—unanimity benefit is locally stable. (d) Section 5 uses $L=\log P$, $l_i=\log P_i$, and $P$-centered profile $v_i(o)=l_i(o)-\mathbb E_P[l_i]$ to construct a Hilbert space analysis, proving that when RLHF applies a $\mathrm{KL}$ budget constraint to the parent agent $P$ and reinforces the Luigi persona, the adversarial Waluigi sub-agent is necessarily activated in the opposite direction; whereas "manifesting Waluigi before unified suppression" achieves strictly greater first-order alignment error reduction than simply reinforcing Luigi.
-    - **Design Motivation**: Stability results (especially openness) underpin the Luigi-Waluigi analysis—only if strict unanimity benefit is an open set can RLHF's small parameter updates avoid suddenly destroying persona structure. Theorem 14 explains why RLHF may pass top-level metrics while sub-persona issues persist. The Luigi-Waluigi result provides the first formal proof for the "manifest-then-suppress" heuristic.
-
-### Loss & Training
-As a theoretical paper, no training procedures are involved, but all results are based on the standard setup of "final layer logit additive structure + cross-entropy training + KL budget RLHF constraint", corresponding to KL-regularized DPO/PPO fine-tuning in practical RLHF.
+This set of results provides structural guarantees for the "synthesis-decomposition-resynthesis" process and strictly proves that "manifesting then suppressing Waluigi" is superior. Stability rests on three pillars: Lemma 13 states that replacing one $P_i$ with $m$ weight-compatible sub-agents does not change the global pool. Theorem 14 constructs a case where a parent agent satisfies $\Delta_{P_1}(P)>0$ but its split sub-agents satisfy $\Delta_{P_{1,1}}(P)<0$, indicating that parent-level alignment does not guarantee sub-agent alignment. Theorem 17 (Openness) proves that if $P\in\mathcal U_{\text{strict}}$, an entire neighborhood of $P$ resides in $\mathcal U_{\text{strict}}$, meaning strict unanimity is a locally stable open set. This openness justifies why small RLHF parameter updates do not suddenly shatter persona structures. Based on this, Section 5 utilizes Hilbert space analysis with $L=\log P$ and $P$-centered profiles $v_i(o)=l_i(o)-\mathbb E_P[l_i]$: when RLHF imposes a KL budget and reinforces the Luigi persona, the adversarial Waluigi sub-agent is inevitably activated in opposition. However, "manifesting Waluigi first and then suppressing it" yields a strictly larger first-order alignment error reduction compared to purely reinforcing Luigi.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper does not contain traditional empirical experiments; the main "experiments" are theorems and closed-form constructions. The results can be summarized in two "theory-assertion" tables:
+The paper lacks traditional empirical experiments; its "experiments" consist of theorems and closed-form constructions, summarized below:
 
-| Pooling Form | Utility | $|\mathcal O|$ | Is Strict Unanimity Benefit Achievable? | Source |
-|--------------|---------|----------------|-----------------------------------------|--------|
-| Linear       | Cognitive utility $\log P_i$ | Any   | **Impossible**                        | Theorem 10 |
-| Log          | Cognitive utility $\log P_i$ | $2$   | **Impossible**                        | Theorem 8  |
-| Log          | Cognitive utility $\log P_i$ | $\ge 3$ | **Achievable**, explicit construction | Theorem 9  |
-| Log          | General welfare $W_i$        | Any $n\ge 2$ | Exists for some $\{P_i,W_i,\beta_i\}$ | Theorem 6  |
+| Pooling Form | Utility | $|\mathcal O|$ | Is Strict Unanimous Reachable? | Source |
+| :--- | :--- | :--- | :--- | :--- |
+| Linear | Epistemic $\log P_i$ | Any | **Impossible** | Theorem 10 |
+| Log | Epistemic $\log P_i$ | $2$ | **Impossible** | Theorem 8 |
+| Log | Epistemic $\log P_i$ | $\ge 3$ | **Reachable** (Explicitly constructible) | Theorem 9 |
+| Log | General welfare $W_i$ | Any $n\ge 2$ | Exists $\{P_i, W_i, \beta_i\}$ where it holds | Theorem 6 |
 
-Core theorem for alignment applications (Section 5):
+Core Theorem for Alignment Application:
 
-| Strategy                       | First-order Alignment Error Reduction | Strictness |
-|---------------------------------|--------------------------------------|-----------|
-| Only reinforce Luigi (increase $\beta_{\text{Luigi}}$) | $\Delta_{\text{Luigi}}^{(1)}$ | baseline  |
-| Manifest-then-suppress Waluigi | Strictly greater than $\Delta_{\text{Luigi}}^{(1)}$ | Proven under KL budget constraint |
+| Strategy | First-order Alignment Error Reduction | Strictness |
+| :--- | :--- | :--- |
+| Only Reinforce Luigi (Increase $\beta_{\text{Luigi}}$) | $\Delta_{\text{Luigi}}^{(1)}$ | Baseline |
+| Manifest-then-suppress Waluigi | Strictly Greater than $\Delta_{\text{Luigi}}^{(1)}$ | Proven under KL budget constraint |
 
 ### Ablation Study
 
-| Configuration | Key Conclusion | Notes |
-|---------------|---------------|-------|
-| Welfare = $\log P_i$ vs general $W_i$ | General $W_i$ more easily achieves unanimity benefit (Theorem 6) | Cognitive utility is "narrower" and more restrictive |
-| Pool-compatible splitting (Lemma 13) vs incompatible splitting (Theorem 14) | The former preserves the pool, the latter does not transfer parent benefit to children | Top-level alignment does not guarantee sub-level alignment |
-| Strict vs non-strict unanimity | Non-strict allows duplication (Lemma 48), strict is locally stable (Theorem 17) but prohibits trivial duplication (Theorem 55) | Distinguishes meaningful synthesis from degenerate replication |
+| Configuration | Key Conclusion | Description |
+| :--- | :--- | :--- |
+| Welfare = $\log P_i$ vs General $W_i$ | Easier to reach unanimity under general $W_i$ (Theorem 6) | Epistemic utility is "narrower" and more constrained |
+| Split Compatibility (L13) vs Non-comp. (T14) | Former preserves pool; latter shows benefit doesn't transfer | Top-level alignment does not ensure sub-level alignment |
+| Strict vs Non-strict Unanimity | Non-strict allows duplicates (L48); Strict is stable in neighborhood (T17) | Distinguishes meaningful synthesis from trivial copying |
 
 ### Key Findings
-- "Outcome space dimension $\ge 3$" is a hard threshold for the possibility of strict unanimity benefit. Any alignment setting reduced to binary "safe vs unsafe" falls into the impossibility region of Theorem 8.
-- "Good top-level model performance but damaged sub-personas" is not an illusion but a mathematical theorem (Theorem 14)—RLHF cannot rely solely on reward model scores.
-- "Manifesting Waluigi before suppression" is strictly superior to "directly reinforcing Luigi", now with formal proof. This directly informs negative sampling strategies and jailbreak defense training in RLHF/DPO.
+- An outcome space dimension of $|\mathcal O| \ge 3$ is a hard threshold for the possibility of strict unanimity. Any setting reducing alignment to a binary "safe vs unsafe" choice falls into the impossibility zone of Theorem 8.
+- "High top-level performance but damaged sub-personas" is a mathematical theorem (Theorem 14), not just an intuition—RLHF success cannot be judged solely by reward model scores.
+- "Manifesting then suppressing Waluigi" is strictly superior to "direct Luigi reinforcement," providing the first formal proof for this empirical heuristic.
 
 ## Highlights & Insights
-- The unification of log pooling, neural network final-layer structure, and cross-entropy training is an elegant observation—it means alignment theory can leverage the entire toolkit of economic aggregation, without reinventing the wheel.
-- Theorem 14 (parent benefit does not transfer to children) explains the recurring empirical phenomenon in alignment where "reward model scores are high but deceptive behavior persists": reward is measured at the top level, while sub-personas may still be strictly harmed.
-- The "openness" result provides geometric intuition for KL-budgeted RLHF training: as long as the base model is in the strict unanimity benefit region, small updates remain within the region, so KL-budgeted training is theoretically stable.
-- "Manifest-then-suppress" is a concrete RLHF operational principle—eliciting jailbreak or deceptive behaviors to construct negative samples, then using them for contrastive training, is strictly superior to only amplifying positive samples.
+- The "trinity" linking log-pooling, neural network logit structures, and cross-entropy training is an elegant observation, allowing alignment theory to leverage economic aggregation tools.
+- Theorem 14 explains the recurring empirical phenomenon of "high reward model scores alongside deceptive behavior": rewards monitor the top level, while sub-personas may still be strictly harmed.
+- The "Openness" result provides geometric intuition for the KL budget in RLHF: as long as the base model is in the strict unanimity zone, small updates keep it there, explaining the stability of KL-regularized training.
+- "Manifest-then-suppress" is a concrete operational principle—eliciting jailbreaks or deceptive behaviors to construct negative samples for contrastive training is strictly more effective than only amplifying positive samples.
 
 ## Limitations & Future Work
-- The entire analysis assumes a finite outcome space and all $P_i>0$; rigorous extension is needed for real LLMs with large vocabularies and long-sequence conditionals (the paper absorbs state into $\mathcal O$ to sidestep this).
-- Log utility $W_i=\log P_i$ is "naturally given by the training objective", but practical RLHF involves reward models, preference learning, and more complex implicit utilities; extending to these non-epistemic utilities is needed for direct industrial RLHF application.
-- The Luigi-Waluigi result in Section 5 is first-order (i.e., local expansion under small KL budgets); higher-order analysis is needed for large-scale alignment fine-tuning.
-- The paper lacks empirical experiments to verify the actual numerical gap between "manifest-then-suppress" and pure Luigi reinforcement; future work should conduct controlled experiments in RLHF/DPO.
+- The paper assumes a finite outcome space with $P_i > 0$, requiring extensions for actual LLM vocabularies and long-sequence conditionals.
+- While $W_i = \log P_i$ is naturally derived, real-world RLHF involves more complex implicit utilities like preference learning; generalizing to non-epistemic utilities is necessary.
+- The Luigi-Waluigi conclusion is first-order (local expansion under small KL budget); large-scale alignment fine-tuning requires higher-order analysis.
+- There is a lack of empirical experiments to quantify the actual performance gap between "manifest-then-suppress" and pure reinforcement.
 
 ## Related Work & Insights
-- **vs Opinion Pooling Classical Theory**: Economics has studied axiomatic properties of log vs linear pooling for decades; this paper imports these results into neural network analysis.
-- **vs Active Inference (Friston et al.)**: Active inference posits "agent = generative model + minimize free energy"; this work borrows the probabilistic agent perspective but focuses more on the mathematical structure of sub-agent synthesis.
-- **vs Waluigi Effect Empirical Discussion**: Previously limited to blog/twitter observations, this paper provides the first strict first-order proof under KL budget, and derives the manifest-then-suppress principle.
-- **vs Product of Experts / Mixture of Experts**: PoE is essentially log pooling; this paper proves the stability/achievability conditions for PoE-style combinations—MoE gating can be viewed as dynamic $\beta_i$ selection.
+- **vs. Classical Opinion Pooling**: This work ports decades of economic research on logarithmic vs. linear pooling to neural network analysis.
+- **vs. Active Inference**: Similar to the "agent = generative model" view, but focuses specifically on the mathematical structure of sub-agent synthesis.
+- **vs. Empirical Waluigi Discussions**: Provides the first rigorous first-order proof under KL budgets for previous informal observations.
+- **vs. PoE / MoE**: Product of Experts is essentially log-pooling; this work proves the stability conditions for such combinations. MoE gating can be viewed as dynamic $\beta_i$ selection.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Introduces log pooling + cognitive utility framework to alignment theory, and provides the first formal proof that "manifest-then-suppress" is strictly superior to direct reinforcement in the alignment literature.
-- Experimental Thoroughness: ⭐⭐ Purely theoretical, no numerical experiments or LLM validation; all results are theorem-based.
-- Writing Quality: ⭐⭐⭐⭐ The motivation for why neural network final-layer structure + cross-entropy training naturally leads to log pooling is well explained; the arrangement of possibility and recursion theorems is clear.
-- Value: ⭐⭐⭐⭐ Methodologically valuable for alignment researchers and RLHF practitioners—provides the first rigorous framework for concepts like "persona synthesis" and the "Waluigi effect".
-
-## Related Papers
-
-- [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](../../ICLR2026/llm_agent/a_benchmark_for_deep_information_synthesis.md)
-- [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](../../NeurIPS2025/llm_agent/deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
-- [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
-- [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐⭐ Introduces the log-pooling framework to alignment theory with formal proofs for empirical heuristics.
+- Experimental Thoroughness: ⭐⭐ Theoretical paper with no numerical experiments or LLM validation.
+- Writing Quality: ⭐⭐⭐⭐ Clearly explains the transition from network architecture to log-pooling and organizes theorems logically.
+- Value: ⭐⭐⭐⭐ Provides a rigorous framework for vague concepts like "persona synthesis" and the "Waluigi effect."
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 

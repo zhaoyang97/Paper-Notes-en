@@ -2,122 +2,135 @@
 title: >-
   [Paper Note] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
 description: >-
-  [ICML 2026][Audio & Speech][full-duplex] MoshiRAG incorporates a special ⟨ret⟩ trigger token into the Moshi full-duplex speech model…
+  [ICML 2026][Audio & Speech][full-duplex] MoshiRAG incorporates a special $\langle\text{ret}\rangle$ trigger token into the Moshi full-duplex speech model, allowing the model to asynchronously invoke an LLM or search engine backend while speaking. By exploiting the natural "keyword delay" between the start of an utterance and the appearance of critical keyword
 tags:
-  - "ICML 2026"
-  - "Audio & Speech"
-  - "full-duplex"
-  - "speech LM"
-  - "RAG"
-  - "Moshi"
-  - "asynchronous retrieval"
-  - "keyword delay"
+  - ICML 2026
+  - Audio & Speech
+  - full-duplex
+  - speech LM
+  - RAG
+  - Moshi
+  - keyword delay
 date: 2026-05-08
-content_hash: 96d43ca051c89e48
+content_hash: 589ab1a947fbaaa9
 ---
-
 # MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.12928](https://arxiv.org/abs/2604.12928)  
-**Code**: https://github.com/kyutai-labs/moshi-rag (Yes)  
-**Area**: Dialogue Systems / Full-Duplex Speech / Retrieval-Augmentation  
+**Code**: https://github.com/kyutai-labs/moshi-rag (Available)  
+**Area**: Dialogue Systems / Full-Duplex Speech / Retrieval-Augmented Generation  
 **Keywords**: full-duplex, speech LM, RAG, Moshi, asynchronous retrieval, keyword delay
 
 ## TL;DR
-MoshiRAG incorporates a special ⟨ret⟩ trigger token into the Moshi full-duplex speech model, allowing the model to asynchronously invoke an LLM or search backend to retrieve reference documents while speaking. By leveraging the natural "keyword delay" between the start of an utterance and the appearance of the keyword, it completely hides retrieval latencies under 2 seconds. This improves the factuality of the speech model to the level of GPT-4o Audio on benchmarks like LlamaQ, WebQ, TriviaQA, and HaluEval while maintaining real-time full-duplex capabilities.
+MoshiRAG incorporates a special $\langle\text{ret}\rangle$ trigger token into the Moshi full-duplex speech model, allowing the model to asynchronously invoke an LLM or search engine backend while speaking. By exploiting the natural "keyword delay" between the start of an utterance and the appearance of critical keywords, it preserves full-duplex interactivity while hiding retrieval latencies of up to 2 seconds. This enables the model to achieve factuality on par with GPT-4o Audio across LlamaQ, WebQ, TriviaQA, and HaluEval.
 
 ## Background & Motivation
-**Background**: Modern speech dialogue is evolving from cascaded ASR-Dialogue-TTS towards end-to-end speech LMs. Full-duplex models (successors to Moshi and dGSLM) can "listen and speak simultaneously," closely mimicking human interaction, whereas turn-based models (e.g., GLM-4-Voice, Freeze-Omni) are restricted to alternating turns.
+**Background**: Modern speech dialogue systems are shifting from cascaded ASR-Dialogue-TTS pipelines toward end-to-end speech LMs. Full-duplex models (successors to Moshi and dGSLM) can "listen and speak" simultaneously, closely mimicking human interaction, whereas turn-based models (e.g., GLM-4-Voice, Freeze-Omni) are limited to alternating turns.
 
-**Limitations of Prior Work**: (1) Native speech LMs have significantly less training data than text LMs, leading to lower factuality compared to similarly sized text models. (2) While scaling models improves factuality, full-duplex systems require real-time inference, limiting parameter counts. (3) Existing RAG efforts are mostly turn-based because traditional RAG pipelines introduce synchronous wait times, which conflict with the "listen-while-speaking" nature.
+**Limitations of Prior Work**: (1) Native speech LMs are trained on significantly less data than text LMs, leading to lower factuality compared to similarly sized text models. (2) Scaling model size improves factuality but conflicts with the strict real-time requirements of full-duplex systems. (3) Existing RAG frameworks are primarily turn-based, introducing synchronous wait times that disrupt full-duplex flow.
 
-**Key Challenge**: Factuality requires external knowledge → requires RAG → RAG introduces latency → breaks full-duplex interaction. One must currently sacrifice either factuality or real-time performance.
+**Key Challenge**: Factuality requires external knowledge via RAG, but RAG introduces latency that breaks the full-duplex experience. There is a conflict between sacrificing factuality or sacrificing real-time interaction.
 
-**Goal**: (1) Enable Moshi to autonomously decide "when external knowledge is needed"; (2) Trigger retrieval without interrupting the speech stream; (3) Ensure the backend is hot-swappable without retraining.
+**Goal**: (1) Enable the Moshi model to autonomously judge when external knowledge is required; (2) Trigger retrieval without interrupting the speech stream; (3) Maintain a hot-swappable backend without requiring model retraining.
 
-**Key Insight**: The authors observe a neglected temporal structure—there is a significant "keyword delay" (KD) between the start of speech (TTFAT) and the appearance of the key answer. For many models, this segment exceeds 3 seconds. If retrieval can be completed within this gap (target $\le 2$ seconds), the answer can be fetched while the model is still speaking a natural "lead-in" sentence.
+**Key Insight**: The authors observe a neglected temporal structure: the "keyword delay" (KD) between the start of speech (TTFAT) and the actual appearance of the keyword. For many models, this delay exceeds 3 seconds. If retrieval can be completed within this gap (target $\le 2$ seconds), the model can "fetch the answer while delivering a polite opening statement."
 
-**Core Idea**: Use a ⟨ret⟩ trigger token combined with an asynchronous backend and reference embedding injection after the lead-in phase to transform synchronous RAG into a full-duplex-compatible "retrieval-while-speaking" mechanism.
+**Core Idea**: Use a $\langle\text{ret}\rangle$ trigger token, an asynchronous backend, and stream-injected reference embeddings to transform synchronous RAG into a full-duplex-compatible "retrieval-while-speaking" mechanism.
 
 ## Method
 
 ### Overall Architecture
-MoshiRAG consists of three components: (1) A RAG-aware full-duplex front-end based on Moshi 7B, which inputs user speech tokens and its own previous tokens to output a special ⟨ret⟩ trigger token; (2) A 1B streaming ASR (0.5s latency) dedicated to transcribing user speech for retrieval; (3) An asynchronous retrieval backend, which can be LLM-based (e.g., Gemma 3 27B reading context for reference text) or search-based (e.g., Tavily search engine). When Moshi predicts ⟨ret⟩, the system sends the current dialogue transcript to the backend. The front-end continues generating a "lead" segment (knowledge-independent opening) to maintain the speech flow. Once the backend returns reference documents, they are projected into embeddings via a single-layer reference text encoder and superimposed frame-wise onto the temporal Transformer input, allowing Moshi to incorporate the knowledge in the "body" segment.
+MoshiRAG enables a full-duplex model to retrieve external knowledge without stuttering. It splits the traditional synchronous RAG process into two layers: a real-time front end and a "slow-thinking" back end. The front end is a full-duplex model based on Moshi 7B that processes user audio and its own previous tokens, including a new $\langle\text{ret}\rangle$ token. An auxiliary 1B streaming ASR (0.5s latency) transcribes user speech. Once Moshi emits the $\langle\text{ret}\rangle$ token, the transcribed dialogue is sent to an asynchronous backend (e.g., Gemma 3 27B or Tavily search). The front end continues generating a "lead" segment (opening) without waiting. Once results return, they are projected via a reference encoder and added frame-by-frame to the backbone, allowing the model to seamlessly integrate the knowledge into the "body" of the response.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["User Speech"] --> M["Moshi 7B Full-Duplex Backbone"]
+    A --> ASR["1B Streaming ASR (0.5s Latency)"]
+    M -->|"Predict ⟨ret⟩ token"| RET["⟨ret⟩ Trigger + Async Backend<br/>Gemma 3 27B / Tavily Search"]
+    ASR -->|"Dialogue Transcription"| RET
+    RET --> REF["Reference Document"]
+    REF --> INJ["Ref Embedding Streaming Injection<br/>ARC-Encoder 4× + Linear Projection"]
+    subgraph KD["Delay-Aware Lead/Body/Tail Output"]
+        direction TB
+        LEAD["Lead Segment<br/>Covers ≤2s Retrieval Latency"] --> BODY["Body Segment: Core Answer"]
+        BODY --> TAIL["Tail Segment"]
+    end
+    RET -->|"Front-end continues without waiting"| LEAD
+    INJ -->|"Frame-wise add to 12.5Hz backbone"| BODY
+```
 
 ### Key Designs
 
-1.  **⟨ret⟩ trigger token + asynchronous backend**:
-    - **Function**: Allows Moshi to autonomously judge if a response requires external knowledge and invoke the backend without interrupting speech generation.
-    - **Mechanism**: A special ⟨ret⟩ token is added to the Moshi RQ-Transformer output vocabulary. In training data, the position immediately preceding the first text token of the "lead" segment in RAG-enabled turns is replaced with ⟨ret⟩, leveraging TTS forced alignment for positioning. During inference, once ⟨ret⟩ is predicted, the user transcript from ASR and the model's own transcript are sent to the backend. The front-end continues running asynchronously.
-    - **Design Motivation**: Synchronous RAG calls break the "listen-while-speaking" flow. Letting the model explicitly signal the intent to retrieve grants it control over "when to search" and decouples real-time front-end performance from the "slow-thinking" backend.
+**1. $\langle\text{ret}\rangle$ Trigger Token + Async Backend: Turning Synchronous RAG into Event-Driven Tool Calls**
 
-2.  **Latency-aware data synthesis leveraging keyword delay**:
-    - **Function**: Trains the model to learn that lead-in phrases are sufficient to cover retrieval latency, preventing pauses or disjointedness during inference.
-    - **Mechanism**: Three Gemma 3 27B LLM roles (User, Moshi, Reference) are used to synthesize approximately 1.9M dialogue turns (474k QA and 5.5k expert domain). Each RAG-enabled turn is structured into (lead, body, tail) segments: "lead" is a generic opening like "Let me check that for you..."; "body" is the core answer after receiving the reference; "tail" is the closing. During training, retrieval latency $d'$ is simulated using $d'\sim\mathcal{U}(1.0, d_{\text{lead}}-1.0)$ (80% probability) or $d'\sim\mathcal{U}(0, d_{\text{lead}})$ (20% fallback) to ensure at least a 1-second buffer before the body begins.
-    - **Design Motivation**: Keyword delay is the physical basis of this solution. Without training samples where lead-ins cover a 2-second retrieval delay, the model would attempt to integrate references prematurely, causing audio misalignment. Explicit lead/body/tail labeling and $d'$ sampling force the model to learn this temporal constraint.
+Synchronous RAG interrupts full-duplex flow. MoshiRAG introduces a special token $\langle\text{ret}\rangle$ into the RQ-Transformer's vocabulary. During training, $\langle\text{ret}\rangle$ is placed at the start of the "lead" segment in each RAG-enabled turn. During inference, when the model predicts $\langle\text{ret}\rangle$, the system sends the ASR transcription to the backend. The front end continues running without waiting for a result. This decouples real-time responsiveness from backend reasoning.
 
-3.  **Streaming injection of reference embeddings**:
-    - **Function**: Integrates variable-length retrieved text into the 12.5 Hz Moshi backbone with minimal overhead.
-    - **Mechanism**: Reference text is first compressed by a factor of 4 using a pre-trained ARC-Encoder, then projected via a trainable linear layer to obtain $h_i^{\text{ref}}=\text{proj}(\text{emb}_i^{\text{ref}})$. Starting at $d/f_r$ steps after ⟨ret⟩, $h_i^{\text{ref}}$ is added frame-wise to the temporal Transformer input $h_i$: $h_i'=h_i+h_{i-(i_{\text{ret}}+d/f_r)}^{\text{ref}}$ for $l$ steps. During training, entire references are dropped with 0.2 probability to ensure robustness when no reference is returned.
-    - **Design Motivation**: Prepending reference text would consume the context window and break the 12.5 Hz streaming property. Additive injection after length compression allows text knowledge to align temporally with audio frames without crowding speech tokens, providing a lightweight interface between text and speech generation.
+**2. Delay-Aware Data Synthesis: Training Openings to Mask Latency**
+
+The physical foundation is keyword delay: the gap from current onset (TTFAT) to keyword often exceeds 3s. If data contains enough samples where the lead segment covers $\sim 2$s of retrieval, the model learns to retrieve while speaking. Authors synthesized 1.9M dialogues using three Gemma 3 27B roles (User/Moshi/Reference) with strictly isolated information access. Each RAG turn is structured into (lead, body, tail). During training, retrieval delays are simulated by sampling $d'\sim\mathcal{U}(1.0,\,d_{\text{lead}}-1.0)$ with 80% probability, and a fallback $d'\sim\mathcal{U}(0,\,d_{\text{lead}})$ with 20% probability, ensuring at least 1s of buffer before the body starts.
+
+**3. Reference Embedding Streaming Injection: Interfacing Variable Text into 12.5 Hz Backbone**
+
+Prepending reference text would consume context and break the 12.5 Hz streaming property. MoshiRAG uses a pre-trained ARC-Encoder to compress the reference text by 4x, followed by a trainable linear projection $h_i^{\text{ref}}=\text{proj}(\text{emb}_i^{\text{ref}})$. Starting from $d/f_r$ steps after $\langle\text{ret}\rangle$, these are added frame-wise to the temporal Transformer input: $h_i'=h_i+h_{i-(i_{\text{ret}}+d/f_r)}^{\text{ref}}$ for $l$ steps. 20% dropout was applied at training to ensure robustness when references are missing.
 
 ### Loss & Training
-The base loss follows Moshi's original text/speech token next-token prediction. The reference text encoder is frozen, while the linear projection and dropout vectors are trainable. Training uses a learning rate of $2\times 10^{-6}$, batch size of 32, and 100k updates. Input audio undergoes simple VAD silence removal with an 80ms window and $-65$ dBFS threshold.
+The base loss follows Moshi's standard text/speech next-token prediction. The reference text encoder is frozen, while the linear projection and dropout vectors are learnable. Learning rate: $2\times 10^{-6}$, batch size: 32, 100k updates. Simple VAD (80ms window, -65 dBFS) is used for silence cleaning.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | LlamaQ | WebQ | TriviaQA | HaluEval | TTFAT(s) | KD(s) | E2EKD(s) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|--------|------|----------|----------|-------|----|-------|
 | GPT-4o Audio | 88.4 | 81.0 | 90.6 | 68.7 | — | 5.5 | — |
 | GLM-4-Voice 9B | 64.7 | 32.2 | 39.1 | 21.2 | 0.3 | 4.2 | 4.4 |
 | Freeze-Omni 7B | 72.0 | 44.7 | 53.9 | 14.0 | — | — | — |
-| **MoshiRAG (resp.)** | Near GPT-4o | Leads open models | Same | Same | Small | Backend $\le 2$s | Managed |
+| **Ours (MoshiRAG)** | Close to GPT-4o Audio | Significant Lead | Significant Lead | Significant Lead | Small | $\le 2$s | Managed |
 
-Table 1 in the paper shows that MoshiRAG's ref (retrieval quality) and resp (final answer) across four QA benchmarks significantly outperform other open speech LMs and approach strong non-full-duplex baselines, while maintaining much lower FLOPs/sec than larger models like GLM-4-Voice.
+Table 1 in the paper indicates that MoshiRAG achieves significantly higher quality (ref) and response (resp) scores on four QA benchmarks compared to open-source speech LMs, while maintaining lower FLOPs/sec than larger models like GLM-4-Voice.
 
 ### Ablation Study
 
 | Configuration | Key Observation |
-| :--- | :--- |
-| Search Backend (Tavily) vs LLM Backend (Gemma 3 27B) | Backend is hot-swappable; LLM typically yields higher accuracy, but search provides real-time web info. |
-| Different reference encoders (ARC-Encoder vs Qwen, etc.) | ARC-Encoder offers the best trade-off between quality and latency at $4\times$ compression. |
-| No lead/body/tail structure | Misalignment occurs when retrieval results arrive; response includes unnatural pauses or transitions. |
-| Mathematical reasoning (Out-of-domain) | Resolves simple math via "Speech → LLM tool call," showing framework generalizability. |
+|------|---------|
+| Search (Tavily) vs LLM Backend (Gemma 3) | Backends are hot-swappable; LLM is more accurate, but Search provides real-time web info. |
+| Reference Encoders | ARC-Encoder provides the best trade-off between quality and latency at 4x compression. |
+| Without Lead/Body/Tail Structure | Resulting speech segments were misaligned, leading to unnatural pauses or disjointed audio. |
+| Mathematical Reasoning (OOD) | Successfully solved simple math via "Speech $\rightarrow$ LLM tool call" format. |
 
 ### Key Findings
-- E2EKD (End-to-End Keyword Delay), an often ignored time window (typically $>3$ seconds), provides the physical justification for transforming synchronous RAG into asynchronous RAG. As long as the backend response is under ~2 seconds, the process is transparent to the user.
-- Improving speech LM factuality via external knowledge rather than scaling parameters allows the 7B Moshi to match or exceed 9B+ tier models without modifying the core backbone.
-- This represents an early form of full-duplex tool use, where the model treats the LLM/search engine as an external brain, hinting at future voice agent architectures.
+- The E2EKD (End-to-End Keyword Delay) window (typically $>3$s) provides the physical budget to convert synchronous RAG into an asynchronous process.
+- Factuality in speech LMs can be addressed via external knowledge sources rather than just parameter scaling; the 7B Moshi matches or exceeds several 9B+ competitors.
+- This represents an early form of full-duplex tool use, where the model treats the backend as an "external brain."
 
 ## Highlights & Insights
-- Redefining "keyword delay" from a criticized latency metric into a "usable time budget" is the core insight of this work—identifying a gap that everyone sees but no one utilizes.
-- The ⟨ret⟩ "model-initiated tool call" design elegantly migrates the mature function-calling paradigm from the LLM world into the speech domain.
-- Adding reference embeddings frame-wise to the temporal Transformer input, rather than "prompt concatenation," is a hardware-aware design that respects 12.5 Hz streaming constraints.
-- Using a three-role LLM (user/Moshi/reference) setup for data synthesis with strictly partitioned information access is a robust paradigm for generating synthetic dialogue data.
+- Redefining "keyword delay" from a negative latency metric into a "usable time budget" is the core innovation of this work.
+- The $\langle\text{ret}\rangle$ design elegantly migrates the mature text-LLM function calling paradigm into the speech domain.
+- Frame-wise additive injection into the temporal Transformer, rather than prompt concatenation, is a hardware-aware design that respects 12.5 Hz streaming constraints.
 
 ## Limitations & Future Work
-- Training relies heavily on synthetic dialogue and multi-channel TTS, which still differs from real human dialogue in terms of disfluency, accents, and noise distribution.
-- The ⟨ret⟩ trigger is a "hard decision" without an explicit confidence or cost mechanism; it relies on dropout-trained robustness if the backend is unavailable.
-- Evaluation is concentrated on single-turn QA; evaluation of strategic knowledge citation in complex multi-turn scenarios (e.g., clarifying before searching) remains limited.
-- The model language is currently limited to English Moshi, leaving a gap for multilingual voice assistants.
+- Training relies heavily on synthetic dialogues and multi-channel TTS, leaving a gap with real human dialogue regarding disfluency, accents, and noise.
+- The $\langle\text{ret}\rangle$ trigger is a "hard decision" without a formal confidence or cost-benefit mechanism.
+- Evaluations are primarily single-turn QA; strategic multi-turn knowledge usage (clarifying questions before retrieving) is less explored.
+- Currently limited to the English version of Moshi.
 
 ## Related Work & Insights
-- **vs StreamRAG / KAME**: StreamRAG is limited to non-full-duplex settings. KAME supports full-duplex but uses fixed-interval LLM calls, wasting compute. MoshiRAG is an "on-demand" event-driven RAG system, optimizing both efficiency and experience.
-- **vs Moshi**: Directly inherits Moshi's RQ-Transformer + dual-channel architecture. Adding only one token and a reference projection layer yields massive factuality gains, representing a highly efficient extension of the original Moshi.
-- **vs Chain-of-Thought for audio**: CoT focuses on improving reasoning, while MoshiRAG improves knowledge access; these are orthogonal and can be combined.
+- **vs StreamRAG / KAME**: StreamRAG is restricted to turn-based settings; KAME uses fixed-interval calls which waste computation. MoshiRAG uses on-demand, event-driven RAG for better efficiency.
+- **vs Moshi**: Directly inherits the RQ-Transformer + dual-channel architecture, requiring only one new token and a projection layer for significant factuality gains.
+- **vs Chain-of-Thought for audio**: CoT improves reasoning; MoshiRAG improves knowledge access. These are orthogonal and potentially combinable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First full-duplex RAG system; the "utilizing keyword delay" perspective is highly original; technical components leverage proven modules.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers four QA benchmarks, two backend types, multiple reference encoders, and tool-use reasoning; lacks real human multi-turn benchmarks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear explanation of latency-related terminology (TTFAT/KD/E2EKD/Retrieval delay); temporal diagrams are intuitive.
-- Value: ⭐⭐⭐⭐⭐ Opens the door for full-duplex voice agent tool use; the Moshi + Tavily approach is directly applicable in industry.
+- Novelty: ⭐⭐⭐⭐ First full-duplex RAG system; innovative use of keyword delay.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong coverage of QA, backends, and encoders.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear explanation of latency metrics (TTFAT/KD/E2EKD); excellent engineering motivation.
+- Value: ⭐⭐⭐⭐⭐ Opens the door for full-duplex voice agents with tool-use capabilities.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

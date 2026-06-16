@@ -2,47 +2,42 @@
 title: >-
   [Paper Note] Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Two-timescale] This paper establishes the stability and almost sure convergence of general two-timescale stochastic approximation (SA) under Markov noise without relying on any project…
+  [ICML 2026][Reinforcement Learning][TDC] This paper establishes the stability and almost sure (a.s.) convergence of general two-timescale stochastic approximation (SA) under Markovian noise without relying on any projection operators. Consequently, it provides the first a.s. convergence result for the TDC($\lambda$) algorithm under off-policy linear function
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Two-timescale"
-  - "stochastic approximation"
-  - "ODE method"
-  - "Markov noise"
-  - "TDC"
+  - ICML 2026
+  - Reinforcement Learning
+  - TDC
 date: 2026-05-08
-content_hash: 9c1b3e053c77aa6d
+content_hash: 34ef8cf354dbb92c
 ---
-
 # Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31172](https://arxiv.org/abs/2605.31172)  
 **Code**: None  
 **Area**: Reinforcement Learning  
-**Keywords**: Two-timescale, stochastic approximation, ODE method, Markov noise, TDC
+**Keywords**: Two-timescale, Stochastic Approximation, ODE method, Markovian noise, TDC
 
 ## TL;DR
-This paper establishes the stability and almost sure convergence of general two-timescale stochastic approximation (SA) under Markov noise without relying on any projection operators for the first time. Based on this, it provides the first almost sure convergence results for the TDC($\lambda$) algorithm under off-policy linear function approximation.
+This paper establishes the stability and almost sure (a.s.) convergence of general two-timescale stochastic approximation (SA) under Markovian noise without relying on any projection operators. Consequently, it provides the first a.s. convergence result for the TDC($\lambda$) algorithm under off-policy linear function approximation.
 
 ## Background & Motivation
 
-**Background**: Numerous algorithms in reinforcement learning, such as actor-critic, TDC, and target networks, belong to two-timescale SA: two sets of parameters (fast and slow) are updated with large and small step sizes, respectively. Asymptotically, the fast scale appears to converge under a static slow parameter, forming a stochastic version of "nested loops." Theoretical analysis relies on the ODE method proposed by Borkar (Borkar 1997; Borkar & Meyn 2000), where the core premise is iterate boundedness (stability), which allows discrete iterations to be characterized by ODE trajectories.
+**Background**: Many algorithms in reinforcement learning (RL), such as actor-critic, TDC, and target networks, fall under the category of two-timescale SA: fast and slow parameter sets are updated with large and small step sizes, respectively. Asymptotically, the fast scale behaves as if it converges under a static slow parameter, forming a stochastic version of "nested loops." Theoretical analysis relies on the ODE method proposed by Borkar (Borkar 1997; Borkar & Meyn 2000), where the core premise is iterate boundedness (stability), allowing the asymptotic behavior of discrete iterates to be characterized by ODE trajectories.
 
-**Limitations of Prior Work**: Classical two-timescale convergence conclusions almost exclusively assume (i) i.i.d. noise and (ii) pre-established stability. However, in RL, the noise sequence is a Markov chain (joint state-action-eligibility trace), and eligibility traces can be unbounded in off-policy settings, making i.i.d. and bounded noise assumptions inapplicable. Previous work either resorted to mandatory projection operators (Yu 2017; Panda & Bhatnagar 2025) to artificially guarantee boundedness, or assumed decoupled two-scale parameters and noise falling within compact spaces (Karmakar & Bhatnagar 2021), thus failing to directly cover TDC($\lambda$) with eligibility traces.
+**Limitations of Prior Work**: Classical two-timescale convergence results almost always assume (i) i.i.d. noise and (ii) pre-established stability. However, in RL, noise sequences are Markov chains (joint state-action-eligibility trace), and eligibility traces can be unbounded in off-policy settings, making both i.i.d. and bounded noise assumptions inapplicable. Prior works either resorted to mandatory projection operators (Yu 2017; Panda & Bhatnagar 2025) to artificially guarantee boundedness or assumed decoupled scales and compact noise spaces (Karmakar & Bhatnagar 2021), failing to directly cover TDC($\lambda$) with eligibility traces.
 
-**Key Challenge**: In two-scale coupled dynamics, how can one relate the norm of fast-scale iterations to the norm of slow-scale iterations using only the ratio of fast-to-slow step sizes $\beta(n)/\alpha(n)\to 0$ and mild Lipschitz assumptions, thereby proving almost sure convergence in a "fully open" setting with Markov noise, non-compact noise spaces, no projection, and no preset stability? This represents a long-standing gap in the literature (see Table 1).
+**Key Challenge**: In two-scale coupled dynamics, how can one relate the norm of fast-scale iterates to slow-scale iterates using only the step-size ratio $\beta(n)/\alpha(n)\to 0$ and mild Lipschitz assumptions? Specifically, how can almost sure convergence be proven under the "wide-open" setting of Markovian noise, non-compact noise spaces, no projections, and no pre-assumed stability? This remains a longstanding gap in the literature (see Table 1).
 
-**Goal**: To remove all the aforementioned restrictions within a unified framework and cover real algorithms such as TDC($\lambda$) and actor-critic.
+**Goal**: To remove all the aforementioned restrictions within a unified framework, covering real-world algorithms such as TDC($\lambda$) and actor-critic.
 
-**Key Insight**: The authors noted that Lakshminarayanan & Bhatnagar (2017) used "rescaled iterations + ODE@$\infty$" to prove two-scale stability under i.i.d. noise, while Liu et al. (2025b) completed a similar argument for single-scale Markov noise. To combine these, a key obstacle arises: existing two-scale proofs require "same-step" control of the fast parameter $\|x_n\|$ by the slow parameter $\|y_n\|$, a synchronous bound that naturally fails during the rescaling process.
+**Key Insight**: The authors observe that while Lakshminarayanan & Bhatnagar (2017) used "rescaled iterates + ODE@$\infty$" to prove two-scale stability under i.i.d. noise, and Liu et al. (2025b) achieved similar results for single-scale Markov noise, combining them faces a major hurdle: existing two-scale proofs require a "same-step" control of fast parameters $\|x_n\|$ by slow parameters $\|y_n\|$. This synchronous bound naturally fails during the rescaling process.
 
-**Core Idea**: Relax the requirement to "controlling the current fast parameter $x_n$ with the maximum slow parameter $y_n^{\max}$ observed so far"—specifically using $\|x_n\|\le K(1+\|y_n^{\max}\|)$ as a new bridging inequality (Lemma 3.1). This "running max" formulation aligns perfectly with Lakshminarayanan’s "monotone scaling factor," allowing the two sets of tools to be merged seamlessly.
+**Core Idea**: Relax the requirement to "controlling the current fast parameter $x_n$ with the maximum slow parameter seen so far $y_n^{\max}$"—introducing $\|x_n\|\le K(1+\|y_n^{\max}\|)$ as a new bridging inequality (Lemma 3.1). This "running max" formulation aligns perfectly with Lakshminarayanan's "monotone scaling factor," allowing the seamless integration of the two theoretical toolsets.
 
 ## Method
 
-This is a SA theory paper rather than an algorithmic one; the "method" refers to a proof system developed around the new Lemma 3.1, which is ultimately applied to the RL algorithm TDC($\lambda$).
+This is a theoretical SA paper rather than an algorithmic one. The "Method" refers to a proof system centered around Lemma 3.1, eventually applied to the RL algorithm TDC($\lambda$).
 
 ### Overall Architecture
 
@@ -52,34 +47,45 @@ $$
 x_{n+1}=x_n+\alpha(n)\,H(x_n,y_n,W_{n+1}),\quad y_{n+1}=y_n+\beta(n)\,G(x_n,y_n,W_{n+1}),
 $$
 
-where the noise $\{W_n\}$ is a Markov chain on space $\mathcal{W}$ (possibly non-compact and uncountable), and step sizes satisfy $\lim_n \beta(n)/\alpha(n)=0$. The proof roadmap is: ① Prove Lemma 3.1 (running-max bridging bound) for the fast scale, ② Prove Theorem 3.2 (global stability) for the slow scale, ③ Prove Theorem 3.3 (almost sure convergence) accordingly, and ④ Verify that TDC($\lambda$) satisfies all assumptions to obtain Theorem 7.2.
+where the noise $\{W_n\}$ is a Markov chain on space $\mathcal{W}$ (allowing non-compact, uncountable spaces), and step sizes satisfy $\lim_n \beta(n)/\alpha(n)=0$. The proof roadmap is: ① Prove Lemma 3.1 at the fast scale (running-max bridging bound), ② Prove Theorem 3.2 at the slow scale (overall stability), ③ Prove Theorem 3.3 (almost sure convergence), ④ Verify that TDC($\lambda$) satisfies all assumptions to obtain Theorem 7.2.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Two-Timescale Recursion (fast x, slow y)<br/>Markovian Noise, Non-compact Space, β/α→0"] --> B["Running-max Bridging (Lemma 3.1)<br/>Fast scale analysis: Bound fast iterates using historical max slow iterates"]
+    B --> C["Slow Scale Stability (Theorem 3.2)<br/>Slow scale analysis: All iterates bounded a.s."]
+    C --> D["Almost Sure Convergence (Theorem 3.3)<br/>ODE method: Converge to unique globally asymptotically stable equilibrium"]
+    D --> E["Off-policy TDC(λ) Convergence Application (Theorem 7.2)<br/>Eligibility traces + Linear approx + No projection"]
+```
 
 ### Key Designs
 
-1. **Running-max Bridge (Lemma 3.1)**:
-    - **Function**: Links the iteration norms of the two timescales, proving there exists a sample-path-dependent constant $K$ such that $\|x_n\|\le K(1+\|y_n^{\max}\|)$ a.s., where $y_n^{\max}=\arg\max_{i\le n}\|y_i\|$ corresponds to the slow iteration.
-    - **Mechanism**: The time axis $[0,\infty)$ is sliced into intervals $[T_n, T_{n+1})$ of length approximately $T$ relative to the fast step size. On each segment, $z=(x,y)$ is rescaled by $r_n\doteq\max\{1,r_{n-1},\|\bar z(T_n)\|\}$ to obtain $\tilde z_n(t)=\bar z(T_n+t)/r_n$. An Arzelà–Ascoli subsequence yields a limit trajectory $z^{\lim}$ satisfying ODE@$\infty$ $\dot x=h_\infty(x,y), \dot y=0$. Lemma 4.7 proves that if $\|\bar x(T_n)\|>C_1(1+\|\bar y(T_n)\|)$, then $\|\bar z(T_{n+1})\|\le\|\bar z(T_n)\|$ (i.e., $r_{n+1}=r_n$). Induction yields $\|\bar z(T_n)\le C_1C_2(\max_{m\le n}\|\bar y(T_m)\|+1)$, and Lemma 4.9 extends this bound to all $n$.
-    - **Design Motivation**: Unlike previous works (Kushner & Yin 2003; Mokkadem & Pelletier 2006; Dalal et al. 2018; Yaji & Bhatnagar 2020; Zeng et al. 2024), which attempted to control $\|x_n\|$ using the synchronous slow parameter $\|y_n\|$, such synchronous bounds fail when noise is not i.i.d. The "running max" is "looser" than the current value and is the weakest condition capable of accommodating both Lakshminarayanan's monotone scaling scheme and Liu's Markov noise averaging techniques.
+**1. Running-max Bridging (Lemma 3.1): Using "Historical Maximum Slow Parameter" to Bound Fast Parameters**
 
-2. **Slow-scale Stability Proof (Theorem 3.2)**:
-    - **Function**: Derives global iteration boundedness $\sup_n\|z_n\|<\infty$ a.s. via contradiction based on Lemma 3.1.
-    - **Mechanism**: Performs rescaling again at the slow scale, but the scaling factor is changed to $r_n\doteq\max\{1,\|z_{m(T_n)}^{\max}\|\}$ to ensure it is at least of the same order as the historical maximum iteration. Lemma 5.3 is then proved—showing that even at the slow scale, the fast iteration approximately tracks $\lambda_\infty(\tilde y_n(t))$, thereby formalizing the heuristic that "the fast scale acts as if it has converged." Combined with the zero-attractor property of ODE@$\infty$, the assumption $\sup_n r_n=\infty$ contradicts the convergence of the limit ODE to 0; thus $r_n$ is bounded and stability holds.
-    - **Design Motivation**: Applying the single-scale argument of Liu et al. (2025b) directly would fail because fast iterations have larger step sizes and grow faster. Defining the scaling factor as the "historical maximum $\|z\|$" ensures that scaling rates for both scales are automatically synchronized, allowing Markov noise averaging estimates (Kushner & Yin 2003 techniques) to remain applicable.
+The entire proof hinged on the aforementioned key challenge—how to relate the norm of the fast iterate $\|x_n\|$ to the slow iterate in coupled dynamics. Prior works (Kushner & Yin 2003, Mokkadem & Pelletier 2006, Dalal et al. 2018, Yaji & Bhatnagar 2020, Zeng et al. 2024) attempted to control $\|x_n\|$ using the synchronous $\|y_n\|$. Once the noise is no longer i.i.d., this synchronous bound fails during rescaling. Ours breaks this deadlock by relaxing it to $\|x_n\|\le K(1+\|y_n^{\max}\|)$ (a.s.), where $y_n^{\max}$ is the slowest iterate with the largest norm so far. The proof involves partitioning the time axis $[0,\infty)$ into intervals $[T_n,T_{n+1})$ of length approximately $T$ based on fast step sizes, normalizing $z=(x,y)$ by a monotone scaling factor $r_n\doteq\max\{1,r_{n-1},\|\bar z(T_n)\|\}$ to get $\tilde z_n(t)$, and using Arzelà–Ascoli to converge to a limit trajectory satisfying ODE@$\infty$ ($\dot x=h_\infty(x,y),\ \dot y=0$). Lemma 4.7 ensures that if $\|\bar x(T_n)\|>C_1(1+\|\bar y(T_n)\|)$, then $r_{n+1}=r_n$, leading to $\|\bar z(T_n)\|\le C_1C_2(\max_{m\le n}\|\bar y(T_m)\|+1)$. Finally, Lemma 4.9 extends the bound to all $n$. The "running max" is essential as it is the weakest condition that simultaneously accommodates Lakshminarayanan's monotone scaling and Liu's Markovian noise averaging techniques.
 
-3. **Application to Off-policy TDC($\lambda$) Convergence (Theorem 7.2)**:
-    - **Function**: Provides the first proof of almost sure convergence for TDC (without projection, with linear function approximation, off-policy, and with eligibility traces). The algorithm is defined as $e_t=\lambda\gamma\rho_{t-1}e_{t-1}+\phi_t$, $\delta_t=R_{t+1}+\gamma\phi_{t+1}^\top\theta_t-\phi_t^\top\theta_t$, $\nu_{t+1}=\nu_t+\alpha_t(\rho_t\delta_t e_t-\phi_t\phi_t^\top\nu_t)$, $\theta_{t+1}=\theta_t+\beta_t(\rho_t\delta_t e_t-\rho_t(1-\lambda)\gamma\phi_{t+1}e_t^\top\nu_t)$.
-    - **Mechanism**: $\nu_t$ is treated as the fast scale and $\theta_t$ as the slow scale, with the state expanded to $(S_t,A_t,e_t)$. Since the product of importance sampling ratios $\rho_t$ in off-policy settings makes $e_t$ potentially unbounded, $\mathcal{W}$ is taken as a non-compact space. Verifying that assumptions B.1–B.7 in Appendix B (Markov chain ergodicity, step-size conditions, homogeneous limits of $H/G$, Lipschitz continuity, averaging conditions) naturally hold for TDC($\lambda$) allows Theorem 3.3 to directly yield almost sure convergence.
-    - **Design Motivation**: Previously, Yu (2017) and Panda & Bhatnagar (2025) had to add projections to force boundedness. This non-projection framework is the first tool capable of characterizing practical algorithms "as they are." It also demonstrates the practical power of Lemma 3.1—turning "theoretical non-projection" from a slogan into a verifiable condition.
+**2. Slow-Scale Stability Proof (Theorem 3.2): Reducing Overall Boundedness to Contradiction**
+
+With the bridging bound, the second step is to prove $\sup_n\|z_n\|<\infty$ (a.s.). Directly applying the single-scale argument from Liu et al. (2025b) fails because the fast scale has larger step sizes and grows faster, outpacing single-scale rescaling. The authors' solution is to perform rescaling on the slow scale but change the scaling factor to $r_n\doteq\max\{1,\|z_{m(T_n)}^{\max}\|\}$, ensuring it is at least of the same order as historical maximums. This forces the rescaling rates of both scales to synchronize—a prerequisite for Kushner & Yin's Markovian noise averaging estimates. Lemma 5.3 then proves that even at slow-scale time resolution, the fast iterate approximately tracks $\lambda_\infty(\tilde y_n(t))$, formalizing the heuristic that "the fast scale is effectively converged." Combined with the zero-attractor property of ODE@$\infty$, assuming $\sup_n r_n=\infty$ contradicts the limit ODE's convergence to 0, thus $r_n$ must be bounded, and stability holds.
+
+**3. Application to Off-policy TDC($\lambda$) Convergence (Theorem 7.2): Mapping the No-Projection Framework to Real Algorithms**
+
+The first two steps provide an abstract SA theory; the third step fills a literature gap: providing almost sure convergence for TDC with off-policy data, linear function approximation, eligibility traces, and no projections. The algorithm is:
+
+$$e_t=\lambda\gamma\rho_{t-1}e_{t-1}+\phi_t,\quad \delta_t=R_{t+1}+\gamma\phi_{t+1}^\top\theta_t-\phi_t^\top\theta_t,$$
+$$\nu_{t+1}=\nu_t+\alpha_t(\rho_t\delta_t e_t-\phi_t\phi_t^\top\nu_t),\quad \theta_{t+1}=\theta_t+\beta_t\big(\rho_t\delta_t e_t-\rho_t(1-\lambda)\gamma\phi_{t+1}e_t^\top\nu_t\big).$$
+
+By treating $\nu_t$ as the fast scale and $\theta_t$ as the slow scale, and extending the state to $(S_t,A_t,e_t)$, the unboundedness of the eligibility trace $e_t$ (due to cumulative importance sampling ratios $\rho_t$ in off-policy settings) necessitates a non-compact noise space $\mathcal{W}$. This is precisely where previous frameworks required projections. The authors simply verify that assumptions B.1–B.7 in Appendix B (Markov chain ergodicity, step-size conditions, homogeneous limits of $H/G$, Lipschitz continuity, and averaging conditions) are naturally satisfied by TDC($\lambda$). Theorem 3.3 then directly yields convergence. This step demonstrates the practical power of Lemma 3.1: while Yu (2017) and Panda & Bhatnagar (2025) required extra projections to force boundedness, this work turns "theory without projection" into verifiable conditions, characterizing algorithms exactly as they are implemented.
 
 ### Loss & Training
-As a theoretical paper, there is no training. Key assumptions to be met include: step sizes $\sum\alpha=\sum\beta=\infty$, $\sum\alpha^2, \sum\beta^2<\infty$, $\lim\beta/\alpha=0$; existence of Lipschitz homogeneous limits $h_\infty, g_\infty$ for $H, G$; existence of a unique globally asymptotically stable equilibrium $\lambda_\infty(y), 0$ for the corresponding ODE; and long-run average regularity conditions (B.7) in the style of Kushner & Yin.
+As a theoretical paper, there is no training. Key assumptions include: step sizes $\sum\alpha=\sum\beta=\infty, \sum\alpha^2,\sum\beta^2<\infty, \lim\beta/\alpha=0$; existence of Lipschitz homogeneous limits $h_\infty,g_\infty$ for $H,G$; the corresponding ODE having unique globally asymptotically stable equilibria $\lambda_\infty(y), 0$; and Kushner & Yin-style long-term averaging regularity conditions (B.7).
 
 ## Key Experimental Results
 
-### Main Results (Comparison of Theoretical Results)
+### Main Results (Theoretical Comparison)
 
-| Work | Scales | Noise | Projection Required | Noise Space | TDC($\lambda$) Coverage |
-|------|--------|-------|---------------------|-------------|-------------------------|
+| Work | Scales | Noise | Projection Req. | Noise Space | Covers TDC($\lambda$) |
+|------|--------------|------|-----------|----------|----------------------|
 | Borkar (2009) | Two | i.i.d. | No | Compact | No |
 | Lakshminarayanan & Bhatnagar (2017) | Two | i.i.d. | No | Compact | No |
 | Karmakar & Bhatnagar (2021) | Two (Decoupled) | Markov | No | Compact | No |
@@ -87,36 +93,36 @@ As a theoretical paper, there is no training. Key assumptions to be met include:
 | Panda & Bhatnagar (2025) | Two | Markov | **Yes** | Non-compact | No |
 | **Ours** | Two (Coupled) | Markov | No | Non-compact | **Yes** |
 
-### Summary of Major Theorems
+### Key Theorems Summary
 
 | Result | Type | Key Statement |
 |------|------|----------|
 | Lemma 3.1 | Bridging Bound | $\|x_n\|\le K(1+\|y_n^{\max}\|)$ a.s. |
 | Theorem 3.2 | Stability | $\sup_n\|z_n\|<\infty$ a.s. |
 | Theorem 3.3 | Convergence | $\|z_n-(\lambda(y^*),y^*)\|\to 0$ a.s. |
-| Theorem 7.2 | RL Application | TDC($\lambda$) converges a.s. under off-policy linear approximation |
+| Theorem 7.2 | RL Application | Off-policy TDC($\lambda$) with linear approx. converges a.s. |
 
 ### Key Findings
-- Replacing "synchronous control" with "historical maximum slow iteration control" is the weakest condition for merging the methodologies of Lakshminarayanan & Bhatnagar (2017) and Liu et al. (2025b); without it, the two sets of tools are incompatible.
-- The paper points out that the argument for almost sure convergence of two-timescale Markov SA in Chandak et al. (2025) is questionable: they use "expectation boundedness $\Rightarrow$ almost sure boundedness," but a counterexample where $x_n=\sqrt n$ with probability $1/n$ and 0 otherwise directly disproves this (Second Borel–Cantelli). This indicates that this work not only fills a gap but also corrects errors.
-- Provable convergence results for the "deadly triad" (off-policy + eligibility traces + linear approximation) remain extremely rare; this paper provides the first completely non-projection solution, paving the way for full analysis of actor-critic methods.
+- Replacing "synchronous control" with "historical maximum slow iterate control" is the minimal condition to combine Lakshminarayanan & Bhatnagar (2017) and Liu et al. (2025b); without it, the tools are incompatible.
+- The paper points out that the argument for a.s. convergence of two-scale Markovian SA in Chandak et al. (2025) is questionable: they infer "expected boundedness $\Rightarrow$ almost sure boundedness," but a counterexample where $x_n=\sqrt n$ with probability $1/n$ (and 0 otherwise) disproves this (Second Borel–Cantelli). This demonstrates that ours not only fills a gap but also corrects errors.
+- Provable results for the "deadly triad" (off-policy + eligibility traces + linear approx) are still rare; ours provides the first completely projection-free solution, paving the way for complete actor-critic analysis.
 
 ## Highlights & Insights
-- Using "running max" to bridge two timescales is a minimalist yet sharp technique: rather than requiring $\|x_n\|$ to be suppressed by a synchronous $\|y_n\|$, it allows it to be suppressed by the historical peak $\|y\|$. This is highly consistent with the naturally monotone scale factors in rescaling methods. Transferring this to other two-scale algorithms like actor-critic or target networks only requires re-verifying the homogeneous limits of $H, G$.
-- The work pushes the ODE@$\infty$ framework to the limits of "non-compact Markov noise + no projection," providing clear technical interfaces for Lemma 4.7 (growth suppression) and Lemma 5.3 (fast-scale transition to equilibrium), which can be reused in other proofs transitioning from discrete iterations to limit ODEs.
-- The literature comparison (Table 1) and the precise rebuttal of the Chandak et al. (2025) counterexample serve as a reminder to researchers in the field: under Markov noise, there is an essential chasm between "expectation boundedness" and "almost sure boundedness" that cannot be conflated.
+- The "running max bridge" is a simple yet sharp technique: rather than requiring $\|x_n\|$ to be suppressed by isochronous $\|y_n\|$, it allows suppression by the historical peak of $\|y\|$. This is highly consistent with the naturally monotone scaling factors in rescaling methods. Applying this to other two-scale algorithms like actor-critic or target networks only requires re-verifying the homogeneous limits of $H$ and $G$.
+- The entire paper pushes the ODE@$\infty$ framework to the boundaries of "non-compact Markovian noise + no projection," providing clear technical interfaces for Lemma 4.7 (growth suppression) and Lemma 5.3 (fast-scale tracking equilibrium), which can be reused in other proofs transitioning from discrete iterations to limit ODEs.
+- The literature comparison (Table 1) and the precise refutation of Chandak et al. (2025) remind researchers that under Markovian noise, there is an essential chasm between "boundedness in expectation" and "almost sure boundedness."
 
 ## Limitations & Future Work
-- Only asymptotic a.s. convergence is provided without finite-time rates; existing two-scale $L^2$ rates (Doan 2021a/b/2022; Chandak et al. 2025) have not yet been unified with the a.s. path results of this paper.
-- The current theory requires the ODE to have a unique globally asymptotically stable equilibrium; in actor-critic, the policy ODE might have multiple fixed points (e.g., local optima), requiring the conclusions to be weakened to "convergence to an invariant set."
-- The discrete Markov chain assumption excludes continuous state space RL; the Markov noise needs to be generalized from general state spaces (Borkar 2009 Chapter 6 framework).
-- Regarding formalization, Zhang (2025) has verified single-scale Markov SA in Lean; mechanizing the verification of this two-scale framework is a worthwhile next step.
+- Only asymptotic a.s. convergence is provided without finite-time rates; existing two-scale $L^2$ rates (Doan 2021a/b/2022; Chandak et al. 2025) have not yet been unified with these a.s. path results.
+- Current theory requires the ODE to have a unique globally asymptotically stable equilibrium—in actor-critic, the policy ODE might have multiple fixed points (e.g., local optima), requiring the conclusions to be weakened to "convergence to an invariant set."
+- The discrete Markov chain assumption excludes continuous state-space RL, requiring a generalization of Markov noise from general state spaces (Borkar 2009, Chapter 6 framework).
+- Regarding formalization, Zhang (2025) has verified single-scale Markovian SA in Lean; machine-verifying this two-scale framework is a valuable next step.
 
 ## Related Work & Insights
-- **vs Lakshminarayanan & Bhatnagar (2017)**: Both use two-scale stability + ODE@$\infty$, but they assume i.i.d. noise and rely on synchronous bounds; this paper replaces synchronous bounds with more relaxed historical maximum bounds, extending the noise to Markov and non-compact spaces.
-- **vs Karmakar & Bhatnagar (2021)**: They assume decoupled two-scale parameters and compact noise spaces; this paper allows coupling and non-compact Markov noise, thereby covering truly coupled algorithms like TDC and actor-critic.
-- **vs Panda & Bhatnagar (2025)**: Both face non-compact spaces with Markov noise, but Panda uses extra projection to force boundedness; this paper replaces projection with Lemma 3.1, avoiding algorithmic modifications and maintaining consistency between theory and practice.
-- **vs Chandak et al. (2025)**: Chandak provides $L^2$ rates for two-scale systems with an a.s. convergence claim, but the key step (expectation boundedness ⇒ a.s. boundedness) has a counterexample; this paper provides a more complete a.s. path argument and explicitly points out the error.
+- **vs Lakshminarayanan & Bhatnagar (2017)**: Both use two-scale stability + ODE@$\infty$, but they assume i.i.d. noise and rely on synchronous bounds; ours relaxes this to historical maximum bounds, allowing Markovian and non-compact noise.
+- **vs Karmakar & Bhatnagar (2021)**: They assume decoupled parameters and compact noise spaces without projection; ours allows coupling and non-compact Markovian noise, covering truly coupled algorithms like TDC.
+- **vs Panda & Bhatnagar (2025)**: Both address non-compact Markovian noise, but Panda uses projections to force boundedness; ours replaces projections with Lemma 3.1, maintaining consistency between theory and practice.
+- **vs Chandak et al. (2025)**: Chandak provides $L^2$ rates with an a.s. convergence claim, but the key step (expectation $\Rightarrow$ a.s.) has counterexamples; ours provides a more rigorous a.s. path argument and explicitly notes the error.
 
 <!-- RELATED:START -->
 

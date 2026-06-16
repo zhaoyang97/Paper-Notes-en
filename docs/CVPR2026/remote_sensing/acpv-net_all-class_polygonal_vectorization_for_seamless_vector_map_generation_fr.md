@@ -2,83 +2,100 @@
 title: >-
   [Paper Note] ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 description: >-
-  [CVPR 2026][Remote Sensing][Polygonal Vectorization] ACPV-Net is the first framework that generates topologically consistent all-class polygonal vector maps from aerial imagery in a single pass…
+  [CVPR 2026][Remote Sensing][polygonal vectorization] Ours proposes ACPV-Net, the first framework to generate topologically consistent all-class polygonal vector maps from aerial imagery in a single pass. It utilizes a Semantic Supervised Conditioning (SSC) diffusion model to generate vertex heatmaps and ensures zero-gap/zero-overlap through proposition-driven PSLG recons
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "Polygonal Vectorization"
-  - "Vector Map Generation"
-  - "Planar Partition"
-  - "Conditional Diffusion"
-  - "Topological Consistency"
-  - "Aerial Imagery"
+  - CVPR 2026
+  - Remote Sensing
+  - polygonal vectorization
+  - vector map generation
+  - planar partition
+  - conditional diffusion
+  - topological consistency
+  - aerial imagery
 date: 2026-05-08
-content_hash: 1a2c98645c7eb158
+content_hash: 290e37dde2caf668
 ---
-
 # ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.16616](https://arxiv.org/abs/2603.16616)  
 **Code**: [HeinzJiao/ACPV-Net](https://github.com/HeinzJiao/ACPV-Net)  
-**Area**: Remote Sensing
-**Keywords**: Polygonal Vectorization, Vector Map Generation, Planar Partition, Conditional Diffusion, Topological Consistency, Aerial Imagery
+**Area**: Remote Sensing  
+**Keywords**: polygonal vectorization, vector map generation, planar partition, conditional diffusion, topological consistency, aerial imagery
 
 ## TL;DR
 
-ACPV-Net is the first framework that generates topologically consistent all-class polygonal vector maps from aerial imagery in a single pass, employing a semantically supervised conditional diffusion model for vertex heatmap generation and proposition-driven PSLG reconstruction to ensure zero gaps and zero overlaps.
+Ours proposes ACPV-Net, the first framework to generate topologically consistent all-class polygonal vector maps from aerial imagery in a single pass. It utilizes a Semantic Supervised Conditioning (SSC) diffusion model to generate vertex heatmaps and ensures zero-gap/zero-overlap through proposition-driven PSLG reconstruction.
 
 ## Background & Motivation
 
-**Importance of vector base maps**: Topographic vector maps form the core of national geospatial data infrastructure and are widely used in cadastral management and land-use planning, requiring adjacent polygons to share precise boundaries with zero gaps and zero overlaps.
+**Importance of Vector Base Maps**: Vector base maps (topographic maps) are the core of national geospatial data infrastructure, widely used in cadastral management and land planning. They require adjacent polygons to share precise boundaries without gaps or overlaps.
 
-**Fundamental flaws of existing methods**: Current polygonalization methods (DeepSnake, FFL, TopDiG, HiSup, GCP) are all single-class designs that require per-class inference followed by stitching, which inevitably introduces topological inconsistencies such as duplicate boundaries, gaps, and overlaps.
+**Limitations of Prior Work**: Current polygonization methods (DeepSnake, FFL, TopDiG, HiSup, GCP) are designed for single-class tasks. They require class-by-class inference followed by merging, which inevitably introduces topological inconsistencies such as duplicate boundaries, gaps, and overlaps.
 
-**Five key technical challenges**: (i) Semantic-geometric heterogeneity (raster discrete semantics vs. vector continuous geometry); (ii) strict alignment between semantic regions and geometric boundaries; (iii) weak/ambiguous visual cues (shadows, occlusions, ambiguous boundaries); (iv) cartographic conventions (vertex sampling density, simplification strategies) are hard to encode explicitly; (v) global topological reconstruction goes beyond single-class geometry.
+**Key Challenge**: (i) Semantic-geometric heterogeneity (raster discrete semantics vs. vector continuous geometry); (ii) Requirement for strict alignment between semantic regions and geometric boundaries; (iii) Weak or ambiguous visual cues (shadows, occlusions, blurred boundaries); (iv) Explicitly encoding mapping conventions (vertex sampling density, simplification strategies); (v) Global topological reconstruction beyond single-category geometry.
 
-**Lack of evaluation benchmarks**: Existing datasets either provide only single-class vector annotations (WHU-Building) or only multi-class raster masks (LoveDA, ISPRS), with no public benchmark supporting all-class polygonal vectorization with global topological consistency evaluation.
+**Lack of Benchmarks**: Existing datasets either contain only single-class vector annotations (WHU-Building) or multi-class raster masks (LoveDA, ISPRS), lacking public benchmarks that support all-class polygonal vectorization and global topological consistency evaluation.
 
-**Limitations of discriminative methods**: Existing discriminative vertex detection methods produce broad or band-like responses under weak visual cues and lack the ability to learn cartographic conventions.
+**Limitation of Discriminative Methods**: Existing discriminative vertex detection methods produce broad or band-like responses under weak visual cues and lack the capability to learn mapping conventions.
 
-**Insufficiency of conditional diffusion pipelines**: Existing conditional diffusion pipelines (e.g., ControlNet) inject external conditions but do not apply explicit semantic supervision to the conditioning branch, failing to guarantee semantic-geometric alignment.
+**Deficiencies in Conditional Diffusion Pipelines**: Existing conditional diffusion pipelines (e.g., ControlNet) inject external conditions but lack explicit semantic supervision on the condition branch, failing to guarantee semantic-geometric alignment.
 
 ## Method
 
 ### Overall Architecture
 
-ACPV-Net consists of two tightly coupled components: (1) **Semantically Supervised Conditioning (SSC)** — a diffusion model reconstructs vertex Gaussian mixture heatmaps in latent space, with the conditioning branch explicitly supervised by a semantic segmentation loss to ensure semantically guided vertex generation; (2) **Proposition-driven topological reconstruction** — starting from the semantic mask $\hat{M}$ and vertex heatmap $\hat{Y}$, a PSLG algorithm deterministically reconstructs vector maps satisfying all ACPV constraints.
+ACPV-Net aims to "generate an all-class, topologically seamless vector map from aerial imagery in one go." The pipeline consists of two tightly coupled components. The first part is the **Semantic Supervised Conditioning (SSC) diffusion stage**: the diffusion model reconstructs Gaussian mixture heatmaps of vertices in the latent space (**Distributed Vertex Modeling**), while its condition branch is explicitly supervised by a semantic segmentation loss (**Semantic Supervised Conditioning (SSC)**). These components collaboratively output vertex heatmaps $\hat{Y}$ and semantic masks $\hat{M}$, ensuring vertex generation is guided by semantics. The second part is the **Proposition-driven Topology Reconstruction**: given $\hat{M}$ and $\hat{Y}$, a PSLG algorithm deterministically reconstructs a vector map satisfying all ACPV constraints. The former handles "where to place points," while the latter handles "how to assemble a seamless map."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    I["Aerial Imagery I"]
+    subgraph FRONT["First Half: Semantic Supervised Conditional Diffusion"]
+        direction TB
+        D1["Distributed Vertex Modeling<br/>Vertex Heatmap → VAE Latent Space → Diffusion Denoising"]
+        D2["Semantic Supervised Conditioning SSC<br/>Semantic Encoder + Seg Head, L_seg Supervises Condition Branch"]
+        D2 -.Semantic Guidance.-> D1
+    end
+    I --> FRONT
+    FRONT --> Y["Vertex Heatmap Ŷ"]
+    FRONT --> M["Semantic Mask M̂"]
+    subgraph BACK["Proposition-driven Topology Reconstruction (PSLG)"]
+        direction TB
+        P["Over-dense PSLG Construction<br/>Label Transition Boundary Extraction"]
+        V["Vertex-guided Subset Selection<br/>Heatmap Peak Projection + Redundant Vertex Simplification"]
+        P --> V
+    end
+    Y --> V
+    M --> P
+    BACK --> O["All-class Topologically Consistent Vector Map"]
+```
 
 ### Key Designs
 
-1. **Distributional Vertex Modeling**
+**1. Distributed Vertex Modeling: Translating "Point Detection" into "Distribution Generation"**
 
-    - **Function**: Encodes polygon vertices from aerial images as Gaussian mixture heatmaps $y \in [0,1]^{H \times W}$, encoded into latent space $z_0 = \mathcal{E}(y)$ via a pretrained VAE, where a diffusion model performs denoising reconstruction.
-    - **Mechanism**: Transforms the discrete point set problem into a continuous distribution generation problem. The probabilistic modeling capability of diffusion models enables inference of sharp, compact vertex peaks under weak visual cues and automatic learning of cartographic conventions (e.g., sampling density along smooth boundaries).
-    - **Design Motivation**: Comparative experiments show that a purely discriminative decoder (ViTPose baseline) produces broad band-like responses in weak-cue regions, while diffusion-based reconstruction achieves smaller FWHM, lower Area@0.5, and higher Sharpness, validating the advantage of generative modeling.
+**Limitations of Prior Work**: Discriminative vertex detection is essentially pixel-wise classification. When encountering shadows, occlusions, or blurred boundaries, it often produces broad band-like responses. ACPV-Net encodes each polygon vertex into a Gaussian mixture heatmap $y \in [0,1]^{H \times W}$, compresses it into latent space $z_0 = \mathcal{E}(y)$ using a frozen pre-trained VAE, and lets the diffusion model reconstruct it. This treats discrete point detection as a continuous distribution generation problem. The probabilistic modeling capability of diffusion allows it to infer sharp, compact vertex peaks even with thin evidence, implicitly learning mapping conventions (e.g., vertex sampling density along smooth boundaries). Comparative experiments show that discriminative decoders (ViTPose baseline) produce broad responses, whereas diffusion reconstruction achieves lower Full Width at Half Maximum (FWHM), lower Area@0.5, and higher Sharpness.
 
-2. **Semantically Supervised Conditioning (SSC)**
+**2. Semantic Supervised Conditioning (SSC): Proactive Semantic Guidance**
 
-    - **Function**: The semantic encoder $S_\psi(I)$ provides conditioning features at the same scale as the latent space, with a lightweight segmentation head applying a semantic segmentation loss $\mathcal{L}_{\text{seg}}$ so that the conditioning branch itself learns discriminative semantics aligned with downstream vertex generation.
-    - **Mechanism**: Unlike generic conditional diffusion pipelines that merely "inject" conditioning signals, SSC transforms the conditioning branch into an "active guiding signal," forcing vertex generation to fall on category-consistent boundaries.
-    - **Design Motivation**: Ablation experiments (No-SSC) show that removing $\mathcal{L}_{\text{seg}}$ causes the vertex-boundary alignment rate V2B@2 to drop sharply from 0.78 to 0.38, with numerous false-positive vertices appearing inside homogeneous regions rather than on boundaries.
+Generic conditional diffusion pipelines like ControlNet inject external conditions into the backbone without supervising the condition branch itself, resulting in "passive" condition signals that cannot guarantee vertex placement on class-consistent boundaries. SSC adds task supervision to the condition branch: a semantic encoder $S_\psi(I)$ produces features at the same scale as the latent space, followed by a lightweight segmentation head constrained by a semantic segmentation loss $\mathcal{L}_{\text{seg}}$. This upgrades the condition branch from "passive injection" to "proactive guidance," forcing vertex generation onto boundaries defined by discriminative semantics. Ablation studies show that removing $\mathcal{L}_{\text{seg}}$ (No-SSC) causes the vertex-to-boundary alignment rate (V2B@2) to drop from 0.78 to 0.38, with many false positive vertices appearing inside homogeneous regions.
 
-3. **Proposition-driven PSLG Reconstruction**
+**3. Proposition-driven Topology Reconstruction: Constructive Guarantees**
 
-    - **Function**: Deterministically reconstructs a planar straight-line graph (PSLG) satisfying all ACPV constraints from $(\hat{M}, \hat{Y})$.
-    - **Mechanism**: First proves the sufficient condition of Proposition 1 — if every edge in the PSLG lies on a label-transition boundary and the vertex set consists entirely of geometric key points, then the polygon partition reconstructed accordingly satisfies all ACPV constraints. Implementation proceeds in two steps: (1) **Over-dense PSLG construction** — extracts all label-transition pixels from the multi-class mask and connects them into edges, yielding a superset covering all valid boundary positions; (2) **Vertex-guided subset selection** — extracts discrete vertex peaks from the heatmap, projects them onto the PSLG, retains anchor and key points, and simplifies redundant vertices.
-    - **Design Motivation**: Topological consistency is guaranteed by constructive proof rather than heuristic post-processing, fundamentally avoiding gaps and overlaps.
+With semantic masks $\hat{M}$ and vertex heatmaps $\hat{Y}$, heuristic post-processing often leaves gaps. Ours first proves Proposition 1: if every edge of a Planar Straight-Line Graph (PSLG) lies on a label transition boundary and the vertex set consists of geometric keypoints, then the resulting polygonal partition must satisfy all ACPV constraints. The reconstruction is then divided into two deterministic steps: **Over-dense PSLG Construction**, which extracts all label transition pixels from multi-class masks to form a superset of edges, and **Vertex-guided Subset Selection**, which projects discrete vertex peaks from heatmaps onto the PSLG, retaining anchor/key points and simplifying redundant ones. Since topological consistency is backed by this constructive proof rather than post-hoc stitching, gaps and overlaps are fundamentally eliminated.
 
-### Loss Function & Training Strategy
+### Loss & Training
 
-Unified loss function:
+Unified Loss Function:
 
 $$\mathcal{L}_{\text{SSC}} = \lambda_\epsilon \mathbb{E}\|\epsilon - \epsilon_\theta(\cdot)\|_1 + \lambda_0 \mathbb{E}\|z_0 - \hat{z}_0\|_1 + \lambda_{\text{seg}} \mathcal{L}_{\text{seg}}(\hat{M}, M)$$
 
-The first two terms are the noise prediction L1 loss and the latent-space reconstruction L1 loss (standard diffusion objectives), and the third term is the semantic segmentation loss. All three are jointly trained end-to-end. The VAE encoder/decoder remains frozen and does not participate in training.
+The first two terms are the noise prediction L1 loss and latent space reconstruction L1 loss (standard diffusion objectives), and the third is the semantic segmentation loss. All are trained end-to-end. The VAE encoder/decoder remains frozen.
 
 ## Key Experimental Results
 
-### Table 1: Global Topological Consistency on Deventer-512
+**Table 1: Global Topology Consistency on Deventer-512**
 
 | Method | Gap ↓ | Inter-Overlap ↓ | Intra-Overlap ↓ | Shared-Edge ↑ |
 |:---|:---:|:---:|:---:|:---:|
@@ -89,9 +106,9 @@ The first two terms are the noise prediction L1 loss and the latent-space recons
 | GCP (TGRS'25) | 8.75 | 10.39 | 41.91 | 20.25 |
 | **ACPV-Net (Ours)** | **0.00** | **0.00** | **0.00** | **100.00** |
 
-ACPV-Net is the only method achieving zero gaps, zero overlaps, and 100% shared-edge consistency.
+ACPV-Net is the only method to achieve zero gaps, zero overlaps, and 100% shared-edge consistency.
 
-### Table 2: Core Category Comparison on Deventer-512 (Building / Road)
+**Table 2: Comparison on Core Categories (Deventer-512)**
 
 | Category | Method | IoU ↑ | C-IoU ↑ | PoLiS ↓ | MTA ↓ | N-ratio →1 |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
@@ -100,39 +117,46 @@ ACPV-Net is the only method achieving zero gaps, zero overlaps, and 100% shared-
 | Road | HiSup | 73.92 | 57.36 | 4.97 | 44.84 | 2.00 |
 | Road | **Ours** | **76.01** | **68.22** | **4.44** | **43.85** | **1.07** |
 
-ACPV-Net comprehensively outperforms the single-class best baseline across all five categories (IoU, C-IoU, PoLiS, topological fidelity), with N-ratio close to 1.0, indicating extremely high vertex efficiency.
+ACPV-Net outperforms single-class SOTA baselines across all five categories (IoU, C-IoU, PoLiS, topological fidelity), with an N-ratio close to 1.0 indicating high vertex efficiency.
 
-### Table 3: Single-Class Polygonalization on WHU-Building
+**Table 3: Single-class Polygonization on WHU-Building**
 
 | Method | IoU ↑ | C-IoU ↑ | PoLiS ↓ | MTA ↓ | N-ratio →1 |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | HiSup | 87.63 | 67.15 | 1.40 | 35.27 | 1.93 |
 | **ACPV-Net** | **88.50** | **81.45** | **1.38** | **34.85** | **1.07** |
 
-Without any architectural modification, ACPV-Net can be applied to single-class scenarios and achieves state-of-the-art results on WHU-Building, with C-IoU dramatically improving from 67.15 to 81.45.
+The framework applies to single-class scenarios without architectural changes, achieving SOTA on WHU-Building.
 
 ## Highlights & Insights
 
-1. **Pioneering task definition**: The first formal definition of the ACPV task with six strict constraints (a)–(f), theoretically characterizing the complete requirements for vector base map generation.
-2. **Constructive topological guarantee**: Through the sufficient condition of Proposition 1 and a deterministic PSLG algorithm, topological consistency is guaranteed by design rather than relying on heuristic post-processing — an elegant theoretical contribution.
-3. **Ingenious SSC mechanism design**: The conditioning branch is upgraded from passive injection to active semantic guidance, improving V2B alignment from 0.46 to 0.85 and effectively eliminating false-positive vertices in homogeneous regions.
-4. **Versatility**: The same architecture handles both multi-class (Deventer-512) and single-class (WHU-Building) scenarios without modification, with good cross-region generalization.
-5. **Benchmark contribution**: The first ACPV evaluation benchmark Deventer-512 is released, containing ~2k patches, 84k+ instances, and a unified evaluation protocol, filling a data gap in this field.
+1. **Foundational Task Definition**: First to formalize the ACPV task with six strict constraints (a)–(f), theoretically characterizing vector base map requirements.
+2. **Constructive Topological Guarantee**: Guarantees consistency by design through Proposition 1 and deterministic PSLG algorithms rather than heuristic repairs—an elegant theoretical contribution.
+3. **Ingenious SSC Mechanism**: Upgrading the condition branch to proactive semantic guidance improved V2B alignment from 0.46 to 0.85, effectively eliminating false positive vertices.
+4. **Universality**: Handles multi-class (Deventer-512) and single-class (WHU-Building) scenarios within the same architecture with strong cross-regional generalization.
+5. **Benchmark Contribution**: Released Deventer-512, the first ACPV evaluation benchmark with ~2k patches and 84k+ instances.
 
 ## Limitations & Future Work
 
-1. **Limited dataset scale**: Deventer-512 contains only ~2k patches from a single source (Deventer, Netherlands) with only 5 land-cover categories, potentially limiting generalization to more complex scenes (e.g., high-density urban areas, industrial parks).
-2. **Diffusion model inference efficiency**: Latent-space diffusion denoising requires iterative sampling, which may become an inference speed bottleneck in practical deployment; inference time is not reported in the paper.
-3. **Fixed radius τ limitation**: Vertex projection onto the PSLG uses a fixed radius τ, which may cause vertex mismatching or omission in complex dense regions.
-4. **Curved boundary representation**: All boundaries are approximated by piecewise linear segments, which may require many vertices for faithful representation of curved water bodies and natural boundaries; N-ratio performance on the water category is slightly weaker.
-5. **Incremental updates unexplored**: Practical production workflows require incremental updates to existing vector maps rather than full-map reconstruction, which the current framework does not support.
+1. **Dataset Scale**: Deventer-512 is relatively small (2k patches) and sourced from a single region, which may limit generalization in high-density urban or industrial areas.
+2. **Diffusion Inference Efficiency**: Iterative sampling for latent space diffusion can be a bottleneck for real-time deployment.
+3. **Fixed Radius $\tau$**: Using a fixed radius for vertex projection may lead to mismatches in complex, dense areas.
+4. **Expression of Curved Boundaries**: Piecewise linear approximation for curved natural boundaries may require excessive vertices; the N-ratio for the "water" class is higher.
+5. **Incremental Updates**: Current framework reconstructs the whole map and does not yet support incremental updates to existing vector layers.
+
+## Related Work & Insights
+
+- **Relation to TopDiG/HiSup**: These represent vertex-adjacency learning and hierarchical attraction field paradigms, respectively. ACPV-Net's breakthrough lies in unifying semantics and geometry.
+- **Contrast with ControlNet**: Unlike generic conditional diffusions that lack explicit supervision on the condition branch, SSC introduces task-specific semantic losses.
+- **Insights for Remote Sensing**: The approach of proving sufficient conditions before algorithm design serves as a template for other tasks requiring topological constraints.
+- **Insights for Structured Prediction**: The SSC concept can be extended to tasks like floorplan or CAD sketch generation.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First formal definition of the ACPV task; the SSC + proposition-driven reconstruction framework design is highly original
-- **Experimental rigor**: ⭐⭐⭐⭐ — Comprehensive multi-class/single-class evaluation with thorough ablations, but the dataset scale is small and inference efficiency analysis is missing
-- **Writing quality**: ⭐⭐⭐⭐⭐ — Rigorous problem definition, formal mathematical exposition, complete constructive proofs, and extremely clear writing
-- **Impact**: ⭐⭐⭐⭐⭐ — Fills the gap in all-class topological consistency for remote sensing vectorization, with both theoretical and practical value
+- **Novelty**: ⭐⭐⭐⭐⭐ — First formalization of the ACPV task; highly original SSC and proposition-driven design.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive multi/single-class evaluation, though dataset scale is limited.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Rigorous definitions, standardized mathematical notation, and clear proof logic.
+- **Value**: ⭐⭐⭐⭐⭐ — Addresses the gap in topologically consistent all-class vectorization with theoretical and engineering merit.
 
 <!-- RELATED:START -->
 
@@ -140,11 +164,11 @@ Without any architectural modification, ACPV-Net can be applied to single-class 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical-SAR Ship Re-identification](sdfnet_structureaware_disentangled_feature_learnin.md)
-- [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
-- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
-- [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[NeurIPS 2025\] Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields](../../NeurIPS2025/remote_sensing/mass_conservation_on_rails_--_rethinking_physics-informed_learning_of_ice_flow_v.md)
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery](spectrally_distilled_representations_aligned_with_instruction-augmented_llms_for.md)
+- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
+- [\[ICML 2025\] MapEval: A Map-Based Evaluation of Geo-Spatial Reasoning in Foundation Models](../../ICML2025/remote_sensing/mapeval_a_map-based_evaluation_of_geo-spatial_reasoning_in_foundation_models.md)
+- [\[CVPR 2026\] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)
 
 </div>
 

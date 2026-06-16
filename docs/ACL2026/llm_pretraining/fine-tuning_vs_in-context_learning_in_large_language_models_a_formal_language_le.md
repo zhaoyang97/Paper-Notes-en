@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective
 description: >-
-  [ACL 2026][LLM Pretraining][Formal Languages] The authors construct a set of "contamination-free, bounded, and precisely samplable" formal languages using Hierarchical Probabilistic Context-Free Grammars (HPCFG) as a con…
+  [ACL 2026][Pretraining][Fine-tuning] The authors utilize Probabilistic Hierarchical Context-Free Grammar (HPCFG) to construct a set of "contamination-free, bounded, and precisely samplable" formal languages as controlled testbeds. They propose the "Discriminative AUC Test" as a unified metric to systematically compare FT and ICL across 18 LLMs from 6 fami
 tags:
-  - "ACL 2026"
-  - "LLM Pretraining"
-  - "Formal Languages"
-  - "Fine-tuning"
-  - "In-context Learning"
-  - "Discriminative Evaluation"
-  - "Probabilistic Context-Free Grammar"
+  - ACL 2026
+  - Pretraining
+  - Fine-tuning
 date: 2026-05-08
-content_hash: f58acff56e59f6a7
+content_hash: fef956fd95b8c7de
 ---
-
 # Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective
 
 **Conference**: ACL 2026  
@@ -24,59 +19,64 @@ content_hash: f58acff56e59f6a7
 **Keywords**: Formal Languages, Fine-tuning, In-context Learning, Discriminative Evaluation, Probabilistic Context-Free Grammar
 
 ## TL;DR
-The authors construct a set of "contamination-free, bounded, and precisely samplable" formal languages using Hierarchical Probabilistic Context-Free Grammars (HPCFG) as a controlled testbed. They propose the "Discriminative AUC Test" as a unified metric to systematically compare FT and ICL across 18 LLMs from 6 families and 6 languages: FT consistently outperforms ICL in-distribution, but both perform equally on out-of-distribution data; ICL exhibits an inductive bias similar to FT but is significantly more sensitive to specific tokens.
+The authors utilize Probabilistic Hierarchical Context-Free Grammar (HPCFG) to construct a set of "contamination-free, bounded, and precisely samplable" formal languages as controlled testbeds. They propose the "Discriminative AUC Test" as a unified metric to systematically compare FT and ICL across 18 LLMs from 6 families on 6 languages. The study finds that FT consistently outperforms ICL in-distribution, but both perform equally on out-of-distribution data; ICL shares a similar inductive bias with FT but exhibits significantly higher sensitivity to specific tokens.
 
 ## Background & Motivation
 
-**Background**: FT (fine-tuning) and ICL (in-context learning) are the two most fundamental "learning paradigms" for LLMs—the former updates parameters like a closed-book exam, while the latter relies on prompts like an open-book exam. Determining which paradigm is better at "learning a language" and whether their inductive biases are consistent remains an open question in the community.
+**Background**: Fine-tuning (FT) and In-context Learning (ICL) represent the two most fundamental "learning paradigms" for LLMs—the former modifies parameters like a closed-book exam, while the latter relies on prompts like an open-book exam. Which paradigm better "acquires a language" and whether their inductive biases are consistent remain unresolved questions in the community.
 
-**Limitations of Prior Work**: Previous studies (Mosbach 2023, Brown 2020, etc.) have yielded contradictory conclusions—some suggest FT > ICL, while others suggest the opposite. The authors attribute this to three experimental design flaws:
-Unclear task boundaries (it is impossible to precisely define "in-distribution" and "out-of-distribution" in natural language); unfair resource allocation (comparing 1-epoch FT with optimized ICL); and incomparable evaluation metrics (generation loss is biased by model priors and prompt formats, making direct comparison across paradigms impossible).
+**Limitations of Prior Work**: Previous studies (e.g., Mosbach 2023, Brown 2020) have yielded contradictory conclusions, with some favoring FT and others ICL. The authors attribute this to three experimental design flaws: unclear task boundaries (inability to precisely define "in-distribution" and "out-of-distribution" in natural language), unfair resource allocation (e.g., comparing 1-epoch FT with optimized ICL), and incomparable evaluation metrics (generation loss is biased by model priors and prompt formats).
 
-**Key Challenge**: Natural language data inherently suffers from "data contamination" and "fuzzy task boundaries"—LLMs may have encountered test data during pre-training, and the division between in-distribution and out-of-distribution often relies on intuition. This makes a "fair comparison between FT and ICL" nearly impossible using natural language.
+**Key Challenge**: Natural language data inherently suffers from "data contamination" and "fuzzy task boundaries." LLMs may have encountered test data during pre-training, and the division between in-distribution and out-of-distribution often relies on intuition. This makes a "fair comparison between FT and ICL" nearly impossible using natural language.
 
-**Goal**: (i) Design a learning task that is contamination-free, allows for precisely controlled sampling, and has clear linguistic boundaries; (ii) Propose a language proficiency metric comparable across paradigms; (iii) Systematically answer four RQs across 18 LLMs regarding proficiency, inductive bias consistency, in/out-of-distribution performance, and token sensitivity.
+**Goal**: (i) Design a learning task that is contamination-free, precisely controllable, and has clear linguistic boundaries; (ii) propose a language proficiency metric that is comparable across paradigms; (iii) systematically answer four research questions (RQs) across 18 LLMs regarding proficiency, inductive bias, distribution generalization, and token sensitivity.
 
-**Key Insight**: The authors leverage formal language theory—HPCFG possesses four properties: "recursive structure (simulating natural language)," "pure syntax with zero semantics," "precise samplability," and "zero contamination," making it an ideal controlled laboratory.
+**Key Insight**: The authors leverage formal language theory. HPCFG possesses four ideal properties for a controlled laboratory: recursive structure (simulating natural language), pure syntax with zero semantics, precise samplability, and zero contamination.
 
-**Core Idea**: Substitute natural language benchmarks with purely syntactic formal languages generated by HPCFG and use the AUC of "discriminating in-language vs out-of-language strings" instead of generation loss. This eliminates incomparability caused by model priors and prompt variations.
+**Core Idea**: Replace natural language benchmarks with purely syntactic formal languages generated by HPCFG. Instead of generation loss, use the AUC of "discriminating in-language vs. out-of-language strings" to eliminate incomparability caused by model priors and prompt variations.
 
 ## Method
 
 ### Overall Architecture
-The methodology consists of three components:
-(1) **Formal Language Generation**: Two sets of HPCFGs ($G_\alpha, G_\beta$) are combined with three alphabets (Digits / Latin / Under-trained tokens) to create 6 languages $\{L_i\}_{i=1}^6$. Non-overlapping training strings ($n_{\text{train}}\in\{1,2,4,\dots,1024\}$) and test strings ($n_{\text{test}}=1024$) are sampled from each.
-(2) **Two Learning Paradigms**: FT minimizes cross-entropy $\mathtt{loss}_M(D) = -\frac{1}{n}\sum_{s\in D}\frac{1}{|s|}\sum_{i=1}^{|s|} \log P_M(s_i \mid s_{[1,i-1]})$ within 50 epochs; ICL concatenates training strings into a prefix using `[sep]`, with example repetitions $m\in\{1,2,4,8,16\}$. Comparisons are made using the best epoch/repetition count for each.
-(3) **Discriminative AUC Test**: In-language strings $L$ and out-of-language strings $\mathsf{T}(L)$ (constructed via editing or randomization) are fed into the LLM. Generation losses are recorded, and a linear classifier calculates $\mathtt{auc}_M(L, \mathsf{T}(L))$. Higher scores indicate higher proficiency, and the metric is comparable across LLMs and paradigms.
+The methodology decomposes the vague problem of "fairly comparing FT and ICL" into three desiderata (D1: clean task specification, D2: equal resources, D3: comparable metrics). These are implemented through a controlled pipeline: "Language Generation → Dual Paradigm Learning → Unified Measurement":
+(1) **Formal Language Generation (D1)**: Using two sets of HPCFG ($G_\alpha, G_\beta$) combined with three alphabets (digits / Latin / under-trained tokens) to form 6 languages $\{L_i\}_{i=1}^6$. Non-overlapping training strings ($n_{\text{train}}\in\{1,2,4,\dots,1024\}$) and test strings ($n_{\text{test}}=1024$) are sampled.
+(2) **Two Learning Paradigms (D2)**: FT minimizes cross-entropy $\mathtt{loss}_M(D) = -\frac{1}{n}\sum_{s\in D}\frac{1}{|s|}\sum_{i=1}^{|s|} \log P_M(s_i \mid s_{[1,i-1]})$ over 50 epochs. ICL concatenates training strings into a prefix using `[sep]`, with example repetitions $m\in\{1,2,4,8,16\}$. Both use the same training strings and are compared after tuning to their respective optimal epoch/repetition counts to ensure resource equality.
+(3) **Discriminative AUC Test (D3)**: Both in-language strings $L$ and out-of-language strings $\mathsf{T}(L)$ (constructed via edits or randomization) are fed to the LLM. Generation losses are recorded, and a linear classifier calculates $\mathtt{auc}_M(L, \mathsf{T}(L))$. A higher score indicates higher proficiency, comparable across models and paradigms.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    G["HPCFG Grammars G_α / G_β × 3 alphabets (Digits / Latin / Rare tokens)"] --> L["6 Formal Languages L₁…L₆<br/>D1: Pure Syntax · Zero Contamination · Provable Boundaries"]
+    L --> S["Sample non-overlapping training + test strings<br/>D2: Shared training data, both tuned to optimal"]
+    S --> FT["FT Path: Full Parameter Fine-tuning<br/>Cross-entropy · 50 epochs · Select best epoch"]
+    S --> ICL["ICL Path: Training strings as [sep] prefix<br/>Repeated m times · Select best m"]
+    FT --> AUC["Discriminative AUC Test<br/>D3: In-language vs out-of-language separability"]
+    ICL --> AUC
+    AUC --> CMP["Compare FT vs ICL<br/>In/OOD Generalization · Token Sensitivity"]
+```
 
 ### Key Designs
 
-1. **Three Desiderata (D1/D2/D3) Framework**:
+**1. Three Desiderata (D1/D2/D3) Framework: Formalizing the "Fair Comparison"**
 
-    - **Function**: Decomposes the vague problem of "fairly comparing FT and ICL" into three verifiable standards—D1 Task Specification (pure syntax + zero prompt); D2 Resource Equality (same training strings, respective optimal hyperparameters); D3 Metric Comparability.
-    - **Mechanism**: The authors explicitly point out that Mosbach 2023 satisfies D1+D2 but violates D3, which is the root of contradictory conclusions. Each desideratum addresses a specific flaw in natural language benchmarks (task ambiguity / resource unfairness / incomparable loss). Trustworthy conclusions require satisfying all three.
-    - **Design Motivation**: To establish the first falsifiable experimental protocol for comparing FT and ICL, rather than relying on disparate methods.
+Prior contradictions stem from a lack of a rigorous definition for "fair comparison." The authors establish three standards: D1 requires clean task specification (pure syntax, zero semantic prompts), D2 requires resource equality (same training data, optimized hyperparameters), and D3 requires comparable metrics. Each precisely targets a flaw in NL benchmarks: fuzzy boundaries (D1), arbitrary epoch/resource selection (D2), and generation loss corrupted by priors (D3). This framework allows identifying where previous works failed; for instance, Mosbach 2023 satisfied D1 and D2 but violated D3.
 
-2. **HPCFG Formal Languages as a Controlled Testbed**:
+**2. HPCFG Formal Language as a Controlled Testbed: Replacing NL with Provable Syntax**
 
-    - **Function**: Replaces natural language benchmarks to provide precise boundaries ($P_L(s)>0$ for in-language), controllable sampling, and zero contamination.
-    - **Mechanism**: HPCFG is a hierarchical CFG with probabilities. It recursively expands production rules from a start symbol $S$ until reaching the alphabet $\mathbf{T}$. The generation probability of a string equals the product of the probabilities of the rules used (e.g., $P(s) = 0.5^{23}$). The alphabet $\mathbf{T}\subset\mathbf{V}$ is a subset of the LLM vocabulary (digits, Latin letters, or rare tokens). Out-of-distribution languages are generated by modifying grammatical rules, where distance $\mathtt{dist}(L_1, L_1^{(\ell)})$ increases monotonically with the number of modified rules $\ell$.
-    - **Design Motivation**: In-distribution and out-of-distribution lack formal definitions in natural language; HPCFG makes "distance" calculable and "boundaries" provable, while alphabet substitution isolates "syntax" from "tokens."
+In natural language, the boundary between in-distribution and out-of-distribution is intuitive and flawed due to pre-training exposure. HPCFG (Probabilistic Hierarchical Context-Free Grammar) recursively expands production rules from a start symbol $S$ to an alphabet $\mathbf{T}$. A string's generation probability is the product of production probabilities (e.g., $P(s)=0.5^{23}$), providing a formal criterion for membership: $P_L(s)>0$. OOD languages are generated by modifying rules, where distance $\mathtt{dist}(L_1, L_1^{(\ell)})$ increases monotonically with the number of modified rules $\ell$. By varying the alphabet $\mathbf{T}\subset\mathbf{V}$ (digits vs. rare tokens), syntax and token frequency variables are isolated.
 
-3. **Discriminative AUC Test**:
+**3. Discriminative AUC Test: Replacing Generation Loss with the Ability to Reject Invalid Strings**
 
-    - **Function**: Replaces generative loss/perplexity as a language proficiency metric comparable across LLMs and paradigms.
-    - **Mechanism**: Generative loss is incomparable because absolute loss is influenced by pre-training priors and because FT and ICL use different input prompt formats. The discriminative test instead asks whether the model's loss for in-language strings is systematically lower than for out-of-language strings, converted into binary classification AUC: $\mathtt{auc}_M(L, \mathsf{T}(L)) \in [0,1]$. Since the same LLM is evaluated under the same prompt format, priors and prompt biases are canceled out. Out-of-language strings are constructed via "edit-by-k injections/deletions/substitutions" or "complete randomization."
-    - **Design Motivation**: The authors use an analogy: "Two non-native speakers might produce similar quality, but the mistakes they make reveal their linguistic priors." It is insufficient to see what a model generates; one must also see what it rejects.
+Generation loss is incomparable because it is influenced by pre-training priors and sensitive to prompt formats. The discriminative test instead asks whether the model's loss for in-language strings is systematically lower than for out-of-language strings. This binary classification task yields $\mathtt{auc}_M(L, \mathsf{T}(L)) \in [0,1]$. Because the same LLM scores locally within the same prompt format, priors and format biases are canceled out, allowing direct comparison across 18 models and two paradigms. This mirrors testing non-native speakers: their ability to reject grammatical errors reveals their true linguistic prior better than pure generation.
 
 ### Loss & Training
-FT uses standard cross-entropy for full-parameter fine-tuning over 50 epochs. ICL concatenates training strings with delimiters as a prefix, repeated $m\in\{1,2,4,8,16\}$ times. Both are compared at their respective optimal $m^*$. The study covers 18 models across 6 families (Mistral / Llama-2/3 / Qwen / Gemma / Pythia / Opt), ranging from 0.5B to 13B parameters. Each experiment is repeated with 3 different seeds.
+FT uses standard cross-entropy for full-parameter fine-tuning over 50 epochs. ICL concatenates examples into a prefix with repetitions $m\in\{1,2,4,8,16\}$, selecting the optimal $m^*$. The study covers 18 models from 6 families (Mistral, Llama-2/3, Qwen, Gemma, Pythia, Opt) ranging from 0.5B to 13B parameters, with 3 seeds per experiment.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Family-level average AUC on language $L_1$ with 32 ICL examples (fitting all models) vs. average FT AUC:
+Family-level average AUC on language $L_1$ with 32 ICL examples (within context limits) vs. FT:
 
 | Model Family | FT Avg AUC | ICL Avg AUC | Gap (FT−ICL) |
 |--------------|------------|--------------|---------------|
@@ -88,62 +88,60 @@ Family-level average AUC on language $L_1$ with 32 ICL examples (fitting all mod
 | Pythia       | 0.90       | 0.61         | +0.29         |
 | Llama-3      | 0.88       | 0.59         | +0.29         |
 
-After 512 training strings, FT AUC exceeds 0.99 for all models; ICL shows huge family variance with the same data volume.
+After 512 training strings, all FT models achieve AUC > 0.99; ICL performance varies significantly across families given the same data.
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
-| FT @ in-distribution $L_1$ | AUC > 0.99 | Train/Test same language; near-perfect discrimination |
-| FT @ out-of-distribution $L_1^{(5)}$ | Near random | Generalization collapses after 5 rule changes |
-| ICL @ in-distribution $L_1$ | AUC 0.59–0.78 | Large cross-family gaps, worst is near random |
-| ICL @ out-of-distribution $L_1^{(1)}$ | Near identical to FT | FT advantage disappears on OOD |
-| ICL Repetitive samples $m>1$ | AUC decreases | Repetition crowds context; diversity is better |
-| ICL on under-trained tokens ($L_3$) | Large AUC drop | Highly sensitive to token frequency |
-| FT on under-trained tokens ($L_3$) | AUC nearly stable | Parameter updates compensate for rare tokens |
+| FT @ in-distribution $L_1$ | AUC > 0.99 | Almost perfect discrimination |
+| FT @ OOD $L_1^{(5)}$ | Near Random | Generalization collapses after 5 rule changes |
+| ICL @ in-distribution $L_1$ | AUC 0.59–0.78 | Large family variance; worst is near random |
+| ICL @ OOD $L_1^{(1)}$ | Similar to FT | FT advantage vanishes on OOD |
+| ICL repeated samples $m>1$ | AUC decreases | Repetition crowds context; diversity is better |
+| ICL on rare tokens ($L_3$) | Large AUC drop | Highly sensitive to token frequency |
+| FT on rare tokens ($L_3$) | Stable AUC | Parameter updates compensate for rare tokens |
 
 ### Key Findings
-- **FT converges consistently, ICL varies by family**: All 18 LLMs eventually converge to AUC > 0.99 under FT. However, ICL AUC ranges from 0.59 (Llama-3.1-8B) to 0.78+ (Qwen-2.5-7B/Mistral-7B). Model scale does not strictly correlate with ICL performance (Mistral-7B > Mistral-12B, Llama-2-7B > Llama-3.1-8B).
-- **FT advantage disappears on OOD**: FT achieves perfect scores on in-distribution languages but only generalizes to the nearest OOD language $L_1^{(1)}$, collapsing thereafter. ICL's performance is similar, suggesting FT's superiority is an in-distribution phenomenon.
-- **Inductive biases align at low data, diverge at high data**: The Pearson correlation of generation loss between FT and ICL on the same test strings decreases as training samples increase—their "learned languages" overlap at a shallow level but diverge deeply.
-- **ICL is token-sensitive**: Changing the alphabet (Digits $\leftrightarrow$ Latin $\leftrightarrow$ Under-trained) while keeping the grammar identical barely affects FT but causes significant fluctuations in ICL. This explains the instability of ICL performance even within the same family (due to varying exposure to tokens during pre-training).
+- **FT Converges Consistently, ICL Varies by Family**: All 18 LLMs converge to AUC > 0.99 with FT. ICL AUC ranges from 0.59 (Llama-3.1-8B) to 0.78+ (Qwen-2.5-7B/Mistral-7B). Scaling does not strictly improve ICL (Mistral-7B > Mistral-12B, Llama-2-7B > Llama-3.1-8B).
+- **FT Advantage Vanishes on OOD**: While FT is nearly perfect in-distribution, it only generalizes to very close OOD sets ($L_1^{(1)}$) and fails thereafter. ICL exhibits similar OOD behavior, suggesting "FT is stronger" is primarily an in-distribution phenomenon.
+- **Diverging Inductive Biases**: Pearson correlation of generation losses between FT and ICL decreases as training data increases, indicating they learn the language similarly at a surface level but diverge in deeper patterns.
+- **ICL Sensitivity to Tokens**: Changing the alphabet without changing the grammar barely affects FT but drastically impacts ICL. This suggests ICL performance is heavily dependent on the exposure of specific tokens during pre-training.
 
 ## Highlights & Insights
-- **Formalizing "fair comparison" as three desiderata**: D1/D2/D3 provides a falsifiable protocol, identifying why previous works like Mosbach 2023 yielded contradictory results (violation of D3). This "problem reduction $\rightarrow$ protocol design" style is a significant methodological contribution.
-- **Discriminative AUC as a truly comparable metric**: Unlike generative loss, AUC eliminates "model prior variance" and "prompt format variance" as confounding variables, providing the first objective answer to performance rankings. This "ranking-based metric instead of absolute metric" approach is transferable to any cross-architectural/cross-paradigm comparison.
-- **HPCFG as a "model organism" for LLM evaluation**: The authors rediscover the value of formal languages—precise boundaries, zero contamination, and calculable distance—compensating for fundamental flaws in natural language benchmarks, similar to the early role of ImageNet in CV.
-- **FT losing its advantage on OOD is a practical insight**: While it's often assumed "deeper training leads to better generalization," this work shows that holds true only when test and training are in-distribution. In OOD scenarios, ICL, which preserves pre-trained knowledge, may be preferable.
+- **Formalizing "Fair Comparison" into Desiderata**: The D1/D2/D3 protocol identifies the root causes of prior contradictions. This "problem reduction to protocol design" approach is highly rigorous.
+- **Discriminative AUC as a Comparable Metric**: By removing priors and format biases, AUC provides the first objective answer to "which is stronger." This ranking-based metric is transferable to any cross-architecture comparison.
+- **HPCFG as a "Model Organism" for LLMs**: The study rediscover the value of formal languages—precision, no contamination, and calculable distance—addressing fundamental flaws in natural language benchmarks.
+- **OOD Implications**: The common assumption that "deeper training leads to better generalization" only holds in-distribution. In OOD scenarios, ICL, which preserves pre-training knowledge, becomes just as viable as FT.
 
 ## Limitations & Future Work
-- Only covers Context-Free (CFG) formal languages; regular and context-sensitive languages are not verified.
-- Limited by FT compute costs, testing only up to 13B; whether larger models (>13B) eventually see ICL outperform FT remains an open question, though FT also likely improves with scale.
-- Only full fine-tuning was used; PEFT (e.g., LoRA) was not tested. Instruction-tuned models were also excluded (as formal language tasks were deemed not to require instructions).
-- The mechanism for ICL family variance (e.g., why Llama-3.1-8B is worse than Llama-2-7B) is only partially explained by token sensitivity; deeper reasons remain for future study.
-- Inductive bias was measured only by generation loss correlation; string-by-string discriminative analysis was not performed.
+- Only covers Context-Free Grammars (CFG); regular and context-sensitive languages are not tested.
+- Scaling limited to 13B due to FT costs; whether ICL overtakes FT at >13B remains open, though the authors argue FT also scales.
+- Only full fine-tuning was tested, excluding PEFT (e.g., LoRA) and instruction-tuned models.
+- The deep mechanism for ICL variance across families (e.g., why Llama-3.1 is worse than Llama-2) remains partially unexplained beyond token sensitivity.
 
 ## Related Work & Insights
-- **vs Mosbach et al. (2023)**: The closest work. Both compare FT and ICL, but Mosbach used MNLI natural language data (violating D1) and only generative metrics (violating D3), concluding FT > ICL on OOD. This paper finds the opposite (parity on OOD) using formal languages, proving D1+D3 are essential.
-- **vs Allen-Zhu & Li (2023, Physics of LMs)**: Also uses HPCFG to study LLMs but focused solely on FT; this paper leverages their grammar construction for the first paradigm comparison.
-- **vs Kallini et al. (2024) / Jumelet & Zuidema (2023)**: Also uses formal languages but relies on generative cross-entropy; this work proves discriminative AUC is more robust and comparable.
-- **Insight**: (a) Any cross-paradigm/cross-architecture comparison should prioritize ranking-based metrics (AUC, accuracy) over absolute values (loss, PPL); (b) Evaluation protocol design (desiderata) should precede specific experiments; (c) Formal languages as "model organisms" for LLMs have significant untapped potential—e.g., evaluating reasoning, in-context regression, and tool use.
+- **vs. Mosbach et al. (2023)**: Mosbach used MNLI (violating D1) and only generative metrics (violating D3), concluding FT > ICL on OOD. **Ours** finds they perform equally on OOD when D1 and D3 are satisfied.
+- **vs. Allen-Zhu & Li (2023, Physics of LMs)**: That work used HPCFG for FT only; **Ours** applies it to paradigm comparison.
+- **vs. Kallini et al. (2024)**: Previous works used generative cross-entropy; **Ours** proves discriminative AUC is more robust for comparison.
+- **Insights**: (a) Cross-paradigm comparisons should utilize ranking-based metrics (AUC/accuracy) over absolute values (loss). (b) Protocol design (desiderata) should precede experimentation. (c) Formal languages can be used to evaluate reasoning, tool use, and regression in LLMs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Rather than inventing a new model, it formalizes "fair FT/ICL comparison" into a falsifiable protocol with comparable metrics—a paradigm-level contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 LLMs $\times$ 6 families $\times$ 6 languages $\times$ multiple alphabets $\times$ 3 seeds; robust and systematic scale.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical chain (Problem $\rightarrow$ Desiderata $\rightarrow$ Framework $\rightarrow$ RQ $\rightarrow$ Experiment), though HPCFG concepts may be steep for readers without a formal language background.
-- Value: ⭐⭐⭐⭐ Sets a new, credible baseline for the "FT vs ICL" debate; the discriminative AUC tool is transferable across tasks.
+- **Novelty**: ⭐⭐⭐⭐ Establishes a formal, falsifiable protocol and comparable metrics for an age-old problem.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ High scale and systematic coverage across 18 models and multiple language variations.
+- **Writing Quality**: ⭐⭐⭐⭐ Logical chain is very clear, though HPCFG concepts may be steep for some.
+- **Value**: ⭐⭐⭐⭐ Provides a credible bottom-line for the FT vs. ICL debate; the AUC tool is widely applicable.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](../../NeurIPS2025/llm_pretraining/ricl_temporal_credit.md)
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
-- [\[ACL 2026\] Compact Example-Based Explanations for Language Models](compact_example-based_explanations_for_language_models.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
+- [\[ACL 2026\] Compact Example-Based Explanations for Language Models](compact_example-based_explanations_for_language_models.md)
 
 </div>
 

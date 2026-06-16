@@ -2,168 +2,115 @@
 title: >-
   [Paper Note] Masked Representation Modeling for Domain-Adaptive Segmentation
 description: >-
-  [CVPR 2026][Segmentation][unsupervised domain adaptation] The paper proposes Masked Representation Modeling (MRM), which randomly masks and reconstructs features in the encoder's latent space and supervises the reconstru…
+  [CVPR 2026][Segmentation][Paper Note] The paper proposes MRM, an auxiliary task that performs masked modeling in latent space instead of input space. By using a lightweight Rebuilder module to perform mask-reconstruction on encoder features supervised by segmentation loss, it achieves an average +2.3 mIoU improvement across four UDA baselines on GTA→Citysc
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "unsupervised domain adaptation"
-  - "masked representation modeling"
-  - "semantic segmentation"
-  - "auxiliary task"
-  - "Rebuilder"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 0952502a70786763
+content_hash: 202b982ed155e498
 ---
-
 # Masked Representation Modeling for Domain-Adaptive Segmentation
 
 **Conference**: CVPR 2026  
 **arXiv**: [2509.13801](https://arxiv.org/abs/2509.13801)  
-**Code**: [https://github.com/Wenlve-Zhou/MRM](https://github.com/Wenlve-Zhou/MRM)  
-**Area**: Semantic Segmentation / Unsupervised Domain Adaptation  
-**Keywords**: unsupervised domain adaptation, masked representation modeling, semantic segmentation, auxiliary task, Rebuilder
+**Code**: None  
+**Area**: Semantic Segmentation / Domain Adaptation / Self-Supervised Learning  
+**Keywords**: Unsupervised Domain Adaptation, Masked Representation Modeling, Semantic Segmentation, Auxiliary Tasks, Feature Reconstruction  
 
 ## TL;DR
-
-The paper proposes Masked Representation Modeling (MRM), which randomly masks and reconstructs features in the encoder's latent space and supervises the reconstruction with a pixel classification loss. As a plug-in auxiliary task it lifts four UDA baselines by an average of +2.3 / +2.8 mIoU on GTA→Cityscapes / Synthia→Cityscapes, with zero inference-time overhead.
+The paper proposes MRM, an auxiliary task that performs masked modeling in latent space instead of input space. By using a lightweight Rebuilder module to perform mask-reconstruction on encoder features supervised by segmentation loss, it achieves an average +2.3 mIoU improvement across four UDA baselines on GTA→Cityscapes with zero extra overhead during inference.
 
 ## Background & Motivation
+Unsupervised Domain Adaptation (UDA) for semantic segmentation requires transferring labeled knowledge from a source domain to an unlabeled target domain. While auxiliary self-supervised tasks like contrastive learning have been proven to enhance feature discriminability, Masked Image Modeling (MIM, e.g., MAE) remains largely unexplored in UDA segmentation. Two core reasons exist: (1) MIM requires modifying the input structure (masking patches and feeding only visible parts), which is incompatible with segmentation architectures like DeepLab or DAFormer; (2) The pixel-level reconstruction objective of MIM is inconsistent with the semantic classification objective of segmentation, leading to optimization conflicts.
 
-**Background**: Unsupervised domain adaptation (UDA) for semantic segmentation transfers knowledge from a labelled source domain (e.g. synthetic GTA) to an unlabelled target domain (e.g. real-world Cityscapes). Mainstream approaches include adversarial training, self-training, and efficient architecture design. Auxiliary self-supervised tasks (e.g. contrastive learning) have been shown to enhance feature discriminativeness, but another important paradigm — masked image modelling (MIM, e.g. MAE) — has barely been explored for UDA segmentation.
-
-**Limitations of Prior Work**: There are two root reasons MIM has not been adopted. First, an input-structure constraint: MIM masks patches at the input and feeds only visible patches into the encoder, which directly conflicts with segmentation architectures such as DeepLab and DAFormer that need to process the full image. Second, an objective conflict: MIM's goal is to reconstruct pixel values inside masked regions element-wise, which is a low-level objective inconsistent with the high-level semantic classification objective required for segmentation, potentially introducing optimization interference.
-
-**Key Challenge**: Masked modelling can bring global contextual reasoning and feature robustness, but its input-side operation and pixel reconstruction objective both block its use in UDA segmentation.
-
-**Goal**: Retain the benefits of masked modelling (global reasoning, feature regularization) while removing both its architectural incompatibility and its objective mismatch with the segmentation task.
-
-**Key Insight**: Move the masking from input space to latent feature space — the encoder still processes the full image, masking is performed on the encoder output, a lightweight module reconstructs the masked features, and the reconstructed features are sent to the original segmentation decoder for pixel classification. This avoids modifying the input pipeline and lets the auxiliary task share the same optimization objective as the main task.
-
-**Core Idea**: Do masked modelling in feature space, not input space; supervise reconstruction with a classification loss, not regression.
+## Core Problem
+How can the advantages of masked modeling (global context understanding, feature robustness) be introduced into UDA semantic segmentation while resolving the dual challenges of architectural compatibility and objective alignment?
 
 ## Method
 
 ### Overall Architecture
 
-MRM is embedded into existing UDA pipelines as an auxiliary training task and does not modify the network architecture. The full flow: (1) the target-domain image $x^t$ is passed through the encoder $E(\cdot)$ to obtain features $f^t$; (2) the Rebuilder $R(\cdot)$ masks $f^t$ and reconstructs it, producing $f^r$; (3) $f^r$ goes through the original segmentation decoder $D(\cdot)$ for pixel classification, supervised by pseudo-labels $\tilde{y}$ via cross entropy. After training the Rebuilder is removed entirely, so inference is identical to the base model. The total loss is
+MRM aims to introduce the benefits of masked modeling (global context, feature robustness) into UDA segmentation without the pitfalls of MAE (modified input structure, objective misalignment). It serves as a plug-and-play auxiliary task: the complete image passes through the encoder to obtain feature $f_t$, 40% of the regions are randomly masked in the **feature space**, and a lightweight Rebuilder reconstructs the masked parts. The reconstructed features are then fed into the original segmentation decoder for pixel-level classification, supervised by pseudo-labels. After training, the Rebuilder is removed, resulting in zero additional overhead during inference. The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{uda} + \lambda \mathcal{L}_{mrm}$.
 
-$$\mathcal{L}_{overall} = \mathcal{L}_{sup} + \mathcal{L}_{uda} + \lambda \mathcal{L}_{mrm}$$
-
-where $\mathcal{L}_{mrm}$ is the pixel classification loss obtained by passing the reconstructed features through the decoder, with $\lambda = 1.0$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Full Image (Target Domain Only)"] --> B["Encoder<br/>CNN or Transformer backbone"]
+    B --> C["Latent Space Masking<br/>40% Random Block Masking on Feature Map"]
+    C --> D["Lightweight Rebuilder<br/>Feature Embedding → Mask Token Filling → 2 Transformer Blocks → Projector → Residual Fusion"]
+    D --> E["Segmentation Decoder<br/>Task-aligned Reconstruction Target: Pixel-level Classification"]
+    E --> F["Target Domain Pseudo-labels<br/>Cross-entropy Supervision L_mrm"]
+    B -.Rebuilder removed during inference, zero extra overhead.-> E
+```
 
 ### Key Designs
 
-1. **Representation-level Masking**:
+**1. Masking in Latent Space instead of Input Space: Ensuring Compatibility with Any Segmentation Architecture**
 
-    - Function: random block masking on the encoder's output feature map, instead of on the input image.
-    - Mechanism: the encoder processes the full input and outputs $f^t \in \mathbb{R}^{C \times H \times W}$; a binary mask $M$ is generated on the feature map, masked positions are filled by a learnable mask token, and unmasked positions retain their original features.
-    - Design Motivation: this avoids modifying the encoder's input pipeline, making MRM fully compatible with any segmentation architecture (CNN-based DeepLab or Transformer-based DAFormer). It is fundamentally different from MAE, which only feeds visible patches to the encoder.
+MAE only feeds visible patches into the encoder, which is incompatible with the input processing of architectures like DeepLab or DAFormer. MRM reverses this—the encoder takes the full image as usual, and masking occurs only on the feature maps output by the encoder using random block masking. Thus, regardless of whether the backbone is a CNN or Transformer, the input structure remains unchanged, allowing masked modeling to be integrated into existing UDA pipelines for the first time.
 
-2. **Task-aligned Classification Objective**:
+**2. Lightweight Rebuilder: Small Enough to be Fully Removed After Training**
 
-    - Function: supervise reconstruction quality with a pixel-level classification cross entropy (rather than pixel regression / MSE).
-    - Mechanism: feed the reconstructed feature $f^r$ directly into the segmentation decoder $D(\cdot)$ for per-pixel classification, supervised by target-domain pseudo-labels via cross entropy. This makes the auxiliary task share the same optimization direction as the main task.
-    - Design Motivation: ablations show that a pixel regression objective (as in MAE) actually *hurts* performance (-0.3 mIoU), while the classification objective brings +3.8 mIoU. There is a fundamental conflict between low-level reconstruction and high-level semantic classification, so the auxiliary task must be aligned with the main task.
+The Rebuilder is intentionally designed to be lightweight: feature embedding (linear transformation + spatial interpolation to 16×16×512) → masking/filling (learnable mask tokens replace masked regions) → only 2 Transformer blocks → projector (transposed convolution to restore original resolution). Reconstruction only replaces the masked regions, using residual fusion $f_r = M_s \odot f_o + (1-M_s) \odot f_t$ to merge the results. It is jointly optimized with the main network during training and completely removed during inference; thus, the mask rate is set to 40% (lower than MAE's 75%)—given the low capacity, excessive masking would lead to irreversible semantic loss.
 
-3. **Lightweight Rebuilder Module**:
+**3. Task-Aligned Reconstruction Goal: Classification After Reconstruction Instead of Pixel Recovery**
 
-    - Function: mask and reconstruct the encoder features during training; removed at inference for zero overhead.
-    - Mechanism: it has four steps — (a) Representation Embedding: a linear layer adjusts the channel dimension and bilinear interpolation adjusts the spatial dimension to $16 \times 16 \times 512$; (b) Masking: 40% uniform random masking with a learnable mask token; (c) Transformer Blocks: only 2 Transformer blocks plus absolute position encoding process the sequence; (d) Projector: transposed convolutions restore the original resolution. The output is fused residually as $f^r = M^s \odot f^o + (1-M^s) \odot f^t$, replacing only the masked region.
-    - Design Motivation: keeping it extremely lightweight avoids training instability (experiments show that going beyond 2 Transformer blocks degrades performance). For multi-scale models (e.g. DAFormer), only the last-stage feature is rebuilt and upsampled to multi-scale; there is no need to instantiate a Rebuilder at every stage.
+MAE reconstructs original pixel values, a regression objective that conflicts with the semantic classification objective of segmentation. MRM feeds the reconstructed features directly into the segmentation decoder for pixel-level classification (cross-entropy + pseudo-labels), aligning the auxiliary task objective perfectly with the main task. Ablation studies confirm this: pixel-level regression results in -0.3 mIoU, while the classification objective brings +3.8 mIoU—objective alignment determines whether the auxiliary task is beneficial or harmful.
 
 ### Loss & Training
 
-The MRM loss $\mathcal{L}_{mrm}$ is a per-pixel cross entropy against target-domain pseudo-labels with weight $\lambda = 1.0$, and performance is stable in the range 0.1–2.0. MRM is applied only on target-domain images — applying it on the source domain is harmful (it pulls features toward the source distribution and weakens domain alignment). MRM must train both the encoder and the decoder for the best gain; freezing either component significantly reduces the improvement. The Rebuilder uses a learning rate of $2 \times 10^{-4}$.
+The MRM loss is a cross-entropy classification loss using target domain pseudo-labels, with weight $\lambda=1.0$. Crucially, MRM is applied **only to target domain images** (applying it to the source domain is harmful as it pulls features toward the source distribution). Another empirical finding is that MRM requires simultaneous training of both the encoder and decoder for optimal results; freezing either leads to reduced gains.
 
 ## Key Experimental Results
 
-### Main Results
+| Baseline Method | GTA→CS (baseline) | GTA→CS (+Ours) | Gain | Synthia→CS (+Ours) | Gain |
+|--------|------|------|------|------|------|
+| DACS | 52.1 | 55.9 | +3.8 | 55.8 | +7.5 |
+| DAFormer | 68.3 | 70.3 | +2.0 | 62.6 | +1.7 |
+| HRDA | 73.8 | 75.4 | +1.6 | 67.1 | +1.3 |
+| MIC | 75.9 | **77.5** | +1.6 | 68.1 | +0.8 |
 
-GTA→Cityscapes benchmark:
-
-| Baseline | w/o MRM | w/ MRM | Gain |
-|----------|---------|--------|------|
-| DACS | 52.1 | 55.9 | +3.8 |
-| DAFormer | 68.3 | 70.3 | +2.0 |
-| HRDA | 73.8 | 75.4 | +1.6 |
-| MIC | 75.9 | **77.5** | +1.6 |
-
-Synthia→Cityscapes benchmark (13-class mIoU):
-
-| Baseline | w/o MRM | w/ MRM | Gain |
-|----------|---------|--------|------|
-| DACS | 48.3 | 55.8 | +7.5 |
-| DAFormer | 60.9 | 62.6 | +1.7 |
-| HRDA | 65.8 | 67.1 | +1.3 |
-| MIC | 67.3 | **68.1** | +0.8 |
-
-MIC + MRM reaches 77.5 mIoU on GTA→CS, surpassing the previous best QuadMix (76.1) by +1.4 mIoU.
+MIC+MRM reaches 77.5 mIoU, surpassing all Prev. SOTA methods at the time (e.g., QuadMix 76.1, GANDA 74.5).
 
 ### Ablation Study
-
-Rebuilder design hyper-parameter ablations (DACS + DeepLabV2-ResNet101, GTA→CS):
-
-| Ablation Axis | Setting | mIoU |
-|---------------|---------|------|
-| Embedding dim | 128 / 256 / **512** / 768 | 54.7 / 55.1 / **55.9** / 53.6 |
-| Transformer blocks | 1 / **2** / 4 / 8 | 55.4 / **55.9** / 54.4 / 52.9 |
-| Spatial resolution H' = W' | 8 / **16** / 32 / 64 | 55.6 / **55.9** / 54.1 / OOM |
-| Mask ratio | best **40%** | **55.9** |
-| Weight λ | 0.1 / 0.5 / **1.0** / 2.0 / 10.0 | 54.7 / 55.8 / **55.9** / 55.4 / 52.1 |
-
-Reconstruction-target comparison:
-
-| Reconstruction Target | mIoU | Gain |
-|-----------------------|------|------|
-| Baseline (no MRM) | 52.1 | — |
-| Pixel regression (MAE-style) | 51.8 | -0.3 |
-| Teacher-feature reconstruction | 53.5 | +1.4 |
-| Student-feature reconstruction | 53.7 | +1.6 |
-| **Pixel classification (ours)** | **55.9** | **+3.8** |
-
-Cross-architecture generalization (GTA→CS):
-
-| Encoder | Decoder | UDA Method | w/o MRM | w/ MRM |
-|---------|---------|-----------|---------|--------|
-| ResNet-50 | DeepLabV2 | DACS | 52.0 | 55.1 (+3.1) |
-| ResNet-101 | DeepLabV3+ | DACS | 54.7 | 59.3 (+4.6) |
-| ResNet-101 | DeepLabV2 | MIC | 64.2 | 67.1 (+2.9) |
-| MiT-B2 | DAFormer Head | DAFormer | 64.2 | 66.3 (+2.1) |
-| MiT-B3 | DAFormer Head | MIC | 73.6 | 75.8 (+2.2) |
-
-### Key Findings
-
-- Masking without reconstruction is harmful (-0.2 mIoU), showing that masking in feature space causes irreversible semantic loss and the reconstruction step is essential.
-- MRM only helps on the target domain (+3.8); source-only gives +0.8 and source+target gives +3.1 — MRM is essentially a target-domain adaptation regularizer, not a generic self-supervision.
-- Encoder and decoder must be trained jointly: encoder-only +2.8, decoder-only +2.1, joint +3.8, confirming that MRM benefits from full-pipeline optimization.
-- The optimal mask ratio (40%) is much lower than MAE's 75% — the Rebuilder's capacity is small, so a higher mask ratio causes irreversible semantic loss.
+- **Optimal Mask Rate of 40%**: Lower than MAE's 75% because the Rebuilder in MRM has smaller capacity; a high mask rate makes semantic loss irreversible.
+- **Masking Without Reconstruction is Harmful (-0.2)**: This indicates that masking in feature space causes irreversible semantic loss, making the reconstruction process critical.
+- **Reconstruction Objective Comparison**: Pixel Regression (-0.3) < Teacher Feature Reconstruction (+1.4/+1.6) < **Pixel Classification (+3.8)**. Auxiliary tasks must align with the main task goal.
+- **Domain Selection**: Target domain only (+3.8) > Source + Target (+3.1) > Source domain only (+0.8). The essence of MRM is target domain adaptive regularization.
+- **Cross-Architecture Generalization**: Effective across ResNet50/101, MiT-B2/B3, and DeepLabV2/V3+, with gains ranging from +2.1 to +4.6.
 
 ## Highlights & Insights
-
-- **Extremely simple core design**: moving masking from input space to feature space and replacing pixel regression with classification — two simple modifications that resolve both obstacles to MIM in UDA segmentation (architectural incompatibility + objective mismatch), with zero inference overhead. The "do the right thing in the right space" pattern is broadly transferable.
-- **Counter-intuitive empirical findings with broad guidance value**: pixel reconstruction is harmful for segmentation, the auxiliary task only helps on the target domain, and contrastive learning only optimizes the encoder while MRM optimizes both encoder and decoder — these findings are useful for designing UDA auxiliary tasks in general.
-- **True plug-and-play generality**: works on both CNN (DeepLabV2/V3+) and Transformer (DAFormer) architectures, with consistent +2.1–+4.6 mIoU gains across 5 encoder–decoder–UDA combinations, demonstrating method generality rather than overfit to a single configuration.
+- **Extreme Simplicity**: The core design is captured in a simple logic (latent space masking + classification reconstruction), is completely plug-and-play, and incurs zero inference overhead.
+- The analysis of MRM from an information bottleneck perspective is compelling: masking acts as structured noise injection, reducing $I(Z;X)$ while preserving $I(Z;Y)$.
+- The counter-intuitive discovery that "pixel reconstruction objectives are harmful to segmentation tasks" provides valuable reference for the community.
+- Applying MRM only in the target domain is effective, revealing the correct usage of auxiliary tasks in UDA.
 
 ## Limitations & Future Work
-
-- The Rebuilder has limited capacity (only 2 Transformer blocks); ablations show that scaling to 4 / 8 blocks degrades performance (training instability), so a stronger and more stable Rebuilder design is a future direction.
-- The masking strategy is simple (uniform random); semantics-guided adaptive masking (e.g. higher mask rate for high-uncertainty regions) might bring larger gains.
-- Only the UDA setting is validated; whether MRM extends to domain generalization, source-free UDA, or test-time adaptation remains to be explored.
-- Reliance on pseudo-label quality means MRM's effectiveness in the early training phase (when pseudo labels are very noisy) is worth further analysis.
+- The Rebuilder capacity is limited (only 2 Transformer blocks); increasing capacity leads to training instability.
+- Only validated in UDA settings; applicability to domain generalization or source-free UDA remains unknown.
+- The masking strategy is relatively simple (uniform random); semantic-guided masking might yield higher gains.
+- Specifically tailored for pixel-level classification; tasks like depth estimation or panoptic segmentation require further research.
 
 ## Related Work & Insights
+- **vs MAE/MIM**: MAE masks in input space and reconstructs pixels, which is incompatible with segmentation architectures and misaligned with goals. MRM masks in feature space and reconstructs with classification objectives, ensuring compatibility and better performance.
+- **vs Contrastive Learning Auxiliary Tasks (SePiCo, PiPa)**: Contrastive learning only enhances encoder features, whereas MRM trains both the encoder and decoder, providing more comprehensive regularization.
+- **vs MIC**: MIC performs mask consistency in image space (similar to high-ratio CutOut), while MRM performs mask reconstruction in feature space. The two are complementary—MIC+MRM achieves 77.5 mIoU.
 
-- **vs MAE / MIM**: MAE masks in input space and reconstructs pixels — incompatible with segmentation architectures and misaligned in objective. MRM masks in feature space and reconstructs with a classification objective — perfectly compatible and significantly more effective (pixel regression -0.3 vs pixel classification +3.8).
-- **vs contrastive learning (SePiCo, PiPa)**: contrastive learning only enhances encoder feature discriminativeness without training the decoder; MRM jointly optimizes encoder and decoder for more comprehensive regularization.
-- **vs MIC**: MIC performs masked consistency in image space (similar to CutOut); MRM performs masked reconstruction in feature space; the two mechanisms are orthogonal and complementary — MIC + MRM reaches 77.5 mIoU, surpassing each in isolation.
-- **An information-bottleneck view**: masking is structured noise injection that reduces $I(Z; X)$ (compresses redundant information) while preserving $I(Z; Y)$ (keeps task-relevant information), improving the domain invariance of features.
+## Related Papers
 
-## Rating
+<div class="related-papers" markdown="1">
 
-- Novelty: ⭐⭐⭐⭐ — the core design is simple yet clever; components are not new individually, but the combination addresses a practical problem.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — four baselines × two benchmarks, more than ten ablations, five-architecture generalization study — very complete.
-- Writing Quality: ⭐⭐⭐⭐⭐ — clear motivation derivation, coherent logical chain of design choices, systematic ablation analysis.
-- Value: ⭐⭐⭐⭐ — plug-and-play, zero inference overhead, cross-architecture generality — directly useful for the UDA segmentation community.
+## Related Papers
+
+- [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](sarmae_masked_autoencoder_for_sar_representation_learning.md)
+- [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
+- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
+- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -171,11 +118,11 @@ Cross-architecture generalization (GTA→CS):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
-- [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](sarmae_masked_autoencoder_for_sar_representation_learning.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
-- [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](../../ICCV2025/segmentation/exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
-- [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
+- [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
 
 </div>
 

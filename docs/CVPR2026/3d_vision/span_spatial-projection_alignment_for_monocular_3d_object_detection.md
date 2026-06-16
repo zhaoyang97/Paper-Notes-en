@@ -2,74 +2,77 @@
 title: >-
   [Paper Note] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Monocular 3D Detection] This paper proposes Spatial-Projection Alignment (SPAN), which improves the localization accuracy of arbitrary monocular 3D detectors through two geometrically synergistic c…
+  [CVPR 2026][3D Vision][Paper Note] Proposes Spatial-Projection Alignment (SPAN), which utilizes two geometric synergistic constraints—3D corner spatial alignment and 3D-2D projection alignment—combined with a hierarchical task learning strategy. It serves as a plug-and-play module to improve the localization accuracy of arbitrary monocular 3D detectors.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Monocular 3D Detection"
-  - "Geometric Consistency"
-  - "Spatial Alignment"
-  - "Projection Constraints"
-  - "Plug-and-Play"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 9d0e4a13f3fe99f3
+content_hash: dd209a1ab5246929
 ---
-
 # SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2511.06702](https://arxiv.org/abs/2511.06702)  
-**Code**: [Project Page](https://wyfdut.github.io/SPAN/)  
-**Area**: 3D Vision
-**Keywords**: Monocular 3D Detection, Geometric Consistency, Spatial Alignment, Projection Constraints, Plug-and-Play
+**Code**: [Project Homepage](https://wyfdut.github.io/SPAN/)  
+**Area**: 3D Vision  
+**Keywords**: Monocular 3D detection, geometric consistency, spatial alignment, projection constraints, plug-and-play
 
 ## TL;DR
 
-This paper proposes Spatial-Projection Alignment (SPAN), which improves the localization accuracy of arbitrary monocular 3D detectors through two geometrically synergistic constraints — 3D corner spatial alignment and 3D-to-2D projection alignment — coupled with a hierarchical task learning strategy, serving as a plug-and-play module.
+Proposes Spatial-Projection Alignment (SPAN), which utilizes two geometric synergistic constraints—3D corner spatial alignment and 3D-2D projection alignment—combined with a hierarchical task learning strategy. It serves as a plug-and-play module to improve the localization accuracy of arbitrary monocular 3D detectors.
 
 ## Background & Motivation
 
-1. **Core challenge of monocular 3D detection**: Inferring complete 3D spatial information from a single RGB image is an ill-posed problem due to the absence of direct depth cues. Nevertheless, it remains an important direction for autonomous driving and robotic perception owing to its low cost and deployment flexibility.
-2. **Limitations of decoupled regression paradigms**: Existing methods independently predict the seven degrees of freedom (DoF) of a 3D bounding box (center coordinates, depth, dimensions, and rotation angle) in separate branches. Although this simplifies the learning objective, it neglects the intrinsic geometric constraints among attributes.
-3. **Absence of geometric consistency**: Independent prediction of individual attributes tends to violate the inherent spatial relationships, causing predicted 3D boxes to be spatially misaligned with ground truth and thereby degrading localization accuracy.
-4. **Shortcomings of existing geometric constraint methods**: Deep3DBox solves depth via overdetermined equations, which is highly sensitive to small perturbations in 2D bounding boxes; Homography Loss lacks fine-grained correction; data augmentation approaches such as 3D Copy-Paste do not strictly enforce 3D-to-2D projection consistency.
-5. **Limitations of MonoDGP**: Although it introduces geometric error priors to correct depth bias, each attribute is still regressed independently, lacking a unified consistency constraint.
-6. **Training stability issues**: Imposing high-order geometric constraints at early training stages leads to instability due to large initial prediction noise, necessitating a well-designed scheduling strategy.
+1. **Core challenge of monocular 3D detection**: Inferring complete 3D spatial information from a single RGB image is an ill-posed problem due to the lack of direct depth cues. However, its low cost and flexible deployment make it a vital direction for autonomous driving and robotic perception.
+2. **Limitations of decoupled regression paradigms**: Existing methods split the 7 degrees of freedom (7-DoF) of the 3D box (center coordinates, depth, dimensions, rotation angle) into different branches for independent prediction. While this simplifies the learning objective, it ignores the geometric synergistic constraints between attributes.
+3. **Lack of geometric consistency**: Independent attribute prediction often violates inherent spatial constraints, resulting in predicted 3D boxes that do not align perfectly with the ground truth in space, thus reducing localization accuracy.
+4. **Deficiencies of existing geometric constraint methods**: Methods like Deep3DBox solve for depth using overdetermined equations, making them extremely sensitive to minor 2D box perturbations; Homography Loss lacks fine-grained correction; and data augmentation schemes like 3D Copy-Paste do not rigorously verify 3D-2D projection consistency.
+5. **Limitations of MonoDGP**: Although it introduces a geometric error prior to correct depth bias, it still regresses attributes independently and lacks a unified consistency constraint.
+6. **Training stability issues**: Directly applying high-order geometric constraints early in training leads to instability due to high initial prediction noise, necessitating a proper scheduling strategy.
 
 ## Method
 
 ### Overall Architecture
 
-SPAN is a plug-and-play module that can be seamlessly integrated into the training pipeline of any monocular 3D detector. After the detector's existing branches regress 2D and 3D attributes, SPAN appends two geometrically synergistic constraint losses and dynamically adjusts their weights via hierarchical task learning, **without introducing any additional inference modules or computational overhead**.
+The mainstream approach in monocular 3D detection decouples the 7-DoF of a 3D box into separate branches for regression. This simplifies learning but loses geometric constraints—while each branch is "optimal" individually, their combination may not form a cube aligned with the ground truth. SPAN does not modify the detector architecture; instead, it supplements the original branches with two geometric synergistic constraints during training: spatial point alignment in 3D space and projection alignment in the 2D image. These are weighted dynamically using Hierarchical Task Learning (HTL) according to the training progress, ensuring they only take full effect after 3D predictions become sufficiently stable. All constraints are removed during inference, resulting in zero extra overhead.
 
-### Spatial Point Alignment
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Single RGB Image"] --> B["Base Monocular Detector<br/>Decoupled Regression 7-DoF (Center/Depth/Size/Orientation)"]
+    B --> C["Calculate 8 Corners of 3D Box from 7-DoF"]
+    C --> D["Spatial Point Alignment<br/>Alignment via MGIoU with GT Corners"]
+    C --> E["3D-2D Projection Alignment<br/>Corner Projection to 2D Box for GIoU with Detection Box"]
+    D --> F["Hierarchical Task Learning (HTL)<br/>Four-stage Scheduling, Increased Geometric Weights at End"]
+    E --> F
+    F -->|During Training| G["Geometric Synergistic Constraint Backprop,<br/>Correction of 7-DoF Predictions"]
+    G -.->|Removed During Inference| H["Output 3D Box with Zero Extra Overhead"]
+```
 
-- The 8 corners $\{P_i\}_{i=1}^{8}$ of the 3D bounding box are computed from the predicted 7-DoF parameters (center coordinates, depth, dimensions, and rotation angle).
-- A Marginalized GIoU (MGIoU) scheme is adopted: the 3D box alignment problem is decomposed into three 1D GIoU problems along the three face-normal directions, avoiding the high computational complexity of directly computing the intersection of arbitrarily oriented 3D boxes.
-- For each normal vector $\mathbf{a}_k$, the predicted and ground-truth corners are projected onto that direction and the GIoU of the resulting 1D intervals is computed.
-- The final loss is: $\mathcal{L}_{3Dcorner} = (1 - \text{MGIoU}^{3D}) / 2$, where MGIoU is the mean of the 1D GIoU values across the three directions.
-- **Distinction from ROI-10D / MonoDIS**: Rather than treating corner regression as an auxiliary task, SPAN directly constrains the 7-DoF parameters of the main branch so that the derived corners align with ground truth.
+### Key Designs
 
-### 3D-2D Projection Alignment
+**1. Spatial Point Alignment: Direct corner alignment instead of individual parameter regression**
 
-- The 8 corners of the predicted 3D box are projected onto the image plane via the camera projection model: $u_i = f_u \cdot x_i / z_i + c_u$.
-- The minimum horizontal enclosing rectangle $\mathcal{B}_{proj}^{2D}$ of the projected points is computed.
-- A 2D GIoU is constructed between this enclosing rectangle and the 2D detection box $\mathcal{B}_{gt}^{2D}$.
-- The projection alignment loss is: $\mathcal{L}_{proj} = 1 - \text{GIoU}^{2D}$.
-- **Core Idea**: The projection of the 3D box onto the image plane should tightly fit within the 2D detection box, which is a physical constraint imposed by perspective projection.
+The root issue of decoupled regression is that center, depth, size, and orientation are handled independently, with none responsible for whether the "eight corners fall on the ground truth." Spatial point alignment applies constraints directly to the corners: 8 corners $\{P_i\}_{i=1}^{8}$ are calculated from the predicted 7-DoF parameters and aligned with ground truth corners using MGIoU (Marginalized GIoU). MGIoU decomposes the alignment into 1D GIoUs along the three facial normal vectors $\mathbf{a}_k$ instead of computing precise intersections of arbitrarily oriented 3D boxes. The loss is defined as $\mathcal{L}_{3Dcorner} = (1 - \text{MGIoU}^{3D}) / 2$. Unlike ROI-10D/MonoDIS which treat corner regression as an auxiliary task, this directly constrains the 7-DoF parameters of the main branch.
+
+**2. 3D-2D Projection Alignment: Constraining depth using physical perspective projection**
+
+Small errors in depth estimation cause the 3D box projection to misalign with the 2D bounding box, which represents the most reliable supervision in the image. Projection alignment treats this physical fact as a loss: the 8 predicted 3D corners are projected onto the image plane via $u_i = f_u \cdot x_i / z_i + c_u$ to find the minimal horizontal bounding box $\mathcal{B}_{proj}^{2D}$. The 2D GIoU between this and the ground truth 2D box $\mathcal{B}_{gt}^{2D}$ forms the loss $\mathcal{L}_{proj} = 1 - \text{GIoU}^{2D}$. This is essentially a differentiable version of the "2D box back-calculates 3D" constraint from Deep3DBox, providing stability without increasing inference complexity.
+
+**3. Hierarchical Task Learning (HTL): Applying geometric constraints only when effective**
+
+A counter-intuitive phenomenon observed in ablations is that applying geometric constraints without HTL can degrade performance. This is because high 3D prediction noise in early training stages leads to erroneous corner and projection calculations. HTL splits training into four stages, unlocking tasks based on dependencies and increasing the weight of geometric alignment only after 3D attribute regressions have stabilized:
+
+| Stage | Task | Description |
+|------|------|------|
+| Stage 1 | 2D Detection | Classification, 2D box localization, projection center regression |
+| Stage 2 | 3D Size and Orientation | Initialized based on Stage 1 2D cues |
+| Stage 3 | Depth Estimation | Based on geometric relationships from Stage 1+2 |
+| Stage 4 | Spatial-Projection Alignment | Applied after all 3D attributes have stabilized |
 
 ### Loss & Training
 
-The total loss comprises four components: 2D regression loss $\mathcal{L}_{2D}$, 3D regression loss $\mathcal{L}_{3D}$, depth map loss $\mathcal{L}_{dmap}$, and the two geometric constraint losses, with weights $\lambda_c = \lambda_p = 1.0$.
-
-Training is divided into four stages, with HTL dynamically adjusting the weights:
-
-| Stage | Task | Description |
-|-------|------|-------------|
-| Stage 1 | 2D Detection | Classification, 2D box localization, projected center regression |
-| Stage 2 | 3D Dimensions & Rotation | Initialized using 2D cues from Stage 1 |
-| Stage 3 | Depth Estimation | Leverages geometric relationships from Stages 1 & 2 |
-| Stage 4 | Spatial-Projection Alignment | Applied after all 3D attribute regressions have stabilized |
+The total loss consists of four parts: 2D regression loss $\mathcal{L}_{2D}$, 3D regression loss $\mathcal{L}_{3D}$, depth map loss $\mathcal{L}_{dmap}$, and the two geometric synergistic constraints mentioned above, with constraint weights set to $\lambda_c = \lambda_p = 1.0$.
 
 ## Key Experimental Results
 
@@ -78,7 +81,7 @@ Training is divided into four stages, with HTL dynamically adjusting the weights
 On the KITTI test set (based on MonoDGP baseline):
 
 | Method | Easy | Mod. | Hard |
-|--------|------|------|------|
+|------|------|------|------|
 | MonoDGP | 26.35 | 18.72 | 15.97 |
 | MonoDGP + SPAN | **27.02** | **19.30** | **16.49** |
 | Gain | +0.67 | +0.58 | +0.52 |
@@ -86,15 +89,15 @@ On the KITTI test set (based on MonoDGP baseline):
 On the KITTI validation set:
 
 | Method | Easy | Mod. | Hard |
-|--------|------|------|------|
+|------|------|------|------|
 | MonoDGP | 30.76 | 22.34 | 19.02 |
 | MonoDGP + SPAN | **30.98** | **23.26** | **20.17** |
 | Gain | +0.22 | +0.92 | +1.15 |
 
-### Multi-Baseline Validation (KITTI val, Car $AP_{3D}$)
+### Multi-baseline Verification (KITTI val, Car $AP_{3D}$)
 
 | Baseline | Mod. Gain | Hard Gain |
-|----------|-----------|-----------|
+|----------|----------|----------|
 | MonoDETR + SPAN | +0.61 | +0.70 |
 | MoVis + SPAN | +0.67 | +0.82 |
 | MonoDGP + SPAN | +0.92 | +1.15 |
@@ -104,46 +107,46 @@ On the KITTI validation set:
 | $\mathcal{L}_{3Dcorner}$ | $\mathcal{L}_{proj}$ | HTL | Mod. |
 |---|---|---|---|
 | ✗ | ✗ | ✗ | 22.34 |
-| ✓ | ✗ | ✗ | 21.92 (degraded) |
-| ✗ | ✓ | ✗ | 21.80 (degraded) |
+| ✓ | ✗ | ✗ | 21.92 (Drop) |
+| ✗ | ✓ | ✗ | 21.80 (Drop) |
 | ✗ | ✗ | ✓ | 22.56 |
 | ✓ | ✓ | ✓ | **23.26** |
 
-**Key Findings**: Applying either geometric constraint alone without HTL leads to performance degradation, validating the necessity of the hierarchical training strategy.
+**Key Findings**: Using either geometric constraint alone without HTL reduces performance, verifying the necessity of the hierarchical training strategy.
 
 ## Highlights & Insights
 
-1. **Plug-and-play**: No modifications to the detector architecture are required; the module introduces no inference overhead and can be directly integrated into the training pipeline of any monocular 3D detector.
-2. **Geometrically synergistic constraints**: This work is the first to jointly optimize spatial alignment and projection alignment within a unified framework, addressing the core deficiency of the decoupled regression paradigm.
-3. **Elegant use of MGIoU**: Decomposing 3D box alignment into three 1D projection problems avoids the high complexity of computing the exact intersection of rotated 3D boxes.
-4. **Necessity of HTL**: Experiments clearly demonstrate that geometric constraints must be combined with staged training to be effective; applying them directly is counterproductive.
-5. **Most significant gains on Hard samples**: The largest improvements are observed on difficult samples (distant objects, heavy occlusion), demonstrating that geometric constraints are most effective in scenarios with depth ambiguity and localization difficulty.
+1. **Plug-and-play**: Requires no changes to detector architecture and adds no inference overhead, allowing direct integration into the training pipeline of any monocular 3D detector.
+2. **Geometric Synergy**: The first to jointly optimize spatial alignment and projection alignment in a unified framework, addressing the core deficiency of the decoupled regression paradigm.
+3. **Clever use of MGIoU**: Decomposes 3D box alignment into three 1D projection problems, avoiding the high complexity of calculating exact intersections of rotated 3D boxes.
+4. **Necessity of HTL strategy**: Experiments demonstrate that geometric constraints require phased training to be effective; direct application is harmful.
+5. **Significant Gain on Hard Level**: The largest improvements occur on difficult samples (distant, heavily occluded), suggesting that geometric constraints are most effective for scenarios with depth ambiguity and localization difficulty.
 
 ## Limitations & Future Work
 
-1. **Sensitivity to 2D detection noise**: Performance degrades sharply when 2D box perturbations exceed 15 px, making the quality of the 2D detector a bottleneck in practical deployment.
-2. **Primarily validated on KITTI**: Although Waymo results are provided in the appendix, the main experiments are limited to KITTI, which has constrained data scale and scene diversity.
-3. **Occasional degradation on BEV metrics**: The Mod./Hard BEV metrics on the test set show slight decreases (−0.40/−0.23), indicating a degree of tension between spatial alignment and BEV projection.
-4. **Only yaw rotation is considered**: The method assumes objects rotate only around the Y-axis, limiting applicability to non-flat roads or tilted objects.
-5. **Increased training complexity**: The HTL staged strategy increases the complexity of training and hyperparameter tuning, requiring additional effort to determine stage transition points.
-6. **Not yet extended to multi-view settings**: The authors suggest extending the approach to multi-view 3D perception as future work; the current method is limited to monocular scenarios.
+1. **Sensitive to 2D detection noise**: Performance drops sharply when 2D box perturbation exceeds 15px, making the 2D detector quality a bottleneck in deployment.
+2. **Primary validation on KITTI**: While the appendix includes Waymo results, the main experiments are limited to KITTI, which has restricted data scale and scene diversity.
+3. **Occasional drop in BEV metrics**: Mod./Hard BEV metrics on the test set showed slight decreases (-0.40/-0.23), indicating potential conflict between spatial alignment and BEV projection.
+4. **Consideration of yaw angle only**: Assumes objects only rotate around the Y-axis, limiting applicability to non-flat roads or tilted objects.
+5. **Increased training cost**: The HTL phased strategy increases the complexity of hyperparameter tuning, requiring additional effort to determine stage transition timings.
+6. **Not yet extended to multi-view**: The authors mention future work extending the method to multi-view 3D perception, as it is currently limited to monocular scenarios.
 
 ## Related Work & Insights
 
 | Method | Constraint Type | Limitation |
-|--------|----------------|------------|
-| Deep3DBox | 2D-to-3D projection equation solving | Highly sensitive to 2D box noise |
+|------|---------|------|
+| Deep3DBox | 2D→3D projection equation solving | Extremely sensitive to 2D box noise |
 | Homography Loss | Global homography constraint | Lacks fine-grained correction |
 | ROI-10D / MonoDIS | Corner regression as auxiliary task | Does not directly constrain main branch parameters |
-| MonoDGP | Geometric error correction for depth | Still regresses each attribute independently |
+| MonoDGP | Geometric error correction via depth formula | Still regresses attributes independently |
 | **SPAN** | **Joint spatial + projection constraint** | **Unified framework, plug-and-play** |
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — The core idea (spatial alignment + projection alignment) is intuitive; MGIoU and HTL are both adapted from prior work; the contribution lies in the combination.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Three baseline validations, comprehensive ablation, noise robustness analysis, pedestrian/cyclist categories, and weight sensitivity analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, complete mathematical derivations, and rich illustrative figures.
-- **Value**: ⭐⭐⭐⭐ — Strong practical utility as a plug-and-play module with meaningful guidance for the monocular 3D detection community.
+- Novelty: ⭐⭐⭐ — The core idea of spatial and projection alignment is intuitive; MGIoU and HTL leverage existing concepts, with the novelty lying in their combination.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Includes verification across three baselines, complete ablations, noise robustness analysis, and evaluation on pedestrian/cyclist categories.
+- Writing Quality: ⭐⭐⭐⭐ — Motivation is clear, mathematical derivations are complete, and charts are intuitive.
+- Value: ⭐⭐⭐⭐ — Strong practical utility as a plug-and-play module with meaningful implications for the monocular 3D detection field.
 
 <!-- RELATED:START -->
 
@@ -152,10 +155,10 @@ On the KITTI validation set:
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
-- [\[CVPR 2026\] VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection](virpro_visual-referred_probabilistic_prompt_learning_for_weakly-supervised_monoc.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar_camera_fusion_3d_detection.md)
+- [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/3d_vision/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
+- [\[CVPR 2025\] MonoPlace3D: Learning 3D-Aware Object Placement for 3D Monocular Detection](../../CVPR2025/3d_vision/monoplace3d_learning_3d-aware_object_placement_for_3d_monocular_detection.md)
 
 </div>
 

@@ -2,131 +2,130 @@
 title: >-
   [Paper Note] AceTone: Bridging Words and Colors for Conditional Image Grading
 description: >-
-  [CVPR 2026][Image Restoration][Color grading] AceTone is proposed as the first unified framework for multimodal-conditioned color grading supporting both text and reference image inputs. By compressing 3D-LUTs into 64 di…
+  [CVPR 2026][Image Restoration][3D-LUT] AceTone is proposed as the first unified framework supporting multimodal conditional color grading for both text and reference images. It compresses 3D-LUT into 64 discrete tokens via VQ-VAE, trains a VLM to predict LUT token sequences, and utilizes GRPO reinforcement learning to align color similarity and aesthetic pr
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Color grading"
-  - "3D-LUT"
-  - "VQ-VAE tokenizer"
-  - "VLM"
-  - "GRPO reinforcement learning"
+  - CVPR 2026
+  - Image Restoration
+  - 3D-LUT
+  - VQ-VAE tokenizer
+  - VLM
 date: 2026-05-08
-content_hash: 71ed9ba50ded9fad
+content_hash: 45f80754de79b0af
 ---
-
 # AceTone: Bridging Words and Colors for Conditional Image Grading
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.00530](https://arxiv.org/abs/2604.00530)  
 **Code**: [https://github.com/martian422/AceTone](https://github.com/martian422/AceTone)  
-**Area**: Image Processing / Color Grading
+**Area**: Image Restoration  
 **Keywords**: Color grading, 3D-LUT, VQ-VAE tokenizer, VLM, GRPO reinforcement learning
 
 ## TL;DR
-AceTone is proposed as the first unified framework for multimodal-conditioned color grading supporting both text and reference image inputs. By compressing 3D-LUTs into 64 discrete tokens via VQ-VAE, a VLM is trained to predict LUT token sequences, followed by GRPO reinforcement learning to align color similarity and aesthetic preference, achieving a 50% improvement in LPIPS on both style transfer and instruction-based grading tasks.
+AceTone is proposed as the first unified framework supporting multimodal conditional color grading for both text and reference images. It compresses 3D-LUT into 64 discrete tokens via VQ-VAE, trains a VLM to predict LUT token sequences, and utilizes GRPO reinforcement learning to align color similarity and aesthetic preferences, achieving a 50% LPIPS improvement in style transfer and instruction-based grading.
 
 ## Background & Motivation
 
-**Background**: Color toning/grading is critical for image style and emotional expression. Existing methods either rely on weighted combinations of predefined filter libraries or apply CNN-based patch-wise recoloring. Style transfer from reference images and text-guided grading are handled by incompatible models.
+**Background**: Color grading is essential for image style and emotion. Existing methods either rely on weight combinations of predefined filter libraries or use CNNs for patch-wise recoloring. Reference-based style transfer and text-based instruction grading tasks often utilize incompatible models.
 
-**Limitations of Prior Work**: (1) Existing methods lack sufficient expressive capacity or computational efficiency; (2) adversarial losses (GAN) suffer from training instability and mode collapse; (3) no mechanism exists for alignment with human aesthetic preferences; (4) reference-based transfer and text-driven grading require separate models.
+**Limitations of Prior Work**: (1) Existing methods lack sufficient expressive power or efficiency; (2) Generative Adversarial Network (GAN) training is unstable and prone to mode collapse; (3) There is a lack of alignment mechanisms with human aesthetic preferences; (4) Reference-based and text-based grading require independent models.
 
-**Key Challenge**: Color grading demands both precise color control (the strength of LUTs) and understanding of complex semantic instructions (the strength of VLMs), yet the two have not been effectively integrated.
+**Key Challenge**: Color grading requires both precise color control (the advantage of LUTs) and deep understanding of complex semantic instructions (the advantage of VLMs), yet these two have not been effectively integrated.
 
-**Key Insight**: Treating LUTs as atomic color transformation operations and tokenizing them for VLM-based generation.
+**Key Insight**: Treat the LUT as atomic operations for color transformation by tokenizing it, enabling a VLM to generate these tokens.
 
-**Core Idea**: (1) A VQ-VAE tokenizer compresses a $3 \times 32^3$ LUT into 64 discrete tokens; (2) a VLM autoregressively predicts the LUT token sequence; (3) GRPO uses color similarity and aesthetic scores as rewards for preference alignment.
+**Core Idea**: (1) A VQ-VAE tokenizer compresses the $3 \times 32^3$ LUT into 64 discrete tokens; (2) The VLM predicts the LUT token sequence; (3) GRPO is used for reward alignment based on color similarity and aesthetic scores.
 
 ## Method
 
 ### Overall Architecture
-Three-stage training pipeline: (1) LUT Tokenizer training (VQ-VAE) → (2) Generative pretraining (VLM learns LUT token prediction) → (3) Post-training (SFT for task adaptation + GRPO for preference alignment). At inference: query image + text/reference image → VLM predicts LUT tokens → decoded into a 3D-LUT → applied to the image.
+The core challenge AceTone addresses is the need for the precise, lossless global color control of LUTs combined with the complex semantic understanding of VLMs, which were previously handled by disjoint and incompatible models. The proposed solution is to transform the LUT itself into a "language" that the VLM can "speak." A VQ-VAE first compresses the 3D-LUT into 64 discrete tokens, then the VLM is trained to autoregressively predict this token sequence like a sentence. Finally, reinforcement learning aligns the output with human aesthetics.
+
+The process consists of three training stages: first, training the LUT Tokenizer (VQ-VAE) for reversible conversion between LUTs and tokens; second, generative pre-training for the VLM to learn LUT token prediction; and third, post-training (SFT for specific tasks + GRPO for preference alignment). During inference, the query image, along with text instructions or a reference image, is fed into the VLM, which outputs a sequence of LUT tokens that are decoded into a 3D-LUT and applied to the image.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    DS["AceTone-800K Dataset<br/>LUT Library → PCA Clustering → Auto-labeling (Image, LUT, Instruction)"] --> TK
+    subgraph TRAIN["Three-stage Training"]
+        direction TB
+        TK["3D LUT Tokenizer (VQ-VAE)<br/>3D-LUT ↔ 64 Discrete Tokens"] --> PT["VLM LUT Token Prediction<br/>Generative Pre-training + SFT (Style Transfer / Instruction Grading)"]
+        PT --> RL["GRPO RL Alignment<br/>Color Similarity + Aesthetic Reward"]
+    end
+    RL --> INF["Inference: Query Image + Text/Reference → VLM outputs LUT tokens → Decode to 3D-LUT application"]
+    INF --> O["Grading Results"]
+```
 
 ### Key Designs
 
-1. **3D LUT Tokenizer (VQ-VAE)**:
+**1. 3D LUT Tokenizer: Compressing continuous color mapping volumes into discrete tokens for VLM generation.**
 
-    - Function: Compresses a continuous $3 \times 32 \times 32 \times 32$ LUT into 64 discrete tokens.
-    - Mechanism: A 3D convolutional encoder progressively downsamples to $4 \times 4 \times 4 \times D$ → vector quantization layer ($K=256$ codebook entries) → 3D convolutional decoder. Loss: $\mathcal{L} = \mathcal{L}_{rec} + \beta \mathcal{L}_{commit}$
-    - Fidelity: $\Delta E < 2$ (color difference imperceptible to the human eye)
-    - Design Motivation: A LUT is inherently a 3D color mapping volume; VQ-VAE can effectively compress it while preserving high fidelity.
+VLMs are inherently designed to generate discrete tokens, while a $3 \times 32 \times 32 \times 32$ LUT is a continuous high-dimensional volume. To bridge this gap, AceTone uses a VQ-VAE: a 3D convolutional encoder downsamples the LUT to $4 \times 4 \times 4 \times D$, which is then discretized into 64 tokens via a vector quantization layer with a codebook of size $K=256$, and reconstructed by a 3D convolutional decoder. The training objective is reconstruction loss plus a codebook commitment term $\mathcal{L} = \mathcal{L}_{rec} + \beta \mathcal{L}_{commit}$. VQ-VAE is chosen over direct regression because a LUT is essentially a 3D color mapping volume; volumetric convolution with quantization provides significant compression while maintaining an error of $\Delta E < 2$ (perceptually negligible), ensuring the precision of the pipeline.
 
-2. **VLM-based LUT Token Prediction**:
+**2. VLM LUT Token Prediction: Unifying "Reference Transfer" and "Text-based Grading" into a single sequence generation problem.**
 
-    - Function: Trains the VLM to autoregressively predict LUT token sequences from visual-textual inputs.
-    - **Generative Pretraining**: Large-scale (image, LUT, prompt) triplets with $\mathcal{L}_{gen} = -\sum \log p_\theta(z_t | z_{<t}, I, L(I), c)$
-    - **SFT**: Separate training data is curated for photo style transfer (PST) and instruction-guided grading (IGG). PST provides reference and query image pairs; IGG uses Qwen2.5-VL-32B to generate editing instructions for (image, LUT) pairs.
-    - Design Motivation: Formalizing color transformation as a token sequence generation problem unifies reference-based and text-based conditioning.
+Previously, reference-based style transfer and text-instruction grading required incompatible models due to different condition formats. AceTone formalizes color transformation as autoregressive token sequence prediction given vision-text conditions, making both tasks essentially the same problem with different conditions $c$. It first performs generative pre-training using (Image, LUT, prompt) triplets to maximize conditional likelihood $\mathcal{L}_{gen} = -\sum \log p_\theta(z_t \mid z_{<t}, I, L(I), c)$. Subsequently, SFT is applied to both tasks: reference images are provided for Perspective Style Transfer (PST), while Qwen2.5-VL-32B generates editing instructions for Image-Guided Grading (IGG). This allows a single model to comprehend both reference images and natural language.
 
-3. **GRPO Reinforcement Learning Alignment**:
+**3. GRPO Reinforcement Learning Alignment: Avoiding GAN instability by aligning a stable likelihood model with aesthetics via RL.**
 
-    - Function: Aligns the model's color grading outputs with human aesthetic preferences.
-    - Two reward functions:
-        - $r_{color}$: Color similarity, $\frac{1}{\max(2, \Delta E) - 1}$ (maximum reward when $\Delta E < 2$)
-        - $r_{aes}$: Aesthetic score, evaluated using a pretrained DeQA model for visual pleasantness.
-    - Standard GRPO training: Sample $G$ candidate LUTs → compute rewards → normalize advantages within the group → policy update.
-    - Design Motivation: Avoids GAN instability by first establishing a stable likelihood-based generative model, then aligning with preferences via RL.
+Likelihood-based pre-training only learns to "grade like the training set" without a mechanism to align with human aesthetic preferences. Unlike unstable GAN training, AceTone employs GRPO for preference alignment on a stable generative model. The reward consists of two items: a color similarity reward $r_{color} = \frac{1}{\max(2, \Delta E) - 1}$ (full score when $\Delta E < 2$ to ensure target adherence) and an aesthetic reward $r_{aes}$ (visual pleasure score from a pre-trained DeQA model). Following standard GRPO, $G$ candidate LUTs are sampled for one condition, rewards are computed, group normalization provides the advantage, and the policy is updated with KL regularization to prevent divergence.
 
-4. **AceTone-800K Dataset**:
+**4. AceTone-800K Dataset: A high-quality LUT corpus and benchmark tailored for tokenization and RL.**
 
-    - ~10K licensed LUT filters + PPR-10K expert retouching + 8,192 core LUTs selected via PCA clustering.
-    - 800K automatically annotated (image, LUT, instruction) tuples.
-    - Two benchmarks: AceTone-Bench[Transfer] (1,024 samples) and AceTone-Bench[Instruct] (128 samples).
+A massive, diverse (Image, LUT, Instruction) dataset was required. Starting from 10K licensed LUT filters and PPR-10K expert grading, the authors selected 8192 core LUTs via PCA clustering to remove redundancy, eventually auto-labeling 800K tuples. Two evaluation benchmarks were established: AceTone-Bench Transfer (1024 samples) and AceTone-Bench Instruct (128 samples). Ablations confirm that data diversity is critical for the GRPO stage.
 
 ### Loss & Training
-Tokenizer: MSE + commitment loss. Pretraining/SFT: cross-entropy. RL: GRPO objective + KL regularization.
+The Tokenizer uses MSE reconstruction loss and commitment loss; Generative pre-training and SFT utilize cross-entropy; the RL stage employs the GRPO objective with KL regularization.
 
 ## Key Experimental Results
 
 ### Main Results (Style Transfer PST-50)
 
 | Method | Aes.↑ | PSNR↑ | LPIPS↓ | ΔE↓ |
-|--------|-------|-------|--------|-----|
+|------|-------|-------|--------|-----|
 | Neural Preset | 3.03 | 21.24 | 0.15 | 9.57 |
 | SA-LUT | 3.07 | 21.64 | 0.16 | 9.01 |
 | ModFlow | 3.08 | 20.13 | 0.16 | 10.62 |
-| **AceTone** | **3.29** | **24.26** | **0.09** | **7.26** |
+| **Ours (AceTone)** | **3.29** | **24.26** | **0.09** | **7.26** |
 
-On AceTone-Bench[Transfer], LPIPS decreases from 0.22 (SA-LUT) to **0.11**, a 50% improvement.
+On AceTone-Bench[Transfer], LPIPS decreased from 0.22 (SA-LUT) to **0.11** (a 50% improvement).
 
 ### Ablation Study
 
-| Configuration | Aes.↑ | LPIPS↓ | Notes |
-|---------------|-------|--------|-------|
-| Pretraining only | baseline | baseline | Basic LUT prediction capability |
-| + SFT | +gain | +gain | Task-specific adaptation |
-| + GRPO | **best** | **best** | Critical for aesthetic alignment |
-| w/o aesthetic reward | degraded | unchanged | Aesthetic score contributes significantly to perceptual quality |
-| w/o color reward | unchanged | degraded | Color accuracy requires color reward |
+| Configuration | Aes.↑ | LPIPS↓ | Description |
+|------|-------|--------|------|
+| Pre-train only | Baseline | Baseline | Basic LUT prediction capability |
+| + SFT | + Gain | + Gain | Task adaptation |
+| + GRPO | **Best** | **Best** | Key for aesthetic alignment |
+| w/o Aesthetic Reward | Decrease | Constant | Aesthetic score contributes to perceptual quality |
+| w/o Color Reward | Constant | Decrease | Color reward ensures accuracy |
 
 ### Key Findings
-- The GRPO stage primarily contributes to improved aesthetic scores and color consistency.
-- The fidelity of the LUT tokenizer ($\Delta E < 2$) constitutes the accuracy foundation of the entire pipeline.
-- Data diversity is critical for GRPO training — using the full training set versus a subset yields significant performance differences.
-- This work is the first to demonstrate that VLMs can effectively predict discrete representations of 3D color transformations.
+- The contribution of the GRPO stage is primarily reflected in aesthetic score improvement and color consistency optimization.
+- The fidelity of the LUT tokenizer ($\Delta E < 2$) serves as the foundation for the entire pipeline's precision.
+- Data diversity is crucial for GRPO training; the performance gap between using the full dataset versus a subset is significant.
+- It is demonstrated for the first time that VLMs can effectively predict discrete representations of 3D color transformations.
 
 ## Highlights & Insights
-- **Innovation in LUT Tokenization**: Compressing a 3D-LUT into 64 discrete tokens elegantly transforms color grading into the "language" of VLMs, bridging the boundary between language models and color operations.
-- **Staged Learning Paradigm**: Establishing a stable foundation via likelihood-based pretraining before RL-based preference alignment avoids the instability of GAN training, offering a new scalable training paradigm for color grading.
-- **Unified Multimodal Conditioning**: A single model simultaneously supports both reference image and text instruction grading modes.
+- **Innovation in LUT Tokenization**: Compressing 3D-LUTs into 64 tokens makes color transformation a "language" for VLMs, bridging the gap between language models and color operations.
+- **Staged Learning Paradigm**: Starting with likelihood pre-training followed by RL alignment avoids the instability of GANs and provides a scalable training path for color grading.
+- **Unified Multimodal Conditioning**: A single model supports both reference image and text instruction grading modes simultaneously.
 
 ## Limitations & Future Work
-- LUTs perform global color transformation and cannot handle local grading (e.g., adjusting only the sky color).
-- The $32^3$ LUT resolution has limited precision; extreme color transformations may introduce quantization artifacts.
-- GRPO training requires extensive sampling and reward computation, resulting in high training cost.
-- The aesthetic evaluation model (DeQA) may introduce its own biases, which the model could inadvertently learn.
+- LUTs perform global color transformations and cannot handle local grading (e.g., adjusting only the sky).
+- The $32^3$ resolution of the LUT has finite precision (extreme transformations may cause quantization artifacts).
+- GRPO training requires heavy sampling and reward computation, leading to high training costs.
+- The preferences of the aesthetic evaluation model (DeQA) itself may be "learned" into the model.
 
 ## Related Work & Insights
-- **vs. Neural Preset/SA-LUT**: These methods combine predefined LUT libraries with limited expressive capacity. AceTone generates LUTs from scratch.
-- **vs. Diffusion-based Editing**: Diffusion models can recolor images but incur high latency and may disrupt image structure. LUT application is lossless.
-- **vs. CLIP-guided Methods**: CLIP maps text to color operations but is constrained to a few words of input. VLMs understand complex instructions.
+- **vs Neural Preset/SA-LUT**: These combine predefined LUT libraries with limited expression. AceTone generates LUTs from scratch.
+- **vs Diffusion Models**: Diffusion models can recolor images but suffer from high latency and potential structural damage. LUT applications are lossless.
+- **vs CLIP-guided methods**: CLIP maps text to color operations but is limited by a small vocabulary. VLMs understand complex instructions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ A complete innovation chain of LUT tokenization + VLM generation + GRPO alignment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Quantitative evaluation and user studies, though the dataset is not yet publicly released.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear and dataset construction details are thorough.
-- Value: ⭐⭐⭐⭐⭐ Pioneering a new direction for language-driven color grading with practical applications in film post-production and related industries.
+- Novelty: ⭐⭐⭐⭐⭐ Complete innovation chain of LUT tokenization + VLM generation + GRPO alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Quantitative results and user studies included, though the dataset is not yet public.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological descriptions and complete dataset details.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for language-driven color grading with practical value for post-production industries.
 
 <!-- RELATED:START -->
 
@@ -135,10 +134,10 @@ On AceTone-Bench[Transfer], LPIPS decreases from 0.22 (SA-LUT) to **0.11**, a 50
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
+- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[CVPR 2026\] CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation](canoncgt_reference-based_color_grading_via_canonical_pivot_representation.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[ICML 2026\] One-shot Conditional Sampling: MMD meets Nearest Neighbors](../../ICML2026/image_restoration/one-shot_conditional_sampling_mmd_meets_nearest_neighbors.md)
-- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
-- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
 
 </div>
 

@@ -2,140 +2,142 @@
 title: >-
   [Paper Note] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 description: >-
-  [CVPR2026][AI Safety][Image Watermarking] AdvMark proposes a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) pushes watermarked images into non-attackable regions to resist adversarial a…
+  [CVPR 2026][AI Safety][Paper Note] AdvMark is proposed as a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) shifts watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 utilizes direct image optimization to counter distortion and regeneration attacks while preserving adversarial robustnes
 tags:
-  - "CVPR2026"
-  - "AI Safety"
-  - "Image Watermarking"
-  - "Adversarial Robustness"
-  - "Diffusion Regeneration Attack"
-  - "Decoupled Training"
-  - "Adversarial Training"
-  - "Image Quality"
+  - CVPR 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 9571e0ed0fb38bbc
+content_hash: a1b08449fe6e9fe9
 ---
-
 # AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.20053](https://arxiv.org/abs/2602.20053)  
-**Code**: N/A  
-**Area**: AI Security
-**Keywords**: Image Watermarking, Adversarial Robustness, Diffusion Regeneration Attack, Decoupled Training, Adversarial Training, Image Quality
+**Code**: None  
+**Area**: AI Security  
+**Keywords**: Image watermarking, Adversarial robustness, Diffusion regeneration attack, Decoupled training, Adversarial training, Image quality
 
 ## TL;DR
-AdvMark proposes a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) pushes watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 performs direct image optimization to defend against distortion and regeneration attacks while preserving adversarial robustness. Evaluated across 9 watermarking methods × 10 attack types, AdvMark improves distortion/regeneration/adversarial accuracy by 29%/33%/46% respectively, while achieving the best image quality.
+AdvMark is proposed as a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) shifts watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 utilizes direct image optimization to counter distortion and regeneration attacks while preserving adversarial robustness. Across 9 watermarking methods and 10 attack types, AdvMark improves distortion/regeneration/adversarial accuracy by 29%/33%/46% respectively, achieving optimal image quality.
 
 ## Background & Motivation
 
-**Background**: Deep learning image watermarking (DL watermarking) embeds information into images via an encoder and extracts it via a decoder, and has become a core technology for copyright protection and content tracing. Attack methods have escalated in recent years, forming a triple threat.
+**Background**: Deep learning image watermarking (DL watermarking) embeds information into images via an encoder and extracts it via a decoder, becoming a core technology for copyright protection and content provenance. Recently, attack methods have escalated, forming a triple threat.
 
 **Triple Threat**:
-- **Adversarial Attack**: e.g., WEvade, which causes the decoder to extract incorrect information via imperceptible perturbations, with no visible change to the image.
-- **Regeneration Attack**: Uses diffusion models to add noise to watermarked images and then denoise them, effectively "washing out" the watermark.
-- **Distortion Attack**: Traditional image processing operations such as JPEG compression, Gaussian blur, and cropping.
+   - **Adversarial Attack**: e.g., WEvade, which uses infinitesimal perturbations to cause the decoder to extract incorrect information, with no visual change to the attacked image.
+   - **Regeneration Attack**: Utilizes diffusion models to add noise and سپس denoise watermarked images, effectively "washing away" the watermark.
+   - **Distortion Attack**: Traditional image processing operations such as JPEG compression, Gaussian blur, and cropping.
 
-**Two Major Problems with Joint Adversarial Training (JAT)**:
-- **Problem 1**: Adversarial training of the decoder degrades clean accuracy — to correctly decode adversarial examples, the decoder is forced to expand its decision boundary, which in turn reduces accuracy on clean images.
-- **Problem 2**: Simultaneously training against three attack types leads to slow convergence and poor performance — conflicting gradient directions across the three attacks result in a complex optimization landscape that JAT struggles to satisfy jointly.
+**Limitations of Prior Work (Joint Adversarial Training, JAT)**:
+   - **Problem 1**: Adversarial training of the decoder leads to a decrease in clean accuracy—to correctly decode adversarial samples, the decoder is forced to expand its decision boundaries, which conversely reduces precision on clean images.
+   - **Problem 2**: Simultaneous training against three types of attacks results in slow convergence and poor performance—the gradient directions of the three attacks conflict, creating a complex optimization landscape where joint training struggles to satisfy all defense requirements.
 
-**Core Insight**: Adversarial attacks are fundamentally different from distortion/regeneration attacks. Adversarial attacks exploit weaknesses in the model's decision boundary (model-specific), whereas distortion/regeneration attacks operate at the signal level (model-agnostic). Defense strategies should therefore be decoupled rather than jointly trained.
+**Key Insight**: Adversarial attacks differ fundamentally from distortion/regeneration attacks. Adversarial attacks exploit model-specific decision boundary weaknesses, while distortion/regeneration attacks are model-agnostic signal-level disruptions. Defense strategies should be decoupled rather than jointly trained.
 
-**Core Idea**: Two-stage decoupling — Stage 1 uses EAT to push encoded images into non-attackable regions; Stage 2 applies direct image optimization to handle distortion and regeneration attacks.
+**Core Idea**: Two-stage decoupling—first use EAT to let the encoder "push" the image into a non-attackable region, then use direct image optimization to handle distortion and regeneration attacks.
 
 ## Core Problem
-How to simultaneously defend against adversarial attacks, regeneration attacks, and distortion attacks while avoiding the gradient conflicts and clean accuracy degradation inherent in joint training?
+How to simultaneously defend against the triple threat of adversarial, regeneration, and distortion attacks while avoiding the gradient conflicts and clean accuracy degradation inherent in joint training?
 
 ## Method
 
 ### Overall Architecture
-AdvMark adopts a two-stage decoupled design. Stage 1 EAT focuses on adversarial robustness by fine-tuning the encoder (rather than expanding the decoder boundary) to move watermarked images into safe regions. Stage 2 directly optimizes the encoded image to resist distortion and regeneration attacks, using constraints to preserve the adversarial robustness established in Stage 1.
+AdvMark aims to solve the challenge of a single watermarked image resisting adversarial, distortion, and regeneration attacks simultaneously, whereas joint training entangles these tasks, leading to mutual interference. The solution splits the defense into two stages based on the "nature" of the attacks: adversarial attacks target model-specific decision boundary weaknesses, while distortion/regeneration attacks are model-agnostic signal disruptions. In Stage 1, Encoder Adversarial Training (EAT) focuses solely on adversarial robustness—fine-tuning the encoder to "move" the watermarked image into a safe region unreachable by adversarial attacks. Stage 2 takes the output $x_{w1}$ from Stage 1 and optimizes $x_{w2}$ directly in the pixel space to resist distortion and regeneration, while employing an offset constraint to lock the image within the safe region established in Stage 1. At inference, the process is: Encoder embedding → Stage 2 optimization → final watermarked image output.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image + Watermark m"] --> B["Encoder Embedding → x_w"]
+    subgraph S1["Encoder Adversarial Training (Stage 1 · Adversarial Defense)"]
+        direction TB
+        C["Construct defender-tailored adversarial samples:<br/>Find perturbation δ that pushes decoder output toward 0.5"] --> D["Fine-tune encoder to move watermark into non-attackable zone;<br/>Decoder updates conditionally only when bit acc < τ₁"]
+    end
+    B --> S1
+    S1 --> E["x_w1: Located in safe zone unreachable by adversarial attacks"]
+    subgraph S2["Pixel-level Optimization (Stage 2 · Model-agnostic)"]
+        direction TB
+        F["Direct image optimization + Constraint loss:<br/>Optimize x_w2 via gradient descent, constrained by ‖x_w2−x_w1‖ ≤ ε"] --> G["Quality-aware early-stop:<br/>Monitor PSNR/SSIM in real-time, stop when quality reaches threshold"]
+    end
+    E --> S2
+    S2 --> H["Output final watermarked image x_w2"]
+```
 
 ### Key Designs
 
-1. **Stage 1: Encoder Adversarial Training (EAT)**:
+**1. Encoder Adversarial Training: Rather than making the decoder tolerate adversarial samples, move the image to a safe zone via the encoder.**
 
-    - **Function**: Constructs defender-tailored adversarial examples and primarily fine-tunes the encoder to move watermarked images away from the region reachable by adversarial attacks.
-    - **Mechanism**:
-        - **Adversarial example construction** (Eq. 2): $\min_{\delta} |0.5 - l(\text{clamp}(D(x_w + \delta), 0, 1), m)|$, which searches for the perturbation $\delta$ that most easily drives the decoder output toward 0.5 (maximum uncertainty); these constitute the defender-tailored adversarial examples.
-        - **Encoder-primary update strategy**: Adversarial examples are fed back to the encoder, training it to embed watermarked images into safe regions far from the decision boundary. The decoder is conditionally updated only once when bit accuracy falls below $\tau_1$.
-    - **Design Motivation**: Conventional adversarial training (AT) updates both encoder and decoder; expanding the decoder's decision boundary to accommodate adversarial examples sacrifices clean accuracy. EAT takes the opposite approach — rather than enlarging the boundary, it trains the encoder to relocate images to regions beyond the boundary's reach.
-    - **Key Distinction**: In EAT, the encoder is the primary training target; the decoder is largely frozen.
+Traditional Adversarial Training (AT) updates both the encoder and decoder, relying on the decoder to expand decision boundaries, which drops clean decoding accuracy (clean BA decreases from ~99% to ~92%). EAT reverses this—it freezes the decoder and treats the encoder as the primary training target. It constructs defender-tailored adversarial samples by solving $\min_{\delta}\, |0.5 - l(\text{clamp}(D(x_w + \delta), 0, 1), m)|$ (Eq.2), finding the perturbation $\delta$ that pushes the decoder toward maximum uncertainty (0.5). These samples are fed back to the encoder, forcing it to embed watermarks far from decision boundaries. The decoder is only updated if bit accuracy falls below $\tau_1$. This preserves clean accuracy (~98-99% under EAT) while enhancing adversarial robustness.
 
-2. **Stage 2: Direct Image Optimization**:
+**2. Direct Image Optimization + Constraint Loss: Using pixel-level optimization for signal attacks while guarding the safe zone.**
 
-    - **Function**: Further optimizes the watermarked image $x_{w1}$ output by Stage 1 to obtain $x_{w2}$, enabling it to simultaneously resist distortion and regeneration attacks.
-    - **Mechanism**:
-        - **Optimization objective**: Directly optimizes $x_{w2}$ in pixel space (without updating network parameters) so that the decoder can still correctly extract the watermark after distortion/regeneration attacks.
-        - **Constrained Image Loss**: Constrains the deviation of $x_{w2}$ from $x_{w1}$, ensuring that the optimized image does not stray from the non-attackable region established in Stage 1, thereby preserving adversarial robustness. A theoretical guarantee is provided: under the constraint $\|x_{w2} - x_{w1}\| \leq \epsilon$, the adversarial robustness of Stage 1 is maintained with high probability.
-        - **Quality-aware Early-stop**: Instead of fixed $\epsilon$-ball projection (which leads to uneven image quality), image quality metrics (PSNR/SSIM) are monitored and optimization is stopped early when quality degrades below a threshold.
-    - **Design Motivation**: Distortion/regeneration attacks are model-agnostic signal-level corruptions that are difficult to address through encoder training alone; direct pixel optimization is more direct and efficient, and the constraint preserves the adversarial defense gains of Stage 1.
+Since distortion and regeneration are model-agnostic, training networks on them has limited returns. Stage 2 leaves network parameters unchanged and optimizes $x_{w2}$ via gradient descent in pixel space so that the decoder can still extract the watermark after attacks. To prevent the optimization from pushing the image out of the Stage 1 safe zone, a constrained image loss $\|x_{w2}-x_{w1}\| \le \epsilon$ is added to lock the optimization within the safety region.
 
-3. **Theoretical Guarantee for Two-Stage Decoupling**:
+**3. Quality-aware Early-stop: Using quality metrics as a brake instead of a fixed ε-ball projection.**
 
-    - **Function**: Proves that Stage 2 optimization does not compromise the adversarial robustness established in Stage 1.
-    - **Mechanism**: If $x_{w1}$ is safe within adversarial radius $r$, and $\|x_{w2} - x_{w1}\| \leq \epsilon$, then $x_{w2}$ remains safe within radius $r - \epsilon$.
-    - **Design Motivation**: Decoupling the two stages requires guaranteeing that the latter stage does not undermine the former; the theoretical guarantee makes the framework reliable.
+Fixed $\epsilon$-ball projections lead to inconsistent degradation across different images. This method monitors PSNR/SSIM in real-time during optimization and stops early once the quality threshold is met. This results in an average PSNR increase of 1–2 dB at the same accuracy level, making attack resistance and visual quality more controllable.
 
-### Training and Inference Pipeline
-- **Stage 1**: Iteratively trains the encoder on adversarial examples ($K$-step PGD attack + encoder update), with conditional decoder freezing.
-- **Stage 2**: Fixes the encoder/decoder and directly optimizes the pixel values of $x_{w2}$ via gradient descent, with quality-aware early-stop.
-- **Inference**: Standard encoder embedding → Stage 2 optimization → output final watermarked image.
+**4. Theoretical Guarantee for Decoupling: Ensuring Stage 2 does not undermine Stage 1.**
+
+The paper provides a robustness preservation conclusion: if $x_{w1}$ is safe within an adversarial attack radius $r$, and $\|x_{w2}-x_{w1}\| \le \epsilon$, then $x_{w2}$ remains safe within a radius $r-\epsilon$. This clarifies the relationship between "constrained offset" and "preserving adversarial robustness."
+
+### Loss & Training
+- **Stage 1**: Iteratively train the encoder on adversarial samples (K-step PGD for perturbations + encoder update). The decoder is conditionally frozen and only updated if bit accuracy $< \tau_1$.
+- **Stage 2**: Fix encoder/decoder, perform gradient descent on $x_{w2}$ pixels, subject to constrained image loss ($\|x_{w2}-x_{w1}\| \le \epsilon$) and quality-aware early-stop.
+- **Inference**: Encoder embedding → Stage 2 optimization → final watermarked image.
 
 ## Key Experimental Results
 
-### Main Results — 9 Watermarking Methods × 10 Attack Types
+### Main Results — 9 Watermarking Methods × 10 Attacks
 
 | Defense Strategy | Distortion Acc (%) | Regeneration Acc (%) | Adversarial Acc (%) | PSNR ↑ | SSIM ↑ |
-|---|---|---|---|---|---|
-| No Defense (Baseline) | ~60–70 | ~50–60 | ~20–30 | Highest | Highest |
-| JAT (Joint Training) | ~65–75 | ~55–65 | ~40–50 | Lower | Lower |
-| AT + Distortion | ~70–78 | ~58–68 | ~45–55 | Low | Low |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| Baseline (No Defense) | ~60-70 | ~50-60 | ~20-30 | Highest | Highest |
+| JAT (Joint Training) | ~65-75 | ~55-65 | ~40-50 | Lower | Lower |
+| AT + Distortion | ~70-78 | ~58-68 | ~45-55 | Low | Low |
 | **AdvMark (Ours)** | **+29%** | **+33%** | **+46%** | **Highest** | **Highest** |
 
 ### Ablation Study
 
 | Configuration | Adversarial Acc | Distortion Acc | Regeneration Acc | Image Quality |
-|---|---|---|---|---|
-| Stage 1 only (EAT) | High | Medium | Medium | High |
-| Stage 2 only (DIO) | Low | High | High | Medium |
-| JAT (Joint Training) | Medium | Medium | Medium | Low |
-| Standard AT + DIO (non-EAT) | Medium | — | — | Low |
-| EAT + DIO w/o constraint | Low | High | High | Medium |
+|:---|:---:|:---:|:---:|:---:|
+| Stage 1 only (EAT) | High | Mid | Mid | High |
+| Stage 2 only (DIO) | Low | High | High | Mid |
+| JAT (Joint Training) | Mid | Mid | Mid | Low |
+| EAT + Standard AT | Mid | — | — | Low |
+| EAT + DIO w/o constraint | Low | High | High | Mid |
 | **AdvMark (EAT + constrained DIO)** | **High** | **High** | **High** | **High** |
 
 ### Key Findings
-- **EAT vs. Standard AT**: Standard AT expands the decoder boundary, causing clean BA to drop from ~99% to ~92%; EAT maintains clean BA at ~98–99% while achieving stronger adversarial robustness.
-- **Importance of the constraint**: Removing the image constraint in Stage 2 significantly degrades adversarial accuracy, validating the theoretical analysis.
-- **Quality-aware early-stop vs. $\epsilon$-ball projection**: Early-stop achieves on average 1–2 dB higher PSNR at equivalent accuracy.
-- **Generalizability**: Consistent improvements are observed across 9 watermarking methods with different architectures, demonstrating that AdvMark is a plug-and-play general-purpose framework.
-- **Largest gain in adversarial accuracy (+46%)**: Indicates that EAT's "move into safe region" strategy is more effective than "expand the boundary."
+- **EAT vs. Standard AT**: Standard AT drops clean BA from ~99% to ~92%; EAT maintains ~98-99% while offering stronger adversarial robustness.
+- **Importance of Constraints**: Removing the Stage 2 image constraint significantly drops adversarial Acc, validating the theoretical analysis.
+- **Quality-aware early-stop vs. ε-ball**: Early-stop achieves 1-2 dB higher PSNR at the same Acc.
+- **Generalization**: Improvements shown across 9 different watermarking architectures prove AdvMark is a plug-and-play framework.
+- **Most Significant Gain (+46% in Adversarial)**: Indicates that EAT’s "moving to safe zone" strategy is more effective than "expanding boundaries."
 
 ## Highlights & Insights
-- **"Move into safe region vs. expand boundary"**: This is the most central insight of the paper. Conventional AT makes the decoder more tolerant; EAT trains the encoder to deliver images to a safe location. By analogy: rather than making a house earthquake-resistant (modifying the decoder), build the house where earthquakes do not occur (modifying the encoder).
-- **Conceptual depth of the decoupling strategy**: Adversarial attacks are model-specific (exploiting decision boundary weaknesses), while distortion/regeneration attacks are model-agnostic (signal-level corruption). The two classes of attacks are fundamentally distinct, and their defenses should be decoupled accordingly — a design driven by deep problem understanding.
-- **Complete chain from theory to practice**: The paper first theoretically proves that robustness is preserved under the constraint, then implements quality-aware early-stop to operationalize this guarantee in practice.
-- **General-purpose framework**: Plug-and-play compatibility with 9 existing watermarking methods demonstrates broad applicability and practical value.
+- **"Moving to Safe Zone vs. Expanding Boundaries"**: The core insight. Traditional AT forces the decoder to tolerate more; EAT forces the encoder to send images to safer locations.
+- **Depth of Decoupling Strategy**: Categorizing attacks into model-specific versus model-agnostic allows for optimized, interference-free defense strategies.
+- **Theory + Practice**: Theoretical proofs of robustness preservation guide the engineering implementation of the quality-aware early-stop.
+- **Universal Framework**: The ability to apply this as a post-processing or fine-tuning step to existing methods provides high practical value.
 
 ## Limitations & Future Work
-- Stage 2 direct image optimization requires additional inference time (tens of optimization steps per image), which may limit applicability in real-time scenarios.
-- The threshold for quality-aware early-stop requires tuning for different application settings and is not entirely hyperparameter-free.
-- The theoretical guarantee rests on the assumption $\|x_{w2} - x_{w1}\| \leq \epsilon$, which may not hold exactly in practice.
-- Validation is limited to image watermarking; applicability to other modalities such as video and audio watermarking remains to be explored.
-- Adversarial attack evaluation is primarily based on WEvade; testing against a broader range of adaptive attacks would strengthen credibility.
+- Stage 2 optimization requires additional inference time (dozens of optimization steps per image), which may limit real-time applications.
+- Thresholds for Quality-aware early-stop may require per-application tuning.
+- Theoretical guarantees assume $\|x_{w2} - x_{w1}\| \leq \epsilon$; actual optimization might deviate.
+- Only validated on image watermarking; applicability to video or audio requires exploration.
+- More diverse adaptive attack testing could further strengthen credibility.
 
 ## Related Work & Insights
-- **vs. RivaGAN/StegaStamp and similar watermarking methods**: These methods do not consider adversarial robustness in their encoder-decoder training; AdvMark can be applied as a plug-and-play post-processing step to enhance their robustness.
-- **vs. Joint Adversarial Training (JAT)**: JAT simultaneously trains against three attack types, leading to gradient conflicts and clean accuracy degradation; AdvMark's two-stage decoupling optimizes each stage independently, yielding superior performance and image quality.
-- **vs. DiffPure and similar diffusion-based purification methods**: DiffPure uses diffusion models to purify adversarial examples, but such models are precisely the tool used in regeneration attacks against watermarks. AdvMark must defend against scenarios where diffusion models act as attackers.
-- **Broader inspiration**: The decoupling strategy for multi-type attack defense is generalizable to other security scenarios, such as multi-modal adversarial defense and federated learning robustness.
+- **vs. RivaGAN/StegaStamp**: These ignore adversarial robustness; AdvMark acts as a plug-and-play enhancement for them.
+- **vs. Joint Adversarial Training (JAT)**: JAT suffers from gradient conflict and clean accuracy loss; AdvMark's decoupled optimization outperforms in both effect and quality.
+- **vs. DiffPure**: While DiffPure uses diffusion to purify samples, diffusion is also a threat to watermarks (regeneration). AdvMark must defend against the diffusion model as an attacker.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "move into safe region" perspective of EAT is novel, and the two-stage decoupled design demonstrates conceptual depth.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale comparisons across 9 methods × 10 attacks are highly comprehensive, with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Problem analysis is thorough; the narrative contrasting "expand boundary vs. move into safe region" is clear and compelling.
-- Value: ⭐⭐⭐⭐ The plug-and-play general-purpose framework offers direct practical guidance for watermarking defense.
+- Novelty: ⭐⭐⭐⭐ The "moving to safety zone" EAT logic and two-stage decoupling are profound.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale comparison across 9 methods and 10 attacks is highly comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Excellent narrative comparing "boundary expansion" vs. "safe zone relocation."
+- Value: ⭐⭐⭐⭐ A plug-and-play framework with direct implications for watermarking practices.
 
 <!-- RELATED:START -->
 
@@ -145,9 +147,9 @@ AdvMark adopts a two-stage decoupled design. Stage 1 EAT focuses on adversarial 
 
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
 - [\[CVPR 2026\] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)
+- [\[CVPR 2026\] UniDef: Universal Defense Against Unauthorized Image Manipulation](unidef_universal_defense_against_unauthorized_image_manipulation.md)
 - [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
-- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
 
 </div>
 

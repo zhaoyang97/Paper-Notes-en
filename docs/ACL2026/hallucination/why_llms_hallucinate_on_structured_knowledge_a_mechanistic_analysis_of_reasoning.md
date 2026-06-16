@@ -1,19 +1,15 @@
 ---
 title: >-
-  [Paper Note] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process
+  [Paper Note] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析
 description: >-
-  [ACL 2026][Hallucination Detection][Structured Knowledge] The paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic metrics (Structural Shortcut Rel…
+  [ACL 2026][Hallucination Detection][Attention] This paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic indicators: Structural Shortcut Reliance (SSR) and Semantic Alignment Score (SAS). Based on these signals, a lightweight hallucination detector is constructed.
 tags:
-  - "ACL 2026"
-  - "Hallucination Detection"
-  - "Structured Knowledge"
-  - "Attention Mechanism"
-  - "Feed-Forward Networks"
-  - "Knowledge Reasoning"
+  - ACL 2026
+  - Hallucination Detection
+  - Attention
 date: 2026-05-08
-content_hash: f2074bdeba1a7d1c
+content_hash: 8234dce8e1852276
 ---
-
 # Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process
 
 **Conference**: ACL 2026  
@@ -24,109 +20,122 @@ content_hash: f2074bdeba1a7d1c
 
 ## TL;DR
 
-The paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic metrics (Structural Shortcut Reliance, SSR, and Semantic Alignment Score, SAS) and constructs a lightweight hallucination detector based on these signals.
+This paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic indicators: Structural Shortcut Reliance (SSR) and Semantic Alignment Score (SAS). Based on these signals, a lightweight hallucination detector is constructed.
 
 ## Background & Motivation
 
-**Background**: Modern RAG frameworks and LLM reasoning systems commonly use linearization strategies to handle structured knowledge. Knowledge graphs are transformed into triple sequences, and tables are flattened into natural language text, as the Transformer architecture is inherently based on sequential token representation operations.
+**Background**: Modern RAG frameworks and LLM reasoning systems commonly use linearization strategies to process structured knowledge. Knowledge graphs are converted into triple sequences, and tables are flattened into natural language text, as the Transformer architecture is inherently based on sequential token representation operations.
 
-**Limitations of Prior Work**: A critical issue is that LLMs still frequently generate hallucinated answers even when provided with sufficient and accurate structured knowledge as context. Existing literature focuses mostly on external intervention methods (retrieval augmentation, prompt engineering) but lacks a deep understanding of the underlying mechanisms—why do models ignore explicitly provided structured knowledge?
+**Limitations of Prior Work**: A critical issue is that LLMs frequently produce hallucinated answers even when provided with sufficient and accurate structured knowledge in the context. Existing literature focuses mostly on external interventions (retrieval augmentation, prompt engineering) but lacks a deep understanding of the underlying mechanism—why do models ignore explicitly provided structured knowledge?
 
-**Key Challenge**: The linearization process breaks the explicit relational constraints of structured data, leading to the internal inability of the model to utilize this knowledge correctly. The inductive bias of Transformers tends to model sequential structures in natural language but adapts poorly to artificially flattened knowledge structures. When the context contains both critical evidence and distracting information, models often lean towards fast "shortcuts" rather than complete reasoning.
+**Key Challenge**: The linearization process breaks the explicit relational constraints of structured data, leading to the model's inability to correctly utilize this knowledge internally. The inductive bias of Transformers tends to model sequential structures in natural language but adapts poorly to artificially flattened knowledge structures. When the context contains both key evidence and distracting information, models are prone to bias towards fast "shortcuts" rather than complete reasoning.
 
-**Goal**: To decouple the model's external evidence utilization from internal parametric memory through mechanistic interpretability methods, discovering the systematic internal dynamics of hallucination generation.
+**Goal**: To decouple the model's utilization of external evidence from internal parametric memory using mechanistic interpretability methods, discovering the systematic internal dynamics of hallucination generation.
 
-**Key Insight**: The authors start from the two core functional modules of Transformers—Self-Attention heads (selectively attending to input subsets) and Feed-Forward Networks (storing and integrating knowledge). The hypothesis is that hallucinations originate from a systematic imbalance between attention allocation and semantic evidence integration.
+**Key Insight**: The authors examine two core functional modules of the Transformer—self-attention heads (selectively attending to input subsets) and feed-forward networks (storing and integrating knowledge). The hypothesis is that hallucinations stem from a systematic imbalance between attention allocation and semantic evidence integration.
 
-**Core Idea**: Introduce two diagnostic metrics to quantify this imbalance, thereby transforming black-box phenomena into interpretable mechanistic signals.
+**Core Idea**: Introduce two diagnostic indicators to quantify this imbalance, thereby transforming a black-box phenomenon into interpretable mechanistic signals.
 
 ## Method
 
 ### Overall Architecture
 
-The paper adopts a causal analysis framework, performing forward passes under frozen model parameters while collecting attention weights and hidden representations of intermediate layers. For each generated answer, SSR and SAS metrics are calculated, followed by statistical analysis and visualization to investigate the correlation between these metrics and hallucination labels. Finally, a simple XGBoost classifier is trained based on these two metrics as a hallucination detector.
+To answer "why LLMs hallucinate despite correct structured knowledge," the study performs a single forward pass with frozen model parameters, collecting attention weights and hidden layer representations. For each generated answer, two diagnostic indicators are calculated: Structural Shortcut Reliance (SSR) from the perspective of attention routing, and Semantic Alignment Score (SAS) from the perspective of representation grounding. These signals are mapped to hallucination labels via statistical tests and four-quadrant analysis, and finally fed into a lightweight XGBoost classifier to serve as a hallucination detector.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Linearized Structured Knowledge + Question"] --> B["Frozen LLM Forward Pass<br/>Collect Attention Weights & Hidden States"]
+    B --> C["Structural Shortcut Reliance SSR<br/>Attention Quality Gap between Minimal Path and Context"]
+    B --> D["Semantic Alignment Score SAS<br/>Max Cosine Similarity Between Answer and Evidence"]
+    C --> E["Complementary Indicators & Four-Quadrant Analysis<br/>SSR × SAS for Locating Failure Modes"]
+    D --> E
+    E --> F["Lightweight XGBoost Hallucination Detector"]
+```
 
 ### Key Designs
 
-1.  **Structural Shortcut Reliance (SSR)**:
+**1. Structural Shortcut Reliance (SSR): Quantifying if Attention Focuses Only on the Shortest Path**
 
-    - **Function**: Quantifies the extent to which the model over-relies on minimal structural cues when processing linearized structured knowledge. The core idea is to divide input tokens into two categories: ① Structural Shortcut (SS)—the minimal set of paths connecting the question to the answer; ② Contextual Prompts ($\bar{S}$)—other knowledge providing relational context and global constraints.
-    - **Mechanism**: For each answer token position, the quality of attention assigned to SS versus $\bar{S}$ by each attention head in each layer is calculated. SSR is defined as the average difference: $\text{SSR}=\frac{1}{L \cdot H \cdot |A|}\sum_{l=1}^{L}\sum_{h=1}^{H}\sum_{i \in A}(\alpha_{l,h,i,S}-\alpha_{l,h,i,\bar{S}})$. Here $\alpha_{l,h,i,S} = \sum_{j \in S}\alpha_{l,h,i,j}$ is the sum of attention weights from answer position $i$ to all positions in SS. SSR ranges between [-1, 1], where positive values indicate excessive reliance on shortcuts.
-    - **Design Motivation**: Intuitively, if a model only focuses on the shortest path and ignores surrounding evidence, it cannot perform complete factual verification. This concentration of attention implies the model has adopted a "shortcut learning" strategy, bypassing necessary semantic validation.
+After linearization flattens a knowledge graph into a token sequence, models may take "shortcuts"—attending only to the minimal path connecting the question to the answer while ignoring surrounding evidence providing relational constraints. SSR captures this "shortcut learning": input tokens are divided into Core Structural Prompts $SS$ (minimal path set) and Contextual Prompts $\bar{S}$ (remaining knowledge). For each answer position $i$, the sum of attention from that position to all $SS$ positions is calculated as $\alpha_{l,h,i,S} = \sum_{j \in S}\alpha_{l,h,i,j}$. The mean difference between $SS$ and $\bar{S}$ attention quality across all layers $L$, heads $H$, and answer positions $A$ is computed:
 
-2.  **Semantic Alignment Score (SAS)**:
+$$\text{SSR}=\frac{1}{L \cdot H \cdot |A|}\sum_{l=1}^{L}\sum_{h=1}^{H}\sum_{i \in A}(\alpha_{l,h,i,S}-\alpha_{l,h,i,\bar{S}})$$
 
-    - **Function**: Measures the degree of semantic alignment between the model's internal representations and the input structured knowledge during generation. Compared to attention, which only reflects information routing, this metric directly captures whether representations within the FFN are correctly "grounded" by the knowledge.
-    - **Mechanism**: First, define the Supporting Context Set (SCS), starting from the core structural prompt SS and including its 1-hop neighboring triples. For each generated answer token, its hidden representation $\mathbf{h}_t$ at the penultimate layer is extracted, and the cosine similarity with the encoding $\mathbf{g}_i$ of each knowledge unit $U_i$ in the SCS is calculated, taking the maximum value: $\text{SAS}(y_t)=\max_{U_i \in \mathcal{E}}\cos(\mathbf{h}_t, \mathbf{g}_i)$. Sentence-level SAS is the average similarity across all answer tokens. Values close to 1 indicate the representation is well-grounded by knowledge, while values close to -1 indicate the representation has drifted toward parametric memory.
-    - **Design Motivation**: When linearization weakens the semantic scaffolding, the FFN is easily dominated by parametric priors learned during training, causing generated representations to deviate from the evidence. This is the root cause of knowledge-driven hallucinations.
+SSR ranges in $[-1,1]$; higher positive values indicate attention is more concentrated on shortcuts, potentially bypassing necessary factual verification.
 
-3.  **Complementarity & Four-Quadrant Analysis**:
+**2. Semantic Alignment Score (SAS): Measuring if Internal Representations are "Grounded" in Knowledge**
 
-    - **Function**: SSR and SAS capture two independent dimensions of hallucinations: selective failure of attention allocation vs. semantic drift of the representation layer.
-    - **Mechanism**: The Pearson correlation coefficient between the two is only -0.26, indicating complementary rather than redundant signals. Four-quadrant analysis divides the output space into four regions, each corresponding to different failure modes.
-    - **Design Motivation**: The hallucination rate is lowest (5%) in Q2 (low SSR + high SAS), corresponding to a healthy state of "broad attention + strong semantic alignment"; Q3 (low SSR + low SAS) has the highest hallucination rate (22.2%), representing the most dangerous state of "scattered attention but failed semantic fusion"; Q4 (high SSR + low SAS) carries medium risk (10.9%), showing that attention concentration alone is insufficient to cause severe hallucinations without accompanying representation drift.
+Attention only reflects information flow and does not guarantee that the feed-forward network integrates evidence into the representation. SAS directly examines the representation layer: 1-hop neighboring triples are extracted from the core prompt $SS$ to form the Supporting Context Set (SCS). For each generated answer token, the second-to-last hidden representation $\mathbf{h}_t$ is compared with the encoding $\mathbf{g}_i$ of each knowledge unit $U_i$ in the SCS using maximum cosine similarity:
+
+$$\text{SAS}(y_t)=\max_{U_i \in \mathcal{E}}\cos(\mathbf{h}_t, \mathbf{g}_i)$$
+
+Sentence-level SAS is the average over all answer tokens. Values near 1 indicate the representation is well-grounded in knowledge, while values near -1 suggest the representation has drifted back to parametric priors learned during training. When linearization weakens the semantic scaffolding, feed-forward layers are easily dominated by parametric memory, which is the root cause of knowledge-driven hallucinations.
+
+**3. Complementary Indicators and Four-Quadrant Analysis: Decoupling Failures into Two Independent Dimensions**
+
+SSR and SAS characterize "selective failure of attention allocation" and "semantic drift of the representation layer" respectively, with a Pearson correlation of only -0.26, indicating complementary signals. Dividing the output space into four quadrants based on these indicators reveals distinct failure modes: Q2 (low SSR + high SAS, broad attention and strong alignment) has the lowest hallucination rate (5%); Q3 (low SSR + low SAS, scattered attention and no semantic fusion) is the most dangerous (22.2%); Q4 (high SSR + low SAS) shows moderate risk (10.9%), suggesting that concentrated attention alone is insufficient to induce severe hallucinations without representation drift. Because these two dimensions are independent, joint monitoring is required to fully diagnose failures that either indicator alone would miss.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Metric | Hallucinated Output | Truthful Output | t-statistic | p-value |
-| :--- | :--- | :--- | :--- | :--- |
+|------|--------|--------|------|-----|
 | SSR | 0.745 | 0.683 | -3.31 | <0.001 |
 | SAS | 0.343 | 0.412 | 10.96 | <1e-26 |
 
-**Key Findings**: Hallucinations and truthful outputs show statistically significant distributional differences in both SSR and SAS, confirming that both metrics are reliable discriminative signals. However, they act in opposite directions, reflecting the collaborative failure of attention and representation.
+**Key Finding**: Hallucinated and truthful outputs exhibit statistically significant distribution differences in SSR and SAS, confirming both as reliable discriminative signals but in opposite directions, reflecting the collaborative failure of attention and representation.
 
-### Four-Quadrant and Cross-dataset Generalization
+### Four Quadrants and Cross-Dataset Generalization
 
 | Quadrant | Configuration | Hallucination Rate (1-hop) | Hallucination Rate (2-hop) | Hallucination Rate (Table) |
-| :--- | :--- | :--- | :--- | :--- |
+|------|------|-------------|-------------|-----------|
 | Q1 | High SSR, High SAS | 9.5% | 36.4% | 84.1% |
 | Q2 | Low SSR, High SAS | 5.0% | 14.8% | 80.9% |
 | Q3 | Low SSR, Low SAS | 22.2% | 18.4% | 87.5% |
 | Q4 | High SSR, Low SAS | 10.9% | 54.4% | 85.9% |
 
-**Key Findings**: Although absolute hallucination rates vary with task complexity, the relative importance of SAS remains stable—the high SAS quadrant (Q2) consistently performs best. This suggests that semantic alignment is a more universal predictor of hallucinations, while SSR reflects task-dependent failure modes.
+**Key Finding**: While absolute hallucination rates vary with task complexity, the relative importance of SAS remains stable—the high SAS quadrant (Q2) consistently performs best. This suggests semantic alignment is a more universal predictor of hallucination, while SSR more reflects task-specific failure modes.
 
-### Hallucination Detection Performance
+### Hallucination Detection Performance Comparison
 
-Comparison of the SSR+SAS based detector against existing baselines on MetaQA-1hop:
+On MetaQA-1hop, the detector based on SSR+SAS compared with existing baselines:
 
-- **Confidence-based methods** (Perplexity, Token Confidence): High recall but low precision, tending to over-predict hallucinations.
-- **Semantic similarity methods** (BERTScore, Embedding Distance, NLI): Moderate performance, unable to distinguish effectively.
+- **Confidence-based methods** (Perplexity, token confidence): High recall but low precision, tending to over-predict hallucinations.
+- **Semantic similarity-based methods** (BERTScore, embedding distance, NLI): Moderate performance, unable to distinguish effectively.
 - **Ours (SSR + SAS)**: AUC=0.834, F1=0.539 on LLaMA2-7B; AUC=0.853, F1=0.461 on Qwen2.5-7B.
 
 Advantages: No model fine-tuning required, calculated within a single forward pass, and logically interpretable (failure causes correspond to specific mechanisms).
 
 ## Highlights & Insights
 
-- **Leap from Observation to Mechanism**: Traditional work stays at the descriptive level of "LLMs hallucinate," whereas this paper goes deeper to reveal parallel failure trajectories: attention over-concentration and representation drift.
-- **Discovery of Metric Complementarity**: Although SSR and SAS are weakly correlated, they capture different failure modes. This suggests that when designing multi-angle diagnostic tools, independence between signals should be prioritized over simple stacking.
-- **Theory-to-Application Closed Loop**: Mechanistic discoveries are directly translated into deployable detectors without retraining, which is valuable for resource-constrained scenarios.
-- **Cross-format Generalization**: The same framework generalizes from graphs to tables without modification, indicating it diagnoses universal failure modes of Transformers processing *any* linearized structured knowledge.
-- **"Insufficiency of Minimal Path" Insight**: The Q4 region still produces hallucinations despite focused attention, confirming that merely finding the shortest reasoning path is insufficient—the model must truly understand and fuse this path in the representation layer.
+- **Leap from Observation to Mechanism**: Whereas traditional work describes the phenomenon that "LLMs hallucinate," this paper delves internally to reveal two parallel failure trajectories: excessive attention concentration and representation drift.
+- **Discovery of Complementary Indicators**: SSR and SAS are weakly correlated and capture different failure modes. This suggests that when designing multi-angle diagnostic tools, independence between signals should be prioritized over simple stacking.
+- **Closed Loop from Theory to Application**: Mechanistic findings are directly transformed into a deployable detector without re-training, which is high-value for resource-constrained scenarios.
+- **Cross-Format Generalization**: The same framework generalizes from graphs to tables without modification, indicating it diagnoses universal failure modes of Transformers processing *any* linearized structured knowledge.
+- **"Minimal Path Insufficiency" Insight**: Q4 results show that even with focused attention, hallucinations occur, confirming that finding the shortest reasoning path is insufficient—the model must truly understand and fuse this path at the representation layer.
 
 ## Limitations & Future Work
 
-- **Model Type Constraints**: Only decoder-only models were analyzed; encoder-decoder or specialized graph encoders might exhibit different characteristics.
-- **Linearization Paradigm Constraints**: The study assumes knowledge must be converted into sequential token strings. These mechanisms might not apply if graph structural representations are maintained directly inside the model.
-- **Insufficient Causal Evidence**: The current analysis is a correlation study and has not verified whether SSR/SAS are the true causes of hallucinations through intervention experiments.
-- **Incomplete Scale Coverage**: Experiments are limited to 7B models; whether larger models (above 70B) behave consistently remains to be verified.
-- **Future Directions**: Targeted improvement strategies could be explored, such as explicitly penalizing high SSR-low SAS configurations during training or dynamically adjusting attention bias during inference for more uniform distribution.
+- **Model Type Limitations**: Analysis is restricted to decoder-only models; encoder-decoder or specialized graph encoders might exhibit different characteristics.
+- **Linearization Paradigm Constraints**: The study assumes knowledge must be converted to sequential token sequences. These mechanisms might not apply if graph structural representations are maintained directly inside the model.
+- **Lack of Causal Evidence**: Current analysis is correlational; intervention experiments are needed to verify if SSR/SAS are the actual causes of hallucination.
+- **Incomplete Scale Coverage**: Experiments are limited to 7B models; whether the behavior remains consistent in models above 70B requires verification.
+- **Improvement Directions**: Targeted improvement strategies could explore explicitly penalizing high SSR/low SAS configurations during training or dynamically adjusting attention bias during inference to achieve more uniform distribution.
 
 ## Related Work & Insights
 
-- **vs. Traditional Hallucination Detection (Perplexity, Self-consistency)**: Traditional methods rely on model output statistics, while Ours starts from internal mechanisms, making it better at locating root problems.
-- **vs. Other Interpretability Work**: Previous studies often focused on single components (e.g., attention visualization). This paper emphasizes the *interactive failure* of multiple components—complete diagnosis requires monitoring both attention and representation.
-- **Inspiration from KGQA**: The knowledge graph community has long known that "the shortest path may not uniquely determine an answer," but the LLM community lacked this awareness. Ours fills this gap.
-- **Inspiration**: This framework can be migrated to other tasks involving structured knowledge (e.g., table reasoning, code understanding) by simply redefining the extraction rules for core structural prompts.
+- **vs. Traditional Hallucination Detection (Perplexity, Self-consistency)**: Traditional methods rely on model output statistics; this paper starts from internal mechanisms to locate root problems.
+- **vs. Other Interpretability Work**: Previous research often focuses on single components (e.g., attention visualization). This paper emphasizes *interaction failures* of multiple components—simultaneously monitoring attention and representation is required for a complete diagnosis.
+- **Insights from KGQA**: The knowledge graph community has long known that "the shortest path may not uniquely determine an answer," but the LLM community lacks this awareness. This paper bridges that gap.
+- **Inspiration**: The framework can migrate to other tasks involving structured knowledge (e.g., table reasoning, code understanding) by simply redefining the extraction rules for core structural prompts.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The internal mechanism of diagnostics using complementary dual metrics is an original perspective; joint analysis of attention and representation dimensions is a first.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across 1-hop/2-hop/4-hop and graph/table settings with detailed ablation. However, lacks causal intervention experiments (correlation-only).
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Logical flow from phenomena to mechanisms to applications forms a complete story. Formula notation is accurate and tables have high information density.
-- **Value**: ⭐⭐⭐⭐⭐ Provides both theoretical insight (understanding hallucination mechanisms) and practical tools (deployable detectors), inspiring future work on hallucination mitigation and LLM reliability.
+- **Novelty**: ⭐⭐⭐⭐⭐ The dual-indicator complementary diagnosis of internal hallucination mechanisms is an original perspective; joint analysis from independent attention and representation dimensions is pioneering.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across 1-hop/2-hop/4-hop and graph/table settings with detailed ablation studies, though lacking causal intervention experiments (only correlational).
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Logical flow from phenomenon to mechanism to application forms a complete narrative. Formulas are accurate, and charts have high information density.
+- **Value**: ⭐⭐⭐⭐⭐ Provides both theoretical insight (understanding hallucination mechanisms) and practical tools (deployable detectors), offering guidance for future hallucination mitigation and LLM reliability work.
 
 <!-- RELATED:START -->
 
@@ -134,11 +143,11 @@ Advantages: No model fine-tuning required, calculated within a single forward pa
 
 ## Related Papers
 
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+- [\[ACL 2026\] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations](two_pathways_to_truthfulness_on_the_intrinsic_encoding_of_llm_hallucinations.md)
 - [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
-- [\[ACL 2026\] Distorted or Fabricated? A Survey on Hallucination in Video LLMs](distorted_or_fabricated_a_survey_on_hallucination_in_video_llms.md)
-- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
+- [\[ACL 2026\] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing](multihaludet_multilingual_hallucination_detection_via_llm_hidden_state_probing.md)
+- [\[ACL 2026\] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments](logical_consistency_as_a_bridge_improving_llm_hallucination_detection_via_label_.md)
+- [\[ACL 2025\] HalluLens: LLM Hallucination Benchmark](../../ACL2025/hallucination/hallulens_llm_hallucination_benchmark.md)
 
 </div>
 

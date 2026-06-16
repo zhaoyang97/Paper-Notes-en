@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts
 description: >-
-  [ACL 2026][Model Compression][Collaborative Inference] This paper proposes **GlimpRouter**: in step-level LRM (Large Reasoning Model) collaborative inference…
+  [ACL 2026][Model Compression][step-wise routing] This paper proposes **GlimpRouter**: in step-level LRM collaborative inference, the small model first decodes only the "first token" of each reasoning step. Its entropy $\mathbf{H}_{\text{init}}$ is used to estimate step difficulty; if low, the small model continues; if high, it switches to the large model. It is train
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "Collaborative Inference"
-  - "Speculative Decoding"
-  - "step-wise routing"
-  - "initial token entropy"
-  - "Aha Moment"
+  - ACL 2026
+  - Model Compression
+  - step-wise routing
+  - Aha Moment
 date: 2026-05-08
-content_hash: 24b115c09d2df74c
+content_hash: 69e638f8990b4b53
 ---
-
 # GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts
 
 **Conference**: ACL 2026 Findings  
@@ -24,49 +20,67 @@ content_hash: 24b115c09d2df74c
 **Keywords**: Collaborative Inference, Speculative Decoding, step-wise routing, initial token entropy, Aha Moment
 
 ## TL;DR
-This paper proposes **GlimpRouter**: in step-level LRM (Large Reasoning Model) collaborative inference, the small model first decodes only the "first token" of each reasoning step, using its entropy $\mathbf{H}_{\text{init}}$ to estimate step difficulty. If low, the small model continues; if high, it switches to the large model. This method is training-free and requires no large model verifier. On AIME25, it achieves +10.7% accuracy over a standalone large model with a −25.9% reduction in latency, and it is orthogonally combinable with token-level Speculative Decoding.
+This paper proposes **GlimpRouter**: in step-level LRM collaborative inference, the small model first decodes only the "first token" of each reasoning step. Its entropy $\mathbf{H}_{\text{init}}$ is used to estimate step difficulty; if low, the small model continues; if high, it switches to the large model. It is training-free, requires no large model verifier, achieves +10.7% accuracy with −25.9% latency improvement on AIME25 compared to a standalone large model, and is orthogonally compatible with token-level Speculative Decoding.
 
 ## Background & Motivation
 
-**Background**: LRMs such as DeepSeek-R1 and o1/o3 achieve strong performance through explicit reasoning with long CoTs, but the latency and computational cost per query are immense. The community attempts to mitigate this via "collaborative inference"—distributing work among models based on difficulty. Token-level methods include Speculative Decoding (small model drafts, large model verifies), while step-level methods include RSD (trained PRM), SpecCoT (small model provides multiple candidates + large model selects), and SpecReason (small model generates + large model judges).
+**Background**: LRMs such as DeepSeek-R1 and o1/o3 achieve strong performance using long CoT explicit reasoning, but at the cost of significant latency and compute per query. The community has attempted to mitigate this via "collaborative inference"—distributing tasks among models based on difficulty. Token-level methods include Speculative Decoding (small model drafts, large model verifies), while step-level methods include RSD (trained PRM), SpecCoT (small model multi-candidates + large model selection), and SpecReason (small model generation + large model judgment).
 
 **Limitations of Prior Work**:
-- *Token-level*: Granularity is too fine, leading to frequent switching.
-- *Step-level*: Either requires training a reward model (RSD) or must generate an entire step before judging its quality (SpecReason, SpecCoT). This turns "rejected steps" into **sunk costs**, failing to save time as intended.
-- *Failure of averaging metrics*: Routing via $\mathbf{H}_{\text{step}}$ or $\mathbf{PPL}_{\text{step}}$ dilutes signals from key decision tokens with long sequences of deterministic syntactic tokens, resulting in narrow, unimodal distributions.
+- *Token-level*: Granularity is too fine, leading to frequent switching overhead.
+- *Step-level*: Either requires training a reward model (RSD) or necessitates generating the entire step before assessing quality (SpecReason, SpecCoT). This turns "rejected steps" into **sunk costs**, failing to save time as intended.
+- *Averaging metrics fail*: Routing based on $\mathbf{H}_{\text{step}}$ or $\mathbf{PPL}_{\text{step}}$ is diluted by long sequences of deterministic syntactic tokens, resulting in narrow, unimodal distributions that lack discriminative power.
 
-**Key Challenge**: The fundamental difficulty of collaborative inference is knowing the difficulty of a step *before* generation. Current step-level methods rely on "Generate-then-Measure," where the overhead of the method itself offsets the benefits of collaboration.
+**Key Challenge**: The fundamental difficulty in collaborative inference is determining step difficulty *before* generation; however, current step-level methods rely on "Generate-then-Measure," where the overhead offsets the collaboration benefits.
 
-**Goal**: Find a signal that is available at the start of a step, nearly free to compute, and highly sensitive to difficulty to enable "Probe-then-Dispatch."
+**Goal**: To identify a signal that is available at the start of a step, computationally near-free, and highly sensitive to difficulty, enabling "Probe-then-Dispatch."
 
-**Key Insight**: Inspired by the "Aha Moment" phenomenon in LRMs—where discourse cues like "Wait/But/So" often appear at the start of reasoning steps—the paper hypothesizes that *difficulty information of a step is concentrated in its first token*. Based on empirical analysis of 10M+ tokens from Qwen3-4B/32B and DeepSeek-R1-Distill-Qwen-32B on AIME/LiveCodeBench, the authors found that $\mathbf{H}_{\text{init}}$ exhibits a *bimodal + heavy-tailed* distribution, whereas $\mathbf{H}_{\text{step}}$ and $\mathbf{PPL}_{\text{step}}$ are narrow and unimodal. This proves $\mathbf{H}_{\text{init}}$ is a natural "high-sensitivity discriminator."
+**Key Insight**: Inspired by the "Aha Moment" phenomenon in LRMs—where reasoning steps often begin with discourse cues like "Wait/But/So"—the authors hypothesize that *difficulty information is concentrated in the first token*. Based on empirical analysis of 10M+ tokens from Qwen3-4B/32B and DeepSeek-R1-Distill-Qwen-32B on AIME/LiveCodeBench, the authors found that $\mathbf{H}_{\text{init}}$ exhibits a *bimodal + heavy-tail* distribution, whereas $\mathbf{H}_{\text{step}}$ and $\mathbf{PPL}_{\text{step}}$ are narrow and unimodal. This proves $\mathbf{H}_{\text{init}}$ is a natural "high-sensitivity discriminator."
 
-**Core Idea**: Glimpsing the entropy of just one token is sufficient—delegate low-entropy steps to the small model and intervene with the large model for high-entropy steps. This bypasses both sunk costs and verifier training.
+**Core Idea**: Glimpsing the entropy of a single token is sufficient—low-entropy steps are delegated to the small model, while high-entropy steps are handled by the large model. This avoids both sunk costs and verifier training.
 
 ## Method
 
 ### Overall Architecture
-The "think" segment of the LRM is partitioned into steps $\mathcal{T}=\{s_1,\dots,s_K\}$ (split by double newlines), and the final answer is generated by $M_L$. At each step $k$: (1) The small model $M_S$ decodes only the first token given context $\mathbf{c}_k$ to obtain $\mathbf{H}_{\text{init}}(s_k)=\mathbf{H}(P_\theta(t_1|\mathbf{c}_k))$; (2) If $\mathbf{H}_{\text{init}}\leq\tau \to$ Delegate, where $M_S$ continues autoregressive generation until the step separator; otherwise $\to$ Intervene, where $\mathbf{c}_k$ is handed to $M_L$ for completion. All collaborative actions are training-free, introducing only one hyperparameter $\tau$.
+The LRM `think` segment is partitioned into $\mathcal{T}=\{s_1,\dots,s_K\}$ (split by double newlines), and the final answer is generated by $M_L$. At each step $k$: (1) The small model $M_S$ decodes only the first token based on prefix $\mathbf{c}_k$ to obtain $\mathbf{H}_{\text{init}}(s_k)=\mathbf{H}(P_\theta(t_1|\mathbf{c}_k))$; (2) If $\mathbf{H}_{\text{init}}\leq\tau$ → Delegate, where $M_S$ completes the step autoregressively; otherwise → Intervene, where $M_L$ takes over. All collaborative actions are training-free, introduced via a single hyperparameter $\tau$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LRM think segment<br/>Split into steps s₁…s_K by \n\n"] --> G1
+    subgraph G1["Glimpse: Probe-then-Dispatch (1-token lookahead)"]
+        direction TB
+        B["Small model M_S decodes first token"] --> C["Calculate first token entropy H_init"]
+    end
+    G1 -->|"H_init ≤ τ"| D["Delegate<br/>M_S completes the step"]
+    G1 -->|"H_init > τ"| E["Intervene<br/>M_L generates and self-corrects"]
+    E --> F["Efficient Switching<br/>Prefix-cache + Speculative Decoding"]
+    D --> L["Iterate until think segment ends"]
+    F --> L
+    L -->|"Next step k+1"| B
+    L -->|"Complete"| O["Output: Final answer by M_L"]
+```
 
 ### Key Designs
 
-1. **Glimpse: 1-token "Probe-then-Dispatch"**:
-    - **Function**: Obtains a step-level difficulty signal at the cost of a single-token decode, completely eliminating the sunk cost of discarding drafted steps.
-    - **Mechanism**: At the start of step $k$, $M_S$ computes $P_\theta(t_1|\mathbf{c}_k)$ once to calculate $\mathbf{H}_{\text{init}}(s_k)=\mathbf{H}(P_\theta(t_1|\mathbf{c}_k))$. Routing is decided by comparing this against threshold $\tau$. Even if routed to $M_L$ and the token is discarded, the overhead is equivalent to only one token, 1–2 orders of magnitude smaller than SpecReason.
-    - **Design Motivation**: The authors measured that $\mathbf{H}_{\text{init}}$ is *strictly monotonically negatively correlated* with the alignment between small and large model outputs (BLEU-4/SBERT). In low-entropy regions, they are nearly identical; in high-entropy regions, they diverge sharply, proving it is a reliable difficulty proxy.
+**1. Glimpse: Probe-then-Dispatch at 1-token cost**
 
-2. **Implicit Self-correction by the Large Model (Intervene)**:
-    - **Function**: At the moment of routing, the large model does more than just "continue"; it looks back at the existing context to correct logic drift previously generated by the small model.
-    - **Mechanism**: When $\mathbf{H}_{\text{init}}>\tau$, the entire history $\mathbf{c}_k$ is passed to the large model. LRMs possess inherent self-correction capabilities (as emphasized in DeepSeek-R1). While generating a new step, the large model implicitly re-evaluates previous steps and rewrites erroneous premises (Appendix F.2 provides a grid-path example where the large model corrects the small model's logic drift after an intervention at Step 4).
-    - **Design Motivation**: This implicit self-correction explains why GlimpRouter *exceeds the accuracy of a standalone large model* on AIME25 (51.67% vs 46.67%)—high-entropy steps act as markers for historical logical inconsistency, and the large model's intervention facilitates error correction.
+A common flaw in step-level methods is "Generate-then-Measure"—the need to draft a full step before evaluation. If rejected, the compute for that step becomes a sunk cost. GlimpRouter minimizes this: at the start of step $k$, $M_S$ computes the distribution of the first token $P_\theta(t_1|\mathbf{c}_k)$ once. The entropy $\mathbf{H}_{\text{init}}(s_k)$ determines the routing. Even if the system switches to $M_L$ and discards this token, the loss is only a single token, which is 1–2 orders of magnitude smaller than discarding a full step in SpecReason.
 
-3. **Efficient Switching + Hierarchical Acceleration (Orthogonal to Speculative Decoding)**:
-    - **Function**: Combines step-level routing with token-level SD to achieve "Global Planner + Local Executor" compound acceleration.
-    - **Mechanism**: Model switching reuses the prefix-cache (e.g., vLLM/SGLang), turning context re-computation into a parallelizable prefill phase. When the large model is scheduled, the small model acts as the SD drafter (draft length $n=3$) to speculate subsequent tokens, verified in one pass by the large model.
-    - **Design Motivation**: Step-level routing reduces the *number of large model calls*, while token-level SD reduces the *per-token cost of each call*. Their bottlenecks differ, allowing them to be combined without conflict. GlimpRouter + SD achieved the lowest latency (130s) on AIME25.
+The "first token" is sufficient because the authors quantified the "alignment between small and large model completions" using BLEU-4 and SBERT. They found a *strict monotonic negative correlation* with $\mathbf{H}_{\text{init}}$: in low-entropy regions, outputs are nearly identical (small model is sufficient), while in high-entropy regions, they diverge sharply (large model is necessary).
+
+**2. Intervene: Large model for high-entropy steps with implicit self-correction**
+
+When $\mathbf{H}_{\text{init}}>\tau$, the context $\mathbf{c}_k$ is passed to the large model. Since LRMs possess self-correction capabilities, $M_L$ implicitly re-evaluates the context and rewrites incorrect premises rather than just continuing mechanically. An example in Appendix F.2 shows that the small model misinterprets "four direction changes" as "four straight lines," but $M_L$, triggered at Step 4, corrects this to "5 straight lines," bringing the reasoning back on track.
+
+This implicit self-correction explains why collaborative inference can outperform a standalone large model (51.67% vs 46.67% on AIME25). High-entropy steps serve as "buoys" where logical drift occurs, providing the large model an opportunity to intervene and fix prior errors.
+
+**3. Efficient Switching: Orthogonal to Speculative Decoding**
+
+Step-level routing and token-level SD address different bottlenecks—the former reduces *calls to the large model*, while the latter reduces the *per-token cost of each call*. GlimpRouter leverages vLLM/SGLang prefix-caching to make context re-computation a parallelizable prefill phase. When the large model is scheduled, the small model acts as an SD drafter (draft length $n=3$) to parallelize subsequent tokens. This "Global Planner (GlimpRouter) + Local Executor (SD)" hybrid achieved the lowest latency (130s on AIME25).
 
 ### Loss & Training
-Completely training-free, unsupervised, and requires no fine-tuning. Only 1 hyperparameter $\tau$ is used (recommended to correspond to an intervention rate of 20–30%). All inference was performed using vLLM on A100-80G GPUs with a max thinking budget of 8192 tokens, temperature 0.6, and top-p 0.95 (4-run average).
+Completely training-free, unsupervised, and requires no fine-tuning. Only one hyperparameter $\tau$ is used (recommended intervention rate of 20–30%). All inference utilized vLLM on A100-80G with a max thinking budget of 8192 tokens, temperature 0.6, and top-p 0.95.
 
 ## Key Experimental Results
 
@@ -76,53 +90,53 @@ Completely training-free, unsupervised, and requires no fine-tuning. Only 1 hype
 |-----|--------|----------------|----------------|--------------|---------------|---------------|
 | DeepSeek-32B | LLM only | 57.50/197 | 46.67/220 | 61.62/176 | 52.40/219 | 46.86/214 |
 | DeepSeek-32B | SpecReason | 57.50/158 | 49.17/169 | 63.76/213 | 53.59/185 | 47.57/189 |
-| DeepSeek-32B | **Ours** | **60.83/143** | **51.67/163** | **64.02/129** | **54.64/160** | **48.29/160** |
+| DeepSeek-32B | **GlimpRouter** | **60.83/143** | **51.67/163** | **64.02/129** | **54.64/160** | **48.29/160** |
 | Qwen3-32B | LLM only | 60.00/220 | 48.33/231 | 61.87/194 | 52.69/249 | 47.43/241 |
-| Qwen3-32B | **Ours** | **60.83/145** | **51.67/147** | **63.01/142** | **52.69/162** | **47.14/165** |
+| Qwen3-32B | **GlimpRouter** | **60.83/145** | **51.67/147** | **63.01/142** | **52.69/162** | **47.14/165** |
 
-Compared to the standalone large model, GlimpRouter reduces latency by 25.2–27.4% across all datasets. On AIME25, **Accuracy +10.7%, Latency −25.9%**. On GPQA, SpecReason's latency (213s) actually exceeded the standalone large model (176s), validating the sunk cost hypothesis.
+Compared to standalone large models, GlimpRouter reduces latency by 25.2–27.4% across all datasets. On AIME25, it achieves **+10.7% Accuracy and −25.9% Latency**. On GPQA, SpecReason's latency (213s) exceeded the standalone model (176s), validating the sunk cost hypothesis.
 
 ### Ablation Study
 
-| Experiment | Key Experimental Results | Description |
+| Experiment | Key Result | Description |
 |------|----------|------|
-| Metric Selection (AIME25) | $\mathbf{H}_{\text{init}}$ 51.67/163 vs $\mathbf{H}_{\text{step}}$ 46.67/178 vs $\mathbf{PPL}_{\text{step}}$ 47.50/181 | Confirms "signal dilution" hypothesis |
-| Heterogeneous Model Pair | SLM=DeepSeek-1.5B + LLM=DeepSeek-32B: AIME25 39.17/166, still superior to SpecReason 31.67/171 | "1-token probe" property is model-agnostic |
-| Threshold Sweep (AIME25) | $\tau=1.8 \to$ 2% intervention, acc 45.83; $\tau=0.01 \to$ 83% intervention, acc 55.83 | $\tau$ monotonically tunes acc/lat trade-offs |
-| Stacking with SD (AIME25) | Ours+SD=51.67/130, SpecReason+SD=49.17/140, LLM+SD=45.83/149 | Lowest compound latency |
+| Metric Choice (AIME25) | $\mathbf{H}_{\text{init}}$ 51.67/163 vs $\mathbf{H}_{\text{step}}$ 46.67/178 vs $\mathbf{PPL}_{\text{step}}$ 47.50/181 | Confirms "signal dilution" hypothesis |
+| Heterogeneous Pairs (SLM=DS-1.5B + LLM=DS-32B) | AIME25 39.17/166, still outperforms SpecReason 31.67/171 | "1-token probe" is model-family agnostic |
+| Threshold Scanning (AIME25) | $\tau=1.8$ → 2% interven., acc 45.83; $\tau=0.01$ → 83% interven., acc 55.83 | $\tau$ monotonically tunes acc/lat Pareto frontier |
+| SD Integration (AIME25) | GlimpRouter+SD=130s vs LLM+SD=149s | Lowest composite latency |
 
 ### Key Findings
-- **Initial token entropy distribution is bimodal + heavy-tailed**: Low-entropy peaks correspond to routine derivations (high alignment with $M_L$), while high-entropy tails correspond to cognitive pivots (sharp divergence); this is the ideal signal for step-level routing.
-- **Collaboration outperforms standalone large models**: AIME25 51.67% (collab) vs 46.67% (standalone). Explained by LRM self-correction—high-entropy steps act as "red lights" for historical drift, prompting the large model to intervene and fix context.
-- **Sunk cost is the bottleneck for step-level baselines**: SpecReason latency grows super-linearly with intervention rate, while GlimpRouter grows linearly and mildly. At equal accuracy, GlimpRouter is consistently faster (e.g., at acc=51.67%, GlimpRouter 163s vs SpecReason 249s).
-- **Architectural Orthogonality**: GlimpRouter stacks with SD without dropping accuracy while further reducing latency, following the philosophy of "global planner (GlimpRouter) + local executor (SD)."
-- **Scalability**: Gains are stable across various model pairs (Qwen3, DeepSeek), indicating $\mathbf{H}_{\text{init}}$ is an "intrinsic property" of LRMs.
+- **Bimodal + Heavy-tail Distribution**: Low-entropy peaks correspond to routine derivation (high alignment), while high-entropy tails correspond to cognitive pivots (divergence).
+- **Collaboration > Standalone LLM**: The AIME25 performance gain is explained via LRM self-correction—high-entropy steps act as "red flags" for historical drift.
+- **Sunk Cost Bottleneck**: SpecReason's latency grows superlinearly with intervention rate, whereas GlimpRouter's growth is linear and gentle.
+- **Structural Orthogonality**: GlimpRouter acts as a "global planner" while SD acts as a "local executor."
+- **Scalability**: Consistent gains across different SLM sizes (1.5B to 4B) and LLM families (Qwen/DeepSeek) indicate $\mathbf{H}_{\text{init}}$ is an intrinsic property of LRMs.
 
 ## Highlights & Insights
-- **The "1-token glimpse" is a minimalist yet sharp design**: Compressing "decision cost" to a single token is critical for productizing collaborative inference. Comparison with SpecReason allows sunk costs to be quantified and isolated for the first time.
-- **Operationalizing the "Aha Moment"**: Translating the cognitive science hypothesis of "decision point signal concentration" into a measurable entropy threshold mechanism provides a blueprint for other adaptive LLM reasoning tasks.
-- **Collaborative inference can exceed standalone large model performance**: It reveals the coupling between self-correction and collaborative routing—it is not merely "replacing computation" but "providing re-evaluation opportunities at the right moment."
-- **Natural Orthogonality**: Explicitly identifying that step-level routing and token-level SD have different bottlenecks provides more structural value to system design than single-dimensional speed-ups.
+- **"1-token glimpse" is a sharp, minimalist design**: Compressing decision costs to a single token is critical for productionizing collaborative inference.
+- **Engineering the "Aha Moment"**: Translating cognitive science hypotheses into an executable entropy threshold mechanism provides a blueprint for other adaptive reasoning tasks.
+- **Collaborative Outperformance**: It reveals that collaboration is not just about "offloading computation," but about "providing re-evaluation opportunities at critical junctures."
+- **Layered Acceleration**: The hybrid architecture of step-level routing and token-level SD offers more structural value than single-dimension optimization.
 
 ## Limitations & Future Work
-- **Static Global Threshold $\tau$**: Applied uniformly across queries; adaptive/instance-aware thresholds are the next step.
-- **Dependence on Structured Separators**: Step splitting relies on double newlines, which may not apply to models without structured CoT output. Semantic segmentation is an open problem.
-- **Misrouting Risks**: For "medium difficulty" steps, $\mathbf{H}_{\text{init}}$ might fluctuate near the threshold, causing frequent switching. Boundary costs are not yet quantified.
-- **Limited model variety**: The study focuses on SLM-LLM binary routing; scaling to routing trees (3+ models) remains unexplored.
-- **Lack of Interpretative Trace Research**: While cases are provided, a large-scale analysis of exactly "what types of errors $M_L$ corrects after intervention" is needed.
+- **Static Global Threshold $\tau$**: The threshold is fixed across queries; adaptive/instance-aware thresholding is the next step.
+- **Dependency on Structural Delimiters**: Step partitioning currently relies on double newlines, which may not apply to models without structured CoT.
+- **Routing Jitter**: Steps with "medium difficulty" might oscillate near the threshold, causing frequent switching.
+- **Two-player Limit**: The study focuses on SLM-LLM binary routing; expansion to routing trees (3+ models) remains unexplored.
+- **Interpretability Analysis**: While self-correction is proposed as the reason for accuracy gains, a large-scale categorical analysis of what the large model corrects is needed.
 
 ## Related Work & Insights
-- **vs Speculative Decoding (Leviathan et al. 2023)**: Token-level; fine-grained verification but frequent switching and no step-level semantics. GlimpRouter is step-level and orthogonal.
-- **vs SpecCoT (Shi et al. 2025)**: Small model generates multiple candidates + large model selects; candidate generation itself is a massive overhead.
-- **vs SpecReason (Pan et al. 2025)**: Small model generates + large model verifies; rejected steps lead to large model re-generation $\to$ classic sunk cost. GlimpRouter decides upfront.
-- **vs RSD (Liao et al. 2025)**: Trains PRM for step scoring; GlimpRouter is training-free and requires no reward labels.
-- **vs entropy-based routing (Cui 2025, Zhang 2025)**: They use step-wise average entropy or PPL, which are diluted by deterministic tokens. This paper proves the first token's entropy is a sharper signal.
+- **vs Speculative Decoding**: SD is token-level with fine-grained verification; GlimpRouter is step-level and orthogonal.
+- **vs SpecCoT**: SpecCoT's multi-candidate generation is heavy; GlimpRouter uses a 1-token probe.
+- **vs SpecReason**: SpecReason suffers from sunk costs due to "Draft-then-Verify" fallback restarts; GlimpRouter pre-emptively routes.
+- **vs RSD**: RSD requires training a PRM; GlimpRouter is training-free.
+- **vs Entropy-based Routing**: Previous methods used step-wise average entropy, which suffers from signal dilution compared to $\mathbf{H}_{\text{init}}$.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Compressing step-level routing signals to 1 token is an elegant design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 5 benchmarks, multiple model pairs, SD orthogonality, and interpretability.
-- Writing Quality: ⭐⭐⭐⭐⭐ Memorable terminology (Probe-then-Dispatch, Glimpse of Thought); clear visualizations.
-- Value: ⭐⭐⭐⭐⭐ Provides a practical, training-free solution to accelerate LRMs that significantly outperforms existing baselines.
+- Novelty: ⭐⭐⭐⭐⭐ Compressing step-level routing to a 1-token signal is elegant; distribution analysis is comprehensive.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Cover 5 benchmarks, multiple model pairs, threshold sweeps, and SD integration.
+- Writing Quality: ⭐⭐⭐⭐⭐ Strong terminology (Probe-then-Dispatch, Glimpse of Thought) and clear Pareto visualisations.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical, training-free scheme to accelerate LRM inference that significantly outperforms prior baselines like SpecReason.
 
 <!-- RELATED:START -->
 
@@ -131,9 +145,9 @@ Compared to the standalone large model, GlimpRouter reduces latency by 25.2–27
 ## Related Papers
 
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
-- [\[ACL 2026\] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference](calibrated_speculative_decoding_frequency-guided_candidate_selection_for_efficie.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
-- [\[ACL 2026\] A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification](a_bertology_view_of_llm_orchestrations_token-_and_layer-selective_probes_for_eff.md)
+- [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
+- [\[ACL 2026\] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference](calibrated_speculative_decoding_frequency-guided_candidate_selection_for_efficie.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](../../AAAI2026/model_compression/infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
 
 </div>

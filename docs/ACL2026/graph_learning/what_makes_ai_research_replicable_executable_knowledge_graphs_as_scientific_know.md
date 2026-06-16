@@ -2,76 +2,100 @@
 title: >-
   [Paper Note] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations
 description: >-
-  [ACL2026][Graph Learning][Executable Knowledge Graphs] The authors propose Executable Knowledge Graphs (xKG), which organize technical concepts and executable code snippets from papers into a tri-layer graph structure (P…
+  [ACL 2026][Graph Learning][PaperBench] This paper proposes Executable Knowledge Graphs (xKG), which organize technical concepts and executable code snippets from papers into a tri-layer structure (Paper-Technique-Code). Served as a plug-and-play knowledge base, xKG assists research replication agents, leading to a replication score improvement of up to 10.9
 tags:
-  - "ACL2026"
-  - "Graph Learning"
-  - "Executable Knowledge Graphs"
-  - "Paper Replication"
-  - "Code Retrieval"
-  - "Scientific Research Agent"
-  - "PaperBench"
+  - ACL 2026
+  - Graph Learning
+  - PaperBench
 date: 2026-05-08
-content_hash: 4f31dc0e0fe77a68
+content_hash: c32f61e728123749
 ---
-
 # What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations
 
 **Conference**: ACL2026  
 **arXiv**: [2510.17795](https://arxiv.org/abs/2510.17795)  
 **Code**: https://github.com/zjunlp/xKG  
-**Area**: graph_learning  
-**Keywords**: Executable Knowledge Graphs, Paper Replication, Code Retrieval, Scientific Research Agent, PaperBench
+**Area**: Graph Learning  
+**Keywords**: Executable Knowledge Graphs, Paper Replication, Code Retrieval, Research Agent, PaperBench
 
 ## TL;DR
-The authors propose Executable Knowledge Graphs (xKG), which organize technical concepts and executable code snippets from papers into a tri-layer graph structure (Paper-Technique-Code). As a plug-and-play knowledge base for research replication agents, it achieves a replication score improvement of up to 10.90 points on PaperBench Code-Dev.
+This paper proposes Executable Knowledge Graphs (xKG), which organize technical concepts and executable code snippets from papers into a tri-layer structure (Paper-Technique-Code). Served as a plug-and-play knowledge base, xKG assists research replication agents, leading to a replication score improvement of up to 10.90 percentage points on the PaperBench Code-Dev task across different agents.
 
 ## Background & Motivation
-**Background**: LLM agents are increasingly utilized for automated research tasks, including literature review, code implementation, experiment replication, and methodological extension. Benchmarks such as PaperBench, MLE-Bench, and LMR-Bench evaluate the implementation capabilities of agents based on scientific papers.
+**Background**: LLM agents are increasingly utilized to automate scientific research tasks, such as paper reading, code writing, experiment replication, and method extension. Benchmarks like PaperBench, MLE-Bench, and LMR-Bench evaluate whether agents can effectively translate methodologies from papers into actual code implementations.
 
-**Limitations of Prior Work**: Replicating AI research is challenging due to key knowledge being scattered across main texts, appendices, cited works, official repositories, and configuration files. Standard RAG retrieves text fragments but struggles to map "technical concepts" to executable code. Relying solely on papers omits implementation details, while relying only on repositories obscures the methodological structure.
+**Limitations of Prior Work**: Replicating AI papers is challenging not merely due to paper length, but because critical knowledge is fragmented across the main text, appendices, cited works, official codebases, configurations, and implementation details. Conventional RAG can retrieve text fragments but struggles to map a "technical concept" to its corresponding executable code. Relying solely on the paper often ignores hidden implementation details, while looking only at the repository makes it difficult to understand the conceptual structure behind the code.
 
-**Key Challenge**: Scientific replication requires "executable scientific knowledge." Existing representations are often limited to text, abstracts, or coarse-grained concepts. Agents typically fail at low-level implementation: writing loss functions, modularizing components, configuring hyperparameters, and invoking code interfaces. Without a link between concepts and executable code, knowledge bases provide only general background rather than repo-level implementation support.
+**Key Challenge**: Scientific replication requires "executable scientific knowledge," yet most existing knowledge representations remain at the level of text, summaries, or coarse-grained concepts. Agents typically get stuck on low-level implementation details: how to write loss functions, how to assemble modules, how to configure hyperparameters, and how to call code interfaces. If a knowledge base cannot bridge concepts and executable code, it provides only vague background information rather than supporting repo-level implementation.
 
-**Goal**: The authors aim to build a paper-centric, auto-updating, and plug-and-play knowledge base. It provides agents with high-level methodological structures and low-level executable references to enhance the reliability of AI research replication.
+**Goal**: The authors aim to construct a paper-centric, automatically updatable, and pluggable knowledge base for various agent frameworks. It provides both high-level methodological structures and low-level executable references during coding, thereby enhancing the reliability of AI research replication.
 
-**Key Insight**: Scientific knowledge is extended from text-based KGs to Executable Knowledge Graphs. Nodes represent not just concepts but also verified code units; edges represent not just semantic relations but also structural dependencies and implementation mappings between concepts and code.
+**Key Insight**: The paper extends "scientific knowledge" from traditional textual knowledge graphs to Executable Knowledge Graphs. Nodes in the graph are not just concepts but include verified code units; edges represent not only semantic relations but also technical structural dependencies and implementation mappings from concepts to code.
 
-**Core Idea**: Papers are decomposed into reusable technique nodes, each grounded to a rewritten, debugged, and verified Code Node. This allows agents to consult the methodological structure during the planning phase and retrieve executable code during the implementation phase.
+**Core Idea**: Decompose a paper into reusable technical nodes and ground each node to a rewritten, debugged, and verified Code Node. This allows research agents to view the methodological structure during the planning phase and retrieve executable code during the implementation phase.
 
 ## Method
-xKG is a hierarchical KG designed for AI replication. It features a structured graph representation, an automated construction pipeline, and an agent integration mechanism. The system revolves around a target paper: identifying relevant papers and repositories, extracting technical concepts and implementations, and integrating this knowledge as tools for replication agents.
+xKG is a hierarchical knowledge graph oriented towards AI paper replication. it encompasses structured graph representations, an automated construction pipeline, and agent integration methods. The system centers on a target paper: it identifies related papers and official repositories, extracts technical concepts and code implementations, and integrates this knowledge into replication agents as tools or modules.
 
 ### Overall Architecture
-The xKG is formally represented as $xKG=(N,E)$. The node set $N$ includes Paper Nodes, Technique Nodes, and Code Nodes. The edge set $E$ includes Structural Edges and Implementation Edges. A Paper Node represents a paper and its metadata; a Technique Node denotes a self-contained scholarly concept or module; a Code Node contains an executable unit, including implementation code, test scripts, and documentation.
+The formal representation of xKG is $xKG=(N,E)$. The node set $N$ consists of three categories: Paper Nodes, Technique Nodes, and Code Nodes. The edge set $E$ includes Structural Edges and Implementation Edges. A Paper Node represents a paper with its metadata and associated technique/code nodes; a Technique Node represents a self-contained scholarly concept or method component; a Code Node represents an executable unit containing implementation code, test scripts, and documentation.
 
-The construction process consists of two stages. First, paper-aware corpus curation: automatically identifying core techniques, selecting highly relevant cited papers, downloading arXiv sources and GitHub repos, and filtering papers lacking official implementations. Second, hierarchical KG construction: extracting technique trees from papers and code snippets from repos, generating and verifying Code Nodes, and pruning technique nodes that cannot be grounded to code.
+The construction pipeline consists of two main stages. The first is paper-aware corpus curation: identifying core techniques for a target PaperBench task, selecting highly relevant cited papers and web search results, downloading arXiv sources and official GitHub repositories, and filtering out papers without official implementations. The second is hierarchical KG construction: extracting technical trees from papers, retrieving code snippets from repositories, generating and verifying Code Nodes, and pruning technical nodes that cannot be grounded to code. The constructed xKG is then integrated into replication agents via a two-stage process: providing only method skeletons during planning and retrieving executable code during implementation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Target Paper / PaperBench Task"] --> B
+    subgraph BUILD["Automated Executable Grounding Pipeline"]
+        direction TB
+        B["Corpus Curation<br/>Core Tech → Related Papers → Download Sources/Repos → Filter"] --> C["Tech Tree Extraction + Definition<br/>o4-mini + Paper-RAG"]
+        C --> D["Repo Retrieval + Code Node Synthesis<br/>Self-debugging Loop for Executability"]
+        D --> E["Knowledge Filtering<br/>Prune non-groundable Tech Nodes"]
+    end
+    BUILD --> KG
+    subgraph KG["Paper-Technique-Code Tri-layer Representation"]
+        direction TB
+        F["Paper Node"] -->|Structural Edge| G["Technique Node"]
+        G -->|Implementation Edge| H["Code Node: Code σ / Test τ / Doc δ"]
+    end
+    KG --> AGENT
+    subgraph AGENT["Two-stage Agent Integration"]
+        direction TB
+        I["High-level Planning: Paper Nodes Only"] --> J["Low-level Implementation<br/>Retrieve Technique-Code Pairs via Sub-goals"]
+        J --> K["LLM Verifier<br/>Validate Relevance & Executability"]
+    end
+    AGENT --> L["Replicated Code"]
+```
 
 ### Key Designs
-1. **Paper-Technique-Code Tri-layer Representation**:
-    - **Function**: Simultaneously represents overall paper structure, methodological concepts, and executable implementations to support the full replication workflow.
-    - **Mechanism**: Paper Nodes store metadata and associated technique/code node sets. Technique Nodes store definitions and sub-techniques, representing frameworks or modules. Code Nodes store implementation $\sigma$, test scripts $\tau$, and documentation $\delta$. Structural Edges link architectural dependencies, while Implementation Edges link techniques to code.
-    - **Design Motivation**: Standard RAG returns fragments, leaving agents to determine architectural roles. This tri-layer graph explicitly aligns "what the paper says" with "how it is implemented," reducing the agent's integration burden.
 
-2. **Automated Grounding Pipeline for Executability**:
-    - **Function**: Automatically converts papers and repositories into reusable, executable knowledge resources.
-    - **Mechanism**: The authors use o4-mini to extract technique trees, supplemented by Paper-RAG for definitions. Using technique definitions as queries, code snippets are retrieved from official repositories via embeddings and synthesized into Code Nodes. Each Code Node undergoes a self-debugging loop to ensure executability; nodes that cannot be grounded are filtered out.
-    - **Design Motivation**: Paper extraction often produces hallucinated or non-implementable concepts. Requiring techniques to be grounded in code serves as an inherent quality filter.
+**1. Paper-Technique-Code Tri-layer Representation: Explicit Alignment of "What the paper says" and "How the code implements it"**
 
-3. **Two-stage Agent Integration**:
-    - **Function**: Assists agents in both understanding methodology and writing specific code.
-    - **Mechanism**: During high-level planning, agents access Paper Nodes without implementation details to avoid distraction. During low-level implementation, agents query Technique-Code pairs. An LLM verifier finalizes the results to ensure relevance and implementability.
-    - **Design Motivation**: Replication poses two distinct challenges: structural understanding and functional coding. Phase-based exposure prevents premature code exposure while providing fine-grained references during implementation.
+Standard RAG returns stacks of text or code fragments, leaving the agent to determine which fragments belong to the methodology and which are actually executable. The tri-layer structure offloads this burden: Paper Nodes store metadata and collections of technique/code nodes; Technique Nodes store self-contained definitions (representing either entire frameworks or reusable modules); Code Nodes store a triplet of implementation $\sigma$, test script $\tau$, and documentation $\delta$.
+
+Nodes are connected via two types of edges: Structural Edges express architectural dependencies (which module is built upon another), while Implementation Edges link technical nodes to corresponding code. Consequently, agents can traverse Structural Edges to understand method skeletons during planning and follow Implementation Edges to retrieve executable implementations during coding, eliminating the need to reassemble fragmented pieces.
+
+**2. Automated Executable Grounding Pipeline: Using "Executability" as a Quality Filter**
+
+Extracting from papers alone often yields over-granular, hallucinated, or non-implementable concepts. Thus, xKG does not settle for a text-only graph. It uses o4-mini to extract technical trees and Paper-RAG to supplement definitions. Subsequently, using definitions as queries, relevant code snippets are retrieved from official repositories via embeddings. o4-mini then synthesizes these into Code Nodes, which undergo a self-debugging loop to ensure they are runnable.
+
+A crucial step is knowledge filtering: any technical node that cannot be grounded to code is pruned. In other words, "executability" serves as a hard threshold for knowledge quality—ensuring remaining technical nodes correspond to functional code. This process improves the executability rate of Code Nodes from approximately 52% to 100% after self-debugging.
+
+**3. Two-stage Agent Integration: Skeletons During Planning, Code During Implementation**
+
+Replication tasks involve two distinct difficulties: understanding the method structure and writing functionally correct code. xKG exposes knowledge in two phases corresponding to these needs. During high-level planning, agents are provided only with the Paper Node of the target paper, deliberately withholding Code Nodes to prevent agents from being overwhelmed by implementation details too early. During low-level implementation, agents retrieve relevant Technique-Code pairs based on current sub-goals.
+
+Retrieved results pass through an LLM verifier to ensure the pairs are both technically relevant and implementable. This "skeleton first, flesh later" approach prevents the accumulation of excessive code during planning and the absence of implementation details during coding.
 
 ### Loss & Training
-The study does not propose a new neural loss function. Instead, it constructs a KG used as a plug-and-play module. Model calls are used for extraction, modularization, self-debugging, and verification. Similarity is calculated using embeddings like `text-embedding-3-small` and `all-MiniLM-L6-v2`, with thresholds such as `technique_similarity=0.6` and `paper_similarity=0.6`.
+This work does not propose a new neural training loss but focuses on constructing the knowledge graph as a pluggable module. Model calls are primarily for technical extraction, code modularization, self-debugging, and the verifier. The retrieval side utilizes `text-embedding-3-small` and `all-MiniLM-L6-v2` for similarity calculations, with key thresholds set at `technique_similarity=0.6` and `paper_similarity=0.6`.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation was conducted on the PaperBench Code-Dev lite subset. The task involves developing code from paper descriptions, scored by o3-mini based on a hierarchical rubric. xKG was integrated into BasicAgent, IterativeAgent, and PaperCoder, tested with o3-mini and DeepSeek-R1 backbones.
+The authors evaluate xKG on the PaperBench Code-Dev lite subset, focusing on the code development portion of paper replication. Scores are evaluated by o3-mini based on a hierarchical rubric. xKG is integrated into BasicAgent, IterativeAgent, and PaperCoder, using both o3-mini and DeepSeek-R1 backbones.
 
-| Agent | Backbone | Vanilla Score | +xKG Score | Gain |
+| Agent | Backbone | Vanilla Avg. | +xKG Avg. | Gain |
 |-------|----------|----------------|-------------|------|
 | BasicAgent | o3-mini | 17.89 | 24.57 | +6.68 |
 | BasicAgent | DeepSeek-R1 | 27.89 | 31.62 | +3.73 |
@@ -80,55 +104,64 @@ Evaluation was conducted on the PaperBench Code-Dev lite subset. The task involv
 | PaperCoder | o3-mini | 42.31 | 53.21 | +10.90 |
 | PaperCoder | DeepSeek-R1 | 52.23 | 60.34 | +8.11 |
 
-xKG benefits both simple ReAct agents and advanced frameworks like PaperCoder. The largest gain occurred with PaperCoder + o3-mini (+10.90), suggesting that powerful agents can better translate structured executable knowledge into complete implementations.
+As shown, xKG benefits both simple ReAct agents and more advanced frameworks like PaperCoder, demonstrating that it is not tied to a specific framework. The highest gain (+10.90) is observed with PaperCoder + o3-mini, indicating that stronger agents can better convert structured, executable knowledge into complete implementations.
+
+| Target Paper / Task | BasicAgent o3-mini | + xKG | Typical Observation |
+|-----------------|--------------------|-------|----------|
+| MU-DPO | 12.96 | 37.22 | Significant gain; high reusability of tech/code |
+| TTA-FP | 22.63 | 27.26 | Moderate gain; structural knowledge is helpful |
+| One-SBI | 18.24 | 20.82 | Minor gain; unique structures are hard to transfer |
+| FRE | 14.82 | 14.67 | Slight drop; retrieved knowledge may interfere |
+| Average | 17.89 | 24.57 | Overall +6.68 |
 
 ### Ablation Study
-Ablations on node types were performed using PaperCoder + o3-mini to identify critical components.
+Ablations on node types were conducted using PaperCoder + o3-mini to identify which nodes are most critical.
 
-| Configuration | Replication Score | Drop | Description |
+| Configuration | Replication Score | Drop | Explanation |
 |------|-------------------|------|------|
-| xKG Full | 53.21 | - | Complete graph |
-| w/o Paper Node | 51.08 | 2.13 | Planning quality drops without overall structure |
-| w/o Code Node | 48.65 | 4.56 | Largest degradation; executable code is the core gain |
-| w/o Technique Node | 52.16 | 1.05 | Minor impact; some info is implicit in Code Nodes |
+| xKG Full | 53.21 | - | Full graph |
+| w/o Paper Node | 51.08 | 2.13 | Planning quality drops without the target paper structure |
+| w/o Code Node | 48.65 | 4.56 | Largest drop; executable code is the core contributor |
+| w/o Technique Node | 52.16 | 1.05 | Minor impact; tech info partially covered by Code Nodes |
 
-Quality analysis of the pipeline:
-| Metric | Value | Meaning |
+The authors also analyzed xKG quality and scalability. While automated extraction is not perfect, the overall quality effectively supports agents.
+
+| Analysis Item | Value | Meaning |
 |--------|------|------|
-| Technique valid rate | 89.44% | Most technique nodes are self-contained concepts |
-| Code valid rate | 100.00% | All Code Nodes are executable after self-debugging |
-| Tech-Code pair match | 74.51% | Precision of alignment requires further improvement |
-| Initial Code Node exec rate | 52.38% | Low executability before self-debugging |
-| Avg construction cost | ~$0.7344 / paper | Costs driven by modularization and debugging |
+| Technique valid rate | 89.44% | Most tech nodes are self-contained concepts |
+| Code valid rate | 100.00% | Code Nodes are executable after self-debugging |
+| Tech-Code pair match | 74.51% | About a quarter of pairs are still imprecise |
+| Initial Code Node validity | 52.38% | Insufficient executability before self-debugging |
+| Avg. Construction Cost | ~$0.7344 / paper | Costs mainly from modularization and debugging |
 
 ### Key Findings
-- **Code Nodes are critical**: Removing Code Nodes results in a 4.56-point drop, confirming that the bottleneck in replication is implementation rather than conceptual understanding.
-- **Suitability**: xKG is more effective for analytical or combinatorial papers (e.g., MU-DPO) built on reusable technologies than for entirely novel architectures (e.g., One-SBI).
-- **Scalability**: The system is self-evolving. Expanding the knowledge base to 56 relevant papers significantly boosted scores for complex tasks like `bridging-data-gaps`.
+- Code Nodes are the most critical components. Removing them leads to a 4.56-point drop, significantly more than removing Paper or Technique Nodes, suggesting that the bottleneck in replication lies in "executable implementation" rather than just understanding concepts.
+- xKG is more effective for analytical or compositional papers (e.g., MU-DPO), which are built upon reusable techniques, compared to papers with entirely new architectures (e.g., One-SBI).
+- xKG is self-evolving. Extending to 56 related papers improved tasks like `bridging-data-gaps` from 11.55 to 44.64, indicating that the closer the knowledge base is to the target paper, the higher the returns.
 
 ## Highlights & Insights
-- "Executable Knowledge Graphs" directly address the core pain point of research agents: replication is a coding task, not a Q&A task.
-- Grounding-based filtering ensures that only implementable technical nodes are retained, sacrificing theoretical completeness for practical utility.
-- The phase-based memory design (planning vs. implementation) prevents agents from being overwhelmed by implementation details during high-level strategy formulation.
-- Case studies indicate that xKG moves agents from "scaffold writing" to "substantive module implementation."
+- The definition of "Executable Knowledge Graph" addresses a genuine pain point for research agents. Replication is not a QA task; it is about transforming abstract methods into functional code, requiring implementation units in the knowledge representation.
+- The knowledge filtering step is vital: only technique nodes that ground to code are retained. While this sacrifices some theoretical completeness, it ensures higher utility and fewer hallucinated nodes.
+- Withholding Code Nodes during high-level planning and retrieving them during low-level implementation is a robust agent memory design principle. It prevents interference from code details during planning and ensures implementation isn't left with only abstract concepts.
+- Case studies indicate xKG moves agents from "building empty shells" to "writing substantive modules," providing better interpretability than final scores alone.
 
 ## Limitations & Future Work
-- **Evaluation Cost**: Due to high costs, evaluations were limited to the PaperBench lite subset without massive cross-domain stress tests.
-- **Dependency**: xKG relies on existing relevant papers and official code. It struggles with closed-source methods or papers without reliable repositories.
-- **Semantic Mapping**: Code retrieval may still package technically irrelevant but semantically similar code, though the verifier mitigates this risk.
-- **Future Directions**: Exploring online knowledge updates, incorporating failure feedback into the graph, and execution-driven graph correction.
+- Evaluation costs on PaperBench are high; due to budget constraints, the full PaperBench was not used, and large-scale cross-domain stress testing is limited.
+- xKG relies on existing related papers and official code. For entirely new fields, closed-source methods, or papers without reliable repositories, it is difficult to construct useful Code Nodes.
+- Code retrieval and rewriting might still package irrelevant code attractively, potentially misleading agents. While the verifier mitigates this, the 74.51% Tech-Code pair match rate indicates ongoing risk.
+- Current work focuses on offline construction. Future directions include online updates, failure feedback loops to the graph, and execution-driven graph corrections.
 
 ## Related Work & Insights
-- **vs. Standard RAG**: xKG replaces flat retrieval with structured paper architectures and executable grounding.
-- **vs. Research Agents (AutoMind, AI-Researcher)**: While those focus on workflow, xKG serves as an underlying plug-and-play knowledge base.
-- **vs. Paper2Code/AutoReproduce**: xKG emphasizes reusing verified knowledge from existing repositories rather than zero-shot implementation.
-- **vs. ExeKG**: While sharing the name, this work focuses on AI research replication via thin Paper-Technique-Code structures rather than industrial monitoring.
+- **vs. Standard RAG**: RAG retrieves text or code snippets, whereas xKG explicitly graphs paper structures, technical concepts, and implementations, filtering knowledge by executability.
+- **vs. Research Agents (AutoMind, AI-Researcher)**: Those systems focus on the agent workflow; xKG acts as a pluggable knowledge foundation for various agent frameworks.
+- **vs. Paper2Code / AutoReproduce**: These works generate code directly from a single paper. xKG emphasizes reusing executable knowledge from related papers and official repositories to reduce the difficulty of zero-shot implementation.
+- **vs. ExeKG**: Similar in name, but different in problem domain. Earlier ExeKG focused on transparent data analysis or monitoring; this xKG targets AI research replication with a lightweight Paper-Technique-Code structure.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ Conceptually clear and well-aligned with agent needs by extending KG nodes to executable code.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Covers multiple backbones/agents and includes detailed quality analysis, though limited by PaperBench subset size.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Highly readable structure; detailed implementation information is well-organized.
-- **Value**: ⭐⭐⭐⭐⭐ High reference value for automated research, code RAG, and agent memory design.
+- Novelty: ⭐⭐⭐⭐☆ Extending KG nodes to executable code for research replication is clear and well-aligned with agent needs.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple agents/backbones, node ablations, and quality analysis, though full PaperBench and broader domain validation are limited.
+- Writing Quality: ⭐⭐⭐⭐☆ The methodological structure is easy to follow, and tables are information-dense; some implementation details require cross-referencing with the appendix.
+- Value: ⭐⭐⭐⭐⭐ High reference value for automated research replication, paper-to-code, code RAG, and agent memory design.
 
 <!-- RELATED:START -->
 
@@ -136,8 +169,8 @@ Quality analysis of the pipeline:
 
 ## Related Papers
 
-- [\[ICML 2026\] What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA](../../ICML2026/graph_learning/what_structural_inductive_bias_helps_transformers_reason_over_knowledge_graphs_a.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](../../ICLR2026/graph_learning/towards_improved_sentence_representations_using_token_graphs.md)
+- [\[ICML 2026\] What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA](../../ICML2026/graph_learning/what_structural_inductive_bias_helps_transformers_reason_over_knowledge_graphs_a.md)
 - [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
 - [\[ACL 2026\] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs](cog_controllable_graph_reasoning_via_relational_blueprints_and_failure-aware_ref.md)
 - [\[ICLR 2026\] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs](../../ICLR2026/graph_learning/explore-on-graph_incentivizing_autonomous_exploration_of_large_language_models_o.md)

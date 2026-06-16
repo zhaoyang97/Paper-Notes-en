@@ -2,131 +2,140 @@
 title: >-
   [Paper Note] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 description: >-
-  [CVPR 2026][Robotics][Active Perception] SaPaVe proposes an end-to-end active manipulation framework that decouples camera actions from manipulation actions via a bottom-up training strategy: it first learns active perce…
+  [CVPR 2026][Robotics & Embodied AI][Paper Note] SaPaVe proposes an end-to-end active manipulation framework. By employing a bottom-to-top training strategy with decoupled camera and manipulation actions, it first learns active perception priors using 200,000 semantic camera control pairs, followed by joint optimization for active manipulation. In real-world scenario
 tags:
-  - "CVPR 2026"
-  - "Robotics"
-  - "Active Perception"
-  - "VLA Models"
-  - "Decoupled Action Space"
-  - "3D Spatial Injection"
-  - "Humanoid Robots"
+  - CVPR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 3f342f94e108ab51
+content_hash: 96f278c75e233eb3
 ---
-
 # SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12193](https://arxiv.org/abs/2603.12193)  
 **Code**: [https://lmzpai.github.io/SaPaVe](https://lmzpai.github.io/SaPaVe)  
-**Area**: Multimodal VLM / Robotics
+**Area**: Multimodal VLM / Robotics  
 **Keywords**: Active Perception, VLA Models, Decoupled Action Space, 3D Spatial Injection, Humanoid Robots
 
 ## TL;DR
-SaPaVe proposes an end-to-end active manipulation framework that decouples camera actions from manipulation actions via a bottom-up training strategy: it first learns active perception priors from 200K semantic camera-control pairs, then jointly optimizes for active manipulation, surpassing π₀ and GR00T N1 by up to 31.25% in real-world success rate.
+SaPaVe proposes an end-to-end active manipulation framework. By employing a bottom-to-top training strategy with decoupled camera and manipulation actions, it first learns active perception priors using 200,000 semantic camera control pairs, followed by joint optimization for active manipulation. In real-world scenarios, it surpasses π₀ and GR00T N1 by a 31.25% improvement in success rate.
 
 ## Background & Motivation
 
-1. **Background**: Active perception and manipulation are core capabilities for robots interacting with complex scenes. Existing VLMs (e.g., Qwen2.5-VL, Gemini 2.5 Pro) have improved semantic understanding, while VLA models (e.g., π₀, GR00T N1) aim to bridge vision–language–action end-to-end.
-2. **Limitations of Prior Work**:
-    - VLMs treat active perception as a VQA task (selecting the best viewpoint from discrete candidates), precluding continuous fine-grained camera control.
-    - VLA models are typically trained and evaluated under fixed, optimal head-camera viewpoints, making them sensitive to viewpoint changes and unable to actively adjust perspective.
-    - Naively extending the VLA action space with camera actions causes conflicts and requires large amounts of expensive real-world active-perception-plus-manipulation data.
-3. **Key Challenge**: Active manipulation requires tight coupling of *semantic active perception* (adjusting viewpoint based on task strategy to acquire critical information) and *active-viewpoint execution* (robust manipulation under dynamic viewpoints), yet data scarcity and action-space conflicts make it difficult for existing methods to achieve both.
-4. **Goal**: Enable robots to simultaneously learn semantically driven active viewpoint adjustment and robust manipulation under viewpoint changes, in a data-efficient manner.
-5. **Key Insight**: The key insight is that camera motion is embodiment-agnostic and can therefore be learned independently before joint optimization, enabling an efficient bottom-up training pipeline.
-6. **Core Idea**: Decouple camera actions from manipulation actions; first establish active-perception priors from large-scale semantic camera-motion data, then jointly optimize for data-efficient active manipulation.
+1.  **Background**: Active perception and manipulation are core capabilities for robots interacting with complex scenes. Existing VLMs (e.g., Qwen2.5-VL, Gemini 2.5 Pro) have enhanced semantic understanding, while VLA models (e.g., π₀, GR00T N1) strive to bridge vision-language-action in an end-to-end manner.
+2.  **Limitations of Prior Work**:
+    *   VLMs often model active perception as VQA tasks (selecting the optimal view from discrete candidates), which lacks continuous and fine-grained camera control.
+    *   VLA models are typically trained and evaluated under fixed optimal head camera views, making them sensitive to viewpoint changes and lacking active viewpoint adjustment capabilities.
+    *   Directly adding camera actions to a unified action space in VLAs causes conflicts and requires a vast amount of expensive real-world active perception and manipulation data.
+3.  **Key Challenge**: Active manipulation requires tight coupling between "semantic active perception" (viewpoint adjustment based on task strategy to obtain critical information) and "active viewpoint execution" (robust manipulation under dynamic viewpoints). However, data scarcity and action space conflicts make it difficult for existing methods to balance both.
+4.  **Goal**: Enable robots to learn both semantic-driven active viewpoint adjustment and robust manipulation under changing viewpoints in a data-efficient manner.
+5.  **Key Insight**: A critical insight is that camera motion is embodiment-agnostic. It can be learned independently first and then jointly optimized, facilitating efficient bottom-to-top training.
+6.  **Core Idea**: Decouple camera actions from manipulation actions; establish active perception priors using large-scale semantic camera motion data, then perform joint optimization to achieve data-efficient active manipulation.
 
 ## Method
 
 ### Overall Architecture
-SaPaVe builds on a VLA model backbone. Given RGB images and task instructions, it outputs two decoupled action streams: head-camera actions $A_{head}$ (pitch/yaw adjustments) and manipulation actions $A_{other}$ (26-DoF joint position deltas for the Unitree G1 dual-arm dual-hand platform). Action chunking is used to predict action sequences of temporal horizon $k$, ensuring temporal consistency and smooth execution.
+The problem SaPaVe addresses is ensuring a robot can both "actively see" (rotating the head camera to angles that clarify key information based on the task) and "stably do" (completing tasks like grasping or articulating joints under these changing viewpoints). Based on a standard VLA architecture, it accepts RGB images and task instructions but splits the output into two decoupled action streams: head camera actions $A_{head}$ (pitch/yaw adjustment, 2-DoF) and manipulation actions $A_{other}$ (26-DoF joint position increments for the Unitree G1 arms and hands). Both streams use action chunking to predict sequences of length $k$ for temporal smoothness. The core hypothesis is that since how a camera rotates is embodiment-agnostic, active perception can be trained separately on massive view-only data before being integrated with manipulation using limited robot data.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: RGB Image + Task Instruction"] --> VLM["VLM Backbone (Frozen) + Camera Adapter LoRA<br/>Stage 1 Training / Stage 2 Frozen"]
+    GEO["3D Geometric Input: Depth Map / Extrinsic & Intrinsic"] --> USE["Universal Spatial Knowledge Injection<br/>Universal Spatial Encoder"]
+    VLM --> ADD(("Element-wise Addition<br/>Semantic Token + Spatial Token"))
+    USE --> ADD
+    ADD --> HYB["Hybrid Token"]
+    HYB --> HEAD["Decoupled Action Head (Stage 2 Training)<br/>Two Independent Denoising Decoders"]
+    HEAD --> CAM["Camera Decoder → A_head<br/>2-DoF pitch/yaw"]
+    HEAD --> OP["Manipulation Decoder → A_other<br/>26-DoF Joint Increments"]
+    CAM -->|Active Head Viewpoint Adjustment| IN
+    OP --> OUT["Robot Active Manipulation"]
+```
 
 ### Key Designs
 
-1. **Decoupled Action Heads & Camera Adapter**
+**1. Decoupled Action Head + Camera Adapter: Separating camera control from manipulation without polluting existing priors**
 
-    - **Function**: Enable the model to learn camera control and manipulation actions separately without degrading the VLM's original semantic capabilities.
-    - **Mechanism**: A camera adapter applies LoRA on top of the VLM to learn semantic active-perception priors without modifying the original VLM weights. Two independent denoising decoders constitute the decoupled action heads, outputting camera actions and manipulation actions respectively. This lightweight decoupled design allows the model to learn both action types accurately while avoiding interference from a unified action space.
-    - **Design Motivation**: Adding camera motion directly to the existing VLA action space disrupts priors learned from large-scale fixed-viewpoint manipulation data. Since camera motion is inherently embodiment-agnostic, learning it via an independent adapter is more efficient and preserves manipulation capability. Experiments confirm that full fine-tuning of the VLM for camera motion is inferior to using a lightweight adapter (Tab. 5), as the adapter retains high-level semantic information.
+A direct approach would be to insert camera motion into the existing unified action space of a VLA, but this disrupts the priors learned from large-scale fixed-view manipulation data—camera and manipulation dimensions interfere, leading to poor performance in both. SaPaVe’s strategy is physical isolation: a camera adapter is attached to the VLM as a LoRA to learn semantic active perception priors while freezing original VLM weights; the decoupled action head uses two independent denoising decoders for $A_{head}$ and $A_{other}$. This "brackets" camera capabilities rather than "squeezing" them in, preserving the VLM's high-level semantic information. Ablations confirm this: full fine-tuning of the VLM for camera motion performs worse than the lightweight adapter (Table 5 shows a 11.25% drop without the adapter) because retraining overwrites semantic priors.
 
-2. **Universal Spatial Knowledge Injection**
+**2. Universal Spatial Knowledge Injection: Providing geometric sense to VLAs lacking 3D priors**
 
-    - **Function**: Enhance the model's 3D spatial awareness and robustness to dynamic viewpoint changes.
-    - **Mechanism**: A Universal Spatial Encoder inherited from a strong feed-forward 3D geometry model accepts arbitrary 3D geometric inputs (depth maps, camera intrinsics/extrinsics, etc.) without retraining or architectural modification. Encoded spatial tokens are element-wise added to VLM output tokens, and the fused tokens are injected into the action denoising process of the decoupled action heads.
-    - **Design Motivation**: VLA models lack 3D geometric priors and cannot maintain consistent spatial understanding under active viewpoint changes. Directly injecting diverse 3D information fundamentally improves robustness to viewpoint variation. Ablations show that removing this module causes a 15% drop in success rate even on simple occlusion-grasping tasks (Tab. 5).
+VLA models inherently lack 3D geometric priors. Once perspectives actively change, their understanding of object spatial positions drifts, causing manipulation instability. SaPaVe introduces a Universal Spatial Encoder inherited from a strong feed-forward 3D geometric model. It accepts various 3D geometric inputs (depth maps, camera parameters) without requiring architecture changes. The resulting spatial tokens are element-wise added to VLM output tokens. These hybrid tokens guide the denoising process of the decoupled action head, ensuring action generation is always aligned with a geometric reference for the current viewpoint. Its impact is direct: removing this module leads to a 16.25% average drop, with even simple occluded grasping dropping by 15%.
 
-3. **Two-Stage Bottom-Up Training Strategy**
+**3. Two-stage Bottom-to-Top Training Strategy: Mastering universal "seeing" before embodiment-specific "doing"**
 
-    - **Function**: Build active perception and active manipulation capabilities layer by layer in a data-efficient manner.
-    - **Mechanism**:
-     - **Stage 1 (Semantic Active Perception Alignment)**: Trains only the camera adapter and camera action decoder using the ActiveViewPose-200K dataset, with MSE loss $\mathcal{L}_{stage1} = \mathcal{L}_{MSE}(A_{head,t}, A_{head,t}^*)$. This stage establishes strong semantically driven viewpoint adjustment priors.
-     - **Stage 2 (Active Manipulation Fine-tuning)**: Freezes the camera adapter and trains the decoupled action heads on mixed data (ActiveViewPose-200K + robot manipulation data), with $\mathcal{L}_{stage2} = \lambda_{head}\mathcal{L}_{head} + \lambda_{other}\mathcal{L}_{other}$.
-    - **Design Motivation**: Joint training from scratch requires large amounts of scarce active-manipulation data. By first building perception priors on abundantly available viewpoint-only data and then fine-tuning with a small amount of manipulation data, the approach achieves data-efficient transfer learning.
+Jointly training active perception and manipulation requires scarce and expensive data containing both viewpoint adjustments and manipulation labels. Following the "embodiment-agnostic" insight, SaPaVe splits training into two layers. Stage 1 (Semantic Active Perception Alignment) uses the mass-produced ActiveViewPose-200K dataset to train the camera adapter and camera action decoder with a pure MSE objective:
+
+$$\mathcal{L}_{stage1} = \mathcal{L}_{MSE}(A_{head,t}, A_{head,t}^*)$$
+
+This step equips the model with strong semantic-driven viewpoint adjustment priors. Stage 2 (Active Manipulation Fine-tuning) subsequently freezes the camera adapter to protect learned perception and uses mixed data (ActiveViewPose-200K + robot manipulation data) to train the decoupled action head:
+
+$$\mathcal{L}_{stage2} = \lambda_{head}\mathcal{L}_{head} + \lambda_{other}\mathcal{L}_{other}$$
+
+Because "how to see" is already mastered, the small amount of manipulation data only needs to learn "how to act" given the view, making migration highly data-efficient. Removing Stage 1 leads to a 31.25% crash (85 to 53.75), especially in out-of-view tasks, proving this prior is the foundation.
 
 ### Loss & Training
-- Stage 1: MSE loss supervising camera action prediction only.
-- Stage 2: Weighted MSE loss supervising both camera and manipulation actions; the camera adapter is frozen to protect the priors learned in Stage 1.
-- Action chunking ensures temporal smoothness.
+*   Stage 1: Uses MSE loss to supervise camera action prediction, establishing semantic active perception priors.
+*   Stage 2: Uses weighted MSE loss to supervise both camera and manipulation actions, while freezing the camera adapter to protect Stage 1 priors.
+*   Action chunking is utilized throughout to ensure temporal smoothness of predicted sequences.
 
 ## Key Experimental Results
 
 ### Main Results: Semantic Active Perception Evaluation
 
-| Method | Val | Test1 | Test2 | Avg |
-|--------|-----|-------|-------|-----|
+| Method | Val | Test1 | Test2 | Average |
+|------|-----|-------|-------|------|
 | Qwen2.5-VL-72B | 63.9 | 65.1 | 58.0 | 62.3 |
 | Multi-SpatialMLLM | 72.8 | 74.3 | 63.6 | 70.2 |
 | Gemini-2.5-Pro | 73.3 | 76.5 | 68.2 | 72.7 |
 | **SaPaVe (2B)** | **85.5** | **89.1** | **78.3** | **84.3** |
 
-Real-world active manipulation (success rate %):
+Real-world Active Manipulation (Success Rate %):
 
-| Method | Occluded Pick-Place | Out-of-View Pick-Place | Occluded Articulated Manip. | Out-of-View Articulated Manip. | Avg |
-|--------|--------------------|-----------------------|-----------------------------|-------------------------------|-----|
+| Method | Occluded Pick-and-Place | Out-of-view Pick-and-Place | Occluded Articulated | Out-of-view Articulated | Average |
+|------|---------|----------|------------|------------|------|
 | π₀ | 55 | 45 | 45 | 35 | 45.00 |
 | GR00T-N1 | 60 | 55 | 50 | 50 | 53.75 |
 | **SaPaVe** | **90** | **85** | **85** | **80** | **85.00** |
 
 ### Ablation Study
 
-| Configuration | Occluded Pick-Place | Out-of-View Pick-Place | Occluded Manip. | Out-of-View Manip. | Avg |
-|---------------|--------------------|-----------------------|-----------------|-------------------|-----|
+| Configuration | Occluded P&P | Out-of-view P&P | Occluded Manip. | Out-of-view Manip. | Average |
+|------|---------|----------|---------|----------|------|
 | Full Model | 90 | 85 | 85 | 80 | 85.00 |
 | w/o Stage 1 | 65 | 55 | 50 | 45 | 53.75 |
 | w/o Stage 2 | 75 | 60 | 70 | 60 | 66.25 |
-| w/o Decoupled Action Heads | 80 | 70 | 70 | 65 | 71.25 |
+| w/o Decoupled Head | 80 | 70 | 70 | 65 | 71.25 |
 | w/o Camera Adapter | 80 | 75 | 70 | 70 | 73.75 |
-| w/o Spatial Knowledge Injection | 75 | 75 | 65 | 60 | 68.75 |
+| w/o Spatial Injection | 75 | 75 | 65 | 60 | 68.75 |
 
 ### Key Findings
-- Stage 1 contributes the most: removing it causes a 31.25% average drop (85→53.75), with out-of-view tasks nearly halved, confirming that active-perception priors are central.
-- Removing Universal Spatial Knowledge Injection causes a 16.25% drop; even simple occlusion-grasping tasks fall by 15%, underscoring the importance of 3D information for viewpoint robustness.
-- SaPaVe with only 2B parameters outperforms Qwen2.5-VL (72B) and Gemini 2.5 Pro on semantic active perception, demonstrating that this capability does not emerge from general-purpose VLMs and requires dedicated training.
-- A fixed-camera plus wrist-camera setup still falls far short of an active camera, especially on out-of-view tasks (gap > 40%), showing that "more viewpoints" does not substitute for "actively controlled viewpoints."
+*   Stage 1 contributes the most; its removal causes a 31.25% average drop (85 to 53.75), with out-of-view tasks nearly halved, indicating that active perception priors are core.
+*   Removing Universal Spatial Knowledge Injection leads to a 16.25% drop, highlighting that 3D information is vital for handling viewpoint changes.
+*   SaPaVe (2B) outperforms 72B models like Qwen2.5-VL and Gemini 2.5 Pro in semantic perception, suggesting active perception is not an emergent property of general VLMs but requires specific training.
+*   Fixed + wrist camera combinations remain inferior to active cameras, especially in out-of-view tasks (gap > 40%), signifying that "more views" is not as effective as "active control of the view."
 
 ## Highlights & Insights
-- The insight that **camera motion is embodiment-agnostic** is the most fundamental contribution of the paper. It directly motivates the decoupled, bottom-up training strategy, which is both elegant and effective, and can transfer to other robot learning settings requiring separation of general capabilities from embodiment-specific ones.
-- The **ActiveViewPose-200K** construction pipeline (4K high-quality assets + heuristic action generation + GPT-4o instruction generation + human refinement) is efficient and reproducible, providing the community with a benchmark that fills an existing gap.
-- The absolute real-world success rate improvements over π₀ (+40%) and GR00T N1 (+31.25%) demonstrate that active manipulation capability cannot be achieved by simply adding action dimensions.
+*   **The insight that "camera motion is embodiment-agnostic"** is the central contribution, leading to the elegant and effective decoupled bottom-to-top strategy. This can be transferred to other robot learning scenarios requiring separation of universal and specialized capabilities.
+*   **ActiveViewPose-200K Dataset** construction (high-quality assets + heuristic motion + GPT-4o instructions + manual refinement) is both efficient and reproducible, providing a valuable benchmark for the community.
+*   The absolute success rate improvement (over 40% vs π₀; 31.25% vs GR00T-N1) demonstrates that active manipulation cannot be solved by simply increasing action dimensions.
 
 ## Limitations & Future Work
-- Validation is limited to the Unitree G1 humanoid; transferability to other robot morphologies (e.g., single-arm, mobile-base platforms) remains unverified.
-- Current camera actions are only 2-DoF (pitch/yaw), without considering translational or more complex viewpoint adjustments.
-- ActiveViewPose-200K is constructed semi-automatically from static scenes; real-world dynamic occlusion changes may require additional data.
-- Online learning mechanisms could be explored to allow robots to continuously improve active-perception strategies during execution.
+*   Validation is limited to the Unitree G1 humanoid; transferability to other morphologies (single arms, mobile bases) is untested.
+*   Current camera actions are only 2-DoF (pitch/yaw), excluding more complex adjustments like translation.
+*   ActiveViewPose-200K relies on semi-automatically constructed static scenes; dynamic real-world occlusions may require more data.
+*   Online learning mechanisms could be explored to allow robots to refine active perception strategies during execution.
 
 ## Related Work & Insights
-- **vs. π₀ [6]**: π₀ is a strong general VLA but lacks active perception; naively fine-tuning it with camera actions yields only 45% success rate, whereas SaPaVe's decoupled strategy reaches 85%.
-- **vs. GR00T-N1 [5]**: Similarly lacks active perception priors; despite being designed specifically for humanoids, it is surpassed by SaPaVe by 31.25% on active manipulation.
-- **vs. NBV methods [7,54]**: Traditional Next-Best-View methods are non-end-to-end and lack semantic inputs; SaPaVe integrates semantic understanding and continuous camera control end-to-end.
+*   **vs π₀ [6]**: π₀ is a strong general VLA but lacks active perception. Direct fine-tuning with camera actions yields poor results (45% success); SaPaVe achieves 85% via decoupling.
+*   **vs GR00T-N1 [5]**: Similarly lacks active perception priors. Despite being designed for humanoids, it is surpassed by SaPaVe in active tasks.
+*   **vs NBV methods [7,54]**: Traditional Next-Best-View methods are not end-to-end and lack semantic input. SaPaVe integrates semantic understanding with continuous camera control.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The decoupled bottom-up strategy and ActiveManip-Bench are both pioneering contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Full coverage of simulation, real-world, ablation, and generalization experiments with well-chosen baselines.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear paper structure and thorough experimental analysis.
-- **Value**: ⭐⭐⭐⭐⭐ Fills the gap for VLA models in active manipulation; the dataset and benchmark are of high value to the community.
+*   Novelty: ⭐⭐⭐⭐⭐ Decoupled strategy and ActiveManip-Bench are pioneering contributions.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers simulation, real-world, ablations, and generalization with precise baselines.
+*   Writing Quality: ⭐⭐⭐⭐ Clear structure and deep experimental analysis.
+*   Value: ⭐⭐⭐⭐⭐ Fills a gap in VLA active manipulation; the dataset is highly valuable for the community.
 
 <!-- RELATED:START -->
 
@@ -134,11 +143,11 @@ Real-world active manipulation (success rate %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 - [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
-- [\[ICML 2026\] ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics](../../ICML2026/robotics/manisoft_towards_vision-language_manipulation_for_soft_continuum_robotics.md)
+- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
 
 </div>
 

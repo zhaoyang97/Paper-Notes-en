@@ -2,130 +2,123 @@
 title: >-
   [Paper Note] GradPower: Powering Gradients for Faster Language Model Pre-Training
 description: >-
-  [ICML 2026][Model Compression][Gradient Transformation] GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\…
+  [ICML 2026][Model Compression][AdamW] GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\,|g_i|^p$ to raw gradients before feeding them into any gradient-based optimizer. With just one additional line of code and without altering internal AdamW/Muon logic or hyperparameters, it consistently achieves
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Gradient Transformation"
-  - "AdamW"
-  - "Muon"
-  - "MoE Pre-training"
-  - "wsd Scheduling"
+  - ICML 2026
+  - Model Compression
+  - AdamW
+  - Muon
 date: 2026-05-08
-content_hash: fa8d99cc21af013e
+content_hash: 0b2a145ae592dd55
 ---
-
 # GradPower: Powering Gradients for Faster Language Model Pre-Training
 
 **Conference**: ICML 2026  
 **arXiv**: [2505.24275](https://arxiv.org/abs/2505.24275)  
-**Code**: No repository link explicitly provided in the paper  
+**Code**: Repository link not explicitly provided in the paper  
 **Area**: LLM Pre-training / Optimizer / Training Acceleration  
-**Keywords**: Gradient Transformation, AdamW, Muon, MoE Pre-training, wsd Scheduling
+**Keywords**: Gradient Transformation, AdamW, Muon, MoE Pre-training, wsd scheduling
 
 ## TL;DR
-GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\,|g_i|^p$ to raw gradients before feeding them into any gradient-based optimizer. With just one line of code change and without altering the internal logic or hyperparameters of AdamW/Muon, it consistently achieves lower final loss across multiple scales of LLaMA and Qwen2MoE (from 66M to 2B). The gains are most significant under MoE + wsd (warmup-stable-decay) learning rate scheduling.
+GradPower applies an element-wise "sign-preserving power" transformation $\varphi_p(g_i)=\mathrm{sign}(g_i)\,|g_i|^p$ to raw gradients before feeding them into any gradient-based optimizer. With just one additional line of code and without altering internal AdamW/Muon logic or hyperparameters, it consistently achieves lower final loss across multiple scales of LLaMA and Qwen2MoE (66M to 2B). The gains are most significant under MoE architectures and wsd learning rate schedules.
 
 ## Background & Motivation
-**Background**: LLM pre-training computation is extremely expensive, making the optimizer the most direct lever for efficiency. AdamW has become the de facto standard due to its coordinate-wise adaptive learning rate. Recent works (Muon, Blockwise LR, Lion, SOAP, CAME, etc.) attempt to further reduce final loss by incorporating curvature information, matrix preconditioning, hybrid momentum, or cautious updates.
+**Background**: LLM pre-training computation is extremely expensive, making optimizers a direct lever for efficiency. While AdamW is the de facto standard due to coordinate-wise adaptive learning rates, recent works (Muon, Blockwise LR, Lion, SOAP, CAME, etc.) attempt to further reduce final loss by incorporating curvature information, matrix preconditioning, hybrid momentum, or cautious updates.
 
-**Limitations of Prior Work**: These "invasive" modifications often require redesigning momentum, second moments, or the entire update rule. For training pipelines, this means re-tuning hyperparameters like lr, $\beta_1$, $\beta_2$, weight decay, and clipping, which incurs extremely high engineering costs and slows community adoption.
+**Limitations of Prior Work**: These "invasive" modifications often require redesigning momentum, second moments, or the entire update rule. For training pipelines, this necessitates re-tuning hyperparameters like learning rate, $\beta_1$, $\beta_2$, weight decay, and clipping, resulting in high engineering costs and slow community adoption.
 
-**Key Challenge**: The desire to "re-accelerate" AdamW directly conflicts with the desire to "not disturb the existing pipeline"—any method that modifies the update rule breaks the tuned hyperparameter combinations.
+**Key Challenge**: The desire to "accelerate" AdamW contradicts the desire to "keep the existing pipeline intact"—any method modifying the update rule breaks tuned hyperparameter combinations.
 
-**Goal**: Find a plug-and-play acceleration plugin that is compatible with all modern optimizers without modifying AdamW's internal logic or requiring hyperparameter re-tuning.
+**Goal**: To find a plug-and-play acceleration plugin that does not modify internal optimizer logic, requires no hyperparameter re-tuning, and is applicable to all modern optimizers.
 
-**Key Insight**: The authors formulate the optimizer in a preconditioned form $\theta_{t+1}=\theta_t-\eta_t\,\mathcal{Q}(\varphi(g_1),\dots,\varphi(g_t))$, where debates over existing optimizers are essentially debates over $\mathcal{Q}$. They propose an alternative: keep $\mathcal{Q}=\text{AdamW}$ fixed and change $\varphi$ at the outermost layer. Given that LLM pre-training is often in a "noise-dominated" regime where gradient magnitude differences primarily stem from noise, and recent studies on EoS / river-valley / bulk direction show that loss reduction depends on "slow dynamics along flat directions," the goal of $\varphi$ should be to relatively amplify "small but persistent" flat directions.
+**Key Insight**: The authors express optimizers in a preconditioned form $\theta_{t+1}=\theta_t-\eta_t\,\mathcal{Q}(\varphi(g_1),\dots,\varphi(g_t))$, where debates usually focus on $\mathcal{Q}$. This paper reverses the focus: keeping $\mathcal{Q}=\text{AdamW}$ and only replacing $\varphi$ at the outer layer. Given that LLMs are often in a "noise-dominated" regime during pre-training where gradient magnitude differences stem largely from noise, and recent studies on EoS/river-valley/bulk direction suggest that loss reduction depends on "slow dynamics along flat directions," the goal of $\varphi$ should be to relatively amplify "small but persistent" flat directions.
 
-**Core Idea**: Apply $\varphi_p(g)=\mathrm{sign}(g)\,|g|^p$ to each gradient component. When $p>1$, the contrast is increased such that "major directions are suppressed and minor directions are relatively amplified," thereby accelerating cumulative progress along flat directions. A default value of $p=1.2$ is chosen, which proves robust across architectures, scales, and schedules.
+**Core Idea**: Apply $\varphi_p(g)=\mathrm{sign}(g)\,|g|^p$ to each gradient component. When $p>1$, the contrast is increased such that "large directions are suppressed and small directions are relatively amplified," thereby accelerating cumulative progress along flat directions. A default value of $p=1.2$ proves robust across architectures, scales, and schedules.
 
 ## Method
 
 ### Overall Architecture
-GradPower is not a new optimizer but an element-wise pre-transformation layer for any gradient-based optimizer:
-
-1. **Forward + Backward**: Identical to standard training, yielding mini-batch gradients $g_t\in \mathbb{R}^d$.
-2. **GradPower Transformation**: Execute a single line $g_t\leftarrow \mathrm{sign}(g_t)\odot|g_t|^p$. This is computed independently per element and does not depend on any state.
-3. **Standard Clipping + Optimizer**: Feed the transformed $g_t$ into AdamW / Muon / Blockwise LR / AdaGrad / etc., as the "gradient." Update rules, first/second moments, weight decay, and hyperparameters remain entirely unchanged.
-
-Empirical tests on LLaMA-0.25B / OpenWebText show only a ~0.4% increase in wall-clock time per step (0.7565s vs 0.7534s), which is negligible relative to total training time. The authors further note that whether gradient clipping occurs before or after GradPower does not significantly affect the final curve; both sequences ensure bounded updates.
+GradPower is not a new optimizer but a "pointwise power transformation" layer inserted before gradients enter the optimizer. Backpropagation proceeds as usual to obtain mini-batch gradients $g_t\in\mathbb{R}^d$, followed by the line $g_t\leftarrow \mathrm{sign}(g_t)\odot|g_t|^p$. The transformed gradients are then fed into AdamW, Muon, Blockwise LR, or AdaGrad. The optimizer's update rules, moments, weight decay, and hyperparameters remain identical. The overhead consists only of element-wise sign and power operations, requiring no state; empirical tests on LLaMA-0.25B/OpenWebText show an increase of only ~0.4% in wall-clock time per step (0.7565s vs 0.7534s), which is negligible. Applying gradient clipping either before or after the transformation does not affect the final curve, ensuring bounded updates in both cases.
 
 ### Key Designs
 
-1. **Sign-Preserving Power Transformation $\varphi_p$**:
-    - **Function**: Performs a non-linear transformation on each gradient component via $\varphi_p(g)=\mathrm{sign}(g)\,|g|^p$. For $p>1$, it amplifies relative differences while suppressing absolute magnitudes; for $p<1$, the opposite occurs.
-    - **Mechanism**: Using a 1D toy example $g_t\sim\mathrm{Unif}(\mu-\sigma,\mu+\sigma)$, the authors calculate the long-term cumulative update of AdamW $u_t=m_t/(\sqrt{v_t}+\epsilon)$. They prove that in high-noise regimes ($\sigma\gg\mu$, corresponding to LLM pre-training where batch sizes are much smaller than the full dataset), the optimal $p^\star>1$. In this case, $\varphi_p$ relatively amplifies "weak but stable signal" in flat directions, accelerating slow dynamics in the "river" direction. In low-noise regimes (large batches), the optimal $p^\star<1$, as noise suppression becomes more critical than amplification.
-    - **Design Motivation**: Directly motivated by the EoS / river-valley perspective—loss reduction depends on steady accumulation along flat directions rather than the oscillation amplitude in sharp directions. The power transform is a minimal-cost way to artificially amplify the contribution of flat directions.
+**1. Sign-Preserving Power Transformation $\varphi_p$: Accelerating Flat Direction Progress via Nonlinearity**
 
-2. **Keeping the Base Optimizer Unchanged**:
-    - **Function**: Transformation occurs before the optimizer; parameters like $\beta_1,\beta_2,\epsilon,\lambda$ for AdamW, orthogonalization for Muon, and block coefficients for Blockwise LR are all preserved at their original values.
-    - **Mechanism**: The authors deliberately decouple $\varphi$ and $\mathcal{Q}$. All hyperparameters tuned with significant compute in existing LLaMA recipes do not need re-tuning when switching to GradPower. Only the single new parameter $p$ needs a one-time grid search on a small scale. The paper determines $p=1.2$ using LLaMA-0.2B / C4 and applies it across model sizes (66M to 2B), architectures (dense LLaMA, MoE Qwen2MoE), datasets (C4, OpenWebText), and schedules (cos, wsd).
-    - **Design Motivation**: Eliminates engineering barriers. Any existing pre-training pipeline can adopt it by adding `g = g.sign() * g.abs().pow(p)`. "No hyperparameter re-tuning" is the most critical selling point for industry adoption.
+The core of the method is the operator $\varphi_p(g)=\mathrm{sign}(g)\,|g|^p$. It preserves the direction of each component while applying a power operation to the magnitude. For $p>1$, it widens the relative gap between components while lowering absolute magnitudes; for $p<1$, the opposite occurs. Using a 1D toy example $g_t\sim\mathrm{Unif}(\mu-\sigma,\mu+\sigma)$, the authors derive the cumulative update $u_t=m_t/(\sqrt{v_t}+\epsilon)$ for AdamW. They prove that in high-noise regimes ($\sigma\gg\mu$, typical for LLM training where batch size is small relative to the total data), the optimal $p^\star>1$. Conversely, in low-noise (large batch) regimes, the optimal $p^\star<1$, as large batches require suppressing intermittent noise rather than amplifying it.
 
-3. **Orthogonal Superposition with Modern Optimizers and Schedulers**:
-    - **Function**: GradPower provides additive gains when combined with Muon, Blockwise LR, and wsd scheduling.
-    - **Mechanism**: By treating the Muon orthogonalization update as $\mathcal{Q}$ and wrapping it with $\varphi_{1.2}$, one obtains MuonPower. Similarly, AdamW + Blockwise LR becomes BlockwisePower. Experiments show that AdamWPower(0.015) + Blockwise(0.030) $\approx$ Combined(0.045), indicating that their contributions are nearly linearly additive. This suggests GradPower captures a degree of freedom entirely different from "blockwise learning rates" or "matrix preconditioning." In wsd scheduling, GradPower's advantage grows steadily during the stable phase, aligning perfectly with modern pipelines like DeepSeek-V3 (long stable + short decay).
-    - **Design Motivation**: The authors position GradPower as a "universal plugin" rather than an "AdamW variant." Any optimizer that fits the $\varphi$ interface can benefit from flat-direction amplification, allowing it to evolve alongside future optimizers.
+Amplify small components is effective in high-noise regimes because it aligns with the EoS/river-valley perspective: loss reduction depends on the steady accumulation of slow dynamics along flat (river) directions rather than the oscillation amplitude in sharp directions. Flat directions often have smaller magnitudes but are "stable signals"; $p>1$ raises them relatively, effectively accelerating progress in the river direction at minimal cost. Meanwhile, sharp directions, often dominated by noise, are relatively suppressed, leading to faster oscillation convergence. This explains why extreme cases like $p\to0$ (sign-SGD/Lion) fail under large batches, as they fall into the wrong noise regime.
+
+**2. Base Optimizer Invariant: Decoupling $\varphi$ and $\mathcal{Q}$ to Eliminate Adoption Barriers**
+
+The bottleneck for industry adoption of new optimizers is migration cost—tuning lr, $\beta_1$, $\beta_2$, weight decay, and clipping. By decoupling the outer transformation $\varphi$ from the inner optimizer $\mathcal{Q}$ in $\theta_{t+1}=\theta_t-\eta_t\,\mathcal{Q}(\varphi(g_1),\dots)$, the authors allow GradPower to be used without touching existing hyperparameters. AdamW's $\beta_1, \beta_2, \epsilon, \lambda$, Muon's orthogonalization, and Blockwise LR's coefficients remain at their original values.
+
+The only new degree of freedom is $p$, which only needs to be grid-searched once on a small scale. The paper uses LLaMA-0.2B/C4 to fix $p=1.2$, and this value is then applied across model sizes (66M to 2B), architectures (dense LLaMA, MoE Qwen2MoE), datasets (C4, OpenWebText), and schedules (cos, wsd). For implementation, one simply adds `g = g.sign() * g.abs().pow(p)` to the pipeline.
+
+**3. Orthogonality with Modern Optimizers and Schedulers: A Universal Plugin**
+
+Because it operates at the $\varphi$ interface, GradPower's benefits are orthogonal to methods modifying internal $\mathcal{Q}$ logic. It can be combined directly: applying $\varphi_{1.2}$ before Muon's orthogonalization update rule yields MuonPower; using it with AdamW + Blockwise LR yields BlockwisePower. Experiments show that the gains of AdamWPower (0.015) and Blockwise LR (0.030) sum nearly linearly (~0.045), indicating that "amplifying accumulation along flat directions" targets a different dimension than "blockwise learning rates" or "matrix preconditioning."
+
+Under wsd scheduling, this advantage grows steadily during the stable phase, fitting modern pipeline trends like DeepSeek-V3 (long stable phase + short decay). The authors position GradPower as a "universal plugin" that can evolve alongside future optimizers.
 
 ### Loss & Training
-No additional loss functions are introduced; standard next-token cross-entropy for language modeling is used. Clipping threshold 1.0, weight decay 0.1, and $\beta_1=0.9, \beta_2=0.95$ follow the original LLaMA recipe. The `lr_max` is first tuned to the optimum for AdamW across `{1e-4, 2e-4, 3e-4, 6e-4, 1e-3, 1.5e-3}`, and AdamWPower uses this same `lr_max`. $p=1.2$ is fixed for all main experiments.
+No additional loss is introduced; standard next-token cross-entropy is used. Clipping threshold is set to 1.0, weight decay to 0.1, and $\beta_1=0.9, \beta_2=0.95$ following the LLaMA recipe. lr_max is tuned for AdamW across `{1e-4, 2e-4, 3e-4, 6e-4, 1e-3, 1.5e-3}`, and AdamWPower uses the same lr_max. $p=1.2$ is fixed for all main experiments.
 
 ## Key Experimental Results
 
 ### Main Results
-Zero-shot evaluation after pre-training LLaMA-2B on C4. AdamWPower wins in 5 out of 6 tasks:
+On zero-shot evaluation for LLaMA-2B pre-trained on C4, AdamWPower outperforms AdamW in 5 out of 6 tasks:
 
 | Dataset | Metric | AdamW | AdamWPower(p=1.2) | Gain |
 |---------|--------|-------|--------------------|------|
 | ARC-E | acc | 60.02 | 60.35 | +0.33 |
 | HellaSwag | acc | 44.65 | 44.93 | +0.28 |
 | OBQA | acc | 24.80 | 25.00 | +0.20 |
-| WinoGrande| acc | 56.83 | 59.43 | +2.60 |
+| WinoGrande | acc | 56.83 | 59.43 | +2.60 |
 | PIQA | acc | 73.56 | 73.61 | +0.05 |
-| 6-task Avg| acc | 47.72 | 48.26 | +0.54 |
+| 6-task Avg | acc | 47.72 | 48.26 | +0.54 |
 
-Regarding final pre-training loss, AdamWPower outperformed AdamW across multiple combinations of 66M / 0.2B / 0.4B / 1B / 2B scales, C4 / OpenWebText datasets, and cos / wsd schedules. The gain was even more pronounced for MoE—Qwen2MoE-2B saw an absolute loss improvement of 0.028, compared to 0.022 for LLaMA-2B (even though Qwen2MoE-2B started at a lower loss of 1.93, where further reductions are harder).
+For final pre-training loss, AdamWPower wins across all combinations of 66M/0.2B/0.4B/1B/2B, C4/OpenWebText, and cos/wsd. The gains are more significant for MoE architectures—Qwen2MoE-2B shows an absolute loss improvement of 0.028, larger than LLaMA-2B's 0.022, despite Qwen2MoE-2B starting at a lower loss (1.93).
 
 ### Ablation Study
-Relationship between $p$ selection and batch size (verified on ResNet-34 / CIFAR-10 to show GradPower is not limited to language models):
+Relationship between $p$ and batch size (validated on ResNet-34 / CIFAR-10 to show GradPower applies beyond language models):
 
-| Batch Size | p=0.8 | p=0.9 | p=1.0 | p=1.1 | p=1.2 |
+| batch size | p=0.8 | p=0.9 | p=1.0 | p=1.1 | p=1.2 |
 |------------|-------|-------|-------|-------|-------|
 | 128 | 94.35 | 94.22 | 93.98 | 93.38 | 93.15 |
 | 64 | 94.22 | 94.22 | 94.10 | 93.97 | 93.77 |
 | 32 | 94.04 | 94.15 | 94.30 | 94.25 | 93.85 |
 
-A clear trend is observed: **larger batch sizes (lower noise) lead to smaller optimal $p$ values**. For large batches, the optimal $p<1$; for small batches/LLM pre-training, the optimal $p>1$. This perfectly aligns with the theoretical analysis of "amplifying flat directions in high-noise regimes."
+A clear trend is observed: **the larger the batch (lower noise), the smaller the optimal $p$**. For very large batches, $p<1$ is optimal, while $p>1$ is optimal for small batches and LLM pre-training, aligning with the theoretical analysis of amplifying flat directions in high-noise regimes.
 
 ### Key Findings
-- GradPower gains are maximized under the **MoE + wsd** combination. While Qwen2MoE-1B and 2B exhibited loss spikes under AdamW, AdamWPower almost eliminated them. The authors hypothesize that the power transform suppresses high-frequency oscillations in sharp directions, leading to more stable training.
-- The value $p=1.2$, tuned on LLaMA-0.2B, remained optimal across scales (66M to 2B), architectures (dense to MoE), and schedules (cos to wsd). **Strong cross-scale transferability** avoids the cost of re-tuning for every model.
-- Gains are approximately additive with Blockwise LR / Muon. This implies GradPower addresses a dimension of optimization (steady accumulation in flat directions) orthogonal to "blockwise learning rates" or "matrix preconditioning."
+- GradPower gains are maximized under the **MoE + wsd** combination. Qwen2MoE (1B and 2B) exhibited loss spikes under AdamW that were nearly eliminated by AdamWPower, suggesting the power transform suppresses high-frequency oscillations in sharp directions.
+- The value $p=1.2$ tuned on LLaMA-0.2B remains optimal from 66M to 2B and across dense/MoE architectures, demonstrating strong **cross-scale transferability**.
+- Gains with Blockwise LR and Muon are additive, confirming GradPower captures a unique dimension of optimization progress (amplifying accumulation along flat directions) distinct from matrix preconditioning.
 
 ## Highlights & Insights
-- Achieving a final loss reduction of 0.02–0.03 for MoE/LLM pre-training with just one line of code and one hyperparameter $p$ offers an unbeatable "ROI" for industry deployment—it is a rare "zero engineering cost" accelerator in the ICML ecosystem.
-- Re-framing the "optimizer war" as a decomposition of $\varphi$ and $\mathcal{Q}$ provides a very clean perspective. While most research modifies $\mathcal{Q}$, the authors are among the first to seriously explore the space of $\varphi$, opening a new design dimension.
-- The phase transition ($p^\star>1$ for high noise, $p^\star<1$ for low noise) explains why previous similar ideas (like sign-SGD, which corresponds to the limit $p \to 0$) failed in large-batch settings—they simply targeted the wrong noise regime. This insight can guide when to use Lion-like vs. GradPower-like methods.
-- The design philosophy—"it won't be adopted unless it leaves the existing pipeline untouched"—is worth emulating for other systems-oriented research. Many algorithms lose to AdamW not because of performance, but because the migration cost of re-tuning hyperparameters is too high.
+- Achieving a 0.02–0.03 magnitude improvement in final loss for MoE/LLM pre-training with one line of code and one hyperparameter $p$ represents an exceptional ROI—a rare "zero engineering cost" accelerator for ICML.
+- Reframing the "optimizer debate" as a decomposition of $\varphi$ and $\mathcal{Q}$ provides a clean perspective, focusing design effort on the previously overlooked $\varphi$ interface.
+- The phase transition ($p^\star>1$ in high noise, $p^\star<1$ in low noise) explains why past "sign-based" methods ($p=0$) fail at larger batches—they target the wrong noise regime. This insight guides when to use Lion-like versus GradPower-like approaches.
+- The design philosophy that "existing pipelines must remain untouched for adoption" is a valuable lesson for systems-oriented ML research.
 
 ## Limitations & Future Work
-- The paper acknowledges that the explanation for "why power transforms suppress loss spikes in MoE" is primarily intuitive (suppressing oscillations in sharp directions) and lacks rigorous proof. The theoretical portion focuses on 1D toy examples and general non-convex AdaGrad, which is still removed from the actual optimization geometry of Transformers.
-- Experiments capped at 2B, leaving unverified whether $p=1.2$ remains optimal at larger scales (10B+). Theory suggests noise levels change with batch size; ultra-large models often use larger token batches, potentially requiring $p$ to be re-tuned toward $< 1.2$.
-- While the "river-valley / flat direction" visualization is popular in recent literature, it remains somewhat informal (approximating Hessian eigenvectors with small stochastic gradient directions), which impacts the mathematical precision of the GranPower explanation.
-- Future directions: Implementing adaptive $p$ per-layer or per-block (combining Blockwise LR ideas), or dynamically adjusting $p$ during training (higher $p$ early on to explore flat directions, decreasing to $p \approx 1$ for fine-tuning). Several results in the paper hint at the potential of this approach.
+- The explanation for why the power transform suppresses loss spikes in MoE remains largely intuitive (suppressing oscillations in sharp directions) without rigorous proof. Theoretical analysis is limited to 1D toy models and general non-convex AdaGrad, which remains distant from the complex geometry of Transformers.
+- Experimental scale is capped at 2B. It remains unverified if $p=1.2$ remains optimal at scales of 10B+. Theory suggests that since noise levels change with batch size, larger models (using larger batches) might require tuning $p$ closer to 1.
+- While the "river-valley/flat direction" framework is popular, its definition remains semi-formal (approximating Hessian eigenvectors with small stochastic gradient directions), affecting the rigor of the explanation.
+- Future work could explore per-layer/per-block adaptive $p$ (complemented by Blockwise LR) or dynamic $p$ schedules (high $p$ early for exploration, $p\approx 1$ later for fine-tuning).
 
 ## Related Work & Insights
-- **vs Muon (Jordan et al. 2024 / Liu et al. 2025a)**: Muon modifies $\mathcal{Q}$ by introducing matrix orthogonalization preconditioning; GradPower modifies $\varphi$ via element-wise non-linear transformation. Their additivity (MuonPower) suggests they capture orthogonal dimensions in the optimizer space.
-- **vs Blockwise LR (Wang et al. 2025)**: Blockwise LR assigns different learning rates to different Transformer blocks (internal refinement of $\mathcal{Q}$). Its gain is nearly linear when combined with GradPower (0.030 + 0.015 $\approx$ 0.045).
-- **vs sign-SGD / Lion (Chen et al. 2024b)**: Essentially limit versions where $p \to 0$, discarding all magnitude information. GradPower demonstrates that in high-noise LLM pre-training, $p$ should be $>1$ rather than $\to 0$, providing counter-evidence to the "aggressive sign-ification" of Lion-like methods.
-- **vs Cautious update (Liang et al. 2024) / Variance reduction (Yuan et al. 2024)**: These modify the update rule within $\mathcal{Q}$ and require hyperparameter re-tuning. GradPower's selling point is its "external attachment" nature.
-- **Inspiration**: GradPower could be tested during RLHF / SFT / fine-tuning phases. These stages often involve small batches, high noise, and slow dynamics in flat directions, making them theoretically suitable for low-cost expansion.
+- **vs Muon (Jordan et al. 2024 / Liu et al. 2025a)**: Muon modifies $\mathcal{Q}$ via matrix orthogonalization; GradPower modifies $\varphi$ via element-wise nonlinearity. Their additivity (MuonPower) confirms they address orthogonal dimensions.
+- **vs Blockwise LR (Wang et al. 2025)**: Blockwise LR refines learning rates per Transformer block; it demonstrates nearly linear gain addition with GradPower.
+- **vs sign-SGD / Lion (Chen et al. 2024b)**: These are essentially $p \to 0$ limits discarding all magnitude information. GradPower provides evidence that in high-noise LLM pre-training, $p$ should be $>1$ rather than $\to 0$.
+- **vs Cautious update (Liang et al. 2024) / Variance reduction (Yuan et al. 2024)**: These modify the update rule within $\mathcal{Q}$ and require re-tuning, whereas GradPower is purely external.
+- Insight: GradPower could theoretically be extended to RLHF, SFT, and fine-tuning, which also exhibit small-batch/high-noise characteristics.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The "modify $\varphi$ instead of $\mathcal{Q}$" perspective is very clear, though the power transform itself is simple and the theory relies on 1D extensions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ High coverage across architectures, scales, data, schedules, optimizers, and batch sizes, including CV verification.
-- **Writing Quality**: ⭐⭐⭐⭐ The motivation is smooth, and the noise-to-signal ratio provides a tight link between theory and experiments; however, the river-valley terminology assumes familiarity with specific recent works.
-- **Value**: ⭐⭐⭐⭐⭐ One line of code for stable gains in MoE pre-training + wsd scheduling (the modern mainstream setup) has extremely high deployment value and could become a default plugin in post-LLaMA training recipes.
+- Novelty: ⭐⭐⭐⭐ The perspective of modifying $\varphi$ rather than $\mathcal{Q}$ is clear and elegant, although the power transform form is simple and the theory relies on toy models.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across architectures, scales, data, schedules, and optimizers, including a CV validation.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is well-explained and the noise-to-signal ratio provides a consistent thread, though readers must be familiar with recent "river-valley" literature.
+- Value: ⭐⭐⭐⭐⭐ High practical value due to its "one-line code" nature and stability in MoE+wsd settings; highly likely to be adopted in post-LLaMA training recipes.
 
 <!-- RELATED:START -->
 

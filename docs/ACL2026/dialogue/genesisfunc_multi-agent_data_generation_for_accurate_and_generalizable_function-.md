@@ -2,119 +2,144 @@
 title: >-
   [Paper Note] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling
 description: >-
-  [ACL2026][Dialogue Systems][Function Calling] GenesisFunc automatically constructs high-quality function-calling training data using a reliable tool pool, multi-agent dialogue generation…
+  [ACL 2026][Dialogue Systems][Function Calling] GenesisFunc automatically constructs high-quality function-calling training data through a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. Fine-tuning Qwen3-8B on this data outperforms open-source function-calling models of equivalent scale on BFCL, API-Bank, and ACEBench, demonstr
 tags:
-  - "ACL2026"
-  - "Dialogue Systems"
-  - "Function Calling"
-  - "Multi-agent data generation"
-  - "Tool learning"
-  - "Synthetic data quality inspection"
-  - "GRPO"
+  - ACL 2026
+  - Dialogue Systems
+  - Function Calling
+  - GRPO
 date: 2026-05-08
-content_hash: 41d8387d374fd183
+content_hash: 5e15a8a03bb145ac
 ---
-
 # GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling
 
 **Conference**: ACL2026  
 **arXiv**: [2605.28835](https://arxiv.org/abs/2605.28835)  
 **Code**: https://github.com/famoustourist/GenesisFunc  
 **Area**: Agent / Function Calling / Synthetic Data  
-**Keywords**: Function Calling, Multi-agent data generation, Tool learning, Synthetic data quality inspection, GRPO  
+**Keywords**: Function Calling, Multi-agent data generation, Tool learning, Synthetic data quality check, GRPO  
 
 ## TL;DR
-GenesisFunc automatically constructs high-quality function-calling training data using a reliable tool pool, multi-agent dialogue generation, and multi-stage quality inspection. After fine-tuning Qwen3-8B, it outperforms open-source function-calling models of the same scale on BFCL, API-Bank, and ACEBench, demonstrating potential for scaling to more tools and multi-turn RL training.
+GenesisFunc automatically constructs high-quality function-calling training data through a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. Fine-tuning Qwen3-8B on this data outperforms open-source function-calling models of equivalent scale on BFCL, API-Bank, and ACEBench, demonstrating strong potential for scalability to broader toolsets and multi-turn RL training.
 
 ## Background & Motivation
-**Background**: Function calling transforms LLMs from pure text generators into agents capable of invoking external tools, serving as the foundation for workflow automation, travel planning, information retrieval, and complex task execution. Current mainstream approaches to enhance function-calling include prompting, SFT, and RL with rewards.
+**Background**: Function calling enables LLMs to evolve from pure text generators into agents capable of invoking external tools, serving as the foundation for workflow automation, travel planning, information retrieval, and complex task execution. Current mainstream approaches to enhance function-calling include prompting, SFT, and RL with feedback.
 
-**Limitations of Prior Work**: Function-calling capability highly depends on training data quality. However, real annotated data is costly, and real-world scenarios often involve ambiguous intent, multi-tool combinations, multi-turn interactions, dynamic constraints, and error handling. Existing synthesis pipelines often use manual designs or public APIs, leading to issues like unreliable tools, poor scalability, simplistic scenarios, and weak quality control, which limit generalization.
+**Limitations of Prior Work**: Function-calling capabilities are highly dependent on the quality of training data. However, real-world annotated data is costly to obtain, and practical scenarios often involve ambiguous intentions, multi-tool combinations, multi-turn interactions, dynamic constraints, and error handling. Existing synthesis pipelines often rely on manual designs or public APIs, leading to issues such as unreliable tools, poor scalability, narrow scenarios, and weak quality control, which results in limited generalization of the learned tool-use capabilities.
 
-**Key Challenge**: To train a strong function-calling model, data must be reliable, accurate, diverse, and broad in coverage. However, as the scale of automatic generation increases, issues like tool definition errors, inconsistent parameter extraction, repetitive dialogue intent, and non-executable samples become more frequent.
+**Key Challenge**: To train robust function-calling models, the data must simultaneously be reliable, accurate, diverse, and broad in coverage. However, as the scale of automatic generation increases, it becomes prone to tool definition errors, inconsistent parameter extraction, repetitive dialogue intentions, and non-executable samples.
 
-**Goal**: The authors aim to build an end-to-end automatic data generation pipeline starting from reliable tools, systematically generating single-turn, multi-turn, and special error/no-solution scenarios, while ensuring data quality through a combined automatic and manual evaluation module.
+**Goal**: The authors aim to construct an end-to-end automatic data generation pipeline that starts from a reliable tool repository to systematically generate single-turn, multi-turn, and special error/unsolvable scenarios, ensuring data quality through an integrated automatic and human evaluation module.
 
-**Key Insight**: Instead of designing synthetic APIs from scratch, GenesisFunc extracts reliable tools from mature benchmarks like BFCL, then uses a multi-agent mechanism to expand semantic scenarios, parameter slots, and dialogue forms, finally employing rule/model/human three-layer verification.
+**Key Insight**: Rather than designing synthetic APIs from scratch, GenesisFunc extracts reliable tools from mature benchmarks like BFCL. It then leverages a multi-agent mechanism to expand semantic scenarios, parameter slots, and dialogue forms, finally employing a three-layer validation process (rule/model/human) for quality assurance.
 
-**Core Idea**: Construct function-calling data via a "reliable tool pool + multi-agent generation of diverse dialogues + multi-stage quality inspection," then perform SFT/RL on small models to achieve tool-calling performance close to API models.
+**Core Idea**: Construct function-calling data using a "reliable tool pool + multi-agent generation of diverse dialogues + multi-stage quality control," and then use this data to perform SFT/RL on small-scale models to achieve tool-calling capabilities comparable to proprietary API-based models.
 
 ## Method
-GenesisFunc's method emphasizes data engineering and a quality control closed-loop. Instead of a single LLM writing samples directly, it decomposes the process into roles such as tool selection, memory, parameter selection, dialogue judgment, and posterior verification to prevent low-quality data from entering training.
+The methodology of GenesisFunc focuses on data engineering and a closed-loop quality control system. Instead of having a single LLM write tool-calling samples directly, the generation process is decomposed into roles such as tool selection, memory maintenance, function parameter selection, dialogue judging, and posterior verification to prevent low-quality synthetic data from entering training.
 
 ### Overall Architecture
-The input is a set of candidate tools, each containing a name, description, schema, and mandatory/optional parameters. The pipeline consists of three stages: 1. Build a Tool Pool of 1,000 reliable tools from BFCL; 2. Generate single-turn, multi-turn, and special-case dialogues via a multi-agent Dialogue Generation System; 3. Inspect formatting, parameters, semantic completeness, and executability using Rule Checker, Model Checker, and Human Validation. The final data is used for SFT on Qwen3-8B to obtain GenesisFunc-8B; multi-turn scenarios are further optimized using GRPO.
+The input consists of a set of candidate tools, each containing a name, description, schema, and required/optional parameters. The pipeline consists of three stages: The first stage constructs a Tool Pool of 1,000 reliable tools from BFCL; the second stage generates single-turn, multi-turn, and special-case function-calling dialogues using a Multi-Agent Dialogue Generation System; the third stage utilizes a Rule Checker, Model Checker, and Human Validation to inspect formatting, parameters, semantic completeness, and executability. The final data is used for SFT on Qwen3-8B to obtain GenesisFunc-8B, and multi-turn scenarios are further enhanced using GRPO.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Candidate Tools<br/>Name / Description / Schema / Params"] --> S1
+
+    subgraph S1["Reliable Tool Pool Construction"]
+        direction TB
+        A["Collect tools from BFCL"] --> B["GPT-4o Semantic Clustering & Deduplication"] --> C["Human Verification → 1,000 Tool Pool"]
+    end
+
+    subgraph S2["Multi-Agent Dialogue Generation"]
+        direction TB
+        D["Sample Agent<br/>Sample Target + Distractor Tools"] --> E["Memory Agent<br/>Track Semantics, Avoid Repetition"]
+        E --> F["Function Agent<br/>Select Tools + Instantiate Params"]
+        F --> G["User / Assistant Interaction<br/>call / ask / answer"]
+        G --> H["Judge Agent<br/>Select best from N=4 candidates"]
+    end
+
+    subgraph S3["Multi-Stage Evaluation"]
+        direction TB
+        I["Rule Checker<br/>Static format/param/structure check"] --> J["Model Checker<br/>GPT-4o Confidence θ=0.75"]
+        J --> K["Human Validation<br/>Manual check for low-confidence samples"]
+    end
+
+    S1 --> S2 --> S3
+    S3 --> OUT["SFT Qwen3-8B → GenesisFunc-8B<br/>Multi-turn GRPO Reinforcement"]
+```
 
 ### Key Designs
-1.  **Reliable Tool Pool Construction**:
-    - **Function**: Ensures the tool definitions for synthetic data come from trustworthy and scalable real-world scenarios.
-    - **Mechanism**: Tools are collected from the BFCL evaluation set. GPT-4o is used for semantic clustering to remove redundant or highly similar tools, followed by lightweight human verification for correctness and usability, resulting in 1,000 tools. Since BFCL covers various real tool scenarios, this pool balances reliability and domain diversity.
-    - **Design Motivation**: Many synthetic data issues stem from unreliable underlying tools or unrealistic schemas rather than unnatural dialogue. Stabilizing the tool source is foundational for subsequent generation.
 
-2.  **Multi-Agent Dialogue Generation**:
-    - **Function**: Generates diverse function-calling dialogues covering single tasks, multi-tasks, multi-turn clarifications, error handling, and tool-free responses.
-    - **Mechanism**: The framework includes Sample Agent, Memory Agent, Function Agent, and Judge Agent. The Sample Agent draws target and distractor tools; the Memory Agent tracks historical dialogues to avoid duplication; the Function Agent selects tools and instantiates optional parameter slots; and the Judge Agent selects the best sample from $N=4$ candidates per turn. Inter-agent interaction between a user agent and assistant agent generates the dialogue, where the assistant's action space includes `call`, `ask`, and `answer`.
-    - **Design Motivation**: Function-calling data requires more than a simple "user query followed by an API call." Real tasks necessitate distinguishing relevant tools, filling missing parameters, and handling multi-tool combinations; multi-agent task division incorporates both diversity and accuracy.
+**1. Reliable Tool Pool Construction: Stabilizing the tool source before dialogue generation**
 
-3.  **Multi-Stage Evaluation**:
-    - **Function**: Filters or corrects formatting errors, parameter errors, and semantic inconsistencies before training.
-    - **Mechanism**: The Rule Checker verifies tool definition integrity, call formatting, and parameter compliance without executing tools. The Model Checker uses GPT-4o for high-level faithfulness, task satisfaction, and compliance judgments, retaining samples with confidence higher than $\theta=0.75$. The error rate dropped below 5% after automatic screening, with 80% of remaining errors being parameter extraction issues; these low-confidence samples underwent human validation (totaling ~15 hours).
-    - **Design Motivation**: SFT is sensitive to noise, especially incorrect tool parameters. Multi-stage inspection combines inexpensive rules, high-level model judgment, and minimal human correction to avoid massive manual annotation costs.
+Many issues in synthetic data stem not from unnatural dialogue, but from unreliable underlying tools or schemas that are difficult to implement. GenesisFunc avoids creating APIs from scratch and instead collects tools from the BFCL evaluation set. It uses GPT-4o for semantic clustering to remove redundant or highly similar tools, followed by a round of lightweight human verification for correctness and usability, ultimately yielding a Tool Pool of 1,000 tools. Selecting BFCL as the source ensures coverage across diverse real-world tool scenarios, allowing the pool to balance reliability and domain diversity.
+
+**2. Multi-Agent Dialogue Generation: Integrating diversity and accuracy through role specialization**
+
+Real-world function calling involves more than just "user asks, model calls an API." It requires distinguishing between relevant and irrelevant tools, completing missing parameters, handling multi-tool combinations, and maintaining dialogue history. A single LLM struggle to manage all these dimensions simultaneously. Thus, generation is split among four roles: the Sample Agent selects target and distractor tools; the Memory Agent tracks historical dialogues and semantic types to avoid redundancy; the Function Agent identifies tools to resolve the request and randomly instantiates optional parameter slots; and the Judge Agent selects the best sample from $N=4$ candidate dialogues. The interaction between a user agent and an assistant agent covers actions such as `call`, `ask`, and `answer`, ensuring the data encompasses single-task, multi-task, multi-turn clarification, and error handling scenarios.
+
+**3. Multi-Stage Evaluation: Intercepting bad samples with three-layer quality control**
+
+SFT is highly sensitive to incorrect labels; wrongly labeled tool parameters can misguide the model. Quality control is applied in three layers from low to high cost: the Rule Checker performs static checks on tool definition integrity, formatting, and structural consistency; the Model Checker uses GPT-4o to assess faithfulness, task satisfaction, and compliance, retaining only samples with a confidence score above $\theta=0.75$. Finally, remaining low-confidence samples undergo human validation. This combination avoids massive manual labeling while maintaining data quality above a usable threshold.
+
+### Example Walkthrough
+
+Consider a dialogue sample: The Sample Agent selects a target tool (e.g., `book_flight`) and several distractor tools (e.g., `search_hotel`, `get_weather`) from the 1,000-tool pool to force the model to distinguish relevance. The Memory Agent checks that the semantic type "booking flight + missing departure city" has not been generated yet. The Function Agent selects `book_flight` and leaves the `departure_city` slot empty. The user agent asks to book a flight to Tokyo; the assistant agent identifies the missing parameter and uses the `ask` action for clarification instead of an premature `call`. Once the user provides the departure city, the assistant executes the `call` and finally `answer` with the result. The Judge Agent selects the best of $N=4$ candidates, and the samples undergo Rule and Model checking before entering the training set.
 
 ### Loss & Training
-The primary model GenesisFunc-8B is fine-tuned on Qwen3-8B using synthesized data, with results reported as an average of three runs. GRPO is used for the RL stage, with rewards based on formatting compliance and functional correctness. The authors leverage Qwen3-8B's thinking mode to include explicit reasoning traces in training; GenesisFunc-8B-RL(part) undergoes SFT on single-turn and special-case data before specifically applying RL to multi-turn dialogues.
+The primary model, GenesisFunc-8B, is obtained by performing SFT on Qwen3-8B using the pipeline-generated data (averaged over three runs). The RL phase utilizes GRPO, with rewards based on format compliance and function correctness. The authors also leverage Qwen3-8B's thinking mode to incorporate explicit reasoning traces. GenesisFunc-8B-RL(part) is first SFT-trained on single-turn and special-case data, followed by targeted RL on multi-turn dialogues to enhance complex interaction capabilities.
 
 ## Key Experimental Results
 
 ### Main Results
-| Dataset / Setting | Metric | GenesisFunc-8B | strong baseline / control | Gain / Conclusion |
+| Dataset / Setting | Metric | GenesisFunc-8B | Strong Baseline | Gain / Conclusion |
 |--------|------|------|----------|------|
-| BFCL Non-Live | Overall accuracy | 93.31 ± 0.42 | ToolACE-8B 91.04; Qwen3-32B 89.90 | Higher than same-scale SOTA and larger models |
-| BFCL Live | Overall accuracy | 83.78 ± 0.37 | ToolACE-8B 80.73; Qwen3-32B 81.13 | Leads in in-domain live tool settings |
+| BFCL Non-Live | Overall accuracy | 93.31 ± 0.42 | ToolACE-8B 91.04; Qwen3-32B 89.90 | Outperforms same-scale SOTA and larger models |
+| BFCL Live | Overall accuracy | 83.78 ± 0.37 | ToolACE-8B 80.73; Qwen3-32B 81.13 | Leads in in-domain live settings |
 | API-Bank | Overall accuracy | 64.79 ± 0.41 | Qwen-ToolRL-8B 60.36; ToolACE-8B 56.21 | Best among open-source methods on out-of-domain API-Bank |
-| ACEBench Normal | Overall accuracy | 73.60 ± 0.32 | Qwen-ToolRL-8B 65.10; ToolACE-8B 70.30 | Significant improvement in Normal tool-learning |
-| ACEBench Special | Overall accuracy | 83.67 ± 0.35 | Qwen-ToolRL-8B 78.67; Qwen3-8B 76.67 | Strong generalization in special cases |
-| Out-of-domain Avg | API-Bank / ACEBench | API-Bank 64.79; ACEBench ~78.64 | prior open-source SOTA | Relative improvements of 7.3% and 9.4% |
+| ACEBench Normal | Overall accuracy | 73.60 ± 0.32 | Qwen-ToolRL-8B 65.10; ToolACE-8B 70.30 | Significant improvement in normal tool-learning |
+| ACEBench Special | Overall accuracy | 83.67 ± 0.35 | Qwen-ToolRL-8B 78.67; Qwen3-8B 76.67 | Maintains strong generalization on special cases |
+| Out-of-domain Avg | API-Bank / ACEBench | API-Bank 64.79; ACEBench ~78.64 | Prior open-source SOTA | Relative improvements of 7.3% and 9.4% |
 
 ### Ablation Study
-| Configuration | Key Metrics | Explanation |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| Remove Judge Agent | BFCL Non-Live / Live decreased | Candidate judgment is vital for sample accuracy |
-| Remove Memory Agent | BFCL Non-Live / Live significantly decreased | Semantic memory and de-duplication crucial for diversity |
-| 1 / 5 / 10 dialogues per tool | Gains from 1 to 5; diminishing returns from 5 to 10 | Volume helps, but marginal utility drops after sufficient diversity |
-| No Multi-Stage Evaluation | Lower accuracy across all conditions | Rules + Model + Human verification improve data quality |
-| GenesisFunc-8B-RL(part) | Normal 75.20; Multi-Turn 70.00; Special 82.88 | Multi-turn RL significantly enhances complex interactions vs SFT |
-| GenesisFunc + ACEBench tools | BFCL 87.89; API-Bank 65.11; ACEBench 81.87 | Adding benchmark tools boosts ACEBench without obvious degradation elsewhere |
+| Remove Judge Agent | BFCL Non-Live / Live decrease | Dialogue judging is critical for sample accuracy |
+| Remove Memory Agent | BFCL Non-Live / Live decrease significantly | Memory/deduplication contributes more to scenario diversity |
+| 1 / 5 / 10 dialogues per tool | Significant gain from 1 to 5; diminishing returns from 5 to 10 | Volume helps, but marginal utility drops after reaching sufficient diversity |
+| No Multi-Stage Evaluation | Accuracy lower across all conditions | Rule + Model + Human verification improves training data quality |
+| GenesisFunc-8B-RL(part) | ACEBench Normal 75.20; Multi-Turn 70.00 | Targeted multi-turn RL significantly enhances complex interactions |
 
 ### Key Findings
-- On in-domain BFCL, GenesisFunc-8B achieved a Non-Live Overall of 93.31 and Live Overall of 83.78, narrowing the gap between small models and API models through training on high-quality aligned tool semantics.
-- On out-of-domain tasks, GenesisFunc-8B consistently outperformed same-scale models, indicating it learned generalized tool selection, parameter filling, and multi-turn patterns rather than just memorizing BFCL tools.
-- The Memory Agent acts as a "diversity controller": it tracks semantic types to guide generation toward uncovered scenarios, preventing template-based repetition.
-- Targeted RL on multi-turn scenarios (RL(part)) proved more effective than applying RL across all data (RL(all)), suggesting that complex function-calling capabilities benefit from phased training.
+- On in-domain BFCL, GenesisFunc-8B achieves 93.31 Non-Live Overall accuracy, significantly narrowing the gap between small models and API models.
+- In out-of-domain settings, GenesisFunc-8B still outperforms models of the same scale, suggesting it learns general patterns of tool selection and interaction rather than just memorizing BFCL tools.
+- The Memory Agent acts as a "diversity controller," guiding the generation toward uncovered scenarios and avoiding templated repetition.
+- Targeted RL(part) for multi-turn scenarios is more effective than full RL(all), suggesting complex function-calling capabilities may require phased training.
 
 ## Highlights & Insights
-- **Engineering-driven approach to data quality**: Reliable tool sourcing, dialogue diversity, parameter accuracy, and multi-stage verification are handled by distinct modules, making it more robust than simple prompt-based generation.
-- **Pragmatic Tool Pool selection**: Reusing reliable BFCL tools avoids building schemas from scratch and facilitates natural extension to real downstream tools.
-- **Importance of special scenarios**: Models must not only call correct tools but also know when to ask for missing info, reject mismatched tools, or answer directly. Special-case data enhances deployment stability.
-- **Clear SFT/RL boundaries**: SFT establishes basic formatting and semantic alignment, while RL(part) focuses on multi-turn reasoning and interaction, which is more controllable than universal RL.
+- **Engineering-driven synthetic data quality**: Decomposing quality issues into tool reliability, dialogue diversity, parameter accuracy, and multi-stage verification is more robust than single-prompt generation.
+- **Pragmatic Tool Pool source**: Repurposing reliable tools from BFCL avoids synthetic schema issues and facilitates natural extension to downstream tools.
+- **Importance of special scenarios**: Models must learn when to ask for clarification or refuse a request. Special-case data improves deployment stability.
+- **Clear SFT and RL boundaries**: Using SFT for basic format and semantic alignment followed by RL(part) for multi-turn reasoning is more controllable than end-to-end RL.
 
 ## Limitations & Future Work
-- While GenesisFunc-8B is strong among open-source models of its size, it remains inferior to API models like GPT-4 in general reasoning and comprehension.
-- The current training data does not fully cover highly complex, multi-turn agentic workflows with tight tool coupling; future work aims for more complex benchmarks.
-- The multi-agent and inspection stages rely on powerful models (Gemini-2.5 Pro, GPT-4o), necessitating evaluation of cost and closed-source dependencies.
-- Automatic screening still requires manual verification for low-confidence samples; although cost was low (~15h), standards may become more complex as tool pools expand.
+- While GenesisFunc-8B is strong among open-source models, it still trails behind API-based models like GPT-4 in general reasoning and comprehension.
+- Current data does not fully cover highly complex, multi-turn, and tightly coupled agentic workflows.
+- The generation and quality control phases depend on closed-source models like GPT-4o, posing costs and dependency challenges.
+- Automated screening still requires human verification for low-confidence samples; the complexity of manual auditing may increase as the tool pool expands into high-risk domains.
 
 ## Related Work & Insights
-- **vs ToolACE / APIGen / ToolForge**: These methods focus on synthetic function-calling data, but GenesisFunc emphasizes reliable tool sources, multi-agent collaboration, and closed-loop evaluation, specifically targeting parameter errors.
-- **vs prompting-based tool use**: GenesisFunc internalizes tool-calling capability into parameters via SFT/RL, providing more stability than ReAct-style prompting as tool complexity grows.
-- **vs ToolRL / AWPO**: RL methods emphasize reward optimization; GenesisFunc shows that high-quality SFT data remains a powerful baseline and that RL is best used for specific weaknesses like multi-turn interactions.
-- **Insight**: When building agent datasets, one should prioritize explicit control over tool reliability, semantic coverage, parameter distribution, and the ratio of failure/unsolvable samples over pure volume.
+- **vs ToolACE / APIGen / ToolForge**: Unlike others, GenesisFunc emphasizes reliable tool sources, multi-agent collaboration, and a closed-loop evaluation focusing on parameter error control.
+- **vs Prompting-based tool use**: GenesisFunc internalizes capabilities into model parameters via SFT/RL, providing more stability than ReAct-style prompting for complex tools.
+- **vs ToolRL / AWPO**: GenesisFunc demonstrates that high-quality SFT data remains a strong baseline, and RL should be used directionally for multi-turn weaknesses.
+- **Insight**: When building agent datasets, the focus should be on controlling tool reliability, semantic coverage, and the proportion of failure/insufficient-information samples rather than just volume.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The multi-agent generation and inspection are established concepts, but their combination for a function-calling data loop is solid.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers BFCL, API-Bank, ACEBench, ablation, tool expansion, and RL.
-- Writing Quality: ⭐⭐⭐⭐☆ The pipeline explanation is clear and experiments are well-organized. 
-- Value: ⭐⭐⭐⭐⭐ Highly practical for improving tool-calling in small models and building private tool ecosystems.
+- Novelty: ⭐⭐⭐⭐☆ (Combines existing agent concepts into a solid, effective closed-loop for function calling.)
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ (Covers standard benchmarks, ablations, and RL; some ablation figures lack precise values in the text.)
+- Writing Quality: ⭐⭐⭐⭐☆ (Clear pipeline explanation and organized experiments.)
+- Value: ⭐⭐⭐⭐⭐ (Highly practical for improving small model agent capabilities and building private tool ecosystems.)
 
 <!-- RELATED:START -->
 

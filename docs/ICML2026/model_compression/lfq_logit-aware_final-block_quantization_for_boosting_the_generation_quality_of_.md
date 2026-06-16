@@ -2,74 +2,76 @@
 title: >-
   [Paper Note] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs
 description: >-
-  [ICML 2026][Model Compression][Low-bit quantization] Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE with logit-le…
+  [ICML 2026][Model Compression][block-wise PTQ] Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE to logit-level cross-entropy loss. This aligns the token distribution of the quantized model with the full-precision model, consistently improving accuracy across gen
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Low-bit quantization"
-  - "Post-training quantization"
-  - "Cross-entropy alignment"
-  - "Generation quality"
-  - "block-wise PTQ"
+  - ICML 2026
+  - Model Compression
+  - block-wise PTQ
 date: 2026-05-08
-content_hash: 3e918a7e2b61b877
+content_hash: be59cd23e22150f5
 ---
-
 # LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.29756](https://arxiv.org/abs/2605.29756)  
 **Code**: None  
 **Area**: Model Compression  
-**Keywords**: Low-bit quantization, Post-training quantization, Cross-entropy alignment, Generation quality, block-wise PTQ  
+**Keywords**: Low-bit quantization, post-training quantization, cross-entropy alignment, generation quality, block-wise PTQ  
 
 ## TL;DR
-Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE with logit-level cross-entropy loss. This aligns the token distribution of the quantized model with the full-precision model, consistently improving accuracy across generation benchmarks such as IFEval, GSM8K, MATH500, and AIME.
+Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE to logit-level cross-entropy loss. This aligns the token distribution of the quantized model with the full-precision model, consistently improving accuracy across generation benchmarks such as IFEval, GSM8K, MATH500, and AIME.
 
 ## Background & Motivation
 
-**Background**: Low-bit weight-only PTQ (e.g., GPTQ, FlexRound, OmniQuant, Block-AP) is the mainstream approach for LLM memory compression. Block-wise PTQ minimizes the MSE between the quantized block and the full-precision block outputs iteratively, approaching full-precision baselines in language modeling (WikiText2) and understanding (MMLU) tasks.
+**Background**: Low-bit weight-only PTQ (e.g., GPTQ, FlexRound, OmniQuant, Block-AP) is the mainstream approach for LLM memory compression. Block-wise PTQ minimizes the MSE between quantized and full-precision block outputs, reaching performance near full-precision baselines on language modeling (WikiText2) and understanding (MMLU) tasks.
 
-**Limitations of Prior Work**: When evaluated on long-text generation (IFEval) and complex reasoning (MATH500, AIME), the accuracy of block-wise PTQ drops significantly. Large reasoning models (DeepSeek-R1, L1-Max) particularly rely on long chains of thought to improve task accuracy, and quantized generation trajectories tend to deviate from the correct path.
+**Limitations of Prior Work**: Accuracy drops significantly when evaluation shifts to long-text generation (IFEval) and complex reasoning (MATH500, AIME). Large reasoning models (DeepSeek-R1, L1-Max) rely on long chains of thought to improve accuracy; however, the generation trajectories of quantized models easily deviate from the correct path.
 
-**Key Challenge**: There are two root causes: (1) block-wise PTQ completely ignores the unembedding layer (LM head), while the final block output must pass through the LM head to generate token distributions; (2) even when considering the LM head, MSE minimization does not guarantee consistent token ranking. The authors provide a 2-token example clearly demonstrating that a quantization scheme with smaller MSE can predict the wrong top-1 token, while one with larger MSE preserves the correct prediction.
+**Key Challenge**: There are two root causes: (1) block-wise PTQ completely ignores the unembedding layer (LM head), yet the output of the final block must pass through the LM head to generate the token distribution; (2) even considering the LM head, MSE minimization does not guarantee consistent token ranking. The authors provide a clear 2-token example showing that a quantization scheme with lower MSE might predict the wrong top-1 token, while one with higher MSE preserves the correct prediction.
 
 **Goal**: To bring the generation quality of block-wise PTQ close to the full-precision baseline without changing the quantization scheme or inference kernels.
 
-**Key Insight**: Minimizing cross-entropy is equivalent to minimizing KL divergence, which is zero if and only if two distributions are identical. Therefore, cross-entropy aligns token probability distributions more directly than MSE.
+**Key Insight**: Minimizing cross-entropy is equivalent to minimizing KL divergence, which is zero if and only if the two distributions are identical. Thus, cross-entropy aligns token probability distributions more directly than MSE.
 
 **Core Idea**: Modify only the quantization loss of the final Transformer block—replacing MSE with logit-level cross-entropy—to align the next-token distribution of the quantized model with the full-precision model.
 
 ## Method
 
 ### Overall Architecture
-LFQ is a plug-and-play enhancement module applicable to any block-wise PTQ method. The overall pipeline remains unchanged: MSE is minimized block-by-block from the 1st to the penultimate Transformer block. The only change occurs in the final block, where the LM head is included in the forward path and cross-entropy loss replaces MSE to optimize quantization parameters. The quantized model uses the exact same packing/unpacking kernels as the original method, requiring no additional engineering adaptation.
+LFQ aims to solve the performance drop of block-wise PTQ in generation tasks by modifying only one part: from the 1st to the $(N-1)$-th Transformer block, MSE is still minimized block-wise; for the final block, the LM head is integrated into the forward path, and the loss is switched from MSE to logit-level cross-entropy. It is a plug-and-play enhancement that keeps the quantization scheme, packing/unpacking kernels, and single-GPU execution capability unchanged, allowing it to be applied on top of any block-wise PTQ method.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Full-precision LLM Weights"] --> B["Block 1 ~ N−1<br/>Block-wise activation MSE (original method)"]
+    B --> C["Final Block N (LFQ modification)<br/>Integrate LM head forward path + logit CE<br/>Align quantized and FP token distributions"]
+    C --> D["Quantized Model<br/>Next-token distribution ≈ FP, generation quality recovers"]
+    E["Plug-and-play: Applicable to FlexRound /<br/>OmniQuant / Block-AP, only changes loss"] -.->|Mounting| C
+```
 
 ### Key Designs
 
-1. **Logit-level Cross-Entropy Objective**:
+**1. Replacing the final block objective with logit cross-entropy: Direct probability alignment**
 
-    - **Function**: Transitions the quantization optimization objective of the final Transformer block from activation-space MSE to logit-space cross-entropy.
-    - **Mechanism**: For the final block, the cross-entropy $\mathcal{L}_{\text{CE}} = -\frac{1}{L}\sum_{i,j} \sigma(X W_{\text{FP}} W_{\text{Head}})_{i,j} \log \sigma(X W_q W_{\text{Head}})_{i,j}$ between full-precision logits $\sigma(X W_{\text{FP}} W_{\text{Head}})$ and quantized logits $\sigma(X W_q W_{\text{Head}})$ is calculated to directly optimize the consistency of token probability distributions.
-    - **Design Motivation**: Small MSE errors in activation space can flip top-1 token rankings after LM head projection; cross-entropy is sensitive to probability ranking and naturally protects top-k order.
+The pain point is that traditional block-wise PTQ minimizes MSE in the activation space, but small errors in activations can flip the top-1 token ranking after LM head projection. LFQ instead calculates the cross-entropy between the full-precision logit $\sigma(X W_{\text{FP}} W_{\text{Head}})$ and the quantized logit $\sigma(X W_q W_{\text{Head}})$ for the final block:
 
-2. **LM Head Inclusion in Final Block Forward Path**:
+$$\mathcal{L}_{\text{CE}} = -\frac{1}{L}\sum_{i,j} \sigma(X W_{\text{FP}} W_{\text{Head}})_{i,j} \log \sigma(X W_q W_{\text{Head}})_{i,j}$$
 
-    - **Function**: Allows the quantization optimizer to "see" the impact of the unembedding layer on the output distribution.
-    - **Mechanism**: Standard block-wise PTQ only minimizes the MSE of block output activations, completely ignoring subsequent LM head projections. LFQ fixes the LM head weights $W_{\text{Head}}$ during forward propagation (without quantizing them), making gradients aware of changes in the final token distribution.
-    - **Design Motivation**: The authors prove via counterexamples that even if the MSE of block outputs is minimized, completely opposite token predictions can occur after LM head projection.
+This is effective because cross-entropy is sensitive to probability ranking and naturally preserves top-k order, matching the requirements of generation tasks which rely on token ranking rather than absolute activation values.
 
-3. **Method-Agnostic Plug-and-Play Design**:
+**2. Integrating the LM head into the final block forward path: Making the optimizer aware of unembedding**
 
-    - **Function**: Compatible with any block-wise PTQ methods such as FlexRound, OmniQuant, and Block-AP.
-    - **Mechanism**: LFQ only replaces the loss function of the final block without changing the quantization parameterization. Whether optimizing $(s_1, S_2, s_3)$ for FlexRound, $(\gamma, \beta)$ for OmniQuant, or $(s, W_{\text{FP}})$ for Block-AP, one only needs to replace MSE with $\mathcal{L}_{\text{CE}}$.
-    - **Design Motivation**: Maintains full compatibility with the existing quantization ecosystem—same memory overhead, same inference kernels, and single-GPU execution capability.
+To calculate the logit cross-entropy, the optimizer must "see" the LM head during optimization. Standard block-wise PTQ ignores subsequent LM head projections. LFQ keeps the LM head weight $W_{\text{Head}}$ fixed during the forward pass (the head itself is not quantized), allowing gradients to propagate from the final token distribution. This step is both a carrier for the cross-entropy objective and a contributor to gains; ablation shows that merely adding the LM head while keeping MSE already improves IFEval.
+
+**3. Method-agnostic: Changing only the loss, not the parameterization**
+
+Since LFQ only replaces the loss function of the final block, it works seamlessly with different methods: optimizing $(s_1, S_2, s_3)$ for FlexRound, $(\gamma, \beta)$ for OmniQuant, or $(s, W_{\text{FP}})$ for Block-AP. This ensures zero-cost compatibility—memory overhead, inference kernels, and single-GPU feasibility remain identical to the original methods, requiring no extra adaptation during deployment.
 
 ## Key Experimental Results
 
 ### Main Results (Qwen2.5-7B-Instruct)
 
-| Method | Bits | WikiText2↓ | MMLU↑ | IFEval↑ | MATH500↑ |
+| Method | Bit | WikiText2↓ | MMLU↑ | IFEval↑ | MATH500↑ |
 |------|------|-----------|-------|---------|----------|
 | BF16 Baseline | 16 | 6.85 | 73.49 | 70.79 | 74.2 |
 | FlexRound | W4 | 7.23 | 72.50 | 69.50 | 72.6 |
@@ -91,30 +93,31 @@ LFQ is a plug-and-play enhancement module applicable to any block-wise PTQ metho
 | +LM Head+CE (LFQ) | ✓ | ✓ | **7.47** | **71.35** | **79.76** |
 
 ### Key Findings
-- LFQ consistently improves performance on generation tasks (IFEval, MATH500, AIME) without degrading performance on understanding tasks (WikiText2, MMLU).
-- Ablations show that both components (LM Head inclusion and cross-entropy loss) contribute incremental gains, with the combination providing the best effect.
-- Under W3g128 settings for the reasoning model L1-Qwen-7B-Max, LFQ recovers greedy accuracy on AIME'24 from 23.33% to 30.00% (BF16 is 46.67%), recovering nearly half of the quantization degradation.
+- LFQ consistently improves performance on generation tasks (IFEval, MATH500, AIME) while remaining stable or slightly improving on understanding tasks (WikiText2, MMLU).
+- Ablations show that both components (LM Head integration and cross-entropy loss) contribute incremental gains, with the combination performing best.
+- For the reasoning model L1-Qwen-7B-Max under W3g128 settings, LFQ recovers greedy accuracy on AIME'24 from 23.33% to 30.00% (BF16 is 46.67%), recovering nearly half of the quantization degradation.
 
 ## Highlights & Insights
-- Using a 2-token constructive counterexample intuitively proves the disconnection between MSE and token prediction consistency. This analytical approach is simple yet powerful and can be generalized to other compression scenarios requiring discrete decision consistency.
-- Changing the loss function of only the final block comprehensively improves generation quality. This minimal yet effective modification embodies the "applying the right constraints in the right place" design philosophy.
-- Analysis of the probability distribution for "aha moment" tokens (e.g., "Wait"/"But") in reasoning models reveals the overconfidence issue of quantized models at critical thinking junctures, providing a new perspective on how quantization affects chain-of-thought reasoning.
-- Validation on the MoE model Qwen3-30B-A3B shows that LFQ is equally effective for sparsely activated architectures, with AIME'25 greedy accuracy improving from 53.33% to 60.00%.
+- The use of a constructive 2-token counter-example intuitively proves the disconnect between MSE and token prediction consistency. This analytical approach is concise and powerful, potentially extending to other compression scenarios requiring discrete decision consistency.
+- Modifying the loss of only the final block achieves comprehensive improvements in generation quality. This minimal change with high impact exemplifies a design philosophy of "applying the right constraint at the right location."
+- Analysis of "aha moment" probability distributions (e.g., "Wait"/"But" tokens) in reasoning models reveals overconfidence issues in quantized models at key thinking pivots, providing a new perspective on how quantization affects chain-of-thought reasoning.
+- Validation on the MoE model Qwen3-30B-A3B demonstrates that LFQ is equally effective for sparse activation architectures, with AIME'25 greedy accuracy increasing from 53.33% to 60.00%.
 
 ## Limitations & Future Work
-- Cross-entropy calculation requires softmax over the entire vocabulary, which may increase optimization overhead when the vocabulary is very large (e.g., 150K+); the paper does not discuss this overhead.
-- Focuses only on weight-only quantization and does not explore logit alignment in activation quantization scenarios.
+- Cross-entropy calculation requires softmax over the entire vocabulary. For very large vocabularies (e.g., 150K+), this might increase optimization overhead, which the paper does not discuss.
+- The study focuses solely on weight-only quantization and does not explore the effects of logit alignment in activation quantization scenarios.
 - Future work could consider extending the cross-entropy objective to multiple trailing blocks (rather than just the last one) or combining it with temperature scaling to further control distribution alignment precision.
+- The paper did not report 2-bit results.
 
 ## Related Work & Insights
-- **vs FlexRound/OmniQuant/Block-AP**: These methods are sufficient using MSE for intermediate blocks; LFQ proves that simply switching the loss function in the last block can compensate for generation quality shortfalls.
-- **vs Knowledge Distillation QAT**: QAT performs end-to-end KL alignment across the entire model but requires massive computation. LFQ achieves similar probability alignment effects in the final block at extremely low cost.
+- **vs FlexRound/OmniQuant/Block-AP**: These methods are sufficient for intermediate blocks using MSE. LFQ proves that switching the loss function only in the final block compensates for the generation quality shortfall.
+- **vs QAT with Knowledge Distillation**: QAT performs end-to-end KL alignment across the whole model but requires heavy computation. LFQ achieves similar probability alignment effects at much lower cost by targeting only the last block.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Precise observation, simple but effective method.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 6 model families, 3 PTQ methods, two bit-widths, and multiple generation benchmarks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Constructive counterexamples and reasoning trajectory visualizations are highly persuasive.
-- Value: ⭐⭐⭐⭐ Plug-and-play, zero additional inference cost, direct practical value for LLM deployment.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 6 model families, 3 PTQ methods, 2 bit widths, and multiple generation benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ The constructive counter-example and reasoning trajectory visualizations are highly persuasive.
+- Value: ⭐⭐⭐⭐ Plug-and-play with zero extra inference cost, providing direct utility for LLM deployment.
 
 <!-- RELATED:START -->
 
@@ -124,8 +127,8 @@ LFQ is a plug-and-play enhancement module applicable to any block-wise PTQ metho
 
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
 - [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
 - [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
 - [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
 
 </div>

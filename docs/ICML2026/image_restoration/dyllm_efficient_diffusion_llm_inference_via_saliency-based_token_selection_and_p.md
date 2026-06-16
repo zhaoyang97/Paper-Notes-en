@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention
 description: >-
-  [ICML2026][Image Restoration][Diffusion Language Models] DyLLM is a training-free inference acceleration framework for Diffusion LLMs. It identifies "salient tokens" by calculating the cosine similarity of attention cont…
+  [ICML 2026][Image Restoration][Diffusion Language Model] DyLLM is a training-free inference acceleration framework for diffusion LLMs. It identifies "salient tokens" by measuring the cosine similarity of attention contexts between adjacent denoising steps. By recalculating FFN and attention only for these tokens using salient-aware approximate attention, it increases through
 tags:
-  - "ICML2026"
-  - "Image Restoration"
-  - "Diffusion Language Models"
-  - "Inference Acceleration"
-  - "Temporal Sparsity"
-  - "Salient Token Selection"
-  - "Approximate Attention"
+  - ICML 2026
+  - Image Restoration
+  - Diffusion Language Model
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: 76edbb703e1a0ea5
+content_hash: 5510eee3afa5e1d6
 ---
-
 # DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention
 
 **Conference**: ICML2026  
@@ -24,61 +20,63 @@ content_hash: 76edbb703e1a0ea5
 **Keywords**: Diffusion Language Models, Inference Acceleration, Temporal Sparsity, Salient Token Selection, Approximate Attention
 
 ## TL;DR
-DyLLM is a training-free inference acceleration framework for Diffusion LLMs. It identifies "salient tokens" by calculating the cosine similarity of attention contexts between adjacent denoising steps, recomputing FFN and attention only for these tokens. Combined with saliency-aware approximate attention, it achieves throughput gains of 7.6× and 9.6× on LLaDA and Dream, respectively, with negligible performance degradation.
+DyLLM is a training-free inference acceleration framework for diffusion LLMs. It identifies "salient tokens" by measuring the cosine similarity of attention contexts between adjacent denoising steps. By recalculating FFN and attention only for these tokens using salient-aware approximate attention, it increases throughput to 7.6× / 9.6× on LLaDA / Dream with negligible performance loss.
 
 ## Background & Motivation
 
-**Background**: Masked Diffusion Language Models (MDLM, e.g., LLaDA, Dream, Gemini Diffusion) use bidirectional attention to "fill in the blanks" for an entirely masked sequence at once. They have approached the performance of AR LLMs like Llama on benchmarks such as GSM8K and MBPP, offering the potential for parallel decoding and breaking the sequential token-by-token constraint.
+**Background**: Masked Diffusion Language Models (MDLM, e.g., LLaDA / Dream / Gemini Diffusion) utilize bidirectional attention to fill in masked sequences simultaneously. They have approached the performance of AR LLMs like Llama on benchmarks such as GSM8K and MBPP, offering potential for parallel decoding and breaking the sequential token-by-token constraint.
 
-**Limitations of Prior Work**: MDLMs recompute the **entire sequence** at each denoising step ("repeated prefill") because bidirectional attention lacks a fixed causal order, preventing incremental KV cache reuse as in AR models. Consequently, FFN dominates the computation in every step, and overall throughput is consumed by "repeated prefixes," leaving no advantage over AR decoding enhanced by vLLM.
+**Limitations of Prior Work**: MDLMs recalculate the **entire sequence** at each denoising step ("repeated prefill"). Because bidirectional attention lacks a fixed causal order, KV cache cannot be reused incrementally as in AR models. Consequently, FFN dominates the computation in every step, and the overall throughput is consumed by "repeated prefixes," providing no advantage over vLLM-optimized AR decoding.
 
-**Key Challenge**: Parallel decoding (multiple tokens per step, bidirectional attention) and cache reuse (requiring position/context stability) are inherently in conflict. Existing solutions either refresh based on fixed blocks/schedules (e.g., PrefixCache/DualCache in Fast-dLLM, dKV-Cache) or select tokens based on global thresholds (e.g., dLLM-Cache, Elastic-Cache). These do not capture the fine-grained structure where only a small number of tokens change in each layer at each step.
+**Key Challenge**: Parallel decoding (multiple tokens per step, bidirectional attention) naturally conflicts with cache reuse (which requires position/context stability). Existing solutions either refresh based on fixed blocks/schedules (e.g., PrefixCache / DualCache in Fast-dLLM, dKV-Cache) or select tokens based on global thresholds (dLLM-Cache, Elastic-Cache). These methods fail to capture the fine-grained structure where "only a few tokens in each layer change at each step."
 
-**Goal**: To reduce the FFN + Attention computation in each step from the full sequence to a **layer-adaptive and token-adaptive** small subset without retraining or modifying model weights, while maintaining generation quality.
+**Goal**: To reduce the computation of FFN + Attention from the full sequence to a **layer-adaptive and token-adaptive** small subset during each step, without retraining or modifying model weights, while maintaining generation quality.
 
-**Key Insight**: The authors plotted the distribution of cosine similarity $s_{t,l}^{(i)}$ for attention contexts $C_{t,l}^{(i)}$ between adjacent steps in LLaDA (Fig. 2). Most tokens show $s\approx 1$ across all layers, but the "tails" in deeper layers are thicker, indicating: (1) **Temporal sparsity** truly exists; (2) Sparsity **varies by layer**, with deeper layers requiring more updates. This provide a per-layer sparse selector.
+**Key Insight**: The authors plotted the distribution of cosine similarity $s_{t,l}^{(i)}$ for adjacent attention contexts $C_{t,l}^{(i)}$ in LLaDA (Fig. 2). They found: (1) most tokens have $s\approx 1$ across all layers, but the "tail" is thicker in deeper layers, indicating that **temporal sparsity** exists; (2) sparsity **varies per layer**, with deeper layers requiring more updates. This provides a natural per-layer sparse selector.
 
-**Core Idea**: Utilize the cosine similarity of attention contexts from adjacent steps as a saliency measure. Only recompute "salient tokens" for FFN and attention in each layer/step. Updates for non-salient token attention contexts are approximated as "gathering $\Delta V$ only from salient columns," thereby simultaneously exploiting sparsity in both FFN and attention.
+**Core Idea**: Use the cosine similarity of attention contexts from adjacent steps as a saliency metric. Recalculate FFN and attention only for "salient tokens" in each layer/step. Approximate the attention context update for non-salient tokens by "gathering only $\Delta V$ from salient columns," simultaneously exploiting sparsity in both FFN and attention.
 
 ## Method
 
 ### Overall Architecture
-DyLLM wraps a "Saliency Scheduler" around the standard MDLM decoding loop. For each step $t$ and each layer $l$, it performs three actions:
+DyLLM addresses the "repeated prefill" bottleneck in MDLM by wrapping the standard decoding loop with a "saliency scheduler." First, it uses the first $T_{full}=4$ full steps to fill the attention/FFN output caches for all layers. Subsequently, it enters the "Salient only" stage: for each step $t$ and layer $l$, a subset of "truly active" salient tokens $\mathcal{A}_{t,l}$ is identified where $\cos(C_t, C_{t-1}) < \tau$. FFN and attention are precisely recalculated only for this subset, while others hit the cache. This effectively migrates the "prefill → decode" paradigm of AR inference to diffusion decoding, but with a layer-adaptive and step-adaptive active set.
 
-1.  **Saliency Calculation**: For each token $i$, calculate $s_{t,l}^{(i)} = \cos(C_{t,l}^{(i)}, C_{t-1,l}^{(i)})$. Tokens below a threshold $\tau$ (0.99 for LLaDA / 0.995 for Dream) enter the salient set $\mathcal{A}_{t,l}$.
-2.  **Sparse Forwarding**: FFN is only recomputed for tokens within $\mathcal{A}_{t,l}$; others directly read from the FFN output cache. Attention is computed via a "dual-path" approach (Sec 3.3).
-3.  **Cold Start & Response-only Steps**: The first $T_{full}=4$ steps involve full computation to warm up the cache. Subsequently, most steps only feed response tokens into the model, with a full sequence including the prompt supplemented every 4 steps.
-
-Essentially, the "prefill → decode" two-stage concept is adapted for diffusion decoding: initial full steps fill the cache, followed by "Salient-only" stages.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Sequence with masks"] --> B["Warm-up: T_full=4 full steps<br/>Fill attention / FFN caches"]
+    B --> C["Layer-adaptive Salient Token Selection<br/>Tokens with cos(C_t, C_t−1) < τ enter salient set A;<br/>Non-salient tokens skip FFN and hit cache"]
+    C --> D["Salient-aware Approximate Attention<br/>Recalculate salient query rows;<br/>Non-salient queries gather only salient columns"]
+    D --> E["Response-only Step Scheduling<br/>Most steps send only response;<br/>Prompt included every 4 steps (no full refresh)"]
+    E -->|"Incomplete, next step t+1"| C
+    E -->|"All masks decoded"| F["Output generated sequence"]
+```
 
 ### Key Designs
 
-1.  **Layer-adaptive Salient Token Selection (Saliency Selection)**:
-    - **Function**: Identifies the subset of tokens $\mathcal{A}_{t,l} = \{i \mid s_{t,l}^{(i)} < \tau\}$ that truly require updating at each layer $l$ and step $t$, using the directional drift of adjacent attention contexts as a proxy.
-    - **Mechanism**: Uses the directional cosine similarity of $C_{t,l}^{(i)}$ (the result of $\text{softmax}(QK^T)V$) as the metric. Non-salient tokens reuse the FFN output cache from the previous step, skipping FFN and corresponding attention row recomputation. This is theoretically supported by Prop 3.1 (RMSNorm scale-insensitivity under linear projection) and Prop 3.2 (FFN input perturbation upper bound $\delta \le \kappa(W_o)\sqrt{2(1-s_{t,l})}$), ensuring near-zero error as $s\to 1$.
-    - **Design Motivation**: Sparsity varies significantly across layers (near 1 in early layers, thicker tails in deep layers). Fixed-threshold methods like dLLM-Cache/Fast-dLLM either waste computation or over-prune. Per-layer thresholding naturally allows aggressive pruning in early layers and automatic conservation in deep layers, distributing the "error budget" layer-wise.
+**1. Layer-adaptive Salient Token Selection: Contextual drift as a proxy**
 
-2.  **Saliency-aware Approximate Attention**:
-    - **Function**: Decomposes attention updates into "exact calculation for salient rows + approximation using salient columns for non-salient rows," compressing complexity from $O(N^2 d)$ to $O(N \cdot |\mathcal{A}_{t,l-1}| d)$.
-    - **Mechanism**: Expands context increments as $\Delta C_{t,l} = S_{t,l}\Delta V_{t,l} + (\Delta S) V_{t-1,l}$. For salient queries $i\in\mathcal{A}_{t,l-1}$, the full attention row is recomputed (row-sparse path). For non-salient queries, $\Delta S^{(i,\cdot)}\approx 0$, so the update simplifies to $\Delta C_{t,l}^{(i)} \approx S_{t,l}^{(i,\cdot)} \Delta V_{t,l}$. Since $\Delta V_{t,l}$ is non-zero only in salient columns, one only needs to gather attention scores from salient columns (column-sparse path).
-    - **Design Motivation**: Skipping FFN alone is insufficient given the quadratic overhead of attention. This decomposition allows the salient set to determine both which query rows are recomputed and which KV columns are aggregated. Attention and FFN share the same sparsity mask, facilitating implementation in a FlashAttention-like fused kernel.
+To solve the issue of fixed thresholds causing waste or mis-pruning, DyLLM calculates the cosine similarity $s_{t,l}^{(i)}=\cos(C_{t,l}^{(i)},C_{t-1,l}^{(i)})$ between the attention context $C_{t,l}^{(i)}$ (the result of $\mathrm{softmax}(QK^T)V$) and the previous step. Tokens with $s_{t,l}^{(i)}<\tau$ form the salient set $\mathcal{A}_{t,l}=\{i\mid s_{t,l}^{(i)}<\tau\}$, where $\tau$ is 0.99 (LLaDA) or 0.995 (Dream). Non-salient tokens skip FFN calculation and reuse the cached FFN output. The validity of skipping FFN when the direction is stable is supported by: Prop 3.1, which shows RMSNorm is scale-insensitive under linear projection; and Prop 3.2, which provides an upper bound for FFN input perturbation $\delta\le\kappa(W_o)\sqrt{2(1-s_{t,l})}$—as $s\to 1$, the error of skipping FFN approaches zero. Using a per-layer threshold naturally allows aggressive pruning in early layers and conservative updates in deeper layers, distributing the "error budget" across layers.
 
-3.  **Response-only Step Scheduling**:
-    - **Function**: Leverages the locality bias from RoPE's relative distance decay, causing salient tokens to cluster in the response segment. Prompt tokens are included only every fixed number of steps (every 4 steps in this paper).
-    - **Mechanism**: Unlike prior cache works (dKV-Cache / Fast-dLLM) which utilize a rigid "full token refresh" cycle that drags throughput back to baseline, DyLLM avoids full refreshes. Even when prompts are included, computation remains sparse based on the salient set; the stable prompt context almost entirely hits the cache.
-    - **Design Motivation**: This removes the primary bottleneck of prior work—"periodic full refreshes"—allowing DyLLM to maintain linear gains as $n_u$ (number of parallel tokens) increases.
+**2. Salient-aware Approximate Attention: Dual path row + column sparsity**
+
+Reducing FFN is insufficient given the $O(N^2 d)$ overhead of attention. DyLLM decomposes context increments into $\Delta C_{t,l}=S_{t,l}\Delta V_{t,l}+(\Delta S)V_{t-1,l}$. For salient queries $i\in\mathcal{A}_{t,l-1}$, the full row is recalculated (row-sparse path). For non-salient queries, the attention scores remain nearly constant ($\Delta S^{(i,\cdot)}\approx 0$), so the update simplifies to $\Delta C_{t,l}^{(i)}\approx S_{t,l}^{(i,\cdot)}\Delta V_{t,l}$. Since $\Delta V_{t,l}$ is non-zero only for salient columns, it only needs to gather attention scores from salient columns (column-sparse path). This reduces overall complexity to $O(N\cdot|\mathcal{A}_{t,l-1}|d)$. Crucially, the same salient set determines both "which rows to recalculate" and "which KV columns to aggregate," allowing for a unified sparse mask implemented in a FlashAttention-like fused kernel.
+
+**3. Response-only Step Scheduling: Eliminating periodic full refreshes**
+
+Existing cache methods (dKV-Cache / Fast-dLLM / dLLM-Cache) rely on "full token refresh" cycles, which drop throughput back to baseline levels during refresh steps. Leveraging the locality bias of RoPE—where salient tokens tend to concentrate in the response section—DyLLM feeds only response tokens into the model for most steps. Every 4 steps, it includes the prompt; however, even then, it uses the salient set to compute sparsely. Since the prompt context is stable and mostly hits the cache, there are no traditional "full refresh" steps. This removes the main bottleneck of prior work where throughput would plummet as the number of parallel tokens $n_u$ increased.
 
 ### Loss & Training
-Completely training-free with no fine-tuning or extra loss. Hyperparameters include only the saliency threshold $\tau$ (model-dependent, task-agnostic) and initial full steps $T_{full}=4$. Custom sparse attention/cache kernels (FlashAttention-like fused design) were written in CUDA to avoid the high overhead of native PyTorch sparse operators for fine-grained token sparsity.
+Completely training-free, requiring no fine-tuning or extra loss. Hyperparameters include only the saliency threshold $\tau$ (model-dependent, task-agnostic) and initial full steps $T_{full}=4$. In implementation, custom CUDA kernels for sparse attention and caching were developed, as native PyTorch sparse operators are too overhead-heavy for fine-grained token sparsity.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on LLaDA 8B Instruct / Dream 7B Instruct with $n_u=1$ on a single H100 80GB PCIe card. Comparisons against Original / Fast-dLLM (Prefix & Dual) / dLLM-Cache (Throughput unit: tokens/s):
+On LLaDA 8B Instruct / Dream 7B Instruct with $n_u=1$ using a single H100 80GB PCIe card. Throughput is in tokens/s:
 
-| Model | Bench | Original (acc / tput) | DyLLM (acc / tput / speedup) | Fast-dLLM Dual | dLLM-Cache |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Bench | Original (acc / tput) | DyLLM Best (acc / tput / speedup) | Fast-dLLM Dual | dLLM-Cache |
+|------|-------|----------------------|----------------------------------|----------------|------------|
 | LLaDA 8B | GSM8K | 77.79 / 11.47 | **79.08 / 87.21 / ×7.60** | 78.24 / 75.24 (×6.56) | 77.18 / 36.77 (×3.21) |
 | LLaDA 8B | MATH | 33.22 / 15.81 | **38.68 / 96.98 / ×6.13** | 32.36 / 93.26 (×5.90) | 24.70 / 36.56 (×2.31) |
 | LLaDA 8B | MBPP | 29.20 / 33.11 | **30.00 / 169.62 / ×5.12** | 25.40 / 165.44 (×5.00) | 29.00 / 93.04 (×2.81) |
@@ -86,48 +84,48 @@ Evaluated on LLaDA 8B Instruct / Dream 7B Instruct with $n_u=1$ on a single H100
 | Dream 7B | MATH | 37.60 / 17.64 | **45.12 / 130.57 / ×7.40** | 36.06 / 191.56 (×10.86) | 44.98 / 48.76 (×2.76) |
 | Dream 7B | MMLU-Pro | 47.94 / 12.60 | 47.45 / 83.10 / ×6.60 | 46.73 / 128.52 (×10.20) | 49.30 / 27.19 (×2.16) |
 
-Note: Fast-dLLM DualCache achieves higher throughput on Dream but accuracy on GSM8K drops to 68.39 (−7.2 acc) due to periodic full refreshes and block-cache mis-pruning. DyLLM consistently leads dLLM-Cache in throughput by 2.16–3.67× while maintaining accuracy.
+Note: Fast-dLLM DualCache has higher throughput on Dream but experiences a significant drop in GSM8K accuracy (68.39, −7.2), a cost of its periodic full refreshes and block-level mis-pruning. DyLLM consistently leads dLLM-Cache by 2.16–3.67× throughput while maintaining accuracy.
 
 ### Ablation Study
 
 | Config (LLaDA, GSM8K) | Acc | Description |
-| :--- | :--- | :--- |
+|--------------------|-----|------|
 | Original | 77.79 | Baseline |
-| Salient-only FFN (τ=0.995) | 78.09 | FFN skip by saliency only; full attention |
+| Salient-only FFN (τ=0.995) | 78.09 | FFN skipped based on saliency; full attention | 
 | Salient + Approx. (τ=0.995) | 78.01 | Full DyLLM (FFN + Approx. attention) |
-| τ=0.99 | 79.08 | Aggressive threshold; accuracy increases (softmax noise suppression) |
-| τ=0.985 | 78.62 | Lower threshold starts to show slight accuracy drop |
+| τ=0.99 | 79.08 | More aggressive threshold improves accuracy (suppresses softmax noise) |
+| τ=0.985 | 78.62 | Performance begins to drop with lower thresholds |
 
-When combined with confidence-aware parallel decoding: DyLLM (τ=0.9975) increases average $n_u$ to **3.92** with 77.10 acc, whereas Fast-dLLM Dual achieves $n_u=3.68$ but with acc dropping to 67.85. This proves that sparse updates and parallel decoding are compatible, provided salient tokens are precisely updated.
+Combined with confidence-aware parallel decoding (Tab 3, Dream GSM8K): DyLLM (τ=0.9975) achieves an average $n_u$ of **3.92** with 77.10 acc, while Fast-dLLM Dual achieves $n_u=3.68$ but acc drops to 67.85. This proves sparse updates do not conflict with parallel decoding.
 
 ### Key Findings
-- **"Passive Denoising" of Softmax Noise**: Lower thresholds (τ=0.99) slightly improve accuracy. The authors attribute this to the fact that softmax always assigns positive weights to all tokens; as sequences lengthen, the cumulative contribution of low-relevance tokens introduces noise. DyLLM explicitly truncates these based on saliency, acting as an implicit regularizer.
-- **Greater Benefits from GQA**: Dream uses GQA, making attention relatively cheap while FFN accounts for 70%+ of runtime. DyLLM's FFN sparsity targets this primary workload, leading to nearly 2× higher speedups on Dream compared to LLaDA.
-- **$n_u$ Scalability as a Killer Feature**: Fast-dLLM must perform a full refresh every $B=32$ steps. As $n_u$ increases, the refresh frequency rises, and throughput degrades. DyLLM has no full refresh steps, allowing the throughput slope to remain steeper as $n_u\in\{1,2,4\}$.
-- **τ is Model-dependent, Task-agnostic**: The threshold only needs tuning once per model (LLaDA=0.99 / Dream=0.995) and generalizes across GSM8K, MBPP, MATH, and MMLU-Pro.
+- **"Passive Denoising" of Softmax Noise**: Aggressive thresholds (τ=0.99) slightly increase accuracy. The authors attribute this to the fact that softmax always assigns positive weights; as sequences lengthen, cumulative contributions from low-relevance tokens introduce noise. DyLLM explicitly truncates these via saliency, acting as an implicit sparse attention regularizer.
+- **GQA Amplifies Gains**: Dream uses GQA, which makes attention cheaper relative to FFN (70%+ of runtime). DyLLM's FFN sparsity targets this main component, leading to nearly 2× the speedup seen in LLaDA.
+- **$n_u$ Scalability as the Killer Feature**: Prior works require full refreshes every $B$ steps, where cost scales with $n_u$. DyLLM has no full refresh steps, maintaining near-linear acceleration gains as $n_u\in\{1,2,4\}$.
+- **$\tau$ is Model-dependent, Task-agnostic**: Only one calibration per model is needed (LLaDA=0.99 / Dream=0.995), generalizing across all benchmarks.
 
 ## Highlights & Insights
-- Reconceptualizes "Diffusion LLM acceleration" from an engineering perspective of KV/activation caching to a more physical perspective of "updating only the tokens that are truly moving" at each layer and step. The saliency measure (attention context cosine similarity) is simple and provable (Prop 3.2).
-- **A single sparsity mask drives both FFN skipping and dual-path attention.** This converges sparse patterns into one mask, enabling efficient implementation in FlashAttention-like fused kernels. This "shared active set" idea can be migrated to any iterative model with sequence-wide recomputation (e.g., multi-step refinement in image diffusion or world models).
-- Solves the "Achilles' heel" of cache-based methods—performance degradation during $n_u$ increases due to full refreshes. This observation is valuable for any work combining parallel decoding with caching.
+- Reconceptualizes "accelerating diffusion LLM" from an engineering view (caching KV/activations) to a physical essence view (updating only tokens that are truly "moving").
+- **A single sparse mask drives both FFN skipping and dual-path attention**, enabling efficient implementation via FlashAttention-like fused kernels. This "shared active set" can migrate to any iterative refinement model (e.g., image diffusion).
+- Identifies and eliminates "full refresh" as the Achilles' heel of cache-based methods during parallel decoding.
 
 ## Limitations & Future Work
-- **Extra Memory Overhead**: Requires storing attention output and FFN output caches in addition to KV cache. Memory expands by factor of approx $(2d/g + 2d)/(2d/g)$. While manageable for small batches, this may stress VRAM in large-batch or edge deployments.
-- **$\tau$ requires per-model calibration**: Although task-agnostic, changing models (e.g., Gemini Diffusion) requires re-scanning $\tau$. There is a lack of automatic or layer-adaptive thresholding mechanisms.
-- **Dependence on Temporal Sparsity**: Benefits may diminish in early denoising steps or for models where sparsity is less pronounced.
-- **Online Serving Scenarios**: All results are offline batched on H100s. Variable batch sizes, prefill/decode decoupling, and KV cache reuse across requests remain open questions.
+- **Memory Overhead**: Requires storing attention and FFN output caches in addition to KV cache, expanding memory usage by roughly $(2d/g + 2d)/(2d/g)$ (where $g$ is GQA head count). This may affect ultra-large batch inference.
+- **$\tau$ Calibration**: While task-agnostic, new models require a threshold sweep; lacks an automated or layer-adaptive mechanism for setting $\tau$.
+- **Dependency on Temporal Sparsity**: Gains might diminish in early denoising steps or if future MDLMs use sampling strategies that flatten the $s_{t,l}$ distribution.
+- **Online Serving**: Experiments were batched offline on H100; integration into production stacks like vLLM (involving variable batch sizes and KV cache sharing) remains an open problem.
 
 ## Related Work & Insights
-- **vs. Fast-dLLM**: Fast-dLLM uses fixed block caching and periodic full refreshes, which can ignore important tokens and hurt throughput. DyLLM uses per-layer/step adaptive active sets with **no full refreshes**, offering superior $n_u$ scalability.
-- **vs. dKV-Cache**: dKV-Cache uses a time-windowed cache without token-level selectivity. DyLLM is sparse in both token and layer dimensions.
-- **vs. dLLM-Cache / Elastic-Cache**: Both use activation similarity for token selection but rely on global thresholds requiring per-model/dataset tuning. DyLLM is faster (2.16–3.67×) and generalizes across tasks better.
-- **vs. Sparse Attention**: Traditional sparse attention focuses on "which KV columns to attend to"; DyLLM focuses on "which query rows are actually changing," which is better suited for the iterative refinement paradigm of diffusion models.
+- **vs Fast-dLLM**: Fast-dLLM uses fixed block caching and periodic full refreshes. DyLLM uses per-layer adaptive active sets and **eliminates full refreshes**, providing much better $n_u$ scalability.
+- **vs dKV-Cache**: dKV-Cache is a "time-window" cache without token-wise selectivity; DyLLM is sparse in both token and layer dimensions.
+- **vs dLLM-Cache / Elastic-Cache**: These use global thresholds requiring per-task tuning. DyLLM is 2.16–3.67× faster and more robust across tasks.
+- **vs Classical Sparse Attention**: While classics focus on "which KV columns to attend to," DyLLM focuses on "which query rows are changing," which is more suited for the "repeated refinement" nature of diffusion.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐ Saliency in diffusion LLMs isn't entirely new, but the unified application to FFN and dual-path attention with a formal error bound (Prop 3.2) is a solid combinatorial innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 benchmarks, 2 models, 3 baselines, and extensive ablation (thresholds, $nu$, parallel decoding, layer distributions). Lacks B200 or multi-node production deployment tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic chain (Observation → Metric → Proposition → Method → Experiment).
+- Value: ⭐⭐⭐⭐⭐ Critical for the "AR vs Diffusion" debate. Achieving 7.6–9.6× throughput training-free and scale-friendly is a significant contribution to the diffusion LLM ecosystem.
 
 <!-- RELATED:START -->
 
@@ -137,9 +135,9 @@ When combined with confidence-aware parallel decoding: DyLLM (τ=0.9975) increas
 
 - [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
 - [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
+- [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
 - [\[ICML 2026\] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs](dapd_dependency-aware_parallel_decoding_via_attention_for_diffusion_llms.md)
 - [\[ICLR 2026\] Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes](../../ICLR2026/image_restoration/beyond_scattered_acceptance_fast_and_coherent_inference_for_dlms_via_longest_sta.md)
-- [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 
 </div>
 

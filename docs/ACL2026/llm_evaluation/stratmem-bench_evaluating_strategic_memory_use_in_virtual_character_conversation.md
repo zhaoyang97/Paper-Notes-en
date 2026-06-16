@@ -2,18 +2,14 @@
 title: >-
   [Paper Note] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall
 description: >-
-  [ACL2026][LLM Evaluation][strategic memory use] StratMem-Bench categorizes memories in virtual character conversations into three types: must, nice…
+  [ACL 2026][LLM Evaluation][strategic memory use] StratMem-Bench categorizes memories in virtual character conversations into three types: must, nice, and irr. It evaluates whether a model can actively incorporate beneficial memories and suppress irrelevant ones while ensuring factual requirements are met. The results reveal that current strong LLMs remain significant
 tags:
-  - "ACL2026"
-  - "LLM Evaluation"
-  - "strategic memory use"
-  - "virtual characters"
-  - "long-term conversation"
-  - "memory selection"
+  - ACL 2026
+  - LLM Evaluation
+  - strategic memory use
 date: 2026-05-08
-content_hash: 324a2842b04d1f1c
+content_hash: dca60f26bb593898
 ---
-
 # StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall
 
 **Conference**: ACL2026  
@@ -23,66 +19,57 @@ content_hash: 324a2842b04d1f1c
 **Keywords**: strategic memory use, virtual characters, long-term conversation, memory selection, LLM evaluation
 
 ## TL;DR
-StratMem-Bench categorizes memories in virtual character conversations into three types: must, nice, and irr. It evaluates whether models can actively incorporate beneficial memories and suppress irrelevant ones while meeting factual requirements. It reveals that current powerful LLMs remain significantly unstable in "supportive memory selection."
+StratMem-Bench categorizes memories in virtual character conversations into three types: must, nice, and irr. It evaluates whether a model can actively incorporate beneficial memories and suppress irrelevant ones while ensuring factual requirements are met. The results reveal that current strong LLMs remain significantly unstable in "supportive memory selection."
 
 ## Background & Motivation
-**Background**: Long-term conversation and virtual character systems typically equip models with external memory, allowing characters to remember past experiences, user preferences, and personas. Most existing benchmarks assess factual recall, i.e., whether relevant facts are retrieved and reflected in the response.
+**Background**: Long-term conversation and virtual character systems typically equip models with external memory, allowing characters to remember past experiences, user preferences, and personas. Most existing benchmarks evaluate factual recall—specifically, whether relevant facts are retrieved and reflected in the response.
 
-**Limitations of Prior Work**: Human memory usage in conversation is not a case of "the more, the better." Some memories are mandatory for answering a question, some merely make the response more natural, empathetic, or personalized, and others, though present in the memory bank, should not be mentioned in the current scenario. If benchmarks only focus on fact recall, they fail to measure this selection capability.
+**Limitations of Prior Work**: Memory usage in human conversation is not "the more, the better." Some memories are essential for answering questions (must), some simply make the response more natural, empathetic, or personalized (nice), and others, despite being in the memory bank, should not be mentioned in the current context (irr). If a benchmark only assesses factual recall, it fails to measure this selective capability.
 
-**Key Challenge**: Virtual characters must be proactive and thoughtful like real humans without forcing irrelevant personal matters into the conversation. Models need a dynamic balance between proactivity and risk aversion.
+**Key Challenge**: Virtual characters must be as proactive and thoughtful as real humans without awkwardly forcing irrelevant personal details into the response. Models need to reach a dynamic balance between proactivity and risk aversion.
 
-**Goal**: Construct an evaluation set that explicitly distinguishes between required, supportive, and irrelevant memories, and design metrics to measure whether a model "uses all that is required, uses helpful ones moderately, and avoids what is not needed."
+**Goal**: To construct an evaluation set that explicitly distinguishes between required, supportive, and irrelevant memories, and to design metrics that measure whether a model "uses all that should be used, uses optional ones appropriately, and avoids what should not be used."
 
-**Key Insight**: Drawing from Gricean Maxims, the paper maps "must" memories to factual correctness, "nice" memories to appropriate information quantity and social coherence, and "irr" memories to violations of relevance.
+**Key Insight**: Drawing inspiration from Gricean Maxims, the paper maps "must" memories to factual correctness, "nice" memories to appropriate information quantity and social coherence, and "irr" memories to relevance violations.
 
-**Core Idea**: Reformulate memory from a static fact repository into dynamic conversational resources, evaluating the model's functional judgment of each memory under the current query, persona, and history.
+**Core Idea**: Transform memory from a static fact repository into a dynamic resource in conversation, evaluating the model's functional judgment of each memory based on the current query, persona, and history.
 
 ## Method
-The task in StratMem-Bench is conditional response generation. Each sample contains conversation history, a current user query, a character persona, and an unlabeled memory pool. The model does not see the must, nice, or irr labels and must judge for itself which memories contribute functionally to the current response.
 
 ### Overall Architecture
-Data is derived from the LoCoMo multi-session virtual character dialogue dataset. The authors extract memory pools and personas from earlier sessions and use subsequent sessions as current conversation history to generate a current user query. This ensures that memories originate from the past and responses occur later, preventing temporal leakage.
 
-Each memory is labeled into three categories based on its functional role for the current query. **Must** is memory essential for response correctness; **nice** is not required for correctness but enhances personalization, empathy, or social coherence; **irr** (irrelevant) is unrelated to the current dialogue goal and would be off-topic or abrupt if used.
-
-The labeling process begins with initial tags generated by GPT-5.1, followed by review and discussion by multiple human experts. The authors report a Fleiss' kappa of 0.81 among three annotators before expert discussion, indicating that while category division involves subjectivity, the agreement is relatively stable.
+StratMem-Bench models strategic memory usage as a conditional response generation task: for each sample, the model is provided with a conversation history, the current user query, a character persona, and a pool of unlabeled memories. The model sees no labels and must independently determine which memories functionally contribute to the current response to generate a single-turn reply. Data is sourced from LoCoMo’s multi-session virtual character dialogues—the authors extract memory pools and personas from earlier sessions and use subsequent sessions as the current conversation history, generating a new user query. This ensures memories originate from the past while responses occur later, avoiding temporal leakage. The core of the evaluation is measuring the model's ability to "use all required, use supportive ones appropriately, and avoid irrelevant ones."
 
 ### Key Designs
-1.  **Instance-level Labeling of Three Memory Roles**:
-    - **Function**: Allows the same memory to hold different roles under different queries.
-    - **Mechanism**: Labels are determined by the memory's functional contribution to the current dialogue goal rather than keyword overlap. For example, "moving to a new city" is a "must" when asking for an address, a "nice" when asking about recent life, and "irr" when asking about music preferences.
-    - **Design Motivation**: Memory usage for virtual characters is essentially a contextual decision. Categorizing memory as fixedly relevant or irrelevant ignores changes in dialogue goals.
 
-2.  **Strict Memory Compliance (SMC)**:
-    - **Function**: Uses hard constraints to measure if the model satisfies basic requirements of strategic memory use.
-    - **Mechanism**: "must-only" samples require all musts to be used and irr to be excluded; "nice-only" requires at least one nice and no irr; "must+nice" requires all musts, at least one nice, and no irr.
-    - **Design Motivation**: Traditional average quality scores can mask severe errors. SMC converts strategic selection into a pass/fail metric to identify bottlenecks in memory selection.
+**1. Instance-level labeling of three memory roles: Allowing the same memory to change roles based on the query**
 
-3.  **MIQ, PES, and CIR Behavioral Profiling**:
-    - **Function**: Decouples "choosing the right memory" from "using the memory well."
-    - **Mechanism**: MIQ (Memory Integration Quality) uses a 1-5 scale to evaluate if selected memories blend naturally; PES (Proactive Enrichment Score) measures proactivity in using nice memories when available; CIR (Irrelevant Citation Rate) measures the ratio of irr memories mistakenly used when nice memories are present.
-    - **Design Motivation**: Some models are conservative (low CIR but insufficiently rich responses); others are proactive (high PES but prone to introducing irrelevant memory). Analyzing both is necessary to describe true behavior.
+Fixing a memory as "relevant" or "irrelevant" ignores the shifting goals of conversation; memory use in real characters is essentially a contextual decision. StratMem-Bench does not label based on keyword overlap but rather on the functional contribution of the memory to the current conversation goal. Each memory is categorized under the current query into three types: *must* (essential for factual correctness), *nice* (not essential for correctness but enhances personalization, empathy, or social coherence), and *irr* (irrelevant to the current goal, potentially causing tangents or abruptness). For example, "moving to a new city" is a *must* when asked for an address, a *nice* when asked how things are going, and an *irr* when asked about music preferences. Labeling was initialized by GPT-5.1 and reviewed by human experts, achieving a Fleiss' kappa of 0.81 before discussion, indicating stable agreement despite the inherent subjectivity.
 
-### Loss & Training
-As this is a benchmark paper, no new models were trained. During evaluation, all models use a uniform instruction template, inputting the persona, history, query, and unlabeled memory pool to generate a single-turn response in a zero-shot manner. Samples with excessive nice memories are downsampled to two nice memories to reduce the probability of hitting a nice memory by chance.
+**2. Strict Memory Compliance (SMC): Compressing strategic memory use into pass/fail**
 
-Automated evaluation is performed by DeepSeek-V3.2. Memory usage detection requires the evaluator to cite specific evidence from the response and utilizes majority voting across three samples; it achieved a Cohen's kappa of 0.96 with human experts on 1,130 memory-response pairs. MIQ achieved a Cohen's kappa of 0.69 against 300 human-annotated responses.
+Traditional average quality scores can dilute serious errors like "omitting essential memories" or "misusing irrelevant ones," obscuring bottlenecks in memory selection. SMC utilizes hard rules to characterize basic constraints: *must-only* samples require all *must* memories to be used and zero *irr* memories; *nice-only* requires at least one *nice* memory and zero *irr*; *must+nice* requires all *must* memories, at least one *nice*, and zero *irr*. By converting strategic choices into binary pass/fail determinations, hard failures in memory selection are exposed rather than masked by linguistic quality scores.
+
+**3. MIQ, PES, and CIR Behavioral Profiling: Separating "selecting the right memory" from "using memory well"**
+
+An aggregate score cannot explain why a model fails—some are conservative with dry responses, others are aggressive, inserting irrelevant memories. This paper uses three metrics for profiling: *MIQ* (1–5 scale) evaluates whether selected memories are integrated naturally, measuring "usage quality"; *PES* measures whether the model actively enriches responses when *nice* memories are available, characterizing proactivity; *CIR* measures the proportion of *irr* memories misused when *nice* memories are present, characterizing risk aversion. Since *PES* and *CIR* often involve a trade-off, they must be viewed together to distinguish between "too cold" and "too talkative" failure modes.
+
+This is a benchmark paper and does not train new models. During evaluation, all models use a unified instruction template. Automatic evaluation is performed by DeepSeek-V3.2. Memory usage detection requires the evaluator to cite specific evidence from the response and utilize majority voting across three samples. This achieved a Cohen's kappa of 0.96 with human experts on 1,130 memory-response pairs, while the MIQ achieved a Cohen's kappa of 0.69 against 300 human-annotated responses.
 
 ## Key Experimental Results
 
 ### Main Results
-The dataset contains 657 samples. The "must+nice" scenario constitutes the majority and represents the difficult setting closest to real character dialogue.
+The dataset consists of 657 samples, with *must+nice* scenarios being the majority and representing the most difficult setting for realistic character dialogue.
 
-| Scenario | Samples | Avg. Memory Count | Avg. Words per Memory | Evaluation Meaning |
-| :--- | :--- | :--- | :--- | :--- |
-| must-only | 50 | 6.24 | 9.53 | Satisfy necessary facts and suppress irrelevant ones |
-| nice-only | 132 | 9.12 | 10.09 | No hard factual needs; tests proactive enrichment |
-| must+nice | 475 | 8.97 | 9.75 | Satisfy facts, enrichment, and suppression simultaneously |
-| Overall | 657 | 8.79 | 9.81 | Full-scale evaluation |
+| Scenario | Samples | Avg. Memories | Avg. Words/Mem | Eval Meaning |
+|------|--------|--------------|------------------|----------|
+| must-only | 50 | 6.24 | 9.53 | Satisfy essential memory & suppress irr |
+| nice-only | 132 | 9.12 | 10.09 | No hard factual need, test active enrichment |
+| must+nice | 475 | 8.97 | 9.75 | Satisfy facts, enrichment, and suppression |
+| Overall | 657 | 8.79 | 9.81 | Full evaluation |
 
 | Model | SMC must-only | SMC nice-only | SMC must+nice | SMC All | MIQ All on pass |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|---------------|---------------|---------------|---------|-----------------|
 | GPT-5.2 | 88.00 | 57.58 | 41.89 | 48.55 | 4.45 |
 | GPT-5-chat | 90.00 | 46.21 | 41.68 | 46.27 | 4.56 |
 | Claude Sonnet 4.5 | 90.00 | 53.03 | 46.95 | 51.45 | 4.37 |
@@ -90,13 +77,13 @@ The dataset contains 657 samples. The "must+nice" scenario constitutes the major
 | DeepSeek-reasoner | 76.00 | 48.48 | 39.16 | 43.84 | 4.12 |
 | Qwen3-235B | 92.45 | 46.56 | 42.28 | 47.18 | 4.24 |
 
-Powerful models generally achieve 76%-92% SMC on "must-only" but show a significant decline on "nice-only" and "must+nice." This indicates that models can handle "mandatory facts" but struggle to judge "supportive memories that could enhance the dialogue."
+Strong models generally achieve 76%-92% SMC on *must-only*, but performance drops significantly on *nice-only* and *must+nice*. This suggests that while models can handle "essential facts," they struggle to judge "supportive memories that could enhance the dialogue."
 
 ### Ablation Study
-This paper does not feature model architecture ablations but provides a behavioral dimension decomposition, which serves as an evaluation diagnostic chart.
+While there is no architectural ablation, the paper provides a decomposition of behavioral dimensions, serving as a diagnostic table for the evaluation.
 
 | Model | must-used MIQ | nice-used MIQ | irr-used MIQ | PES All | CIR All |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|---------------|---------------|--------------|---------|---------|
 | GPT-5.2 | 4.48 | 4.22 | 2.99 | 56.01 | 13.01 |
 | GPT-5-chat | 4.55 | 4.38 | 2.81 | 51.91 | 7.91 |
 | Claude Sonnet 4.5 | 4.36 | 4.18 | 3.05 | 62.48 | 15.82 |
@@ -105,38 +92,42 @@ This paper does not feature model architecture ablations but provides a behavior
 | Qwen3-Max | 4.14 | 4.04 | 2.64 | 57.76 | 19.77 |
 
 ### Key Findings
-- Once a "must" memory is correctly selected, MIQ is usually high, indicating the current bottleneck is "which memories to select" rather than linguistic expression.
-- "Nice" memories incur an enrichment tax: nice-used MIQ is typically about 0.2 lower than must-used MIQ, suggesting that extra personalized information is prone to being integrated awkwardly or tenuously.
-- "Irr" memories cause a collapse in quality; irr-used MIQ scores mostly fall between 2.6-3.1, showing that irrelevant memories not only deviate from the topic but also damage character response coherence.
-- A clear trade-off exists between PES and CIR. GPT-5-chat has the lowest CIR (~7.91) but is more conservative in PES; Gemini 3 Pro has the highest PES (~73.33) but its CIR reaches 31.96, showing proactivity carries a higher risk of irrelevant memory intrusion.
+- Once a *must* memory is correctly selected, the MIQ is typically high, indicating the bottleneck lies in "which memory to select" rather than linguistic expression.
+- *Nice* memories incur an "enrichment tax": nice-used MIQ is usually ~0.2 lower than must-used MIQ, suggesting that additional personalized information is more prone to stiff or forced integration.
+- *Irr* memories cause a collapse in quality; irr-used MIQ scores are mostly between 2.6-3.1, indicating that irrelevant memories not only cause tangents but also disrupt the coherence of the character's response.
+- A clear trade-off exists between PES and CIR. GPT-5-chat has the lowest CIR (~7.91) but a conservative PES; Gemini 3 Pro has the highest PES (~73.33) but its CIR reaches 31.96, showing that proactivity comes with higher risks of irrelevant memory intrusion.
 
 ## Highlights & Insights
-- This paper advances long-term memory evaluation from "whether it can remember" to "whether it should speak." For real characters and personal assistant systems, this more closely resembles product risk than simple recall.
+- This paper advances long-term memory evaluation from "can it remember" to "should it be said." For real characters and personal assistants, this is closer to actual product risk than simple recall.
 - The division into must, nice, and irr is highly practical. It acknowledges that dialogue quality involves not just factual correctness, but also moderate personalization and relevance control.
-- SMC is a hard metric, MIQ is a quality metric, and PES/CIR are behavioral tendency metrics. Combining the four allows model failures to be decomposed into different modes such as "missing mandatory memory," "unable to proactively enrich," "misusing irrelevant memory," or "poor integration quality."
-- The study finds that high-performing models maintain high MIQ when they pass SMC, suggesting that improving strategic memory use may require better memory selection or policies rather than simply stronger generators.
+- SMC serves as a hard metric, MIQ as a quality metric, and PES/CIR as behavioral tendency metrics. Combining the four allows model failures to be categorized into modes like "failure to use essential memory," "lack of proactive enrichment," "misuse of irrelevant memory," or "poor integration quality."
+- The finding that strong models maintain high MIQ when passing SMC suggests that improving strategic memory usage may require better memory selection or policies rather than just stronger generators.
 
 ## Limitations & Future Work
-- The evaluation only covers single-turn response generation and does not examine how memory selection strategies change dynamically over multi-turn interactions.
-- It currently handles only textual memories, without covering multimodal character memories (voice, image, appearance, location, etc.).
-- Data is derived from LoCoMo conversion and synthetic pipelines; while human-reviewed, privacy, emotion, and social boundaries in real long-term user interactions are more complex.
-- The automated evaluation relies on an LLM judge. Although it shows high consistency with humans, it may still exhibit preferences for certain expression styles or model families.
+- The evaluation only covers single-turn response generation, without investigating how memory selection strategies evolve dynamically across multi-turn interactions.
+- Currently limited to textual memory, excluding multi-modal character memories such as voice, images, appearance, and location.
+- Data is derived from LoCoMo conversions and synthetic pipelines; while human-verified, the privacy, emotional, and social boundaries in real-world long-term user interactions are more complex.
+- Dependency on LLM judges remains; while consistency with humans is high, potential biases toward specific styles or model families may exist.
 
 ## Related Work & Insights
-- **vs LoCoMo / LongMemEval**: These benchmarks primarily assess long-range memory retrieval and factual recall; StratMem-Bench further requires models to judge the conversational functional role of memories.
-- **vs Personalized RAG**: Personalized RAG focuses on introducing user preferences to improve response relevance; this paper emphasizes dynamic selection of must, nice, and irr during generation and evaluates the risks of over-personalization.
-- **vs Character Consistency Evaluation**: Traditional role-playing evaluations look at persona consistency; this paper examines whether characters "know when to mention the past" like a human.
-- **Insight**: For real-world assistant systems, one could explicitly model must/nice/irr or similar labels in a memory manager and use CIR as a safety and user experience metric.
+- **vs LoCoMo / LongMemEval**: These benchmarks primarily evaluate long-range memory retrieval and factual recall; StratMem-Bench further requires models to judge the functional role of a memory in dialogue.
+- **vs Personalized RAG**: Personalized RAG focuses on incorporating user preferences to improve response relevance; this work emphasizes the dynamic selection of must/nice/irr during generation and evaluates the risks of over-personalization.
+- **vs Character Consistency Evaluation**: Traditional role-playing evaluations look at persona consistency; this work looks at whether characters "know when to mention the past," much like humans do.
+- **Insights**: For real-world assistant systems, one could explicitly model must/nice/irr or similar labels in a memory manager and use CIR as a safety and user experience metric.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Shifts from factual recall to strategic memory use; the problem definition is clear, and the metric combination is realistic.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple strong models with human consistency validation, but lacks multi-turn and real-world user scenario evaluation.
-- Writing Quality: ⭐⭐⭐⭐☆ Tasks, metrics, and conclusions are clearly organized; some automated evaluation details are in the appendix, making the main text a smooth read.
-- Value: ⭐⭐⭐⭐⭐ Highly relevant for virtual characters, personal assistants, and long-term memory RAG, especially for diagnosing "too cold" vs. "too talkative" failures.
+- Novelty: ⭐⭐⭐⭐☆ Shifts from factual recall to strategic memory use with clear problem definitions and realistic metric combinations.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple strong models with human consistency validation, though lacks multi-turn and real user scenario testing.
+- Writing Quality: ⭐⭐⭐⭐☆ Tasks, metrics, and conclusions are well-organized; although some auto-evaluation details are in the appendix, the main text is coherent.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for virtual characters, personal assistants, and long-term memory RAG, particularly in diagnosing "too cold" vs. "too talkative" failure modes.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+</div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 

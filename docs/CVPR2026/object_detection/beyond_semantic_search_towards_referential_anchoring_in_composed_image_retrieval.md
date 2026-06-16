@@ -2,117 +2,124 @@
 title: >-
   [Paper Note] Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval
 description: >-
-  [CVPR 2026][Object Detection][Composed Image Retrieval] This paper proposes Object-Anchored Composed Image Retrieval (OACIR), a new task formulation…
+  [CVPR 2026][Object Detection][Paper Note] This paper proposes the Object-Anchored Composed Image Retrieval (OACIR) task, the OACIRR large-scale benchmark (160K+ quadruplets), and the AdaFocal framework. AdaFocal adaptively enhances focus on anchored instance regions through a Context-Aware Attention Modulator, significantly outperforming existing methods in in
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Composed Image Retrieval"
-  - "Instance-Level Consistency"
-  - "Attention Modulation"
-  - "Fine-Grained Retrieval"
-  - "Visual Anchoring"
+  - CVPR 2026
+  - Object Detection
 date: 2026-05-08
-content_hash: e82e31f730564dc9
+content_hash: 761db2bf4bcff59b
 ---
-
 # Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.05393](https://arxiv.org/abs/2604.05393)  
 **Code**: [Project Page](https://hahajun1101.github.io/OACIR/)  
-**Area**: Object Detection / Image Retrieval
-**Keywords**: Composed Image Retrieval, Instance-Level Consistency, Attention Modulation, Fine-Grained Retrieval, Visual Anchoring
+**Area**: Object Detection / Image Retrieval  
+**Keywords**: Composed Image Retrieval, Instance-level Consistency, Attention Modulation, Fine-grained Retrieval, Visual Anchoring
 
 ## TL;DR
-This paper proposes Object-Anchored Composed Image Retrieval (OACIR), a new task formulation, along with a large-scale benchmark OACIRR (160K+ quadruplets) and the AdaFocal framework. AdaFocal employs a context-aware attention modulator to adaptively enhance focus on anchored instance regions, substantially outperforming existing methods in instance-level retrieval fidelity.
+This paper proposes the Object-Anchored Composed Image Retrieval (OACIR) task, the OACIRR large-scale benchmark (160K+ quadruplets), and the AdaFocal framework. AdaFocal adaptively enhances focus on anchored instance regions through a Context-Aware Attention Modulator, significantly outperforming existing methods in instance-level retrieval fidelity.
 
 ## Background & Motivation
-**Background**: Composed Image Retrieval (CIR) enables flexible retrieval via multimodal queries combining a reference image and modification text, with broad applications in e-commerce and interactive search.
+**Background**: Composed Image Retrieval (CIR) enables flexible retrieval through multi-modal queries (reference image + modification text) and is widely used in e-commerce and interactive search.
 
-**Limitations of Prior Work**: CIR inherently prioritizes semantic matching, treating the reference image as only a coarse-grained visual anchor — making it **unable to reliably retrieve user-specified instances** in the presence of visually similar distractors.
+**Limitations of Prior Work**: CIR inherently prioritizes semantic matching, using the reference image only as a coarse-grained visual anchor. When visually similar distractors exist, it **fails to reliably retrieve the specific instance** designated by the user.
 
-**Practical Need**: In scenarios such as digital memory retrieval and long-term identity tracking, ensuring **instance-level fidelity** is more critical than broad semantic alignment.
+**Goal**: In scenarios such as digital memory retrieval and long-term identity tracking, ensuring **fidelity to a specific instance** is more critical than broad semantic alignment.
 
-**Key Challenge**: The task requires simultaneously achieving (1) compositional reasoning over three information sources (anchored instance + global scene + text modification) and (2) precise discrimination of the target instance from a gallery dense with visually similar distractors.
+**Key Challenge**: The model must simultaneously perform (1) compositional reasoning across three information sources (anchored instance + global scene + text modification) and (2) precise differentiation of target instances from a gallery filled with visually similar distractors.
 
-**Core Idea**: By combining explicit bounding-box visual anchoring with an adaptive attention enhancement mechanism, the approach elevates CIR from semantic-level to instance-level retrieval.
+**Core Idea**: Elevate CIR from the semantic level to the instance level through explicit bounding box visual anchoring and an adaptive attention enhancement mechanism.
 
 ## Method
 
 ### Overall Architecture
-Query branch: $(I_r, B_r, T_m)$ → Image encoder → CAAM predicts modulation scalar $\beta$ → Attention activation mechanism enhances instance region → Multimodal encoder → Query representation $f_q$
-Target branch: $I_t$ → Image encoder → Multimodal encoder → Target representation $f_t$
-Training: Contrastive learning loss aligns representations from both branches.
+AdaFocal ensures that composed image retrieval matches not just "look-alike" semantics but also the **specific instance** designated by a bounding box. It utilizes a dual-branch contrastive retrieval architecture. The query branch processes three sources: reference image $I_r$, bounding box $B_r$ anchoring the instance, and modification text $T_m$. The image passes through an encoder, after which the CAAM module predicts a modulation scalar $\beta$ based on the current query context. This $\beta$ is injected as a bias during cross-attention to amplify or converge focus on the instance region. Finally, a multi-modal encoder produces the query representation $f_q$. The target branch is simpler: the candidate image $I_t$ passes through image and multi-modal encoders to obtain $f_t$. During training, a contrastive loss minimizes the distance between corresponding $(f_q, f_t)$ pairs while pushing away distractors. The key design is that "the intensity of instance focus is not fixed but dynamically determined by $\beta$." (Training data is derived from the OACIRR benchmark; the diagram illustrates the AdaFocal model forward pass).
+
+```mermaid
+graph TD
+    subgraph Q["Query Branch"]
+        direction TB
+        A["Ref Image I_r + Anchor Box B_r<br/>+ Mod Text T_m"] --> B["Image Encoder"]
+        B --> C["Context-Aware Attention Modulator (CAAM)<br/>Context Probe tokens + CRM Reasoning → Scalar β"]
+        C --> D["Attention Activation<br/>Cross-Attention Injection: β·M_Br Spatial Bias"]
+        D --> E["Multi-modal Encoder → Query Rep f_q"]
+    end
+    subgraph T2["Target Branch"]
+        direction TB
+        F["Candidate Image I_t"] --> G["Image Encoder → Multi-modal Encoder<br/>→ Target Rep f_t"]
+    end
+    E --> H["Contrastive Loss<br/>Pull (f_q, f_t), Push Visually Similar Distractors"]
+    G --> H
+```
 
 ### Key Designs
-1. **Context-Aware Attention Modulator (CAAM)**:
 
-    - The reference image and modification text are fed into the multimodal encoder, along with $K$ learnable **context probe tokens**.
-    - Probe tokens learn contextual cues through interaction with the multimodal input.
-    - A Transformer-based Contextual Reasoning Module (CRM) aggregates and reasons over these cues, producing a **modulation scalar $\beta$** via linear projection.
-    - **Design Motivation**: The degree of instance focus should vary dynamically with query context — when the modification text demands large scene changes, instance attention should be relaxed; when only the background changes, instance attention should be intensified.
+**1. Context-Aware Attention Modulator (CAAM): Adaptive Instance Focus Based on Query Context**
 
-2. **Attention Activation Mechanism**:
-   $\beta$ is injected as a dynamic bias into the cross-attention of the query branch:
-   $$\{\hat{q}_m\} = \text{Softmax}\left(\frac{QK^T + \beta \cdot M_{B_r}}{\sqrt{d_k}}\right)V$$
-   where $M_{B_r}$ is a binary mask spatially aligned with the bounding box. $\beta > 0$ amplifies attention over the instance region, enabling adaptive focus.
+A naive approach would be to apply fixed weighting to the instance region, but this conflicts with compositional reasoning. If the text requires a significant scene change ("Put this dress on a beach"), strictly focusing on the instance limits semantic flexibility. Conversely, if only the background changes while the instance remains identical, attention should be locked onto the instance. CAAM delegates this judgment to the model: it injects $K$ learnable **context probe tokens** alongside the reference image and text into the multi-modal encoder. These probes absorb contextual cues and are aggregated by a Transformer-based Context Reasoning Module (CRM) to linearly map to a scalar $\beta$. This $\beta$ represents the dynamic trade-off between "instance vs. scene" for each specific query.
 
-3. **OACIRR Benchmark Construction** (four-stage pipeline):
+**2. Attention Activation: Injecting $\beta$ as a Spatial Bias in Cross-Attention**
 
-    - **Image Pair Collection**: Same-instance, cross-context image pairs are extracted from DeepFashion2, Stanford Cars, Products-10K, and Google Landmarks v2.
-    - **Image Pair Filtering**: Overly similar pairs are removed (to prevent shortcut learning), along with category-centroid images.
-    - **Quadruplet Annotation**: Modification texts are generated by an MLLM; bounding boxes are annotated by a grounding model.
-    - **Gallery Construction**: Hard negatives (same-category but different-instance distractors) are mined in a targeted manner.
+To apply $\beta$ to the retrieval representation, AdaFocal adds a bias term scaled by $\beta$ to the binary mask $M_{B_r}$ (spatially aligned with the bounding box) within the query branch's cross-attention:
+
+$$\{\hat{q}_m\} = \text{Softmax}\!\left(\frac{QK^T + \beta \cdot M_{B_r}}{\sqrt{d_k}}\right)V$$
+
+When $\beta > 0$, logits of tokens within the box are increased before the softmax, naturally concentrating attention on the instance region. Larger $\beta$ values produce stronger focus, while $\beta \to 0$ reverts to standard semantic attention. This "additive bias + binary mask" approach avoids extra learnable attention heads, achieving spatial adaptive focus using only a single scalar.
+
+**3. OACIRR Benchmark Construction: Testing Instance Discrimination**
+
+Since standard CIR data lacks instance labels, a four-stage pipeline was designed to produce quadruplets $(I_r, B_r, T_m, I_t)$. **Stage 1 (Image Pair Collection)**: Select "same instance, different context" pairs across Fashion, Cars, Products, and Landmarks. **Stage 2 (Filtering)**: Remove near-identical pairs and category-centric images. **Stage 3 (Quadruplet Annotation)**: Generate modification text using MLLMs and provide instance bounding boxes via grounding models. **Stage 4 (Gallery Construction)**: Mine hard-negatives (category-related but different instances) to transform the task from "finding the right category" to "finding the right individual."
 
 ### Loss & Training
-- Contrastive Alignment Loss: In-batch contrastive learning maximizes cosine similarity between correct query–target pairs.
-- Differentiated learning rates: CAAM at 1e-4; multimodal encoder at 1e-5.
-- Temperature parameter $\tau = 0.07$.
+- **Contrastive Alignment Loss**: In-batch contrastive learning to maximize cosine similarity of correct query-target pairs.
+- **Differentiated Learning Rates**: 1e-4 for CAAM, 1e-5 for multi-modal encoders.
+- **Temperature Parameter**: $\tau = 0.07$.
 
 ## Key Experimental Results
 
 ### Main Results (OACIRR Benchmark, ViT-G Backbone)
 
 | Method | Fashion $R_{ID}@1$ | Car $R_{ID}@1$ | Product $R_{ID}@1$ | Landmark $R_{ID}@1$ | Avg |
-|---|---|---|---|---|---|
+|------|-----------|----------|------------|-------------|-----|
 | GME (7B) | 44.98 | 63.11 | 83.44 | 77.11 | 62.53 |
-| SPRC (trained on CIRR) | 28.62 | 25.13 | 54.39 | 40.41 | 37.30 |
-| SPRC (trained on OACIRR) | 65.25 | 72.87 | 86.05 | 76.32 | 74.05 |
+| SPRC (CIRR Trained) | 28.62 | 25.13 | 54.39 | 40.41 | 37.30 |
+| SPRC (OACIRR Trained) | 65.25 | 72.87 | 86.05 | 76.32 | 74.05 |
 | **AdaFocal** | **77.15** | **78.42** | **91.86** | **82.92** | **79.00** |
 
 ### Ablation Study
 
 | Configuration | $R_{ID}@1$ | R@1 | Avg | Note |
-|---|---|---|---|---|
+|------|-----------|-----|-----|------|
 | w/o CAAM ($\beta=0$) | 77.74 | 58.39 | 74.91 | Baseline |
-| Average pooling + frozen probes | 79.70 | 59.84 | 76.39 | Simple aggregation insufficient |
-| Transformer CRM + learnable probes | **82.59** | **62.88** | **79.00** | Reasoning capacity + task adaptation |
+| Avg Pooling + Frozen Probes | 79.70 | 59.84 | 76.39 | Simple aggregation is insufficient |
+| Transformer CRM + Learnable Probes | **82.59** | **62.88** | **79.00** | Reasoning capability + Task adaptation |
 
 ### Key Findings
-- Training on OACIRR data boosts SPRC from 37.30% to 74.05%: **instance-consistent training data** is the key factor.
-- AdaFocal yields a further gain of +4.95%: **adaptive attention modulation** is effective.
+- Training on the OACIRR dataset causes SPRC's performance to jump from 37.30% to 74.05%, showing that **instance consistency data** is crucial.
+- AdaFocal provides a further +4.95% boost, proving the effectiveness of **adaptive attention modulation**.
 - The gap between $R@1$ and $R_{ID}@1$ reveals that the primary failure mode of existing methods is **instance misidentification**.
 
 ## Highlights & Insights
-- Advancing CIR from semantic-level to instance-level retrieval represents an important paradigm shift in the retrieval community.
-- OACIRR is the first large-scale instance-level composed retrieval benchmark spanning four domains, offering substantial community value.
-- The context-aware modulation mechanism in CAAM elegantly balances instance fidelity with compositional reasoning.
+- Advancing CIR from semantic-level to instance-level marks a significant paradigm shift in retrieval.
+- OACIRR is the first large-scale instance-level composed retrieval benchmark spanning four domains, offering high value to the community.
+- The context-aware modulation of CAAM elegantly balances instance fidelity with compositional reasoning.
 
 ## Limitations & Future Work
-- Bounding box annotation increases user interaction cost; future work may explore automatic instance anchoring.
-- The current framework supports only single-instance anchoring; multi-instance scenarios remain to be addressed.
-- Video-level instance tracking retrieval has not been explored.
+- Bounding box annotation increases user interaction costs; future work could explore automatic instance anchoring.
+- Currently supports only single-instance anchoring; multi-instance scenarios remain to be explored.
+- Video-level instance tracking and retrieval have not yet been investigated.
 
 ## Related Work & Insights
-- Shares the instance consistency objective with Re-ID (person re-identification) but is more general in scope.
-- The attention bias injection idea draws from generative models (e.g., Prompt-to-Prompt) and is successfully transferred to retrieval tasks.
-- Has direct applicability to product search, digital asset management, and related applications.
+- Shares the instance-consistency goal with ReID (Person Re-identification) but is more generalized.
+- The attention bias injection is inspired by generative models (e.g., Prompt-to-Prompt) and successfully migrated to retrieval.
+- Directly applicable to product search and digital asset management.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ New task definition + new benchmark + new method, a trifecta of contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Cross-paradigm comparisons, comprehensive ablations, and complete qualitative analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed description of the dataset construction pipeline.
-- Value: ⭐⭐⭐⭐⭐ The problem formulation and benchmark contributions will advance the retrieval field.
+- Novelty: ⭐⭐⭐⭐⭐ New task + new benchmark + new method.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Cross-paradigm comparisons, detailed ablation, and complete qualitative analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed dataset construction process.
+- Value: ⭐⭐⭐⭐⭐ The problem definition and benchmark contributions will drive the field forward.
 
 <!-- RELATED:START -->
 
@@ -121,10 +128,10 @@ Training: Contrastive learning loss aligns representations from both branches.
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](beyond_caption-based_queries_for_video_moment_retrieval.md)
+- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
 - [\[CVPR 2026\] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding](mrd_multi-resolution_retrieval-detection_fusion_for_high-resolution_image_unders.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
-- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
 
 </div>
 

@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems
 description: >-
-  [ACL2026][LLM Agent][reasoning-intensive retrieval] This paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and an agentic search protocol. It also introdu…
+  [ACL 2026][LLM Agent][reasoning-intensive retrieval] The paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and agentic search protocols. It also introduces RTriever-Synth to train RTriever-4B, demonstrating that retrievers should optimize for "evidence portfolio coverage" rather than single-passage relevan
 tags:
-  - "ACL2026"
-  - "LLM Agent"
-  - "reasoning-intensive retrieval"
-  - "agentic search"
-  - "BRIGHT-PRO"
-  - "RTriever"
-  - "evidence coverage"
+  - ACL 2026
+  - LLM Agent
+  - reasoning-intensive retrieval
+  - agentic search
+  - BRIGHT-PRO
+  - RTriever
 date: 2026-05-08
-content_hash: 456436540379af4c
+content_hash: 20eb2ed129c7e682
 ---
-
 # Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems
 
 **Conference**: ACL2026  
@@ -24,52 +22,79 @@ content_hash: 456436540379af4c
 **Keywords**: reasoning-intensive retrieval, agentic search, BRIGHT-PRO, RTriever, evidence coverage
 
 ## TL;DR
-This paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and an agentic search protocol. It also introduces RTriever-Synth to train RTriever-4B, demonstrating that retrievers should optimize for "evidence portfolio coverage" rather than single-passage relevance.
+The paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and agentic search protocols. It also introduces RTriever-Synth to train RTriever-4B, demonstrating that retrievers should optimize for "evidence portfolio coverage" rather than single-passage relevance.
 
 ## Background & Motivation
-**Background**: Traditional information retrieval (IR) systems primarily optimize for keyword matching, semantic similarity, or single-passage relevance, which are suitable for factoid, single-hop questions. With the rise of Deep Research and agentic search systems, LLM agents repeatedly plan, search, read, and synthesize information, making the retriever a critical tool in the agent's reasoning chain.
+**Background**: Traditional information retrieval (IR) systems primarily optimize keyword matching, semantic similarity, or single-passage relevance, which are suitable for factoid or single-hop questions. With the rise of Deep Research and agentic search systems, LLM agents iteratively plan, search, read, and synthesize information, effectively turning the retriever into a critical tool within the agent's reasoning chain.
 
-**Limitations of Prior Work**: Complex queries usually require multiple complementary pieces of evidence to support an answer. However, gold passages in existing benchmarks like BRIGHT are narrow, often originating from only one or two webpages, and evaluation is mostly performed on static ranked lists. On the training side, synthetic retrieval corpora often follow a one-query-one-positive format, which encourages models to "find one relevant passage" rather than covering complete reasoning aspects.
+**Limitations of Prior Work**: Complex queries usually require multiple complementary pieces of evidence to support an answer. However, existing benchmarks like BRIGHT have narrow gold passages (often from one or two web pages) and evaluate retrievers primarily on static ranked lists. On the training side, synthetic retrieval corpora often follow a one-query-one-positive pattern, leading models to learn "finding one relevant passage" instead of covering full reasoning aspects.
 
-**Key Challenge**: In agentic search, the value of a retriever is not defined by the highest relevance in a single retrieval step, but by its ability to provide the agent with a sufficient, complementary, and citable evidence portfolio in fewer rounds. Static single-passage metrics may fail to predict the final answer quality and search efficiency of the agent.
+**Key Challenge**: In agentic search, the value of a retriever is not just the top relevance in a single search, but whether it can provide a comprehensive, complementary, and citable evidence portfolio to the agent in fewer rounds. Static single-passage metrics may fail to predict the final answer quality and search efficiency of the agent.
 
-**Goal**: The authors aim to extend BRIGHT by constructing the BRIGHT-PRO benchmark with multi-aspect evidence, design both static and agentic evaluation protocols, and develop RTriever-Synth to fine-tune RTriever-4B specifically for reasoning-intensive evidence selection.
+**Goal**: Ours expands BRIGHT to build the BRIGHT-PRO benchmark with multi-aspect evidence, designs both static and agentic evaluation protocols, and constructs RTriever-Synth to fine-tune RTriever-4B using aspect-decomposed positives and hard negatives for reasoning-intensive evidence selection.
 
-**Key Insight**: This paper elevates the retrieval task from "passage relevance" to "evidence portfolio construction." This aligns closely with how agents use search, as they require coverage of different sub-aspects of a problem rather than just a single answer fragment.
+**Key Insight**: The paper elevates retrieval from "passage relevance" to "evidence portfolio construction." This aligns with the usage patterns in agentic search, where agents require coverage of different sub-aspects of a problem rather than a single answer snippet.
 
-**Core Idea**: Use human-annotated reasoning aspects as evaluation units and aspect-aware synthetic data as training signals. This allows the retriever to learn to retrieve complementary evidence, with results validated at both static and agent-in-the-loop levels.
+**Core Idea**: Use human-annotated reasoning aspects as evaluation units and aspect-aware synthetic data as training signals to enable the retriever to learn complementary evidence retrieval, verifying the effects at both static and agent-in-the-loop levels.
 
 ## Method
 
 ### Overall Architecture
-The paper follows two main tracks. The evaluation track is BRIGHT-PRO: starting from the StackExchange subset of BRIGHT, experts annotate reasoning aspects, importance weights, and corresponding positive documents for each query. Retrievers are then evaluated using static $\alpha$-nDCG / A-Recall and an agentic search protocol. The training track is RTriever-Synth: DeepResearch-style analytical queries are generated from MS MARCO seed queries. Reference answers are decomposed into complementary reasoning aspects, for which positive passages and positive-conditioned hard negatives are synthesized. These data are used to fine-tune Qwen3-Embedding-4B via LoRA to obtain RTriever-4B.
+This paper follows two main tracks. The evaluation track is BRIGHT-PRO: starting from the StackExchange subset of BRIGHT, experts annotate reasoning aspects, importance weights, and corresponding positive documents for each query, followed by evaluations using static $\alpha$-nDCG / A-Recall and agentic search protocols. The training track is RTriever-Synth: 140K seed queries from MS MARCO are transformed into DeepResearch-style analytical queries. Reference answers are generated and decomposed into complementary reasoning aspects, for which positive passages and positive-conditioned hard negatives are synthesized. Finally, Qwen3-Embedding-4B is LoRA fine-tuned on this data to produce RTriever-4B. Both tracks converge on a dual static + agentic evaluation protocol that explicitly quantifies the value of "evidence portfolio coverage" for the final answer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BENCH["BRIGHT-PRO Multi-aspect Evidence Annotation"]
+        direction TB
+        A["BRIGHT StackExchange Subset"] --> B["Experts decompose reasoning aspects<br/>with rationale + importance weights"]
+        B --> C["Review positives: remove weak links / merge overlaps / add new evidence"]
+    end
+    subgraph TRAIN["RTriever-Synth and RTriever-4B Training"]
+        direction TB
+        D["140K queries from MS MARCO"] --> E["Rewrite as DeepResearch queries<br/>+ Generate reference answers"]
+        E --> F["Decompose answers into 2-3 complementary aspects"]
+        F --> G["Synthesize positives + 'missing-aspect' hard negatives per aspect"]
+        G --> H["LoRA fine-tune Qwen3-Embedding-4B<br/>to get RTriever-4B"]
+    end
+    subgraph EVAL["Static and Agentic Dual Evaluation Protocol"]
+        direction TB
+        I["Static: α-nDCG@k / Weighted Aspect Recall"]
+        J["Agentic: Iterative search with LLM agent<br/>Fixed / Adaptive rounds AER"]
+    end
+    BENCH --> EVAL
+    H --> EVAL
+    EVAL --> K["Conclusion: Evidence Portfolio Coverage > Single-passage Relevance"]
+```
 
 ### Key Designs
-1.  **BRIGHT-PRO Multi-aspect Evidence Annotation**:
-    - **Function**: Enables the benchmark to evaluate whether a retriever covers complete reasoning requirements rather than just finding one superficially relevant passage.
-    - **Mechanism**: The authors selected the StackExchange subset of BRIGHT for its proximity to open-domain natural language reasoning. Domain experts decomposed each query into several reasoning aspects, described each with 1-2 rationales, and assigned importance using a 1-5 Likert scale (later normalized to weights). Experts then audited original BRIGHT positives, removed weakly relevant passages, merged overlapping segments, and supplemented new evidence via web search (Perplexity or ChatGPT).
-    - **Design Motivation**: Answers to complex questions are often composed of multiple sub-questions. If a retriever only covers one high-weight aspect, it may perform well on traditional Recall but cause the agent to miss critical premises in the final synthesis.
 
-2.  **Dual Static and Agentic Evaluation Protocols**:
-    - **Function**: Isolates retrieval quality while measuring the systemic value of the retriever in a real agent loop.
-    - **Mechanism**: Static evaluation uses $\alpha$-nDCG@k with a novelty penalty $\alpha=0.5$ to penalize redundant coverage of the same aspect; Weighted Aspect Recall, NDCG, and Recall are also reported. Agentic evaluation integrates the retriever with an LLM agent that iteratively issues search queries, reads top-5 passages, and generates cited answers. The fixed-round protocol uses 1/2/3 rounds; the adaptive protocol allows the agent to stop autonomously, using $AER=OQ\times e^{-\gamma(R-1)}$ to reward both quality ($OQ$) and low round count ($R$).
-    - **Design Motivation**: In deployment, users care about search efficiency and reliability, not just $\alpha$-nDCG. Dual protocols reveal potential misalignments between static rankings and system performance.
+**1. BRIGHT-PRO Multi-aspect Evidence Annotation: Shifting the unit from "one relevant passage" to "coverage of reasoning aspects"**
 
-3.  **RTriever-Synth and RTriever-4B Training**:
-    - **Function**: Trains the retriever to prioritize complementary evidence selection from the training stage.
-    - **Mechanism**: 140K queries were sampled from 1 million MS MARCO queries. Short queries were rewritten into DeepResearch-style queries with personas and context. Reference answers were generated and decomposed into 2-3 non-overlapping reasoning aspects. A positive passage blueprint was generated for each aspect and instantiated. Hard negatives were generated to be lexically similar to the query but specifically missing critical aspects, conditioned on the positive passage titles and abstracts.
-    - **Design Motivation**: While standard contrastive retrievers only learn to rank a single relevant passage highly, RTriever-Synth forces the model to recognize complementary relationships and missing aspects within the training data.
+Answers to complex problems are often composed of multiple sub-questions. A retriever might only cover one high-weight aspect, performing well on traditional Recall while the resulting agent-synthesized answer misses critical premises. BRIGHT-PRO selects the StackExchange subset of BRIGHT (closer to open-domain natural language reasoning) and has domain experts decompose each query into several reasoning aspects. Each aspect is assigned a 1-2 sentence rationale and a significance weight based on a 1-5 Likert score. Simultaneously, original BRIGHT positives are audited to remove weakly relevant passages and merge overlaps, while new evidence is supplemented via web search. This ensures the benchmark measures the coverage of necessary angles rather than surface-level similarity.
+
+**2. Static and Agentic Evaluation Protocols: Isolating retrieval quality and measuring system value in real agent loops**
+
+In deployment, users care about search efficiency and reliability rather than $\alpha$-nDCG scores alone. Static metrics can sometimes misalign with these goals. Ours provides two protocols. On the static side, $\alpha$-nDCG@k uses a novelty penalty $\alpha=0.5$ to penalize redundant coverage of the same aspect, reporting Weighted Aspect Recall, NDCG, and Recall. On the agentic side, the retriever is integrated into an LLM agent that iteratively issues search queries, reads top-5 passages, and generates cited answers. The fixed-round protocol forces 1/2/3 rounds, while the adaptive protocol allows the agent to decide when to stop, using:
+
+$$AER = OQ \times e^{-\gamma(R-1)}$$
+
+to reward both answer quality $OQ$ and fewer rounds $R$. Together, these protocols expose the misalignment between static rankings and system performance.
+
+**3. RTriever-Synth and RTriever-4B Training: Teaching retrievers to select "complementary evidence" rather than "one relevant passage"**
+
+Standard contrastive retrievers learn to rank specific relevant passages higher, which is insufficient for agentic search. RTriever-Synth extracts 140K queries from MS MARCO, rewrites them into DeepResearch-style queries with personas and context, generates full reference answers, and decomposes them into 2-3 non-overlapping reasoning aspects. A positive passage blueprint is generated and instantiated for each aspect. The key is in the negatives: instead of random negatives, hard negatives are deliberately synthesized to be lexically similar to the query but missing a critical reasoning aspect. This forces the model to learn coverage over simple relevance.
 
 ### Loss & Training
-RTriever-4B is based on Qwen3-Embedding-4B. All linear projection layers are fine-tuned using LoRA (rank 16, scaling factor 32), while the original embedding parameters are frozen. Each training step samples a query, a positive, and a hard negative, utilizing other documents in the batch as in-batch negatives. The model optimizes a query-document contrastive InfoNCE loss with temperature $\tau=0.02$ for 5 epochs, a peak learning rate of $1\times10^{-5}$, and a 5% linear warm-up.
+RTriever-4B is based on Qwen3-Embedding-4B, with all linear projection layers fine-tuned via LoRA (rank 16, scaling factor 32) while original embedding parameters are frozen. Each step samples a query, a positive, and a hard negative, using other documents in the batch as in-batch negatives. It optimizes the query-document contrastive InfoNCE loss with temperature $\tau=0.02$, trained for 5 epochs with a peak learning rate of $1\times10^{-5}$ and 5% linear warm-up.
 
 ## Key Experimental Results
 
 ### Main Results
 BRIGHT-PRO covers 7 expert domains, totaling 739 queries and 526,319 documents, with an average of 7.13 positive documents and 3.74 reasoning aspects per query.
 
-| Subset | Queries | Documents | Avg. Positives | Avg. Aspects | Avg. Query Length |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Subset | Queries | Documents | Avg Positives | Avg Aspects | Avg Query Length |
+|------|---------|-----------|------------|----------------|-----------------|
 | Biology | 103 | 59,513 | 7.81 | 3.94 | 92.6 |
 | Earth Science | 115 | 123,575 | 7.44 | 3.83 | 82.2 |
 | Economics | 99 | 52,240 | 7.81 | 3.71 | 123.5 |
@@ -79,70 +104,70 @@ BRIGHT-PRO covers 7 expert domains, totaling 739 queries and 526,319 documents, 
 | Sustainable Living | 106 | 63,142 | 9.25 | 3.86 | 116.9 |
 | Overall | 739 | 526,319 | 7.13 | 3.74 | 131.4 |
 
-In static retrieval evaluation, reasoning-trained retrievers significantly outperformed general embedding models, with RTriever-4B reaching the upper-middle tier after fine-tuning from Qwen3-Embedding-4B.
+In static retrieval evaluation, reasoning-trained retrievers significantly outperform general embedding models. RTriever-4B reaches the upper-middle tier after fine-tuning from Qwen3-Embedding-4B.
 
-| Model | BRIGHT NDCG@10 | BRIGHT-PRO $\alpha$-nDCG@25 Overall | Position |
-| :--- | :--- | :--- | :--- |
+| Model | BRIGHT NDCG@10 | BRIGHT-PRO α-nDCG@25 Overall | Position |
+|------|----------------|------------------------------|------|
 | BGE-Reasoner-8B | 33.8 | 68.0 | Strongest reasoning retriever |
 | DIVER-4B-1020 | 30.6 | 63.7 | Strong reasoning retriever |
 | DIVER-4B | 28.9 | 59.9 | Strong reasoning retriever |
-| RTriever-4B | 27.7 | 55.3 | Ours; outperforms most general embeddings |
+| RTriever-4B | 27.7 | 55.3 | Ours, better than most general embeddings |
 | INF-Retriever-Pro | 26.3 | 53.8 | Reasoning retriever |
 | Qwen3-8B | 23.7 | 49.5 | General embedding base |
 | OpenAI-Embed-3L | 17.9 | 45.8 | General embedding |
 | BM25 | 14.5 | 40.3 | One of the weakest in static eval |
 
 ### Ablation Study
-The fixed-round agentic evaluation uses a GPT-5-mini agent, retrieving top-5 results per round. It reports cumulative $\alpha$-nDCG, reasoning completeness, and overall quality. Static strength does not always equate to agent performance.
+Fixed-round agentic evaluation uses a GPT-5-mini agent, retrieving top-5 per round, reporting cumulative $\alpha$-nDCG, reasoning completeness, and overall quality. Static strength does not always equate to agent performance.
 
-| Model | Round-3 $\alpha$-nDCG@15 | Round-3 Completeness | Round-3 Overall | Observation |
-| :--- | :--- | :--- | :--- | :--- |
-| BGE-Reasoner-8B | 63.04 | 4.42 | 4.31 | Leading in both retrieval and answer quality |
-| DIVER-4B | 53.08 | 4.38 | 4.29 | Better in agentic than DIVER-4B-1020 |
-| RTriever-4B | 50.79 | 4.37 | 4.25 | Answer quality in the top three |
+| Model | Round-3 α-nDCG@15 | Round-3 Completeness | Round-3 Overall | Observation |
+|------|-------------------|----------------------|-----------------|------|
+| BGE-Reasoner-8B | 63.04 | 4.42 | 4.31 | Leads in both retrieval and quality |
+| DIVER-4B | 53.08 | 4.38 | 4.29 | Better agentic performance than DIVER-4B-1020 |
+| RTriever-4B | 50.79 | 4.37 | 4.25 | Top 3 in answer quality |
 | GTE-7B | 52.68 | 4.33 | 4.23 | Average static but strong agentic performance |
 | DIVER-4B-1020 | 51.56 | 4.33 | 4.16 | Strong static but weaker agent fit |
-| BM25 | 51.48 | 4.25 | 4.12 | Agent follow-up queries mitigate lexical mismatch |
+| BM25 | 51.48 | 4.25 | 4.12 | Follow-up queries mitigate lexical mismatch |
 
-The adaptive round protocol further highlights efficiency differences.
+The adaptive round protocol further illustrates differences in efficiency.
 
-| Model / Agent | Avg. Rounds | Completeness | Overall | AER | Insight |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model / Agent | Avg Rounds | Completeness | Overall | AER | Analysis |
+|--------------|----------|--------------|---------|-----|------|
 | BGE-Reasoner + GPT-5-mini | 5.10 | 4.63 | 4.43 | 3.65 | High quality and early stopping |
-| RTriever-4B + GPT-5-mini | 6.01 | 4.53 | 4.43 | 3.51 | Quality near BGE but more rounds |
-| BM25 + GPT-5-mini | 5.73 | 4.50 | 4.42 | 3.53 | Unexpectedly strong in agentic setting |
-| GTE-7B + GPT-5-mini | 6.67 | 4.62 | 4.51 | 3.44 | High final quality but high cost |
-| RTriever-4B + Qwen3.5 | 4.89 | 4.26 | 4.06 | 3.38 | Consistently top-tier with a second agent |
+| RTriever-4B + GPT-5-mini | 6.01 | 4.53 | 4.43 | 3.51 | Quality close to BGE, but more rounds |
+| BM25 + GPT-5-mini | 5.73 | 4.50 | 4.42 | 3.53 | Surprisingly strong in agentic setting |
+| GTE-7B + GPT-5-mini | 6.67 | 4.62 | 4.51 | 3.44 | High quality but at a higher cost |
+| RTriever-4B + Qwen3.5 | 4.89 | 4.26 | 4.06 | 3.38 | Remains in the lead with a second agent |
 
 ### Key Findings
-- BRIGHT-PRO's aspect-aware metrics clearly differentiate reasoning retrievers from general-purpose embedders, whereas BRIGHT's single NDCG@10 fails to expose this gap.
-- Although RTriever-4B is not the strongest model overall, fine-tuning with 140K aspect-decomposed synthetic bundles allowed it to significantly outperform larger general embedding models, suggesting that the training objective is more critical than parameter scale.
-- Static retrieval rankings do not fully predict agentic answer quality. For instance, DIVER-4B-1020 is stronger statically but weaker in the agentic loop than DIVER-4B; BM25 is statically weak but highly competitive due to the LLM's keyword-focused follow-up queries.
-- AER reveals "failed" modes where an agent provides good answers but takes too long to search. GTE-7B has high overall quality, but its 6.67 average rounds lower its AER.
+- BRIGHT-PRO's aspect-aware metrics successfully distinguish reasoning retrievers from general-purpose embedders, whereas BRIGHT's NDCG@10 fails to expose these differences.
+- While RTriever-4B is not the strongest model, fine-tuning on 140K aspect-decomposed synthetic bundles allows it to outperform larger general models, proving training objectives matter more than parameter scale.
+- Static retrieval rankings cannot fully predict agentic answer quality. DIVER-4B-1020 is stronger statically but weaker than DIVER-4B in the agentic loop; BM25 is weak statically but competitive due to LLM keyword-based follow-up queries.
+- AER reveals the failure mode of "good answers but search takes too long." GTE-7B has high overall quality, but its 6.67 average rounds lower its AER.
 
 ## Highlights & Insights
-- BRIGHT-PRO expands the retrieval evaluation unit from documents to reasoning aspects, a critical step for reasoning-intensive IR. It distinguishes between "finding redundant evidence for one aspect" and "covering multiple necessary aspects."
-- The agentic evaluation design is highly practical. Because the retriever is queried repeatedly by the LLM with increasingly specific queries, the value of lexical methods like BM25 is reactivated.
-- The hard negatives in RTriever-Synth are not just semantically similar; they are "near neighbors missing critical aspects," mimicking common retrieval failures in complex QA.
-- The paper serves as a reminder that agent system optimization should not rely solely on stronger LLMs. A retriever that provides sufficient coverage and matches the agent's query style can directly reduce search rounds and reasoning hallucinations.
+- BRIGHT-PRO expands the retrieval evaluation unit from document to reasoning aspect, a crucial step for reasoning-intensive IR. It distinguishes between finding many pieces of evidence for the same angle versus covering all necessary angles.
+- The agentic evaluation design is highly practical. Retrievers in an agent loop are queried repeatedly with increasingly specific queries, reactivating the value of lexical methods like BM25.
+- The hard negatives in RTriever-Synth are not just semantically similar but are "proximal negatives missing key aspects," reflecting failure modes in complex QA.
+- Ours reminds that agent system optimization should not just focus on stronger LLMs. A retriever that provides full coverage and fits the agent's query style can directly reduce search rounds and reasoning hallucinations.
 
 ## Limitations & Future Work
-- BRIGHT-PRO is based only on the StackExchange subset of BRIGHT. While it covers 7 domains, it does not yet include news, legal, full-text medical, or corporate knowledge bases found in real Deep Research scenarios.
-- The human cost for 739 queries and the 175-query agentic sample is high, but the scale remains limited; statistical stability across specific domains requires further expansion.
-- Agentic evaluation relies on LLM-as-a-Judge for completeness and overall quality, which may be subject to judge bias.
-- RTriever-Synth currently samples one positive / one negative triplet, missing the opportunity to leverage the full multi-positive set for each query. Future work could explore multi-positive contrastive learning, aspect-aware sampling, and curriculum negatives.
+- BRIGHT-PRO is based only on the StackExchange subset of BRIGHT. While covering 7 domains, it does not yet extend to news, law, full-text medical, or corporate knowledge bases.
+- The human cost for 739 queries and 175-query agentic samples is high, leading to limited scale and potential statistical instability in sub-domains.
+- Using LLM-as-Judge for completeness and quality might still be subject to model bias.
+- RTriever-Synth currently samples one positive/one negative triplet, underutilizing the multi-positive set; future research could explore multi-positive contrastive learning, aspect-aware sampling, and curriculum negatives.
 
 ## Related Work & Insights
-- **vs BRIGHT**: BRIGHT first focused on reasoning-intensive retrieval, but its gold evidence is narrow and evaluation is primarily static. BRIGHT-PRO adds aspect labels, weights, and agentic protocols.
-- **vs DIVER / ReasonIR**: These methods train reasoning-aware retrievers, but training signals are mostly centered on single passage relevance. RTriever-Synth emphasizes complementary positives and aspect coverage.
-- **vs DeepResearch benchmarks**: Many DeepResearch benchmarks evaluate only the final answer, making it difficult to isolate the retriever's contribution. This paper plugs the retriever as the sole variable into the same agent for clearer component analysis.
+- **vs BRIGHT**: BRIGHT first focused on reasoning-intensive retrieval but had narrow gold evidence and primarily static evaluation; BRIGHT-PRO adds aspect labels, weights, and agentic protocols.
+- **vs DIVER / ReasonIR**: These methods train reasoning-aware retrievers but focus on single-passage relevance; RTriever-Synth emphasizes complementary positives and aspect coverage.
+- **vs DeepResearch benchmarks**: Many DeepResearch benchmarks evaluate final answers, making it hard to isolate the retriever's contribution; Ours isolates the retriever as the variable within the same agent.
 - **Insight**: When building agentic RAG, retriever evaluation should simultaneously report coverage, round cost, answer quality, and retriever-agent compatibility.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Comprehensive integration of multi-aspect coverage and agentic retriever-in-the-loop evaluation.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive static, fixed-round, adaptive-round, and qualitative analyses, though benchmark scale is limited by manual annotation.
-- Writing Quality: ⭐⭐⭐⭐☆ Well-structured with clear pipelines and diagrams, though some tables are quite dense.
-- Value: ⭐⭐⭐⭐⭐ Highly relevant for Deep Research, agentic RAG, and reasoning retriever training.
+- Novelty: ⭐⭐⭐⭐⭐ Well-integrated combination of multi-aspect coverage and agentic retriever-in-the-loop.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive static and agentic analysis, though benchmark scale is limited by manual annotation.
+- Writing Quality: ⭐⭐⭐⭐☆ Complete structure with clear pipelines, though some tables are dense.
+- Value: ⭐⭐⭐⭐⭐ Strong reference value for Deep Research, agentic RAG, and reasoning retriever training.
 
 <!-- RELATED:START -->
 

@@ -2,126 +2,131 @@
 title: >-
   [Paper Note] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 description: >-
-  [ACL 2026][Social Computing][Supply chain simulation] This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic beer distribution game. It systematically investigates the i…
+  [ACL 2026][Social Computing][Paper Note] This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic Beer Distribution Game. It systematically investigates the impact of cognitive heterogeneity (differences in reasoning capabilities) on system behavior, finding that LLM agents replicate human-like bullwhip effects
 tags:
-  - "ACL 2026"
-  - "Social Computing"
-  - "Supply chain simulation"
-  - "cognitive heterogeneity"
-  - "bullwhip effect"
-  - "LLM agents"
-  - "beer distribution game"
+  - ACL 2026
+  - Social Computing
 date: 2026-05-08
-content_hash: 955d7ef34d84fa33
+content_hash: af5dade7ff1f52b5
 ---
-
 # Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.17220](https://arxiv.org/abs/2604.17220)  
 **Code**: None  
 **Area**: Others  
-**Keywords**: Supply chain simulation, cognitive heterogeneity, bullwhip effect, LLM agents, beer distribution game
+**Keywords**: Supply Chain Simulation, Cognitive Heterogeneity, Bullwhip Effect, LLM Agents, Beer Distribution Game
 
 ## TL;DR
 
-This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic beer distribution game. It systematically investigates the impact of cognitive heterogeneity (differences in reasoning capabilities) on system behavior, finding that LLM agents can replicate human bullwhip effects and myopic behavior, while information sharing effectively mitigates these adverse effects.
+This study utilizes LLM agents (DeepSeek/GPT series) to simulate multi-stage supply chains in the classic Beer Distribution Game. It systematically investigates the impact of cognitive heterogeneity (differences in reasoning capabilities) on system behavior, finding that LLM agents replicate human-like bullwhip effects and myopic behavior, while information sharing effectively mitigates these negative effects.
 
 ## Background & Motivation
 
-**Background**: Behavioral experiments (such as the beer distribution game) have revealed supply chain inefficiencies (e.g., the bullwhip effect) caused by cognitive biases. However, traditional human experiments face limitations in scalability, cost, and experimental control. The potential of LLMs as behavioral agents is currently being explored.
+**Background**: Behavioral experiments like the Beer Distribution Game reveal supply chain inefficiencies caused by cognitive biases (e.g., the bullwhip effect). However, traditional human experiments face constraints regarding scalability, cost, and experimental control. The potential of LLMs as behavioral proxies is currently being explored.
 
-**Limitations of Prior Work**: (1) Most LLM multi-agent research focuses on static or structurally simple settings, neglecting highly dynamic multi-period environments; (2) existing studies typically deploy homogeneous agents, ignoring the impact of cognitive heterogeneity (mixing agents with different reasoning capabilities) on collective behavior; (3) there is a lack of rigorous statistical validation.
+**Limitations of Prior Work**: (1) Most LLM multi-agent research focuses on static or structurally simple settings, failing to explore highly dynamic multi-period environments; (2) existing studies typically deploy homogeneous agents, ignoring the impact of cognitive heterogeneity (a mix of agents with different reasoning capabilities) on collective behavior; (3) there is a lack of rigorous statistical validation.
 
-**Key Challenge**: Strategy diversity is both prevalent and critical in real-world organizations, yet its interactive effects within synthetic environments have not been sufficiently studied.
+**Key Challenge**: Strategic diversity is both prevalent and critical in real organizations, yet its interactive effects in synthetic environments have not been sufficiently studied.
 
-**Goal**: To construct an LLM-driven supply chain simulation paradigm and systematically study how cognitive heterogeneity affects collective behavior.
+**Goal**: Construct an LLM-driven supply chain simulation paradigm to systematically study how cognitive heterogeneity affects collective behavior.
 
-**Key Insight**: Utilize LLMs with varying reasoning capabilities (base vs. reasoning-enhanced) to represent different cognitive levels, deploying heterogeneous agents at different positions within the supply chain.
+**Key Insight**: Utilize LLMs with different reasoning capabilities (Base vs. Reasoning-enhanced) to represent distinct cognitive levels, deploying heterogeneous agents at different positions within the supply chain.
 
-**Core Idea**: LLM agents can replicate human behavioral biases; cognitive heterogeneity exacerbates system inefficiency, while information sharing serves as an effective mitigation mechanism.
+**Core Idea**: LLM agents can replicate human behavioral biases; cognitive heterogeneity exacerbates system inefficiency, while information sharing serves as an effective mitigation strategy.
 
 ## Method
 
 ### Overall Architecture
 
-LLM agents are deployed in the classic beer distribution game (a 4-stage supply chain: Retailer → Wholesaler → Distributor → Manufacturer), where each agent decides the order quantity in each period. The experiments include homogeneous conditions (all shallow or all deep agents) and tiered conditions (a single deep agent placed at different positions). Each configuration involves 32 independent repetitions over 20 periods.
+The study adapts the classic Beer Distribution Game (a 4-tier linear supply chain: Retailer → Wholesaler → Distributor → Manufacturer) to LLM agents. Each tier is played by an LLM that independently decides order quantities upstream each period for 20 continuous cycles. The core variable is "Cognitive Depth"—using different LLMs to represent shallow and deep cognition. Heterogeneous agents are deployed at various chain positions to observe changes in order fluctuations, costs, and the bullwhip effect. Each configuration is run for 32 independent trials to support statistical testing.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Beer Distribution Game Environment<br/>4-tier Supply Chain: Retailer S1 → Wholesaler S2 → Distributor S3 → Manufacturer S4"]
+    A --> B["Hierarchical Reasoning Framework<br/>Classified into Shallow (DeepSeek-V3 / GPT-4.1) and Deep (DeepSeek-R1 / GPT-5) based on benchmarks"]
+    B --> C["Cognitive Heterogeneity Experimental Design<br/>6 Configs: Original (All Shallow) · R-Overall (All Deep) · R-S1~R-S4 (Single Deep Substitution)"]
+    C --> D["Information Sharing Mechanism<br/>No IS: Local state only | With IS: Visible inventory and backlogs across tiers"]
+    D --> E["Per-period CoT Decision for Order Quantity → Deterministic rule-based inventory/shipment updates<br/>(20 cycles × 32 repetitions)"]
+    E --> F["Measurement: Order Variance / Total Cost / Bullwhip Effect Intensity"]
+    F --> G["Sign Test / t-test / Mann-Whitney Test"]
+```
 
 ### Key Designs
 
-1.  **Hierarchical Reasoning Framework**:
-    - **Function**: To systematically model agents with varying cognitive depths.
-    - **Mechanism**: Cognition is divided into two levels: shallow (DeepSeek-V3, GPT-4.1) and deep (DeepSeek-R1, GPT-5). Deep models consistently outperform their corresponding base versions on reasoning benchmarks such as AIME and GPQA. A dual-family design (DeepSeek series + GPT series) is employed to control for architectural differences and verify cross-family consistency.
-    - **Design Motivation**: To provide an empirically supported basis for cognitive stratification, ensuring that experimental classifications are scientifically grounded.
+**1. Hierarchical Reasoning Framework: Using Base/Reasoning-enhanced LLMs as Empirical Anchors for "Cognitive Depth"**
 
-2.  **Cognitive Heterogeneity Experimental Design**:
-    - **Function**: To isolate the impact of cognitive depth on supply chain behavior.
-    - **Mechanism**: Six configurations are tested: homogeneous conditions (Original all-shallow, R-Overall all-deep) and tiered conditions (R-S1 to R-S4, where a deep agent is placed at only one position). Each configuration is tested under two information conditions (with/without information sharing), using Chain-of-Thought (CoT) prompting to support structured decision-making.
-    - **Design Motivation**: To identify causal effects by systematically varying a single variable (the position of cognitive depth).
+To study "Cognitive Heterogeneity," a credible standard for cognitive stratification is required. The study categorizes agents into Shallow (DeepSeek-V3, GPT-4.1) and Deep (DeepSeek-R1, GPT-5) levels based on consistent performance gaps in reasoning benchmarks like AIME and GPQA. A dual-family design (DeepSeek and GPT series) is adopted to control for architecture-specific biases and verify if findings hold across different model families.
 
-3.  **Information Sharing Mechanism**:
-    - **Function**: To test the effectiveness of information transparency in alleviating behavioral biases.
-    - **Mechanism**: Under the information sharing condition, each agent is provided with the inventory and backlog information of other stages. Order fluctuations, total costs, and the intensity of the bullwhip effect are compared between conditions with and without information sharing.
-    - **Design Motivation**: Information asymmetry is a classic cause of the bullwhip effect; this design verifies whether LLM agents also benefit from information sharing.
+> ⚠️ The original text lists "GPT-5" as a representative "Deep" model; names are kept as per the source.
+
+**2. Cognitive Heterogeneity Experimental Design: Isolating Causal Effects via Single-Position Substitutions**
+
+Randomly mixing agents of different abilities makes it impossible to attribute changes to specific roles or positions. Six configurations are used for controlled variation: two homogeneous baselines (Original: All Shallow, R-Overall: All Deep) and four stratified conditions (R-S1 through R-S4), where only one specific position is assigned a Deep agent while others remain Shallow. Each configuration is tested under two information conditions (No IS / With IS) using CoT prompting for structured decision-making. This allows the movement of a single variable (position of deep cognition) to map clearly to differences in system behavior.
+
+**3. Information Sharing Mechanism: Verifying if Transparency Suppresses the Bullwhip Effect**
+
+Information asymmetry is a classic cause of the bullwhip effect in human experiments. This study tests if LLM agents behave similarly. Under information sharing (IS), each agent views not only its local state but also the inventory and backlog levels of other tiers. Fluctuations, costs, and bullwhip intensity are compared between IS and non-IS conditions. Significant reductions in volatility and cost under IS would indicate that LLM biases are rooted in information structures rather than just individual intelligence.
 
 ### Loss & Training
 
-This study does not involve model training. Standard statistical tests (sign test, t-test, Mann-Whitney test) are used to verify the significance of the results.
+No model training is involved; agents use off-the-shelf LLMs deployed in a zero-shot manner. Results are validated using standard statistical methods including sign tests, t-tests, and Mann-Whitney tests.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Replication of the bullwhip effect (homogeneous conditions, no information sharing):
+Reproduction of the bullwhip effect (Homogeneous conditions, No IS):
 
-| Configuration | Order Variance Increase | $p$-value | Description |
-| :--- | :--- | :--- | :--- |
-| DeepSeek-Original | 82.3% | $<0.001$ | Significant bullwhip effect |
-| DeepSeek-R-Overall | 79.8% | $<0.001$ | Persists after reasoning enhancement |
-| GPT-Original | 74.2% | $<0.001$ | Consistent across families |
-| GPT-R-Overall | 74.3% | $<0.001$ | Consistency verification |
+| Configuration | Order Variance Increase | p-value | Description |
+|---------------|-------------------------|---------|-------------|
+| DeepSeek-Original | 82.3% | <0.001 | Significant Bullwhip Effect |
+| DeepSeek-R-Overall | 79.8% | <0.001 | Persists despite reasoning enhancement |
+| GPT-Original | 74.2% | <0.001 | Consistent across families |
+| GPT-R-Overall | 74.3% | <0.001 | Consistency verification |
 
 ### Ablation Study
 
-Mitigation effect of information sharing:
+Mitigation effect of Information Sharing (IS):
 
-| Condition | Total Cost w/o IS | Total Cost w/ IS | Reduction |
-| :--- | :--- | :--- | :--- |
+| Condition | Total Cost (No IS) | Total Cost (With IS) | Reduction |
+|-----------|--------------------|----------------------|-----------|
 | DeepSeek-Original | 39.43 | 20.15 | ~49% |
 | DeepSeek-R-Overall | 29.43 | 17.71 | ~40% |
 
 ### Key Findings
 
-- LLM agents successfully replicate the bullwhip effect observed in human experiments ($p < 0.001$), validating the credibility of LLMs as behavioral proxies.
-- Compared to human data, LLM agents' decisions are more stable (lower variance), yielding clearer statistical signals.
-- While cognitive enhancement (R1/GPT-5) reduces total costs, it does not eliminate the bullwhip effect—even "smarter" agents continue to exhibit myopic behavior.
+- LLM agents successfully replicate the bullwhip effect observed in human experiments ($p < 0.001$), validating their credibility as behavioral proxies.
+- Compared to human data, LLM agent decisions are more stable (lower variance) with clearer statistical signals.
+- Cognitive enhancement (R1/GPT-5) reduces total costs but does not eliminate the bullwhip effect—even "smarter" agents exhibit myopic behavior.
 - Information sharing is the most effective intervention: it consistently reduces costs by 40-50% across all configurations.
 - Self-interested behavior (each agent minimizing its own cost) is the fundamental cause of system inefficiency.
 
 ## Highlights & Insights
 
-- Using LLMs for behavioral experiment simulation is a highly promising paradigm: compared to human experiments, the costs are several orders of magnitude lower, allowing for large-scale repetition and precise variable control. This has transformative implications for operations management and behavioral economics.
-- The insight that cognitive enhancement cannot eliminate the bullwhip effect is profound: the issue lies not in individual intelligence deficits but in the information structure and incentive mechanisms—this aligns closely with observations in real-world organizations.
-- The dual-family verification design (DeepSeek + GPT) ensures the robustness of the findings across different platforms.
+- Simulating behavioral experiments with LLMs is a highly promising paradigm: compared to human experiments, it is orders of magnitude cheaper, allows for large-scale repetition, and offers precise control over variables. This is transformative for operations management and behavioral economics.
+- The insight that cognitive enhancement cannot eliminate the bullwhip effect is profound: the issue lies not in individual intelligence deficits but in information structures and incentive mechanisms—highly consistent with real-world organizational dynamics.
+- The dual-family verification design (DeepSeek + GPT) ensures the cross-platform robustness of the findings.
 
 ## Limitations & Future Work
 
-- Whether the "cognitive biases" of LLM agents are essentially identical to those of humans remains questionable—they may represent behavioral patterns learned from training data rather than true cognitive constraints.
-- While classic, the beer distribution game is highly simplified; the complexity of real supply chains (multi-product, stochasticity, contractual constraints) far exceeds this setup.
-- The temperature parameter was fixed at 1; behavior might vary under different temperatures (though stability results from prior work were cited).
-- Only 4-stage linear supply chains were investigated; the behavior of networked supply chains may be entirely different.
+- Whether the "cognitive biases" of LLM agents are fundamentally identical to those of humans remains questionable—they might be learned behavioral patterns from training data rather than true cognitive constraints.
+- While classic, the Beer Distribution Game is highly simplified; real supply chain complexity (multi-product, stochasticity, contractual constraints) far exceeds this setup.
+- The temperature parameter was fixed at 1; behavior might vary at different temperatures (though prior stability results were cited).
+- Only linear 4-tier chains were studied; behavior in networked supply chains could be entirely different.
 
 ## Related Work & Insights
 
-- **vs Kirshner (2024)**: A pioneer in deploying LLM agents in supply chains, but focused on homogeneous settings; this paper is the first to introduce cognitive heterogeneity.
-- **vs Park et al. (2023) (Generative Agents)**: Focuses on social interaction simulation; this work extends LLM agents into structured economic environments.
-- **vs Traditional RL methods (IPPO/MAPPO)**: These require strict state space definitions and extensive training; LLM agents exhibit human-like behavior with zero training.
+- **vs. Kirshner (2024)**: A pioneer in deploying LLM agents in supply chains, but used homogeneous setups; this study is the first to introduce cognitive heterogeneity.
+- **vs. Park et al. (2023) (Generative Agents)**: Focuses on social interaction simulation; this study extends LLM agents to structured economic environments.
+- **vs. Traditional RL Methods (IPPO/MAPPO)**: RL requires strict state space definitions and heavy training; LLM agents exhibit human-like behavior with zero training.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ New perspective on cognitive heterogeneity + supply chain simulation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 32 repetitions × 6 configurations × 2 information conditions, with rigorous statistical validation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Rigorous statistical validation with 32 repetitions × 6 configs × 2 info conditions.
 - Writing Quality: ⭐⭐⭐⭐ Clear experimental design and solid statistical analysis.
-- Value: ⭐⭐⭐⭐ Opens a new direction for the application of LLM agents in organizational behavior research.
+- Value: ⭐⭐⭐⭐ Opens a new direction for LLM agents in organizational behavior research.
 
 <!-- RELATED:START -->
 
@@ -133,7 +138,7 @@ Mitigation effect of information sharing:
 - [\[ACL 2026\] Why Are We Moral? An LLM-based Agent Simulation Approach to Study Moral Evolution](why_are_we_moral_an_llm-based_agent_simulation_approach_to_study_moral_evolution.md)
 - [\[ACL 2026\] Point of Order: Action-Aware LLM Persona Modeling for Realistic Civic Simulation](point_of_order_action-aware_llm_persona_modeling_for_realistic_civic_simulation.md)
 - [\[ACL 2026\] Investigating Counterfactual Unfairness in LLMs towards Identities through Humor](investigating_counterfactual_unfairness_in_llms_towards_identities_through_humor.md)
-- [\[ACL 2026\] To Lie or Not to Lie? Investigating The Biased Spread of Global Lies by LLMs](to_lie_or_not_to_lie_investigating_the_biased_spread_of_global_lies_by_llms.md)
+- [\[ACL 2026\] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection](mm-stancedet_retrieval-augmented_multi-modal_multi-agent_stance_detection.md)
 
 </div>
 

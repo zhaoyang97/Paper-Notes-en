@@ -2,108 +2,108 @@
 title: >-
   [Paper Note] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design
 description: >-
-  [CVPR2026][Multimodal VLM][CAD dataset] This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts…
+  [CVPR 2026][Multimodal VLM][CAD dataset] The authors developed SldprtNet, a large-scale multimodal CAD dataset containing over 242,000 industrial parts. Each sample includes fully aligned data across four modalities: .sldprt/.step 3D models, seven-view composite images, parametric modeling scripts, and natural language descriptions. They also developed lossle
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "CAD dataset"
-  - "language-driven 3D design"
-  - "multimodal alignment"
-  - "parametric modeling"
-  - "text-to-CAD"
-  - "encoder-decoder"
-  - "SolidWorks"
+  - CVPR 2026
+  - Multimodal VLM
+  - CAD dataset
+  - language-driven 3D design
+  - multimodal alignment
+  - parametric modeling
+  - text-to-CAD
+  - encoder-decoder
 date: 2026-05-08
-content_hash: ba9489b778fbfad3
+content_hash: ad6e90f14c717ec8
 ---
-
 # SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.13098](https://arxiv.org/abs/2603.13098)  
 **Code**: None  
-**Area**: Others (3D CAD Generation / Multimodal Dataset)
+**Area**: others (3D CAD Generation / Multimodal Dataset)  
 **Keywords**: CAD dataset, language-driven 3D design, multimodal alignment, parametric modeling, text-to-CAD, encoder-decoder, SolidWorks
 
 ## TL;DR
 
-This paper presents SldprtNet, a large-scale multimodal CAD dataset comprising 242,000+ industrial parts, where each sample contains four fully aligned modalities: .sldprt/.step 3D models, seven-view composite images, parametric modeling scripts, and natural language descriptions. The authors develop a lossless encoder/decoder toolchain supporting 13 CAD commands, and baseline experiments demonstrate the significant advantage of multimodal input over text-only input for CAD generation tasks.
+The authors developed SldprtNet, a large-scale multimodal CAD dataset containing over 242,000 industrial parts. Each sample includes fully aligned data across four modalities: .sldprt/.step 3D models, seven-view composite images, parametric modeling scripts, and natural language descriptions. They also developed lossless encoder/decoder tools supporting 13 CAD commands. Baseline experiments demonstrate the significant advantages of multimodal input over text-only input for CAD generation tasks.
 
 ## Background & Motivation
 
-**Scarcity of CAD Datasets**: Compared to image and text datasets, CAD datasets are extremely small in scale — each sample must be manually created by domain experts using professional software at high cost. This data scarcity directly constrains research progress in semantics-driven CAD modeling.
+**Scarcity of CAD Datasets**: Compared to image and text datasets, CAD datasets are extremely small in scale. Each sample must be manually created by professionals using specialized software, resulting in high modeling costs. This data scarcity directly restricts research progress in semantics-driven CAD modeling.
 
-**Missing Modalities in Existing Datasets**: Mainstream 3D datasets suffer from severe modality incompleteness. Non-parametric datasets (ModelNet, ShapeNet, Thingi10K) provide only meshes or point clouds, discarding design history and parametric information, and thus cannot support editable modeling. Parametric datasets (ABC, Fusion 360) preserve B-Rep or modeling sequences but lack text annotations and visual information, making them unsuitable for language-driven or cross-modal tasks.
+**Missing Modalities in Existing Datasets**: Major 3D datasets suffer from severe modal incompleteness. Non-parametric datasets (ModelNet, ShapeNet, Thingi10K) provide only meshes or point clouds, losing design history and parametric information, thus failing to support editable modeling. Parametric datasets (ABC, Fusion 360) retain B-Rep or modeling sequences but lack text annotations and visual information, hindering language-driven or cross-modal tasks.
 
-**Key Bottleneck in Text-to-CAD**: DeepCAD pioneered the formulation of CAD modeling as a sequence generation problem but supports only 2D sketching and extrusion; Text2CAD introduced text guidance but relies on synthetic text, resulting in semantic–geometry alignment gaps and a complete absence of the image modality.
+**Key Bottlenecks in Text-to-CAD**: DeepCAD pioneered modeling CAD modeling as a sequence generation problem but only supports two operations: 2D sketches and extrclusions. Text2CAD introduced text guidance but used synthetic text, which exhibits alignment deviations between semantics and actual geometry, and lacks the image modality entirely.
 
-**Insights from Multimodal Learning**: Works such as CLIP, Flamingo, and BLIP-2 have demonstrated that cross-modal alignment learning is critical for improving generalization and zero-shot reasoning. The CAD domain equally requires a unified multimodal dataset that integrates geometry, visual information, parametric sequences, and natural language to provide richer supervision signals.
+**Key Insight from Multimodal Learning**: Works like CLIP, Flamingo, and BLIP-2 have proven that cross-modal alignment learning is essential for enhancing generalization and zero-shot reasoning. The CAD field similarly requires a unified multimodal dataset integrating geometry, vision, parametric sequences, and natural language to provide richer supervisory signals.
 
-**Limitations of Existing CAD-LLMs**: Recent works including CAD-GPT, CAD-MLLM, CAD-Coder, and CAD-Llama have demonstrated the potential of multimodal and code-driven approaches, yet each has shortcomings — small data scale, limited command coverage, high proportion of synthetic data, lack of executable modeling sequences, or deviation from industrial CAD workflows.
+**Limitations of Prior Work in CAD-LLMs**: Recent works such as CAD-GPT, CAD-MLLM, CAD-Coder, and CAD-Llama show the potential of multimodal/code-driven methods. However, they suffer from small data scales, limited command coverage, high proportions of synthetic data, lack of executable modeling sequences, or deviation from industrial CAD workflows.
 
 ## Method
 
 ### Overall Architecture
 
-The SldprtNet construction pipeline consists of four stages: **(1)** collecting approximately 680,000 .sldprt industrial part models from three public platforms — GrabCAD, McMaster-Carr, and FreeCAD; **(2)** filtering and retaining 242,000+ high-quality samples containing 13 representative feature types; **(3)** generating multi-view images, parametric text representations, and standard format conversions for each sample via an automated pipeline; and **(4)** generating natural language descriptions using a multimodal language model followed by manual verification and alignment correction.
+SldprtNet is not a model but a dataset construction pipeline involving "Collection → Filtering → Multimodal Generation → Annotation Verification." The Goal is to provide the multimodal aligned data long missing in the CAD field. The process consists of four steps: first, collecting approximately 680,000 .sldprt industrial part models from GrabCAD, McMaster-Carr, and FreeCAD; then, filtering to retain 242,000+ high-quality samples containing 13 representative feature types; next, using an automated pipeline to generate multi-view images, parametric text, and standard format conversions for each sample; finally, using a multimodal language model to generate natural language descriptions followed by manual alignment verification.
 
-Each sample ultimately contains five aligned modalities:
-- **.sldprt file**: SolidWorks native format encoding the complete feature tree history
-- **.step file**: Standard exchange format supporting cross-platform validation
-- **Multi-view composite image**: Six orthographic views (front/back/left/right/top/bottom) plus one isometric view composited into a single PNG
-- **Parametric modeling script (Encoder_txt)**: Structured text representation containing the feature tree and detailed parameters for each feature
-- **Natural language description (Des_txt)**: Appearance and functional description generated by Qwen2.5-VL-7B
+Each sample consists of five fully aligned modalities: .sldprt files (native SolidWorks format, encoding full feature tree history); .step files (standard exchange format for cross-platform verification); multi-view composite images (6 orthogonal views: front/back/left/right/top/bottom + 1 isometric view synthesized into a single PNG); parametric modeling scripts Encoder_txt (including the feature tree and detailed parameters for each feature); and natural language descriptions Des_txt (appearance and functional descriptions generated by Qwen2.5-VL-7B).
 
-### Key Designs: Encoder and Decoder
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Web Platform Collection<br/>GrabCAD / McMaster-Carr / FreeCAD<br/>approx. 680K .sldprt"] --> B["Filtering<br/>Retain 242K samples with 13 feature types"]
+    B --> C["Seven-view Rendering & Synthesis<br/>6 Orthogonal + 1 Isometric → Single PNG"]
+    B --> D["Encoder: CAD → Parametric Text<br/>Traverse feature tree to extract parameters → Encoder_txt"]
+    B --> E["Standard Format Conversion<br/>.sldprt → .step"]
+    C --> F["Natural Language Description Generation<br/>Qwen2.5-VL-7B (Image + Script) → Des_txt"]
+    D --> F
+    F --> G["Manual Alignment Verification"]
+    C --> G
+    E --> G
+    G --> H["Five-modality Aligned Sample<br/>.sldprt / .step / PNG / Encoder_txt / Des_txt"]
+    H --> I["Dataset Complexity Stratification<br/>4 levels by feature count → Supports Curriculum Learning"]
+    D -.Closed-loop Verification.-> J["Decoder: Parametric Text → CAD<br/>Reconstruct feature-by-feature and compare with original"]
+```
 
-Two core tools developed around the SolidWorks COM interface form a lossless bidirectional conversion system:
+### Key Designs
 
-**Encoder (CAD → Text)**:
-1. Automatically traverses the Feature Tree of a .sldprt file and extracts feature types, names, and parent–child relationships in modeling-history order
-2. Invokes type-specific modules to extract detailed parameters (dimensions, constraints, sketch entities, dependencies, etc.)
-3. Outputs a unified human-readable, machine-parseable structured text format
+**1. Mechanism: Lossless Bidirectional Tools (Encoder/Decoder)**
 
-**Decoder (Text → CAD)**:
-1. Creates a blank .sldprt document to initialize the modeling environment
-2. Parses the Feature Tree from Encoder_txt and incrementally calls the SolidWorks API to reconstruct each feature according to feature order and hierarchy
-3. Ensures geometric and topological consistency with the source model
+The value of CAD data lies in manual modeling by professionals, which is difficult to scale through collection alone and hard to verify regarding whether generated sequences reconstruct parts correctly. SldprtNet features a pair of reciprocal tools developed around the SolidWorks COM interface. The Encoder (CAD → Text) automatically traverses the .sldprt Feature Tree, extracts feature types, names, and parent-child relationships in chronological modeling order, and then extracts detailed parameters (dimensions, constraints, sketch entities, dependencies) to output structured, human-readable, and machine-parsable text. The Decoder (Text → CAD) reverses this process, creating a blank .sldprt document and parsing the Encoder_txt Feature Tree to reconstruct each feature via SolidWorks APIs, ensuring geometric and topological consistency with the source. These tools support 13 CAD operations (2D Sketch, Extrusion, Chamfer, Fillet, Linear Pattern, Mirror Pattern, etc.), significantly exceeding the 2 operations in DeepCAD and enabling a closed-loop "output → reconstruction → comparison" verification.
 
-The encoder/decoder supports **13 CAD operations**, including 2D Sketch, Extrusion, Chamfer, Fillet, Linear Pattern, Mirror Pattern, and others — far exceeding the 2 operation types in DeepCAD and substantially expanding the diversity of representable parts.
+**2. Function: Natural Language Description Generation**
 
-### Natural Language Description Generation
+Parametric datasets generally lack text, and manual descriptions for 240,000 samples are unfeasible. Qwen2.5-VL-7B was used, taking synthetic images and parametric scripts as input to generate appearance and functional descriptions. Inference was completed in 368 GPU-hours on 12 NVIDIA A100s, followed by manual verification and alignment correction. The strategy of synthesizing seven views into a single image also compressed input token length and accelerated inference.
 
-Qwen2.5-VL-7B is used with composite images and parametric scripts as input to generate appearance and functional descriptions of each part. Inference runs on 12 NVIDIA A100 GPUs for 368 GPU-hours to generate descriptions for 242,000+ samples, which are subsequently validated and alignment-corrected by human annotators. The strategy of compositing seven rendered views into a single image effectively reduces input token length and accelerates inference.
+**3. Dataset Complexity Level Stratification**
 
-### Dataset Complexity Stratification
+To balance training coverage and inference depth evaluation, the authors categorized models into four levels based on the number of CAD commands in the Feature Tree:
 
-Models are stratified into four complexity levels based on the number of CAD commands in each part's Feature Tree:
-
-| Complexity Level | Feature Count | Samples | Proportion |
+| Complexity Level | Number of Features | Samples | Percentage |
 |:---:|:---:|:---:|:---:|
 | Level 1 (Simple) | 1–5 | 93,188 | 38.4% |
-| Level 2 (Intermediate) | 6–10 | 78,926 | 32.5% |
+| Level 2 (Medium) | 6–10 | 78,926 | 32.5% |
 | Level 3 (Advanced) | 11–100 | 69,259 | 28.5% |
 | Level 4 (Expert) | >100 | 1,234 | 0.5% |
 
-The three primary levels are relatively balanced in sample proportion, ensuring training coverage; Expert-level samples, though few, are essential for evaluating reasoning depth. This stratification also supports curriculum learning strategies — establishing geometric understanding from simple samples before progressively introducing high-complexity samples to improve generalization.
+The balanced distribution among the first three levels ensures training coverage, while Expert samples are crucial for evaluating reasoning depth. This stratification provides out-of-the-box support for curriculum learning—starting with simple samples to build geometric understanding before introducing high-complexity samples.
 
 ## Key Experimental Results
 
-### Main Results: Single-Modal vs. Multimodal Baseline Comparison
+### Main Results: Single-modal vs. Multimodal Baseline
 
-Qwen2.5-7B (text-only) and Qwen2.5-7B-VL (image + text) are fine-tuned on a 50K-sample subset and evaluated on a test set of 3,644 samples:
+Qwen2.5-7B (text-only) and Qwen2.5-7B-VL (image+text) were fine-tuned on a 50K sample subset and tested on 3,644 samples:
 
 | Metric | Qwen2.5-7B (Text-only) | Qwen2.5-7B-VL (Multimodal) | Gain |
 |:---|:---:|:---:|:---:|
 | Exact Match Score | 0.0058 | 0.0099 | +70.7% |
 | BLEU Score | 97.1827 | 97.9309 | +0.77% |
 | Command-Level F1 | 0.3247 | 0.3670 | +13.0% |
-| Tolerance Accuracy | 0.5016 | 0.4630 | −7.7% |
+| Tolerance Accuracy | 0.5016 | 0.4630 | -7.7% |
 | Partial Match Rate | 0.5554 | 0.6162 | +10.9% |
 
 ### Dataset Comparison
 
-| Dataset | # Models | Format | Parametric | Multi-view | Reconstructable | Text Desc. |
+| Dataset | Models | Format | Parametric | Multi-view | Reconstructible | Text Descriptions |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **SldprtNet** | **242,606** | **Sldprt** | **✓** | **✓** | **✓** | **✓** |
 | ABC | 1,000,000+ | B-Rep | ✓ | ✗ | ✗ | ✗ |
@@ -114,53 +114,57 @@ Qwen2.5-7B (text-only) and Qwen2.5-7B-VL (image + text) are fine-tuned on a 50K-
 
 ### Key Findings
 
-1. **Multimodal significantly outperforms single-modal**: The multimodal model achieves clear improvements on the three core metrics — Exact Match (+70.7%), Command-Level F1 (+13.0%), and Partial Match Rate (+10.9%) — indicating that visual information plays a key role in geometric semantic understanding and modeling logic reasoning.
-2. **Counter-intuitive result on Tolerance Accuracy**: The text-only model achieves slightly higher parameter tolerance accuracy (0.5016 vs. 0.4630); the authors hypothesize this reflects overfitting to numerical values rather than genuine structured semantic understanding.
-3. **Uniqueness of SldprtNet**: Among the six datasets compared, SldprtNet is the only one that simultaneously satisfies all four properties: parametric, multi-view, reconstructable, and text description.
-4. **2D Sketch dominates feature distribution**: As the foundation for nearly all 3D geometry, 2D Sketch is the most frequently used feature; the high frequency of Chamfer and Fillet reflects the industrial part nature of the dataset.
+1. **Multimodal Significantly Outperforms Single-modal**: The multimodal model significantly outperformed the text-only model in Exact Match (+70.7%), Command-Level F1 (+13.0%), and Partial Match Rate (+10.9%), indicating that visual information plays a key role in geometric semantic understanding and modeling logic reasoning.
+2. **Counter-intuitive Result in Tolerance Accuracy**: The text-only model was slightly higher in parameter tolerance accuracy (0.5016 vs. 0.4630). The authors speculate this reflects a tendency to overfit numerical values rather than true structural semantic understanding.
+3. **Uniqueness of SldprtNet**: Among the six compared datasets, SldprtNet is the only one satisfying all four characteristics: parametric, multi-view, reconstructible, and text-described.
+4. **Dominance of 2D Sketch**: As the foundation for nearly all 3D geometry, 2D Sketch is the most frequently used feature. The high frequency of Chamfer and Fillet reflects the industrial part nature of the dataset.
 
 ## Highlights & Insights
 
-1. **Closed-loop validation design**: The lossless bidirectional encoder–decoder conversion not only addresses data scalability but also provides a structured means of validating model outputs — generated CAD sequences can be reconstructed via the decoder and compared against the original model, enabling automated quality control.
-2. **Seven-view compositing strategy**: Compositing seven rendered views into a single image is highly practical, substantially reducing the input token count and inference time for multimodal models without sacrificing visual completeness.
-3. **Coverage of 13 operations**: Compared to DeepCAD's 2 operations, SldprtNet's support for 13 CAD commands greatly increases the diversity of representable parts and brings the dataset closer to real industrial design scenarios.
-4. **Native support for curriculum learning**: The four-level complexity stratification provides out-of-the-box support for curriculum learning, which may yield significant training efficiency gains for long-sequence CAD generation tasks.
+1. **Closed-loop Verification Design**: The bidirectional lossless conversion between encoder and decoder fails not only to scale data but also provides a means of structured verification for model outputs—generated CAD sequences can be reconstructed and compared with originals for automated quality control.
+2. **Seven-view Composition Strategy**: Synthesizing 7 rendered images into one is highly practical, significantly reducing the number of input tokens and inference time for multimodal models without losing visual completeness.
+3. **Coverage of 13 Operations**: Supporting 13 CAD commands compared to DeepCAD's 2 significantly enhances the diversity of representable parts, bringing the dataset closer to real-world industrial design scenarios.
+4. **Natural Support for Curriculum Learning**: The four-level complexity stratification provides out-of-the-box support for curriculum learning, which could lead to significant training efficiency gains for long-sequence CAD generation tasks.
 
 ## Limitations & Future Work
 
-1. **Overly simple baselines**: Only single-modal vs. multimodal variants of the same model are compared; direct comparisons with existing methods such as DeepCAD, Text2CAD, and CAD-GPT are absent, making it difficult to quantify the dataset's actual gains on state-of-the-art methods.
-2. **Extremely low Exact Match**: The best multimodal model achieves an Exact Match of only 0.0099, indicating that faithfully reproducing complete CAD modeling sequences remains highly challenging, yet failure modes are not analyzed in depth.
-3. **Description quality depends on the generative model**: Natural language descriptions are generated by Qwen2.5-VL-7B and manually verified, but the coverage rate and standards of verification are not detailed, potentially introducing systematic biases.
-4. **Domain limited to industrial parts**: The dataset is sourced from industrial parts on platforms such as GrabCAD, limiting coverage of other CAD domains such as architecture and consumer products.
-5. **SolidWorks dependency**: The encoder/decoder relies on the SolidWorks COM interface, restricting portability to other CAD platforms.
-6. **No geometric reconstruction quality evaluation**: The paper does not provide quantitative analysis of geometric accuracy for the encoder–decoder round-trip conversion.
+1. **Simple Baseline**: The study only compared single-modal vs. multimodal variants of the same model, lacking direct comparisons with existing methods like DeepCAD, Text2CAD, or CAD-GPT, making it difficult to pinpoint the dataset's specific gains for SOTA methods.
+2. **Extremely Low Exact Match**: The best multimodal model achieved an Exact Match of only 0.0099, showing that precise replication of full CAD modeling sequences remains extremely challenging, yet the paper lacks an in-depth failure mode analysis.
+3. **Description Quality Dependency**: Natural language descriptions were generated by Qwen2.5-VL-7B. Although manually verified, the verification coverage and standards are not detailed, potentially introducing systematic biases.
+4. **Domain Limited to Industrial Parts**: Collected from platforms like GrabCAD, the dataset has limited coverage for other CAD domains like architecture or consumer goods.
+5. **SolidWorks Dependency**: The encoder/decoder relies on the SolidWorks COM interface, limiting portability to other CAD platforms.
+6. **Lack of Geometric Reconstruction Evaluation**: The paper does not provide a quantitative analysis of geometric accuracy for encoder-decoder round-trip conversions.
 
 ## Related Work & Insights
 
-- **DeepCAD** (ICCV 2021): A pioneering work formalizing CAD modeling as sequence generation, but limited to sketch-and-extrude operations; SldprtNet greatly expands command coverage by supporting 13 operations.
-- **Text2CAD** (NeurIPS 2024): The first text-guided CAD generation work, but it relies on synthetic text and lacks the image modality; SldprtNet addresses this gap through multimodal alignment.
-- **ABC Dataset** (CVPR 2019): The benchmark million-scale B-Rep CAD dataset, but completely lacking text and visual modalities.
-- **CAD-Coder**: The first open-source vision–language model for image-to-CadQuery code generation, but its reliance on a lightweight DSL deviates from industrial workflows.
-- The central insight from this work is that multimodal aligned datasets have a direct positive impact on CAD generation quality, with clear gains observable even from relatively simple baselines.
+- **DeepCAD** (ICCV 2021): Pioneering work formalizing CAD modeling as sequence generation but limited to sketch+extrusion. SldprtNet expands command coverage by supporting 13 operations.
+- **Text2CAD** (NeurIPS 2024): First to introduce text-guided CAD generation but uses synthetic text and lacks image modality. SldprtNet fills this gap via multimodal alignment.
+- **ABC Dataset** (CVPR 2019): A benchmark million-scale B-Rep CAD dataset but completely lacks text and visual modalities.
+- **CAD-Coder**: The first open-source vision-language model for image-to-CadQuery code, but its reliance on lightweight DSL deviates from industrial workflows.
+- The core insight is that multimodal aligned datasets have a direct positive impact on CAD generation quality, with clear gains observed even in relatively simple baselines.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — As the first large-scale CAD dataset providing complete four-modality alignment (parametric model, multi-view images, modeling script, and natural language description), it addresses a clear gap in the field.
-- **Experimental Thoroughness**: ⭐⭐⭐ — The multimodal vs. single-modal baseline comparison effectively validates the core claim, but broad comparisons with existing methods and in-depth ablation studies are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-motivated contributions, and systematic dataset design principles; experimental analysis is insufficiently deep in places.
-- **Value**: ⭐⭐⭐⭐ — The 242K-scale multimodal CAD dataset and accompanying toolchain offer high practical value to the Text-to-CAD community, though SolidWorks dependency may limit adoption upon actual open-source release.
+- **Novelty**: ⭐⭐⭐⭐ — Fills a clear gap as the first large-scale CAD dataset providing full alignment across parametric models, multi-view images, modeling scripts, and natural language descriptions.
+- **Experimental Thoroughness**: ⭐⭐⭐ — The multimodal vs. single-modal baseline effectively validates the core premise, but broader comparisons with existing methods and detailed ablation studies are missing.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clearly structured with well-justified motivation and systematized dataset design principles, though some experimental analyses lack depth.
+- **Value**: ⭐⭐⭐⭐ — The 242K-scale multimodal CAD dataset and its tools hold high practical value for the Text-to-CAD community, although the SolidWorks dependency might limit adoption during open-source deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[CVPR 2026\] EmoVerse: A MLLMs-Driven Emotion Representation Dataset for Interpretable Visual Emotion Analysis](emoverse_a_mllms-driven_emotion_representation_dataset_for_interpretable_visual_.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
-- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[CVPR 2026\] NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries](nailia_multimodal_nail_design_retrieval_based_on_dense_intent_descriptions_and_p.md)
+- [\[CVPR 2026\] CADFS: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models](cadfs_a_big_cad_program_dataset_and_framework_for_computer-aided_design_with_lar.md)
+- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
+- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
 
 </div>
 

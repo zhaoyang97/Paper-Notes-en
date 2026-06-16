@@ -2,76 +2,87 @@
 title: >-
   [Paper Note] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs
 description: >-
-  [ICML 2026][LLM Reasoning][Symbolic Regression] The "proposal-scoring" loop of LLM-led symbolic regression is decomposed into two layers: "Proposal vs. Navigation." The LLM is explicitly guided by three signals: adaptive…
+  [ICML 2026][LLM Reasoning][agentic reasoning] The proposal-score loop dominated by LLMs in symbolic regression is decomposed into two layers: "Proposal vs. Navigation." By explicitly guiding the LLM with three types of signals—adaptive operators (direction), diagnostic tools (residuals/dimensions), and reflective memory (trajectory experience)—this method reduces
 tags:
-  - "ICML 2026"
-  - "LLM Reasoning"
-  - "Symbolic Regression"
-  - "Evolutionary Search"
-  - "agentic reasoning"
-  - "Sample Efficiency"
-  - "LLM Tool Calling"
+  - ICML 2026
+  - LLM Reasoning
+  - agentic reasoning
 date: 2026-05-08
-content_hash: f20941e2871c27a8
+content_hash: c39faa9a74188137
 ---
-
 # Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.04360](https://arxiv.org/abs/2606.04360)  
 **Code**: https://github.com/Xinyu-Pang/Deliberate-Evolution (Available)  
 **Area**: LLM Reasoning / Agent / Symbolic Regression  
-**Keywords**: Symbolic Regression, Evolutionary Search, agentic reasoning, Sample Efficiency, LLM Tool Calling
+**Keywords**: Symbolic Regression, Evolutionary Search, Agentic Reasoning, Sample Efficiency, LLM Tool Calling
 
 ## TL;DR
-The "proposal-scoring" loop of LLM-led symbolic regression is decomposed into two layers: "Proposal vs. Navigation." The LLM is explicitly guided by three signals: adaptive operators (direction), diagnostic tools (residual/dimensionality), and reflective memory (trajectory experience). This approach reduces average NMSE by 37–55% on LLM-SRBench using only 40% of the evaluation budget.
+The proposal-score loop dominated by LLMs in symbolic regression is decomposed into two layers: "Proposal vs. Navigation." By explicitly guiding the LLM with three types of signals—adaptive operators (direction), diagnostic tools (residuals/dimensions), and reflective memory (trajectory experience)—this method reduces the average NMSE by 37–55% on LLM-SRBench using only 40% of the evaluation budget.
 
 ## Background & Motivation
 
-**Background**: Current mainstream LLM-based symbolic regression (LLM-SR, LASR, SGA) follows an "evolutionary optimization" paradigm: LLM proposes candidate expressions → BFGS fits constants → MSE provides scoring → feedback is returned to the LLM for further mutation.
+**Background**: Current mainstream LLM-based symbolic regression (LLM-SR, LASR, SGA) follows an "evolutionary optimization" approach—an LLM proposes candidate expressions, BFGS fits constants, MSE is used for scoring, and the feedback is sent back to the LLM for further mutation.
 
-**Limitations of Prior Work**: This cycle is highly sample-inefficient, averaging $10^3$ candidate evaluations per problem. This is because the LLM only receives a "parent expression + a scalar MSE," forcing it to simultaneously reason about three things: how to modify, why it is wrong, and what the past experiences were.
+**Limitations of Prior Work**: This loop suffers from extremely poor sample efficiency, requiring an average of $10^3$ candidate evaluations per problem. This occurs because the LLM only receives a "parent expression + a scalar MSE," forcing it to simultaneously reason about three things: how to modify, why it is wrong, and what the past experiences were.
 
-**Key Challenge**: Existing methods force "proposal" and "search guidance"—two tasks that should be decoupled—into the same prompt. Scalar feedback lacks three types of critical signals: **Direction** (should it refine or regenerate?), **Diagnosis** (does the residual contain periodicity or dimensional errors?), and **Memory** (which motifs succeed repeatedly, and which edits consistently fail?). Consequently, the search drifts among candidates that are "plausible but uninformative."
+**Key Challenge**: Existing methods forcefully pack "proposal" and "search guidance"—two tasks that should be decoupled—into the same prompt. Scalar feedback lacks three critical signals: **Direction** (should it refine or regenerate?), **Diagnostics** (does the residual hide periodicity or dimensional errors?), and **Memory** (which motifs succeeded before and which edits failed?). Consequently, the search oscillates between candidates that "look reasonable but are uninformative."
 
-**Goal**: To explicitize and modularize these three signals, allowing the LLM to focus on its strength—proposing symbolic skeletons—while delegating "navigation" to deterministic modules.
+**Goal**: To explicitize and modularize these three types of signals, allowing the LLM to focus on its strength—proposing symbolic skeletons—while delegating "navigation" to deterministic modules.
 
-**Key Insight**: The authors redefine symbolic regression as "guided scientific search" rather than "scored trial-and-error." If the success rate of each step is improved from $p_0$ to $p_0+\gamma$ through clear intent, localized evidence, and accumulated experience, the hitting time theoretically shortens exponentially ($\Pr(N>k)\le \exp[-k(p_0+\gamma)]$).
+**Key Insight**: The authors redefine symbolic regression as a "guided scientific search" rather than a "scored trial-and-error." By ensuring each candidate is generated with clear intent, localized evidence, and accumulated experience, increasing the success probability of each step from $p_0$ to $p_0+\gamma$ can theoretically shorten hitting time exponentially ($\Pr(N>k)\le \exp[-k(p_0+\gamma)]$).
 
-**Core Idea**: Use an agentic framework to **decouple** symbolic generation from search control. The LLM only proposes skeletons, while external modules determine direction, perform diagnosis, and accumulate memory.
+**Core Idea**: An agentic framework is used to **decouple** symbolic generation from search control—the LLM only proposes skeletons, while external modules handle direction setting, diagnostics, and memory accumulation.
 
 ## Method
 
 ### Overall Architecture
 
-At each round $t$: A parent expression $f_p$ is sampled from population $P_t$ via Boltzmann sampling → An operator $o_t$ (direction) is sampled from an operator policy $\pi_{s_t}^{(t)}$ indexed by the parent state $s_t$ → A toolset $\mathcal{T}=\{T_{\text{data}},T_{\text{res}},T_{\text{dim}}\}$ is called to generate a diagnostic report $a_t$ (diagnosis) → Reflective memory $M_{t-1}$ (history) is retrieved → The LLM generates a skeleton $\tilde f_t$ under the proposal distribution $p_\theta(\cdot\mid Q,f_p,o_t,a_t,M_{t-1})$ → Constants are fitted via BFGS to obtain $f_t$ → The population, operator weights, and memory are updated. The budget limit is $T=400$ (only 1/2.5 of the baseline).
+DE addresses the poor sample efficiency of the "propose-score" loop in LLM-based symbolic regression. When an LLM only receives a "parent expression + a scalar MSE," it is forced to reason about direction, error causes, and history simultaneously, leading to idling among uninformative candidates. DE decouples these signals into three deterministic modules, leaving the LLM to handle "symbolic skeleton proposal."
+
+Specifically, in round $t$: a parent expression $f_p$ is sampled from population $P_t$ using Boltzmann sampling. Its state $s_t$ indexes an operator policy to sample an operator $o_t$ providing **direction**. A toolset $\mathcal{T}=\{T_{\text{data}},T_{\text{res}},T_{\text{dim}}\}$ is called to generate a **diagnostic** report $a_t$. These are combined with historical **memory** $M_{t-1}$ and injected into the proposal distribution $p_\theta(\cdot\mid Q,f_p,o_t,a_t,M_{t-1})$. The LLM generates a skeleton $\tilde f_t$, BFGS fits constants to obtain $f_t$, and the population, operator weights, and memory are updated after evaluation. The budget is capped at $T=400$ candidates, which is $1/2.5$ of the baseline.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["种群 Pₜ：Boltzmann 采样父表达式 fₚ"] --> B["Adaptive Operators 方向<br/>状态 sₜ=(质量, 访问量) → 采样算子 oₜ"]
+    A --> C["Tool-Augmented Diagnostic 诊断<br/>Data Profiler / 残差诊断 / 量纲验证 → 报告 aₜ"]
+    A --> D["Reflective Memory 记忆<br/>精英 / 失败 / 突破 三元反思提炼规则 Mₜ₋₁"]
+    B --> E["LLM 提案：给定 (Q, fₚ, oₜ, aₜ, Mₜ₋₁) 产符号骨架"]
+    C --> E
+    D --> E
+    E --> F["BFGS 拟合常数 → 完整表达式 fₜ"]
+    F --> G["评估 → 回写种群、算子权重 wₛ、记忆 Mₜ"]
+    G -->|预算 T=400 未用完| A
+    G -->|预算用完| H["输出最优表达式 f̂"]
+```
 
 ### Key Designs
 
-1.  **Adaptive Operators (Directional Guidance)**:
-    - **Function**: Decides for the LLM whether the current step should "refine, mutate, crossover, or regenerate," preventing aimless guessing.
-    - **Mechanism**: Defines an operator set $\mathcal{O}=\{o_{\text{ref}},o_{\text{mut}},o_{\text{cross}},o_{\text{reg}}\}$ (exploit → explore). A binary state $s_t=(\mathbb{I}[\tilde r_p\le \tau_r],\mathbb{I}[v_p\ge\tau_v])$ (quality × frequency of visits) is mapped to the parent. Each state maintains operator weights $w_s^{(t)}$, sampled via $\pi_s^{(t)}(o)=(1-\alpha)\,w_s^{(t)}(o)/\sum w + \alpha/|\mathcal{O}|$. Scores use relative improvement $r_t=\text{clip}((\ell(f_p)-\ell(f_t))/(\ell(f_p)+\varepsilon))$, with multiplicative updates $w_s^{(t+1)}(o_t)\leftarrow w_s^{(t)}(o_t)\cdot\max(\delta,1+\eta r_t)$. A stagnation trigger $\text{Stag}_t$ is used: if the best loss improves by less than $\xi$ for $h$ rounds, exploration is forced by increasing mutate/regenerate probabilities.
-    - **Design Motivation**: A minimal $2\times 2$ state machine with Multi-Armed Bandit updates learns explicit meta-policies (e.g., "high quality and frequently visited → mutative jump"), avoiding trial-and-error edits within the prompt.
+**1. Adaptive Operators: Deciding between refine or escape for the LLM rather than guessing directions**
 
-2.  **Tool-Augmented Diagnostic Proposal (Diagnostic Guidance)**:
-    - **Function**: Translates scalar "MSE" values into structured reports $a_t=(T_{\text{data}}(D),T_{\text{res}}(f_p,D),T_{\text{dim}}(f_p,Q))$ explaining "where and why" the error occurs.
-    - **Mechanism**: Three tools are called serially: (1) **Data Profiler** statistics priors like input ranges, operator domains, variable interactions, and periodicity; (2) **Residual Diagnostic** analyzes if residuals $e_i=y_i-f_p(x_i)$ contain unfitted periodic components, missing terms, or oscillating patterns (e.g., detecting a $-0.67$ correlation with $\sin(t)$ suggests a "missing periodic term"); (3) **Dimensional Verifier** performs physical consistency checks to filter out unit-invalid combinations.
-    - **Design Motivation**: Experiments show this is the most critical component—removing tools causes NMSE to jump from 4.37e-4 to 2.52e-2 (58x degradation), confirming that scalar feedback's fundamental flaw is its lack of "diagnosis."
+**Design Motivation**: The first missing signal is "direction"—whether to refine, mutate, crossover, or regenerate. DE extracts this from the prompt into a simple state machine and bandit model. An operator set $\mathcal{O}=\{o_{\text{ref}},o_{\text{mut}},o_{\text{cross}},o_{\text{reg}}\}$ is defined. Each parent expression maps to a binary state $s_t=(\mathbb{I}[\tilde r_p\le \tau_r],\mathbb{I}[v_p\ge\tau_v])$, representing "quality" and "visit frequency." A set of operator weights $w_s^{(t)}$ is maintained for each of the four states. Sampling follows $\pi_s^{(t)}(o)=(1-\alpha)\,w_s^{(t)}(o)/\sum w + \alpha/|\mathcal{O}|$ with $\epsilon$-exploration. Weights are updated multiplicatively using relative improvement $r_t=\text{clip}((\ell(f_p)-\ell(f_t))/(\ell(f_p)+\varepsilon))$. A stagnation trigger $\text{Stag}_t$ is also used to force exploration if the best loss does not improve for $h$ rounds.
 
-3.  **Reflective Memory (Historical Guidance)**:
-    - **Function**: Consolidates cross-round experiences into reusable natural language rules to prevent the LLM from repeating mistakes.
-    - **Mechanism**: Maintains memory $M_t$, but **writes only when necessary** via trigger $\delta_t=\mathbb{I}[(t\bmod K=0)\vee(\Delta_t>\epsilon_{\text{mem}})]$ (periodic + breakthrough updates). Reflection context $C_t=(Q,M_{t-1},\text{Elite}(P_t),\text{Fail}(\mathcal{H}_t),\text{Break}(\mathcal{H}_t))$ is constructed, feeding the LLM current elites, failed edits, and breakthrough edits to extract rules. A final compression step $M_t\leftarrow\text{Compress}(M_{s-1}\cup p_\theta(\cdot\mid C_t))$ retains successful motifs and common failure patterns while removing redundancy.
-    - **Design Motivation**: Pure in-context evolution is memoryless; explicit memory transforms search into an "informed scientist" process, while the trigger-based design avoids expensive LLM reflections every round.
+**2. Tool-Augmented Diagnostic Proposal: Translating "how much" error into "where and why"**
+
+The second missing signal is "diagnostics." Scalar MSE only indicates the magnitude of error without explaining structural or dimensional failures. DE uses three tools to generate a structured report $a_t=(T_{\text{data}}(D),T_{\text{res}}(f_p,D),T_{\text{dim}}(f_p,Q))$: **Data Profiler** (statistical priors), **Residual Diagnostic** (analyzing $e_i=y_i-f_p(x_i)$ for missing periodic components or oscillations), and **Dimensional Verifier** (checking physical consistency). These reports are injected into the prompt as natural language, turning undirected mutation into target revision. In ablation studies, removing tools caused the Physics NMSE to jump from 4.37e-4 to 2.52e-2 (a 58x worsening).
+
+**3. Reflective Memory: Condensing cross-round experience into rules for cumulative search**
+
+The third missing signal is "memory." Pure in-context evolution is memoryless. DE maintains memory $M_t$ but only updates it when a trigger $\delta_t=\mathbb{I}[(t\bmod K=0)\vee(\Delta_t>\epsilon_{\text{mem}})]$ is activated. Reflections are based on a context $C_t$ comparing current elites, significant failures, and breakthrough edits. The LLM extracts reusable rules (e.g., "these variables should be wrapped in periodic functions"). A compression step $M_t\leftarrow\text{Compress}(M_{t-1}\cup p_\theta(\cdot\mid C_t))$ ensures the memory remains concise and relevant.
 
 ### Loss & Training
-No gradient training is involved; the entire process is inference-time. Backbones used include Llama-3.1-8B-Instruct and Qwen3-4B-Instruct ($T=0.8$). Constants are fitted using BFGS (quasi-Newton). Theoretically, the authors prove via hitting-time analysis: as long as guidance increases the single-step success rate to $p_\theta\ge p_0+\gamma$, then $\Pr(N_\theta>k)\le\exp[-k(p_0+\gamma)]$, achieving exponential sample savings for $\gamma>0$.
+
+The process is entirely gradient-free and occurs at inference-time. Llama-3.1-8B-Instruct or Qwen3-4B-Instruct are used as backbones with a temperature of 0.8. Constants are fitted using BFGS. Hitting-time analysis provides theoretical backing: by increasing the success probability per step, the required number of evaluations decreases exponentially.
 
 ## Key Experimental Results
 
 ### Main Results
-On LLM-SRBench (240 problems across Physics/Material/Chemistry/Biology). Baselines were given 1000 candidate budgets; DE was given only 400 (40%).
 
-| Dataset (Qwen3-4B) | Metric | DE | Strongest Baseline (LASR) | Gain |
+Evaluated on LLM-SRBench (240 problems from Physics/Chemistry, etc.). Baselines were given a 1000-candidate budget, while DE used only 400 (40%).
+
+| Dataset (Qwen3-4B) | Metric | Ours | Prev. SOTA (LASR) | Gain |
 |---|---|---|---|---|
 | LSR-Transform | NMSE ↓ | 1.15e-1 | 1.83e-1 | -37% |
 | LSR-Transform | Acc0.01 ↑ | **50.45%** | 30.91% | +19.5pt |
@@ -79,49 +90,53 @@ On LLM-SRBench (240 problems across Physics/Material/Chemistry/Biology). Baselin
 | Chemistry | NMSE ↓ | **1.88e-4** | 2.31e-3 | -92% |
 | Stress-Strain (real) | ID/OOD NMSE ↓ | **1.11e-1 / 2.98e-1** | 1.44e-1 / 6.34e-1 | OOD -53% |
 
-OOD generalization is significant: baselines on Physics saw NMSE soar to 8e4 and Chemistry to 5e6, while DE remained around $10^1$, indicating it recovers true structures rather than overfitted skeletons.
+OOD generalization is significant: while baseline NMSE skyrocketed in Physics and Chemistry, DE remained stable, indicating it recovers true structures rather than overfitting.
 
 ### Ablation Study
+
 Physics + Qwen3-4B:
 
-| Configuration | NMSE ↓ | Acc0.01 ↑ | Note |
+| Configuration | NMSE ↓ | Acc0.01 ↑ | Description |
 |---|---|---|---|
 | Full DE | **4.37e-4** | **15.91** | Complete model |
-| w/o Memory | 1.34e-3 | 9.52 | Lacks history, NMSE ×3 |
-| **w/o Tool** | **2.52e-2** | 4.55 | **Diagnosis is critical, NMSE ×58** |
-| Fixed Refine | 8.69e-3 | 9.52 | Operator limited to single refine |
-| Uniform Ops | 1.02e-2 | 6.82 | Lacks adaptive strategy |
-| w/o Stagnation | 7.69e-4 | 13.64 | Lacks stagnation escape |
+| w/o Memory | 1.34e-3 | 9.52 | No historical experience |
+| **w/o Tool** | **2.52e-2** | 4.55 | **Diagnostics are critical** |
+| Fixed Refine | 8.69e-3 | 9.52 | Degenerated to single operator |
+| Uniform Ops | 1.02e-2 | 6.82 | Lost adaptive strategy |
+| w/o Stagnation | 7.69e-4 | 13.63 | Lost escape mechanism |
 
 ### Key Findings
-- **Diagnostic tools are the primary contributor**: Removing tools resulted in the largest drop (58x NMSE), validating that scalar feedback lacks diagnosis.
-- **Modules are complementary and non-redundant**: Removing any module degrades performance, showing direction, diagnosis, and memory are orthogonal.
-- **Geometric increase in sample efficiency**: Achieved lower error with 40% of the budget, consistent with hitting-time theory and empirical curves.
-- **Best operational stability**: Three independent runs on Qwen3-4B showed a variance of only 9e-10 (baselines often fluctuated above 1e-3).
-- **Correct skeleton recovery**: Case studies show DE directly produces ground-truth skeletons like `sin(t)+sin(v)+v`, whereas baselines often used polynomial surrogates for missing periodic terms.
+
+- **Diagnostic tools are the primary contributor**: Removing tools resulted in the largest performance drop (58x worsening in NMSE).
+- **Mutual complementarity**: Each module serves a unique purpose, and removing any of them degrades performance.
+- **Geometric improvement in efficiency**: Lower error was achieved with only 40% of the budget.
+- **High stability**: The variance across runs was significantly lower compared to baselines.
+- **Noise robustness**: Even with 5% noise, DE outperformed baselines running on noise-free data.
 
 ## Highlights & Insights
-- **"Decoupling Proposal and Navigation" is a general framework**: This philosophy can be migrated to code generation, theorem proving, and retrosynthesis. Splitting scalar reward into direction/diagnosis/memory is a universal recipe.
-- **Minimalist Meta-RL via State Machine + MAB**: A $2\times 2$ binary state space successfully learns "exploit vs. explore," which is much lighter than training an RL controller.
-- **Trigger-based memory solves the "what and when to remember" problem in agents**: Periodic and breakthrough triggers prevent expensive redundant reflections while capturing key insights.
-- **Theory matches experiments**: Using a simple geometric distribution hitting-time argument for exponential acceleration is more convincing than complex regret bounds.
+
+- **Decoupling Proposal and Navigation is a universal framework**: This philosophy is transferable to code generation, theorem proving, and other structured search tasks.
+- **Minimalist Meta-RL**: A simple $2\times2$ state space successfully learns when to exploit or explore, which is much lighter than training an RL controller.
+- **Trigger-based memory**: This solves the "what and when to remember" problem in agents, preventing context explosion while capturing critical insights.
 
 ## Limitations & Future Work
-- Toolsets are manually designed (data profiler, residual, dimensional); adapting to non-physical domains (e.g., code generation) requires new diagnostic tools without an automated solution yet.
-- The operator set is fixed to four types, and the state space is only $2\times 2$. This granularity may be insufficient for more complex domains (e.g., multi-objective or constrained SR).
-- Experiments were conducted on 4B–8B open-source models; verification on stronger models like GPT-4 or Claude is needed to see if the guidance gain $\gamma$ diminishes as the backbone improves.
-- BFGS fitting is sensitive to initial values; a correct skeleton might still be misjudged if constants are poorly fitted—a common bottleneck in all LLM-SR.
+
+- The toolset is manually designed and may need recalibration for non-physical domains.
+- The operator set and state space are small; complex domains might require higher granularity.
+- Validation was mostly on 4B–8B models; the benefit of DE might diminish with stronger backbones that have better intrinsic priors.
+- Long-term stability of the memory compression step and potential "hallucinated rules" were not fully explored.
 
 ## Related Work & Insights
-- **vs LLM-SR (Shojaee et al., 2025a)**: Both use LLM + Evolution + BFGS, but LLM-SR only provides scalar MSE. DE translates MSE into "where it's wrong," reducing Physics NMSE from 2.51e-3 to 4.37e-4 with 40% budget.
-- **vs LASR (Grayeli et al., 2024)**: LASR relies on $10^5$ non-LLM mutations for exploration; DE uses structured guidance for the same effect, proving "smarter prompts" outperform "brute-force search."
-- **vs Universal LLM Agents (ReAct/Reflexion)**: These frameworks often reflect at every step; DE uses triggers to control reflection frequency, making it suitable for long-horizon optimization without LLM call explosion.
+
+- **vs LLM-SR (Shojaee et al., 2025a)**: While both use LLMs and BFGS, LLM-SR relies on scalar MSE, whereas DE translates error into "where it's wrong."
+- **vs LASR (Grayeli et al., 2024)**: LASR uses massive brute-force mutation ($10^5$), while DE proves that structured guidance is more efficient than raw compute.
+- **vs SGA (Ma et al., 2024)**: SGA uses gradient guidance, which is often poor in discrete symbolic spaces. DE's discrete guidance via tools and operators is more robust.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Systematic decoupling in the LLM-SR context is novel, though the individual components are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes OOD, noise, real-world data, multiple backbones, ablation, and case studies.
-- Writing Quality: ⭐⭐⭐⭐⭐ Excellent figures and clear correspondence between motivation and design.
-- Value: ⭐⭐⭐⭐ A strong baseline for the LLM-SR community; design patterns are applicable to other LLM-as-optimizer tasks.
+- Novelty: ⭐⭐⭐⭐ Systematic decoupling in SR, though the components (bandit/memory) are known patterns.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing across datasets, noise levels, and robust ablation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent clarity in figures and motivation.
+- Value: ⭐⭐⭐⭐ Provides a strong baseline for sample-efficient LLM-based optimization.
 
 <!-- RELATED:START -->
 
@@ -131,9 +146,9 @@ Physics + Qwen3-4B:
 
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](../../ICLR2026/llm_reasoning/stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
-- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
+- [\[ACL 2025\] FineReason: Evaluating and Improving LLMs' Deliberate Reasoning through Reflective Puzzle Solving](../../ACL2025/llm_reasoning/finereason_evaluating_and_improving_llms_deliberate_reasoning_through_reflective.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
+- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
 
 </div>
 

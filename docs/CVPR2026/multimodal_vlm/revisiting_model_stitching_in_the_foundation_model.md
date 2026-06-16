@@ -2,134 +2,137 @@
 title: >-
   [Paper Note] Revisiting Model Stitching in the Foundation Model Era
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Stitching] This paper systematically investigates the feasibility of stitching heterogeneous Vision Foundation Models (VFMs), finds that conventional methods fail in this setting…
+  [CVPR 2026][Multimodal VLM][VFM Stitch Tree] This paper systematically investigates the feasibility of stitching Visual Foundation Models (VFMs). It discovers that traditional stitching methods fail for VFMs and proposes a two-stage training strategy—"Final Feature Matching + Task Loss"—to enable reliable stitching of heterogeneous VFMs. The resulting stitched mo
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Model Stitching"
-  - "Vision Foundation Models"
-  - "Representation Compatibility"
-  - "VFM Stitch Tree"
-  - "Multimodal LLM"
+  - CVPR 2026
+  - Multimodal VLM
+  - VFM Stitch Tree
 date: 2026-05-08
-content_hash: 118a6d1296204c29
+content_hash: e553e1c386613d58
 ---
-
 # Revisiting Model Stitching in the Foundation Model Era
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12433](https://arxiv.org/abs/2603.12433)  
-**Code**: N/A  
-**Area**: Multimodal VLM / Model Fusion
-**Keywords**: Model Stitching, Vision Foundation Models, Representation Compatibility, VFM Stitch Tree, Multimodal LLM
+**Code**: None  
+**Area**: Multimodal VLM / Model Fusion  
+**Keywords**: Model Stitching, Visual Foundation Models, Representation Compatibility, VFM Stitch Tree, Multimodal LLM
 
 ## TL;DR
-This paper systematically investigates the feasibility of stitching heterogeneous Vision Foundation Models (VFMs), finds that conventional methods fail in this setting, and proposes a two-stage training strategy — **Final Feature Matching + Task Loss Training** — that enables reliable stitching across heterogeneous VFMs. The resulting stitched models can even surpass both constituent VFMs individually. Building on this, the paper introduces the **VFM Stitch Tree (VST)** architecture, which provides a controllable accuracy–efficiency trade-off for multi-VFM systems.
+This paper systematically investigates the feasibility of stitching Visual Foundation Models (VFMs). It discovers that traditional stitching methods fail for VFMs and proposes a two-stage training strategy—"Final Feature Matching + Task Loss"—to enable reliable stitching of heterogeneous VFMs. The resulting stitched models can even outperform individual VFMs. Furthermore, the VFM Stitch Tree (VST) architecture is introduced to provide a controllable accuracy-efficiency tradeoff for multi-VFM systems.
 
 ## Background & Motivation
 
-1. **Background**: Vision foundation models (e.g., CLIP, DINOv2, SigLIP 2) pretrained under diverse objectives, datasets, and modality combinations have become the default backbones for downstream tasks. Multimodal systems (e.g., MoF-LLaVA, Cambrian-1) increasingly employ multiple VFMs simultaneously to capture complementary visual information.
-2. **Limitations of Prior Work**:
-    - Model stitching, used as a probe for measuring representational compatibility, has been shown to work for small models trained on the same dataset (e.g., ResNet-18 on CIFAR-10), but whether heterogeneous VFMs are stitchable remains unknown.
-    - Conventional stitching training methods — Layer Feature Matching (LFM) and Task Loss Training (TLT) — fail on VFMs. The former causes accumulated intermediate matching errors that amplify final feature deviation, especially at shallow stitching points; the latter suffers from optimization difficulties when gradients must propagate through long chains of frozen layers.
-    - Deploying multiple VFMs incurs linear computational and memory overhead ($k$ VFMs = $k\times$ cost), with no efficient sharing mechanism.
-3. **Key Challenge**: VFMs differ substantially in pretraining data (LAION vs. LVD-142M vs. WebLI), objectives (contrastive learning vs. self-supervised reconstruction), and modality combinations (vision-only vs. vision-language), making it insufficient to bridge their intermediate representations with simple learned transformations.
-4. **Goal**: ① Determine whether heterogeneous VFMs can be stitched; ② identify a reliable stitching training strategy; ③ elevate stitching from a diagnostic tool to a practical VFM fusion framework.
-5. **Key Insight**: Systematic analysis of stitching failure modes (intermediate matching ≠ final alignment; gradient attenuation), followed by a targeted remedy.
-6. **Core Idea**: Apply Final Feature Matching to align features at the penultimate layer of the target VFM as initialization, then fine-tune with Task Loss, enabling reliable stitching of heterogeneous VFMs while fusing their complementary knowledge.
+1.  **Background**: Visual Foundation Models (e.g., CLIP, DINOv2, SigLIP 2) pre-trained with different objectives, datasets, and modality combinations have become the default backbones for downstream tasks. Multimodal systems (e.g., MoF-LLaVA, Cambrian-1) increasingly utilize multiple VFMs simultaneously to capture complementary visual information.
+2.  **Limitations of Prior Work**:
+    *   Model stitching serves as a probe for representation compatibility. While studies show that small models trained on the same dataset (e.g., ResNet-18 on CIFAR-10) can be stitched, it remains unknown whether heterogeneous VFMs are stitchable.
+    *   Traditional training methods (Layer Feature Matching and Task Loss Training) fail on VFMs. The former suffers from accumulated matching errors that amplify final feature bias in shallow stitches, while the latter faces optimization difficulties due to gradients traversing long chains of frozen layers.
+    *   Using multiple VFMs incurs linear increases in computation and memory costs (k VFMs equate to k times the overhead), lacking an efficient sharing mechanism.
+3.  **Key Challenge**: VFMs differ significantly across pre-training data (LAION vs. LVD-142M vs. WebLI), objectives (Contrastive vs. Self-supervised Reconstruction), and modality combinations (Vision-only vs. Vision-Language). Bridging their intermediate representations with simple transformations is insufficient.
+4.  **Goal**: ① Explore whether heterogeneous VFMs are stitchable; ② Identify reliable stitching training methods; ③ Upgrade stitching from a diagnostic tool to a practical VFM fusion scheme.
+5.  **Key Insight**: Systematically analyze reasons for failure (intermediate matching $\neq$ final alignment, gradient decay) and propose a targeted two-stage method.
+6.  **Core Idea**: Use Final Feature Matching at the penultimate layer of the target VFM to align features for initialization, followed by Task Loss fine-tuning. This ensures heterogeneous VFMs are reliably stitchable and can fuse complementary knowledge.
 
 ## Method
 
 ### Overall Architecture
-Given a source VFM $f_\theta$ and a target VFM $f_\phi$ (both $N$-layer Transformers), stitching at layer $n$ retains the first $n$ layers of the source model $R_\theta^n$ and the last $N-n$ layers of the target model $T_\phi^N$, connected by a trainable stitching layer $S$. The stitched model is defined as $F(x) = T_\phi^N \circ S \circ R_\theta^n(x)$, where only $S$ is trainable and all source/target layers are frozen.
+This work addresses a previously unverified question: can two VFMs with disparate objectives, data, and modalities be "stitched" together like identical small models to achieve complementary gains? The approach extracts the first $n$ layers of a source VFM $f_\theta$ and the last $N-n$ layers of a target VFM $f_\phi$ (both being $N$-layer Transformers), inserting a trainable stitching layer $S$ between them. Weights for both source and target are frozen, with only the "stitching joint" being trained. The pipeline is $F(x) = T_\phi^N \circ S \circ R_\theta^n(x)$. The primary challenge lies in training this joint: FFM provides a strong alignment target for initialization, two-stage training ensures optimization, and Self-Stitch serves as a control to prove that gains stem from true knowledge fusion. Finally, single-point stitching is generalized into a VFM Stitch Tree—sharing shallow layers while retaining proprietary deep layers for multiple VFMs.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Input Image"] --> SRC["Source VFM (First n layers, Frozen)"]
+    SRC --> S["Stitching Layer S (Only Trainable Part)"]
+    S --> TGT["Target VFM (Late stage, Frozen)"]
+    TGT --> OUT["Final Features → Downstream Task"]
+
+    subgraph TRAIN["Two-Stage Training of S"]
+        direction TB
+        ST1["FFM Final Layer Matching<br/>Label-free, good initialization"] --> ST2["Task Loss Fine-tuning<br/>Labeled, task accuracy"]
+    end
+    ST2 -.Trains.-> S
+
+    OUT --> CTRL["Self-Stitch Control<br/>Same-model stitching, proves fusion"]
+    OUT --> VST["VFM Stitch Tree (VST)<br/>Shared shallow + multi-branch deep"]
+```
 
 ### Key Designs
 
-1. **Final Feature Matching (FFM)**
+**1. Final Feature Matching (FFM): Shifting alignment from the stitch point to the final layer**
 
-    - **Function**: Provides high-quality initialization for the stitching layer, ensuring final output features align with the target VFM.
-    - **Mechanism**: Rather than matching intermediate features at the stitching point $n$, FFM directly minimizes the feature discrepancy at the final layer $N$ after passing through the stitched model:
-     $$\mathcal{L}_{FFM} = \frac{1}{M}\sum_{i=1}^M \|T_\phi^N(S(R_\theta^n(x_i))) - T_\phi^N(R_\phi^n(x_i))\|_2^2$$
-     Despite supervising only the final layer, FFM is empirically found to implicitly maintain low feature distances at intermediate layers as well, while achieving significantly smaller final feature distances than LFM.
-    - **Design Motivation**: LFM yields very small errors at the stitching point (on the order of $10^{-3}$), yet these errors are amplified by subsequent frozen layers, causing severe final feature deviation — particularly at shallow stitching points. FFM directly optimizes the final outcome, addressing this failure from the root. Furthermore, FFM requires no labels and can be trained in a fully unsupervised manner.
+Traditional Layer Feature Matching aligns intermediate features at stitch point $n$. While error at the stitch point can be minimized to $10^{-3}$, this tiny error is amplified layer-by-layer through subsequent frozen blocks, leading to severe feature deviation at the final layer—especially for shallow stitches. FFM bypasses intermediate stages and directly minimizes feature discrepancy at the final layer $N$:
 
-2. **Two-Stage Training (FFM + Task Loss Training)**
+$$\mathcal{L}_{FFM} = \frac{1}{M}\sum_{i=1}^M \|T_\phi^N(S(R_\theta^n(x_i))) - T_\phi^N(R_\phi^n(x_i))\|_2^2$$
 
-    - **Function**: Stage 1 establishes a favorable loss landscape via FFM initialization; Stage 2 maximizes downstream task performance via task loss fine-tuning.
-    - **Mechanism**: Stage 1 pretrains the stitching layer with FFM (label-free); Stage 2 fine-tunes the stitching layer with downstream task loss (e.g., cross-entropy for classification). This pipeline specifically resolves the optimization difficulty of TLT at shallow stitching points, where random initialization combined with weak gradient signals (propagated from pooled tokens through long frozen chains) leads to a poorly conditioned loss landscape. FFM initialization places the stitching layer at a favorable starting point.
-    - **Design Motivation**: Directly applying TLT to shallow-layer DINOv2→SigLIP2 stitching yields only 25.1% accuracy, well below the individual linear probing baselines of the two models (46.7% and 53.5%). FFM initialization raises this to 51.7%, and FFM+TLT further improves it to 55.8% (Layer 6).
+This forces the "Source prefix + Stitch + Target suffix" output to approximate the "Target model full path" output. Although it optimizes the endpoint, it surprisingly maintains low feature distance at intermediate layers (an implicit local alignment effect), resulting in much lower final feature distance than Layer Feature Matching. Furthermore, this loss is label-free, allowing stitching layers to be pre-trained on unsupervised data.
 
-3. **Self-Stitch Baseline (Controlled Experiment)**
+**2. Two-Stage Training (FFM Init + Task Loss Fine-tuning): Establishing a good starting point then pursuing performance**
 
-    - **Function**: Disentangles whether performance gains originate from stitching layer capacity or genuine VFM knowledge fusion.
-    - **Mechanism**: Stitching is performed within a single VFM (e.g., SigLIP2→SigLIP2) using the same stitching layer, stitching point, training loss, and downstream data. If cross-VFM stitching surpasses self-stitching, the gain is attributable to true complementary knowledge fusion rather than additional parameters or capacity from fine-tuning.
-    - **Design Motivation**: Since VFMs are pretrained on large-scale heterogeneous data and evaluated on downstream data, improvements may simply reflect adaptation of the stitching layer to downstream distributions (equivalent to extra fine-tuning parameters). The self-stitch baseline rules out this explanation. Experiments confirm that cross-VFM stitching consistently outperforms self-stitching (+2.3% to +2.6%), confirming genuine complementary fusion.
+Training the stitching layer from scratch using downstream task loss (e.g., cross-entropy) is difficult for shallow stitches; supervision signals from pooled tokens must backpropagate through long frozen chains, leading to a poorly conditioned loss landscape. The proposed two-step solution: Stage 1 uses FFM (label-free) to pre-train the joint to a favorable initialization; Stage 2 applies downstream task loss (labeled) to pursue final accuracy. FFM initialization moves the joint to a better position in the landscape, turning "hard-to-optimize" into "smooth convergence." Results show that DINOv2→SigLIP2 at layer L6 yields only 25.1% using solely Task Loss (lower than linear probing at 46.7% and 53.5%), but jumps to 51.7% with FFM init and 55.8% after fine-tuning.
+
+**3. Self-Stitch Control: Distinguishing "true fusion" from "added parameters"**
+
+To counter the skepticism that performance gains from cross-VFM stitching might simply result from the stitching layer acting as extra trainable parameters adapted to the downstream distribution, this work utilizes Self-Stitch. By stitching a VFM within itself (e.g., SigLIP2→SigLIP2) under identical conditions (joint, stitch point, loss, data), any gap where cross-VFM stitching outperforms self-stitching must be attributed to the fusion of complementary heterogeneous knowledge rather than capacity. Experiments confirm cross-VFM consistency is significantly higher than self-stitching (approx. +2.3% to +2.6%).
+
+**4. VFM Stitch Tree (VST): Scaling single-point stitching to adjustable multi-VFM architectures**
+
+VST operationalizes the finding that heterogeneous VFMs can be reliably stitched. Modern multimodal systems (like MoF-LLaVA using CLIP+DINOv2) capture complementary cues by running multiple VFMs in parallel, which multiplies memory and latency costs. VST allows multiple VFMs to **share a common shallow segment** (run once) and **branch into proprietary deep segments** via stitching layers. This converts the binary choice of "whether to add a second VFM" into a continuous accuracy-efficiency knob. In a MoF-LLaVA (CLIP+DINOv2) + Qwen-3B setup, VST-22 recovers 45% of dual-VFM gains with only 4.3% extra overhead; VST-14 recovers 84% with 39% overhead.
 
 ### Loss & Training
-- **Stage 1**: FFM loss (label-free data); source and target features can be pre-extracted to accelerate training.
+- **Stage 1**: FFM loss (unlabeled data); source and target features can be pre-extracted to accelerate training.
 - **Stage 2**: Downstream task cross-entropy loss (labeled data).
-- **Stitching layer**: Default is a 2-layer MLP with ReLU (identical to the feature projector in LLaVA-1.5).
-- **Evaluated VFM pairs**: DINOv2-L, SigLIP2-L, CLIP, DINOv3 (all 24-layer Transformers).
-- **Stitching points**: $n \in [2, 6, 10, 14, 18, 22]$.
+- **Stitching Layer**: Defaults to a 2-layer MLP with ReLU (similar to the LLaVA-1.5 projector).
+- **VFM Pairs Evaluated**: DINOv2-L, SigLIP2-L, CLIP, DINOv3 (all 24-layer Transformers).
+- **Stitch Points**: $n \in [2, 6, 10, 14, 18, 22]$.
 
 ## Key Experimental Results
 
 ### Main Results: Two-Stage Method vs. Vanilla Task Loss Training
 
-| Stitching Pair | Init | L2 | L6 | L10 | L14 | L18 | L22 |
-|---|---|---|---|---|---|---|---|
+| Stitching | Init | L2 | L6 | L10 | L14 | L18 | L22 |
+|------|--------|-----|-----|------|------|------|------|
 | DINOv2→SigLIP2 | None | 25.1 | 39.4 | 52.6 | 62.3 | 68.6 | 68.6 |
 | DINOv2→SigLIP2 | FFM | **51.7** | **55.8** | **59.3** | **68.0** | **72.0** | **71.8** |
 | SigLIP2→DINOv2 | None | 38.7 | 56.7 | 58.3 | 64.4 | 70.4 | 70.1 |
 | SigLIP2→DINOv2 | FFM | **53.8** | **53.8** | **61.9** | **69.6** | **70.4** | **72.2** |
 
-### Cross-Dataset / Cross-Task Consistency
-
-| Configuration | fMoW (L6/14/22) | iNaturalist (L6/14/22) | Aircraft (L6/14/22) | ADE20K Seg (L14/22) |
-|---|---|---|---|---|
-| DINOv2→DINOv2 (self-stitch) | 41.5/59.7/69.9 | 56.9/81.5/91.2 | 37.8/79.3/91.2 | 35.4/50.9 |
-| SigLIP2→SigLIP2 (self-stitch) | 50.5/62.0/68.9 | 71.2/88.5/87.3 | 67.9/88.1/89.3 | 44.5/50.5 |
-| **DINOv2→SigLIP2** | **55.8/68.0/71.8** | **75.9/89.1/92.8** | **77.8/87.6/92.4** | **44.9/51.2** |
-| **SigLIP2→DINOv2** | **53.8/69.6/72.2** | **86.3/88.9/91.9** | **80.7/89.0/91.0** | **49.0/51.4** |
-
 ### Ablation Study: Stitching Layer Type
 
 | Stitching Layer | L2 | L6 | L10 | L14 | L18 | L22 |
-|---|---|---|---|---|---|---|
+|--------|-----|-----|------|------|------|------|
 | Linear | 26.1/50.3 | 54.3/56.4 | 59.5/60.0 | 66.5/65.7 | 69.1/69.6 | 69.6/71.9 |
 | **MLP** | **51.7/53.8** | **55.8/53.8** | **59.3/61.9** | **68.0/69.6** | **72.0/70.4** | **71.8/72.2** |
 | LoRA | 49.1/48.3 | 49.4/56.2 | 57.4/62.4 | 61.7/65.3 | 67.7/66.2 | 67.3/65.0 |
 
 ### Key Findings
-- FFM initialization yields the most pronounced gains at shallow stitching points (L2: 25.1→51.7) and provides consistent improvements at deeper points as well (L22: 68.6→71.8).
-- Cross-VFM stitching consistently outperforms self-stitching (+0.7% to +5.5%) on both classification and semantic segmentation tasks, confirming genuine complementary knowledge fusion.
-- The MLP stitching layer achieves the best overall performance; LoRA, despite greater expressive capacity, underperforms MLP — possibly because a moderate representational mismatch facilitates complementary information fusion.
-- When CLIP serves as the source model, stitching performs poorly (the weaker encoder loses task-critical information); when used as the target model, performance is strong — analogous to upgrading the encoder in an encoder–decoder architecture.
-- VST-22 achieves 45% of the dual-VFM performance gain with only 4.3% additional resource overhead; VST-14 achieves 84% of the gain with 39% additional overhead.
+- FFM initialization shows the most prominent effect on shallow stitches (L2: 25.1→51.7) and provides stable gains even for deep stitches.
+- Cross-VFM stitching consistently outperforms self-stitching (+0.7% to +5.5%) across classification and segmentation tasks, confirming true complementary knowledge fusion.
+- MLP stitching layers are generally optimal; LoRA, despite higher expressivity, underperforms MLP, suggesting that moderate mismatch might facilitate fusion.
+- CLIP performs poorly as a source model (losing task-critical info in its weak encoder) but excels as a target model.
+- VST-22 achieves 45% of dual-VFM performance gains with only 4.3% additional resources.
 
 ## Highlights & Insights
-- The unexpected finding that **FFM implicitly induces local intermediate alignment** is particularly insightful: although supervision is applied only at the final layer, the gradient signal implicitly propagates to intermediate layers to promote local alignment, suggesting that deep-layer matching can effectively constrain shallow representations.
-- The **Self-Stitch baseline** reflects rigorous experimental methodology, thoroughly ruling out the alternative explanation that gains arise merely from additional parameters — a commendable example of responsible ablation design.
-- The **accuracy–latency knob** concept of the VFM Stitch Tree is highly practical: rather than a binary choice of whether to use a second VFM, it enables continuous adjustment of additional overhead from 4.3% to 100%, accommodating diverse deployment budgets.
-- Elevating model stitching from a purely diagnostic tool to a practical fusion framework represents a meaningful paradigm shift.
+- **Implicit Local Alignment**: The discovery that FFM (matching only the final layer) implicitly promotes local alignment at the stitch point provides significant insight into representation constraints of deep networks.
+- **Rigor of Self-Stitch Baseline**: The experimental design effectively isolates "added capacity" as a factor, serving as a model for responsible experimental methodology.
+- **Accuracy-Latency Knob**: The VST concept shifts the paradigm from binary VFM selection to a continuous scale suitable for varied deployment budgets.
+- **Utility Shift**: Moving model stitching from a purely diagnostic tool to a practical fusion scheme is a meaningful paradigm shift.
 
 ## Limitations & Future Work
-- VST evaluation is conducted only on VQAv2 and MME as an "early exploration," and should be extended to a broader range of multimodal benchmarks (e.g., SEED-Bench, MMVet) for comprehensive assessment of fusion gains.
-- Experiments are limited to ViT-L scale VFMs; the stitchability of larger models (e.g., ViT-G) or architecturally distinct VFMs remains to be verified.
-- The FFM stage requires forward passes through VFMs on unlabeled data, which may incur non-trivial computational cost for very large models.
-- Future work could explore adaptive stitching point selection (rather than manual specification) and tree designs involving more than two VFMs.
-- FFM loss is label-free but still requires training on in-domain data; its effectiveness in zero-shot settings remains unknown.
+- VST evaluation remains in the "early exploration" phase on VQAv2 and MME; expansion to more multimodal benchmarks is required.
+- Experiments are restricted to ViT-L scale; scalability to ViT-G or different architectures remains to be verified.
+- FFM requires forward inference of both VFMs on unlabeled data, which might be computationally heavy for extremely large models.
+- Zero-shot performance of stitching remains unknown as FFM is currently performed on task-related domain data.
 
 ## Related Work & Insights
-- **vs. SN-Net [35]**: SN-Net explicitly designs stitchability during training for model compression; this paper performs post-hoc stitching of independently trained heterogeneous VFMs — an entirely different setting.
-- **vs. [2] (Bansal et al.)**: The original stitching work identifies stitchability for same-dataset, same-architecture models (the Anna Karenina hypothesis); this paper extends the analysis to VFMs with heterogeneous data, objectives, and modalities, finding that naive methods fail but tailored methods succeed.
-- **vs. [7] (Collins et al.)**: That work argues TLT is superior to LFM; this paper finds both are problematic on VFMs, and FFM serves as a more effective alternative.
+- **vs. SN-Net [35]**: While SN-Net designs stitchability during training for compression, this work post-hoc stitches independently trained heterogeneous VFMs.
+- **vs. [2] (Bansal et al.)**: Extending the "Anna Karenina hypothesis" of stitchability from isomorphic small models to heterogeneous VFMs.
+- **vs. [7] (Collins et al.)**: Contrary to findings that TLT is superior to LFM, this study finds both problematic for VFMs and proposes FFM as a superior alternative.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — FFM and the two-stage scheme are concise yet effective; the VST application is novel; overall, the contribution lies primarily in careful engineering.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Systematic validation across multiple VFM pairs, datasets, tasks, and stitching layer types; the self-stitch controlled experiment is elegantly designed.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Logical flow progresses clearly from diagnosis to prescription to application; an exemplary research paper structure.
-- **Value**: ⭐⭐⭐⭐ — Makes important contributions to understanding VFM representational compatibility; VST offers a practical solution for multi-VFM deployment.
+- Novelty: ⭐⭐⭐⭐ FFM and the two-stage scheme are simple yet effective; VST is a novel application.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive verification across pairs, datasets, and tasks with rigorous control.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical progression from diagnosis to application.
+- Value: ⭐⭐⭐⭐ Significant contribution to understanding VFM compatibility and providing deployment solutions.
 
 <!-- RELATED:START -->
 
@@ -137,11 +140,11 @@ Given a source VFM $f_\theta$ and a target VFM $f_\phi$ (both $N$-layer Transfor
 
 ## Related Papers
 
-- [\[CVPR 2026\] VL-RouterBench: A Benchmark for Vision-Language Model Routing](vl-routerbench_a_benchmark_for_vision-language_model_routing.md)
-- [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
-- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](../../ICCV2025/multimodal_vlm/feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
-- [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
+- [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
+- [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
+- [\[CVPR 2026\] RealBirdID: Benchmarking Bird Species Identification in the Era of MLLMs](realbirdid_benchmarking_bird_species_identification_in_the_era_of_mllms.md)
+- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
+- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
 
 </div>
 

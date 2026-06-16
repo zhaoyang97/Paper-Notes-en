@@ -2,81 +2,80 @@
 title: >-
   [Paper Note] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 description: >-
-  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization / contrastive learning, and proposes Neighbor GRPO — which completely bypasses SDE conversion by constructing neighborho…
+  [CVPR 2026][Image Generation][GRPO] This paper reinterprets SDE-based GRPO as distance optimization/contrastive learning and proposes Neighbor GRPO. It completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbed ODE initial noise and implements policy gradient optimization via a softmax distance proxy policy,
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "GRPO"
-  - "Flow Matching"
-  - "Human Preference Alignment"
-  - "Contrastive Learning"
-  - "ODE Sampling"
+  - CVPR 2026
+  - Image Generation
+  - GRPO
+  - Flow Matching
 date: 2026-05-08
-content_hash: c5a004e74ffa935c
+content_hash: 0b489d7ad4b5856f
 ---
-
 # Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.16955](https://arxiv.org/abs/2511.16955)  
 **Code**: None  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: GRPO, Flow Matching, Human Preference Alignment, Contrastive Learning, ODE Sampling
 
 ## TL;DR
-This paper reinterprets SDE-based GRPO as distance optimization / contrastive learning, and proposes Neighbor GRPO — which completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbation of ODE initial noise, combined with a softmax distance surrogate policy for policy gradient optimization, while preserving all advantages of deterministic ODE sampling.
+This paper reinterprets SDE-based GRPO as distance optimization/contrastive learning and proposes Neighbor GRPO. It completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbed ODE initial noise and implements policy gradient optimization via a softmax distance proxy policy, thereby preserving all advantages of deterministic ODE sampling.
 
 ## Background & Motivation
-GRPO has demonstrated strong performance in aligning image/video generation models with human preferences, but applying it to Flow Matching models introduces a fundamental conflict:
+GRPO excels in aligning image/video generation models with human preferences, but its application to Flow Matching models faces a fundamental conflict:
 
-**GRPO requires stochastic exploration**: Policy gradient methods rely on stochasticity to explore the policy space.
+**GRPO requires stochastic exploration**: Policy gradient methods rely on randomness to explore the policy space.
 
-**Flow Matching's strength lies in deterministic ODE sampling**: Efficient, and compatible with high-order solvers.
+**Advantages of Flow Matching lie in deterministic ODE sampling**: It is efficient and supports high-order solvers.
 
-Existing methods (Flow-GRPO, DanceGRPO) introduce stochasticity by converting ODEs to equivalent SDEs, but sacrifice the core advantages of ODE sampling:
-- **SDEs are restricted to first-order solvers**: High-order solvers such as DPM-Solver++ cannot be leveraged for acceleration.
+Existing methods (Flow-GRPO, DanceGRPO) introduce randomness by converting ODEs into equivalent SDEs but sacrifice the core benefits of ODEs:
+- **SDEs are limited to first-order solvers**: They cannot utilize high-order solvers like DPM-Solver++ for acceleration.
 - **Inefficient credit assignment**: Terminal rewards must be distributed across noise injections at all time steps.
 - MixGRPO and BranchGRPO partially alleviate these issues but remain constrained by the SDE framework.
 
 ## Method
 
 ### Overall Architecture
-The core insight is to reinterpret SDE-based GRPO as **distance optimization / contrastive learning** — ODE samples serve as anchors, SDE samples serve as candidates, and optimization is equivalent to pulling high-reward candidates closer and pushing low-reward candidates further away.
 
-Building on this insight, Neighbor GRPO operates directly within the ODE neighborhood:
-1. Perturb the initial noise to construct a group of candidate trajectories.
-2. Select one trajectory as the anchor.
-3. Apply a distance loss to pull high-reward candidates closer and push low-reward candidates further.
-4. Define a softmax distance surrogate policy that is rigorously integrated into the GRPO framework.
+This paper aims to resolve the fundamental conflict between GRPO and Flow Matching: GRPO relies on stochasticity for policy space exploration, whereas the value of Flow Matching lies in deterministic ODE sampling (efficiency, compatibility with high-order solvers). Prior approaches (Flow-GRPO, DanceGRPO) force stochasticity by converting ODEs to equivalent SDEs, which locks them into first-order solvers and inefficient credit assignment. The breakthrough of Neighbor GRPO is a reinterpretation: SDE-based GRPO is viewed as **distance optimization/contrastive learning**—where ODE samples are anchors and SDE samples are candidates, and optimization essentially pulls high-reward candidates closer while pushing low-reward ones away. Consequently, the authors bypass SDEs entirely and operate directly within the ODE neighborhood: perturbing initial noise to generate a group of candidate trajectories, selecting one as an anchor, and using a softmax distance proxy policy to strictly incorporate the "pull/push" mechanism into the GRPO framework. Standard deterministic ODE is restored during inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Base Noise ε*"] --> B["ODE Neighborhood Sampling<br/>Perturbation σ=0.3 creates G initial conditions → Deterministic ODE evolution"]
+    B --> C["Neighborhood Trajectory Bundle<br/>G mutually adjacent candidate trajectories"]
+    C --> D["Softmax Distance Proxy Jump Policy<br/>Randomly select anchor, define policy ratio ρ_t by L2 distance"]
+    D --> E["GRPO Optimization<br/>Clipped policy ratio × Group-normalized advantage"]
+    E -->|"A_i>0 Pull / A_i<0 Push"| F["Update Flow Model θ"]
+    G["Three Practical Techniques<br/>Symmetric Anchor Sampling · Quasi-norm Reweighting · High-order Solver Decoupling"] -. Acceleration & Stability .-> E
+    F --> H["Inference: Standard Deterministic ODE (Discard Proxy Policy)"]
+```
 
 ### Key Designs
 
-1. **ODE Neighborhood Sampling**: Given a base initial noise $\epsilon^*$, construct $G$ perturbed initial conditions:
-    $\epsilon^{(i)} = \sqrt{1-\sigma^2}\epsilon^* + \sigma\delta^{(i)}, \quad \delta^{(i)} \sim \mathcal{N}(0, I)$
-   where $\sigma \in (0,1)$ controls the perturbation magnitude (optimal $\sigma=0.3$). These initial conditions evolve through deterministic ODE integration, producing a bundle of trajectories that form a local solution neighborhood.
+**1. ODE Neighborhood Sampling: Generating comparable candidates without SDEs**
 
-2. **Softmax Distance Surrogate Jump Policy**: A training-specific surrogate policy is defined to make the policy ratio and gradient tractable:
-    $\pi_\theta(x_t^{(i)} \mid \{s_t\}) = \frac{\exp(-\|x_t^{(i)} - x_t^{(\theta)}\|_2^2)}{\sum_{k=1}^{G}\exp(-\|x_t^{(k)} - x_t^{(\theta)}\|_2^2)}$
-    - The anchor $x_t^{(\theta)}$ is randomly selected from the candidates and contributes gradients.
-    - Intuition: the sampled trajectory may "jump" to a neighbor at each step, with probability determined by softmax distance.
-    - At inference, standard deterministic ODE is used without any surrogate policy.
-    - Optimization dynamics: when $A_i > 0$, the gradient reduces distance (attraction); when $A_i < 0$, it increases distance (repulsion).
+GRPO requires a group of diverse samples to compare rewards, but a pure deterministic ODE starting from fixed noise yields only one trajectory. Neighbor GRPO instead operates on the initial noise: given base noise $\epsilon^*$, it constructs $G$ perturbed initial conditions $\epsilon^{(i)} = \sqrt{1-\sigma^2}\epsilon^* + \sigma\delta^{(i)},\ \delta^{(i)} \sim \mathcal{N}(0, I)$, where $\sigma \in (0,1)$ controls the perturbation intensity (optimal $\sigma=0.3$; too small leads to insufficient exploration, too large leaves the neighborhood). These initial conditions evolve via deterministic ODEs to produce a bundle of mutually adjacent trajectories forming a local solution neighborhood—stochasticity is moved to the starting point, while the evolution remains a clean ODE.
 
-3. **Three Practical Techniques**:
+**2. Softmax Distance Proxy Jump Policy: Making policy ratios and gradients computable on ODEs**
 
-    - **Symmetric Anchor Sampling**: By the Johnson–Lindenstrauss lemma, neighborhood samples are approximately equidistant, so any candidate can serve as an anchor. Each GRPO iteration requires forward/backward passes for only $B < G$ anchors (saving up to $12\times$ gradient computation when $G=12$).
-    - **Intra-Group Quasi-Norm Advantage Reweighting**: The standard $L_2$ normalization is replaced by an $L_p$ norm ($p < 2$): $A'_i = A_i / (\sum|A_k|^p)^{1/p}$. This automatically downweights flat advantage signals and prevents reward hacking (optimal $p=0.8$).
-    - **High-Order Solver**: DPM++ is used for data collection, while single-step DDIM is used to compute the surrogate policy during policy updates.
+After bypassing SDEs, the policy ratio $\rho_t$ required by GRPO lacks a natural definition. The paper designs a training-specific proxy policy: $\pi_\theta(x_t^{(i)} \mid \{s_t\}) = \frac{\exp(-\|x_t^{(i)} - x_t^{(\theta)}\|_2^2)}{\sum_{k=1}^{G}\exp(-\|x_t^{(k)} - x_t^{(\theta)}\|_2^2)}$, where the anchor $x_t^{(\theta)}$ is randomly selected from candidates and contributes gradients. Intuitively, a sampled trajectory may "jump" to a neighbor at each step with a probability determined by the softmax distance. The optimization dynamics are clear—when advantage $A_i > 0$, the gradient reduces the distance (pull), and when $A_i < 0$, it increases the distance (push), perfectly corresponding to contrastive learning. This proxy exists only during training; it is discarded during inference in favor of standard deterministic ODEs, thus fully preserving all ODE advantages.
+
+**3. Three Practical Techniques: Maximizing neighborhood structure and high-order solver benefits**
+
+Neighborhood sampling provides additional exploitable structures. First is **Symmetric Anchor Sampling**: based on the Johnson-Lindenstrauss lemma, neighborhood samples are nearly equidistant, allowing any candidate to serve as an anchor. Thus, each iteration requires forward/backward passes for only $B < G$ anchors (saving approximately 12x gradient computation when $G=12$). Second is **Intra-group Quasi-norm Advantage Reweighting**: replacing standard $L_2$ normalization with $L_p$ norm ($p<2$) such that $A'_i = A_i / (\sum|A_k|^p)^{1/p}$. This automatically down-weights flat advantage signals to prevent reward hacking (optimal $p=0.8$). Third is **High-order Solver Decoupling**: using DPM++ for data collection and single-step DDIM for calculating the proxy policy during updates—an acceleration benefit unique to pure ODE frameworks that SDE frameworks cannot achieve.
 
 ### Loss & Training
-The GRPO objective uses a clipped policy ratio with group-normalized advantages:
+
+The GRPO objective uses a clipped policy ratio and group-normalized advantage:
 
 $$\mathcal{J}(\theta) = \mathbb{E}_{s,t,i}\left[\min\left(A_i\rho_t^{(i)}, A_i\lceil\rho_t^{(i)}\rfloor\right)\right]$$
 
-- Base model: FLUX.1-dev (Swin backbone)
-- Rewards: HPSv2.1 + Pick Score + ImageReward (equal-weight multi-reward training)
-- AdamW, lr=1e-5, 300 iterations, 32× H800 GPUs
-- Approximately 4 hours per training run (vs. DanceGRPO/MixGRPO at 237s/iter → 45s/iter)
+- Base Model: FLUX.1-dev (Swin backbone)
+- Rewards: HPSv2.1 + Pick Score + ImageReward (Equally weighted multi-reward training)
+- AdamW, lr=1e-5, 300 iterations, 32×H800 GPU
+- Approx. 4 hours per run; only 45s per iteration under 8-step DPM++ configuration, about 1/5 of the 237s required by DanceGRPO/MixGRPO.
 
 ## Key Experimental Results
 
@@ -89,45 +88,45 @@ $$\mathcal{J}(\theta) = \mathbb{E}_{s,t,i}\left[\min\left(A_i\rho_t^{(i)}, A_i\l
 | MixGRPO | DDIM | 25 | 14 | 237.7 | 0.366 | 0.235 | 1.604 | 0.382 | 3.257 | 6.623 |
 | **Ours** | DPM++ | 8 | **1.33** | **45.1** | 0.366 | 0.234 | 1.640 | **0.391** | **3.334** | 6.621 |
 
-Under the 8-step DPM++ configuration, training speed improves by 5.3× (45s vs. 238s/iter), with the proposed method achieving state-of-the-art performance across all out-of-domain metrics.
+Under the 8-step DPM++ configuration, training speed increases by 5.3x (45s vs 238s/iter), with out-of-domain metrics being overall superior.
 
 ### Ablation Study
 
-| Parameter | Optimal Value | Note |
+| Parameter | Optimal Value | Description |
 |------|--------|------|
-| Perturbation strength $\sigma$ | 0.3 | Too small leads to insufficient exploration; too large exits the neighborhood |
-| Number of anchors $B$ | 4 | $B=2$ is already competitive; $B=4$ yields the best trade-off |
-| Quasi-norm $p$ | 0.8 | $p=2$ corresponds to standard GRPO; $p=0.8$ achieves optimal out-of-domain performance |
+| Perturbation Strength $\sigma$ | 0.3 | Too small lacks exploration; too large leaves the neighborhood |
+| Anchor Number $B$ | 4 | $B=2$ is already competitive; $B=4$ is the best balance |
+| Quasi-norm $p$ | 0.8 | $p=2$ is standard GRPO; $p=0.8$ is best for out-of-domain |
 
 ### Key Findings
-- Neighbor GRPO converges faster: HPSv2.1 > 0.35 is reached within 50 iterations (DanceGRPO requires more).
-- Human evaluation: the proposed method achieves 72% and 61% preference rates over DanceGRPO and MixGRPO, respectively.
-- Reward hacking is avoided: no grid artifacts or color inconsistencies are observed.
+- Neighbor GRPO converges faster: achieving HPSv2.1 > 0.35 in only 50 iterations (DanceGRPO requires more).
+- Human Evaluation: Achieves preference rates of 72% and 61% compared to DanceGRPO and MixGRPO, respectively.
+- Avoids reward hacking: No issues such as grid artifacts or uneven coloring occur.
 - Long-term training stability is superior to MixGRPO.
 
 ## Highlights & Insights
-1. **Deep theoretical insight**: Reinterpreting SDE-based GRPO as contrastive learning reveals that its essence is distance optimization, providing a theoretical foundation for a fully ODE-based approach.
-2. **Full preservation of ODE advantages**: No SDE conversion is required; high-order solvers are supported; credit assignment is more direct.
-3. **Symmetric anchor sampling** exploits the geometric properties of the Johnson–Lindenstrauss lemma to elegantly reduce computation to $B/G$ of the original cost.
-4. **Quasi-norm reweighting** concisely and effectively addresses reward flattening with a single hyperparameter.
+1. **Deep Theoretical Insight**: Reinterpreting SDE-based GRPO as contrastive learning reveals its essence as distance optimization, providing the theoretical foundation for a pure ODE solution.
+2. **Full Preservation of ODE Advantages**: No SDE conversion required, compatible with high-order solvers, and more direct credit assignment.
+3. **Symmetric Anchor Sampling** leverages the geometric properties of the J-L lemma to cleverly reduce computation to $B/G$ times.
+4. **Quasi-norm Reweighting** is a concise and effective solution for reward flattening, allowing control via a single hyperparameter.
 
 ## Limitations & Future Work
-- Validation is limited to FLUX.1-dev; applicability to other Flow Matching models (e.g., SD3) remains to be confirmed.
-- Multi-reward training currently adopts equal weighting; adaptive weighting strategies are worth exploring.
-- The theoretical guarantees of the surrogate policy rely on the neighborhood being sufficiently tight (small $\sigma$); behavior under extreme settings is not fully analyzed.
-- Extension to video generation (currently image-only) is a natural direction.
+- Validated only on FLUX.1-dev; applicability to other Flow Matching models (e.g., SD3) remains to be confirmed.
+- Multi-reward training currently uses equal weights; adaptive weighting could be explored.
+- Theoretical guarantees of the proxy policy depend on the neighborhood being sufficiently tight ($\sigma$ small enough); behavior under extreme settings is not fully analyzed.
+- Can be extended to video generation (currently image only).
 
 ## Related Work & Insights
-- The proposed method shares origins with DanceGRPO and Flow-GRPO but represents a paradigm shift: from SDE dependence to fully ODE-based training.
-- MixGRPO's hybrid sampling is a compromise; Neighbor GRPO is more principled and complete.
-- The contrastive learning perspective may generalize to other deterministic model optimization scenarios that require stochasticity.
-- Quasi-norm reweighting can be extended to other GRPO variants.
+- Shares roots with DanceGRPO and Flow-GRPO but represents a paradigm shift: moving from SDE dependency to pure ODE training.
+- MixGRPO's hybrid sampling is a compromise; Neighbor GRPO is more thorough.
+- The contrastive learning perspective may apply to other deterministic model optimization scenarios requiring stochasticity.
+- Quasi-norm reweighting can be generalized to other GRPO variants.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Both theoretical insight and methodological innovation make important contributions; SDE is completely bypassed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-metric evaluation, thorough ablation, and human studies are conducted, though only one base model is evaluated.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, figures are intuitive, and the logical flow from insight to method is coherent.
-- Value: ⭐⭐⭐⭐⭐ A 5× training efficiency gain with superior quality represents a significant advance for RLHF-based visual generation.
+- Novelty: ⭐⭐⭐⭐⭐ Important contributions in both theoretical insight and methodology by completely bypassing SDE.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient multi-metric evaluation, ablation studies, and human assessment, though only one base model was used.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivation, intuitive illustrations, and smooth logic from insights to methodology.
+- Value: ⭐⭐⭐⭐⭐ 5x training efficiency boost with superior quality; a significant driver for RLHF in visual generation.
 
 <!-- RELATED:START -->
 
@@ -135,11 +134,11 @@ Under the 8-step DPM++ configuration, training speed improves by 5.3× (45s vs. 
 
 ## Related Papers
 
+- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+- [\[CVPR 2026\] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用](stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](../../ICML2026/image_generation/principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
-- [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](../../ICCV2025/image_generation/contrastive_flow_matching.md)
-- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](../../ICML2026/image_generation/embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
-- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](../../ICLR2026/image_generation/diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
 
 </div>
 

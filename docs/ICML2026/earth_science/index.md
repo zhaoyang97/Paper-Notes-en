@@ -20,8 +20,8 @@ item_total: 1
 
 **🧪 ICML2026** · **1** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (3)](../../CVPR2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
 
 **[(Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)**
 
-:   MOSAIC addresses two types of spectral degradation in ML weather models (spectral damping from deterministic averaging and high-frequency aliasing from coarsened latent spaces) using "probabilistic perturbation + mesh-aligned block-sparse attention on HEALPix spherical grids." At 1.5° resolution with only 214M parameters, it matches or exceeds models with 6× higher resolution, generating a 24-member, 10-day forecast in 12 seconds on a single H100.
+:   MOSAIC addresses two types of spectral degradation in ML weather forecasting models (spectral damping from deterministic averaging and high-frequency aliasing from coarsened latent spaces) using "probabilistic perturbation + mesh-aligned block-sparse attention on HEALPix spherical grids." With only 214M parameters at 1.5° resolution, it matches or exceeds models with 6× higher resolution, generating a 24-member 10-day forecast in 12 seconds on a single H100.

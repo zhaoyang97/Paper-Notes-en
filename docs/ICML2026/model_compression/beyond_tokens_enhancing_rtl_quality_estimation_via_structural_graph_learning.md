@@ -2,72 +2,75 @@
 title: >-
   [Paper Note] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning
 description: >-
-  [ICML 2026][Model Compression][RTL Quality Estimation] StructRTL is proposed to conduct structure-aware graph self-supervised pre-training (masked node modeling + edge prediction) on the Control Data Flow Graph (CDFG) of…
+  [ICML 2026][Model Compression][Knowledge Distillation] StructRTL is proposed for structural-aware graph self-supervised pre-training (Masked Node Modeling + Edge Prediction) on Control Data Flow Graphs (CDFG) of RTL designs. Combined with knowledge distillation from post-mapping netlists to CDFGs, it significantly outperforms LLM-based and handcrafted feature methods in ar
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "RTL Quality Estimation"
-  - "Graph Self-supervised Learning"
-  - "Control Data Flow Graph (CDFG)"
-  - "Knowledge Distillation"
-  - "Hardware Design Automation"
+  - ICML 2026
+  - Model Compression
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: d4684bb4ce4d805c
+content_hash: e351078d9c8133ca
 ---
-
 # Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning
 
 **Conference**: ICML 2026  
 **arXiv**: [2508.18730](https://arxiv.org/abs/2508.18730)  
 **Code**: https://github.com/cure-lab/StructRTL  
-**Area**: Graph Learning / Self-supervised Learning / EDA  
-**Keywords**: RTL Quality Estimation, Graph Self-supervised Learning, Control Data Flow Graph (CDFG), Knowledge Distillation, Hardware Design Automation  
+**Area**: Graph Learning / Self-Supervised Learning / EDA  
+**Keywords**: RTL Quality Estimation, Graph Self-Supervised Learning, Control Data Flow Graph, Knowledge Distillation, Hardware Design Automation  
 
 ## TL;DR
-StructRTL is proposed to conduct structure-aware graph self-supervised pre-training (masked node modeling + edge prediction) on the Control Data Flow Graph (CDFG) of RTL designs. Combined with knowledge distillation from post-mapping netlists to CDFGs, it significantly surpasses SOTA LLM-based and manual feature-based methods in area/delay estimation tasks.
+StructRTL is proposed for structural-aware graph self-supervised pre-training (Masked Node Modeling + Edge Prediction) on Control Data Flow Graphs (CDFG) of RTL designs. Combined with knowledge distillation from post-mapping netlists to CDFGs, it significantly outperforms LLM-based and handcrafted feature methods in area and delay prediction tasks.
 
 ## Background & Motivation
 
-**Background**: In modern hardware design flows, RTL (Register-Transfer Level) code must undergo logic synthesis to obtain quality metrics such as area and delay, but this process is time-consuming and computationally expensive. Consequently, fast estimation of design quality directly at the RTL stage has become a research hotspot in EDA.
+**Background**: In modern hardware design flows, RTL (Register-Transfer Level) code must undergo logic synthesis to obtain quality metrics such as area and delay, but this process is time-consuming and computationally expensive. Consequently, fast quality estimation directly from the RTL stage has become a research hotspot in EDA.
 
-**Limitations of Prior Work**: Early methods extracted manual features (e.g., node type frequency, longest combinational path length) from Data Flow Graphs (DFG) or Abstract Syntax Trees (AST), which have limited expressive power. Recent works (VeriDistill) utilize Large Language Models (LLMs) to extract token-level embeddings from RTL code, achieving decent results. However, two fundamental issues exist: first, the pre-training objective of LLMs is code generation rather than quality estimation, limiting representation transferability; second, the token perspective only implicitly encodes design structural semantics, which is less effective than an explicit graph perspective.
+**Limitations of Prior Work**: Early methods extracted handcrafted features from Data Flow Graphs (DFG) or Abstract Syntax Trees (AST) (e.g., node type frequency, longest combinational path length), which have limited representation capabilities. Recent works (e.g., VeriDistill) utilize Large Language Models (LLMs) to extract token-level embeddings from RTL code, achieving decent results. However, two fundamental issues persist: first, the pre-training objective of LLMs is code generation rather than quality estimation, limiting the transferability of learned representations; second, the token perspective only implicitly encodes the structural semantics of the design, which is less effective than an explicit graph perspective.
 
-**Key Challenge**: DFG only models data dependencies and ignores control flow; AST emphasizes syntactic hierarchy but lacks structural semantics; LLM token sequences lose topological information. Since RTL design quality (especially delay) is tightly coupled with structure, existing representations cannot fully capture it.
+**Key Challenge**: DFGs only model data dependencies while ignoring control flow; ASTs focus on syntactic hierarchy and lack structural semantics; LLM token sequences lose topological information. RTL design quality (especially delay) is tightly coupled with structure, which existing representations fail to fully capture.
 
 **Goal**: (1) Design a self-supervised pre-training framework that directly models the structural semantics of CDFGs; (2) Transfer low-level information from post-mapping netlists to the RTL-stage predictor through knowledge distillation.
 
-**Key Insight**: CDFGs integrate both control flow and data flow dependencies, providing a more complete view of design structure than DFG/AST/tokens. The authors observe that directly masking nodes or edges on the CDFG introduces ambiguity (e.g., masking an addition node makes subtraction or multiplication plausible alternatives). Therefore, masking is performed at the level of context-aware embeddings generated by a GNN, preserving the integrity of the computation graph while allowing the model to recover masked information using neighborhood context.
+**Key Insight**: CDFGs integrate both control flow and data flow dependencies, providing a more complete view of design structure than DFG/AST/tokens. The authors observed that directly applying node/edge masking to CDFGs introduces ambiguity (e.g., if an addition node is masked, subtraction or multiplication could be valid alternatives). Therefore, masking is performed at the level of context-aware embeddings generated by GNNs, preserving the integrity of the computation graph while allowing the model to utilize neighborhood context to recover masked information.
 
-**Core Idea**: Use GNN + Transformer for structure-aware self-supervised pre-training on CDFGs to learn explicit structural representations, then enhance RTL-stage prediction using knowledge distillation from post-mapping netlists.
+**Core Idea**: Use GNN + Transformer to perform structural-aware self-supervised pre-training on CDFGs to learn explicit structural representations, then enhance RTL-stage prediction using knowledge distillation from post-mapping netlists.
 
 ## Method
 
 ### Overall Architecture
-The input is RTL Verilog code, which is first compiled into the RTLIL intermediate representation via Yosys and then parsed into a CDFG (nodes represent operations/storage elements, directed edges represent data/control dependencies). Node embeddings are initialized by concatenating node type one-hot encoding and bit-width: $\mathbf{h}_i^0 = \text{concat}(\text{one-hot}(\text{type}(v_i)), \text{width}(v_i))$. Embeddings pass through 8 GIN layers to obtain context-aware embeddings, which are then augmented with global positional encodings based on Laplacian eigenvectors and fed into an 8-layer Transformer encoder. The pre-training phase executes two self-supervised tasks; the fine-tuning phase aggregates graph-level representations via combined mean and max pooling, performing area/delay regression via a 3-layer MLP.
+StructRTL aims to predict area and delay directly from RTL code without running logic synthesis by switching from "observing tokens" to "observing structural graphs." The process is as follows: RTL Verilog is compiled into RTLIL intermediate representation via Yosys, then parsed into a CDFG (nodes are operations/storage elements, directed edges are data/control dependencies). Initial node embeddings are a concatenation of type one-hot and bit-width $\mathbf{h}_i^0 = \text{concat}(\text{one-hot}(\text{type}(v_i)), \text{width}(v_i))$. These are processed by 8 layers of GIN to obtain context-aware embeddings, which are then combined with Laplacian global positional encodings and fed into 8 layers of Transformer. During the pre-training stage, two self-supervised tasks (Masked Node Modeling + Edge Prediction) are used to learn the structure. In the fine-tuning stage, a graph-level representation is obtained via mean+max joint pooling, followed by a 3-layer MLP for quality metric regression, with additional knowledge distillation from a post-mapping netlist teacher.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["RTL Verilog"] --> B["Yosys Compilation<br/>RTLIL → CDFG"]
+    B --> C["Initial Node Embeddings<br/>Type one-hot + Width"]
+    C --> D["8-layer GIN<br/>Context-aware Embeddings"]
+    D --> E["+ Laplacian Positional Encoding<br/>8-layer Transformer"]
+    E -->|Pre-training| F["Structural-aware Masked Node Modeling<br/>Post-GNN 20% node masking to predict type"]
+    E -->|Pre-training| G["Edge Prediction<br/>Binary classification of positive/negative edges"]
+    F --> H["Fine-tuning: Mean+Max Pooling<br/>3-layer MLP Regression (Area/Delay)"]
+    G --> H
+    I["RTL → ABC → PM Netlist<br/>20-layer GIN Teacher"] -->|Post-mapping Netlist KD| H
+```
 
 ### Key Designs
 
-1. **Structure-Aware Masked Node Modeling**:
+**1. Structural-aware Masked Node Modeling: Masking after GNN to avoid semantic ambiguity**
 
-    - **Function**: Learn structure-aware representations by predicting types of masked nodes.
-    - **Mechanism**: Randomly mask 20% of post-GNN embeddings (replaced with a learnable [MASK] token) and use the Transformer to predict their original node types (32-class classification). Crucially, masking occurs after GNN output rather than on the original graph to avoid disrupting computation graph semantics. To address class imbalance (e.g., operator nodes being much fewer than wires/registers), a stratified masking strategy ensures at least $m$ nodes per class are selected, and a class-balanced focal loss is used instead of cross-entropy, with weights $w_c = (1-\beta) / (1-\beta^{S_c})$ where $\beta=0.9999$ and $\gamma=2.0$.
-    - **Design Motivation**: Masking raw nodes introduces ambiguity (addition vs. multiplication); post-GNN embeddings already encode neighborhood context, allowing for unambiguous reconstruction using rich contextual information.
+Mask-reconstruction is a standard paradigm in graph self-supervised learning, but CDFGs are computation graphs with strictly defined node semantics. If an addition node is masked directly in the raw graph, subtraction or multiplication could be topologically valid alternatives, leaving the model with no way to determine the correct operator; the reconstruction target itself is ambiguous. StructRTL moves the mask after the GIN—randomly selecting 20% of post-GIN embeddings to be replaced by a learnable [MASK] token, then tasking the Transformer with predicting the original node type (32-class classification). Since post-GIN embeddings already encode the neighborhood context, the connection and operator information around the masked node remains, transforming the task from "guessing an isolated node" to "restoring a deterministic answer via context." CDFGs naturally have imbalanced classes (operator nodes are much rarer than wires/registers), so a stratified masking strategy ensures at least $m$ nodes per class are selected. The loss uses a class-balanced focal loss instead of standard cross-entropy, with class weights $w_c = (1-\beta) / (1-\beta^{S_c})$ ($\beta=0.9999$ and focal $\gamma=2.0$) to prevent the model from only learning to predict high-frequency nodes.
 
-2. **Edge Prediction**:
+**2. Edge Prediction: Recovering topology lost by Transformer flattening**
 
-    - **Function**: Learn the topological connection patterns of the graph.
-    - **Mechanism**: When post-GNN embeddings are flattened into sequences for the Transformer, graph connectivity information is lost (equivalent to all edges being masked). Each iteration randomly samples 20% real edges as positive samples and an equal number of non-existent edges as negative samples. The Transformer output embeddings of source/target nodes are concatenated and passed through a 3-layer MLP for binary classification of edge existence. The total pre-training loss is $\mathcal{L}_{pre} = \alpha \mathcal{L}_{mnm} + (1-\alpha) \mathcal{L}_{ep}$ with $\alpha=0.5$.
-    - **Design Motivation**: Transformers naturally lose graph topology; edge prediction forces the model to recover connectivity structures from embeddings, complementing masked node modeling (one learns node semantics, the other learns edge topology).
+When post-GIN embeddings are flattened into a sequence for the Transformer, graph connectivity is entirely lost—equivalent to all edges being masked, where the Transformer only sees an unordered set of nodes. Edge prediction restores this topological supervision: in each iteration, 20% of existing edges are sampled as positive samples, and an equal number of non-existent edges are sampled as negative samples. Source and target node Transformer output embeddings are concatenated and passed through a 3-layer MLP for binary classification to determine if an edge exists. This complements masked node modeling—one forces the model to learn node semantics, while the other forces it to recover connection structures from embeddings. The tasks are combined into a pre-training loss $\mathcal{L}_{pre} = \alpha \mathcal{L}_{mnm} + (1-\alpha) \mathcal{L}_{ep}$ ($\alpha=0.5$).
 
-3. **Post-Mapping Knowledge Distillation**:
+**3. Post-mapping Netlist Knowledge Distillation: Bridging the abstraction gap with a netlist teacher**
 
-    - **Function**: Transfer low-level information from post-mapping (PM) netlists to the CDFG predictor.
-    - **Mechanism**: First, RTL is synthesized into PM netlists using Yosys + ABC. A teacher model (20-layer GIN) is trained to predict area/delay directly from netlists (as metrics derived from netlists are naturally more accurate). After freezing the teacher, distillation is performed by aligning the last-layer activations of the CDFG student and PM teacher: $\mathcal{L}_{kd} = \tau \cdot \mathcal{L}_{cos}(z_{CDFG}^{-1}, z_{PM}^{-1}) + (1-\tau) \cdot \mathcal{L}_{mse}(z_{CDFG}^{-1}, z_{PM}^{-1})$ with $\tau=0.7$. total training loss is $\mathcal{L}_{total} = \mu \mathcal{L}_{qe} + (1-\mu) \mathcal{L}_{kd}$ with $\mu=0.5$. Only the CDFG predictor is retained during inference.
-    - **Design Motivation**: An abstraction gap exists between RTL and actual metrics; PM netlists are closer to physical implementation, and distillation bridges this gap.
+RTL is several layers of abstraction away from final area/delay (separated by synthesis and mapping), creating an inherent gap for RTL-only prediction. In contrast, metrics in a post-mapping (PM) netlist can be read almost directly. StructRTL exploits the natural correspondence of the same design across different abstraction levels for cross-layer distillation: first, RTL is synthesized into a PM netlist via Yosys + ABC, and a 20-layer GIN teacher is trained to predict area/delay directly from the netlist (making the teacher inherently more accurate). After freezing the teacher, the CDFG student's last-layer activation is aligned with the PM teacher's last-layer activation. The distillation loss uses both cosine and MSE to constrain direction and magnitude: $\mathcal{L}_{kd} = \tau \cdot \mathcal{L}_{cos}(z_{CDFG}^{-1}, z_{PM}^{-1}) + (1-\tau) \cdot \mathcal{L}_{mse}(z_{CDFG}^{-1}, z_{PM}^{-1})$ ($\tau=0.7$). The total loss is $\mathcal{L}_{total} = \mu \mathcal{L}_{qe} + (1-\mu) \mathcal{L}_{kd}$ ($\mu=0.5$). The teacher is only used during training; the entire synthesis flow is unnecessary during inference, where only the CDFG predictor is retained.
 
 ### Loss & Training
-- Quality estimation uses log-cosh loss (robust to outliers), with target values undergoing log transformation.
-- Global positional encodings utilize the $k=16$ smallest eigenvectors of the symmetric normalized Laplacian matrix of the directed graph, with random sign flipping during training to enhance generalization.
+- Quality regression uses the log-cosh loss (robust to outliers), with target values subjected to a log transformation before regression.
+- Global positional encoding utilizes the first $k=16$ smallest eigenvectors of the symmetric normalized Laplacian matrix of the directed graph. Feature vector signs are randomly flipped during training to enhance generalization.
 
 ## Key Experimental Results
 
@@ -87,37 +90,37 @@ The input is RTL Verilog code, which is first compiled into the RTLIL intermedia
 | Configuration | Area $R^2$↑ | Delay $R^2$↑ | Description |
 |------|-----------|-------------|------|
 | StructRTL (full, w/o KD) | 0.7463 | 0.7630 | Full model without distillation |
-| w/o $\mathcal{L}_{mnm}$ (w/o KD) | 0.7249 | 0.7473 | $R^2$ drops without masked node modeling |
-| w/o $\mathcal{L}_{ep}$ (w/o KD) | 0.7018 | 0.7368 | $R^2$ drops more without edge prediction |
+| w/o $\mathcal{L}_{mnm}$ (w/o KD) | 0.7249 | 0.7473 | $R^2$ decreases without masked node modeling |
+| w/o $\mathcal{L}_{ep}$ (w/o KD) | 0.7018 | 0.7368 | $R^2$ decreases more without edge prediction |
 | **StructRTL + KD** | **0.8676** | **0.8872** | Substantial gain with knowledge distillation |
-| w/o $\mathcal{L}_{mnm}$ + KD | 0.8557 | 0.8796 | Consistent ablation under distillation |
-| w/o $\mathcal{L}_{ep}$ + KD | 0.8480 | 0.8654 | EP contribution slightly higher than MNM |
+| w/o $\mathcal{L}_{mnm}$ + KD | 0.8557 | 0.8796 | Consistent ablation trends under KD |
+| w/o $\mathcal{L}_{ep}$ + KD | 0.8480 | 0.8654 | Edge prediction contributes slightly more than MNM |
 | CodeV-QW-7B + KD | 0.8174 | 0.7687 | Strongest LLM baseline + KD |
-| PM Teacher (Upper Bound) | 0.9334 | 0.9484 | Prediction directly from netlist |
+| PM Teacher (Upper Bound) | 0.9334 | 0.9484 | Direct prediction from netlist |
 
 ### Key Findings
-- Without KD, StructRTL outperforms the strongest LLM baseline (CodeV-QW-7B) by +0.11 (Area) and +0.24 (Delay) in $R^2$. The larger advantage in delay estimation confirms that structural information is vital for delay prediction.
-- Knowledge distillation brings an $R^2$ gain of +0.12 (Area) and +0.12 (Delay) to StructRTL.
-- Using only 20% of training data, StructRTL achieves competitive performance (Area 0.56 / Delay 0.60) compared to LLM baselines trained on the full set.
-- Industrial Evaluation: On 51 pairs of real industrial designs, ranking accuracy reached 82.35% for area and 88.23% for delay.
-- Inference Speed: Average 0.096s per design vs. 13.97s per design for synthesis, achieving a 145x speedup.
+- Without KD, StructRTL outperforms the strongest LLM baseline (CodeV-QW-7B) by +0.11 (Area) and +0.24 (Delay) in $R^2$. The much higher advantage in delay prediction confirms that structural information is crucial for delay estimation.
+- Knowledge distillation brings an $R^2$ improvement of +0.12 (Area) and +0.12 (Delay) to StructRTL.
+- Using only 20% of the training data, StructRTL achieves performance competitive with the LLM baseline trained on the full dataset (Area 0.56 / Delay 0.60).
+- Industrial Design Evaluation: On 51 pairs of real industrial designs, the ranking accuracy reaches 82.35% for area and 88.23% for delay.
+- Inference Speed: Average of 0.096 seconds/design vs. 13.97 seconds/design for synthesis, representing a 145x speedup.
 
 ## Highlights & Insights
-- **Post-GNN masking instead of raw graph masking**: This is the most ingenious design. Computation graphs differ from natural language or social networks; node semantics are strictly constrained. Direct masking of raw nodes might have multiple valid substitutes. Post-GNN masking preserves the integrity of the original graph while providing sufficient context, which can be transferred to computation graphs in other domains (e.g., compiler IR, circuit netlists).
-- **CDFG vs. Token "Explicit vs. Implicit Structure" debate**: Using a light GNN+Transformer to observe graph structure is more effective than using a 7B LLM to observe code tokens. This suggests that task-aligned representations are more important than general LLMs. This insight is transferable to other downstream tasks in code analysis.
-- **Cross-abstraction level distillation**: The teacher is at the PM netlist level, and the student is at the RTL level. Utilizing the natural correspondence of the same design across different abstraction levels for distillation is a strategy applicable to any engineering design problem with multi-level abstractions.
+- **Post-GNN Masking instead of Raw Graph Masking**—This is the most ingenious design. Computation graphs differ from natural language or social networks in that node semantics are strictly constrained. Direct masking of raw nodes allows for multiple valid alternatives, whereas post-GNN masking preserves raw graph integrity while providing sufficient context. This can be transferred to computation graphs in other domains (e.g., compiler IR, circuit netlists).
+- **CDFG vs. Token: The "Explicit vs. Implicit Structure" Debate**—Using a 7B LLM to observe code tokens is less effective than using a lightweight GNN+Transformer to observe graph structure, suggesting that task-aligned representations are more important than general large models. This insight can be transferred to other downstream tasks in code analysis.
+- **Cross-Abstraction Distillation**—The teacher resides at the PM netlist level and the student at the RTL level. Exploiting the natural correspondence of a design across different abstraction levels for distillation is a strategy applicable to any engineering design problem with multi-level abstractions.
 
 ## Limitations & Future Work
-- The dataset primarily consists of small-to-medium scale open-source designs (13,200). Although industrial designs were evaluated, scalability on large-scale industrial SoC-level designs remains unverified.
-- CDFG construction depends on successful Yosys compilation, making it unable to handle RTL code containing proprietary IP or non-synthesizable constructs.
-- Knowledge distillation requires performing synthesis to obtain PM netlist labels, partially canceling out the "skip synthesis" motivation (though it is only needed during training).
-- The authors note that technology-node migration remains an open problem; current models require recalibration with labeled data for each process node.
-- Future directions: Extend the method to more EDA quality metrics (Power, Timing Slack) and explore pure self-supervised quality ranking without synthesis labels.
+- The dataset primarily consists of small-to-medium-sized open-source designs (13,200 samples). While 51 pairs of industrial designs were evaluated, scalability has not been verified on large-scale industrial SoC-level designs.
+- CDFG construction depends on successful compilation by Yosys, making it unable to handle RTL code containing proprietary IPs or non-synthesizable constructs.
+- Knowledge distillation requires performing synthesis to obtain PM netlist labels, which partially offsets the original intention of "skipping synthesis" (though only required during training).
+- The authors note that technology-node migration remains an open problem, as the current model requires recalibration with labeled data for each technology node.
+- Future Directions: Extending the method to more EDA quality metrics (Power, Timing Slack) and exploring pure self-supervised quality ranking without synthesis labels.
 
 ## Related Work & Insights
-- **VeriDistill (Moravej et al., 2025)**: Pioneer in LLM-based RTL embedding + knowledge distillation. This paper switches the representation from tokens to CDFG graphs while building on the distillation framework.
-- **GraphMAE (Hou et al., 2022)** / **MaskGAE (Li et al., 2023)**: General graph self-supervised learning methods for node feature masked reconstruction and edge mask recovery. This paper adapts these techniques specifically for computation graph semantics.
-- **MasterRTL (Fang et al., 2023)**: Quality estimation based on SOG manual features, though SOG construction itself requires partial synthesis steps.
+- **VeriDistill (Moravej et al., 2025)**: A pioneer in LLM-based RTL embedding + knowledge distillation. This paper switches the representation from tokens to CDFG graphs within a distillation framework.
+- **GraphMAE (Hou et al., 2022) / MaskGAE (Li et al., 2023)**: General graph self-supervised learning methods for node feature mask reconstruction and edge mask recovery. This work provides key adaptations for computation graph semantics.
+- **MasterRTL (Fang et al., 2023)**: Quality estimation based on handcrafted features of SOG, but SOG construction itself requires partial synthesis steps.
 
 <!-- RELATED:START -->
 
@@ -126,10 +129,10 @@ The input is RTL Verilog code, which is first compiled into the RTLIL intermedia
 ## Related Papers
 
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
+- [\[ACL 2025\] LLMSR@XLLM25: Less is More: Enhancing Structured Multi-Agent Reasoning via Quality-Guided Distillation](../../ACL2025/model_compression/llmsrxllm25_less_is_more_enhancing_structured_multi-agent_reasoning_via_quality-.md)
+- [\[NeurIPS 2025\] Enhancing Semi-supervised Learning with Zero-shot Pseudolabels](../../NeurIPS2025/model_compression/enhancing_semi-supervised_learning_with_zero-shot_pseudolabels.md)
+- [\[ICML 2025\] Toward Data-centric Directed Graph Learning: An Entropy-driven Approach](../../ICML2025/model_compression/toward_data-centric_directed_graph_learning_an_entropy-driven_approach.md)
 - [\[ICML 2026\] Global Convergence of Adaptive Sensing for Principal Eigenvector Estimation](global_convergence_of_adaptive_sensing_for_principal_eigenvector_estimation.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
-- [\[ICML 2026\] Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion](beyond_temperature_hyperfitting_as_a_late-stage_geometric_expansion.md)
-- [\[ICML 2026\] Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video](causal_forcing_autoregressive_diffusion_distillation_done_right_for_high-quality.md)
 
 </div>
 

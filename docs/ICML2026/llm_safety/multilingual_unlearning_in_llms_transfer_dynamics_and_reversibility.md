@@ -1,20 +1,14 @@
 ---
 title: >-
-  [Paper Note] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility
+  [Paper Note] Multilingual Unlearning in LLMs: 转移、动力学与可逆性
 description: >-
-  [ICML 2026][LLM Safety][LLM Unlearning] This paper extends the TOFU unlearning benchmark to five languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning strength varies with the ki…
+  [ICML 2026][LLM Safety][Paper Note] This paper expands the TOFU unlearning benchmark to 5 languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning intensity varies with linguistic family and script relatedness, primarily affecting late-stage language-specific decoding layers while leaving the shared semantic space i
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "LLM Unlearning"
-  - "Cross-lingual Transfer"
-  - "Representation Space"
-  - "Steering Vectors"
-  - "Reversible Unlearning"
+  - ICML 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 3f0a3ad5abce806c
+content_hash: f6728119fec1d5a3
 ---
-
 # Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility
 
 **Conference**: ICML 2026  
@@ -24,50 +18,55 @@ content_hash: 3f0a3ad5abce806c
 **Keywords**: LLM Unlearning, Cross-lingual Transfer, Representation Space, Steering Vectors, Reversible Unlearning
 
 ## TL;DR
-This paper extends the TOFU unlearning benchmark to five languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning strength varies with the kinship of language families and writing systems. Furthermore, unlearning primarily affects language-specific decoding layers at the end of the model while leaving the shared semantic space in the early-to-mid sections nearly untouched. Consequently, an inference-time steering vector can recover 50% of forgotten knowledge in Qwen and 90% in Gemma, suggesting that existing LLM unlearning is essentially "surface inhibition" rather than true erasure.
+This paper expands the TOFU unlearning benchmark to 5 languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning intensity varies with linguistic family and script relatedness, primarily affecting late-stage language-specific decoding layers while leaving the shared semantic space in early-to-mid layers largely intact. Consequently, knowledge can be recovered—achieving 50% on Qwen and 90% on Gemma—using a single inference-time steering vector, indicating that current LLM unlearning is essentially "surface suppression" rather than true erasure.
 
 ## Background & Motivation
 
-**Background**: The vast amounts of data absorbed during LLM training may contain sensitive facts. Coupled with GDPR "Right to be Forgotten" requirements, this has spurred research into "LLM unlearning"—erasing specific knowledge without retraining. Prevailing methods (GA, NPO, DPO-style) apply modification objectives to fine-tuned models to discourage them from revealing target content in the "forget" set.
+**Background**: The massive amounts of data absorbed during LLM training may contain sensitive facts. Together with GDPR "right to be forgotten" compliance requirements, this has catalyzed research into "LLM unlearning"—erasing specific knowledge without full retraining. Mainstream methods (GA, NPO, DPO-style) apply modification objectives to fine-tuned models to discourage the model from revealing target content in the forget set.
 
-**Limitations of Prior Work**: (1) Existing evaluations are almost exclusively conducted in English, leaving the extent of "unlearning transfer" in multilingual scenarios uncharacterized—despite sensitive facts often appearing repeatedly across multiple languages in real-world deployments. (2) Even in monolingual settings, some works suggest unlearning acts as an "inhibition signal," but they lack mechanism localization (which layers?) and evidence of reversibility without relearning.
+**Limitations of Prior Work**: (1) Existing evaluations are almost exclusively conducted in English, leaving the extent of "cross-lingual unlearning transfer" uncharacterized—despite sensitive facts often appearing across multiple languages in real-world deployments. (2) Even in monolingual settings, some works suggest that unlearning acts as a "suppression signal," but they lack mechanistic localization (which layers?) and evidence of reversibility without re-learning.
 
-**Key Challenge**: If multilingual unlearning only modifies "language-specific decoding layers," knowledge remains intact in the shared semantic space, allowing attackers to retrieve it via cross-lingual queries or reverse steering during inference. If it truly alters the "cross-lingual conceptual space," the safety guarantee is much stronger. These two scenarios entail vastly different deployment risks, yet prior work has failed to distinguish between them.
+**Key Challenge**: If multilingual unlearning only modifies "language-specific decoding layers," then the knowledge in the shared semantic space remains intact. An attacker could retrieve it by querying in another language or using inverse steering during inference. Conversely, the safety guarantee would be much stronger if it truly altered the "cross-lingual conceptual space." These two scenarios present entirely different deployment risks, yet prior work fails to distinguish between them.
 
-**Goal**: (i) Systematically characterize cross-lingual unlearning transfer patterns across language families, writing systems, and pre-training coverage; (ii) Locate unlearning actions via mechanistic interpretability; (iii) Verify reversibility using a simple inference-time steering vector and measure its cross-lingual transferability.
+**Goal**: (i) Systematically characterize cross-lingual unlearning transfer across language families, scripts, and pre-training coverage; (ii) Locate the layers where unlearning occurs using mechanistic interpretability; (iii) Verify unlearning reversibility using a simple inference-time steering vector and test its cross-lingual transferability.
 
-**Key Insight**: The authors translate the TOFU dataset (20 QA pairs for each of 200 fictitious authors) into five languages (EN/CH/DE/RU/TU), controlling for three axes: shared language family vs. shared writing system vs. neither. By fine-tuning, unlearning, and querying across different languages, they generate a $5 \times 5 \times 5$ transfer matrix and use NLI rather than lexical overlap to evaluate semantic equivalence.
+**Key Insight**: Translate the TOFU dataset (20 QA pairs for each of the 200 fictional authors) into five languages (EN/CH/DE/RU/TU), controlling for three axes: shared language family vs. shared script vs. neither. By fine-tuning in one language, unlearning in another, and querying in a third, a $5\times 5\times 5$ transfer matrix is constructed. Evaluation uses NLI rather than lexical overlap to assess semantic equivalence.
 
-**Core Idea**: The difference in latent representations between the fine-tuned and unlearned models for the same prompt is treated as the "unlearning direction" (steering vector), which is then injected as a weighted reverse perturbation during the forward pass. If this direction is a "language-agnostic inhibition direction," it should recover knowledge in any language—a hypothesis this paper validates.
+**Core Idea**: Systemic differences in hidden representations before and after unlearning are distilled into a "suppression direction" (steering vector), which is injectively subtracted from the forward pass during inference. If this is a "language-agnostic suppression direction," it should restore knowledge across any language—the primary hypothesis of this paper.
 
 ## Method
 
 ### Overall Architecture
 
-The experimental workflow consists of four steps: (1) LoRA fine-tuning on a specific $\mathcal{L}_{FT}$ using multilingual TOFU data to obtain $f_{\text{ft}}$; (2) Applying a DPO-style unlearning objective $J_{UN}$ on $\mathcal{L}_{\text{unl}}$ to erase 1% of the "forget" authors, obtaining $f_{\text{un}}$; (3) Evaluating forget/retain accuracy on $\mathcal{L}_Q$ via NLI to generate the transfer matrix; (4) Extracting latent representations for cosine similarity analysis and constructing steering vectors for reversibility experiments.
+The paper does not propose a new unlearning algorithm but establishes a controlled experimental framework to quantify "where cross-lingual unlearning transfer occurs and whether it is reversible." The pipeline is executed on Qwen2.5-7B and Gemma2-9B: first, LoRA fine-tuning is performed on a specific language $\mathcal{L}_{FT}$ using bilingual TOFU data to obtain $f_{\text{ft}}$; then, a DPO-style unlearning objective is applied on an unlearning language $\mathcal{L}_{\text{unl}}$ to erase 1% of the forget authors, resulting in $f_{\text{un}}$. Finally, transfer matrices for forget/retain accuracy are constructed across various query languages $\mathcal{L}_Q$, followed by localization via hidden representation cosine similarity and reversibility validation via steering vectors.
 
-Experiments are conducted on Qwen2.5-7B and Gemma2-9B. The unlearning objective is $\arg\min_\theta \frac{1}{|\mathcal{L}_{\text{unl}}|} \sum_{\ell} (\mathbb{E}_{D_\ell^{\text{forget}}} J_{\text{forget}} + \lambda \mathbb{E}_{D_\ell^{\text{retain}}} J_{\text{retain}})$, where $J_{\text{forget}}$ uses DPO to prefer "I don't know" over the "ground truth."
+The unlearning objective follows standard hierarchical DPO preference optimization:
+$$\arg\min_\theta \frac{1}{|\mathcal{L}_{\text{unl}}|} \sum_{\ell} (\mathbb{E}_{D_\ell^{\text{forget}}} J_{\text{forget}} + \lambda \mathbb{E}_{D_\ell^{\text{retain}}} J_{\text{retain}})$$
+where $J_{\text{forget}}$ encourages the model to prefer "I don't know" (IDK) over the ground truth, and $J_{\text{retain}}$ uses $\lambda$ to protect the retain set. Evaluation utilizes the multilingual NLI model `xlm-roberta-large-xnli` to determine if the generated answer $\hat y$ and ground truth $y$ are mutually entailing, with reliability verified by native speakers on 50 samples.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["TOFU: 200 Fictional Authors × 20 QA<br/>Translated into 5 Languages (EN/CH/DE/RU/TU)"] --> B["LoRA Fine-tuning (FT Language)<br/>Obtain f_ft"]
+    B --> C["DPO Hierarchical Unlearning (Unl Language, 1% forget)<br/>IDK preferred over Truth → f_un"]
+    C --> D1["1. 5×5×5 Unlearning Transfer Matrix<br/>Iterate FT/Unl/Query languages, measure NLI drop"]
+    C --> D2["2. Cross-lingual Prompting Diagnosis<br/>Ask in q, force answer in FT language, measure Δ gain"]
+    C --> D3["3. Layer-wise Cosine/PCA Localization + Steering Vector<br/>Inverse steering along suppression direction"]
+    D1 --> E["Conclusion: Unlearning = Surface suppression in late decoding layers<br/>Shared semantic space not erased; recoverable cross-lingually"]
+    D2 --> E
+    D3 --> E
+```
 
 ### Key Designs
 
-1. **Three-Axis Controlled Multilingual Unlearning Transfer Matrix**:
-    - **Function**: Decomposes the open question of how linguistic relations affect unlearning transfer into three observable dimensions.
-    - **Mechanism**: Selects five languages covering four combinations: "Same Family + Same Script" (EN/DE), "Same Family + Different Script" (EN/RU), "Different Family + Same Script" (EN/TU), and "Neither Shared" (EN/CH). For each $(\mathcal{L}_{FT}, \mathcal{L}_{\text{unl}}, \mathcal{L}_Q)$ triplet, the NLI score change relative to unlearning is reported.
-    - **Design Motivation**: Previous work only measured English, failing to distinguish between script effects, family effects, and pre-training coverage effects. This $5 \times 5 \times 5$ matrix allows all three effects to be observed independently.
+**1. Three-axis Controlled $5\times 5\times 5$ Transfer Matrix**:
+Prior evaluations focused on English, making it impossible to distinguish whether transfer was driven by script similarity, language family, or pre-training coverage. This paper selects five languages to orthogonalize these axes: EN/DE (same family, same script), EN/RU (same family, different script), EN/TU (different family, same script), and EN/CH (neither). For each $(\mathcal{L}_{FT}, \mathcal{L}_{\text{unl}}, \mathcal{L}_Q)$ triplet, it reports the NLI score drop relative to the fine-tuned base (more negative = stronger unlearning).
 
-2. **Cross-lingual Prompting as an "Output-side" Diagnostic**:
-    - **Function**: Determines whether a model "does not know the answer" or "knows it but cannot decode it."
-    - **Mechanism**: Queries are in language $q$, but the model is required to answer in the fine-tuning language $\ell$. Performance gains $\Delta_{\ell \leftarrow q}$ are recorded. If $\Delta > 0$ is large, knowledge is intact in the shared space but bound during decoding. The correlation between $\Delta_{\ell \leftarrow q}$ and the transfer matrix (Pearson $r=0.50$, Spearman $\rho=0.60$) directly links the "shared semantic space" to "transfer intensity."
-    - **Design Motivation**: Since decoding binding is only indirectly observable, "swapping query/response languages" opens the bottleneck to prove that unlearning damage propagates through the shared space to downstream decoding layers.
+**2. Cross-lingual Prompting as "Output" Diagnosis**:
+To distinguish if knowledge is truly erased or merely blocked by language-specific decoding layers, the paper uses a specific prompt: query in language $q$ but force the model to answer in the fine-tuned language $\ell$. The performance gain $\Delta_{\ell \leftarrow q}$ is recorded. Significant positive $\Delta$ indicates knowledge remains intact in the shared semantic space. The correlation between $\Delta_{\ell \leftarrow q}$ and transfer matrix cells (Pearson $r=0.50$, Spearman $\rho=0.60$) confirms that unlearning damage is transmitted through the shared space to downstream decoding.
 
-3. **Unlearning Direction = Representation Difference; Inference-time Steering to Verify Reversibility**:
-    - **Function**: Upgrades the "unlearning as inhibition" hypothesis to mechanistic evidence and quantitatively restores forgotten knowledge.
-    - **Mechanism**: For a "forget" question, the latent state difference $d^{(l)} = h_{\text{ft}}^{(l)} - h_{\text{un}}^{(l)}$ is taken at the final token of layer $l$. A weighted perturbation is then injected along this direction during $f_{\text{un}}$'s forward pass. If knowledge is recovered across languages using a single direction, unlearning is "language-agnostic surface inhibition." Layer-wise cosine similarity shows $f_{\text{un}}$ and $f_{\text{ft}}$ overlap in early-to-mid layers, with divergence concentrated in the final decoding layers.
-    - **Design Motivation**: Unlike previous evidence of "reversibility" that relied on brief relearning (requiring data) or prefix induction (requiring the answer), this single-direction inference-time steering requires neither data nor the answer and transfers across languages. This constitutes the strongest counter-evidence against "true erasure" in LLM unlearning.
-
-### Evaluation Metrics
-
-A multilingual NLI model (xlm-roberta-large-xnli) is used to determine if the generated answer $\hat y$ and the ground truth $y$ entail each other, avoiding the inaccuracies of lexical overlap across languages. Native speakers validated NLI reliability on 50 samples.
+**3. Layer Localization + Inference-time Steering Vector**:
+To prove unlearning is "suppression" rather than erasure, the paper demonstrates knowledge recovery without re-learning or providing the answer. First, localization: comparing hidden states of $f_{\text{un}}$ and $f_{\text{ft}}$ reveals that they are nearly identical in early-to-mid layers, with divergence concentrated in the final decoding layers. Second, an **auxiliary forget set** (randomly shuffled retain authors) is used to construct a suppression direction $\mathbf{g}^{(l)}$ by comparing $f_{\text{ft}}$ and a model unlearned on this auxiliary set $f_{\text{un}}^{\text{aux}}$. During inference, the operation $\alpha\lVert\mathbf{h}^{(l)}\rVert_2\,\mathbf{g}^{(l)}$ is subtracted across layers $l\!\sim\!l\!+\!N$. This single set of directions recovers significant knowledge (50% Qwen, 90% Gemma) across languages, providing a direct counter-example to true erasure.
 
 ## Key Experimental Results
 
@@ -82,7 +81,7 @@ A multilingual NLI model (xlm-roberta-large-xnli) is used to determine if the ge
 | TU / EN | -10 | -2 | -1 | -6 | **-55** |
 | CH / TU | -1 | **+6** | -4 | -4 | 0 |
 
-Numbers represent the absolute decrease in NLI scores relative to the fine-tuned base (more negative = stronger unlearning). Observations: (1) Transfer is strongest within the same family and script (EN→DE, EN→EN); (2) Unlearning high-coverage languages (EN/CH) results in stronger transfer than low-coverage ones (DE/RU/TU); (3) Unlearning in weak languages can still backward-impact strong languages (TU/EN cell -55).
+Values represent absolute NLI score drops relative to the fine-tuned base (more negative = stronger unlearning). Observations: (1) Transfer is strongest within the same family and script (EN→DE, EN→EN); (2) Unlearning high-coverage languages (EN/CH) results in stronger transfer; (3) Unlearning on weak languages can still impact strong languages (TU/EN cell -55).
 
 ### Cross-lingual Prompting Gain $\Delta_{\ell \leftarrow q}$
 
@@ -94,9 +93,9 @@ Numbers represent the absolute decrease in NLI scores relative to the fine-tuned
 | RU | +20 | +8 | +15 | — | +7 |
 | TU | +33 | +11 | +22 | +17 | — |
 
-Significant positive gains prove that knowledge remains intact in the shared semantic space, with the failure being language-specific decoding. Correlations with the transfer matrix are significant (Pearson $r=0.50$, Spearman $\rho=0.60$, $p<0.05$).
+Significant positive gains prove knowledge remains in the shared semantic space.
 
-### Reversibility: Knowledge Recovery via a Single Steering Direction
+### Reversibility: Knowledge Recovery via Steering Direction
 
 | Model | Recovery Rate (Forget NLI Rebound) | Cross-lingual Transfer? | Forget Data Needed? |
 |------|---|---|---|
@@ -104,54 +103,45 @@ Significant positive gains prove that knowledge remains intact in the shared sem
 | Gemma2-9B | $\approx 90\%$ | Yes | No |
 
 ### Key Findings
-
-- **Dual Impact of Language Family and Script**: Controlling for script, EN→RU (same family, different script) is stronger than EN→CH (neither shared); controlling for family, EN→TU (same script, different family) is stronger than EN→CH. Both axes contribute independently.
-- **Asymmetric Transfer**: High-coverage languages (EN, CH) are more powerful unlearning sources, while low-coverage ones (DE/RU/TU) are weaker—consistent with the hypothesis that models reason in a shared space anchored by dominant languages.
-- **"I Don't Know" Still Transfers**: For a TU fine-tuned model, an EN query base yields only 11% NLI, but after unlearning in EN, the TU query NLI drops by 55%—validating the shared concept space hypothesis.
-- **Layer Localization**: Cosine similarity between $f_{\text{un}}$ and $f_{\text{ft}}$ is nearly identical in early-to-mid layers and only diverges significantly in the final few layers—damage from unlearning is concentrated in the "concept-to-language-specific-output" step.
-- **Reversibility**: A 90% recovery rate on Gemma implies unlearning is almost "cosmetic"; a 50% rate on Qwen still poses a substantial safety risk.
+- **Shared History vs. Script**: Both language family and writing system independently contribute to transfer strength.
+- **Asymmetric Transfer**: High-coverage languages (EN, CH) are more potent unlearning sources, consistent with the hypothesis that models anchor shared spaces in dominant languages.
+- **IDK Transfer**: Unlearning remains transferable even when the base model performance in the query language is low, validating the shared conceptual space hypothesis.
+- **Layer Dynamics**: Unlearning disruption is concentrated in the final decoding layers, leaving early-to-mid shared conceptual spaces untouched.
+- **Reversibility**: The 90% recovery rate in Gemma suggests unlearning is largely cosmetic for certain architectures.
 
 ## Highlights & Insights
-
-- **First Systematic Multilingual Unlearning Transfer Map**: Decouples language family, script, and coverage into a $5 \times 5 \times 5$ matrix, providing a clear benchmark for future work.
-- **Mechanism Localization + Behavioral Evidence Loop**: Leverages layer-wise latent analysis to identify late decoding layers as the inhibition site, verifies this via cross-lingual prompting, and solidifies the hypothesis through steering.
-- **Reversibility Experiments Expose the "Unlearning" Illusion**: Recovery via a single inference-time direction without relearning or answer prefixes—transferable across languages—is the most direct counter-example to current unlearning safety claims.
-- **NLI Evaluation**: Circumvents the distortion of lexical overlap in multilingual settings, offering methodological value for future multilingual generation assessment.
-- **Practical Implications for Adversarial Defense**: Demonstrates that for "Right to be Forgotten" in multilingual models, unlearning in English alone is insufficient; all possible query languages must be covered, and even then, steering attacks remain highly effective.
+- **First Systematic Multilingual Map**: Decouples language family, script, and coverage into a $5\times 5\times 5$ matrix.
+- **Mechanistic Evidence Loop**: Closes the loop from hidden state localization to behavior validation and finally to steering-based recovery.
+- **Debunking the "Erasure" Illusion**: Recovery requires no re-learning or answer prefixes—just a single inference direction. This poses a significant threat to current unlearning safety claims.
+- **NLI-based Generation Evaluation**: Avoids lexical overlap distortion in cross-lingual settings, providing a methodology for future multilingual generation assessment.
 
 ## Limitations & Future Work
-
-- **Narrow Task Scope**: Only tested on TOFU-style synthetic biographical knowledge; other forms of knowledge (sensitive facts, PII, copyrighted text) may not be isomorphic or may have different layer distributions.
-- **Limited Method Coverage**: Only covers three types of fine-tuning-based methods (DPO/GA/NPO); representation misdirection (e.g., RMU) or parameter localization methods (e.g., ROME-style) are not yet validated.
-- **Sampling of 5 Languages**: Lacks low-resource languages (e.g., African or Southeast Asian languages), potentially missing cases where unlearning transfer might be zero.
-- **Steering Gap (Qwen 50% vs. Gemma 90%)**: The disparity is not fully explained; it may relate to multilingual training ratios, architecture, or alignment processes.
-- **Real-world Threat Model**: Steering assumes an attacker has both $f_{\text{ft}}$ and $f_{\text{un}}$ checkpoints, which might not hold in API-based scenarios. Future work should test if the direction can be inferred via black-box queries.
+- **Task Scope**: Limited to TOFU synthetic biographical knowledge; other types of facts (copyrighted text, PII) may distribute differently across layers.
+- **Methodological Scope**: Focuses on gradient-based fine-tuning (DPO/GA/NPO); representation misdirection (RMU) or ROME-style editing were not tested.
+- **Language Sampling**: Five languages do not cover very low-resource languages where transfer might be minimal.
+- **Inter-model Differences**: The reason for the recovery rate discrepancy between Qwen (50%) and Gemma (90%) remains unexplained and may relate to multilingual pre-training ratios.
 
 ## Related Work & Insights
-
-- **vs. Monolingual LLM Unlearning (GA/NPO/DPO series)**: The first to apply these methods to multilingual scenarios and identify unbalanced transfer and alignment-based vulnerability.
-- **vs. Suppression Hypotheses (e.g., Hu et al. 2025)**: Advances from "monolingual empirical observation" to "multilingual mechanistic + reversibility evidence," with layer-wise localization.
-- **vs. Shared Semantic Space Theories (e.g., Wendler et al. 2024)**: Repurposes "positive" representation theories as "negative" safety analysis tools for cross-lingual robustness.
-- **vs. Concept Retrieval Steering (e.g., Seyitoğlu et al. 2024)**: While they use existing world knowledge, this work constructs directions from fine-tuned/unlearned differences, eliminating the need for generalized priors and making the method more universal.
+- **vs. Monolingual Unlearning**: Demonstrates that transfer is uneven and alignment-based attacks are more dangerous in multilingual contexts.
+- **vs. Suppression Hypotheses**: Upgrades monolingual empirical observations to cross-lingual mechanistic evidence with reversibility proofs.
+- **vs. Shared Semantic Space Theory**: Utilizes positive representation theories as tools for negative safety analysis.
 
 ## Rating
-
-- **Novelty**: ⭐⭐⭐⭐⭐ First to systematically decouple the three factors of multilingual unlearning transfer and provide strong reversibility evidence via single-direction inference steering.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Dual models × 5 languages × 3 unlearning objectives × 3 validation perspectives (NLI/layer analysis/steering), with all key conclusions ablated.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear mathematical notation, though color-coding in the $5 \times 5 \times 5$ matrix can be difficult to follow on paper.
-- **Value**: ⭐⭐⭐⭐⭐ Directly challenges safety claims of current unlearning methods; mandatory reading for compliance and defense research.
+- Novelty: ⭐⭐⭐⭐⭐ Decouples three factors in multilingual transfer and provides strong reversibility evidence via single-direction steering.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple models, languages, and unlearning objectives validated through NLI, localization, and steering.
+- Writing Quality: ⭐⭐⭐⭐ Clear math, though color-coding in large matrices could be improved for readability.
+- Value: ⭐⭐⭐⭐⭐ Directly challenges LLM unlearning safety claims; essential for compliance and defense research.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Forgetting is Not Erasing: A Survey of Reversibility in Large Language Model Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
 - [\[AAAI 2026\] FedP²EFT: Federated Learning to Personalize PEFT for Multilingual LLMs](../../AAAI2026/llm_safety/fedp2eft_federated_learning_to_personalize_peft_for_multilingual_llms.md)
 - [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](../../ACL2026/llm_safety/cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
-- [\[AAAI 2026\] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms](../../AAAI2026/llm_safety/lost_in_translation_a_comparative_study_on_the_cross-lingual_transfer_of_composi.md)
-- [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
+- [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
+- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
+- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 
 </div>
 

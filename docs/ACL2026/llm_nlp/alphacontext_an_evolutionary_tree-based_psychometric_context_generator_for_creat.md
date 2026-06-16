@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 description: >-
-  [ACL 2026][LLM/NLP][Creativity Assessment] This paper proposes AlphaContext, an evolutionary tree-based psychometric context generator. Utilizing HyperTree outline planning, MCTS sentence-by-sentence generation…
+  [ACL 2026][LLM (Other)][MAP-Elites] AlphaContext is proposed as an evolutionary tree-based psychometric context generator. By integrating four modules—HyperTree outline planning, MCTS-based sentence-by-sentence generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement—it automatically generates high-quality long-text conte
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Creativity Assessment"
-  - "Psychometrics"
-  - "Evolutionary Algorithms"
-  - "MCTS Text Generation"
-  - "MAP-Elites"
+  - ACL 2026
+  - LLM (Other)
+  - MAP-Elites
 date: 2026-05-08
-content_hash: e703df05b92f7550
+content_hash: 51596e956a20f582
 ---
-
 # AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 
 **Conference**: ACL 2026  
@@ -24,49 +19,64 @@ content_hash: e703df05b92f7550
 **Keywords**: Creativity Assessment, Psychometrics, Evolutionary Algorithms, MCTS Text Generation, MAP-Elites
 
 ## TL;DR
-This paper proposes AlphaContext, an evolutionary tree-based psychometric context generator. Utilizing HyperTree outline planning, MCTS sentence-by-sentence generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement, it automatically generates high-quality long-text contexts for creativity assessment, outperforming competing methods by an average of 8% across 7 evaluation dimensions.
+AlphaContext is proposed as an evolutionary tree-based psychometric context generator. By integrating four modules—HyperTree outline planning, MCTS-based sentence-by-sentence generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement—it automatically generates high-quality long-text contexts for creativity assessment, outperforming competing methods by an average of 8% across seven evaluation dimensions.
 
 ## Background & Motivation
 
-**Background**: Creativity assessment is increasingly important in the LLM era. Psychometric research suggests that context-based assessment is an effective way to measure creative thinking—by providing subjects with a future-oriented scenario and asking them to identify potential challenges to stimulate creativity. This paradigm originates from the Future Problem Solving Program (FPSP).
+**Background**: Creativity assessment is increasingly vital in the LLM era. Psychometric research posits that context-based assessment is an effective way to measure creative thinking—providing subjects with a future-oriented scenario and requiring them to identify potential challenges to stimulate creativity. This paradigm originates from the Future Problem Solving Program (FPSP).
 
-**Limitations of Prior Work**: High-quality creativity assessment contexts still rely on manual expert design, resulting in significant production bottlenecks (one context requires at least a week). Existing LLM generation methods face two major challenges: (1) Difficulty in simultaneously embedding implicit assessment cues and maintaining global narrative coherence; (2) Difficulty in achieving diversity while ensuring quality and measurement validity.
+**Limitations of Prior Work**: High-quality psychometric assessment contexts still rely on manual expert design, leading to a severe production bottleneck (one context requires at least a week). Existing LLM generation methods face two major challenges: (1) difficulty in simultaneously embedding implicit assessment cues and maintaining global narrative coherence; (2) difficulty in achieving diversity while ensuring quality and measurement validity.
 
 **Key Challenge**: Psychometric contexts differ from ordinary stories; they require assessment cues to be implicitly embedded within a coherent narrative, and these cues must effectively stimulate creative thinking. General story generation frameworks fail to satisfy these fine-grained constraints.
 
-**Goal**: To automatically generate psychometric contexts that can replace expert-designed ones while ensuring narrative coherence, assessment cue alignment, and stylistic diversity.
+**Goal**: To automatically generate psychometric contexts that can replace expert designs while ensuring narrative coherence, assessment cue alignment, and stylistic diversity.
 
-**Key Insight**: The context generation process is decomposed into three stages: planning, generation, and evolution, using search algorithms to ensure global structure, local quality, and diverse coverage respectively.
+**Key Insight**: Context generation is decomposed into three stages—planning, generation, and evolution—using search algorithms to guarantee global structure, local quality, and diverse coverage respectively.
 
-**Core Idea**: A HyperTree structure is used to model the expert outline design process; MCTS performs sentence-level search for optimal text under outline constraints; MAP-Elites iteratively evolves the contexts in a stylistic behavior space; and virtual subjects simulate responses to verify assessment effectiveness.
+**Core Idea**: A HyperTree is used to structure the expert outline design process; MCTS performs an optimal sentence-level search under outline constraints; MAP-Elites iterates through a stylistic behavior space for evolution; and virtual examinees simulate responses to verify assessment validity.
 
 ## Method
 
 ### Overall Architecture
-Given a title and topic query $Q$, AlphaContext proceeds through four modules: (1) HyperTree Outline Planner for generating structured outlines; (2) MCTS-based Context Generator for sentence-level search under outline constraints to generate seed contexts; (3) Evolutionary Context Optimizer using MAP-Elites to iteratively improve diversity and quality in stylistic space; (4) Assessment-Guided Evolution Refiner to simulate virtual subjects and re-optimize ineffective contexts.
+
+AlphaContext decomposes the expert task of "writing a psychometric context" into three progressive stages corresponding to four serial modules. Given a title and topic query $Q$, the HyperTree Outline Planner first searches for a hierarchical outline. This is passed to the MCTS-based Context Generator for sentence-by-sentence searching under outline constraints to produce a seed context. Subsequently, the Evolutionary Context Optimizer uses MAP-Elites to mutate and evolve the context within a stylistic behavior space. Finally, the Assessment-Guided Evolution Refiner validates validity through virtual examinee simulations; contexts that fail to elicit creativity are returned for further refinement. The system finally outputs long-text contexts that are coherent, implicitly stimulative, and stylistically diverse.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Title + Topic Query Q"] --> B["HyperTree Outline Planner (HOP)<br/>Hyper-tree Search: Select -> Expand -> Construct -> Decide"]
+    B --> C["MCTS-based Context Generator (MCG)<br/>Candidate Sentences -> Dual-horizon Evaluation -> UCT Search"]
+    C -->|Low-score Trigger Look-ahead| C
+    C --> EVO
+    subgraph EVO["Evolution & Validity Loop (ECO + Refiner)"]
+        direction TB
+        D["MAP-Elites Style Evolution (ECO)<br/>3D Behavior Grid + Insert/Delete/Replace Mutation"] --> E["Virtual Examinee Verification<br/>Talkative/Normal/Quiet Examinees"]
+        E -->|Creativity Score < Threshold, Return to Refine| D
+    end
+    EVO --> F["Output: Coherent + Implicitly Stimulative + Stylistically Diverse Contexts"]
+```
 
 ### Key Designs
 
-1. **HyperTree Outline Planner (HOP)**:
+**1. HyperTree Outline Planner (HOP): Formalizing the "Global-to-Local" Expert Design Habit into Hyper-tree Search**
 
-    - **Function**: Formalizes the expert outline design process as rule-guided hypertree search.
-    - **Mechanism**: Defines a hypertree $\mathcal{H} = (N, Q, \mathcal{R})$, where hyperedges connect a parent node to sets of child nodes, supporting hierarchical divide-and-conquer. The search involves four steps: HT-Select (evaluating and pruning hyperlinks, selecting optimal leaf nodes) → HT-Expand (applying expansion rules to generate candidate subgroups) → HT-Construct (iterative construction until termination) → HT-Decide (global evaluation to select the final outline).
-    - **Design Motivation**: Experts design contexts by planning holistically and then refining layer by layer; the hypertree structure captures this hierarchical design process better than a standard tree. Ablation studies show that removing HOP reduces Relevance from 79.06% to 70.20%.
+Experts typically construct a framework before filling in details; standard tree structures struggle to represent the "one parent node expanding into multiple sub-theme sets" divide-and-conquer process. HOP defines a Hyper-tree $\mathcal{H} = (N, Q, \mathcal{R})$ where hyper-edges connect a parent to sets of child nodes. It iterates through four steps: HT-Select evaluates and prunes hyper-links to select optimal leaf nodes; HT-Expand applies expansion rules to generate candidate sub-groups; HT-Construct builds iteratively until termination; and HT-Decide performs a global evaluation to select the final outline. This step is critical for relevance; ablation studies show Relevance drops from 79.06% to 70.20% without HOP.
 
-2. **MCTS-based Context Generator (MCG)**:
+**2. MCTS-based Context Generator (MCG): Transforming Long-text Writing into Sentence-level Search for Long-range Consistency**
 
-    - **Function**: Generates high-quality seed contexts through sentence-level search under outline constraints.
-    - **Mechanism**: Text generation is treated as a sentence-level decision process, with an LLM proposing candidate sentences at each step. A dual-time-horizon evaluation mechanism is employed: high-scoring nodes receive immediate evaluation (weighted average of cue alignment $S_{sc}$, imagery vividness $S_{im}$, and discourse coherence $S_{co}$, multiplied by $1-S_{ha}$ hallucination risk), while low-scoring nodes trigger a short-continuation lookahead for re-evaluation. The UCT formula balances exploration and exploitation.
-    - **Design Motivation**: Sentence-by-sentence search maintains long-range structural consistency better than one-shot generation. Removing MCG reduces Coherence from 81.28% to 74.38%.
+Asking an LLM to write a full context at once often results in topical drift and loss of outline constraints. MCG instead views generation as sentence-level decision making. At each step, the LLM proposes candidate sentences, which are scored via dual-horizon evaluation. High-score nodes adopt immediate evaluation (weighted mean of cue alignment $S_{sc}$, imagery vividness $S_{im}$, and coherence $S_{co}$, multiplied by a hallucination penalty $(1-S_{ha})$). Low-score nodes trigger a short look-ahead script to re-evaluate based on future potential, using the UCT formula to balance exploration and exploitation. This sentence-level search ensures coherence; without MCG, Coherence drops from 81.28% to 74.38%.
 
-3. **Evolutionary Context Optimizer (ECO) + Assessment-Guided Refiner**:
+**3. Evolutionary Context Optimizer (ECO) + Assessment-Guided Refiner: "Diversity × Quality" Optimization via Stylistic Space and Closed-loop Validation**
 
-    - **Function**: MAP-Elites evolutionary search enhances stylistic diversity, and virtual subjects verify assessment validity.
-    - **Mechanism**: A 3D behavior space is defined (Proximity Range $\phi_1$, Knowledge Density $\phi_2$, Perspective Diversity $\phi_3$) and discretized into a grid, with each cell storing the current optimal context. Seed contexts are edited via insertion/deletion/replacement mutation operations, updating the elites based on a fitness function (mean of coherence, relevance, and engagement). A virtual subject simulator (with talkative/normal/quiet styles) generates responses; contexts with creativity scores below a threshold are sent back for further evolution.
-    - **Design Motivation**: Different styles of contexts are needed for the same topic to suit various assessment groups. MAP-Elites naturally supports simultaneous optimization of diversity and quality. Removing ECO led to a decline in all metrics, with Uncertainty showing the largest drop.
+A single theme requires diverse styles for different assessment groups. ECO defines a 3D behavior space—proximity range $\phi_1$, knowledge density $\phi_2$, and perspective diversity $\phi_3$—discretized into a grid where each cell retains the current best context. Seed contexts are mutated via insertion, deletion, or replacement, and elites are updated based on a fitness function (mean of coherence, relevance, and engagement). MAP-Elites naturally optimizes for both stylistic coverage and quality. The Assessment-Guided Refiner adds a validity loop: virtual examinees (talkative/normal/quiet) simulate responses. Contexts with creativity scores below a threshold are sent back for further evolution.
+
+### Mechanism
+
+Taking "Future Urban Water Crisis" as a theme: HOP first constructs a hyper-tree outline spanning "Background Setting $\rightarrow$ Conflict of Interest $\rightarrow$ Implicit Challenges." MCG searches sentence-by-sentence under this outline, triggering look-ahead for critical transitions to select sentences that are both coherent and embed challenge cues. ECO maps the seed context into the style grid, mutating variants with "High Knowledge Density" or "Strong Perspective Conflict." The Refiner simulates examinee responses; if a didactic variant fails to elicit creativity, it is returned to ECO for evolution until it exceeds the creativity score threshold.
 
 ### Loss & Training
-AlphaContext is an unsupervised search framework and does not involve a traditional loss function. Quality assessment is implemented via an LLM scorer (DeepSeek-V3.1), with the fitness function $F(C) = \text{Avg}(S_{coh}(C) + S_{rel}(C) + S_{eng}(C))$.
+
+AlphaContext is an unsupervised search framework and does not involve a traditional loss function. Quality evaluation is provided by an LLM scorer (DeepSeek-V3.1). The evolution stage is driven by a fitness function $F(C) = \text{Avg}(S_{coh}(C) + S_{rel}(C) + S_{eng}(C))$ to update elites.
 
 ## Key Experimental Results
 
@@ -77,7 +87,7 @@ AlphaContext is an unsupervised search framework and does not involve a traditio
 | GPT-5.1 | 70.44 | 70.20 | 65.39 | 50.37 | 68.60 |
 | Gemini-3.0-Pro | 72.54 | 75.37 | 62.56 | 48.40 | 63.30 |
 | SS-GEN | 60.22 | 69.69 | 56.40 | 60.10 | 53.57 |
-| **Ours (AlphaContext)** | **81.28** | **79.06** | **79.93** | **71.06** | **80.30** |
+| **Ours** | **81.28** | **79.06** | **79.93** | **71.06** | **80.30** |
 
 ### Ablation Study
 
@@ -89,34 +99,34 @@ AlphaContext is an unsupervised search framework and does not involve a traditio
 | w/o ECO | 75.62 | 70.57 | 71.80 | 70.69 |
 
 ### Key Findings
-- AlphaContext ranks first across all 7 dimensions, with the most significant advantages in Significance (+10.96% vs. runner-up) and Uncertainty (+11.7% vs. runner-up).
-- In human preference evaluations, AlphaContext achieved a 62% win rate against GPT-5.1 and 74% against Gemini; human and LLM judgment consistency was high (Cohen's κ > 0.8).
-- Real-world human experiments: Creativity scores of 36 middle school students followed a normal distribution and showed a Pearson correlation of 0.377 with the standardized AUT test, demonstrating practically meaningful criterion-related validity.
-- Generating a context takes approximately 227 seconds, far faster than expert design (about one week), with acceptable costs.
+- AlphaContext ranks first across all 7 dimensions, with the largest advantages in Significance (+10.96% vs. second best) and Uncertainty (+11.7% vs. second best).
+- In human preference evaluations, AlphaContext achieves a 62% win rate against GPT-5.1 and 74% against Gemini, with high inter-rater reliability (Cohen's $\kappa > 0.8$).
+- Real-world human experiments: Creativity scores of 36 middle school students followed a normal distribution and showed a Pearson correlation of 0.377 with standardized AUT tests, demonstrating significant criterion validity.
+- Generating a context takes approximately 227 seconds—significantly faster than expert design (~one week)—at an acceptable cost.
 
 ## Highlights & Insights
-- The "Planning-Search-Evolution" three-stage design is highly systematic: HyperTree ensures global structure, MCTS optimizes local quality, and MAP-Elites expands diversity. This framework can be migrated to other scenarios requiring structured long-text generation (e.g., lesson planning, exam question generation).
-- Using virtual subject simulation to verify assessment validity is a clever closed-loop design that avoids the high cost of relying on human experiments.
-- Real human experiments validated the psychometric validity of the generated contexts, which is rare but highly persuasive in NLP papers.
+- The "Planning-Search-Evolution" design is highly systematic: HyperTree ensures global structure, MCTS optimizes local quality, and MAP-Elites expands diversity. This framework is transferable to other structured long-text generation scenarios (e.g., lesson planning, exam generation).
+- Using virtual examinee simulations to verify assessment validity is a clever closed-loop design that avoids the high cost of human-in-the-loop experiments.
+- Real-world human experiments validating the psychometric validity of generated contexts are rare in NLP papers and provide strong empirical support.
 
 ## Limitations & Future Work
 
-- Generation costs are relatively high (~12.9k tokens per context), requiring multiple LLM calls; future work could distill this into a lightweight generator.
-- The CreaTE dataset consists of manually constructed Title-Topic pairs by experts and is limited in scale (203 items), requiring expansion of domain coverage.
-- Currently, it only targets future-oriented scenarios; the applicability to other types of creativity assessments (e.g., open-ended tasks) has not been verified.
-- The representativeness of the virtual subject simulator depends on the LLM's approximation of real human creative behavior.
+- Generation costs are high (~12.9k tokens per context) due to multiple LLM calls; future work could involve distilling the process into a lightweight generator.
+- The CreaTE dataset consists of manually constructed Title-Topic pairs by experts and is limited in scale (203 entries); domain coverage needs expansion.
+- The system is currently focused on future-oriented scenarios; its applicability to other types of creativity assessments (e.g., open-ended tasks) remains unverified.
+- The representativeness of the virtual examinee simulator depends on how well the LLM approximates real human creative behavior.
 - The efficiency of sentence-level MCTS and MAP-Elites is sensitive to the choice of the underlying LLM and evaluator.
 
 ## Related Work & Insights
 - **vs. DOC/CRITICS**: These story generation frameworks focus on narrative entertainment and fluency, failing to meet the quality and validity requirements of psychometrics.
-- **vs. SS-GEN**: SS-GEN is used for social stories in autism intervention, where the scenarios are fundamentally different from creativity assessment.
-- **vs. CPIG**: CPIG generates short items and is not suitable for long-text contexts requiring discourse coherence and implicit cues.
+- **vs. SS-GEN**: SS-GEN is designed for social stories in autism intervention, which differs fundamentally from creativity assessment contexts.
+- **vs. CPIG**: CPIG generates short items and is unsuitable for long-text contexts requiring discourse coherence and implicit cues.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The combination of HyperTree, MCTS, and MAP-Elites is highly novel in text generation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Includes ablation, human preference, real human experiments, and case studies.
-- **Writing Quality**: ⭐⭐⭐⭐ Structure is clear, though notation is dense.
-- **Value**: ⭐⭐⭐⭐ Opens a new direction for LLM-assisted psychometric context generation.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of HyperTree, MCTS, and MAP-Elites is highly novel for text generation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes ablation, human preference, real-world human experiments, and case studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, though notation-heavy.
+- Value: ⭐⭐⭐⭐ Establishes a new direction for LLM-assisted psychometric context generation.
 
 <!-- RELATED:START -->
 
@@ -126,9 +136,9 @@ AlphaContext is an unsupervised search framework and does not involve a traditio
 
 - [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](../../ICLR2026/llm_nlp/llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
 - [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
-- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
-- [\[ACL 2026\] Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models](clustered_self-assessment_a_simple_yet_effective_method_for_uncertainty_quantifi.md)
-- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
+- [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](../../ICLR2026/llm_nlp/evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
+- [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/llm_nlp/in-context_algebra.md)
+- [\[ACL 2025\] Evaluating Implicit Bias in Large Language Models by Attacking from a Psychometric Perspective](../../ACL2025/llm_nlp/evaluating_implicit_bias_in_large_language_models_by_attacking_from_a_psychometr.md)
 
 </div>
 

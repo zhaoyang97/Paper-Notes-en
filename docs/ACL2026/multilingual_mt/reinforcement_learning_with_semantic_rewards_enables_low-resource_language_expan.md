@@ -2,140 +2,151 @@
 title: >-
   [Paper Note] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax
 description: >-
-  [ACL2026][Multilingual & Machine Translation][Low-resource languages] This paper reformulates low-resource language expansion from token-level imitation into a semantic space alignment problem. By training Qwen3-4B with…
+  [ACL 2026][Multilingual & Translation][GRPO] This paper redefines low-resource language expansion from token-level imitation to semantic space alignment. By employing GRPO and embedding-based semantic rewards to train Qwen3-4B, the authors achieve enhanced capabilities in Tibetan-Chinese translation and Tibetan headline generation. Crucially, this approach preser
 tags:
-  - "ACL2026"
-  - "Multilingual & Machine Translation"
-  - "Low-resource languages"
-  - "Semantic reward"
-  - "GRPO"
-  - "Alignment tax"
-  - "Tibetan-Chinese translation"
+  - ACL 2026
+  - Multilingual & Translation
+  - GRPO
 date: 2026-05-08
-content_hash: d9e95a5df7c97eaf
+content_hash: 690dfd289179dab4
 ---
-
 # Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2605.14366](https://arxiv.org/abs/2605.14366)  
 **Code**: Not released  
-**Area**: multilingual_mt  
-**Keywords**: Low-resource languages, Semantic reward, GRPO, Alignment tax, Tibetan-Chinese translation
+**Area**: Multilingual Translation  
+**Keywords**: Low-resource language, Semantic reward, GRPO, Alignment tax, Tibetan-Chinese translation
 
 ## TL;DR
-This paper reformulates low-resource language expansion from token-level imitation into a semantic space alignment problem. By training Qwen3-4B with GRPO and embedding-based semantic rewards, the model acquires low-resource capabilities in Tibetan-Chinese translation and Tibetan title generation while preserving dominant language abilities (e.g., Chinese CMRC) better than strong SFT.
+This paper redefines low-resource language expansion from token-level imitation to semantic space alignment. By employing GRPO and embedding-based semantic rewards to train Qwen3-4B, the authors achieve enhanced capabilities in Tibetan-Chinese translation and Tibetan headline generation. Crucially, this approach preserves dominant language performance (e.g., Chinese CMRC) significantly better than strong SFT.
 
 ## Background & Motivation
-**Background**: Large language models perform strongly in high-resource languages but lack support for low-resource languages like Tibetan. Common practices include continued pre-training, instruction fine-tuning, or SFT on low-resource parallel corpora to pull the model toward the target language data distribution.
+**Background**: Large Language Models (LLMs) perform exceptionally in high-resource scenarios but lack support for low-resource languages like Tibetan. Common practice involves continued pre-training, instruction fine-tuning, or SFT on low-resource parallel corpora to pull the model toward the target language distribution.
 
-**Limitations of Prior Work**: Low-resource corpora are often small, domain-specific, and biased. Token-level teacher forcing encourages the model to forcibly imitate the surface form of references. While this improves BLEU or ROUGE, it easily leads to parameter over-adaptation to narrow data, causing a decline in high-resource language and general capabilities, referred to as the "alignment tax."
+**Limitations of Prior Work**: Low-resource corpora are typically small in scale, narrow in domain, and biased in distribution. Token-level teacher forcing encourages models to strictly imitate the surface form of references. While this may increase BLEU or ROUGE scores, it often leads to over-adaptation to narrow data, causing a decline in high-resource language and general capabilities—referred to in the paper as the "alignment tax."
 
-**Key Challenge**: Low-resource expansion must acquire the target language without destroying existing general representations from pre-training. SFT defines "alignment" as token distribution matching, whereas true linguistic ability is closer to "multiple semantically equivalent expressions are acceptable." Stronger surface imitation increases the risk of forgetting.
+**Key Challenge**: Low-resource expansion must facilitate learning the target language without destroying existing general representations from pre-training. SFT defines "alignment" as token distribution matching, whereas real language ability is more akin to "multiple semantically equivalent expressions being acceptable." Stronger superficial imitation leads to a higher risk of forgetting.
 
-**Goal**: The authors aim to answer three questions: whether semantic reward RL can effectively learn low-resource tasks; how the trade-off between task performance and general capability retention compares to strong SFT; and whether representations obtained through semantic alignment transfer better to downstream few-shot tasks.
+**Goal**: The authors aim to answer three questions: Can RL with semantic rewards effectively learn low-resource tasks? What is the trade-off between it and strong SFT regarding task performance versus general capability preservation? Can representations from semantic alignment transfer better to downstream few-shot tasks?
 
-**Key Insight**: The paper views language expansion as alignment under sparse supervision rather than simple adaptation. The model is no longer required to reproduce a unique reference sentence but instead learns to preserve semantics via embedding similarity, while reducing parameter drift through constrained policy optimization.
+**Key Insight**: The paper views language expansion as alignment under sparse supervision rather than simple adaptation. The model is no longer required to reproduce a single reference sentence; instead, it learns to preserve semantics through embedding similarity and reduces parameter drift through constrained policy optimization.
 
-**Core Idea**: Use embedding-level semantic rewards instead of token-level likelihood to allow the model to learn low-resource language abilities ("conveying the meaning is sufficient") while using controlled updates in GRPO to reduce catastrophic forgetting.
+**Core Idea**: Use embedding-level semantic reward instead of token-level likelihood to allow the model to learn "meaning-equivalent" low-resource language abilities. Meanwhile, controlled updates via GRPO minimize catastrophic forgetting.
 
 ## Method
-The method consists of a two-stage training paradigm and a semantic reward function. The first stage uses a small amount of low-resource data to give the model basic output capabilities. The second stage starts from this cold-start model and continues optimization using GRPO based on semantic rewards. Compared to strong SFT, it does not pursue exact matches with reference text but allows for diverse surface expressions as long as the semantics are consistent with the reference and the language remains within the target low-resource space.
+The method consists of a two-phase training paradigm and a semantic reward function. The first phase uses a small amount of low-resource data to provide the model with basic output capabilities. The second phase starts from this cold-start model and continues optimization using GRPO based on semantic rewards. Compared to strong SFT, this approach does not seek perfect overlap with reference text but allows for diverse surface expressions as long as the semantics match the reference and the language remains within the target low-resource space.
 
 ### Overall Architecture
-The input consists of low-resource language task samples, such as Tibetan-Chinese parallel sentences or Tibetan title generation samples. The model first undergoes cold-start SFT on 5k low-resource samples to obtain an initial policy capable of outputting the target language/format. Subsequently, GRPO is performed on the remaining data: for each prompt, a group of candidate outputs is sampled, semantic similarity between candidates and references is calculated using a frozen multilingual sentence embedding model, and language consistency rewards are added. Finally, the policy is updated based on relative rewards within the group. The output is a model enhanced for low-resource languages with minimal damage to existing capabilities.
+The input consists of low-resource language task samples, such as Tibetan-Chinese parallel sentences or Tibetan headline generation samples. The model first undergoes a cold-start SFT on 5k samples to obtain an initial policy capable of outputting the target language and format. Subsequently, GRPO is performed on the remaining data: for each prompt, a group of candidate outputs is sampled. A frozen multilingual sentence embedding model calculates semantic similarity between candidates and references, which is then augmented with a language consistency reward. Finally, the policy is updated based on relative rewards within the group. The result is a model enhanced for low-resource languages with minimal damage to original capabilities.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Low-resource task samples<br/>(Tibetan-CN / Tibetan Headline)"] --> B["Two-stage Training · Phase 1<br/>5k cold-start SFT"]
+    B --> C["Initial Policy<br/>Outputs target language/format"]
+    C --> D["Two-stage Training · Phase 2 · GRPO<br/>8 candidates sampled per prompt"]
+    D --> REWARD
+    subgraph REWARD["Semantic Rewards (Semantic Space Alignment + Language Consistency)"]
+        direction TB
+        E["Embedding Similarity R_sim<br/>Frozen sentence model · Threshold τ truncation"]
+        F["Language Consistency R_lang<br/>Unicode/Rule-based language check"]
+    end
+    REWARD --> G["Combined Reward R = 1.5·R_sim + 1.0·R_lang<br/>Relative reward updates policy"]
+    G -->|Continue sampling| D
+    G --> H["Enhanced Low-resource + Capability-preserving Model"]
+```
 
 ### Key Designs
-1.  **Semantic Space Alignment Objective**:
-    - **Function**: Transitions the low-resource training objective from "reproducing reference tokens" to "preserving reference semantics."
-    - **Mechanism**: If the generated sentence and the reference sentence are semantically close in the sentence embedding space, it is considered a valid answer, even if the surface word order or phrasing differs. This allows the model to explore multiple reasonable expressions rather than being locked into a narrow reference distribution.
-    - **Design Motivation**: Reference texts in low-resource data are often incomplete. Forcibly maximizing likelihood amplifies data bias. Semantic objectives better align with the "many-to-one" nature of translation and generation.
 
-2.  **Two-stage Cold-start + GRPO Training**:
-    - **Function**: Avoids ineffective early exploration in RL while utilizing controlled policy optimization to continue learning low-resource capabilities.
-    - **Mechanism**: Small-scale SFT first ensures the model can output correct characters and basic formats. Then, GRPO samples 8 candidates per prompt and updates the policy based on group relative rewards. GRPO does not require an explicit value model and maintains the stability of PPO-like methods in limiting policy drift.
-    - **Design Motivation**: Direct RL on low-resource languages may produce degraded outputs; direct SFT leads to forgetting. Cold-start handles "how to speak," while semantic RL ensures "speaking meaningfully without drifting too far."
+**1. Semantic Space Alignment Objective: Shifting training signals from "reproducing reference tokens" to "preserving reference semantics"**
 
-3.  **Embedding Reward and Language Consistency Constraint**:
-    - **Function**: Simultaneously encourages semantic correctness and target language consistency to avoid reward hacking.
-    - **Mechanism**: The primary reward is the cosine similarity between the generated output and the reference text, recalibrated via a threshold $\tau$. If similarity is below a minimum semantic sufficiency level, the reward is 0; it is linearly amplified only when above the threshold. Another reward uses Unicode/rules to check if the output is mixed-language. The final reward is $R=\lambda_{sim}R_{sim}+\lambda_{lang}R_{lang}$, where $\lambda_{sim}=1.5$ and $\lambda_{lang}=1.0$.
-    - **Design Motivation**: Multilingual embeddings might assign high semantic scores to mixed-language outputs. Hard constraints are necessary to restrict optimization to the target low-resource language space.
+Reference texts in low-resource data often have poor coverage and narrow domains. Token-level teacher forcing forces the model to match the reference word-for-word, magnifying data bias—the root of the alignment tax. This paper instead judges whether the generated sentence and the reference are close in the sentence embedding space. As long as the meaning is correct, different word orders or phrasing are considered valid. This explicitly models the "one meaning, many expressions" nature of translation and generation: the model is no longer locked into a narrow reference distribution but can freely explore multiple reasonable expressions while maintaining semantics, thereby reducing the pull of reference noise.
+
+**2. Two-stage Cold-start + GRPO training: Letting the model "speak" first, then using controlled RL to make it "meaningful without drifting"**
+
+Direct RL on low-resource languages is inefficient because early policies struggle to produce correct characters. Conversely, excessive SFT leads to forgetting. Thus, two stages are used: first, a small-scale cold-start SFT with 5k samples ensures the model can output qualified sentences in the target language and format. Then, GRPO is run from this checkpoint, sampling 8 candidates per prompt to update the policy based on group relative rewards. GRPO is chosen because it avoids an explicit value model, saving parameters, while retaining the stability of PPO-like methods in limiting policy drift—perfectly aligning with the goal of preserving general capabilities.
+
+**3. Embedding Reward + Language Consistency Constraint: Rewarding semantic correctness while preventing "code-switching" reward hacking**
+
+The primary reward is the cosine similarity between the output and the reference. However, using raw similarity is risky: positive scores for similarity below a minimum "semantic sufficiency" threshold can encourage low-quality outputs. Thus, a threshold $\tau$ is used for truncated rescaling—rewards below the threshold are zeroed, and only those above are linearly scaled. Another risk is that multilingual embeddings might give high scores to "mixed Chinese-Tibetan" outputs. Therefore, a language consistency reward based on Unicode/rules is added to ensure the output remains purely in the target low-resource language. These are combined as $R=\lambda_{sim}R_{sim}+\lambda_{lang}R_{lang}$ with $\lambda_{sim}=1.5$ and $\lambda_{lang}=1.0$, explicitly constraining both semantic content and language adherence.
 
 ### Loss & Training
-The experiments use Qwen3-4B with parameter-efficient fine-tuning via LoRA on attention and MLP linear layers (LoRA rank 64, $\alpha=128$, dropout 0.05). SFT uses AdamW, a learning rate of $2\times10^{-5}$, batch size 32, and a cosine schedule. GRPO starts from the cold-start checkpoint for 1 epoch, with a learning rate of $5\times10^{-7}$, sampling 8 candidates per prompt, temperature 0.8, and top-p 0.9. The semantic reward model is based on CINO/XLM-R, adapted into a SentenceTransformer using Sino-Tibetan parallel data, and frozen during RL.
+Experiments use Qwen3-4B with parameter-efficient fine-tuning via LoRA on attention and MLP linear layers (LoRA rank 64, $\alpha=128$, dropout 0.05). SFT utilizes AdamW, a learning rate of $2\times10^{-5}$, batch size 32, and a cosine schedule. GRPO starts from the cold-start checkpoint for 1 epoch with a learning rate of $5\times10^{-7}$, group size 8, temperature 0.8, and top-p 0.9. The semantic reward model is based on CINO/XLM-R, adapted as a SentenceTransformer for Chinese-Tibetan parallel data, and frozen during RL.
 
 ## Key Experimental Results
 
 ### Main Results
-The first set of experiments compares cold-start SFT and semantic reward RL, proving that RL can indeed continue to improve low-resource capabilities—especially semantic similarity—after minimal supervised initialization.
+The first set of experiments compares cold-start SFT with semantic reward RL, proving that RL can continue to improve low-resource capabilities, particularly semantic similarity, following minimal supervised initialization.
 
-| Task | Model | Task Metric | Semantic Similarity | Main Conclusion |
+| Task | Model | Task Metric | Semantic Similarity | Key Conclusion |
 |------|------|----------|------------|----------|
-| Tib-Chi Translation | Cold-start SFT | BLEU-4 0.3953 | 0.5593 | 5k samples enable basic translation capability |
-| Tib-Chi Translation | RL (Ours) | BLEU-4 0.4519 | 0.7164 | Semantic rewards bring significant semantic improvement |
-| Tibetan Title Gen | Cold-start SFT | ROUGE-L 0.2204 | 0.5774 | Baseline can generate but lacks semantic depth |
-| Tibetan Title Gen | RL (Ours) | ROUGE-L 0.2530 | 0.6404 | Improvement also seen in generation tasks |
+| Tibetan-CN Translation | Cold-start SFT | BLEU-4 0.3953 | 0.5593 | 5k samples provide basic capability |
+| Tibetan-CN Translation | RL (Ours) | BLEU-4 0.4519 | 0.7164 | Semantic reward brings significant gain |
+| Tibetan Headline Gen | Cold-start SFT | ROUGE-L 0.2204 | 0.5774 | Baseline can generate but lacks semantics |
+| Tibetan Headline Gen | RL (Ours) | ROUGE-L 0.2530 | 0.6404 | Improvements also seen in generation |
 
 ### Ablation Study
-The trade-off with strong SFT indicates that while SFT is better at pursuing reference overlap, it is not necessarily superior in preserving general capabilities or open-ended generation preferences.
+The trade-off comparison with strong SFT shows that while SFT is better at seeking reference overlap, it is not necessarily superior for preserving general capabilities or open-generation preferences.
 
 | Task | Method | Task Metric | Similarity | CMRC Avg | CMRC F1 | LLM-Judge Win |
 |------|------|----------|------------|----------|---------|---------------|
-| Tib-Chi Translation | Strong SFT | 0.6006 | 0.8282 | 41.82 | 62.99 | 59.2% |
-| Tib-Chi Translation | RL (Ours) | 0.4519 | 0.7164 | 46.97 | 65.79 | 33.5% |
-| Tibetan Title Gen | Strong SFT | 0.3095 | 0.6499 | 44.20 | 65.30 | 35.1% |
-| Tibetan Title Gen | RL (Ours) | 0.2530 | 0.6404 | 45.10 | 65.20 | 51.2% |
+| Tibetan-CN Translation | Strong SFT | 0.6006 | 0.8282 | 41.82 | 62.99 | 59.2% |
+| Tibetan-CN Translation | RL (Ours) | 0.4519 | 0.7164 | 46.97 | 65.79 | 33.5% |
+| Tibetan Headline Gen | Strong SFT | 0.3095 | 0.6499 | 44.20 | 65.30 | 35.1% |
+| Tibetan Headline Gen | RL (Ours) | 0.2530 | 0.6404 | 45.10 | 65.20 | 51.2% |
 
-Reward ablation further shows that the improvement is not brought by "using RL" itself, but by the critical design of the semantic reward.
+Reward ablation further demonstrates that improvements stem from the semantic reward design rather than RL itself.
 
-| Reward Config | MT Similarity | Description |
+| Reward Configuration | MT Similarity | Description |
 |----------|---------------|------|
-| Embedding + LC (Ours) | 0.7164 | Best, balances semantics and target language consistency |
-| BLEU + LC | 0.6375 | Token overlap reward restricts semantic exploration |
+| Embedding + LC (Ours) | 0.7164 | Best; balances semantics and consistency |
+| BLEU + LC | 0.6375 | Token overlap reward limits exploration |
 | BLEU + Embedding + LC | 0.6175 | Mixing BLEU actually degrades performance |
-| BLEU + Embedding | 0.2312 | Easy to mix languages without language consistency |
+| BLEU + Embedding | 0.2312 | Lack of LC leads to mixed language outputs |
 
 ### Key Findings
-- Semantic RL can continue to improve low-resource tasks from a cold-start SFT; Tibetan-Chinese translation similarity increased from 0.5593 to 0.7164, and title generation similarity increased from 0.5774 to 0.6404.
-- Strong SFT achieves higher BLEU and similarity in Tibetan-Chinese translation, but its CMRC Avg is 5.15 points lower than RL, proving that the metric gains from surface imitation come with a higher alignment tax.
-- In open-ended title generation, RL has lower ROUGE, but its LLM-Judge win rate reaches 51.2%, 16.1 percentage points higher than SFT, suggesting n-gram metrics underestimate diverse semantic expressions.
-- In Few-shot transfer, MT-RL initialization achieved higher similarity on 1,000 title generation samples (0.5690 vs. 0.5456 for MT-SFT), supporting the argument that semantically aligned representations are more transferable.
-- OOD mechanism analysis shows that the CMRC mean NLL increase for RL is +0.24, compared to +0.64 for SFT; the P90 NLL increase also dropped from +1.43 in SFT to +0.62 in RL, indicating that forgetting occurs more in the tail of difficult samples for SFT.
+- Semantic RL continues to improve low-resource tasks from cold-start SFT; Tibetan-CN translation similarity increases from 0.5593 to 0.7164, and headline similarity from 0.5774 to 0.6404.
+- Strong SFT achieves higher BLEU and similarity in translation, but its CMRC Avg is 5.15 points lower than RL, indicating that gains in superficial imitation metrics come with a higher alignment tax.
+- In open-ended headline generation, RL has lower ROUGE but an LLM-Judge win rate of 51.2% (16.1 percentage points higher than SFT), suggesting n-gram metrics underestimate diverse semantic expressions.
+- In Few-shot transfer, MT-RL initialization achieves higher similarity on 1,000 headline generation samples (0.5690 vs. 0.5456 for MT-SFT), supporting the claim that semantically aligned representations are more transferable.
+- OOD mechanism analysis shows the CMRC mean NLL increase for RL is +0.24 versus +0.64 for SFT; the P90 NLL increase also drops from +1.43 (SFT) to +0.62 (RL), showing forgetting largely occurs in the difficult sample tail of SFT.
 
 ## Highlights & Insights
-- The strongest argument of the paper is defining low-resource language expansion as alignment rather than ordinary fine-tuning. This perspective naturally explains why token-level learning triggers an alignment tax and provides rationale for using RL to control update magnitude.
-- The combination of embedding reward and language consistency constraints is elegant. It does not introduce complex teachers or preference annotations but makes the core conditions of "semantic sufficiency" and "remaining in the target language" explicit.
-- The reflection on reference-based metrics is valuable: in low-resource tasks, BLEU/ROUGE may reward narrow reference imitation instead of robust linguistic ability. This is insightful for evaluating machine translation and generation systems.
-- This method can be transferred to other weakly supported languages, dialects, or specialized domain text expansions: cold-start with a small amount of data, then expand the expression space with semantic rewards while preventing output drift with rules or detectors.
+- The strongest argument is defining low-resource expansion as alignment rather than ordinary fine-tuning. This perspective naturally explains why token-level learning induces an alignment tax and justifies using RL to control update magnitude.
+- The combination of embedding rewards and language consistency constraints is elegant. It avoids complex teachers or preference labeling while explicitly modeling the core requirements of "semantic sufficiency" and "target language adherence."
+- The reflection on reference-based metrics is valuable: in low-resource tasks, BLEU/ROUGE may reward narrow imitation rather than robust linguistic ability. This has implications for evaluating MT and generation systems.
+- This method is transferable to other weakly supported languages, dialects, or domain-specific text expansion: cold-start with small data, expand expressive space with semantic rewards, and use rules/detectors to prevent drift.
 
 ## Limitations & Future Work
-- The experiments mainly focus on Tibetan, and the Tibetan-Chinese translation data comes from internal VLM pre-training construction pipelines with narrow domain distribution; external reproducibility and cross-lingual generalization require more public benchmarks.
-- The semantic reward model itself is trained on Sino-Tibetan parallel data. If the reward model is insensitive to fine-grained semantic differences, RL might optimize toward incorrect semantic neighbors.
-- LLM-as-a-Judge is used for preference evaluation; while it supplements ROUGE/BLEU, it is still not human evaluation and may harbor biases or recognition errors, especially in low-resource languages.
-- The method sacrifices portion of reference-based metrics for capability retention; actual deployment requires a decision on whether to accept this trade-off based on the task type.
+- Experiments primarily focus on Tibetan, and Tibetan-CN translation data stems from an internal VLM pre-training pipeline with narrow domain distribution; cross-lingual generalization needs verification on more public benchmarks.
+- The semantic reward model is itself trained on Tibetan-CN parallel data; if the reward model is insensitive to fine-grained semantic differences, RL might optimize toward incorrect semantic neighbors.
+- While LLM-as-a-Judge complements ROUGE/BLEU, it is not a human evaluation and may harbor biases or recognition errors in low-resource contexts.
+- The method sacrifices some reference-based metrics for capability preservation; actual deployment requires task-specific decisions regarding this trade-off.
 
 ## Related Work & Insights
-- **vs. Low-resource SFT / continued pretraining**: These methods continue to use token-level likelihood, whereas this paper changes the objective function to replace surface distribution matching with semantic consistency, focusing more on reducing catastrophic forgetting.
-- **vs. LoRA / Parameter-efficient forgetting mitigation**: Approaches like LoRA primarily limit update locations or parameter volume, while this paper limits the optimization objective and policy drift; the two can be complementary.
-- **vs. RLHF / DPO**: Standard alignment RL optimizes for human preference or rule-based rewards. This paper treats rewards as task rewards across semantic spaces, suitable for low-resource scenarios lacking human preference data.
+- **vs. Low-resource SFT / continued pretraining**: These methods rely on token-level likelihood. This paper changes the objective to semantic consistency instead of surface distribution matching, focusing on reducing catastrophic forgetting.
+- **vs. LoRA / Parameter-efficient methods**: LoRA limits update locations or parameter counts; this paper limits the optimization objective and policy drift. The two are complementary.
+- **vs. RLHF / DPO**: Standard alignment RL optimizes for human preferences or rule-based rewards. This paper treats reward as a cross-semantic task reward, suitable for low-resource scenarios lacking human preference data.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Using "semantic space alignment + GRPO" for low-resource language expansion is an interesting idea, though core components leverage existing RL and embedding methods.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Main experiments, trade-offs, transfer, and ablations are relatively complete, but the range of languages, data publicity, and human evaluation are insufficient.
-- Writing Quality: ⭐⭐⭐⭐☆ The main line of reasoning is clear, especially the explanation of the alignment tax.
-- Value: ⭐⭐⭐⭐☆ Provides high practical inspiration for low-resource language expansion, catastrophic forgetting mitigation, and reflection on reference metrics.
+- Novelty: ⭐⭐⭐⭐☆ "Semantic space alignment + GRPO" for low-resource expansion is innovative, though components draw on existing RL and embedding methods.
+- Experimental Thoroughness: ⭐⭐⭐☆☆ Main results, trade-offs, transfer, and ablations are complete, but limited in language scope, data accessibility, and human evaluation.
+- Writing Quality: ⭐⭐⭐⭐☆ The main argument is clear, particularly the coherent explanation of the alignment tax.
+- Value: ⭐⭐⭐⭐☆ High practical inspiration for low-resource expansion, mitigating catastrophic forgetting, and rethinking reference metrics.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 - [\[ACL 2026\] NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning](neoamt_neologism-aware_agentic_machine_translation_with_reinforcement_learning.md)
-- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 - [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
-- [\[ACL 2026\] Selective Contrastive Learning For Gloss Free Sign Language Translation](selective_contrastive_learning_for_gloss_free_sign_language_translation.md)
+- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
+- [\[ICML 2025\] KELPS: A Framework for Verified Multi-Language Autoformalization via Semantic-Syntactic Alignment](../../ICML2025/multilingual_mt/kelps_a_framework_for_verified_multi-language_autoformalization_via_semantic-syn.md)
 
 </div>
 

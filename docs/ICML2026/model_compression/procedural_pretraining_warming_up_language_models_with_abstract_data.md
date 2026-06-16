@@ -2,121 +2,121 @@
 title: >-
   [Paper Note] Procedural Pretraining: Warming Up Language Models with Abstract Data
 description: >-
-  [ICML 2026][Model Compression][Procedural Data] Inserting a minimal amount of "procedural data" (formal languages, stacks, cellular automata…
+  [ICML 2026][Model Compression][Paper Note] Injecting a lightweight "procedural data" warm-up (formal languages, stacks, cellular automata, etc.) before standard language/code/math pretraining consistently improves downstream performance with only 0.1–0.3% additional tokens. This strategy enables models to replicate the same loss using only 55–86% of the origina
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Procedural Data"
-  - "Warm-up Pretraining"
-  - "Algorithmic Skills"
-  - "Formal Languages"
-  - "Data Efficiency"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 79b3f1709c43e60b
+content_hash: 66be2a1e1061dcb0
 ---
-
 # Procedural Pretraining: Warming Up Language Models with Abstract Data
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.21725](https://arxiv.org/abs/2601.21725)  
 **Code**: Yes  
-**Area**: LLM Pretraining / Data-Centric AI  
-**Keywords**: Procedural Data, Warm-up Pretraining, Algorithmic Skills, Formal Languages, Data Efficiency
+**Area**: LLM Pretraining / Data-centric AI  
+**Keywords**: Procedural data, Warm-up pretraining, Algorithmic skills, Formal languages, Data efficiency
 
 ## TL;DR
-Inserting a minimal amount of "procedural data" (formal languages, stacks, cellular automata, etc.) as a "warm-up" phase before standard language/code/math pretraining achieves stable downstream performance gains with only 0.1–0.3% additional tokens. This strategy allows models to replicate the same loss using only 55–86% of the original data, representing a pretraining strategy that decouples "reasoning scaffolding" from "knowledge."
+Injecting a lightweight "procedural data" warm-up (formal languages, stacks, cellular automata, etc.) before standard language/code/math pretraining consistently improves downstream performance with only 0.1–0.3% additional tokens. This strategy enables models to replicate the same loss using only 55–86% of the original data, representing a pretraining strategy that decouples "reasoning scaffolds" from "knowledge."
 
 ## Background & Motivation
 
-**Background**: The current de facto standard for LLM training is a "one-pot" approach—direct next-token prediction on web-scale corpora, forcing the model to simultaneously acquire semantic knowledge and the skills to manipulate that knowledge.
+**Background**: The current de facto standard for LLM training is a "one-pot" approach—performing next-token prediction directly on web-scale corpora, forcing the model to simultaneously learn semantic knowledge and the skills to manipulate that knowledge.
 
-**Limitations of Prior Work**: Knowledge and reasoning are highly entangled within the same set of weights. Consequently, models tend to rely on surface heuristics rather than systematic reasoning processes. Several studies (Han 2025, Kumar 2025, Nikankin 2025) have identified this as a core defect in current models.
+**Limitations of Prior Work**: Knowledge and reasoning are learned in a highly entangled manner within the same set of weights. Consequently, models often rely on surface heuristics rather than systematic reasoning processes; several studies (Han 2025, Kumar 2025, Nikankin 2025) have identified this as a core flaw in current models.
 
-**Key Challenge**: Learning both knowledge and algorithmic skills from "semantic data" is highly inefficient. Semantics are often mixed with approximations, ambiguities, and shortcuts, making it difficult to stably cultivate precise symbolic manipulation capabilities. Ideally, models should develop like humans—learning logic and mathematics first before advancing to high-level reasoning—but no engineered path currently exists to decouple the two.
+**Key Challenge**: Learning both knowledge and algorithmic skills from "semantic data" is inefficient—semantics are mixed with approximations, ambiguities, and shortcuts, making it difficult to reliably cultivate precise symbolic manipulation capabilities. Ideally, models should follow the human developmental path of "learning logic/mathematics first, then high-level reasoning," but there is currently no systematic engineering path to decouple these two.
 
-**Goal**: To implement the cognitive development concept of "structure before semantics" into a reproducible pretraining pipeline, verifying its effectiveness across various scales and semantic domains, and explaining which components benefit at the mechanistic level.
+**Goal**: To implement the cognitive development concept of "learning structure before semantics" into a reproducible pretraining pipeline, verify its effectiveness across various scales and semantic domains, and explain which components benefit at a mechanistic level.
 
-**Key Insight**: The authors start from "procedural data"—non-semantic sequences generated by explicit rules such as formal languages, simple algorithms, and cellular automata. Unlike "LLM-generated synthetic data," procedural data contains no semantic content but possesses rigid structures (nesting, recursion, long-range dependencies), serving as pure "algorithmic scaffolding." By warming up on these scaffolds before feeding standard corpora, models may better learn "operational capabilities" and "knowledge" in distinct stages.
+**Key Insight**: The authors start from "procedural data"—non-semantic sequences generated by explicit rules such as formal languages, simple algorithms, and cellular automata. Unlike "LLM-generated synthetic data," procedural data contains zero semantic content but possesses strict structures (nesting, recursion, long-range dependencies), serving as pure "algorithmic scaffolds." Warming up on these scaffolds before introducing standard corpora may allow models to learn "manipulation capabilities" and "knowledge" in distinct stages.
 
-**Core Idea**: Prepose 0.1–0.3% of procedural data before standard pretraining as a "pre-pretraining" stage. This stage does not teach semantics; it only teaches the model how to manage stacks, balance brackets, and perform sequence transformations.
+**Core Idea**: Prepend 0.1–0.3% procedural data before standard pretraining as a "pre-pretraining" phase. This phase teaches no semantics, only how to manage stacks, balance brackets, and perform sequence transformations.
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of two stages: Stage 1 trains a GPT-2 style decoder-only transformer from scratch using $T_1$ procedural tokens (all weights participate in training); Stage 2 continues training with $T_2$ semantic tokens (from C4, CodeParrot, or DeepMind-Math). The baseline uses $T_1=0$ (pure standard pretraining). Both stages utilize standard next-token prediction loss without freezing. Two core configurations are explored: (i) **Additive setting**: Fixing $T_2$ and adding $T_1$ to observe gains from extra tokens; (ii) **Substitutive setting**: Reducing $T_2$ and adding a small $T_1$ to see if the same loss can be replicated with fewer semantic tokens.
+The method splits standard pretraining into two phases. Phase One trains a GPT-2 style decoder-only transformer from scratch using $T_1$ "procedural tokens" (bracket strings, stack operations, cellular automata evolution, etc.) with no semantic content. Phase Two continues training the same weights using $T_2$ semantic tokens (C4, CodeParrot, or DeepMind-Math) using standard next-token loss without freezing any layers. The baseline is pure standard pretraining where $T_1=0$. Between phases, a "transfer mode" switch determines whether to migrate all weights (Full), only attention layers, or only MLP layers. Two measurement settings are used: **Additive** (fixed $T_2$, extra $T_1$ to measure gains from "free" tokens) and **Substitutive** (reduced $T_2$ with small $T_1$ to measure semantic data savings for equivalent loss). The causal relationships are first established using 2-layer small models before scaling to 1.3B parameters.
+
+```mermaid
+graph TD
+    A["Procedural Data Generator<br/>4 Types: Seq Transform / Stack / k-Dyck / ECA rule110<br/>Rule-based, Zero Semantics, ≤128 tokens"] --> B["Phase 1: GPT-2 training from scratch<br/>Feed T1 procedural tokens, calculate loss on output part"]
+    B --> C{"Selective Layer Transfer<br/>Which layers to retain weights from"}
+    C -->|Full / attention-only / MLP-only| D["Phase 2: Standard corpora training<br/>T2 semantic tokens (C4 / CodeParrot / DeepMind-Math)"]
+    D --> E["Downstream Evaluation<br/>Language / Code Gen / Common Sense Reasoning"]
+    F["Diagnostic → Transfer Experiments<br/>2-Layer Small Models for Causality → Scale to 1.3B<br/>Additive: Fixed T2 + T1 / Substitutive: Less T2 + small T1"] -.Adjusting T1/T2 & Scale.-> B
+```
 
 ### Key Designs
 
-1.  **Procedural Data Generator (Scaffolding Library)**:
-    - **Function**: Provides a set of "non-semantic, strongly structured" sequences, each $\le 128$ tokens, as warm-up corpora.
-    - **Mechanism**: The authors curated a data family including: (i) **Sequence Transformations** (Set/Reverse/Identity/Union/Sort/Delete), where the model predicts the transformed sequence; (ii) **Memory Operations** (Stack), simulating push/pop operations to predict final stack contents; (iii) **Formal Languages** ($k$-Dyck balanced brackets and $k$-Dyck Shuffle non-nested versions), where $k$ controls nesting depth; (iv) **Cellular Automata** (ECA rule 110), where binary sequences evolve according to deterministic Markov dynamics. These data types share the property that the next token relies heavily on precise symbolic operations, compositionality, and long-range dependencies, with almost no surface-level shortcuts.
-    - **Design Motivation**: Choosing "procedural data" over LLM-generated data is critical. Procedural data has a provable generation process and clear structure, allowing researchers to precisely decouple which structure teaches which skill. Additionally, short sequences ($\le 128$ tokens) ensure that algorithmic learning is not obscured by long contexts.
+**1. Procedural Data Generator: Creating Zero-Semantic, Strongly Structured "Algorithmic Scaffolds"**
 
-2.  **Algorithmic Skill Diagnosis → Semantic Domain Transfer**:
-    - **Function**: Diagnose "which procedural data teaches which algorithmic skill" on small models first, then verify if these skills transfer to natural language, code, and math on larger models.
-    - **Mechanism**: The diagnostic phase uses small transformers (2 layers, 4 heads) with 10 seeds for additive settings across tasks like Haystack (long-context retrieval), Arithmetic (Addition / Reversed Addition / Multiplication), and Sorting. A shuffled control experiment (randomizing token order within procedural sequences) shows performance collapsing to baseline, proving that "structure" rather than "token distribution" drives the gains. The transfer phase scales models to 1.3B parameters and 10.5B tokens to examine loss and downstream performance on C4 / CodeParrot / DeepMind-Math.
-    - **Design Motivation**: Directly performing ablations on large models is too costly and easily obscured by scale noise. Small models act as "diagnostic tools" to establish causal relationships before verifying transferability at scale.
+The pain point of monolithic pretraining is the entanglement of knowledge and algorithmic skills. The authors counter this by first feeding short sequences ($\le 128$ tokens) generated by explicit rules. These focus on precise manipulation, compositionality, and long-range dependencies. Four categories are used: **Sequence Transformations** (Set/Reverse/Identity/Union/Sort/Delete), **Memory Operations** (Stack simulation), **Formal Languages** ($k$-Dyck balanced parentheses and non-nested Shuffle versions), and **Cellular Automata** (ECA rule 110 deterministic Markov dynamics). "Procedural" data is preferred over LLM-synthetic data because it has provable generation processes and clear structures, allowing for precise decoupling of "which structure teaches which skill."
 
-3.  **Selective Transfer as Interpretable Probes**:
-    - **Function**: Transfers weights learned from procedural pretraining in three ways—"attention-only," "MLP-only," or "full-model"—to locate where "knowledge" is stored.
-    - **Mechanism**: At the start of Stage 2, only specific layers (attention or MLP) from pretraining are retained, while others are reset to random initialization. Comparing performance shows that if a specific layer transfer outperforms full-model transfer, that layer type is the carrier of "useful structure," while the other may introduce negative transfer. For natural language (C4), MLP-only is superior; for structured code (CodeParrot), attention-only is superior; for math, both are important.
-    - **Design Motivation**: This "modular probe" serves as both a scientific explanation (verifying the hypothesis that MLPs store knowledge and attention stores patterns) and a practical engineering guide for layer retention based on the downstream domain.
+**2. Diagnostic → Transfer Experiments: Establishing Causality then Scaling**
+
+To determine if and why procedural data works, the authors first use a 2-layer, 4-head transformer with 10 seeds as a "diagnostic instrument." They run additive settings for every pair of (procedural type, algorithmic task), where tasks include Haystack (long-context retrieval), arithmetic (Addition/Multiplication), and Sorting. A shuffled control—randomizing token order while maintaining distribution—collapses performance back to baseline, proving that "structure," not "token statistics," is the driver. Findings are then validated at 1.3B parameters and 10.5B tokens.
+
+**3. Selective Layer Transfer: Probing Mechanisms via Attention/MLP Migration**
+
+To locate where gains are stored, the authors perform selective transfers: Phase Two starts by retaining only specific pre-trained weights (attention-only or MLP-only) while resetting others. Results show clear functional division: MLP-only transfer is superior for natural language (C4), while attention-only is better for structured code (CodeParrot). Mixed tasks (DeepMind-Math) benefit from both. This modular probe validates the "MLPs store knowledge, Attention stores patterns" hypothesis and provides engineering guidance for domain-specific pretraining.
 
 ### Loss & Training
-Standard next-token prediction loss is used for both stages. For procedural data involving input/output pairs, loss is calculated only on output tokens. In Stage 2 (Sections 5 and 6), token embeddings are reset to random values (as there is no mapping between procedural and semantic vocabularies); in Section 4 (procedural → algorithmic), embeddings are initialized as mean vectors. The authors also performed counterfactual controls: (a) adding explicit attention sharpening regularization, which failed to replicate the gains, ruling out simple "sharper attention" explanations; (b) shuffling weights by layer while preserving magnitude distributions, which caused performance to collapse, ruling out "initialization scale" explanations.
+Both phases use standard next-token prediction loss. For procedural data involving input/output pairs, the loss is calculated only on output tokens. In Phase Two (Section 5, 6), token embeddings are reset to random values (since procedural and semantic vocabularies do not map), whereas in Section 4 (procedural → algorithmic), embeddings are initialized as mean vectors. Counterfactual controls include: (a) Explicit attention sharpening regularization, which failed to replicate procedural gains; (b) Layer-wise weight shuffling, which destroyed performance despite maintaining magnitude distributions.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Setting | Data | Gain |
-| :--- | :--- | :--- |
-| Haystack (context recall) | $k$-Dyck warm-up vs. baseline | Accuracy 10% → 98% |
-| Additive, 1.3B model | +0.1–0.3% procedural tokens | Consistent improvement on C4/CodeParrot/Math |
-| Substitutive, equivalent loss | C4 | Requires only 55% of original data |
-| Substitutive, equivalent loss | CodeParrot | Requires only 67% of original data |
-| Substitutive, equivalent loss | DeepMind-Math | Requires only 86% of original data |
-| Downstream Tasks | Language, Code Gen, Reasoning | Gains from procedural warm-up persist |
+|------|------|------|
+| Haystack (context recall) | $k$-Dyck vs baseline | Accuracy 10% → 98% |
+| Additive, 1.3B model | +0.1–0.3% Procedural tokens | Consistent improvement on C4 / CodeParrot / Math |
+| Substitutive, same loss | C4 | Requires only 55% of original data |
+| Substitutive, same loss | CodeParrot | Requires only 67% of original data |
+| Substitutive, same loss | DeepMind-Math | Requires only 86% of original data |
+| Downstream Tasks | Language, Code, Reasoning | Procedural warm-up gains persist |
 
 ### Ablation Study
 
 | Configuration | Meaning | Conclusion |
-| :--- | :--- | :--- |
-| Full (Structured procedural data) | Complete method | Baseline |
-| Shuffled procedural data | Same token distribution, broken structure | Gains collapse; structure is key |
-| Attention sharpening reg. | Explicitly sharpening attention | Fails to replicate warm-up gains |
-| Weight magnitude shuffle | Preserving magnitude, shuffling position | Performance drops; magnitude alone is insufficient |
-| Attention-only transfer | Transferring only attention weights | ~80% gain over full-model on Identity/Haystack; better for code |
-| MLP-only transfer | Transferring only MLP weights | Better for Reversed Addition and Natural Language (C4) |
-| Procedural data mixtures | Combining different scaffolds | Yields further gains; suggests future directions |
+|------|------|------|
+| Full (Structured Procedural) | Complete method | Baseline for comparison |
+| Shuffled Procedural | Same distribution, broke structure | Gain collapses, proving structure is key |
+| Attention Sharpening | Explicitly sharpening attention | Does not replicate gains; rejects "sharpening" explanation |
+| Weight Magnitude Shuffle | Kept magnitudes, shuffled positions | Performance drops sharply; rejects "initialization scale" explanation |
+| Attention-only Transfer | Kept only attention weights | Improved Identity/Haystack by ~80%; better for code domain |
+| MLP-only Transfer | Kept only MLP weights | Superior for Reversed Addition and Natural Language (C4) |
+| Procedural Mixture | Combining different scaffolds | Further gains observed, suggesting additive benefits |
 
 ### Key Findings
-- Different procedural data types specialize in different skills: $k$-Dyck enhances long-context retrieval and sorting, ECA rule 110 enhances reversed addition, and Union/Delete enhances multiplication. This indicates a traceable correspondence between "algorithmic structure" and "algorithmic skill."
-- Procedural warm-up information is highly localized: attention layers primarily carry structural capabilities (stacks, brackets, retrieval patterns), while MLP layers are more valuable for natural language. This supports the hypothesis that MLPs are knowledge containers, though the fact they benefit from "non-semantic" procedural data is a counter-intuitive finding.
-- Reversed addition is a rare task where MLP-only/full-model transfer outperforms attention-only, suggesting its bottleneck lies in numerical processing rather than pattern matching.
+- Different procedural data specialize in different skills: $k$-Dyck enhances long-context retrieval and sorting, while ECA rule 110 enhances reversed addition, indicating a traceable mapping between "algorithmic structure" and "algorithmic skill."
+- Procedural warm-up information is highly localized: attention layers carry structural capabilities (stacks, brackets, retrieval patterns), whereas MLPs are more valuable for natural language.
+- Reversed Addition is a rare task where MLP-only/Full models outperform Attention-only, suggesting the bottleneck is numerical processing rather than pattern matching.
 
 ## Highlights & Insights
-- Placing 0.1% of scaffolding at the very beginning of training is an almost "free" improvement—providing both additive performance gains and substitutive data savings. It is directly applicable to industrial pretraining without changing architecture or increasing compute.
-- The causal chain of "structure → skill → component (MLP/Attention)" is clearly established. This progressive research structure—from diagnosis to transfer to mechanism to combination—is highly recommended for future studies on data mixing strategies.
-- Procedural data is non-verbal and cross-modal. Concurrent work (Shinnick 2026) has observed similar gains in vision, suggesting the existence of "modality-independent algorithmic mechanisms."
+- Placing 0.1% "scaffolding" at the very beginning of training is an almost free improvement—it provides additive performance gains and substitutive data savings without architectural changes or extra compute.
+- The "Structure → Skill → Component (MLP/Attention)" causal chain is exceptionally clear. This progressive research hierarchy (Diagnostic → Transfer → Mechanism → Combination) is a valuable methodological template.
+- Procedural data is modality-agnostic; concurrent work (Shinnick 2026) has observed similar benefits in vision, suggesting the existence of "modality-independent algorithmic mechanisms."
 
 ## Limitations & Future Work
-- The model scale is 1.3B, which is still small compared to flagship LLMs. Whether procedural warm-up remains effective at 10B+ or 100B+ scales requires further validation.
-- Procedural data types are still limited (Stack, Dyck, ECA, etc.), and mixture strategies are only preliminary. There is no established methodology for "data selection + ratio optimization + sequencing."
-- Downstream evaluations focus on language modeling loss, code generation, and common sense reasoning; they do not cover more structured downstream tasks (e.g., multi-step reasoning benchmarks, agentic behavior).
-- While attention learns "patterns" and MLP learns "structure" phenomenologically, a mechanistic-level explanation (e.g., circuit analysis, activation patching) is still missing.
+- The model scale (1.3B) is small compared to flagship LLMs; whether procedural warm-up remains effective at 100B+ scales requires further verification.
+- The procedural data types are currently limited ($k$-Dyck, ECA, etc.); a systematic methodology for "selecting data + mixing ratios + determining order" is still lacking.
+- Downstream evaluations focus on LM loss and code generation; effectiveness on more complex structured tasks (e.g., multi-step reasoning agents) remains to be tested.
+- While the study observes "what" components learn, it lacks circuit-level mechanistic explanations (e.g., activation patching).
 
 ## Related Work & Insights
-- **vs. Hu et al. (2025) "pre-pretraining on formal languages"**: Hu et al. view formal languages as "higher value per token" data emphasizing "substitution"; this work expands to a "procedural data family" emphasizing "complementarity" and "modular mechanisms."
-- **vs. Wu et al. (2022) / Zhang et al. (2024)**: These works replace standard pretraining with algorithmic or CA data. Ours proves that just preposing 0.1–0.3% is sufficient and systematically compares skill specialization.
-- **vs. Code Pretraining**: Code has long been used as an implicit scaffold for reasoning. This work generalizes that intuition to any structured non-semantic data and explains why it works.
-- **vs. LLM Synthetic Data**: Synthetic data still carries semantics from the teacher LLM. Procedural data is rule-generated, zero-semantic, and strongly structured, making it a "skill scaffold" that complements rather than replaces synthetic data.
+- **vs Hu et al. (2025) "pre-pretraining on formal languages"**: Hu emphasizes "substitution" of tokens, whereas this work treats procedural data as a "supplementary family" and focuses on modular mechanisms.
+- **vs Wu et al. (2022) / Zhang et al. (2024)**: Previous works replaced standard pretraining with algorithms; this work proves that even a 0.1–0.3% prefix is sufficient and identifies skill specialization.
+- **vs Code Pretraining**: Code is often used as an implicit scaffold for reasoning; this work generalizes this intuition to any structured non-semantic data and explains why it works.
+- **vs LLM Synthetic Data**: Synthetic data carries semantics; procedural data is rule-generated, zero-semantic, and serves as a pure "skill scaffold," making the two approaches complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ Transforms the "structure first" concept into a reproducible engineering pipeline with rigorous mechanism experiments.
+- Experimental Thoroughness: ⭐⭐⭐⭐ High-quality evidence across scales (diagnostic and 1.3B), domains (Lang/Code/Math), and modes (additive/substitutive).
+- Writing Quality: ⭐⭐⭐⭐⭐ The four-part narrative (Diagnostic → Transfer → Mechanism → Combination) is exceptionally clear.
+- Value: ⭐⭐⭐⭐ Practically applicable to industrial pretraining at near-zero cost, providing a path for knowledge-reasoning decoupling.
 
 ## Rating
 - Novelty: TBD
@@ -130,8 +130,8 @@ Standard next-token prediction loss is used for both stages. For procedural data
 
 ## Related Papers
 
-- [\[ACL 2026\] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](../../ACL2026/model_compression/alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)
 - [\[ICLR 2026\] LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models](../../ICLR2026/model_compression/lipnext_scaling_up_lipschitz-based_certified_robustness_to_billion-parameter_mod.md)
+- [\[ACL 2026\] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](../../ACL2026/model_compression/alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)
 - [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 - [\[ICML 2026\] An Algebraic View of the Expressivity of Recurrent Language Models](an_algebraic_view_of_the_expressivity_of_recurrent_language_models.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)

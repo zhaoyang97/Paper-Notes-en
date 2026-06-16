@@ -2,80 +2,95 @@
 title: >-
   [Paper Note] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 description: >-
-  [ACL 2026][LLM Efficiency][Speculative Decoding] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits…
+  [ACL 2026][LLM Efficiency][Inference Acceleration] RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over 2x inference acceleration across multiple benc
 tags:
-  - "ACL 2026"
-  - "LLM Efficiency"
-  - "Speculative Decoding"
-  - "Retrieval-Augmented"
-  - "Training-free"
-  - "Aho-Corasick Automaton"
-  - "Inference Acceleration"
+  - ACL 2026
+  - LLM Efficiency
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: b6005f31fe575695
+content_hash: 487f49d10b8a996b
 ---
-
 # RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14885](https://arxiv.org/abs/2604.14885)  
 **Code**: [https://github.com/hkr04/RACER](https://github.com/hkr04/RACER)  
 **Area**: Information Retrieval  
-**Keywords**: Speculative Decoding, Retrieval-Augmented, Training-free, Aho-Corasick Automaton, Inference Acceleration
+**Keywords**: Speculative Decoding, Retrieval-Augmentation, Training-free, Aho-Corasick Automaton, Inference Acceleration
 
 ## TL;DR
 
-RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over $2\times$ inference acceleration across several benchmarks.
+RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over 2x inference acceleration across multiple benchmarks.
 
 ## Background & Motivation
 
-**Background**: Autoregressive decoding in LLMs generates one token per step, where inference latency grows linearly with the sequence length. Speculative decoding, employing a "guess-and-verify" strategy to validate multiple tokens in parallel without sacrificing output quality, is one of the most promising acceleration schemes.
+**Background**: LLM autoregressive decoding generates one token per step, causing inference latency to grow linearly with sequence length. Speculative Decoding is one of the most promising acceleration schemes, validating multiple tokens in parallel via a "guess-and-verify" strategy without sacrificing output quality.
 
-**Limitations of Prior Work**: Existing training-free methods suffer from two types of issues: (1) Retrieval-based methods (e.g., PLD, REST) rely on exact token matching and fail completely when no matching continuation exists in the context; (2) Logit-based methods (e.g., Token Recycling) lack structured guidance, resulting in narrow prediction ranges and suboptimal quality. These two categories are complementary yet currently fragmented.
+**Limitations of Prior Work**: Existing training-free methods suffer from two types of issues: (1) Retrieval-based methods (e.g., PLD, REST) rely on exact token matching and fail completely when matching continuations do not exist in the context; (2) Logit-based methods (e.g., Token Recycling) lack structural guidance, resulting in narrow prediction ranges and suboptimal quality. These categories have distinct advantages but remain fragmented.
 
-**Key Challenge**: Retrieval provides "seen information" (precise but sparse), while logits provide "unseen information" (flexible but lacking anchors). Although reciprocal, existing methods fail to fuse them effectively.
+**Key Challenge**: Retrieval provides "seen information" (precise but sparse), while logits provide "unseen information" (flexible but lacking anchors). These are complementary, but existing methods fail to fuse them effectively.
 
 **Goal**: Design a lightweight, plug-and-play, training-free speculative decoding method that unifies retrieval and logit signal sources.
 
-**Key Insight**: The authors discover that the copy-logit strategy (reusing logits from the most recent occurrence of the same token in the context) yields a higher acceptance rate and sharper distribution (rank-1 exceeding 50%) than the last-logit strategy, providing a foundation for building efficient logit draft trees.
+**Key Insight**: The authors found that the copy-logit strategy (reusing logits from the most recent occurrence of the same token in context) yields higher acceptance rates and sharper distributions (rank-1 exceeding 50%) than the last-logit strategy, providing a foundation for building efficient logit draft trees.
 
-**Core Idea**: An AC automaton is used to maintain n-gram patterns in the context as structured retrieval anchors, while copy-logit is used to construct a logit draft tree with layer-wise pruning for flexible extrapolation. Both sources are dynamically allocated a budget under fixed capacity and merged into a unified draft tree via a trie.
+**Core Idea**: Use an AC automaton to maintain n-gram patterns in context as structural retrieval anchors, and use copy-logit to construct a layer-wise pruned Logits Tree for flexible extrapolation. Both dynamically allocate a budget within a fixed capacity and merge into a unified draft tree via a trie.
 
 ## Method
 
 ### Overall Architecture
 
-In each decoding step, RACER first identifies matching patterns in the current context via an AC automaton to select retrieval candidates from the highest-frequency continuations. Subsequently, the remaining capacity is allocated to the Logits Tree for breadth-first expansion based on copy-logit. Finally, both trees are merged into a unified draft tree via a trie and validated by the target model in a single pass using tree attention.
+RACER integrates two complementary but fragmented training-free signals into a single draft tree: retrieval provides "seen information" (precise but sparse), while logits provide "unseen information" (flexible but lacking anchors). In each decoding step, it first uses an AC automaton to find matching n-gram patterns in the current context and takes retrieval candidates from the highest-frequency continuations. The remaining draft budget is assigned to the Logits Tree, which performs breadth-first extrapolation using copy-logit. Finally, these two trees are merged into a unified draft tree via a trie for one-shot verification by the target model using tree attention. Retrieval secures the "proximal repeating pattern" anchors, while logits perform flexible extrapolation guided by those anchors; both dynamically allocate budget under a fixed capacity.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Current Context + Sampled next-token"] --> B["Fixed Capacity Budget Allocation<br/>Retrieval first, remainder to logits"]
+    subgraph RT["Retrieval Tree"]
+        direction TB
+        C["AC Automaton N-gram matching<br/>LRU eviction for constant memory"] --> D["Take top-k continuations with highest global frequency"]
+    end
+    subgraph LT["Logits Tree"]
+        direction TB
+        F["copy-logit reuses following distribution of same token"] --> G["Layer-wise pruned extrapolation via heavy-tail rule"]
+    end
+    B --> C
+    B --> F
+    D --> H["Unified Integration Strategy<br/>Trie-based union into unified draft tree"]
+    G --> H
+    H --> I["Target model one-shot verification via tree attention"]
+    I --> J["Output accepted tokens"]
+```
 
 ### Key Designs
 
-1.  **Logits Tree (Logit-based Draft Tree)**:
+**1. Logits Tree: Distribution reuse via copy-logit with layer-wise heavy-tail pruning**
 
-    - **Function**: Utilizes the target model's own logit information to generate multi-level token candidates.
-    - **Mechanism**: Employs the copy-logit strategy—for the current sampled next-token $x_t$, find the most recent position $i$ in the context where $x_i = x_t$, and reuse its subsequent logits $\mathbf{z}_{i+1}$ as an approximation for $\mathbf{z}_{t+1}$. Experiments show the MAT of copy-logit is 1.87 (vs. 1.57 for last-logit), with a rank-1 acceptance rate over 50%. Based on heavy-tail distribution characteristics, a decreasing breadth allocation is designed: $b_{child(i,j)} = \max(1, \lfloor b_i / 2^{j+[i\neq 0]} \rfloor)$, where the first layer is widest and deeper layers are progressively pruned.
-    - **Design Motivation**: Copy-logit is based on the assumption that "the same tokens have similar semantic continuations in similar contexts," which is more accurate than simply reusing the previous step's logits. Decreasing breadth allocation aligns with the empirical law that acceptance rates decay rapidly with depth.
+Token-by-token decoding is slow due to serial generation, and training-free logit methods (e.g., Token Recycling) can guess more tokens but lack structural guidance and have narrow prediction ranges. RACER's key observation is the copy-logit strategy: for the currently sampled next-token $x_t$, look back to find the most recent occurrence $x_i = x_t$ in the context and reuse its succeeding logits $\mathbf{z}_{i+1}$ to approximate $\mathbf{z}_{t+1}$. This assumes that "the same token has similar semantic continuation in similar contexts," which is significantly more accurate than reusing the last step's logits—experiments show copy-logit reaches a Mean Acceptance Token (MAT) of 1.87 (vs. 1.57 for last-logit), with over 50% rank-1 acceptance and sharper distributions.
 
-2.  **Retrieval Tree (AC Automaton with LRU Eviction)**:
+Since acceptance rates decay rapidly with depth, RACER designs a decreasing breadth allocation for the draft tree: $b_{child(i,j)} = \max(1, \lfloor b_i / 2^{j+[i\neq 0]} \rfloor)$. The first layer is the widest, narrowing depth-wise to spend the limited budget on shallow nodes most likely to be accepted.
 
-    - **Function**: Efficiently retrieves repeated n-gram patterns from the generated context to provide structured draft candidates.
-    - **Mechanism**: Uses an Aho-Corasick (AC) automaton to maintain n-grams (max length 10) appearing in the context. A maximum node capacity (10,000) is set, and the least recently used leaf nodes are removed via an LRU eviction strategy. During matching, all boundary nodes with depth $\geq 2$ are identified, and top-k continuations with the highest global frequency are selected from their subtrees as retrieval candidates. Failure links are lazily rebuilt at the end of the prefill stage.
-    - **Design Motivation**: Suffix arrays and suffix automata grow linearly with context length and cannot evict outdated states. AC automaton failure links naturally enrich draft diversity, while LRU eviction ensures stable memory usage.
+**2. Retrieval Tree: Online pattern retrieval with constant memory via LRU-evicted AC automaton**
 
-3.  **Unified Integration Strategy**:
+Retrieval candidates require efficient extraction of repeating n-grams from a growing context. However, structures like suffix arrays or suffix automata expand linearly with context length and cannot discard obsolete states. RACER instead uses an Aho-Corasick automaton to maintain n-grams (max length 10) in the context, employing a maximum node capacity (10,000) with LRU eviction for the least recently used leaf nodes to fix memory at a constant level. During matching, all boundary nodes with depth $\geq 2$ are retrieved, and the top-k continuations with the highest global frequency from their subtrees are selected as candidates. Failure links are reconstructed lazily at the end of the prefill stage.
 
-    - **Function**: Dynamically balances retrieval and logit candidate sources under a fixed draft capacity.
-    - **Mechanism**: Retrieval candidates are prioritized (structurally reliable but sparse), and the remaining capacity is given to the Logits Tree for breadth-first expansion. Both are merged into a unified draft tree via trie-based union and validated by the target model at once using tree attention.
-    - **Design Motivation**: Retrieval signals capture near-distance repetition to provide sharper prediction guidance for logit distributions, reducing error accumulation during speculative expansion.
+Choosing an AC automaton offers an additional benefit: its failure links naturally utilize "partial matches," enriching draft diversity—a feature difficult to provide cost-effectively with suffix structures.
+
+**3. Unified Integration Strategy: Retrieval followed by logits under fixed capacity, merged via trie**
+
+To coexist within the same draft budget, two types of signals require allocation rules. RACER priority-allocates to retrieval candidates (structurally reliable but sparse), leaving remaining capacity for breadth-first expansion in the Logits Tree. Finally, both are merged via a trie-based union into a unified draft tree for one-shot verification under tree attention.
+
+This "retrieval-as-anchor, logits-as-extrapolator" sequence is deliberate: the sharp predictions from proximal repeats guide logit distributions, reducing cumulative error in speculative expansion. Thus, filling slots with retrieval before logits is more stable than parallel competition.
 
 ### Loss & Training
 
-RACER is entirely training-free. Default hyperparameters: Logits Tree max breadth 8, Retrieval Tree max 10,000 nodes, n-gram length 10, draft capacity 64 per step. Greedy decoding is used with a batch size of 1.
+RACER is entirely training-free. Default hyperparameters: Logits Tree max breadth 8, Retrieval Tree max 10,000 nodes, n-gram length 10, draft capacity 64 per step; greedy decoding, batch size 1.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Method | Spec-Bench Accel. | HumanEval Accel. | MGSM-ZH Accel. | Avg. Accel. |
+| Model | Method | Spec-Bench Speedup | HumanEval Speedup | MGSM-ZH Speedup | Avg Speedup |
 |------|------|----------------|---------------|--------------|---------|
 | Vicuna-7B | PLD | 1.50× | 1.40× | 2.27× | 1.87× |
 | Vicuna-7B | LogitSpec | 1.77× | 1.66× | 2.67× | 2.03× |
@@ -87,7 +102,7 @@ RACER is entirely training-free. Default hyperparameters: Logits Tree max breadt
 
 ### Ablation Study
 
-| Config | Spec-Bench MAT | HumanEval MAT | Description |
+| Configuration | Spec-Bench MAT | HumanEval MAT | Notes |
 |------|---------------|---------------|------|
 | RACER (Full) | 3.00 | 3.11 | Full integration of retrieval + logits |
 | Logits Tree Only | ~2.76 | ~2.83 | No retrieval guidance, similar to Token Recycling |
@@ -95,35 +110,35 @@ RACER is entirely training-free. Default hyperparameters: Logits Tree max breadt
 
 ### Key Findings
 
-- RACER is consistently optimal among all training-free methods, achieving average speedup ratios of 2.42×-2.52×.
-- Compared to EAGLE-3 (which requires an additional draft model), RACER has a slightly lower MAT but matches or exceeds actual speedups due to zero extra model overhead.
-- EAGLE-3 fails in Chinese reasoning (MGSM-ZH) (speedup <1×), exposing the sensitivity of model-based methods to training data distribution; RACER remains stable in acceleration.
-- Copy-logit yields a 0.3 higher MAT than last-logit (1.87 vs. 1.57), with a rank-1 acceptance rate over 50%.
-- The method is insensitive to hyperparameters and exhibits good robustness.
+- RACER consistently outperforms all training-free methods, achieving average speedups of 2.42x-2.52x.
+- Compared to EAGLE-3 (which requires an eagle-specific draft model), RACER has a slightly lower MAT but matches or exceeds actual speedup due to zero model overhead.
+- EAGLE-3 fails on Chinese reasoning (MGSM-ZH) (speedup <1x), exposing the sensitivity of model-based methods to training data distribution, whereas RACER maintains stable acceleration.
+- Copy-logit increases MAT by 0.3 over last-logit (1.87 vs 1.57), with a rank-1 acceptance rate over 50%.
+- The method is insensitive to hyperparameters, demonstrating solid robustness.
 
 ## Highlights & Insights
 
-- The copy-logit strategy is a subtle observation—the logit distribution following the same token at different positions remains highly similar. This idea of "in-context logit reuse" is simple yet effective and applicable to any autoregressive model.
-- Replacing suffix arrays with AC automata is clever: the failure links provide pattern generalization, and LRU eviction ensures fixed memory overhead. This choice of data structure is worth emulating in other scenarios requiring online pattern matching.
-- Positioning "retrieval as structural guidance rather than an independent generator"—retrieval signals do not just generate candidates but provide anchors and direction for logit prediction. this fusion philosophy is more elegant than a simple combination. 
+- The copy-logit strategy is a clever observation—the distribution of succeeding logits for the same token at different positions exhibits high similarity. This "in-context logit reuse" concept is simple but effective, applicable to any autoregressive model.
+- Replacing suffix arrays with an AC automaton is ingenious: failure links provide inherent pattern generalization, and LRU eviction ensures constant memory overhead. This structural choice is valuable for other online pattern matching scenarios.
+- Positioning "retrieval as structural guidance rather than an independent generator"—retrieval signals do not just generate candidates but provide anchors and direction for logit prediction. This fusion philosophy is more elegant than a simple combination.
 
 ## Limitations & Future Work
 
-- Evaluation was limited to batch size=1 and greedy decoding; large batch and sampling decoding scenarios require verification.
-- AC automaton node capacity (10K) and n-gram length (10) are fixed; adaptive adjustment might further improve performance.
-- The potential for combination with model-based methods has not been explored.
-- Whether the advantages in non-English languages derive from the language-agnostic nature of retrieval deserves in-depth analysis.
+- Evaluation is limited to batch size 1 and greedy decoding; large-batch and sampling scenarios remain to be verified.
+- AC automaton node capacity (10K) and n-gram length (10) are fixed; adaptive adjustment might further enhance performance.
+- Combinatorial potential with model-based methods is unexplored.
+- Whether the advantage in non-English languages stems from retrieval-based language-agnosticism warrants deeper analysis.
 
 ## Related Work & Insights
 
-- **vs Token Recycling**: TR only uses a top-k adjacency matrix to expand the draft tree but lacks retrieval guidance. RACER makes logit expansion more accurate via structural anchors provided by the AC automaton, accepting an average of 0.4 more tokens.
-- **vs EAGLE-3**: EAGLE-3 requires an additional trained draft model, leading to higher MAT but not necessarily better wall-clock speedup. RACER's advantages of zero training and zero extra memory make it more suitable for plug-and-play deployment.
+- **vs Token Recycling**: TR expands the draft tree using only a top-k adjacency matrix without retrieval guidance. RACER makes logit expansion more precise through structural anchors provided by the AC automaton, accepting an average of 0.4 more tokens.
+- **vs EAGLE-3**: EAGLE-3 requires additional draft model training; while it has a higher MAT, actual speedup isn't necessarily better. RACER's zero-training and zero-extra-memory advantages make it better for plug-and-play deployment.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The unified perspective of retrieval + logits is novel; copy-logit and LRU-AC automaton designs are elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple model scales (7B-33B), various task categories, and multiple languages; ablation and analysis are exhaustive.
-- Writing Quality: ⭐⭐⭐⭐ Clear method description with intuitive illustrations.
+- Novelty: ⭐⭐⭐⭐ Unified perspective of retrieval + logits is novel; copy-logit and LRU-AC automaton designs are sophisticated.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple model scales (7B-33B), diverse tasks, and multiple languages, with thorough ablation and analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological descriptions and intuitive illustrations.
 - Value: ⭐⭐⭐⭐ Provides a practical training-free inference acceleration scheme with high plug-and-play deployment value.
 
 <!-- RELATED:START -->
@@ -136,18 +151,7 @@ RACER is entirely training-free. Default hyperparameters: Logits Tree max breadt
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
 - [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[ACL 2025\] SAM Decoding: Speculative Decoding via Suffix Automaton](../../ACL2025/llm_efficiency/sam_decoding_speculative_decoding_via_suffix_automaton.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
 
 </div>
 

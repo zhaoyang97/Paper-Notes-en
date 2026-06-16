@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Riemannian Networks over Full-Rank Correlation Matrices
 description: >-
-  [ICML 2026][Correlation Matrix Manifold] This paper systematically extends three fundamental layers—MLR, FC, and Conv—to five Riemannian geometries (ECM, LECM, OLM, LSM…
+  [ICML 2026][Others][Paper Note] This paper systematically extends three fundamental layers (MLR, FC, Conv) to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the full-rank correlation matrix manifold $\mathrm{Cor}^+(n)$. It derives exact backpropagation for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassmann ne
 tags:
-  - "ICML 2026"
-  - "Correlation Matrix Manifold"
-  - "Riemannian Networks"
-  - "Log-Euclidean Metric"
-  - "Cholesky Decomposition"
-  - "Poincaré Ball"
+  - ICML 2026
+  - Others
 date: 2026-05-08
-content_hash: cc94d5b9d8748172
+content_hash: 40aa929578214959
 ---
-
 # Riemannian Networks over Full-Rank Correlation Matrices
 
 **Conference**: ICML 2026  
@@ -23,51 +18,60 @@ content_hash: cc94d5b9d8748172
 **Keywords**: Correlation Matrix Manifold, Riemannian Networks, Log-Euclidean Metric, Cholesky Decomposition, Poincaré Ball
 
 ## TL;DR
-This paper systematically extends three fundamental layers—MLR, FC, and Conv—to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the manifold of full-rank correlation matrices $\mathrm{Cor}^+(n)$. Precise backpropagation is derived for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassmann networks of similar size on Radar, HDM05, FPHA, and NTU120 datasets.
+This paper systematically extends three fundamental layers (MLR, FC, Conv) to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the full-rank correlation matrix manifold $\mathrm{Cor}^+(n)$. It derives exact backpropagation for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassmann networks of similar scale on Radar, HDM05, FPHA, and NTU120 datasets.
 
 ## Background & Motivation
 
-**Background**: In tasks driven by covariance-like features (EEG, radar, skeletal motion), SPD manifold neural networks have formed a mature pipeline—ranging from SPDNet and SPDNetBN to various new layers based on gyrovectors and Riemannian geometry. Geometric priors have been repeatedly proven to enhance discriminative power.
+**Background**: In tasks driven by covariance-like features (e.g., EEG, radar, skeletal muscle action), SPD manifold neural networks have formed a mature pipeline. From SPDNet and SPDNetBN to various new layers based on gyrovectors and Riemannian geometry, geometric priors have consistently proven to enhance discriminative power.
 
-**Limitations of Prior Work**: Although the correlation matrix $C = D(\Sigma)^{-1/2} \Sigma\, D(\Sigma)^{-1/2}$ is a normalized version of covariance and is statistically more compact, there are few deep networks specifically designed for such inputs. Directly feeding them into SPDNet ignores the core constraints that the diagonal elements are constantly 1 and the degrees of freedom are reduced to $n(n-1)/2$. Earlier attempts to treat correlation matrices as quotient manifolds of SPD lacked unique closed-form solutions for the Riemannian log and Fréchet mean.
+**Limitations of Prior Work**: Although the correlation matrix $C = D(\Sigma)^{-1/2} \Sigma\, D(\Sigma)^{-1/2}$ is a normalized version of covariance and is statistically more compact, specialized deep networks for such inputs are scarce. Directly feeding them into SPDNet ignores the core constraint that diagonals are always 1, leaving only $n(n-1)/2$ degrees of freedom. Earlier attempts treating correlation matrices as quotient manifolds of SPD could not obtain unique closed-form solutions for the Riemannian log and Fréchet mean.
 
-**Key Challenge**: The geometry of the correlation matrix manifold $\mathrm{Cor}^+(n)$ has only recently been commoditized—ECM, LECM, PHCM (Thanwerdas & Pennec, 2022) and the permutation-invariant OLM and LSM (Thanwerdas, 2024) provide five sets of metrics with closed-form expressions. However, these tools have not yet been utilized in deep learning.
+**Key Challenge**: The geometry of the correlation matrix manifold $\mathrm{Cor}^+(n)$ has only recently been toolized—ECM, LECM, PHCM (Thanwerdas & Pennec, 2022) and the permutation-invariant OLM and LSM (Thanwerdas, 2024) provide five sets of metrics with closed-form expressions. However, these tools have not yet been utilized in deep learning.
 
-**Goal**: To transition the three most common components in Euclidean deep learning (MLR, FC, Conv) to $\mathrm{Cor}^+(n)$, covering four zero-curvature Log-Euclidean metrics and one non-zero curvature metric, PHCM, composed of Poincaré ball products, while solving for precise backpropagation of implicit operators under OLM and LSM.
+**Goal**: Systematically migrate the most commonly used Euclidean deep learning components (MLR, FC, Conv) to $\mathrm{Cor}^+(n)$, covering four zero-curvature Log-Euclidean metrics and one non-zero curvature metric (PHCM) composed of a product of Poincaré balls, while resolving exact backpropagation for implicit operators under OLM and LSM.
 
-**Key Insight**: All Log-Euclidean metrics are isometric to a Euclidean prototype space via a diffeomorphism $\phi$. By pulling back the "signed distance to a boundary hyperplane" form of MLR (Lebanon & Lafferty) via $\phi$, the FC layer can be implicitly defined from MLR. This avoids manually deriving separate layers for each geometry.
+**Key Insight**: All Log-Euclidean metrics are isometric to a Euclidean prototypical space via a diffeomorphism $\phi$. By pulling back the "signed distance to a boundary hyperplane" form of MLR (Lebanon & Lafferty) using $\phi$, the FC layer can be implicitly defined from MLR. This avoids handcrafted layers for every single geometry.
 
-**Core Idea**: By writing Euclidean layers in the prototype space, the five corresponding correlation layers can be obtained via pullbacks of the five $\phi$ mappings. The entire CorNet training process is "Euclideanized" by using trivialization in the tangent space to prevent over-parameterization and by replacing Riemannian trigonometry approximations with closed-form expressions.
+**Core Idea**: Euclidean layers written in the prototypical space can produce five corresponding correlation layers through five pullbacks of $\phi$. The training process of CorNet is "Euclideanized" by using trivialization in the tangent space to prevent over-parameterization and replacing Riemannian trigonometry approximations with closed-form expressions.
 
 ## Method
 
 ### Overall Architecture
-The input is a set of covariance matrices, which are first projected onto $\mathrm{Cor}^+ (n)$ to obtain correlation matrices via $\mathrm{Cor}(\Sigma)$. Then, two segments are stacked: "Correlation Conv Layer $\to$ Correlation MLR Head." The Conv layer performs FC transformations on multi-channel correlation matrices concatenated within each receptive field, where the FC is implicitly defined by the MLR logit under the corresponding metric. All learnable parameters are parameterized in the tangent space $T_E M \cong \mathrm{Hol}(n)$ (symmetric matrices with zero diagonals), allowing direct training with standard PyTorch optimizers. Geometry is manifested only through forward $\phi$, $\phi^{-1}$, and necessary Newton/iterations.
+The input is a set of covariance matrices, first projected to $\mathrm{Cor}^+(n)$ via $\mathrm{Cor}(\Sigma)$ to obtain correlation matrices. Two stages are then stacked: "Correlation Conv layers → Correlation MLR head". The Conv layer performs FC transformations on multi-channel correlation matrices concatenated within each receptive field, where FC is implicitly defined by the MLR logits under the corresponding metric. All learnable parameters are parameterized in the tangent space $T_E M \cong \mathrm{Hol}(n)$ (symmetric matrices with zero diagonals), allowing direct training with standard PyTorch optimizers. Geometry is manifested through the forward $\phi$, $\phi^{-1}$, and necessary Newton/iterations. The layers are unified: "write Euclidean layers in prototypical space → pull back isometrically via five diffeomorphisms $\phi$".
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: A set of covariance matrices Σ"] --> B["Cor Projection<br/>C = Cor(Σ) ∈ Cor⁺(n)"]
+    B --> C["Correlation Conv Layer (Design 2)<br/>Concatenate c correlation matrices in receptive field → FC Transformation"]
+    C --> D["Correlation MLR Head (Design 1)<br/>Closed-form logit in prototypical space + Cross-Entropy"]
+    D --> E["Classification Output"]
+    F["Euclidean layers in prototypical space, pulled back via 5 φ<br/>ECM / LECM / OLM / LSM / PHCM"] -.Construct MLR/FC/Conv.-> C
+    F -.Construct.-> D
+    G["Parameters trivialized in tangent space Hol(n), standard optimizer<br/>Exact backprop for OLM/LSM via Implicit Function Theorem (Design 3)"] -.Training.-> D
+```
 
 ### Key Designs
 
-1.  **Unified MLR: Written once in the prototype space, obtained for five metrics simultaneously**:
-    - **Function**: Expresses the manifold MLR from Chen et al. (2024c) as computable closed-form logits on $\mathrm{Cor}^+(n)$.
-    - **Mechanism**: For each Log-Euclidean metric, it is proven that $\phi(I) = 0$, allowing the identity matrix $I$ to serve as the manifold origin. Using the isometry from Thm. 3.1, the logit is reduced to the familiar form in prototype space: $v_k(X) = \langle \phi(X), \phi_{*,E}(Z_k)\rangle - \gamma_k \|\phi_{*,E}(Z_k)\|$. Substituting the four derivatives given in Prop. 3.2 (strictly lower triangular $\lfloor V\rfloor$ for ECM/LECM, $V$ itself for OLM, and $V - \mathrm{diag}(V\mathbf{1})$ for LSM) yields the MLR under four Log-Euclidean geometries. PHCM uses Cholesky decomposition to equate to a product of $n-1$ Poincaré upper hemispheres $\mathrm{PHS}^{n-1}$, reusing Poincaré MLR from Ganea / Shimizu.
-    - **Design Motivation**: To avoid manual derivation of MLR formulas for each geometry and to preclude Riemannian trigonometry approximations—all logits are closed-form, and parameters $(Z_k, \gamma_k) \in \mathrm{Hol}(n)\times\mathbb{R}$ always reside in Euclidean space.
+**1. Unified MLR: Write once in prototypical space, obtain five metrics simultaneously**
 
-2.  **FC / Conv Layers: Defined via MLR, providing closed-form solutions per metric**:
-    - **Function**: Generalizes the perspective of "FC as a stack of signed distances from multiple MLRs" from Shimizu et al. (2021) on Poincaré balls to correlation manifolds.
-    - **Mechanism**: The FC layer $F: \mathrm{Cor}^+(n)\to\mathrm{Cor}^+(m)$ is implicitly defined by $m(m-1)/2$ equations $s_k\, d(Y, H_{O_k, I}) = v_k(X; Z_k, \gamma_k)$. Closed-form solutions exist under Log-Euclidean metrics (Thm. 3.5); for example, under ECM, $Y = \mathrm{Cor}\circ \mathrm{Chol}^{-1}(V^{EC} + I_m)$. LECM adds another $\exp$ layer, OLM uses $\mathrm{Exp}^\circ$, and LSM uses $\mathrm{Cor}\circ\exp$. Matrix elements $V^{*}_{ij}$ are populated according to the subspace structures of $\lfloor\cdot\rfloor$ / $\mathrm{Hol}$ / $\mathrm{Row}_0$. The Conv layer concatenates $c$ correlation matrices in each receptive field into $(\mathrm{Cor}^+(n))^c$ and feeds them to the same FC, equivalent to "one affine transformation per receptive field" in Euclidean convolution.
-    - **Design Motivation**: FC is the inverse process of the MLR form where "output coordinates are signed distances to orthogonal hyperplanes at the origin." Unified definitions ensure that FC, MLR, and Conv layers share the same metric and parameter space, preventing geometric mismatch. Reusing FC for Conv also eliminates the need for a separate convolution theory.
+Defining MLR formulas manually for each geometry would be labor-intensive and susceptible to approximation errors from Riemannian trigonometry. The authors write the formulation only in the prototypical space. For each Log-Euclidean metric, it is proven that $\phi(I) = 0$, allowing the identity matrix $I$ to serve as the manifold origin. Using the isometry in Thm. 3.1, the manifold MLR logit from Chen et al. (2024c) is reduced to the familiar $v_k(X) = \langle \phi(X), \phi_{*,E}(Z_k)\rangle - \gamma_k \|\phi_{*,E}(Z_k)\|$ in the prototypical space. Substituting the four differentials provided in Prop. 3.2 (ECM/LECM use strictly lower triangular $\lfloor V\rfloor$, OLM uses $V$, LSM uses $V - \mathrm{diag}(V\mathbf{1})$) yields the MLR under four Log-Euclidean geometries. PHCM reuses the Poincaré MLR of Ganea/Shimizu by mapping it to the product of $n-1$ Poincaré half-spaces $\mathrm{PHS}^{n-1}$ via Cholesky. All logits are in closed form, and parameters $(Z_k, \gamma_k) \in \mathrm{Hol}(n)\times\mathbb{R}$ reside in Euclidean space. Adding a new geometry only requires calculating $\phi_{*,E}$ once.
 
-3.  **Precise Backpropagation for OLM/LSM: Implicit operators as explicit Jacobians**:
-    - **Function**: In OLM and LSM, $D(H)$ (the unique diagonal correction that brings $\exp(D+H)$ back to a correlation matrix) and $D^\star(C)$ (the unique positive diagonal scaling that results in zero row sums after logging $D^\star C D^\star$) lack closed-form expressions. Originally, autograd would have to pass through iteratively convergent operations like $D_{k+1} = D_k - \log(D(\exp(D_k + H)))$ or damped Newton methods.
-    - **Mechanism**: The authors apply the implicit function theorem to these two fixed-point conditions $f(D,H)=0$ and $g(D^\star,C)=0$ with respect to parameters, directly solving for closed-form Jacobians (Sec. E). During training, the explicit formula is called once after iterative convergence. Backpropagation precision no longer depends on the number of iteration steps, and the overhead of re-iterating during the backward pass is avoided.
-    - **Design Motivation**: Transparently passing autograd through iterations is both inaccurate and slow. This is particularly critical for metrics like OLM/LSM that are permutation-invariant but require numerical root-finding. Precise backpropagation is a prerequisite for stable training of large networks using these two metrics.
+**2. FC / Conv Layers: Implicitly defined by MLR with closed-form solutions per metric**
+
+Shimizu et al. (2021) provided a perspective on the Poincaré ball where the FC layer is formed by "stacking signed distances of multiple MLRs". The authors extend this to the correlation manifold: the FC layer $F: \mathrm{Cor}^+(n)\to\mathrm{Cor}^+(m)$ is implicitly defined via $m(m-1)/2$ equations $s_k\, d(Y, H_{O_k, I}) = v_k(X; Z_k, \gamma_k)$. This yields closed-form solutions under Log-Euclidean metrics (Thm. 3.5). For instance, in ECM, $Y = \mathrm{Cor}\circ \mathrm{Chol}^{-1}(V^{EC} + I_m)$; LECM adds an $\exp$ layer; OLM uses $\mathrm{Exp}^\circ$; LSM uses $\mathrm{Cor}\circ\exp$. Matrix elements $V^{*}_{ij}$ are populated according to the subspace structures of $\lfloor\cdot\rfloor$ / $\mathrm{Hol}$ / $\mathrm{Row}_0$. The Conv layer concatenates $c$ correlation matrices in each receptive field into $(\mathrm{Cor}^+(n))^c$ and feeds them into the same FC, equivalent to a Euclidean convolution performing an affine transformation on each receptive field. This unified definition ensures FC, MLR, and Conv share the same metric and parameter space, preventing geometric mismatch and removing the need for separate convolution theories.
+
+**3. Exact Backpropagation for OLM/LSM: Implicit operators as explicit Jacobians**
+
+OLM and LSM involve two operators without closed forms: $D(H)$ (the unique diagonal correction that returns $\exp(D+H)$ to a correlation matrix) and $D^\star(C)$ (the unique positive diagonal scaling that results in a zero row-sum after logging $D^\star C D^\star$). Normally, autograd would backpropagate through exponentially convergent iterations like $D_{k+1} = D_k - \log(D(\exp(D_k + H)))$ and damped Newton methods. However, autograd through iterations is inaccurate and slow, especially for these permutation-invariant metrics. The authors apply the Implicit Function Theorem to the fixed-point conditions $f(D,H)=0$ and $g(D^\star,C)=0$ to solve for the Jacobian in closed form (Sec. E). During training, the explicit formula is called once after the iterations converge. Backpropagation accuracy is independent of the number of iterations, and the overhead of re-running iterations during the backward pass is skipped—this is a prerequisite for stable training of large networks with OLM/LSM.
 
 ### Loss & Training
-Cross-entropy is used with the MLR head for classification. All learnable parameters are placed in the tangent space $\mathrm{Hol}(n)$ (or $\mathrm{Row}_0(n)$ for LSM) via trivialization and updated directly using standard Adam/SGD without needing Riemannian optimizers. Using the same metric for both Conv and MLR is the default configuration; mixed metrics are discussed in the ablation study.
+Classification uses an MLR head with cross-entropy. All learnable parameters are placed in the tangent space $\mathrm{Hol}(n)$ (or $\mathrm{Row}_0(n)$ for LSM) via trivialization and updated directly using standard Adam/SGD without needing Riemannian optimizers. Using the same metric for both Conv and MLR is the default configuration; mixed metrics are explored in ablations.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation protocol: Four standard SPD tasks—Radar (3000 radar signals, 3 classes), HDM05 (MoCap skeletal motion), FPHA (hand actions), and NTU120 (large-scale skeletal motion). Five-fold average accuracy (%).
+Evaluation protocol: Four standard SPD tasks—Radar (3000 signals, 3 classes), HDM05 (MoCap skeletal actions), FPHA (hand actions), and NTU120 (large-scale skeletal actions). Results are 5-fold average accuracy (%).
 
 | Manifold | Method | Radar | HDM05 | FPHA | NTU120 |
 |--------|------|------|------|------|------|
@@ -81,37 +85,37 @@ Evaluation protocol: Four standard SPD tasks—Radar (3000 radar signals, 3 clas
 | Correlation | CorNet-OLM | 97.57 | 81.46 | 91.63 | 64.41 |
 | Correlation | CorNet-PHCM | 96.56 | **82.26** | 90.03 | 60.01 |
 
-Compared to the classic SPDNet, CorNets show gains of +5.15% / +17.69% / +6.58% / +13.79% across the four datasets. Performance is still comprehensively superior compared to GyroSPD++ (same architecture). On the largest dataset, NTU120, CorNet-ECM/LECM remains one of the top-2 fastest methods (approx. 12 s per epoch).
+Compared to the classic SPDNet, CorNets show Gains of +5.15% / +17.69% / +6.58% / +13.79% across four datasets. They remain superior to GyroSPD++ (same architecture template). On the largest NTU120 dataset, CorNet-ECM/LECM are among the top-2 fastest methods (~12 s per epoch).
 
 ### Ablation Study
 | Configuration | Key Observation | Description |
 |------|---------|------|
-| Same metric for Conv and MLR (Tab. 3 diagonal) | Almost always optimal on HDM05/FPHA | Mixing across metrics generally leads to drops; geometric consistency is important. |
-| SPDNet input: Covariance vs. Correlation (Tab. 4) | HDM05: 64.57→66.81; FPHA: 85.59→83.37; Radar: 93.25→89.49 | Correlation is sometimes better, but **ignoring the geometry of the correlation manifold can lead to performance drops**, justifying the need for specialized CorNets. |
-| CorMLR vs. SPDMLR-Trivlz (Tab. 5) | CorMLR leads on HDM05/FPHA; slightly trails on Radar; ECM/PHCM have clear speed advantages | Even a single-layer MLR reflects the discriminative power of correlation embedding, and ECM-like geometries are computationally cheaper. |
-| Backprop: autograd vs. precise Jacobian (OLM/LSM) | Better precision and stability (Sec. E) | Necessary condition for training permutation-invariant metrics. |
+| Same metric for Conv and MLR (Tab. 3 diagonal) | Almost always optimal on HDM05/FPHA | Cross-metric mixing usually degrades performance; geometric consistency is vital |
+| SPDNet Input: Covariance vs. Correlation (Tab. 4) | HDM05: 64.57→66.81; FPHA: 85.59→83.37; Radar: 93.25→89.49 | Correlation is sometimes better, but **ignoring the correlation manifold geometry leads to drops**, justifying the need for dedicated CorNet |
+| CorMLR vs SPDMLR-Trivlz (Tab. 5) | CorMLR leads on HDM05/FPHA; slightly trails on Radar; ECM/PHCM have efficiency advantages | Single MLR layers reflect the discriminative power of correlation embeddings; ECM-style geometries are cheaper |
+| Backprop: autograd vs. Exact Jacobian (OLM/LSM) | Better accuracy and stability (Sec. E) | Essential for training permutation-invariant metrics |
 
 ### Key Findings
-- **Optimal metrics vary by task**: Radar favors LECM, HDM05 favors PHCM, and FPHA/NTU120 favor ECM. This suggests that geometry is a type of "hyperparameter," and making it a switchable component in CorNet is a contribution in itself.
-- **Interpretable gains of Correlation vs. Covariance**: On HDM05, the coefficient of variation for diagonal covariance is large, and diagonal values far exceed off-diagonal ones. Correlation matrices flatten the diagonal to 1, forcing the network to focus on off-diagonal correlation terms with higher information density, yielding the largest gains.
-- **Efficiency is not compromised**: CorNet-ECM/LECM is approx. 17× faster than GyroSPD++ and approx. 8× faster than GyroAI on NTU120, showing that the geometrically "lighter" correlation manifold is not a burden.
+- **Optimal metrics vary by task**: Radar prefers LECM, HDM05 prefers PHCM, and FPHA/NTU120 prefer ECM. This suggests geometry is a "hyperparameter," and making it a switchable component is a contribution.
+- **Explainable gains of Correlation vs. Covariance**: On HDM05, the coefficient of variation for diagonal variance in covariance is large, with diagonals much larger than off-diagonals. Correlation matrices flatten diagonals to 1, forcing the network to focus on off-diagonal terms where information density is high.
+- **Efficiency is not compromised**: CorNet-ECM/LECM is ~17× faster than GyroSPD++ and ~8× faster than GyroAI on NTU120, showing that the "lighter" correlation manifold is not a burden.
 
 ## Highlights & Insights
-- **The paradigm of "prototype space once + five pullbacks"**: Previously, every new manifold metric required hand-crafting a set of layers. Here, all Log-Euclidean geometries are merged into a single proof of Euclidean MLR via $\phi$-isometry. Adding a new metric only requires calculating $\phi_{*, I}$, making it highly reusable.
-- **Trivialization as the bridge between Riemannian geometry and PyTorch**: Keeping learnable parameters in the tangent space and using $\mathrm{Exp}$ to push them back to manifold parameters prevents over-parameterization and allows for the direct use of Euclidean optimizers, which is engineering-friendly.
-- **Precise backpropagation of implicit operators**: Solving for the Jacobian using the implicit function theorem after writing iterative operators as implicit functions is a versatile technique used in OT, fixed-point layers, and DEQ. It is a training trick worth reusing in geometric deep learning.
+- **"Prototypical space once + five pullbacks" paradigm**: Previously, every new manifold metric required handcrafted layers. Here, all Log-Euclidean geometries are merged into a single proof for Euclidean MLR via $\phi$ isometry. Adding a metric only requires calculating $\phi_{*, I}$, ensuring high reusability.
+- **Trivialization as the bridge between Riemannian geometry and PyTorch**: Learnable parameters are kept in the tangent space and pushed back via $\mathrm{Exp}$. This avoids over-parameterization and permits Euclidean optimizers, making it engineering-friendly.
+- **Exact backprop for implicit operators**: Mapping iterative operators to implicit functions and solving for the Jacobian via the implicit function theorem is a versatile strategy (similar to OT or DEQ) and serves as a reusable training trick in geometric deep learning.
 
 ## Limitations & Future Work
-- Only five existing metrics are covered; other geometries on $\mathrm{Cor}^+(n)$ with non-trivial curvature (such as quotient metrics or affine-invariant versions of correlation) have not been layered yet.
-- Experiments still focus on traditional SPD benchmarks with medium $n$ (signals/skeletons) and have not addressed larger scale, image-level covariance/correlation tasks (e.g., visual second-order pooling).
-- Metrics must be manually specified. In the future, using hypernetworks or learned metrics to automatically select between ECM/LECM/OLM/LSM/PHCM could eliminate explicit parameter tuning.
-- PHCM relies on products of Poincaré balls, where the number of hemispheres grows linearly with $n$. For extremely large $n$, it may not be as scalable as ECM.
+- Only five existing metrics are covered. Other geometries on $\mathrm{Cor}^+(n)$ with non-trivial curvature (e.g., quotient metrics or affine-invariant versions) have not been layered.
+- Experiments focus on traditional SPD benchmarks with moderate $n$ (signals/skeletons). Large-scale, image-level covariance/correlation tasks (e.g., visual second-order pooling) have not been explored.
+- Metrics must be manually specified. Future work could use hypernetworks or learned metrics to automatically select between ECM/LECM/OLM/LSM/PHCM.
+- PHCM uses a product of Poincaré balls, with the number of balls growing linearly with $n$. It may not be as scalable as ECM for extremely large $n$.
 
 ## Related Work & Insights
-- **vs. SPDNet series (Huang & Van Gool 2017, Brooks et al. 2019, Chen et al. 2024)**: While they develop geometric layers for the covariance side, this paper shifts to the correlation side. The advantage is that the correlation manifold has lower dimensionality and more geometric options, yielding significant gains for tasks like EEG and motion where diagonal variance is high. The disadvantage is the need to rebuild the metric catalog.
-- **vs. Poincaré Networks (Ganea et al. 2018, Shimizu et al. 2021)**: They develop layers on a single Poincaré ball; the PHCM portion of this paper effectively reuses these layers directly on the correlation manifold in product space $\mathrm{PPS}^{n-1}$ in a very clean geometric manner.
-- **vs. Unified manifold MLR (Chen et al. 2024c)**: They use Riemannian trigonometry to approximate hyperplane distances, whereas this paper provides a direct closed-form solution to Eq. (4) under Log-Euclidean metrics, avoiding approximation errors and resulting in a more organized structure.
-- **vs. Grassmann Networks (GrNet, GyroGr)**: Grassmann uses subspace representations, while this paper uses correlation structures. The latter retains more second-order statistical information, offering stronger discriminative power on long-sequence motions like HDM05/NTU120.
+- **vs. SPDNet series (Huang & Van Gool 2017, Brooks et al. 2019, Chen et al. 2024)**: While they build geometric layers for covariance, Ours moves to correlation. The advantages include lower dimensionality, more geometric options, and significant gains in tasks with high diagonal variation (e.g., EEG/Action). The disadvantage is the need to rebuild the metric catalog.
+- **vs. Poincaré networks (Ganea et al. 2018, Shimizu et al. 2021)**: They define layers on a single Poincaré ball. The PHCM part of Ours reuses this by applying it to the product space $\mathrm{PPS}^{n-1}$ on the correlation manifold.
+- **vs. Unified Manifold MLR (Chen et al. 2024c)**: They use Riemannian trigonometry to approximate hyperplane distances; Ours provides closed-form solutions (Eq. 4) under Log-Euclidean metrics, avoiding approximation errors.
+- **vs. Grassmann Networks (GrNet, GyroGr)**: Grassmann uses subspace representations; Ours uses correlation structures. The latter retains more second-order statistics, providing stronger discriminative power for long-sequence actions like in HDM05/NTU120.
 
 <!-- RELATED:START -->
 
@@ -120,10 +124,10 @@ Compared to the classic SPDNet, CorNets show gains of +5.15% / +17.69% / +6.58% 
 ## Related Papers
 
 - [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
-- [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](../../ICLR2026/others/condition_matters_in_full-head_3d_gans.md)
-- [\[ICLR 2026\] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry](../../ICLR2026/others/fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr.md)
 - [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
+- [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
+- [\[ICLR 2026\] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry](../../ICLR2026/others/fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr.md)
 
 </div>
 

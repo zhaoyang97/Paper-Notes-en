@@ -2,91 +2,91 @@
 title: >-
   [Paper Note] InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 description: >-
-  [CVPR 2026][Image Generation][e-commerce poster generation] This paper proposes InnoAds-Composer, a single-stage e-commerce poster generation framework built on MM-DiT. It maps three types of conditions — product subject…
+  [CVPR 2026][Image Generation][MM-DiT] InnoAds-Composer is proposed, a single-stage e-commerce poster generation framework based on MM-DiT. It maps product subjects, glyph texts, and background styles into a unified space via tokenization. By combining a Text Feature Enhancement Module (TFEM) and an importance-aware condition injection strategy, it achieves
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "e-commerce poster generation"
-  - "multi-condition composition"
-  - "MM-DiT"
-  - "text rendering"
-  - "condition importance analysis"
+  - CVPR 2026
+  - Image Generation
+  - MM-DiT
 date: 2026-05-08
-content_hash: aaf92a665bce2cb3
+content_hash: bc2ccacd2f834b38
 ---
-
 # InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.05898](https://arxiv.org/abs/2603.05898)  
-**Code**: N/A  
-**Area**: Image Generation / Controllable Generation
-**Keywords**: e-commerce poster generation, multi-condition composition, MM-DiT, text rendering, condition importance analysis
+**Code**: None  
+**Area**: Image Generation / Controllable Generation  
+**Keywords**: E-commerce Poster Generation, Multi-condition Composition, MM-DiT, Text Rendering, Condition Importance Analysis
 
 ## TL;DR
 
-This paper proposes InnoAds-Composer, a single-stage e-commerce poster generation framework built on MM-DiT. It maps three types of conditions — product subject, glyph text, and background style — into a unified token space via unified tokenization, and combines a Text Feature Enhancement Module (TFEM) with an importance-aware condition injection strategy to maintain high-quality generation while significantly reducing inference cost.
+InnoAds-Composer is proposed, a single-stage e-commerce poster generation framework based on MM-DiT. It maps product subjects, glyph texts, and background styles into a unified space via tokenization. By combining a Text Feature Enhancement Module (TFEM) and an importance-aware condition injection strategy, it achieves high-quality generation while significantly reducing inference overhead.
 
 ## Background & Motivation
 
-E-commerce poster generation must simultaneously satisfy **product fidelity, text accuracy, and style consistency**, yet existing methods exhibit notable shortcomings:
+E-commerce poster generation requires satisfying three objectives: **product fidelity, text accuracy, and style consistency**. However, existing methods have distinct limitations:
 
-**Unreliable multi-stage pipelines**: Approaches that first synthesize the scene and then render text suffer from style inconsistency and degraded subject fidelity.
+**Limitations of Prior Work**:
+- **Unreliable multi-stage pipelines**: Synthesizing the scene before rendering text leads to style inconsistencies and degraded subject fidelity.
+- **Difficulty in Chinese text rendering**: Single-stage methods struggle to accurately render complex scripts and small glyphs.
+- **Style control dependency on prompts**: Generations often deviate from global styles or semantic constraints.
+- **Scarcity of training data**: A lack of datasets containing joint annotations for subjects, text, and styles.
 
-**Difficulty rendering Chinese text**: Single-stage methods struggle to accurately render complex scripts and small glyphs.
-
-**Prompt-dependent style control**: Models easily drift from global style or semantic constraints.
-
-**Scarce training data**: No dataset with joint annotations covering subject + text + style exists.
-
-**Core gap**: No existing method can jointly and end-to-end control background style, product subject, and text within a single model, and concatenating multi-condition tokens causes quadratic complexity growth in attention.
+**Key Challenge**: Existing methods cannot jointly control background style, product subjects, and text end-to-end within a single model. Furthermore, concatenating multiple condition tokens leads to quadratic complexity expansion in attention mechanisms.
 
 ## Method
 
 ### Overall Architecture
 
-InnoAds-Composer is built on the MM-DiT backbone and comprises three core modules:
-- **Multi-Condition Tokenization**: Maps style/subject/glyph conditions into a unified token space.
-- **Importance-Aware Condition Injection**: Routes conditions to the most responsive layers and timesteps.
-- **Decoupled Attention**: Removes the redundant cross-attention path from condition queries to noise latent keys.
+E-commerce posters must balance product fidelity, text accuracy, and style unification. Previous approaches either used multi-stage pipelines (causing style disconnection) or single-stage models that failed at rendering small Chinese text. InnoAds-Composer adopts a single-stage approach built on the MM-DiT backbone. It unifies background style, product subjects, and glyph text via tokenization into a shared space. Based on the observation that "different conditions vary in importance across layers and timesteps," the model employs selective injection and prunes redundant attention paths to reduce inference costs without sacrificing quality.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A1["Background Style<br/>VAE Encoding + Anchor Prompt"] --> B
+    A2["Product Subject<br/>Black-filled Out-of-Subject + VAE Encoding"] --> B
+    A3["Glyph Text<br/>Whole Image + Single Character OCR Dual-branch"] --> B
+    B["Multi-condition Tokenization<br/>Style/Subject/Glyph mapped to same space (TFEM-encoded glyphs)"] --> C
+    C["Importance-aware Condition Injection<br/>Injecting conditions only at responding layers/steps"] --> D
+    D["Decoupled Attention<br/>Noise query→Condition key only; Condition activations are cacheable"] --> E
+    E["MM-DiT Denoising → E-commerce Poster Output"]
+```
 
 ### Key Designs
 
-1. **Multi-Condition Tokenization**
+**1. Multi-condition Tokenization: Mapping Style, Subject, and Glyph to a Unified Space**
 
-    - **Background style control**: A style image is VAE-encoded and patchified to obtain visual tokens $h^i$, or alternatively represented as text tokens $h^p$; $h^b = \mathcal{C}(h^i, h^{p_0})$, where $h^{p_0}$ is a fixed anchor prompt.
-    - **Product subject control**: Regions outside the subject are masked to black, then VAE-encoded to obtain $h^s$, suppressing background leakage.
-    - **Glyph control + TFEM**: A dual-branch design — Branch 1: full-image glyph VAE encoding yields $h^{c1}$; Branch 2: individual character crops are processed by an OCR backbone with triple positional encoding (absolute position, font size, local position) to yield $h^{c2}$; a lightweight character encoder fuses the two: $h^c = \mathbf{GlyphEnc}(h^{c1}, h^{c2})$.
+The three condition types differ significantly in form. Background style is processed via VAE encoding and patchification to obtain visual tokens $h^i$, or pure text tokens $h^p$, combined with a fixed anchor prompt $h^{p_0}$ as $h^b = \mathcal{C}(h^i, h^{p_0})$. For the product subject, the area outside the subject is filled with a black mask before VAE encoding to obtain $h^s$, suppressing background leakage at the source. For glyphs, the TFEM dual-branch is utilized: Branch 1 encodes the full glyph image via VAE for $h^{c1}$; Branch 2 crops individual characters through an OCR backbone and overlays triple position encodings (absolute position, font size, local position) for $h^{c2}$. Finally, a lightweight character encoder fuses them into $h^c = \mathbf{GlyphEnc}(h^{c1}, h^{c2})$, ensuring stability in rendering small and complex scripts.
 
-2. **Importance-Aware Condition Injection**
+**2. Importance-aware Condition Injection: Injecting Conditions Where Most Needed**
 
-   Attention weights from the fully-conditioned pretrained model are analyzed to extract per-layer $b$ and per-timestep $t$ condition importance:
+Concatenating all condition tokens throughout the sequence results in quadratic attention expansion. The authors diagnosed a pre-trained full-condition model by quantifying the importance of each condition type across layers $b$ and timesteps $t$:
 
-    $S_{ci}(b,t) = \mathbf{Mean}(A^{b,t,c} \odot mask_{ci})$
+$$S_{ci}(b,t) = \mathbf{Mean}(A^{b,t,c} \odot mask_{ci})$$
 
-   The analysis reveals a **non-uniform complementary pattern** across the three condition types: background style dominates early layers and early timesteps; the subject forms a high-intensity band in mid-to-deep layers; glyphs gradually increase in mid layers and later timesteps. Accordingly, condition tokens are injected only at the most responsive positions (retaining by default ~40% for style, ~50% for subject, ~20% for glyphs), substantially shortening effective sequence length.
+The results show non-uniform complementarity: background style dominates early layers/steps; the subject forms high-intensity bands in mid-to-deep layers; glyph importance increases from middle layers to late steps. Based on this, condition tokens are injected only at the most responsive positions (defaulting to 40% style, 50% subject, 20% glyph), drastically shortening the effective sequence.
 
-3. **Decoupled Attention**
+**3. Decoupled Attention: Removing the Redundant Condition → Noise Path**
 
-   The attention path from condition queries to noise keys is removed (as condition tokens evolve slowly, this path is redundant), retaining only the noise query → condition key path:
+Condition tokens evolve slowly during denoising, making the computation of condition queries attending to noise keys largely redundant. Thus, only the noise query $\to$ condition key path is retained:
 
-    $O_n = \mathbf{Attn}(Q_n, [K_n; K_{ci}], [V_n; V_{ci}])$
-    $O_{ci} = \mathbf{Attn}(Q_c, K_{ci}, V_{ci})$
+$$O_n = \mathbf{Attn}(Q_n, [K_n; K_{ci}], [V_n; V_{ci}])$$
+$$O_{ci} = \mathbf{Attn}(Q_c, K_{ci}, V_{ci})$$
 
-   The condition branch is timestep-independent, enabling its activations to be cached and reused.
+Consequently, the condition branch no longer depends on the timestep. Activations can be pre-computed and cached, with each inference step incurring only the cost of standard attention.
 
 ### Loss & Training
 
-**Two-stage training**: Stage I retains all condition tokens to train the complete poster generator; Stage II prunes tokens by importance and fine-tunes, with timestep sampling weighted by a quality distribution derived from the global importance map to mitigate performance degradation from pruning.
+**Two-stage Training**: Stage I trains the complete poster generator with all condition tokens. Stage II performs pruning based on token importance followed by fine-tuning. Timestep sampling is weighted according to the quality distribution of the global importance map to mitigate performance loss from pruning.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation on InnoComposer-Bench (300 samples):
+InnoComposer-Bench evaluation (300 samples):
 
 | Method | Sen. Acc↑ | NED↑ | DINO↑ | IoU↑ | CSD↑ | FID↓ |
-|--------|-----------|------|-------|------|------|------|
+|------|----------|------|-------|------|------|------|
 | Flux-Kontext | - | - | 0.831 | 0.793 | 0.573 | 76.76 |
 | PosterMaker | 0.765 | 0.848 | 0.916 | 0.954 | - | 60.55 |
 | Qwen-Image-Edit | 0.831 | 0.960 | 0.922 | 0.903 | 0.722 | 69.86 |
@@ -96,50 +96,50 @@ Evaluation on InnoComposer-Bench (300 samples):
 
 Efficiency comparison:
 
-| Method | Latency (s) | FLOPs (T) | Memory (G) |
-|--------|-------------|-----------|------------|
+| Method | Latency(s) | FLOPs(T) | Memory(G) |
+|------|-----------|----------|-----------|
 | Flux-Kontext | 76.02 | 218.45 | 55.29 |
 | Ours (Stage I) | 55.87 | 165.56 | 39.71 |
 | **Ours (Stage II)** | **47.32** | **135.25** | **39.41** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| w/o TFEM | Sen. Acc drops ~5% | Noticeable degradation in text rendering quality |
-| Random pruning vs. uniform pruning vs. importance pruning | Importance pruning greatly outperforms the other two | Glyphs tolerate ~80% pruning; subject ~50%; style ~60% |
-| Stage I vs. Stage II | Slight quality drop with large efficiency gain | Latency reduced by 37.8%, FLOPs by 38.1% |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| w/o TFEM | Sen. Acc drops ~5% | Text rendering quality significantly degrades |
+| Random vs Uniform vs Importance Pruning | Importance is significantly superior | Glyphs tolerate 80% pruning, Subject ~50%, Style ~60% |
+| Stage I vs Stage II | Quality slight drop, efficiency high gain | Latency reduced by 37.8%, FLOPs reduced by 38.1% |
 
 ### Key Findings
 
-- Stage I achieves the best performance on nearly all metrics, with FID 54.39 substantially outperforming all open-source and commercial competitors.
-- Stage II sacrifices minimal quality for ~40% inference acceleration, demonstrating the effectiveness of selective injection.
-- The dual-branch glyph encoding in TFEM is particularly critical for Chinese text rendering.
+- Stage I achieves the best performance across nearly all metrics, with an FID of 54.39 significantly outperforming open-source and commercial competitors.
+- Stage II trades minimal quality for nearly 40% inference acceleration, demonstrating the efficiency of selective injection.
+- The dual-branch glyph encoding of TFEM is critical for Chinese text rendering.
 
 ## Highlights & Insights
 
-- **Condition importance visualization**: The first systematic analysis of condition importance distributions across layers and timesteps in MM-DiT, revealing a non-uniform complementary pattern.
-- **Decoupled attention + condition caching**: The condition branch is timestep-independent, enabling precomputation and caching so that inference overhead amounts only to the main attention stream.
-- **Companion dataset InnoComposer-80K**: The first e-commerce poster dataset with joint annotations covering subject + text + style.
+- **Condition Importance Visualization**: Systematic analysis of importance distributions of different conditions across layers and timesteps in MM-DiT, revealing non-uniform complementary patterns.
+- **Decoupled Attention + Condition Caching**: The condition branch is timestep-independent and cacheable, ensuring inference overhead remains close to mainstream attention.
+- **Supportive Dataset InnoComposer-80K**: The first e-commerce poster dataset containing joint annotations for subject, text, and style.
 
 ## Limitations & Future Work
 
-- Training data is constructed via a synthetic pipeline; the diversity of background styles may be constrained by the quality of the generative model.
-- Importance analysis is based on fixed attention patterns from the fully-conditioned pretrained model; whether learnable dynamic routing is feasible warrants further exploration.
-- The framework has not been extended to video posters or dynamic content.
+- Training data is constructed via synthetic pipelines; background style diversity may be limited by the quality of the generative model.
+- Importance analysis is based on fixed attention patterns of pre-trained models; explore if dynamic routing can be learned.
+- Lack of extension to video posters or dynamic content.
 
 ## Related Work & Insights
 
-- **Flux series**: Provides the base text-to-image capability upon which this work builds multi-condition control.
-- **PosterMaker**: A prior poster generation method capable of producing subject + text but with poor style consistency.
-- **Seedream 4.0**: A closed-source commercial model with strong text capability but copy-paste-style style transfer.
+- **Flux Series**: Foundation models providing T2I capabilities; this work builds multi-condition control on top of it.
+- **PosterMaker**: Previous poster generation method; capable of subject+text but lacks style consistency.
+- **Seedream 4.0**: Closed-source commercial model; strong text capabilities but uses "copy-paste" style transfer.
 
 ## Rating
 
 - **Novelty**: ★★★★☆ — The combination of importance-aware injection and decoupled attention is innovative.
-- **Technical Depth**: ★★★★☆ — The condition analysis framework and TFEM design are thorough.
-- **Experimental Thoroughness**: ★★★★☆ — Multi-dimensional metrics, efficiency analysis, and ablations are provided, though the test set contains only 300 samples.
-- **Practicality**: ★★★★★ — Directly applicable to e-commerce scenarios with significant efficiency gains.
+- **Technical Depth**: ★★★★☆ — Comprehensive condition analysis system and TFEM design.
+- **Experimental Thoroughness**: ★★★★☆ — Multi-dimensional metrics, efficiency analysis, and ablations, though the test set is limited to 300 samples.
+- **Value**: ★★★★★ — Directly applicable to e-commerce scenarios with significant efficiency gains.
 
 <!-- RELATED:START -->
 
@@ -147,11 +147,11 @@ Efficiency comparison:
 
 ## Related Papers
 
+- [\[CVPR 2026\] SimplePoster: A Simple Baseline for Product Poster Generation](simpleposter_a_simple_baseline_for_product_poster_generation.md)
 - [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
-- [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_multimodal_layout_control.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
-- [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](../../ICLR2026/image_generation/condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
-- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
+- [\[CVPR 2026\] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation](dynfusion_rethinking_condition_fusion_for_adaptive_multi-conditional_text-to-ima.md)
+- [\[CVPR 2026\] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling](scone_bridging_composition_and_distinction_in_subject-driven_image_generation_vi.md)
+- [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)
 
 </div>
 

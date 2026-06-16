@@ -2,91 +2,112 @@
 title: >-
   [Paper Note] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 description: >-
-  [CVPR 2026][3D Vision][3D pose transfer] This paper proposes MimiCAT, a cascade Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with the million-scale m…
+  [CVPR 2026][3D Vision][Paper Note] This paper proposes MimiCAT, a cascaded Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with PokeAnimDB, a million-scale multi-category motion dataset, it achieves high-quality 3D pose transfer across categories (e.g., humanoid to quadruped/bird) for t
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D pose transfer"
-  - "cross-category transfer"
-  - "soft correspondence"
-  - "cascade Transformer"
-  - "large-scale motion dataset"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 60e03778b7ba01e0
+content_hash: 15bc2c5eab305ce2
 ---
-
 # MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.18370](https://arxiv.org/abs/2511.18370)  
 **Code**: [https://mimicat3d.github.io/](https://mimicat3d.github.io/) (Project Page)  
-**Area**: 3D Vision
-**Keywords**: 3D pose transfer, cross-category transfer, soft correspondence, cascade Transformer, large-scale motion dataset
+**Area**: 3D Vision  
+**Keywords**: 3D Pose Transfer, Cross-Category Transfer, Soft Correspondence, Cascade Transformer, Large-scale Motion Dataset
 
 ## TL;DR
-This paper proposes MimiCAT, a cascade Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with the million-scale multi-category motion dataset PokeAnimDB, it achieves, for the first time, high-quality cross-category 3D pose transfer (e.g., humanoid to quadruped/bird).
+This paper proposes MimiCAT, a cascaded Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with PokeAnimDB, a million-scale multi-category motion dataset, it achieves high-quality 3D pose transfer across categories (e.g., humanoid to quadruped/bird) for the first time.
 
 ## Background & Motivation
 
-1. **Background**: 3D pose transfer aims to apply the pose of a source character to a target character while preserving the target's geometric identity and the source's pose information. Existing methods are mostly limited to structurally similar characters (e.g., humanoid to robot), achieving transfer through learned one-to-one correspondences at the keypoint or vertex level.
+1.  **Background**: 3D pose transfer aims to apply the pose of a source character to a target character while preserving the target's geometric features and the source's pose information. Existing methods are mostly limited to characters with similar structures (e.g., humanoid to robot) and achieve transfer by learning one-to-one correspondences at the keypoint or vertex level.
 
-2. **Limitations of Prior Work**: When the body structures of source and target characters differ drastically (e.g., humanoid to bird), one-to-one mappings fail entirely. How should two arms correspond to two wings? Furthermore, existing methods predominantly rely on human motion datasets (e.g., AMASS), producing out-of-distribution and unnatural deformations on non-humanoid characters.
+2.  **Limitations of Prior Work**: When the body structures of source and target characters differ significantly (e.g., humanoid to bird), one-to-one mapping fails completely. For instance, how should limbs map to two wings? Furthermore, existing methods primarily rely on human motion datasets (e.g., AMASS), which often lead to unnatural out-of-distribution deformations on non-humanoid characters.
 
-3. **Key Challenge**: Characters across different categories have fundamentally different skeletal structures, keypoint counts, and rotation patterns, making traditional one-to-one keypoint mappings incapable of expressing the complex many-to-many correspondences involved. There is also a lack of large-scale datasets encompassing multi-type character animations.
+3.  **Key Challenge**: Different categories of characters possess distinct skeletal structures, keypoint counts, and rotation patterns. Traditional one-to-one keypoint mapping cannot represent these complex many-to-many correspondences. Additionally, there is a lack of large-scale datasets containing animations for diverse character types.
 
-4. **Goal**: (a) How to establish flexible correspondences between characters with vastly different structures? (b) How to obtain sufficiently diverse cross-category motion data for training? (c) How to ensure that generated pose transformations are physically plausible?
+4.  **Goal**: (a) How to establish flexible correspondences between characters with significant structural differences? (b) How to obtain sufficiently diverse cross-category motion data to train the model? (c) How to ensure the generated pose transformations are physically plausible?
 
-5. **Key Insight**: The authors observe that skeletal keypoints typically carry semantic labels (e.g., "limbs" can correspond to human "arms" and bird "wings"). Leveraging this semantic information circumvents the need for manual correspondence annotation; CLIP-encoded text labels can be used to generate many-to-many soft correspondence pseudo-labels.
+5.  **Key Insight**: It is observed that skeletal keypoints of characters usually carry semantic labels (e.g., "limbs" can correspond to human "arms" and bird "wings"). Utilizing this semantic information bypasses the need for manual correspondence labeling; CLIP is used to encode text labels to generate many-to-many soft correspondence pseudo-labels.
 
-6. **Core Idea**: Cross-category 3D pose transfer is achieved by combining semantic keypoint label-driven soft correspondence learning, a shape-aware cascade Transformer, and the million-scale multi-category motion dataset PokeAnimDB.
+6.  **Core Idea**: Achieving true cross-category 3D pose transfer through semantic keypoint label-driven soft correspondence learning, a shape-aware cascaded Transformer, and a million-scale multi-category motion dataset.
 
 ## Method
 
 ### Overall Architecture
-MimiCAT takes the posed mesh of a source character and the rest-pose mesh of a target character as input, and outputs a deformed mesh of the target character in the source pose. The pipeline consists of two stages: Stage I trains a correspondence Transformer $\mathcal{G}$ to learn a soft correspondence matrix between source and target keypoints; Stage II freezes $\mathcal{G}$ and trains a pose transfer Transformer $\mathcal{H}$ to generate the final transformation parameters for the target character via a cycle-consistency objective, followed by Linear Blend Skinning (LBS) to obtain the final mesh.
+The core problem MimiCAT addresses is how to "translate" the source pose to a target when structures differ vastly (Humanoid → Bird). The input consists of a source character mesh in a specific pose and a target character mesh in T-pose. The output is the target mesh deformed into the source pose.
+
+The process is divided into two stages executed by two consecutive Transformers. Stage I trains the **Correspondence Transformer $\mathcal{G}$**, which calculates a soft correspondence matrix between the source and target keypoint sets—not a "who-to-who" hard match, but a many-to-many probability distribution. Stage II freezes $\mathcal{G}$ and trains the **Pose Transfer Transformer $\mathcal{H}$**. The soft correspondence matrix is used to roughly map source rotations/translations to target keypoints for initial transformations. $\mathcal{H}$ then refines these transformations based on the target's own geometry. Finally, Linear Blend Skinning (LBS) applies these transformations to drive the entire mesh. Supervision for correspondences comes from pseudo-ground truth generated by text semantic labels, requiring no manual labeling. Multi-category training data is provided by the self-created PokeAnimDB.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Source pose mesh + Target T-pose mesh<br/>(with skeletal semantic names)"]
+    DB["PokeAnimDB<br/>975 characters / 4.4M multi-morph frames"]
+
+    subgraph SUP["Text-guided Pseudo-GT Correspondence (Supervision)"]
+        direction TB
+        T1["CLIP encode bone names → Cosine similarity matrix"]
+        T1 --> T2["Hungarian hard mapping + Sinkhorn soft matching"]
+    end
+
+    IN --> G["Correspondence Transformer G<br/>Coords+Shape features → Sinkhorn doubly stochastic soft correspondence M"]
+    SUP -->|Pseudo-GT constraint| G
+
+    G --> INIT["Correspondence-based transformation initialization<br/>M weighting + Frobenius rotation averaging"]
+    INIT --> H["Pose Transfer Transformer H<br/>Refine transformation with target geometry"]
+    H --> LBS["LBS-driven full mesh deformation"]
+    LBS --> OUT["Output: Target character mesh in source pose"]
+
+    DB -.Training data.-> G
+    DB -.Training data.-> H
+```
 
 ### Key Designs
 
-1. **PokeAnimDB: Large-Scale Multi-Category Motion Dataset**
-    - **Function**: Provides cross-category training data.
-    - **Mechanism**: Collects 28,809 high-quality artist-designed motions from 975 characters (including humanoids, quadrupeds, birds, reptiles, fish, insects, etc.) sourced from the web, totaling approximately 4.4 million frames. Each character is unified to a 5,000-face mesh, skeletal animations are stored in `.bvh` format, and bone semantic names are recorded.
-    - **Design Motivation**: Existing datasets (e.g., Mixamo, AMASS) are either limited to humanoid characters or contain only a small variety of character types. Cross-category transfer necessitates data covering diverse morphologies.
+**1. PokeAnimDB: A Million-Scale Multi-Morphology Dataset for Cross-Category Training**
 
-2. **Correspondence Transformer $\mathcal{G}$ (Soft Correspondence Learning)**
-    - **Function**: Estimates many-to-many soft correspondences between keypoint sets of different lengths.
-    - **Mechanism**: Keypoint coordinates are encoded via an MLP to produce keypoint tokens $g_{\mathbf{C}}$; a pretrained 3D shape encoder extracts geometric features to generate shape tokens $g_{\mathbf{M}}$. Both are concatenated and fed into Transformer blocks to learn shape-aware representations $\mathbf{g}^{\text{src}}$ and $\mathbf{g}^{\text{tgt}}$. A learnable affine matrix $\mathbf{A}$ is used to compute the similarity $\mathbf{S} = \exp(\mathbf{g}^{\text{src}\top}\mathbf{A}\mathbf{g}^{\text{tgt}})$, which is normalized via the Sinkhorn algorithm into a doubly stochastic matrix $\mathbf{M}$, where each $\mathbf{M}_{i,j}$ represents the soft matching probability between source keypoint $i$ and target keypoint $j$.
-    - **Design Motivation**: GNNs are abandoned (as they rely on skeletal connectivity priors that limit generalization) in favor of direct coordinate encoding. Shape features are incorporated to improve body-part discriminability. The doubly stochastic matrix produced by Sinkhorn naturally supports many-to-many matching, offering greater flexibility than the one-to-one Hungarian algorithm.
+The first barrier to cross-category transfer is data rather than models. Common datasets like Mixamo or AMASS are either humanoid-only or limited in variety, failing to teach models how non-humanoid structures like "wings" or "fins" move. The authors collected 975 characters spanning humanoids, quadrupeds, birds, reptiles, fish, and insects, resulting in 28,809 artist-designed animation sequences totaling ~4.4 million frames. Each character is remeshed to 5,000 faces, skeletal animations are stored as .bvh, and semantic bone names are preserved—which is crucial for the text-guided supervision. This is currently the largest motion library for multi-category 3D characters.
 
-3. **Correspondence-Based Transformation Initialization (with Quaternion Weighted Averaging)**
-    - **Function**: Maps source transformations to initial transformations for target keypoints using the soft correspondence matrix.
-    - **Mechanism**: For each target keypoint $j$, source translations and positions are aggregated via weighted averaging using $\mathbf{M}$. However, naive quaternion averaging yields non-unit rotations and sign ambiguities. A Frobenius-norm minimization-based rotation averaging is therefore adopted, whose solution is the eigenvector corresponding to the largest eigenvalue of the weighted covariance matrix $\sum_i \mathbf{M}_{i,j}\mathbf{q}_i\mathbf{q}_i^\top$.
-    - **Design Motivation**: Naive quaternion averaging produces distortions and flips (confirmed experimentally). Frobenius rotation averaging is mathematically rigorous and guarantees valid rotations.
+**2. Text-guided Pseudo-GT Correspondence: Bone Names as Cross-Category Bridges**
 
-4. **Pose Transfer Transformer $\mathcal{H}$ (Shape-Aware Pose Transfer)**
-    - **Function**: Refines the initialized transformations into final target transformations.
-    - **Mechanism**: Geometric features are injected into the target representation via cross-attention ($\delta_\mathbf{f} = \mathbf{f}_{\mathbf{V}^{\text{src}}} - \mathbf{f}_{\bar{\mathbf{V}}^{\text{src}}}$ encodes source deformation information), fused with target geometric features to produce shape-conditioned tokens. Keypoint tokens are formed by concatenating target keypoint positions, query positions, and initialized transformations, then projected via an MLP. Both token types are concatenated and fed into Transformer blocks; a final MLP decodes the transformation parameters for each keypoint, and LBS produces the final mesh.
-    - **Design Motivation**: Correspondence-based initialization alone is insufficient; the specific geometric constraints of the target character must be considered to refine the transformations.
+Training the correspondence Transformer requires "correct correspondences," but manual cross-category labeling is expensive and ambiguous. The authors leverage bone semantic names (e.g., `left_arm`, `right_wing`, `tail`) which naturally encode body part semantics. CLIP is used to encode these into text features to compute a cosine similarity matrix $\mathbf{S}_{\cos}$ between source and target keypoints. Two pseudo-ground truths are generated: a one-to-one hard mapping $\mathbf{M}_{\text{hung}}$ via the Hungarian algorithm (ensuring anchor points) and a many-to-many soft mapping $\mathbf{M}_{\text{sink}}$ via Sinkhorn normalization (allowing "limbs" to be distributed between "arm" and "wing"). Both constrain $\mathcal{G}$ to maintain flexibility without losing certainty.
 
-5. **Text-Guided Pseudo Ground-Truth Correspondences**
-    - **Function**: Provides training supervision for correspondence learning.
-    - **Mechanism**: CLIP encodes the semantic names of keypoints (e.g., "left_arm", "right_wing") to compute a cosine similarity matrix $\mathbf{S}_{\cos}$. The Hungarian algorithm yields a one-to-one hard matching $\mathbf{M}_{\text{hung}}$, while Sinkhorn yields a many-to-many soft matching $\mathbf{M}_{\text{sink}}$.
-    - **Design Motivation**: Manual annotation of correspondences is prohibitively expensive. The semantic bone names assigned by artists serve as a natural cross-category bridge.
+**3. Correspondence Transformer $\mathcal{G}$: Shape-Aware Estimation of Soft Correspondences**
+
+The challenge for $\mathcal{G}$ is outputting flexible matches between keypoint sets of different lengths. It first encodes keypoint coordinates into tokens $g_{\mathbf{C}}$ and mesh geometric features into shape tokens $g_{\mathbf{M}}$ using a pre-trained 3D shape encoder. These are concatenated and passed through Transformer blocks to obtain shape-aware representations $\mathbf{g}^{\text{src}}$ and $\mathbf{g}^{\text{tgt}}$. Unlike GNNs, which rely on skeletal connectivity and struggle with cross-category topological differences, this approach uses coordinates and shape features for better generalization. Similarity is given by a learnable affine matrix $\mathbf{A}$:
+
+$$\mathbf{S} = \exp\!\big(\mathbf{g}^{\text{src}\top}\mathbf{A}\,\mathbf{g}^{\text{tgt}}\big)$$
+
+This is normalized into a doubly stochastic matrix $\mathbf{M}$ via Sinkhorn iterations, where $\mathbf{M}_{i,j}$ represents the probability of matching source keypoint $i$ to target keypoint $j$. Doubly stochasticity allows one source point to be distributed across multiple target points, offering more flexibility than one-to-one mapping.
+
+**4. Correspondence-Based Transformation Initialization: Frobenius Solution for Rotation Averaging**
+
+With soft correspondence $\mathbf{M}$, the most direct approach is to weight and average source keypoint transformations onto target points. While translation and position can be linearly averaged, **rotations cannot**. Weighted sums of quaternions yield non-unit quaternions and suffer from sign ambiguity ($\mathbf{q}$ and $-\mathbf{q}$ represent the same rotation), leading to distortion. The authors adopt rotation averaging based on Frobenius norm minimization. The initial rotation for target point $j$ is the eigenvector corresponding to the largest eigenvalue of the weighted covariance matrix:
+
+$$\mathbf{R}_j = \sum_i \mathbf{M}_{i,j}\,\mathbf{q}_i\mathbf{q}_i^\top$$
+
+This ensures the resulting rotation is mathematically valid and unit-normalized, avoiding the ill-conditioned nature of naive averaging.
+
+**5. Pose Transfer Transformer $\mathcal{H}$: Geometry-Aware Transformation Refinement**
+
+Initialization only provides a "rough" transfer without considering the target's specific geometric constraints (e.g., a bird's joint limits differ from a human's). $\mathcal{H}$ performs refinement: it first encodes source deformation as a feature difference $\delta_\mathbf{f} = \mathbf{f}_{\mathbf{V}^{\text{src}}} - \mathbf{f}_{\bar{\mathbf{V}}^{\text{src}}}$, injecting it into the target representation via cross-attention. Keypoint tokens are formed by concatenating target keypoint positions, query positions, and initial transformations. The Transformer blocks fuse these, and an MLP decodes final transformation parameters for each keypoint to drive LBS.
 
 ### Loss & Training
 
-**Stage I**: Trains the correspondence Transformer $\mathcal{G}$ with joint optimization of the Frobenius loss $\mathcal{L}_{\text{forb}} = \|\mathbf{S} - \mathbf{S}_{\cos}\|_2^2 + \|\mathbf{M} - \mathbf{M}_{\text{sink}}\|_2^2 + \|\mathbf{M} - \mathbf{M}_{\text{hung}}\|_2^2$.
+**Stage I**: Trains Correspondence Transformer $\mathcal{G}$ optimizing a Frobenius loss $\mathcal{L}_{\text{forb}} = \|\mathbf{S} - \mathbf{S}_{\cos}\|_2^2 + \|\mathbf{M} - \mathbf{M}_{\text{sink}}\|_2^2 + \|\mathbf{M} - \mathbf{M}_{\text{hung}}\|_2^2$, aligning predicted similarity with text-based similarity, soft pseudo-GT, and hard pseudo-GT.
 
-**Stage II**: Freezes $\mathcal{G}$ and trains $\mathcal{H}$ with cycle-consistency. The reconstruction loss is $\mathcal{L}_{\text{rec}} = \|\hat{\mathbf{V}}^{\text{src}} - \mathbf{V}^{\text{src}}\|_2^2$; a pose prior regularization $\mathcal{L}_{\text{reg}}$ constrains rotation plausibility using a pretrained matrix-Fisher distribution model; a feature consistency loss $\mathcal{L}_{\text{feat}}$ enforces high-level geometric feature consistency of the reconstructed mesh.
-
-At inference, ARAP optimization is additionally applied to enhance mesh smoothness.
+**Stage II**: Freezes $\mathcal{G}$ and trains $\mathcal{H}$ using cycle-consistency. The reconstruction loss $\mathcal{L}_{\text{rec}} = \|\hat{\mathbf{V}}^{\text{src}} - \mathbf{V}^{\text{src}}\|_2^2$ ensures that transferring and then back-transferring restores the source. A pose prior regularization $\mathcal{L}_{\text{reg}}$ uses a pre-trained matrix-Fisher distribution model to constrain rotations. Feature consistency loss $\mathcal{L}_{\text{feat}}$ ensures high-level geometric consistency. During inference, an additional ARAP (As-Rigid-As-Possible) optimization is performed to enhance mesh smoothness.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setting | Method | PMD↓ (×100) | ELS↑ |
-|---------|--------|-------------|------|
-| H2H (Human to Human) | NPT | 6.334 | 0.842 |
+| Setup | Method | PMD↓ (×100) | ELS↑ |
+|------|------|-------------|------|
+| H2H (Humanoid-to-Humanoid) | NPT | 6.334 | 0.842 |
 | H2H | CGT | 5.687 | 0.887 |
 | H2H | SFPT | 3.616 | 0.888 |
 | H2H | TapMo | 5.078 | 0.877 |
@@ -99,40 +120,40 @@ At inference, ARAP optimization is additionally applied to enhance mesh smoothne
 
 ### Ablation Study
 
-| Configuration | PMD↓ (H2H) | PMD↓ (CCT) | Notes |
-|---------------|-----------|-----------|-------|
+| Configuration | PMD↓ (H2H) | PMD↓ (CCT) | Description |
+|------|-----------|-----------|------|
 | Full MimiCAT | 3.570 | 4.264 | Complete model |
-| A1: w/o rotation averaging (Eq. 4) | 4.439 | 4.524 | Naive equal-weight averaging causes directional ambiguity |
-| A2: w/o pose prior (Eq. 8) | 4.161 | 4.655 | Absence of prior regularization leads to unnatural deformations |
-| A3: w/o text supervision (Eq. 5) | 4.268 | 4.612 | Replaced by hierarchical correspondence; inaccurate mappings |
+| A1: w/o Rotation Avg (Eq.4) | 4.439 | 4.524 | Naive averaging leads to orientation ambiguity |
+| A2: w/o Pose Prior (Eq.8) | 4.161 | 4.655 | Lack of prior leads to unnatural deformation |
+| A3: w/o Text Supervision (Eq.5) | 4.268 | 4.612 | Using hierarchical correspondence yields inaccurate mapping |
 
 ### Key Findings
-- Rotation initialization (Eq. 4) is critical for cross-category transfer; removing it increases CCT PMD from 4.264 to 4.524.
-- Pose prior regularization (Eq. 8) prevents joint twisting and self-intersection; its removal yields the largest CCT PMD increase (4.655).
-- Text-guided semantic correspondences outperform heuristic hierarchical correspondence algorithms, which are prone to erroneous matchings (e.g., mapping a dog's hind legs to human arms).
-- The model can be zero-shot integrated into existing text-to-motion generation systems (e.g., MLD, T2M-GPT) to animate arbitrary characters.
+- Rotation initialization (Eq.4) is critical for cross-category transfer; removing it increases CCT PMD from 4.264 to 4.524.
+- Pose prior regularization (Eq.8) prevents joint distortion and self-intersection, with its absence causing the largest increase in cross-category PMD (4.655).
+- Text-guided semantic correspondence outperforms heuristic hierarchical algorithms, which tend to create wrong matches (e.g., matching a dog's hind leg to a human arm).
+- The model can be integrated zero-shot into existing text-to-motion systems (e.g., MLD, T2M-GPT) to generate animations for arbitrary characters.
 
 ## Highlights & Insights
-- **Semantic Label-Driven Soft Correspondence**: The method cleverly leverages the textual semantic names of bones combined with CLIP encoding to establish cross-category correspondences, requiring no manual annotation and supporting many-to-many matching. This paradigm is transferable to other tasks requiring cross-domain correspondence.
-- **Frobenius Rotation Averaging**: This technique resolves the mathematical ill-posedness of quaternion weighted averaging and is broadly applicable to any 3D task involving rotation aggregation.
-- **Million-Scale Diverse Dataset**: PokeAnimDB covers 4.4 million frames of animation across 975 character types, making it the largest multi-category 3D character motion dataset to date.
+- **Semantic Label-driven Soft Correspondence**: Cleverly leverages skeletal text names + CLIP encoding for cross-category alignment, eliminating manual labeling and supporting many-to-many matches. This concept is transferable to other cross-domain alignment tasks.
+- **Frobenius Rotation Averaging**: Solves the mathematical ill-conditioning of quaternion averaging, a technique valuable for any 3D task involving rotation aggregation.
+- **Million-scale Diversity Dataset**: PokeAnimDB covers 4.4 million frames across 975 characters, serving as the largest multi-category 3D character motion dataset.
 
 ## Limitations & Future Work
-- The method depends on the quality of a pretrained skeleton prediction model (RigNet), which may produce inaccurate skeletons for highly non-standard characters.
-- The "plausibility" of cross-category transfer lacks a precise definition; the evaluation metric (cycle-consistency) is a proxy measure.
-- ARAP optimization is still required at inference to ensure mesh quality, incurring additional computational overhead.
-- The copyright and licensing issues of the dataset sources are not sufficiently discussed.
+- Dependent on the quality of pre-trained rigging models (RigNet); skeletal prediction may fail for extremely non-standard characters.
+- "Plausibility" in cross-category transfer lacks a clear definition; evaluation metrics (like cycle consistency) serve as proxies.
+- Inference still requires ARAP optimization to ensure mesh quality, increasing computational overhead.
+- Copyright and licensing issues for data sources are not fully addressed.
 
 ## Related Work & Insights
-- **vs. SFPT**: SFPT uses a fixed number of handle points for one-to-one mapping and cannot handle cross-category scenarios with differing keypoint counts. MimiCAT's soft correspondences naturally support variable-length keypoints.
-- **vs. TapMo**: TapMo also adopts a handle-based approach and is constrained by the one-to-one correspondence assumption. MimiCAT significantly outperforms both in the cross-category setting.
-- **vs. NPT/CGT**: These methods are designed for similar topologies and degrade severely in cross-category scenarios.
+- **vs SFPT**: SFPT uses a fixed count of handle points for one-to-one mapping, failing in cross-category scenarios with varying keypoint counts. MimiCAT naturally supports variable-length keypoints.
+- **vs TapMo**: TapMo is also handle-based and restricted by one-to-one correspondence assumptions. MimiCAT significantly outperforms it in cross-category setups.
+- **vs NPT/CGT**: These methods are designed for similar topologies and suffer severe performance degradation in cross-category scenarios.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First systematic treatment of category-free 3D pose transfer; the soft correspondence + cascade Transformer design is well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluations cover both same-category and cross-category settings with complete ablations and downstream application demonstrations.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure, detailed method descriptions, and rich illustrations.
-- **Value**: ⭐⭐⭐⭐ The new dataset and method offer significant contributions to the fields of 3D animation and character transfer.
+- Novelty: ⭐⭐⭐⭐ First systematic solution for category-free 3D pose transfer with sound soft correspondence and cascaded Transformer design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on both intra-category and cross-category tasks with complete ablations and downstream applications.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, detailed methodology, and rich illustrations.
+- Value: ⭐⭐⭐⭐ The new dataset and method significantly advance the field of 3D animation and character transfer.
 
 <!-- RELATED:START -->
 
@@ -140,11 +161,11 @@ At inference, ARAP optimization is additionally applied to enhance mesh smoothne
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] Global-Aware Edge Prioritization for Pose Graph Initialization](global-aware_edge_prioritization_for_pose_graph_initialization.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
 - [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
-- [\[CVPR 2026\] MARCO: Navigating the Unseen Space of Semantic Correspondence](marco_semantic_correspondence.md)
 
 </div>
 

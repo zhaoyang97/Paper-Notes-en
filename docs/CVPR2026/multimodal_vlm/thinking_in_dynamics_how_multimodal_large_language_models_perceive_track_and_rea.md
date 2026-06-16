@@ -2,79 +2,88 @@
 title: >-
   [Paper Note] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 description: >-
-  [CVPR 2026][Multimodal VLM][4D dynamics] This paper proposes Dyn-Bench — a large-scale benchmark for dynamic understanding of the physical 4D world (1k videos, 7k VQA pairs…
+  [CVPR 2026][Multimodal VLM][4D dynamics] This paper introduces Dyn-Bench—a large-scale benchmark for dynamic understanding of the physical 4D world (comprising 1k videos, 7k VQA pairs, and 3k dynamic grounding pairs). It systematically evaluates the spatio-temporal reasoning capabilities of general-purpose, spatial-aware, and region-level MLLMs, revealing tha
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "4D dynamics"
-  - "Dyn-Bench benchmark"
-  - "spatio-temporal reasoning"
-  - "dynamic grounding"
-  - "MLLM evaluation"
+  - CVPR 2026
+  - Multimodal VLM
+  - 4D dynamics
+  - Dyn-Bench benchmark
+  - spatio-temporal reasoning
+  - dynamic grounding
+  - MLLM evaluation
 date: 2026-05-08
-content_hash: 419e17a9cc6c6486
+content_hash: 572b2a9fa01f2d98
 ---
-
 # Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12746](https://arxiv.org/abs/2603.12746)  
 **Code**: [https://dyn-bench.github.io/](https://dyn-bench.github.io/)  
-**Area**: Multimodal VLM / Video Spatio-Temporal Reasoning
+**Area**: Multimodal VLM / Video Spatio-temporal Reasoning  
 **Keywords**: 4D dynamics, Dyn-Bench benchmark, spatio-temporal reasoning, dynamic grounding, MLLM evaluation
 
 ## TL;DR
-This paper proposes Dyn-Bench — a large-scale benchmark for dynamic understanding of the physical 4D world (1k videos, 7k VQA pairs, 3k dynamic grounding pairs) — that systematically evaluates the spatio-temporal reasoning capabilities of general, spatial-aware, and region-level MLLMs. The study finds that existing models fail to maintain consistency between reasoning and grounding simultaneously, and introduces two structured integration methods, Mask-Guided Fusion and ST-TCM, that significantly improve dynamic perception.
+This paper introduces Dyn-Bench—a large-scale benchmark for dynamic understanding of the physical 4D world (comprising 1k videos, 7k VQA pairs, and 3k dynamic grounding pairs). It systematically evaluates the spatio-temporal reasoning capabilities of general-purpose, spatial-aware, and region-level MLLMs, revealing that existing models fail to maintain consistency between reasoning and grounding. The authors propose two structured integration methods, Mask-Guided Fusion and ST-TCM, to significantly enhance dynamic perception.
 
 ## Background & Motivation
 
-### State of the Field
-Humans inhabit a physical 4D world in which geometric structure and semantic content evolve over time. While current MLLMs demonstrate strong performance on static image understanding, their ability to comprehend dynamics in video — i.e., perceiving, tracking, and reasoning about spatio-temporal dynamics — has not been systematically evaluated.
+### Background
+Humans inhabit a physical 4D world where geometric structures and semantic content evolve over time. While current Multimodal Large Language Models (MLLMs) excel at static image understanding, their capacity to comprehend dynamic sequences—specifically perceiving, tracking, and reasoning about spatio-temporal dynamics in videos—has not been systematically assessed.
 
 ### Limitations of Prior Work
-1. No benchmark specifically evaluates MLLMs' spatio-temporal reasoning in **dynamic 4D scenes** — existing video QA datasets primarily focus on event description rather than spatial dynamics.
-2. Existing models exhibit **inconsistency** between spatio-temporal reasoning and dynamic object grounding — a model may correctly answer "the ball moved to the left" yet fail to accurately localize the motion trajectory in the video.
-3. Conventional prompting strategies (e.g., CoT, caption-based hints) yield limited improvements for dynamic reasoning.
+1. **Lack of specialized benchmarks**: Existing video QA datasets primarily focus on event descriptions rather than the spatio-temporal reasoning required for **dynamic 4D scenes**.
+2. **Inconsistency in existing models**: Models exhibit a gap between spatio-temporal reasoning and dynamic object grounding; for instance, a model might correctly state "the ball moved left" but fail to accurately box its trajectory in the video.
+3. **Limited effectiveness of prompting**: Traditional strategies such as Chain-of-Thought (CoT) or caption-based hints provide marginal improvements for dynamic reasoning.
 
-### Root Cause
-Success in static image understanding does not transfer directly to dynamic scenes — spatio-temporal dynamics involve complex reasoning over motion trajectories, object interactions, and physical causality, necessitating dedicated modeling.
+### Key Challenge
+Success in static image understanding does not directly transfer to dynamic scenarios. Spatio-temporal dynamics involve complex reasoning regarding motion trajectories, object interactions, and physical causality, necessitate dedicated modeling approaches.
 
 ### Core Idea
-Dyn-Bench is constructed to evaluate MLLMs' dynamic understanding across multiple dimensions (linguistic reasoning + visual grounding), and two structured integration methods (Mask-Guided Fusion + ST-TCM) are proposed to enhance dynamic perception.
+The goal is to construct the Dyn-Bench benchmark to evaluate MLLM dynamic understanding across multiple dimensions (linguistic reasoning + visual grounding) and to propose structured integration methods (Mask-Guided Fusion + ST-TCM) to augment dynamic perception.
 
 ## Method
 
 ### Overall Architecture
-The Dyn-Bench construction pipeline processes large-scale 2D (video) and 4D (point cloud sequence) data sources through a multi-stage filtering procedure to obtain a high-quality collection of dynamic scenes. Evaluation covers two primary tasks:
-1. **Spatio-Temporal VQA**: answering spatio-temporal reasoning questions about dynamic events (7k pairs).
-2. **Dynamic Object Grounding**: localizing objects participating in dynamic interactions within video frames (3k pairs).
+This work addresses a question often obscured by static image performance: Can MLLMs truly perceive, track, and reason about dynamics evolving in a 4D physical world? To answer this, the authors first establish the Dyn-Bench "yardstick" and then propose two structured integration methods to address identified weaknesses. Starting from eight 2D video segmentation and 4D dynamic scene sources, Dyn-Bench utilizes a pipeline involving "multimodal completion → multi-criteria filtering → structured cognitive map-assisted generation" to curate high-quality dynamic scenes. Evaluation is decomposed into three complementary levels (dynamic inter-object perception, dynamic object-scene tracking, and dynamic camera-object reasoning). Each level includes paired Spatio-Temporal VQA (7k pairs for "correctness") and Dynamic Object Grounding (3k pairs for "precision"), bridged by a new "reasoning-grounding consistency" metric. To improve performance, dynamic cues are injected via two channels: Mask-Guided Fusion (MGF) blends masks with original frames at the visual end, while ST-TCM textualizes dynamics at the language end, both serving as inputs to the MLLM to boost spatio-temporal reasoning and localization.
+
+```mermaid
+graph TD
+    subgraph BUILD["Multi-stage Construction Pipeline"]
+        direction TB
+        A["8 2D/4D Data Sources<br/>Instance Mask, Depth, Camera Pose"] --> B["Multimodal Completion<br/>Backfilling missing geometric/mask labels"]
+        B --> C["Multi-criteria Filtering<br/>Geometric stability, motion smoothness, clarity, depth consistency<br/>+ VLM scoring + Human review"]
+        C --> D["ST-TCM Assisted Generation<br/>(Qwen3-VL generates QA)"]
+    end
+    D --> E["Dyn-Bench: 1k videos / 7k VQA / 3k grounding<br/>Three Levels x (VQA + Grounding) + Consistency Metrics"]
+    E --> F{"Structured Integration"}
+    F -->|Visual Channel| G["Mask-Guided Fusion: Original frame + Mask fusion"]
+    F -->|Language Channel| H["ST-TCM: Textualized Dynamic Cognitive Map"]
+    G --> I["MLLM Inference"]
+    H --> I
+    I --> J["Output VQA Answer + Dynamic Grounding<br/>→ Reasoning-Grounding Consistency Evaluation"]
+```
 
 ### Key Designs
 
-#### 1. Dyn-Bench Data Construction (Multi-stage Filtering Pipeline)
-- **Function**: Filters genuinely dynamic interactive scenes from multi-source video/4D data including Ego4D and RealWorld-4D.
-- **Mechanism**: Three-stage filtering — (a) motion detection to remove static scenes; (b) semantic diversity filtering to eliminate repetitive actions; (c) manual annotation quality control.
-- **Design Motivation**: Existing video datasets contain substantial "pseudo-dynamic" content (e.g., camera motion with a static scene), requiring careful selection of authentic object dynamics.
+**1. Dyn-Bench’s Three-Level x Dual-Task Evaluation & Consistency Metric: Aligning "Correct Reasoning" with "Accurate Pointing"**
 
-#### 2. Mask-Guided Fusion (MGF)
-- **Function**: Fuses segmentation masks with video frames to direct MLLMs' attention toward specific dynamic objects.
-- **Mechanism**: Segmentation masks of objects (highlighting moving objects) are overlaid onto video frames and provided as an additional visual input channel.
-- **Design Motivation**: MLLMs are prone to background distraction when processing full-frame video; mask guidance explicitly focuses attention on dynamic objects.
-- **Effect**: MGF significantly improves grounding accuracy compared to unguided standard input.
+Existing video QA benchmarks often stop at scene-level event descriptions and lack fine-grained evaluation centered on "dynamic objects." Dyn-Bench decomposes dynamic understanding into three complementary levels: dynamic inter-object perception (spatial relations and interactions like approaching or overtaking), dynamic object-scene tracking (object motion and temporal evolution within a scene), and dynamic camera-object reasoning (object behavior under camera motion). Each level features paired tasks: Spatio-Temporal VQA tests reasoning via natural language, while Dynamic Object Grounding requires the model to delineate the queried object using instance masks. A key innovation is the "reasoning-grounding consistency" metric: if a model answers the VQA correctly but fails the grounding, it is penalized for inconsistency. This quantifies the disconnect where models can "describe" but not "locate" dynamics—a core weakness identified across general, spatial, and region-level MLLMs.
 
-#### 3. Spatio-Temporal Textual Cognitive Map (ST-TCM)
-- **Function**: Converts spatio-temporal video dynamics into a structured cognitive map in text form as auxiliary input to the MLLM.
-- **Mechanism**: ST-TCM comprises: (a) per-frame object position coordinates; (b) inter-frame motion trajectory descriptions; (c) changes in spatial relationships between objects. This information is concatenated into the prompt as structured text.
-- **Design Motivation**: Transforms implicit visual dynamic information into a textual format that LLMs are adept at processing, thereby reducing the difficulty of cross-modal reasoning.
+**2. Multi-stage Construction Pipeline: Filtering True Dynamics and Automated Question Generation**
 
-### Evaluation Protocol
-- Five categories of MLLMs are evaluated: general-purpose (GPT-4o, Gemini), spatial-aware (SpatialVLM), region-level (RegionGPT), and others.
-- Dual-dimension evaluation: VQA accuracy + Grounding IoU.
-- Reasoning–grounding consistency is examined: cases where VQA answers are correct but grounding is incorrect are flagged as "inconsistent."
+Benchmarks are prone to "pseudo-dynamics" where camera motion creates an illusion of movement in a static scene, allowing models to cheat via background cues. Dyn-Bench ensures quality through a multi-stage pipeline: it aggregates videos from four 2D segmentation datasets (DAVIS, SA-V, DynPose-100K, YouTube-VIS) and four 4D dynamic datasets (DynamicReplica, PointOdyssey, Spring, Total-Recon) featuring masks, depth, and poses. Missing annotations are backfilled via multimodal completion. A rigorous filtering strategy—considering geometric stability, motion smoothness, and depth consistency, alongside VLM scoring—removes low-quality clips. Finally, ST-TCM and Qwen3-VL automatically generate paired VQA and grounding tasks, ensuring the benchmark tests true dynamic understanding.
+
+**3. Mask-Guided Fusion (MGF): Focusing Visual Attention on Dynamic Objects**
+
+Failures often occur at the visual end when models cannot distinguish moving targets in complex frames. MGF fuses target object masks with original frames before feeding them to the MLLM. Unlike "Masked Frames Only" variants that lose appearance data, MGF preserves both visual context and motion localization cues, effectively "highlighting" the focus at the pixel level. Experiments on Qwen3-VL-8B show that while simple masking has limited benefits, MGF provides gains across all tasks, particularly in "inter-object" and "camera-object" reasoning, confirming that grounding bottlenecks often stem from not knowing "where to look."
+
+**4. Spatio-Temporal Textual Cognitive Map (ST-TCM): Translating Visual Dynamics for LLMs**
+
+Cross-modal reasoning is a second bottleneck; LLM backbones struggle to extract spatio-temporal relations directly from raw visual features. ST-TCM constructs a structured textual map for each video. Using RGB-D and masks, it reconstructs 3D trajectories and organizes them into a JSON format: each frame records camera pose, depth statistics, object positions/motion (velocity, direction), and inter-object relationships (e.g., "approaching" with distance). Including this map in the prompt translates implicit visual facts into symbols the LLM can process. Ablations show that "motion + spatial geometry" cues yield the highest gains, complementing the visual-heavy MGF. ST-TCM is central to both the dataset construction and inference enhancement.
 
 ## Key Experimental Results
 
-### Main Results: Comparison of MLLM Dynamic Understanding
+### Main Results: MLLM Dynamic Understanding Comparison
 
 | Model | VQA Acc (%) | Grounding IoU (%) | Consistency (%) |
 |-------|-------------|-------------------|-----------------|
@@ -85,7 +94,7 @@ The Dyn-Bench construction pipeline processes large-scale 2D (video) and 4D (poi
 | + ST-TCM | 59.1 | 38.5 | 44.8 |
 | + MGF + ST-TCM | **61.3** | **44.2** | **48.5** |
 
-### Ablation Study: Prompting Strategy Comparison
+### Prompting Strategy Comparison
 
 | Prompting Strategy | VQA Acc (%) | Grounding IoU (%) |
 |--------------------|-------------|-------------------|
@@ -96,45 +105,46 @@ The Dyn-Bench construction pipeline processes large-scale 2D (video) and 4D (poi
 | **ST-TCM** | **59.1** | **38.5** |
 
 ### Key Findings
-- **Existing MLLMs cannot excel at both reasoning and grounding simultaneously** — GPT-4o achieves relatively high VQA accuracy (62.3%) but an extremely low grounding IoU (28.5%), revealing a severe inconsistency between what the model "says" and what it "points to."
-- **Conventional prompting is nearly ineffective** — CoT and caption hints yield improvements of less than 2%, indicating that dynamic understanding cannot be resolved by simply adding reasoning steps.
-- **Structured integration methods are effective** — MGF and ST-TCM inject dynamic information through visual and textual channels respectively, yielding significant gains.
-- **Spatial-aware models do not guarantee dynamic understanding** — SpatialVLM performs strongly on static spatial reasoning but exhibits unstable performance in dynamic scenes.
+- **Existing MLLMs struggle with simultaneous reasoning and grounding**: While GPT-4o achieves high VQA accuracy (62.3%), its grounding IoU is very low (28.5%), indicating a severe inconsistency between "saying" and "pointing."
+- **Traditional prompting is largely ineffective**: CoT and caption hints provide less than a 2% improvement, suggesting dynamic understanding is not solvable by merely "thinking more."
+- **Structured integration is effective**: MGF and ST-TCM successfully inject dynamic information via visual and textual channels, respectively.
+- **Spatial awareness does not guarantee dynamic understanding**: Models like SpatialVLM perform well in static spatial tasks but remain unstable in dynamic scenarios.
 
 ## Highlights & Insights
-- **A profound framing of "Thinking in Dynamics"** — examining MLLMs from the perspective of the physical 4D world, transcending the conventional video QA paradigm.
-- **Reasoning–grounding consistency evaluation** — the first systematic quantification of the gap between MLLMs' "understanding" and "localization" capabilities.
-- **Structured information injection substantially outperforms prompting** — suggesting that the bottleneck in dynamic understanding lies in "information acquisition" rather than "reasoning capability."
-- **Multi-source construction strategy for Dyn-Bench** — combining 2D video and 4D point cloud data ensures the authenticity and diversity of dynamic scenes.
+- **The "Thinking in Dynamics" Proposition**: This work goes beyond traditional video QA by scrutinizing MLLMs through the lens of the physical 4D world.
+- **Reasoning-Grounding Consistency**: It provides the first systematic quantification of the gap between an MLLM's internal "understanding" and its spatial "localization."
+- **Information Injection over Prompting**: The results suggest the bottleneck for dynamic understanding lies in "information acquisition" rather than "reasoning capacity."
+- **Multi-source Construction Strategy**: Combining 2D video and 4D point cloud data ensures both the authenticity and diversity of dynamic scenes in Dyn-Bench.
 
 ## Limitations & Future Work
-- Dyn-Bench is relatively small in scale (1k videos), which may be insufficient for training specialized models.
-- ST-TCM relies on pre-extracted object position and trajectory information, requiring external trackers/detectors.
-- Closed-loop scenarios (e.g., dynamic reasoning in robotic manipulation) are not evaluated.
-- Grounding evaluation relies solely on bounding box IoU, without considering finer-grained pixel-level or 3D spatial localization.
+- The scale of Dyn-Bench (1k videos) is relatively small for training dedicated large-scale models.
+- ST-TCM relies on pre-extracted object positions and trajectories, requiring external trackers/detectors.
+- Lack of evaluation in closed-loop scenarios, such as dynamic reasoning during robotic manipulation.
+- Grounding is limited to bbox IoU, without considering pixel-level or 3D spatial localization.
 
 ## Related Work & Insights
-- **vs. VideoChat/Video-LLaMA**: These works focus on video dialogue but do not evaluate structured spatio-temporal reasoning.
-- **vs. EgoPlan-Bench**: EgoPlan targets first-person perspective planning, whereas Dyn-Bench more broadly covers third-person dynamic scenes.
-- **Insights**: The MGF and ST-TCM approaches can be generalized to autonomous driving scene understanding — textualizing sensor information as auxiliary input to MLLMs.
+- **vs. VideoChat/Video-LLaMA**: Those works focus on video dialogue but do not evaluate structured spatio-temporal reasoning.
+- **vs. EgoPlan-Bench**: EgoPlan focuses on first-person planning; Dyn-Bench covers broader third-person dynamic scenes.
+- **Insight**: The logic of MGF and ST-TCM can be extended to autonomous driving, where textualizing sensor data can serve as an auxiliary input for MLLM scene understanding.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The first systematic evaluation of MLLMs from the perspective of physical 4D world dynamics; both the framing and methodology are pioneering.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model and multi-strategy comparisons are comprehensive, though the dataset scale is relatively limited.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is insightful and experimental analysis is thorough.
-- Value: ⭐⭐⭐⭐⭐ Dyn-Bench fills a critical gap in dynamic evaluation of MLLMs; the reasoning–grounding consistency analysis is highly informative.
+- Novelty: ⭐⭐⭐⭐⭐ Pioneering systematic evaluation of MLLMs from a 4D dynamic perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive cross-model comparison, though dataset scale is limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definitions and detailed analysis.
+- Value: ⭐⭐⭐⭐⭐ Dyn-Bench fills a gap in MLLM evaluation; the consistency analysis is highly influential for future research.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
 - [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
 - [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models](flowhijack_dynamics_aware_backdoor_attack_on_flow_matching_vla_models.md)
-- [\[ICML 2026\] Vision Language Models Cannot Reason Physical Transformations](../../ICML2026/multimodal_vlm/vision_language_models_cannot_reason_about_physical_transformation.md)
-- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](../../ICML2026/multimodal_vlm/dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
+- [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
 
 </div>
 

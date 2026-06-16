@@ -2,132 +2,146 @@
 title: >-
   [Paper Note] CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Deep research reports] CogGen proposes a multi-agent recursive framework simulating the human cognitive writing process. It implements global restructuring through macro-cognitive loops…
+  [ACL 2026][Multimodal VLM][Multi-Agent] CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. Through a Macro-Cognitive Loop for global restructuring, a Micro-Cognitive Cycle for parallel section refinement, and Abstract Visual Representation (AVR) for semantic-level text-chart coordination, it achieves human-e
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Deep research reports"
-  - "recursive writing framework"
-  - "multimodal fusion"
-  - "cognitive load assessment"
-  - "multi-agent"
+  - ACL 2026
+  - Multimodal VLM
+  - Multi-Agent
 date: 2026-05-08
-content_hash: 46512bd09ac0bb13
+content_hash: acbc56e0d37668ed
 ---
-
 # CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17072](https://arxiv.org/abs/2604.17072)  
 **Code**: [GitHub](https://github.com/NJUNLP/CogGen)  
 **Area**: Multimodal VLM  
-**Keywords**: Deep research reports, recursive writing framework, multimodal fusion, cognitive load assessment, multi-agent
+**Keywords**: Deep Research Report, Recursive Writing Framework, Multimodal Fusion, Cognitive Load Assessment, Multi-agent  
 
 ## TL;DR
-CogGen proposes a multi-agent recursive framework simulating the human cognitive writing process. It implements global restructuring through macro-cognitive loops, parallel chapter refinement through micro-cognitive cycles, and semantic-level text-chart collaborative planning via Abstract Visual Representation (AVR). It reaches human expert levels on the OWID benchmark and outperforms Gemini Deep Research.
+CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. Through a Macro-Cognitive Loop for global restructuring, a Micro-Cognitive Cycle for parallel section refinement, and Abstract Visual Representation (AVR) for semantic-level text-chart coordination, it achieves human-expert performance on the OWID benchmark and outperforms Gemini Deep Research.
 
 ## Background & Motivation
 
-**Background**: Automated deep research report generation is a frontier application for LLMs. Existing solutions consist of single-agent systems (e.g., Gemini Deep Research) and multi-agent frameworks (e.g., STORM, Co-STORM), all of which follow linear predefined workflows.
+**Background**: Automated deep research report generation is a frontier application for LLMs. Existing solutions are categorized into single-agent systems (e.g., Gemini Deep Research) and multi-agent frameworks (e.g., STORM, Co-STORM), all of which typically follow linear predefined workflows.
 
-**Limitations of Prior Work**: Linear workflows cannot backtrace or modify content once generated—when downstream findings invalidate upstream organizational logic, "reverse restructuring" is impossible. Additionally, the generation of text and charts is typically asynchronous and decoupled, resulting in charts acting as mere illustrations rather than organic components of the argumentation.
+**Limitations of Prior Work**: Linear workflows cannot backtrack to modify content once generated—if downstream processes discover flaws in the initial organizational logic, "reverse restructuring" is impossible. Furthermore, text and chart generation are usually asynchronous and decoupled, resulting in charts being mere illustrations rather than organic components of the argument.
 
-**Key Challenge**: Writing by experts is a non-linear recursive process (plan → write → review → restructure → rewrite), whereas existing AI writing frameworks are linear forward processes, failing to achieve global consistency across chapters and deep text-chart synergy.
+**Key Challenge**: Expert writing is a non-linear recursive process (plan → write → review → restructure → rewrite), whereas existing AI writing frameworks are linear forward processes, failing to achieve global consistency across sections and deep text-chart synergy.
 
-**Goal**: Construct a recursive report generation framework that supports global restructuring and multimodal semantic-level collaboration.
+**Goal**: To build a recursive report generation framework that supports global restructuring and multimodal semantic-level coordination.
 
-**Key Insight**: Design a framework based on Flower & Hayes' cognitive process theory of writing and Cognitive Offloading theory.
+**Key Insight**: Design the framework based on Flower & Hayes’ cognitive process theory of writing and the theory of Cognitive Offloading.
 
-**Core Idea**: A hierarchical recursive architecture (Macro-loop for global restructuring + Micro-cycle for chapter refinement) and Abstract Visual Representation (AVR) to decouple chart generation from reasoning.
+**Core Idea**: A hierarchical recursive architecture (Macro loop for global restructuring + Micro loop for section refinement) combined with Abstract Visual Representation to decouple chart generation from reasoning.
 
 ## Method
 
 ### Overall Architecture
-CogGen consists of three peer cognitive agents: Planner (retrieval + structural planning), Writer (text writing + visual intent definition), and Reviewer (real-time monitoring + post-evaluation). The macro-cognitive loop recurses at the global report level: plan → write → review → feedback → re-plan. The micro-cognitive cycle executes a Search-Replan-Write loop in parallel at the chapter level.
+CogGen consists of three peer cognitive agents: Planner (retrieval + structural planning), Writer (text writing + visual intent definition), and Reviewer (real-time monitoring + post-evaluation). The Macro-Cognitive Loop recurses at the global report level: planning → writing → reviewing → feedback → re-planning. The Micro-Cognitive Cycle executes a "Search-Replan-Write" loop in parallel at the section level, where each thread treats the global outline as a read-only constraint; during writing, Abstract Visual Representation (AVR) outputs the semantic intent of charts, which is then rendered by a Renderer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["User Question Q"] --> P["Planner: Retrieval + Outline Generation O"]
+    P --> MICRO
+    subgraph MICRO["Micro-Cognitive Cycle (Section-level Parallelism)"]
+        direction TB
+        W["Writer Multi-threading<br/>Search → Replan → Write (Outline frozen as read-only)"]
+        W --> AVR["Abstract Visual Representation (AVR)<br/>Output Semantic Intent: Type/X/Y/Source/Purpose"]
+        AVR --> RD["Renderer Agent<br/>Render ECharts / Mermaid Charts"]
+        W -->|Cross-section Conflict| DEF["Deferred Update Policy<br/>Suspend conflicts for global arbitration"]
+    end
+    MICRO --> DRAFT["Complete Draft: Text + Charts"]
+    DRAFT --> REV["Reviewer: Evaluate Draft + Feedback Δ"]
+    REV -->|Outline Stable / Self-consistent| OUT["Final Output"]
+    REV -->|Macro-Cognitive Loop: Revise outline per Δ, accept only if monotonic improvement| P
+```
 
 ### Key Designs
 
-1.  **Macro-Cognitive Loop**:
+**1. Macro-Cognitive Loop: Treating the outline as a mutable object to solve the "locked-in" content issue of linear workflows.**
 
-    - **Function**: Enables global reverse restructuring to solve the "forward-locking" problem of linear workflows.
-    - **Mechanism**: Treats the outline $\mathcal{O}$ as a mutable object rather than a fixed plan. In each iteration, the Planner generates the outline → Writer generates chapter drafts in parallel → Reviewer evaluates the complete draft and generates feedback $\Delta^{(t)}$ → Planner revises the outline $\mathcal{O}^{(t+1)} = A_p(Q, \{\mathcal{O}^{(t)}, \Delta^{(t)}\}|K)$. A strict monotonic improvement constraint is designed to accept updates only when the Reviewer verifies distinct quality gains, preventing infinite oscillation.
-    - **Design Motivation**: Human writing is recursive—completing the latter half often leads to modifying the organizational logic of the first half. This ability is crucial for generating high-quality long documents.
+Existing report generation solutions (STORM, Gemini Deep Research, etc.) use linear forward flows—once an outline is set and content written, there is no going back. In real writing, discoveries made in later stages often necessitate restructuring the earlier parts. CogGen treats the outline $\mathcal{O}$ as a mutable object rather than a fixed plan, allowing global recursive iteration: each round the Planner generates an outline → Writer creates section drafts in parallel → Reviewer evaluates the full draft and produces feedback $\Delta^{(t)}$ → Planner revises the outline accordingly:
 
-2.  **Micro-Cognitive Cycle**:
+$$\mathcal{O}^{(t+1)} = A_p\!\left(Q,\ \{\mathcal{O}^{(t)}, \Delta^{(t)}\}\,\middle|\,K\right)$$
 
-    - **Function**: Generates chapter content in parallel while ensuring cross-chapter consistency.
-    - **Mechanism**: Multiple threads execute "Search → Re-plan → Write" cycles in parallel, with each thread using the global outline $\mathcal{O}^{(t)}$ as a read-only constraint. Chapter-specific retrieval results are stored in local thread caches. Cross-chapter conflicts are not resolved locally but deferred to the Reviewer for unified arbitration in the macro-loop (Deferred Update Policy), avoiding context oscillation issues seen in serial revisions.
-    - **Design Motivation**: Parallel generation improves efficiency, but needs to resolve recursive modification traps where modifying one section to accommodate another leads to a cycle of endless updates.
+Crucially, a strict monotonic improvement constraint is applied: a new outline is only accepted if the Reviewer verifies a clear improvement in quality; otherwise, the previous version is retained to prevent infinite oscillation between two plans. This reverse restructuring capability enables CogGen to produce global consistency in long documents.
 
-3.  **Abstract Visual Representation (AVR)**:
+**2. Micro-Cognitive Cycle: Parallel section writing without falling into "recursive traps" of inter-dependent revisions.**
 
-    - **Function**: Achieves semantic-level collaborative planning of text and charts rather than post-hoc insertion.
-    - **Mechanism**: The Writer generates structured semantic descriptions (Title, Chart_Type, X/Y_Axis, Data_Source, Purpose) instead of executable code. A Renderer Agent translates these semantic intents into ECharts/Mermaid code and renders them in a headless browser. This allows the Writer to iteratively modify the visual plan like "semantic tokens" without dealing with pixel-level details.
-    - **Design Motivation**: Based on Cognitive Offloading theory—separating visual design decisions from writing reasoning reduces the Writer's cognitive load, allowing focus on narrative logic.
+While parallel generation improves speed, it risks "context oscillation" where modifying Section A to fit Section 5 triggers a subsequent update to Section 5. CogGen runs the "Search-Replan-Write" cycle in parallel threads, treating the global outline $\mathcal{O}^{(t)}$ as a read-only constraint and storing retrieval results in local thread caches to avoid interference.
+
+The core innovation is the Deferred Update Policy: cross-section conflicts are not resolved locally but are deferred to the Reviewer for unified arbitration in the Macro-Cognitive Loop. This ensures local threads always write based on the same frozen outline, effectively avoiding context oscillation.
+
+**3. Abstract Visual Representation (AVR): Planning charts and text at the semantic level rather than appending figures post-hoc.**
+
+Unlike traditional methods where text and charts are generated asynchronously, AVR ensures Writer does not output executable drawing code directly. Instead, it generates structured semantic descriptions (Title, Chart_Type, X/Y_Axis, Data_Source, Purpose). A separate Renderer Agent translates this semantic intent into ECharts/Mermaid code and renders it in a headless browser.
+
+This allows the Writer to iterate on visual plans as if they were "semantic tokens," without getting bogged down in pixel-level details. Grounded in Cognitive Offloading theory, this design reduces the Writer's cognitive load, allowing focus on narrative logic while ensuring semantic synergy between text and visual evidence.
 
 ### Loss & Training
-CogGen is a purely inference-time framework and involves no training. It utilizes GPT-4.1 as the backbone for each agent and GPT-4.1-Mini for search expansion, with a temperature of 0.5.
+CogGen is a pure inference-time framework and does not involve training. It uses GPT-4.1 as the backbone for all agents and GPT-4.1-Mini for search expansion, with a temperature of 0.5.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Method | Avg Score | Organization | Depth | Alignment | Synergy |
-|---------|--------|-----------|--------------|-------|-----------|---------|
+| Dataset | Method | Avg. | Organization | Depth | Alignment | Synergy |
+|--------|------|--------|------|------|------|------|
 | OWID | Human Expert (Ref) | 0.4997 | 0.4986 | 0.5000 | 0.5000 | 0.5000 |
-| OWID | CogGen | 0.4992 | 0.4972 | 0.5813 | 0.4806 | 0.4326 |
+| OWID | **Ours (CogGen)** | **0.4992** | 0.4972 | 0.5813 | 0.4806 | 0.4326 |
 | OWID | WriteHere | 0.4502 | 0.4912 | 0.5503 | 0.3846 | 0.3312 |
 | OWID | STORM | 0.3205 | 0.4253 | 0.4443 | 0.1675 | 0.1667 |
 | WildSeek | Gemini DR (Ref) | 0.5000 | 0.5000 | 0.5000 | 0.5000 | 0.5000 |
-| WildSeek | CogGen | 0.5341 | 0.5389 | 0.5000 | 0.5544 | 0.5437 |
+| WildSeek | **Ours (CogGen)** | **0.5341** | 0.5389 | 0.5000 | 0.5544 | 0.5437 |
 
 ### Ablation Study
 
-| Configuration | Avg Score | Description |
-|---------------|-----------|-------------|
+| Configuration | Avg. Score | Description |
+|------|--------|------|
 | GPT-4.1 + Search (No Framework) | 0.4119 | Single-agent baseline |
-| CogGen w/o Review | 0.4681 | Significant drop after removing Reviewer |
-| CogGen Two-stage (No Native Multimodal) | 0.4904 | Separate generation of text and charts |
-| CogGen Full | 0.4994 | Synergy of all components |
+| CogGen w/o Review | 0.4681 | Significant quality drop without Reviewer |
+| CogGen Two-stage (No AVR) | 0.4904 | Decoupled text and chart generation |
+| **CogGen Full** | **0.4994** | All components synchronized |
 
 ### Key Findings
-- CogGen reaches human expert levels on OWID (0.4992 vs 0.4997) and outperforms Gemini Deep Research on WildSeek (0.5341 vs 0.5000).
-- Multimodal alignment and synergy (D4, D5) are the core advantages of CogGen over STORM/Co-STORM (score gap exceeds 0.3).
-- Removing the Reviewer leads to the largest performance decline, indicating the review-feedback loop is essential for quality assurance.
-- AVR provides significant improvements in data accuracy compared to FDV (Direct Code Generation).
+- CogGen reaches human-expert levels on OWID (0.4992 vs 0.4997) and outperforms Gemini Deep Research on WildSeek (0.5341 vs 0.5000).
+- Multimodal alignment and synergy (D4, D5) are core advantages over STORM/Co-STORM (score gap > 0.3).
+- Removing the Reviewer causes the largest performance drop, indicating that the review-feedback loop is central to quality assurance.
+- AVR significantly improves data accuracy compared to direct code generation (FDV).
 
 ## Highlights & Insights
-- The **Macro-Micro Dual-layer Recursive** design accurately simulates the non-linear characteristics of human writing—the ability to revisit and restructure the outline after finishing the full text is key to surpassing linear systems.
-- The **Deferred Update Policy** cleverly addresses site context oscillation in parallel generation—by leaving conflicts to the global reviewer rather than local modification, recursive modification traps are avoided.
-- AVR decouples "what to display" from "how to draw," which can be generalized to any scenario requiring collaborative text-code generation.
+- The **Macro-Micro Dual Recursive** design accurately simulates the non-linear nature of human writing—the ability to revisit and restructure the outline after drafting is the key differentiator from linear systems.
+- The **Deferred Update Policy** elegantly solves context oscillation in parallel generation by letting a global arbiter handle conflicts instead of local modifications.
+- **AVR** decouples "what to show" from "how to draw," a principle that can be generalized to any task requiring text-code collaborative generation.
 
 ## Limitations & Future Work
-- Dependency on closed-source models such as GPT-4.1 results in high costs and low reproducibility.
-- The convergence speed of recursive loops is not fully analyzed; actual generation times may be long.
-- While theoretically grounded, the evaluation framework CLEF depends on GPT-5 as an evaluator, introducing potential evaluation bias.
-- Supports only static text and charts, without interactive visualizations.
+- Dependent on closed-source models like GPT-4.1, leading to high costs and lack of reproducibility.
+- The convergence speed of recursive loops is not fully analyzed; actual generation time can be significant.
+- The evaluation framework (CLEF) depends on GPT-5 as an evaluator, which may introduce evaluation bias.
+- Only supports static text and charts, not interactive visualizations.
 
 ## Related Work & Insights
 - **vs STORM/Co-STORM**: These use multi-perspective QA and collaborative writing but lack global restructuring capabilities.
-- **vs WriteHere**: Supports recursive decomposition but remains a forward-generation process, unable to modify previously generated content in reverse.
-- **vs Gemini Deep Research**: Commercial systems are still limited by fixed frameworks in the writing execution phase; CogGen outperforms its output quality on WildSeek.
+- **vs WriteHere**: Supports recursive decomposition but remains a forward-generation process that cannot modify previously generated content.
+- **vs Gemini Deep Research**: While powerful, this commercial system is still limited by a fixed framework during execution; CogGen surpasses its output quality on WildSeek.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Innovative systematic application of cognitive writing theory in AI report generation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two datasets, multiple baseline comparisons, detailed ablations, and human evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical motivation, excellent illustrations, and fluid narrative.
+- Novelty: ⭐⭐⭐⭐ Systematizing cognitive writing theory for AI report generation is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two datasets, multiple baselines, detailed ablation, and human evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical motivation, excellent diagrams, and smooth narrative.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](../../ICML2026/multimodal_vlm/weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 - [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](../../AAAI2026/multimodal_vlm/pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
+- [\[ACL 2025\] MEIT: Multimodal Electrocardiogram Instruction Tuning on Large Language Models for Report Generation](../../ACL2025/multimodal_vlm/meit_multimodal_electrocardiogram_instruction_tuning_on_large_language_models_fo.md)
 - [\[ICML 2026\] Deep Pre-Alignment for VLMs](../../ICML2026/multimodal_vlm/deep_pre-alignment_for_vlms.md)
-- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
-- [\[CVPR 2026\] Recursive Think-Answer Process for LLMs and VLMs](../../CVPR2026/multimodal_vlm/recursive_think-answer_process_for_llms_and_vlms.md)
+- [\[ACL 2026\] Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models](almieyar-oryx-bloombench_a_bilingual_multimodal_benchmark_for_cognitively_inform.md)
 
 </div>
 

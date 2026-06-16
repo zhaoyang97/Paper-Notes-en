@@ -2,125 +2,114 @@
 title: >-
   [Paper Note] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 description: >-
-  [CVPR2026][3D Vision][Bimanual Manipulation] GAP leverages a pretrained 3D geometric foundation model (π³) to extract 3D features, fuses them with 2D semantic features and proprioception…
+  [CVPR 2026][3D Vision][Paper Note] GAP utilizes a pre-trained 3D geometric foundation model (π³) to extract 3D features, fuses 2D semantics and proprioception, and jointly predicts future action sequences and future 3D pointmaps via conditional diffusion, achieving SOTA in RoboTwin 2.0 and real-world bimanual experiments.
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "Bimanual Manipulation"
-  - "3D Geometric Prior"
-  - "Diffusion Policy"
-  - "Point Map Prediction"
-  - "Imitation Learning"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 06e59a70da0cf04b
+content_hash: a51f68def294a04d
 ---
-
 # GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.23814](https://arxiv.org/abs/2602.23814)  
 **Code**: [https://github.com/Chongyang-99/GAP.git](https://github.com/Chongyang-99/GAP.git)  
-**Area**: 3D Vision
-**Keywords**: Bimanual Manipulation, 3D Geometric Prior, Diffusion Policy, Point Map Prediction, Imitation Learning
+**Area**: 3D Vision  
+**Keywords**: Bimanual manipulation, 3D geometric prior, Diffusion policy, Point cloud prediction, Imitation learning
 
 ## TL;DR
-GAP leverages a pretrained 3D geometric foundation model (π³) to extract 3D features, fuses them with 2D semantic features and proprioception, and jointly predicts future action sequences and future 3D point maps via conditional diffusion, achieving state-of-the-art performance on RoboTwin 2.0 and real-world bimanual manipulation benchmarks.
+GAP utilizes a pre-trained 3D geometric foundation model (π³) to extract 3D features, fuses 2D semantics and proprioception, and jointly predicts future action sequences and future 3D pointmaps via conditional diffusion, achieving SOTA in RoboTwin 2.0 and real-world bimanual experiments.
 
 ## Background & Motivation
 
-**Background**: Bimanual manipulation requires a policy to simultaneously generate coordinated actions for two robot arms, involving precision assembly, deformable object handling, and interaction in cluttered environments. Dominant approaches include 2D-based ACT (action chunking + DETR Transformer), diffusion policy (DP), and 3D-aware DP3 (point cloud input).
+**Background**: Bimanual manipulation requires policies to simultaneously generate coordinated movements for two arms, involving precision assembly, deformable object manipulation, and interaction in cluttered environments. Current mainstream methods include 2D-based ACT (action chunking + DETR Transformer), Diffusion Policy (DP), and 3D-integrated DP3 (point cloud input).
 
 **Limitations of Prior Work**:
-- **2D methods lack spatial awareness**: ACT and DP rely on 2D features and cannot explicitly reason about 3D spatial relationships, occlusions, or contacts, leading to poor performance on bimanual tasks requiring precise spatial reasoning.
-- **3D methods depend on explicit point clouds**: DP3 and similar approaches require depth cameras and point cloud pipelines, which are sensitive to calibration errors, noise, and occlusion in real-world settings. 2D-to-3D lifting methods (e.g., back-projection) suffer from low resolution and significant engineering overhead.
-- **No predictive 3D reasoning**: Existing methods only perceive the current 3D state without predicting how 3D geometry evolves after action execution, limiting long-horizon planning.
+   - **2D methods lack spatial awareness**: Methods like ACT and DP rely on 2D features, failing to explicitly reason about 3D spatial relationships, occlusions, and contacts, leading to poor performance in bimanual tasks requiring precise spatial reasoning.
+   - **3D methods depend on explicit point clouds**: DP3 and similar methods require depth cameras to generate point clouds. In the real world, high-quality point clouds require precise calibration and are sensitive to noise and occlusions. 2D-to-3D lifting methods (e.g., back-projection) suffer from low resolution and high engineering overhead.
+   - **Lack of predictive 3D reasoning**: Existing methods only perceive the current 3D state and do not predict 3D changes following action execution, limiting long-horizon planning capabilities.
 
-**Key Challenge**: Bimanual manipulation requires 3D spatial reasoning, yet reliably acquiring explicit 3D information (point clouds) in real-world settings remains challenging. Furthermore, perceiving only the current state is insufficient for complex manipulation tasks that demand anticipation of future geometric changes.
+**Key Challenge**: Bimanual manipulation requires 3D perception to reason about spatial relationships, but obtaining explicit 3D information (point clouds) is unreliable in real-world scenarios. Furthermore, perceiving only the current state is insufficient for complex manipulations that require predicting future geometric changes.
 
-**Goal**: Can a 3D geometric foundation model be used to obtain implicit 3D features directly from RGB images, bypassing explicit point cloud pipelines? Can jointly predicting future 3D structure enhance the policy's spatial understanding and long-horizon planning?
+**Goal**: Can a 3D geometric foundation model be used to obtain implicit 3D features directly from RGB images, bypassing explicit point cloud pipelines? Can joint prediction of the future 3D structure enhance the policy's spatial understanding and long-horizon planning?
 
-**Key Insight**: Recent 3D geometric foundation models (e.g., DUSt3R, VGGT, π³) can robustly reconstruct dense 3D structures from RGB images in a feed-forward manner. The authors adopt π³ as the perception backbone, whose latent features inherently encode rich 3D geometric information—eliminating the need for explicit point cloud generation and directly conditioning the policy on these latents. Furthermore, predicting "future 3D latents" encourages the model to learn 3D-aware anticipatory reasoning.
+**Key Insight**: Recent 3D geometric foundation models (e.g., DUSt3R, VGGT, π³) can reconstruct dense 3D structures robustly from RGB images. The authors utilize π³ as a perception backbone, where its latent features naturally encode rich 3D information—eliminating the need for explicit point cloud generation. Furthermore, predicting the "future 3D latent" forces the model to learn 3D-aware forward reasoning.
 
-**Core Idea**: Use the latents of a pretrained 3D geometric foundation model as 3D priors, and jointly denoise future actions and future 3D point maps to realize an RGB-only, 3D-aware bimanual manipulation policy.
+**Core Idea**: Leveraging the latent features of a pre-trained 3D geometric foundation model as a 3D prior, the model jointly denoises future action sequences and future 3D pointmaps to achieve RGB-only, 3D-aware bimanual manipulation.
 
 ## Method
 
 ### Overall Architecture
-**Inputs**: 5 historical RGB frames $V$, current frame $I_t$, current proprioception $p_t \in \mathbb{R}^{14}$ (6 joint angles + 1 gripper state per arm × 2 arms). **Outputs**: Future $N$-step bimanual action sequence $a_{t:t+N} \in \mathbb{R}^{N \times 14}$ and the future 3D point map at step $N$: $P_{t+N} \in \mathbb{R}^{H \times W \times 4}$.
+The core problem GAP addresses is the need for 3D spatial reasoning without relying on explicit point clouds that are difficult to obtain stably in real scenes. It leverages the latent space of a pre-trained 3D foundation model (π³) as an implicit 3D prior, allowing the policy to "understand" spatial structures from RGB images alone and predict the future 3D scene while generating actions, forcing the model to learn forward reasoning.
 
-The pipeline consists of four stages: (1) three parallel encoders extract modality-specific features → (2) a Transformer fuses them into a unified context → (3) a conditional diffusion decoder jointly denoises → (4) separate heads decode actions and point maps.
+The pipeline operates as follows: the current frame $I_t$, a 5-frame historical sequence $V$, and robot proprioception $p_t \in \mathbb{R}^{14}$ (6 joint angles + 1 gripper state per arm) are fed into three parallel encoders to produce 3D geometric, 2D semantic, and proprioceptive features. These are concatenated and fused via a Transformer into a unified context $\mathbf{f}_c$. Using $\mathbf{f}_c$ as a condition, a conditional diffusion decoder denoises two targets: a future N-step bimanual action sequence $a_{t:t+N} \in \mathbb{R}^{N \times 14}$ and the future 3D pointmap at step N, $P_{t+N} \in \mathbb{R}^{H \times W \times 4}$. Actions are used for control, while the pointmap serves as auxiliary supervision during training and can be skipped during inference to save computation.
+
+```mermaid
+graph TD
+    I["Current Frame I_t"] --> G
+    V["History 5 Frames V"] --> G
+    I --> S
+    P["Proprioception p_t (14-dim)"] --> ST
+    G["Geometry 3D Encoder (π³)<br/>Extract encoder latent as implicit 3D → f_3d"] --> F
+    S["Semantics 2D Encoder (DINOv3)<br/>Object-level task semantics → f_2d"] --> F
+    ST["State Encoder (MLP)<br/>Current pose embedding → f_p"] --> F
+    F["Semantic-Geometric Fusion<br/>4-layer DETR self-attention alignment → f_c"] --> D
+    PG["Pseudo-GT Generation<br/>Temporal window stabilizes π³ output → Target f_t+N"] -. Training Supervision .-> D
+    D["Joint Diffusion Decoder<br/>Conditional denoising based on f_c"] --> A["Future Action Sequence a (N×14)<br/>Robot control"]
+    D --> PM["Future 3D Pointmap P_t+N<br/>Training supervision, optional in inference"]
+```
 
 ### Key Designs
 
-1. **Geometry 3D Encoder (π³ Encoder)**
+**1. Geometry 3D Encoder (π³): Replacing explicit point clouds with implicit 3D geometry from RGB**
+This module addresses the dependency of 3D methods on depth cameras. GAP samples 5 historical frames $V$ and combines them with the current frame $I_t$ into a 6-frame sequence for the π³ encoder. Each frame is divided into $14 \times 14$ patches, and features from the last two backbone layers are concatenated to form a 1024-dimensional 3D geometric feature $\mathbf{f}_{3d}$. Crucially, only the π³ encoder is used—no point clouds are explicitly reconstructed. This latent space naturally encodes inter-frame 3D relationships and is robust to calibration errors and depth noise.
 
-    - **Function**: Extracts features encoding 3D geometric information from sequential RGB frames.
-    - **Mechanism**: Five frames are uniformly sampled from the history $V$ and concatenated with the current frame $I_t$ to form a 6-frame sequence, which is fed into the π³ encoder (a multi-view geometry model). Each frame is patchified into $14 \times 14$ patches. Features from the last two backbone layers are concatenated to produce 1024-dimensional 3D geometric features $\mathbf{f}_{3d}$. Only the encoder of π³ is used; decoding heads are discarded.
-    - **Design Motivation**: As a pretrained 3D geometric foundation model, π³'s latents inherently encode multi-view and multi-frame 3D geometric relationships. Compared to explicit point clouds, latent features are more robust (unaffected by calibration errors or depth noise) and are computed in a single feed-forward pass.
+**2. Semantics 2D Encoder (DINOv3): Supplementing "task semantics" missing in geometric features**
+While 3D features capture structure, they lack the "which object to manipulate" context. GAP processes $I_t$ through DINOv3 to extract 1024-dimensional semantic features $\mathbf{f}_{2d}$ from $16 \times 16$ patches. DINOv3 provides object-level semantic priors that complement geometric information.
 
-2. **Semantics 2D Encoder (DINOv3 Encoder)**
+**3. State Encoder (MLP): Injecting current robot pose**
+A simple MLP maps the 14-dimensional proprioception $p_t$ to a 1024-dimensional embedding $\mathbf{f}_p$, informing the fusion stage of the robot's current configuration.
 
-    - **Function**: Extracts high-level semantic features from the current frame.
-    - **Mechanism**: The current frame $I_t$ is encoded by DINOv3 and divided into $16 \times 16$ patches, yielding 1024-dimensional semantic features $\mathbf{f}_{2d}$.
-    - **Design Motivation**: While 3D geometric features capture spatial structure, they lack task-relevant high-level semantics. DINOv3 provides object-level semantic priors (e.g., identifying which object to manipulate), complementing the geometric features.
+**4. Semantic-Geometric Fusion: Cross-modal alignment via attention**
+Features $[\mathbf{f}_{3d}, \mathbf{f}_{2d}, \mathbf{f}_p]$ are concatenated along the token dimension and fed into a 4-layer DETR encoder. Self-attention achieves deep fusion to output a unified context $\mathbf{f}_c$. This captures cross-modal relationships, such as locating semantic objects in 3D space and identifying reachable actions based on current configuration.
 
-3. **State Encoder (MLP Encoder)**
+**5. Joint Diffusion Decoder: Embedding an implicit world model via joint denoising**
+This is the core of GAP. The decoder uses a DETR-like structure for conditional diffusion. During training, it denoises a target $x_0 = \{a_{t:t+N}, \mathbf{f}_{t+N}, P_{t+N}\}$ from Gaussian noise $x_k$ conditioned on $\mathbf{f}_c$. By predicting the future 3D pointmap latent $\mathbf{f}_{t+N}$ alongside actions, the model is forced to reason about how 3D scenes change given a sequence of actions, effectively embedding a world model into the policy.
 
-    - **Function**: Encodes the robot's proprioceptive state.
-    - **Mechanism**: A simple MLP maps $p_t \in \mathbb{R}^{14}$ to a 1024-dimensional embedding $\mathbf{f}_p$.
-
-4. **Semantic-Geometric Fusion**
-
-    - **Function**: Fuses three heterogeneous feature streams into a unified context representation.
-    - **Mechanism**: The three 1024-dimensional features $[\mathbf{f}_{3d}, \mathbf{f}_{2d}, \mathbf{f}_p]$ are concatenated along the token dimension and passed through a **4-layer DETR encoder** for deep fusion, yielding the Semantic-Geometric Fused Context $\mathbf{f}_c$.
-    - **Design Motivation**: The self-attention mechanism of the DETR encoder enables full cross-modal interaction: 3D geometric features inform semantic features about "where objects are," semantic features inform geometric features about "which objects matter," and proprioception constrains "what the robot can currently do."
-
-5. **Joint Diffusion Decoder**
-
-    - **Function**: Conditioned on $\mathbf{f}_c$, jointly denoises to generate the future action sequence and future 3D latent.
-    - **Mechanism**: A DETR decoder is adopted for conditional diffusion. During training, Gaussian noise is added to the clean target $x_0 = \{a_{t:t+N}, \mathbf{f}_{t+N}, P_{t+N}\}$ to obtain $x_k$; the reverse process uses the decoder to predict the clean target $\hat{x}_0$. The loss is an L1 objective:
-    $$\mathcal{L} = \mathbb{E}_{k, x_0, \epsilon}\left[\|{\hat{a}_{t:t+N}} - a_{t:t+N}\|_1 + \lambda\|\hat{\mathbf{f}}_{t+N} - \mathbf{f}_{t+N}\|_1 + \gamma\|\hat{P}_{t+N} - P_{t+N}\|_1\right]$$
-    - **Two prediction targets**:
-        - Future Action Chunk: $\mathbb{R}^{N \times 14}$, representing $N$-step bimanual actions (6-DoF joints + 1-DoF gripper × 2 arms).
-        - Future 3D Point Map Latent: $\mathbf{f}_{t+N} \in \mathbb{R}^{H/14 \times W/14 \times 1024}$, decoded by π³'s dense head into $P_{t+N} \in \mathbb{R}^{H \times W \times 4}$ ($x, y, z$ + confidence).
-    - **Design Motivation**: Jointly predicting future 3D structure compels the model to reason about "what the 3D scene will look like after executing these actions"—an implicit world model. Supervising only the final state at horizon $N$ (rather than step-by-step) forces the model to reason about the cumulative effect of the entire action sequence, enhancing long-horizon planning.
-
-6. **Pseudo-GT Generation Strategy**
-
-    - **Function**: Generates stable supervision signals for 3D latent targets.
-    - **Mechanism**: Rather than naively running π³ on single frames (which yields noisy, unstable outputs), for each frame $s$ in the dataset, $n$ historical frames are uniformly sampled to form a temporal window $\{V, I_s\}$, which is fed into the π³ encoder; only the latent $\mathbf{f}_s$ corresponding to $I_s$ is retained. The training target is set to $\mathbf{f}_{t+N}$.
-    - **Design Motivation**: Joint processing over a temporal window substantially stabilizes the quality of 3D latent features.
+**6. Pseudo-GT Generation: Stabilizing 3D latent supervision**
+To provide stable supervision for the "future 3D latent," GAP uses a temporal window strategy. For a frame $s$, the π³ encoder processes a sequence $\{V, I_s\}$. The latent $\mathbf{f}_s$ corresponding specifically to $I_s$ is used as the pseudo-GT. This temporal joint processing significantly improves latent quality compared to single-frame inference.
 
 ### Loss & Training
-- Standard diffusion training with ACT-style action chunking.
-- 2D-based methods (including the proposed method) are trained for 200–600 epochs; 3D-based methods for 3000 epochs; batch size 32.
-- 100 expert demonstrations (simulation) or 50 teleoperation demonstrations (real world).
-- At inference, denoising is performed iteratively for $K$ steps from Gaussian noise; point map decoding can be optionally skipped for efficiency.
+The diffusion training objective uses an L1 loss for the three denoising components:
+
+$$\mathcal{L} = \mathbb{E}_{k, x_0, \epsilon}\left[\|{\hat{a}_{t:t+N}} - a_{t:t+N}\|_1 + \lambda\|\hat{\mathbf{f}_{t+N}} - \mathbf{f}_{t+N}\|_1 + \gamma\|\hat{P}_{t+N} - P_{t+N}\|_1\right]$$
+
+where $\lambda, \gamma$ are weights for the 3D latent and pointmap terms. Training follows ACT-style action chunking; 2D-based baselines and GAP are trained for 200–600 epochs, while 3D-based methods are trained for 3000 epochs with a batch size of 32.
 
 ## Key Experimental Results
 
-### Main Results — RoboTwin 2.0 Simulation (Average Success Rate % across Three Task Categories)
+### Main Results - RoboTwin 2.0 Simulation (Average Success Rate %)
 
 | Method | Dominant-select (16 tasks) | Sync-bimanual (8 tasks) | Seq-coordinate (8 tasks) |
-|--------|---------------------------|------------------------|--------------------------|
+|------|------------------------|-----------------------|------------------------|
 | ACT (2D) | 34.1 | 32.4 | 29.4 |
 | DP (2D) | 44.4 | 37.1 | 33.6 |
-| DP3 (3D point cloud) | 61.2 | 42.0 | 42.0 |
-| G3Flow (3D + semantics) | 54.3 | 43.2 | 40.5 |
-| RDT (1.2B parameters) | 49.5 | 44.6 | 41.2 |
-| Xu et al. (2D + prediction) | 55.1 | 47.5 | 44.9 |
+| DP3 (3D Point Cloud) | 61.2 | 42.0 | 42.0 |
+| G3Flow (3D+Semantics) | 54.3 | 43.2 | 40.5 |
+| RDT (1.2B Params) | 49.5 | 44.6 | 41.2 |
+| Xu et al. (2D+Predictive) | 55.1 | 47.5 | 44.9 |
 | **GAP (Ours)** | **63.2** | **51.3** | **50.4** |
 
-### Ablation Study (Average Success Rate % over 4 Tasks)
+### Ablation Study (Average Success Rate % over 4 tasks)
 
-| 2D Semantic | 3D Geometric | Geometric Imagination | Avg. Success Rate |
-|:-----------:|:------------:|:---------------------:|:-----------------:|
+| 2D Semantic | 3D Geometric | Geometric Imagination | Success Rate Avg. |
+|:-----------:|:------------:|:---------------------:|:-----------:|
 | ✓ | ✓ | ✓ | **25.1** |
 | ✗ | ✓ | ✓ | 24.4 |
 | ✓ | ✓ | ✗ | 23.6 |
 | ✓ | ✗ | ✗ | 21.0 |
 
-### Real-World Experiments (Success Rate %, 20 trials/task)
+### Real World Results (Success Rate %, 20 trials/task)
 
 | Task | ACT | DP | Xu et al. | **Ours** |
 |------|-----|----|-----------|----------|
@@ -131,37 +120,31 @@ The pipeline consists of four stages: (1) three parallel encoders extract modali
 | **Average** | 23.8 | 25 | 32.5 | **40** |
 
 ### Key Findings
-- **3D geometric perception is critical**: Removing both the 3D Geometric Module and Geometric Imagination reduces success rate from 25.1% to 21.0% (a relative drop of 16.3%), making it the most impactful component.
-- **Geometric Imagination (predicting future 3D) is the core innovation**: Removing it alone drops success rate from 25.1% to 23.6% (−6.0%), demonstrating that predicting future 3D structure genuinely improves the policy's 3D understanding.
-- **RGB-only input surpasses explicit point cloud methods**: GAP (RGB only) outperforms DP3 on Dominant-select tasks (63.2% vs. 61.2%), validating that latents from pretrained 3D foundation models can substitute explicit point clouds.
-- **Strong advantage on synchronized bimanual tasks**: GAP achieves 43.3% on Place Dual Shoes, compared to only 17.7% for DP3, indicating superior bimanual coordination reasoning.
-- **High data efficiency**: With as few as 10–20 demonstrations, GAP already shows meaningful learning signal owing to pretrained features, while DP completely fails (0% success rate).
-- **Real-world Hanging Mug**: ACT and DP both fail entirely (0%), while GAP achieves 20%—a task requiring precise 3D geometric reasoning to localize the spatial relationship between the mug handle and hook.
+- **3D geometric awareness is critical**: Removing the 3D Geometric Module and Geometric Imagination causes the success rate to drop from 25.1% to 21.0%, the largest decline among all modules.
+- **Geometric Imagination is a core innovation**: Removing it alone reduces success from 25.1% to 23.6%, proving that predicting future 3D structures improves 3D reasoning.
+- **RGB-only input surpasses explicit point cloud methods**: GAP (RGB only) outperforms DP3 on Dominant-select tasks (63.2% vs 61.2%), demonstrating that latents from 3D foundation models can replace explicit point clouds.
+- **Superiority in synchronous bimanual tasks**: On "Place Dual Shoes", GAP achieves 43.3% while DP3 only reaches 17.7%, highlighting better bimanual coordination.
 
 ## Highlights & Insights
-- **Using 3D foundation model latents directly as policy conditions is an elegant paradigm**: It bypasses the engineering complexity of point cloud acquisition; π³'s latents inherently encode rich 3D geometry. This idea generalizes to any robotic task requiring 3D spatial awareness.
-- **Joint prediction of actions and future 3D structure constitutes an implicit world model**: No separately trained world model is needed; 3D prediction capability is naturally injected into the policy network through joint denoising in the diffusion process. Predicting only the 3D state at the end of the horizon—rather than at each step—elegantly reduces computational and supervisory complexity.
-- **DETR encoder for semantic-geometric fusion**: Simple yet effective; self-attention enables full cross-modal interaction among 3D geometric features, 2D semantic features, and proprioception, avoiding hand-crafted fusion design.
-- **The pseudo-GT generation strategy** (stabilizing π³ outputs via temporal windows) is transferable to any downstream task that uses 3D foundation models for supervision.
+- **Implicit latents from 3D foundation models are an elegant paradigm**: This bypasses complex point cloud engineering. π³ latents encode dense 3D information robustly, a strategy applicable to various robotics tasks.
+- **Joint prediction of actions and future 3D structures acts as an implicit world model**: By predicting only the final 3D state at the end of the horizon, the policy gains "geometric foresight" without the computational cost of step-by-step video prediction.
+- **Semantic-geometric fusion via DETR encoder**: This allows heterogeneous modalities (3D, 2D, state) to interact through self-attention, capturing complex cross-modal relationships.
 
 ## Limitations & Future Work
-- **Single-step horizon prediction**: Only the 3D state at horizon $N$ is predicted, without multi-step 3D trajectory prediction. This may be insufficient for very long-horizon tasks—future work could extend the approach to predict 3D structures at multiple future time steps.
-- **No persistent 3D memory**: The model cannot accumulate 3D knowledge across episodes; each inference independently processes the current temporal window. Incorporating persistent 3D memory (inspired by Wang et al.'s continuous 3D perception model) is a promising direction.
-- **Real-world success rates remain modest**: The best result on Hanging Mug is only 20%, indicating substantial room for improvement on complex, precision manipulation tasks. More demonstration data or better sim-to-real transfer strategies may be needed.
-- **Inference efficiency**: Two large backbones (π³ and DINOv3) combined with iterative diffusion denoising incur considerable computational cost. Inference latency is not reported in the paper; model distillation or acceleration may be required for practical deployment.
-- **Generalization to unseen tasks/objects**: Experiments are conducted only on known tasks within the RoboTwin benchmark; zero-shot generalization has not been evaluated.
+- **Single-step horizon prediction**: The model only predicts the 3D state at horizon $N$; multi-step 3D trajectory prediction may be needed for longer horizons.
+- **Lack of persistent 3D memory**: The model does not accumulate 3D knowledge across episodes, treating each inference step independently.
+- **Real-world success rates**: Complex tasks like "Hanging Mug" still show relatively low success rates (20%), indicating a need for more data or better sim-to-real transfer.
 
 ## Related Work & Insights
-- **vs. DP3**: DP3 takes point clouds as direct input, requiring depth cameras and point cloud preprocessing pipelines. GAP requires only RGB input with pretrained 3D model latents and outperforms DP3 on most tasks, demonstrating that implicit 3D representations are more robust than explicit point clouds.
-- **vs. G3Flow**: G3Flow projects 2D semantic features onto 3D point clouds. GAP performs semantic-geometric fusion in latent space, avoiding quantization errors and calibration dependencies introduced by 3D projection.
-- **vs. Xu et al.**: Xu et al. jointly predict actions and future 2D frames. GAP elevates the prediction target from 2D frames to 3D point maps, better aligning with the inherently 3D nature of manipulation tasks—ablation experiments confirm that 3D prediction outperforms 2D prediction.
-- **vs. ACT**: ACT serves as the architectural foundation for GAP (DETR architecture + action chunking). GAP augments ACT with 3D foundation model features and geometric imagination, improving the average success rate from approximately 32% to approximately 55%.
+- **vs DP3**: DP3 relies on explicit point clouds and depth cameras. GAP uses RGB and implicit latents, outperforming DP3 in most tasks and showing better robustness.
+- **vs G3Flow**: G3Flow projects 2D semantic features into 3D point clouds. GAP fuses them in the latent space, avoiding quantization errors and calibration issues.
+- **vs Xu et al.**: Xu et al. jointly predict actions and future 2D frames. GAP upgrades the prediction target to 3D pointmaps, which is more relevant to manipulation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First to adopt 3D geometric foundation model latents as the core perceptual prior for a manipulation policy, combined with joint prediction of future 3D structure.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Simulation across 32 tasks in three categories, 6 baselines, ablation studies, data efficiency analysis, and real-world validation on 4 tasks.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clear and framework figures are intuitive, though some experimental details require the supplementary material.
-- **Value**: ⭐⭐⭐⭐ Incorporating 3D foundation models into bimanual manipulation is an important research direction; the joint 3D prediction paradigm has broad implications.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -170,10 +153,10 @@ The pipeline consists of four stages: (1) three parallel encoders extract modali
 ## Related Papers
 
 - [\[CVPR 2026\] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)
-- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
-- [\[CVPR 2026\] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning](flow3r_factored_flow_prediction_for_scalable_visual_geometry_learning.md)
-- [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
-- [\[CVPR 2026\] Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation](ada3drift_adaptive_trainingtime_drifting_for_onest.md)
+- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
+- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
+- [\[CVPR 2026\] GenSplat: Bridging the Generalization Gap in 3DGS Language Comprehension](gensplat_bridging_the_generalization_gap_in_3dgs_language_comprehension.md)
+- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
 
 </div>
 

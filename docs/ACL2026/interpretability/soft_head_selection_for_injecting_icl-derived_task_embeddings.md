@@ -2,74 +2,73 @@
 title: >-
   [Paper Note] SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 description: >-
-  [ACL 2026][Interpretability][Attention Head Selection] SITE proposes a soft attention head selection method based on gradient optimization to effectively inject ICL-derived task embeddings by identifying task-relevant at…
+  [ACL 2026][Interpretability][Paper Note] SITE proposes a gradient-optimized soft attention head selection method that identifies task-relevant heads to effectively inject ICL-derived task embeddings. It significantly outperforms ICL and existing embedding methods across 12 LLMs (4B-70B) while achieving performance comparable to PEFT with far fewer trainable p
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Attention Head Selection"
-  - "Task Embeddings"
-  - "In-Context Learning"
-  - "Activation Patching"
-  - "Parameter-Efficient"
+  - ACL 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: ba7738065589975e
+content_hash: bb22188b718b738d
 ---
-
 # SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2507.20906](https://arxiv.org/abs/2507.20906)  
 **Code**: [https://github.com/SNU-DRL/Soft_Injection](https://github.com/SNU-DRL/Soft_Injection)  
 **Area**: Interpretability / Parameter-Efficient Adaptation  
-**Keywords**: Attention Head Selection, Task Embeddings, In-Context Learning, Activation Patching, Parameter-Efficient
+**Keywords**: Attention Head Selection, Task Embedding, In-Context Learning, Activation Patching, Parameter-Efficient
 
 ## TL;DR
 
-SITE proposes a soft attention head selection method based on gradient optimization to effectively inject ICL-derived task embeddings by identifying task-relevant attention heads. It significantly outperforms ICL and existing embedding methods on 12 LLMs (4B-70B) while achieving comparable performance to PEFT with far fewer trainable parameters.
+SITE proposes a gradient-optimized soft attention head selection method that identifies task-relevant heads to effectively inject ICL-derived task embeddings. It significantly outperforms ICL and existing embedding methods across 12 LLMs (4B-70B) while achieving performance comparable to PEFT with far fewer trainable parameters.
 
 ## Background & Motivation
 
-**Background**: LLM task adaptation primarily follows three paradigms: Parameter-Efficient Fine-Tuning (PEFT, e.g., LoRA) offers high performance but requires training; In-Context Learning (ICL) requires no training but increases inference costs; and embedding injection methods extract task embeddings from ICL activations to inject them during inference.
+**Background**: Task adaptation for LLMs primarily follows three paradigms: Parameter-Efficient Fine-Tuning (PEFT, e.g., LoRA) which performs well but requires training; In-Context Learning (ICL) which requires no training but increases inference costs; and embedding injection methods that extract task embeddings from ICL activations and inject them during inference.
 
-**Limitations of Prior Work**: ICL-driven embedding injection methods are conceptually attractive but fail to demonstrate consistent advantages over PEFT or ICL in practice. Existing methods (e.g., FV, TV, MTV, I2CL) rely on heuristic rules or restricted search spaces to determine extraction and injection locations, and most are evaluated only on simple classification tasks.
+**Limitations of Prior Work**: ICL-driven embedding injection methods are conceptually attractive but have failed to demonstrate consistent advantages over PEFT or ICL in practice. Existing methods (e.g., FV, TV, MTV, I2CL) rely on heuristic rules or restricted search spaces to determine extraction and injection locations, and most are evaluated only on simple classification tasks.
 
-**Key Challenge**: Task-relevant information is unevenly distributed across attention heads and varies by task—randomly selecting heads for patching leads to drastic performance fluctuations, but existing methods lack efficient head selection mechanisms.
+**Key Challenge**: Task-relevant information is distributed non-uniformly across attention heads and varies by task—randomly selecting heads for patching leads to severe performance fluctuations, yet existing methods lack efficient head selection mechanisms.
 
-**Goal**: To develop an ICL-driven embedding injection method that achieves near-PEFT performance with fewer parameters while significantly outperforming ICL.
+**Goal**: To develop an ICL-driven embedding injection method that achieves performance close to PEFT with fewer parameters while significantly outperforming ICL.
 
-**Key Insight**: Formalize attention head selection as a continuous optimization problem, learning importance parameters for each head (soft selection) via gradient descent to identify efficient task embedding injection locations.
+**Key Insight**: Formalize attention head selection as a continuous optimization problem. Use gradient descent to learn importance parameters for each head (soft selection) to efficiently identify injection locations for task embeddings.
 
-**Core Idea**: Use learnable soft selection parameters to linearly interpolate between original activations and task embeddings, optimizing only $L \times H$ scalar parameters (approximately 1K) to achieve precise task-relevant head identification and efficient injection.
+**Core Idea**: Use learnable soft selection parameters for linear interpolation between original activations and task embeddings. By optimizing only $L \times H$ scalar parameters (approx. 1K), precise identification and efficient injection of task-relevant heads are achieved.
 
 ## Method
 
 ### Overall Architecture
 
-The process consists of three stages: (1) Construct Task Embeddings—extract and average last-token activations for each attention head from $M$ few-shot prompts; (2) Optimize Soft Head Selection Parameters—minimize zero-shot inference cross-entropy loss via gradient descent; (3) Zero-shot Inference—inject task embeddings at the first token position of the input, with no further intervention during subsequent decoding.
+SITE decomposes "task adaptation" into two components: content and location, arguing that location is critical. Given a task, it first compresses ICL activations from several few-shot prompts into a fixed task embedding (content). It then learns a set of soft selection parameters to decide which attention heads to inject and to what degree (location). During inference, injection occurs only at the last token of the input; once written to the KV cache, autoregressive decoding proceeds normally. The LLM remains frozen, with only ~1K scalars optimized. The output is a zero-shot model that carries task information without requiring a few-shot context.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["M few-shot prompts"] --> B["Task Embedding Construction<br/>Extract last-token activations per layer/head, average across prompts"]
+    B --> C["Task Embedding t (Fixed Content)"]
+    C --> D["Soft Head Selection Optimization<br/>Linear interpolation of original activations and task embeddings, Adam 400 steps minimizing zero-shot cross-entropy"]
+    D --> E["Soft Selection Matrix A (Approx. 1K scalars, determines heads and intensity)"]
+    E --> F["Single-token Injection Inference<br/>Inject only once at last-token, write to KV cache"]
+    F --> G["Zero-shot Output (No few-shot context)"]
+```
 
 ### Key Designs
 
-1. **Task Embedding Construction**:
+**1. Task Embedding Construction: Averaging few-shot activations into a task-level representation**
 
-    - **Function**: Extract embeddings encoding task information from few-shot ICL activations.
-    - **Mechanism**: For $M$ few-shot prompts containing $N$ input-output examples, extract the last-token activation $\mathbf{t}_m^{(l,h)}$ for each attention head in every layer. Averaging across the $M$ prompts yields the task embedding $\mathbf{t}^{(l,h)} = \frac{1}{M}\sum_m \mathbf{t}_m^{(l,h)}[-1,:]$.
-    - **Design Motivation**: Averaging reduces instance-specific noise and preserves task-level information.
+To solidify "what the task is" from ICL, the method extracts last-token activations $\mathbf{t}_m^{(l,h)}$ per layer and head for $M$ few-shot prompts (each containing $N$ input-output examples). These are averaged across $M$ prompts to obtain the task embedding $\mathbf{t}^{(l,h)} = \frac{1}{M}\sum_m \mathbf{t}_m^{(l,h)}[-1,:]$. This averaging removes instance-specific noise from individual prompts, leaving stable task-level signals. Experiments show minimal performance degradation even with $M=1$, indicating low sensitivity to the number of samples.
 
-2. **Soft Head Selection Parameter Optimization**:
+**2. Soft Selection Optimization: Turning discrete selection into a differentiable problem using continuous interpolation**
 
-    - **Function**: Efficiently identify the most important attention heads for each task.
-    - **Mechanism**: Introduce a learnable matrix $\mathbf{A} \in [0,1]^{L \times H}$, where each $\alpha^{(l,h)}$ controls the degree of task embedding injection. During zero-shot inference, the last-token activation is replaced by linear interpolation: $\mathbf{o}^{(l,h)} \leftarrow (1-\alpha^{(l,h)}) \cdot \mathbf{o}^{(l,h)} + \alpha^{(l,h)} \cdot \mathbf{t}^{(l,h)}$. The LLM is frozen, and only $\mathbf{A}$ (approximately 1K parameters) is optimized using the Adam optimizer for 400 steps. $\alpha$ is parameterized via sigmoid to ensure a value range of $[0,1]$.
-    - **Design Motivation**: Continuous optimization replaces discrete search or reinforcement learning for higher efficiency; optimizing only injection locations rather than embedding content results in minimal parameters (1.02K vs. LoRA 3407K).
+Task information is unevenly distributed and shifts across tasks. Since random head patching causes unstable performance, the core challenge is identifying which heads to patch. SITE introduces a learnable matrix $\mathbf{A} \in [0,1]^{L \times H}$. Each $\alpha^{(l,h)}$ (parameterized via sigmoid to [0,1]) controls the injection intensity for its corresponding head. During zero-shot inference, the last-token activation of a head is replaced by a linear interpolation: $\mathbf{o}^{(l,h)} \leftarrow (1-\alpha^{(l,h)}) \cdot \mathbf{o}^{(l,h)} + \alpha^{(l,h)} \cdot \mathbf{t}^{(l,h)}$. This relaxes the "which heads to select" problem into continuous optimization solvable by 400 steps of Adam gradient descent. Crucially, it only optimizes injection locations without modifying embedding content, requiring only 1.02K parameters—three orders of magnitude fewer than LoRA's 3407K.
 
-3. **Single-token Injection Inference**:
+**3. Single-token Injection Inference: Minimizing disturbance to generation**
 
-    - **Function**: Inference-time task adaptation with minimal intervention.
-    - **Mechanism**: Injection occurs only once at the last-token position of the initial input prompt. The injected information is written into the KV cache, and subsequent autoregressive decoding proceeds without further intervention.
-    - **Design Motivation**: Compared to methods injecting at multi-token positions, single-point injection reduces intervention complexity and adverse effects on generation.
+Excessive injection can interfere with autoregressive generation. SITE limits intervention to a single instance: injection happens only at the last-token position of the initial prompt. The information is written into the KV cache, and subsequent token decoding proceeds without further intervention. This single-point intervention reduces implementation complexity and avoids cumulative damage to generation quality.
 
 ### Loss & Training
 
-The optimization objective is the cross-entropy loss under zero-shot inference. Checkpoints are selected using a validation set every 50 steps. No regularization or model-specific hyperparameter tuning is employed.
+The optimization objective is the cross-entropy loss under zero-shot inference. Checkpoints are selected using a validation set every 50 steps. No regularization or model-specific hyperparameter tuning is required.
 
 ## Key Experimental Results
 
@@ -86,46 +85,46 @@ The optimization objective is the cross-entropy loss under zero-shot inference. 
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
 | SITE M=50 | 58.54 avg | Optimal |
-| SITE M=1 | 57.50 avg | Slight decrease, insensitive to M |
+| SITE M=1 | 57.50 avg | Slight drop, insensitive to M |
 | Random Head Patching | Unstable | Performance highly dependent on selected heads |
-| Low-α Head Patching | 6.2 avg | Performance drop, validates selection effectiveness |
-| High-α Head Patching | 57.3 avg | Close to SITE |
+| Low-$\alpha$ Head Patching | 6.2 avg | Performance collapse, validates selection effectiveness |
+| High-$\alpha$ Head Patching | 57.3 avg | Close to SITE |
 
 ### Key Findings
 
-- SITE outperforms LoRA on the FV benchmark (90.02 vs. 86.76) and ANLI, achieving PEFT-level performance with only 0.03% of the parameters.
+- SITE outperforms LoRA on the FV (90.02 vs 86.76) and ANLI benchmarks, achieving PEFT-level performance with 0.03% of the parameters.
 - Consistently outperforms 10-shot ICL by 10.2-14.3 percentage points across 12 LLMs (4B-70B).
-- The optimized soft selection parameters exhibit a near-binary distribution, indicating that the task relevance of attention heads is "all-or-nothing."
-- Cross-task activation patching analysis reveals that similar tasks share important attention heads, while important heads for dissimilar tasks do not overlap—demonstrating strong task specificity.
-- A performance gap relative to PEFT remains on MMLU-Pro and BBH, suggesting that ICL-derived task embeddings have limited expressiveness for complex reasoning.
+- Optimized soft selection parameters show a near-binary distribution, suggesting task-relevance of attention heads is largely "all-or-nothing."
+- Cross-task activation patching analysis reveals that similar tasks share important attention heads, while dissimilar tasks have non-overlapping important heads, indicating strong task specificity.
+- A gap persists compared to PEFT on MMLU-Pro and BBH, suggesting that ICL-derived task embeddings have limited expressive power for complex reasoning.
 
 ## Highlights & Insights
 
-- Achieving the performance of 3.4M parameters with only 1K parameters is a striking result—the core insight is that "injection location is more important than injection content."
-- Near-binary selection parameters and cross-task head sharing analysis provide new mechanistic interpretability insights—attention heads indeed possess task-specific functions.
-- The minimalist design of the method (no regularization, no model-specific tuning, 400-step training) makes it highly reproducible and deployable.
+- Achieving the performance of 3.4M parameters with only 1K parameters is remarkable—the core insight is that "injection location is more important than injection content."
+- The near-binary selection parameters and cross-task head sharing analysis provide new mechanistic interpretability insights, confirming that attention heads perform task-specific functions.
+- The minimalist design (no regularization, no model-specific tuning, 400-step training) makes the method highly reproducible and easy to deploy.
 
 ## Limitations & Future Work
 
-- Performance gaps persist compared to LoRA on benchmarks requiring complex reasoning (MMLU-Pro, BBH).
-- Each task requires an independent set of choice parameters to be optimized, and scalability in multi-task scenarios remains to be verified.
-- Injection only at the last token position may limit the representation of task information.
-- Task embeddings remain fixed and cannot adapt to intra-task changes (e.g., samples of varying difficulty).
+- Gaps remain compared to LoRA on benchmarks requiring complex reasoning (MMLU-Pro, BBH).
+- Each task requires an independently optimized set of selection parameters; scalability in multi-task scenarios remains to be verified.
+- Injection is limited to the last-token position, which may restrict the representational capacity of task information.
+- Task embeddings are fixed and cannot adapt to intra-task variations (e.g., samples of varying difficulty).
 
 ## Related Work & Insights
 
-- **vs FV/TV**: These methods use heuristic search or activation patching to determine injection locations; SITE utilizes more efficient gradient optimization.
-- **vs LoRA**: LoRA modifies model weights, whereas SITE only modifies the activations of specific heads; the parameter count difference is 3000x, yet performance is comparable.
+- **vs FV/TV**: These methods use heuristic search or activation patching to determine injection locations; SITE uses more efficient gradient optimization.
+- **vs LoRA**: LoRA modifies model weights, while SITE only modifies activations of specific heads. The parameter count differs by 3000x, yet performance is comparable.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The formalization of soft head selection and the insight that "location is more important than content" are highly novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 12 models, four benchmarks, full activation patching analysis, and cross-task analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ The method is clearly articulated and the experimental logic is rigorous.
-- Value: ⭐⭐⭐⭐⭐ Provides an extreme parameter-efficient task adaptation scheme and a new understanding of attention head functionality.
+- Novelty: ⭐⭐⭐⭐⭐ The formalization of soft head selection and the "location over content" insight are highly novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 models, four benchmarks, comprehensive activation patching analysis, and cross-task analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear methodology and rigorous experimental logic.
+- Value: ⭐⭐⭐⭐⭐ Provides an extreme parameter-efficient adaptation solution and new understanding of attention head functionality.
 
 <!-- RELATED:START -->
 
@@ -135,9 +134,9 @@ The optimization objective is the cross-entropy loss under zero-shot inference. 
 
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](../../ICLR2026/interpretability/bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
-- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
-- [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
+- [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
+- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
 
 </div>
 

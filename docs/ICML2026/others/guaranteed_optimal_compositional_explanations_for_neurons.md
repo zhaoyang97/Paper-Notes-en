@@ -2,143 +2,135 @@
 title: >-
   [Paper Note] Guaranteed Optimal Compositional Explanations for Neurons
 description: >-
-  [ICML 2026][Neuron explanations] Compositional explanations typically use beam search to find the "logical formula that best aligns with neuron activations…
+  [ICML 2026][Others][Paper Note] Compositional explanations typically use beam search to find logical formulas that "best align with neuron activations," but beam search lacks optimality guarantees. This paper proposes an exact decomposition of IoU (dIoU) combined with an admissible heuristic and a best-first optimal algorithm. It **guarantees global
 tags:
-  - "ICML 2026"
-  - "Neuron explanations"
-  - "IoU decomposition"
-  - "optimal compositional explanations"
-  - "heuristic search"
-  - "beam search"
+  - ICML 2026
+  - Others
 date: 2026-05-08
-content_hash: 1662a422e2b82220
+content_hash: bd72cf2933a374cd
 ---
-
 # Guaranteed Optimal Compositional Explanations for Neurons
 
 **Conference**: ICML 2026 Oral  
 **arXiv**: [2511.20934](https://arxiv.org/abs/2511.20934)  
-**Code**: Provided in the paper ("We release the code at the following repository", see the original text for the specific link)  
+**Code**: Provided in the paper ("We release the code at the following repository", see original text for link)  
 **Area**: Interpretability / Neuron Explanation / Compositional Explanations  
-**Keywords**: Neuron explanations, IoU decomposition, optimal compositional explanations, heuristic search, beam search  
+**Keywords**: Neuron Explanation, IoU Decomposition, Optimal Compositional Explanations, Heuristic Search, Beam Search  
 
 ## TL;DR
-Compositional explanations typically use beam search to find the "logical formula that best aligns with neuron activations," but beam search lacks optimality guarantees. This paper proposes a precise decomposition of IoU (dIoU) + an admissible heuristic + a best-first optimal algorithm. Within a runtime comparable to beam search, it **guarantees the global optimal solution for the first time**, revealing that 10–40% of explanations in past literature are actually suboptimal.
+Compositional explanations typically use beam search to find logical formulas that "best align with neuron activations," but beam search lacks optimality guarantees. This paper proposes an exact decomposition of IoU (dIoU) combined with an admissible heuristic and a best-first optimal algorithm. It **guarantees global optimal solutions for the first time** within runtimes comparable to beam search, revealing that 10–40% of explanations in previous literature are actually suboptimal.
 
 ## Background & Motivation
 
-**Background**: Compositional explanations (Mu & Andreas 2020) are a class of methods designed to characterize "which concepts a CNN neuron aligns with spatially." The output consists of propositional logic formulas such as `((Cat OR Car) AND White)`, and the alignment quality is quantified using IoU. Compared to early Network Dissection, which provides only a single concept label, this approach better reflects the true behavior of "polysemantic neurons" and serves as a pillar of mechanistic interpretability.
+**Background**: Compositional explanations (Mu & Andreas 2020) are a class of methods designed to characterize which spatial concepts a CNN neuron aligns with. The output is a propositional logic formula such as `((Cat OR Car) AND White)`, with alignment quality quantified by Intersection over Union (IoU). This approach better reflects the behavior of "polysemantic neurons" compared to earlier Network Dissection methods that assigned only a single concept label, making it a pillar of mechanistic interpretability.
 
-**Limitations of Prior Work**: The size of the full state space across the candidate concept set $L^1$ and formula length $n$ is $\sum_{k=1}^{n}n_o^{k-1}\prod_{i=0}^{k-1}(|L^1|-i)$. Under the standard settings of Mu & Andreas, this reaches $2.8\times 10^{14}$ operations, making exhaustive enumeration impossible. Previous methods relied on beam search with small widths and additional assumptions such as "distinct concepts" or "layer-wise incremental concatenation." The cost of beam search is the **lack of optimality guarantees**—the returned solution may not be truly optimal, and the gap to the optimal solution remains unknown. This has left the field in an awkward position for years: explanations look appealing, but it is unclear whether they represent reality or are merely artifacts of beam search.
+**Limitations of Prior Work**: The full state space complexity over the candidate concept set $L^1$ and formula length $n$ is $\sum_{k=1}^{n}n_o^{k-1}\prod_{i=0}^{k-1}(|L^1|-i)$. In standard settings by Mu & Andreas, this reaches $2.8\times 10^{14}$ operations, making exhaustive search impossible. Previous approaches relied on small-beam search with additional assumptions like "mutually exclusive concepts" or "layer-wise incremental concatenation." The cost of beam search is a **lack of optimality guarantees**—the returned solution might not be truly optimal, and the gap to the optimum is unknown. This has left the field in an awkward position: explanations look appealing, but it is unclear if they represent "the true behavior" or merely "what beam search found."
 
-**Key Challenge**: Massive state space prevents enumeration vs. beam search lacks optimality guarantees $\rightarrow$ Ground truth is unknown $\rightarrow$ Impossible to judge the approximation quality of existing algorithms or systematically develop better heuristics. Executing a direct BFS on medium-to-high complexity datasets would take $\sim 4\times 10^{8}$ hours, which is clearly infeasible.
+**Key Challenge**: Massive state space vs. lack of optimality $\rightarrow$ unknown ground truth $\rightarrow$ inability to judge the approximation quality of existing algorithms or systematically develop better heuristics. Direct Breadth-First Search (BFS) on medium-to-high complexity datasets would take $\sim 4\times 10^{8}$ hours, which is clearly infeasible.
 
-**Goal**: (i) Define a set of **fundamental quantities** to decompose IoU into terms that can be independently estimated and combined via logical operators; (ii) Design an **admissible heuristic** providing a $[dIoU_{\min}, dIoU_{\max}]$ interval to prune the state space sufficiently; (iii) Construct an optimal algorithm with time complexity in the same order of magnitude as beam search.
+**Goal**: (i) Define a set of **fundamental quantities** to decompose IoU into terms that can be independently estimated and combined via logic operators; (ii) Design an **admissible heuristic** providing a $[dIoU_{\min}, dIoU_{\max}]$ interval to prune the state space efficiently; (iii) Construct an optimal algorithm with time complexity in the same order of magnitude as beam search.
 
-**Key Insight**: The authors noted that compositional explanations only use three 0-preserving operators (OR, AND, AND NOT), and formulas can always be decomposed into "left sub-formula $\oplus$ right atomic concept" per Assumption 2. This implies that if IoU can be expressed as "local terms accumulated across samples $x$ that can be derived from sub-formula quantities to parent formulas," a classic A*-style optimal search can be performed.
+**Key Insight**: The authors noticed that compositional explanations only use three 0-preserving operators (OR, AND, AND NOT), and formulas can always be decomposed into "left sub-formula $\oplus$ right atomic concept." If IoU can be expressed as "local terms accumulated over samples $x$ that can be propagated from sub-formulas to parent formulas," an A*-style optimal search becomes possible.
 
-**Core Idea**: Rewrite IoU as $dIoU=\frac{\sum_x|I^U(L)_x|+|I^C(L)_x|}{|^1N|+\sum_x|E^U(L)_x|+|E^C(L)_x|}$, where $I^{U/C}$ (unique/common intersection) and $E^{U/C}$ (unique/common extras) are decomposable terms partitioned by "whether a position is labeled by multiple concepts simultaneously." Based on this decomposition, min/max estimates are derived and integrated into a best-first search, implementing the first **optimal** compositional explanation algorithm.
+**Core Idea**: Rewrite IoU as $dIoU=\frac{\sum_x|I^U(L)_x|+|I^C(L)_x|}{|^1N|+\sum_x|E^U(L)_x|+|E^C(L)_x|}$, where $I^{U/C}$ (unique/common intersection) and $E^{U/C}$ (unique/common extras) are decomposable terms partitioned by "whether a location is annotated by multiple concepts simultaneously." Based on this decomposition, min/max estimates are derived and integrated into a best-first search to achieve the first **optimal** compositional explanation algorithm.
 
 ## Method
 
 ### Overall Architecture
-The method consists of three parts. The first part (Sec. 3.1) defines decomposable quantities: dataset positions $(x,j)$ are divided into **unique** $U$ and **common** $C$ categories based on how many concepts label them simultaneously. Neuron activations, intersections with concepts, and the "remaining labeled but non-active" portions are split by $U/C$ to obtain six fundamental quantities: $N^{U}, N^{C}, I^{U}(k), I^{C}(k), E^{U}(k), E^{C}(k)$. The second part (Sec. 3.2) provides the heuristic: based on a **Disjoint Matrix** $D$ that determines if the two sides of a sub-formula are disjoint in their labeling, min/max recursions for $I^C$ and $E^C$ are derived for OR/AND/AND NOT. Top-$n$/bottom-$n$ estimates for each concept across each quantity are used to estimate the "maximum/minimum gain brought by adding $n$ more concepts." The third part (Sec. 3.3) embeds the heuristic into a best-first search to achieve the optimal algorithm.
+The method consists of three stages. The first part (Sec. 3.1) defines decomposable quantities: dataset positions $(x,j)$ are split into **unique** $U$ (one concept) and **common** $C$ ($\ge 2$ concepts). Six fundamental quantities ($N^U, N^C, I^U, I^C, E^U, E^C$) are derived by splitting neuron activations, intersections, and "labeled but not activated" extras by $U/C$. The second part (Sec. 3.2) provides the heuristic: a **Disjoint Matrix** $D$ determines if sub-formulas are disjoint in annotations. Min/max recursions for $I^C$ and $E^C$ are derived for OR/AND/AND NOT operators, using top-$n$/bottom-$n$ estimates of concept magnitudes to bound the gain of $n$ additional concepts. The third part (Sec. 3.3) plugs these heuristics into a best-first search.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Trained CNN neuron activation N<br/>+ Concept annotation tensor M"] --> B["Exact Decomposition of IoU (dIoU)<br/>Split by unique/common status of positions<br/>to get 6 fundamental quantities (N, I, E for U, C)"]
+    B --> C["min/max Heuristic + Multi-step Path Estimation<br/>Disjoint Matrix check<br/>+ Top_n/Bott_n for admissible interval [dIoU_min, dIoU_max]"]
+    C --> D["Best-first Optimal Search<br/>Max-heap frontier, pop highest dIoU_max prefix"]
+    D -->|"If aggregated estimate"| E["Upgrade to sample-wise calculation and push back"]
+    E --> D
+    D -->|"If sample-wise"| F["Expand (append concept × operator) or calculate truth value<br/>Sub-label backpropagation to tighten bounds + pruning"]
+    F --> G["Update global dIoU_min*<br/>Prune nodes where dIoU_max < dIoU_min*"]
+    G -->|"Frontier not empty"| D
+    G -->|"Frontier empty"| H["Output: Global optimal logic formula L*<br/>Admissibility guarantees global optimality"]
+```
 
 ### Key Designs
 
-1.  **IoU Precise Decomposition (dIoU) + Fundamental Quantities**:
-    - **Function**: Rewrites the global metric $IoU(L,N,M)=|^1N\cap{}^1M_L|/|^1N\cup{}^1M_L|$ into a form that is **independently cumulative per sample and recursive from sub-formula quantities**, allowing pruning on formula prefixes.
-    - **Mechanism**: The core distinction is whether a position $(x,j)$ belongs to $U$ (labeled by exactly one concept) or $C$ (labeled by $\geq 2$ concepts). For 0-preserving logic operators (OR, AND, AND NOT), the behavior of unique elements can be exactly derived via their truth tables (Observation 1): OR sums the unique counts of both sides, AND clears unique counts, and AND NOT equals the left side's unique count. Common elements require checking if sub-formulas are disjoint: when disjoint, they are calculated exactly like unique elements; when overlapping, only intervals can be provided. Equivalence is strictly guaranteed by Lemma 3.6: $dIoU=IoU$ if and only if all operators are 0-preserving, which covers all commonly used operators in the literature.
-    - **Design Motivation**: Original IoU can only be calculated after the formula is **fully assembled**, preventing prefix pruning. By introducing the $U/C$ split, the "unique part" is exact and the "common part" can be bounded, making an admissible heuristic possible (a necessary condition is upper bound $\geq$ true value), which is the theoretical foundation of the optimal algorithm.
+**1. Exact Decomposition of IoU (dIoU) + Fundamental Quantities: Rewriting global metrics into prunable local terms**
+Original IoU $|^1N\cap{}^1M_L|/|^1N\cup{}^1M_L|$ can only be calculated after formula completion, making it impossible to prune prefixes. The key is splitting positions $(x,j)$ into unique $U$ and common $C$, and decomposing activations and intersections accordingly. For 0-preserving operators (OR, AND, AND NOT), unique element behavior is derived from truth tables (Observation 1), while common elements are bounded by checking if sub-formulas are disjoint via $D$. Lemma 3.6 ensures $dIoU=IoU$ for these operators. This separation is the theoretical foundation for an admissible heuristic (upper bound $\ge$ true value).
 
-2.  **min/max Heuristic + Multi-step Path Estimation**:
-    - **Function**: For any current prefix $L\in L^i$ ($i\leq n$), provides the $[dIoU_{\min}, dIoU_{\max}]$ achievable by appending up to $n-i$ atomic concepts along OR/AND/AND NOT "exclusive paths."
-    - **Mechanism**: Two layers. **Layer 1 (Single-step estimation)**: Appending a new concept $k$ to the current prefix, using the Disjoint Matrix $D$ to distinguish disjoint/overlap cases and calculating min/max for $I^C/E^C$ via Eqs. (7)–(10); unique parts utilize Observation 1. **Layer 2 (Multi-step path estimation)**: Pre-calculating $\mathrm{Top}_k$ and $\mathrm{Bott}_k$ (sum of top/bottom $k$ concept quantities per sample) and using Eqs. (11)–(14) to provide final $|I_{\min}|, |I_{\max}|, |\mathrm{Union}_{\min}|, |\mathrm{Union}_{\max}|$ for the three exclusive paths. Non-exclusive paths between operators take max/min across paths (preserving admissibility). Finally, $dIoU_{\max}=\frac{\sum_x|I_{\max}(L)_x|}{\sum_x|\mathrm{Union}_{\min}(L)_x|}$, with $dIoU_{\min}$ being symmetric.
-    - **Design Motivation**: Classic A* requires an admissible heuristic to guarantee optimality—here, it is sufficient that $dIoU_{\max}$ never falls below the true value. The authors also provide an "aggregated computation" version: per-sample quantities are summed before min/max operations, slightly reducing precision but calculating only once per prefix—far cheaper than sample-wise. The frontier uses aggregated estimates for coarse screening, upgrading to sample-wise when popped, and calculating exact values only at the end. This "tiered refinement" is key to achieving both heuristic affordability and search termination.
+**2. min/max Heuristic + Multi-step Path Estimation: Providing an admissible $[dIoU_{\min}, dIoU_{\max}]$ for any prefix**
+A* requires an admissible heuristic; here $dIoU_{\max}$ must never be lower than the true value. This is calculated in two layers. Layer 1 (single-step): Uses the Disjoint Matrix $D$ to derive bounds for $I^C/E^C$ while unique parts are calculated exactly. Layer 2 (path estimation): Pre-calculates $\mathrm{Top}_k$ and $\mathrm{Bott}_k$ to bound the best/worst possible gain from adding $k$ more concepts. To maintain efficiency, the authors use an **aggregated** version (summing over samples before min/max) for initial sorting and only upgrade to expensive **sample-wise** calculations for promising nodes in the frontier.
 
-3.  **Best-first Optimal Search + Sub-label Backpropagation**:
-    - **Function**: Maintains candidate prefixes in a max-heap frontier, popping the node with the highest current $dIoU_{\max}$. If it is an aggregated estimate, it is refined and re-inserted; if sample-wise, it is expanded (append atomic concept $\times$ operator) or evaluated for true value. A global $dIoU_{\min}^*$ is maintained to prune nodes where $dIoU_{\max} < dIoU_{\min}^*$.
-    - **Mechanism**: Four key tricks make the search feasible: (a) **Frontier initialization** only includes seeds with $dIoU_{\max} >$ global $dIoU_{\min}^*$ to prevent immediate explosion; (b) **Aggregated $\rightarrow$ sample-wise $\rightarrow$ exact refinement** applies expensive calculations only to promising nodes; (c) **Sub-label backpropagation**: Exact quantities generated during path evaluation are stored; nodes in the search frontier sharing the same sub-formulas use these exact quantities to replace estimates, tightening bounds; (d) **Logical equivalence pruning + buffer** removes degenerated or redundant expressions like `cat AND NOT cat` or `A OR A`. Theoretically, since $dIoU_{\max}$ is an admissible upper bound and the algorithm exhausts all nodes with "upper bounds higher than the current best lower bound," the returned solution is globally optimal (proof in Appendix F).
-    - **Design Motivation**: The fundamental flaw of beam search is its "inability to backtrack," potentially stacking explanations that rely on unverified scenarios to fix early errors (the paper cites `(ball_pit OR flower) AND NOT dining_room` as a counter-example: `ball_pit` and `dining_room` never co-occur, making the constraint invalid). Best-first + admissible heuristics fix this: if a higher true value solution exists, one of its prefixes must have a high $dIoU_{\max}$ and will never be pruned incorrectly.
-
-### Loss & Training
-No training—this is an analysis/explanation algorithm. Inputs are a pre-trained CNN, a concept-labeled dataset, and neuron activation ranges $[\tau_1, \tau_2]$; the output is the logical formula best aligned with the neuron.
+**3. Best-first Optimal Search + Sub-label Backpropagation: Compressing the search space into a sparse A* tree**
+The algorithm pops the prefix with the highest $dIoU_{\max}$ from a max-heap. Four tricks make it viable: (1) Frontier initialization with nodes above a global lower bound; (2) Stratified refinement (aggregated $\rightarrow$ sample-wise $\rightarrow$ exact); (3) **Sub-label backpropagation**, which stores exact quantities of sub-formulas during path evaluation to tighten bounds of other nodes sharing the same sub-formula; (4) Logic pruning (e.g., removing `A OR A`). Since $dIoU_{\max}$ is admissible, the result is guaranteed optimal. This fixes beam search's inability to backtrack—for example, if a logic constraint is actually redundant, best-first search will eventually prioritize a higher truth value path.
 
 ## Key Experimental Results
 
 ### Main Results
-The feasibility of the algorithm was evaluated across three levels of data complexity: Cityscapes (25 concepts, all disjoint, Low); Ade20K-Detectron2 (847 concepts, no overlap, Medium); Broden (1198 concepts, frequent overlap, High). 50 neurons from the final layer of ResNet were sampled for each, with activation ranges at the top 0.5%.
+Evaluation across three complexity levels: Cityscapes (25 concepts, low); Ade20K-Detectron2 (847 concepts, medium); Broden (1198 concepts, high).
 
 | Complexity | Algorithm | Visited | Expanded | Estimated | Sec/Unit |
-| :--- | :--- | ---: | ---: | ---: | ---: |
-| Low (Cityscapes) | Optimal (Ours) | 1 | 101 | 778 | 0.08 |
-| Low | Beam (Ours, Heuristic) | 6 | 14 | 639 | 0.17 |
+|:---|:---|---:|---:|---:|---:|
+| Low (Cityscapes) | **Optimal (Ours)** | 1 | 101 | 778 | 0.08 |
+| Low | Beam (Ours) | 6 | 14 | 639 | 0.17 |
 | Low | MMESH beam | 121 | 15 | 697 | 10.37 |
-| Low | Vanilla beam | 716 | 15 | – | 2.77 |
-| Med (Ade20K-D2) | Optimal (Ours) | 1 | 4915 | 106 | 90.57 |
-| Med | Beam (Ours, Heuristic) | 10 | 15 | 37956 | 11.55 |
-| Med | MMESH beam | 39 | 15 | 37956 | 38.42 |
-| Med | Vanilla beam | 37979 | 15 | – | 450 |
-| High (Broden) | Optimal (Ours) | 47 | 105 | 108 | 5768 |
-| High | Beam (Ours, Heuristic) | 27 | 15 | 53752 | 123.33 |
-| High | MMESH beam | 43 | 15 | 53752 | 102.35 |
+| Mid (Ade20K-D2) | **Optimal (Ours)** | 1 | 4915 | 106 | 90.57 |
+| Mid | Beam (Ours) | 10 | 15 | 37956 | 11.55 |
+| High (Broden) | **Optimal (Ours)** | 47 | 105 | 108 | 5768 |
 | High | Vanilla beam | 53775 | 15 | – | 5929 |
 
-The **optimal algorithm** completed across all three complexity levels, with runtimes in the same order of magnitude as vanilla beam search (both $\sim$ 5800 s/unit at high complexity), vastly smaller than the BFS estimate of $4\times 10^8$ hours. **Beam search guided by this paper's heuristic** had the fewest visited nodes and wall-clock times comparable to or faster than MMESH—a single heuristic provides both an optimal algorithm and optimization for beam search.
+The **Optimal algorithm** completed all complexity levels within runtimes comparable to vanilla beam search, while the heuristic-guided beam search proved faster than previous SOTA (MMESH).
 
 ### Ablation Study
 **How poor are the solutions found by beam search?**
 
-| Model | Suboptimal Ratio | Cat 1 (Diff Concepts + IoU) | Cat 2 (Same Concepts, Diff Logic $\rightarrow$ Diff IoU) | Cat 3 (Same IoU, Diff Logic) |
-| :--- | ---: | ---: | ---: | ---: |
+| Model | Suboptimal Rate | Cat 1 (Diff Concept/IoU) | Cat 2 (Same Concept, Diff Logic) | Cat 3 (Same IoU, Diff Logic) |
+|:---|---:|---:|---:|---:|
 | ResNet | 9% | 76% | 6% | 17% |
 | AlexNet | 23% | 93% | 5% | 2% |
 | DenseNet | 39% | 73% | 0% | 27% |
 
-At high complexity, 10–40% of beam search explanations deviate from the optimal. Cat 1 (most severe) suboptimal solutions mostly involve AND / AND NOT, indicating that beam search struggles with "polysemantic neurons requiring complex negation/intersection for precise characterization."
+Under high complexity, 10–40% of beam search explanations are suboptimal. Cat 1 errors are most severe, showing beam search struggles with complex negations/intersections needed for polysemantic neurons.
 
 ### Key Findings
-- **Expanded nodes < 0.1% of state space**: The optimal algorithm's frontier expanded only 105 nodes under Broden's high complexity (vs. hundreds of millions in the state space), proving the pruning efficiency of sub-label backpropagation + min/max dual estimation; "exploring the entire space" is compressed into "exploring a sparse A* tree."
-- **Aggregated estimation is key to feasibility**: The number of estimated nodes is much larger than expanded nodes (37,956 vs. 4,915 at medium complexity), which means many nodes are rejected immediately because their upper bounds are too low. This is the payoff of the tiered refinement strategy.
-- **Beam variant of this heuristic is hyperparameter-insensitive**: As explanation length increases from 3 to 20 and beam from 5 to 20, runtime only drifts between 0.19–0.42 min/unit; MMESH jumps from 0.62 to 25 min/unit in the same setting. This means researchers no longer need to compromise between beam size and exploration depth.
-- **DenseNet has the highest suboptimality rate (39%)**, with Cat 3 (same IoU, different expression) accounting for 27%—suggesting neurons formed by dense connections are particularly sensitive to the specific form of logical expressions, prompting beam search to produce "IoU-correct but semantically fragile" pseudo-solutions (such as the `AND NOT dining_room` example).
+- **Expanded nodes < 0.1% of state space**: The search efficiency of the A* tree is verified.
+- **Aggregated estimation is critical**: Many nodes are rejected via low-cost summation without needing sample-wise precision.
+- **Robustness to hyperparameters**: Unlike MMESH, the runtime of the proposed heuristic does not explode as beam size or formula length increases.
+- **DenseNet had the highest suboptimality (39%)**: Suggesting neurons in dense connections are more sensitive to specific logical forms that beam search misses.
 
 ## Highlights & Insights
-- **First admissible heuristic**: It is not that no one wanted to do optimal search in compositional explanations, but rather no one could formulate an affordable admissible upper bound. Once dIoU correctly isolated "exact unique parts" and "bounded common parts," A* became viable. This is a model for aligning "theoretical analyzability" with "algorithmic computability."
-- **MMESH uses spatial info, transferability follows binary bits**: Unlike MMESH, this heuristic only uses binary occupancy information and can thus generalize to domains without spatial structures (NLP, tabular), which MMESH cannot.
-- **Exposing the flaws of beam search**: The `(ball_pit OR flower) AND NOT dining_room` example demonstrates that beam search can construct explanations that are "semantically absurd but numerically attractive in IoU." The lack of co-occurrence between `ball_pit` and `dining_room` makes the `AND NOT` constraint uninformative. Such spurious explanations were invisible without ground truth.
+- **First Admissible Heuristic**: This work provides a computationally affordable upper bound for compositional search, bridging the gap between theoretical analysis and practical search.
+- **No Spatial Dependency**: Unlike MMESH, this method uses only binary activation information, making it applicable to non-spatial domains (NLP, tabular).
+- **Exposing Beam Search "Hallucinations"**: The paper demonstrates cases where beam search adds irrelevant constraints (e.g., `AND NOT dining_room` when it never co-occurs with the target) to artificially maintain an IoU that higher truth-value prefixes would have discarded.
 
 ## Limitations & Future Work
-- Feasibility relies heavily on having a sufficient number of "unique elements." In NLP datasets (where labels are almost entirely overlapping), quantities degrade into large uncertainty intervals for common estimates, failing to collapse the state space. The authors noted this but provided no solution.
-- At high complexity, the optimal algorithm takes ~96 min/unit—reproducible but not ideal for interactive use.
-- When neurons are inherently uninterpretable (IoU < 0.04) or over-generalized, the frontier can explode; the paper suggests a two-stage "beam first, then optimal for interpretable units" strategy, but it is not integrated.
-- Only validated on CNNs + visual concepts. Transformations for Transformer multi-token structures or vectorized concepts (e.g., Probe-derived) haven't been explored.
-- Default max length is 3, which is usually sufficient but may not capture extremely complex polysemantic neurons; at greater lengths, top vectors dominate and search may degrade toward BFS.
+- **Reliance on Unique Quantities**: In datasets with heavy overlap (like NLP), bounds may become too loose, causing frontier explosion.
+- **Computational Cost**: While optimal, high-complexity units can take $\sim$ 96 minutes per unit, which is slow for interactive use.
+- **Max Formula Length**: Currently defaults to 3; extremely complex polysemantic neurons might require deeper search where heuristics might degrade toward BFS.
 
 ## Related Work & Insights
-- **vs. Mu & Andreas 2020 (vanilla beam)**: Uses the same formulas, operators, and assumptions, but provides the missing "optimality guarantee." Vanilla beam requires 37,979 visited nodes at medium complexity to match results, whereas the optimal search expands only 4,915 nodes.
-- **vs. MMESH (La Rosa et al., 2023)**: MMESH is currently the strongest informed beam search, relying on spatial info. This heuristic uses only binary info but matches or beats its wall-clock time and is hyperparameter-insensitive. Both find the same solutions on ResNet (limited by the beam search space), but this paper reveals these solutions are suboptimal for 9% of units.
-- **vs. Network Dissection (Bau et al., 2017)**: Network Dissection gives single-concept explanations; compositional explanations expand this to logic. This "optimal" framework can audit whether Network Dissection’s explanations are truly optimal for single concepts.
-- **vs. Probabilistic IoU Approximation (Nowozin 2014; Li et al. 2013)**: Those works use expected IoU approximations for structured prediction; this paper performs deterministic precise decomposition suited for search. Both share the spirit of rewriting non-decomposable global metrics into manageable local terms.
-- **Insights for Mechanistic Interpretability**: Compositional explanations finally have a ground-truth benchmark. This means future developments of new heuristics or algorithms (e.g., for transformer neurons or SAE feature explanations) have a gold standard for comparison; the field can now discuss "approximation ratios" and "suboptimality rates" as in optimization.
+- **Mu & Andreas (2020)**: This paper uses the same formulation but provides the missing "optimality guarantee."
+- **MMESH (La Rosa et al., 2023)**: Proposed heuristic is faster/comparable to MMESH without requiring spatial information.
+- **Mechanistic Interpretability**: Providing ground truth allows the field to establish "approximation ratios" and "suboptimality rates" for the first time, similar to the maturity of optimization fields.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First optimality guarantee for compositional explanations; dIoU decomposition + admissible heuristic is a clean theoretical contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three complexity tiers + three backbones + comprehensive comparison with beam search; detailed analysis, though restricted to visual CNNs.
-- Writing Quality: ⭐⭐⭐⭐ Numerous formulas but a clear hierarchy; Definition/Observation/Lemma structure is rigorous; Fig. 1 visualization is very helpful.
-- Value: ⭐⭐⭐⭐⭐ Provides a ground-truth metric for the entire compositional explanation direction, reassesses conclusions in previous literature, and lays the foundation for future algorithmic research.
+- Novelty: ⭐⭐⭐⭐⭐ 1st optimality guarantee for compositional explanations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad backbone coverage; high complexity testing.
+- Writing Quality: ⭐⭐⭐⭐ Clear structured definitions and lemmas.
+- Value: ⭐⭐⭐⭐⭐ Established a ground-truth benchmark for the field.
 
 <!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
+<!-- Paper: Compositional Explanations of Neurons (Mu et al. 2020) -->
+<!-- Paper: MMESH: Multi-modal Explanation Search (La Rosa et al. 2023) -->
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
 - [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](../../AAAI2026/others/formal_abductive_latent_explanations_for_prototype-based_networks.md)
-- [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
 - [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
-- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](../../CVPR2026/others/simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[ICML 2026\] Optimal Regularization for Performative Learning](optimal_regularization_for_performative_learning.md)
+- [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
+- [\[ACL 2025\] Neuron Empirical Gradient: Discovering and Quantifying Neurons' Global Linear Controllability](../../ACL2025/others/neuron_empirical_gradient_discovering_and_quantifying_neurons_global_linear_cont.md)
 
 </div>
 

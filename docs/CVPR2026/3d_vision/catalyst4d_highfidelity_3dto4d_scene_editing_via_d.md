@@ -2,133 +2,164 @@
 title: >-
   [Paper Note] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 description: >-
-  [CVPR 2026][3D Vision][4D editing] This paper proposes Catalyst4D, a framework that propagates mature 3D static editing results into 4D dynamic Gaussian scenes via Anchor-based Motion Guidance (AMG…
+  [CVPR 2026][3D Vision][3DGS] Ours proposes the Catalyst4D framework, which propagates mature 3D static editing results to 4D dynamic Gaussian scenes via Anchor Motion Guidance (AMG, establishing region-level correspondences based on optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, automatically identifying and repairing
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "4D editing"
-  - "3DGS"
-  - "dynamic scenes"
-  - "motion propagation"
-  - "optimal transport"
-  - "color uncertainty"
+  - CVPR 2026
+  - 3D Vision
+  - 3DGS
 date: 2026-05-08
-content_hash: ffc2e0f4a5e1c3a4
+content_hash: 3e2f0b1436254dd5
 ---
-
 # Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12766](https://arxiv.org/abs/2603.12766)  
 **Code**: None  
-**Area**: 3D Vision
-**Keywords**: 4D editing, 3DGS, dynamic scenes, motion propagation, optimal transport, color uncertainty
+**Area**: 3D Vision  
+**Keywords**: 4D Editing, 3DGS, Dynamic Scene, Motion Propagation, Optimal Transport, Color Uncertainty
 
 ## TL;DR
 
-This paper proposes Catalyst4D, a framework that propagates mature 3D static editing results into 4D dynamic Gaussian scenes via Anchor-based Motion Guidance (AMG, which establishes region-level correspondences using optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, which automatically identifies and corrects occlusion artifacts). The method consistently outperforms existing approaches in CLIP semantic similarity.
+Ours proposes the Catalyst4D framework, which propagates mature 3D static editing results to 4D dynamic Gaussian scenes via Anchor Motion Guidance (AMG, establishing region-level correspondences based on optimal transport) and Color Uncertainty-guided Appearance Refinement (CUAR, automatically identifying and repairing occlusion artifacts), consistently outperforming existing methods in CLIP semantic similarity.
 
 ## Background & Motivation
 
-**Background**: Static scene editing with 3DGS has reached considerable maturity—methods such as DGE, DreamCatalyst, and SGSST support fine-grained object manipulation and global style transfer with good spatial consistency. 4D scene reconstruction has also advanced significantly (Swift4D, 4DGS, etc.), typically adopting a canonical 3D Gaussian plus a learned deformation field $\mathcal{F}_\theta$ to represent dynamics.
+**Background**: Static scene editing for 3DGS is quite mature—methods like DGE, DreamCatalyst, and SGSST support fine-grained object manipulation and global style transfer with excellent spatial consistency. 4D scene reconstruction has also made significant progress (e.g., Swift4D, 4DGS), typically employing canonical 3D Gaussians combined with a learned deformation field $\mathcal{F}_\theta$ for dynamic representation.
 
-**Limitations of Prior Work**: Dynamic 4D scene editing remains highly challenging. Existing methods (Instruct 4D-to-4D, CTRL-D, Instruct-4DGS) primarily rely on 2D diffusion models to edit per-frame images and subsequently fit a 4D representation, leading to: (1) spatial distortion—2D editing lacks geometric reasoning; (2) temporal flickering—inconsistent 2D edits across frames; (3) unintended modification of non-target regions—due to the global influence of 2D diffusion models.
+**Limitations of Prior Work**: Dynamic 4D scene editing remains challenging. Existing approaches (e.g., Instruct 4D-to-4D, CTRL-D, Instruct-4DGS) primarily rely on 2D diffusion models to edit images frame-by-frame before fitting them to a 4D representation, which leads to: (1) spatial distortion—2D editing lacks geometric reasoning; (2) temporal flickering—inconsistent 2D edits across frames; (3) unintended modifications to non-target regions—due to the global influence of 2D diffusion models.
 
-**Key Challenge**: 3D editing is high quality but limited to static scenes; the deformation network of a 4D representation is trained only on the original geometry, and thus cannot infer the motion of edited Gaussians (which have undergone cloning, splitting, and pruning) that have drifted from the original distribution—new Gaussians have no motion prior.
+**Key Challenge**: While 3D editing quality is high, it is limited to static scenes. The deformation networks of 4D representations are trained only on the original geometry. Once Gaussians are edited (via cloning, splitting, or pruning), they deviate from the original distribution, rendering the deformation network unable to infer their motion as the new Gaussians lack motion priors.
 
-**Goal**: Transfer mature 3D static editing capabilities to 4D dynamic scenes while preserving geometric accuracy and temporal consistency.
+**Goal**: Transfer mature 3D static editing capabilities to 4D dynamic scenes while maintaining geometric accuracy and temporal consistency.
 
-**Key Insight**: Decouple spatial editing from temporal propagation—first edit the first frame using a mature 3D editor, then extend the edited result to all time steps via geometry-aware motion propagation.
+**Key Insight**: Decouple spatial editing from temporal propagation—first edit the initial frame using a mature 3D editor, then extend the editing results to all timesteps via geometry-aware motion propagation.
 
-**Core Idea**: Use anchor matching with optimal transport to establish region-level motion correspondences between pre- and post-edit Gaussians, aggregate and propagate known deformations from source Gaussians to edited Gaussians, and apply color uncertainty-driven appearance refinement to correct temporal artifacts.
+**Core Idea**: Establish region-level motion correspondences between pre- and post-edit Gaussians using anchor matching and optimal transport. This allows the aggregation and propagation of known deformations from source Gaussians to edited Gaussians, followed by appearance refinement driven by color uncertainty to fix temporal artifacts.
 
 ## Method
 
 ### Overall Architecture
 
-Catalyst4D takes as input an existing 4D reconstruction $(\mathcal{G}_c, \mathcal{F}_\theta)$ and the edited first-frame Gaussians $\mathcal{G}_{\text{edit}}^1$. The pipeline consists of two stages: (1) the AMG module constructs anchors on both the original first-frame Gaussians $\mathcal{G}^1$ and the edited Gaussians $\mathcal{G}_{\text{edit}}^1$, establishes correspondences via optimal transport, and aggregates source Gaussian deformations to propagate motion to the edited Gaussians across all time steps; (2) the CUAR module renders optical flow from the first frame to frame $t$, warps the first-frame edited image to subsequent frames as pseudo ground truth, estimates per-Gaussian color uncertainty, and selectively refines high-uncertainty regions. The framework is compatible with both Swift4D (multi-camera) and 4DGS (monocular).
+This paper addresses dynamic 4D scene editing: while 3D static editing and 4D dynamic reconstruction are mature, merging "editing" into dynamic scenes has been problematic—using 2D diffusion models for frame-by-frame modification followed by 4D fitting causes geometric distortion and temporal flickering. Catalyst4D cleverly decouples "editing" from "dynamics": it first edits the **first frame** using an existing 3D editor, then ensures this result "moves" according to the original scene's motion laws.
+
+Specifically, the input consists of an existing 4D reconstruction $(\mathcal{G}_c, \mathcal{F}_\theta)$ (canonical Gaussians + deformation field) and the edited Gaussians for the first frame $\mathcal{G}_{\text{edit}}^1$. The pipeline follows two steps. The first step is motion propagation: stable anchors are sampled from both original first-frame Gaussians $\mathcal{G}^1$ and edited Gaussians $\mathcal{G}_{\text{edit}}^1$. These anchors are aligned via optimal transport (AMG), allowing each edited Gaussian to "borrow" full-timestep motion from its corresponding source Gaussian (Region-decoupled Deformation Aggregation). The second step is appearance refinement (CUAR): as edited Gaussians move, changes in occlusion reveal unedited colors. The deformation field is used to warp the first-frame edited image into subsequent frames as pseudo-ground truth, followed by local refinement only in areas with high color variation. This method requires no retraining of the deformation network and is compatible with both Swift4D (multi-camera) and 4DGS (monocular) representations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: 4D Reconstruction (Canonical Gaussians + Deformation Field)<br/>+ First-frame Edited Gaussians"]
+    subgraph AMG["Anchor Motion Guidance (AMG)"]
+        direction TB
+        A1["Anchor Construction<br/>Sample structurally stable anchors from source/edited Gaussians"]
+        A2["Optimal Transport Alignment<br/>Solve for soft correspondence matrix P via Sinkhorn"]
+        A1 --> A2
+    end
+    subgraph AGG["Region-decoupled Deformation Aggregation"]
+        direction TB
+        B1["Trace edited Gaussians back to semantically corresponding source Gaussians via anchors"]
+        B2["Weighted aggregation of source Gaussian temporal deformation Δμ<br/>(via Opacity + Mahalanobis distance)"]
+        B1 --> B2
+    end
+    subgraph CUAR["Color Uncertainty-guided Appearance Refinement (CUAR)"]
+        direction TB
+        C1["Warp first-frame edited image via deformation field → Pseudo-GT"]
+        C2["SH color temporal difference → Uncertainty map → Artifact mask"]
+        C3["Local refinement within mask<br/>Regularization using original rendering outside mask"]
+        C1 --> C3
+        C2 --> C3
+    end
+    IN --> AMG
+    AMG --> AGG
+    AGG -->|"Edited Gaussians obtain full-timestep motion"| CUAR
+    CUAR --> OUT["Output: High-fidelity 4D Dynamic Edited Scene"]
+```
 
 ### Key Designs
 
-1. **Anchor-based Motion Guidance (AMG)**:
-    - Function: Establish stable region-level motion correspondences between pre- and post-edit Gaussians, avoiding the noise inherent in point-wise matching.
-    - Mechanism: Anchors are constructed on both the original and edited point clouds—candidate rays are generated by uniformly sampling point pairs on the minimum bounding sphere, and rays intersecting the local neighborhood $\mathcal{N}_{ei}$ are identified via a cylinder test with radius $\delta=\frac{\sqrt{3}}{2}d_{\text{mean}}$. The distance-weighted centroid $\mathbf{p}=\frac{\sum_{\mathbf{x}\in\mathcal{N}_{ei}}d_x\mathbf{x}}{\sum d_x}$ serves as the anchor. The two anchor sets $A_{\text{src}}, A_{\text{edit}}$ are matched via unbalanced optimal transport (Sinkhorn algorithm) to produce a soft correspondence matrix $P\in\mathbb{R}^{n\times m}$. The per-frame positional deformation $\Delta\boldsymbol{\mu}_{\mathbf{g}}^t$ for each edited Gaussian is computed by weighted aggregation of source Gaussian deformations, with weights incorporating opacity and Mahalanobis distance.
-    - Design Motivation: Anchors are structurally stable, spatially representative region-level reference points that are more robust than point-wise KNN; optimal transport establishes semantically consistent correspondences and naturally prevents cross-semantic motion entanglement (e.g., hand motion erroneously affecting the torso).
+**1. Anchor Motion Guidance (AMG): Animating new Gaussians following old motion laws**
 
-2. **Color Uncertainty-guided Appearance Refinement (CUAR)**:
-    - Function: Identify and correct color artifacts arising from changes in occlusion relationships.
-    - Mechanism: The deformation field is used to render optical flow maps $F_{1\to t}^v$ from the first frame to frame $t$, warping the first-frame edited image to subsequent frames as pseudo ground truth. Per-Gaussian color uncertainty is estimated as $\xi_t^v=1-\exp(-\|SH(\mathbf{sh},\mathbf{v})_t-SH(\mathbf{sh},\mathbf{v})_1\|_1)$, composited into a pixel-level uncertainty map $U_t^v$ via $\alpha$-blending, and binarized into an artifact mask $M_t^v=(U_t^v>\epsilon\cdot\text{mean}(U_t^v))$. L1+SSIM refinement loss is applied only within the high-uncertainty masked regions; outside the mask, L1 regularization against the pre-refinement rendering prevents unintended modification.
-    - Design Motivation: Editing operations inevitably affect interior Gaussians, and changes in occlusion relationships expose them upon motion. Rather than applying a diffusion model for post-hoc inpainting (which would introduce new inconsistencies), CUAR uses the highly reliable first-frame edited result as supervision via geometric warping—preserving consistency with the 3D edit.
+Edited Gaussians, having undergone cloning, splitting, and pruning, deviate from the distribution seen during deformation network training. Feeding them directly into the network fails to produce reasonable motion. Furthermore, point-level KNN search for nearest neighbors in the original scene introduces noise, potentially cross-contaminating motion between unrelated parts. AMG addresses this by establishing correspondences at the **region level**. It constructs anchors for both original and edited Gaussian sets: candidate rays are generated by uniformly sampling point pairs on the point cloud's minimum bounding sphere. True interior rays are filtered using a cylinder test with radius $\delta=\frac{\sqrt{3}}{2}d_{\text{mean}}$ relative to the local neighborhood $\mathcal{N}_{ei}$, and the distance-weighted centroid $\mathbf{p}=\frac{\sum_{\mathbf{x}\in\mathcal{N}_{ei}}d_x\mathbf{x}}{\sum d_x}$ is taken as the anchor. These anchors serve as structurally stable, spatially representative reference points. An unbalanced optimal transport (solved via Sinkhorn) determines the soft correspondence matrix $P\in\mathbb{R}^{n\times m}$ between anchor sets $A_{\text{src}}$ and $A_{\text{edit}}$. The strength of optimal transport lies in its semantically consistent global matching, which naturally prevents misaligning hand motion to the torso.
 
-3. **Region-decoupled Deformation Aggregation**:
-    - Function: Ensure that each edited Gaussian inherits motion only from its semantically corresponding region.
-    - Mechanism: For each edited Gaussian $\mathbf{g}$, its influencing anchors $A_{\text{edit}}^{\text{sub}}$ are identified; the correspondence mapping locates the source anchors $A_{\text{src}}^{\text{sub}}$; the source Gaussians $\mathcal{G}_{\text{src}}^{1,\text{sub}}$ contributing to those source anchors are retrieved and their temporal deformations aggregated. Weights are given by $w_{\mathbf{g}'}=\sigma_{\mathbf{g}'}\exp(-\frac{1}{2}(\boldsymbol{\mu}_{\mathbf{g}'}-\boldsymbol{\mu}_{\mathbf{g}})^T\boldsymbol{\Sigma}_{\mathbf{g}'}^{-1}(\boldsymbol{\mu}_{\mathbf{g}'}-\boldsymbol{\mu}_{\mathbf{g}}))$.
-    - Design Motivation: By mediating through anchor-level correspondences, each edited Gaussian receives motion signals only from semantically matched regions, preventing the cross-part motion entanglement characteristic of KNN-based approaches.
+**2. Region-decoupled Deformation Aggregation: Inheriting motion from semantically relevant regions**
+
+Anchor correspondence alone is insufficient; specific motion for individual edited Gaussians requires a clear "inheritance chain" to avoid picking up motion from unrelated source Gaussians. This step uses anchor correspondence as a mediator: for each edited Gaussian $\mathbf{g}$, the system identifies influencing anchors $A_{\text{edit}}^{\text{sub}}$, maps them to source-side anchors $A_{\text{src}}^{\text{sub}}$ via the correspondence matrix, and finally traces back to the source Gaussians $\mathcal{G}_{\text{src}}^{1,\text{sub}}$ that contributed to those anchors. Their temporal deformations $\Delta\boldsymbol{\mu}^t$ are then aggregated. Weights are determined by both opacity and spatial proximity (Mahalanobis distance):
+
+$$w_{\mathbf{g}'}=\sigma_{\mathbf{g}'}\exp\!\Big(-\tfrac{1}{2}(\boldsymbol{\mu}_{\mathbf{g}'}-\boldsymbol{\mu}_{\mathbf{g}})^{\!\top}\boldsymbol{\Sigma}_{\mathbf{g}'}^{-1}(\boldsymbol{\mu}_{\mathbf{g}'}-\boldsymbol{\mu}_{\mathbf{g}})\Big)$$
+
+Consequently, each edited Gaussian "sees" only the motion signals from its semantically matched region. Compared to direct global KNN, this anchor-mediated layer prevents cross-component motion interference.
+
+**3. Color Uncertainty-guided Appearance Refinement (CUAR): Identifying and fixing temporal "leaks"**
+
+Editing inevitably affects internal Gaussians. As these move with the scene and occlusion relationships change, previously hidden, unedited colors may be exposed as artifacts. Instead of using a diffusion model for post-processing (which would introduce temporal inconsistency), CUAR utilizes the high-confidence first-frame edit for supervision. The deformation field renders the optical flow $F_{1\to t}^v$ from the first frame to frame $t$, warping the first-frame edited image into subsequent frames as pseudo-ground truth. Areas requiring repair are identified by color uncertainty, measuring the Spherical Harmonic (SH) color difference of a Gaussian between frame $t$ and frame 1:
+
+$$\xi_t^v=1-\exp\!\big(-\|SH(\mathbf{sh},\mathbf{v})_t-SH(\mathbf{sh},\mathbf{v})_1\|_1\big)$$
+
+Pixel-level uncertainty maps $U_t^v$ are synthesized via $\alpha$-blending, and binarized into artifact masks $M_t^v=\big(U_t^v>\epsilon\cdot\text{mean}(U_t^v)\big)$. Refinement targets only high-uncertainty regions within the mask ($L_1 + SSIM$ alignment with warped pseudo-GT), while regions outside the mask are regularized using original renderings to prevent degradation of correct areas. This process ensures the entire sequence remains consistent with the first-frame edit.
 
 ### Loss & Training
 
-The refinement loss is $L_{\text{refine}}=(1-\zeta)L_{\text{fore}}+\zeta L_{\text{back}}$, where $L_{\text{fore}}$ is the L1+SSIM loss ($\eta=0.2$) between the rendered image and the warped pseudo ground truth within the masked region, and $L_{\text{back}}$ is L1 regularization between the rendered image and the pre-refinement rendering outside the mask. Hyperparameters: $\zeta=0.3$; $\epsilon$ controls mask coverage. The deformation network is not retrained. Anchor construction takes <30s, Sinkhorn solving ~15s, motion guidance ~1min, CUAR 25–35min, for a total training time of ~50min per scene.
+The refinement loss is $L_{\text{refine}}=(1-\zeta)L_{\text{fore}}+\zeta L_{\text{back}}$, where $L_{\text{fore}}$ is the $L_1+SSIM$ ($\eta=0.2$) between the rendered image and the warped pseudo-GT within the masked region, and $L_{\text{back}}$ is $L_1$ regularization between the rendered image and the pre-refinement rendering for non-mask regions. Hyperparameters are set to $\zeta=0.3$, with $\epsilon$ controlling mask coverage. This process does not require retraining the deformation network. Anchor construction takes $<30s$, Sinkhorn solver ~15s, motion guidance ~1min, and CUAR 25-35min, totaling ~50min per scene.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Scene | Method | CLIP Sim↑ | Consistency↑ | Time↓ |
-|-------|--------|-----------|-------------|-------|
-| Sear-steak | **Catalyst4D** | **0.252** | 0.983 | 50min |
+|------|------|----------|-------------|------|
+| Sear-steak | **Ours** | **0.252** | 0.983 | 50min |
 | Sear-steak | CTRL-D | 0.249 | **0.985** | 55min |
 | Sear-steak | Instruct-4DGS | 0.220 | 0.980 | 40min |
-| Sear-steak | IN4D | 0.246 | 0.962 | 2h (2 GPUs) |
-| Coffee-martini | **Catalyst4D** | **0.249** | **0.986** | 50min |
+| Sear-steak | IN4D | 0.246 | 0.962 | 2h(2GPU) |
+| Coffee-martini | **Ours** | **0.249** | **0.986** | 50min |
 | Coffee-martini | CTRL-D | 0.246 | 0.983 | 55min |
-| Trimming | **Catalyst4D** | **0.251** | **0.967** | 40min |
+| Trimming | **Ours** | **0.251** | **0.967** | 40min |
 | Trimming | CTRL-D | 0.248 | 0.962 | 50min |
 
 ### Ablation Study
 
-| Configuration | CLIP Sim↑ | Consistency↑ | Note |
-|---------------|-----------|-------------|------|
-| Full model | **0.252** | **0.971** | AMG + CUAR complete model |
-| w/o AMG | 0.245 | 0.966 | Missing motion guidance degrades semantics and temporal coherence |
-| w/o CUAR | 0.248 | 0.969 | Missing appearance refinement causes color artifacts |
-| KNN-Guide | — | — | Cross-part motion entanglement (hand motion affects torso) |
-| DeformNet-Guide | — | — | Edited Gaussians deviate from training distribution, causing geometric artifacts |
+| Config | CLIP Sim↑ | Consistency↑ | Notes |
+|------|----------|-------------|------|
+| Full model | **0.252** | **0.971** | Full model with AMG+CUAR |
+| w/o AMG | 0.245 | 0.966 | Semantic and temporal drop due to missing motion guidance |
+| w/o CUAR | 0.248 | 0.969 | Color artifacts due to missing appearance refinement |
+| KNN-Guide | — | — | Cross-component motion entanglement (hand motion affects torso) |
+| DeformNet-Guide | — | — | Geometric artifacts as edited Gaussians deviate from distribution |
 
 ### Key Findings
 
-- AMG is the primary contribution—removing it reduces CLIP Sim by 0.007, a larger impact than removing CUAR (0.004).
-- The KNN baseline exhibits typical cross-semantic motion entanglement (visualized in Figure 6), validating the necessity of region-level anchor correspondences.
-- Directly applying the deformation network to infer edited Gaussian motion fails—editing operations cause Gaussians to deviate from the canonical training distribution.
-- Catalyst4D consistently achieves the best semantic fidelity (CLIP Sim) and remains highly competitive in temporal consistency.
-- Training time of 50min outperforms IN4D (2h, dual GPU) and is on par with CTRL-D.
+- AMG is the core contribution—removing it drops CLIP Sim by 0.007, a larger impact than removing CUAR (0.004).
+- KNN baseline exhibits typical cross-semantic motion entanglement, validating the necessity of region-level anchor correspondence.
+- Direct deformation network inference for edited Gaussians fails because editing pushes Gaussians away from the canonical training distribution.
+- Ours consistently achieves the best semantic fidelity (CLIP Sim) and competitive temporal consistency.
+- Training time of 50min is superior to IN4D (2h on dual GPUs) and comparable to CTRL-D.
 
 ## Highlights & Insights
 
-- The decoupled strategy of "edit 3D first, then propagate to 4D" elegantly circumvents the difficulties of direct 4D editing, inheriting the quality of mature 3D editing methods.
-- Optimal transport for establishing region-level correspondences is more stable and semantically consistent than point-wise KNN—it is a strong tool for 3D correspondence construction.
-- CUAR's color uncertainty estimation provides a principled way to automatically identify regions requiring correction—requiring no additional annotation and directly exploiting temporal SH color discrepancies.
-- The method supports both monocular and multi-camera settings and is compatible with multiple 4D representations (Swift4D/4DGS), demonstrating broad generality.
+- The decoupling strategy of "3D editing first, then 4D propagation" elegantly avoids the difficulties of direct 4D editing and inherits the quality of mature 3D editors.
+- Establishing region-level correspondences via optimal transport is more stable and semantically consistent than point-wise KNN, proving to be a high-quality tool for 3D correspondence.
+- Appearance refinement via color uncertainty is a clever way to automatically identify repair areas without extra labeling, leveraging SH color temporal differences.
+- High versatility, supporting both monocular and multi-camera scenes and compatible with various 4D representations (Swift4D/4DGS).
 
 ## Limitations & Future Work
 
-- The upper bound on editing quality is determined by the first-frame 3D editing method—the propagated result is only as good as the 3D input.
-- The deformation network is not modified nor are Gaussian densities re-optimized; motion guidance may fail locally when the underlying 4D reconstruction is of poor quality.
-- Severe topological changes (object appearance/disappearance) may challenge anchor correspondences.
-- Failure cases occur on the D-NeRF trex scene—background Gaussians drift into the edited foreground region.
-- Evaluation is limited to three datasets; generalization to larger scenes and additional editing types (e.g., lighting, material) requires further investigation.
+- Editing quality is capped by the first-frame 3D editor—it can only propagate what it receives.
+- Without modifying the deformation network or re-optimizing Gaussian density, motion guidance may locally fail if the underlying 4D reconstruction is poor.
+- Scenes with severe topological changes (objects appearing/disappearing) may challenge anchor correspondence.
+- Failure cases observed in D-NeRF "trex" scene where background Gaussians drift into the edited foreground.
+- Evaluated on only 3 datasets; generalization to larger scales and more edit types (e.g., lighting, materials) requires further validation.
 
 ## Related Work & Insights
 
-- **vs. Instruct 4D-to-4D / Instruct-4DGS**: These methods rely on 2D diffusion models for per-frame editing and lack precise localization. Catalyst4D starts from 3D editing and directly constrains Gaussians via gradients, achieving more precise localization without modifying non-target regions.
-- **vs. CTRL-D**: Adopts a DreamBooth-finetuned 2D-to-4D route, achieving visually close results, but the 2D-to-4D reconstruction gap introduces blurriness and over-smoothing, and non-edited regions (e.g., objects on a table) are unintentionally modified.
-- **vs. Static 3D editing methods (DGE / DreamCatalyst / SGSST)**: Catalyst4D extends the editing capability of these methods from static to dynamic scenes—the relationship is complementary rather than competitive.
+- **vs Instruct 4D-to-4D / Instruct-4DGS**: These rely on 2D diffusion for frame-by-frame editing, lacking precise localization. Ours starts from 3D editing and constrains Gaussians via gradients, offering better precision without modifying non-target regions.
+- **vs CTRL-D**: Uses a 2D-to-4D pipeline with DreamBooth fine-tuning; while visually similar, the 2D-to-4D reconstruction gap leads to blurriness and over-smoothing, and non-target areas (e.g., objects on a table) are often unintendedly modified.
+- **vs Static 3D Editors (DGE/DreamCatalyst/SGSST)**: Ours extends their capabilities from static to dynamic scenes.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The 3D-to-4D propagation paradigm and the anchor-plus-optimal-transport mechanism represent clear contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets, four baselines, independent ablations of AMG and CUAR, and honest disclosure of failure cases.
-- Writing Quality: ⭐⭐⭐⭐ Logic is clear, figures are intuitive, and mathematical notation is rigorous.
-- Value: ⭐⭐⭐ 4D editing is a frontier problem but with a relatively narrow application scope; the method offers inspiration for other cross-representation transfer tasks.
+- Novelty: ⭐⭐⭐⭐ (Clear innovation in 3D-to-4D propagation and anchor+optimal transport mechanism)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Three datasets, four comparison methods, independent AMG/CUAR ablations, honest disclosure of failures)
+- Writing Quality: ⭐⭐⭐⭐ (Clear logic, intuitive diagrams, standardized math)
+- Value: ⭐⭐⭐ (4D editing is a frontier problem with specialized applications; the method inspires other cross-representation transfer tasks)
 
 <!-- RELATED:START -->
 
@@ -136,11 +167,11 @@ The refinement loss is $L_{\text{refine}}=(1-\zeta)L_{\text{fore}}+\zeta L_{\tex
 
 ## Related Papers
 
+- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
 - [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
-- [\[CVPR 2026\] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification](topomesh_high-fidelity_mesh_autoencoding_via_topological_unification.md)
 - [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
+- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
 
 </div>
 

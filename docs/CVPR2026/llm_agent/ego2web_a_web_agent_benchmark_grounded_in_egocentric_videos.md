@@ -2,126 +2,131 @@
 title: >-
   [Paper Note] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 description: >-
-  [CVPR 2026][LLM Agent][Web Agent] This paper proposes Ego2Web, the first benchmark that bridges egocentric video perception with web agent execution…
+  [CVPR 2026][LLM Agent][Web Agent] Ego2Web is proposed as the first benchmark that combines egocentric video perception with web agent execution. Accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework, experiments reveal a significant gap for current top agents in transferring from real-world visua
 tags:
-  - "CVPR 2026"
-  - "LLM Agent"
-  - "Web Agent"
-  - "Egocentric Video"
-  - "Multimodal Benchmark"
-  - "Cross-Modal Transfer"
-  - "Automatic Evaluation"
+  - CVPR 2026
+  - LLM Agent
+  - Web Agent
 date: 2026-05-08
-content_hash: 96671c84e02eff4f
+content_hash: 8750fce7113085b3
 ---
-
 # Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22529](https://arxiv.org/abs/2603.22529)  
 **Code**: [https://github.com/Yui010206/Ego2Web](https://github.com/Yui010206/Ego2Web)  
-**Area**: Agent
-**Keywords**: Web Agent, Egocentric Video, Multimodal Benchmark, Cross-Modal Transfer, Automatic Evaluation
+**Area**: Agent  
+**Keywords**: Web Agent, Egocentric Video, Multimodal Benchmark, Cross-modal Transfer, Automatic Evaluation
 
 ## TL;DR
 
-This paper proposes Ego2Web, the first benchmark that bridges egocentric video perception with web agent execution, accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework. Experiments reveal that current state-of-the-art agents still exhibit a substantial gap in cross-modal transfer from real-world visual perception to online action, with the best model achieving only 48.2% success rate.
+Ego2Web is proposed as the first benchmark that combines egocentric video perception with web agent execution. Accompanied by a semi-automatic data construction pipeline and the Ego2WebJudge automatic evaluation framework, experiments reveal a significant gap for current top agents in transferring from real-world visual perception to online actions, with a maximum success rate of only 48.2%.
 
 ## Background & Motivation
 
-**Background**: Multimodal AI agents are advancing rapidly, evolving from simple conversational assistants toward systems capable of executing tasks in real web environments (e.g., shopping, searching, querying maps). Several web agent benchmarks already exist (e.g., WebArena, MiniWoB++, Mind2Web) for evaluating task completion in online environments.
+**Background**: Multimodal AI agents are evolving rapidly, moving from simple conversational assistants toward performing operations in real web environments (e.g., shopping, searching, or checking maps). Several web agent benchmarks (e.g., WebArena, MiniWoB++, Mind2Web) already exist to evaluate agent task completion in online environments.
 
-**Limitations of Prior Work**: Existing web agent benchmarks share a fundamental limitation—they focus exclusively on web-side interaction and perception, lacking any connection to the user's real physical environment. This means a critical scenario remains unevaluated: when an agent must first recognize objects in the user's surroundings via egocentric vision (e.g., AR glasses) and then complete related tasks online (e.g., spotting a snack and searching for it on Amazon). This ability to bridge "seeing" and "online execution" is a core requirement for future AI assistants.
+**Limitations of Prior Work**: Existing web agent benchmarks have a fundamental limitation—they focus entirely on web-side interaction and perception, lacking a connection to the user's actual physical environment. This means a critical scenario cannot be evaluated: when an agent needs to first identify objects in the user's surroundings via egocentric vision (e.g., AR glasses) and then complete related online tasks (e.g., seeing a snack and searching for it on Amazon). This bridging capability from "seeing" to "online execution" is a core requirement for future AI assistants.
 
-**Key Challenge**: Current web agent evaluations only consider capabilities within the digital world, entirely ignoring an agent's ability to acquire visual cues from the physical world and translate them into digital actions. This leaves the true performance of current models on the complete "perceive → understand → act" pipeline unknown.
+**Key Challenge**: Current web agent evaluations only consider capabilities within the digital world, completely ignoring the agent's ability to acquire visual cues from the physical world and transform them into digital world actions. This leads to an inability to understand the true proficiency of current models across the full "see → understand → act" pipeline.
 
-**Goal**: To construct a benchmark that integrates egocentric video perception with web action execution, systematically evaluating agents' visual understanding, task planning, and online interaction capabilities.
+**Goal**: To build a benchmark that combines egocentric video perception with web action execution to systematically evaluate agents' visual understanding, task planning, and online interaction capabilities.
 
-**Key Insight**: The paper leverages existing large-scale egocentric video datasets (e.g., Ego4D), combined with a VLM+LLM automated data generation pipeline and human verification, to construct high-quality video–web task pairs.
+**Key Insight**: Leveraging existing large-scale egocentric video datasets (such as Ego4D) in combination with a VLM+LLM automatic data generation pipeline and manual verification to construct high-quality video-web task pairs.
 
-**Core Idea**: Visual evidence extracted from egocentric videos (e.g., brands, objects, actions) serves as grounding information, requiring agents to complete related tasks in real web environments, thereby evaluating agent capabilities that span the physical and digital worlds.
+**Core Idea**: Use visual evidence from egocentric videos (e.g., brands, objects, actions) as grounding information, requiring agents to complete related tasks in real web environments, thereby evaluating agent capabilities across physical and digital worlds.
 
 ## Method
 
 ### Overall Architecture
 
-Ego2Web consists of a three-stage system: (1) **Semi-automatic data construction pipeline**: visual metadata is generated from egocentric videos, web task instructions are then produced by an LLM, and finally human verification and refinement are applied; (2) **Benchmark dataset**: video–task pairs covering multiple web task types (e-commerce, media retrieval, knowledge query, local/map services, etc.); (3) **Ego2WebJudge evaluation framework**: an LLM-as-a-Judge-based automatic evaluation method enabling scalable online assessment.
+Ego2Web addresses a gap where existing web agent benchmarks only evaluate digital-world interactions, leaving the "perceive with egocentric vision first, then complete web tasks" physical-digital bridge untested. This work focuses on three components: a semi-automatic pipeline to pair egocentric videos with web tasks, a benchmark dataset covering e-commerce, media retrieval, knowledge query, and map services, and the Ego2WebJudge for automatic scoring on live websites. During evaluation, an agent receives an egocentric video, extracts key visual evidence (brands, objects, actions), performs operations on real active websites, and finally, Ego2WebJudge compares the operation trajectory with visual evidence to determine if the task was truly completed.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Egocentric Video<br/>(Ego4D)"] --> P
+    subgraph P["Semi-automatic Data Pipeline"]
+        direction TB
+        P1["VLM Structured Parsing<br/>Clip Captions + Visual Metadata"] --> P2["LLM Web Task Generation<br/>(Amazon / YouTube / Wikipedia)"]
+        P2 --> P3["Manual Verification<br/>Grounding + Executability + Instruction Quality"]
+    end
+    P --> T["Four Web Task Categories<br/>E-commerce / Media / Knowledge / Map"]
+    T --> A["Agent Extracts Visual Evidence<br/>Brands·Objects·Actions"]
+    A --> W["Executes Actions on Live Websites"]
+    W --> J["Ego2WebJudge<br/>Extract Criteria + Select Screenshots + Scoring"]
+    J --> O["Success Rate (SR)"]
+```
 
 ### Key Designs
 
-1. **Semi-Automatic Data Generation Pipeline**:
+**1. Semi-automatic Data Pipeline: Ensuring Grounding and Executability**
 
-    - *Function*: Transforms raw egocentric videos into high-quality "video + web task" pairs.
-    - *Mechanism*: A VLM (e.g., Gemini) first performs structured parsing of egocentric videos to generate clip-level captions and visual metadata (identifying objects, brands, actions, etc.); an LLM then uses this visual metadata to generate web task instructions targeting live websites (e.g., Amazon, YouTube, Wikipedia); finally, human annotators verify each sample for visual grounding accuracy, web feasibility, and instruction quality.
-    - *Design Motivation*: Purely manual annotation is prohibitively costly, while fully automatic generation lacks quality control. The semi-automatic pipeline balances efficiency and quality, ensuring each sample has authentic visual grounding and an executable web task.
+Manual annotation of video-task pairs is costly, while fully automatic generation lacks quality. This pipeline finds a balance in three steps: first, a VLM (e.g., Gemini) performs structured parsing of egocentric videos to produce clip-level captions and visual metadata, identifying objects, brands, and actions; next, an LLM uses this metadata to derive web task instructions for active sites like Amazon, YouTube, and Wikipedia; finally, human annotators verify visual grounding accuracy, web task executability, and instruction quality. This allows automation to handle the bulk of the work while manual oversight ensures quality and scale.
 
-2. **Multi-Type Web Task Design**:
+**2. Four Web Task Categories: Probing Agent Weaknesses across Dimensions**
 
-    - *Function*: Covers diverse web interaction scenarios that a daily AI assistant would need to handle.
-    - *Mechanism*: Tasks are divided into four categories—e-commerce (e.g., spotting a snack and searching to purchase it), media retrieval (e.g., seeing a fitness movement and searching for tutorial videos), knowledge query (e.g., seeing a university name and looking up admission information), and local/map services (e.g., spotting a store and searching for navigation routes). Each task requires the agent to first extract key visual evidence from the video and then complete the corresponding operation on the web.
-    - *Design Motivation*: Different task types demand different agent capabilities—e-commerce requires fine-grained object recognition, media retrieval requires action understanding, knowledge queries require text recognition, and map services require spatial localization. Multi-type evaluation comprehensively exposes agent capability gaps.
+AI assistants must handle diverse web interactions. The benchmark categorizes tasks into four types, each requiring the agent to ground actions in video evidence: E-commerce (searching for a seen snack) tests fine-grained object recognition; Media Retrieval (searching for a fitness movement) tests action understanding; Knowledge Query (checking admission info for a visible university) tests text recognition; and Local/Map Services (navigating to a seen store) tests spatial localization. These tasks reveal specific weaknesses—such as the poor performance in e-commerce and maps seen in experiments—corresponding to dimensions of "object, action, text, or location" recognition.
 
-3. **Ego2WebJudge Automatic Evaluation Method**:
+**3. Ego2WebJudge: LLM-based Scoring for Real-time Web Environments**
 
-    - *Function*: Enables scalable automated evaluation in live web environments.
-    - *Mechanism*: Given the task instruction, the agent's action trajectory, web screenshots, and annotated visual evidence from the video, Ego2WebJudge first extracts key success criteria, then selects the most relevant screenshots from the agent's web action trajectory, and finally determines whether the agent completed the task correctly and consistently. Unlike simple URL/text matching, Ego2WebJudge considers the consistency between visual evidence and web content.
-    - *Design Motivation*: In live web environments, traditional exact-match methods (e.g., URL matching) are too brittle, while human evaluation does not scale. Ego2WebJudge achieves approximately 84% human judgment agreement, substantially outperforming existing evaluation methods.
+Evaluating on live websites makes traditional methods like URL or text matching fragile due to page updates. Ego2WebJudge serves as a flexible, automatic judge. It receives task instructions, agent operation trajectories, web screenshots, and visual evidence. It extracts key success criteria from instructions, selects relevant screenshots from the trajectory, and determines if the task was completed correctly while maintaining consistency between visual evidence and web content. This approach achieves approximately 84% agreement with human judgment, significantly outperforming exact-match methods.
 
 ### Loss & Training
 
-Ego2Web is an evaluation benchmark rather than a training method, and therefore involves no training loss. Evaluation uses **Success Rate (SR)** as the primary metric, determined automatically by Ego2WebJudge.
+Ego2Web is an evaluation benchmark rather than a training method and thus does not involve training losses. The core metric is **Success Rate (SR)**, which is automatically determined by Ego2WebJudge for each video-task pair and aggregated by task type and overall.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Agent (Model) | E-Commerce SR | Media Retrieval SR | Knowledge Query SR | Map SR | Overall SR |
-|---|---|---|---|---|---|
-| Qwen3-VL-Flash | 21.7 | 30.1 | 50.0 | 23.1 | 29.0 |
-| GPT-4o | 26.9 | 30.3 | 63.0 | 22.5 | 34.6 |
-| Gemini-2.5 Pro | 38.2 | 50.7 | 75.0 | 48.3 | 48.2 |
-| Human Evaluation | - | - | - | - | 58.6 |
+| Agent (Model) | E-commerce SR | Media SR | Knowledge SR | Map SR | Overall SR |
+|---------------|---------------|----------|--------------|--------|------------|
+| Qwen3-VL-Flash| 21.7          | 30.1     | 50.0         | 23.1   | 29.0       |
+| GPT-4o        | 26.9          | 30.3     | 63.0         | 22.5   | 34.6       |
+| Gemini-2.5 Pro| 38.2          | 50.7     | 75.0         | 48.3   | 48.2       |
+| Human Eval    | -             | -        | -            | -      | 58.6       |
 
-### Ablation Study (Effect of Visual Perception)
+### Ablation Study (Visual Perception Impact)
 
-| Video Input | Detailed Description | E-Commerce | Knowledge Query | Overall SR |
-|---|---|---|---|---|
-| ✗ | ✗ | 2.6 | 5.4 | 4.4 |
-| ✗ | ✓ | 13.0 | 39.1 | 23.6 |
-| ✓ | ✗ | 38.2 | 75.0 | 48.2 |
+| Video Input | Detailed Description | E-commerce | Knowledge | Overall SR |
+|-------------|----------------------|------------|-----------|------------|
+| ✗           | ✗                    | 2.6        | 5.4       | 4.4        |
+| ✗           | ✓                    | 13.0       | 39.1      | 23.6       |
+| ✓           | ✗                    | 38.2       | 75.0      | 48.2       |
 
 ### Key Findings
 
-- **Even the strongest agents are far from perfect**: Gemini-2.5 Pro, as the best-performing model, achieves only 48.2% SR, while human evaluation reaches only 58.6% (partly due to inherent task difficulty), highlighting substantial room for improvement.
-- **Raw video substantially outperforms text descriptions**: Directly providing video input yields more than double the performance compared to first generating text descriptions via a VLM (48.2% vs. 23.6%), indicating that visual grounding must originate from raw visual signals.
-- **Error analysis**: 36% of failures stem from object misidentification, 18% from temporal/action misunderstanding, and 16% from cross-modal retrieval failures, confirming that visual perception is the primary bottleneck for current agents.
-- **E-commerce and map tasks are most challenging**: These task types require fine-grained visual recognition and spatial understanding, where current agents perform worst.
+- **Top Agents are Far from Perfect**: Gemini-2.5 Pro, the best model, achieved only 48.2% SR compared to 58.6% for humans (noting some tasks are inherently difficult), indicating massive room for improvement.
+- **Raw Video Greatly Outperforms Text Descriptions**: Direct video input is more than twice as effective as using VLM-generated text descriptions (48.2% vs 23.6%), proving that visual grounding must come from raw visual signals.
+- **Error Analysis**: 36% of failures stem from misidentifying objects, 18% from temporal/action misunderstanding, and 16% from cross-modal retrieval failures, identifying visual perception as the primary bottleneck for current agents.
+- **E-commerce and Map Tasks are the Most Challenging**: These require precise visual recognition and spatial understanding, where current agents perform worst.
 
 ## Highlights & Insights
 
-- **A pioneering physical-digital world bridging benchmark**: Ego2Web fills the gap in existing web agent evaluation regarding the "visual perception → online action" pipeline. This design reflects the real-world use cases of future AR/intelligent assistants, demonstrating considerable foresight.
-- **Ego2WebJudge evaluation framework**: An 84% human agreement rate establishes it as a reliable automatic evaluation tool, avoiding the enormous cost of human evaluation in live web environments. This framework is transferable to other agent tasks requiring online evaluation.
-- **Quantitative revelation of the visual perception bottleneck**: Experiments clearly demonstrate the bottleneck at each step of the "perceive → understand → act" pipeline, providing concrete directions for future research.
+- **Pioneering Physical-Digital Bridging Benchmark**: Ego2Web fills the gap in the "visual perception → online action" pipeline within web agent evaluation. This design is forward-looking, reflecting real-world use cases for future AR and intelligent assistants.
+- **Ego2WebJudge Evaluation Scheme**: An 84% human agreement rate makes it a reliable automatic evaluation tool, avoiding the high cost of manual evaluation in live web environments. This framework is transferable to other agent tasks requiring online evaluation.
+- **Quantitative Revelation of Perception Bottlenecks**: The experiments clearly illustrate the bottlenecks at each step of the "see → understand → act" chain, providing clear directions for future research.
 
 ## Limitations & Future Work
 
-- The dataset scale is relatively limited and does not yet cover all everyday web task scenarios (e.g., social media operations, calendar management).
-- The benchmark relies on live web environments, and website changes may affect evaluation reproducibility.
-- Only existing general-purpose agents have been evaluated; no dedicated agent architectures tailored to Ego2Web task characteristics have been designed.
-- Future work could extend to multi-turn dialogue scenarios (e.g., follow-up requests from users after watching a video) and multimodal web interactions (e.g., voice commands combined with visual perception).
+- The data scale is relatively limited and does not yet cover all daily web task scenarios (e.g., social media operations, calendar management).
+- The benchmark relies on live web environments; changes to websites may affect the reproducibility of evaluations.
+- Currently, only existing general agents have been evaluated, and no dedicated agent architecture specifically for Ego2Web tasks has been designed.
+- Future work can extend to multi-turn dialogue scenarios (e.g., users making follow-up requests after watching a video) and multimodal web interactions (e.g., voice commands + visual perception).
 
 ## Related Work & Insights
 
-- **vs. WebArena**: WebArena focuses on purely web-side task execution without real-world visual input; Ego2Web introduces the complete pipeline from egocentric video to web action.
-- **vs. Ego4D**: Ego4D is a pure video understanding benchmark with no online action execution; Ego2Web utilizes Ego4D video data but requires agents to complete tasks on real websites.
-- **vs. Mind2Web**: Mind2Web uses static web page screenshots, whereas Ego2Web evaluates agents in live web environments, more closely reflecting real-world application scenarios.
+- **vs WebArena**: WebArena focuses solely on web task execution without real-world visual input; Ego2Web introduces the complete pipeline from egocentric video to web action.
+- **vs Ego4D**: Ego4D is a video understanding benchmark without online action execution; Ego2Web utilizes Ego4D video data but requires agents to complete tasks on the live web.
+- **vs Mind2Web**: Mind2Web uses static web page screenshots, whereas Ego2Web evaluates in real-time web environments, which is closer to real-world application scenarios.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First benchmark bridging egocentric video and web agent execution, filling an important gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model evaluation + input ablation + error analysis, though comparisons across more agent architectures are lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, precise problem definition, and detailed description of the data pipeline.
-- Value: ⭐⭐⭐⭐⭐ Significant contribution to the AI agent and embodied intelligence communities.
+- Novelty: ⭐⭐⭐⭐⭐ First benchmark to bridge egocentric video and web agent execution, filling a critical gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model evaluation + input ablation + error analysis, though comparison with more agent architectures is missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, precise problem definition, and detailed data process description.
+- Value: ⭐⭐⭐⭐⭐ Significant contribution to the AI Agent and embodied intelligence communities.
 
 <!-- RELATED:START -->
 
@@ -130,10 +135,10 @@ Ego2Web is an evaluation benchmark rather than a training method, and therefore 
 ## Related Papers
 
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
-- [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
+- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](../../ICML2026/llm_agent/weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
+- [\[CVPR 2026\] ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices](proactivemobile_a_comprehensive_benchmark_for_boosting_proactive_intelligence_on.md)
 - [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
-- [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
 
 </div>
 

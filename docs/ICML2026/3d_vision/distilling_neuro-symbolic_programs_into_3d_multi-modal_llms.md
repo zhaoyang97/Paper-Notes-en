@@ -2,77 +2,86 @@
 title: >-
   [Paper Note] APEIRIA: Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs
 description: >-
-  [ICML 2026][3D Vision][Neuro-symbolic] This paper introduces APEIRIA, which distills the execution traces of neuro-symbolic 3D concept learners into the natural language chain-of-thought (CoT) of a 3D MLLM. By employing…
+  [ICML 2026][3D Vision][GRPO] This paper proposes APEIRIA, which distills program execution traces from neuro-symbolic 3D concept learners into natural language chain-of-thought (CoT) for 3D MLLMs. By applying GRPO reinforcement learning, this reasoning pattern is generalized to open-vocabulary and deeply nested instructions. APEIRIA outperforms bo
 tags:
-  - "ICML 2026"
-  - "3D Vision"
-  - "Neuro-symbolic"
-  - "3D Spatial Reasoning"
-  - "Chain-of-Thought"
-  - "GRPO"
-  - "Curriculum Learning"
+  - ICML 2026
+  - 3D Vision
+  - GRPO
 date: 2026-05-08
-content_hash: 39cd3fde44f6de25
+content_hash: 38f8344ba456da8e
 ---
-
 # APEIRIA: Distilling Neuro-Symbolic Programs into 3D Multi-modal LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.01215](https://arxiv.org/abs/2606.01215)  
 **Code**: https://github.com/oceanflowlab/APEIRIA  
-**Area**: 3D Vision / Multi-modal VLM  
-**Keywords**: Neuro-symbolic, 3D Spatial Reasoning, Chain-of-Thought, GRPO, Curriculum Learning
+**Area**: 3D Vision / Multimodal VLM  
+**Keywords**: Neural-Symbolic, 3D Spatial Reasoning, Chain-of-Thought, GRPO, Curriculum Learning
 
 ## TL;DR
-This paper introduces APEIRIA, which distills the execution traces of neuro-symbolic 3D concept learners into the natural language chain-of-thought (CoT) of a 3D MLLM. By employing GRPO reinforcement learning, this reasoning paradigm is generalized to open-vocabulary and deeply nested instructions. APEIRIA outperforms both traditional NS3D methods and state-of-the-art 3D MLLMs on ScanRefer, Multi3DRefer, SQA3D, and Scan2Cap, while maintaining the interpretability and modularity of symbolic systems.
+This paper proposes APEIRIA, which distills program execution traces from neuro-symbolic 3D concept learners into natural language chain-of-thought (CoT) for 3D MLLMs. By applying GRPO reinforcement learning, this reasoning pattern is generalized to open-vocabulary and deeply nested instructions. APEIRIA outperforms both traditional NS3D methods and state-of-the-art 3D MLLMs across ScanRefer, Multi3DRefer, SQA3D, and Scan2Cap, while retaining the interpretability and modular transparency of symbolic systems.
 
 ## Background & Motivation
-**Background**: 3D spatial reasoning (grounding, QA, captioning) is currently dominated by two approaches. The first is Neuro-Symbolic 3D (NS3D) concept learners (e.g., NS3D, LARC), which parse instructions into programs composed of primitives like `scene/filter/relate` for step-by-step execution. The second is end-to-end 3D MLLMs (e.g., Chat-Scene, Inst3D-LMM, Video-3D LLM, LLaVA-3D), which directly map scene tokens and language to answers in a black-box manner.
+**Background**: 3D spatial reasoning (grounding, QA, captioning) is currently dominated by two approaches. One is neuro-symbolic 3D (NS3D) concept learners (e.g., NS3D, LARC), which parse instructions into programs composed of primitives like `scene/filter/relate`. The other is end-to-end 3D MLLMs (e.g., Chat-Scene, Inst3D-LMM, Video-3D LLM, LLaVA-3D), which directly map scene tokens and language to answers in a black-box manner.
 
-**Limitations of Prior Work**: NS3D systems are interpretable and compositional but face two rigid constraints: (i) primitives like `filter(chair)` depend on fixed concept networks, failing to handle open-vocabulary terms like "cozy chair" or "messy desk"; (ii) training each primitive requires dense intermediate supervision, restricting them to synthetic data with template-generated instructions and shallow nesting (e.g., Sr3D). Conversely, 3D MLLMs handle free-form language but act as black boxes, making it impossible to diagnose whether failures stem from object recognition, spatial relations, or compositional logic.
+**Limitations of Prior Work**: NS3D is interpretable and compositional but faces two hard constraints: (i) primitives like `filter(chair)` depend on fixed concept networks and cannot handle open-vocabulary terms like "cozy chair" or "messy desk"; (ii) training each primitive requires dense intermediate supervision, limiting them to synthetic data like Sr3D with template-generated instructions and shallow nesting. Conversely, while 3D MLLMs handle free-form language, their reasoning is a black box—failures cannot be localized to object recognition, spatial relations, or compositional logic errors.
 
-**Key Challenge**: Interpretability and semantic flexibility appear mutually exclusive. The authors identify a decoupling opportunity: **symbolic programs encode the "syntax of reasoning" (decomposition and verification), while MLLMs possess "open-world semantic knowledge"**—these two capabilities can be learned separately.
+**Key Challenge**: Interpretability versus semantic flexibility appears to be a trade-off. The authors identify a decoupling opportunity: **symbolic programs encode the "syntax of reasoning" (how to decompose and verify), while MLLMs possess "open-world semantic knowledge"**—these two aspects can be learned separately.
 
-**Goal**: (1) Distill the reasoning patterns (decomposition + step-by-step spatial verification) of NS programs into a 3D MLLM; (2) extend reasoning capabilities beyond the closed-vocabulary and shallow-nesting constraints of synthetic data to real-world instructions like ScanRefer/Multi3DRefer; (3) retain interpretable traces and modular substitutability.
+**Goal**: (1) Distill the reasoning patterns of NS programs (decomposition + stepwise spatial verification) into 3D MLLMs; (2) Enable reasoning capabilities to break through the closed-vocabulary and shallow-nesting constraints of synthetic data, generalizing to real-world instructions like ScanRefer/Multi3DRefer; (3) Retain interpretable NS traces and modular swappability.
 
-**Key Insight**: Synthetic datasets like Sr3D naturally provide **complete intermediate supervision**—the inputs and outputs of every `filter` and the intermediate sets of every `relate` can be derived from ground-truth annotations. This "white-box supervision" can first inject reasoning templates into the MLLM, followed by outcome-supervised RL to extrapolate these templates to open concepts.
+**Key Insight**: Synthetic datasets like Sr3D naturally provide **complete intermediate supervision**—the inputs and outputs of every `filter` and the intermediate sets of every `relate` can be derived from ground-truth annotations. This "white-box supervision" is first used to inject reasoning templates into the MLLM, followed by RL with outcome supervision to extrapolate these templates to open concepts.
 
-**Core Idea**: Serialize symbolic program execution traces into natural language CoT for SFT (teaching "how to think"), then use GRPO + soft spatial rewards for RL (generalizing templates to open-vocabulary and deep nesting). This allows an end-to-end MLLM to possess both the systematicity of NS3D and the flexibility of LLMs.
+**Core Idea**: Serialize the execution traces of symbolic programs into natural language CoTs for SFT (teaching "how to think"), then use GRPO with soft spatial rewards for RL (generalizing templates to open-vocabulary and deep nesting), thereby achieving an end-to-end MLLM with both the systematicity of NS3D and the flexibility of LLMs.
 
 ## Method
 
 ### Overall Architecture
-APEIRIA is built on an 8B MLLM backbone. The input consists of a natural language instruction $q$ and a set of **object-centric** scene representations $\mathcal{O}$. The output is a CoT containing "plan + execution" tags followed by the final answer $A$ (grounding box / QA answer / caption).
+APEIRIA aims to enable an end-to-end 3D MLLM to systematically decompose and verify spatial relations like symbolic programs while handling open-vocabulary and deeply nested instructions. The approach involves translating neuro-symbolic program execution traces into natural language CoT to teach the model "how to think," followed by reinforcement learning to extrapolate this reasoning template to real-world instructions.
 
-For the scene side, object-centric representations are used (approx. 400 tokens, significantly smaller than the 10k–40k tokens in video-based methods). Mask3D first segments the scene into instances. For each instance, Uni3D extracts 3D geometric features while DINOv2 extracts 2D appearance features. Learnable positional encodings inject coordinates and sizes. Finally, the visual and spatial features of each object are interleaved with instruction tokens and fed into the LLM.
+The system is built on an 8B MLLM backbone. Input consists of a natural language instruction $q$ and a set of **object-level** scene representations $\mathcal{O}$. The output is a CoT containing "plan + execution" tags followed by the final answer $A$ (grounding box / QA answer / caption). Instead of video tokens, the scene is compressed into approximately 400 object-centric tokens: Mask3D segments the scene into instances, each represented by Uni3D for geometric features and DINOv2 for 2D appearance, with learnable positional encodings for coordinates and sizes. Visual and spatial features of each object are treated as tokens and interleaved with instruction tokens for the LLM.
 
-The training involves a **three-stage curriculum**: Stage 1 Perception Alignment → Stage 2 Symbolic Reasoning Injection (CoT-SFT) → Stage 3 Open-set and Complex Reasoning Generalization (CoT-RL). These stages increase in difficulty, building the model's ability to "see → think → adapt." Since planning and perception are decoupled, the plan can be replaced by GPT-4/Claude outputs at inference, or the `scene()` primitive can be replaced by stronger segmenters like SegDINO3D without retraining.
+Training is structured as a three-stage curriculum—"Perceive → Think → Adapt"—stacking capabilities from simple to complex: Stage 1 performs perception alignment to map 3D geometric features into the LLM's language space; Stage 2 applies Program-to-CoT translation for Supervised Fine-Tuning (CoT-SFT) to instill systematic decomposition; Stage 3 uses GRPO reinforcement learning (CoT-RL) to generalize the pattern to open-set complex instructions. Since planning and perception are decoupled by design, the plan can be replaced with GPT-4/Claude outputs, or the `scene()` primitive can be swapped for stronger segmenters like SegDINO3D without retraining.
+
+```mermaid
+graph TD
+    Q["Instruction q + Scene Point Cloud"] --> ENC["Object-level Scene Encoding<br/>Mask3D Instances → Uni3D Geometry + DINOv2 Appearance<br/>→ Positional Encodings (~400 tokens)"]
+    ENC --> LLM["8B MLLM backbone"]
+    subgraph CUR["Curriculum Reasoning Distillation"]
+        direction TB
+        S1["Stage 1 Perception Alignment<br/>193K Object-level tasks"]
+        S2["Stage 2 Program-to-CoT Translation + CoT-SFT<br/>White-box CoT with IDs/Coordinates"]
+        S3["Stage 3 GRPO + Soft Spatial Reward<br/>Open-vocabulary / Deep nesting extrapolation"]
+        S1 --> S2 --> S3
+    end
+    LLM --> CUR
+    CUR --> OUT["plan + execution CoT + Answer<br/>grounding / QA / caption"]
+```
 
 ### Key Designs
 
-1.  **Curriculum-based Reasoning Distillation**:
-    *   Function: Decompose "3D perception → systematic reasoning → open generalization" into three non-overlapping training objectives.
-    *   Mechanism: Stage 1 performs vision-language pre-training on ~193K object-level perception tasks (recognition, localization, captioning) to align 3D geometric features with the LLM embedding space. Stage 2 performs CoT-SFT on Level-1 (78K single-step filter from MMScan) and Level-2 (66K two-step relate from Sr3D) programs with the objective $\mathcal{L}_{\text{CoT-SFT}} = -\mathbb{E}\,[\log p_\theta(\text{CoT}, A \mid q, \mathcal{O})]$. Stage 3 applies GRPO reinforcement learning on real instructions from ScanRefer/Multi3DRefer.
-    *   Design Motivation: Skipping Stage 2 results in an excessively large RL search space (ScanRefer Acc@0.25 drops from 58.4% to 48.2%). Relying only on Stage 2 limits the model to closed vocabularies and limited nesting depth (dropping Stage 3 leads to a 6.9% decrease). The three stages sequentially address "blindness," "inability to decompose," and "shallow decomposition."
+**1. Curriculum Reasoning Distillation: Decoupling perception, reasoning, and generalization into non-overlapping training objectives.**
 
-2.  **Program-to-CoT Translation (White-box Distillation of Symbolic Programs)**:
-    *   Function: Parse NS3D `scene/filter/relate/relate_triple` programs into natural language "plan + execution" traces to serve as SFT supervision.
-    *   Mechanism: For each program, the AST is parsed into an execution sequence $\mathcal{S} = \{s_1, \ldots, s_n\}$. Each step $s_i$ is serialized into two segments: "plan" describes the sub-goal (e.g., "Find all objects of category 'vase'"), and "execution" explicitly lists input and output objects using **ID + coordinates + size** (e.g., `relate(filter(desk), filter(wall), left)` is expanded to list all desk IDs, then all wall IDs, and finally the IDs of desks satisfying the "left" relation). The final CoT concatenates all plans followed by all executions, forming a transparent trace. This trace is **spatially grounded**, using unique IDs to avoid ambiguity among identical object types.
-    *   Design Motivation: Traditional NS3D uses fixed concept networks for primitives, a major barrier to open vocabularies. APEIRIA redefines primitives as LLM "executions" in natural language, removing limitations on vocabulary. Furthermore, unlike 3D-R1 which uses LLM prompting for CoT, traces derived from symbolic programs have verifiable ground-truth for every step, eliminating CoT hallucinations.
+3D reasoning requires "seeing objects," "decomposing instructions," and "decomposing deeply." Cramming these into a single training stage often leads to non-convergence or neglect of certain aspects. APEIRIA splits this into a three-stage curriculum. Stage 1 utilizes ~193K object-level perception tasks (identification, localization, captioning) for vision-language pre-training to align 3D geometric features with LLM embedding space. Stage 2 performs CoT-SFT on two levels of programs: Level-1 (78K single-step `filter` from ScanNet/MMScan) and Level-2 (66K two-step `relate`/`relate_triple` from Sr3D). The objective is the joint likelihood of CoT and answer $\mathcal{L}_{\text{CoT-SFT}} = -\mathbb{E}\,[\log p_\theta(\text{CoT}, A \mid q, \mathcal{O})]$, instilling the "decomposition + stepwise verification" template. Stage 3 applies GRPO on real instructions from ScanRefer/Multi3DRefer. Ablations show Stage 3 without Stage 2 results in a drop in ScanRefer Acc@0.25 from 58.4% to 48.2% due to an excessive search space, while Stage 2 alone is limited by closed vocabularies.
 
-3.  **GRPO + Soft Grounding Reward (Outcome-supervised Open Generalization)**:
-    *   Function: Extrapolate reasoning templates to open-vocabulary concepts and deep nesting on real-world data lacking intermediate supervision.
-    *   Mechanism: GRPO is used to optimize the policy $\pi_\theta$ by sampling $N$ responses per instruction and normalizing advantage $A_i = (r_i - \text{mean})/\text{std}$ within the group. The reward is a sum of: (a) **Soft Grounding Reward** $R_{\text{grounding}} = e^{-\alpha \|\bm{x}_{\text{pred}} - \bm{x}_{\text{gt}}\|_2} + e^{-\alpha \|(\bm{s}_{\text{pred}} - \bm{s}_{\text{gt}})/\bm{s}_{\text{gt}}\|_1}$ ($\alpha = 2$), which uses exponential decay similarity for position and size to provide dense gradients even when boxes do not overlap, solving the sparsity problem of IoU; (b) **Format Reward**: Responses must contain valid plan/thinking tags and non-degenerate length, or the reward is zero, preventing the model from skipping reasoning.
-    *   Design Motivation: Ablations show IoU rewards underperform Soft rewards by 0.5–0.7% due to sparse feedback. Removing the Format Reward leads to "structure collapse," where the model bypasses reasoning to output answers immediately. Together, these rewards maintain spatial precision and interpretable CoT structure.
+**2. Program-to-CoT Translation: Reversing symbolic programs into white-box CoT with ground-truth as a supervision source for Stage 2.**
+
+In Stage 2, CoT is not generated by the LLM from scratch but translated from NS3D `scene/filter/relate` programs. Each program's AST is parsed into an execution sequence $\mathcal{S} = \{s_1, \ldots, s_n\}$. Each step $s_i$ is serialized into two parts: a *plan* describing the sub-goal (e.g., "Find all objects of category 'vase'") and an *execution* that explicitly lists input/output objects using **ID + coordinates + size**. For instance, `relate(filter(desk), filter(wall), left)` expands into a list of desk IDs, wall IDs, and the resulting desk IDs satisfying the "left" relation. The final CoT concatenates all plans followed by all executions, creating a transparent trace from query to answer. This trace is **spatially grounded**, using unique IDs to avoid ambiguity between identical object classes. This avoids the "vocabulary bottleneck" of traditional NS3D systems and suppresses hallucinations by providing verifiable ground-truth for every step.
+
+**3. GRPO + Soft Grounding Reward: Extrapolating the reasoning template to open concepts and deep nesting on real data without step-level supervision.**
+
+Real instructions like those in ScanRefer lack parsable programs for intermediate supervision. Stage 3 uses Outcome-based RL to push Stage 2 templates toward open-vocabulary ("comfortable", "cozy") and deep nesting ("on the kitchen counter AND besides the white fridge"). GRPO optimizes policy $\pi_\theta$ by sampling $N$ responses per instruction and calculating group-normalized advantage $A_i$. The reward consists of: (1) **Soft Grounding Reward**, using exponentially decaying similarity for center and size:
+$$R_{\text{grounding}} = e^{-\alpha \|\bm{x}_{\text{pred}} - \bm{x}_{\text{gt}}\|_2} + e^{-\alpha \|(\bm{s}_{\text{pred}} - \bm{s}_{\text{gt}})/\bm{s}_{\text{gt}}\|_1},\quad \alpha = 2$$
+This provides dense gradients even when predicted boxes do not overlap with GT, bypassing the sparsity of IoU. (2) **Format Reward**: Ensuring the response contains valid plan/thinking tags. Ablations show swapping Soft Grounding with sparse IoU drops performance by 0.5–0.7%, while removing the Format Reward leads to "structure collapse" where the model skips reasoning.
 
 ### Loss & Training
-Stages 1 and 2 utilize standard next-token language modeling loss. Stage 3 uses the GRPO clipped surrogate loss. The 8B backbone is fine-tuned using LoRA and AdamW/Muon, with all stages sharing the evolution of the same LoRA weights. Total CoT supervision consists of 144K verified samples in Stage 2, while Stage 3 runs RL directly on downstream instruction-answer pairs.
+Stages 1 and 2 utilize standard next-token language modeling loss. Stage 3 uses the GRPO clipped surrogate loss (group-normalized advantage + clipping + KL penalty). The 8B backbone is fine-tuned using LoRA along with AdamW/Muon optimizers. CoT supervision includes 144K verified samples in Stage 2, while Stage 3 utilizes RL on downstream instruction-answer pairs with group-wise comparisons.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Main results on ScanRefer & Multi3DRefer (3D spatial grounding):
+ScanRefer & Multi3DRefer (3D Spatial Grounding) results:
 
 | Method | Type | ScanRefer Acc@0.25 | ScanRefer Acc@0.5 | M3DRef F1@0.25 | M3DRef F1@0.5 |
 |------|------|--------------------|-------------------|----------------|---------------|
@@ -85,51 +94,51 @@ Main results on ScanRefer & Multi3DRefer (3D spatial grounding):
 | **APEIRIA** | 3D MLLM | **58.4** | 51.2 | **59.2** | **53.8** |
 | **APEIRIA†** (+ SegDINO3D) | 3D MLLM | **60.5** | **53.2** | **60.9** | **55.2** |
 
-Cross-task generalization (same curriculum, swapping outcome reward for EM/CIDEr): Scan2Cap C@0.25 = 90.6 (Prev. SOTA LEGO 84.7); SQA3D EM = 58.6 (matching Prev. SOTA Video-3D LLM).
+Cross-task generalization: Scan2Cap C@0.25 = 90.6 (Prev. SOTA LEGO 84.7), SQA3D EM = 58.6 (matching Video-3D LLM).
 
-Zero-shot open concepts (trained only on Sr3D in Stage 2, tested on Nr3D): APEIRIA achieves 36.5%, surpassing **fully-supervised** NS3D (33.9%), validating the removal of the vocabulary bottleneck.
+Zero-shot open concept (Stage 2 on Sr3D, transferred to Nr3D): APEIRIA achieves 36.5%, outperforming **fully supervised** NS3D (33.9%), validating the breakthrough in vocabulary bottlenecks.
 
 ### Ablation Study
 
-| Configuration | ScanRefer Acc@0.25 | M3DRef F1@0.25 | Note |
+| Configuration | ScanRefer Acc@0.25 | M3DRef F1@0.25 | Description |
 |------|--------------------|----------------|------|
-| APEIRIA full | 58.4 | 59.2 | Full 3 stages |
-| w/o Stage 3 (CoT-RL → Direct SFT) | 51.5 | 55.3 | Drop 6.9/3.9; RL is necessary for real-world extrapolation |
-| w/o Stage 2 (Direct to CoT-RL) | 48.2 | 36.7 | Drop 10.2/22.5; RL fails without warm start |
-| w/o Format Reward | 55.7 | 57.1 | Structure collapse occurs |
-| w/o Soft Grounding (Sparse IoU) | 57.7 | 58.7 | Low exploration efficiency |
+| APEIRIA full | 58.4 | 59.2 | Full three stages |
+| w/o Stage 3 (CoT-RL -> Direct SFT) | 51.5 | 55.3 | Drop of 6.9/3.9; RL necessary for real instructions |
+| w/o Stage 2 (Skip to CoT-RL) | 48.2 | 36.7 | Drop of 10.2/22.5; RL fails without warm start |
+| w/o Format Reward | 55.7 | 57.1 | Structure collapse observed |
+| w/o Soft Grounding (Sparse IoU) | 57.7 | 58.7 | Lower exploration efficiency |
 | w/o Thinking (Direct answer) | 56.8 | 58.2 | Explicit CoT contributes ~1–2% |
 
-RL gains by reasoning complexity (ScanRefer Acc@0.5): For $\leq 4$ steps, SFT-only (47.2) > CoT-RL (45.4). For $= 5$ steps, RL Gain +1.5. For $\geq 6$ steps, RL Gain +2.7.
+RL gain by reasoning complexity (ScanRefer Acc@0.5): At steps $\le 4$, SFT-only (47.2) > CoT-RL (45.4). At steps $\ge 6$, RL +2.7.
 
 ### Key Findings
-- **All three stages are indispensable**: Stage 2 serves as the "foundation" (−22.5 F1 if removed); Stage 3 is the "roof" (−6.9 Acc if removed). Their order cannot be reversed.
-- **RL gains correlate with reasoning depth**: RL introduces noise for $\leq 4$ steps but improves accuracy by +2.7% for $\geq 6$ steps, confirming that RL completes long chains where Stage 2 supervision is unavailable.
-- **Bottlenecks lie in perception, not planning**: Replacing the planner with Claude 4.5 Opus yields only +0.2%, while replacing the `scene()` primitive with SegDINO3D adds +2.0%, leaving only a 0.9% gap to the oracle GT ceiling (61.3). Modularity allows "zero-cost" benefits from future 3D segmenters.
-- **Emergent primitives**: Post CoT-RL, the model spontaneously invents logical primitives like `intersection` or `union` not taught in Stage 2, and operates correctly on open-vocabulary filters like `beige chair`.
+- **Three stages are indispensable**: Stage 2 serves as the "foundation" (without it, RL exploration fails); Stage 3 serves as the "roof" (without it, synthetic templates do not match real instructions).
+- **RL gain correlates with depth**: RL introduces noise for simple tasks ($\le 4$ steps) but provides significant gains (+2.7%) for long-chain reasoning, fulfilling the goal of completing paths where symbolic supervision is unavailable.
+- **Bottleneck lies in perception, not planning**: Replacing the planner with Claude 4.5 Opus yielded only +0.2%, but swapping the `scene()` primitive for SegDINO3D yielded +2.0%, nearing the oracle GT upper bound (61.3).
+- **Emergent Primitives**: Post-RL, the model spontaneously utilizes primitives like `intersection` and `union` not seen in Stage 2, proving it learns reasoning syntax rather than just templates.
 
 ## Highlights & Insights
-- **Decoupling "reasoning syntax" from "conceptual knowledge"**: Traditional distillation transfers "what the teacher knows." This approach transfers "how the teacher thinks," leaving semantic knowledge to the LLM's pre-training.
-- **White-box CoT from synthetic data**: Synthetic datasets with program generators (CLEVR, Sr3D, etc.) provide ground-truth for every CoT step, posing much lower hallucination risks than LLM-as-annotator methods.
-- **Soft Grounding Reward for RL**: Replacing boolean IoU signals with exponential similarity for position and size enables gradients for early, non-overlapping predictions. This is applicable to any 2D/3D detection RL task.
-- **Hot-swappable modularity**: The explicit decoupling of planning and perception allows the system to upgrade alongside the 3D perception community—a "compounding interest" unavailable to black-box MLLMs.
+- **Decoupling reasoning syntax from semantic knowledge**: Instead of distilling "what the teacher knows," APEIRIA distills "how the teacher thinks." This allows neuro-symbolic systematicity and MLLM flexibility to coexist.
+- **Reverse-translating white-box CoT from programs**: This "synthetic-to-verifiable-trace" trick yields CoT with much lower hallucination risk than LLM-as-annotator approaches. It is applicable to any domain with program generators (CLEVR, robotics task planning).
+- **Soft Grounding Reward for sparse feedback**: Converting binary IoU into an exponential similarity for coordinates/size provides dense gradients, which is highly effective for RL in detection/segmentation tasks.
+- **Hot-swappability through modularity**: Improvements in 3D perception (like SegDINO3D) can be directly integrated to boost performance without retraining the entire reasoning system.
 
 ## Limitations & Future Work
-- **Perceptual ceiling**: Gains from SegDINO3D suggest that LLM reasoning is nearing saturation while 3D segmentation remains a bottleneck.
-- **Dependency on synthetic program ecology**: Extending this to domains without program-parsed synthetic data (e.g., ego-centric video) remains an open question.
-- **Format Reward**: This is a palliative measure that ensures structure but does not strictly guarantee the correctness of CoT content; a step-level process reward model (PRM) might be required in the future.
-- **Scene scope**: Evaluation is limited to static indoor scenes (ScanNet-based); dynamic, outdoor, and multi-view settings are not yet validated.
+- **Perception is the current bottleneck**: Nearing the Oracle upper bound with stronger segmenters suggests LLM reasoning is saturated, but 3D segmentation itself remains limited.
+- **Curriculum dependency**: Training relies on "program-parsable" synthetic data; extending this to domains without symbolic ecosystems (e.g., ego-centric video) remains an open question.
+- **Format Reward simplicity**: While necessary, it only enforces structure, not step-level correctness. Future work might require process reward models (PRM).
+- **Static indoors focus**: Evaluations are limited to ScanNet-based static scenes; dynamic scenes, outdoor environments, and multi-view integration are yet to be explored.
 
 ## Related Work & Insights
-- **vs NS3D / LARC**: These methods implement primitives via concept networks ($f_{\text{chair}}$), requiring dense supervision and suffering from closed vocabularies. APEIRIA executes primitives via natural language, inheritance systematic decomposition while gaining open-vocabulary flexibility.
-- **vs 3D-R1 / Scene-R1**: 3D-R1 prompts LLMs for CoT, leading to hallucinations and vague object references. Scene-R1 attempts RL without trace supervision, leading to instability. APEIRIA uses verifiable traces from symbolic programs for SFT warm-start before RL.
-- **vs Mainstream 3D MLLMs**: While others map instruction to answer in a black box, APEIRIA produces "plan + execution" traces, ensuring interpretability and modularity while maintaining a consistent lead on benchmarks.
+- **vs NS3D / LARC**: These utilize concept networks ($f_{\text{chair}}$) locked to closed vocabularies. APEIRIA replaces these with LLM-driven natural language execution, breaking the vocabulary bottleneck.
+- **vs 3D-R1 / Scene-R1**: 3D-R1 uses raw LLM prompting for CoT, risking hallucinations. APEIRIA’s SFT warm start with verifiable traces provides a much more stable foundation for RL.
+- **vs Standard 3D MLLMs**: While others are black-box maps, APEIRIA provides "plan + execution" traces that are interpretable, debuggable, and consistently lead in performance.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Distilling NS programs as CoT is a clean hybrid; RL extrapolation for 3D grounding is a genuine increment.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 benchmarks and multiple task types, with extensive ablation on RL gains and modular upper bounds.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and intuitive diagrams; however, the method section's mathematical formatting is occasionally inconsistent.
-- Value: ⭐⭐⭐⭐⭐ Addresses the closed-vocabulary issue of NS3D and the opacity of 3D MLLMs; its modular design serves as a strong baseline for 3D embodied AI.
+- Novelty: ⭐⭐⭐⭐ Using symbolic programs as CoT supervision is a clean combination; RL extrapolation is a significant increment.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across multiple benchmarks, tasks, and detailed ablations including oracle upper-bound analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and figures; however, some method details and data volumes are relegated to the appendix.
+- Value: ⭐⭐⭐⭐⭐ Resolves two major pain points (closed vocabulary and black-box nature) in 3D reasoning. Modular design ensures long-term viability.
 
 <!-- RELATED:START -->
 
@@ -137,20 +146,9 @@ RL gains by reasoning complexity (ScanRefer Acc@0.5): For $\leq 4$ steps, SFT-on
 
 ## Related Papers
 
-- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
 - [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](../../CVPR2026/3d_vision/foundry_distilling_3d_foundation_models_for_the_edge.md)
-- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
-- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](../../CVPR2026/3d_vision/msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
-- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](../../CVPR2026/3d_vision/glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](../../CVPR2026/3d_vision/foundry_distilling_3d_foundation_models_for_the_edge.md)
-- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
 - [\[CVPR 2025\] Neuro-3D: Towards 3D Visual Decoding from EEG Signals](../../CVPR2025/3d_vision/neuro-3d_towards_3d_visual_decoding_from_eeg_signals.md)
+- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
 - [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
 - [\[ICLR 2026\] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](../../ICLR2026/3d_vision/pyspatial_generating_3d_visual_programs_for_zero-shot_spatial_reasoning.md)
 

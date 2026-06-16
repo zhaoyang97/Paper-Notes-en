@@ -2,102 +2,95 @@
 title: >-
   [Paper Note] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts
 description: >-
-  [ACL2026][AIGC Detection][AI-Generated Text Detection] C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators…
+  [ACL 2026][AIGC Detection][AUROC] C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and real-world prompts. It demonstrates that detection difficulty depends heavily on the domain, generator, and prompt, while fine-tuning on C-ReD significantly enhances generalization to unseen models
 tags:
-  - "ACL2026"
-  - "AIGC Detection"
-  - "AI-Generated Text Detection"
-  - "Chinese Benchmark"
-  - "Real-World Prompts"
-  - "Generator Generalization"
-  - "AUROC"
+  - ACL 2026
+  - AIGC Detection
+  - AUROC
 date: 2026-05-08
-content_hash: 4dcc20b527a786e4
+content_hash: a5d55be600133086
 ---
-
 # C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2604.11796](https://arxiv.org/abs/2604.11796)  
 **Code**: https://github.com/HeraldofLight/C-ReD  
-**Area**: AIGC Detection / Chinese Text Detection  
-**Keywords**: AI-Generated Text Detection, Chinese Benchmark, Real-World Prompts, Generator Generalization, AUROC
+**Area**: AI-Generated Content (AIGC) Detection / Chinese Text Detection  
+**Keywords**: AI-generated text detection, Chinese benchmark, real-world prompts, generator generalization, AUROC
 
 ## TL;DR
-C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and prompts derived from real-world usage. It demonstrates that detection difficulty depends heavily on domain, generator, and prompt complexity, while fine-tuning on C-ReD significantly improves generalization to unseen models and external Chinese datasets.
+C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and real-world prompts. It demonstrates that detection difficulty depends heavily on the domain, generator, and prompt, while fine-tuning on C-ReD significantly enhances generalization to unseen models and external Chinese data.
 
 ## Background & Motivation
-**Background**: Numerous methods for AI-generated text detection have been proposed, including zero-shot detection based on likelihood/entropy/log-rank, perturbation methods like the DetectGPT series, supervised classifiers such as RoBERTa, and LLM-as-a-judge solutions. English datasets are also abundant, such as TuringBench, MAGE, MGTBench, and DetectRL.
+**Background**: Various methods for AI-generated text detection exist, including zero-shot detection based on likelihood/entropy/log-rank, perturbation-based methods like DetectGPT, supervised classifiers based on RoBERTa, and LLM-as-a-judge schemes. Numerous English datasets such as TuringBench, MAGE, MGTBench, and DetectRL are available.
 
-**Limitations of Prior Work**: Chinese detection benchmarks remain insufficient. Existing Chinese corpora often only cover QA formats and primarily use ChatGPT or GPT-3.5 as generators, lacking common domestic Chinese LLMs. Furthermore, prompts often fail to reflect real-world usage. Chinese itself presents unique challenges like complex word segmentation, context-dependent semantics, rich idioms/metaphors, and internet slang, making English-centric methods difficult to transfer directly.
+**Limitations of Prior Work**: Chinese detection benchmarks remain insufficient. Existing Chinese corpora often cover only Q&A formats and primarily use generators like ChatGPT or GPT-3.5, lacking domestic Chinese LLMs. Prompts are frequently not close to real-world usage. Furthermore, Chinese linguistic characteristics—complex segmentation, context-dependent semantics, idioms, and internet slang—make English-centric methods difficult to transfer directly.
 
-**Key Challenge**: While detectors appear to perform well on benchmarks, real-world deployment involves multiple domains, various generators, black-box APIs, authentic prompts, and continuously updated models. If training data only covers a single format or outdated models, detectors easily learn obsolete generation artifacts and fail on new models or domains.
+**Key Challenge**: Detectors appear to perform well on benchmarks, but real-world deployment involves multi-domain data, multiple generators, black-box APIs, real prompts, and evolving models. If training data only covers a single format or outdated models, detectors easily learn obsolete generation traces and fail on new models or domains.
 
-**Goal**: The authors aim to construct a Chinese AI-generated text detection benchmark that closer reflects real-world scenarios. Human-written texts are sourced from news, Q&A, film reviews, college entrance examination (Gaokao) essays, and academic writing. AI texts are generated by nine Chinese and international LLMs using domain-specific prompts. Evaluations cover domain/generator-agnostic detection, OOD generator generalization, cross-domain transfer, prompt complexity, Traditional Chinese news, and migration to the external M4 Chinese QA subset.
+**Goal**: The authors aim to build a benchmark closer to real-world Chinese scenarios. Human texts are sourced from news, Q&A, film reviews, high school essays, and academic writing. AI texts are generated by nine Chinese and international LLMs using domain-specific prompts. Evaluation covers domain/generator-agnostic detection, OOD generator generalization, cross-domain transfer, prompt complexity, Traditional Chinese news, and migration to external M4 Chinese Q&A data.
 
-**Key Insight**: The paper focuses the benchmark design on "Real-World Prompts + Multiple Generators + Multiple Domains." Specifically, the inclusion of models common in the Chinese ecosystem, such as DeepSeek, Qwen, and Doubao, makes the detection task more relevant to the actual risks in the Chinese internet, education, news, and academic sectors.
+**Key Insight**: The benchmark design focuses on "real prompts + multi-generator + multi-domain." Specifically, incorporating common models from the Chinese ecosystem, such as DeepSeek, Qwen, and Doubao, makes the detection tasks more aligned with actual risks in the Chinese internet, education, and academic sectors.
 
-**Core Idea**: By constructing C-ReD with real-task prompts and diverse Chinese generators, the benchmark ensures that detectors are no longer just identifying fixed styles of a single old model, but are instead evaluated for robustness across a broader distribution of Chinese domains and generators.
+**Core Idea**: By constructing C-ReD with real task prompts and diverse Chinese generators, the benchmark ensures detectors do not merely identify fixed styles of old models but are instead evaluated for robustness across a broader Chinese domain and generator distribution.
 
 ## Method
-The core contribution is the dataset and evaluation protocols rather than a single detection algorithm. C-ReD first collects human Chinese texts from multiple domains, then constructs real-world prompts around these texts for nine LLMs to generate corresponding AI texts. Finally, the authors evaluate zero-shot detectors, supervised detectors, and LLM-as-a-detector using this unified benchmark.
+The core contribution is the dataset and evaluation protocol rather than a single detection algorithm. C-ReD first collects human Chinese texts across multiple domains, then constructs real-use prompts around these texts for nine LLMs to generate corresponding AI texts. Subsequently, the system evaluates zero-shot detectors, supervised detectors, and LLM-as-detectors on this common benchmark.
 
 ### Overall Architecture
-Data sources cover five main Simplified Chinese domains and one additional Traditional Chinese news domain. News comes from THUCNews, Q&A from Zhihu-KOL, film reviews from Douban/ChineseNlpCorpus, Gaokao essays from web crawling, academic writing from ChinaXiv, and Traditional Chinese news from News-Collection-Zhtw. AI generators include gpt-3.5-turbo, gpt-4o, Gemini-2.5-Flash, Claude-3.5-Haiku, Deepseek-V3, Deepseek-R1, Qwen2.5, Qwen3, and Doubao-1.5-Pro.
+Data sources cover five simplified Chinese main domains and one additional Traditional Chinese news domain. News comes from THUCNews, Q&A from Zhihu-KOL, film reviews from Douban/ChineseNlpCorpus, high school essays from web crawls, academic writing from ChinaXiv, and Traditional Chinese news from News-Collection-Zhtw. AI generators include GPT-3.5-Turbo, GPT-4o, Gemini-2.5-Flash, Claude-3.5-Haiku, DeepSeek-V3, DeepSeek-R1, Qwen2.5, Qwen3, and Doubao-1.5-Pro.
 
-Each domain has specialized prompts. News utilizes categorized writing templates; Q&A injects real questions into answer templates; film reviews use structured critique requirements; essays utilize actual Gaokao prompt descriptions; academic writing employs "generating abstracts from title keywords" and "expanding introductions from abstracts." Post-generation, the system applies automatic filtering and manual screening to control Chinese language ratio, length, repetitive segments, factual anomalies, and formatting noise.
+Specialized prompts are designed for each domain. News uses categorized templates; Q&A injects real questions into answer templates; reviews use structured requirement prompts; essays adopt descriptions from National College Entrance Examination (Gaokao) topics; academic writing follows "write abstract from keywords" and "expand introduction from abstract" modes. Post-generation, automatic filtering and manual screening control for Chinese ratio, length, repetition, factual anomalies, and formatting noise.
 
-Evaluations are categorized into seven types: domain/generator-agnostic evaluation; ID and OOD generator testing after fine-tuning on C-ReD; cross-domain generalization under fixed generators; three prompt strategies for LLM-as-a-detector; academic writing prompt complexity ablation; external evaluation on Traditional Chinese news; and migration validation on the M4 Chinese QA subset.
+The evaluation includes seven protocols: domain/generator-agnostic evaluation; fine-tuning on C-ReD for ID and OOD generator tests; cross-domain generalization under fixed generators; three prompt strategies for LLM-as-detector; prompt complexity ablation in academic writing; external Traditional Chinese news evaluation; and transfer verification on the M4 Chinese Q&A subset.
 
 ### Key Designs
-1. **Real-World Prompt-Driven Data Construction**:
-	- Function: Ensures AI texts closely resemble what users obtain when calling LLMs in reality, rather than simple continuations or templated QA.
-	- Mechanism: For each domain, the genre, length, and style of human corpora are analyzed before designing prompts that match usage habits. For instance, academic writing distinguishes between abstract drafting and introduction expansion.
-	- Design Motivation: If detectors are only trained on simplified prompts, they may fail to recognize AI texts generated with detailed instructions, specific style constraints, or professional scenario guidance.
 
-2. **Multi-Domain, Multi-Generator Black-Box Generation**:
-	- Function: Covers common domain shifts and generator shifts in Chinese text detection.
-	- Mechanism: Human texts span news, Q&A, film reviews, essays, and academic writing. AI texts are generated by nine API-based models, including domestic Chinese models and international closed-source models. All models are invoked as black-box APIs, independent of internal logits or sampling details.
-	- Design Motivation: Real-world detection scenarios typically lack information about the generator's identity and cannot access internal model probabilities. A black-box, multi-generator setup better evaluates whether a detector has learned transferable signals.
+**1. Real prompt-driven data construction: Making AI text resemble real-world LLM outputs rather than simple continuations or template-based Q&A.**
 
-3. **Multi-Protocol Generalization Evaluation**:
-	- Function: Breaks down "classification accuracy on this dataset" into finer questions: Is it cross-generator, cross-domain, cross-prompt, cross-orthography (Simplified/Traditional), and cross-external data?
-	- Mechanism: Besides reporting internal AUROC, the authors use Claude-3.5-Haiku and Gemini-2.5-Flash as held-out OOD generators; train single-domain detectors to evaluate cross-domain heatmaps; compare original versus simplified academic prompts; and perform external validation on Traditional Chinese news and M4 Chinese QA.
-	- Design Motivation: AI text detection is prone to overfitting benchmarks. Multi-protocol evaluation exposes whether a detector is learning "AI writing style" or merely memorizing surface artifacts of a specific domain or model.
+If a detector is trained only on simplified prompts or fixed templates, it often learns shallow "robotic" artifacts. Such detectors fail when encountering AI text with detailed instructions or specific style constraints. C-ReD designs prompts aligned with domain habits: distinguishing abstract and introduction generation in academic writing, using categorized templates for news, and using real exam descriptions for essays. Closer prompts to real calling methods yield more realistic AI text for evaluation.
+
+**2. Multi-domain, multi-generator black-box generation: Bringing realistic domain and generator shifts to the forefront.**
+
+In practice, detectors often do not know the source generator or have access to internal logits. C-ReD human texts span five simplified Chinese domains and one Traditional Chinese domain, while AI texts are produced by nine models—including domestic ones like DeepSeek, Qwen, and Doubao. All models are invoked via black-box APIs, ensuring the evaluation measures whether detectors learn transferable signals rather than memorizing specific model styles.
+
+**3. Multi-protocol generalization evaluation: Decomposing "benchmark accuracy" into cross-generator, cross-domain, cross-prompt, and cross-data questions.**
+
+AI text detection is prone to overfitting. C-ReD does not merely report average AUROC; it reserves Claude-3.5-Haiku and Gemini-2.5-Flash as held-out OOD generators, utilizes cross-domain transfer heatmaps, compares original vs. simplified academic prompts, and performs external validation on Traditional Chinese and M4 datasets. This multi-layered pressure test forces detectors to demonstrate if they have learned transferable "AI linguistic features."
 
 ### Loss & Training
-The dataset itself does not have a unified training loss. Evaluated supervised detectors include OpenAI Detector, RADAR, ReMoDetect, and ImBD. For OpenAI Detector and ImBD, the models are fine-tuned on the C-ReD training set. In OOD generator experiments, training uses data from seven LLMs, excluding Claude-3.5-Haiku and Gemini-2.5-Flash, which are then evaluated as the held-out models. Classifiers like RoBERTa-base/large use a maximum sequence length of 512. The primary metrics are Accuracy and AUROC, with AUROC being more suitable for cross-domain and imbalanced scenarios as a threshold-independent metric.
+The dataset itself does not dictate a unified training loss. Evaluated supervised detectors include OpenAI Detector, RADAR, ReMoDetect, and ImBD. For OpenAI Detector and ImBD, fine-tuning is conducted on the C-ReD training set. In OOD generator experiments, training uses data from seven LLMs while excluding Claude-3.5-Haiku and Gemini-2.5-Flash, which are then used for testing. Classifiers like RoBERTa use a maximum sequence length of 512. Main metrics are Accuracy and AUROC, with AUROC being preferred for cross-domain and unbalanced scenarios.
 
 ## Key Experimental Results
 
 ### Main Results
-The total C-ReD dataset consists of 128,610 texts, including 12,997 human texts and 115,613 AI-generated texts. The human text sources are as follows:
+C-ReD contains a total of 128,610 texts: 12,997 human-written and 115,613 AI-generated.
 
-| Domain | Human Texts | Source | Design Motivation |
+| Area | Human Texts | Source | Design Motivation |
 |------|------------|------|----------|
-| News | 3,000 | THUCNews | News writing and public opinion risks |
+| News | 3,000 | THUCNews | News writing and opinion risk |
 | Q&A | 2,956 | Zhihu-KOL | Online Q&A and knowledge sharing |
-| Film Review | 2,960 | Douban / ChineseNlpCorpus | Short text commentary |
-| Composition | 1,081 | Gaokao Web Pages | Educational writing and academic integrity |
+| Film Review | 2,960 | Douban / ChineseNlpCorpus | Review-style short text |
+| Composition | 1,081 | Gaokao Webpages | Educational writing and academic integrity |
 | Academic Writing | 500 | ChinaXiv | Academic abstract and intro generation |
-| TC News | 2,000 | Traditional Chinese news | External Traditional Chinese validation |
+| TC News | 2,000 | Traditional Chinese news | External TC verification |
 
-Domain/generator-agnostic AUROC shows that detection difficulty varies significantly across domains, with News and Academic Writing generally being more difficult.
+Domain/generator-agnostic AUROC shows that difficulty varies significantly across domains, with news and academic writing being the most challenging.
 
 | Method | Film | Comp. | Q&A | News | Acad. | Observation |
 |------|------|-------|-----|------|-------|------|
-| Log-Likelihood | 0.8344 | 0.8433 | 0.9343 | 0.7373 | 0.7326 | Probabilistic features are strong in Q&A |
+| Log-Likelihood | 0.8344 | 0.8433 | 0.9343 | 0.7373 | 0.7326 | Strong simple probability features in Q&A |
 | Fast-DetectGPT | 0.6999 | 0.8952 | 0.8385 | 0.7626 | 0.7132 | Strong on essays, average on academic |
 | LAPD | 0.8857 | 0.9528 | 0.9726 | 0.9407 | 0.9150 | Most stable zero-shot method |
-| RoBERTa-base | 0.6461 | 0.5191 | 0.5139 | 0.4937 | 0.4316 | Older supervised detectors fail significantly |
+| RoBERTa-base | 0.6461 | 0.5191 | 0.5139 | 0.4937 | 0.4316 | Old supervised detectors fail significantly |
 | RADAR | 0.8291 | 0.6338 | 0.7605 | 0.4638 | 0.5167 | Weak on news and academic |
-| ReMoDetect | 0.9731 | 0.8731 | 0.9755 | 0.8652 | 0.9126 | Overall strong, but domain gaps persist |
+| ReMoDetect | 0.9731 | 0.8731 | 0.9755 | 0.8652 | 0.9126 | Generally strong, but domain gaps persist |
 | ImBD | 0.8760 | 0.9140 | 0.9011 | 0.7953 | 0.8056 | Stable but inferior to LAPD/ReMoDetect |
 
 ### Ablation Study
-Prompt complexity ablation in academic writing reveals that strong LLMs can generate hard-to-detect text even under simplified prompts; however, fine-tuning on C-ReD significantly boosts AUROC.
+Ablation on academic writing prompt complexity shows that strong LLMs generate difficult-to-detect text even under simplified prompts; fine-tuning on C-ReD significantly boosts AUROC.
 
-| Model | Prompt | Generator | AUROC (Pre-tuning) | AUROC (Post-tuning) |
+| Model | Prompt | Generator | AUROC (Pre-fine-tuning) | AUROC (Post-fine-tuning) |
 |------|--------|-----------|---------------|---------------|
 | RoBERTa-base | Original | GPT-4o | 0.5010 | 0.9566 |
 | RoBERTa-base | Simplified | GPT-4o | 0.4987 | 0.9201 |
@@ -108,7 +101,7 @@ Prompt complexity ablation in academic writing reveals that strong LLMs can gene
 | RoBERTa-large | Original | Qwen2.5 | 0.3685 | 0.9906 |
 | RoBERTa-large | Simplified | Qwen2.5 | 0.3954 | 0.9829 |
 
-Migration validation on external M4 Chinese QA shows that fine-tuning only on C-ReD Q&A can still improve AUROC on external data.
+External M4 Chinese Q&A transfer verification demonstrates that fine-tuning only on C-ReD Q&A improves external data AUROC.
 
 | Detector | ChatGPT Pre | ChatGPT Post | davinci-003 Pre | davinci-003 Post |
 |----------|-------------|--------------|-----------------|------------------|
@@ -117,36 +110,36 @@ Migration validation on external M4 Chinese QA shows that fine-tuning only on C-
 | ImBD | 0.9751 | 0.9918 | 0.9756 | 0.9818 |
 
 ### Key Findings
-- Detection difficulty on C-ReD is clearly influenced by the domain: domains with distinct structures or styles like Q&A and Film Reviews are easier, while News and Academic Writing are harder.
-- Reasoning-intensive models like Deepseek-R1 are more difficult to detect because their outputs have stronger logical structures and closer resemble human professional writing.
-- Older supervised detectors degrade severely on modern Chinese generators; RoBERTa-base even falls below random chance levels on News and Academic datasets.
-- Fine-tuning on C-ReD improves both ID and OOD generator detection, proving that multi-domain, multi-generator training data indeed yields generalization benefits.
-- Zero-shot LLM-as-a-detector is generally unreliable, often failing even to detect its own generated text; performance improves significantly after adding few-shot context or style descriptions.
+- Detection difficulty on C-ReD is clearly domain-dependent: domains with distinct structures (Q&A, film reviews) are easier, while news and academic writing are harder.
+- Reasoning-intensive models like DeepSeek-R1 are harder to detect due to logical structures that closely mimic professional human writing.
+- Older supervised detectors degrade severely on modern Chinese generators; RoBERTa-base performs near random on News and Academic domains.
+- Fine-tuning on C-ReD improves both ID and OOD generator detection, suggesting that multi-domain, multi-generator data yields generalization benefits.
+- Zero-shot LLM-as-detector is generally unreliable, even when detecting its own outputs; performance improves with few-shot context or style descriptions.
 
 ## Highlights & Insights
-- The critical value of C-ReD lies in its coverage of the Chinese ecosystem. Including models like Deepseek, Qwen, and Doubao reflects Chinese scenarios much better than using only ChatGPT/GPT-3.5.
-- Real-world prompt design is vital. The paper shows that the gap in detection difficulty between simplified and complex prompts is not huge, implying that the human-like writing capabilities of strong LLMs no longer depend heavily on detailed instructions.
-- The evaluation protocol is more valuable than a single leaderboard ranking. C-ReD examines OOD generators, domain transfer, Traditional Chinese, and external M4 data, which exposes detector risks more effectively than a single average AUROC.
-- The results are very practical for deployment: AI text detection cannot rely on a fixed threshold or a static detector; training data should be updated for specific domains and generators, with periodic re-testing on new models.
+- The primary value of C-ReD lies in its coverage of the Chinese ecosystem. Including DeepSeek, Qwen, and Doubao reflects Chinese scenarios more accurately than ChatGPT/GPT-3.5 alone.
+- Real prompt design is crucial. The paper shows the difficulty gap between simplified and complex prompts is narrowing, implying that strong LLMs' human-like writing capability is less dependent on detailed instructions.
+- The evaluation protocol is more valuable than simple leaderboards. Assessing generator OOD, domain transfer, and external datasets provides a more realistic view of detector vulnerabilities.
+- Practical insight: AI text detection cannot rely on a single fixed threshold or detector. It require persistent fine-tuning on domain-specific data and regular auditing against new models.
 
 ## Limitations & Future Work
-- The dataset focuses primarily on Chinese. Although Traditional Chinese news results suggest that challenges are consistent across writing systems, broader multilingual coverage remains future work.
-- C-ReD includes nine LLMs, but models are updated rapidly. New architectures, reasoning modes, and alignment methods may produce uncovered generation styles.
-- Prompt design is inspired by real-world scenarios but cannot cover adversarial prompts designed to evade detection, highly personalized prompts, or complex human-AI co-writing.
-- Human reference text sources are still finite and may not fully represent the diversity of styles, registers, and demographic groups in real Chinese writing.
-- Detection of AI text carries the risk of false accusations. Future work should report calibration, confidence, interpretability, and the impact on fairness toward human authors.
+- The dataset focuses on Chinese. While Traditional Chinese news results suggest consistent challenges across writing systems, multilingual coverage remains future work.
+- Although C-ReD includes nine LLMs, new architectures and alignment methods might produce uncovered styles.
+- Prompts are world-inspired but do not cover adversarial prompts designed specifically to bypass detection or complex human-AI collaborative writing.
+- Human reference sources are limited and may not fully represent all styles, registers, or demographic variations in Chinese writing.
+- AI detection carries false positive risks; future work should report calibration, confidence, interpretability, and fairness impacts.
 
 ## Related Work & Insights
-- **vs HC3**: The Chinese portion of HC3 is mainly Q&A and relies on ChatGPT. C-ReD covers more domains and nine generators, making it more suitable for training Chinese-specific detectors.
-- **vs M4 / MULTITuDE**: These datasets include Chinese or multilingual data, but the Chinese portions are typically not used for Chinese-specific training, and generator coverage is limited. C-ReD emphasizes local Chinese models and real-world prompts.
-- **vs DetectGPT / Fast-DetectGPT**: These methods rely on model statistical signals like probability curvature. C-ReD results show they fluctuate significantly across different Chinese domains and need to be evaluated alongside updated Chinese benchmarks.
-- **Insights for Deployment**: Detection systems for education, news, and academic scenes should undergo continuous fine-tuning using in-domain real-world prompt data and maintain OOD generator test sets to monitor generalization.
+- **vs HC3**: HC3 Chinese portions are mainly Q&A and rely on ChatGPT. C-ReD covers more domains and nine generators, making it more suitable for training Chinese-specific detectors.
+- **vs M4 / MULTITuDE**: These contain Chinese or multilingual data but are often not used for Chinese-specific training with limited generator coverage. C-ReD emphasizes domestic models.
+- **vs DetectGPT / Fast-DetectGPT**: These rely on statistical signals like probability curvature. C-ReD shows their performance fluctuates across Chinese domains, necessitating evaluation against updated benchmarks.
+- **Deployment Insight**: Systems for education, news, and academia should continuously fine-tune on domain-specific real prompt data and maintain OOD generator test sets to monitor generalization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Solid benchmark contribution; real-world Chinese prompts and multi-generator coverage are the primary innovations.
+- Novelty: ⭐⭐⭐⭐☆ Solid benchmark contribution; real Chinese prompts and diverse generator coverage are major novelties.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive with seven evaluation protocols, external data, and ablations.
-- Writing Quality: ⭐⭐⭐⭐☆ Logical data construction and experimental flow; detailed appendices.
-- Value: ⭐⭐⭐⭐⭐ Directly practical for Chinese AI text detection, educational integrity, news governance, and academic writing verification.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear logic in data construction and experiments; detailed appendices.
+- Value: ⭐⭐⭐⭐⭐ Directly practical for Chinese AI detection, educational integrity, and news governance.
 
 <!-- RELATED:START -->
 
@@ -155,10 +148,10 @@ Migration validation on external M4 Chinese QA shows that fine-tuning only on C-
 ## Related Papers
 
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
-- [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
 - [\[ACL 2026\] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)
-- [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
+- [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
 - [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
+- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
 
 </div>
 

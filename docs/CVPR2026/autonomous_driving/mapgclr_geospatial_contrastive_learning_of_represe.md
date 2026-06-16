@@ -2,155 +2,146 @@
 title: >-
   [Paper Note] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
 description: >-
-  [CVPR 2026][Autonomous Driving][Online HD map construction] MapGCLR proposes a semi-supervised training scheme based on geospatial contrastive learning: it exploits the geospatial overlap between BEV feature grids produc…
+  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes MapGCLR, which utilizes contrastive learning by enforcing consistency of BEV features in overlapping geospatial regions. Using a semi-supervised framework with limited labeled data and large-scale unlabeled multi-traverse data, it achieves a relative performance improvement of 13%-42% in online vectorized
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Online HD map construction"
-  - "semi-supervised learning"
-  - "contrastive learning"
-  - "BEV features"
-  - "multi-traversal"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: af031a53c3264231
+content_hash: 91df4cc8af50ee86
 ---
-
 # MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.10688](https://arxiv.org/abs/2603.10688)  
 **Code**: None  
-**Area**: Autonomous Driving
-**Keywords**: Online HD map construction, semi-supervised learning, contrastive learning, BEV features, multi-traversal
+**Area**: Autonomous Driving / HD Map Construction  
+**Keywords**: Geospatial contrastive learning, Online HD map, Semi-supervised learning, BEV features, Multi-traverse
 
 ## TL;DR
 
-MapGCLR proposes a semi-supervised training scheme based on geospatial contrastive learning: it exploits the geospatial overlap between BEV feature grids produced from multiple traversals of the same location, constructing an InfoNCE contrastive loss to enforce geographic consistency in the BEV feature space. On Argoverse 2, using only 5% labeled data, it achieves 18.9 mAP (vs. 13.3 for the fully supervised baseline), a relative improvement of 42%—roughly equivalent to doubling the amount of labeled data.
+Ours proposes MapGCLR, which utilizes contrastive learning by enforcing consistency of BEV features in overlapping geospatial regions. Using a semi-supervised framework with limited labeled data and large-scale unlabeled multi-traverse data, it achieves a relative performance improvement of 13%-42% in online vectorized HD map construction tasks.
 
 ## Background & Motivation
 
-**Background**: Online HD map construction is a critical task in autonomous driving. Methods such as MapTR/MapTRv2/MapTracker predict vectorized map elements (lane lines, road boundaries, crosswalks, etc.) from surround-view camera inputs and have achieved strong performance. However, all such methods **rely heavily on large amounts of annotated training data**—precise HD map annotation is extremely costly and represents the primary scalability bottleneck.
+**Background**: Online HD map construction has become a scalable alternative to offline HD maps in autonomous driving. Methods such as MapTR, MapTRv2, and MapTracker predict vectorized map elements (lane lines, road boundaries, etc.) in real-time from 360° visual inputs. However, these supervised learning methods still rely on massive amounts of labeled data.
 
-**Limitations of Prior Work**:
-- **PseudoMapTrainer**: Generates Gaussian surfel grid pseudo BEV segmentation labels from sensor data, but relies on the semantic segmentation paradigm rather than vectorized prediction.
-- **Lilja et al.**: Teacher-student architecture with temporal pseudo-label fusion, also based on the segmentation paradigm.
-- Both approaches perform semi-supervised learning via **pseudo-labels** without directly exploiting the natural prior of **geospatial consistency**.
+**Limitations of Prior Work**: (1) HD map labeling is extremely expensive, requiring professional sensors and manual annotation; (2) Existing semi-supervised methods (e.g., PseudoMapTrainer, Lilja) rely on pseudo-labels and are primarily designed for semantic segmentation paradigms rather than vectorized prediction; (3) Current approaches do not fully utilize the geospatial consistency information inherent in multi-traverse data.
 
-**Core Insight**: In autonomous driving datasets, the same location is often traversed multiple times (multi-traversal). BEV features observed at the same geographic location under different times, weather conditions, and lighting **should be similar**—this constitutes a natural self-supervised signal that requires no annotation.
+**Key Challenge**: Labeled data is the primary bottleneck for online HD map construction, while autonomous vehicles generate vast amounts of unlabeled data by passing through the same road segments multiple times during daily operation—how can this free multi-traverse data be utilized?
 
-**Key Distinction**: Unlike HRMapNet/RTMap, which store and fuse historical BEV features at inference time (increasing memory and model complexity), MapGCLR exploits multi-traversal geographic consistency only during **training** to improve encoder representations. At inference time, it remains a single-frame, single-pass forward pass.
+**Goal**: Leverage geospatial consistency within unlabeled multi-traverse data under limited labeling conditions to improve the quality of BEV feature representations, thereby enhancing online vectorized HD map construction performance.
+
+**Key Insight**: Treat BEV grid cells in geospatial overlapping regions from different traversals as "natural augmentations," enforcing feature consistency of these corresponding cells through contrastive learning.
+
+**Core Idea**: BEV features of the same location across different traversals should be similar—contrastive learning is performed using this constraint.
 
 ## Method
 
 ### Overall Architecture
 
-MapGCLR builds upon MapTRv2 and adopts a dual-branch semi-supervised training pipeline:
+The semi-supervised training pipeline consists of two data streams: (1) **Supervised branch**: A small amount of labeled data passes through the full MapTRv2 encoder-decoder pipeline to calculate the supervised loss $\mathcal{L}_{sup}$; (2) **Self-supervised branch**: A large volume of unlabeled multi-traverse data passes only through the encoder to generate BEV feature grids, which are trained using the geospatial contrastive loss $\mathcal{L}_{GCLR}$. A batch contains $n$ supervised samples and $2m$ self-supervised samples ($m$ reference-adjacency pairs).
 
-- **Supervised branch** (pink): Small labeled dataset → ResNet-50 image feature extraction → BEV lifting → MapTRv2 Transformer decoder → vectorized map element predictions → supervised loss $\mathcal{L}_{\text{sup}}$
-- **Self-supervised branch** (blue + orange): Large unlabeled multi-traversal data pairs (reference + adjacent) → shared encoder extracts BEV feature grids → projection head $h$ maps to embedding space → geospatial contrastive loss $\mathcal{L}_{\text{GCLR}}$
-
-Each batch contains $n$ labeled samples and $2m$ unlabeled samples ($m$ reference-adjacent pairs), totaling $n + 2m$ samples per batch.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    DATA["Unlabeled Multi-traverse Data + Limited Labeled Data"]
+    DATA --> D1["Multi-traverse Analysis & Data Partitioning<br/>Pose to Global → Bbox to Polygon → Label Multi-traverse<br/>Build Spatial Graph G=(V,E), Connect Poses with IoU in Range"]
+    D1 --> PAIR["Reference-Adjacency Pose Pairs (R, A)"]
+    PAIR --> ENC["MapTRv2 Encoder<br/>ResNet-50 → BEV Feature Grid"]
+    ENC -->|"Supervised Branch (n samples)"| DEC["Map Decoder<br/>Transformer Predicts Vectorized Polylines"]
+    DEC --> LSUP["Supervised Loss L_sup"]
+    ENC -->|"Self-supervised Branch (2m samples)"| D2["Geospatial Contrastive Learning<br/>Sample Anchors in Overlap → Find Positives via NN → Sample Negatives<br/>Projection Head h: f → z Decouples Learning/Application Domains"]
+    D2 --> D3["InfoNCE Contrastive Loss L_GCLR<br/>Pull Together Same Site, Push Apart Different Sites"]
+    LSUP --> COMB["Total Loss L_semi = λ_sup·L_sup + λ_GCLR·L_GCLR"]
+    D3 --> COMB
+```
 
 ### Key Designs
 
-1. **Geospatial Multi-Traversal Analysis (Multi-Traversal Split)**:
+**1. Multi-traverse Analysis & Data Partitioning: Automatically mining "different visits to the same location" from raw trajectories**
 
-    - **Function**: Analyzes geographic overlap between different driving logs in the dataset and partitions them into single-traversal and multi-traversal subsets.
-    - **Mechanism**: All vehicle poses are transformed to a global coordinate frame. For each pose, a perception bounding box is computed based on vehicle heading (lateral $\pm x$ meters, longitudinal $\pm y$ meters). All bounding boxes within a log are merged into a polygon. A log is classified as multi-traversal if its polygon intersects with that of at least one other log.
-    - **Spatial Graph Construction**: Graph $G = (V, E)$, where nodes $v \in V$ are vehicle poses and edges $e_{ij} \in E$ connect pose pairs whose IoU falls within $[\text{IoU}_{\min}, \text{IoU}_{\max}]$. Constraining both minimum and maximum IoU ensures overlap regions are sufficiently relevant without being nearly identical.
-    - **Dataset Split Strategy**: All multi-traversal logs are used for self-supervised training (their annotations are ignored); single-traversal logs are further divided into a supervised subset (2.5%/5%/10%/20%) and a validation set.
-    - **Design Motivation**: In Argoverse 2, the vast majority of logs exhibit multi-traversal overlap (histograms show most logs intersect with 2–20 other logs), providing abundant positive pairs for contrastive learning.
+The prerequisite for contrastive learning is identifying which BEV grids actually observe the same location. First, the dataset is systematically partitioned. All poses are converted to a global reference frame and partitioned by city. For each traversal, the bounding box of each pose is calculated based on vehicle heading and perception range ($\pm x$ lateral, $\pm y$ longitudinal) and merged into polygons. Overlapping polygons from different traversals are labeled as "multi-traverse." A spatial graph $G=(V,E)$ is constructed where vertices are poses and edges connect pose pairs whose perception grid IoU falls within the $[\text{IoU}_{min}, \text{IoU}_{max}]$ interval. This range ensures that the two visits are sufficiently related yet distinct enough to facilitate learning.
 
-2. **Geospatial Contrastive Learning**:
+**2. Geospatial Contrastive Learning: Treating "multi-traverse visits" as natural data augmentation**
 
-    - **Function**: Built on the SimCLR framework, constructs contrastive pairs from geographically overlapping BEV grid cells to enforce geographically consistent BEV representations.
-    - **Positive/Negative Sample Definition**:
-        - **Positive pairs**: A cell $c_a$ (anchor) in the reference BEV grid paired with cell $c_p$ in the adjacent BEV grid corresponding to the same geographic location.
-        - **Negative samples**: Cells $c_n$ randomly sampled from both grids that do not share a spatial correspondence with the anchor.
-    - **Sampling Strategy**: Anchor points are randomly sampled from the overlapping region of the reference grid; the corresponding positive sample in the adjacent grid is found via nearest-neighbor search; negative samples are randomly drawn from both grids, excluding the anchor and the positive sample.
-    - **Core Novelty**: Unlike conventional contrastive learning that constructs positive pairs via image augmentations, MapGCLR treats **observations of the same location at different times** as natural augmentations, leveraging real differences in viewpoint, lighting, and dynamic objects as intrinsic data augmentation.
+While SimCLR relies on manual image augmentations to create positive pairs, this method replaces artificial augmentation with real-world geospatial correspondence. Given BEV grids $B_{SSL,R}$ and $B_{SSL,A}$ from a reference pose $R$ and an adjacency pose $A$, both are transformed to the global coordinate system. Positive samples are formed by randomly sampling a BEV cell $c_a$ as an anchor in the reference grid overlap and using nearest neighbor search in the adjacency grid to retrieve cell $c_p$ at the same geospatial location. Negative samples are randomly sampled from both grids (excluding the anchor and positive samples). Features $\mathbf{f}$ are mapped to a contrastive space $\mathbf{z} \in \mathcal{Z}$ via a projection head $h$ before contrastive learning to decouple the learning domain from the downstream application domain.
 
-3. **Projection Head and InfoNCE Loss**:
+**3. InfoNCE Contrastive Loss: Pulling together same-location embeddings, pushing apart different ones**
 
-    - **Function**: Maps BEV cell features $\mathbf{f}$ through projection head $h$ into an embedding space $\mathbf{z} \in \mathcal{Z}$, where the contrastive loss is computed.
-    - **Loss Function**:
-
-    $$\mathcal{L}_{\text{GCLR}} = -\log \frac{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_i^+) / \tau)}{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_i^+) / \tau) + \sum_{k=1}^{K} \exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_k^-) / \tau)}$$
-
-    where $\text{sim}(\cdot, \cdot)$ denotes cosine similarity and $\tau$ is the temperature parameter.
-    - **Design Motivation**: The projection head decouples the contrastive learning domain from the downstream task domain (standard practice in SimCLR), preventing the contrastive objective from directly interfering with task-specific structure in the feature space.
+Once positive and negative samples are established, the constraint is formulated using the InfoNCE loss: $\mathcal{L}_{GCLR} = -\log \frac{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_i^+) / \tau)}{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_i^+) / \tau) + \sum_{k=1}^K \exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_k^-) / \tau)}$, where $\text{sim}(\cdot, \cdot)$ is cosine similarity and $\tau$ is the temperature. This encourages BEV cell embeddings of the same geospatial location across traversals to be similar while pushing different locations apart, effectively embedding the prior that "multiple observations of the same location should be consistent" into the representation.
 
 ### Loss & Training
 
-The total loss is a weighted combination of the supervised and contrastive losses:
-
-$$\mathcal{L}_{\text{semi}} = \lambda_{\text{sup}} \mathcal{L}_{\text{sup}} + \lambda_{\text{GCLR}} \mathcal{L}_{\text{GCLR}}$$
-
-- $\lambda_{\text{sup}}$ and $\lambda_{\text{GCLR}}$ control the relative weighting of the two objectives.
-- $\mathcal{L}_{\text{sup}}$ strictly follows the original MapTRv2 loss (Hungarian matching + classification/regression losses) and is computed only on labeled samples.
-- $\mathcal{L}_{\text{GCLR}}$ is summed over all $m$ unlabeled multi-traversal pairs.
+The total loss is a weighted combination of the supervised loss and the contrastive loss: $\mathcal{L}_{semi} = \lambda_{sup} \mathcal{L}_{sup} + \lambda_{GCLR} \mathcal{L}_{GCLR}$. Weighting factors perform normalization and control relative influence. The architecture is based on MapTRv2 using a ResNet-50 backbone to extract image features and transform them into BEV representations, with a Transformer decoder predicting map elements as polylines. Training is single-stage, with labeled and unlabeled data mixed within the same batch.
 
 ## Key Experimental Results
 
 ### Main Results
 
-On Argoverse 2, compared against the fully supervised MapTRv2 baseline:
+| Labeled Data Ratio | SSL | AP_dsh | AP_sol | AP_bou | AP_cen | AP_ped | mAP | Absolute Gain | Relative Gain |
+|-------------|-----|--------|--------|--------|--------|--------|-----|---------|---------|
+| 2.5% | ✗ | 4.3 | 5.0 | 9.6 | 11.9 | 1.5 | 6.5 | — | — |
+| 2.5% | ✓ | 5.2 | 6.7 | 12.2 | 17.0 | 1.6 | **8.5** | +2.0 | **+31%** |
+| 5% | ✗ | 10.3 | 9.5 | 20.5 | 19.1 | 7.3 | 13.3 | — | — |
+| 5% | ✓ | 15.4 | 18.7 | 24.8 | 25.4 | 9.9 | **18.9** | +5.6 | **+42%** |
+| 10% | ✗ | 17.6 | 20.9 | 31.9 | 27.1 | 12.4 | 22.0 | — | — |
+| 10% | ✓ | 20.8 | 30.5 | 34.5 | 32.4 | 18.2 | **27.3** | +5.3 | **+24%** |
+| 20% | ✗ | 27.2 | 32.1 | 38.9 | 34.7 | 22.3 | 31.0 | — | — |
+| 20% | ✓ | 31.2 | 38.8 | 39.9 | 37.5 | 26.9 | **34.9** | +3.9 | **+13%** |
 
-| Label Ratio | Method | mAP | Absolute Gain | Relative Gain |
-|-------------|--------|-----|--------------|---------------|
-| 2.5% | Supervised baseline | 6.5 | — | — |
-| 2.5% | + SSL (MapGCLR) | **8.5** | +2.0 | **+31%** |
-| 5% | Supervised baseline | 13.3 | — | — |
-| 5% | + SSL (MapGCLR) | **18.9** | +5.6 | **+42%** |
-| 10% | Supervised baseline | 22.0 | — | — |
-| 10% | + SSL (MapGCLR) | **27.3** | +5.3 | **+24%** |
-| 20% | Supervised baseline | 31.0 | — | — |
-| 20% | + SSL (MapGCLR) | **34.9** | +3.9 | **+13%** |
-| 30% | Supervised baseline | 36.6 | — | — |
-| 40% | Supervised baseline | 39.8 | — | — |
+> On the Argoverse 2 dataset, SSL consistently brings improvements across all labeled ratios. Gains are more significant with fewer labels: at 5%, the relative gain is 42%, equivalent to nearly doubling the amount of labeled data.
 
 ### Ablation Study
 
-| Configuration | Key Observation | Notes |
-|---------------|----------------|-------|
-| Label ratio vs. gain | Fewer labels → larger gain | Relative gain of 42% at 5%, only 13% at 20%, consistent with semi-supervised learning expectations |
-| 5% + SSL vs. 10% supervised | 18.9 vs. 22.0 | SSL effect ≈ doubling the label budget (5% → near 10%-level performance) |
-| PCA visualization (qualitative) | SSL feature space is cleaner | Stronger contrast at road boundaries, clearer ego-lane separation |
-| Baseline grid artifacts | Fixed-location anomalous feature clusters | Purely supervised BEV grids exhibit artifacts at fixed coordinates in the upper-right corner; SSL eliminates this phenomenon |
+| Supervised-only Data Ratio | mAP |
+|-------------|-----|
+| 2.5% | 6.5 |
+| 5% | 13.3 |
+| 5% + SSL | **18.9** |
+| 10% | 22.0 |
+| 10% + SSL | **27.3** |
+| 20% | 31.0 |
+| 30% | 36.6 |
+| 40% | 39.8 |
+
+> 5% + SSL (18.9) is close to 10% purely supervised (22.0), and 10% + SSL (27.3) is close to 20% purely supervised (31.0). The effect of SSL is approximately equal to doubling the volume of labeled training data.
 
 ### Key Findings
 
-- **Greatest benefit under label scarcity**: At 5% labeled data, relative improvement is 42% (13.3 → 18.9 mAP), implying significant annotation cost savings in practical deployment.
-- **Pedestrian crossing gains are relatively smaller**: Among all categories, the pedestrian crossing class benefits least (e.g., at 5%, from 7.3 to 9.9), possibly because crosswalk appearance varies considerably across time, yielding a weaker geospatial consistency signal.
-- **PCA analysis reveals feature space quality**: After SSL training, BEV features exhibit clearer boundary separation at road edges and eliminate the fixed-coordinate artifacts present in the purely supervised model—demonstrating that contrastive learning genuinely enforces geographic consistency in the feature space.
+- Qualitative PCA visualization shows that the BEV feature space of the semi-supervised method exhibits clearer semantic separation, particularly between road boundaries and ego-lanes.
+- Purely supervised baselines exhibit abnormal feature clusters at fixed BEV grid positions (unrelated to geospatial locations); geospatial contrastive learning eliminates these artifacts.
+- Most traversals in Argoverse 2 have multiple overlaps, making it naturally suitable for this method.
+- The lower the labeling ratio, the higher the relative gain (42% at 5% vs. 13% at 20%), proving the method's value in data-scarce scenarios.
 
 ## Highlights & Insights
 
-- **Elegant problem formulation**: Reinterpreting "multiple traversals of the same location" as "natural data augmentation" for contrastive learning is more grounded than artificially constructed augmentations—real variations in lighting, weather, and dynamic objects provide authentic viewpoint diversity.
-- **Simple and plug-and-play**: The core contribution is an auxiliary training loss and a data organization strategy that leaves inference-time architecture and computation entirely unchanged. It can be directly applied to any online map construction model built on a BEV feature grid.
-- **Dataset analysis as a standalone contribution**: The proposed multi-traversal classification methodology and geographic overlap analysis offer a new perspective on leveraging datasets such as Argoverse 2, and can be generalized to other tasks requiring spatial consistency.
+- **Discovery of Natural Augmentation**: The core insight is treating geospatial overlap in multi-traverse data as "natural data augmentation"—real-world repeat driving is the best augmentation, requiring no manual design.
+- **Simple and Effective**: The method is a straightforward extension of SimCLR-style contrastive learning, adding no complex modules while achieving significant results.
+- **Dataset Analysis Tool**: The multi-traverse analysis and spatial graph construction provide valuable tools applicable to any multi-traverse autonomous driving research.
+- **Compatibility with Vectorized Methods**: Unlike existing semi-supervised methods that only apply to the semantic segmentation paradigm, MapGCLR is the first to achieve semi-supervised learning for vectorized map construction.
 
 ## Limitations & Future Work
 
-- **Validated only on the single-frame MapTRv2 model**: The method has not been tested on SOTA temporal models such as MapTracker. Temporal models already exploit inter-frame consistency, so the relationship with geospatial contrastive learning—whether redundant or complementary—warrants investigation.
-- **Dependence on high-precision localization**: Constructing contrastive pairs requires accurate global poses to compute BEV grid geographic overlap. Datasets lacking high-quality localization (e.g., nuScenes) cannot be directly accommodated.
-- **Operates only on the encoder**: The contrastive loss backpropagates only to the BEV encoder and does not affect the Transformer decoder. Extending the self-supervised signal to the decoder side (e.g., consistency constraints on decoder queries) may yield further improvements.
-- **No direct comparison with other semi-supervised methods**: The absence of direct experimental comparisons with PseudoMapTrainer and Lilja et al. makes it impossible to assess whether geospatial contrastive learning genuinely outperforms pseudo-label-based approaches.
-- **Scale limited to Argoverse 2**: Multi-traversal characteristics of larger-scale datasets (e.g., nuPlan, Waymo Open) have not been analyzed, leaving scalability unverified.
+- Validated only on the MapTRv2 single-frame architecture; not yet integrated into stronger baselines with temporal memory like MapTracker or StreamMapNet.
+- Did not explore the comparison between multi-stage training (self-supervised pre-training followed by fine-tuning) and the current single-stage training.
+- The projection head design is relatively simple (single layer); more complex structures might further improve performance.
+- The method requires multi-traverse coverage, which may be lacking in newly developed areas or infrequently traveled segments.
+- Did not account for dynamic changes at the same location over time (e.g., construction, seasonal changes) affecting feature consistency.
 
 ## Related Work & Insights
 
-- **vs. SimCLR**: SimCLR constructs positive pairs via image-level augmentations; MapGCLR uses geospatial overlap to construct BEV grid-level positive pairs—transferring contrastive learning from the image domain to the BEV spatial domain.
-- **vs. HRMapNet/RTMap**: HRMapNet maintains a global BEV feature/raster map at inference time, increasing memory and complexity; MapGCLR exploits multi-traversal data only during training, imposing zero inference overhead.
-- **vs. self-supervised learning in autonomous driving**: This work belongs to the same paradigm as PointContrast (3D point cloud contrastive learning) and BEVDistill (BEV feature distillation)—leveraging geometric priors to construct self-supervised signals—but MapGCLR is the first to introduce cross-trajectory geospatial consistency into online map construction.
-- **Broader inspiration**: The paradigm of "leveraging geographic consistency across multiple traversals for self-supervision" is transferable to other spatial perception tasks (3D detection, occupancy prediction, semantic segmentation), particularly in scenarios where data collection is easy but annotation is scarce.
+- **SimCLR**: Classical contrastive learning framework; MapGCLR extends "augmentation" from image transformations to geospatial overlaps.
+- **MapTRv2**: The standard method for vectorized HD map construction; ours adds an SSL branch on this basis.
+- **HRMapNet / RTMap**: Utilize multi-traverse data as global map priors, but introduce additional complexity during inference; MapGCLR utilizes multi-traverse data only during training.
+- **Insights**: The geospatial contrastive learning concept can be extended to other BEV tasks such as 3D detection and occupancy prediction—features from multiple observations of the same location should remain consistent.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First work to introduce geospatial contrastive learning into online vectorized map construction; the idea is novel and intuitively motivated.
-- Experimental Thoroughness: ⭐⭐⭐ Ablations are clear, but validation is limited to a single model (MapTRv2) and lacks direct comparisons with other semi-supervised methods.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured, with rigorous method descriptions and clear figures and tables.
-- Value: ⭐⭐⭐⭐ A practical solution to the annotation bottleneck, with a paradigm generalizable to a broad range of spatial perception tasks.
+- Novelty: ⭐⭐⭐⭐ Geospatial contrastive learning is a concise and effective new idea.
+- Technical Depth: ⭐⭐⭐ The method is relatively simple; main contributions lie in problem definition and system design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic experiments across multiple labeling ratios + qualitative PCA analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic with accurate tables and figures.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses the industrial pain point of high HD map labeling costs.
 
 <!-- RELATED:START -->
 
@@ -158,11 +149,11 @@ On Argoverse 2, compared against the fully supervised MapTRv2 baseline:
 
 ## Related Papers
 
-- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
-- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
-- [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](../../ICCV2025/autonomous_driving/damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
+- [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
+- [\[CVPR 2026\] OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives](optimvmap_offline_vectorized_map_construction_via_optimal_multi-vehicle_perspect.md)
+- [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
+- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
 - [\[CVPR 2026\] Failure Modes for Deep Learning-Based Online Mapping: How to Measure and Address Them](failure_modes_for_deep_learning-based_online_mapping_how_to_measure_and_address_.md)
-- [\[CVPR 2026\] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes](rescene4d_temporally_consistent_semantic_instance_segmentation_of_evolving_indoo.md)
 
 </div>
 

@@ -2,82 +2,93 @@
 title: >-
   [Paper Note] FaithLens: Detecting and Explaining Faithfulness Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Faithfulness Hallucination] This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality synthetic data sub…
+  [ACL 2026][Hallucination Detection][Paper Note] This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality data synthesis combined with three-dimensional filtering (label correctness, explanation quality, and data diversity), followed by further optimization via rule-based reinforcement l
 tags:
-  - "ACL 2026"
-  - "Hallucination Detection"
-  - "Faithfulness Hallucination"
-  - "Explainable Detection"
-  - "Rule-based RL"
-  - "Data Filtering"
-  - "Cross-task Generalization"
+  - ACL 2026
+  - Hallucination Detection
 date: 2026-05-08
-content_hash: 88e4a20c21622d73
+content_hash: 60ff189d177f3f94
 ---
-
 # FaithLens: Detecting and Explaining Faithfulness Hallucination
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2512.20182](https://arxiv.org/abs/2512.20182)  
 **Code**: [https://github.com/S1s-Z/FaithLens](https://github.com/S1s-Z/FaithLens)  
 **Area**: Hallucination Detection  
-**Keywords**: Faithfulness Hallucination, Explainable Detection, Rule-based RL, Data Filtering, Cross-task Generalization
+**Keywords**: Faithfulness Hallucination, Interpretable Detection, Rule-based Reinforcement Learning, Data Filtering, Cross-task Generalization
 
 ## TL;DR
 
-This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality synthetic data subject to three-dimensional filtering (label correctness, explanation quality, and data diversity), followed by further optimization via rule-based reinforcement learning (prediction correctness reward + explanation quality reward). It outperforms GPT-5.2 and o3 across 12 tasks while providing high-quality explanatory outputs.
+This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality data synthesis combined with three-dimensional filtering (label correctness, explanation quality, and data diversity), followed by further optimization via rule-based reinforcement learning (prediction correctness reward + explanation quality reward). It surpasses GPT-5.2 and o3 across 12 tasks while providing high-quality explanatory outputs.
 
 ## Background & Motivation
 
-**Background**: LLMs are widely used for context-based text generation (e.g., RAG, summarization), but are prone to "faithfulness hallucinations" that are inconsistent with or irrelevant to the given context. Detecting such hallucinations is crucial for responsible LLM services.
+**Background**: LLMs are widely used for context-based text generation (e.g., RAG, summarization), but are prone to generating "faithfulness hallucinations" that are inconsistent with or irrelevant to the given context. Detecting such hallucinations is crucial for responsible LLM services.
 
-**Limitations of Prior Work**: (1) Lack of explainability—existing methods treat hallucination detection as a black-box binary classification, outputting labels without reasons, making it impossible for users to locate or understand errors; (2) Inconsistent cross-task generalization—different tasks exhibit varied hallucination patterns (subtle distortions in summaries vs. contradictory claims in RAG), leading to uneven performance in general models; (3) Lack of high-quality data—manual annotation is expensive with low consistency, and synthetic data lacks quality control.
+**Limitations of Prior Work**: (1) Lack of interpretability—existing methods treat hallucination detection as black-box binary classification, outputting labels without reasons, preventing users from locating and understanding errors; (2) Inconsistent cross-task generalization—different tasks have distinct hallucination patterns (subtle distortions in summaries vs. contradictory claims in RAG), leading to uneven performance; (3) Lack of high-quality data—annotation is costly with low consistency, and synthetic data often lacks quality control.
 
-**Key Challenge**: Achieving high detection accuracy while maintaining high explanation quality is difficult. SFT tends to make models mimic training data, leading to memorization of simple samples but poor generalization in complex scenarios. Furthermore, the quality of free-form explanations is hard to verify directly using rules.
+**Key Challenge**: Achieving high detection accuracy and high explanation quality simultaneously is difficult. SFT training prompts models to imitate data, causing them to memorize simple samples while generalizing poorly in complex scenarios, and the quality of free-form explanations is hard to verify via rules.
 
-**Goal**: To build a cost-effective hallucination detection model that outputs both detection results and explanatory notes, achieving SOTA performance across 12 diverse tasks.
+**Goal**: Construct a cost-effective hallucination detection model that outputs both results and explanatory notes, achieving SOTA performance across 12 diverse tasks.
 
-**Key Insight**: A two-stage training approach—cold-starting with carefully filtered synthetic SFT data, followed by GRPO reinforcement learning using cleverly designed rule-based rewards (prediction correctness + explanation quality).
+**Key Insight**: A two-stage training approach—initial cold-start SFT with meticulously filtered synthetic data, followed by GRPO reinforcement learning using specifically designed rule rewards (prediction correctness + explanation quality).
 
-**Core Idea**: The key insight for the explanation quality reward is that if an explanation helps a "novice model" (an untuned Llama-3.1-8B) correctly predict the label, the explanation is sufficiently clear and informative.
+**Core Idea**: The key insight for the explanation quality reward is that if an explanation helps a "novice model" (un-tuned Llama-3.1-8B) correctly predict the label, the explanation is sufficiently clear and informative.
 
 ## Method
 
 ### Overall Architecture
 
-FaithLens training consists of two stages: (1) Cold-start SFT—starting from open-source datasets, training data with explanations is synthesized using a high-level reasoning model (DeepSeek-V3.2-Think) and fine-tuned after three-dimensional filtering; (2) Rule-based RL—further optimization using the GRPO algorithm, where the reward function comprises prediction correctness, explanation quality, and format.
+FaithLens addresses the dual challenge of accuracy and explainability through a two-stage process. The first stage involves cold-start SFT: starting from open-source datasets, an advanced reasoning model (DeepSeek-V3.2-Think) synthesizes training data with explanations. After three-dimensional filtering to remove noise, an 8B model is fine-tuned to output "label + explanation." The second stage uses rule-based reinforcement learning: GRPO further optimizes the model using rewards based on prediction correctness, explanation quality, and format. The logic connecting these stages is that SFT teaches basic detection and formatting, while RL utilizes reward signals to improve robustness in complex scenarios.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Open-source Datasets"] --> B["DeepSeek-V3.2-Think Synthesizes<br/>Training Data with Explanations"]
+    B --> FILT
+    subgraph FILT["Three-dimensional Data Filtering Strategy"]
+        direction TB
+        F1["Label Filtering<br/>Discard if Prediction ≠ Ground Truth"] --> F2["Explanation Quality Filtering<br/>Explanation must reduce perplexity of correct label"]
+        F2 --> F3["Diversity Filtering<br/>K-Medoids probe set for coverage"]
+    end
+    FILT --> C["Cold-start SFT<br/>Fine-tune 8B model to output 'Label + Explanation'"]
+    C --> D["GRPO Reinforcement Learning<br/>Sample G candidates per document-claim pair"]
+    D --> REW
+    subgraph REW["Combined Reward R_final"]
+        direction TB
+        R1["Prediction Correctness R_pred"]
+        R2["Explanation Quality Reward R_exp<br/>Can novice model predict correctly via explanation?"]
+        R3["Format Correctness R_format"]
+    end
+    REW -->|Relative Advantage + KL Regularization| D
+    D --> OUT["FaithLens-8B<br/>Outputs Detection Label + Explanation"]
+```
 
 ### Key Designs
 
-1. **Three-dimensional Data Filtering Strategy**:
+**1. Three-dimensional Data Filtering Strategy: Ensuring synthesis data is correct, informative, and comprehensive.**
 
-    - **Function**: Ensures label correctness, explanation quality, and data diversity of synthetic training data.
-    - **Mechanism**: Label filtering—compares LLM predictions with ground truth and discards inconsistencies (as CoT/explanations for wrong labels may seem coherent but are internally consistent with errors). Explanation quality filtering—measures whether adding an explanation reduces the model's perplexity on the correct label, retaining only samples that decrease perplexity. Diversity filtering—uses K-Medoids clustering to construct a probe set and tests if candidate samples help the probe set predict correctly, retaining training data with positive impacts on diverse samples.
-    - **Design Motivation**: Unfiltered synthetic data contains noise and excessive simple samples. Three-dimensional filtering ensures training data is correct, informative, and covers diverse scenarios.
+Unfiltered synthetic data contains significant noise and excessive simple samples; direct SFT causes models to memorize easy cases. FaithLens employs three progressive filters. **Label Filtering** compares LLM predictions with ground truth, discarding mismatches—since explanations paired with wrong labels are often "self-consistent" but misleading. **Explanation Quality Filtering** measures whether the explanation reduces the model's perplexity for the correct label, retaining only informative samples. **Diversity Filtering** uses K-Medoids clustering to build a probe set, testing if a candidate sample helps the model predict diversity-representative samples correctly. These filters tighten the requirements from correctness to informativeness to scenario coverage.
 
-2. **Explanation Quality Reward**:
+**2. Explanation Quality Reward: Scoring free-form text by "whether a novice can understand your explanation."**
 
-    - **Function**: Implicitly evaluates the quality of free-form explanations during the RL phase.
-    - **Mechanism**: The generated explanation $e$ is fed along with the document and claim into a "novice model" (untuned Llama-3.1-8B-Instruct) to check if it can correctly predict the label based on this explanation. A reward of 1 is given if correct, 0 otherwise. The final reward is defined as $R_{\text{final}} = R_{\text{pred}} + R_{\text{exp}} + R_{\text{format}}$.
-    - **Design Motivation**: Verifying free-form text quality directly via rules is nearly impossible. "If even a novice can reach the correct answer through your explanation, then your explanation must be good enough"—this serves as a clever proxy evaluation.
+Verifying the quality of free-form explanations with rules is difficult. FaithLens uses a proxy evaluation: the generated explanation $e$ is fed alongside the document and claim to a "novice model" (un-tuned Llama-3.1-8B-Instruct). If the novice model predicts the label correctly based on the explanation, the reward is $1$, otherwise $0$. This is integrated into the total reward $R_{\text{final}} = R_{\text{pred}} + R_{\text{exp}} + R_{\text{format}}$. The criterion is: "If an untrained novice can reach the correct answer following your explanation, the explanation is clear and informative." This converts an unverifiable text quality problem into a verifiable classification problem.
 
-3. **GRPO Reinforcement Learning Training**:
+**3. GRPO Reinforcement Learning Training: Mastering complex scenarios via exploration beyond SFT.**
 
-    - **Function**: Further enhances detection accuracy and explanation quality on top of the SFT cold-start.
-    - **Mechanism**: For each document-claim pair, $G$ candidates (explanation + prediction) are generated. Each is evaluated with the combined reward, and the policy is updated via group relative advantage estimation in GRPO. KL divergence regularization prevents the policy from deviating too far from the reference.
-    - **Design Motivation**: While SFT tends to memorize simple samples, RL drives the model to produce high-quality outputs in complex scenarios through exploration and reward signals.
+A common pitfall of SFT is memorizing simple samples while failing on complex ones. FaithLens follows SFT with Group Relative Policy Optimization (GRPO). For each document-claim pair, $G$ candidates (explanation + prediction) are generated and scored by the combined rewards. The policy is updated via intra-group relative advantage estimation with KL divergence regularization to prevent deviation from the reference policy. Unlike the passive imitation in SFT, RL uses active exploration and reward-driven updates to force the model to produce high-quality outputs for complex samples that cannot be solved by memorization.
 
 ### Loss & Training
 
-The SFT phase uses standard cross-entropy loss on filtered synthetic data. The RL phase utilizes GRPO (Group Relative Policy Optimization) with a total reward = Prediction Correctness (0/1) + Explanation Quality (0/1) + Format Correctness (0/1). The base model is Llama-3.1-8B-Instruct.
+The SFT stage uses standard cross-entropy loss on filtered synthetic data. The RL stage employs GRPO, where Combined Reward = Prediction Correctness (0/1) + Explanation Quality (0/1) + Format Correctness (0/1). The base model is Llama-3.1-8B-Instruct.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Overall Performance Across 12 Tasks (Balanced Accuracy %)**
+**Overall Performance across 12 Tasks (Balanced Accuracy %)**
 
-| Model | Std Dev ↓ | Avg ↑ |
+| Model | Std. Dev. ↓ | Mean ↑ |
 |------|---------|---------|
 | GPT-4o | 7.0 | 76.1 |
 | o3 | 6.0 | 82.1 |
@@ -89,50 +100,49 @@ The SFT phase uses standard cross-entropy loss on filtered synthetic data. The R
 
 ### Ablation Study
 
-| Configuration | Avg Accuracy | Description |
+| Configuration | Mean Accuracy | Description |
 |------|----------|------|
 | Full FaithLens | 85.8 | Complete model |
-| w/o RL (SFT only) | 82.3 | RL Gain +3.5 |
-| w/o Explanation Quality Reward | 84.1 | Explanation Reward Gain +1.7 |
-| w/o Data Filtering | 79.8 | Filtering Gain +6.0 |
-| w/o Diversity Filtering | 81.5 | Diversity Filtering Gain +4.3 |
+| w/o RL (SFT only) | 82.3 | RL contribution +3.5 |
+| w/o Explanation Reward | 84.1 | Explanation reward contribution +1.7 |
+| w/o Data Filtering | 79.8 | Filtering contribution +6.0 |
+| w/o Diversity Filtering | 81.5 | Diversity filtering contribution +4.3 |
 
 ### Key Findings
 
-- 8B FaithLens outperforms GPT-5.2 (85.8 vs 85.3) and o3 (82.1), offering a magnitude of advantage in cost.
-- It achieves the lowest standard deviation (4.1), indicating the most stable cross-task generalization—addressing the "strong in some tasks, weak in others" issue of existing methods.
-- The contribution of data filtering (+6.0) is greater than RL (+3.5), indicating that high-quality training data is the foundation.
-- Diversity filtering is crucial for cross-task generalization; removing it causes accuracy to drop by 4.3 percentage points.
-- The explanation quality reward not only improves explanation quality but also indirectly boosts detection accuracy (+1.7), suggesting an inherent regularization effect in the "explanation $\rightarrow$ prediction" process.
+- FaithLens-8B surpasses GPT-5.2 (85.8 vs 85.3) and o3 (82.1) with an order of magnitude advantage in cost.
+- It achieves the lowest standard deviation (4.1), indicating the most stable cross-task generalization, solving the "strong in some tasks, weak in others" issue of prior methods.
+- The contribution of data filtering (+6.0) is greater than RL (+3.5), highlighting high-quality training data as the foundation.
+- Diversity filtering is crucial for cross-task generalization; accuracy drops by 4.3 percentage points without it.
+- The explanation quality reward not only improves explanations but also indirectly boosts detection accuracy (+1.7), suggesting an inherent regularization effect in the "explanation → prediction" process.
 
 ## Highlights & Insights
 
-- The "Novice Model Proxy Evaluation" is an elegant solution for assessing free-form explanation quality—transforming unverifiable text quality issues into verifiable classification correctness problems.
-- The progressive "Label $\rightarrow$ Explanation $\rightarrow$ Diversity" design of the 3D data filtering ensures comprehensive quality of training data.
-- Achieving performance beyond closed-source giant models with only 8B parameters demonstrates that "carefully designed training strategies > brute-force parameter scaling."
+- The "novice model proxy evaluation" is an elegant solution for assessing free-form explanation quality, transforming unverifiable quality issues into verifiable correctness.
+- The progressive "Label → Explanation → Diversity" 3D filtering ensures comprehensive data quality.
+- Surpassing closed-source giant models with only 8B parameters demonstrates that "well-designed training strategies > brute-force scale."
 
 ## Limitations & Future Work
 
-- The explanation quality reward depends on the capability of the "novice model"; if the novice model itself is biased, the reward signal may be distorted.
-- Synthetic data originates from existing open-source datasets and may inherit their biases.
-- Evaluation was limited to English tasks; multilingual generalization remains unverified.
-- Future work could explore more fine-grained explanation evaluation (e.g., sentence-level evidence anchoring).
+- The explanation quality reward depends on the novice model's capability; biases in the novice model may distort the reward signal.
+- Synthetic data inherits biases from the source open-source datasets.
+- Only English tasks were evaluated; multilingual generalization remains unverified.
+- Future work could explore fine-grained explanation evaluation, such as sentence-level evidence anchoring.
 
 ## Related Work & Insights
 
-- **vs MiniCheck**: MiniCheck reached GPT-4o levels using a 7B classifier trained on synthetic data but lacks explanation capabilities; FaithLens provides explanations and surpasses GPT-5.2.
-- **vs SelfCheckGPT**: SelfCheckGPT relies on large model inference and is inefficient; FaithLens achieves better performance with an 8B model.
-- **vs DeepSeek-V3.2-Think**: While a strong teacher for data synthesis (84.4%), FaithLens surpasses the teacher through RL (85.8%).
+- **vs MiniCheck**: MiniCheck trains a 7B classifier to reach GPT-4o levels using synthetic data but lacks explanation capabilities; FaithLens provides explanations and surpasses GPT-5.2.
+- **vs SelfCheckGPT**: SelfCheckGPT relies on large model inference with low efficiency; FaithLens achieves better performance with an 8B model.
+- **vs DeepSeek-V3.2-Think**: While the teacher model for synthesis is strong (84.4%), FaithLens surpasses the teacher through RL (85.8%).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Innovation in explanation quality rewards and 3D filtering, though the overall SFT+RL framework is a standard paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 tasks, multiple baselines (including GPT-5.2/o3), and detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear methodological descriptions and complete formulas.
-- Value: ⭐⭐⭐⭐⭐ Extremely practical, as an 8B model outperforms GPT-5.2 while providing explanations.
+- Novelty: ⭐⭐⭐⭐ Innovative explanation reward and 3D filtering, though the SFT+RL framework is a standard paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 tasks, multiple baselines (including GPT-5.2/o3), and detailed ablation.
+- Writing Quality: ⭐⭐⭐⭐ Methods are clearly described with complete formulas.
+- Value: ⭐⭐⭐⭐⭐ Extremely practical, achieving super-human performance with an 8B model while providing explanations.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers

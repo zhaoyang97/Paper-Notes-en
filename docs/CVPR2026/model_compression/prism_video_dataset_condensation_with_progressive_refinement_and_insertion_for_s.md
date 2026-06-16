@@ -2,78 +2,82 @@
 title: >-
   [Paper Note] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 description: >-
-  [CVPR 2026][Model Compression][video dataset condensation] This paper proposes PRISM, a holistic video dataset condensation method that begins from only two temporal anchors (first and last frames)…
+  [CVPR 2026][Model Compression][Paper Note] This paper proposes PRISM, a monolithic video dataset condensation method. Starting from only two temporal anchors (first and last frames), it adaptively inserts keyframes by detecting gradient direction conflicts. This approach achieves SOTA storage efficiency while maintaining content-motion coupling integrity—reachi
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "video dataset condensation"
-  - "keyframe insertion"
-  - "gradient guidance"
-  - "spatiotemporal coupling"
-  - "storage efficiency"
+  - CVPR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: f9587a19f949211f
+content_hash: 1e5032f68c41ac05
 ---
-
 # PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2505.22564](https://arxiv.org/abs/2505.22564)  
-**Code**: None (no public code mentioned)  
-**Area**: LLM Evaluation
-**Keywords**: video dataset condensation, keyframe insertion, gradient guidance, spatiotemporal coupling, storage efficiency
+**Code**: None (No public code mentioned)  
+**Area**: Model Compression  
+**Keywords**: Video Dataset Condensation, Keyframe Insertion, Gradient Guidance, Spatio-temporal Coupling, Storage Efficiency
 
 ## TL;DR
 
-This paper proposes PRISM, a holistic video dataset condensation method that begins from only two temporal anchors (first and last frames), adaptively inserts keyframes by detecting gradient direction conflicts, and achieves state-of-the-art storage efficiency while preserving content–motion coupling integrity — reaching 17.9% accuracy with 20 MB on miniUCF 1VPC, a 5× storage reduction over prior methods (94 MB).
+This paper proposes PRISM, a monolithic video dataset condensation method. Starting from only two temporal anchors (first and last frames), it adaptively inserts keyframes by detecting gradient direction conflicts. This approach achieves SOTA storage efficiency while maintaining content-motion coupling integrity—reaching 17.9% accuracy on miniUCF 1VPC with 20MB, which is 5x less than the 94MB required by previous methods.
 
 ## Background & Motivation
 
-1. **Background**: Dataset distillation/condensation aims to synthesize a compact set far smaller than the original dataset such that models trained on it approach the performance of models trained on the full data. This field is well-studied in the image domain (DC, DSA, DM, MTT, etc.) but nearly unexplored for video — with only one prior work, Wang et al.
+1. **Background**: Dataset distillation/condensation aims to synthesize a compact set much smaller than the original dataset, allowing models trained on it to approach the performance of those trained on full data. This field is well-studied for images (DC, DSA, DM, MTT, etc.) but remains nearly blank for videos—with only one prior work by Wang et al.
 
-2. **Limitations of Prior Work**: The sole prior work decomposes video into "static content" (frozen pretrained images) and "dynamic motion" (auxiliary signals) optimized in two separate stages. This decomposition strategy is fundamentally flawed — in real-world actions, content and motion are **inseparable**. For instance, a frame of two hands coming together in a clapping action is visually identical to a frame of two hands beginning to separate, yet the two belong to entirely different motion trajectories.
+2. **Limitations of Prior Work**: The sole prior work decomposes video into two stages: "static content" (frozen pre-trained images) and "dynamic motion" (auxiliary signals). This separation strategy is fundamentally flawed as content and motion are **inseparable** in real-world actions. For example, a frame of hands together in a clapping motion is identical in static content to a frame where hands begin to separate, but they belong to different motion trajectories.
 
-3. **Key Challenge**: Video data contains substantial temporal redundancy (adjacent frames are highly similar), yet prior methods use a fixed number of frames (e.g., 16) per synthetic video, wasting storage on simple motions and potentially underrepresenting complex ones.
+3. **Key Challenge**: Video data possesses massive temporal redundancy (high similarity between adjacent frames), yet previous methods use a fixed number of frames (e.g., 16 frames) to represent each synthetic video, wasting storage on simple motions while potentially being insufficient for complex ones.
 
-4. **Goal**: (a) Design a holistic video condensation method that preserves content–motion coupling integrity; (b) adaptively allocate representational capacity — using more frames only where needed, while simple motions are adequately represented via linear interpolation.
+4. **Goal**: (a) Design a monolithic video condensation method that maintains content-motion coupling integrity; (b) Adaptively allocate representation capacity—using more frames only where needed, while linear interpolation suffices for simple motions.
 
-5. **Key Insight**: The authors build on a key assumption — simple or low-speed motions can be effectively approximated by linear interpolation. Thus, it suffices to identify frames where linear interpolation **fails** (i.e., nonlinear spatiotemporal transition points) and promote them to keyframes. These frames are identified via gradient direction conflicts: if the gradient of an intermediate frame is in the opposite direction to those of its two neighboring keyframes, optimizing the keyframes cannot reduce the loss at that intermediate frame.
+5. **Key Insight**: The authors assume that simple or low-speed motion can be effectively approximated by linear interpolation. Thus, one only needs to identify frames where linear interpolation **fails** (i.e., non-linear spatio-temporal transition points) and upgrade them to keyframes. These frames are identified via gradient direction conflicts—if the gradient of an intermediate frame opposes the gradients of the two bounding keyframes, optimizing the keyframes cannot reduce the loss of that intermediate frame.
 
-6. **Core Idea**: Starting from the minimal set of temporal anchors (first and last frames), PRISM adaptively inserts keyframes during training by detecting negative cosine similarity between intermediate-frame gradients and those of adjacent keyframes, realizing an "allocate frames on demand" paradigm for video condensation.
+6. **Core Idea**: Begin with minimal temporal anchors (first and last frames), identify frames failing linear interpolation by detecting negative gradient cosine similarity during training, and adaptively insert keyframes to achieve "frame-on-demand" video condensation.
 
 ## Method
 
 ### Overall Architecture
 
-PRISM takes a large-scale video dataset as input and produces a compact set of synthetic videos. Each synthetic video is parameterized by a sparse keyframe set $\mathcal{K}$, initially containing only the first and last frames. Intermediate frames are generated via linear interpolation during training; the complete video is fed into a 3D CNN to extract features, which are then matched against the distribution of real videos. When gradient conflicts are detected, a new keyframe is inserted at that position. Training proceeds in three phases: warm-up (stabilizing anchors, 20% of iterations) → progressive insertion (60%) → cool-down (fully optimizing selected frames, 20%). All keyframes are initialized from Gaussian noise, reflecting the holistic synthesis philosophy.
+PRISM takes a large-scale video dataset as input and outputs a synthesized compact video set. Each synthetic video is parameterized by a sparse keyframe set $\mathcal{K}$, initially containing only the first and last frames. During training, intermediate frames are generated via linear interpolation; the full video is then fed into a 3D CNN to extract features for distribution matching with real videos. When a gradient conflict is detected, a new keyframe is inserted at that position. Training follows a three-stage schedule: warm-up (stabilizing anchors, 20% iterations) → progressive insertion (60%) → cool-down (fully optimizing selected frames, 20%). All keyframes are initialized from Gaussian noise, reflecting a monolithic synthesis philosophy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Large-scale Video Dataset"] --> R["Sample Real Videos by Class"]
+    subgraph PARAM["Temporal Frame Interpolation Parameterization"]
+        direction TB
+        K["Sparse Keyframe Set K<br/>Initial Start/End 2 Frames · Gaussian Noise"] --> I["Linear Interpolation for Intermediate Frames"]
+        I --> V["Full Synthetic Video"]
+    end
+    R --> F["miniC3D Feature Extraction"]
+    V --> F
+    F --> L["Distribution Matching Loss<br/>Real vs. Synthetic Feature Mean"]
+    L --> G["Backpropagation · Optimize Keyframes"]
+    G --> INS["Gradient-guided Frame Insertion<br/>Intermediate vs. Boundary Gradient Conflict → Upgrade to Keyframe"]
+    INS -->|Merge into K| K
+    G --> S["Warm-up / Cool-down Schedule<br/>First 20% Steady · Mid 60% Insertion · Last 20% Finish"]
+    S -.Controls Insertion.-> INS
+    S --> O["Synthetic Compact Video Set"]
+```
 
 ### Key Designs
 
-1. **Temporal Frame Interpolation Parameterization**
+**1. Temporal Frame Interpolation Parameterization: Compressing the video into a few trainable keyframes, with others generated by interpolation**
 
-    - **Function**: Represent complete video sequences using sparse keyframes.
-    - **Mechanism**: Each synthetic video is defined by a keyframe set $\mathcal{K}_c^j = \{s_{c,k_1}, ..., s_{c,k_n}\}$, with $n=2$ initially (first and last frames). Non-keyframes are generated via linear interpolation: $s_{c,t} = \alpha_t s_{c,k_i} + (1-\alpha_t) s_{c,k_{i+1}}$, where $\alpha_t = (k_{i+1}-t)/(k_{i+1}-k_i)$. Only keyframes are trainable parameters; intermediate frames are updated indirectly through interpolation.
-    - **Design Motivation**: This parameterization ensures holistic spatiotemporal coupling — optimizing keyframes simultaneously affects all intermediate frames, so the video is optimized as a unified whole from the outset, rather than treating content and motion separately.
+Previous methods separated "static content" and "dynamic motion" into two branches for separate optimization, resulting in decoupling. PRISM changes the representation: each synthetic video is parameterized only by a sparse set of keyframes $\mathcal{K}_c^j = \{s_{c,k_1}, ..., s_{c,k_n}\}$. Initially, $n=2$ (first and last frames). Non-keyframes are not stored but are linearly interpolated on the fly: $s_{c,t} = \alpha_t s_{c,k_i} + (1-\alpha_t) s_{c,k_{i+1}}$, where weights $\alpha_t = (k_{i+1}-t)/(k_{i+1}-k_i)$ represent the relative position of $t$ between endpoints. Only keyframes are trainable parameters; intermediate frames are indirectly updated through them. This naturally couples content and motion: moving a keyframe simultaneously changes all dependent interpolated frames, ensuring the entire video is optimized as a whole.
 
-2. **Gradient-Guided Frame Insertion**
+**2. Gradient-guided Frame Insertion: Locating "interpolation failure" points via gradient conflict and upgrading them to keyframes**
 
-    - **Function**: Adaptively identify temporal positions requiring additional keyframes.
-    - **Mechanism**: For each candidate intermediate frame $s_{c,t}$, the cosine similarities $\cos_i^t$ and $\cos_{i+1}^t$ between its gradient $\nabla \mathcal{L}(s_{c,t})$ and those of its two neighboring keyframes are computed. When both fall below threshold $\epsilon$ (default 0, i.e., negative), the frame is in a "gradient conflict" state — optimizing the endpoint keyframes increases rather than decreases the loss at this intermediate frame. Per the theoretical proof in Lemma 1, no convex combination update of the endpoints can reduce the intermediate frame's loss; it must be promoted to a keyframe for direct optimization. All frames satisfying this condition are inserted simultaneously at each iteration.
-    - **Design Motivation**: This direction-based selection criterion is more reliable than L2 distance — it captures semantic-level motion transitions rather than mere pixel differences. Ablation experiments confirm that cosine similarity significantly outperforms L2 distance (7.5% vs. 6.0%).
+Initial anchors only represent uniform linear motion; complex actions require more anchors. PRISM's criterion comes from a straightforward observation: if the loss gradient $\nabla \mathcal{L}(s_{c,t})$ of an intermediate frame $s_{c,t}$ is in the opposite direction of its bounding keyframes' gradients, continuing to optimize the endpoints will only push the intermediate frame further from the target. Thus, for each candidate intermediate frame, the cosine similarities $\cos_i^t$ and $\cos_{i+1}^t$ with adjacent keyframe gradients are calculated. When both fall below a threshold $\epsilon$ (default 0), a "gradient conflict" is detected, and the frame is upgraded from an interpolated frame to a direct trainable keyframe. Lemma 1 provides theoretical grounding: under gradient conflict, no convex combination update of the endpoints can reduce the loss of that intermediate frame. Using cosine similarity (7.5% on HMDB51 1VPC) outperforms L2 pixel distance (6.0%) because direction reflects semantic motion transitions rather than being distracted by lighting or texture changes.
 
-3. **Warm-up and Cool-down Phases**
+**3. Warm-up and Cool-down Buffering: Providing a "stabilize first, finish later" window for insertion decisions**
 
-    - **Function**: Ensure stability in the frame insertion dynamics.
-    - **Mechanism**: Frame insertion is disabled during the first 20% of iterations (warm-up), allowing the endpoint frames to stabilize before serving as reference anchors for subsequent insertions; insertion is also disabled during the last 20% of iterations (cool-down), ensuring that already-selected frames receive sufficient optimization. Progressive frame insertion is performed during the middle 60%.
-    - **Design Motivation**: Premature insertion leads to incorrect frame selection due to noisy gradients; frames inserted too late receive insufficient training. The two phases address "when to start" and "when to stop" insertion, respectively. Ablation results show that removing warm-up reduces accuracy by more than 0.7%, and removing cool-down by more than 1.0%.
+At the start of training, gradients are noisy, leading to incorrect frame selection; frames inserted near the end lack sufficient iterations to be optimized. PRISM addresses this with three stages: the first 20% of iterations forbid insertion (warm-up) to stabilize the initial anchors as reliable references; the middle 60% allow progressive insertion; the final 20% again forbid insertion (cool-down) to fully optimize selected keyframes. These buffers control "when to start" and "when to stop" inserting. Ablations show accuracy drops of over 0.7% without warm-up and over 1.0% without cool-down.
 
 ### Loss & Training
 
-The optimization objective is distribution matching:
-
-$$\min_{\mathcal{K}} \sum_c \left\|\frac{1}{|\mathcal{B}_c^{real}|}\sum_x f_\theta(x) - \frac{1}{|\mathcal{B}_c^{syn}|}\sum_s f_\theta(s)\right\|^2$$
-
-where $f_\theta$ is miniC3D (4-layer Conv3D). SGD with momentum 0.95 and $\epsilon=0$ is used. Synthetic videos are initialized from Gaussian noise. Videos are sampled at 16 frames with stride 4 at resolution 112×112.
+The optimization objective is distribution matching: $$\min_{\mathcal{K}} \sum_c \|\frac{1}{|\mathcal{B}_c^{real}|}\sum_x f_\theta(x) - \frac{1}{|\mathcal{B}_c^{syn}|}\sum_s f_\theta(s)\|^2$$, where $f_\theta$ is miniC3D (4-layer Conv3D). The training uses SGD with momentum 0.95 and $\epsilon=0$. Synthetic videos are initialized from Gaussian noise. Videos are $112 \times 112$ with 16 frames at a sampling interval of 4.
 
 ## Key Experimental Results
 
@@ -81,72 +85,62 @@ where $f_\theta$ is miniC3D (4-layer Conv3D). SGD with momentum 0.95 and $\epsil
 
 | Dataset | VPC | PRISM | Wang et al. | DM | Herding | PRISM Storage | Prev. Best Storage |
 |---------|-----|-------|-------------|-----|---------|---------------|--------------------|
-| miniUCF | 10 | 31.0 | - | 30.0 | **33.7** | **324 MB** | 1150 MB |
-| miniUCF | 5 | **28.0** | 27.2 | 25.7 | 26.3 | **133 MB** | 455 MB |
-| miniUCF | 1 | **17.9** | 17.5 | 15.3 | 13.2 | **20 MB** | 94 MB |
-| HMDB51 | 10 | **12.8** | - | 12.1 | 10.8 | **287 MB** | 1150 MB |
-| HMDB51 | 5 | **10.5** | 8.2 | 8.0 | 9.0 | **137 MB** | 455 MB |
-| HMDB51 | 1 | **7.5** | 6.0 | 6.1 | 3.0 | **22 MB** | 94 MB |
+| miniUCF | 10  | 31.0  | -           | 30.0| **33.7**| **324MB**     | 1150MB             |
+| miniUCF | 5   | **28.0**| 27.2      | 25.7| 26.3    | **133MB**     | 455MB              |
+| miniUCF | 1   | **17.9**| 17.5      | 15.3| 13.2    | **20MB**      | 94MB               |
+| HMDB51  | 10  | **12.8**| -         | 12.1| 10.8    | **287MB**     | 1150MB             |
+| HMDB51  | 5   | **10.5**| 8.2       | 8.0 | 9.0     | **137MB**     | 455MB              |
+| HMDB51  | 1   | **7.5** | 6.0       | 6.1 | 3.0     | **22MB**      | 94MB               |
 
-PRISM achieves comprehensive superiority at VPC 5/1 with storage only 1/3 to 1/5 of prior methods.
+PRISM leads significantly at VPC 1 and 5, with storage requirements only 1/3 to 1/5 of previous methods.
 
 ### Ablation Study
 
-| Ablation | miniUCF (1VPC) | HMDB51 (1VPC) | Notes |
-|----------|----------------|----------------|-------|
-| Full PRISM | 17.9 | 7.5 | Baseline |
-| No frame insertion | 15.8 | 6.1 | Largest drop (−2.1); insertion is critical |
-| Random position insertion | 16.8 | 6.8 | Gradient-guided vs. random: +1.1 |
-| L2 distance instead of cosine | 15.7 | 6.0 | Direction vs. distance: +2.2 |
-| No warm-up | 16.1 | 6.8 | Unstable early insertion |
-| No cool-down | 16.9 | 6.3 | Late-inserted frames undertrained |
-| Initial 2 frames (default) | 17.9 | 7.5 | Optimal |
-| Initial 8 frames | 15.3 | 5.6 | More initial frames perform worse |
-
-### Cross-Architecture Generalization
-
-| Evaluation Model | PRISM | Wang et al. | DM |
-|------------------|-------|-------------|-----|
-| ConvNet3D | **17.9** | 17.5 | 15.3 |
-| CNN+GRU | **18.9** | 12.0 | 9.9 |
-| CNN+LSTM | **18.2** | 10.3 | 9.2 |
-
-PRISM generalizes strongly to architectures not used during training — outperforming the nearest baseline by 6.9% on CNN+GRU and 7.9% on CNN+LSTM.
+| Ablation Item | miniUCF (1VPC) | HMDB51 (1VPC) | Note |
+|---------------|----------------|---------------|------|
+| Full PRISM    | 17.9           | 7.5           | Baseline |
+| No Insertion  | 15.8           | 6.1           | Max drop -2.1, mechanism is critical |
+| Random Insert | 16.8           | 6.8           | Gradient vs. Random +1.1 |
+| L2 vs. Cosine | 15.7           | 6.0           | Direction vs. Distance +2.2 |
+| No warm-up    | 16.1           | 6.8           | Unstable early insertions |
+| No cool-down  | 16.9           | 6.3           | Insufficiently trained late frames |
+| Init 2 frames | 17.9           | 7.5           | Optimal |
+| Init 8 frames | 15.3           | 5.6           | More initial frames are worse |
 
 ### Key Findings
 
-- **"Starting from fewer frames" outperforms "starting from more"** — 2 initial frames is optimal; 8 initial frames yields the worst results. Excess initial frames generate conflicting gradient signals that interfere with early learning of motion trajectories.
-- **Storage does not scale linearly** — owing to adaptive insertion, scaling VPC from 1 to 10 increases storage by only ~15× (rather than 10×), as more videos share similar motion complexity.
-- **Cross-architecture generalization is an unexpected benefit of PRISM** — sparse keyframes reduce overfitting to the inductive biases of the training backbone.
-- **Action retrieval validates the semantic quality of PRISM** — R@1 on HMDB51 improves from 22.6% to 38.0%, indicating that adaptively inserted frames genuinely capture semantically important spatiotemporal cues.
+- **"Starting with less" is better than "starting with more"**—Initializing with 2 frames is optimal, while 8 frames perform worst. Too many initial frames generate conflicting gradient signals, interfering with the early learning of motion trajectories.
+- **Storage efficiency does not grow linearly**—Thanks to adaptive insertion, when VPC increases from 1 to 10, storage grows only by 15x (rather than 10x), as more videos share similar motion complexity.
+- **Cross-architecture generalization is an unexpected benefit**—Sparse keyframes reduce overfitting to the specific inductive biases of the training backbone.
+- **Semantic quality verified by action retrieval**—On HMDB51, R@1 improved from 22.6% to 38.0%, showing that adaptively inserted frames indeed capture semantically important spatio-temporal cues.
 
 ## Highlights & Insights
 
-- **The "start from noise, add frames on demand" philosophy** fundamentally challenges the dense optimization paradigm. This is analogous to progressive network expansion in NAS, but applied along the temporal dimension.
-- **Lemma 1 provides a theoretical foundation** — gradient conflict implies that endpoint updates necessarily increase the loss at intermediate frames, making frame insertion theoretically grounded rather than merely heuristic.
-- **Holistic vs. decomposed representations** — the authors use the "clapping action" example to precisely illustrate why decomposing content and motion fails, a perspective generalizable to representation learning in other spatiotemporal tasks.
-- **Initialization from Gaussian noise** challenges the common assumption that synthetic data should be initialized from real data — demonstrating that initialization source is secondary when the optimization objective is well-designed.
+- **"Start from noise, add frames on demand"**—A fundamental challenge to dense optimization paradigms. Similar to NAS ideas but applied to the temporal dimension.
+- **Lemma 1 provides theoretical grounding**—Gradient conflict implies that endpoint updates inevitably increase intermediate frame loss, moving beyond ad hoc heuristics.
+- **Monolithic vs. Decomposition**—The clap motion example precisely illustrates why separating content and motion fails. This insight can be extended to other spatio-temporal representation learning tasks.
+- **Initialization from Gaussian noise** challenges the common assumption that synthetic data should start from real frames—suggesting that initialization source is less critical if the optimization objective is well-designed.
 
 ## Limitations & Future Work
 
-- **Limited handling of extreme abrupt motions** — the linear interpolation assumption may not hold for very rapid scene changes, potentially requiring nonlinear interpolation schemes.
-- **Instability for long sequences (>16 frames)** — current validation is limited to 8/16 frames; longer videos may require segment-wise processing.
-- **Evaluated only on action recognition and retrieval** — effectiveness on tasks requiring finer spatiotemporal detail (e.g., video generation) remains unknown.
-- **Backbone fixed to miniC3D** — applicability to larger 3D backbones (e.g., Video Swin, TimeSformer) is unexplored.
-- **Reduced advantage on large-scale datasets** — on Kinetics-400 at VPC 5, DM (9.1%) outperforms PRISM (8.1%), likely due to the low-resolution setting (8 frames + 64×64) limiting the potential of adaptive insertion.
+- **Limited handling of extreme motion abruptness**—The linear interpolation assumption may fail in very rapid scene changes, where non-linear interpolation might be needed.
+- **Unstable optimization for long sequences (>16 frames)**—Currently only verified on 8/16 frames; longer videos may require segmented processing.
+- **Limited Verification**—Only tested on action recognition and retrieval; effectiveness for tasks requiring fine-grained spatio-temporal details (e.g., video generation) is unknown.
+- **Fixed Backbone**—Applicability to larger 3D backbones (e.g., Video Swin, TimeSformer) has not been explored.
+- **Diminishing returns on larger datasets**—On Kinetics-400 at VPC 5, DM (9.1%) > PRISM (8.1%), possibly because the 8-frame 64x64 resolution setting limits the potential of adaptive insertion.
 
 ## Related Work & Insights
 
-- **vs. Wang et al. (the only prior work)**: A two-stage decomposition method relying on frozen pretrained static images with motion as an auxiliary signal. PRISM optimizes holistically from scratch, avoiding the content–motion decoupling problem inherent to decomposition.
-- **vs. DM (image condensation applied directly to video)**: DM initializes from real frames and optimizes them as independent images. Under extremely low-data settings (Kinetics-400 VPC 5), DM outperforms PRISM, possibly because real-data initialization is more stable under high compression.
-- **Relation to image-domain dataset distillation**: PRISM's distribution matching objective is inherited from DM, but the innovation lies in sparse temporal representation and adaptive insertion. Future work could combine gradient matching or trajectory matching objectives with PRISM's frame insertion mechanism.
+- **vs. Wang et al.**: A two-stage decomposition method relying on frozen pre-trained images and motion as auxiliary signals. Ours optimizes everything from scratch monolithically, avoiding content-motion decoupling.
+- **vs. DM (Images for Video)**: DM initializes from real frames and optimizes them as independent images. In extremely low-data settings on Kinetics-400, it can outperform PRISM, suggesting real initialization is more stable under high compression.
+- **Relation to Image Dataset Distillation**: While the distribution matching objective is from DM, the innovation lies in the sparse representation and adaptive insertion. Future work could combine gradient matching or trajectory matching with PRISM's insertion strategy.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First holistic video condensation method; gradient-guided frame insertion is theoretically grounded and empirically effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers 4 datasets, multiple VPC settings, cross-architecture evaluation, storage analysis, and comprehensive ablations; experiments with larger backbone models are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clear; theory and experiments are well-integrated; figures and tables are carefully designed.
-- **Value**: ⭐⭐⭐⭐ — Establishes a new paradigm for video condensation; 5× storage savings carry practical significance.
+- Novelty: ⭐⭐⭐⭐⭐ First monolithic video condensation method; gradient-guided insertion is theoretically grounded and effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Four datasets, multiple VPCs, cross-architecture, storage analysis, and comprehensive ablations; lacks large model experiments.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, good integration of theory and experiments, well-designed visuals.
+- Value: ⭐⭐⭐⭐ Established a new paradigm for video condensation; 5x storage savings are practically significant.
 
 <!-- RELATED:START -->
 
@@ -154,11 +148,11 @@ PRISM generalizes strongly to architectures not used during training — outperf
 
 ## Related Papers
 
-- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](textf2texthdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_m.md)
 - [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
+- [\[ECCV 2024\] Leveraging Hierarchical Feature Sharing for Efficient Dataset Condensation](../../ECCV2024/model_compression/leveraging_hierarchical_feature_sharing_for_efficient_dataset_condensation.md)
+- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 - [\[ICCV 2025\] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion](../../ICCV2025/model_compression/motionfollower_editing_video_motion_via_score-guided_diffusion.md)
-- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
-- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
+- [\[CVPR 2025\] Enhancing Dataset Distillation via Non-Critical Region Refinement](../../CVPR2025/model_compression/enhancing_dataset_distillation_via_non-critical_region_refinement.md)
 
 </div>
 

@@ -2,119 +2,105 @@
 title: >-
   [Paper Note] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 description: >-
-  [CVPR 2026][Image Generation][unified models] This paper introduces RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified…
+  [CVPR 2026][Image Generation][Paper Note] This paper proposes RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1000 human-annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that while current unified models po
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "unified models"
-  - "capability synergy"
-  - "understanding and generation"
-  - "benchmark"
-  - "bidirectional evaluation"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 45504145685f49cc
+content_hash: bc886b15d41aaf37
 ---
-
 # RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2509.24897](https://arxiv.org/abs/2509.24897)  
 **Code**: [https://github.com/FrankYang-17/RealUnify](https://github.com/FrankYang-17/RealUnify)  
-**Area**: Image Generation
-**Keywords**: unified models, capability synergy, understanding and generation, benchmark, bidirectional evaluation
+**Area**: Image Generation  
+**Keywords**: Unified models, capability synergy, understanding and generation, benchmark, bidirectional evaluation
 
 ## TL;DR
-This paper introduces RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1,000 manually annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that current unified models, despite possessing both understanding and generation capabilities, still fail to achieve genuine capability synergy in end-to-end scenarios.
+This paper proposes RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1000 human-annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that while current unified models possess both understanding and generation capabilities, they fail to achieve true capability synergy in end-to-end scenarios.
 
 ## Background & Motivation
-1. **Background**: Multimodal unified models (e.g., BAGEL, Janus-Pro) that integrate visual understanding (VQA) and visual generation (T2I) into a single architecture have emerged as a major direction toward general-purpose AI.
-2. **Limitations of Prior Work**: Existing evaluation frameworks (e.g., MME-Unify, UniEval) primarily assess understanding and generation separately, or simply combine the two task types, making it impossible to determine whether unified models truly achieve a "1+1>2" synergistic effect.
-3. **Key Challenge**: The greatest value of unified models lies in the bidirectional gain between understanding and generation—using understanding to guide generation and using generation to assist understanding. However, no rigorous benchmark currently exists to verify whether this bidirectional synergy is genuine.
-4. **Goal**: To design a benchmark that precisely measures the degree of capability synergy in unified models, answering the question of whether unification truly yields stronger performance than isolated capabilities.
-5. **Key Insight**: Tasks are designed such that they can only be completed by leveraging understanding–generation synergy, with stepwise evaluation protocols used to diagnose the source of performance bottlenecks.
-6. **Core Idea**: Through carefully designed bidirectional synergy tasks and a direct/stepwise dual evaluation protocol, this work systematically examines for the first time whether unified models achieve genuine synergy between understanding and generation.
+1. **Background**: Multimodal unified models (e.g., BAGEL, Janus-Pro), which integrate visual understanding (VQA) and visual generation (T2I) into a single architecture, have become a significant direction toward General AI.
+2. **Limitations of Prior Work**: Existing evaluation frameworks (e.g., MME-Unify, UniEval) primarily evaluate understanding and generation separately or simply combine the two types of tasks, failing to determine whether unified models truly achieve a "1+1>2" synergistic effect.
+3. **Key Challenge**: The primary value of unified models lies in bidirectional gains—using understanding to guide generation and using generation to assist understanding. However, there is currently a lack of rigorous benchmarks to verify whether this bidirectional synergy actually exists.
+4. **Goal**: To design a benchmark that can precisely measure the degree of capability synergy in unified models, answering the question: "Does unification truly bring performance superior to separate capabilities?"
+5. **Key Insight**: Designing tasks that inherently rely on understanding-generation synergy and diagnosing the source of bottlenecks through a stepwise evaluation protocol.
+6. **Core Idea**: For the first time, systematically examine whether unified models achieve true synergy between understanding and generation through meticulously designed bidirectional synergistic tasks and a dual direct/stepwise evaluation protocol.
 
 ## Method
 
 ### Overall Architecture
-RealUnify comprises 1,000 manually annotated instances spanning 10 categories and 32 subtasks. The core design is organized along two axes: **Understanding-Enhanced Generation (UEG)**—requiring reasoning (commonsense, logical, etc.) to guide image generation; and **Generation-Enhanced Understanding (GEU)**—requiring mental simulation or reconstruction to solve reasoning tasks. Evaluation employs both direct and stepwise protocols.
+RealUnify comprises 1000 human-annotated instances covering 10 categories and 32 subtasks. The core design revolves around two axes: **Understanding-Enhanced Generation (UEG)**, which requires reasoning (common sense, logic, etc.) to guide image generation; and **Generation-Enhanced Understanding (GEU)**, which requires mental simulation or reconstruction to solve reasoning tasks. Evaluation utilizes two protocols: direct evaluation and stepwise evaluation.
 
 ### Key Designs
 
-1. **Understanding-Enhanced Generation (UEG) Task Design**:
+**1. Understanding-Enhanced Generation (UEG): Forcing the model to "think clearly" before drawing**
 
-    - **Function**: Evaluates whether a model can leverage understanding capabilities to improve generation quality.
-    - **Mechanism**: Encompasses six task types—world knowledge (generating images requiring objective knowledge), commonsense reasoning (generating images consistent with everyday phenomena), mathematical reasoning (generating correct results after computation), logical reasoning (generation satisfying logical constraints), scientific reasoning (applying principles from physics/chemistry/biology), and code-to-image (generating corresponding images after parsing code logic). Each task requires the model to first "understand" and then "generate."
-    - **Design Motivation**: Existing T2I benchmarks primarily focus on aesthetics and text alignment, rather than on whether models can apply knowledge and reasoning to complete complex generation tasks.
+Ordinary T2I benchmarks (e.g., aesthetic scores, text alignment) only observe whether the image looks good or matches the prompt, but fail to test if the model applies knowledge and reasoning to generation. The UEG axis specifically designs tasks requiring "understanding before generation," divided into 6 categories: world knowledge (generating images requiring objective facts), common sense reasoning (generating images following everyday phenomena), mathematical reasoning (calculating correctly before generating the result), logical reasoning (generation satisfying logical constraints), scientific reasoning (applying physics/chemistry/biology principles), and code-to-image (parsing code logic to generate the corresponding scene). The commonality is that basic drawing capability is insufficient; the model must first invoke its understanding to "think" of the correct answer. A wrong image indicates the synergy broke at the "understanding → generation" step.
 
-2. **Generation-Enhanced Understanding (GEU) Task Design**:
+**2. Generation-Enhanced Understanding (GEU): Forcing the model to "think with images" to answer questions**
 
-    - **Function**: Evaluates whether a model can leverage generation capabilities to assist visual understanding.
-    - **Mechanism**: Encompasses four task types—mental reconstruction (reasoning about shuffled image patches to reconstruct and answer questions), mental tracking (tracking the state of colored line segments through multi-step transformations), attention focusing (highlighting key regions via generative means to aid recognition), and cognitive navigation (maze/map navigation requiring intermediate visual outputs to assist understanding).
-    - **Design Motivation**: Tests whether models can improve understanding by "thinking in images" rather than relying solely on language-based reasoning.
+Conversely, this axis tests the other direction: whether the model can leverage its generation capability to assist its understanding. It contains 4 task types: mental reconstruction (reassembling shuffled image patches mentally before answering), mental tracking (tracking the final state of colored segments after multi-step transformations), attention focusing (using generation to highlight key areas to assist recognition), and cognitive navigation (maze/map pathfinding requiring intermediate visualization for reasoning). These problems are often difficult if relying solely on linguistic chain-of-thought reasoning; an ideal unified model should explicitly generate intermediate states in a "generate while looking" manner. GEU examines whether the model is truly using generation to assist understanding or merely bypassing generation to guess answers via linguistic reasoning.
 
-3. **Dual Evaluation Protocol (Direct + Stepwise)**:
+**3. Dual Evaluation Protocol (Direct + Stepwise): Separating "lack of capability" from "failure to integrate"**
 
-    - **Function**: Diagnoses the source of performance bottlenecks—whether failures stem from insufficient basic capabilities or from synergy integration failures.
-    - **Mechanism**: Direct evaluation requires end-to-end task completion; stepwise evaluation decomposes tasks into independent understanding and generation stages (UEG: understand then generate; GEU: generate then understand). Comparing results across the two protocols reveals whether a model "lacks capability" or "has capability but cannot integrate it."
-    - **Design Motivation**: End-to-end results alone cannot distinguish capability deficits from synergy failures. Stepwise evaluation reveals whether models possess the requisite capabilities but cannot spontaneously integrate them.
+Looking only at end-to-end results is ambiguous: if a model fails, is it because the base capabilities (understanding or generation) are weak, or are both present but unable to spontaneously combine? To address this, every item is tested under two protocols. Direct Evaluation requires end-to-end completion in one go. Stepwise Evaluation decomposes the task into independent understanding and generation segments—for UEG, it understands first then generates; for GEU, it generates first then understands. Comparing the two identifies the bottleneck: if Stepwise is significantly higher than Direct, the capabilities exist but the issue lies in integration; if Stepwise is also low, the problem is with the base capabilities. This design is the core distinction of RealUnify—it provides a diagnosis rather than just a score.
 
-4. **Polling Evaluation for Generation Assessment**:
+**4. Polling Evaluation: Validating via QA instead of aesthetic scoring**
 
-    - **Function**: Verifies the correctness of generated image content.
-    - **Mechanism**: For images generated in UEG tasks, a list of verification questions is designed and Gemini 2.5 Pro is used as the judge model for polling-based evaluation, ensuring generated content aligns with the target.
-    - **Design Motivation**: Directly assessing the correctness of generated images is more challenging than evaluating aesthetics, necessitating an automated, content-based verification mechanism.
+The correctness of images generated in UEG cannot be judged by aesthetic or similarity metrics like FID/CLIP—whether the "calculation result in the image is correct" or the "physical phenomenon is drawn right" is a matter of content. RealUnify pre-defines a set of verification questions for each generation target and uses Gemini 2.5 Pro as a judging model to vote on the generated images. Correctness is judged by whether the content hits the target. Compared to traditional metrics, this QA-based automated verification is better suited for the evaluation of knowledge-intensive generation.
 
 ### Loss & Training
-This paper presents a benchmark study and does not involve model training. Regarding data construction: UEG tasks were manually designed by 10 human experts and cross-validated by 3 reviewers; GEU tasks were partially auto-generated and subsequently annotated by experts. The reliability of Gemini 2.5 Pro as the judge model was verified through agreement with human expert ratings.
+This work is a benchmark study and does not involve model training. Regarding data construction: UEG tasks were manually designed by 10 human experts and cross-verified by 3 reviewers; GEU tasks were partially automatically generated and then annotated by experts. The reliability of Gemini 2.5 Pro as a judging model was verified through consistency with human expert scores.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | UEG Direct | UEG Step | GEU Direct | GEU Step | Overall |
-|-------|-----------|----------|-----------|----------|---------|
-| Nano Banana (closed-source) | 63.0 | - | 31.8 | - | 50.5 |
-| BAGEL (best open-source) | 32.7 | 47.7 | 39.3 | 35.8 | 35.3/42.9 |
+| Model | UEG Direct | UEG Step | GEU Direct | GEU Step | Total |
+|------|-----------|----------|-----------|----------|------|
+| Nano Banana (Closed) | 63.0 | - | 31.8 | - | 50.5 |
+| BAGEL (Best Open) | 32.7 | 47.7 | 39.3 | 35.8 | 35.3/42.9 |
 | UniPic2 | 37.5 | 40.5 | 24.0 | 23.8 | 32.1/33.8 |
 | OneCAT | 37.5 | 39.0 | 31.3 | 29.3 | 35.0/35.1 |
 | Oracle (Gemini+GPT-Image) | - | 72.7 | - | 31.8 | - |
 
 ### Ablation Study
 
-| Evaluation Protocol | BAGEL UEG | BAGEL GEU | Notes |
-|--------------------|----------|----------|-------|
-| Direct | 32.7 | 39.3 | End-to-end; spontaneous integration fails |
-| Stepwise | 47.7 | 35.8 | UEG improves significantly; GEU degrades |
-| Oracle (GT intermediate results) | Higher | Higher | Indicates basic capabilities exist but integration is insufficient |
+| Eval Method | BAGEL UEG | BAGEL GEU | Description |
+|---------|----------|----------|------|
+| Direct | 32.7 | 39.3 | End-to-end, fails to integrate spontaneously |
+| Stepwise | 47.7 | 35.8 | UEG improves significantly, GEU decreases |
+| Oracle (GT Intermediates) | Higher | Higher | Indicates base capabilities exist but integration is lacking |
 
 ### Key Findings
-- **Stepwise evaluation yields substantial UEG gains**: BAGEL improves from 32.7% to 47.7%, indicating that the model possesses internal knowledge but cannot spontaneously integrate it into generation.
-- **Stepwise evaluation degrades GEU performance**: Decomposition leads to lower performance, suggesting that models rely on understanding shortcuts in direct evaluation rather than genuinely leveraging generation capabilities.
-- **Large open-source vs. closed-source gap**: On UEG, the best open-source model achieves 37.5% vs. 63.0% for the closed-source model; however, on GEU, open-source models (BAGEL: 39.3%) outperform the closed-source counterpart (31.8%).
-- **Oracle upper bound remains far out of reach**: The combined expert model achieves 72.7% on UEG, while the best unified model reaches only 47.7% (stepwise), revealing a substantial gap.
+- **Significant improvement in UEG Stepwise**: BAGEL improved from 32.7% to 47.7%, indicating the model possess internal knowledge but cannot spontaneously integrate it into generation.
+- **GEU Stepwise unexpectedly decreases**: Performance dropped after decomposition, suggesting that in direct evaluation, the model relies on "understanding shortcuts" rather than truly utilizing its generation capability.
+- **Huge gap between open and closed source**: On UEG, the best open-source model reached 37.5% vs. 63.0% for closed-source; however, on GEU, open-source models (BAGEL 39.3%) actually outperformed closed-source models (31.8%).
+- **Oracle upper bound far from reached**: Combined expert models reached 72.7% on UEG, while the current best unified model reached only 47.7% (stepwise), a massive gap.
 
 ## Highlights & Insights
-- **Stepwise evaluation uncovers the "capability without utilization" phenomenon**: The most central finding is that models possess both understanding and generation capabilities but cannot spontaneously integrate them in end-to-end scenarios. This diagnostic evaluation design is transferable to other AI systems that require multi-capability synergy.
-- **Discovery of "understanding shortcuts" in GEU tasks**: On tasks requiring "generate first, then understand," models bypass generation and directly answer via understanding; forcing generation in the stepwise setting leads to worse performance. This reveals a severe underutilization of generation capabilities in current models.
-- **Polling evaluation mechanism**: Using a question list combined with LLM-based judgment to verify the correctness of generated images is better suited to knowledge-intensive generation evaluation than traditional FID/CLIP metrics.
+- **Stepwise evaluation reveals the "possess but cannot use" phenomenon**: This is the most core finding—models have the understanding and generation capabilities but cannot spontaneously integrate them in end-to-end scenarios. This diagnostic evaluation design can be transferred to the evaluation of other AI systems requiring multi-capability synergy.
+- **Discovery of "understanding shortcuts" in GEU tasks**: On tasks requiring "generation then understanding," models actually bypassed generation to answer directly via understanding. Forced generation in stepwise evaluation resulted in worse performance, revealing that current models severely underutilize their generation capabilities.
+- **Polling Evaluation Mechanism**: Using question lists + LLM judgment to verify the correctness of generated images is more suitable for knowledge-intensive generation evaluation than traditional FID/CLIP metrics.
 
 ## Limitations & Future Work
-- Evaluation relies on Gemini 2.5 Pro as the judge model, introducing potential evaluation bias (despite reasonable agreement with human ratings).
-- With only 1,000 instances, certain subtasks may have insufficient sample sizes to support statistical significance.
-- No exploration of training methods to improve synergy capabilities—the work diagnoses the problem but proposes no solutions.
-- Future work could explore specific training strategies (e.g., alternating training, synergy rewards) to promote genuine capability integration.
+- Evaluation depends on Gemini 2.5 Pro as a judge, posing a risk of evaluation bias (though consistency with human scores was verified).
+- The benchmark only contains 1000 instances; some subtask sample sizes might be insufficient to support statistical significance.
+- Lack of exploration into training methods to improve synergy—the study diagnoses the problem but does not propose a solution.
+- Future work could explore specific training strategies (e.g., interleaved training, synergistic rewards) to promote true capability fusion.
 
 ## Related Work & Insights
-- **vs. MME-Unify**: The latter evaluates both understanding and generation but does not test their synergy; RealUnify specifically designs tasks that require synergy to complete.
-- **vs. T2I-CoReBench/WISE**: These benchmarks preliminarily explore the benefit of understanding for generation, but are neither systematic nor bidirectional, and lack stepwise diagnostics.
-- **vs. Expert model combinations**: The Oracle experiment demonstrates that simply combining the best expert models (Gemini + GPT-Image) achieves 72.7%, far surpassing any unified model, suggesting that the unified architecture itself is not the key factor—training strategies and inductive biases are.
+- **vs MME-Unify**: The latter evaluates understanding and generation simultaneously but does not test their synergy; RealUnify specifically designs tasks that can only be completed through synergy.
+- **vs T2I-CoReBench/WISE**: These benchmarks initially explored how understanding helps generation, but they are not systematic, not bidirectional, and lack stepwise diagnosis.
+- **vs Expert Model Combinations**: Oracle experiments show that a simple combination of best-in-class expert models (Gemini + GPT-Image) can reach 72.7%, far exceeding any unified model, suggesting that the unified architecture itself is not the core—training strategies and inductive biases are key.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First benchmark to systematically evaluate capability synergy in unified models; the stepwise evaluation protocol is elegantly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 12 unified models + 6 expert baselines, dual evaluation protocols, and judge reliability validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear logic, rich figures and tables, convincing conclusions.
-- **Value**: ⭐⭐⭐⭐ Points unified model research toward "what truly needs to be optimized."
+- Novelty: ⭐⭐⭐⭐ First systematic benchmark for unified model capability synergy, with a sophisticated stepwise evaluation protocol.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 unified models + 6 expert baselines, dual evaluation protocol, and verification of judgment reliability.
+- Writing Quality: ⭐⭐⭐⭐ Logical clarity, rich charts, and persuasive conclusions.
+- Value: ⭐⭐⭐⭐ Clearly highlights the direction of "what truly needs optimization" for unified model research.
 
 <!-- RELATED:START -->
 
@@ -124,8 +110,8 @@ This paper presents a benchmark study and does not involve model training. Regar
 
 - [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
 - [\[CVPR 2026\] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories](emma_concept_erasure_benchmark_with_comprehensive_semantic_metrics_and_diverse_c.md)
-- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
-- [\[CVPR 2026\] Flash-Unified: Training-Free and Task-Aware Acceleration for Native Unified Models](flash-unified_a_training-free_and_task-aware_acceleration_framework_for_native_u.md)
+- [\[CVPR 2026\] Do Less, Achieve More: Do We Need Every-Step Optimization for RL Fine-tuning of Diffusion Models?](do_less_achieve_more_do_we_need_every-step_optimization_for_rl_fine-tuning_of_di.md)
+- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
 - [\[CVPR 2026\] VecGlypher: Unified Vector Glyph Generation with Language Models](vecglypher_unified_vector_glyph_generation_with_language_models.md)
 
 </div>

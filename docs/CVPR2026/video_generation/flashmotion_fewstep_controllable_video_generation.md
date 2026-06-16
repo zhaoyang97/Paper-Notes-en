@@ -2,134 +2,149 @@
 title: >-
   [Paper Note] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 description: >-
-  [CVPR 2026][Video Generation][Trajectory-controllable video generation] FlashMotion is proposed as the first three-stage training framework for few-step (4-step) trajectory-controllable video generation. By sequentially…
+  [CVPR 2026][Video Generation][Paper Note] Ours proposes FlashMotion, the first three-stage training framework to achieve few-step (4-step) trajectory-controllable video generation. By employing a strategy of training a trajectory adapter $\rightarrow$ distilling a fast generator $\rightarrow$ fine-tuning the adapter with a hybrid adversarial-diffusion approach
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Trajectory-controllable video generation"
-  - "few-step distillation"
-  - "adversarial training"
-  - "diffusion discriminator"
-  - "video acceleration"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 079dee125f734cf1
+content_hash: 42e5a02b5e8557b0
 ---
-
 # FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12146](https://arxiv.org/abs/2603.12146)  
 **Code**: [https://github.com/quanhaol/FlashMotion](https://github.com/quanhaol/FlashMotion)  
-**Area**: Video Understanding / Video Generation
-**Keywords**: Trajectory-controllable video generation, few-step distillation, adversarial training, diffusion discriminator, video acceleration
+**Area**: Video Understanding / Video Generation  
+**Keywords**: Trajectory-Controllable Video Generation, Few-Step Distillation, Adversarial Training, Diffusion Discriminator, Video Acceleration
 
 ## TL;DR
 
-FlashMotion is proposed as the first three-stage training framework for few-step (4-step) trajectory-controllable video generation. By sequentially training a trajectory adapter, distilling a fast generator, and fine-tuning the adapter via a hybrid adversarial and diffusion loss, the method surpasses existing multi-step approaches in both visual quality and trajectory accuracy under 4-step inference, achieving a 47× speedup.
+Ours proposes FlashMotion, the first three-stage training framework to achieve few-step (4-step) trajectory-controllable video generation. By employing a strategy of training a trajectory adapter $\rightarrow$ distilling a fast generator $\rightarrow$ fine-tuning the adapter with a hybrid adversarial-diffusion approach, it simultaneously outperforms existing multi-step methods in visual quality and trajectory accuracy with 4-step inference, achieving a 47x speedup.
 
 ## Background & Motivation
 
-**Background**: Diffusion model–driven video generation has achieved remarkable progress, particularly in trajectory-controllable video generation, where users specify the motion trajectories of foreground objects (via bounding boxes or segmentation masks) and the model generates videos that follow the prescribed paths. Methods such as MagicMotion, Tora, and LeviTor realize precise motion control by attaching trajectory adapters to pretrained video generation backbones.
+**Background**: Significant progress has been made in diffusion model-driven video generation, particularly in trajectory-controllable generation—where users specify movement paths for foreground objects (via bboxes or masks), and the model generates video accordingly. Methods like MagicMotion, Tora, and LeviTor achieve precise control by adding trajectory adapters to base video generation models.
 
-**Limitations of Prior Work**: All existing trajectory-controllable methods rely on multi-step denoising inference (50+ steps), resulting in approximately 1,160 seconds (>19 minutes) to generate a 121-frame video. Although video distillation methods (e.g., DMD, LCM, CausVid) can compress general video generation models into few-step variants, directly applying these distillation techniques to trajectory-controllable generation leads to significant degradation in both visual quality and trajectory accuracy.
+**Limitations of Prior Work**: All existing trajectory-controllable methods rely on multi-step denoising inference (over 50 steps), taking approximately 1160 seconds (>19 minutes) to generate a 121-frame video. While video distillation methods (e.g., DMD, LCM, CausVid) can compress general video models into few-step versions, direct application of these methods to trajectory-controllable generation leads to significant degradation in visual quality and trajectory accuracy.
 
-**Key Challenge**: A multi-step adapter (SlowAdapter) is trained along the progressive denoising trajectory of a multi-step generator (SlowGenerator), where trajectory conditioning guides noise refinement iteratively. The denoising trajectory of a fast generator (FastGenerator) is fundamentally different—completing the entire generation in only 4 steps. Consequently, the SlowAdapter is inherently incompatible with the FastGenerator; naive combination produces color shifts, blurriness, and loss of trajectory control.
+**Key Challenge**: Multi-step adapters (SlowAdapter) are trained on the progressive denoising paths of multi-step generators (SlowGenerator), where trajectory conditions guide noise through incremental refinement. Few-step generators (FastGenerator) utilize entirely different denoising paths—completing the process in only 4 steps. Thus, SlowAdapter and FastGenerator are inherently incompatible, leading to color shifts, blurring, and loss of trajectory control when combined.
 
-**Goal**: Design a training framework that enables the trajectory adapter to function correctly on the fast generator, simultaneously guaranteeing visual quality and trajectory accuracy within 4-step inference.
+**Goal**: Design a training framework that enables the trajectory adapter to function correctly with a few-step generator, maintaining both visual quality and trajectory accuracy within 4-step inference.
 
-**Key Insight**: The authors observe that fine-tuning the adapter with a standard diffusion loss restores trajectory accuracy but introduces severe blurriness (since pixel-level supervision cannot ensure distributional consistency), whereas introducing adversarial training eliminates blurriness but degrades trajectory accuracy. Consequently, both losses must be used concurrently with dynamic balancing.
+**Key Insight**: The authors discovered that fine-tuning the adapter with standard diffusion loss restores trajectory accuracy but causes severe blurring (as pixel-level supervision doesn't guarantee distribution consistency). Conversely, adversarial training eliminates blur but sacrifices trajectory accuracy. Therefore, both losses must be utilized and dynamically balanced.
 
-**Core Idea**: A three-stage training pipeline—first train a multi-step adapter, then distill the fast generator, and finally fine-tune the adapter for the fast generator using a hybrid diffusion and adversarial loss strategy.
+**Core Idea**: A three-stage training process—first train a multi-step adapter, then distill the fast generator, and finally fine-tune the adapter using a hybrid strategy of diffusion and adversarial labels to adapt to the fast generator.
 
 ## Method
 
 ### Overall Architecture
 
-The FlashMotion training pipeline consists of three stages. **Stage 1** trains a SlowAdapter on the multi-step video generation backbone (Wan2.2-TI2V-5B) to learn trajectory control. **Stage 2** distills the multi-step generator into a 4-step FastGenerator via DMD. **Stage 3** fine-tunes the SlowAdapter into a FastAdapter compatible with the FastGenerator using a hybrid diffusion and adversarial strategy. At inference time, the FastGenerator combined with the FastAdapter requires only 4 denoising steps to produce high-quality videos with accurate trajectory following.
+The FlashMotion training pipeline consists of three stages: **Stage 1** trains a SlowAdapter on a multi-step video generator (Wan2.2-TI2V-5B) to learn trajectory control; **Stage 2** compresses the multi-step generator into a 4-step FastGenerator via DMD distillation; **Stage 3** fine-tunes the SlowAdapter into a FastAdapter tailored for the FastGenerator using a hybrid diffusion-adversarial strategy. At inference, the FastGenerator + FastAdapter combination requires only 4 denoising steps to generate high-quality, trajectory-accurate videos.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    G0["Multi-step Generator Wan2.2-TI2V-5B"]
+    S1["Stage 1: Trajectory Adapter Architecture<br/>Train SlowAdapter (Mask → Bbox Progressive)"]
+    S2["Stage 2: DMD Distillation<br/>Multi-step → 4-step FastGenerator"]
+    subgraph S3["Stage 3: SlowAdapter → FastAdapter (Alternating Optimization)"]
+        direction TB
+        DISC["Diffusion Discriminator<br/>Semantic/Trajectory/Video Triple-Attention → Adv Loss"]
+        DYN["Dynamic Diffusion Loss Scaling<br/>λ decays with steps: Position first, Quality later"]
+        FA["FastAdapter"]
+        DISC --> FA
+        DYN --> FA
+    end
+    OUT["Inference: FastGenerator + FastAdapter<br/>4-step Trajectory-Controllable Video Generation"]
+
+    G0 --> S1
+    S1 --> S2
+    S1 -->|Trajectory Prior| S3
+    S2 -->|4-step Generator| S3
+    S3 --> OUT
+```
 
 ### Key Designs
 
-1. **Trajectory Adapter Architecture**:
+**1. Trajectory Adapter Architecture: Injecting user-drawn trajectories without being locked to a specific backbone.**
 
-    - **Function**: Injects user-specified motion trajectories (bbox/mask) into the video generation process.
-    - **Mechanism**: Two adapter architectures are designed—ControlNet and a lightweight ResNet. The number of adapter blocks matches that of the base DiT. A 3D VAE encoder encodes trajectory maps into the latent space as $Z_{trajectory} \in R^{T/4 \times H/16 \times W/16 \times 48}$; the output of each adapter block is added to the corresponding DiT block via a zero-initialized convolutional layer for trajectory guidance. Training adopts a coarse-to-fine progressive strategy—first training 4.6K steps with segmentation masks, then fine-tuning 5.4K steps with bounding boxes.
-    - **Design Motivation**: ControlNet has a larger parameter count (10.28B) but yields more precise trajectory control; ResNet has fewer parameters (5.02B) but faster inference. The two architectures validate the generality of the FlashMotion framework.
+The trajectory control is carried out by an adapter attached to the base DiT. The number of adapter blocks aligns exactly with the DiT, and each block output is added back to the corresponding DiT block via a zero-initialized convolution—this ensures the adapter does not disrupt the original model in early training while progressively learning control signals. Trajectory maps (bbox or mask) are encoded into the latent space $Z_{trajectory} \in \mathbb{R}^{T/4 \times H/16 \times W/16 \times 48}$ via a 3D VAE encoder before injection. Training follows a dense-to-sparse progressive strategy: starting with 4.6K steps using dense masks for foundation, followed by 5.4K steps of fine-tuning with sparse bboxes. The authors implemented two versions—ControlNet (10.28B parameters, more accurate) and a lightweight ResNet (5.02B parameters, faster inference)—demonstrating the framework’s flexibility.
 
-2. **Diffusion Discriminator**:
+**2. Diffusion Discriminator: Using a trajectory-aware discriminator to introduce adversarial signals and cure diffusion-induced blur.**
 
-    - **Function**: Distinguishes real from generated videos during adversarial training to eliminate blurring artifacts caused by reliance on the diffusion loss alone.
-    - **Mechanism**: The discriminator backbone is cloned from Wan2.2-TI2V-5B with frozen weights; only a newly added attention-based classifier is trained. The classifier receives intermediate DiT features and processes a learnable query token through three attention layers: **semantic self-attention** (integrating first-frame image and text information), **trajectory cross-attention** (attending to trajectory tokens), and **video cross-attention** (attending to video tokens), ultimately producing a real/fake logit.
-    - **Design Motivation**: The pure diffusion loss $\mathcal{L}_{diffusion} = \|G_\theta(x_t, t) - x_0^{real}\|^2$ provides only pixel-level supervision and cannot guarantee alignment between the generated and real distributions, leading to blurriness. The discriminator imposes distribution-level constraints to eliminate blur, while the three-layer attention design enables simultaneous awareness of semantic, trajectory, and video information.
+Relying solely on pixel-level diffusion loss $\mathcal{L}_{diffusion} = \|G_\theta(x_t, t) - x_0^{real}\|^2$ only approximates single-frame pixels and fails to maintain consistency between generated and real distributions, leading to blurry outputs. FlashMotion adds a discriminator to constrain generation quality at the distribution level. The discriminator backbone is a cloned and frozen Wan2.2-TI2V-5B, with only a new attention classifier being trained to minimize cost while leveraging the base model's video understanding. The classifier processes DiT intermediate features using a learnable query token through three layers: **semantic self-attention** (integrating text and first frame), **trajectory cross-attention** (aligning trajectory tokens), and **video cross-attention** (reading video tokens), finally outputting real/fake logits. This triple-attention design ensures the discriminator evaluates semantic, trajectory, and video dimensions simultaneously, suppressing blur without losing trajectory information.
 
-3. **Dynamic Diffusion Loss Scale**:
+**3. Dynamic Diffusion Loss Scaling: Scheduling "drawing correctly" and "drawing well" during training.**
 
-    - **Function**: Balances the gradient magnitudes of the diffusion loss and the adversarial loss.
-    - **Mechanism**: The total loss is $\mathcal{L} = \mathcal{L}_{\mathcal{G}} + \lambda \mathcal{L}_{diffusion}$, where $\lambda = \frac{1}{4 \times 10^{-3} \times step + 0.1}$. In early training, $\lambda$ is large so the diffusion loss dominates and ensures trajectory alignment; as training progresses, $\lambda$ decreases gradually so the adversarial loss takes over to improve visual quality.
-    - **Design Motivation**: Experiments show that the gradient of the diffusion loss greatly exceeds that of the adversarial loss in early training; equal weighting still leads to blurriness. Dynamic scaling allows each loss to fulfill its role at the appropriate training stage—"get it right first, then get it sharp."
+The total loss in Stage 3 combines adversarial and diffusion losses: $\mathcal{L} = \mathcal{L}_{\mathcal{G}} + \lambda \mathcal{L}_{diffusion}$. The challenge is their differing scales—early in training, diffusion loss gradients are much larger than adversarial ones. Setting a fixed $\lambda=1$ allows diffusion loss to dominate throughout, resulting in persistent blur. The authors utilize a monotonically decaying weight relative to the training step:
+
+$$\lambda = \frac{1}{4 \times 10^{-3} \times step + 0.1}$$
+
+In early training, high $\lambda$ allows diffusion loss to lead, positioning objects and aligning trajectories; as steps progress, $\lambda$ decreases, allowing adversarial loss to take over and push visual quality. This ensures the model learns to "draw correctly" before focusing on "drawing well."
 
 ### Loss & Training
 
-- **Stage 1** (SlowAdapter): Standard diffusion denoising loss; 16 GPUs × 10K steps.
-- **Stage 2** (FastGenerator): DMD distribution matching loss $\nabla\mathcal{L}_{DMD} = \mathbb{E}[-(s_{real} - s_{fake})\frac{dG_\theta}{d\theta}]$; 16 GPUs × 5.5K steps.
-- **Stage 3** (FastAdapter): Hybrid loss $\mathcal{L} = \mathcal{L}_{\mathcal{G}} + \lambda\mathcal{L}_{diffusion}$; discriminator and adapter are updated alternately (1:5 update ratio); only **4 GPUs × 1K steps** are required—extremely lightweight.
+- **Stage 1** (SlowAdapter): Standard diffusion denoising loss, 16 GPUs × 10K steps.
+- **Stage 2** (FastGenerator): DMD distribution matching loss $\nabla\mathcal{L}_{DMD} = \mathbb{E}[-(s_{real} - s_{fake})\frac{dG_\theta}{d\theta}]$, 16 GPUs × 5.5K steps.
+- **Stage 3** (FastAdapter): Hybrid loss $\mathcal{L} = \mathcal{L}_{\mathcal{G}} + \lambda\mathcal{L}_{diffusion}$, with alternating optimization of discriminator and adapter (1:5 update ratio), requiring only **4 GPUs × 1K steps**.
 
 ## Key Experimental Results
 
 ### Main Results (FlashBench)
 
-| Method | Steps | FID↓ | FVD↓ | M IoU↑ | B IoU↑ | Denoising Time (s) |
+| Method | Steps | FID↓ | FVD↓ | M IoU↑ | B IoU↑ | Denoising Time(s) |
 |--------|------|------|----------|------|------|------|
 | MagicMotion | 50 | 20.03 | 138.83 | 68.10 | 73.68 | 1158.63 |
 | Wan+ResNet | 50 | 19.03 | 139.61 | 52.19 | 57.76 | 333.00 |
 | DMD (ResNet) | 4 | 24.38 | 228.33 | 43.24 | 52.61 | 11.72 |
 | LCM (ResNet) | 4 | 26.79 | 462.09 | 55.31 | 60.80 | 11.72 |
-| **FlashMotion (ResNet)** | **4** | **15.81** | **108.96** | **63.96** | **70.01** | **11.72** |
-| **FlashMotion (ControlNet)** | **4** | **14.35** | **96.08** | **69.15** | **75.38** | **24.44** |
+| **Ours (ResNet)** | **4** | **15.81** | **108.96** | **63.96** | **70.01** | **11.72** |
+| **Ours (ControlNet)** | **4** | **14.35** | **96.08** | **69.15** | **75.38** | **24.44** |
 
 ### Ablation Study (FlashBench, ResNet)
 
 | Configuration | FID↓ | FVD↓ | M IoU↑ | B IoU↑ |
 |------|---------|------|------|------|
-| SlowAdapter applied directly | 22.75 | 168.46 | 49.79 | 56.62 |
-| w/o diffusion loss | 18.87 | 161.07 | 52.04 | 58.04 |
-| w/o GAN loss | 22.74 | 206.75 | 65.82 | 70.60 |
-| w/o dynamic scaling | 26.32 | 210.93 | 65.54 | 69.77 |
-| **FlashMotion (full)** | **15.81** | **108.96** | **63.96** | **70.01** |
+| Direct use of Slow Adapter | 22.75 | 168.46 | 49.79 | 56.62 |
+| w/o Diffusion Loss | 18.87 | 161.07 | 52.04 | 58.04 |
+| w/o GAN Loss | 22.74 | 206.75 | 65.82 | 70.60 |
+| w/o Dynamic Scaling | 26.32 | 210.93 | 65.54 | 69.77 |
+| **Ours (Full)** | **15.81** | **108.96** | **63.96** | **70.01** |
 
 ### Key Findings
 
-- **FlashMotion at 4 steps surpasses MagicMotion at 50 steps**: The ControlNet variant achieves FID 14.35 vs. 20.03 and FVD 96.08 vs. 138.83, while delivering a **47× speedup** (24 s vs. 1158 s).
-- **The GAN loss is critical for eliminating blurriness**: Removing the GAN loss causes FVD to surge from 108.96 to 206.75 (~90% degradation), while trajectory accuracy actually improves slightly, indicating that the GAN loss primarily governs visual quality.
-- **The diffusion loss is critical for trajectory accuracy**: Removing the diffusion loss reduces M IoU from 63.96 to 52.04, causing generated objects to deviate substantially from their intended trajectories.
-- **Dynamic scaling is indispensable**: Fixing $\lambda=1$ raises FID from 15.81 to 26.32 (increased blurriness), confirming that the excessive gradient magnitude of the diffusion loss in early training must be suppressed.
-- The ControlNet adapter outperforms the ResNet adapter across all trajectory accuracy and visual quality metrics, but incurs approximately twice the inference time.
+- **FlashMotion 4-step exceeds MagicMotion 50-step**: The ControlNet version achieves FID 14.35 vs 20.03 and FVD 96.08 vs 138.83, while providing **47x speedup** (24s vs 1158s).
+- **GAN loss is critical for removing blur**: Removing GAN loss causes FVD to jump from 108.96 to 206.75 (~90% degradation), though trajectory accuracy remains stable, indicating GAN primary affects visual distribution.
+- **Diffusion loss is critical for trajectory accuracy**: Removing it drops M IoU from 63.96 to 52.04, causing objects to deviate from intended paths.
+- **Dynamic scaling is indispensable**: Fixing $\lambda=1$ results in FID rising from 15.81 to 26.32, proving the need to suppress diffusion gradients early in fine-tuning.
+- ControlNet adapters consistently outperform ResNet in accuracy and quality but take roughly twice the inference time.
 
 ## Highlights & Insights
 
-- **Elegant decomposition via three stages**: Decoupling "fast + controllable" into learning control first, learning speed second, and aligning the two last keeps each stage's objective clear. Stage 3 requires only 1K training steps, demonstrating the strong prior provided by the SlowAdapter.
-- **Three-layer attention design in the diffusion discriminator**: The separate injection of semantic, trajectory, and video information enables the discriminator to perceive multi-dimensional signals simultaneously, making it more suitable for conditional generation than a simple CNN discriminator. This design is transferable to the acceleration of other conditional video generation tasks.
-- **Practical value of dynamic loss scaling**: A simple yet effective solution to the gradient imbalance between the diffusion and adversarial losses, expressed compactly as a single formula, yet with a substantial impact on final performance.
+- **Elegant Three-Stage Decomposition**: Decoupling "high-speed + controllability" into learning control, learning speed, and then aligning the two. Stage 3 requires only 1K steps, demonstrating the value of the strong priors provided by the SlowAdapter.
+- **Triple-Attention Diffusion Discriminator**: The separated injection of semantic, trajectory, and video information allows the discriminator to perceive multi-dimensional signals, making it more effective than standard CNN discriminators for conditional tasks.
+- **Practicality of Dynamic Loss Scaling**: A simple but effective solution to the gradient imbalance between diffusion and adversarial losses, using a concise formula to handle phase transition.
 
 ## Limitations & Future Work
 
-- Although FlashBench supports long-video evaluation, it currently relies on an extension of MagicData with limited data diversity.
-- Stage 2 distillation depends on a specific DMD method; whether alternative distillation approaches (e.g., CausVid) could yield further improvements remains unexplored.
-- The current framework supports only bbox/mask trajectory conditions; more flexible trajectory representations (e.g., point trajectories, semantic descriptions) await future investigation.
-- The ControlNet variant, despite superior performance, still has 10.28B parameters, posing challenges for on-device deployment.
-- DMD and GAN training under the ControlNet configuration directly causes out-of-memory errors, limiting broader comparisons of distillation methods.
+- FlashBench support is currently based on MagicData extensions; data diversity remains restricted.
+- Stage 2 distillation depends on a specific DMD method; the impact of alternative distillation methods (e.g., CausVid) remains unexplored.
+- Current support is limited to bbox/mask conditions; more flexible representations like point trajectories or semantic descriptions require further research.
+- The ControlNet version, while superior, has 10.28B parameters, posing challenges for edge-side deployment.
+- Technical constraints like OOM during DMD and GAN training for ControlNet prevented a wider range of distillation comparisons.
 
 ## Related Work & Insights
 
-- **vs. MagicMotion**: MagicMotion achieves precise trajectory control on CogVideoX but requires 50-step inference; FlashMotion achieves 4-step inference on Wan2.2 with superior results.
-- **vs. APT/APT2**: The APT family of one-step adversarial distillation is effective for general video generation but does not support trajectory conditioning; FlashMotion's diffusion discriminator design is inspired by APT but incorporates trajectory awareness.
-- **vs. Tora/LeviTor**: Tora and LeviTor are built on CogVideoX and SVD, respectively; both underperform FlashMotion in quality and require more inference steps.
+- **vs MagicMotion**: MagicMotion achieves precise control on CogVideoX but requires 50 steps; FlashMotion on Wan2.2 takes 4 steps with superior results.
+- **vs APT/APT2**: APT series one-step adversarial distillation is effective for general video but lacks trajectory support; FlashMotion’s discriminator incorporates trajectory-awareness inspired by APT.
+- **vs Tora/LeviTor**: Tora and LeviTor are based on CogVideoX and SVD respectively; both are outperformed by FlashMotion in quality and speed.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First framework for few-step trajectory-controllable video generation; the three-stage decomposition is well-motivated and the discriminator design is creative.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three benchmarks, two adapter architectures, comprehensive ablations including analysis grouped by object count.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, detailed method description, and informative figures.
-- Value: ⭐⭐⭐⭐⭐ 47× speedup with superior quality directly advances the practical deployment of controllable video generation.
+- Novelty: ⭐⭐⭐⭐ First few-step trajectory-controllable video generation framework with a rational three-stage design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Conducted across three benchmarks with two adapter architectures and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed methodological descriptions.
+- Value: ⭐⭐⭐⭐⭐ 47x acceleration with better quality directly accelerates the practical application of controllable video generation.
 
 <!-- RELATED:START -->
 
@@ -137,11 +152,11 @@ The FlashMotion training pipeline consists of three stages. **Stage 1** trains a
 
 ## Related Papers
 
-- [\[ICML 2026\] SGMD: Score Gradient Matching Distillation for Few-Step Video Diffusion](../../ICML2026/video_generation/sgmd_score_gradient_matching_distillation_for_few-step_video_diffusion_distillat.md)
-- [\[ICCV 2025\] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](../../ICCV2025/video_generation/dollar_fewstep_video_generation_via_distillation_and_latent.md)
 - [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
+- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
+- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
+- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
+- [\[CVPR 2026\] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](egocontrol_controllable_egocentric_video_generation_via_3d_full-body_poses.md)
 
 </div>
 

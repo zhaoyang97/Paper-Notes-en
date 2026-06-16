@@ -2,80 +2,90 @@
 title: >-
   [Paper Note] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection
 description: >-
-  [CVPR 2026][Object Detection][steel surface defect detection] This paper introduces SteelDefectX, the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect categories)…
+  [CVPR 2026][Object Detection][Paper Note] SteelDefectX is introduced as the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect types), featuring coarse-to-fine text annotations from class-level to instance-level. A benchmark covering four tasks—vision-only classification, vision-language classification, zero/few-shot reco
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "steel surface defect detection"
-  - "vision-language dataset"
-  - "coarse-to-fine annotation"
-  - "zero-shot transfer"
-  - "industrial quality inspection"
+  - CVPR 2026
+  - Object Detection
 date: 2026-05-08
-content_hash: 206753f2090bc55c
+content_hash: 26fb8e7e2533add9
 ---
-
 # SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.21824](https://arxiv.org/abs/2603.21824)  
 **Code**: [https://github.com/Zhaosxian/SteelDefectX](https://github.com/Zhaosxian/SteelDefectX)  
-**Area**: Interpretability
-**Keywords**: steel surface defect detection, vision-language dataset, coarse-to-fine annotation, zero-shot transfer, industrial quality inspection
+**Area**: Object Detection  
+**Keywords**: Steel surface defect detection, vision-language dataset, coarse-to-fine annotation, zero-shot transfer, industrial quality inspection
 
 ## TL;DR
 
-This paper introduces SteelDefectX, the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect categories), featuring coarse-to-fine textual annotations ranging from class-level to sample-level descriptions. A four-task benchmark is established covering pure-vision classification, vision-language classification, zero/few-shot recognition, and zero-shot transfer. Experiments demonstrate that high-quality textual annotations significantly improve model interpretability, generalization, and cross-domain transfer capability.
+SteelDefectX is introduced as the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect types), featuring coarse-to-fine text annotations from class-level to instance-level. A benchmark covering four tasks—vision-only classification, vision-language classification, zero/few-shot recognition, and zero-shot transfer—is established. Experiments demonstrate that high-quality text annotations significantly improve model interpretability, generalization, and cross-domain transfer capabilities.
 
 ## Background & Motivation
 
-**Background**: Steel surface defect detection is a critical component of quality assurance in industrial manufacturing. Existing methods primarily rely on fundamental image classification or object detection models (ResNet, ViT, etc.), achieving satisfactory classification accuracy on specific datasets. Public datasets such as NEU (6 classes, 1,800 images), GC10 (10 classes, 2,312 images), X-SDD (7 classes, 1,360 images), and S3D (5 classes, 880 images) have driven progress in this field.
+**Background**: Steel surface defect detection is a critical step in ensuring product quality in industrial manufacturing. Existing methods primarily rely on basic image classification or object detection models (ResNet, ViT, etc.) and have achieved high classification accuracy on specific datasets. Public datasets like NEU (6 classes, 1,800 images), GC10 (10 classes, 2,312 images), X-SDD (7 classes, 1,360 images), and S3D (5 classes, 880 images) have advanced this field.
 
-**Limitations of Prior Work**: (1) Existing datasets provide only category labels or numerical annotations, lacking descriptive textual information, which limits the application of vision-language models in industrial domains; (2) Simple class-name template descriptions (e.g., "A photo of scratches") fail to capture the rich visual variation of steel defects—the same manufacturing process can produce drastically different visual patterns across different materials; (3) There is no standardized benchmark for evaluating cross-material and cross-dataset generalization.
+**Limitations of Prior Work**: (1) Existing datasets only provide category labels or numerical annotations, lacking descriptive text and limiting the application of vision-language models (VLMs) in industry; (2) Simple class-name prompt templates (e.g., "A photo of scratches") fail to capture the rich visual variations of steel defects—where the same manufacturing process can produce vastly different visual patterns on different materials; (3) There is a lack of evaluation benchmarks for cross-material and cross-dataset generalization.
 
-**Key Challenge**: Vision-language models (e.g., CLIP) exhibit strong zero-shot capabilities on natural images, but perform poorly when directly applied to industrial defect data (maximum zero-shot accuracy of only 14.8%), fundamentally due to the absence of professional industrial image-text paired data.
+**Key Challenge**: While VLMs (like CLIP) exhibit strong zero-shot capabilities in natural images, their direct application to industrial defect data is poor (merely 14.8% zero-shot accuracy at best), fundamentally due to the lack of professional industrial image-text pairs.
 
-**Goal**: (1) Construct the first steel defect vision-language dataset with professional coarse-to-fine textual annotations; (2) Establish a standardized benchmark covering diverse scenarios to evaluate vision-language models in industrial inspection; (3) Validate the improvement in generalization and transfer capability brought by high-quality textual annotations.
+**Goal**: (1) Construct the first steel defect vision-language dataset with professional coarse-to-fine text annotations; (2) Establish a standardized benchmark covering multiple scenarios to evaluate VLM performance in industrial inspection; (3) Verify the effectiveness of high-quality text annotations in enhancing generalization and transfer capabilities.
 
-**Key Insight**: Industrial defect detection requires not only category labels but also semantic understanding of defect types, visual attributes, and root causes—precisely where vision-language models excel, provided high-quality image-text paired data is available.
+**Key Insight**: Industrial defect detection requires not just category labels but also semantic understanding of defect types, visual attributes, and causes—an area where VLMs excel, provided high-quality image-text data is available.
 
-**Core Idea**: By constructing coarse-to-fine vision-language annotations (class-level: defect type + visual attributes + causes; sample-level: shape + size + depth + location + contrast), industrial defect detection is elevated from pure-vision classification to a vision-language semantic understanding task.
+**Core Idea**: By constructing coarse-to-fine vision-language annotations (class-level: defect type + visual attributes + causes; instance-level: shape + size + depth + location + contrast), industrial defect detection is elevated from pure vision classification to a vision-language semantic understanding task.
 
 ## Method
 
 ### Overall Architecture
 
-The core contribution of SteelDefectX is the dataset and benchmark rather than a novel model architecture. The overall pipeline proceeds as follows: (1) images are collected and integrated from four sources—NEU, GC10, X-SDD, and S3D—and similar sub-categories are merged to yield a unified dataset of 25 classes and 7,778 images; (2) two-level textual annotations are constructed—class-level annotations are designed by domain experts, and sample-level annotations are generated automatically via GPT-4o followed by manual refinement; (3) a four-task benchmark is established to evaluate different models and annotation levels.
+The core contribution of SteelDefectX lies in the dataset and benchmark rather than a new model architecture. The methodology addresses three engineering questions: the source of images, the generation of text annotations, and the tasks used to validate the annotations. The process begins by aggregating images from four public sources (NEU, GC10, X-SDD, S3D), merging semantically similar subcategories into a unified dataset of 25 classes and 7,778 images. Two levels of text granularity are assigned: class-level descriptions written by domain experts characterizing commonalities, and instance-level descriptions automatically generated by GPT-4o and refined by humans to capture specific morphology. Finally, a four-task benchmark (vision-only → vision-language → zero/few-shot → cross-material transfer) evaluates the incremental gains provided by the annotations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Four Public Sources<br/>NEU / GC10 / X-SDD / S3D"] --> B["Merge Synonymous Subclasses<br/>25 Classes / 7778 Images Unified Dataset"]
+    B --> C["Class-level Annotation<br/>Expert Template + CuPL Refinement<br/>Class Name + Visual Attr + Cause"]
+    B --> D1
+    subgraph D["Instance-level Annotation Pipeline"]
+        direction TB
+        D1["① Candidate Generation<br/>GPT-4o T=0.9, 4 Candidates"] --> D2["② Candidate Selection<br/>Sentence-BERT Redundancy Reduction + 5D Coverage Scoring"]
+        D2 -->|Coverage < 4D| D3["③ Candidate Supplement<br/>Structured Multi-question Prompting"]
+        D3 --> D4["④ Manual Correction<br/>Two-person ~275h Cross-validation"]
+        D2 -->|Coverage ≥ 4D| D4
+    end
+    C --> E["Four-level Annotation T0 → T1 → T2 → T3"]
+    D4 --> E
+    E --> F["Four-task Benchmark<br/>Vision-only → VL → Zero/Few-shot → Cross-material Transfer"]
+```
 
 ### Key Designs
 
-1. **Class-Level Annotation (Coarse-grained)**:
+**1. Class-level Annotation: Consistent Semantic Anchors across Samples**
 
-    - Function: Provides global semantic descriptions for each defect category.
-    - Mechanism: Each category is characterized by three semantic components: (a) defect class name (e.g., "punching"); (b) representative visual attributes (e.g., "circular holes"); (c) possible industrial causes (e.g., "equipment malfunction"). Initial templates are hand-crafted by domain experts based on steel manufacturing knowledge, then refined using candidate descriptions generated by the CuPL method, and finally composed into natural language sentences.
-    - Design Motivation: Class-level semantics provide consistent conceptual anchors across samples, helping vision-language models establish alignment between defect types and the semantic space.
+A single class name (e.g., "scratches") is too sparse for VLMs to align with real visual patterns of defects. Class-level annotations decompose each category into three semantic components: defect name (e.g., "punching"), representative visual attributes (e.g., "circular holes"), and possible industrial causes (e.g., "equipment malfunction"). Domain experts first write initial templates based on steel manufacturing knowledge, which are then refined using candidates generated via the CuPL method to form natural language sentences. These descriptions provide stable conceptual anchors in semantic space for each defect type, helping the model understand "what it looks like and why it occurs."
 
-2. **Sample-Level Annotation Pipeline (Fine-grained)**:
+**2. Instance-level Annotation Pipeline: Auto-generation + Structured QA + Manual Refinement**
 
-    - Function: Generates detailed visual descriptions for each individual sample.
-    - Mechanism: A four-step pipeline is employed—(Step 1) **Candidate Generation**: GPT-4o is prompted with an open-ended prompt at a relatively high temperature (0.9) to generate 4 candidate descriptions, encouraging diversity; (Step 2) **Candidate Filtering**: Sentence-BERT is used to compute cosine similarity among descriptions, and a greedy strategy retains up to 3 diverse candidates; each candidate is then assessed with a 5-dimensional semantic coverage score—descriptions are encoded as a 5-bit vector $\mathbf{b} = [b_1,...,b_5]$ corresponding to shape, size, depth, location, and contrast, and the composite score $S(d_i) = 0.6 \cdot \frac{\|b_i\|_1}{5} + 0.4 \cdot D(d_i)$ balances coverage and diversity; (Step 3) **Candidate Supplementation**: If no candidate covers $\geq 4$ dimensions, a structured multi-question prompt is used to query each dimension individually; (Step 4) **Manual Correction**: Two annotators perform cross-validation over approximately 275 hours.
-    - Design Motivation: The three-tier mechanism of automated generation, structured quality control, and manual refinement ensures annotation quality. The 5-dimensional semantic coverage framework guarantees completeness and consistency of descriptions.
+Class-level descriptions cannot handle intra-class visual variation. A dedicated fine-grained description is required for each image. To balance cost and quality, a four-step pipeline is used. First is **Candidate Generation**, using GPT-4o with a high temperature (0.9) to generate four diverse candidates. This is followed by **Candidate Selection**, where Sentence-BERT calculates cosine similarity to keep at most three distinct descriptions. Each is scored for "semantic coverage" via a 5-bit vector $\mathbf{b}=[b_1,\dots,b_5]$ (representing shape, size, depth, location, and contrast). The comprehensive score is:
 
-3. **Four-Task Benchmark Design**:
+$$S(d_i) = 0.6\cdot\frac{\lVert b_i\rVert_1}{5} + 0.4\cdot D(d_i)$$
 
-    - Function: Systematically evaluates the value of the dataset across different scenarios.
-    - Mechanism: (Task 1) Pure-vision classification—ResNet/ViT with a linear head; (Task 2) Vision-language classification—CLIP variants with Adapter fine-tuning, trained with T3 (fine-grained annotations) and tested with T0 (class-name templates); (Task 3) Zero/few-shot recognition—evaluates performance under 1/2/4/8-shot settings, comparing the effects of T0 and T3 annotations; (Task 4) Zero-shot transfer—models trained on SteelDefectX are tested on aluminum surface defects (MSD-Cls, 10 classes) and seamless steel tube defects (CGFSDS-9, 5 classes). Four annotation levels (T0→T3) with progressively increasing information are used for comparison.
-    - Design Motivation: The benchmark spans from the most basic pure-vision setting to the most challenging cross-material zero-shot transfer, comprehensively covering practical industrial inspection scenarios.
+where diversity $D(d_i)$ ensures variety and coverage $\lVert b_i\rVert_1$ ensures information density. If no candidate covers $\geq 4$ dimensions, **Candidate Supplement** is triggered using structured prompts to fill missing info. Finally, **Manual Correction** is performed by two annotators over 275 hours.
+
+**3. Four-task Benchmark: Quantifying Incremental Gains**
+
+The benchmark consists of four increasingly difficult scenarios sharing the same four levels of annotation (T0: class template, T1: class-level, T2: GPT-4o-generated, T3: manually refined). Task 1 (vision-only) uses ResNet/ViT with a linear head as a baseline. Task 2 (vision-language classification) uses CLIP with Adapter fine-tuning, training on T3 while testing on T0 to test semantic transfer. Task 3 (zero/few-shot) compares T0 and T3 across 1/2/4/8-shot settings. Task 4 (zero-shot transfer) tests models trained on steel data directly on aluminum (MSD-Cls) and seamless steel tube (CGFSDS-9) defects.
 
 ### Loss & Training
 
-Pure-vision classification: SGD with momentum 0.9, weight decay 1e-4, initial learning rate 0.1 decayed by 10× every 30 epochs, trained for 100 epochs. Vision-language classification: CLIP-Adapter framework with Adam optimizer (lr=1e-4), bidirectional cross-entropy loss, 20 epochs. A 7:3 train/test split is used throughout.
+Vision-only classification utilizes SGD (momentum 0.9, weight decay 1e-4), initial learning rate 0.1 (decayed 10× every 30 epochs), for 100 epochs. Vision-language classification adopts the CLIP-Adapter framework with Adam (lr=1e-4), symmetric cross-entropy loss, for 20 epochs. Data is split 7:3 for training/testing.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Pure-vision classification (Task 1):
+Vision-only Classification (Task 1):
 
 | Model | Acc (%) | mAcc (%) |
 |------|---------|----------|
@@ -83,7 +93,7 @@ Pure-vision classification (Task 1):
 | ResNet-101 | 93.63 | 91.19 |
 | ViT-B/16 | 44.84 | 40.31 |
 
-Vision-language classification (Task 2, trained on T3 / tested on T0):
+Vision-language Classification (Task 2, Train T3/Test T0):
 
 | Model | Backbone | Acc (%) | mAcc (%) |
 |------|----------|---------|----------|
@@ -91,26 +101,26 @@ Vision-language classification (Task 2, trained on T3 / tested on T0):
 | OpenCLIP | ViT-L/14 | 88.21 | 87.54 |
 | CLIP | ViT-B/16 | 81.84 | 81.14 |
 
-Zero-shot transfer (Task 4, Long-CLIP ViT-L/14):
+Zero-shot Transfer (Task 4, Long-CLIP ViT-L/14):
 
-| Annotation Level | Aluminum Acc | Seamless Steel Tube Acc |
+| Annotation Level | Aluminum Acc | Steel Tube Acc |
 |---------|-----------|-------------|
 | Zero-shot | 8.60 | 25.11 |
-| T0 (class name) | 12.90 | 28.31 |
-| T1 (class-level) | 20.43 | 33.79 |
+| T0 (Class Name) | 12.90 | 28.31 |
+| T1 (Class-level) | 20.43 | 33.79 |
 | T2 (GPT-4o) | 25.27 | 34.25 |
-| T3 (manual refinement) | **29.03** | **40.18** |
+| T3 (Manual Refined) | **29.03** | **40.18** |
 
 ### Ablation Study
 
-Effect comparison across annotation levels (zero-shot recognition, Task 3):
+Comparison of annotation levels (Zero-shot Recognition Task 3):
 
 | Annotation Level | SteelDefectX Zero-shot Acc |
 |---------|----------------------|
-| T0 (class-name template) | 7.57 |
-| T1 (class-level description) | 11.27 |
+| T0 (Class Template) | 7.57 |
+| T1 (Class-level) | 11.27 |
 
-Few-shot recognition as a function of the number of shots:
+Few-shot recognition vs. shot count:
 
 | Method | 1-shot | 8-shot |
 |------|--------|--------|
@@ -119,40 +129,40 @@ Few-shot recognition as a function of the number of shots:
 
 ### Key Findings
 
-- **ViT severely underfits on small datasets**: ViT-B/16 achieves only 44.84%, far below CNN-based models (ShuffleNetV2: 96.34%), indicating that CNN inductive biases remain advantageous on small-scale datasets.
-- **Annotation level monotonically improves transfer performance**: Transfer accuracy on the aluminum dataset increases consistently from 12.90% (T0) to 29.03% (T3), and the T2→T3 gain from manual refinement is also significant, demonstrating that annotation quality directly determines cross-domain transfer effectiveness.
-- **Long-CLIP achieves the best performance in vision-language classification**: At 93.63% accuracy, it approaches pure-vision CNN performance (96.34%), with a smaller gap between Acc and mAcc (1.07 vs. 1.36), indicating greater robustness on long-tail categories.
-- **Pretrained VLMs applied directly to industrial defects perform poorly**: CLIP achieves only 7.57% zero-shot accuracy on SteelDefectX, revealing a substantial semantic gap between the natural-image pretraining domain and industrial defect domains.
-- Saliency map visualizations show that under T3 annotations, models precisely focus on defect regions, whereas under T0 annotations attention is scattered—indicating that fine-grained textual descriptions enhance spatial vision-text alignment.
+- **ViT severely underfits on small datasets**: ViT-B/16 yielded only 44.84%, far below CNNs (ShuffleNetV2 96.34%), as CNN inductive bias is advantageous on small datasets.
+- **Annotation level monotonically improves transfer performance**: Accuracy on aluminum increased from 12.90% to 29.03% across T0→T1→T2→T3, showing that annotation quality determines cross-domain transfer.
+- **Long-CLIP performs best in VL classification**: Achieving 93.63% accuracy, it rivals pure vision CNNs and shows better robustness on long-tail classes (smaller Acc-mAcc gap).
+- **Pre-trained VLMs perform poorly on industrial defects**: Zero-shot CLIP achieved only 7.57%, highlighting the gap between natural image pre-training and industrial defect domains.
+- Heatmap visualizations show that T3 annotations allow the model to focus precisely on defect regions, whereas T0 annotations result in scattered attention.
 
 ## Highlights & Insights
 
-- **5-Dimensional semantic coverage framework (shape / size / depth / location / contrast)**: Provides a reproducible, structured standard for industrial defect annotation that does not rely on subjective descriptions and can be transferred to other industrial inspection scenarios (e.g., chip defects, textile defects). This approach is more principled and controllable than free-text annotation.
-- **Progressive annotation-level experimental design**: The T0→T1→T2→T3 comparative experiments clearly delineate the marginal contribution of each annotation level, offering concrete guidance on cost-benefit tradeoffs for industrial data collection—even GPT-4o-generated annotations without manual refinement (T2) yield significant improvements.
-- **Validation of cross-material zero-shot transfer feasibility**: Transfer from steel to aluminum (29.03%), while modest in absolute terms, represents a 3.4× improvement over the zero-shot baseline (8.60%), demonstrating the potential of vision-language alignment for cross-material generalization.
+- **5D Semantic Coverage Framework (Shape/Size/Depth/Location/Contrast)**: Provides a reproducible structured standard for industrial defect annotation, moving away from subjective descriptions. This is more standardized and controllable than free-form text.
+- **Hierarchical Annotation Design**: The T0→T1→T2→T3 comparison clearly shows the marginal contribution of each level, guiding industrial data collection efforts—even without manual refinement (T2), GPT-4o generated labels provide significant gains.
+- **Cross-material Zero-shot Transfer Feasibility**: While 29.03% transfer accuracy is not high in absolute terms, it represents a 3.4× improvement over the zero-shot baseline (8.60%), proving the potential of VL alignment for cross-material generalization.
 
 ## Limitations & Future Work
 
-- The dataset scale remains limited (7,778 images), far smaller than natural image datasets, potentially constraining thorough training of vision-language models.
-- The current benchmark supports only image-level classification and vision-language alignment, lacking pixel-level segmentation annotations—limiting applicability to object detection and segmentation tasks.
-- GPT-4o-generated textual descriptions may contain hallucinations inconsistent with actual visual content; although manual correction is applied, full-scale verification is costly.
-- Among the 25 defect categories, some have very few samples (e.g., crease with only 50 images), resulting in a severe long-tail distribution.
-- The absolute zero-shot transfer accuracy remains low (29% / 40%), leaving a substantial gap before practical deployment.
-- No systematic comparison is made with recent industrial anomaly detection methods (e.g., AnomalyGPT, WinCLIP).
+- Dataset scale is still limited (7,778 images) compared to natural image datasets, potentially limiting VLM training.
+- Current support is limited to image-level classification and VL alignment; lack of pixel-level segmentation annotations restricts use in detection and segmentation tasks.
+- GPT-4o generated text may contain hallucinations; manual verification is costly.
+- Some of the 25 classes are extremely sparse (e.g., "crease" has only 50 images), presenting a long-tail issue.
+- Absolute accuracy for zero-shot transfer remains low (29%/40%), far from practical deployment.
+- Systemic comparison with the latest industrial anomaly detection methods (e.g., AnomalyGPT, WinCLIP) is missing.
 
 ## Related Work & Insights
 
-- **vs. NEU/GC10 and other traditional datasets**: Traditional datasets provide only category labels; SteelDefectX introduces a semantic understanding dimension through coarse-to-fine textual annotations, representing a paradigm shift from "classification" to "understanding."
-- **vs. MMAD (multimodal anomaly detection)**: MMAD covers diverse industrial products but restricts textual content to QA pairs, lacking professional defect attribute descriptions. The 5-dimensional semantic framework of SteelDefectX is more structured and industrially oriented.
-- **vs. WinCLIP/CAM-CLIP**: These methods attempt to adapt CLIP to industrial scenarios but are constrained by text-side data quality. SteelDefectX directly addresses this bottleneck and can serve as foundational data for industrial VLM pretraining.
-- The dataset construction pipeline (automated generation + semantic filtering + dimensional coverage checking + manual refinement) can serve as a general paradigm for building vision-language datasets in other vertical domains.
+- **vs. Traditional Datasets (NEU/GC10, etc.)**: While traditional datasets only provide labels, SteelDefectX introduces semantic understanding, shifting the paradigm from "classification" to "understanding."
+- **vs. MMAD (Multimodal Anomaly Detection)**: MMAD lacks professional defect attribute descriptions. SteelDefectX’s 5D framework is more structured and industrially oriented.
+- **vs. WinCLIP/CAM-CLIP**: These methods adapt CLIP to industry but are limited by text-side data quality. SteelDefectX addresses this bottleneck by providing high-quality pre-training data.
+- The construction pipeline serves as a general paradigm for building VL datasets in other vertical domains.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing the vision-language paradigm to industrial defect detection is a valuable contribution; the 5-dimensional semantic framework offers methodological merit.
-- Experimental Thoroughness: ⭐⭐⭐⭐ The four-task benchmark is comprehensive and the annotation-level comparative experiments are convincing; however, comparisons with recent industrial VLM methods are lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ The dataset construction pipeline is described in thorough and clear detail, with rich and informative figures and tables.
-- Value: ⭐⭐⭐⭐ As the first vision-language dataset for steel defects, this work has significant impact on advancing the field, and the construction methodology is broadly applicable.
+- Novelty: ⭐⭐⭐⭐ Introducing the vision-language paradigm to industrial defect detection is a valuable innovation; the 5D framework is a methodological contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The four-task benchmark is comprehensive, though comparisons with recent industrial VLMs are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Detailed and clear description of the dataset construction process with informative figures.
+- Value: ⭐⭐⭐⭐ High value as the first steel defect vision-language dataset; the methodology is highly generalizable.
 
 <!-- RELATED:START -->
 
@@ -160,11 +170,11 @@ Few-shot recognition as a function of the number of shots:
 
 ## Related Papers
 
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
 - [\[CVPR 2026\] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting](unispector_towards_universal_open-set_defect_recognition_via_spectral-contrastiv.md)
-- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
-- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/object_detection/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 
 </div>
 

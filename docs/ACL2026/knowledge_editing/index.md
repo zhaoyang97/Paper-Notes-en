@@ -40,33 +40,33 @@ item_total: 9
 
 **💬 ACL2026** · **9** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (8)](../../ICML2026/knowledge_editing/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (3)](../../CVPR2026/knowledge_editing/index.md) · [🧪 ICML2026 (8)](../../ICML2026/knowledge_editing/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
 
 🔥 **Top topics:** LLM ×2
 
 **[Aligning Language Models with Real-time Knowledge Editing](aligning_language_models_with_real-time_knowledge_editing.md)**
 
-:   This paper introduces CRAFT (a continuously updated Chinese Financial Knowledge Editing dataset) and KEDAS (a Knowledge Editing alignment paradigm based on Diverse augmentation and Adaptive Selection) to solve the difficulty of balancing success rate, locality, and portability in real-time knowledge editing scenarios.
+:   Introduces CRAFT (a continuously updated Chinese financial knowledge editing dataset) and KEDAS (a knowledge editing alignment paradigm based on diverse edit augmentation and adaptive inference) to resolve the difficulty of balancing success rate, locality, and portability in real-time knowledge editing scenarios.
 
 **[CLaRE-ty Amid Chaos: Quantifying Representational Entanglement to Predict Ripple Effects in LLM Editing](clare-ty_amid_chaos_quantifying_representational_entanglement_to_predict_ripple_.md)**
 
-:   CLARE proposes a lightweight representation-level method that quantifies the degree of entanglement between facts using forward activations of a single intermediate layer to predict ripple effects in model editing. Compared to gradient-based methods, it achieves an average 62.2% improvement in Spearman correlation while being 2.74x faster and reducing memory usage by 2.85x.
+:   CLARE proposes a lightweight representational method that quantifies the degree of entanglement between facts through forward activations of a single intermediate layer. It is used to predict ripple effects in model editing, achieving an average improvement of 62.2% in Spearman correlation compared to gradient-based methods, while being 2.74x faster with 2.85x less memory consumption.
 
 **[EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)**
 
-:   This paper proposes EvoEdit, which achieves large-scale sequential knowledge editing through a dynamically evolving null-space projector. While maintaining existing knowledge, it efficiently injects new facts, preserving SOTA performance even at a 10K editing scale while being 3.5 times faster than AlphaEdit.
+:   Ours proposes EvoEdit, which achieves large-scale sequential knowledge editing by dynamically evolving a null-space projector. It efficiently injects new knowledge while maintaining existing knowledge, preserving SOTA performance at the 10K editing scale and running 3.5x faster than AlphaEdit.
 
 **[FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing](fable_fine-grained_fact_anchoring_for_unstructured_model_editing.md)**
 
-:   This paper finds that existing unstructured model editing methods can recall edited text holistically but fail in fine-grained fact access. It proposes the FABLE framework, which uses a two-stage hierarchical strategy to anchor fine-grained facts to shallow layers and integrate holistic narratives into deep layers, while introducing the UnFine diagnostic benchmark for systematic evaluation.
+:   This paper identifies that existing unstructured model editing methods, while capable of holistic recall of edited text, fail to provide access to fine-grained facts. It proposes the FABLE framework, which uses a two-stage hierarchical strategy to anchor fine-grained facts in shallow layers and integrate holistic narratives in deep layers, and constructs the UnFine diagnostic benchmark for systematic evaluation.
 
 **[HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)**
 
-:   HiEdit utilizes hierarchical reinforcement learning to decompose "lifelong model editing" into two sub-tasks: high-level layer selection and low-level gradient update calculation. This allows the hypernetwork to adaptively modify only half of the layers based on specific knowledge, improving the strong baseline RLEdit by an average of 8.48%.
+:   HiEdit utilizes hierarchical reinforcement learning to decompose "lifelong model editing" into two subtasks: high-level layer selection and low-level gradient update calculation. This allows the hypernetwork to adaptively modify only half of the layers based on specific knowledge, improving the strong baseline RLEdit by an average of 8.48%.
 
 **[One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them](one_mask_to_rule_them_all_on_hidden_facts_after_editing_and_how_to_find_them.md)**
 
-:   This paper discovers that ROME / MEMIT does not truly overwrite old knowledge but instead suppresses it through a shared overattention mechanism. A sparse binary mask can reverse the majority of edits and reduce the success rate of new edits from 98% to 38%.
+:   This paper discovers that ROME / MEMIT does not truly overwrite old knowledge but suppresses it through a shared overattention mechanism; a sparse binary mask can reverse most edits and reduce the success rate of new edits from 98% to 38%.
 
 **[Representation Interventions Enable Lifelong Knowledge Memory Control in LLMs](representation_interventions_enable_lifelong_knowledge_memory_control_in_llms.md)**
 
@@ -74,8 +74,8 @@ item_total: 9
 
 **[Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse](spectral_characterization_and_mitigation_of_sequential_knowledge_editing_collaps.md)**
 
-:   The paper explains why sequential knowledge editing causes LLM general capability collapse from the perspective of SVD spectral structures. It proposes REVIVE, which filters update components that interfere with the dominant singular subspace within the original weight singular vector basis. This allows editors like MEMIT, RECT, and AlphaEdit to maintain both editing success and general capabilities across 10,000 to 20,000 consecutive edits.
+:   The paper explains why sequential knowledge editing causes LLM general ability collapse from the perspective of SVD spectral structure and proposes REVIVE. By filtering update components that interfere with the dominant singular subspace within the singular vector basis of the original weights, REVIVE enables editors like MEMIT, RECT, and AlphaEdit to maintain both editing success rates and general capabilities under 10,000 to 20,000 continuous edits.
 
 **[The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)**
 
-:   The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and sequential editing accumulates representation residuals, leading to cognitive instability.
+:   The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and recursive editing accumulates representation residue, leading to cognitive instability.

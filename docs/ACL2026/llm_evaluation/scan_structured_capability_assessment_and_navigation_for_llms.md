@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] SCAN: Structured Capability Assessment and Navigation for LLMs
 description: >-
-  [ACL2026][LLM Evaluation][Fine-grained evaluation] SCAN advances LLM evaluation from simple leaderboards to navigable capability profiles. It automatically constructs hierarchical capability labels…
+  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] SCAN advances LLM evaluation from a single leaderboard to a navigable capability profile: it automatically constructs a hierarchical capability taxonomy, generates realistic queries covering long-tail capabilities using RealMix, and improves automatic scoring reliability via the PC2 judge. This reveals fine-grained str
 tags:
-  - "ACL2026"
-  - "LLM Evaluation"
-  - "Fine-grained evaluation"
-  - "capability taxonomy tree"
-  - "synthetic evaluation data"
-  - "LLM-as-a-Judge"
-  - "model diagnosis"
+  - ACL 2026
+  - LLM Evaluation
+  - LLM-as-a-Judge
 date: 2026-05-08
-content_hash: cc35013f5922f7a8
+content_hash: db291f32a4da9a95
 ---
-
 # SCAN: Structured Capability Assessment and Navigation for LLMs
 
 **Conference**: ACL2026  
@@ -24,57 +19,80 @@ content_hash: cc35013f5922f7a8
 **Keywords**: Fine-grained evaluation, capability taxonomy tree, synthetic evaluation data, LLM-as-a-Judge, model diagnosis
 
 ## TL;DR
-SCAN advances LLM evaluation from simple leaderboards to navigable capability profiles. It automatically constructs hierarchical capability labels, uses RealMix to generate realistic queries covering long-tail capabilities, and employs the PC2 judge to enhance automatic scoring reliability, thereby revealing fine-grained strengths and weaknesses masked by total scores across 21 mainstream LLMs.
+SCAN advances LLM evaluation from a single leaderboard to a navigable capability profile: it automatically constructs a hierarchical capability taxonomy, generates realistic queries covering long-tail capabilities using RealMix, and improves automatic scoring reliability via the PC2 judge. This reveals fine-grained strengths and weaknesses across 21 mainstream LLMs that are otherwise masked by total scores.
 
 ## Background & Motivation
-**Background**: LLM evaluation has long relied on leaderboard-style benchmarks like Chatbot Arena, MT-Bench, and AlpacaEval. These provide quick overall rankings and approximate human preferences with few automatic evaluation samples, aiding model releases and horizontal comparisons.
+**Background**: LLM evaluation has long relied on leaderboard-style benchmarks like Chatbot Arena, MT-Bench, and AlpacaEval. These facilitate model releases and horizontal comparisons by providing overall rankings and approximating human preferences with a limited number of automatic evaluation samples.
 
-**Limitations of Prior Work**: Leaderboards answer "who is stronger," but developers truly need to know "in which capabilities is this model strong, in which sub-capabilities is it weak, and are weaknesses localizable." For instance, a model might have a high total score but perform inconsistently in Java, C, bioengineering knowledge, or roleplay; a single average score flattens these local failures.
+**Limitations of Prior Work**: Leaderboards answer "who is stronger," but developers truly need to know "in which capabilities is this model strong, in which sub-capabilities is it weak, and are these weaknesses locatable." For instance, a model might achieve a high total score but perform inconsistently in Java, C, bioengineering knowledge, or role-playing; a single average score flattens these local failures.
 
-**Key Challenge**: Fine-grained evaluation requires covering numerous capability labels, while long-tail labels lack sufficient samples. Automatic scoring needs to scale to many models and questions, but classic pointwise judges are unreliable, and pairwise judges have quadratic complexity. SCAN aims to simultaneously address broad coverage, fine granularity, sufficient samples, accurate scoring, and interpretable navigation.
+**Key Challenge**: Fine-grained evaluation requires covering a vast array of capability tags, yet long-tail tags often lack sufficient samples. Furthermore, automatic scoring needs to scale across many models and questions, but classic pointwise judges are unreliable, and pairwise judges suffer from quadratic complexity. SCAN aims to simultaneously solve the issues of "broad coverage," "fine granularity," "sufficient samples," "accurate scoring," and "interpretable navigation."
 
-**Goal**: The authors aim to build a framework that starts from real user queries, automatically generates a capability taxonomy tree, supplements evaluation queries for each label, and visualizes evaluation results as a capability map. Ultimately, users should be able to drill down along the capability tree to identify specific model shortcomings rather than just seeing a rank.
+**Goal**: The authors aim to construct a framework that starts from real user queries, automatically generates a capability taxonomy tree, supplements evaluation queries for each tag, and visualizes results as a capability map. Instead of just viewing a rank, users can drill down into the capability tree to identify specific shortcomings.
 
-**Key Insight**: The paper observes that real user queries contain substantial capability signals, such as "Python programming," "Physics Q&A," or "Roleplay setting." Instead of manually enumerating capability dimensions, it is better to extract labels from real queries and organize them into a tree structure. Rather than randomly synthesizing questions, it is better to recombine content fragments from real queries under specified labels.
+**Key Insight**: The paper observes that real user queries contain substantial capability signals, such as "Python programming," "Physics Q&A," or "Role-playing setup." Rather than manually enumerating capability dimensions, it is better to extract tags from real queries and organize them into a tree structure. Instead of randomly synthesizing tasks, content fragments from real queries are recombined under designated tags.
 
-**Core Idea**: Use a "real-query-driven capability tree + label-aligned data synthesis + pre-comparison criterion extraction judge" to replace static leaderboards, transforming evaluation results into searchable, diagnostic, and scalable model capability profiles.
+**Core Idea**: Replace static leaderboards with a "real-query-driven capability tree + tag-aligned data synthesis + pre-comparison criterion-extracted judge" to transform evaluation results into a searchable, diagnostic, and scalable model capability profile.
 
 ## Method
-SCAN's methodology is a pipeline from "real user needs" to a "model capability navigation map." It first uses TaxBuilder to extract and organize capability labels from massive queries, then uses RealMix to supplement realistic evaluation questions for each label, and finally uses the PC2 scorer to evaluate model responses at a scalable cost, helping users analyze strengths and weaknesses through visualization tools.
+
+SCAN is an evaluation pipeline mapping "real user needs" to a "model capability navigation map," aiming to replace single leaderboards with drill-down, diagnostic profiles. It utilizes TaxBuilder to organize a hierarchical capability tree from massive real queries, RealMix to supplement realistic evaluation questions for each tag, and the PC2 scorer to grade model responses at a scalable cost, ultimately summarizing fine-grained strengths and weaknesses across six domains and their sub-tags.
 
 ### Overall Architecture
-The input consists of real user queries and the LLMs to be evaluated; the output includes fine-grained scores, rankings, and failure modes across six major domains and their sub-labels. SCAN-V0 covers six domains: writing, roleplay, knowledge, coding, mathematics, and reasoning, constructing 2,082 labels and 3,343 evaluation queries, evaluating 21 mainstream LLMs.
 
-The process is divided into three layers. The first is the taxonomy layer, where TaxBuilder inserts unstructured query labels into an editable hierarchical tree. The second is the data layer, where RealMix uses real query fragments and label constraints to synthesize evaluation queries, ensuring statistical sample sizes for each label. The third is the evaluation/navigation layer, where the PC2 judge scores responses using query-specific criteria generated from pre-comparison, followed by displaying results through dashboards and failure mode explorers.
+The input consists of a batch of real user queries and a set of LLMs to be evaluated. The output includes fine-grained scores, rankings, and failure modes for each model across six domains: writing, roleplay, knowledge, coding, mathematics, and reasoning. The system is organized into three layers: the taxonomy layer (TaxBuilder) inserts unstructured query tags into an editable hierarchical tree; the data layer (RealMix) uses real query fragments and tag constraints to synthesize evaluation queries, ensuring statistical significance for every tag; and the evaluation/navigation layer (PC2) uses query-specific criteria derived from pre-comparison to score responses, presenting results as a searchable capability map. SCAN-V0 comprises 2,082 tags and 3,343 evaluation queries, assessing 21 mainstream LLMs.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Real User Queries + LLMs to evaluate"]
+    subgraph TAX["TaxBuilder Hierarchical Capability Tree"]
+        direction TB
+        T1["Low-cost model labels queries with capability tags"] --> T2["Recursive insertion: Determine if exists / sibling / child node"]
+        T2 --> T3["Refinement + pruning<br/>Depth ~4 layers, manually editable"]
+    end
+    Q --> TAX
+    subgraph MIX["RealMix Tag-aligned Query Synthesis"]
+        direction TB
+        M1["QwQ-32B labeling + filtering ~31,000 seeds"] --> M2["Sample reference + content queries, recombine real fragments"]
+        M2 --> M3["Multi-reasoning model cross-check, filter unqualified"]
+    end
+    TAX --> MIX
+    subgraph PC["PC2 Pre-comparison Criterion Scorer"]
+        direction TB
+        P1["Multiple models generate candidate responses"] --> P2["Judge compares differences, extracts criteria C + weights W"]
+        P2 --> P3["Score target response with C, W, and baseline"]
+    end
+    MIX --> PC
+    PC --> OUT["Fine-grained scores for 6 domains + sub-tags<br/>Capability Navigation Map / Failure Mode Exploration"]
+```
 
 ### Key Designs
-1. **TaxBuilder Hierarchical Capability Tree**:
 
-    - **Function**: Automatically organizes capability labels from real user queries into an expandable, manually verifiable capability taxonomy tree.
-    - **Mechanism**: Use a low-cost model to label many real queries, then insert new labels into the tree one by one. Instead of providing the whole tree to the LLM, recursively traverse nodes at the current level, asking the LLM to judge three relations: the label exists, should be a sibling at this level, or should be a child of a node. Subsequently, use node refinement, pruning, and hierarchical pruning to correct parent-child relationships, split mixed concepts, merge duplicates, and control tree depth to approximately 4 levels.
-    - **Design Motivation**: Directly localizing new nodes in a large tree leads to long contexts and difficult reasoning. Recursive local decisions split long-context problems into short-context judgments, making it suitable for continuous capability expansion.
+**1. TaxBuilder Hierarchical Capability Tree: Decomposition of Tree Construction into Local Judgments**
 
-2. **RealMix Label-Aligned Query Synthesis**:
+If an LLM tries to position a new tag within a massive tree directly, the context becomes excessively long and reasoning harder. TaxBuilder first uses a low-cost model to assign capability tags to real queries, then inserts new tags one by one. Instead of processing the whole tree, it recursively traverses nodes at the current level, asking the LLM to judge only three relationships: whether the tag already exists, should be a sibling at the current level, or should be a child node. Thus, the long-context problem is decomposed into a sequence of short-context local decisions.
 
-    - **Function**: Generates sufficient, high-quality, and realistic evaluation queries for long-tail capability labels.
-    - **Mechanism**: Use QwQ-32B to label real user queries with domains, labels, and quality, filtering ~31,000 high-quality seed queries. During synthesis, sample one reference query and three content queries; the generation model extracts appropriate real content fragments and recombines them into a new query matching the reference label. Multiple reasoning models then check label consistency and quality, filtering unqualified samples.
-    - **Design Motivation**: Using existing data leads to insufficient coverage and contamination risks, while random label combinations yield unrealistic tasks. RealMix allows synthetic questions to inherit content and label distributions from real queries while directionally filling long-tail capabilities.
+Three cleanup stages are then applied: node refinement to correct parent-child relationships, node pruning to split tags mixing multiple concepts, and hierarchical pruning to merge duplicate nodes while maintaining a depth of approximately 4 layers. The tree remains expandable by LLMs while providing entry points for human audit and editing.
 
-3. **PC2 Pre-comparison Criterion Scorer**:
+**2. RealMix Tag-aligned Query Synthesis: Controllable Recombination of Real Content**
 
-    - **Function**: Captures the reliability advantages of pairwise evaluation at pointwise costs.
-    - **Mechanism**: For an instruction, multiple models generate candidate responses; a judge compares these and extracts "what to look for in this question" as scoring criteria and weights, satisfying $\sum_i w_i = 100$. During formal scoring, the judge evaluates the target response using these query-specific criteria, weights, and a reference evaluation of a baseline answer.
-    - **Design Motivation**: Pairwise evaluation is superior because comparison exposes response differences; pointwise is inferior due to the lack of reference. PC2 extracts differential criteria in the pre-comparison phase to avoid the high cost of all-model pairwise comparisons.
+Long-tail capability tags often lack ready-made evaluation questions. Reusing existing data risks insufficient coverage or contamination, while random tag combinations can create unrealistic tasks. RealMix uses QwQ-32B to label domain, tags, and quality for real user queries, filtering approximately 31,000 high-quality seeds. During synthesis, it samples one reference query and three content queries, tasking the generator to extract appropriate real content fragments and recombine them into a new query matching the reference tag.
 
-### Loss & Training
-SCAN is an evaluation framework rather than a training method. The "optimization goal" is reflected in the judge's scoring process: first obtain criterion set $C$ and weights $W$ via $J(\{y^1,\dots,y^n\}\mid x,p_c,p_w)$, then output a score for a single response via $J(y\mid x,p_c,y_b,C,W)\to s$. In data construction, multi-model generation and verification reduce single-model bias; in evaluation, PC2 balances accuracy and scalability.
+Post-generation, multiple reasoning models cross-check tag consistency and quality, filtering out unqualified samples. These synthesized questions inherit the content and tag distribution of real queries while directionally filling long-tail gaps, making them more realistic than template-based tasks.
+
+**3. PC2 Pre-comparison Criterion Scorer: Pairwise Reliability at Pointwise Cost**
+
+Pairwise evaluation is reliable because comparisons expose differences between responses; pointwise evaluation is often inaccurate due to the lack of a reference. PC2 brings the "discovery of differences" forward: for a single instruction, it generates candidate responses from multiple models. A judge then compares these to extract query-specific scoring criteria $C$ and weights $W$, constrained by $\sum_i w_i = 100$, formally expressed as $J(\{y^1,\dots,y^n\}\mid x,p_c,p_w)$ outputting the set $C$ and $W$.
+
+During formal scoring, the judge is no longer isolated. It scores the target response using criteria $C$, weights $W$, and a reference evaluation of a baseline answer $y_b$, i.e., $J(y\mid x,p_c,y_b,C,W)\to s$. This retains the sensitivity to differences found in pairwise evaluation while avoiding the quadratic complexity of comparing all model pairs, allowing the evaluation to scale to more models and questions.
 
 ## Key Experimental Results
 
 ### Main Results
-The scale of SCAN-D-V0 shows it is a structured fine-grained evaluation set rather than a small prompt set.
+The data scale of SCAN-D-V0 demonstrates that it is not just a small prompt set, but a fine-grained evaluation suite structured around a capability tree.
 
-| Domain | Sample count | Label count | Min samples per label | Avg length |
+| Domain | Samples | Tags | Min Samples per Tag | Avg Length |
 |------|--------|--------|----------------|----------|
 | Writing | 1,108 | 594 | 19 | 772.57 |
 | Roleplay | 470 | 429 | 19 | 1008.46 |
@@ -84,7 +102,7 @@ The scale of SCAN-D-V0 shows it is a structured fine-grained evaluation set rath
 | Reasoning | 245 | 186 | 19 | 904.81 |
 | Total | 3,343 | 2,082 | 19 | 880.92 |
 
-PC2 judge significantly outperforms naive pointwise across multiple judge backbones, indicating that "extracting criteria before scoring" is effective across different models.
+The PC2 judge significantly outperforms naive pointwise evaluation across various judge backbones, indicating that "extracting criteria before scoring" is effective regardless of the specific model.
 
 | Judge / Method | Accuracy |
 |--------------|----------|
@@ -100,44 +118,44 @@ PC2 judge significantly outperforms naive pointwise across multiple judge backbo
 | GPT-4.1 ours | 0.7201 |
 
 ### Ablation Study
-The core ablations focus on PC2 components. Using Deepseek-R1 as the judge, accuracy improves step-by-step from naive pointwise to diverse pre-comparison and finally the full method.
+The core ablation of the paper focuses on the components of PC2. Using Deepseek-R1 as the judge, accuracy improves step-by-step from naive pointwise to diverse pre-comparison to the full method.
 
 | Configuration | Accuracy | Description |
 |------|----------|------|
-| naive pointwise | 0.5694 | Scoring responses individually without comparison reference |
-| direct metric decomposition | 0.6134 | Allowing the judge to decompose scoring dimensions directly; moderate improvement |
-| metric decomposition (single model) | 0.5974 | Single-model pre-comparison lacks diversity; limited gain |
-| metric decomposition (diverse model) | 0.6466 | Multi-model responses provide richer differences |
+| naive pointwise | 0.5694 | Scoring responses in isolation, lacks comparison reference |
+| direct metric decomposition | 0.6134 | Judge splits scoring dimensions directly, moderate improvement |
+| metric decomposition (single model) | 0.5974 | Single-model pre-comparison is not diverse enough, limited gain |
+| metric decomposition (diverse model) | 0.6466 | Multiple model responses provide richer differences |
 | ours | 0.6962 | Best performance after adding criteria weights and baseline answer |
 
 ### Key Findings
-- Fine-grained analysis reveals "capability spikes" invisible in total scores. GPT-OSS-120B is strong overall but ranks 7th in roleplay; GPT-OSS-20B is weaker overall but ranks 2nd in coding.
-- Coding capability should not be viewed only as an aggregate code score. GPT-OSS-120B is strong in Python, JavaScript, Go, and Rust, but weaker in C and Java; GPT-OSS-20B ranks 2nd in Python and Rust, exceeding the 120B version in C and C#.
-- Knowledge domains show significant inhomogeneity. GPT-OSS-120B ranks 1st in computer science and aerospace engineering within technical engineering, but drops to 11th in bioengineering, indicating local gaps in pre-training knowledge.
+- Fine-grained analysis reveals "capability peaks" hidden by total scores. GPT-OSS-120B shows strong overall performance but ranks only 7th in roleplay; GPT-OSS-20B is weaker overall but ranks 2nd in coding.
+- Programming capability cannot be judged by target coding scores alone. GPT-OSS-120B is strong in Python, JavaScript, Go, and Rust, but weaker in C and Java; GPT-OSS-20B ranks 2nd in Python and Rust, exceeding the 120B version in C and C#.
+- Knowledge domains also show significant non-uniformity. GPT-OSS-120B ranks 1st in computer science and aerospace engineering within technical engineering, but drops to 11th in bioengineering, suggesting local gaps in pre-training knowledge coverage.
 
 ## Highlights & Insights
-- The most valuable aspect of this paper is shifting evaluation from "model ranking" to a "capability map." This perspective is more practical for development, as data ratios, post-training strategies, and deployment scenarios require knowing specific weaknesses rather than just average scores.
-- TaxBuilder's recursive insertion is simple but effective. It doesn't force the LLM to understand the whole tree at once, turning tree construction into local decisions suitable for absorbing new tasks, domains, and user needs.
-- RealMix embodies a good principle for synthetic evaluation data: don't create questions in a vacuum; perform controlled recombination of real user content. This reduces contamination risk and stays closer to real usage than pure templates.
-- PC2's insight is powerful: pairwise advantages don't require quadratic complexity; the key is obtaining "where the differences lie for this question." This can be migrated to safety, factuality, or long-context evaluations requiring query-specific rubrics.
+- The most valuable contribution of this paper is shifting the evaluation object from "model rankings" to a "capability terrain map." This perspective is more practical for model development, where training data ratios, post-training strategies, and deployment scenarios require knowledge of specific weaknesses rather than average scores.
+- TaxBuilder's recursive insertion is simple yet effective. It avoids requiring the LLM to comprehend the entire capability tree at once, treating tree construction as local decisions, which facilitates the continuous integration of new tasks, domains, and user needs.
+- RealMix reflects a sound principle for evaluation data synthesis: do not create questions out of thin air; instead, perform controllable recombination on real user content. This reduces data contamination risks and remains closer to real usage scenarios than pure template-based questions.
+- PC2 provides strong inspiration: the advantages of pairwise evaluation do not necessarily require quadratic complexity; the key is first identifying "where the differences in this specific query lie." this approach can be migrated to safety, factuality, or long-context evaluations requiring query-specific rubrics.
 
 ## Limitations & Future Work
-- The authors point out that current SCAN is primarily for language models and does not support multimodal models. VLM, embodied AI, or audio models will require extended taxonomy and synthesis mechanisms; the paper mentions exploring SCAN-Anything.
-- Current implementation lacks evaluation of AI mechanism dimensions like safety, honesty, factuality, hallucination, and fairness. These require additional taxonomy and judge designs for behavioral constraints and risk attributes.
-- Automatic tree construction depends on LLM labeling, potentially inheriting model bias. While pruning and manual editability mitigate this, tree correctness requires continuous auditing.
-- Evaluation queries come from synthesis; even with RealMix using real fragments, they might not represent high-risk deployment scenarios. Future work could integrate online failure cases, user feedback, and red-teaming samples.
+- The authors state that SCAN currently focuses on language models and does not support multimodal models. Capability tags and data synthesis mechanisms need expansion for VLMs, embodied AI, or audio models; the paper mentions exploring SCAN-Anything in the future.
+- Current implementation does not cover mechanism-based evaluations like safety, honesty, factuality, hallucination, or fairness. These dimensions often represent behavioral constraints rather than task capabilities and require additional taxonomy and judge designs.
+- Automatic tree construction still relies on LLM labeling and judgment, potentially inheriting model biases. While pruning and manual editability mitigate this, the correctness of the tree structure itself requires continuous auditing.
+- Evaluation queries derived from synthesis, even with RealMix using real query fragments, may not fully represent high-risk deployment scenarios. Future work could integrate online failure cases, user feedback, and red-teaming samples into the capability tree.
 
 ## Related Work & Insights
-- **vs Chatbot Arena**: Chatbot Arena uses massive human preferences for credible rankings; SCAN uses smaller but structured datasets for fine-grained profiles. The former is for macro-comparison; the latter for model diagnosis and training feedback.
-- **vs AlpacaEval / MT-Bench**: These focus on overall instruction following or multi-turn performance; SCAN emphasizes extracting labels from real queries and decomposing performance along a tree for better interpretability.
-- **vs pairwise LLM-as-a-Judge**: Pairwise is reliable but expensive; PC2 shifts "difference discovery" to criterion extraction, allowing pointwise-style scoring during large-scale evaluation.
-- **Key Insight**: For any system where "average metrics mask local failures," one can learn from SCAN: build a task taxonomy, ensure enough samples per node, and create a navigable failure map.
+- **vs Chatbot Arena**: Chatbot Arena provides trusted rankings through massive human preferences; SCAN provides fine-grained capability profiles with smaller, structured datasets. The former is suitable for macro comparisons, while the latter is better for model diagnosis and training feedback.
+- **vs AlpacaEval / MT-Bench**: These automatic evaluations focus more on overall instruction following or multi-turn dialogue. SCAN emphasizes extracting tags from real queries and deconstructing performance along a capability tree, providing higher interpretability.
+- **vs pairwise LLM-as-a-Judge**: Pairwise is more reliable but costly. PC2 moves the "difference discovery" phase of pairwise to criterion extraction and then scores in a pointwise format, making it more feasible for large-scale evaluation.
+- **Insight**: For any system where "average metrics mask local failures," one can learn from SCAN: first build a task taxonomy, then ensure each node has sufficient samples, and finally present results as a navigable failure map.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Not the first auto-eval framework, but combines taxonomy, synthetic data, PC2 judge, and diagnostic visualization into a complete paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid data scale, judge comparisons, and 21-model analysis, though human evaluation and cross-domain validation could be stronger.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and evidence; some fine-grained results require visiting the project page due to appendix length.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for developers, shifting focus from "leaderboard optimization" to "weakness localization and data loop."
+- Novelty: ⭐⭐⭐⭐☆ Not the first automatic evaluation framework, but it combines taxonomy, synthetic data, PC2 judge, and diagnostic visualization into a complete evaluation paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Data scale, judge comparisons, and analysis of 21 models are solid, though more granular human evaluation and cross-domain validation could be strengthened.
+- Writing Quality: ⭐⭐⭐⭐☆ Motivation is clear, and diagrams provide good support; appendix information is extensive, with some fine-grained results requiring reference to the project page.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for model developers, especially for shifting from "leaderboard optimization" to "weakness positioning and data loops."
 
 <!-- RELATED:START -->
 

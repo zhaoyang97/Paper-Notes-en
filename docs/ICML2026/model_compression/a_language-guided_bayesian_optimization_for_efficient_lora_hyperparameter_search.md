@@ -2,77 +2,81 @@
 title: >-
   [Paper Note] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search
 description: >-
-  [ICML2026][Model Compression][LoRA tuning] This paper represents LoRA hyperparameter configurations as text with domain explanations, allowing a frozen LLM, learnable tokens…
+  [ICML 2026][Model Compression][Paper Note] The paper converts LoRA hyperparameter configurations into text with domain explanations, using a frozen LLM, learnable tokens, and a projection layer to construct a continuous search space for Bayesian Optimization (BO). By employing 10% of the data for proxy evaluation to reduce trial costs, it significantly outperfo
 tags:
-  - "ICML2026"
-  - "Model Compression"
-  - "LoRA tuning"
-  - "Bayesian Optimization"
-  - "LLM embedding"
-  - "surrogate training"
-  - "parameter-efficient fine-tuning"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: ca55a8f802a1922d
+content_hash: 988376f5d44ddef0
 ---
-
 # A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search
 
 **Conference**: ICML2026  
 **arXiv**: [2602.11171](https://arxiv.org/abs/2602.11171)  
-**Code**: Project Page: https://baekseongeun.github.io/lora-bo/ (Code repository not found in cache)  
+**Code**: Project Page: https://baekseongeun.github.io/lora-bo/ (Repository not found in cache)  
 **Area**: Model Compression / LLM Efficiency / Parameter-Efficient Fine-Tuning  
-**Keywords**: LoRA tuning, Bayesian Optimization, LLM embedding, surrogate training, parameter-efficient fine-tuning  
+**Keywords**: LoRA Tuning, Bayesian Optimization, LLM Embeddings, Proxy Training, PEFT
 
 ## TL;DR
-This paper represents LoRA hyperparameter configurations as text with domain explanations, allowing a frozen LLM, learnable tokens, and a projection layer to jointly construct a continuous search space for BO. By utilizing a 10% data proxy for evaluation to reduce per-trial costs, the method significantly outperforms default LoRA configurations and conventional HPO methods within approximately 30 search iterations.
+The paper converts LoRA hyperparameter configurations into text with domain explanations, using a frozen LLM, learnable tokens, and a projection layer to construct a continuous search space for Bayesian Optimization (BO). By employing 10% of the data for proxy evaluation to reduce trial costs, it significantly outperforms default LoRA configurations and conventional HPO methods within approximately 30 search iterations.
 
 ## Background & Motivation
-**Background**: LoRA and its variants have become the most widely used parameter-efficient solutions for fine-tuning large models. In practice, the original model weights are frozen, and only low-rank adapters are trained. Adaptation capability, stability, and computational overhead are controlled through a few hyperparameters such as rank, scaling factor, learning rate, batch size, and dropout.
+**Background**: LoRA and its variants have become the most common parameter-efficient solutions for fine-tuning large models. In practice, the original model weights are frozen, and only low-rank adapters are trained, utilizing a few hyperparameters such as rank, scaling factor, learning rate, batch size, and dropout to control adaptation capability, stability, and computational overhead.
 
-**Limitations of Prior Work**: While LoRA's advantage lies in its few trainable parameters, this does not imply that hyperparameter tuning is straightforward. The paper notes that combinations of rank-to-alpha ratios, learning rate, batch size, and dropout strongly impact final performance, with a full grid space exceeding 45,000 configurations. Exhaustive training is prohibitively expensive, and direct application of random search, Optuna, standard BO, or discrete space optimization fails to explicitly incorporate empirical LoRA principles into the search process.
+**Limitations of Prior Work**: While LoRA's advantage lies in having fewer trainable parameters, it does not imply that hyperparameter tuning is simple. The paper notes that combinations of rank-to-alpha ratios, learning rates, batch sizes, and dropout strongly affect final performance, while the full grid space exceeds 45,000 configurations. Exhaustive training is costly, and directly applying random search, Optuna, standard BO, or discrete space optimization makes it difficult to explicitly incorporate LoRA's empirical rules into the search process.
 
-**Key Challenge**: LoRA HPO faces two primary mismatches. First, most variables are discrete hyperparameters, whereas Gaussian Process (GP)-based BO prefers continuous, smooth, and structured input spaces. Second, while human experts possess empirical knowledge about LoRA tuning—such as the relationship between alpha and rank, the impact of large batches on generalization, and the role of dropout in stability—traditional BO typically only sees numerical encodings and lacks an understanding of these domain semantics.
+**Key Challenge**: LoRA HPO faces two primary misalignments. First, the variables to be searched are mostly discrete hyperparameters, whereas Gaussian Process-based BO prefers continuous, smooth, and structured input spaces. Second, while significant human empirical knowledge exists regarding LoRA tuning—such as the relationship between alpha and rank or the impact of excessive batch size on generalization—traditional BO typically only perceives numerical encodings and cannot understand these domain semantics.
 
-**Goal**: The authors aim to transform LoRA tuning expertise into representations usable by BO, allowing the search to leverage LLM prior knowledge and find high-quality configurations within few real training iterations. Simultaneously, they aim to reduce per-evaluation costs so that a budget of approximately 30 trials can cover a large candidate pool.
+**Goal**: The authors aim to transform LoRA tuning experience into a representation usable by BO, enabling the search to leverage LLM prior knowledge while finding high-quality configurations within a few real training iterations. Additionally, they seek to reduce the cost per evaluation so that a budget of around 30 trials is sufficient to cover a large candidate pool.
 
-**Key Insight**: The observation is that a hyperparameter configuration is not just a set of numbers but can also be a structured linguistic description. Pre-trained LLMs can encode relationships and roles in natural language. By including hyperparameter names, values, functions, and interrelationships in a prompt and mapping the LLM hidden states to a continuous space, discrete configurations can be transformed into continuous representations better suited for BO.
+**Key Insight**: Hyperparameter configurations are not just sets of numbers but can be represented as structured linguistic descriptions. Pre-trained LLMs can encode relationships and roles in natural language. By including names, values, roles, and inter-relationships of hyperparameters in a prompt and mapping the LLM hidden states to a continuous space, discrete configurations can be converted into continuous representations better suited for BO.
 
-**Core Idea**: Use "verbalized LoRA domain knowledge + calibratable LLM embeddings" to replace standard numerical encoding, enabling Bayesian Optimization to select the next set of LoRA hyperparameters within a more semantically structured space.
+**Core Idea**: Replace standard numerical encoding with "verbalized LoRA domain knowledge + calibratable LLM embeddings," allowing Bayesian Optimization to select the next set of LoRA hyperparameters within a semantically structured space.
 
 ## Method
-The proposed method can be understood as a closed-loop tuner for LoRA. In each round, a set of LoRA hyperparameters is selected from a candidate pool, followed by proxy training and evaluation on a small data subset. These hyperparameters are then converted into a text template containing explanations, which is processed by a frozen LLM, learnable tokens, and a projection layer to obtain a continuous vector. Subsequently, these vectors and the corresponding evaluation scores are used to train a GP surrogate. Finally, an acquisition function scores all remaining candidate configurations to select the next configuration for evaluation.
+The proposed method is a closed-loop tuner for LoRA: in each round, a set of LoRA hyperparameters is first selected from a candidate pool; a performance score is obtained via proxy training on a small data subset; this configuration is then written into a text template with domain explanations, compressed into a continuous vector through a frozen LLM, learnable tokens, and a projection layer; these vectors and existing scores are then used to train a GP surrogate. Finally, an acquisition function scores the remaining candidates to select the configuration for the next round.
 
 ### Overall Architecture
-The input is a set of discrete candidate configurations $\mathcal{X}_{cand}$, each containing rank, scaling factor, batch size, learning rate, and dropout rate. The output is the optimal LoRA configuration found within the budget. In the $n$-th round, the framework takes configuration $x_n$, obtains performance $y_n$ via proxy training, and writes $x_n$ into an annotated text template $t_n$. The frozen LLM $\phi$ receives $t_n$ and learnable tokens $\psi$, while the projection layer $P(\cdot;\theta)$ maps the hidden state to BO features $z_n=P(\phi(t_n,\psi);\theta)$. The GP surrogate uses these $z$ and corresponding $y$ to maximize marginal log-likelihood, updating the GP kernel, projection layer, and learnable tokens. Every unevaluated configuration in the candidate pool is also encoded as $z_j$, and the acquisition function selects the next most promising point.
+The input is a set of discrete candidate configurations $\mathcal{X}_{cand}$, each containing rank, scaling factor, batch size, learning rate, and dropout rate; the output is the best LoRA configuration found within the budget. In round $n$, configuration $x_n$ is evaluated via proxy training to get performance $y_n$; $x_n$ is transformed into an explanatory text template $t_n$; a frozen LLM $\phi$ processes $t_n$ and learnable tokens $\psi$, and a projection layer $P(\cdot;\theta)$ maps the hidden state to BO features $z_n=P(\phi(t_n, \psi);\theta)$. The GP surrogate uses all $(z, y)$ to maximize marginal log-likelihood to update the kernel, projection layer, and tokens. Every unevaluated configuration in the candidate pool is similarly encoded as $z_j$ for selection by the acquisition function. The key is not "letting the LLM generate hyperparameters" but letting the LLM construct a continuous embedding space with LoRA domain structure, leaving the exploration/exploitation tradeoff to BO.
 
-The key to this pipeline is not simply "letting the LLM generate hyperparameters," but rather tasking the LLM with constructing a continuous embedding space that incorporates the structural domain knowledge of LoRA, while BO handles the exploration/exploitation tradeoff. This preserves the sample efficiency of BO while avoiding the instability of pure prompt-agent-based searches.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Candidate Pool X_cand<br/>45,000+ Discrete LoRA Configs"] --> B["Select next config x_n<br/>rank / α / lr / batch / dropout"]
+    B --> D["Domain-aware Template t_n<br/>{explanation, name, value}"]
+    D --> E["Learnable Token + Projection<br/>Frozen LLM → z_n = P(φ(t_n,ψ);θ)"]
+    B --> C["Proxy Training Eval<br/>10% subset fine-tune → Perf y_n"]
+    E --> F["GP surrogate (deep kernel)<br/>Maximize MLL with (z,y)"]
+    C --> F
+    F --> G["Acquisition Function<br/>Select next point from X_cand"]
+    G -->|Budget < 30| B
+    G -->|Budget reached| H["Output Best LoRA Config"]
+```
 
 ### Key Designs
-1. **Domain-Aware Text Template**:
-    - **Function**: Rewrites each set of LoRA hyperparameters from discrete numerical encodings into structured text containing names, values, and functional explanations.
-    - **Mechanism**: While standard templates only include `{name, value}`, this work adds `{explanation, name, value}`. The explanation text describes empirical knowledge, such as common relationships between rank and alpha, the effects of different batch sizes on training dynamics, and when dropout is beneficial. Thus, the LLM reads a description of "why this hyperparameter set is important" rather than isolated numbers.
-    - **Design Motivation**: LoRA tuning relies heavily on manual experience, which is lost when feeding numbers directly into BO. By writing experience into the prompt, LLM embeddings can better organize configurations that are "numerically close but semantically different" or "numerically different but functionally similar."
 
-2. **Learnable Tokens and Projection Layer for Embedding Space Calibration**:
-    - **Function**: Transforms the general text representations from the frozen LLM into BO features more suitable for LoRA HPO.
-    - **Mechanism**: The method appends learnable tokens $\psi$ to the prompt, takes the hidden state at the last token position, and passes it through a projection layer $P(\cdot;\theta)$ to obtain $z=P(\phi(t,\psi);\theta)$. LLM parameters remain frozen; only $\psi$, $\theta$, and the GP kernel parameters $\omega$ are trained to maximize the GP marginal log-likelihood.
-    - **Design Motivation**: Original embeddings from a frozen LLM may not be ordered by "LoRA performance." The projection layer reshapes the geometry, while learnable tokens capture residual information difficult to express in prompts, making it easier for the surrogate to fit performance trends with few observation points.
+**1. Domain-Aware Text Templates: Verbalizing Numerical Configs with Empirical Explanations**
 
-3. **Proxy Training Evaluation to Reduce Per-Point Costs**:
-    - **Function**: Uses training on a small data subset to approximate performance on a full dataset, reducing the cost of each function evaluation in BO.
-    - **Mechanism**: Instead of full fine-tuning on a 100K training set each round, fine-tuning is performed on a randomly sampled 10K subset, and the result is fed back to BO as $y_n$. The authors further validated correlations between 1%, 5%, and 10% random subsets and TSDS sampling versus full training, ultimately adopting 10% random sampling.
-    - **Design Motivation**: The bottleneck in HPO is often the training of each candidate rather than surrogate computation. If a 10% subset correlates highly with full results, the search budget can be allocated to more configurations rather than exhausting resources on a single full training run.
+LoRA tuning relies heavily on manual experience, which is lost in GP-based BO that only sees numerical encodings. This method replaces simple `{name, value}` templates with `{explanation, name, value}`, adding text explaining roles and relationships next to each hyperparameter. The LLM processes descriptions of "why this hyperparameter matters," allowing the embedding space to organize configurations more reasonably based on semantics rather than just numerical proximity. This serves as the entry point for injecting human priors.
+
+**2. Calibration via Learnable Tokens and Projection Layers: Aligning General Representations with LoRA Performance**
+
+Raw embeddings from a frozen LLM are arranged by linguistic generality, not necessarily by "LoRA performance," making them insufficient for BO features. The method appends learnable tokens $\psi$ to the prompt, takes the hidden state at the last token position, and passes it through a projection layer $z=P(\phi(t,\psi);\theta)$. While the LLM remains frozen, $\psi$, $\theta$, and the GP kernel parameters $\omega$ are trained to maximize the GP marginal log-likelihood. The projection layer reshapes the embedding geometry to be more sensitive to performance, while learnable tokens act as task-adaptive latent variables.
+
+**3. Proxy Training Evaluation: Approximating Full Data with Small Subsets**
+
+The bottleneck in HPO is the actual training of each candidate. Instead of full fine-tuning on a 100K dataset, each round uses a randomly sampled 10K (10%) subset. The authors validated that the 10% random subset has a correlation of 0.8713 on MATH and 0.9427 on code generation compared to full training, which is sufficient for decision-making. This allows the 30-trial budget to effectively scan a pool of 45,000+ candidates.
 
 ### Loss & Training
-The BO surrogate utilizes a GP and models configuration performance through deep kernel learning after LLM embedding. The standard kernel $k(x,x'|\omega)$ is replaced by $k(g(x;\theta,\psi),g(x';\theta,\psi)|\omega,\theta,\psi)$. During training, the marginal log-likelihood $\mathcal{L}(\Phi)=\log p(y|X,\Phi)$ is maximized, where $\Phi=\{\omega,\theta,\psi\}$. In experiments, all HPO methods are limited to 30 iterations, with a candidate pool covering over 45,000 LoRA configurations. Tasks include mathematical reasoning, code generation, and dialogue, trained on MetaMathQA, CodeFeedback, and WizardLM-Evol-Instruct, and evaluated on GSM8K, MATH, HumanEval, MBPP, and MT-Bench.
+The BO surrogate is a GP using deep kernel learning via LLM embeddings: the standard kernel $k(x,x'|\omega)$ is replaced by $k(g(x;\theta,\psi),g(x';\theta,\psi)|\omega,\theta,\psi)$. Training maximizes the marginal log-likelihood $\mathcal{L}(\Phi)=\log p(y|X,\Phi)$, where $\Phi=\{\omega,\theta,\psi\}$. Iterations are limited to 30. Tasks include mathematical reasoning (MetaMathQA), code generation (CodeFeedback), and dialogue (WizardLM-Evol-Instruct).
 
 ## Key Experimental Results
 
 ### Main Results
-Main results indicate that the proposed method improves various LoRA variants and works across different backbones. Representative results from the LoRA variant table are shown below, where gains are absolute improvements over the original paper/default recommended configurations.
+The method improves various LoRA variants and works across different backbones. Gains shown below are absolute improvements over default/recommended configurations.
 
 | Variant | GSM8K Acc | MATH Acc | HumanEval Pass@1 | MBPP Pass@1 | MT-Bench |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-----------|----------|------------------|-------------|----------|
 | LoRA Default | 41.47 | 5.24 | 16.31 | 35.47 | 7.181 |
 | LoRA + Ours | 62.93 (+21.46) | 12.88 (+7.64) | 30.49 (+14.18) | 42.59 (+7.12) | 7.350 (+0.169) |
 | rsLoRA Default | 41.16 | 5.46 | 16.46 | 35.72 | 7.300 |
@@ -82,10 +86,10 @@ Main results indicate that the proposed method improves various LoRA variants an
 | PiSSA Default | 52.46 | 7.34 | 22.56 | 40.48 | 7.200 |
 | PiSSA + Ours | 60.88 (+8.42) | 12.06 (+4.72) | 31.71 (+9.15) | 41.53 (+1.05) | 7.475 (+0.275) |
 
-Under the same budget of 30 iterations, the proposed method also outperforms common HPO baselines.
+Under the same 30-iteration budget, the method outperforms common HPO baselines.
 
-| Search Method | GSM8K Acc | MATH Acc | HumanEval Pass@1 | MBPP Pass@1 |
-| :--- | :--- | :--- | :--- | :--- |
+| Search Method| GSM8K Acc | MATH Acc | HumanEval Pass@1 | MBPP Pass@1 |
+|----------|-----------|----------|------------------|-------------|
 | Random | 59.14 | 10.51 | 23.17 | 36.77 |
 | Optuna | 54.13 | 10.50 | 27.44 | 38.62 |
 | BO | 57.32 | 11.42 | 20.12 | 35.19 |
@@ -93,55 +97,53 @@ Under the same budget of 30 iterations, the proposed method also outperforms com
 | Ours | 62.93 | 12.88 | 30.49 | 42.59 |
 
 ### Ablation Study
-Ablations confirm that all three components are effective, with domain-aware prompting being the most critical for explicit knowledge injection.
+Ablations confirm that all three components are effective, with domain-aware prompting being the most critical.
 
-| Projection Layer | Domain-Aware Prompt | Learnable Token | GSM8K Acc | MATH Acc | Note |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| ✗ | ✗ | ✗ | 47.76 | 8.72 | Frozen LLM embeddings used directly for BO; poor search space discriminability |
-| ✓ | ✗ | ✗ | 53.98 | 9.16 | Projection layer provides some calibration, but lacks LoRA semantics |
-| ✓ | ✓ | ✗ | 61.41 | 12.46 | Performance significantly improves after explicitly adding tuning knowledge |
-| ✓ | ✓ | ✓ | 62.93 | 12.88 | Learnable tokens further capture information hard to express in prompts |
+| Projection | Domain-aware prompt | Learnable token | GSM8K Acc | MATH Acc | Note |
+|--------|-----------------|--------------|-----------|----------|------|
+| ✗ | ✗ | ✗ | 47.76 | 8.72 | Frozen LLM embeddings used directly for BO |
+| ✓ | ✗ | ✗ | 53.98 | 9.16 | Projection provides calibration, lacks semantics |
+| ✓ | ✓ | ✗ | 61.41 | 12.46 | Performance jumps with tuning knowledge |
+| ✓ | ✓ | ✓ | 62.93 | 12.88 | Tokens capture info not easily verbalized |
 
-Proxy training correlation suggests that a 10% random subset is sufficiently close to full training trends.
+Proxy training correlations show that a 10% random subset adequately tracks full training trends.
 
-| Sampling Method | MATH Reasoning Corr. | Code Gen. Corr. | Conclusion |
-| :--- | :--- | :--- | :--- |
-| Random 1% | 0.7031 | 0.7429 | Captures trend, but noise is high |
-| Random 5% | 0.8360 | 0.9282 | Already relatively stable |
-| Random 10% | 0.8713 | 0.9427 | Adopted in this work; highest correlation in code tasks |
-| TSDS 10% by test | 0.8754 | 0.9290 | Slightly higher for math, but lower for code than random 10% |
-| TSDS 10% by train | 0.8649 | 0.9278 | Close to random 10% |
+| Sampling Method | MATH Correlation | Code Correlation | Conclusion |
+|----------|----------------------|------------------------|------|
+| Random 1% | 0.7031 | 0.7429 | Shows trend but high noise |
+| Random 5% | 0.8360 | 0.9282 | Already stable |
+| Random 10% | 0.8713 | 0.9427 | Adopted; highest code correlation |
+| TSDS 10% by test | 0.8754 | 0.9290 | Slightly higher for MATH |
+| TSDS 10% by train | 0.8649 | 0.9278 | Similar to Random 10% |
 
 ### Key Findings
-- Domain-aware prompt is the largest contributor: adding the projection layer alone raises scores from 47.76/8.72 to 53.98/9.16, but adding prompts further boosts them to 61.41/12.46, proving that verbalizing LoRA knowledge changes the information available to BO.
-- High-performance configurations found during search do not always follow traditional experience; for instance, alpha sometimes reaches 16 or 32 times the rank instead of the usual 2x. This suggests current LoRA tuning rules still have room for discovery.
-- Proxy training is not merely a compute-saving trick. The correlation of the 10% random subset with full results (0.8713 for MATH, 0.9427 for Code) is sufficient for BO to select the next point.
-- Hyperparameters cannot be easily transferred between models. Cross-model configuration experiments show that applying configurations found for one model series to another leads to significant performance drops, making automated per-model search more reliable than reused manual experience.
+- **Domain-aware prompting provides the largest contribution**: Performance jumped from 53.98/9.16 to 61.41/12.46 when prompts were added, confirming that verbalizing LoRA knowledge fundamentally changes the information available to BO.
+- **High-performance configurations do not always follow traditional wisdom**: For example, alpha sometimes reached 16x or 32x the rank, rather than the common 2x.
+- **Proxy training is not just a computational trick**: The high correlation (e.g., 0.9427 for code) between 10% subsets and full training results justifies its use for BO point selection.
+- **Hyperparameters do not transfer easily across models**: Searching per model is more reliable than manually reusing configurations.
 
 ## Highlights & Insights
-- The ingenuity of this paper lies in not asking the LLM to directly "guess" hyperparameters, but rather making the LLM the representation function for BO. Thus, the LLM provides semantic structure while BO handles the black-box optimization, creating a clear division of labor.
-- The learnable token serves as a lightweight yet practical calibration point. While a prompt can state human-known rules, it cannot exhaust all residual information; allowing a token to update with the marginal likelihood acts as a latent variable that adapts to the current task.
-- Validation of proxy evaluation is crucial. Many HPO papers assume subset training by default for efficiency, but this work explicitly compares sampling ratios and TSDS, showing that the 10% random subset is a well-founded choice.
-- This approach is transferable to other discrete HPO problems, such as quantization configurations, distillation hyperparameters, RAG retrieval parameters, or inference-time decoding parameters. Any expert knowledge that can be verbalized can be used to set up structured prompts for BO search.
+- The ingenious aspect is not using the LLM to "guess" hyperparameters, but to act as a representation function for BO. The LLM provides semantic structure, while BO handles black-box optimization.
+- Learnable tokens are a lightweight calibration tool. Prompts express known human rules, while tokens captured residual task-specific information via marginal likelihood updates.
+- This approach can be extended to other discrete HPO problems, such as quantization, distillation, or RAG parameters, wherever verbalizable expert knowledge exists.
 
 ## Limitations & Future Work
-- The paper primarily validates LoRA and a few variants and has yet to prove that the same verbalized BO representation generalizes to all PEFT methods or non-LLM tasks.
-- The method depends on the embedding quality of the pre-trained LLM. Performance might decrease with weaker embedding models or if domain knowledge cannot be clearly expressed in prompts; although an embedding model ablation is provided, redistribution requires re-validation.
-- Performance is strong under a 30-iteration budget, but the candidate pool remains a manually defined discrete range. Optimal points outside this range cannot be discovered regardless of representation quality.
-- Proxy training assumes that subset performance remains highly correlated with full performance. This assumption might fail for small datasets, strong distribution shifts, or long-tail tasks, necessitating dynamic subset selection or multi-fidelity BO.
-- Currently, the search target is primarily benchmark scores. Future work could include multi-objective constraints like training cost, VRAM usage, latency, and stability to bring LoRA configurations closer to real-world deployment.
+- The study primarily focuses on LoRA and its variants; whether this verbalized BO representation generalizes to all PEFT methods or non-LLM tasks is unproven.
+- The method depends on the embedding quality of the pre-trained LLM. Weak embedding models might degrade performance.
+- The 30-iteration budget works well, but search is still limited to a predefined discrete candidate range.
+- Proxy training assumes high correlation with full training. This may fail for small datasets or heavy distribution shifts, suggesting potential for multi-fidelity BO.
 
 ## Related Work & Insights
-- **vs. Traditional BO / Optuna / LBO**: These treat configurations as numerical or latent variables. This work extractions LoRA domain knowledge and LLM text understanding, making it easier to find superior configurations within the same 30-iteration budget.
-- **vs. NOMAD-style LoRA HPO**: NOMAD also targets LoRA tuning, but this work achieves better results on GSM8K/MATH/HumanEval/MBPP within 24 hours compared to the 180 hours required by Tribes et al., owing to more efficient search space representation and proxy evaluation.
-- **vs. Manual Tuning Experience**: Manual experience often provides fixed rules for rank, alpha, and batch size. This work finds that larger alpha/rank ratios are sometimes more effective, suggesting automated search can update empirical rules.
-- **vs. LLM Agent-based Tuning**: Directly letting an LLM propose configurations is prone to prompt sensitivity and sampling instability. This work keeps the LLM as a trainable representation while optimization is handled by an acquisition function, effectively embedding LLM priors into a classic HPO framework.
+- **vs. Traditional BO / Optuna / LBO**: These treat configs as numbers; this method leverages domain knowledge and LLM understanding, finding better configs within the same 30-trial budget.
+- **vs. NOMAD**: NOMAD also targets LoRA HPO, but this method achieves better results on GSM8K/MATH within 24 hours than NOMAD does in 180 hours.
+- **vs. Manual Tuning**: Manual rules often suggest fixed ratios; this method finds that larger alpha/rank ratios are sometimes superior, potentially updating existing heuristics.
+- **vs. LLM-Agent Tuning**: Direct LLM proposals are unstable; this method uses LLMs only for representation, while optimization is handled by the acquisition function.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Combines LLM representation, domain prompts, learnable tokens, and BO for LoRA HPO; the problem framing is highly practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers LoRA variants, multiple models, HPO baselines, component ablations, and proxy evaluation, though real-world industrial deployment dimensions could be expanded.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology chain with strong tabular support; formulas and algorithms might be slightly challenging for non-BO readers.
-- Value: ⭐⭐⭐⭐⭐ Extremely valuable for scenarios requiring frequent LLM fine-tuning; the core idea is transferable to other expert-knowledge-driven discrete search problems.
+- Novelty: ⭐⭐⭐⭐☆ Combines LLM representation, domain prompts, tokens, and BO for practical LoRA HPO.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers variants, model backbones, and HPO baselines.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology; tables are well-supported.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for frequent LLM fine-tuning; core ideas are transferable to other discrete search problems.
 
 <!-- RELATED:START -->
 
@@ -149,11 +151,11 @@ Proxy training correlation suggests that a 10% random subset is sufficiently clo
 
 ## Related Papers
 
+- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](../../CVPR2026/model_compression/sg-lora_semantic-guided_lora_parameters_generation.md)
+- [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](../../CVPR2026/model_compression/tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 - [\[AAAI 2026\] Renormalization Group Guided Tensor Network Structure Search](../../AAAI2026/model_compression/renormalization_group_guided_tensor_network_structure_search.md)
 - [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](../../NeurIPS2025/model_compression/learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
 - [\[ICML 2026\] Active Budget Allocation for Efficient Scaling Law Estimation via Surrogate-Guided Pruning](active_budget_allocation_for_efficient_scaling_law_estimation_via_surrogate-guid.md)
-- [\[NeurIPS 2025\] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](../../NeurIPS2025/model_compression/robust_federated_finetuning_of_llms_via_alternating_optimization_of_lora.md)
-- [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](../../AAAI2026/model_compression/efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 
 </div>
 

@@ -2,76 +2,105 @@
 title: >-
   [Paper Note] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 description: >-
-  [CVPR 2026][3D Vision][3D geometry generation acceleration] This paper proposes Fast3Dcache, a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates cache budgets via Predictive…
+  [CVPR 2026][3D Vision][Diffusion Model] Fast3Dcache is proposed as a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates caching budgets using Predictive Cache Scheduling Constraints (PCSC) based on voxel stabilization patterns and selects stable tokens for reuse via the Spatio-temporal Stability Criterion (SSC) b
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D geometry generation acceleration"
-  - "caching mechanism"
-  - "voxel stabilization"
-  - "training-free"
-  - "diffusion models"
+  - CVPR 2026
+  - 3D Vision
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 0e1fb12b0b3333c6
+content_hash: f1aa8baf88da7b56
 ---
-
 # Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22533](https://arxiv.org/abs/2511.22533)  
 **Code**: [https://fast3dcache-agi.github.io](https://fast3dcache-agi.github.io)  
-**Area**: 3D Vision
-**Keywords**: 3D geometry generation acceleration, caching mechanism, voxel stabilization, training-free, diffusion models
+**Area**: 3D Vision  
+**Keywords**: 3D Geometry Synthesis Acceleration, Caching Mechanism, Voxel Stability, Training-free, Diffusion Models
 
 ## TL;DR
 
-This paper proposes Fast3Dcache, a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates cache budgets via Predictive Cache Scheduling Constraint (PCSC) based on voxel stabilization patterns, and selects stable tokens for reuse via Spatiotemporal Stability Criterion (SSC) using velocity and acceleration signals. The method achieves up to 27.12% throughput improvement and 54.83% FLOPs reduction with only ~2% degradation in geometric quality.
+Fast3Dcache is proposed as a training-free geometry-aware caching framework for 3D diffusion models. It dynamically allocates caching budgets using Predictive Cache Scheduling Constraints (PCSC) based on voxel stabilization patterns and selects stable tokens for reuse via the Spatio-temporal Stability Criterion (SSC) based on velocity and acceleration. It achieves up to a 27.12% increase in throughput and a 54.83% reduction in FLOPs, with only about a 2% loss in geometric quality.
 
 ## Background & Motivation
 
-1. **Background**: Cache-based acceleration has achieved notable success in 2D image and video diffusion models by reusing intermediate computations from preceding timesteps to reduce redundant inference. Representative methods include various feature caching techniques.
+1. **Background**: Cache-based acceleration methods have succeeded in 2D image and video diffusion models by reusing intermediate computations from previous timesteps to reduce redundant inference. Representative methods include various feature caching techniques.
 2. **Limitations of Prior Work**:
-    - Directly transferring 2D caching strategies to 3D diffusion models severely disrupts geometric consistency;
-    - Minor texture errors in 2D/video are perceptually negligible, whereas numerical errors in 3D voxel/point predictions directly affect topology and spatial integrity, leading to surface holes, geometric distortion, or non-manifold meshes;
-    - Existing 3D acceleration methods (e.g., Hash3D) are not applicable to diffusion frameworks.
-3. **Key Challenge**: 2D caching exploits perceptual redundancy, whereas 3D geometry demands strict numerical correctness—small accumulated errors can lead to topological catastrophe.
-4. **Goal**: How to safely cache and reuse computations during 3D diffusion inference while maintaining geometric fidelity alongside acceleration?
-5. **Key Insight**: The paper analyzes the evolution of voxel occupancy fields during the sparse structure generation stage in the TRELLIS framework, revealing a three-phase stabilization pattern (unstable → log-linear decay → fine-tuning), and designs adaptive caching strategies accordingly.
-6. **Core Idea**: By exploiting the predictable decay pattern of voxel state changes during 3D generation, the method dynamically determines *how many tokens to cache* (PCSC) and *which tokens to cache* (SSC), enabling geometry-aware acceleration.
+    - Direct migration of 2D caching strategies to 3D diffusion models severely disrupts geometric consistency.
+    - While small texture errors in 2D/video are visually negligible, numerical errors in 3D voxel/point predictions directly affect topology and spatial integrity, leading to surface holes, geometric distortions, or non-manifold meshes.
+    - Existing 3D acceleration methods (e.g., Hash3D) are not applicable to the diffusion framework.
+3. **Key Challenge**: 2D caching exploits perceptual redundancy, but 3D requires strict geometric correctness; small accumulated errors can result in topological disasters.
+4. **Goal**: How to safely cache and reuse computations in 3D diffusion inference to achieve acceleration while maintaining geometric fidelity.
+5. **Key Insight**: Analysis of the evolution of the voxel occupancy field in the sparse structure generation stage of the TRELLIS framework reveals a three-phase stabilization pattern (unstable → log-linear decay → fine-tuning), which enables the design of adaptive caching strategies.
+6. **Core Idea**: Adaptive acceleration is achieved by utilizing the predictable decay pattern of voxel state changes in 3D generation to determine "how much to cache" (PCSC) and "what to cache" (SSC).
 
 ## Method
 
 ### Overall Architecture
 
-Fast3Dcache divides inference into three phases: Phase 1 (full sampling) establishes initial stability and calibrates PCSC; Phase 2 (dynamic caching) uses PCSC to determine the per-step cache budget and SSC to select tokens for reuse, with a full refresh every $\tau$ steps; Phase 3 (CFG-Free Refinement) applies a fixed high cache ratio.
+Fast3Dcache addresses the slow inference speed of 3D diffusion. It observes the rhythm of 3D generation—where the voxel occupancy field in the sparse structure generation stage undergoes three phases: intense flipping, log-linear decay, and near-stasis. This determines the caching strategy for each step.
+
+The inference process is divided into three phases. Phase 1 performs full sampling to build coarse geometry and records the initial voxel flipping rate at an anchor step. Phase 2 introduces dynamic caching: PCSC calculates the budget based on the decay trend, and SSC selects the most stable tokens for reuse, applying self-attention only to the remaining unstable tokens. Periodic full refreshes every $\tau$ steps clear accumulated errors. Phase 3 (CFG-Free Refinement) utilizes a fixed high cache ratio $\xi$ as the geometry has largely converged.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["3D Diffusion Inference<br/>(TRELLIS Sparse Structure Generation)"] --> P1
+    subgraph P1["Phase 1: Full Sampling for Coarse Geometry"]
+        direction TB
+        A["Step-wise Full Sampling"] --> B["Anchor Step<br/>Measure Initial Voxel Flipping σ"]
+    end
+    P1 --> P2
+    subgraph P2["Phase 2: Dynamic Caching"]
+        direction TB
+        C["Predictive Cache Scheduling Constraint PCSC<br/>Extrapolate Δŝ → Cache Budget c_t"] --> D["Spatio-temporal Stability Criterion SSC<br/>Select Stable Tokens with Lowest C_i"]
+        D --> E["Self-attention on Unstable Tokens Only"]
+        E -->|"Every τ steps"| G["Periodic Full Refresh<br/>Clear Accumulated Errors"]
+    end
+    P2 --> P3
+    subgraph P3["Phase 3: CFG-Free Refinement"]
+        direction TB
+        F["Fixed High Cache Ratio ξ<br/>Full Refresh Every f_corr Steps"]
+    end
+    P3 --> OUT["3D Geometry Output"]
+```
 
 ### Key Designs
 
-1. **Predictive Cache Scheduling Constraint (PCSC)**:
-    - **Function**: Dynamically determines how many tokens to cache at each timestep based on the decay trend of voxel stabilization.
-    - **Mechanism**: The voxel occupancy change $\Delta s_t = \sum_{i,j,k} (\mathcal{O}_{t+1}(i,j,k) \oplus \mathcal{O}_t(i,j,k))$ during denoising exhibits a three-phase pattern: high volatility in Phase 1, log-linear decay in Phase 2, and rapid stabilization in Phase 3. At the anchor step marking the end of Phase 1, the initial change magnitude $\sigma$ is calibrated; subsequent changes are predicted using a fixed slope $\mu$: $\Delta\hat{s} = \sigma \cdot e^{\mu \cdot (t - \lceil T \cdot \rho_a \rceil)}$. The cache budget is then: $c_t = D^3 - \frac{\Delta\hat{s}_t}{\gamma_{\text{up}}}$
-    - **Design Motivation**: Unlike the fixed caching ratios used in 2D, the stability of 3D geometry generation varies dramatically across phases. PCSC adaptively allocates budget—caching less in early stages (to protect coarse structure formation) and more in later stages (to exploit geometric convergence). Experiments show that fixed ratios yield CD of 0.0956, whereas PCSC achieves 0.0697.
+**1. Predictive Cache Scheduling Constraint (PCSC): Determining budget per step via decay curves**
 
-2. **Spatiotemporal Stability Criterion (SSC)**:
-    - **Function**: Precisely selects which tokens can be safely cached given a cache budget.
-    - **Mechanism**: A cacheability score is computed for each token: $C_i(t) = \omega \cdot \text{norm}(A_i(t)) + (1-\omega) \cdot \text{norm}(V_i(t))$, where velocity magnitude $V_i(t) = \|v_i(t)\|_2$ reflects feature update intensity, and acceleration $A_i(t) = \|v_i(t) - v_i(t-1)\|_2$ reflects velocity stability (i.e., instantaneous cache error, ICE). Tokens with lower scores are more stable and thus more suitable for caching. Self-attention is computed only for the unstable subset.
-    - **Design Motivation**: Velocity magnitude alone is insufficient—tokens with high but directionally stable velocity can still be cached safely (low error). Acceleration alone is also insufficient—tokens with low acceleration but high velocity are still undergoing large updates. The two metrics are complementary, providing finer-grained stability judgment. Ablations confirm that their joint use ($\omega=0.7$) significantly outperforms either individual metric.
+Instead of using a fixed ratio (e.g., 25% throughout), which would harm early coarse structures or waste late-stage convergence benefits, PCSC links the cache budget to actual voxel changes. The voxel occupancy change $\Delta s_t$ is defined as the sum of XOR operations between adjacent timesteps:
 
-3. **Three-Phase Pipeline Integration**:
-    - **Function**: Integrates PCSC and SSC into an end-to-end acceleration workflow.
-    - **Mechanism**: Phase 1 performs full sampling to establish base geometry and calibrates PCSC at its conclusion. Phase 2 applies dynamic caching with PCSC+SSC, with full refreshes every $\tau$ steps to eliminate error accumulation. Phase 3 uses a fixed high cache ratio $\xi$ with full refreshes every $f_{\text{corr}}$ steps.
-    - **Design Motivation**: The three phases correspond to the natural evolution of 3D generation. Error-accumulation elimination steps (full refresh every $\tau$ steps) are essential—completely disabling them degrades CD to 0.0724 and F-Score to 51.8157.
+$$\Delta s_t = \sum_{i,j,k} \big(\mathcal{O}_{t+1}(i,j,k) \oplus \mathcal{O}_t(i,j,k)\big)$$
+
+This follows a three-phase pattern: high fluctuation, log-linear decay, and abrupt stabilization. After the anchor step at $\lceil T \cdot \rho_a \rceil$, $\Delta s_t$ is extrapolated using a fixed slope $\mu$:
+
+$$\Delta\hat{s}_t = \sigma \cdot e^{\mu \cdot (t - \lceil T \cdot \rho_a \rceil)}$$
+
+The cache budget $c_t = D^3 - \frac{\Delta\hat{s}_t}{\gamma_{\text{up}}}$ increases naturally as predicted changes decrease. This adaptive allocation is more stable than fixed ratios (CD of 0.0697 vs. 0.0956).
+
+**2. Spatio-temporal Stability Criterion (SSC): Selecting stable tokens within the budget**
+
+SSC assigns a cacheability score to each token to ensure that only truly stable ones are reused:
+
+$$C_i(t) = \omega \cdot \text{norm}(A_i(t)) + (1-\omega) \cdot \text{norm}(V_i(t))$$
+
+Velocity $V_i(t) = \|v_i(t)\|_2$ measures the magnitude of feature updates, while acceleration $A_i(t) = \|v_i(t) - v_i(t-1)\|_2$ measures the stability of that velocity (Instantaneous Cache Error, ICE). Using both with $\omega=0.7$ outperforms any single metric.
+
+**3. Three-Phase Pipeline and Periodic Refresh**
+
+Since caching accumulates drift, Phase 2 implements a full refresh every $\tau$ steps to reset errors. Disabling this refresh leads to significant degradation (CD drops to 0.0724). Phase 3 uses a high fixed ratio $\xi$ and refreshes every $f_{\text{corr}}$ steps.
 
 ### Loss & Training
 
-Fast3Dcache requires no training whatsoever and is a purely inference-time acceleration method. Hyperparameters include: anchor ratio $\rho_a$, decay slope $\mu$ (default -0.07), refresh interval $\tau$, Phase 3 fixed cache ratio $\xi$, acceleration weight $\omega$ (default 0.7), and correction frequency $f_{\text{corr}}$.
+Fast3Dcache is entirely training-free. Hyperparameters include anchor ratio $\rho_a$, decay slope $\mu$ (default -0.07), refresh interval $\tau$, Phase 3 ratio $\xi$, and acceleration weight $\omega$ (default 0.7).
 
 ## Key Experimental Results
 
-### Main Results (TRELLIS Framework, Toys4K Dataset)
+### Main Results (TRELLIS framework, Toys4K Dataset)
 
 | Method | Throughput↑ | FLOPs(T)↓ | CD↓ | F-Score↑ |
-|--------|-------------|-----------|-----|----------|
+|:---|:---|:---|:---|:---|
 | TRELLIS vanilla | 0.5055 | 244.2 | 0.0686 | 54.8244 |
 | RAS (25%) | 0.6337 (+25.36%) | 125.1 (-48.77%) | 0.0867 (+26.38%) | 40.2769 (-26.53%) |
 | RAS (12.5%) | 0.6177 (+22.20%) | 125.8 (-48.48%) | 0.0846 (+23.32%) | 43.9622 (-19.81%) |
@@ -82,45 +111,44 @@ Fast3Dcache requires no training whatsoever and is a purely inference-time accel
 ### Ablation Study (SSC Components)
 
 | Configuration | CD↓ | F-Score↑ |
-|---------------|-----|----------|
-| No SSC (standard deviation filtering) | 0.0743 | 50.9974 |
-| Velocity only $V_i$ | 0.0836 | 44.9630 |
-| Acceleration only $A_i$ | 0.0709 | 53.5394 |
-| Joint $\omega=0.7$ | **0.0697** | **54.0900** |
+|:---|:---|:---|
+| w/o SSC (std. dev) | 0.0743 | 50.9974 |
+| Velocity $V_i$ only | 0.0836 | 44.9630 |
+| Acceleration $A_i$ only | 0.0709 | 53.5394 |
+| Combined $\omega=0.7$ | **0.0697** | **54.0900** |
 
 ### Key Findings
 
-- RAS (a 2D method directly transferred to 3D) causes severe geometric degradation (F-Score drops 27%), validating the central claim that 3D generation requires geometry-aware caching.
-- At $\tau=8$, throughput improves by 27.12% and FLOPs decrease by 54.83%, while CD increases by only 2.48% and F-Score drops by only 1.95%.
-- Combining with TeaCache achieves 3.41× acceleration, with geometric quality superior to TeaCache alone (CD 0.0701 vs. 0.0705), demonstrating that Fast3Dcache is complementary to general-purpose accelerators.
-- Acceleration $A_i$ is a more effective standalone metric than velocity $V_i$ (CD 0.0709 vs. 0.0836), as acceleration directly measures instantaneous cache error.
-- The PCSC slope $\mu$ exhibits relative robustness over a ±10× range (CD 0.0697–0.0707).
+- Direct migration of 2D methods (RAS) causes severe geometric degradation, validating the need for geometry-aware caching.
+- At $\tau=8$, throughput increases by 27.12% and FLOPs decrease by 54.83%, with minimal impact on CD and F-Score.
+- Fast3Dcache is complementary to TeaCache; combined, they achieve 3.41× speedup with better quality than TeaCache alone.
+- Acceleration $A_i$ is a more effective indicator of stability than velocity $V_i$.
 
 ## Highlights & Insights
 
-- **Three-phase stabilization pattern of 3D geometry**: This empirical finding (unstable → log-linear decay → fine-tuning) is likely not unique to TRELLIS but may represent a universal characteristic of 3D diffusion generation, providing a theoretical foundation for future 3D diffusion acceleration work.
-- **Decoupled design of "cache budget + token selection"**: PCSC handles macro-level scheduling while SSC handles micro-level selection, with clearly separated responsibilities. This hierarchical design is generalizable to other inference acceleration scenarios requiring adaptive computation allocation.
-- **Joint stability measure via velocity and acceleration**: Neither velocity magnitude nor its rate of change alone is sufficient; the two are complementary. This insight is analogous to simultaneously considering velocity and acceleration in physics to characterize motion state.
+- **Three-Phase Stabilization Pattern**: The observation of "unstable → log-linear decay → fine-tuning" might be a universal law for 3D diffusion models, providing a foundation for future acceleration work.
+- **Decoupled Design**: The separation of macro scheduling (PCSC) and micro selection (SSC) allows for generalized application in other adaptive compute scenarios.
+- **Joint Stability Metric**: Combining velocity and acceleration mimics physical motion tracking, ensuring that persistent but stable updates are handled correctly.
 
 ## Limitations & Future Work
 
-- Only the sparse structure generation stage of TRELLIS is accelerated; the SLat generation stage remains unoptimized, potentially limiting overall end-to-end speedup.
-- While training-free, the three-phase boundaries ($\rho_a$) and parameters ($\mu$, $\omega$, $\tau$, $\xi$, $f_{\text{corr}}$) require tuning and may vary across tasks and datasets.
-- The caching strategy assumes a consistent voxel decay rate $\mu$ across samples, which may not hold for geometrically extreme cases (e.g., highly complex or fine-grained structures).
-- Validation is limited to the TRELLIS and DSO frameworks; applicability to implicit representations (e.g., Hunyuan3D's set-based latent) remains unknown.
+- Currently only accelerates the sparse structure generation stage in TRELLIS; the SLat stage remains unoptimized.
+- Relies on hyperparameters ($\mu, \tau$, etc.) that may require tuning across different tasks.
+- Assumes a constant decay rate $\mu$, which might not hold for extremely complex or fine-grained geometries.
+- Performance on implicit representations like Hunyuan3D remains unverified.
 
 ## Related Work & Insights
 
-- **vs. RAS**: Directly transferring this 2D DiT caching method to 3D causes F-Score to collapse by 27%. Fast3Dcache limits quality loss to 2% through geometry-aware design.
-- **vs. TeaCache**: A general-purpose accelerator that is complementary to Fast3Dcache. Their combination yields a super-additive effect (1+1>2), indicating that modality-aware and modality-agnostic acceleration can be stacked.
-- **vs. Hash3D**: Explores 3D acceleration but is inapplicable to diffusion frameworks. Fast3Dcache is specifically designed for diffusion/Flow Matching.
+- **vs RAS**: Direct 2D DiT caching fails in 3D (27% F-Score drop). Ours keeps loss within 2%.
+- **vs TeaCache**: Ours is complementary and achieves synergy when combined.
+- **vs Hash3D**: While Hash3D explored 3D acceleration, it is not tailored for diffusion/flow-matching frameworks like ours.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The three-phase stabilization observation and the PCSC/SSC designs are original, though the core approach is an adaptation of caching methods to 3D.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive ablations (PCSC/SSC/τ), multi-framework validation (TRELLIS+DSO), and complementarity experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ The motivation–observation–design logical chain is clear, and visualizations are excellent.
-- **Value**: ⭐⭐⭐⭐ Practically valuable for inference acceleration in 3D generation; open-source and easy to use.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -130,9 +158,20 @@ Fast3Dcache requires no training whatsoever and is a purely inference-time accel
 
 - [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
 - [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
-- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
-- [\[CVPR 2026\] FE2E: From Editor to Dense Geometry Estimator](from_editor_to_dense_geometry_estimator.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[CVPR 2025\] Hash3D: Training-free Acceleration for 3D Generation](../../CVPR2025/3d_vision/hash3d_training-free_acceleration_for_3d_generation.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2026\] FE2E: From Editor to Dense Geometry Estimator](from_editor_to_dense_geometry_estimator.md)
 
 </div>
 

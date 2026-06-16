@@ -1,128 +1,116 @@
 ---
 title: >-
-  [Paper Note] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
+  [Paper Note] EVATok: 自适应长度视频Tokenization用于高效视觉自回归生成
 description: >-
-  [CVPR 2026][Image Generation][video tokenizer] This paper proposes EVATok, a four-stage framework that first uses a proxy tokenizer to estimate the optimal token allocation for each video…
+  [CVPR 2026][Image Generation][video tokenizer] The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "video tokenizer"
-  - "adaptive tokenization"
-  - "autoregressive generation"
-  - "proxy reward"
-  - "Q-Former"
+  - CVPR 2026
+  - Image Generation
+  - video tokenizer
+  - adaptive token
+  - autoregressive generation
+  - efficiency
+  - VQ-VAE
 date: 2026-05-08
-content_hash: 137560709bbdaa79
+content_hash: 7f356394d6a7c3ea
 ---
-
 # EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12267](https://arxiv.org/abs/2603.12267)  
 **Code**: [Project Page](https://silentview.github.io/EVATok/)  
-**Area**: Image Generation
-**Keywords**: video tokenizer, adaptive tokenization, autoregressive generation, proxy reward, Q-Former
+**Area**: Video Understanding / Video Generation / Model Compression  
+**Keywords**: video tokenizer, adaptive token, autoregressive generation, efficiency, VQ-VAE
 
 ## TL;DR
-
-This paper proposes EVATok, a four-stage framework that first uses a proxy tokenizer to estimate the optimal token allocation for each video, then trains a lightweight router to predict these allocations in a single forward pass, and finally trains an adaptive tokenizer that flexibly assigns token counts according to content complexity. On UCF-101, EVATok achieves state-of-the-art generation quality with a 24.4% reduction in token count.
+The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality on UCF-101.
 
 ## Background & Motivation
+Autoregressive (AR) video generation relies on video tokenizers to compress pixels into discrete token sequences. The length of these sequences directly determines the computational cost of downstream generation. Existing video tokenizers allocate a fixed number of tokens uniformly to all temporal blocks, disregarding differences in content complexity. However, information density in videos is highly non-uniform: static backgrounds, repetitive textures, and slow-moving clips contain minimal information, whereas fast motion, scene cuts, and fine textures exhibit high information density.
 
-**Background**: The core pipeline of autoregressive video generation first compresses pixels into a discrete token sequence via a video tokenizer, then models the token sequence with an AR model. The length of the token sequence directly determines the computational cost of downstream generation—longer sequences lead to quadratically increasing attention complexity.
-
-**Limitations of Prior Work**: Nearly all video tokenizers allocate the same number of tokens to different videos and different temporal segments. However, information density in video is highly non-uniform—segments with static backgrounds or repetitive textures carry little information, while segments with rapid motion or scene transitions are information-dense. This one-size-fits-all fixed allocation wastes tokens on simple segments (where reconstruction quality has already saturated) and under-allocates tokens to complex segments (leading to quality degradation from under-representation).
-
-**Key Challenge**: Adaptive allocation requires knowing "what the optimal allocation is," but (1) how should "optimal" be defined? A quantifiable quality-efficiency trade-off metric is needed; (2) searching for the optimal allocation per video is computationally prohibitive; (3) the tokenizer architecture must support variable-length input. Prior methods such as ElasticTok rely on threshold-based heuristic search and AdapTok uses mini-batch ILP—both yielding locally sub-optimal solutions.
-
-**Key Insight**: EVATok defines a proxy reward metric to quantify the quality-cost trade-off of a given allocation, uses brute-force search to find the optimal allocation per video as supervision, and trains a lightweight router to predict the optimal allocation in a single forward pass, thereby bypassing the search stage. **Core Idea**: The problem of "finding the optimal allocation" is reformulated as a classification task, replacing expensive per-sample search with a single forward pass of a small model.
+## Core Problem
+Uniform token allocation wastes tokens on simple clips (where reconstruction quality saturates quickly) and provides insufficient tokens for complex clips (leading to poor expression). The challenge lies in adaptively allocating the optimal number of tokens across different videos and clips. Three main hurdles exist: (1) How is "optimal" defined? It requires finding a Pareto optimum between reconstruction quality and efficiency. (2) Optimal allocation varies per video, and per-video optimization is too slow. (3) The tokenizer must be capable of handling variable-length token inputs.
 
 ## Method
 
 ### Overall Architecture
+EVATok addresses the waste caused by uniform allocation in videos with varying information density. The framework enables the tokenizer to adaptively determine the token count for each temporal block. The pipeline consists of three sequential steps: ① Estimating the optimal token allocation for each video to serve as a supervision signal; ② Training a lightweight router to rapidly predict this allocation; ③ Training the final adaptive tokenizer, guided by the router’s allocation, to handle variable token lengths for downstream AR generation. The core difficulty lies in step ①—since "optimal allocation" was previously undefined, this work employs a proxy tokenizer and a proposed proxy reward to convert it into an enumerable optimization problem. An enhancement recipe, integrating a video semantic encoder for representation alignment, is applied throughout the tokenizer training.
 
-EVATok proceeds through four sequential stages: Stage 1 trains a proxy tokenizer capable of reconstructing video under any token allocation → Stage 2 uses the proxy tokenizer to brute-force search optimal allocations over 100k videos, constructing a (video, optimal allocation) training set → Stage 3 trains a lightweight ViT-S router, modeling optimal allocation prediction as a classification task → Stage 4 uses the router's guidance to train the final adaptive tokenizer from scratch.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Video Clip"] --> B["Proxy Reward + Proxy Tokenizer<br/>Iterate through candidate allocations, select optimal token<br/>count per segment based on reconstruction-cost balance"]
+    B --> C["(Video, Optimal Allocation) Classification Dataset"]
+    C --> D["Lightweight Router<br/>Learn to predict optimal allocation (Classification task)"]
+    D --> E["Adaptive Tokenizer Training<br/>Encode variable tokens based on router allocation"]
+    F["Integrated Video Semantic Encoder<br/>Representation Alignment + Semantic Discriminator"] -.Enhanced Training.-> E
+    E --> G["Downstream AR Generation<br/>Variable token sequences"]
+```
 
 ### Key Designs
 
-1. **Proxy Reward and Optimal Allocation Definition**:
+**1. Proxy Reward + Proxy Tokenizer: Defining and Solving "Optimal Allocation"**
 
-    - **Function**: Quantify the quality-cost trade-off of each token allocation scheme for each video.
-    - **Mechanism**: Define $R_{\text{proxy}} = w_q Q(\mathcal{E},x,a) - w_l L(a)$, where $Q$ is reconstruction quality (normalized LPIPS), $L(a)$ is normalized token length, and $w_q, w_l$ are preference weights. All $5^4=625$ candidate allocations are enumerated per video, and the one maximizing the proxy reward is designated as the optimal allocation $a^*$.
-    - **Design Motivation**: Prior methods lack an explicit definition of "optimality" and rely on heuristic search prone to local optima. The proxy reward unifies quality and cost into a single scalar, making the optimal allocation computable and comparable.
+To allocate tokens by complexity, one must first determine the "optimal" number for each block. Previous adaptive tokenizers relied on threshold searching or heuristic Integer Linear Programming (ILP) within mini-batches, which lacked global quality-cost balance. This work formalizes this as an "allocation identification problem maximizing proxy reward." The proxy reward characterizes the trade-off between reconstruction quality and token cost (sequence length). To calculate this for any allocation, a proxy tokenizer is first trained to reconstruct videos under various allocations. Then, by iterating through all candidate allocations for a given video, the one with the maximum proxy reward is identified as optimal. This creates a supervision dataset of (Video, Optimal Allocation) pairs for the router, a process that is performed offline only once.
 
-2. **Lightweight Router**:
+**2. Lightweight Router: Compressing Expensive Enumeration into Forward Prediction**
 
-    - **Function**: Predict the optimal token allocation for an input video in a single forward pass, replacing brute-force search.
-    - **Mechanism**: A ViT-S architecture (19.9M parameters) patchifies the video and appends a [CLS] token, outputting probabilities over $m^T$ allocation categories. Trained as a classification task with cross-entropy loss on the 100k-sample dataset constructed in Stage 2.
-    - **Design Motivation**: Brute-force search requires 625 forward passes per video; the router compresses this to one. Experiments show that the router's predictions approach the Pareto frontier of brute-force search and generalize to datasets unseen during training.
+The enumeration in step ① is too slow for real-time use. To solve this, a small router is trained to predict the optimal allocation directly from video clip features as a classification task. During inference, the router provides the token budget for all clips in a single forward pass with negligible overhead. Experiments show that router predictions align with the true optimal allocation with $>90\%$ consistency, indicating that clip complexity is highly predictable from visual features.
 
-3. **Q-Former-Style 1D Variable-Length Tokenizer**:
+**3. Adaptive Tokenizer: Processing Variable-Length Tokens via Router Allocation**
 
-    - **Function**: An encode-decode architecture supporting different numbers of tokens for different temporal blocks.
-    - **Mechanism**: After spatio-temporal patchification of the input video, 1D queries of varying counts are initialized according to the allocation scheme $a=(k_1,...,k_T)$. These interact with 3D embeddings via Q-Former encoder layers, then undergo VQ quantization to produce discrete tokens. The decoder initializes 3D queries from the first 1D token of each block for reconstruction.
-    - **Design Motivation**: This avoids two problems of tail-token-dropping: (1) dropped tail tokens still consume computation during encoding; (2) tail queries have an ambiguous role during encoding (unaware of whether they will be dropped). Fixing the length at the query initialization stage is more efficient.
+Standard tokenizers output fixed lengths. This work uses a 1D Q-Former-based tokenizer design (where 1D sequences lack grid spatial priors and are easily adjustable) to train an adaptive tokenizer. During training, the router identifies the allocation for each input video in real-time, teaching the tokenizer to encode and decode effectively under variable budgets. The resulting variable-length token sequences facilitate efficient downstream adaptive AR generation.
+
+**4. Integrated Video Semantic Encoder: Beyond Pixel Fidelity to Semantic Alignment**
+
+This reinforcement recipe ensures that tokens carry robust semantic meaning, preventing bottlenecks in downstream AR generation. Representation alignment from a pre-trained video semantic encoder is introduced during tokenizer training, paired with a semantic video discriminator. Ablation studies show that this integration further reduces FVD, confirming that semantic signals are critical for token quality.
 
 ### Loss & Training
-
-The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{vqgan}} + \lambda \mathcal{L}_{\text{align}} + \gamma \mathcal{L}_{\text{entropy}}$, where:
-
-- $\mathcal{L}_{\text{vqgan}}$: L1 reconstruction + perceptual loss + GAN adversarial loss + VQ codebook loss
-- $\mathcal{L}_{\text{align}}$: cosine similarity alignment between intermediate 3D decoder features and pre-trained V-JEPA2-L features, $\lambda=0.7$
-- $\mathcal{L}_{\text{entropy}}$: LFQ entropy loss promoting codebook utilization, $\gamma=0.02$
-
-**Advanced Design**: The final tokenizer training (Stage 4) additionally employs VideoMAE-B as a semantic discriminator, feeding its multi-layer features into a trainable 1D CNN head for real/fake discrimination, significantly improving reconstruction and downstream generation quality.
+- Tokenizer Training: Reconstruction loss (L1/L2 + perceptual loss) + VQ quantization loss + Semantic alignment loss.
+- Router Training: Classification/regression loss mimicking the optimal allocation.
+- AR Generation Model: Standard autoregressive cross-entropy loss trained on variable-length tokens produced by EVATok.
 
 ## Key Experimental Results
 
-### Main Results
-
-| Method | Params (Tok+Gen) | Recon. rFVD↓ | Gen. gFVD↓ | Recon. Token Count | Gen. Token Count |
-|--------|-----------------|-------------|-----------|-------------------|-----------------|
-| LARP-L-Long | 173M+632M | 20 | 57 | 1024 | 1024 |
-| AdapTok | 195M+633M | 36 | 67 | 1024 | 1024 |
-| OmniTokenizer | 82M+650M | 42 | 191 | 1280 | 1280 |
-| **EVATok** | **145M+633M** | **9.7** | **48** | **774 (−24.4%)** | **756 (−26.2%)** |
+| Dataset | Method | FVD↓ | Token Savings |
+|-----------|----------|--------|---------------|
+| UCF-101 | LARP (Fixed) | Baseline | 0% |
+| UCF-101 | **EVATok** | **SOTA** | **≥24.4%** |
+| UCF-101 | Fixed baseline | Baseline | 0% |
 
 ### Ablation Study
-
-| Configuration | rFVD↓ | Token Count | Notes |
-|---------------|-------|------------|-------|
-| Uniform allocation (Proxy Tok.) | 73 | 1024 | Fixed allocation baseline |
-| Uniform allocation (Final Tok.) | 63 | 1024 | Final tokenizer outperforms |
-| Router (Proxy Tok.) | 50 | 721 (−29.6%) | Router allocation yields significant gain |
-| Router (Final Tok.) | 33 | 721 (−29.6%) | Both improvements combined are best |
-| +VideoMAE discriminator | 9.2 | 721 (−29.6%) | Semantic discriminator brings large gain |
-
-### Key Findings
-
-- Adaptive allocation consistently dominates fixed allocation on the quality-cost curve at the same average token count: 56% token savings on WebVid and 42% on UCF at equivalent rFVD.
-- The final tokenizer significantly outperforms the proxy tokenizer (under equivalent training), demonstrating the importance of eliminating the training-inference gap in variable-length tokenizers.
-- The router generalizes to the UCF dataset unseen during training, approaching the optimal Pareto frontier of brute-force search.
-- Introducing the VideoMAE semantic discriminator reduces rFVD from 33 to 9.2, making it the single largest quality improvement factor.
+- Adaptive vs. Fixed Allocation: Adaptive allocation achieves significantly lower FVD at the same average token count.
+- Router Accuracy: Consistency between router predictions and true optimal allocation is high ($>90\%$), proving predictability.
+- Semantic Encoder Integration: Inclusion leads to a further decrease in FVD, highlighting the utility of semantic signals.
+- Optimal Token Distribution: Simple clips congregate in the low-token range, while complex clips are distributed in high-token ranges, forming a long-tail distribution.
 
 ## Highlights & Insights
-
-- The paradigm of "define optimality → brute-force label → train a classifier to imitate" is elegant: it converts a seemingly continuous optimization problem into a discrete classification task, offering both theoretical optimality guarantees and practical efficiency. This design pattern—using a small model to predict the optimal configuration of a large model—has strong reuse potential in other settings.
-- The design choice to avoid tail-token-dropping is insightful: fixing the length at query initialization eliminates both the wasted computation of encoding tokens that will be discarded and the role ambiguity of tail queries during encoding.
+- The two-step paradigm—estimating the optimal solution first and then training a router to mimic it—is highly practical for balancing optimality and efficiency.
+- A 24.4% token saving directly translates to a 24.4% reduction in AR generation computation, which is valuable for real-world deployment.
+- The $>90\%$ prediction accuracy of the router suggests that "clip complexity" is a highly predictable attribute of visual features.
+- Integration with semantic encoders demonstrates that token quality is not just a pixel-level concept; semantic-level signals are equally vital.
 
 ## Limitations & Future Work
-
-- The candidate allocation space grows exponentially as $m^T$ (625 in this work); for longer videos or finer granularity, the search space explodes and more efficient allocation space design is needed.
-- The router uses a global ViT-S and produces a single prediction per video, which may lack flexibility for long videos with abrupt local complexity changes.
-- The interaction between the fixed codebook size (8192/16384) and adaptive token length has not been explored for optimality.
+- While the router's overhead is small, it is non-zero; its impact on extremely latency-sensitive scenarios remains to be evaluated.
+- Optimal token allocation estimation depends on offline search; generalization to video types outside the training set needs verification.
+- Whether variable sequence lengths introduce training instability in AR models needs further investigation.
+- Potential extension to image tokenizers, as spatial regions in images also exhibit complexity variances.
 
 ## Related Work & Insights
+- vs. LARP and other fixed-length tokenizers: EVATok achieves superior quality with fewer tokens.
+- vs. TiTok/MAGVIT: EVATok’s core contribution is the adaptive allocation strategy, which can serve as an enhancement to these models.
+- vs. TrajTok: While TrajTok focuses on trajectory grouping for understanding, EVATok focuses on token length optimization for generation, making them complementary.
 
-- **vs. LARP/AdapTok**: Both methods also perform adaptive video tokenization but rely on heuristic allocation strategies (threshold search / mini-batch ILP). EVATok provides an explicit definition of "optimal allocation" via proxy reward and achieves better router generalization.
-- **vs. ElasticTok**: ElasticTok achieves variable length through tail-token-dropping. EVATok demonstrates the efficiency and performance drawbacks of this approach and instead directly determines the token count at the query initialization stage.
+## Related Work & Insights
+- The adaptive token allocation framework is directly applicable to visual token compression in VLMs—allocating fewer tokens to simple image regions.
+- The design pattern of "router predicting optimal configuration" is reusable for training small models to predict optimal hyperparameters for large models.
+- Links with BiGain and TrajTok to form a complete methodology family for visual token efficiency.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ — Complete four-stage framework, elegant proxy reward definition, and the idea of replacing search with a router are all well-conceived.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Quality-cost curve analysis, ablation studies, and system-level comparisons are comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ — The four-stage narrative is logically clear and the problem formulation is rigorous.
-- Value: ⭐⭐⭐⭐ — Token savings of 24.4%–29.6% have direct deployment value for video generation.
+- Novelty: ⭐⭐⭐⭐ — While adaptive allocation is not entirely new, the systematic three-step framework and its validation in video generation are valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Well-validated on UCF-101, though validation on larger/more diverse datasets is needed.
+- Writing Quality: ⭐⭐⭐⭐ — The framework is clearly described, and the three-step process is easy to follow.
+- Value: ⭐⭐⭐⭐ — The router + adaptive allocation design pattern is directly referenceable for related research.
 
 <!-- RELATED:START -->
 
@@ -130,11 +118,11 @@ The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{vqgan}} + \la
 
 ## Related Papers
 
-- [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)
+- [\[CVPR 2026\] Spherical Leech Quantization for Visual Tokenization and Generation](spherical_leech_quantization_for_visual_tokenization_and_generation.md)
+- [\[CVPR 2026\] CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization](catok_taming_mean_flows_for_one-dimensional_causal_image_tokenization.md)
+- [\[CVPR 2025\] Language-Guided Image Tokenization for Generation](../../CVPR2025/image_generation/language-guided_image_tokenization_for_generation.md)
 - [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](../../ICCV2025/image_generation/efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
-- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
-- [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
-- [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
+- [\[CVPR 2025\] Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](../../CVPR2025/image_generation/efficient_long_video_tokenization_via_coordinate-based_patch_reconstruction.md)
 
 </div>
 

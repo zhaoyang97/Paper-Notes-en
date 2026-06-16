@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 description: >-
-  [ACL 2026][Knowledge Editing][Surface Compliance] The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to t…
+  [ACL 2026][Knowledge Editing][Paper Note] The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and recursive editing accumulates repr
 tags:
-  - "ACL 2026"
-  - "Knowledge Editing"
-  - "Surface Compliance"
-  - "Self-Assessment"
-  - "Parametric Memory"
-  - "In-Context Learning"
+  - ACL 2026
+  - Knowledge Editing
 date: 2026-05-08
-content_hash: 5fa8f04076c10b42
+content_hash: bc5265f431341fca
 ---
-
 # The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -24,100 +19,111 @@ content_hash: 5fa8f04076c10b42
 
 ## TL;DR
 
-The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and sequential editing accumulates representation residuals, leading to cognitive instability.
+The proposed SA-MCQ diagnostic framework reveals the "surface compliance" phenomenon in knowledge editing—editors achieve high scores on standard benchmarks but fail to truly overwrite internal beliefs. Models revert to original parametric memory in discriminative self-assessment, and recursive editing accumulates representation residue, leading to cognitive instability.
 
 ## Background & Motivation
 
-**Background**: LLMs encode world knowledge within their parameters as parametric memory, but inevitably inherit obsolete or incorrect information from training corpora. Knowledge editing techniques aim to precisely modify specific internal memory states without retraining. Recently, editors have demonstrated high success rates on standard benchmarks.
+**Background**: LLMs encode world knowledge in their weights as parametric memory but inevitably inherit outdated or incorrect information from training corpora. Knowledge editing techniques aim to precisely modify specific internal memory states without retraining; recent editors have shown high success rates on standard benchmarks.
 
-**Limitations of Prior Work**: Existing evaluation frameworks mainly rely on Exact Match to assess editing success, checking only whether the model can reproduce target tokens under specific prompts. However, it remains unclear if this surface-level textual consistency truly reflects structural reconfiguration of internal memory. Teacher-forced evaluation further inflates success rates by guiding the output with correct token prefixes.
+**Limitations of Prior Work**: Existing evaluation frameworks primarily rely on Exact Match to assess editing success, checking only if the model can reproduce the target token under specific prompts. However, does this surface textual consistency truly reflect a reconfiguration of internal memory? Teacher forcing evaluation further inflates success rates by guiding the output with correct token prefixes.
 
-**Key Challenge**: High benchmark scores may merely represent "surface compliance"—where editors achieve high scores by mimicking target outputs without structurally overwriting the model's internal beliefs. When the evaluation shifts from generative to discriminative (forcing the model to choose between options), the modified memory may fail completely.
+**Key Challenge**: High benchmark scores may merely reflect "surface compliance"—where the editor achieves high scores by mimicking the target output without structurally overwriting the model's internal beliefs. When the evaluation shifts from generative to discriminative (forcing the model to choose between options), the modified memory may fail completely.
 
-**Goal**: Design a diagnostic framework capable of distinguishing "true memory modification" from "surface compliance" to reveal the actual efficacy of knowledge editing.
+**Goal**: Design a diagnostic framework capable of distinguishing between "genuine memory modification" and "surface compliance" to reveal the true effectiveness of knowledge editing.
 
-**Key Insight**: Tasks should require the edited model to perform Multiple-Choice Questions (MCQ) instead of open generation. MCQs force the model to actively adjudicate between competing options, circumventing the rote memorization bias inherent in generative evaluations.
+**Key Insight**: Shift the evaluation of edited models from open-ended generation to Multiple-Choice Questions (MCQ). MCQs force the model to actively adjudicate between competing options, bypassing the rote-memorization bias found in generative assessments.
 
-**Core Idea**: The Self-Assessment Multiple-Choice Question (SA-MCQ) framework forces models to perform discriminative self-assessment, systematically detecting the authenticity and robustness of edited memory under in-context learning settings.
+**Core Idea**: Use a Self-Assessment Multiple-Choice Question (SA-MCQ) framework to force models into discriminative self-evaluation, systematically detecting the authenticity and robustness of edited memories under in-context learning settings.
 
 ## Method
 
 ### Overall Architecture
 
-The SA-MCQ framework consists of: (1) converting knowledge editing triplets into a multiple-choice format, where options include the edited target answer, the original parametric answer, and an "uncertain" option; (2) requiring the model to answer "based on its own memory" via system prompts; (3) evaluating the stability of edited memory across different context conditions (no context, supportive evidence, irrelevant noise, and counterfactual conflict).
+SA-MCQ is a purely diagnostic framework aimed at distinguishing between "high scores on standard benchmarks" and "whether internal beliefs are truly overwritten." The input consists of a knowledge triple already modified by an editor (using mainstream paradigms like AlphaEdit, RLEdit, or UltraEdit). The triple is rewritten into a Self-Assessment Multiple-Choice Question (SA-MCQ), forcing the model to adjudicate between the edited target answer, the original parametric answer, and "Uncertain." The same question is then tested under various context conditions to probe stability. Finally, multiple rounds of sequential editing are performed to test reversibility. The output is a set of discriminative metrics revealing the degree of "surface compliance." This entire process is executed on CounterFact and zsRE without any training or parameter updates.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Edited Knowledge Triple<br/>via AlphaEdit / RLEdit / UltraEdit"] --> B
+    subgraph B["Self-Assessment MCQ (SA-MCQ)"]
+        direction TB
+        B1["Rewrite as MCQ<br/>Target / Original / Uncertain"] -->|3-way with Uncertain / 2-way Forced| B2["Discriminative Self-Adjudication"]
+    end
+    B --> C
+    subgraph C["Multi-condition Context Probing"]
+        direction TB
+        C1["No-context Baseline"] --> C2["Parametric Evidence PE / Gold Evidence GE<br/>Irrelevant Evidence IE / Counter Evidence CE"]
+    end
+    C --> D["Sequential Editing Analysis<br/>Stepwise Re-testing after Multiple Rounds"]
+    D -->|Accumulated Residue, Decreased Reversibility| E["Surface Compliance Diagnostic Metrics"]
+    D -.Next Round.-> A
+```
 
 ### Key Designs
 
-1.  **Self-Assessment Multiple-Choice Questions (SA-MCQ)**:
-    *   **Function**: Diagnoses whether the edited model has truly overwritten its internal beliefs.
-    *   **Mechanism**: The edited model is presented with a multiple-choice question containing the target answer, the original answer, and an "uncertain" option. If the model has truly learned the new knowledge, it should choose the target answer; if it only exhibits surface compliance, it will revert to the original parametric memory in this discriminative setting. System prompts explicitly command the model to answer "based on its own memory" to exclude context-guiding effects.
-    *   **Design Motivation**: In open generative evaluation, models can "guess" the correct answer from context clues. The MCQ format forces active comparison and adjudication, providing a more rigorous test of memory.
+**1. Self-Assessment MCQ (SA-MCQ): Replacing Open Generation with Discriminative Adjudication**
 
-2.  **Multi-Condition Context Probing**:
-    *   **Function**: Evaluates the robustness of edited memory under various contextual interferences.
-    *   **Mechanism**: Four context conditions are designed—(a) No context: purely testing parametric memory; (b) Supportive context: providing evidence consistent with the edit to see if memory is reinforced; (c) Irrelevant noise: providing unrelated information to test stability; (d) Counterfactual conflict: providing information contradicting the edit to test interference resistance.
-    *   **Design Motivation**: In real-world deployment, models always operate within a context (e.g., ICL, RAG). Edited memory must remain consistent across various contexts to be considered truly effective.
+Open generative evaluation has a fundamental flaw: models can "guess" the target token from prompts and stylistic cues even if internal beliefs remain unchanged. Teacher forcing further inflates success by providing correct prefixes. SA-MCQ rewrites the edited triple as a multiple-choice question, presenting the edited target, the original pre-edit answer, and "Uncertain" simultaneously. System prompts explicitly require the model to answer "based on its own memory" to block contextual guidance. Two complementary modes are used: a 3-way mode (including "Uncertain") to observe hesitation between competing answers, and a 2-way mode (removing "Uncertain") to force a choice, exposing true dominant preferences. Truly updated models consistently select the target, while surface-compliant models revert to original parametric memory when forced to compare—making discriminative adjudication much stricter than rote generation.
 
-3.  **Sequential Editing Analysis**:
-    *   **Function**: Evaluates the impact of continuous multi-round editing on memory reversibility.
-    *   **Mechanism**: Multiple rounds of sequential editing are performed, with SA-MCQ evaluation after each round. This detects whether editing accumulates representation residuals—even if an edit is revoked, whether residual parametric perturbations permanently impair the model's ability to return to its original state.
-    *   **Design Motivation**: Practical applications require continuous knowledge updates. If every edit leaves irreversible traces, the model will gradually degrade.
+**2. Context Probing: Verifying Memory Stability across Contexts**
 
-### Loss & Training
+In real deployments, models almost always work with context (ICL, RAG), so an edited memory is only truly effective if it remains stable under various conditions. Beyond a no-context baseline, the framework constructs four types of external evidence: Parametric Evidence (PE, restating the model's original belief), Golden Evidence (GE, supporting the edit target), Irrelevant Evidence (IE, semantically unrelated noise), and Counter Evidence (CE, information directly contradicting the edit). All evidence is quality-checked via NLI entailment. Comparing the edit's performance across these contexts reveals whether it is truly internalized or merely a fragile, context-dependent temporary reliance.
 
-SA-MCQ is a pure evaluation framework and does not involve training. The tested editors include AlphaEdit (locate-then-edit), RLEdit (meta-learning), and UltraEdit (large-scale precise editing), representing three major editing paradigms. Experiments use the CounterFact and zsRE datasets.
+**3. Sequential Editing Analysis: Testing Reversibility in Multi-round Edits**
+
+In practical applications, knowledge requires frequent updates. A key question is whether each edit leaves an unerasable trace. This analysis performs multiple rounds of sequential editing, re-testing with SA-MCQ after each round. It specifically detects whether representation residues accumulate—even if an edit is "undone" by a subsequent edit, does the prior parameter perturbation permanently impair the model's ability to return to its original state? If reversibility monotonically decreases with the number of edits, it suggests that editing is not a clean local rewrite but a process that erodes the model's cognitive stability.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Editor | Traditional Efficacy (TF) | SA-MCQ Efficacy | Gap |
-| :--- | :--- | :--- | :--- |
-| AlphaEdit | ~99% | Significant decrease | Severe surface compliance |
-| RLEdit | ~99% | Significant decrease | Severe surface compliance |
-| UltraEdit | ~99% | Significant decrease | Severe surface compliance |
-| Vanilla (Unedited) | - | Original Answer | Reference Baseline |
+| Editor | Traditional Efficacy (TF) | SA-MCQ Efficacy | Gain (Gap) |
+|--------|------|------|----------|
+| AlphaEdit | ~99% | Significant Drop | Severe Surface Compliance |
+| RLEdit | ~99% | Significant Drop | Severe Surface Compliance |
+| UltraEdit | ~99% | Significant Drop | Severe Surface Compliance |
+| Vanilla (Unedited) | - | Original Answer | Baseline Reference |
 
 ### Ablation Study
 
-| Context Condition | Phenomenon | Description |
-| :--- | :--- | :--- |
-| No Context | Revert to original answer | Parametric memory not overwritten |
-| Supportive Evidence | Partial target recovery | Relies on context prompts rather than true memory |
-| Counterfactual Conflict | "Cognitive Deadlock" | External counterfactuals easily suppress editing effects |
-| Sequential Editing | Permanent drop in reversibility | Accumulation of residuals causes cognitive instability |
+| Context Condition | Phenomenon | Explanation |
+|------|---------|------|
+| No Context | Regression to original answer | Parametric memory not truly overwritten |
+| Supporting Evidence | Partial recovery of target | Dependency on context cues rather than memory |
+| Counterfactual Conflict | "Cognitive Deadlock" | External counter-evidence easily suppresses edit effects |
+| Sequential Editing | Permanent decrease in reversibility | Residue accumulation leads to cognitive instability |
 
 ### Key Findings
 
-*   **Surface compliance is a universal phenomenon**: It exists across all three major editing paradigms. Near-perfect success rates under traditional evaluation drop significantly under SA-MCQ.
-*   **Edited memory is hypersensitive to context**: Supportive contexts can "rescue" editing effects, while counterfactual contexts can easily "suppress" them. This indicates that editors may create a fragile context-dependency rather than modifying parametric memory.
-*   **Sequential editing is irreversible**: Continuous editing accumulates representation residuals. Even if an edit is undone, the original memory state cannot be fully recovered, leading to permanent cognitive instability.
-*   **Teacher-forced evaluation severely overestimates efficacy**: It produces falsely high success rates through prefix guidance.
+- **Surface compliance is pervasive**: It exists across all three mainstream editing paradigms—near-perfect success rates in traditional evaluations drop sharply under SA-MCQ.
+- **Edited memory is hypersensitive to context**: Supporting context can "save" editing effects, while counterfactual context can easily "suppress" them, indicating that editors create fragile dependencies rather than modifying core parametric memory.
+- **Sequential editing is irreversible**: Consecutive edits accumulate representation residue; even if an edit is revoked, the original memory state cannot be fully recovered, leading to permanent cognitive instability.
+- **Teacher forcing overestimates effectiveness**: It creates a false sense of high success through prefix guidance.
 
 ## Highlights & Insights
 
-*   **Introduction of "Surface Compliance"**: This concept accurately names a long-standing but under-recognized issue in knowledge editing—where editors "get the answer right" without "learning the knowledge." This serves as a warning to the knowledge editing community.
-*   **Paradigm Shift in Evaluation**: Shifting from generative evaluation (can it say the right answer) to discriminative evaluation (can it judge correctly between options) is a simple but profound insight—the latter is a better test of "true understanding."
-*   **Irreversibility of Sequential Editing**: This is a significant negative finding that poses a fundamental challenge to the vision of "sustainable knowledge updates."
+- **Concept of "Surface Compliance"**: Accurately names a long-standing but under-recognized issue in knowledge editing—where models "answer correctly" without actually "learning the knowledge." This serves as a warning to the research community.
+- **Paradigm Shift in Evaluation**: Moving from generative evaluation (can it say the answer?) to discriminative evaluation (can it judge between options?) provides a simple but profound insight—the latter is a much more rigorous test of true understanding.
+- **Irreversibility of Sequential Editing**: An important negative finding that poses a fundamental challenge to the vision of "sustainable knowledge updates."
 
 ## Limitations & Future Work
 
-*   The "uncertain" option in SA-MCQ might introduce selection bias, as models may favor it as a safe choice.
-*   Only three editors and two datasets were tested; validation across a broader range of methods and knowledge types is needed.
-*   The study is limited to diagnosis and does not propose a solution for surface compliance.
-*   Future work could explore: designing training objectives that incorporate discriminative evaluation to improve editors, and researching methods to clear representation residuals.
+- The "Uncertain" option in SA-MCQ might introduce selection bias, as models might lean toward it as a "safe" choice.
+- The study only evaluates three editors and two datasets; broader coverage of methods and knowledge types is needed.
+- The framework is diagnostic and does not yet propose a solution to mitigate surface compliance.
+- Future work: Design training objectives incorporating discriminative evaluation to improve editors, and research methods to clear representation residue.
 
 ## Related Work & Insights
 
-*   **vs. Traditional Evaluation (Exact Match + TF)**: Traditional methods assess generation consistency under specific prompts, while SA-MCQ tests discriminative beliefs. The discrepancy between the two exposes the surface compliance problem.
-*   **vs. Memory Augmentation (SERAC, etc.)**: Memory augmentation methods store edits externally rather than modifying parameters. These are outside the scope of this analysis but may naturally avoid surface compliance issues.
+- **vs. Traditional Evaluation (Exact Match + TF)**: Traditional methods assess generation consistency under specific prompts, while SA-MCQ tests discriminative belief—the discrepancy highlights surface compliance.
+- **vs. Memory Augmentation (e.g., SERAC)**: Augmentation methods store edits externally rather than modifying parameters; while outside the scope of this analysis, they may naturally avoid surface compliance issues.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ The "surface compliance" concept is novel and significant; the SA-MCQ evaluation paradigm shift is worth promoting.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive analysis across three editors, four context conditions, and sequential editing.
-*   Writing Quality: ⭐⭐⭐⭐ Clear problem definition and persuasive experimental findings.
-*   Value: ⭐⭐⭐⭐⭐ Provides a crucial warning for the knowledge editing field and pushes for more rigorous evaluation standards.
+- Novelty: ⭐⭐⭐⭐⭐ The "surface compliance" concept is novel and significant; the SA-MCQ paradigm shift is highly valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive analysis across three editors, four context conditions, and sequential editing.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and persuasive experimental findings.
+- Value: ⭐⭐⭐⭐⭐ Provides a critical warning to the field and promotes stricter evaluation standards.
 
 <!-- RELATED:START -->
 
@@ -125,11 +131,11 @@ SA-MCQ is a pure evaluation framework and does not involve training. The tested 
 
 ## Related Papers
 
-- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](aligning_language_models_with_real-time_knowledge_editing.md)
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](../../NeurIPS2025/knowledge_editing/uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
 - [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
+- [\[ACL 2025\] Structure-aware Domain Knowledge Injection for Large Language Models](../../ACL2025/knowledge_editing/structure-aware_domain_knowledge_injection_for_large_language_models.md)
 
 </div>
 

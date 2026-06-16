@@ -2,73 +2,81 @@
 title: >-
   [Paper Note] NITP: Next Implicit Token Prediction for LLM Pre-training
 description: >-
-  [ICML 2026][Self-Supervised Learning][NTP representation degeneration] NITP provides continuous representation space supervision for the final hidden state by using **shallow representations as implicit targets**. This s…
+  [ICML 2026][Self-Supervised Learning][Paper Note] NITP provides continuous representation space supervision for the last hidden state by using **shallow representations as implicit targets**—supplementing standard NTP to prevent hidden representations from degenerating into low-dimensional anisotropic configurations. It achieves a 5.7% MMLU-Pro improvement and a gener
 tags:
-  - "ICML 2026"
-  - "Self-Supervised Learning"
-  - "NTP representation degeneration"
-  - "implicit targets"
-  - "shallow supervision"
-  - "cosine similarity"
+  - ICML 2026
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: c7c32ddf05f05211
+content_hash: 20240744f8125ea0
 ---
-
 # NITP: Next Implicit Token Prediction for LLM Pre-training
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.24956](https://arxiv.org/abs/2605.24956)  
-**Code**: To be confirmed  
+**Code**: TBD  
 **Area**: LLM Pre-training / Representation Learning  
-**Keywords**: NTP representation degeneration, implicit targets, shallow supervision, cosine similarity
+**Keywords**: NTP Representation Degeneration, Implicit Target, Shallow Supervision, Cosine Similarity
 
 ## TL;DR
-NITP provides continuous representation space supervision for the final hidden state by using **shallow representations as implicit targets**. This supplements standard NTP to prevent hidden representation degeneration into low-dimensional anisotropic configurations. It achieves a 5.7% MMLU-Pro improvement on a 9B MoE model and a general 4-6% increase in reasoning tasks, with only ~2% extra computational overhead.
+NITP provides continuous representation space supervision for the last hidden state by using **shallow representations as implicit targets**—supplementing standard NTP to prevent hidden representations from degenerating into low-dimensional anisotropic configurations. It achieves a 5.7% MMLU-Pro improvement and a general 4-6% gain in reasoning tasks on a 9B MoE, with an additional computational overhead of only ~2%.
 
 ## Background & Motivation
 
-**Background**: Standard Next Token Prediction (NTP) is the mainstream paradigm for LLM pre-training. NTP essentially provides discrete, one-hot supervision in the output logit space.
+**Background**: Standard Next Token Prediction (NTP) is the dominant paradigm for LLM pre-training. NTP essentially provides discrete, one-hot supervision in the output logit space.
 
-**Limitations of Prior Work**: Although gradients backpropagate through the output projection to hidden states, NTP objectives primarily constrain representations along the target logit direction, leaving many degrees of freedom weakly constrained in the latent space. This leads to **representation degeneration**, where likelihood-based training collapses learned representations into narrow anisotropic cones, severely limiting expressivity and correlating with degraded downstream performance.
+**Limitations of Prior Work**: Although gradients backpropagate to hidden states through the output projection, NTP objectives primarily constrain representations along the target logit direction, leaving numerous weakly constrained degrees of freedom in the latent space. This leads to **representation degeneration**—where likelihood-based training compresses learned representations into a narrow anisotropic cone, severely limiting expressivity and correlating with degraded downstream performance.
 
-**Key Challenge**: NTP defines "what to predict" but does not constrain "how to represent." Hidden states can adopt various geometrically distinct configurations but fall into representation degeneration in practice—sacrificing semantic richness for discriminative efficiency.
+**Key Challenge**: NTP defines "what to predict" but does not constrain "how to represent"; hidden states can adopt various geometrically distinct configurations, but in practice, they fall into representation degeneration—sacrificing semantic richness for discriminative efficiency.
 
-**Goal**: To address the blind spot of NTP in the geometry of hidden representations by using explicit representation-level supervision to guide hidden states toward structured, semantically rich configurations.
+**Goal**: To address the blind spot of NTP in hidden representation geometry by guiding hidden states to maintain structured, semantically rich configurations through explicit representation-level supervision.
 
-**Key Insight**: Instead of working in discrete token space, supervision is performed in continuous representation space by predicting the next token's implicit semantic representation (using the model's own shallow representations as self-supervised targets). Shallow layers are suitable because they preserve rich vocabulary and local semantic details.
+**Key Insight**: Instead of working in the discrete token space, supervision is performed in the continuous representation space—making the model predict the implicit semantic representation of the next token (using the model's own shallow representations as self-supervised targets). Shallow layers are suitable because they retain rich vocabulary and local semantic details.
 
-**Core Idea**: NITP = NTP (discrete supervision) + NITP (continuous representation space supervision). It uses the next token representation from shallow layers as an implicit target, forcing final hidden states to align via cosine similarity loss. It is parameter-efficient as targets are derived from precomputed intermediate activations without extra forward passes.
+**Core Idea**: NITP = NTP (discrete supervision) + NITP (continuous representation space supervision). By using the shallow representation of the next token as an implicit target and forcing the last hidden state to align with it via a cosine similarity loss, the method is parameter-efficient (implicit targets are derived from already computed intermediate activations, requiring no extra forward pass).
 
 ## Method
 
 ### Overall Architecture
-A dual-supervision mechanism is employed: (1) standard NTP $\mathcal{L}_{\text{NTP}}$; (2) NITP auxiliary objective $\mathcal{L}_{\text{NITP}} = 1 - \frac{\mathcal{P}(h_t)^\top z_{t+1}}{\|\mathcal{P}(h_t)\|_2 \cdot \|z_{t+1}\|_2}$; (3) joint optimization $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{NTP}} + \lambda \mathcal{L}_{\text{NITP}}$. During a standard forward pass, shallow layers (e.g., layer 4) compute the implicit target $z_{t+1}$ at position $t+1$ (with stop-gradient), which is then predicted from the final hidden state $h_t$ via a projection head.
+NITP aims to fill a gap in standard NTP: as NTP only provides supervision in the output logit space, it exerts little control over the geometric shape of the hidden states, leading to representations that easily degenerate into a narrow anisotropic cone. NITP's approach is to add a continuous representation space supervision path to the last hidden state during pre-training—tasking it with predicting the "implicit semantic representation of the next token."
+
+The entire pipeline still requires only a single standard forward pass: it uses the model's own shallow layer (e.g., layer 4) to compute the representation $z_{t+1}$ at position $t+1$ and stops the gradient, treating it as the implicit target. Simultaneously, a projection head $\mathcal{P}$ is applied to the last hidden state $h_t$ to align with this target. The two supervision paths are optimized jointly: $\mathcal{L}_{\text{NTP}}$ governs "what to predict," while $\mathcal{L}_{\text{NITP}} = 1 - \frac{\mathcal{P}(h_t)^\top z_{t+1}}{\|\mathcal{P}(h_t)\|_2 \cdot \|z_{t+1}\|_2}$ governs "how to represent." The total objective is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{NTP}} + \lambda \mathcal{L}_{\text{NITP}}$ (where $\lambda = 1.0$ is the most robust).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input sequence x (one standard forward pass)"] --> B["Shallow layer E_shallow<br/>Layer 4 ≈ 20% depth"]
+    A --> C["Last hidden state h_t"]
+    B --> D["Implicit target construction<br/>Take pos t+1 representation + sg stop gradient"]
+    C --> E["Output projection / LM Head"]
+    C --> F["Projection head P (MLP)"]
+    E --> G["NTP Loss: Constrains what to predict (discrete supervision)"]
+    D --> H["Cosine similarity loss: Constrains how to represent (continuous supervision)"]
+    F --> H
+    G --> I["Total Goal L = L_NTP + λ·L_NITP (λ=1.0)"]
+    H --> I
+```
 
 ### Key Designs
 
-1. **Implicit Target Construction**:
-    - **Function**: Provides context-dependent, semantically rich supervision for the final hidden state.
-    - **Mechanism**: Uses the model's own shallow layer representation (layer 4, ~20% depth) at position $t+1$, $z_{t+1} = \text{sg}[E_{\text{shallow}}(x_{\leq t+1})^{(t+1)}]$, as the implicit target. A stop-gradient operator ensures stability (as shallow layers converge faster) without extra computation.
-    - **Design Motivation**: The semantic richness in shallow layers forces deep representations to maintain sufficient expressive power to predict them, preventing anisotropic collapse.
+**1. Implicit Target Construction: Using shallow representations as "semantic anchors" for the next token**
 
-2. **Cosine Similarity Loss**:
-    - **Function**: Aligns predicted states with implicit targets in representation space.
-    - **Mechanism**: Minimizes cosine similarity loss, where $\mathcal{P}(\cdot)$ is a simple MLP projection head. Cosine similarity is symmetric on $[-1, 1]$ and scale-insensitive.
-    - **Design Motivation**: Ablations show cosine loss is more stable than MSE, Smooth-$\ell_1$, or KL divergence. MSE amplifies inter-layer scale mismatches due to quadratic penalties, while KL divergence introduces geometric distortion by treating vectors as distributions.
+While NTP gradients propagate back to hidden states, the constraints are mainly along the target logit direction, leaving many weakly constrained degrees of freedom in the latent space where representations collapse into low-dimensional anisotropic configurations. NITP bypasses discrete token space supervision by establishing a target directly in continuous representation space: taking the model's own shallow layer (layer 4, approx. 20% depth) representation $z_{t+1} = \text{sg}[E_{\text{shallow}}(x_{\leq t+1})^{(t+1)}]$ at position $t+1$ as the implicit target. Shallow layers are selected because they preserve the richest vocabulary and local semantic details, forcing deep representations to maintain sufficient expressivity to predict them.
 
-3. **Self-Supervised Design + Stop-Gradient**:
-    - **Function**: Automatically generates supervision signals without external data or encoders while ensuring training stability.
-    - **Mechanism**: Implicit targets use `sg` (stop-gradient), so gradients only flow to the final layer and projection head, not backpropagate to shallow layers. Shallow layers act as stable "semantic anchors."
-    - **Design Motivation**: This reduces computational cost (~2% extra FLOPs), improves training stability, and remains fully self-supervised.
+The reason this step prevents degeneration can be understood through the Hessian: the NTP constraint on $h_t$ is essentially its dot product with the target token embedding, leading to a rank-deficient Hessian that allows representations to drift freely in the null space. NITP’s cosine alignment places the target on a hypersphere; its Hessian approximates $H_{\text{NITP}}(h) \approx \frac{1}{r^2} P_{\perp u}$ (tangent space projection), injecting strictly positive curvature into all orthogonal directions and "propping up" previously freely drifting directions into a structured geometry.
 
-### Theoretical Analysis: Regulating the Semantic Manifold
-Constraints on $h_t$ from the NTP objective primarily originate from its dot product with target token embeddings, leading to Hessian rank deficiency and allowing representation drift in the null space. NITP introduces **positive curvature** to regularize these directions: the NITP Hessian $H_{\text{NITP}}(h) \approx \frac{1}{r^2} P_{\perp u}$ (tangent space projection of the hypersphere). By introducing strictly positive curvature in all orthogonal directions, NITP forces representations to maintain structured geometry.
+**2. Cosine Similarity Loss: Alignment in representation space to bypass inter-layer scale mismatch**
+
+Predicting states and implicit targets involve high-dimensional vectors, making the choice of distance metric crucial. NITP selects cosine similarity—with $\mathcal{P}(\cdot)$ being a simple MLP projection head—as it is symmetric on $[-1, 1]$ and scale-invariant. Ablations show it is more stable than MSE, Smooth-$\ell_1$, or KL: the quadratic penalty of MSE amplifies the natural scale mismatch between shallow and deep layers, causing gradient spikes or temporary divergence during training. KL treats vectors strictly as probability distributions, introducing additional geometric distortion. Only cosine similarity, which focuses on "direction rather than magnitude," matches the goal of "semantic alignment rather than numerical replication."
+
+**3. Stop-Gradient + Full Self-Supervision: ~2% overhead, no dependence on external data or encoders**
+
+The implicit target $z_{t+1}$ uses $\text{sg}[\cdot]$ to stop gradients; gradients flow only to the last layer and the projection head, not back to the shallow layer. This allows the shallow layer to serve as a stable "semantic anchor" (shallow layers also naturally converge faster). Since the entire supervision signal is generated from the model's own intermediate activations without requiring external data or additional forward passes, the extra FLOPs are only about 2%. This also avoids biases and instabilities introduced by second models or external distributions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Method | MMLU | MMLU-Pro | C3 | CommonsenseQA | Avg Gain |
+| Model | Method | MMLU | MMLU-Pro | C3 | CommonsenseQA | Average Gain |
 |------|------|------|---------|-----|---------|---------|
 | 1.9B MoE (0.3B active) | NTP | 31.05 | 7.14 | 32.21 | 25.38 | — |
 | 1.9B MoE | NITP | 31.68 | 7.47 | 29.69 | 26.61 | +0.8 |
@@ -77,7 +85,7 @@ Constraints on $h_t$ from the NTP objective primarily originate from its dot pro
 | **9B MoE** | **NTP** | 43.71 | 15.29 | 56.65 | 45.70 | — |
 | **9B MoE** | **NITP** | **46.14** | **21.00** | **63.01** | **49.96** | **+2.7** |
 
-On the 9B model, MMLU-Pro shows an absolute gain of 5.7%, while reading comprehension and common sense reasoning increase by 6.4% and 4.3% respectively.
+On the 9B model, MMLU-Pro shows an absolute improvement of 5.7%; reading comprehension and commonsense reasoning increased by 6.4% and 4.3%, respectively.
 
 ### Ablation Study
 
@@ -87,40 +95,40 @@ On the 9B model, MMLU-Pro shows an absolute gain of 5.7%, while reading comprehe
 | **Shallow (L₄)** | **37.37** | **12.29** | **37.92** | **26.14** | **28.43** |
 | Middle (L₈) | 35.33 | 11.57 | 34.72 | 22.07 | 25.92 |
 | Deep (L₁₄) | 35.79 | 10.43 | 38.90 | 23.25 | 27.09 |
-| Current position t→t | 33.09 | 8.14 | 29.15 | 20.96 | 22.84 |
+| Current pos t→t | 33.09 | 8.14 | 29.15 | 20.96 | 22.84 |
 | MSE Loss | 32.77 | 10.29 | 30.38 | 21.55 | 23.75 |
-| Cosine Reg (No Pred) | 34.45 | 10.14 | 33.25 | 22.29 | 25.03 |
+| Cosine Reg (No prediction) | 34.45 | 10.14 | 33.25 | 22.29 | 25.03 |
 
 ### Key Findings
-- **Necessity of Shallow Layer Selection**: Using shallow layers (~20% depth) outperforms middle or deep layers, as shallow layers retain richer vocabulary and local semantics.
-- **Temporal Structure is Crucial**: Predicting the next token's implicit representation ($t \to t+1$) outperforms same-position alignment ($t \to t$) by 5.6 percentage points.
-- **Loss Function Stability**: MSE leads to gradient spikes and temporary divergence; only cosine similarity is fully stable and yields the best performance.
-- **Regularization does not equal Prediction**: Generic cosine regularization constrains geometry but does not improve performance; gains derive from "predictive-aligned" semantic supervision.
-- **Computational Efficiency**: Extra FLOPs are only ~2%, and $\lambda = 1.0$ proved to be the most robust weighting.
+- **Necessity of Shallow Layer Selection**: Using shallow representations (~20% model depth) outperforms middle or deep layers—shallow layers retain richer vocabulary and local semantics.
+- **Temporal Structure is Critical**: Predicting the next token's implicit representation ($t \to t+1$) results in 5.6 percentage points higher performance than current position alignment ($t \to t$).
+- **Stability Differences in Loss Functions**: MSE leads to gradient spikes and temporary divergence; only cosine similarity is fully stable and yields the best performance.
+- **Regularization $\neq$ Prediction**: General cosine regularization constrains representation geometry but does not improve performance—gains stem from "predictively aligned" semantic supervision.
+- **Computational Efficiency**: Extra FLOPs are only ~2%; $\lambda = 1.0$ is the most robust.
 
 ## Highlights & Insights
-- **Diagnostic Root Cause of Representation Degeneration**: Visualizations of effective rank and cosine similarity demonstrate how NTP causes representations to drift toward low-dimensional anisotropic configurations; theoretical analysis explains this via the Hessian spectrum.
-- **Clever Design of Self-Supervised Implicit Targets**: Using shallow representations as "semantic anchors" requires no external data or models and serves as an ideal supervision signal due to their rich semantic content.
-- **Generality and Transferability**: NITP proved effective across MoE and dense models, scale ranges from 0.5B to 9B parameters, and multiple assessment benchmarks.
-- **Significant Gains with Minimal Overhead**: A 5%+ improvement in knowledge understanding and 6%+ in reasoning capabilities were achieved at a cost of only ~2% extra training FLOPs.
+- **Diagnostic of Root Causes for Representation Degeneration**: Clear demonstrations of how NTP causes representations to drift toward low-dimensional anisotropic configurations via effective rank and cosine similarity visualizations; theoretical analysis explains the underlying mechanism via the Hessian spectrum.
+- **Ingenious Design of Self-Supervised Implicit Targets**: Using shallow representations as "semantic anchors" requires no external data or models and serves as an ideal supervision signal due to its rich semantic information.
+- **Generality and Transferability**: NITP proves effective across MoE and dense models, parameter sizes from 0.5B to 9B, and multiple evaluation benchmarks.
+- **Significant Gains with Minimal Overhead**: Achieve a 5%+ improvement in knowledge understanding and 6%+ in reasoning capabilities at the cost of ~2% extra training FLOPs.
 
 ## Limitations & Future Work
-- NITP introduces additional hyperparameters (target layer, weight $\lambda$), and stability across different models requires further verification.
-- The explanation for the total failure of current-position alignment needs deepening.
-- Applicability to larger scales (> 100B), different architectures, and multimodal models remains to be validated.
-- The selection of the 4th layer for the implicit target may not be optimal for all model depths.
+- NITP introduces additional hyperparameters (target layer, NITP weight $\lambda$), requiring further validation for stability across different models.
+- The explanation for the total failure of current position alignment needs to be deepened.
+- Applicability to larger scale models (> 100B), different architectures, and multimodal models needs verification.
+- The choice of shallow layer (Layer 4) for the implicit target may not be optimal for different model depths.
 
 ## Related Work & Insights
-- **vs Multi-token Prediction (MTP)**: MTP extends the prediction range in discrete token space, whereas NITP provides supervision in the representation space; the two are complementary.
-- **vs Layer Distillation**: Distillation aligns representations between two different models, while NITP uses shallow layers to guide deep layers within the same model, avoiding external distribution shifts.
-- **vs Self-Supervised Contrastive Learning (BYOL)**: Contrastive learning encourages consistency between different views; NITP focuses on prediction in the temporal dimension.
-- **Insight**: Representation-level supervision is a viable direction for addressing the incompleteness of LLM pre-training objectives.
+- **vs Multi-token Prediction (MTP)**: MTP extends prediction range in discrete token space, whereas NITP provides supervision in representation space; the two can be complementary.
+- **vs Layer Distillation**: Distillation aligns representations of two different models, whereas NITP uses shallow layers to guide deep layers within the same model, avoiding external distribution shifts.
+- **vs Self-supervised Contrastive Learning (BYOL)**: Contrastive learning encourages consistency between different views, while NITP focuses on prediction across the temporal dimension.
+- **Insight**: Representation-level supervision is a promising direction for addressing the incompleteness of LLM pre-training objectives.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Supplementing NTP with shallow implicit targets and providing a theoretical Hessian-based explanation for degeneration is simple yet profound.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple model scales, two architectures, extensive ablations, and combines theory with empirical validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic; theoretical sections are somewhat abstract but highlight key points effectively.
-- Value: ⭐⭐⭐⭐⭐ Directly improves LLM pre-training efficiency and performance; high industrial value due to 5%+ gains for 2% cost.
+- Novelty: ⭐⭐⭐⭐⭐  Supplementing NTP with shallow implicit targets and theoretical explanation of degeneration via Hessian—ideas are simple yet profound.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Multiple model scales, two architectures, extensive ablations, and a combination of theoretical analysis and empirical validation.
+- Writing Quality: ⭐⭐⭐⭐  Clear logic; theoretical sections are slightly abstract but emphasize key points.
+- Value: ⭐⭐⭐⭐⭐  Directly improves LLM pre-training efficiency and performance; 5%+ gains for 2% cost offer high industrial application value.
 
 <!-- RELATED:START -->
 
@@ -130,9 +138,9 @@ On the 9B model, MMLU-Pro shows an absolute gain of 5.7%, while reading comprehe
 
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](../../CVPR2026/self_supervised/com_pt_chain_of_models_pretraining.md)
 - [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](../../ICLR2026/self_supervised/snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
+- [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](../../CVPR2026/self_supervised/reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
+- [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
 - [\[AAAI 2026\] Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space](../../AAAI2026/self_supervised/towards_llm-empowered_knowledge_tracing_via_llm-student_hierarchical_behavior_al.md)
-- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
-- [\[ICML 2026\] LEC: Linear Expectation Constraints for Selection-Conditioned Risk Control in Selective Prediction and Routing Systems](lec_linear_expectation_constraints_for_selection-conditioned_risk_control_in_sel.md)
 
 </div>
 

@@ -2,80 +2,88 @@
 title: >-
   [Paper Note] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 description: >-
-  [CVPR 2026][Image Generation][rectified flow] Proposes CaReFlow, the first work to utilize rectified flow for multimodal distribution mapping to bridge the modality gap: it enables source modality data points to observe…
+  [CVPR 2026][Image Generation][rectified flow] The paper proposes CaReFlow, the first to use rectified flow for multimodal distribution mapping to bridge the modality gap. Through one-to-many mapping, source modality data points observe the global distribution of the target modality; adaptive relaxed alignment applies varying alignment strengths to modality pairs w
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "rectified flow"
-  - "modality gap"
-  - "multimodal fusion"
-  - "affective computing"
-  - "distribution mapping"
+  - CVPR 2026
+  - Image Generation
+  - rectified flow
+  - modality gap
+  - multimodal fusion
+  - affective computing
+  - distribution mapping
 date: 2026-05-08
-content_hash: b0437e76abc4317c
+content_hash: 4168fe9874bf4e5f
 ---
-
 # CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 
 **Conference**: CVPR 2026  
 **arXiv**: [2602.19140](https://arxiv.org/abs/2602.19140)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Image Generation  
 **Keywords**: rectified flow, modality gap, multimodal fusion, affective computing, distribution mapping
 
 ## TL;DR
-Proposes CaReFlow, the first work to utilize rectified flow for multimodal distribution mapping to bridge the modality gap: it enables source modality data points to observe the global distribution of the target modality through one-to-many mapping, applies different alignment intensities to modality pairs with varying correlation via adaptive relaxed alignment, and ensures no information loss after mapping through cyclic rectified flow. It achieves SOTA on multiple multimodal affective computing benchmarks even with simple concatenation fusion.
+The paper proposes CaReFlow, the first to use rectified flow for multimodal distribution mapping to bridge the modality gap. Through one-to-many mapping, source modality data points observe the global distribution of the target modality; adaptive relaxed alignment applies varying alignment strengths to modality pairs with different correlations; and cyclic rectified flow ensures no information is lost after mapping. It achieves SOTA on multiple multimodal affective computing benchmarks even with simple concatenation fusion.
 
 ## Background & Motivation
-**Background**: Multimodal Affective Computing (MAC) requires fusing visual, acoustic, and language modalities to analyze human emotional states. The core challenge lies in the vast differences in feature distributions across modalities (the modality gap), which often results in simple multimodal concatenation performing worse than unimodal language models.
+**Background**: Multimodal Affective Computing (MAC) requires fusing visual, acoustic, and language modalities to analyze human emotional states. The core challenge lies in the significant differences in feature distributions across modalities (modality gap), making simple multimodal concatenation fusion sometimes perform worse than pure language models.
 
-**Limitations of Prior Work**: Existing methods for bridging the modality gap (e.g., contrastive learning, GANs, diffusion models) mostly employ one-to-one alignment—pushing each source modality data point towards a single fixed target point. This presents two issues: (a) too few paired data points per sample lead to insufficient alignment; (b) source modality data points cannot see the overall distribution of the target modality, leading to less robust alignment.
+**Limitations of Prior Work**: Existing methods for bridging the modality gap (Contrastive Learning, GANs, Diffusion Models, etc.) mostly employ one-to-one alignment—mapping each source modality data point to a fixed target point. This presents two issues: (a) insufficient alignment due to too few intra-sample pairs; (b) lack of robustness as source data points cannot perceive the global distribution of the target modality.
 
-**Key Challenge**: One-to-one mapping limits the source modality's perception of the target modality's global distribution. If one-to-many mapping (like vanilla rectified flow) is used directly, it creates ambiguous flow directions (each source point matching multiple target points) and requires multiple recursive training rounds to learn straight trajectories.
+**Key Challenge**: One-to-one mapping limits the source modality's perception of the global target distribution. Conversely, directly using one-to-many mapping (like original rectified flow) leads to ambiguous flow directions (one source point matching multiple target points simultaneously) and requires multiple recursive training rounds to learn straight trajectories.
 
-**Goal**: (a) How to let the source modality perceive the global distribution of the target modality? (b) How to avoid ambiguity in one-to-many mapping? (c) How to prevent source modality information loss during the mapping process?
+**Goal**: (a) Enable the source modality to perceive the global target distribution. (b) Avoid ambiguity under one-to-many mapping. (c) Prevent information loss during the mapping process.
 
 **Key Insight**: Rectified flow naturally maps one distribution to another, and the learned trajectories are straight (simulatable with few Euler steps). The authors observe that the training process of rectified flow is inherently one-to-many—randomly sampling distribution pairs for training—which happens to expose global distribution information.
 
-**Core Idea**: Use rectified flow for modality distribution mapping, solve the ambiguity problem through adaptive relaxed alignment, and preserve source modality information via cyclic flows.
+**Core Idea**: Utilize rectified flow for modality distribution mapping, resolving ambiguity through adaptive relaxed alignment and preserving source information through cyclic flow.
 
 ## Method
 
 ### Overall Architecture
-Input: Tri-modal feature sequences $\mathbf{U}_m \in \mathbb{R}^{T_m \times d_m}$ ($m \in \{a, v, l\}$, representing acoustic, visual, and language) are passed through unimodal networks to extract representations $\mathbf{X}_m \in \mathbb{R}^d$. Since language is the dominant modality in MAC, CaReFlow maps the distributions of visual and acoustic modalities to the language modality distribution: $\mathbf{X}_{m,l} = \text{CaReFlow}_{m,l}(\mathbf{X}_m)$, followed by simple concatenation + MLP for fusion and prediction. During inference, distribution conversion is completed in 2 Euler steps.
+Input: Tri-modal feature sequences $\mathbf{U}_m \in \mathbb{R}^{T_m \times d_m}$ ($m \in \{a, v, l\}$, representing acoustic, visual, and language) are processed by unimodal networks to extract representations $\mathbf{X}_m \in \mathbb{R}^d$. Since language is the dominant modality in MAC, CaReFlow maps the distributions of visual and acoustic modalities to the language modality distribution: $\mathbf{X}_{m,l} = \text{CaReFlow}_{m,l}(\mathbf{X}_m)$, followed by fusion and prediction using simple concatenation + MLP. At inference, distribution conversion is completed in 2 Euler steps. Internally, this mapping consists of a forward + backward cyclic rectified flow: the forward flow perceives the global distribution via One-to-Many Mapping and resolves ambiguity via Adaptive Relaxed Alignment, while the backward Cyclic Rectified Flow restores the mapping result to the source to lock in information.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Tri-modal Input: Acoustic / Visual / Language"] --> B["Unimodal Networks<br/>Extracting X_a / X_v / X_l"]
+    B --> C["One-to-Many Mapping<br/>Cross-sample distribution pair sampling"]
+    C --> D["Adaptive Relaxed Alignment<br/>Forward flow + label distance adaptive margin"]
+    D --> E["Forward Output X_m,l<br/>Vision/Acoustic aligned to Language"]
+    E --> F["Concatenation + MLP Fusion → Emotion Prediction"]
+    E --> G["Cyclic Rectified Flow<br/>Backward flow restores X_m to lock source info"]
+    G -->|No detach on X_m,l, gradients constrain forward flow| D
+```
 
 ### Key Designs
 
-1. **One-to-Many Mapping**:
+**1. One-to-Many Mapping: Exposing the Global Target Distribution to the Source**
 
-    - **Function**: Enables each source modality data point to observe multiple target modality data points during training, rather than just the one within the same sample.
-    - **Mechanism**: During rectified flow training, data pairs are randomly sampled from two distributions to train the velocity field $\mathbf{V}_{m_1,m_2}$. In implementation, intra-sample modality pairs are constructed first within each mini-batch, followed by randomly sampled inter-sample modality pairs (at a ratio of $\beta$ times). This allows each source modality data point to perceive the global distribution of the target modality.
-    - **Design Motivation**: Alleviates the issue of insufficient paired data per sample, making distribution mapping more robust. Experiments show a performance drop of about 3 percentage points (Acc2) without this module, making it the most impactful component.
+Traditional alignment methods focus each source point on a single target point within the same sample, resulting in sparse pairs and non-robust alignment. CaReFlow leverages the property of rectified flow training: within each mini-batch, it constructs modality pairs within the same sample and additionally samples cross-sample modality pairs to train the velocity field $\mathbf{V}_{m_1,m_2}$. The ratio of cross-sample pairs to same-sample pairs is controlled by hyperparameter $\beta$ (stable between 3–7). Consequently, each source data point is pushed toward many different target points during training, naturally "seeing" the overall shape of the target distribution. This is the most critical module in ablation—removing it drops MOSI Acc2 by 2.8 and CH-SIMS-v2 Acc2 by 3.1.
 
-2. **Adaptive Relaxed Alignment**:
+**2. Adaptive Relaxed Alignment: Determining Alignment Stringency via Label Distance**
 
-    - **Function**: Imposes different degrees of alignment strictness for modality pairs with different correlations.
-    - **Mechanism**: Modifies the rectified flow objective function by introducing a margin $\eta_{m_1,m_2}$:
-    $\mathcal{L}^f_{m_1,m_2} = \mathbb{E}\left[\max\left(\|\mathbf{V}_{m_1,m_2}(\mathbf{X}^t_{m_1,m_2}, t) - (\mathbf{X}_{m_2} - \mathbf{X}_{m_1})\|_2 - \eta_{m_1,m_2}, 0\right)\right]$
-      where $\eta_{m_1,m_2} = 0$ (same sample) or $\eta_{m_1,m_2} = \epsilon + \|y_i - y_j\|_2$ (different samples, determined adaptively by label distance).
-    - **Design Motivation**: Modalities of the same sample should be strictly aligned ($\eta=0$ degrades to standard rectified flow), while relaxation is applied to different samples to allow for variance. Less relaxation is applied as labels become more similar. This simultaneously solves the ambiguity in one-to-many mapping and eliminates the need for recursive training of rectified flow.
+Direct one-to-many mapping introduces ambiguity: a single source point is required to match multiple target points simultaneously, causing conflicting flow directions. CaReFlow solves this by adding an adaptive margin $\eta_{m_1,m_2}$ to the alignment objective, penalizing errors only outside this margin:
 
-3. **Cyclic Rectified Flow**:
+$$\mathcal{L}^f_{m_1,m_2} = \mathbb{E}\left[\max\left(\|\mathbf{V}_{m_1,m_2}(\mathbf{X}^t_{m_1,m_2}, t) - (\mathbf{X}_{m_2} - \mathbf{X}_{m_1})\|_2 - \eta_{m_1,m_2}, 0\right)\right]$$
 
-    - **Function**: Constructs a backward rectified flow to ensure features $\mathbf{X}_{m_1,m_2}$ from the forward mapping can be mapped back to the original features $\mathbf{X}_{m_1}$.
-    - **Mechanism**: Trains a backward velocity field $\hat{\mathbf{V}}_{m_1,m_2}$ to restore the forward output:
-    $\mathcal{L}^b_{m_1,m_2} = \mathbb{E}\left[\|\hat{\mathbf{V}}_{m_1,m_2}(\hat{\mathbf{X}}^t_{m_1,m_2}, t) - (\mathbf{X}_{m_1} - \mathbf{X}_{m_1,m_2})\|_2\right]$
-      Key detail: The backward loss applies `detach` to $\mathbf{X}_{m_1}$ but not to $\mathbf{X}_{m_1,m_2}$, allowing the backward loss to backpropagate and influence the forward rectified flow.
-    - **Design Motivation**: Prevents the loss of discriminative information from the source modality during distribution mapping, ensuring that the fused multimodal representation retains sufficient modality-specific information.
+For modality pairs from the same sample, $\eta=0$, degrading to standard rectified flow for strict alignment. For cross-sample pairs, $\eta_{m_1,m_2} = \epsilon + \|y_i - y_j\|_2$, where relaxation is adaptively determined by the emotion label distance. Intuitively, "pairs that should be close align tightly, while those with differences are given leeway," maintaining global vision while eliminating ambiguity and recursive training overhead.
 
-4. **Implementation of Velocity Field Network $\mathbf{V}_{m_1,m_2}$**:
+**3. Cyclic Rectified Flow: Locking Source Information via Backward Flow**
 
-    - Uses sine/cosine positional encoding to inject time information $\mathbf{TE}^t$, then concatenates input features and time encoding before feeding them into an MLP.
-    - Applies `detach` to input features so that forward loss $\mathcal{L}^f$ only trains the velocity field without updating the unimodal networks, achieving decoupling between the distribution alignment task and the main task.
+During the distribution transfer toward language, the discriminative information of the source modality can be flattened. CaReFlow trains an additional backward velocity field $\hat{\mathbf{V}}_{m_1,m_2}$ to restore the forward mapping output $\mathbf{X}_{m_1,m_2}$ back to the original $\mathbf{X}_{m_1}$:
+
+$$\mathcal{L}^b_{m_1,m_2} = \mathbb{E}\left[\|\hat{\mathbf{V}}_{m_1,m_2}(\hat{\mathbf{X}}^t_{m_1,m_2}, t) - (\mathbf{X}_{m_1} - \mathbf{X}_{m_1,m_2})\|_2\right]$$
+
+Crucial gradient detail: the backward loss is detached from target $\mathbf{X}_{m_1}$ but **not** from forward output $\mathbf{X}_{m_1,m_2}$. Thus, gradients from "restoration quality" flow back to influence the forward rectified flow, forcing it to preserve source information.
+
+**4. Velocity Field Network and Detach Decoupling: Separating Alignment and Main Tasks**
+
+The velocity field $\mathbf{V}_{m_1,m_2}$ is implemented as a lightweight MLP using sine/cosine positional encoding for time step $t$ ($\mathbf{TE}^t$). Crucially, the forward loss $\mathcal{L}^f$ detaches the input features—gradients update only the velocity field, not the unimodal network. This decouples the distribution alignment task from the emotion prediction task, preventing gradient competition.
 
 ### Loss & Training
 $$\mathcal{L}_{total} = \mathcal{L} + \sum_{m \in \{a,v\}} (\alpha_f \times \mathcal{L}^f_{m,l} + \alpha_b \times \mathcal{L}^b_{m,l})$$
-where $\mathcal{L}$ is the main task prediction loss, and $\alpha_f$ and $\alpha_b$ are weights for forward and backward losses, respectively. $\alpha_f$ requires a larger value (to ensure sufficient distribution mapping), while $\alpha_b$ requires a moderate value (too large will hinder distribution conversion).
+where $\mathcal{L}$ is the main task prediction loss, and $\alpha_f, \alpha_b$ are weights. $\alpha_f$ requires a larger value for sufficient mapping, while $\alpha_b$ should be moderate.
 
 ## Key Experimental Results
 
@@ -88,7 +96,7 @@ where $\mathcal{L}$ is the main task prediction loss, and $\alpha_f$ and $\alpha
 | AtCAF | IF 2025 | 46.5 | 88.6 | 0.650 | 87.0 | 0.508 |
 | **Ours** | - | **50.6** | **89.8** | **0.616** | **87.9** | **0.504** |
 
-On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.8), and Acc2 reaches 82.9 (Prev. SOTA AV-MC was 80.6, Gain +2.3).
+On CH-SIMS-v2, Acc5 reached 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.8), and Acc2 reached 82.9 (Prev. SOTA AV-MC was 80.6, Gain +2.3).
 
 ### Ablation Study
 
@@ -100,7 +108,7 @@ On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.
 | W/O One-to-Many Mapping | 57.4 | 79.8 | 47.2 | 87.0 |
 | **Full CaReFlow** | **57.9** | **82.9** | **50.6** | **89.8** |
 
-### Comparison with Other Distribution Mapping Methods
+### Comparison with Distribution Mapping Methods
 
 | Method | Type | MOSI Acc7 | MOSI Acc2 | Parameters | CH-SIMS-v2 Acc5 |
 |------|------|-----------|-----------|--------|-----------------|
@@ -111,34 +119,33 @@ On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.
 | **Ours** | Rectified Flow | **50.6** | **89.8** | **185.38M** | **57.9** |
 
 ### Key Findings
-- **One-to-Many contributes the most**: Removing it drops MOSI Acc2 by 2.8% and CH-SIMS-v2 Acc2 by 3.1%, making it the most critical module.
-- **Robust Hyperparameters**: Performance is stable for cross-modal ratio $\beta$ in the 3-7 range; changes in Euler steps from 2-5 are minimal (indicating trajectories are already very straight).
-- CaReFlow has a moderate parameter count (185.38M), fewer than CLGSI (186.31M) and MulT (185.51M); performance gains come from alignment effectiveness rather than increased parameters.
-- t-SNE visualization intuitively shows CaReFlow bridges the modality gap more effectively than ARGF/CLGSI/Diffusion Bridge/DLF.
-- Replacing with advanced fusion methods (e.g., tensor fusion) can further improve results, such as CH-SIMS-v2 Acc2 increasing from 82.9 to 83.6.
+- **One-to-Many provides largest contribution**: Removing it drops performance significantly, proving its criticality.
+- **Hyperparameter Robustness**: Stability across cross-modal contrastive ratio $\beta$ (3-7); minimal change with Euler steps (2-5), indicating straight trajectories.
+- Efficiency: Parameter count (185.38M) is lower than CLGSI or MulT; gains come from alignment efficacy rather than model scaling.
+- Visualization: t-SNE shows CaReFlow bridges the modality gap more effectively than GANs or Diffusion Bridges.
 
 ## Highlights & Insights
-- **A New Perspective on Rectified Flow for Modality Alignment**: Redefines the modality gap problem as a distribution mapping task, leveraging the geometric intuition of rectified flow (straight trajectories mapping two distributions) to bridge the gap. This is simpler and faster than GANs and diffusion models.
-- **Clever Adaptive Margin Design**: Uses label distance $\|y_i - y_j\|$ to adaptively control the degree of relaxation, retaining the global field-of-view advantage of one-to-many mapping while guiding the model to distinguish between "should-be-aligned" and "relaxable" modality pairs. This solves both the ambiguity and recursive training issues in one go.
-- **Task Decoupling via Detach Operations**: Forward loss applies `detach` to inputs (not updating unimodal networks), while backward loss applies `detach` to $\mathbf{X}_{m_1}$ but not $\mathbf{X}_{m_1,m_2}$—this precise gradient control allows for full individual optimization of distribution alignment and the main task.
-- **Fusion-Method Agnostic**: As a preprocessing module, CaReFlow is independent of the fusion mechanism and can be plugged into any multimodal system.
+- **New Perspective on Modality Alignment**: Redefines the modality gap as a distribution mapping task, utilizing the geometric intuition of rectified flow (straight trajectories) to bridge it faster and simpler than GANs or Diffusion.
+- **Clever Adaptive Margin**: Using label distance $\|y_i - y_j\|$ to control relaxation benefits from the global vision of one-to-many mapping while guiding the model on what to align versus what to loosen.
+- **Task Decoupling via Detach**: Precise gradient control via detach operations allows distribution alignment and the main task to optimize independently.
+- **Fusion-Agnostic**: Functions as a preprocessing module that can be plugged into any multimodal system.
 
 ## Limitations & Future Work
-- Currently only validated on multimodal affective computing tasks, and has not been tested on broader multimodal tasks like vision-language understanding.
-- Uses language as a fixed target modality (since it is dominant in MAC); it remains unclear how to select target modalities for tasks where language is not dominant.
-- The velocity field is implemented with a simple MLP, which may lack expressive power in more complex distribution mapping scenarios.
-- Hyperparameters ($\beta$, $\epsilon$, $\alpha_f$, $\alpha_b$) require tuning; although the authors demonstrate robustness, optimal values vary by dataset.
+- Validated only on MAC tasks; performance on broader multimodal tasks like Vision-Language understanding is untested.
+- Relies on language as the fixed target modality; selection criteria for the target in non-language-dominant tasks are unclear.
+- Velocity field utilizes a simple MLP, which may lack expressive power for more complex mapping scenarios.
+- Requires some hyperparameter tuning for specific datasets.
 
 ## Related Work & Insights
-- **vs Diffusion Bridge**: Both use generative models for distribution mapping, but diffusion models have slow inference and only perform one-to-one mapping; CaReFlow uses rectified flow which completes in 2 steps and supports one-to-many.
-- **vs CLGSI (Contrastive Learning)**: CLGSI also implements one-to-many (same-category positive pairs) but does not differentiate the importance between same-sample pairs and same-category pairs; CaReFlow achieves finer control through adaptive margins.
-- **vs ARGF (GAN)**: GAN training is unstable and difficult for guaranteeing information preservation; CaReFlow explicitly constrains information preservation through cyclic flow.
+- **vs. Diffusion Bridge**: Both use generative models for mapping, but Diffusion is slow and one-to-one; CaReFlow is one-to-many and requires only 2 steps.
+- **vs. CLGSI (Contrastive)**: CLGSI handles one-to-many via same-class pairs but doesn't differentiate importance like the adaptive margin in CaReFlow.
+- **vs. ARGF (GAN)**: GANs are unstable and struggle with information preservation, which CaReFlow addresses via cyclic flow.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Utilizing rectified flow for modality alignment for the first time, with three intertwined innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets across 3 tasks + sufficient ablation and visualization.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation derivation and well-formalized methodology.
-- Value: ⭐⭐⭐⭐ The modality gap is a core issue in multimodal fusion; the rectified flow solution is concise and effective.
+- Novelty: ⭐⭐⭐⭐ First application of rectified flow to modality alignment with interconnected innovations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets across 3 tasks with extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and solid mathematical formalization.
+- Value: ⭐⭐⭐⭐ Addresses the core bottleneck of multimodal fusion with a concise, effective solution.
 
 <!-- RELATED:START -->
 
@@ -147,10 +154,10 @@ On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](../../NeurIPS2025/image_generation/efficient_rectified_flow_for_image_fusion.md)
-- [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](../../ICML2026/image_generation/geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
-- [\[CVPR 2026\] WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval](wiser_wider_search_deeper_thinking_and_adaptive_fusion_for_training-free_zero-sh.md)
-- [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](../../ICLR2026/image_generation/free_lunch_for_stabilizing_rectified_flow_inversion.md)
-- [\[ICML 2026\] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs](../../ICML2026/image_generation/offline_preference_optimization_for_rectified_flow_with_noise-tracked_pairs.md)
+- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
+- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[CVPR 2025\] JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation](../../CVPR2025/image_generation/janusflow_harmonizing_autoregression_and_rectified_flow_for_unified_multimodal_u.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
 
 </div>
 

@@ -18,7 +18,7 @@ item_list:
   - u: "reverse_constitutional_ai_a_framework_for_controllable_toxic_data_generation_via/"
     t: "Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF"
   - u: "univid_unified_vision-language_model_for_video_moderation/"
-    t: "UniVid: A Unified Vision-Language Model for Video Moderation"
+    t: "UniVid: Unified Vision-Language Model for Video Moderation"
 item_total: 4
 ---
 
@@ -27,20 +27,20 @@ item_total: 4
 
 **💬 ACL2026** · **4** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (41)](../../ICML2026/ai_safety/index.md) · [📷 CVPR2026 (24)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (45)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (148)](../../CVPR2026/ai_safety/index.md) · [🧪 ICML2026 (41)](../../ICML2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (45)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (24)](../../ICCV2025/ai_safety/index.md)
 
 **[OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset](omnicompliance-100k_a_multi-domain_rule-grounded_real-world_safety_compliance_da.md)**
 
-:   This paper constructs OmniCompliance-100K, the first large-scale, multi-domain, real-world case-based LLM safety compliance dataset. It contains 12,985 manually organized regulation/policy rules and 106,009 real-world compliance cases collected via a Web search agent. Covering 9 domains such as AI safety, data privacy, finance, and healthcare, the dataset reveals systematic shortcomings in the safety compliance capabilities of current LLMs through extensive benchmark experiments.
+:   This paper constructs OmniCompliance-100K, the first large-scale, multi-domain, real-world case-based LLM safety compliance dataset. It contains 12,985 human-organized regulatory/policy rules and 106,009 real-world compliance cases collected via web search agents across 9 domains, including AI safety, data privacy, finance, and healthcare. Extensive benchmarking reveals systematic weaknesses in current LLMs regarding safety compliance.
 
 **[On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)**
 
-:   This paper points out that the "disclosing intermediate activations after shuffling" defense commonly used in Transformer secure inference is insecure. It proposes an attack that first aligns activations under different random permutations and then solves linear equations to extract weights. The attack can recover approximately usable model weights for Pythia-70m and GPT-2 with a query cost of approximately \$1.
+:   This paper demonstrates that the commonly used "expose intermediate activations after shuffling" defense in Transformer secure inference is insecure. It proposes an attack that first aligns activations under different random permutations and then solves linear equations to extract weights. On Pythia-70m and GPT-2, it can recover approximately usable model weights with a query cost of about $1.
 
 **[Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF](reverse_constitutional_ai_a_framework_for_controllable_toxic_data_generation_via.md)**
 
-:   This paper proposes Reverse Constitutional AI (R-CAI), which implements automated, controllable, and multi-dimensional adversarial toxic data synthesis by flipping Constitutional AI principles into a "Toxic Constitution," combined with a critique-revision loop and a probability-clamped RLAIF mechanism. This approach also addresses semantic degradation caused by reward hacking, achieving a 15% improvement in semantic coherence.
+:   The authors propose Reverse Constitutional AI (R-CAI), which synthesizes automated, controllable, and multi-dimensional adversarial toxic data by inverting Constitutional AI principles into a "Toxic Constitution." By combining a critique-revision loop with a probability-clamped RLAIF mechanism, the framework addresses semantic degradation caused by reward hacking, achieving a 15% improvement in semantic coherence.
 
-**[UniVid: A Unified Vision-Language Model for Video Moderation](univid_unified_vision-language_model_for_video_moderation.md)**
+**[UniVid: Unified Vision-Language Model for Video Moderation](univid_unified_vision-language_model_for_video_moderation.md)**
 
-:   UniVid evolves the video moderation system from an unmaintainable "fragmented" architecture into an interpretable and reusable "end-to-end" system by replacing 1,000+ black-box classifiers with a unified policy-aware captioning VLM, resulting in a 42.7% reduction in violation leakage compared to traditional solutions in ByteDance's production deployment.
+:   UniVid evolves video moderation systems from unmaintainable "fragmented" architectures to interpretable and reusable "end-to-end" moderation systems by replacing 1,000+ black-box classifiers with a unified policy-aware captioning VLM. In ByteDance production deployment, it reduced violation leakage by 42.7% compared to traditional solutions.

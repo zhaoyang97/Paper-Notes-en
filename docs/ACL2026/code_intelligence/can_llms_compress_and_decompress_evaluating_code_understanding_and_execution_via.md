@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility
 description: >-
-  [ACL 2026][Code Intelligence][Code reasoning] Ours proposes RoundTripCodeEval (RTCE): a code reasoning benchmark utilizing 4 lossless compression algorithms (LZW/AE/RLE/Huffman) to construct 250 inputs × 4 subtasks = 100…
+  [ACL 2026][Code Intelligence][Paper Note] Ours proposes RoundTripCodeEval (RTCE): a code reasoning benchmark comprising 1,000 strict round-trip cases (250 inputs × 4 sub-tasks) where encode→decode must restore bit-level accuracy, constructed using 4 lossless compression algorithms (LZW/AE/RLE/Huffman). Results demonstrate that even QwQ-32B maintains 0% EM on H
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Code reasoning"
-  - "bidirectional execution"
-  - "compression algorithms"
-  - "self-consistency"
-  - "evaluation"
+  - ACL 2026
+  - Code Intelligence
 date: 2026-05-08
-content_hash: 793afb79fbfc7f63
+content_hash: b78cabbda1cf4269
 ---
-
 # Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility
 
 **Conference**: ACL 2026 Findings  
@@ -24,54 +18,64 @@ content_hash: 793afb79fbfc7f63
 **Keywords**: Code reasoning, bidirectional execution, compression algorithms, self-consistency, evaluation
 
 ## TL;DR
-Ours proposes RoundTripCodeEval (RTCE): a code reasoning benchmark utilizing 4 lossless compression algorithms (LZW/AE/RLE/Huffman) to construct 250 inputs × 4 subtasks = 1000 strict round-trips (where encode→decode must achieve bit-precise restoration). Results demonstrate that even QwQ-32B maintains 0% EM on Huffman encoding, a failure that cannot be rectified via SFT or self-reflection.
+Ours proposes RoundTripCodeEval (RTCE): a code reasoning benchmark comprising 1,000 strict round-trip cases (250 inputs × 4 sub-tasks) where encode→decode must restore bit-level accuracy, constructed using 4 lossless compression algorithms (LZW/AE/RLE/Huffman). Results demonstrate that even QwQ-32B maintains 0% EM on Huffman encoding, a failure that cannot be remediated by SFT or self-reflection.
 
 ## Background & Motivation
 
-**Background**: Code-LLMs (such as DeepSeek-Coder, Qwen2.5-Coder, and StarCoder2) have demonstrated strong performance on code generation benchmarks like HumanEval/MBPP. Execution reasoning evaluations (e.g., CRUXEval, CodeIO, CodeMind, REVAL) typically assess execution in either a single forward or backward direction.
+**Background**: Code-LLMs (such as DeepSeek-Coder, Qwen2.5-Coder, StarCoder2) have achieved significant performance on code generation benchmarks like HumanEval/MBPP. Execution reasoning evaluations (e.g., CRUXEval, CodeIO, CodeMind, REVAL) typically assess either forward or backward execution in isolation.
 
-**Limitations of Prior Work**: Existing evaluations are either unidirectional (measuring only forward or backward execution) or based on "semantic equivalence" (e.g., IdentityChain for code↔spec, RTC for code↔NL). Semantic equivalence is a permissive standard—generated code is considered correct as long as its behavior is identical, allowing models to potentially exploit pattern matching or memorization. It fails to prove that a model truly understands the internal state machine and data flow of an algorithm.
+**Limitations of Prior Work**: Existing evaluations are either unidirectional or rely on "semantic equivalence" (e.g., IdentityChain for code↔spec, RTC for code↔NL description). Semantic equivalence is a loose standard—generated code is considered correct as long as it behaves identically, allowing models to potentially score high via pattern matching or memorization without truly understanding the internal state machine or data flow of the algorithm.
 
-**Key Challenge**: A model may achieve high scores in forward execution (through surface pattern matching) but fail in backward reasoning. Alternatively, it may appear correct in both directions independently while failing to close the round-trip loop. This indicates an inconsistency in the model’s internal representations, a flaw that unidirectional benchmarks cannot capture. "Forward correctness was fragile, derived from template matching."
+**Key Challenge**: Models may achieve high scores in forward execution through surface-level pattern matching but fail in backward execution. Alternatively, both directions might seem correct independently while failing to close the round-trip loop, indicating inconsistent internal representations. "forward correctness was fragile, derived from template matching."
 
-**Goal**: To design an evaluation capable of distinguishing between "performance derived from pattern matching" and "genuine understanding of algorithmic semantics."
+**Goal**: Design an evaluation capable of distinguishing between "score-padding via pattern matching" and "genuine understanding of algorithmic semantics."
 
-**Key Insight**: Lossless compression algorithms are naturally bijective. The operations $\text{enc}(x)=z$ and $\text{dec}(z)=x$ must be perfectly reversible, providing a strict round-trip constraint $\text{dec}(\text{enc}(x))=x$ that is significantly harder to bypass via memorization than semantic equivalence.
+**Key Insight**: Lossless compression algorithms are inherently bijective. The requirement that $\text{dec}(\text{enc}(x))=x$ must be perfectly invertible provides a strict round-trip constraint that is far more difficult to "game" than semantic equivalence.
 
-**Core Idea**: Code understanding is redefined as a "code invertibility problem." Using round-trip exact-match (EM) as the evaluation signal, a 16-dimensional diagnostic grid is formed by 4 compression algorithms across 4 task variants (encode, decode, encode⁻¹, decode⁻¹) to expose systematic failures hidden by forward-only evaluations.
+**Core Idea**: Redefine "code understanding" as a "code invertibility" problem. By using round-trip exact-match as the evaluation signal across a 16-dimensional diagnostic grid (4 compression algorithms × 4 task variants: encode, decode, encode⁻¹, decode⁻¹), systematic failures undetectable by forward-only benchmarks can be exposed.
 
 ## Method
 
 ### Overall Architecture
-The RTCE construction involves three phases: (1) **Generation**—250 synthetic inputs across 4 data families (pattern strings, Apache logs, YAML configs, CSV tables, totaling 36 sub-classes) to ensure diversity; (2) **Verification**—Python reference implementations of 4 compression algorithms (LZW/AE/RLE/Huffman) generate deterministic ground truth under fixed seeds; (3) **Evaluation**—4 tasks per input (O/P Pred, O/P Pred-I, I/P Pred, I/P Pred-I) are scored using EM, Edit Similarity, and Pass@5. All tasks are execution-free, requiring the model to simulate execution mentally.
+
+RTCE reformulates code understanding as a code invertibility problem and uses a strict round-trip constraint to verify if models accurately simulate algorithms mentally. The benchmark is constructed in three steps: first, 250 diverse inputs are synthesized across four data families (Pattern strings, Apache logs, YAML, CSV) totaling 36 sub-categories. Second, deterministic ground truths are generated using Python reference implementations of LZW, AE, RLE, and Huffman under a fixed seed. Finally, models perform four task variants (O/P Pred, O/P Pred-I, I/P Pred, I/P Pred-I) in an execution-free setting, forcing mental simulation. Evaluation utilizes EM, Edit Similarity (ES), and Pass@5. EM (exact match with float tolerance $10^{-3}$) is the primary metric, while ES provides partial credit. In this benchmark, three diagnostic paradigms—zero-shot, self-reflection, and SFT—are used to exhaustively test performance improvements and attribute failures to architectural limitations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Four Data Families (36 sub-classes)<br/>Pattern String / Log / YAML / CSV → 250 Inputs"] --> B["Four Compression Algorithms<br/>LZW / AE / RLE / Huffman Reference Impl."]
+    B -->|Fixed seed outputs deterministic GT| C["Round-trip Bijective Framework<br/>4 Task Variants: Enc / Dec / Two Inversions"]
+    C --> DIAG
+    subgraph DIAG["Three Diagnostic Paradigms (Execution-free Mental Simulation)"]
+        direction TB
+        E["Zero-shot: Evaluates raw capability"]
+        F["Self-reflection: Critique→Revision cycles"]
+        G["SFT: Trace→Reasoning chain→LoRA fine-tuning QwQ-32B"]
+    end
+    DIAG --> H["EM / Edit Sim / Pass@5 Scoring<br/>EM primary; requires bit-accurate round-trip"]
+```
 
 ### Key Designs
 
-1.  **Round-trip framework based on bijective compression**:
-    *   **Function**: Constructs a strict exact-match loop that cannot be bypassed by semantic equivalence or partial similarity.
-    *   **Mechanism**: Defines $\mathsf{enc}:\mathcal{X}\to\mathcal{Z}$ and $\mathsf{dec}:\mathcal{Z}\to\mathcal{X}$ with the constraint $\forall x\in\mathcal{X},\ \mathsf{dec}(\mathsf{enc}(x))=x$. Models are tasked with $x\to z$ (forward encoding), $z\to x'$ (forward decoding), $x\to z$ via inverting dec (inferring encoding behavior from the decoding function), and $z\to x'$ via inverting enc (inferring decoding behavior from the encoding function). The "inversion" tasks are critical as they force the model to reason about one function as the inverse of another.
-    *   **Design Motivation**: Unlike semantic equivalence in RTC (code↔NL), bit-precise restoration allows no information loss, exposing internal contradictions where both directions might seem correct independently but fail when combined.
+**1. Round-trip framework via bijective compression: Operationalizing "understanding" as bit-accurate invertibility**
 
-2.  **4 Compression algorithms covering the encoding paradigm spectrum**:
-    *   **Function**: Tests different reasoning bottlenecks through varied algorithmic design patterns.
-    *   **Mechanism**: LZW tests dictionary maintenance (dynamic state); AE tests probability interval accumulation (floating-point precision + long-range dependencies); RLE tests consecutive run aggregation (simplest bijection); Huffman tests prefix coding and tree construction (multi-stage hierarchical process). These span from simple (RLE) to complex (Huffman). Experimentally, all 15 models achieved 0% EM on Huffman encoding, proving the issue lies in state-machine comprehension.
-    *   **Design Motivation**: Using a single algorithm might bias results toward specific properties; testing four distinct classes distinguishes between specific knowledge gaps and general state-tracking deficiencies.
+The fundamental weakness of existing evaluations lies in "semantic equivalence"—as long as behavior matches, models can succeed via pattern matching without mastering the internal state machine. Lossless compression is naturally bijective, imposing a stricter constraint: defining $\mathsf{enc}:\mathcal{X}\to\mathcal{Z}$ and $\mathsf{dec}:\mathcal{Z}\to\mathcal{X}$ enforces $\forall x\in\mathcal{X},\ \mathsf{dec}(\mathsf{enc}(x))=x$. Any information loss causes an immediate EM failure. Four tasks are derived: $x\to z$ (forward encoding), $z\to x'$ (forward decoding), and two "inversion" variants using the dec function to infer encoding behavior and vice versa. These inversion tasks are critical as they require the model to reason about a function as the inverse of the target, preventing simple forward simulation and exposing internal contradictions.
 
-3.  **3 Diagnostic paradigms: zero-shot / self-reflection / SFT**:
-    *   **Function**: Exhausts standard methods for performance improvement to prove that the performance gap in RTCE is fundamental.
-    *   **Mechanism**: Zero-shot measures raw capability; multi-turn self-reflection uses a critique/revision loop; SFT employs a 5-stage pipeline including execution injection (@snoop), trace filtering, natural language reasoning chain generation using Qwen3-32B, and LoRA fine-tuning on QwQ-32B. None of these methods resolved the 0% EM on Huffman encoding.
-    *   **Design Motivation**: Strips away the possibility that "the model is simply not well-prompted" from the possibility of underlying architectural limitations.
+**2. Four compression algorithms spanning the encoding paradigm spectrum**
 
-### Evaluation Metrics
-EM (exact match with floating-point tolerance of $10^{-3}$), ES (normalized Levenshtein distance for partial credit), and Pass@5 (best of $n=5$ samples). EM serves as the primary metric, as ES scores (8%–20% even when EM=0) indicate outputs that "look similar" but lack precision.
+To avoid bias from a single algorithm, RTCE selects four highly distinct mechanisms: LZW (dictionary maintenance/dynamic state), AE (cumulative probability intervals/floating-point precision and long-range dependency), RLE (run-length aggregation/simplest bijection), and Huffman (prefix coding/tree construction/multi-stage process). This range allows the differentiation between "lack of specific algorithm knowledge" and "poor general state-tracking capability." Huffman encoding is particularly revealing: 15 models achieved 0% EM, whereas RLE showed significantly higher scores, proving that the barrier is the "understanding of the state machine" rather than absolute difficulty.
+
+**3. Three diagnostic paradigms: Proving the gap is fundamental**
+
+To substantiate the conclusion that Transformers have fundamental defects in stateful bijection, the study excludes the possibility of poor prompting or data scale. Three standard enhancement methods are applied: zero-shot for raw capability; multi-round self-reflection using a critique/revision loop; and SFT involving a five-stage pipeline—injecting execution via @snoop, filtering valid traces, converting traces into natural language reasoning chains using Qwen3-32B, and fine-tuning QwQ-32B via LoRA rank-8. Despite maximizing prompt, data, and scale levers, Huffman encoding performance remained at 0%, attributing the failure to architecture rather than training.
 
 ## Key Experimental Results
 
 ### Main Results
-Pass@5 synthesis for 15 LLMs across 4 algorithms and 4 tasks (abridged):
+15 LLMs × 4 Algorithms × 4 Tasks (Pass@5 combined average, selected):
 
-| Model | Scale | RLE Avg | LZW Avg | AE Avg | Huffman Avg | Avg |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Size | RLE Avg | LZW Avg | AE Avg | Huffman Avg | Avg |
+|------|------|----------|----------|---------|--------------|-----|
 | Llama-3.2-1B | 1B | 0.15 | 0.05 | 0.34 | 0.08 | 0.16 |
 | Phi-3-mini-128k | 3.8B | 12.01 | 3.65 | 2.60 | 1.54 | 4.95 |
 | Qwen2.5-7B | 7.6B | 17.39 | 4.46 | 6.55 | 2.65 | 7.76 |
@@ -82,50 +86,52 @@ Pass@5 synthesis for 15 LLMs across 4 algorithms and 4 tasks (abridged):
 | DeepSeek-R1-Distill-32B | 32.8B | 36.37 | 23.81 | 12.74 | 3.98 | 19.23 |
 | deepseek-coder-33b | 33.3B | 13.71 | 3.44 | 3.34 | 1.21 | 5.43 |
 
-**Key Findings**: (1) Huffman encoding resulted in 0% for all models—the three-step process of frequency table construction, tree building, and variable-length code output proved impossible for current LLMs. (2) Reasoning-focused training (QwQ vs. Qwen2.5-Coder with identical parameters/tokenizers) improved AE by $1.86\times$, confirming the bottleneck is logical reasoning rather than tokenization. (3) Decoding is generally easier than encoding, except for AE: QwQ achieved 27.6% on AE encoding but only 2.3% on decoding due to the complex inverse floating-point interval operations required.
+**Key Findings**: (1) Huffman encoding resulted in 0% EM for all models—combining frequency table construction, tree building, and variable-length output proved impossible for current LLMs; (2) Reasoning-focused training (QwQ vs. Qwen2.5-Coder) yielded a $1.86\times$ gain in AE, proving the bottleneck is logic rather than tokenization; (3) Decoding is generally easier than encoding, except for AE where QwQ scored 27.6% in encoding but only 2.3% in decoding (a $12\times$ gap) due to the complexity of inverse floating-point interval arithmetic.
 
 ### Ablation Study: SFT on QwQ-32B (Pass@5)
 
 | Algorithm | temp | I/P Pred | I/P Pred-I | O/P Pred | O/P Pred-I |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------|----------|------------|----------|------------|
 | AE | 0.2 | 30.77 | 23.08 | **78.57** | **84.62** |
+| AE | 0.8 | 15.00 | 20.00 | 70.00 | 84.21 |
 | Huffman | 0.2 | 35.00 | 50.00 | **0.00** | **0.00** |
+| Huffman | 0.8 | 36.36 | 50.00 | **0.00** | **0.00** |
 | LZW | 0.2 | 62.50 | 62.50 | 87.50 | 87.50 |
 | RLE | 0.2 | 76.47 | 86.00 | 80.00 | 86.00 |
 
-After SFT, Huffman encoding remained at 0%, while decoding increased to 50%—suggesting the trace-derived reasoning chain only learned "surface decoding templates" without internalizing the bijective state transition structure.
+After SFT, Huffman encoding remained at 0% while decoding rose to 50%, suggesting that trace-derived reasoning chains only capture "surface decoding templates" rather than internalizing the bijective state transfer structure.
 
 ### Key Findings
-*   **The Huffman Paradox**: All models failed Huffman encoding (0%) while some succeeded at decoding (7-11%). Decoding only requires traversal (local lookup) on a given tree, whereas encoding requires global multi-stage reasoning (frequency calculation + tree construction).
-*   **Self-reflection Saturation**: Critique-revision loops saturate after the first turn. While a single round can fix shallow reasoning errors, systematic state-tracking failures are not self-correctable.
-*   **SFT Bias (Forward vs. Inverse)**: On AE, forward performance reached 78.6% while inverse performance reached only 23–30%, suggesting LoRA adapters overfit to the surface form of traces rather than learning bijective invariants.
-*   **Tokenization is not the Bottleneck**: Comparison between QwQ and Qwen2.5-Coder shows massive performance gaps despite using the same tokenizer, indicating that training objectives (reasoning vs. code) are the primary drivers.
-*   **ES > 0 with EM = 0**: The prevalence of outputs that appear correct but lack precision confirms that RTCE's strict EM requirement exposes fragility missed by other benchmarks.
+- **The Huffman Paradox**: All models failed Huffman encoding (0%), yet achieved 7-11% in decoding. Decoding only requires local lookups on a given tree, whereas encoding necessitates multi-stage global reasoning (frequency table → tree construction → variable coding).
+- **Self-reflection Saturation**: The first critique round repairs shallow reasoning errors, but success saturates by the second round, indicating that systematic state-tracking errors cannot be fixed via self-correction (consistent with Olausson 2024).
+- **SFT Gains Forward but Harms Inverse**: In AE, forward accuracy rose to 78.6% while inverse stayed at 23–30%, suggesting LoRA adapters overfitted to trace surface forms without learning bijective invariants.
+- **Tokenization is Not the Bottleneck**: QwQ and Qwen2.5-Coder share the same tokenizer and parameters, yet AE performance differs by $1.86\times$, attributing the difference to training objectives (reasoning vs. code).
+- **ES > 0 but EM = 0**: Resulting outputs are often "close but imprecise," validating that RTCE's strict EM requirement exposes fragility missed by other benchmarks.
 
 ## Highlights & Insights
-*   **Operationalizing "Understanding" as "Invertibility"**: Utilizing bijections transforms abstract understanding into a quantifiable exact-match signal. This methodology is extensible to any task with a natural inverse (e.g., encryption↔decryption, serialization↔deserialization).
-*   **Diagnostic Evaluation Triad**: Testing via zero-shot, self-reflection, and SFT simultaneously reinforces the conclusion that Transformers have fundamental defects in bijective state tracking.
-*   **Huffman Paradox as a Gap Benchmark**: The stark asymmetry between encoding (0%) and decoding (11%) identifies "multi-stage global state construction" as a specific objective for future code-LLM development.
-*   **Synthetic yet Realistic**: The four data families simulate real-world developer artifacts to avoid data contamination from GitHub.
+- **Operationalizing "Understanding" as "Invertibility"**: Using bijection to transform the abstract concept of "algorithm understanding" into a quantifiable EM signal represents a new methodology in evaluation. This approach is transferable to any task with a natural inverse (e.g., refactoring↔rewriting, encryption↔decryption).
+- **Diagnostic Evaluation Triad**: Testing zero-shot, self-reflection, and SFT simultaneously strengthens the conclusion that Transformers have fundamental defects in bijective state tracking.
+- **Huffman Paradox Pinpoints Capability Gaps**: The sharp asymmetry between encoding (0%) and decoding (11%) defines "multi-stage global state construction" as a concrete target for future Code-LLMs.
+- **Synthetic yet Realistic**: Using patterns, logs, YAML, and CSV simulates real-world developer artifacts to avoid data contamination from GitHub.
 
 ## Limitations & Future Work
-*   Restricted to Python; extension to other languages is planned.
-*   The sample size (1000) and algorithm count (4) limit the statistical stability of fine-grained per-category analysis.
-*   Execution-free evaluation cannot account for runtime phenomena like side-effects or exceptions.
-*   Primary focus on open-source models; the generalizability of these findings to top-tier closed-source models (GPT-4, Claude) remains an open question.
-*   Personal Insight: Bijection is only one dimension of code understanding; other forms of invertibility like de-compilation or symbolic execution remain uncovered.
+- Restricted to Python; expansion to other languages is planned.
+- Sample size (1000) and algorithm count (4) limit the stability of fine-grained per-category statistics.
+- Execution-free settings cannot account for runtime phenomena like side-effects or concurrency.
+- Primary evaluation focuses on open-source models; performance of state-of-the-art closed-source models remains an open question.
+- Personal note: Bijection is one dimension; other forms of invertibility like decompilation or symbolic execution are not covered.
 
 ## Related Work & Insights
-*   **vs. IdentityChain (Min 2024)**: Evaluates spec↔code consistency based on semantic equivalence, whereas Ours requires much stricter exact bijections.
-*   **vs. RTC (Allamanis 2024)**: Performs code↔NL description round-trips at a semantic level; Ours operates at a bit-precise data level.
-*   **vs. CodeIO/CRUXEval**: These score forward and backward directions independently; Ours emphasizes that both directions must be self-consistent.
-*   **vs. CodeMind/REVAL/CACP**: These rely on complex trace or concept-level annotations; Ours automatically scores via round-trip EM without additional labels.
+- **vs. IdentityChain (Min 2024)**: IdentityChain checks spec↔code consistency but relies on semantic equivalence; RTCE requires exact bijection, which is stricter.
+- **vs. RTC (Allamanis 2024)**: RTC uses code↔NL description round-trips (semantic level); RTCE is data-level bit-accurate.
+- **vs. CodeIO/CRUXEval**: These score forward/backward independently; RTCE emphasizes self-consistency between directions.
+- **vs. CodeMind/REVAL/CACP**: These rely on trace/concept-level annotations; RTCE requires no annotation beyond the round-trip exact-match.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ Introducing round-trip bijections to code reasoning and operationalizing invertibility is a truly fresh perspective.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing across 15 models and 3 paradigms, though closed-source models are absent.
-*   Writing Quality: ⭐⭐⭐⭐ Clear mathematical definitions and well-articulated task distinctions.
-*   Value: ⭐⭐⭐⭐⭐ Exposing the systematic failure of Transformers in stateful bijections provides a clear target for the code reasoning community.
+- Novelty: ⭐⭐⭐⭐⭐ Introducing round-trip bijection as a quantifiable invertibility metric for code reasoning is a fresh perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing across 15 models, 4 algorithms, and 3 paradigms, though closed-source models are absent.
+- Writing Quality: ⭐⭐⭐⭐ Clear mathematical notation and distinct definitions of tasks and inversions.
+- Value: ⭐⭐⭐⭐⭐ Identifying a systematic flaw in Transformers regarding stateful bijection provides a clear research direction for the code reasoning community.
 
 <!-- RELATED:START -->
 
@@ -133,22 +139,11 @@ After SFT, Huffman encoding remained at 0%, while decoding increased to 50%—su
 
 ## Related Papers
 
-- [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
-- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
-- [\[AAAI 2026\] Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning](../../AAAI2026/code_intelligence/towards_better_code_understanding_in_decoder-only_large_language_models_via_hie.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
-- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
 - [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
 - [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
-- [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
+- [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
+- [\[ACL 2026\] AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor](automonitor-bench_evaluating_the_reliability_of_llm-based_misbehavior_monitor.md)
 
 </div>
 

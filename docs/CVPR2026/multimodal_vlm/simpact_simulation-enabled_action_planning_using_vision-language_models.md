@@ -2,134 +2,145 @@
 title: >-
   [Paper Note] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Simulation-based reasoning] SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs a physics simulation environment from a single RGB-D image…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs physical simulation environments from a single RGB-D image. This enables VLMs to propose actions, observe simulation results, and iteratively refine reasoning, achieving SOTA performance on rigid and deformable obj
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Simulation-based reasoning"
-  - "vision-language models"
-  - "action planning"
-  - "physical reasoning"
-  - "robotic manipulation"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 695a2ceec6d18682
+content_hash: 7bc8c6f318baa061
 ---
-
 # SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.05955](https://arxiv.org/abs/2512.05955)  
 **Code**: None (coming soon)  
-**Area**: Multimodal VLM / Robotic Manipulation
-**Keywords**: Simulation-based reasoning, vision-language models, action planning, physical reasoning, robotic manipulation
+**Area**: Multimodal VLM / Robotic Manipulation  
+**Keywords**: Simulation-enabled Reasoning, Vision-Language Models, Action Planning, Physical Reasoning, Robotic Manipulation
 
 ## TL;DR
 
-SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs a physics simulation environment from a single RGB-D image, enabling VLMs to propose actions, observe simulation outcomes, and iteratively refine their reasoning—achieving SOTA performance on both rigid and deformable object manipulation tasks without any additional training.
+SIMPACT proposes a test-time simulation-augmented action planning framework that automatically constructs physical simulation environments from a single RGB-D image. This enables VLMs to propose actions, observe simulation results, and iteratively refine reasoning, achieving SOTA performance on rigid and deformable object manipulation tasks without additional training.
 
 ## Background & Motivation
 
-**Background**: Vision-language models (VLMs) such as GPT-4V and Gemini have demonstrated remarkable commonsense reasoning and semantic understanding capabilities, and have been widely explored for robot task planning. However, VLMs are trained on static image-text pairs from the internet, which contain no causal interactions or action-conditioned state transitions.
+**Background**: Vision-Language Models (VLMs) such as GPT-4V and Gemini have demonstrated exceptional commonsense reasoning and semantic understanding, being widely explored for robotic task planning. However, VLM training data originates from static image-text pairs on the internet, which lack causal interactions or changes conditioned on actions.
 
-**Limitations of Prior Work**: (1) VLMs lack a deep understanding of physical dynamics—they do not know "what happens when an object is pushed" or "how different force magnitudes affect outcomes"; (2) existing VLM-based robot methods typically prompt models to directly output action parameters, without any physical verification mechanism; (3) enabling VLMs to "understand" the physical world without training new models remains an open problem.
+**Limitations of Prior Work**: (1) VLMs lack a deep understanding of physical dynamics—they do not know "what happens when an object is pushed" or the "effects of different force levels"; (2) Existing VLM-based robotic methods typically have the model output action parameters directly, but the models lack physical verification capabilities; (3) How to enable VLMs to "understand" the physical world without training new models remains an open problem.
 
-**Key Challenge**: VLMs possess strong semantic reasoning capabilities but lack understanding of physical dynamics, fundamentally because internet-scale data contains no causal chains of the form "action → consequence."
+**Key Challenge**: VLMs possess strong semantic reasoning capabilities but lack physical dynamics understanding. This is fundamentally because causal "action $\rightarrow$ consequence" information is absent from internet-scale data.
 
-**Goal**: To augment VLMs with physical reasoning capability at test time—without additional training—enabling them to plan robotic manipulation tasks that require fine-grained physical understanding.
+**Goal**: To supplement VLMs with physical reasoning capabilities at test time without additional training, allowing VLMs to perform robotic manipulation tasks that require fine-grained physical understanding.
 
-**Key Insight**: The authors observe that physics simulators (e.g., PyBullet, MuJoCo) can provide accurate physical predictions. If a simulator can be embedded as a "world model" within the VLM's reasoning loop at test time, it can compensate for the VLM's lack of physical understanding.
+**Key Insight**: The authors observe that physical simulators (such as PyBullet, MuJoCo, etc.) can provide precise physical predictions. If a simulator can be embedded as a "world model" into the VLM reasoning loop at test time, the VLM's lack of physical understanding can be compensated for.
 
-**Core Idea**: Embed a physics simulation loop within VLM inference—the VLM proposes an action → the simulator executes it → the VLM observes the simulation outcome → the VLM iteratively refines its reasoning—realizing "simulation as world model" for physics-augmented inference.
+**Core Idea**: Embed a physical simulation loop within the VLM reasoning process—VLM proposes an action $\rightarrow$ simulator executes $\rightarrow$ VLM observes simulation results $\rightarrow$ VLM iteratively corrects. This realizes physical-augmented reasoning via "simulation as a world model."
 
 ## Method
 
 ### Overall Architecture
 
-SIMPACT consists of three stages: (1) **Simulation Construction**: automatically building a physics simulation environment from a single RGB-D image; (2) **Action Sampling & Optimization**: the VLM proposes candidate actions based on a language task description, executes them in simulation, observes the results, and iteratively refines the action parameters; (3) **Real-World Execution**: transferring the optimized action sequence from simulation to a real robot. No additional VLM training is required throughout this process.
+The core problem SIMPACT addresses is that while VLMs have semantic commonsense, they lack physical dynamics, making direct output of action parameters a "blind guess." The solution is to hook an external physical simulator to the VLM at test time, delegating the calculation of "consequences of actions" to the simulator while the VLM handles proposals and result interpretation. The pipeline starts from a single RGB-D image and consists of two stages: **Simulation Construction**—automatically reconstructing the interactive simulation scene (assigning two sets of physical engines based on whether objects are rigid or deformable, with physical parameters inferred by the VLM); and **Action Planning**—letting the VLM repeatedly "propose actions $\rightarrow$ observe rollouts $\rightarrow$ evaluate $\rightarrow$ refine actions" in simulation until the actions push the scene to the target state. Finally, the converged action sequence is executed on a real robot. The VLM weights remain frozen throughout.
+
+```mermaid
+graph TD
+    A["Single RGB-D Image + Language Task"] --> SEG
+    subgraph BUILD["Automatic Multi-physics Simulation Construction (Design 1)"]
+        direction TB
+        SEG["VLM Object Annotation + GroundedSAM2 Segmentation"] -->|Rigid| RIG["Mesh Reconstruction + Pose Estimation<br/>image-to-3D / FoundationPose → MuJoCo"]
+        SEG -->|Deformable| DEF["Volumetric Particle Sampling<br/>Projective Dynamics / MPM"]
+        RIG --> PARAM["VLM Physical Parameter Inference<br/>Mass, Friction, Elasticity"]
+        DEF --> PARAM
+    end
+    PARAM --> SIM["Multi-physics Simulator SIM"]
+    subgraph PLAN["Simulation-in-the-loop Iterative Planning (Design 2)"]
+        direction TB
+        SAMP["VLM Sampler: Propose K Candidate Actions"] --> ROLL["Simulated Rollout for Consequence Inference"]
+        ROLL --> OPT["VLM Optimizer: Refine Action via Rollout"]
+        OPT --> EVAL{"VLM Evaluator: Goal Reached?"}
+        EVAL -->|No, Add to Context| ROLL
+    end
+    SIM --> SAMP
+    EVAL -->|Yes| EXEC["Real Robot Execution of Optimal Action"]
+```
 
 ### Key Designs
 
-1. **Automatic Simulation Construction**:
+**1. Automatic Multi-physics Simulation Construction from Single RGB-D: Reducing Perception Barriers to "One Image"**
 
-    - Function: Automatically creates an interactive physics simulation environment from a single RGB-D image.
-    - Mechanism: Given an RGB-D image and a language task description, the pipeline automatically performs the following steps—(a) leverages depth information and segmentation models to identify objects in the scene; (b) generates mesh models for rigid objects and places them in a simulator (e.g., PyBullet); (c) applies particle-based simulation (e.g., DiffSim) for deformable objects such as ropes and clay; (d) prompts the VLM to infer physical parameters (mass, friction coefficients, etc.) for each object. The result is an interactive simulation environment corresponding to the real scene.
-    - Design Motivation: Physics simulation requires 3D models and physical parameters; although VLM estimates of these quantities are imprecise, they are sufficient to support reasonable physical predictions. Constructing simulations from a single image greatly reduces the reliance on expensive equipment such as 3D scanners.
+To run a physical simulation, 3D geometry and physical parameters are required. However, per-scene 3D scanning or manual labeling of mass and friction is impractical. This step reduces the barrier to "one image." Given an RGB-D image and language task, the pipeline uses the VLM to generate object labels, segments each object using GroundedSAM2, and automatically switches between two physical engines (rigid or deformable, also determined by the VLM). Rigid bodies use mesh-based simulation—reconstructing full triangle meshes via image-to-3D models, scaling via point cloud bounding boxes, estimating 6DoF poses with FoundationPose, and loading into MuJoCo. Deformable objects use particle-based simulation—back-projecting segmentation masks into 3D surface points, sampling particles in the volume between the surface and the tabletop, and using Projective Dynamics for stiffness or MPM for soft bodies. Both branches conclude with the VLM inferring physical parameters (mass, friction for rigid; elasticity, plasticity for deformable) based on commonsense. A key observation is that while VLM estimated parameters are imprecise, the simulation requires the correct "direction" of movement rather than perfect precision—experiments confirm that rough but directionally correct physical predictions are far superior to none. This dual-engine setup allows "rope manipulation" and "plasticine shaping"—traditional VLM blind spots—to enter the realm of planning.
 
-2. **VLM-based Action Sampling & Optimization**:
+**2. Simulation-in-the-loop Iterative Action Planning: Simulator as a VLM "Sandbox"**
 
-    - Function: Leverages VLMs to propose, evaluate, and refine robot actions.
-    - Mechanism: The VLM first proposes a set of candidate actions (including parameters such as push direction, force magnitude, and contact point) based on the task description and scene understanding. Each candidate action is executed in simulation, generating rollout videos or keyframe images. The VLM observes these simulation results, assesses which actions are closer to the goal, and proposes improved candidates accordingly. This "propose → simulate → evaluate → refine" loop iterates until a satisfactory action plan is found.
-    - Design Motivation: The VLM's commonsense reasoning enables it to propose reasonable initial action hypotheses, while the simulator provides accurate physical verification. The combination yields action planning that is both semantically guided and physically grounded.
+VLM commonsense provides reasonable initial guesses (where to push, how much force, contact points), but it cannot verify how far an object slides or if it hits an obstacle. This step delegates verification to simulation. Planning iterates per Algorithm 1: The VLM **Sampler** proposes $K$ initial candidate action sequences based on scene context (initial observation, robot proprioception, 6DoF poses). Each is dropped into simulation for a rollout. The VLM **Optimizer** synthesizes the action set and corresponding rollouts to produce an improved action. The VLM **Evaluator** checks if the rollout achieves the goal—if successful, it executes on the real robot; otherwise, the new action and rollout are added to the context for the next iteration until success or reaching the limit $K_{max}$. The same frozen VLM plays the roles of sampler, optimizer, and evaluator via three different system prompts. Notably, there is no explicit numerical loss function; the VLM's own visual semantic judgment of the rollout end-state serves as the reward function, merging semantic guidance with physical safeguards.
 
-3. **Rigid-Deformable Dual-Mode Simulation**:
+### Full Example: Pulling a Rope into a Target Shape
 
-    - Function: Supports physics simulation of both rigid and deformable objects.
-    - Mechanism: The simulation mode is automatically selected based on object type—rigid objects use mesh-based simulation with collision detection and rigid-body dynamics to model pushing, pulling, and collision interactions; deformable objects (ropes, dough, etc.) use particle-based simulation to model stretching, deformation, and cutting behaviors. The VLM is responsible for identifying object types and inferring the corresponding physical parameters.
-    - Design Motivation: Real-world robot tasks frequently involve mixed manipulation of rigid and deformable objects; a single simulation mode cannot cover all scenarios.
+Consider "pulling a messy rope on a table into a U-shape." **Build Simulation**: Extract the rope from the RGB-D image, identify it as deformable, load into particle simulation, and let the VLM estimate length and stiffness. **Initial Sampling**: The VLM Sampler proposes $K$ candidate grasp points and pull directions. In simulation, most rollouts pull the rope into a line or a J-shape; only one grasping the middle and pulling sideways approaches a U-shape. **Iterative Refinement**: The VLM Optimizer synthesizes these candidates and their rollouts, producing an improved action each round (e.g., fine-tuning grasp points and force near the best candidate), followed by simulation and evaluator judgment. The symmetry of the U-shape in the rollout improves each round. This continues until the evaluator deems it successful or $K_{max}$ is reached, followed by real-robot execution. No real-world trial and error is needed; all "errors" occur in simulation.
+
+> ⚠️ Object parameters and iteration counts above are illustrative; refer to the original paper for specific values.
 
 ### Loss & Training
 
-SIMPACT is a purely inference-time framework with no model training or fine-tuning:
+SIMPACT is a pure inference-time framework. VLM weights remain frozen throughout with no training or fine-tuning, thus there is no traditional loss function. Action quality is implicitly judged by the VLM observing visual simulation results—it acts as an evaluation function (TASKSUCCESS) determining if the rollout end-state achieves the goal. The process starts by sampling $K$ initial candidate actions; in each subsequent round, the optimizer produces an improved action, followed by simulation and evaluation, looping until success or reaching $K_{max}$.
 
-- **No loss function**: VLM weights are frozen; reasoning is performed at test time via in-context learning.
-- **Action optimization criterion**: The VLM judges action quality (i.e., proximity to the goal state) based on visual results of simulation rollouts, constituting an implicit optimization in which the VLM's semantic judgment serves as the evaluation function.
-- **Iterative strategy**: Typically 3–5 iterations are performed; in each round, $N$ candidate actions are proposed and simulated, the best is selected, and sampling continues within its neighborhood.
+> ⚠️ Specific values for $K$ / $K_{max}$ are subject to the original text.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | SIMPACT | RT-2 | Code-as-Policies | VoxPoser | Notes |
-|------|---------|------|------------------|----------|-------|
-| Rigid-body pushing to target position | Best | Poor | Medium | Medium | Fine-grained force control |
-| Object sorting/rearrangement | Best | Fair | Good | Fair | Multi-object planning |
-| Rope manipulation | Best | Fails | Fails | Poor | Deformable object |
-| Clay shaping | Best | Fails | Fails | Fails | High-difficulty deformation |
-| Multi-object collision prediction | Best | Poor | Poor | Fair | Contact dynamics |
+| Task | SIMPACT | RT-2 | Code-as-Policies | VoxPoser | Description |
+|------|---------|------|------------------|----------|-------------|
+| Rigid Pushing to Target | Best | Poor | Medium | Medium | Fine force control |
+| Object Sorting/Tidying | Best | Fair | Good | Fair | Multi-object planning |
+| Rope Manipulation | Best | Unable | Unable | Poor | Deformable objects |
+| Plasticine Shaping | Best | Unable | Unable | Unable | High-difficulty deformation |
+| Collision Prediction | Best | Poor | Poor | Fair | Contact dynamics |
 
 ### Ablation Study
 
-| Configuration | Avg. Success Rate | Notes |
-|---------------|------------------|-------|
-| Full SIMPACT | Best | Simulation optimization + iterative refinement |
-| w/o Simulation (direct VLM) | Significant drop | Direct VLM action output lacks physical verification |
-| w/o Iterative Refinement | Notable drop | Single-round sampling without fine-grained tuning |
-| Random Physics Params | Slight drop | Accuracy of physical parameters has some impact |
-| Simulation w/ 1 round only | Below multi-round | Iterative refinement yields clear improvement |
+| Configuration | Average Success Rate | Description |
+|------|----------|------|
+| Full SIMPACT | Best | Sim-optimization + Iterative refinement |
+| w/o Simulation (Direct VLM) | Significant Drop | Direct action output lacks verification |
+| w/o Iterative Refinement | Noticeable Drop | Single sampling lacks fine-tuning |
+| Random Physics Params | Slight Drop | Physical parameter accuracy has some impact |
+| Single Sim Iteration | Lower than Multi-round | Iterative improvement is significant |
 
 ### Key Findings
 
-- The physics predictions provided by the simulation loop are the single largest contributor to performance gains—removing simulation causes the VLM to largely fail on tasks requiring fine-grained force control.
-- Deformable object manipulation (ropes, clay) represents a blind spot for conventional methods; SIMPACT demonstrates for the first time the feasibility of VLM-based planning on such tasks via particle simulation.
-- Even when simulator physical parameters are not fully accurate (being VLM estimates), simulation feedback still substantially outperforms the no-simulation baseline—indicating that "coarse but directionally correct physical prediction" is far superior to "no physical prediction."
-- The system exhibits strong robustness to variations in object appearance (different colors and shapes) and the presence of distractor objects.
+- Physical prediction from the simulation loop is the largest contributor to performance—VLMs essentially fail tasks requiring fine force control without simulation.
+- Deformable object manipulation (rope, plasticine) is a blind spot for traditional methods; SIMPACT demonstrates the feasibility of VLMs for these tasks via particle simulation.
+- Even if physical parameters (estimated by VLM) are imprecise, simulation feedback is significantly better than none—showing "rough but directionally correct" physics is vastly superior to omitting physics.
+- The system is robust to object appearance changes (colors, shapes) and distractors.
 
 ## Highlights & Insights
 
-- **The elegant "simulation as world model" paradigm**: Rather than modifying the VLM or training a new model, SIMPACT equips the VLM at test time with a physics simulator as a "physical engine in the mind." This paradigm is generalizable to any reasoning task requiring physical understanding.
-- **Automatic simulation construction from a single RGB-D image**: This dramatically lowers the barrier to simulation construction and enables rapid deployment in novel scenes. Although simulation fidelity is limited, "having a simulation" is far better than "having none."
-- **Unified framework for rigid and deformable manipulation**: The ability to simultaneously handle rigid and deformable object manipulation is achieved for the first time among VLM-based robot planning methods.
+- **"Simulation as a World Model" Concept**: An elegant approach that doesn't modify the VLM or train new models, but equips the VLM with a "physical engine in the brain" at test time. This can generalize to any reasoning task requiring physical understanding.
+- **Auto-sim Construction from Single RGB-D**: Significantly lowers the barrier to entry for simulation, allowing rapid deployment in new scenes. While accuracy is limited, "having a simulation" is better than "no simulation."
+- **Unified Rigid + Deformable Framework**: The ability to handle both rigid and deformable manipulation is a first for VLM-based robotic methods.
 
 ## Limitations & Future Work
 
-- Simulation construction relies on depth information and segmentation models, which may be unreliable in outdoor environments or scenes with high depth noise.
-- The accuracy of VLM-estimated physical parameters (mass, friction, etc.) is limited, which may degrade performance on tasks that are highly sensitive to physical parameters.
-- A sim-to-real gap persists, particularly in the simulation fidelity for deformable objects.
-- Constructing the simulation environment and running multiple rollout rounds per inference leads to high inference latency.
-- The current method is limited to tabletop-level manipulation; extension to more complex long-horizon tasks (e.g., cooking, assembly) requires further investigation.
+- Simulation construction relies on depth information and segmentation models, which may be unreliable in outdoor or high-noise scenarios.
+- Precision of VLM-estimated physical parameters (mass, friction) is limited; performance may suffer in tasks highly sensitive to these parameters.
+- The sim-to-real gap remains, particularly regarding the simulation accuracy of deformable objects.
+- High inference latency due to per-inference simulation construction and multiple rollout iterations.
+- Currently limited to tabletop-level manipulation; scaling to complex long-horizon tasks (e.g., cooking, assembly) requires further research.
 
 ## Related Work & Insights
 
-- **vs. Code-as-Policies**: CaP prompts LLMs to directly output robot control code but lacks physical verification. SIMPACT provides the VLM with a physical "sandbox" via simulation to predict action consequences.
-- **vs. VoxPoser**: VoxPoser uses VLMs to generate value functions for planning guidance but does not perform explicit physics simulation. SIMPACT's simulation yields more accurate physical predictions.
-- **vs. end-to-end methods (RT-2, Octo, etc.)**: These methods require large amounts of robot demonstration data for training, whereas SIMPACT relies solely on a pretrained VLM combined with simulation, requiring no additional training data.
+- **vs Code-as-Policies**: CaP has LLMs output robot control code directly, lacking physical verification. SIMPACT provides a "sandbox" for predicting action consequences.
+- **vs VoxPoser**: VoxPoser uses VLMs to generate value functions for planning but lacks explicit physical simulation. SIMPACT's simulation provides more accurate physical predictions.
+- **vs RT-2/Octo**: These end-to-end methods require massive robot data for training. SIMPACT relies purely on pre-trained VLMs + simulation, requiring no extra training data.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The idea of simulation-augmented VLM reasoning is highly novel and elegant, opening a new research direction.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across 5 real-world tasks covering both rigid and deformable objects, with thorough robustness experiments.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear and visualizations are rich.
-- Value: ⭐⭐⭐⭐⭐ Provides important insights for the VLM-based robotics community; the training-free property is a significant practical advantage.
+- Novelty: ⭐⭐⭐⭐⭐ An elegant and novel approach to simulation-augmented VLM reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated on 5 real-world tasks including rigid and deformable objects with thorough robustness tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear method description and rich visualizations.
+- Value: ⭐⭐⭐⭐⭐ Important insights for the VLM robotics field; the no-training requirement is a practical advantage.
 
 <!-- RELATED:START -->
 
@@ -137,11 +148,11 @@ SIMPACT is a purely inference-time framework with no model training or fine-tuni
 
 ## Related Papers
 
+- [\[CVPR 2025\] Evaluating Vision-Language Models as Evaluators in Path Planning](../../CVPR2025/multimodal_vlm/evaluating_vision-language_models_as_evaluators_in_path_planning.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/multimodal_vlm/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
-- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
+- [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
 - [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
-- [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
+- [\[CVPR 2026\] SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment](smap_semantic_route_planning_with_map-grounded_multimodal_alignment.md)
 
 </div>
 

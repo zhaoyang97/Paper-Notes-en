@@ -2,84 +2,88 @@
 title: >-
   [Paper Note] STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 description: >-
-  [CVPR 2026][Medical Imaging][Whole-Slide Image] STEPH proposes a model merging framework based on Task Vector Mixup (TVM) and hypernetwork-driven sparse aggregation…
+  [CVPR 2026][Medical Imaging][Paper Note] STEPH proposes a model merging scheme based on Task Vector Mixup (TVM) combined with hypernetwork-driven sparse aggregation. It efficiently integrates predictive knowledge from multiple cancer-specific models into a target cancer model. On 13 TCGA datasets, it achieves an average C-Index of 0.6949 (+5.14% vs. cancer-sp
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Whole-Slide Image"
-  - "Survival Analysis"
-  - "Cross-Cancer Knowledge Transfer"
-  - "Task Vector"
-  - "Hypernetwork"
-  - "Model Merging"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: f26f1577b2dc91e2
+content_hash: 61d39dcb882c48c2
 ---
-
 # STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.10526](https://arxiv.org/abs/2603.10526)  
 **Code**: [GitHub](https://github.com/liupei101/STEPH)  
-**Area**: Medical Imaging / Computational Pathology
-**Keywords**: Whole-Slide Image, Survival Analysis, Cross-Cancer Knowledge Transfer, Task Vector, Hypernetwork, Model Merging
+**Area**: Medical Imaging / Computational Pathology  
+**Keywords**: Whole Slide Images (WSI), Survival Analysis, Cross-cancer Knowledge Transfer, Task Vectors, Hypernetworks, Model Merging
 
 ## TL;DR
 
-STEPH proposes a model merging framework based on Task Vector Mixup (TVM) and hypernetwork-driven sparse aggregation, which efficiently transfers knowledge from multiple cancer-type-specific prognosis models into a target cancer model. It achieves a mean C-Index of 0.6949 across 13 TCGA datasets (+5.14% vs. cancer-type-specific learning, +2.01% vs. ROUPKT), while requiring only a single-model forward pass at inference—far more efficient than multi-model representation transfer approaches.
+STEPH proposes a model merging scheme based on Task Vector Mixup (TVM) combined with hypernetwork-driven sparse aggregation. It efficiently integrates predictive knowledge from multiple cancer-specific models into a target cancer model. On 13 TCGA datasets, it achieves an average C-Index of 0.6949 (+5.14% vs. cancer-specific learning, +2.01% vs. ROUPKT). During inference, it requires only a single model forward pass, which is significantly more efficient than multi-model representation transfer schemes.
 
 ## Background & Motivation
 
-**Background**: Pathology whole-slide images (WSIs) are gigapixel-scale and serve as a primary data source for cancer prognosis (survival analysis). Multiple instance learning (MIL)-based cancer-type-specific models are the dominant paradigm; however, each cancer type typically has only ~1,000 training samples, and high tumor heterogeneity limits generalization.
+**Background**: Gigapixel Whole Slide Images (WSI) are central data sources for cancer prognosis (survival analysis). Cancer-specific models based on Multi-Instance Learning (MIL) are the mainstream framework. However, training samples for each cancer type are limited (approximately 1,000 cases), and high tumor heterogeneity restricts generalizability.
 
-**Limitations of Prior Work**: (1) **Cancer-type-specific learning**—limited data and high heterogeneity lead to poor generalization of single-cancer models; (2) **Multi-cancer joint training**—the sheer volume of WSIs incurs prohibitive computational costs and introduces privacy risks; (3) **Representation transfer (ROUPKT)**—routes and aggregates WSI representations from multiple source models, but inference requires running all source models, with cost scaling linearly with the number of sources.
+**Limitations of Prior Work**: (1) **Cancer-specific Learning**—Small data volume and high heterogeneity lead to poor generalization; (2) **Multi-cancer Joint Training**—Extremely high computational costs due to the massive size of WSIs and associated privacy risks; (3) **Representation Transfer (ROUPKT)**—Uses WSI representations from multiple source models for routing aggregation, but requires running all source models during inference, with costs scaling linearly with the number of source models.
 
-**Key Challenge**: How can a single model efficiently absorb cross-cancer knowledge without resorting to joint training (high computation) or multi-model inference (high inference cost)?
+**Key Challenge**: How to efficiently absorb cross-cancer knowledge into a single model without the high computational cost of joint training or the high inference overhead of multi-model ensembles?
 
-**Goal**: Transfer prognosis knowledge from multiple cancer types into a target model via model merging, enabling lightweight and efficient cross-cancer knowledge transfer.
+**Goal**: To "merge" prognostic knowledge from various cancer types into a target cancer model via model merging, achieving lightweight and efficient cross-cancer transfer.
 
-**Key Insight**: The task vector $\tau_t = \mathcal{M}_t - \mathcal{M}_0$ encodes cancer-type-specific prognosis knowledge. Unlike model merging in MTL—which aims to preserve multi-task capability (requiring resolution of task interference)—the goal in WSI prognosis is to enhance generalization on the target task, achieved by interpolating source and target task vectors via mixup to obtain better optimization directions.
+**Key Insight**: Task vectors $\tau_t = \mathcal{M}_t - \mathcal{M}_0$ encode the prognostic knowledge for a specific cancer. Unlike model merging in Multi-Task Learning (MTL), which aims to preserve multi-task capabilities (addressing task interference), the goal in WSI prognosis is to enhance target task generalization. This is achieved by mixing source and target task vectors through mixup interpolation to obtain better optimization directions.
 
-**Core Idea**: Apply mixup interpolation to each source–target task vector pair to absorb beneficial knowledge, then use a hypernetwork to learn input-adaptive sparse aggregation weights, and finally merge into a single enhanced model.
+**Core Idea**: Perform mixup interpolation on each source-target task vector pair to absorb beneficial knowledge, then use a hypernetwork to learn input-adaptive sparse aggregation weights to merge them into a single enhanced model.
 
 ## Method
 
 ### Overall Architecture
 
-Pre-trained initialization $\mathcal{M}_0$ → independent fine-tuning per cancer type to obtain $\mathcal{M}_t, \{\mathcal{M}_{s_i}\}$ → compute task vectors $\tau_t, \{\tau_{s_i}\}$ → TVM applies mixup interpolation to each $(\tau_t, \tau_{s_i})$ pair → hypernetwork-driven sparse aggregation selects top-$K$ mixed vectors and computes a weighted sum to yield $\tau_t^*$ → final model $\mathcal{M}_t^* = \mathcal{M}_0 + \tau_t^*$.
+STEPH addresses a practical contradiction: while each cancer type has only ~1,000 WSIs leading to poor generalization, neither joint training (expensive computation) nor multi-model inference (expensive inference) is ideal. The core idea is to perform knowledge transfer in the **parameter space** rather than the data space. First, a pre-trained model $\mathcal{M}_0$ is fine-tuned for each cancer type to create specific models, and task vectors $\tau_t = \mathcal{M}_t - \mathcal{M}_0$ are computed to encode cancer-specific knowledge. Next, the target task vector $\tau_t$ is mixed with each source task vector $\tau_{s_i}$ via mixup interpolation to generate a set of mixed vectors. A hypernetwork then selects the most beneficial vectors via weighted summation to form $\tau_t^*$. Finally, this is added back to the initial model $\mathcal{M}_t^* = \mathcal{M}_0 + \tau_t^*$ to obtain the enhanced target model. The merged result is a single model, requiring only one forward pass during inference. The mixup ratio $\lambda$ and aggregation weights $w$ are not manually tuned constants; they are adaptively output by two hypernetworks (sharing an MIL encoder) that process the current WSI features.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Pre-trained M0 + Cancer-specific Fine-tuning"] --> B["Task Vectors τ_t and τ_s (Sources) <br/>= Fine-tuned Model − M0"]
+    subgraph HN["Hypernetwork-driven Dynamic Weights"]
+        direction TB
+        H["WSI Bag Features → Shared MIL Encoder"] --> HM["H_mix outputs Mixup Ratio λ"]
+        H --> HA["H_agg outputs Aggregation Weights w"]
+    end
+    B --> C["Task Vector Mixup (TVM) <br/>Interpolate τ_t, τ_s with λ → τ_mix"]
+    HM --> C
+    C --> D["Sparse Task Vector Aggregation <br/>Top-K weighted sum via w → τ_t*"]
+    HA --> D
+    D --> E["Merged M_t* = M0 + τ_t*"]
+    E --> F["Inference: Single-model Forward Pass"]
+```
 
 ### Key Designs
 
-1. **Task Vector Mixup (TVM)**
+**1. Task Vector Mixup (TVM): Mixing source knowledge into the target model in parameter space**
 
-    - **Function**: Interpolates source and target task vectors via mixup to obtain optimization directions that incorporate knowledge from both.
-    - **Mechanism**: For each source–target pair $(\tau_t, \tau_{s_i})$, the interpolation is computed as $\tau_{\text{mix}} = \lambda_i \tau_t + (1-\lambda_i) \tau_{s_i}$. The mixing coefficient $\lambda_i$ is adaptively predicted by a hypernetwork $\mathcal{H}_{\text{mix}}$ conditioned on input WSI features (rather than being fixed), constrained to $[0,1]$ via sigmoid. The hypernetwork employs a mean-MIL encoder to process bag-of-patches features.
-    - **Design Motivation**: Grounded in Vicinal Risk Minimization (VRM)—task vectors are cumulative gradients, and their mixup approximates the gradient of training on virtual mixed data, yielding better-generalizing models. Loss landscape visualization and SAR analysis confirm that $\lambda \in [0.7, 0.8]$ leads to lower training and test losses.
+Classic mixup interpolates inputs or features; STEPH applies it to task vectors. For each source-target pair $(\tau_t, \tau_{s_i})$, a linear interpolation is performed: $\tau_{\text{mix}} = \lambda_i \tau_t + (1-\lambda_i)\tau_{s_i}$. This creates an optimization direction that absorbs source knowledge while retaining target knowledge. Crucially, $\lambda_i$ is not fixed but adaptively generated by a hypernetwork $\mathcal{H}_{\text{mix}}$ based on the current WSI bag-of-patches features (mean-MIL encoder + sigmoid constraint to $[0,1]$). This allows different samples to have different mixing ratios. The authors justify this via Vicinal Risk Minimization (VRM): task vectors are essentially accumulated gradients from fine-tuning; performing mixup on them approximates gradients learned from "virtually mixed data," leading to better generalization. Loss landscape visualization and Sharpness-Awareness (SAR) analysis confirm that training and test losses are lower when $\lambda$ falls within the $[0.7, 0.8]$ range.
 
-2. **Sparse Task Vector Aggregation**
+**2. Sparse Task Vector Aggregation: Selecting only the top-K beneficial source cancers**
 
-    - **Function**: Selects the most beneficial top-$K$ mixed task vectors from $m$ candidates for weighted aggregation.
-    - **Mechanism**: A second hypernetwork $\mathcal{H}_{\text{agg}}$ (sharing the MIL encoder with $\mathcal{H}_{\text{mix}}$ but with an independent output head) produces aggregation weights $w = \{w_i \geq 0\}$; the top-$K$ weights are selected and the aggregated task vector is computed as $\tau_t^* = \sum_j w_j \tau_{\text{mix},j}$. An auxiliary loss $\mathcal{L}_{\text{agg}} = (\log \sum_i e^{w_i})^2$ suppresses excessively large weights.
-    - **Design Motivation**: Not all source cancer knowledge is beneficial to the target—some models may be poorly trained or inherently conflicting. Sparse selection (inspired by MoE) filters out redundant and harmful knowledge. Input-adaptive weights $w$ are more flexible than globally fixed weights, as different WSI samples may benefit from different source cancer types.
+Mixing the target with 12 source cancer types produces a set of mixed vectors of varying quality—some source models might be poorly trained, or some cancer types might inherently conflict with the target. Averaging all of them could introduce noise. Following sparse routing in MoE, STEPH uses another hypernetwork $\mathcal{H}_{\text{agg}}$ (sharing the MIL encoder with $\mathcal{H}_{\text{mix}}$ but with an independent output head) to generate non-negative weights $w=\{w_i \ge 0\}$. Only the top-$K$ vectors are kept for the weighted sum $\tau_t^* = \sum_j w_j \tau_{\text{mix},j}$. These weights are also input-adaptive, allowing different WSIs to benefit from different source cancers. To prevent weight explosion, an auxiliary loss $\mathcal{L}_{\text{agg}} = (\log\sum_i e^{w_i})^2$ is applied. Visualizations show that for BRCA as a target, cancers like KIPAN, COADREAD, and BLCA receive higher weights, indicating useful knowledge transfer.
 
-3. **Hypernetwork-Driven Dynamic Weights**
+**3. Hypernetwork-driven Dynamic Weights: Replacing over-fitted grid search on small data**
 
-    - **Function**: Learns input-conditioned $\lambda$ and $w$ via hypernetworks, replacing globally fixed parameters.
-    - **Mechanism**: $\mathcal{H}_{\text{mix}}$ and $\mathcal{H}_{\text{agg}}$ share a mean-MIL encoder (to reduce parameters) with separate fully connected output heads. The training objective combines NLL survival loss with auxiliary regularization terms: $\mathcal{L}_{\text{mix}} = \sum_j \lambda_j^2/K$ encourages absorption of source knowledge, and $\mathcal{L}_{\text{agg}} = (\log \sum_i e^{w_i})^2$ prevents weight explosion.
-    - **Design Motivation**: WSI prognosis datasets are small (~1,000 samples), making grid search over fixed parameters prone to overfitting small validation sets. Hypernetwork-predicted dynamic parameters are more robust than fixed $\lambda/w$; applying the hypernetwork scheme to existing model merging methods yields an average improvement of 14.5%.
+The adaptive $\lambda$ and $w$ parameters are the key to STEPH's robustness in low-data scenarios. With only ~1,000 WSI cases per cancer, searching for fixed hyperparameters on a small validation set easily leads to overfitting. Letting hypernetworks dynamically generate weights per sample turns the decision of "how much to trust which source" into a learnable, sample-dependent process. The two hypernetworks share a mean-MIL encoder to save parameters. During training, in addition to the primary NLL survival loss, two regularizers are used: $\mathcal{L}_{\text{mix}} = \sum_j \lambda_j^2 / K$ to encourage absorbing source knowledge, and $\mathcal{L}_{\text{agg}} = (\log\sum_i e^{w_i})^2$ to stabilize aggregation weights. This hypernetwork scheme is highly versatile—applying it to existing model merging methods yield an average improvement of 14.5%.
 
 ### Loss & Training
 
-NLL survival loss + auxiliary losses ($\beta=0.05$, $\gamma$ via cross-validation); $K=5$; $m=12$ (12 source cancer types); 5-fold CV; UNI for patch feature extraction.
+NLL Survival Loss + Aux Losses ($\beta=0.05, \gamma$ via cross-validation); $K=5$; $m=12$ (source cancers); 5-fold CV; UNI for patch feature extraction.
 
 ## Key Experimental Results
 
-### Main Results — Mean C-Index across 13 TCGA Datasets
+### Main Results—13 TCGA Datasets Mean C-Index
 
 | Method | Category | Mean C-Index |
-|--------|----------|-------------|
-| Vanilla (cancer-type-specific) | Cancer-type-specific | 0.6609 |
-| Fine-tuned (cancer-type-specific) | Cancer-type-specific | 0.6611 |
+|------|------|-------------|
+| Vanilla (Cancer-specific) | Cancer-specific | 0.6609 |
+| Fine-tuned (Cancer-specific) | Cancer-specific | 0.6611 |
 | ROUPKT | Representation Transfer | 0.6812 |
 | Model Avg. | Model Merging | 0.5804 |
 | AdaMerging | Model Merging | 0.5689 |
@@ -91,19 +95,19 @@ NLL survival loss + auxiliary losses ($\beta=0.05$, $\gamma$ via cross-validatio
 ### Ablation Study
 
 | Configuration | Mean C-Index |
-|---------------|-------------|
-| w/o mixup, fix $\lambda=0$ (source only) | 0.6860 |
-| w/o mixup, fix $\lambda=1$ (target only) | 0.6851 |
+|------|-------------|
+| w/o mixup, fix $\lambda=0$ (Source only) | 0.6860 |
+| w/o mixup, fix $\lambda=1$ (Target only) | 0.6851 |
 | w/ mixup, trainable $\lambda$ | 0.6921 |
 | w/ mixup, **hypernetwork $\lambda$** | **0.6949** |
 | w/o sparsity | 0.6912 |
 | w/ sparsity, trainable $w$ | 0.6490 |
 | w/ sparsity, **hypernetwork $w$** | **0.6949** |
 
-### Hypernetwork Scheme Applied to Existing Methods
+### Hypernetwork Enhancement of Existing Methods
 
-| Method | Original | +Hypernetwork Aggregation | Gain |
-|--------|----------|--------------------------|------|
+| Method | Original | + Hypernetwork Aggregation | Gain |
+|------|------|-----------|------|
 | AdaMerging | 0.5689 | 0.6877 | +20.9% |
 | TIES | 0.6396 | 0.6802 | +6.3% |
 | Surgery | 0.5943 | 0.6668 | +12.2% |
@@ -111,39 +115,39 @@ NLL survival loss + auxiliary losses ($\beta=0.05$, $\gamma$ via cross-validatio
 
 ### Key Findings
 
-- STEPH outperforms cancer-type-specific learning on 12 of 13 datasets, with a mean improvement of 5.14% and a maximum single-dataset gain of 11.4% (BRCA).
-- Existing general-purpose model merging methods (AdaMerging, TIES, etc.) perform poorly on WSI prognosis (0.57–0.64), as they are designed for multi-task retention rather than single-task enhancement.
-- Input-adaptive weights via hypernetworks are the key contribution—applying them to any existing method yields an average improvement of 14.5%.
-- SAR analysis reveals that TVM improvements are primarily attributable to attention layers rather than embedding layers, indicating that MIL attention aggregation benefits more from cross-cancer knowledge than instance-level encoding.
-- Visualization of $\lambda$ training dynamics shows that KIPAN, COADREAD, and BLCA exhibit $\lambda_i < 0.3$ with relatively large $w_i$, confirming that BRCA genuinely absorbs beneficial knowledge from these specific cancer types.
+- STEPH outperforms cancer-specific learning in 12 out of 13 datasets, with an average improvement of 5.14% and a maximum of 11.4% (BRCA).
+- Standard model merging methods (AdaMerging/TIES, etc.) perform poorly (0.57~0.64) on WSI prognosis tasks because they are designed for multi-task stability rather than single-task enhancement.
+- Hypernetwork-driven input-adaptive weights are the core—applying them to any existing method yields a 14.5% average improvement.
+- SAR analysis shows that TVM improvements come mainly from the attention layers rather than the embedding layers, suggesting that attention aggregation in MIL benefits more from cross-cancer knowledge than instance encoding.
+- Visualization of $\lambda$ dynamics: For BRCA, cancers like KIPAN, COADREAD, and BLCA show $\lambda_i < 0.3$ and high $w_i$, proving that BRCA extracts beneficial knowledge from these specific types.
 
 ## Highlights & Insights
 
-1. **Model merging for single-task enhancement rather than MTL**: Unlike mainstream model merging research (aimed at acquiring multi-task capability), STEPH targets enhanced generalization on a single task—a shift in objective that introduces fundamentally different methodological requirements (from resolving task interference to mining beneficial knowledge).
-2. **VRM theoretical framework supports TVM**: Task vector mixup is not simple parameter averaging; it approximates training on mixed virtual data, providing a principled theoretical foundation.
-3. **Hypernetworks as a general-purpose enhancement**: Applying hypernetwork-driven aggregation to four existing methods yields an average improvement of 14.5%, demonstrating the strong generality of the input-adaptive mechanism itself.
+1. **Model Merging for Single-Task Enhancement vs. MTL**: Shifting from the goal of multi-task capability to enhancing a single task’s generalization introduces new methodological needs—moving from resolving task interference to mining beneficial knowledge.
+2. **VRM Theoretical Framework for TVM**: Task vector mixup is not just parameter averaging; it approximates training on mixed virtual data, providing a solid theoretical foundation.
+3. **Universality of Hypernetworks**: The ability of hypernetwork-driven aggregation to improve four existing methods by 14.5% demonstrates that the input-adaptive mechanism is a powerful and generalizable tool.
 
 ## Limitations & Future Work
 
-1. Reliance on TCGA datasets, where some cancer types have very few samples (<400), may introduce evaluation bias.
-2. Experiments are based on standard attention-based MIL architectures; more advanced MIL methods (e.g., graph-based) have not been validated.
-3. STEPH still requires training data to learn merging weights; training-free model merging is a promising future direction.
-4. $K=5$ (top-5 mixed vectors) is globally fixed; adaptive $K$ selection remains unexplored.
+1. Dependence on the TCGA dataset; some cancer types have very few samples (<400), potentially biasing model evaluation.
+2. Experiments are based on general attention-based MIL; advanced MIL methods (e.g., graph-based) have not been verified.
+3. STEPH still requires training data to learn merging weights; training-free model merging remains a future direction.
+4. $K=5$ (top-5 mixed vectors) is globally fixed; adaptive K values were not explored.
 
 ## Related Work & Insights
 
-- **vs. ROUPKT**: ROUPKT runs all source models at inference to obtain representations for routing aggregation, with cost scaling linearly in the number of sources. STEPH merges all knowledge into a single model during training and requires only one forward pass at inference, representing a qualitative leap in efficiency.
-- **vs. AdaMerging/TIES**: General model merging methods target multi-task retention and focus on resolving interference; STEPH targets single-task enhancement and focuses on mining beneficial knowledge—a difference in objective that leads to substantially divergent methodologies.
-- **vs. data mixup**: Classical mixup interpolates in input/feature space; STEPH performs mixup in parameter space (task vectors), representing an interesting extension of the mixup principle.
+- **vs. ROUPKT**: ROUPKT must run all source models during inference to get representations for routing, causing costs to scale linearly. STEPH merges into a single model, requiring only one forward pass, offering a massive leap in efficiency.
+- **vs. AdaMerging/TIES**: General merging methods focus on multi-task balance and interference resolution; STEPH focuses on single-task enhancement and mining beneficial knowledge.
+- **vs. Data Mixup**: While classic mixup operates in input/feature space, STEPH operates in the parameter space (task vectors), representing an interesting extension of the mixup philosophy.
 
 ## Rating
 
 ⭐⭐⭐⭐
 
-- **Novelty** ⭐⭐⭐⭐: The perspective of using model merging for single-task enhancement is novel; TVM is grounded in VRM theory.
-- **Experimental Thoroughness** ⭐⭐⭐⭐⭐: Comprehensive coverage across 13 datasets, multiple baselines, ablations, visualizations, and hyperparameter analyses.
-- **Writing Quality** ⭐⭐⭐⭐: Problem formulation is clear; theoretical analysis and visualizations provide sufficient supporting evidence.
-- **Value** ⭐⭐⭐⭐: Offers an efficient solution for cross-cancer knowledge transfer in computational pathology; the hypernetwork aggregation scheme demonstrates broad generality.
+- **Novelty** ⭐⭐⭐⭐: Using model merging for single-task enhancement is a novel perspective; TVM is backed by VRM theory.
+- **Experimental Thoroughness** ⭐⭐⭐⭐⭐: 13 datasets, multiple baseline categories, extensive ablations, visualizations, and hyperparameter analyses.
+- **Writing Quality** ⭐⭐⭐⭐: Clear problem definition with strong theoretical analysis and visual evidence.
+- **Value** ⭐⭐⭐⭐: Provides an efficient solution for cross-cancer knowledge transfer in computational pathology; the hypernetwork aggregation is highly generalizable.
 
 <!-- RELATED:START -->
 
@@ -151,11 +155,11 @@ NLL survival loss + auxiliary losses ($\beta=0.05$, $\gamma$ via cross-validatio
 
 ## Related Papers
 
-- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
+- [\[CVPR 2026\] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study](any2any_3d_diffusion_models_with_knowledge_transfer_a_radiotherapy_planning_stud.md)
+- [\[CVPR 2026\] GeneVAR: Causal MeanFlow for Autoregressive Gene-to-WSI Tile Synthesis](genevar_causal_meanflow_for_autoregressive_gene-to-wsi_tile_synthesis.md)
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
-- [\[CVPR 2026\] Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting](prototypebased_knowledge_guidance_for_finegrained.md)
-- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
-- [\[CVPR 2026\] Forecasting Epileptic Seizures from Contactless Camera via Cross-Species Transfer Learning](forecasting_epileptic_seizures_from_contactless_ca.md)
+- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
+- [\[CVPR 2026\] FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment](fbta_enabling_single-gpu_end-to-end_gigapixel_wsi_classification_with_feature_br.md)
 
 </div>
 

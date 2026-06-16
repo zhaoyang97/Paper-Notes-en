@@ -2,119 +2,124 @@
 title: >-
   [Paper Note] Filling the Gap: Is Commonsense Knowledge Generation useful for Natural Language Inference?
 description: >-
-  [ACL 2026][NLP Understanding][NLI] The paper enables LLMs to autonomously generate natural language "commonsense axioms" that bridge premises and hypotheses. These axioms are filtered via a "factuality judge…
+  [ACL 2026][NLP Understanding][NLI] The paper proposes a method where LLMs generate natural language "commonsense axioms" to bridge premises and hypotheses. A "factuality judge" filters unreliable axioms, and high-quality ones are injected back into the NLI prompt. Consequently, Llama-3.1-70B and gpt-oss-120b achieve accuracy gains of 1.99-6.88% on SNLI/
 tags:
-  - "ACL 2026"
-  - "NLP Understanding"
-  - "NLI"
-  - "Commonsense Axiom"
-  - "SNLI"
-  - "ANLI"
-  - "Selective Knowledge Injection"
+  - ACL 2026
+  - NLP Understanding
+  - NLI
+  - Commonsense Axiom
+  - SNLI
+  - ANLI
 date: 2026-05-08
-content_hash: 57e84c183d9a904b
+content_hash: 0490d3366722d9b6
 ---
-
 # Filling the Gap: Is Commonsense Knowledge Generation useful for Natural Language Inference?
 
 **Conference**: ACL 2026  
 **arXiv**: [2507.15100](https://arxiv.org/abs/2507.15100)  
-**Code**: None (No link provided in the paper)  
+**Code**: None (Link not provided in paper)  
 **Area**: Natural Language Inference / Commonsense Reasoning / LLM Evaluation  
 **Keywords**: NLI, Commonsense Axiom, SNLI, ANLI, Selective Knowledge Injection
 
 ## TL;DR
-The paper enables LLMs to autonomously generate natural language "commonsense axioms" that bridge premises and hypotheses. These axioms are filtered via a "factuality judge," and only high-quality ones are injected back into NLI prompts. Results show Llama-3.1-70B and gpt-oss-120b achieve accuracy gains of 1.99-6.88% on SNLI/ANLI, significantly mitigating the "Neutral" safety preference bias.
+The paper proposes a method where LLMs generate natural language "commonsense axioms" to bridge premises and hypotheses. A "factuality judge" filters unreliable axioms, and high-quality ones are injected back into the NLI prompt. Consequently, Llama-3.1-70B and gpt-oss-120b achieve accuracy gains of 1.99-6.88% on SNLI/ANLI and significantly mitigate the "Neutral" safety bias.
 
 ## Background & Motivation
-**Background**: NLI (Recognizing Textual Entailment) requires determining whether a premise Entails, Contradicts, or is Neutral to a hypothesis. Theoretically, this requires inferences made by a "reader with common sense." While LLMs report high accuracy on benchmarks like SNLI/ANLI, studies (Luo 2022, McKenna 2023, Liu 2023) suggest they often rely on surface artifacts rather than genuine premise $\to$ hypothesis logical chains.
+**Background**: NLI (Recognizing Textual Entailment, RTE) requires determining if a premise entails, contradicts, or is neutral toward a hypothesis. Theoretically, this requires inferences that a "commonsense adult reader" would make. While LLMs report high accuracy on benchmarks like SNLI/ANLI, studies (Luo 2022, McKenna 2023, Liu 2023) suggest they often rely on surface artifacts rather than genuine premise-to-hypothesis logic chains.
 
-**Limitations of Prior Work**: When implicit "bridging knowledge" exists between the premise and hypothesis (e.g., "a woman with a big grin" $\to$ "she is not shot"), models often fail due to missing commonsense knowledge. Existing methods for integrating external knowledge (ExBERT, ERNIE-NLI, e-SNLI extensions) either rely on manual keyword labeling or extraction from structured KGs like ConceptNet/Aristo, which cannot guarantee relevance to the specific P-H pair.
+**Limitations of Prior Work**: When implicit "bridging knowledge" exists (e.g., "a woman with a big grin" $\to$ "she is not shot"), models frequently fail due to the lack of specific commonsense. Existing methods for integrating external knowledge (ExBERT, ERNIE-NLI, e-SNLI extensions) either rely on manual keyword labeling or extract from structured KGs like ConceptNet/Aristo, which cannot guarantee relevance to the specific P-H pair.
 
-**Key Challenge**: There is a trade-off between "coverage" and "relevance" in commonsense knowledge—KG sources have narrow coverage but high accuracy, while LLM generations have broad coverage but risk hallucinations. For commonsense to be effective, it must be both "freely generated" and "selectively utilized."
+**Key Challenge**: There is a conflict between "coverage" and "relevance" in commonsense knowledge—KG sources are accurate but narrow, while LLM-generated content is broad but prone to hallucinations. To be effective, commonsense must be both "freely generated" and "selectively utilized."
 
 **Goal**: (1) Verify whether LLMs can reliably generate commonsense axioms for P-H pairs; (2) Evaluate the impact of injecting these axioms on NLI accuracy.
 
-**Key Insight**: Reconceptualize "commonsense" as natural language "axioms"—bridge rules of world knowledge expressed in a single sentence, rather than formal logical axioms. The LLM first generates axioms, then the same model scores them based on factuality/helpfulness, ultimately injecting only high-scoring ones.
+**Key Insight**: Reconceptualize "commonsense" as natural language "axioms"—bridge rules about the world expressed in sentences rather than formal logic. LLMs first generate an axiom, which is then scored by the same model for factuality/helpfulness. Only high-scoring axioms are injected.
 
-**Core Idea**: A mixed strategy of "selective access" is employed, injecting axioms only when the judge deems them highly factual, allowing the model to revert to vanilla P-H reasoning when generation is unreliable.
+**Core Idea**: A "selective access" hybrid strategy is used, injecting axioms only when the judge deems them highly factual, allowing the model to revert to original P-H reasoning when the axiom is unreliable.
 
 ## Method
 
 ### Overall Architecture
-The authors designed a three-stage prompting pipeline: (1) **Axiom Generation Prompt**: Feeds $(P, H)$ to the LLM to generate a natural language axiom $A$; (2) **Axiom Evaluation Prompt**: Feeds $(P, H, A)$ back to the same model to score it across dimensions like factuality, consistency, and helpfulness (adapted from Zheng 2024); (3) **Inference Prompt**: Branches based on the evaluation—baseline mode $(P, H) \to \text{label}$, axiom-injected mode $(P, H, A) \to \text{label}$, or hybrid mode which injects only high-factuality $A$, otherwise falling back to baseline. This hybrid approach represents the selective access strategy.
+The authors designed a three-stage prompting pipeline: (1) **Axiom Generation Prompt**: Feeds $(P, H)$ to the LLM to generate a single-sentence commonsense axiom $A$; (2) **Axiom Evaluation Prompt**: Feeds $(P, H, A)$ back to the same model to score dimensions like factuality, consistency, and helpfulness (adapted from Zheng 2024 metrics); (3) **Inference Prompt**: Follows two paths based on (2)—baseline mode $(P, H) \to \text{label}$; axiom-injected mode $(P, H, A) \to \text{label}$. The hybrid mode executes injection only if $A$ is judged highly factual; otherwise, it reverts to baseline. This hybrid path constitutes the selective access proposal.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input (P, H)"] --> B["LLM Self-generates NL Axiom<br/>(P,H) → Axiom A"]
+    B --> C["Factuality Selective Injection<br/>Same model scores A for factuality"]
+    C -->|"score(A) ≥ τ: Axiom Reliable"| D["Injected Inference<br/>(P,H,A) → label"]
+    C -->|"score(A) < τ: Axiom Questionable"| E["Baseline Inference<br/>(P,H) → label"]
+    D --> F["NLI Label<br/>Entail / Contradict / Neutral"]
+    E --> F
+```
 
 ### Key Designs
 
-1.  **LLM-generated Natural Language Axioms (not KG triples)**:
-    - **Function**: Enables the LLM to articulate commonsense rules bridging the premise to the hypothesis (e.g., "a big grin usually implies happiness/safety, which is inconsistent with being shot").
-    - **Mechanism**: Prompts the LLM directly to describe the "commonsense bridge enabling the hypothesis to follow from the premise," avoiding the sparsity of discrete KGs like ConceptNet. The model leverages its internalized knowledge to produce axioms highly relevant to the $(P, H)$ context.
-    - **Design Motivation**: The authors argue that NLI failures often stem from a "knowledge gap" between $P$ and $H$. Articulating this gap internally is more targeted and controllable than external KG retrieval.
+**1. LLM Self-generated Natural Language Axioms: Bridging Premise and Hypothesis with Sentences**
 
-2.  **Factuality-aware Selective Injection (Core of the Hybrid Strategy)**:
-    - **Function**: Filters axioms by using the LLM as a judge of factuality, injecting only "highly factual" axioms into the inference prompt.
-    - **Mechanism**: The same LLM performs axiom evaluation, labeling them as helpful, factual, or consistent. Only axioms passing a factuality threshold proceed to the injection stage. Formally: $\hat{y} = \text{LLM}(P, H, A) \text{ if } \text{score}(A) \geq \tau \text{ else } \text{LLM}(P, H)$.
-    - **Design Motivation**: Pure injection experiments revealed inconsistent quality—generated axioms often contain hallucinations or tautologies. Gating injection ensures it only occurs when the model "believes" the axiom, maximizing the signal-to-noise ratio.
+The authors attribute NLI failure to the "knowledge gap" between $P$ and $H$. When an implicit commonsense chain is required (e.g., "a woman with a big grin" $\to$ "she is not shot"), models fail without that specific bridge. Extracting triples from ConceptNet/Aristo is often too sparse or irrelevant. Instead, the authors let the LLM write the bridging rule in natural language—for instance, "A big grin usually implies a happy/safe state, which is incompatible with being shot."
 
-3.  **Mitigating Neutral Bias**:
-    - **Function**: Breaks the LLM's tendency to select "Neutral" as a safe fallback when facing uncertainty by providing specific world knowledge.
-    - **Mechanism**: When a premise and hypothesis seem tangentially related, models default to "Neutral." High-quality axioms transform "apparent irrelevance" into "commonsense bridge hence entailment/contradiction," pulling the model toward the correct category.
-    - **Design Motivation**: It was observed that baselines on adversarial datasets like ANLI had excessive Neutral recall—a self-protection mechanism rather than a true judgment of independence. Axiom injection provides an explicit reason for the model to take a stance.
+This approach offers dual benefits: the same model possesses both linguistic understanding and vast commonsense, producing axioms highly relevant to $(P, H)$ and avoiding the sparsity of discrete KGs. Furthermore, natural language is more expressive than triples, explaining "why" an inference holds. Essentially, it helps the model articulate the missing link in its own reasoning.
+
+**2. Factuality-aware Selective Injection: Injecting Only Trusted Content**
+
+Unrestricted injection revealed that LLM-generated axioms vary in quality, often containing hallucinations or duplicating the hypothesis. Forcing injection can mislead the model. The solution is a factuality gate: the same LLM evaluates the axiom based on helpful/factual/consistent dimensions. Only axioms exceeding the factuality threshold $\tau$ proceed to the injection phase.
+
+Formally, $\hat{y} = \text{LLM}(P, H, A)$ if $\text{score}(A) \geq \tau$ else $\text{LLM}(P, H)$. This "selective access" ensures the model reverts to standard reasoning when the axiom is untrustworthy. This step is the primary driver of performance gains; ablation shows that unfiltered injection often decreases performance. High-quality axioms push the model away from the "safe" Neutral default by providing explicit justification for Entailment or Contradiction, explaining why gains are more pronounced on the harder ANLI dataset.
 
 ### Loss & Training
-The entire process is training-free. Llama-3.1-70B-Instruct and gpt-oss-120b were utilized in a zero-shot setting across three prompt types (generation, evaluation, inference). Balanced samples of 2000 items each were drawn from SNLI and ANLI.
+No training is involved. Llama-3.1-70B-Instruct and gpt-oss-120b were utilized in zero-shot settings via three distinct prompts (generation, evaluation, inference). 2000 balanced samples were sampled from each of SNLI and ANLI.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of three strategies on 2000 samples from SNLI/ANLI:
+Comparison of three strategies across 2000 samples for SNLI/ANLI:
 
 | Dataset | Model | Baseline | Strong Injection | Hybrid (factuality-gated) | Gain |
-|---------|-------|----------|------------------|---------------------------|------|
-| SNLI | Llama-3.1-70B | ~Base | Fluctuation | +1.99%~+6.88% | Consistent |
-| SNLI | gpt-oss-120b | ~Base | Fluctuation | +1.99%~+6.88% | Consistent |
-| ANLI | Llama-3.1-70B | ~Base | Fluctuation | +1.99%~+6.88% | Consistent |
-| ANLI | gpt-oss-120b | ~Base | Fluctuation | +1.99%~+6.88% | Consistent |
+|--------|------|----------|--------|--------------------------|------|
+| SNLI | Llama-3.1-70B | ~Original | Fluctuation | +1.99% ~ +6.88% | Consistently Positive |
+| SNLI | gpt-oss-120b | ~Original | Fluctuation | +1.99% ~ +6.88% | Consistently Positive |
+| ANLI | Llama-3.1-70B | ~Original | Fluctuation | +1.99% ~ +6.88% | Consistently Positive |
+| ANLI | gpt-oss-120b | ~Original | Fluctuation | +1.99% ~ +6.88% | Consistently Positive |
 
-> Note: Detailed numerical tables are in §4/Appendix; the abstract confirms a gain range of [1.99%, 6.88%] across all tested configurations.
+> Note: Detailed numerical tables appear in §4/Appendix; the abstract confirms a 1.99% to 6.88% range across all configurations.
 
-Data distribution (Table 1): SNLI (Entail 689 / Contradict 651 / Neutral 660); ANLI (Entail 771 / Contradict 585 / Neutral 644). The balanced classes rule out spurious gains from class priors.
+Data distribution (Table 1): SNLI Entail 689 / Contradict 651 / Neutral 660; ANLI Entail 771 / Contradict 585 / Neutral 644. Classes are balanced, ruling out gains from prior class bias.
 
 ### Ablation Study
 
-| Configuration | Key Observation | Description |
-|---------------|-----------------|-------------|
-| Baseline (Direct P, H inference) | Reference Point | High Neutral recall |
-| Strong injection (Inject all axioms) | Unstable Gain | Performance dropped in some cases due to axiom noise |
-| **Hybrid (factuality-gated injection)** | **+1.99~+6.88%** | Selective injection is the primary driver of improvement |
+| Configuration | Key Observation | Explanation |
+|------|----------|------|
+| Baseline (Direct P, H inference) | Reference point | High recall on Neutral label |
+| Strong inject (Inject all axioms) | Unstable gain | Performance dropped in some cases due to axiom noise |
+| **Hybrid (factuality-gated injection)** | **+1.99~+6.88%** | Selective injection is the primary source of improvement |
 
 ### Key Findings
-- The primary effect of axiom injection is shifting the model from a "conservative Neutral bias" toward Entailment/Contradiction, providing a "rational basis for commitment."
-- Strong injection (without filtering) often degrades performance, proving that autonomously generated axioms vary wildly in quality; the filtering mechanism is a core contribution rather than just a trick.
-- Improvements are more pronounced on ANLI (adversarial) than SNLI, suggesting commonsense bridges are more critical for harder cases.
+- Injecting axioms primarily moves the model from "conservative Neutral preference" toward Entail/Contradict by providing "reasons to take a stance."
+- Strong injection (without filtering) often results in performance drops, confirming fluctuating quality in LLM-generated axioms. The filtering step is a core contribution rather than a minor trick.
+- Improvements are more significant on ANLI (adversarial) than SNLI, indicating that commonsense bridges are more critical for difficult cases.
 
 ## Highlights & Insights
-- "Using the LLM as its own axiom factuality judge" is a simple but effective self-evaluation strategy—cheaper and more context-aware than retrieving triples from external KGs.
-- The failure of NLI is framed as a "knowledge gap" rather than insufficient model capacity. Filling this gap yields pure gains, suggesting a path for "selective augmentation" in other reasoning tasks.
-- It validates a counter-intuitive point: feeding more information into a prompt is not always better; information credibility must be assessed first. This mirrors the "noisy retrieval" problem in RAG.
+- Using the LLM as its own "axiom factuality judge" is a simple but effective self-evaluation approach—cheaper and more context-aware than external KGs.
+- The failure of NLI is framed as a "knowledge gap" rather than insufficient model capacity. Filling this gap yields consistent gains.
+- The results confirm that adding more information to a prompt isn't always better; the credibility of the information must be assessed first, echoing observations in RAG where noisy retrieval hurts performance.
 
 ## Limitations & Future Work
-- Evaluation was limited to SNLI/ANLI; generalization to MNLI, e-SNLI, or HANS remains untested.
-- Factuality scoring relies on the same LLM, creating a potential "self-praising" loop; using an independent model as a judge would increase reliability.
-- Lack of comparison with external knowledge baselines like RAG-from-ConceptNet or e-SNLI explanations means the superiority of LLM-axioms over KG-axioms is not definitively established.
-- Tested only on 70B+ models; the quality of axiom generation and self-judging in smaller models is unknown.
+- Only SNLI/ANLI were used; generalizability to MNLI, e-SNLI, or HANS remains unverified.
+- Using the same LLM for scoring may lead to a self-reinforcement loop; a separate model as a judge would be more credible.
+- Lack of direct comparison with external knowledge baselines (e.g., RAG-from-ConceptNet or e-SNLI explanations).
+- Evaluated only on 70B+ models; the quality of axiom generation and self-judging in smaller models is unknown.
 
 ## Related Work & Insights
-- **vs ExBERT (Gajbhiye 2021)**: Both inject commonsense, but ExBERT trains fusion layers with ConceptNet triples; this work uses prompting with factuality filtering. The latter avoids training costs but sacrifices the precision of fine-tuning.
-- **vs e-SNLI Explanations (Camburu 2018)**: e-SNLI uses human-annotated explanations; this work uses self-generated axioms, saving annotation costs but requiring quality control.
-- **vs Nguyen & Hatua 2024**: They retrieve commonsense from ConceptNet/Google based on e-SNLI keywords; this work uses internalized knowledge, avoiding retrieval failure risks.
-- **vs Wei et al. 2024 (CSQA)**: Uses LLMs as commonsense generators for CSQA; this work adapts the idea specifically to NLI with selective access.
+- **vs. ExBERT (Gajbhiye 2021)**: Both inject external commonsense, but ExBERT trains fusion layers with ConceptNet. This work uses prompting and factuality filtering, eliminating training costs but sacrificing tight coupling.
+- **vs. e-SNLI Explanation (Camburu 2018)**: e-SNLI uses human-labeled explanations. This work uses LLM-generated axioms, saving on annotation but requiring filtering mechanisms.
+- **vs. Nguyen & Hatua 2024**: They retrieve commonsense from ConceptNet/Google via e-SNLI keywords. This work uses internalized model knowledge, avoiding retrieval failure risks.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Combinatorial innovation of "LLM-generated commonsense + self-evaluated factuality + selective injection" rather than a revolutionary paradigm.
-- Experimental Thoroughness: ⭐⭐⭐ Two datasets × two models × three strategies are informative, but the study lacks smaller models and broader NLI benchmark comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Figure 1 clearly illustrates motivation; the distinction of the axiom concept is well-defined.
-- Value: ⭐⭐⭐⭐ Provides a cautionary note for "injecting external knowledge via prompts"—injection without a quality gate is often a negative optimization. This principle is readily applicable to RAG and CoT augmentation.
+- Novelty: ⭐⭐⭐ Hybridizing LLM generation, self-evaluation, and selective injection is an effective synthesis of existing ideas.
+- Experimental Thoroughness: ⭐⭐⭐ Covers two datasets and two models, but lacks comparisons with smaller models or more NLI benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation via Figure 1 and precise conceptualization of "axioms."
+- Value: ⭐⭐⭐⭐ Provides a cautionary note for "external knowledge injection" in prompts—gates are essential. This principle applies to RAG and CoT enhancement.
 
 <!-- RELATED:START -->
 
@@ -123,10 +128,10 @@ Data distribution (Table 1): SNLI (Entail 689 / Contradict 651 / Neutral 660); A
 ## Related Papers
 
 - [\[ACL 2026\] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding](commonsense_knowledge_with_negation_a_resource_to_enhance_negation_understanding.md)
+- [\[ACL 2025\] Automatic Generation of Inference Making Questions for Reading Comprehension Assessments](../../ACL2025/nlp_understanding/automatic_generation_of_inference_making_questions_for_reading_comprehension_ass.md)
 - [\[ACL 2026\] Semantic Reranking at Inference Time for Hard Examples in Rhetorical Role Labeling](semantic_reranking_at_inference_time_for_hard_examples_in_rhetorical_role_labeli.md)
 - [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
-- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 
 </div>
 

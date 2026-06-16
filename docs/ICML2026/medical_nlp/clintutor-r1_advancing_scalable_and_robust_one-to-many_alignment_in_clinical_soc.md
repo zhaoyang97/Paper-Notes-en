@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education
 description: >-
-  [ICML 2026][Medical NLP][Clinical Education] This paper proposes ClinTutor-R1, the first Vision-Language Agent designed for one-to-many alignment in clinical Socratic teaching. By constructing the 48k ClinTeach dialogue…
+  [ICML 2026][Medical NLP][Vision-Language Model] This paper proposes ClinTutor-R1, the first vision-language Agent for one-to-many alignment in clinical Socratic teaching. By constructing a 48k dialogue dataset (ClinTeach) via the multi-agent simulator ClinEdu, and utilizing explicit Theory of Mind (ToM) reasoning with triple-axis rubric reinforcement learning, the m
 tags:
-  - "ICML 2026"
-  - "Medical NLP"
-  - "Clinical Education"
-  - "One-to-Many Alignment"
-  - "Socratic Teaching"
-  - "Multi-Agent Simulation"
-  - "Vision-Language Models"
+  - ICML 2026
+  - Medical NLP
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: f99e9053ed9ecdc3
+content_hash: a26c2e1b1b37b7c9
 ---
-
 # ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education
 
 **Conference**: ICML 2026 Spotlight  
@@ -25,47 +20,58 @@ content_hash: f99e9053ed9ecdc3
 
 ## TL;DR
 
-This paper proposes ClinTutor-R1, the first Vision-Language Agent designed for one-to-many alignment in clinical Socratic teaching. By constructing the 48k ClinTeach dialogue dataset via the multi-agent simulator ClinEdu, and employing explicit Theory of Mind (ToM) reasoning and three-axis rubric reinforcement learning, the model maintains stable teaching quality even as the student count scales to 10, surpassing baseline models by 20% and achieving performance parity with GPT-4o.
+This paper proposes ClinTutor-R1, the first vision-language Agent for one-to-many alignment in clinical Socratic teaching. By constructing a 48k dialogue dataset (ClinTeach) via the multi-agent simulator ClinEdu, and utilizing explicit Theory of Mind (ToM) reasoning with triple-axis rubric reinforcement learning, the model maintains stable teaching quality even when scaled to 10 students, outperforming baselines by 20% and achieving performance comparable to GPT-4o.
 
 ## Background & Motivation
 
-**Background**: Current LLM alignment techniques (e.g., RLHF) have achieved significant success in one-to-one interaction scenarios. However, many real-world settings require AI to serve multiple users simultaneously, such as a mentor guiding several students during clinical rounds.
+**Background**: Current LLM alignment techniques (e.g., RLHF) have achieved significant success in one-to-one interaction scenarios. However, many real-world scenarios require AI to serve multiple users simultaneously, such as a mentor instructing multiple students during clinical rounds.
 
-**Limitations of Prior Work**: Existing models face two core issues in one-to-many scenarios: (1) **Context dilution**, where the model loses its ability to track individual cognitive states as the number of students increases; (2) **Goal misalignment**, making it difficult to balance personalized guidance with overall group progress. Experiments show that baseline models experience a "performance cliff" when the number of students exceeds 3, with quality dropping by nearly 15%.
+**Limitations of Prior Work**: Existing models face two core issues in one-to-many scenarios: (1) **Context dilution**—as the number of students increases, the model loses the ability to track individual cognitive states; (2) **Goal misalignment**—it is difficult to balance personalized guidance with collective learning progress. Experiments show that baseline models experience a "performance cliff" when the number of students exceeds three, with quality dropping by nearly 15%.
 
-**Key Challenge**: Standard alignment methods optimize for a single user's reward signal and lack the ability to model Theory of Mind (ToM). Consequently, they cannot simultaneously maintain each student's cognitive state while coordinating group consensus, which is particularly critical in clinical scenarios requiring both safety and pedagogical depth.
+**Key Challenge**: Standard alignment methods only optimize reward signals for a single user and lack Theory of Mind (ToM) modeling capabilities. They cannot simultaneously maintain the cognitive state of each student while coordinating group consensus, which is particularly critical in clinical scenarios where safety and depth of reasoning must be balanced.
 
-**Goal**: To build a scalable one-to-many alignment framework that allows an AI tutor to provide high-quality, personalized Socratic teaching as the student group scales.
+**Goal**: To build a scalable one-to-many alignment framework that allows the AI tutor to provide high-quality Socratic personalized teaching as student numbers grow.
 
-**Key Insight**: Clinical rounds were chosen as the testbed. This scenario naturally features heterogeneous cognitive states (from novices to senior residents) and dual clinical-pedagogical objectives (deep reasoning vs. safety guardrails), making it an ideal environment for one-to-many alignment.
+**Key Insight**: The authors chose clinical rounds as the testbed—this scenario naturally features heterogeneous cognitive states (from novices to senior residents) and dual clinical-educational goals (deep reasoning vs. safety baselines), making it an ideal environment for one-to-many alignment.
 
-**Core Idea**: Generate large-scale pedagogical dialogue data through a multi-agent simulator and combine explicit ToM reasoning mechanisms with multi-axis rubric reinforcement learning to train a Vision-Language Agent that maintains stable teaching quality in one-to-many settings.
+**Core Idea**: Generate large-scale teaching dialogue data through a multi-agent simulator, combined with an explicit ToM reasoning mechanism and triple-axis rubric reinforcement learning, to train a vision-language Agent that maintains stable teaching quality in one-to-many scenarios.
 
 ## Method
 
 ### Overall Architecture
 
-The system consists of three core components: (1) **ClinEdu**, a multi-agent teaching simulator that models tutor-student-patient interaction dynamics during clinical rounds; (2) **ClinTeach**, a dataset containing 48k Socratic teaching dialogues (31k single-turn + 17k multi-turn); (3) **ClinTutor-R1**, a model based on Qwen2.5VL-7B trained via a two-stage SFT + RL process. Inputs include clinical cases (text and medical images like X-ray/CT), and outputs provide Socratic guidance for multiple students.
+This paper addresses the alignment challenge when "one AI tutor leads multiple students": as students increase, the model fails to track individual cognitive states or coordinate group progress. ClinTutor-R1 decomposes the pipeline into three parts: first, the **ClinEdu** multi-agent simulator generates high-fidelity dialogues for clinical rounds to create the **ClinTeach** dataset (48k dialogues: 31k single-turn + 17k multi-turn); then, SFT is performed on Qwen2.5VL-7B to teach the basic paradigm of Socratic guidance (including "think-before-talk" ToM reasoning); finally, triple-axis rubric reinforcement learning is used to refine its dynamic adaptability under varying student scales. The model takes clinical cases (text + medical imaging like X-ray/CT) and outputs guided Socratic questions for multiple students.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph CLINEDU["ClinEdu Multi-Agent Simulator (Design 1)"]
+        direction TB
+        A["Medical Script + Persona Combination<br/>→ Personalized Patient"] --> B["300 Persona Library Random Teaming<br/>→ Heterogeneous Student Team"]
+        B --> C["Three-stage Closed-loop Protocol<br/>Independent Analysis → Guided Review → Inquiry Exploration"]
+        C --> D["Five Agent Synergy<br/>Tutor / Patient / Student / Expert / Safety Supervisor"]
+    end
+    CLINEDU --> E["ClinTeach Dataset<br/>31k Single-turn + 17k Multi-turn"]
+    E --> F["SFT (Qwen2.5VL-7B)<br/>Learning Socratic Paradigms"]
+    F --> G["Explicit ToM Reasoning Chain (Design 2)<br/>History / Question / Per-student / Group"]
+    G --> H["Triple-axis Rubric RL (Design 3)<br/>IS Structure + AQ Analysis + CS Safety, GRPO"]
+    H -->|"Triggered if Safety sᵢ < 0"| V["Veto Mechanism<br/>R_final = P_veto"]
+    H --> OUT["Output: Socratic Guided Questions<br/>for Multiple Students"]
+```
 
 ### Key Designs
 
-1. **ClinEdu Multi-Agent Simulator**:
+**1. ClinEdu Multi-Agent Simulator: Decoupled synthesis to bypass data scarcity and privacy walls**
 
-    - **Function**: Generates high-fidelity clinical teaching interaction data, covering five agent types: tutor, patient, student, expert review, and safety monitor.
-    - **Mechanism**: Decouples the patient's objective medical record (Patient Script) from their subjective personality (Persona). The flexible combination of these elements allows for infinite clinical scenarios. Student agents are sampled from a pool of 300 personas, each with different knowledge levels, cognitive styles, and learning methods. Interactions follow a three-stage closed-loop protocol: independent student analysis → Socratic guidance by the tutor (reviewed by experts and safety monitors) → student exploration.
-    - **Design Motivation**: Real-world clinical teaching data is scarce due to privacy regulations. The decoupled design enables scalable data generation, while persona-driven interactions capture the emergent pedagogical conflicts that static templates miss.
+Real clinical teaching dialogues are limited by privacy regulations and are naturally scarce. Data constructed from static templates fails to capture teaching conflicts emerging within groups. ClinEdu solves this by splitting the patient into two layers—an objective Patient Script and a subjective Persona. Combining these allows for near-infinite clinical scenarios. Students are randomly sampled from a library of 300 personas, each with different knowledge levels, cognitive styles, and learning methods. The interaction follows a three-stage closed-loop protocol: students analyze cases independently, the tutor provides Socratic guidance (reviewed by expert and safety agents), and students explore via follow-up questions.
 
-2. **Explicit Theory of Mind (ToM) Reasoning Mechanism**:
+**2. Explicit Theory of Mind (ToM) Reasoning: "Think" for each student individually before speaking**
 
-    - **Function**: Before generating guidance, the model performs structured internal reasoning to model each student's cognitive state and the group consensus.
-    - **Mechanism**: The reasoning chain includes four dimensions: `<think history>` tracks dialogue progress; `<think question>` aligns pedagogical goals; `<think student student_id="X">` analyzes each student's understanding individually; and `<think group>` synthesizes group analysis to identify collective blind spots. By writing a dedicated reasoning trajectory for each student, the model maintains independent mental models as student numbers grow.
-    - **Design Motivation**: Addresses context dilution by explicitly decoupling multi-agent interaction into independent individual analyses, preventing information leakage across long contexts. The reasoning trajectories also serve as verifiable audit trails.
+Context dilution stems from multiple students' information mixing in long contexts, making it hard for the model to distinguish individual progress. ClinTutor-R1's strategy is "think before you talk": generating a structured internal reasoning chain before the guidance. This reasoning is split into four dimensions: `<think history>` to track dialogue progress, `<think question>` to align with teaching goals, `<think student student_id="X">` to write an independent reasoning trajectory for each student to judge their understanding, and `<think group>` to synthesize the group state and identify collective blind spots. These per-student trajectories prevent information overlap as students increase.
 
-3. **Three-Axis Rubric Reinforcement Learning**:
+**3. Triple-axis Rubric Reinforcement Learning: Scoring "Flexibility" and "Safety" separately with a veto floor**
 
-    - **Function**: Optimizes the model's dynamic adaptation to diverse student inputs after SFT.
-    - **Mechanism**: Reward functions are decomposed along three axes: **Instructional Structure** (IS: reasoning tag integrity, Socratic question quality), **Analysis Quality** (AQ: depth of individual assessment, group synthesis ability), and **Clinical Safety** (CS: factual accuracy, safety priority). A key design is the veto mechanism: if any safety-related criterion $\{CS\text{-}1, CS\text{-}2, IS\text{-}1\}$ receives a score $s_i < 0$, the final reward is vetoed to a large negative value $R_{\text{final}} = P_{\text{veto}}$. The policy is optimized using the GRPO algorithm.
-    - **Design Motivation**: A single holistic score cannot distinguish between the need for pedagogical flexibility and the rigidity required for safety. The veto mechanism allows the policy to quickly learn safety boundaries (triggering 8-12% during early exploration and dropping to <2% after stabilization) without suppressing Socratic diversity.
+SFT only learns the paradigm and lacks flexibility for diverse student inputs. However, a single holistic score merges the need for "strategic flexibility" with "safety rigidity." Rewards are decomposed along three axes: **Instruction Structure** (IS), **Analysis Quality** (AQ), and **Clinical Safety** (CS). Crucially, a **veto mechanism** is implemented—if any safety or structural rubric $\{CS\text{-}1, CS\text{-}2, IS\text{-}1\}$ scores $s_i < 0$, the final reward is crushed to a large negative value $R_{\text{final}} = P_{\text{veto}}$, regardless of other scores. Optimized with the GRPO algorithm, this ensures safety is a hard floor rather than a tradeable component.
 
 ## Key Experimental Results
 
@@ -81,45 +87,45 @@ The system consists of three core components: (1) **ClinEdu**, a multi-agent tea
 | o3 | 8.42 | 8.45 | 8.18 | 8.23 |
 | **ClinTutor-R1** | **8.35** | **8.49** | **8.41** | **8.55** |
 
-ClinTutor-R1 surpasses GPT-4o on MVME (8.49 vs. 8.47) and significantly outperforms it in the Multi-Student Management (MSM) dimension (8.55 vs. 8.39). In human expert evaluations, ClinTutor-R1 scored 8.73, exceeding o3's 8.41. In a 200-person user study, it received a recommendation score of 8.70.
+ClinTutor-R1 outperforms GPT-4o on MVME (8.49 vs 8.47) and is significantly superior in Multi-Student Management (MSM) with a score of 8.55 vs 8.39. In human expert evaluations, ClinTutor-R1 averaged 8.73, surpassing o3 (8.41).
 
 ### Ablation Study
 
 | Configuration | MedXpertQA Avg | MVME Avg | Description |
-|------|---------------|----------|-------------|
+|------|---------------|----------|------|
 | Full model | 8.35 | 8.49 | Complete model |
-| w/o RL | 7.69 | 7.58 | Largest drop (0.66/0.91) without RL |
-| w/o Thinking | 7.94 | 7.79 | Drop (0.41/0.70) without ToM chain |
-| w/ Vanilla reward | 8.01 | 7.88 | Single reward instead of 3-axis rubric |
-| w/o reward veto | 7.87 | 8.03 | MPS drops (8.26→6.92) without veto |
-| w/ One-Student | 7.86 | 7.69 | Poor generalization when trained on single student |
+| w/o RL | 7.69 | 7.58 | Largest drop (0.66/0.91) |
+| w/o Thinking | 7.94 | 7.79 | Removing ToM chain drops 0.41/0.70 |
+| w/ Vanilla reward | 8.01 | 7.88 | Single reward instead of triple-axis |
+| w/o reward veto | 7.87 | 8.03 | MPS (Medical Safety) plunges (8.26→6.92) |
+| w/ One-Student | 7.86 | 7.69 | Trained only on single students; poor generalization |
 
 ### Key Findings
 
-- **RL contributes most**: Removing reinforcement learning leads to the largest performance drop, indicating that SFT alone is insufficient for learning to adapt dynamically to diverse student inputs.
-- **Veto mechanism is crucial for safety**: Removing the veto causes the MPS (Medical Safety) dimension to plunge from 8.26 to 6.92, showing that policies learn "reward hacking" without hard constraints.
-- **Scalability advantage**: As the student count scales from 1 to 10, ClinTutor-R1 maintains an average score above 8.20, while Med-SocraticLM drops by 15% after 3 students.
-- **Error Correction**: In error injection experiments, ClinTutor-R1 achieved a Corrective Success Rate (CSR) of 88.50%, performing particularly well in categories of premature closure (89.10%) and safety/ethical risks (88.60%).
+- **RL contributes the most**: Removing RL leads to the largest performance drop, showing SFT is insufficient for dynamic adaptation.
+- **Veto mechanism is vital for safety**: Removing the veto mechanism causes the MPS (Medical Safety) dimension to plunge, suggesting the policy learns "reward hacking" without hard constraints.
+- **Scalability Advantage**: ClinTutor-R1 maintains an average score above 8.20 as students scale from 1 to 10, whereas Med-SocraticLM drops by 15% after 3 students.
+- **Correction Capability**: In error injection experiments, ClinTutor-R1 achieved a Corrective Success Rate (CSR) of 88.50%.
 
 ## Highlights & Insights
 
-- **Explicit ToM Decoupling**: Writing independent `<think student>` trajectories for each student is an elegant solution to context dilution in one-to-many scenarios. This "think before you speak" design not only improves performance but also makes the AI tutor's decisions auditable and interpretable.
-- **"Safety Floor" via Veto Mechanism**: Treating safety as a hard constraint rather than a soft reward component ensures the clinical safety baseline without suppressing pedagogical variety. The rapid drop in veto triggers from 12% to 2% suggests the strategy successfully internalizes safety boundaries.
-- **Decoupled Data Generation**: The Patient Script/Persona decoupling approach is transferable to any scenario requiring role-playing training data (e.g., legal consultation, management training), enabling exponential growth in data diversity.
+- **Explicit Decoupling of ToM Reasoning**: Writing independent `<think student>` trajectories is an elegant solution to context dilution in one-to-many scenarios. This "think-before-talk" design not only improves performance but also makes the AI tutor's decisions auditable.
+- **"Safety Floor" Design via Veto**: Treating safety as a hard constraint rather than a soft reward manages clinical boundaries without suppressing the diversity of teaching strategies.
+- **Decoupled Data Generation**: The Patient Script/Persona decoupling can be transferred to any scenario requiring role-playing training data (e.g., legal consulting, management training).
 
 ## Limitations & Future Work
 
-- Perception is limited to text and static medical images (X-ray, CT), lacking dynamic environmental awareness (e.g., patient expressions, physical examination maneuvers) found in real rounds.
-- While simulator data is high-fidelity, a gap remains with real classroom environments (e.g., unmodeled student distraction or emotional shifts).
-- Training and evaluation are primarily based on MedXpertQA, and generalization across different medical systems (e.g., non-USMLE standards) requires further validation.
-- Future work could explore combining ToM reasoning with online learning to allow the model to continuously update its cognitive models of students during real interactions.
+- Perception is limited to text and static medical images (X-ray, CT), lacking dynamic environment perception (e.g., patient expressions).
+- While high-fidelity, the simulator data still has a gap with real classrooms (e.g., unmodeled student distraction or emotional volatility).
+- Generalization across different medical systems (e.g., non-USMLE standards) remains to be validated.
+- Potential to explore combining ToM reasoning with online learning to continuously update cognitive models of students during real interactions.
 
 ## Related Work & Insights
 
-- **SocraticLM** (Liu et al., 2024b): Uses a Dean-Teacher-Student multi-agent pipeline for math dialogues but is limited to single-student scenarios.
-- **TutorRL** (Dinucu-Jianu et al., 2025): An RL framework that balances guidance versus answer leakage but does not handle multi-student management.
-- **MEDCO** (Wei et al., 2024): Simulates multi-agent clinical teams but uses 1:1 patient-doctor mapping and lacks Script/Persona decoupling.
-- The three-axis rubric + veto RL framework introduced here can be generalized to any RLHF task requiring multi-dimensional quality constraints (e.g., correctness-safety-readability in code generation).
+- **SocraticLM** (Liu et al., 2024b): Dean-Teacher-Student multi-agent pipeline for math dialogues, but limited to single-student scenarios.
+- **TutorRL** (Dinucu-Jianu et al., 2025): RL framework to balance guidance vs. answer leakage, but lacks multi-student management.
+- **MEDCO** (Wei et al., 2024): Multi-agent clinical team simulation, but with 1:1 doctor-patient mapping without Script/Persona decoupling.
+- The triple-axis rubric + veto RL framework can be generalized to any RLHF task requiring multi-dimensional quality constraints (e.g., Correctness-Safety-Readability in code generation).
 
 <!-- RELATED:START -->
 
@@ -130,8 +136,8 @@ ClinTutor-R1 surpasses GPT-4o on MVME (8.49 vs. 8.47) and significantly outperfo
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_nlp/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](../../AAAI2026/medical_nlp/learning_cell-aware_hierarchical_multi-modal_representations.md)
+- [\[ACL 2025\] A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment](../../ACL2025/medical_nlp/a_modular_approach_for_clinical_slms_driven_by_synthetic_data_with_pre-instructi.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
-- [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_nlp/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 
 </div>
 

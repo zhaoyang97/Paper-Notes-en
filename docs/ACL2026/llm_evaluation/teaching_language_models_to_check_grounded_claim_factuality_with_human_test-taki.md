@@ -2,84 +2,100 @@
 title: >-
   [Paper Note] Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies
 description: >-
-  [ACL2026][LLM Evaluation][Fact-checking] This work reframes grounded claim factuality checking as a True/False reading comprehension task. By incorporating human test-taking strategies into structured prompts…
+  [ACL 2026][LLM Evaluation][Paper Note] This work reformulates grounded claim factuality checking as a True/False reading comprehension task. By incorporating structured prompts based on human test-taking strategies, LLMs can efficiently and accurately verify claims with minimal reasoning steps. Furthermore, Small Language Models (SLMs) are trained via Super
 tags:
-  - "ACL2026"
-  - "LLM Evaluation"
-  - "Fact-checking"
-  - "Grounded Factuality Checking"
-  - "LLM Hallucination Detection"
-  - "Reading Comprehension Strategies"
-  - "SLM Distillation"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: a5f6901751d24ce4
+content_hash: cb2946425ab25ad0
 ---
-
 # Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies
 
 **Conference**: ACL2026  
 **arXiv**: [2605.29712](https://arxiv.org/abs/2605.29712)  
 **Code**: https://github.com/Haruhi07/Test-Taking  
 **Area**: LLM Evaluation  
-**Keywords**: Fact-checking, Grounded Factuality Checking, LLM Hallucination Detection, Reading Comprehension Strategies, SLM Distillation
+**Keywords**: Fact-checking, Grounded fact-checking, LLM hallucination detection, Reading comprehension strategies, Small language model distillation
 
 ## TL;DR
 
-This work reframes grounded claim factuality checking as a True/False reading comprehension task. By incorporating human test-taking strategies into structured prompts, LLMs are enabled to verify claims efficiently and accurately with minimal reasoning steps. Additionally, small language models are trained via Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO) to replace large models, achieving over 80% reduction in inference costs.
+This work reformulates grounded claim factuality checking as a True/False reading comprehension task. By incorporating structured prompts based on human test-taking strategies, LLMs can efficiently and accurately verify claims with minimal reasoning steps. Furthermore, Small Language Models (SLMs) are trained via Supervised Fine-Tuning (SFT) and Direct Preference Optimization (DPO) to replace Large Language Models, achieving over 80% savings in inference costs.
 
 ## Background & Motivation
 
-**Background**: Large Language Models (LLMs) are widely used in generative tasks such as summarization and QA, but the generated content often suffers from "hallucinations"—claims that are not supported by source documents. This pose a fatal threat to the reliability of applications like Retrieval-Augmented Generation (RAG). Current factuality evaluation methods are primarily categorized into two types: (1) Entailment classifier-based methods, which are lightweight but require threshold tuning for specific datasets and lack generalizability; (2) "LLM-as-a-judge" paradigms, which lack explicit guidance for the reasoning process, leading to lengthy and costly inference.
+**Background**: Large Language Models (LLMs) are widely used in generation tasks such as summarization and question answering. However, generated content often contains "hallucinations"—claims unsupported by the source document. This poses a significant threat to the credibility of applications like Retrieval-Augmented Generation (RAG). Existing factuality assessment methods generally fall into two categories: textual entailment classifiers, which are lightweight but require dataset-specific threshold tuning and lack universality; and the "LLM-as-a-judge" paradigm, which lacks explicit guidance for reasoning, resulting in lengthy reasoning steps and high costs.
 
-**Limitations of Prior Work**: Textual entailment methods require document truncation or chunking, leading to information loss. Direct LLM judgments fail to fully exploit reasoning capabilities—models either generate excessively long free-form reasoning or produce inconsistent judgments without structural guidance. Furthermore, cross-dataset generalization remains weak.
+**Limitations of Prior Work**: Textual entailment methods require document truncation or chunking, often leading to information loss. When LLMs perform direct judgment, they fail to fully utilize their reasoning capabilities—producing either overly long free-form reasoning or inconsistent judgments without structural guidance. Cross-dataset generalization remains weak.
 
-**Key Challenge**: How can models perform factuality checking systematically and explainably without increasing inference costs? A tension exists between model complexity and efficiency—large models are capable but expensive, while small models are fast but exhibit limited comprehension.
+**Key Challenge**: How to enable models to perform fact-checking systematically and interpretably without increasing inference costs? There is a tension between model complexity and reasoning efficiency; while large models are capable but expensive, small models are fast but have limited understanding.
 
-**Goal**: To design a two-stage pipeline that decomposes claims into atomic facts and verifies them systematically, while developing methods to distill LLMs into small models for balanced performance and cost.
+**Goal**: To design a two-stage pipeline that decomposes claims into atomic facts and systematically verifies each fact. Additionally, to develop a method to distill LLM capabilities into SLMs to balance cost and performance.
 
-**Key Insight**: The authors observe that humans employ systematic strategies for True/False reading comprehension in language exams: verifying explicitly mentioned information before inferring implicit information. This exam strategy is applicable to LLM factuality checking by converting it into a set of explicit verification criteria to guide the reasoning process.
+**Key Insight**: The authors observe that human strategies for True/False reading comprehension in language exams are highly systematic: verifying explicitly mentioned information before reasoning about implicit information. This exam strategy is applicable to LLM fact-checking, as it can be converted into explicit verification criteria to guide the reasoning process.
 
-**Core Idea**: Factuality checking is redefined as a reading comprehension task. A set of four test-taking criteria (C1-C4) replaces free-form reasoning, allowing LLMs to generate judgments and explanations in a structured, controllable manner, significantly reducing inference costs.
+**Core Idea**: Redefine the fact-checking problem as a reading comprehension task. Replace free-form reasoning with four exam-based verification criteria (C1-C4), enabling LLMs to generate judgments and explanations in a structured and controlled manner, significantly reducing inference costs.
 
 ## Method
 
 ### Overall Architecture
 
-The method adopts a **two-stage pipeline**. The first stage, "Claim Decomposition," uses an LLM to break complex claims into multiple atomic facts, reducing the difficulty of subsequent verification. The second stage, "Atomic Fact Verification," checks each atomic fact against the source document and aggregates the final decision. The key insight is that complex claims often contain independent information pieces scattered across different locations in the source document; checking the whole claim directly leads to information omission or confusion.
+The method decomposes the verification of whether a claim is grounded in a source document into two sequential stages. Given a potentially hallucinated claim and the source document, the LLM first performs "claim decomposition" to split complex claims into independent atomic facts. Then, "fact verification" is performed for each atomic fact using a set of human-inspired criteria, concluding with a final judgment and explanation. The key insight is that complex claims often scatter information across different parts of a document; holistic verification leads to missed evidence or confusion, while a decompose-then-check approach focuses each step on a single target. Furthermore, SFT and DPO are used to distill these capabilities into a 0.6B SLM to achieve over 80% cost reduction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Potentially hallucinated claim + Source document"] --> B["Claim Decomposition: Split into independent atomic facts<br/>(Decoupled from verification, using specific prompts)"]
+    B --> C["Set of atomic facts (Check one by one)"]
+    subgraph CHK["Exam-strategy-based Verification Criteria (Sequential C1→C4)"]
+        direction TB
+        C1["C1: Are subjects/objects mentioned in the document?"] --> C2["C2: Are entity descriptions explicitly supported?"]
+        C2 --> C3["C3: Is the relationship between subjects/objects explicitly supported?"]
+        C3 -->|Unresolved info remains| C4["C4: Can it be inferred from the document?"]
+    end
+    C --> CHK
+    CHK --> D["Aggregation: Factuality judgment + Explanation"]
+    subgraph DIST["Two-stage SLM Distillation"]
+        direction TB
+        E["SFT: 0.6B SLM imitates LLM decomposition and verification"] --> F["DPO: Error correction using 'SLM wrong, LLM right' samples"]
+    end
+    D -.LLM output as training data.-> DIST
+    DIST --> G["Deployed SLM: Judgment + Explanation, 80%+ cost savings"]
+```
 
 ### Key Designs
 
-1.  **Test-taking Based Verification Criteria**:
-    - **Function**: Converts the ambiguous problem of "checking if a claim is grounded" into a set of executable criteria, verifying entity mentions, description accuracy, relationship support, and implicit reasoning.
-    - **Mechanism**: Four criteria are applied sequentially to form a logic flow: first verify C1 (whether subjects/objects in the claim are mentioned), then C2 (whether descriptions of these entities are explicitly supported), followed by C3 (whether relationships between entities are explicitly supported), and finally C4 (whether unverified information can be inferred). This prevents blind searching during reasoning.
-    - **Design Motivation**: Humans use this strategy—finding explicit evidence before making inferences—to improve accuracy and reduce cognitive load. Compared to previous methods that check error types one by one, this serialized decision-tree design better aligns with human cognitive processes.
+**1. Exam-Strategy-Based Verification Criteria: Reframing Vague Judgment as a Decision Tree**
 
-2.  **Decoupling Claim Decomposition and Atomic Fact Verification**:
-    - **Function**: Splits the complex verification task into two independent sub-tasks, using targeted LLM prompts or models for each.
-    - **Mechanism**: First, a few-shot prompt guides the LLM to decompose a claim like "Ice can turn into liquid water, and liquid water can turn into steam, and vice versa" into atomic facts like "Ice can turn into water," "Water can turn into steam," and "Steam can turn into ice." Second, verification criteria are applied to each fact. Decoupling ensures: (a) focused logical segmentation during decomposition and focused evidence retrieval during verification; (b) flexibility to replace stages with small models.
-    - **Design Motivation**: Concurrent tasks have lower parallelism and higher error propagation. Decomposition makes the pipeline modular and independently optimizable.
+Determining if a claim is "grounded" is often too vague, leading models to generate redundant reasoning or inconsistent results. Borrowing from human reading comprehension strategies—finding explicit evidence before inferring—the authors formalize four sequential criteria: C1 checks if the subjects/objects exist in the document; C2 verifies their descriptions; C3 validates the relationship between them; and C4 determines if remaining info can be logically inferred. This decision tree allows models to conclude early with explicit evidence and reserve expensive reasoning for the final step, improving both accuracy and computational efficiency.
 
-3.  **Two-stage Training Strategy for SLM Distillation**:
-    - **Function**: Combines SFT and DPO to teach small models (e.g., 0.6B parameters) to follow LLM verification strategies and self-correct, maintaining LLM-level accuracy with significantly lower costs.
-    - **Mechanism**: Phase one (SFT) has the small model mimic LLM-generated atomic facts and reasoning. Phase two (DPO) focuses on samples where the small model failed but the LLM succeeded. Through contrastive learning (LLM output as "chosen," small model error as "rejected"), the small model learns to correct its mistakes. DPO is more efficient than SFT as it maximizes the probability margin between correct and incorrect samples rather than simple imitation.
-    - **Design Motivation**: Small models lack the world knowledge and reasoning depth of LLMs, but they can compensate through distillation and error correction. This simulates human learning: mastering basic steps (SFT) before identifying and correcting common mistakes (DPO).
+**2. Decoupled Claim Decomposition and Fact Verification**
+
+Combining "decomposition" and "verification" in a single call reduces parallelism and risks error propagation between tasks. This work decouples the stages: the first step uses few-shot prompting to split complex claims (e.g., "Ice can turn into liquid water, and liquid water into steam, and vice versa") into atomic facts ("Ice turns to water," "Water turns to steam," etc.). The second step applies C1-C4 to each fact. This ensures the model focuses solely on logical segmentation during decomposition and evidence retrieval during verification, while providing a clear interface for distilling specific stages into different model sizes.
+
+**3. Two-Stage SLM Distillation Strategy: Imitation followed by Correction**
+
+SLMs lack world knowledge and reasoning depth, making naive distillation ineffective. The authors use a two-stage approach: (1) SFT allows a 0.6B SLM to imitate LLM-generated atomic facts and verification processes to learn basic steps; (2) DPO focuses on "SLM wrong, LLM right" samples, treating LLM outputs as chosen completions and SLM errors as rejected completions. DPO is more effective than continued SFT because it maximizes the probability margin $\beta[s_\theta(x, y_c) - s_\theta(x, y_r)]$ between correct and incorrect samples. This mimics the human learning process of "understanding steps, then correcting mistakes," allowing the SLM to approach LLM accuracy while slashing costs.
+
+### A Complete Example
+
+For the claim "Ice can turn into liquid water, and liquid water into steam, and vice versa": decomposition first splits it into facts like "Ice turns to water," "Water turns into steam," and "Steam turns into ice." In the verification stage, each fact follows C1→C4. C1 confirms if "ice," "water," and "steam" appear in the document; C2 checks their descriptions; C3 verifies the "turns into" relationship. If information remains unresolved (e.g., the reverse phase transitions implied by "vice versa"), the model proceeds to C4 for inference. Aggregating these results provides the final factuality judgment and explanation.
 
 ### Loss & Training
 
-SFT Objective (Claim Decomposition): $L(\theta) = \mathbb{E}_{(c,\{f_{\text{ref}}\}) \sim D_{\text{De}}}[\log P_\theta(\{f_{\text{ref}}\} | c)]$, where $c$ is the claim and $\{f_{\text{ref}}\}$ is the set of LLM-generated reference facts.
+SFT Objective (Claim Decomposition): $L(\theta) = \mathbb{E}_{(c,\{f_{\text{ref}}\}) \sim D_{\text{De}}}[\log P_\theta(\{f_{\text{ref}}\} | c)]$, where $c$ is the claim and $\{f_{\text{ref}}\}$ is the set of reference facts generated by the LLM.
 
-SFT Objective (Fact Verification): $L(\theta) = \mathbb{E}_{D_{\text{Re\_SFT}}}[\log P_\theta(r_{\text{ref}} | x)]$, where $x$ contains the source document and atomic facts, and $r_{\text{ref}}$ is the LLM-generated reference explanation.
+SFT Objective (Fact Verification): $L(\theta) = \mathbb{E}_{D_{\text{Re\_SFT}}}[\log P_\theta(r_{\text{ref}} | x)]$, where $x$ contains the source document and atomic fact, and $r_{\text{ref}}$ is the reference explanation.
 
-DPO Objective (Mistake Revision): $L(\theta) = -\mathbb{E}_{D_{\text{Re\_DPO}}}[\log \sigma[\beta(s_\theta(x, y_c) - s_\theta(x, y_r))]]$, where $y_c$ is the correct LLM output, $y_r$ is the erroneous small model output, $s_\theta$ is the log probability, and $\beta$ is a temperature parameter.
+DPO Objective (Mistake Revision): $L(\theta) = -\mathbb{E}_{D_{\text{Re\_DPO}}}[\log \sigma[\beta(s_\theta(x, y_c) - s_\theta(x, y_r))]]$, where $y_c$ is the correct LLM output, $y_r$ is the incorrect SLM output, $s_\theta$ is the log probability, and $\beta$ is a temperature parameter.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Tested on two standard datasets: **FacTax-Benchmark** (news and dialogue summarization) and **LLM-AggreFact** (multi-source, LLM-generated claims). The metric is **Balanced Accuracy** (BAcc) to handle imbalances: $\text{BAcc} = \frac{1}{2}(\text{TP}/(\text{TP}+\text{FN}) + \text{TN}/(\text{TN}+\text{FP}))$.
+Evaluated on two standard datasets: **FacTax-Benchmark** (news and dialogue summarization) and **LLM-AggreFact** (multi-source, LLM-generated claims). The metric used is **Balanced Accuracy** (BAcc) due to label imbalance: $\text{BAcc} = \frac{1}{2}(\text{TP}/(\text{TP}+\text{FN}) + \text{TN}/(\text{TN}+\text{FP}))$.
 
-| Method | Size | FacTax-Bench | LLM-AggreFact | Avg Rank |
-| :--- | :--- | :--- | :--- | :--- |
+| Method | Model Size | FacTax | LLM-AggreFact | Avg. Rank |
+|------|---------|-----------|---------------|---------|
 | ChatGPT-3.5 (ZS) | - | 70.1 | 70.1 | 13.8 |
 | TrueTeacher | 11B | 73.0 | 73.3 | 8.4 |
 | FactCG | 0.4B | 67.0 | 75.6 | 5.8 |
@@ -89,46 +105,46 @@ Tested on two standard datasets: **FacTax-Benchmark** (news and dialogue summari
 | Qwen3-0.6B+SFT (Ours) | 0.6B | 68.9 | 71.3 | 12.1 |
 | Qwen3-0.6B+SFT+DPO (Ours) | 0.6B | 72.6 | 73.6 | 7.2 |
 
-Ours (Qwen3-30B-Instruct) achieves a **new SOTA** (78.0) on FacTax-Benchmark and ranks second on LLM-AggreFact. Notably, the 0.6B model with SFT+DPO approaches ChatGPT-3.5 levels and matches the performance of TrueTeacher (11B).
+Ours (Qwen3-30B-Instruct) achieves a **new SOTA** (78.0) on FacTax-Benchmark and ranks second on LLM-AggreFact. Importantly, the 0.6B SLM trained with SFT+DPO approaches ChatGPT-3.5 performance and is comparable to TrueTeacher (11B).
 
 ### Ablation Study
 
-| Config | FacTax | LLM-AggreFact | Notes |
-| :--- | :--- | :--- | :--- |
-| Full Model | 73.0 | 75.6 | Decomposition + Strategy |
-| w/o Decomposition | 72.3 | 74.6 | Criteria only, no decomposition |
-| w/o Strategy | 71.6 | 73.1 | Decomposition followed by direct check |
-| w/o Both | 69.4 | 72.1 | Direct check on original claim |
+| Configuration | FacTax | LLM-AggreFact | Description |
+|------|--------|---------------|------|
+| Full Model | 73.0 | 75.6 | Decomposition + Verification Strategy |
+| w/o Decomposition | 72.3 | 74.6 | Verification criteria only, no decomposition |
+| w/o Strategy | 71.6 | 73.1 | Decomposition only, no C1-C4 guidance |
+| w/o Both | 69.4 | 72.1 | Direct judgment of original claim |
 
-**Key Findings**: (1) **Claim decomposition provides stable gains**—accuracy drops by 0.7-1.0% without it, showing it is necessary but not the primary driver. (2) **Test-taking strategy is the primary contributor**—accuracy drops by 1.4-2.5% without C1-C4 criteria, indicating the guided reasoning flow is the core value. (3) **Token usage is significantly reduced**—compared to "thinking" modes, this method uses only 10.4%-10.5% of tokens on FacTax and 12.5%-17.7% on LLM-AggreFact, saving **over 80%** in inference costs. (4) **Small model training is essential**—leave-one-out tests show generalization drops significantly if data from a specific dataset is removed, indicating small models require diverse multi-source data.
+**Key Findings**: (1) **Decomposition contributes steadily**—accuracy drops by 0.7-1.0% without it, proving it necessary but not the primary driver. (2) **Verification strategy is the core contribution**—accuracy drops by 1.4-2.5% without C1-C4 guidance. (3) **Significant token reduction**—compared to "thinking" modes, this method uses only 10.4%-10.5% (FacTax) and 12.5%-17.7% (LLM-AggreFact) of tokens, representing **over 80%** cost savings. (4) **SLM training requirements**—leave-one-out tests show performance drops significantly (e.g., from 71.3% to 62.1% on LLM-AggreFact if its data is removed), indicating SLMs need multi-source data for generalization.
 
 ## Highlights & Insights
 
--   **Clever Transfer of Exam Strategies**: Using the common human strategy of "explicit evidence before inference" to guide machine learning tasks demonstrates the value of cross-domain knowledge transfer. The strategy is concise, avoids inefficient long-chain reasoning, and yields over 80% token savings.
--   **Practical Significance of Decoupling**: Splitting complex tasks into decomposition and verification modules allows for module-level optimization and enables the mixing of different model sizes. This modularity is a useful reference for other multi-step reasoning tasks.
--   **Innovative Application of DPO**: Combining SFT and DPO to let small models master standard procedures and then correct errors outperforms pure SFT. This training framework effectively bridges supervised learning and reinforcement learning for resource-constrained scenarios.
--   **Cross-dataset Robustness**: The competitive results across two significantly different datasets (FacTax rank 3.6, LLM-AggreFact rank 4.0) validate the generalizability of the designed criteria.
+- **Ingenious Transfer of Exam Strategies**: Using the "explicit evidence first, inference second" strategy from human language testing to guide ML tasks demonstrates the value of cross-domain knowledge transfer. This concise strategy avoids inefficient long-chain reasoning, yielding tangible >80% token savings.
+- **Utility of Decoupled Design**: Breaking complex tasks into independent modules facilitates module-level optimization and allows for heterogeneous model combinations (e.g., small decomposer, large verifier).
+- **Innovative Distillation Application**: Combining SFT and DPO to let the model learn the process and سپس correct its own errors outperforms pure SFT. This framework effectively combines the benefits of supervised and preference-based learning for resource-constrained scenarios.
+- **Cross-dataset Robustness**: Competitive results on two distinct datasets (FacTax rank 3.6, LLM-AggreFact rank 4) demonstrate the universality of the design.
 
 ## Limitations & Future Work
 
--   **Limited SLM Generalization**: Experiments show small models require abundant multi-source data to generalize to new domains, limiting applicability in low-resource settings. Future work could explore meta-learning or few-shot adaptation.
--   **Instability on Complex Documents**: On datasets with long/complex documents (e.g., LFQA, TOFUEVAL-MediaS), even LLM teachers struggle, suggesting a bottleneck in long-document comprehension. Potential directions include retrieval-augmentation or information compression.
--   **Trade-off between Strictness and Reasoning**: Ablation shows models can be overly strict with C3/C4 criteria (e.g., misjudging claims due to "vice versa" phrasing). Future work might consider dynamic thresholds or context-aware similarity metrics.
--   **Inference Chain Length**: While token usage is reduced, more aggressive compression—such as replacing criteria-guided reasoning with keyword-based extraction—remains unexplored.
+- **SLM Generalization**: SLMs require substantial multi-source training data to generalize to new datasets, limiting applicability in low-resource settings. Future work could explore meta-learning or few-shot adaptation.
+- **Struggle with Complex Documents**: Performance drops on datasets containing long/complex documents (e.g., LFQA, TOFUEVAL-MediaS), even for the teacher model. Integration of retrieval-augmented or information-compression techniques is needed.
+- **Strictness vs. Inference Trade-off**: Ablation shows models can be overly strict when applying C3/C4, viewing minor phrasing differences as mismatches. Dynamic strictness adjustment or context-aware similarity metrics could be explored.
+- **Inference Chain Length**: While token usage is reduced, more aggressive compression—such as one-step keyword extraction instead of sequential criteria checking—remains unexplored.
 
 ## Related Work & Insights
 
--   **vs Entailment Methods** (Zha et al., 2023; Laban et al., 2022): Classifiers are lightweight but sensitive to length and thresholds. Ours avoids parameter tuning, outputs binary decisions directly, and improves accuracy through guidance.
--   **vs Direct LLM Judgments** (Luo et al., 2023; Xu et al., 2024): Prior works allow free-form reasoning or simple error definitions. Our innovation lies in a **systematic verification process** that improves accuracy while slashing costs.
--   **vs QA-based Methods** (Fabbri et al., 2022; Wang et al., 2020): QA requires complex multi-step pipelines. Ours simplifies this into decomposition and criteria-based checking, making it modular and reusable.
--   **vs Distillation for Reasoning** (QwenTeam, 2025; DeepSeek-AI, 2025): While distillation has improved math/logic, our contribution is applying SFT+DPO specifically to **factuality checking**, demonstrating the potential of SLMs as evaluators.
+- **vs. Textual Entailment** (Zha et al., 2023; Laban et al., 2022): Entailment classifiers are light but require threshold tuning and are documentnd-length sensitive. Ours avoids thresholds and improves accuracy via strategy guidance.
+- **vs. LLM Direct Judgment** (Luo et al., 2023; Xu et al., 2024): Previous works used free-form reasoning or simple error definitions. Our innovation lies in a **systematic verification workflow** that improves accuracy while cutting costs.
+- **vs. QA-based Methods** (Fabbri et al., 2022; Wang et al., 2020): QA methods involve complex multi-step pipelines. Ours simplifies this to decomposition and criteria verification.
+- **vs. Knowledge Distillation for Reasoning** (QwenTeam, 2025; DeepSeek-AI, 2025): While distillation is proven for math/reasoning, this work is among the first to apply the SFT+DPO combination to **fact-checking**, demonstrating SLM potential in verification.
 
 ## Rating
 
--   **Novelty**: ⭐⭐⭐⭐ The systematic application of human test-taking strategies as explicit reasoning criteria is intuitive yet innovative; the SFT+DPO combo is also effectively tailored for this task.
--   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive benchmarking against numerous baselines, multi-level ablations (decomposition, criteria, individual C1-C4 analysis), hyperparameter sensitivity tests, and prompt robustness verification.
--   **Writing Quality**: ⭐⭐⭐⭐ Clear logic and illustrative examples (e.g., the ice-to-steam example). Graphics are intuitive. Some sections could be slightly more concise.
--   **Value**: ⭐⭐⭐⭐⭐ Addresses the critical issue of hallucinations in RAG, providing a plug-and-play LLM eval method and a pathway for low-cost deployment. Highly relevant for both industry and academia.
+- **Novelty**: ⭐⭐⭐⭐ Systematic application of human exam strategies to guide model reasoning is a practical innovation; the SFT+DPO combination in this context is relatively novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive benchmarking against multiple baselines across two datasets. Includes multi-level ablation, hyperparameter sensitivity, and prompt robustness testing.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear logic and vivid examples (e.g., the phase transition case). Diagram design is intuitive, though slightly verbose in a few ablation sections.
+- **Value**: ⭐⭐⭐⭐⭐ Addresses real-world RAG issues (hallucination detection) with a training-free LLM method and a clear path for low-cost SLM deployment. Highly relevant for both industry and academia.
 
 <!-- RELATED:START -->
 
@@ -139,8 +155,8 @@ Ours (Qwen3-30B-Instruct) achieves a **new SOTA** (78.0) on FacTax-Benchmark and
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 - [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](revisiting_the_reliability_of_language_models_in_instruction-following.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
-- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
+- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
 
 </div>
 

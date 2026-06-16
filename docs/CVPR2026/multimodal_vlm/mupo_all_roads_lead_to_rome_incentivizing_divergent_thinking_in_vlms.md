@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] MUPO identifies a reasoning diversity collapse in GRPO training — models prematurely converge to a small number of reasoning strategies while discarding most alternativ…
+  [CVPR 2026][Multimodal VLM][Reinforcement Learning] MUPO reveals the issue of reasoning diversity collapse in GRPO training—where models prematurely converge to a few reasoning strategies while discarding most alternatives. By grouping responses for localized advantage estimation and introducing a diversity reward, MUPO incentivizes VLMs to maintain divergent thinking,
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Reinforcement Learning"
-  - "GRPO"
-  - "Divergent Thinking"
-  - "Reasoning Diversity"
-  - "Vision-Language Models"
+  - CVPR 2026
+  - Multimodal VLM
+  - Reinforcement Learning
+  - GRPO
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: e11774cc0a4e2566
+content_hash: 66fbc3ecd6cbc8b9
 ---
-
 # MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -25,97 +22,105 @@ content_hash: e11774cc0a4e2566
 
 ## TL;DR
 
-MUPO identifies a reasoning diversity collapse in GRPO training — models prematurely converge to a small number of reasoning strategies while discarding most alternatives. By partitioning responses into groups for localized advantage estimation and introducing a diversity reward, MUPO incentivizes VLMs to maintain divergent thinking, achieving 2–7% improvements across multiple reasoning benchmarks.
+MUPO reveals the issue of reasoning diversity collapse in GRPO training—where models prematurely converge to a few reasoning strategies while discarding most alternatives. By grouping responses for localized advantage estimation and introducing a diversity reward, MUPO incentivizes VLMs to maintain divergent thinking, achieving 2-7% improvements across multiple reasoning benchmarks.
 
 ## Background & Motivation
 
-RL (particularly GRPO) has become the dominant approach for enhancing VLM reasoning capabilities. However, the authors identify a critical contradiction:
+RL (especially GRPO) has become a mainstream method for enhancing VLM reasoning capabilities. However, the authors identify a critical contradiction:
 
-**RL models are deep but narrow; Base models are shallow but broad**: RL models achieve higher accuracy on individual attempts (deeper reasoning), yet when given multiple attempts, Base models can solve a greater variety of problems (more diverse strategies). For example, on geometry problems, RL models consistently resort to equation solving (prone to logical errors), whereas Base models sometimes adopt a verification-based strategy to arrive at answers more concisely.
+**RL models are deep but narrow, Base models are shallow but wide**: RL models achieve higher accuracy on a single attempt (deeper reasoning), but given multiple attempts, Base models can solve more distinct problems (more diverse strategies). For instance, in geometry problems, RL models consistently use equations (prone to logical errors), while Base models occasionally use verification strategies to reach answers concisely.
 
-**Diversity Collapse**: By tracking the GRPO training process, reasoning diversity is found to drop sharply to negligible levels very early in training. The model rapidly converges to a small number of "dominant" strategies, discarding a large number of potentially viable alternative paths. This leads to: (1) exploitation prioritized over exploration, resulting in local optima; (2) poor scalability, as converged reasoning fails to cover a broad range of problem types.
+**Diversity Collapse**: Tracking the GRPO training process reveals that reasoning diversity drops to negligible levels early in training. Models rapidly converge to a few "dominant" strategies, discarding a vast number of potential alternative paths. This leads to: (1) Exploitation prevailing over exploration, resulting in local optima; (2) Poor scalability, where converged reasoning fails to cover a broad spectrum of problem types.
 
 ## Method
 
 ### Overall Architecture
 
-MUPO serves as a plug-and-play replacement for GRPO. Multiple responses from the model are divided into several groups; advantage estimation is performed locally within each group, while a diversity reward is introduced across groups to encourage different groups to represent distinct reasoning strategies.
+MUPO (Multi-Group Policy Optimization) is a plug-and-play alternative to GRPO, designed to cure "diversity collapse"—the phenomenon where all responses converge to the same reasoning strategy after a few training steps. Conceptually: $N$ responses are sampled for a single problem, partitioned into $K$ groups using constrained clustering based on **reasoning embeddings** (each group representing a reasoning mode). Then, two actions are taken: **Intra-group**, local advantage is estimated independently with load-balancing weights to prevent dominant groups from overshadowing others (ensuring each strategy is refined = Depth); **Inter-group**, a diversity reward is added to push different groups apart (ensuring multiple strategies are maintained = Breadth).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Image + Question"] --> B["Sample N responses (rollout)"]
+    B --> C["Encode reasoning segment embeddings<br/>Qwen3-Embedding"]
+    C --> D["Constrained Clustering<br/>Group by reasoning mode into K groups (≥ G_min)"]
+    D --> E["Multi-group Local Advantage + Load Balancing<br/>One GRPO objective per group, w_k prevents dominance"]
+    D --> F["Diversity Reward R_div<br/>Higher reward for larger inter-group embedding distances"]
+    E --> G["Composite Objective<br/>Accuracy + Format + Diversity"]
+    F --> G
+    G --> H["Policy Update → Deep & Wide"]
+```
 
 ### Key Designs
 
-1. **Multi-Group Policy Optimization**:
+**1. Constrained Clustering: Making each group represent a reasoning mode**
 
-    - Function: Maintains diversity of reasoning strategies and prevents all responses from converging to the same strategy.
-    - Mechanism: Replaces GRPO's global advantage computation with localized, group-wise advantage estimation. The $K$ responses are divided into $G$ groups, each computing advantage values independently. This allows each group to maintain its own "optimal strategy" without being overwhelmed by the globally dominant strategy. Intuitively, each group constitutes an independent instantiation of a reasoning strategy.
-    - Design Motivation: GRPO's global advantage computation causes a small number of high-reward strategies to obtain disproportionately large advantage values, suppressing the update signals for other strategies.
+The first step of MUPO is not to divide responses randomly, but to encode the **reasoning segment** of each response into embeddings using Qwen3-Embedding. **Constrained clustering** is then applied to group responses with similar trajectories, enforcing a minimum group size $G_{min}$ to ensure reliable advantage estimation per group. These $K$ groups naturally correspond to specific "reasoning modes" (e.g., coordinate method, similar triangles, or area method in geometry). This grouping is the foundation for "intra-group cultivation and inter-group separation."
 
-2. **Diversity Reward**:
+**2. Multi-group Local Advantage + Load Balancing: Preventing one strategy from drowning out all signals**
 
-    - Function: Promotes separation of reasoning strategies across groups.
-    - Mechanism: In addition to accuracy and format rewards, a diversity reward is introduced — measuring the embedding distance of reasoning across different groups. Groups are incentivized to maximize inter-group distance, ensuring that distinct groups represent genuinely different reasoning paths.
-    - Design Motivation: Grouping alone, without encouraging differentiation, may still lead groups to converge to similar strategies. The diversity reward provides an explicit incentive for separation.
+GRPO calculates a global advantage baseline across all responses, resulting in a few high-reward strategies having massive advantage values while other signals are suppressed—the root of collapse. MUPO formulates the objective as a weighted sum of $K$ GRPO objectives, treated as independent "experimental plots": assets $\hat{A}_i^k$ are **estimated locally within groups**. Even if the "coordinate method" has the highest global reward, other groups receive normal update signals based on their internal baselines. Simultaneously, load-balancing weights $w_k=(N/(K|G_k|))^\beta$ ensure that large groups do not dominate the optimization and small groups are not ignored. This component manages **Depth**.
 
-3. **Unification of Depth and Breadth**:
+**3. Diversity Reward: Truly pushing groups apart**
 
-    - Function: Enables the model to simultaneously achieve deep single-path reasoning and broad multi-path coverage.
-    - Mechanism: Intra-group optimization ensures each strategy is thoroughly refined (depth), while inter-group diversity ensures multiple strategies are maintained (breadth). This mirrors human problem-solving — when given multiple attempts, one approaches the problem from different angles, reasoning carefully within each angle.
-    - Design Motivation: This is the essence of divergent thinking — not merely generating different answers, but thinking about the same problem through different methods.
+Grouping and local optimization are insufficient; without constraints, groups might still converge to similar strategies. Thus, a **diversity reward** $R_{div}$ is added alongside accuracy and format rewards. For each response, the average distance between its reasoning embedding and those in **all other groups** is computed; larger distances yield higher rewards. This forces different groups to represent truly distinct reasoning paths. This component manages **Breadth**.
 
 ### Loss & Training
 
-Standard RL training pipeline, with MUPO replacing GRPO as the policy optimization algorithm. Rewards consist of accuracy reward + format reward + diversity reward.
+A standard RL pipeline is utilized, where MUPO replaces GRPO as the policy optimization algorithm. 
+Reward = Accuracy Reward + Format Reward + Diversity Reward.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | MathVerse | LogicVista | WeMath | HallusionBench | Avg. Gain |
-|-------|-----------|------------|--------|----------------|-----------|
-| GRPO Baseline | baseline | baseline | baseline | baseline | — |
-| **MUPO-Thinker-7B** | +gain | +gain | +gain | +gain | **2–7%** |
+| Model | MathVerse | LogicVista | WeMath | HallusionBench | Gain |
+|------|-----------|-----------|--------|----------------|---------|
+| GRPO Baseline | Baseline | Baseline | Baseline | Baseline | — |
+| **MUPO-Thinker-7B** | +Gain | +Gain | +Gain | +Gain | **2~7%** |
 
-Consistent improvements of 2–7% across multiple reasoning benchmarks, establishing a new state of the art.
+Consistent improvements of 2-7% are observed across multiple reasoning benchmarks, setting a new SOTA.
 
 ### Ablation Study
 
-| Configuration | acc@1 | acc@4 | Diversity | Notes |
-|---------------|-------|-------|-----------|-------|
-| GRPO | High | Limited gain | Low (collapsed) | Deep but narrow |
-| Base Model | Lower | Large gain | High | Shallow but broad |
-| MUPO | **Highest** | **Highest** | **High** | Deep and broad |
+| Configuration | acc@1 | acc@4 | Diversity | Description |
+|------|-------|-------|--------|------|
+| GRPO | High | Limited | Low (Collapse) | Deep & Narrow |
+| Base Model | Lower | High | High | Shallow & Wide |
+| MUPO | **Highest** | **Highest** | **High** | Deep & Wide |
 
 ### Key Findings
 
-- acc@k analysis reveals a fundamental difference between RL and Base models: RL wins at k=1, Base wins at k>1. This demonstrates that diversity itself is a capability.
-- Diversity collapse in GRPO occurs extremely early in training (<10% of training steps), indicating this is an algorithmic issue rather than insufficient training.
-- Diversity and accuracy are positively correlated — more diverse reasoning strategies increase the probability of arriving at the correct answer.
+- acc@k analysis reveals fundamental differences: RL models win at k=1, while Base models win for k>1. This suggests diversity is an inherent capability.
+- GRPO diversity collapse occurs extremely early (<10% training steps), indicating an algorithmic issue rather than under-training.
+- Diversity correlates positively with accuracy—more diverse strategies increase the probability of finding the correct answer.
 
 ## Highlights & Insights
 
-- **Divergent vs. Convergent Thinking**: Introducing the psychological concepts of divergent/convergent thinking into RL training provides a novel perspective for understanding the limitations of GRPO.
-- **Diagnosing Diversity Collapse**: Quantifying reasoning diversity via embedding distance and tracking training dynamics constitutes a reusable analytical methodology.
-- **acc@k as a Complementary Metric**: Evaluating not only single-attempt accuracy but also the proportion of problems solvable across multiple attempts offers a more comprehensive assessment of reasoning models.
-- **Plug-and-Play Replacement for GRPO**: MUPO can directly replace GRPO without modifying any other part of the training pipeline.
+- **Divergent vs. Convergent Thinking**: Introducing psychological concepts of divergent/convergent thinking into RL training provides a new perspective on GRPO's limitations.
+- **Diagnostic for Diversity Collapse**: Quantifying reasoning diversity via embedding distances and tracking training dynamics represents a reusable analytical framework.
+- **acc@k as a Complementary Metric**: Evaluating more than just single-pass accuracy provides a comprehensive view of a reasoning model's potential.
+- **Plug-and-play Replacement**: MUPO can directly replace GRPO without modifying other training procedures.
 
 ## Limitations & Future Work
 
-- The number of groups $G$ is a hyperparameter whose optimal value may vary across tasks.
-- The weight of the diversity reward requires tuning; an excessively large value may sacrifice single-path accuracy.
-- Current validation is primarily on mathematical and logical reasoning tasks; effectiveness on other tasks (e.g., open-ended generation) remains to be verified.
-- Future work may explore adaptive grouping and dynamic diversity reward weighting.
+- The number of groups $G$ is a hyperparameter; optimal values may vary by task.
+- Diversity reward weights require tuning; excessively high weights may sacrifice single-path accuracy.
+- Validation has primarily focused on math/logic tasks; effects on open-ended generation remain to be explored.
+- Future work could explore adaptive grouping and dynamic diversity weighting.
 
 ## Related Work & Insights
 
-- **vs. GRPO/DeepSeekMath**: GRPO pursues depth of reasoning at the cost of breadth; MUPO preserves both simultaneously.
-- **vs. DAPO/GVPO**: These methods optimize GRPO from a sampling perspective but do not address the diversity collapse problem.
-- **vs. Best-of-N/Self-Consistency**: These are inference-time scaling strategies, whereas MUPO operates at training time; the two approaches are complementary.
+- **vs. GRPO/DeepSeekMath**: GRPO pursues deep reasoning at the cost of breadth; MUPO maintains both.
+- **vs. DAPO/GVPO**: These methods optimize GRPO from a sampling perspective but do not address diversity collapse.
+- **vs. Best-of-N/Self-Consistency**: These are inference-time scaling strategies; MUPO is a training-time strategy, and the two are compatible.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — The diagnosis of GRPO diversity collapse and the introduction of divergent thinking are highly insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Behavioral analysis, training dynamics, and multi-benchmark validation provide comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐⭐ — In-depth analysis, clear illustrations, and coherent argumentation.
-- Value: ⭐⭐⭐⭐⭐ — Makes an important methodological contribution to RL-based reasoning model training.
+- Novelty: ⭐⭐⭐⭐⭐ Diagnosis of GRPO diversity collapse and introduction of divergent thinking is insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive behavior analysis, training dynamics, and multi-benchmark validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Deep analysis, clear diagrams, and coherent logic.
+- Value: ⭐⭐⭐⭐⭐ Significant contribution to the methodology of RL-trained reasoning models.
 
 <!-- RELATED:START -->
 
@@ -123,11 +128,11 @@ Consistent improvements of 2–7% across multiple reasoning benchmarks, establis
 
 ## Related Papers
 
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
 - [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking](circuit_tracing_in_vision-language_models_understanding_the_internal_mechanisms_.md)
-- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](../../ICML2026/multimodal_vlm/bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 
 </div>
 

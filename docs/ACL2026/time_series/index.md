@@ -36,34 +36,34 @@ item_total: 7
 
 **💬 ACL2026** · **7** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (7)](../../CVPR2026/time_series/index.md) · [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
 
 🔥 **Top topics:** Time-Series Forecasting ×4 · Reasoning ×3
 
 **[A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting](a_unified_framework_for_modeling_heterogeneous_financial_data_via_dual-granulari.md)**
 
-:   Ours proposes the FinLangNet framework, which achieves multi-scale credit risk prediction through a dual-module architecture (DeepFM for static features + Transformer with a dual-granularity prompting mechanism for temporal behavior). Deployment on the Didi Finance platform resulted in a 6.3pp KS gain and a 9.9% reduction in bad debt rates.
+:   The FinLangNet framework is proposed, utilizing a dual-module architecture (DeepFM for static features and Transformer with a dual-granularity prompting mechanism for temporal behaviors) to achieve multi-scale credit risk prediction. Deployment on the Didi Finance platform resulted in a 6.3pp KS gain and a 9.9% reduction in the bad debt rate.
 
 **[ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning](odtqa-fore_an_open-domain_tabular_question_answering_dataset_for_future_data_for.md)**
 
-:   ODTQA-FoRe proposes an open-domain tabular question answering task focused on future numerical forecasting and post-forecast reasoning. It introduces the TimeFore tri-agent framework to integrate table retrieval, SQL data extraction, specialized time-series forecasting, and answer normalization into an evaluable baseline.
+:   ODTQA-FoRe introduces an open-domain tabular QA task for future numerical forecasting and post-forecast reasoning. It also presents TimeFore, a three-agent framework that integrates table retrieval, SQL execution, specialized time-series forecasting, and answer normalization into an evaluable baseline.
 
 **[STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation](stk-adapter_incorporating_evolving_graph_and_event_chain_for_temporal_knowledge_.md)**
 
-:   This paper proposes STK-Adapter, which embeds three MoE modules (ST-MoE to capture spatio-temporal structures, EA-MoE to model event chain semantics, and CMA-MoE for deep cross-modal alignment) into each layer of an LLM. This approach addresses the issues of spatio-temporal information loss and layer-wise dilution caused by the shallow alignment of TKG embeddings with LLMs in existing methods, significantly outperforming SOTA on four benchmark datasets.
+:   This paper proposes STK-Adapter, which embeds three MoE modules into each layer of an LLM (ST-MoE for spatio-temporal structure, EA-MoE for event chain semantics, and CMA-MoE for deep cross-modal alignment). It labels the issues of spatio-temporal information loss and layer-wise dilution caused by shallow alignment in existing TKG-LLM methods, significantly outperforming SOTA on four benchmark datasets.
 
 **[STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning](streasoner_empowering_llms_for_spatio-temporal_reasoning_in_time_series_via_spat.md)**
 
-:   STReasoner utilizes Network SDEs to synthesize spatio-temporal time series data integrated with graph structures and textual semantics. Through a time-series encoder, three-stage training, and spatial-aware S-GRPO, the LLM learns to perform explicit reasoning based on temporal dynamics and spatial dependencies.
+:   STReasoner utilizes Network SDE to synthesize spatio-temporal time series data with graph structures and textual semantics. Through a time series encoder, three-stage training, and spatial-aware S-GRPO, it empowers LLMs to perform explicit reasoning based on temporal dynamics and spatial dependencies.
 
 **[Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study](temporal_leakage_in_search-engine_date-filtered_web_retrieval_a_retrospective_fo.md)**
 
-:   This paper provides a systematic audit of date filters on Google and DuckDuckGo, finding that search engine date filtering fail significantly in retrospective forecasting evaluations—71% (Google) and 81% (DuckDuckGo) of questions contain at least one page with substantial post-cutoff information leakage, causing the predicted Brier score to artificially drop from 0.24 to 0.10.
+:   This paper performs a systematic audit of Google and DuckDuckGo’s date filters, discovering that search engine date filtering fail significantly in retrospective forecasting evaluations—71% (Google) and 81% (DuckDuckGo) of questions contain at least one page with major post-cutoff information leakage, causing the predictive Brier score to artificially drop from 0.24 to 0.10.
 
 **[Test of Time: Rethinking Temporal Signal of Benchmark Contamination](test_of_time_rethinking_temporal_signal_of_benchmark_contamination.md)**
 
-:   This paper demonstrates that "performance decay after cutoff" is not robust evidence of benchmark contamination: the temporal decay signal can significantly change or even disappear when the same batch of source documents is shifted from original text cloze tests to LLM-rephrased questions.
+:   This paper demonstrates that "performance degradation after cutoff" is not robust evidence of benchmark contamination: as long as the same set of source documents is changed from original text cloze questions to LLM-rephrased questions, the temporal decay signal significantly changes or even disappears.
 
 **[Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback](time-ra_towards_time_series_reasoning_for_anomaly_diagnosis_with_llm_feedback.md)**
 
-:   This paper defines Time-RA, a new task that upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation). It constructs RATs40K, the first multimodal benchmark containing approximately 40,000 samples across 10 domains and 20 anomaly types, and validates the feasibility of this paradigm through an AI feedback annotation pipeline and LLM fine-tuning.
+:   Ours defines the new task of Time-RA, upgrading time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + explanation). It constructs the first multimodal benchmark RATs40K containing approximately 40,000 samples, 10 domains, and 20 anomaly types, validating the feasibility of this paradigm through an AI feedback annotation pipeline and LLM fine-tuning.

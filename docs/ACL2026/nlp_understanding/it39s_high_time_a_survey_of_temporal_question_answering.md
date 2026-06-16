@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] It's High Time: A Survey of Temporal Question Answering
 description: >-
-  [ACL 2026][NLP Understanding][Temporal Question Answering] This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analysis framework based on three dimensions: corpus tempora…
+  [ACL 2026][NLP Understanding][Paper Note] This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework based on three dimensions: corpus temporality, question temporality, and model temporal capability. It systematically reviews the evolution of TQA methods from rule-based pipelines to the Transforme
 tags:
-  - "ACL 2026"
-  - "NLP Understanding"
-  - "Temporal Question Answering"
-  - "Temporal Reasoning"
-  - "Retrieval-Augmented Generation"
-  - "Large Language Models"
-  - "Survey"
+  - ACL 2026
+  - NLP Understanding
 date: 2026-05-08
-content_hash: 8f1a4b00c45bfe8b
+content_hash: 13538de42a5aca6f
 ---
-
 # It's High Time: A Survey of Temporal Question Answering
 
 **Conference**: ACL 2026  
@@ -25,48 +19,51 @@ content_hash: 8f1a4b00c45bfe8b
 
 ## TL;DR
 
-This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analysis framework based on three dimensions: corpus temporality, question temporality, and model temporal capabilities. It systematically reviews the evolution of TQA methods from rule-based pipelines to the Transformer/LLM era, benchmark datasets, and evaluation strategies, while identifying future challenges.
+This paper provides a comprehensive survey of Temporal Question Answering (TQA), proposing a unified analytical framework based on three dimensions: corpus temporality, question temporality, and model temporal capability. It systematically reviews the evolution of TQA methods from rule-based pipelines to the Transformer/LLM era, organizes benchmark datasets and evaluation strategies, and identifies future challenges.
 
 ## Background & Motivation
 
-**Background**: Time is a fundamental dimension of information generation, retrieval, and understanding. With the explosion of time-stamped content such as news, social media, and knowledge bases, there is a burgeoning need for question answering systems that can handle temporal constraints and contexts. TQA has evolved from rule-based pipelines to systems powered by Transformers and LLMs.
+**Background**: Time is a fundamental dimension of information generation, retrieval, and understanding. With the explosion of timestamped content in news, social media, and knowledge bases, question answering systems that can handle temporal constraints and context are required. TQA has evolved from rule-based pipelines to systems based on Transformers and LLMs.
 
-**Limitations of Prior Work**: TQA faces unique challenges: (1) Temporal ambiguity resolution—fuzzy expressions like "recently" or "post-war" require contextual anchoring; (2) Cross-temporal reasoning—understanding causal and sequential relationships between events; (3) Knowledge volatility—facts evolve over time, and static corpora or pre-trained models cannot answer time-sensitive queries; (4) Temporal intent may be implicit, requiring systems to infer the appropriate time range.
+**Limitations of Prior Work**: TQA faces unique challenges: (1) Temporal ambiguity resolution—vague expressions like "recently" or "post-war" require contextual anchoring; (2) Cross-temporal reasoning—understanding causal and sequential relationships between events; (3) Knowledge mutability—facts evolve over time, and static corpora or pre-trained models cannot answer time-sensitive queries; (4) Temporal intent may be implicit, requiring the system to infer appropriate time ranges.
 
-**Key Challenge**: Existing surveys either focus on general QA/IR or only on a narrow aspect of temporal processing. A recent TQA survey (Campos et al., 2014) predates modern temporal language models, RAG systems, and large-scale temporal benchmarks, leaving a significant knowledge gap.
+**Key Challenge**: Existing surveys either focus on general QA/IR or only address narrow aspects of temporal processing. The most recent TQA survey (Campos et al., 2014) predates modern temporal language models, RAG systems, and large-scale temporal benchmarks, leaving a significant knowledge gap.
 
-**Goal**: To provide a comprehensive survey of TQA, covering systems built on unstructured text and offering a comparison framework for unified datasets, tasks, and methods.
+**Goal**: To provide a comprehensive survey of TQA, covering TQA over unstructured text and providing a unified framework for comparing datasets, tasks, and methods.
 
-**Key Insight**: A three-dimensional analysis framework is proposed—corpus temporality (synchronic vs. diachronic), question temporality (explicit/implicit intent, temporal direction, reasoning complexity), and model temporal capabilities (temporal language modeling, temporal-aware retrieval, temporal reasoning)—serving as the organizational principle for the entire paper.
+**Key Insight**: A three-dimensional analytical framework is proposed—Corpus Temporality (synchronic vs. diachronic), Question Temporality (explicit/implicit intent, temporal direction, reasoning complexity), and Model Temporal Capability (temporal language modeling, temporal-aware retrieval, temporal reasoning)—serving as the organizational principle for the review.
 
-**Core Idea**: The core challenge of TQA lies in the "mismatch" between these three dimensions—failure occurs when corpus temporality, question temporality, and model capabilities are not aligned.
+**Core Idea**: The central challenge of TQA lies in the "mismatch" between these three dimensions—systems fail when corpus temporality, question temporality, and model capabilities are not aligned.
 
 ## Method
 
 ### Overall Architecture
 
-The survey is organized along the three-dimensional framework: (1) Corpus dimension—distinguishing synchronic corpora (documents from a single point in time) from diachronic corpora (collections of documents across time) and analyzing their respective impacts on TQA; (2) Question dimension—categorized into explicit/implicit temporal intent, past/present/future direction, and simple/multi-hop reasoning complexity; (3) Model dimension—covering temporal language modeling (how to encode temporal knowledge), temporal-aware retrieval (how to retrieve temporal-related documents), and temporal reasoning (how to perform temporal logic reasoning).
+As a survey, the "method" is a three-dimensional analytical framework used to organize TQA work from rule-based pipelines to the LLM era. The three dimensions are: Corpus Temporality—distinguishing between synchronic (documents at a single point in time) and diachronic (document collections across time) corpora; Question Temporality—categorizing questions by explicit/implicit temporal intent, past/present/future direction, and simple/multi-hop reasoning complexity; Model Temporal Capability—covering temporal language modeling (encoding temporal knowledge), temporal-aware retrieval (retrieving time-relevant documents), and temporal reasoning (executing temporal logic). The primary thesis is that TQA failures essentially stem from "misalignment" across these dimensions.
 
 ### Key Designs
 
-1.  **Corpus Temporality Analysis**:
-    - **Function**: Distinguishes the different requirements that synchronic and diachronic corpora impose on TQA systems.
-    - **Mechanism**: In synchronic corpora (e.g., Wikipedia snapshots), temporal relationships of events must be inferred from document-internal structures; in diachronic corpora (e.g., news archives), timelines are derived directly from the temporal distribution of the document collection. Relative time expressions such as "today" or "next week" must be anchored to document publication dates for correct interpretation.
-    - **Design Motivation**: This distinction explains why certain TQA methods are effective on one type of corpus but fail on another.
+> The three-dimensional framework is the core contribution. Points 1-3 describe the dimensions (Corpus → Question → Model), and Point 4 describes the supporting dataset coordinate system.
 
-2.  **TQA Datasets and Benchmark Classification**:
-    - **Function**: Systematically categorizes the features and coverage of existing TQA datasets.
-    - **Mechanism**: Classifies datasets by knowledge source (News/Wikipedia/Freebase), creation method (crowdsourcing/automatic generation), answer type (extractive/free-form), time range, and support for multi-hop reasoning. Representative datasets such as ComplexTempQA ($100$ million+ questions) and ArchivalQA ($532,000$ news items over 20 years) are identified.
-    - **Design Motivation**: In the absence of a unified classification framework, comparisons between disparate datasets lack systematicity.
+**1. Corpus Temporality: Synchronic vs. Diachronic Dictates TQA Approaches**
 
-3.  **TQA Methods in the LLM Era**:
-    - **Function**: Reviews the latest TQA methods based on Transformers/LLMs.
-    - **Mechanism**: Key advances include: (a) Temporal language modeling—injecting temporal awareness by pre-training on timestamped text (e.g., TempLM, TEMPLAMA); (b) Temporal-aware RAG—introducing temporal filtering and re-ranking in the retrieval stage; (c) Continual temporal adaptation—adapting to knowledge updates through continuous pre-training. While powerful, LLMs still suffer from knowledge decay (limited knowledge of events after training data cutoffs) and insufficient temporal reasoning capabilities.
-    - **Design Motivation**: The widespread application of LLMs necessitates an urgent understanding of their temporal reasoning capabilities and limitations.
+Many TQA methods fail when applied to different corpora because they do not account for the temporal structure of the data. The survey categorizes corpora into two types: synchronic (e.g., a Wikipedia snapshot), where temporal relations must be inferred from internal document structure, and diachronic (e.g., multi-year news archives), where timelines derive from the temporal distribution of the collection. Key differences lie in relative temporal expressions—words like "today" or "next week" must be anchored to document publication dates, a process that differs significantly between the two types.
+
+**2. Question Temporality: Categorizing "What Time is Being Asked" into Three Dimensions**
+
+Timestamped corpora alone are insufficient; the temporal attributes of the question determine the required reasoning. The survey classifies questions along three axes: temporal intent (explicit, e.g., "Who was the US President in 2008?" vs. implicit, e.g., "Who was in power during the financial crisis?"); temporal direction (past, present, or future—though current benchmarks rarely cover the future); and reasoning complexity (single-hop factoid vs. multi-hop temporal reasoning, e.g., "Who held office after X but before Y?"). This taxonomy measures the difficulty of TQA tasks.
+
+**3. Model Temporal Capability: Methodological Lineage in the LLM Era**
+
+This dimension defines how systems process time. The survey organizes progress into three lines: Temporal Language Modeling—injecting temporal awareness via pre-training on timestamped text (e.g., TempLM, TempLAMA); Temporal-Aware Retrieval-Augmented Generation (RAG)—introducing temporal filtering and re-ranking in the retrieval stage; and Continual Temporal Adaptation—using continual pre-training to keep up with knowledge updates. It highlights two LLM weaknesses: knowledge recency (limited knowledge of events post-cutoff) and insufficient temporal reasoning skills, making RAG the primary current solution.
+
+**4. Dataset and Benchmark Classification: A Unified Coordinate System**
+
+Complementing the framework, the survey establishes a coordinate system for previously incomparable TQA datasets. It categorizes them by knowledge source (News/Wikipedia/Freebase), creation method (crowdsourced/automatic), answer type (extractive/free-form), time range, and multi-hop support. This allows researchers to identify which capabilities are covered by existing benchmarks and where gaps remain (e.g., the lack of future-oriented TQA).
 
 ### Loss & Training
 
-As a survey paper, specific training procedures are not proposed. Instead, the article reviews three types of training paradigms: (1) Temporal-augmented pre-training—explicitly encoding timestamp information in the corpus; (2) Temporal-aware fine-tuning—fine-tuning models on temporal QA data; (3) Continual learning—preventing knowledge decay by continuously training on data from new time periods.
+While not proposing a specific training method, the survey summarizes three paradigms: Temporal-Augmented Pre-training (encoding timestamps in the corpus), Temporal-Aware Fine-tuning (on TQA-specific data), and Continual Learning (training on new temporal slices to prevent knowledge decay).
 
 ## Key Experimental Results
 
@@ -74,8 +71,8 @@ As a survey paper, specific training procedures are not proposed. Instead, the a
 
 **Statistics of Major TQA Datasets**
 
-| Dataset | # Questions | Source | Answer Type | Time Range | Multi-hop |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Dataset | Questions | Source | Answer Type | Time Range | Multi-hop |
+|---------|-----------|--------|-------------|------------|-----------|
 | NewsQA | 119k | News | Free-form | 2007-2015 | ✗ |
 | TimeQA | 41.2k | Wiki | Extractive | 1367-2018 | ✗ |
 | ComplexTempQA | 100.2M | Wiki | Extractive | 1987-2023 | ✓ |
@@ -84,48 +81,48 @@ As a survey paper, specific training procedures are not proposed. Instead, the a
 
 ### Ablation Study
 
-**Typical Performance Comparison of LLMs on Temporal Reasoning Tasks**
+**Performance Comparison of LLMs on Temporal Reasoning Tasks**
 
 | Model/Method | TempLAMA | TimeQA | Description |
-| :--- | :--- | :--- | :--- |
-| GPT-4 (zero-shot) | ~$40\%$ | ~$55\%$ | Baseline, no temporal enhancement |
-| + Temporal-aware RAG | ~$60\%$ | ~$70\%$ | Retrieves temporal-related documents |
-| + Continual Adaptation | ~$55\%$ | ~$65\%$ | Continual training on new data |
-| Specialized Temporal Model | ~$65\%$ | ~$72\%$ | Temporal-augmented pre-training |
+|--------------|----------|--------|-------------|
+| GPT-4 (zero-shot) | ~40% | ~55% | Baseline, no temporal enhancement |
+| + Temporal-aware RAG | ~60% | ~70% | Retrieves time-relevant documents |
+| + Continual Adaptation | ~55% | ~65% | Continual training on new data |
+| Specialized Temporal Model | ~65% | ~72% | Temporal-augmented pre-training |
 
 ### Key Findings
 
-- The primary bottlenecks for LLMs in temporal reasoning are: (1) Knowledge cutoffs leading to inaccurate answers for recent events; (2) Instability in understanding implicit temporal expressions ("recently", "not long ago").
-- RAG is currently the most effective method to address insufficient temporal knowledge in LLMs, though temporal-aware retrieval strategies remain immature.
-- Multi-hop temporal reasoning (e.g., "Who was president after event $X$ but before event $Y$?") remains the greatest challenge.
-- Existing datasets mainly cover the past; benchmarks for future-oriented temporal QA are virtually non-existent.
-- Temporal reasoning for synchronic versus diachronic corpora requires different modeling strategies, yet existing methods rarely distinguish between them.
+- The main bottlenecks for LLMs in temporal reasoning: (1) Knowledge cutoff dates lead to inaccuracies for recent events; (2) Unstable understanding of implicit temporal expressions ("recently", "not long ago").
+- RAG is currently the most effective method to address limited temporal knowledge in LLMs, though temporal-aware retrieval strategies remain immature.
+- Multi-hop temporal reasoning (e.g., "Who was president after event X but before event Y?") remains the greatest challenge.
+- Existing datasets primarily cover the past; there are almost no benchmarks for future-oriented temporal QA.
+- Synchronic and diachronic corpora require different modeling strategies for temporal reasoning, but current methods rarely distinguish between them.
 
 ## Highlights & Insights
 
-- The three-dimensional analysis framework (Corpus × Question × Model) provides clear organizational principles for understanding TQA, which is a methodology transferable to surveys in other domains.
-- The survey offers comprehensive coverage from rule-based systems to the LLM era, providing a complete evolutionary landscape of the TQA field.
-- Identified key gaps—such as future-oriented temporal QA and continuous adaptation on diachronic corpora—set a clear direction for subsequent research.
+- The three-dimensional analysis framework (Corpus × Question × Model) provides a clear organizational principle for understanding TQA and is transferable to other domain surveys.
+- The survey is comprehensive, covering the entire evolution from rule-based systems to the LLM era.
+- It identifies critical gaps—such as future-oriented TQA and continual adaptation on diachronic corpora—providing clear directions for future research.
 
 ## Limitations & Future Work
 
-- The scope is limited to TQA on unstructured text, excluding temporal knowledge graph QA and semi-structured table QA.
-- Some quantitative comparisons are based on synthetic estimates; direct comparisons across different datasets and settings are limited.
-- Future challenges: (1) Future-oriented temporal reasoning; (2) Reasoning over temporally inconsistent documents; (3) Alleviating knowledge decay.
-- It is recommended to develop continuously updated benchmarks to evaluate TQA systems longitudinally.
+- The scope is limited to TQA over unstructured text, excluding Temporal Knowledge Graph QA and semi-structured Table QA.
+- Some quantitative comparisons are based on general estimates; direct comparisons across different datasets and settings remain limited.
+- Future challenges: (1) Future-oriented temporal reasoning; (2) Reasoning over temporally inconsistent documents; (3) Mitigating knowledge decay.
+- It is recommended to develop continually updated benchmarks for longitudinal evaluation of TQA systems.
 
 ## Related Work & Insights
 
-- **vs. Campos et al. (2014)**: The previous TQA survey, which predates the Transformer era; this paper fills a decade-long gap.
-- **vs. Kolomiyets & Moens (2011)**: A general QA survey with limited temporal coverage; ours focuses exclusively on the temporal dimension.
-- **vs. Zhu et al. (2025)**: A recent survey focusing on general QA/IR with shallow analysis of temporal reasoning; ours provides an in-depth analysis of temporal reasoning.
+- **vs Campos et al. (2014)**: The previous TQA survey predates the Transformer era; Ours fills a decade-long gap.
+- **vs Kolomiyets & Moens (2011)**: A general QA survey with limited temporal coverage; Ours focuses exclusively on the temporal dimension.
+- **vs Zhu et al. (2025)**: A recent survey on general QA/IR where temporal reasoning is touched upon briefly; Ours provides an in-depth analysis of temporal reasoning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ The three-dimensional framework is innovative for a survey, though as a review it doesn't introduce new methods.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Systematic comparison of a vast number of datasets and methods.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear organization, systematic taxonomy, and informative charts.
-- **Value**: ⭐⭐⭐⭐ Fills a ten-year survey gap in the TQA field and serves as an important reference for researchers.
+- Novelty: ⭐⭐⭐ The framework is novel for a survey, though no new methodology is proposed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic comparison of a large number of datasets and methods.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear organization, systematic taxonomy, and informative charts.
+- Value: ⭐⭐⭐⭐ Fills a ten-year gap in the TQA field, serving as a vital reference for researchers.
 
 <!-- RELATED:START -->
 
@@ -134,10 +131,10 @@ As a survey paper, specific training procedures are not proposed. Instead, the a
 ## Related Papers
 
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
-- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 - [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] ASTRA: Adaptive Semantic Tree Reasoning Architecture for Complex Table Question Answering](astra_adaptive_semantic_tree_reasoning_architecture_for_complex_table_question_a.md)
-- [\[ACL 2026\] Unveiling Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
+- [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
+- [\[ACL 2026\] Semantic Reranking at Inference Time for Hard Examples in Rhetorical Role Labeling](semantic_reranking_at_inference_time_for_hard_examples_in_rhetorical_role_labeli.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

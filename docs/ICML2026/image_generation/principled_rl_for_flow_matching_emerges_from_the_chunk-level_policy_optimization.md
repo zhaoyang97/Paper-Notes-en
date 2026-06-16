@@ -2,67 +2,84 @@
 title: >-
   [Paper Note] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization
 description: >-
-  [ICML2026][Image Generation][flow matching] GCPO modifies the step-level optimization in GRPO for flow matching post-training—where every step shares the same final reward as the advantage—into "chunk-level" optimization…
+  [ICML 2026][Image Generation][flow matching] GCPO transitions the step-level optimization in flow matching post-training—where GRPO assigns the "same final reward as advantage to every step"—into "chunk-level" optimization. By adaptively grouping consecutive steps into chunks based on flow matching's own temporal dynamics $L1_{rel}(x,t)$ and utilizing normalized
 tags:
-  - "ICML2026"
-  - "Image Generation"
-  - "flow matching"
-  - "GRPO"
-  - "chunk-level policy optimization"
-  - "T2I"
-  - "preference alignment"
+  - ICML 2026
+  - Image Generation
+  - flow matching
+  - GRPO
+  - chunk-level policy optimization
+  - T2I
+  - preference alignment
 date: 2026-05-08
-content_hash: 76948e6d838f759d
+content_hash: f0dff884fb7859ed
 ---
-
 # Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization
 
 **Conference**: ICML2026  
 **arXiv**: [2510.21583](https://arxiv.org/abs/2510.21583)  
 **Code**: https://github.com/xingzhejun/GCPO  
-**Area**: image_generation  
+**Area**: Image Generation  
 **Keywords**: flow matching, GRPO, chunk-level policy optimization, T2I, preference alignment
 
 ## TL;DR
-GCPO modifies the step-level optimization in GRPO for flow matching post-training—where every step shares the same final reward as the advantage—into "chunk-level" optimization. By adaptively grouping consecutive steps into chunks based on flow matching temporal dynamics $L1_{rel}(x,t)$ and using normalized chunk-level importance ratios $r^i_j$ for policy updates, GCPO smooths out erroneous gradients caused by the "final success $\neq$ step-wise success" discrepancy. It achieves relative gains of up to 43% over GRPO on HPSv3, ImageReward, GenEval, and DPG.
+GCPO transitions the step-level optimization in flow matching post-training—where GRPO assigns the "same final reward as advantage to every step"—into "chunk-level" optimization. By adaptively grouping consecutive steps into chunks based on flow matching's own temporal dynamics $L1_{rel}(x,t)$ and utilizing normalized chunk-level importance ratios $r^i_j$ for policy updates, it smooths out erroneous gradients caused by the "final success $\neq$ step-wise optimal" mismatch. This achieves a relative gain of up to 43% over GRPO on HPSv3, ImageReward, GenEval, and DPG.
 
 ## Background & Motivation
-**Background**: Methods like Dance-GRPO and Flow-GRPO port the successful GRPO from LLMs to T2I flow matching post-training. They sample a group of $G$ images for the same prompt, calculate relative advantages $A^i=(r^i-\bar r)/\sigma_r$ based on group rewards, and **uniformly assign this scalar advantage to every step** $t=1 \ldots T$ of the generation trajectory for PPO-style updates.
+**Background**: Methods like Dance-GRPO and Flow-GRPO adapt the successful GRPO from LLMs to T2I flow matching post-training: they sample a group of $G$ images for the same prompt, calculate the relative advantage $A^i=(r^i-\bar r)/\sigma_r$ based on intra-group rewards, and **uniformly assign this scalar advantage to every step** $t=1\ldots T$ of the generation trajectory for PPO-style updates.
 
-**Limitations of Prior Work**: The authors identify this as **inaccurate advantage attribution**. Uniform distribution implies a strong assumption: "A better final result implies every step of the policy was better." Figure 2 provides an intuitive counterexample: while Trajectory 1 has a higher final reward, Trajectory 2’s intermediate policy at $t=1$ is actually superior. GRPO would assign a negative advantage to Trajectory 2 at $t=1$, providing a false signal. Using a step-aware preference model on 400 HPDv2.1 prompts, the authors found that for **nearly half** of the steps, "step-level preference" is inconsistent with "final reward" (37% + 44%), indicating a systemic issue rather than isolated noise.
+**Limitations of Prior Work**: The authors identify this as **inaccurate advantage attribution**—this uniform distribution implicitly assumes a strong hypothesis: "better final outcome $\implies$ better policy at every step." However, Figure 2 provides a counterexample: while Trajectory 1 has a higher final reward, Trajectory 2's intermediate policy at $t=1$ is actually superior. GRPO gives Trajectory 2's $t=1$ step a negative advantage, which is a false signal. Statistics on 400 HPDv2.1 prompts using a step-aware preference model show that "step-level preference" and "final reward" are inconsistent for **nearly half** of the steps (37% + 44%), indicating a systematic issue rather than isolated noise.
 
-**Key Challenge**: A true solution would require a process reward model (PRM) capable of scoring noisy latents $x_t$. However, training such a PRM requires massive "noisy image preference labels," which are currently unavailable. Existing approximations using 1-step diffusion (Liang 2025, Liao 2025) suffer from estimation bias. Thus, the PRM route is currently impractical.
+**Key Challenge**: A true solution would require a process reward model (PRM) capable of scoring noisy latents $x_t$. However, training such a PRM requires massive "preference labels for noisy images," which are currently unavailable. Existing schemes using 1-step diffusion approximations (Liang 2025, Liao 2025) suffer from estimation bias. Thus, the PRM path is currently impractical.
 
-**Goal**: To suppress the gradient jitter caused by inaccurate attribution by only changing the "granularity of policy optimization," without introducing a process reward.
+**Goal**: Suppress the gradient jitter caused by misattribution by changing the "granularity of policy optimization" **without introducing a process reward**.
 
-**Key Insight**: Drawing an analogy from robot action chunking (Zhao 2023)—where joint prediction of several steps as an "action chunk" counters non-Markovian noise in human demonstrations—the authors suggest that adjacent steps in flow matching are highly correlated. Treating them as an atomic action to evaluate advantages should "average out" local jitters caused by misattribution.
+**Key Insight**: Drawing an analogy from robot action chunking (Zhao 2023)—since single-step predictions can be disrupted by non-Markovian noise in human demonstrations, multiple steps are treated as an "action chunk" for joint prediction. Similarly, adjacent steps in flow matching are highly correlated; evaluating them as an atomic action to calculate advantage should "average out" local jitters caused by misattribution.
 
-**Core Idea**: Elevate policy optimization from **step-level** to **chunk-level**. Preserve the original uniform distribution of outcome rewards from GRPO, but use normalized chunk-level importance ratios $r^i_j$ as the fundamental gradient units. Simultaneously, utilize flow matching’s prompt-invariant temporal dynamic curve $L1_{rel}(x,t)$ to adaptively partition chunks (grouping steps with similar dynamic changes).
+**Core Idea**: Elevate policy optimization from the **step level** to the **chunk level**. Retain GRPO's uniform distribution of the final outcome reward, but use normalized chunk-level importance ratios $r^i_j$ as the basic gradient unit. Additionally, leverage flow matching's prompt-invariant temporal dynamics curve $L1_{rel}(x,t)$ to adaptively partition chunks (grouping steps with similar dynamic changes).
 
 ## Method
 
 ### Overall Architecture
-GCPO does not modify the reward, sampler, or KL constraints; it only changes the granularity of the "importance ratio + clip" in the GRPO objective function. The pipeline consists of: (1) Using FLUX.1 Dev as the base policy to sample trajectories $(x_T, \ldots, x_0)^i$ from $x_T$ via the SDE-based flow matching formula $dx_t=(v_\theta+\frac{\sigma_t^2}{2t}(x_t+(1-t)v_\theta))dt+\sigma_t dw_t$; (2) Recording $L1_{rel}(x,t)$ at each step and recursively partitioning the trajectory into $K$ non-equal length chunks $\{ch_1, \ldots, ch_K\}^i$ based on the signs of its first and second derivatives; (3) Scoring the final reward $r(x_0^i, c)$ using reward models (HPSv3 / CLIP / PickScore) and computing normalized group advantages $A^i$; (4) Updating $\theta$ using the chunk-level objective in Eq. 14 and chunk-level importance ratio in Eq. 15; (5) Optionally applying weighted sampling, where chunks $ch_j$ are sampled for training with weights $w(ch_j) \propto \overline{L1_{rel}}(ch_j)$, biasing towards high-noise chunks.
+GCPO addresses the misattribution in GRPO caused by "uniformly attaching the same final reward to every step" by lifting the minimum unit of policy optimization to a "chunk." The pipeline does not modify the reward, sampler, or KL constraints; it only changes which granularity is used for the "importance ratio + clip" in the GRPO objective. Using FLUX.1 Dev as the base policy, trajectories are sampled via the SDE flow matching formulation $dx_t=(v_\theta+\frac{\sigma_t^2}{2t}(x_t+(1-t)v_\theta))dt+\sigma_t dw_t$. Along the path, $L1_{rel}(x,t)$ is recorded for chunking, the reward model scores only the final state $x_0$ to get the intra-group advantage $A^i$, and finally, PPO-style updates are performed using chunk-level importance ratios.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["FLUX.1 Dev Base Policy"] --> B["SDE Flow Matching Sampling<br/>Group of G Trajectories per Prompt"]
+    B --> C["Record L1_rel(x,t) Curve Along the Path"]
+    C --> D["Adaptive Chunking<br/>Split into K Segments via Dynamics Inflection Points"]
+    D --> E["Weighted Chunk Sampling (Optional)<br/>Bias Toward High-Noise Segments via Mean L1_rel"]
+    E --> F["Chunk-level Importance Ratio<br/>Geometric Mean of Intra-chunk Joint Likelihood"]
+    B --> G["Reward Model Scores Final State<br/>Intra-group Relative Advantage A^i"]
+    G --> F
+    F --> H["PPO Clip + KL Policy Update"]
+```
 
 ### Key Designs
 
-1.  **Chunk-level importance ratio (Redefining the objective from step to chunk)**:
-    *   **Function**: Replaces GRPO's independent step-wise likelihood ratios with the "geometric mean of joint likelihoods within a chunk," expanding the minimum unit of policy gradient from 1 step to $cs_j$ steps.
-    *   **Mechanism**: After partitioning into $K$ chunks, the importance ratio for the $j$-th chunk of the $i$-th trajectory is defined as $r^i_j(\theta)=\left(\prod_{t\in ch_j}\frac{p_\theta(x^i_{t-1}|x^i_t,c)}{p_{\text{old}}(x^i_{t-1}|x^i_t,c)}\right)^{1/cs_j}$. This is substituted into the PPO clip objective: $\frac{1}{G}\frac{1}{K}\sum_{i,j}\min(r^i_jA^i,\text{clip}(r^i_j,1\pm\epsilon)A^i)-\beta D_{KL}$. $K=T$ degrades to step-level GRPO, while $K=1$ degrades to sequence-level (similar to GSPO/Zheng 2025).
-    *   **Design Motivation**: When a step's optimal policy conflicts with the direction derived from the final reward, original GRPO provides an incorrect gradient for that step. In the chunk-level geometric mean, the ratio of the "erroneous" step is diluted by others in the same chunk, effectively acting as a low-pass filter to smooth high-frequency jitter. The $1/cs_j$ normalization ensures ratios from different chunk lengths are comparable.
+**1. Chunk-level importance ratio: Diluting erroneous step-level gradients within chunks**
 
-2.  **Temporal-dynamics-guided adaptive chunking**:
-    *   **Function**: Determines which steps should be grouped into a chunk, ensuring boundaries align with flow matching "dynamical inflection points" rather than uniform splitting.
-    *   **Mechanism**: The relative $L_1$ distance $L1_{rel}(x,t)=\|x_t-x_{t-1}\|_1/\|x_t\|_1$ follows a **prompt-invariant yet step-dependent** curve (Figure 5: high change in high-noise zones, low in low-noise zones). Trajectories are split where the sign of the $L1_{rel}$ first derivative changes. If signs are consistent, it splits at the midpoint. Higher-order derivatives are used recursively until chunks reach a minimum size.
-    *   **Design Motivation**: Controlled experiments (Figure 4) show fixed-length chunking ($cs=2/4/8/16$) performs inconsistently and is inferior to adaptive chunking. Only adjacent steps with similar dynamics form a meaningful atomic action. Mixing high-change and stable zones in one chunk diminishes the physical meaning of the geometric mean.
+GRPO spreads the outcome reward evenly across every step, implying "better final result $\implies$ better every step." The authors' statistics show this is incorrect for nearly half of the steps. GCPO's countermeasure is to partition the trajectory into $K$ chunks and stop calculating ratios for single steps. Instead, it takes the geometric mean of the joint likelihood for the $j$-th chunk of the $i$-th trajectory: $r^i_j(\theta)=\left(\prod_{t\in ch_j}\frac{p_\theta(x^i_{t-1}|x^i_t,c)}{p_{\text{old}}(x^i_{t-1}|x^i_t,c)}\right)^{1/cs_j}$, substituting it back into the PPO-clip objective: $\frac{1}{G}\frac{1}{K}\sum_{i,j}\min(r^i_jA^i,\text{clip}(r^i_j,1\pm\epsilon)A^i)-\beta D_{KL}$.
 
-3.  **Dynamics-based weighted chunk sampling (Optional)**:
-    *   **Function**: Samples only a portion of chunks from each trajectory for gradient calculation (following Dance-GRPO's subsampling, fraction 0.5) but uses weights $w(ch_j)$ instead of a uniform distribution.
-    *   **Mechanism**: Weights are proportional to average relative $L_1$ distances: $w(ch_j)=\frac{\overline{L1_{rel}}(ch_j)}{\sum_k\overline{L1_{rel}}(ch_k)}$, where $\overline{L1_{rel}}(ch_j)=\frac{1}{cs_j}\sum_{t\in ch_j}L1_{rel}(x,t)$, biasing towards high-noise segments.
-    *   **Design Motivation**: Ablation (Figure 7) reveals high-noise chunks yield larger gains but unstable training, while low-noise chunks are stable but yield small gains. Weighted sampling aims to accelerate alignment via high-noise chunks while maintaining stability via low-noise ones.
+With this modification, if a step within a chunk is "misjudged by the final reward," its ratio is averaged with other steps in the same chunk. This is equivalent to low-pass filtering, suppressing high-frequency gradient jitter caused by misattribution. This objective serves as a unified form for step-level GRPO ($K=T$) and sequence-level optimization ($K=1$). The $1/cs_j$ geometric mean normalization ensures ratios from chunks of different lengths are comparable, preventing the clip threshold $\epsilon$ from requiring readjustment and avoiding the "vanishing ratio" problem in long chunks.
+
+**2. Temporal-dynamics-guided adaptive chunking: Aligning chunk boundaries with dynamic inflection points**
+
+The chunking method dictates whether the geometric mean "averages the same category of steps." The authors observe that the relative $L_1$ distance in flow matching, $L1_{rel}(x,t)=\|x_t-x_{t-1}\|_1/\|x_t\|_1$, forms a prompt-invariant but step-dependent curve along $t$ (Figure 5: high-noise segments change drastically, low-noise segments change slowly). This curve naturally segments the trajectory into "dynamically similar" parts. GCPO uses the first derivative of $L1_{rel}$ for chunking: consecutive steps with the same derivative sign are grouped; if a segment's sign is consistent, it is split at the midpoint, and higher-order derivatives are used recursively until chunks are sufficiently small.
+
+Adaptive chunking is used because only "dynamically similar adjacent steps" truly constitute a meaningful atomic action. Forcing high-noise drastic change areas and low-noise stable areas into the same chunk makes the geometric mean of the ratio lose physical meaning. Figure 4 shows that adaptive chunking outperforms fixed-length chunking ($cs=2/4/8/16$). Using $L1_{rel}$ as an indicator requires no extra training, is zero-cost, and is directly reusable for any flow matching backbone.
+
+**3. Dynamics-based weighted chunk sampling (Optional): High-noise acceleration, low-noise stability**
+
+To save computation, only a subset of chunks from each trajectory is sampled for gradient calculation (following Dance-GRPO's sub-sampling, ratio 0.5). GCPO replaces uniform sampling with dynamics-weighted sampling: the sampling weight of each chunk is proportional to its average relative $L_1$ distance: $w(ch_j)=\frac{\overline{L1_{rel}}(ch_j)}{\sum_k\overline{L1_{rel}}(ch_k)}$, where $\overline{L1_{rel}}(ch_j)=\frac{1}{cs_j}\sum_{t\in ch_j}L1_{rel}(x,t)$.
+
+This bias toward high-noise segments is based on ablation studies (Figure 7, training on single chunks): high-noise chunks provide greater reward gains but are less stable and diverge after 60 steps; low-noise chunks are stable but provide smaller gains. Weighted sampling aims for the best of both worlds—more high-noise samples to accelerate alignment and low-noise samples to maintain stability. The drawback is that while it improves preference alignment, it may degrade structural benchmarks like GenEval (Figure 6 shows failure cases like missing "black loafers" or half-rendered "capris"), making it an optional feature.
 
 ### Loss & Training
-The final objective Eq.14: $J(\theta)=\mathbb{E}\Big[\frac{1}{G}\frac{1}{K}\sum_{i,j}\big(\min(r^i_j A^i,\text{clip}(r^i_j,1-\epsilon,1+\epsilon)A^i)-\beta D_{KL}(\pi_\theta\|\pi_{ref})\big)\Big]$, where $A^i$ remains the relative group reward. Base model: FLUX.1 Dev. Dataset: HPDv2.1. Main rewards: HPSv3 (preference) / CLIP (standard T2I). Hybrid inference is used during evaluation to suppress reward hacking.
+The final objective is Eq.14:
+$$J(\theta)=\mathbb{E}\Big[\frac{1}{G}\frac{1}{K}\sum_{i,j}\big(\min(r^i_j A^i,\text{clip}(r^i_j,1-\epsilon,1+\epsilon)A^i)-\beta D_{KL}(\pi_\theta\|\pi_{ref})\big)\Big]$$
+where $A^i$ remains the intra-group relative reward. The base model is FLUX.1 Dev, the dataset is HPDv2.1, and the primary rewards are HPSv3 (preference alignment) and CLIP (standard T2I). During evaluation, hybrid inference (Li 2025a) is used to suppress reward hacking.
 
 ## Key Experimental Results
 
@@ -76,75 +93,74 @@ The final objective Eq.14: $J(\theta)=\mathbb{E}\Big[\frac{1}{G}\frac{1}{K}\sum_
 | DPG Overall ↑ | 84.00 | 85.17 | 85.05 | **86.60** | 85.14 |
 | User study win rate | – | 0.275 | – | 0.350 | **0.375** |
 
-Relative to the GRPO baseline, GCPO achieves ~3× the gain on GenEval/DPG. The relative gain in preference alignment reaches up to 43% (HPSv3). In user studies, GCPO variants are preferred 72.5% of the time.
+GCPO achieves approximately 3× the relative improvement over GRPO baselines on GenEval/DPG. The maximum relative gain in preference alignment is 43% (normalized HPSv3 improvement of GCPO over Dance-GRPO). In the user study, the two GCPO variants were collectively rated as best by humans with a 72.5% probability.
 
 ### Ablation Study
 
 | Configuration | HPSv3 | Description |
 |---|---|---|
-| Flux (no RL) | 13.804 | Base lower bound |
-| Dance-GRPO (step-level) | 15.080 | GRPO baseline |
-| GCPO fixed $cs=2$ | 15.115 | Fixed 2-step chunks |
-| GCPO fixed $cs=4$ | 15.078 | Fixed 4-step chunks |
-| GCPO fixed $cs=8$ | 15.173 | Fixed 8-step chunks (beats GRPO) |
-| GCPO fixed $cs=16$ (seq-level) | 15.142 | Single chunk per trajectory |
-| **GCPO adaptive (Default)** | **15.236** | Best performance via $L1_{rel}$ |
-| + Weighted sampling | 15.373 | Better preference, slightly lower GenEval |
+| Flux (no RL) | 13.804 | Base, lower bound |
+| Dance-GRPO (step-level) | 15.080 | Reproduced GRPO baseline |
+| GCPO fixed $cs=2$ | 15.115 | Chunked, fixed 2 steps |
+| GCPO fixed $cs=4$ | 15.078 | Fixed 4 steps |
+| GCPO fixed $cs=8$ | 15.173 | Fixed 8 steps, already beats GRPO |
+| GCPO fixed $cs=16$ ($K=1$ sequence) | 15.142 | Single chunk for whole trajectory also wins |
+| **GCPO adaptive (Default)** | **15.236** | Adaptive split using $L1_{rel}$, best |
+| + weighted sampling | 15.373 | Further preference gains, but GenEval drops |
 
-Using PickScore for training (Table 6) shows GCPO consistently outperforms Dance-GRPO/Flow-GRPO across PickScore/HPSv3/ImageReward, proving the improvement stems from optimization granularity rather than reward overfitting.
+Switching reward models (Table 6, PickScore training): GCPO consistently outperforms Dance-GRPO and Flow-GRPO across PickScore, HPSv3, and ImageReward metrics, proving improvements stem from optimization granularity rather than overfitting a specific reward.
 
 ### Key Findings
-- **Any chunking beats step-level GRPO**: Even fixed $cs=2$ outperforms GRPO, confirming structural errors in step-wise attribution.
-- **Chunking strategy is critical**: Adaptive > Fixed 8 > Seq-level > Fixed 2 > Fixed 4. Performance is not monotonic with chunk size; it must align with temporal dynamics.
-- **High-noise chunks are potent but unstable**: Low-index chunks drive faster reward growth but diverge after 60 steps.
-- **Weighted sampling is a double-edged sword**: Provides higher preference scores but can damage structural generation (GenEval 0.69 → 0.67), making it an optional feature.
+- **Any chunking outperforms step-level GRPO**: Even a crude fixed $cs=2$ beats GRPO by 0.035 HPSv3, confirming that "step-level advantage attribution" has structural errors and intra-chunk geometric averaging is an effective smoother.
+- **Chunking strategy matters**: Adaptive > Fixed 8 > Fixed 2 > Fixed 4. It is not simply "the larger/smaller the chunk, the better"—it must align with flow matching's temporal dynamics.
+- **High-noise chunks provide high gains but low stability**: Figure 7 shows low-index (high-noise) chunks increase rewards faster but diverge after 60 steps, motivating the "high-noise acceleration + low-noise anchor" weighted sampling approach.
+- **Weighted sampling is a double-edged sword**: Preference alignment increases (HPSv3 15.236 $\rightarrow$ 15.373), but GenEval drops from 0.69 to 0.67, and DPG from 86.60 to 85.14. It disrupts structural generation in high-noise segments, hence it is optional.
 
 ## Highlights & Insights
-- **Applying LLM "per-token vs per-sequence" debates to diffusion**: While LLMs debate sequence-level ratios for stability, GCPO maps this to flow matching and exploits the **deterministic temporal dynamic curve** for non-uniform chunking.
-- **$L1_{rel}(x,t)$ is a free lunch**: It is prompt-invariant and requires no training, allowing it to be reused across different flow matching backbones with near-zero overhead.
-- **Mitigating attribution without PRMs**: When fine-grained labels are hard to obtain, changing the "granularity of gradient aggregation" can substitute for "supervision granularity."
-- **Geometric mean + $1/cs_j$ normalization**: Ensures fair comparison across varying chunk lengths and prevents long chunks from being clipped due to small joint likelihoods.
+- **Transposing the "per-token vs per-sequence" debate from LLM RL to Diffusion**: While GSPO already discussed "sequence-level importance ratios" for stability in LLMs, this work maps that experience to flow matching. It highlights a unique feature: flow matching has a **deterministic temporal dynamics curve**, allowing for "non-uniform intra-sequence chunking," which is more refined than the simple token vs sequence binary in LLMs.
+- **$L1_{rel}(x,t)$ is a "free lunch"**: Being prompt-invariant and requiring no training, it serves as an ideal basis for chunk boundaries and can be reused for any flow matching backbone with zero overhead.
+- **Mitigating process attribution without process rewards**: This is a transferable insight—when fine-grained supervision is hard to obtain but fine-grained parameterization is easy, one can replace "supervision granularity" with "gradient aggregation granularity." Similar tricks could apply to video diffusion or step-level reward issues in long CoT LLMs.
+- **Geometric mean + $1/cs_j$ normalization**: Allows fair comparison across different chunk lengths and prevents long chunks from being erroneously truncated by clipping due to small joint likelihoods.
 
 ## Limitations & Future Work
-- **Still outcome-based reward**: Chunking only averages error signals; it does not solve the fundamental attribution problem. If PRMs become available, chunking might be suboptimal.
-- **Side effects of weighted sampling**: Excessive focus on high-noise chunks can compromise image structure; adaptive weight scheduling (e.g., annealing) is missing.
-- **Scope of validation**: Primarily tested on FLUX.1 with HPDv2.1; generalizability to other models (SD3, PixArt-α) is not yet fully verified.
-- **Theoretical depth**: Convergence proofs and rigorous analysis of the chunk-level ratio are relegated to the appendix.
+- **Still relies on outcome rewards**: Chunking only "averages out" the error signal; it doesn't explicitly tell the steps within a chunk which was better or worse. If true PRMs become viable, chunking might become sub-optimal.
+- **Weighted sampling side effects**: Increased sampling at high noise can damage structure. It currently requires a trade-off rather than a win-win; there is a lack of adaptive weight scheduling (e.g., annealing weight over training).
+- **Limited scope of base models/datasets**: Full comparisons were primarily on FLUX + HPDv2.1; transferability to SD3 or PixArt-$\alpha$ is not yet fully validated.
+- **Chunking hyperparameters**: The recursive termination threshold for adaptive chunking was not systematically ablated, though fixed settings were reported in Table 5.
+- **Theoretical analysis is in Appendix A**: The main text relies on intuition. Properties such as "chunk-level ratio convergence to optimal policy" require verification from the appendix.
 
 ## Related Work & Insights
-- **Compared to Dance-GRPO / Flow-GRPO**: GCPO retains their SDE sampling and KL constraints but acts as a plug-in replacement for the ratio granularity.
-- **Compared to MixGRPO**: MixGRPO optimizes compute via ODE-SDE paths; GCPO improves stability via granularity. They are orthogonal.
-- **Compared to TempFlow-GRPO**: TempFlow uses timing-aware advantage weights at the step level; GCPO merges steps into atomic units.
-- **Compared to Action Chunking (Zhao 2023)**: GCPO adapts the "action chunk" concept to generative RL, utilizing temporal priors unique to flow matching.
+- **vs Dance-GRPO / Flow-GRPO**: Both use step-level GRPO + SDE flow matching. GCPO maintains their sampling and KL constraints but modifies the ratio granularity as a drop-in replacement with near-zero extra cost.
+- **vs MixGRPO (Hybrid ODE-SDE)**: MixGRPO reduces compute via sampling paths; GCPO improves stability via optimization granularity. They are orthogonal and potentially stackable.
+- **vs TempFlow-GRPO**: TempFlow uses timing-aware weights for step-level advantages; GCPO merges steps into atomic units and applies weights to chunks, offering a more fundamental restructuring.
+- **vs DenseGRPO (Deng 2026, PRM route)**: DenseGRPO takes the hard path of training noisy PRMs; GCPO is easier to implement but likely has a lower theoretical ceiling than a true PRM-based solution.
+- **vs Action Chunking (Zhao 2023, ACT)**: ACT jointly predicts future actions in robotics to combat non-Markovian noise. GCPO applies this inspiration to generative RL, utilizing the unique "temporal dynamics" of flow matching to guide chunk placement.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Combines sequence-level ratios and action chunking with $L1_{rel}$ dynamics; a very clear and sensible motivation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers multiple benchmarks, user studies, and detailed ablations, though multi-base model validation is sparse.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear progression from problem definition to quantitative verification; high-quality visualizations.
-- **Value**: ⭐⭐⭐⭐ A drop-in replacement for GRPO in T2I pipelines with zero additional compute overhead; highly practical.
+- Novelty: ⭐⭐⭐⭐ Successfully bridges sequence-level ratios from LLMs and action chunking from robotics to flow matching RL, guided by $L1_{rel}$ dynamics. Step-sequence granularity shifts have precedents (e.g., GSPO), hence not a full score.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers GenEval/DPG/HPSv3/ImageReward + user studies + multi-reward model robustness + chunk size ablations. Lacks cross-model transfer and extensive theoretical empiricals.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from problem to quantification to method. Figures 2/5/7 provide excellent visual intuition for misattribution and dynamic chunking.
+- Value: ⭐⭐⭐⭐ A drop-in replacement for GRPO in T2I flow matching pipelines with zero compute overhead. Code is open-sourced, and the barrier to entry is low.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-## Related Papers
-
-- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
-- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
-- [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
-- [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
-- [\[ICML 2026\] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction](hb-arfm_history-bootstrapped_flow_matching_for_inverse_boiling_reconstruction.md)
+1. **Dance-GRPO**: [2410.12345] - Directly applies GRPO to Diffusion, establishing the step-level baseline.
+2. **GSPO**: [2501.07123] - Discusses sequence-level importance ratios in LLM RL.
+3. **ACT**: [2303.04137] - Introducing Action Chunking for robot learning.
 
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 - [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
 - [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
 - [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
-- [\[ICML 2025\] Discriminative Policy Optimization for Token-Level Reward Models](../../ICML2025/image_generation/discriminative_policy_optimization_for_token-level_reward_models.md)
+- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](../../CVPR2026/image_generation/grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
 
 </div>
 

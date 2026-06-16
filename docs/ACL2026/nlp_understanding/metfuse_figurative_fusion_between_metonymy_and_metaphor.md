@@ -2,73 +2,85 @@
 title: >-
   [Paper Note] MetFuse: Figurative Fusion between Metonymy and Metaphor
 description: >-
-  [ACL 2026][NLP Understanding][Metonymy] The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM polishing) to rewrite literal sentences into three figurative variants: metonymy…
+  [ACL 2026][NLP Understanding][figurative fusion] The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM refinement) to rewrite literal sentences into three figurative variants: metonymic, metaphoric, and hybrid. They construct the first MetFuse dataset (1,000 quadruplets, 4,000 sentences) and empirically discover that "the pres
 tags:
-  - "ACL 2026"
-  - "NLP Understanding"
-  - "Metonymy"
-  - "Metaphor"
-  - "figurative fusion"
-  - "data augmentation"
-  - "LLM generation"
+  - ACL 2026
+  - NLP Understanding
+  - figurative fusion
 date: 2026-05-08
-content_hash: da31e7f43e1b516b
+content_hash: f3f0ff4e9dce09be
 ---
-
 # MetFuse: Figurative Fusion between Metonymy and Metaphor
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.12919](https://arxiv.org/abs/2604.12919)  
-**Code**: https://github.com/cincynlp/MetFuse (Yes)  
+**Code**: https://github.com/cincynlp/MetFuse (Available)  
 **Area**: Linguistics / Figurative Language / Dataset Construction  
 **Keywords**: Metonymy, Metaphor, figurative fusion, data augmentation, LLM generation
 
 ## TL;DR
-The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM polishing) to rewrite literal sentences into three figurative variants: metonymy, metaphor, and hybrid. This results in the first MetFuse dataset (1,000 quadruplets × 4,000 sentences). Empirical findings demonstrate that "the presence of metaphorical verbs makes metonymic nouns in the same sentence more explicit," and data augmentation consistently improves performance across 8 metonymy/metaphor classification benchmarks.
+The authors propose a three-stage pipeline (candidate generation → MLM scoring/selection → LLM refinement) to rewrite literal sentences into three figurative variants: metonymic, metaphoric, and hybrid. They construct the first MetFuse dataset (1,000 quadruplets, 4,000 sentences) and empirically discover that "the presence of metaphorical verbs makes metonymic nouns in the same sentence more explicit," yielding consistent improvements when used for data augmentation across 8 metonymy/metaphor classification benchmarks.
 
 ## Background & Motivation
 
-**Background**: Metonymy (single-domain substitution, e.g., "stadium" referring to "fans") and metaphor (cross-domain mapping, e.g., "fans erupted") are the two pillars of figurative language. However, the NLP community has long treated them as independent tasks: metonymy has datasets like ConMeC / RelocaR / WiMCor, while metaphor has VUA / FLUTE / MOH-X, with almost no research addressing their integration.
+**Background**: Metonymy (intra-domain substitution, e.g., "stadium" referring to "fans") and metaphor (cross-domain mapping, e.g., "fans erupted") are the two pillars of figurative language. However, the NLP community has long treated them as independent tasks: metonymy has datasets like ConMeC / RelocaR / WiMCor, while metaphor has VUA / FLUTE / MOH-X, with almost no research addressing them together.
 
-**Limitations of Prior Work**: (i) Lack of data - Theoretical linguistics (Goossens 1990's metaphtonymy; Barcelona 2003) has long noted their co-occurrence, but no meaning-aligned datasets exist to support computational research; (ii) Lack of generation methods - Directly prompting LLMs to "turn this into metonymy" achieves only a 38.8% success rate because metonymy must adhere to intra-domain constraints, which naive prompting fails to control; (iii) Lack of interaction analysis - No study has systematically quantified how the identifiability of metaphor and metonymy changes when they co-occur.
+**Limitations of Prior Work**: (i) Data scarcity—Theoretical linguistics (Goossens 1990 metaphtonymy; Barcelona 2003) has long noted their co-occurrence, but no meaning-aligned datasets exist to support computational research; (ii) Generation difficulties—Directly prompting LLMs to "turn this sentence into metonymy" achieves only a 38.8% success rate because metonymy must adhere to intra-domain constraints, which naive prompts fail to control; (iii) Lack of interaction analysis—No systematic quantification of how the recognizability of metonymy and metaphor changes when they co-occur.
 
-**Key Challenge**: Metonymy is strictly constrained by contiguity relations (part-whole, container-content, etc.), resulting in a small candidate space. Metaphor enjoys the freedom of cross-domain mapping with a large candidate space. This asymmetry makes "generating both within a unified framework" extremely difficult.
+**Key Challenge**: Metonymy is strictly constrained by contiguity relations (part-whole, container-content, etc.), resulting in a small candidate space; metaphor enjoys the freedom of cross-domain mapping, resulting in a large candidate space. This asymmetry makes "generating both within a unified framework" highly difficult.
 
-**Goal**: (a) Given a literal sentence, controllably generate semantically aligned triplets of metonymy / metaphor / hybrid variants; (b) Construct the MetFuse dataset using this framework; (c) Empirically answer whether metonymy is easier to identify in hybrid sentences compared to metonymy-only sentences.
+**Goal**: (a) Given a literal sentence, controllably generate a set of semantically aligned metonymy / metaphor / hybrid variants; (b) construct the MetFuse dataset using this framework; (c) empirically answer whether metonymy in hybrid sentences is more easily identified than in metonymy-only sentences.
 
-**Key Insight**: The authors leverage two asymmetries—first, in the generation stage, using "narrow candidates + MLM scoring" to constrain metonymy, while using "broad freedom + three emotional tones + sentiment-based selection" to release metaphor; second, in the analysis stage, assuming that the strong selectional preference of metaphorical verbs "forces" readers to interpret metonymic nouns as animate agents, thereby making the metonymy more explicit.
+**Key Insight**: The authors leverage two asymmetries—firstly, in the generation phase, they use "narrow candidates + MLM scoring" to constrain metonymy, while using "flexible tone + sentiment selection" to release metaphoric potential; secondly, in the analysis phase, they hypothesize that the strong selectional preference of metaphorical verbs "forces" readers to interpret metonymic nouns as animate agents, thereby making the metonymy more explicit.
 
-**Core Idea**: A three-stage pipeline (LLM candidate generation + MLM/sentiment scoring selection + LLM controlled polishing) generates figurative variants. The hypothesis that "metaphor strengthens metonymy" is validated through hybrid data augmentation, embedding similarity, and zero-shot LLM experiments.
+**Core Idea**: Generate figurative variants using a three-stage pipeline ("LLM candidates + MLM/sentiment scoring + controlled LLM refinement"), and verify the hypothesis that "metaphor strengthens metonymy" through hybrid data augmentation, embedding similarity, and LLM zero-shot experiments.
 
 ## Method
 
 ### Overall Architecture
-The pipeline focuses on "subject noun + predicate verb" pairs in SVO structures. It first uses SpaCy dependency parsing to filter literal sentences from Wikipedia where the subject is a human entity with a specific dependency relationship to a verb. Then, two parallel pipelines—**metonymy generation** and **metaphor generation**—are executed. Finally, hybrid sentences are constructed at zero cost by substituting the refined metonymic noun phrase into the refined metaphorical sentence. All three pipelines essentially follow a three-stage process: "i) LLM candidate generation → ii) external scorer selection → iii) LLM controlled polishing," though the scorers and temperature strategies differ significantly.
+The pipeline focuses on the "subject noun + predicate verb" pair in SVO structures. It first uses SpaCy dependency parsing to filter literal sentences from Wikipedia where the subject is a human entity. Then, it runs two parallel pipelines for **metonymy generation** and **metaphor generation**, finally assembling hybrid sentences by "inserting the refined metonymic noun phrase into the refined metaphoric sentence." Both generation pipelines follow an "i) LLM candidates → ii) External scorer selection → iii) Controlled LLM refinement" structure, though the scorers (MLM probability vs. sentiment) and temperature strategies differ significantly; hybrids are a third variant created via direct splicing rather than independent generation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Literal Sentence (SpaCy Parsing<br/>Filter Human Subject + Verb)"] --> B
+    A --> E
+    subgraph MTY["Metonymy Gen: Contiguity-prompt + MLM Scoring"]
+        direction TB
+        B["Targeted question candidates<br/>(temp=0.7)"] --> C["BERT [MASK] Scoring<br/>Take argmax log p"]
+        C --> D["Low-temp refinement (temp=0.4)"]
+    end
+    subgraph MET["Metaphor Gen: Tone candidates + Sentiment selection"]
+        direction TB
+        E["Three tones for hyperbolic verbs<br/>(temp=0.7, top-p=0.9)"] --> F["Sentiment model matches tone"]
+        F --> G["Refinement (temp=0.6)"]
+    end
+    D --> H["Hybrid Splicing + Explicitation<br/>Insert MTY NP into MET subject"]
+    G --> H
+    H --> I["MetFuse Quadruplet<br/>Literal / Metonymy / Metaphor / Hybrid"]
+```
 
 ### Key Designs
 
-1.  **Metonymy Generation: contiguity-prompt + MLM masked LM scoring**:
-    - **Function**: Given a literal sentence and a target noun, generate an intra-domain metonymic replacement noun while maintaining the original meaning.
-    - **Mechanism**: The authors found that naive prompting fails because "LLMs do not know what contiguity is." They instead use targeted questions about the noun's location / occupants / salient parts (e.g., "Where does a judge work?") with temperature=0.7 to obtain a set of candidates $c$. The original noun is replaced by `[MASK]` and fed into BERT to calculate $\log p(c \mid \text{context})$, selecting $c^* = \arg\max_c \log p_{\text{BERT}}(c)$ as the replacement. Finally, light polishing is done via LLM with temperature=0.4 (low temperature prevents losing the metonymy through secondary rewriting).
-    - **Design Motivation**: MLM scoring essentially "picks words under the premise of syntactic/semantic fluency," which filters out out-of-domain candidates generated by the LLM (e.g., replacing "judge" with "briefcase" results in logp=-12.28, leading to automatic rejection). This transforms intra-domain constraints from a prompt engineering problem into a probabilistic scoring problem.
+**1. Metonymy Gen: Contiguity-prompt candidates with MLM scoring**
 
-2.  **Metaphor Generation: tone-conditioned candidates + sentiment-based word selection**:
-    - **Function**: Given a literal sentence and a target verb, generate cross-domain, hyperbolic yet tone-consistent metaphorical verbs.
-    - **Mechanism**: Following Stowe et al. (2021a), the authors believe "controlled generation" is more effective for metaphors. To allow for cross-domain freedom, an LLM generates hyperbolic verb candidates under three tones: positive / negative / neutral (temperature=0.7, top-p=0.9). A TweetNLP sentiment model labels the original sentence, selects the candidate verb with the matching tone, and then the LLM (temperature=0.6) polishes the sentence for fluency.
-    - **Design Motivation**: The authors observed that "hyperbole without tone constraints often conflicts with the overall atmosphere of the sentence" (e.g., an ecstatic verb appearing in a sad sentence). Introducing sentiment selection constrains "metaphorical freedom" within the soft boundary of "tone consistency," preserving cross-domain flexibility without breaking semantic alignment.
+Direct prompting fails (38.8% success) because LLMs often ignore contiguity constraints. The authors decompose this into "asking the right question + probability scoring": first, targeted questions ask for the target noun's location / occupants / salient parts (e.g., "Where does a judge work?") to get candidates $c$ (temp=0.7); then, the original noun is replaced with `[MASK]` and fed to BERT to calculate $\log p(c \mid \text{context})$. The candidate with the highest probability is selected: $c^* = \arg\max_c \log p_{\text{BERT}}(c)$. This translates "intra-domain constraints" into token-level probability scoring—out-of-domain candidates are automatically eliminated (e.g., replacing "judge" with "briefcase" yields $\log p=-12.28$ and is rejected). Finally, a low temperature (0.4) is used for refinement to prevent the LLM from accidentally removing the metonymic substitution.
 
-3.  **Hybrid Zero-cost Splicing + metaphor-forces-metonymy Analysis**:
-    - **Function**: Construct hybrid sentences and verify if "metaphor makes metonymy more explicit."
-    - **Mechanism**: Since metonymy generation barely alters syntax (only replaces the noun), the "refined metonymic noun phrase" is directly substituted into the subject position of the "refined metaphorical sentence" to create the hybrid, requiring no extra post-processing. Verification uses three types of evidence: (i) 4 LLMs achieve 1.4–4.3 higher F1 on zero-shot metonymy resolution for hybrid vs. metonymy-only sentences; (ii) BERT contextual embeddings show $\text{sim}(N_{\text{lit}}, N_{\text{hyb}}) > \text{sim}(N_{\text{lit}}, N_{\text{mty}})$, indicating that the noun embedding in hybrids is closer to literal usage (i.e., more "explicit"); (iii) Data augmentation using MetFuse's hybrid subset outperforms metonymy-only augmentation on 4 metonymy benchmarks.
-    - **Design Motivation**: From a cognitive linguistics perspective, metaphorical verbs (e.g., "butchered") carry strong animate-agent selectional preferences, forcing readers to interpret inanimate nouns like "newsroom" as "the journalists in the newsroom." This uses metaphor as a "forcing device" to disambiguate metonymy. This explanation ties empirical results back to Lakoff–Johnson theory, representing the paper's most elegant contribution.
+**2. Metaphor Gen: Tone-conditioned candidates with sentiment selection**
+
+Metaphor enjoys cross-domain freedom, but total freedom can cause "tone clashes"—e.g., an ecstatic verb appearing in a sad sentence. The authors apply a soft "tone consistency" boundary: the LLM generates hyperbolic verb candidates under positive / negative / neutral tones (temp=0.7, top-p=0.9). A TweetNLP sentiment model then labels the original sentence, and only tone-matched candidates are kept for final refinement (temp=0.6). This preserves cross-domain flexibility while maintaining semantic and emotional alignment.
+
+**3. Hybrid Splicing and the "Metaphor strengthens Metonymy" Hypothesis**
+
+Since metonymy generation rarely alters syntax (only substituting nouns), the refined metonymic noun phrase can be directly inserted into the subject position of the refined metaphoric sentence. This zero-cost construction exploits the natural complementarity of "metonymy changes nouns, metaphor changes predicates." To support their core claim, the authors provide three pieces of evidence: (i) In zero-shot metonymy resolution across 4 LLMs, hybrids outperform metonymy-only variants by 1.4–4.3 F1 points; (ii) Using BERT contextual embeddings, $\text{sim}(N_{\text{lit}}, N_{\text{hyb}}) > \text{sim}(N_{\text{lit}}, N_{\text{mty}})$, indicating that noun embeddings in hybrids are closer to literal usage (i.e., more "explicit"); (iii) Augmenting BERT with the hybrid subset consistently outperforms metonymy-only augmentation across 4 metonymy benchmarks. The cognitive linguistic explanation is that metaphorical verbs (e.g., "butchered") carry strong animate-agent selectional preferences that "force" readers to interpret inanimate metonymic nouns (e.g., "newsroom") as animate agents, serving as a forcing device to disambiguate the metonymy.
 
 ### Loss & Training
-This paper does not involve model training but rather a prompting workflow. For downstream evaluation, BERT-base is fine-tuned for 3 epochs with lr=1e-5 and batch=8. The MetFuse augmentation sample size is fixed at 50% of the original training set. LLM evaluations are entirely zero-shot, including GPT-OSS-20B / Qwen3-30B / Llama-3.1-70B / Gemini-2.5-Flash.
+The paper focuses on prompting workflows rather than model training. For downstream evaluations, BERT-base is fine-tuned for 3 epochs (lr=1e-5, batch=8). MetFuse augmentation size is fixed at 50% of the original training set. LLM evaluations are entirely zero-shot, including GPT-OSS-20B / Qwen3-30B / Llama-3.1-70B / Gemini-2.5-Flash.
 
 ## Key Experimental Results
 
 ### Main Results
-Human evaluation of the framework (250 sample sentences) shows that the proposed method significantly outperforms the general prompting baseline across all three figurative types:
+Human evaluation (250 samples) shows that the proposed framework significantly outperforms general prompting baselines:
 
 | Variant Type | General prompt | Ours | Gain |
 |--------------|----------------|------|------|
@@ -76,55 +88,55 @@ Human evaluation of the framework (250 sample sentences) shows that the proposed
 | Metaphor     | 70.8%          | 84.0%| +13.2 pp |
 | Hybrid       | 49.2%          | 74.0%| +24.8 pp |
 
-Downstream metonymy classification (70/30 split, BERT fine-tune), using MetFuse for data augmentation:
+Downstream metonymy classification (70/30 split, BERT fine-tuned) with MetFuse augmentation:
 
 | Dataset   | Baseline (Train) | +MetFuse Metonymy | +MetFuse Hybrid |
 |-----------|------------------|-------------------|------------------|
-| ConMeC    | 75.49            | 76.71 (+1.22)     | **79.33 (+3.84)**|
-| Pedinotti | 68.42            | 66.92 (-1.50)     | **70.44 (+2.02)**|
-| RelocaR   | 67.33            | 69.99 (+2.66)     | **70.67 (+3.34)**|
-| WiMCor    | 81.67            | 82.33 (+0.66)     | **82.67 (+1.00)**|
+| ConMeC    | 75.49            | 76.71 (+1.22)     | **79.33 (+3.84)** |
+| Pedinotti | 68.42            | 66.92 (-1.50)     | **70.44 (+2.02)** |
+| RelocaR   | 67.33            | 69.99 (+2.66)     | **70.67 (+3.34)** |
+| WiMCor    | 81.67            | 82.33 (+0.66)     | **82.67 (+1.00)** |
 
-→ Hybrid augmentation consistently outperforms metonymy-only augmentation across 4 datasets, proving that "metaphorical co-occurrence" provides a stronger training signal.
+→ Hybrid augmentation consistently outperforms metonymy-only augmentation, suggesting "metaphoric co-occurrence" provides a stronger training signal.
 
 ### Ablation Study
-LLM zero-shot metonymy resolution (hybrid vs. metonymy-only positive sentences):
+LLM zero-shot metonymy resolution (Hybrid vs. Metonymy-only positive sentences):
 
 | Model          | Metonymy-only F1 | Hybrid F1 | Gain |
-|----------------|------------------|------------|------|
-| GPT-OSS-20B    | 67.3             | 71.6       | +4.3 |
-| Qwen3-30B      | 85.4             | 87.3       | +1.9 |
-| Llama-3.1-70B  | 90.4             | 91.3       | +0.9 |
-| Gemini-2.5     | 93.9             | 94.7       | +0.8 |
+|----------------|------------------|-----------|------|
+| GPT-OSS-20B    | 67.3             | 71.6      | +4.3 |
+| Qwen3-30B      | 85.4             | 87.3      | +1.9 |
+| Llama-3.1-70B  | 90.4             | 91.3      | +0.9 |
+| Gemini-2.5     | 93.9             | 94.7      | +0.8 |
 
-BERT embedding similarity (verifying "metonymy is more explicit in hybrids"): $\text{sim}(N_{\text{lit}}, N_{\text{hyb}}) > \text{sim}(N_{\text{lit}}, N_{\text{mty}})$ holds consistently across 4 models, with a gap of 0.20–1.86 pp, aligning with human metonymicity ratings (hybrid 3.65 vs. metonymy 3.47 on a 5-point scale).
+BERT embedding similarity confirms $\text{sim}(N_{\text{lit}}, N_{\text{hyb}}) > \text{sim}(N_{\text{lit}}, N_{\text{mty}})$ across 4 models (diff 0.20–1.86 pp), aligning with human metonymicity scores (Hybrid 3.65 vs. Metonymy 3.47 on a 5-point scale).
 
 ### Key Findings
-- **Asymmetry Effect**: The metaphor → metonymy direction is robust (consistent across 4 datasets + 4 LLMs + human ratings), but the metonymy → metaphor direction is unstable (hybrid augmentation only wins on VUA Verb / MOH-X and loses to pure metaphor augmentation on FLUTE / TroFi).
-- **Explainable Mechanism**: Surprisal scores show hybrid noun token surprisal=12.81 ≈ metonymy=12.79, and verb surprisal=12.66 ≈ metaphor=11.38, proving that hybrids retain figurative intensity in both dimensions.
-- **Framework Insensitivity to LLM**: Running the same framework with Llama-3.1-8B / GPT-OSS-20B / Qwen3-30B / Llama-3.1-70B / GPT-5 consistently yielded metonymy success rates between 72-75%. This indicates that the structural constraints of the pipeline (contiguity prompt + MLM scoring) are the primary drivers, not LLM capacity.
+- **Asymmetry Effect**: The Metaphor → Metonymy direction is robust (consistent across 4 datasets, 4 LLMs, and human evaluation). However, the Metonymy → Metaphor direction is unstable (Hybrid augmentation only outperformed pure Metaphor augmentation in VUA Verb / MOH-X).
+- **Interpretability**: Surprisal scores show that hybrid noun surprisal ($12.81 \approx$ metonymy $12.79$) and hybrid verb surprisal ($12.66 \approx$ metaphor $11.38$) prove that hybrids maintain figurative intensity in both dimensions.
+- **Robustness to LLMs**: Using different LLMs (Llama-3.1-8B to GPT-5) within the framework yields a stable metonymy success rate (72-75%), indicating that structural constraints (MLM scoring) are the primary factor, not the LLM's capacity.
 
 ## Highlights & Insights
-- **"Using MLM as a domain gate" is a reusable tactic**: Translating the difficult-to-prompt "intra-domain constraint" into BERT token-level log-likelihood functions as a training-free domain classifier, which is much simpler than fine-tuning a semantic relationship model.
-- **Forcing-device explanation is elegant**: Elevating "why metonymy is more explicit in hybrids" from empirical observation to cognitive linguistic explanation via selectional preference creates a classic "experimental phenomenon + theoretical closure" loop.
-- **Zero-cost hybrid splicing**: By exploiting the natural complementarity (metonymy changes nouns without altering syntax; metaphor changes predicates), the need for independent hybrid generation and alignment is eliminated. This is transferable to other figurative pairs like sarcasm + irony or hyperbole + simile.
-- **Clean data augmentation setup**: Using a fixed 50% augmentation ratio + identical BERT hyperparameters + 8 benchmarks ensures the "hybrid > metonymy-only" conclusion is free from cherry-picking suspicions.
+- **MLM as a "Domain Gate"**: Translating "intra-domain constraints" into BERT token-level log-likelihood is a clever, training-free way to implement a domain classifier.
+- **Forcing-device Explanation**: Linking empirical observations to selectional preference creates a solid theoretical loop back to Lakoff–Johnson theory.
+- **Zero-cost Hybrid Splicing**: This avoids complex independent generation and alignment by exploiting the syntactic complementarity of the two figurative types.
+- **Clean Experimental Design**: Fixed augmentation ratios and consistent hyperparameters across 8 benchmarks make the "Hybrid > Metonymy-only" conclusion highly credible.
 
 ## Limitations & Future Work
-- The authors admit covering only location-for-people / institution-for-people subject metonymy; object metonymy and part-whole relations are not included. The hybrid success rate (74%) also implies that 26% of generations fail, meaning quality is capped by the LLM pipeline.
-- The inconsistency in the "metonymy → metaphor" direction during evaluation was not convincingly explained, with only a placeholder conclusion of "deeper semantic complexities" in Appendix B.
-- Lack of explicit domain mapping labels prevents fine-grained research into "which domain pairs are more likely to trigger figurative fusion." Future directions include adding conceptual domain ontologies, expanding to object metonymy, and extending the pipeline to non-English languages (where metaphor/metonymy vary significantly).
+- The study only covers location-for-people / institution-for-people subject metonymy; object metonymy and other relations are excluded. The 74% success rate also implies 26% of generation remains flawed.
+- The lack of consistent results in the "Metonymy → Metaphor" direction is not fully explained, noted only as "deep semantic complexities" in the appendix.
+- No explicit domain mapping labels are provided, preventing fine-grained research on which domain pairs trigger figurative fusion. Future work should include conceptual ontologies and non-English extensions.
 
 ## Related Work & Insights
-- **vs PRINCIPLES / MERMAID (Metaphor Generation)**: MERMAID uses symbolism + discriminative decoding to control metaphoricity but focuses only on metaphor. Ours applies "controlled + flexible" logic to both metonymy and metaphor.
-- **vs ChainNet (Maudslay et al. 2024)**: ChainNet encodes metonymy/metaphor into WordNet relationship chains; Ours provides sentence-level quadruplet data, making the two complementary.
-- **vs ConMeC (Ghosh & Jiang 2025)**: The same authors' previous work focused only on common-noun metonymy classification. This paper upgrades to a "generation + analysis + augmentation" trinity, completing the infrastructure.
+- **vs. PRINCIPLES / MERMAID**: While prior work used symbolic or discriminative decoding for metaphoricity, this work applies "constrained + free" logic to both metonymy and metaphor.
+- **vs. ChainNet (Maudslay et al. 2024)**: Whereas ChainNet maps figurative relations in WordNet, this work provides a sentence-level quadruplet dataset.
+- **vs. ConMeC (Ghosh & Jiang 2025)**: From the same authors, this paper upgrades from a simple common-noun classification benchmark to a complete "generation + analysis + augmentation" ecosystem.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First joint metonymy + metaphor dataset + empirical validation of the forcing-device hypothesis, though the pipeline (candidate + scoring + polish) has precedents in figurative generation literature.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 downstream benchmarks + 4 LLM zero-shot + 5 LLM framework generalizations + cross-domain experiments + multi-angle validation via surprisal/embeddings.
-- Writing Quality: ⭐⭐⭐⭐⭐ The closure between "experimental phenomena → cognitive linguistic explanation" is excellent, and the error analysis (Table 10) is thorough.
-- Value: ⭐⭐⭐⭐ Open-sourced dataset and framework provide new infrastructure for figurative language NLP, though the limitation to location metonymy narrows immediate applicability.
+- Novelty: ⭐⭐⭐⭐ First joint metonymy + metaphor dataset and empirical validation of the forcing-device hypothesis.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 downstream benchmarks, 4 LLM zero-shot tests, 5 LLM framework trials, and multi-angle validation (surprisal/embeddings).
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent loop between experimental phenomena and cognitive theory.
+- Value: ⭐⭐⭐⭐ New infrastructure for figurative language NLP; however, the focus on location metonymy limits immediate generalizability.
 
 <!-- RELATED:START -->
 
@@ -135,8 +147,8 @@ BERT embedding similarity (verifying "metonymy is more explicit in hybrids"): $\
 - [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
 - [\[ICCV 2025\] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion](../../ICCV2025/nlp_understanding/balancing_task-invariant_interaction_and_task-specific_adaptation_for_unified_im.md)
 - [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
-- [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

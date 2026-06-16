@@ -2,121 +2,129 @@
 title: >-
   [Paper Note] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"
 description: >-
-  [ACL2026][LLM Agent][Tool Calling] ToolGrad reverses the tool-use data generation process from "query-first with DFS tool-chain search" to "generating executable tool chains first…
+  [ACL 2026][LLM Agent][answer-first] ToolGrad reverses the tool-use data generation process from "writing user queries first and searching for tool chains via DFS" to "generating successfully executable tool chains first and then back-inferring user queries." By employing a textual-gradient-like API selection loop to construct ToolGrad-500, the framework
 tags:
-  - "ACL2026"
-  - "LLM Agent"
-  - "Tool Calling"
-  - "Synthetic Data"
-  - "Textual Gradients"
-  - "Answer-first"
-  - "API Workflow"
+  - ACL 2026
+  - LLM Agent
+  - answer-first
 date: 2026-05-08
-content_hash: 0183134a4d465d1c
+content_hash: 7f5a7bd89ac6f37a
 ---
-
 # ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"
 
 **Conference**: ACL2026  
 **arXiv**: [2508.04086](https://arxiv.org/abs/2508.04086)  
 **Code**: https://github.com/zhongyi-zhou/toolgrad  
-**Area**: llm_agent / Tool-use Data Generation  
-**Keywords**: Tool Calling, Synthetic Data, Textual Gradients, Answer-first, API Workflow
+**Area**: LLM Agent / Tool-use Data Generation  
+**Keywords**: Tool calling, synthetic data, textual gradients, answer-first, API workflow
 
 ## TL;DR
-ToolGrad reverses the tool-use data generation process from "query-first with DFS tool-chain search" to "generating executable tool chains first, then back-inferring user queries." By employing an API selection loop similar to textual gradients to construct ToolGrad-500, the framework achieves a 99.8% pass rate. Small models like Gemma-3 trained on this data outperform various strong closed-source models in single-turn tool calling.
+ToolGrad reverses the tool-use data generation process from "writing user queries first and searching for tool chains via DFS" to "generating successfully executable tool chains first and then back-inferring user queries." By employing a textual-gradient-like API selection loop to construct ToolGrad-500, the framework achieves a data generation pass rate of 99.8%. Small models like Gemma-3 trained on this data outperform several powerful closed-source models in single-turn tool invocation.
 
 ## Background & Motivation
-**Background**: Tool calling allows LLMs to access search, databases, code execution, and various APIs, providing a critical path to reducing hallucinations, enhancing factuality, and executing complex tasks. The key to training such models is not just the API list, but a large number of "user request - tool calling chain - final answer" supervised samples.
+**Background**: Tool calling enables LLMs to access search, databases, code execution, and various APIs, providing a critical path for reducing hallucination, enhancing factuality, and executing complex tasks. The key to training such models is not just the list of APIs, but a large number of "user request - tool calling chain - final answer" supervised samples.
 
-**Limitations of Prior Work**: Mainstream synthesis schemes typically let an LLM generate a user query based on a set of APIs, then use an agent to find a feasible tool chain via DFS or ReAct-style exploration. This query-first process is expensive, has a high failure rate, and failed samples waste substantial tool calls. Even worse, even if DFS finds a successful path, low-quality or incorrect tool steps may be mixed into the exploration, contaminating the model when used as "ground truth" for training.
+**Limitations of Prior Work**: Mainstream synthesis schemes typically let an LLM generate a user query based on a set of APIs, then use an agent to find a feasible tool chain through DFS or ReAct-style exploration. This query-first process is costly, has a high failure rate, and failed samples waste extensive tool calls. Worse, even if DFS finds a successful path, low-quality or incorrect tool steps may be mixed into the exploration, contaminating the model when used as "ground truth" for training.
 
-**Key Challenge**: Real user problems are naturally fuzzy, while tool chains are concrete and verifiable. Searching for an answer from a fuzzy query requires expensive exploration; however, if an executable tool chain is already available, back-inferring a query that can be solved by that chain is much easier. The problem lies in how to directly generate complex and effective tool chains from an 8k-scale API database.
+**Key Challenge**: Real user questions are naturally vague, whereas tool chains are concrete and verifiable. Searching for an answer from a vague query requires expensive exploration; however, if an executable tool chain is already available, back-inferring a query that can be solved by that tool chain is much simpler. The problem lies in how to directly generate complex and effective tool chains from a database of 8k APIs.
 
-**Goal**: The authors aim to design a data generation framework with a high pass rate, low tool calling cost, and the ability to produce complex multi-API workflows. They seek to verify whether small models trained on this inexpensive synthetic data can acquire authentic tool-calling capabilities on ToolBench and BFCL.
+**Goal**: The authors aim to design a data generation framework with a high pass rate, low tool-calling cost, and the ability to produce complex multi-API workflows. They seek to verify whether small models trained on this inexpensive synthetic data can acquire real tool-calling capabilities on ToolBench and BFCL.
 
-**Key Insight**: The paper draws on the "textual gradient" concept from TextGrad but replaces the optimized object from a prompt to a dataset. Instead of having a critic write natural language suggestions at each step, the LLM selects the most valuable API from candidate API execution reports. this discrete selection is regarded as the "gradient" of the data generation process.
+**Key Insight**: The paper draws inspiration from the "textual gradient" concept in TextGrad but switches the optimization target from prompts to the dataset. Instead of having a critic write natural language suggestions, the LLM selects the most valuable API from the execution reports of candidate APIs, treating this discrete selection as the "gradient" of the data generation process.
 
-**Core Idea**: Construct a successful tool answer first, then generate the corresponding user query. Tool chain construction is completed through a four-step iteration of API proposal, execution, selection, and workflow update, avoiding the large-scale failed exploration inherent in query-first searching.
+**Core Idea**: Construct a successful tool answer first, then generate the corresponding user query. Tool chain construction is completed through a four-step iteration: API proposal, execution, selection, and workflow update, avoiding large-scale failed exploration in query-first searching.
 
 ## Method
 
 ### Overall Architecture
-The data samples generated by ToolGrad are triplets $(q, \mathcal{W}, r)$: $q$ is the user query, $\mathcal{W}$ is a workflow composed of multiple API chains, and $r$ is the final answer given to the user based on the workflow. Unlike ReAct's step-by-step calling, the reasoning model trained here predicts the complete tool calling in a single output, necessitating structured API workflows in the data.
+ToolGrad addresses the issues where tool-calling training data is "expensive to generate, prone to failure, and easily contaminated with incorrect tool steps" by reversing the generation direction. Each produced sample is a triplet $(q, \mathcal{W}, r)$: $q$ is the user query, $\mathcal{W}$ is the workflow consisting of multiple API chains, and $r$ is the final answer to the user based on that workflow. Since the trained inference model predicts the complete tool invocation in a single output (rather than ReAct-style step-by-step calls), the data must include structured API workflows.
 
-The entire generation process starts with a current workflow, taking a random API mini-batch in each round. The API Proposer first selects a few potentially useful APIs and usage instructions from the mini-batch; several API Executors practically call these APIs in parallel and generate execution reports; the API Selector compares the reports and chooses the API most worth incorporating into the workflow and the chain it should append to; the Workflow Updater writes this API into the workflow and asks the LLM to generate a new user query and final answer based on the updated workflow. After several iterations, an answer-first sample is completed.
+The generation starts from an initial workflow and "grows" it round by round. In each round, a random API mini-batch is sampled, and four modules work in sequence: the API Proposer selects a few potentially useful APIs and usage instructions from the mini-batch; multiple API Executors execute these APIs in parallel and generate individual execution reports; the API Selector compares these reports to choose the most valuable API and its insertion point in the workflow; the Workflow Updater deterministically writes the API into the workflow and asks the LLM to generate a new user query and final answer based on the updated workflow. After several rounds, an answer-first sample is fully formed.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Current Triplet (q, W, r) + Random API mini-batch (bs=50)"]
+    subgraph LOOP["Four-module textual-gradient loop"]
+        direction TB
+        P["API Proposer: Screen ≤3 candidate APIs from batch"] --> E["API Executor: Parallel real calls + individual execution reports"]
+        E --> S["API Selector: Select most valuable API & join position (= textual gradient)"]
+        S --> U["Workflow Updater: Deterministically append API to workflow"]
+    end
+    A --> P
+    U --> R["Answer-first back-inference: Workflow first, then rewrite query & response"]
+    R -->|Iteration < 10, next round| A
+    R -->|Sample finalized| N["Negative tool sampling + BFCL single-turn formatting"]
+    N --> O["ToolGrad-500 Dataset"]
+```
 
 ### Key Designs
-1.  **Answer-first Toolchain Generation**:
-    - **Function**: Ensure the tool calling chain is executable and successful first, then generate the user request that can be answered by that chain.
-    - **Mechanism**: ToolGrad does not start from fuzzy queries to search for answers; instead, it uses valid API calls as generation anchors. Every time an API is added to the workflow, the system updates the corresponding user query and response to maintain triplet consistency.
-    - **Design Motivation**: Tool chains are verifiable structured objects, whereas queries are natural language descriptions. Back-inferring a query from a tool chain is easier than searching for a tool chain from a query, and it prevents "unsolvable queries" and failed tool steps from entering the training set at the source.
 
-2.  **Four-module Textual-gradient Loop**:
-    - **Function**: Progressively expand complex workflows within large-scale API databases while controlling the tool call cost per round.
-    - **Mechanism**: The API Proposer uses a standard LLM to propose at most $m=3$ candidates from an API batch of size $bs=50$; the API Executor uses an LLM agent supporting tool use to actually execute candidate APIs and return success/failure along with call history; the API Selector reads execution reports to choose the most valuable API and its position in the chain; the Workflow Updater deterministically appends the API and lets the LLM generate a new query/response.
-    - **Design Motivation**: Since tool execution is the truly expensive part, the proposer is used first to filter out most irrelevant APIs. The discrete choice of the Selector is equivalent to telling the system "in which API direction to optimize the data sample," which serves as the textual gradient in ToolGrad.
+**1. Answer-first toolchain generation: Ensure path execution first, then infer user questions**
+Real user questions are naturally vague. Searching for feasible tool chains from vague queries using DFS/ReAct is both expensive and frequently unsuccessful. Even when a successful path is found, low-quality steps mixed in during search pollute the training as "ground truth." ToolGrad transforms this search problem into a more controllable generation problem: instead of starting from a query, it treats executable API calls as generation anchors. As each API is merged into the workflow, the system synchronously updates the corresponding query and response to maintain triplet consistency. Since tool chains are structured and verifiable, back-inferring natural language descriptions is much easier and eliminates "unsolvable queries" and failed steps from the training set.
 
-3.  **Negative Tool Sampling and Single-turn Function Call Formatting**:
-    - **Function**: Enable training samples to simulate real-world deployment scenarios where "visible APIs outnumber required APIs" and adapt to BFCL-style single-turn tool calling training.
-    - **Mechanism**: Given a positive API in the workflow, the authors sample additional negative APIs based on embedding similarity, forcing the model to face a top-$p$ set of candidate tools rather than just seeing the correct one. In the generation configuration, each sample runs for 10 iterations, the number of negative tools is set to $p=10$, and gemini-1.5-flash-lite is used to generate 500 samples with different seeds, forming ToolGrad-500.
-    - **Design Motivation**: If only correct tools are provided during training, the model cannot learn tool selection; providing the full 8k APIs is unrealistic. Similar negative samples provide a harder training environment closer to RAG retrieval-based tool selection.
+**2. Four-module textual-gradient loop: Using discrete API selection as the data generation "gradient"**
+To step-by-step build complex workflows from an 8k-scale API database while minimizing per-round tool-calling costs, ToolGrad borrows the "textual gradient" idea from TextGrad. It changes the optimization target from prompts to data samples: the API Proposer uses a standard LLM to suggest at most $m=3$ candidates from an API batch of size $bs=50$, filtering out the vast majority of irrelevant APIs (since execution is the expensive part). The API Executor uses an LLM agent supporting tool calls to actually run these candidates, returning success/failure and call history. The API Selector reads the execution reports and chooses the most valuable API and its position—this discrete choice acts as a signal telling the system "which API direction to optimize the current data sample," serving as the textual gradient in ToolGrad. Finally, the Workflow Updater deterministically appends the API and rewrites the query/response without relying on search.
+
+**3. Negative tool sampling & single-turn function calling formatting: Simulating real deployment where "visible APIs exceed required APIs"**
+If only correct tools are provided during training, the model cannot learn tool selection. However, presenting the full 8k APIs is impractical. ToolGrad takes a middle ground: for each positive API in the workflow, it samples a batch of similar negative APIs based on embedding similarity. This forces the model to face a top-$p$ candidate set rather than just the correct answers, providing a more difficult training environment closer to RAG-retrieved tool selection. For generation, each sample undergoes 10 iterations with $p=10$ negative tools, using gemini-2.5-flash-lite with 500 different seeds to form the ToolGrad-500 dataset, organized in the BFCL style for single-turn tool invocation.
 
 ### Loss & Training
-ToolGrad is a data generation framework and does not train the generator itself. After generating ToolGrad-500, the authors use supervised fine-tuning to train Gemma-3 1B, 4B, and 12B models to output Python-style tool use given OpenAI-style tool definitions. Comparative data includes ToolBench-generated data, and baseline models include the Gemini-1.5, Claude-3.5, and GPT-4o series closed-source models, as well as tool-calling models like ToolACE and Hammer. Evaluation is primarily conducted on ToolBench-I3 single-turn tool use and BFCL v1/v2 single-turn tool calling.
+ToolGrad is a data generation framework and does not train the generator itself. After generating ToolGrad-500, the authors use supervised fine-tuning to train Gemma-3 1B, 4B, and 12B models to output Python-style tool use given OpenAI-style tool definitions. Control data includes ToolBench-generated data, and comparison models include closed-source models such as Gemini-2.5, Claude-4.5, and GPT-5 series, as well as tool-calling models like ToolACE and Hammer. Evaluation targets ToolBench-I3 and BFCL v1/v2 single-turn tool calling.
 
 ## Key Experimental Results
 
 ### Main Results
-The following table compares the data generation efficiency of query-first DFS versus ToolGrad. ToolGrad is not only easier to succeed with but also generates more complex tool chains.
+The following table compares the generation efficiency of query-first DFS and ToolGrad. ToolGrad is not only more successful but also generates more complex tool chains.
 
 | Data Generation Method | Pass rate ↑ | Avg. GT Tools ↑ | LLM cost ↓ | Tool cost ↓ |
-| :--- | :--- | :--- | :--- | :--- |
-| DFS / ToolBench Style | 63.8% | 2.1 | 64.5 | 34.3 |
-| ToolGrad | 99.8% | 3.4 | 63.9 | 20.0 |
+|:-----------------------|:------------|:----------------|:-----------|:------------|
+| DFS / ToolBench-style  | 63.8%       | 2.1             | 64.5       | 34.3        |
+| ToolGrad               | 99.8%       | 3.4             | 63.9       | 20.0        |
 
-This table provides the most convincing evidence: ToolGrad's LLM call cost barely increases, while the tool call cost drops from 34.3 to 20.0, the pass rate rises from 63.8% to 99.8%, and average tool chain complexity increases from 2.1 to 3.4. The authors also checked failure logs and found only 3 API execution failures resulting in empty samples out of 500 generations, a failure rate of approximately 0.2%.
+This table is the most convincing evidence: LLM invocation costs remain nearly constant while tool-calling costs drop from 34.3 to 20.0. Simultaneously, the pass rate rises from 63.8% to 99.8%, and the average tool chain complexity increases from 2.1 to 3.4. Failed log analysis showed only 3 empty samples due to API execution failure out of 500 runs (~0.2% failure rate).
 
 ### Ablation Study
-The authors further compared the absolute judge scores of small models trained on ToolGrad-500 against closed-source models on ToolBench single-turn tool use.
+The authors further compare the absolute judge scores of small models trained on ToolGrad-500 against closed-source models on ToolBench single-turn tool use.
 
-| Model / Data | Score | Remarks |
-| :--- | :--- | :--- |
-| ToolGrad-Gemma-3-1B | 14.1 | 1B model already exceeds Gemini-1.5-flash |
-| ToolGrad-Gemma-3-4B | 17.6 | Second highest in the table |
-| ToolGrad-Gemma-3-12B | 19.6 | Highest in the table |
-| Gemini-1.5-flash | 6.9 | Teacher for ToolGrad data generation |
-| Gemini-1.5-pro | 11.4 | Closed-source strong model baseline |
-| Claude-3.5-sonnet | 15.4 | Closed-source strong model baseline |
-| GPT-4o-mini | 14.7 | Closed-source strong model baseline |
+| Model / Data             | Score | Remarks                                         |
+|:-------------------------|:------|:------------------------------------------------|
+| ToolGrad-Gemma-3-1B      | 14.1  | 1B model already exceeds Gemini-2.5-flash-lite |
+| ToolGrad-Gemma-3-4B      | 17.6  | Second highest in the table                     |
+| ToolGrad-Gemma-3-12B     | 19.6  | Highest in the table                            |
+| Gemini-2.5-flash-lite    | 6.9   | Teacher model for ToolGrad data generation      |
+| Gemini-2.5-pro           | 11.4  | Closed-source SOTA baseline                     |
+| Claude-4.5-opus          | 15.4  | Closed-source SOTA baseline                     |
+| GPT-5-nano               | 15.4  | Closed-source SOTA baseline                     |
+| GPT-5-mini               | 14.7  | Closed-source SOTA baseline                     |
 
-Training comparisons within the same set of Gemma models also support data effectiveness: ToolGrad improves Gemma-3-1B from 1.0 to 14.1, 4B from 11.2 to 17.6, and 12B from 9.8 to 19.6. The paper also reports that ToolGrad models bring overall score improvements of +8.1, +8.0, and +6.3 to 1B, 4B, and 12B respectively on BFCL, with larger improvements in the non-live synthetic subset and gains of +1.93, +4.74, and +4.22 in the live subset.
+Training comparisons within the same Gemma model group also support data validity: ToolGrad improves Gemma-3-1B from 1.0 to 14.1, 4B from 11.2 to 17.6, and 12B from 9.8 to 19.6. The paper also reports overall score gains on BFCL of +8.1, +8.0, and +6.3 for the 1B, 4B, and 12B models respectively, with larger gains in the non-live synthetic subset and gains of +1.93, +4.74, and +4.22 in the live subset.
 
 ### Key Findings
-- The answer-first process significantly reduces contamination from unsolvable queries and failed trajectories. Compared to query-first, ToolGrad is anchored by executable tool chains during generation, making samples naturally easier to verify.
-- The fact that small models can exceed the teacher model is a strong signal. Although Gemini-1.5-flash participated in data generation, the trained ToolGrad-Gemma-3-12B outperforms it on ToolBench and BFCL, indicating that the data structure itself provides additional supervisory value.
-- Scaling does not lead to infinite improvement. Pass rates tend to saturate around 8-12 iterations; increasing the sample size from 100 to 500/1k shows benefits, but performance decreases beyond that. The authors suggest the core reason is the lack of cross-sample memory, leading to repetitive generated tool usage patterns.
+- The answer-first process significantly reduces unsolvable queries and failed trajectory contamination. By anchoring generation to successful tool chains, samples are naturally easier to verify.
+- Small models outperforming the teacher model is a strong signal. Although Gemini-2.5-flash-lite generated the data, ToolGrad-Gemma-3-12B outperforms it on ToolBench and BFCL, suggesting the data structure itself provides additional supervisory value.
+- Scaling does not improve performance indefinitely. The pass rate tends to saturate around 8-12 iterations; benefits are observed when increasing sample counts from 100 to 500/1k, but performance declines beyond that. The authors attribute this to the lack of cross-sample memory, leading to repeated utility of specific tool patterns.
 
 ## Highlights & Insights
-- The "answer first, query second" reversal is highly intuitive from an engineering perspective. In tool-calling scenarios, executable chains are easier to verify than natural language queries. Ensuring the validity of the answer before back-inferring the question converts the hardest search problem into a more controllable generation problem.
-- The adaptation of textual gradients in ToolGrad is noteworthy. Instead of having the LLM write vague suggestions, it has the LLM select an API within an execution report. This discrete action is both interpretable and directly changes the direction of data generation.
-- The paper evaluates data generation efficiency alongside downstream model capability, avoiding merely proving that "generation is cheap." Crucially, small models trained on cheaper data demonstrate generalization on OOD toolsets.
+- The "answer before question" reversal is deeply rooted in engineering intuition. In tool-use scenarios, executable chains are easier to verify than natural language queries. Ensuring valid answers before back-inferring questions transforms a difficult search problem into a more controllable generation problem.
+- The adaptation of textual gradients is noteworthy. Instead of having the LLM write vague advice, ToolGrad has the LLM perform a discrete action—choosing an API from an execution report—which is both interpretable and directly alters the data generation trajectory.
+- The paper evaluates generation efficiency alongside downstream model capability, avoiding the trap of only proving that generation is "cheap." More importantly, small models trained on cheaper data generalize to OOD tool sets.
 
 ## Limitations & Future Work
-- The current training format is biased towards single-turn, one-time output of complete tool calls and does not directly cover multi-step interactions like ReAct/DFS or agent frameworks with intermediate reasoning.
-- The paper only verifies the effect of SFT using ToolGrad data and does not explore the value of these high pass-rate tool chain data in RL or preference optimization.
-- Generated queries are still back-inferred by an LLM, which may not match real user expression habits regarding language style, ambiguity, or missing context.
-- The scaling plateau is a clear bottleneck. The lack of global memory results in different samples repeatedly exploring similar API combinations. Future work could incorporate shared memory, coverage constraints, or DPP-style diversity selection to improve data scaling efficiency.
+- The current training format focuses on single-turn, one-shot outputs of complete tool calls, which does not directly cover ReAct/DFS-style multi-step interactions or agent frameworks with intermediate reasoning.
+- The paper only validates the effect of SFT using ToolGrad data and does not explore the value of these high-pass-rate tool chain datasets in RL or preference optimization.
+- Query generation still relies on LLM back-inference, which may not match real user expression patterns—such as linguistic style, vagueness, or context omissions.
+- The scaling plateau is a clear bottleneck. The lack of global memory leads to different samples redundantly exploring similar API combinations. Future work could incorporate shared memory, coverage constraints, or diversity-based selection like DPP to improve data scaling efficiency.
 
 ## Related Work & Insights
-- **vs ToolBench / ToolLLM**: ToolBench generates queries first then uses DFS to search for tool chains, which is comprehensive but expensive and prone to failure. ToolGrad generates tool chains first, sacrificing some query-first naturalness for high solvability and pass rates.
-- **vs TextGrad**: TextGrad uses natural language feedback to optimize prompts. ToolGrad borrows the "textual gradient" concept, but the gradient is manifested as the API Selector's discrete choice based on execution reports, used to optimize data samples rather than prompts.
-- **vs ToolACE / Hammer**: ToolACE and Hammer lean more towards training or constructing robust tool-calling models. ToolGrad focuses on the data generation mechanism and can serve as a post-training data source for these models, particularly suitable for quickly bootstrapping tool capabilities in small models.
+- **vs ToolBench / ToolLLM**: ToolBench generates queries first and then uses DFS to search for tool chains, offering broad coverage but at high cost and failure rates. ToolGrad generates tool chains first, sacrificing some query naturalness for high resolvability and pass rate.
+- **vs TextGrad**: TextGrad uses natural language feedback to optimize prompts. ToolGrad adapts the "textual gradient" concept, but the gradient is manifested as the API Selector's discrete choice among execution reports, used to optimize data samples rather than prompts.
+- **vs ToolACE / Hammer**: ToolACE and Hammer focus more on training strong tool-calling models. ToolGrad focuses on the data generation mechanism and can serve as a data source for post-training these models, particularly for bootstrapping small model tool capabilities.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The answer-first reversal is simple but effective, and applying textual gradients to API selection is distinctive.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Data efficiency, ToolBench, BFCL, and scaling studies are all covered, though multi-turn agent and RL usage experiments are still missing.
-- Writing Quality: ⭐⭐⭐⭐☆ The motivation is clear, and the framework diagrams and four-module descriptions are easy to understand.
+- Novelty: ⭐⭐⭐⭐☆ The answer-first reversal is simple yet effective, and the application of textual gradients to API selection is distinctive.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers data efficiency, ToolBench, BFCL, and scaling studies, though multi-turn agent and RL experiments are missing.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation, easy-to-understand framework and module descriptions, though some cost metrics could be explained in more detail.
 - Value: ⭐⭐⭐⭐⭐ Tool-use data generation is a core bottleneck in agent training; this paper provides a low-cost, reproducible, and strong baseline.
 
 <!-- RELATED:START -->
@@ -126,9 +134,9 @@ Training comparisons within the same set of Gemma models also support data effec
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](../../ICLR2026/llm_agent/agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 
 </div>

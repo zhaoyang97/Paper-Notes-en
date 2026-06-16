@@ -2,71 +2,95 @@
 title: >-
   [Paper Note] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 description: >-
-  [CVPR 2026][Segmentation][Visual geo-localization] GeoSURGE introduces hierarchical geographic embeddings and a semantic fusion module, framing global image geo-localization as a matching problem between visual represent…
+  [CVPR 2026][Segmentation][Paper Note] GeoSURGE proposes hierarchical geographic embeddings and a semantic fusion module, modeling the global image geo-localization problem as a matching task between visual representations and learned geographic representations. It achieves SOTA on 22 out of 25 metrics across 5 benchmarks.
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Visual geo-localization"
-  - "semantic fusion"
-  - "hierarchical geographic embeddings"
-  - "contrastive learning"
-  - "cross-attention"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: c370371bcc60b93c
+content_hash: 6133121523adc5fc
 ---
-
 # GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.01448](https://arxiv.org/abs/2510.01448)  
-**Code**: N/A  
-**Area**: Image Retrieval & Localization
-**Keywords**: Visual geo-localization, semantic fusion, hierarchical geographic embeddings, contrastive learning, cross-attention
+**Code**: None  
+**Area**: Image Retrieval and Localization  
+**Keywords**: Visual Geo-localization, Semantic Fusion, Hierarchical Geographic Embeddings, Contrastive Learning, Cross-attention
 
 ## TL;DR
-GeoSURGE introduces hierarchical geographic embeddings and a semantic fusion module, framing global image geo-localization as a matching problem between visual representations and learned geographic representations. The method achieves state-of-the-art performance on 22 out of 25 metrics across 5 benchmarks.
+GeoSURGE proposes hierarchical geographic embeddings and a semantic fusion module, modeling the global image geo-localization problem as a matching task between visual representations and learned geographic representations. It achieves SOTA on 22 out of 25 metrics across 5 benchmarks.
 
 ## Background & Motivation
 
-**Background**: Global visual geo-localization aims to determine the geographic location of an image solely from its visual content. Existing approaches fall into two main categories: retrieval-based methods (matching a query image against a large-scale geotagged image database) and classification-based methods (discretizing the Earth's surface into geographic cells and training a classifier). Recent works such as GeoCLIP, which replaces image references with GPS coordinates, and Img2Loc and G3, which leverage large vision-language models, have further advanced performance.
+**Background**: Global visual geo-localization aims to determine the location of an image on Earth based solely on its visual content. Existing methods primarily fall into two categories: retrieval-based methods (matching a query image against a large-scale geotagged database) and classification-based methods (discretizing the Earth's surface into geographic cells and training a classifier). Recently, GeoCLIP replaced image references with GPS coordinates, while Img2Loc and G3 introduced Large Vision-Language Models (LVLMs) to further improve performance.
 
-**Limitations of Prior Work**: Retrieval-based methods require large-scale similarity search at inference time, incurring substantial computational cost. Classification-based methods must trade off between spatial resolution and global coverage. More fundamentally, the low dimensionality of GPS coordinates makes it difficult to learn expressive geographic representations. While GeoCLIP partially addresses this with Random Fourier Features, the low-dimensional GPS bottleneck remains.
+**Limitations of Prior Work**: Retrieval-based methods suffer from high computational overhead during inference due to large-scale similarity searches. Classification-based methods must compromise between spatial resolution and global coverage. Fundamentally, the dimensionality of GPS coordinates is too low to learn highly expressive geographic representations. While GeoCLIP uses Random Fourier Features to mitigate this, the low-dimensional GPS representation remains a bottleneck.
 
-**Key Challenge**: Geographic coordinates (latitude and longitude) are inherently 2D scalars and struggle to encode rich geographic semantics. Moreover, image appearance features are sensitive to changes in illumination, weather, and viewpoint, limiting the robustness of purely RGB-based representations.
+**Key Challenge**: Geographic coordinates (latitude/longitude) are essentially two-dimensional scalars, making it difficult for them to carry rich geographic semantics. Furthermore, the appearance of images is easily affected by lighting, weather, and viewpoint changes, making single RGB features insufficient for robustness.
 
-**Goal**: (1) How to construct geographic representations that are sufficiently expressive to yield discriminative features across geographic regions at multiple scales? (2) How to make visual representations more robust by incorporating scene semantic information to complement appearance features?
+**Goal**: (1) How to make geographic representations expressive enough so that geographic regions at different scales have distinguishable features? (2) How to make visual representations more robust by fusing scene semantic information to complement appearance features?
 
-**Key Insight**: The authors observe that the notion of geographic cells from classification methods can be combined with the matching paradigm of retrieval methods — rather than treating geographic cells as discrete class labels, a trainable embedding vector is learned for each cell. Simultaneously, scene structural information from semantic segmentation is used to supplement RGB appearance features.
+**Key Insight**: The authors observe that the concept of geographic cells from classification methods can be combined with retrieval methods—not by treating cells as discrete labels, but by learning a trainable embedding vector for each cell. Simultaneously, scene structural information provided by semantic segmentation can be used to augment RGB appearance features.
 
-**Core Idea**: Replace low-dimensional GPS coordinates with hierarchical learnable geographic embeddings as the geographic representation, and replace purely appearance-based features with a latent cross-attention fusion of semantic segmentation and RGB modalities.
+**Core Idea**: Use hierarchical learnable geographic embeddings instead of low-dimensional GPS coordinates for geographic representation, and employ a latent cross-attention fusion of semantic segmentation and RGB features instead of pure appearance features.
 
 ## Method
 
 ### Overall Architecture
-GeoSURGE takes an RGB image as input and predicts its latitude and longitude on Earth. The system consists of two core components: (1) **Geographic representation** — the Earth's surface is recursively partitioned into multi-level geographic cells using S2 Geometry, with each cell assigned a learnable embedding vector, forming a hierarchical distributed geographic representation; (2) **Visual representation** — RGB features are extracted via a CLIP ViT backbone, while semantic segmentation maps are generated by OneFormer, and the two are fused into a robust visual feature vector via latent cross-attention. The model is trained with an InfoNCE contrastive objective to align visual-geographic feature pairs. At inference, hierarchical matching is performed level by level, and the product of probabilities across levels yields the final prediction.
+The input to GeoSURGE is an RGB image, and the output is its predicted latitude and longitude. The system consists of two core components: (1) Geographic Representation—recursively partitioning the Earth's surface into multi-level geographic cells using S2 Geometry, where each cell learns an embedding vector to form a hierarchical distributed geographic representation; (2) Visual Representation—extracting RGB features with CLIP ViT and generating semantic segmentation maps with OneFormer, then fusing them into a robust visual feature vector through latent cross-attention. Training utilizes an InfoNCE contrastive learning objective to align visual-geographic feature pairs. During inference, matching is performed level-by-level through the hierarchy, with the product of probabilities at each level serving as the final prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Input RGB Image"]
+    subgraph FUSE["Semantic Fusion Module"]
+        direction TB
+        CLIP["CLIP ViT-Large<br/>Extract RGB patch / CLS tokens"]
+        ONE["OneFormer<br/>Generate semantic segmentation tokens"]
+        CA["Latent cross-attention<br/>Semantics as query to aggregate RGB (3 blocks)"]
+        CLIP --> CA
+        ONE --> CA
+    end
+    subgraph GEO["Hierarchical Geographic Embeddings"]
+        direction TB
+        S2["S2 Geometry Recursive Partitioning<br/>7 levels of coarse-to-fine cells"]
+        EMB["One learnable 768-dim embedding per cell"]
+        S2 --> EMB
+    end
+    IMG --> CLIP
+    IMG --> ONE
+    CA --> V["Visual feature vector v"]
+    EMB --> G["Geographic embedding g"]
+    V --> MATCH
+    G --> MATCH
+    subgraph MATCH["Contrastive Training + Hierarchical Inference"]
+        direction TB
+        ALIGN["Training: InfoNCE alignment of v and g (Sum of 7-level losses)"]
+        INFER["Inference: Chain multiplication of softmax probabilities"]
+    end
+    MATCH --> OUT["Lat/Lon Prediction"]
+```
 
 ### Key Designs
 
-1. **Hierarchical Geographic Embeddings**
+**1. Hierarchical Geographic Embeddings: Allowing each region to accumulate its own visual features rather than relying on low-dimensional GPS coordinates.**
 
-    - **Function**: Provide multi-scale distributed feature representations for the Earth's surface.
-    - **Mechanism**: Google S2 Geometry projects the Earth's surface onto the six faces of a cube and recursively subdivides them. Any cell containing more than $\tau_{max}$ samples is further split; cells with fewer than $\tau_{min}$ samples are discarded. By varying $\tau_{max}$ (from 25,000 to 500, yielding 7 levels), a coarse-to-fine multi-level partition is produced. Each geographic cell at each level is associated with a learnable 768-dimensional embedding vector, aligned with image features via contrastive learning during training. Embeddings at different levels are learned independently to encourage diversity; at inference, probabilities from all levels are multiplied to obtain the hierarchical inference result.
-    - **Design Motivation**: GPS coordinates are 2D scalars with limited expressiveness and require auxiliary components (e.g., Random Fourier Features) to enhance them. Learnable embedding vectors can accumulate visual information from all training images in a region, yielding richer geographic representations. The multi-scale hierarchical design enables coarse and fine-grained information to complement each other.
+Latitude and longitude are merely two scalars with naturally limited expressiveness. GeoCLIP uses Random Fourier Features essentially to "add dimensions" to this low-dimensional representation. GeoSURGE takes a different approach: projecting the Earth's surface onto the six faces of a cube using Google S2 Geometry, then recursively subdividing into cells. If a cell contains more than $\tau_{max}$ training samples, it splits; if it has fewer than $\tau_{min}$, it is excluded. By decreasing $\tau_{max}$ from 25,000 to 500, a 7-level coarse-to-fine partition is obtained. Each cell in each partition corresponds to a **learnable 768-dimensional embedding vector**, aligned directly with image features via contrastive learning. Consequently, a region's embedding "absorbs" visual information from all images within it during training, forming a much richer geographic representation than GPS coordinates. Embeddings at different levels are learned independently to maintain diversity, where coarse levels provide high confidence and fine levels provide high resolution.
 
-2. **Semantic Fusion Module**
+**2. Semantic Fusion Module: Using semantic segmentation to guide RGB feature aggregation rather than treating semantics as an independent parallel feature.**
 
-    - **Function**: Inject semantic segmentation information into RGB appearance features to generate robust visual representations.
-    - **Mechanism**: RGB patch tokens and the CLS token are extracted using a CLIP ViT-Large backbone (with all but the last few layers frozen). OneFormer then generates an ADE20K semantic segmentation map, which is projected into semantic tokens via a linear layer. Semantic tokens serve as queries, and RGB tokens serve as keys and values in latent multi-headed cross-attention (latent attention reduces memory overhead), followed by an MLP with residual connections and LayerNorm. Three fusion blocks are stacked sequentially to learn hierarchical fused features. The fused CLS token is extracted and projected via LayerNorm and a linear layer to produce the final visual feature vector.
-    - **Design Motivation**: Pure RGB features are sensitive to illumination, weather, and viewpoint variations. Scene structure from semantic segmentation (buildings, vegetation, roads, etc.) is more invariant. Furthermore, semantic information can implicitly suppress localization-irrelevant regions (e.g., people, vehicles). Latent cross-attention — rather than simple concatenation — enables semantic information to selectively guide RGB feature aggregation.
+RGB appearance features are sensitive to lighting, weather, and perspective, whereas scene structures provided by semantic segmentation (buildings, vegetation, roads) are much more stable and can implicitly identify non-stationary regions (pedestrians, vehicles) as noise. The module first extracts RGB patch tokens and CLS tokens using CLIP ViT-Large (with parameters frozen except for the last few layers), then generates ADE20K semantic maps using OneFormer, which are linearly projected into semantic tokens. The key lies in the fusion mechanism: semantic tokens act as queries, while RGB tokens act as keys and values in latent multi-headed cross-attention (the latent form reduces memory overhead). This is followed by MLP, residuals, and LayerNorm. Three such fusion blocks are stacked to refine features. Finally, the fused CLS token is passed through LayerNorm and a linear projection to obtain the visual feature vector. Using semantics as the query means it "selectively guides" which RGB patches to aggregate rather than directly replacing appearance, preserving the discriminative power of RGB better than simple concatenation.
 
-3. **Contrastive Training and Hierarchical Inference**
+**3. Contrastive Training + Hierarchical Inference: Aligning visual and geographic features in the same space and performing multi-scale localization via cumulative multiplication.**
 
-    - **Function**: Align visual and geographic representations and enable multi-scale inference.
-    - **Mechanism**: During training, the fused CLS token $\mathbf{v}$ and the geographic embedding $\mathbf{g}$ corresponding to the ground-truth location are extracted for each training sample. The InfoNCE loss $\mathcal{L}_i = -\log \frac{\exp(\mathbf{v}_i^\top \mathbf{g}_i / \tau)}{\sum_j \exp(\mathbf{v}_i^\top \mathbf{g}_j / \tau)}$ maximizes the cosine similarity of correct pairs. The full training objective is the sum of losses across all hierarchy levels. At inference, softmax probabilities are computed between the query image and all embeddings at each level; for each cell at the finest level, the probabilities of all ancestor cells are multiplied to yield the final prediction.
-    - **Design Motivation**: Hierarchical inference combines the high confidence of coarse-grained levels with the high resolution of fine-grained levels, analogous to a progressive geographic search.
+During training, each sample has a fused visual CLS token $\mathbf{v}$ and a geographic embedding $\mathbf{g}$ corresponding to its ground truth location. InfoNCE is used to maximize the cosine similarity of correct pairs:
+
+$$\mathcal{L}_i = -\log \frac{\exp(\mathbf{v}_i^\top \mathbf{g}_i / \tau)}{\sum_j \exp(\mathbf{v}_i^\top \mathbf{g}_j / \tau)}$$
+
+The full objective is the sum of losses from all 7 levels (with independent temperature $\tau$ initialized at 0.07). During inference, the softmax probability between the query image and all embeddings is calculated for each level. For a specific fine-grained cell, the probabilities of all its parent levels are multiplied to compute the final score. This performs a progressive geographic search: coarse levels narrow the search scope to high-confidence regions, while fine levels pinpoint high-resolution cells within them, making it more stable and accurate than single-scale classification.
 
 ### Loss & Training
-AdamW optimizer with an initial learning rate of 0.0001 and weight decay of 0.0001; effective batch size of 1024. Learning rate decay (gamma=0.5) is applied each epoch, with early stopping triggered after 4 epochs without improvement. The temperature parameter is initialized to 0.07 and is independent per level. Training runs for 21 hours on 8 A6000 GPUs. Ten Crop augmentation is used to average predictions at inference.
+The AdamW optimizer is used with an initial learning rate of 0.0001, weight decay of 0.0001, and an effective batch size of 1024. Learning rate decay (gamma=0.5) is applied per epoch with early stopping after 4 epochs without improvement. Temperature parameters are initialized at 0.07 independently for each level. Training took 21 hours on 8 A6000 GPUs. Predictions are averaged using the Ten Crop method.
 
 ## Key Experimental Results
 
@@ -75,13 +99,13 @@ AdamW optimizer with an initial learning rate of 0.0001 and weight decay of 0.00
 | Dataset | Metric (1km) | GeoSURGE | GeoCLIP | PIGEOTTO | G3/GPT-4V |
 |---------|--------------|----------|---------|----------|-----------|
 | IM2GPS | Street-level | **27.0** | 16.5 | 11.8 | - |
-| IM2GPS | Continent-level | **93.2** | 88.6 | 91.1 | - |
+| IM2GPS | Continent | **93.2** | 88.6 | 91.1 | - |
 | IM2GPS3k | Street-level | **17.2** | 14.1 | 10.9 | 16.6 |
-| IM2GPS3k | Continent-level | **87.6** | 83.8 | 84.4 | 84.7 |
+| IM2GPS3k | Continent | **87.6** | 83.8 | 84.4 | 84.7 |
 | YFCC26k | Street-level | **17.8** | 11.6 | 10.1 | - |
-| GWS15k | Continent-level | **80.8** | 74.1 | 84.7† | - |
+| GWS15k | Continent | **80.8** | 74.1 | 84.7† | - |
 
-GeoSURGE achieves state-of-the-art on 22 out of 25 metrics across 5 datasets. Excluding LVLM-based methods, it achieves the best performance on all 25 metrics.
+Ours achieves SOTA in 22 out of 25 metrics across 5 datasets. Excluding LVLM-based methods, it is the best across all 25 metrics.
 
 ### Ablation Study
 
@@ -90,36 +114,36 @@ GeoSURGE achieves state-of-the-art on 22 out of 25 metrics across 5 datasets. Ex
 | Full (7 levels) | 17.8 | 31.5 | 1.0 | 4.6 |
 | 5 levels | 11.1 | 30.0 | 0.4 | 3.5 |
 | 1 level | 8.9 | 27.5 | 0.1 | 3.1 |
-| 3 fusion blocks | 17.8 | 31.5 | 1.0 | 4.6 |
+| 3 modules | 17.8 | 31.5 | 1.0 | 4.6 |
 | No fusion | 13.8 | 30.4 | 0.6 | 4.6 |
 
 ### Key Findings
-- Hierarchy depth has the greatest impact on fine-grained metrics (street/city level): 7 levels vs. 1 level yields approximately a 2× improvement on YFCC26k at 1km (17.8 vs. 8.9).
-- The semantic fusion module provides approximately 36.5% relative improvement on YFCC26k at 1km (13.8→17.8).
-- Geographic embeddings (retrieval target) consistently outperform classification targets under both hierarchical and flat settings, demonstrating that embeddings and hierarchy are complementary.
-- LVLM-based methods have an advantage at fine-grained localization (likely due to memorization of landmark features from large-scale pretraining), but GeoSURGE comprehensively outperforms them at medium-to-coarse granularity.
+- Hierarchical depth significantly impacts fine-grained metrics (street/city level): 7 levels vs. 1 level shows an approximate 2x difference on YFCC26k 1km (17.8 vs. 8.9).
+- The semantic fusion module provides a relative Gain of ~36.5% on YFCC26k 1km (13.8 → 17.8).
+- Geographic embeddings (retrieval target) consistently outperform classification targets in both hierarchical and flat settings, proving that embeddings and hierarchies are complementary.
+- LVLM methods have an advantage in fine-grained localization (likely due to memorization of landmarks during large-scale pre-training), but GeoSURGE wins across the board in medium-to-coarse localization.
 
 ## Highlights & Insights
-- The design that unifies the geographic cells of classification methods with the feature matching of retrieval methods is particularly elegant. Treating cells as learnable embeddings rather than class labels allows each region to "automatically accumulate" its visual characteristics, capturing the advantages of both paradigms.
-- Using semantic segmentation as the query in cross-attention — rather than as an independent second representation — is a meaningful design choice. Semantics do not directly participate in feature representation but serve as a structural signal guiding RGB feature aggregation. This "guiding rather than replacing" paradigm is transferable to other multimodal fusion tasks.
-- The most significant performance gains are observed on GWS15k (globally uniform distribution), indicating strong generalization of the proposed method.
+- The design unifying the geographic units of classification methods and the feature matching of retrieval methods is ingenious. Treating units as learnable embeddings instead of labels allows each region to "automatically accumulate" its visual features, gaining the advantages of both paradigms.
+- Using semantic segmentation as a query for cross-attention rather than an independent second representation is a significant perspective. Semantics do not participate directly in feature expression but serve as structural signals to guide the aggregation of RGB features; this "guidance rather than replacement" approach is transferable to other multi-modal fusion tasks.
+- The performance Gain is most significant on GWS15k (globally uniform distribution), indicating strong generalization.
 
 ## Limitations & Future Work
-- The method depends on OneFormer for semantic segmentation preprocessing, increasing inference overhead for large-scale image collections.
-- The partitioning scheme is fixed to S2 Geometry; the impact of adaptive or data-driven partitioning on performance is unexplored.
-- The influence of different visual backbone networks (e.g., ViT-H, DINOv2) has not been investigated.
-- For geographic regions with sparse training data (e.g., small islands near oceans), the nearest reference image can be over 800 km from the ground truth, indicating that data coverage remains a fundamental bottleneck.
+- Dependency on OneFormer for semantic segmentation preprocessing increases inference overhead (processing hundreds of thousands of images).
+- The partitioning scheme is fixed to S2; adaptive or data-driven partitioning's impact on performance has not been explored.
+- Lack of exploration with different visual backbones (e.g., ViT-H, DINOv2).
+- In geographically sparse regions (e.g., small islands in the ocean), the distance from the reference image to ground truth can reach 800+ km, indicating that data coverage remains a fundamental bottleneck.
 
 ## Related Work & Insights
-- **vs. GeoCLIP**: Both use a CLIP backbone and contrastive learning, but GeoCLIP directly embeds GPS coordinates using Random Fourier Features, whereas GeoSURGE employs learnable geographic cell embeddings, avoiding the information loss of low-dimensional GPS. GeoSURGE consistently outperforms GeoCLIP under the same backbone and data.
-- **vs. Img2Loc/G3**: These methods leverage GPT-4V's large-scale world knowledge for RAG-based localization, yielding advantages at street level (likely from landmark memorization), but GeoSURGE is consistently stronger at medium-to-coarse granularity.
-- **vs. TransLocator**: TransLocator performs repeated fusion between parallel semantic and RGB backbones, whereas GeoSURGE employs latent cross-attention, which is more efficient and yields better results.
+- **vs GeoCLIP**: Both use CLIP backbones and contrastive learning, but GeoCLIP embeds GPS coordinates directly (using Random Fourier Features), while GeoSURGE uses learnable geographic unit embeddings to avoid information loss from low-dimensional GPS. GeoSURGE wins comprehensively given the same backbone and data.
+- **vs Img2Loc/G3**: These methods leverage the massive knowledge of GPT-4V for RAG-based localization, holding an advantage at the street level (possibly from landmark recognition), but GeoSURGE is stronger at medium-to-coarse granularities.
+- **vs TransLocator**: TransLocator performs repetitive fusion between parallel semantic and RGB backbones; GeoSURGE is more efficient and effective using latent cross-attention.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combined design of hierarchical embeddings and semantic fusion is novel, though individual components are not entirely new.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Five benchmark datasets, detailed ablation studies, and qualitative analysis — very comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear logic and well-organized structure.
-- **Value**: ⭐⭐⭐⭐ Establishes a new state-of-the-art baseline in global visual geo-localization.
+- Novelty: ⭐⭐⭐⭐ Combination of hierarchical embeddings and semantic fusion is innovative, though components are not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 benchmark datasets + detailed ablation + qualitative analysis, very comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and standard structure.
+- Value: ⭐⭐⭐⭐ Establishes a new SOTA baseline in the field of global visual localization.
 
 <!-- RELATED:START -->
 
@@ -127,11 +151,11 @@ GeoSURGE achieves state-of-the-art on 22 out of 25 metrics across 5 datasets. Ex
 
 ## Related Papers
 
-- [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
+- [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment](lod-loc_v3_generalized_aerial_localization_in_dense_cities_using_instance_silhou.md)
-- [\[CVPR 2026\] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection](erecu_pseudolabel_evolution_unsupervised_camouflage.md)
-- [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](../../AAAI2026/segmentation/ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
+- [\[CVPR 2026\] Uncertainty-Aware Modality Fusion for Unaligned RGB-T Salient Object Detection](uncertainty-aware_modality_fusion_for_unaligned_rgb-t_salient_object_detection.md)
+- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
 
 </div>
 

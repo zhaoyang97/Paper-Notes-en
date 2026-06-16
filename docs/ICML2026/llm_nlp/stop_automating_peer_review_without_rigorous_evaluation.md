@@ -2,140 +2,124 @@
 title: >-
   [Paper Note] Stop Automating Peer Review Without Rigorous Evaluation
 description: >-
-  [ICML 2026][LLM/NLP][AI Reviewing] This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews…
+  [ICML 2026][LLM (Other)][Paper Laundering] This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing—hivemind (high convergence) and paper laundering (zero-shot rewriting can increase scores by 0.45). Consequently, they argue that "LLM review shou
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "AI Reviewing"
-  - "Hivemind Effect"
-  - "Paper Laundering"
-  - "Algorithmic Monoculture"
-  - "Review Diversity"
+  - ICML 2026
+  - LLM (Other)
+  - Paper Laundering
 date: 2026-05-08
-content_hash: dba3915518ad3fbe
+content_hash: f03ce95e547ddd31
 ---
-
 # Stop Automating Peer Review Without Rigorous Evaluation
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.03202](https://arxiv.org/abs/2605.03202)  
 **Code**: None  
 **Area**: LLM / NLP / AI Governance / Peer Review  
-**Keywords**: AI Reviewing, Hivemind Effect, Paper Laundering, Algorithmic Monoculture, Review Diversity
+**Keywords**: AI peer review, Hivemind effect, Paper Laundering, Algorithmic monoculture, Review diversity
 
 ## TL;DR
-This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM-based reviewing—"hivemind" (high convergence) and "paper laundering" (a zero-shot rewrite can increase scores by 0.45). Consequently, they argue that LLMs should not directly generate review comments without rigorous evaluation and call for the establishment of a "science of review automation."
+This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing—hivemind (high convergence) and paper laundering (zero-shot rewriting can increase scores by 0.45). Consequently, they argue that "LLM review should not be directly generated without rigorous evaluation" and call for the establishment of a "science of review automation."
 
 ## Background & Motivation
 
-**Background**: Top-tier conference submissions are exploding (NeurIPS / ICLR / ICML see increases of thousands of papers annually), and the pool of qualified reviewers cannot keep up. Consequently, conferences have begun introducing LLMs: AAAI 2025 generated LLM reviews in parallel with humans; ICLR 2026 allows reviewers to use LLMs; ICML 2026 introduced an "author opt-out" binary policy; and ICLR 2025 deployed a review feedback agent. These policies are highly fragmented and lack consensus.
+**Background**: Submissions to top conferences are experiencing explosive growth (thousands more each year for NeurIPS / ICLR / ICML), and the pool of qualified reviewers cannot keep up. Consequently, various conferences have begun introducing LLMs: AAAI 2025 generates LLM reviews in parallel with human ones; ICLR 2026 allows reviewers to use LLMs; ICML 2026 introduced an "author opt-in" binary policy; and ICLR 2025 deployed a review feedback agent. Current policies are extremely fragmented and lack consensus.
 
-**Limitations of Prior Work**: Existing work on AI reviewing almost exclusively measures "correlation with human ratings" or "tendency toward prompt injection attacks." These two dimensions are insufficient: high correlation does not imply harmlessness (errors may be consistently aligned), and prompt injection is explicitly banned by conferences, making it an atypical threat model. The truly difficult issues are legal but low-cost strategic writing behaviors and the "homogenization" of AI reviews at the group level.
+**Limitations of Prior Work**: Existing research on AI reviewing focuses almost entirely on "correlation with human scores" or "propensity for prompt injection attacks." Neither dimension is sufficient: high correlation does not imply harmlessness (errors may be consistently aligned), and prompt injection is already explicitly prohibited by conferences, making it an unrepresentative threat model. The truly challenging issues are legal but low-cost strategic writing behaviors and the group-level "homogenization" of AI reviews.
 
-**Key Challenge**: Human review bias is **distributed** (different reviewers have different bias directions, which partially cancel out when aggregated), whereas LLM review bias is **centralized** (similar training data for the same base models → highly correlated errors). This is what Kleinberg & Raghavan call algorithmic monoculture: individual decisions seem reasonable, but the aggregate becomes worse, and the entire system falls to the same type of attack.
+**Key Challenge**: Human review bias is **distributed** (different reviewers have different bias directions, which partially cancel out when aggregated), whereas LLM review bias is **centralized** (similar training data for the same base models leads to highly correlated errors). This represents what Kleinberg & Raghavan term algorithmic monoculture: while each individual decision appears reasonable, the aggregate performance worsens, and the system becomes universally vulnerable to the same type of attack.
 
-**Goal**: To redefine the "necessary conditions" for review automation from vague "human correlation" to two measurable conditions: (C1) review diversity / non-convergence; (C2) non-gamability / resistance to strategic rewriting—and to empirically test whether current SOTA LLM reviewers satisfy these.
+**Goal**: To redefine the "necessary conditions" for review automation from vague "human correlation" to two measurable conditions: (C1) Review diversity / non-convergence; (C2) Non-gameability / resistance to strategic rewriting—and to empirically test whether current SOTA LLM reviews satisfy these conditions.
 
-**Key Insight**: The authors analyze "wild data" from all 75,800 real reviews of ICLR 2026 (already containing AI labels) while conducting controlled experiments on 60 random papers using the AI reviewer agent from Bianchi et al. They construct a complete grid of 4 prompts × 2 rewriting models × 3 reviewer models = 24 conditions to quantify "hivemind" and "laundering" respectively.
+**Key Insight**: The authors analyze "wild data" from all 75,800 real ICLR 2026 reviews (bearing AI labels) while conducting controlled experiments using the AI reviewer agent from Bianchi et al. on 60 random papers. They construct a full grid of 4 prompts × 2 rewriting models × 3 review models = 24 conditions to quantify "hivemind" and "laundering" effects.
 
-**Core Idea**: Use two embedding similarity metrics, IntraSim and InterSim, to measure the "hivemind effect," and define "paper laundering" through zero-shot LaTeX rewriting. By proving that AI reviewing fails both necessary conditions, they support the position: "Establish a science of review automation before deployment."
+**Core Idea**: IntraSim and InterSim embedding similarity metrics are used to measure the "hivemind effect," and "paper laundering" is defined via zero-shot LaTeX rewriting. The authors demonstrate that AI reviews satisfy neither of the two necessary conditions, thereby supporting the stance of "establishing a science of review automation before deployment."
 
 ## Method
-This paper does not propose a new model; its method is an empirical protocol of "measurement + attack," based on two pillars.
 
 ### Overall Architecture
-Input: (1) All 75,800 ICLR 2026 reviews + AI labels (from the EditLens classifier of Emi 2025, with 21% identified as AI-generated); (2) 60 random ICLR papers + synthetic reviews generated by an AI reviewer agent; (3) the same 60 papers in "laundered" versions via zero-shot LLM rewriting.
-
-Output: Two positional arguments—the hivemind effect is statistically significant, and laundering leads to an average score increase of +0.45 ($p<0.0001$).
-
-The pipeline includes: (a) encoding each review into a vector using `text-embedding-3-small` to calculate similarity between reviewers for the same paper (IntraSim) and similarity between reviewers across different papers (InterSim); (b) feeding 4 types of zero-shot prompts into each paper (including one that commands the launderer to actively jailbreak the review model) to rewrite the entire LaTeX source using GPT-5.1 / GPT-5.4, then re-compiling to PDF for the review agent; (c) Wilcoxon signed-rank tests for paired score differences.
+As a position paper, this work does not propose a new model but advocates that "LLM reviews should not be directly deployed until they satisfy two measurable necessary conditions: (C1) review diversity / non-convergence, and (C2) non-gameability." This claim is substantiated through an empirical protocol of "measurement + attack." The argument rests on three pillars: analysis of 75,800 real ICLR 2026 reviews (with 21% identified as AI-generated by the EditLens classifier), 1,440 synthetic reviews on 60 papers using an AI reviewer agent, and a comparison with "laundered" versions of the same 60 papers rewritten by zero-shot LLMs. The findings reveal a significant hivemind effect and an average score gain of $+0.45$ ($p<0.0001$) from laundering. All costs are concentrated in one-time API calls and offline embedding calculations (~\$0.25 per laundering), with no model training required.
 
 ### Key Designs
 
-1.  **Hivemind Metrics IntraSim / InterSim**:
-    - **Function**: Transforms the vague concept of "review diversity" into a comparable scalar for side-by-side comparisons (Human vs. AI, Real vs. Simulated).
-    - **Mechanism**: For the set of all review vectors $\mathcal{R}(p)$ for paper $p$, IntraSim is the average of pairwise cosine similarities: $\mathrm{IntraSim}(p)=\frac{2}{m_p(m_p-1)}\sum_{i<j}\mathrm{sim}(r_i,r_j)$. InterSim calculates the dual average of $\mathrm{sim}(r,r')$ across different papers $p \neq q$. InterSim is only compared within the same "type" of reviewer across papers to avoid signal contamination by stylistic differences between humans and AI.
-    - **Design Motivation**: Looking only at rating correlation conflates "AI giving high scores" with "AI saying the same things." Pairwise similarity in embedding space directly measures "whether the second review provides new information," which is the core value of a multi-reviewer system.
+**1. Quantifying "Review Diversity" with IntraSim / InterSim**
 
-2.  **Paper Laundering Protocol**:
-    - **Function**: Constructs a **fully compliant** "gaming" attack against AI reviewing (not prompt injection, no hidden instructions) to test the non-gamability condition C2.
-    - **Mechanism**: Taking the entire LaTeX source of a paper as input, a launderer LLM rewrites it under a zero-shot prompt (costing ~$0.25/paper). The recompiled PDF is given to the AI reviewer agent. Statistics are gathered across a 24-cell grid (4 prompts × 2 launderers × 3 reviewers). The Wilcoxon test shows $p<0.001$ in almost all cells, with an average gain of $+0.45$; a self-preference bias causes GPT-based reviewers to give even higher gains to GPT-rewritten papers.
-    - **Design Motivation**: Existing adversarial research focuses on prompt injection, which is explicitly banned. Laundering is "authors openly admitting to using AI for polishing," which cannot be banned by policy even if effective—this is the failure mode that truly threatens the credibility of peer review.
+To quantify the intuitive concept of "convergence," the authors use embedding similarity. For a set of review vectors $\mathcal{R}(p)$ for paper $p$ (encoded using `text-embedding-3-small`), IntraSim calculates the average pairwise cosine similarity between reviewers for the same paper: $\mathrm{IntraSim}(p)=\frac{2}{m_p(m_p-1)}\sum_{i<j}\mathrm{sim}(r_i,r_j)$. This measures whether a second review provides new information. InterSim compares reviews across different papers ($p\neq q$), specifically within the same reviewer category, to ensure signals are not contaminated by human vs. AI stylistic differences. Crucially, while score correlation conflates "AI giving high scores" with "AI saying the same things," pairwise similarity in embedding space directly exposes the latter—undermining the foundation of the multi-reviewer system and the validity of C1.
 
-3.  **Monoculture Cascade Measurement**:
-    - **Function**: Extends "hivemind" from the review level to the paper level, arguing that if laundering is widely adopted, academic writing will converge toward AI review preferences.
-    - **Mechanism**: Pairwise cosine similarity was calculated for the abstract+introduction embeddings of the 60 papers, totaling 6,903 pairs (sampled repeatedly), comparing original vs. laundered versions. The average similarity rose from $0.497$ to $0.529$, a relative increase of $+6.5\%$ with Cohen's $d=1.02$ (a large effect).
-    - **Design Motivation**: The danger of algorithmic monoculture is not just "reviewer convergence," but "writing convergence shaped by reviewers." The authors link the causal chain from reviewer behavior to author behavior using a simple embedding aggregation experiment.
+**2. Constructing a Compliant "Gaming" Attack via Paper Laundering**
 
-### Loss & Training
-No new models were trained. All "training" costs were concentrated on: (i) calling OpenAI / Anthropic APIs for 60 × 24 = 1,440 reviews; (ii) laundering costs of ≈ $0.25 per paper; (iii) one-time offline costs for embedding and similarity calculations of the full ICLR review set.
+In testing C2, the authors avoid prompt injection—a tactic already banned and unrepresentative of typical threats—and instead design a failure mode that policies cannot easily prohibit. The original LaTeX source of a paper is given to a "launderer" LLM to be rewritten with a zero-shot prompt, recompiled into a PDF, and then evaluated by an AI reviewer agent. The experimental setup covers a 24-cell grid (4 prompts × 2 launderers × 3 reviewers), including prompts that command the launderer to jailbreak the review model. Using Wilcoxon signed-rank tests, nearly all cells show $p<0.001$ with an average gain of $+0.45$. Self-preference bias causes the highest gains when GPT reviews its own rewrites. Since authors can openly state they used AI for polishing, conferences cannot easily ban this \$0.25 attack.
+
+**3. Measuring Cascading Hazards through Monoculture**
+
+The true danger of algorithmic monoculture lies not just in "review convergence" but in the "convergence of writing shaped by reviews." The authors use an embedding aggregation experiment to complete this causal chain. They calculate pairwise cosine similarities for the abstract and introduction of 60 papers (6,903 pairs total) across original and laundered versions. The average similarity rose from $0.497$ to $0.529$, a relative increase of $+6.5\%$ with a Cohen's $d=1.02$ (large effect). Thus, if laundering becomes common, academic writing will converge toward AI review preferences, linking reviewer behavior directly to author behavior.
 
 ## Key Experimental Results
 
 ### Main Results
 Hivemind effect on real ICLR 2026 reviews:
 
-| Data Slice | InterSim Mean | $p$-value | Cohen's $d$ |
+| Data Segment | Mean InterSim | $p$-value | Cohen's $d$ |
 |---|---|---|---|
-| Pure AI Reviews | 0.486 | $<10^{-4}$ | 0.29 |
-| Reviews with Human Contribution | 0.467 | — | — |
-| Weaknesses+Questions sections only | — | $<10^{-4}$ | 0.35 |
+| Pure AI reviews | 0.486 | $<10^{-4}$ | 0.29 |
+| Reviews with human contribution | 0.467 | — | — |
+| Weaknesses + Questions only | — | $<10^{-4}$ | 0.35 |
 
-Convergence of AI vs. Human on simulation experiments (60 ICLR papers):
+Convergence of AI vs. Human in simulated experiments (60 ICLR papers):
 
-| Setting | IntraSim | InterSim (vs. Human 0.470) |
+| Setting | IntraSim | InterSim (vs Human 0.470) |
 |---|---|---|
 | Human ICLR Reviews | 0.811 | 0.470 |
 | GPT-5.1 on Original Papers | 0.882 (+8.7%) | 0.646 (+37.4%, $d=3.55$) |
-| GPT-5.1 on Laundered Versions | 0.891 (+9.8%) | 0.657 (+39.8%, $d=3.79$) |
+| GPT-5.1 on Laundered Papers | 0.891 (+9.8%) | 0.657 (+39.8%, $d=3.79$) |
 | Claude on Original Papers | — | 0.553 (+17.6%, $d=1.41$) |
 
-Laundering Score Gain (1–10 scale, average of 24 cells):
+Laundering score gains (1–10 scale, average across 24 cells):
 
 | Metric | Value |
 |---|---|
-| Avg. Paired Score Gain | $+0.45$ |
-| Wilcoxon Significance | $p<0.001$ (almost all cells) |
-| Single Paper Laundering Cost | ≈ $0.25 |
-| Paper Similarity Increase | +6.5% ($d=1.02$) |
+| Average paired gain | $+0.45$ |
+| Wilcoxon significance | $p<0.001$ (nearly all cells) |
+| Cost per laundering | ≈ $0.25 |
+| Increase in paper similarity | +6.5% ($d=1.02$) |
 
 ### Ablation Study
 
-| Slice / Configuration | Key Findings | Description |
+| Segment / Configuration | Key Findings | Description |
 |---|---|---|
-| Restricting sections to weakness+question | IntraSim $d$ from 1.47 → 1.93 | Convergence is not just boilerplate; it penetrates critical sections. |
-| GPT reviewer + GPT launderer | Largest score gain | Replicates self-preference bias (Panickssery 2024). |
-| Claude reviewer | Smaller score gain | Cross-family launderer attacks still work but are weaker. |
-| AI vs. Human Predictive Power | AUC 0.710 vs. 0.822 (n=8,015) | Human scores better predict final decisions. |
-| AI–AI vs. AI–Human Correlation | $r=0.49$ vs. $r=0.15$ | AI fails consistently rather than aligning with humans. |
+| Limit review to weakness + question | IntraSim $d$ from 1.47 → 1.93 | Convergence is not just boilerplate; it penetrates critical sections. |
+| GPT reviewer + GPT launderer | Largest score gain | Reproduced self-preference bias (Panickssery 2024). |
+| Claude reviewer | Smaller score gain | Attacks by launderers from different families still work but are weaker. |
+| AI vs Human prediction of acceptance | AUC 0.710 vs 0.822 (n=8,015) | Human scores are better predictors of final decisions. |
+| AI–AI vs AI–Human score correlation | $r=0.49$ vs $r=0.15$ | Models are consistently wrong rather than aligned with humans. |
 
 ### Key Findings
-- AI reviewers reuse generic sentence structures heavily: GPT's most frequent phrase "if not, can you comment on" appears in 13.3% of papers; Claude's "how does the method handle" appears in 21.7%. In contrast, the most frequent human phrases appear in <1% of reviews—direct evidence that AI review "questions" are often decoupling from the paper.
-- Score gains primarily result from increased use of hedging words ("may", "typically", "suggests") and emphasis words ("strong", "robust", "consistent"), as well as "extra interpretations" of hallucinated results, rather than substantive experimental additions.
-- AI reviewers give an average score of 7.3 for GPT and 6.1 for Claude, compared to a human average of 4.3, indicating significant systematic inflation.
+- AI reviewers reuse generic phrases extensively: the phrase "if not, can you comment on" appears in 13.3% of GPT reviews; Claude's "how does the method handle" appears in 21.7% of its reviews. In contrast, even the most common phrases in human reviews appear in <1%—direct evidence that AI "questions" are largely irrelevant to the paper's content.
+- Score gains primarily derive from an increase in hedging terms ("may", "typically", "suggests"), emphasis words ("strong", "robust", "consistent"), and "extra interpretations" of hallucinated results, rather than substantive experimental improvements.
+- AI reviewers give systemic high scores (average 7.3 for GPT, 6.1 for Claude vs. 4.3 for humans), showing significant inflation.
 
 ## Highlights & Insights
-- **Redefining "Is AI reviewing good?" into two testable conditions**: The correlation-based approach is endlessly debatable. Diversity and game-resistance pull the discussion back to an engineering baseline that researchers can immediately test.
-- **Laundering as an elegant "compliant attack"**: Unlike prompt injection, it exposes a governance gap—conference policies can ban crossing boundaries, but they cannot effectively ban zero-shot polishing. The argument's transferability is very high.
-- **Algorithmic monoculture falsified at two levels**: The reviewer level (review homogenization) + the author level (papers converging toward AI preferences). This "double-layer monoculture" framework can be applied to any LLM-mediated evaluation scenario, such as recommendation systems or automated grading.
-- **Public Appendix H provides AI reviews for this paper**: A rare "eat your own dog food" moment for a position paper, serving as an ironic demo of the phenomenon.
+- **Redefines "AI review quality" as two testable conditions**: While correlation-based arguments are often inconclusive, diversity and game-resistance establish an engineering baseline that researchers can test immediately.
+- **Laundering as an elegant "compliant attack"**: Unlike prompt injection, it exposes a governance vacuum—conference policies can ban rule-breaking but cannot ban zero-shot polishing. The argument is highly transferable.
+- **Verification of algorithmic monoculture at two levels**: The reviewer level (homogenization) and the author level (convergence toward AI preferences). This "dual-layer monoculture" framework applies to any LLM-mediated evaluation scenario, such as recommendation systems or automated grading.
+- **Inclusion of self-review in Appendix H**: A rare "eat its own dog food" instance in a position paper, serving as an ironic demonstration.
 
 ## Limitations & Future Work
-- The authors acknowledge that necessary conditions are not sufficient; even if future LLM generations become non-convergent and game-resistant, questions of accountability and democratic legitimacy remain.
-- Empirical limitations: The 60-paper simulated sample is small; AI labels come from the EditLens classifier (risk of misclassification, though validated in Appendix G.3); whether "quality remained unchanged" during laundering relies on word-level analysis and lacks human blind-review validation.
-- Future directions: Developing "game-resistance" into a benchmark (laundering robust score) for standard AI reviewer system evaluations; studying the failure boundaries when launderers change more than style (e.g., adding fake experiments).
+- Necessary conditions are not sufficient: even if a future LLM becomes non-convergent and game-resistant, questions regarding accountability and democratic legitimacy remain.
+- Empirical limitations: The simulated sample size (60 papers) is small, and the AI labels rely on the EditLens classifier (which has risks of misclassification, addressed in Appendix G.3). Whether "quality remains unchanged" after laundering relies on word-level analysis rather than double-blind human evaluation.
+- Future directions: Integrating "game-resistance" into benchmarks (e.g., a laundering robust score) for future AI reviewer systems and studying failure boundaries when launderers modify more than just style (e.g., adding fake experiments).
 
 ## Related Work & Insights
 - **vs. Bianchi et al. 2025b (AI reviewer agent)**: This paper reuses their agent but shifts the research question from "can it review" to "should it be automated," providing counterexamples.
-- **vs. Goldberg et al. 2024 (NeurIPS LLM checklist)**: Similarly reveals that AI tools can be gamed, but this paper lowers the gaming threshold to zero-shot optimization, making the threat more pervasive.
-- **vs. Lin et al. 2025b (targeted adversarial attacks)**: While they use character-level perturbations, this paper uses natural language rewriting, lowering the attacker's barrier by an order of magnitude.
-- **vs. Kleinberg & Raghavan 2021 (algorithmic monoculture)**: First empirical application of this theoretical framework to the academic peer review scenario.
+- **vs. Goldberg et al. 2024 (NeurIPS LLM checklist)**: Similarly reveals that AI tools can be gamed, but this paper lowers the barrier of gaming to zero-shot optimization.
+- **vs. Lin et al. 2025b (targeted adversarial attacks)**: While they use character-level perturbations, this paper requires only natural language rewriting, drastically lowering the attacker's threshold.
+- **vs. Kleinberg & Raghavan 2021 (algorithmic monoculture)**: This paper is the first to empirically apply this theoretical framework to the academic review context.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to decompose "review automation" into two testable conditions and propose paper laundering as a new threat.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Combines real-world data and controlled experiments with a 24-cell grid for internal/external validity, though the 60-paper scale remains modest.
-- Writing Quality: ⭐⭐⭐⭐⭐ A model position paper with a clear logical chain, addressing counterarguments pointwise (§5), and providing its own AI review results.
-- Value: ⭐⭐⭐⭐⭐ Extremely timely topic with direct influence on conference policies and community consensus.
+- Novelty: ⭐⭐⭐⭐ Deconstructs "review automation" into two measurable conditions and identifies "paper laundering" as a new threat.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Combines real data, controlled experiments, and a 24-cell grid for internal/external validity, though the 60-paper sample is relatively small.
+- Writing Quality: ⭐⭐⭐⭐⭐ A model position paper with a clear logical chain, addressing counterarguments point-by-point (§5) and including its own review as metadata.
+- Value: ⭐⭐⭐⭐⭐ Highly timely topic with direct impact on conference policies and community consensus.
 
 <!-- RELATED:START -->
 
@@ -145,9 +129,9 @@ Laundering Score Gain (1–10 scale, average of 24 cells):
 
 - [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](../../ACL2026/llm_nlp/can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
 - [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](../../AAAI2026/llm_nlp/position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
+- [\[ACL 2025\] ATRIE: Automating Legal Interpretation with LLMs: Retrieval, Generation, and Evaluation](../../ACL2025/llm_nlp/atrie_legal_interpretation.md)
 - [\[AAAI 2026\] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model](../../AAAI2026/llm_nlp/stem_efficient_relative_capability_evaluation_of_llms_through_structured_transit.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
+- [\[ICML 2026\] T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning](t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo.md)
 
 </div>
 

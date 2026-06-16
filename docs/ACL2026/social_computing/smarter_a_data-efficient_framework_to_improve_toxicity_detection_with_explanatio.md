@@ -2,99 +2,107 @@
 title: >-
   [Paper Note] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models
 description: >-
-  [ACL2026][Social Computing][Toxicity detection] SMARTER utilizes a small number of labeled samples to allow LLMs to generate explanations for both correct and incorrect labels. It then enhances explainable toxicity detec…
+  [ACL 2026][Social Computing][DPO] SMARTER utilizes a few labeled samples to prompt LLMs to generate explanations for both correct and incorrect labels, then improves explainable toxicity detection through preference optimization and cross-model training. It achieves 86%-100% of full-training performance using only 6%-57% of the training data across thr
 tags:
-  - "ACL2026"
-  - "Social Computing"
-  - "Toxicity detection"
-  - "Explainable classification"
-  - "Self-augmenting training"
-  - "DPO"
-  - "Cross-model refinement"
+  - ACL 2026
+  - Social Computing
+  - DPO
 date: 2026-05-08
-content_hash: 102d0745ec92dcb0
+content_hash: 8737e6563554e136
 ---
-
 # SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models
 
 **Conference**: ACL2026  
 **arXiv**: [2509.15174](https://arxiv.org/abs/2509.15174)  
 **Code**: https://github.com/hnghiem-nlp/hate_dpo_public  
 **Area**: Social Computing / Content Moderation / Explainable NLP  
-**Keywords**: Toxicity detection, Explainable classification, Self-augmenting training, DPO, Cross-model refinement
+**Keywords**: Toxicity Detection, Explainable Classification, Self-augmenting training, DPO, Cross-model distillation  
 
 ## TL;DR
-SMARTER utilizes a small number of labeled samples to allow LLMs to generate explanations for both correct and incorrect labels. It then enhances explainable toxicity detection through preference optimization and cross-model refinement, achieving 86%-100% of full-training performance using only 6%-57% of the training data across three datasets.
+SMARTER utilizes a few labeled samples to prompt LLMs to generate explanations for both correct and incorrect labels, then improves explainable toxicity detection through preference optimization and cross-model training. It achieves 86%-100% of full-training performance using only 6%-57% of the training data across three datasets.
 
 ## Background & Motivation
-**Background**: Social platforms require the detection of hate speech, offensive content, and implicit harmful expressions. While traditional classifiers provide labels, they often lack human-readable explanations. LLMs can simultaneously output classifications and explanations, making them more suitable for content moderation scenarios requiring transparency and human review.
+**Background**: Social platforms need to detect hate speech, offensive language, and implicit toxic expressions. While traditional classifiers provide labels, they often lack readable explanations; LLMs can output both classification and reasoning, making them better suited for moderation scenarios requiring transparency and human review.
 
-**Limitations of Prior Work**: Toxicity detection involves fine-grained label spaces and fuzzy boundaries; in particular, implicit toxicity relies heavily on context and definitions. High-quality annotated data is expensive, and standards across platforms vary with linguistic trends. Although zero-shot or few-shot prompting of commercial LLMs is convenient, it is costly, lacks controllability, shows high variance, and may not consistently produce compliant explanations.
+**Limitations of Prior Work**: Toxicity detection labels are fine-grained and boundaries are often blurred, particularly for implicit toxicity which relies heavily on context and definitions. High-quality annotated data is expensive, and standards across platforms evolve with linguistic trends. Although zero-shot or few-shot calls to commercial LLMs are convenient, they are costly, offer weak control, exhibit high variance, and may not consistently produce compliant explanations.
 
-**Key Challenge**: Low-resource scenarios require both high accuracy and human-understandable explanations. Direct SFT on small samples is prone to overfitting, while pure prompting is unstable. The core problem is how to enable models to leverage their inherent generation capabilities to construct useful training signals under minimal supervision.
+**Key Challenge**: Low-resource scenarios require both high accuracy and human-understandable explanations. Direct SFT on small samples prone to overfitting, while pure prompting remains unstable. The core problem is how to enable models to utilize their inherent generation capabilities to construct more useful training signals under minimal supervision.
 
-**Goal**: The authors propose a two-stage framework: first, enhancing classification through self-augmented explanations and DPO for a single model; second, allowing models of different architectures to learn explanation styles and reasoning patterns from each other. This results in explainable, deployable moderation models with minimal data.
+**Goal**: The authors propose a two-stage framework: first, an individual model improves classification through self-augmented explanations and DPO; second, models with different architectures learn reasoning styles and patterns from one another to obtain explainable, deployable content moderation models with limited data.
 
-**Key Insight**: The paper exploits the structured preference that "an explanation given the correct label should be superior to an explanation given an incorrect label." For each labeled post, the model generates an explanation for the gold label and counterfactual explanations for incorrect labels, naturally forming chosen/rejected data.
+**Key Insight**: The paper leverages the structural preference that "an explanation given a correct label should be superior to an explanation given an incorrect label." For every labeled post, the model generates not only an explanation for the gold label but also counter-explanations for other incorrect labels, naturally forming chosen/rejected data.
 
-**Core Idea**: Transform self-generated explanations for correct/incorrect labels into preference optimization data, then absorb complementary explanation capabilities through cross-model refinement.
+**Core Idea**: Convert self-generated explanations for correct/incorrect labels into preference optimization data, followed by absorbing complementary explanation capabilities through cross-model refinement.
 
 ## Method
 
 ### Overall Architecture
-SMARTER consists of two phases. Phase 1 is individual model self-augmentation: a small set of training samples $K \in \{16,32,64,128,256\}$ is sampled for each task. The model is first SFT-ed on these samples, then generates explanations for both correct and incorrect labels, followed by preference optimization using DPO or KTO. Phase 2 is cross-model refinement: explanations generated by one model at $K=128$ are used to train another model, allowing a weaker model to absorb the reasoning style of a stronger or complementary model.
+SMARTER consists of two stages. Stage 1 is individual self-augmentation: a few training samples $K \in \{16,32,64,128,256\}$ are sampled for each task. The model is first fine-tuned via SFT on these samples, then prompted to generate explanations based on both correct and incorrect labels, followed by preference optimization using DPO or KTO. Stage 2 is cross-model refinement: explanations generated by one model at $K=128$ are used to train another model, allowing a weaker model to absorb the reasoning style of a stronger or complementary model, with NLI used to verify consistency between explanations and labels.
 
-The experiments utilize three tasks: HateXplain, Latent Hate, and Implicit Hate. Models include Llama-3.1-8B-Instruct and COT-T5-XL. Macro-F1 is the evaluation metric due to the importance of class imbalance and multi-class semantic boundaries.
+The experiments utilize three tasks: HateXplain, Latent Hate, and Implicit Hate. Models include Llama-3.1-8B-Instruct and COT-T5-XL. Evaluation uses Macro-F1 due to the importance of class imbalance and multi-class semantic boundaries.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Few labeled posts<br/>K∈{16,32,64,128,256}"] --> B["Baseline SFT (LoRA)"]
+    subgraph S1["Stage 1: Individual Self-Augmentation"]
+        direction TB
+        B --> C["Construct preference data via self-augmented explanations<br/>Gold label→preferred; Incorrect label→dispreferred"]
+        C --> D["DPO Preference Optimization<br/>Chosen/rejected pairs contrast label boundaries"]
+    end
+    subgraph S2["Stage 2: Cross-Model Refinement"]
+        direction TB
+        E["Take gold explanations from another model at K=128"] --> F["SFT + DPO to absorb complementary reasoning styles"]
+        F --> G["NLI Consistency Check<br/>Entail labels / Match definitions"]
+    end
+    D --> E
+    G --> H["Explainable Toxicity Detection Model"]
+```
 
 ### Key Designs
-1. **Self-augmenting Explanations for Preference Data**:
 
-    - **Function**: Expands training signals without additional human annotation.
-    - **Mechanism**: For each post, the model generates a preferred explanation based on the gold label and dispreferred explanations based on each incorrect label. For DPO, these are paired as chosen/rejected; for KTO, the correct explanation is treated as a positive sample and incorrect ones as negative.
-    - **Design Motivation**: Content moderation explanations are naturally tied to label definitions. Explanations for incorrect labels often reveal points of confusion; using them in contrastive learning helps the model learn category boundaries rather than just memorizing a few positive examples.
+**1. Constructing Preference Data via Self-augmented Explanations: Turning "Explanations for Incorrect Labels" into Training Signals**
 
-2. **DPO Preference over KTO for Contrastive Signals**:
+High-quality annotations are expensive in low-resource settings, and direct SFT on small samples leads to overfitting. Instead of expanding manual annotations, SMARTER lets the model generate contrastive data. For each post, the model generates one preferred explanation based on the gold label and several dispreferred explanations based on incorrect labels. DPO pairs the correct and incorrect label explanations as chosen/rejected pairs. The key intuition is that moderation explanations are inherently tied to label definitions; explanations for wrong labels expose confusion points between categories, forcing the model to learn category boundaries rather than memorizing positive examples.
 
-    - **Function**: Selects a preference optimization method better suited for fine-grained toxicity detection.
-    - **Mechanism**: DPO uses paired preferred/rejected explanations to directly reinforce "which label explanation is more reasonable for the same post," whereas KTO uses listwise binary signals, which are coarser.
-    - **Design Motivation**: The challenge in toxicity detection often lies in subtle semantic differences between labels. Paired comparisons highlight class boundaries more effectively than single-point judgments. In experiments, DPO consistently improved at $K=256$, while KTO was often ineffective or even detrimental.
+**2. DPO Preferred over KTO: Highlighting Fine-grained Label Boundaries with Pairwise Contrast**
 
-3. **Cross-model Refinement and Consistency Checks**:
+The difficulty in toxicity detection often lies in subtle semantic differences between adjacent labels. DPO uses pairwise preferred/rejected explanations to directly answer "which label explanation is more reasonable for the same post." KTO uses listwise binary signals (accept/reject), which is coarser. Because pairwise contrast is better at pushing class boundaries apart, experiments show DPO continues to improve at $K=256$, while KTO is often ineffective or even degrades performance—confirming that for this task, "which of two labels fits the definition better" is more important than "is this single explanation plausible."
 
-    - **Function**: Allows models of different architectures to share explanation styles and reasoning strengths while monitoring explanation quality.
-    - **Mechanism**: Llama and T5 generate gold label explanations for each other on held-out 128-shot data, followed by SFT and DPO on the partner model's output. NLI is then used to check if the explanation entails the predicted label and conforms to the label definition.
-    - **Design Motivation**: Llama's explanations may be human-preferred for certain categories, while T5's encoder-decoder architecture might be more stable. Cross-model training transfers these advantages but may introduce inconsistencies, necessitating additional consistency audits.
+**3. Cross-model Refinement and Consistency Checks: Transferring Complementary Advantages while Auditing Explanation Drift**
+
+Models with different architectures have different explanation styles—Llama's explanations are often preferred by humans in specific categories, while T5's encoder-decoder structure may be more stable. SMARTER allows Llama and T5 to cross-generate gold explanations on held-out 128-shot data, then applies SFT and DPO to each model using the other's explanations. To prevent cross-model transfer from causing inconsistency between explanations and labels, NLI is employed to check if explanations entail the predicted labels and match definitions, monitoring drift to ensure "style acquisition" does not come at the cost of "logical consistency."
 
 ### Loss & Training
-Base SFT uses LoRA with rank 64, alpha 128, and dropout 0.05, targeting $q$ and $v$ in projection layers. Base SFT is trained for 3 epochs with a learning rate of $3 \times 10^{-4}$. DPO uses the default sigmoid loss from TRL with $\beta=0.1$; KTO also uses $\beta=0.1$. Inference temperature is 0, with a maximum of 512 tokens for explainable classification and 20 tokens for label-only classification.
+Base SFT utilizes LoRA with rank 64, alpha 128, and dropout 0.05, targeting the q and v projection layers. Base SFT is trained for 3 epochs with a learning rate of $3 \times 10^{-4}$. DPO uses the sigmoid loss from TRL with $\beta=0.1$; KTO also uses $\beta=0.1$. Inference temperature is set to 0. Maximum tokens are 512 for explainable classification and 20 for pure classification.
 
 ## Key Experimental Results
 
 ### Main Results
-Results at $K=256$ show that SMARTER outperforms commercial model zero-shot and 16-shot ICL with minimal data, and exceeds the full-training baseline on Latent Hate.
+Results at K=256 show that SMARTER outperforms commercial model zero-shot and 16-shot ICL in low-data regimes and surpasses the full-training baseline on Latent Hate.
 
-| Method | HateXplain F1 / Data Ratio | Latent Hate F1 / Data Ratio | Implicit Hate F1 / Data Ratio | Observation |
+| Method | HateXplain F1 / Data Ratio | Latent Hate F1 / Data Ratio | Implicit Hate F1 / Data Ratio | Observations |
 |------|--------------------------|----------------------------|------------------------------|------|
-| Llama_DPO-256 | 0.64 / 6% | 0.69 / 7% | 0.60 / 57% | Strongest overall; best on Latent Hate |
-| T5_DPO-256 | 0.62 / 6% | 0.65 / 7% | 0.59 / 57% | Weaker than Llama, but highly data-efficient |
-| Llama_Full | 0.72 / 100% | 0.62 / 100% | 0.67 / 100% | Full training strongest on HateXplain/Implicit Hate |
-| ModernBERT | 0.70 / 100% | 0.61 / 100% | 0.64 / 100% | Strong classifier, but generates no explanations |
-| GPT-4o-chat zero-shot | 0.56 / - | 0.51 / - | 0.58 / - | Commercial model zero-shot is inconsistent |
-| GPT-4o-chat 16-shot ICL | 0.62±0.01 / - | 0.60±0.06 / - | 0.40±0.11 / - | Few-shot ICL has high variance on complex tasks |
+| Llama_DPO-256 | 0.64 / 6% | 0.69 / 7% | 0.60 / 57% | Strongest overall across three tasks; best result on Latent Hate |
+| T5_DPO-256 | 0.62 / 6% | 0.65 / 7% | 0.59 / 57% | Weaker than Llama, but data efficiency is equally evident |
+| Llama_Full | 0.72 / 100% | 0.62 / 100% | 0.67 / 100% | Full training strongest on HateXplain and Implicit Hate |
+| ModernBERT | 0.70 / 100% | 0.61 / 100% | 0.64 / 100% | Strong classifier, but does not generate explanations |
+| GPT-4o zero-shot | 0.56 / - | 0.51 / - | 0.58 / - | Commercial model zero-shot is not consistently leading |
+| GPT-4o 16-shot ICL | 0.62±0.01 / - | 0.60±0.06 / - | 0.40±0.11 / - | Few-shot ICL shows high variance on complex tasks |
 
-The authors also performed a contribution breakdown: on HateXplain, off-the-shelf Llama scored 0.52. Adding HateCOT pre-training brought the $K=256$ baseline to 0.58, and SMARTER’s DPO self-augmentation further increased it to 0.64, indicating gains are not merely from general pre-training or seed explanations.
+The authors also performed an ablation on contributions: on HateXplain, off-the-shelf Llama scores 0.52; adding HateCOT pre-training brings the K=256 baseline to 0.58; SMARTER's DPO self-augmentation further increases this to 0.64, indicating gains are not merely from general pre-training or seed explanations.
 
 ### Ablation Study
-Cross-model refinement demonstrated that T5 significantly benefits from Llama's explanations, while Llama's performance often regresses when learning from T5. This suggest that "mutual learning" is not unconditionally effective and requires validation set selection.
+Cross-model refinement demonstrates that T5 benefits significantly from Llama's explanations, while Llama often suffers when learning from T5. This suggests "mutual learning" is not unconditionally effective and requires validation set selection.
 
 | Setting | HateXplain F1 | Latent Hate F1 | Implicit Hate F1 | Conclusion |
-|---------------|---------------|----------------|------------------|------|
-| T5 Single Model DPO-256 | 0.62 | 0.65 | 0.59 | T5 self-augmented baseline |
-| T5 + Llama Outputs SFT+DPO | 0.66 | 0.66 | 0.61 | Outperforms single T5 and some Llama results |
-| Llama Single Model DPO-256 | 0.64 | 0.69 | 0.60 | Llama self-augmented baseline |
-| Llama + T5 Outputs | No improvement | Marginal gain | No stable gain | T5 output may not suit Llama enhancement |
+|------|---------------|----------------|------------------|------|
+| T5 Individual DPO-256 | 0.62 | 0.65 | 0.59 | T5 baseline after self-augmentation |
+| T5 + Llama Outputs SFT+DPO | 0.66 | 0.66 | 0.61 | Outperforms T5 individual and some Llama individual results |
+| Llama Individual DPO-256 | 0.64 | 0.69 | 0.60 | Llama baseline after self-augmentation |
+| Llama + T5 Outputs | Not exceeding individual | Brief boost on some tasks | No stable gain formed | T5 outputs not necessarily suitable for Llama enhancement |
 
-Regarding explanation quality, human evaluation on 342 HateXplain samples compared T5 and Llama. For the "Normal" category, Llama's explanations were preferred 73 times vs. 25 for T5; for "Offensive" and "Hate," they were comparable. NLI consistency checks showed most explanations align with predicted labels and definitions (Entail > 96%), though cross-model training slightly increased Contradiction by 2%-3%.
+Regarding explanation quality, human evaluation on 342 HateXplain samples compared T5 and Llama. In the "Normal" class, Llama explanations were preferred 73 times vs. T5 25 times; performance was similar for "Offensive" and "Hate" classes. NLI consistency checks showed most explanations remained consistent with predicted labels and definitions (Entailment >96%), though cross-model training slightly increased contradiction by 2%-3%.
 
 | Dataset/Model | Training | Label Consistency Entail↑ | Label Contra.↓ | Def. Consistency Entail↑ | Def. Contra.↓ |
 |-------------|----------|-------------------|-------------------|--------------------|--------------------|
@@ -106,35 +114,35 @@ Regarding explanation quality, human evaluation on 342 HateXplain samples compar
 | Implicit Hate T5 | XMOD | 98.3 | 1.4 | 97.5 | 2.0 |
 
 ### Key Findings
-- DPO self-augmentation provides gains even at $K \le 64$, showing significant low-resource value; T5 narrowed the gap with Llama on Latent Hate and Implicit Hate.
-- DPO continued to improve at $K=256$, while KTO was largely ineffective on HateXplain and hindered performance on the other two datasets.
-- Commercial model 16-shot ICL is not necessarily better than zero-shot; for example, GPT-4o-mini dropped from 0.50 to 0.29 on HateXplain, indicating that few-shot prompts are fragile for fine-grained harmful content tasks.
-- Cross-model training allows weaker models to absorb stronger reasoning styles but can introduce slight explanation inconsistencies, requiring periodic human or NLI audits in deployment.
+- DPO self-augmentation provides gains even at K≤64, demonstrating significant value in low-resource settings; T5 can close the gap with Llama on Latent Hate and Implicit Hate.
+- DPO continues to improve at K=256, whereas KTO is ineffective on HateXplain and negatively impacts Latent Hate and Implicit Hate.
+- Commercial model 16-shot ICL is not necessarily better than zero-shot; for instance, GPT-4o-mini dropped from 0.50 to 0.29 on HateXplain, indicating that few-shot prompting is fragile for fine-grained toxicity tasks.
+- Cross-model training allows weaker models to absorb stronger model reasoning styles but may introduce minor explanation inconsistencies, necessitating periodic human or NLI auditing in deployment.
 
 ## Highlights & Insights
-- The most ingenious aspect of the paper is turning "incorrect label explanations" into training resources. This is more than simple data augmentation; it explicitly contrasts category boundaries for the same input.
-- The superiority of DPO over KTO aligns with task intuition: moderation often requires comparing which explanation fits a definition better between two similar labels, rather than just judging if an explanation "makes sense."
-- Cross-model refinement reveals that models differ not just in performance but in explanation styles. T5 can absorb Llama's reasoning patterns, but Llama does not necessarily benefit from T5.
-- The authors did not merely pursue F1 scores but also validated explanation quality via human preference and NLI consistency, which is critical for explainable content moderation.
+- The most ingenious aspect is converting "incorrect label explanations" into training resources. This is not simple data augmentation but an explicit contrast of category boundaries under the same input.
+- The superiority of DPO over KTO aligns with task intuition: content moderation often involves judging which label definition fits better, rather than just determining if an explanation "makes sense."
+- Cross-model refinement reveals that differences between models go beyond performance to include stylistic reasoning differences. T5 can absorb Llama's reasoning patterns, but Llama does not necessarily benefit from T5.
+- The paper does not just chase F1 scores; it uses human preference and NLI consistency to validate explanation quality, which is crucial for explainable content moderation.
 
 ## Limitations & Future Work
-- Data is entirely in English; cross-lingual toxicity, cultural contexts, and platform norms could significantly shift label boundaries.
+- Data is entirely in English; cross-lingual toxicity, cultural context, and platform norms could significantly alter label boundaries.
 - Only Llama and T5 were compared; cross-model refinement conclusions may not generalize to more architectures or larger models.
-- Human evaluation of explanations was limited to HateXplain due to budget constraints; the other two fine-grained tasks lack equivalent human validation.
-- Self-augmentation relies on the model's initial ability to generate explanations; strong initial bias may reinforce incorrect boundaries or prejudices.
-- Content moderation carries risks of misuse; model outputs must complement human review, appeal mechanisms, and bias audits rather than acting as the sole basis for automated suppression.
+- Human evaluation of explanations was limited to HateXplain due to budget constraints; other fine-grained tasks lack equivalent human validation.
+- Self-augmentation relies on initial model capability; strong initial biases in the model could lead to incorrect label explanations that reinforce wrong boundaries or biases.
+- Content moderation inherently carries risks of abuse. Model outputs must be paired with human review, appeal mechanisms, and bias audits, and should not be the sole basis for automated expression suppression.
 
 ## Related Work & Insights
-- **vs. Traditional Toxicity Classifiers**: Classifiers like ModernBERT are powerful but limited in interpretability. SMARTER is better suited for workflows requiring transparent reasoning and human oversight.
-- **vs. Commercial ICL**: Commercial models are easy to deploy but suffer from high few-shot variance, costs, and lack of control. SMARTER provides a stable, controllable local solution using open-source models.
-- **vs. Self-Instruct / Self-Refine**: While these methods typically generate more positive data, SMARTER's uniqueness lies in generating explanations for both correct and incorrect labels to form preference pairs.
-- **Insight**: For other fine-grained social computing tasks—such as rumor classification, stance detection, and policy violation judgment—"counterfactual explanations" under label definitions could serve as effective low-resource alignment signals.
+- **vs. Traditional Toxicity Classifiers**: Classifiers like ModernBERT are strong but limited in explanation, whereas SMARTER is better suited for workflows requiring transparent reasoning and human review.
+- **vs. Commercial ICL**: Commercial models are easy to deploy but suffer from high few-shot variance, cost, and limited control; SMARTER provides a stable, controllable local solution using open-source models.
+- **vs. Self-Instruct / Self-Refine**: These methods typically generate more positive data; SMARTER's unique feature is simultaneously generating both correct and incorrect label explanations to form preference pairs.
+- **Insight**: For other fine-grained social computing tasks such as rumor classification, stance detection, and policy violation judgment, "counterfactual explanations" under label definitions can serve as effective low-resource alignment signals.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The idea of self-augmenting explanations with DPO is straightforward but highly practical for explainable toxicity detection.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive across three tasks, two model types, commercial baselines, cross-model training, and consistency analysis; cross-lingual and further human evaluations are still needed.
-- Writing Quality: ⭐⭐⭐⭐☆ The methodology is clear and tables are informative, though some figure results require close reading of the text.
-- Value: ⭐⭐⭐⭐⭐ Directly applicable to low-resource, explainable, and controllable moderation model training; offers a transferable paradigm for preference optimization using incorrect explanations.
+- Novelty: ⭐⭐⭐⭐☆ The idea of self-augmented explanations plus DPO is straightforward but highly practical for explainable toxicity detection.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers three tasks, two model types, commercial baselines, cross-model training, and consistency analysis; however, cross-lingual and broader human evaluation is still missing.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology and informative tables; some figures require cross-referencing with the text for full clarity.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for training low-resource, explainable, and controllable moderation models; provides a transferable paradigm for "preference optimization using incorrect explanations."
 
 <!-- RELATED:START -->
 
@@ -145,8 +153,8 @@ Regarding explanation quality, human evaluation on 342 HateXplain samples compar
 - [\[ACL 2026\] PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat](pskeeuca_2026_fine-tuning_large_language_models_with_synthetic_data_augmentation.md)
 - [\[ICML 2026\] Self-Debias: Self-correcting for Debiasing Large Language Models](../../ICML2026/social_computing/self-debias_self-correcting_for_debiasing_large_language_models.md)
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
-- [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
-- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
+- [\[ACL 2025\] BiasGuard: A Reasoning-Enhanced Bias Detection Tool for Large Language Models](../../ACL2025/social_computing/biasguard_a_reasoning-enhanced_bias_detection_tool_for_large_language_models.md)
+- [\[ACL 2026\] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection](toxitrace_gradient-aligned_training_for_explainable_chinese_toxicity_detection.md)
 
 </div>
 

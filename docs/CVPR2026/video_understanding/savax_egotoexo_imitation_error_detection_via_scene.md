@@ -2,99 +2,88 @@
 title: >-
   [Paper Note] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion
 description: >-
-  [CVPR 2026][Video Understanding][Cross-view] This paper formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework…
+  [CVPR 2026][Video Understanding][Paper Note] This work formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework. It jointly addresses three major challenges—temporal misalignment, video redundancy, and cross-view domain gaps—through three modules: adaptive sampling, scene-adaptive view embedding (SVE), and bidire
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Cross-view"
-  - "Imitation error detection"
-  - "Adaptive sampling"
-  - "View embedding"
-  - "Bidirectional cross-attention"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 0cb8785a24fc3a8b
+content_hash: 37152f269a046c4d
 ---
-
 # SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12764](https://arxiv.org/abs/2603.12764)  
 **Code**: [GitHub](https://github.com/jack1ee/SAVAX)  
-**Area**: Video Understanding
-**Keywords**: Cross-view, Imitation error detection, Adaptive sampling, View embedding, Bidirectional cross-attention
+**Area**: Video Understanding  
+**Keywords**: Cross-view, Imitation Error Detection, Adaptive Sampling, View Embedding, Bidirectional Cross-attention
 
 ## TL;DR
 
-This paper formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework, which jointly addresses three core challenges—temporal misalignment, video redundancy, and cross-view domain gap—through three modules: adaptive sampling, scene-adaptive view embeddings, and bidirectional cross-attention fusion.
+This work formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework. It jointly addresses three major challenges—temporal misalignment, video redundancy, and cross-view domain gaps—through three modules: adaptive sampling, scene-adaptive view embedding (SVE), and bidirectional cross-view fusion.
 
 ## Background & Motivation
 
-Error detection is critical in scenarios such as industrial training, medical procedure assessment, and assembly quality control. A common real-world setup involves evaluating first-person (ego) imitation execution against third-person (exo) demonstrations. However, existing methods mostly assume a single-view setting and cannot handle cross-view scenarios.
+Error detection is critical in scenarios such as industrial training, medical operations, and assembly quality control. A common real-world setting involves using a third-person (exo) demonstration to evaluate the correctness of a first-person (ego) imitation. However, existing methods mostly assume a single-view setup and cannot handle cross-view scenarios.
 
-**Core Challenges**:
+**Key Challenge**:
 
-1. **Temporal Misalignment**: Ego/Exo videos are recorded asynchronously with different durations and execution tempos (though duration differences do not constitute errors).
-2. **Severe Redundancy**: Long videos contain large amounts of uninformative content that dilutes attention mechanisms and amplifies false positives.
-3. **Significant Cross-View Domain Gap**: The ego view emphasizes local hand-object interactions, while the exo view captures global body pose and scene layout; their appearance and motion statistics differ substantially, making direct fusion unreliable.
+1. **Temporal Misalignment**: Ego/Exo videos are recorded asynchronously with different durations and execution tempos (though duration differences are not necessarily errors).
+2. **Heavy Redundancy**: Long videos contain significant uninformative content, which dilutes attention mechanisms and amplifies false positives.
+3. **Significant View Domain Gap**: The Ego view emphasizes local hand-object interactions, while the Exo view captures global poses and scene layouts. Their appearance and motion statistics differ significantly, making direct fusion unreliable.
 
-Existing dense video captioning (DVC) and temporal action localization (TAL) baselines struggle in such cross-view settings.
+Existing Dense Video Captioning (DVC) and Temporal Action Localization (TAL) baselines struggle in these cross-view scenarios.
 
 ## Method
 
 ### Overall Architecture
 
-SAVA-X adopts a unified **Align–Fuse–Detect** framework design:
+SAVA-X processes Ego→Exo imitation error detection: using a third-person (Exo) demonstration to determine if a first-person (Ego) imitation is performed correctly. The framework follows a three-stage **Align–Fuse–Detect** pipeline.
 
-1. A **frozen video encoder** extracts frame-level features from Exo/Ego streams separately.
-2. **Adaptive sampling** selects key temporal segments to reduce redundancy.
-3. **Scene-adaptive view embeddings** inject view-conditioned information to mitigate the domain gap.
-4. **Bidirectional cross-attention fusion** aligns and aggregates complementary cues.
-5. The fused sequence is fed into a **deformable Transformer encoder-decoder** to generate first-person temporal segments and imitation correctness predictions.
+The process is as follows: A frozen video encoder (TSP, pre-trained on ActivityNet, feature dimension $d=512$) extracts frame-level features for both Exo and Ego streams. Gated adaptive sampling selects key segments to suppress redundancy. Scene-adaptive view embedding injects view conditions to mitigate domain gaps. Bidirectional cross-view fusion aligns and aggregates complementary cues. Finally, the fused sequence is fed into a deformable Transformer encoder-decoder to generate Ego temporal segments and imitation correctness predictions.
 
-TSP (pre-trained on ActivityNet) is used as the frozen feature extractor with feature dimension $d=512$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A1["Exo Demo Video"] --> B["Frozen TSP Encoder<br/>Frame-level features d=512"]
+    A2["Ego Imitation Video"] --> B
+    B --> C["Gated Adaptive Sampling<br/>Gumbel Top-K Selection + Residual Gating"]
+    C --> D["Scene-Adaptive View Embedding<br/>Shared Dictionary Query for View Conditioning"]
+    D --> E["Bidirectional Cross-View Fusion<br/>Ego↔Exo Retrieval + Gated Residual Mixing"]
+    E --> F["Deformable Transformer Encoder-Decoder"]
+    F -->|Output| G["Ego Segments + Imitation Correctness"]
+```
 
 ### Key Designs
 
-1. **Gated Adaptive Sampling**:
-    - The Exo stream computes saliency scores via self-attention and FFN; the Ego stream uses Exo-conditioned cross-attention scores (leveraging the demonstration as a keyframe reference).
-    - During training, hard indices are generated via a Gumbel Top-K straight-through estimator, with a residual gate providing a differentiable gradient path: $\mathbf{g}^{exo} = \mathbf{1} + \alpha(\text{Norm}(\boldsymbol{s}_x) - \mathbf{1})$
-    - Downstream modules process only the small set of hard-selected keyframes, while gradients are propagated through soft scores.
-    - A selection entropy regularizer $\mathcal{L}_{sel}$ prevents selection collapse, and a VICReg-style regularizer $\mathcal{L}_{vic}$ suppresses dimensional collinearity.
+**1. Gated Adaptive Sampling: Compressing long videos into keyframes with differentiable gradient flow**
 
-2. **Scene-aware Dictionary View Embeddings**:
-    - A shared view-scene dictionary $\mathbf{D} \in \mathbb{R}^{M \times d}$ is maintained, whose row vectors capture common view sub-factors (e.g., "close-range hand-object interaction," "whole-body motion structure").
-    - Per-frame features query the dictionary via temperature-scaled multi-head cross-attention: $\mathbf{VE}^u = \text{CrossAttn}(\hat{\mathbf{Z}}^u / \tau, \mathbf{D})$
-    - Embeddings are injected at two points: before fusion (intra-domain alignment) and at each encoder layer (multi-level modulation).
-    - An attention entropy regularizer prevents overly peaked dictionary queries: $\mathcal{L}_\text{view-ent} = \frac{1}{\log M} \mathbb{E}_t [KL(\alpha_t | U_M)]$
-    - A dictionary diversity regularizer suppresses prototype redundancy: $\mathcal{L}_\text{dict-div} = \|\hat{\mathbf{D}} \hat{\mathbf{D}}^\top - \mathbf{I}_M\|_F^2$
+Long video redundancy amplifies false positives, but "hard frame selection" is non-differentiable. SAVA-X calculates saliency scores using self-attention+FFN on the Exo side and cross-attention scores (conditioned on Exo) on the Ego side. During training, a Gumbel Top-K straight-through estimator generates hard indices, while a residual gate $\mathbf{g}^{exo} = \mathbf{1} + \alpha(\text{Norm}(\boldsymbol{s}_x) - \mathbf{1})$ maintains a differentiable gradient path. Downstream modules process only the sparse keyframes, but gradients flow back via soft scores. Selection entropy regularization $\mathcal{L}_{sel}$ prevents selection collapse, and VICReg-style regularization $\mathcal{L}_{vic}$ suppresses dimensional collinearity.
 
-3. **Bidirectional Cross-Attention Fusion**:
-    - Symmetric bidirectional cross-attention is computed in parallel: the Ego stream retrieves global boundary/step cues from Exo, while the Exo stream retrieves hand-object details and local causal relationships from Ego.
-    - A learnable gated residual mixture prevents either stream from dominating: $\mathbf{F}^{ego} = (1-\boldsymbol{\gamma}^e)\tilde{\mathbf{Z}}^{ego} + \boldsymbol{\gamma}^e \mathbf{E}^\star$
-    - The gate parameter $\boldsymbol{\gamma}^e = \sigma(\mathbf{W_e}[\tilde{\mathbf{Z}}^{ego}; \mathbf{E}^\star])$ relies more on cross-view evidence at action boundaries and key interactions.
-    - Final fusion: $\tilde{\mathbf{Z}}^{fused} = \frac{1}{2}(\mathbf{F}^{ego} + \mathbf{F}^{exo})$
+**2. Scene-Adaptive View Embedding: Explicitly encoding "view" into features via a shared dictionary**
+
+Ego and Exo appearance/motion statistics differ greatly; fixed learned view tokens lack flexibility. SAVA-X maintains a shared view-scene dictionary $\mathbf{D} \in \mathbb{R}^{M \times d}$, where each row captures a common view sub-factor (e.g., "close-up hand-object interaction" or "full-body motion structure"). Frame features query this dictionary via multi-head cross-attention with temperature $\mathbf{VE}^u = \text{CrossAttn}(\hat{\mathbf{Z}}^u / \tau, \mathbf{D})$. The resulting embeddings are injected at two points: before fusion (intra-domain alignment) and into encoder layers (multi-level modulation). To ensure dictionary utility, attention entropy regularization $\mathcal{L}_\text{view-ent} = \frac{1}{\log M} \mathbb{E}_t [KL(\alpha_t | U_M)]$ prevents over-sharp queries, and dictionary diversity regularization $\mathcal{L}_\text{dict-div} = \|\hat{\mathbf{D}} \hat{\mathbf{D}}^\top - \mathbf{I}_M\|_F^2$ inhibits prototype redundancy.
+
+**3. Bidirectional Cross-View Fusion: Mutual enhancement without suppression**
+
+Unidirectional fusion might lose complementary information. SAVA-X performs parallel symmetric bidirectional cross-attention: Ego retrieves global boundaries/step cues from Exo, while Exo retrieves hand-object details/local causality from Ego. Learnable gated residual mixing $\mathbf{F}^{ego} = (1-\boldsymbol{\gamma}^e)\tilde{\mathbf{Z}}^{ego} + \boldsymbol{\gamma}^e \mathbf{E}^\star$ (where $\boldsymbol{\gamma}^e = \sigma(\mathbf{W_e}[\tilde{\mathbf{Z}}^{ego}; \mathbf{E}^\star])$) prevents either stream from being suppressed. The model relies more on cross-view evidence at action boundaries/key interactions. Finally, features are fused symmetrically via $\tilde{\mathbf{Z}}^{fused} = \frac{1}{2}(\mathbf{F}^{ego} + \mathbf{F}^{exo})$.
 
 ### Loss & Training
 
-Two losses are jointly optimized:
-- **DVC loss $\mathcal{L}_{DVC}$**: Dense video captioning loss following the PDVC configuration.
-- **Imitation discrimination loss $\mathcal{L}_{Imit}$**: Weight $\lambda_{Imit} = 0.5$.
-
-Training uses Hungarian set matching to establish one-to-one correspondence between predictions and ground-truth segments. Optimizer: AdamW; batch size: 16; learning rate: $10^{-4}$. Regularization weights are in the range $[0.01, 0.05]$.
+The model jointly optimizes the dense video captioning loss $\mathcal{L}_{DVC}$ (following the PDVC configuration) and the imitation discrimination loss $\mathcal{L}_{Imit}$ (weight $\lambda_{Imit} = 0.5$). Hungarian matching establishes one-to-one correspondence between predicted and ground-truth segments. The optimizer is AdamW with a batch size of 16, a learning rate of $10^{-4}$, and regularization weights in the $[0.01, 0.05]$ range.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on the EgoMe dataset (7,902 asynchronous Exo-Ego video pairs, approximately 82.8 hours):
+Evaluated on the EgoMe dataset (7,902 asynchronous Exo-Ego video pairs, ~82.8 hours):
 
 | Method | Category | Val AUPRC@0.3 | Val AUPRC@0.5 | Val AUPRC@0.7 | Val Mean | Val tIoU | Test Mean | Test tIoU |
-|--------|----------|--------------|--------------|--------------|----------|----------|-----------|-----------|
+|------|------|--------------|--------------|--------------|----------|----------|-----------|-----------|
 | PDVC | DVC | 28.21 | 20.48 | 7.95 | 18.88 | 58.58 | 16.20 | 57.98 |
 | Exo2EgoDVC | DVC | 31.33 | 20.27 | 7.49 | 19.69 | 59.06 | 15.99 | 58.15 |
 | ActionFormer | TAL | 31.37 | 15.41 | 2.63 | 16.47 | 48.89 | 14.08 | 48.25 |
 | TriDet | TAL | 30.04 | 14.61 | 2.44 | 15.70 | 49.05 | 13.77 | 49.02 |
-| PDVC (Ego only) | DVC | 19.35 | 13.91 | 5.11 | 12.79 | 57.63 | 13.94 | 57.19 |
+| PDVC (Ego-only) | DVC | 19.35 | 13.91 | 5.11 | 12.79 | 57.63 | 13.94 | 57.19 |
 | **SAVA-X** | Ours | **33.56** | **24.04** | **9.48** | **22.36** | **59.31** | **18.50** | **58.32** |
 
 ### Ablation Study
@@ -112,46 +101,44 @@ Evaluated on the EgoMe dataset (7,902 asynchronous Exo-Ego video pairs, approxim
 
 ### Key Findings
 
-1. **Complementarity of three modules**: Each module independently yields a relative improvement of +10.7%–+12.8%; their combination achieves the best performance, demonstrating that redundancy removal, domain gap mitigation, and bidirectional fusion address distinct bottlenecks.
-2. **SVE+BiX is the strongest pairing**: Reducing the domain gap combined with bidirectional cross-validation yields the best result.
-3. **Unidirectional ablation**: The Exo→Ego direction performs comparably to the full bidirectional setting, while Ego→Exo is weaker—consistent with the task objective of detecting errors in the Ego stream, which relies on boundary and ordering cues from the demonstration to guide imitation assessment.
-4. **Ego-only input leads to substantial degradation** (Mean AUPRC 12.79 vs. 18.88), validating the necessity of third-person demonstration signals for reducing false positives.
-5. **Frame rate and Top-K analysis**: At low frame rates, more frames must be retained to avoid information loss; at high frame rates, retaining a small number of high-scoring frames suffices.
-6. **SVE domain gap analysis**: After injecting SVE, the cross-view similarity distribution shifts rightward and becomes more concentrated, effectively mitigating the domain gap.
+1. **Module Complementarity**: Each module independently provides a +10.7% to +12.8% relative gain. Their combination achieves the best performance, indicating that redundancy removal, domain gap mitigation, and bidirectional fusion address distinct bottlenecks.
+2. **SVE+BiX Strongest Pairing**: Combining domain gap reduction with bidirectional cross-verification yields the highest performance.
+3. **Unidirectional Ablation**: The Exo→Ego direction is comparable to bidirectional fusion, while Ego→Exo is weaker. This aligns with the task goal—detecting errors in Ego streams requires boundary/ordering cues from the Exo demonstration.
+4. **Impact of Demo**: Ego-only performance drops significantly (Mean AUPRC 12.79 vs 18.88), validating the necessity of third-person demonstration signals for reducing false positives.
+5. **View Domain Analysis**: Injecting SVE shifts the cross-view similarity distribution to the right and makes it more concentrated, effectively mitigating the domain gap.
 
 ## Highlights & Insights
 
-- **Task formalization contribution**: This work is the first to systematically formalize the Ego→Exo imitation error detection task, clearly defining inputs, outputs, and evaluation protocols.
-- **Module design precisely maps to challenges**: AS→redundancy, SVE→domain gap, BiX→cross-view fusion; each design directly targets one of the three core challenges.
-- **Gumbel Top-K + residual gating**: The approach elegantly combines the sparsity of discrete selection with the gradient signal of a continuous path, resolving the sparse-gradient problem inherent in hard sampling.
-- **Dictionary view embeddings outperform fixed tokens**: Attention-driven dictionary queries adapt to different scenes, whereas fixed learned tokens yield limited gains.
-- **Highly thorough ablations**: Beyond module-level ablations, fine-grained analyses cover frame rate, Top-K ratio, dictionary size, regularization weights, and fusion variants.
+- **Task Formalization**: First systematic formalization of the Ego→Exo imitation error detection task with clearly defined protocols.
+- **Problem-Driven Design**: The AS, SVE, and BiX modules precisely map to the three core challenges of redundancy, domain gap, and cross-view fusion.
+- **Gumbel Top-K + Residual Gating**: Effectively combines discrete sparse selection with continuous gradient signals to solve the gradient sparsity issue in hard sampling.
+- **SVE vs. Fixed Tokens**: Attention-driven dictionary queries adapt to different scenes more effectively than fixed learned tokens.
+- **Experimental Rigor**: Extensive analysis covers module-level ablations, frame rates, Top-K ratios, dictionary sizes, and regularization terms.
 
 ## Limitations & Future Work
 
-1. **Evaluated on EgoMe only**: Generalization to other cross-view datasets remains unknown.
-2. **Frozen feature extractor**: End-to-end fine-tuning may yield further improvements at the cost of increased computational overhead.
-3. **No semantic/textual information utilized**: Incorporating step descriptions could enable more precise error categorization.
-4. **Single-layer cross-attention**: Stacking multiple layers may improve cross-view alignment quality.
-5. **Limited tIoU improvement**: Gains in temporal localization quality are relatively modest compared to AUPRC improvements; boundary prediction remains a direction for further optimization.
+1. **Dataset Breadth**: Validated only on the EgoMe dataset; generalization to other cross-view datasets remains to be explored.
+2. **Feature Extraction**: Using frozen encoders; end-to-end fine-tuning might improve performance but increases computational costs.
+3. **Semantic Integration**: Incorporating step descriptions/textual information could assist in more precise error classification.
+4. **Boundary Refinement**: The gain in tIoU is relatively small compared to AUPRC, suggesting room for improvement in temporal localization.
 
 ## Related Work & Insights
 
-- **PDVC** is the dominant DVC method; SAVA-X adopts its encoder-decoder configuration.
-- **ActionFormer / TriDet** are strong TAL baselines but struggle in cross-view settings.
-- **Exo2EgoDVC** is a pioneering work on cross-view captioning, employing view-invariant adversarial learning.
-- **Insight**: In cross-view tasks, naively concatenating Ego/Exo features is insufficient; explicit domain gap modeling and information interaction mechanisms are required.
+- **PDVC** is a mainstream DVC method whose encoder-decoder architecture was adopted as a foundation.
+- **ActionFormer / TriDet** are strong TAL baselines that struggle in cross-view settings.
+- **Exo2EgoDVC** pioneered cross-view captioning using view-invariant adversarial learning.
+- **Insight**: In cross-view tasks, simple concatenation of Ego/Exo features is insufficient; explicit domain gap modeling and information interaction mechanisms are essential.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Novelty | ⭐⭐⭐⭐ |
 | Theoretical Depth | ⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
-| Practical Value | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
-| Overall | ⭐⭐⭐⭐ |
+| **Overall** | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
 
@@ -159,11 +146,11 @@ Evaluated on the EgoMe dataset (7,902 asynchronous Exo-Ego video pairs, approxim
 
 ## Related Papers
 
-- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
-- [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
-- [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](../../ICCV2025/video_understanding/prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
-- [\[ICML 2026\] VSCD: Video Scene Change Detection in Unaligned Scenarios](../../ICML2026/video_understanding/vscd_video-based_scene_change_detection_in_unaligned_scenes.md)
-- [\[AAAI 2026\] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation](../../AAAI2026/video_understanding/bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre.md)
+- [\[CVPR 2026\] SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training](shands_a_multi-view_dataset_and_benchmark_for_surgical_hand-gesture_and_error_re.md)
+- [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](mv-tap_tracking_any_point_in_multi-view_videos.md)
+- [\[CVPR 2025\] Bootstrap Your Own Views: Masked Ego-Exo Modeling for Fine-Grained View-Invariant Video Representations](../../CVPR2025/video_understanding/bootstrap_your_own_views_masked_ego-exo_modeling_for_fine-grained_view-invariant.md)
+- [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
+- [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
 
 </div>
 

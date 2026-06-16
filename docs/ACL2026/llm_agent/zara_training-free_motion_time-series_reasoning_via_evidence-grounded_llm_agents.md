@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Human Activity Recognition] Ours proposes ZARA, a knowledge- and retrieval-augmented multi-agent framework. By distilling sensor signals into structured textual knowledge bases…
+  [ACL 2026][LLM Agent][Paper Note] Ours proposes ZARA, a knowledge and retrieval-augmented multi-agent framework. By distilling sensor signals into a structured text knowledge base, performing class-wise retrieval, and employing hierarchical LLM reasoning, it achieves interpretable human activity recognition in a completely training-free setting, signif
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Human Activity Recognition"
-  - "Time-Series Reasoning"
-  - "Retrieval-Augmented Generation"
-  - "Multi-Agent Reasoning"
-  - "Training-Free"
+  - ACL 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 81417a9e4928cc88
+content_hash: 8b59ed0875a9bc78
 ---
-
 # ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 
 **Conference**: ACL 2026  
@@ -25,59 +19,78 @@ content_hash: 81417a9e4928cc88
 
 ## TL;DR
 
-Ours proposes ZARA, a knowledge- and retrieval-augmented multi-agent framework. By distilling sensor signals into structured textual knowledge bases, employing class-conditional retrieval, and performing hierarchical LLM reasoning, it achieves interpretable Human Activity Recognition (HAR) in a completely training-free setting, significantly outperforming existing methods across 8 datasets.
+Ours proposes ZARA, a knowledge and retrieval-augmented multi-agent framework. By distilling sensor signals into a structured text knowledge base, performing class-wise retrieval, and employing hierarchical LLM reasoning, it achieves interpretable human activity recognition in a completely training-free setting, significantly outperforming existing methods on 8 datasets.
 
 ## Background & Motivation
 
-**Background**: Human Activity Recognition (HAR) is a core technology for applications such as digital health and adaptive interfaces. Current mainstream methods rely on task-specific deep neural networks that require supervised training under fixed sensor configurations and activity categories.
+**Background**: Human Activity Recognition (HAR) is a core technology for applications such as digital health and adaptive interfaces. Current mainstream methods rely on task-specific deep neural networks, requiring supervised training under fixed sensor configurations and activity categories.
 
 **Limitations of Prior Work**: Existing methods face three major bottlenecks: (1) Poor generalization—adapting to new users or hardware requires costly model retraining; (2) Limited training-free adaptation—time-series foundation models like Moment and Mantis provide transferable representations but still require training specific classification heads, while contrastive learning methods like UniMTS struggle to distinguish fine-grained activities in frozen-parameter settings; (3) Lack of interpretability—most methods only output category predictions without a transparent reasoning process.
 
-**Key Challenge**: Although LLMs possess powerful open-set reasoning capabilities, directly inputting numerical time-series into LLMs leads to hallucinations and weak grounding, as LLMs cannot intuitively understand physical dynamics from raw numerical streams.
+**Key Challenge**: While LLMs possess powerful open-set reasoning capabilities, directly inputting numerical time-series into an LLM leads to hallucinations and weak grounding, as LLMs cannot intuitively understand physical dynamics from raw numerical streams.
 
 **Goal**: To build a completely training-free HAR framework capable of generalizing across users and datasets while providing an interpretable reasoning process.
 
-**Key Insight**: The authors observe that just as RAG in NLP relies on high-quality document corpora, RAG in HAR requires a domain-specific knowledge base to translate implicit statistical patterns of physical motion in sensor data into verifiable natural language priors (e.g., "the vertical acceleration variance of running is higher than that of walking").
+**Key Insight**: The authors observe that just as RAG in NLP relies on high-quality document corpora, RAG in HAR requires a domain-specific knowledge base that transforms implicit statistical patterns of physical movement into verifiable natural language priors (e.g., "the vertical acceleration variance of running is higher than walking").
 
-**Core Idea**: Distill statistical features of sensor signals into pairwise textual knowledge bases, combining class-conditional retrieval and hierarchical multi-agent reasoning to achieve evidence-based training-free activity recognition.
+**Core Idea**: Distill the statistical features of sensor signals into a pairwise text knowledge base, combined with class-wise retrieval and hierarchical multi-agent reasoning, to achieve evidence-based training-free activity recognition.
 
 ## Method
 
 ### Overall Architecture
 
-The core design of ZARA decouples information into two sources: (1) **Global Knowledge $\mathcal{K}$**—a static reference registry storing pairwise activity feature importance profiles; (2) **Local Evidence $\mathcal{D}$**—a vector database of raw signal embeddings serving as external memory for local distribution grounding. The workflow consists of: offline construction of the knowledge base → online retrieval of relevant evidence → hierarchical multi-agent reasoning to output predictions and explanations.
+ZARA aims to enable a frozen LLM to understand sensor time-series and determine human actions without any training. The challenge is that feeding raw numerical streams directly to an LLM causes hallucinations and weak grounding. Therefore, ZARA decouples information into two clues: one is global knowledge $\mathcal{K}$—a static reference registry of "which features are most discriminative for paired activities" calculated offline; the other is local evidence $\mathcal{D}$—a vector database composed of raw signal embeddings, providing local distribution grounding for query samples. Online, the system first retrieves relevant evidence based on candidate classes, followed by hierarchical reasoning by multiple LLM agents, finally outputting an action label and an interpretable natural language explanation. The overall process is "offline knowledge base construction → online class-wise retrieval → hierarchical multi-agent reasoning."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph OFF["Offline Statistical Profiling (Building KB K)"]
+        direction TB
+        A1["Extract statistical features by activity pair<br/>Time / Frequency / Cross-channel"] --> A2["Feature ranking (AutoGluon)<br/>Cross-validation weighting"]
+        A2 --> A3["Global Knowledge K<br/>'Feature-Score' indexed by activity pair"]
+    end
+    Q["Query Sensor Signal"] --> RET
+    A3 -.Reference Prior.-> R3
+    subgraph RET["Position-Specific Class-Wise Retrieval (Local Evidence D)"]
+        direction TB
+        B1["Frozen Encoder (Mantis)<br/>Location-partitioned vector DB + FAISS"] --> B2["Independent top-k for each candidate class"]
+        B2 -->|Multi-sensor| B3["Reciprocal Rank Fusion RRF"]
+    end
+    RET --> REA
+    subgraph REA["Hierarchical Multi-Agent Reasoning (4 Stages / 3 Roles)"]
+        direction TB
+        R1["Feature Selector: Query K for coarse-grained discriminative features"] --> R2["Evidence Pruner: Synthesis of contrastive table<br/>Filter mismatched activities → Candidate set A′"]
+        R2 --> R3["Feature Selector: Retrieve fine-grained features on A′"]
+        R3 --> R4["Decision Insightor: Final label + Explanation"]
+    end
+    REA --> OUT["Action Label + Interpretable Natural Language Explanation"]
+```
 
 ### Key Designs
 
-1.  **Offline Statistical Profiling**:
+**1. Offline Statistical Profiling: Distilling signal features into verifiable linguistic priors**
 
-    *   Function: Automatically constructs a pairwise activity feature importance knowledge base $\mathcal{K}$ from labeled data.
-    *   Mechanism: For each activity pair $(a_i, a_j)$, human-interpretable statistical features are extracted from the time domain (mean, variance, RMS), frequency domain (spectral entropy, dominant frequency), and cross-channel domain (correlation, tilt angles). Feature importance scores are estimated using permutation-based feature ranking (AutoGluon), with cross-validation ensuring robustness through weighted averaging. All feature-score tuples are stored indexed by activity pairs.
-    *   Design Motivation: Transforms implicit signal features into verifiable linguistic priors. Pairwise organization allows the system to dynamically instantiate relevant knowledge for any candidate subset. Adding new activities only requires registering their statistical profiles without retraining.
+LLMs cannot intuitively understand physical dynamics from raw numbers. Therefore, ZARA first translates "what the signal looks like" into "statistal laws readable by text." For each activity pair $(a_i, a_j)$, it extracts human-interpretable statistical features such as time domain (mean, variance, RMS), frequency domain (spectral entropy, dominant frequency), and cross-channel (correlation, tilt angle). Then, permutation-based feature importance (AutoGluon) is used to estimate scores for each feature, with cross-validation weighted averaging ensuring robustness. All "feature-score" tuples are indexed by activity pair and stored in $\mathcal{K}$. The advantage of pairwise organization is that the system can dynamically assemble relevant knowledge for any candidate subset. Adding new activities only requires registering their statistical profiles without retraining, which is key to training-free scalability.
 
-2.  **Class-Wise Multi-Sensor Retrieval**:
+**2. Class-Wise Multi-Sensor Retrieval: Balancing evidence for long-tail classes**
 
-    *   Function: Retrieves the most relevant sensor signal evidence for each candidate activity category.
-    *   Mechanism: Maintains vector databases $\{\mathcal{D}^{loc}\}$ partitioned by sensor location, using a frozen time-series foundation encoder (Mantis by default) to generate embeddings indexed via FAISS IndexFlatIP. For a query signal, top-k evidence is retrieved separately for each candidate category. In multi-sensor scenarios, evidence is aggregated via Reciprocal Rank Fusion (RRF): $\text{RRF}(d) = \sum_{loc} \frac{1}{k_{rrf} + r_{loc}(d)}$.
-    *   Design Motivation: Class-conditional retrieval ensures balanced recall even for long-tail activities. Partitioning by sensor location ensures that retrieved evidence aligns with the physical context of the query.
+Global retrieval in standard RAG can be overwhelmed by high-frequency classes, leading to insufficient recall for long-tail activities. ZARA switches to per-class retrieval. The system maintains vector databases $\{\mathcal{D}^{loc}\}$ partitioned by sensor location, using a frozen time-series foundation encoder (default Mantis) to generate embeddings indexed by FAISS IndexFlatIP. For a query signal, top-k evidence is independently retrieved for each candidate class, ensuring sufficient recall for every class. In multi-sensor scenarios, Reciprocal Rank Fusion (RRF) aggregates results from different locations: $\text{RRF}(d) = \sum_{loc} \frac{1}{k_{rrf} + r_{loc}(d)}$. Location-based partitioning ensures that the retrieved evidence aligns with the physical context of the query.
 
-3.  **Hierarchical Multi-Agent Reasoning**:
+**3. Hierarchical Multi-Agent Reasoning: Progressively narrowing the hypothesis space with interpretable traces**
 
-    *   Function: Iteratively reasons through three specialized LLM agent roles across four stages to ultimately output a prediction and a natural language explanation.
-    *   Mechanism: (1) The **Feature Selector** queries the knowledge base $\mathcal{K}$ to determine coarse-grained discriminative features; (2) The **Evidence Pruner** synthesizes retrieved category evidence into statistical contrast tables and filters activities with distribution mismatches to obtain a refined candidate set $\mathcal{A}'$; (3) The Feature Selector retrieves fine-grained features on $\mathcal{A}'$ again; (4) The **Decision Insighter** analyzes updated statistics to derive the final label and generate interpretable reasoning notes.
-    *   Design Motivation: The hierarchical design reduces the hypothesis space, avoiding the difficulty of choosing among many candidates at once. Incremental refinement is more reliable than direct reasoning and produces interpretable intermediate results at each step.
+Directly selecting an answer from many candidates is both confusing and opaque. ZARA lets three specialized roles perform relay reasoning across four stages. The Feature Selector first queries $\mathcal{K}$ to lock onto coarse-grained discriminative features; the Evidence Pruner synthesizes retrieved class evidence into a statistical contrastive table and filters out activities with mismatched distributions, yielding a refined candidate set $\mathcal{A}'$; the Feature Selector then retrieves fine-grained features on $\mathcal{A}'$; finally, the Decision Insightor analyzes updated statistics to provide the final label and generate an explanation. Step-wise refinement is more reliable than direct reasoning and produces verifiable intermediate results.
 
 ### Loss & Training
 
-ZARA is a completely training-free reasoning framework and does not involve loss functions or a training process. The knowledge base is constructed via offline statistical analysis, and reasoning is performed through frozen LLMs. All LLM agent temperatures are set to 0 to ensure deterministic reproducibility. For large-scale datasets (WISDM, DSADS), dynamic retrieval replaces static candidate lists, selecting the top-10 most relevant categories via cosine similarity.
+ZARA is completely training-free and does not involve loss functions or training processes: the knowledge base is constructed via offline statistical analysis, and reasoning is performed by a frozen LLM. All agents use a temperature of 0 to ensure deterministic reproducibility. For large-scale datasets (WISDM, DSADS), dynamic retrieval replaces static candidate lists, using cosine similarity to pre-select the top-10 most relevant categories.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Cross-Subject generalization, 8 HAR datasets, frozen-parameter setting:
+Cross-subject generalization, 8 HAR datasets, frozen parameter setting:
 
-| Method | Avg Acc | Avg F1 | Type |
+| Method | Mean Acc | Mean F1 | Type |
 |------|---------|---------|------|
 | UniMTS | 39.4 | 32.1 | Contrastive Pre-training |
 | IMU2CLIP | 22.7 | 17.9 | Contrastive Pre-training |
@@ -85,49 +98,49 @@ Cross-Subject generalization, 8 HAR datasets, frozen-parameter setting:
 | ZARA (GPT-4.1-mini) | 77.5 | 77.2 | Knowledge-Augmented Reasoning |
 | ZARA (Gemini) | **81.6** | **81.4** | Knowledge-Augmented Reasoning |
 
-The best variant of ZARA exceeds the strongest baseline UniMTS by 42.2 percentage points in Acc.
+The best ZARA variant exceeds the strongest baseline UniMTS by 42.2 percentage points in Acc.
 
 ### Ablation Study
 
-| Configuration | Avg Acc | Notes |
+| Configuration | Mean Acc | Description |
 |------|---------|------|
-| ZARA (Full) | 81.6 | Gemini backbone |
-| Without KB | Significant Drop | Lack of statistical priors leaves reasoning without evidence |
-| Global Retrieval instead of Class-wise | Decrease | Insufficient recall for long-tail categories |
-| Single-stage Reasoning instead of Hierarchical | Decrease | Lack of incremental refinement increases confusion |
-| DTW instead of Mantis encoder | 71.0→81.6 | Mantis embeddings are superior, but DTW is also usable |
+| ZARA (Complete) | 81.6 | Gemini backbone |
+| No Knowledge Base | Significant Drop | Reasoning lacks grounding without statistical priors |
+| Global vs. Class-Wise Retrieval | Drop | Insufficient recall for long-tail classes |
+| Single-Stage vs. Hierarchical | Drop | Increased confusion without step-wise refinement |
+| DTW vs. Mantis Encoder | 71.0→81.6 | Mantis embeddings are superior but DTW is usable |
 
 ### Key Findings
 
-*   The gains of ZARA stem from the framework design of knowledge and retrieval augmentation rather than the scale of the LLM backbone; versions from Qwen-30B to Gemini all significantly outperform all baselines.
-*   Direct prompting methods (HARGPT, Gemini Text/Table/Plot) fail completely, proving that without explicit reference grounding, even powerful LLMs cannot reason over numerical sensor streams.
-*   ZARA's Acc and F1 are highly consistent, whereas baseline methods show large gaps between Acc and F1, indicating that ZARA effectively identifies long-tail activities through class-balanced retrieval.
-*   In cross-dataset generalization experiments, the Cross-Dataset Knowledge setting outperforms no-knowledge and in-domain knowledge settings, proving that statistical knowledge possesses cross-domain transferability.
+- ZARA's gains originate from the knowledge and retrieval-augmented framework design rather than LLM backbone scale; backbones from Qwen-30B to Gemini all significantly outperform all baselines.
+- Direct prompting methods (HARGPT, Gemini Text/Table/Plot) fail completely, proving that without explicit reference grounding, even powerful LLMs cannot reason over numerical sensor streams.
+- ZARA's Acc and F1 are highly consistent, whereas baseline methods show large gaps between Acc and F1, indicating that ZARA effectively identifies long-tail activities through class-balanced retrieval.
+- In cross-dataset generalization experiments, the Cross-Dataset Knowledge setting outperforms no-knowledge and in-domain knowledge settings, proving the cross-domain transferability of statistical knowledge.
 
 ## Highlights & Insights
 
-*   **Signal-to-text knowledge distillation** is very ingenious—it transforms statistical features of sensor time-series into pairwise linguistic priors, preserving physical interpretability while enabling LLMs to perform evidence-based reasoning. This paradigm is transferable to any scenario requiring LLMs to process numerical data.
-*   **Class-conditional retrieval** addresses the long-tail bias problem in standard RAG—retrieving top-k independently for each candidate category ensures that minority classes have sufficient evidence. This design idea can be directly transferred to other classification-based RAG tasks.
-*   Completely training-free and plug-and-play: Adding new activities only requires registering statistical profiles without retraining, achieving true open-set activity recognition.
+- **Signal-to-text knowledge distillation** is highly ingenious—transforming statistical features of sensor time-series into pairwise linguistic priors preserves physical interpretability while enabling evidence-based reasoning for LLMs. This paradigm is transferable to any scenario where LLMs process numerical data.
+- **Class-wise retrieval** addresses the long-tail bias in standard RAG—independently retrieving top-k for each candidate class ensures sufficient evidence for minority classes. This design can be directly migrated to other categorical RAG tasks.
+- Completely training-free and plug-and-play: adding new activities only requires registering a statistical profile without retraining, achieving true open-set activity recognition.
 
 ## Limitations & Future Work
 
-*   High inference cost: Each query requires multiple rounds of LLM calls (Feature Selection → Evidence Pruning → Re-selection → Decision), limiting real-time applications.
-*   Knowledge base construction still requires offline statistical analysis of labeled data, which may be limited when labeled data is extremely scarce.
-*   Currently validated only on accelerometer/gyroscope sensors; the applicability to more sensor modalities (e.g., EMG, barometer) remains to be explored.
-*   For fine-grained activities with very similar motions (e.g., different types of gait), the discriminative power of statistical features may be insufficient.
+- High inference cost: each query requires multiple LLM calls (Feature Selection → Evidence Pruning → Re-selection → Decision), limiting real-time application.
+- Knowledge base construction still requires offline statistical analysis of labeled data, which may be limited when labeled data is extremely scarce.
+- Currently validated only on accelerometer/gyroscope sensors; the applicability to more sensor modalities (e.g., EMG, barometer) remains to be explored.
+- For fine-grained activities with very similar motions (e.g., different types of gaits), the discriminative power of statistical features may be insufficient.
 
 ## Related Work & Insights
 
-*   **vs UniMTS**: UniMTS achieves classifier-free recognition by aligning synthetic skeletal motion with text but lacks semantic granularity. ZARA, through explicit statistical knowledge injection and class-conditional retrieval, achieves 42 percentage points higher Acc in the same training-free setting.
-*   **vs HARGPT**: HARGPT directly inputs raw signals as text/image prompts into LLMs, leading to high token costs and severe information loss. ZARA transforms signals into structured statistical knowledge before inputting them into LLMs, fundamentally solving the grounding problem.
+- **vs. UniMTS**: UniMTS achieves classifier-free recognition by aligning synthetic skeletal motion with text but lacks semantic granularity. ZARA, through explicit statistical knowledge injection and class-wise retrieval, achieves a 42 percentage point higher Acc in the same training-free setting.
+- **vs. HARGPT**: HARGPT directly inputs raw signals as text/image prompts into the LLM, resulting in high token costs and severe information loss. ZARA transforms signals into structured statistical knowledge before inputting them into the LLM, fundamentally solving the grounding problem.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ The first work to apply a knowledge- and retrieval-augmented multi-agent framework to sensor time-series reasoning; the signal-to-text knowledge distillation paradigm is very novel.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 datasets, 10 baselines, two evaluation protocols (cross-subject and cross-dataset), multiple LLM backbone comparisons, and rich ablations.
-*   Writing Quality: ⭐⭐⭐⭐ The structure is clear and the method description is detailed, though table formatting in LaTeX is slightly verbose.
-*   Value: ⭐⭐⭐⭐ Provides a new paradigm for LLMs to handle numerical sensor data, although real-time inference cost is a barrier to practical deployment.
+- Novelty: ⭐⭐⭐⭐⭐ First work to apply a knowledge and retrieval-augmented multi-agent framework to sensor time-series reasoning. The signal-to-text knowledge distillation paradigm is very novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 datasets, 10 baselines, cross-subject and cross-dataset evaluation protocols, multiple LLM backbone comparisons, and rich ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed method description, though table formats in LaTeX are slightly verbose.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for LLMs to handle numerical sensor data, though real-time inference cost is a barrier to practical deployment.
 
 <!-- RELATED:START -->
 
@@ -135,11 +148,11 @@ The best variant of ZARA exceeds the strongest baseline UniMTS by 42.2 percentag
 
 ## Related Papers
 
+- [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](../../CVPR2026/llm_agent/bami_training-free_bias_mitigation_in_gui_grounding.md)
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
-- [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
-- [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
 - [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
+- [\[CVPR 2025\] TANGO: Training-free Embodied AI Agents for Open-world Tasks](../../CVPR2025/llm_agent/tango_training-free_embodied_ai_agents_for_open-world_tasks.md)
 
 </div>
 

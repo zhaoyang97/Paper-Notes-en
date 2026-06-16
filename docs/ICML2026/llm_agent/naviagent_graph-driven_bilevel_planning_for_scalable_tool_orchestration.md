@@ -2,73 +2,87 @@
 title: >-
   [Paper Note] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration
 description: >-
-  [ICML 2026][LLM Agent][Function Calling] NaviAgent decouples LLM tool invocation into two levels: "high-level four-way decision making + low-level path searching on a graph." A Tool World Navigation Model (TWNM)…
+  [ICML 2026][LLM Agent][Paper Note] NaviAgent decomposes LLM tool calling into "high-level four-choice decision-making + low-level graph-based path searching." A Tool World Navigation Model (TWNM), trained with HGT, explicitly models structural and behavioral dependencies between tools. On ToolBench/API-Bank and 50 real-world RapidAPIs, it improves the T
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Function Calling"
-  - "Tool Graph"
-  - "Bilevel Planning"
-  - "Heterogeneous Graph Transformer"
-  - "Closed-loop Adaptation"
+  - ICML 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 98509966b28f314e
+content_hash: df1b099f2e5d58e8
 ---
-
 # NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration
 
 **Conference**: ICML 2026  
 **arXiv**: [2506.19500](https://arxiv.org/abs/2506.19500)  
 **Code**: None  
 **Area**: LLM Agent / Tool Orchestration / Graph Representation Learning  
-**Keywords**: Function Calling, Tool Graph, Bilevel Planning, Heterogeneous Graph Transformer, Closed-loop Adaptation  
+**Keywords**: Function calling, Tool Graph, Bilevel Planning, Heterogeneous Graph Transformer, Closed-loop Adaptation  
 
 ## TL;DR
-NaviAgent decouples LLM tool invocation into two levels: "high-level four-way decision making + low-level path searching on a graph." A Tool World Navigation Model (TWNM), trained with HGT, explicitly models structural and behavioral dependencies between tools. On ToolBench/API-Bank and 50 real-world RapidAPIs, it improves the Task Success Rate (TSR) by 4.3–18.2 percentage points over the strongest baselines while significantly reducing invocation steps.
+NaviAgent decomposes LLM tool calling into "high-level four-choice decision-making + low-level graph-based path searching." A Tool World Navigation Model (TWNM), trained with HGT, explicitly models structural and behavioral dependencies between tools. On ToolBench/API-Bank and 50 real-world RapidAPIs, it improves the Task Success Rate (TSR) by 4.3–18.2 points over the strongest baselines while significantly reducing the number of call steps.
 
 ## Background & Motivation
-**Background**: Current mainstream function-calling agents (ReAct, ToolLLM, ToolNet, α-UMI, etc.) treat tools as a set of independent callable interfaces, where the LLM picks them one-by-one during reasoning. They either hardcode tool knowledge into model weights, pull a static graph from invocation logs, or rely on self-feedback strategies like ReAct/Reflexion.
+**Background**: Current mainstream function-calling agents (ReAct, ToolLLM, ToolNet, α-UMI, etc.) treat tools as a set of independent callable interfaces. The LLM selects tools one by one during reasoning, either by hard-coding tool knowledge into weights, pulling static graphs from logs, or relying on self-feedback strategies like ReAct/Reflexion.
 
-**Limitations of Prior Work**: These solutions fail when tool scales expand to thousands and APIs change continuously. Chaining tools one-by-one leads to cumulative local errors. Static graphs cannot capture sparse multi-hop relationships. Dynamic strategies lack global structure, making it difficult to reuse tool chains for repetitive tasks.
+**Limitations of Prior Work**: These solutions struggle when tool scales reach thousands or when APIs change continuously. Chaining tools leads to error accumulation; static graphs fail to capture sparse multi-hop relations; and dynamic strategies lack global structure, making it difficult to reuse toolchains for repeated tasks.
 
-**Key Challenge**: The difficulty of reconciling "structured but non-evolvable" (static dependency graphs) with "evolvable but unstructured" (self-feedback agents) leads to unreliability and lack of scalability in large-scale tool ecosystems.
+**Key Challenge**: There is a trade-off between "structured but non-evolvable" (static dependency graphs) and "evolvable but lacking structure" (self-feedback agents), leading to unreliability and poor scalability in large-scale tool ecosystems.
 
-**Goal**: Decomposed into two sub-problems: (1) Moving the planning layer back from "deciding the next specific API" to "deciding the next interaction action" to avoid overwhelming reasoning with tool combination complexity; (2) Creating an execution layer with a self-updating tool relationship graph based on real invocation feedback, which provides executable paths and reorganizes in real-time when APIs fail or semantic drift occurs.
+**Goal**: Decompose the problem into two sub-problems: (1) Let the planning layer step back from "deciding the next specific API" to "deciding the next interaction action" to avoid reasoning being overwhelmed by tool combination complexity; (2) Provide the execution layer with a tool relationship graph that self-updates based on real call feedback, enabling both path search and real-time reorganization when APIs fail or semantics drift.
 
-**Key Insight**: The authors observe that real-world tools are not isolated but depend on each other through shared parameters and idiomatic invocation patterns. Explicitly encoding these dependencies into a heterogeneous graph transforms "picking the next tool" into "weighted path searching on a graph," while the graph itself is continuously updated by execution logs.
+**Key Insight**: The authors observe that real tools are not isolated nodes but depend on each other through shared parameters and idiomatic call patterns. Explicitly encoding these dependencies into a heterogeneous graph transforms "picking the next tool" into "weighted path searching on a graph," while the graph itself is updated by execution logs.
 
-**Core Idea**: Isolate the LLM from tool combination complexity using a quaternary decision action space, offload combination difficulties to an evolvable tool graph, and refresh both the planning strategy and graph structure through an execution feedback loop.
+**Core Idea**: Use a four-dimensional decision action space to isolate the LLM from tool combination complexity, offload combination difficulties to an evolvable tool graph, and refresh both the planning strategy and graph structure via a closed-loop execution feedback cycle.
 
 ## Method
-The entire method centers on a quintuple $(\mathcal{H},\mathcal{O},\mathcal{G},\mathcal{A},F)$. History $\mathcal{H}$ consists of the last 3 observation-action pairs (found to be the trade-off between accuracy and efficiency). $\mathcal{O}$ is the current observation. $\mathcal{G}$ is the pruned tool subgraph. $\mathcal{A}$ comprises 4 optional actions. $F:\mathcal{H}\times\mathcal{O}\times\mathcal{G}\to\mathcal{A}$ is implemented by the LLM.
 
 ### Overall Architecture
-NaviAgent features a dual-loop structure. The inner loop is the "planning-execution" cycle: upon receiving a user query, the LLM selects one of 4 actions (Direct Answer / Clarify Intent / Retrieve Toolchain / Execute Tool). For the latter two, it finds and executes an actionable path on the TWNM. The outer loop is the "graph-environment" loop: actual invocation results update the TWNM's edge weights and node states, which in turn affects future subgraph pruning. Consequently, the LLM always operates within a small action space, leaving combination challenges to the graph.
+NaviAgent addresses the issue where LLM tool selection is overwhelmed by complexity as tool scales reach thousands and APIs change. The solution is a dual-loop mechanism: in the inner "planning-execution" loop, the LLM receives a user query and selects one of four interaction actions (Direct Answer / Clarify Intent / Retrieve Toolchain / Execute Tool). When tools are needed, it searches for an executable subgraph on a tool graph (TWNM). In the outer "graph-environment" loop, the success or failure of each call is written back to the TWNM edge weights and node states, influencing future subgraph pruning. The method is formulated as a quintuple $(\mathcal{H}, \mathcal{O}, \mathcal{G}, \mathcal{A}, F)$: history $\mathcal{H}$ consists of the last 3 observation-action pairs, $\mathcal{O}$ is the current observation, $\mathcal{G}$ is the pruned tool subgraph, $\mathcal{A}$ is the set of 4 actions, and the decision function $F: \mathcal{H} \times \mathcal{O} \times \mathcal{G} \to \mathcal{A}$ is implemented by the LLM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["User query + History (last 3 steps)"] --> F["4D Decision Planning Layer (Design 1)<br/>4-way choice: Answer / Clarify / Retrieve / Execute"]
+    F -->|Retrieve Toolchain| TW["TWNM Tool Graph (Design 2)<br/>HGT Attention for link prediction"]
+    TW --> SUB["Prune Executable Subgraph"]
+    SUB --> F
+    F -->|Execute Tool| EXE["Real API Call"]
+    EXE -->|Success| F
+    EXE -->|Failure| REC["Path Recomposition (Design 3)<br/>I/O Equivalence / Upstream Backtrack / Subgraph Switch"]
+    REC --> SUB
+    EXE -.Status.-> UPD["Closed-loop Evolution (Design 3)<br/>Update Weights + Node States"]
+    UPD -.Influence Next Pruning.-> TW
+    F -->|Direct Answer| OUT["Output Answer"]
+```
 
 ### Key Designs
 
-1.  **Planning layer with four-dimensional decision-making**:
-    - **Function**: Compresses "scheduling complex toolchains" into a lightweight 4-way decision, letting the LLM only judge whether to "speak, ask, retrieve, or execute."
-    - **Mechanism**: History is represented by a sliding window $\mathcal{H}_t = \langle (o_{t-3},a_{t-3}),\dots,(o_{t-1},a_{t-1})\rangle$. The pruned tool subgraph $\mathcal{G}_{t-1}'$ from the previous step is serialized into a tree-like text and provided to the LLM. The decision function is $a_t = F(\mathcal{H}_t,\mathcal{O}_t,\mathcal{G}_{t-1}')$. During SFT, the loss is calculated only on the action generation segment: $\mathcal{L}_{\text{SFT}}=-\frac{1}{N}\sum_i \log p_\theta(a_t^*\mid \mathcal{H}_t,\mathcal{O}_t,\mathcal{G}_{\text{sub}})$.
-    - **Design Motivation**: Traditional plan-then-execute requires the LLM to pre-arrange the entire sequence, which fails as tool count increases. Here, the LLM only selects the "next interaction mode," offloading combinatorial puzzles to graph search. Decoupling planning from execution allows for independent scaling.
+**1. 4D Decision Planning Layer: Compressing "Toolchain Scheduling" into a 4-way Choice**
 
-2.  **TWNM: Heterogeneous Tool Graph + HGT Link Prediction**:
-    - **Function**: Treats both APIs and parameters as nodes, uniformly modeling structural edges ("parameter → API / API → parameter") and behavioral edges ("API → API / parameter → parameter"). It infers future invocation pairs based on historical statistics.
-    - **Mechanism**: Constructs a directed weighted graph $\mathcal{G}=(V,E,W)$ where edge weights $\tilde{w}_{ij} = N(v_i \to v_j)/N(v_j)$ reflect empirical invocation frequencies. A 2-layer multi-head HGT performs message passing. Attention scores $e_{uv}^{(k,r)} = (\mathbf{W}_Q^{(k,r)}\mathbf{h}_u')^\top(\mathbf{W}_K^{(k,r)}\mathbf{h}_v')/\sqrt{d_k} + \mathbf{b}_r^{(k)} + \tilde{w}_{uv}$ inject statistical weights directly into attention. The training objective is a curriculum-weighted sum $\mu_t = \mu_0 \gamma^t$ of cross-entropy $\mathcal{L}_{CE}$ with soft labels and an adaptive margin loss $\ell_{\text{margin}}(u,v)=\frac{1}{k}\sum_j [m_{uv}-s(u,v)^+ + s(u_j,v)^-]_+$, prioritizing accuracy first and then discriminative power.
-    - **Design Motivation**: Parameter sharing is the strongest implicit dependency between tools. Explicitly modeling them as nodes is more reliable than "API similarity." HGT distinguishes node/edge types while utilizing statistical frequency as a structural prior, ensuring link prediction captures both semantic and behavioral information.
+Traditional plan-then-execute requires the LLM to pre-arrange a complete API sequence, which fails as the tool scale grows linearly. NaviAgent moves the planning layer from "deciding the next API" to "deciding the type of interaction": at each step, it only judges whether to speak, ask, retrieve a toolchain, or execute. The history is represented by a sliding window $\mathcal{H}_t = \langle (o_{t-3}, a_{t-3}), \dots, (o_{t-1}, a_{t-1}) \rangle$. The pruned tool subgraph $\mathcal{G}_{t-1}'$ from the previous step is serialized into a tree structure and fed to the LLM. The decision is $a_t = F(\mathcal{H}_t, \mathcal{O}_t, \mathcal{G}_{t-1}')$. Training uses SFT, backpropagating only on the action generation segments with the objective: $\mathcal{L}_{\text{SFT}} = -\frac{1}{N} \sum_i \log p_\theta(a_t^* \mid \mathcal{H}_t, \mathcal{O}_t, \mathcal{G}_{\text{sub}})$.
 
-3.  **Closed-loop Evolution + Path Reorganization**:
-    - **Function**: Allows the TWNM to follow changes in the real tool ecosystem (new tools, deprecated APIs, shifting patterns) and enables the agent to automatically find alternative paths upon execution failure.
-    - **Mechanism**: Three graph maintenance mechanisms: incremental node access (new tools initialized with zero counts/weights); targeted subgraph pruning $\text{Prune}(v) \propto \lambda\sigma(f_{\text{fail}}(v)) + (1-\lambda)\sigma(f_{\text{freq}}(v)^{-1})$; and edge weight temporal propagation $\tilde{w}_{uv}^{(t)} = \eta \tilde{w}_{uv}^{(t-1)} + (1-\eta) N_{\text{succ}}^{\text{recent}}(u\to v)/N_{\text{succ}}^{\text{recent}}(v)$. Execution failures trigger three recovery modes: I/O equivalent replacement, upstream backtracking/rerouting, and subgraph switching. A theoretical result (Theorem 3.1) shows that in a fixed context, mechanism injection is equivalent to constraining the base policy to the feasible action set and normalizing: $\pi_{\text{inj}}(a\mid h)=\pi_0(a\mid h)\mathbf{1}\{a\in\mathcal{A}_{\text{feas}}(h)\}/\sum_{a'\in\mathcal{A}_{\text{feas}}(h)}\pi_0(a'\mid h)$, representing the minimal local correction in terms of KL projection.
-    - **Design Motivation**: In reality, APIs change frequently; static graphs quickly become obsolete. Writing "failure/unreachability" back to the graph allows the LLM and the graph to evolve synchronously. This is equivalent to adding a "contextual feasibility" constraint to the policy at inference time, which is much cheaper than fine-tuning model weights.
+**2. TWNM: Encoding Combination Complexity into a Heterogeneous Tool Graph**
+
+To offload complexity from the LLM, the Tool World Navigation Model (TWNM) is introduced. Recognizing that tools depend on shared parameters and call patterns, APIs and parameters are modeled as nodes. Structural edges ("Parameter → API" / "API → Parameter") and behavioral edges ("API → API" / "Parameter → Parameter") form a directed weighted graph $\mathcal{G}=(V,E,W)$, where edge weights $\tilde{w}_{ij} = N(v_i \to v_j)/N(v_j)$ reflect empirical call frequency. Representation learning uses a 2-layer multi-head Heterogeneous Graph Transformer (HGT). Attention scores integrate statistical weights as priors:
+
+$$e_{uv}^{(k,r)} = \frac{(\mathbf{W}_Q^{(k,r)}\mathbf{h}_u')^\top(\mathbf{W}_K^{(k,r)}\mathbf{h}_v')}{\sqrt{d_k}} + \mathbf{b}_r^{(k)} + \tilde{w}_{uv}$$
+
+The training objective is a combination of Cross-Entropy $\mathcal{L}_{CE}$ with soft labels and an adaptive margin loss $\ell_{\text{margin}}(u,v)=\frac{1}{k}\sum_j [m_{uv}-s(u,v)^+ + s(u_j,v)^-]_+$, weighted by curriculum weights $\mu_t = \mu_0 \gamma^t$ ($\gamma \in (0,1)$).
+
+**3. Closed-loop Evolution + Path Recomposition: Real-time Self-updates and Rerouting**
+
+TWNM must evolve to prevent stagnation. Three mechanisms handle graph maintenance: incremental node addition; targeted subgraph pruning $\text{Prune}(v) \propto \lambda\sigma(f_{\text{fail}}(v)) + (1-\lambda)\sigma(f_{\text{freq}}(v)^{-1})$; and edge weight time propagation $\tilde{w}_{uv}^{(t)} = \eta \tilde{w}_{uv}^{(t-1)} + (1-\eta) N_{\text{succ}}^{\text{recent}}(u\to v)/N_{\text{succ}}^{\text{recent}}(v)$. Execution failures trigger recovery strategies: I/O equivalent replacement, upstream backtracking, or subgraph switching. Theorem 3.1 states that this "mechanism injection" is equivalent to a regularized projection of the base policy onto the feasible action set:
+
+$$\pi_{\text{inj}}(a\mid h)=\frac{\pi_0(a\mid h)\,\mathbf{1}\{a\in\mathcal{A}_{\text{feas}}(h)\}}{\sum_{a'\in\mathcal{A}_{\text{feas}}(h)}\pi_0(a'\mid h)}$$
+
+This implies providing the graph with failure signals is equivalent to adding context feasibility constraints during inference.
 
 ### Loss & Training
-Standard SFT is used for the LLM, backpropagating only through action generation. For the HGT, curriculum weighting (decay coefficient $\gamma\in(0,1)$) of cross-entropy and adaptive margin loss is used. TWNM updates and online inference are performed asynchronously to avoid blocking forward calls. Qwen2.5-14B was fine-tuned with 3,500+ carefully selected data points, with strict isolation between training and evaluation to prevent leakage.
+The LLM is trained with standard SFT on action generation segments. The HGT utilizes Cross-Entropy and adaptive margin loss with curriculum weighting (decay coefficient $\gamma \in (0,1)$). TWNM updates are asynchronous to inference. The backbone Qwen2.5-14B is fine-tuned on 3,500+ curated records.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of overall TSR / average steps for various backbone models on ToolBench (5k+ tools) (All column for Easy/Medium/Hard):
+Comparison of TCR/TSR and average steps on ToolBench (5k+ tools):
 
 | Backbone | Method | TCR (%) | TSR (%) | Avg. Steps |
 |----------|------|---------|---------|----------|
@@ -79,7 +93,7 @@ Comparison of overall TSR / average steps for various backbone models on ToolBen
 | DeepSeek-V3 | ToolNet | 76.6 | 44.9 | 6.02 |
 | DeepSeek-V3 | NaviAgent | **97.0** | **55.2** | **4.60** |
 
-Evaluation of 50 real-world RapidAPIs (7 domains, 303 queries):
+Performance on 50 real-world RapidAPIs:
 
 | Backbone | Method | TSR (%) | Steps | Time (s) |
 |----------|------|---------|------|----------|
@@ -90,51 +104,50 @@ Evaluation of 50 real-world RapidAPIs (7 domains, 303 queries):
 | DeepSeek-V3 | NaviAgent | **64.6** | – | – |
 
 ### Ablation Study
-| Configuration | TSR (Qwen2.5-14B, ToolBench All) | Description |
-|------|----------------------------------|------|
-| Full NaviAgent | 35.8 | Bilevel + TWNM + Closed-loop |
-| Four-way decision only (No TWNM) | ~28 | ReAct with action constraints |
-| Static Graph + Four-way decision | ~31 | No edge weight evolution |
-| Full + SFT (14B) | 51.3 | Approaches 32B model (45.4) |
+| Configuration | TSR (Qwen2.5-14B, ToolBench All) |
+|------|----------------------------------|
+| Full NaviAgent | 35.8 |
+| 4D Decision only (No TWNM) | ~28 |
+| Static Graph + 4D Decision | ~31 |
+| Full + SFT (14B) | 51.3 |
 
 ### Key Findings
-- TWNM is the primary contributor for complex tasks: The authors report an average TSR improvement of 13.1 points on complex tasks. Moving from Easy to Hard, NaviAgent's relative decline is much smaller than baselines (37.5% on DeepSeek-V3 vs 57.1% for ToolNet and 50.6% for α-UMI).
-- Injecting statistical invocation weights $\tilde{w}_{uv}$ into HGT attention recovers multi-hop dependencies better than just using semantic embeddings. Soft-label training is particularly important for sparse invocation logs.
-- Closed-loop evolution allows small SFT-tuned models (14B) to approach the TCR/TSR of larger models (32B), indicating that tightening the action space reduces the marginal contribution of model size to success rates.
+- TWNM is the primary contributor for complex tasks, providing an average TSR gain of 13.1 points.
+- Injecting statistical weights $\tilde{w}_{uv}$ into HGT attention outperforms pure semantic embeddings for recovering multi-hop dependencies.
+- Closed-loop evolution allows smaller SFT models (14B) to approach the performance of larger models (32B).
 
 ## Highlights & Insights
-- Reframing "LLM selecting the next tool" into "LLM selecting the interaction mode + graph searching the path" is a useful decoupling: The action space drops from linear growth (tool scale) to a constant 4, which is crucial for scaling to tens of thousands of tools.
-- Directly adding statistical edge weights to HGT attention logits is simpler than traditional "train-then-feed features" approaches, providing empirical priors to the model from the start.
-- Three path recovery strategies (I/O equivalent replacement, upstream backtracking, subgraph switching) cover major real-world API failure modes, serving as an exemplar of substantiating "reflection" concepts through graph structures.
-- The KL projection theorem, though characterizing only single-step reasoning, provides a clear inference-time explanation for "mechanism-injected" tool constraints: it is local normalization on the base policy rather than additional training.
+- Decoupling planning into a constant 4-way action space is critical for scalability to tens of thousands of tools.
+- Direct injection of statistical priors into the HGT attention logit is an efficient way to initialize the model with empirical knowledge.
+- Path recovery strategies provide an architectural implementation of "reflection."
+- The KL projection theorem provides a clear inference-time explanation for mechanism injection: it is local normalization rather than weight fine-tuning.
 
 ## Limitations & Future Work
-- The authors admit the theoretical results only cover single-step local corrections and do not provide global convergence proofs for processes like subgraph switching or rerouting that change the feasible set itself.
-- While TWNM updates are asynchronous, HGT's 2-hop neighbor aggregation overhead and subgraph serialization length may become bottlenecks as tools scale from thousands to hundreds of thousands; strict complexity analysis is missing.
-- The strongest gains in evaluations rely on large models like DeepSeek-V3; the 37.4% TSR of 14B on real APIs is still low for actual production deployment. The advantage of TWNM shrinks significantly in cold-start scenarios (nearly no behavioral edges), which is not fully discussed.
-- Future directions: Introducing hierarchical graph abstraction (domain clustering) to reduce search costs; using RL instead of SFT for simultaneous online optimization of planning policies and TWNM edge weights.
+- Theoretical results currently only cover single-step local corrections; global convergence for subgraph switching remains unproven.
+- Scalability of HGT 2-hop aggregation and subgraph serialization may become a bottleneck beyond hundreds of thousands of tools.
+- Performance in cold-start scenarios (where behavioral edges are missing) requires more discussion.
+- Future work includes hierarchical graph abstraction and using RL of SFT for synchronized optimization.
 
 ## Related Work & Insights
-- **vs ToolLLM**: ToolLLM uses DFSDT for plan-then-execute, where tool relationships remain implicit in the LLM's chain of thought. NaviAgent pulls tool relationships explicitly into a graph, freeing the planning layer from specific API combinations.
-- **vs ToolNet**: ToolNet also maintains a dynamic invocation graph but only fits edge weights using invocation sequences, lacking parameter nodes and HGT attention. NaviAgent adds structural edges and couples the graph with four-way decisions, enabling more robust link prediction under sparse multi-hop data.
-- **vs α-UMI**: α-UMI assigns planning/invocation/summarization to three lightweight LLMs. NaviAgent uses a single LLM for decisions in a smaller action space, offloading combination complexity to the graph, which is more engineering-efficient.
-- **vs ControlLLM**: ControlLLM uses a static dependency graph for task decomposition, failing to adapt to API drift. NaviAgent updates the graph via execution feedback loops, unifying "structure" and "evolution."
+- **vs ToolLLM**: ToolLLM uses DFSDT for planning; NaviAgent explicitly moves relations into a graph, freeing the planner from combination details.
+- **vs ToolNet**: ToolNet lacks parameter nodes and HGT; NaviAgent’s inclusion of structural edges and HGT attention enables robust link prediction in sparse data.
+- **vs ControlLLM**: ControlLLM uses static graphs; NaviAgent’s feedback loop enables adaptation to API drift.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Decoupling the tool graph from four-way decisions plus closed-loop evolution is a clear system-level innovation. The TWNM structure is not aggressive, but the engineering integration is high.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers five backbone models across two mainstream benchmarks and 50 real APIs, though lacks systematic analysis of graph scalability and cold-starts.
-- Writing Quality: ⭐⭐⭐⭐ Framework diagrams are clear, and theorems are formally presented. It is slightly regrettable that the core theory is hidden in the appendix, and descriptions of weight updates/recovery are somewhat brief.
-- Value: ⭐⭐⭐⭐ Provides a reproducible engineering blueprint for "thousand-scale tool agents," with direct utility for production-side function calling stacks.
+- Novelty: ⭐⭐⭐⭐ Systematic innovation by decoupling tool graphs and 4D decisions with closed-loop evolution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad testing across baselines and real APIs, though lacks massive-scale scalability analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear frameworks and theorems, though pseudo-code for some mechanisms is brief.
+- Value: ⭐⭐⭐⭐ Provides a replicable blueprint for large-scale tool agents in production.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 - [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](../../ICLR2026/llm_agent/toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 - [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
 - [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
 

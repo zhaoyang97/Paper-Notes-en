@@ -2,80 +2,80 @@
 title: >-
   [Paper Note] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 description: >-
-  [ACL 2026][LLM Evaluation][Travel Planning Benchmark] Ours proposes TravelBench, the first travel planning benchmark integrating real-world user queries, implicit user preferences, multi-turn interactions…
+  [ACL 2026][LLM Evaluation][Paper Note] TravelBench is proposed as the first travel planning benchmark integrating real user queries, implicit user preferences, multi-turn interactions, unsolvable task identification, and 10 real-world tools. It implements reproducible evaluation through a sandbox environment, revealing unbalanced performance of cutting-edge
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Travel Planning Benchmark"
-  - "Tool-Using"
-  - "Multi-turn Dialogue"
-  - "Implicit Preferences"
-  - "Unsolvable Tasks"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 1aa9f2d3e014b78a
+content_hash: a79e3771d07a78b0
 ---
-
 # Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 
 **Conference**: ACL 2026  
 **arXiv**: [2512.22673](https://arxiv.org/abs/2512.22673)  
 **Code**: [GitHub](https://github.com/small-xiangcheng/TravelBench)  
-**Area**: Recommender Systems  
-**Keywords**: Travel Planning Benchmark, Tool-Using, Multi-turn Dialogue, Implicit Preferences, Unsolvable Tasks
+**Area**: Recommendation Systems  
+**Keywords**: Travel planning benchmark, tool usage, multi-turn dialogue, implicit preferences, unsolvable tasks
 
 ## TL;DR
 
-Ours proposes TravelBench, the first travel planning benchmark integrating real-world user queries, implicit user preferences, multi-turn interactions, unsolvable task identification, and 10 real-world tools. Through a sandbox environment, it achieves reproducible evaluation and reveals unbalanced performance of state-of-the-art models across different capability dimensions.
+TravelBench is proposed as the first travel planning benchmark integrating real user queries, implicit user preferences, multi-turn interactions, unsolvable task identification, and 10 real-world tools. It implements reproducible evaluation through a sandbox environment, revealing unbalanced performance of cutting-edge models across different capability dimensions.
 
 ## Background & Motivation
 
-**Background**: Travel planning is an ideal testing scenario for evaluating LLM Agent capabilities in multi-step reasoning, tool usage, and user interaction. Existing benchmarks (TravelPlanner, ChinaTravel, etc.) have made progress but still possess critical deficiencies.
+**Background**: Travel planning is an ideal scenario for evaluating the multi-step reasoning, tool usage, and user interaction capabilities of LLM Agents. Existing benchmarks (TravelPlanner, ChinaTravel, etc.) have made progress but still possess key deficiencies.
 
-**Limitations of Prior Work**: (1) User preferences and constraints are typically predefined, injected via instructions, or gradually revealed by a simulator, failing to dynamically elicit implicit user preferences; (2) Most benchmarks only cover itinerary planning, ignoring diverse real-world travel needs such as POI exploration, route planning, and option comparison; (3) They either do not support tool usage or rely on synthetic queries, failing to reflect real-world data distributions; (4) Lack of evaluation for unsolvable tasks—Agents must identify capability boundaries in actual scenarios.
+**Limitations of Prior Work**: (1) User preferences and constraints are typically pre-defined, injected into instructions, or revealed step-by-step by a simulator, failing to dynamically elicit implicit user preferences; (2) Most benchmarks only cover itinerary planning, ignoring diverse real-world travel needs such as POI exploration, route planning, and solution comparison; (3) They either lack tool support or rely on synthetic queries, which do not reflect real data distributions; (4) There is a lack of evaluation for unsolvable tasks—Agents must recognize capability boundaries in practical scenarios.
 
-**Key Challenge**: The performance of existing benchmarks does not truly reflect Agent performance in actual travel planning because they significantly differ from real needs in task scope, user interaction modes, and evaluation coverage.
+**Key Challenge**: The performance on existing benchmarks does not truly reflect the performance of Agents in real-world travel planning because they have significant gaps in task scope, user interaction methods, and evaluation coverage compared to real-world requirements.
 
-**Goal**: Construct a "truly real-world oriented" travel planning benchmark to comprehensively evaluate three core capabilities of Agents: independent problem solving, eliciting implicit preferences through interaction, and identifying capability boundaries.
+**Goal**: To build a "truly real-world oriented" travel planning benchmark that comprehensively evaluates three core Agent capabilities: autonomous problem solving, interaction to elicit implicit preferences, and recognition of capability boundaries.
 
-**Key Insight**: Collect queries and preferences from real-world user logs of Alibaba's Amap, integrate 10 real-world travel tools, and construct approximately 200,000 cached tool-calling trajectories.
+**Key Insight**: Queries and preferences are collected from real user logs of Alibaba's Amap (Gaode Maps), integrating 10 types of real travel tools and constructing approximately 200,000 cached tool invocation trajectories.
 
-**Core Idea**: Expand travel planning benchmarks from "itinerary planning" to cover multi-domain tasks like POI exploration, route planning, and option comparison, while introducing two entirely new dimensions: multi-turn elicitation of implicit preferences and identification of unsolvable tasks.
+**Core Idea**: Expand the travel planning benchmark from "itinerary planning" to multiple domains including POI exploration, route planning, and solution comparison, while introducing two entirely new dimensions: multi-turn elicitation of implicit preferences and unsolvable task identification.
 
 ## Method
 
 ### Overall Architecture
 
-TravelBench consists of three subsets: 500 single-turn queries (solved independently by Agent using tools), 500 multi-turn queries (requiring interaction to elicit implicit preferences), and 100 unsolvable queries (requiring identification of missing tools or information). The user simulator is driven by LLM + user personas, and the Agent executes reasoning in a sandbox environment integrated with 10 real-world tools. Evaluation adopts a three-tier protocol: LLM-as-judge + tool-calling error penalty + meta-review calibration.
+TravelBench decomposes "real-world travel planning" into three types of queries to examine three core Agent capabilities: 500 single-turn queries to evaluate autonomous tool-based problem solving, 500 multi-turn queries to evaluate the elicitation of unstated implicit preferences through dialogue, and 100 unsolvable queries to evaluate the recognition of capability boundaries. At runtime, a simulator driven by an LLM and user profiles acts as a real user. The Agent reasons, invokes tools, and produces solutions within a sandbox integrated with 10 real travel tools. The output is processed through a protocol consisting of "rule-based judgment + LLM scoring + meta-review calibration + tool error penalty" to determine the final scores. The entire process forms a reproducible closed loop from real query input, through multi-turn tool interaction in the sandbox, to hierarchical scoring output.
+
+```mermaid
+graph TD
+    SRC["Amap Real User Logs<br/>32 Provinces / 243 Cities"]
+    SRC --> PREF["Implicit Preferences & Multi-turn Interaction<br/>User profiles held only by simulator"]
+    SRC --> UNS["Unsolvable Task Subset<br/>3-model consensus → 100 items"]
+    PREF --> SIM["User Simulator ↔ Agent<br/>Multi-turn questioning to extract preferences"]
+    UNS --> SIM
+    SIM --> BOX["Reproducible Sandbox & Tool Cache<br/>200k trajectory cache / Misses → Embedding retrieval + ICL"]
+    BOX --> EVAL["Three-layer Evaluation Protocol<br/>Rules + LLM scoring + Meta-review calibration + Tool penalty"]
+    EVAL --> SCORE["Average of 3 subsets → Total Model Score"]
+```
 
 ### Key Designs
 
-1. **Implicit Preferences and Multi-turn Interaction**:
+**1. Implicit Preferences & Multi-turn Interaction: Enabling Agents to Actively Elicit Preferences**
 
-    - **Function**: Evaluate the Agent's ability to proactively elicit preferences not explicitly stated by the user.
-    - **Mechanism**: Anonymized preference information is extracted from real user data to construct user personas (gender, family structure, lifestyle, etc.). Personas are held only by the user simulator; the Agent must obtain them through multi-turn questioning. A query is determined as single-turn or multi-turn by 3 models across 2 trials.
-    - **Design Motivation**: Preferences in existing benchmarks are either predefined or gradually revealed by simulators, not supporting proactive exploration and elicitation by Agents.
+Real users often do not proactively state all their preferences. Existing benchmarks either inject pre-defined preferences into instructions or have simulators reveal them progressively, leaving the Agent as a passive receiver and failing to evaluate active questioning. This work extracts anonymized preferences from real Amap data to construct user profiles including gender, family structure, and lifestyle, which are **held only by the user simulator**. To know these preferences, the Agent must actively ask the simulator through multi-turn dialogue. Whether a query is single-turn or multi-turn is determined by 6 experimental trials across 3 models to see if interaction is necessary to complete the missing preferences.
 
-2. **Unsolvable Task Subset**:
+**2. Unsolvable Task Subset: Evaluating When an Agent Should Say "I can't do this"**
 
-    - **Function**: Evaluate the Agent's capability to identify its own capability boundaries.
-    - **Mechanism**: Three models (GPT-5.1, Qwen3-235B, Qwen-Plus) label whether each query is solvable. Queries consistently judged as unsolvable by all three models form the unsolvable subset, categorized by three reasons: lack of tool support, lack of necessary context, or no clear executable intent. The Agent must output a special tag `[Unsolved]` for identification.
-    - **Design Motivation**: In real scenarios, an Agent must know when to say "I cannot do this" rather than forcing a wrong answer.
+In practical scenarios, an Agent must know its capability boundaries; providing a wrong answer is more dangerous than admitting inability. This work uses GPT-5.1, Qwen3-235B, and Qwen-Plus to annotate whether each query is solvable. Only queries deemed unsolvable by **all three models** enter the unsolvable subset, categorized into three causes: lack of tool support, lack of necessary context, or no clear executable intent. The tested Agent must output a special label `[Unsolved]` to succeed in these queries, quantifying the "knowing when to quit" capability.
 
-3. **Reproducible Sandbox and Tool Caching**:
+**3. Reproducible Sandbox & Tool Cache: Freezing Unstable Real APIs into a Reproducible Environment**
 
-    - **Function**: Ensure stability and reproducibility of the evaluation.
-    - **Mechanism**: Multiple models run on real APIs to cache approximately 200,000 tool-calling trajectories. During evaluation, matching from the cache is prioritized; if a cache miss occurs, consistent tool responses are simulated via embedding retrieval + ICL. Strict parameter validation is performed to record tool-calling error rates.
-    - **Design Motivation**: Directly calling external APIs yields unstable results, affecting reproducibility and fair comparison.
+Directly calling external travel APIs may return different results each time, undermining reproducibility and fair comparison. This work uses multiple models to generate and cache approximately 200,000 tool invocation trajectories from real APIs. During evaluation, tool responses are matched from the cache by parameters; for cache misses, a style-consistent response is generated via embedding retrieval and ICL. Simultaneously, the sandbox performs strict parameter validation and records tool invocation error rates, allowing the capture of trajectories where "the task seems completed, but the tools were misused."
 
-### Evaluation Protocol
+**4. Three-layer Evaluation Protocol: Mutual Safeguards via Rules, Scoring, and Calibration**
 
-Three-tier evaluation: (1) Rule-based accuracy calculation for the unsolvable subset; (2) LLM-as-judge scores 1-5 for single-turn (3 dimensions) and multi-turn (4 dimensions, adding user_interaction); (3) Meta-review calibration of over-evaluated scores + tool-calling error rate penalty. The final score is the average of the three subsets.
+Final scores are aggregated through three layers: the unsolvable subset uses rule-based accuracy; single-turn (3 dimensions) and multi-turn (4 dimensions, adding user_interaction) queries are scored 1–5 by an LLM-as-judge; a meta-review layer then calibrates potentially inflated judge scores and applies penalties based on tool invocation error rates. The average of the three subsets serves as the total score, ensuring that task completion and tool usage reliability are considered simultaneously.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Multi-turn (After Penalty) | Single-turn (After Penalty) | Unsolvable | Total Score |
+| Model | Multi-turn (post-penalty) | Single-turn (post-penalty) | Unsolvable | Total Score |
 |------|------------|------------|--------|------|
 | Qwen-Plus | 62.56 | 82.64 | 83.67 | **76.29** |
 | GPT-5.1 | 71.31 | 73.81 | 80.00 | 75.04 |
@@ -86,54 +86,58 @@ Three-tier evaluation: (1) Rule-based accuracy calculation for the unsolvable su
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Description |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| Score Stability | std ≈ 0.01 | Minimal standard deviation across 3 repeated runs. |
-| Offline vs. Online Scoring | < 1 point difference | Cached sandbox and real API evaluations are highly consistent. |
-| Human Verification | 97% label agreement | Unsolvable and single/multi-turn labels align closely with human judgment. |
-| Judge MAE | 0.52 vs. Human-Human 0.48 | Close to inter-human disagreement levels. |
+| Scoring Stability | std $\approx$ 0.01 | Minimal standard deviation across 3 repeated runs |
+| Offline vs. Online Scoring | <1 point difference | Highly consistent evaluation between cached sandbox and real APIs |
+| Human Validation | 97% label consistency | Unsolvable and single/multi-turn labels highly match human judgment |
+| Judge MAE | 0.52 vs. Human 0.48 | Close to the level of inter-human disagreement |
 
 ### Key Findings
-- Even the strongest models score only around 76, indicating that real-world travel planning remains challenging.
-- Capability imbalance is prevalent: DeepSeek-V3.2 is strongest in single/multi-turn but poor at identifying unsolvability (51.33); Kimi-K2-0925 is strongest at unsolvability (94) but poor at task completion.
-- Tool-calling error rates for reasoning models are generally lower than for instruction-following models, yet they tend to underperform on unsolvable tasks—strong reasoning makes models more "reluctant to give up."
-- Tool-calling error rates for multi-turn tasks are higher than for single-turn, suggesting that multi-turn interaction increases the difficulty of tool usage.
-- Tool penalties impact MiniMax-M2 the most (78→67), effectively distinguishing trajectories that "appear correct but have tool usage issues."
+- Even the strongest model scores only around 76, indicating that real-world travel planning remains challenging.
+- Capability imbalances are prevalent: DeepSeek-V3.2 is strongest in single/multi-turn tasks but poor at identifying unsolvable queries (51.33), while Kimi-K2-0925 is strongest in unsolvable queries (94) but performs poorly in task completion.
+- Reasoning models generally have lower tool invocation error rates than instruction-following models but tend to perform lower on unsolvable tasks—stronger reasoning makes models "less willing to give up."
+- Tool invocation error rates are higher in multi-turn tasks than in single-turn tasks, indicating that multi-turn interactions increase the difficulty of tool usage.
+- The tool penalty has the greatest impact on MiniMax-M2 (78$\rightarrow$67), effectively distinguishing "seemingly correct but tool-misused" trajectories.
 
 ## Highlights & Insights
-- **Truly Real-World Oriented**: Starting from real Amap logs, covering 32 provincial regions and 243 cities, the task distribution reflects real user needs.
-- **Unified Evaluation of Three Core Capabilities**: Independent problem-solving, interactive preference elicitation, and boundary recognition—forming a complete capability profile for Agent practicalization.
-- **Innovation in Tool Penalty Mechanism**: Evaluation looks not only at task completion but also at whether the tool-using process is reliable.
-- **Importance of Capability Imbalance Findings**: Points out the tension in current models between "strong reasoning vs. knowing when to give up."
+- **Truly Real-World Oriented**: Developed from real Amap logs, covering 32 provincial regions and 243 cities, with task distributions reflecting real user needs.
+- **Unified Evaluation of Three Core Capabilities**: Autonomous solving, interactive preference elicitation, and boundary recognition—forming a complete capability profile for practical Agents.
+- **Innovative Tool Penalty Mechanism**: Evaluates not only task completion but also the reliability of the tool usage process.
+- **Important Discovery of Capability Imbalance**: Highlights the tension between "strong reasoning" and "knowing when to give up" in current models.
 
 ## Limitations & Future Work
-- **Covers only China Travel Scenarios**: Limited geographical and cultural scope; international travel needs are not covered.
+- **Limited to China Travel Scenarios**: Geographical and cultural scope is limited; international travel needs are not covered.
 - **User Simulator Limitations**: User interactions simulated by LLMs may deviate from real user behavior.
-- **Evaluation Relies on LLM Judge**: Although human verification shows high consistency, blind spots may still exist.
-- Future Directions: Expand to international travel, introduce more complex dynamic constraint changes, and study how Agents can better balance capability and boundary recognition.
+- **Dependency on LLM-as-judge**: While human validation shows high consistency, potential blind spots may still exist.
+- **Future Directions**: Expanding to international travel, introducing more complex dynamic constraint changes, and researching how Agents can better balance capability and boundary recognition.
 
 ## Related Work & Insights
-- **vs. TravelPlanner**: The first travel planning benchmark but largely solved by solver methods; tasks are too simple.
-- **vs. ChinaTravel**: Introduces real queries and stricter constraints but does not support multi-turn interaction and unsolvable tasks.
-- **vs. COMPASS**: Focuses on soft preference optimization but does not use real queries and tools.
+- **vs. TravelPlanner**: The first travel planning benchmark but largely solved by solver-based methods; tasks are too simple.
+- **vs. ChinaTravel**: Introduces real queries and stricter constraints but does not support multi-turn interactions or unsolvable tasks.
+- **vs. COMPASS**: Focuses on soft preference optimization but does not utilize real-world queries or tools.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Elicitation of implicit preferences and identification of unsolvable tasks are important new dimensions; task coverage far exceeds prior work.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 12+ models, includes stability analysis, human verification, and online/offline comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed evaluation protocol descriptions.
-- Value: ⭐⭐⭐⭐ Provides the most comprehensive benchmark for travel planning Agent evaluation; findings on capability imbalance guide Agent design.
+- Novelty: ⭐⭐⭐⭐ Elicitation of implicit preferences and unsolvable task identification are important new dimensions; task coverage significantly exceeds prior work.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 12+ models, including stability analysis, human validation, and online/offline comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed descriptions of evaluation protocols.
+- Value: ⭐⭐⭐⭐ Provides the most comprehensive benchmark for travel planning Agent evaluation; findings on capability imbalance provide guidance for Agent design.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
+- [\[ACL 2025\] TripTailor: A Real-World Benchmark for Personalized Travel Planning](../../ACL2025/llm_evaluation/triptailor_a_real-world_benchmark_for_personalized_travel_planning.md)
 - [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 - [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
 - [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
-- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
-- [\[ACL 2026\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
+- [\[ACL 2025\] TripCraft: A Benchmark for Spatio-Temporally Fine Grained Travel Planning](../../ACL2025/llm_evaluation/tripcraft_a_benchmark_for_spatio-temporally_fine_grained_travel_planning.md)
 
 </div>
 

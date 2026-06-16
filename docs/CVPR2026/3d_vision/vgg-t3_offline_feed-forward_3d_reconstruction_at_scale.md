@@ -2,82 +2,87 @@
 title: >-
   [Paper Note] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] This paper proposes VGG-T3, which compresses the variable-length KV representations in VGGT's global attention layers into fixed-size MLP weights via **test-time training (TTT)**…
+  [CVPR 2026][3D Vision][Test-Time Training] VGG-T3 is proposed, which compresses the variable-length KV representation of global attention layers in VGGT into a fixed-size MLP via **Test-Time Training (TTT)**. This reduces the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction wit
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Reconstruction"
-  - "Test-Time Training"
-  - "Linear Complexity"
-  - "KV Compression"
-  - "Visual Localization"
+  - CVPR 2026
+  - 3D Vision
+  - Test-Time Training
 date: 2026-05-08
-content_hash: bf37ef806ebae6e1
+content_hash: 66375728444095f4
 ---
-
 # VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.23361](https://arxiv.org/abs/2602.23361)  
-**Code**: N/A  
-**Area**: 3D Vision / 3D Reconstruction
-**Keywords**: 3D Reconstruction, Test-Time Training, Linear Complexity, KV Compression, Visual Localization
+**Code**: None  
+**Area**: 3D Vision / 3D Reconstruction  
+**Keywords**: 3D Reconstruction, Test-Time Training, Linear Complexity, KV Compression, Visual Localization  
 
 ## TL;DR
 
-This paper proposes VGG-T3, which compresses the variable-length KV representations in VGGT's global attention layers into fixed-size MLP weights via **test-time training (TTT)**, reducing the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction at the thousand-image level (1k images in only 58 seconds).
+VGG-T3 is proposed, which compresses the variable-length KV representation of global attention layers in VGGT into a fixed-size MLP via **Test-Time Training (TTT)**. This reduces the computational complexity of offline feed-forward 3D reconstruction from $O(n^2)$ to $O(n)$, enabling large-scale scene reconstruction with thousands of images (1k images in 58 seconds).
 
 ## Background & Motivation
 
-**Background**: Feed-forward multi-view 3D reconstruction methods (e.g., VGGT, Fast3R) leverage Transformer global self-attention for multi-view reasoning, achieving accuracy comparable to the classical COLMAP pipeline with greater robustness under challenging conditions.
+**Background**: Feed-forward multi-view 3D reconstruction methods (e.g., VGGT, Fast3R) utilize Transformer-based global self-attention for multi-view reasoning. Their accuracy is comparable to classic COLMAP pipelines while being more robust under challenging conditions.
 
-**Limitations of Prior Work**: The computational complexity and memory requirements of these methods scale **quadratically** with the number of input images $n$, with the core bottleneck being that global softmax attention must query a variable-length KV space spanning all image tokens. VGGT requires over 11 minutes to process 1k images.
+**Limitations of Prior Work**: The computational complexity and memory requirements of these methods grow **quadratically** with the number of input images $n$. The core bottleneck is the global softmax attention operation, which must query a variable-length KV space composed of tokens from all images. VGGT takes over 11 minutes to process 1k images.
 
-**Key Challenge**: Existing acceleration methods (e.g., token merging in FastVGGT, sparse attention in SparseVGGT) reduce constant factors but leave the **asymptotic complexity quadratic**: $O(n^2) \to O(n/r)^2$. Online methods (e.g., CUT3R, Must3R) use fixed-size implicit memories but suffer from limited accuracy and drift.
+**Key Challenge**: Existing acceleration methods (e.g., token merging in FastVGGT, sparse attention in SparseVGGT) reduce the constant factor, but the **asymptotic complexity remains quadratic**: $O(n^2) \to O(n/r)^2$. Online methods (e.g., CUT3R, Must3R) use fixed-size implicit memory but suffer from limited accuracy and drift.
 
-**Goal**: Reduce complexity to linear $O(n)$ while preserving the accuracy advantage of global offline reconstruction, supporting reconstruction from arbitrarily large image collections.
+**Goal**: Achieve linear complexity $O(n)$ while maintaining the accuracy advantages of global offline reconstruction, supporting reconstruction of image sets of arbitrary scale.
 
-**Key Insight**: Inspired by DeepSDF — compressing variable-length representations into fixed-size optimizable parameters. The variable-length KV space of VGGT's global attention layers is distilled into the weights of a fixed-size MLP via TTT.
+**Key Insight**: Inspired by DeepSDF—compressing variable-length representations into fixed-size optimizable parameters. The variable-length KV space of the VGGT global attention layer is distilled into the weights of a fixed-size MLP via TTT.
 
-**Core Idea**: TTT is used to learn an MLP $T_\theta$ that captures the Key-to-Value mapping ($\arg\min_\theta \sum_i L_t(T_\theta(k_i) - v_i)$); at inference time, querying this MLP yields the output with complexity linear in sequence length.
+**Core Idea**: A TTT mechanism is used to learn an MLP $T_\theta$ that maps Keys to Values ($\arg\min_\theta \sum_i L_t(T_\theta(k_i) - v_i)$). During inference, the output is obtained by passing queries through this MLP, resulting in operations that are linear with respect to sequence length.
 
 ## Method
 
 ### Overall Architecture
 
-VGG-T3 retains VGGT's image tokenizer and prediction heads, replacing only all **global attention layers** with TTT layers. The process consists of two stages:
-- **Update stage**: Input tokens are projected into QKV; TTT compresses the KV mapping into fixed-size MLP weights $\theta$.
-- **Apply stage**: The optimized MLP is applied to query $q$ to obtain output tokens, which are passed to the next layer.
+VGG-T3 addresses a specific challenge: VGGT relies on global softmax attention for multi-view reasoning, where every added image expands a variable-length KV space queried by all queries, causing computation to explode quadratically ($O(n^2)$). VGG-T3 replaces this expanding KV space by "encoding" it into fixed-size MLP weights—an intuition borrowed from DeepSDF, which uses optimizable parameters to encode the geometry of an instance.
+
+The model retains the VGGT image tokenizer and prediction heads but replaces all **global attention layers** with TTT layers. Each layer executes two steps. First, **Update**: input tokens are projected into Q, K, and V, followed by on-site optimization of an MLP $T_\theta$ to fit the mapping from keys to values ($\arg\min_\theta \sum_i L_t(T_\theta(k_i), v_i)$). This compresses the variable-length KV relationships into $\theta$. Second, **Apply**: the layer's queries $q$ are fed directly into the optimized $T_\theta$ to obtain output tokens. Since the Apply step is a single forward pass, the complexity is $O(n)$ regardless of the KV space size.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Multi-view Images (n images)"] --> B["VGGT Image Tokenizer"]
+    subgraph TTT["Global Attention Layer → TTT Layer (Layer-wise, Update then Apply)"]
+        direction TB
+        D["Project Q, K, V"]
+        D --> E["Linearized Pre-trained Model<br/>Replace LayerNorm with L2 Normalization for Q/K"]
+        D --> F["ShortConv2D Spatial Mixing<br/>Inject neighborhood context V → V′"]
+        E --> G["Test-time Scaling<br/>On-site MLP T_θ optimization fitting K→V′ (1~2 steps)"]
+        F --> G
+        G --> H["Apply: Feed query into T_θ<br/>Single forward pass, complexity O(n)"]
+    end
+    B --> TTT
+    TTT --> I["VGGT Prediction Heads"]
+    I --> J["Pointmaps / Depth / Poses / Localization"]
+```
 
 ### Key Designs
 
-#### 1. Linearizing the Pretrained Model
+**1. Linearized Pre-trained Model: Enabling Fast TTT Convergence**
 
-- **Function**: Initialized from VGGT pretrained weights, retaining the $W_q, W_k, W_v$ projection matrices.
-- **Mechanism**: VGGT's QK projections use LayerNorm ($q_i = \text{LN}_q(W_q x_i)$), but the learnable parameters of LN **distort the input space** during TTT optimization, causing extremely slow convergence. Replacing LN with $L_2$ normalization unlocks fast convergence.
-- **Design Motivation**: Post-training linearization strategies have proven successful in LLMs and can significantly reduce training costs.
+The model starts with pre-trained VGGT weights, retaining $W_q, W_k, W_v$ projection matrices to avoid training from scratch. However, VGGT utilizes LayerNorm in QK projections ($q_i = \text{LN}_q(W_q x_i)$), where learnable scale/shift parameters distort the input space during TTT, slowing MLP convergence. VGG-T3 replaces QK LayerNorm with parameter-free $L_2$ normalization. This stabilizes the input space, allowing TTT to converge in 1-2 steps, similar to post-training linearization techniques used in LLMs.
 
-#### 2. ShortConv2D Nonlinear Spatial Mixing
+**2. ShortConv2D Non-linear Spatial Mixing: Avoiding Trivial TTT Solutions**
 
-- **Function**: Applies 2D convolution in the Value space to break the linear dependency in the K→V mapping.
-- **Mechanism**: Since both $K = W_k x$ and $V = W_v x$ are linear projections of $x$, theoretically $V = W_v W_k^{-1} K$, and the TTT objective may yield a trivial solution. After applying ShortConv2D, the target becomes learning $K \to V'$, where $V'$ encodes local spatial context:
-    - Reshape the 1D token sequence into a 2D image grid of shape $(N, H/p, W/p, d)$
-    - Apply a single-layer 2D convolution to aggregate local neighborhood information
-    - Flatten back to a 1D sequence
-- **Design Motivation**: Forces the MLP to predict targets containing neighborhood information from single-token features, yielding a more robust geometric scene representation.
+Without processing, the TTT objective faces a trivial solution: since $K = W_k x$ and $V = W_v x$ are linear projections of the same $x$, a closed-form solution $V = W_v W_k^{-1} K$ exists. An MLP approximating this linear mapping would reach zero loss without learning geometry. VGG-T3 introduces a ShortConv2D on the value side, changing the target from $K \to V$ to $K \to V'$, where $V'$ contains local spatial context. The 1D token sequence is reshaped into a 2D grid, processed by a 2D convolution to aggregate neighborhood information, and flattened back. This forces the MLP to predict neighborhood-aware targets from individual tokens, learning robust geometric representations.
 
-#### 3. Test-Time Scaling
+**3. Test-time Scaling: Support for Large-scale Scenes with Fixed Capacity**
 
-- **Function**: Handles large-scale image collections beyond the training distribution.
-- **Key Findings**: Training typically requires only 1 optimization step, but processing 1k images necessitates increasing the number of steps. Simply increasing to 2 steps achieves near-constant generalization across sequence lengths.
-- **Design Motivation**: A fixed number of optimization steps is insufficient to compress significantly larger scenes into a fixed-dimensional MLP.
+While one optimization step per TTT layer suffices during training, reconstructing 1k images—far beyond the training distribution—requires more capacity. To compress such large scenes into a fixed-dimension MLP, the number of optimization steps is increased from 1 to 2. This recovers accuracy to levels near small-scale reconstructions when sequence lengths grow significantly, achieving near-constant length generalization at the cost of one additional inner optimization round.
 
 ### Loss & Training
 
-Dot product loss is adopted for TTT optimization:
+The TTT inner loop uses a dot product loss:
+
 $$L_t(T_\theta(k_i), v_i) = T_\theta(k_i)^T v_i$$
 
-The Muon optimizer is used with a SwiGLU MLP as the fast weight network. All original VGGT parameters are frozen; only the global attention layers are fine-tuned for 100k steps (approximately 12% of the cost of training VGGT from scratch).
+The fast-weight network $T_\theta$ utilizes a SwiGLU MLP and a Muon optimizer. During outer training, original VGGT weights are frozen, and only the global attention layers (replaced by TTT layers) are fine-tuned for 100k steps. The total cost is approximately 12% of training a VGGT from scratch.
 
 ## Key Experimental Results
 
@@ -88,62 +93,62 @@ The Muon optimizer is used with a SwiGLU MLP as the fast weight network. All ori
 | VGGT | $O(n^2)$ | 1.537 | 0.279 | 0.014 | 0.668 |
 | SparseVGGT | $O(n^2)$ | 1.541 | 0.327 | 0.018 | 0.665 |
 | TTT3R | $O(n)$ | 5.708 | 0.885 | 0.071 | 0.666 |
-| **VGG-T3** | $O(n)$ | **1.654** | **0.480** | **0.029** | **0.679** |
+| **Ours** | $O(n)$ | **1.654** | **0.480** | **0.029** | **0.679** |
 
-- Pointmap estimation: **substantially outperforms** the only $O(n)$ baseline TTT3R across all datasets (DTU error reduced by 2–2.5×), remaining competitive with $O(n^2)$ methods.
-- Video depth estimation: $\delta<1.25$ of 0.967 on KITTI, on par with $O(n^2)$ methods.
+- Pointmap Estimation: **Significantly outperforms** the $O(n)$ baseline TTT3R (reducing DTU error by 2-2.5×) while remaining competitive with $O(n^2)$ methods.
+- Video Depth Estimation: Achieves $\delta<1.25$ of 0.967 on KITTI, comparable to $O(n^2)$ methods.
 
-### Large-Scale Reconstruction Performance
+### Large-scale Reconstruction Performance
 
-| No. of Images | VGG-T3 | VGGT | FastVGGT | TTT3R |
+| Number of Images | Ours | VGGT | FastVGGT | TTT3R |
 |----------|--------|------|----------|-------|
-| 1k | **58s** | 11min (11.6× slower) | 4min (4.3× slower) | ~60s |
-| 2k (4 GPUs) | **48.5s** | 1590s | N/A | N/A |
+| 1k images | **58s** | 11min (11.6× slower) | 4min (4.3× slower) | ~60s |
+| 2k images (4GPU) | **48.5s** | 1590s | N/A | N/A |
 
 ### Ablation Study
 
 | Design | DTU CD↓ | ETH3D CD↓ |
 |------|---------|-----------|
-| w/o ShortConv2D | Significant degradation | Significant degradation |
-| LayerNorm instead of L2 Norm | Extremely slow convergence | — |
-| 1-step TTT (1k images) | Error increases ~5× | — |
-| 2-step TTT (1k images) | Approaches small-scale accuracy | Stable |
+| No ShortConv2D | Significant decline | Significant decline |
+| LayerNorm instead of L2 | Very slow convergence | - |
+| 1-step TTT (1k imgs) | ~5× error increase | - |
+| 2-step TTT (1k imgs) | Near small-scale accuracy | Stable |
 
 ### Key Findings
 
-1. The quality gap between VGG-T3 and $O(n^2)$ methods **narrows as the number of images increases**.
-2. Supports single-GPU processing of arbitrarily large image collections (via minibatch offloading to CPU) as well as multi-GPU distributed inference.
-3. Visual localization: freezing the TTT-MLP enables feed-forward localization, achieving $e_r=6.71°, e_t=0.15\text{m}$ on 7scenes.
+1. The gap between VGG-T3 and $O(n^2)$ methods **narrows as the number of images increases**.
+2. Supports processing arbitrary image set sizes on a single GPU via minibatch offloading to CPU and multi-GPU distributed inference.
+3. Visual Localization: Feed-forward localization can be performed with a frozen TTT-MLP, achieving $e_r=6.71°, e_t=0.15$m on 7scenes.
 
 ## Highlights & Insights
 
-1. **Elegant core insight**: Treating the KV space in attention as a "variable-length scene representation" and compressing it into a "fixed-size scene representation" via TTT — a natural and profound analogy to DeepSDF.
-2. **Practical large-scale solution**: The additivity of the TTT objective (gradients can be accumulated in minibatches) naturally supports distributed inference and CPU offloading, which softmax attention cannot achieve.
-3. **Unified reconstruction and localization**: The same model and TTT-MLP support both scene mapping and localization, opening a new path toward unified end-to-end solutions.
-4. **Low fine-tuning cost**: The majority of VGGT parameters are frozen; only the new parameters in global attention layers are trained, at approximately 12% of the cost of training from scratch.
+1. **Core Insight**: Treating the KV space in attention as a "variable-length scene representation" and compressing it into a "fixed-size representation" via TTT is a natural and profound analogy to DeepSDF.
+2. **Scalability**: The additivity of the TTT objective (gradients can be accumulated via minibatches) natively supports distributed inference and CPU offloading, which is impossible with softmax attention.
+3. **Unified Framework**: The same model and TTT-MLP handle both mapping and localization, opening a path for unified end-to-end solutions.
+4. **Low Fine-tuning Cost**: Freezing most VGGT parameters and only training TTT layer parameters costs only 12% of training from scratch.
 
 ## Limitations & Future Work
 
-1. **Weak camera pose estimation**: The TTT-linearized model performs poorly on pose estimation, likely related to the heterogeneous design of camera tokens in VGGT; this remains a key issue for future work.
-2. **Remaining gap with softmax attention**: Especially in wide-baseline settings, the fixed capacity of the MLP limits scene representation ability.
-3. **Non-trivial training cost**: Although only 12% of VGGT's cost, training still requires 8×A100-80GB GPUs for 100k steps.
-4. **Limited visual localization validation**: Demonstrated only on 7scenes and Wayspots, with a notable gap compared to dedicated localization pipelines (e.g., Reloc3R).
+1. **Weak Pose Estimation**: The linearized TTT model performs poorly on pose estimation, likely due to the heterogeneous design of camera tokens in VGGT.
+2. **Gap with Softmax Attention**: Fixed MLP capacity limits scene representation in wide-baseline settings compared to full softmax attention.
+3. **Training Cost**: While 12% of VGGT, it still requires 8×A100-80GB for 100k steps.
+4. **Localization Validation**: Verification is limited to 7scenes and Wayspots, lagging behind dedicated pipelines like Reloc3R.
 
 ## Related Work & Insights
 
-- **VGGT**: The base architecture for this work; global softmax attention enables multi-view reasoning with high accuracy but $O(n^2)$ complexity.
-- **FastVGGT / SparseVGGT**: Accelerate via token merging / block-sparse attention; asymptotic complexity remains unchanged.
-- **TTT3R**: A concurrent work; an autoregressive TTT model based on CUT3R; $O(n)$ but lower accuracy and does not support unordered inputs.
-- **CUT3R / Must3R / Point3R**: Online methods using fixed-size implicit/spatial memories; linear complexity but poor global consistency.
-- **LaCT (Sun et al.)**: The originator of the TTT framework adopted here; VGG-T3 uses its SwiGLU MLP and Muon optimizer.
-- **DeepSDF**: A classic implicit representation work; the central idea of "encoding instance geometry in a fixed-size network" directly underpins VGG-T3.
+- **VGGT**: Foundational architecture; uses global softmax attention for multi-view reasoning with $O(n^2)$ complexity.
+- **FastVGGT / SparseVGGT**: Accelerates via token merging or block-sparse attention, but asymptotic complexity remains quadratic.
+- **TTT3R**: Concurrent work; an auto-regressive TTT model based on CUT3R with $O(n)$ complexity but lower accuracy and no support for unordered inputs.
+- **CUT3R / Must3R / Point3R**: Online methods with fixed implicit/spatial memory; linear but lack global consistency.
+- **LaCT (Sun et al.)**: Proposer of the TTT framework; VGG-T3 adopts its SwiGLU MLP and Muon optimizer.
+- **DeepSDF**: Classic implicit representation work; the "fixed-size network encoding instance geometry" idea is directly inherited here.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Elegantly transfers post-training linearization and TTT from the LLM domain to 3D reconstruction; the ShortConv2D design is targeted and well-motivated.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers pointmap estimation, depth, pose, and localization; includes large-scale evaluation and distributed inference; ablations are comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ — Logically clear with progressively developed motivation; figures and tables are highly informative.
-- Value: ⭐⭐⭐⭐⭐ — Addresses the scalability bottleneck of feed-forward 3D reconstruction; achieves 11.6× speedup with minimal accuracy loss; has direct practical value for large-scale scene reconstruction.
+- Novelty: ⭐⭐⭐⭐ — Cleverly migrates post-training linearization and TTT from LLMs to 3D reconstruction with targeted ShortConv2D design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers pointmaps, depth, poses, and localization; includes large-scale evaluation and distributed inference.
+- Writing Quality: ⭐⭐⭐⭐ — Clear logic with progressive motivation and informative visualizations.
+- Value: ⭐⭐⭐⭐⭐ — Resolves the scalability bottleneck of feed-forward 3D reconstruction, providing 11.6× speedup with minimal accuracy loss.
 
 <!-- RELATED:START -->
 
@@ -151,11 +156,11 @@ The Muon optimizer is used with a SwiGLU MLP as the fast weight network. All ori
 
 ## Related Papers
 
-- [\[CVPR 2026\] Speed3R: Sparse Feed-forward 3D Reconstruction Models](speed3r_sparse_feed-forward_3d_reconstruction_models.md)
+- [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
+- [\[CVPR 2026\] Speed3R: Sparse Feed-forward 3D Reconstruction Models](speed3r_sparse_feed-forward_3d_reconstruction_models.md)
 - [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
-- [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](../../ICML2026/3d_vision/trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
 
 </div>
 

@@ -2,75 +2,80 @@
 title: >-
   [Paper Note] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Orthographic Views] 3ViewSense argues that the bottleneck in VLM spatial reasoning is not a lack of visual features or weak linguistic reasoning…
+  [ICML 2026][Multimodal VLM][VLM] 3ViewSense argues that the bottleneck in VLM spatial reasoning is not insufficient visual features or weak language reasoning, but the absence of a stable 3D intermediate representation. Consequently, it requires the model to first induce front, left, and top views from a single image, and then reason based on these or
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Orthographic Views"
-  - "Spatial Reasoning"
-  - "Mental Simulation"
-  - "VLM"
-  - "GRPO"
+  - ICML 2026
+  - Multimodal VLM
+  - VLM
+  - GRPO
 date: 2026-05-08
-content_hash: 331c4073f19e9e28
+content_hash: de68d108e7a66f47
 ---
-
 # 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.07751](https://arxiv.org/abs/2603.07751)  
 **Code**: https://github.com/Jasaxion/3ViewSense  
-**Area**: Multimodal VLM / Spatial Reasoning  
-**Keywords**: Orthographic Views, Spatial Reasoning, Mental Simulation, VLM, GRPO
+**Area**: Multi-modal VLM / Spatial Reasoning  
+**Keywords**: Orthographic views, Spatial reasoning, Mental simulation, VLM, GRPO
 
 ## TL;DR
-3ViewSense argues that the bottleneck in VLM spatial reasoning is not a lack of visual features or weak linguistic reasoning, but the absence of stable 3D intermediate representations. Consequently, the model is tasked to first induce front, left, and top views from a single image before reasoning based on these orthographic views. This approach significantly outperforms VLMs of similar scale in occlusion counting and view-consistent spatial reasoning.
+3ViewSense argues that the bottleneck in VLM spatial reasoning is not insufficient visual features or weak language reasoning, but the absence of a stable 3D intermediate representation. Consequently, it requires the model to first induce front, left, and top views from a single image, and then reason based on these orthographic views, significantly outperforming same-scale VLMs in occlusion counting and view-consistent spatial reasoning.
 
 ## Background & Motivation
-**Background**: Large Vision-Language Models (VLMs) can already handle complex image-text QA, symbolic logic, and multi-step reasoning, yet remain fragile in spatial understanding. A typical example is block stacking and counting: while human children can count by imagining occluded parts, VLMs often resort to repetitive guessing due to occlusion, perspective, and depth ambiguity.
+**Background**: Large Vision-Language Models can handle complex visual QA, symbolic logic, and multi-step reasoning, yet they remain fragile in spatial understanding. A typical example is block stacking counting: while human children can count by imagining occluded parts, VLMs often struggle with repeated guesses under occlusion, perspective, and depth ambiguity.
 
-**Limitations of Prior Work**: The paper first conducts two diagnostic tests. First, after freezing VLM visual features and training a lightweight MLP probe, the block counting accuracy reaches 55.8%, indicating that image encoders already preserve substantial geometric information. Second, if textual descriptions of the front/left/top views are directly provided to the same model, the spatial reasoning of models like Gemini-3-pro improves significantly. This suggests the problem is not merely "not seeing" or "not knowing how to reason," but that visual features are not organized into a spatial structure that the reasoner can stably utilize.
+**Limitations of Prior Work**: The paper conducts two diagnostics. First, by training a lightweight MLP probe on frozen VLM visual features, block counting accuracy reaches 55.8%, indicating that the image encoder retains significant geometric information. Second, if textual descriptions of front/left/top views are directly provided to the same model, spatial reasoning for models like Gemini-3-pro improves drastically. This suggests the problem is not just "failing to see" or "failing to reason," but that visual features are not organized into a spatial structure usable by the reasoner.
 
-**Key Challenge**: A single egocentric image compresses 3D structures into 2D projections, naturally entailing occlusion and depth ambiguity. When end-to-end VLMs directly model $P(a \mid I_{ego}, q)$, they must simultaneously perform 3D completion, viewpoint transformation, and answer reasoning within the latent space. Once the intermediate state becomes unstable, subsequent linguistic reasoning suffers from drift and hallucinations.
+**Key Challenge**: A single egocentric image collapses 3D structure into a 2D projection, naturally introducing occlusion and depth ambiguity. When an end-to-end VLM directly models $P(a \mid I_{ego}, q)$, it must simultaneously perform 3D completion, perspective transformation, and answer reasoning within the latent space. Once the intermediate state becomes unstable, subsequent linguistic reasoning suffers from drift and hallucinations.
 
-**Goal**: The authors aim to externalize the process of "recovering reason-able 3D mental representations from 2D images" by requiring the model to generate a set of canonical orthographic views first, and then answer counting, position, and attribute-related questions based on these views.
+**Goal**: The authors aim to externalize the process of "recovering reason-able 3D mental representations from 2D images" by letting the model generate a set of canonical orthographic views before answering questions related to counting, position, and attributes.
 
-**Key Insight**: Engineering graphics uses orthographic projections to decompose 3D objects into front, left, and top views, thereby reducing perspective-induced ambiguity. The paper transfers this concept to VLMs, using triple views as the interface between egocentric perception and allocentric spatial reasoning.
+**Key Insight**: Engineering drawings use orthographic projections to decompose 3D objects into front, left, and top views to reduce perspective ambiguity. This paper transfers this idea to VLMs, using three views as an interface between egocentric perception and allocentric spatial reasoning.
 
-**Core Idea**: Replace the single-stage black-box image QA with a "Simulate-and-Reason" pipeline that first simulates triple views and then reasons based on them.
+**Core Idea**: Use a "Simulate-and-Reason" pipeline to replace single-stage black-box VQA.
 
 ## Method
-The crux of 3ViewSense is not the introduction of additional 3D sensors, but rather decomposing the internal reasoning process of the VLM into two supervisable capabilities: Orthographic Mental Simulation (OMS), responsible for converting single-view images into structured triple views, and View-Grounded Reasoning (VGR), responsible for integrating the triple views with the original question into an answer. Formally, the paper formulates the answer distribution as a two-stage process via latent orthographic views $\mathcal{V}=\{v_{front}, v_{left}, v_{top}\}$: first estimating $\hat{\mathcal{V}}=\arg\max_{\mathcal{V}}P_{\theta_{sim}}(\mathcal{V}\mid I_{ego},q)$, and then outputting the answer using $P_{\theta_{reason}}(a\mid \hat{\mathcal{V}},I_{ego},q)$.
+The key to 3ViewSense is not introducing extra 3D sensors but decomposing the internal VLM reasoning into two supervisable capabilities: Orthographic Mental Simulation (OMS) for converting single-view images into structured three views, and View-Grounded Reasoning (VGR) for integrating these views with the original question to form an answer. Formally, the answer distribution is written as a two-stage process via latent orthographic views $\mathcal{V}=\{v_{front}, v_{left}, v_{top}\}$: first estimate $\hat{\mathcal{V}}=\arg\max_{\mathcal{V}}P_{\theta_{sim}}(\mathcal{V}\mid I_{ego},q)$, then output the answer with $P_{\theta_{reason}}(a\mid \hat{\mathcal{V}},I_{ego},q)$.
 
 ### Overall Architecture
-The input consists of an egocentric image and a spatial question, and the output is a count or a discrete directional label. Training is divided into three steps: First, Stage I SFT is performed on procedural data from OrthoMind-3D to learn the generation of structured descriptions for the front/left/top views. Second, Stage II SFT is conducted to let the model generate natural language reasoning chains and final answers conditioned on the triple views. Finally, starting from the Stage II model, GRPO is used with mathematically verifiable rewards to enhance answer correctness and reasoning stability.
+The input consists of a single egocentric image and a spatial question, and the output is a count or a discrete orientation label. The entire pipeline follows a "Simulate-and-Reason" approach: first, Orthographic Mental Simulation (OMS) induces the front, left, and top orthographic views from a single image, then View-Grounded Reasoning (VGR) integrates these views to derive the answer. Training follows three steps: first, Stage I SFT on procedural data from OrthoMind-3D to learn structured orthographic descriptions; second, Stage II SFT to enable the model to generate reasoning chains and answers conditioned on the three views; finally, reinforcement learning via GRPO starting from the Stage II model to enhance answer accuracy and reasoning stability under verifiable rewards.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Single egocentric image + spatial question"] --> SIM
+    subgraph SIM["1. Orthographic Mental Simulation (OMS)"]
+        direction TB
+        B["Stage I SFT: Induce Front / Left / Top views<br/>from a single image"] --> C["Structured view descriptions<br/>Blocks: visible blocks + height + occlusion cues<br/>Objects: sequence in scanning order"]
+    end
+    SIM --> RSN
+    subgraph RSN["2. View-Grounded Reasoning (VGR)"]
+        direction TB
+        D["Stage II SFT: Conditioned on three views<br/>Integrate Front → Left → Top"] --> E["Generate reasoning chain + final answer"]
+    end
+    RSN --> F["3. GRPO refinement<br/>Verifiable rewards + Group-normalized advantage"]
+    F -->|Sampling and score feedback| D
+    F --> G["Output: Count / Discrete orientation labels"]
+```
 
 ### Key Designs
-1.  **Orthographic Mental Simulation**:
-    *   **Function**: Translates a single egocentric image into three structured descriptions: front, left, and top views.
-    *   **Mechanism**: For block counting tasks, view descriptions include visible blocks, stacking heights, and occlusion cues; for object reasoning, descriptions are object sequences ordered by scanning (e.g., left-to-right or far-to-near). Stage I uses 19.5k samples with triple-view annotations for maximum likelihood training.
-    *   **Design Motivation**: Triple views convert implicit 3D completion problems into 2D planar problems closer to symbolic pattern recognition, reducing the space for the model to guess depth on the fly during the linguistic reasoning stage.
+**1. Orthographic Mental Simulation (OMS): Reducing 3D completion to planar recognition.** This step addresses the upstream bottleneck where single egocentric images collapse 3D structures into 2D projections. OMS forces the model to induce front, left, and top views and represent them as structured descriptions: in block counting, each view encodes visible blocks, stacking height, and occlusion cues; in object reasoning, views are sequences of objects in scanning order (left-to-right or far-to-near). Stage I utilizes ~19.5k samples with orthographic annotations for sequence MLE training. This essentially converts implicit 3D completion into a 2D planar problem akin to symbolic pattern recognition, minimizing the "depth guessing" required in subsequent stages.
 
-2.  **View-Grounded Reasoning**:
-    *   **Function**: Enables the model to explicitly read the triple views and synthesize the original image and question to generate an answer.
-    *   **Mechanism**: Stage II constructs reasoning trajectories following a "front → left → top" integration order. These are generated by Gemini-3-Flash and filtered by final answer correctness, resulting in 21k training samples. Instead of just learning final labels, the model learns how to assemble multiple projections into a consistent mental structure.
-    *   **Design Motivation**: Supervizing only the final answer leads to overfitting dataset patterns; supervising the reasoning process conditioned on views preserves "multi-view integration" as a transferrable capability.
+**2. View-Grounded Reasoning (VGR): Supervising the reasoning process instead of just the answer.** While orthographic views provide structural priors, complex tasks like occlusion counting still require integrating multiple projections into a consistent 3D mental model. Stage II requires the model to explicitly read the induced views and generate reasoning trajectories in a fixed "Front $\to$ Left $\to$ Top" order before providing an answer. 21k training trajectories are generated by Gemini-3-Flash and filtered by answer correctness. The model learns the process of "assembling multiple projections into a consistent structure" rather than a simple "image $\to$ label" shortcut.
 
-3.  **Refinement via GRPO and Verifiable Rewards**:
-    *   **Function**: Further improves the accuracy of counting and directional prediction after SFT while mitigating generalization degradation caused by large-scale SFT.
-    *   **Mechanism**: Initialized with the Stage II model, a group of responses is sampled and scored using verifiable rewards for integer counting or discrete directions. Optimization uses group-normalized advantages $\hat{A}_i=(R_i-\mu_R)/(\sigma_R+\delta)$ and the clipped GRPO objective. The paper compares "strict reward" and "slack reward," the latter of which provides some tolerance for counting errors.
-    *   **Design Motivation**: Answers for spatial tasks can be automatically verified, making them suitable for RL. However, performing RL directly from OMS-SFT is unstable; a "view reasoning warm start" from VGR is essential.
+**3. GRPO Refinement and Verifiable Rewards: Stability and elevation over VGR warm start.** To further improve counting and orientation accuracy while mitigating generalization decay from large-scale SFT, reinforcement learning is applied starting from the Stage II model. For each question, a group of answers is sampled and scored using verifiable rewards (integer counts or discrete orientation labels), optimized with a clipped GRPO objective based on group-normalized advantage $\hat{A}_i=(R_i-\mu_R)/(\sigma_R+\delta)$. Rewards are categorized as "strict" or "slack," with the latter offering tolerance for counting errors.
 
 ### Loss & Training
-Stage I and Stage II both employ standard sequence maximum likelihood training to learn triple-view generation and view-conditioned reasoning, respectively. The RL phase uses 30k instances, with 10k resampled from Stage II and 20k newly generated; the base model is Qwen3-VL-4B-Instruct. Reward configurations include strict and slack variants, both utilizing automatic verification for integer count or discrete directional labels.
+Both Stage I and Stage II utilize standard sequence maximum likelihood estimation to learn view generation and view-conditioned reasoning, respectively. The RL phase uses 30k instances, with 10k resampled from Stage II and 20k newly generated. The base model is Qwen3-VL-4B-Instruct. Rewards are configured as strict and slack, both employing automatic verification for integer counts or discrete labels.
 
 ## Key Experimental Results
 
 ### Main Results
-Main experiments on OrthoMind-3D show that general VLMs are very weak at occluded block counting, while 3ViewSense nearly pushes in-domain tasks to high accuracy after GRPO.
+Main results on OrthoMind-3D show that general VLMs are very weak at counting occluded blocks, whereas 3ViewSense pushes in-domain tasks to high accuracy after GRPO.
 
 | Model | Block Count | Block Count (Attr.) | Object Count | Object Position | Object Count (Attr.) | Object Position (Attr.) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-------------|---------------------|--------------|-----------------|----------------------|-------------------------|
 | GPT-4o | 15.8 | 53.2 | 68.3 | 39.3 | 71.2 | 47.2 |
 | Gemini-3-pro | 13.8 | 80.2 | 83.3 | 71.6 | 93.2 | 93.6 |
 | SpaceOm-4B | 10.4 | 47.2 | 63.6 | 17.6 | 60.2 | 25.4 |
@@ -79,69 +84,70 @@ Main experiments on OrthoMind-3D show that general VLMs are very weak at occlude
 | 3ViewSense-4B-RL-strict | 95.0 | 88.2 | 98.7 | 93.3 | 97.4 | 93.2 |
 | 3ViewSense-4B-RL-slack | 94.4 | 88.6 | 98.7 | 92.3 | 98.4 | 93.4 |
 
-On OOD and external benchmarks, the improvements are less dramatic than in-domain, but transfer gains from triple-view reasoning are still visible. Using Qwen3-VL-4B-Instruct as a baseline, RL-slack improves from 21.2 to 38.7 on OrthoMind-3D OOD Block Count and from 27.2 to 38.9 on MindCube-Tiny.
+On OOD and external benchmarks, the improvement is less dramatic but still shows transfer gains from orthographic reasoning. Using Qwen3-VL-4B-Instruct as a baseline, RL-slack improves OOD Block Count on OrthoMind-3D from 21.2 to 38.7 and on MindCube-Tiny from 27.2 to 38.9.
 
 | Model | OOD Block Count | OOD Object Position | MindCube-Tiny | CV-Bench 2D | SPBench-SI | ViewSpatial |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-----------------|--------------------|---------------|-------------|------------|-------------|
 | Qwen3-VL-4B-Instruct | 21.2 | 46.7 | 27.2 | 77.9 | 22.2 | 35.5 |
 | 3ViewSense-4B-SFT | 31.1 | 72.5 | 34.9 | 74.3 | 20.6 | 34.4 |
 | 3ViewSense-4B-RL-strict | 33.2 | 74.3 | 36.7 | 78.1 | 23.2 | 36.6 |
 | 3ViewSense-4B-RL-slack | 38.7 | 76.1 | 38.9 | 79.9 | 25.4 | 37.1 |
 
 ### Ablation Study
-The ablation focuses on proving that gains come from the "view-conditioned reasoning process" rather than just more supervision data.
+The ablation focus is to prove that gains stem from the "view-conditioned reasoning process" rather than just more supervision data.
 
 | Configuration | OrthoMind-3D ID | OrthoMind-3D OOD | SPBench-SI | ViewSpatial | Description |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Direct QA | 80.3 | 49.8 | 1.3 | 7.2 | Same input and hyperparams, but only final answer supervised |
-| 3ViewSense Reasoning | 70.3 | 46.6 | 21.2 | 34.1 | Supervised view-conditioned reasoning chain |
+|------|----------------|-----------------|------------|-------------|------|
+| Direct QA | 80.3 | 49.8 | 1.3 | 7.2 | Same input/hyperparams, but only supervises the final answer |
+| 3ViewSense Reasoning | 70.3 | 46.6 | 21.2 | 34.1 | Supervises view-conditioned reasoning chains |
 
-Direct QA is higher on OrthoMind-3D, indicating it fits the target dataset better, but it nearly collapses on SPBench-SI and ViewSpatial. 3ViewSense Reasoning has slightly lower in-domain scores but retains transferable spatial reasoning capabilities.
+Direct QA scores higher on OrthoMind-3D ID, suggesting it fits the target dataset better; however, it collapses on SPBench-SI and ViewSpatial. 3ViewSense Reasoning preserves transferable spatial reasoning capabilities despite lower in-domain scores.
 
 | Stage | OrthoMind-3D ID | OrthoMind-3D OOD | MindCube-Tiny | ViewSpatial | Description |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| OMS-SFT only | 48.7 | 41.3 | 29.6 | 33.4 | Only induces views; insufficient for complex queries |
-| VGR-SFT only | 70.3 | 46.6 | 32.4 | 34.1 | Direct learning of view-conditioned reasoning |
-| OMS→VGR two-stage | 78.6 | 49.5 | 34.9 | 34.4 | Learning view induction then reasoning is most stable |
+|-------|----------------|-----------------|---------------|-------------|------|
+| OMS-SFT only | 48.7 | 41.3 | 29.6 | 33.4 | Can only induce views, insufficient for complex queries |
+| VGR-SFT only | 70.3 | 46.6 | 32.4 | 34.1 | Directly learns view-conditioned reasoning |
+| OMS→VGR two-stage | 78.6 | 49.5 | 34.9 | 34.4 | Learns view induction then reasoning; most stable overall |
 
 ### Key Findings
-*   Attribute-conditioned counting is significantly easier than pure counting, as salient attributes like color or size simplify 3D enumeration into local retrieval.
-*   ICL cannot stably teach triple-view reasoning; only a few strong closed-source models show limited improvement, while most open-source models degrade, indicating this is not a simple prompt trick.
-*   Base models produce verbose reasoning exceeding 10k tokens for block counting. 3ViewSense, by forming view sketches first, produces shorter and more stable outputs.
-*   GRPO reward curves rise steadily when initialized from Stage II VGR-SFT, whereas starting directly from Stage I OMS-SFT results in high-variance oscillations, highlighting that the "view reasoning warm start" is critical for RL.
+- Attribute-conditioned counting is significantly easier as salient attributes like color or size simplify 3D enumeration into local retrieval.
+- ICL cannot stably teach orthographic reasoning; while strong closed-source models show limited improvement, most open-source models degrade, indicating it is not a simple prompt trick.
+- Base models produce verbose reasoning exceeding 10k tokens for block counting, whereas 3ViewSense outputs are shorter and more stable due to the view sketches.
+- GRPO shows stable reward curves when initialized from Stage II VGR-SFT, whereas starting from Stage I OMS-SFT leads to high-variance oscillation.
 
 ## Highlights & Insights
-*   The most valuable aspect of the paper is turning VLM spatial failures into a diagnostic problem: visual probes and explicit triple-view prompting rule out "not seeing" and "not thinking" explanations, respectively, locating the bottleneck at the lack of an intermediate spatial interface.
-*   Orthographic projection is a simple yet effective inductive bias. It does not introduce heavy 3D modules but explicitly disentangles depth ambiguity—the hardest part of occlusion counting—making it compatible with existing VLM training pipelines.
-*   The Direct QA ablation is insightful: higher in-domain answer accuracy does not equate to better spatial ability. What truly transfers is the supervision of intermediate representations and reasoning processes, not answer-pattern fitting.
+- The most valuable contribution is making VLM spatial failure a diagnosable issue: visual probes and explicit view prompts rule out "inability to see" or "inability to think," pinpointing the lack of an intermediate spatial interface.
+- Orthographic projection is a simple yet effective inductive bias. It avoids heavy 3D modules while explicitly unfolding depth ambiguity, fitting well into existing VLM training pipelines.
+- The Direct QA ablation is insightful: higher in-domain accuracy does not equate to better spatial ability. Truly transferable skill comes from supervising intermediate representations and reasoning processes.
 
 ## Limitations & Future Work
-*   Three fixed orthographic views cannot cover all spatial problems. Tasks involving support relations, affordance, dynamics, or physical stability require intermediate representations richer than geometric projections.
-*   OMS relies on procedural synthesis and training data with available triple-view ground truth; obtaining equivalent quality orthographic annotations in open-world images is difficult.
-*   The improvements on OOD and external benchmarks are relatively modest, suggesting that the triple-view capabilities learned by the model are still domain-constrained. Future work should enable the model to estimate view induction uncertainty and adaptively select other spatial abstractions when necessary.
-*   The current method increases the training phase and reasoning chain length; actual deployment will require balancing output length, latency, and spatial reasoning gains.
+- Three fixed orthographic views do not cover all spatial problems. Tasks involving support relations, affordance, dynamics, or physical stability require richer intermediate representations.
+- OMS relies on procedural synthesis and ground-truth orthographic data, which is difficult to obtain for open-world images.
+- Gains on OOD and external benchmarks are moderate, suggesting view-based capabilities remain domain-constrained. Future work should estimate view-induction uncertainty and adaptively select spatial abstractions.
+- The current method increases reasoning chain length and training complexity, necessitating a trade-off between latency and spatial performance.
 
 ## Related Work & Insights
-*   **vs Spatial-MLLM / External 3D Encoder Methods**: These often rely on extra visual modules, masks, or 3D features. 3ViewSense instead learns interpretable spatial intermediate representations within the language interface, which is cheaper but limited by the expressive power of triple views.
-*   **vs SpatialLadder / RL Self-Correction Methods**: Curriculum learning or general RL strengthens training strategies, whereas 3ViewSense focuses on changing the reasoning object to view-consistent representations. The two could be combined in the future.
-*   **vs MindCube / Mental Imagery Methods**: MindCube leans toward implicit 3D mental imagery. 3ViewSense constrains this imagery with canonical orthographic projections, making the intermediate process more inspectable and easier to supervise.
+- **vs Spatial-MLLM / External 3D Encoders**: These often rely on extra visual modules or 3D features. 3ViewSense learns interpretable spatial representations within the language interface, which is lower cost but limited by the expressiveness of orthographic views.
+- **vs SpatialLadder / RL Self-Correction**: Curriculum learning or general RL strengthens training strategies; 3ViewSense changes the reasoning object to a view-consistent representation.
+- **vs MindCube / Mental Imagery**: MindCube relies on implicit 3D imagining, whereas 3ViewSense constrains this with canonical projections, making the process more inspectable and supervisable.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ Bringing engineering-style orthographic views into VLM spatial reasoning and supporting the problem localization with diagnostic experiments is a concise but impactful idea.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Main experiments, OOD, external benchmarks, and multi-layer ablations are comprehensive, though real-world open-world tasks and deployment cost analyses are insufficient.
-*   Writing Quality: ⭐⭐⭐⭐⭐ The logic from diagnosis to method to ablation is very smooth, making the purpose of each module clear.
-*   Value: ⭐⭐⭐⭐⭐ Very inspiring for multimodal spatial reasoning, especially as a case study for "explicit intermediate representations being superior to answer fitting."
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/multimodal_vlm/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
+- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/multimodal_vlm/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/multimodal_vlm/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
 
 </div>

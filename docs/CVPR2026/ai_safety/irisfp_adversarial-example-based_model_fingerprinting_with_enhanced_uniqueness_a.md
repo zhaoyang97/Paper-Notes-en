@@ -2,82 +2,88 @@
 title: >-
   [Paper Note] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 description: >-
-  [CVPR 2026][model fingerprinting] This paper proposes IrisFP, a model fingerprinting framework that simultaneously enhances fingerprint uniqueness and robustness through three innovations: placing fingerprints at the int…
+  [CVPR 2026][AI Safety][Paper Note] Ours proposes IrisFP, a model fingerprinting framework that simultaneously enhances uniqueness and robustness through three innovations: placing fingerprints at multi-class decision boundary intersections, constructing composite sample fingerprints, and screening fingerprints based on statistical separability. It consi
 tags:
-  - "CVPR 2026"
-  - "model fingerprinting"
-  - "adversarial examples"
-  - "intellectual property protection"
-  - "ownership verification"
-  - "decision boundary"
+  - CVPR 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 4c1aca3c517f184e
+content_hash: 5367d5632982d9a4
 ---
-
 # IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24996](https://arxiv.org/abs/2603.24996)  
 **Code**: None  
-**Area**: Other
-**Keywords**: model fingerprinting, adversarial examples, intellectual property protection, ownership verification, decision boundary
+**Area**: Others  
+**Keywords**: Model fingerprinting, adversarial examples, IP protection, ownership verification, decision boundary
 
 ## TL;DR
 
-This paper proposes IrisFP, a model fingerprinting framework that simultaneously enhances fingerprint uniqueness and robustness through three innovations: placing fingerprints at the intersection of multi-class decision boundaries, constructing composite sample fingerprints, and performing statistically-guided fingerprint selection. IrisFP consistently achieves higher AUC than state-of-the-art methods across 5 datasets.
+Ours proposes IrisFP, a model fingerprinting framework that simultaneously enhances uniqueness and robustness through three innovations: placing fingerprints at multi-class decision boundary intersections, constructing composite sample fingerprints, and screening fingerprints based on statistical separability. It consistently outperforms SOTA methods in AUC across five datasets.
 
 ## Background & Motivation
 
-Adversarial-example-based model fingerprinting techniques elicit model-specific response behaviors by adding imperceptible perturbations to clean inputs, serving as a mechanism for DNN intellectual property protection and ownership verification. Existing methods face a **fundamental tension between uniqueness and robustness**:
+Adversarial-example-based model fingerprinting techiniques use slight perturbations added to clean inputs to elicit model-specific response behaviors, serving DNN intellectual property protection and ownership verification. Existing methods face a **fundamental conflict between uniqueness and robustness**:
 
-- **Uniqueness**: Fingerprints must lie near decision boundaries to capture model-specific behavior, but existing methods target only a single boundary, resulting in insufficient discriminative power.
-- **Robustness**: Model modification attacks (fine-tuning, pruning, adversarial training, etc.) shift decision boundaries and invalidate fingerprints. To improve robustness, prior methods place fingerprints deep within the target class region, which in turn compromises uniqueness.
+- **Uniqueness Issue**: Fingerprints need to be near decision boundaries to capture model-specific behavior, but existing methods target only a single boundary, leading to insufficient discriminative power.
+- **Robustness Issue**: Model modification attacks (fine-tuning, pruning, adversarial training, etc.) shift decision boundaries, causing fingerprints to fail. To enhance robustness, prior methods place fingerprints deep within target class regions, but this compromises uniqueness.
 
-Root Cause: Existing methods achieve either weak uniqueness or weak robustness, but not both simultaneously.
+Key Challenge: Existing methods suffer from either weak uniqueness or weak robustness, failing to achieve both.
 
-The key insight of this paper is that samples located at the **intersection of multi-class decision boundaries** exhibit a larger predicted margin — i.e., high confidence for the target class while being close to all other class boundaries. This simultaneously preserves model sensitivity (uniqueness) and increases predicted margin (robustness), without requiring fingerprints to be embedded deep in the target class region.
+Key Insight: Samples located at the **intersections of multi-class decision boundaries** possess a larger predicted margin—meaning the target class confidence is high while the distances to all other classes are small. This maintains model sensitivity (uniqueness) while increasing the predicted margin (robustness) without requiring fingerprints to be placed in deep regions.
 
 ## Method
 
 ### Overall Architecture
 
-IrisFP consists of two main pipelines:
-1. **Fingerprint Generation**: Three phases — fingerprint seed initialization → composite sample fingerprint generation → fingerprint set selection.
-2. **Ownership Verification**: Two steps — ownership matching → decision aggregation.
+The core challenge IrisFP addresses is ensuring that a set of adversarial fingerprints can both precisely identify "this is my trained model" (uniqueness) and remain effective after model fine-tuning, pruning, or adversarial training (robustness). It decomposes the process into offline **fingerprint generation** and online **ownership verification**. Fingerprint generation involves three steps: first, optimizing each seed sample on the protected model to the intersection of all decision boundaries; second, deriving a set of variants around each seed to form composite fingerprints; and finally, using a batch of reference models to eliminate weak fingerprints and assign an exclusive threshold to each remaining fingerprint. During verification, these threshold-equipped fingerprints are used to query a suspect model, judging matches individually and aggregating them into a final "pirated or not" conclusion. The generation steps correspond to the three key designs below, progressively raising uniqueness and robustness, while verification is the downstream application.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Protected Model + Seed Samples"] --> B["Multi-boundary Intersection Seed Initialization<br/>KL approach to biased distribution, push to intersections"]
+    B --> C["Composite Sample Fingerprints<br/>Each seed derives T variants, each assigned a different target class"]
+    subgraph REF["Reference Model Screening & Adaptive Thresholds"]
+        direction TB
+        D["Analyze matching rate distributions<br/>on Pirate / Independent sets"] --> E["Cohen's d quantifies separability<br/>Retain top-K"]
+        E --> F["Assign adaptive threshold θ_i per fingerprint"]
+    end
+    C --> D
+    REF -->|Fingerprint set with thresholds| G["Ownership Verification (Downstream)<br/>Match rate ≥ θ_i → Matching proportion ≥ α judged as pirated"]
+```
 
 ### Key Designs
 
-1. **Multi-boundary Intersection Fingerprint Seed Initialization (Phase I)**:
-    - Function: Places fingerprints at the intersection of all decision boundaries of the protected model.
-    - Mechanism: For each input $x_i^0$, a probability distribution $p_i$ biased toward target class $\hat{y}_i^0$ is defined, where the target class probability is $\frac{1}{C}+\tau$ and the remaining probability is distributed uniformly among all other classes. The loss $\mathcal{L}_{phase1} = KL(f_o(\hat{x}_i^0) || p_i) + \lambda_1\|\delta_i^0\|_1$ is minimized to align the model output distribution with this biased distribution.
-    - Design Motivation: Unlike conventional methods that push fingerprints toward a single boundary, this strategy causes fingerprints to simultaneously approach all boundaries. The parameter $\tau$ controls the degree of bias; a smaller $\tau$ places fingerprints closer to the intersection center, thereby increasing the predicted margin.
+**1. Multi-boundary Intersection Seed Initialization: Aligning fingerprints with all boundaries simultaneously**
 
-2. **Composite Sample Fingerprint Generation (Phase II)**:
-    - Function: Further enhances uniqueness through the collective behavior of multiple samples.
-    - Mechanism: For each fingerprint seed $\hat{x}_i^0$, $T$ small trainable perturbations $\{\delta_i^1, ..., \delta_i^T\}$ are applied, each variant being assigned a different random target class. The same biased probability distribution and KL divergence optimization are used, such that all variants remain near multi-boundary intersections while producing distinct predicted outputs.
-    - Design Motivation: The behavior of a single fingerprint sample may be coincidentally replicated by an independently trained model, whereas the collective behavioral pattern of a group of samples (predictions across $T+1$ samples) is extremely difficult to replicate, significantly enhancing discriminative capability.
+Traditional adversarial fingerprints push samples across a single decision boundary, making them sensitive only to behaviors near that specific boundary, which naturally limits discriminative power. Conversely, pushing samples deep into the target class enhances robustness against perturbations but loses model sensitivity. Ours constructs a **biased target distribution** $p_i$ towards the target class $\hat{y}_i^0$ for each input $x_i^0$, where the target class probability is forced to $\frac{1}{C}+\tau$, and the remaining probability is equally distributed among other classes. Then, by minimizing
 
-3. **Fingerprint Set Selection and Adaptive Thresholding (Phase III)**:
-    - Function: Retains the most discriminative fingerprints and assigns an optimal threshold to each.
-    - Mechanism:
-        - Two reference model sets are constructed: a piracy model set $\mathcal{V}_f$ (generated via FT/KD/AT) and an independent model set $\mathcal{I}_f$ (independently trained).
-        - The matching rate distributions of each composite fingerprint over both sets are computed, and discriminative power is quantified via Cohen's d effect size: $d_i = (\mu_i^{\mathcal{V}} - \mu_i^{\mathcal{I}}) / \sqrt{\frac{1}{2}((\sigma_i^{\mathcal{V}})^2 + (\sigma_i^{\mathcal{I}})^2)}$.
-        - The top-$K$ most discriminative fingerprints are selected.
-        - An adaptive threshold $\theta_i$ is computed for each selected fingerprint as a weighted average of the mean matching rates from the piracy and independent sets, with weights inversely proportional to standard deviation.
-    - Design Motivation: Existing methods entirely ignore the effects of model modification and independent training during fingerprint construction. IrisFP addresses this via reference model set-based quality evaluation. Adaptive thresholding avoids the suboptimality of a globally fixed threshold.
+$$\mathcal{L}_{phase1} = KL(f_o(\hat{x}_i^0) \,||\, p_i) + \lambda_1\|\delta_i^0\|_1$$
+
+the model's output for the perturbed sample $\hat{x}_i^0=x_i^0+\delta_i^0$ is pushed toward this distribution, with the $\ell_1$ term constraining the perturbation to be small. The key is that $p_i$ makes the target class only slightly higher than others, resulting in a point that has the highest target confidence but is very close to all other classes—falling exactly at the multi-class boundary intersection. A smaller $\tau$ makes the sample closer to the intersection center with a larger predicted margin; this is why it achieves both uniqueness (remaining on the boundary and sensitive to the model) and robustness (large margin, resistant to minor boundary shifts).
+
+**2. Composite Sample Fingerprints: Using collective behavior of a sample set against accidental duplication**
+
+The response of a single fingerprint might be accidentally reproduced by an independently trained irrelevant model, leading to false piracy judgments. IrisFP addresses this by deriving $T$ variants with trainable perturbations $\{\delta_i^1,\dots,\delta_i^T\}$ around each seed $\hat{x}_i^0$, assigning a different random target class to each variant. These are also pushed to their respective multi-boundary intersections using biased distributions and KL divergence. A "composite fingerprint" consists of the seed plus $T+1$ variants, and verification checks whether the predictions for this entire group match. While single-point behavior might collide, it is nearly impossible for another model to perfectly replicate the specific prediction patterns exhibited by an entire set of samples near intersections, significantly enhancing uniqueness.
+
+**3. Reference Model Screening & Adaptive Thresholds: QC using attack models during generation**
+
+Previous methods used fingerprints directly after generation without considering how model modification attacks or independent training affect matching. IrisFP incorporates this as quality control. It constructs two reference sets: a **Pirate set** $\mathcal{V}_f$ (modified versions of the protected model via FT/KD/AT, which should technically match) and an **Independent set** $\mathcal{I}_f$ (irrelevant independently trained models, which should not match). For each composite fingerprint, it calculates the matching rate distribution across these sets and quantifies its ability to distinguish the two using the Cohen's d effect size:
+
+$$d_i = \frac{\mu_i^{\mathcal{V}} - \mu_i^{\mathcal{I}}}{\sqrt{\tfrac{1}{2}\big((\sigma_i^{\mathcal{V}})^2 + (\sigma_i^{\mathcal{I}})^2\big)}}$$
+
+A larger $d_i$ indicates that the mean matching rates of the pirate and independent sets are further apart with lower variance, allowing for cleaner differentiation. The top-K fingerprints are retained. Each selected fingerprint is then assigned an **adaptive threshold** $\theta_i$, calculated as a weighted average of the mean matching rates of the pirate and independent sets, with weights inversely proportional to their respective standard deviations. This fits the actual distribution of each fingerprint better than a global fixed threshold, avoiding sub-optimal results from a one-size-fits-all approach. In ablation studies, this adaptive threshold increased AUC from 0.812 to 0.893, being the most significant design contribution.
 
 ### Loss & Training
 
-- Phase I: $\mathcal{L}_{phase1} = KL(f_o(\hat{x}_i^0) || p_i) + \lambda_1\|\delta_i^0\|_1$
-- Phase II: $\mathcal{L}_{phase2} = \frac{1}{T}\sum_{t=1}^T [KL(f_o(\hat{x}_i^t) || p_i^t) + \lambda_2\|\delta_i^t\|_1]$
-- Verification threshold: Two-step decision — a single fingerprint with matching rate $\geq \theta_i$ is considered a match; the model is flagged as pirated if the proportion of matched fingerprints $\geq \alpha$.
+Both generation phases use the objective of "KL approximation of biased distribution + $\ell_1$ perturbation constraint." Phase I optimizes a single seed: $\mathcal{L}_{phase1} = KL(f_o(\hat{x}_i^0) \,||\, p_i) + \lambda_1\|\delta_i^0\|_1$. Phase II averages over $T$ variants: $\mathcal{L}_{phase2} = \frac{1}{T}\sum_{t=1}^T \big[KL(f_o(\hat{x}_i^t) \,||\, p_i^t) + \lambda_2\|\delta_i^t\|_1\big]$. Verification involves a two-step decision: a single fingerprint matches if its rate $\ge \theta_i$, and the suspect model is judged as pirated if the proportion of matched fingerprints $\ge \alpha$.
 
 ## Key Experimental Results
 
 ### Main Results — AUC Comparison
 
 | Protected Model | Method | CIFAR-10 | CIFAR-100 | Fashion-MNIST | MNIST | Tiny-ImageNet |
-|----------------|--------|----------|-----------|--------------|-------|---------------|
+|-----------|------|----------|-----------|--------------|-------|---------------|
 | ResNet-18 | IPGuard | 0.675 | 0.654 | 0.721 | 0.471 | 0.726 |
 | ResNet-18 | ADV-TRA | 0.799 | 0.806 | 0.845 | 0.753 | 0.767 |
 | ResNet-18 | AKH | 0.710 | 0.785 | 0.765 | 0.820 | 0.823 |
@@ -85,10 +91,10 @@ IrisFP consists of two main pipelines:
 | MobileNet-V2 | **IrisFP** | **0.936** | **0.937** | **0.963** | **0.876** | **0.934** |
 | ViT-B/16 | **IrisFP** | — | — | — | — | **0.887** |
 
-### Robustness Against Model Modification Attacks (ResNet-18, CIFAR-10)
+### Robustness against Model Modification Attacks (ResNet-18, CIFAR-10)
 
 | Method | FT | PR | KD | AT | PFT | NFT |
-|--------|-----|-----|-----|-----|-----|-----|
+|------|-----|-----|-----|-----|-----|-----|
 | IPGuard | 0.656 | 0.997 | 0.515 | 0.511 | 0.687 | 0.724 |
 | ADV-TRA | 1.000 | 1.000 | 0.805 | 0.025 | 0.959 | 0.962 |
 | AKH | 0.921 | 0.876 | 0.621 | 0.531 | 0.701 | 0.733 |
@@ -96,46 +102,46 @@ IrisFP consists of two main pipelines:
 
 ### Ablation Study
 
-| Configuration | CIFAR-10 AUC | Description |
-|--------------|-------------|-------------|
-| Seed | 0.691 | Seeds only |
-| Seed_s | 0.748 | + fingerprint selection |
-| Com_ft | ~0.79 | + composite samples + fixed threshold |
-| Com_s_ft | 0.812 | + composite samples + selection + fixed threshold |
-| IrisFP | **0.893** | + composite samples + selection + adaptive threshold |
+| Configuration | CIFAR-10 AUC | Note |
+|------|-------------|------|
+| Seed | 0.691 | Seed only |
+| Seed_s | 0.748 | + Fingerprint screening |
+| Com_ft | ~0.79 | + Composite samples + Fixed threshold |
+| Com_s_ft | 0.812 | + Composite samples + Screening + Fixed threshold |
+| IrisFP | **0.893** | + Composite samples + Screening + Adaptive threshold |
 
 ### Key Findings
 
-- IrisFP is particularly effective against adversarial training (AT) attacks — ADV-TRA achieves an AUC of only 0.025 under AT on CIFAR-10 (near complete failure), while IrisFP reaches 0.929.
-- The composite sample mechanism and fingerprint selection are each independently effective; adaptive thresholding yields the largest single contribution, improving AUC from 0.812 to 0.893.
-- The method remains effective on the more complex ViT-B/16 architecture (AUC 0.887).
+- IrisFP performs exceptionally well under adversarial training (AT) attacks—ADV-TRA's AUC drops to 0.025 (nearly failing completely) on CIFAR-10 under AT, whereas IrisFP reaches 0.929.
+- Both the composite sample mechanism and fingerprint screening are independently effective, with the adaptive threshold providing the largest gain (from 0.812 to 0.893).
+- It remains effective on the more complex ViT-B/16 architecture (AUC 0.887).
 
 ## Highlights & Insights
 
-- The core insight of multi-boundary intersection placement is simple yet profound: proximity to all boundaries simultaneously confers greater robustness than embedding fingerprints deep in the target class region, owing to larger predicted margins.
-- Composite sample fingerprints leverage collective behavioral patterns rather than single-sample matching, substantially improving uniqueness.
-- Cohen's d effect size and adaptive thresholding provide statistically grounded quantitative methods for fingerprint quality evaluation.
-- The method operates in a black-box verification setting — only model query outputs are required.
+- The core insight of multi-boundary intersection localization is simple yet profound: being close to all boundaries is more robust than being deep within a target class region because of the larger predicted margin.
+- Composite sample fingerprints leverage collective behavior patterns rather than single-sample matching, significantly enhancing uniqueness.
+- Cohen's d effect size and adaptive thresholds provide statistically grounded quantitative methods for fingerprint quality assessment.
+- The method utilizes black-box verification—requiring only the model's query outputs.
 
 ## Limitations & Future Work
 
-- Performance is relatively weak under knowledge distillation (KD) attacks (e.g., AUC 0.616 on CIFAR-10), since KD can fundamentally alter the decision boundary structure of the model.
-- Constructing reference piracy and independent model sets for fingerprint selection incurs additional upfront cost.
-- Validation is limited to image classification tasks; applicability to detection, segmentation, and other tasks remains unexplored.
-- The assumed query budget of 200 may be excessive in certain deployment scenarios.
+- Performance is relatively weaker under Knowledge Distillation (KD) attacks (e.g., AUC 0.616 on CIFAR-10), as KD can fundamentally alter the structure of the model's decision boundaries.
+- Requirement for building reference pirate and independent model sets for screening increases upfront costs.
+- Validated only on image classification tasks; applicability to detection or segmentation remains unknown.
+- The assumption of a 200-query budget might be too high for certain scenarios.
 
 ## Related Work & Insights
 
-- **vs. IPGuard**: IPGuard pushes fingerprints directly toward a single decision boundary, yielding the weakest uniqueness and robustness among compared methods.
-- **vs. ADV-TRA**: ADV-TRA captures rich model characteristics through adversarial trajectories, achieving acceptable robustness but poor uniqueness; it also nearly completely fails under AT attacks.
-- **vs. IBSF/SDBF**: Although these methods also exploit multi-boundary intersections, they are designed solely for tampering detection and exhibit extremely weak robustness; IrisFP addresses the robustness issue through composite samples and fingerprint selection.
+- **vs IPGuard**: IPGuard pushes fingerprints toward a single boundary, resulting in the poorest uniqueness and robustness.
+- **vs ADV-TRA**: ADV-TRA captures rich model features via adversarial trajectories, providing decent robustness but poor uniqueness; it fails almost completely under AT attacks.
+- **vs IBSF/SDBF**: While also utilizing multi-boundary intersections, they are used only for tampering detection and have very weak robustness; IrisFP solves the robustness issue via composite samples and screening.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Three complementary innovations — multi-boundary intersection placement, composite samples, and statistical selection — jointly address both uniqueness and robustness.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 5 datasets, 3 architectures, 6 attack types, 4 baselines, and detailed ablations; highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and the methodology is presented in a well-structured, progressive manner, though notation is dense.
-- Value: ⭐⭐⭐ Addresses a clear practical need for model IP protection, though the application scope is relatively narrow.
+- Novelty: ⭐⭐⭐⭐ Triple innovation of multi-boundary intersection + composite samples + statistical screening, solving uniqueness and robustness simultaneously.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 datasets, 3 architectures, 6 attack types, 4 baselines, and detailed ablations—very comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, step-by-step methodology, though symbolic notation is dense.
+- Value: ⭐⭐⭐ Clear practical demand for model IP protection, though the application scenario is relatively specific.
 
 <!-- RELATED:START -->
 
@@ -143,11 +149,11 @@ IrisFP consists of two main pipelines:
 
 ## Related Papers
 
-- [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](../../AAAI2026/others/decor_deep_embedding_clustering_with_orientation_robustness.md)
-- [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
-- [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](rethinking_snn_online_training_and_deployment_grad.md)
-- [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](../../AAAI2026/others/toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
+- [\[CVPR 2026\] A Combination of Noise and Bilateral Filters Achieve Supralinear and Scalable Adversarial Robustness in CNNs](a_combination_of_noise_and_bilateral_filters_achieve_supralinear_and_scalable_ad.md)
+- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
+- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
+- [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
 
 </div>
 

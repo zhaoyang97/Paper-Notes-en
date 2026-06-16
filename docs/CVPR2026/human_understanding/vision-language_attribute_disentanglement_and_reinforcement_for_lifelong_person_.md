@@ -2,93 +2,102 @@
 title: >-
   [Paper Note] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Lifelong Person Re-Identification] VLADR leverages fine-grained attribute knowledge from vision-language models (VLMs) to enhance lifelong person re-identification. Through a two-stage tr…
+  [CVPR 2026][Human Understanding][Vision-Language Model] VLADR proposes leveraging fine-grained attribute knowledge from Vision-Language Models (VLMs) to enhance lifelong person re-identification. Through a two-stage training process involving Multi-granular Textual Attribute Disentanglement (MTAD) and Intra-domain Cross-modal Attribute Reinforcement (ICAR), it explicitly mo
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Lifelong Person Re-Identification"
-  - "Vision-Language Model"
-  - "Attribute Disentanglement"
-  - "Cross-Modal Alignment"
-  - "Forgetting Mitigation"
+  - CVPR 2026
+  - Human Understanding
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: dbae7fa9fad7e371
+content_hash: fcdef0f364e568fc
 ---
-
 # Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.19678](https://arxiv.org/abs/2603.19678)  
 **Code**: [https://github.com/zhoujiahuan1991/CVPR2026-VLADR](https://github.com/zhoujiahuan1991/CVPR2026-VLADR)  
-**Area**: Person Understanding
-**Keywords**: Lifelong Person Re-Identification, Vision-Language Model, Attribute Disentanglement, Cross-Modal Alignment, Forgetting Mitigation
+**Area**: Pedestrian Understanding  
+**Keywords**: Lifelong Person Re-Identification, Vision-Language Models, Attribute Disentanglement, Cross-modal Alignment, Forgetting Mitigation
 
 ## TL;DR
 
-VLADR leverages fine-grained attribute knowledge from vision-language models (VLMs) to enhance lifelong person re-identification. Through a two-stage training pipeline comprising Multi-grain Text Attribute Disentanglement (MTAD) and Inter-domain Cross-modal Attribute Reinforcement (ICAR), the framework explicitly models human body attributes shared across domains to enable effective knowledge transfer and forgetting mitigation, surpassing the state of the art by 1.9%–2.2% in anti-forgetting performance and 2.1%–2.5% in generalization.
+VLADR proposes leveraging fine-grained attribute knowledge from Vision-Language Models (VLMs) to enhance lifelong person re-identification. Through a two-stage training process involving Multi-granular Textual Attribute Disentanglement (MTAD) and Intra-domain Cross-modal Attribute Reinforcement (ICAR), it explicitly models cross-domain shared human attributes to achieve efficient knowledge transfer and forgetting mitigation. It outperforms the Prev. SOTA by 1.9%-2.2% in anti-forgetting and 2.1%-2.5% in generalization.
 
 ## Background & Motivation
 
-**Background**: Lifelong Person Re-Identification (LReID) requires a model to continuously learn from streaming data across diverse domains, constructing a unified person retrieval system. Unlike standard ReID, LReID faces catastrophic forgetting—knowledge about previously seen domains tends to be lost when acquiring knowledge from new ones. Existing approaches primarily build on visually pre-trained classification models and employ strategies such as knowledge distillation, prototype memory, and distribution modeling to mitigate forgetting.
+**Background**: Lifelong Person Re-Identification (LReID) requires a model to learn from a continuous stream of data across different domains to build a unified pedestrian retrieval system. Unlike standard ReID, LReID faces the catastrophic forgetting problem, where learning new domain knowledge often leads to the loss of prior domain knowledge. Existing methods primarily start from vision-only pre-trained models and utilize strategies like knowledge distillation, prototype memory, and distribution modeling to mitigate forgetting.
 
-**Limitations of Prior Work**: Although vision-language models such as CLIP have demonstrated strong generalization capabilities, directly adapting VLMs to LReID reveals a critical shortcoming: existing methods focus exclusively on global representation learning, neglecting the utilization of fine-grained attribute knowledge. Global representations are susceptible to domain-specific noise such as background clutter and illumination variation, whereas human body attributes (e.g., clothing color, body shape, accessories) serve as semantically stable anchors across domains and have been substantially underexplored.
+**Limitations of Prior Work**: Although Vision-Language Models (e.g., CLIP) have demonstrated powerful generalization capabilities, existing LReID methods show significant deficiencies when directly adapted to VLMs—they only consider global representation learning and neglect the utilization of fine-grained attribute knowledge. Global representations are easily disturbed by domain-specific redundant information such as background and lighting during domain shifts, whereas human attributes (e.g., clothing color, body shape, accessories) are cross-domain stable semantic anchors that have been severely undervalued.
 
-**Key Challenge**: The central challenge of LReID lies in the tension between acquiring new knowledge and retaining old knowledge. Global representations are sensitive to domain shift, leading to the classic stability-plasticity dilemma. Fine-grained attributes (e.g., "red shirt, black backpack") are domain-invariant semantic descriptors that theoretically can serve as bridges for cross-domain knowledge transfer—yet existing methods lack an explicit mechanism to model them.
+**Key Challenge**: The core challenge of LReID lies in the conflict between "new knowledge acquisition" and "old knowledge preservation." Global representations are sensitive to domain changes, leading to the learning of the new at the expense of the old. Conversely, fine-grained attributes (e.g., "wearing a red top, carrying a black backpack") are domain-invariant semantic descriptors that can theoretically serve as bridges for cross-domain knowledge transfer—but existing methods lack an explicit attribute modeling mechanism.
 
-**Goal**: The paper aims to design a VLM-driven LReID framework that (1) explicitly disentangles global and local human body attributes, (2) leverages cross-modal attribute alignment for fine-grained knowledge transfer, and (3) mitigates forgetting via cross-domain attribute alignment.
+**Goal**: To design a VLM-driven LReID framework that (1) explicitly decouples global and local human attributes, (2) utilizes cross-modal attribute alignment to achieve fine-grained knowledge transfer, and (3) mitigates forgetting through cross-domain attribute alignment.
 
-**Key Insight**: The authors observe that human body attributes exhibit *cross-domain shareability*—the semantics of "wearing blue jeans" remain consistent regardless of whether the image comes from Market-1501 or MSMT17. Explicitly disentangling these shared attributes and establishing cross-modal alignment provides natural anchors for cross-domain knowledge transfer.
+**Key Insight**: The authors observe that human attributes exhibit "cross-domain commonality"—the semantics of "wearing blue jeans" remain consistent whether in the Market-1501 or MSMT17 datasets. If these shared attributes can be explicitly decoupled and aligned across modalities, they can serve as anchors for cross-domain knowledge transfer.
 
-**Core Idea**: A VLM (BLIP) is used to automatically generate multi-granularity textual attribute descriptions for pedestrian images. Learnable prompts then disentangle global and local attributes in the text space. Cross-modal and cross-domain multi-level alignment subsequently injects attribute knowledge into the visual encoder, enabling attribute-guided lifelong learning.
+**Core Idea**: Use a VLM (BLIP) to automatically generate multi-granular textual descriptions of pedestrian images, then decouple global and local attributes in the textual space using learnable prompts. Finally, inject attribute knowledge into the vision encoder through cross-modal and cross-domain multi-layer alignment to achieve attribute-guided lifelong learning.
 
 ## Method
 
 ### Overall Architecture
 
-VLADR adopts a two-stage training pipeline. **Stage 1 (MTAD)** performs multi-grain text attribute disentanglement on the CLIP text encoder side, learning prompt representations for global and local attributes. **Stage 2 (ICAR)** freezes the Stage 1 prompt weights and fine-tunes the CLIP image encoder using pre-extracted textual descriptions, achieving knowledge transfer through cross-modal attribute alignment and cross-domain attribute alignment. The backbone architecture builds on the CLIP-ReID and DASK frameworks.
+VLADR adopts a two-stage training workflow: **Stage 1 (MTAD)**—Multi-granular textual attribute disentanglement is performed at the CLIP text encoder side to learn prompt representations for global and local attributes; **Stage 2 (ICAR)**—The weights of the prompts from Stage 1 are frozen, and the CLIP image encoder is fine-tuned using pre-extracted textual descriptions. Knowledge transfer is achieved through cross-modal attribute alignment and cross-domain attribute alignment. The base architecture is built upon the CLIP-ReID and DASK frameworks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Person Image Stream (Continuous Multi-domain)"] --> BLIP["BLIP Auto-generated<br/>Textual Attribute Descriptions"]
+    subgraph S1["Stage 1: Multi-granular Textual Attribute Disentanglement (MTAD)"]
+        direction TB
+        BLIP --> P["Global Prompt + Multi-group Local Attribute Prompts"]
+        P --> TE["CLIP Text Encoder<br/>Attention Focusing → Disentangling Domain-Invariant Attribute Representations"]
+    end
+    TE -->|Frozen Prompts| S2
+    subgraph S2["Stage 2: Intra-domain Cross-modal Attribute Reinforcement (ICAR)"]
+        direction TB
+        IE["CLIP Image Encoder Fine-tuning<br/>Per-attribute Visual Feature Extraction v_k"]
+        CMA["Cross-modal Attribute Alignment<br/>v_k ↔ Textual Attribute t_k"]
+        IDA["Cross-domain Attribute Alignment<br/>New Domain v_k ↔ Old Domain Attribute Prototypes"]
+        IE --> CMA
+        IE --> IDA
+    end
+    MEM["Attribute-level Prototype Memory<br/>One Prototype per Attribute per Domain · EMA Online Update"] -->|Provides Old Domain Anchors| IDA
+    S2 --> O["Lifelong Person Re-ID Retrieval"]
+```
 
 ### Key Designs
 
-1. **Multi-grain Text Attribute Disentanglement (MTAD)**:
+**1. Multi-granular Textual Attribute Disentanglement (MTAD): Decomposing pedestrian descriptions into global + multiple domain-invariant local attributes**
 
-    - **Function**: Disentangles global features and multiple local attribute features from textual descriptions of pedestrian images.
-    - **Mechanism**: BLIP is first used to automatically generate a textual description for each pedestrian image (e.g., "a person wearing a red shirt and blue jeans, carrying a black backpack"). Two sets of learnable prompts are then designed: (a) a **global prompt** capturing the overall appearance of the pedestrian; and (b) multiple **local attribute prompts**, each corresponding to a different attribute dimension (e.g., upper-body color, trouser type, accessories). The CLIP text encoder processes the concatenation of descriptions and prompts, and an attention mechanism guides each prompt to focus on different attribute segments within the description, achieving attribute disentanglement.
-    - **Design Motivation**: Global representations tend to conflate domain-specific information with identity-discriminative information. After disentanglement, local attributes constitute domain-invariant semantic units that serve as the minimal shareable elements for cross-domain knowledge transfer.
+Directly using the global representation of CLIP for LReID suffers from an old problem—identity information and domain-specific noise (background, lighting) are entangled in the global vector, making it easy to forget the old while learning the new. MTAD explicitly extracts "what is stable" from the language side: BLIP is used to automatically generate a textual description for each pedestrian image (e.g., "a person wearing a red shirt and blue jeans, carrying a black backpack"). Then, two sets of learnable prompts are prepared—a **global prompt** capturing the overall appearance and multiple **local attribute prompts**, each targeting an attribute dimension (clothing color, pant type, accessories, etc.). By concatenating the descriptions and prompts through the CLIP text encoder, attention mechanisms allow each prompt to focus on the corresponding segment of the description. This decouples semantic units like "red shirt," "blue jeans," and "black backpack" into independent attribute representations in the textual space. These local attributes are cross-domain shared—the semantics of "wearing blue jeans" remain consistent across Market-1501 and MSMT17, providing a much more stable unit for cross-domain knowledge transfer than global vectors laden with domain noise.
 
-2. **Inter-domain Cross-modal Attribute Reinforcement (ICAR)**:
+**2. Intra-domain Cross-modal Attribute Reinforcement (ICAR): Injecting decoupled textual attributes into the vision encoder and locking them across domains**
 
-    - **Function**: Injects the attribute knowledge disentangled in Stage 1 into the visual encoder and enables cross-domain knowledge transfer.
-    - **Mechanism**: Two alignment mechanisms are employed. (a) **Cross-modal attribute alignment**: visual encoder features are aligned with the textual attribute features extracted in Stage 1, compelling the visual model to learn attribute-semantically consistent visual representations. A visual-textual matching loss is computed for each attribute dimension independently, guiding the visual encoder to extract visual attribute features corresponding to each local attribute prompt. (b) **Cross-domain attribute alignment**: when training on a new domain, prototype representations of the same attributes from previously seen domains serve as anchors, constraining the new domain's attribute representations from drifting excessively. Attribute-level (rather than instance-level) knowledge distillation enables fine-grained knowledge preservation in the attribute space.
-    - **Design Motivation**: Cross-modal alignment ensures the visual encoder understands attribute semantics rather than relying on domain-specific cues; cross-domain alignment operates at attribute granularity rather than global granularity, enabling more precise knowledge preservation.
+Decoupling attributes in the textual space is insufficient; the image encoder, which performs the actual retrieval, must "understand" these attributes rather than reverting to domain-specific cues. ICAR employs two layers of alignment. First is **Cross-modal Attribute Alignment**: Prompts from Stage 1 are frozen, and matching losses between image features and corresponding textual attribute features are calculated per attribute dimension. This forces the visual encoder to align visual features $\mathbf{v}_k$ extracted for the $k$-th attribute with the textual attribute $\mathbf{t}_k$, effectively "translating" linguistic semantics into recognizable visual features. Second is **Cross-domain Attribute Alignment**: When training on a new domain, instead of global distillation, each attribute representation in the new domain is pulled toward the prototype of the same attribute in old domains, preventing drift. The granularity is key—forgetting is often fine-grained; some attributes are overwritten by new domains while others remain stable. Maintaining knowledge dimension-by-dimension at the attribute level is far more precise than global vector distillation, explaining why "Global + IDA" achieves 49.2% while "Attribute + IDA" reaches 52.3% in ablations.
 
-3. **Attribute-level Prototype Memory Bank**:
+**3. Attribute-level Prototype Memory: Replacing expensive exemplar replay with one prototype per attribute per domain**
 
-    - **Function**: Stores representative representations for each attribute dimension across all learned domains to support cross-domain attribute alignment.
-    - **Mechanism**: A prototype vector is maintained for each attribute dimension of every previously learned domain, updated via exponential moving average. When learning a new domain, the new domain's attribute representations are aligned with the corresponding attribute prototypes from old domains to enforce consistency in the attribute space. Attribute-level prototypes are more compact and efficient than instance-level samples and better capture the distributional patterns of each attribute.
-    - **Design Motivation**: Compared to traditional exemplar replay, attribute prototypes (1) do not require storing large quantities of old-domain samples, (2) operate directly in the semantic attribute space rather than raw feature space, and (3) naturally provide alignment anchors through cross-domain shared attributes.
+Cross-domain alignment requires anchors representing "what the old domain looks like." While exemplar replay is a direct method, it is storage-intensive and operates in the raw feature space. Here, the authors maintain only one prototype vector for each attribute dimension of each learned domain, updated online via Exponential Moving Average (EMA). When learning a new domain, new attribute representations are aligned with these old prototypes. This offers three benefits: prototypes are significantly more compact than ensembles of exemplars; alignment occurs in the semantic attribute space rather than the raw pixel/feature space, aligning with the goal of "preserving identity semantics"; and because attributes are cross-domain shared, prototypes naturally serve as valid alignment anchors, unlike instances that become obsolete across domains.
 
 ### Loss & Training
 
-**Stage 1 Losses**:
-
-- Text–image matching loss: ensures global and local attribute prompts align with corresponding textual descriptions.
-- Attribute orthogonality loss: encourages different local attribute prompts to attend to distinct attribute dimensions, reducing redundancy.
+**Stage 1 Loss**:
+- Text-Image Matching Loss: Ensures global and local attribute prompts align with corresponding textual descriptions.
+- Attribute Orthogonality Loss: Encourages different local attribute prompts to focus on distinct attribute dimensions to avoid redundancy.
 - Standard cross-entropy and triplet losses for identity classification.
 
-**Stage 2 Losses**:
-
-- Cross-modal attribute alignment loss: $\mathcal{L}_{\text{CMA}} = \sum_{k=1}^{K} \text{dist}(\mathbf{v}_k, \mathbf{t}_k)$, aligning the $k$-th visual attribute feature $\mathbf{v}_k$ with the corresponding textual attribute feature $\mathbf{t}_k$.
-- Inter-domain attribute alignment loss: $\mathcal{L}_{\text{IDA}} = \sum_{k=1}^{K} \text{dist}(\mathbf{v}_k^{\text{new}}, \mathbf{p}_k^{\text{old}})$, aligning new-domain attribute representations with old-domain attribute prototypes.
+**Stage 2 Loss**:
+- Cross-modal Attribute Alignment Loss: $\mathcal{L}_{\text{CMA}} = \sum_{k=1}^{K} \text{dist}(\mathbf{v}_k, \mathbf{t}_k)$, aligning the $k$-th visual attribute feature $\mathbf{v}_k$ with the corresponding textual attribute feature $\mathbf{t}_k$.
+- Cross-domain Attribute Alignment Loss: $\mathcal{L}_{\text{IDA}} = \sum_{k=1}^{K} \text{dist}(\mathbf{v}_k^{\text{new}}, \mathbf{p}_k^{\text{old}})$, aligning new domain attribute representations with old domain attribute prototypes.
 - Standard ReID losses (cross-entropy + triplet).
 
-The two stages are trained separately; Stage 2 loads the prompt checkpoint from Stage 1 together with pre-extracted BLIP textual descriptions.
+The two stages are trained separately. Stage 2 loads the prompt checkpoints from Stage 1 and pre-extracted BLIP textual descriptions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Metric | VLADR | Prev. SOTA (KRKC) | Gain |
-|--------|-------|-------------------|------|
+| Metric | VLADR | KRKC (Prev. SOTA) | Gain |
+|------|-------|---------------|------|
 | Anti-forgetting mAP (Setting 1) | ~52.3% | ~50.1% | +2.2% |
 | Anti-forgetting Rank-1 (Setting 1) | ~68.2% | ~66.3% | +1.9% |
 | Generalization mAP (Setting 1) | ~34.5% | ~32.0% | +2.5% |
@@ -96,58 +105,58 @@ The two stages are trained separately; Stage 2 loads the prompt checkpoint from 
 | Anti-forgetting mAP (Setting 2) | ~48.7% | ~46.8% | +1.9% |
 | Generalization mAP (Setting 2) | ~31.2% | ~28.8% | +2.4% |
 
-Consistent improvements are achieved under both standard LReID evaluation settings. The anti-forgetting metric measures average performance across all seen domains; the generalization metric measures transfer ability to unseen domains.
+Ours achieves consistent improvements across two standard LReID evaluation settings. Anti-forgetting metrics measure average performance across all seen domains, while generalization metrics measure transferability to unseen domains.
 
 ### Ablation Study
 
-| Configuration | Anti-forgetting mAP | Generalization mAP | Notes |
-|---------------|--------------------|--------------------|-------|
+| Configuration | Anti-forgetting mAP | Generalization mAP | Description |
+|------|-----------|---------|------|
 | Baseline (CLIP-ReID + LReID) | 47.1% | 28.5% | Direct VLM adaptation |
-| + MTAD (Stage 1 only) | 49.6% | 30.8% | Attribute disentanglement is effective |
-| + CMA (cross-modal alignment) | 51.0% | 32.3% | Attribute knowledge injected into visual encoder |
-| + IDA (cross-domain alignment) | 52.3% | 34.5% | Attribute-level knowledge transfer mitigates forgetting |
-| Global repr. + IDA (no attr. disentanglement) | 49.2% | 30.1% | Global granularity inferior to attribute granularity |
-| Random attribute partition (replacing MTAD) | 48.8% | 29.7% | Learned disentanglement outperforms random split |
+| + MTAD (Stage 1 only) | 49.6% | 30.8% | Effectiveness of attribute disentanglement |
+| + CMA (Cross-modal Alignment) | 51.0% | 32.3% | Injecting attribute knowledge into vision encoder |
+| + IDA (Cross-domain Alignment) | 52.3% | 34.5% | Attribute-level knowledge transfer for forgetting mitigation |
+| Global Representation + IDA (No Disentanglement) | 49.2% | 30.1% | Global granularity is inferior to attribute granularity |
+| Random Attribute Partition (Replaces MTAD) | 48.8% | 29.7% | Learned disentanglement is better than random |
 
 ### Key Findings
 
-- MTAD attribute disentanglement is the foundation of the performance gain: +2.5% anti-forgetting mAP and +2.3% generalization mAP.
-- Cross-modal attribute alignment (CMA) effectively injects textual attribute knowledge into the visual encoder, yielding further gains of +1.4% / +1.5%.
-- Inter-domain attribute alignment (IDA) provides fine-grained knowledge preservation during new-domain learning, contributing additional improvements of +1.3% / +2.2%.
-- Attribute-granularity knowledge transfer substantially outperforms global-granularity transfer: global + IDA achieves only 49.2%, whereas attribute + IDA reaches 52.3%.
-- Consistent improvement trends across both LReID settings confirm the robustness of the proposed method.
+- MTAD's attribute disentanglement is the foundation for performance gains: +2.5% anti-forgetting mAP, +2.3% generalization mAP.
+- Cross-modal Attribute Alignment (CMA) effectively injects textual attribute knowledge into the vision encoder, providing an additional +1.4% / +1.5% boost.
+- Cross-domain Attribute Alignment (IDA) provides precise knowledge preservation during new domain learning, yielding a further +1.3% / +2.2% improvement.
+- Attribute-granular knowledge transfer significantly outperforms global-granular transfer: Global + IDA reaches only 49.2%, whereas Attribute + IDA reaches 52.3%.
+- Gains are consistent across both LReID settings, proving the robustness of the method.
 
 ## Highlights & Insights
 
-- The idea of **using attributes as cross-domain bridges** is well-motivated: human body attributes such as clothing and body shape are naturally shared across domains and serve as more stable minimal semantic units for knowledge transfer than global representations.
-- The **two-stage disentanglement–reinforcement** design follows a divide-and-conquer principle: Stage 1 focuses on attribute mining in the text space, while Stage 2 focuses on attribute injection into the visual space, with each stage fulfilling a clearly defined role.
-- **Automatic attribute description generation via BLIP** eliminates the need for manually annotated attribute labels, endowing the method with strong scalability.
-- **Attribute-level prototype memory** is more compact and efficient than exemplar replay and is more semantically meaningful by operating in the attribute space.
-- The code is publicly available and built on the CLIP-ReID and DASK frameworks, ensuring good reproducibility.
+- The idea of using **attributes as a cross-domain bridge** is compelling: human attributes like clothing and body shape are naturally shared across domains, making them more stable semantic units for knowledge transfer than global representations.
+- The **two-stage disentanglement-reinforcement** design employs a divide-and-conquer strategy: Stage 1 focuses on attribute mining in the textual space, while Stage 2 focuses on attribute injection in the visual space.
+- **Utilizing BLIP for automatic attribute description generation** avoids the overhead of manual attribute labeling, making the method highly scalable.
+- **Attribute-level prototype memory** is more compact and efficient than instance replay, and operating at the semantic level is more meaningful.
+- The code is open-source and built upon the CLIP-ReID and DASK frameworks, ensuring good reproducibility.
 
 ## Limitations & Future Work
 
-- The quality of attribute descriptions depends on BLIP's captioning capability; inaccurate descriptions may be generated for heavily occluded pedestrians or low-quality images.
-- The number of attributes (i.e., the number of local prompts $K$) must be predefined, and the optimal value may vary across datasets.
-- The method assumes that attributes are domain-invariant; however, certain attributes (e.g., culturally specific attire) may exhibit domain specificity.
-- Future work could explore extending attribute disentanglement from discrete prompts to a continuous attribute space for more flexible attribute modeling.
-- Incorporating large language models for more fine-grained attribute reasoning (e.g., inferring occupational attributes from "wearing a uniform") is a promising direction.
-- Extending the framework to open-set ReID and text-to-image person retrieval are also natural next steps.
+- The quality of attribute descriptions depends on the descriptive capacity of the BLIP model; it may generate inaccurate descriptions for pedestrians with severe occlusion or poor image quality.
+- The number of attributes (number of local prompts $K$) needs to be predefined, and the optimal value may vary across datasets.
+- The current method assumes attributes are domain-invariant, but certain attributes (e.g., culturally specific attire) may exhibit domain specificity.
+- Future work could explore extending attribute disentanglement from discrete prompts to a continuous attribute space for more flexible modeling.
+- Combining with Large Language Models (LLMs) for finer attribute reasoning (e.g., inferring profession from "wearing a uniform") is a promising direction.
+- Extending the method to related tasks such as open-set ReID and text-to-image person retrieval.
 
 ## Related Work & Insights
 
-- **DASK (AAAI 2025)**: A preceding work from the same group that mitigates forgetting through distribution rehearsal; VLADR extends this by introducing attribute-level knowledge transfer.
-- **CLIP-ReID**: The baseline framework that adapts CLIP to the ReID task; VLADR further exploits the fine-grained attribute potential of VLMs.
-- **LSTKC (AAAI 2024)**: Another work from the same group on long-short-term knowledge consolidation; VLADR elevates the abstraction level from raw knowledge to attribute-semantic representations.
-- **Continual Learning Community**: The attribute-level knowledge transfer paradigm is generalizable to other continual learning tasks such as object detection and semantic segmentation.
-- **Broader Insight**: In the VLM era, how to better exploit structured knowledge on the language side is a broadly applicable and deeply worthwhile research question.
+- **DASK (AAAI 2025)**: Previous work by the same team, mitigating forgetting via distribution rehearsal; VLADR introduces attribute-level knowledge transfer on top of this.
+- **CLIP-ReID**: Baseline framework adapting CLIP for ReID tasks; VLADR further explores the fine-grained attribute potential of VLMs.
+- **LSTKC (AAAI 2024)**: Long-short term knowledge integration by the same team; VLADR elevates knowledge from general features to attribute semantics.
+- **Continual Learning**: The concept of attribute-level knowledge transfer can be generalized to other continual learning tasks such as object detection and semantic segmentation.
+- Insight: In the VLM era, "how to better utilize structured knowledge from the language side" is a valuable and universal problem.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (The combination of attribute disentanglement and cross-domain reinforcement is innovative, though individual components are relatively mature)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Two settings with complete ablations; large-scale dataset validation is lacking)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, well-articulated motivation)
-- Value: ⭐⭐⭐⭐ (Provides meaningful inspiration for VLM-driven lifelong learning; the attribute transfer paradigm has good generality)
+- Novelty: ⭐⭐⭐⭐ (Combination of attribute disentanglement and cross-domain reinforcement is innovative, though individual components are relatively mature.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Two settings + complete ablations, though verification on larger-scale datasets is missing.)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, well-defined motivation.)
+- Value: ⭐⭐⭐⭐ (Inspirational for VLM-driven lifelong learning; the attribute transfer concept is highly versatile.)
 
 <!-- RELATED:START -->
 
@@ -155,11 +164,11 @@ Consistent improvements are achieved under both standard LReID evaluation settin
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](../../ICCV2025/human_understanding/openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](../../ICCV2025/human_understanding/one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
-- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](../../AAAI2026/human_understanding/modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
+- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
+- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
+- [\[CVPR 2026\] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification](dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat.md)
+- [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
+- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
 
 </div>
 

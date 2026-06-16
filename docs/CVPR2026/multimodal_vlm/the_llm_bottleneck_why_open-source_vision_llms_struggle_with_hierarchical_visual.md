@@ -2,78 +2,79 @@
 title: >-
   [Paper Note] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 description: >-
-  [CVPR2026][Multimodal VLM][Hierarchical Visual Recognition] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge about the visual world (often failing to recognize even basic biological classifi…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge of the visual world (even failing at basic biological taxonomic systems), which makes the LLM a bottleneck for hierarchical visual recognition in Vision LLMs.
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Hierarchical Visual Recognition"
-  - "Classification Consistency"
-  - "LLM Bottleneck"
-  - "Taxonomy Knowledge"
-  - "Visual Question Answering"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 984df3d4e7dc94c1
+content_hash: 72fd6f02e9192c66
 ---
-
 # The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2505.24840](https://arxiv.org/abs/2505.24840)  
 **Code**: [yuanqing-ai.github.io/llm-hierarchy](https://yuanqing-ai.github.io/llm-hierarchy/)  
-**Area**: Multimodal VLM
-**Keywords**: Hierarchical Visual Recognition, Classification Consistency, LLM Bottleneck, Taxonomy Knowledge, Visual Question Answering
+**Area**: Multimodal VLM  
+**Keywords**: Hierarchical Visual Recognition, Taxonomic Consistency, LLM Bottleneck, Taxonomic Knowledge, VQA
 
 ## TL;DR
-This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge about the visual world (often failing to recognize even basic biological classification systems), making the LLM the bottleneck for hierarchical visual recognition in Vision LLMs.
+This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge of the visual world (even failing at basic biological taxonomic systems), which makes the LLM a bottleneck for hierarchical visual recognition in Vision LLMs.
 
 ## Background & Motivation
 
-### Root Cause
+**Key Challenge**: Taxonomy is central to visual recognition (e.g., Boston Terrier → Terrier → Dog → Mammal → Animal forms a semantic path). An ideal general-purpose visual recognition system should simultaneously map to leaf nodes and internal nodes of a taxonomy while maintaining hierarchical consistency. Vision LLMs (VLLMs) unify multiple visual tasks and possess the potential to build such a system, but existing evaluations primarily focus on leaf-node classification accuracy, ignoring hierarchical consistency.
 
-**Key Challenge**: Taxonomies are central to visual recognition — e.g., Boston Terrier → Terrier → Dog → Mammal → Animal forms a semantic path. An ideal general-purpose visual recognition system should be capable of mapping inputs to both leaf nodes and internal nodes of a taxonomy while maintaining hierarchical consistency.
+**Background**: Open-source and commercial VLLMs lack severe consistency in hierarchical recognition. For instance, Qwen2.5-VL-72B fails on over 67% of the paths in the iNaturalist taxonomy.
 
-Vision LLMs (VLLMs) unify diverse visual tasks and hold the potential to build such systems, yet existing benchmarks focus primarily on leaf-node classification accuracy and overlook hierarchical consistency.
+**Limitations of Prior Work**: The root of the problem does not lie in the visual encoders or projectors (which preserve highly discriminative, well-structured features), but in the LLM—open-source LLMs lack taxonomic knowledge.
 
-Core findings and contradictions:
-
-### State of the Field
-
-**Background**: Both open-source and commercial VLLMs exhibit severely inconsistent hierarchical recognition (e.g., Qwen2.5-VL-72B produces errors on 67%+ of paths in the iNaturalist taxonomy).
-
-### Limitations of Prior Work
-
-**Limitations of Prior Work**: The root cause lies not in the visual encoder or projector — which retain highly discriminative and well-structured features — but in the LLM, which lacks taxonomic knowledge.
-
-### Starting Point
-
-**Key Insight**: Fine-tuning VLLMs can help but does not fundamentally resolve the issue. Moreover, fine-tuning yields greater improvements in the LLM's textual hierarchical consistency than in the VLLM's visual hierarchical consistency, further confirming the LLM bottleneck effect.
+**Goal**: While fine-tuning VLLMs can assist, it cannot fundamentally solve the issue. Furthermore, the improvement in text-level hierarchical consistency for the LLM during fine-tuning exceeds the improvement in visual hierarchical consistency for the VLLM, further confirming the LLM's bottleneck effect.
 
 ## Method
 
 ### Overall Architecture
-This is an analytical paper rather than a methods paper. The authors construct approximately one million four-choice VQA tasks based on 6 taxonomies and 4 image datasets to systematically evaluate the hierarchical visual recognition capabilities of VLLMs.
+
+This is an analytical paper rather than a methodology paper, aiming to locate "why open-source VLLMs underperform in hierarchical visual recognition." The research follows a chain of investigation in four steps: first, constructing a unified question bank of approximately 1 million level-by-level four-choice VQA questions from 6 taxonomies across 4 image datasets; second, measuring the scale of the problem using a stricter hierarchical consistency metric, HCA; third, performing linear probing module-by-module on the visual encoder, projector, and LLM to exclude the visual side and pinpoint the LLM as the bottleneck; finally, validating this conclusion through LoRA fine-tuning experiments from the opposite direction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["6 Taxonomies × 4 Image Datasets"] --> B["VQA Task Construction<br/>Level-by-level four-choice questions, ~1M items"]
+    B --> C["HCA Hierarchical Consistent Accuracy Evaluation<br/>Score only if the entire path is correct; Leaf Accuracy is its upper bound"]
+    C -->|"Leaf Accuracy ≫ HCA: Identifies species but ignores hierarchy"| D2
+    subgraph D2["Bottleneck Localization & Probing (Module-wise Linear Probing)"]
+        direction TB
+        E["Visual Encoder / Projector<br/>Strong discriminability, good hierarchical structure → Not the bottleneck"]
+        F["LLM Text Side<br/>Extremely low Text HCA; orthographic embeddings but unsolvable → Is the bottleneck"]
+    end
+    D2 --> G["Fine-tuning Validation (LoRA SFT)<br/>Text HCA gain in LLM is higher than VLLM vision gain<br/>Mitigates but does not cure"]
+```
 
 ### Key Designs
 
-1. **Evaluation Metrics**:
+**1. VQA Task Construction: Decomposing Taxonomic Knowledge into Level-by-level Four-choice Questions**
 
-    - **HCA (Hierarchical Consistent Accuracy)**: $HCA = \frac{1}{N}\sum_{i=1}^N \prod_{j=1}^{L^i} \mathbb{1}[f_\theta(x^i; Y_j) = y_j^i]$ — requires all nodes along the path to be predicted correctly.
-    - **Leaf Accuracy $Acc_{leaf}$**: considers only the finest-grained prediction. $Acc_{leaf}$ serves as an upper bound for HCA.
+To systematically compare model performance across different granularities, a question bank covering complete hierarchies is required. The authors generated four-choice questions for each level across 6 taxonomies (4 image datasets): iNat21-Animal, iNat21-Plant, ImgNet-Artifact, ImgNet-Animal, CUB-200, and Oxford-Pets. All four options come from the same level, covering all hierarchies from coarse-grained (vertebrate/invertebrate) to fine-grained (specific species), resulting in approximately 1 million questions. Since each question tests only one granularity, it can cleanly isolate exactly at which layer the model begins to fail—serving as a unified benchmark for subsequent analysis.
 
-2. **VQA Task Construction**:
+**2. Hierarchical Consistency Metric HCA: Scoring Entire Paths Instead of Single Points**
 
-    - 6 taxonomies: iNat21-Animal, iNat21-Plant, ImgNet-Artifact, ImgNet-Animal, CUB-200, Oxford-Pets.
-    - Four-choice questions are generated for each taxonomic level, with distractors sampled from the same level.
-    - Coverage spans all levels from coarse-grained (e.g., Vertebrate/Invertebrate) to fine-grained (e.g., specific species).
+Leaf accuracy only checks if the finest granularity is correct, failing to measure whether the model understands the hierarchy. The authors employ HCA (Hierarchical Consistent Accuracy): an image is considered correct only if every level along the taxonomic path is answered correctly:
 
-3. **Bottleneck Localization Analysis**:
+$$HCA = \frac{1}{N}\sum_{i=1}^N \prod_{j=1}^{L^i} \mathbb{1}[f_\theta(x^i; Y_j) = y_j^i]$$
 
-    - Probing the visual encoder embeddings of VLLMs reveals that they retain discriminative features and hierarchical structure.
-    - Probing LLM embeddings reveals that although sufficient hierarchical cues are encoded in an orthogonal structure, the model fails to decode them.
-    - Fine-tuning experiments show that VLLM fine-tuning improves both the LLM's textual hierarchical consistency and the VLLM's visual hierarchical consistency, but the former improves more substantially.
+If any level in the product sequence is wrong, the entire path is judged as 0. Leaf accuracy $Acc_{leaf}$ focuses only on the finest granularity and is the upper bound of HCA. The massive gap between the two (e.g., Qwen2.5-VL-72B's 54.20 leaf accuracy vs. 35.73 HCA) provides quantitative evidence of "recognizing the species but not knowing its category," serving as the starting point for bottleneck investigation.
+
+**3. Bottleneck Localization & Probing: Module-wise Linear Probing to Pinpoint the LLM**
+
+The authors investigate whether errors stem from vision or language. The three components of VLLMs are the visual encoder, projector, and LLM. The authors trained independent linear classifiers for each taxonomic level to probe the visual encoder, the projector, and the visual token representations in the final layer of the LLM. Results showed that these linear probes outperformed the VLLM itself in both leaf accuracy and HCA, with almost no decay across forward propagation stages—indicating that discriminability and hierarchical structure are preserved in visual features. Shifting focus to the LLM text side: the text HCA of the LLM is extremely low, yet linear probing of its text embeddings can nearly perfectly recover the hierarchy (even if taxonomic labels are removed from input), and hierarchical semantics are encoded orthogonally in the representation space. The conclusion is counter-intuitive: the LLM internally encodes sufficient hierarchical clues but cannot decode them itself; thus, the LLM is the bottleneck. (The authors emphasize this conclusion applies to open-source VLLMs where internal representations are accessible and does not necessarily extend to GPT-4o, which has a text HCA of 98.81.)
+
+**4. Fine-tuning Validation: LoRA Mitigation vs. Fundamental Cure**
+
+Having located the bottleneck in the LLM, can fine-tuning fix it? The authors used LoRA to fine-tune the best-performing Qwen2.5-VL-7B on the VQA set constructed from iNat21-Plant. While fine-tuning improved performance (iNat21-Plant HCA rose from 17.67 to 29.34 with generalization to other datasets), the key finding was that the text HCA gain of the LLM (+20.66 on iNat21-Plant) was significantly higher than the visual HCA gain of the VLLM (+11.67). The LLM's gain capped the VLLM's gain. This confirms the "LLM as bottleneck" from the opposite direction and indicates that "patching" via fine-tuning is a temporary fix; taxonomic knowledge gaps likely need to be addressed during pre-training.
 
 ### Loss & Training
-Fine-tuning experiments adopt standard SFT using the constructed VQA data.
+
+Fine-tuning utilized LoRA (rather than full-parameter SFT), with training data derived from the VQA tasks of the iNat21-Plant training set. Evaluation considered performance gains on this dataset, generalization to other datasets, and the maintenance of general vision-language capabilities.
 
 ## Key Experimental Results
 
@@ -90,45 +91,57 @@ Fine-tuning experiments adopt standard SFT using the constructed VQA data.
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Leaf Accuracy vs. HCA Gap | Large | e.g., Qwen2.5-VL-72B: 54.20 leaf accuracy vs. 35.73 HCA |
-| BioCLIP2 Leaf Accuracy | 95.94 | Domain-specialist model achieves very high leaf accuracy but HCA remains only 41.84 |
-| Visual Encoder Probing | Highly Discriminative | Bottleneck does not reside on the visual side |
+| Leaf Acc vs. HCA Gap | Huge | e.g., Qwen2.5-VL-72B: 54.20 Leaf Acc vs. 35.73 HCA |
+| BioCLIP2 Leaf Acc | 95.94 | Expert model has high leaf accuracy but HCA remains at 41.84 |
+| Visual Encoder Probing | High Discriminability | Bottleneck is not on the vision side |
 
 ### Key Findings
-- A large gap exists between leaf accuracy and HCA: models can identify specific species but are unaware of their higher-level taxonomic categories.
-- Domain-specific CLIP models (BioCLIP2) outperform VLLMs in leaf accuracy but achieve similarly low HCA scores.
-- A significant performance gap remains between open-source VLLMs and GPT-4o.
-- VLLMs perform better on ImgNet-Artifact than on biological taxonomies, as hierarchical knowledge of tools and everyday objects is more commonly represented.
+- A massive gap exists between leaf accuracy and HCA: models identify specific species but fail to recognize higher-level categories.
+- Domain-specific CLIP models (BioCLIP2) outperform VLLMs in leaf accuracy but still exhibit low HCA.
+- A significant gap remains between open-source VLLMs and GPT-4o.
+- VLLMs perform better on ImgNet-Artifact than on biological taxonomies (knowledge of tools/daily items is more common).
 
 ## Highlights & Insights
-- The paper raises a previously overlooked yet important research question: the hierarchical visual recognition capability of VLLMs.
-- The conclusion that "the LLM is the bottleneck" has direct implications for VLLM development — improving the visual encoder alone is insufficient; enriching the LLM's taxonomic knowledge is equally necessary.
-- HCA is a stricter and more practically meaningful evaluation metric than leaf accuracy.
-- The finding that hierarchical information is encoded but not decodable in LLM embeddings suggests that targeted training strategies may be able to activate this latent knowledge.
+- Identifies an overlooked and critical research problem: the hierarchical visual recognition capability of VLLMs.
+- The "LLM as the bottleneck" conclusion provides guidance for VLLM development—improving visual encoders alone is insufficient; taxonomic knowledge in LLMs must be enhanced.
+- HCA is a more rigorous evaluation metric than leaf accuracy and reflects real-world requirements.
+- The discovery that LLM embeddings encode hierarchical information that cannot be decoded suggests that activation via specific training strategies might be possible.
 
 ## Limitations & Future Work
-- The authors explicitly note that their conclusions apply primarily to open-source LLMs and should not be extrapolated to commercial LLMs, as their internal representations are inaccessible.
-- The four-choice VQA evaluation format may underestimate hierarchical inconsistency in open-ended generation settings.
-- The paper does not deeply explore effective methods for injecting taxonomic knowledge into LLMs.
-- While fine-tuning provides some benefit, it does not fundamentally resolve the issue; more principled solutions are needed.
+- Authors explicitly state the conclusions target open-source LLMs and should not be extrapolated to commercial LLMs (due to the inability to probe internal representations).
+- The four-choice VQA evaluation might underestimate hierarchical consistency issues in open-ended generation scenarios.
+- Effective methods for injecting taxonomic knowledge into LLMs were not explored in depth.
+- Fine-tuning helps but does not cure the root cause; more fundamental solutions are needed.
 
 ## Related Work & Insights
-- CLIP-based models also exhibit hierarchical consistency issues, though domain-specific BioCLIP2 achieves exceptionally high leaf accuracy.
-- This work is complementary to VR-FGVC studies such as Zhang et al. and Liu et al., as this paper focuses on hierarchy rather than fine-grained recognition alone.
-- The findings have implications for agent system design: if the LLM does not understand hierarchical structure, it will struggle in tasks requiring multi-granularity understanding.
+- CLIP models suffer from hierarchical consistency issues, though domain-specific BioCLIP2 is extremely strong in leaf accuracy.
+- Complementary to VR-FGVC works like Zhang et al. and Liu et al., this paper focuses on hierarchy rather than pure fine-grained recognition.
+- Implications for Agent system design: if the LLM does not understand hierarchies, it will struggle in tasks requiring multi-granularity understanding.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First systematic evaluation of hierarchical visual recognition in VLLMs.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ ~1M VQA tasks, 10+ models, 6 taxonomies, and in-depth probing analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear paper structure with strong and carefully qualified conclusions.
-- **Value**: ⭐⭐⭐⭐⭐ Identifies a fundamental weakness of VLLMs with important implications for the community.
+- Novelty: ⭐⭐⭐⭐ First systematic evaluation of hierarchical visual recognition in VLLMs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 1M VQA tasks, 10+ models, 6 taxonomies, in-depth probing analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, strong and cautious conclusions.
+- Value: ⭐⭐⭐⭐⭐ Highlights a fundamental weakness in VLLMs with significant implications for the community.
 
 ## Additional Notes
-- Ten open-source VLLMs are evaluated, including LLaVA-OV, InternVL, Qwen2.5-VL, and Qwen3-VL, alongside GPT-4o.
-- Four CLIP models (OpenCLIP, SigLIP, BioCLIP, BioCLIP2) serve as non-LLM baselines.
-- The 6 taxonomies cover both biological and artifact categories, with hierarchical depths ranging from 2 to 7 levels.
-- HCA scores on iNaturalist taxonomies are universally very low (the best-performing GPT-4o achieves only 42.95%), highlighting this as a challenging and underexplored problem.
-- On the Oxford-Pets dataset, BioCLIP2 achieves an HCA of 58%+, demonstrating the benefit of domain-specific training.
+- Evaluated 10 open-source VLLMs (including LLaVA-OV, InternVL, Qwen2.5-VL, Qwen3-VL) and GPT-4o.
+- Used 4 CLIP models (OpenCLIP, SigLIP, BioCLIP, BioCLIP2) as non-LLM baselines.
+- The 6 taxonomies cover biology and artifacts, with depths ranging from 2 to 7 layers.
+- iNaturalist HCA is generally extremely low (best GPT-4o is only 42.95%), indicating it is a difficult and neglected problem.
+- BioCLIP2 reached 58%+ HCA on the Oxford-Pets dataset, showing domain-specific training helps.
+
+## Related Papers
+
+- [\[CVPR 2026\] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition](wikiclip_an_efficient_contrastive_baseline_for_open-domain_visual_entity_recogni.md)
+- [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
+- [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
+- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
+- [\[CVPR 2026\] DialogueVPR: Towards Conversational Visual Place Recognition](dialoguevpr_towards_conversational_visual_place_recognition.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -137,10 +150,10 @@ Fine-tuning experiments adopt standard SFT using the constructed VQA data.
 ## Related Papers
 
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
-- [\[CVPR 2026\] Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models](beyond_recognition_evaluating_visual_perspective_taking_in_vision_language_model.md)
-- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
+- [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
+- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
+- [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
+- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
 
 </div>
 

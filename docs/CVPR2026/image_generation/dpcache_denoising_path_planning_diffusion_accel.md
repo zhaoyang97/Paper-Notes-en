@@ -2,89 +2,95 @@
 title: >-
   [Paper Note] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 description: >-
-  [CVPR 2026][Image Generation][diffusion model acceleration] This paper formalizes diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and applying dyna…
+  [CVPR 2026][Image Generation][training-free] Ours formulates diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and using dynamic programming to select the optimal sequence of key timesteps, ours achieves 4.87× training-free acceleration with generation quality exceeding the full-step baseline.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "diffusion model acceleration"
-  - "feature caching"
-  - "dynamic programming"
-  - "path planning"
-  - "training-free"
+  - CVPR 2026
+  - Image Generation
+  - training-free
 date: 2026-05-08
-content_hash: a281e04a17808aff
+content_hash: d93434c1a6755c3a
 ---
-
 # Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22654](https://arxiv.org/abs/2602.22654)  
 **Code**: [https://github.com/argsss/DPCache](https://github.com/argsss/DPCache)  
-**Area**: Diffusion Models
-**Keywords**: diffusion model acceleration, feature caching, dynamic programming, path planning, training-free
+**Area**: Diffusion Models  
+**Keywords**: Diffusion model acceleration, feature caching, dynamic programming, path planning, training-free
 
 ## TL;DR
-This paper formalizes diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and applying dynamic programming to select the optimal sequence of key timesteps, the method achieves training-free 4.87× acceleration while surpassing the full-step baseline in generation quality.
+Ours formulates diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and using dynamic programming to select the optimal sequence of key timesteps, ours achieves 4.87× training-free acceleration with generation quality exceeding the full-step baseline.
 
 ## Background & Motivation
 
-1. **Background**: Diffusion models, particularly DiT-based architectures, have achieved remarkable success in image and video generation. However, the substantial computational overhead of multi-step iterative sampling severely hinders practical deployment. Caching-based methods have attracted considerable attention as training-free acceleration solutions—their core idea is to reuse or predict intermediate features that are highly similar across adjacent timesteps.
+1. **Background**: Diffusion models (especially DiT architectures) have achieved great success in image and video generation, but the massive computational overhead of multi-step iterative sampling severely hinders practical deployment. Caching methods have gained attention as training-free acceleration solutions—the core idea being to reuse or predict highly similar intermediate features between adjacent timesteps.
 
-2. **Limitations of Prior Work**: Existing caching methods suffer from two fundamental problems: (1) **Fixed scheduling strategies** (e.g., DeepCache) ignore local feature dynamics and introduce severe deviation at critical transition regions; (2) **Locally adaptive strategies** (e.g., TeaCache, SpeCa) make greedy, myopic decisions that may skip critical timesteps, leading to irreversible trajectory drift and error accumulation.
+2. **Limitations of Prior Work**: Existing caching methods face two fundamental issues: (1) **Fixed scheduling strategies** (e.g., DeepCache) do not consider local feature dynamics, causing significant deviation in critical transition regions; (2) **Local adaptive strategies** (e.g., TeaCache, SpeCa) make greedy, short-sighted decisions, which may skip critical timesteps and lead to irreversible trajectory drift and error accumulation.
 
-3. **Key Challenge**: The pivotal decision in caching acceleration—"at which timesteps to perform full computation, and at which to use cached predictions"—is intrinsically a global optimization problem. Yet all existing methods make this decision locally, completely ignoring the global structure of the denoising trajectory.
+3. **Key Challenge**: The critical decision in cache acceleration—"at which timesteps to perform full computation and at which to use cache prediction"—is essentially a global optimization problem. However, existing methods make this decision locally, completely ignoring the global structure of the denoising trajectory.
 
-4. **Goal**: Design a globally optimal sampling schedule such that, given a fixed computational budget of $K$ steps, the selected sequence of key timesteps minimizes the total deviation along the entire denoising trajectory.
+4. **Goal**: Design a globally optimal sampling scheduling strategy such that, given a computational budget ($K$ steps), the selected sequence of key timesteps minimizes the total deviation of the entire denoising trajectory.
 
-5. **Key Insight**: The authors observe that the shape of the denoising trajectory is largely independent of the generated content and is primarily determined by the diffusion model itself. This property enables precomputing the optimal schedule on a small set of calibration samples and applying it to arbitrary inputs.
+5. **Key Insight**: The authors observe that the shape of the denoising trajectory is largely independent of the generated content and is primarily determined by the diffusion model itself. Therefore, the optimal schedule can be pre-computed on a few calibration samples and applied to any input.
 
-6. **Core Idea**: Reformulate diffusion sampling acceleration as a path planning problem, capture the path-dependent nature of skip-step errors via a 3D Path-Aware Cost Tensor, and solve for the globally optimal schedule exactly using dynamic programming.
+6. **Core Idea**: Reformulate diffusion sampling acceleration as a path planning problem, using a 3D Path-Aware Cost Tensor to capture the path-dependency of skipping errors, and then using dynamic programming to solve for the globally optimal schedule precisely.
 
 ## Method
 
 ### Overall Architecture
-DPCache proceeds in three stages: (1) **Calibration**: Run full $T$-step denoising on approximately 10 samples, collect and cache intermediate features from all layers, and construct the Path-Aware Cost Tensor (PACT); (2) **Optimal Schedule Selection**: Given a target step count $K < T$, apply dynamic programming to select from PACT the key timestep sequence $\mathcal{T}$ that minimizes total path cost; (3) **Inference**: Perform full forward passes only at timesteps in $\mathcal{T}$ and cache the resulting features; at all remaining timesteps, predict outputs from cached features using methods such as Taylor expansion.
+DPCache aims to answer the most critical question in cache acceleration that has previously been handled locally: in $T$-step denoising, exactly which steps should undergo full forward passes and which should use cached features to minimize total trajectory deviation under a fixed budget? It elevates this decision from "step-wise greedy" to "global planning." The pipeline consists of three stages. First is **Calibration**: run full $T$-step denoising on approximately 10 samples and cache all intermediate features to calculate a Path-Aware Cost Tensor (PACT), pre-quantifying the error introduced by jumping from one step to another. Next is **Optimal Schedule Selection**: given a target budget $K < T$, use dynamic programming on PACT to pick a sequence of key timesteps $\mathcal{T}$ that minimizes the total path cost. Finally, **Inference**: during actual generation, full forward passes and caching are only performed at timesteps in $\mathcal{T}$, while other steps use methods like Taylor expansion to predict outputs from cached features. Crucially, the schedule only needs to be calculated once during calibration and is reused for any subsequent input.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Content-Agnostic Calibration<br/>Run T steps for ~10 samples, cache all intermediate features"] --> B["Path-Aware Cost Tensor (PACT)<br/>3D tensor pre-quantifying path-dependent errors for each jump"]
+    B --> C["Global Optimal Scheduling via DP<br/>Given budget K, backtrack the key step sequence T* with minimum total cost"]
+    C --> D["Inference: Full forward/cache only at T* steps<br/>Other steps predicted via Taylor expansion from cached features"]
+    D --> E["Training-free accelerated generation results"]
+```
 
 ### Key Designs
 
-1. **Path-Aware Cost Tensor (PACT)**:
+**1. Path-Aware Cost Tensor (PACT): Adding "Antecedents" to Jump Errors**
 
-    - **Function**: Quantifies the path-dependent nature of skip-step errors.
-    - **Mechanism**: Constructs a 3D tensor $\mathcal{C} \in \mathbb{R}^{(T+1) \times (T+1) \times (T+1)}$, where $\mathcal{C}[i,j,k]$ (with $i>j>k$) denotes the cumulative error incurred by skipping from timestep $j$ to $k$, conditioned on the previous key timestep being $i$: $\mathcal{C}[i,j,k] = \sum_{\tau=k}^{j-1} \|h_\tau^L - h_{pred,\tau}^L(i,j)\|_1$. The tensor is 3D rather than 2D because predicted features depend on the previously cached state (path dependency), which a 2D cost matrix cannot capture. The cumulative error formulation naturally penalizes large skips that appear locally optimal but are globally unstable, by accumulating prediction deviations across all intermediate steps.
-    - **Design Motivation**: Addresses the failure of 2D cost matrices to account for path dependency, enabling schedule optimization to be grounded in true trajectory deviation.
+Existing caching methods use a 2D cost matrix to measure "the loss of jumping from $j$ to $k$," but this ignores the fact that predicted features depend on which step's state was previously cached—jump errors are **path-dependent**. DPCache therefore upgrades the cost to a 3D tensor $\mathcal{C} \in \mathbb{R}^{(T+1) \times (T+1) \times (T+1)}$, where $\mathcal{C}[i,j,k]$ ($i>j>k$) represents the error accumulated from "jumping from $j$ to $k$ given that the previous key timestep was $i$." Instead of looking only at the endpoint deviation, it sums the prediction deviations of every intermediate step crossed by this jump:
 
-2. **Dynamic Programming for Optimal Schedule Selection**:
+$$\mathcal{C}[i,j,k] = \sum_{\tau=k}^{j-1} \|h_\tau^L - h_{pred,\tau}^L(i,j)\|_1$$
 
-    - **Function**: Exactly identifies the globally optimal $K$-step sampling sequence within an exponentially large search space.
-    - **Mechanism**: Maintains a DP table $D[m,k]$ (minimum cumulative cost of reaching timestep $k$ using $m$ key steps) and a path table $P[m,k]$ for backtracking, with the recurrence $D[m,k] = \min_{j>k} D[m-1,j] + \mathcal{C}[P[m-1,j], j, k]$. The first $M=3$ timesteps are forced to be included to preserve critical early denoising dynamics. Time complexity is $O(KT^2)$ and space complexity is $O(KT)$; for the typical setting $K < T = 50$, the optimization overhead is negligible and incurred only once.
-    - **Design Motivation**: Dynamic programming is the natural choice for this sequential decision problem, guaranteeing global optimality in polynomial time and far outperforming greedy or heuristic search.
+This cumulative form naturally imposes a higher cost for large jumps—the further the jump and the more intermediate predictions it crosses, the larger the accumulated deviation, automatically penalizing large jumps that might derail the trajectory. The extra dimension $i$ is precisely the "antecedent" missing from 2D matrices; without it, schedule optimization would rely on inaccurate error estimates.
 
-3. **Content-Agnostic Calibration Strategy**:
+**2. Global Optimal Scheduling via DP: Precise Solution in Exponential Space**
 
-    - **Function**: Ensures that the precomputed schedule generalizes to arbitrary inputs.
-    - **Mechanism**: Exploits the content-independence of denoising trajectory shapes, requiring only approximately 10 random calibration samples. Experiments demonstrate that even a single sample yields nearly identical schedules and generation quality, and that switching to an entirely different prompt dataset (DrawBench → PartiPrompts) does not affect the result.
-    - **Design Motivation**: Minimizes the calibration overhead of DPCache, requiring only a one-time precomputation for practical deployment.
+The number of combinations for selecting $K$ key steps is exponential; greedy or heuristic methods can only approximate. DPCache notes that PACT already provides the cost for every jump conditioned on the previous key step, which is exactly a shortest-path-style sequential decision problem solvable via dynamic programming. It maintains a cost table $D[m,k]$ (minimum cumulative cost to reach timestep $k$ using $m$ key steps) and a backtracking table $P[m,k]$, with the recurrence:
+
+$$D[m,k] = \min_{j>k}\; D[m-1,j] + \mathcal{C}[P[m-1,j],\, j,\, k]$$
+
+Note that the recurrence uses $P[m-1,j]$ (the previous key step) to select the cost, integrating the path-dependency dimension of PACT. Simultaneously, the first $M=3$ timesteps are forced into the selection to protect the critical early denoising dynamics that determine global structure. The overall complexity is $O(KT^2)$ and space is $O(KT)$, which is negligible for typical settings like $K<T=50$ and is only run once during calibration.
+
+**3. Content-Agnostic Calibration: One-time Pre-computation, Universal Reuse**
+
+For the first two steps to be valid, the schedule calculated on a few samples must generalize to arbitrary inputs. Authors base this on an empirical observation: the **shape** of the denoising trajectory is primarily determined by the diffusion model itself and has little to do with specific content. Thus, calibration requires only ~10 random samples—experiments show even 1 sample yields nearly identical schedules and generation quality. Switching the calibration prompt dataset from DrawBench to PartiPrompts also does not change the selected key steps. This reduces calibration overhead to a one-time, negligible cost.
 
 ### Loss & Training
-DPCache is entirely training-free. The calibration stage requires only standard forward inference to collect features, with no gradient computation or parameter updates. The prediction step is compatible with any caching prediction method (e.g., Taylor expansion from TaylorSeer, Hermite polynomials from HiCache), with second-order Taylor prediction used by default.
+DPCache is completely training-free. The calibration phase only runs standard forward inference to collect features, involving no gradients or parameter updates. The prediction step is decoupled from the specific cache prediction method and can use Taylor expansion (from TaylorSeer), Hermite polynomials (from HiCache), etc. Ours defaults to 2nd-order Taylor prediction—meaning DPCache handles "when to predict" while leaving "what to predict" to existing methods.
 
 ## Key Experimental Results
 
 ### Main Results (FLUX.1-dev, DrawBench)
 
-| Method | Speedup | ImageReward↑ | CLIP Score↑ | PSNR↑ | SSIM↑ |
-|--------|---------|--------------|-------------|-------|-------|
+| Method | Gain | ImageReward↑ | CLIP Score↑ | PSNR↑ | SSIM↑ |
+|------|--------|-------------|-------------|-------|-------|
 | 50 steps (baseline) | 1.00× | 0.979 | 17.40 | - | - |
 | DPCache (K=13) | 3.54× | **1.007** | **17.34** | **21.65** | **0.8106** |
 | DPCache (K=9) | 4.87× | **0.958** | **17.33** | **18.77** | **0.7117** |
-| TeaCache (K=13 equiv.) | 3.42× | 0.934 | 17.17 | 16.31 | 0.6812 |
-| TaylorSeer (K=13 equiv.) | 3.51× | 0.939 | 17.31 | 16.95 | 0.6922 |
-| SpeCa (K=13 equiv.) | 3.62× | 0.975 | 17.27 | 18.35 | 0.6773 |
+| TeaCache (vs K=13) | 3.42× | 0.934 | 17.17 | 16.31 | 0.6812 |
+| TaylorSeer (vs K=13) | 3.51× | 0.939 | 17.31 | 16.95 | 0.6922 |
+| SpeCa (vs K=13) | 3.62× | 0.975 | 17.27 | 18.35 | 0.6773 |
 
 ### HunyuanVideo (VBench)
 
-| Method | Speedup | VBench Score↑ | PSNR↑ | Memory (GB) |
-|--------|---------|---------------|-------|-------------|
+| Method | Gain | VBench Score↑ | PSNR↑ | Memory (GB) |
+|------|--------|--------------|-------|----------|
 | 50 steps | 1.00× | 80.93 | - | 60.22 |
 | DPCache (K=11) | 4.05× | **80.35** | **23.11** | 60.58 |
 | DPCache (K=9) | 4.75× | **80.23** | **21.04** | 60.58 |
@@ -94,39 +100,39 @@ DPCache is entirely training-free. The calibration stage requires only standard 
 ### Ablation Study (PACT, FLUX K=13)
 
 | Cost Dimension | Cumulative Error | ImageReward↑ | PSNR↑ | SSIM↑ |
-|---------------|-----------------|--------------|-------|-------|
+|---------|---------|-------------|-------|-------|
 | 2D | ✘ | 1.001 | 20.87 | 0.7881 |
 | 2D | ✔ | 0.977 | 19.46 | 0.7605 |
 | 3D | ✘ | 0.998 | 21.05 | 0.7952 |
 | **3D** | **✔** | **1.007** | **21.65** | **0.8106** |
 
 ### Key Findings
-- **Surpassing the full-step baseline**: On FLUX, DPCache at 3.54× speedup improves ImageReward over the baseline (+0.028), and at 4.87× speedup still substantially outperforms all competing methods (+0.031). This indicates that a globally optimal schedule effectively eliminates redundant steps from the original trajectory.
-- **3D path dependency in PACT is critical**: The 3D + cumulative error configuration improves PSNR by 0.78 over the 2D variant, confirming the necessity of path-dependent modeling. Notably, 2D + cumulative error performs worst (0.977), since inaccurate error estimates in 2D are amplified by accumulation, misleading the schedule selection.
-- **Calibration is remarkably robust**: A single calibration sample yields competitive results, and the derived schedules are identical across different datasets—confirming that denoising trajectory shape is indeed content-agnostic.
-- **Significant memory advantage**: DPCache caches only the last-layer features, adding only 0.36 GB on HunyuanVideo, whereas TaylorSeer and SpeCa cache all layers, incurring an additional 24.25 GB.
+- **Surpassing Full-Step Baseline**: At 3.54× acceleration on FLUX, ImageReward increases (+0.028), and at 4.87× acceleration, ours remains significantly superior to other methods (+0.031). This suggests the global optimal schedule effectively "purifies" redundant steps in the original trajectory.
+- **3D Path-Dependency of PACT is Crucial**: 3D+Cumulative error improves PSNR by 0.78 compared to 2D, confirming the necessity of path-dependency modeling. However, 2D+Cumulative error performed worst (0.977) because inaccurate 2D error estimates mislead the scheduling choice when accumulated.
+- **Extremely Robust Calibration**: Just 1 sample yields competitive results, and the scheduling schemes across different datasets are consistent—denoising trajectory shapes are indeed content-agnostic.
+- **Significant Memory Advantage**: DPCache only caches the last layer of features, adding only 0.36GB on HunyuanVideo, whereas TaylorSeer/SpeCa need to cache all layers, adding 24.25GB.
 
 ## Highlights & Insights
-- **Reformulating sampling acceleration as a path planning problem** is the paper's most significant contribution. This is not merely a change of framing; it reveals a qualitative leap from fixed/local scheduling to global scheduling—yielding PSNR gains of 2–5 dB and SSIM improvements exceeding 0.1. This path planning perspective is transferable to any acceleration scenario involving sequential decision-making.
-- **Generalization from very few calibration samples** is highly practical—it demonstrates that the global structure of the denoising trajectory is an intrinsic property of the model rather than the data, providing a theoretical basis for one-time precomputation.
-- The **3D cost tensor vs. 2D cost matrix** ablation is elegantly designed and clearly demonstrates that path dependency cannot be ignored.
+- **Reformulating sampling acceleration as a path planning problem** is the most critical contribution. More than just a framework change, it reveals the qualitative leap from "fixed/local scheduling → global scheduling"—improving PSNR by 2-5 dB and SSIM by 0.1+. This path planning perspective can be transferred to any acceleration scenario involving sequential decisions.
+- The finding that **generalization works with minimal calibration samples** is highly practical—it indicates the global structure of the denoising trajectory is an inherent property of the model rather than the data, laying the theoretical foundation for one-time pre-computation.
+- The comparative ablation of **3D Cost Tensor vs. 2D Cost Matrix** is elegantly designed, clearly proving that path dependency cannot be ignored.
 
 ## Limitations & Future Work
-- The construction of PACT has complexity $O(T^3)$, which may become a bottleneck for models with large step counts ($T \gg 50$), even though it is computed only once.
-- The method assumes that denoising trajectory shape is content-agnostic; whether this holds for out-of-distribution prompts warrants further investigation.
-- Only the last-layer features are cached; applying distinct schedules at different layers (layer-adaptive scheduling) may yield further performance gains.
-- Integration with training-based step reduction methods (e.g., DMD, consistency models) remains unexplored; the two approaches may be complementary.
+- The current construction complexity of PACT is $O(T^3)$, which might become a bottleneck for models with many steps (T >> 50), although it is a one-time calculation.
+- The method hinges on the assumption that denoising trajectory shapes are content-agnostic; validity under extreme out-of-distribution prompts requires further verification.
+- Only the last layer of features is cached; using different scheduling strategies for different layers (layer-wise adaptive scheduling) might further improve performance.
+- Integration with training-based methods like distillation (e.g., DMD, Consistency Models) has not been explored; the two could be complementary.
 
 ## Related Work & Insights
-- **vs. DeepCache**: DeepCache employs a fixed-interval caching strategy that ignores variability in timestep importance; DPCache automatically identifies critical timesteps through global optimization.
-- **vs. TeaCache**: TeaCache's locally adaptive strategy improves upon fixed strategies but makes greedy decisions that may skip critical steps and cause irreversible drift; DPCache's global perspective fundamentally resolves this issue.
-- **vs. TaylorSeer**: TaylorSeer proposes Taylor expansion-based feature prediction; DPCache directly reuses its prediction method while replacing the scheduling strategy, demonstrating that *when* to compute matters more than *how* to predict.
+- **vs DeepCache**: DeepCache uses fixed-interval caching and ignores importance differences between timesteps. DPCache automatically identifies key timesteps via global optimization.
+- **vs TeaCache**: TeaCache's local adaptive strategy is better than fixed versions, but greedy decisions skip critical steps causing irreversible drift; DPCache's global perspective solves this.
+- **vs TaylorSeer**: TaylorSeer proposed feature prediction based on Taylor expansion; DPCache reuses its prediction method but replaces the scheduling strategy, proving "when to predict" is more important than "what to predict."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The path planning perspective is original; the 3D design of PACT has theoretical depth.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three models (DiT/FLUX/HunyuanVideo), three tasks, comprehensive ablations, decisively outperforming all baselines.
-- Writing Quality: ⭐⭐⭐⭐ — Clear logical structure, intuitive figures, rigorous algorithmic presentation.
-- Value: ⭐⭐⭐⭐⭐ — A plug-and-play training-free acceleration framework balancing efficiency and quality with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ The path planning perspective is novel; the 3D design of PACT has theoretical depth.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three models (DiT/FLUX/HunyuanVideo), three tasks, complete ablations; overwhelmingly superior to all baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic, intuitive illustrations, and standard algorithmic descriptions.
+- Value: ⭐⭐⭐⭐⭐ A plug-and-play training-free acceleration framework that balances efficiency and quality; highly practical.
 
 <!-- RELATED:START -->
 
@@ -135,9 +141,9 @@ DPCache is entirely training-free. The calibration stage requires only standard 
 ## Related Papers
 
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
-- [\[CVPR 2026\] Flash-Unified: Training-Free and Task-Aware Acceleration for Native Unified Models](flash-unified_a_training-free_and_task-aware_acceleration_framework_for_native_u.md)
-- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
+- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
+- [\[CVPR 2026\] TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration](tc-padé_trajectory-consistent_padé_approximation_for_diffusion_acceleration.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 
 </div>

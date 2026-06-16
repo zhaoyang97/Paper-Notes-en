@@ -2,72 +2,80 @@
 title: >-
   [Paper Note] FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 description: >-
-  [CVPR 2026][Hallucination Detection][MLLM hallucination] This paper identifies that MLLMs suffer a dramatic increase in hallucination rates under fine-grained negative queries (queries involving multiple objects/attribut…
+  [CVPR 2026][Hallucination Detection][DPO] The study identifies a sharp increase in MLLM hallucination rates under fine-grained negative queries (queries with a single subtle error among multiple objects/attributes/relations). It proposes the FINER benchmark and the FINER-Tuning method (based on DPO), achieving a maximum improvement of 24.2% on InternVL3.5-14B.
 tags:
-  - "CVPR 2026"
-  - "Hallucination Detection"
-  - "MLLM hallucination"
-  - "fine-grained negative queries"
-  - "DPO"
-  - "scene graph"
-  - "hallucination benchmark"
+  - CVPR 2026
+  - Hallucination Detection
+  - DPO
 date: 2026-05-08
-content_hash: 80f3d21d7b7a9c05
+content_hash: b7db58f8be391834
 ---
-
 # FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.17662](https://arxiv.org/abs/2603.17662)  
 **Code**: [https://explainableml.github.io/finer-project/](https://explainableml.github.io/finer-project/)  
-**Area**: Hallucination Detection
-**Keywords**: MLLM hallucination, fine-grained negative queries, DPO, scene graph, hallucination benchmark
+**Area**: Hallucination Detection  
+**Keywords**: MLLM Hallucination, Fine-grained Negative Queries, DPO, Scene Graphs, Hallucination Benchmark
 
 ## TL;DR
-This paper identifies that MLLMs suffer a dramatic increase in hallucination rates under fine-grained negative queries (queries involving multiple objects/attributes/relations with only one subtle error), proposes the FINER benchmark and FINER-Tuning (based on DPO), achieving up to 24.2% improvement on InternVL3.5-14B.
+The study identifies a sharp increase in MLLM hallucination rates under fine-grained negative queries (queries with a single subtle error among multiple objects/attributes/relations). It proposes the FINER benchmark and the FINER-Tuning method (based on DPO), achieving a maximum improvement of 24.2% on InternVL3.5-14B.
 
 ## Background & Motivation
-**Background**: Hallucination in MLLMs has been extensively studied; existing benchmarks (POPE, DASH, AMBER) primarily focus on coarse-grained queries, such as whether a single object exists.
+**Background**: MLLM hallucination has been widely studied, but existing benchmarks (POPE, DASH, AMBER) primarily focus on coarse-grained queries, such as the existence of a single object.
 
-**Limitations of Prior Work**: Queries in real-world scenarios are often fine-grained—involving multiple objects, attributes, and relations. The more fine-grained the query, the more easily the model is misled by "mostly correct" content into answering "yes."
+**Limitations of Prior Work**: Real-world user queries are often sophisticated, involving multiple objects, attributes, and relations. As query precision increases, models are more likely to be misled by "mostly correct" content and respond with "Yes."
 
-**Key Challenge**: There is a strong positive correlation between query granularity and hallucination rate. InternVL3.5-14B achieves approximately 80% accuracy at granularity level 1, which drops sharply to approximately 20% at levels 5–7.
+**Key Challenge**: A strong positive correlation exists between query granularity and hallucination rates. InternVL3.5-14B achieves approximately 80% accuracy at granularity Level 1, which drops to roughly 20% at Levels 5-7.
 
-**Goal**: (a) Systematically investigate hallucination behavior under fine-grained negative queries; (b) propose a training method that effectively mitigates fine-grained hallucinations.
+**Goal**: (a) Systematically investigate hallucination behavior under fine-grained negative queries; (b) Propose a training method to effectively mitigate fine-grained hallucinations.
 
-**Key Insight**: Simulating the human sentence construction process (object → attribute → relation), the paper constructs progressively fine-grained negative queries to systematically expose hallucinations.
+**Key Insight**: By simulating human sentence construction (object → adding attributes → adding relations), progressively fine-grained negative queries are constructed to systematically expose hallucinations.
 
-**Core Idea**: A scene-graph-driven approach is used to construct a fine-grained negative query benchmark, combined with DPO training to teach the model to detect subtle errors in queries.
+**Core Idea**: Use scene graphs to drive the construction of a fine-grained negative query benchmark. This is paired with FINER-Tuning to teach the model to detect subtle errors in queries.
 
 ## Method
 
 ### Overall Architecture
-**Benchmark Construction**: Starting from the scene graph of an image (objects + attributes + relations), negative queries are generated by substituting one element with a negative version, forming paired positive/negative multiple-choice questions. **Training Method**: FINER-style preference data is generated from the Pixmo dataset, and DPO is used to train the model.
+The framework consists of two components: quantifying "how easily MLLMs hallucinate under fine-grained negative queries" using a new benchmark, and addressing this weakness through a training method. On the benchmark side, starting from the scene graph of each image (objects, attributes, relations), one element is selected and replaced with a negative version that does not exist in the image. This is verified by a discriminator to ensure the negative element is truly absent. These form paired multiple-choice questions labeled by granularity. On the training side, preference pairs (chosen vs. rejected with subtle errors) are generated using Pixmo long captions, and the model learns to identify incorrect elements in queries via DPO.
+
+```mermaid
+graph TD
+    subgraph BENCH["Benchmark Construction"]
+        direction TB
+        A["Image Positive Scene Graph<br/>Objects / Attributes / Relations"] --> B["FINER Negative Query Construction<br/>Select element → LLM generates 4 negative replacements → Paired multi-choice by granularity"]
+        B --> C{"Negative Sample Quality Verification<br/>Does discriminator confirm absence?"}
+        C -->|Ambiguity, Regenerate| B
+        C -->|Pass| D["FINER Benchmark<br/>Paired Multi-choice Question Bank"]
+    end
+    subgraph TRAIN["Training"]
+        direction TB
+        E["Pixmo Long Captions<br/>Extract Object/Attribute/Relation Phrases"] --> F["FINER-Tuning<br/>Phi-4 generates chosen/rejected preference pairs → DPO"]
+    end
+    D --> G["Evaluate MLLM Fine-grained Hallucination"]
+    F --> G
+```
 
 ### Key Designs
 
-1. **FINER Benchmark (FINER-CompreCap + FINER-DOCCI)**:
+**1. FINER Benchmark: Pushing Negative Queries from "Single Object Existence" to "Multi-element Fine-grained"**
 
-    - Function: Constructs a fine-grained benchmark covering four settings—multi-object (Multi-obj), multi-attribute (Multi-attr), multi-relation (Multi-rel), and Wh-questions.
-    - Mechanism: Starting from a positive scene graph, an LLM generates four semantically plausible but image-absent negative substitutions for each element (e.g., "door frame" → "pillar"), which are then combined via templates into positive/negative multiple-choice questions.
-    - Design Motivation: Multiple-choice questions replace simple Yes/No to avoid model response bias; paired positive/negative queries require both to be answered correctly (paired accuracy).
+Unlike benchmarks like POPE or AMBER that focus on simple existence, FINER addresses the complexity of real-world queries where models are often misled by sentences that are "mostly right." FINER utilizes image scene graphs to generate 4 semantically plausible but non-existent negative replacements for each element (e.g., replacing "door frame" with "pillar"). These are formatted into multiple-choice questions covering multi-object, multi-attribute, multi-relation, and Wh-question settings. Accuracy is measured using "paired accuracy," where a model must answer both the positive and its corresponding negative query correctly to prevent it from cheating by simply favoring "No."
 
-2. **Negative Sample Quality Validation**:
+**2. Negative Sample Quality Verification: Ensuring "Non-existent" Elements are Truly Absent**
 
-    - Function: Ensures that generated negative elements are genuinely absent from the image.
-    - Mechanism: Qwen2.5-VL-72B is used as a discriminator; positive elements are mixed into negative candidates, and if the discriminator fails to identify the positive element, certain negative elements are considered ambiguous and regenerated.
-    - Design Motivation: The quality of negative samples directly determines the reliability of the benchmark.
+To ensure benchmark reliability, negative replacements must be absent from the image. FINER employs Qwen2.5-VL-72B as a discriminator. Positive elements are mixed with negative ones; if the discriminator fails to identify the positive element or finds a negative element plausible, the sample is regenerated. This cross-validation filters out "false negatives."
 
-3. **FINER-Tuning (DPO Training)**:
+**3. FINER-Tuning: Teaching Models to Detect Errors in Queries via DPO**
 
-    - Function: Constructs preference data from fine-grained positive/negative query pairs for DPO training.
-    - Mechanism: Object/attribute/relation phrases are extracted from Pixmo long descriptions; Phi-4-14B generates negative versions; correct answers (accepted) and incorrect answers (rejected) are constructed; the model is trained with DPO loss: $\mathcal{L}_{DPO}(\theta) = -\mathbb{E}[\log\sigma(\beta(\Delta_\theta - \Delta_{ref}))]$
-    - Design Motivation: Unlike methods that only reduce hallucinations in model-generated responses, FINER-Tuning teaches the model to detect subtle errors within the query itself.
+Standard DPO-based hallucination mitigation (e.g., RLAIF-V, OPA-DPO) focuses on hallucinations in model-generated descriptions. FINER-Tuning specifically targets the model's failure to identify subtle errors within user queries. Object/attribute/relation phrases are extracted from Pixmo long captions, and Phi-4-14B is used to create a negative version. This forms a "chosen" (correct) and "rejected" (subtly incorrect) answer pair. The model is trained using the standard DPO loss:
+
+$$\mathcal{L}_{DPO}(\theta) = -\mathbb{E}\big[\log\sigma\big(\beta(\Delta_\theta - \Delta_{ref})\big)\big]$$
+
+where $\Delta$ is the difference in log-likelihood for the chosen and rejected responses. To prevent data leakage, Pixmo-caption is used instead of benchmark images, and the LLM used for data generation (Phi-4) differs from the one used for benchmark construction.
 
 ### Loss & Training
-- Pixmo-caption is used as the data source to avoid training set leakage with the benchmark.
-- Phi-4-14B (different from the LLM used for benchmark construction) generates training data.
-- DPO hyperparameter $\beta = 0.1$.
+The DPO parameter $\beta$ is set to 0.1. Pixmo-caption serves as the fixed data source, isolated from the benchmark evaluation set to eliminate leakage.
 
 ## Key Experimental Results
 
@@ -83,43 +91,34 @@ This paper identifies that MLLMs suffer a dramatic increase in hallucination rat
 | InternVL-3.5-14B | 74.5 | 68.1 | 47.0 | 21.8 |
 | +FINER-Tuning | **80.0** (+5.5) | **78.9** (+10.8) | **71.2** (+24.2) | **30.1** (+8.3) |
 
-### Granularity–Accuracy Relationship
-
-| Query Granularity | InternVL3.5-14B Baseline | +FINER-Tuning |
-|---------|---------------------|--------------|
-| Level 1 | ~80% | ~85% |
-| Level 3 | ~50% | ~65% |
-| Level 5 | ~25% | ~50% |
-| Level 7 | ~20% | ~45% |
-
 ### Key Findings
-- Hallucination is strongly correlated with query granularity: higher granularity leads to lower accuracy, confirming that fine-grained queries represent a systematic weakness of MLLMs.
-- Multi-rel is the most challenging setting; even strong model baselines score below 50%.
-- FINER-Tuning yields larger gains for weaker models (LLaVA-1.6-7B) than for stronger ones.
-- FINER-Tuning not only improves performance on the FINER benchmark, but also consistently improves results across 8 existing hallucination benchmarks without degrading general capabilities (6 benchmarks).
+- Hallucination is strongly correlated with query granularity: Higher granularity leads to lower accuracy, confirming that fine-grained queries are a systemic weakness of MLLMs.
+- Multi-rel (multi-relation) is the most difficult setting, with even strong model baselines falling below 50%.
+- FINER-Tuning provides more significant gains for weaker models (LLaVA-1.6-7B) compared to stronger models.
+- FINER-Tuning improves performance on the FINER benchmark as well as 8 existing hallucination benchmarks without degrading general capabilities (tested across 6 benchmarks).
 
 ## Highlights & Insights
-- The discovery of the **granularity–hallucination correlation** is highly insightful, revealing the mechanism by which MLLMs are misled by "mostly correct" information.
-- The **paired positive/negative query** evaluation design ensures that models cannot exploit a preference for "No" to game the benchmark.
-- FINER-Tuning teaches models to detect "errors in the query" rather than "hallucinations in the response," representing a novel perspective.
-- The data construction pipeline is transferable to other VQA robustness evaluation settings.
+- The discovery of the **granularity-hallucination correlation** provides significant insight into the mechanism by which MLLMs are misled by "mostly correct" information.
+- The **paired query** evaluation method ensures models cannot cheat by developing a bias towards "No" responses.
+- FINER-Tuning offers a novel perspective by teaching the model to detect "errors in queries" rather than just "hallucinations in responses."
+- The data construction pipeline is transferable to other VQA robustness evaluations.
 
 ## Limitations & Future Work
-- Negative element generation relies on LLMs, which may introduce systematic biases.
+- Generation of negative elements relies on LLMs, which may introduce systematic bias.
 - The templates for converting scene graphs to queries are relatively fixed and do not cover all natural language expressions.
-- The benchmark focuses exclusively on negative queries; fine-grained understanding of affirmative queries also warrants investigation.
-- Scene graphs for DOCCI are extracted from long descriptions and may contain extraction noise.
+- The benchmark focuses on negative queries; fine-grained understanding of positive queries also warrants research.
+- Scene graphs from DOCCI are extracted from long captions, which may contain extraction noise.
 
 ## Related Work & Insights
-- **vs. POPE**: POPE tests only single-object existence; FINER extends evaluation to multi-element fine-grained negation.
-- **vs. AMBER**: AMBER covers single object/attribute/relation; FINER pushes granularity to multi-element combinations.
-- **vs. RLAIF-V/OPA-DPO**: These methods apply DPO to reduce hallucinations in model-generated outputs; FINER-Tuning specifically targets subtle errors embedded within queries.
+- **vs POPE**: POPE only tests single object existence; FINER expands to multi-element fine-grained negation.
+- **vs AMBER**: AMBER includes single objects/attributes/relations, while FINER pushes granularity to multi-element combinations.
+- **vs RLAIF-V/OPA-DPO**: These methods reduce hallucinations in model-generated output via DPO, whereas FINER-Tuning specifically targets subtle errors within input queries.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The systematic study of the granularity–hallucination relationship opens a new research direction.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four models + 2 benchmarks + 8 existing hallucination benchmarks + 6 general capability benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated; the data construction pipeline is described in detail.
-- Value: ⭐⭐⭐⭐⭐ Both the benchmark and the method provide significant contributions to understanding and mitigating MLLM hallucinations.
+- Novelty: ⭐⭐⭐⭐⭐ Systematic research on the granularity-hallucination relationship opens a new direction.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 4 models, 2 new benchmarks, 8 existing hallucination benchmarks, and 6 general benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation analysis and detailed data construction process.
+- Value: ⭐⭐⭐⭐⭐ Both the benchmark and the method provide significant value for understanding and mitigating MLLM hallucinations.
 
 <!-- RELATED:START -->
 
@@ -128,10 +127,10 @@ This paper identifies that MLLMs suffer a dramatic increase in hallucination rat
 ## Related Papers
 
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
+- [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
-- [\[AAAI 2026\] Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization](../../AAAI2026/hallucination/ground_what_you_see_hallucination-resistant_mllms_via_caption_feedback_diversity.md)
+- [\[CVPR 2026\] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs](copo_causal-oriented_policy_optimization_for_hallucinations_of_mllms.md)
 
 </div>
 

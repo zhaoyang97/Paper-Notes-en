@@ -2,126 +2,118 @@
 title: >-
   [Paper Note] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length
 description: >-
-  [ACL2026][LLM Efficiency][Multi-instance processing] This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It discovers that performance decline is not solely caused…
+  [ACL 2026][LLM Efficiency][Paper Note] This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It finds that performance decline is not solely caused by increasing context length; the instance count itself exerts a stronger influence on success rates. Specifically, almost all models collapse when processin
 tags:
-  - "ACL2026"
-  - "LLM Efficiency"
-  - "Multi-instance processing"
-  - "Long-context"
-  - "Aggregated reasoning"
-  - "Failure modes"
-  - "Instance count"
+  - ACL 2026
+  - LLM Efficiency
 date: 2026-05-08
-content_hash: 89d77fc40bb54892
+content_hash: 9cc3193f21108422
 ---
-
 # Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length
 
 **Conference**: ACL2026  
 **arXiv**: [2603.22608](https://arxiv.org/abs/2603.22608)  
 **Code**: https://github.com/jingxuanchen916/multi-instance-processing  
-**Area**: LLM Efficiency / Long-Context Evaluation / Multi-Instance Processing  
-**Keywords**: Multi-instance processing, Long-context, Aggregated reasoning, Failure modes, Instance count
+**Area**: LLM Efficiency / Long-context Evaluation / Multi-instance Processing  
+**Keywords**: Multi-instance Processing, Long Context, Aggregated Reasoning, Failure Modes, Instance Count
 
 ## TL;DR
-This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It discovers that performance decline is not solely caused by context length; the number of instances itself has a stronger impact on success rates. Specifically, at over 1,000 instances, almost all models collapse and rarely proactively alert the user.
+This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It finds that performance decline is not solely caused by increasing context length; the instance count itself exerts a stronger influence on success rates. Specifically, almost all models collapse when processing over 1,000 instances and rarely proactively alert the user.
 
 ## Background & Motivation
-**Background**: Many LLM applications are still evaluated using single-instance processing (SIP), such as determining the sentiment of a single review, the language of a sentence, or the parity of one number. However, real-world data analysis scenarios often require users to input dozens to thousands of instances simultaneously for the model to judge each one and then aggregate them into total counts, category distributions, or sums.
+**Background**: Many LLM applications are still evaluated via single-instance processing (SIP), such as determining the sentiment of a single review, the language of a single sentence, or the parity of a single number. However, real-world data analysis scenarios often require users to input dozens to thousands of instances at once, expecting the model to process each item and aggregate them into totals, category distributions, or sums.
 
-**Limitations of Prior Work**: Research on long contexts typically binds input length with task complexity, making it difficult to distinguish whether models are hindered by the number of tokens or by the repetitive processing of numerous instances. Batch processing research often only examines the merging of a few queries, primarily motivated by cost reduction, and lacks systematic scanning in the dimension of large-scale instance counts.
+**Limitations of Prior Work**: Research on long contexts typically couples increasing input length with increasing task complexity, making it difficult to distinguish whether a model is overwhelmed by the number of tokens or by the repetitive processing of numerous instances. Batch processing research often focuses on merging a small number of queries primarily to reduce costs, lacking a systematic scan of the large-scale instance count dimension.
 
-**Key Challenge**: MIP simultaneously involves the pressures of long contexts and repetitive operations. Even if each instance is simple on its own, placing 500 or 2,000 instances in a single prompt requires the model to identify each item, maintain indices, avoid omissions, and perform accurate aggregation; this differs from RAG, which involves finding a small amount of relevant evidence.
+**Key Challenge**: MIP imposes simultaneous pressure from both long context and repetitive operations. Even if each instance is simple in isolation, placing 500 or 2,000 instances in a single prompt requires the model to identify each item, maintain indices, avoid omissions, and perform accurate aggregation. This differs fundamentally from retrieving a few pieces of evidence in RAG.
 
-**Goal**: To answer two questions: how LLMs degrade and what failure modes appear as the number of instances increases in MIP; and whether performance degradation is more affected by context length or instance count.
+**Goal**: To answer two questions: how LLMs degrade and what failure modes emerge as instance counts increase in MIP; and whether performance degradation is more affected by context length or instance count.
 
-**Key Insight**: The authors first use SIP to filter out samples that models fail on individually, retaining only instances that all compared models can answer correctly in isolation. These "inherently simple" instances are then combined into MIP inputs. Thus, if a model fails in MIP, it can be more accurately attributed to its multi-instance processing and aggregation capabilities rather than the difficulty of single samples.
+**Key Insight**: The authors first filter out samples that models fail on individually using SIP, retaining only instances that all compared models can answer correctly in isolation. These "inherently simple" instances are then combined into MIP inputs. Thus, failures in MIP can be more accurately attributed to multi-instance processing and aggregation capabilities rather than individual sample difficulty.
 
-**Core Idea**: After controlling for single-instance difficulty, the number of instances and context length are independently manipulated to measure the true bottlenecks of LLMs in repetitive processing and aggregation.
+**Core Idea**: After controlling for single-instance difficulty, the study independently manipulates instance count and context length to measure the true bottlenecks of LLMs in repetitive processing and aggregation.
 
 ## Method
-The paper defines MIP as: a model receives a set of instances $X'=\{x_1,\dots,x_n\}$ and a task instruction $\tau$ in the same prompt, needing to produce an implicit or explicit judgment for each instance and output an aggregated answer $y_{agg}$. The output may be correct, incorrect, or invalid; errors can be further broken down into instance-level errors, aggregation errors, index/key errors, and combinations thereof.
+MIP (multi-instance processing) is defined as: a model receives a set of instances $X'=\{x_1,\dots,x_n\}$ and a task instruction $\tau$ within the same prompt, performs an implicit or explicit judgment for each instance, and outputs an aggregated answer $y_{agg}$. This output may be correct, incorrect, or invalid; errors are further decomposed into instance-level errors, aggregation errors, index/key errors, or combinations thereof. The methodology is designed to isolate the "difficulty of individual samples" and let the data reveal whether LLMs are dragged down by tokens or by the repetition and summation of operations hundreds or thousands of times.
 
 ### Overall Architecture
-The experimental workflow begins by running SIP on each task to filter out ambiguous samples or those the model cannot solve stably in isolation. Then, different-sized instance sets are sampled from the retained $X_{SIP}$ using 5 random seeds, with instance counts of 2, 5, 10, 20, 50, 100, 200, 500, 1000, and 2000. Models are required to output an aggregated answer, such as "how many of these reviews are positive," "how many of these numbers are odd," or "how many person entities are in these sentences." Evaluation uses success rate and invalid rate; an additional instance-level variant requires the model to provide individual predictions before the aggregated answer to analyze failure types.
+The experiment proceeds in two steps. First, single-instance evaluation (SIP) is conducted for each task to filter out ambiguous or unstable samples, leaving a clean pool $X_{SIP}$ of instances that "everyone can do." Second, instance sets of sizes 2, 5, 10, 20, 50, 100, 200, 500, 1000, and 2000 are sampled from this pool using 5 random seeds. These are fed to models to generate aggregated answers, such as "how many reviews are positive," "how many numbers are odd," or "how many person entities are in these sentences." The primary metrics are success rate (SR) and invalid rate (IR). A "instance-level variant" is also established, requiring the model to provide per-instance predictions before the aggregate answer to decompose where failures occur.
 
 ### Key Designs
-1. **SIP Filtering to Control Single-Sample Difficulty**:
-	- **Function**: Ensures MIP failure is not due to the difficulty of individual samples.
-	- **Mechanism**: Each task first undergoes a single-instance evaluation with 2,500 instances, retaining only those instances that all compared models get correct. Models are retained only if their average SIP success rate exceeds 95% and per-task SIP success rate exceeds 90%, with tasks requiring over 85% agreement between models.
-	- **Design Motivation**: If a model misjudges a single review, multi-instance failure cannot be interpreted. After filtering, MIP tests the ability to repeat simple operations many times and aggregate them.
 
-2. **Multi-Task Multi-Model MIP Scanning**:
-	- **Function**: Covers various instance types, aggregation forms, and model families.
-	- **Mechanism**: Tasks include eight categories: Arithmetic, Category, Language, NER, Parity, Sentiment, Word, and WSD. Models include 9 open-weight models and 7 closed-source models, such as DeepSeek R1/V3, gpt-oss-120b/20b, Llama, Qwen3, Claude, Gemini, GPT-5, and Grok. Temperature is set to 0, maximum output length to 20K, and invalid outputs are allowed up to 3 retries.
-	- **Design Motivation**: MIP is not a phenomenon unique to one dataset. Cross-task and cross-model evaluation allows observation of whether degradation curves are universal.
+**1. SIP Filtering: Eliminating the Interference of Task Difficulty**
 
-3. **Decoupling Analysis of Instance Count and Context Length**:
-	- **Function**: Distinguishes between "too many tokens" and "too many instances."
-	- **Mechanism**: The authors construct manual length augmentation: irrelevant noise text is added to each instance, increasing the average instance length from approximately 136 tokens to 326 tokens while keeping the instance count constant. Spearman correlation analysis is performed to compare success rates with instance count and total context length respectively, and the impact of context length is examined while fixing the instance count.
-	- **Design Motivation**: If performance degrades solely due to token length, adding noise should significantly lower performance; if degradation stems from repetitive processing and aggregation, the impact of context length under a fixed instance count should be much weaker.
+If a model fails to identify the sentiment of a single review, its failure to count positive reviews among 500 samples is uninterpretable. To address this, the authors perform SIP on 2,500 instances per task, retaining only those correctly answered by all participating models. Three thresholds are set: an average SIP success rate >95%, a per-task SIP success rate >90%, and an inter-model agreement >85%. After filtering, the MIP test becomes a pure measure of repeating a verified "simple" operation many times and aggregating the results.
+
+**2. Multi-task and Multi-model MIP Scanning: Confirming Universal Degradation**
+
+To demonstrate that MIP degradation is a systemic weakness of LLMs, the study covers eight task categories—Arithmetic, Category, Language, NER, Parity, Sentiment, Word, and WSD—covering various instance types and aggregation forms. 16 models are evaluated, including 9 open-weight (DeepSeek R1/V3, gpt-oss-120b/20b, Llama, Qwen3, etc.) and 7 closed-source models (Claude, Gemini, GPT-5, Grok, etc.). All models are set to temperature 0 with a maximum output of 20K tokens and up to 3 retries for invalid outputs.
+
+**3. Decoupling Instance Count and Context Length: Identifying the Primary Driver**
+
+MIP involves both increasing context length and increasing repetitive operations. The authors decouple these using two methods: first, artificial length augmentation, where irrelevant noise text is inserted into each instance to increase the average length from ~136 tokens to ~326 tokens without increasing the instance count; second, Spearman correlation analysis, calculating the correlation of success rate with instance count versus total context length, and examining context length effects while fixing the instance count.
 
 ### Loss & Training
-This work is an evaluation and diagnostic paper and does not train new models. Key experimental controls include unified prompt templates, $temperature=0$, 20K token maximum output, three retries for invalid outputs, and sampling with 5 random seeds for each MIP configuration. Success rate $SR$ is the proportion of correct aggregated answers across all experiments; invalid rate $IR$ is the proportion of outputs that cannot be parsed or exceed context limits.
+This is an evaluation and diagnostic paper; no new models were trained. Reproducibility relies on experimental controls: uniform prompt templates, temperature=0, 20K maximum tokens, three retries for invalid outputs, and sampling with 5 random seeds for each MIP configuration. The core metrics are success rate ($SR$) and invalid rate ($IR$).
 
 ## Key Experimental Results
 
 ### Main Results
-The overall success rates of the models indicate that closed-source models do not completely dominate open-weight models. GPT-5 and Gemini 3.1 Pro are the highest, but Qwen3-Thinking, gpt-oss-120b, DeepSeek R1, Grok 4 Fast, and GPT-5 Nano also stay above 65%.
+The overall success rates show that closed-source models do not completely dominate open-weight models. GPT-5 and Gemini 3.1 Pro were highest, but Qwen3-Thinking, gpt-oss-120b, DeepSeek R1, Grok 4 Fast, and GPT-5 Nano also exceeded 65%.
 
 | Model | Type / Cost Info | Success Rate | Invalid Rate | Observation |
 |------|----------------|-------------:|-------------:|------|
 | GPT-5 | Closed, ~USD 2.64 / task | 81.8 ± 2.6 | 1.8 ± 0.7 | Highest overall |
-| Gemini 3.1 Pro | Closed, ~USD 6.28 / task | 80.3 ± 1.4 | 2.6 ± 0.9 | High performance but highest cost |
-| Grok 4 | Closed, ~USD 5.54 / task | 70.6 ± 1.7 | 1.3 ± 0.0 | Strong closed-source model |
-| Qwen3-Thinking | open-weight A22B | 69.4 ± 2.4 | 3.9 ± 1.6 | Very strong performance for open-weight |
-| gpt-oss-120b | open-weight A5.1B | 68.3 ± 2.8 | 3.6 ± 1.1 | High success rate |
-| DeepSeek R1 | open-weight A37B | 67.5 ± 2.6 | 2.9 ± 0.6 | Stable performance for a reasoning model |
-| Grok 4 Fast | Closed, ~USD 0.26 / task | 67.0 ± 2.8 | 0.0 ± 0.0 | Zero invalid rate, good robustness |
-| GPT-5 Nano | Closed, ~USD 0.13 / task | 66.5 ± 3.8 | 7.5 ± 0.6 | Most frequent to admit capacity limits |
+| Gemini 3.1 Pro | Closed, ~USD 6.28 / task | 80.3 ± 1.4 | 2.6 ± 0.9 | High performance, highest cost |
+| Grok 4 | Closed, ~USD 5.54 / task | 70.6 ± 1.7 | 1.3 ± 0.0 | Strong closed model |
+| Qwen3-Thinking | Open-weight A22B | 69.4 ± 2.4 | 3.9 ± 1.6 | Very strong open-weight |
+| gpt-oss-120b | Open-weight A5.1B | 68.3 ± 2.8 | 3.6 ± 1.1 | High success rate |
+| DeepSeek R1 | Open-weight A37B | 67.5 ± 2.6 | 2.9 ± 0.6 | Stable reasoning performance |
+| Grok 4 Fast | Closed, ~USD 0.26 / task | 67.0 ± 2.8 | 0.0 ± 0.0 | Zero invalid rate, great robustness |
+| GPT-5 Nano | Closed, ~USD 0.13 / task | 66.5 ± 3.8 | 7.5 ± 0.6 | Most likely to admit limitations |
 
 ### Ablation Study
-The key analysis compares failure types and the impact of context length. Results show that models typically function on small numbers of instances but drop significantly after 200, approaching collapse at 1,000-2,000. Simply doubling the length of each instance does not cause the same magnitude of degradation.
+Key analyses compared failure types and context length effects. Results indicate that models usually function with few instances but decline sharply beyond 200, approaching collapse at 1,000-2,000. Simply doubling the instance length with noise does not cause an equivalent magnitude of degradation.
 
 | Analysis Item | Key Data | Conclusion |
 |--------|----------|------|
-| Instance Count Degradation | All models drop significantly above 200 instances; SR below 20% at 2,000; none exceed 40% at >1,000 | Large-scale MIP is a consistent weakness for current LLMs |
-| Task Differences | Except for Arithmetic, average SR exceeds 60% for all tasks under 50 instances | Small-batch MIP is usable, but degradation rates vary by task |
-| Failure Types | Combined mistakes rise to ~25%-45% after 100 instances; parsing error near 30% at 2,000 | Errors stem not only from single judgments but also from aggregation, formatting, and output length |
-| Self-Awareness | Only 171 / 4,620 experiments showed omission; only 27 explicitly suggested batch-wise processing | Most models do not proactively inform users to use batching when failing |
-| Manual Context Lengthening | Success rates remain similar when average instance length increases from ~136 to ~326 tokens at a fixed count | Context length is not the sole primary cause |
-| Correlation Analysis | Spearman for SR vs instance count is -0.61, vs context length is -0.37; correlation with context length is ~-0.15 to 0.15 with p>0.1 when count is fixed | Instance count has stronger explanatory power for degradation |
+| Instance Count Degradation | All models drop significantly above 200 instances; SR < 20% at 2,000; no model > 40% at 1,000+ | Large-scale MIP is a systemic weakness of current LLMs |
+| Task Variance | All tasks (excl. Arithmetic) avg SR > 60% with < 50 instances | Small-batch MIP is usable, but degradation rates vary by task |
+| Failure Types | Combined mistakes reach ~25%-45% after 100 instances; parsing error approaches 30% at 2,000 | Errors stem from aggregation, formatting, and length, not just judgment |
+| Self-Awareness | Only 171 / 4,620 experiments showed omission; only 27 explicitly suggested batching | Most models fail without notifying the user of capacity limits |
+| Artificial Context Extension | Context lengthened from ~136 to ~326 tokens; SR remained similar for fixed instance counts | Context length is not the sole cause of failure |
+| Correlation | Spearman for SR vs. instance count is -0.61, vs. context length is -0.37; fixed count context correlation ~ -0.15 to 0.15 (p>0.1) | Instance count has higher explanatory power for degradation |
 
 ### Key Findings
-- MIP degradation follows a "slow decline then sudden collapse" shape. There is only a slight drop at 20-100 instances, but it worsens significantly after 200, making it generally unreliable above 1,000.
-- Instance order has little impact. After shuffling the same set of instances twice, degradation curves remains highly consistent, suggesting the issue is not simple positional bias.
-- Aggregation errors are critical. Even if instance-level predictions are correct, models may fail in the final count or sum; as instance count increases, the combination of instance errors and aggregation errors becomes more common.
-- "Long-context capability" cannot be equated with "MIP capability." A model might read long texts but fail to reliably repeat the same operation across hundreds or thousands of independent instances.
+- MIP degradation follows a "slow decline then sudden collapse" pattern. Models perform well at 20-100 instances but deteriorate after 200 and become unreliable beyond 1,000.
+- Instance order has little impact. Randomized shuffles yield highly consistent degradation curves, suggesting the issue is not simple positional bias.
+- Aggregation errors are critical. Even if instance-level predictions are correct, models fail at final counting or summation; combinations of instance and aggregation errors become common as counts increase.
+- "Long-context capability" is not equivalent to "MIP capability." A model may read long documents but fail to reliably execute the same operation across hundreds of independent instances.
 
 ## Highlights & Insights
-- The paper identifies a very realistic usage scenario: users may not write scripts or agent workflows but instead paste a large amount of data into an LLM for statistics. The paper proves this usage is unreliable at scale.
-- SIP filtering is a methodological highlight. It removes the interference of "sample difficulty," focusing the failure on MIP capability.
-- The decoupling experiment of instance count and context length is insightful. While many systems partition batches by token length, this paper suggests batch policies should also limit the number of instances.
-- The analysis of failure self-awareness is practical. Models rarely proactively say "I cannot handle this many items," which is dangerous for real users because errors appear as confident aggregated answers.
+- The paper addresses a highly realistic use case: users pasting raw data into an LLM for statistics without writing scripts. It proves this is unreliable at scale.
+- SIP filtering is a methodological highlight, isolating MIP capacity from general task performance.
+- The decoupling of instance count and context length is insightful. While many systems manage batches by token budget, this suggests batch policies must also restrict instance counts.
+- The analysis of failure self-awareness is practical. Models rarely admit "I can't process this many items," which is dangerous as errors often appear as confident aggregated answers.
 
 ## Limitations & Future Work
-- The paper focuses on diagnosis without validating specific mitigation strategies, such as automatic batching, tool calling, external counters, verification agents, or map-reduce style pipelines.
-- Tasks are primarily precise aggregation (e.g., counting, summation, category frequency), which may be more fragile than soft aggregation like summarization or trend analysis; more experiments are needed for open-ended analysis.
-- Prompt templates are fixed; there is no systematic study on whether stronger chain-of-thought, tabular output, JSON schema, step-by-step constraints, or self-check prompts can mitigate issues.
-- Despite noise lengthening and correlation analysis, instance count and context length remain difficult to separate completely in reality; future attention-level or hidden-state diagnostics are needed.
-- Experiments focus on English tasks and current models; cross-lingual MIP, ultra-long context models, and specially trained data agents still warrant evaluation.
+- The study is diagnostic and does not validate mitigation strategies like automated batching, tool usage, external counters, or map-reduce pipelines.
+- Tasks focused on exact aggregation (counting, summing) might be more fragile than "soft" aggregation like summarization; findings may need further validation for open-ended analysis.
+- Prompting was fixed; the effects of advanced CoT, JSON schemas, or self-check prompts were not explored.
+- Despite decoupling experiments, instance count and context length remain difficult to separate causally in practice; future work requires attention-level or hidden-state diagnostics.
+- The focus on English tasks and specific models suggests that cross-lingual MIP and specialized data agents warrant further evaluation.
 
 ## Related Work & Insights
-- **vs. Long-context benchmarks**: Long-context evaluation often focuses on finding evidence in long documents or cross-paragraph reasoning; this paper focuses on repetitive operations and aggregation across every instance, presenting different challenges.
-- **vs. Batch prompting**: Batch prompting focuses on merging a few queries to reduce costs; this paper pushes instance counts to 2,000, revealing the collapse zone during massive batch processing.
-- **vs. RAG**: RAG can answer using only relevant snippets, whereas MIP must traverse all instances; thus, a sufficiently long context window does not guarantee reliable MIP.
-- **Transferable Insights**: LLM data analysis products should manage token budget and instance budget separately, adopting chunked execution, programmatic aggregation, and result verification by default for large batch inputs rather than letting a single prompt handle everything.
+- **vs. Long-context benchmarks**: While long-context evaluations focus on finding evidence or cross-segment reasoning, this work focuses on repetitive operations across all instances.
+- **vs. Batch prompting**: Unlike batch prompting for cost reduction, this pushes instance counts to 2,000 to reveal the collapse thresholds of large-batch processing.
+- **vs. RAG**: RAG can succeed with few relevant snippets; MIP requires traversing every instance. Thus, a long context window does not guarantee reliable MIP.
+- **Transferable Insight**: LLM data analysis products should manage token and instance budgets separately, defaulting to partitioned execution and programmatic aggregation for large inputs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The problem definition and decoupling analysis have significant real-world value; the method is a systematic evaluation rather than a new algorithm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16 models, 8 tasks, levels of instance counts, and comprehensive analysis of failure types and context length.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear narrative and solid charts; some tables across pages in the PDF make detailed reading slightly cumbersome.
-- Value: ⭐⭐⭐⭐⭐ Direct guidance for long-context applications, data analysis agents, batch policies, and reliability evaluation.
+- Novelty: ⭐⭐⭐⭐☆ High practical value in problem definition and decoupling analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 16 models, 8 tasks, and 10 scales of instance counts.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear narrative and solid charts.
+- Value: ⭐⭐⭐⭐⭐ Directly informs long-context applications, data analysis agents, and reliability evaluation.
 
 <!-- RELATED:START -->
 
@@ -131,9 +123,9 @@ The key analysis compares failure types and the impact of context length. Result
 
 - [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
 - [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
 - [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
 
 </div>
 

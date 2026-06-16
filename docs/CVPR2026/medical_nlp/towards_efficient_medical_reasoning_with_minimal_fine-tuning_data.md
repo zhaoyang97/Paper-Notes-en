@@ -2,129 +2,140 @@
 title: >-
   [Paper Note] Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data
 description: >-
-  [CVPR 2026][Medical NLP][Data Selection] This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence to enable VLM language backbo…
+  [CVPR 2026][Medical NLP][SFT] This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence. This approach allows a VLM's language backbone to match full SFT performance using only 1% of curated data and exceed full-dataset training with 10% of the data.
 tags:
-  - "CVPR 2026"
-  - "Medical NLP"
-  - "Data Selection"
-  - "Medical Reasoning"
-  - "Large Language Models"
-  - "SFT"
-  - "Gradient Influence"
+  - CVPR 2026
+  - Medical NLP
+  - SFT
 date: 2026-05-08
-content_hash: 01a9d2b9644c8065
+content_hash: 3e1dbc7b802c45c7
 ---
-
 # Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2508.01450](https://arxiv.org/abs/2508.01450)  
 **Code**: [GitHub](https://github.com/mihara-bot/DIQ)  
-**Area**: Medical Imaging
+**Area**: Medical NLP  
 **Keywords**: Data Selection, Medical Reasoning, Large Language Models, SFT, Gradient Influence
 
 ## TL;DR
 
-This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence to enable VLM language backbones to match full-data SFT performance using only 1% of curated data, and to surpass full-data training with just 10%.
+This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence. This approach allows a VLM's language backbone to match full SFT performance using only 1% of curated data and exceed full-dataset training with 10% of the data.
 
 ## Background & Motivation
 
-The standard approach for adapting LLMs to medical reasoning tasks is supervised fine-tuning (SFT); however, existing practices suffer from several issues:
+Adapting LLMs to medical reasoning tasks typically involves Supervised Fine-Tuning (SFT), but current practices face several issues:
 
-- **Data Redundancy**: Large-scale datasets contain substantial low-quality or duplicated samples, incurring high computational costs with marginal performance gains.
-- **Limitations of Single-Dimension Selection**:
-    - Selecting by **difficulty** alone → retrieves overly noisy samples with weak gradient signals, leading to unstable training.
-    - Selecting by **gradient influence** alone → favors easily optimizable samples with shallow reasoning chains.
-- These two dimensions are in fundamental tension; neither alone is optimal.
+1.  **Data Redundancy**: Large-scale datasets contain numerous low-quality/redundant samples, leading to high computational costs with marginal performance gains.
+2.  **Limitations of Prior Work in Single-dimension Selection**:
+    *   Selection by **Difficulty** only: Picks samples with excessive noise or weak gradient signals, leading to unstable training.
+    *   Selection by **Gradient Influence** only: Tends to favor simple samples that are easy to optimize but have shallow reasoning chains.
+3.  There is a fundamental tension between these two dimensions; using either in isolation is suboptimal.
 
-Through pilot experiments on the FineMed dataset—training separately on four quadrants partitioned by difficulty and influence—the authors find that high-influence + low-difficulty ($\mathcal{Q}_2$) data yields better benchmark performance than low-influence + high-difficulty ($\mathcal{Q}_3$) data, yet produces lower reasoning quality. This confirms that achieving the best of both worlds requires samples that are simultaneously high-difficulty and high-influence.
+Through pilot experiments (training on four quadrants defined by difficulty and influence within the FineMed dataset), the authors discovered that $\mathcal{Q}_2$ data (high influence + low difficulty) yields better training results than $\mathcal{Q}_3$ data (low influence + high difficulty) but results in worse reasoning quality. This validates that achieving "the best of both worlds" requires samples that are simultaneously high-difficulty and high-influence.
 
 ## Method
 
 ### Overall Architecture
 
-DIQ projects each training sample into a two-dimensional space: (1) a **difficulty score**—model-agnostic, predicted by a BiomedBERT classifier on a 5-point Likert scale; and (2) an **influence score (Dot)**—model-dependent, computed as the inner product between a training sample's gradient and the mean gradient of the validation set. Data are partitioned into four quadrants along these two dimensions, and samples are selected in priority order $\mathcal{Q}_1 \to \mathcal{Q}_2 \to \mathcal{Q}_3 \to \mathcal{Q}_4$ until the target retention ratio is reached.
+DIQ projects each training sample into a two-dimensional space: (1) **Difficulty Score** — model-agnostic, predicted by a BiomedBERT classifier on a 5-level Likert scale; (2) **Influence Score (Dot)** — model-dependent, calculated via the dot product of the training sample gradient and the mean validation set gradient. Samples are partitioned into four quadrants based on these dimensions and selected according to the priority $\mathcal{Q}_1 \to \mathcal{Q}_2 \to \mathcal{Q}_3 \to \mathcal{Q}_4$ until the target retention ratio is met. Finally, LoRA fine-tuning is performed on the curated subset.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Training Pool D + Val Set"] --> B["Difficulty Estimation<br/>BiomedBERT 5-level Score D(z)"]
+    A --> C["Dot-Product Influence<br/>Sample Grad · Mean Val Grad"]
+    subgraph S["Quadrant Priority Selection"]
+        direction TB
+        D["2D Quadrant Partition<br/>Diff Threshold τ_d × Dot Median m_dot"] --> E["Select via Q1→Q2→Q3→Q4<br/>to Target Retention Ratio"]
+    end
+    B --> D
+    C --> D
+    S --> F["Curated Subset → LoRA Fine-Tuning"]
+```
 
 ### Key Designs
 
-1. **Difficulty Estimation**: A BiomedBERT classifier fine-tuned on multiple medical QA datasets evaluates difficulty across three dimensions: Knowledge, Reasoning, and Overall. One dimension is chosen as the scalar score $D(z) \triangleq D_\phi(z)$, with a percentile threshold $\tau_d$ used to partition samples into high/low difficulty. This score is model-agnostic and can be computed once and reused.
+**1. Difficulty Estimation: Distinguishing samples by reasoning depth using a model-agnostic score.**
 
-2. **Dot-Product Influence**: The influence of a training sample $z$ is defined as the inner product of its gradient with the mean validation gradient:
-$$\text{Dot}(z) \triangleq g(z; \hat{\boldsymbol{\theta}})^\top \bar{g}_{\text{val}}(\hat{\boldsymbol{\theta}})$$
-This represents a first-order approximation of the one-step reduction in mean validation loss:
-$$\Delta \bar{\ell}_{\text{val}} = -\eta \cdot \text{Dot}(z) + O(\eta^2)$$
-In practice, Johnson–Lindenstrauss random projection reduces gradient dimensionality to 4096, yielding complexity $O(|\mathcal{D}_{\text{val}}| + |\mathcal{D}|)$ without requiring Hessian computation.
+Selecting samples purely by influence favors simple problems that are easy to optimize but have shallow reasoning chains. Thus, an independent difficulty dimension is needed. This work utilizes a BiomedBERT classifier fine-tuned on multiple medical QA datasets to evaluate difficulty across three perspectives: Knowledge, Reasoning, and Overall. One perspective is taken as the scalar score $D(z) \triangleq D_\phi(z)$, and a percentile threshold $\tau_d$ groups samples into high/low difficulty. A key advantage is that this score is model-agnostic and can be reused across experiments without recomputation for different target models.
 
-3. **Quadrant-Priority Selection**: Data are partitioned into four quadrants using difficulty threshold $\tau_d$ and influence median $m_{\text{dot}}$. $\mathcal{Q}_1$ (high difficulty + high influence) receives the highest priority, as it encompasses complex clinical reasoning and strong gradient signals. Within each quadrant, samples are ranked by Dot in descending order, with difficulty used as a tiebreaker.
+**2. Dot-Product Influence: Approximating "how much a sample reduces validation loss" via gradient dot products.**
+
+Selecting purely by difficulty may include noisy samples with weak gradient signals. The influence dimension defines the value of a training sample $z$ as the dot product of its gradient and the mean validation gradient: $\text{Dot}(z) \triangleq g(z; \hat{\boldsymbol{\theta}})^\top \bar{g}_{\text{val}}(\hat{\boldsymbol{\theta}})$. Physically, this is a first-order approximation of the validation loss reduction from one step: $\Delta \bar{\ell}_{\text{val}} = -\eta \cdot \text{Dot}(z) + O(\eta^2)$. Implementation-wise, Johnson-Lindenstrauss random projection reduces the gradient to 4096 dimensions. The overall complexity is $O(|\mathcal{D}_{\text{val}}| + |\mathcal{D}|)$, which avoids Hessian computation and is much lighter than TracIn methods like LESS.
+
+**3. Quadrant Priority Selection: Prioritizing the "Difficult and Useful" quadrant.**
+
+Pilot experiments revealed that while $\mathcal{Q}_2$ (high influence + low difficulty) yields high benchmark scores, its reasoning quality is poor. Consequently, data is partitioned into four quadrants using the difficulty threshold $\tau_d$ and influence median $m_{\text{dot}}$. $\mathcal{Q}_1$ (high difficulty + high influence) is prioritized as it contains complex clinical reasoning paired with strong gradient signals. Within each quadrant, samples are ranked by Dot in descending order, with ties broken by descending difficulty. This joint 2D approach allows 1% of the data to approximate full SFT performance.
 
 ### Loss & Training
 
-- LoRA fine-tuning (rank=8, target modules QKV), learning rate $1 \times 10^{-4}$, cosine decay, 3 epochs.
-- Maximum context length: 8192 tokens.
-- Validation set: 20 randomly sampled examples per downstream task by default (180 total).
-- DIQ scoring is a one-time upfront cost reusable across experiments.
+*   Fine-tuning with LoRA (rank=8, target modules QKV), learning rate $1 \times 10^{-4}$, cosine decay, 3 epochs.
+*   Maximum context length of 8192 tokens.
+*   The validation set defaults to 20 samples randomly drawn from each downstream task (180 total).
+*   DIQ score computation is a one-time pre-processing cost that can be reused across experiments.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Fine-tuning Llama3.1-8B-Instruct on the Huatuo dataset; averages across 9 benchmarks:
+Fine-tuning Llama3.1-8B-Instruct on the Huatuo dataset, results averaged over 9 benchmarks:
 
-| Data Size | Method | AvgS ↑ | AvgC ↑ | AvgA ↑ |
-|-----------|--------|--------|--------|--------|
+| Data Vol. | Method | AvgS ↑ | AvgC ↑ | AvgA ↑ |
+| :--- | :--- | :--- | :--- | :--- |
 | Full (19k) | — | 54.77 | 37.77 | 43.44 |
 | 1% | Random | 51.31 | 33.47 | 39.42 |
 | 1% | LESS | 54.97 | 33.32 | 40.54 |
-| 1% | **DIQ** | **56.54** | **35.91** | **42.78** |
+| 1% | **DIQ (Ours)** | **56.54** | **35.91** | **42.78** |
 | 10% | Similarity | 54.13 | 35.53 | 41.73 |
-| 10% | **DIQ** | **58.11** | **37.00** | **44.04** |
+| 10% | **DIQ (Ours)** | **58.11** | **37.00** | **44.04** |
 
-**1% DIQ nearly matches full-data SFT (42.78 vs. 43.44); 10% DIQ surpasses it (44.04 vs. 43.44).**
+**1% DIQ nearly matches full SFT (42.78 vs 43.44), while 10% DIQ exceeds full SFT (44.04 vs 43.44).**
 
 ### Ablation Study
 
-| Selection Strategy | AvgA (1%) | AvgA (10%) | Notes |
-|--------------------|-----------|------------|-------|
-| Influence only | ~41.89 | ~42.45 | Biased toward easy samples |
+| Selection Strategy | AvgA (1%) | AvgA (10%) | Note |
+| :--- | :--- | :--- | :--- |
+| Influence only | ~41.89 | ~42.45 | Favors simple samples |
 | Reasoning only | ~41.89 | ~43.16 | Strongest single-dimension baseline |
 | Knowledge only | ~41.05 | ~42.36 | High single-dimension bias |
-| **DIQ (Full)** | **42.78** | **44.04** | Two-dimensional complementarity optimal |
+| **DIQ (Ours)** | **42.78** | **44.04** | Dualndimension complementarity is optimal |
 
 ### Key Findings
 
-- **Improved Clinical Reasoning Quality**: LLM-as-judge evaluation shows that data selected by DIQ-1% scores +0.80 higher on differential diagnosis (DDx), +0.35 on safety checks (SC), and +0.46 on evidence citation (EC) compared to the remaining data.
-- **Efficiency**: DIQ's computational cost is only 1/1.85 of a single full-data SFT run on Llama3.1-8B, and scores are reusable.
-- **Cross-Model Generalization**: Influence scores computed on Llama transfer effectively to the Qwen3 series, yielding gains in 6 of 9 settings.
-- **Compatibility with DPO**: 1% DIQ + DPO outperforms full-data SFT + DPO by 1.00 AvgA.
-- Validation sets of 360–450 samples suffice to stabilize influence rankings.
+*   **Improved Clinical Reasoning Quality**: LLM-as-judge evaluations show that DIQ-1% curated data scores higher than other data in differential diagnosis (DDx) by +0.80, safety checking (SC) by +0.35, and evidence citation (EC) by +0.46.
+*   **Efficiency Analysis**: The computational cost of DIQ is only 1/1.85 of a single full SFT run for Llama3.1-8B, and the scores are reusable.
+*   Cross-model generalization: Influence scores calculated on Llama remain effective when migrated to the Qwen3 series (gains in 6/9 scenarios).
+*   Compatibility with DPO: 1% DIQ + DPO achieves a higher AvgA (by 1.00) than full SFT + DPO.
+*   A validation set of 360-450 samples is sufficient to stabilize influence rankings.
 
 ## Highlights & Insights
 
-- **Strong Empirical Validation of "Less is More"**: The paper explicitly characterizes the tension between difficulty and influence in data selection and provides an actionable resolution.
-- The DIQ framework is simple and efficient: gradients are computed in a single forward/backward pass without requiring Hessian computation; random projection preserves ranking order.
-- A direct connection is established between data selection and clinical reasoning quality—DIQ improves not only benchmark scores but also reasoning alignment.
-- The quadrant-based selection strategy is intuitive and interpretable.
+*   **Strong Validation of "Less is More"**: Clearly reveals the tension between difficulty and influence in data selection and provides an actionable solution.
+*   The DIQ framework is simple and efficient: Uses a single forward/backward pass to calculate gradients without Hessians; random projections maintain rankings.
+*   Connects data selection with clinical reasoning quality: DIQ improves not just benchmark scores, but also reasoning alignment.
+*   The quadrant-based selection strategy is intuitive and interpretable.
 
 ## Limitations & Future Work
 
-- Influence scores are computed once prior to training and do not account for dynamic changes during the training process.
-- Experiments are limited to models with at most 32B parameters; performance on 70B+ models remains untested.
-- The task composition and distribution of the validation set may affect the quality of Dot scores.
-- Biases inherent in the difficulty classifier (BiomedBERT) may propagate to the selected data.
-- Despite the title referencing VLMs, the experiments predominantly involve pure-text LLM fine-tuning.
+*   Influence scores are calculated once before training and do not account for dynamic changes during the training process.
+*   Validated only on models $\le$ 32B; not tested on 70B+ models.
+*   The task composition and distribution of the validation set may affect the quality of Dot scores.
+*   Biases in the difficulty classifier (BiomedBERT) itself may propagate to selection results.
+*   Although the title mentions VLM, the actual experiments primarily focus on text-only LLM fine-tuning.
 
 ## Related Work & Insights
 
-- Compared to LESS (TracIn-based), DIQ is simpler and more efficient (no Hessian required) and additionally incorporates difficulty information.
-- The principle of prioritizing the "high difficulty + high influence" quadrant is generalizable to data selection in other domains.
-- Gradient inner products as a measure of sample value are concise and effective, with solid theoretical grounding via first-order Taylor expansion.
+*   Compared to LESS (TracIn-based), DIQ is simpler and more efficient (no Hessian required) and integrates difficulty information.
+*   The "High Difficulty + High Influence" quadrant priority concept can be generalized to data selection in other domains.
+*   Gradient dot products as a measure of sample value are concise and effective, supported by solid theory (first-order Taylor expansion).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Difficulty and influence have been studied independently; the two-dimensional quadrant selection framework is a novel contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 9 benchmarks, 6 datasets, multiple models, comprehensive ablations, and efficiency analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear logic, rich experiments, and motivation supported by pilot studies.
-- **Value**: ⭐⭐⭐⭐ — Highly practical for medical LLM fine-tuning, though the VLM component claimed in the title is insufficiently validated.
+*   Novelty: ⭐⭐⭐⭐ — While difficulty and influence have been studied, the 2D quadrant selection framework is a new contribution.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 9 benchmarks, 6 datasets, multiple models, comprehensive ablation, and efficiency analysis.
+*   Writing Quality: ⭐⭐⭐⭐ — Clear logic, rich experimentation, and motivations supported by pilot experiments.
+*   Value: ⭐⭐⭐⭐ — Highly practical for medical LLM fine-tuning, though the VLM component in the title is under-validated.
 
 <!-- RELATED:START -->
 
@@ -132,11 +143,11 @@ Fine-tuning Llama3.1-8B-Instruct on the Huatuo dataset; averages across 9 benchm
 
 ## Related Papers
 
-- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised RL Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[ACL 2026\] LinguIUTics at PsyDefDetect: Iterative Imbalance-Aware Fine-tuning of Qwen3-8B for Psychological Defense Mechanism Classification](../../ACL2026/medical_nlp/linguiutics_at_psydefdetect_iterative_imbalance-aware_fine-tuning_of_qwen3-8b_fo.md)
+- [\[ACL 2025\] CheXalign: Preference Fine-tuning in Chest X-ray Interpretation Models without Human Feedback](../../ACL2025/medical_nlp/chexalign_preference_finetuning.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](../../ACL2026/medical_nlp/dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
-- [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](../../ACL2026/medical_nlp/promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
 
 </div>
 

@@ -2,75 +2,78 @@
 title: >-
   [Paper Note] TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment
 description: >-
-  [CVPR2026][Interpretability][Table Recognition] This paper proposes the TDATR framework, which achieves end-to-end table recognition under limited annotation data through a "perceive-then-fuse" strategy and a structure-g…
+  [CVPR 2026][Interpretability][Paper Note] The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
 tags:
-  - "CVPR2026"
-  - "Interpretability"
-  - "Table Recognition"
-  - "End-to-End"
-  - "Detail-Aware Learning"
-  - "Cell Localization"
-  - "Visual-Language Alignment"
+  - CVPR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 9ace63e9db3f8b2a
+content_hash: 8e2868cb55f9b3ff
 ---
-
 # TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.22819](https://arxiv.org/abs/2603.22819)  
 **Code**: [github.com/Chunchunwumu/TDATR.git](https://github.com/Chunchunwumu/TDATR.git)  
-**Area**: Interpretability  
-**Keywords**: Table Recognition, End-to-End, Detail-Aware Learning, Cell Localization, Visual-Language Alignment
+**Area**: Explainability  
+**Keywords**: Table Recognition, End-to-End, Detail-Aware Learning, Cell Localization, Vision-Language Alignment
 
 ## TL;DR
-This paper proposes the TDATR framework, which achieves end-to-end table recognition under limited annotation data through a "perceive-then-fuse" strategy and a structure-guided cell localization module, attaining state-of-the-art performance across 7 benchmarks without dataset-specific fine-tuning.
+The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
 
 ## Background & Motivation
-Table Recognition (TR) is a core task in document analysis, requiring the conversion of table images into machine-readable formats such as HTML. Existing approaches fall into two main categories:
-- **Modular TR**: Models table structure (TSR) and content (TCR) separately, training them independently and integrating results via post-processing. This approach ignores the intrinsic dependencies between structure and content, leading to suboptimal integration and error accumulation.
-- **End-to-End TR**: Generates structured outputs in a unified manner, but heavily relies on large-scale TR-annotated data and exhibits poor generalization in data-limited scenarios. Moreover, most methods do not provide spatial correspondences at the cell level, limiting interpretability.
+Table Recognition (TR) is a core task in document analysis, requiring the conversion of table images into machine-readable formats like HTML. Existing methods are mainly divided into two categories:
+- **Modular TR**: Separately models table structure recognition (TSR) and table content recognition (TCR), followed by post-processing fusion. This ignores the inherent dependencies between structure and content, leading to suboptimal integration and error accumulation.
+- **End-to-End TR**: Generates structured output in a unified manner but relies heavily on large-scale TR annotated data, showing poor generalization in data-constrained scenarios and usually lacking cell spatial correspondences, which limits explainability.
 
-**Key Challenge**: Although end-to-end methods simplify the pipeline, the annotation cost for TR data is extremely high (requiring simultaneous annotation of both structure and content), causing existing methods to underperform on diverse real-world tables.
+**Key Challenge**: While end-to-end methods simplify the pipeline, the cost of TR data annotation is extremely high (requiring simultaneous annotation of structure and content), causing existing methods to perform poorly on diverse real-world tables.
 
-**Key Insight**: This paper decouples TR capability learning into two stages—"perceive" and "fuse"—first acquiring fine-grained table detail perception through multi-task pretraining, then learning to fuse with a small amount of TR data, while introducing structure-guided cell localization to enhance interpretability.
+**Key Insight**: This paper decouples the learning of TR capabilities into "perception" and "fusion" stages—first acquiring fine-grained table detail perception through multi-task pre-training, then learning fusion using a small amount of TR data, while introducing structure-guided cell localization to enhance explainability.
 
 ## Method
 
 ### Overall Architecture
-TDATR adopts an architecture consisting of a visual encoder (Swin Transformer), a multimodal language decoder, and a Structure-Guided Cell Localization (SGCL) module, trained in two stages following the "perceive-then-fuse" strategy.
+TDATR addresses the problem that while end-to-end TR is streamlined, it is highly dependent on expensive TR-specific annotations, leading to generalization collapse when data is limited and a lack of cell spatial coordinates. The solution is to decompose "learning to recognize tables" into two steps: **perceive**, then **fuse**. The pipeline consists of three parts: a vision encoder (Swin Transformer) to encode table images into multi-resolution features, a multi-modal language decoder to generate structured text under a unified language modeling paradigm, and a Structure-Guided Cell Localization (SGCL) module that "grows" precise coordinate boxes for each cell from the hidden states of the decoding process. Training follows a perceive-then-fuse two-stage approach: the first stage supplies various perception tasks on massive general documents, and the second stage uses a small amount of TR data to fuse the perceived details into end-to-end HTML output.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Table Image → Swin Vision Encoder<br/>+ Multi-modal Language Decoder"] --> B
+    subgraph B["Table Detail-Aware Learning (General Documents, Cheap)"]
+        direction TB
+        B1["Content Recognition<br/>Text Detection / Markdown Parsing"]
+        B2["Structure Understanding<br/>Cell / Spanning / Row-Col Detection"]
+    end
+    B --> C["SGCL Structure-Guided Cell Localization<br/>Hidden States as Anchors → Row-Col Mask<br/>→ DAB-DETR Regresses Precise Boxes"]
+    C --> D["Fusion Fine-tuning (Small TR Data)<br/>HTML Parsing Task Activates End-to-End Capability"]
+    D --> E["HTML Structure + Cell Coordinate Boxes"]
+```
 
 ### Key Designs
 
-1. **Table Detail-Aware Learning**:
+**1. Table Detail-Aware Learning: Pre-storing perception capabilities that usually require expensive TR annotations using cheap general document data**
 
-    - Two categories of pretraining tasks are designed within a unified language modeling paradigm:
-    - **Content Recognition Tasks**: Spatially ordered text detection, text detection with bounding box queries, and Markdown parsing — leveraging large-scale multi-source document data (web pages, papers, READMEs, etc.) to enhance OCR and layout understanding.
-    - **Structure Understanding Tasks**: Cell detection, spanning cell detection, row/column detection, and structure parsing — capturing table structure at both the cell level and the row/column level.
-    - **Design Motivation**: By pretraining on diverse document data, the model acquires robust structural and content perception capabilities without relying on large quantities of TR-specific annotated data.
+The bottleneck of end-to-end TR is annotation cost—simultaneously labeling structure and content is extremely expensive. This design avoids TR-specific data by designing two types of self-supervised/weakly supervised pre-training tasks under a unified language modeling paradigm, all sourced from large-scale multi-source documents (web pages, papers, READMEs, etc.). One category is **content recognition** tasks, including spatially ordered text detection, text detection with box queries, and Markdown parsing, aimed at honing OCR and layout understanding. The other is **structure understanding** tasks, including cell detection, spanning cell detection, row/column detection, and structure parsing, establishing perception of the table skeleton at both cell and row/column granularities. Thus, before seeing much TR annotation, the model is already familiar with details like "where the text is," "where cell boundaries are," and "which cells span multiple rows/columns." Subsequent small-scale TR data only needs to "trigger" how to assemble them into complete HTML, fundamentally shifting data requirements from scarce end-to-end annotations to accessible document data.
 
-2. **Structure-Guided Cell Localization (SGCL)**:
+**2. Structure-Guided Cell Localization (SGCL): Allowing coordinate boxes to grow directly from the TR decoding process, naturally aligned with output**
 
-    - Cell representations are extracted from hidden states across different layers of the language decoder and aggregated via learnable weights.
-    - For each cell, an initial representation $C$ is obtained by average pooling between the `<td` and `</td>` tokens.
-    - $C$ is projected into row/column feature spaces, and an adjacency matrix is computed via inner products to generate a structural mask: $M_{xy}^k = \mathbb{1}[\text{Sigmoid}(\langle C_x^k, C_y^k \rangle / \text{dim}(C^k)) > 0]$
-    - The structural mask guides bidirectional contextual attention to enhance $C \to C'$.
-    - Based on $C'$, an MLP regresses initial bounding boxes, which are then refined via DAB-DETR decoding layers using multi-resolution visual features $P'_3$ and $P'_4$.
-    - **Design Motivation**: Anchor points are initialized from TR hidden states, ensuring one-to-one correspondence with TR outputs and eliminating the need for post-processing and unstable bipartite matching.
+Modular methods rely on post-processing to align structure and content, while end-to-end methods often provide no coordinates at all, causing issues with both explainability and alignment. The key to SGCL is: instead of detecting cells separately, it reuses the hidden states of the language decoder as anchors. Specifically, it aggregates cell representations using learnable weights from different layers of decoder hidden states—for each cell, an initial representation $C$ is obtained by average pooling between the `<td` and `</td>` tokens. $C$ is then projected into row/column feature spaces, and adjacency relationships between cells are calculated using inner products, binarized into a structural mask:
 
-3. **Fusion Fine-Tuning Stage**:
+$$M_{xy}^k = \mathbb{1}\left[\text{Sigmoid}\left(\langle C_x^k, C_y^k \rangle / \text{dim}(C^k)\right) > 0\right]$$
 
-    - The model is trained on HTML table parsing tasks while simultaneously optimizing the SGCL module to predict precise cell coordinates.
-    - The model completes end-to-end TR by implicitly aggregating the table detail perception capabilities acquired in the previous stage.
+This mask guides a round of bidirectional contextual attention, enhancing $C$ into a structure-aware $C'$. Finally, an MLP regresses an initial box from $C'$, which is refined step-by-step using multi-resolution visual features $P'_3$, $P'_4$ via DAB-DETR decoding layers. The process works as follows: as the decoder emits the HTML sequence, every pair of `<td>...</td>` corresponds to a hidden state cluster. SGCL treats this as a "seed anchor" for that cell, cross-calibrating based on row/column relationships, then allowing visual features to pull the box to a pixel-level accurate position. Since the anchors are the hidden states of the TR output, the cell boxes and the generated sequence are naturally one-to-one—obviating post-processing and avoiding the training instability of bipartite (Hungarian) matching common in DETR-based systems.
+
+**3. Fusion Fine-tuning Stage: Using an HTML parsing task to "activate" the perception accumulated in the previous stage into end-to-end capability**
+
+The first stage builds up perception details but hasn't learned to "assemble them into a complete table." This stage uses an HTML table parsing task as supervision, letting the model predict precise coordinates for each cell via SGCL while generating structured sequences. At this point, the model no longer requires massive TR data but implicitly aggregates the previously learned text, layout, and row/column structure details to complete end-to-end TR—explaining why it achieves SOTA with significantly less fine-tuning data than baselines.
 
 ### Loss & Training
-Perception stage: All tasks use cross-entropy loss $L_{ce}$
+Perception Stage: All tasks use cross-entropy loss $L_{ce}$.
 
-Fusion stage: $L_f = \lambda_{ce} L_{ce} + \lambda_b L_b + \lambda_{iou} L_{iou} + \lambda_m L_m + \lambda_s L_s$
-- $L_b$: Cell regression loss; $L_{iou}$: IoU loss
-- $L_m$: Mask alignment loss (Mask-DINO style), enhancing alignment between $C'$ and image features
-- $L_s$: Structure-guided loss (BCE), optimizing row/column relation matrices
-- Weights: $\lambda_b=0.05, \lambda_{iou}=0.03, \lambda_m=0.03, \lambda_s=0.05, \lambda_{ce}=1.0$
+Fusion Stage: $L_f = \lambda_{ce} L_{ce} + \lambda_b L_b + \lambda_{iou} L_{iou} + \lambda_m L_m + \lambda_{s} L_s$
+- $L_b$: Cell regression loss; $L_{iou}$: IoU loss.
+- $L_m$: Mask alignment loss (Mask-DINO style), enhancing alignment between $C'$ and image features.
+- $L_s$: Structure guidance loss (BCE), optimizing the row-column relationship matrix.
+- Weights: $\lambda_b=0.05, \lambda_{iou}=0.03, \lambda_m=0.03, \lambda_s=0.05, \lambda_{ce}=1.0$.
 
 Each stage is trained for 3 epochs using 16×64GB 910B NPUs.
 
@@ -83,46 +86,46 @@ Each stage is trained for 3 epochs using 16×64GB 910B NPUs.
 | iFLYTAB-full | TEDS | 93.22 | 84.36 (DeepSeek-OCR) | +8.86 |
 | TabRecSet | TEDS | 92.70 | 70.70 (EDD) | +22.00 |
 | PubTables-1M | TEDS | 97.97 | 95.48 (Dolphin) | +2.49 |
-| PubTabNet | TEDS | Further gains reported with -ft variant | - | - |
+| PubTabNet | TEDS | -ft version provided for further gain | - | - |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| w/o Detail-Aware Learning | Significant performance drop | Validates the perceive-then-fuse strategy |
-| w/o SGCL | Increased TEDS-D | Structure-content alignment degrades |
-| TDATR-ft (additional fine-tuning on PubTabNet) | Gains in both TSR and TR | Confirms benefits of additional data |
+| Without Detail-Aware Learning | Significant performance drop | Validates perceive-then-fuse strategy |
+| Without SGCL | TEDS-D increases | Structure-content alignment degrades |
+| TDATR-ft (Extra fine-tuning on PubTabNet) | Both TSR/TR improve | Confirms benefits of data volume |
 
 ### Key Findings
-- The TSR performance of end-to-end TR surpasses that of specialist TSR models, demonstrating that content recognition positively promotes structural recognition.
-- State-of-the-art results are achieved using far fewer fine-tuning data than baselines, validating the effectiveness of the decoupled learning strategy.
-- TEDS-Delta (TEDS − TEDS_S) is substantially better than modular methods, indicating that the end-to-end approach avoids post-processing error accumulation.
+- End-to-end TR's TSR performance exceeds expert TSR models, proving content recognition positively promotes structure recognition.
+- SOTA results are achieved using far less fine-tuning data than baselines, validating the effectiveness of the decoupled learning strategy.
+- TEDS-Delta (TEDS - TEDS\_S) is significantly better than modular methods, indicating end-to-end avoids post-processing error accumulation.
 
 ## Highlights & Insights
-- The "perceive-then-fuse" paradigm is an elegant decoupling strategy: it transforms the hard-to-obtain end-to-end TR annotation requirement into more accessible document data pretraining combined with lightweight TR fine-tuning.
-- The SGCL module is carefully designed, using TR decoder hidden states as anchor initializations for DAB-DETR, avoiding the training instability associated with Hungarian matching.
-- The newly introduced dataset iFLYTAB-full fills a gap in evaluation benchmarks for Chinese real-world table recognition.
+- "Perceive-then-fuse" is an elegant decoupling idea: transforming the hard-to-get end-to-end TR annotation requirement into more accessible document data pre-training + a small amount of TR fine-tuning.
+- The SGCL module is cleverly designed, using hidden states from the TR decoding process as anchor initializations for DAB-DETR, avoiding the training instability of Hungarian matching.
+- The new iFLYTAB-full dataset fills a void in the evaluation of Chinese real-world table recognition.
 
 ## Limitations & Future Work
-- TSR performance on digital tables such as PubTabNet is marginally lower than the best specialist models, as the full TR sequence is approximately twice the length of TSR sequences, increasing generation difficulty.
-- The model has 600M parameters; while smaller than large OCR VLMs (e.g., Qwen2.5-VL-72B), it remains relatively large.
-- Integration with LLM backbones has not been explored, which may limit understanding of complex document-level context.
+- TSR on digital tables (e.g., PubTabNet) is slightly inferior to the best expert models because complete TR sequences are about twice as long as TSR sequences, increasing generation difficulty.
+- With 600M parameters, the model is smaller than large OCR VLMs (e.g., Qwen2.5-VL-72B) but still relatively large.
+- Integration with LLM backbones has not been explored, which may limit understanding of complex document contexts.
 
 ## Related Work & Insights
-- Dolphin is a comparable end-to-end TR method; TDATR surpasses it by over 2.5% TEDS under the same modeling paradigm.
-- Unlike multi-decoder methods such as OmniParser, TDATR employs a single decoder to unify structure and content generation.
-- The structure-guided localization idea is generalizable to other document understanding tasks requiring layout-content alignment.
+- Dolphin is a similar end-to-end TR method; TDATR exceeds it by 2.5%+ TEDS under the same modeling paradigm.
+- Unlike multi-decoder methods like OmniParser, TDATR uses a single decoder to unify structure and content generation.
+- The concept of structure-guided localization can be extended to other document understanding tasks requiring layout-content alignment.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The perceive-then-fuse strategy and SGCL module design are novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Seven benchmarks, no dataset-specific fine-tuning, comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed method descriptions.
-- Value: ⭐⭐⭐⭐ Highly practical for table recognition under data-limited conditions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks, no dataset-specific fine-tuning, complete ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed method description.
+- Value: ⭐⭐⭐⭐ Strong practicality for table recognition under data constraints.
 
-## Supplementary Notes
-- The visual encoder is Swin Transformer (300M) and the language decoder is a Transformer (300M), totaling 600M parameters.
-- The SGCL uses $L_d=3$ DAB-DETR decoding layers; the bidirectional enhancement branch consists of 2 self-attention blocks and 1 cross-attention block.
-- Maximum decoding length is 4096 tokens; the longer side of input images does not exceed 2048 pixels.
+## Additional Notes
+- Vision encoder uses Swin Transformer (300M), language decoder uses Transformer (300M), totaling 600M parameters.
+- In SGCL, the number of DAB-DETR decoding layers $L_d=3$, and the bidirectional enhancement branch includes 2 self-attention blocks and 1 cross-attention block.
+- Maximum decoding length is 4096 tokens, with the long side of input images not exceeding 2048 pixels.
 
 <!-- RELATED:START -->
 
@@ -133,8 +136,8 @@ Each stage is trained for 3 epochs using 16×64GB 910B NPUs.
 - [\[CVPR 2026\] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](../../NeurIPS2025/interpretability/table_as_a_modality_for_large_language_models.md)
 - [\[ICLR 2026\] Stress-Testing Alignment Audits with Prompt-Level Strategic Deception](../../ICLR2026/interpretability/stress-testing_alignment_audits_with_prompt-level_strategic_deception.md)
-- [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
-- [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
+- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
+- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
 
 </div>
 

@@ -2,76 +2,86 @@
 title: >-
   [Paper Note] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts
 description: >-
-  [ICML 2026][Self-Supervised Learning][Class-Incremental Learning] The authors propose CaRE: inserting a **bi-level routing MoE (BR-MoE)** into each ViT block—first…
+  [ICML 2026][Self-Supervised Learning][Bi-Level Routing] Ours proposes CaRE, which embeds a **Bi-Level Routing MoE (BR-MoE)** into each ViT block. It first employs "class probers" to select Top-M relevant task routers based on entropy, then activates Top-K task experts within those routers alongside a shared EMA expert. This design allows the model to retain old knowledge wh
 tags:
-  - "ICML 2026"
-  - "Self-Supervised Learning"
-  - "Class-Incremental Learning"
-  - "Bi-Level Routing"
-  - "Mixture-of-Experts"
-  - "Long Task Sequences"
-  - "OmniBenchmark-1K"
+  - ICML 2026
+  - Self-Supervised Learning
+  - Bi-Level Routing
+  - Mixture-of-Experts
+  - OmniBenchmark-1K
 date: 2026-05-08
-content_hash: b28097c27ee428b0
+content_hash: 233af703aa372f06
 ---
-
 # Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.03473](https://arxiv.org/abs/2602.03473)  
-**Code**: https://github.com/LMMMEng/CaRE (available)  
+**Code**: https://github.com/LMMMEng/CaRE (Available)  
 **Area**: Continual Learning / Class-Incremental Learning / MoE / Parameter-Efficient Fine-Tuning  
 **Keywords**: Class-Incremental Learning, Bi-Level Routing, Mixture-of-Experts, Long Task Sequences, OmniBenchmark-1K
 
 ## TL;DR
-The authors propose CaRE: inserting a **bi-level routing MoE (BR-MoE)** into each ViT block—first, a "class recognizer" selects the Top-M relevant task routers based on entropy, then each router activates its Top-K task experts and adds a shared EMA expert. This enables retention of old knowledge and continual absorption of new classes even with 300+ tasks, filling the gap in "long-sequence CIL" (and releasing the 1000-class OmniBenchmark-1K benchmark).
+Ours proposes CaRE, which embeds a **Bi-Level Routing MoE (BR-MoE)** into each ViT block. It first employs "class probers" to select Top-M relevant task routers based on entropy, then activates Top-K task experts within those routers alongside a shared EMA expert. This design allows the model to retain old knowledge while continuously incorporating new classes even in sequences exceeding 300+ tasks. Additionally, the authors release the OmniBenchmark-1K, a 1000-class benchmark for long-sequence CIL.
 
 ## Background & Motivation
 
-**Background**: Class-incremental learning (CIL) based on pre-trained models (PTMs) is a hot topic, with two main approaches—prompt-based (L2P, DualPrompt, CODA-Prompt) and adapter-based (EASE, APER, SEMA, MOS, TUNA, MIN). The latter typically trains a task-specific adapter for each task, activating the appropriate one during inference.
+**Background**: Class-incremental learning (CIL) based on Pre-trained Models (PTM) has become a prominent research direction, primarily divided into prompt-based (L2P, DualPrompt, CODA-Prompt) and adapter-based (EASE, APER, SEMA, MOS, TUNA, MIN) approaches. The latter typically trains a task-specific adapter for each task and activates the appropriate ones during inference.
 
-**Limitations of Prior Work**: (1) A single adapter is only discriminative for its trained classes—when the task sequence is long, distinguishing related classes across tasks (e.g., animal subclasses in different tasks) becomes poor; (2) Existing methods either use "global aggregation of all historical adapters" (coarse-grained) or a single adapter, lacking fine-grained retrieval of supplementary knowledge from related tasks; (3) Most CIL work is evaluated on 5–20 tasks, and many methods collapse on long sequences (100+ tasks)—yet there is no benchmark that supports 100+ tasks (CIFAR-100 split into 100 tasks leaves only 1 class per task, and ImageNet overlaps with PTM pre-training).
+**Limitations of Prior Work**: (1) Individual adapters are discriminative only for the classes they were trained on; as task sequences lengthen, discrimination across related classes from different tasks (e.g., animal sub-classes in different tasks) degrades. (2) Existing methods either use coarse-grained "global aggregation of all historical adapters" or a single adapter, failing to retrieve fine-grained supplementary knowledge from related historical tasks. (3) Most CIL benchmarks evaluate only 5–20 tasks. Performance often collapses under ultra-long sequences (hundreds of tasks), and no standard benchmark exists for 100+ tasks (CIFAR-100 becomes too sparse if split into 100 tasks, while ImageNet overlaps with PTM pre-training data).
 
-**Key Challenge**: To achieve "discriminative and integrative" feature representations, it is necessary to (a) know which tasks the current sample may belong to, (b) fuse the adapters of these tasks at each layer in a fine-grained manner, and (c) retain a "cross-task general" shared knowledge. While each property has been partially addressed, what is missing is a unified architecture that enables **per-layer "router selection then expert selection" bi-level decisions**.
+**Key Challenge**: To achieve a feature representation that is both discriminative and comprehensive, the system must: (a) identify which tasks a sample might belong to, (b) fuse adapter knowledge from these tasks at a fine-grained level within each layer, and (c) maintain a shared global knowledge base. While individual components have been explored, a unified architecture capable of **"route-then-expert" bi-level decision-making** at every layer is missing.
 
-**Goal**: (i) Design a PEFT module for per-layer fine-grained cross-task knowledge retrieval; (ii) Make it scalable to 300+ tasks; (iii) Provide a benchmark that truly tests long-sequence scalability.
+**Goal**: (i) Design a PEFT module capable of fine-grained cross-task knowledge retrieval at each layer; (ii) Ensure scalability to 300+ tasks; (iii) Provide a benchmark that rigorously tests long-sequence scalability.
 
-**Key Insight**: The authors decompose the MoE router into two levels—coarse (by task) and fine (by adapter expert), using the "entropy of the task-specific classification head" as a signal for "how confident this sample belongs to the task." This is crucial: low entropy = high confidence = task relevance, and is more robust than direct "task ID prediction."
+**Key Insight**: The authors decompose the MoE router into two levels: coarse (task-level) and fine (adapter expert-level). They use the "entropy of task-specific classification heads" as a signal for task relevance. This observation is crucial: low entropy indicates high confidence and relevance, proving more robust than direct task identity prediction.
 
-**Core Idea**: Inject a **(class recognizer $C_t$, router $R_t$, expert $E_t$) triplet** into each ViT block, adding a new triplet for each new task. During inference, select Top-M routers by entropy, then for each router select Top-K experts via gating, and add a shared EMA-maintained expert as a fallback—bi-level routing replaces the "global aggregation/single adapter" dichotomy.
+**Core Idea**: For each ViT block, injected a **triplet of (class prober $C_t$, router $R_t$, expert $E_t$)** for every new task. During inference, Top-M routers are selected by entropy, and each selects Top-K experts via gating, combined with an EMA-maintained shared expert. This bi-level routing replaces the binary choice between global aggregation and single-adapter designs.
 
 ## Method
 
 ### Overall Architecture
-The backbone is a frozen ViT-B/16 (pre-trained on ImageNet-21K). Each Transformer block is replaced as follows: $z_a = \text{MHSA}(\text{Norm}_1(z)) + z$, $z_f = \text{FFN}(\text{Norm}_2(z_a)) + z_a$, $z' = \text{BR-MoE}(z_a) + z_f$. For each new task $t$ in incremental learning: (1) add a new triplet $(C_t, R_t, E_t)$ to the BR-MoE in each block; (2) during training, only update the new triplet and the shared expert $\bar{E}$ (all other parameters are frozen); (3) during inference, dynamically aggregate outputs per layer via the bi-level process. Final classification uses a concatenated angular margin head $W_t = [w^1, \dots, w^t]$, with class logits computed by cosine similarity $\cos(\theta_i^j) = \frac{w_j^t \cdot \phi^t(x_i^t)}{\|w_j^t\| \|\phi^t(x_i^t)\|}$ and a scaling factor $\tau = 20$.
+The backbone is a frozen ViT-B/16 (ImageNet-21K pre-trained). Each Transformer block is modified: $z_a = \text{MHSA}(\text{Norm}_1(z)) + z$, $z_f = \text{FFN}(\text{Norm}_2(z_a)) + z_a$, and $z' = \text{BR-MoE}(z_a) + z_f$. For each new task $t$: (1) A new triplet $(C_t, R_t, E_t)$ is added to the BR-MoE of each block; (2) Only the new triplet and the shared expert $\bar{E}$ are updated during training (all other parameters are frozen); (3) During inference, outputs are dynamically aggregated through a bi-level process. The final classification uses a concatenated angular margin head $W_t = [w^1, \dots, w^t]$, and class logits are calculated via cosine similarity $\cos(\theta_i^j) = \frac{w_j^t \cdot \phi^t(x_i^t)}{\|w_j^t\| \|\phi^t(x_i^t)\|}$ with a scaling factor $\tau = 20$. The workflow within each block is as follows:
+
+```mermaid
+flowchart TD
+    A["[CLS] token from frozen ViT block output z_a"] --> B["Dynamic Router Selection:<br/>Compute entropy H_t from class probers C_t<br/>Select Top-M routers by ascending entropy"]
+    subgraph G2["Dynamic Expert Routing + Shared EMA Expert"]
+        direction TB
+        C["Selected router R_t generates gating scores<br/>Weighted sum of Top-K experts yields z_r"]
+        D["Shared EMA Expert Ē(z_a)<br/>Universal cross-task backup"]
+    end
+    B --> C
+    A --> D
+    C --> E["BR-MoE output z_o = z_r + Ē(z_a)<br/>Add back to ViT block path"]
+    D --> E
+    B -.->|Training Supervision| F["Layer-wise Prober Supervision<br/>L_cp = L_cls + KL Distillation<br/>Ensures reliable shallow entropy signals"]
+```
 
 ### Key Designs
 
-1. **Bi-Level Routing: Dynamic Router Selection**:
+**1. Dynamic Router Selection: Selecting Top-M Relevant Tasks via Entropy**
 
-    - **Function**: At each layer, select the Top-M most relevant historical task routers for the input (not all or just the latest).
-    - **Mechanism**: Feed the [CLS] token of $z_a$ to each task's class recognizer $C_t = \rho^t \in \mathbb{R}^{d \times |G^t|}$ to obtain the class distribution $s_t = \text{Softmax}(C_t(z_a^{[CLS]}))$ for task $t$; compute entropy $\mathcal{H}_t = -\sum_j s_t^{(j)} \log s_t^{(j)}$; select Top-M routers $R_t$ with lowest entropy. Low entropy means "this classifier is confident about the input," indicating likely task relevance—thus, using entropy instead of task ID prediction is more robust to train-test distribution shift. During training, always include the latest task router $R_T$ (to ensure new task learning); during inference, all routers are selected dynamically by entropy.
-    - **Design Motivation**: Using a single "task classifier" to select the most relevant task is brittle (prone to errors), while aggregating all historical routers dilutes relevance; entropy ranking + Top-M balances robustness and focus, and allows independent local decisions per layer.
+In long sequences, task-specific adapters lose discriminative power outside their local classes. BR-MoE's first level determines which tasks to "listen" to. It feeds the $z_a^{[CLS]}$ token into class probers $C_t = \rho^t \in \mathbb{R}^{d \times |G^t|}$ to get a distribution $s_t = \text{Softmax}(C_t(z_a^{[CLS]}))$. Relevance is measured by entropy $\mathcal{H}_t = -\sum_j s_t^{(j)} \log s_t^{(j)}$, and the Top-M routers $R_t$ with the lowest entropy are selected. 
 
-2. **Bi-Level Routing: Dynamic Expert Routing + Shared EMA Expert**:
+Using entropy is more robust than task ID prediction because low entry implies the classification head is confident about the input. This localized decision at each layer is less sensitive to distribution shifts than a global task classifier. During training, the router $R_T$ for the current task is always included to ensure learning.
 
-    - **Function**: Within each of the selected M routers, further select Top-K adapter experts, and add a cross-task shared expert.
-    - **Mechanism**: Each selected router $R_t$ is a linear layer $\eta^t \in \mathbb{R}^{d \times t}$ + softmax, producing $t$ gating scores for $z_a^{[CLS]}$, from which Top-K are selected and softmax-normalized to $\{a_i\}$. The corresponding adapters $E_i$ are weighted and summed, e.g., for M=2, K=2: $z_1 = a_2 E_2(z_a) + a_t E_t(z_a)$, $z_2 = b_{T-1} E_{T-1}(z_a) + b_T E_T(z_a)$, $z_r = z_1 + z_2$. A shared expert $\bar{E}$ is added—fully trained on the first task, and for subsequent tasks maintained by EMA $\delta_s \leftarrow \mu \delta_s + (1 - \mu)\delta_t$ ($\mu = 0.999$). The final BR-MoE output is $z_o = z_r + \bar{E}(z_a)$. Default M=2, K=3; regular adapters use 16-d bottleneck, shared adapter uses 64-d.
-    - **Design Motivation**: Task-level routing alone is not fine enough; within each task, adapters must further select "the most relevant few." The shared expert provides a cross-task prior, preventing samples from being "missed" by all task-specific adapters (inspired by DeepSeek-MoE).
+**2. Dynamic Expert Routing + Shared EMA Expert: Fine-grained Adapter Selection and Universal Knowledge**
 
-3. **Per-Layer Class Recognizer Supervision**:
+Within each selected task router $R_t$, a linear layer $\eta^t \in \mathbb{R}^{d \times t}$ plus softmax generates $t$ gating scores for $z_a^{[CLS]}$. The Top-K experts are selected and weighted by these scores. For example, with M=2 and K=2, $z_1 = a_2 E_2(z_a) + a_t E_t(z_a)$ and $z_2 = b_{T-1} E_{T-1}(z_a) + b_T E_T(z_a)$, resulting in $z_r = z_1 + z_2$.
 
-    - **Function**: Ensures that class recognizers in intermediate layers produce reliable entropy signals, avoiding misrouting due to weak semantic features in shallow layers.
-    - **Mechanism**: Add $\mathcal{L}_{cp}^\ell = \mathcal{L}_{cls}^\ell + \mathcal{L}_{KL}^\ell$ to each layer's $C_t$, where $\mathcal{L}_{cls}^\ell$ is the angular margin classification loss for $C_t$ at that layer, and $\mathcal{L}_{KL}^\ell$ is the KL divergence between $s_t$ and the final layer's softmax output $p_t$, encouraging shallow class recognizers to mimic the deep semantic distribution. The total objective is $\mathcal{L} = \mathcal{L}_{cls} + \lambda \frac{1}{L}\sum_\ell \mathcal{L}_{cp}^\ell$ ($\lambda = 1$).
-    - **Design Motivation**: BR-MoE makes routing decisions independently at each block, which requires $C_t$ at that layer to produce entropy reflecting task relevance; if shallow semantics are insufficient, entropy is meaningless. KL distillation aligns each layer with the final decision, making bi-level routing effective even in shallow layers.
+A shared expert $\bar{E}$ is added to this sum. It is fully trained on the first task and thereafter updated via EMA $\delta_s \leftarrow \mu \delta_s + (1 - \mu)\delta_t$ ($\mu = 0.999$). The final output is $z_o = z_r + \bar{E}(z_a)$. This shared component handles universal cross-task features, providing a safety net when dynamic routing fails to find a perfect match.
+
+**3. Layer-wise Class Prober Supervision: Aligning Shallow Entropy via Distillation**
+
+For BR-MoE to work in shallow blocks, class probers $C_t$ must produce meaningful entropy despite weak semantic features. The model applies $\mathcal{L}_{cp}^\ell = \mathcal{L}_{cls}^\ell + \mathcal{L}_{KL}^\ell$ to each layer $\ell$. $\mathcal{L}_{cls}^\ell$ is the angular margin loss, and $\mathcal{L}_{KL}^\ell$ encourages the shallow distribution $s_t$ to align with the final layer's output $p_t$. This ensures that entropy-based routing reflects the final decision logic even in early layers.
 
 ### Loss & Training
-When a new task $t$ arrives, all historical parameters are frozen; only the current layer's $(C_t, R_t, E_t)$ and the shared expert $\bar{E}$ are trained. Optimizer: SGD (momentum=0.9, weight decay=5e-4), batch=16, 20 epochs per task, lr=0.01 with cosine annealing. The latest router $R_T$ is always activated at each layer during training (to prevent cold start).
+When task $t$ arrives, historical parameters are frozen. Only current triplets $(C_t, R_t, E_t)$ and the shared expert $\bar{E}$ are trained. Optimizer: SGD (momentum=0.9, weight decay=5e-4), batch=16, 20 epochs per task, lr=0.01 with cosine annealing.
 
 ## Key Experimental Results
 
 ### Main Results
-On the newly proposed OmniBenchmark-1K (1000 classes / 190k images / 21 vision domains) long-sequence benchmark, metrics are $\bar{\mathcal{A}}$ (mean accuracy) / $\mathcal{A}_B$ (final accuracy):
+Comparison on the new OmniBenchmark-1K (1000 classes / 190k images / 21 domains). Metrics: $\bar{\mathcal{A}}$ (Average accuracy) / $\mathcal{A}_B$ (Final accuracy).
 
 | Method | 100 tasks (B0 Inc10) $\mathcal{A}_B$ | 200 tasks (B0 Inc5) $\mathcal{A}_B$ | 151 tasks (B100 Inc6) $\mathcal{A}_B$ | 301 tasks (B100 Inc3) $\mathcal{A}_B$ |
 |---|---|---|---|---|
@@ -81,53 +91,50 @@ On the newly proposed OmniBenchmark-1K (1000 classes / 190k images / 21 vision d
 | TUNA | 60.04 | 59.14 | 62.77 | 62.21 |
 | MOS | 64.27 | 63.51 | 65.20 | 64.37 |
 | MIN | 63.60 | 62.50 | 60.33 | 59.63 |
-| **CaRE** | **68.27** | **67.46** | **69.01** | **68.51** |
+| **Ours (CaRE)** | **68.27** | **67.46** | **69.01** | **68.51** |
 
-On the longest sequence (301 tasks), CaRE outperforms MOS by 4 points and is dozens of points ahead of prompt-based methods (which collapse to 9% accuracy). On short-sequence CIL (CIFAR-100/ObjectNet/ImageNet-R/-A/VTAB, 5–20 tasks), CaRE remains SOTA in most cases; e.g., on ImageNet-A with 20 tasks, $\mathcal{A}_B$ = 59.91, 1.2 points higher than TUNA.
+On the longest sequence (301 tasks), CaRE outperforms MOS by 4% and prompt-based methods by nearly 60%. In short-sequence CIL (5-20 tasks on ImageNet-R/A), CaRE remains SOTA.
 
 ### Ablation Study
 
-| Configuration | Key Metric Change (OmniBenchmark-1K) | Notes |
+| Configuration | Metric Change (OmniBenchmark-1K) | Description |
 |---|---|---|
-| Full CaRE | 67.46 | Complete model |
-| Single router (M=1) | Significant drop | Validates necessity of "multiple routers" |
-| No shared expert | Drop | EMA shared expert provides cross-task knowledge; without it, all samples fall to task-specific adapters only |
-| Replace entropy-based router with single task classifier | Drop | Validates robustness of entropy over "hard task ID prediction" |
-| Remove intermediate layer KL supervision | Drop | Shallow entropy signals become unreliable, bi-level routing fails |
+| Full CaRE | 67.46 | Baseline |
+| Single router (M=1) | Significant Drop | Necessity of activating multiple routers |
+| No Shared Expert | Drop | EMA expert captures cross-task knowledge |
+| Hard Task ID Task Classification | Drop | Entropy-based selection is more robust than hard ID prediction |
+| No KL Supervision | Drop | Shallow layer entropy becomes unreliable |
 
 ### Key Findings
-- **bi-level routing > single routing**: Selecting Top-M tasks per layer, then Top-K experts per task, is much better than "gating all adapters at once."
-- **Entropy > task ID prediction**: Entropy reflects the classifier's overall uncertainty about the sample, more stable than hard argmax.
-- **Shared expert as fallback**: Especially in late stages of long sequences, new task samples may not match any historical adapter; the EMA shared expert provides basic features and prevents collapse.
-- **MIN/SEMA/MoAL and similar methods perform close to CaRE on short sequences but degrade severely on 100+ tasks**—long sequences are the real test for PTM-based CIL.
+- **Bi-level routing > Single routing**: Selecting Top-M tasks then Top-K experts is superior to performing a single gating over all available adapters.
+- **Entropy > Task ID Prediction**: Entropy reflects overall uncertainty, providing a more stable relevance metric than hard argmax.
+- **Shared Expert as a Safety Net**: In long sequences, the EMA-updated shared expert provides foundational features even when task-specific adapters do not match perfectly.
+- **Scalability**: While many methods match CaRE on short sequences, they degrade drastically at 100+ tasks, highlighting the importance of long-sequence evaluation.
 
 ## Highlights & Insights
-- **Layered MoE routing**: Coarse-fine two-level routers, each with clear semantics (task-level / expert-level); this "cluster by task, then select experts within" approach is naturally suited for long-sequence CIL and easily transferable to other scenarios requiring "coarse retrieval then fine combination" (e.g., retrieval-augmented generation: select document set, then select chunk).
-- **Entropy as routing signal**: Using the entropy of each task-specific classifier as a "relevance measure" avoids the brittleness of training a "global task classifier"—this design, replacing "explicit task ID" with "model confidence," is clever and can inspire other modular systems.
-- **OmniBenchmark-1K is a real contribution**: The CL community has long lacked a benchmark that can challenge all methods; this 1000-class, 21-domain, PTM-leak-free dataset fills the gap and will become the standard for long-sequence CIL evaluation.
-- **Per-layer local decisions**: Different feature abstraction levels at different depths; BR-MoE allows each layer to independently select routers/experts based on its own features, more targeted than "global aggregation at the final output."
+- **Hierarchical MoE Routing**: The coarse-to-fine routing strategy aligns naturally with CIL by first clustering task types and then specializing within them. This is highly applicable to RAG scenarios.
+- **Confidence-based Selection**: Using prober confidence (entropy) instead of explicit task prediction avoids the fragility of global task classifiers.
+- **OmniBenchmark-1K Contribution**: This 1000-class, 21-domain benchmark without PTM leakage fills a gap in the CIL community and will likely become a standard for long-sequence evaluation.
+- **Layer-wise Decision Independence**: Allowing different layers to make localized routing decisions based on their specific abstraction level proves more effective than a single global aggregation.
 
 ## Limitations & Future Work
-- Each new task adds a $(C_t, R_t, E_t)$ triplet, so parameters grow linearly. With 301 tasks, each layer has 301 adapters—total parameters are not huge, but inference requires traversing all $C_t$ to compute entropy, so **computational complexity grows linearly with task count**.
-- Does not address task-free CL (fuzzy task boundaries)—CaRE assumes clear task boundaries and independent triplets; streaming, boundary-free scenarios would need extra task detection mechanisms.
-- Shared expert EMA $\mu = 0.999$ is fixed, not adaptive; with drastic task distribution shifts, EMA may lag.
-- No formal analysis of task forgetting, e.g., which classes are most easily forgotten, how adapter weights evolve in routing, etc.
-- Mainly validated on ViT; transferability to CNNs or LLM-style decoders is unknown.
+- **Linear Computation Growth**: Since $C_t$ must be computed for all historical tasks to find Top-M, the inference cost scales linearly with the number of tasks.
+- **Task Boundaries**: Ours assumes clear task boundaries to train triplets; extension to task-free CL would require an integrated task boundary detection mechanism.
+- **Static EMA**: The fixed $\mu = 0.999$ for the EMA expert might not adapt quickly enough to drastic domain shifts.
+- **Decoder/CNN Compatibility**: Validation was primarily on ViT; applicability to LLM-style decoders remains to be explored.
 
 ## Related Work & Insights
-- **vs MOS / TUNA / MIN**: These SOTA adapter-based methods perform well on short/medium sequences but degrade on long ones; CaRE's key difference is that bi-level routing decouples router and expert selection, enabling stable scaling to 300+ tasks.
-- **vs MoE-Adapter / SEMA**: MoE-Adapter also uses router + expert, but only single-level routing; SEMA automatically decides whether to add a new adapter. CaRE's two-level routing + shared expert enables finer-grained knowledge retrieval.
-- **vs DeepSeek-MoE**: The shared expert design is directly inspired by DeepSeek-MoE, but adapted to CIL, with EMA maintenance as a new engineering detail.
-- **vs prompt-based (L2P/DualPrompt)**: Prompt-based methods collapse on long sequences (300 tasks retain only 9% accuracy), indicating prompt pool capacity is insufficient for 100+ tasks; adapter+MoE is a more suitable approach.
+- **vs MOS / TUNA / MIN**: These adapter-based methods are strong on short sequences but suffer under 100+ tasks. CaRE's bi-level routing maintains stability through decoupled knowledge retrieval.
+- **vs DeepSeek-MoE**: The shared expert concept is inspired by DeepSeek-MoE, adapted here with EMA updates for the incremental setting.
+- **vs Prompt-based Methods**: The collapse of L2P/DualPrompt on 301 tasks suggests that prompt pools lack sufficient information capacity for hundreds of tasks, making adapter+MoE a more viable path.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of bi-level routing + entropy-based router + shared EMA expert is new for CIL; each component has precedent, but the engineering integration and long-sequence scenario fill a gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 4 long-sequence settings (100/151/200/301 tasks) + 4 classic CIL datasets; the new OmniBenchmark-1K is also convincing.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, bi-level process diagrams are intuitive; formulas are dense but followable.
-- Value: ⭐⭐⭐⭐⭐ The first work to push PTM-based CIL to 300+ tasks with continual improvement, plus the release of OmniBenchmark-1K, is a dual contribution to the long-sequence CL community.
+- Novelty: ⭐⭐⭐⭐ Engineering integration of bi-level routing and confidence-based selection for CIL is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing across long sequences (up to 301 tasks) and multiple classic benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and intuitive diagrams.
+- Value: ⭐⭐⭐⭐⭐ Sets a new standard for scaling PTM-based CIL to hundreds of tasks.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -135,8 +142,8 @@ On the longest sequence (301 tasks), CaRE outperforms MOS by 4 points and is doz
 - [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](../../NeurIPS2025/self_supervised/soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 - [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
 - [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](partco_part-level_correspondence_priors_enhance_category_discovery.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](../../CVPR2026/self_supervised/is_parameter_isolation_better_for_prompt-based_continual_learning.md)
 - [\[ICML 2026\] LEC: Linear Expectation Constraints for Selection-Conditioned Risk Control in Selective Prediction and Routing Systems](lec_linear_expectation_constraints_for_selection-conditioned_risk_control_in_sel.md)
-- [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](../../AAAI2026/self_supervised/catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
 
 </div>
 

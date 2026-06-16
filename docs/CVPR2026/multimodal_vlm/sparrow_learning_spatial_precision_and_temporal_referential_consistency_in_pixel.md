@@ -2,115 +2,101 @@
 title: >-
   [Paper Note] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Video pixel-level grounding] This paper proposes the SPARROW framework, which injects temporal consistency supervision via **Target-Specific Features (TSF)**…
+  [CVPR 2026][Multimodal VLM][Paper Note] The SPARROW framework is proposed to integrate temporal consistency supervision via **Target-Specific Tracking Features (TSF)** and stabilize first-frame initialization using **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**. Designed as a plug-and-play module for existing video MLLMs, it achieves consistent improv
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Video pixel-level grounding"
-  - "referring video object segmentation"
-  - "temporal consistency"
-  - "dual-prompt decoding"
-  - "multimodal large language models"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: b9219375d8aad398
+content_hash: 8b94206420beb2d4
 ---
-
 # SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12382](https://arxiv.org/abs/2603.12382)  
 **Code**: None  
-**Area**: Multimodal VLM
-**Keywords**: Video pixel-level grounding, referring video object segmentation, temporal consistency, dual-prompt decoding, multimodal large language models
+**Area**: Multimodal VLM  
+**Keywords**: Video pixel-level grounding, Referring Video Object Segmentation, Temporal consistency, Dual-prompt decoding, Multimodal Large Language Models
 
 ## TL;DR
 
-This paper proposes the SPARROW framework, which injects temporal consistency supervision via **Target-Specific Features (TSF)**, stabilizes first-frame initialization through **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**, and integrates into existing video MLLMs in a plug-and-play manner, achieving consistent improvements across 6 benchmarks on 3 tasks.
+The SPARROW framework is proposed to integrate temporal consistency supervision via **Target-Specific Tracking Features (TSF)** and stabilize first-frame initialization using **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**. Designed as a plug-and-play module for existing video MLLMs, it achieves consistent improvements across six benchmarks and three tasks.
 
 ## Background & Motivation
 
-### 1. State of the Field
+**Background**: Multimodal Large Language Models (MLLMs) have made significant progress in image-level visual reasoning and pixel-level grounding. Methods like LISA and PixelLM achieve language-conditioned segmentation through [SEG] tokens. However, extending these to **video** introduces additional challenges such as motion dynamics, occlusions, and temporal consistency.
 
-Multimodal large language models (MLLMs) have made substantial progress in image-level visual reasoning and pixel-level grounding. Methods such as LISA and PixelLM enable language-conditioned segmentation via [SEG] tokens. However, extending these approaches to the **video domain** introduces additional challenges including motion dynamics, occlusion, and temporal consistency.
+**Limitations of Prior Work**: Existing video MLLMs (e.g., VideoGLaMM, UniPixel, GLUS) primarily rely on **static [SEG] tokens** for frame-by-frame inference, revealing two primary issues. First, **temporal drift and identity switching**—while video is dynamic, text prompts are static, forcing models to infer motion and appearance changes solely from visual cues, which often results in the same object being inconsistently segmented as different "identities" across frames. Second, **unreliable first-frame initialization**—[SEG] tokens provide semantic cues but lack spatial priors, making the initial masks prone to misalignment, which then propagates and amplifies errors over time.
 
-### 2. Limitations of Prior Work
+**Key Challenge**: Static semantic tokens cannot encode the varying position and appearance of an object over time; meanwhile, initial grounding errors inevitably corrupt subsequent segmentation frames through error propagation.
 
-Existing video MLLMs (VideoGLaMM, UniPixel, GLUS) primarily rely on **static [SEG] tokens** for per-frame inference, leading to two critical issues:
+**Goal**: To simultaneously address (i) temporal referential consistency (identity preservation) and (ii) first-frame spatial precision (drift reduction) without modifying the base model architecture.
 
-- **Temporal drift and identity switching**: Text prompts are static while videos are dynamic, forcing the model to infer motion and appearance changes entirely from visual cues, resulting in inconsistent segmentation of the same target across frames.
-- **Unreliable first-frame initialization**: The [SEG] token provides only semantic cues without spatial priors, causing potential misalignment in the first-frame mask and accumulating errors across subsequent frames.
-
-### 3. Root Cause
-
-Static semantic tokens cannot encode the temporally varying position and appearance of a target. Once first-frame localization fails, error propagation degrades segmentation quality for all subsequent frames.
-
-### 4. Paper Goals
-
-To simultaneously address **(i) temporal referential consistency** (identity preservation) and **(ii) first-frame spatial precision** (drift reduction) without modifying the underlying model architecture.
-
-### 5. Starting Point
-
-Temporal supervision signals are distilled from target-specific tracking features (injected during training and removable at inference); a dual-prompt co-decoding mechanism is introduced that combines [BOX] geometric priors with [SEG] semantic priors.
-
-### 6. Core Idea
-
-- **TSF**: Offline detection and tracking yield target trajectories; K-means selects a representative subset, which is encoded into TSF tokens and injected during training to teach the model identity persistence.
-- **Dual-prompt**: [BOX]-conditioned class-agnostic proposals provide spatial priors → [SEG] refines segmentation with SAM2 on top of these priors, forming a coarse-to-fine pipeline.
+**Key Insight & Core Idea**: The authors extract temporal supervision signals from tracked target-specific features—injected during training but removed during inference (TSF)—to interiorize identity persistence within the model. Furthermore, a dual-prompt decoding mechanism combining [BOX] geometric priors and [SEG] semantic priors is introduced to transition first-frame grounding from a single-step process to a "coarse-to-fine" approach.
 
 ## Method
 
 ### Overall Architecture
 
-SPARROW operates as follows: a dual-branch visual encoder (spatial $\mathcal{F}_g$ + temporal $\mathcal{F}_h$) → V→L adapter → LoRA-finetuned LLM → L→V adapter → SAM2 pixel decoder. The LLM outputs [BOX] and [SEG] tokens, which are projected back into the visual space to drive bounding box regression and mask decoding, respectively. All newly introduced modules are plug-and-play and do not modify the backbone.
+SPARROW aims to resolve cross-frame identity inconsistency and first-frame localization drift without altering the base video MLLM architecture. It attaches two lightweight, plug-and-play modules to the existing pipeline: **Target-Specific Tracking Features (TSF)** for temporal consistency and **Dual-Prompt Grounding** for spatial precision. A video sequence is processed by a dual-branch visual encoder—a spatial branch $\mathcal{F}_g$ for single-frame appearance and a temporal branch $\mathcal{F}_h$ for inter-frame motion—then fed into a LoRA-fine-tuned LLM via a V→L adapter. The LLM outputs two specialized tokens: [BOX] and [SEG]. These are projected back to the visual space via L→V adapters, where [BOX] drives a class-agnostic proposer for geometric bounding boxes and [SEG] drives SAM2 pixel decoding, collaborating in a coarse-to-fine manner. The TSF module injects appearance features tracked across frames into the input during training only and is removed during inference.
 
-### Key Designs 1: Target-Specific Features (TSF)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Input Video + Text Query"] --> ENC["Dual-branch Visual Encoder<br/>Spatial ℱg + Temporal ℱh"]
+    ENC --> LLM["V→L Adapter → LoRA-tuned LLM"]
+    subgraph TSF["Target-Specific Tracking Features (Training Only)"]
+        direction TB
+        T1["GroundingDINO Detection<br/>+ CLDTracker Propagation"] --> T2["K-means (4 Key Appearances)<br/>Encoded as TSF Tokens"]
+    end
+    TSF -. Injected during training .-> LLM
+    LLM --> BOX["Output [BOX] Token"]
+    LLM --> SEG["Output [SEG] Token"]
+    subgraph DP["Dual-Prompt Grounding"]
+        direction TB
+        BOX --> P1["Class-agnostic Proposer<br/>SAM2/Hiera Features → 300 Proposals"]
+        P1 --> P2["Filtration Scoring + Top-M Regression<br/>Language × Visual Score Fusion → Box Set B*"]
+        SEG --> S1["[SEG] + B* Paired as Mask Query"]
+        P2 --> S1
+        S1 --> M["SAM2 Pixel Decoding → Instance Mask"]
+    end
+```
 
-**Function**: Provides temporally aligned, target-specific reference cues during training, enabling the model to learn cross-frame identity preservation.
+### Key Designs
 
-**Mechanism**:
-1. Given a text query, GroundingDINO detects the target in a reference frame, and CLDTracker propagates it across frames to obtain candidate box sequences $B'_1 \ldots B'_{K'}$.
-2. K-means clustering ($K=4$) is performed in the joint visual-spatial feature space; the closest samples to cluster centroids form a compact subset $B_1 \ldots B_K$.
-3. These regions are encoded by $\mathcal{F}_g$ and projected via the V→L adapter into $Z_\text{TSF}$ tokens, which are concatenated to the multimodal input.
+**1. Target-Specific Tracking Features (TSF): Instilling "Identity Persistence" via Training-time Pseudo-tracking**
 
-**Design Motivation**: Inspired by Artemis, which demonstrates that tracking target-specific features improves temporal consistency. K-means selection ensures each representative sample covers distinct appearances of the same target while reducing redundancy. Crucially, **TSF is not used by default at inference** (no external detector or tracker required), as the model has internalized temporal consistency from training.
+Video MLLMs inherit static [SEG] tokens where the prompt is fixed but the video is dynamic, leading to inconsistent identities across frames. TSF addresses this by providing "this is the same object" reference samples during training. Given a text query, GroundingDINO detects the target in a specific frame, and CLDTracker propagates it to generate a sequence of candidate boxes $B'_1 \dots B'_{K'}$. To manage redundancy, K-means clustering ($K=4$) is performed in the joint visual-spatial feature space to select samples near centroids, forming a compact subset $B_1 \dots B_K$. These capture diverse appearances (front/side/occluded) without repetition. These regions are encoded by $\mathcal{F}_g$ and projected into $Z_{\text{TSF}}$ tokens. Notably, **TSF is removed during inference by default**: the identity persistence is internalized during training, eliminating the need for external trackers during deployment.
 
-**Dataset Construction**: Multiple public datasets are unified—HC-STVG, VID-Sentence, A2D Sentences, LaSOT, MeViS, GOT-10k, and Ref-SAV—resulting in 30,646 video sequences and 45,231 Q&A pairs with temporally consistent trajectories, bounding boxes, and segmentation masks.
+**2. Dual-Prompt Grounding: [BOX] Geometric Priors + [SEG] Semantic Refinement**
 
-### Key Designs 2: Dual-Prompt Grounding
+Relying solely on [SEG] for first-frame localization often results in misalignment due to a lack of spatial priors. The dual-prompt approach introduces a [BOX] branch for geometric constraints. The LLM outputs $e_{\text{BOX}}$, which is projected via $W_b$. Simultaneously, a class-agnostic proposer (Deformable-DETR structure on frozen SAM2/Hiera features) generates $K=300$ candidate proposals. Cross-attention between $e_{\text{BOX}}$ and proposal features allows a filtration head to score them. The top-M candidates undergo text-conditioned bounding box regression. Finally, a fusion of linguistic and visual scores yields the box set $B^*$. The [SEG] branch uses $B^*$ and $e_{\text{SEG}}$ as mask queries for SAM2's prompt encoder, naturally supporting multi-instance output if $|B^*|>1$.
 
-**Function**: Combines [BOX] and [SEG] for coarse-to-fine localization, stabilizing the first frame and mitigating drift.
+### A Complete Example
 
-**[BOX] Branch**:
-1. The LLM outputs [BOX] embedding $e_\text{BOX}$, projected via L→V adapter $W_b$.
-2. A class-agnostic proposer (Deformable-DETR structure with a single objectness head) is built on frozen SAM2/Hiera features, generating $K=300$ proposals.
-3. $e_\text{BOX}$ is fused with each proposal feature via cross-attention → scored by a filtration head → top-$M$ candidates undergo text-conditioned bounding box regression refinement.
-4. Final confidence scores fuse language and visual scores; threshold filtering yields $B^*$.
-
-**[SEG] Branch**:
-The LLM outputs [SEG] embedding $e_\text{SEG}$, which is combined with the filtered $\hat{b}$ to form mask queries for the SAM2 prompt encoder; each spatial prior yields an instance-level mask. When $|B^*| > 1$, multi-instance output is naturally supported.
-
-**Design Motivation**: Using [SEG] alone leads to ambiguous first-frame localization. [BOX] first provides geometric constraints, upon which [SEG] performs semantic refinement—the two are complementary. Re-issuing [BOX]+[SEG] at arbitrary frames also enables drift correction.
+For the query "a dog running across the screen":  
+**During Training (with TSF)**: GroundingDINO boxes the dog in one frame, CLDTracker propagates it, and K-means selects four representative appearances. These are encoded as TSF tokens, teaching the model that these four views represent the same dog.  
+**During Inference (without TSF)**: On the first frame, the LLM outputs [BOX]+[SEG]. The proposer generates 300 proposals; the [BOX] token scores them, and the filtration head selects the best match (the dog) as $B^*$. The [SEG] token uses this box as a spatial prior for SAM2 to generate a pixel-level mask. If the target drifts later due to occlusion, re-issuing [BOX]+[SEG] acts as an internal drift correction.
 
 ### Loss & Training
 
-**Two-stage training**:
+**Two-Stage Training**:
 
-**Stage 1 — TSF Information Injection**: Trains V→L adapters ($W_g$, $W_h$), L→V SEG adapter $W_s$, and LLM LoRA parameters; backbone and pixel decoder are frozen. Loss: $\mathcal{L}_\text{total} = \mathcal{L}_\text{CE} + \mathcal{L}_\text{BCE} + \mathcal{L}_\text{DICE}$.
+**Stage 1 — TSF Information Injection**: Trains V→L adapters $(\mathcal{F}_g, \mathcal{F}_h)$, L→V SEG adapter $W_s$, and LLM LoRA parameters. The backbone and pixel decoder remain frozen. Loss: $L_{total} = L_{CE} + L_{BCE} + L_{DICE}$.
 
 **Stage 2 — Box Prompt Learning**:
-- The class-agnostic proposer (D-DETR head) is first pretrained independently on COCO/Objects365/OpenImages/V3Det with class labels discarded. Loss: $\mathcal{L}_\text{prop} = \mathcal{L}_\text{obj} + \lambda_1 \cdot \mathcal{L}_{\ell_1} + \lambda_2 \cdot \mathcal{L}_\text{GIoU}$.
-- The filtration head and L→V BOX adapter $W_b$ are then fine-tuned with all other parameters frozen. Loss: $\mathcal{L}_\text{filter} = \lambda_\text{cls} \cdot \mathcal{L}_\text{BCE} + \lambda_\text{box} \cdot (\mathcal{L}_{\ell_1} + \mathcal{L}_\text{GIoU})$, where $\lambda_\text{cls}=1.0$, $\lambda_\text{box}=2.0$.
+- Pre-train the class-agnostic proposer (D-DETR head on COCO/Objects365/etc., discarding category labels). Loss: $L_{prop} = L_{obj} + \lambda_1 \cdot L_{\ell 1} + \lambda_2 \cdot L_{GIoU}$.
+- Fine-tune the filtration head and L→V BOX adapter $W_b$, freezing everything else. Loss: $L_{filter} = \lambda_{cls} \cdot L_{BCE} + \lambda_{box} \cdot (L_{\ell 1} + L_{GIoU})$, where $\lambda_{cls}=1.0, \lambda_{box}=2.0$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-SPARROW is integrated into three video MLLM baselines (UniPixel, GLUS, VideoGLaMM) across three tasks: RVOS, VG, and GCG.
+SPARROW was integrated into three video MLLM baselines (UniPixel, GLUS, VideoGLaMM) across RVOS, VG, and GCG tasks.
 
 **Table 1: MeViS Referring Video Object Segmentation (Motion Expressions)**
 
-| Method | val J&F | val$^u$ J&F |
-|--------|---------|------------|
+| Method | val J&F | val^u J&F |
+|------|---------|-----------|
 | UniPixel | 53.1 | 59.7 |
 | + SPARROW | **54.4** (+1.3) | **60.7** (+1.0) |
 | GLUS | 51.3 | 59.8 |
@@ -118,10 +104,10 @@ SPARROW is integrated into three video MLLM baselines (UniPixel, GLUS, VideoGLaM
 | VideoGLaMM | 45.2 | 48.5 |
 | + SPARROW | **47.5** (+2.3) | **57.4** (+8.9) |
 
-**Table 2: Ref-YTVOS & Ref-DAVIS17 Referring Video Object Segmentation**
+**Table 2: Ref-YTVOS & Ref-DAVIS17 RVOS**
 
 | Method | Ref-YTVOS J&F | Ref-DAVIS17 J&F |
-|--------|---------------|-----------------|
+|------|---------------|-----------------|
 | UniPixel | 70.5 | 74.2 |
 | + SPARROW | **70.7** (+0.2) | **76.4** (+2.2) |
 | GLUS | 67.3 | 72.9 |
@@ -129,62 +115,51 @@ SPARROW is integrated into three video MLLM baselines (UniPixel, GLUS, VideoGLaM
 | VideoGLaMM | 66.8 | 69.5 |
 | + SPARROW | **68.9** (+2.1) | **76.8** (+7.3) |
 
-VideoGLaMM achieves a boundary quality gain of up to +14.5 F on Ref-DAVIS17; all SPARROW-integrated models surpass F = 80.
-
-**Table 3: VideoGCG Grounded Conversation Generation**
-
-| Method | mIoU | Recall | CLAIR |
-|--------|------|--------|-------|
-| UniPixel | 52.0 | 0.311 | 26.0 |
-| + SPARROW | **54.5** (+2.5) | **0.325** | **29.4** (+3.4) |
-| VideoGLaMM | 62.34 | 0.375 | 28.2 |
-| + SPARROW | **65.59** (+3.25) | **0.383** | **33.6** (+5.4) |
+Notably, VideoGLaMM's boundary quality (F-score) on Ref-DAVIS17 improved by +14.5, with all SPARROW models exceeding an F-score of 80.
 
 ### Ablation Study
 
-Based on Ref-DAVIS17 (val) with VideoGLaMM as the baseline.
+Based on Ref-DAVIS17 (val) + VideoGLaMM baseline.
 
-**Joint Ablation of TSF and BOX (J&F)**:
+**Joint Ablation of TSF and BOX** (J&F):
 
 | TSF Mode | BOX OFF | BOX ON |
 |----------|---------|--------|
 | No TSF | 69.5 (baseline) | 72.5 (+3.0) |
-| Train-only (default) | 72.4 (+2.9) | **76.8** (+7.3) |
-| Train + Inference | 75.3 (+5.8) | **77.7** (+8.2) |
+| Training Only (Default) | 72.4 (+2.9) | **76.8** (+7.3) |
+| Training + Inference | 75.3 (+5.8) | **77.7** (+8.2) |
 
-**Prompt Combination Ablation**: [SEG] only: 69.5; [BOX] only: 68.2; [BOX]+[SEG]: **72.5** (+3.0), confirming the complementarity of the dual-prompt design.
+**Prompt Combination Ablation**: [SEG] only (69.5), [BOX] only (68.2), [BOX]+[SEG] (**72.5**, +3.0), highlighting the complementarity of the dual prompts.
 
 ### Key Findings
 
-1. Using TSF **at training time only** yields a +2.9 gain without incurring any detector/tracker overhead at inference.
-2. The [BOX] prompt alone contributes +3.0; combined with TSF, the gains are **approximately additive** (+7.3).
-3. VideoGLaMM exhibits the largest improvements (MeViS val$^u$ +8.9, Ref-DAVIS17 +7.3), indicating that weaker baselines benefit more.
-4. On the VidSTG visual grounding task, all three baselines consistently gain approximately +5 mIoU.
+1. **TSF yields a +2.9 improvement** even when used only during training, requiring no extra overhead during inference.
+2. The [BOX] prompt alone contributes +3.0, and its effect is **nearly additive** with TSF (+7.3 total).
+3. Weaker baselines show larger gains (e.g., VideoGLaMM +8.9 on MeViS val^u), suggesting significant corrective potential.
+4. Consistent gains of approximately +5 mIoU were observed across all baselines on the VidSTG (Visual Grounding) task.
 
 ## Highlights & Insights
 
-- **Plug-and-play design**: SPARROW does not modify the backbone or LLM of any baseline; it integrates solely through lightweight adapters and a proposal head, and successfully improves three architecturally distinct video MLLMs, demonstrating strong generalizability.
-- **Tracking at training, tracking-free at inference**: The key insight behind TSF is to inject temporal consistency priors via pseudo-tracking supervision during training; once internalized, the model requires no external tracker at inference, substantially reducing deployment cost.
-- **Coarse-to-fine dual-prompt**: [BOX] provides geometric constraints while [SEG] provides semantic refinement—the two are orthogonally complementary in the information dimension, resembling a two-stage detect-then-segment paradigm elegantly realized through tokens.
-- **Large-scale dataset construction**: Seven public data sources are unified into a training set of 30K+ videos, filling a gap in target-centric temporal grounding data.
+- **Plug-and-play Design**: SPARROW integrates via lightweight adapters and a proposal head without altering the backbone or LLM, demonstrating strong versatility across three different video MLLM architectures.
+- **Train-time Tracking, Inference-time Free**: The core insight of TSF is using pseudo-tracking to inject temporal consistency priors during training. Once internalized, the model performs consistently without being tethered to an external tracker during inference.
+- **Coarse-to-fine Dual Prompting**: [BOX] provides geometric constraints while [SEG] provides semantic refinement. These dimensions are orthogonal and complementary, echoing two-stage "detect-then-segment" logic within a tokenized framework.
+- **Unified Large-scale Dataset**: Consolidating seven data sources into a unified set of 30K+ videos fills a critical gap in object-centric temporal grounding data.
 
 ## Limitations & Future Work
 
-1. **Dependence on proposal recall**: Small targets, heavy occlusions, or unseen categories not covered by proposals cannot be recovered; recall is the primary bottleneck.
-2. **Error accumulation in long videos**: Early [BOX] errors can still propagate in long sequences; the dual-prompt mechanism mitigates but does not fully eliminate this issue.
-3. **TSF pseudo-label quality**: TSF relies on GroundingDINO + CLDTracker for pseudo-tracking; severe noise or identity switches degrade training quality.
-4. Future directions: higher-recall proposal methods, online correction mechanisms, and stronger tracking supervision signals.
+1. **Dependence on Proposal Recall**: Small objects, extreme occlusions, or unseen categories may fail if the proposer does not generate an initial candidate.
+2. **Error Accumulation in Long Videos**: While dual-prompting mitigates drift, it does not entirely eliminate error propagation if initial [BOX] predictions are incorrect.
+3. **Pseudo-label Quality**: TSF relies on GroundingDINO and CLDTracker; severe noise or ID switches in these tools can degrade training quality.
 
 ## Related Work & Insights
 
-- **Artemis**: Motivates the TSF design—tracking target-specific features improves temporal consistency.
-- **Groma**: Inspires the dual-prompt design of using box prompting to enhance fine-grained visual grounding.
-- **VideoGLaMM / UniPixel / GLUS**: Three baselines with distinct design philosophies; SPARROW's successful integration into all three validates its generality.
-- The approach to combining with SAM2 is noteworthy: frozen Hiera features are used for proposal generation while the prompt encoder interface remains unchanged.
+- **Artemis**: Inspired the use of target-specific tracking features to improve temporal consistency.
+- **Groma**: Inspired the dual-prompt design using box prompting for fine-grained grounding.
+- **SAM2 Integration**: Utilizing frozen SAM2/Hiera features for proposals while maintaining prompt encoder interfaces offers a robust template for grounding.
 
 ## Rating
 
-⭐⭐⭐⭐ Strongly engineering-oriented with elegant modular design and comprehensive experiments (3 baselines × 6 datasets). However, the core technical contributions (proposal-based grounding + tracking pseudo-labels) are of moderate novelty, representing a well-executed combination of existing components rather than fundamental innovation.
+⭐⭐⭐⭐ Strong engineering orientation with elegant modular design and comprehensive experiments. While the underlying components (proposer + pseudo-tracking) are established, their integration into the Video MLLM paradigm is highly effective and well-executed.
 
 <!-- RELATED:START -->
 
@@ -192,11 +167,11 @@ Based on Ref-DAVIS17 (val) with VideoGLaMM as the baseline.
 
 ## Related Papers
 
-- [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
 - [\[CVPR 2026\] LFPC: Learning to Focus and Precise Cropping for MLLMs](lfpc_learning_to_focus_and_precise_cropping_for_mllms.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
+- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
+- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[CVPR 2026\] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation](terrascope_pixel-grounded_visual_reasoning_for_earth_observation.md)
+- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>
 

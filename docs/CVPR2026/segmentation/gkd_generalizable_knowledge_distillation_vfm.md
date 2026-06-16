@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] This paper proposes the GKD framework, which distills compact student models with cross-domain generalization capability from VFMs via a multi-stage decoupled distillatio…
+  [CVPR 2026][Segmentation][Knowledge Distillation] Ours proposes the GKD framework, which decouples representation learning from task learning using a multi-stage distillation process (general feature learning → freeze encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. By distilling cross-domain generalization capabilities from
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Knowledge Distillation"
-  - "Vision Foundation Models"
-  - "Domain Generalizable Segmentation"
-  - "DINOv2"
-  - "Multi-stage Distillation"
+  - CVPR 2026
+  - Segmentation
+  - Knowledge Distillation
+  - DINOv2
 date: 2026-05-08
-content_hash: 46b73f324fe80ad0
+content_hash: b1f08c9cca7fbdb1
 ---
-
 # GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -25,110 +21,127 @@ content_hash: 46b73f324fe80ad0
 
 ## TL;DR
 
-This paper proposes the GKD framework, which distills compact student models with cross-domain generalization capability from VFMs via a multi-stage decoupled distillation strategy (generic feature learning → frozen encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. GKD achieves an average mIoU gain of +10.6% under the F2L setting and +1.9% under the F2F setting.
+Ours proposes the GKD framework, which decouples representation learning from task learning using a multi-stage distillation process (general feature learning → freeze encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. By distilling cross-domain generalization capabilities from VFMs into lightweight student models, it achieves an average mIoU gain of +10.6% in F2L settings and +1.9% in F2F settings.
 
 ## Background & Motivation
 
-**Background**: Knowledge distillation (KD) is widely used for semantic segmentation model compression—distilling lightweight student models from large teacher models. Conventional KD methods (CWD/Af-DCD/CIRKD, etc.) focus on preserving source-domain accuracy and perform well in-domain. The paradigm of VFMs (DINOv2/EVA02) as general-purpose feature extractors paired with lightweight decoders has been broadly adopted.
+**Background**: Knowledge Distillation (KD) is extensively used for semantic segmentation model compression—distilling knowledge from large teacher models to lightweight students. Traditional KD methods (CWD, Af-DCD, CIRKD, etc.) focus on preserving in-domain accuracy and perform reasonably well within the source domain. The paradigm of using VFMs (DINOv2, EVA02) as universal feature extractors with lightweight decoders has been widely adopted.
 
-**Limitations of Prior Work**: Conventional KD focuses exclusively on source-domain (in-domain) accuracy, neglecting cross-domain generalization capability. This problem is particularly severe in the VFM era—although VFMs inherently possess strong generalization, student models distilled via conventional KD exhibit degraded generalization. Experiments show that single-stage KD can even **harm** student generalization, with some methods performing worse than the no-distillation baseline.
+**Limitations of Prior Work**: Traditional KD focuses only on in-domain accuracy, neglecting domain generalization capabilities. This issue is particularly severe in the VFM era; while VFMs themselves possess strong generalization, this capability often evaporates in student models after traditional KD. Experiments demonstrate that traditional single-stage KD can even **harm** student generalization, with some methods performing worse than a no-distillation baseline.
 
-**Key Challenge**: Single-stage KD suffers from **optimization conflict**—the task loss drives the student to fit source-domain-specific decision boundaries, while the distillation loss encourages the student to approximate the teacher's domain-invariant representations. These two gradient directions are contradictory, leading to training instability (oscillating loss curves) and generalization degradation. This implies that "KD compresses capacity while compromising robustness."
+**Key Challenge**: A significant **optimization conflict** exists in single-stage KD: task loss drives the student to fit source-domain-specific decision boundaries, while distillation loss encourages the student to approximate the teacher's domain-invariant representations. These conflicting gradient directions lead to training instability (oscillating loss curves) and generalization degradation. This implies that "KD compresses capacity but damages robustness."
 
-**Goal**: When distilling compact models from VFMs, the goal is to simultaneously compress the model while **preserving or even improving** cross-domain generalization. Two evaluation settings are considered: F2F (VFM→smaller VFM, e.g., DINOv2-L→DINOv2-B) and F2L (VFM→local model, e.g., DINOv2-B→ViT-S).
+**Goal**: To distill compact models from VFMs while **preserving or even enhancing** cross-domain generalization. Two evaluation settings are considered: F2F (VFM to small VFM, e.g., DINOv2-L to DINOv2-B) and F2L (VFM to local model, e.g., DINOv2-B to ViT-S).
 
-**Key Insight**: Representation learning and task learning **should not be coupled**. The student should first purely learn the teacher's domain-general representations (without exposure to task labels), after which the encoder is frozen and only the task head is trained.
+**Key Insight**: Representation learning and task learning **should not be coupled**. The student should first purely learn the teacher's domain-general representations (without exposure to task labels), and subsequently, the encoder should be frozen while only the task head is trained.
 
-**Core Idea**: Decouple representation learning from task learning—Stage 1 performs pure feature distillation to acquire domain-general representations; Stage 2 freezes the encoder and trains the task head, complemented by QSD for selective retrieval of the teacher's spatial knowledge.
+**Core Idea**: Decouple representation learning and task learning—Stage 1 utilizes pure feature distillation to acquire domain-general representations; Stage 2 freezes the encoder to train the task head, complemented by QSD to selectively retrieve spatial knowledge from the teacher space.
 
 ## Method
 
 ### Overall Architecture
 
-The framework follows a two-stage pipeline. **Stage 1 (Domain-General Distillation)** consists of two steps: (i) task-agnostic distillation on a proxy dataset (ImageNet) to close the initial representation gap between the VFM and the student, and (ii) domain-agnostic distillation on the source domain to learn task-relevant but domain-invariant features. Throughout Stage 1, only feature distillation is performed and task labels are never used. **Stage 2 (Task Learning)** freezes the student encoder and trains only the Mask2Former decoder for semantic segmentation, preventing task supervision from corrupting the learned generalizable representations.
+GKD addresses a critical issue: why does the strong generalization of VFMs collapse when distilled into small models? The authors hypothesize that the coupling of "representation learning" and "task learning" is the cause. Consequently, the workflow is split into two distinct stages. **Stage 1 focuses on domain-general distillation**, performed in two steps: first, task-agnostic distillation on the ImageNet proxy dataset to narrow the initial representation gap between the student and the VFM; second, domain-independent distillation on the source domain to learn task-relevant but domain-agnostic features. In both steps, only features are aligned without using task labels, employing the Query-based Soft Distillation (QSD) objective. **Stage 2 involves task learning**, where the student encoder is frozen, and a Mask2Former decoder is trained on its features for segmentation. Since the task-supervision gradient never reaches the encoder, the learned generalization representations remain undistorted by source-domain labels.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T["Teacher VFM (DINOv2 / EVA02), Frozen<br/>Provides domain-invariant spatial structure"]
+    subgraph S1["Stage 1 · Domain-General Distillation (Multi-stage decoupling, align features only, no task labels)"]
+        direction TB
+        A["ImageNet Proxy Data: Task-agnostic distillation<br/>Narrows the initial representation gap"]
+        B["Source Domain Data: Domain-independent distillation<br/>Converges to task-relevant, domain-agnostic features"]
+        A --> B
+    end
+    subgraph QSD["Distillation Objective (Applied at every step of Stage 1)"]
+        direction TB
+        Q["Query-based Soft Distillation (QSD)<br/>Student features act as queries to retrieve teacher spatial structures"]
+        L["Triple Distillation Objective<br/>L_QSD = L_feat + L_mask (mask reconstruction) + L_cls (global semantics)"]
+        Q --> L
+    end
+    T -->|Feature Supervision| S1
+    S1 -. Uses this objective .-> QSD
+    S1 --> Z["Multi-stage Decoupling: Freeze student encoder<br/>Task supervision gradients cannot reach encoder"]
+    Z --> D["Stage 2 · Task Learning<br/>Train Mask2Former decoder only on frozen features"]
+    D --> O["Generalizable lightweight segmentation student model"]
+```
 
 ### Key Designs
 
-1. **Multi-stage Decoupling Strategy**
+**1. Multi-stage Decoupling: Separating feature distillation and task supervision into independent training phases to prevent interference.**
 
-    - **Function**: Completely separates feature distillation and task learning, which are typically coupled.
-    - **Mechanism**: Stage 1 proceeds in two steps—(i) distillation on ImageNet (proxy dataset): $\min_{\theta_s} \mathbb{E}_{x_P \sim D_P}[\mathcal{L}_{QSD}(\mathcal{F}_{\theta_t}(x_P), \mathcal{F}_{\theta_s}(x_P))]$, learning task-agnostic general visual representations; (ii) distillation on the source domain: $\min_{\theta_s} \mathbb{E}_{x_S \sim D_S}[\mathcal{L}_{QSD}(\mathcal{F}_{\theta_t}(x_S), \mathcal{F}_{\theta_s}(x_S))]$, learning domain-invariant task-relevant features. Stage 2 freezes the encoder $\theta_s$ and trains only the decoder $\theta_h$: $\min_{\theta_h} \mathbb{E}[\mathcal{L}(\mathcal{H}_{\theta_h}(\mathcal{F}_{\theta_s}(x_S)), y_S)]$.
-    - **Design Motivation**: Experimental diagnostics reveal that task gradients and distillation gradients interfere with each other—the single-stage loss curve oscillates and is unstable (Fig. 3b), whereas the two-stage approach yields a smooth converging loss curve. Ablations confirm: single-stage MSE 46.4 → two-stage MSE 53.1 (+6.7 mIoU), a substantial improvement.
+The root cause of single-stage KD is the optimization conflict where task loss forces the student to fit source-domain specific boundaries while distillation loss seeks domain-invariant representations. Diagnosis shows the single-stage loss curve oscillates (Fig. 3b), leading to generalization decay. GKD completely separates these phases. Stage 1 first performs distillation on ImageNet: $\min_{\theta_s} \mathbb{E}_{x_P \sim D_P}[\mathcal{L}_{QSD}(\mathcal{F}_{\theta_t}(x_P), \mathcal{F}_{\theta_s}(x_P))]$ to learn task-agnostic representations, followed by distillation on the source domain: $\min_{\theta_s} \mathbb{E}_{x_S \sim D_S}[\mathcal{L}_{QSD}(\mathcal{F}_{\theta_t}(x_S), \mathcal{F}_{\theta_s}(x_S))]$ for domain-independent features. In Stage 2, the encoder $\theta_s$ is frozen, and only the decoder $\theta_h$ is trained: $\min_{\theta_h} \mathbb{E}[\mathcal{L}(\mathcal{H}_{\theta_h}(\mathcal{F}_{\theta_s}(x_S)), y_S)]$. This decoupling results in smooth convergence and a significant gain—improving mIoU from 46.4 (single-stage MSE) to 53.1 (two-stage MSE, +6.7).
 
-2. **Query-based Soft Distillation (QSD)**
+**2. Query-based Soft Distillation (QSD): Allowing students to actively retrieve spatial relationships from the teacher rather than imitating activation values point-by-point.**
 
-    - **Function**: Replaces conventional point-wise feature matching with selective spatial knowledge retrieval.
-    - **Mechanism**: Student features $v_s \in \mathbb{R}^{B \times N \times C_s}$ serve as queries to retrieve all spatial features $v_t$ from the teacher via attention—attention weights are computed as $W = \varphi(v_s) \cdot v_t^\top$, student features are reconstructed as $v_s' = \sigma(\varphi(v_s) \cdot v_t^\top) \cdot \phi(v_s)$, and MSE alignment is applied: $\mathcal{L}_{feat} = \|v_s' - v_t\|_2^2$, where $\varphi, \phi$ are linear projections. This allows the student to internalize the teacher's **spatial relational structure** rather than merely mimicking local activations—the attention matrix exhibits strong diagonal responses (preserving spatial correspondence) alongside off-diagonal responses (selectively aggregating related semantics).
-    - **Design Motivation**: The key advantage of VFMs lies in their domain-invariant spatial structure (confirmed by PCA visualization). Point-wise MSE aligns only local values while ignoring global relationships. QSD enables the student to selectively acquire the teacher's relational structure through attention, rather than mechanically memorizing local activations.
+The value of VFMs lies in their domain-invariant spatial structure (evidenced by PCA visualizations), which traditional point-wise MSE fails to preserve as it only aligns local values and discards global relationships. QSD treats student features $v_s \in \mathbb{R}^{B \times N \times C_s}$ as queries to retrieve teacher spatial features $v_t$ via attention. First, attention is calculated: $W = \varphi(v_s) \cdot v_t^\top$; then, student features are reconstructed: $v_s' = \sigma(\varphi(v_s) \cdot v_t^\top) \cdot \phi(v_s)$; finally, MSE aligns the reconstruction to the teacher: $\mathcal{L}_{feat} = \|v_s' - v_t\|_2^2$, where $\varphi, \phi$ are linear projections. This allows the student to internalize the teacher's relational structure via attention, maintaining spatial correspondence while selectively aggregating semantically relevant positions.
 
-3. **Triple Distillation Objective**
+**3. Triple Distillation Objective: Approximating the teacher across spatial features, masked reconstruction, and global semantics.**
 
-    - **Function**: Comprehensively distills knowledge from the teacher at three levels: features, masks, and global semantics.
-    - **Mechanism**: $\mathcal{L}_{QSD} = \alpha \mathcal{L}_{feat} + \beta \mathcal{L}_{mask} + \gamma \mathcal{L}_{cls}$. $\mathcal{L}_{feat}$ performs spatial feature distillation on complete inputs; $\mathcal{L}_{mask}$ reconstructs complete teacher features from randomly masked inputs (revealing VFM's latent knowledge, analogous to DINOv2's MIM approach); $\mathcal{L}_{cls}$ distills the CLS token to transfer global semantic information. All three weights default to 1.0.
-    - **Design Motivation**: The three objectives are complementary—masked distillation forces the student to infer global context from partial information, while CLS distillation enforces global semantic consistency.
+To ensure comprehensive alignment, the distillation objective is defined as a weighted sum: $\mathcal{L}_{QSD} = \alpha \mathcal{L}_{feat} + \beta \mathcal{L}_{mask} + \gamma \mathcal{L}_{cls}$ (weights default to 1.0). While $\mathcal{L}_{feat}$ handles spatial structure alignment on full inputs, $\mathcal{L}_{mask}$ requires the student to reconstruct the teacher's full features from randomly masked inputs, forcing the model to infer global context from partial information—similar to DINOv2's MIM objective. $\mathcal{L}_{cls}$ distills the CLS token to transfer global semantic consistency. Ablations show that removing $\mathcal{L}_{mask}$ drops performance by 0.6 mIoU, while removing $\mathcal{L}_{cls}$ drops it by 0.1, identifying the mask term as the primary contributor.
 
 ### Loss & Training
 
-Distillation stage: AdamW, lr=5e-4, weight decay 0.05. F2L setting: 100 epochs on ImageNet (batch 512, 224×224) + 300 epochs on source domain (batch 128, 512×512). F2F setting: 300 epochs directly on source domain. Task stage: Mask2Former, lr=1e-5 (frozen backbone) / 1e-4 (decoder), 40K iterations, batch 4, crop 512×512.
+Distillation Stage: AdamW, lr=5e-4, weight decay 0.05. F2L Setup: ImageNet 100 epochs (batch 512, 224×224) + Source Domain 300 epochs (batch 128, 512×512). F2F Setup: Directly on Source Domain for 300 epochs. Task Stage: Mask2Former, lr=1e-5 (frozen backbone) / 1e-4 (decoder), 40K iterations, batch 4, crop size 512×512.
 
 ## Key Experimental Results
 
-### Main Results — F2L Setting (DINOv2-B → ViT-S)
+### Main Results—F2L Setting (DINOv2-B → ViT-S)
 
 | Method | GTAV→Citys | GTAV→BDD | GTAV→Map | Avg | Gain |
-|--------|-----------|---------|---------|-----|------|
+|------|-----------|---------|---------|-----|------|
 | Stu baseline (DeiT-S) | 34.9 | 33.8 | 42.8 | 37.2 | - |
 | +Vanilla KD | 45.0 | 44.2 | 49.9 | 46.4 | +9.2 |
 | +G2SD | 45.2 | 45.9 | 52.3 | 47.8 | +10.6 |
 | +Proteus | 47.4 | 44.6 | 50.2 | 47.4 | +10.2 |
-| **+GKD** | **54.9** | **49.8** | **57.8** | **54.1** | **+16.9** |
+| **Ours (GKD)** | **54.9** | **49.8** | **57.8** | **54.1** | **+16.9** |
 
 ### Ablation Study (GTAV→Citys+BDD+Map Avg, DINOv2-B→ViT-S)
 
-| Configuration | mIoU | Note |
-|---------------|------|------|
-| Single-stage MSE | 46.4 | Conventional KD baseline |
-| Two-stage MSE | 53.1 | +6.7, confirms decoupling is critical |
+| Configuration | mIoU | Description |
+|------|------|------|
+| Single-stage MSE | 46.4 | Traditional KD baseline |
+| Two-stage MSE | 53.1 | +6.7, decoupling is critical |
 | Two-stage QSD | 54.1 | +1.0, QSD outperforms MSE |
-| Single-stage QSD | 48.8 | Even with QSD, single-stage is far inferior to two-stage |
-| w/o $\mathcal{L}_{mask}$ | 53.5 | Masked distillation contributes +0.6 |
-| w/o $\mathcal{L}_{cls}$ | 54.0 | CLS distillation contributes marginally +0.1 |
+| Single-stage QSD | 48.8 | Single-stage is still significantly weaker than two-stage |
+| W/O $\mathcal{L}_{mask}$ | 53.5 | Masked distillation contribution +0.6 |
+| W/O $\mathcal{L}_{cls}$ | 54.0 | CLS distillation contribution +0.1 |
 
 ### Key Findings
 
-- **Multi-stage decoupling is the dominant contribution**: Single-stage → two-stage yields +6.7 mIoU, far exceeding any gain from distillation method improvements alone.
-- **Remarkable label efficiency under F2L**: GKD with only 1/16 of labels achieves 51.4 mIoU, surpassing Af-DCD trained with full labels (47.1).
-- **Effective under F2F as well**: DINOv2-L→DINOv2-B Avg improves from 58.8 to 59.8 (+1.0); DINOv2-B→DINOv2-S from 53.9 to 55.6 (+1.7).
-- PCA visualization confirms that after GKD distillation, the student's spatial feature structure is highly consistent with the DINOv2 teacher.
+- **Multi-stage decoupling is the primary contributor**: The transition from single-stage to two-stage yields a +6.7 mIoU gain, far exceeding improvements from specific distillation losses.
+- **Exceptional 1/16 label efficiency**: In the F2L setting, GKD achieves 51.4 mIoU with only 1/16 of the labels, outperforming Af-DCD using full labels (47.1).
+- **Effectiveness in F2F**: DINOv2-L→DINOv2-B Avg 58.8→59.8 (+1.0), and DINOv2-B→DINOv2-S 53.9→55.6 (+1.7).
+- **PCA Visualizations**: Confirm that the spatial structure of the student features after GKD distillation is highly consistent with the DINOv2 teacher.
 
 ## Highlights & Insights
 
-- **First systematic diagnosis of the generalization bottleneck in KD**: The finding that conventional KD can degrade student generalization is itself of significant value. All prior KD work focused exclusively on source-domain accuracy.
-- **Multi-stage decoupling is simple yet effective**: The principle of learning generic features first → freezing the encoder → training the task head is conceptually clean and experimentally well-validated. This paradigm generalizes to any VFM downstream adaptation scenario.
-- **Substantial advantage in the F2L setting**: A +10.6% average improvement implies that small ImageNet-pretrained models can nearly match VFM-level generalization capability.
-- **Practical significance of label efficiency**: Achieving better performance with 1/16 of the labels compared to conventional KD with full labels has major implications for real-world deployment scenarios with limited annotation resources.
+- **Systemic Diagnosis of KD Generalization Bottlenecks**: The discovery that traditional KD can actually impair student generalization is a valuable contribution, as prior KD work focused almost exclusively on in-domain accuracy.
+- **Simplicity and Effectiveness of Multi-stage Decoupling**: The "learn general features → freeze encoder → train task head" paradigm is clear and remarkably effective, applicable to various VFM downstream adaptation scenarios.
+- **Huge Advantage in F2L Scenarios**: A +10.6% average improvement implies that small ImageNet-pretrained models can practically match the generalization performance of VFMs.
+- **Practical Value of Label Efficiency**: Surpassing traditional KD with only 1/16 labels provides significant value for real-world deployment where annotation resources are limited.
 
 ## Limitations & Future Work
 
-- The additional ImageNet pre-distillation stage (100 epochs) increases training time and computational cost.
-- Only ViT-based architectures are evaluated; whether CNN-based student models (ResNet/MobileNet) benefit from GKD remains unknown.
-- Freezing the encoder during task learning may impose an upper bound on source-domain accuracy—in practice, GKD's source-domain accuracy (GTAV mIoU) is sometimes lower than that of conventional KD.
-- Validation is limited to semantic segmentation; more complex tasks such as panoptic segmentation, instance segmentation, and object detection remain to be explored.
-- The reasons behind differences in generalization transfer efficiency across different VFM teachers (DINOv2 vs. EVA02) are not analyzed in depth.
+- Requires an additional ImageNet pre-distillation phase (100 epochs), increasing training time and computational costs.
+- Only validated on ViT architectures; whether CNN student models (ResNet/MobileNet) benefit equally remains unknown.
+- Freezing the encoder for task learning might limit the upper bound of source domain accuracy—GKD's in-domain accuracy (GTAV mIoU) is sometimes lower than traditional KD.
+- Focused solely on semantic segmentation; more complex tasks like panoptic/instance segmentation and object detection are yet to be verified.
+- The underlying reasons for differences in generalization transfer efficiency between different VFM teachers (DINOv2 vs. EVA02) have not been deeply analyzed.
 
 ## Related Work & Insights
 
-- **vs. Conventional Segmentation KD (CWD/Af-DCD/CIRKD)**: These methods focus solely on source-domain accuracy and comprehensively underperform GKD in cross-domain evaluation, with some even falling below the no-distillation baseline.
-- **vs. VFM Distillation (G2SD/Proteus/TinyMIM)**: These methods adopt a "general→specific" paradigm in which the task learning stage remains coupled with distillation. GKD adopts a "general→frozen→task" paradigm that fully isolates distillation from task learning.
-- **vs. DGSS Methods (FisherTune/CrossEarth)**: GKD addresses generalization from a distillation perspective, which is complementary to domain generalization methods.
-- The principle of "decoupling representation learning and task learning during distillation" is generalizable to all VFM downstream adaptation scenarios—linear probing is essentially the same idea of freezing the encoder.
+- **vs. Traditional Segmentation KD (CWD/Af-DCD/CIRKD)**: These methods lag behind GKD in cross-domain evaluation, with some even falling below the no-distillation baseline due to their focus on in-domain accuracy.
+- **vs. VFM Distillation (G2SD/Proteus/TinyMIM)**: While these utilize a "general to specific" paradigm, their task stages still couple distillation. GKD employs a "general → frozen → task" paradigm that isolates distillation from task learning.
+- **vs. DGSS Methods (FisherTune/CrossEarth)**: GKD addresses generalization from a distillation perspective, complementing domain generalization methods.
+- The principle of decoupling representation and task learning during distillation is extensible to all VFM downstream adaptation scenarios—linear probing is essentially an instance of frozen encoder adaptation.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Multi-stage decoupling is not entirely new, but QSD and the generalization-oriented distillation diagnostic perspective are novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Five benchmarks, dual F2F/F2L settings, multiple VFMs, label efficiency analysis, and multi-source domain extension—exceptionally comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from motivation diagnosis → method design → validation is seamless; the loss curve comparison in Fig. 3 is intuitive and compelling.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses an overlooked generalization problem in VFM distillation with important practical guidance for real-world deployment.
+- Novelty: ⭐⭐⭐⭐ Multi-stage decoupling is not entirely new, but the QSD and generalization-oriented diagnosis are novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive with 5 benchmarks, F2F/F2L dual settings, multiple VFMs, label efficiency, and multi-source domain extensions.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from diagnosis to design to verification is excellent; the loss curve comparison in Fig. 3 is highly intuitive.
+- Value: ⭐⭐⭐⭐⭐ Addresses the neglected generalization issue in VFM distillation, providing important guidance for practical deployment.
 
 <!-- RELATED:START -->
 
@@ -136,11 +149,11 @@ Distillation stage: AdamW, lr=5e-4, weight decay 0.05. F2L setting: 100 epochs o
 
 ## Related Papers
 
-- [\[CVPR 2026\] CrossEarth-SAR: A SAR-Centric and Billion-Scale Geospatial Foundation Model for Domain Generalizable Semantic Segmentation](crossearthsar_a_sarcentric_and_billionscale_geospa.md)
+- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
 - [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](../../AAAI2026/segmentation/causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[CVPR 2026\] Seeing Through the Tool: A Controlled Benchmark for Occlusion Robustness in Foundation Segmentation Models](occsam_bench_occlusion_robustness_segmentation.md)
-- [\[CVPR 2026\] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation](brewing_stronger_features_dual-teacher_distillation_for_multispectral_earth_obse.md)
-- [\[ICML 2026\] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](../../ICML2026/segmentation/geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
+- [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
 
 </div>
 

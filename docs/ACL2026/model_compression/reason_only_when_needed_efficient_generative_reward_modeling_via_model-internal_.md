@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 description: >-
-  [ACL 2026][Model Compression][Generative Reward Model] Proposes the E-GRM framework, which utilizes the convergence behavior of parallel decoding to estimate uncertainty…
+  [ACL 2026][Model Compression][Paper Note] The E-GRM framework is proposed to estimate uncertainty using the convergence behavior of model-internal parallel decoding. CoT reasoning is triggered only when necessary, and a discriminative scorer trained with hybrid loss evaluates reasoning path quality. This achieves SOTA performance on multiple reward model bench
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "Generative Reward Model"
-  - "Dynamic CoT Triggering"
-  - "Model-Internal Uncertainty"
-  - "Discriminative Scoring"
-  - "Inference Efficiency"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 4f4c5ecfd014221c
+content_hash: eac9fc55f4b31555
 ---
-
 # Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 
 **Conference**: ACL 2026 Findings  
@@ -25,51 +19,70 @@ content_hash: 4f4c5ecfd014221c
 
 ## TL;DR
 
-Proposes the E-GRM framework, which utilizes the convergence behavior of parallel decoding to estimate uncertainty, triggering CoT reasoning only when necessary. It evaluates the quality of reasoning paths through a discriminative scorer trained with hybrid loss, achieving SOTA performance on multiple reward model benchmarks while reducing inference latency by 62%.
+The E-GRM framework is proposed to estimate uncertainty using the convergence behavior of model-internal parallel decoding. CoT reasoning is triggered only when necessary, and a discriminative scorer trained with hybrid loss evaluates reasoning path quality. This achieves SOTA performance on multiple reward model benchmarks while reducing inference latency by 62%.
 
 ## Background & Motivation
 
-**Background**: Generative Reward Models (GRM) enhance the reasoning evaluation capabilities of LLMs via CoT prompting, showing outstanding performance in complex tasks such as mathematical problem solving and multi-step decision making.
+**Background**: Generative Reward Models (GRM) utilize CoT prompting to enhance the reasoning evaluation capabilities of LLMs, demonstrating outstanding performance in complex tasks such as mathematical problem solving and multi-step decision making.
 
-**Limitations of Prior Work**: Existing GRMs suffer from two core issues. First, CoT reasoning is applied indiscriminately to all inputs regardless of difficulty; simple questions still undergo the full CoT process, leading to significant unnecessary computational overhead. Second, existing methods primarily rely on voting mechanisms to aggregate CoT output answers, which is a coarse-grained evaluation that fails to distinguish fine-grained quality differences between reasoning paths.
+**Limitations of Prior Work**: Existing GRMs suffer from two core issues. First, CoT reasoning is applied indiscriminately to all inputs regardless of item difficulty, incurring unnecessary computational overhead for simple questions. Second, existing methods rely primarily on voting mechanisms to aggregate CoT answers, which lacks the granularity to distinguish quality differences between reasoning paths.
 
-**Key Challenge**: A dual bottleneck of efficiency and quality—there is a need to adaptively allocate reasoning resources based on task complexity while simultaneously requiring a more refined scoring mechanism to differentiate reasoning quality. Existing adaptive CoT methods (e.g., AdaCoT) rely on task-specific heuristics or handcrafted features, limiting their generalization.
+**Key Challenge**: A dual bottleneck in efficiency and quality—there is a need to adaptively allocate reasoning resources based on task complexity and to implement a more refined scoring mechanism to differentiate reasoning quality. Existing adaptive CoT methods (e.g., AdaCoT) often rely on task-specific heuristics or manual features, limiting generalization.
 
-**Goal**: (1) Identify a task-agnostic signal to determine whether CoT is necessary; (2) Design a more fine-grained reasoning path evaluation method than simple voting.
+**Goal**: (1) Identify a task-agnostic signal to determine the necessity of CoT. (2) Design a discriminative evaluation method more precise than voting.
 
-**Key Insight**: The authors observe that when performing multiple parallel decodings for the same prompt, outputs for simple questions converge quickly, whereas outputs for difficult questions exhibit high divergence—this convergence behavior serves as a natural indicator of problem complexity.
+**Key Insight**: The authors observe that during multiple parallel decodings of the same prompt, outputs for simple questions converge rapidly, whereas outputs for difficult questions diverge significantly. This convergence behavior serves as a natural indicator of problem complexity.
 
-**Core Idea**: Use the consensus formed during the model's own parallel generation as an uncertainty estimation signal to dynamically decide whether to trigger CoT, while training a lightweight discriminative scorer using a hybrid regression-ranking loss for precise scoring.
+**Core Idea**: Use the consensus from model-internal parallel generation as an uncertainty estimation signal to dynamically trigger CoT, while training a lightweight discriminative scorer with a hybrid regression-ranking loss for fine-grained scoring.
 
 ## Method
 
 ### Overall Architecture
 
-E-GRM consists of two core modules: (1) a dynamic CoT triggering mechanism based on model-internal uncertainty; (2) a discriminative scoring module based on hybrid loss. Training involves two stages: first, SFT to enable the model to learn both short-reasoning and long-reasoning modes, followed by preference optimization via extended GRPO. During inference, the model first quickly determines if CoT is needed; if so, it generates multiple reasoning paths and selects the optimal one using the scorer.
+E-GRM consists of two core modules: (1) a dynamic CoT triggering mechanism based on model-internal uncertainty; (2) a discriminative scoring module based on hybrid loss. Training proceeds in two stages: SFT to teach the model both short and long reasoning modes, followed by preference optimization via extended GRPO. During inference, the system first determines if CoT is required; if so, multiple paths are generated and evaluated by the scorer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Prompt x"] --> B["Dynamic CoT Triggering<br/>M parallel decodings, calculate consensus"]
+    B -->|"Consensus ≥ τ (~58% samples)"| C["Output Consensus Answer<br/>Skip CoT"]
+    B -->|"Consensus < τ"| D["Generate Multiple CoT Reasoning Paths"]
+    D --> E["Discriminative Scoring Module<br/>Hybrid Huber+Hinge loss for quality scoring"]
+    E --> F["Select optimal path, output reward score"]
+    subgraph T["Two-stage Training"]
+        direction TB
+        G["SFT: Mixed short/long reasoning samples"] --> H["Extended GRPO preference optimization<br/>Pairwise reward contrast"]
+    end
+    T -.Trains.-> B
+```
 
 ### Key Designs
 
-1.  **Dynamic CoT Triggering**:
+**1. Dynamic CoT Triggering: Using "Answer Convergence Speed" as a Complexity Probe**
 
-    - **Function**: Automatically decides whether to enable CoT reasoning based on problem complexity.
-    - **Mechanism**: Performs $M$ parallel decodings for input $x$ (using different temperatures/sampling parameters) and calculates answer consistency: $\text{Consensus}(x) = \max_y \text{Count}(y) / M$. If $\text{Consensus} \geq \tau$ (default 0.8), the consensus answer is output directly; otherwise, full CoT generation is triggered. In experiments, approximately 58% of samples were identified as "short reasoning," allowing them to skip CoT.
-    - **Design Motivation**: Leverages the model's own generation behavior as a complexity probe without requiring external features or task-specific heuristics, achieving true task-agnostic adaptive reasoning.
+Applying CoT to all inputs creates an efficiency sink. The decision criteria here derive entirely from model behavior: execute $M$ parallel decodings for input $x$ (using different temperature/sampling parameters) and calculate $\text{Consensus}(x) = \max_y \text{Count}(y) / M$. If consensus $\geq \tau$ (default 0.8), the consensus answer is output directly; otherwise, full CoT generation is triggered. Approximately 58% of samples are classified as "short reasoning," allowing them to skip the full process.
 
-2.  **Discriminative Scoring Module**:
+The advantage of this design is its independence from external features or task-specific heuristics. Unlike methods such as AdaCoT that estimate complexity based on solution length, "sampling convergence" is a task-agnostic property.
 
-    - **Function**: Performs fine-grained quality scoring of generated reasoning paths.
-    - **Mechanism**: A lightweight scoring model $\mathcal{S}_\phi$ is trained to output a quality score in $[0, 1]$. The loss function combines Huber Loss (for regression robustness, transitioning smoothly from L2 to L1 for outliers) and Hinge Loss (for ranking discriminability, enforcing a margin $m$ between high-quality and low-quality paths). Total loss is $\mathcal{L} = \alpha \cdot \ell_{\text{Huber}} + (1-\alpha) \cdot \ell_{\text{Hinge}}$.
-    - **Design Motivation**: Pure voting mechanisms only check answer consistency and ignore the quality of the reasoning process; hybrid loss allows the scorer to both calibrate absolute quality and reliably distinguish subtle differences.
+**2. Discriminative Scoring Module: Hybrid Regression-Ranking Loss vs. Coarse Voting**
 
-3.  **Extended GRPO Preference Optimization (Coupled-GRPO)**:
+Voting mechanisms only track answer consistency and cannot differentiate the quality of reasoning processes. This work trains a lightweight scoring model $\mathcal{S}_\phi$ to output a quality score in $[0,1]$. The loss function combines two objectives: Huber Loss for robust regression (transitioning from L2 to L1 for outliers) and Hinge Loss for discriminative ranking, enforcing a margin $m$ between high-quality and low-quality paths. The total loss is defined as:
 
-    - **Function**: Optimizes the policy during the RL stage using paired preference data.
-    - **Mechanism**: Introduces a paired reward signal based on standard GRPO: $R_{\text{pair}} = \mathcal{S}_\phi(x, r^+) - \mathcal{S}_\phi(x, r^-) + \beta \cdot \mathbb{I}(\text{Ans}(r^+) = y)$. This directly compares the scorer output differences between positive and negative samples, providing a stronger learning signal.
-    - **Design Motivation**: While standard GRPO calculates relative rewards within independently sampled groups, paired data naturally contains contrastive information; explicitly utilizing this structure provides more targeted gradients.
+$$\mathcal{L} = \alpha \cdot \ell_{\text{Huber}} + (1-\alpha) \cdot \ell_{\text{Hinge}}$$
+
+The hybrid approach addresses the conflict between absolute calibration (how high the quality is) and relative ranking (which of two close paths is better).
+
+**3. Extended GRPO (Coupled-GRPO): Integrating Pairwise Contrasts into Reward Signals**
+
+Standard GRPO calculates relative rewards within independently sampled groups. This framework introduces pairwise rewards when training data consists of positive/negative pairs:
+
+$$R_{\text{pair}} = \mathcal{S}_\phi(x, r^+) - \mathcal{S}_\phi(x, r^-) + \beta \cdot \mathbb{I}(\text{Ans}(r^+) = y)$$
+
+This directly contrasts the scorer's output for positive and negative samples and adds an indicator reward for answer correctness, providing more targeted gradients with less noise than random grouping.
 
 ### Loss & Training
 
-Training follows two stages: (1) An SFT stage that mixes short-reasoning samples (direct answer prediction) and long-reasoning samples (learning CoT sequences), with datasets partitioned automatically via uncertainty estimation; (2) A GRPO stage using paired preference data and the discriminative scorer for alignment optimization, including KL regularization to prevent excessive deviation from the reference policy.
+Training involves: (1) An SFT stage mixing short reasoning samples (direct answer prediction) and long reasoning samples (CoT sequences), partitioned automatically via uncertainty estimation. (2) A GRPO stage utilizing pairwise preference data and the discriminative scorer for alignment, including KL regularization to prevent divergence from the reference policy.
 
 ## Key Experimental Results
 
@@ -93,35 +106,35 @@ Training follows two stages: (1) An SFT stage that mixes short-reasoning samples
 
 ### Key Findings
 
-- **Discriminative Scoring Module contributes the most**: Removing it leads to a 5.6% drop in accuracy, indicating that fine-grained scoring is crucial for reasoning quality.
-- **Dynamic CoT Triggering yields a 49% reduction in FLOPs and a 55% reduction in latency**, while accuracy actually improves by 3.2%, proving that unnecessary CoT can introduce error propagation.
-- **Comparison with heuristic methods like AdaCoT**: E-GRM achieves higher accuracy (78.4% vs 76.8%) and lower latency (2.2s vs 2.9s) without requiring task-specific priors.
-- **Extended GRPO provides consistent but modest gains** over standard GRPO (MATH: 78.4% vs 76.9%).
+- The discriminative scoring module is the primary contributor: removing it results in a 5.6% drop in accuracy, highlighting the importance of fine-grained evaluation.
+- Dynamic CoT triggering yields a 49% reduction in FLOPs and a 55% reduction in latency, while improving accuracy by 3.2%, suggesting that unnecessary CoT can introduce error propagation.
+- Compared to heuristic methods like AdaCoT, E-GRM achieves higher accuracy (78.4% vs 76.8%) and lower latency (2.2s vs 2.9s) without requiring task-specific priors.
+- Extended GRPO provides consistent but moderate improvements over standard GRPO (e.g., MATH: 78.4% vs 76.9%).
 
 ## Highlights & Insights
 
-- **Parallel decoding consistency as a complexity probe**: This is an elegant design—leveraging the model's own behavioral characteristics rather than external signals to judge reasoning needs. It naturally possesses task-agnosticism and zero additional parameter cost. This idea is transferable to any scenario requiring adaptive computation (e.g., early exit, dynamic depth).
-- **Hybrid Regression-Ranking Loss**: The combination of Huber + Hinge cleverly resolves the conflict of requiring a scorer to achieve both "absolute calibration" and "relative ranking," making it more robust than pure MSE or pure ranking losses.
-- **58% of samples identified as "simple questions" not requiring CoT**: This proportion itself is a significant finding—it indicates that current GRMs suffer from severe computational waste on a large number of simple tasks.
+- **Consensus as a Complexity Probe**: Leveraging model-internal behavior rather than external signals is an elegant, task-agnostic design with zero extra parameter costs. This concept is transferable to other adaptive computation scenarios like early exit or dynamic depth.
+- **Hybrid Regression-Ranking Loss**: The Huber + Hinge combination successfully balances the dual requirements of absolute calibration and relative ranking.
+- The finding that 58% of samples are "simple problems" not requiring CoT reveals significant computational waste in current uniform GRM deployments.
 
 ## Limitations & Future Work
 
-- Uncertainty estimation via parallel decoding itself requires $M$ forward passes ($M=5$). Although the overhead is smaller than full CoT, it is not zero-cost; its acceptability in extreme low-latency scenarios needs verification.
-- The selection of threshold $\tau$ and the number of parallels $M$ is currently manual; different task domains may require different settings.
-- The discriminative scorer requires annotated quality data for training, and the cost of data acquisition may limit rapid deployment in new domains.
-- **Future Explorations**: Combining uncertainty estimation with speculative decoding, or replacing multiple samplings with internal representations from a single forward pass (such as attention entropy).
+- Parallel decoding requires $M$ forward passes ($M=5$). While cheaper than full CoT, the feasibility in extreme low-latency scenarios remains to be verified.
+- The threshold $\tau$ and sample count $M$ are currently set manually; different domains may require tuned settings.
+- The discriminative scorer requires labeled quality data, which may limit rapid deployment in new fields.
+- Future work could explore combining uncertainty estimation with speculative decoding or using internal representations (e.g., attention entropy) from a single forward pass.
 
 ## Related Work & Insights
 
-- **vs DeepSeek-GRM**: DeepSeek-GRM is also a generative reward model but lacks an adaptive reasoning mechanism, using CoT uniformly for all inputs. E-GRM significantly reduces computational costs at equivalent or higher accuracy via dynamic triggering.
-- **vs AdaCoT**: AdaCoT uses task-specific heuristics based on estimated solution length to decide if CoT is needed. E-GRM’s parallel consistency method is entirely task-agnostic and experimentally proven to be superior.
+- **vs. DeepSeek-GRM**: DeepSeek-GRM lacks adaptive reasoning and applies CoT uniformly. E-GRM significantly reduces cost with comparable or higher accuracy.
+- **vs. AdaCoT**: AdaCoT uses task-specific heuristics based on solution length. E-GRM is task-agnostic and demonstrates superior performance in experiments.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Parallel decoding consistency as an uncertainty signal is a novel entry point, though the hybrid loss and GRPO extensions are somewhat incremental.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three major benchmarks, thorough ablation studies, and well-designed comparison experiments with AdaCoT.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed method description, though some formulas are quite lengthy.
-- Value: ⭐⭐⭐⭐ Successfully addresses the efficiency pain point of GRMs; the 62% latency reduction holds significant value for practical deployment.
+- **Novelty**: ⭐⭐⭐⭐ Parallel decoding consensus as an uncertainty signal is a novel entry point, though hybrid loss and GRPO extensions are incremental.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive testing across three benchmarks, thorough ablation, and well-designed comparison with AdaCoT.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and detailed method description, though some formulas are lengthier than necessary.
+- **Value**: ⭐⭐⭐⭐ Effectively addresses GRM efficiency; the 62% latency reduction is highly significant for practical deployment.
 
 <!-- RELATED:START -->
 
@@ -132,8 +145,8 @@ Training follows two stages: (1) An SFT stage that mixes short-reasoning samples
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
 - [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](../../ICML2026/model_compression/when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
 - [\[ACL 2026\] Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions](cognitive-uncertainty_guided_knowledge_distillation_for_accurate_classification_.md)
-- [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/model_compression/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
-- [\[ACL 2026\] UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text](ukp_psycontrol_at_semeval-2026_task_2_modeling_valence_and_arousal_dynamics_from.md)
+- [\[ICML 2025\] Bring Reason to Vision: Understanding Perception and Reasoning through Model Merging](../../ICML2025/model_compression/bring_reason_to_vision_understanding_perception_and_reasoning_through_model_merg.md)
+- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](../../CVPR2026/model_compression/progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 
 </div>
 

@@ -2,74 +2,70 @@
 title: >-
   [Paper Note] Explaining CLIP Zero-shot Predictions Through Concepts
 description: >-
-  [CVPR 2026][Information Retrieval & RAG][CLIP] This paper proposes EZPC, which learns a linear projection matrix $A$ to jointly map CLIP image and text embeddings into an interpretable concept space. The method provides…
+  [CVPR 2026][Information Retrieval & RAG][CLIP] This paper proposes EZPC, which maps CLIP image-text embeddings into an interpretable concept space by learning a linear projection matrix. While maintaining almost no loss in zero-shot classification accuracy (H-mean gap of only ~1% on CIFAR-100/CUB/ImageNet-100), it provides faithful explanations based on human-under
 tags:
-  - "CVPR 2026"
-  - "Information Retrieval & RAG"
-  - "CLIP"
-  - "Zero-shot Classification"
-  - "Concept Bottleneck Model"
-  - "Interpretability"
-  - "Vision-Language Model"
+  - CVPR 2026
+  - Information Retrieval & RAG
+  - CLIP
+  - Interpretability
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 6f1c4464472d5950
+content_hash: 94380dfd8b6ad105
 ---
-
 # Explaining CLIP Zero-shot Predictions Through Concepts
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.28211](https://arxiv.org/abs/2603.28211)  
 **Code**: [https://github.com/oonat/ezpc](https://github.com/oonat/ezpc)  
-**Area**: Information Retrieval
-**Keywords**: CLIP, Zero-shot Classification, Concept Bottleneck Model, Interpretability, Vision-Language Model
+**Area**: Information Retrieval  
+**Keywords**: CLIP, Zero-shot Classification, Concept Bottleneck Models, Interpretability, Vision-Language Models
 
 ## TL;DR
-This paper proposes EZPC, which learns a linear projection matrix $A$ to jointly map CLIP image and text embeddings into an interpretable concept space. The method provides faithful, human-understandable explanations for CLIP predictions with negligible accuracy loss (H-mean gap of ~1% on CIFAR-100/CUB/ImageNet-100) and an inference overhead of only ~0.1ms.
+This paper proposes EZPC, which maps CLIP image-text embeddings into an interpretable concept space by learning a linear projection matrix. While maintaining almost no loss in zero-shot classification accuracy (H-mean gap of only ~1% on CIFAR-100/CUB/ImageNet-100), it provides faithful explanations based on human-understandable concepts for CLIP predictions with a negligible inference overhead increase of about 0.1ms.
 
 ## Background & Motivation
 
-1. **Background**: Vision-language models (VLMs) such as CLIP have achieved remarkable success in zero-shot image recognition by aligning images and text in a shared semantic space, enabling recognition of arbitrary categories without task-specific training. Concept Bottleneck Models (CBMs), meanwhile, provide interpretable reasoning through a human-defined concept layer, but require concept annotations and cannot generalize to unseen categories.
+1. **Background**: Vision-Language Models (VLMs) like CLIP have achieved great success in zero-shot image recognition by aligning images and text into a shared semantic space, enabling the recognition of arbitrary categories without task-specific training. Simultaneously, Concept Bottleneck Models (CBMs) provide interpretable reasoning via an intermediate layer of human-defined concepts but rely on concept annotations and fail to generalize to unseen categories.
 
-2. **Limitations of Prior Work**: CLIP's high-dimensional embeddings are entangled black boxes—users cannot understand why the model associates a given image with a particular label. Although CBMs are interpretable, they require concept supervision and are limited to a closed-world setting. SpLiCE decomposes CLIP embeddings into concept combinations but requires per-image optimization (59× slower than CLIP), while Z-CBM demands a large concept vocabulary and expensive regression.
+2. **Limitations of Prior Work**: The high-dimensional embeddings of CLIP are entangled black boxes—users cannot understand why a model associates an image with a specific label. While CBMs are interpretable, they require concept supervision and are restricted to a closed world (fixed set of categories). SpLiCE decomposes CLIP embeddings into concept compositions but requires image-wise optimization (59x slower than CLIP), and Z-CBM requires large concept libraries and expensive regressions.
 
-3. **Key Challenge**: Interpretability and open-world generalization appear to be mutually exclusive—CBMs offer interpretability but lack generalization, while CLIP generalizes but is not interpretable.
+3. **Key Challenge**: Interpretability and open-world generalization capability seem mutually exclusive—CBMs offer interpretability but lack generalization, while CLIP generalizes but lacks interpretability.
 
-4. **Goal**: How can CLIP's zero-shot capability be preserved while making its predictions explainable through human-understandable concepts?
+4. **Goal**: How can CLIP's zero-shot capabilities be maintained while making its predictions explainable through human-understandable concepts?
 
-5. **Key Insight**: CLIP's internal representations may already implicitly encode human-understandable semantic structure, requiring only an appropriate projection to "decode" it.
+5. **Key Insight**: The internal representations of CLIP may already implicitly encode human-understandable semantic structures, requiring only an appropriate projection to "decode" them.
 
-6. **Core Idea**: Learn a single linear projection matrix $A$ to jointly map CLIP image and text embeddings into a predefined concept space, using a matching loss to preserve interpretability and a reconstruction loss to maintain semantic fidelity.
+6. **Core Idea**: Learn a single linear projection matrix $A$ to jointly map CLIP image-text embeddings into a predefined concept space, maintaining interpretability with a matching loss and semantic faithfulness with a reconstruction loss.
 
 ## Method
 
 ### Overall Architecture
-The EZPC pipeline: (1) define a set of $m$ human-understandable concepts (e.g., "has feathers", "made of metal"); (2) learn a projection matrix $A \in \mathbb{R}^{d \times m}$ mapping CLIP's $d$-dimensional embedding space to an $m$-dimensional concept space; (3) perform zero-shot classification in concept space via the dot product between the image concept vector $c_x = v_x A$ and the class concept vector $c_k$; (4) decompose each concept's contribution via the element-wise product $s_{x,k} = c_x \odot c_k$ to provide faithful explanations.
+The objective of EZPC is straightforward: decompose every zero-shot judgment of CLIP into "which human-readable concepts were activated by this image" without modifying CLIP itself or slowing down inference. It first prepares a set of $m$ textually described concepts (e.g., "has feathers," "made of metal"). Then, it trains only one linear projection matrix $A \in \mathbb{R}^{d \times m}$ to project both the $d$-dimensional CLIP image embedding $v_x$ and text embeddings into this $m$-dimensional concept space. The image becomes a concept activation vector $c_x = v_x A$, and each category also becomes a concept vector $c_k$. Classification is performed by finding the nearest category in the concept space: $\hat{y} = \arg\max_k \langle c_x, c_k \rangle$. Since this is a dot product, the category score is naturally the sum of individual concept contributions $\langle c_x, c_k \rangle = \sum_{j=1}^{m} s_{x,k}^{(j)}$, where $s_{x,k} = c_x \odot c_k$. Thus, "why it was classified as this category" can be read directly by identifying which dimensions in the element-wise product are the largest. Training only optimizes the single matrix $A$, using two losses to ensure interpretability and faithfulness respectively.
 
 ### Key Designs
 
-1. **Shared Concept Projection**:
+**1. Shared Linear Concept Projection: Moving images and text into concept space via one matrix**
 
-    - **Function**: Uniformly maps both image and text embeddings into an interpretable concept space.
-    - **Mechanism**: A learnable projection matrix $A \in \mathbb{R}^{d \times m}$ is defined, where each column corresponds to a concept direction. Image concept activations are computed as $c_x = v_x A$ and class concept activations as $C_\mathcal{Y} = T A$. Classification is performed in concept space via $\hat{y} = \arg\max_k \langle c_x, c_k \rangle$. Since $\langle c_x, c_k \rangle = \sum_{j=1}^{m} s_{x,k}^{(j)}$, the contribution of each concept dimension to the prediction is directly decomposable.
-    - **Design Motivation**: Using a single unified projection rather than per-image optimization ensures high efficiency; the linear projection guarantees explanation faithfulness—concept scores directly constitute classification logits, so explanations and the decision process are fully consistent.
+CLIP's high-dimensional embeddings are entangled black boxes that cannot tell users which semantics a match is based on. Instead of per-image solving (the root cause of SpLiCE and Z-CBM being dozens of times slower), EZPC learns a globally shared $A$, passing both the image and all category text through the same projection: $c_x = v_x A$, $C_\mathcal{Y} = T A$. The insistence on a **linear** projection rather than a powerful non-linear mapping is because linearity ensures "explanation" and "decision" are strictly the same thing—the category logit $\langle c_x, c_k\rangle$ is simply the sum of concept scores $s_{x,k}^{(j)}$. The contribution of each dimension can be extracted exactly without the approximate bias of post-hoc attribution. This faithfulness-by-construction is more trustworthy than post-hoc methods like saliency maps, and the cost is just a single matrix multiplication, making inference nearly free.
 
-2. **Matching Loss**:
+**2. Match Loss: Anchoring projection columns to real concept directions to prevent drift**
 
-    - **Function**: Ensures the columns of the projection matrix $A$ remain aligned with known concept embeddings, preserving interpretability.
-    - **Mechanism**: All concept phrases are encoded with the CLIP text encoder to obtain $\Phi \in \mathbb{R}^{d \times m}$. $A$ is initialized as $\Phi$ and constrained via the MSE loss $\mathcal{L}_{\text{match}} = \frac{1}{dm}\sum_{i,j}(A_{ij} - \Phi_{ij})^2$ to prevent it from drifting away from the concept basis.
-    - **Design Motivation**: Without this constraint, $A$ may drift during training toward directions that no longer correspond to interpretable concepts. The anchoring loss strikes a balance between flexibility and interpretability.
+If the projection matrix is optimized without constraints, the column vectors might drift toward directions that classify well numerically but no longer correspond to any human concepts, rendering the explanation invalid. EZPC first uses the CLIP text encoder to encode all concept phrases into $\Phi \in \mathbb{R}^{d \times m}$, initializes $A = \Phi$, and then adds an MSE constraint during training to pull $A$ back toward the concept basis:
 
-3. **Reconstruction Loss**:
+$$\mathcal{L}_{\text{match}} = \frac{1}{dm}\sum_{i,j}(A_{ij} - \Phi_{ij})^2$$
 
-    - **Function**: Ensures the similarity distribution in concept space is consistent with that in CLIP's original embedding space.
-    - **Mechanism**: KL divergence is used to measure the discrepancy between the concept-space distribution and CLIP's original distribution: $\mathcal{L}_{\text{recon}} = \frac{1}{B}\sum_{i=1}^{B} \text{KL}(\text{softmax}(c_i C_\mathcal{Y}^\top) \| \text{softmax}(v_i T^\top))$
-    - **Design Motivation**: Ensures that classification decisions after concept decomposition remain consistent with CLIP's original predictions—i.e., semantic fidelity is maintained without altering the model's core judgments by adding an interpretable layer.
+This acts as a soft anchor for each concept direction—allowing $A$ to fine-tune for downstream classification while preventing it from straying so far that "the column for concept $j$ no longer represents concept $j$," thus balancing flexibility and interpretability.
+
+**3. Reconstruction Loss: Ensuring consistency between concept space decisions and original CLIP**
+
+Interpretability alone is insufficient; if the model's classification tendency after projection differs from the original CLIP, the explanation is for a different model. EZPC uses KL divergence to force the category distribution in the concept space to align with the distribution in the original CLIP embedding space:
+
+$$\mathcal{L}_{\text{recon}} = \frac{1}{B}\sum_{i=1}^{B} \text{KL}\big(\text{softmax}(c_i C_\mathcal{Y}^\top) \,\|\, \text{softmax}(v_i T^\top)\big)$$
+
+The left side represents the similarity distribution calculated in the concept space after projection, and the right side is the original CLIP distribution $v_i T^\top$. Aligning the former with the latter ensures that the model's ranking of judgments for each image remains basically unchanged after adding the interpretable layer. This is key to EZPC keeping accuracy loss under 1% without sacrificing CLIP's zero-shot capability.
 
 ### Loss & Training
-- Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{match}} + \lambda \mathcal{L}_{\text{recon}}$
-- $\lambda = 1$ for most datasets; $\lambda = 5$ for CUB and Places365.
-- The concept set is drawn from the GPT-3-generated concept vocabulary used in LF-CBM, augmented with a large ImageNet-1k concept pool for broader coverage.
-- All experiments use an 80/20 seen/unseen class split.
+The total loss combines the two terms, with $\lambda$ balancing interpretability and faithfulness: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{match}} + \lambda \mathcal{L}_{\text{recon}}$. Most datasets use $\lambda = 1$, while CUB and Places365 use $\lambda = 5$. The concept set reuse vocabulary from LF-CBM generated by GPT-3 and incorporates the large concept pool from ImageNet-1k to expand coverage. All experiments use an 80/20 split of seen/unseen categories to test open-world generalization.
 
 ## Key Experimental Results
 
@@ -87,7 +83,7 @@ The EZPC pipeline: (1) define a set of $m$ human-understandable concepts (e.g., 
 
 **Inference Efficiency Comparison**:
 
-| Method | Latency (ms/img) | Overhead |
+| Method | Latency (ms/img) | Overhead Factor |
 |------|--------------|----------|
 | CLIP | 5.77 | 1.0× |
 | Z-CBM | 542.34 | 94.0× |
@@ -105,34 +101,34 @@ The EZPC pipeline: (1) define a set of $m$ human-understandable concepts (e.g., 
 | 100 | 0.706 | 0.857 | 0.692 |
 
 ### Key Findings
-- **EZPC closes within 1% of CLIP on most datasets** (CIFAR-100: −0.5%, ImageNet-100: −1.1%, CUB: −0.9%), while SpLiCE and Z-CBM frequently lag by 10–15%.
-- **A quantitative–qualitative trade-off exists for $\lambda$**: larger $\lambda$ improves quantitative metrics (better preservation of CLIP's distribution), but qualitative analysis shows that smaller $\lambda$ (e.g., 1) yields more semantically relevant concept activations.
-- **The concept space exhibits good spatial alignment**: on the Indigo Bunting class in CUB, the Pointing Accuracy for the positive concept "blue-grey body" reaches 96.7%, while the negative concept "red face" scores near zero.
-- **Cross-dataset transfer is effective**: a projection matrix trained on ImageNet-100 transfers directly to CIFAR-100 and CUB with performance close to CLIP.
+- **EZPC maintains a performance gap within 1% of CLIP on most datasets** (CIFAR-100: -0.5%, ImageNet-100: -1.1%, CUB: -0.9%), whereas SpLiCE and Z-CBM often lag by 10-15%.
+- **A trade-off exists between quantitative and qualitative results via $\lambda$**: Higher $\lambda$ improves quantitative metrics (better preservation of CLIP distribution), but qualitative analysis shows smaller $\lambda$ (e.g., 1) produces more semantically relevant concept activations.
+- **Concept space exhibits strong spatial alignment**: On the Indigo Bunting class in CUB, the Pointing Accuracy for the positive concept "blue-gray body" reaches 96.7%, while the negative concept "red face" is near 0.
+- **Cross-dataset transfer is effective**: Projection matrices trained on ImageNet-100 can be directly transferred to CIFAR-100 and CUB with performance close to CLIP.
 
 ## Highlights & Insights
-- **A minimalist interpretability solution**: a single linear projection matrix delivers concept-level explanations with near-zero inference overhead (~0.1ms), making it suitable for large-scale deployment—in stark contrast to SpLiCE (59× slower) and Z-CBM (94× slower), both of which require per-image optimization.
-- **Guaranteed faithfulness of explanations**: since concept scores directly constitute prediction logits ($\langle c_x, c_k \rangle = \sum_j s_{x,k}^{(j)}$), explanations are constructively faithful rather than post-hoc attributions—a stronger guarantee than saliency-map-based methods.
-- **Balanced dual-objective design**: $\mathcal{L}_{\text{match}}$ preserves interpretability, $\mathcal{L}_{\text{recon}}$ preserves performance, and $\lambda$ controls the trade-off. This design pattern is transferable to other tasks requiring a balance between interpretability and accuracy.
+- **Minimalist Interpretability Solution**: Achieving concept-level explanation with just a linear projection matrix and near-zero inference overhead (0.1ms) makes it suitable for large-scale deployment. This stands in stark contrast to SpLiCE (59x slower) and Z-CBM (94x slower), which require per-image optimization.
+- **Guaranteed Faithfulness of Explanations**: Since concept scores directly constitute the prediction logit ($\langle c_x, c_k \rangle = \sum_j s_{x,k}^{(j)}$), the explanation is faithfulness-by-construction rather than post-hoc attribution. This is more reliable than post-hoc explanation methods like saliency maps.
+- **Balanced Design of Match-Reconstruction Dual Objectives**: $\mathcal{L}_{\text{match}}$ preserves interpretability, while $\mathcal{L}_{\text{recon}}$ preserves performance. $\lambda$ controls the balance—this design pattern can be transferred to other tasks requiring a trade-off between interpretability and performance.
 
 ## Limitations & Future Work
-- **The linear projection assumption limits expressive capacity**: highly nonlinear semantic relationships may not be fully captured in the concept space.
-- **Dependence on concept set quality**: interpretability relies on the quality and diversity of the concept vocabulary; biases in the concept set affect explanation fidelity.
-- **Restricted to classification tasks**: the current method focuses on classification; extending it to multimodal reasoning, VQA, and related tasks remains an open problem.
-- **Larger performance gap on ImageNet-1k** (5%): information loss from concept decomposition becomes more pronounced at scale.
-- **Future directions**: nonlinear concept mappings, adaptive concept discovery, and integration with LLMs for dynamic concept vocabulary expansion.
+- **Linear Projection Assumption Limits Expressivity**: Highly non-linear semantic relationships may not be fully captured in the concept space.
+- **Dependence on Concept Set Quality**: Interpretability depends on the quality and diversity of the concept vocabulary; biases in the concept set affect the faithfulness of the explanation.
+- **Limited to Classification Tasks**: The current method focuses on classification; extending it to multimodal reasoning, VQA, and other tasks is an open problem.
+- **Larger Performance Gap on ImageNet-1k** (5%): Information loss during concept decomposition is more pronounced in large-scale settings.
+- **Future Directions**: Non-linear concept mapping, adaptive concept discovery, and integration with LLMs for dynamic concept vocabulary expansion.
 
 ## Related Work & Insights
-- **vs. SpLiCE**: SpLiCE sparsely decomposes CLIP embeddings into combinations of concept vectors but requires per-image optimization, making it 59× slower. EZPC learns a unified projection with near-free inference.
-- **vs. Z-CBM**: Z-CBM reconstructs embeddings from a concept library for zero-shot CBM but requires a large concept pool and expensive regression (94× slower). EZPC is substantially more efficient and achieves better performance.
-- **vs. LF-CBM**: LF-CBM requires concept-annotated training and is a closed-set method. EZPC leverages LF-CBM's concept set while enabling open-world zero-shot generalization.
-- The finding that CLIP's internal representations naturally encode human-alignable structure has theoretical value for understanding the semantic organization of large-scale pretrained models.
+- **vs SpLiCE**: SpLiCE sparsely decomposes CLIP embeddings into combinations of concept vectors but requires image-wise optimization and is 59x slower; EZPC learns a unified projection with nearly free inference.
+- **vs Z-CBM**: Z-CBM reconstructs embeddings from a concept library for zero-shot CBM but requires large libraries and expensive regressions (94x slower); EZPC is significantly more efficient and performs better.
+- **vs LF-CBM**: LF-CBM requires concept labels for training and is a closed-set method; EZPC utilizes the concept set of LF-CBM but achieves open-world zero-shot capability.
+- The discovery that CLIP internal representations naturally encode human-alignable structures holds theoretical value for understanding the semantic organization of large-scale pretrained models.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The linear projection + dual-loss formulation is elegant and concise, though limited in technical depth.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Five datasets, multiple qualitative analyses, cross-domain experiments, and efficiency comparisons constitute a comprehensive evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logical structure, rigorous mathematical notation, and intuitive experimental presentation.
-- **Value**: ⭐⭐⭐⭐ Provides a practical and efficient solution for VLM interpretability with real deployment potential.
+- Novelty: ⭐⭐⭐⭐ The linear projection + dual loss scheme is concise and elegant, though the technical depth is limited.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive with 5 datasets, multiple qualitative analyses, cross-domain experiments, and efficiency comparisons.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, standardized mathematical notation, and intuitive experimental presentation.
+- Value: ⭐⭐⭐⭐ Provides a practical and efficient solution for VLM interpretability with real-world deployment value.
 
 <!-- RELATED:START -->
 
@@ -140,10 +136,10 @@ The EZPC pipeline: (1) define a set of $m$ human-understandable concepts (e.g., 
 
 ## Related Papers
 
+- [\[CVPR 2025\] EZSR: Event-based Zero-Shot Recognition](../../CVPR2025/information_retrieval/ezsr_event-based_zero-shot_recognition.md)
 - [\[ICML 2026\] BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs](../../ICML2026/information_retrieval/blitzrank_principled_zero-shot_ranking_agents_with_tournament_graphs.md)
-- [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](../../ICLR2026/information_retrieval/btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
 - [\[ICML 2026\] How can embedding models bind concepts?](../../ICML2026/information_retrieval/how_can_embedding_models_bind_concepts.md)
-- [\[NeurIPS 2025\] SuperCLIP: CLIP with Simple Classification Supervision](../../NeurIPS2025/information_retrieval/superclip_clip_with_simple_classification_supervision.md)
+- [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](../../ICLR2026/information_retrieval/btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
 - [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](../../ICCV2025/information_retrieval/external_knowledge_injection_for_clip-based_class-incremental_learning.md)
 
 </div>

@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] An Odd Estimator for Shapley Values
 description: >-
-  [ICML2026][Causal Inference][Shapley values] This paper proves that Shapley values depend only on the odd component of the set function. Based on this, it proposes OddSHAP: it uses paired sampling to isolate odd signals…
+  [ICML 2026][Causal Inference][OddSHAP] This paper demonstrates that the Shapley value depends solely on the odd component of a set function. Based on this, it proposes OddSHAP: a method that isolates odd signals via paired sampling, screens high-order odd Fourier interactions using GBT, and performs sparse odd regression. It significantly outperforms flexib
 tags:
-  - "ICML2026"
-  - "Causal Inference"
-  - "Shapley values"
-  - "feature attribution"
-  - "OddSHAP"
-  - "paired sampling"
-  - "Fourier regression"
+  - ICML 2026
+  - Causal Inference
+  - OddSHAP
 date: 2026-05-08
-content_hash: 6d7c83d06ab56f15
+content_hash: 1718eddd69bbe700
 ---
-
 # An Odd Estimator for Shapley Values
 
 **Conference**: ICML2026  
@@ -24,102 +19,108 @@ content_hash: 6d7c83d06ab56f15
 **Keywords**: Shapley values, feature attribution, OddSHAP, paired sampling, Fourier regression  
 
 ## TL;DR
-This paper proves that Shapley values depend only on the odd component of the set function. Based on this, it proposes OddSHAP: it uses paired sampling to isolate odd signals, GBT to filter high-order odd Fourier interactions, and performs sparse odd regression, significantly outperforming flexible-budget Shapley estimators in mid-to-high dimensional explanation tasks.
+This paper demonstrates that the Shapley value depends solely on the odd component of a set function. Based on this, it proposes OddSHAP: a method that isolates odd signals via paired sampling, screens high-order odd Fourier interactions using GBT, and performs sparse odd regression. It significantly outperforms flexible-budget Shapley estimators on mid-to-high dimensional explanation tasks.
 
 ## Background & Motivation
-**Background**: The Shapley value is one of the most widely used feature attribution frameworks in machine learning interpretability. It treats model predictions as a set function $f:2^{[d]}\to\mathbb{R}$ and assigns the average marginal contribution to each feature. Since exact calculation requires traversing an exponential number of coalitions, practical methods typically use sampling or surrogate regression approximations, such as KernelSHAP, LeverageSHAP, Permutation Sampling, SVARM, MSR, PolySHAP, and various proxy-based estimators.
+**Background**: The Shapley value is one of the most widely used feature attribution frameworks in machine learning interpretability. It treats model predictions as set functions $f:2^{[d]}\to\mathbb{R}$ and assigns the average marginal contribution to each feature. Since exact computation requires traversing an exponential number of coalitions, practical methods typically use sampling or surrogate regression approximations, such as KernelSHAP, LeverageSHAP, Permutation Sampling, SVARM, MSR, PolySHAP, and various proxy-based estimators.
 
-**Limitations of Prior Work**: Many advanced estimators employ paired sampling, where for every sampled coalition $S$, the complement $S^c$ is also sampled. While this technique is empirically effective, the reasons for its success are not fully understood. Simultaneously, high-order polynomial or surrogate estimators offer greater expressivity but face combinatorial explosion: the number of candidate interaction terms grows rapidly with the order, making it difficult to maintain both accuracy and stability under limited budgets.
+**Limitations of Prior Work**: Many advanced estimators employ paired sampling, where for every sampled coalition $S$, its complement $S^c$ is also sampled. While this technique is empirically effective, the theoretical reason for its success remains unclear. Furthermore, while high-order polynomial or surrogate estimators offer greater expressivity, they face combinatorial explosion: the number of candidate interaction terms grows rapidly with the order, making it difficult to maintain both accuracy and stability under a limited budget.
 
-**Key Challenge**: Shapley values are only concerned with the functional components that affect marginal contributions, but traditional regression-based estimators often attempt to fit components irrelevant to the Shapley value. If an estimator wastes its sampling budget on the irrelevant even component or a large number of low-impact interactions, variance and computational costs increase.
+**Key Challenge**: The Shapley value only concerns function components that affect marginal contributions, yet traditional regression estimators often fit components of the function that are irrelevant to the Shapley value. If an estimator wastes its sampling budget on irrelevant even components or a large number of low-impact interactions, variance and computational costs increase.
 
-**Goal**: The authors aim to provide a rigorous theoretical explanation for paired sampling and design a budget-flexible Shapley estimator based on this explanation: one that can leverage high-order interactions to improve accuracy without needing to fit all high-order terms.
+**Goal**: The authors seek to provide a rigorous theoretical explanation for paired sampling and design a budget-flexible Shapley estimator based on this explanation. This estimator should leverage high-order interactions to improve accuracy without needing to fit all high-order terms.
 
-**Key Insight**: The paper starts from the odd/even decomposition of set functions. If defined as $f_{odd}(S)=\frac12(f(S)-f(S^c))$, then the Shapley value satisfies $\phi_i(f)=\phi_i(f_{odd})$. Consequently, the estimator can fit only the odd component and entirely discard the even component.
+**Key Insight**: The paper starts from the odd/even decomposition of set functions. If one defines $f_{odd}(S)=\frac12(f(S)-f(S^c))$, then the Shapley value satisfies $\phi_i(f)=\phi_i(f_{odd})$. Consequently, an estimator can focus solely on fitting the odd component and discard the even component entirely.
 
-**Core Idea**: Transform Shapley estimation from "fitting the entire value function" to "fitting only the sparse interactions in the odd Fourier subspace that contribute to the Shapley value."
+**Core Idea**: Shift Shapley estimation from "fitting the entire value function" to "only fitting sparse interactions within the odd Fourier subspace that contribute to the Shapley value."
 
 ## Method
-The theoretical foundation of OddSHAP involves two steps. First, it is proved that paired sampling decomposes the weighted least squares objective into two non-interfering parts: odd and even. As long as the target is the Shapley value, the even part can be ignored. Second, the Fourier basis is adopted because the Fourier basis functions $\chi_T(S)=(-1)^{|S\cap T|}$ are naturally divided into odd/even categories based on the parity of $|T|$: if $|T|$ is odd, it is an odd term; if it is even, it is an even term. This makes "fitting only odd interactions" algorithmically straightforward.
 
 ### Overall Architecture
-The input consists of a black-box value function $f$, a sampling budget $m$, and a regression variable factor $\eta$. The algorithm first obtains a set of coalitions using paired sampling; then, it fits a gradient boosted tree (GBT) proxy model to filter out odd Fourier interactions with the largest magnitudes; finally, it solves a weighted least squares problem with boundary constraints on the support $T_{\leq1}\cup T_{odd}$ to obtain the odd polynomial approximation $\hat f_{odd}$, from which Shapley values are directly calculated using Fourier coefficients.
+OddSHAP addresses the problem of accurately and stably estimating high-dimensional Shapley values under a limited sampling budget. Its key transformation is to stop fitting the entire value function. Instead, it proves theoretically that the Shapley value only relies on the odd part of the set function, then switches to a Fourier basis to select only those sparse odd interactions that truly contribute to the Shapley value for regression. The process involves paired sampling of coalitions, followed by a gradient boosted tree (GBT) proxy model to filter out the highest-magnitude high-order odd interactions, and finally solving a weighted least squares problem with boundary constraints on the reduced support set to derive attributions directly from Fourier coefficients.
 
-If the budget is too low to stably regress even the linear terms, specifically $m<d\eta$, the algorithm retreats to the TreeSHAP output of the GBT. Otherwise, the number of candidate high-order odd interactions is set to $|T_{odd}|=\lceil m/\eta\rceil-d$, ensuring that the number of regression variables grows linearly with the budget rather than combinatorially with the number of features and the order.
+The inputs are a black-box value function $f$, a sampling budget $m$, and a regression variable factor $\eta$. If the budget is too low to stably regress even linear terms (i.e., $m<d\eta$), the algorithm falls back to the TreeSHAP output of the GBT; otherwise, it sets the number of candidate high-order odd interactions to $|T_{odd}|=\lceil m/\eta\rceil-d$. This allows the number of regression variables to grow linearly with the budget rather than exploding combinationally. The paper formalizes the algorithm in three steps: paired sampling, interaction screening, and odd regression.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Black-box value function f<br/>Sampling budget m, variable factor η"] --> B["Odd component theoretical criterion<br/>Paired sampling isolates odd signal"]
+    B -->|"Budget insufficient m&lt;dη"| F["Fall back to GBT TreeSHAP output"]
+    B -->|"Budget sufficient"| C["Fourier basis + GBT interaction screening<br/>Select highest-magnitude odd high-order interactions"]
+    C --> D["Odd weighted least squares regression<br/>With boundary constraints, derive Shapley attribution from coefficients"]
+```
 
 ### Key Designs
-1.  **Odd component theoretical criterion**:
-    - **Function**: Proves that the effective signal for the Shapley value resides only in the odd part of the set function.
-    - **Mechanism**: Decomposes any set function as $f=f_{odd}+f_{even}$, where the odd part satisfies $f_{odd}(S)=-f_{odd}(S^c)$ and the even part satisfies $f_{even}(S)=f_{even}(S^c)$. The paper provides the observation $\phi_i(f)=\phi_i(f_{odd})$, meaning the even component contributes zero to the Shapley values of all features.
-    - **Design Motivation**: This directly explains why paired sampling is useful: it is not merely a variance reduction trick, but rather orthogonally projects out the Shapley-irrelevant even components from the estimation target.
 
-2.  **Fourier odd regression**:
-    - **Function**: Makes fitting "only odd terms" executable at the basis function level.
-    - **Mechanism**: In the Fourier basis, whether $\chi_T$ is odd is determined solely by whether $|T|$ is odd. OddSHAP retains only linear terms and the filtered odd high-order interactions, ensuring through rigorous boundary constraints that the estimated Shapley values satisfy efficiency (i.e., the sum equals $f([d])-f(\emptyset)$). The formula for calculating attribution from coefficients is $\phi_i(\hat f_{odd})=-2\sum_{T\ni i, |T|\ odd}\beta_T/|T|$.
-    - **Design Motivation**: The unanimity basis commonly used in KernelSHAP/LeverageSHAP does not cleanly separate odd and even components; the Fourier basis provides a natural structural separation.
+**1. Odd component theoretical criterion: Explaining why paired sampling works**
 
-3.  **GBT interaction screening + Budget-adaptive support set**:
-    - **Function**: Retains the most impactful odd interactions for the value function without enumerating all high-order interactions.
-    - **Mechanism**: The algorithm first fits a GBT proxy using the same batch of samples, then extracts odd Fourier coefficients with the largest absolute magnitudes using a ProxySPEX-style method. The regression support size is controlled by $\eta$; a larger budget allows for more interactions. If the budget is insufficient, it falls back to TreeSHAP to avoid underdetermined regression.
-    - **Design Motivation**: Machine learning value functions often have only a few important Fourier interactions. Screening before regression provides a trade-off between expressivity and statistical stability.
+Traditional regression estimators simultaneously fit components irrelevant to the Shapley value, wasting budget on useless signals. The authors decompose any set function as $f=f_{odd}+f_{even}$, where the odd part satisfies $f_{odd}(S)=-f_{odd}(S^c)$ and the even part satisfies $f_{even}(S)=f_{even}(S^c)$. They prove that $\phi_i(f)=\phi_i(f_{odd})$, meaning the even component contributes zero to the Shapley value of all features. This criterion elevates paired sampling (sampling $S$ and $S^c$ together), an empirical variance-reduction trick, into a rigorous conclusion: paired sampling essentially achieves an orthogonal decomposition of odd and even parts within the weighted least squares objective, allowing the estimator to cleanly discard the irrelevant even component.
+
+**2. Fourier basis + GBT interaction screening: Selecting sparse high-order interactions in the odd Fourier subspace**
+
+Theoretical criteria alone are insufficient; a basis that accurately isolates odd signals is required. The unanimity basis used by KernelSHAP/LeverageSHAP cannot achieve clean odd-even separation. The authors switch to the Fourier basis: the oddity of a basis function $\chi_T(S)=(-1)^{|S\cap T|}$ is determined solely by the parity of $|T|$; odd $|T|$ corresponds to an odd term, while even $|T|$ corresponds to an even term. Thus, discarding the even subspace becomes straightforward at the basis level. However, high-order odd terms still face combinatorial explosion. Since ML value functions often contain only a few important interactions, OddSHAP uses a GBT proxy fitted on the paired samples to extract the highest-magnitude odd Fourier coefficients (via a ProxySPEX-style method) to form the regression support set $T_{odd}$. The size of this set is controlled by $|T_{odd}|=\lceil m/\eta\rceil-d$, ensuring that regression variables scale linearly with the budget $m$.
+
+**3. Odd weighted least squares regression: Directly deriving attributions from Fourier coefficients**
+
+Once the support set is obtained, OddSHAP solves a weighted least squares problem on $T_{\le 1}\cup T_{odd}$ with Shapley kernel weights. Strict boundary constraints are applied to ensure the estimates satisfy efficiency (sum of attributions equals $f([d])-f(\emptyset)$). The final formula for calculating attributions from coefficients is $\phi_i(\hat f_{odd})=-2\sum_{T\ni i,\,|T|\ \text{odd}}\beta_T/|T|$, allowing individual feature Shapley values to be read directly from the odd Fourier subspace.
 
 ### Loss & Training
-The core optimization of OddSHAP is weighted least squares regression with Shapley kernel weights, but the objective is solved only on the odd Fourier support. After pre-calculating $f_{odd}(S)=\frac12(f(S)-f(S^c))$ via paired samples, the complement rows can be discarded, using only $m/2$ representative samples to fit the odd target. The regression also explicitly handles boundary constraints, rather than approximating them with pseudo-infinite weights as done in some KernelSHAP implementations.
+The core optimization is a weighted least squares regression using the Shapley kernel, solved only on the odd Fourier support. By pre-calculating $f_{odd}(S)=\frac12(f(S)-f(S^c))$ using paired samples, complement rows can be discarded, and $m/2$ representative samples can be used to fit the odd target, effectively compressing the information from $m$ queries into half the regression rows. Boundary constraints are handled explicitly in the regression rather than being approximated with pseudo-infinite weights.
 
 ## Key Experimental Results
 
 ### Main Results
-The experiments evaluate Shapley approximations across 30 random prediction instances on 8 value functions, covering language, image, tabular, and synthetic functions. The evaluation metrics are the median and IQR of the MSE relative to ground-truth Shapley values.
+The experiments evaluate Shapley approximations for 30 random instances across 8 value functions, covering language, image, tabular, and synthetic domains. Metric: Median and IQR of MSE relative to ground-truth Shapley values.
 
 | Dataset / Function | Dim | Area | Ours | Prev. SOTA / Baseline | Gain |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| DistilBERT | 14 | language | Comparable to best flexible-budget methods like RegressionMSR | RegressionMSR / LeverageSHAP | No significant disadvantage in low dimensions |
-| ViT16 | 16 | image | Comparable to best flexible-budget methods; outperforms most FFD corrected settings | RegressionMSR / FFD variants | High-order interactions more active in deep models |
-| Cancer | 30 | tabular | Outperforms all flexible-budget baselines at mid-to-high budgets | LeverageSHAP / MSR / SVARM / FourierSHAP | Up to 62x MSE reduction due to interaction modeling |
-| CG60 / IL60 | 60 | synthetic | Clearly leads flexible-budget baselines when budget is sufficient | MSR / FourierSHAP / RegressionMSR | Advantage more pronounced in high-dimensional interaction functions |
-| NHANES | 79 | tabular | Outperforms flexible-budget baselines at mid-to-high budgets | TreeSHAP ground truth comparison | Remains usable as dimension increases |
-| Crime | 101 | tabular | Maintains competitiveness on the runtime-MSE curve | LeverageSHAP / FFD-RD / Proxy | More scalable than fixed $O(d^2)$ designs |
+|---------------|------|------|------|-----------------|------|
+| DistilBERT | 14 | language | Comparable to best flexible-budget methods e.g. RegressionMSR | RegressionMSR / LeverageSHAP | No disadvantage in low dimensions |
+| ViT16 | 16 | image | Comparable to best flexible-budget methods; outperforms FFD corrected settings | RegressionMSR / FFD variants | More active high-order interactions in deep models |
+| Cancer | 30 | tabular | Outperforms all flexible-budget baselines at mid-to-high budgets | LeverageSHAP / MSR / SVARM / FourierSHAP | Up to 62x MSE reduction via interaction modeling |
+| CG60 / IL60 | 60 | synthetic | Clearly leads flexible-budget baselines when budget is sufficient | MSR / FourierSHAP / RegressionMSR | More pronounced advantage in high-dimensional interaction functions |
+| NHANES | 79 | tabular | Outperforms flexible-budget baselines at mid-to-high budgets | TreeSHAP ground truth comparison | Remains viable as dimensionality increases |
+| Crime | 101 | tabular | Competitive on runtime-MSE curve | LeverageSHAP / FFD-RD / Proxy | More scalable than fixed $O(d^2)$ designs |
 
 ### Ablation Study
-The ablation study directly validates OddSHAP's three core choices: the number of interactions, paired sampling, and retaining only odd interactions.
+The ablation study validates the three core choices of OddSHAP: the number of interactions, paired sampling, and the retention of only odd interactions.
 
-| Configuration | Key Metrics | Description |
-| :--- | :--- | :--- |
-| $\eta=10$, approx. 1000 interactions, 10000 samples | At least 6x MSE reduction across all functions, up to 62x on Cancer | A moderate number of odd high-order interactions significantly outperforms interaction-free LeverageSHAP |
-| $\eta\in\{2,5,10,50\}$ | MSE rebounds after too many interactions | Increased expressivity leads to overfitting; support set should not expand infinitely with budget |
-| Paired + Odd interactions | Normalized best configuration | Directly isolates the odd component, focusing budget on terms that contribute to Shapley values |
-| Paired + All interactions | Slightly worse MSE and slower | Even terms mathematically cancel out but consume interaction budget and computation time |
-| Non-paired sampling | Overall weaker than paired sampling | Without paired structure, odd/even separation is not clean, leading to more unstable estimates |
-| FFD-RD fixed-budget | Strong on tree models, degrades on deep models | Relies on high-order interaction truncation assumptions; $O(d^2)$ sample requirement is inflexible in high dimensions |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| $\eta=10$, approx. 1000 interactions, 10000 samples | At least 6x MSE reduction; 62x on Cancer | Moderate odd high-order interactions significantly outperform interaction-free LeverageSHAP |
+| $\eta\in\{2,5,10,50\}$ | MSE rebounds with too many interactions | Increased expressivity leads to overfitting; support set should not expand infinitely |
+| Paired + Odd interactions | Normalized best configuration | Directly isolates odd component; budget is focused on terms contributing to Shapley |
+| Paired + All interactions | Slightly worse MSE and slower | Even terms mathematically cancel out but consume interaction budget and compute |
+| Non-paired sampling | Overall weaker than paired sampling | Without paired structure, odd/even separation is messy, leading to instability |
+| FFD-RD fixed-budget | Strong on trees, degrades on deep models | Relies on high-order truncation assumptions; $O(d^2)$ sample requirement is inflexible in high-dim |
 
 ### Key Findings
-- The value of paired sampling is rigorously explained as even-odd separation rather than a simple empirical variance reduction technique.
-- OddSHAP does not sacrifice performance in low-dimensional tasks and clearly outperforms flexible-budget baselines in mid-to-high dimensional tasks by modeling sparse odd interactions.
-- Even interactions contribute nothing to the Shapley value; continuing to fit even terms under paired sampling only diverts budget and increases runtime.
+- The value of paired sampling is rigorously explained as even-odd separation rather than simple empirical variance reduction.
+- OddSHAP does not sacrifice performance in low-dimensional tasks and significantly outperforms flexible-budget baselines in mid-to-high dimensions by modeling sparse odd interactions.
+- Even interactions do not contribute to the Shapley value; fitting even terms under paired sampling only dilutes the budget and increases runtime.
 
 ## Highlights & Insights
-- The paper elevates a common engineering trick into a clear theory: paired sampling is precisely estimating the odd component. This explanation is elegant and guides the design of new estimators.
-- The choice of the Fourier basis is excellent. It is not chosen for mathematical aesthetics, but because odd/even properties can be directly determined by interaction order, allowing the algorithm to precisely discard irrelevant subspaces.
-- The role of the GBT proxy is well-positioned: it does not serve directly as the final explainer but helps identify sparse high-impact interactions, while constrained regression ensures Shapley consistency.
-- This paper provides an important reminder for interpretability methods: estimating the value function itself is not identical to estimating all information required for attribution. Fitting only the attribution-relevant subspace can be more efficient than fitting the complete function.
+- The paper elevates a common engineering trick to a clear theory: paired sampling is precisely estimating the odd component. This explanation is elegant and guides the design of new estimators.
+- The choice of the Fourier basis is effective. It is not just for mathematical aesthetics but because the odd/even property can be determined directly by interaction order, allowing the algorithm to precisely discard the irrelevant subspace.
+- The GBT proxy's role is well-positioned: it is not used as the final explainer but acts as a screener for sparse, high-impact interactions, while the constrained regression ensures Shapley consistency.
+- A key takeaway for interpretation methods: estimating the value function itself is not equivalent to estimating all information needed for attribution. Fitting only the attribution-relevant subspace is more efficient than fitting the full function.
 
 ## Limitations & Future Work
-- The regression phase of OddSHAP grows quadratically with the number of selected interactions; if the number of interactions remains tied to the sampling budget, overall overhead can grow approximately cubically with $m$. The authors suggest capping the number of interactions and decoupling it from $m$ at large budgets.
-- Paired sampling compresses $m$ queries into $m/2$ independent rows, which reduces independent subset coverage and may increase variance or mutual coherence; thus, it is not guaranteed to outperform non-paired sampling on all functions.
+- The regression phase of OddSHAP scales quadratically with the number of selected interactions; if interaction counts grow with the sampling budget, overall cost may grow cubically with $m$. The authors suggest capping interactions at very large budgets.
+- Paired sampling reduces the number of independent rows to $m/2$, which might decrease subset coverage and increase mutual coherence; it is not guaranteed to outperform non-paired sampling on all function types.
 - Interaction screening relies on a GBT proxy. If the proxy fails to capture important Fourier interactions of the true value function, OddSHAP may miss critical high-order terms.
-- Fixing $\eta=10$ was robust in experiments, but how to adaptively select $\eta$ across different domains, dimensions, and value function evaluation costs warrants further research.
+- While $\eta=10$ is robust in experiments, adaptive selection of $\eta$ based on domain, dimensionality, and evaluation cost warrants further research.
 
 ## Related Work & Insights
-- **vs KernelSHAP / LeverageSHAP**: These essentially perform low-order/linear surrogate regression; OddSHAP adds filtered odd high-order interactions while maintaining consistency, thereby reducing bias on complex value functions.
-- **vs PolySHAP**: PolySHAP extends to polynomial regression but faces combinatorial explosion in candidate terms; OddSHAP controls support size using the Fourier odd subspace and GBT screening.
-- **vs RegressionMSR / ProxySPEX**: Proxy methods use a learner to approximate the value function; OddSHAP uses the proxy as an interaction screener while still calculating Shapley via rigorous regression and boundary constraints.
-- **vs FFD-RD**: FFD utilizes fixed combinatorial designs and high-order truncation assumptions, which is strong for tree models; OddSHAP is more flexible, especially for deep models or functions with active high-order interactions.
+- **vs KernelSHAP / LeverageSHAP**: These essentially perform low-order/linear surrogate regression; OddSHAP includes selected high-order odd interactions while maintaining consistency, reducing bias in complex value functions.
+- **vs PolySHAP**: PolySHAP extends to polynomial regression but suffers from combinatorial explosion; OddSHAP controls the support set size using the Fourier odd subspace and GBT screening.
+- **vs RegressionMSR / ProxySPEX**: Proxy methods use learners to approximate the value function; OddSHAP uses proxies as interaction screeners while relying on rigorous regression for final attributions.
+- **vs FFD-RD**: FFD uses fixed combinatorial designs and high-order truncation; it is strong on tree models, while OddSHAP is more flexible for deep models or functions with active high-order interactions.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ The odd component criterion and OddSHAP design are highly insightful, tightly integrating theory and algorithm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 8 value functions, multiple baseline categories, runtime, interaction sparsity, and paired sampling ablations with sufficient support.
-- Writing Quality: ⭐⭐⭐⭐☆ The structure is clear, though the Fourier/Shapley theoretical density is high, requiring background knowledge from some readers.
-- Value: ⭐⭐⭐⭐⭐ Directly valuable for Shapley estimation, sampling design, and high-order interaction attribution in interpretability.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 8 value functions, multiple baselines, runtime, interaction sparsity, and paired sampling ablations with strong support.
+- Writing Quality: ⭐⭐⭐⭐☆ Structure is clear, though the Fourier/Shapley theory density is high, requiring some background knowledge.
+- Value: ⭐⭐⭐⭐⭐ Provides direct value to Shapley estimation, sampling design, and high-order interaction attribution.
 
 <!-- RELATED:START -->
 
@@ -129,9 +130,9 @@ The ablation study directly validates OddSHAP's three core choices: the number o
 
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](../../NeurIPS2025/causal_inference/practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
 - [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](causal-jepa_learning_world_models_through_object-level_latent_masking.md)
-- [\[ICML 2026\] Investigating Memory in Model-Free RL with POPGym Arcade](investigating_memory_in_model-free_rl_with_popgym_arcade.md)
 - [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[ICML 2026\] Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs](unveiling_the_structure_of_do-calculus_reasoning_via_derivation_graphs.md)
+- [\[ICML 2026\] The (Marginal) Value of a Search Ad: An Online Causal Framework for Repeated Second-price Auctions](the_marginal_value_of_a_search_ad_an_online_causal_framework_for_repeated_second.md)
+- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
 
 </div>
 

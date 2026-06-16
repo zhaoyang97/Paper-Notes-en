@@ -2,71 +2,76 @@
 title: >-
   [Paper Note] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners
 description: >-
-  [ACL 2026][LLM Reasoning][Multilingual Reasoning] This paper systematically investigates the latent reasoning behavior of Large Reasoning Models (LRMs) across 11 languages. It finds that latent reasoning capabilities exi…
+  [ACL 2026][LLM Reasoning][Paper Note] This paper systematically investigates the latent reasoning behavior of Large Reasoning Models (LRMs) across 11 languages. It finds that latent reasoning capabilities exist in multiple languages but are unevenly distributed (strong in high-resource languages, weak in low-resource ones), and internal reasoning dynamics
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Multilingual Reasoning"
-  - "Latent Reasoning"
-  - "Chain-of-Thought Truncation"
-  - "Representation Analysis"
-  - "Reasoning Models"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 7aa7a6fb1526e9c8
+content_hash: 5772b9a74d92080f
 ---
-
 # Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2601.02996](https://arxiv.org/abs/2601.02996)  
 **Code**: [https://github.com/cisnlp/multilingual-latent-reasoner](https://github.com/cisnlp/multilingual-latent-reasoner)  
 **Area**: LLM Reasoning  
-**Keywords**: Multilingual Reasoning, Latent Reasoning, Chain-of-Thought Truncation, Representation Analysis, Reasoning Models
+**Keywords**: Multilingual reasoning, Latent reasoning, Chain-of-Thought truncation, Representation analysis, Reasoning models
 
 ## TL;DR
 
-This paper systematically investigates the latent reasoning behavior of Large Reasoning Models (LRMs) across 11 languages. It finds that latent reasoning capabilities exist in a multilingual context but are unevenly distributed (strong in high-resource languages, weak in low-resource ones), and internal reasoning dynamics tend to follow an English-centric shared path.
+This paper systematically investigates the latent reasoning behavior of Large Reasoning Models (LRMs) across 11 languages. It finds that latent reasoning capabilities exist in multiple languages but are unevenly distributed (strong in high-resource languages, weak in low-resource ones), and internal reasoning dynamics tend to follow an English-centric shared path.
 
 ## Background & Motivation
 
-**Background**: Large Reasoning Models (e.g., DeepSeek-R1) have achieved breakthroughs in tasks like mathematical reasoning by generating explicit Chain-of-Thought (CoT). Recent studies suggest that before completing explicit reasoning steps, these models already form correct answers within their hidden states through "latent reasoning"—the model "thinks ahead" of the result.
+**Background**: Large Reasoning Models (such as DeepSeek-R1) have achieved breakthrough progress in tasks like mathematical reasoning by generating explicit Chains-of-Thought (CoT). Recent studies indicate that before completing explicit reasoning steps, these models have already formed correct answers within their hidden states—models can "think ahead" of the results via "latent reasoning."
 
-**Limitations of Prior Work**: Existing research on latent reasoning focuses almost exclusively on English, leaving its performance in multilingual scenarios unknown. At the explicit reasoning level, multilingual performance is known to vary significantly, with reasoning quality being notably poorer for low-resource languages.
+**Limitations of Prior Work**: Existing research on latent reasoning focuses almost exclusively on English, leaving its performance in multilingual scenarios unknown. At the explicit reasoning level, multilingual performance is known to have significant disparities, with the reasoning quality of low-resource languages being notably poorer.
 
-**Key Challenge**: If explicit reasoning performs unevenly across languages, does latent reasoning exhibit a similar imbalance? Or does latent reasoning follow a language-agnostic internal mechanism?
+**Key Challenge**: If explicit reasoning performs unevenly across different languages, does latent reasoning exhibit similar imbalances? Or does latent reasoning follow a language-agnostic internal mechanism?
 
 **Goal**: Two research questions—(RQ1) Do LRMs exhibit latent reasoning capabilities across various languages, and how does the strength vary? (RQ2) Do different languages follow distinct internal latent reasoning paths, or do they share a unified mechanism?
 
-**Key Insight**: Utilize a reasoning trajectory truncation strategy—providing the model with only partial reasoning steps to observe if it can provide the correct answer at the truncation point. Correct answers given after seeing only a few reasoning steps strongly indicate that the model has internally computed the answer (i.e., latent reasoning exists).
+**Key Insight**: Utilize a reasoning trajectory truncation strategy—provide the model with only partial reasoning steps and observe whether it can provide the correct answer at the truncation point. If the model can answer correctly after seeing only a few reasoning steps, it indicates that the answer was computed internally (i.e., latent reasoning exists).
 
-**Core Idea**: Reveal the multilingual characteristics of latent reasoning through multilingual truncation experiments and representation analysis—showing that it exists but is uneven, and internally converges toward an English-centric shared path.
+**Core Idea**: Reveal the multilingual characteristics of latent reasoning through multilingual truncation experiments and representation analysis—it exists but is uneven, and internally trends toward an English-centric shared path.
 
 ## Method
 
 ### Overall Architecture
 
-Truncation experiments are conducted on three scales of models (7B/14B/32B) distilled from DeepSeek-R1 across 11 languages (covering high/mid/low resources). Two mathematical reasoning benchmarks are used: MGSM (simple) and Multilingual AIME (hard). Reasoning steps are controlled by a truncation ratio $r \in [0,1]$. Accuracy is evaluated under partial reasoning information, and internal reasoning dynamics are analyzed via logit lens and hidden state similarity.
+Truncation experiments were conducted on three scales of models (7B/14B/32B) distilled from DeepSeek-R1 across 11 languages (covering high/medium/low resources). Two mathematical reasoning benchmarks, MGSM (simple) and Multilingual AIME (hard), were used. The proportion of retained reasoning steps was controlled by a truncation ratio $r \in [0,1]$. Accuracy was evaluated under partial reasoning information, and internal reasoning dynamics were analyzed using logit lens and hidden state similarity. The overall process is a measurement pipeline that "strips reasoning, then uses dual-track probes": first generating full trajectories and truncating them proportionally while forcing an immediate answer. The accuracy curve $a(r)$ and gold standard appearance $g(r)$ are used to decouple latent reasoning strength, while layer-wise hidden states are analyzed to determine if languages share an internal path.
+
+```mermaid
+graph TD
+    A["Full Reasoning Trajectory c = (t₁, …, t_T)"] --> B["Trajectory Truncation<br/>Keep first ⌊r·T⌋ steps + Insert Language Prefix"]
+    B --> C["Force Immediate Final Answer"]
+    C -->|"Truncation Accuracy a(r) and Gold Label Appearance g(r)"| D["AUTC / AUGC / LRS Metrics<br/>LRS = ∫ a(1−g) dr Decouples Latent Reasoning"]
+    C -->|"Layer-wise Hidden States"| E["Representation Analysis<br/>Logit Lens Rank Evolution + Cosine Similarity to English"]
+```
 
 ### Key Designs
 
-1.  **Truncation-based Probing**:
-    - **Function**: To quantify the extent to which the model relies on explicit reasoning steps to arrive at the correct answer.
-    - **Mechanism**: For each problem $x$, a complete reasoning trajectory $c = (t_1, ..., t_T)$ is generated. For different truncation ratios $r$, the first $\lfloor r \cdot T \rfloor$ reasoning steps are kept, then the model is forced to output the final answer. Language consistency is ensured by inserting language-specific prefixes after `<think>`. The contribution of explicit versus latent reasoning is distinguished by comparing the truncated accuracy with the ratio of "whether the gold answer has already appeared in the visible trajectory."
-    - **Design Motivation**: If a model answers correctly when seeing only 10% of reasoning steps and the answer has not yet appeared in the visible text, it strongly suggests the model has internally computed the result through latent reasoning.
+**1. Reasoning Trajectory Truncation: Quantification of Explicit Step Dependency**
 
-2.  **Multidimensional Metrics (AUTC/AUGC/LRS)**:
-    - **Function**: To quantify the strength of latent reasoning and decouple it from explicit reasoning.
-    - **Mechanism**: (a) AUTC (Area Under the Truncation-accuracy Curve) = $\int_0^1 a_k(r) dr$, measuring the earliness and robustness of correct predictions; (b) AUGC (Area Under the Gold-occurrence Curve) = $\int_0^1 g_k(r) dr$, measuring the explicit appearance of the correct answer in the trajectory; (c) LRS (Latent Reasoning Score) = $\int_0^1 a_k(r)(1-g_k(r)) dr$, weighting accuracy by the proportion where the "answer has not appeared," specifically measuring non-explicit latent reasoning capability.
-    - **Design Motivation**: Truncated accuracy alone is insufficient—a model might be "correct" simply because it wrote the answer in early steps. LRS provides a purer measure of latent reasoning by excluding this possibility.
+To determine if the model calculates answers internally, explicit reasoning must be stripped to see if the model remains accurate. For each question $x$, a full trajectory $c = (t_1, \dots, t_T)$ is generated, then only the first $\lfloor r \cdot T \rfloor$ steps are kept based on the ratio $r$, followed by a forced immediate answer. To prevent the language from drifting back to English after truncation, a language-specific prefix is inserted after `<think>`. The key comparison is between the "accuracy after truncation" and "whether the gold answer appeared in the visible trajectory"—the difference represents the contribution of internal latent reasoning. 
 
-3.  **Representation Analysis (Logit Lens + Hidden State Similarity)**:
-    - **Function**: To reveal whether internal reasoning paths are shared across different languages.
-    - **Mechanism**: (a) Logit lens: Projecting hidden states into the vocabulary space layer-by-layer to track how the rank of the correct answer token evolves; (b) Calculating the cosine similarity between hidden states of different languages and English hidden states across layers and reasoning steps to analyze cross-lingual representation convergence.
-    - **Design Motivation**: Highly similar logit lens trajectories and high alignment of non-English hidden states with English would indicate the existence of a shared, English-centric latent reasoning path.
+If the model sees only 10% of steps and the answer hasn't appeared in the text yet but the model answers correctly, it strongly suggests the answer was pre-calculated in hidden states. Non-zero accuracy at $r=0$ (no reasoning steps provided) is the most direct evidence of latent reasoning.
+
+**2. AUTC / AUGC / LRS Metrics: Cleanly Decoupling Latent from Explicit Reasoning**
+
+Relying solely on truncation accuracy overestimates latent reasoning, as the model might be "correct" simply because the answer was already written in early steps. The paper integrates the areas under three curves: AUTC $= \int_0^1 a_k(r)\, dr$ measures how early and stable correct predictions appear; AUGC $= \int_0^1 g_k(r)\, dr$ measures the extent to which the answer is explicitly written.
+
+The core metric is the Latent Reasoning Score LRS $= \int_0^1 a_k(r)\,(1 - g_k(r))\, dr$, which weights accuracy by $(1-g_k(r))$, specifically counting only cases where the model is correct but the answer is not yet explicit. This eliminates the inflation from early explicit answers, leaving a pure measure of non-explicit latent reasoning for fair cross-lingual comparison.
+
+**3. Representation Analysis (Logit Lens + Hidden State Similarity): Identifying Shared Internal Paths**
+
+While metrics address existence and strength (RQ1), internal mechanisms (RQ2) require representation probes. First, logit lens projects hidden states into the vocabulary space to track the rank evolution of the correct answer token across layers. Second, the cosine similarity between the hidden states of each language and English is calculated layer-by-layer and step-by-step.
+
+If rank evolution trajectories are identical and non-English states align with English ones, it indicates the model converges to an English-centric shared path—even with Chinese input, it might "think in English" internally. Experiments confirm high-resource languages align significantly better with English than low-resource ones, consistent with LRS gradients.
 
 ### Loss & Training
 
-This is an analytical study and does not involve training. Inference and analysis are performed using three model scales: DeepSeek-R1-Distill-Qwen-{7B, 14B, 32B}.
+This is an analytical study and does not involve training. Analysis was performed on DeepSeek-R1-Distill-Qwen-{7B, 14B, 32B} models.
 
 ## Key Experimental Results
 
@@ -76,13 +81,13 @@ This is an analytical study and does not involve training. Inference and analysi
 
 | Language | AUTC | AUGC | LRS |
 | :--- | :--- | :--- | :--- |
-| EN (High) | 0.75 | 0.25 | 0.53 |
-| ZH (High) | 0.70 | 0.30 | 0.45 |
-| DE (High) | 0.67 | 0.20 | 0.51 |
-| JA (Mid) | 0.63 | 0.21 | 0.47 |
-| BN (Mid) | 0.61 | 0.23 | 0.44 |
-| SW (Low) | 0.38 | 0.20 | 0.30 |
-| TE (Low) | 0.39 | 0.23 | 0.30 |
+| EN (High-resource) | 0.75 | 0.25 | 0.53 |
+| ZH (High-resource) | 0.70 | 0.30 | 0.45 |
+| DE (High-resource) | 0.67 | 0.20 | 0.51 |
+| JA (Mid-resource) | 0.63 | 0.21 | 0.47 |
+| BN (Mid-resource) | 0.61 | 0.23 | 0.44 |
+| SW (Low-resource) | 0.38 | 0.20 | 0.30 |
+| TE (Low-resource) | 0.39 | 0.23 | 0.30 |
 
 **Truncation Metrics on Multilingual AIME (R1-Qwen-32B)**
 
@@ -104,40 +109,40 @@ This is an analytical study and does not involve training. Inference and analysi
 
 ### Key Findings
 
-- **Latent reasoning exists but is uneven**: On MGSM, high-resource languages like English/Chinese achieve a pass@1 of ~0.2 at 0% truncation, showing the model computes answers internally without explicit reasoning. However, the LRS for low-resource languages (Swahili, Telugu) is only about 60% of that of high-resource languages.
-- **Task difficulty determines latent reasoning detectability**: LRS drops sharply on Multilingual AIME (EN from 0.38→0.06), indicating complex problems require more explicit reasoning steps.
-- **Internal reasoning paths tend to be English-centric**: Logit lens shows highly similar layer-wise answer rank evolution across languages; cosine similarity between high-resource languages and English hidden states is significantly higher than that of low-resource languages.
-- **Model scale enhances latent reasoning but does not eliminate the gap**: LRS increases for all languages from 7B to 32B, but the gap between high and low-resource languages persists.
+- **Latent Reasoning is Uneven**: On MGSM, high-resource languages like EN/ZH have a pass@1 of ~0.2 at 0% truncation, meaning they calculate answers without explicit reasoning. LRS for low-resource languages (SW, TE) is only ~60% of high-resource ones.
+- **Task Difficulty Dictates Detectability**: LRS drops sharply on Multilingual AIME (EN from 0.38 to 0.06), indicating complex problems require more explicit reasoning.
+- **English-Centric Internal Paths**: Logit lens shows highly similar layer-wise answer rank evolution across languages. High-resource languages exhibit significantly higher cosine similarity to English hidden states.
+- **Scale Enhances but Doesn't Close Gaps**: Scaling from 7B to 32B improves LRS for all languages, but the resource-based gap persists.
 
 ## Highlights & Insights
 
-- This is the first systematic study of LRM latent reasoning behavior in a multilingual dimension, filling a significant knowledge gap.
-- The LRS metric is ingeniously designed to provide a pure measure of latent reasoning by decoupling accuracy from the explicit occurrence of answers in the trajectory.
-- The discovery of an "English-centric shared reasoning path" has profound implications for understanding the internal mechanisms of multilingual LLMs—suggesting that even with Chinese input, the model may be "thinking in English" internally.
-- The non-zero accuracy at a 0% truncation ratio provides the strongest evidence for latent reasoning.
+- First systematic study of LRM latent reasoning behavior across languages, filling a critical research gap.
+- The LRS metric provides a pure measure of latent reasoning by decoupling accuracy from explicit answer occurrence.
+- The "English-centric shared path" finding provides deep insight into multilingual LLM mechanisms—suggesting models "think in English" even for non-English inputs.
+- Non-zero accuracy at 0% truncation provides the strongest evidence for the existence of latent reasoning.
 
 ## Limitations & Future Work
 
-- Evaluation is limited to mathematical tasks, excluding other types like logical or code reasoning.
-- Analysis was mainly performed on distilled models; behaviors of the original DeepSeek-R1 might differ.
-- Causal mechanism analysis is limited—observed correlations (between entropy and correctness) do not equal causality.
-- Future work could explore enhancing latent reasoning in low-resource languages through post-training with multilingual reasoning data.
+- Evaluation is limited to mathematical tasks, excluding logic or code reasoning.
+- Analysis focused on distilled models; behavior in the original DeepSeek-R1 may differ.
+- Causal analysis is limited—observed correlations (entropy vs. correctness) do not imply causation.
+- Future work could explore post-training with multilingual reasoning data to enhance latent reasoning in low-resource languages.
 
 ## Related Work & Insights
 
-- Connects two research lines: multilingual reasoning (known language gaps at the explicit level) and latent reasoning (a new dimension at the implicit level).
-- The logit lens analysis method can be generalized to comparative multilingual studies of other model capabilities.
-- Provides a representation-level explanation for the "translate-then-solve" strategy—models inherently lean toward reasoning via English paths.
+- Connects two research lines: multilingual reasoning (known performance gaps) and latent reasoning (a new dimension of internal capability).
+- Logit lens analysis methodology can be extended to multilingual studies of other model capabilities.
+- Provides a representation-level explanation for "translate-then-solve" strategies—models naturally trend toward English-path reasoning internally.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First multilingual latent reasoning study with creative problem definition and metric design.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 11 languages, 3 model scales, and 2 benchmarks, though lacking non-mathematical tasks.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear research questions, rigorous experimental design, and precise formulation of conclusions.
+- Novelty: ⭐⭐⭐⭐⭐ First multilingual study of latent reasoning with innovative metrics.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive languages and scales, though lacking non-math tasks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear research questions, rigorous design, and precise conclusions.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
@@ -145,7 +150,7 @@ This is an analytical study and does not involve training. Inference and analysi
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[ACL 2026\] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models](trigreason_trigger-based_collaboration_between_small_and_large_reasoning_models.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ICLR 2026\] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models](../../ICLR2026/llm_reasoning/mr3_multilingual_rubric-agnostic_reward_reasoning_models.md)
+- [\[ACL 2025\] Large Language and Reasoning Models are Shallow Disjunctive Reasoners](../../ACL2025/llm_reasoning/large_language_and_reasoning_models_are_shallow_disjunctive_reasoners.md)
 
 </div>
 

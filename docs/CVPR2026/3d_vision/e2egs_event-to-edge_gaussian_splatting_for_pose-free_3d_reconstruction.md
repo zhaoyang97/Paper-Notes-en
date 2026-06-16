@@ -2,153 +2,159 @@
 title: >-
   [Paper Note] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Event camera] This paper proposes E2EGS, a fully pose-free 3D reconstruction framework driven entirely by event streams. It extracts noise-robust edge maps from event streams via patch-based tempor…
+  [CVPR 2026][3D Vision][Paper Note] Ours proposes E2EGS, a pose-free 3D reconstruction framework entirely based on event streams: it extracts noise-resistant edge maps from event streams through patch-based temporal consistency analysis, utilizes edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality t
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Event camera"
-  - "3D Gaussian splatting"
-  - "edge detection"
-  - "pose-free reconstruction"
-  - "visual odometry"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: c3052b55010b76d6
+content_hash: bf6dfdf2b50539f0
 ---
-
 # E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.14684](https://arxiv.org/abs/2603.14684)  
-**Code**: To be confirmed  
-**Area**: 3D Vision
-**Keywords**: Event camera, 3D Gaussian splatting, edge detection, pose-free reconstruction, visual odometry
+**Code**: TBD  
+**Area**: 3D Vision  
+**Keywords**: Event Camera, 3D Gaussian Splatting, Edge Detection, Pose-Free Reconstruction, Visual Odometry
 
 ## TL;DR
 
-This paper proposes E2EGS, a fully pose-free 3D reconstruction framework driven entirely by event streams. It extracts noise-robust edge maps from event streams via patch-based temporal consistency analysis, leverages edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality trajectory estimation and 3D reconstruction without any depth model or RGB input.
+Ours proposes E2EGS, a pose-free 3D reconstruction framework entirely based on event streams: it extracts noise-resistant edge maps from event streams through patch-based temporal consistency analysis, utilizes edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality trajectory estimation and 3D reconstruction without depth models or RGB input.
 
 ## Background & Motivation
 
-NeRF and 3D Gaussian Splatting (3DGS) have driven remarkable progress in novel view synthesis, yet both fundamentally rely on high-quality RGB images and accurate camera poses. In real-world scenarios involving rapid motion or adverse lighting, RGB image quality degrades severely, limiting the robustness of these methods.
+NeRF and 3D Gaussian Splatting (3DGS) have driven significant progress in novel view synthesis, but they inherently rely on high-quality RGB images and accurate camera poses. In real-world scenarios with rapid motion or adverse lighting, RGB image quality degrades severely, limiting the robustness of these methods.
 
-**Advantages of event cameras**: Event cameras asynchronously capture per-pixel brightness changes with extremely high temporal resolution and wide dynamic range, making them naturally suited for handling motion blur and extreme illumination. Crucially, event cameras produce dense responses at edges and texture boundaries, providing rich structural information about scene geometry.
+**Advantages of Event Cameras**: Event cameras capture pixel-level brightness changes asynchronously, possessing extremely high temporal resolution and wide dynamic range, making them naturally suited for handling motion blur and extreme illumination. More importantly, event cameras produce dense responses at edges and texture boundaries, providing rich structural information for scene geometry.
 
-**Limitations of prior work**:
+**Limitations of Prior Work**:
 
-**Methods requiring known poses** (EventSplat, Ev-GS, Event3DGS, etc.): rely on SfM or ground-truth poses and cannot be applied when poses are unavailable.
+- **Methods requiring known poses** (EventSplat, Ev-GS, Event3DGS, etc.): These rely on SfM or GT poses and are unusable in scenarios where poses are unavailable.
+- **IncEventGS** (Currently the only pose-free method): Utilizes a SLAM framework to jointly optimize poses and 3D Gaussians but heavily relies on the pre-trained depth estimation model Marigold for initialization. **Key Problem**: Depth models estimate from initial frames; when the camera moves to new regions beyond the initial coverage, depth estimation degrades $\rightarrow$ trajectory drifts $\rightarrow$ reconstruction quality collapses.
 
-**IncEventGS** (the only existing pose-free method): adopts a SLAM framework for joint optimization of poses and 3D Gaussians, but critically depends on the pretrained depth estimation model Marigold for initialization. **Core problem**: the depth model estimates from the initial frame, and as the camera moves into new regions beyond the initial coverage, depth estimation degrades → trajectory drift → reconstruction quality collapses.
+**Key Challenge**: Pose-free event-based 3D reconstruction requires reliable geometric priors to guide optimization, but existing methods either rely on external depth models (poor generalization) or complete random initialization (optimization easily falls into local optima).
 
-**Key Challenge**: Pose-free event-based 3D reconstruction requires reliable geometric priors to guide optimization, yet existing methods either depend on external depth models (poor generalization) or resort to fully random initialization (prone to local optima).
+**Key Insight**: Event cameras naturally encode edge information—when the camera moves, edge regions generate temporally consistent dense events, while non-edge regions produce only sparse noise. This spatiotemporal feature difference can be used to extract robust edge maps, providing geometric constraints for Gaussian initialization and pose optimization without needing depth models or RGB assistance.
 
-**Key Insight**: Event cameras inherently encode edge information — during camera motion, edge regions produce temporally consistent dense events, whereas non-edge regions yield only sparse noise. This spatiotemporal contrast can be exploited to extract robust edge maps that provide geometric constraints for Gaussian initialization and pose optimization, entirely without depth models or RGB assistance.
-
-**Core Idea**: Replace the depth model with the intrinsic edge information embedded in the event stream, enabling fully autonomous pose-free event-based 3D reconstruction.
+**Core Idea**: Replace depth models with intrinsic edge information from event streams to achieve fully autonomous pose-free event-based 3D reconstruction.
 
 ## Method
 
 ### Overall Architecture
 
-E2EGS adopts 3DGS as the scene representation and follows the tracking–mapping alternating optimization framework of IncEventGS. The input is a raw event stream; the output is a 3D Gaussian scene representation and a camera trajectory. The event stream is processed in temporal chunks, each associated with a segment of the continuous trajectory. Event supervision is achieved by minimizing the discrepancy between the measured event map $E_t(\mathbf{x})$ and the synthesized event map $\hat{E}_t(\mathbf{x}) = \log \hat{I}_{t+\Delta t}(\mathbf{x}) - \log \hat{I}_t(\mathbf{x})$.
+E2EGS addresses a pure event-stream, pose-free 3D reconstruction problem: the input is only the asynchronous event stream from an event camera, and the output is a 3D Gaussian scene and a full camera trajectory, without utilizing any RGB images or depth models. It adopts 3DGS for scene representation and follows the tracking-mapping alternating optimization framework of IncEventGS. The event stream is partitioned into temporal chunks, each associated with a continuous trajectory segment. The supervisory signal comes from minimizing the difference between the measured event map $E_t(\mathbf{x})$ and the synthetic event map $\hat{E}_t(\mathbf{x}) = \log \hat{I}_{t+\Delta t}(\mathbf{x}) - \log \hat{I}_t(\mathbf{x})$.
 
-The core innovation of E2EGS is a three-stage edge-guided pipeline: (1) extract robust edges from consecutive event maps → (2) initialize 3D Gaussians along detected edges → (3) apply edge-weighted losses throughout tracking and bundle adjustment.
+The primary differentiator from IncEventGS is an "edge" thread throughout three steps: first extracting a noise-resistant edge map from continuous event maps, then distributing 3D Gaussians along these edges, and finally weighting the reconstruction loss by edges throughout tracking and bundle adjustment. The geometric prior originally provided by the Marigold depth model in IncEventGS is entirely replaced by "event-stream-derived edges."
+
+```mermaid
+graph TD
+    A["Event Stream (Asynchronous, No RGB / No Pose)"] --> B["Chunking → Continuous Event Map E_t"]
+    B --> C["Patch-based Temporal Consistency Analysis<br/>Variance of adjacent frame differences per patch"]
+    C --> D["Robust Edge Map"]
+    subgraph INIT["Edge-aware Gaussian Initialization"]
+        direction TB
+        D --> E["2D Edge Points → KNN+PCA Normals → Grid Subdivision"]
+        E --> F["Inverse Depth Sampling to 3D Edge Gaussians"]
+        G["Mix Random Points for Flat Regions via r_edge"]
+        F --> G
+    end
+    G --> H["Tracking-Mapping Alternating Optimization<br/>Tracking updates poses / Mapping joint optimization<br/>Edge-weighted Loss throughout"]
+    H --> I["Output: 3D Gaussian Scene + Camera Trajectory"]
+```
 
 ### Key Designs
 
-1. **Patch-based Temporal Consistency Analysis (Edge Detection)**
+**1. Patch-based Temporal Consistency Analysis: Extracting Edges from Noisy Event Streams without Training**
 
-    - **Function**: Extracts noise-robust edge maps from noisy event streams without any training.
-    - **Mechanism**: Given $T$ consecutive event maps $\{E_t\}_{t=1}^T$, they are divided into overlapping $p \times p$ patches. For each patch location $P_{x,y}$, the temporal difference signal between adjacent frames is computed as $D_t(P_{x,y}) = |G_\sigma * E_t(P_{x,y}) - G_\sigma * E_{t-1}(P_{x,y})|$ (Gaussian smoothing suppresses sharp artifacts). The consistency score is then $C(P_{x,y}) = \max_{t} \text{Var}(D_t(P_{x,y}))$; patches with variance exceeding threshold $\tau$ are classified as containing edges.
-    - **Design Motivation**: During camera motion, edge regions produce spatially coherent, structured event patterns across consecutive frames (high variance), whereas non-edge regions generate only sparse random noise (low variance). This variance contrast serves as a natural edge/non-edge discriminator. The approach draws inspiration from the contrast maximization framework while avoiding its computationally expensive trajectory estimation step.
-    - **Self-correction mechanism**: Temporal differencing simultaneously captures edges from both the previous frame $E_{t-1}$ and the current frame $E_t$; incorrectly estimated edges are automatically suppressed when they are inconsistent with current observations.
+The reason IncEventGS fails when entering unseen areas is that its geometric prior stems from an external depth model. E2EGS seeks a prior calculated purely through event statistics without learning dependencies. Its observation is physical: as the camera moves, real edges trigger spatially consistent dense events (high variance) across consecutive frames, while flat non-edge regions produce only scattered random noise (low variance). This variance difference serves as a natural edge discriminator. Specifically, $T$ consecutive event maps $\{E_t\}_{t=1}^T$ are divided into overlapping patches of size $p \times p$. For each patch position $P_{x,y}$, the temporal difference of adjacent frames is calculated: $D_t(P_{x,y}) = |G_\sigma * E_t(P_{x,y}) - G_\sigma * E_{t-1}(P_{x,y})|$ (where a Gaussian window $G_\sigma$ smooths sharp jumps), and the maximum variance among all adjacent frame pairs is taken:
 
-2. **Edge-aware Gaussian Initialization**
+$$C(P_{x,y}) = \max_{t} \text{Var}\big(D_t(P_{x,y})\big),$$
 
-    - **Function**: Places 3D Gaussians along detected edges, replacing depth-model-based initialization.
-    - **Mechanism**: 2D edge points $\mathcal{P}$ are extracted from the edge map; KNN and PCA are applied to obtain the edge normal direction at each point. Recursive grid subdivision (split criterion based on normal direction consistency) generates a 2D edge Gaussian set $\mathcal{G}_\text{edge}$. 3D points are then placed along the viewing ray of each edge Gaussian via inverse depth sampling: $d = \frac{1}{\frac{1}{d_\max} + u(\frac{1}{d_\min} - \frac{1}{d_\max})}$, $u \sim \mathcal{U}(0,1)$.
-    - **Complementary depth and surface sampling**: An edge ratio $r_\text{edge} \in [0,1]$ controls the proportion of edge-based and random Gaussians. $N_\text{edge} = \lfloor r_\text{edge} \cdot N_\text{total} \rfloor$ Gaussians are initialized along edges; the remaining $N_\text{random}$ are placed randomly to cover textureless regions.
-    - **Design Motivation**: Inverse depth sampling places more samples at greater distances — distant points produce larger pixel displacements under camera rotation, improving the observability of rotational motion and thereby enhancing pose estimation accuracy. This is geometrically more principled than uniform depth sampling.
+Patches with variance exceeding a threshold $\tau$ are classified as edges. This approach originates from the contrast maximization framework but avoids expensive trajectory estimation. It also possesses a self-correcting property: temporal differences involve both the previous frame $E_{t-1}$ and the current frame $E_t$. Thus, an "incorrectly positioned" edge will be naturally eliminated in the next step due to misalignment with current observations.
 
-3. **Edge-weighted Loss Function**
+**2. Edge-aware Gaussian Initialization: Distributing Points along Edges to Replace Depth Models**
 
-    - **Function**: Applies edge-weighted reconstruction loss throughout initialization, tracking, and bundle adjustment.
-    - **Mechanism**: The edge-weighted loss is $\mathcal{L}_\text{edge} = \frac{1}{|\Omega|} \sum_{\mathbf{x} \in \Omega} w(\mathbf{x}) \cdot \|\hat{E}(\mathbf{x}) - E(\mathbf{x})\|^2$, where the weight $w(\mathbf{x}) = 1 + \beta \cdot M(\mathbf{x})$ and $\beta$ controls the degree of edge emphasis. The total loss is $\mathcal{L}_\text{total} = (1-\lambda) \mathcal{L}_\text{edge} + \lambda \mathcal{L}_\text{dssim}$.
-    - **Design Motivation**: Event cameras produce sparse noise in non-edge regions; uniform pixel-level loss treats these noisy events equally, introducing unreliable gradient signals. Edge weighting focuses optimization on geometrically salient boundary regions, where geometric constraints are more robust and less susceptible to event noise.
+Once the edge map is calculated, it replaces the depth model in determining initial Gaussian positions. A set of 2D edge points $\mathcal{P}$ is extracted, edge normal directions are estimated using KNN + PCA, and recursive grid subdivision is applied based on normal consistency to obtain a set of 2D edge Gaussians $\mathcal{G}_\text{edge}$. These are then projected into 3D along the line of sight using inverse depth sampling:
+
+$$d = \frac{1}{\tfrac{1}{d_\max} + u\big(\tfrac{1}{d_\min} - \tfrac{1}{d_\max}\big)},\quad u \sim \mathcal{U}(0,1).$$
+
+Choosing inverse depth over uniform sampling has geometric justification: it places more sampling points at a distance. Distant points produce larger pixel displacements during camera rotation, making them more "observable" for rotation estimation. Since edge points alone cannot cover textureless areas, an edge ratio $r_\text{edge} \in [0,1]$ is introduced to balance the distribution- $N_\text{edge} = \lfloor r_\text{edge} \cdot N_\text{total} \rfloor$ Gaussians are initialized along edges, while the remaining $N_\text{random}$ are distributed randomly to cover flat regions.
+
+**3. Edge-weighted Loss Function: Focusing Optimization on Informative Boundaries**
+
+Finally, edge information governs the optimization phase. In non-edge regions, event cameras produce only sparse noise. Standard pixel-wise equal-weighted losses would allow these noise events to contribute equally to the gradient. E2EGS therefore weights the reconstruction loss by edges:
+
+$$\mathcal{L}_\text{edge} = \frac{1}{|\Omega|} \sum_{\mathbf{x} \in \Omega} w(\mathbf{x}) \cdot \|\hat{E}(\mathbf{x}) - E(\mathbf{x})\|^2,\quad w(\mathbf{x}) = 1 + \beta \cdot M(\mathbf{x}),$$
+
+where $M(\mathbf{x})$ is the edge mask and $\beta$ controls the emphasis on edges. This is combined with a D-SSIM structural loss: $\mathcal{L}_\text{total} = (1-\lambda)\,\mathcal{L}_\text{edge} + \lambda\,\mathcal{L}_\text{dssim}$. This acts as a lightweight attention mechanism, focusing optimization effort on geometrically significant boundaries where constraints are more robust.
 
 ### Loss & Training
 
-The total loss combines the edge-weighted reconstruction loss and a structural similarity loss. The system alternates between tracking and mapping: during tracking, Gaussian parameters are fixed and the pose of each new chunk is optimized; during mapping, Gaussian parameters and trajectory are jointly optimized within a sliding window.
+The system alternates between tracking and mapping: in the tracking phase, Gaussian parameters are frozen while only the pose of the new chunk is optimized; in the mapping phase, Gaussian parameters and trajectories are jointly optimized within a sliding window. The total loss follows $\mathcal{L}_\text{total}$ (edge-weighted reconstruction loss + D-SSIM).
 
 ## Key Experimental Results
 
-### Main Results (Novel View Synthesis — Replica Dataset)
+### Main Results (Novel View Synthesis - Replica Dataset)
 
-| Method | Depth Dep. | Pose Dep. | room0 PSNR↑ | office0 PSNR↑ | office3 PSNR↑ |
-|--------|-----------|-----------|-------------|---------------|---------------|
+| Method | Depth Reliance | Pose Reliance | room0 PSNR↑ | office0 PSNR↑ | office3 PSNR↑ |
+|------|---------|---------|-------------|---------------|---------------|
 | EvGGS | ✗ | Known | 17.57 | 14.34 | 15.51 |
 | Event-3DGS* | ✗ | E2VID+COLMAP | 22.27 | 15.97 | 17.82 |
 | IncEventGS | Marigold | ✗ | 23.54 | 26.53 | 19.21 |
 | IncEventGS† | ✗ | ✗ | 19.81 | 27.72 | 20.04 |
-| **E2EGS** | **✗** | **✗** | **23.86** | **28.01** | **20.75** |
+| **Ours** | **✗** | **✗** | **23.86** | **28.01** | **20.75** |
 
-### Main Results (Trajectory Accuracy — ATE RMSE cm)
+### Main Results (Trajectory Accuracy - ATE RMSE cm)
 
 | Method | room0 | room2 | office0 | TUM-VIE 1d | TUM-VIE 3d | TUM-VIE 6dof |
-|--------|-------|-------|---------|-----------|-----------|-------------|
+|------|-------|-------|---------|-----------|-----------|-------------|
 | DEVO | 0.271 | 0.381 | 0.287 | 0.23 | 1.00 | 1.82 |
 | IncEventGS | 0.051 | 0.071 | 0.085 | 2.19 | 1.62 | 0.70 |
 | IncEventGS† | 6.817 | 0.446 | 0.698 | 2.58 | 4.48 | 8.24 |
-| **E2EGS** | **0.049** | **0.065** | **0.078** | **1.12** | **0.65** | **0.58** |
-
-Key comparison: IncEventGS† reaches an ATE of 96.59 cm on TUM-VIE desk2 (catastrophic failure), whereas E2EGS achieves only 0.40 cm.
+| **Ours** | **0.049** | **0.065** | **0.078** | **1.12** | **0.65** | **0.58** |
 
 ### Ablation Study
 
 | Configuration | Edge loss | Edge init | Depth init | ATE (cm) |
-|---------------|-----------|-----------|------------|----------|
+|------|-----------|-----------|------------|----------|
 | IncEventGS | ✗ | ✗ | ✓ | 0.37 |
 | IncEventGS† | ✗ | ✗ | ✗ | 6.62 |
 | w/ Edge loss only | ✓ | ✗ | ✗ | 0.50 |
 | w/ Edge init only | ✗ | ✓ | ✗ | 0.29 |
-| **E2EGS (full)** | **✓** | **✓** | **✗** | **0.28** |
+| **Ours (full)** | **✓** | **✓** | **✗** | **0.28** |
 
-Edge ratio $r_\text{edge}$ ablation: $r_\text{edge} = 0.0$ → ATE 5.68 cm; $r_\text{edge} \in [0.1, 0.3]$ → ATE ~0.40 cm (optimal); $r_\text{edge} = 1.0$ → ATE 11.93 cm (excessive edge emphasis causes insufficient surface coverage).
+## Key Findings
 
-### Key Findings
-
-- **Edge init contributes more than edge loss**: Adding edge init alone reduces ATE from 6.62 to 0.29 cm, outperforming the depth-based baseline (0.37); adding edge loss alone reduces it to 0.50. The combination yields the best result (0.28).
-- **Robustness over long sequences**: As sequence length increases, the ATE of IncEventGS (depth-dependent) rises sharply due to progressively unreliable depth estimates, whereas E2EGS maintains consistently low error — edges are local features unaffected by sequence length.
-- **Without vs. with depth**: E2EGS surpasses IncEventGS (with depth) on synthetic data and substantially outperforms it on real data, all without any depth model.
-- **Edge ratio requires balance**: Too low (0.0) lacks geometric constraints and causes drift; too high (0.7–1.0) results in insufficient coverage, allowing non-edge region losses to dominate and mislead optimization.
+- **Edge init contribution > Edge loss**: Adding edge initialization alone reduced ATE from 6.62 to 0.29, outperforming the depth-based 0.37. The combination is optimal (0.28).
+- **Long-sequence robustness**: As sequence length increases, the ATE of IncEventGS (depth-dependent) rises sharply as depth becomes unreliable, while Ours maintains stable low error.
+- **Edge ratio balance**: Low $r_\text{edge}$ (0.0) causes drift due to lack of geometric constraints; high $r_\text{edge}$ (0.7-1.0) leads to insufficient coverage in non-edge regions.
 
 ## Highlights & Insights
 
-- The **training-free edge detection** design is elegant: edges are extracted purely from the spatiotemporal statistics of the event stream without any learning, exploiting the most fundamental physical property of event cameras (motion + edges → consistent events) in a simple yet effective manner.
-- **Complete elimination of depth models** represents an important paradigm shift: the depth model degradation in unseen regions is a fundamental flaw of IncEventGS; E2EGS replaces depth with edges as geometric priors, unconstrained by observation range.
-- The geometric intuition behind **inverse depth sampling** is transferable: distant points are more sensitive to rotation → denser sampling at distance → improved observability of rotational motion. This insight can be adapted to other SLAM systems that require depth initialization.
-- The **edge-weighted loss** is essentially an attention mechanism: it focuses optimization on the most information-rich pixels, preventing gradient signals from being overwhelmed by noisy regions.
+- **Training-free edge detection** is elegantly designed: it extracts edges from spatiotemporal statistics without learning, leveraging the most fundamental physical properties of event cameras (motion + edges $\rightarrow$ consistent events).
+- **Eliminating depth models** represents a paradigm shift: the failure of IncEventGS's depth model in unseen areas is a fundamental flaw. Using edges as geometric priors bypasses observation limits.
+- **Inverse depth sampling** intuition: Distant points are more sensitive to rotation $\rightarrow$ higher sampling density at a distance $\rightarrow$ enhanced observability for rotation estimation.
+- **Edge-weighted loss** acts as an attention mechanism, ensuring optimization focuses on informative pixels rather than being overwhelmed by noisy gradients.
 
 ## Limitations & Future Work
 
-- The edge extraction strategy is conservative (prioritizing reliability over completeness) and may fail to extract sufficient edges in regions with weak geometric structure (e.g., large textureless walls).
-- Event cameras inherently produce sparse responses on textureless planar regions, limiting the quality of Gaussians in those areas (acknowledged by the authors).
-- The edge ratio $r_\text{edge}$ requires manual tuning; an adaptive strategy warrants exploration.
-- Evaluation is conducted only on indoor datasets; performance in outdoor large-scale scenes (e.g., autonomous driving) remains unknown.
-- No end-to-end comparison is made with recent learning-based event visual odometry methods (e.g., RAMP-VO, which fuses events and images).
+- Edge extraction is conservative, potentially failing in areas with weak geometric structure (e.g., large textureless walls).
+- Sparse responses on textureless planes limit Gaussian quality in those regions.
+- The edge ratio $r_\text{edge}$ requires manual tuning; adaptive schemes are worth exploring.
+- Validation is limited to indoor datasets; performance in outdoor large-scale scenes remains unknown.
 
 ## Related Work & Insights
 
-- **vs. IncEventGS**: Both are pose-free event-based 3DGS methods, but IncEventGS depends on the Marigold depth model for initialization and degrades severely over long sequences or in new regions; E2EGS replaces depth with edges, fundamentally addressing the generalization problem.
-- **vs. DEVO**: DEVO is a learning-based event visual odometry method with good trajectory accuracy but does not perform 3D reconstruction; E2EGS unifies trajectory estimation and scene reconstruction.
-- **vs. Contrast Maximization (CMax-SLAM)**: CMax estimates motion by maximizing the sharpness of warped event maps, which is computationally expensive; E2EGS extracts edges directly from temporal consistency, achieving greater efficiency.
-- Takeaway: The physical properties of event cameras inherently encode rich geometric cues; relying on pretrained vision models is unnecessary, and returning to sensor-level principles may be a more robust path forward.
+- **vs IncEventGS**: Both are pose-free event-based 3DGS, but E2EGS replaces fickle depth models with edges, fundamentally solving the generalization problem for long sequences.
+- **vs DEVO**: DEVO is a learned event VO with good trajectory accuracy but no 3D reconstruction; Ours unifies both.
+- **vs Contrast Maximization (CMax-SLAM)**: CMax estimates motion by maximizing warped event map sharpness (expensive); Ours is more efficient by extracting edges from temporal consistency.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Using edges in place of a depth model as geometric priors for event-based 3DGS is a clear and effective idea.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation on synthetic and real datasets with component and parameter ablations; outdoor large-scale evaluation is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clearly articulated, method description is well-organized, and figures and tables are intuitive.
-- **Value**: ⭐⭐⭐⭐ First fully dependency-free pose-free event-based 3D reconstruction system, expanding the autonomy frontier of event camera applications.
+- **Novelty**: ⭐⭐⭐⭐ Replacing depth models with edges for event-based 3DGS is clear and effective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Full ablation and testing on synthetic/real data, though lacking large outdoor scenes.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, structured methodology, and intuitive diagrams.
+- **Value**: ⭐⭐⭐⭐ First fully autonomous pose-free event-based 3D reconstruction without external dependencies.
 
 <!-- RELATED:START -->
 
@@ -156,11 +162,22 @@ Edge ratio $r_\text{edge}$ ablation: $r_\text{edge} = 0.0$ → ATE 5.68 cm; $r_\
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
+- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
+- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
+- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
+
+</div>
+
+<!-- RELATED:END -->
+## Related Papers
+
+- [\[CVPR 2025\] IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](../../CVPR2025/3d_vision/inceventgs_pose-free_gaussian_splatting_from_a_single_event_camera.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2025\] SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](../../CVPR2025/3d_vision/selfsplat_pose-free_and_3d_prior-free_generalizable_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Global-Aware Edge Prioritization for Pose Graph Initialization](global-aware_edge_prioritization_for_pose_graph_initialization.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](../../NeurIPS2025/3d_vision/onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
-- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 
 </div>
 

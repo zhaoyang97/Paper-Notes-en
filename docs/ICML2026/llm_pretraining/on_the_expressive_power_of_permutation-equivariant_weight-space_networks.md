@@ -2,94 +2,75 @@
 title: >-
   [Paper Note] On the Expressive Power of Permutation-Equivariant Weight-Space Networks
 description: >-
-  [ICML 2026][LLM Pretraining][weight-space learning] This paper establishes the first systematic expressivity theory for permutation-equivariant weight-space networks (DWS / NFN / GMN / NG-GNN…
+  [ICML 2026][Pretraining][weight-space learning] This paper establishes the first systematic expressivity theory for permutation-equivariant weight-space networks (DWS / NFN / GMN / NG-GNN, etc.) operating on MLP weights. It proves these architectures are almost entirely equivalent in expressivity and provides universality characterizations for four approximation sce
 tags:
-  - "ICML 2026"
-  - "LLM Pretraining"
-  - "weight-space learning"
-  - "permutation equivariance"
-  - "universality"
-  - "INR editing"
-  - "OCE"
+  - ICML 2026
+  - Pretraining
+  - weight-space learning
+  - permutation equivariance
+  - universality
+  - INR editing
+  - OCE
 date: 2026-05-08
-content_hash: babc043798eb3b4f
+content_hash: 98f6a7bdeacd82f9
 ---
-
 # On the Expressive Power of Permutation-Equivariant Weight-Space Networks
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.01083](https://arxiv.org/abs/2602.01083)  
 **Code**: https://github.com/dayanadir/capacity_increase_inr_editing_experiment  
-**Area**: Weight-space learning / Expressive power theory / Equivariant neural networks  
+**Area**: Weight-space learning / Expressivity theory / Equivariant neural networks  
 **Keywords**: weight-space learning, permutation equivariance, universality, INR editing, OCE
 
 ## TL;DR
-This paper establishes the first systematic expressivity theory for permutation-equivariant weight-space networks (DWS / NFN / GMN / NG-GNN, etc.) operating on MLP weights. It proves that these architectures are almost entirely equivalent in terms of expressivity and provides universality characterizations for four approximation scenarios (function-space functionals/operators, permutation-invariant functionals, permutation-equivariant operators) under the "general position" assumption. A simple theoretical modification, OCE (ensembling multiple MLPs at the output), achieves a 34% improvement over SOTA on the INR editing benchmark.
+This paper establishes the first systematic expressivity theory for permutation-equivariant weight-space networks (DWS / NFN / GMN / NG-GNN, etc.) operating on MLP weights. It proves these architectures are almost entirely equivalent in expressivity and provides universality characterizations for four approximation scenarios (function-space functionals/operators, permutation-invariant functionals, and permutation-equivariant operators) under the "general position" assumption. Based on theoretical insights, a simple modification called OCE (Output Capacity Expansion via MLP ensembles) achieves a 34% improvement over SOTA on INR editing benchmarks.
 
 ## Background & Motivation
 
-**Background**: Weight-space learning treats trained neural networks as "structured data," using a meta-network to directly consume the parameters $v=(W_1,b_1,\dots,W_L,b_L)$ of another MLP for downstream tasks like accuracy prediction, INR editing, and meta-optimization. Since hidden neuron permutations $\tau$ in an MLP satisfy $f_{\rho(\tau)v}=f_v$ (function invariance), mainstream SOTA architectures (DWS / NP-NFN / HNP-NFN / GMN / NG-GNN / NFT) are explicitly constructed to be equivariant to the permutation group $G_A=S_{d_1}\times\cdots\times S_{d_{L-1}}$.
+**Background**: Weight-space learning treats trained neural networks as "structured data," using a meta-network to directly process the parameters $v=(W_1,b_1,\dots,W_L,b_L)$ of another MLP for downstream tasks such as accuracy prediction, INR editing, and meta-optimization. Since hidden neuron permutations $\tau$ of an MLP satisfy $f_{\rho(\tau)v}=f_v$ (function invariance), mainstream SOTA architectures (DWS / NP-NFN / HNP-NFN / GMN / NG-GNN / NFT) are explicitly constructed to be equivariant to $G_A=S_{d_1}\times\cdots\times S_{d_{L-1}}$.
 
-**Limitations of Prior Work**: (1) These architectures appear significantly different (DWS uses manually aligned equivariant linear layers, GMN/NG-GNN treat the network as a graph for GNNs, and NFT uses attention), but the community lacks clarity on their relative strengths. (2) Symmetry constraints inherently weaken expressivity, yet existing theories only provide fragmented forward-pass simulation results (Navon et al., 2023; Lim et al., 2023; Kalogeropoulos et al., 2024) without a unified universality characterization. (3) Some natural targets, such as the "zoom-out" operator for INRs, may produce output functions with complexity exceeding the capacity of the input MLP; theoretically, it is impossible to approximate such targets using the same output architecture—a fact not previously articulated.
+**Limitations of Prior Work**: (1) While these architectures appear distinct (DWS uses manually aligned equivariant linear layers, GMN/NG-GNN treat networks as graphs, and NFT uses attention), the community lacks clarity on their relative strengths. (2) Symmetry constraints inherently weaken expressivity, but existing theories only provide fragmented forward-pass simulation results (Navon et al., 2023; Lim et al., 2023; Kalogeropoulos et al., 2024) rather than a unified characterization of universality. (3) For certain natural targets, such as "zoom-out" operators for INRs, the complexity of the output function might exceed the capacity limit of the input MLP architecture. Theoretically, it is impossible to approximate such operators using the same output architecture—a point not clearly identified previously.
 
-**Key Challenge**: The approximation problem in weight-space naturally spans two semantic levels—the parameter space $\mathcal V$ and the function space $\mathcal F$ they realize. "Equivariant weight-to-weight mappings" and "function-space operators" are distinct types of targets and must be discussed separately. Symmetry constraints are sufficient in some settings but insufficient (i.e., non-universal) in others, necessitating a precise characterization of the "boundaries."
+**Key Challenge**: Weight-space approximation problems naturally span two semantic levels—the parameter space $\mathcal V$ and the function space $\mathcal F$ they realize. "Equivariant weight-to-weight mappings" and "function-space operators" are different types of targets and must be discussed separately. Symmetry constraints are sufficient in some settings but insufficient (i.e., non-universal) in others, requiring a precise characterization of the "boundary."
 
-**Goal**: (a) Place all mainstream permutation-equivariant weight-space architectures into the same equivalence class in terms of expressivity; (b) systematically categorize "approximation targets" into 4 types and provide a complete map of universality/non-universality; (c) translate theoretical findings into actionable architectural modifications.
+**Goal**: (a) Place all mainstream permutation-equivariant weight-space architectures into the same equivalence class in terms of expressivity; (b) systematically categorize "approximation targets" into four types and provide a complete map of universality vs. non-universality; (c) translate theoretical findings into actionable architectural improvements.
 
-**Key Insight**: The authors observe that in other symmetrical domains of Geometric Deep Learning (graphs, point clouds), the *general position* (GP) paradigm—where universality holds except on a degenerate subset $\mathcal E$—is commonly used (Maron et al., 2020; Finkelshtein et al., 2025). In weight-space, the natural degenerate set is where "a hidden layer contains two identical biases $b_i=b_j$," which is a subset of Lebesgue measure zero. Almost all trained MLPs fall within the GP. By leveraging GP, the degeneracies introduced by equivariance can be isolated.
+**Key Insight**: The authors observe that the *general position* (GP) paradigm—which guarantees universality outside a degenerate subset $\mathcal E$—is commonly used in other symmetric domains in Geometric Deep Learning (e.g., graphs, point clouds) (Maron et al., 2020; Finkelshtein et al., 2025). In weight space, the natural degenerate set consists of cases where "two identical biases $b_i=b_j$ exist in a hidden layer"—a subset of Lebesgue measure zero. Almost all trained MLPs fall within the GP. By utilizing GP as a theoretical leverage, the degeneracies caused by equivariance can be isolated.
 
-**Core Idea**: First prove that all mainstream architectures have equivalent expressivity → unify the analysis object into a "Universal Permutation-Equivariant Weight-Space Network" → determine universality for each of the 4 approximation scenarios. Simultaneously, from the impossibility conclusion that "function-space operators are not universal under fixed architectures," derive a simple workaround: **make the output larger than the input** (OCE directly outputs and averages $k$ MLPs).
+**Core Idea**: First prove that all mainstream architectures are equivalent in expressivity → unify the analysis around a "universal permutation-equivariant weight-space network" → determine universality for each of the four approximation scenarios. Simultaneously, from the impossibility conclusion that function-space operators are non-universal under fixed architectures, derive a simple solution: **make the output larger than the input** (OCE outputs the average of $k$ MLPs).
 
 ## Method
 
-This paper consists of pure theory plus a theory-driven simple experimental architectural modification. The "Method" should be understood as the theoretical framework and proof skeleton rather than a new model per se.
+This paper consists of pure theory and a simple theory-driven architectural modification; "Method" refers to the theoretical framework and proof sketches rather than a standalone model.
 
 ### Overall Architecture
 
-The weight-space problem is organized into a 2D grid: "Target Type × Input General Position":
-
-- **Target Type** (Definition 4.1):
-    1. Function-space functional $\Psi:\mathcal C(X,\mathbb R^{d_L})\to\mathbb R^n$, e.g., accuracy prediction, INR classification.
-    2. Permutation-invariant functional $\Psi:\mathcal V_A\to\mathbb R^n$, e.g., weight $\ell_2$ norm, loss landscape curvature.
-    3. Function-space operator $\Psi:\mathcal C\to\mathcal C$, e.g., INR editing, domain adaptation.
-    4. Permutation-equivariant operator $\Psi:\mathcal V_A\to\mathcal V_A$, e.g., pruning mask prediction, gradient prediction for meta-optimization.
-
-- **Input Domain**: The entire $\mathcal V$ vs. the GP subset $\mathcal V\setminus\mathcal E$, where
-$\mathcal E_A=\{v\mid\exists\ell\in[L-1],\,i\ne j,\,(b_\ell)_i=(b_\ell)_j\}$.
-
-Approximation is measured by $L^2$ (functionals/equivariant operators) or $L^\infty$ (function-space operators). For function-space operators, it is measured as $\sup_v\|\Psi(f_v)-f_{\Phi(v)}\|_\infty<\epsilon$, meaning the "equivariant weight-to-weight mapping" approximates the target operator after being mapped to the function space by the realization map $R(v)=f_v$.
+The entire paper revolves around a 2D table: the horizontal axis represents the "approximation target type," and the vertical axis indicates whether the input lies in the *general position* (GP). Targets are classified into four types per Definition 4.1: function-space functionals $\Psi:\mathcal C(X, \mathbb R^{d_L})\to \mathbb R^n$ (e.g., accuracy prediction, INR classification), permutation-invariant functionals $\Psi:\mathcal V_A\to \mathbb R^n$ (e.g., weight $\ell_2$ norm, loss landscape curvature), function-space operators $\Psi:\mathcal C\to \mathcal C$ (e.g., INR editing, domain adaptation), and permutation-equivariant operators $\Psi:\mathcal V_A\to \mathcal V_A$ (e.g., pruning mask prediction, gradient prediction for meta-optimization). The input domain is divided into the full parameter space $\mathcal V$ and the GP subset $\mathcal V\setminus\mathcal E$, where $\mathcal E_A=\{v\mid\exists\ell\in[L-1],\,i\ne j,\,(b_\ell)_i=(b_\ell)_j\}$ is the measure-zero set of MLPs with duplicate biases. Approximation error is measured by $L^2$ for functionals and equivariant operators, and by $L^\infty$ for function-space operators, where the latter requires that the weight-to-weight mapping $\Phi$ satisfies $\sup_v\|\Psi(f_v)-f_{\Phi(v)}\|_\infty<\epsilon$ when pulled back via the realization map $R(v)=f_v$.
 
 ### Key Designs
 
-1. **Architecture Equivalence Theorem (Theorem 5.2 + Proposition 5.3)**:
+**1. Architecture Equivalence Theorem: Folding diverse architectures into one equivalence class (Theorem 5.2 + Proposition 5.3)**
 
-    - **Function**: Collapses 6 mainstream architectures $\Pi=\{\text{DWS, NP-NFN, HNP-NFN, GMN, NG-GNN, NFT}\}$ into a single expressivity equivalence class.
-    - **Mechanism**: For any compact set $K\subseteq\mathcal V$ and any $\pi,\pi'\in\Pi\setminus\{\text{NFT}\}$, $\mathcal N^\pi_{\text{inv}}(K)=\mathcal N^{\pi'}_{\text{inv}}(K)$ and $\mathcal N^\pi_{\text{equi}}(K)=\mathcal N^{\pi'}_{\text{equi}}(K)$. The proof uses the basic layers of one architecture to "simulate" those of another (mutual approximation). NFT is not equivalent on the full space due to its non-standard attention mechanism (Proposition 5.3 provides a counterexample $K$), but remains equivalent on the GP subset $K\subset\mathcal V\setminus\mathcal E$.
-    - **Design Motivation**: Downgrades the choice of architecture from a selection problem to an engineering one and allows all subsequent theorems to be stated once for a "universal permutation-equivariant weight-space network."
+The community has long struggled to compare the strengths of DWS, GMN/NG-GNN, and NFT. This paper proves their expressivity is essentially identical: for any compact set $K\subseteq\mathcal V$ and any $\pi,\pi'\in\Pi\setminus\{\text{NFT}\}$ (where $\Pi=\{\text{DWS, NP-NFN, HNP-NFN, GMN, NG-GNN, NFT}\}$), it holds that $\mathcal N^\pi_{\text{inv}}(K)=\mathcal N^{\pi'}_{\text{inv}}(K)$ and $\mathcal N^\pi_{\text{equi}}(K)=\mathcal N^{\pi'}_{\text{equi}}(K)$. This is shown through mutual approximation of their basic layers. NFT falls behind on the full space due to its non-standard attention mechanism (Proposition 5.3 provides a counterexample $K$), but it joins the equivalence class when restricted to the GP subset $K\subset\mathcal V\setminus\mathcal E$. This reduces the "which architecture to use" question from a theoretical choice to an engineering preference.
 
-2. **Unified Universality under GP (Theorems 6.1 / 6.3 / 7.2 / 7.4)**:
+**2. Four-Quadrant Universality Map under GP: Precisely identifying sufficient vs. insufficient scenarios (Theorems 6.1 / 6.3 / 7.2 / 7.4)**
 
-    - **Function**: Provides universality determinations (including upper and lower bounds) for each of the 4 target categories.
-    - **Mechanism**:
-        - **Function-space functional** (Thm 6.1): Universal over the *entire space* $K\subseteq\mathcal V$. The proof shows DWS can simulate an MLP forward pass (Navon et al., 2023) → derives a separation property where "DWS cannot distinguish $v,v'$ ⇒ $f_v=f_{v'}$" → concludes using the separation-to-approximation theorem (Pacini et al., 2025b).
-        - **Permutation-invariant functional** (Prop 6.2 + Thm 6.3): *Not universal* over the full space (constructs $v,v'$ where $W_2,W_2'$ have different ranks but are indistinguishable by 1-WL, see Figure 3), but universal on the GP. The key construction for Thm 6.3 is a **continuous canonization mapping** $\operatorname{canon}:K\to\mathcal V$: since $K\cap\mathcal E=\varnothing$, elements of the bias $b_\ell$ are unique per layer, allowing $\operatorname{argsort}(b_\ell)$ to serve as a layer-wise permutation. The resulting orbit representative is unique and continuous. DWS contains DeepSets primitives, which are universal for ranking (Segol & Lipman, 2019), followed by an MLP head.
-        - **Function-space operator** (Prop 7.1 + Thm 7.2): *Not universal* on a *fixed ReLU architecture*—the number of linear regions in a ReLU MLP is bounded (Montúfar et al., 2014); hence, operators like "zoom-out" that increase geometric complexity cannot be approximated by a same-architecture equivariant mapping. However, it is universal if the "output architecture $A$ is sufficiently large." The proof uses a partition of unity to write $\Psi(f_v)$ as a continuous convex combination of $M$ reference MLPs $\Rightarrow$ uses canonization to make it permutation-equivariant $\Rightarrow$ concludes via Thm 7.4.
-        - **Permutation-equivariant operator** (Prop 7.3 + Thm 7.4): Dual to the invariant case—through broadcasting, invariant universality implies equivariant universality. Thm 7.4 uses "broadcasting canonization" $\widetilde{\operatorname{canon}}(v)$ (appending $\operatorname{Flat}(\operatorname{canon}(v))$ to each weight/bias entry) + pointwise MLPs.
-    - **Design Motivation**: After determining all four cells, the resulting "Expressivity Map" in Figure 1 informs practitioners where existing architectures are sufficient and pinpoints where new architectures are needed. The GP assumption clarifies both "theoretical non-universality" and "practical approximability," preventing the misuse of pessimistic conclusions.
+Each of the four target types is analyzed, with GP acting as the key to distinguishing theoretical non-universality from practical approximability. **Function-space functionals** (Thm 6.1) are universal over the entire space $K\subseteq\mathcal V$. The proof uses DWS to simulate MLP forward passes (Navon et al., 2023) to establish separation—if DWS cannot distinguish $v$ and $v'$, then $f_v=f_{v'}$—and applies the separation-to-approximation theorem (Pacini et al., 2025b). **Permutation-invariant functionals** (Prop 6.2 + Thm 6.3) are actually non-universal over the full space: one can construct $v, v'$ with different $W_2, W_2'$ ranks that cannot be distinguished by 1-WL (Figure 3), but universality is restored on the GP. The core construction for Thm 6.3 is a **continuous canonization mapping** $\operatorname{canon}:K\to\mathcal V$. Since $K\cap\mathcal E=\varnothing$, biases $b_\ell$ in each layer are distinct; using $\operatorname{argsort}(b_\ell)$ as the permutation for each layer yields a unique and continuous orbit representative. DWS inherently supports DeepSets primitives which are universal for ranking (Segol & Lipman, 2019), allowing the construction via an MLP head. **Function-space operators** (Prop 7.1 + Thm 7.2) are non-universal for fixed ReLU architectures: the number of linear regions in a ReLU MLP is bounded (Montúfar et al., 2014), so operators that increase geometric complexity (e.g., zoom-out) cannot be approximated by an output of the same capacity. However, universality is achieved if the output architecture $A$ is allowed to be "large enough." **Permutation-equivariant operators** (Prop 7.3 + Thm 7.4) are dual to the invariant case: through broadcasting, invariant universality implies equivariant universality.
 
-3. **OCE: Output Capacity Expansion (Section 8)**:
+**3. OCE (Output Capacity Expansion): Translating "larger output" requirements into a plug-and-play modification (Section 8)**
 
-    - **Function**: Implements the "larger output architecture" requirement from Thm 7.2 as a minimal, plug-and-play modification.
-    - **Mechanism**: Adds a dimension $k>1$ to the final feature dimension of any weight-space network. The output tensor is interpreted as parameters for $k$ parallel MLPs, and the final prediction is the average of these $k$ MLP outputs. This requires changing only one line of code; model parameters remain largely unchanged as the backbone is shared, only the output head's channels are expanded by $k$.
-    - **Design Motivation**: The root of the impossibility in Prop 7.1 is the capacity bottleneck when "output MLP capacity $=$ input MLP capacity." Ensembling increases the effective number of ReLU regions by a factor of $k$, bypassing the bottleneck while naturally maintaining permutation equivariance (each branch is independently equivariant). This is an engineering improvement directly derived from theory.
+The impossibility root in Prop 7.1 is the constraint that "output MLP capacity $=$ input MLP capacity." OCE resolves this simply: an extra dimension $k>1$ is added to the final feature dimension of any weight-space network. The output tensor is interpreted as parameters for $k$ parallel MLPs, and the final prediction is the average of their outputs. By sharing the backbone and only expanding the output head by a factor of $k$, parameter count remains nearly constant while the effective number of ReLU regions increases $k$-fold, bypassing the capacity bottleneck while maintaining equivariance.
+
+### Loss & Training
+The theoretical sections do not specify training objectives; OCE experiments follow standard MSE supervision on the INR dilation benchmark (Zhou et al., 2023a).
 
 ## Key Experimental Results
 
-There is one primary experiment: the MNIST INR dilation benchmark, used to validate the SOTA gains brought by OCE and indirectly verify the practical value of Thm 7.2.
+The experiment focuses on the MNIST INR dilation benchmark to verify the gains from OCE and validate the practical value of Theorem 7.2.
 
 ### Main Results
 
-| Method | Ref | MSE ($\times 10^{-2}$, ↓) |
+| Method | Reference | MSE ($\times 10^{-2}$, ↓) |
 |------|------|---------------------------|
 | NFT | Zhou et al. 2023b | 5.10 ± 0.04 |
 | NP-NFN | Kofinas et al. 2024 | 2.55 ± 0.00 |
@@ -99,56 +80,56 @@ There is one primary experiment: the MNIST INR dilation benchmark, used to valid
 | ScaleGMN + GradMetaNet++ | Gelberg et al. 2026 | 1.60 ± 0.01 |
 | DWS (k=1, baseline) | Gelberg et al. 2026 | 2.29 ± 0.01 |
 | GMN (k=1, baseline) | Gelberg et al. 2026 | 1.96 ± 0.02 |
-| **DWS + OCE (k=8)** | Ours | **1.36 ± 0.03** |
-| **GMN + OCE (k=8)** | Ours | **1.06 ± 0.13** |
+| **DWS + OCE (k=8)** | This paper | **1.36 ± 0.03** |
+| **GMN + OCE (k=8)** | This paper | **1.06 ± 0.13** |
 
-GMN+OCE reduces MSE by 34% relative to the previous SOTA (ScaleGMN+GradMetaNet++ at 1.60). DWS and GMN themeselves show improvements of 41% and 46% respectively over their $k=1$ baselines.
+GMN+OCE reduces MSE by 34% compared to the previous SOTA (ScaleGMN+GradMetaNet++ at 1.60). Compared to their $k=1$ baselines, DWS and GMN MSEs drop by 41% and 46%, respectively.
 
 ### Ablation Study
 
-Trends from Appendix Table 2 (summarized):
+Trends from Appendix Table 2:
 
-| Configuration | Key Phenomenon | Explanation |
+| Configuration | Key Observation | Note |
 |------|---------|------|
 | DWS, $k=1\to 8$ | MSE decreases ~41% | No additional parameters (shared backbone) |
-| GMN, $k=1\to 8$ | MSE decreases ~46% | Validates the "expand output architecture" guidance of Thm 7.2 |
-| Control Baselines | Extensive use of gradients/probes | OCE outperforms without needing extra signals |
+| GMN, $k=1\to 8$ | MSE decreases ~46% | Validates Thm 7.2 "expanded output" guidance |
+| Comparison vs Baselines | Baselines use heavy gradients/probes | OCE outperforms without extra signals |
 
 ### Key Findings
 
-- **Theory-to-Experiment Loop**: The performance bottleneck is identified as "insufficient output representation capacity" rather than a "weak backbone," a prediction made by Prop 7.1 and verified by OCE.
-- **OCE as a Free Lunch for Weight-Space Learning**: It requires virtually no extra parameters, is compatible with both DWS and GMN, and does not need additional supervision, yet it significantly widens the MSE gap, serving as a strong exemplar for future baseline settings.
-- **NFT Ranks Surprisingly Low** (5.10 vs. DWS+OCE 1.36), suggesting that the advantages of attention in weight-space are far less significant than in sequence modeling—consistent with the theoretical observation in Prop 5.3 that NFT is not equivalent to other architectures on the full space.
+- **Theory-to-Experiment Loop**: The performance bottleneck is identified as "insufficient output representation capacity" rather than a "weak backbone," as predicted by Prop 7.1 and verified by OCE.
+- **OCE as a Free Lunch for Weight-Space Learning**: With nearly no increase in parameters, it is compatible with DWS/GMN without requiring extra supervision, significantly lowering MSE.
+- **NFT underperforms significantly** (5.10 vs. DWS+OCE 1.36), suggesting that the advantages of attention in sequence modeling do not translate well to weight space, echoing the theoretical observation in Prop 5.3.
 
 ## Highlights & Insights
 
-- **Collapsing seemingly diverse architectures into a single equivalence class** is the highest-density insight: choosing between DWS, GMN, or NG-GNN is now largely an engineering preference; researchers need only select the most analytically convenient one (DWS here) to prove universal properties.
-- **Dual Use of GP Assumption**: It is used both to separate "counterexamples" from "universality" (Prop 6.2 vs. Thm 6.3) and to bring NFT back into the equivalence class (Prop 5.3). This methodology of discussing universality outside measure-zero degenerate sets can be extended to other symmetric domains (e.g., transformers with shared parameters, scale-equivariant networks).
-- **Continuous Canonization as a Universal Key**: Since $\operatorname{argsort}(b_\ell)$ is unique and locally constant under GP, continuous canonization exists naturally. This reduces the "equivariant universality" problem to "DeepSets universality," resulting in a clean proof skeleton shared across almost all scenarios.
-- **Engineering Significance of Prop 7.1 & OCE**: Previously, the community attributed poor INR editing performance to weak models; this paper points out the root cause is the locked capacity of the output MLP. This observation directly led to OCE—a nearly zero-cost modification applicable to any meta-learning setting involving a "small input network → small output network."
-- **Metaphor of Overparameterization**: The authors explicitly compare "expanding the output architecture" to the idea that "overparameterization eases optimization and improves generalization" (Du et al., 2019; Belkin et al., 2019), suggesting that the next breakthrough in weight-space learning may lie in asymmetric input-smaller-than-output designs.
+- **Folding diverse architectures into an equivalence class** is the highest-density insight: choosing between DWS, GMN, or NG-GNN is now largely an engineering preference.
+- **Dual use of the GP assumption**: It isolates "counterexamples" from "universality" (Prop 6.2 vs. Thm 6.3) and integrates NFT back into the equivalence class (Prop 5.3). This methodology can be extended to other domains like transformers with parameter sharing.
+- **Continuous canonization as a universal key**: Because $\operatorname{argsort}(b_\ell)$ is unique and locally constant under GP, continuous canonization naturally exists, reducing "equivariant universality" to "DeepSets universality."
+- **Engineering significance of Prop 7.1 and OCE**: Previously, the difficulty of INR editing was attributed to model weakness. This paper points to the locked output MLP capacity, leading to the "nearly zero-cost" OCE fix.
+- **Metaphor with over-parameterization**: The authors explicitly link "expanding output architecture" to the idea that over-parameterization eases optimization and improves generalization, suggesting that future weight-space designs might favor input-output asymmetry.
 
 ## Limitations & Future Work
 
-- **Restricted to MLP Weight Spaces**: Does not cover transformer or convolutional weights (though Appendix H provides a sketch for transformers); symmetry groups for convolution and pooling in CNNs are not yet addressed.
-- **Excludes Scale-Equivariant Architectures**: Architectures like ScaleGMN (Kalogeropoulos et al. 2024; Tran et al. 2024) are not covered, despite ScaleGMN's strong performance in baselines, indicating a gap between theory and practice.
-- **Expressivity vs. Optimization/Generalization**: The authors emphasize the theory only addresses expressivity; the fact that a mapping "can be approximated" does not mean gradient descent will find it, which is a significant gap in fields with highly irregular loss landscapes like weight-space.
-- **Reliance on ReLU for Impossibility**: Prop 7.1 relies on counts of linear regions; other activations would require re-constructing degenerate function families (the authors believe this generalizes but have not provided a full proof).
-- **Hyperparameter $k$**: The ensemble number $k$ in OCE is a hyperparameter, and its practical value has only been validated on the INR dilation benchmark, with other function-space operator tasks (domain adaptation, NeRF editing) yet to be empirically tested.
+- **Limited to MLP weight space**, excluding transformers/CNNs (though Appendix H provides a transformer sketch). Symmetry groups for convolution and pooling are not yet handled.
+- **Excludes scale-equivariant architectures** (e.g., ScaleGMN), despite ScaleGMN's strong empirical performance, leaving a gap between theory and the best available practice.
+- **Focuses on expressivity, not optimization or generalization**: Approximability does not guarantee that gradient descent will find the solution, especially in irregular weight-space loss landscapes.
+- **ReLU dependence**: The impossibility result (Prop 7.1) relies on linear region counting; generalizations to other activations are believed possible but not yet proven.
+- **OCE hyperparameter $k$**: Only validated on the INR dilation benchmark; performance on other function-space operator tasks (e.g., NeRF editing) remains untested.
 
 ## Related Work & Insights
 
-- **vs. Navon et al. 2023 (DWS), Lim et al. 2023 (GMN), Kalogeropoulos et al. 2024 (ScaleGMN)**: These works provide "forward-pass simulations" or partial expressivity for specific target classes. This paper integrates them into a unified framework, proves their mutual equivalence, and completes the four-quadrant universality map.
-- **vs. Maron et al. 2020 / Finkelshtein et al. 2025 / Gelberg et al. 2026 (GP Methodology in GDL)**: This paper systematically applies the "universality outside GP" paradigm to weight-space for the first time, defining GP naturally as unique hidden biases.
-- **vs. Pacini et al. 2025b (separation-to-approximation)**: Provides a non-trivial application of these Stone–Weierstrass-style theorems in weight-space, with the separation property proven via DWS forward-pass simulation.
-- **vs. Bronstein et al. (GDL Overview)**: This work treats weight-space as a fourth type of symmetric structured data (alongside graphs, point clouds, and sets), building a corresponding expressivity toolbox as an extension of GDL in the meta-learning era.
+- **vs. Navon et al. 2023, Lim et al. 2023, Kalogeropoulos et al. 2024**: These works provide "forward-pass simulation" or partial expressivity. This paper unifies them, proves equivalence, and completes the universality map for four quadrants.
+- **vs. Maron et al. 2020 / Finkelshtein et al. 2025 (GP methodology)**: This work systematically brings the "universality outside GP" paradigm to weight space, defining GP as distinct hidden biases.
+- **vs. Pacini et al. 2025b (separation-to-approximation)**: Provides a non-trivial application of Stone–Weierstrass-style theorems in weight space, using DWS forward-pass simulation to prove separation.
+- **vs. Bronze et al. GDL Surveys**: This work treats weight space as a fourth type of structured symmetric data (alongside graphs, point clouds, and sets), building the corresponding expressivity toolbox for the meta-learning era.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Provides the first unified expressivity characterization for the weight-space network family, closing the loop on architecture equivalence, universality, impossibility, and engineering fixes.
-- **Experimental Thoroughness**: ⭐⭐⭐ Primarily theoretical, with only one benchmark; however, the result is significant (34% SOTA gain) and directly supports the theory.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The "Expressivity Map" in Figure 1 is highly effective, and the rhythm of theorem-counterexample-theorem is clear with readable proof sketches.
-- **Value**: ⭐⭐⭐⭐⭐ Simplifies architecture selection for future research and suggests a new design direction for input-smaller-than-output models; OCE is a practical, plug-and-play trick.
+- Novelty: ⭐⭐⭐⭐⭐ First unified expressivity characterization for the weight-space family; links equivalence, universality, and engineering fixes.
+- Experimental Thoroughness: ⭐⭐⭐ Primarily theoretical; validated on one main benchmark, though results are significantly strong (34% SOTA gain).
+- Writing Quality: ⭐⭐⭐⭐⭐ The "Expressivity Map" is highly effective; clear rhythm between theorems and counterexamples.
+- Value: ⭐⭐⭐⭐⭐ Simplifies architecture selection for future research and introduces OCE as a plug-and-play trick.
 
 <!-- RELATED:START -->
 

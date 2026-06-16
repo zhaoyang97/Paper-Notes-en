@@ -2,125 +2,125 @@
 title: >-
   [Paper Note] VidTAG: Temporally Aligned Video to GPS Geolocalization
 description: >-
-  [CVPR 2026][Video Understanding][Video geolocalization] This paper proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves temporally consistent per-frame video geolocalization at glo…
+  [CVPR 2026][Video Understanding][Denoising] Ours proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves inter-frame temporal alignment via the TempGeo module and refines GPS predictions through the GeoRefiner encoder-decoder module, enabling temporally consistent frame-by-frame video geolocalization at a global scale.
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video geolocalization"
-  - "frame-to-GPS retrieval"
-  - "temporal consistency"
-  - "trajectory prediction"
-  - "denoising"
+  - CVPR 2026
+  - Video Understanding
+  - Denoising
 date: 2026-05-08
-content_hash: 8977b81b32a3596f
+content_hash: e991c9abd95ae878
 ---
-
 # VidTAG: Temporally Aligned Video to GPS Geolocalization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.12159](https://arxiv.org/abs/2604.12159)  
 **Code**: [https://parthpk.github.io/vidtag_webpage](https://parthpk.github.io/vidtag_webpage)  
-**Area**: Video Understanding / Geolocalization
+**Area**: Video Understanding / Geolocalization  
 **Keywords**: Video geolocalization, frame-to-GPS retrieval, temporal consistency, trajectory prediction, denoising
 
 ## TL;DR
 
-This paper proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves temporally consistent per-frame video geolocalization at global scale, via a TempGeo module for inter-frame temporal alignment and a GeoRefiner encoder-decoder module for GPS prediction refinement.
+Ours proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves inter-frame temporal alignment via the TempGeo module and refines GPS predictions through the GeoRefiner encoder-decoder module, enabling temporally consistent frame-by-frame video geolocalization at a global scale.
 
 ## Background & Motivation
 
-**Background**: Image geolocalization is dominated by two paradigms — classification (partitioning the Earth into regions and predicting labels) and retrieval (matching against a geo-referenced image database). GeoCLIP embeds images and GPS coordinates into a shared space to enable direct GPS retrieval.
+**Background**: Image geolocalization primarily follows two paradigms: classification (dividing the Earth into regions to predict labels) and retrieval (matching against a georeferenced gallery). GeoCLIP implements direct GPS retrieval by embedding images and GPS in a shared space.
 
-**Limitations of Prior Work**: Classification methods offer only coarse city-level localization; image retrieval methods require enormous image databases, making them infeasible at global scale. For video, applying image-based methods frame-by-frame produces "jittery" trajectories, with worst-case predictions spanning continents. The only global-scale video method, CityGuessr, reasons at the full video level and does not support per-frame localization.
+**Limitations of Prior Work**: Existing classification methods only provide coarse-grained city-level localization. Image retrieval methods require massive image galleries, which are infeasible at a global scale. For video, applying image methods frame-by-frame results in "jittery" trajectories; in the worst case, the predicted paths span across continents. CityGuessr, the only global video method, performs inference at the video level and does not support frame-by-frame localization.
 
-**Key Challenge**: Achieving accurate and temporally consistent per-frame trajectories at global scale remains an open challenge.
+**Key Challenge**: How to obtain precise and temporally consistent frame-by-frame trajectories at a global scale.
 
-**Goal**: (1) Introduce a new frame-to-GPS retrieval paradigm; (2) Address temporal inconsistency in video-level prediction.
+**Goal**: (1) Propose a new paradigm for frame-to-GPS retrieval; (2) Resolve temporal inconsistency in video predictions.
 
-**Key Insight**: Constructing a GPS coordinate gallery (rather than an image gallery) is simple and inexpensive, making frame-to-GPS retrieval tractable at global scale.
+**Key Insight**: Building a GPS coordinate library (instead of an image library) is simple and inexpensive, making frame-to-GPS retrieval feasible at a global scale.
 
-**Core Idea**: TempGeo performs inter-frame temporal alignment, and GeoRefiner applies denoising-based refinement, together enabling temporally consistent per-frame GPS prediction.
+**Core Idea**: Utilize TempGeo for inter-frame temporal alignment + GeoRefiner for denoising refinement to achieve temporally consistent frame-by-frame GPS predictions.
 
 ## Method
 
 ### Overall Architecture
 
-Training proceeds in two phases. Phase I trains the dual frame encoder (CLIP+DINOv2), TempGeo, and a location encoder via contrastive learning. Phase II freezes Phase I and trains the GeoRefiner encoder-decoder for denoising-based GPS refinement. At inference, frames are encoded through the dual encoder and TempGeo to produce embeddings; initial GPS predictions are retrieved and subsequently refined by GeoRefiner.
+VidTAG reformulates video geolocalization as "frame-by-frame to GPS coordinate retrieval": instead of maintaining a global image gallery for matching, each frame is encoded and nearest neighbors are retrieved directly in a GPS coordinate embedding space to output the latitude and longitude of that frame. The process is trained in two phases. Phase I trains the front-end feature path—the dual-frame encoder (CLIP+DINOv2) encodes each frame into an embedding, TempGeo performs temporal alignment between frames, and contrastive alignment is performed in a shared space with GPS embeddings output by a location encoder (following GeoCLIP, acting as a scaffold). This results in a base model for frame-by-frame GPS retrieval. Phase II freezes Phase I and trains the GeoRefiner independently, treating the noisy frame-by-frame GPS sequences from the first stage as "dirty input" for denoising refinement. During inference, a video passes through "Dual-frame Encoder → TempGeo → Initial Retrieval → GeoRefiner → Secondary Retrieval" to obtain a temporally consistent frame-by-frame trajectory.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Video Frame Sequence"] --> B["Dual Frame Encoder<br/>CLIP Semantic ∥ DINOv2 Visual, Concat CLS"]
+    B --> C["TempGeo<br/>Full-frame Self-Attention for Temporal Alignment"]
+    G["GPS Coordinate Bank → Location Encoder<br/>(GeoCLIP, Scaffold)"] --> D
+    C --> D["Frame-to-GPS Contrastive Retrieval<br/>Obtain Noisy Frame-wise GPS Sequence"]
+    D --> E["GeoRefiner<br/>Encoder-Decoder Cross-Attention Denoising"]
+    E --> F["GPS-to-GPS Secondary Retrieval<br/>Temporally Consistent Trajectory"]
+```
 
 ### Key Designs
 
-1. **Dual Frame Encoder (CLIP + DINOv2)**:
+**1. Dual Frame Encoder: Complementary descriptions of each frame using two sets of features**
 
-    - **Function**: Generates semantically and visually complementary representations for each frame.
-    - **Mechanism**: CLIP provides language-aligned semantics (disambiguating landmarks, signs, and scenes); DINOv2 provides robust self-supervised features (global appearance, insensitive to domain shift). The CLS tokens from both are concatenated as the frame representation $\mathbf{z}_t = [\mathbf{f}_{clip} \| \mathbf{f}_{dino}]$.
-    - **Design Motivation**: CLIP excels at semantic understanding while DINOv2 excels at visual description; their complementary strengths benefit frame-to-GPS retrieval.
+A single encoder struggles to capture both "what kind of place this is" and "what this place looks like" simultaneously. CLIP excels in language-aligned semantics, disambiguating landmarks, identifying signs, and scene types. DINOv2 excels in self-supervised visual features, describing global appearance textures and being more robust to domain shifts. VidTAG concatenates the CLS tokens of both into a frame representation $\mathbf{z}_t = [\mathbf{f}_{clip} \| \mathbf{f}_{dino}]$, allowing semantic and visual cues to enter the retrieval path simultaneously. Ablations show that single CLIP or DINOv2 have shortcomings, and performance only peaks after concatenation, confirming that the two sets of features are complementary rather than redundant.
 
-2. **TempGeo Temporal Alignment Module**:
+**2. TempGeo: Letting adjacent frames correct each other before retrieval, rather than smoothing post-hoc**
 
-    - **Function**: Produces temporally consistent frame embeddings via inter-frame attention.
-    - **Mechanism**: A lightweight Transformer encoder applies full self-attention across all frames, augmented with temporal positional encodings. Uncertain or ambiguous frames can borrow contextual information from neighboring and distant frames, pulling isolated outlier predictions toward the consensus.
-    - **Design Motivation**: Unlike post-hoc smoothing, TempGeo performs temporal alignment prior to retrieval, allowing cross-frame context to directly shape the learning signal.
+Independent frame-by-frame localization generates "jittery" trajectories—if a frame is blurry or the scene is generic, it might be retrieved to the wrong continent, causing the entire path to jump. TempGeo uses a lightweight Transformer encoder to perform full self-attention across all frames of a video with temporal positional encoding, allowing each frame to borrow context from neighbors or even distant frames. An uncertain frame is pulled back into consensus by surrounding certain frames, and isolated anomalous predictions are suppressed. The key difference is that it operates before retrieval—cross-frame context directly shapes frame embeddings for contrastive learning, rather than post-processing smoothing after retrieving coordinates. Thus, temporal consistency is "learned into the representation" rather than being externally applied.
 
-3. **GeoRefiner Denoising Refinement Module**:
+**3. GeoRefiner: Treating the noisy predictions of the first stage as dirty data for in-domain denoising in the GPS domain**
 
-    - **Function**: Refines GPS sequence predictions through an encoder-decoder architecture.
-    - **Mechanism**: The encoder processes frame embeddings from TempGeo; the decoder receives GPS embeddings as queries and aligns the GPS sequence with visual tokens via cross-attention. During training, synthetic noise is injected into ground-truth GPS coordinates to simulate typical Phase I failure modes (sequential drift, collapse, and random jitter), and the decoder learns to denoise using visual context.
-    - **Design Motivation**: Per-frame predictions from Phase I remain noisy; GeoRefiner performs in-domain retrieval refinement in the GPS space.
+Even with TempGeo, Phase I outputs still exhibit typical failure modes: sequence shifts, collapsing to a single point, or random jitter. GeoRefiner uses an encoder-decoder structure to address this: the encoder takes frame embeddings from TempGeo, and the decoder uses GPS embeddings as queries, aligning the GPS sequence to corresponding visual tokens via cross-attention. A clever trick in training is not using Phase I predictions directly as input but instead injecting simulated noise (specifically modeling the aforementioned failure modes) into ground-truth GPS coordinates. This teaches the decoder to pull dirty coordinates back to the correct positions using visual context. This avoids distribution shift caused by using predictions for both training and inference, allowing refinement to be completed within the GPS domain.
 
 ### Loss & Training
 
-Phase I: contrastive loss (cross-entropy between the similarity matrix of frame and GPS embeddings and the identity matrix). Phase II: weighted hinge loss jointly optimizing frame-level and video-level alignment.
+Phase I uses contrastive loss: aligning the similarity matrix of frame embeddings and GPS embeddings to an identity matrix, essentially a frame-by-frame cross-entropy retrieval goal. Phase II uses a weighted Hinge loss, constraining alignment quality at both frame and video levels.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Frame@1km↑ | Frame@5km↑ | Frame Median Error↓ | Video@1km↑ | DFD↓ | MRD↓ |
-|-------|-----------|-----------|-------------------|-----------|------|------|
+| Model | Frame@1km↑ | Frame@5km↑ | Median Error↓ | Video@1km↑ | DFD↓ | MRD↓ |
+|------|---------|---------|-----------|----------|------|------|
 | GeoCLIP-ZS | 2.7% | 22.9% | 11.54km | 3.8% | 24.94 | 2.83 |
 | GeoCLIP-FT | 22.5% | 63.0% | 2.97km | 18.6% | 22.52 | 2.82 |
 | DINOv2-Cls | 18.1% | 58.2% | 3.86km | 18.4% | 4.28 | 1.60 |
-| **VidTAG** | **41.0%** | **76.7%** | **1.35km** | **39.8%** | **3.87** | **1.07** |
+| **Ours** | **41.0%** | **76.7%** | **1.35km** | **39.8%** | **3.87** | **1.07** |
 
 ### Ablation Study
 
 | Configuration | @1km | Median Error | DFD |
-|--------------|------|-------------|-----|
+|------|------|---------|-----|
 | CLIP only | 32.5% | 1.85km | 8.42 |
 | DINOv2 only | 28.3% | 2.15km | 5.12 |
-| Dual encoder | 35.2% | 1.62km | 6.78 |
+| Dual Encoder | 35.2% | 1.62km | 6.78 |
 | + TempGeo | 38.1% | 1.48km | 4.25 |
-| + GeoRefiner (full) | **41.0%** | **1.35km** | **3.87** |
+| + GeoRefiner (Full) | **41.0%** | **1.35km** | **3.87** |
 
 ### Key Findings
 
-- VidTAG surpasses GeoCLIP by 20 percentage points at @1km on MSLS, and outperforms the state of the art by 25% on CityGuessr68k.
-- TempGeo and GeoRefiner yield the most substantial improvements in trajectory quality (DFD, MRD).
-- The complementarity of the dual encoder is confirmed through ablation.
+- VidTAG exceeds GeoCLIP by 20 percentage points at @1km on MSLS and outperforms SOTA by 25% on CityGuessr68k.
+- TempGeo and GeoRefiner significantly improve trajectory quality (DFD, MRD).
+- The complementarity of the dual encoder is verified through ablation.
 
 ## Highlights & Insights
 
-- Frame-to-GPS retrieval is an elegant problem reformulation: GPS gallery construction is simple and inexpensive, making global-scale per-frame localization feasible.
-- The denoising training strategy of GeoRefiner is noteworthy: injecting synthetic noise rather than directly using Phase I predictions avoids train-inference distribution mismatch.
+- Frame-to-GPS retrieval is an elegant problem reformulation: GPS libraries are cheap to build, making global-scale frame-by-frame localization possible.
+- The denoising training strategy for GeoRefiner is clever: injecting simulated noise instead of using Phase I predictions avoids training-inference distribution mismatch.
 
 ## Limitations & Future Work
 
-- The method relies on a uniform-grid GPS gallery; gallery resolution directly caps localization accuracy.
-- Performance may degrade in regions with sparse geographic coverage.
-- Additional cues such as OCR (road signs, text) are not exploited.
-- Integration with multimodal large language models for further geographic reasoning is a promising direction.
+- Reliance on a uniform-grid GPS library; the library's resolution directly bounds precision.
+- Performance may decrease in regions with sparse geographical coverage.
+- Additional information such as OCR (street signs, text) is not utilized.
+- Integration with Multimodal Large Language Models (MLLMs) could further reason about geographical cues.
 
 ## Related Work & Insights
 
-- **vs. GeoCLIP**: GeoCLIP operates at the image level; VidTAG extends retrieval to video frames and addresses temporal consistency.
-- **vs. CityGuessr**: CityGuessr performs only video-level city prediction; VidTAG enables per-frame localization and trajectory mapping.
+- **vs GeoCLIP**: GeoCLIP is image-level only; VidTAG extends to video frame-level and resolves temporal consistency.
+- **vs CityGuessr**: CityGuessr only performs video-level city prediction; VidTAG achieves frame-by-frame localization and trajectory mapping.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First global-scale per-frame video geolocalization method
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multi-dataset, multi-metric, multi-baseline evaluation
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation and method description are clear
-- Value: ⭐⭐⭐⭐ Practical applications in forensics, social media analysis, and related domains
+- Novelty: ⭐⭐⭐⭐ First global-scale frame-level video geolocalization method.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple datasets, metrics, and baseline comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and method description.
+- Value: ⭐⭐⭐⭐ Practical applications in forensics, social media, etc.
 
 <!-- RELATED:START -->
 
@@ -128,11 +128,11 @@ Phase I: contrastive loss (cross-entropy between the similarity matrix of frame 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
-- [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](../../AAAI2026/video_understanding/finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
-- [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](../../ICCV2025/video_understanding/residualvit_for_efficient_temporally_dense_video_encoding.md)
-- [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](../../ICCV2025/video_understanding/factorized_learning_for_temporally_grounded_video-language_models.md)
-- [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](../../ICCV2025/video_understanding/toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
+- [\[CVPR 2026\] VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale](vidtag_temporally_aligned_video_to_gps_geolocalization_with_denoising_sequence_p.md)
+- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
+- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
+- [\[CVPR 2026\] An Empirical Study on How Video-LLMs Answer Video Questions](an_empirical_study_on_how_video-llms_answer_video_questions.md)
+- [\[CVPR 2026\] Video-CoE: Reinforcing Video Event Prediction via Chain of Events](video-coe_reinforcing_video_event_prediction_via_chain_of_events.md)
 
 </div>
 

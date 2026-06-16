@@ -2,117 +2,132 @@
 title: >-
   [Paper Note] OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration
 description: >-
-  [ICML 2026][Object Detection][Multimodal meta-verifier] To address coarse binary (True/False) signals in multimodal visual verifiers and the susceptibility of textual explanations to reward-hacking…
+  [ICML 2026][Object Detection][RLVR] To address the issues of coarse True/False binary signals and the vulnerability of text explanations to reward-hacking in multimodal visual verifiers, this paper proposes OmniVerifier-M1. It replaces text with symbolic outputs such as bounding boxes as the meta-verification rationale to support rule-based rewards like
 tags:
-  - "ICML 2026"
-  - "Object Detection"
-  - "Multimodal meta-verifier"
-  - "symbolic rewards"
-  - "decoupled RL"
-  - "visual self-correction"
-  - "RLVR"
+  - ICML 2026
+  - Object Detection
+  - RLVR
 date: 2026-05-08
-content_hash: 732ff8cee2449393
+content_hash: 4a62409ad47990c8
 ---
-
 # OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.28805](https://arxiv.org/abs/2605.28805)  
-**Code**: Paper does not provide a repository link (None)  
+**Code**: No repository link provided (None)  
 **Area**: Multimodal VLM / Visual Verification / Reinforcement Learning  
-**Keywords**: Multimodal meta-verifier, symbolic rewards, decoupled RL, visual self-correction, RLVR  
+**Keywords**: Multimodal meta-verifier, symbolic reward, decoupled RL, visual self-correction, RLVR  
 
 ## TL;DR
-To address coarse binary (True/False) signals in multimodal visual verifiers and the susceptibility of textual explanations to reward-hacking, this paper proposes OmniVerifier-M1. It replaces textual explanations with symbolic outputs (e.g., bounding boxes) as meta-verification rationales to support rule-based rewards like IoU. Furthermore, it theoretically and experimentally demonstrates that decoupling binary judgment and meta-verification into two independent reward streams (rather than a multiplicative joint reward) significantly improves SNR, transforming the verifier into an agentic system (M1-TTS) capable of driving region-level self-correction.
+To address the issues of coarse True/False binary signals and the vulnerability of text explanations to reward-hacking in multimodal visual verifiers, this paper proposes OmniVerifier-M1. It replaces text with symbolic outputs such as bounding boxes as the meta-verification rationale to support rule-based rewards like IoU. Theoretically and experimentally, it demonstrates that decoupling binary judgment and meta-verification into two independent reward streams (rather than a multiplicative joint reward) significantly improves the SNR. Ultimately, the verifier is upgraded to an agentic system, M1-TTS, capable of driving region-level self-recalibration.
 
 ## Background & Motivation
 
-**Background**: Multimodal Large Language Models (MLLMs) are becoming increasingly powerful in generation and reasoning, necessitating reliable verifiers as reward or reflection signal sources. Existing works fall into two categories: (i) traditional image reward models (e.g., RewardDance, UnifiedReward) focused on text-to-image scoring; (ii) general visual verifiers (e.g., OmniVerifier) that use RLVR (Reinforcement Learning with Verifier Rewards) with binary judgment (True/False) as the reward.
+**Background**: Multimodal Large Language Models (MLLMs) are becoming increasingly powerful in generation and reasoning, necessitating reliable verifiers as reward or reflection signal sources. Existing work generally follows two paths: (i) traditional image reward models like RewardDance and UnifiedReward, focused on text-to-image scoring; (ii) general visual verifiers like OmniVerifier, which use RLVR (Reinforcement Learning with Verifier Rewards) with binary judgments (True/False) as rewards.
 
-**Limitations of Prior Work**: Pure binary judgment signals suffer from two issues: first, supervision is at the decision level rather than the rationale level, allowing models to receive full rewards by "guessing correctly" or exploiting surface patterns without fine-grained reasoning; second, using textual explanations as rationales requires an LLM judge for scoring, which is slow and prone to reward hacking.
+**Limitations of Prior Work**: Pure binary signals face two major issues: first, supervision only reaches the decision level rather than the reasoning level, allowing models to receive full rewards by "guessing" or capturing surface patterns without learning fine-grained reasoning; second, using text explanations as rationales to train verifiers requires an LLM judge for scoring, which is both slow and prone to reward hacking.
 
-**Key Challenge**: Fine-grained feedback requires rationale supervision, but textual rationales are either expensive/vulnerable (model-based judgment) or difficult to standardize (rule-based judgment). Furthermore, binary judgment and meta-verification tasks have naturally different output spaces—the former being discrete and low-entropy, while the latter is continuous and high-dimensional/fine-grained—leading to severe optimization conflicts in a joint reward setting.
+**Key Challenge**: Granular feedback requires rationale supervision; however, text rationales require either model-based evaluation (expensive and vulnerable) or rule-based evaluation (difficult due to the open-ended nature of text). Furthermore, the output spaces of binary judgment and meta-verification are inherently different—the former is discrete and low-entropy, while the latter is continuous and high-dimensional. Forcing them into a joint reward causes severe optimization conflicts.
 
-**Goal**: (i) Identify a rationale form that is strictly rule-based and accurately represents visual errors; (ii) address the "gating" of meta-verification gradients by binary accuracy in joint reward settings; (iii) upgrade the verifier into an agent capable of driving region-level self-correction within a generation loop.
+**Goal**: (i) Identify a rationale format that is strictly rule-governed and precisely expresses image errors; (ii) Solve the problem of meta-verification gradients being "gated" by binary accuracy under joint rewards; (iii) Upgrade the verifier into an agent capable of driving region-level self-recalibration in a closed-loop generation system.
 
-**Key Insight**: Images are highly structured spatial representations, where errors can be naturally localized using symbols like bounding boxes or keypoints. This allows for rule-based rewards (e.g., IoU) instead of model-based judges, eliminating reward hacking. Theoretically, decoupling the meta gradient from the binary accuracy $p_{acc}$ gating in a joint reward can restore the SNR.
+**Key Insight**: Images are highly structured spatial representations, and errors can naturally be localized via symbolic representations like bounding boxes or keypoints. This allows for replacing model-based judges with rule-based rewards like IoU, eliminating reward hacking at the source. Moreover, theoretically, meta-gradients in joint rewards are multiplicatively gated by binary accuracy $p_{acc}$; decoupling the two restores the SNR.
 
-**Core Idea**: **Symbolic rationale (bbox) + Decoupled RL reward**. Use bboxes as meta-verification rationales to enable IoU as a rule-based reward; split binary judgment and meta-verification into independent reward streams via mixed-data training.
+**Core Idea**: **Symbolic rationale (bbox) + Decoupled RL reward** — Using bboxes as meta-verification rationales allows IoU to serve as a rule-based reward. Binary judgment and meta-verification are split into two independent reward streams trained via mixed data.
 
 ## Method
 
-OmniVerifier-M1 follows the RLVR framework to train a pointwise multimodal verifier $\pi_\theta(I, P) \to (o, \hat y, e)$, outputting a thought process $o$, binary judgment $\hat y$, and an error localization $e$ (bbox) when $\hat y = \text{False}$. The methodology centers on "what rationale to use" and "how to combine rewards."
+OmniVerifier-M1 trains a pointwise multimodal verifier $\pi_\theta(I, P) \to (o, \hat y, e)$ within the RLVR framework. The output includes a thought process $o$, a binary judgment $\hat y$, and (only when $\hat y = \text{False}$) an error region localization $e$ (bbox). The methodology revolves around "which rationale to use" and "how to combine rewards."
 
 ### Overall Architecture
-Input (image, prompt, ground-truth label, optional ground-truth bbox); output $(o, \hat y, e)$. The reward consists of three parts: format reward $\mathcal{R}_f$ (requiring `<think>` tags), accuracy reward $\mathcal{R}_{acc} \in \{0,1\}$, and meta-verification reward $\mathcal{R}_{meta}$ (IoU in the symbolic case). Training uses DAPO on OmniVerifier-7B and Qwen3-VL-8B for 80 steps using 16 A800-80G GPUs. M1-TTS utilizes the verifier as an agent tool: identifying error regions to drive region-level editing and iterative replanning until convergence.
+Input consists of (image, prompt, ground-truth label, optional ground-truth bbox); the verifier outputs $(o, \hat y, e)$. The reward comprises three parts: format reward $\mathcal{R}_f$ (requiring `<think>` tags), accuracy reward $\mathcal{R}_{acc} \in \{0,1\}$, and meta-verification reward $\mathcal{R}_{meta}$ (which equals IoU in the symbolic rationale scenario). Training uses DAPO on OmniVerifier-7B and Qwen3-VL-8B for 80 steps using 16 A800-80G GPUs. For downstream applications, M1-TTS treats the verifier output as an agent tool: identifying error regions first, then driving a generative model for region-level editing with iterative replanning until convergence.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Image + prompt<br/>+ GT label + GT bbox"]
+    subgraph SYM["Symbolic Rationale"]
+        direction TB
+        B["Multimodal Verifier π_θ<br/>Outputs: Thought o, Binary ŷ, Error bbox e"]
+        B --> C["If ŷ=False: R_meta = IoU(ê, b*)<br/>Rule-based reward, no LLM judge"]
+    end
+    A --> B
+    subgraph DEC["Decoupled RL Reward"]
+        direction TB
+        D["Balanced Data Stream<br/>Supervising R_acc only"]
+        E["False-only Replicated Stream<br/>Supervising R_meta (Grounding) only"]
+        D --> F["DAPO Mixed Rollout Training<br/>Removes p_acc multiplicative gating"]
+        E --> F
+    end
+    C --> D
+    subgraph TTS["M1-TTS Region-level Self-recalibration Loop"]
+        direction TB
+        H["Generative model produces image"] --> I["Verifier judges True/False"]
+        I -->|False + Error bbox| J["Planner converts to region editing prompt<br/>Local inpaint for the region"]
+        J --> H
+        I -->|All regions passed| K["Output final image"]
+    end
+    F -->|Deploy after training| H
+```
 
 ### Key Designs
 
-1.  **Symbolic Rationale — Bbox instead of Textual Explanation**:
-    - **Function**: Transition the verifier's rationale from "free text" to "structured geometric objects" (bbox/point/line), allowing hard-rule rewards like IoU.
-    - **Mechanism**: For each training sample, besides binary labels, ground-truth bboxes and textual explanations are provided. The symbolic route uses $\mathcal{R}_{meta} = \text{IoU}(\hat{b}, b^*)$ to evaluate the predicted bbox $\hat b$, while the textual route uses Qwen3-4B as a judge for semantic equivalence. The model still outputs a final verdict and a list of bboxes after `<think>`.
-    - **Design Motivation**: Visual errors are essentially spatial ("where is it wrong"). Symbolic bboxes are closer to this essence than text. Rule-based rewards eliminate reward hacking and save computational costs—empirical results show reward calculation at 0.021 ms (symbolic) vs. 20.2 ms (textual) (~1000x speedup). Training time per step improved from 10.27 min to 8.13 min (~20% acceleration), and VRAM usage dropped from 56.9 GB to 48.6 GB. The equivalent performance on ViVerBench (0.661 vs 0.662) proves symbolic is a "lossless but cheaper" alternative.
+**1. Symbolic Rationale: Using Bbox instead of text explanation for meta feedback**
 
-2.  **Decoupled RL Reward — Splitting Data/Reward Streams**:
-    - **Function**: Separates the tasks of "judging correctness" and "locating errors" into independent data/reward streams rather than a multiplicative joint structure.
-    - **Mechanism**: In the joint objective $\mathcal{R}_f + \mathcal{R}_{acc} \cdot (\mathbb{I}[y=\text{True}] + \mathbb{I}[y=\text{False}] \cdot \mathcal{R}_{meta})$, the meta gradient is only active when $y=\hat y=\text{False}$. The decoupled scheme uses a 1:1 balanced dataset to supervise $\mathcal{R}_{acc}$ and a "grounding-only" subset (replicating $y=\text{False}$ samples) to supervise $\mathcal{R}_{meta}$. These streams are mixed during RL rollouts.
-    - **Design Motivation**: Authors prove (Lemma 5.1 / Theorem 5.2) that the meta gradient norm in joint training is multiplicatively gated by $p_{acc}(\theta)$; in early RL stages where $p_{acc} \ll 1$, the meta task learns almost nothing. Theorem 5.3 and Corollary 5.4 show $\text{Var}(\mathcal{G}_{joint}) = p_{acc} \text{Var}(\mathcal{G}_{dec}) + p_{acc}(1-p_{acc})\|\mathbb{E}[\mathcal{G}_{dec}]\|^2$ and $\text{SNR}(\mathcal{G}_{joint}) \le p_{acc}(\theta) \cdot \text{SNR}(\mathcal{G}_{dec})$, implying joint training is strictly suboptimal. Decoupling removes the Bernoulli gate, restoring pure grounding gradients.
+Fine-grained supervision requires rationales, but text rationales necessitate an LLM judge, which is slow and vulnerable to hacking. The authors observe that image errors are fundamentally spatial "where" problems, naturally localizable via structured geometric objects like bboxes or points. Thus, IoU is used as a hard-rule reward. During training, symbolic samples provide GT bboxes, and the reward is $\mathcal{R}_{meta} = \text{IoU}(\hat b, b^*)$. Compared to textual rationales judged by Qwen3-4B, symbolic rewards are ~1000x faster (0.021 ms vs 20.2 ms per sample), reduce training time by ~20%, and lower VRAM usage from 56.9 GB to 48.6 GB, while maintaining nearly identical ViVerBench scores (0.661 vs 0.662). Symbolic is an "equivalent but cheaper" alternative.
 
-3.  **M1-TTS — Verifier-Driven Region-Level Agentic Self-Correction**:
-    - **Function**: Treats OmniVerifier-M1 as a "fine-grained optimizer" for scheduling agents, converting judgment/localization into tool-level actions (symbolic localization + structured text edit) to drive multi-round self-correction.
-    - **Mechanism**: Per round: base model generates image -> verifier predicts True/False -> if False, verifier provides error bboxes -> planner translates bboxes into "region-aware editing prompts" -> localized inpainting/editing occurs -> next round enters. Replanning is monitored by the verifier until all regions pass.
-    - **Design Motivation**: Traditional multi-turn editing is global, failing on small semantic errors. With symbolic feedback, the agent can focus the generative resource on error regions. This extends the fine-grained advantage of meta-verification from training to inference.
+**2. Decoupled RL Reward: Splitting accuracy and grounding into independent streams**
+
+Binary judgment is discrete and low-entropy, while meta-verification is continuous and high-dimensional; joint rewards lead to optimization conflicts. In the original joint objective $\mathcal{R}_f + \mathcal{R}_{acc} \cdot (\mathbb{I}[y=\text{True}] + \mathbb{I}[y=\text{False}] \cdot \mathcal{R}_{meta})$, the meta gradient is only active when $y=\hat y=\text{False}$. The decoupled scheme mixes two streams: an original 1:1 balanced set supervising $\mathcal{R}_{acc}$, and a replicated $y=\text{False}$ subset supervising only $\mathcal{R}_{meta}$. Theorem 5.3 and Corollary 5.4 prove that $\text{SNR}(\mathcal{G}_{joint}) \le p_{acc}(\theta) \cdot \text{SNR}(\mathcal{G}_{dec})$, indicating joint training is strictly sub-optimal due to the Bernoulli gate. Decoupling restores grounding gradients.
+
+**3. M1-TTS: Upgrading verifier from a "scorer" to an agent driving region-level self-recalibration**
+
+Traditional multi-turn editing operates at the global level, struggling with specific localized semantic errors. With symbolic feedback, OmniVerifier-M1 acts as a fine-grained optimizer: the base model generates an image → verifier identifies errors → if False, error bboxes are provided → planner translates bboxes into region-aware prompts → local inpainting is performed. This extends the fine-grained advantage of meta-verification to the inference stage, focusing precision on error regions.
 
 ### Loss & Training
-RL uses DAPO (a GRPO variant). Reward = format (indicator) + accuracy (0/1) + meta (IoU or model-based judge). Decoupled training mixes two streams: balanced data for $\mathcal{R}_f + \mathcal{R}_{acc}$, and False-only data for $\mathcal{R}_f + \mathcal{R}_{meta}$. Advantages are estimated within rollout groups per dataset, using standard PPO clipping and KL regularization.
+The RL algorithm uses DAPO (a GRPO variant). The reward equals format reward (indicator) + accuracy reward (0/1) + meta reward (IoU or model-based score). Mixed data streams are used: balanced data for $\mathcal{R}_f + \mathcal{R}_{acc}$, and False-only data for $\mathcal{R}_f + \mathcal{R}_{meta}$. Advantages are estimated within rollout groups, using standard PPO clipping and KL regularization.
 
 ## Key Experimental Results
 
 ### Main Results
-ViVerBench covers 6 categories and 16 sub-tasks including Concept Existence, Object Relation, World Dynamics, etc., combined with RefCOCO for localization evaluation. (Table 2 excerpt):
+ViVerBench covers 16 sub-tasks across 6 categories. RefCOCO is used for grounding evaluation. Selected results from Table 2:
 
-| Model | Obj. | Attr. | Spat.| BBox | Point | Count | GUI | Chart | **Overall** |
-|-------|------|-------|------|------|-------|-------|-----|-------|-------------|
+| Model | Obj. | Attr. | Spat. | BBox | Point | Count | GUI | Chart | **Overall** |
+|-------|------|-------|-------|------|-------|-------|-----|-------|-------------|
 | OmniVerifier-7B (baseline) | 0.701 | 0.703 | 0.808 | 0.770 | 0.659 | 0.527 | 0.634 | 0.600 | 0.650 |
 | OmniVerifier-7B (Joint) | 0.723 | 0.733 | 0.833 | 0.827 | 0.716 | 0.640 | 0.694 | 0.623 | 0.661 |
 | OmniVerifier-7B (Decoupled) | **0.741** | **0.754** | **0.846** | **0.854** | **0.741** | **0.710** | **0.722** | **0.639** | **0.668** |
 
-On the stronger Qwen3-VL-8B backbone, the same pattern holds: Decoupled > Joint > baseline. Grounding-heavy sub-tasks like BBox, Point, and Count show the largest gains (+8–18%), confirming that meta-verification supervision strengthens grounding capabilities.
+On the Qwen3-VL-8B backbone, Decoupled > Joint > Baseline holds. Fine-grained tasks like BBox, Point, and Count show the largest improvements (+8–18 points), confirming that meta-verification supervision strengthens grounding.
 
 ### Ablation Study
-| Config | ViVerBench | GPU VRAM (GB) | Reward Calc (ms/sample) | Training Time (min/step) | Response Length (token) |
+| Configuration | ViVerBench | VRAM (GB) | Reward Calc (ms/sample) | Train Time (min/step) | Response Length (tokens) |
 |------|------------|---------------|-------------------------|---------------------|------------------|
 | OmniVerifier-7B baseline | 0.650 | — | — | — | — |
 | + Bbox (symbolic) | 0.661 | 48.6 | **0.021** | **8.13** | 384 |
 | + Exp (textual) | 0.662 | 56.9 | 20.2 | 10.27 | 340 |
-| Qwen3-VL-8B baseline | 0.654 | — | — | — | — |
-| + Bbox | 0.671 | 49.9 | 0.021 | 8.74 | 516 |
-| + Exp | 0.670 | 58.3 | 20.2 | 11.08 | 488 |
 
 ### Key Findings
-- **Symbolic ≈ Textual in performance but significantly cheaper**: The performance gap is < 0.001, but symbolic reward calculation is ~1000x faster, VRAM is ~15% lower, and training is ~20% faster.
-- **Decoupled gains are not just from "more data"**: The replicated False samples only provide $\mathcal{R}_{meta}$, not binary supervision. Gains stem from the meta gradient escaping the $p_{acc}$ gating.
-- **Grounding sub-tasks benefit the most**: BBox improves 0.770→0.854, Count 0.527→0.710, and Point 0.659→0.741, confirming meta-verification signals flow into the model's grounding capacity.
-- **M1-TTS outperforms global multi-turn editing**: In region-level self-correction, the agentic system driven by OmniVerifier-M1 is more efficient and has lower error rates than traditional global regeneration.
+- **Symbolic ≈ Textual in performance, but Costs Differ**: Differences on ViVerBench are < 0.001, but symbolic reward calculation is ~1000x faster, uses ~15% less VRAM, and is ~20% faster in training.
+- **Decoupled Gain is not from "More Data"**: The replicated False-only data does not increase accuracy supervision; the gain comes from releasing meta gradients from $p_{acc}$ gating.
+- **Grounding Sub-tasks Benefit Most**: Significant jumps in BBox, Count, and Point verify that meta-verification signals flow into the model's grounding capability.
+- **M1-TTS beats Global Multi-turn Editing**: In region-level self-recalibration, the M1-driven system is more efficient and has lower error rates than traditional global regeneration.
 
 ## Highlights & Insights
-- **"Substituting structured image essence for free text"**: Transitioning verifier output from language to symbolic states (bbox/point) solves reward hacking, training efficiency, and localization precision simultaneously. This is a prime example of leveraging task-specific geometric structures.
-- **Theoretical breakdown of Joint vs Decoupled**: Lemmas and Theorems quantify why joint training fails using SNR inequalities, providing more rigor than typical empirical RL papers. This framework is extensible to any dual "discrimination + explanation" RL task.
-- **Evolution from verifier to agentic optimizer**: M1-TTS shifts the verifier from a "score provider" to an "action provider"—producing schedulable region signals. This represents a new paradigm for integrating RL-trained judge models into agent loops, which is valuable for controllable generation and safety alignment.
+- **"Replacing free-form text with domain-specific structures"**: Moving verifier outputs from linguistic to symbolic states (bbox/point) solves reward hacking, training efficiency, and localization precision simultaneously—utilizing geometric task structure to the fullest.
+- **Hardcore Theoretical Analysis**: The use of SNR inequalities to quantify why joint training is sub-optimal provides more convincing evidence than empirical observation alone; this framework applies to any dual "discrimination + explanation" RL task.
+- **Role Upgrade from Verifier to Agentic Optimizer**: M1-TTS upgrades the verifier from a score-provider to an action-provider. Providing actionable symbolic signals is a new paradigm for integrating RL-trained judges into agent loops.
 
 ## Limitations & Future Work
-- Experiments were validated on OmniVerifier-7B and Qwen3-VL-8B; whether the joint vs. decoupled gap narrows on larger models (30B+) where $p_{acc}$ approaches 1 remains to be discussed.
-- Bboxes are suitable for spatial "where" errors but do not naturally apply to non-spatial errors like "style mismatch" or "inconsistent lighting." Future work needs more symbolic forms (masks, histograms).
-- M1-TTS relies on unified multimodal models for region-level edits; for text-to-image diffusion pipelines, region editing still requires extra inpainting modules.
-- Training was limited to 80 steps and evaluated on a single benchmark. Long-term scaling might still lead to reward degradation or adaptive hacking by generators.
+- Experiments were restricted to 7B and 8B backbones; the gap between joint and decoupled training may narrow as $p_{acc}$ approaches 1 for larger models.
+- Bboxes are ideal for spatial errors but less applicable to errors without clear boundaries like "style inconsistency" or "improper lighting." Future work needs to explore more symbolic forms (masks, color histograms).
+- M1-TTS requires multimodal models supporting region-level edits; for text-to-image diffusion pipelines, it still requires additional inpainting pipelines.
 
 ## Related Work & Insights
-- **vs OmniVerifier (Zhang et al. 2025)**: Ours is a direct upgrade—replacing "binary only" with "bbox + decoupled meta," and pushing the verifier into an agentic loop.
-- **vs DeepSeekMath-V2 / Wang et al. 2026**: While they introduce meta-verification using textual rationales in language/math domains, this paper proves symbolic is superior for the visual domain.
-- **vs RewardDance / UnifiedReward**: Traditional reward models output scalars; Ours outputs "judgment + localization + explanation," significantly improving supervisability.
-- **vs ReflectionFlow / OmniVerifier-TTS**: These perform global multi-turn edits, whereas Ours uses region-level feedback, increasing precision for complex compositional generation.
-- **Transferable Insight**: Any "judgment + explanation" RL task can benefit from decoupled training. Any domain allowing structured output (OCR, UI, Layout) should consider symbolic rationales over textual ones for efficiency and robustness against reward hacking.
+- **vs OmniVerifier (Zhang et al. 2025)**: This work is a direct upgrade, moving from "binary-only" to "bbox + decoupled meta" and extending the verifier into a closed-loop agent.
+- **vs DeepSeekMath-V2**: While others use text rationales in the math/language domain, this work proves that symbolic rationales are superior in the visual domain.
+- **vs ReflectionFlow / OmniVerifier-TTS**: While those use global-level reflection, this work adopts region-level, providing a granularity that is significantly more effective for complex compositional generation.
+- **Transferable Insights**: Any dual "judgment + explanation" task (code review, math proof) can benefit from decoupled training. Any domain allowing structured output (OCR, UI navigation) should consider symbolic rationales over text for efficiency and robustness.
 
 <!-- RELATED:START -->
 
@@ -120,10 +135,10 @@ On the stronger Qwen3-VL-8B backbone, the same pattern holds: Decoupled > Joint 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Multimodal Generative Flows for LHC Jets](../../NeurIPS2025/object_detection/multimodal_generative_flows_for_lhc_jets.md)
+- [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](../../CVPR2026/object_detection/towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](../../NeurIPS2025/object_detection/structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
-- [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](../../AAAI2026/object_detection/commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](../../CVPR2026/object_detection/mmrad_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] Distribution-Aligned Multimodal Fusion for Robust Object Detection](../../CVPR2026/object_detection/distribution-aligned_multimodal_fusion_for_robust_object_detection.md)
+- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](../../CVPR2026/object_detection/complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
 - [\[NeurIPS 2025\] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](../../NeurIPS2025/object_detection/detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r.md)
 
 </div>

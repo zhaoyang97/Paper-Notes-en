@@ -1,20 +1,14 @@
 ---
 title: >-
-  [Paper Note] Universal Reasoner: Composable Plug-and-Play Reasoners for Frozen LLMs
+  [Paper Note] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器
 description: >-
-  [ICML 2026][LLM/NLP][Reasoning Enhancement] Proposes Universal Reasoner (UniR)—training independent lightweight reasoning modules to capture reward-oriented reasoning behaviors…
+  [ICML 2026][LLM (Other)][Paper Note] The authors propose Universal Reasoner (UniR), which trains independent lightweight reasoning modules to capture reward-oriented behaviors. At inference, these modules are combined with frozen LLMs via logit superposition, enabling reasoning enhancement without fine-tuning the backbone, cross-model scale transfer, and
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "Reasoning Enhancement"
-  - "Modular Reasoning"
-  - "Composable Reasoning"
-  - "Frozen LLM"
-  - "Verifiable Rewards"
+  - ICML 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 6f67c316d44d5f0f
+content_hash: 64e7c604068bdcb4
 ---
-
 # Universal Reasoner: Composable Plug-and-Play Reasoners for Frozen LLMs
 
 **Conference**: ICML 2026  
@@ -24,49 +18,60 @@ content_hash: 6f67c316d44d5f0f
 **Keywords**: Reasoning Enhancement, Modular Reasoning, Composable Reasoning, Frozen LLM, Verifiable Rewards
 
 ## TL;DR
-Proposes Universal Reasoner (UniR)—training independent lightweight reasoning modules to capture reward-oriented reasoning behaviors, combining them with frozen LLMs via logit superposition at inference time to achieve reasoning enhancement without fine-tuning frozen models, cross-scale transfer, and multi-task composition.
+The authors propose Universal Reasoner (UniR), which trains independent lightweight reasoning modules to capture reward-oriented behaviors. At inference, these modules are combined with frozen LLMs via logit superposition, enabling reasoning enhancement without fine-tuning the backbone, cross-model scale transfer, and multi-task composition.
 
 ## Background & Motivation
 
-**Background**: Current methods enhance LLM reasoning capabilities through RL fine-tuning (RFT), but require massive compute and memory resources. PEFT methods like LoRA attempt to reduce costs, but suffer from two major flaws: (1) strong dependency on model architecture, leading to poor transferability across different scales (e.g., 3B to 14B); (2) lack of theoretical support for the linear combination of multiple LoRA adapters.
+**Background**: Current methods enhance LLM reasoning via Reinforcement Learning Fine-Tuning (RFT), but they require significant compute and memory. PEFT methods like LoRA reduce costs but suffer from (1) strong architectural dependence, limiting transferability across scales (e.g., 3B to 14B), and (2) a lack of theoretical support for the linear combination of multiple LoRA adapters.
 
-**Limitations of Prior Work**: Inability to flexibly and efficiently enhance reasoning capabilities without accessing LLM internal parameters; inability to reuse trained reasoning capabilities across different model scales; inability to compose multiple reasoning modules for different tasks.
+**Limitations of Prior Work**: Existing methods cannot flexibly and efficiently enhance reasoning without access to LLM internal parameters. They fail to reuse reasoning capabilities across model scales or compose multiple reasoning modules for different tasks.
 
-**Key Challenge**: Reasoning enhancement requires parameter updates (traditional fine-tuning) while models are often frozen; multi-task learning requires end-to-end retraining (facing multi-objective conflicts).
+**Key Challenge**: Reasoning enhancement typically requires parameter updates (traditional fine-tuning), yet models are often frozen. Multi-task learning requires end-to-end retraining, often leading to conflicting objectives.
 
-**Goal**: Design modular, transferable, and composable reasoning enhancement methods.
+**Goal**: Design a modular, transferable, and composable method for reasoning enhancement.
 
-**Key Insight**: Verifiable rewards (e.g., correctness in math problems) can be converted from trajectory-level signals to token-level guidance. By modeling trajectory-level rewards as the sum of log-probabilities of a reasoning module, logit superposition becomes a natural mechanism for composition.
+**Key Insight**: The authors observe that verifiable rewards (e.g., correctness in math) can be converted from trajectory-level signals to token-level guidance. By modeling trajectory reward as the sum of log-probabilities from a reasoning module, logit superposition emerges as a natural composition mechanism.
 
-**Core Idea**: Separate reward model training from policy updates. Train a dedicated reasoning module $\pi_r$ to maximize verifiable rewards, and guide token generation during inference by adding its logit $\log\pi_r$ to the logit of the frozen backbone $\pi_b$.
+**Core Idea**: Separate reward model training from policy updates by training a dedicated reasoning module $\pi_r$ to maximize verifiable rewards. During inference, token generation is guided by adding its logits $\log\pi_r$ to the logits of a frozen backbone $\pi_b$.
 
 ## Method
 
 ### Overall Architecture
-UniR decomposes LLM reasoning enhancement into two stages: the **Training Phase** trains a reasoning module $\pi_r$ on a smaller backbone model using verifiable rewards and the GRPO algorithm; the **Inference Phase** combines the trained $\pi_r$ with any frozen LLM through logit superposition for token-level guidance.
+UniR decouples "reasoning enhancement" from the frozen LLM, treating it as a detachable component. During training, an independent reasoning module $\pi_r$ is optimized on a small backbone using GRPO to internalize "reward-oriented reasoning behavior." During inference, the logits of $\pi_r$ are directly superimposed onto the logits of any frozen LLM for token-level guidance. The backbone remains untouched, while modules can be swapped or combined in parallel.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    R["Verifiable Reward r(x,y): Trajectory-level signal"] --> D1["Trajectory Reward to Token Guidance<br/>Reward Decomposition 1/β·r = Σ log π_r → Deriving logit superposition log π_θ = log π_b + log π_r"]
+    D1 --> D2
+    subgraph D2["GRPO Training for Reasoning Module"]
+        direction TB
+        B1["Backbone π_b samples G candidates → Calculate verifiable rewards"] --> B2["Compute group-normalized advantage A_i, GRPO updates only π_r<br/>Backbone derivative cancels out, remains frozen"]
+    end
+    D2 --> INFER["Inference: π_r logits superimposed on any frozen LLM for token-level guidance"]
+    INFER --> D3["Multi-module Logit Superposition<br/>+ Σ α_i log π_r^i, weights are adjustable at test-time"]
+    D3 --> OUT["Enhanced Reasoning Output (Cross-scale Transfer / Multi-task Composition)"]
+```
 
 ### Key Designs
 
-1.  **Theoretical Mapping of Trajectory Reward to Token Guidance**:
-    - **Function**: Decomposes global trajectory rewards into guidance signals for each token.
-    - **Mechanism**: Assumes trajectory rewards can be represented as the sum of log-probabilities of the reasoning module: $\frac{1}{\beta}r(x,y)=\sum_{t=1}^{|y|}\log\pi_r(y_t|x,y_{<t};\phi)$. By substituting rewards in the KL-regularized objective, the optimal policy is derived as $\log\pi_\theta(y_t|x,y_{<t})=\log\pi_b(y_t|x,y_{<t})+\log\pi_r(y_t|x,y_{<t})-\log Z'(x,y_{<t})$. Theorem 4.1 proves that at convergence, $\log\pi_r(y_t|x,y_{<t})=\frac{1}{\beta}Q^*(y_t|x,y_{<t})$.
-    - **Design Motivation**: Traditional trajectory-level rewards cannot directly guide each generation step; this structural hypothesis converts them into token-level guidance.
+**1. Trajectory Reward to Token Guidance: Converting Global Correctness into Step-wise Navigation**
 
-2.  **GRPO Training for Reasoning Modules**:
-    - **Function**: Trains the reasoning module to maximize verifiable rewards without modifying the frozen backbone.
-    - **Mechanism**: Employs GRPO to sample $G$ candidate responses from $\pi_b$, computes the external reward $r_i$ for each response, normalizes the advantage $A_i=\frac{r_i-\text{mean}(\{r_1,...,r_G\})}{\text{std}(...)}$, and optimizes $\phi$ on the GRPO objective. The ratio term in the gradient automatically eliminates backbone terms, affecting only $\pi_r$.
-    - **Design Motivation**: GRPO does not require an explicit value function and is robust to sparse rewards, making it suitable for verifiable reward scenarios.
+Verifiable rewards (e.g., final answer correctness) are inherently trajectory-level, as $r(x,y)$ is only known after the sequence is generated. However, generation occurs token-by-token. UniR addresses this by imposing a structural assumption: the trajectory reward is expressed as the sum of log-probabilities of the reasoning module: $\frac{1}{\beta}r(x,y)=\sum_{t=1}^{|y|}\log\pi_r(y_t|x,y_{<t};\phi)$. Substituting this into a KL-regularized policy optimization objective yields an optimal policy in the form of "backbone logits + module logits": $\log\pi_\theta(y_t|x,y_{<t})=\log\pi_b(y_t|x,y_{<t})+\log\pi_r(y_t|x,y_{<t})-\log Z'(x,y_{<t})$. Theorem 4.1 proves that at convergence, $\log\pi_r(y_t|x,y_{<t})=\frac{1}{\beta}Q^*(y_t|x,y_{<t})$. This indicates that the learned logits are proportional to the token-level optimal action-value $Q^*$, turning an engineering trick into a theoretically grounded solution.
 
-3.  **Composability of Multi-module Logit Superposition**:
-    - **Function**: Supports the seamless combination of multiple reasoning modules from different tasks during inference.
-    - **Mechanism**: For $N$ different reward functions $\{r_1,...,r_N\}$, $N$ reasoning modules $\{\pi_r^1,...,\pi_r^N\}$ are trained separately. During inference, they are combined as $\log\pi_\theta(y_t|x,y_{<t})\propto\log\pi_b(y_t|x,y_{<t})+\sum_{i=1}^{N}\alpha_i\log\pi_r^i(y_t|x,y_{<t})$, where weights $\alpha_i$ can be dynamically adjusted.
-    - **Design Motivation**: Reasoning often involves multiple constraints; logit superposition serves as both a principled solution and a zero-cost composition method.
+**2. GRPO Training for Reasoning Module: Updating Only Small Modules while Freezing the Backbone**
+
+To internalize rewards into $\pi_r$ without touching backbone parameters, UniR employs GRPO. For each prompt, $G$ candidate responses are sampled from $\pi_b$, and external verifiable rewards $r_i$ are calculated. These are normalized into advantages $A_i = \frac{r_i - \text{mean}(\{r_1, \dots, r_G\})}{\text{std}(\{r_1, \dots, r_G\})}$. The GRPO objective optimizes only the reasoning module parameters $\phi$. Since the derivative of the backbone term in the combined policy objective is zero, the backbone remains frozen. GRPO is preferred over PPO as it eliminates the need for a separate value network and handles sparse verifiable rewards effectively via group relative advantages.
+
+**3. Multi-module Logit Superposition: Zero-cost Parallelization of Different Reasoning Tasks**
+
+Since a single reward results in an additive module, multiple constraints can be learned independently and then combined. For $N$ different rewards $\{r_1, \dots, r_N\}$, $N$ modules $\{\pi_r^1, \dots, \pi_r^N\}$ are trained. At inference, they are linearly combined: $\log\pi_\theta(y_t|x,y_{<t})\propto\log\pi_b(y_t|x,y_{<t})+\sum_{i=1}^{N}\alpha_i\log\pi_r^i(y_t|x,y_{<t})$. Weights $\alpha_i$ can be adjusted in real-time. Traditional multi-task learning requires expensive retraining and suffers from objective interference, whereas logit superposition allows for modular, zero-cost assembly of reasoning capabilities.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model Configuration | GSM8K | MATH-500 | AIME24 | Gain |
+| Model Configuration | GSM8K | MATH-500 | AIME24 | Average Gain |
 | :--- | :--- | :--- | :--- | :--- |
 | Llama3.2-3B Backbone | 65.6 | 33.0 | 3.7 | Baseline |
 | + GRPO LoRA (3B) | 65.8 | 32.1 | 6.0 | -0.3% |
@@ -78,38 +83,38 @@ UniR decomposes LLM reasoning enhancement into two stages: the **Training Phase*
 
 | Experiment Item | Description | Performance |
 | :--- | :--- | :--- |
-| Reasoning Module Alone | 1B $\pi_r$ independent generation | Far below combined |
-| Without Reasoning Module | Frozen 3B backbone only | 65.6 (GSM8K) |
+| Independent Reasoning Module | 1B $\pi_r$ generates alone | Significantly lower |
+| Without Reasoning Module | Only frozen 3B backbone | 65.6 (GSM8K) |
 | + Reasoning Module (Tuned) | After combination | 77.5 |
-| Multi-module ($\alpha_1=1, \alpha_2=0.5$) | Math + Translation weighting | 72.3 |
+| Multi-module ($\alpha_1=1, \alpha_2=0.5$) | Math + Translation weighted | 72.3 |
 
 ### Key Findings
-- **Weak-to-strong transfer**: A 1B reasoning module can effectively guide a larger model (14B) without retraining.
-- **Composability verification**: Weighted combinations of multiple modules perform robustly under different weight settings.
-- **Reward internalization**: After training, the log-probability of the reasoning module for correct responses ($r=1$) is significantly higher than for incorrect ones ($r=0$).
+- **Weak-to-Strong Transfer**: A 1B reasoning module effectively guides larger models (e.g., 14B) without retraining.
+- **Composability**: Weighted combinations of multiple modules perform robustly across various weights.
+- **Reward Internalization**: Post-training, reasoning modules assign significantly higher log-probabilities to correct responses ($r=1$) compared to incorrect ones ($r=0$).
 
 ## Highlights & Insights
-- **Elegant Theoretical Foundation**: Rigorous derivation of logit superposition starting from KL-regularized multi-objective optimization.
-- **Zero-Retraining Transfer**: Reasoning modules can transfer across model scales without fine-tuning.
-- **Inference-Time Composition Flexibility**: Weighted fusion of multiple modules is instantly adjustable during the inference phase.
-- **Empirical Q-function Learning**: Verified through log-probability separation that the reasoning module indeed learns token-level optimal decision signals.
+- **Elegant Theoretical Foundation**: Logit superposition is rigorously derived from KL-regularized multi-objective optimization.
+- **Zero-retraining Transfer**: Reasoning modules can transfer across model scales without fine-tuning.
+- **Inference-time Flexibility**: Multi-module weighted fusion is adjustable on-the-fly during the inference stage.
+- **Empirical Q-function Learning**: Separating log-probabilities demonstrates that reasoning modules indeed learn token-level optimal decision signals.
 
 ## Limitations & Future Work
-- **Hypothesis Limitations**: The method assumes trajectory rewards can be decomposed into the sum of token log-probabilities.
-- **Reasoning Module Capacity Bottleneck**: Restricted by its initial size and training data.
-- **Weight Selection Issue**: Weights $\alpha_i$ require manual tuning during multi-module composition.
-- **Future Improvements**: Exploring token-level decomposition for non-separable rewards; designing adaptive weight learning.
+- **Assumptions**: The method assumes trajectory rewards can be decomposed into a sum of token log-probabilities.
+- **Capacity Bottleneck**: Performance is limited by the reasoning module's initial size and training data.
+- **Weight Selection**: Weights $\alpha_i$ for multi-module composition currently require manual tuning.
+- **Future Improvements**: Exploring token-level decomposition for non-separable rewards and designing adaptive weight learning.
 
 ## Related Work & Insights
-- **vs PEFT (LoRA)**: LoRA depends on internal model dimensions, making cross-scale transfer difficult; UniR decouples architecture dependency via logit-level guidance.
-- **vs Reasoning Vectors**: The latter uses the difference between RL and SFT to modify model parameters; UniR is more lightweight using independent modules.
-- **vs RAST/GenARM**: UniR is more principled by directly training reasoning modules with verifiable rewards.
+- **vs PEFT (LoRA)**: LoRA depends on internal model dimensions, making cross-scale transfer difficult; UniR decouples architecture via logit-level guidance.
+- **vs Reasoning Vectors**: The latter uses RL and SFT differences to modify parameters; UniR is more lightweight using independent modules.
+- **vs RAST/GenARM**: UniR is more principled by directly utilizing verifiable rewards for module training.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Systematically maps trajectory-level rewards to token-level log-probabilities of a reasoning module.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comparison across multiple math benchmarks + ablation verifying weak-to-strong transfer and multi-module composition.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear motivation, rigorous derivation, and evidence-based experiments.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses key issues in enhancing frozen LLM reasoning; universal, low-cost, and easy to deploy.
+- Novelty: ⭐⭐⭐⭐⭐  Systematically maps trajectory-level rewards to token-level log-probabilities of reasoning modules.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Benchmarks across multiple math datasets and validates weak-to-strong transfer and multi-module composition.
+- Writing Quality: ⭐⭐⭐⭐⭐  Clear motivation, rigorous derivation, and evidence-based experiments.
+- Value: ⭐⭐⭐⭐⭐  Addresses the core challenge of reasoning enhancement for frozen LLMs with a universal, low-cost, and deployable solution.
 
 <!-- RELATED:START -->
 
@@ -117,11 +122,11 @@ UniR decomposes LLM reasoning enhancement into two stages: the **Training Phase*
 
 ## Related Papers
 
-- [\[ICLR 2026\] GASP: Guided Asymmetric Self-Play For Coding LLMs](../../ICLR2026/llm_nlp/gasp_guided_asymmetric_self-play_for_coding_llms.md)
-- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
-- [\[ICML 2026\] Differential Syntactic and Semantic Encoding in LLMs](differential_syntactic_and_semantic_encoding_in_llms.md)
-- [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](../../NeurIPS2025/llm_nlp/triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
-- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](../../NeurIPS2025/llm_nlp/are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
+- [\[ACL 2025\] Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization](../../ACL2025/llm_nlp/goal_hijacking_attack.md)
+- [\[ICML 2025\] Towards Universal Offline Black-Box Optimization via Learning Language Model Embeddings](../../ICML2025/llm_nlp/towards_universal_offline_black-box_optimization_via_learning_language_model_emb.md)
+- [\[ICML 2026\] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化](model-preserving_adaptive_rounding.md)
+- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
+- [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
 
 </div>
 

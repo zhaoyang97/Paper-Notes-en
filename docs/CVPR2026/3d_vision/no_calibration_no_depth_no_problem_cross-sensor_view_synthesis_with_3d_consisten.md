@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 description: >-
-  [3D Vision] This paper proposes the first cross-sensor view synthesis framework that requires neither calibration nor depth. Through a match-densify-consolidate pipeline…
+  [CVPR 2026][3D Vision][Cross-Sensor View Synthesis] The first calibration-free and depth-free cross-sensor view synthesis framework is proposed. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense, RGB-aligned X-modal images (thermal/NIR/SAR). The synthesis quality is enhanced via confidence-aware fusion and self-matching f
 tags:
-  - "3D Vision"
+  - CVPR 2026
+  - 3D Vision
+  - Cross-Sensor View Synthesis
+  - RGB-X Alignment
+  - 3D Gaussian Splatting
+  - Image Matching
+  - Confidence-Aware Densification
 date: 2026-05-08
-content_hash: ec5318c4f04e390c
+content_hash: c0f1ac103b247f42
 ---
-
 # No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 
 ## Basic Information
@@ -16,96 +21,89 @@ content_hash: ec5318c4f04e390c
 - **Conference**: CVPR 2026
 - **arXiv**: [2602.23559](https://arxiv.org/abs/2602.23559)
 - **Authors**: Cho-Ying Wu, Zixun Huang, Xinyu Huang, Liu Ren (Bosch Research North America & BCAI)
-- **Code**: To be confirmed (project page available)
+- **Code**: To be confirmed (Project page exists)
 - **Area**: 3D Vision / Cross-Sensor View Synthesis
 - **Keywords**: Cross-Sensor View Synthesis, RGB-X Alignment, 3D Gaussian Splatting, Image Matching, Confidence-Aware Densification
 
 ## TL;DR
 
-This paper proposes the first cross-sensor view synthesis framework that requires neither calibration nor depth. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense X-modality images (thermal/NIR/SAR) aligned with the RGB viewpoint. Synthesis quality is further improved via confidence-aware densification fusion (CADF) and self-matching filtering.
+The first calibration-free and depth-free cross-sensor view synthesis framework is proposed. Through a match-densify-consolidate pipeline, sparse cross-modal keypoints are expanded into dense, RGB-aligned X-modal images (thermal/NIR/SAR). The synthesis quality is enhanced via confidence-aware fusion and self-matching filtering.
 
 ## Background & Motivation
 
-Sensors beyond RGB — thermal, near-infrared (NIR), and synthetic aperture radar (SAR) — are critical for applications such as nighttime autonomous driving and leakage detection, yet they have received far less research attention than RGB. The core bottleneck lies in the extreme difficulty of acquiring pixel-aligned RGB-X paired data:
+Sensors beyond RGB (thermal, NIR, SAR) are crucial for scenarios like night vision in autonomous driving and leak detection, yet research lags far behind RGB. The core bottleneck is the extreme difficulty in obtaining pixel-aligned RGB-X pairs:
 
-1. Traditional industrial pipelines require intrinsic calibration, sensor synchronization, relative pose estimation, and accurate metric depth, leading to cascading errors with no way to handle occlusion.
-2. SfM methods such as COLMAP apply only to RGB and typically fail on low-texture sensors (e.g., thermal cameras).
-3. Cross-modal matchers (XoFTR, MINIMA) can only estimate a homography $H \in \mathbb{R}^{3\times3}$ for warping, which assumes a planar scene structure and produces severe misalignment when foreground–background layering is present.
-4. Image translation approaches (RGB-to-Thermal) suffer from inherent ambiguity — the temperature of a cup of water cannot be inferred from its appearance alone.
+1. **Limitations of Prior Work**: Traditional industrial solutions require intrinsic calibration, sensor synchronization, relative pose estimation, and precise metric depth. Errors propagate through each stage, and occlusion issues remain unresolved.
+2. **Limitations of Prior Work**: SfM methods like COLMAP are only applicable to RGB and typically fail on low-texture sensors such as thermal imaging cameras.
+3. **Key Challenge**: Cross-modal matchers (XoFTR, MINIMA) can only estimate a homography matrix $H \in \mathbb{R}^{3\times3}$ for warping. However, homography assumes planar scenes; it causes severe misalignment when scenes contain distinct foreground/background layers.
+4. **Key Challenge**: Image translation methods (RGB to Thermal) have inherent ambiguities—the temperature of a cup of water cannot be determined from its appearance.
 
-This paper proposes the first scalable cross-sensor view synthesis framework that requires no 3D prior of the X sensor (no depth, no calibration), relying solely on COLMAP applied to RGB at virtually zero additional cost.
+**Goal**: This paper proposes the first scalable cross-sensor view synthesis framework that does not rely on any 3D priors for the X sensor (no depth, no calibration) and only depends on near-zero-cost COLMAP on RGB data.
 
 ## Method
 
 ### Overall Architecture
 
-The method proceeds in three stages:
+The objective is to synthesize X-modal images (thermal/NIR/SAR) into arbitrary RGB viewpoints without calibration, depth, or 3D priors for the X sensor. The pipeline follows a match-densify-consolidate strategy, relying solely on RGB-based COLMAP. The matching stage performs cross-modal feature matching and regional sampling to generate semi-dense X-maps $\mathcal{X}_m$; the densification stage employs RGB-guided densification and confidence-aware fusion to obtain dense X images $\mathcal{X}_d$; the consolidation stage utilizes self-matching filtering, refined densification, and RGB-X 3DGS to integrate multi-view data into 3D-consistent results.
 
-1. **Matching stage**: Cross-modal feature matching combined with region-based sampling to produce a semi-dense X-map $\mathcal{X}_m$.
-2. **Densification stage**: RGB-guided densification with confidence-aware densification fusion (CADF) to produce a dense X image $\mathcal{X}_d$.
-3. **Consolidation stage**: Self-matching filtering, refined densification, and RGB-X 3DGS 3D consolidation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: RGB images + X-modal images<br/>(Thermal/NIR/SAR), COLMAP run on RGB only"]
+    IN --> M["Cross-modal Matching + Regional Sampling<br/>XoFTR accumulates keypoints across 7 frames + GroundedSAM samples 5% in textureless regions"]
+    M -->|Semi-dense X-map X_m| D["Confidence-Aware Densification and Fusion (CADF)<br/>DySPN injects matching confidence + 3-level threshold fusion"]
+    D -->|Dense X image X_d| F["Self-matching Filtering<br/>Matcher acts as evaluator to remove misaligned patches + Fine densification"]
+    F --> G["RGB-X 3DGS Shared Geometry Consolidation<br/>RGB defines geometry, X channel attached to the same Gaussians"]
+    G --> OUT["Output: X-modal images in arbitrary RGB viewpoints<br/>(3D Consistent)"]
+```
 
-### RGB-X Matching
+### Key Designs
 
-Given an RGB image $\mathcal{I}$ and an X-modality image $\mathcal{X}$, a cross-modal matcher (XoFTR) finds a match set $\{(p^{\mathcal{I}}, p^{\mathcal{X}}, c)\}$. X keypoints from $N=7$ frames (3 preceding and 3 following) are accumulated into the current RGB coordinate frame:
+**1. Cross-modal matching + Regional sampling: Accumulating sparse keypoints into semi-dense X-maps without degrading densification in textureless areas**
+
+Given RGB image $\mathcal{I}$ and X-modal image $\mathcal{X}$, XoFTR finds the matching set $\{(p^{\mathcal{I}}, p^{\mathcal{X}}, c)\}$. X keypoints from $N=7$ frames are accumulated into the current RGB coordinate system:
 
 $$\mathcal{X}_m[p] = \frac{\sum_n \mathbf{1}[p=p_n^{\mathcal{I}}] \, \mathcal{X}[p_n^{\mathcal{X}}]}{\sum_n \mathbf{1}[p=p_n^{\mathcal{I}}]}$$
 
-For textureless regions (sky, ground, walls), GroundedSAM is used for segmentation, after which only 5% of points are uniformly sampled from the homography-warped X image as a supplement. This avoids propagating warping errors into subsequent densification:
+Textureless regions like sky or ground fail to generate keypoints. This method uses GroundedSAM for segmentation and uniformly samples 5% of points from the homography-warped X image as supplements:
 
 $$\mathcal{X}_m[p] = \mathcal{X}_W[p], \quad p \sim \mathrm{U}(\{p \mid \mathcal{M}(p)=1 \wedge \mathcal{X}_m[p]=-1\})$$
 
-### Confidence-Aware Densification and Fusion (CADF)
+Sampling only small amounts provides seeds for densification while preventing homography warping errors from contaminating the entire image.
 
-The densification network $D$ adopts a recurrent unit with dynamic spatial propagation (DySPN). It takes the RGB image and sparse X-map as input and outputs a dense X image. The original DySPN iteration is:
+**2. Confidence-Aware Densification and Fusion (CADF): Propagating matching uncertainty to densification followed by multi-threshold fusion**
+
+The densification network $D$ uses recurrent units and Dynamic Spatial Propagation (DySPN) to complete the dense X image. Standard DySPN iterations use only a certainty map $C_s$ predicted by the backbone:
 
 $$L^{t+1} = (1 - C_s) \sum_r \sum_{(a,b)} w_{r,a,b} * L_{a,b}^t + C_s \mathcal{X}_m$$
 
-where $C_s$ is a certainty map predicted by the backbone. **Key modification**: A matching confidence map $C_m$ (aggregated from match scores $c$) is incorporated into the iteration to reduce the contribution of low-confidence keypoints:
+The authors inject the matching confidence map $C_m$ (aggregated from matching scores $c$) into the iteration to suppress the contribution of low-confidence keypoints:
 
 $$L^{t+1} = (1 - C_s C_m) \sum_r \sum_{(a,b)} w_{r,a,b} * L_{a,b}^t + C_s C_m \mathcal{X}_m$$
 
-**Multi-level threshold fusion**: Different confidence thresholds $\delta$ involve a trade-off — high thresholds retain reliable points but are too sparse, while low thresholds accept more points at the cost of noise. The method employs $K=3$ threshold levels $\delta = 0.15, 0.3, 0.5$, generating densified results $\hat{\mathcal{X}}_{d,k}$ for each, which are then fused via mean pooling through a fusion module $F$ (an image enhancement network pretrained on DIV2K).
+Furthermore, $K=3$ threshold levels ($\delta=0.15, 0.3, 0.5$) are used to generate multiple results $\hat{\mathcal{X}}_{d,k}$, which are fused using a pre-trained image enhancement network $F$.
 
-$F$ is trained with two self-supervised losses:
+**3. Self-matching filtering: Using the matcher as an evaluator to remove misaligned patches**
 
-**Cosine similarity loss** (based on the SigLIP2 image encoder):
+An aligned RGB-X pair should ideally have each patch match its corresponding location. Path-level similarity matrices $A = \frac{F_{\mathcal{I}} F_{\mathcal{X}}^\top}{\tau}$ are computed using transformer features. A concentration metric $q = Q_{50}(\mathbf{A}) / Q_{99}(\mathbf{A})$ is used to filter out patches with low diagonal scores. A refined single-stage densification is then performed on the filtered images.
 
-$$\mathcal{L}_{\text{cos}}(\mathcal{I}, \mathcal{X}_d) = 1 - \frac{f_{\text{SigLIP}}(\mathcal{I})^\top f_{\text{SigLIP}}(\mathcal{X}_d)}{\|f_{\text{SigLIP}}(\mathcal{I})\|_2 \|f_{\text{SigLIP}}(\mathcal{X}_d)\|_2}$$
+**4. RGB-X 3DGS Shared Geometry Consolidation: Leveraging high-quality RGB for geometry to ensure 3D consistency**
 
-### Self-Matching Filtering and 3D Consolidation
-
-**Self-matching mechanism**: Aligned RGB-X pairs carry a prior — each patch should match to the same position in itself. Patch-level similarity matrices are computed using transformer features from the matcher:
-
-$$A = \frac{F_{\mathcal{I}} F_{\mathcal{X}}^\top}{\tau}$$
-
-The ideal similarity matrix is diagonal. During training of $F$, the diagonal sum is maximized while off-diagonal elements are minimized:
-
-$$\mathcal{L}_{\text{sim}}(A) = -\frac{\operatorname{Tr}(A)}{\|A\|_F} + \lambda \frac{\|A \odot (\hat{\mathbf{1}} - I)\|_1}{\|A\|_F}$$
-
-**Filtering**: A concentration metric $q = Q_{50}(\mathbf{A}) / Q_{99}(\mathbf{A})$ is computed; patches with low diagonal scores are filtered using the $(1-q)$ quantile as threshold. A high $q$ indicates good self-matching and fewer patches requiring filtering.
-
-**Refined densification**: A single-level densification pass is applied on the filtered X image, using the normalized self-matching scores as $C_m$.
-
-**RGB-X 3DGS consolidation**: 3DGS is trained on RGB-viewpoint COLMAP camera poses, with an additional X channel appended to each Gaussian. Unlike methods that use separate parameter sets, the proposed approach shares a single set of geometric parameters — as RGB images are of higher quality and can more accurately localize each 3D Gaussian in space.
+3DGS is trained on RGB COLMAP poses, with an additional X channel added to each Gaussian. Geometry parameters are shared; because the RGB images are of higher quality, they locate 3D Gaussians more precisely. The X channel inherits this accurate geometry to achieve cross-view consistency.
 
 ### Loss & Training
 
-- Densification network $D$: Pretrained on synthetic RGB-X paired data (MINIMA for RGB-Thermal; Deep-NIR for RGB-NIR).
-- Fusion module $F$: First pretrained on DIV2K for image enhancement (denoising, deblurring, super-resolution), then fine-tuned with the cosine similarity loss and self-matching loss.
-- Hyperparameters: $N=7$ frames, $K=3$ levels, $\delta=0.15/0.3/0.5$, $\lambda=0.1$, $\tau=0.1$, region sampling confidence $c=0.3$.
+The densification network $D$ is pre-trained on synthetic RGB-X pairs (MINIMA for Thermal, Deep-NIR for NIR). Fusion module $F$ is pre-trained on DIV2K and fine-tuned with two self-supervised losses: a cosine similarity loss based on SigLIP2:
+
+$$\mathcal{L}_{\text{cos}}(\mathcal{I}, \mathcal{X}_d) = 1 - \frac{f_{\text{SigLIP}}(\mathcal{I})^\top f_{\text{SigLIP}}(\mathcal{X}_d)}{\|f_{\text{SigLIP}}(\mathcal{I})\|_2 \|f_{\text{SigLIP}}(\mathcal{X}_d)\|_2}$$
+
+And a self-matching loss to diagonalize the similarity matrix:
+
+$$\mathcal{L}_{\text{sim}}(A) = -\frac{\operatorname{Tr}(A)}{\|A\|_F} + \lambda \frac{\|A \odot (\hat{\mathbf{1}} - I)\|_1}{\|A\|_F}$$
 
 ## Key Experimental Results
 
-### Datasets and Modalities
-
-| Modality | Test Dataset | Training Data |
-|:--|:--|:--|
-| RGB-Thermal | METU-VisTIR-Cloudy (6 sequences), RGBT-Scenes (4 scenes) | MINIMA synthetic RGB-Thermal |
-| RGB-NIR | RGB-NIR-Stereo (5 sequences) | Deep-NIR synthetic data |
-| RGB-SAR | DDHR-HK (3 satellite image pairs cropped into 512×512 patches) | Multiple RGB-SAR datasets |
-
-### Main Results: METU-VisTIR-Cloudy RGB-Thermal (No GT, Mean over 6 Sequences)
+### Main Results: METU-VisTIR-Cloudy RGB-Thermal (No GT, Mean over 6 sequences)
 
 | Method | Icos↑ | p30↑ | p50↑ | p70↑ | p90↑ | ITM↑ | ITcos↑ |
 |:--|:--|:--|:--|:--|:--|:--|:--|
@@ -115,60 +113,41 @@ $$\mathcal{L}_{\text{sim}}(A) = -\frac{\operatorname{Tr}(A)}{\|A\|_F} + \lambda 
 | MINIMA | 0.67 | 29.93 | 32.78 | 34.72 | 36.99 | 0.88 | 0.44 |
 | **Ours** | **0.69** | **31.18** | **34.39** | **36.43** | **38.72** | **0.92** | **0.45** |
 
-### Ablation Study (Mean over RGB-NIR-Stereo)
+### Ablation Study (RGB-NIR-Stereo Mean)
 
 | Configuration | PSNR↑ | SSIM↑ | LPIPS↓ |
 |:--|:--|:--|:--|
-| Full method | **21.152** | **0.581** | **0.344** |
-| w/o 3DGS | 21.042 | 0.597 | 0.378 |
-| w/o self-matching & filtering | 20.235 | 0.522 | 0.386 |
-| w/o DySPN confidence | 19.621 | 0.508 | 0.396 |
-| w/o multi-level thresholds | 19.215 | 0.495 | 0.420 |
-| w/o region sampling | 16.454 | 0.408 | 0.467 |
-
-### RGB-NIR Results (All Methods Use 3DGS)
-
-| Method | PSNR↑ | SSIM↑ | LPIPS↓ |
-|:--|:--|:--|:--|
-| PixNext (generative) | 11.283 | 0.441 | 0.452 |
-| XoFTR | 14.846 | 0.321 | 0.486 |
-| LoFTR | 20.179 | 0.551 | 0.356 |
-| MINIMA | 20.392 | 0.568 | 0.360 |
-| **Ours** | **21.152** | **0.581** | **0.344** |
-
-### RGB-SAR Results
-
-| Method | PSNR↑ | SSIM↑ | LPIPS↓ |
-|:--|:--|:--|:--|
-| MINIMA | 14.849 | 0.229 | 0.377 |
-| **Ours** | **17.102** | **0.302** | **0.339** |
+| Full Method | **21.152** | **0.581** | **0.344** |
+| - 3DGS | 21.042 | 0.597 | 0.378 |
+| - Self-matching & Filter | 20.235 | 0.522 | 0.386 |
+| - DySPN Confidence | 19.621 | 0.508 | 0.396 |
+| - Multi-threshold | 19.215 | 0.495 | 0.420 |
+| - Regional Sampling | 16.454 | 0.408 | 0.467 |
 
 ### Key Findings
 
-1. **Confidence-aware fusion contributes the most**: Injecting matching confidence into DySPN yields approximately 1 dB PSNR improvement (19.215→20.235), validating the effectiveness of propagating matching uncertainty into densification.
-2. **Even without 3DGS, the proposed method outperforms all baselines with 3DGS**: Ours (w/o 3DGS) achieves PSNR=21.042, still exceeding all methods with 3DGS (best: MINIMA=20.392). The core contributions lie in the sampling and CADF strategies.
-3. **Region sampling is foundational**: Removing region sampling causes PSNR to drop sharply to 16.454 (a reduction of ~4.7 dB), demonstrating that sparse sampling in textureless regions is critical for global densification.
-4. **Temporal consistency outperforms image generation**: StyleBooth MEt3R=0.297 vs. the proposed method's 0.171. Matching retrieves true sensor values rather than hallucinated ones.
-5. **Cross-modal generalization**: The same framework achieves state-of-the-art performance across three substantially different modalities: Thermal, NIR, and SAR.
+1. **CADF Contribution**: Injecting matching confidence into DySPN provides a ~1 dB PSNR gain, validating the propagation of matching uncertainty.
+2. **Superiority even without 3DGS**: Ours (without 3DGS) achieves PSNR=21.042, outperforming all baseline + 3DGS combinations (Best MINIMA=20.392).
+3. **Foundation of Regional Sampling**: Removing regional sampling drops PSNR to 16.454 (~4.7 dB loss), indicating its criticality for global densification.
+4. **Cross-modal Generality**: The same framework achieves SOTA results across Thermal, NIR, and SAR modalities.
 
 ## Highlights & Insights
 
-- **Well-motivated problem formulation**: This is the first systematic study of cross-sensor view synthesis, identifying the blind spot in prior RGB-X work that universally assumes paired data already exists.
-- **Zero-cost assumption**: Only COLMAP on RGB is required; the X sensor needs no 3D prior whatsoever.
-- **Confidence propagated throughout the pipeline**: Matching confidence flows through keypoint selection, DySPN iteration, multi-level fusion, and self-matching filtering, forming a complete uncertainty propagation chain.
-- **Novel self-matching idea**: The matcher is repurposed as an evaluator, leveraging the prior that aligned patches should self-match, enabling quality filtering without additional models.
+- **Accurate Problem Positioning**: First systematic study of cross-sensor view synthesis that identifies the unrealistic assumption of pre-existing paired data.
+- **Key Insight**: The zero-cost assumption (COLMAP on RGB only) significantly increases practical utility.
+- **Mechanism**: Matching confidence flows through the entire pipeline: from point selection to DySPN iterations, multi-level fusion, and finally self-matching filtering.
+- **Novelty**: Utilizing the matcher as an evaluator by exploiting the "aligned patches should self-match" prior is a clever way to handle quality filtering without extra models.
 
 ## Limitations & Future Work
 
-- Only static scenes are handled; dynamic objects degrade 3D consolidation (an inherent limitation of 3DGS).
-- Sensors such as thermal cameras exhibit high native noise and low resolution, limiting performance when data quality is poor.
-- The method still depends on cross-modal matchers and fails in highly homogeneous regions with no valid descriptors.
-- The 5% ratio for region sampling is set manually, lacking an adaptive mechanism.
-- The densification network must be trained separately for each modality.
+- Restricted to static scenes; dynamic objects interfere with 3D consolidation (a limitation of standard 3DGS).
+- Performance is limited when sensor data has extremely high noise or low resolution.
+- Still relies on the quality of the underlying cross-modal matcher; struggle in completely homogeneous regions.
+- The 5% sampling ratio is manually set and lacks an adaptive mechanism.
 
 ## Rating
 
-⭐⭐⭐⭐ — The problem is clearly defined and practically valuable. The match-densify-consolidate framework is naturally structured with well-justified module contributions supported by comprehensive ablation studies. Consistent state-of-the-art performance across three distinct modalities is convincing. Primary deductions are for the static scene restriction and strong dependence on matcher quality.
+⭐⭐⭐⭐ — The problem definition is clear with high practical value. The match-densify-consolidate framework is logically designed with clearly defined contributions from each module (supported by extensive ablation). Achieving consistent SOTA across three modalities is compelling. Main drawbacks are the static scene limitation and reliance on matcher quality.
 
 <!-- RELATED:START -->
 
@@ -176,11 +155,11 @@ $$\mathcal{L}_{\text{sim}}(A) = -\frac{\operatorname{Tr}(A)}{\|A\|_F} + \lambda 
 
 ## Related Papers
 
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
-- [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](../../ICCV2025/3d_vision/self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
-- [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](../../ICCV2025/3d_vision/jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
-- [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](../../ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
+- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
+- [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](../../ICCV2025/3d_vision/no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
+- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
 
 </div>
 

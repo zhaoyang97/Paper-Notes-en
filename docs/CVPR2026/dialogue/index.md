@@ -25,4 +25,4 @@ item_total: 1
 
 **[Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)**
 
-:   This paper proposes HIER, which combines hierarchical semantic representation (a three-level hierarchy of tokens → concepts → relations) with a self-evolutionary reasoning mechanism driven by MLLM feedback, consistently outperforming SOTA methods and leading MLLMs by 1–3% on three multimodal intent recognition benchmarks.
+:   Ours proposes HIER, which consistently outperforms SOTA methods and leading MLLMs (1-3% gain) on three multimodal intent recognition benchmarks by combining hierarchical semantic representations (token→concept→relation) with a self-evolutionary reasoning mechanism based on MLLM feedback.

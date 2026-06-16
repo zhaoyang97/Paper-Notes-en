@@ -2,68 +2,77 @@
 title: >-
   [Paper Note] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Instruction Following] Proposes the MulDimIF multi-dimensional constraint framework to systematically evaluate the instruction-following capabilities of LLMs across three dimensions: constraint patter…
+  [ACL 2026][LLM (Other)][Paper Note] The authors propose MulDimIF, a multi-dimensional constraint framework that systematically evaluates the instruction-following capabilities of LLMs across three dimensions: constraint patterns (3 types), constraint categories (4 categories, 13 subcategories), and constraint difficulty (4 levels). Model performance is s
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Instruction Following"
-  - "Multi-Dimensional Constraints"
-  - "Evaluation Benchmark"
-  - "GRPO Training"
-  - "Attention Mechanism Analysis"
+  - ACL 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: d7019a5c702d855e
+content_hash: 46e81cd1f4a6c980
 ---
-
 # MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.07591](https://arxiv.org/abs/2505.07591)  
 **Code**: [GitHub](https://github.com/Junjie-Ye/MulDimIF)  
 **Area**: LLM Evaluation and Improvement  
-**Keywords**: Instruction Following, Multi-Dimensional Constraints, Evaluation Benchmark, GRPO Training, Attention Mechanism Analysis
+**Keywords**: Instruction following, multi-dimensional constraints, evaluation benchmark, GRPO training, attention mechanism analysis
 
 ## TL;DR
-Proposes the MulDimIF multi-dimensional constraint framework to systematically evaluate the instruction-following capabilities of LLMs across three dimensions: constraint patterns (3 types), constraint categories (4 categories, 13 subcategories), and constraint difficulty (4 levels). Significant performance improvements are achieved through GRPO training, with findings indicating that these improvements primarily stem from parameter updates in the attention modules.
+The authors propose MulDimIF, a multi-dimensional constraint framework that systematically evaluates the instruction-following capabilities of LLMs across three dimensions: constraint patterns (3 types), constraint categories (4 categories, 13 subcategories), and constraint difficulty (4 levels). Model performance is significantly improved via GRPO training, with findings indicating that improvements primarily stem from parameter updates in the attention modules.
 
 ## Background & Motivation
 
-**Background**: Instruction following is a fundamental capability of LLMs, particularly critical in Agent and tool-assisted workflows—output must strictly adhere to formatting requirements like JSON, as minor deviations can lead to downstream system failure.
+**Background**: Instruction following is a fundamental capability of LLMs, especially critical in Agent and tool-assisted workflows. Outputs must strictly adhere to format requirements like JSON, as minor deviations can lead to downstream system failures.
 
-**Limitations of Prior Work**: (1) Existing evaluation benchmarks (such as IFEval) primarily focus on the diversity of constraint categories but utilize a single evaluation dimension, failing to comprehensively characterize instruction-following capabilities; (2) Training methods improve benchmark scores through data engineering but rarely analyze the internal mechanisms of these performance gains; (3) There is a lack of systematic research on constraint presentation formats (examples/lists/incorporation) and difficulty gradients.
+**Limitations of Prior Work**: (1) Existing evaluation benchmarks (e.g., IFEval) primarily focus on the diversity of constraint categories but utilize a single evaluation dimension, failing to comprehensively characterize instruction-following capabilities. (2) Training methods often boost benchmark scores through data engineering but rarely analyze the internal mechanisms of performance improvement. (3) There is a lack of systematic research on constraint presentation styles (Examples/Listing/Incorporation) and difficulty gradients.
 
-**Key Challenge**: Both evaluation and training lack a multi-dimensional perspective—existing methods cannot distinguish whether a model "fails to understand a constraint type," "struggles with complex combinations of constraints," or "finds it difficult to extract constraints from specific presentation formats."
+**Key Challenge**: Both evaluation and training lack a multi-dimensional perspective. Existing methods cannot distinguish whether a model "fails to understand the constraint type," "struggles with complex constraint combinations," or "finds it difficult to extract constraints from specific presentation styles."
 
-**Goal**: Construct a multi-dimensional framework covering constraint patterns, categories, and difficulty levels, to be used for both fine-grained evaluation and guiding training improvements, while analyzing the internal mechanisms of such improvements.
+**Goal**: To build a multi-dimensional framework covering constraint patterns, categories, and difficulty, utilized for both fine-grained evaluation and guiding training improvements, while analyzing the underlying mechanisms of these improvements.
 
-**Key Insight**: Distill three constraint patterns (Example, Listing, Incorporation) from real-world user prompt writing guides, and build a multi-dimensional evaluation system by combining these with constraint categories and difficulty gradients.
+**Key Insight**: Three constraint patterns (Example, Listing, Incorporation) are refined from real-world user prompt writing guides. A multi-dimensional evaluation system is constructed by combining these patterns with constraint categories and difficulty gradients.
 
-**Core Idea**: Generate code-verifiable evaluation data through a controllable pipeline of constraint expansion $\rightarrow$ conflict detection $\rightarrow$ instruction rewriting. Additionally, discover that GRPO training improvements are mainly realized through the attention modules.
+**Core Idea**: A controllable pipeline involving constraint extension $\rightarrow$ conflict detection $\rightarrow$ instruction rewriting is used to generate code-verifiable evaluation data. Additionally, it is discovered that performance gains from GRPO training primarily occur through the attention modules.
 
 ## Method
 
 ### Overall Architecture
-MulDimIF consists of two parts: an evaluation framework and an improvement pipeline. The evaluation framework defines three constraint patterns (Example/Listing/Incorporation), four constraint categories (Content/Format/Language/Length, comprising 13 subcategories), and four difficulty levels (combinations of 1-4 constraint types). The improvement pipeline trains models using the GRPO algorithm on data generated by this framework.
+MulDimIF consists of an evaluation framework and an improvement pipeline. The evaluation framework defines three constraint patterns (Example/Listing/Incorporation), four constraint categories (Content/Format/Language/Length, with 13 subcategories), and four difficulty levels (combinations of 1-4 constraint types). The improvement pipeline first utilizes a controllable instruction generation pipeline (Constraint Extension $\rightarrow$ Conflict Detection $\rightarrow$ Instruction Rewriting) to transform raw instructions from ShareGPT into code-verifiable data. This data is then used for multi-dimensional evaluation and GRPO training. Finally, the source of improvement is analyzed at the parameter level.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    M["Three Constraint Patterns<br/>Example / Listing / Incorporation"]
+    A["Original Instructions (ShareGPT)"] --> P
+    subgraph P["Controllable Instruction Generation Pipeline"]
+        direction TB
+        B["Constraint Extension<br/>Randomly add 1-2 constraints from uncovered categories"] --> C["Conflict Detection<br/>Verify constraints are included and non-contradictory; else discard"]
+        C -->|Loop until Level IV| B
+        C --> D["Instruction Rewriting<br/>Rewrite instruction based on a constraint pattern"]
+    end
+    M -.Guides Rewriting.-> D
+    D --> E["9,106 Code-Verifiable Data Points"]
+    E --> F["Multi-Dimensional Evaluation<br/>Pattern × Category (4 types/13 sub-types) × Difficulty (4 levels)"]
+    E --> G["GRPO Training<br/>Code-verified constraint satisfaction as reward, 7,906 samples"]
+    G --> H["Attention Mechanism Analysis<br/>Improvements stem from attention module parameter updates"]
+```
 
 ### Key Designs
 
-1.  **Three Constraint Patterns**:
-    - **Function**: Characterizes the different ways constraints are presented within an instruction.
-    - **Mechanism**: The **Example** pattern provides Q&A examples adhering to the constraints (in-context learning); the **Listing** pattern lists constraints individually in a structured list (zero-shot friendly); the **Incorporation** pattern integrates constraints directly into the instruction text (maintaining fluency but increasing parsing difficulty). Experiments show that models perform best on Example and worst on Incorporation.
-    - **Design Motivation**: Users express constraints in various ways during real-world interactions; a single evaluation dimension cannot distinguish performance differences across different presentation patterns.
+**1. Three Constraint Patterns: Treating "How constraints are written into the instruction" as an evaluation dimension**
 
-2.  **Controllable Instruction Generation Pipeline**:
-    - **Function**: Automatically transforms plain instructions into constraint-rich, code-verifiable variants.
-    - **Mechanism**: A three-step process—Constraint Expansion (randomly selecting uncovered constraint categories and adding 1-2 specific constraints) $\rightarrow$ Conflict Detection (identifying redundant or contradictory constraints and discarding conflicting instructions) $\rightarrow$ Instruction Rewriting (rewriting instructions according to different constraint patterns). Ultimately, 9,106 pieces of code-verifiable data were generated.
-    - **Design Motivation**: Manually constructing constraint-rich instructions is costly and lacks diversity; an automated pipeline allows for control over the distribution of constraint categories and difficulty.
+Previous benchmarks (like IFEval) focused solely on the diversity of constraint categories while ignoring that the same constraint can be presented in completely different ways, as real users do. This study distills three patterns from user prompt guides: the **Example** pattern provides Q&A examples satisfying constraints (akin to in-context learning); the **Listing** pattern lists constraints as a structured list (zero-shot friendly); and the **Incorporation** pattern embeds constraints into the instruction text, which flows naturally but is the hardest to parse. This categorization is valuable because it distinguishes whether a model "fails to understand the constraint type" or "struggles to extract the constraint from a specific presentation style"—experimental results showing models perform best on Example and worst on Incorporation prove that the presentation itself is an independent and significant source of difficulty.
 
-3.  **Attention Mechanism Analysis**:
-    - **Function**: Reveals the internal mechanisms through which GRPO training improves instruction-following capabilities.
-    - **Mechanism**: Through parameter-level analysis and case studies, it was found that performance improvements from GRPO training primarily stem from parameter updates in the attention modules, which allow the model's attention to better align with the specified constraints.
-    - **Design Motivation**: Understanding "why" a method is effective is more important than merely knowing that it "is effective," as it helps guide more precise training strategies in the future.
+**2. Controllable Instruction Generation Pipeline: Automating the transformation of ordinary instructions into code-verifiable constraint variants**
+
+Manually constructing constraint-rich instructions is expensive and difficult to scale while maintaining diversity and controlling the distribution of categories and difficulties. The pipeline automates this in three steps: **Constraint Extension** randomly selects from uncovered categories and adds 1-2 specific constraints, looping until Level IV difficulty is reached. **Conflict Detection** verifies the new constraints are correctly written and non-contradictory; instructions failing this are discarded to ensure data hygiene. **Instruction Rewriting** randomly selects one of the three patterns to rewrite the final instruction. Using instructions sampled from ShareGPT, the process yields 9,106 code-verifiable data points. The "code-verifiable" nature is crucial—constraint satisfaction is determined by code rather than an LLM-as-judge, eliminating subjectivity and allowing the data to serve as reward signals for GRPO.
+
+**3. Attention Mechanism Analysis: Moving beyond "efficacy" to answer "why GRPO is effective"**
+
+Most training methods only report benchmark score increases without explaining which model components drive the improvement. Through parameter-level comparative analysis and case studies, the authors find that the improvement in instruction following brought by GRPO training primarily stems from parameter updates in the attention modules. These updates allow the model's attention focus to better align with specified constraints. This conclusion transforms "black-box improvements" into an interpretable mechanism, validating the source of progress and providing a basis for more precise future training (e.g., fine-tuning only the attention layers).
 
 ### Loss & Training
-The model was trained using the GRPO (Group Relative Policy Optimization) algorithm on 7,906 training samples. Constraint satisfaction rates, determined via code verification, served as reward signals.
+The GRPO (Group Relative Policy Optimization) algorithm is employed for training on 7,906 data points. The constraint satisfaction rate, verified via code, serves as the reward signal.
 
 ## Key Experimental Results
 
@@ -77,40 +86,40 @@ The model was trained using the GRPO (Group Relative Policy Optimization) algori
 | GPT-4o | 70.50 | 62.50 | 59.00 | 64.00 |
 | LLaMA 3.1 70B | 68.00 | 54.25 | 48.25 | 56.83 |
 
-### Difficulty Level Experiments
+### Ablation Study (Difficulty Gradients)
 
 | Difficulty Level | Average Accuracy | Description |
 | :--- | :--- | :--- |
 | Level I (1 Category) | 80.82% | Single constraints are relatively easy |
 | Level II (2 Categories) | ~62% | Accuracy drops significantly with multi-type combinations |
-| Level III (3 Categories) | ~50% | Accuracy continues to decline |
-| Level IV (4 Categories) | 36.76% | Most difficult; even the best models reach only 55% |
+| Level III (3 Categories) | ~50% | Continued decline |
+| Level IV (4 Categories) | 36.76% | Most difficult; even the best models achieve only ~55% |
 
 ### Key Findings
-- Average accuracy plummets from 80.82% at Level I to 36.76% at Level IV, revealing the enormous challenge that multi-constraint combinations pose to LLMs.
-- The Example pattern consistently outperforms Listing and Incorporation, indicating that in-context learning remains the most effective method for constraint following.
-- Reasoning models (e.g., Qwen3 Reasoning) significantly outperform direct models at high difficulty levels, as reasoning capability assists in processing complex constraints.
-- After GRPO training, models showed improvements across all dimensions without compromising general performance.
+- Average accuracy plummets from 80.82% at Level I to 36.76% at Level IV, revealing the massive challenge multiple constraint combinations pose to LLMs.
+- The **Example** pattern consistently outperforms **Listing** and **Incorporation**, suggesting that in-context learning remains the most effective strategy for constraint following.
+- Reasoning models (e.g., Qwen3 Reasoning) significantly outperform standard modes at high difficulty levels, suggesting reasoning capability assists in processing complex constraints.
+- GRPO training improves model performance across all dimensions without compromising general capabilities.
 
 ## Highlights & Insights
-- The design of the multi-dimensional evaluation framework is highly systematic: the orthogonal combination of Pattern $\times$ Category $\times$ Difficulty provides unprecedented fine-grained diagnostic capability.
-- The attention module is key to instruction-following improvement—this finding provides a theoretical basis for future targeted training (e.g., fine-tuning only the attention layers).
-- Code-verifiable evaluation data eliminates the subjectivity of LLM-as-a-judge, making the evaluation results more reliable.
+- The multi-dimensional evaluation framework is highly systematic: the orthogonal combination of Pattern × Category × Difficulty provides unprecedented fine-grained diagnostic capability.
+- The attention module is key to instruction-following improvements—this finding provides a theoretical basis for future targeted training (e.g., only fine-tuning attention layers).
+- Code-verifiable evaluation data eliminates the subjectivity of LLM-as-judge, making the evaluation results more reliable.
 
 ## Limitations & Future Work
-- Constraint types are currently limited to four categories: Content, Format, Language, and Length; logical and semantic constraints have not yet been addressed.
-- Code verifiers may not be able to cover the verification of all constraints (e.g., soft constraints like "maintaining a formal tone").
-- The training data volume is relatively limited (7,906 samples); the effects of larger-scale training remain to be verified.
+- Constraint types are currently limited to four categories (Content/Format/Language/Length); logical and semantic constraints have not yet been addressed.
+- Code verifiers may not cover all constraint types (e.g., soft constraints like "maintaining a formal tone").
+- The training data size is relatively limited (7,906 samples), and the effects of larger-scale training remain to be validated.
 
 ## Related Work & Insights
-- **vs IFEval**: IFEval only evaluates the diversity of constraint categories, while MulDimIF adds two dimensions: pattern and difficulty, providing a more comprehensive evaluation.
-- **vs FollowBench**: FollowBench focuses on logical reasoning and style consistency, whereas MulDimIF focuses more on the structural presentation of constraints.
-- **vs IOPO**: IOPO optimizes instruction following through preference signals but lacks mechanism analysis; the attention module analysis in MulDimIF provides an interpretable path for improvement.
+- **vs. IFEval**: IFEval only assesses the diversity of constraint categories; MulDimIF adds patterns and difficulty levels for a more comprehensive evaluation.
+- **vs. FollowBench**: FollowBench focuses on logical reasoning and style consistency, whereas MulDimIF focuses more on the structural presentation of constraints.
+- **vs. IOPO**: IOPO optimizes instruction following via preference signals but lacks mechanism analysis; MulDimIF's attention module analysis provides an interpretable path for improvement.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The design of the multi-dimensional constraint framework is systematic and comprehensive.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 LLMs, multi-dimensional evaluation, and mechanism analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and rich illustrations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes 18 LLMs, multi-dimensional evaluation, and mechanism analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with rich visualizations.
 - Value: ⭐⭐⭐⭐ The framework and data provide direct reference value to the community.
 
 <!-- RELATED:START -->
@@ -119,11 +128,11 @@ The model was trained using the GRPO (Group Relative Policy Optimization) algori
 
 ## Related Papers
 
+- [\[ACL 2025\] Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability](../../ACL2025/llm_nlp/compositional_generalization_instruction.md)
+- [\[ACL 2025\] MDCure: A Scalable Pipeline for Multi-Document Instruction-Following](../../ACL2025/llm_nlp/mdcure_a_scalable_pipeline_for_multi-document_instruction-following.md)
+- [\[ACL 2025\] Catching Shortcuts: A Framework for Evaluating Shortcuts in Large Language Models](../../ACL2025/llm_nlp/catching_shortcuts_a_framework_for_evaluating_shortcuts_in_large_language_models.md)
 - [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
 - [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
-- [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 
 </div>
 

@@ -2,139 +2,136 @@
 title: >-
   [Paper Note] Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 description: >-
-  [CVPR 2026][Multimodal VLM][multimodal registration] This paper proposes HRNet, which learns clean shared representations via cross-scale disentanglement and adaptive projection (CDAP)…
+  [CVPR 2026][Multimodal VLM][Mamba] The authors propose HRNet, which learns clean shared representations through Cross-scale Feature Disentanglement and Adaptive Projection (CDAP) and non-iteratively predicts joint rigid and non-rigid transformations in a unified coarse-to-fine pipeline, achieving SOTA performance on four multimodal datasets.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "multimodal registration"
-  - "hybrid transformation"
-  - "feature disentanglement"
-  - "cross-scale consistency"
-  - "Mamba"
+  - CVPR 2026
+  - Multimodal VLM
+  - Mamba
 date: 2026-05-08
-content_hash: 4aef0928433013fe
+content_hash: 621abb626b904419
 ---
-
 # Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.19623](https://arxiv.org/abs/2603.19623)  
 **Code**: [GitHub](https://github.com/Chunlei0913/HRNet)  
-**Area**: Multimodal VLM / Multimodal Image Registration
-**Keywords**: multimodal registration, hybrid transformation, feature disentanglement, cross-scale consistency, Mamba
+**Area**: Multimodal VLM / Multimodal Image Registration  
+**Keywords**: Multimodal registration, hybrid transformation, feature disentanglement, cross-scale consistency, Mamba
 
 ## TL;DR
-This paper proposes HRNet, which learns clean shared representations via cross-scale disentanglement and adaptive projection (CDAP), and jointly predicts rigid and non-rigid transformations in a unified coarse-to-fine pipeline without iteration, achieving state-of-the-art performance on four multimodal datasets.
+The authors propose HRNet, which learns clean shared representations through Cross-scale Feature Disentanglement and Adaptive Projection (CDAP) and non-iteratively predicts joint rigid and non-rigid transformations in a unified coarse-to-fine pipeline, achieving SOTA performance on four multimodal datasets.
 
 ## Background & Motivation
 
-**Background**: Multimodal image registration (e.g., RGB-thermal infrared, RGB-SAR) is foundational for cross-modal fusion. Existing deep learning methods commonly adopt multi-scale strategies to improve accuracy, but are typically limited to a single transformation type.
+**Background**: Multimodal image registration (e.g., RGB-Thermal, RGB-SAR) is a fundamental task for cross-modality fusion. Existing deep learning methods mostly adopt multi-scale strategies to improve accuracy, yet are usually limited to a single transformation type.
 
-**Limitations of Prior Work**: (a) Most multi-scale frameworks support only rigid or non-rigid transformations — rigid transformations cannot handle local deformations, while non-rigid transformations distort structural integrity under large global offsets; (b) existing hybrid registration methods employ serial cascades (rigid followed by non-rigid), where rigid and non-rigid components are estimated in different feature spaces, making coordination difficult and causing downstream stages to inherit upstream errors; (c) shared feature extraction methods alleviate modality discrepancy, but constraints primarily act on the shared component, while modality-private information still leaks into the shared space.
+**Limitations of Prior Work**: (a) Most multi-scale frameworks support only either rigid or non-rigid transformations—rigid cannot handle local deformations, while non-rigid distorts structural integrity under large global offsets; (b) Existing hybrid registration methods use serial cascades (rigid then non-rigid), where transformations are estimated in different feature spaces, making them difficult to coordinate and causing error propagation; (c) Although shared feature extraction mitigates modality gaps, constraints primarily act on the shared components, allowing modality-private information to leak into the shared space.
 
-**Key Challenge**: How to simultaneously estimate global rigid alignment and local non-rigid deformation within a unified feature space, without interference from modality-private information?
+**Key Challenge**: How to simultaneously estimate global rigid alignment and local non-rigid deformation in a unified feature space without interference from private modality information?
 
-**Goal**: Design a unified framework that simultaneously addresses: (a) modality-private leakage into the shared feature space; (b) coordinated estimation of rigid and non-rigid transformations.
+**Goal**: Design a unified framework to solve: (a) modality-private leakage in shared feature spaces; (b) coordinated estimation of rigid and non-rigid transformations.
 
-**Key Insight**: "Disentangle-then-Align" — first learn clean multi-scale shared representations via CDAP, then jointly predict hybrid transformations in HPPM.
+**Key Insight**: "Disentangle-then-Align"—first learn clean multi-scale shared representations via CDAP, then jointly predict hybrid transformations within the HPPM.
 
-**Core Idea**: Representation disentanglement (cross-scale gating + adaptive projection) + hybrid parameter prediction (rigid + non-rigid within a unified coarse-to-fine pipeline) = a unified deformation field produced in a single forward pass.
+**Core Idea**: Representation disentanglement (cross-scale gating + adaptive projection) + hybrid parameter prediction (rigid + non-rigid within a unified coarse-to-fine pipeline) = production of a unified deformation field in a single forward pass.
 
 ## Method
 
 ### Overall Architecture
-Given fixed image $I_f$ and moving image $I_m$, the pipeline proceeds in three stages: (1) a shared backbone with MSBN extracts multi-scale features $F, M$; (2) the CDAP module disentangles these into clean shared features $(\hat{F}^s, \hat{M}^s)$; (3) HPPM predicts the hybrid transformation $\phi$ in a coarse-to-fine manner, which is used to warp $I_m$.
+
+Multimodal registration (RGB-Thermal, RGB-SAR, etc.) is difficult due to two factors: modality-private information contaminates shared features, and global rigid alignment vs. local non-rigid deformation must often be estimated in separate spaces, leading to conflicts. HRNet follows a "disentangle-then-align" strategy: given a fixed image $I_f$ and moving image $I_m$, it first extracts multi-scale features $F, M$ using a shared backbone with MSBN. The CDAP module then strips private information from shared features to obtain clean shared representations $(\hat{F}^s, \hat{M}^s)$. Finally, the HPPM jointly predicts rigid + non-rigid hybrid transformations $\phi$ within a single coarse-to-fine pipeline to warp $I_m$. The entire process is non-iterative. Meanwhile, structured regularization constrains the shared space from four dimensions to ensure effective disentanglement.
+
+```mermaid
+graph TD
+    A["Fixed Image I_f + Moving Image I_m"] --> B["Shared backbone + MSBN<br/>Extract Multi-scale Features F, M"]
+    B --> C
+    subgraph C["CDAP: Gate Private Info then Project"]
+        direction TB
+        C1["Decompose<br/>Shared E_sh / Private E_pf,m"] --> C2["Gated ILDA<br/>Subtract private components via cross-scale attention"] --> C3["Projective DSS<br/>Project to compact subspace via adaptive orthogonal bases"]
+    end
+    C --> D["Clean Shared Representations F̂^s, M̂^s"]
+    D --> E["HPPM: Non-iterative Coarse-to-Fine<br/>Jointly predict Rigid + Non-rigid"]
+    E --> F["Unified Deformation Field φ → warp I_m"]
+    R["Structured Regularization<br/>Decorrelation / Orthogonality / Consistency / Triplet"] -.Constrain Shared Space.-> D
+```
 
 ### Key Designs
 
-1. **CDAP: Cross-Scale Disentanglement and Adaptive Projection**:
+**1. CDAP: Gating private information from shared space then projecting to adaptive subspaces**
 
-    - **Function**: Follows a decompose-gate-project pipeline to learn clean multi-scale shared representations.
-    - **Mechanism**:
-        - **Decompose**: At each scale, a shared-weight extractor $E_{sh}^i$ extracts modality-agnostic shared components, while modality-specific extractors $E_{pf/m}^i$ extract private components.
-        - **Gate (ILDA)**: Cross-scale attention gating uses semantics from adjacent scales: $\widetilde{F}_i^s = \alpha_i^s \odot F_i^s - \gamma^i \alpha_i^p \odot F_i^p$, where $\alpha_i^s, \alpha_i^p$ are computed via cross-scale attention.
-        - **Project (DSS)**: Data-adaptively generates approximately orthogonal bases $W_i^s = Gen^i(z_i^s)$, and projects as $\hat{F}_i^s = \widetilde{F}_i^s W_i^{s\top}$.
-    - **Design Motivation**: Decomposition alone cannot prevent private-to-shared leakage (explicit gating suppression is required); fixed projections lack flexibility (adaptive bases are needed); cross-scale attention exploits complementary semantic information from adjacent scales.
+While shared feature extraction mitigates modality gaps, constraints only acting on shared parts allow modality-private information to leak and contaminate alignment. CDAP blocks this leakage via "decompose-gate-project." In the decomposition stage, each scale uses a shared extractor $E_{sh}^i$ for modality-invariant components and modality-specific extractors $E_{pf/m}^i$ for private components. In the gating stage (ILDA), neighboring scale semantics are used as cross-scale attention to explicitly subtract private components: $\widetilde{F}_i^s = \alpha_i^s \odot F_i^s - \gamma^i \alpha_i^p \odot F_i^p$, where weights $\alpha_i^s, \alpha_i^p$ are calculated via cross-scale attention. In the projection stage (DSS), a set of approximately orthogonal bases $W_i^s = Gen^i(z_i^s)$ is generated in a data-adaptive manner to project the gated features: $\hat{F}_i^s = \widetilde{F}_i^s W_i^{s\top}$, which is more flexible than fixed projection and results in a more compact shared space.
 
-2. **HPPM: Hybrid Parameter Prediction Module**:
+**2. HPPM: Non-iterative joint prediction of rigid + non-rigid transformations in a unified feature space**
 
-    - **Function**: Jointly predicts rigid and non-rigid transformations non-iteratively within a unified pipeline.
-    - **Mechanism**: Five scales process features from coarse to fine. At the coarsest scale, HRB estimates global rigid parameters $H$ (via GAP + FC) and encodes them as a coarse deformation field. At each subsequent scale, the previous transformation $\phi_{i-1}$ is upsampled to warp the current moving features; the concatenated features are fed into HRB to estimate an incremental deformation $\phi_i' = \text{conv}(f_i)$, accumulating updates as $\phi_i = \text{upsample}(\phi_{i-1}) + \phi_i'$. Each HRB contains two RSSBs (Residual State Space Blocks, based on Mamba) to model long-range dependencies.
-    - **Design Motivation**: Unlike serial cascades with separate estimation, HPPM jointly estimates both transformations within the same shared feature space, with rigid predictions immediately encoded as flow and progressively refined at subsequent scales. Mamba's state space model captures long-range dependencies at low computational cost.
+Serial hybrid registration (rigid then non-rigid) estimates components separately in different feature spaces, leading to error propagation. HPPM integrates rigid and non-rigid estimation into a single 5-scale coarse-to-fine pipeline. At the coarsest scale, global rigid parameters $H$ are estimated via HRB (with GAP + FC) and encoded into a coarse deformation field. For subsequent scales, the previous transformation $\phi_{i-1}$ is upsampled to warp the current moving features; after concatenation, HRB estimates the residual $\phi_i' = \text{conv}(f_i)$, updating the field as $\phi_i = \text{upsample}(\phi_{i-1}) + \phi_i'$. Rigid predictions are immediately converted to flow and refined progressively. Internally, HRB uses two RSSB (Residual State Space Blocks, based on Mamba) to model long-range dependencies, capturing global structural relationships crucial for registration at low computational cost.
 
-3. **Structured Regularization**:
+**3. Structured Regularization: Constraining shared space quality across four dimensions**
 
-    - **Function**: Three complementary regularizers shape the shared feature space.
-    - **Mechanism**:
-        - $L_{ccd}$ (cross-covariance decorrelation): $\|\text{Cov}(\hat{F}_i^s, F_i^p)\|_F^2$ → reduces shared-private coupling.
-        - $L_{bo}$ (basis orthogonality): $\|W^{(i)}W^{(i)\top} - I\|_F^2$ → prevents subspace degeneracy.
-        - $L_{cs}$ (cross-scale directional consistency): $1 - \cos(\hat{F}_i^s, \hat{F}_{i+1}^s)$ → maintains cross-scale semantic consistency.
-        - $L_{tri}$ (triplet loss): pulls together cross-modal co-located shared features and pushes away private interference.
-    - **Design Motivation**: The four losses constrain shared space quality from complementary perspectives: decoupling, non-redundancy, consistency, and alignment.
+Network architecture alone is insufficient for stable alignment; HRNet adds four complementary regularizations. Cross-covariance decorrelation $L_{ccd} = \|\text{Cov}(\hat{F}_i^s, F_i^p)\|_F^2$ reduces coupling between shared and private components; basis orthogonality $L_{bo} = \|W^{(i)}W^{(i)\top} - I\|_F^2$ prevents DSS subspace degradation; cross-scale directional consistency $L_{cs} = 1 - \cos(\hat{F}_i^s, \hat{F}_{i+1}^s)$ ensures semantic alignment across scales; and triplet loss $L_{tri}$ pulls cross-modality features at the same location closer while pushing away private interference. Together, they ensure the validity of the disentanglement.
 
 ### Loss & Training
-- Total loss: $L = \alpha_r L_r + \alpha_n L_n + \alpha_s L_s + \alpha_{tri} L_{tri} + \alpha_{cs} L_{cs} + \alpha_{ccd} L_{ccd} + \alpha_{bo} L_{bo}$
-- **Three-stage curriculum training**: warmup (10%) → mid (50%) → late (40%), with progressive adjustment of loss weights (e.g., $\alpha_n$: 6→10→12).
-- Adam optimizer, lr=1e-4, batch size=8, 100 epochs, images resized to 256×256.
+- Total Loss: $L = \alpha_r L_r + \alpha_n L_n + \alpha_s L_s + \alpha_{tri} L_{tri} + \alpha_{cs} L_{cs} + \alpha_{ccd} L_{ccd} + \alpha_{bo} L_{bo}$
+- **Three-stage curriculum training**: warmup (10%) $\rightarrow$ mid (50%) $\rightarrow$ late (40%), progressively adjusting weights (e.g., $\alpha_n$: 6 $\rightarrow$ 10 $\rightarrow$ 12 to emphasize non-rigid transformation in later stages).
+- Adam optimizer, lr=1e-4, batch=8, 100 epochs, images resized to 256×256.
 
 ## Key Experimental Results
 
 ### Main Results (Rigid Registration)
 
 | Method | RGB-NIR RE↓ | RGB-TIR RE↓ | RGB-IR RE↓ | RGB-SAR RE↓ |
-|--------|-------------|-------------|------------|-------------|
+|------|-------------|-------------|------------|-------------|
 | IHN | 3.887 | 3.006 | 5.684 | 7.087 |
 | MMRNet | 3.179 | 2.472 | 4.406 | 7.075 |
 | **HRNet (Ours)** | **0.785** | **0.744** | **0.578** | **3.161** |
 
-RE reduction relative to MMRNet: 75.3%, 69.9%, 86.9%, 55.3% (average ~72%).
+RE Gain: 75.3%, 69.9%, 86.9%, 55.3% (relative to MMRNet, average ~72%).
 
-### Main Results (Non-Rigid Registration)
+### Main Results (Non-rigid Registration)
 
 | Method | RGB-NIR RE↓ | RGB-TIR RE↓ | RGB-IR RE↓ | RGB-SAR RE↓ |
-|--------|-------------|-------------|------------|-------------|
-| ADRNet (hybrid) | - | - | - | - |
-| MMRNet | - | - | - | - |
-| **HRNet (Ours)** | **best** | **best** | **best** | **best** |
+|------|-------------|-------------|------------|-------------|
+| ADRNet (Hybrid) | Significant | - | - | - |
+| MMRNet | Poor | - | - | - |
+| **HRNet (Ours)** | **Best** | **Best** | **Best** | **Best** |
 
 RE reduction relative to ADRNet: 61.2%, 62.5%, 66.9%, 23.3%.
 
 ### Ablation Study
 
-| Configuration | Key Effect | Remarks |
-|---------------|------------|---------|
-| w/o CDAP | Shared features contain private noise | Registration accuracy degrades |
-| w/o ILDA gating | Private information leaks | Insufficient disentanglement |
-| w/o DSS projection | Cross-modal alignment unstable | Feature space less compact |
+| Configuration | Key Effect | Description |
+|------|----------|------|
+| w/o CDAP | Private noise in shared features | Degraded registration accuracy |
+| w/o ILDA gating | Private info leakage | Incomplete disentanglement |
+| w/o DSS projection | Unstable cross-modality alignment | Non-compact feature space |
 | Rigid only | Cannot handle local deformation | Poor structural integrity |
 | Non-rigid only | Distortion under large offsets | Insufficient global alignment |
-| **Full HRNet** | **Unified rigid + non-rigid** | **Best across all metrics** |
+| **Full HRNet** | **Unified Rigid + Non-rigid** | **Overall Best** |
 
 ### Key Findings
-- **Large advantage of hybrid registration**: On RGB-IR, RE drops from 4.406 to 0.578 (86.9%↓), demonstrating that joint estimation is far superior to single-paradigm approaches.
-- RGB-SAR is the most challenging setting (largest modality gap), yet HRNet still achieves significant improvements.
-- Progressively increasing the non-rigid weight ($\alpha_n$: 6→12) during three-stage curriculum training is critical.
+- **Superiority of Hybrid Registration**: On RGB-IR, RE dropped from 4.406 to 0.578 (86.9% reduction), proving joint estimation is far superior to single-paradigm approaches.
+- RGB-SAR remains the most challenging due to extreme modality gaps, yet HRNet maintains a significant lead.
+- Progressive increases in non-rigid weights ($\alpha_n$: 6 $\rightarrow$ 12) during three-stage curriculum training are critical.
 
 ## Highlights & Insights
-- **Unified hybrid framework**: For the first time, rigid and non-rigid transformations are jointly estimated non-iteratively within a single pipeline, producing a single unified deformation field.
-- **Comprehensive disentanglement**: The decompose-gate-project pipeline in CDAP combined with four structured regularizers fundamentally resolves private information leakage.
-- **Mamba for registration**: RSSBs provide long-range dependency modeling at low computational overhead, well-suited for global structure awareness in registration.
+- **Unified Hybrid Framework**: The first to non-iteratively and jointly estimate rigid and non-rigid transformations in a single pipeline, producing a unified deformation field.
+- **Comprehensive Disentanglement**: The decompose-gate-project pipeline of CDAP, combined with four structured regularizations, fundamentally addresses the private information leakage problem.
+- **Mamba in Registration**: RSSB provides low-overhead long-range dependency modeling, suitable for global structural perception in registration tasks.
 
 ## Limitations & Future Work
-- Current validation is conducted at 256×256 resolution; efficiency and performance at higher resolutions remain to be tested.
-- Curriculum training hyperparameter tuning may require adjustment for different modality pairs.
-- Robustness to extreme occlusion or fully non-overlapping regions is not discussed.
+- Current validation is at 256×256 resolution; efficiency and performance at higher resolutions require testing.
+- Hyperparameter tuning for curriculum training may need adjustments for specific modality pairs.
+- Robustness to extreme occlusion or completely non-overlapping regions was not discussed.
 
 ## Related Work & Insights
-- **vs. ADRNet (serial hybrid)**: ADRNet estimates transformations in stages, causing downstream stages to inherit upstream errors; HRNet jointly estimates within a unified feature space.
-- **vs. Shi et al. (feature disentanglement)**: Existing methods only constrain the shared component; HRNet explicitly suppresses private leakage via ILDA gating and structured regularization.
-- **Insight**: Cross-scale feature interaction via adjacent-scale gating is a generalizable idea worth exploring in other multi-scale tasks.
+- Comparison with ADRNet (serial hybrid): ADRNet estimates in stages, whereas HRNet estimates jointly in a unified space to avoid bias propagation.
+- Comparison with Shi et al. (Feature Disentanglement): Existing methods only constrain shared parts; HRNet explicitly suppresses private leakage via ILDA gating and regularization.
+- Insight: Cross-scale feature interaction (neighboring scale gating) is a versatile idea worth exploring in other multi-scale tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The unified hybrid registration framework, CDAP disentanglement design, and integration of Mamba are all meaningful contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four multimodal datasets, both rigid and non-rigid settings, with detailed ablation and curriculum training analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and complete derivations, though notation density is high.
-- Value: ⭐⭐⭐⭐ Provides a general template for multimodal registration, though the application scope is relatively specialized.
+- Novelty: ⭐⭐⭐⭐ Unified hybrid registration and CDAP disentanglement are valuable; Mamba integration is also innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four multimodal datasets, rigid + non-rigid tests, detailed ablations, and curriculum training analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and complete derivations, though mathematical notation is dense.
+- Value: ⭐⭐⭐⭐ Provides a general template for multimodal registration, though the application scenarios are relatively specialized.
 
 <!-- RELATED:START -->
 
@@ -142,11 +139,11 @@ RE reduction relative to ADRNet: 61.2%, 62.5%, 66.9%, 23.3%.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher](purify-then-align_towards_robust_human_sensing_under_modality_missing_with_knowl.md)
 - [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
 - [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/multimodal_vlm/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
 - [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
 
 </div>
 

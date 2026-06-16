@@ -2,138 +2,141 @@
 title: >-
   [Paper Note] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization
 description: >-
-  [ACL2026][LLM Alignment][Topological Data Analysis] This paper frames LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It employs 0-dimensional persistent homology during the SFT stage to ext…
+  [ACL 2026][Alignment & RLHF][SFT] This paper views LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It extracts prompt-answer topological bridges using 0D persistent homology to incorporate TTL during the SFT stage, and utilizes topic-specific preference directions for TPO during the DPO stage. This approach consistently ou
 tags:
-  - "ACL2026"
-  - "LLM Alignment"
-  - "Topological Data Analysis"
-  - "Persistent Homology"
-  - "SFT"
-  - "DPO"
-  - "Representation Trajectory"
+  - ACL 2026
+  - Alignment & RLHF
+  - SFT
+  - DPO
 date: 2026-05-08
-content_hash: e10b1b1256d63e94
+content_hash: 24085ae7c5f1e709
 ---
-
 # Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization
 
 **Conference**: ACL2026  
 **arXiv**: [2605.07172](https://arxiv.org/abs/2605.07172)  
 **Code**: To be confirmed  
 **Area**: LLM Alignment  
-**Keywords**: Topological Data Analysis, Persistent Homology, SFT, DPO, Representation Trajectory
+**Keywords**: Topological Data Analysis, Persistent Homology, SFT, DPO, Representation Trajectories
 
 ## TL;DR
-This paper frames LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It employs 0-dimensional persistent homology during the SFT stage to extract prompt-answer topological bridges and integrates Trajectory Topology Loss (TTL). In the DPO stage, it incorporates Topological Preference Optimization (TPO) using topic-specific preference directions. The method consistently outperforms non-topological baselines in reward, win rate, and harmlessness metrics on UltraChat and HH-RLHF.
+This paper views LLM alignment as a "semantic trajectory" shaping problem in the hidden space. It extracts prompt-answer topological bridges using 0D persistent homology to incorporate TTL during the SFT stage, and utilizes topic-specific preference directions for TPO during the DPO stage. This approach consistently outperforms non-topological baselines in reward, win rate, and harmlessness metrics on UltraChat and HH-RLHF.
 
 ## Background & Motivation
-**Background**: Current LLM alignment typically involves Supervised Fine-Tuning (SFT) followed by RLHF or DPO. SFT focuses on optimizing token-level likelihood, while DPO/RLHF optimizes preference scores or pairwise rankings. While effective, these training signals mostly operate at the local sample or scalar level.
+**Background**: Current LLM alignment typically involves Supervised Fine-Tuning (SFT) followed by RLHF or DPO. SFT primarily optimizes token-level likelihood, while DPO/RLHF optimizes preference scores or pairwise rankings. While powerful, these training signals mostly remain at the level of local samples or scalars.
 
-**Limitations of Prior Work**: Existing objective functions rarely impose direct constraints on how internal representations transition from user prompts to answers, nor do they address the "improvement direction" from rejected to chosen responses in the hidden space. Models may mimic preference data at the output level without learning stable, transferable paths within the hidden space.
+**Limitations of Prior Work**: Existing objective functions rarely constrain how internal representations move from a user prompt to an answer, nor do they focus on the "improvement direction" from rejected to chosen responses in the hidden space. Models may resemble preference data at the output level without necessarily learning stable, transferable hidden-space paths.
 
-**Key Challenge**: Alignment essentially aims to guide the model towards "more helpful, safer, and instruction-compliant" directions. However, standard objectives only provide local preference information for individual tokens or answer pairs, failing to explicitly leverage the overall geometric structure of a batch of samples in the representation space. A gap exists between local likelihood and the global semantic manifold.
+**Key Challenge**: Alignment essentially requires the model to generate along "more helpful, safer, and instruction-following" directions. However, standard objectives only provide local preferences for tokens or pairs, failing to explicitly exploit the global geometric structure of batches in the representation space. There is a gap between local likelihood and global semantic manifolds.
 
-**Goal**: The authors aim to investigate whether the hidden states of prompts, answers, chosen, and rejected responses can be treated as point clouds, utilizing Topological Data Analysis (TDA) to extract stable cross-cluster connections to regularize the model's semantic trajectories.
+**Goal**: The authors aim to answer whether the hidden states of prompts, answers, chosen, and rejected responses can be treated as point clouds, using topological data analysis to extract stable cross-cluster connections to regularize the model's semantic trajectories.
 
-**Key Insight**: 0-dimensional persistent homology tracks the merging of connected components in a point cloud as the distance threshold increases. "Death edges" across labels act similarly to critical bridges in a Minimum Spanning Forest. The authors argue that these topological bridges reflect the global contact between the prompt manifold and the answer manifold more effectively than random, gold-standard, or kNN pairings.
+**Key Insight**: 0D persistent homology records the merging of connected components in a point cloud as the distance threshold increases. The "death edges" across different labels resemble critical bridge edges in a Minimum Spanning Forest. The authors argue these bridges reflect the global contact between prompt and answer manifolds more effectively than random, gold-pair, or kNN pairings.
 
-**Core Idea**: Use topological bridges to replace arbitrary local pairings, ensuring that hidden states move along topologically consistent paths in addition to generating correct outputs.
+**Core Idea**: Replace arbitrary local pairings with topological bridges, transforming "output correctness" into "hidden states moving along topologically reasonable directions."
 
 ## Method
 
 ### Overall Architecture
-The method consists of two training stages. The first stage is SFT + Trajectory Topology Loss (TTL): For each batch, the model computes the mean-pooled last-layer hidden states of prompt tokens, teacher-forced answer tokens, and the mean input embeddings of gold answer tokens. A point cloud of $2B$ points is formed from prompt and gold answer representations. 0-dimensional persistent homology is applied to extract death edges connecting prompt and answer points, forming prompt-answer bridges. The model's actual prompt-to-answer trajectories are aligned with these bridge directions.
+The method consists of two training stages. The first stage is SFT + Trajectory Topology Loss (TTL): for each batch, mean-pooled last-layer hidden states are obtained for prompt tokens, teacher-forced answer tokens, and the input embedding means of gold answer tokens. A point cloud of $2B$ points is formed from prompt and gold answer representations. 0D persistent homology is applied to extract death edges connecting prompt and answer points, forming "prompt-answer bridges." The model's actual prompt-to-answer hidden trajectory is aligned with these bridge directions.
 
-The second stage is DPO + Topological Preference Optimization (TPO): HH-RLHF prompts are clustered into topics offline to construct positive and negative templates. Topic-specific preference vectors are generated using a sentence transformer. During DPO training, the difference between the mean-pooled hidden states of chosen and rejected responses is calculated at an intermediate layer. A small projection matrix maps the topic vectors into the model's hidden space, and a cosine loss aligns the "rejected-to-chosen" semantic improvement direction with these mapped vectors. The final loss is a combination of the DPO loss and a dynamically weighted TPO loss.
+The second stage is DPO + Topological Preference Optimization (TPO): HH-RLHF prompts are clustered into topics offline to construct topic-specific preference vectors using sentence transformers with positive/negative templates. During DPO training, the difference between mean-pooled hidden states of chosen and rejected responses is calculated at intermediate layers. A small projection matrix maps topic vectors into the model hidden space, and a cosine loss aligns the "rejected-to-chosen" semantic improvement direction. The final loss is a combination of DPO loss and dynamically weighted TPO loss.
+
+```mermaid
+graph TD
+    subgraph S1["Trajectory Topology Loss (TTL) - SFT Stage"]
+        direction TB
+        A["Prompt + Gold Answer Repr.<br/>Formed into 2B Point Cloud"] --> B["0D PH extracts death edges<br/>→ Prompt-Answer Bridges (answer − prompt)"]
+        B --> C["Align with model trajectory h_model − h_prompt via Cosine<br/>L_topo = mean(1 − cos)"]
+    end
+    C --> E["L_SFT = L_CE + λ_topo · L_topo"]
+    subgraph S2["Topological Preference Optimization (TPO) - DPO Stage"]
+        direction TB
+        G["Offline: Cluster prompts into topics<br/>Construct topic preference vector u_t"] --> H["Layer-wise chosen − rejected normalized diff Δh<br/>Optimize 1 − cos(Δh, P·u_t) after projection"]
+    end
+    E --> G
+    H --> J["Dynamic Weighting + Topo-TPO Variant<br/>EMA balances λ_dyn to prevent dominance"]
+    J --> K["L_total = L_DPO + λ_dyn · L_TPO"]
+```
 
 ### Key Designs
-1.  **Trajectory Topology Loss (TTL) in SFT**:
-    - **Function**: Organizes prompt and gold answer representations into a point cloud to extract cross-label topological bridges as additional trajectory supervision.
-    - **Mechanism**: Euclidean distances between points are calculated, and connected components are merged using Union-Find in ascending order of distance. "Death edges" connecting different labels (prompt and gold answer) are identified as bridges. The TTL is the cosine loss between the model's trajectories ($h_i^{model}-h_i^{prompt}$) and these bridge directions: $L_{topo}=mean(1-cos(v_{topo}, v_{model}))$.
-    - **Design Motivation**: Gold-standard pairing only considers individual samples, kNN focuses on local neighbors, and random pairing introduces noise. Persistent homology bridges originate from global connectivity, filtering out local accidental connections for more stable trajectory regularization.
 
-2.  **Topological Preference Optimization (TPO) in DPO**:
-    - **Function**: Explicitly constrains the hidden-space improvement direction during preference optimization, ensuring the chosen response is not just more probable but also moves in a topic-relevant "better answer" direction.
-    - **Mechanism**: Prompts are embedded via sentence transformers and clustered using MiniBatch KMeans, followed by topic labeling via a strong model. Preference vectors are constructed using templates like "helpful/harmless" vs. "harmful/unhelpful." During training, the normalized hidden difference $\Delta h=LN(h^{ch})-LN(h^{rj})$ is aligned with the topic vector $u_t$ mapped via projection $P$ by optimizing $1-cos(\Delta h, Pu_t)$.
-    - **Design Motivation**: Preference directions vary across topics (e.g., safety advice vs. knowledge Q&A). Topic-aware vectors provide finer granularity than a single global preference vector.
+**1. Trajectory Topology Loss in SFT: Global structure supervision via persistent homology bridges**
+Per-sample gold pairing only focuses on the current sample, while kNN only looks at local neighbors, and random pairing is noisy. These methods fail to guide the model towards "globally reasonable" directions. The authors concatenate prompt and gold answer representations in a batch into a $2B$ point cloud. Using Union-Find, they merge components by Euclidean distance and record edges causing component "deaths." Only edges connecting different labels (prompt to answer) are kept as prompt-answer bridges ($v_{topo}$). The model's actual trajectory is $v_{model} = h_i^{model} - h_i^{prompt}$. TTL is the cosine loss between these: $L_{topo} = mean(1 - cos(v_{topo}, v_{model}))$. These bridges are more stable than other methods as they derive from the point cloud's global connectivity.
 
-3.  **Dynamic Weighting and Fully Topological Variant**:
-    - **Function**: Prevents the TPO auxiliary term from dominating the DPO main objective and tests the benefit of topological structures during preference optimization.
-    - **Mechanism**: An EMA tracks the magnitudes of DPO and TPO losses to set $\lambda_{dyn}$ dynamically. A Topo-TPO variant treats chosen/rejected hidden states as a point cloud, using 0D persistent homology to extract rejected-to-chosen bridges for alignment with preference vectors.
-    - **Design Motivation**: Fixed weights are sensitive to training phases; the fully topological variant explores whether gains come from topic vectors or the batch structure itself.
+**2. Topological Preference Optimization in DPO: Refining "Chosen over Rejected" as topic-specific movement**
+Standard DPO only ensures chosen responses have higher probability than rejected ones, regardless of whether hidden states actually move toward a "better" answer. Furthermore, preference directions vary across safety, knowledge, and chat tasks. The authors use MiniBatch KMeans on sentence transformer embeddings of prompts and label clusters with a strong model. They create topic-specific preference vectors ($u_t$) using templates like "helpful/harmless" vs "harmful/unhelpful." In training, they compute $\Delta h = LN(h^{ch}) - LN(h^{rj})$ and optimize its cosine similarity with the projected theme vector $P u_t$.
+
+**3. Dynamic Weighting and Topo-TPO Variant: Balancing auxiliary terms**
+To prevent auxiliary terms from overwhelming the DPO objective, TPO uses EMA to track the magnitudes of DPO loss and TPO loss, dynamically setting $\lambda_{dyn}$. A "Topo-TPO" variant is also designed where chosen/rejected hidden states form a point cloud, and death edges are extracted directly to align with topic preference vectors. This variant indicates that gains also stem from the global batch structure.
 
 ### Loss & Training
-The total objective for SFT is $L_{SFT}=L_{CE}+\lambda_{topo}L_{topo}$, with an optimal $\lambda_{topo} \approx 0.2$. The total objective for DPO is $L_{total}=L_{DPO}+\lambda_{dyn}L_{TPO}$. Experiments use Qwen2.5-7B-Instruct with LoRA (rank 16). Persistent homology is implemented on CPU using Union-Find and pairwise distances. Cross-backbone validation was performed on Llama-3-8B-Instruct.
+The total loss for SFT is $L_{SFT} = L_{CE} + \lambda_{topo}L_{topo}$ (optimal $\lambda_{topo} \approx 0.2$). For DPO, it is $L_{total} = L_{DPO} + \lambda_{dyn}L_{TPO}$, where $\lambda_{dyn}$ is balanced via EMA. Qwen2.5-7B-Instruct is used as the backbone with LoRA (rank 16). Persistent homology is implemented on CPU using Union-Find.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Stage / Dataset | Method | Metric | Baseline | Ours | Gain |
+| Stage / Dataset | Method | Key Metric | Baseline | Ours | Gain |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| SFT / UltraChat | Base SFT vs. SFT + TTL | RM / IFEval / Toxicity | 64.2 / 68.5 / 0.45 | 67.8 / 71.8 / 0.38 | RM +3.6, IFEval +3.3 |
-| SFT zero-shot / HH-RLHF | Base SFT vs. SFT + TTL | RM / Help / Toxicity | 62.1 / 45.2 / 0.48 | 65.4 / 49.8 / 0.41 | Helpfulness +4.6 |
-| DPO / HH-RLHF | DPO vs. DPO + TPO | RewardBench / Win Rate / MT-Bench / Harmless | 84.5 / 52.1% / 8.65 / 90.2% | 87.2 / 55.4% / 8.81 / 93.5% | Win & Harmlessness $\uparrow$ |
-| DPO / HH-RLHF | DPO vs. DPO + Topo-TPO | RewardBench / Win Rate / MT-Bench / Harmless | 84.5 / 52.1% / 8.65 / 90.2% | 87.4 / 55.6% / 8.80 / 94.1% | Max Harmlessness gain |
+| SFT / UltraChat | Base SFT vs SFT + TTL | RM / IFEval / Toxicity | 64.2 / 68.5 / 0.45 | 67.8 / 71.8 / 0.38 | RM +3.6, IFEval +3.3 |
+| SFT zero-shot / HH-RLHF | Base SFT vs SFT + TTL | RM / Help / Toxicity | 62.1 / 45.2 / 0.48 | 65.4 / 49.8 / 0.41 | Help +4.6 |
+| DPO / HH-RLHF | DPO vs DPO + TPO | RewardBench / AlpacaEval / MT-Bench | 84.5 / 52.1% / 8.65 | 87.2 / 55.4% / 8.81 | Improved win rate |
+| DPO / HH-RLHF | DPO vs DPO + Topo-TPO | Harmlessness | 90.2% | 94.1% | Max toxicity reduction |
 
 ### Ablation Study
 
-| Configuration | RM | Win | IFEval | Toxicity | Note |
+| Configuration | RM | Win Rate | IFEval | Toxicity | Description |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| No TTL | 64.2 | - | 68.5 | 0.45 | Pure CE SFT |
+| No TTL | 64.2 | - | 68.5 | 0.45 | Standard CE SFT |
 | Random Pair | 64.6 | 50.8% | 68.9 | 0.44 | Minimal gain |
-| All Pairs (no PH) | 66.1 | 53.2% | 69.8 | 0.41 | Effective but unstable |
-| kNN Bridge | 66.8 | 55.6% | 70.5 | 0.40 | Better than per-sample |
+| All Pairs (no PH) | 66.1 | 53.2% | 69.8 | 0.41 | Per-sample alignment |
+| kNN Bridge | 66.8 | 55.6% | 70.5 | 0.40 | Local geometric bridges |
 | PH Bridge (Ours) | 67.8 | 58.4% | 71.8 | 0.38 | Best performance |
 
 | TPO Configuration | RewardBench | AlpacaEval | Harmless | Conclusion |
 | :--- | :--- | :--- | :--- | :--- |
 | DPO | 84.5 | 52.1% | 90.2% | Standard DPO |
-| + Global Cosine | 85.1 | 52.8% | 90.5% | Small manual gain |
-| + Learned Global Vec. | 85.8 | 53.5% | 91.2% | Coarse global direction |
-| + TPO (no dyn) | 86.3 | 54.2% | 91.8% | Topic vectors are better |
-| + TPO (Ours) | 87.2 | 55.4% | 93.5% | Dynamic weight stability |
+| + Global Cosine | 85.1 | 52.8% | 90.5% | Single manual direction |
+| + TPO (Ours) | 87.2 | 55.4% | 93.5% | Topic-aware + Dynamic |
 
 ### Key Findings
-- The benefits of TTL stem from the global connectivity structure of persistent homology bridges rather than the cosine loss itself; PH Bridges outperform Random, All Pairs, and kNN.
-- TPO's effectiveness is rooted in being topic-aware. Segmenting preference directions by prompt topic is superior to using a single global vector.
-- Topo-TPO shows slightly higher harmlessness than standard TPO, suggesting preference optimization also benefits from the global structure of chosen/rejected point clouds.
-- Topological weights cannot be increased indefinitely; at $\lambda_{topo}=0.4$, RM and toxicity performance degrades, indicating trajectory regularization should support rather than replace language modeling.
+- TTL gains stem from the global connectivity of persistent homology bridges; PH bridges outperform Random, All Pairs, and kNN.
+- TPO succeeds through topic-awareness. Global preference vectors are insufficient compared to directions tailored to prompt clusters.
+- Topo-TPO achieves higher harmlessness, suggesting the preference stage benefits from the global structure of chosen/rejected point clouds.
+- Regularization strength is critical; $\lambda_{topo} = 0.4$ degrades performance, indicating trajectory regularization should support rather than replace language modeling.
 
 ## Highlights & Insights
-- The most compelling aspect is shifting alignment from "output preference" to "hidden state trajectory." This provides a unified view for SFT and DPO.
-- The use of 0D persistent homology is efficient, requiring only Union-Find and pairwise distances without expensive high-dimensional topological features. It acts as a global structure-aware matcher.
-- Topic-aware preference vectors in TPO could be transferred to other tasks like factuality, politeness, or code execution by defining attribute-specific directions in the hidden space.
-- The ablation studies clearly distinguish the contributions of topological vs. non-topological, topic-aware vs. global, and fixed vs. dynamic weighting.
+- The shift from "output preference" to "hidden state movement" provides a unified perspective for alignment as trajectory shaping.
+- The use of 0D persistent homology is efficient, requiring only Union-Find and pairwise distances without complex high-dimensional topological features.
+- Topic-aware preference vectors are highly transferable. Different attributes (safety, logic, code) can be modeled as distinct directions in the hidden space.
 
 ## Limitations & Future Work
-- The study centers on Qwen2.5-7B, Llama-3-8B, UltraChat, and HH-RLHF. Its stability in larger models, long-chain reasoning, or multi-turn agent scenarios remains untested.
-- 0D persistent homology relies on in-batch point clouds. Batch composition and embedding layer choice can affect the bridges. Future work could explore cross-batch memory banks.
-- TPO depends on offline clustering quality and template construction. Learning directions from human feedback residuals or automatically discovered concepts may be more robust.
-- Evaluation relies on standard benchmarks and RM scores; more human validation of trajectory interpretability and stress testing in red-teaming scenarios is needed.
+- Evaluation is limited to Qwen2.5-7B and Llama-3-8B; performance on larger models or multi-turn agent tasks remains unverified.
+- Dependency on batch composition for point cloud construction; future work could explore cross-batch memory banks.
+- Topic vectors rely on offline clustering; learning directions from reward model residuals or discovered concepts could be more robust.
 
 ## Related Work & Insights
-- **vs. Standard SFT / RLHF / DPO**: While standard methods optimize token likelihoods or rankings, this work constrains hidden-space trajectories, leveraging representation geometry at the cost of hypers like layer selection and weights.
-- **vs. Representation Geometry Analysis**: Unlike prior works that use geometry solely for analysis, this paper converts geometric structures into training signals for alignment.
-- **vs. TDA Regularization**: Traditional TDA regularization is often used for classification boundaries; this work innovatively applies 0D persistent homology to the SFT and DPO phases of LLM alignment.
+- **vs. Standard SFT/DPO**: Standard methods optimize probabilities; this work constrains hidden-space trajectories, providing better control over representation geometry.
+- **vs. TDA Regularization**: Unlike traditional TDA for classification, this work applies persistent homology to the generative alignment process of LLMs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Introducing persistent homology for hidden-trajectory regularization in LLM alignment is highly novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive main experiments and ablations, though model scale and safety scenarios could be further expanded.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear logic and well-supported tables, though some implementation details are relegated to the appendix.
-- Value: ⭐⭐⭐⭐☆ Provides a "trajectory shaping" perspective for alignment, valuable for future hidden-space control and interpretable alignment research.
+- Novelty: ⭐⭐⭐⭐☆
+- Experimental Thoroughness: ⭐⭐⭐⭐☆
+- Writing Quality: ⭐⭐⭐⭐☆
+- Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](../../ICLR2026/llm_alignment/safedpo_preference_optimization_safety.md)
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
 - [\[ACL 2026\] Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards](teaching_llm_to_be_persuasive_reward-enhanced_policy_optimization_for_alignment_.md)
+- [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](../../ICLR2026/llm_alignment/safedpo_preference_optimization_safety.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
-- [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
-- [\[ACL 2026\] Large Language Models Are Overconfident in Their Own Responses](large_language_models_are_overconfident_in_their_own_responses.md)
+- [\[ACL 2025\] Optimal Transport-Based Token Weighting for Enhanced Preference Optimization](../../ACL2025/llm_alignment/otpo_token_weighting.md)
 
 </div>
 

@@ -2,119 +2,132 @@
 title: >-
   [Paper Note] Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection
 description: >-
-  [ACL2026][Robotics][Multimodal Forgery Detection] This paper proposes REFORM, which shifts multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM r…
+  [ACL 2026][Robotics & Embodied AI][GRPO] This paper proposes REFORM, shifting multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, a dual-decoder architecture, and GRPO training, REFORM achieves superior cross-domain generalization and interpretable detecti
 tags:
-  - "ACL2026"
-  - "Robotics"
-  - "Multimodal Forgery Detection"
-  - "Forensic Reasoning"
-  - "GRPO"
-  - "Forgery Localization"
-  - "ROM Dataset"
+  - ACL 2026
+  - Robotics & Embodied AI
+  - GRPO
 date: 2026-05-08
-content_hash: ccf636545eefe266
+content_hash: ff4fcadbe931603e
 ---
-
 # Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection
 
 **Conference**: ACL2026  
 **arXiv**: [2603.01993](https://arxiv.org/abs/2603.01993)  
 **Code**: https://github.com/YcZhangSing/REFORM  
 **Area**: Multimodal Forensics / AIGC Detection  
-**Keywords**: Multimodal Forgery Detection, Forensic Reasoning, GRPO, Forgery Localization, ROM Dataset
+**Keywords**: Multimodal Fake Detection, Forensic Reasoning, GRPO, Forgery Localization, ROM Dataset
 
 ## TL;DR
-This paper proposes REFORM, which shifts multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, a dual-decoder architecture, and GRPO training, it achieves superior cross-domain generalization and interpretable detection results on ROM, DGM4, and MMFakeBench.
+This paper proposes REFORM, shifting multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, a dual-decoder architecture, and GRPO training, REFORM achieves superior cross-domain generalization and interpretable detection results on ROM, DGM4, and MMFakeBench.
 
 ## Background & Motivation
-**Background**: Multimodal media forgery has expanded from local facial editing to complex compositional forgeries involving entire news images, backgrounds, headlines, and main bodies. Existing methods like the DGM4 series, knowledge-enhanced approaches, and vision-language models typically model the task as detection, classification, or localization—taking image-text news as input and outputting authenticity, forgery types, and regions.
+**Background**: Multimodal media forgery has expanded from local facial editing to complex compositional forgeries involving news images, backgrounds, captions, and body text. Existing methods like the DGM4 series, knowledge-enhanced approaches, and Vision-Language Models (VLMs) typically model the task as detection, classification, or localization—taking image-text news as input and outputting authenticity, forgery types, and regions.
 
-**Limitations of Prior Work**: Mainstream methods mostly rely on result-oriented supervision, requiring the model to map training samples directly to final labels. While effective on closed-set data, this approach leads models to memorize specific statistical artifacts (e.g., textures of certain generative models, linguistic distributions of specific news domains, or editing patterns) rather than learning "why there is an inconsistency." Consequently, detectors often fail when encountering new test domains, generators, or forgery methods.
+**Limitations of Prior Work**: Most mainstream methods rely on result-oriented supervision, mapping training samples to final labels. While effective on closed-set data, this often causes models to memorize statistical artifacts specific to a dataset—such as textures of specific generators, language distributions of certain news domains, or particular editing patterns—rather than learning "why an inconsistency exists." Consequently, detectors fail when the test domain, generator, or forgery method changes.
 
-**Key Challenge**: Multimodal forensics truly requires a transferable logical evidence chain, yet training signals are often limited to the final answer. Label supervision tells the model "this is fake" but rarely constrains it to find credible visual evidence, textual evidence, or contradictions between the two.
+**Key Challenge**: Multimodal forensics requires a transferable logical chain of evidence, yet training signals are often limited to the final answer. Label supervision informs the model that something is "fake" but rarely constrains it to find credible visual evidence, textual evidence, or the contradictions between them.
 
-**Goal**: The authors aim to solve three sub-problems: constructing a benchmark with broader coverage and reasoning annotations; enabling the model to explicitly generate forensic rationales while maintaining consistency between rationales and answers; and using reinforcement learning after SFT to constrain the format, accuracy, localization, and consistency of the reasoning chain.
+**Goal**: The authors aim to address three sub-problems: constructing a comprehensive benchmark with reasoning annotations; enabling models to explicitly generate forensic justifications while maintaining consistency between reasoning and answers; and using reinforcement learning after SFT to constrain the format, accuracy, localization, and consistency of the reasoning chain.
 
-**Key Insight**: The core observation is that generalization should not stem only from larger vision-language models or more external knowledge, but from the optimization of the "forensic thinking process." By rewarding correct, coherent, and localizable reasoning chains in training, the model is more likely to capture cross-domain stable forgery logic.
+**Key Insight**: Generalization should not stem solely from larger VLMs or more external knowledge, but from optimizing the "forensic thinking process." By rewarding correct, coherent, and localizable reasoning chains in the training objective, the model is more likely to capture stable cross-domain forgery logic.
 
-**Core Idea**: Replace pure result fitting with reasoning-driven optimization, teaching the detector to explain forgery evidence first, then using consistency losses and GRPO to bind explanation, classification, and localization together.
+**Core Idea**: Replace pure result-fitting with reasoning-driven optimization. The detector first learns to explain forensic evidence, then uses consistency losses and GRPO to tie explanation, classification, and localization together.
 
 ## Method
-The contribution of REFORM consists of three parts: data, architecture, and training. On the data side, the authors built ROM, providing models with reasoning annotations alongside image-text pairs and labels. Architecturally, the model employs a Cognitive Priming Encoder and a Reason-Answer Dual-Decoder. For training, it uses reasoning warm-up, joint fine-tuning of answers/rationales, and policy refinement via GRPO.
 
 ### Overall Architecture
-The input is a multimodal news sample, including the image, text prompts, and the content to be judged. The model encodes the image into visual tokens and the instructions into text tokens. Then, through a frozen Cognitive Priming Encoder, a set of learnable reason tokens extracts forgery clues from the visual and textual contexts. After multimodal encoding, the model connects to two parallel decoders: the Answer Decoder outputs the veracity, forgery type, and localization coordinates, while the Reason Decoder outputs explanatory forensic reasoning.
+REFORM addresses the limitation where result-oriented supervision causes models to memorize statistical artifacts. It reframes detection as "learning a verifiable forensic reasoning process" through a closed loop of data, structure, and training. Given a multimodal news sample (image + text prompt + content), the model encodes the image into visual tokens and instructions into text tokens. A frozen Cognitive Priming Encoder allows a set of learnable reason tokens to extract forgery clues from the context. These tokens are then fed into two parallel decoders: the Answer Decoder outputs authenticity, forgery type, and localization coordinates, while the Reason Decoder generates explanatory forensic reasoning. Training proceeds in three stages: warm-up for the reasoning branch, joint fine-tuning with consistency constraints, and policy refinement via GRPO to discover more reliable reasoning paths.
 
-The training process involves three stages. The first stage trains only the reasoning branch, aligning reason tokens and the Reason Decoder with distilled forensic rationales. The second stage unfreezes the entire model to generate rationales and answers simultaneously, incorporating a rationale-answer consistency constraint. The third stage uses GRPO to let the model learn paths from multiple candidate rationales that best satisfy formatting, accuracy, localization, and semantic consistency rewards.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["ROM Reasoning-Augmented Dataset"]
+        direction TB
+        A["Scene-level Forgery Samples<br/>Background Replacement / Full Generation / Text Tampering Combinations"] --> B["InternVL3.5-30B Distilled Forensic Reasons<br/>704K Paris · 9 Forgery Types · 5 Domains"]
+    end
+    DATA -->|Provides Process Supervision| ARCH
+    subgraph ARCH["Cognitive Priming and Dual Decoders"]
+        direction TB
+        C["Image → Visual tokens, Instruction → Text tokens"] --> D["Frozen Cognitive Priming Encoder<br/>Reason tokens extract forgery clues"]
+        D --> E["Multimodal Encoder reads [Image; Reason tokens; Text]"]
+        E --> F["Answer Decoder<br/>Authenticity / Type / Localization"]
+        E --> G["Reason Decoder<br/>Forensic Reasoning Explanation"]
+    end
+    ARCH -->|Training on this structure| TRAIN
+    subgraph TRAIN["Three-stage Reasoning-driven Training"]
+        direction TB
+        H["① Reasoning Warm-up: Only train reasoning branch to reconstruct reasons"] --> I["② Joint Fine-Tuning: Reason + Answer + RAC Loss"]
+        I --> J["③ Policy Refinement: GRPO explores more reliable reasoning chains"]
+    end
+```
 
 ### Key Designs
-1. **ROM Reasoning-Augmented Dataset**:
-    - **Function**: Provides broader scene-level data and reasoning supervision for multimodal forgery detection.
-    - **Mechanism**: ROM extends beyond the face-related categories of MDSM to include BackgroundReplacement, FullGeneration, and scene-level forgeries combined with TextFabrication. It comprises 704,456 image-text pairs across 5 news domains and 9 forgery categories, with textual reasoning distilled from InternVL3.5-30B for each sample.
-    - **Design Motivation**: Traditional DGM4 focuses on face editing, which may lead models to learn local artifacts. ROM expands the scope to full-image generation and background replacement, providing rationales (~130 tokens peak length) that offer richer supervision of the forensic process than short answers.
 
-2. **Cognitive Priming and Dual-Decoder**:
-    - **Function**: Separates "finding evidence" and "providing answers" into two related but non-interfering generation tasks.
-    - **Mechanism**: The Cognitive Priming Encoder processes $S_{inp}=[T_i;T_r;T_t]$, keeping only updated reason tokens $\hat{T}_r$. The multimodal encoder then reads $S_p=[T_i;\hat{T}_r;T_t]$. The Answer Decoder outputs structured predictions, while the Reason Decoder outputs forensic explanations.
-    - **Design Motivation**: Sharing a single decoder can cause gradient conflicts between answer and rationale generation. Dual decoders allow separate optimization and switching between Reasoning Mode and Fast Mode (skipping rationale generation while maintaining prediction).
+**1. ROM Reasoning-Augmented Dataset: Shifting training signals from "short answers" to "broad scene-level forgery + forensic reasons"**
 
-3. **Three-Stage Reasoning-Driven Training**:
-    - **Function**: Transitions the model from "stating rationales" to "rationales supporting answers" and finally to "actively exploring reliable reasoning."
-    - **Mechanism**: Stage 1 uses a rationale language modeling loss $\mathcal{L}_{LM_r}$. Stage 2 adds an answer loss $\mathcal{L}_{LM_a}$ and a Rationale-Answer Consistency loss $\mathcal{L}_{RAC}=\max\{0,\eta-\cos(\mathbf{v}^R,\mathbf{v}^A)\}$, with the objective $\mathcal{L}_{RJF}=\mathcal{L}_{LM_r}+\mathcal{L}_{LM_a}+\mathcal{L}_{RAC}$. Stage 3 uses GRPO with multi-dimensional rewards for format, classification accuracy, localization quality, and consistency.
-    - **Design Motivation**: SFT alone only mimics annotations and is prone to exposure bias. GRPO allows the model to compare candidate rationales, rewarding chains that are supported by the verifier and consistent with the final answer.
+Traditional DGM4 focuses on facial editing, causing models to learn local artifacts that fail cross-domain. ROM extends the facial categories of MDSM by adding BackgroundReplacement, FullGeneration, and combinations with TextFabrication. It comprises 704,456 image-text pairs across 5 news domains and 9 forgery types. InternVL3.5-30B is used to distill textual reasoning (approx. 130 tokens) for each sample. Expanding forgery to full image generation and background replacement forces the model to focus on cross-modal logical contradictions rather than facial textures.
+
+**2. Cognitive Priming and Dual Decoders: Decoupling "finding evidence" and "providing answers" into related but non-interfering tasks**
+
+Sharing a single decoder can lead to gradient conflict between answer and reason generation. In REFORM, the frozen Cognitive Priming Encoder processes $S_{inp}=[T_i;T_r;T_t]$ to obtain updated reason tokens $\hat{T}_r$. The multimodal encoder then reads $S_p=[T_i;\hat{T}_r;T_t]$ and passes it to the Answer Decoder for structured prediction and the Reason Decoder for forensic explanation. This decoupling avoids gradient competition and supports switching between reasoning mode and "Fast Mode" (skipping reason generation without changing the answer).
+
+**3. Mechanism: Transitioning the model from "stating reasons" to "reasons supporting answers" and finally to "active exploration of reliable reasons"**
+
+Pure SFT suffers from exposure bias and logical disconnection (the "reason says A, answer says B" problem). REFORM uses three stages: Reasoning Warm-up (training only the reasoning branch with $\mathcal{L}_{LM_r}$); Joint Fine-Tuning (unfreezing the whole model with answer loss $\mathcal{L}_{LM_a}$ and Reason-Answer Consistency loss $\mathcal{L}_{RAC}=\max\{0,\eta-\cos(\mathbf{v}^R,\mathbf{v}^A)\}$); and Policy Refinement using GRPO to compare candidate reasons and reward those that are well-formatted, verifiable, and consistent with the answer. This final stage contributes most to cross-domain gains.
 
 ### Loss & Training
-The focus of the training strategy is not a simple classification head but the integration of the reasoning chain into the optimization objective. During the Reasoning Warm-up phase, the multimodal encoder and Answer Decoder are frozen. In Joint Fine-Tuning, both are optimized with $\mathcal{L}_{RAC}$ to prevent semantic breakage where the "rationale suggests A, but the answer determines B." During Policy Refinement via GRPO, the Consistency Verifier (TinyBERT with classification heads) determines if generated rationales logically lead to the model's predicted forgery type based on pre-trained rationale-label pairs.
+The focus is on incorporating the reasoning chain into the optimization objective rather than just adding a classification head. The total objective for joint training is $\mathcal{L}_{RJF}=\mathcal{L}_{LM_r}+\mathcal{L}_{LM_a}+\mathcal{L}_{RAC}$, where $\mathcal{L}_{RAC}$ enforces alignment between reasoning and answer vectors via a cosine margin. For Policy Refinement, a Consistency Verifier (using TinyBERT) evaluates whether the generated reasons logically support the model's forgery type prediction, achieving over 99% classification accuracy on reason-label pairs.
 
 ## Key Experimental Results
 
 ### Main Results
-| Dataset / Setting | Metric | REFORM | Baseline Comparison | Interpretation |
+| Dataset / Setting | Metric | REFORM | Baselines | Analysis |
 |--------|------|------|----------|------|
-| ROM Cross-Domain | AVG ACC | 88.22 | AMD 85.92 / HAMMER 72.41 / MMD-Agent-34B 57.45 | Significantly outperforms feature alignment, traditional detection, and retrieval-agent pipelines in new domains. |
-| ROM Guardian Test Domain | ACC / mAP / mIoU | 81.52 / 67.75 / 81.64 | Specific REFORM values provided in cached table. | Maintains high detection and localization quality in out-of-domain tests. |
-| MMFakeBench Zero-Shot | F1 | 74.9 | Multiple 7B/13B LVLM baselines | Strong zero-shot generalization on unseen types (e.g., manual PS) via forensic reasoning. |
-| DGM4 | ACC / AVG mAP | 76.65 / 65.72 | Fine-tuned LVLMs: mAP < 47 | Outperforms specialized detectors even on face-centric DGM4. |
-| Efficiency | Params / Throughput | 376M / Fast Mode 13.17 pairs/s | FKA-Owl 6.7B, MMD-Agent 34B | Dual-decoder separates explanation/screening; much smaller than LLM agents. |
+| ROM Cross-domain | AVG ACC | 88.22 | AMD 85.92 / HAMMER 72.41 / MMD-Agent-34B 57.45 | Significantly outperforms feature alignment, traditional detection, and retrieval-based agent pipelines in new domains. |
+| ROM Guardian (OOD) | ACC / mAP / mIoU | 81.52 / 67.75 / 81.64 | - | Reasoning supervision maintains high detection and localization quality even in out-of-distribution tests. |
+| MMFakeBench (Zero-shot) | F1 | 74.9 | Various 7B/13B LVLM baselines | Gains strong zero-shot generalization on unseen types (e.g., manual Photoshop) via forensic reasoning. |
+| DGM4 | ACC / AVG mAP | 76.65 / 65.72 | Fine-tuned LVLMs (mAP < 47) | Also outperforms specialized detectors on face-centric DGM4, showing general applicability beyond ROM. |
+| Efficiency | Params / Throughput | 376M / Fast Mode: 13.17 pairs/s | FKA-Owl 6.7B, MMD-Agent 34B | Dual decoders enable high throughput; parameters are far fewer than large model agents. |
 
 ### Ablation Study
-| Configuration | NYT ACC | NYT mAP | NYT mIoU | Guardian ACC | Guardian mAP | Guardian mIoU | Notes |
+| Configuration | NYT ACC | NYT mAP | NYT mIoU | Guardian ACC | Guardian mAP | Guardian mIoU | Explanation |
 |------|---------|---------|----------|--------------|--------------|---------------|------|
-| $\mathcal{L}_{LM_a}$ | 84.88 | 66.16 | 75.98 | 72.18 | 45.86 | 78.72 | Answer only; result-oriented. |
-| $\mathcal{L}_{LM_a}+\mathcal{L}_{LM_r}$ | 87.76 | 73.01 | 77.68 | 74.74 | 53.65 | 79.59 | Reasoning supervision boosts detection/localization. |
-| + $\mathcal{L}_{RAC}$ | 87.84 | 73.25 | 78.00 | 75.71 | 54.11 | 79.58 | Consistency adds further gains. |
-| + GRPO | 88.22 | 76.08 | 78.48 | 81.52 | 67.75 | 81.64 | RL contributes most, especially to Guardian mAP. |
+| $\mathcal{L}_{LM_a}$ | 84.88 | 66.16 | 75.98 | 72.18 | 45.86 | 78.72 | Answer-only; still result-oriented learning. |
+| $\mathcal{L}_{LM_a}+\mathcal{L}_{LM_r}$ | 87.76 | 73.01 | 77.68 | 74.74 | 53.65 | 79.59 | Reasoning supervision improves both detection and localization. |
+| + $\mathcal{L}_{RAC}$ | 87.84 | 73.25 | 78.00 | 75.71 | 54.11 | 79.58 | Further gain from reason-answer consistency. |
+| + GRPO | 88.22 | 76.08 | 78.48 | 81.52 | 67.75 | 81.64 | Reinforcement learning provides the largest boost, especially for OOD mAP. |
 
 ### Key Findings
-- The reasoning branch is not just decorative. Adding $\mathcal{L}_{LM_r}$ alone increased NYT ACC from 84.88 to 87.76.
-- GRPO is crucial for cross-domain generalization. The full model on Guardian improved from 75.71 ACC (SFT+RAC) to 81.52 ACC.
-- There is a "sweet spot" for reason token length. 32 tokens achieved optimal ACC (88.22); too short loses detail, too long adds generative overhead.
-- Teacher quality is not the sole source of performance. Replacing InternVL3.5-30B with Qwen2.5-VL-3B only reduced Guardian ACC by 0.84.
-- Explanation comes at a cost. Explainable Mode reaches 1.03 pairs/s compared to Fast Mode's 13.17 pairs/s, though Fast Mode loses no prediction accuracy.
+- The reasoning branch is not just decorative. Adding $\mathcal{L}_{LM_r}$ alone increased NYT ACC from 84.88 to 87.76 and Guardian mAP from 45.86 to 53.65.
+- GRPO is critical for cross-domain generalization, boosting Guardian ACC/mAP from 75.71/54.11 to 81.52/67.75.
+- There is a "sweet spot" for reasoning token length; 32 tokens reached the optimal ACC of 88.22.
+- Robustness to teacher quality: Replacing InternVL3.5-30B with Qwen2.5-VL-3B resulted in only minor performance drops.
+- Explainable mode carries an inference cost (1.03 pairs/s vs. 13.17 pairs/s in Fast Mode), but the dual-decoder design ensures Fast Mode retains full prediction accuracy.
 
 ## Highlights & Insights
-- The most valuable design is turning interpretability from "post-hoc display" into a "training constraint."
-- The importance of ROM lies in its category boundaries being closer to the real forgery ecosystem (background/full-gen/text-mod), forcing the model to focus on multimodal logic rather than just facial textures.
-- The dual-decoder is a practical engineering compromise, allowing for both "explanation" and "real-time screening" sessions.
-- Using the TinyBERT verifier provides a computable consistency signal for GRPO without turning rationale generation into an uncontrollable long-text reward problem.
+- The most valuable design is turning interpretability from a "post-hoc display" into a "training constraint." Unlike many papers where explanation is a byproduct, REFORM uses reasoning to drive the training objective and RL rewards.
+- ROM’s significance lies in its category boundaries, which represent the real-world forgery ecosystem. Categories like background replacement force the model to look at cross-modal logic rather than low-level facial artifacts.
+- The dual-decoder is a practical engineering compromise. It retains explainability during training while allowing a high-speed "Fast Mode" for deployment without sacrificing accuracy.
+- Using a TinyBERT verifier provides a computationally efficient consistency signal for GRPO, preventing the reasoning generation from becoming an unconstrained long-text reward problem.
 
 ## Limitations & Future Work
-- REFORM relies on distilled rationales. While human audits show rationales recall ~83% of visual/textual evidence, teacher hallucinations or templated explanations might still propagate to the student.
-- High latency in Explanation Mode (1.03 pairs/s) is suited for auditing but not all real-time scenarios; non-autoregressive generation or two-stage deployment could be explored.
-- ROM has dual-use risks. The generate pipeline and detailed prompts are not public for ethical control, which impacts external replicability.
-- Forensic rationales are currently textual; future work could combine them with visual evidence trajectories or counterfactual edits.
+- Dependency on distilled reasons: Though audit shows reasons recall >80% of evidence, teacher hallucinations or templated explanations may still propagate to the student model.
+- High latency in explanation mode: 1.03 pairs/s is suitable for auditing but not all real-time scenarios. Future work could explore non-autoregressive reasoning or two-stage deployment.
+- Dual-use risk: The authors chose not to release the generation pipeline and detailed prompts to control ethical risks, which may affect full external reproducibility.
+- Reasoning is currently text-based. Future work could combine reasoning with visual evidence trajectories or counterfactual editing to bring explanations closer to human forensic processes.
 
 ## Related Work & Insights
-- **vs HAMMER / HAMMER++**: HAMMER emphasizes feature alignment. REFORM treats the forensic reasoning chain as an optimizable object, leading to stronger cross-domain metrics.
-- **vs FKA-Owl**: FKA-Owl uses knowledge augmentation. REFORM internalizes stable judgment logic through reasoning training without needing an external retrieval agent.
-- **vs AMD**: AMD introduces Manipulation-Oriented Reasoning. REFORM goes further with rationale-answer consistency and GRPO strategy refinement, outperforming AMD's 85.92 ACC on ROM.
-- **vs MMD-Agent**: MMD-Agent uses multi-step agents with high overhead. REFORM's 376M model achieves stronger ROM performance, suggesting that "learning reasoning at training time" can replace "constructing agents at test time."
+- **vs HAMMER / HAMMER++**: HAMMER emphasizes feature alignment. REFORM treats the reasoning chain as an optimizable object, leading to stronger cross-domain performance.
+- **vs FKA-Owl**: FKA-Owl uses external knowledge, whereas REFORM internalizes stable judgment logic through reasoning training, even without a retrieval agent.
+- **vs AMD**: AMD is the closest baseline using manipulation-oriented reasoning. REFORM advances this by adding reason-answer consistency and GRPO, yielding higher accuracy on ROM.
+- **vs MMD-Agent**: MMD-Agent uses multi-step agents with 34B parameters. REFORM achieves superior performance on ROM with only 376M parameters, showing that "learning reasoning during training" can replace "constructing agents during testing."
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Specifically reformulates multimodal forgery detection as reasoning-driven optimization with a complete RL loop.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers ROM, MMFakeBench, DGM4, ablations, efficiency, and audit of rationale credibility.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Clear main line and comprehensive tables, though some appendix details and dense formulas/labels are heavy.
-- **Value**: ⭐⭐⭐⭐⭐ Directly insightful for AIGC forensics and small-model generalization via verifiable reasoning.
+- Novelty: ⭐⭐⭐⭐⭐ Reframes forgery detection as reasoning-driven optimization with a complete loop of data, architecture, and RL.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across ROM, MMFakeBench, DGM4, and detailed ablation/audit studies.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear main narrative, but dense formulas and tables in some sections make for a heavy read.
+- Value: ⭐⭐⭐⭐⭐ Directly impacts AIGC forensics and interpretable detection, offering a blueprint for verifiable reasoning supervision.
 
 <!-- RELATED:START -->
 
@@ -123,10 +136,10 @@ The focus of the training strategy is not a simple classification head but the i
 ## Related Papers
 
 - [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
-- [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](../../ICLR2026/robotics/vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
-- [\[CVPR 2026\] ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](../../CVPR2026/robotics/maniparena_comprehensive_real-world_evaluation_of_reasoning-oriented_generalist_.md)
-- [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](../../NeurIPS2025/robotics/safe_multitask_failure_detection_for_vision-language-action_models.md)
-- [\[ICML 2026\] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](../../ICML2026/robotics/decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)
+- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](../../CVPR2026/robotics/fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
+- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](../../CVPR2026/robotics/adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
+- [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](../../CVPR2026/robotics/affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
+- [\[ACL 2025\] SELF-PERCEPT: Introspection Improves LLMs' Detection of Multi-Person Mental Manipulation in Conversations](../../ACL2025/robotics/self_percept_manipulation_detection.md)
 
 </div>
 

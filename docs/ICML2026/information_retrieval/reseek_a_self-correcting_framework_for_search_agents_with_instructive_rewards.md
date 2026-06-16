@@ -2,75 +2,80 @@
 title: >-
   [Paper Note] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Search Agent] ReSeek augments RL-trained search agents with a JUDGE action and uses BGE-reranker to compute an "ideal judgment" as a process reward…
+  [ICML 2026][Information Retrieval & RAG][JUDGE action] ReSeek adds a JUDGE action to RL-trained search agents and utilizes a BGE-reranker to compute "ideal judgments" as process rewards. This enables agents to softly "mask" invalid information and re-query after retrieval. It also introduces FictionalHot, an anti-contamination benchmark based on fictional entities. ReSeek
 tags:
-  - "ICML 2026"
-  - "Information Retrieval & RAG"
-  - "Search Agent"
-  - "Self-Correction"
-  - "JUDGE action"
-  - "Process Reward"
-  - "Data Contamination Evaluation"
+  - ICML 2026
+  - Information Retrieval & RAG
+  - JUDGE action
 date: 2026-05-08
-content_hash: de4243390a83172d
+content_hash: d25ec1a578480014
 ---
-
 # ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.00568](https://arxiv.org/abs/2510.00568)  
-**Code**: https://github.com/TencentBAC/ReSeek (available)  
+**Code**: https://github.com/TencentBAC/ReSeek (Available)  
 **Area**: Information Retrieval / Search Agent / Reinforcement Learning  
 **Keywords**: Search Agent, Self-Correction, JUDGE action, Process Reward, Data Contamination Evaluation
 
 ## TL;DR
-ReSeek augments RL-trained search agents with a JUDGE action and uses BGE-reranker to compute an "ideal judgment" as a process reward, enabling the agent to softly "mask" irrelevant information and re-query after each retrieval. It also introduces FictionalHot, a contamination-resistant benchmark based on fictional entities. On Qwen2.5-7B, the average EM reaches 0.377, +3.1 higher than ZeroSearch.
+ReSeek adds a JUDGE action to RL-trained search agents and utilizes a BGE-reranker to compute "ideal judgments" as process rewards. This enables agents to softly "mask" invalid information and re-query after retrieval. It also introduces FictionalHot, an anti-contamination benchmark based on fictional entities. ReSeek achieves an average EM of 0.377 on Qwen2.5-7B, a +3.1 improvement over ZeroSearch.
 
 ## Background & Motivation
 
-**Background**: LLM-based search agents (e.g., Search-R1, ZeroSearch, DeepResearcher, WebThinker) are trained via RL to perform multi-step "think-search-reason" cycles, significantly outperforming single-step RAG on knowledge-intensive tasks. The mainstream approach models the task as an MDP and optimizes the policy using RL algorithms such as GRPO/PPO.
+**Background**: LLM search agents (Search-R1, ZeroSearch, DeepResearcher, WebThinker, etc.) utilize RL training to let LLMs learn multi-step "think-search-reason" cycles, significantly surpassing single-step RAG in knowledge-intensive tasks. The standard approach models the task as an MDP and optimizes policies using RL algorithms like GRPO or PPO.
 
-**Limitations of Prior Work**: (1) **Sparse reward signals**—most methods only provide an EM reward ("is the answer correct") at the final step (e.g., Search-R1, ZeroSearch), with no feedback for intermediate steps, making credit assignment difficult; (2) **Lack of self-correction**—if early search queries are poor (e.g., "creator of Saddle Rash" returns only a show description, not the birthdate), the agent gets stuck and produces chained errors; (3) **Evaluation contamination**—main benchmarks (NQ, TriviaQA, HotpotQA) are heavily present in LLM pretraining corpora, so high scores may reflect memorization rather than genuine reasoning.
+**Limitations of Prior Work**: **(1) Sparse reward signals**—most methods only provide an EM reward for "answer correctness" at the final step (Search-R1, ZeroSearch), with no feedback for intermediate steps, causing credit assignment difficulties; **(2) Lack of self-correction mechanisms**—if early search queries are poor, the agent tends to follow a dead end and generate incorrect answers; **(3) Evaluation contamination**—mainstream benchmarks (NQ, TriviaQA, HotpotQA) appear extensively in LLM pre-training corpora, meaning high scores may reflect memory rather than reasoning.
 
-**Key Challenge**: RL agents require dense, instructive intermediate feedback to learn "is this clue useful, should I change the query," but such feedback traditionally requires costly human annotation or a specially trained PRM (process reward model). How to provide reliable process rewards without extra training cost remains an open problem.
+**Key Challenge**: RL agents require dense, instructive intermediate feedback to learn how to evaluate if a clue is useful or if a query change is needed. Traditionally, this requires expensive manual annotation or a specialized Process Reward Model (PRM). Providing reliable process rewards without additional training costs remains an open problem.
 
-**Goal**: Enable search agents to "self-evaluate" the usefulness of retrieved information mid-episode, replanning if necessary rather than stubbornly answering; also, provide a clean, contamination-free evaluation bed.
+**Goal**: Enable search agents to "self-evaluate" retrieved information mid-episode, allowing them to re-plan if info is useless rather than forcing an answer. Simultaneously, provide a clean, uncontaminated evaluation environment.
 
-**Key Insight**: The authors observe that humans naturally "pause after reading each search result, judge its usefulness, and decide whether to change keywords" during web research. This judgment can be objectively approximated using a reranker model (bge-reranker-large) to compute the semantic similarity between the observation and ground truth—rewarding correct judgments and penalizing incorrect ones. The reranker is pretrained and requires no additional training.
+**Key Insight**: Humans naturally "pause after reading each search result, judge its utility, and decide whether to change keywords." This judgment action can be computed using a reranker model (bge-reranker-large) to calculate the "semantic similarity between observations and ground truth" as an objective reference. The agent is rewarded for correct judgments and penalized for incorrect ones. Since the reranker is pre-trained, no additional training is required.
 
-**Core Idea**: Make "self-judgment" an explicit agent action (<judge>Yes/No</judge>), use the reranker to compute the "ideal judgment" as a process reward, and provide dense supervision for this ability. Simultaneously, construct the fully fictional FictionalHot dataset to force agents to rely on retrieval rather than memorization.
+**Core Idea**: Explicitly model "self-judgment" as an agent action (`<judge>Yes/No</judge>`) and use the reranker to calculate "ideal judgments" as process rewards to supervise this capability. Construct a completely fictional FictionalHot dataset to force agents to rely on retrieval rather than memory.
 
 ## Method
 
 ### Overall Architecture
-The agent uses a GRPO-optimized LLM policy $\pi_\theta$, with an action space that adds a `<judge>` action to the standard `<search>` / `<answer>`. Each round: the agent thinks → decides whether to search → after searching, must execute judge → based on the judge result, decides the next step (search again / answer). The reward has two parts: (1) terminal EM reward $R_{\text{answer}}$, (2) process reward $R_{\text{judge}}$ at each judge step, computed by BGE-reranker as the reference "ideal judgment." The pipeline is trained on 169k NQ + HotpotQA samples, deployed on Qwen2.5-3B/7B-Instruct, with Wiki-18 + E5 embedding as the retrieval corpus.
+The agent uses a GRPO-optimized LLM policy $\pi_\theta$. The action space includes a `<judge>` action in addition to standard `<search>` and `<answer>` actions. In each round: the agent thinks → decides whether to search → executes a mandatory judge after searching → decides the next step (re-search or answer) based on the judge result. Rewards consist of: (1) Terminal EM reward $R_{\text{answer}}$, and (2) Process reward $R_{\text{judge}}$ based on the BGE-reranker's "ideal judgment." This pipeline is trained on 169k NQ + HotpotQA samples, deployed on Qwen2.5-3B/7B-Instruct, using Wiki-18 + E5 embeddings for retrieval.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Query"] --> T["Think"]
+    T --> S["Search<br/>top-k=3 · Wiki-18 + E5"]
+    S --> J["JUDGE Action & Soft Masking<br/>Output Yes/No into context"]
+    RR["Reranker-based Dense Process Reward<br/>BGE-reranker calculates ideal j*"] -.->|"Reward +0.3 / Penalty −0.6"| J
+    J -->|"No: Soft mask & re-query"| T
+    J -->|"Yes: Info valid"| A["Answer"]
+    A --> EM["Terminal EM Reward R_answer"]
+    EM --> G["GRPO End-to-End Optimization"]
+    A -.Evaluation.-> F["FictionalHot Anti-contamination Benchmark"]
+```
 
 ### Key Designs
 
-1. **JUDGE Action and Soft Masking Mechanism**:
+1.  **JUDGE Action and Soft Masking Mechanism**:
+    *   **Function**: Provides the agent with meta-cognitive abilities to evaluate newly retrieved results, transforming the reasoning chain from static linearity into a dynamic self-correcting loop.
+    *   **Mechanism**: After each `<search>`, the agent must output `<judge>Yes</judge>` or `<judge>No</judge>`, which is appended to the context: $\mathcal{C}_t = \tau_{t-1} \oplus a_t \oplus o_t \oplus j_t$. "No" does not physically delete the observation but acts as a "soft mask"—marking the information as irrelevant. The policy notes this rejection and tends to re-query. The observation remains in the context to prevent repeating failed paths. Strict if-then rules are enforced via prompt: "If judge=No, you must search again."
+    *   **Design Motivation**: Physical deletion can lead to repeated errors. Soft masking prevents error propagation while retaining meta-information about failed attempts. Making judgment an internal action allows the policy to learn when to re-evaluate end-to-end.
 
-    - **Function**: Empowers the agent with metacognitive ability to "evaluate whether the just-retrieved result is useful," turning the reasoning chain from static linear to dynamic self-correcting loops.
-    - **Mechanism**: After each `<search>`, the agent is forced to output `<judge>Yes</judge>` or `<judge>No</judge>`. This label $j_t$ is appended to the context: $\mathcal{C}_t = \tau_{t-1} \oplus a_t \oplus o_t \oplus j_t$, and the agent samples the next action based on this labeled context. "No" does not physically delete the observation but "softly masks" it—marking the irrelevant information so the policy is more likely to change the query rather than continue based on wrong info. The observation remains in context, providing a record of "already tried paths" for reflection. The prompt uses strict if-then rules (Table 1) to enforce: "If judge=No, you must search again and cannot answer directly," producing structured trajectories even on untrained LLMs and providing a clean starting point for RL training.
-    - **Design Motivation**: Physically deleting observations leads to repeated mistakes; soft masking prevents error propagation while retaining meta-information about failed paths. Making judge an internal action (not an external module) allows the policy to learn end-to-end when to re-evaluate.
+2.  **Reranker-based Dense Process Rewards**:
+    *   **Function**: Converts sparse EM signals into dense feedback for every step, specifically rewarding the agent's judgment of observation utility.
+    *   **Mechanism**: Define "ideal judgment" $j^*_t$: if BGE-reranker similarity between observation $o_t$ and ground truth $gt > 0.7$, then $j^*_t = \text{Yes}$, else No. Process reward $R_{\text{judge}}$ is given based on consistency with $j^*_t$: **+0.3** for correct judgment (Yes=Yes or No=No). An asymmetric penalty is applied for errors: **-0.6** for "Incorrectly accepting useless info" and **-0.3** for "Incorrectly discarding useful info." Final target $R(\tau) = \sum_t \gamma^{t-1} r_t$, optimized via GRPO.
+    *   **Design Motivation**: Rerankers are lightweight, stable, and avoid new biases compared to LLM-as-a-judge. Asymmetric penalties reflect that accepting useless info derails the entire trajectory (high cost), while discarding useful info only wastes a query (low cost).
 
-2. **Reranker-Based Dense Process Reward**:
-
-    - **Function**: Converts sparse EM signals into dense stepwise feedback, specifically rewarding the agent for "correctly judging whether an observation is useful."
-    - **Mechanism**: Defines the "ideal judgment" $j^*_t$ as: if BGE-reranker computes the semantic similarity between observation $o_t$ and ground truth gt as $> 0.7$, then $j^*_t = \text{Yes}$, otherwise No (threshold 0.7 validated by grid search). Each time the agent executes a judge action, $R_{\text{judge}}$ is given based on whether $j_t$ matches $j^*_t$: **correct** judgments are rewarded +0.3 (whether correctly accepting Yes=Yes or correctly rejecting No=No), **incorrect** judgments are penalized asymmetrically—"wrongly accepting useless info" is penalized -0.6 (double strength), "wrongly discarding useful info" is penalized -0.3. The full training objective is $R(\tau) = \sum_t \gamma^{t-1} r_t$, with $r_{t<T} = R_{\text{judge}}$ for intermediate steps and $r_T = R_{\text{answer}} = \text{EM}(A_p, A_g)$ for the terminal step, optimized by GRPO.
-    - **Design Motivation**: Why use a reranker instead of LLM-as-judge? The reranker is lighter, more stable, and introduces no new biases. Why asymmetric penalties? Accepting useless info derails the entire trajectory (high cost), while discarding useful info only wastes a query (lower cost)—this asymmetry matches the real-world error cost distribution.
-
-3. **FictionalHot Contamination-Resistant Benchmark**:
-
-    - **Function**: Removes "pseudo-high scores" from LLM memorization, truly testing reasoning and retrieval ability.
-    - **Mechanism**: Randomly samples 10% (5,116) from six mainstream QA datasets (NQ/TriviaQA/PopQA/HotpotQA/2Wiki/Musique, total 51,588 samples) as seeds, and rewrites them using GPT-5—replacing real entities (e.g., Taylor Swift) with fictional ones (e.g., Lila Starling), preserving the original reasoning structure. GPT-5 also generates Wikipedia-style support documents for these fictional entities, setting new fictional facts (e.g., album release year 2007) as new GT. These fictional samples are inserted into the 2018 Wikipedia corpus to form a closed-world evaluation bed. Any "memory-based" method will fail on FictionalHot (Direct Inference ≈ 0.001); only methods that truly retrieve and reason can score.
-    - **Design Motivation**: Table 2 compares evaluation setups of seven prior works, revealing inconsistencies in corpus (static wiki vs live internet), test set, training set, and metrics. The authors argue this fragmentation obscures real capability differences; FictionalHot is both contamination-resistant and reproducible, providing a standard bed for the search agent community.
+3.  **FictionalHot Anti-contamination Benchmark**:
+    *   **Function**: Strips away "pseudo-high scores" from LLM memory to test true reasoning and retrieval capabilities.
+    *   **Mechanism**: Randomly samples 10% (5,116) from 6 mainstream QA datasets as seeds. Uses GPT-5 to rewrite real entities (e.g., Taylor Swift) into fictional ones (e.g., Lila Starling) while preserving reasoning structure. Wikipedia-style documents are generated for these fictional entities with new facts as ground truths. These are inserted into the 2018 Wikipedia corpus. Memory-based methods drop significantly on this benchmark.
+    *   **Design Motivation**: Fragmentation in prior evaluation settings hides true capability differences. FictionalHot provides a standardized, reproducible, and anti-contamination testbed for the search agent community.
 
 ### Loss & Training
-
-- **RL Algorithm**: GRPO by default, using the same unified NQ+HotpotQA training set as Search-R1 (169,615 pairs).
-- **Hyperparameters**: retrieval top-k=3, max 4 turns, 16×H20 GPU, E5 embedding + Wiki-18.
-- **Reward Parameters**: reranker threshold 0.7, $R_{\text{match}} = +0.3$, $R_{\text{mismatch}}^{\text{accept-wrong}} = -0.6$, $R_{\text{mismatch}}^{\text{reject-right}} = -0.3$.
-- **Structured Prompt**: Enforces the `<think>` → `<search>` → `<judge>` → conditional branch → `<answer>` flow (Table 1), ensuring parseable trajectories.
+*   **RL Algorithm**: GRPO is the default, using the same unified NQ+HotpotQA training set as Search-R1 (169,615 pairs).
+*   **Hyperparameters**: Retrieval top-k=3, max 4 turns, 16×H20 GPUs, E5 embedding + Wiki-18.
+*   **Reward Parameters**: Reranker threshold 0.7, $R_{\text{match}} = +0.3$, $R_{\text{mismatch}}^{\text{accept-wrong}} = -0.6$, $R_{\text{mismatch}}^{\text{reject-right}} = -0.3$.
+*   **Structured Prompt**: Enforces the workflow: `<think>` → `<search>` → `<judge>` → Conditional Branch → `<answer>`.
 
 ## Key Experimental Results
 
@@ -90,55 +95,45 @@ The agent uses a GRPO-optimized LLM policy $\pi_\theta$, with an action space th
 
 | Component (Qwen2.5-7B) | Avg EM | Gain | Note |
 |---|---|---|---|
-| $R_{\text{answer}}$ only (=Search-R1) | 0.288 | baseline | Only terminal EM reward |
-| + judge Action (rule only) | 0.297 | +3.1% | Adds judge action + forced prompt |
-| + $R_{\text{judge}}$ (full ReSeek) | **0.312** | **+8.3%** | Adds reranker process reward |
-| Reranker Type: None | 0.259 | - | No reranker at all |
-| Regex-based | 0.301 | - | Keyword-matching heuristic |
-| Qwen-Reranker | 0.311 | - | Replaced with Qwen reranker |
-| BGE-Reranker (ReSeek) | **0.312** | - | Default choice |
-
-| Reranker-only vs RL-trained (Qwen2.5-7B) | Avg EM |
-|---|---|
-| Search-R1 baseline | 0.342 |
-| + Reranker-only intervention (no RL) | 0.354 (+1.2) |
-| + Prompt-only judge (no RL) | 0.349 (+0.7) |
-| **ReSeek (GRPO full)** | **0.377 (+3.5)** |
+| $R_{\text{answer}}$ only (=Search-R1) | 0.288 | baseline | Terminal EM reward only |
+| + judge Action (rule only) | 0.297 | +3.1% | Judge action + mandatory prompt only |
+| + $R_{\text{judge}}$ (full ReSeek) | **0.312** | **+8.3%** | Adding reranker process rewards |
+| Reranker Type: None | 0.259 | - | No reranker |
+| Regex-based | 0.301 | - | Keyword match heuristic |
+| Qwen-Reranker | 0.311 | - | Swapped with Qwen reranker |
+| BGE-Reranker (ReSeek) | **0.312** | - | Default selection |
 
 ### Key Findings
-- **Greater gains on multi-hop tasks**: ReSeek shows significant improvements (+5-12%) on tasks requiring 2-3 hops (HotpotQA, Bamboogle, Musique), while on single-hop tasks (TriviaQA) it occasionally lags behind ZeroSearch—demonstrating that self-correction is most valuable for long reasoning chains.
-- **FictionalHot exposes all methods**: Direct Inference is nearly 0; even the best ReSeek achieves only 0.061. On TriviaQA, 7B vs 3B differs by 0.408 vs 0.288 (+12%), but on FictionalHot, scores are nearly identical (0.061 vs 0.059), confirming that FictionalHot truly tests reasoning, not memorization.
-- **Turn budget analysis (Figure 4)**: Other baselines benefit most from 1→2 turns, saturating at 3-4; ReSeek increases monotonically up to 4 turns, indicating that extra budget is used for "re-querying," while other methods waste it.
-- **Asymmetric penalty is crucial**: Empirically, "wrongly accepting (-0.6) > wrongly discarding (-0.3)" outperforms symmetric penalties—agents learn "better to over-query than answer blindly."
-- **Reranker vs RL decoupling**: Reranker-only yields +1.2, but adding RL training brings an additional +2.3, showing that RL not only amplifies the reranker signal but also teaches the agent to **use judgment appropriately** in context—a meaningful decoupling experiment.
+-   **Gains are higher for multi-hop tasks**: ReSeek shows significant improvements (+5-12%) on HotpotQA, Bamboogle, and Musique. On single-hop tasks (TriviaQA), it occasionally lags behind ZeroSearch, confirming self-correction's primary value in long reasoning chains.
+-   **FictionalHot reveals the memory gap**: Direct Inference drops to nearly 0; ReSeek leads but only reaches 0.061. This validates that FictionalHot measures reasoning rather than memory.
+-   **Turn Budget Analysis**: Other baselines saturate after 2 turns. ReSeek continues to improve up to 4 turns, indicating extra budget is effectively used for re-querying.
+-   **Asymmetric Penalty Is Effective**: Empirical results show "Incorrect Acceptance (-0.6) > Incorrect Rejection (-0.3)" performs better—learning to prefer more searches over blind answering.
+-   **Reranker vs RL Decoupling**: Pure Reranker intervention provides +1.2, but adding RL training provides an additional +2.3. This shows RL teaches the agent how to **properly use** its judgment within context.
 
 ## Highlights & Insights
-- **Using pretrained reranker as PRM (Process Reward Model)**: Traditionally, a separate PRM is trained at high cost and instability; the authors use the off-the-shelf bge-reranker-large as the "ideal judgment" reference, plug-and-play, introducing no new bias—this approach is generalizable to any RL task where "intermediate steps can be evaluated by a pretrained discriminator."
-- **JUDGE as an internal action, not an external module**: Unlike ReAct's "Thought → Action → Observation" loop, ReSeek makes judge part of the policy, enabling RL to learn end-to-end "when to pause and evaluate, what evidence counts as useful." This "explicit metacognitive action" is a reusable paradigm for agentic LLM design.
-- **Asymmetric reward design**: The penalty for wrongly accepting vs wrongly rejecting differs by a factor, matching real-world cost asymmetry—many RL works use symmetric rewards, but this nuanced design is instructive.
-- **FictionalHot's construction method is itself a contribution**: Standardizing "LLM rewriting + synthetic Wikipedia entries" as a pipeline allows any subfield to create its own "contamination-resistant" version—much more constructive than merely complaining about data contamination.
-- **"Soft masking" instead of "hard deletion"**: Observations judged as No remain in context as "failed attempts," preventing the agent from repeatedly trying the same dead end—this explicit failure trace design is clever.
+-   **Pre-trained Reranker as PRM**: Instead of training a separate PRM, using bge-reranker-large as an "ideal judgment" reference is plug-and-play and avoids new biases.
+-   **JUDGE as an Internal Action**: Unlike ReAct's free-form thought, ReSeek treats judgment as a typed action within the policy. This "explicit meta-cognitive action" is a reusable paradigm for agentic LLMs.
+-   **Asymmetric Reward Design**: Penalizing incorrect acceptance more heavily matches the real-world cost asymmetry of reasoning tasks.
+-   **FictionalHot Methodology**: The "LLM rewriting + synthetic Wiki" pipeline is a constructive contribution toward addressing data contamination.
+-   **"Soft Masking" over "Hard Deletion"**: Maintaining rejected observations as memory of "explored failed paths" prevents agents from repeatedly attempting the same incorrect queries.
 
 ## Limitations & Future Work
-- Training uses ground truth to compute "ideal judgment," but at deployment, the agent has no GT for reference—fortunately, the agent has already learned to judge and does not need to compute reranker online; however, whether the reranker threshold 0.7 is robust across domains or needs adaptation is not discussed.
-- Only validated on QA benchmarks; whether the judge ability generalizes to open-ended tasks (e.g., writing reviews, conducting research) is untested.
-- FictionalHot is rewritten by GPT-5, so rewrite quality depends on GPT-5; long-term, manual sanity checks may be needed to prevent new biases.
-- Training data is limited to NQ + HotpotQA; transferability to corpora with greater domain differences or the need for in-domain training data is not discussed.
-- BGE-reranker and Qwen-reranker differ minimally (0.312 vs 0.311); no ablation on reranker strength's impact on the ceiling—possibly, reranker is not the bottleneck, and judge learning itself is.
-- Only compared up to Qwen2.5; integration with the latest R1/o1-type reasoning models is not explored.
+-   Dependencies on Ground Truth during training; however, the agent learns to judge during inference without needing the reranker or GT.
+-   Validation is limited to QA benchmarks; generalization to open-ended tasks like report writing remains untested.
+-   The quality of FictionalHot depends on GPT-5; future iterations may need human sanity checks to ensure no new biases are introduced in the rewriting process.
+-   The training data is restricted to NQ + HotpotQA; transferability to highly disparate domains requires further investigation.
 
 ## Related Work & Insights
-- **vs Search-R1 (Jin 2025)**: Search-R1 trains GRPO with sparse EM rewards, prone to early error chains; ReSeek adds judge action and reranker process reward, directly improving EM by +3.5—demonstrating the value of process rewards under the same baseline.
-- **vs ReAct (Yao 2022)**: ReAct uses a Thought/Action/Observation loop, but thought is free-form and unsupervised; ReSeek makes self-evaluation an explicit typed action with reward, enabling end-to-end RL learning—more structured and trainable.
-- **vs AgentPRM (Xi 2026)**: AgentPRM trains a separate PRM to score the agent; ReSeek uses a reranker instead, reducing training cost and embedding judge as an action rather than an external scorer—lower cost, tighter integration.
-- **vs Reflexion / Self-Refine**: These methods perform "post-hoc reflection" to correct the next trajectory; ReSeek does "in-episode correction," changing queries within the same episode for more timely response.
-- **vs S2R (Ma 2025)**: S2R trains self-verification for mathematical reasoning; ReSeek applies this idea specifically to search (reranker signal + judge action), making it more targeted.
+-   **vs Search-R1 (Jin 2025)**: Search-R1 uses sparse EM rewards. ReSeek adds judge actions and process rewards, leading to a +3.5 EM gain over the baseline.
+-   **vs ReAct (Yao 2022)**: ReAct uses free-form thoughts; ReSeek uses typed actions with RL supervision, making it more structured and trainable.
+-   **vs AgentPRM (Xi 2026)**: AgentPRM trains a separate PRM. ReSeek uses a pre-trained reranker to eliminate training costs, and embeds judgment as an internal action.
+-   **vs Reflexion**: While Reflexion corrects after a full trajectory, ReSeek provides mid-episode correction via re-querying.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ judge action + reranker as PRM + FictionalHot are all relatively novel, though each has predecessors
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 datasets + 4 baselines + 6 ablations + turn budget analysis, very comprehensive
-- Writing Quality: ⭐⭐⭐⭐ Figure 1's comparative example is intuitive, Table 2 convincingly illustrates evaluation fragmentation
-- Value: ⭐⭐⭐⭐⭐ Provides both a method (judge action + process reward) and an evaluation bed (FictionalHot), with the latter potentially contributing even more to the community
+-   Novelty: ⭐⭐⭐⭐
+-   Experimental Thoroughness: ⭐⭐⭐⭐⭐
+-   Writing Quality: ⭐⭐⭐⭐
+-   Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -148,9 +143,9 @@ The agent uses a GRPO-optimized LLM policy $\pi_\theta$, with an action space th
 
 - [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](../../ACL2026/information_retrieval/multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
 - [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](../../ACL2026/information_retrieval/enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
+- [\[ACL 2025\] SGIC: A Self-Guided Iterative Calibration Framework for RAG](../../ACL2025/information_retrieval/sgic_a_self-guided_iterative_calibration_framework_for_rag.md)
+- [\[CVPR 2025\] GENIUS: A Generative Framework for Universal Multimodal Search](../../CVPR2025/information_retrieval/genius_a_generative_framework_for_universal_multimodal_search.md)
 - [\[ACL 2026\] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents](../../ACL2026/information_retrieval/rerank_before_you_reason_analyzing_reranking_tradeoffs_through_effective_token_c.md)
-- [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](../../ACL2026/information_retrieval/can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
-- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
 
 </div>
 

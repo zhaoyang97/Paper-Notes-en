@@ -1,21 +1,16 @@
 ---
 title: >-
-  [Paper Note] YAQA: End-to-End KL Minimization LLM Adaptive Weight Quantization
+  [Paper Note] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化
 description: >-
-  [ICML 2026][LLM/NLP][Quantization] YAQA replaces the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." By using a Kronecker-decomposed Hessian sketc…
+  [ICML 2026][LLM (Other)][Quantization] YAQA shifts the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." Using a Hessian sketch via Kronecker decomposition, it provides the first end-to-end error bound. It reduces KL divergence by approximately 30% compared to GPTQ/LDLQ, even outperform
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "Quantization"
-  - "Adaptive Rounding"
-  - "End-to-end KL"
-  - "Hessian Sketching"
-  - "Kronecker Decomposition"
+  - ICML 2026
+  - LLM (Other)
+  - Quantization
 date: 2026-05-08
-content_hash: 0256f8dd1f217952
+content_hash: f818da777dedca90
 ---
-
-# YAQA: End-to-End KL Minimization LLM Adaptive Weight Quantization
+# YAQA: End-to-End KL Minimizing Adaptive Weight Quantization for LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2505.22988](https://arxiv.org/abs/2505.22988)  
@@ -24,123 +19,145 @@ content_hash: 0256f8dd1f217952
 **Keywords**: Quantization, Adaptive Rounding, End-to-end KL, Hessian Sketching, Kronecker Decomposition
 
 ## TL;DR
-YAQA replaces the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." By using a Kronecker-decomposed Hessian sketch, it provides the first end-to-end error bound. It reduces KL divergence by approximately 30% relative to GPTQ/LDLQ, achieves higher accuracy than Quantization-Aware Training (QAT), and maintains unchanged inference speed.
+YAQA shifts the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." Using a Hessian sketch via Kronecker decomposition, it provides the first end-to-end error bound. It reduces KL divergence by approximately 30% compared to GPTQ/LDLQ, even outperforming Quantization-Aware Training (QAT) in accuracy, while maintaining the same inference speed.
 
 ## Background & Motivation
 
-**Background**: LLM quantization follows two paths—QAT learns low-precision representations by modifying the training process, offering high quality but at immense cost; PTQ maps full-precision weights to a discrete codebook post-hoc (e.g., GPTQ/LDLQ), which is popular due to its low cost. GPTQ uses the Hessian of "current layer activation error" $H_1 = \mathbb{E}[x^\top x]$ as a proxy for end-to-end error.
+**Background**: LLM quantization follows two main paths: QAT modifies the training process to learn low-precision representations, offering high quality but at immense cost; PTQ performs post-hoc rounding to map full-precision weights to a discrete codebook. Representative methods like GPTQ/LDLQ are popular due to their efficiency. GPTQ uses the Hessian of the "current layer activation error" $H_1 = \mathbb{E}[x^\top x]$ as a proxy for end-to-end error.
 
-**Limitations of Prior Work**: $H_1$ only considers the input distribution of the current layer, completely ignoring how subsequent layers amplify or cancel out rounding errors. Consequently, "layer-wise optimal" does not equal "model-level optimal," often leading to unnecessarily high KL divergence. GuidedQuant/SqueezeLLM use block-diagonal approximations of the Empirical Fisher, but these originate from cross-entropy task loss rather than the true KL Hessian. Their block structures are heuristic without theoretical guarantees—empirically, increasing the number of blocks leads to inconsistent results.
+**Limitations of Prior Work**: $H_1$ only considers the input distribution of the current layer, completely ignoring how subsequent layers amplify or cancel out the rounding error of the current layer. Consequently, "layer-wise optimality" does not equal "global model optimality," often leading to unnecessarily high KL divergence. GuidedQuant/SqueezeLLM use block-diagonal approximations of the empirical Fisher, but these are derived from cross-entropy task loss rather than true KL Hessian; furthermore, their block structures are heuristic, lacking theoretical guarantees—empirically, increasing the number of blocks leads to inconsistent results.
 
-**Key Challenge**: Direct adaptive rounding against $\nabla^2 L(W^*) \in \mathbb{R}^{mn \times mn}$ (the true KL Hessian with respect to a layer's weights) suffers from scale explosion. To maintain a tractable structure, the approximation quality must be provable. Existing structural approximations either lack bounds or approximate poorly.
+**Key Challenge**: Directly performing adaptive rounding using $\nabla^2 L(W^*) \in \mathbb{R}^{mn \times mn}$ (the true KL Hessian with respect to weights of a single layer) results in a scale explosion. To maintain a tractable structure, one must ensure provable approximation quality. Existing structural approximations either lack bounds or provide poor approximations.
 
-**Goal**: Find a structured Hessian sketch that allows LDLQ-style iterative rounding within $O(m+n)$ steps while strictly controlling end-to-end KL through "cosine similarity with the true Hessian."
+**Goal**: To find a structured Hessian sketch that allows LDLQ-style iterative rounding in $O(m+n)$ steps while strictly controlling end-to-end KL divergence through "cosine similarity to the true Hessian."
 
-**Key Insight**: The authors introduce "Structural Nilpotence Degree" (SND), a combinatorial quantity, to characterize the convergence steps of LDLQ. They prove that for a Kronecker product $L_O \otimes L_I$, $\mathrm{snd}(L_O \otimes L_I) = \mathrm{snd}(L_O) + \mathrm{snd}(L_I) \le m+n-1$, which maps "tractable computation" directly onto Kronecker decomposition.
+**Key Insight**: The authors introduce "Structural Nilpotency Degree" (SND), a combinatorial quantity, to characterize the convergence steps of LDLQ. They prove that for a Kronecker product $L_O \otimes L_I$, $\mathrm{snd}(L_O \otimes L_I) = \mathrm{snd}(L_O) + \mathrm{snd}(L_I) \le m+n-1$. This maps "tractable computation" directly onto Kronecker decomposition.
 
-**Core Idea**: Use Kronecker decomposition $\tilde{H} = H_O \otimes H_I$ as an approximation of $\nabla^2 L(W^*)$. Obtain "near-optimal" $H_O, H_I$ via power iteration on the true Fisher. The rounding algorithm adds a symmetric output-side feedback component to LDLQ, significantly lowering KL while taking $\approx 2\times$ LDLQ time.
+**Core Idea**: Utilize a Kronecker decomposition $\tilde{H} = H_O \otimes H_I$ as an approximation of $\nabla^2 L(W^*)$. "Near-optimal" factors $H_O$ and $H_I$ are obtained via power iterations on the true Fisher. The rounding algorithm adds a symmetric output-side feedback component to LDLQ, significantly lowering KL divergence in $\approx 2\times$ the time of LDLQ.
 
 ## Method
 
 ### Overall Architecture
 
-YAQA consists of two components: (1) **Rounding Algorithm**—generalizing LDLQ to a Kronecker-decomposed Hessian sketch, resulting in $W = Q(W^* + L_O'^{\top} \Delta L_I' + L_O'^{\top} \Delta + \Delta L_I')$, where $L_O', L_I'$ are the LDL triangular factors of $H_O, H_I$ minus the identity matrix, and $\Delta = W^* - W$; (2) **Hessian Sketching**—constructing $H_O, H_I$ via power iteration to maximize the alignment between $\tilde{H}$ and the true Hessian under the Frobenius inner product. This process is performed independently for each linear layer without changing the inference structure; thus, the inference speed is determined by the codebook (e.g., E8P) and is unrelated to YAQA.
+YAQA treats the quantization of a single layer's weights as "finding an optimal integer point within an ellipsoid defined by the true Hessian." The optimization target is the end-to-end KL divergence (Eq 1). After a second-order approximation, the ellipsoid is defined by the true Hessian $\nabla^2 L(W^*) \in \mathbb{R}^{mn \times mn}$. Since it is too large for direct use, a Kronecker sketch $\tilde{H} = H_O \otimes H_I$ is used for approximation. Kronecker is chosen for two theoretical reasons: SND ensures that generalized LDLQ under this structure still converges rapidly within $m+n$ steps, and the end-to-end KL error bound proves that as long as the sketch is directionally close to the true Hessian (higher cosine similarity $c$), the KL of the output distribution is minimized. The algorithm follows two steps: first, compute near-optimal $H_O, H_I$ via power iterations on the true Fisher (Sketch A/B variants); second, use generalized LDLQ fixed-point iteration with both input-side and output-side feedback to round weights to the codebook. Each linear layer is processed independently without changing the inference structure; inference speed is determined solely by the codebook (e.g., E8P) and is independent of YAQA.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T1["Structural Nilpotency Degree (SND)<br/>Low SND ⇒ Generalized LDLQ converges in m+n steps"] --> CH
+    T2["End-to-End KL Error Bound<br/>KL constrained by sketch/Hessian cosine similarity c"] --> CH
+    W["Full-precision weights W* + Calibration data"] --> SK
+    CH["Select Kronecker Sketch<br/>H̃ = H_O ⊗ H_I"] --> SK
+    subgraph SK["Scalable Kronecker Hessian Sketch"]
+        direction TB
+        S1["Power iteration on true Fisher<br/>Sketch A: token-independent / Sketch B: one-pass sequence-level"] --> S2["Near-optimal factors H_O, H_I"]
+    end
+    W --> R
+    SK --> R["Generalized LDLQ Bidirectional Feedback Rounding<br/>Symmetric input+output feedback, m+n step fixed-point iteration"]
+    R --> OUT["Quantized weights W (Codebook via E8P, zero inference overhead)"]
+```
 
 ### Key Designs
 
-1. **SND + Kronecker Hessian for End-to-End LDLQ**:
+**1. Structural Nilpotency Degree (SND): Selecting Hessian structures for efficient LDLQ**
 
-    - **Function**: Characterizes the Hessian structures that allow "tractable LDLQ" and selects an optimal one.
-    - **Mechanism**: Defines $\mathrm{snd}(L)$ as the nilpotence degree of a binary nilpotent matrix sharing the same support as $L - I$, proving LDLQ converges in $\le \mathrm{snd}(L)$ steps. For the Kronecker product $L_O \otimes L_I$, $\mathrm{snd}$ is the sum of the degrees of both sides. Thus, $\tilde{H} = H_O \otimes H_I$ allows symmetric "input + output" feedback while requiring only $O(m+n)$ small matrix multiplications. Under this framework, GuidedQuant is equivalent to running LDLQ on a block-diagonal approximation without output feedback, explaining its saturation beyond 4 blocks.
-    - **Design Motivation**: Previous PTQ algorithms forced a choice between "layer-wise $H_1$ (no output feedback)" or "QAT (expensive but global)." Kronecker is the first structure to achieve "end-to-end" and "tractable" simultaneously.
+Past PTQ methods chose between two extremes: layer-wise $H_1 = \mathbb{E}[x^\top x]$ (cheap but lacks output-side feedback) or QAT (globally optimal but expensive). YAQA seeks an intermediate structure that allows end-to-end feedback while permitting fast rounding. The authors define "Structural Nilpotency Degree" $\mathrm{snd}(L)$ as the nilpotency of a binary nilpotent matrix with the same support as $L-I$, proving that LDLQ fixed-point iteration converges in $\le \mathrm{snd}(L)$ steps. A key property is that for Kronecker products, $\mathrm{snd}(L_O \otimes L_I) = \mathrm{snd}(L_O) + \mathrm{snd}(L_I) \le m+n-1$. Thus, $\tilde{H} = H_O \otimes H_I$ allows symmetric feedback from both input $L_I$ and output $L_O$ using only $O(m+n)$ steps of small matrix multiplications. This also explains why GuidedQuant saturates beyond 4 blocks: it effectively runs LDLQ on a block-diagonal approximation lacking output-side feedback.
 
-2. **End-to-End KL Error Bound + Cosine Similarity Objective**:
+**2. End-to-End KL Error Bound: Sketch selection as an optimization target via Cosine Similarity**
 
-    - **Function**: Formulates the model KL upper bound based on the relationship between the Hessian sketch and the true Hessian, guiding the selection of $H_O, H_I$.
-    - **Mechanism**: Theorem 3.4 proves $\mathrm{vec}(\Delta) H \, \mathrm{vec}(\Delta)^\top \le \|H\|_F (\|\Delta\|_F^2 \sqrt{2 - 2c} + \text{(incoherence/trace term)})$, where $c = \langle H, H_O \otimes H_I \rangle / (\|H\|_F \|H_O\|_F \|H_I\|_F)$ is the cosine similarity. This implies that the closer the sketch is "in direction" to the true Hessian, the tighter the end-to-end KL bound. Simultaneously, $H_O, H_I$ must maintain low incoherence and low rank.
-    - **Design Motivation**: This is the first time any quantization algorithm has obtained an end-to-end error bound, upgrading "Hessian sketch selection" from empirical heuristics to an optimizable objective. Cosine similarity suggests using power iteration for approximation.
+Having an efficient structure is not enough; one must know which $H_O, H_I$ actually minimize the model's output KL. Theorem 3.4 expresses the end-to-end error upper bound as the geometric relationship between the sketch and the true Hessian: $\mathrm{vec}(\Delta)\, H\, \mathrm{vec}(\Delta)^\top \le \|H\|_F\,(\|\Delta\|_F^2 \sqrt{2-2c} + \text{incoherence/trace terms})$, where $c = \langle H,\, H_O \otimes H_I\rangle / (\|H\|_F \|H_O\|_F \|H_I\|_F)$ is the cosine similarity, and $\Delta = W^* - W$ is the rounding error. The takeaway is direct: the more the sketch aligns with the true Hessian ($c$ closer to 1), the tighter the KL upper bound, provided $H_O, H_I$ have low incoherence and rank. This is the first time a quantization algorithm has been granted an end-to-end error bound, upgrading "Hessian sketch selection" from heuristic guessing to a clear mathematical problem of maximizing cosine similarity, which points directly to power iterations.
 
-3. **Two Scalable Power Iteration Hessian Sketches**:
+**3. Scalable Kronecker Hessian Sketch: Computing $H_O, H_I$ at LLM scale (Sketch A/B Power Iterations)**
 
-    - **Function**: Computes $H_O, H_I$ at LLM scale without directly manipulating the $mn \times mn$ true Hessian.
-    - **Mechanism**: **Sketch A** assumes token independence within sequences, approximating $H \approx \mathbb{E}[x^\top x \otimes (\nabla_y \ell)^\top (\nabla_y \ell)]$. Starting from $(H_I)_0 = H_1, (H_O)_0 = I$, it converges in $\approx 3$ power iteration steps (approx. 20 GPU-hours for a 10B model). **Sketch B** runs one round of power iteration on the true Fisher (starting from $I, I$) using sequence-level gradients, requiring approx. 30 GPU-hours for a 10B model. Both use a modified backward pass for distributed power iteration, similar to Shampoo's preconditioning but using true Fisher.
-    - **Design Motivation**: Direct Monte-Carlo estimation of the true Hessian has high variance. Sketch A trades variance for bias, suitable for low-data regimes. Sketch B tolerates higher variance via a single power iteration round, yielding better quality with more data.
+Since a Kronecker product is essentially a rank-1 product after reshaping, optimal $H_O, H_I$ can be obtained via power iterations on the true Hessian. However, the true Hessian cannot be directly estimated via Monte-Carlo due to variance explosion in $mn \times mn$ dimensions. The authors provide two scalable options. Sketch A assumes independence across tokens within a sequence, approximating $H \approx \mathbb{E}[x^\top x \otimes (\nabla_y \ell)^\top (\nabla_y \ell)]$. Starting from $(H_I)_0 = H_1, (H_O)_0 = I$, it converges in $\sim 3$ steps, trading bias for variance—stable with little data (10B model $\approx 20$ GPU-hours). Sketch B performs one pass of power iterations on the true Fisher (starting from $I, I$) using sequence-level gradients, offering higher variance tolerance and better quality with more data (10B model $\approx 30$ GPU-hours). Both utilize a modified backward pass for distributed power iteration, similar to Shampoo's preconditioning, but crucially use the true Fisher (sampling logits via Monte-Carlo) instead of the empirical Fisher to avoid directional bias.
+
+**4. Generalized LDLQ Bidirectional Feedback Rounding: Mapping end-to-end targets to element-wise rounding**
+
+With the sketch computed, the final step is a rounding algorithm—the primary algorithmic contribution of YAQA. Original LDLQ only performs linear feedback along input channels (using LDL factors of $H_1$), rounding weights column-by-column without seeing output-side error. YAQA generalizes rounding to fixed-point iteration on an arbitrary Kronecker sketch $\tilde{H} = H_O \otimes H_I$ (Eq 4). Using the Kronecker LDL decomposition $L = L_O \otimes L_I$, the update is expanded (Eq 5/6): $W = Q(W^* + L_O'^{\top}\Delta L_I' + L_O'^{\top}\Delta + \Delta L_I')$, where $\Delta = W^* - W$, $L_O' = L_O - I$, and $L_I' = L_I - I$. Compared to LDLQ, this adds two "output-side" feedback terms, $L_O'^{\top}\Delta$ and $L_O'^{\top}\Delta L_I'$, making feedback symmetric across input/output channels—the key to optimizing end-to-end error. Due to the SND analysis, iteration converges in $\le m+n-1$ steps, each involving highly parallelizable small matrix multiplications, resulting in only $\approx 2\times$ the time of LDLQ.
 
 ### Loss & Training
 
-YAQA is a PTQ method with no explicit loss. The optimization objective is implicitly $\mathrm{tr}(\Delta^\top H_O \Delta H_I)$, the proxy loss under the Kronecker sketch. The rounding algorithm uses fixed-point iteration (Equation 5/6), compatible with scalar or vector quantizers. It is complementary to QuIP#'s randomized Hadamard transform—the latter makes $W$ near-Gaussian and reduces incoherence, while the former handles precise Hessian computation.
+YAQA is a pure PTQ method with no explicit training loss; quantized weights are generated once and not updated. It implicitly optimizes a quadratic proxy target $\mathrm{tr}(\Delta^\top H_O \Delta H_I)$ under the Kronecker sketch. This process is complementary to QuIP#'s randomized Hadamard transform—the latter makes $W$ near-Gaussian and reduces incoherence, while YAQA ensures the Hessian direction is accurate.
 
 ## Key Experimental Results
 
 ### Main Results: LLM Quantization Quality
 
-| Model / Setting | Method | KL ↓ (vs FP) | Downstream Benchmarks (acc%) ↑ |
+| Model / Setting | Method | KL ↓ (vs FP) | Downstream Benchmark (acc%) ↑ |
 |------------|------|-------|-----------------|
 | Llama 3.1 8B Inst, W2 | LDLQ (GPTQ) | Baseline | Baseline |
-| Llama 3.1 8B Inst, W2 | GuidedQuant | Slightly better | Slightly better |
-| Llama 3.1 8B Inst, W2 | **YAQA Sketch A** | $\approx -30\%$ vs LDLQ | Significantly ahead |
+| Llama 3.1 8B Inst, W2 | GuidedQuant | Slightly < LDLQ | Slightly > LDLQ |
+| Llama 3.1 8B Inst, W2 | **YAQA Sketch A** | $\approx -30\%$ vs LDLQ | Significantly Leads |
 | Llama 3.1 8B Inst, W2 | **YAQA Sketch B** | Lowest | Highest |
 | Llama 3.1 8B Inst, W2 | QAT | Higher than YAQA | Lower than YAQA |
 
-(Data summarized from abstract and tables; Sketch B establishes a new PTQ SOTA on multiple chat/reasoning tasks.)
+(Observations: Sketch B establishes a new PTQ SOTA across various chat/reasoning tasks.)
 
 ### Ablation Study
 
 | Setting | KL ↓ | Description |
 |------|------|------|
 | LDLQ ($H_O = I, H_I = H_1$) | Baseline | YAQA degenerate case |
-| Sketch A, 1 step | Medium | Initialized with $H_1$ |
-| Sketch A, 3 steps | Excellent | Empirical convergence |
-| Sketch B, 2K sequences | Excellent | SOTA in 1 GPU-hour |
+| Sketch A, 1-step power iteration | Medium | Initialized with $H_1$ |
+| Sketch A, 3-step power iteration | Excellent | Empirical convergence step |
+| Sketch B, 2K sequences | Excellent | SOTA within 1 GPU-hour |
 | Sketch B, 64K sequences | Best | 30 GPU-hours |
-| GuidedQuant, >4 blocks | No improvement | Lack of output feedback |
+| GuidedQuant, >4 blocks | No improvement | Lacks output-side feedback |
 
 ### Key Findings
 
-- Empirically, $H_O$ is near low-rank, matching the theoretical condition where the YAQA bound is strictly tighter than the LDLQ bound, explaining the success of the Kronecker sketch.
-- Sketch B with one power iteration round outperforms Sketch A, showing that true Fisher variance is manageable with sequence-level estimates—strict convergence of power iteration is not required.
-- YAQA achieves SOTA with minimal data (2K sequences, 1 GPU-hour), a major selling point for PTQ practicality.
-- The result that KL is lower than QAT's is counter-intuitive but theoretically sound: QAT uses first-order descent and may get stuck in local optima; YAQA performs "one-shot optimal rounding within the Hessian ellipsoid," bypassing QAT's optimization difficulties.
+- Empirically, $H_O$ is approximately low-rank, which perfectly matches the theoretical condition where the YAQA bound strictly outperforms LDLQ.
+- Sketch B outperforms Sketch A after just one round of power iteration, indicating that true Fisher variance and sequence-level estimation are manageable—strict convergence is not required.
+- YAQA achieves SOTA with very little data (2K sequences, 1 GPU-hour), a significant selling point for PTQ practicality.
+- The result that KL is lower than QAT is counter-intuitive but theoretically consistent: QAT uses first-order descent and may hit local optima, while YAQA performs "optimal one-shot rounding inside the Hessian ellipsoid," avoiding optimization difficulties.
 
 ## Highlights & Insights
 
-- **First End-to-End KL Bound**: Converts "Hessian sketch selection" into a clear mathematical problem of maximizing cosine similarity and controlling incoherence/rank, avoiding past empirical structures.
-- **SND Framework Unification**: GPTQ, LDLQ, and GuidedQuant are all unified under the SND/Kronecker perspective, clarifying the presence or absence of output feedback.
-- **Tractability and Optimality**: Low SND ensures speed, cosine similarity ensures quality, and power iteration is the classic tool for optimal Frobenius Kronecker approximation—a natural fit.
-- **True Fisher vs. Empirical Fisher**: YAQA highlights that for the KL objective, true Fisher (Monte-Carlo sampling of logits) must be used instead of Empirical Fisher (task loss) to avoid directional bias.
+- **First end-to-end KL upper bound**: Transforms the choice of Hessian sketch into a clear mathematical task of maximizing cosine similarity and controlling incoherence/rank.
+- **SND framework unifies existing methods**: GPTQ, LDLQ, and GuidedQuant can all be viewed through the SND/Kronecker lens, clarifying who has output-side feedback and who does not.
+- **Synergy of Kronecker + Power Iteration**: Low SND determines speed, cosine similarity determines quality, and power iteration is the optimal tool for Kronecker approximation; they fit together naturally.
+- **True Fisher vs. Empirical Fisher**: YAQA notes that for KL objectives, true Fisher (sampling logits) must be used instead of empirical Fisher (task loss) to avoid directional bias.
 
 ## Limitations & Future Work
 
-- Focuses only on weight-only PTQ; transferability to activation and KV-cache quantization is not detailed.
-- 30 GPU-hours for Sketch B remains heavy for 70B+ models; exploring aggressive sparsification or low-rank approximations to reduce cost is necessary.
-- The cosine similarity bound still contains incoherence/trace terms, and rank is not fully controlled; tightening the bound by controlling the effective rank of $H_O, H_I$ is a future direction.
-- Global Hessian behavior for non-linear layers (e.g., Attention Softmax) and cross-layer coupling has not been deeply analyzed.
+- Discussions are limited to weight-only PTQ; migration to activation and KV-cache quantization is not explored.
+- The 30 GPU-hour cost for Sketch B remains heavy for 70B+ models; exploring aggressive sparsification or low-rank approximations to reduce cost further is needed.
+- The bound still contains incoherence/trace terms where rank is unconstrained; future work controlling the effective rank of $H_O, H_I$ would tighten the theory.
+- Global Hessian behavior for non-linear layers (e.g., Attention Softmax) and fine-grained cross-layer coupling are not yet deeply analyzed.
 
 ## Related Work & Insights
 
-- **vs GPTQ / LDLQ**: Equivalent to the degenerate case of YAQA where $H_O = I, H_I = H_1$; YAQA's bound is theoretically tighter when $H_O$ is low-rank.
-- **vs GuidedQuant / SqueezeLLM**: Both attempt to go beyond $H_1$, but use Empirical Fisher + block-diagonal approximations, lacking output feedback and end-to-end bounds.
-- **vs QAT / DiscQuant / PV-Tuning**: QAT requires long training; YAQA proves that a single power iteration can be more accurate than QAT, boosting confidence in the PTQ route.
-- **vs Shampoo / KFAC**: Shares the Kronecker + Power Iteration sketching philosophy, but applies it to the rounding direction of PTQ rather than optimizer preconditioning.
+- **vs GPTQ / LDLQ**: Equivalent to YAQA's degenerate case ($H_O = I, H_I = H_1$); YAQA provides a strictly tighter bound when $H_O$ is low-rank.
+- **vs GuidedQuant / SqueezeLLM**: Both attempt to transcend $H_1$ but use empirical Fisher and block-diagonal approximations lacking output feedback; YAQA wins via true Fisher + Kronecker and a theoretical bound.
+- **vs QAT / DiscQuant / PV-Tuning**: While QAT requires long training, YAQA proves that a single pass of power iteration can exceed QAT accuracy, bolstering confidence in PTQ paths.
+- **vs Shampoo / KFAC**: Shares the Hessian sketch concept (Kronecker + power iteration), but while those are for preconditioning optimizers, YAQA uses them to determine the rounding direction in PTQ.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First to map end-to-end KL bounds to quantization algorithms and provide a provable algorithm-theory loop via SND/Kronecker.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Tested across Llama/Gemma scales and multiple bit configurations, outperfoming LDLQ, GuidedQuant, and QAT, including data requirement ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear theoretical derivations, but the SND/Kronecker arguments are dense and have a high entry barrier; the appendix is extensive.
-- **Value**: ⭐⭐⭐⭐⭐ Directly useful for LLM deployment: pushes quality to or beyond QAT with near-zero inference cost, representing a significant advancement for PTQ.
+- Novelty: ⭐⭐⭐⭐⭐ First to anchor quantization algorithms with an end-to-end KL bound and provide a provable algorithm-theory loop via SND/Kronecker.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple Llama/Gemma scales and bit configurations, outperforming LDLQ, GuidedQuant, and QAT, with detailed ablation on data requirements.
+- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear, though the dense SND/Kronecker arguments present a high entry barrier; the appendix handles many details.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for LLM deployment: pushes quality to exceed QAT with zero additional inference cost, marking a significant step for PTQ.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **GPTQ**: Accurate Post-Training Quantization for Generative Pre-trained Transformers (ICLR 2023)
+- **QuIP#**: QuIP with Lattice Codebooks (arXiv 2024)
+- **GuidedQuant**: Towards High-precision Post-training Quantization via Output-guided Rounding (arXiv 2024)
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
-- [\[NeurIPS 2025\] Decoupled Entropy Minimization](../../NeurIPS2025/llm_nlp/decoupled_entropy_minimization.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
-- [\[ACL 2026\] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning](../../ACL2026/llm_nlp/grass_gradient-based_adaptive_layer-wise_importance_sampling_for_memory-efficien.md)
+- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
+- [\[ACL 2026\] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
+- [\[ICML 2026\] Multi-Agent Teams Hold Experts Back: 自组织 LLM 团队为什么留不住「专家」](multi-agent_teams_hold_experts_back.md)
 
 </div>
 

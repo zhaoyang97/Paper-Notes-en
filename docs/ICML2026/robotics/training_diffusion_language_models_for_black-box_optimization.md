@@ -1,79 +1,104 @@
 ---
 title: >-
-  [Paper Note] DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)
+  [Paper Note] DiBO: 用扩散语言模型做离线黑盒优化（DNA + 机器人形态）
 description: >-
-  [ICML 2026][Robotics][Offline BBO] DiBO adapts the LLaDA-8B diffusion language model to offline black-box optimization (BBO) scenarios. It uses delimiter tokens to unify three types of heterogeneous signals (prompt…
+  [ICML 2026][Robotics & Embodied AI][Paper Note] DiBO adapts the diffusion language model LLaDA-8B for offline black-box optimization. It uses delimiter tokens to unify three heterogeneous signals (prompt/design/label), followed by a three-stage post-training pipeline: Domain Adaptation, Masked-response SFT, and Label-improvement RL. The model achieves SOTA results o
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "Offline BBO"
-  - "Diffusion LLM"
-  - "Bidirectional Modeling"
-  - "Domain Adaptation"
-  - "Offline RL"
+  - ICML 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 69789e3230d76358
+content_hash: 4ff4697b98231934
 ---
-
 # DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.17919](https://arxiv.org/abs/2603.17919)  
-**Code**: Provided on the paper page (here link)  
-**Area**: Black-box Optimization / Diffusion Language Models / Design Generation  
+**Code**: Available on paper page (link here)  
+**Area**: Black-box Optimization / Diffusion Language Model / Design Generation  
 **Keywords**: Offline BBO, Diffusion LLM, Bidirectional Modeling, Domain Adaptation, Offline RL
 
 ## TL;DR
-DiBO adapts the LLaDA-8B diffusion language model to offline black-box optimization (BBO) scenarios. It uses delimiter tokens to unify three types of heterogeneous signals (prompt, design, and label), followed by a three-stage post-training pipeline: "domain adaptation $\rightarrow$ masked-response SFT $\rightarrow$ label-improvement RL." This approach allows the model to achieve SOTA performance on multiple Design-Bench tasks with only 500 labeled samples (e.g., +8% normalized score on DNA tasks), with a single离散 task training completed in 1.5 hours on an H100.
+DiBO adapts the diffusion language model LLaDA-8B for offline black-box optimization. It uses delimiter tokens to unify three heterogeneous signals (prompt/design/label), followed by a three-stage post-training pipeline: Domain Adaptation, Masked-response SFT, and Label-improvement RL. The model achieves SOTA results on several Design-Bench tasks with only 500 labeled samples (e.g., a +8% normalized score gain on DNA tasks) and completes training for a discrete task in 1.5 hours on a single H100.
 
 ## Background & Motivation
 
-**Background**: Black-box optimization (BBO) is critical in fields such as DNA sequencing, robot morphology, and materials discovery. However, experimental labeling is expensive, making online optimization unfeasible. Offline BBO assumes a static dataset $\mathcal{D} = \{(\bm{x}_i, y_i)\}$ and aims to find a new design $\bm{x}^*$ that outperforms the dataset. Traditional methods follow two paths: (a) learning a surrogate $f_\theta(\bm{x})$ followed by gradient ascent (COMs, ICT, MATCH-OPT), though surrogate gradients become unreliable under OOD conditions; (b) learning inverse generative models (CbAS, MIN, BONET, DDOM) to sample high-scoring designs directly.
+**Background**: Black-box optimization (BBO) is critical in fields like DNA sequences, robot morphology, and material discovery. However, experimental labeling is expensive, making online optimization unfeasible. Offline BBO assumes a static dataset $\mathcal{D} = \{(\bm{x}_i, y_i)\}$ and aims to find a new design $\bm{x}^*$ that outperforms the dataset. Traditional approaches follow two paths: (a) learning a surrogate $f_\theta(\bm{x})$ followed by gradient ascent (COMs, ICT, MATCH-OPT), though surrogate gradients are unreliable out-of-distribution (OOD); (b) learning inverse generative models (CbAS, MIN, BONET, DDOM) to sample high-scoring designs directly.
 
-**Limitations of Prior Work**: (1) Autoregressive (AR) LLMs (OPRO, UniSO-T) generate tokens unidirectionally, whereas design tasks like DNA are constrained by both prefix and suffix dependencies, which left-to-right generation fails to capture. (2) Existing diffusion-based BBO methods (DDOM, GTG) mostly use task-specific architectures in continuous spaces and cannot naturally integrate textual task descriptions. (3) Existing offline BBO methods suffer from severe overfitting in small-data settings ($N \approx 500$) and lack the relief provided by large model priors.
+**Limitations of Prior Work**: (1) Autoregressive LLMs (OPRO, UniSO-T) generate tokens unidirectionally, but design tasks like DNA involve bidirectional constraints where each site is influenced by both prefix and suffix; (2) existing diffusion BBO methods (DDOM, GTG) mostly use task-specific architectures in continuous spaces, making it difficult to naturally integrate natural language task descriptions; (3) current offline BBO methods suffer from severe overfitting in small-data settings ($N \approx 500$) and lack the relief provided by large model priors.
 
-**Key Challenge**: Achieving a balance between bidirectional modeling (suitable for DNA/morphology), textual task description fusion (suitable for general BBO), and leveraging LLM pre-training priors within a single architecture is difficult. While diffusion LLMs are inherently bidirectional, they are pre-trained on natural text, creating a domain gap with heterogeneous signals like "design tokens + numerical labels."
+**Key Challenge**: It is difficult for a single architecture to simultaneously manage bidirectional modeling (suitable for DNA/morphology), integration of textual task descriptions (suitable for general BBO), and the utilization of LLM pre-training priors. Diffusion LLMs are inherently bidirectional, but they are pre-trained on natural text, creating a domain gap with heterogeneous signals like "design tokens + numerical labels."
 
-**Goal**: Adapt diffusion LLMs for BBO to retain bidirectional modeling advantages, learn the "prompt $\rightarrow$ superior design" mapping in small-data settings, and perform fine-grained alignment using RL signals.
+**Goal**: To adapt diffusion LLMs for BBO, preserving bidirectional modeling advantages while learning the "prompt → superior design" mapping under small-data constraints, and performing fine-grained alignment using RL signals.
 
-**Key Insight**: Resolve semantic role conflicts between "design/labels vs. natural text" using delimiter tokens and unified prompt-response corpora. Use a three-stage post-training pipeline—masked joint reconstruction, SFT, and RL—to achieve alignment.
+**Key Insight**: Solve the semantic conflict between "design/label vs. natural text" using delimiter tokens and a unified prompt-response corpus. Align the model progressively through a three-stage post-training process: masked joint reconstruction, SFT, and RL.
 
-**Core Idea**: Treat the "simultaneous prediction of masked prompt tokens + response tokens" as the BBO domain adaptation goal. Use sample pairs where the response label exceeds all labels in the prompt as SFT data. Finally, use the "response label - prompt label" as a reward for one-step log-prob RL. This sequence allows an 8B diffusion LLM to reach SOTA on BBO tasks using only 500 samples.
+**Core Idea**: Treat the simultaneous prediction of masked prompt and response tokens as the domain adaptation target. Use sample pairs where the response label exceeds all labels in the prompt as SFT data. Finally, utilize "response label - prompt label" as a reward for one-step log-prob RL. This serial workflow allows an 8B diffusion LLM to achieve SOTA in BBO with only 500 samples.
 
 ## Method
 
 ### Overall Architecture
 
-Input: (1) A natural language task description (including design semantics, format, and optimization goals); (2) a set of few-shot (design, label) pairs; and (3) an instruction to "generate a superior design." Output: A sequence of design + label tokens enclosed by delimiters.
+Input: (1) A natural language task description (including design semantics, format, and optimization goals); (2) a set of few-shot (design, label) pairs; (3) an instruction for the model to "generate a better design." Output: A design + label token sequence wrapped in delimiters.
 
-DiBO adds four components on top of a frozen diffusion LLM: (a) Tokenizer expansion with two sets of delimiters `|design-start|/|design-end|` and `|label-start|/|label-end|`; (b) A Domain Adaptation (DA) stage jointly predicting masked tokens for prompts and responses on unified corpora; (c) An SFT stage predicting only masked response tokens, using the design with the highest label outside the prompt as the target; (d) An RL stage using label improvement as a reward, approximated by one-step unmask log-probabilities. During inference, the masked response is filled via single-step greedy unmasking.
+DiBO adds four components on top of a frozen diffusion LLM: (a) tokenizer extension with two sets of delimiters `|design-start|/|design-end|` and `|label-start|/|label-end|`; (b) a Domain Adaptation (DA) stage jointly predicting masked tokens of prompts and responses in a unified corpus; (c) an SFT stage predicting only masked response tokens, targeting designs with labels higher than those in the prompt; (d) an RL stage using label improvement as a reward, approximated by one-step unmasked log probabilities. During inference, greedy unmasking fills the masked response in one step. The DA→SFT→RL pipeline corresponds to a progression of "recognizing format → providing direction → providing magnitude."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Task Description + few-shot (design, label) pairs<br/>+ Instruction to generate better design"]
+    subgraph S1["Delimiter + Unified Corpus + Domain Adaptation (Design 1)"]
+        direction TB
+        A["Unified prompt-response corpus<br/>Delimiters mark Text/Design/Label boundaries"]
+        A --> B["Domain Adaptation (DA): Joint reconstruction<br/>of prompt + response masked tokens"]
+    end
+    subgraph S2["Two-stage Post-training (Design 2)"]
+        direction TB
+        C["SFT: Reconstruct response only<br/>Target label > max prompt label (Direction)"]
+        C --> D["RL: Reward = label improvement<br/>One-step log-prob approximation (Magnitude)"]
+    end
+    subgraph S3["Kernel Context Selection + One-step Inference (Design 3)"]
+        direction TB
+        E["Kernel similarity selects 7 few-shot examples<br/>Narrows task to local incremental improvement"]
+        E --> F["One-step greedy filling of masked response<br/>Deduplicate to obtain 128 candidates"]
+    end
+    IN --> S1
+    S1 --> S2
+    S2 --> S3
+    S3 --> OUT["Output: Improved design x*"]
+```
 
 ### Key Designs
 
-1.  **Delimiter Tokens + Domain Adaptation on Unified Prompt-Response Corpora**:
-    *   **Function**: Uniformly encodes heterogeneous signals (prompt text, design tokens, numerical labels) to let the diffusion LLM learn the semantic roles of the delimiters.
-    *   **Mechanism**: Expands the tokenizer with 4 delimiter tokens. Each training sample is structured as a unified sequence of `[Prompt Text][Few-shot (design, label) pairs][Instruction]` + `[Response design][Response label]`. The DA objective is $\mathcal{L}_{\mathrm{DA}} = -\mathbb{E}[\frac{1}{t} \sum_{i=1}^{L} \mathbf{1}[q_t^i=[M], o_t^i=[M]] \log p_\theta(q_0^i, o_0^i | q_t, o_t)]$, which reconstructs masked tokens for both prompt and response. Contextual designs in few-shot prompts are selected from the offline pool based on kernel similarity to the response design to avoid learning degenerate mappings.
-    *   **Design Motivation**: Treating numerical labels as plain text causes diffusion LLMs to perceive them as noise. Explicit delimiters and joint reconstruction enable the model to learn segmentation boundaries and roles. This allows the direct reuse of diffusion LLM pre-training priors and attention mechanisms.
+**1. Delimiter tokens + Unified prompt-response DA: Wrapping heterogeneous signals to teach role boundaries to Diffusion LLMs**
 
-2.  **Two-stage Post-training: Masked-Response SFT + Label-Improvement RL**:
-    *   **Function**: Enables the diffusion LLM to generate designs with labels exceeding the maximum in the prompt context and connects coarse-grained (SFT) and fine-grained (RL) signals.
-    *   **Mechanism**: During SFT, the prompt is frozen, and masked reconstruction is performed only on the response. The loss is $\mathcal{L}_{\mathrm{SFT}} = -\mathbb{E}[\frac{1}{t} \sum_i \mathbf{1}[o_t^i=[M]] \log p_\theta(o_0^i | q_0, o_t)]$. The target response satisfies $y(o) > \max y(\text{prompt})$, providing a hard inductive bias for improvement. In the RL stage, a dataset $\mathcal{D}_{rl}$ is constructed with reward $r(q, o) = y(o) - y(q)$. The loss is $\mathcal{L}_{\mathrm{RL}} = -\mathbb{E}[\frac{1}{|o|} \sum_k p_\theta(o_k | q, o_{\text{fullmask}}) \cdot \frac{r(q,o)}{\sigma}]$, using one-step unmasking to approximate token-wise log-probabilities.
-    *   **Design Motivation**: SFT provides the "direction" (optimization), while RL provides the "magnitude" (how much better). One-step unmasking is a key trick—while traditional diffusion log-probs require iterative denoising for stability, one-step is sufficient for short BBO sequences and saves 50× computation, making RL feasible on a single H100.
+Diffusion LLMs are pre-trained on natural text; feeding "design tokens + numerical labels" directly causes the model to treat labels as noise and fail at segmentation. DiBO extends the tokenizer with 4 delimiters (`|design-start|`, `|design-end|`, `|label-start|`, `|label-end|`). Each sample is formatted as a unified sequence of `[prompt text][few-shot (design, label) pairs][instruction]` + `[response design][response label]`. The DA objective involves reconstructing masked tokens for both prompt and response:
 
-3.  **Kernel-Similarity Context Selection + Single-step Greedy Inference**:
-    *   **Function**: Ensures prompt examples and target responses are within the same distribution to avoid unreasonable learning signals; improves sampling efficiency during inference.
-    *   **Mechanism**: During data construction, for a given target response $o$, the top-7 designs $x_i$ are selected from the offline pool based on kernel similarity $k(o, x_i)$. During inference, 7 in-context examples are used, and a single forward pass followed by greedy filling is performed on the masked response to generate unique candidates.
-    *   **Design Motivation**: The "improve over prompt" assumption collapses if prompts are entirely in low-score regions. Kernel similarity ensures prompts and targets are locally close in the design space, focusing the model on learning "incremental improvement." Single-step greedy inference is an inherent advantage of diffusion LLMs over AR LLMs, which require $K$ steps for a $K$-token design.
+$$\mathcal{L}_{\mathrm{DA}} = -\mathbb{E}\Big[\tfrac{1}{t} \textstyle\sum_{i=1}^{L} \mathbf{1}[q_t^i=[M], o_t^i=[M]] \log p_\theta(q_0^i, o_0^i | q_t, o_t)\Big].$$
+
+Few-shot designs are selected from the offline pool based on kernel similarity to the response design to avoid learning a degenerate mapping. Unlike task-specific architectures like DDOM, this corpus-based approach leverages the pre-training prior and bidirectional attention of the diffusion LLM.
+
+**2. Two-stage post-training: Masked-response SFT for direction, Label-improvement RL for magnitude**
+
+DA only teaches the format. To generate superior designs, the SFT stage freezes the prompt and performs masked reconstruction only on the response: $\mathcal{L}_{\mathrm{SFT}} = -\mathbb{E}[\frac{1}{t} \sum_i \mathbf{1}[o_t^i=[M]] \log p_\theta(o_0^i | q_0, o_t)]$, where the target must satisfy $y(o) > \max y(\text{prompt})$—imposing a hard inductive bias for improvement. The RL stage relaxes this into a continuous reward $r(q, o) = y(o) - y(q)$, with the loss: $\mathcal{L}_{\mathrm{RL}} = -\mathbb{E}[\frac{1}{|o|} \sum_k p_\theta(o_k | q, o_{\text{fullmask}}) \cdot \frac{r(q,o)}{\sigma}]$.
+
+The division of labor is essential: SFT provides the "direction" (to improve), while RL provides the "magnitude" (how much to improve). To make RL feasible for an 8B model on a single GPU, one-step unmasking approximates token-wise log probabilities. While standard diffusion log-probs require stable iterative denoising, design sequences in BBO are short enough for one-step approximation, saving approximately 50× the computation.
+
+**3. Kernel-similarity context selection + One-step greedy inference: Narrows "improvement" to "local steps"**
+
+The assumption of "improving over prompt" fails if the prompt contains only low-scoring designs. During training, DiBO selects the top-7 few-shot examples from the offline pool using kernel similarity $k(o, x_i)$ relative to the target response $o$. This ensures the prompt examples and target are locally close in design space, narrowing the task to "incremental improvement."
+
+Inference uses $n_{few}=7$ in-context examples. A single forward pass with greedy filling is performed on the masked response, and duplicate outputs are discarded until 128 unique candidates are collected. One-step greedy inference is a specific advantage of Diffusion LLMs over AR LLMs for BBO; whereas AR requires $K$ steps for a $K$-token design, diffusion generates it at once.
 
 ### Loss & Training
-The process is sequential: DA (1024 steps) $\rightarrow$ SFT (1024 steps) $\rightarrow$ RL (128 steps). All stages use PagedAdamW8bit + Bfloat16 + 100-step linear warmup. Learning rates: $2 \times 10^{-5}$ for DA and SFT, $1 \times 10^{-6}$ for RL to preserve the SFT prior. Each task uses an offline pool of 500 samples with $n_{few}=7$.
+
+The three stages are serial: DA for 1024 steps (continuous 2048), SFT for 1024 steps, and RL for 128 steps. All stages use PagedAdamW8bit + Bfloat16 + 100-step linear warmup + constant learning rate. Learning rates: $2 \times 10^{-5}$ for DA and SFT, $1 \times 10^{-6}$ for RL to prevent erasing the SFT prior. Each task utilizes an offline pool of 500 samples with $n_{few}=7$ in-context examples.
 
 ## Key Experimental Results
 
 ### Main Results: Design-Bench (100th percentile normalized score, average of 8 seeds)
 
-| Method | Ant Morphology | D'Kitty Morphology | TF Bind 8 | TF Bind 10 | Mean | Rank Mean ↓ |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Method | Ant Morphology | D'Kitty Morphology | TF Bind 8 | TF Bind 10 | Average | Rank Mean ↓ |
+|------|----------------|---------------------|-----------|------------|------|-------------|
 | $\mathcal{D}$(best) | 0.565 | 0.884 | 0.439 | 0.511 | — | — |
 | Grad-mean | 0.709 | 0.920 | 0.843 | 0.736 | 0.802 | 4.25 |
 | COMs | 0.647 | 0.934 | 0.843 | 0.709 | 0.783 | 4.5 |
@@ -81,59 +106,59 @@ The process is sequential: DA (1024 steps) $\rightarrow$ SFT (1024 steps) $\righ
 | OPRO (AR LLM) | 0.517 | 0.856 | 0.758 | 0.500 | 0.658 | 14.0 |
 | DDOM (Diffusion) | 0.590 | 0.929 | 0.739 | 0.497 | 0.689 | 11.25 |
 | MCTS-transfer | 0.648 | 0.910 | 0.857 | 0.628 | 0.761 | 7.25 |
-| **DiBO (Ours)** | **0.932** | 0.912 | **0.946** | **0.741** | **0.883** | **3.5** |
+| **DiBO (ours)** | **0.932** | 0.912 | **0.946** | **0.741** | **0.883** | **3.5** |
 
-DiBO achieves the highest scores in 3 out of 4 tasks (Ant, TF8, TF10), outperforming the strongest baseline on TF Bind 8 by 0.082. It achieves the best Rank Mean (3.5) and Rank Median (1.0).
+DiBO ranks first in 3 out of 4 tasks (Ant, TF8, TF10). It leads the strongest baseline by 0.082 on TF Bind 8. On D'Kitty, it slightly trails ExPT by 0.038 but remains competitive. It achieves the best Rank Mean (3.5) and Rank Median (1.0).
 
-### Ablation Study: Diffusion vs. Autoregressive backbone (same DA $\rightarrow$ SFT $\rightarrow$ RL pipeline)
+### Ablation Study: Diffusion vs. Autoregressive backbone (same DA→SFT→RL process)
 
 | Task | Stage | AR (LLaMA-3.1-8B-Instruct) | DiBO (Diffusion) | Gain |
-| :--- | :--- | :---: | :---: | :---: |
+|------|------|------------------------------|--------------|------|
 | TF Bind 8 | DA | 0.803 | 0.883 | +0.080 |
 | TF Bind 8 | SFT | 0.875 | 0.939 | +0.064 |
 | TF Bind 8 | RL | 0.915 | 0.946 | +0.031 |
-| TF Bind 10| DA | 0.623 | 0.644 | +0.021 |
-| TF Bind 10| SFT | 0.633 | 0.704 | +0.071 |
-| TF Bind 10| RL | 0.682 | 0.741 | +0.059 |
+| TF Bind 10 | DA | 0.623 | 0.644 | +0.021 |
+| TF Bind 10 | SFT | 0.633 | 0.704 | +0.071 |
+| TF Bind 10 | RL | 0.682 | 0.741 | +0.059 |
 | Ant | RL | 0.930 | 0.932 | +0.002 |
 | D'Kitty | RL | 0.912 | 0.912 | 0.000 |
 
-On discrete DNA tasks (TF8/TF10), the diffusion backbone significantly leads the AR backbone across all stages, confirming that bidirectional modeling provides a genuine advantage for tasks with strong bidirectional dependencies. The gap converges to zero on continuous robot tasks.
+On discrete DNA tasks (TF8/TF10), the diffusion backbone significantly outperforms the AR backbone at all stages, validating that bidirectional modeling provides genuine help for tasks with strong bidirectional dependencies. For continuous robot tasks, the gap narrows, suggesting that 6D/60D continuous designs do not exhibit as strong bidirectional dependencies; the diffusion advantage is primarily centered on discrete + bidirectional scenarios.
 
 ### Key Findings
 
-*   **Sweet Spot for Small Data + LLM Priors**: Achieving SOTA on $N=500$ samples is a highlight; while traditional BBO overfits, the 8B LLM pre-training prior acts as a regularizer.
-*   **Cumulative Gains of Three-stage Post-training**: Scores increase at every stage (DA $\rightarrow$ SFT $\rightarrow$ RL), proving they provide complementary signals: format, direction, and magnitude.
-*   **OPRO Failure Suggests Prompting is Insufficient**: OPRO uses prompting without fine-tuning and achieves a mean of 0.658, far below DiBO's 0.883, indicating that LLMs must undergo in-domain adaptation.
-*   **Training Efficiency**: Completing the TF Bind 8 pipeline in 1.5 GPU hours on a single H100 demonstrates that diffusion LLMs are computationally viable for BBO.
+- **Sweet spot for small data + LLM prior**: Achieving SOTA on $N=500$ samples is a highlight; traditional BBO overfits at this scale, while the 8B pre-trained prior acts as a regularizer.
+- **Cumulative gains from three-stage post-training**: Score increases across DA → SFT → RL stages (e.g., TF Bind 8 from 0.883 → 0.939 → 0.946), proving they provide complementary signals.
+- **OPRO failure highlights the insufficiency of prompting**: OPRO uses prompting without fine-tuning and averages 0.658, much lower than DiBO's 0.883, indicating that LLMs must undergo in-domain adaptation.
+- **Training Cost**: One task takes 1.5 GPU hours on a single H100 to complete the full DiBO pipeline, which is extremely efficient for an 8B model.
 
 ## Highlights & Insights
 
-*   **Delimiters + Unified Corpora are a simple yet effective bridge**: Instead of specialized architectures, expanding the tokenizer by a few tokens solves the heterogeneity problem in a lightweight, transferable way.
-*   **Three-stage Post-training matches cognitive levels (Prior $\rightarrow$ Direction $\rightarrow$ Magnitude)**: This coarse-to-fine strategy is a valuable reference for adapting LLMs to other new tasks like medical QA or scientific discovery.
-*   **Real Advantage of Diffusion LLMs in Discrete Design**: The ablation clearly shows diffusion winning in DNA (bidirectional) while tying with AR in robot morphology (continuous, weak bidirectional).
-*   **One-step unmasking as a log-prob approximation**: Reducing RL training cost for diffusion models from $N$ steps to 1 step has significant methodological implications.
+- **Delimiters + Unified Corpus is a simple but effective bridge**: Rather than designing a custom architecture, extending the tokenizer with a few tokens resolves heterogeneous signal issues. This method is lightweight and transferable to other "text + numerical + structural" hybrid scenarios.
+- **Three-stage post-training matches cognitive hierarchy**: DA teaches format, SFT provides the "superiority" constraint, and RL refines using rewards. This "coarse-to-fine" strategy is a valuable recipe for adapting LLMs to new tasks like scientific discovery.
+- **Diffusion LLM advantage over AR LLM in discrete design**: Ablations show diffusion wins in DNA (strong bidirectional) but reaches parity in robot morphology (continuous, weak bidirectional). This provides a specific criterion for when to use diffusion LLMs.
+- **One-step unmasking RL cost reduction**: Reducing the RL cost for diffusion models from $N$ denoising steps to 1 step has significant methodological implications for diffusion-based RL.
 
 ## Limitations & Future Work
 
-*   **Limited Design Space**: Experiments covered DNA (length 8/10) and robot morphology (56D/60D). Scalability to high-dimensional spaces (protein sequences, circuit design) is unverified.
-*   **Uniform Behavior Policy Assumption**: The RL stage assumes a uniform distribution for the old policy, which may introduce bias if offline data is highly non-uniform.
-*   **Fragility of Kernel Similarity Selection**: Selecting top-7 examples close to the target might leak target information into the prompt, requiring more rigorous discussion.
-*   **Small Margin on TF Bind 10**: The gain on TF10 (+0.005) is much smaller than on TF8 (+0.082), possibly due to label noise or scale.
+- **Limited Design Space**: Experiments covered DNA (length 8/10) and robot morphology (56D/600D). Scalability to larger spaces (e.g., protein sequences, circuit design) remains unverified.
+- **Behavior Policy Assumption**: The RL stage assumes a uniform distribution for the old policy to skip the IS ratio. In offline data with non-uniform distributions, this might introduce bias.
+- **Kernel Similarity Vulnerability**: Selecting top-7 examples close to the target might inadvertently leak target information into the prompt, requiring stricter discussion on data leakage.
+- **Diminishing gains on TF Bind 10**: The gain on TF10 (+0.005) is significantly smaller than on TF8 (+0.082), possibly due to label noise or scale issues.
 
 ## Related Work & Insights
 
-*   **vs. OPRO**: OPRO uses prompting only; DiBO proves fine-tuning is necessary and provides a sequence for it.
-*   **vs. DDOM / GTG**: Those methods use task-specific diffusion in continuous spaces; DiBO uses a general diffusion LLM to integrate text + design + labels.
-*   **vs. dLLM (Yuan et al. 2026)**: They use inference-time MCTS; DiBO uses train-time adaptation, which yields better results and saves inference computation.
-*   **Insight**: The "delimiter token + unified corpora + three-stage post-training" is a general recipe for any field requiring LLMs to process structured non-textual signals.
+- **vs. OPRO (AR LLM Direct Prompting)**: OPRO uses prompting without tuning; DiBO proves that fine-tuning is necessary.
+- **vs. DDOM / GTG (Diffusion BBO)**: These use task-specific diffusion in continuous spaces; DiBO uses a general diffusion LLM to unify text, design, and labels.
+- **vs. dLLM (Inference-time MCTS)**: dLLM freezes the model and uses MCTS; DiBO performs direct fine-tuning, demonstrating that training-time adaptation can yield superior results with lower inference costs.
+- **Inspiration**: For any field requiring LLMs to handle structured non-textual signals, the "delimiter + unified corpus + three-stage tuning" approach is a universal recipe.
 
 ## Rating
 
-*   **Novelty**: ⭐⭐⭐⭐ Systematic adaptation of diffusion LLMs to BBO is a new paradigm; the three-stage design is practical and elegant.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 4 Design-Bench tasks, 10+ baselines, and strict diffusion/AR control ablations.
-*   **Writing Quality**: ⭐⭐⭐⭐ Clear flowcharts and mathematical expressions.
-*   **Value**: ⭐⭐⭐⭐⭐ Highly applicable to small-data BBO in drug discovery and robotics; 1.5-hour training time makes it industrial-ready.
+- Novelty: ⭐⭐⭐⭐ Systematically adapting diffusion LLMs to BBO is a new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered 4 Design-Bench tasks, 10+ baselines, and rigorous backbone ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear flowcharts and mathematical expressions.
+- Value: ⭐⭐⭐⭐⭐ Direct industrial applicability for small-data BBO (drugs, materials, robots).
 
 <!-- RELATED:START -->
 
@@ -141,11 +166,11 @@ On discrete DNA tasks (TF8/TF10), the diffusion backbone significantly leads the
 
 ## Related Papers
 
-- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](../../ICLR2026/robotics/cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](../../CVPR2026/robotics/dawn_pixel_motion_diffusion_robot_control.md)
+- [\[ICML 2026\] Position: Good Embodied Reward Models Need Bad Behavior Data](position_good_embodied_reward_models_need_bad_behavior_data.md)
+- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
+- [\[ICML 2026\] TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance](timerewarder_learning_dense_reward_from_passive_videos_via_frame-wise_temporal_d.md)
+- [\[ICML 2026\] WestWorld: 知识编码的可扩展轨迹世界模型](westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
+- [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
 
 </div>
 

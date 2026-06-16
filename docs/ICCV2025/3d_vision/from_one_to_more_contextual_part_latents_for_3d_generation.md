@@ -135,11 +135,11 @@ Users strongly prefer CoPart's generated results, with a particularly pronounced
 
 ## Related Papers
 
-- [\[ICCV 2025\] Find Any Part in 3D](find_any_part_in_3d.md)
 - [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
+- [\[ICCV 2025\] Find Any Part in 3D](find_any_part_in_3d.md)
 - [\[ICCV 2025\] BokehDiff: Neural Lens Blur with One-Step Diffusion](bokehdiff_neural_lens_blur_with_one-step_diffusion.md)
-- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
-- [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
+- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](../../CVPR2026/3d_vision/learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
+- [\[CVPR 2026\] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain](../../CVPR2026/3d_vision/more_natural_more_real_object-aware_gaussian_splatting_for_3d_visual_decoding_fr.md)
 
 </div>
 

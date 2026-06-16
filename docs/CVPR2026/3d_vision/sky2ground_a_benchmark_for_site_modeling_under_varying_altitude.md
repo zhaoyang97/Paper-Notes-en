@@ -2,129 +2,129 @@
 title: >-
   [Paper Note] Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 description: >-
-  [CVPR 2026][3D Vision][Cross-view localization] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, covering satellite/aerial/ground views with both synthetic and real imagery) and the SkyNet model (dual…
+  [CVPR 2026][3D Vision][Paper Note] This paper introduces the Sky2Ground dataset (51 scenes, 80k images, unified coverage of synthetic and real images across satellite, aerial, and ground views) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling). It represents the first systematic study of joint camera loc
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Cross-view localization"
-  - "satellite–aerial–ground"
-  - "multi-altitude 3D reconstruction"
-  - "Gaussian splatting"
-  - "curriculum learning"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 35bd0260b10b7130
+content_hash: 0e72dc65eedae3e9
 ---
-
 # Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.13740](https://arxiv.org/abs/2603.13740)  
 **Code**: Coming soon  
-**Area**: 3D Vision / Cross-View Localization
-**Keywords**: Cross-view localization, satellite–aerial–ground, multi-altitude 3D reconstruction, Gaussian splatting, curriculum learning
+**Area**: 3D Vision / Cross-view Localization  
+**Keywords**: Cross-view Localization, Satellite-Aerial-Ground, Multi-altitude 3D Reconstruction, Gaussian Splatting, Curriculum Learning
 
 ## TL;DR
-This paper introduces the Sky2Ground dataset (51 scenes, 80k images, covering satellite/aerial/ground views with both synthetic and real imagery) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling), presenting the first systematic study of joint camera localization across ground, aerial, and satellite viewpoints. SkyNet achieves a 9.6% improvement in RRA@5 and an 18.1% improvement in RTA@5.
+This paper introduces the Sky2Ground dataset (51 scenes, 80k images, unified coverage of synthetic and real images across satellite, aerial, and ground views) and the SkyNet model (dual-stream encoder + masked satellite attention + progressive view sampling). It represents the first systematic study of joint camera localization across ground, aerial, and satellite perspectives, achieving gains of 9.6% in RRA@5 and 18.1% in RTA@5.
 
 ## Background & Motivation
-1. **Background**: Multi-view 3D reconstruction and camera localization are fundamental tasks in computer vision. Recent neural approaches such as DUSt3R, MASt3R, and VGGT have achieved notable progress, yet they are primarily trained and evaluated on ground-level and aerial viewpoints.
-2. **Limitations of Prior Work**: (1) No existing dataset simultaneously covers ground, aerial, and satellite viewpoints — nuScenes/KITTI are ground-only, AerialMegaDepth lacks satellite imagery, and MatrixCity/BungeeNeRF contain only synthetic data. (2) Joint camera localization across all three viewpoints has not been studied. (3) A large distribution gap exists between satellite images and ground/aerial imagery.
-3. **Key Challenge**: Satellite imagery provides globally consistent geographic coverage and a stable reference, yet its visual appearance differs drastically from ground/aerial views (near-orthographic projection, kilometer-scale altitude difference). Intuitively, incorporating satellite images should supply more information, but experiments reveal that doing so actually degrades localization performance.
-4. **Goal**: (1) Construct the first dataset covering all three viewpoints with both real and synthetic imagery. (2) Analyze why satellite images harm existing model performance. (3) Propose a new architecture that effectively exploits satellite information.
-5. **Key Insight**: The authors find that naïvely fine-tuning VGGT with satellite data causes an 18.2% performance collapse, whereas pairwise architectures such as DUSt3R/MASt3R actually benefit from satellite data. This indicates that the problem lies not in distribution shift per se, but in the global attention mechanism, which allows ground/aerial tokens to be disturbed by satellite tokens.
-6. **Core Idea**: Masked satellite attention prevents ground/aerial tokens from attending directly to satellite tokens, while a progressive view sampling strategy gradually introduces increasingly distant viewpoints, enabling joint localization across altitudes.
+1. **Background**: Multi-view 3D reconstruction and camera localization are fundamental computer vision tasks. Recent neural-based methods like DUSt3R, MASt3R, and VGGT have made significant progress but are primarily trained and evaluated on ground-aerial perspectives.
+2. **Limitations of Prior Work**: (1) Lack of datasets containing ground, aerial, and satellite views simultaneously—nuScenes/KITTI only have ground views, AerialMegaDepth lacks satellite views, and MatrixCity/BungeeNeRF contain only synthetic data; (2) The joint localization problem across three perspectives has not been studied; (3) There is a massive distribution shift between satellite and ground/aerial images.
+3. **Key Challenge**: Satellite images provide globally consistent geographic coverage and stable references, but visual differences from ground/aerial views are extreme (near-orthogonal views, kilometer-scale altitude differences). Intuitively, adding satellite data should provide more information, but experiments show it actually degrades localization performance.
+4. **Goal**: (1) Construct the first dataset covering three views with both real and synthetic images; (2) Analyze why satellite images impair existing model performance; (3) Propose a new architecture that effectively utilizes satellite information.
+5. **Key Insight**: Authors found that simple fine-tuning of VGGT with satellite data leads to a performance crash of 18.2%, whereas pair-wise processing networks like DUSt3R/MASt3R benefit. This suggests the issue is not distribution shift itself, but that global attention architectures cause interference when ground/aerial tokens interact with satellite tokens.
+6. **Core Idea**: Use Masked Satellite Attention to prevent ground/aerial tokens from directly attending to satellite tokens, combined with a progressive sampling strategy to gradually introduce distant views for joint cross-altitude localization.
 
 ## Method
 
 ### Overall Architecture
-SkyNet is built upon VGGT and adopts a dual-stream encoder design. The GAS encoder produces a joint representation across all viewpoints while restricting attention interactions between ground/aerial tokens and satellite tokens. The Sat encoder processes satellite images exclusively. The two encoders are connected via additive fusion of satellite features. A shared Camera Head and DPT Head then predict camera parameters and depth maps, respectively.
+This paper addresses a counter-intuitive problem: adding satellite images to multi-view camera localization, which should provide a global reference and improve accuracy, actually causes models like VGGT to fail. The authors rebuild the model based on the cause of this failure: SkyNet uses VGGT as a backbone but splits the single global encoder into two streams—a GAS encoder that takes the joint representation of all views but deliberately cuts off the attention from ground/aerial tokens to satellite tokens, and a Sat encoder that processes satellite images separately. The two streams are merged via additive fusion of satellite features before being passed to a shared Camera Head and DPT Head to output camera parameters and depth maps. The core design focuses not on "how to use more data," but on "how to ensure the heterogeneous satellite modality contributes information without polluting the representation."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Sky2Ground Dataset<br/>Ground / Aerial / Satellite Views"]
+    A -->|"Progressive View Sampling (P-VS)<br/>Aerial as bridge, easy-to-hard"| B["Sampled Multi-view Input"]
+    B --> C["GAS Encoder (with MSA)<br/>Joint Rep + Masked Sat Attention<br/>Gnd/Aerial cannot see Sat"]
+    B --> D["Sat Encoder<br/>Processes Sat images separately"]
+    C --> E["Satellite Feature Addition Fusion"]
+    D --> E
+    E --> F["Camera Head<br/>Outputs camera parameters"]
+    E --> G["DPT Head<br/>Outputs depth maps"]
+```
 
 ### Key Designs
 
-1. **Sky2Ground Dataset**:
+**1. Sky2Ground Dataset: Integrating Satellite/Aerial/Ground views into one benchmark**
 
-    - **Function**: Provides the first multi-modal dataset covering satellite, aerial, and ground viewpoints jointly.
-    - **Mechanism**: Encompasses 51 geographic locations worldwide. Each scene contains 120 satellite images (altitude 1–2 km, orthorectified), 1,080 synthetic aerial images (captured with a three-camera virtual rig following a helical descent trajectory at 250–800 m altitude), 50–250 synthetic ground-level images, and 120 real aerial/ground images each (manually collected from Google Maps and YouTube travel videos). Synthetic data are rendered via Google Earth Studio; dense depth maps are annotated using COLMAP.
-    - **Design Motivation**: Real images introduce illumination variation and weather noise, while synthetic images provide precise camera poses and depth annotations. The two sources are complementary.
+Previous datasets lacked either satellite views or real-world ground views, making joint 3-view localization impossible to train or evaluate. Sky2Ground covers 51 geographic locations globally, assembling four sources for each scene: 120 satellite ortho-rectified images (1–2km altitude), 1080 synthetic aerial images (descending from 250–800m in spiral trajectories), 50–250 synthetic ground images, plus 120 real aerial/ground images manually collected from Google Maps and YouTube. Synthetic portions are rendered via Google Earth Studio with COLMAP-generated dense depth labels for precise ground truth; real portions provide noise like lighting and weather. This complementarity provides clean supervision while retaining real-world distributions.
 
-2. **Masked Satellite Attention (MSA)**:
+**2. Masked Satellite Attention (MSA): Asymmetric attention for unidirectional isolation**
 
-    - **Function**: Prevents ground/aerial tokens from being disturbed by the heterogeneous distribution of satellite tokens.
-    - **Mechanism**: Within each block of the GAS encoder, standard self-attention (intra-frame) is applied first, followed by MSA: satellite tokens may attend to ground/aerial tokens, but ground/aerial tokens are prohibited from attending to satellite tokens. The attention mask matrix is set to $-\infty$ in the satellite→ground/aerial direction. The self-attention and MSA layers of the GAS encoder are initialized with pretrained VGGT weights and kept frozen.
-    - **Design Motivation**: Experiments show that fine-tuning VGGT causes a performance collapse because global attention allows ground/aerial features to be "contaminated" by satellite features. MSA preserves VGGT's zero-shot capability on ground/aerial views (since those tokens never interact with satellite tokens) while enabling satellite tokens to gather information from ground/aerial tokens.
+The root cause of VGGT's performance crash is "pollution" of ground/aerial features by satellite features through global self-attention. As satellite images are near-orthogonal and at extreme altitudes, bidirectional interaction biases healthy representations. MSA implements standard intra-frame self-attention followed by a directional mask in each GAS encoder block: satellite tokens can attend to ground/aerial tokens, but the reverse is prohibited by setting the Sat $\rightarrow$ Gnd/Aerial attention matrix values to $-\infty$. Thus, ground/aerial tokens never "see" the satellite, preserving VGGT's zero-shot capabilities, while satellite tokens unidirectionally absorb information for self-localization.
 
-3. **Progressive View Sampling (P-VS)**:
+**3. Progressive View Sampling (P-VS): Using aerial views as a "bridge" for curriculum learning**
 
-    - **Function**: Gradually increases training difficulty through a curriculum learning strategy.
-    - **Mechanism**: In the early stage of training, more aerial images are sampled ($N_a \approx N$), serving as a "bridge" between ground and satellite views. As training progresses, the proportion of aerial images is progressively reduced ($N_a \approx 0$), until only ground and satellite images remain. This guides the model from the easier problem (three-view joint localization) to the harder problem (ground + satellite only).
-    - **Design Motivation**: Ground and satellite represent an extreme viewpoint pair, making direct joint training highly challenging. Aerial views serve as an intermediate bridge, enabling the model to first establish progressive associations across ground–aerial–satellite.
+Ground and satellite views are extreme opposites with minimal visual overlap. P-VS uses aerial views as a bridge, increasing difficulty via a curriculum: training starts with high aerial sampling ($N_a \approx N$) to establish associations across the altitude chain. As training progresses, aerial images are phased out ($N_a \approx 0$), eventually leaving the challenging ground-satellite combination. This allows the model to transition smoothly from simpler joint localization to the difficult ground + satellite objective.
 
 ### Loss & Training
-A multi-task loss is employed: $\mathcal{L} = \mathcal{L}_{\text{cam, sat}} + 0.4 \cdot \mathcal{L}_{\text{cam, gnd/aerial}} + \mathcal{L}_{\text{depth}}$. A Curriculum Aware Camera-Sampling (CA-CS) strategy is also applied: training begins by sampling nearby camera pairs and progressively extends to distant pairs, with distance measured as rotation distance + 0.5 × translation distance.
+The multi-task loss is defined as $\mathcal{L} = \mathcal{L}_{\text{cam, sat}} + 0.4 \cdot \mathcal{L}_{\text{cam, gnd/aerial}} + \mathcal{L}_{\text{depth}}$. The satellite camera loss receives the highest weight, reflecting that satellite tokens are the primary targets for optimization. Training also utilizes Curriculum Aware Camera-Sampling (CA-CS), which initially samples nearby camera pairs before expanding to distant pairs based on a metric of "rotation distance + 0.5 $\times$ translation distance."
 
 ## Key Experimental Results
 
-### Main Results (GAS setting, RRA@5 / RTA@5 %)
+### Main Results (GAS setup, RRA@5 / RTA@5 %)
 
-| Method | Training Data | Ground RRA/RTA | Sat RRA/RTA | Aerial RRA/RTA | Avg. RRA/RTA |
-|--------|--------------|----------------|-------------|----------------|--------------|
+| Method | Training Data | Ground RRA/RTA | Sat RRA/RTA | Aerial RRA/RTA | Avg RRA/RTA |
+|------|---------|---------------|-------------|---------------|------------|
 | VGGT | Zero-shot | 75.1/60.9 | 66.6/0.0 | 79.2/72.6 | 73.6/44.5 |
 | VGGT | Sky2Ground | 50.0/46.1 | 86.6/53.3 | 29.7/31.5 | 55.4/43.6 |
 | SkyNet | Sky2Ground | **76.7/64.2** | **88.9/57.3** | **84.0/78.1** | **83.2/66.5** |
 
-### Ablation Study (G+S setting)
+### Ablation Study (G+S setup)
 
-| Configuration | MSA | CA-CS | P-VS | Avg. Performance |
-|---------------|-----|-------|------|-----------------|
-| VGGT fine-tuned | ✗ | ✗ | ✗ | 47.8 |
-| VGGT zero-shot | ✗ | ✗ | ✗ | 52.9 |
+| Configuration | MSA | CA-CS | P-VS | Avg Performance |
+|------|-----|-------|------|---------|
+| VGGT Fine-tune | ✗ | ✗ | ✗ | 47.8 |
+| VGGT Zero-shot | ✗ | ✗ | ✗ | 52.9 |
 | +MSA | ✓ | ✗ | ✗ | 62.7 (+8.2) |
 | +P-VS | ✗ | ✗ | ✓ | 61.1 (+7.3) |
 | +MSA+CA-CS+P-VS | ✓ | ✓ | ✓ | **65.1 (+12.2)** |
 
 ### Key Findings
-- **Fine-tuning VGGT with satellite data causes severe degradation**: RRA drops from 73.6% to 55.4% (−18.2%), which is the central finding.
-- **MSA is the single most impactful component**: +8.2%, as it protects ground/aerial features from satellite interference.
-- **P-VS outperforms CA-CS**: +7.3% vs. +1.4%, indicating that using aerial imagery as a bridge is more critical than near-to-far camera sampling.
-- **Pairwise architectures can benefit from satellite data**: DUSt3R/MASt3R improve when satellite images are included, because the high co-visibility rate among satellite–satellite pairs facilitates global alignment.
-- **Real images degrade rendering quality**: PSNR consistently decreases after incorporating real images, as the domain gap makes it difficult for Gaussian splatting to blend the two sources.
-- **2DGS consistently outperforms 3DGS**: 2D Gaussian splatting achieves superior perceptual quality across all viewpoints and density settings.
+- **Fine-tuning VGGT with satellite data leads to severe degradation**: RRA dropped from 73.6% to 55.4% (-18.2%).
+- **MSA is the most significant single component**: +8.2%, as it protects ground/aerial features from satellite interference.
+- **P-VS is more effective than CA-CS**: +7.3% vs +1.4%, showing that "using aerial as a bridge" is more critical than "near-to-far sampling."
+- **Pair-wise networks benefit from satellite data**: DUSt3R/MASt3R performance improved because high co-visibility in satellite-satellite pairs within pair-wise processing aids global alignment.
+- **Real images impair rendering quality**: PSNR consistently decreased with real images due to domain gaps making it difficult for GS to mix sources.
+- **2DGS consistently outperforms 3DGS**: Perceptual quality was better for 2D Gaussian Splatting across all views and densities.
 
 ## Highlights & Insights
-- **The counter-intuitive finding that "more data leads to worse performance"** is highly thought-provoking: adding satellite imagery — an information-theoretically richer source — actually hurts performance, demonstrating that when distribution shift is sufficiently large, more data does not guarantee better results. This challenges the "scale everything" paradigm.
-- **The MSA design is broadly transferable**: In any Transformer architecture involving heterogeneous modalities (e.g., text + image, RGB + thermal), asymmetric attention masking can be employed to mitigate interference from modalities with excessive distributional discrepancy.
-- **Curriculum learning with aerial views as a "bridge modality"**: This training strategy of transitioning progressively from an intermediate modality to extreme modalities can be generalized to multi-modal alignment tasks at large.
+- **Counter-intuitive finding on data**: Adding satellite data—an information-rich source—actually hurts performance, suggesting that when distribution shifts are large enough, more data does not equal better results. This challenges the "scale everything" mindset.
+- **Transferable MSA design**: In any Transformer architecture involving heterogeneous modalities (e.g., text+image, RGB+thermal), asymmetric attention masks can be used to avoid interference if distribution differences are too large.
+- **Bridge modality curriculum learning**: The strategy of transitioning from an intermediate modality to extreme ones can be generalized to any multi-modal alignment task.
 
 ## Limitations & Future Work
-- The method is two-stage (pose prediction followed by Gaussian splatting); a unified end-to-end model warrants future exploration.
+- The method is two-stage (pose prediction followed by Gaussian Splatting); future work could explore unified models.
 - 51 scenes may be insufficient for large-scale training.
-- Orthorectification of satellite images requires additional preprocessing.
-- Poses for real images are estimated via COLMAP, limiting annotation accuracy.
-- More advanced domain adaptation techniques for bridging the synthetic-to-real gap have not been explored.
+- Satellite ortho-rectification relies on additional processing.
+- Real image poses are estimated via COLMAP, with limited accuracy.
+- Advanced domain adaptation techniques to bridge the synthetic-real gap remain unexplored.
 
 ## Related Work & Insights
-- **vs. AerialMegaDepth**: The most closely related dataset, but lacks satellite viewpoints; Sky2Ground is a strict superset.
-- **vs. VGGT**: SkyNet builds upon VGGT while resolving its catastrophic failure on satellite viewpoints.
-- **vs. DUSt3R/MASt3R**: Pairwise processing can leverage satellite information but incurs $O(N^2)$ complexity, making it unsuitable for real-time applications.
-- **vs. Dragon**: Dragon also employs a progressive strategy to integrate images from different altitudes, but targets reconstruction only and does not address localization.
+- **vs AerialMegaDepth**: Most relevant dataset, but lacks satellite views; Sky2Ground is a superset.
+- **vs VGGT**: SkyNet builds on VGGT but solves its failure on satellite perspectives.
+- **vs DUSt3R/MASt3R**: Pair-wise processing utilizes satellite info but has $O(N^2)$ complexity, unsuitable for real-time use.
+- **vs Dragon**: Dragon also uses progressive strategies for different altitudes but only for reconstruction, not localization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — First systematic study of joint three-view localization; MSA and P-VS designs are creative.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers both localization and rendering tasks, with multiple baselines and detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ — In-depth analysis with clearly articulated counter-intuitive findings.
-- Value: ⭐⭐⭐⭐ — The dataset and benchmark make an important contribution to the cross-view localization community.
+- Novelty: ⭐⭐⭐⭐ First systematic study of 3-view joint localization; creative MSA and P-VS designs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers both localization and rendering; multiple benchmarks and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Deep analysis with clear presentation of counter-intuitive findings.
+- Value: ⭐⭐⭐⭐ Dataset and benchmark are highly valuable for the cross-view localization field.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
-- [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
+- [\[CVPR 2026\] Solvability of the Viewing Graph Under the Affine Camera Model](solvability_of_the_viewing_graph_under_the_affine_camera_model.md)
 - [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
-- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
-- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
+- [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
+- [\[CVPR 2026\] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints](revisiting_optimal_coding_for_i-tof_under_practical_sensor_constraints.md)
 
 </div>
 

@@ -2,71 +2,72 @@
 title: >-
   [Paper Note] FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation
 description: >-
-  [ACL 2026][LLM/NLP][Diffusion Language Models] This paper analyzes two bottlenecks of continuous diffusion language models in few-step sampling: the mismatch of self-conditioning signals and training saturation. It propo…
+  [ACL 2026][LLM (Other)][Diffusion Language Model] This paper analyzes two bottlenecks in continuous diffusion language models during few-step sampling: the mismatch of self-conditioning signals and training saturation. It proposes the FastDiSS framework, which improves robustness through Self-Conditioning Perturbation (SCP) and Model-Aware Noise Scaling (MANS), achiev
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Diffusion Language Models"
-  - "Few-step Sampling"
-  - "Self-conditioning Perturbation"
-  - "Noise Scaling"
-  - "Sequence-to-Sequence"
+  - ACL 2026
+  - LLM (Other)
+  - Diffusion Language Model
 date: 2026-05-08
-content_hash: 7e14953e9ff60948
+content_hash: a4c91db6e81d3b8f
 ---
-
 # FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05551](https://arxiv.org/abs/2604.05551)  
 **Code**: None  
 **Area**: LLM/NLP  
-**Keywords**: Diffusion Language Models, Few-step Sampling, Self-conditioning Perturbation, Noise Scaling, Sequence-to-Sequence
+**Keywords**: Diffusion Language Models, Few-step Sampling, Self-Conditioning Perturbation, Noise Scaling, Sequence-to-Sequence
 
 ## TL;DR
-This paper analyzes two bottlenecks of continuous diffusion language models in few-step sampling: the mismatch of self-conditioning signals and training saturation. It proposes the FastDiSS framework, which improves robustness through Self-Conditioning Perturbation (SCP) and Model-Aware Noise Scaling (MANS), achieving 4×-400× speedup across 6 benchmarks while maintaining quality.
+This paper analyzes two bottlenecks in continuous diffusion language models during few-step sampling: the mismatch of self-conditioning signals and training saturation. It proposes the FastDiSS framework, which improves robustness through Self-Conditioning Perturbation (SCP) and Model-Aware Noise Scaling (MANS), achieving 4×-400× acceleration across six benchmarks while maintaining generation quality.
 
 ## Background & Motivation
 
-**Background**: As an alternative to autoregressive text generation, diffusion models achieve linear-time decoding by generating all tokens in parallel. Self-conditioning techniques improve few-step sampling by reusing predictions from previous steps as conditioning signals, but carry unrecognized failure modes.
+**Background**: As an alternative to autoregressive text generation, diffusion models achieve linear-time decoding by generating all tokens in parallel. Self-conditioning techniques reuse the prediction from the previous step as a conditioning signal to improve few-step sampling, yet they introduce unrecognized failure modes.
 
-**Limitations of Prior Work**: (1) Training-inference self-conditioning mismatch—ground truth targets are available during training, but only imperfect self-predictions can be used during inference. This distribution shift is more severe in few-step settings, where predictions at high-noise steps differ significantly from those at low-noise steps, causing reused signals to become biased conditions. (2) Late-stage training saturation—models encounter a distinct loss plateau after quickly fitting early targets, as uniform noise sampling fails to provide effective learning signals for tokens already predicted with high confidence.
+**Limitations of Prior Work**: (1) Training-inference self-conditioning mismatch—During training, ground-truth targets are available for conditioning, whereas during inference, the model must rely on its own imperfect predictions. This distribution shift is more severe in few-step settings where predictions at high-noise steps differ significantly from low-noise steps, causing reused signals to become biased conditions. (2) Late-stage training saturation—Models exhibit a loss plateau after quickly fitting early targets. Uniform noise sampling fails to provide effective learning signals for tokens that are already predicted with high confidence.
 
-**Key Challenge**: The deployment appeal of diffusion models lies precisely in few-step fast inference, yet self-conditioning—the key technique for improving few-step sampling—introduces the largest errors in those very settings.
+**Key Challenge**: The deployment appeal of diffusion models lies precisely in few-step fast inference; however, self-conditioning—the key technology for improving few-step sampling—introduces its greatest errors in these very settings.
 
-**Goal**: Design a training framework that enables diffusion language models to achieve quality in few-step sampling close to that of many-step sampling.
+**Goal**: Design a training framework that enables diffusion language models to achieve quality in few-step sampling comparable to many-step sampling.
 
-**Key Insight**: Directly simulate inference-time noise conditions during training by perturbing self-conditioning signals to match the inference error distribution, and avoid training saturation by dynamically adjusting noise for each token.
+**Key Insight**: Directly simulate inference-time noise conditions during training by perturbing self-conditioning signals to match the inference error distribution and dynamically adjusting noise per token to avoid training saturation.
 
-**Core Idea**: SCP deliberately uses noisier estimates as self-conditioning signals during training, while MANS dynamically assigns higher noise to high-confidence tokens based on denoising confidence.
+**Core Idea**: SCP intentionally uses noisier estimates as self-conditioning signals during training. MANS dynamically assigns higher noise to tokens based on denoising confidence levels.
 
 ## Method
 
 ### Overall Architecture
-FastDiSS introduces two complementary components into the training of standard continuous diffusion language models: (1) SCP generates weaker self-conditioning estimates by running the denoising network at higher noise levels; (2) MANS dynamically adjusts the noise level for each token based on the model's current denoising confidence. Together, they resolve self-conditioning mismatch and training saturation.
+
+FastDiSS does not modify the network architecture of continuous diffusion language models. Instead, it adjusts the training process to bridge the quality gap in few-step sampling. It addresses the two neglected bottlenecks: Self-Conditioning Perturbation (SCP) mitigates "training-inference mismatch" by making training signals as noisy as those in inference, and Model-Aware Noise Scaling (MANS) addresses "late-stage training saturation" by dynamically assigning noise based on each token's denoising confidence. In a training iteration, the model first samples timesteps, uses MANS to adjust per-token noise levels, retrieves a weaker self-conditioning estimate at higher noise via SCP, and finally optimizes with standard diffusion loss. These components work synergistically so that signals reused during few-step inference no longer act as sources of bias.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Training Sample + Sampling Timestep t"] --> B["Model-Aware Noise Scaling (MANS)<br/>Adjusts noise per token based on confidence; increases noise for easy tokens → Per-token timestep t_θ"]
+    B --> C["Self-Conditioning Perturbation (SCP)<br/>Retrieves a weaker, noisier estimate at higher noise t′ > t_θ"]
+    C --> D["Denoising Network<br/>Predicts targets under perturbed self-conditioning signals"]
+    D --> E["Standard Diffusion Loss<br/>L_diffusion + L_round"]
+    B -.->|"Positive Feedback: MANS improves high-noise estimate quality, making SCP signals more reliable"| C
+```
 
 ### Key Designs
 
-1. **Self-Conditioning Perturbation (SCP)**:
+**1. Self-Conditioning Perturbation (SCP): Rehearsing "Signal Deterioration" during Training**
 
-    - Function: Reduces training-inference distribution shift by introducing noise conditions during training that match inference-time errors.
-    - Mechanism: When obtaining the self-conditioning signal during training, the denoising network is not run at the current noise level $t$, but at a higher noise level $t' > t$ to produce a weaker, noisier estimate. This simulates the imperfect estimate passed from the previous (higher noise) step during inference. The network is then trained to denoise accurately even under this perturbed conditioning signal.
-    - Design Motivation: Inference-time self-conditioning signals originate from earlier, higher-noise step estimates, which differ from the training distribution. SCP encourages the model to operate robustly under noisy conditioning signals by simulating this imperfection during training.
+The primary pain point of few-step sampling is that training uses ground-truth targets while inference reuses the previous noisier, imperfect prediction. SCP "worsens" self-conditioning signals during training by running the denoising network at a higher noise level $t' > t$ rather than the current $t$. This produces a weaker estimate that simulates the degraded signal passed from previous steps during inference. The network is then trained to denoise accurately under these perturbed conditions, internalizing the cost of signal reuse before inference occurs.
 
-2. **Model-Aware Noise Scaling (MANS)**:
+**2. Model-Aware Noise Scaling (MANS): Reallocating Training Signals to "Hard" Tokens**
 
-    - Function: Dynamically adjusts noise levels based on the denoising confidence of each token to avoid training saturation.
-    - Mechanism: For each token $i$, the model's prediction confidence is calculated (distance to the ground truth embedding), and noise is increased for high-confidence tokens. Specifically, the timestep for each token is dynamically adjusted according to the model's current prediction, ensuring that "easy" tokens face higher noise challenges.
-    - Design Motivation: Uniform noise sampling leads to a significant amount of training signal being wasted on "easy" tokens already mastered by the model. MANS allows the model to focus on signals with learning value while also improving the quality of self-conditioning estimates in high-noise regions.
+Uniform noise sampling involves an implicit waste: tokens that the model has already learned with high confidence are repeatedly trained with the same noise distribution, contributing negligible gradients. MANS adopts a token-adaptive approach: it calculates confidence as the distance between the model prediction and the ground-truth embedding for each token $i$. More "easy" (high-confidence) tokens are assigned higher noise levels and timesteps, forcing the model to process positions it previously mastered. This focuses the learning signal on valuable areas to avoid saturation and improves denoising quality in high-noise regions.
 
-3. **End-to-End Training Framework**:
+**3. End-to-End Training Framework: Synergistic Effects**
 
-    - Function: Integrates SCP and MANS into the standard diffusion training pipeline while maintaining training stability.
-    - Mechanism: A timestep $t$ is sampled first, then the adjusted timestep $t_\theta$ is obtained via MANS. A perturbed self-conditioning signal is acquired at the $t_\theta$ noise level via SCP, and finally, the model is trained with the standard diffusion loss. Both components can be used independently or jointly.
-    - Design Motivation: SCP and MANS address different bottlenecks but enhance each other—MANS improves estimate quality in high-noise regions, indirectly enhancing the quality of SCP's perturbation signals.
+SCP and MANS are integrated into the standard diffusion training pipeline while maintaining stability. The iteration sequence is: sample timestep $t$, apply MANS to obtain adjusted per-token timesteps $t_\theta$, retrieve perturbed self-conditioning signals via SCP at $t_\theta$, and calculate the standard diffusion loss. While they can function independently, their combination creates a positive feedback loop: MANS improves estimation quality in high-noise regions, thereby enhancing the quality of the perturbation signals that SCP relies on.
 
 ### Loss & Training
-The standard diffusion objective $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{diffusion}} + \mathcal{L}_{\text{round}}$ is used, combined with SCP and MANS. Training alternates between optimizing the diffusion loss and the self-conditioning loss.
+
+The overall objective follows the sum of two standard diffusion modeling terms: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{diffusion}} + \mathcal{L}_{\text{round}}$. SCP and MANS only alter the noise conditions and self-conditioning signals fed into the loss functions without introducing new terms. During training, diffusion loss and self-conditioning loss are optimized alternately.
 
 ## Key Experimental Results
 
@@ -76,44 +77,44 @@ The standard diffusion objective $\mathcal{L}_{\text{total}} = \mathcal{L}_{\tex
 |------|------|---------|---------|
 | IWSLT14 De-En | Standard Diffusion | 27.85 | 1× |
 | IWSLT14 De-En | FastDiSS | **29.70** | 200×-400× |
-| Oracle Self-Cond. Upper Bound | — | 29.70 | — |
+| Upper Bound (Oracle) | — | 29.70 | — |
 
 ### Ablation Study
 
 | Configuration | 5-step BLEU | Description |
 |------|---------|------|
-| Standard Self-Cond. | 27.85 | Baseline |
+| Standard Self-Conditioning | 27.85 | Baseline |
 | + SCP only | 29.1+ | Reduces training-inference mismatch |
 | + MANS only | 28.5+ | Avoids training saturation |
-| + SCP + MANS | **29.70** | Optimal synergy between both |
+| + SCP + MANS | **29.70** | Optimal synergy |
 
 ### Key Findings
-- Self-conditioning mismatch causes a loss of approximately 2 BLEU during 5-step sampling; FastDiSS almost entirely closes this gap.
+- Self-conditioning mismatch causes a loss of approximately 2 BLEU in 5-step sampling; FastDiSS recovers nearly the entire gap.
 - SCP enables few-step sampling quality to approach the theoretical upper bound of using "correct" self-conditioning.
-- Token-level noise adjustment in MANS is more effective than uniform noise sampling, preventing late-stage training saturation.
-- Consistent improvements are observed across 6 seq2seq benchmarks, including translation and summarization tasks.
-- Competitiveness is maintained even compared to other single-step diffusion frameworks.
+- MANS-based token-level noise adjustment is more effective than uniform sampling, preventing late-stage training saturation.
+- Consistent improvements were observed across six seq2seq benchmarks, including translation and summarization.
+- FastDiSS remains competitive compared to other single-step diffusion frameworks.
 
 ## Highlights & Insights
-- **Simulating Inference Error during Training**: The core idea of SCP—deliberately introducing inference-time imperfections during training to enhance robustness—can be generalized to any scenario with training-inference mismatch (e.g., teacher forcing vs. autoregressive inference).
-- **Hard-Example Aware Training**: MANS dynamically increasing noise for "easy" tokens is a natural application of curriculum learning and hard example mining ideas within diffusion models.
-- **Analysis-Driven Design**: By comparing the performance gap between "oracle" and "reused" self-conditioning, the paper precisely quantifies the severity of the problem before designing targeted solutions.
+- **Simulating Inference Error during Training**: The core concept of SCP—intentionally introducing inference-time imperfections during training to improve robustness—can be generalized to any scenario with training-inference mismatch (e.g., teacher forcing vs. autoregressive inference).
+- **Hard-Example Aware Training**: By dynamically increasing noise for "easy" tokens, MANS serves as a natural application of curriculum learning and hard example mining within the diffusion paradigm.
+- **Analysis-Driven Design**: By quantifying the performance gap between "oracle" and "reused" self-conditioning, the authors precisely characterized the problem before designing a targeted solution.
 
 ## Limitations & Future Work
 - Validated only on continuous diffusion language models; discrete diffusion models were not tested.
-- The 6 benchmarks are primarily translation and summarization tasks; more complex generation tasks were not tested.
-- The choice of noise levels for SCP may require tuning for different tasks.
-- Compared to the latest autoregressive LLMs, the absolute quality of diffusion language models still shows a gap.
+- Benchmarks primarily cover translation and summarization; more complex generation tasks await testing.
+- The selection of noise levels for SCP may require per-task tuning.
+- An absolute quality gap still remains when comparing diffusion language models to the latest autoregressive LLMs.
 
 ## Related Work & Insights
-- **vs. DiffusionLM**: DiffusionLM defines the basic framework for continuous diffusion language modeling; FastDiSS addresses its efficiency bottlenecks in few-step sampling.
-- **vs. CDCD**: CDCD introduced self-conditioning to accelerate diffusion; FastDiSS solves the new problems introduced by self-conditioning in few-step settings.
-- **vs. Single-step Diffusion Methods**: The few-step strategy of FastDiSS provides a more flexible trade-off between quality and efficiency.
+- **vs. DiffusionLM**: DiffusionLM defined the base framework for continuous diffusion language modeling; FastDiSS solves the efficiency bottlenecks in its few-step sampling.
+- **vs. CDCD**: While CDCD introduced self-conditioning to accelerate diffusion, FastDiSS addresses new problems introduced by self-conditioning in few-step settings.
+- **vs. One-step Methods**: FastDiSS's few-step strategy provides a more flexible trade-off between quality and efficiency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "simulating inference error during training" approach in SCP is simple and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 6 benchmarks, detailed ablations, and comparisons across multiple step counts.
-- Writing Quality: ⭐⭐⭐⭐ Thorough problem analysis and clear methodological description.
+- Novelty: ⭐⭐⭐⭐ The idea of "simulating inference error during training" in SCP is simple and effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Six benchmarks, detailed ablations, and comparisons across multiple step counts.
+- Writing Quality: ⭐⭐⭐⭐ Thorough problem analysis and clear methodological descriptions.
 - Value: ⭐⭐⭐⭐ Removes key efficiency barriers for the practical deployment of diffusion language models.
 
 <!-- RELATED:START -->
@@ -123,10 +124,10 @@ The standard diffusion objective $\mathcal{L}_{\text{total}} = \mathcal{L}_{\tex
 ## Related Papers
 
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](../../AAAI2026/llm_nlp/transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
+- [\[ACL 2025\] Automated CAD Modeling Sequence Generation from Text Descriptions via Transformer-Based Large Language Models](../../ACL2025/llm_nlp/cadllm_cad_modeling_from_text.md)
 - [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
 - [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](../../AAAI2026/llm_nlp/uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ACL 2026\] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion](leveraging_pretrained_language_models_as_energy_functions_for_glauber_dynamics_t.md)
 
 </div>
 

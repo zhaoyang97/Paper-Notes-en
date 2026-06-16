@@ -2,149 +2,166 @@
 title: >-
   [Paper Note] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt learning] EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning via a trajectory-aware prompt evolution strategy — comprising unified embedding projection…
+  [CVPR 2026][Multimodal VLM][prompt learning] EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning through a trajectory-aware prompt evolution strategy (unified embedding projection + direction-magnitude decoupled training + feature geometric regularization), achieving comprehensive SOTA on few-shot/cross-dataset/domain generalizati
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "prompt learning"
-  - "catastrophic forgetting"
-  - "low-rank decomposition"
-  - "feature decorrelation"
-  - "VLM adaptation"
+  - CVPR 2026
+  - Multimodal VLM
+  - prompt learning
 date: 2026-05-08
-content_hash: baf15434e7545f97
+content_hash: a15081e86c556d1c
 ---
-
 # EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.09493](https://arxiv.org/abs/2603.09493)  
 **Code**: To be confirmed  
-**Area**: Multimodal VLM
+**Area**: Multi-modal VLM  
 **Keywords**: prompt learning, catastrophic forgetting, low-rank decomposition, feature decorrelation, VLM adaptation
 
 ## TL;DR
-EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning via a trajectory-aware prompt evolution strategy — comprising unified embedding projection, direction–magnitude decoupled training, and feature geometric regularization — achieving state-of-the-art performance across few-shot, cross-dataset, and domain generalization benchmarks while preserving zero-shot capability.
+EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning through a trajectory-aware prompt evolution strategy (unified embedding projection + direction-magnitude decoupled training + feature geometric regularization), achieving comprehensive SOTA on few-shot/cross-dataset/domain generalization tasks while maintaining zero-shot capability.
 
 ## Background & Motivation
-**Background**: Large-scale vision-language models (e.g., CLIP, ALIGN) acquire strong zero-shot generalization through contrastive pre-training. To efficiently adapt these models to downstream tasks, prompt learning methods (e.g., CoOp, CoCoOp, MaPLe) introduce learnable prompt tokens into a frozen backbone for parameter-efficient fine-tuning.
+**Background**: Large-scale vision-language models (CLIP, ALIGN, etc.) acquire powerful zero-shot generalization through contrastive pre-training. To efficiently adapt to downstream tasks, prompt learning (e.g., CoOp, CoCoOp, MaPLe) implements parameter-efficient fine-tuning by inserting learnable prompt tokens into frozen backbones.
 
 **Limitations of Prior Work**:
-- **Layer isolation**: Methods such as MaPLe insert prompts independently at each layer, leaving prompts isolated without cross-layer semantic information flow, thereby disrupting the hierarchical semantic progression inherent in Transformer architectures.
-- **Modality bias**: Existing approaches (e.g., MaPLe) exhibit a text-centric bias, failing to fully exploit complementary vision–language interactions.
-- **Catastrophic forgetting**: During few-shot adaptation, learnable prompts rapidly deviate from pre-trained semantic anchors, overfitting to scarce downstream data and severely degrading zero-shot generalization.
+   - **Inter-layer Isolation**: Methods like MaPLe insert prompts independently into each layer; these prompts are isolated from each other, failing to transmit cross-layer semantic information flow and disrupting the hierarchical semantic progression of the Transformer.
+   - **Modality Bias**: Existing schemes (e.g., MaPLe) exhibit a text-centric bias and fail to fully utilize complementary vision-language interactions.
+   - **Catastrophic Forgetting**: During few-shot adaptation, learnable prompts rapidly deviate from pre-trained semantic anchors and overfit minimal downstream data, leading to severe degradation in zero-shot generalization.
 
-**Key Challenge**: A fundamental trade-off exists between task-specific adaptation and pre-trained knowledge retention — existing methods either achieve high base-class accuracy at the cost of novel-class collapse, or adopt conservative adaptation with limited base-class improvement.
+**Key Challenge**: The trade-off between task-specific adaptation and pre-trained knowledge preservation—existing methods either achieve high accuracy on base classes but collapse on novel classes, or adapt conservatively with limited gains on base classes.
 
-**Goal**: (a) Establish a cross-layer, cross-modal prompt generation mechanism; (b) control the evolutionary trajectory of prompts during training to prevent knowledge forgetting; (c) prevent feature representation collapse in low-data regimes.
+**Goal**: (a) Establish a cross-layer and cross-modal prompt generation mechanism; (b) control the prompt evolution trajectory during training to prevent knowledge forgetting; (c) prevent feature representation collapse in low-data scenarios.
 
-**Key Insight**: The authors observe that prompts naturally undergo a progressive evolution during training — from general semantic anchors toward task-specific features. By explicitly guiding this trajectory — preserving early-learned semantic directions while adjusting only magnitudes — adaptation that "cannot forget" becomes achievable.
+**Key Insight**: The authors observe that prompts naturally undergo a progressive evolution from "universal semantic anchors" to "task-specific features" during training. If this trajectory can be explicitly guided—retaining early-learned semantic directions while only adjusting magnitudes—"unforgettable" adaptation can be achieved.
 
-**Core Idea**: Decouple the low-rank update of the prompt projector into direction and magnitude components; freeze historical directions and train only magnitudes, coupled with feature geometric regularization, to realize trajectory-controlled prompt evolution.
+**Core Idea**: Decouple the low-rank updates of the prompt projector into direction and magnitude, freezing historical directions while only training magnitudes, and combine this with feature geometric regularization to achieve trajectory-controlled prompt evolution.
 
 ## Method
 
 ### Overall Architecture
-EvoPrompt is built upon a frozen CLIP (ViT-B/16) backbone. Input images and texts are processed by a visual encoder $F$ and a text encoder $G$, respectively, both kept fully frozen. From layer $J$ through layer $L$, prompts generated by a Modality-Shared Prompt Projector (MPP) from a unified embedding space are injected at each layer. Training employs an Evolutionary Trajectory-Aware Learning (ETL) strategy, together with Feature Geometric Regularization (FGR) and a Knowledge Constancy Loss (KCL). The output is the cosine similarity between visual feature $f^v$ and text feature $f^t$, used for classification.
+EvoPrompt aims to resolve the longstanding balance in VLM prompt learning: allowing prompts to learn downstream task features without drifting too far during few-shot training or forgetting CLIP's original zero-shot knowledge. The entire pipeline is built upon a fully frozen CLIP (ViT-B/16)—images pass through the visual encoder $F$ and text through the text encoder $G$, with no parameters modified in either backbone. The learnable components are minimal: a cross-layer shared embedding, from which prompts injected into layers 6 through 12 are generated by a **Modality-Shared Prompt Projector (MPP)**. During training, prompts are not updated freely; instead, **Evolutionary Trajectory-Aware Learning (ETL)** decomposes each low-rank update into "direction" and "magnitude," freezing historical directions and only adjusting magnitudes to let prompts evolve along a controlled trajectory. Simultaneously, **Feature Geometric Regularization (FGR)** uses geometric constraints to expand the feature space, and a Knowledge Constancy Loss (KCL) pulls features back toward the original CLIP vicinity. Finally, classification is performed using the cosine similarity between visual features $f^v$ and text features $f^t$. The data flow is summarized below:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Input Image"] --> FV
+    TXT["Input Text"] --> GT
+    E["Shared Learnable Embedding E"] --> MPP["Modality-Shared Prompt Projector<br/>Shared Base + Layer-specific LoRA Adapters A_iB_i"]
+    MPP --> ETL["Evolutionary Trajectory-Aware Learning<br/>Decouple LR updates into Dir+Mag, freeze history dir, train magnitude α"]
+    ETL -->|"Generate prompts for L6-12"| FV["Frozen CLIP Vision Encoder F"]
+    ETL -->|"Generate prompts for L6-12"| GT["Frozen CLIP Text Encoder G"]
+    FV --> FVF["Vision Features f^v"]
+    GT --> FTF["Text Features f^t"]
+    FVF --> FGR["Feature Geometric Regularization<br/>Minimize intra-modal covariance to prevent collapse"]
+    FTF --> FGR
+    FVF --> CLS["Cosine Similarity Classification"]
+    FTF --> CLS
+    FGR --> LOSS["Total Loss = InfoNCE + γ·FGR + η·KCL"]
+    CLS --> LOSS
+    LOSS -.->|"Backprop: Update magnitude α + New direction"| ETL
+```
 
 ### Key Designs
 
-1. **Modality-Shared Prompt Projector (MPP)**
+**1. Modality-Shared Prompt Projector: Anchoring prompts to a single semantic tree**
 
-    - **Function**: Generates per-layer, per-modality prompts from a unified learnable embedding space, replacing conventional layer-wise independent prompts.
-    - **Mechanism**: A shared learnable embedding $E \in \mathbb{R}^{K \times d_r}$ ($K=5$, $d_r=512$) is initialized and transformed into prompts for each layer and modality via decoupled projectors. For modality $m \in \{v, t\}$, the prompt at layer $i$ is $P_i^m = \text{Proj}_i^m(E)$. Projector weights are factorized into a shared basis plus a low-rank adapter: $W_i^m = W_{\text{shared}}^m + A_i \cdot B_i$, where $W_{\text{shared}}^m \in \mathbb{R}^{d_r \times d_m}$ is shared across layers, and $A_i \in \mathbb{R}^{d_r \times r}$, $B_i \in \mathbb{R}^{r \times d_m}$ are layer-specific low-rank matrices.
-    - **Design Motivation**: The shared $W_{\text{shared}}$ captures foundational semantic knowledge across layers (e.g., generic visual/textual patterns), while the low-rank $A_i B_i$ encodes layer-specific adaptation (e.g., shallow texture vs. deep semantics). Parameter count is reduced from $O((L-J+1) \cdot d_r \cdot d_m)$ to $O(d_r \cdot d_m + (L-J+1) \cdot r \cdot (d_r + d_m))$, yielding a 4.6× reduction over MaPLe.
+Methods like MaPLe insert independent prompt sets at each layer, which are disconnected and effectively sever the Transformer's inherent hierarchical semantic progression. MPP reverses this by maintaining a single shared learnable embedding $E \in \mathbb{R}^{K \times d_r}$ ($K=5$, $d_r=512$). Prompts for every layer and modality are projected from this embedding: for modality $m \in \{v, t\}$, the $i$-th layer prompt is $P_i^m = \text{Proj}_i^m(E)$. Crucially, the projector weights are decomposed into a "shared base + layer-specific low-rank adapter":
 
-2. **Evolutionary Trajectory-Aware Learning (ETL)**
+$$W_i^m = W_{\text{shared}}^m + A_i \cdot B_i$$
 
-    - **Function**: Controls the training trajectory of prompts through direction–magnitude decoupling and progressive knowledge accumulation to prevent catastrophic forgetting.
-    - **Mechanism**: At training epoch $t$, the low-rank update for layer $i$ is decomposed into a magnitude scalar $\alpha_i^t$ and a normalized direction matrix: $\Delta W_i^t = \alpha_i^t \cdot \overline{A_i^t B_i^t}$ (where $\overline{\cdot}$ denotes Frobenius normalization). By epoch $T$, the total weight is a weighted sum of historical directions:
-     $$W_i^T = W_{\text{shared}} + \sum_{t=1}^{T-1} \alpha_i^t \cdot \overline{A_i^t B_i^t} + \alpha_i^T \cdot \overline{A_i^T B_i^T}$$
-     Critically, all historical directions $\{\overline{A_i^t B_i^t}\}_{t=1}^{T-1}$ are frozen; only the magnitudes $\{\alpha_i^t\}_{t=1}^T$ and the current new direction $\overline{A_i^T B_i^T}$ are trained.
-    - **Design Motivation**: Prior work (DoRA) demonstrates that direction is more critical than magnitude in low-rank adaptation. Directions established during early training encode robust semantic structure; freezing them effectively protects the "cognitive skeleton," allowing magnitudes to freely adjust for task adaptation. New directions introduced in subsequent epochs enable the learning of incremental knowledge.
-    - **Adaptive Rank Reduction**: The rank $r$ of the low-rank matrices is progressively reduced in stages: $r_1 > r_\mu > r_\nu$ (reduced at epochs $\mu$ and $\nu$). As the marginal contribution of later epochs diminishes, lower ranks serve as structured regularization (preventing overfitting) while reducing accumulated parameter count and computational overhead.
+Where $W_{\text{shared}}^m \in \mathbb{R}^{d_r \times d_m}$ is shared across all layers to handle general vision/text patterns, and $A_i \in \mathbb{R}^{d_r \times r}, B_i \in \mathbb{R}^{r \times d_m}$ are layer-specific low-rank matrices for layer-specific adaptation. This allows a shared base to link cross-layer semantic flow while providing low-rank space for per-layer fine-tuning, reducing parameters from $O((L-J+1) \cdot d_r \cdot d_m)$ to $O(d_r \cdot d_m + (L-J+1) \cdot r \cdot (d_r + d_m))$, which is 4.6x fewer than MaPLe.
 
-3. **Feature Geometric Regularization (FGR)**
+**2. Evolutionary Trajectory-Aware Learning: Freezing direction and tuning magnitude for unforgettable trajectories**
 
-    - **Function**: Prevents dimensional redundancy and representation collapse in the feature space, enhancing orthogonality and decorrelation of learned features.
-    - **Mechanism**: Grounded in the Soft-HGR (Hirschfeld–Gebelein–Rényi) maximum correlation framework. The InfoNCE contrastive loss can be interpreted as maximizing the cross-modal alignment term (the first term of the Soft-HGR objective) while neglecting the intra-modal covariance structure (the second term). FGR explicitly minimizes the trace of the product of intra-modal covariance matrices:
-     $$\mathcal{L}_{fgr}(\mathcal{F}^v, \mathcal{F}^t) = \frac{1}{2} \text{tr}(\text{cov}(\mathcal{F}^v) \cdot \text{cov}(\mathcal{F}^t))$$
-    - **Design Motivation**: Contrastive learning focuses solely on instance-level alignment and is prone to high-dimensional feature redundancy. FGR encourages decorrelation across feature dimensions, ensuring that each dimension of the representation space is effectively utilized — particularly critical in low-data regimes.
+This is the core trick of the paper, targeting the issue where prompts rapidly deviate from semantic anchors during few-shot adaptation. Observing that prompt training naturally evolves from universal anchors to task-specific features, the authors explicitly manage this trajectory. Specifically, the low-rank update at each epoch $t$ is decomposed into a scalar magnitude $\alpha_i^t$ and a Frobenius-normalized direction matrix $\overline{A_i^t B_i^t}$. At epoch $T$, the total weights for layer $i$ are a weighted accumulation of historical directions:
+
+$$W_i^T = W_{\text{shared}} + \sum_{t=1}^{T-1} \alpha_i^t \cdot \overline{A_i^t B_i^t} + \alpha_i^T \cdot \overline{A_i^T B_i^T}$$
+
+The secret is that all historical directions $\{\overline{A_i^t B_i^t}\}_{t=1}^{T-1}$ are frozen once learned. Each new epoch only trains the scalar magnitudes $\{\alpha_i^t\}$ and the current new direction $\overline{A_i^T B_i^T}$. Following the insight from DoRA that direction is more critical than magnitude in low-rank adaptation, freezing early directions preserves the robust "cognitive skeleton," while allowing magnitudes to scale to fit the task. 
+
+**3. Feature Geometric Regularization: Recovering intra-modal structures missed by contrastive learning**
+
+Contrastive loss focuses on instance-level cross-modal alignment, often resulting in highly redundant feature dimensions and collapse under low-data conditions. FGR draws from the Soft-HGR (Hirschfeld-Gebelein-Rényi) maximal correlation framework: InfoNCE only corresponds to the first term of the Soft-HGR objective (cross-modal alignment), while the second term—intra-modal covariance structure—is ignored. FGR explicitly adds this term by minimizing the trace of the product of intra-modal covariance matrices:
+
+$$\mathcal{L}_{fgr}(\mathcal{F}^v, \mathcal{F}^t) = \frac{1}{2} \text{tr}(\text{cov}(\mathcal{F}^v) \cdot \text{cov}(\mathcal{F}^t))$$
+
+This term forces intra-modal feature dimensions to decorrelate, expanding the feature space to use every dimension and avoiding redundant collapse.
 
 ### Loss & Training
-The overall training objective is a weighted sum of three terms:
+The total training objective is a weighted sum of three terms:
 $$\mathcal{L}_{total} = \mathcal{L}_{InfoNCE} + \gamma \cdot \mathcal{L}_{fgr} + \eta \cdot \mathcal{L}_{kcl}$$
-The Knowledge Constancy Loss $\mathcal{L}_{kcl} = \frac{1}{2}[(1 - \cos(f^v, f_0^v)) + (1 - \cos(f^t, f_0^t))]$ constrains prompted features from deviating from the original frozen CLIP feature distribution. Optimal hyperparameters: $\gamma=25$, $\eta=0.5$.
+The knowledge constancy loss $\mathcal{L}_{kcl} = \frac{1}{2}[(1 - \cos(f^v, f_0^v)) + (1 - \cos(f^t, f_0^t))]$ ensures prompted features do not deviate from the original frozen CLIP distribution. Optimal hyperparameters are $\gamma=25, \eta=0.5$.
 
-Training configuration: ViT-B/16 backbone, 16-shot per class, prompts injected from layer 6 to layer 12, token length $l=5$, embedding vector count $K=5$, single A800 GPU, results averaged over 3 random seeds.
+Training Config: ViT-B/16 backbone, 16-shot per class, prompts inserted from layer 6 to 12, token length $l=5$, embedding vectors $K=5$, A800 GPU, mean of 3 random seeds.
 
 ## Key Experimental Results
 
-### Main Results: Base-to-Novel Generalization (Average over 11 Datasets)
+### Main Results: Base-to-Novel Generalization (Average over 11 datasets)
 
 | Method | Base | Novel | HM |
-|--------|------|-------|----|
+|------|------|-------|------|
 | CLIP (zero-shot) | 69.34 | 74.22 | 71.70 |
 | CoOp | 82.69 | 63.22 | 71.66 |
 | MaPLe | 82.28 | 75.14 | 78.55 |
 | PromptSRC | 84.26 | 76.10 | 79.97 |
 | MMA | 83.20 | 76.80 | 79.87 |
-| **EvoPrompt** | **84.28** | **77.76** | **80.73** |
+| **Ours** | **84.28** | **77.76** | **80.73** |
 
-EvoPrompt achieves HM gains of +0.76% and Novel-class gains of +0.96% over the previous best. On FGVCAircraft, Novel-class accuracy improves by 1.27%; on EuroSAT, HM reaches 86.54% (vs. 83.87% for SOTA MMA).
+EvoPrompt improves HM by +0.76% and Novel classes by +0.96% compared to the previous best. It shows a +1.27% Novel class gain on FGVCAircraft and reaches 86.54% HM on EuroSAT (vs. 83.87% for SOTA MMA).
 
 ### Ablation Study (ImageNet Base-to-Novel)
 
-| Configuration | Base | Novel | HM | Note |
-|---------------|------|-------|----|------|
-| w/o MPP | 75.32 | 70.15 | 72.64 | Removing the unified projector, reverting to layer-wise independent prompts; HM drops 1.65% |
-| w/o $W_{\text{shared}}$ | 75.80 | 71.42 | 73.54 | Removing shared weights; each layer projects independently |
-| w/o AB | 76.15 | 70.90 | 73.43 | Removing low-rank adapters; using full-rank projection |
-| w/o E.T. | 77.42 | 70.25 | 73.66 | Removing trajectory-aware training; Base rises but Novel collapses |
-| w/o $\mathcal{L}_{kcl}$ | 77.24 | 70.55 | 73.74 | Removing Knowledge Constancy Loss |
-| w/o $\mathcal{L}_{fgr}$ | 76.70 | 70.52 | 73.48 | Removing geometric regularization |
-| **Full EvoPrompt** | 76.98 | 71.80 | **74.29** | Best overall balance |
+| Config | Base | Novel | HM | Description |
+|------|------|-------|------|------|
+| w/o MPP | 75.32 | 70.15 | 72.64 | Revert to independent per-layer prompts; HM drops 1.65%. |
+| w/o $W_{\text{shared}}$ | 75.80 | 71.42 | 73.54 | Independent projectors for each layer. |
+| w/o AB | 76.15 | 70.90 | 73.43 | Full-rank projection without LoRA. |
+| w/o E.T. | 77.42 | 70.25 | 73.66 | Without trajectory-aware training: Base rises but Novel crashes. |
+| w/o $\mathcal{L}_{kcl}$ | 77.24 | 70.55 | 73.74 | Without knowledge constancy loss. |
+| w/o $\mathcal{L}_{fgr}$ | 76.70 | 70.52 | 73.48 | Without geometric regularization. |
+| **Full EvoPrompt** | 76.98 | 71.80 | **74.29** | Optimal balance. |
 
 ### Key Findings
-- **MPP is foundational**: Removing MPP causes HM to drop from 74.29% to 72.64%, representing the largest single-component contribution.
-- **ETL and KCL serve as anti-forgetting mechanisms**: Their removal leads to higher Base accuracy (overfitting to base classes) but a sharp Novel-class drop, consistent with catastrophic forgetting.
-- **FGR provides critical fine-grained regularization**: Removing it reduces HM to 73.48%, confirming the importance of feature decorrelation for low-data generalization.
-- **Training efficiency**: Only 0.764M trainable parameters, inference speed of 1282.1 FPS, and training cost of 4.5ms/image — 4.6× fewer parameters than MaPLe (3.555M).
-- **Magnitude evolution pattern**: Learned $\alpha$ values peak at epoch 2 and gradually decay, indicating that core feature directions are established early and fine-tuned thereafter.
+- **MPP is foundational**: Removing MPP causes the largest HM drop (74.29% to 72.64%).
+- **ETL and KCL prevent forgetting**: Removing them causes Base to increase (overfitting) but Novel to drop sharply, typical of catastrophic forgetting.
+- **FGR provides crucial refinement**: Removing FGR drops HM to 73.48%, showing intra-modal decorrelation is vital for low-data generalization.
+- **Efficiency**: Only 0.764M trainable parameters, inference speed 1282.1 FPS, training 4.5ms/image. Parameter count is 4.6x lower than MaPLe.
+- **Magnitude Evolution**: Learned $\alpha$ peaks at epoch 2 and then decays, supporting the idea of early core direction building followed by fine refinement.
 
 ## Highlights & Insights
-- **Direction–magnitude decoupling is the key technique**: Decomposing low-rank updates into direction and magnitude, then freezing historical directions and training only magnitudes, constitutes an elegant "progressive knowledge accumulation" mechanism. This idea extends beyond prompt learning and transfers naturally to any LoRA fine-tuning scenario — it holds particular value for continual learning settings.
-- **Cross-domain transfer of Soft-HGR regularization**: Applying maximum correlation analysis from information theory to constrain the geometric structure of contrastive learning representations is better theoretically grounded than naive orthogonality regularization. The proposed $\mathcal{L}_{fgr}$ can be directly applied to other contrastive learning frameworks.
-- **"Breakpoint" analysis of overfitting** (Fig. 4): MaPLe undergoes irreversible Novel-class degradation after the breakpoint, whereas EvoPrompt maintains Novel-class stability. This diagnostic methodology itself offers a useful reference for future work.
+- **Direction-magnitude decoupling is the core technique**: Decomposing low-rank updates into direction + magnitude and freezing historical directions is an elegant "progressive knowledge accumulation" mechanism. This is highly valuable for continual learning scenarios.
+- **Cross-domain transfer of Soft-HGR regularization**: Using information-theoretic maximal correlation to constrain feature geometry is more theoretically grounded than simple orthogonal regularization.
+- **Overfitting "breakpoint" analysis**: MaPLe shows irreversible Novel class degradation after its breakpoint, whereas EvoPrompt remains stable.
 
 ## Limitations & Future Work
-- **Validation limited to CLIP ViT-B/16**: Performance on larger backbones (e.g., ViT-L/14) or other VLMs (e.g., SigLIP, EVA-CLIP) is not reported.
-- **Thresholds $\mu$ and $\nu$ for adaptive rank reduction are manually set**: A more principled approach would adaptively determine these based on validation performance.
-- **Storage overhead of direction accumulation**: All historical direction matrices must be retained as epochs increase. Although rank reduction mitigates this, it may become a bottleneck during long training runs. Direction merging strategies warrant exploration.
-- **Batch size sensitivity of FGR**: Covariance matrix estimation quality depends on batch size and may be unstable under extreme few-shot (1-shot) conditions.
+- **Backbone specialized**: Only verified on CLIP ViT-B/16; performance on ViT-L/14 or other VLMs (SigLIP, EVA-CLIP) is unreported.
+- **Manual thresholds**: Thresholds $\mu, \nu$ for adaptive rank reduction are manually set rather than adaptive.
+- **Storage overhead**: Accumulating directions requires storing historical matrices, which could become a bottleneck in long-term training.
+- **Batch size sensitivity**: Covariance estimation in FGR depends on batch size, potentially becoming unstable in extreme 1-shot scenarios.
 
 ## Related Work & Insights
-- **vs. MaPLe**: MaPLe inserts prompts independently at each layer and couples vision–text prompts via a coupling function. EvoPrompt replaces this with a unified embedding and shared basis, achieving 4.6× better parameter efficiency and more natural cross-layer information flow.
-- **vs. PromptSRC**: PromptSRC prevents forgetting via self-consistency regularization (prediction consistency constraints). EvoPrompt addresses the problem at the optimization trajectory level, fundamentally preventing "directional drift" by freezing directions — a more direct intervention.
-- **vs. DoRA**: DoRA also performs direction–magnitude decomposition but within a single training pass. EvoPrompt extends this to epoch-level progressive accumulation, better suited for temporal modeling of prompt evolution.
+- **vs MaPLe**: MaPLe uses independent prompts per layer. EvoPrompt uses a unified embedding + shared base, improving parameter efficiency by 4.6x and enabling more natural cross-layer flow.
+- **vs PromptSRC**: PromptSRC uses self-consistency (prediction consistency). EvoPrompt addresses the optimization trajectory directly by freezing directions, which is more fundamental.
+- **vs DoRA**: DoRA performs direction-magnitude decomposition once; EvoPrompt extends this to epoch-level progressive accumulation for temporal modeling of prompt evolution.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The direction–magnitude decoupling with progressive accumulation is creative; the introduction of FGR is theoretically grounded.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Four evaluation settings × 11 datasets, with full coverage of ablations, hyperparameter analysis, efficiency, and trajectory analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Overall structure is clear and mathematical derivations are complete, though the density of multiple components makes reading demanding.
-- **Value**: ⭐⭐⭐⭐ — The method is effective and parameter-efficient; the core trick (direction freezing + magnitude adjustment) has broad transferability.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
-- [\[CVPR 2026\] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles](dear_fine-grained_vlm_adaptation_by_decomposing_attention_head_roles.md)
-- [\[CVPR 2026\] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards](evolmm_self_evolving_lmm_continuous_rewards.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
+- [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
+- [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
 
 </div>
 

@@ -1,6 +1,6 @@
 ---
-title: "AI Conference Paper Notes | 10000+ In-Depth Summaries"
-description: "10000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ACL, CVPR, ICLR, AAAI, NeurIPS, ICCV, ICML, ECCV across 7 venues and 50 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
+title: "AI Conference Paper Notes | 13000+ In-Depth Summaries"
+description: "13000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ACL, CVPR, ICLR, AAAI, NeurIPS, ICCV, ICML, ECCV across 7 venues and 52 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
 tags:
   - "AI paper notes"
   - "LLM"
@@ -25,9 +25,9 @@ hide:
 <p class="hero-subtitle">AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas.<br>Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV<br>Continuously updated</p>
 
 <div class="hero-stats">
-<div class="stat"><span class="stat-number">10934</span><span class="stat-label">Notes</span></div>
+<div class="stat"><span class="stat-number">13520</span><span class="stat-label">Notes</span></div>
 <div class="stat"><span class="stat-number">7</span><span class="stat-label">Conferences</span></div>
-<div class="stat"><span class="stat-number">50</span><span class="stat-label">Areas</span></div>
+<div class="stat"><span class="stat-number">52</span><span class="stat-label">Areas</span></div>
 </div>
 
 </div>
@@ -38,9 +38,107 @@ hide:
 
 <div class="conf-card" markdown>
 
+### 📷 [CVPR2026](CVPR2026/index.md)
+
+<div class="conf-count">3995 notes · 47 areas</div>
+
+<div class="area-groups">
+<div class="area-group">
+<div class="area-group-label">LLM</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/llm_agent/">LLM Agent 41</a>
+<a class="area-tag" href="CVPR2026/hallucination/">Hallucination Detection 38</a>
+<a class="area-tag" href="CVPR2026/llm_safety/">LLM Safety 24</a>
+<a class="area-tag" href="CVPR2026/llm_reasoning/">LLM Reasoning 20</a>
+<a class="area-tag" href="CVPR2026/multi_agent/">Multi-Agent 9</a>
+<a class="area-tag" href="CVPR2026/llm_alignment/">Alignment & RLHF 8</a>
+<a class="area-tag" href="CVPR2026/llm_efficiency/">LLM Efficiency 5</a>
+<a class="area-tag" href="CVPR2026/llm_pretraining/">Pretraining 4</a>
+<a class="area-tag" href="CVPR2026/knowledge_editing/">Knowledge Editing 3</a>
+<a class="area-tag" href="CVPR2026/llm_nlp/">LLM (Other) 3</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">NLP Applications</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/information_retrieval/">Information Retrieval & RAG 11</a>
+<a class="area-tag" href="CVPR2026/code_intelligence/">Code Intelligence 2</a>
+<a class="area-tag" href="CVPR2026/multilingual_mt/">Multilingual & Translation 2</a>
+<a class="area-tag" href="CVPR2026/dialogue/">Dialogue Systems 1</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Generation & Multimodal</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/multimodal_vlm/">Multimodal VLM 534</a>
+<a class="area-tag" href="CVPR2026/image_generation/">Image Generation 449</a>
+<a class="area-tag" href="CVPR2026/video_generation/">Video Generation 180</a>
+<a class="area-tag" href="CVPR2026/audio_speech/">Audio & Speech 32</a>
+<a class="area-tag" href="CVPR2026/aigc_detection/">AIGC Detection 8</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Visual Perception</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/3d_vision/">3D Vision 622</a>
+<a class="area-tag" href="CVPR2026/video_understanding/">Video Understanding 179</a>
+<a class="area-tag" href="CVPR2026/human_understanding/">Human Understanding 174</a>
+<a class="area-tag" href="CVPR2026/segmentation/">Segmentation 162</a>
+<a class="area-tag" href="CVPR2026/image_restoration/">Image Restoration 131</a>
+<a class="area-tag" href="CVPR2026/object_detection/">Object Detection 118</a>
+<a class="area-tag" href="CVPR2026/remote_sensing/">Remote Sensing 67</a>
+<a class="area-tag" href="CVPR2026/anomaly_detection/">Anomaly Detection 2</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Decision & Embodied</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/autonomous_driving/">Autonomous Driving 160</a>
+<a class="area-tag" href="CVPR2026/robotics/">Robotics & Embodied AI 149</a>
+<a class="area-tag" href="CVPR2026/reinforcement_learning/">Reinforcement Learning 30</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Foundations & Theory</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/model_compression/">Model Compression 129</a>
+<a class="area-tag" href="CVPR2026/self_supervised/">Self-Supervised Learning 84</a>
+<a class="area-tag" href="CVPR2026/interpretability/">Interpretability 41</a>
+<a class="area-tag" href="CVPR2026/optimization/">Optimization & Theory 38</a>
+<a class="area-tag" href="CVPR2026/graph_learning/">Graph Learning 10</a>
+<a class="area-tag" href="CVPR2026/time_series/">Time Series 7</a>
+<a class="area-tag" href="CVPR2026/causal_inference/">Causal Inference 5</a>
+<a class="area-tag" href="CVPR2026/federated_learning/">Federated Learning 4</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Science & Cross-Disciplinary</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/medical_imaging/">Medical Imaging 174</a>
+<a class="area-tag" href="CVPR2026/ai_safety/">AI Safety 148</a>
+<a class="area-tag" href="CVPR2026/computational_biology/">Computational Biology 21</a>
+<a class="area-tag" href="CVPR2026/physics/">Physics & Scientific Computing 8</a>
+<a class="area-tag" href="CVPR2026/signal_comm/">Signal & Communications 5</a>
+<a class="area-tag" href="CVPR2026/social_computing/">Social Computing 4</a>
+<a class="area-tag" href="CVPR2026/earth_science/">Earth Science 3</a>
+<a class="area-tag" href="CVPR2026/medical_nlp/">Medical NLP 1</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Others</div>
+<div class="area-tags">
+<a class="area-tag" href="CVPR2026/others/">Others 145</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="conf-card" markdown>
+
 ### 🧪 [ICML2026](ICML2026/index.md)
 
-<div class="conf-count">1463 notes · 50 areas</div>
+<div class="conf-count">1462 notes · 50 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
@@ -53,7 +151,7 @@ hide:
 <a class="area-tag" href="ICML2026/llm_alignment/">Alignment & RLHF 26</a>
 <a class="area-tag" href="ICML2026/llm_evaluation/">LLM Evaluation 25</a>
 <a class="area-tag" href="ICML2026/llm_pretraining/">Pretraining 22</a>
-<a class="area-tag" href="ICML2026/hallucination/">Hallucination Detection 19</a>
+<a class="area-tag" href="ICML2026/hallucination/">Hallucination Detection 18</a>
 <a class="area-tag" href="ICML2026/multi_agent/">Multi-Agent 15</a>
 <a class="area-tag" href="ICML2026/knowledge_editing/">Knowledge Editing 8</a>
 <a class="area-tag" href="ICML2026/llm_nlp/">LLM (Other) 33</a>
@@ -222,99 +320,6 @@ hide:
 <div class="area-group-label">Others</div>
 <div class="area-tags">
 <a class="area-tag" href="ACL2026/others/">Others 1</a>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="conf-card" markdown>
-
-### 📷 [CVPR2026](CVPR2026/index.md)
-
-<div class="conf-count">1408 notes · 42 areas</div>
-
-<div class="area-groups">
-<div class="area-group">
-<div class="area-group-label">LLM</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/llm_safety/">LLM Safety 19</a>
-<a class="area-tag" href="CVPR2026/hallucination/">Hallucination Detection 17</a>
-<a class="area-tag" href="CVPR2026/llm_agent/">LLM Agent 12</a>
-<a class="area-tag" href="CVPR2026/llm_reasoning/">LLM Reasoning 7</a>
-<a class="area-tag" href="CVPR2026/llm_pretraining/">Pretraining 3</a>
-<a class="area-tag" href="CVPR2026/knowledge_editing/">Knowledge Editing 2</a>
-<a class="area-tag" href="CVPR2026/llm_alignment/">Alignment & RLHF 1</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">NLP Applications</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/information_retrieval/">Information Retrieval & RAG 7</a>
-<a class="area-tag" href="CVPR2026/code_intelligence/">Code Intelligence 2</a>
-<a class="area-tag" href="CVPR2026/multilingual_mt/">Multilingual & Translation 2</a>
-<a class="area-tag" href="CVPR2026/dialogue/">Dialogue Systems 1</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Generation & Multimodal</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/image_generation/">Image Generation 194</a>
-<a class="area-tag" href="CVPR2026/multimodal_vlm/">Multimodal VLM 190</a>
-<a class="area-tag" href="CVPR2026/video_generation/">Video Generation 63</a>
-<a class="area-tag" href="CVPR2026/audio_speech/">Audio & Speech 11</a>
-<a class="area-tag" href="CVPR2026/aigc_detection/">AIGC Detection 1</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Visual Perception</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/3d_vision/">3D Vision 223</a>
-<a class="area-tag" href="CVPR2026/video_understanding/">Video Understanding 73</a>
-<a class="area-tag" href="CVPR2026/segmentation/">Segmentation 69</a>
-<a class="area-tag" href="CVPR2026/human_understanding/">Human Understanding 53</a>
-<a class="area-tag" href="CVPR2026/object_detection/">Object Detection 49</a>
-<a class="area-tag" href="CVPR2026/image_restoration/">Image Restoration 35</a>
-<a class="area-tag" href="CVPR2026/remote_sensing/">Remote Sensing 12</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Decision & Embodied</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/autonomous_driving/">Autonomous Driving 80</a>
-<a class="area-tag" href="CVPR2026/robotics/">Robotics & Embodied AI 36</a>
-<a class="area-tag" href="CVPR2026/reinforcement_learning/">Reinforcement Learning 11</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Foundations & Theory</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/model_compression/">Model Compression 40</a>
-<a class="area-tag" href="CVPR2026/self_supervised/">Self-Supervised Learning 27</a>
-<a class="area-tag" href="CVPR2026/interpretability/">Interpretability 19</a>
-<a class="area-tag" href="CVPR2026/optimization/">Optimization & Theory 14</a>
-<a class="area-tag" href="CVPR2026/graph_learning/">Graph Learning 8</a>
-<a class="area-tag" href="CVPR2026/time_series/">Time Series 5</a>
-<a class="area-tag" href="CVPR2026/causal_inference/">Causal Inference 2</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Science & Cross-Disciplinary</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/medical_imaging/">Medical Imaging 56</a>
-<a class="area-tag" href="CVPR2026/ai_safety/">AI Safety 24</a>
-<a class="area-tag" href="CVPR2026/computational_biology/">Computational Biology 10</a>
-<a class="area-tag" href="CVPR2026/physics/">Physics & Scientific Computing 5</a>
-<a class="area-tag" href="CVPR2026/signal_comm/">Signal & Communications 4</a>
-<a class="area-tag" href="CVPR2026/social_computing/">Social Computing 4</a>
-<a class="area-tag" href="CVPR2026/earth_science/">Earth Science 1</a>
-<a class="area-tag" href="CVPR2026/medical_nlp/">Medical NLP 1</a>
-</div>
-</div>
-<div class="area-group">
-<div class="area-group-label">Others</div>
-<div class="area-tags">
-<a class="area-tag" href="CVPR2026/others/">Others 15</a>
 </div>
 </div>
 </div>

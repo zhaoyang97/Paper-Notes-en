@@ -2,121 +2,110 @@
 title: >-
   [Paper Note] Persuasive Privacy
 description: >-
-  [ICML 2026][AI Safety][Differential Privacy] This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender-Receiver Stackelberg game and Bayesian Persuas…
+  [ICML 2026][AI Safety][Paper Note] This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender–Receiver two-party Stackelberg game and Bayesian Persuasion. It provides a unified definition $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-PP, subsumes pure DP and probabilistic DP as special
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Differential Privacy"
-  - "Bayesian Persuasion"
-  - "Scoring Rules"
-  - "Stackelberg Game"
-  - "Deterministic Mechanisms"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 28acbd6fbd68539b
+content_hash: 696e190018febe07
 ---
-
 # Persuasive Privacy
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.22945](https://arxiv.org/abs/2601.22945)  
 **Code**: None  
 **Area**: AI Safety / Privacy Theory  
-**Keywords**: Differential Privacy, Bayesian Persuasion, Scoring Rules, Stackelberg Game, Deterministic Mechanisms
+**Keywords**: Differential Privacy, Bayesian Persuasion, Scoring Rules, Stackelberg Games, Deterministic Mechanisms
 
 ## TL;DR
-This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender-Receiver Stackelberg game and Bayesian Persuasion framework. It provides a unified definition $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-PP, subsumes pure and probabilistic DP as special cases, and provides non-trivial formal privacy guarantees for **deterministic algorithms** (such as noiseless empirical means) for the first time.
+This paper reformulates "privacy" as the relative scoring rule loss of a Receiver under the worst-case data-prior using a Sender–Receiver two-party Stackelberg game and Bayesian Persuasion. It provides a unified definition $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-PP, subsumes pure DP and probabilistic DP as special cases, and provides non-trivial formal privacy guarantees for **deterministic algorithms** (e.g., noiseless empirical means) for the first time.
 
 ## Background & Motivation
 
-**Background**: Over the past two decades, differential privacy (DP) and its variants (Rényi DP, $f$-divergence privacy, pufferfish privacy, QIF, etc.) have become the de facto standards for data privacy. These are based on algebraic criteria regarding the near-indistinguishability of output distributions on adjacent datasets, providing clean worst-case guarantees and favorable composition/post-processing properties.
+**Background**: Over the past two decades, differential privacy (DP) and its variants (Rényi DP, $f$-divergence privacy, pufferfish privacy, QIF, etc.) have become the de facto standards for data privacy. Based on algebraic criteria where "output distributions on adjacent datasets are nearly indistinguishable," they provide clean worst-case guarantees and favorable composition/post-processing properties.
 
-**Limitations of Prior Work**: DP faces three long-standing criticisms in engineering implementation: the parameter $\varepsilon$ is difficult to explain to regulators and the public; semantic interpretations (e.g., Kasiviswanathan–Smith, Wasserman–Zhou) are post-hoc patches that struggle to map directly to realistic concerns of "what I am afraid of leaking"; and actual deployments often result in $\varepsilon$ values so large they become meaningless. Crucially, DP and almost all its variants **cannot** provide non-trivial guarantees for deterministic mechanisms (any deterministic function with different outputs for adjacent datasets is judged non-private), yet scenarios like the US Decennial Census rely heavily on deterministic "invariant statistics."
+**Limitations of Prior Work**: DP faces three long-criticized issues in engineering deployment: the parameter $\varepsilon$ is difficult to explain to regulators and the public; semantic interpretations (such as Kasiviswanathan–Smith or Wasserman–Zhou) are post-hoc patches that struggle to map directly to realistic concerns about "what I am afraid of leaking"; and actual deployments often exhibit excessively large or meaningless privacy budgets. More critically, DP and nearly all its variants **cannot** provide non-trivial guarantees for deterministic mechanisms (any deterministic function that outputs differently for adjacent datasets is judged non-private), yet scenarios like the US Decennial Census rely heavily on deterministic "invariant statistics."
 
-**Key Challenge**: DP models "privacy" as the indistinguishability of adjacent output distributions. This purely algorithmic definition cannot incorporate a Sender's preferences regarding "what specifically is feared to be leaked." Simultaneously, the implicit assumption of a worst-case "universal prior" automatically excludes deterministic mappings. To achieve a framework that is (i) semantically tailorable, (ii) interpretable, and (iii) applicable to deterministic algorithms, the Sender, Receiver, and utility functions in the game must be explicitly modeled.
+**Key Challenge**: DP models "privacy" as the indistinguishability of adjacent output distributions. This purely algorithmic definition cannot incorporate the Sender's preferences regarding "what specifically is feared to be leaked." Meanwhile, the implicit assumption of a worst-case "universal prior" automatically disqualifies deterministic mappings. To simultaneously achieve (i) semantic tailorability, (ii) interpretability, and (iii) coverage of deterministic algorithms, one must explicitly model the Sender, Receiver, and utility functions in a game.
 
-**Goal**: Construct a game-theoretic meta-framework that can (a) generate new privacy definitions as needed while maintaining rigorous proofs, (b) conversely evaluate existing DP guarantees, and (c) provide non-trivial guarantees for deterministic mechanisms.
+**Goal**: Construct a game-theoretic meta-framework that can (a) generate new privacy definitions as needed while retaining rigorous proofs, (b) conversely evaluate existing DP-family guarantees, and (c) provide non-trivial guarantees for deterministic algorithms.
 
-**Key Insight**: Data release is viewed as a variant of Bayesian Persuasion—the Sender holds the ground truth $x$ and commits to a Markov kernel $M$; the Receiver holds a prior $Q$, observes $T\sim M(x,\cdot)$, and makes a Bayesian decision. The negation of the Sender's "privacy function" $\rho(d,x)$ is the Receiver's loss (asymmetric information + shared utility + robust Sender). Combined with classic results from Grünwald–Dawid, the loss induced by the Receiver's optimal decision automatically constitutes a **proper scoring rule**, placing "privacy assessment" and "probabilistic prediction" within the same mathematical language.
+**Key Insight**: Data publishing is viewed as a variant of Bayesian Persuasion—the Sender holds the ground truth $x$ and commits to a Markov kernel $M$; the Receiver holds a prior $Q$, observes $T\sim M(x,\cdot)$, and makes a Bayesian decision. Defining the negative of the Sender's "privacy function" $\rho(d,x)$ as the Receiver's loss (information asymmetry + shared utility + Sender robustness), and combined with classic results from Grünwald–Dawid, the loss induced by the Receiver's optimal decision automatically constitutes a **proper scoring rule**. This places "privacy assessment" and "probabilistic prediction" within the same mathematical language.
 
-**Core Idea**: Define the "relative privacy score" $\Delta_S(Q,T,x)=S(Q,x)-S(Q_T,x)$ as the improvement in the Receiver's ability to predict the ground truth before and after release. A unified PP definition is given as a $\kappa$-tail probability condition across the triple worst case of $x$, Receiver prior $Q\in\mathcal{Q}_x$, and randomness $T$.
+**Core Idea**: Define the "relative privacy score" $\Delta_S(Q,T,x)=S(Q,x)-S(Q_T,x)$ as the improvement in the Receiver's ability to predict the ground truth before and after publication. A unified PP definition is established using a $\kappa$-tail probability condition over the triple worst-case of $x$, Receiver prior $Q\in\mathcal{Q}_x$, and randomness $T$.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of a three-layer structure:
-
-**Layer 1 (Game Semantics)**: A Sender→Receiver Stackelberg game. The Sender holds the true value $x\in\mathsf{X}$ and publicly commits to a mechanism $M:(\mathsf{X},\mathcal{T})\to[0,1]$ (Markov kernel) belonging to a privacy class $\mathfrak{C}$ (Assumption 1: transparency, $M$ and $\mathfrak{C}$ are data-independent). The Receiver holds a prior $Q\in\mathcal{P}$ and makes a Bayes-rational decision after observing $T\sim M(x,\cdot)$ (Assumption 2).
-
-**Layer 2 (Scoring Rule Formulation)**: The Sender uses a "privacy function" $\rho:(\mathcal{D},\mathsf{X})\to\mathbb{R}$ to represent preferences over different Receiver decisions. Proposition 1 proves that if the Receiver's loss function $\ell=\rho$ (Assumption 3), the Sender simultaneously obtains the worst-case data-averaged loss, representing the most robust adversary model. Under this assumption, the Receiver's optimal decision is $d^P\in\arg\inf_d \mathbb{E}_{X\sim P}[\rho(d,X)]$, and the induced $S(P,x)=\rho(d^P,x)$ is a negatively-oriented **proper scoring rule** (Proposition 2, essentially the conclusion of Grünwald–Dawid 2004), termed the privacy score.
-
-**Layer 3 (PP Definition)**: The relative score $\Delta_S(Q,T,x)=S(Q,x)-S(Q_T,x)$ measures the "improvement in the Receiver's ability to predict $x$ after observing $T$." A mechanism $M$ is $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-Persuasive Private if and only if:
-
-$$\inf_{S\in\mathcal{S}}\inf_{x\in\mathsf{X}}\inf_{Q\in\mathcal{Q}_x}\mathbb{P}_x[\Delta_S(Q,T,x)\le\kappa]\ge 1-\delta$$
-
-The quadruple $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$ corresponds to: the set of semantics to be protected, the considered class of adversary priors, the maximum allowable privacy loss, and the failure probability.
+This paper addresses the lack of an interpretable, tailorable unified privacy definition that covers deterministic algorithms by rewriting data publishing as a Sender–Receiver Stackelberg game. The Sender holds ground truth $x$ and publicly commits to a mechanism $M$ (Markov kernel) and its privacy class; the Receiver holds prior $Q$ and makes a Bayes-rational decision after observing $T\sim M(x,\cdot)$. Using the Grünwald–Dawid equivalence, the loss induced by the Receiver's optimal decision is automatically a proper scoring rule. Consequently, "privacy" is expressed as the upper bound of the worst-case "relative improvement in the Receiver's predictive ability" regarding the ground truth. The framework follows three steps: establishing game semantics and transparency assumptions, translating Sender preferences into scoring rules, and formulating a unified PP inequality. The paper then verifies self-consistency by subsuming pure/probabilistic DP as special cases and clarifying the distinction between "receiver post-processing" and "sender post-processing."
 
 ### Key Designs
 
-1. **Privacy = Relative Score + Worst-case Prior Class (Definition 3)**:
-    - **Function**: Unifies all "privacy" definitions as a worst-case upper bound on how much the Receiver's posterior prediction improved.
-    - **Mechanism**: The relative value $\Delta_S$ is used instead of the absolute $S(Q_T,x)$. If an absolute value were used, and a Receiver already had a prior $Q=\delta_x$ (fully informed), all mechanisms would appear "equally private," causing the definition to degenerate. By using the difference, the mechanism only needs to "prevent the Receiver's belief from shifting significantly toward the truth." The worst case spans three dimensions: $x$ across the data space (Assumption 5), $Q$ across the Sender-restricted adversary class $\mathcal{Q}_x$, and $T$ across mechanism randomness (Assumption 4, $\kappa$-$\delta$ tail condition).
-    - **Design Motivation**: The triple worst case retains DP-style algebraic robustness, while the explicit $\mathcal{Q}_x$ turns "how strong the Sender assumes the adversary to be" into a tunable knob, preventing deterministic algorithms from being dismissed by the implicit DP assumption that the "adversary knows everything."
+**1. Game Semantics and Scoring Rule Formulation: Translating "Sender Preferences" into Proper Scoring Rules**
 
-2. **DP as a Special Case of PP (Proposition 6)**:
-    - **Function**: Uses PP as a "semantic interpreter" for DP to explain what DP is actually protecting.
-    - **Mechanism**: By setting $L$ as the discrete negative log-score and the adversary class as $\mathcal{H}=\{Q\in\mathcal{P}_2:\exists(x,x')\in\mathfrak{N},Q(\{x,x'\})=1\}$ (two-point alternative-hypothesis priors, corresponding to DP's adjacent pairs), $M$ is $(\varepsilon,\delta)$-PDP if and only if $M$ is $(L,\mathcal{H},\varepsilon,\delta)$-PP; $\delta=0$ corresponds to pure $\varepsilon$-DP. The proof reveals that the minimum is reached where the Receiver's prior probability of the truth $Q(\{x\})\to 0$—providing a new interpretation: "$(\varepsilon,\delta)$-DP protects against information gain even when the Receiver initially has almost no belief in the ground truth." Replacing the tail probability with expectation recovers Rényi DP and broader $f$-divergence privacy (Appendix C).
-    - **Design Motivation**: Previous DP semantics were constructed post-hoc (e.g., hypothesis testing). PP places DP directly into a first-principles game-theoretic derivation, allowed for each assumption to be tested and relaxed against real-world scenarios.
+To make privacy tailorable to "specific leakage concerns," the first step is to explicitly model Sender preferences. The Sender holds $x\in\mathsf{X}$ and publicly commits to mechanism $M:(\mathsf{X},\mathcal{T})\to[0,1]$ and its privacy class $\mathfrak{C}$ (Assumption 1: transparency, $M$ and $\mathfrak{C}$ are data-independent). The Receiver holds prior $Q\in\mathcal{P}$ and makes a Bayes-rational decision upon observing $T\sim M(x,\cdot)$ (Assumption 2). The Sender uses a "privacy function" $\rho:(\mathcal{D},\mathsf{X})\to\mathbb{R}$ to represent preferences over Receiver decisions. A critical step is Proposition 1: if the Receiver's loss function $\ell = \rho$ (Assumption 3), the Sender gains a robust worst-case data-averaged loss adversary model. The Receiver's optimal decision is $d^P\in\arg\inf_d \mathbb{E}_{X\sim P}[\rho(d,X)]$, and the induced $S(P,x)=\rho(d^P,x)$ is exactly a negatively-oriented proper scoring rule (Proposition 2, essentially the conclusion of Grünwald–Dawid 2004), termed the privacy score. This effectively puts "privacy assessment" and "probabilistic prediction" into the same mathematical language—every proper SR corresponds to a Bayesian decision problem and vice versa.
 
-3. **Receiver vs. Sender Post-processing Distinction (Definition 5–6, Prop 4–5)**:
-    - **Function**: Clarifies whether the fact that PDP "does not satisfy the post-processing inequality" is actually a problem.
-    - **Mechanism**: The traditional post-processing inequality ("$M\in\mathfrak{C}\Rightarrow MK\in\mathfrak{C}$") confuses two things: arbitrary processing by the Receiver after obtaining the output (receiver post-processing: $M\otimes K$) vs. the Sender applying a transformation before release (sender post-processing: $MK$ where only the marginal is released). All PP guarantees satisfy the former (Proposition 4, true "adversary robustness"); however, some PP guarantees do not satisfy the latter (Proposition 5). The remedy is simple: if the Sender releases both the raw output of $M$ and the result of $K$ (i.e., $M\otimes K$), it reduces to the receiver case.
-    - **Design Motivation**: This clarification refines the long-criticized lack of a post-processing inequality in PDP—it only loses an algebraic tool for "using complex mechanisms to prove simple ones," not actual adversary robustness. It also lays the foundation for composition rules ($\kappa_1+\kappa_2$, $\delta_1+\delta_2$, Proposition 3) under conjugate prior families.
+**2. Privacy = Relative Score + Worst-case Prior Class: Tuning Adversary Strength (Definition 3)**
+
+Addressing the issue where DP's implicit "all-knowing adversary" assumption invalidates deterministic algorithms, this paper defines privacy via relative rather than absolute scores. $\Delta_S(Q,T,x)=S(Q,x)-S(Q_T,x)$ measures the "improvement in the Receiver's prediction of $x$ after seeing $T$." Mechanism $M$ is $(\mathcal{S},\mathcal{Q}_x,\kappa,\delta)$-Persuasive Private if and only if:
+
+$$\inf_{S\in\mathcal{S}}\inf_{x\in\mathsf{X}}\inf_{Q\in\mathcal{Q}_x}\mathbb{P}_x[\Delta_S(Q,T,x)\le\kappa]\ge 1-\delta$$
+
+The quadruple corresponds to the set of protected semantics $\mathcal{S}$, the adversary prior class $\mathcal{Q}_x$, the maximum allowed privacy loss $\kappa$, and the failure probability $\delta$. Using the relative $\Delta_S$ is crucial: if an absolute score were used, all mechanisms would be "equally private" when the Receiver already knows everything ($Q=\delta_x$), causing the definition to degenerate. The relative difference ensures the mechanism "does not significantly shift the Receiver's belief toward the truth." The worst case spans three dimensions: $x$ across the data space (Assumption 5), $Q$ across the Sender-specified adversary class $\mathcal{Q}_x$, and $T$ across mechanism randomness (Assumption 4). This retains DP-style algebraic robustness while making adversary strength a tunable knob via $\mathcal{Q}_x$.
+
+**3. DP as a Special Case of PP: Explaining What DP Protects (Proposition 6)**
+
+The self-consistency of the framework is demonstrated by its role as a "semantic interpreter for DP." By choosing $L$ as the discrete negative log-score and the adversary class $\mathcal{H}=\{Q\in\mathcal{P}_2:\exists(x,x')\in\mathfrak{N},Q(\{x,x'\})=1\}$ (priors over adjacent pairs), $M$ is $(\varepsilon,\delta)$-PDP if and only if $M$ is $(L,\mathcal{H},\varepsilon,\delta)$-PP (where $\delta=0$ yields pure $\varepsilon$-DP). The proof reveals that the minimum is reached as the Receiver's prior $Q(\{x\})\to 0$. This provides a new interpretation of DP: "$(\varepsilon,\delta)$-DP protects against information gain even when the Receiver initially places almost no belief in the truth," explaining why $\varepsilon$ is difficult to tune or explain in practice. By replacing the tail probability with expectation, one can similarly recover Rényi DP and broader $f$-divergence privacy (Appendix C).
+
+**4. Decoupling Receiver vs. Sender Post-processing (Def 5–6, Prop 4–5)**
+
+PDP has long been criticized for "not satisfying the post-processing inequality." This paper argues that this criticism conflates two concepts. The traditional $M\in\mathfrak{C}\Rightarrow MK\in\mathfrak{C}$ conflates arbitrary post-processing by the Receiver after receiving the output (receiver post-processing: $M\otimes K$) with additional transformations by the Sender before publication (sender post-processing: $MK$ publishing only the marginal). All PP guarantees satisfy the former (Proposition 4, the true adversary robustness), even if some do not satisfy the latter (Proposition 5). The remedy is simple: the Sender publishes both the original output and the transformed result to reduce it to the receiver case. This decoupling recalibrates the qualitative assessment of PDP as losing an algebraic tool rather than adversary robustness.
 
 ### Loss & Training
-The framework is **definitional rather than training-based**: there are no parameters to learn. "Training" corresponds to the Sender choosing a mechanism $M$ that satisfies the PP inequality. Theoretical analysis utilizes proper scoring rules (Dawid–Sebastiani score, negative log-score, interval score, etc.) to recover different DP variants. Composition rules require $\mathcal{Q}_x$ to be conjugate to the mechanisms considered (Definition 4), which holds naturally for Gaussian prior families.
+The framework is **definitional rather than training-oriented**: there are no parameters to learn; "training" corresponds to the Sender selecting a mechanism $M$ to satisfy the PP inequality. Theoretical analysis utilizes various proper scoring rules (Dawid–Sebastiani score, negative log-score, interval score, etc.) to recover different DP variants. Composition rules require $\mathcal{Q}_x$ to be conjugate to the considered mechanisms (Definition 4), which holds naturally for Gaussian prior families.
 
 ## Key Experimental Results
 
-As a purely theoretical work, it does not involve large-scale numerical experiments, but it provides two illustrative cases to verify that the framework "covers scenarios DP cannot."
+As a theoretical work, this paper does not involve large-scale numerical experiments but provides two illustrative cases to verify that the framework covers scenarios where DP fails.
 
-### Main Results Table (PP Relationship with Existing Definitions)
+### Main Results (Relation between PP and existing definitions)
 
 | Existing Definition | Corresponding PP Instantiation | Scoring Rule $S$ | Adversary Prior Class $\mathcal{Q}_x$ | Remarks |
-|---------|---------------|--------------|----------------------------|------|
-| Pure $\varepsilon$-DP | $(L,\mathcal{H},\varepsilon,0)$-PP | Neg. Log-score $L$ | Adjacent two-point priors $\mathcal{H}$ | Prop 6 where $\delta=0$ |
-| $(\varepsilon,\delta)$-PDP | $(L,\mathcal{H},\varepsilon,\delta)$-PP | Neg. Log-score $L$ | $\mathcal{H}$ | Proposition 6 |
-| Rényi DP | Expectation-based PP (App. C) | Neg. Log-score | $\mathcal{H}$ | Assump. 4 changed to expectation |
-| $f$-divergence privacy | Exp. PP + $f$ score | $f$-divergence score | $\mathcal{H}$ | Appendix C |
-| **Noiseless Mean** | $(\mathcal{I},\mathcal{G}_x^r,\kappa,\delta)$-PP | Marginal DSS | Gaussian + Prior quality constraint | Proved by PP, impossible for DP |
+| :--- | :--- | :--- | :--- | :--- |
+| Pure $\varepsilon$-DP | $(L,\mathcal{H},\varepsilon,0)$-PP | Negative Log-score $L$ | Adjacent Pair Class $\mathcal{H}$ | Degeneration of Prop 6 at $\delta=0$ |
+| $(\varepsilon,\delta)$-PDP | $(L,\mathcal{H},\varepsilon,\delta)$-PP | Negative Log-score $L$ | $\mathcal{H}$ | Proposition 6 |
+| Rényi DP | Expectation-based PP | Negative Log-score | $\mathcal{H}$ | Assumption 4 as Expectation |
+| $f$-divergence privacy | Expectation PP + $f$-score | $f$-divergence score | $\mathcal{H}$ | Appendix C |
+| **Noiseless Mean** | $(\mathcal{I},\mathcal{G}_x^r,\kappa,\delta)$-PP | Marginal Dawid–Sebastiani | Gaussian + Quality Constraints | Not provable by DP; provable by PP |
 
 ### Key Findings
-- **Uncovering DP's Implicit Assumptions**: The proof of Prop 6 locates DP's extreme point at $Q(\{x\})\to 0$. This implies DP protects an extreme adversary who "almost doesn't believe the truth," explaining why $\varepsilon$ is difficult to tune or explain in practice.
-- **Deterministic Mechanisms are not Inherently Unprivate**: By tailoring the adversary strength $\mathcal{Q}_x$ (e.g., Gaussian priors with condition number constraints) and the scoring rule (Marginal DSS) to the scenario, noiseless empirical means can be proven PP for sufficiently large $n$, aligning with long-standing intuition in Statistical Disclosure Control (SDC).
-- **Insights from Bayesian Persuasion**: The framework is essentially a Sender-commit, Receiver-best-respond Stackelberg game. It incorporates three key differences from classic BP: asymmetric information (Sender knows $x$), shared utility ($\ell=\rho$), and a robust Sender (worst-case).
+- **DP's Implicit Assumption Unmasked**: The proof of Prop 6 identifies the extremum at $Q(\{x\})\to 0$, implying DP protects against an extreme adversary who initially disbelieves the ground truth, explaining why $\varepsilon$ is counter-intuitive.
+- **Deterministic Mechanisms are not Naturally Unprivate**: By tailoring adversary strength $\mathcal{Q}_x$ (e.g., Gaussian priors with bounded condition numbers) and scoring rules (Marginal DSS), noiseless empirical means can be proven PP for sufficiently large $n$, aligning with long-standing intuition in Statistical Disclosure Control (SDC).
+- **Bayesian Persuasion Insights**: The framework is essentially a Sender-commit, Receiver-best-respond Stackelberg game, but introduces three key differences from classic BP: information asymmetry (Sender knows $x$), shared utility ($\ell=\rho$), and Sender robustness (worst-case).
 
 ## Highlights & Insights
-- **First-principles vs. Post-hoc Semantics**: Unlike previous DP interpretations derived after the fact, PP derives DP from game theory and scoring rules. This provides native answers to questions like "why the $\exp(\varepsilon)$ factor."
-- **Tunable Adversary Class $\mathcal{Q}_x$**: Transforming "how strong the adversary is" from an implicit assumption (DP's default "knows all adjacent info") to an explicit parameter is valuable for engineering; regulators can discuss $\mathcal{Q}_x$ instead of an abstract $\varepsilon$.
-- **Proper Scoring Rules as a Privacy Language**: The Grünwald–Dawid equivalence ensures $S$ and $(\rho, \mathcal{D})$ are interchangeable. This means any statistical prediction tool (CRPS, Brier score, etc.) can be used to define new privacy semantics.
-- **Engineering Implications of Post-processing Split**: By distinguishing sender vs. receiver post-processing, "imperfect" definitions like PDP are no longer dismissed; they instead provide a trade-off curve—sacrificing sender post-processing for tighter privacy parameters.
+- **First-principles instead of post-hoc semantics**: Unlike previous DP semantic interpretations which were derived after the fact, PP derives DP from game theory and scoring rules, providing native answers to why parameters like $\exp(\varepsilon)$ appear.
+- **Tailorable Adversary Class $\mathcal{Q}_x$**: Explicitly parameterizing "how strong the adversary is assumed to be" (which is implicit in DP) is highly valuable for engineering; regulators can discuss $\mathcal{Q}_x$ instead of an abstract $\varepsilon$.
+- **Proper Scoring Rule as Privacy Language**: The Grünwald–Dawid equivalence ensures $S$ and $(\rho,\mathcal{D})$ are interchangeable, meaning any statistical prediction tool (CRPS, Brier score, etc.) can define new privacy semantics.
+- **Post-processing Decoupling**: Distinguishing between sender and receiver post-processing suggests that definitions like PDP should not be dismissed due to lack of algebraic closure, but rather viewed as a trade-off for tighter privacy parameters.
 
 ## Limitations & Future Work
-- **Theoretical Framework, Engineering Gap**: The paper does not provide best practices for choosing $\mathcal{Q}_x$ in industrial pipelines; the calibratability and auditability of prior classes require further work.
-- **Strong Conjugacy Conditions**: Composition rules rely on $\mathcal{Q}_x$ being conjugate to the mechanism. How composition works outside conjugate families (e.g., mixture priors, neural network posterior approximations) remains unsolved.
-- **Limited Deterministic Examples**: Section 5 only covers empirical means and linear constraints; PP guarantees for complex deterministic releases (e.g., full invariant statistics for censuses) must be constructed per scenario.
-- **Lack of Integration with DP Libraries**: There is no translation of existing real-world deployments (OpenDP, Google, Apple) into PP format to determine which $\mathcal{Q}_x$ they actually correspond to.
+- **Theoretical Framework, Deployment Gap**: The paper does not provide best practices for selecting $\mathcal{Q}_x$ in industrial pipelines; calibrating and auditing adversary prior classes remains future work.
+- **Strong Conjugacy Conditions**: Composition rules rely on $\mathcal{Q}_x$ being conjugate to mechanisms; composition outside Gaussian or simple conjugate families (e.g., neural network posterior approximations) is unresolved.
+- **Scalar/Simple Deterministic Examples**: Section 5 only covers empirical means and linear constraints; PP guarantees for complex deterministic releases (like full Census invariant statistics) require case-by-case construction.
+- **No Integration with DP Libraries**: Existing $(\varepsilon, \delta)$ deployments have not been translated into PP form to identify their corresponding $\mathcal{Q}_x$.
 
 ## Related Work & Insights
-- **vs. Differential Privacy (Dwork et al. 2006)**: DP is a special case of $(L,\mathcal{H},\varepsilon,\delta)$-PP. PP provides first-principles semantics and extends to deterministic mechanisms, though it sacrifices the sender post-processing closure of DP (remediable via $M\otimes K$).
-- **vs. Pufferfish (Kifer & Machanavajjhala 2014)**: Both allow users to define "secrets" and "adversary priors." PP additionally treats the Sender as the first player in a game and requires semantics to come from proper SRs, resulting in a more symmetric theoretical structure.
-- **vs. Bayesian Persuasion (Kamenica & Gentzkow 2011)**: DP assumes the Sender does not know the truth and has information symmetry with the Receiver. PP modifies this specifically for privacy contexts with Sender knowledge, utility correlation, and robustness.
-- **vs. Quantitative Information Flow / $f$-divergence privacy**: PP subsumes these through expectation-based variants, unifying "information flow" and "scoring rule" perspectives.
+- **vs Differential Privacy (Dwork et al. 2006)**: DP is a special case of $(L,\mathcal{H},\varepsilon,\delta)$-PP. PP provides first-principles semantics and extends to deterministic mechanisms at the cost of sender post-processing closure.
+- **vs Pufferfish (Kifer & Machanavajjhala 2014)**: Both allow custom "secrets" and "adversary priors." PP adds the Sender as the first player in a game and enforces semantics via proper SR.
+- **vs Bayesian Persuasion (Kamenica & Gentzkow 2011)**: BP assumes the Sender does not know the truth and utility is symmetric; PP modifies this for privacy by assuming the Sender knows the truth and requires robustness.
+- **vs Quantitative Information Flow / $f$-divergence privacy**: PP subsumes these through expectation-based variants (Appendix C–D), unifying the "information flow" and "scoring rule" perspectives.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Rewriting DP from an algebraic definition to a game-theoretic first-principles derivation using proper SRs is a major breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient theoretical proof covering DP/PDP/Rényi DP and mean-release cases, though lacking a real deployment case study.
-- Writing Quality: ⭐⭐⭐⭐⭐ The conceptual progression is excellent; assumptions are clearly numbered and discussed.
-- Value: ⭐⭐⭐⭐⭐ Provides a reconfigurable, tailorable "meta-framework" for privacy, offering immediately useful theoretical tools for SDC and official statistics.
+- Novelty: ⭐⭐⭐⭐⭐ Sender–Receiver Stackelberg + proper SR reformulates DP into first-principles derivation, enabling the first non-trivial privacy proofs for deterministic mechanisms.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Purely theoretical; covers DP/PDP/Rényi DP and empirical mean cases with rigorous proofs, though lacks real-world deployment case studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ The conceptual stack is logically progressive; assumptions are clearly numbered and discussed, making it highly accessible for a theoretical privacy paper.
+- Value: ⭐⭐⭐⭐⭐ Provides a "meta-framework" for reconfigurable, tailorable, and auditable privacy definitions, offering immediate theoretical tools for SDC and official statistics.
 
 <!-- RELATED:START -->
 
@@ -127,8 +116,8 @@ As a purely theoretical work, it does not involve large-scale numerical experime
 - [\[ICML 2026\] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy](mind_the_gap_mixtures_of_gaussians_in_approximate_differential_privacy.md)
 - [\[ICML 2026\] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection](vpd-100k_towards_generalizable_and_fine-grained_visual_privacy_protection.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](../../NeurIPS2025/ai_safety/sequentially_auditing_differential_privacy.md)
 - [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](../../ICLR2026/ai_safety/unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
 
 </div>
 

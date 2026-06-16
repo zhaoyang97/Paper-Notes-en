@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts
 description: >-
-  [ICML 2026][LLM Efficiency][Mixture-of-Experts] ProbMoE reformulates top-$k$ routing as "probabilistic inference over cardinality-constrained subset distributions." It uses the SIMPLE estimator to sample from the exact-$…
+  [ICML 2026][LLM Efficiency][Mixture-of-Experts] ProbMoE reformulates MoE top-$k$ routing as "probabilistic inference over a cardinality-constrained subset distribution." It employs the SIMPLE estimator for sampling from an exact-$k$ subset distribution during the forward pass and uses analytically computed conditional marginal probabilities $m_j=\partial \log Z_k/\p
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "Mixture-of-Experts"
-  - "Probabilistic Routing"
-  - "Subset Sampling"
-  - "SIMPLE Gradient Estimator"
-  - "Dynamic Expert Allocation"
+  - ICML 2026
+  - LLM Efficiency
+  - Mixture-of-Experts
 date: 2026-05-08
-content_hash: f3cf128b524a582b
+content_hash: 9a7a8d9340fa0627
 ---
-
 # ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -24,57 +19,64 @@ content_hash: f3cf128b524a582b
 **Keywords**: Mixture-of-Experts, Probabilistic Routing, Subset Sampling, SIMPLE Gradient Estimator, Dynamic Expert Allocation
 
 ## TL;DR
-ProbMoE reformulates top-$k$ routing as "probabilistic inference over cardinality-constrained subset distributions." It uses the SIMPLE estimator to sample from the exact-$k$ subset distribution during the forward pass and employs analytically computed expert marginal probabilities $m_j=\partial \log Z_k/\partial \log p_j$ as a differentiable proxy for discrete selection during the backward pass. This approach significantly improves performance on GSM/Law/Translation tasks for OLMoE and Qwen1.5-MoE while notably enhancing expert utilization. It also naturally extends to a Dynamic-$k$ variant that adaptively activates expert counts based on token difficulty.
+ProbMoE reformulates MoE top-$k$ routing as "probabilistic inference over a cardinality-constrained subset distribution." It employs the SIMPLE estimator for sampling from an exact-$k$ subset distribution during the forward pass and uses analytically computed conditional marginal probabilities $m_j=\partial \log Z_k/\partial \log p_j$ as a differentiable proxy for discrete selection during the backward pass. This approach significantly improves performance on tasks like GSM8K, Law, and Translation for OLMoE and Qwen1.5-MoE while enhancing expert utilization. It also naturally extends to a Dynamic-$k$ variant that adaptively activates the number of experts based on token difficulty.
 
 ## Background & Motivation
-**Background**: Sparse MoE achieves scaling with "parameter counts far exceeding activation FLOPs" by activating only $k$ experts per token (e.g., Switch Transformer, GLaM, DeepSeek-MoE). The core component is a softmax router combined with a top-$k$ selector.
+**Background**: Sparse MoE models achieve scaling where "total parameters far exceed active compute" by activating only $k$ experts per token (e.g., Switch Transformer, GLaM, DeepSeek-MoE). The core component is a softmax router combined with a top-$k$ selector.
 
-**Limitations of Prior Work**: The top-$k$ operator is discrete and piecewise constant, resulting in zero gradients almost everywhere with respect to router logits. Standard training treats the selection $S_{\text{top-}k}$ as a fixed constant in the forward pass and only backpropagates gradients through the softmax weights $\pi_j$ of the selected experts (omitting the "discrete-selection path" in Eq. 2). Consequently, the router receives no learning signal regarding "unselected alternative subsets," leading to increasingly sharp routing distributions, repeated reinforcement of a few experts, expert collapse, and training instability.
+**Limitations of Prior Work**: The top-$k$ operator is discrete and piecewise constant, yielding zero gradients with respect to router logits almost everywhere. Standard training treats the selected subset $S_{\text{top-}k}$ as a forward-pass constant and backpropagates gradients only through the softmax weights $\pi_j$ of selected experts, discarding the "discrete-selection path." Consequently, the router receives no learning signal regarding unselected alternatives, leading to increasingly peaky routing distributions, reinforced selection of a few experts, expert collapse, and training instability.
 
-**Key Challenge**: The router essentially needs to learn a *discrete combinatorial object* ($k$-subset selection). However, existing methods either use heuristic noise/reshuffling to approximate stochasticity (Shazeer et al.) or use dense STE (DenseMixer) to compute gradients over all experts. These approaches are "patches on a deterministic top-$k$" and fail to explicitly model the "distribution over $k$-subsets," preventing systematic exploration of alternative subsets.
+**Key Challenge**: The router needs to learn a *discrete combinatorial object* ($k$-subset selection). Existing methods either use heuristic noise/rearrangement to approximate stochasticity (e.g., Shazeer et al.) or use dense STE (e.g., DenseMixer) to provide gradients over selected experts. These approaches "patch" deterministic top-$k$ selection rather than explicitly modeling the "distribution over $k$-subsets," failing to systematically explore alternative subsets.
 
-**Goal**: (i) Rewrite the router training objective as the expected loss under a *subset distribution* $\mathcal{J}(\theta)=\mathbb{E}_{S\sim\mathbb{P}_r(\cdot\mid|S|=k)}[\mathcal{L}(y_S(x;r))]$; (ii) Provide gradients that reflect the entire subset distribution while maintaining sparse activation of only $k$ experts per step; (iii) Naturally extend the framework to dynamic-$k$ ($k\in[k_{\min},k_{\max}]$).
+**Goal**: (i) Rewrite the router training objective as the expected loss under a *subset distribution* $\mathcal{J}(\theta)=\mathbb{E}_{S\sim\mathbb{P}_r(\cdot\mid|S|=k)}[\mathcal{L}(y_S(x;r))]$; (ii) provide gradients reflecting the entire subset distribution while maintaining the activation of only $k$ experts; (iii) generalize the framework to dynamic-$k$ ($k\in[k_{\min},k_{\max}]$).
 
-**Key Insight**: The authors observe that the SIMPLE estimator (Ahmed et al. 2023) can compute exact normalization for a Bernoulli product distribution conditioned on "exactly $k$ selections" in $\mathcal{O}(Nk)$ time, providing analytical conditional marginal probabilities $m_j$ for each variable. By treating each expert selection as an independent Bernoulli $p_i=\sigma(r_i)$ conditioned on $|S|=k$, routing becomes a probabilistic layer with exact normalization and analytical marginals.
+**Key Insight**: The author notes that the SIMPLE estimator (Ahmed et al. 2023) can compute exact normalization for a Bernoulli product distribution constrained to "exactly $k$ selections" in $\mathcal{O}(Nk)$ time and provide analytical conditional marginal probabilities $m_j$. By treating each expert selection as an independent Bernoulli variable $p_i=\sigma(r_i)$ conditioned on $|S|=k$, routing becomes an "exactly normalizable probabilistic layer with analytical marginals."
 
-**Core Idea**: Replace "top-$k$ & softmax-only gradient path" with *"sampling from a $k$-cardinality subset distribution + using conditional marginals as a backward proxy"*. This transforms routing into truly differentiable discrete probabilistic inference. The same normalization constant can be summed to $Z^*=\sum_{k=k_{\min}}^{k_{\max}} Z_k$ to derive a range-constrained dynamic-$k$ version.
+**Core Idea**: Replace "top-$k$ + softmax-only gradient path" with *"sampling from a $k$-cardinality subset distribution + backward proxy via conditional marginals."* This transforms routing into truly differentiable discrete probabilistic inference. The same normalization constant can be extended to range-constrained $Z^*=\sum_{k=k_{\min}}^{k_{\max}} Z_k$ to derive the Dynamic-$k$ version.
 
 ## Method
 
 ### Overall Architecture
-Consider an MoE layer with $N$ experts and token hidden state $x\in\mathbb{R}^d$. The router outputs logits $r=\mathrm{Router}_\theta(x)\in\mathbb{R}^N$ and softmax weights $\pi_i=\exp(r_i)/\sum_j\exp(r_j)$. Given subset $S$, MoE output is $y_S(x;r)=\sum_{j\in S}\pi_j f_j(x)$.
+Given $N$ experts, token hidden state $x\in\mathbb{R}^d$, router logits $r=\mathrm{Router}_\theta(x)\in\mathbb{R}^N$, and softmax weights $\pi_i=\exp(r_i)/\sum_j\exp(r_j)$, the MoE output for a subset $S$ is $y_S(x;r)=\sum_{j\in S}\pi_j f_j(x)$. ProbMoE replaces deterministic top-$k$ selection with probabilistic inference: independent Bernoulli variables $p_i=\sigma(r_i)$ are conditioned on cardinality constraints (exact-$k$ or range $[k_{\min},k_{\max}]$) to form the subset distribution $\mathbb{P}_r(S\mid\cdot)$. Forward pass samples a $k$-hot mask to activate exactly $k$ experts (equivalent compute to standard MoE). Backward pass transmits the dependence of the whole distribution on each logit via analytical marginals $m_j$, enabling alternative subsets to participate in learning.
 
-ProbMoE models routing as a two-stage hierarchical distribution: independent Bernoulli $p_i=\sigma(r_i)$ for each expert → conditoned on cardinality constraints (exact-$k$ or range $[k_{\min},k_{\max}]$) to obtain the subset distribution $\mathbb{P}_r(S\mid \cdot)$. Pipeline:
-
-1. **Forward**: Compute $p_i$ from logits → compute exact normalization $Z_k$ via SIMPLE in $\mathcal{O}(Nk)$ → sample a $k$-hot mask $z\in\{0,1\}^N$ → execute only the $k$ selected experts $f_j(x)$.
-2. **Marginal Calculation**: Use dynamic programming to compute conditional marginals for each expert $m_j=\mathbb{P}_r(j\in S\mid |S|=k)=\partial \log Z_k/\partial \log p_j$, which is analytical and differentiable.
-3. **Routing Weight Assembly**: Combine the sampled mask, marginals, and softmax via STE: $w=(\operatorname{stopgrad}(z-m)+m)\odot\pi$. In the forward pass, $w=z\odot\pi$ (remains sparse); in the backward pass, gradients flow through both $m$ and $\pi$.
-4. **Inference**: Select the MAP subset (top-$k$ of $m$ for exact-$k$; joint selection of $k$ and $S$ within $[k_{\min},k_{\max}]$ for dynamic-$k$). Inference cost remains equal to standard MoE.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Token Representation x"] --> R["Router Logits r<br/>Independent Bernoulli p_i=σ(r_i)"]
+    R --> D1["① Cardinality-constrained Subset Distribution + SIMPLE Exact Normalization<br/>DP computes normalization constant Z_k in O(Nk)"]
+    D1 -->|Forward · Sparse| FW["Sample k-hot Mask z<br/>Execute Selected k Experts"]
+    D1 -->|Backward · Analytical| MG["Conditional Marginal m_j=∂logZ_k/∂logp_j<br/>Differentiable Summary of Subset Distribution"]
+    FW --> D2["② Marginal-Embedded Routing Weights + Straight-Through<br/>w=(stopgrad(z−m)+m)⊙π"]
+    MG --> D2
+    D2 --> Y["MoE Output y=Σ w_j f_j(x)<br/>MAP Subset used for Inference"]
+    D3["③ Range-constrained Dynamic-k Routing<br/>Condition k within [k_min,k_max], Z*=ΣZ_k<br/>Sample k then Sample Subset; Adaptive Complexity"] -.->|Same Framework · Change Normalization| D1
+```
 
 ### Key Designs
 
-1. **Cardinality-constrained Subset Distribution + SIMPLE Normalization**:
-    - **Function**: Replaces the "deterministic top-$k$ operator" in the router output layer with a "$k$-cardinality Bernoulli subset distribution" and provides an exact normalization constant $Z_k=\sum_{|S|=k}\prod_{j\in S}p_j\prod_{j\notin S}(1-p_j)$ computable in $\mathcal{O}(Nk)$ ($\mathcal{O}(\log N\log k)$ via vectorization).
-    - **Mechanism**: Independent Bernoulli $p_i=\sigma(r_i)$ form an unconstrained product measure; conditioning on $|S|=k$ yields $\mathbb{P}_r(S\mid|S|=k)=Z_k^{-1}\prod_{j\in S}p_j\prod_{j\notin S}(1-p_j)$. SIMPLE uses 1D convolution-style DP to recursively compute $Z_k$ by considering the inclusion of the $i$-th expert, avoiding explicit enumeration of $\binom{N}{k}$ subsets. Generalizing to range constraints requires replacing a single $Z_k$ with $Z^*=\sum_{k=k_{\min}}^{k_{\max}} Z_k$ (Theorem 5.1, complexity remains $\mathcal{O}(Nk_{\max})$).
-    - **Design Motivation**: Previous continuous relaxations like Gumbel-Softmax or Concrete are biased or high-variance and cannot explicitly represent hard constraints like "exactly $k$." Subset enumeration is combinatorial. DP normalization via SIMPLE makes "exact probabilistic inference over combinatorial spaces" feasible in MoE routers for the first time, serving as the foundation for exact marginals, sampling, and dynamic $k$.
+**1. Cardinality-constrained Subset Distribution + SIMPLE Normalization: Converting Routing to an Exactly Normalizable Probabilistic Layer**
 
-2. **Marginal-Embedded Routing Weights + Straight-Through Backward**:
-    - **Function**: Maintains sparse $k$-expert evaluation in the forward pass while ensuring router backward gradients reflect the *entire* subset distribution's dependence on each logit, rather than just the softmax weights of selected experts.
-    - **Mechanism**: Uses conditional marginals $m_j=\partial \log Z_k/\partial \log p_j$ as differentiable "summaries" of discrete choices, constructing routing weights via STE: $w=(\operatorname{stopgrad}(z-m)+m)\odot\pi$. Forward $w_i=z_i\pi_i$ (sparsity preserved), while the backward gradient decomposes as $\partial \mathcal{L}/\partial r_i=\sum_j \langle \partial \mathcal{L}/\partial y, f_j(x)\rangle (m_j \partial \pi_j/\partial r_i + \pi_j \partial m_j/\partial r_i)$. The second term is the new "marginal path," transmitting information about "what if an alternative subset was chosen" back to the router. Synthetic experiments in Appendix F show this estimator has lower variance than DenseMixer's dense STE.
-    - **Design Motivation**: Ablations (Fig. 2) demonstrate that only "Sample (Forward Stochastic) + Marginal (Backward Analytical)" achieves 50.24% EM (OLMoE/GSM), while "Sample + Dense STE" drops to 46.6% with high variance, and "Top-$k$ + Marginal" underperforms ProbMoE. This suggests *forward probabilistic sampling must pair with marginal gradients based on the same distribution*; otherwise, inconsistency leads to performance degradation.
+The traditional top-$k$ operator is piecewise constant with zero gradients. To make routing a "learnable discrete object," the probability of "selecting exactly $k$ experts" must be defined explicitly. ProbMoE constructs a product measure from independent Bernoulli $p_i=\sigma(r_i)$ and conditions it on $|S|=k$, yielding $\mathbb{P}_r(S\mid|S|=k)=Z_k^{-1}\prod_{j\in S}p_j\prod_{j\notin S}(1-p_j)$, where $Z_k=\sum_{|S|=k}\prod_{j\in S}p_j\prod_{j\notin S}(1-p_j)$ sums over all $\binom{N}{k}$ subsets. Enumeration is avoided using the SIMPLE estimator, which utilizes 1D convolutional dynamic programming to compute $Z_k$ recursively in $\mathcal{O}(Nk)$ (vectorized $\mathcal{O}(\log N\log k)$). Unlike Gumbel-Softmax or Concrete relaxations, which are biased or high-variance and cannot enforce hard cardinality, SIMPLE's DP normalization makes "exact probabilistic inference over combinatorial spaces" feasible for MoE routers. Generalization to range constraints simply replaces $Z_k$ with $Z^*=\sum_{k=k_{\min}}^{k_{\max}} Z_k$.
 
-3. **Range-constrained Dynamic-$k$ Routing**:
-    - **Function**: Naturally extends exact-$k$ to allow $|S|$ to be chosen freely within $[k_{\min},k_{\max}]$, enabling the router to adaptively allocate expert counts based on token difficulty.
-    - **Mechanism**: The conditional distribution is $\mathbb{P}_r(S\mid k_{\min}\le|S|\le k_{\max})=Z^{*-1}\prod_{j\in S}p_j\prod_{j\notin S}(1-p_j)$. Since $Z^*=\sum_{k=k_{\min}}^{k_{\max}} Z_k$, one can first sample $k$ from the cardinality marginal $\mathbb{P}_r(|S|=k\mid\cdot)=Z_k/Z^*$ and then sample the subset using exact-$k$, performing *joint inference of $k$ and $S$*. The backward pass replaces $m_j$ with range-constrained marginals $m_j^*=\partial \log Z^*/\partial \log p_j$ using the same STE routing weight. MAP selection is used at inference.
-    - **Design Motivation**: Previous dynamic methods like DA-MoE/DynMoE/AdaMOE rely on heuristics like thresholds or null experts, lacking global normalization and rigorous differentiable training. Range constraints maintain the closure of the probabilistic framework, making dynamic-$k$ an almost "free" extension of exact-$k$. Table 2 shows Dynamic-$k$ on OLMoE/Qwen achieves comparable or higher EM while activating only 75–84% of experts. Fig. 5/6 show the router allocates more experts to rare/ambiguous tokens (e.g., punctuation, suffixes like `ons`, `:`, `?`) and fewer to common numbers/nouns, demonstrating true computation-on-demand.
+**2. Marginal-Embedded Routing Weights + Straight-Through Backward: Forward Sparsity with Distribution-wide Gradients**
 
-### Loss & Training
-The training objective is $\mathcal{J}(\theta)=\mathbb{E}_{S\sim\mathbb{P}_r(\cdot\mid|S|=k)}[\mathcal{L}(y_S(x;r))]$. ProbMoE uses $\nabla_\theta \mathcal{L}(y(x;r))$ (based on Eq. 7 routing weights) to approximate the expected gradient. Although $p_i=\sigma(r_i)$ and softmax $\pi$ derive from the same router logits, they serve distinct roles in subset sampling and weighting without conflict. Experiments follow the same data/split/evaluation protocol as DenseMixer (Yao et al. 2026), replacing only the routing module for fair comparison. On Qwen, ProbMoE is applied to routed experts, while shared experts remain unchanged.
+ProbMoE uses conditional marginals $m_j=\mathbb{P}_r(j\in S\mid|S|=k)=\partial\log Z_k/\partial\log p_j$ as a differentiable "summary" of discrete selection. Through STE, the sampling mask $z$, marginal $m$, and softmax $\pi$ are combined into routing weights:
+
+$$w=(\operatorname{stopgrad}(z-m)+m)\odot\pi.$$
+
+Forward weights $w_i=z_i\pi_i$ are non-zero only for sampled experts, maintaining sparsity. Backward gradients decompose into $\partial\mathcal{L}/\partial r_i=\sum_j\langle\partial\mathcal{L}/\partial y,f_j(x)\rangle(m_j\,\partial\pi_j/\partial r_i+\pi_j\,\partial m_j/\partial r_i)$, where the "marginal path" backpropagates the subset distribution's dependency on logits. Ablations (Fig. 2) show that only the consistent "Sample (Forward) + Marginal (Backward)" pair achieves optimal results (e.g., 50.24% EM on GSM for OLMoE); using "Sample + Dense STE" drops performance to 46.6% with high variance, highlighting the importance of consistency in the probabilistic framework.
+
+**3. Range-constrained Dynamic-$k$ Routing: Adaptive Expert Allocation via the Same Framework**
+
+Fixed $k$ treats all tokens equally, though simpler tokens require fewer experts. ProbMoE generalizes exact-$k$ to a conditional distribution allowing $|S|\in[k_{\min},k_{\max}]$. Since $Z^*=\sum_{k=k_{\min}}^{k_{\max}}Z_k$, sampling first selects cardinality $k$ from the marginal $\mathbb{P}_r(|S|=k\mid\cdot)=Z_k/Z^*$ and then samples the subset. The backward pass uses the range-constrained marginal $m_j^*=\partial\log Z^*/\partial\log p_j$. Table 2 demonstrates that Dynamic-$k$ on OLMoE/Qwen achieves comparable or higher EM than Exact-$k$ while activating only 75–84% of experts. Fig. 5/6 reveal that the router adaptively assigns more experts to ambiguous or rare tokens (e.g., punctuation, suffixes like `ons`) and fewer to common nouns/numbers.
+
+## Loss & Training
+The objective is the expected loss over the subset distribution $\mathcal{J}(\theta)=\mathbb{E}_{S\sim\mathbb{P}_r}[\mathcal{L}(y_S(x;r))]$. ProbMoE approximates the gradient using weights from Eq. (7). While $p_i=\sigma(r_i)$ and softmax $\pi$ originate from the same logits, they serve distinct roles in subset sampling and weight scaling. Experiments follow the protocol of DenseMixer (Yao et al. 2026), replacing only the routing module for fair comparison.
 
 ## Key Experimental Results
 
 ### Main Results
-Two MoE backbones: OLMoE-1B-7B (16 layers × 64 experts / 8 active) and Qwen1.5-MoE-A2.7B (24 layers × 60 routed + 4 shared / 4 active). Tasks include math reasoning (GSM8K, EM), law understanding, machine translation, summarization (LLM-as-judge), code generation (MBPP), and general knowledge (MMLU).
+Evaluated on OLMoE-1B-7B (16 layers, 64 experts, top-8) and Qwen1.5-MoE-A2.7B (24 layers, 60 routed + 4 shared experts, top-4).
 
 | Backbone | Method | GSM | Law | Translation | MBPP | Summary | MMLU |
 |---|---|---|---|---|---|---|---|
@@ -87,71 +89,58 @@ Two MoE backbones: OLMoE-1B-7B (16 layers × 64 experts / 8 active) and Qwen1.5-
 | Qwen (k=4) | ReMoE | 46.30 | 25.50 | 16.99 | 33.00 | 25.80 | – |
 | Qwen (k=4) | **ProbMoE** | 53.29 | **34.40** | **39.23** | **35.00** | **44.40** | **61.05** |
 
-ProbMoE ranks 1st in 4 out of 6 tasks on OLMoE (+2.2~+5.5 gains in GSM/Law/Translation/Summary) and 1st in 4 tasks on Qwen (Law +3.65, Translation +5.48, Summary +3.4). It is the only method to consistently outperform DenseMixer without requiring dense expert computation during training.
+ProbMoE outperformed baselines in 4/6 tasks on OLMoE and 4/6 tasks on Qwen (notably improving Law and Translation by >5 points). It consistently beats DenseMixer without requiring dense expert computation during training.
 
 ### Ablation Study
 
-| Config (OLMoE/GSM, 3 seeds) | Forward | Backward | EM (%) | Variance σ |
+| Config (OLMoE/GSM) | Forward | Backward | EM (%) | Var σ |
 |---|---|---|---|---|
-| **ProbMoE** | Sample (k-subset) | Marginal | **50.24** | **0.09** |
-| DenseMixer | Top-$k$ | Dense STE | ~47 | Med |
+| ProbMoE | Sample ($k$-subset) | Marginal | **50.24** | **0.09** |
+| DenseMixer | Top-$k$ | Dense STE | ~47 | Mid |
 | Sample + Dense STE | Sample | Dense STE | 46.6 | 0.37 |
-| Top-$k$ + Marginal | Top-$k$ | Marginal | < ProbMoE| – |
 
-| Setting | Dataset | $\Delta$EM vs Exact-$k$ | Avg. Expert Usage |
+| Setting | Dataset | $\Delta$EM vs Exact-$k$ | Avg Expert Usage |
 |---|---|---|---|
-| Dynamic-$k$ (OLMoE) | GSM | −1.82 | 80.00% |
-| Dynamic-$k$ (OLMoE) | Law | −0.04 | 84.50% |
 | Dynamic-$k$ (OLMoE) | Translation | +0.36 | 82.00% |
-| Dynamic-$k$ (Qwen1.5) | GSM | −4.29 | 75.00% |
 | Dynamic-$k$ (Qwen1.5) | Law | **+2.70** | 75.00% |
-| Dynamic-$k$ (Qwen1.5) | Translation | **+3.22** | 75.00% |
 
 ### Key Findings
-- **Forward-Backward Consistency is Essential**: The strongest performance comes from the pairing of "Forward Probabilistic Sampling + Backward Analytical Marginals." Mismatching them (e.g., Sample + Dense STE) drops EM by 4 points and quadruples variance, implying ProbMoE's gains stem from structural consistency rather than stochasticity alone.
-- **Enhanced Expert Utilization**: On Qwen/Translation, ProbMoE requires more experts to accumulate 99% probability mass (Fig. 3), exhibiting lower top-4 mass and higher normalized entropy (Fig. 4). This indicates more diverse routing and better expert specialization, consistent with findings that broader expert participation mitigates collapse.
-- **Train/Inference Cardinality Mismatch**: Table 3 show that models trained with Exact-$k$ ($k=8$) only select ~5 experts under dynamic-$k$ MAP inference ($k\in[4,8]$), suggesting they learn sharp distributions. ProbMoE, by explicitly modeling cardinality, achieves higher EM (44.50 vs 38.59) under dynamic inference.
-- **Semantic Interpretability of Adaptation**: Dynamic-$k$ assigns more experts to punctuation/suffixes/context-sensitive symbols (`:`, `?`, `ons`) and fewer to numbers or concrete nouns (Fig. 6). The overall usage (Law > Translation > GSM) aligns with task complexity (Fig. 5).
-- **Failure Cases**: SparseMixer fails on the Qwen backbone (GSM 1.30, MBPP 0.00), suggesting dynamic sparse-gradient routing may be unstable for large models. ReMoE's ReLU-based routing also lags significantly, validating the necessity of an explicit $k$-subset distribution.
+- **Forward-Backward Alignment**: Gains stem from the self-consistency of "Forward Sampling + Backward Marginal Inference" from the same distribution, rather than randomness alone.
+- **Expert Utilization**: ProbMoE exhibits higher routing entropy and lower Top-4 mass (Fig. 4), indicating more distributed routing and better specialization.
+- **Training/Inference Mismatch**: Conventional models trained with fixed $k$ exhibit peaky distributions that perform poorly under dynamic MAP inference. ProbMoE's explicit modeling maintains performance in adaptive settings.
+- **Semantic Computing**: Dynamic-$k$ allocates more experts to difficult/context-sensitive tokens (punctuation) and fewer to concrete nouns, matching human intuition of task difficulty.
 
 ## Highlights & Insights
-- **"Router gradient failures are a modeling issue, not just an estimation issue"**: ProbMoE shifts the focus from "how to estimate gradients" to "what object to model." By modeling the parameters of a $k$-subset distribution rather than just softmax weights, the gradient inherently captures the utility of alternative subsets.
-- **First Implementation of SIMPLE in MoE**: Porting cardinality-constrained Bernoulli DP normalization from combinatorial learning to MoE routers creates a "probabilistic layer + analytical marginal" framework that can be reused in any scenario requiring hard constraints with sparse forward passes (e.g., active learning, sparse attention).
-- **Free Dynamic-$k$**: Converting exact-$k$ to dynamic-$k$ is as simple as summing $Z_k$ terms. This theoretical elegance translates directly to implementation simplicity.
-- **Transferable Trick**: The STE routing weight (Eq. 7) is a general "Sparse Forward, Distribution-Aware Backward" pattern that is more stable than plain STE and could be applied to Mixture-of-Tokens or Mixture-of-Depths.
+- **"Modelling over Estimation"**: The bottleneck in routing gradients is modeling the $k$-subset as a distribution parameter rather than just scaling selected outputs.
+- **SIMPLE Landing**: First application of cardinality-constrained Bernoulli DP normalization in MoE, offering a "probabilistic layer" that could generalize to sparse attention or active learning.
+- **"Free" Dynamic-$k$**: Converting exact constraints to range constraints is mathematically elegant and architecturally simple within this framework.
 
 ## Limitations & Future Work
-- **Ours acknowledges**: Current experiments focus on SFT; pre-training at scale has not been verified. System-level gains (kernel acceleration) for dynamic-$k$ are not yet fully realized.
-- **MMLU Saturation**: Improvements on MMLU/MMLU-Stem are minimal (< 0.5), suggesting ProbMoE's benefits are primarily for generative/reasoning tasks rather than knowledge retrieval.
-- **GSM Dynamic Regression**: EM drops in dynamic-$k$ for GSM tasks (-1.82 for OLMoE, -4.29 for Qwen). Math reasoning may benefit more from fixed, stable expert sets.
-- **Hyperparameter Sensitivity**: The $[k_{\min}, k_{\max}]$ range is only briefly discussed in Appendix C; the impact of per-layer tuning requires further study.
-- **Computational Constant**: While $\mathcal{O}(Nk)$ is efficient, the DP is serial across tokens unless vectorized. Training wall-clock comparisons were not provided.
-- **Future Directions**: Scaling to pre-training; learning $k_{\min}/k_{\max}$ parameters; using ProbMoE as a diagnostic tool for expert pruning/merging.
+- **Lack of Pre-training**: Experiments were performed during SFT; pre-training scale verification is pending.
+- **System-level Speedup**: While expert activation is reduced, wall-clock speedup depends on specialized kernel support for dynamic expert parallelism.
+- **Task Specificity**: Marginal gains on MMLU suggest ProbMoE is more effective for reasoning/generation than knowledge retrieval.
 
 ## Related Work & Insights
-- **vs DenseMixer (Yao 2026)**: DenseMixer uses top-$k$ forward but dense STE backward (requiring dense expert computation during training). Ours maintains sparse experts throughout by using a "dense" signal from the subset distribution to the router. Ours outperforms DenseMixer on multi-task OLMoE with lower training cost.
-- **vs SparseMixer (Liu 2023) / ReMoE (Wang 2025)**: These methods collapsed on the larger Qwen backbone, highlighting the stability of "discrete selection + distribution-level differentiability."
-- **vs Gumbel-Softmax / Concrete**: ProbMoE avoids high variance and cannot-be-exactly-$k$ issues by using exact normalization through DP.
-- **vs DA-MoE / DynMoE / AdaMOE**: These dynamic methods lack probabilistic normalization. ProbMoE Dynamic-$k$ maintains a closed-form probabilistic framework for rigorous optimization.
-- **vs DeepSeek-MoE (Dai 2024)**: While DeepSeek-MoE improves architecture (shared experts), ProbMoE is an orthogonal training-side improvement verified to be compatible with shared-expert designs.
+- **vs DenseMixer (2026)**: DenseMixer uses top-$k$ forward with dense expert backward. ProbMoE maintains sparse experts throughout, using the subset distribution to provide "dense" signals to the router.
+- **vs SparseMixer / ReMoE**: SparseMixer's sparse-gradient mask and ReMoE's ReLU routing proved unstable on larger backbones, whereas ProbMoE's discrete-yet-differentiable approach remained robust.
+- **vs Gumbel-Softmax**: SIMPLE provides exact normalization and marginals for hard cardinality constraints, which continuous relaxations cannot achieve cleanly.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First to formalize MoE routing as probabilistic inference over cardinality-constrained subset distributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid multi-task evidence on two backbones, though lacking pre-training scale and wall-clock benchmarks.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear derivation and intuition. Fig. 1 provides an excellent visual comparison of routing strategies.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a theoretically grounded, additive routing component with high utility for both performance and inference efficiency.
+- Novelty: ⭐⭐⭐⭐⭐ (Formulates MoE as subset distribution inference).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive tasks and analysis, but lacks large-scale pre-training).
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear derivations and intuitions).
+- Value: ⭐⭐⭐⭐⭐ (Provides a principled, stackable routing component).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills](skill-based_mixture-of-experts_adaptive_routing_for_heterogeneous_reasoning_via_.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 - [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
 - [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
-- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
 
 </div>
 

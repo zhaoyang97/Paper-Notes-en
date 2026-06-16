@@ -48,7 +48,7 @@ item_total: 14
 
 **🔬 ICLR2026** · **14** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (28)](../../ICCV2025/object_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (118)](../../CVPR2026/object_detection/index.md) · [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (28)](../../ICCV2025/object_detection/index.md)
 
 🔥 **Top topics:** Anomaly Detection ×5 · Object Detection ×3 · Few-/Zero-Shot Learning ×3 · Time-Series Forecasting ×2
 

@@ -2,81 +2,92 @@
 title: >-
   [Paper Note] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] This work is the first to extend the MeanFlow framework from class-label conditioning to text-conditioned image generation. It identifies the semantic discriminability and disentan…
+  [CVPR 2026][Image Generation][MeanFlow] This work first extends the MeanFlow framework from class-label conditioning to text-conditional image generation. It discovers that the semantic discriminability and disentanglement of text representations are key bottlenecks under restricted inference steps. Based on the BLIP3o-NEXT text encoder, the authors achieve
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "MeanFlow"
-  - "One-Step Generation"
-  - "Text-to-Image"
-  - "Text Encoder"
-  - "Semantic Discriminability"
+  - CVPR 2026
+  - Image Generation
+  - MeanFlow
+  - Text-to-Image
 date: 2026-05-08
-content_hash: 4a23c3869d0cf75d
+content_hash: 4b44268a06298f8a
 ---
-
 # Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.18168](https://arxiv.org/abs/2604.18168)  
 **Code**: [https://github.com/AMAP-ML/EMF](https://github.com/AMAP-ML/EMF)  
-**Area**: Image Generation
-**Keywords**: MeanFlow, One-Step Generation, Text-to-Image, Text Encoder, Semantic Discriminability
+**Area**: Image Generation  
+**Keywords**: MeanFlow, One-step generation, text-to-image, text encoder, semantic discriminability
 
 ## TL;DR
 
-This work is the first to extend the MeanFlow framework from class-label conditioning to text-conditioned image generation. It identifies the semantic discriminability and disentanglement of text representations as the key bottlenecks under limited inference steps, and achieves high-quality few-step/one-step T2I generation based on the BLIP3o-NEXT text encoder.
+This work first extends the MeanFlow framework from class-label conditioning to text-conditional image generation. It discovers that the semantic discriminability and disentanglement of text representations are key bottlenecks under restricted inference steps. Based on the BLIP3o-NEXT text encoder, the authors achieve high-quality few-step and one-step T2I generation.
 
 ## Background & Motivation
 
-**Background**: MeanFlow is a theoretically grounded flow matching acceleration method that learns the mean velocity field between two time points to enable one-step generation, achieving results on par with standard multi-step models for ImageNet class-conditional generation. Subsequent works improving training strategies and architectures have also focused primarily on the class-conditional setting.
+**Background**: MeanFlow is a theoretically grounded flow matching acceleration method that achieves one-step generation by learning the average velocity field between two time points. It has achieved performance comparable to standard multi-step models in ImageNet class-conditional generation. Subsequent works (e.g., improved training strategies and architectures) have also focused primarily on the class-conditional setting.
 
-**Limitations of Prior Work**: Extending MeanFlow from discrete class labels to flexible text inputs appears straightforward but is in practice highly non-trivial. Naively plugging an LLM-based text encoder into the MeanFlow framework with standard training strategies yields disappointing results. The numerical stability of the JVP term has repeatedly been identified as the primary bottleneck for scaling consistency-type methods to large-scale T2I generation.
+**Limitations of Prior Work**: Extending MeanFlow from fixed class labels to flexible text inputs seems straightforward but is actually challenging. Directly integrating LLM text encoders into the MeanFlow framework with conventional training strategies yields disappointing results. Numerical stability issues of the JVP term have been repeatedly identified as the main bottleneck for scaling consistency-based methods to large-scale T2I.
 
-**Key Challenge**: Class labels are discrete and easily distinguishable conditioning signals, whereas text conditions are continuous and semantically complex. Under extremely few-step (e.g., one-step) inference, the model has almost no opportunity to correct semantic errors through iterative denoising, imposing stringent quality requirements on the conditioning signal.
+**Key Challenge**: Class labels are discrete and easily distinguishable conditional signals, whereas text conditions are continuous and semantically complex. In extremely few-step (e.g., one-step) inference, the model has almost no opportunity to correct semantic deviations through multiple denoising iterations, thus imposing extremely high requirements on the quality of conditional signals.
 
-**Goal**: (1) Understand why certain text encoders fail in the few-step setting; (2) Identify key properties that high-quality text representations must possess; (3) Leverage these findings to build the first effective text-conditioned MeanFlow generation model.
+**Goal**: (1) Understand why certain text encoders fail in few-step settings; (2) Identify key attributes that high-quality text representations should possess; (3) Implement the first effective text-conditional MeanFlow generation model based on these findings.
 
-**Key Insight**: The authors compare different text encoders under limited inference steps, finding that the BLIP3o-NEXT encoder maintains basic semantic integrity even at one step, whereas the SANA-1.5 encoder exhibits severe semantic degradation in the few-step regime.
+**Key Insight**: The authors compare performance differences of various text encoders under restricted inference steps. They find that the BLIP3o-NEXT text encoder maintains basic semantic integrity even in a single step, while the SANA-1.5 encoder suffers from severe semantic degradation in few-step settings.
 
-**Core Idea**: High-quality text representations require two essential properties — *discriminability* (distinguishing fine-grained semantic differences) and *disentanglement* (preserving the linguistic structure of text). Only encoders with both properties can construct reliable velocity field directions, enabling few-step or even one-step generation.
+**Core Idea**: High-quality text representations require two core attributes: discriminability (distinguishing subtle semantic differences) and disentanglement (maintaining the linguistic structure of the text). Only encoders possessing both attributes can construct a reliable velocity field direction, making few-step or even one-step generation possible.
 
 ## Method
 
 ### Overall Architecture
 
-The method adapts the pretrained BLIP3o-NEXT diffusion model into the MeanFlow framework. The key modification is the introduction of dual time-embedding layers: $\phi_{interval}(t-r)$ encodes the length of the time interval, and $\phi_{end}(t)$ encodes the current time point. The combined conditional embedding $\phi_{cond}(t,r) = \phi_{interval}(t-r) + \phi_{end}(t)$ jointly controls the velocity network together with the text features.
+This paper addresses the problem that while MeanFlow succeeds in class-conditional generation, it fails when switching to free-form text via LLM text encoders using standard training. Instead of focusing solely on the numerical stability of the JVP term, the authors first determine "what kind of text representation supports few-step generation." After identifying two quantifiable attributes (discriminability and disentanglement), they adapt the BLIP3o-NEXT pre-trained diffusion model into MeanFlow.
+
+The overall pipeline is: input text is processed by the encoder to obtain text features; the velocity network then predicts the average velocity field from time $r$ to $t$. During inference, image generation is performed via noise integration in very few steps (or a single step). Compared to the original MeanFlow, the only structural change is splitting the single time embedding into two paths: $\phi_{interval}(t-r)$ encoding the interval length and $\phi_{end}(t)$ encoding the current time point. Their sum produces the conditional embedding $\phi_{cond}(t,r) = \phi_{interval}(t-r) + \phi_{end}(t)$, which is fed into the velocity network alongside text features so the model knows both where it is and how far it needs to jump.
+
+It is emphasized that the core contribution is not a new architecture but the "selection-adaptation" pipeline: candidate encoders are evaluated via discriminability and disentanglement metrics. Only those meeting both criteria (BLIP3o-NEXT) are selected for adaptation into few-step/one-step MeanFlow models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Candidate Text Encoders<br/>BLIP3o-NEXT / CLIP / Gemma / T5"] --> B
+    A --> C
+    B["Discriminability Metric<br/>Cross-modal retrieval + DINOv3 visual similarity"]
+    C["Disentanglement Metric<br/>Full prompt vs. reduced version cosine distance"]
+    B -->|Both criteria met| D["Selected Encoder BLIP3o-NEXT<br/>Discriminability 0.734 + Disentanglement 0.999"]
+    C -->|Both criteria met| D
+    D --> E["MeanFlow T2I Adaptation<br/>Dual time embeddings + adaptive sampling (t, r)"]
+    E --> F["Few-step/One-step Integration<br/>Noise → Image"]
+```
 
 ### Key Designs
 
-1. **Analysis and Validation of Text Representation Discriminability**:
+**1. Discriminability Metric: Determining if the encoder can distinguish semantically similar but distinct descriptions**
 
-    - **Function**: Validates the cross-modal alignment quality of text encoders.
-    - **Mechanism**: On the COCO 2017 training set of 118K samples, query prompts are encoded by the target text encoder to retrieve the most semantically similar image-text pairs; DINOv3 is then used to evaluate the visual feature similarity between the retrieved images and the query images. BLIP3o-NEXT achieves a score of 0.734, CLIP 0.730, Gemma 0.713, and T5 only 0.634.
-    - **Design Motivation**: Discriminability implies that the text encoder's output is well aligned with the corresponding image representations, accurately distinguishing semantically similar but distinct texts. In few-step generation, each step's velocity field direction must be sufficiently accurate; encoders with poor discriminability produce ambiguous velocity fields.
+In one-step generation, the model lacks multiple denoising steps to correct errors; the velocity field direction must be accurate immediately. Therefore, the conditional signal must be "sharp." The authors quantify this sharpness using a cross-modal retrieval experiment: on the COCO 2017 training set (118K), the encoder encodes a query prompt to retrieve the most similar image-text pairs. DINOv3 is then used to compare the visual features of the retrieved image with the target image. Higher scores indicate better alignment and better separation of similar but distinct semantics. Results show BLIP3o-NEXT scores 0.734, CLIP 0.730, and Gemma 0.713, whereas T5 scores only 0.634. Encoders with poor discriminability provide blurry velocity field directions, causing failure in few-step settings.
 
-2. **Analysis and Validation of Text Representation Disentanglement**:
+**2. Disentanglement Metric: Determining if text representations drift significantly due to minor phrasing changes**
 
-    - **Function**: Evaluates the text encoder's ability to preserve linguistic structure.
-    - **Mechanism**: On the full prompts from DPG-Bench, subsets are created by randomly removing portions of the text; the cosine distance between encodings of the reduced and full versions is then computed. A good encoder should yield small distances between the reduced and full versions (structural preservation). BLIP3o-NEXT scores 0.999, Gemma 0.987, CLIP 0.967, and T5 0.893.
-    - **Design Motivation**: Disentanglement ensures that encoded text features retain the original linguistic structure, preventing disproportionate representational drift caused by text variations.
+Discriminability alone is insufficient; the encoder must also maintain linguistic structure, ensuring local changes do not cause disproportionate shifts in the representation. Using full prompts from DPG-Bench, the authors randomly delete parts of the text to create reduced versions. They then calculate the cosine distance between the full and reduced encodings. BLIP3o-NEXT scores nearly perfect at 0.999, followed by Gemma at 0.987, CLIP at 0.967, and T5 at only 0.893. High disentanglement ensures that similar texts fall into close regions of the representation space, making the velocity field smooth and predictable. Poor disentanglement introduces jitter that few-step inference cannot absorb.
 
-3. **MeanFlow T2I Adaptation**:
+**3. MeanFlow T2I Adaptation: Fine-tuning for few-step/one-step generation on qualified encoders**
 
-    - **Function**: Adapts a pretrained flow matching model for MeanFlow-based one-step/few-step generation.
-    - **Mechanism**: The time-embedding layer is duplicated into an interval layer and an endpoint layer. Time step pairs $(t, r)$ are adaptively sampled from uniform or logit-normal distributions, with the proportion of $t \neq r$ samples gradually increasing during training. The standard MeanFlow objective is used: $\mathcal{L}_{MF}(\theta) = \mathbb{E}[\|u_\theta - \text{sg}(u_{tgt})\|^2]$, where the target is computed via JVP.
-    - **Design Motivation**: Fine-tuning MeanFlow on top of a pretrained model is considerably easier than training from scratch, since the model already encodes a velocity field. The critical prerequisite, however, is that the text encoder must possess sufficient discriminability and disentanglement.
+Once the encoder is selected, the BLIP3o-NEXT pre-trained diffusion model is transformed into MeanFlow. The original time embedding layer is duplicated into interval and endpoint layers (dual time embeddings). During training, time step pairs $(t, r)$ are sampled adaptively from uniform or logit-normal distributions. The ratio of $t \neq r$ is gradually increased to transition the model from learning "instantaneous velocity" to learning "average interval velocity." The training objective follows the standard MeanFlow form:
+
+$$\mathcal{L}_{MF}(\theta) = \mathbb{E}\big[\|u_\theta - \text{sg}(u_{tgt})\|^2\big]$$
+
+where the target $u_{tgt}$ is calculated via JVP with stop-gradient. Fine-tuning is preferred over training from scratch as pre-trained weights already encode usable velocity fields. However, this shortcut only works if the encoder satisfies both discriminability and disentanglement. Ablation studies show that switching to the SANA-1.5 encoder fails even with additional SFT, proving the bottleneck lies in encoder attributes rather than training data.
 
 ### Loss & Training
 
-Approximately 170K samples are used (BLIP3o-60k + shareGPT-4o + Echo-4o), with a learning rate of 1e-5, batch size of 128, and training for 150 epochs. The model is fine-tuned from BLIP3o-NEXT.
+The model uses approximately 170K samples (BLIP3o-60k + shareGPT-4o + Echo-4o), a learning rate of 1e-5, and a batch size of 128 for 150 epochs. Fine-tuning is based on the BLIP3o-NEXT model.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Steps | GenEval↑ | DPG-Bench↑ | HPSv2↑ |
-|-------|-------|---------|-----------|--------|
+|------|------|---------|-----------|--------|
 | BLIP3o-NEXT | 30 | 0.91 | 82.05 | 29.42 |
 | BLIP3o-NEXT | 4 | 0.86 | 78.15 | 26.96 |
 | BLIP3o-NEXT | 1 | 0.46 | 57.05 | 18.54 |
@@ -88,44 +99,44 @@ Approximately 170K samples are used (BLIP3o-60k + shareGPT-4o + Echo-4o), with a
 
 ### Ablation Study
 
-| Configuration | GenEval (1-step) | Notes |
-|--------------|-----------------|-------|
-| BLIP3o-NEXT encoder + MeanFlow | 0.74 | High discriminability + high disentanglement |
-| SANA-1.5 encoder + MeanFlow | Fails | Insufficient discriminability |
-| SANA-1.5 encoder + SFT fine-tuning + MeanFlow | Still fails | Fine-tuning cannot compensate for encoder deficiencies |
+| Configuration | GenEval (1-step) | Description |
+|------|-------------|------|
+| BLIP3o-NEXT Encoder + MeanFlow | 0.74 | High discriminability + High disentanglement |
+| SANA-1.5 Encoder + MeanFlow | Failure | Insufficient discriminability |
+| SANA-1.5 Encoder + SFT Toneup + MeanFlow | Still Failure | SFT cannot compensate for encoder defects |
 
 ### Key Findings
 
-- EMF with 4 steps nearly matches BLIP3o-NEXT at 30 steps (GenEval 0.90 vs. 0.91), achieving approximately 7.5× acceleration.
-- EMF outperforms all distillation-based models (SDXL-Turbo/Lightning/DMD2, etc.) without requiring a teacher model.
-- The SANA-1.5 encoder fails to function effectively within MeanFlow even after SFT fine-tuning, demonstrating that the intrinsic properties of the encoder — not the training data — are the bottleneck.
-- EMF performance improves consistently with more inference steps (1→2→4→8), unlike conventional consistency models where performance saturates or even degrades as steps increase.
+- EMF 4-step generation almost matches BLIP3o-NEXT 30-step performance (GenEval 0.90 vs 0.91), achieving approximately 7.5× acceleration.
+- EMF outperforms all distillation models (SDXL-Turbo/Lightning/DMD2, etc.) without requiring a teacher model.
+- The SANA-1.5 encoder failed to work effectively in MeanFlow even after SFT fine-tuning, proving that encoder attributes, rather than training data, are the bottleneck.
+- EMF performance improves consistently with increased steps (1→2→4→8), unlike traditional consistency models that often saturate or degrade.
 
 ## Highlights & Insights
 
-- The systematic analysis of text encoder *discriminability* and *disentanglement* is highly valuable. Prior work typically evaluates final generation quality only; this paper delves into the properties of the text representation space, providing concrete metrics for selecting or designing text encoders for few-step generation.
-- The analysis of "why class labels work in MeanFlow but text does not" is particularly insightful: class labels are inherently discrete and easily distinguishable, naturally possessing high discriminability.
-- The comparison with consistency-based methods is also illuminating: consistency methods may degrade with more steps, whereas MeanFlow — as a stable discretization of a continuous flow — continuously benefits from additional steps.
+- The systematic analysis of text encoder "discriminability" and "disentanglement" is highly valuable. While prior work focused only on final generation quality, this study delves into representation space attributes, providing clear metrics for encoder selection in few-step generation.
+- The insight into "why class labels work for MeanFlow but text doesn't" is revealing: class labels are naturally discrete and distinguishable, possessing high discriminability by default.
+- The comparison with consistency methods highlights a key advantage: while consistency models may degrade with more steps, MeanFlow, as a stable discretization of a continuous flow, consistently benefits from more steps.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to BLIP3o-NEXT, an encoder that happens to exhibit both high discriminability and high disentanglement; generalizability to other encoders meeting these criteria remains uncertain.
-- One-step GenEval of 0.74 still lags behind multi-step baselines, leaving room for improvement toward truly high-quality single-step T2I generation.
-- The numerical stability issues with JVP computation are mitigated by selecting a suitable encoder but are not fundamentally resolved.
-- Future directions include exploring text encoders specifically designed or trained for few-step generation.
+- The findings are currently validated on BLIP3o-NEXT; whether they generalize to all encoders meeting these criteria remains to be fully explored.
+- There is still a gap between 1-step GenEval (0.74) and multi-step baselines, leaving room for improvement in high-quality one-step T2I.
+- Numerical stability issues in JVP calculation are mitigated by choosing a good encoder but are not fundamentally solved.
+- Future work: Explore text encoders specifically designed/trained for few-step generation.
 
 ## Related Work & Insights
 
-- **vs. Original MeanFlow**: Supports only class-conditional generation; this work is the first extension to text conditioning.
-- **vs. SANA-Sprint**: A distillation-based method achieving GenEval 0.77 at 4 steps; this work achieves 0.90, a significant improvement.
-- **vs. Consistency Models**: Consistency models may degrade with increasing steps; the proposed MeanFlow approach yields consistent improvement.
+- **vs. Original MeanFlow**: Original version only supported class conditioning; this work is the first extension to text.
+- **vs. SANA-Sprint**: SANA-Sprint is a distillation method reaching 0.77 GenEval at 4 steps, while EMF significantly improves this to 0.90.
+- **vs. Consistency Models**: Unlike consistency methods which may degrade with more steps, the MeanFlow approach provides sustainable improvements.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First extension of MeanFlow to T2I; the text representation analysis is insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive multi-benchmark comparisons; systematic encoder analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Clear logical progression from observations to analysis to methodology.
-- Value: ⭐⭐⭐⭐ — Provides actionable guidance for encoder selection in few-step T2I generation.
+- Novelty: ⭐⭐⭐⭐ First extension of MeanFlow to T2I with deep analysis of text representations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparison across multiple benchmarks and systematic encoder analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical progression from observation to analysis to methodology.
+- Value: ⭐⭐⭐⭐ Provides guiding insights for text encoder selection in the context of few-step T2I generation.
 
 <!-- RELATED:START -->
 
@@ -133,11 +144,11 @@ Approximately 170K samples are used (BLIP3o-60k + shareGPT-4o + Echo-4o), with a
 
 ## Related Papers
 
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
-- [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
-- [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
+- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
 
 </div>
 

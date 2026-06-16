@@ -2,73 +2,76 @@
 title: >-
   [Paper Note] SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][3D LVLM] This paper identifies spatial perception bias in RoPE when applied to 3D LVLMs (1D indexing disrupts 3D locality and ignores directionality), and proposes SoPE…
+  [CVPR 2026][Multimodal VLM][3D LVLM] Discloses the spatial perception bias issue of RoPE in 3D LVLMs (1D indexing disrupts 3D locality and ignores orientation). Proposes SoPE, a Spherical Coordinate-Based Positional Embedding ($(t,r,\theta,\phi)$ four-dimensional indexing + multi-dimensional frequency allocation + multi-scale mixing), achieving SOTA perfo
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "3D LVLM"
-  - "positional encoding"
-  - "spherical coordinates"
-  - "RoPE"
-  - "SpatialLM"
-  - "spatial reasoning"
+  - CVPR 2026
+  - Multimodal VLM
+  - 3D LVLM
+  - RoPE
+  - SpatialLM
 date: 2026-05-08
-content_hash: ed8dcdf5fa1586d2
+content_hash: c98124cadb58b17f
 ---
-
 # SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22716](https://arxiv.org/abs/2602.22716)  
 **Code**: None  
-**Area**: 3D Vision / Multimodal VLM / Positional Encoding
-**Keywords**: 3D LVLM, positional encoding, spherical coordinates, RoPE, SpatialLM, spatial reasoning
+**Area**: 3D Vision / Multimodal VLM / Positional Encoding  
+**Keywords**: 3D LVLM, Positional Encoding, Spherical Coordinates, RoPE, SpatialLM, Spatial Reasoning
 
 ## TL;DR
 
-This paper identifies spatial perception bias in RoPE when applied to 3D LVLMs (1D indexing disrupts 3D locality and ignores directionality), and proposes SoPE, a spherical coordinate-based positional embedding using a four-dimensional index $(t, r, \theta, \phi)$ with multi-dimensional frequency allocation and multi-scale mixing. SoPE achieves state-of-the-art performance on 3D layout estimation and object detection benchmarks built upon SpatialLM.
+Discloses the spatial perception bias issue of RoPE in 3D LVLMs (1D indexing disrupts 3D locality and ignores orientation). Proposes SoPE, a Spherical Coordinate-Based Positional Embedding ($(t,r,\theta,\phi)$ four-dimensional indexing + multi-dimensional frequency allocation + multi-scale mixing), achieving SOTA performance in 3D layout estimation and object detection on SpatialLM.
 
 ## Background & Motivation
 
-**Background**: 3D LVLMs encode point clouds and process them jointly with an LLM for 3D scene understanding. Mainstream approaches inherit RoPE from LLMs, flattening point cloud tokens into a 1D sequence via raster-scan ordering.
+**Background**: 3D LVLMs joint-process encoded point clouds with LLMs for 3D scene understanding. Mainstream methods inherit RoPE from LLMs, flattening point cloud tokens into 1D sequences via raster scanning.
 
-**Limitations of Prior Work**: Information flow visualization reveals severe spatial perception bias — cross-modal attention concentrates on a few hotspot tokens, the majority of 3D tokens receive approximately uniform weights, and small objects along with structural boundaries are systematically suppressed. Two root causes are identified: (i) 1D raster indexing destroys the 3D spatial continuity of point clouds, causing spatially adjacent tokens to receive non-adjacent positional indices; (ii) the relative distance $\Delta t = t_1 - t_2$ captures only sequential order, with no sensitivity to spatial position or directional change.
+**Limitations of Prior Work**: Information flow visualization reveals severe spatial perception bias—cross-modal attention concentrates on a few hotspots, while a large number of 3D tokens receive nearly identical weights, systematically suppressing small objects and structural boundaries. Two root causes: (i) 1D raster indexing breaks the 3D spatial continuity of point clouds, assigning non-adjacent position indices to spatially adjacent tokens; (ii) relative distance $\Delta t = t_1 - t_2$ only captures sequence timing, failing to perceive changes in spatial position and orientation.
 
-**Key Challenge**: RoPE is designed for 1D text and, when naively applied to 3D point clouds, inherently neglects spatial structure and directional information. Existing 2D/video extensions (VideoRoPE, M-RoPE) target image grids and are unsuitable for irregular point clouds.
+**Key Challenge**: RoPE was designed for 1D text. Forcing its application to 3D point clouds ignores the fundamental differences in spatial structure and orientation information. Existing 2D or video improvements (VideoRoPE, M-RoPE) are designed for image grids and are unsuitable for irregular point clouds.
 
-**Key Insight**: Spherical coordinates $(r, \theta, \phi)$ naturally decouple distance from direction. Mapping 3D tokens into spherical space enables simultaneous encoding of position and orientation.
+**Key Insight**: Spherical coordinates $(r, \theta, \phi)$ naturally decouple distance and orientation. Mapping 3D tokens to spherical space allows for the simultaneous encoding of position and angles.
 
-**Core Idea**: Replace the 1D raster index with spherical coordinates $(t, r, \theta, \phi)$, and allocate RoPE frequency bands functionally across different coordinate components.
+**Core Idea**: Replace 1D raster indexing with spherical coordinates $(t,r,\theta,\phi)$ and allocate RoPE frequency bands to different coordinate components based on their functional roles.
 
 ## Method
 
 ### Overall Architecture
 
-SpatialLM baseline → extract $(x, y, z)$ coordinates of point cloud tokens → convert to spherical coordinates $(r, \theta, \phi)$ while retaining temporal index $t$ → allocate 128-dimensional RoPE frequency bands at ratio $t:r:\theta:\phi = 24:2:3:3$ → apply multi-scale frequency mixing to each component → replace original RoPE → end-to-end training.
+SoPE addresses a neglected mismatch in 3D LVLMs: point clouds are inherently 3D, yet they are compressed into 1D sequences via raster scanning for RoPE inherited from text-based LLMs. This results in vastly different position indices for spatially adjacent tokens and a complete loss of orientation information. The approach modifies only the positional encoding without changing the backbone—using the SpatialLM baseline, the Cartesian coordinates $(x,y,z)$ of each point cloud token are converted to spherical coordinates $(r,\theta,\phi)$. These are combined with the original temporal index $t$ to form a four-dimensional position. The 128-dimensional RoPE frequency band is then partitioned among the four components in a ratio of $t:r:\theta:\phi=24:2:3:3$, with a multi-scale phase mixture applied within each component. Finally, it serves as a drop-in replacement for the original RoPE during end-to-end training. The cumulative modification maintains the original inference path length.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Point Cloud Token<br/>Cartesian (x,y,z) + Temporal Index t"] --> B["Spherical Coordinate Projection<br/>(x,y,z) → (r,θ,φ), concatenated with t for 4D index (t,r,θ,φ)"]
+    B --> C["Multi-dimensional Frequency Allocation<br/>128-dim RoPE bands split 24:2:3:3<br/>Spherical (r,θ,φ) → high-freq, Temporal t → low-freq"]
+    C --> D["Multi-scale Frequency Mixing<br/>Phase for each component integrates linear/log/periodic scales"]
+    D --> E["SoPE Rotation Matrix drop-in replaces original RoPE<br/>SpatialLM End-to-End Training"]
+```
 
 ### Key Designs
 
-1. **Spherical Coordinate Positional Projection**
+**1. Spherical Coordinate Position Projection: Re-introducing 3D Geometry to Position Indices**
 
-    - Function: Remaps 3D tokens from 1D raster indices to geometrically-aware four-dimensional positions $(t, r, \theta, \phi)$.
-    - Mechanism: $r = \sqrt{x^2+y^2+z^2}$, $\theta = \arccos(z/r)$, $\phi = \text{atan2}(y, x)$. The relative displacement is decomposed into four components $\Delta t, \Delta r, \Delta\theta, \Delta\phi$, naturally encoding both spatial position change and directional angular change.
-    - Design Motivation: Cartesian 3D coordinates (RoPE-3D) encode position but cannot distinguish angular relationships; spherical decomposition renders radial distance and angular direction orthogonal, making directional information explicit.
+The fundamental flaw of 1D raster indexing is that it only identifies the sequence order of tokens, not their spatial distance or orientation—relative distance $\Delta t = t_1 - t_2$ captures temporal order rather than geometry. SoPE replaces $(x,y,z)$ for each token with spherical coordinates: $r=\sqrt{x^2+y^2+z^2}$, $\theta=\arccos(z/r)$, and $\phi=\text{atan2}(y,x)$. Consequently, the relative position expands from a single $\Delta t$ to four components $(\Delta t,\Delta r,\Delta\theta,\Delta\phi)$, explicitly encoding changes in radial distance and angular direction. Choosing spherical over Cartesian (i.e., RoPE-3D) is critical: while Cartesian $(x,y,z)$ recovers position, its three axes are coupled, making it difficult for the model to discern directional relationships such as "these tokens share a similar orientation but differ in distance." Spherical decomposition naturally orthogonalizes distance $r$ and angles $(\theta, \phi)$, elevating orientation information to a primary feature.
 
-2. **Multi-Dimensional Frequency Allocation**
+**2. Multi-dimensional Frequency Allocation: Bandwidth Partitioning by Value Range and Precision**
 
-    - Function: Distributes 128-dimensional RoPE frequency bands across four coordinate components at ratio $t:r:\theta:\phi = 24:2:3:3$.
-    - Mechanism: Spherical components $(r, \theta, \phi)$ are mapped to high-frequency sub-bands (capturing fine-grained spatial and angular variation), while temporal index $t$ is mapped to low-frequency sub-bands (preserving long-range temporal coherence). The rotation matrix is block-diagonalized, with each component encoded independently and combined additively.
-    - Design Motivation: The value range of $t$ greatly exceeds that of the angular components, necessitating more low-frequency bands for temporal smoothness; angular variations are typically small and fine-grained, requiring high-frequency bands for discrimination. The ratio is determined via large-scale ablation experiments (Uniform, Angular-Biased, Temporal-Biased).
+All four components share the same 128-dimensional RoPE frequency bands. Their allocation determines the encoding granularity. SoPE assigns the three spherical components $(r, \theta, \phi)$ to front-end high-frequency sub-bands and the temporal index $t$ to back-end low-frequency sub-bands. The rotation matrix is block-diagonalized, where each component rotates independently before additive combination. The trade-off is straightforward: the range of $t$ is much larger than that of the angles, requiring more low-frequency bands to maintain smoothness across long sequences. Conversely, angular changes are often subtle yet critical, requiring high-frequency bands for differentiation. The specific $24:2:3:3$ ratio was selected through extensive ablation studies across Uniform, Angular-Biased, and Temporal-Biased configurations—a uniform split ($1:1:1:1$) resulted in a 3-point performance drop, indicating that the allocation itself is a key performance driver.
 
-3. **Multi-Scale Frequency Mixing**
+**3. Multi-scale Frequency Mixing: Capturing the Spectrum from Detail to Layout**
 
-    - Function: Fuses linear, logarithmic, and periodic transformations at the RoPE phase level for each coordinate component.
-    - Mechanism: $\varphi_k(u) = \frac{1}{3}(\omega_k^{lin}g^{lin}(u) + \omega_k^{log}g^{log}(u) + \omega_k^{per}g^{per}(u))$. The linear term preserves absolute precision, the logarithmic term emphasizes local neighborhoods, and the periodic term captures global structure. Equal-weight mixing introduces no additional learnable parameters.
-    - Design Motivation: Single-scale encoding struggles to simultaneously capture fine-grained geometry and large-scale layout; multi-scale fusion endows the model with discriminative power across different spatial ranges.
+Even with allocated frequency bands, a single-scale phase function struggle to simultaneously characterize fine-grained local geometry and large-scale global layout. SoPE integrates three transformations at the RoPE phase level for each component:
+
+$$\varphi_k(u) = \frac{1}{3}\left(\omega_k^{lin}g^{lin}(u) + \omega_k^{log}g^{log}(u) + \omega_k^{per}g^{per}(u)\right)$$
+
+The linear term preserves absolute position accuracy, the logarithmic term emphasizes local neighborhoods, and the periodic term captures global structures. These are summed with equal weight without introducing learnable parameters. This ensures that the same position remains discriminative across different spatial scales. Notably, multi-scale mixing and spherical coordinates are complementary—ablation shows a +1.8 improvement for SoPE, while it provides negligible gain for Cartesian RoPE-3D, suggesting that multi-scale benefits are only fully realized once orientation is properly encoded.
 
 ### Loss & Training
 
-Training follows the SpatialLM setup. Architecture: Sonata encoder + Qwen2.5-0.5B LLM + 2-layer MLP. Single-stage training on 4 × NVIDIA H20 GPUs. SoPE serves as a drop-in replacement for RoPE with no additional inference overhead.
+The training setup completely inherits from SpatialLM: Sonata point cloud encoder + LLM Qwen2.5-0.5B + 2-layer MLP projection, using 4 × NVIDIA H20 GPUs for single-stage training. SoPE serves as a drop-in replacement for RoPE, adding no parameters and maintaining the same inference overhead.
 
 ## Key Experimental Results
 
@@ -90,46 +93,46 @@ Training follows the SpatialLM setup. Architecture: Sonata encoder + Qwen2.5-0.5
 
 ### Ablation Study
 
-| Configuration | ARKit F1@0.25 | F1@0.50 | Note |
+| Configuration | ARKit F1@0.25 | F1@0.50 | Description |
 |---|---|---|---|
-| Ratio 24:2:3:3 (optimal) | 66.1 | 63.2 | Ours |
-| Ratio 8:6:9:9 (Angular-Biased) | 65.5 | 62.7 | Over-allocation to spherical |
-| Ratio 1:1:1:1 (Uniform) | 63.0 | 59.0 | −3 points |
-| Ratio 5:1:1:1 (Temporal-Biased) | 65.0 | 62.7 | Temporal-dominant |
-| SoPE w/o multi-scale mixing | 65.4 | 61.4 | Multi-scale contributes +1.8 |
-| RoPE-3D + multi-scale | 64.8 | 62.1 | Spherical > Cartesian |
+| Ratio 24:2:3:3 (Optimal) | 66.1 | 63.2 | Proposed design |
+| Ratio 8:6:9:9 (Angular-Biased) | 65.5 | 62.7 | Excessive spherical allocation |
+| Ratio 1:1:1:1 (Uniform) | 63.0 | 59.0 | 3-point drop |
+| Ratio 5:1:1:1 (Temporal-Biased) | 65.0 | 62.7 | Temporal dominance |
+| SoPE w/o Multi-scale Mixing | 65.4 | 61.4 | Multi-scale contribution +1.8 |
+| RoPE-3D + Multi-scale | 64.8 | 62.1 | Spherical > Cartesian |
 
 ### Key Findings
 
-- Multi-scale mixing yields larger gains for SoPE (+0.7/+1.8) than for RoPE-3D — spherical coordinates are a prerequisite for fully benefiting from multi-scale mixing.
-- Spherical > Cartesian > 2D projection; directional/angular encoding is the key differentiating factor.
-- Information flow visualization confirms that SoPE produces more balanced cross-modal attention, eliminating the hotspot concentration observed with RoPE.
+- Multi-scale mixing significantly improves SoPE (+0.7/+1.8) but shows limited improvement for RoPE-3D, indicating that spherical coordinates are a prerequisite for multi-scale benefits.
+- Spherical > Cartesian > 2D Projection; orientation/angular encoding is the primary source of performance variance.
+- Information flow visualization confirms that SoPE generates more balanced cross-modal attention, eliminating the hotspot aggregation observed in RoPE.
 
 ## Highlights & Insights
 
-- Spherical coordinates naturally decouple distance from orientation — geometrically more appropriate than Cartesian coordinates for 3D positional encoding. The idea is direct and effective, yet previously unexplored.
-- A simple modification (coordinate transformation + frequency reallocation) yields substantial gains (ARKitScenes +2.2/+2.5), demonstrating that positional encoding is indeed a critical bottleneck in 3D LVLMs.
-- Information flow visualization as a diagnostic tool merits broader adoption — identifying which tokens are under-attended before designing targeted encoding improvements.
+- Spherical coordinates naturally decouple distance and angle—making them geometrically superior to Cartesian coordinates for 3D positional encoding. The approach is direct and effective.
+- Simple modifications (coordinate transformation + frequency reallocation) yield significant improvements (ARKitScenes +2.2/+2.5), proving that positional encoding is a critical bottleneck for 3D LVLMs.
+- Information flow visualization is a valuable diagnostic tool—identifying neglected tokens first allows for targeted encoding improvements.
 
 ## Limitations & Future Work
 
-- Validation is limited to a 0.5B small model; effectiveness on larger models (7B+) remains to be confirmed.
-- The choice of spherical origin (scene geometric center vs. camera position) is not thoroughly investigated, which may affect encoding quality.
-- The frequency allocation ratio is determined manually; adaptive or learnable schemes may yield further improvement.
-- Evaluation is restricted to indoor 3D scenes; outdoor and large-scale settings such as autonomous driving remain untested.
+- Validated only on 0.5B small models; effectiveness on larger models (7B+) remains to be confirmed.
+- The choice of the spherical origin (scene geometric center vs. camera position) was not explored in depth and may affect encoding quality.
+- Frequency allocation ratios were determined manually; adaptive or learnable schemes might be superior.
+- Restricted to indoor 3D scenes; outdoor or autonomous driving scenarios have not been tested.
 
 ## Related Work & Insights
 
-- **vs. RoPE-3D**: Cartesian coordinate encoding improves spatial awareness but lacks directional information; SoPE's spherical decomposition encodes both simultaneously.
-- **vs. VideoRoPE/M-RoPE**: These methods perform spatiotemporal decomposition for 2D images/video and are not applicable to the irregular structure of 3D point clouds.
-- **vs. DRoPE**: The polar-coordinate directional extension targets task-specific properties such as heading periodicity; SoPE's spherical formulation is more general-purpose.
+- **vs RoPE-3D**: Cartesian coordinates improve position perception but lack orientation information; SoPE's spherical decomposition encodes both.
+- **vs VideoRoPE/M-RoPE**: These spatiotemporal decompositions target 2D image/video grids and are not suitable for the irregular structure of 3D point clouds.
+- **vs DRoPE**: Polar coordinate extensions for orientation target specific tasks like heading periodicity; SoPE's spherical approach is more general.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First application of spherical coordinate PE in 3D LVLMs
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-benchmark full ablation + real-device deployment latency testing
-- Writing Quality: ⭐⭐⭐⭐ Thorough motivation analysis with outstanding information flow visualization
-- Value: ⭐⭐⭐⭐ Drop-in replacement for RoPE with high cross-domain reference value
+- Novelty: ⭐⭐⭐⭐ First application of spherical coordinate PE in 3D LVLMs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Full ablations across multiple benchmarks + real-world deployment latency tests.
+- Writing Quality: ⭐⭐⭐⭐ Thorough motivation analysis and excellent information flow visualization.
+- Value: ⭐⭐⭐⭐ Drop-in replacement for RoPE with high cross-domain reference value.
 
 <!-- RELATED:START -->
 
@@ -140,8 +143,8 @@ Training follows the SpatialLM setup. Architecture: Sonata encoder + Qwen2.5-0.5
 - [\[ICML 2026\] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](../../ICML2026/multimodal_vlm/circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
 - [\[CVPR 2026\] MODIX: Training-Free Multimodal Information-Driven Positional Index Scaling for VLMs](modix_positional_index_scaling.md)
-- [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
-- [\[AAAI 2026\] Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies](../../AAAI2026/multimodal_vlm/remember_me_bridging_the_long-range_gap_in_lvlms_with_three-step_inference-only_.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
+- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
 
 </div>
 

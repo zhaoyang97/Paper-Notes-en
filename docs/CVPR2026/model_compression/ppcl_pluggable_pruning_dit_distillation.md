@@ -2,89 +2,96 @@
 title: >-
   [Paper Note] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 description: >-
-  [CVPR 2026][Model Compression][diffusion transformer] This paper proposes PPCL, a structured pruning framework tailored for large-scale Multi-Modal Diffusion Transformers (MMDiT…
+  [CVPR 2026][Model Compression][diffusion transformer] The PPCL framework is proposed for structured pruning of ultra-large Multi-Modal Diffusion Transformers (MMDiT, 8–20B parameters). It identifies substitutability via Linear Probes and automatically locates contiguous redundant layer intervals using CKA first-order differences. By employing non-sequential alternating di
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "diffusion transformer"
-  - "structured pruning"
-  - "contiguous layer redundancy"
-  - "knowledge distillation"
-  - "MMDiT"
+  - CVPR 2026
+  - Model Compression
+  - diffusion transformer
+  - structured pruning
+  - contiguous layer redundancy
+  - knowledge distillation
+  - MMDiT
 date: 2026-05-08
-content_hash: c74be223a73ae217
+content_hash: b54a63aa8724f24f
 ---
-
 # PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.16156](https://arxiv.org/abs/2511.16156)  
 **Code**: [GitHub](https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning)  
-**Area**: Model Compression / Diffusion Models
+**Area**: Model Compression / Diffusion Models  
 **Keywords**: diffusion transformer, structured pruning, contiguous layer redundancy, knowledge distillation, MMDiT
 
 ## TL;DR
 
-This paper proposes PPCL, a structured pruning framework tailored for large-scale Multi-Modal Diffusion Transformers (MMDiT, 8–20B parameters). It trains linear probes (Linear Probe) to assess the substitutability of each layer, automatically localizes contiguous redundant layer intervals via first-order differences of CKA, and applies non-sequential alternating distillation for dual-axis pruning along depth and width. On Qwen-Image 20B, PPCL achieves 50% parameter reduction and 1.8× inference speedup with an average performance drop of only 2.61%.
+The PPCL framework is proposed for structured pruning of ultra-large Multi-Modal Diffusion Transformers (MMDiT, 8–20B parameters). It identifies substitutability via Linear Probes and automatically locates contiguous redundant layer intervals using CKA first-order differences. By employing non-sequential alternating distillation for dual-axis (depth and width) pruning, the method achieves a 50% parameter reduction and 1.8× inference acceleration on Qwen-Image 20B, with an average performance drop of only 2.61%.
 
 ## Background & Motivation
 
-**Background**: State-of-the-art text-to-image (T2I) diffusion models have fully transitioned from UNet architectures to Multi-Modal Diffusion Transformers (MMDiT). While SDXL has 2.6B parameters, FLUX.1 reaches 12B and Qwen-Image reaches 20B (60 MMDiT blocks), greatly improving generation quality at the cost of substantially increased inference overhead.
+**Background**: Recent text-to-image (T2I) diffusion models have transitioned from UNet architectures to Multi-Modal Diffusion Transformers (MMDiT). While SDXL has 2.6B parameters, models like FLUX.1 (12B) and Qwen-Image (20B, 60-layer MMDiT blocks) offer significantly improved generation quality at the cost of high inference overhead.
 
-**Limitations of Prior Work**: (a) Existing structured pruning methods (e.g., TinyFusion, SnapFusion) primarily target UNet architectures and cannot be directly transferred to the dual-stream structure of MMDiT; (b) prior methods evaluate redundancy independently per layer (e.g., sensitivity analysis), overlooking functional coupling between adjacent layers in DiT; (c) in conventional sequential distillation, compression errors from early layers propagate and accumulate along the network, causing severe representational drift in the student model.
+**Limitations of Prior Work**: (a) Existing structured pruning methods (e.g., TinyFusion, SnapFusion) target UNet architectures and are difficult to migrate to the dual-stream structure of MMDiT; (b) Current methods evaluate redundancy independently per layer (e.g., sensitivity analysis), ignoring functional coupling between adjacent layers in DiTs; (c) In traditional sequential distillation, compression errors from early layers propagate and accumulate, causing the student model representation to deviate significantly from the teacher.
 
-**Key Challenge**: Through experiments, the authors find that redundancy in DiT exhibits **depth-wise contiguity**—removing contiguous layers has less impact on performance than removing an equal number of non-contiguous layers. Existing pruning methods do not exploit this property.
+**Key Challenge**: The authors experimentally find that DiT redundancy exhibits **depth continuity**—removing continuous layers has a smaller impact on performance than removing an equivalent number of non-continuous layers. Existing pruning methods do not exploit this property.
 
-**Goal**: To systematically identify contiguous redundant layer intervals in MMDiT and design a distillation scheme that avoids error accumulation, thereby preserving quality under high compression ratios.
+**Goal**: Systematically identify contiguous redundant layer intervals in MMDiT and design a distillation scheme that prevents error accumulation to maintain quality under high compression ratios.
 
-**Key Insight**: Replace traditional layer importance estimation with layer *substitutability*—if the input-output mapping of a layer can be approximated by a linear transformation, that layer is functionally redundant with respect to its neighbors.
+**Key Insight**: Traditional layer importance evaluation is replaced with "layer substitutability"—if the input-output mapping of a layer can be approximated by a linear transformation, the layer is functionally redundant relative to its neighbors.
 
-**Core Idea**: In MMDiT, redundant layers are distributed contiguously along the depth dimension. They can be automatically localized and removed in segments via linear probes combined with CKA difference analysis, while non-sequential distillation eliminates error accumulation.
+**Core Idea**: Redundant layers in MMDiTs are distributed contiguously along the depth. These can be automatically located and removed as sections via Linear Probes and CKA differences, combined with non-sequential distillation to eliminate error accumulation.
 
 ## Method
 
 ### Overall Architecture
 
-PPCL proceeds in two stages and three steps:
+PPCL decomposes the compression of large MMDiTs into two orthogonal axes: **depth and width pruning**, while utilizing **non-sequential distillation** to suppress error accumulation. The depth axis identifies "which layers to remove": Linear Probes are trained per layer for the teacher model, and CKA first-order differences automatically delineate **contiguous redundant layer intervals** $\mathcal{I} = \{[u_i, v_i]\}$ (Design 1). Each interval is then replaced and independently distilled into a single student layer (Design 2). The width axis further slims the remaining layers by replacing highly similar text streams and over-parameterized FFNs with lightweight linear projections (Design 3). After both processes, a short full-parameter fine-tuning is conducted. Since each depth interval is trained independently, the model allows "pluggable" variants where intervals can be toggled during inference without retraining.
 
-- **Stage 1 (Depth Pruning)**: (1) Train a linear probe for each MMDiT block to assess layer substitutability; (2) automatically delineate the set of contiguous redundant layer intervals $\mathcal{I}$ by detecting inflection points in the first-order difference of CKA; (3) train the student model via non-sequential distillation, optimizing each interval independently.
-- **Stage 2 (Width Pruning)**: Identify redundancy in the text stream and FFN, replacing them with lightweight linear projectors for further parameter reduction.
-- A brief full-parameter fine-tuning is performed at the end.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Teacher MMDiT<br/>(e.g., Qwen-Image 60 layers / 20B)"] --> S1
+    subgraph S1["Contiguous Redundant Layer Detection (Design 1)"]
+        direction TB
+        B["Layer-wise Linear Probes<br/>with Residual + Least Squares Init"] --> C["CKA 1st-order Difference Detection<br/>Auto-partitioning Intervals 𝓘"]
+    end
+    S1 --> D["Non-sequential Depth Distillation (Design 2)<br/>Interval [u,v] → Single Student, Cutting Error Accumulation"]
+    D --> S3
+    subgraph S3["Width Pruning (Design 3)"]
+        direction TB
+        E["Text Stream Pruning<br/>Replaced by Linear Projections"]
+        F["FFN Pruning<br/>Replaced by Linear Projections"]
+    end
+    S3 --> G["Short Full-parameter Fine-tuning"]
+    G --> H["Compressed Model<br/>50% Params / 1.8× Speedup + Pluggable Variants"]
+```
 
 ### Key Designs
 
-**1. Contiguous Redundant Layer Detection via Linear Probes**
+**1. Contiguous Redundant Layer Detection: Quantifying substitutability via Linear Probes and CKA differences**
 
-- **Function**: Automatically identify a set of non-overlapping contiguous redundant layer intervals $\mathcal{I} = \{[u_i, v_i]\}$.
-- **Mechanism**: A residual-structured linear probe $l_i$ is constructed for each teacher layer $T_i$, initialized via least squares and trained with an alignment loss $\mathcal{L}_{fit}(i) = \|l_i(T_{i-1}^D) + T_{i-1}^D - T_i(T_{i-1}^D)\|_2^2$. After training, the CKA similarity between the proxy model output (with consecutive layers replaced by linear probes) and the teacher layer output is computed on a calibration set. The first-order difference $\Delta(u,k) = -(\text{cka}(u,k) - \text{cka}(u,k-1))$ is defined; when $\Delta$ first decreases then increases, the inflection point $v$ marks the right endpoint of the redundant interval.
-- **Design Motivation**: (a) Each linear probe receives the actual input of its corresponding layer, ensuring independent and non-interfering evaluation; (b) a finite composition of linear transformations remains linear, guaranteeing transitivity of substitutability across contiguous layers; (c) using the inflection point of the CKA difference rather than a fixed threshold enables adaptive localization of redundant interval lengths.
-- **Key Formula**: Closed-form initialization of the linear probe: $W_i^* = (T_i(T_{i-1}^D) - T_{i-1}^D)(T_{i-1}^D)^\top(T_{i-1}^D(T_{i-1}^D)^\top)^{-1}$
+The first step in depth pruning is determining which layer segments can be removed. PPCL uses "substitutability" as the core criterion: if a layer's mapping can be approximated by a linear transformation, it is redundant. A **linear probe with a residual structure** $l_i$ is assigned to each teacher layer $T_i$. It is initialized using a least-squares closed-form solution $W_i^* = (T_i(T_{i-1}^D) - T_{i-1}^D)(T_{i-1}^D)^\top(T_{i-1}^D(T_{i-1}^D)^\top)^{-1}$ and fine-tuned with an alignment loss $\mathcal{L}_{fit}(i) = \|l_i(T_{i-1}^D) + T_{i-1}^D - T_i(T_{i-1}^D)\|_2^2$. This ensures each probe's training input matches the layer's actual input, allowing independent evaluation across layers.
 
-**2. Non-Sequential Depth Pruning Distillation**
+To determine if **multiple contiguous layers** can be replaced, the authors leverage the property that the composition of linear transformations remains linear. They compute the CKA similarity between the teacher outputs and a proxy model where contiguous layers are replaced by linear probes. The first-order difference is defined as $\Delta(u,k) = -(\text{cka}(u,k) - \text{cka}(u,k-1))$. The inflection point $v$ where $\Delta$ stops decreasing marks the right boundary of the redundant interval.
 
-- **Function**: For each detected redundant interval $[u,v]$, replace it with a single student layer to avoid error accumulation.
-- **Mechanism**: Each interval is optimized independently—student layer $S^u$ receives the output of teacher layer $u-1$ as input and is aligned to the output of teacher layer $v$. Loss function: $\mathcal{L}_{depth}^{[u,v]} = \|\text{Norm}(S^u(T_{u-1}^D)) - \text{Norm}(T_v^D)\|_2^2$, where Norm denotes L2 normalization, emphasizing directional alignment.
-- **Design Motivation**: In conventional sequential distillation, student layer $k$ receives the output of student layer $k-1$, causing early errors to accumulate layer by layer. The non-sequential scheme provides each interval directly with teacher inputs, severing the error propagation chain.
-- **Plug-and-Play Property**: Since each interval is trained independently, selected intervals can be flexibly enabled or bypassed at inference time—e.g., after training a 10B model, replacing some student layers back with teacher layers yields 12B or 14B variants without retraining.
+**2. Non-sequential Depth Pruning Distillation: Breaking the error accumulation chain**
 
-**3. Width Pruning: Text Stream and FFN Compression**
+Each identified interval $[u,v]$ is replaced by a **single student layer** $S^u$. Traditional sequential distillation accumulates error because each student layer receives the output of the previous student layer. PPCL's "non-sequential" (teacher-student alternating) approach forces each interval to **take input directly from the teacher**. Student layer $S^u$ receives the output from teacher layer $T_{u-1}^D$ and aligns with the output of teacher layer $T_v^D$. The loss is defined as $\mathcal{L}_{depth}^{[u,v]} = \|\text{Norm}(S^u(T_{u-1}^D)) - \text{Norm}(T_v^D)\|_2^2$. This independent optimization prevents error propagation. This component reduced performance degradation from 14.5% to 5.22% in ablation studies.
 
-- **Function**: Further compress parameters within retained layers by replacing redundant text stream structures and FFNs.
-- **Mechanism**: (a) **Text stream pruning**: CKA heatmaps reveal highly similar cross-layer representations in the text stream; the text stream of redundant layers (excluding QKV projections) is replaced by two lightweight linear projections $l_p^z$ and $l_p^h$. (b) **FFN pruning**: Layers where replacing the FFN with a linear projection yields minimal MSE are identified, and their FFNs are replaced with linear projections $l_q^{img}$ and $l_q^{txt}$.
-- **Design Motivation**: Text stream tokens in MMDiT exhibit high similarity and small inter-layer variation, enabling significant compression; FFNs are substantially over-parameterized, with many layers performing nearly linear transformations.
-- **Loss & Training**: The width distillation loss consists of two terms—a layer-level alignment loss $\mathcal{L}_{width}^j$ (consistent with the depth distillation format) and a linear projection alignment loss $\mathcal{L}_{linear}^j$ (constraining linear projection outputs to approximate the corresponding intermediate teacher representations).
+**3. Width Pruning: Compressing Text Streams and FFNs**
 
-### Loss & Training
+Additional redundancy within layers is addressed. **Text stream pruning** replaces redundant text tokens (except QKV projections) with lightweight linear projections $l_p^z$ and $l_p^h$, as CKA analysis shows high similarity across layers for these tokens. **FFN pruning** targets over-parameterized FFNs. Layers with minimal MSE when replaced by linear projections are substituted with $l_q^{img}$ and $l_q^{txt}$. The width distillation loss combines layer-wise alignment $\mathcal{L}_{width}^j$ and linear projection alignment $\mathcal{L}_{linear}^j$.
 
-- **Data**: 100K images sampled from LAION-2B-en, with detailed captions generated by Qwen2.5-VL.
-- **Three training stages**: Depth pruning 6k steps → Width pruning 2k steps → Full-parameter fine-tuning 1k steps (8 × H20 GPUs).
-- **Optimizer**: AdamW ($\beta_1$=0.9, $\beta_2$=0.95, weight decay=0.02), BF16 mixed precision + gradient checkpointing.
+### Training Strategy
+
+- **Data**: 100k images sampled from LAION-2B-en with detailed captions generated by Qwen2.5-VL.
+- **Three-stage Training**: Depth pruning (6k steps) → Width pruning (2k steps) → Full-parameter fine-tuning (1k steps) using 8 × H20 GPUs.
+- **Optimizer**: AdamW ($\beta_1$=0.9, $\beta_2$=0.95, weight decay=0.02) with BF16 mixed precision and gradient checkpointing.
 
 ## Key Experimental Results
 
 ### Main Results: Comparison on FLUX.1-dev
 
-| Method | Params (B) | Memory (%) | Latency (ms) | DPG↑ | GenEval↑ | B-VQA↑ | UniDet↑ | Avg. Drop (%)↓ |
+| Method | Params(B) | VRAM(%) | Latency(ms) | DPG↑ | GenEval↑ | B-VQA↑ | UniDet↑ | Avg Drop(%)↓ |
 |---|---|---|---|---|---|---|---|---|
 | Base model | 12 | 100 | 715 | 83.8 | 0.665 | 0.640 | 0.426 | 0 |
 | TinyFusion | 8 | 74.4 | 534 | 77.2 | 0.511 | 0.584 | 0.369 | 13.80 |
@@ -97,7 +104,7 @@ PPCL proceeds in two stages and three steps:
 
 ### Main Results: Comparison on Qwen-Image
 
-| Method | Params (B) | Memory (%) | Latency (ms) | DPG↑ | GenEval↑ | LongText-EN↑ | LongText-ZH↑ | Avg. Drop (%)↓ |
+| Method | Params(B) | VRAM(%) | Latency(ms) | DPG↑ | GenEval↑ | LongText-EN↑ | LongText-ZH↑ | Avg Drop(%)↓ |
 |---|---|---|---|---|---|---|---|---|
 | Base model | 20 | 100 | 2625 | 88.9 | 0.870 | 0.943 | 0.946 | 0 |
 | TinyFusion(14B) | 14 | 79.4 | 1789 | 80.7 | 0.739 | 0.859 | 0.857 | 8.75 |
@@ -106,55 +113,48 @@ PPCL proceeds in two stages and three steps:
 | **PPCL(12B)** | **12** | **71.4** | **1514** | **83.6** | **0.801** | **0.893** | **0.917** | **3.03** |
 | **PPCL(10B+FT)** | **10** | **66.9** | **1462** | **86.7** | **0.828** | **0.902** | **0.931** | **3.29** |
 
-### Ablation Study (Qwen-Image, all pruned to ~10–12B)
+### Ablation Study (Qwen-Image, pruned to ~10-12B)
 
-| Configuration | LongText↑ | DPG↑ | GenEval↑ | Avg. | Params (B) | Avg. Drop (%)↓ |
+| Configuration | LongText↑ | DPG↑ | GenEval↑ | Avg | Params(B) | Avg Drop(%)↓ |
 |---|---|---|---|---|---|---|
 | Original (20B) | 0.942 | 0.885 | 0.854 | 0.894 | 20 | 0 |
-| Baseline (CKA + sequential distillation) | 0.625 | 0.763 | 0.728 | 0.706 | 12 | 18.2 |
-| +LP (linear probe) | 0.712 | 0.795 | 0.776 | 0.761 | 12 | 14.5 |
-| +LP-a (CKA threshold instead of difference) | 0.664 | 0.778 | 0.712 | 0.718 | 12 | 19.7 |
-| +LP-b (enlarged interval upper bound) | 0.678 | 0.769 | 0.731 | 0.726 | 12 | 18.8 |
-| +DP (non-sequential distillation) | 0.905 | 0.836 | 0.801 | 0.848 | 12 | 5.22 |
-| +WP-text (text stream pruning) | 0.915 | 0.846 | 0.819 | 0.860 | 11 | 3.79 |
-| +WP-ffn (FFN pruning) | 0.906 | 0.835 | 0.809 | 0.850 | 10 | 4.91 |
+| Baseline (CKA+Sequential) | 0.625 | 0.763 | 0.728 | 0.706 | 12 | 18.2 |
+| +LP (Linear Probe) | 0.712 | 0.795 | 0.776 | 0.761 | 12 | 14.5 |
+| +LP-a (CKA Threshold) | 0.664 | 0.778 | 0.712 | 0.718 | 12 | 19.7 |
+| +DP (Non-sequential) | 0.905 | 0.836 | 0.801 | 0.848 | 12 | 5.22 |
+| +WP-text (Text Pruning) | 0.915 | 0.846 | 0.819 | 0.860 | 11 | 3.79 |
 | +Fine-tuning | 0.916 | 0.867 | 0.828 | 0.870 | 10 | 2.61 |
 
 ### Key Findings
 
-- **Contiguous vs. non-contiguous removal**: On the 60-layer Qwen-Image model, removing 1–3 layers contiguously consistently yields better generation quality than removing an equal number of non-contiguous layers, validating the depth-wise contiguity hypothesis.
-- **Large gain from non-sequential distillation**: The average performance drop decreases from 14.5% (+LP) to 5.22% (+DP), demonstrating that non-sequential distillation alone contributes approximately 9 percentage points of improvement.
-- **Width pruning improves metrics while reducing parameters**: +WP-text raises average performance from 0.848 to 0.860 while reducing parameters by 1B, attributed to the additional trainable linear layers compensating for residual layer misalignment.
-- **Plug-and-play property**: PPCL(14B) and PPCL(12B) are obtained directly from the 10B model by replacing some student layers with teacher layers, requiring no additional training.
-- **Re-pruning an already-pruned model**: Re-pruning FLUX.1 Lite (8B) down to 6.5B results in an average performance drop of only 0.07%.
+- **Contiguous vs. Non-contiguous removal**: On the Qwen-Image 60-layer model, contiguous removal consistently outperformed non-contiguous removal, validating the depth continuity hypothesis of redundancy.
+- **Impact of Non-sequential Distillation**: Switching from sequential to non-sequential distillation reduced performance drop significantly (from 14.5% to 5.22%).
+- **Pluggability**: PPCL(14B) and PPCL(12B) variants can be derived from the 10B model by swapping student layers back to original teacher layers without retraining.
 
 ## Highlights & Insights
 
-- **Contiguous redundancy is an intrinsic property of DiT**: Unlike CNNs where redundancy is scattered, adjacent layers in MMDiT undergo smooth transitions in representation space, forming functional units that can be removed as contiguous segments. This finding establishes a new paradigm for DiT pruning.
-- **Linear probes as a substitutability metric**: Compared to directly removing layers to assess sensitivity, linear probes more stably quantify the degree of linear approximability between layers and require only a single training pass to handle all layers simultaneously.
-- **Non-sequential distillation is the key**: Ablation results show that non-sequential distillation contributes more than the redundancy detection method itself (9pp vs. 3.7pp), demonstrating that severing the error accumulation chain is the central factor for preserving quality under high compression ratios.
-- **Complementarity of dual-axis compression**: Depth pruning reduces the number of layers while width pruning reduces parameters within retained layers; the two are orthogonal and additive, jointly achieving 50% compression.
+- **Contiguous redundancy is an inherent DiT property**: Unlike CNNs where redundancy is scattered, MMDiT layers transition smoothly in representation space, forming functional units that can be removed as blocks.
+- **Linear Probes as substitutability metrics**: Compared to direct removal, linear probes provide a stable quantification of linear approximation and cover all layers in a single training pass.
+- **Non-sequential distillation is crucial**: Breaking the error accumulation chain contributes more to quality preservation (9pp improvement) than the redundancy detection method itself.
 
 ## Limitations & Future Work
 
-- The inflection-point detection via first-order CKA differences lacks rigorous theoretical grounding; the authors acknowledge this is primarily a successful engineering heuristic.
-- INT4 quantization performs poorly after PPCL pruning—pruning reduces network redundancy and thereby narrows the error tolerance margin for quantization; joint optimization of pruning and quantization warrants further investigation.
-- Training still requires 8 × H20 GPUs, and scalability to larger models (e.g., 100B scale) remains to be verified.
-- Details of the selection strategy for which layers belong to $\mathcal{R}_{txt}$ and $\mathcal{R}_{ffn}$ in width pruning are deferred to the appendix, with limited description in the main text.
+- The CKA first-order difference heuristic lacks a rigorous theoretical foundation.
+- INT4 quantization performs poorly after PPCL pruning because pruning reduces the network's redundancy and narrows the tolerance for quantization errors.
+- Training requires 8 × H20 GPUs; scalability to 100B+ models remains to be verified.
 
 ## Related Work & Insights
 
-- **vs. TinyFusion**: TinyFusion uses differentiable gating parameters to identify removable layers but evaluates redundancy independently per layer, ignoring contiguity, and applies standard sequential distillation leading to error accumulation. On FLUX.1 and Qwen-Image, PPCL achieves average drops of 4.03% / 0.42%, significantly outperforming TinyFusion's 13.80% / 8.75%.
-- **vs. HierarchicalPrune**: HPP's layer importance estimation is relatively coarse, and generated results exhibit visual artifacts; PPCL shows a clear advantage at the same compression ratio (0.42% vs. 6.49%).
-- **vs. Dense2MoE**: Dense2MoE replaces FFNs with MoE to reduce activation cost without reducing parameter count, and achieves an average drop of 21.52%, demonstrating that naive sub-structure replacement is inferior to systematic pruning combined with distillation.
-- **vs. Chroma1-HD**: Chroma1-HD achieves the lowest average drop on FLUX.1 (1.02%) but increases inference latency by 2.4×, failing to meet acceleration requirements.
+- **vs. TinyFusion**: TinyFusion uses differentiable gates but ignores layer continuity and suffers from error accumulation in sequential distillation.
+- **vs. HierarchicalPrune**: HPP uses coarser importance evaluation resulting in visual artifacts; PPCL maintains significantly better quality at identical compression ratios.
+- **vs. Chroma1-HD**: While Chroma1-HD has a low performance drop on FLUX.1, it increases latency by 2.4×, failing to achieve acceleration.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The contiguous redundancy hypothesis is well validated experimentally; both the linear probe + CKA difference interval detection and non-sequential distillation represent effective innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated on two mainstream MMDiT models (FLUX.1 and Qwen-Image); ablation studies carefully decompose the contribution of each component.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, with a complete logical chain from observation → hypothesis → design.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses deployment bottlenecks for 20B-scale DiT models; the engineering value of 50% compression and 1.8× speedup is substantial, further enhanced by the plug-and-play property.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -162,11 +162,11 @@ PPCL proceeds in two stages and three steps:
 
 ## Related Papers
 
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[CVPR 2026\] FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning](fair-pruner_leveraging_tolerance_of_difference_for_flexible_automatic_layer-wise.md)
-- [\[CVPR 2026\] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)
-- [\[CVPR 2026\] Adversarial Concept Distillation for One-Step Diffusion Personalization](adversarial_concept_distillation_for_one-step_diffusion_personalization.md)
+- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
+- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
 
 </div>
 

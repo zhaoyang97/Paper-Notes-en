@@ -2,122 +2,124 @@
 title: >-
   [Paper Note] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM] Model-Dowser scores each parameter in an MLLM using the product of "weight magnitude × input activation × output Jacobian." High-scoring parameters are frozen…
+  [ICML 2026][Multimodal VLM][MLLM] Model-Dowser uses a three-factor scoring system—"weight magnitude × input activation × output Jacobian"—to rate each parameter in an MLLM. By freezing high-score parameters and updating only low-score ones, it enables deep fine-tuning for LLaVA/NVILA that adapts to downstream tasks while preserving pre-trained knowledg
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "MLLM"
-  - "Catastrophic Forgetting"
-  - "Sparse Fine-tuning"
-  - "Parameter Importance"
-  - "Data-Free Probing"
+  - ICML 2026
+  - Multimodal VLM
+  - MLLM
 date: 2026-05-08
-content_hash: 474dc8e4189732d5
+content_hash: a9a493d3bc10e903
 ---
-
 # Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.04509](https://arxiv.org/abs/2602.04509)  
-**Code**: None  
+**Code**: N/A  
 **Area**: Multimodal VLM / Continual Learning / Sparse Fine-tuning  
-**Keywords**: MLLM, Catastrophic Forgetting, Sparse Fine-tuning, Parameter Importance, Data-Free Probing
+**Keywords**: MLLM, Catastrophic Forgetting, Sparse Fine-tuning, Parameter Importance, Data-free Probing
 
 ## TL;DR
-Model-Dowser scores each parameter in an MLLM using the product of "weight magnitude × input activation × output Jacobian." High-scoring parameters are frozen, and only low-scoring ones are updated. This enables deep fine-tuning on LLaVA/NVILA to learn downstream tasks while retaining pretraining knowledge. Compared to SPIDER and ModelTailor, it consistently leads in H-score.
+Model-Dowser uses a three-factor scoring system—"weight magnitude × input activation × output Jacobian"—to rate each parameter in an MLLM. By freezing high-score parameters and updating only low-score ones, it enables deep fine-tuning for LLaVA/NVILA that adapts to downstream tasks while preserving pre-trained knowledge, consistently outperforming SPIDER and ModelTailor in H-score.
 
 ## Background & Motivation
-**Background**: MLLMs (e.g., LLaVA, NVILA) often require further fine-tuning for specialized tasks, but full-tuning severely damages pretrained general capabilities—this is "catastrophic forgetting" in MLLMs. Existing mitigation methods fall into two categories: post-merging (e.g., ModelTailor) fuses pre- and post-finetuning weights, and sparse fine-tuning (e.g., SPIDER) updates only a small subset of weights.
+**Background**: MLLMs (e.g., LLaVA, NVILA) often require further fine-tuning for specialized tasks, but full-tuning severely damages general pre-trained capabilities—a phenomenon known as "catastrophic forgetting." Existing mitigation methods fall into two categories: post-merging (e.g., ModelTailor), which merges weights before and after fine-tuning, and sparse fine-tuning (e.g., SPIDER), which updates only a small subset of weights.
 
-**Limitations of Prior Work**: (1) Post-merging works when only the last few layers are fine-tuned, but fails when fine-tuning extends to early decoder layers, as deep changes make latent space unrecoverable by merging; (2) Existing sparse methods (e.g., SPIDER) rely on gradient history and soft masks, requiring per-parameter accumulated gradients, which is memory-intensive and hard to scale to tens of billions of parameters; (3) Traditional magnitude-based importance assumes homogeneous activations, which is inaccurate for modern nonlinearities like GELU/SiLU/GLU.
+**Limitations of Prior Work**: (1) Post-merging works decently for "last-layer only" fine-tuning but fails when fine-tuning extends to early decoder layers, as deep changes disrupt the latent space beyond repair by merging. (2) Existing sparse methods like SPIDER depend on gradient history and soft masks, requiring the storage of per-parameter accumulated gradients, which is too memory-intensive to scale to dozens of billions of parameters. (3) Traditional magnitude-based importance metrics assume homogeneous activations, which is inaccurate for modern non-linear activations like GELU, SiLU, or GLU.
 
-**Key Challenge**: Achieving both "deep fine-tuning without forgetting" and "no increase in memory/computation." The former requires importance estimation to reflect functional impact under nonlinear activations, while the latter rules out storing gradient history.
+**Key Challenge**: To simultaneously achieve "zero-forgetting under deep fine-tuning" and "no increase in VRAM/compute costs." The former requires importance evaluation that reflects functional impact under non-linear activations; the latter precludes practices like storing gradient history.
 
-**Goal**: To find a parameter importance metric that (i) does not rely on pretraining data, (ii) does not require extra gradient history, and (iii) remains accurate under heterogeneous activations, enabling hard-masked sparse fine-tuning.
+**Goal**: Find a parameter importance measure that is (i) independent of pre-training data, (ii) requires no extra gradient history, and (iii) remains accurate under non-homogeneous activations, using it as a basis for hard-freeze sparse fine-tuning.
 
-**Key Insight**: The authors reframe "which parameters are most important" as "which parameter perturbations most affect model output"—using a first-order Taylor estimate of output shift $\|\Delta f\|_2$, thus grounding importance in functional rather than numerical terms.
+**Key Insight**: The authors reframe the question of "which parameters are most important" as "which parameter perturbations most affect model output"—estimating the output shift $\|\Delta f\|_2$ via first-order Taylor expansion to base importance on functional rather than just numerical impact.
 
-**Core Idea**: Use the three-factor product $S_{ij}^{(l)}=\|J_i^{(l)}\|_2\cdot|W_{ij}^{(l)}|\cdot|h_j^{(l-1)}|$ as the importance score. Hutchinson estimator and model self-generated synthetic prompts enable data-free, memory-efficient probing, followed by hard freezing of high-scoring parameters.
+**Core Idea**: Use the three-factor product $S_{ij}^{(l)}=\|J_i^{(l)}\|_2\cdot|W_{ij}^{(l)}|\cdot|h_j^{(l-1)}|$ as the importance score. Implement data-free and memory-friendly probing via the Hutchinson estimator and self-generated synthetic prompts, then hard-freeze parameters with high scores.
 
 ## Method
 
 ### Overall Architecture
-Model-Dowser is a three-stage pipeline: (1) Probing—use MLLM-generated synthetic prompts for forward passes to collect activations, and a few backward passes with the Hutchinson trick to collect Jacobian L2 norms; (2) Compute Score—score each weight as $S=\|J_i\|_2\cdot|W_{ij}|\cdot|h_j|$, averaging over $N$ Monte Carlo samples; (3) Sparse Fine-tune—within each layer, freeze the top-$(1-\rho)$ high-scoring weights, and use a binary mask to restrict gradients to the remaining $\rho$ "non-critical" weights for standard SGD. The process requires no original pretraining data and maintains no gradient history.
+Model-Dowser follows a three-stage pipeline: (1) Probing—using synthetic prompts generated by the MLLM itself to perform forward passes for activations and backward passes via the Hutchinson trick for Jacobian L2 norms; (2) Compute Score—scoring each weight by $S=\|J_i\|_2\cdot|W_{ij}|\cdot|h_j|$ with N-time Monte Carlo averaging; (3) Sparse Fine-tune—selecting the top-$(1-\rho)$ highest-scoring weights per layer to freeze, using a binary mask to restrict gradients to the remaining $\rho$ proportion of "non-critical" weights during standard SGD. The entire process requires no original pre-training data and maintains no gradient history.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pre-trained MLLM θ_pre"] -->|Self-generate N synthetic prompts from random token seeds| B["Data-free Synthetic Probing<br/>Forward: Input |h_j|<br/>Hutchinson Backward: ‖J_i‖₂"]
+    B --> C["Three-factor Scoring<br/>S = ‖J_i‖₂ · |W_ij| · |h_j|<br/>N-time MC Averaging"]
+    C --> D["Hard-mask Sparse Fine-tune<br/>Select bottom ρ per layer by S for updates; freeze others"]
+    D -->|"Masked SGD: θ − λ(M⊙∂L/∂θ)"| E["Downstream-adapted MLLM with preserved knowledge"]
+```
 
 ### Key Designs
 
-1. **Three-Factor Functional Importance Scoring**:
+**1. Data-free Synthetic Probing: Estimating output sensitivity without pre-training data or explicit Jacobian construction**
 
-    - **Function**: Quantifies "how much perturbing a weight shifts the final output" in MLLMs with heterogeneous activations.
-    - **Mechanism**: Based on Theorem 3.1—first-order Taylor gives $\|\Delta f\|_2\approx\|J_i^{(l)}\|_2\cdot|\Delta W_{ij}^{(l)}|\cdot|h_j^{(l-1)}|$. Substituting $|\Delta W|$ with current weight magnitude $|W|$ yields $S_{ij}^{(l)}=\|J_i\|_2\cdot|W_{ij}|\cdot|h_j|$. The three terms capture "downstream output sensitivity" (Jacobian), "parameter scale" (weight), and "upstream activation strength" (activation).
-    - **Design Motivation**: Pure magnitude (e.g., Wanda) ignores GELU/SiLU nonlinearity; pure gradient (e.g., SPIDER) is memory-intensive. This combination completes the local linear gradient path while avoiding gradient history.
+The first step is measuring how much a weight perturbation shifts the output, requiring the output Jacobian norm $\|J_i\|_2$ and input activation $|h_j|$. Since pre-training data is often unavailable and explicit Jacobian construction is computationally prohibitive (requiring $d_{\text{final}}$ backward passes), Model-Dowser uses two techniques. First, the Hutchinson Trace Estimator projects output into a random Rademacher vector $\xi\in\{\pm 1\}^{d_{\text{final}}}$, leveraging $\mathbb{E}_\xi[(\partial(\xi^\top f)/\partial z_i)^2]=\|J_i\|_2^2$ to get sensitivity with minimal backward passes. Second, the MLLM generates $N$ synthetic prompts $\hat{x}_n=f(\epsilon;\theta_{\text{pre}})$ from random seeds. Probing these prompts activates "learned" functional structures rather than task-specific distributions, with a total complexity of only $\mathcal{O}(N\cdot R)$ passes where $N,R\ll d_{\text{final}}$.
 
-2. **Data-Free Jacobian/Activation Probing**:
+**2. Three-factor Functional Importance Score: Combing probed sensitivities into a first-order estimate of "output shift"**
 
-    - **Function**: Estimates $\|J_i\|_2$ and $|h_j|$ without original pretraining data and avoids explicit Jacobian construction.
-    - **Mechanism**: Uses the Hutchinson Trace Estimator—projects output onto a random Rademacher vector $\xi\in\{\pm 1\}^{d_{\text{final}}}$, so $\mathbb{E}_\xi[(\partial(\xi^\top f)/\partial z_i)^2]=\|J_i\|_2^2$. Only a few backward passes are needed to obtain output sensitivities for all nodes. The MLLM self-generates $N$ synthetic prompts $\hat{x}_n=f(\epsilon;\theta_{\text{pre}})$ using random token seeds, and Monte Carlo averages are computed: $\bar S=\frac{1}{N}\sum_n \|J_{i,n}\|_2\cdot|W_{ij}|\cdot|h_{j,n}|$. Total complexity is $\mathcal{O}(N\cdot R)$ forward/backward passes, with $N,R\ll d_{\text{final}}$.
-    - **Design Motivation**: Pretraining data is usually unavailable; synthetic prompts activate "model-learned" functional structures rather than task-specific distributions. Hutchinson avoids $d_{\text{final}}$-scale backward passes.
+Traditional magnitude importance (e.g., Wanda) assumes homogeneous activations, but non-linear activations like SiLU mean "large weight ≠ large impact." Model-Dowser shifts to a functional view. Per Theorem 3.1, under first-order Taylor expansion, the output shift caused by perturbing a weight is $\|\Delta f\|_2\approx\|J_i^{(l)}\|_2\cdot|\Delta W_{ij}^{(l)}|\cdot|h_j^{(l-1)}|$. By substituting the potential perturbation $\Delta W$ with the current magnitude $|W|$, the score becomes:
 
-3. **Hard Binary Mask Sparse Fine-tuning**:
+$$S_{ij}^{(l)}=\|J_i^{(l)}\|_2\cdot|W_{ij}^{(l)}|\cdot|h_j^{(l-1)}|,$$
 
-    - **Function**: Translates "protect important parameters" into a per-element mask during training, introducing no extra learnable parameters or memory overhead.
-    - **Mechanism**: Within each layer, sort $\bar S$ in ascending order, select the bottom $\rho$ fraction (e.g., $\rho=0.1$) as updatable (mask=1), and freeze the rest. Update rule: $\theta^*=\theta-\lambda\cdot(M\odot\partial\mathcal{L}/\partial\theta)$. Freezing high $\bar S$ directly suppresses dominant output perturbations under first-order Taylor.
-    - **Design Motivation**: Compared to ModelTailor's post-merging or SPIDER's soft mask + dynamic updates, the hard mask uses memory equivalent to standard fine-tuning, is compatible with LoRA/full-parameter pipelines, and, since the mask is precomputed, avoids runtime importance score maintenance.
+averaged via Monte Carlo across $N$ synthetic prompts: $\bar S=\frac{1}{N}\sum_n \|J_{i,n}\|_2\cdot|W_{ij}|\cdot|h_{j,n}|$. The three terms capture distinct functional path segments: the Jacobian norm for output sensitivity, weight magnitude for parameter scale, and input activation for signal strength.
+
+**3. Hard Binary Mask Sparse Fine-tuning: Converting "parameter protection" into a one-time pre-training mask**
+
+Unlike post-merging methods (ModelTailor) where latent spaces drift beyond repair, or soft-mask methods (SPIDER) that require heavy memory to maintain cumulative gradients, Model-Dowser uses a simple path. It sorts by $\bar S$ per layer, setting the bottom $\rho$ proportion (e.g., $\rho=0.1$) as updatable (mask=1) and freezing the rest. The update rule is $\theta^*=\theta-\lambda\cdot(M\odot\partial\mathcal{L}/\partial\theta)$. Freezing high $\bar S$ parameters directly suppresses output perturbation; since the mask is computed once before training, its memory footprint is identical to standard fine-tuning and integrates easily with LoRA/full-parameter pipelines.
 
 ### Loss & Training
-Downstream tasks use standard instruction tuning loss, with gradients multiplied by the mask. The probing stage requires no loss—only forward/backward passes to collect activations and Jacobian L2 norms. For NVILA-Lite 2B, $\rho=0.1$ and the last 20 decoder layers are fine-tuned; LLaVA 1.5 7B experiments similarly keep $\rho$ small, emphasizing "minimal updates, maximal retention."
+The downstream task uses standard instruction tuning loss, applying the gradient mask. The probing phase requires no loss function, only forward/backward passes to collect activations and Jacobian L2 norms. Experiments used $\rho=0.1$ for NVILA-Lite 2B fine-tuning the last 20 decoder layers and small $\rho$ for LLaVA 1.5 7B to emphasize "minimal update, stable preservation."
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method (NVILA-Lite 2B, COCO-Caption column, last 20 layers $\rho=0.1$) | $A_{\text{down}}$ ↑ | Upstream Mean ↑ | H-Score ↑ |
+| Method (NVILA-Lite 2B, COCO-Caption, last 20 layers $\rho=0.1$) | $A_{\text{down}}$ ↑ | Pre-trained Mean ↑ | H-Score ↑ |
 |---|---|---|---|
-| Zero-shot | 36.8 (ref) | 62.3 | — |
+| Zero-shot | 36.8 (Ref) | 62.3 | — |
 | Full-FT | 98.5 | 24.0 | 39.7 |
 | Grafting | 115.7 | 38.7 | 49.2 |
 | DARE | 96.8 | 24.9 | 39.1 |
 | ModelTailor | 105.6 | 18.9 | 44.7 |
 | SPIDER | 115.4 | 59.6 | 78.3 |
-| **Model-Dowser** | On par with strongest | **68.8 (best/second-best COCO)** | **Significantly ahead of SPIDER** |
+| **Model-Dowser** | Comparable to top | **68.8 (Best/Second in COCO)** | **Significant Lead over SPIDER** |
 
-Data from Table 1 in the paper: Model-Dowser maintains downstream adaptation ($A_{\text{down}}$) close to the strongest baselines, while raising the mean of six upstream tasks above all other methods, thus ranking first in H-Score.
+Based on Table 1, while maintaining downstream performance ($A_{\text{down}}$) near the strongest baselines, Model-Dowser pulls the average of 6 upstream tasks above all other methods, ranking first in H-Score.
 
 ### Ablation Study
 
 | Dimension | Observation |
 |------|------|
-| Fine-tuning depth (last 5 / 10 / 20 / 32 layers) | Post-merging (DARE, ModelTailor) quickly fails as depth increases; Model-Dowser and SPIDER are more stable, but SPIDER is more memory-intensive |
-| Use of synthetic prompts | Masks obtained from synthetic prompts are nearly equivalent to those from real data, indicating synthetic prompts sufficiently activate functional structure (Appendix G) |
-| Hutchinson estimator samples $R$, MC count $N$ | Small $N,R$ (tens) suffice for stable ranking; probing overhead is much less than a full fine-tuning run |
-| Different backbones (LLaVA 1.5 7B vs NVILA-Lite 2B) | H-Score consistently leads, robust to model scale/architecture |
+| Fine-tuning Depth (Last 5 / 10 / 20 / 32 layers) | Post-merging (DARE, ModelTailor) fails quickly as depth increases. Model-Dowser and SPIDER are stable, but SPIDER has higher VRAM overhead. |
+| Synthetic vs. Real Prompts | Masks from synthetic prompts are nearly equivalent to those from real data, suggesting synthetic prompts effectively activate functional structures (Appendix G). |
+| Hyperparameters $R$ and $N$ | Small values (tens) for $N$ and $R$ suffice for stable ranking; probing cost is far less than a full fine-tuning session. |
+| Different Backbones | Consistent H-Score lead on LLaVA 1.5 7B vs NVILA-Lite 2B, showing robustness to scale/architecture. |
 
 ### Key Findings
-- Deep fine-tuning (updating early decoder layers) is the "death zone" for post-merging methods, yet is crucial for multimodal understanding in MLLMs; Model-Dowser remains stable here, its main advantage over ModelTailor and DARE.
-- Importance is mainly driven by "output Jacobian × input activation," not just weight magnitude—explaining why pure magnitude (Wanda-style) ranks poorly under SiLU/GLU architectures.
-- The data-free synthetic prompt approach naturally scales to tens of billions of parameters, as it requires neither pretraining data nor gradient history.
+- Deep fine-tuning (extending to early decoder layers) is the "death zone" for post-merging methods but is critical for MLLM multimodal understanding. Model-Dowser's stability here is its major advantage over ModelTailor and DARE.
+- Importance is primarily driven by "Output Jacobian × Input Activation" rather than pure weight magnitude—explaining why magnitude-only methods (Wanda style) provide distorted rankings in SiLU/GLU architectures.
+- The data-free path via synthetic prompts allows the method to scale naturally to massive MLLMs, as it neither requires pre-training data nor persistent gradient history.
 
 ## Highlights & Insights
-- Shifts the perspective on "parameter importance" from weight values to "functional output sensitivity," providing a rigorous first-order Taylor bound—an elegant and practical transfer of Optimal Brain ideas from pruning literature to continual learning/forgetting prevention.
-- The Hutchinson trick compresses "full Jacobian computation" into a few backward passes—a highly reusable technique for any scenario needing $\|J\|_2$ but unable to afford full backward computation.
-- Synthetic prompts decouple importance probing from data dependence, enabling models to "self-diagnose" upon delivery—especially useful for post-deployment fine-tuning scenarios.
+- Entirely shifts "parameter importance" from weight values to "functional output sensitivity," providing a rigorous bound via first-order Taylor expansion—an elegant transfer of Optimal Brain concepts to continual learning.
+- Compressing what seems like a full Jacobian computation into a few backward passes using the Hutchinson trick is a highly reusable tactic for any scenario requiring $\|J\|_2$ without the full gradient cost.
+- Synthetic prompts decouple importance probing from data dependencies, meaning the model can perform a "self-checkup" upon delivery, making it ideal for deployment scenarios where fine-tuning decisions are made after delivery.
 
 ## Limitations & Future Work
-- First-order Taylor is coarse under large perturbations; for large learning rates or highly divergent fine-tuning data, scores may underestimate nonlinear effects in some directions.
-- The mask is a one-off "static" score, not dynamically updated during training; for long or multi-task continual fine-tuning, periodic recomputation may be needed.
-- Experiments are mainly on classic vision-language benchmarks (ImageNet-R, COCO); not yet validated on true multimodal long-context, video, or agent tasks.
-- The trade-off between "downstream performance vs upstream retention" still relies on the manually tuned hyperparameter $\rho$, with no theoretical guidance for its selection.
+- First-order Taylor expansion is an approximation; for large learning rates or severely shifted downstream distributions, the score might underestimate certain non-linear impacts.
+- The mask is a "static" one-time calculation; periodic recalculation might be necessary during long training or sequential multi-task fine-tuning.
+- Experiments focused on vision-language benchmarks like ImageNet-R and COCO; verification is still needed for long-context, video, or agentic multimodal tasks.
+- The tradeoff between downstream performance and upstream preservation still relies on a manually tuned hyperparameter $\rho$, with no theoretical selection method provided yet.
 
 ## Related Work & Insights
-- **vs SPIDER**: Both are sparse fine-tuning methods, but SPIDER dynamically maintains soft masks and accumulated gradients during training, which is memory-intensive. Model-Dowser uses a one-off hard mask and Hutchinson Jacobian, with memory usage equivalent to standard fine-tuning and no reliance on training data.
-- **vs ModelTailor / DARE (post-merging)**: These rely on "post-hoc fusion" for retention, but deep changes make latent space unrecoverable. Model-Dowser freezes functional anchors before training, preventing drift at the source.
-- **vs Wanda / magnitude pruning**: Both are "weight × activation" families, but Wanda lacks the Jacobian term and ranks poorly under heterogeneous activations. Model-Dowser's three-factor score is a more complete functional approximation.
+- **vs SPIDER**: Both utilize sparse fine-tuning, but SPIDER dynamically maintains soft masks and accumulated gradients, whereas Model-Dowser uses one-time hard masks and Hutchinson Jacobians for standard VRAM footprints.
+- **vs ModelTailor / DARE**: These rely on post-merging; Model-Dowser freezes functional anchors before training to prevent drift at the source.
+- **vs Wanda / Magnitude Pruning**: Belongs to the "Weight × Activation" family, but Wanda lacks the Jacobian term, leading to inaccurate rankings under non-homogeneous activations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combines Optimal Brain ideas, Hutchinson trick, and synthetic prompts into a data-free MLLM forgetting mitigation scheme; novel combination though each component is from existing tools.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers two backbone types (LLaVA, NVILA), multiple depths, multiple downstream tasks, and multiple baselines, but lacks validation on multimodal long-context/video tasks.
-- Writing Quality: ⭐⭐⭐⭐ Theorem and module breakdowns are clear, pipeline diagrams are intuitive; tables are dense but structure is somewhat scattered.
-- Value: ⭐⭐⭐⭐⭐ Provides a directly applicable MLLM forgetting mitigation tool, memory-friendly, data-agnostic, scalable to tens of billions of parameters, with high industrial deployment value.
+- Novelty: ⭐⭐⭐⭐ Combines Optimal Brain theory, Hutchinson trick, and synthetic prompts into a data-free MLLM forgetting solution; novelty lies in the composition of established tools.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers two backbones (LLaVA, NVILA), multiple depths, and multiple tasks, though lacks long-context/video task verification.
+- Writing Quality: ⭐⭐⭐⭐ Clear theorems and module breakdowns; pipeline diagrams are intuitive.
+- Value: ⭐⭐⭐⭐⭐ Provides a plug-and-play MLLM anti-forgetting tool that is memory-friendly, data-agnostic, and scalable, offering high industrial deployment value.
 
 <!-- RELATED:START -->
 
@@ -125,11 +127,11 @@ Data from Table 1 in the paper: Model-Dowser maintains downstream adaptation ($A
 
 ## Related Papers
 
-- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
+- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](../../NeurIPS2025/multimodal_vlm/act_as_human_multimodal_large_language_model_data_annotation.md)
-- [\[NeurIPS 2025\] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](../../NeurIPS2025/multimodal_vlm/seetrek_training-free_spatial_prompting_for_multimodal_large_language_model.md)
-- [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
+- [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](../../CVPR2026/multimodal_vlm/structural_graph_probing_of_vision-language_models.md)
+- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
 
 </div>
 

@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Video Super-Resolution] The paper proposes DUO-VSR, a three-stage distillation framework that compresses multi-step video super-resolution models into a one-step generator through progressiv…
+  [CVPR 2026][Image Generation][GAN] This paper proposes DUO-VSR, a three-stage distillation framework. It compresses multi-step video super-resolution models into a one-step generator through progressive guided distillation initialization, dual-stream distillation (joint optimization of DMD and RFS-GAN), and preference-guided fine-tuning. This achieves a
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Video Super-Resolution"
-  - "Diffusion Distillation"
-  - "One-Step Generation"
-  - "GAN"
-  - "Distribution Matching Distillation"
+  - CVPR 2026
+  - Image Generation
+  - GAN
 date: 2026-05-08
-content_hash: 5148d3f12dd4bcd8
+content_hash: 8cc9ade12d677512
 ---
-
 # DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -24,69 +19,80 @@ content_hash: 5148d3f12dd4bcd8
 **Keywords**: Video Super-Resolution, Diffusion Distillation, One-Step Generation, GAN, Distribution Matching Distillation
 
 ## TL;DR
-The paper proposes DUO-VSR, a three-stage distillation framework that compresses multi-step video super-resolution models into a one-step generator through progressive guided distillation initialization, dual-stream distillation (joint optimization of DMD and RFS-GAN), and preference-guided refinement. It achieves approximately 50× acceleration while surpassing the visual quality of previous one-step VSR methods.
+This paper proposes DUO-VSR, a three-stage distillation framework. It compresses multi-step video super-resolution models into a one-step generator through progressive guided distillation initialization, dual-stream distillation (joint optimization of DMD and RFS-GAN), and preference-guided fine-tuning. This achieves approximately 50× acceleration while exceeding the visual quality of previous one-step VSR methods.
 
 ## Background & Motivation
 
-1.  **Background**: Diffusion-based video super-resolution (VSR) has achieved significant progress in visual quality. Methods like SeedVR and STAR utilize large-scale pre-trained priors to achieve impressive detail restoration. However, these methods typically require 15-50 iterations for denoising, resulting in inference times of hundreds of seconds, which severely hinders practical deployment.
+1. **Background**: Diffusion-based video super-resolution (VSR) has made significant progress in visual quality. Methods like SeedVR and STAR utilize large-scale pre-trained priors to achieve impressive detail restoration. However, these methods typically require 15-50 denoising iterations, leading to inference times of hundreds of seconds, which severely hinders practical deployment.
 
-2.  **Limitations of Prior Work**: Existing one-step VSR methods face triple challenges: (1) DOVE uses regression loss to ensure stability but sacrifices detail fidelity; (2) SeedVR2 employs adversarial post-training, but large discriminators tend to dominate optimization and introduce unnatural artifacts; (3) Direct application of Distribution Matching Distillation (DMD) to VSR faces three major issues: **training instability** (one-step student output distribution deviates from the teacher), **degraded supervision** (the frozen real score model has not seen the student's noisy output, leading to spatial shifts and artifacts), and **insufficient supervision** (the real score model itself is inferior to real HR videos, limiting the student's upper bound).
+2. **Limitations of Prior Work**: Existing one-step VSR methods face three challenges: (1) DOVE uses regression loss to ensure stability but sacrifices detail fidelity; (2) SeedVR2 employs adversarial post-training, but large discriminators tend to dominate optimization and introduce unnatural artifacts; (3) Direct application of Distribution Matching Distillation (DMD) to VSR faces **training instability** (one-step student output distribution deviates from the teacher), **biased supervision** (the frozen real score model has not seen student noise outputs, producing spatial offsets and artifacts), and **insufficient supervision** (the real score model itself is inferior to real HR videos, limiting the student's upper bound).
 
-3.  **Key Challenge**: The fundamental difficulty of one-step VSR distillation lies in the "stability-quality" trade-off—trajectory-preserving distillation (e.g., progressive distillation) is stable but produces blurry outputs; distribution matching distillation (e.g., DMD) offers high quality but is unstable and limited by the teacher's upper bound; GAN methods can introduce real video supervision but suffer from unstable discriminator training.
+3. **Key Challenge**: The fundamental difficulty in one-step VSR distillation lies in the "stability-quality" trade-off—trajectory-preserving distillation (e.g., progressive distillation) is stable but produces blurry outputs, whereas distribution matching distillation (e.g., DMD) offers high quality but suffers from training instability and the teacher's performance ceiling. GAN-based methods can introduce supervision from real videos but suffer from unstable discriminator training.
 
-4.  **Goal**: Design a unified framework to simultaneously address initialization instability, degraded supervision, and insufficient supervision in DMD distillation, enabling a one-step VSR generator to match or even surpass the quality of multi-step models.
+4. **Goal**: Design a unified framework to simultaneously address the issues of initialization instability, biased supervision, and insufficient supervision in DMD distillation, enabling a one-step VSR generator to match or even exceed the quality of multi-step models.
 
-5.  **Key Insight**: The authors propose jointly optimizing DMD and GAN as complementary dual-stream supervisory signals—DMD ensures stability by aligning with the teacher's distribution, while GAN breaks the teacher's quality upper bound by introducing features from real HR videos.
+5. **Key Insight**: The authors propose jointly optimizing DMD and GAN as complementary dual-stream supervision signals—DMD ensures stability by aligning with the teacher's distribution, while GAN breaks the teacher's quality upper bound by introducing real HR video features.
 
-6.  **Core Idea**: A three-stage progressive distillation pipeline + dual-stream joint optimization of DMD and RFS-GAN + DPO preference refinement to achieve stable, high-quality one-step video super-resolution.
+6. **Core Idea**: Three-stage progressive distillation + dual-stream joint optimization of DMD and RFS-GAN + DPO preference fine-tuning to achieve stable, high-quality one-step video super-resolution.
 
 ## Method
 
 ### Overall Architecture
-DUO-VSR is a three-stage pipeline: **Stage I** (Progressive Guided Distillation Initialization): Performs CFG distillation to remove unconditional branches, then progressively halves steps from 64 to 1 to obtain a stable one-step initial model. **Stage II** (Dual-Stream Distillation): The DMD stream ensures distribution matching, while the RFS-GAN stream extracts features from real/fake score models for adversarial training, with both optimized alternately. **Stage III** (Preference-Guided Refinement): Uses the student model to generate multiple HR candidates, ranks them via a video quality assessment model to build a preference dataset, and fine-tunes the student using DPO.
+DUO-VSR aims to compress a diffusion VSR model requiring 50 steps into "just one step" without losing details or collapsing training. It decomposes distillation into three relay stages: utilizing progressive distillation to converge the multi-step teacher into a stable one-step initialization, followed by joint DMD and GAN supervision to enhance quality, and finally a round of preference fine-tuning for perceptual refinement. The first two stages resolve "stability" and "exceeding the teacher," while the third stage provides the "finishing touch."
 
-The input is a low-resolution video $x^{LR}$, which is upsampled to the target resolution and encoded into the latent space $z^{LR}$. A DiT-based denoiser, conditioned on $z^{LR}$ and text embedding $c$, predicts the clean HR latent representation. The base model has approximately 1.3B parameters and uses 50-step sampling by default.
+Regarding data flow, the input low-resolution video $x^{LR}$ is first upsampled to the target resolution and encoded into the latent space as $z^{LR}$; the DiT-based denoiser, conditioned on $z^{LR}$ and text embedding $c$, directly predicts the clean HR latent representation in one step. The base model has approximately 1.3B parameters, and the original multi-step teacher defaults to 50-step sampling.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Low-Resolution Video<br/>Upsampling + Latent Encoding"]
+    IN --> S1["Progressive Guided Distillation Initialization<br/>CFG Distillation + 64→32→…→1 Progressive Distillation for stable start"]
+    S1 --> S2["Dual-Stream Distillation Strategy (Joint Optimization)"]
+    S2 -->|Stability Stream| DMD["DMD Stream<br/>KL gradient from real/fake score model difference for stability"]
+    S2 -->|Aggressive Stream| GAN["RFS-GAN Stream<br/>Score model feature reuse for lightweight discrimination to surpass teacher"]
+    DMD --> M2["One-Step Student<br/>Exceeds Multi-Step Teacher Quality"]
+    GAN --> M2
+    M2 --> S3["Preference-Guided Fine-Tuning<br/>DOVER ranking for win/loss pairs and DPO fine-tuning"]
+    S3 --> OUT["One-Step High-Resolution Video"]
+```
 
 ### Key Designs
 
-1.  **Progressive Guided Distillation Initialization**:
-    *   **Function**: Provides a stable one-step initialization for subsequent dual-stream distillation.
-    *   **Mechanism**: Conducted in two steps. First is CFG distillation: the student matches the combined CFG output $v_{\text{cfg}} = (1+w)v_\theta(z_t, t, z^{LR}, c) - v_\theta(z_t, t, z^{LR}, \emptyset)$ to eliminate dual forward passes during inference. Second is progressive distillation: using the CFG-distilled model as the teacher, steps are compressed via $64 \to 32 \to 16 \to ... \to 1$, where the student matches the teacher's two-step prediction with one step. The teacher is updated with the latest student every 500 steps.
-    *   **Design Motivation**: Initializing a one-step student directly from a multi-step teacher causes training instability (severe gradient oscillation). Progressive distillation smoothly transitions to the one-step setting by gradually shortening the denoising path.
+**1. Progressive Guided Distillation Initialization: Stabilizing before enhancing quality**
 
-2.  **Dual-Stream Distillation Strategy**:
-    *   **Function**: Provides reliable and sufficient supervision signals to break the teacher model's quality upper bound.
-    *   **Mechanism**: Two streams alternate optimization. **DMD Stream**: A frozen real score model captures the high-quality distribution, while a continuously updated fake score model tracks student distribution changes. The student is updated via KL divergence gradients from the difference between the two. **RFS-GAN Stream**: Uses real and fake score models as discriminator backbones to extract intermediate transformer features, which are concatenated and fed into an additional convolutional discriminator head to compare student output (fake) with real HR videos (real). It employs a hinge GAN objective + feature matching loss. Both streams share the diffused student output $\hat{z}_t^S$ to save computation. A stop-gradient is applied between backbone features and the discriminator head to prevent GAN gradients from interfering with the score model's distribution tracking.
-    *   **Design Motivation**: DMD alone is limited by the teacher's bound and faces degraded supervision; RFS-GAN introduces adversarial signals from real HR videos, suppressing biased gradients from real score model shifts and breaking the "student cannot exceed teacher" ceiling. Utilizing features from both real and fake score models makes adversarial supervision more comprehensive and balanced.
+Initializing a one-step student directly from a 50-step teacher causes drastic gradient oscillations and training collapse because the denoising path is overly truncated. Thus, this step prioritizes a "stable" starting point over quality through two sub-steps. First is CFG Distillation: the student directly matches the teacher's conditional/unconditional combined output $v_{\text{cfg}} = (1+w)v_\theta(z_t, t, z^{LR}, c) - v_\theta(z_t, t, z^{LR}, \emptyset)$, folding two forward passes into one. Second is Progressive Distillation: using the CFG-distilled model as a teacher, steps are halved iteratively ($64 \to 32 \to 16 \to \dots \to 1$), where the student aligns its one-step prediction with the teacher's two-step prediction for each round, and the teacher is updated with the latest student every 500 steps. This gradual reduction prevents divergence.
 
-3.  **Preference-Guided Refinement**:
-    *   **Function**: Further enhances perceptual quality.
-    *   **Mechanism**: The Stage II student generates multiple HR candidates for each LR video, which are ranked by video quality assessment models (e.g., DOVER) to build a $(z^{LR}, z_0^{S_w}, z_0^{S_l})$ preference pair dataset. The student is then fine-tuned with a DPO loss to bias its predicted velocity field toward high-quality samples.
-    *   **Design Motivation**: While the model is already strong after dual-stream distillation, there is still room for perceptual refinement. DPO achieves implicit preference alignment using existing quality assessment signals without requiring an additional discriminator.
+**2. Dual-Stream Distillation Strategy: DMD for stability, RFS-GAN to break the teacher ceiling**
+
+Running DMD alone has two drawbacks: quality is capped by the teacher, and the frozen real score model provides "biased supervision" with spatial offsets and artifacts for student noise outputs it hasn't encountered. DUO-VSR solves this by alternating and complementing two streams. In the DMD stream, the frozen real score model anchors the high-quality distribution, while the continuously updated fake score model tracks the student's current distribution; the difference provides the KL divergence gradient. The RFS-GAN stream reuses these score models as discriminator backbones—concatenating features from several transformer layers and feeding them into an additional convolutional discriminator head. This uses a hinge GAN objective plus feature matching loss to separate student outputs (fake) and real HR videos (real). The adversarial signal from real videos suppresses the biased gradients from the real score model and breaks the quality ceiling; simultaneously, the adversarial supervision examines both real and fake features for balanced signaling. Computationally, both streams share the student output $\hat{z}_t^S$ after diffusion noise addition, and stop-gradients are placed between the backbone features and discriminator heads to prevent GAN gradients from polluting the score models' distribution tracking.
+
+**3. Preference-Guided Fine-Tuning: Low-cost DPO refinement with quality scorers**
+
+The fine-tuning stage further polishes perceptual quality. No additional discriminators are trained: the second-stage student generates multiple HR candidates for each LR video, which are ranked by an off-the-shelf video quality assessment model (e.g., DOVER). Winning $z_0^{S_w}$ and losing $z_0^{S_l}$ pairs $(z^{LR}, z_0^{S_w}, z_0^{S_l})$ are formed, and the student is fine-tuned with a DPO loss to bias the predicted velocity field toward high-quality samples. This acts as an inexpensive preference alignment using existing quality signals as implicit rewards.
 
 ### Loss & Training
-**Stage I**: Uses MSE loss $\mathcal{L}_{CFG}$ for CFG distillation and trajectory matching loss $\mathcal{L}_{PD}$ for progressive distillation.  
-**Stage II**: Student update = $\mathcal{L}_{DMD} + 0.1 \cdot \mathcal{L}_G + 0.05 \cdot \mathcal{L}_{FM}$; auxiliary updates use $\mathcal{L}_{Diff}$ for the fake score model and $\mathcal{L}_D$ for the discriminator head. One student update is performed every 3 auxiliary updates.  
-**Stage III**: DPO loss $\mathcal{L}_{DPO}$, fine-tuned for 1000 steps on 2000 preference pairs.
+**Stage I**: CFG distillation uses MSE loss $\mathcal{L}_{CFG}$; progressive distillation uses trajectory matching loss $\mathcal{L}_{PD}$.  
+**Stage II**: Student update = $\mathcal{L}_{DMD} + 0.1 \cdot \mathcal{L}_G + 0.05 \cdot \mathcal{L}_{FM}$; auxiliary updates use $\mathcal{L}_{Diff}$ for the fake score model and $\mathcal{L}_D$ for the discriminator head. One student update is performed for every 3 auxiliary updates.  
+**Stage III**: DPO loss $\mathcal{L}_{DPO}$ is used to fine-tune for 1000 steps on 2000 preference pairs.
 
 ## Key Experimental Results
 
-### Main Results (Multiple Datasets, No-Reference Perceptual Metrics)
+### Main Results (Multiple datasets, No-reference perceptual metrics)
 
 | Method | Steps | Time(s) | NIQE↓ | MUSIQ↑ | CLIP-IQA↑ | DOVER↑ |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------|---------|-------|--------|-----------|--------|
 | STAR | 15 | 200.4 | 5.17 | 59.08 | 0.4068 | 69.29 |
 | SeedVR2-7B | 1 | 89.7 | 4.63 | 55.45 | 0.3387 | 59.56 |
 | DOVE | 1 | 66.7 | 4.43 | 51.25 | 0.3209 | 69.36 |
 | DLoRAL | 1 | 76.6 | 4.91 | 58.44 | 0.4346 | 73.60 |
 | **Ours** | **1** | **11.3** | **4.08** | **59.24** | **0.3925** | **69.71** |
 
-*(Taking the YouHQ40 dataset as an example, DUO-VSR reaches a DOVER of 87.28 on UDM10, leading across the board.)*
+* (Example from YouHQ40 dataset; DUO-VSR reaches 87.28 DOVER on UDM10, leading comprehensively)*
 
 ### Ablation Study (AIGC60 Dataset)
 
 | Configuration | NIQE↓ | MUSIQ↑ | CLIPIQA↑ | DOVER↑ |
-| :--- | :--- | :--- | :--- | :--- |
+|------|-------|--------|----------|--------|
 | Base (50 steps) | 4.31 | 63.46 | 0.4712 | 87.98 |
 | Stage I only | 5.45 | 58.97 | 0.408 | 86.49 |
 | Stage I + II | 4.64 | 63.36 | 0.487 | 88.01 |
@@ -96,39 +102,39 @@ The input is a low-resolution video $x^{LR}$, which is upsampled to the target r
 ### Dual-Stream Strategy Ablation
 
 | Setting | NIQE↓ | MUSIQ↑ | CLIPIQA↑ | DOVER↑ |
-| :--- | :--- | :--- | :--- | :--- |
+|------|-------|--------|----------|--------|
 | DMD only | 4.99 | 61.46 | 0.432 | 87.38 |
 | RFS-GAN only | 5.32 | 62.64 | 0.427 | 87.53 |
 | Sequential DMD→GAN | 5.17 | 62.76 | 0.419 | 87.67 |
 | **Dual-Stream (Joint)** | **4.42** | **63.68** | **0.489** | **88.15** |
 
 ### Key Findings
-*   **Stage II (Dual-Stream Distillation) is key**: Moving from Stage I to Stage I+II, CLIPIQA improved from 0.408 to 0.487 and DOVER from 86.49 to 88.01, even surpassing the 50-step baseline (87.98), proving that real video adversarial supervision can break the teacher's upper bound.
-*   **Joint optimization significantly outperforms sequential optimization**: Compared to Sequential DMD→GAN, Joint optimization improved CLIPIQA by 0.070 and DOVER by 0.48. The two objectives interact and enhance each other dynamically during training.
-*   **Impressive Efficiency**: With only 1.3B parameters, DUO-VSR processes 21 frames of 1920×1080 video in 11.3s in one step, roughly 8× faster than SeedVR2-7B (89.7s) and 85× faster than the multi-step MGLD (956.7s).
-*   **Complementary Role of RFS-GAN**: While RFS-GAN alone is less effective for texture enhancement than DMD (e.g., in plant regions), it effectively suppresses artifacts and temporal inconsistencies caused by DMD's degraded supervision (e.g., in tile regions and temporal profiles).
+- **Stage II (Dual-Stream Distillation) is core**: Moving from Stage I to Stage I+II improves CLIPIQA from 0.408 to 0.487 and DOVER from 86.49 to 88.01, surpassing the 50-step baseline (87.98), proving that adversarial supervision from real videos breaks the teacher's ceiling.
+- **Joint optimization significantly outperforms sequential**: Joint optimization improves CLIPIQA by 0.070 and DOVER by 0.48 compared to Sequential DMD→GAN. The two objectives interact and enhance each other dynamically.
+- **High Efficiency**: With only 1.3B parameters, DUO-VSR processes 21 frames of 1920×1080 video in 11.3s, approximately 8× faster than SeedVR2-7B (89.7s) and 85× faster than multi-step MGLD (956.7s).
+- **Complementary role of RFS-GAN**: While DMD is better at texture enhancement, RFS-GAN effectively suppresses artifacts and temporal inconsistencies (e.g., in tile regions and temporal profiles) caused by DMD's biased supervision.
 
-## Highlights & Insights
-*   The **Dual-Stream Joint Optimization** design is highly clever—DMD ensures a stable baseline for distribution alignment, while GAN introduces high-quality real-world signals to break the ceiling. The shared diffusion samples ensure efficient synergy. The careful use of stop-gradients ensures the two objectives do not interfere. This "stable stream + aggressive stream" paradigm could be transferred to other distillation tasks.
-*   The **diagnostic analysis of DMD's three problems in VSR** (instability, degraded supervision, insufficient supervision) is robust. The visualization of spatial shifts and artifacts in the real score model in Fig. 2 intuitively demonstrates why VSR is more prone to degraded supervision than unconditional generation (due to the strong spatial anchors provided by LR inputs).
-*   **DPO Preference Refinement** serves as the "icing on the cake" for the third stage. It requires no extra discriminator and achieves quality gains at low cost through candidate generation and ranking, representing an efficient means of preference alignment.
+<h2>Highlights & Insights</h2>
+- The **Dual-Stream Joint Optimization** design is highly effective—DMD ensures the stability of distribution alignment, while GAN introduces high-quality real-world signals to break the ceiling. The shared post-diffusion samples and stop-gradients ensure synergistic efficiency without mutual interference. This "stable stream + aggressive stream" paradigm is transferable to other distillation tasks.
+- The **diagnosis of the three DMD issues in VSR** (instability, biased supervision, insufficient supervision) is deep. The visualization of spatial offsets and artifacts in the real score model (Fig. 2) explains why VSR is more susceptible to biased supervision than unconditional generation due to strong spatial anchors from LR inputs.
+- **DPO Preference Fine-Tuning** serves as a low-cost "finishing touch" that requires no extra discriminators, using only candidate generation and quality ranking for alignment.
 
 ## Limitations & Future Work
-*   The training pipeline is complex (three stages, multiple score models), potentially leading to high total training costs and requiring careful tuning of hyperparameters (e.g., loss weights and update frequency ratios).
-*   Current training and evaluation rely heavily on synthetic degradation (RealBasicVSR pipeline); although validated, generalization to complex real-world degradations remains limited.
-*   While 1.3B parameters is much smaller than SeedVR2-7B, it is still large for edge device deployment. Model compression could be integrated for further reduction.
-*   The quality ranking in the refinement stage depends on specific video assessment models; different standards may lead to different optimization directions.
+- The training pipeline is relatively complex (three stages, multiple score models), potentially leading to high total training costs and sensitive hyperparameter tuning (e.g., loss weights and update frequency).
+- Training and evaluation are currently focused on synthetic degradation (RealBasicVSR pipeline); generalization to complex real-world degradations requires further validation.
+- While 1.3B parameters is much smaller than SeedVR2-7B, it remains large for edge deployment; model compression could be integrated.
+- Preference fine-tuning depends on specific quality assessment models, where different standards might lead to varying optimization directions.
 
 ## Related Work & Insights
-*   **vs DOVE**: DOVE uses regression loss + two-stage training, resulting in blurry one-step outputs; DUO-VSR ensures both fidelity and perception via dual-stream distillation + DPO.
-*   **vs SeedVR2**: SeedVR2 uses a large discriminator for adversarial post-training (APT), which can be unstable; DUO-VSR's RFS-GAN uses existing score model features for lightweight discrimination, with stop-gradients ensuring stability.
-*   **vs DMD2**: DMD2 places GAN in a late refinement stage and uses only fake score model features; DUO-VSR optimizes jointly from the start and uses features from both real and fake score models for more comprehensive supervision.
+- **vs DOVE**: DOVE uses regression loss and two-stage training, leading to blurry one-step outputs; DUO-VSR ensures both fidelity and perceptual quality via dual-stream distillation and DPO.
+- **vs SeedVR2**: SeedVR2 uses large discriminators for adversarial post-training (APT), which can be unstable; DUO-VSR’s RFS-GAN leverages existing score model features for stability via stop-gradients.
+- **vs DMD2**: DMD2 places GAN in a later fine-tuning phase using only fake score model features; DUO-VSR joint optimizes from the start and utilizes both real and fake score model features for comprehensive supervision.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ The joint DMD+GAN dual-stream approach is innovative, with deep analysis of DMD's failure in VSR.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across five datasets (synthetic+real+AIGC) with full three-stage and strategy ablations.
-*   Writing Quality: ⭐⭐⭐⭐ Clear logic, thorough problem analysis, and intuitive chart design.
-*   Value: ⭐⭐⭐⭐ The efficiency of processing 1080p video in 11.3s for 1 step is attractive, though training complexity is a hurdle for practical application.
+- Novelty: ⭐⭐⭐⭐ Innovative DMD+GAN joint optimization and deep analysis of DMD failure modes in VSR.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated across five datasets (synthetic+real+AIGC) with complete ablation of stages and strategies.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic, thorough problem analysis, and intuitive visual aids.
+- Value: ⭐⭐⭐⭐ The efficiency of processing 1080p video in 11.3s is highly attractive, though training complexity remains a hurdle.
 
 <!-- RELATED:START -->
 
@@ -139,8 +145,8 @@ The input is a low-resolution video $x^{LR}$, which is upsampled to the target r
 - [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 - [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](../../NeurIPS2025/image_generation/dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
+- [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

@@ -2,147 +2,148 @@
 title: >-
   [Paper Note] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 description: >-
-  [CVPR 2026][Interpretability][Infrared-visible fusion] This paper proposes the first framework that performs cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By…
+  [CVPR 2026][Interpretability][Paper Note] This paper proposes the first framework to perform cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By establishing a unified IR-VIS atomic space via a shared convolutional dictionary, it completes VIS→IR reasoning and adaptive fusion within the coefficient do
 tags:
-  - "CVPR 2026"
-  - "Interpretability"
-  - "Infrared-visible fusion"
-  - "missing modality"
-  - "convolutional dictionary learning"
-  - "coefficient-domain inference"
-  - "large language model prior"
+  - CVPR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 7921dbc5ad665f54
+content_hash: c6a12e661eb58c4c
 ---
-
 # Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.08018](https://arxiv.org/abs/2603.08018)  
 **Code**: [https://github.com/harukiv/DCMIF](https://github.com/harukiv/DCMIF)  
-**Area**: Interpretability
-**Keywords**: Infrared-visible fusion, missing modality, convolutional dictionary learning, coefficient-domain inference, large language model prior
+**Area**: Interpretability  
+**Keywords**: Infrared-visible image fusion, missing modality, convolutional dictionary learning, coefficient domain reasoning, LLM prior
 
 ## TL;DR
-This paper proposes the first framework that performs cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By learning a shared convolutional dictionary that establishes a unified IR-VIS atomic space, the method performs VIS→IR inference and adaptive fusion entirely in the coefficient domain. A frozen LLM provides weak semantic priors for thermal information completion. The approach achieves performance comparable to dual-modality fusion methods using only visible light images as input.
+This paper proposes the first framework to perform cross-modal fusion under missing infrared conditions in the coefficient domain rather than the pixel domain. By establishing a unified IR-VIS atomic space via a shared convolutional dictionary, it completes VIS→IR reasoning and adaptive fusion within the coefficient domain. Combined with a frozen LLM providing weak semantic priors for thermal information completion, the method achieves performance close to dual-modal fusion methods using only visible light input.
 
 ## Background & Motivation
-Infrared-visible (IR-VIS) image fusion is critical for robust perception in surveillance, robotics, and autonomous driving systems. Existing methods (CNN, CNN-Transformer, GAN, diffusion models) assume both modalities are available at both training and inference time. In practice, however, the infrared modality is frequently absent (e.g., only a visible camera is available at test time).
+**Background**: Infrared-visible (IR-VIS) image fusion is vital for robust perception in surveillance, robotics, and autonomous driving systems. Existing methods (CNNs, Transformers, GANs, Diffusion models) assume both modalities are available during both training and inference. However, infrared modalities are frequently missing in real-world scenarios (e.g., only visible cameras available at test time).
 
-When infrared is missing, a straightforward approach is to generate pseudo-infrared images in pixel space before fusion. However, pixel-space generation suffers from severe drawbacks: poor controllability, weak interpretability, and susceptibility to hallucination artifacts and loss of structural detail.
+**Limitations of Prior Work**: When infrared is missing, an intuitive solution is to generate a pseudo-infrared image in the pixel space and then fuse it. However, generation in pixel space suffers from serious issues: poor controllability, weak interpretability, and susceptibility to hallucination artifacts and loss of structural details.
 
-**Key Challenge**: How can thermal information be stably recovered and interpretable fusion performed when infrared is absent? The paper's **Key Insight** is: **rather than generating infrared in pixel space, both modalities are mapped into a unified dictionary-coefficient space, where inference and fusion are performed entirely in the coefficient domain**, thereby anchoring data consistency and prior constraints at the atom-coefficient level.
+**Key Challenge**: How to stably recover thermal information and perform interpretable fusion when the infrared modality is missing? 
+
+**Key Insight**: Instead of generating infrared in the pixel space, the authors map both modalities into a unified dictionary-coefficient space. By performing reasoning and fusion in the **coefficient domain**, data consistency and prior constraints are anchored at the atomic-coefficient level.
 
 ## Method
 
 ### Overall Architecture
-The complete pipeline forms a closed-loop **Encode → Transfer → Fuse → Reconstruct** process:
-1. **JSRL (Joint Shared Representation Learning)**: Learns a shared convolutional dictionary $\mathbf{D}$ for both IR and VIS, mapping both modalities into a unified atomic space.
-2. **VGII (Visible-Guided Infrared Inference)**: Transfers VIS coefficients to pseudo-IR coefficients in the coefficient domain, with a single-step closed-loop refinement guided by weak semantic priors from a frozen LLM.
-3. **AFRI (Adaptive Fusion via Representation Inference)**: Fuses VIS and inferred IR coefficients at the atom level via windowed attention and convolution hybrid blocks, reconstructing the final image using the shared dictionary.
+This paper addresses image fusion where only visible light is available and infrared is missing at test time. The core strategy is to avoid generating infrared from scratch in the pixel space and instead move the problem to a shared "dictionary-coefficient" space. Specifically, an image is represented as the convolution of dictionary atoms and sparse coefficients $\mathbf{I} = \mathbf{D} * \mathbf{S}$. Consequently, both "infrared recovery" and "fusion" become operations on coefficients $\mathbf{S}$.
+
+The pipeline is a closed loop: First, **JSRL** learns a shared convolutional dictionary for both modalities to anchor them in the same atomic space. Next, **VGII** reasons pseudo-infrared coefficients from visible light coefficients in the coefficient domain, utilizing a frozen LLM to inject semantic priors for calibration. Finally, **AFRI** adaptively blends the visible coefficients and the reasoned pseudo-infrared coefficients at the atomic level, reconstructing the fused image using the same dictionary. The entire process—encoding, reasoning, fusion, and reconstruction—flows within the same dictionary-coefficient space, providing strong interpretability.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Visible only<br/>(Missing Infrared)"] --> B["JSRL Joint Shared Dictionary Learning<br/>Learn shared dictionary D, I = D*S"]
+    B --> C["Encode Visible → Coefficient S_vis"]
+    C --> D["VGII Visible-Guided IR Inference<br/>RIN infers initial pseudo-IR coefficients"]
+    D -->|"Frozen LLM outputs FiLM modulation, secondary RIN calibration"| E["Refined Pseudo-IR Coefficient S_p_ir"]
+    C --> F["AFRI Adaptive Representation Fusion<br/>Atomic-level gated mixing of S_vis and S_p_ir"]
+    E --> F
+    F --> G["Shared Dictionary D Reconstruction → Output Fusion"]
+```
 
 ### Key Designs
-1. **JSRL — Joint Shared Representation Learning**:
 
-    - **Function**: Learns a cross-modal shared dictionary $\mathbf{D} \in \mathbb{R}^{B \times k \times k}$ such that both VIS and IR can be represented as $\mathbf{I} = \mathbf{D} * \mathbf{S}$.
-    - **Mechanism**: Jointly minimizes reconstruction error for both modalities, coefficient priors, and dictionary regularization:
-    $\min_{\mathbf{D},\mathbf{S}_{vis},\mathbf{S}_{ir}} \frac{1}{2}\|\mathbf{I}_{vis} - \mathbf{D}*\mathbf{S}_{vis}\|_F^2 + \frac{1}{2}\|\mathbf{I}_{ir} - \mathbf{D}*\mathbf{S}_{ir}\|_F^2 + \lambda_1\varphi_1(\mathbf{S}_{vis}) + \lambda_2\varphi_2(\mathbf{S}_{ir}) + \lambda_3\phi(\mathbf{D})$
-    - Implemented via model-driven unfolding: alternating data consistency steps (frequency-domain Sherman-Morrison formula) and proximal update steps (learnable proxies CoeNet/DicNet).
-    - **Architecture**: $N$ cascaded IV-DLBs (Infrared-Visible Dictionary Learning Blocks), each containing two coefficient solvers and one dictionary solver, with hyperparameters adaptively predicted by HypNet.
-    - **Design Motivation**: The shared dictionary establishes atom-level correspondences between the two modalities, providing an interpretable unified representation space for subsequent coefficient-domain inference.
+**1. JSRL — Joint Shared Dictionary Representation Learning: Aligning modalities to a unified atomic space**
 
-2. **VGII — Visible-Guided Infrared Inference**:
+Reasoning under missing infrared is difficult because VIS and IR belong to separate representation spaces. JSRL forces both modalities to share the same convolutional dictionary $\mathbf{D} \in \mathbb{R}^{B \times k \times k}$, ensuring that differences exist only in their sparse coefficients. This establishes a one-to-one correspondence at the atomic level. The training objective minimizes joint reconstruction error with coefficient priors and dictionary regularization:
 
-    - **Function**: Infers pseudo-IR coefficients $\mathbf{S}_{p\_ir}$ from VIS coefficients $\tilde{\mathbf{S}}_{vis}$.
-    - **Mechanism**:
-        - A frozen REN (Representation Encoding Network, comprising pretrained HeadNet + CSB + CoeNet) encodes VIS into coefficients.
-        - RIN (Representation Inference Network, encoder-decoder + multi-head attention) maps VIS coefficients to pseudo-IR coefficients.
-        - **LLM weak semantic prior refinement**: An initial pseudo-infrared image $\mathbf{I}_{p\_ir}^{(0)}$ is reconstructed; the image pair \{VIS, pseudo-IR\} along with a task description is fed as a prompt to a frozen LLM; the extracted text features $\mathbf{F}_{text}$ modulate the coefficients via FiLM (Feature-wise Linear Modulation): $\mathbf{S}_{fm} = \gamma \odot \tilde{\mathbf{S}}_{vis} + \beta$; refined coefficients are then obtained by passing through RIN again.
-    - **Loss function**: $\ell_{inf} = \ell_{int} + \ell_{reg} + \ell_{grad}$
-        - Consistency loss $\ell_{int}$: L1 distance between pseudo-IR and real IR in both image domain and coefficient domain.
-        - Thermal regularization $\ell_{reg}$: emphasizes thermal region alignment via normalized weight maps.
-        - Gradient loss $\ell_{grad}$: preserves edge consistency $\|\nabla\mathbf{I}_{p\_ir} - \nabla\mathbf{I}_{vis}\|_1$.
-    - **Design Motivation**: The LLM does not generate pixels; it acts solely as a "semantic reviewer" providing channel-wise linear modulation, making it lightweight and controllable. Performing inference in the coefficient domain rather than pixel space inherits the interpretability of the dictionary.
+$$\min_{\mathbf{D},\mathbf{S}_{vis},\mathbf{S}_{ir}} \tfrac{1}{2}\|\mathbf{I}_{vis} - \mathbf{D}*\mathbf{S}_{vis}\|_F^2 + \tfrac{1}{2}\|\mathbf{I}_{ir} - \mathbf{D}*\mathbf{S}_{ir}\|_F^2 + \lambda_1\varphi_1(\mathbf{S}_{vis}) + \lambda_2\varphi_2(\mathbf{S}_{ir}) + \lambda_3\phi(\mathbf{D})$$
 
-3. **AFRI — Adaptive Fusion**:
+Instead of black-box fitting, model-driven unfolding is used to expand optimization iterations into a network. Each step alternates between "data consistency" (solved using the Sherman-Morrison formula in the frequency domain) and "proximal updates" (where CoeNet/DicNet act as learnable proximal operators). The overall structure consists of $N$ cascaded IV-DLBs (Infrared-Visible Dictionary Learning Blocks). Hyperparameters like step sizes are adaptively predicted by HypNet.
 
-    - **Function**: Fuses VIS coefficients and inferred IR coefficients at the atom level to reconstruct the final image.
-    - **Mechanism**: RFN (Representation Fusion Network) employs two cascaded Convolution-Attention Fusion blocks to learn implicit atom-level gating weights $(\mathbf{W}_{vis}, \mathbf{W}_{p\_ir})$:
-    $\mathbf{S}_f = \mathbf{W}_{vis} \odot \tilde{\mathbf{S}}_{vis} + \mathbf{W}_{p\_ir} \odot \mathbf{S}_{p\_ir}^{(1)}$
-    - **Fusion loss**: $\ell_f = \|\mathbf{I}_f - \max(\mathbf{I}_{p\_ir}, \mathbf{I}_{vis})\|_1 + \|\nabla\mathbf{I}_f - \max(\nabla\mathbf{I}_{p\_ir}, \nabla\mathbf{I}_{vis})\|_1$
-    - **Design Motivation**: The element-wise max operation encourages the fused result to inherit peak thermal intensity from IR and sharp structural edges from VIS; gating in the coefficient domain allows structure-oriented atoms to favor VIS and thermal-semantic atoms to favor IR.
+**2. VGII — Visible-Guided IR Inference: Recovering pseudo-IR in the coefficient domain with LLM calibration**
+
+With a shared dictionary, "infrared recovery" simplifies to "converting VIS coefficients to IR coefficients." A frozen REN encodes visible light into coefficients $\tilde{\mathbf{S}}_{vis}$, followed by a RIN (Representation Inference Network) mapping them to initial pseudo-IR coefficients $\mathbf{S}_{p\_ir}$. To prevent thermal region bias caused by a lack of high-level semantic constraints, a lightweight LLM-in-the-loop refinement is introduced. The system feeds the {VIS, initial pseudo-IR} pair and a task description to a frozen LLM to extract text features $\mathbf{F}_{text}$. These are used via FiLM (Feature-wise Linear Modulation) for channel-level modulation $\mathbf{S}_{fm} = \gamma \odot \tilde{\mathbf{S}}_{vis} + \beta$. The LLM acts as a "semantic reviewer," keeping the process lightweight and interpretable.
+
+Supervision is defined by: $\ell_{inf} = \ell_{int} + \ell_{reg} + \ell_{grad}$. The consistency loss $\ell_{int}$ minimizes L1 distance in both image and coefficient domains. Thermal regularization $\ell_{reg}$ emphasizes alignment in thermal regions. Gradient loss $\ell_{grad} = \|\nabla\mathbf{I}_{p\_ir} - \nabla\mathbf{I}_{vis}\|_1$ uses visible edges to constrain infrared structures.
+
+**3. AFRI — Adaptive Representation Fusion: Structure to VIS, Thermal Semantics to IR at the atomic level**
+
+After obtaining coefficients, the RFN (Representation Fusion Network) learns implicit atomic-level gating weights $(\mathbf{W}_{vis}, \mathbf{W}_{p\_ir})$ via Convolution-Attention Fusion blocks. The fused coefficient is $\mathbf{S}_f = \mathbf{W}_{vis} \odot \tilde{\mathbf{S}}_{vis} + \mathbf{W}_{p\_ir} \odot \mathbf{S}_{p\_ir}^{(1)}$. Reconstruction is performed with the shared dictionary. Supervision uses element-wise max:
+
+$$\ell_f = \|\mathbf{I}_{f} - \max(\mathbf{I}_{p\_ir}, \mathbf{I}_{vis})\|_1 + \|\nabla\mathbf{I}_f - \max(\nabla\mathbf{I}_{p\_ir}, \nabla\mathbf{I}_{vis})\|_1$$
+
+This encourages the network to preserve high intensity for thermal targets and sharp gradients for structural edges. Since gating happens in the coefficient domain, atoms representing structural edges are pushed toward VIS, while those representing thermal semantics are pushed toward IR.
 
 ### Loss & Training
-The three modules are trained sequentially: JSRL → VGII → AFRI. JSRL is trained for 1,000 epochs on MSRS, and the learned dictionary transfers to other datasets; VGII and AFRI are each trained for 10 epochs. Adam optimizer is used with 5×5 dictionary convolutional kernels on two RTX 4090 GPUs.
+The three modules are trained sequentially: JSRL → VGII → AFRI. JSRL is trained on MSRS for 1000 epochs (the dictionary is transferable). VGII and AFRI require only 10 epochs each. No adversarial training or diffusion sampling is needed. Optimized via Adam with 5×5 dictionary kernels on two RTX 4090 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Input | MSRS AG↑ | MSRS EN↑ | FLIR AG↑ | FLIR EN↑ | KAIST AG↑ |
-|--------|-------|-----------|-----------|----------|----------|-----------|
+|------|------|---------|---------|---------|---------|----------|
 | CDDFuse | IR+VIS | 4.818 | 7.321 | 5.079 | 6.766 | 3.167 |
 | EMMA | IR+VIS | 4.913 | 7.333 | 3.796 | 6.489 | 3.083 |
 | DCEvo | IR+VIS | 4.858 | 7.298 | 4.585 | 6.763 | 3.229 |
-| **Ours** | **VIS only** | **5.037** | **7.188** | **4.518** | **6.639** | **4.414** |
+| **Ours** | **VIS Only** | **5.037** | **7.188** | **4.518** | **6.639** | **4.414** |
 
-**Key Finding**: **Using only visible light as input, the proposed method surpasses several dual-modality SOTA fusion methods on metrics such as AG (Average Gradient).**
+**Key Finding**: With only visible light input, the proposed method even outperforms some dual-modal SOTA methods in metrics like AG (Average Gradient).
 
-Downstream task (M3FD object detection, YOLOv5): Ours mAP = 0.948 vs. SAGE (dual-modality) = 0.956, a negligible gap.
-Downstream task (FMB semantic segmentation, SegFormer-b5): Ours mIoU = 62.939 vs. LRRNet (dual-modality) = 62.942, essentially on par.
+Downstream Tasks: 
+- M3FD Object Detection (YOLOv5): Ours mAP=0.948 vs. SAGE (dual-modal)=0.956.
+- FMB Semantic Segmentation (SegFormer-b5): Ours mIoU=62.939 vs. LRRNet (dual-modal)=62.942.
 
 ### Ablation Study
 
-| Configuration | Dictionary | LLM | AG↑ | CE↓ | EI↑ | EN↑ | SF↑ |
-|---------------|-----------|-----|-----|-----|-----|-----|-----|
+| Config | Dictionary | LLM | AG↑ | CE↓ | EI↑ | EN↑ | SF↑ |
+|------|-----------|-----|-----|-----|-----|-----|-----|
 | Model I (Baseline) | ✗ | ✗ | 3.320 | 1.452 | 45.531 | 6.058 | 9.238 |
 | Model II | ✓ | ✗ | 4.363 | 1.046 | 48.351 | 6.578 | 11.936 |
 | Model III | ✗ | ✓ | 4.256 | 0.619 | 48.154 | 6.423 | 11.175 |
 | **Ours** | ✓ | ✓ | **4.518** | **0.596** | **48.784** | **6.639** | **12.554** |
 
 ### Key Findings
-- The shared dictionary contributes most to performance gain (Model I→II: AG +31%), validating the effectiveness of the coefficient-domain paradigm.
-- LLM modulation provides additional semantic enhancement (CE reduced from 1.046 to 0.596), particularly in terms of brightness and contrast.
-- The two components are complementary, and their combination yields the best results.
-- Using only VIS input achieves 90%+ of the performance of dual-modality methods.
+- The shared dictionary contributes the most to performance improvement (Model I→II: AG +31%), validating the coefficient domain paradigm.
+- LLM modulation provides additional semantic enhancement (CE reduced from 1.046 to 0.596), particularly in brightness and contrast.
+- The two are complementary, yielding the best combined effect.
+- Achieving over 90% of dual-modal performance with only VIS input.
 
 ## Highlights & Insights
-- **Paradigm Innovation**: The first coefficient-domain inference-fusion scheme for the missing infrared problem, avoiding the instability of pixel-space generation.
-- **Clever Use of LLM**: The LLM is not used to generate images but solely as a semantic-level FiLM modulator, making it extremely lightweight and effective.
-- **Training Simplicity**: No adversarial training or diffusion sampling is required; VGII and AFRI each require only 10 epochs.
-- **Strong Interpretability**: All computation is performed in a unified atomic space, with dictionary atoms providing intuitive physical meaning.
-- **Closed-Loop Design**: Encoding → inference → fusion → reconstruction all take place within the same dictionary-coefficient space, ensuring representational consistency.
+- **Paradigm Innovation**: First to propose a coefficient domain reasoning-fusion scheme for missing infrared, avoiding pixel-space instability.
+- **Clever LLM Usage**: LLM is used for semantic-level FiLM modulation, not image generation, which is lightweight and effective.
+- **Simple Training**: No adversarial training or diffusion sampling; VGII and AFRI only require 10 epochs.
+- **Strong Interpretability**: All computations occur in a unified atomic space where dictionary atoms have intuitive physical meanings.
+- **Consistent Design**: Encoding → Reasoning → Fusion → Reconstruction all occur in the same space, ensuring representation consistency.
 
 ## Limitations & Future Work
-- The shared dictionary trained on MSRS is directly transferred; retraining may be required for scenes with large domain gaps (e.g., medical infrared).
-- LLM processing introduces inference latency, which must be considered in real-time scenarios.
-- The accuracy ceiling of coefficient-domain inference is bounded by dictionary capacity; very high-resolution images or fine-grained thermal details may suffer information loss.
-- Only the missing-infrared scenario is validated; missing visible light or other multi-modal combinations are not explored.
-- The method assumes that VIS images contain sufficient structural cues to infer thermal information; completely dark scenes may cause failures.
+- The shared dictionary was trained on MSRS; domains with significant differences (e.g., medical infrared) might require retraining.
+- LLM processing increases inference latency; efficiency is a concern for real-time scenarios.
+- Accuracy in the coefficient domain is capped by dictionary capacity; fine thermal details might be lost.
+- Only investigated missing infrared; missing visible or other combinations were not explored.
+- Assumes VIS contains enough structural clues; may fail in total darkness.
 
 ## Related Work & Insights
-- Key distinction from dual-modality SOTAs such as CDDFuse and EMMA: the proposed method requires only a single-modality input.
+- Unlike CDDFuse or EMMA (dual-modal), this method requires only single-modal input.
 - Model-driven unfolding (DKSVD, Learned-CSC) provides the theoretical foundation for dictionary learning.
-- FiLM modulation (originating from conditional generation) is innovatively applied here for LLM semantic → coefficient-space modulation.
-- **Inspiration**: The interpretability-oriented coefficient-domain paradigm is potentially generalizable to other missing-modality tasks (e.g., missing modality in MRI-CT fusion).
+- FiLM modulation (from conditional generation) is innovatively used for LLM semantic-to-coefficient modulation.
+- **Insight**: The interpretable coefficient domain paradigm can be extended to other missing modality tasks (e.g., MRI-CT).
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The combination of coefficient-domain inference-fusion paradigm and LLM weak priors is entirely original in this field.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Three fusion datasets + two downstream tasks + comprehensive ablation; cross-dataset generalization analysis is lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ Mathematical derivations are rigorous, architectural diagrams are clear, and motivation is well articulated.
-- **Value**: ⭐⭐⭐⭐ First work to address missing-infrared fusion; has practical application prospects; the dictionary paradigm is generalizable.
+- **Novelty**: ⭐⭐⭐⭐⭐ The combination of coefficient domain reasoning and LLM weak priors is highly original.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 3 fusion datasets and 2 downstream tasks, though lacks extensive cross-dataset generalization analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Rigorous math, clear framework, and well-explained motivation.
+- **Value**: ⭐⭐⭐⭐ Successfully addresses missing infrared fusion with practical potential; the dictionary paradigm is generalizable.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
+- [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
 - [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
-- [\[CVPR 2026\] Geometry-Guided Camera Motion Understanding in VideoLLMs](geometry-guided_camera_motion_understanding_in_videollms.md)
-- [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
 
 </div>
 

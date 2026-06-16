@@ -2,78 +2,79 @@
 title: >-
   [Paper Note] Which bird does not have wings: Negative-constrained KGQA with Schema-guided Semantic Matching and Self-directed Refinement
 description: >-
-  [ACL 2026][Graph Learning][Knowledge Graph Question Answering] This paper proposes the new task of Negative-constrained Knowledge Graph Question Answering (NEST KGQA) and the NestKGQA dataset. It designs PyLF…
+  [ACL 2026][Graph Learning][Paper Note] This paper proposes the new Negative-constrained KGQA (NEST KGQA) task and the NestKGQA dataset. It designs PyLF, a Python-formatted logical form to clearly express negative constraints, and introduces the CUCKOO framework. By incorporating constraint-aware draft generation, schema-guided semantic matching, and self-di
 tags:
-  - "ACL 2026"
-  - "Graph Learning"
-  - "Knowledge Graph Question Answering"
-  - "negative constraint"
-  - "semantic parsing"
-  - "logical form"
-  - "Schema-guided"
+  - ACL 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 01b56173653e1bca
+content_hash: fa6c713a30b109fb
 ---
-
 # Which bird does not have wings: Negative-constrained KGQA with Schema-guided Semantic Matching and Self-directed Refinement
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14749](https://arxiv.org/abs/2604.14749)  
 **Code**: [https://github.com/midannii/CUCKOO](https://github.com/midannii/CUCKOO)  
 **Area**: Graph Learning / Knowledge Graph Question Answering  
-**Keywords**: Knowledge Graph Question Answering, negative constraint, semantic parsing, logical form, Schema-guided
+**Keywords**: Knowledge Graph Question Answering (KGQA), Negative Constraints, Semantic Parsing, Logical Form, Schema-guided
 
 ## TL;DR
 
-This paper proposes the new task of Negative-constrained Knowledge Graph Question Answering (NEST KGQA) and the NestKGQA dataset. It designs PyLF, a Python-format logical form, to clearly express negative constraints. Furthermore, it introduces the CUCKOO framework, which achieves efficient and accurate answering for multi-constraint questions in a few-shot setting through three modules: constraint-aware draft generation, schema-guided semantic matching, and self-directed refinement.
+This paper proposes the new Negative-constrained KGQA (NEST KGQA) task and the NestKGQA dataset. It designs PyLF, a Python-formatted logical form to clearly express negative constraints, and introduces the CUCKOO framework. By incorporating constraint-aware draft generation, schema-guided semantic matching, and self-directed refinement, the framework achieves efficient and precise answering of multi-constraint questions in few-shot settings.
 
 ## Background & Motivation
 
-**Background**: Knowledge Graph Question Answering (KGQA) is a critical direction for reducing LLM hallucinations by utilizing external knowledge. Semantic Parsing (SP) methods map natural language questions to logical forms, which are then converted into SPARQL queries for execution on Knowledge Graphs (KG), offering advantages in interpretability and faithfulness.
+**Background**: Knowledge Graph Question Answering (KGQA) is a critical direction for reducing LLM hallucinations by leveraging external knowledge. Semantic Parsing (SP) methods map natural language questions into logical forms, which are then converted into SPARQL queries for execution on Knowledge Graphs (KGs), offering advantages in interpretability and faithfulness.
 
-**Limitations of Prior Work**: Existing KGQA benchmarks and methods are heavily biased toward positive and computational constraints, ignoring negative constraints. Although some datasets contain negation words like "not," they are often actually comparison operations. LLMs are inherently fragile in negation reasoning, and existing logical forms (such as s-expressions) struggle to express negative semantics clearly.
+**Limitations of Prior Work**: Existing KGQA benchmarks and methods are heavily biased toward positive and computational constraints, neglecting negative constraints. Although some datasets contain negation words like "not," they often represent comparison operations. Furthermore, LLMs are inherently fragile in negation reasoning, and existing logical forms (e.g., s-expressions) struggle to express negative semantics clearly.
 
-**Key Challenge**: Negative constraints appear frequently in real-world questions, yet specialized benchmarks and methods are lacking. Moreover, negative constraint questions naturally contain multiple constraint conditions, significantly increasing semantic complexity and the risk of generating non-executable queries.
+**Key Challenge**: Negative constraints appear frequently in real-world queries but lack specialized benchmarks and methods. Additionally, negative constraint questions naturally involve multiple constraints, significantly increasing semantic complexity and elevating the risk of generating non-executable queries.
 
-**Goal**: (1) Define the NEST KGQA task and construct the NestKGQA dataset; (2) design the PyLF logical form to clearly express negation; (3) build an efficient framework capable of handling multi-constraint negative questions.
+**Goal**: (1) Define the NEST KGQA task and construct the NestKGQA dataset; (2) Design a logical form, PyLF, that explicitly expresses negation; (3) Build an efficient framework capable of handling multi-constraint negative questions.
 
-**Key Insight**: The author observes that existing SP methods use brute-force search for semantic matching without considering KG schema semantics, leading to an exponential growth in the number of candidate logical forms. By leveraging KG schema constraints for pruning, both efficiency and accuracy can be improved simultaneously.
+**Key Insight**: The authors observe that semantic matching in existing SP methods uses brute-force search without considering KG schema semantics, leading to an exponential growth in candidate logical forms. Pruning candidates using KG schema constraints can improve both efficiency and accuracy.
 
-**Core Idea**: Use constraint-aware draft generation to explicitly enumerate constraint elements in the question, followed by schema-guided semantic matching to anchor the draft to the KG. Finally, trigger self-directed refinement only when execution results are empty, achieving low-cost and robust negative-constrained QA.
+**Core Idea**: The framework uses constraint-aware draft generation to explicitly enumerate constraint elements, followed by schema-guided semantic matching to anchor the draft to the KG. Finally, self-directed refinement is triggered only when execution results are empty, achieving low-cost and robust negative-constrained QA.
 
 ## Method
 
 ### Overall Architecture
 
-CUCKOO is a KGQA framework following a "generate-then-match" paradigm. Given a natural language question, the constraint-aware draft generation module first extracts constraint elements and generates a PyLF logical form draft. Then, the schema-guided semantic matching module maps entity and relation mentions in the draft to specific items in the KG, generating a list of executable logical forms. The matching results are converted to SPARQL for execution. The self-directed refinement module is triggered to correct the draft only if the execution returns an empty result.
+CUCKOO follows a two-stage semantic parsing paradigm of "generation-then-matching" to accurately translate natural language questions with multiple negative constraints into executable KG queries. Given an input question, the Constraint-aware Draft Generation module explicitly enumerates constraint elements and writes a PyLF draft. The Schema-guided Semantic Matching module then anchors entity and relation mentions in the draft to specific KG entries. Finally, if the execution result is empty (indicating an error in draft format or semantics), the Self-directed Refinement module is triggered to rewrite the draft. This pipeline decomposes the high semantic complexity of negative constraints through layered pruning and anchoring.
+
+```mermaid
+graph TD
+    A["Natural Language Question<br/>(with Negative Constraints)"] --> B["Constraint-aware Draft Generation<br/>Enumerate constraints; write negation into PyLF"]
+    B --> C["Schema-guided Semantic Matching<br/>Pruning via domain/range types;<br/>reduces exponential candidates to polynomial"]
+    C --> D["Convert to SPARQL for KG Execution"]
+    D -->|Non-empty Result| E["Output Answer"]
+    D -->|Empty Result| F["Self-directed Refinement<br/>Diagnose error type; rewrite draft via few-shot"]
+    F --> C
+```
 
 ### Key Designs
 
-1.  **PyLF (Python-format Logical Form)**:
-    - **Function**: Provides a logical form that clearly expresses negative constraints while maintaining readability.
-    - **Mechanism**: Adds a boolean parameter `neg` to the `JOIN` function to mark negative constraints (e.g., `JOIN('producing', 'Saturn', neg=True)`) and uses the `R_` prefix to distinguish whether the query targets the head or tail entity, making semantic parsing more precise.
-    - **Design Motivation**: Among existing logical forms, only $\lambda$-calculus can express negation but has poor readability, while s-expressions are readable but cannot express negation. PyLF is based on Python syntax; since LLMs are exposed to vast amounts of Python code during pre-training, it results in lower syntax error rates.
+**1. PyLF: Encoding Negation via a Boolean Parameter**
 
-2.  **Schema-guided Semantic Matching**:
-    - **Function**: Maps entity and relation mentions from the logical form draft to specific items in the KG while ensuring semantic executability.
-    - **Mechanism**: Starting from the topic entity in the `START` function, it retrieves candidate entities and their categories via cosine similarity. It then extracts schema-level triples containing the candidate categories and filters relation matches using a similarity threshold $\theta$. Category information is propagated layer-by-layer using schema constraints (domain/range) to automatically prune illegal combinations.
-    - **Design Motivation**: Traditional brute-force matching takes top-$K_e$ for each entity and top-$K_r$ for each relation, leading to $K_e^n \cdot K_r^m$ exponential growth. The schema-guided method uses type constraints to drastically reduce candidates, for example, reducing $K_e^1 \cdot K_r^2$ to $1 \times 2 \times 2 = 4$.
+Existing logical forms struggle with negation: $\lambda$-calculus is hard to read, while s-expressions lack the syntax for "not having an attribute." PyLF addresses this by using Python syntax as a minimal extension: adding a boolean parameter `neg` to the `JOIN` function (e.g., `JOIN('producing', 'Saturn', neg=True)` for "not producing Saturn") and using an `R_` prefix to distinguish between head and tail entity queries. Using Python as the base leverages the LLM's vast pre-training on code, reducing syntax errors and increasing execution success rates.
 
-3.  **Self-directed Refinement Module**:
-    - **Function**: Fixes logical form drafts with formatting or semantic errors.
-    - **Mechanism**: Triggered only when query execution results are empty. It first diagnoses the problem type from predefined error categories (missing constraint decomposition, formatting errors, function syntax errors, etc.), then guides the LLM to regenerate the draft via few-shot examples without additional parameter fine-tuning or external execution feedback.
-    - **Design Motivation**: Unlike existing code generation methods that rely on external execution feedback and multiple LLM rounds, CUCKOO’s refinement is self-contained, reducing cost and latency.
+**2. Schema-guided Semantic Matching: Compressing Exponential Search to Polynomial**
+
+Draft entity and relation mentions must be anchored to KG entries. Traditional brute-force matching for $n$ entities and $m$ relations results in $K_e^n \cdot K_r^m$ combinations, which explodes with multiple constraints. This design starts from the subject entity in the `START` function, retrieves candidate entities and their types via cosine similarity, and then only extracts schema-level triples containing these types. By propagating type information through domain/range constraints and applying a similarity threshold $\theta$, the candidate space is shrunk from $K_e^n \cdot K_r^m$ to a minimal scale (e.g., $1 \times 2 \times 2 = 4$), benefiting both efficiency and accuracy.
+
+**3. Self-directed Refinement: On-demand Error Correction**
+
+Drafts occasionally fail due to missing constraints or syntax errors. Instead of multi-round refinement for every question, CUCKOO triggers refinement only when a SPARQL query returns an empty set. It diagnoses the error (e.g., missing constraints, format errors) and uses specific few-shot examples to guide the LLM in rewriting the draft. This self-contained, single-round correction avoids external feedback loops and extra fine-tuning, reducing cost and latency.
 
 ### Loss & Training
 
-CUCKOO is a training-free framework based on in-context learning. Draft generation uses GPT-3.5-turbo as the backbone LLM, retrieving the top-$k$ similar examples from training data via SimCSE embeddings as few-shot demonstrations. The number of generated candidates is 1 or 6, and the final prediction is determined via majority voting.
+CUCKOO is a training-free framework based on in-context learning. Draft generation uses GPT-3.5-turbo as the backbone LLM, with top-$k$ similar examples retrieved via SimCSE embeddings for few-shot prompts. The number of candidate generations is set to 1 or 6, with the final prediction determined by majority voting.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | CUCKOO(6) | KB-Coder(6) | KB-BINDER(6) |
-| :--- | :--- | :--- | :--- | :--- |
+|--------|------|-----------|-------------|--------------|
 | GrailQA (Overall) | EM/F1 | **62.1/64.2** | 51.2/56.3 | 52.5/54.5 |
 | GrailQA (Zero-shot) | EM/F1 | **57.5/59.8** | 46.7/51.6 | 45.9/48.6 |
 | NestKGQA | F1 | **26.2** | 24.4 | 4.6 |
@@ -81,45 +82,45 @@ CUCKOO is a training-free framework based on in-context learning. Draft generati
 
 ### Ablation Study
 
-| Configuration | GrailQA F1 | NestKGQA F1 | Description |
-| :--- | :--- | :--- | :--- |
+| Configuration | GrailQA F1 | NestKGQA F1 | Note |
+|------|-----------|-------------|------|
 | CUCKOO Full Model | 64.2 | 26.2 | Full model |
 | w/o Self-directed Refinement | 63.2 | 25.8 | Refinement contributes ~1 point |
-| w/o Constraint Elements | 61.3 | 24.4 | Explicit constraint decomposition is helpful |
-| w/o Schema-guided Matching | 56.6 | 16.3 | Core module; performance drops significantly without it |
+| w/o Constraint Elements | 61.3 | 24.4 | Explicit decomposition is helpful |
+| w/o Schema-guided Matching | 56.6 | 16.3 | Core module; significant performance drop |
 
 ### Key Findings
 
-- Schema-guided semantic matching is the most critical module; removing it drops GrailQA by 7.6 points and NestKGQA by nearly 10 points.
-- CUCKOO shows the strongest advantage on multi-constraint questions (3 constraints), reaching the highest EM.
-- Achieved a massive improvement from 3.1 to 53.1 on superlative-type questions.
-- All zero-shot LLMs perform much worse on NestKGQA than on traditional KGQA, proving that negative constraint reasoning is indeed difficult.
-- CPU memory usage is 4.7% lower than KB-Coder, though inference time increases by approximately 1.6x.
+- Schema-guided matching is the most critical module; removing it drops F1 by 7.6 points on GrailQA and nearly 10 points on NestKGQA.
+- CUCKOO shows the strongest advantage in multi-constraint problems (3 constraints), reaching the highest EM.
+- In superlative questions, the performance improved dramatically from 3.1 to 53.1.
+- All zero-shot LLMs perform much worse on NestKGQA than traditional KGQA, proving that negative constraint reasoning is indeed challenging.
+- CPU memory usage is 4.7% lower than KB-Coder, though inference time increased by approximately 1.6x.
 
 ## Highlights & Insights
 
-- PyLF resolves the long-standing problem of negative constraint expression by simply adding a `neg` boolean parameter to the `JOIN` function. This "minimal modification" approach is noteworthy—one does not need to reinvent logical forms, just expand existing frameworks targetly.
-- Schema-guided matching uses the KG's type system for candidate pruning, reducing exponential search space to polynomial. This idea is transferable to any scenario requiring generation and verification over structured knowledge.
-- The "trigger only on failure" strategy for self-directed refinement is an elegant engineering design that avoids unnecessary LLM calls.
+- PyLF effectively solves the long-standing difficulty of expressing negative constraints by simply adding a `neg` parameter to the `JOIN` function. This "minimal modification" approach—extending existing frameworks rather than inventing entirely new ones—is highly effective.
+- Schema-guided matching uses the KG type system for pruning, transforming an exponential search space into a polynomial one. This logic is transferable to any scenario involving generation and verification over structured knowledge.
+- The "on-demand" trigger for self-directed refinement is an elegant engineering choice that avoids unnecessary LLM calls.
 
 ## Limitations & Future Work
 
-- Based on the closed-world assumption, limiting applicability in open-world scenarios.
-- The NestKGQA dataset is relatively small, as it is an extension of existing benchmarks.
-- Assumes the KG schema is fully available; an additional schema extraction model is needed when the schema is incomplete.
-- Performance depends on the backbone LLM's capability; future work needs to explore model-agnostic strategies.
+- The method assumes a closed-world hypothesis, which may limit applicability in open-world scenarios.
+- The NestKGQA dataset is relatively small as it was extended from existing benchmarks.
+- It assumes a complete KG schema is available; incomplete schemas might require additional extraction models.
+- Performance relies on the backbone LLM; future work could explore model-agnostic strategies.
 
 ## Related Work & Insights
 
-- **vs KB-BINDER**: KB-BINDER uses s-expressions which cannot express negation, and its semantic matching uses brute-force search. CUCKOO surpasses it in both aspects via PyLF and schema-guided matching.
-- **vs KB-Coder**: KB-Coder uses a Python-format logical form but does not explicitly handle negation or constraint decomposition. While it slightly excels in I.I.D. scenarios by mimicking examples, it falls short of CUCKOO in compositional generalization and negation scenarios.
+- **vs KB-BINDER**: KB-BINDER uses s-expressions which cannot easily express negation and relies on brute-force matching. CUCKOO surpasses it via PyLF and schema-guided matching.
+- **vs KB-Coder**: While KB-Coder uses a Python-formatted logical form, it lacks explicit negation handling and constraint decomposition. It performs well in I.I.D. settings by mimicking examples but falls short of CUCKOO in compositional generalization and negation scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First to systematically define the negative-constrained KGQA task; task definition is clear, and PyLF design is simple yet effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multiple benchmarks, ablations, and multi-dimensional analysis, though the NestKGQA dataset is small.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with intuitive motivating examples.
-- **Value**: ⭐⭐⭐⭐ Fills a gap in handling negative constraints within KGQA; schema-guided matching has general value.
+- Novelty: ⭐⭐⭐⭐ Systematically defines the negative-constrained KGQA task; PyLF is simple yet effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and ablations, though the NestKGQA dataset is small.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive motivating examples.
+- Value: ⭐⭐⭐⭐ Fills a gap in negative constraint handling for KGQA; schema-guided matching has general utility.
 
 <!-- RELATED:START -->
 
@@ -127,10 +128,10 @@ CUCKOO is a training-free framework based on in-context learning. Draft generati
 
 ## Related Papers
 
-- [\[ACL 2026\] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs](cog_controllable_graph_reasoning_via_relational_blueprints_and_failure-aware_ref.md)
 - [\[AAAI 2026\] NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation](../../AAAI2026/graph_learning/notam-evolve_a_knowledge-guided_self-evolving_optimization_framework_with_llms_f.md)
-- [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
+- [\[ACL 2026\] CoG: Controllable Graph Reasoning via Relational Blueprints and Failure-Aware Refinement over Knowledge Graphs](cog_controllable_graph_reasoning_via_relational_blueprints_and_failure-aware_ref.md)
 - [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
+- [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
 - [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](../../ICLR2026/graph_learning/pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
 
 </div>

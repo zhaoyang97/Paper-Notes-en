@@ -2,124 +2,126 @@
 title: >-
   [Paper Note] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 description: >-
-  [CVPR 2026][Human Understanding][Dexterous Manipulation] This paper presents UniDex, a robot foundation suite comprising a large-scale dataset spanning 8 dexterous hands (50K+ trajectories / 9M frames)…
+  [CVPR 2026][Human Understanding][Paper Note] The authors propose the UniDex robot foundation suite—comprising a large-scale dataset across 8 dexterous hands (50K+ trajectories/9M frames), a Function-Actuator Aligned Space (FAAS), and a 3D VLA policy (UniDex-VLA). It achieves an 81% average task progress (vs. 38% for π₀) on real-world tool-use tasks and demonstrat
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Dexterous Manipulation"
-  - "VLA Foundation Model"
-  - "Unified Action Space"
-  - "Learning from Human Videos"
-  - "Cross-Hand Transfer"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: a827024219c00d50
+content_hash: 75880983583ceb54
 ---
-
 # UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22264](https://arxiv.org/abs/2603.22264)  
 **Code**: [https://unidex-ai.github.io/](https://unidex-ai.github.io/)  
-**Area**: Human Understanding
-**Keywords**: Dexterous Manipulation, VLA Foundation Model, Unified Action Space, Learning from Human Videos, Cross-Hand Transfer
+**Area**: Human Understanding  
+**Keywords**: Dexterous manipulation, VLA foundation model, unified action space, learning from human videos, cross-hand transfer
 
 ## TL;DR
-This paper presents UniDex, a robot foundation suite comprising a large-scale dataset spanning 8 dexterous hands (50K+ trajectories / 9M frames), a Functionally-Aligned Actuator Space (FAAS), and a 3D VLA policy (UniDex-VLA). UniDex-VLA achieves 81% average task progress on real-world tool-use tasks (vs. 38% for π₀) and demonstrates spatial, object-level, and zero-shot cross-hand generalization.
+The authors propose the UniDex robot foundation suite—comprising a large-scale dataset across 8 dexterous hands (50K+ trajectories/9M frames), a Function-Actuator Aligned Space (FAAS), and a 3D VLA policy (UniDex-VLA). It achieves an 81% average task progress (vs. 38% for π₀) on real-world tool-use tasks and demonstrates spatial, object, and zero-shot cross-hand generalization capabilities.
 
 ## Background & Motivation
 
-1. **Background**: Learning from Demonstrations is the dominant paradigm for visuomotor control. Vision-Language-Action (VLA) models perform well on tasks such as grasping, but most are designed for parallel grippers; foundation models for dexterous hands remain extremely scarce.
+1.  **Background**: Learning from Demonstrations (LfD) is the dominant paradigm in current visuo-motor control. Vision-Language-Action (VLA) models perform excellently in tasks like grasping but are mostly designed for parallel grippers; foundation models for dexterous hands remain extremely scarce.
 
-2. **Limitations of Prior Work**: Building foundation models for dexterous hands is significantly harder than for grippers, due to three challenges: (a) **Data scarcity**: Teleoperation data for dexterous hands is prohibitively expensive and difficult to collect at scale; (b) **Embodiment heterogeneity**: Dexterous hands vary widely (6–24 DoF, diverse kinematic structures), making data and policy transfer across hands difficult; (c) **High-dimensional control**: Dexterous hand action spaces are far higher-dimensional than grippers, requiring more expressive action representations and learning algorithms.
+2.  **Limitations of Prior Work**: Developing foundation models for dexterous hands is significantly more difficult than for grippers due to three challenges: (a) **Data scarcity**: Teleoperation data for dexterous hands is extremely expensive and hard to collect at scale; (b) **Embodiment heterogeneity**: There is high variability in dexterous hands (6-24 DoF, different kinematics), making cross-hand transfer difficult; (c) **High-dimensional control**: The action space dimension is much higher than that of grippers, requiring more expressive action representations.
 
-3. **Key Challenge**: Training dexterous hand policies requires large-scale, diverse data, yet teleoperation data is expensive and hand-specific. Humans naturally produce abundant manipulation data (egocentric videos), but a large kinematic and visual gap exists between human and robot hands.
+3.  **Key Challenge**: Dexterous hands require large-scale diverse data for pre-training, but teleoperation data is expensive and hand-specific. Conversely, humans naturally generate vast amounts of manipulation data (egocentric videos), but a massive kinematic and visual domain gap exists between human and robot hands.
 
-4. **Goal**: (a) How to convert egocentric human videos into robot-executable dexterous hand trajectories? (b) How to design a unified action space that enables cross-hand transfer? (c) How to build a VLA foundation model for dexterous hands?
+4.  **Goal**: (a) Convert egocentric human videos into robot-executable dexterous hand trajectories; (b) Design a unified action space to enable cross-hand transfer; (c) Construct a dexterous hand VLA foundation model.
 
-5. **Key Insight**: Dexterous hands are designed to mimic human hands and share a functional correspondence with them. This correspondence is exploited to retarget human hand motion to robot hands, while visually masking the human hand and replacing it with a robot hand point cloud, substantially reducing the kinematic and visual domain gap.
+5.  **Key Insight**: Dexterous hands were originally designed to simulate human hands, implying functional correspondences. By utilizing these correspondences, the domain gap can be narrowed through kinematic retargeting and visual alignment (masking human hands and replacing them with robot hand point clouds).
 
-6. **Core Idea**: A human-to-robot data conversion pipeline is used to construct a large-scale, multi-hand pretraining dataset. A functionally-aligned unified action space (FAAS) enables cross-hand transfer, and a 3D VLA foundation model (UniDex-VLA) is trained for general dexterous manipulation.
+6.  **Core Idea**: Build a large-scale multi-embodiment pre-training dataset via a human-to-robot data conversion pipeline, design a functional-aligned space (FAAS) for cross-hand transfer, and train a 3D VLA foundation model for universal dexterous manipulation.
 
 ## Method
 
 ### Overall Architecture
-UniDex consists of three components: (1) **UniDex-Dataset** — a robot-centric dataset converted from egocentric human videos, spanning 8 hand types, 50K+ trajectories, and 9M frames; (2) **FAAS + UniDex-VLA** — a Functionally-Aligned Actuator Space and a 3D VLA policy trained on top of it; (3) **UniDex-Cap** — a portable human data collection device supporting human-robot co-training to reduce teleoperation costs.
+UniDex consists of three parts: (1) **UniDex-Dataset**—a robot-centric dataset converted from egocentric human videos across 8 hand types (50K+ trajectories, 9M frames); (2) **FAAS + UniDex-VLA**—a Function-Actuator Aligned Space and a 3D VLA policy; (3) **UniDex-Cap**—a portable human data collection device that supports human-robot data co-training to reduce teleoperation costs.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Egocentric Human Videos"] --> S1
+    subgraph S1["Human-to-Robot Data Pipeline"]
+        direction TB
+        B["Kinematic Retargeting<br/>Fingertip Alignment + In-the-loop Offset"] --> C["Visual Alignment<br/>Human Hand Masking + Robot Hand Rendering"]
+    end
+    S1 --> D["UniDex-Dataset<br/>8 Hands / 50K+ Trajectories / 9M Frames"]
+    D --> E["FAAS Space<br/>82-dim: Mapping joints by functional roles"]
+    E --> F["UniDex-VLA<br/>3D Point Cloud + Lang + Proprioception → FAAS Action Chunk"]
+    F --> G["Deployment / Zero-shot Cross-hand Transfer"]
+```
 
 ### Key Designs
 
-1. **Human-to-Robot Data Conversion Pipeline**:
+**1. Human-to-Robot Data Pipeline: "Translating" human videos into robot trajectories**
 
-    - **Function**: Converts egocentric RGB-D human videos into robot-executable dexterous hand trajectories.
-    - **Mechanism**: A two-stage approach addresses both the kinematic and visual domain gaps. *Kinematic retargeting*: Fingertips serve as primary contact points. Human fingertip positions $X^* = [x_1^*, ..., x_m^*]$ are extracted, and a 6-DoF alignment offset $T_{\text{offset}}$ (dummy base) is introduced. IK is solved for joint angles $q$ such that robot fingertips align with human fingertips, while maintaining physically plausible contact. The process is **human-in-the-loop**: after automatic IK solving, a simple GUI allows the user to adjust $T_{\text{offset}}$ sliders, typically converging in a few iterations. *Visual alignment*: Point clouds are computed from RGB-D frames; human hands are masked using WiLoR+SAM2 and the corresponding points are removed; the retargeted robot hand mesh is rendered into the scene point cloud and projected back to RGB-D frames via pinhole projection.
-    - **Design Motivation**: Fully automated retargeting is prone to errors in contact regions. Human-in-the-loop adjustment incurs minimal cost but significantly improves contact quality. Visual alignment eliminates the discrepancy of "observing a human hand while executing robot hand actions," making pretraining data consistent with downstream real-robot settings.
+Dexterous teleoperation data is costly, but humans produce massive manipulation videos daily. The gap is two-fold: kinematic structure and visual appearance. The pipeline bridges both. First, **Kinematic Retargeting**: Fingertips are treated as primary contact points. Human fingertip positions $X^* = [x_1^*, ..., x_m^*]$ are extracted. A 6-DoF alignment offset $T_{\text{offset}}$ (dummy base) is assigned to the robot hand, and joint angles $q$ are solved via IK to match robot fingertips to human counterparts while ensuring physical plausibility. Instead of pure automation, a human-in-the-loop approach uses a GUI slider to fine-tune $T_{\text{offset}}$, ensuring clean contact at low cost. Second, **Visual Alignment**: Point clouds are computed from RGB-D frames. Human hands are segmented and removed using WiLoR+SAM2. The retargeted robot hand mesh is rendered into the scene point cloud and projected back to RGB-D. This ensures the pre-training data resembles the downstream robot setup, eliminating the domain gap where the model might otherwise see a human hand but execute a robot action.
 
-2. **Functionally-Aligned Actuator Space (FAAS)**:
+**2. Function-Actuator Aligned Space (FAAS): Aligning actions by "what fingers do"**
 
-    - **Function**: Defines a unified cross-embodiment action representation to enable data sharing and skill transfer across hand types.
-    - **Mechanism**: FAAS is an 82-dimensional action vector. The first 18 dimensions encode bimanual wrist poses (9 per hand: 6D continuous rotation + 3D translation); the remaining 64 dimensions encode joint commands (32 slots per hand). The core design maps actuators by **functional role**: joints with analogous functions (e.g., thumb opposition joints across different hands) are assigned the same FAAS index regardless of the hand's URDF structure. For example, thumb and ring finger flexion and abduction joints are mapped to the same indices {0,1,3,5,6} across Oymotion (11 actuators), Allegro (16), Inspire (12), and Wuji (20). Additional slots are reserved for hand-specific degrees of freedom and future hand types.
-    - **Design Motivation**: Prior unified action spaces (e.g., RDT-1B preserving semantic structure, π₀ using left-aligned representations) primarily target grippers. EgoVLA uses human hand parameters as the dexterous hand representation but requires a post-processing IK stage that introduces additional error. FAAS aligns directly at the functional level, requiring no post-processing and proving more robust for high-DoF dexterous hands.
+To share data across 8 hand types, a common action language is required. Direct concatenation of joint vectors fails as hands range from 6 to 24 DoF. FAAS provides an 82-dimensional vector: the first 18 dims represent dual wrist poses (9 per hand: 6D rotation + 3D translation), and the remaining 64 dims are actuator slots (32 per hand). The core logic is mapping actuators by **functional roles** (e.g., thumb flex, index abduct) rather than URDF indices. For example, the flex and abduction joints of the thumb and ring finger for Oymotion (11 actuators), Allegro (16), Inspire (12), and Wuji (20) are mapped to the same index set $\{0, 1, 3, 5, 6\}$. Extra slots accommodate hand-specific DoFs. Unlike unified spaces in RDT-1B or π₀ which primarily serve grippers, FAAS aligns at the functional level for high-DoF hands without requiring post-processing IK, making it more stable.
 
-3. **UniDex-VLA Policy**:
+**3. UniDex-VLA: A foundation model for 3D dexterous manipulation**
 
-    - **Function**: A Vision-Language-Action foundation model that takes 3D point clouds as input and outputs actions in FAAS.
-    - **Mechanism**: The architecture is based on π₀. Inputs are colored point cloud $P_t$, language instruction $\ell_t$, and proprioception $q_t$; outputs are an $H$-step action chunk $A_t = [a_t, ..., a_{t+H-1}]$. The SigLIP 2D visual encoder in π₀ is replaced with a Uni3D 3D point cloud encoder (ViT-based, initialized from a 2D pretrained ViT, with point cloud features aligned to image-text features). Wrist actions use relative representations (relative to the first frame of the action chunk). Training uses a conditional flow-matching objective. The model is first pretrained on UniDex-Dataset and then fine-tuned with a small number of task demonstrations.
-    - **Design Motivation**: Dexterous tool use requires reasoning about 3D geometry and contact affordances, which 2D encoders cannot adequately capture. Point clouds directly preserve 3D information, and Uni3D's pretrained alignment makes it a strong 3D encoder. The flow-matching objective is well-suited for generative modeling in high-dimensional action spaces.
+Dexterous tool use requires reasoning about 3D geometry and affordances. 2D encoders often discard depth information. UniDex-VLA adopts the π₀ architecture but replaces the SigLIP 2D encoder with a Uni3D point cloud encoder. It uses a ViT structure initialized from pre-trained 2D ViTs and aligns point cloud features to a Vision-Language space. The input consists of a colored point cloud $P_t$, language instruction $\ell_t$, and proprioception $q_t$, outputting an $H$-step action chunk $A_t = [a_t, ..., a_{t+H-1}]$. Wrist actions are represented relatively to the first frame of the chunk. The model is trained using conditional flow-matching for generative modeling of high-dimensional actions. It is pre-trained on UniDex-Dataset to obtain motion priors and fine-tuned on specific tasks.
 
 ### Loss & Training
-The model is trained with a conditional flow-matching objective; during inference, action chunks are generated via forward-Euler integration over the denoising trajectory. Pretraining is performed on UniDex-Dataset across 8 hand types; fine-tuning requires only 50 teleoperation demonstrations per task. UniDex-Cap supports human-robot co-training, with experiments showing a human-to-robot data exchange ratio of approximately 2:1 (two human demonstrations ≈ one robot demonstration).
+The model is trained using a conditional flow-matching objective. During inference, denoised action chunks are generated via forward-Euler integration. Pre-training occurs on UniDex-Dataset across 8 hand types. Fine-tuning requires only 50 teleoperation demonstrations per task. UniDex-Cap supports human-robot data co-training, where experiments show a 2:1 exchange ratio (two human demos $\approx$ one robot demo).
 
 ## Key Experimental Results
 
 ### Main Results
-Five real-world tool-use tasks (20 trials per task):
+5 real-world tool-use tasks (20 trials per task):
 
-| Model | Avg. Task Progress | Final Success Rate |
-|-------|-------------------|-------------------|
+| Model | Avg. Task Progress | Success Rate |
+| :--- | :--- | :--- |
 | Diffusion Policy | 29.0% | 22.0% |
 | DP3 | 35.0% | 30.0% |
 | π₀ | 38.0% | 35.0% |
 | UniDex-VLA (No Pretrain) | 32.5% | 23.0% |
 | **UniDex-VLA** | **81.0%** | **76.0%** |
 
-On the most challenging task ("cutting a bag with scissors"), UniDex-VLA achieves an 84.6% relative improvement over the best baseline.
+On the "cutting bags with scissors" task, it shows an 84.6% improvement over the best baseline.
 
 ### Ablation Study
 
 | Generalization Type | Experiment | Result |
-|--------------------|------------|--------|
-| Spatial generalization | OOD positions for kettle and dripper | UniDex-VLA maintains high success rate; near-perfect with DemoGen augmentation |
-| Object generalization | Kettles of different colors/sizes | UniDex-VLA maintains strong performance |
-| Zero-shot cross-hand | Inspire train → Oymotion deploy | 60% success vs. baseline ≈ 0% |
-| Zero-shot cross-hand | Inspire train → Wuji deploy | 40% success vs. baseline ≈ 0% |
-| Human-robot co-training | 50 robot + human demos | 2:1 exchange ratio; human data collection 5.2× faster |
+| :--- | :--- | :--- |
+| Spatial Generalization | OOD positions for kettle/dropper | UniDex-VLA maintains high success; near perfect with DemoGen |
+| Object Generalization | Different colors/sizes of kettles | UniDex-VLA remains robust |
+| Zero-shot Cross-hand | Training on Inspire → Deploy on Oymotion | 60% success vs. $\approx$ 0% baseline |
+| Zero-shot Cross-hand | Training on Inspire → Deploy on Wuji | 40% success vs. $\approx$ 0% baseline |
+| Human-Robot Co-training | 50 robot + human demos | 2:1 exchange ratio; human collection 5.2x faster |
 
 ### Key Findings
-- Pretraining provides substantial gains: UniDex-VLA vs. No Pretrain (81% vs. 32.5%), demonstrating that large-scale multi-hand pretraining provides a strong motion prior for dexterous manipulation.
-- FAAS enables zero-shot cross-hand transfer: Inspire→Oymotion 60%, →Wuji 40%, vs. baseline ≈ 0%, confirming that functionally-aligned action spaces preserve transferable skill semantics.
-- Human-robot co-training is cost-effective: 1 robot demo ≈ 2 human demos, with human data collection being 5.2× faster, yielding an effective cost exchange ratio of approximately 1:2.6.
-- 3D point cloud input naturally facilitates spatial generalization through geometry-based data augmentation.
+- Pre-training is highly effective: UniDex-VLA vs. No Pretrain (81% vs. 32.5%), indicating that large-scale pre-training provides a strong motion prior.
+- FAAS enables zero-shot cross-hand transfer: 60% success for Inspire → Oymotion and 40% for Wuji, where baselines fail ($\approx 0\%$), proving the functional alignment retains transferable semantics.
+- Human-robot co-training is efficient: 1 robot demo $\approx$ 2 human demos. Given human data is collected 5.2x faster, this results in an exchange efficiency of approximately 1:2.6 in actual cost.
+- 3D point cloud input facilitates natural spatial generalization via geometric data augmentation.
 
 ## Highlights & Insights
-- **Functional alignment in FAAS**: Mapping by functional role rather than URDF joint index is a simple yet highly effective design. This principle generalizes to unified control of other heterogeneous robot embodiments (e.g., dual-arm systems with different configurations).
-- **Lightweight human-in-the-loop retargeting**: Rather than pursuing full automation, the pipeline uses GUI sliders to allow users to correct contact with minimal effort, achieving high-quality data at very low cost.
-- **Fine-tuning with only 50 demonstrations**: Thanks to large-scale pretraining, downstream tasks require very few real demonstrations, substantially lowering the barrier to deployment.
+- **FAAS Functional Alignment**: Mapping by functional roles rather than URDF indices is simple yet highly effective. This approach could extend to other heterogeneous robot embodiments (e.g., bimanual systems).
+- **Lightweight Human-in-the-loop Retargeting**: Instead of fully automated IK, a short human adjustment period ensures physically plausible contacts, resulting in high-quality data at minimal cost.
+- **Fine-tuning with 50 Demos**: Large-scale pre-training allows downstream tasks to be deployed with very few real-world demonstrations.
 
 ## Limitations & Future Work
-- Large-scale egocentric activity datasets without action annotations (e.g., Ego4D) are not yet exploited; despite lacking precise hand annotations, their visual diversity could further extend pretraining.
-- Current evaluation focuses on tool-use tasks; fine-grained finger-level reorientation and in-hand manipulation are not addressed.
-- The 32-slot joint reservation in FAAS may lack flexibility; higher-DoF future hand designs may require remapping.
-- The benefits of human-robot co-training depend on retargeting quality; retargeting quality for non-contact manipulation (e.g., button pressing, sliding) remains to be verified.
+- Large-scale action-free egocentric datasets (like Ego4D) have not yet been utilized; their visual diversity could further scale pre-training.
+- Evaluation focuses on tool-use tasks; fine-grained in-hand manipulation and re-orientation are not yet covered.
+- The 32-slot actuator reservation in FAAS might be inflexible for future hand types with significantly higher DoFs.
+- Co-training depends on retargeting quality; performance on non-contact operations (e.g., button pressing, sliding) remains to be verified.
 
 ## Related Work & Insights
-- **vs. π₀**: π₀ achieves only 38% task progress on dexterous hands, as its gripper-focused pretraining data provides little benefit for dexterous manipulation. UniDex-VLA achieves 81% through dexterous-hand-specific pretraining, a substantial gap.
-- **vs. EgoVLA**: EgoVLA uses human hand parameters as the dexterous hand representation but requires post-processing IK, introducing additional error. FAAS directly outputs joint angles and is post-processing free.
-- **vs. RDT-1B**: RDT-1B's semantically-structured action space primarily targets grippers and does not address functional alignment for high-DoF dexterous hands.
+- **vs. π₀**: π₀ achieves only 38% progress on dexterous hands because its gripper-based pre-training data provides little help. UniDex-VLA reaches 81% through specialized dexterous pre-training.
+- **vs. EgoVLA**: EgoVLA uses human hand parameters as robot representations, requiring post-processing IK which introduces errors. FAAS outputs joint angles directly, making it post-processing free.
+- **vs. RDT-1B**: RDT-1B's semantic action space is primarily focused on grippers and does not address functional alignment for high-DoF dexterous hands.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — First large-scale foundation suite spanning 8 dexterous hands; FAAS is an elegant design; human-robot co-training introduces genuine innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Five real-world tasks, diverse generalization tests, and quantitative human-robot co-training analysis; experiments are comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-organized paper; the system-level contribution is presented clearly and coherently.
-- **Value**: ⭐⭐⭐⭐⭐ — A milestone contribution to dexterous hand foundation model research; the full open-source release of dataset, model, and collection hardware has enormous potential impact.
+- Novelty: ⭐⭐⭐⭐⭐ (First large-scale foundation suite for cross-hand control; clever FAAS design.)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Extensive real-world tasks, generalization tests, and co-training analysis.)
+- Writing Quality: ⭐⭐⭐⭐ (Well-organized and clearly structured system-level work.)
+- Value: ⭐⭐⭐⭐⭐ (A milestone in dexterous hand foundation model research with high open-source potential.)
 
 <!-- RELATED:START -->
 
@@ -127,11 +129,11 @@ On the most challenging task ("cutting a bag with scissors"), UniDex-VLA achieve
 
 ## Related Papers
 
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
-- [\[CVPR 2026\] Editing Physiological Signals in Videos Using Latent Representations](editing_physiological_signals_in_videos_using_latent_representations.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
+- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 - [\[CVPR 2026\] TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement](trilite_efficient_weakly_supervised_object_localization_with_universal_visual_fe.md)
-- [\[ICCV 2025\] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning](../../ICCV2025/human_understanding/ar-vrm_imitating_human_motions_for_visual_robot_manipulation_with_analogical_rea.md)
 
 </div>
 

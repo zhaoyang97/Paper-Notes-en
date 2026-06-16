@@ -2,139 +2,148 @@
 title: >-
   [Paper Note] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 description: >-
-  [CVPR 2026][Object Detection][Anomaly Detection and Localization] This paper proposes two modules, ReAL and CGRO, which extract anomaly-relevant tokens from the autoregressive reasoning process of an MLLM and aggregate t…
+  [CVPR 2026][Object Detection][Reinforcement Learning] The authors propose two modules, ReAL and CGRO, which generate pixel-level anomaly maps by extracting anomaly-related tokens from the MLLM autoregressive reasoning process and aggregating their visual attention. Combined with consistency-guided reinforcement learning to align reasoning with visual evidence, the system
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Anomaly Detection and Localization"
-  - "Reasoning-Driven"
-  - "Image-Level Supervision"
-  - "MLLM Attention"
-  - "Reinforcement Learning"
+  - CVPR 2026
+  - Object Detection
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 5453a137065d95d1
+content_hash: fac55c18a897de45
 ---
-
 # Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27179](https://arxiv.org/abs/2603.27179)  
 **Code**: [GitHub](https://github.com/YizhouJin313/ReADL)  
-**Area**: Reinforcement Learning
-**Keywords**: Anomaly Detection and Localization, Reasoning-Driven, Image-Level Supervision, MLLM Attention, Reinforcement Learning
+**Area**: Object Detection
+**Keywords**: Anomaly Detection and Localization, Reasoning-Driven, Image-level Supervision, MLLM Attention, Reinforcement Learning
 
 ## TL;DR
 
-This paper proposes two modules, ReAL and CGRO, which extract anomaly-relevant tokens from the autoregressive reasoning process of an MLLM and aggregate their visual attention maps to generate pixel-level anomaly maps. A consistency-guided reinforcement learning scheme then aligns reasoning tokens with visual evidence, enabling end-to-end anomaly detection, localization, and interpretable reasoning under image-level supervision only.
+The authors propose two modules, ReAL and CGRO, which generate pixel-level anomaly maps by extracting anomaly-related tokens from the MLLM autoregressive reasoning process and aggregating their visual attention. Combined with consistency-guided reinforcement learning to align reasoning with visual evidence, the system achieves end-to-end anomaly detection, localization, and explainable reasoning using only image-level supervision.
 
 ## Background & Motivation
 
 Industrial anomaly detection faces multiple challenges:
-- **Limitations of traditional methods**: Training product-specific models requires large collections of normal samples, incurring high deployment costs and poor generalization across product lines.
-- **Existing MLLM-based approaches**: Most methods support only image-level detection and textual reasoning, while pixel-level localization still relies on external visual modules (e.g., AnomalyGPT uses pretrained visual experts; EIAD uses SAM), leading to error propagation, reasoning–localization misalignment, and increased deployment complexity.
-- **End-to-end approaches (e.g., OmniAD)**: These depend on dense pixel-level annotations and high-quality reasoning annotations, which are costly to obtain and introduce domain bias.
+- **Limitations of Prior Work**: Traditional methods require training product-specific models on large sets of normal samples, leading to high deployment costs and poor generalization across product lines.
+- **Background**: Most MLLM-based methods only perform image-level detection and text reasoning; pixel-level localization still relies on external visual modules (e.g., AnomalyGPT uses pretrained visual experts, EIAD uses SAM), causing error propagation, reasoning-localization misalignment, and increased deployment complexity.
+- **Key Challenge**: End-to-end solutions (e.g., OmniAD) depend on dense pixel-level annotations and high-quality reasoning labels, which are expensive to acquire and introduce domain bias.
 
-Core observation (Fig. 1): During MLLM text generation, **only a small subset of tokens attend to genuine anomalous regions**, and these tokens tend to correspond to anomaly-relevant semantics (e.g., "scratch," "mark"). The attention of most reasoning tokens is diffuse or focused on irrelevant regions, diluting localization precision.
+Key Insight (Fig. 1): During the generation of reasoning text by an MLLM, **only a few tokens' attention focuses on the ground-truth anomaly regions**, and these tokens are typically associated with anomaly-related semantics (e.g., "scratch", "mark"). The attention of most reasoning tokens is scattered or focused on irrelevant areas, which dilutes localization accuracy.
 
 ## Method
 
 ### Overall Architecture
 
-Given an image $\mathbf{X}_v$ and a fixed text prompt ("Are there any defects or anomalies in the image?"), the MLLM generates an output sequence containing a reasoning chain and a final answer. The framework comprises two core modules:
-1. **ReAL (Reasoning-Driven Anomaly Localization)**: Selects anomaly-relevant tokens from the reasoning sequence and aggregates their visual attention maps to produce a pixel-level anomaly map.
-2. **CGRO (Consistency-Guided Reasoning Optimization)**: Drives reasoning–localization consistency via reinforcement learning, aligning reasoning tokens with visual attention.
+Given an image $\mathbf{X}_v$ and a fixed textual prompt ("Are there any defects or anomalies in the image?"), a single MLLM autoregressively generates an output sequence of "reasoning process + final answer" while exporting a multimodal attention matrix $\mathbf{A}$ across visual, text, and output tokens. The localization capability is extracted directly from this attention—without external visual experts or SAM. Training uses only image-level labels (normal/abnormal), the most cost-effective annotation, thereby avoiding error propagation and misalignment. Two core modules define this approach:
+
+- **ReAL (Reasoning-driven Anomaly Localization)**: Active during inference, this module screens for tokens that specifically attend to anomalies from the reasoning sequence and aggregates their visual attention into a pixel-level anomaly map $\mathbf{A}_{\text{RDAM}}$.
+- **CGRO (Consistency-Guided Reasoning Optimization)**: Active only during training, this uses a "reasoning-localization consistency" reward to drive reinforcement learning, aligning "what the model says" with "what the model sees" via GRPO.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Image + Fixed Prompt<br/>'Are there any defects/anomalies?'"] --> B["MLLM (Qwen2.5-VL-7B)<br/>Autoregressive Generation<br/>Export Attention A"]
+    B --> C
+    subgraph REAL["ReAL: Reasoning-driven Anomaly Localization"]
+        direction TB
+        C["Score tokens via dual dimensions:<br/>Semantic S_T + Spatial Entropy S_I"] --> D["Dual-threshold filtering + weight w_r"]
+        D --> E["Weighted aggregation of visual attention<br/>→ Anomaly Map A_RDAM"]
+    end
+    REAL --> F["Output: Image-level answer + Pixel-level map + Reasoning"]
+    subgraph CGRO["CGRO: Consistency-Guided Reasoning Optimization (Training Only)"]
+        direction TB
+        G["Binarize top-t tokens<br/>Calculate Jaccard J overlap"] --> H["Class-conditional consistency reward R_cons<br/>+ R_fmt + R_acc"]
+    end
+    D -.During Training.-> G
+    H -->|GRPO Policy Update| B
+```
 
 ### Key Designs
 
-1. **Anomaly-Relevant Reasoning Token Identification (core of ReAL)**: Each reasoning token is evaluated along two complementary dimensions:
-    - **Cross-modal semantic relevance $S_T^r$**: The sum of attention weights from the reasoning token to anomaly-related words ("defect"/"anomaly"/"abnormal") in the input text, measuring semantic association with anomaly concepts.
-    - **Intra-modal attention concentration $S_I^r$**: The visual attention map is binarized, connected components are extracted, and spatial entropy is computed—low entropy indicates attention focused on a specific region (potentially anomalous), while high entropy indicates diffuse attention.
+**1. ReAL (Reasoning-driven Anomaly Localization): Identifying Anomaly-Focused Tokens**
 
-   After dual-threshold filtering ($\hat{S}_T^r > \tau_t$ and $\hat{S}_I^r > \tau_i$), the visual attention maps $\mathbf{A}_{r,I}$ of retained tokens are aggregated with composite weights $w_r = \alpha\hat{S}_T^r + \beta\hat{S}_I^r$, yielding the reasoning-driven anomaly map $\mathbf{A}_{\text{RDAM}}$.
+The core observation is that during reasoning generation, only a few tokens focus on anomaly regions. ReAL scores each reasoning token across two complementary dimensions: Cross-modal Semantic Relevance $S_T^r$ (sum of attention weights towards anomaly-related words like "defect" or "abnormal" in the input) and Intra-modal Attention Concentration $S_I^r$ (calculated via spatial entropy after binarizing visual attention maps). Low entropy indicates concentrated attention. Tokens passing dual thresholds ($\hat{S}_T^r > \tau_t$ and $\hat{S}_I^r > \tau_i$) are aggregated using composite weights $w_r = \alpha\hat{S}_T^r + \beta\hat{S}_I^r$ to produce the final map $\mathbf{A}_{\text{RDAM}}$. This allows pixel-level localization to be "read" directly from internal attention.
 
-2. **Consistency-Guided Reasoning Optimization (CGRO)**: Addresses inconsistent reasoning under limited supervision (e.g., the model answers "anomaly present" while the reasoning chain describes the image as normal). A class-conditional consistency reward $R_{\text{cons}}$ is designed:
-    - For anomalous images ($y=1$): Encourages high spatial consistency (Jaccard Index $\mathcal{J} > \delta_1$) among the attention regions of top-$t$ reasoning tokens.
-    - For normal images ($y=0$): Encourages low spatial consistency ($\mathcal{J} < \delta_2$), suppressing spurious focus on benign regions.
+**2. CGRO (Consistency-Guided Reasoning Optimization): Aligning Output with Evidence**
 
-   The total reward $\mathcal{R}_{\text{total}} = \mathcal{R}_{\text{fmt}} + \mathcal{R}_{\text{acc}} + \mathcal{R}_{\text{cons}}$ is optimized via the GRPO framework.
-
-3. **End-to-End without External Modules**: The entire system relies on a single MLLM with no dependency on external segmentation (SAM) or detection modules, achieving true end-to-end anomaly detection, localization, and interpretable reasoning. Training requires only image-level labels (normal/anomalous).
+With limited supervision, MLLMs often exhibit inconsistent reasoning (e.g., identifying an anomaly but describing the image as normal). CGRO utilizes the weights $w_r$ from ReAL to select top-$t$ tokens and measures the spatial overlap $\mathcal{J}$ (Jaccard Index) of their support regions $\Omega_r$. A class-conditional consistency reward $R_{\text{cons}}$ is introduced: for abnormal images ($y=1$), high consistency ($\mathcal{J} > \delta_1$) is encouraged to promote centralized localization; for normal images ($y=0$), low consistency ($\mathcal{J} < \delta_2$) is encouraged to suppress false focus. This is optimized via GRPO alongside format and accuracy rewards, forcing the model to self-constrain its reasoning process.
 
 ### Loss & Training
 
-- Built on Qwen2.5-VL-7B with LoRA adapters applied to language and cross-modal layers; the visual encoder is frozen.
-- Training data: 4K industrial images drawn from VisA, GoodsAD, Vision, and PR-REAL, with image-level annotations only.
-- Batch size of 16 samples; 8 candidate outputs sampled per input (GRPO).
-- Images uniformly resized to 420×420.
+- Based on Qwen2.5-VL-7B, using LoRA to adapt language and cross-modal layers while freezing the visual encoder.
+- Training Data: 4K industrial images (VisA, GoodsAD, Vision, PR-REAL, etc.) with only image-level labels.
+- Batch size of 16, with 8 candidate responses sampled per input for GRPO.
+- Images scaled to 420×420.
 - Zero-shot evaluation (no domain overlap between training and test sets).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Average across four benchmarks (MVTec-AD, WFDD, SDD, DTD), image-level AUROC/ACC:
+Average of four benchmarks (MVTec-AD, WFDD, SDD, DTD), Image-level AUROC/ACC:
 
-| Method | Parameters | Supervision | Image-Level AVG (AUROC, ACC) | Pixel-Level AVG (AUROC, ACC) | Reasoning (ROUGE-L, SBERT) |
+| Method | Parameters | Supervision | Image-level AVG(AUROC,ACC) | Pixel-level AVG(AUROC,ACC) | Reasoning(ROUGE-L,SBERT) |
 |------|--------|----------|----------------------|---------------------|---------------------|
 | GPT-4.1 | — | — | 87.2, 88.4 | N/A | 20.8, 69.9 |
-| Qwen2.5-VL+CGRO* | 7B | I | **83.9, 86.9** | **80.7, 97.1** | **27.1, 74.7** |
+| Qwen2.5-VL+CGRO* (Ours) | 7B | I | **83.9, 86.9** | **80.7, 97.1** | **27.1, 74.7** |
 | Qwen2.5-VL+R1* | 7B | I | 80.0, 82.0 | 78.5, 96.7 | 26.3, 73.8 |
 | AnomalyGPT | 7B | T+I+P | 71.1, 53.9 | 77.8, 98.4 | 11.9, 36.7 |
 | Triad | 7B | T+I | 85.5, 83.8 | N/A | 8.6, 35.9 |
 
-Highlight: Using only image-level supervision, the proposed method achieves localization performance comparable to AnomalyGPT, which relies on dense pixel-level annotations.
+Highlights: Achievement of localization performance comparable to AnomalyGPT (which uses pixel-level labels) using only image-level supervision.
 
 ### Ablation Study
 
-ReAL + CGRO ablation (Qwen2.5-VL-7B, average over four datasets):
+Ablation of ReAL + CGRO (Qwen2.5-VL-7B, average across four datasets):
 
-| Configuration | Image-Level AUROC | Pixel-Level AUROC | Pixel-Level ACC |
+| Configuration | Image AUROC | Pixel AUROC | Pixel ACC |
 |------|-------------|-------------|-----------|
 | Vanilla | 63.4 | 64.7 | 73.0 |
 | Vanilla + ReAL | 63.4 | 61.7 | 85.6 |
 | Vanilla + CGRO | 83.9 | 72.7 | 92.6 |
 | **Full (ReAL+CGRO)** | **83.9** | **80.7** | **97.1** |
 
-Token selection strategy ablation (pixel-level):
+Token selection strategy ablation (Pixel-level):
 - $S_I$ only: AUROC 74.1
 - $S_T$ only: AUROC 76.7
-- $S_T + S_I$ (full): AUROC **80.7**
+- $S_T + S_I$ (Full): AUROC **80.7**
 
 ### Key Findings
 
-- ReAL and CGRO are complementary: CGRO improves image-level detection (+20.5 AUROC), while ReAL improves pixel-level localization precision (+8.0 AUROC).
-- The consistency reward eliminates reasoning–answer contradictions: without CGRO, the model frequently produces inconsistent outputs ("anomaly detected" but reasoning describes the image as normal) with diffuse attention.
-- CGRO provides consistent gains across model scales from 3B to 7B parameters (image-level +15–20 AUROC).
-- Improvements in reasoning quality and localization precision are mutually reinforcing.
+- ReAL and CGRO are complementary: CGRO improves image-level detection (+20.5 AUROC), while ReAL refines pixel-level localization accuracy (+8.0 AUROC).
+- Consistency rewards eliminate reasoning-answer contradictions, preventing cases where models "predict anomaly but describe as normal."
+- Gains from CGRO are consistent across 3B to 7B parameter scales (+15-20 image-level AUROC).
+- Improvements in reasoning quality and localization accuracy are mutually beneficial.
 
 ## Highlights & Insights
 
-- **Deep core insight**: The work reveals that anomaly-aware attention patterns naturally emerge during MLLM reasoning; the key is to correctly identify and leverage them rather than introduce external modules.
-- **High annotation efficiency**: Image-level labels—the least costly form of annotation—are sufficient to match methods trained with dense pixel-level supervision.
-- **Unified three-dimensional capability**: A single model simultaneously performs detection, localization, and interpretable reasoning without external modules.
-- **Elegant consistency reward design**: Class-conditional constraints based on the Jaccard Index align reasoning quality with spatial focus.
+- **Deep Core Insight**: The authors discovered that MLLM reasoning processes naturally contain anomaly-aware attention patterns that can be harnessed without external modules.
+- **High Supervision Efficiency**: Achieves performance comparable to dense-labeling methods using only the cheapest image-level labels.
+- **Unified Triad**: Detection, localization, and explainable reasoning are unified in a single model without external dependencies.
+- **Elegant Reward Design**: The use of Jaccard Index for class-conditional constraints effectively aligns reasoning quality with spatial focus.
 
 ## Limitations & Future Work
 
-- Localization precision leaves room for improvement (pixel-level AUPR of 13.3%, well below dedicated segmentation methods).
-- Reasoning token selection depends on threshold hyperparameters $\tau_t, \tau_i$, which may require tuning for different product categories.
-- Training images are sourced from other public AD datasets, potentially introducing domain bias.
-- GRPO training is computationally expensive (8 candidate outputs per input).
-- While the attention mechanism provides strong interpretability, performance on complex multi-defect scenarios remains unexplored.
+- Localization precision has room for improvement (Pixel-level AUPR is 13.3%, significantly lower than specialized segmentation models).
+- Token screening depends on threshold hyperparameters $\tau_t, \tau_i$, which may require tuning for different products.
+- Training on existing AD datasets may introduce domain biases.
+- GRPO training costs are relatively high due to multiple candidate sampling.
+- performance in complex, multi-defect scenarios remains a question.
 
 ## Related Work & Insights
 
-- **Comparison with LISA**: LISA employs a [SEG] token combined with SAM for reasoning-based segmentation; the proposed method entirely removes the external segmentation module.
-- **GRPO/R1 paradigm**: Follows the reinforcement-learning-based reasoning optimization of DeepSeek-R1, with the novel introduction of a consistency reward.
-- **Comparison with OmniAD**: OmniAD requires dense annotations for end-to-end training, whereas the proposed method needs only image-level labels.
-- **Broader implications**: The attention aggregation strategy is generalizable to other tasks requiring MLLM-based spatial localization, such as referring segmentation and visual grounding.
+- **Comparison with LISA**: While LISA uses [SEG] tokens and SAM for reasoning segmentation, this work eliminates external segmentation modules entirely.
+- **GRPO/R1 Paradigm**: Extends the reinforcement learning reasoning optimization of DeepSeek-R1 but innovates with consistency rewards.
+- **Comparison with OmniAD**: Unlike OmniAD which requires dense labels for end-to-end training, this work only requires image-level labels.
+- **Inspiration**: The attention aggregation strategy could be generalized to other spatial tasks like referring segmentation or visual grounding.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The idea of activating the intrinsic reasoning potential of MLLMs for pixel-level localization is highly innovative, and the consistency reward is elegantly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Four benchmarks, comparisons against diverse MLLMs (including the GPT-4 family), and detailed ablations provide strong empirical support.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, though the dense notation requires careful reading.
-- **Value**: ⭐⭐⭐⭐⭐ — Substantially reduces annotation costs for industrial anomaly detection and opens new avenues for deploying MLLMs in industrial quality inspection.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Activating MLLM intrinsic reasoning potential for pixel-level localization is highly innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Extensive benchmarks, comparisons with GPT-4, and detailed ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, though complex notations require careful tracking.
+- **Value**: ⭐⭐⭐⭐⭐ — Significantly reduces annotation costs for industrial AD, opening new paths for MLLM applications in inspection.
 
 <!-- RELATED:START -->
 
@@ -142,11 +151,11 @@ Token selection strategy ablation (pixel-level):
 
 ## Related Papers
 
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
 - [\[ICCV 2025\] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning](../../ICCV2025/object_detection/visrl_intention-driven_visual_perception_via_reinforced_reasoning.md)
-- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
-- [\[CVPR 2026\] HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](herod_heuristic_inspired_reasoning_data_efficient_rod.md)
-- [\[CVPR 2026\] Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval](beyond_semantic_search_towards_referential_anchoring_in_composed_image_retrieval.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](mmrad_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
 
 </div>
 

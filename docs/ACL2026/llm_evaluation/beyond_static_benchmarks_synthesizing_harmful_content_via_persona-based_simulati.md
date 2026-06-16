@@ -2,73 +2,81 @@
 title: >-
   [Paper Note] Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Persona Simulation] The authors drive LLM agents with "two-dimensional personas" (intrinsic identity + extrinsic strategy) to role-play users writing harmful comments on real Reddit posts. This…
+  [ACL 2026][LLM Evaluation][Paper Note] The authors drive LLM agents to act as users writing harmful comments on real Reddit posts using a "2D persona" (intrinsic identity + extrinsic strategy). This synthesizes a harmful content evaluation set that is more challenging, diverse, and comprehensive than traditional static benchmarks. It reduces the accuracy of
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Persona Simulation"
-  - "Harmful Content Synthesis"
-  - "Safety Classifier Evaluation"
-  - "Reddit Data"
-  - "Diversity Metrics"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: a08898616f6d28af
+content_hash: cff4c7e39a2ae9a3
 ---
-
 # Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.17020](https://arxiv.org/abs/2604.17020)  
 **Code**: https://github.com/huijelee/synthesizing_harmful_content (Available)  
 **Area**: LLM Safety Evaluation / Harmful Content Detection  
-**Keywords**: Persona Simulation, Harmful Content Synthesis, Safety Classifier Evaluation, Reddit Data, Diversity Metrics
+**Keywords**: persona simulation, harmful content synthesis, safety classifier evaluation, Reddit data, diversity metrics
 
 ## TL;DR
-The authors drive LLM agents with "two-dimensional personas" (intrinsic identity + extrinsic strategy) to role-play users writing harmful comments on real Reddit posts. This synthesizes a harmful content evaluation set that is more challenging, diverse, and broader in coverage than traditional static benchmarks, reducing the accuracy of four mainstream safety classifiers to 13–31% (vs. 60–94% on static sets), exposing the fact that existing benchmarks have been "saturated."
+The authors drive LLM agents to act as users writing harmful comments on real Reddit posts using a "2D persona" (intrinsic identity + extrinsic strategy). This synthesizes a harmful content evaluation set that is more challenging, diverse, and comprehensive than traditional static benchmarks. It reduces the accuracy of four mainstream safety classifiers to 13–31% (vs. 60–94% on static sets), exposing the fact that existing benchmarks have been "over-saturated."
 
 ## Background & Motivation
 
-**Background**: Current toxic/hate speech/trolling detection systems (OpenAI Moderation, Perspective API, LlamaGuard) almost exclusively report performance on **static human-annotated benchmarks** such as Qian-Gab, CONAN, and ELF22. These benchmarks, either manually curated or crawled from platforms, have been the de facto standards for the past several years.
+**Background**: Current toxic/hate speech/trolling detection systems (OpenAI Moderation, Perspective API, LlamaGuard) almost exclusively report performance on **static human benchmarks** such as Qian-Gab, CONAN, and ELF22. These benchmarks, either manually curated or crawled from platforms, have been the de facto standards for years.
 
-**Limitations of Prior Work**: The authors point out three specific flaws in static benchmarks—(1) **Poor scalability** of manual curation, failing to keep pace with LLM evolution; (2) **Insufficient topic/style diversity**, failing to cover emerging social issues or subtle expressions; (3) **Pre-training data contamination**, where models have already encountered these test samples during pre-training. Consequently, classifiers show inflated performance (90%+) on static benchmarks but fail in real-world scenarios.
+**Limitations of Prior Work**: The authors identify three specific issues with static benchmarks: (1) Manual curation has **poor scalability** and cannot keep pace with LLM evolution; (2) There is a **lack of topic/style diversity**, missing emerging social issues and covert expressions; (3) They suffer from **pre-training contamination**, as models have likely seen these test samples during pre-training. Consequently, classifier performance is artificially high (90%+) on static benchmarks but collapses in real-world scenarios.
 
-**Key Challenge**: While existing work on "synthesizing harmful data" (ToxiGen, Toxicraft) addresses scalability, content generated purely via prompting tends to have **stereotyped styles and repetitive structures**, essentially failing to escape a few "template-based" malicious patterns. This prevents them from truly testing the blind spots of classifiers. The reason is that simple prompt control cannot inject the complexity of "real users"—real trolls possess stable identities/interests and switch attack strategies based on the context.
+**Key Challenge**: While existing synthetic data work (ToxiGen, Toxicraft) addresses scalability, the content generated via prompts often has **formulaic styles and repetitive sentence structures**, essentially failing to escape a few "templated malicious behaviors." They fail to test the blind spots of classifiers because simple prompt control cannot inject the complexity of "real users"—real trolls possess stable identities/interests while switching attack strategies based on the context.
 
-**Goal**: Synthesize a harmful content collection that is (a) highly harmful, (b) difficult to detect, and (c) possesses style/topic diversity approaching human-authored datasets for stress-testing existing safety classifiers.
+**Goal**: Synthesize a harmful content collection that is (a) highly harmful, (b) difficult to detect, and (c) approaches the style/topic diversity of human datasets to stress-test existing safety classifiers.
 
-**Key Insight**: Drawing from social psychological observations that real users exhibit **"constant identity + context-dependent behavior,"** the persona is decoupled into two orthogonal dimensions: "intrinsic" and "extrinsic." These are randomly paired to produce a large variety of agents with distinct styles.
+**Key Insight**: Drawing from social psychology observations that real users exhibit **"constant identity + context-dependent behavior,"** the persona is decoupled into two orthogonal dimensions: "intrinsic" and "extrinsic." These are randomly paired to produce various agents with distinct styles.
 
-**Core Idea**: **Feed "intrinsic identity + extrinsic strategy" two-dimensional personas to LLM agents and let them role-play users writing malicious comments in real Reddit posts**, thereby generating high-diversity, highly-concealed harmful content in a controllable manner.
+**Core Idea**: **Feed a "2D persona" (intrinsic identity + extrinsic strategy) to an LLM agent and have it act as a user writing malicious comments on real Reddit posts.** This generates highly diverse and stealthy harmful content in a controllable manner.
 
 ## Method
 
 ### Overall Architecture
-The input consists of real Reddit posts $x$ (including subreddit name, title, original post, and comments) crawled from Pushshift. The pipeline consists of two steps:
 
-1.  **Persona Synthesis**: An LLM $\mathcal{M}_{in}$ (GPT-4o) generates an intrinsic persona $a_{in}$ based on seed posts + user types + subreddits of interest. Simultaneously, an extrinsic persona $a_{ex}=(h,d,e)$ is sampled from ELF-HP (6 trolling strategies) or CADD (4 abusive categories).
-2.  **Agent Simulation**: The $(a_{in},a_{ex})$ pair is injected into a backbone LLM $\mathcal{M}$ to instantiate a harmful agent $A_H \leftarrow \mathcal{M}(a_{in},a_{ex})$. After reading the original post $x$, the agent produces a harmful comment $h=A_H(x)$ as the final evaluation sample.
+The method starts with real Reddit posts $x$ (including subreddit name, title, post content, and existing comments) retrieved from Pushshift. The core problem is making the LLM write comments that are highly harmful, stylistically diverse, and anchored to real contexts. The pipeline consists of two stages: first, an LLM $\mathcal{M}_{in}$ (GPT-4o) synthesizes an "intrinsic persona" $a_{in}$ based on seed posts, user types, and subreddits of interest. Then, an "extrinsic persona" $a_{ex}$ is sampled from strategy libraries like ELF-HP/CADD. These two are combined in a backbone LLM to instantiate a harmful agent that writes a comment after reading the original post. Finally, each backbone produces 3,000 synthetic harmful comments, which are fed to four mainstream safety classifiers to evaluate detection rates.
 
-The output is a collection of 3,000 synthesized harmful comments per model, which are then fed into 4 safety classifiers to measure accuracy.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Real Reddit post x<br/>(subreddit + title + post + comments)"]
+    subgraph P["2D Persona"]
+        direction TB
+        IN["Intrinsic persona a_in<br/>M_in synthesized profile"]
+        EX["Extrinsic persona a_ex<br/>Sampled from strategy library (h, d, e)"]
+    end
+    X --> P
+    P --> AGENT["Contextual Anchoring<br/>Backbone agent reads post and improvises"]
+    AGENT --> C["3,000 synthetic harmful comments per model"]
+    C --> EVAL["Multi-dimensional Evaluation Protocol<br/>Harmfulness + Difficulty + Diversity"]
+    EVAL --> R["Exposing saturated static benchmarks"]
+```
 
 ### Key Designs
 
-1.  **Two-dimensional Persona (Intrinsic + Extrinsic)**:
-    *   **Function**: Decouples "who the user is" from "how the user attacks," generating diverse agents through combinatorial explosion.
-    *   **Mechanism**: The intrinsic persona $a_{in}=\mathcal{M}_{in}(th,u,s_{top},s_{recent})$ includes "profile items" such as username, account age, bio, interest categories, frequently visited subreddits, knowledge background, and typical comment length. The extrinsic persona $a_{ex}=(h,d,e)$ includes strategy type $h$ (e.g., "Antipathy: subtly introduces provocative topics"), natural language description $d$, and example $e$. The paper randomly combines 30,472 subreddit names, 6 trolling strategies, and 3 user types (newcomer / regular / longtime), making every agent portrait unique.
-    *   **Design Motivation**: A single dimension (only demographics or only strategies) results in content that is either "monotonous identity" or "monotonous attack patterns." By making the dimensions orthogonal, **the same trolling strategy can be expressed in completely different tones by a military enthusiast, a toy collector, or a teenage gamer**, which is the primary difference from single-dimension synthesis like ToxiGen or Shin et al. 2023.
+**1. 2D Persona: Decoupling "Who the user is" from "How the user attacks"**
 
-2.  **Contextual Grounding based on Real Community Posts**:
-    *   **Function**: "Embeds" synthesized harmful comments into real Reddit conversation contexts rather than generating them in a vacuum.
-    *   **Mechanism**: Each $h$ is generated based on a specific $x$ (metadata, original post, existing comments). During generation, the agent "observes" the topic of the original post and uses the persona's interests to "improvise." This explains why, for the same K-Pop post in Table 6, a toy collector mocks "K-pop idol names are as flashy as their plastic surgeries," while a military enthusiast says "this naming is like North Korean hackers"—the same post yields vastly different and highly contextualized attacks.
-    *   **Design Motivation**: Prompt-based synthesis is often "rootless," with concentrated attack topics decoupled from real conversations, making it easy for classifiers to recognize patterns. Contextual grounding allows attacks to be **hidden within plausible conversations**, targeting the blind spots of classifiers.
+Single-dimension synthesis (controlling only demographics or only attack strategies) naturally collapses into "monotonous identity types" or "monotonous attack patterns," which classifiers can easily identify by remembering a few templates. Following social psychology observations of real trolls—stable identity but context-dependent behavior—this paper splits the persona into two orthogonal dimensions. The intrinsic persona $a_{in}=\mathcal{M}_{in}(th,u,s_{top},s_{recent})$ is a "personal profile" (username, account age, bio, interest categories, frequented subreddits, knowledge background, typical comment length). The extrinsic persona $a_{ex}=(h,d,e)$ provides the attack strategy type $h$ (e.g., "Antipathy: subtly introduces provocative topics"), a natural language description $d$, and an example $e$.
 
-3.  **Multi-dimensional Evaluation Protocol (Harmfulness + Challenge Level + Diversity)**:
-    *   **Function**: Provides a 3D evaluation suite to validate the "synthetic benchmark" itself.
-    *   **Mechanism**: (a) **Harmfulness**: Double-blind judgment using GPT-4o + Claude-3.5 and manual labeling of 100 samples by 5 humans (Fleiss $\kappa$=0.70); (b) **Challenge**: Measuring accuracy of 4 classifiers under a strict threshold of 0.2 (lower indicates a harder benchmark); (c) **Diversity**: Using Sentence-BERT embeddings to calculate convex hull area + pairwise cosine distance; using Self-BLEU / TTR / Vocab Size for linguistic diversity; and Shannon entropy via GPT-4o classification for topic diversity.
-    *   **Design Motivation**: Synthetic data is often criticized for "looking right but not actually being harmful/difficult/diverse." This protocol maps every concern to a quantitative metric, providing a paradigm transferable to other synthetic benchmark works.
+The paper randomly pairs 30,472 subreddit names × 6 trolling strategies × 3 user types (newcomer / regular / longtime), making every agent unique. The combinatorial explosion from these orthogonal dimensions is the source of diversity: **the same trolling strategy might be expressed in completely different tones by a military enthusiast, a toy collector, or a teenage gamer.** This sets it apart from single-dimension synthesis like ToxiGen or Shin et al. 2023.
+
+**2. Contextual Anchoring: Embedding malicious comments in real conversations**
+
+Existing prompt-based synthesis is often "rootless," resulting in concentrated attack topics decoupled from real dialogue. Classifiers can recognize these patterns easily. This paper requires each comment $h=A_H(x)$ to be generated based on a specific real post $x$ (carrying subreddit metadata, the original post, and existing comments). The agent first "sees" what the post is about and then improvises using the interests of its own persona.
+
+This explains the phenomenon in Table 6: when faced with the same K-pop post, a toy collector might mock that "idol names are as flashy as their plastic surgeries," while a military enthusiast might say "this naming is like a North Korean hacker." The same post yields attacks with vastly different styles and high contextualization. The value of contextual anchoring lies in **hiding malice within a reasonable conversation**, which is precisely the blind spot of classifiers.
+
+**3. Multi-dimensional Evaluation Protocol: Validating the synthetic benchmark**
+
+Synthetic data is often criticized for "looking correct but not being harmful/difficult/diverse enough." This paper provides a three-dimensional evaluation to quantify these concerns. Harmfulness is evaluated via double-blind judgment using GPT-4o + Claude-3.5, supplemented by human annotation of 100 samples with Fleiss $\kappa=0.70$. Difficulty (Challenge) is measured by testing the accuracy of 4 classifiers under a stricter $threshold=0.2$ setting; lower accuracy indicates a harder benchmark. Diversity is assessed via three methods: Sentence-BERT embeddings for convex hull area and pairwise cosine distance (semantic spread), Self-BLEU / TTR / Vocab Size (linguistic level), and Shannon entropy of GPT-4o classifications (topic level).
 
 ### Loss & Training
-**No models are trained** in this paper; it relies entirely on prompting and sampling. Backbone agents use Llama-3.1 70B / DeepSeek-Llama 70B / GPT-4o, with $temperature=0.7$, $top-p=1.0$, and $max\_tokens=1024$. Each agent model generates 3,000 harmful comments.
+
+This paper **does not train** any models; it relies entirely on prompting and sampling. The backbone agents used are Llama-3.1 70B / DeepSeek-Llama 70B / GPT-4o, with $temperature=0.7$, $top-p=1.0$, and $max\_tokens=1024$. Each agent model generates 3,000 harmful comments.
 
 ## Key Experimental Results
 
@@ -80,12 +88,12 @@ The output is a collection of 3,000 synthesized harmful comments per model, whic
 | CONAN | 98.47 | 86.65 | 95.29 | 96.97 | **94.35** |
 | COVID-HATE | 58.56 | 34.83 | 87.89 | 96.40 | 69.42 |
 | CADD | 50.25 | 43.82 | 68.41 | 90.19 | 63.17 |
-| **Ours (CADD Strategy)** | **20.83** | **0.77** | **37.17** | **65.55** | **31.08** |
+| **Ours (CADD strategies)** | **20.83** | **0.77** | **37.17** | **65.55** | **31.08** |
 | ELF22 | 15.09 | 12.07 | 25.85 | 43.96 | 24.24 |
 | ELF-HP | 21.60 | 13.94 | 30.63 | 48.57 | 28.69 |
-| **Ours (trolling Strategy)** | **5.65** | **10.20** | **18.25** | **19.88** | **13.50** |
+| **Ours (trolling strategies)** | **5.65** | **10.20** | **18.25** | **19.88** | **13.50** |
 
-→ Lower detection rates indicate a more challenging benchmark. The synthesized set in this paper pulls the average accuracy of 4 classifiers down from 60-90+% to **13.5–31%**, with LlamaGuard-2 dropping as low as 0.77%.
+→ Lower detection rates indicate a harder benchmark. The synthetic set in this paper pulls the average accuracy of 4 classifiers down from 60-90+% to **13.5–31%**, with LlamaGuard-2 dropping to only 0.77%.
 
 ### Ablation Study: Impact of Persona on Generation Diversity (Trolling Setting)
 
@@ -93,42 +101,40 @@ The output is a collection of 3,000 synthesized harmful comments per model, whic
 |---|---|---|---|---|---|
 | Llama-3.1 70B | w/o | 3.877 | 0.039 | 4,044 | 2.251 |
 | Llama-3.1 70B | w/ | **1.699** | **0.051** | **6,776** | **2.699** |
-| DeepSeek-Llama 70B | w/o | 1.750 | 0.065 | 4,394 | 2.251 |
+| DeepSeek-Llama 70B | w/o | 1.750 | 0.065 | 4,394 | 2.596 |
 | DeepSeek-Llama 70B | w/ | **1.208** | **0.076** | **6,890** | **2.765** |
 | GPT-4o | w/o | 2.259 | 0.078 | 4,707 | 2.485 |
 | GPT-4o | w/ | **1.522** | 0.066 | **6,902** | **2.766** |
 
-→ Diversity metrics across all 4 categories improved consistently after adding personas, with vocabulary size increasing by ~50%. In the CADD setting, GPT-4o's improvement was particularly extreme—the baseline consisted almost entirely of "refusal templates" (vocab only 152), which recovered to 2,152 with personas.
+→ All four diversity metrics improved consistently with the addition of personas, with vocabulary size increasing by ~50%. For GPT-4o under the CADD setting, the baseline was almost entirely "refusal templates" (vocab only 152), which recovered to 2,152 with personas.
 
 ### Key Findings
-- **Both persona dimensions are indispensable**: Ablations using only intrinsic or only extrinsic features caused t-SNE embeddings to cluster; combined, they cover the entire semantic space (Fig 3).
-- **LLM-judge harmfulness rate 90.40% → 96.80%**: Adding personas increased the proportion of content judged as harmful by both GPT-4o and Claude-3.5 by 6.4 pp, with DeepSeek and GPT-4o showing the most significant gains (+7~14 pp).
-- **Hard-to-detect $\neq$ far from known harmful clusters**: t-SNE in Fig 1 shows many "missed" samples are adjacent to known harmful ones, suggesting classifier blind spots stem from **subtle shifts in intent/context** rather than out-of-distribution expressions.
-- **Human Eval Fleiss $\kappa$=0.70**: Five annotators reached substantial agreement on harmfulness, with a majority-vote accuracy of 96%, indicating stable and reliable synthesis quality.
+- **2D Persona is indispensable**: Ablations using only intrinsic or only extrinsic personas resulted in t-SNE embeddings clustering into small groups; only their combination covered the entire semantic space (Fig 3).
+- **LLM-judge harmfulness rate increased from 90.40% to 96.80%**: With personas, the proportion judged as harmful by both GPT-4o and Claude-3.5 increased by 6.4pp.
+- **Hard-to-detect $\neq$ far from known harmful clusters**: Fig 1 t-SNE shows many missed samples are adjacent to known harmful ones, suggesting classifier blind spots stem from **subtle changes in intent/context** rather than out-of-distribution expressions.
+- **Human evaluation Fleiss $\kappa=0.70$**: Five annotators reached substantial agreement on harmfulness with a majority vote accuracy of 96%, indicating stable and reliable synthesis quality.
 
 ## Highlights & Insights
-- **Cognitive modeling of "constant identity + context-dependent behavior" is clever**: Abstracting social psychological descriptions of real trolls into orthogonal two-dimensional personas is a rare "theory $\rightarrow$ engineering" mapping, offering more interpretability than simple prompt stacking.
-- **Threshold=0.2 instead of 0.5**: The authors voluntarily tightened the detection threshold for classifiers, yet performance remained poor, indicating the problem is not "classifier conservatism" but that synthesized content enters genuine semantic blind spots.
-- **Diversity $\neq$ Difficulty**: Table 3 shows that while ELF-HP's hull area is close to Ours (135.35 vs 151.99), its detection rate is 15+ pp higher, suggesting the additional "difficulty" of this work comes from contextual grounding rather than mere distributional spread—a decoupling worth noting.
-- **"Persona $\times$ Thread" combination is transferable**: This paradigm can be directly applied to jailbreaking, bias evaluation, and toxic red-teaming by swapping the extrinsic persona library.
+- **Cognitive modeling of "constant identity + behavior changes with context" is clever**: Abstracting social psychology descriptions of trolls into two orthogonal persona dimensions is a rare "theory $\rightarrow$ engineering" mapping, offering more interpretability than simple prompt stacking.
+- **Set $threshold=0.2$ instead of $0.5$**: The authors intentionally tightened the detection threshold, yet performance remained poor, indicating the issue is not classifier "conservatism" but rather the synthetic content entering true semantic blind spots.
+- **Diversity $\neq$ Difficulty**: Table 3 shows the hull area of ELF-HP is close to Ours (135.35 vs 151.99), yet its detection rate is 15+pp higher. This suggest the additional "difficulty" in this work comes from contextual anchoring rather than just distribution spread.
+- **"Persona × thread" combination is transferable**: This paradigm can be applied to jailbreaking, bias evaluation, and toxicity red-teaming by replacing the extrinsic persona library.
 
 ## Limitations & Future Work
-- The authors admit: (1) The current persona library only covers 6 trolling + 4 abusive strategies; finer-grained harm types (gaslighting, implicit bias) are missing. (2) Conducted only on English Reddit; multi-lingual scenarios are not validated.
-- Observation: Using GPT-4o/Claude as judges overlaps with the generation models (GPT-4o both generates and judges), potentially leading to **self-evaluation bias** and overestimating harmfulness. Switching to less common judges (e.g., fine-tuned small models) might change the numbers.
-- Low classifier scores on "our synthetic set" **do not necessarily mean the classifiers are bad**—it might mean the benchmark over-simulates certain edge cases. Validation of detection rate improvements on real toxic traffic in online A/B tests would be more convincing.
-- Future improvements: (a) Expand the extrinsic library into a full taxonomy (like OpenAI's 13 safety categories) for automated risk-slicing; (b) Add multi-turn simulation to cover escalation, gaslighting, and group harassment.
+- The authors admit: (1) The current persona library only covers 6 trolling + 4 abusive strategies, missing fine-grained harms (e.g., gaslighting, implicit discrimination); (2) It was only conducted on English Reddit.
+- Self-observation: The usage of GPT-4o / Claude as judges overlaps with the generation models (GPT-4o both generates and judges), potentially introducing **self-evaluation bias**. Harmfulness rates might drop if using more independent judges (e.g., fine-tuned small models).
+- Low scores on "our synthetic set" **do not necessarily mean the classifiers are bad**—it might mean the benchmark over-simulates certain edge cases. Validation via online A/B testing on real toxic traffic would be more convincing.
 
 ## Related Work & Insights
-- **vs. ToxiGen (Hartvigsen et al., 2022)**: ToxiGen uses demonstration-based prompting with keywords; this work uses persona-driven agent simulation. ToxiGen focuses on coverage through templates, while this work uses identity+strategy variables to break patterns, resulting in higher diversity and detection difficulty at the cost of a more complex pipeline.
-- **vs. Toxicraft (Hui et al., 2024b)**: They refine topics/contexts from seed samples; this work generates from real Reddit threads. Toxicraft is "seed+transformation," while this work is "character+context"—the latter's diversity stems from personality combinations rather than topic diffusion.
-- **vs. ELF-HP (Lee et al., 2024)**: ELF-HP provides 6 trolling strategies, which this paper reuses as the "extrinsic persona library." This serves as a model for inserting existing taxonomies as modular resources into synthesis pipelines.
-- **Insight**: This "two-dimensional persona $\times$ real context" paradigm can be transferred to (a) jailbreak prompt synthesis, (b) multi-modal deepfake evaluation, and (c) red-team stress testing of LLM agents by identifying two decoupled dimensions of "identity" and "context."
+- **vs ToxiGen (Hartvigsen et al., 2022)**: ToxiGen uses demonstration-based prompting with keywords. This paper uses persona-driven agent simulation. ToxiGen expands coverage but remains formulaic; this paper uses 2D variables (identity + strategy) to break those patterns, yielding higher diversity and difficulty at the cost of pipeline complexity.
+- **vs Toxicraft (Hui et al., 2024b)**: Toxicraft refines topic/context from seed samples; this paper generates from real Reddit threads. Toxicraft is "seed + deformation," while this paper is "character + context"—the latter derives diversity from identity combinations rather than topic diffusion.
+- **vs ELF-HP (Lee et al., 2024)**: ELF-HP provides 6 trolling strategies, which this paper reuses as the "extrinsic persona library." This demonstrates a modular approach to inserting existing taxonomies into a synthesis pipeline.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The decoupling of two-dimensional personas has precedents in social simulation but is systematically applied here for harmful content synthesis and stress testing for the first time.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 4 classifiers $\times$ 8 static benchmarks $\times$ 3 backbones $\times$ 5-person human annotation + multi-dimensional diversity metrics.
-- Writing Quality: ⭐⭐⭐⭐ The 3D evaluation framework is clear, and the case study (Table 6) is intuitive; the math section is light, and persona examples could be integrated better into the body.
-- Value: ⭐⭐⭐⭐ Directly reveals that "existing safety benchmarks have been saturated" and provides a reusable stress-testing paradigm; significant impact for the safety research community.
+- Novelty: ⭐⭐⭐⭐ The idea of 2D persona decoupling has precedents in social simulation but is systematically used here for harmful content synthesis and stress testing for the first time.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 4 classifiers × 8 static benchmarks × 3 backbones × 5-person human evaluation + multi-dimensional diversity metrics.
+- Writing Quality: ⭐⭐⭐⭐ The three-dimensional evaluation framework is clear, and the case study (Table 6) is intuitive. 
+- Value: ⭐⭐⭐⭐ Reveals the reality that existing safety benchmarks are "saturated" and provides a reusable stress-testing paradigm.
 
 <!-- RELATED:START -->
 
@@ -136,11 +142,11 @@ The output is a collection of 3,000 synthesized harmful comments per model, whic
 
 ## Related Papers
 
+- [\[ACL 2025\] ChatBench: From Static Benchmarks to Human-AI Evaluation](../../ACL2025/llm_evaluation/chatbench_from_static_benchmarks_to_human-ai_evaluation.md)
+- [\[ACL 2025\] How Far are LLMs from Being Our Digital Twins? A Benchmark for Persona-Based Behavior Chain Simulation](../../ACL2025/llm_evaluation/how_far_are_llms_from_being_our_digital_twins_a_benchmark_for_persona-based_beha.md)
 - [\[ACL 2026\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
 - [\[ACL 2026\] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks](spence_a_syntactic_probe_for_detecting_contamination_in_nl2sql_benchmarks.md)
-- [\[ACL 2026\] BenchMarker: An Education-Inspired Toolkit for Highlighting Flaws in Multiple-Choice Benchmarks](benchmarker_an_education-inspired_toolkit_for_highlighting_flaws_in_multiple-cho.md)
-- [\[ICLR 2026\] Same Content, Different Representations: A Controlled Study for Table QA](../../ICLR2026/llm_evaluation/same_content_different_representations_a_controlled_study_for_t.md)
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ACL 2025\] Beyond One-Size-Fits-All: Tailored Benchmarks for Efficient Evaluation](../../ACL2025/llm_evaluation/beyond_one-size-fits-all_tailored_benchmarks_for_efficient_evaluation.md)
 
 </div>
 

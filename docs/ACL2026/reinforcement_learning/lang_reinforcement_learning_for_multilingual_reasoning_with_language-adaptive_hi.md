@@ -2,76 +2,85 @@
 title: >-
   [Paper Note] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance
 description: >-
-  [ACL2026][Reinforcement Learning][multilingual reasoning] LANG utilizes same-language reasoning hints to bootstrap multilingual mathematical reasoning RL…
+  [ACL 2026][Reinforcement Learning][GRPO] LANG initiates multilingual mathematical reasoning RL with same-language reasoning hints, then utilizes cosine decay and language-adaptive deactivation based on resource difficulty to improve non-English reasoning accuracy while maintaining language consistency.
 tags:
-  - "ACL2026"
-  - "Reinforcement Learning"
-  - "multilingual reasoning"
-  - "GRPO"
-  - "hint-guided RL"
-  - "language consistency"
-  - "reward sparsity"
+  - ACL 2026
+  - Reinforcement Learning
+  - GRPO
+  - hint-guided RL
+  - reward sparsity
 date: 2026-05-08
-content_hash: f7d576ffbfde019d
+content_hash: 62d703df16bb506b
 ---
-
 # LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance
 
 **Conference**: ACL2026  
 **arXiv**: [2605.22567](https://arxiv.org/abs/2605.22567)  
 **Code**: https://github.com/fmm170/LANG  
 **Area**: Reinforcement Learning / Multilingual Reasoning  
-**Keywords**: multilingual reasoning, GRPO, hint-guided RL, language consistency, reward sparsity  
+**Keywords**: Multilingual Reasoning, GRPO, hint-guided RL, language consistency, reward sparsity  
 
 ## TL;DR
-LANG utilizes same-language reasoning hints to bootstrap multilingual mathematical reasoning RL, then employs cosine decay and language-difficulty-based adaptive hint shutdown to improve non-English reasoning accuracy while maintaining language consistency.
+LANG initiates multilingual mathematical reasoning RL with same-language reasoning hints, then utilizes cosine decay and language-adaptive deactivation based on resource difficulty to improve non-English reasoning accuracy while maintaining language consistency.
 
 ## Background & Motivation
-**Background**: RLVR/GRPO has become a common approach for enhancing multi-step reasoning in large models. Models like DeepSeek-R1 demonstrate that verifiable rewards can drive models toward longer and more reliable reasoning chains. However, this path is highly English-centric; in multilingual scenarios, models must not only answer correctly but also maintain the user's input language throughout the intermediate reasoning and the final answer.
+**Background**: RLVR/GRPO has become a common path for enhancing the multi-step reasoning capabilities of LLMs. Models like DeepSeek-R1 have demonstrated that verifiable rewards can push models toward longer and more reliable reasoning chains. However, this path is highly English-centric; in multilingual scenarios, models must not only answer correctly but also maintain the user's input language throughout the intermediate reasoning and final answer.
 
-**Limitations of Prior Work**: Simply requesting "think and answer in [language]" in the prompt can improve language consistency but often at the expense of mathematical reasoning accuracy. Optimizing only for answer correctness frequently causes the reasoning chain to drift into English. The paper illustrates this contradiction using a Korean example regarding the number of divisors: language-consistent reasoning may lead to calculation errors, while correct calculations often shift to English.
+**Limitations of Prior Work**: Directly requesting the model to "think and answer in a specific language" in prompts can improve language consistency but often at the cost of mathematical reasoning accuracy. Optimizing only for answer correctness often results in the model drifting to English during the reasoning chain. The paper illustrates this contradiction with an example of counting divisors in Korean: language-consistent reasoning might result in a calculation error, while correct calculations often revert to English.
 
-**Key Challenge**: The fundamental difficulty of multilingual RL is the combination of reward sparsity and training-inference inconsistency. In low-resource languages, it is inherently difficult for the model to sample trajectories that are "correct in answer, correct in format, and consistent in language." If complete hints are provided throughout training, the model learns to depend on them, which are absent during inference.
+**Key Challenge**: The fundamental difficulty of multilingual RL lies in the combination of reward sparsity and train-inference inconsistency. In low-resource languages, it is inherently difficult for the model to sample trajectories that are "answer correct, format correct, and language consistent." If full hints are provided throughout training, the model learns to depend on them, which are absent during inference.
 
-**Goal**: The authors aim to provide sufficient scaffolding in early training to help the model find correct non-English reasoning trajectories, while progressively removing this scaffolding so the final policy can perform multilingual reasoning independently.
+**Goal**: The authors aim to provide sufficient scaffolding in early training to help the model find correct non-English reasoning trajectories while gradually removing the scaffolding so the final policy can complete multilingual reasoning independently.
 
-**Key Insight**: The paper draws on hint-guided RL and scheduled sampling, treating hints as exploration aids in early training rather than long-term input conditions. It further observes that different languages have different learning difficulties; low-resource languages require hints to be retained longer, while high-resource languages should detach from hints earlier.
+**Key Insight**: Borrowing from hint-guided RL and scheduled sampling, this paper treats hints as an exploration aid in early training rather than a long-term input condition. It further observes that different languages have different learning difficulties; low-resource languages require longer hint retention, while high-resource languages should detach from hints earlier.
 
-**Core Idea**: Replace fixed hints or pure language consistency rewards with "language-conditional hints + progressive hint decay + language-group adaptive switching" to mitigate reward sparsity and language drift in multilingual RL.
+**Core Idea**: Replace fixed hints or pure language consistency rewards with "language-conditioned hints + progressive hint decay + language-group adaptive switching" to mitigate the sparse reward and language drift problems in multilingual RL.
 
 ## Method
-The LANG method can be understood as a curriculum learning framework for multilingual reasoning. It first segments teacher-generated same-language reasoning trajectories into prefixes, which serve as hints appended to the question during early training. The hints are then gradually shortened according to the number of training steps and eventually removed. Simultaneously, the system determines when to shut off hints for each language resource group based on whether that group can stably sample trajectories with positive advantages.
 
 ### Overall Architecture
-The input consists of a mathematical problem $q$ in language $l$ and a teacher-generated same-language reasoning trajectory $h=(h_1,\dots,h_L)$. At training step $t$, LANG constructs a hint-conditioned prompt by taking the first $k_t^l=\lfloor p_t^lL\rfloor$ hint tokens/segments based on the hint ratio $p_t^l$. The policy model samples a set of outputs based on this prompt, which are then updated using GRPO according to answer accuracy, format, and language consistency.
+LANG is a curriculum learning framework for multilingual reasoning. Its core mechanism is treating same-language reasoning hints as early training "scaffolding" and progressively withdrawing them. Given a math problem $q$ in language $l$ and a same-language reasoning trajectory $h=(h_1,\ldots,h_L)$ generated by a teacher, LANG takes the first $k_t^l=\lfloor p_t^lL\rfloor$ segments at training step $t$ based on the hint ratio $p_t^l$ to construct a hint-conditioned prompt. The policy model samples outputs based on this prompt, which are then updated using GRPO with a joint reward for answer correctness, format, and language consistency. Long hints in early training solve the sampling issue for low-resource languages. As training progresses, hints are shortened until removal, transitioning the model from "following same-language trajectories" to "generating same-language reasoning." When a language group can stably sample positive instances, it enters the zero-hint regime early.
 
-In early training, the prompt contains long same-language reasoning hints to address the difficulty of sampling positive instances in low-resource languages. As training progresses, the hint ratio decreases, and the model transitions from "following same-language trajectories" to "generating same-language reasoning independently." Once the effective update rate of a language resource group exceeds a threshold, that group enters the zero-hint regime, and subsequent training uses the original question directly.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Math problem q in language l<br/>+ teacher same-language trajectory h"] --> B["Scheduled Multilingual Hint Decay<br/>Take first k_t^l segments (cosine decay p_t^l)"]
+    B --> C{"Language-adaptive Switch<br/>Positive ratio EMA of group ≥ τ?"}
+    C -->|"Yes · Switch to zero-hint"| D["Original problem prompt (no hint)"]
+    C -->|"No · Retain hint"| E["Hint-conditioned prompt<br/>Problem + first k_t^l hint segments"]
+    D --> F["Policy model samples G outputs"]
+    E --> F
+    F --> G["Conjunctive Reward GRPO<br/>Correct Answer ∧ Format ∧ Consistency → R=1, else 0"]
+    G --> H["Standardized advantage update via GRPO"]
+    H -->|"Next step t+1"| B
+```
 
 ### Key Designs
-1. **Scheduled Multilingual Hint Decay**:
-	- **Function**: Provides same-language reasoning scaffolding in early RL training and removes it gradually to prevent dependence on non-existent hints during inference.
-	- **Mechanism**: Given a hint length $L$, a prefix of length $k_t^l=\lfloor p_t^lL\rfloor$ is injected at step $t$. The paper adopts a cosine decay $p_t^l=\frac{1}{2}(1+\cos(\pi t/T))$ to smoothly reduce the ratio from a full hint to 0.
-	- **Design Motivation**: A pilot study found that fixed hints (QUESTA-style) maintain higher training reward and entropy but perform worse during testing, accompanied by increased response length and repeat scores, indicating the model learned a hint-conditioned shortcut.
 
-2. **Language-adaptive Switch**:
-	- **Function**: Allows languages with different resource levels to detach from hints at different times rather than sharing a global switch.
-	- **Mechanism**: Languages are categorized into high/mid/low resource groups. The ratio of batches where "at least one rollout produces a positive advantage" is calculated as $u_R(t)$, followed by an EMA: $\bar{u}_R(t)=\alpha\bar{u}_R(t-1)+(1-\alpha)u_R(t)$. When $\bar{u}_R(t) \geq \tau$, the language group switches to zero-hint.
-	- **Design Motivation**: High-resource languages sample correct trajectories independently more easily; excessive hints induce dependence. Conversely, early hint removal in low-resource languages leads back to reward sparsity.
+**1. Scheduled Multilingual Hint Decay: Providing early scaffolding then smoothing withdrawal to prevent hint dependency**
 
-3. **Conjunctive Reward GRPO**:
-	- **Function**: Consolidates answer correctness, format compliance, and language consistency into a single strict verifiable reward.
-	- **Mechanism**: Model outputs include a reasoning trace $o_t$ and a final answer $o_a$. The total reward $R(o)=1$ only if $R_{lc}=1$, $R_{format}=1$, and $R_{acc}=1$ are all true; otherwise, $R(o)=0$. GRPO samples $G$ outputs and updates the policy using intra-group normalized advantages.
-	- **Design Motivation**: Multilingual reasoning cannot focus solely on the final answer (causing English drift) or language consistency (sacrificing accuracy). The conjunctive reward sets "same-language and correct answer" as the sole optimization goal.
+In low-resource languages, it is difficult for models to sample "correct + formatted + consistent" trajectories. Thus, same-language hints are needed to start exploration. However, continuous full hints lead to shortcut learning. LANG uses a cosine decay $p_t^l=\frac{1}{2}(1+\cos(\pi t/T))$ to smoothly reduce the hint ratio from 1 to 0. A pilot study found that fixed hints (like QUESTA) result in higher training rewards but worse test performance and repetitive responses—typical shortcut symptoms. Cosine decay is more stable than linear or exponential decay by maintaining exploration early without late-stage dependency.
+
+**2. Language-adaptive Switch: Deciding hint detachment based on language resource difficulty**
+
+Learning difficulty varies across languages. A global schedule inevitably fails some groups—high-resource languages can sample correct trajectories early, where long hints induce dependency, while low-resource languages may revert to reward sparsity if hints are removed too soon. LANG categorizes languages into high/mid/low resource groups. For each group, it calculates the ratio $u_R(t)$ of batches where at least one rollout yields a positive advantage and applies EMA smoothing: $\bar{u}_R(t)=\alpha\bar{u}_R(t-1)+(1-\alpha)u_R(t)$. When $\bar{u}_R(t)\geq\tau$, the group switches to the zero-hint regime.
+
+**3. Conjunctive Reward GRPO: Closing exploitation loopholes with strict rewards**
+
+In multilingual reasoning, checking only the final answer allows models to "think in English and translate." Checking only consistency sacrifices accuracy. LANG combines answer correctness, format, and language consistency into a strict conjunctive reward. Given reasoning trace $o_t$ and final answer $o_a$, the total reward $R(o)=1$ only if $R_{lc}=1$, $R_{format}=1$, and $R_{acc}=1$ are all true; otherwise, $0$. In ablations, removing $R_{lc}$ caused MMATH LC&Acc to drop from 28.6 to 3.1, highlighting its importance.
 
 ### Loss & Training
-Training involves two steps: cold-start and RL. Multilingual training data is constructed from DeepMath-103K, with 0.3K samples per in-domain language for cold-start and 3K samples for GRPO. RL uses 8 rollouts, a temperature of 1.0, a learning rate of $1\times10^{-6}$, a batch size of 128, a PPO mini-batch size of 64, a maximum sequence length of 16,384, and the KL coefficient is set to 0.
+Training involves a cold-start phase followed by RL. Multilingual data was constructed from DeepMath-103K, using 0.3K samples per in-domain language for cold-start and 3K for GRPO. RL parameters include 8 rollouts, temperature 1.0, learning rate $1\times10^{-6}$, batch size 128, PPO mini-batch 64, max sequence length 16,384, and a KL coefficient of 0.
 
-Language groups are defined as: High-resource (English, German, French, Spanish, Portuguese, Italian); Mid-resource (Japanese, Chinese, Russian, Korean, Vietnamese); Low-resource (Arabic, Bengali, Thai, Swahili, Telugu, Indonesian). This grouping directly serves the language-adaptive switch.
+Language groups:
+- High-resource: English, German, French, Spanish, Portuguese, Italian.
+- Mid-resource: Japanese, Chinese, Russian, Korean, Vietnamese.
+- Low-resource: Arabic, Bengali, Thai, Swahili, Telugu, Indonesian.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper reports LC&Acc on MMATH and PolyMath, where success requires both a correct answer and language consistency between the reasoning/answer and the input. The following data for Qwen2.5-7B-Instruct reflects the gains of LANG over strong baselines.
+The paper reports LC&Acc on MMATH and PolyMath (success requires correct answer and consistent language). Average values for Qwen2.5-7B/3B show gains over strong baselines.
 
 | Dataset | Metric | Ours (LANG) | Prev. SOTA | Gain |
 |--------|------|-----------|------------|------|
@@ -80,47 +89,46 @@ The paper reports LC&Acc on MMATH and PolyMath, where success requires both a co
 | MMATH, Qwen2.5-3B | ALL-Avg. LC&Acc | 17.7 | LC-GRPO 16.8 / mGRPO 15.7 | +0.9 vs LC-GRPO |
 | PolyMath, Qwen2.5-3B | ALL-Avg. LC&Acc | 10.1 | LC-GRPO 9.5 / Vanilla GRPO 8.6 | +0.6 vs LC-GRPO |
 
-Overall conclusion: Across four evaluation models, LANG achieves an average improvement of 24.1% on MMATH and 18.7% on PolyMath compared to LC-GRPO. Gains are particularly significant for low-resource languages; for example, Thai on MMATH (Qwen2.5-7B) improved by 39.0% over mGRPO, and Vietnamese on PolyMath improved by 24.6%.
+Overall, LANG improved by an average of 24.1% on MMATH and 18.7% on PolyMath across four models. Gains are notable in low-resource languages; for Thai on Qwen2.5-7B, MMATH LC&Acc improved by 39.0% vs mGRPO.
 
 ### Ablation Study
-| Configuration | MMATH LC&Acc | PolyMath LC&Acc | Note |
+| Configuration | MMATH LC&Acc | PolyMath LC&Acc | Description |
 |------|--------------|-----------------|------|
-| LANG, cosine decay | 28.6 | 15.6 | Full method; cosine decay is best |
-| Linear decay | 27.1 | 14.6 | Uniform linear removal; slightly lower |
-| Exponential decay | 24.1 | 14.3 | Rapid early removal; insufficient exploration |
+| LANG, cosine decay | 28.6 | 15.6 | Full method |
+| Linear decay | 27.1 | 14.6 | Uniform removal, slightly weaker than cosine |
+| Exponential decay | 24.1 | 14.3 | Rapid early removal, insufficient exploration |
 | LANG w/o cold-start | 27.5 | 15.0 | Lack of initial format/language following |
-| LANG w/o $R_{lc}$ | 3.1 | 9.1 | Significant drift without consistency reward |
-| LANG w/o $p_t^l$ | 10.1 | 3.2 | Serious training-inference inconsistency |
+| LANG w/o $R_{lc}$ | 3.1 | 9.1 | Significant language drift |
+| LANG w/o $p_t^l$ | 10.1 | 3.2 | Severe train-inference inconsistency |
 
 ### Key Findings
-- LANG's gains are not due to "longer responses." While QUESTA increased response length and repetition simultaneously while performance dropped, LANG increases effective reasoning length without inducing repetitive generation.
-- Cosine decay outperforms exponential and linear decay, indicating that the rhythm of hint removal is critical: too fast leads back to reward sparsity, while too slow leads to hint dependence.
-- Non-mathematical multilingual tasks also show transfer gains: on MMLU-ProX, XWinograd, XStoryCloze, and XCOPA, LANG improves by an average of 10.9%. For Qwen2.5-7B, MMLU-ProX rose from 35.9 to 41.0, and XWinograd from 65.7 to 79.9.
-- Layer-wise logit lens analysis shows that LANG maintains high language consistency in intermediate layers, not just by translating at the final output layer.
+- LANG's gains do not come from "longer answers." While QUESTA increased length and repetition, LANG increased effective reasoning length without inducing repetition.
+- Cosine decay outperformed exponential and linear decay, indicating that hint removal rhythm is critical.
+- Non-math multilingual tasks also benefited: LANG improved by an average of 10.9% on MMLU-ProX, XWinograd, XStoryCloze, and XCOPA.
+- Layer-wise logit lens analysis showed that LANG maintains high language consistency in intermediate layers, not just during final output translation.
 
 ## Highlights & Insights
-- The most valuable observation is decomposing multilingual reasoning failure into two issues: the inability to sample positive trajectories and the over-dependence on hints. While many methods only address the former, LANG explicitly includes "removing the scaffold" as a training objective.
-- The language-adaptive switch is practical as it acknowledges that different languages do not share the same learning curve. Allowing high-resource languages to exit hints early and low-resource languages to exit late aligns better with the reality of multilingual training.
-- The conjunctive reward, though simple, provides a very clean definition: only language consistency, correct format, and a correct answer yield a reward of 1. This reduces the space for "thinking in English, answering in the target language" shortcuts.
-- The layer-wise analysis is worth emulating. Multilingual reasoning should not just verify the final string language but also check if intermediate representations have formed reasoning paths in the target language.
+- A valuable observation is splitting multilingual reasoning failure into two issues: sampling failure and hint dependency. LANG explicitly incorporates "removing scaffolding" into the training objective.
+- The language-adaptive switch is practical as it acknowledges varying learning difficulties. Allowing high-resource languages to exit hints early and low-resource languages later fits multilingual training reality.
+- The conjunctive reward design is clean and effective, reducing the space for "thinking in English" shortcuts.
+- The layer-wise analysis suggests that multilingual reasoning should be checked for consistent target-language paths in hidden representations, not just final strings.
 
 ## Limitations & Future Work
-- Authors acknowledge that multilingual hints are primarily distilled from DeepSeek-R1. Although experiments replacing the teacher with GPT-4o-mini still showed gains, teacher diversity could be improved.
-- Performance trade-offs between different languages persist. The paper suggests this relates to imbalanced multilingual data during pre-training, which LANG remediates via RL but cannot solve at the representational root.
-- The method relies on verifiable answers and language detectors, which are natural for math but harder to construct reliably for open-ended reasoning or subjective tasks.
-- Hint quality, granularity, and semantic continuity affect training. Randomly dropping hint segments disrupts semantics and degrades performance, suggesting future research into fine-grained yet semantic-preserving hint curricula.
+- Multilingual hints were primarily distilled from DeepSeek-R1. While substituting with GPT-4o-mini still yielded gains, teacher diversity could be improved.
+- Performance trade-offs between languages persist, likely due to pre-training data imbalances that RL can only partially mitigate.
+- Reliance on verifiable answers and language detectors is natural for math but harder to scale to open-ended reasoning or subjective tasks.
+- Hint granularity and semantic continuity matter; random dropping of hint segments breaks semantics, suggesting a need for more fine-grained, semantic-preserving hint curricula.
 
 ## Related Work & Insights
-- **vs Language-Constraint Prompting / DIT / QRT**: These use prompts to control language during inference. They are lightweight but often sacrifice accuracy. LANG treats consistency as an RL objective and uses hints to lower exploration difficulty.
-- **vs LC-GRPO / M-Thinker**: These introduce consistency rewards or cross-lingual alignment but still face reward sparsity in low-resource languages. LANG provides same-language hints to bootstrap exploration.
-- **vs QUESTA / StepHint-style RL**: These use hints to mitigate sparse rewards, but fixed hints cause training-inference inconsistency. LANG's key differentiator is the progressive removal based on language difficulty.
-- **Insights for Future Work**: Multilingual agent or RAG tasks could adopt similar strategies: provide same-language retrieval or reasoning hints, gradually withdraw them, and use language-group difficulty to pace the curriculum.
+- **vs Language-Constraint Prompting / DIT / QRT**: These control language at inference via prompts—lightweight but often sacrificing accuracy. LANG makes consistency a training objective.
+- **vs LC-GRPO / M-Thinker**: These introduce rewards or cross-lingual thinking alignment but still face reward sparsity in low resources. LANG uses hints to bridge the exploration gap.
+- **vs QUESTA / StepHint**: These use hints for sparse rewards but suffer from train-test inconsistency due to fixed hints. LANG's key differentiator is progressive removal and difficulty-aware scheduling.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Combines hint-guided RL, scheduled decay, and language-adaptive switches; clear problem definition and effective mechanism.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers various datasets (math and non-math), multiple models, and extensive ablations; systematic analysis of hint quality could be deeper.
-- Writing Quality: ⭐⭐⭐⭐☆ Complete logical chain; pilot study is persuasive; large main tables are data-dense.
-- Value: ⭐⭐⭐⭐⭐ Highly relevant for multilingual RL and low-resource reasoning; suitable for systems requiring simultaneous optimization of accuracy and interpretability.
+- Novelty: ⭐⭐⭐⭐☆ Combines hint-guided RL, scheduled decay, and adaptive switching for multilingual reasoning. Clear problem definition.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple datasets, non-math tasks, and models. Could use more systematic analysis of hint quality.
+- Writing Quality: ⭐⭐⭐⭐☆ Strong motivation and convincing pilot studies. Results tables are dense.
+- Value: ⭐⭐⭐⭐⭐ Highly relevant for multilingual RL and low-resource reasoning systems needing both accuracy and consistency.
 
 <!-- RELATED:START -->
 
@@ -129,8 +137,8 @@ Overall conclusion: Across four evaluation models, LANG achieves an average impr
 ## Related Papers
 
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](../../AAAI2026/reinforcement_learning/mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
-- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](../../NeurIPS2025/reinforcement_learning/when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
+- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](../../AAAI2026/reinforcement_learning/vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
 - [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
 

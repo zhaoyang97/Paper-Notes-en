@@ -2,65 +2,67 @@
 title: >-
   [Paper Note] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 description: >-
-  [CVPR2026][Medical Imaging][Medical Image Segmentation] Built upon frozen CLIP encoders, MedCLIPSeg introduces a probabilistic cross-modal attention adapter (PVL) that enables bidirectional vision-language interaction an…
+  [CVPR 2026][Medical Imaging][Paper Note] Building on frozen CLIP encoders, this work achieves bidirectional image-text interaction and prediction uncertainty modeling through Probabilistic Vision-Language (PVL) adaptation. Combined with a soft patch-level contrastive loss, it balances data efficiency, domain generalization, and interpretability across 16 medi
 tags:
-  - "CVPR2026"
-  - "Medical Imaging"
-  - "Medical Image Segmentation"
-  - "CLIP Adaptation"
-  - "Probabilistic Attention"
-  - "Uncertainty Modeling"
-  - "Cross-Modal Fusion"
-  - "Data Efficiency"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 46c4bbdf70a5cce3
+content_hash: 822944b8ee2e1481
 ---
-
 # MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 
 **Conference**: CVPR2026  
 **arXiv**: [2602.20423](https://arxiv.org/abs/2602.20423)  
 **Code**: [HealthX-Lab/MedCLIPSeg](https://github.com/HealthX-Lab/MedCLIPSeg)  
 **Area**: Medical Imaging  
-**Keywords**: Medical Image Segmentation, CLIP Adaptation, Probabilistic Attention, Uncertainty Modeling, Cross-Modal Fusion, Data Efficiency
+**Keywords**: Medical Image Segmentation, CLIP Adaptation, Probabilistic Attention, Uncertainty Modeling, Cross-modal Fusion, Data-efficient
 
 ## TL;DR
 
-Built upon frozen CLIP encoders, MedCLIPSeg introduces a probabilistic cross-modal attention adapter (PVL) that enables bidirectional vision-language interaction and explicit prediction uncertainty modeling, complemented by a soft patch-level contrastive loss. The method achieves strong data efficiency, domain generalization, and interpretability across 16 medical segmentation datasets.
+Building on frozen CLIP encoders, this work achieves bidirectional image-text interaction and prediction uncertainty modeling through Probabilistic Vision-Language (PVL) adaptation. Combined with a soft patch-level contrastive loss, it balances data efficiency, domain generalization, and interpretability across 16 medical segmentation datasets.
 
 ## Background & Motivation
 
-Medical image segmentation has long been constrained by three core bottlenecks: scarcity of annotated data (due to the high cost of expert labeling), ambiguous anatomical boundaries (caused by low soft-tissue contrast), and domain shift across different devices and institutions. While vision-language pre-trained models such as CLIP provide powerful cross-modal representations, existing approaches either exploit only image-level CLIP features for coarse-grained alignment or lack explicit modeling of segmentation prediction uncertainty. This leads to rapid performance degradation under limited annotations and insufficient robustness in cross-domain scenarios.
+Medical image segmentation is long constrained by three core bottlenecks: scarcity of annotated data (extremely high cost for expert labeling), ambiguous anatomical boundaries (low soft-tissue contrast), and domain shift across different devices or institutions. While vision-language pre-trained models like CLIP provide powerful cross-modal representations, existing works either utilize image-level CLIP features for coarse alignment or lack explicit modeling of segmentation prediction uncertainty. This leads to sharp performance degradation under low-data regimes and insufficient robustness in cross-domain scenarios.
 
-The authors identify three critical gaps: (1) most existing CLIP adaptation methods perform unidirectional text→image guidance, lacking bidirectional interaction; (2) standard deterministic attention cannot express confidence differences across patch features; (3) global contrastive losses are too coarse to encourage fine-grained semantic alignment at the patch level. MedCLIPSeg addresses all three gaps simultaneously.
+The authors identify three critical gaps: (1) most existing CLIP adaptation schemes perform unidirectional text $\to$ image guidance, lacking bidirectional interaction; (2) standard deterministic attention cannot express differences in confidence across various patch features; (3) global contrastive losses are too coarse to encourage fine-grained patch-level semantic alignment. MedCLIPSeg addresses these problems simultaneously from these perspectives.
 
 ## Method
 
 ### Overall Architecture
 
-MedCLIPSeg is built upon frozen CLIP dual encoders (using UniMedCLIP as the default backbone). Input medical images are processed by the visual encoder to extract patch-level embeddings, while text descriptions (containing information such as organ location and imaging modality) are processed by the text encoder to extract token-level embeddings. The core innovation lies in inserting learnable **Probabilistic Vision-Language (PVL) adapters** at intermediate layers of the CLIP encoders to achieve bidirectional fusion between image and text tokens. The fused visual features are then fed into a lightweight segmentation decoder to produce segmentation masks. The training loss consists of a segmentation loss and a soft patch-level contrastive loss.
+MedCLIPSeg aims to solve the classic challenges of medical segmentation—data scarcity, boundary ambiguity, and domain shift—by refining the use of CLIP's cross-modal priors. The framework is built on frozen CLIP dual-encoders (defaulting to a UniMedCLIP backbone): input medical images generate patch-level embeddings via the vision encoder, while text descriptions (containing organ location, imaging modality, etc.) generate token-level embeddings via the text encoder. Learnable **Probabilistic Vision-Language (PVL) adapters** are inserted into multiple intermediate layers of CLIP for bidirectional fusion. Instead of a conventional decoder, segmentation utilizes CLIP’s native image-text similarity: the fused text [EOS] embedding is dot-producted with upsampled vision patches, followed by bilinear interpolation to produce the mask. Simultaneously, the probability distributions learned by the adapters are reused during inference for Monte Carlo sampling to generate a pixel-wise uncertainty map. The training loss consists of a segmentation loss and a soft patch-level contrastive loss, while only the PVL adapters and a lightweight segmentation head are trained; the encoders remain frozen throughout.
 
-### Key Design 1: Probabilistic Cross-Modal Attention (PVL Adapter)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420}}}%%
+flowchart TD
+    A["Medical Image + Text Prompt<br/>(Organ / Modality)"] --> B["Frozen CLIP Dual-Encoders<br/>Vision Patch Embeddings + Text Token Embeddings"]
+    B --> C["Probabilistic Vision-Language Adapter (PVL)<br/>K/V as Gaussian Distributions + Confidence-weighted Attention<br/>Image↔Text Bidirectional Interaction + Residual Gating"]
+    C --> D["Pixel-Text Similarity<br/>Text · Upsampled Patch → Bilinear Interpolated Mask"]
+    C -->|Reusing Value Distribution at Test Time| E["Pixel-level Uncertainty Estimation<br/>MC Sampling: Mean=Mask / Entropy=Uncertainty Map"]
+    C --> F["Soft Patch-level Contrastive Loss<br/>Region Embeddings ↔ Text Soft Targets"]
+    D --> G["Segmentation Loss (Dice + BCE)"]
+    F --> G
+    G --> H["Only train PVL Adapters + Seg Head<br/>CLIP Encoders remain frozen"]
+```
 
-The PVL adapter is the central contribution of this work. Unlike standard cross-attention, PVL models Keys and Values as Gaussian distributions rather than deterministic vectors:
+### Key Designs
 
-- **Variational Keys/Values**: For each token, learnable projections predict a mean $\mu$ and variance $\sigma^2$, yielding Key $\sim \mathcal{N}(\mu_K, \sigma^2_K)$ and Value $\sim \mathcal{N}(\mu_V, \sigma^2_V)$. High variance indicates semantic uncertainty in that token, while low variance indicates high confidence.
-- **Confidence-weighted Attention**: Attention weights consider not only Query-Key similarity but are also weighted by the inverse of the Key variance (i.e., uncertainty). Tokens with high uncertainty are automatically down-weighted, allowing the model to focus on reliable features. The confidence weighting is controlled by a hyperparameter $\beta$.
-- **Bidirectional Interaction**: The PVL adapter operates in both directions — visual patch tokens querying text tokens (text→image) and text tokens querying visual patch tokens (image→text). A residual gating mechanism fuses the adapted features with the original CLIP features.
+**1. Probabilistic Vision-Language (PVL) Adapter: Modeling Key/Value as Distributions for Fusion and Uncertainty**
 
-This probabilistic formulation enables the model to identify and suppress noisy or ambiguous features at the attention stage, which is particularly effective for the boundary ambiguity and artifacts commonly encountered in medical imaging.
+Existing CLIP adaptations are mostly unidirectional text $\to$ image guidance using deterministic attention, which cannot express the reliability of patch features. PVL models the Key and Value of each token as Gaussian distributions instead of deterministic vectors: learnable projections predict the mean and log-variance (converted to variance via softplus), resulting in $\text{Key} \sim \mathcal{N}(\mu_K, \sigma_K^2)$ and $\text{Value} \sim \mathcal{N}(\mu_V, \sigma_V^2)$. High variance represents semantic uncertainty, while low variance represents high confidence. The attention score incorporates not just the Query-Key mean similarity $S_\mu$, but also a confidence penalty term $\beta S_\sigma$ derived from the Key variance (i.e., $A = \text{softmax}(S_\mu - \beta S_\sigma)$, where $\beta=2.35$ corresponds to the Gaussian FWHM). Thus, high-variance, unreliable tokens are suppressed and automatically down-weighted before the softmax (degenerating to standard attention when $\beta=0$). PVL operates bidirectionally—vision patches query text tokens (text $\to$ image) and text tokens query vision patches (image $\to$ text)—integrated via a learnable residual gate $g$ to fuse adapted features with original CLIP features ($Y = g\odot O + (1-g)\odot X$). Modeling uncertainty within the attention stage allows the model to suppress noise and ambiguous features during fusion, which is particularly effective for blurred boundaries and artifacts common in medical images.
 
-### Key Design 2: Pixel-level Uncertainty Estimation
+**2. Pixel-level Uncertainty Estimation: Reusing Value Distributions for a "Free" Reliability Map**
 
-Leveraging the probabilistic distribution over Values, the model performs Monte Carlo sampling at inference time to generate multiple predictions. Their mean serves as the final segmentation mask, and their entropy is computed as a per-pixel uncertainty map. The uncertainty map intuitively indicates which regions have reliable segmentation results and which are ambiguous — a capability with significant clinical decision-support value. Experiments show that uncertainty hotspots consistently concentrate at anatomical boundaries and challenging regions, with consistent behavior on both in-distribution and out-of-distribution data.
+Deterministic models provide only a final segmentation, but clinical scenarios require knowing which areas are trustworthy. MedCLIPSeg reuses the PVL Value distribution: efficiency is maintained during training via the reparameterization trick with a single sample, while multiple random forward passes (30 times in experiments) are performed during testing. The mean serves as the final mask, and the predictive entropy is calculated as a pixel-wise uncertainty map. Here, variance captures aleatoric uncertainty from the data, while MC sampling captures epistemic uncertainty from the model. This map visually highlights segmentation ambiguities, with uncertainty hotspots consistently aligning with anatomical boundaries and difficult regions across both internal and external domains, serving as an automatic quality control signal for deployment.
 
-### Key Design 3: Soft Patch-Level Contrastive Loss
+**3. Soft Patch-level Contrastive Loss: Refining Alignment from Image-level to Patch-level with Soft Targets**
 
-Conventional image-text contrastive losses operate at the image level, providing overly coarse supervision. MedCLIPSeg proposes patch-level contrastive learning with soft targets rather than hard positive/negative labels. Specifically, for each visual patch, the model computes its similarity to multiple text descriptions (paraphrases, descriptions at varying levels of detail, etc.), and the resulting softmax distribution serves as the supervision signal. This encourages the model to learn fine-grained semantic distinctions rather than simple binary match/mismatch judgments, thereby improving generalization under limited annotations.
+Global image-text contrastive losses align at the image level, which is too coarse to encourage fine-grained semantic differentiation. MedCLIPSeg performs contrastive learning at the patch level: vision patch embeddings are first average-pooled into stable region representations to preserve local semantics while reducing token noise, then subjected to bidirectional contrast with text embeddings. Crucially, soft targets replace hard positive/negative samples—since text prompts within a batch are often similar (describing similar anatomy), the similarity between text descriptions is passed through a softmax (temperature $\tau=0.2$) to serve as a soft supervision target $G$. This teaches the model the continuous semantic relationship of "which descriptions this region resembles most" rather than simple binary matching, leading to better generalization under limited labels.
 
 ## Key Experimental Results
 
-### Data Efficiency Evaluation (Average DSC/NSD with 10%/25%/50%/100% training data)
+### Data Efficiency Evaluation (Average DSC/NSD using 10%/25%/50%/100% training data)
 
 | Method | 10% DSC | 10% NSD | 50% DSC | 50% NSD | 100% DSC | 100% NSD |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -72,66 +74,60 @@ Conventional image-text contrastive losses operate at the image level, providing
 | MaPLe + Decoder | 74.81 | 77.90 | 82.81 | 85.80 | 84.94 | 87.91 |
 | **MedCLIPSeg** | **81.10** | **83.94** | **87.18** | **89.95** | **88.66** | **91.35** |
 
-MedCLIPSeg substantially outperforms all baselines across all data regimes. At only 10% of training data, it achieves a DSC of 81.10, surpassing the second-best method CAT-Seg (78.76) by 2.34 points; at 100% data, it reaches 88.66 DSC, leading CAT-Seg by 2.76 points.
+MedCLIPSeg significantly outperforms all baselines across all data ratios. Notably, with only 10% data, it achieves 81.10 DSC, surpassing the runner-up CAT-Seg (78.76) by 2.34 points; at 100% data, it reaches 88.66 DSC, leading CAT-Seg by 2.76 points.
 
-### Ablation Study (DSC, ID/OOD/Harmonic Mean)
+### Ablation Study (DSC for ID/OOD/Harmonic Mean)
 
-| Ablation | ID | OOD | HM |
+| Ablation Item | ID | OOD | HM |
 |:---|:---:|:---:|:---:|
 | **MedCLIPSeg (Full)** | **89.11** | **79.02** | **83.76** |
 | w/o PVL Adapter | 81.23 (−7.88) | 55.23 (−23.79) | 65.75 (−18.01) |
-| Deterministic (w/o probabilistic modeling) | 87.68 (−1.43) | 63.12 (−15.90) | 73.40 (−10.36) |
+| Deterministic Version (w/o Probabilistic) | 87.68 (−1.43) | 63.12 (−15.90) | 73.40 (−10.36) |
 | w/o Visual Adaptation | 81.50 (−7.61) | 64.40 (−14.62) | 71.95 (−11.81) |
 | w/o Bidirectional Interaction | 88.71 (−0.40) | 77.71 (−1.31) | 82.85 (−0.91) |
 | w/o Soft Contrastive Loss | 87.24 (−1.87) | 77.08 (−1.94) | 81.84 (−1.92) |
-| Hard-target Contrastive | 88.34 (−0.77) | 77.64 (−1.38) | 82.65 (−1.11) |
+| w/ Hard Target Contrast | 88.34 (−0.77) | 77.64 (−1.38) | 82.65 (−1.11) |
 
-Two critical findings: (1) the PVL adapter is the most essential component — its removal causes a 23.79-point drop in OOD performance; (2) probabilistic modeling is crucial for domain generalization — the deterministic variant drops only 1.43 on ID but 15.90 on OOD.
+Two key findings: (1) The PVL adapter is the core component, moving which drops OOD by 23.79 points; (2) Probabilistic modeling is vital for domain generalization—the deterministic version only drops 1.43 points ID, but crashes by 15.90 points OOD.
 
 ## Key Findings
 
-- **Probabilistic modeling contributes far more to domain generalization than to in-domain performance**: the deterministic variant drops only 1.43 on ID but 15.90 on OOD, indicating that uncertainty modeling primarily helps the model suppress unreliable features under distribution shift.
-- **Visual adaptation is more critical than text adaptation**: removing visual adaptation causes drops of 7.61/14.62 (ID/OOD), while removing text adaptation causes only 0.28/2.62 drops, suggesting that cross-modal enhancement on the visual side is the bottleneck for segmentation.
-- **Sensitivity to text prompt design**: contradictory descriptions reduce HM from 83.76 to 65.79; insufficient descriptions reduce it to 56.82; over-detailed descriptions reduce it to 78.48, demonstrating significant sensitivity to prompt quality.
-- **Backbone selection**: UniMedCLIP > BiomedCLIP (82.48) > vanilla CLIP (81.07) > PubMedCLIP (79.28), confirming that medically pre-trained CLIP backbones substantially outperform general-purpose CLIP.
-- **Adapter insertion depth**: inserting PVL adapters at approximately layer 10 yields the best results; too shallow insertion provides insufficient semantics, while too deep insertion disrupts high-level abstractions.
+- **Probabilistic modeling contributes significantly more to OOD than ID**: Deterministic MedCLIPSeg drops only 1.43 in ID but 15.90 in OOD, indicating the primary value of uncertainty modeling is allowing the model to automatically reduce reliance on unreliable features when facing distribution shifts.
+- **Visual adaptation is more critical than text adaptation**: Removing visual adaptation drops 7.61/14.62 (ID/OOD), while removing text adaptation only drops 0.28/2.62, suggesting cross-modal enhancement on the visual side is the bottleneck for segmentation.
+- **Sensitivity to text prompt design**: Contradictory descriptions cause HM to drop from 83.76 to 65.79; insufficient descriptions drop it to 56.82; and over-description drops it to 78.48. This indicates that prompt quality significantly impacts performance.
+- **Backbone Selection**: UniMedCLIP > BiomedCLIP (82.48) > Original CLIP (81.07) > PubMedCLIP (79.28). Medical-domain pre-trained CLIP models clearly outperform general-purpose CLIP.
+- **Hierarchical Intervention Depth**: The PVL adapter performs best when introduced around the 10th layer; too shallow lacks semantic depth, while too deep affects high-level abstraction.
 
 ## Highlights & Insights
 
-1. **Elegant use of probabilistic attention**: modeling Keys and Values as distributions rather than vectors elegantly unifies cross-modal fusion and uncertainty estimation in a single mechanism — a design principle readily transferable to other dense prediction tasks.
-2. **Frozen encoder + lightweight adapter**: the CLIP encoders are fully frozen; only the PVL adapters and decoder are trained, making the approach parameter-efficient, preserving pre-trained knowledge, and deployment-friendly.
-3. **Comprehensive domain generalization evaluation**: 16 datasets, 5 imaging modalities (CT, MRI, ultrasound, endoscopy, dermoscopy), and 6 organ types, with both in-domain and out-of-domain splits, providing strong empirical evidence.
-4. **Clinical value of uncertainty maps**: uncertainty and segmentation quality are highly correlated, making the uncertainty map a natural automatic quality-control signal to alert clinicians about unreliable segmentation regions.
-5. **Generalization gain from soft contrastive loss**: the improvement from hard to soft targets is modest (HM +1.11) but nearly cost-free, demonstrating the value of fine-grained contrastive learning.
+1. **Elegant Use of Probabilistic Attention**: Modeling Key/Value as distributions instead of vectors elegantly unifies cross-modal fusion and uncertainty estimation. This concept is highly generalizable to other dense prediction tasks.
+2. **Frozen Encoders + Lightweight Adapters**: Completely freezing CLIP encoders and only training PVL adapters and the decoder is parameter-efficient, preserves pre-trained knowledge, and is friendly for practical deployment.
+3. **Thorough Domain Generalization Experiments**: 16 datasets across 5 imaging modalities (CT, MRI, Ultrasound, Endoscopy, Dermoscopy) and 6 organs provide strong empirical evidence for both in-domain and out-of-domain scenarios.
+4. **Clinical Value of Uncertainty Maps**: Uncertainty is highly correlated with segmentation quality, serving as an automatic quality control signal to alert clinicians to review unreliable segmentation regions.
+5. **Generalization Gain from Soft Contrastive Loss**: The improvement from hard to soft targets (HM +1.11) is achieved at almost zero cost, demonstrating the value of fine-grained contrastive learning.
 
 ## Limitations & Future Work
 
-- Text prompts require manual design including organ location and imaging modality information; automated prompt generation could further lower the barrier to use.
-- Monte Carlo sampling increases inference time; deployment requires balancing the number of samples against computational efficiency.
-- The current method operates on 2D slices and has not been extended to native 3D volumetric segmentation.
-- Training and test modalities in the domain generalization experiments partially overlap; generalization to entirely unseen modalities (e.g., OCT) has not been validated.
-- Probabilistic modeling introduces additional hyperparameters ($\beta$, number of samples, etc.) whose optimal settings may vary across datasets.
+- Text prompts currently require manual design (organ location, modality, etc.); automated prompt generation could further lower the barrier to use.
+- Monte Carlo sampling increases inference time; practical deployment requires a trade-off between the number of samples and efficiency.
+- Currently processes 2D slices without extension to native 3D volumetric data segmentation.
+- Domain generalization experiments involve some overlap in modalities between training and testing; generalization to completely unseen modalities (e.g., OCT) remains unverified.
+- Probabilistic modeling introduces additional hyperparameters ($\beta$, sample count), and optimal settings may vary across datasets.
 
 ## Related Work & Insights
 
-- **CLIPSeg / DenseCLIP / ZegCLIP**: these methods directly apply CLIP features for segmentation but lack probabilistic modeling and fine-grained contrastive losses. MedCLIPSeg significantly outperforms them across all settings, with particularly large margins in low-data and cross-domain scenarios.
-- **VLSM-Adapter**: similarly adapts CLIP but with only unidirectional (text→visual) interaction and deterministic attention. MedCLIPSeg's bidirectional probabilistic adaptation substantially outperforms it (HM higher by ~3.5 points).
-- **CAT-Seg**: a strong baseline using cost aggregation for segmentation, but similarly lacks uncertainty modeling and exhibits weaker domain generalization than MedCLIPSeg.
-- **CausalCLIPSeg**: introduces causal reasoning to improve generalization but exhibits unstable OOD performance (HM 57.54), far below MedCLIPSeg's 80.80.
-- **nnU-Net**: represents the upper bound for pure vision-based methods, but the gap under low data (10% DSC: 73.45 vs. 81.10) is substantial.
-
-**Further connections**:
-- The probabilistic attention mechanism could be transferred to general CLIP segmentation methods (e.g., CAT-Seg, SAN) to explore its effectiveness in open-vocabulary natural image segmentation.
-- Uncertainty maps combined with active learning could automatically select high-uncertainty samples for annotation requests, further reducing labeling costs.
-- Integration with foundation models such as SAM: the probabilistic fusion module may serve as a replacement for SAM's prompt encoder.
-- The soft contrastive loss is generalizable to other multi-prompt settings, such as VQA and referring segmentation.
+- **CLIPSeg / DenseCLIP / ZegCLIP**: These methods directly use CLIP features for segmentation but lack probabilistic modeling and fine-grained contrastive loss. MedCLIPSeg leads significantly in all settings, especially in low-data/cross-domain scenarios.
+- **VLSM-Adapter**: Also performs CLIP adaptation but features only unidirectional (text $\to$ vision) interaction and deterministic attention. MedCLIPSeg’s bidirectional probabilistic adaptation significantly outperforms it (HM higher by ~3.5 points).
+- **CAT-Seg**: A strong baseline using cost aggregation for segmentation but lacks uncertainty modeling, showing weaker domain generalization than MedCLIPSeg.
+- **CausalCLIPSeg**: Introduces causal inference for generalization but exhibits unstable performance in OOD scenarios (HM 57.54), far below MedCLIPSeg’s 80.80.
+- **nnU-Net**: The gold standard for pure vision methods but shows a clear gap in low-data regimes (10% DSC 73.45 vs 81.10).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Probabilistic cross-modal attention is a meaningful design contribution, though the overall framework is a natural extension of CLIP adaptation)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (16 datasets, 5 modalities, extensive ablations — highly thorough)
-- Writing Quality: ⭐⭐⭐⭐ (Clear and well-organized, with rich figures and tables)
-- Value: ⭐⭐⭐⭐ (The generalization gains from probabilistic modeling are impressive, with clear clinical deployment potential)
+- Novelty: ⭐⭐⭐⭐ (Probabilistic cross-modal attention is a creative design, though the overall framework is a natural extension of CLIP adaptation)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (16 datasets, 5 modalities, detailed ablations; very comprehensive)
+- Writing Quality: ⭐⭐⭐⭐ (Clear, structured, and feature-rich tables/figures)
+- Value: ⭐⭐⭐⭐ (The gain from probabilistic modeling for domain generalization is impressive and shows potential for clinical deployment)
 
 <!-- RELATED:START -->
 
@@ -140,10 +136,10 @@ Two critical findings: (1) the PVL adapter is the most essential component — i
 ## Related Papers
 
 - [\[CVPR 2026\] Decoupling Vision and Language: Codebook Anchored Visual Adaptation](decoupling_vision_and_language_codebook_anchored_visual_adaptation.md)
-- [\[CVPR 2026\] T-Gated Adapter: A Lightweight Temporal Adapter for Vision-Language Medical Segmentation](t-gated_adapter_a_lightweight_temporal_adapter_for_vision-language_medical_segme.md)
-- [\[CVPR 2026\] From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation](apex_adaptive_visual_prompting.md)
 - [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
-- [\[CVPR 2026\] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical.md)
+- [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](../../AAAI2026/medical_imaging/denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
+- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
 
 </div>
 

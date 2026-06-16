@@ -2,74 +2,88 @@
 title: >-
   [Paper Note] Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration
 description: >-
-  [ICML 2026][Medical Imaging][WSI] This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation…
+  [ICML 2026][Medical Imaging][WSI] This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation. It then progressively injects cross-institutional synthetic features into local training via curriculum learning. This allows institutions to collabor
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "WSI"
-  - "Multi-Instance Learning"
-  - "Gaussian Mixture"
-  - "Federated Distillation"
-  - "Curriculum Learning"
+  - ICML 2026
+  - Medical Imaging
+  - WSI
+  - Gaussian Mixture
 date: 2026-05-08
-content_hash: e7575fbe787d2a83
+content_hash: 1fe6a1d3e1a22773
 ---
-
 # Federated Distillation for Whole Slide Image via Gaussian-Mixture Feature Alignment and Curriculum Integration
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00578](https://arxiv.org/abs/2605.00578)  
 **Code**: No public link  
 **Area**: Federated Learning / Pathology / Dataset Distillation  
-**Keywords**: WSI, Multi-Instance Learning, Gaussian Mixture, Federated Distillation, Curriculum Learning
+**Keywords**: WSI, Multi-instance Learning, Gaussian Mixture, Federated Distillation, Curriculum Learning
 
 ## TL;DR
-This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation, then progressively injects cross-institutional synthetic features into local training via curriculum learning. This enables collaboration without sharing raw data or exchanging model parameters and maintains compatibility with heterogeneous MIL architectures and feature extractors. FedHD comprehensively outperforms existing federated and distillation baselines on TCGA-IDH / CAMELYON16 / CAMELYON17.
+This paper proposes FedHD: In heterogeneous federated pathology scenarios, it employs Gaussian-mixture feature alignment for "one-to-one" WSI feature-level distillation. It then progressively injects cross-institutional synthetic features into local training via curriculum learning. This allows institutions to collaborate without sharing raw data or exchanging model parameters. Compatible with heterogeneous MIL architectures and feature extractors, it comprehensively outperforms existing federated and distillation baselines on TCGA-IDH, CAMELYON16, and CAMELYON17.
 
 ## Background & Motivation
-**Background**: Cancer diagnosis using WSI (gigapixel Whole Slide Images) relies on MIL (CLAM, TransMIL, ACMIL, etc.). However, single-center data is scarce, and privacy regulations limit cross-institutional sharing, making federated learning a natural solution. Real-world hospitals vary significantly in compute power and modeling preferences, often using different feature extractors (ResNet50/UNI/PhV2) and MIL architectures, resulting in "unalignable parameter spaces" for traditional parameter averaging (FedAvg, FedMut, FedImpro).
+**Background**: Cancer diagnosis using WSI (gigapixel Whole Slide Images) relies on MIL (such as CLAM, TransMIL, ACMIL). However, data scarcity at single centers and privacy regulations restricting cross-institutional sharing make Federated Learning (FL) a natural solution. Nevertheless, real-world hospitals vary significantly in computational power and modeling preferences, often utilizing different feature extractors (ResNet50/UNI/PhV2) and MIL architectures, leading to "non-alignable parameter spaces" for traditional parameter averaging (FedAvg, FedMut, FedImpro).
 
-**Limitations of Prior Work**: (1) Federated Data Distillation (FedDD) addresses parameter incompatibility by sharing synthetic datasets, but existing methods are designed for natural images: (a) single Gaussian/mean matching assumptions fail to characterize the **multi-component distribution** of patch features within WSIs (coexistence of different morphological components); (b) pursuit of extreme compression (compressing thousands of patches into a few synthetic images) causes over-compression for WSIs, which already have small sample sizes and high inter-slide heterogeneity, leading to loss of fine-grained diagnostic cues.
+**Limitations of Prior Work**: (1) Federated Data Distillation (FedDD) addresses parameter incompatibility by sharing synthetic datasets, but existing methods designed for natural images face issues: (a) Single Gaussian/mean matching assumptions fail to characterize the **multi-component distribution** of patch features within WSIs (where different morphological components coexist); (b) Pursuing extreme compression (reducing thousands of patches into a few synthetic images) causes over-compression for WSIs, which already have small sample sizes and high inter-slide heterogeneity, resulting in the loss of fine-grained diagnostic cues.
 
-**Key Challenge**: The collision of "small sample size + large intra-class heterogeneity + client model heterogeneity" causes traditional DD "extreme compression + single-component matching" assumptions to fail, while parameter-sharing methods like FedAvg remain inapplicable.
+**Key Challenge**: The convergence of "small sample size + high intra-class heterogeneity + heterogeneous client models" in WSI makes the "extreme compression + single-component matching" assumptions of traditional DD fail, while parameter-sharing methods like FedAvg remain inapplicable.
 
-**Goal**: (1) Enable each client to independently generate synthetic features that retain diagnostic details and can be utilized by any MIL architecture; (2) Avoid domain shift caused by direct concatenation during cross-institutional integration; (3) Ensure interpretability (critical in medical scenarios).
+**Goal**: (1) Enable each client to independently generate synthetic features that retain diagnostic details and can be utilized by any MIL architecture; (2) Avoid domain shifts caused by direct concatenation during cross-institutional integration; (3) Ensure interpretability (critical in medical scenarios).
 
-**Key Insight**: Start from patch-level embeddings rather than pixels—this fits the MIL pipeline and reduces distillation dimensionality from $256\times 256\times 3$ to $\mathbb{R}^d$. Introduce "one-to-one" slide-level synthesis (each real slide corresponds to one synthetic slide) instead of "many-to-one" aggregation to avoid losing slide-level diversity.
+**Key Insight**: Start from patch-level embeddings rather than pixel-level—this fits the MIL pipeline and reduces distillation dimensions from $256\times 256\times 3$ to $\mathbb{R}^d$. Introduce "one-to-one" slide-level synthesis (one synthetic slide per real slide) instead of "many-to-one" aggregation to prevent the loss of slide-level diversity.
 
-**Core Idea**: Model WSI patch features as a 16-component GMM and align the mean and covariance of each component in the synthetic set (rather than a single global mean), performing one-to-one distillation per slide. During the federated phase, use curriculum learning—allow the local model to converge on real data first, then progressively introduce synthetic features from other clients as auxiliary supervision.
+**Core Idea**: Model WSI patch features as a 16-component GMM, aligning the mean and covariance of each component in the synthetic set (rather than a single global mean), and perform one-to-one distillation per slide. In the federated phase, use curriculum learning: allow local models to converge on real data first, then gradually introduce synthetic features from other clients as auxiliary supervision.
 
 ## Method
 
 ### Overall Architecture
-FedHD operates in two stages: "local distillation + curriculum federation": (i) At each client $c$, for each real slide $x_i^{(c)}$ (containing $K$ patch embeddings $b_k^{i,c}\in\mathbb{R}^d$), the real distribution is modeled via GMM as $P_\text{real}^{(c,i)}\approx \sum_m \pi_m \mathcal{N}(\mu_m^{(c,i)},\Sigma_m^{(c,i)})$. A synthetic slide $h_i^{(c)}$ of the same size (containing $T$ learnable patch embeddings) is optimized to align its GMM with the real GMM using Frobenius alignment of means and covariances. (ii) Clients upload $\{h_i^{(c)}\}$ to the server, which aggregates and distributes synthetic slides from all other clients as $\mathcal{H}_\text{global}^{(c)}$. (iii) Clients first train local MIL models on real data, then gradually incorporate $\mathcal{H}_\text{global}^{(c)}$ after epoch $t_0$, using a GCE noise-robust loss for joint training. An optional FastGAN generator can invert synthetic embeddings into pseudo-patches for visualization.
+FedHD splits collaboration into two stages: "Local Distillation + Curriculum Federation," exchanging neither raw slides nor model parameters throughout. The first stage occurs within each client $c$: the feature distribution of each real slide $x_i^{(c)}$ (containing $K$ patch embeddings $b_k^{i,c}\in\mathbb{R}^d$) is fitted to a GMM. A synthetic slide $h_i^{(c)}$ of the same size (containing $T$ learnable patch embeddings) is optimized to approximate the real GMM in terms of means and covariances. Thus, synthetic slides become "condensed proxies" in the feature space. The second stage involves cross-institutional integration: clients upload synthetic slides $\{h_i^{(c)}\}$, and the server aggregates and redistributes $\mathcal{H}_\text{global}^{(c)}$ (synthetic slides from all other clients). The local model first trains on real data to build a foundation; after round $t_0$, it progressively introduces external synthetic features via curriculum learning using a noise-robust loss. An optional FastGAN generator can decode synthetic embeddings into pseudo-patches for human verification.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Real slide x_i<br/>K patch embeddings"] --> LOCAL
+    subgraph LOCAL["Local Distillation (Inside Client c)"]
+        direction TB
+        B["Gaussian Mixture Feature Alignment<br/>Fit 16-component GMM, Align Mean+Covariance"]
+        B --> C["One-to-One Slide-level Distillation<br/>1 Synthetic Slide per Real Slide (T=1000 patches)"]
+    end
+    LOCAL --> D["Upload Synthetic Slide h_i^(c)"]
+    D --> E["Server Aggregates External Synthetic Slides<br/>Distributes H_global^(c)"]
+    subgraph FED["Curriculum Federated Integration (Local MIL Training)"]
+        direction TB
+        F["t < t0=30: Training on Real Data Only"]
+        F -->|"t ≥ t0 Progressive Introduction"| G["Introduce External Synthetic Features<br/>Joint Training with GCE Noise-Robust Loss"]
+    end
+    E --> F
+    G --> H["Final MIL Model"]
+    C -.Optional.-> I["FastGAN Decodes Pseudo-patches<br/>For Physician Review"]
+```
 
 ### Key Designs
 
-1.  **Gaussian-Mixture Feature Alignment (Replacing single-mean matching)**:
-    - **Function**: Captures complex distributions of multiple morphological components (tumor/normal/boundary zones, etc.) within a WSI, preventing single-mean matching from compressing heterogeneous patches into a "gray average."
-    - **Mechanism**: Use GMM to estimate $\{\mu_m,\Sigma_m,\pi_m\}$ for $M=16$ components from the patch features $\{b_k^{i,c}\}_{k=1}^K$ of each real slide. Synthetic slide patches $\{p_j^{i,c}\}_{j=1}^T$ are assigned components by the same GMM to obtain $\{\hat{\mu}_m,\hat{\Sigma}_m\}$. the loss $\mathcal{L}_\text{align}^{(c)}=\sum_m(\|\mu_m-\hat{\mu}_m\|_2^2+\|\Sigma_m-\hat{\Sigma}_m\|_F^2)$ aligns both means and covariances.
-    - **Design Motivation**: Conventional DD approaches $\sum_y \|\Phi_{T_y}-\Phi_{S_y}\|^2$ assume a single Gaussian/center. WSIs empirically show multimodal distributions; single-center matching erases diagnostic-critical minority components (e.g., tumor patches), leading to performance drops in downstream MIL classification.
+**1. Gaussian Mixture Feature Alignment: Characterizing WSI Internal Distribution with 16 Components**
 
-2.  **One-to-one Slide-level Distillation**:
-    - **Function**: Each real slide corresponds to one synthetic slide, avoiding over-compression of "multiple slides into a few" and preserving diagnostic diversity.
-    - **Mechanism**: Client $c$ maintains $N$ synthetic slides $h_i^{(c)}$ ($N$ = number of local real slides). Each synthetic slide holds $T=1000$ patch embeddings, learned via alignment with real slides. The upload payload is $O(NTd)$ floating points, comparable to transmitting full patch features but without requiring clients to share actual patches.
-    - **Design Motivation**: Extreme compression (IPC=1/10/50) in natural image DD is feasible because intra-class samples are relatively homogeneous. WSI datasets are small (hundreds of cases) and highly heterogeneous; further compression leads to total distortion.
+A single WSI slide contains multiple morphological components such as tumor regions, normal regions, and boundary regions; patch features are naturally multimodal. Conventional data distillation methods $\sum_y \|\Phi_{T_y}-\Phi_{S_y}\|^2$ only match a single intra-class center, assuming features are unimodal Gaussian. In WSI, this averages out critical but scarce components (e.g., tumor patches) into a "gray median," degrading downstream MIL performance. FedHD instead estimates an $M=16$ component GMM $P_\text{real}^{(c,i)}\approx\sum_m \pi_m\,\mathcal{N}(\mu_m^{(c,i)},\Sigma_m^{(c,i)})$ from the real patch features $\{b_k^{i,c}\}_{k=1}^K$ of each slide. Synthetic patches $\{p_j^{i,c}\}_{j=1}^T$ are assigned to these components to obtain $\{\hat\mu_m,\hat\Sigma_m\}$. The alignment loss is $\mathcal{L}_\text{align}^{(c)}=\sum_m\big(\|\mu_m-\hat\mu_m\|_2^2+\|\Sigma_m-\hat\Sigma_m\|_F^2\big)$. By including covariance in the loss, the shape and spread of components are preserved, ensuring rare critical components are not overwhelmed by the majority—essentially hard-coding the "morphological multi-component" prior into the distillation objective.
 
-3.  **Curriculum-based Federation**:
-    - **Function**: Allows the local model to converge robustly before progressively introducing external synthetic data, preventing bias from noise during early training.
-    - **Mechanism**: Total local loss is $\mathcal{L}_\text{local}^{(c)} = \mathcal{L}_\text{real}^{(c)} + \mathcal{L}_\text{GCE}^{(c)}\cdot \mathbb{I}(t\geq t_0)$. Only real data is used for the first $t_0=30$ epochs, after which synthetic data is added using Generalized Cross-Entropy $\mathcal{L}_\text{GCE}=\frac{1-p_y^q}{q}$ ($q=0.7$) instead of standard CE to suppress potential label noise.
-    - **Design Motivation**: Directly mixing cross-institutional synthetic data introduces domain shift. The curriculum ensures the model has a "solid foundation" before absorbing external knowledge, similar to prerequisites in education; GCE degrades to MAE as $q\to 0$, providing better noise robustness.
+**2. One-to-One Slide-level Distillation: Avoiding Extreme Compression**
+
+Natural image distillation pursues extreme compression (IPC=1/10/50) because intra-class samples are relatively homogeneous. However, WSI datasets are small (a few hundred cases) and highly heterogeneous between slides; compressing multiple slides into a few images results in total distortion. FedHD maintains $N$ synthetic slides for client $c$ ($N$ equals the local real slide count), maintaining a strict one-to-one mapping with $T=1000$ patch embeddings per synthetic slide aligned individually. This preserves slide-level diversity. The communication payload is $O(NTd)$ floats, comparable to transmitting full patch features, but privacy is maintained as no real patches are ever shared.
+
+**3. Curriculum Federated Integration: Local Convergence Before External Aid with GCE**
+
+Mixing cross-institutional synthetic data from round 0 introduces domain shifts, biasing the model before it stabilizes. FedHD stages local training via curriculum learning: the total objective is $\mathcal{L}_\text{local}^{(c)}=\mathcal{L}_\text{real}^{(c)}+\mathcal{L}_\text{GCE}^{(c)}\cdot\mathbb{I}(t\ge t_0)$. For the first $t_0=30$ epochs, the model trains only on real data. Afterward, external synthetic features are introduced as auxiliary supervision. Since synthetic data may carry label noise, Generalized Cross-Entropy $\mathcal{L}_\text{GCE}=\frac{1-p_y^q}{q}$ ($q=0.7$) is used instead of standard CE, as it is more robust to noise and suppresses potential errors in synthetic labels.
 
 ### Loss & Training
-Local distillation for 1000 iterations; single round of federated communication; local MIL training for 50 epochs; GMM components $M=16$ (chosen per Song 2024); synthetic patch count $T=1000$; GCE parameter $q=0.7$; curriculum threshold $t_0=30$; optional FastGAN generator trained with $\mathcal{L}_\text{GAN}^{(c)}+\lambda_\text{rec}\mathcal{L}_\text{rec}^{(c)}$ for visualization.
+Local distillation runs for 1000 iterations, local MIL training for 50 epochs, with only one round of federal communication. Parameters include GMM components $M=16$ (following Song 2024), synthetic patches $T=1000$, GCE parameter $q=0.7$, and curriculum threshold $t_0=30$. The visualization branch uses a FastGAN generator with $\mathcal{L}_\text{GAN}^{(c)}+\lambda_\text{rec}\mathcal{L}_\text{rec}^{(c)}$ to decode synthetic embeddings.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Client/setting | FedHE | DESA | FedDGM | HistoFS | FedWSIDD | **FedHD** |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|--------|---------------|-------|------|--------|---------|----------|-----------|
 | CAM16 C1 [R50+CLAM] | Acc | 72.7 | 77.0 | 77.0 | 82.4 | 83.7 | **85.1** |
 | CAM16 C2 [UNI+TransMIL] | Acc | 77.7 | 86.2 | 87.8 | 91.3 | 93.2 | **95.8** |
 | CAM16 Avg | Acc | 75.2 | 81.9 | 83.4 | 86.7 | 88.7 | **91.2** |
@@ -77,50 +91,50 @@ Local distillation for 1000 iterations; single round of federated communication;
 | CAM17 C3 [R50+ACMIL] | Acc | 77.0 | 78.0 | 79.0 | 79.0 | 79.0 | **84.0** |
 | CAM17 C4 [PhV2+TrMIL] | Acc | 73.7 | 78.3 | 79.9 | 82.3 | — | — |
 
-(FedHD achieves optimal Acc / MCC across all clients, heterogeneous feature extractors, and heterogeneous MIL architecture combinations; Gains are particularly significant on CAM17 for various [feature, MIL] pairs.)
+(FedHD achieves the best Acc / MCC across all clients, heterogeneous feature extractors, and MIL architecture combinations.)
 
 ### Ablation Study
 
 | Configuration | Function | Description |
-| :--- | :--- | :--- |
-| Single Gaussian (M=1) vs GMM (M=16) | M=16 significantly outperforms | Validates necessity of multi-component modeling |
-| One-to-one vs Many-to-one compression | One-to-one preserves diversity | Over-compression drops performance in high heterogeneity |
-| No Curriculum vs Curriculum $t_0=30$ | Synthetic added later | Prevents early bias from external noise |
+|------|------|------|
+| Single Gaussian (M=1) vs GMM (M=16) | M=16 significantly better | Verifies necessity of multi-component modeling |
+| One-to-One vs Many-to-One Compression | One-to-One preserves diversity | Over-compression leads to drops in WSI heterogeneity |
+| No Curriculum vs Curriculum $t_0=30$ | Late integration of synthetic | Prevents early-stage bias from external noise |
 | CE vs GCE ($q=0.7$) | GCE improves robustness | Suppresses potential label noise in synthetic data |
-| Communication payload $O(NTd)$ | Single communication round | Lower cost than iterative FedAvg |
-| FastGAN Decoding | Interpretable pseudo-patches | Meets requirements for medical auditing |
+| Communication Payload $O(NTd)$ | Single round communication | Lower cost than iterative FedAvg |
+| FastGAN Decoding | Interpretable pseudo-patches | Meets medical audit requirements |
 
 ### Key Findings
-- **Multi-component matching is critical**: Single-mean matching (baselines like FedWSIDD) results in severe performance drops on WSIs. FedHD protects minority components (e.g., tumors) by matching both means and covariances via GMM.
-- **Architecture-agnostic collaboration**: Traditional FedAvg fails completely under [R50+CLAM] vs [UNI+TransMIL] vs [PhV2+TrMIL] heterogeneous combinations. FedHD bypasses parameter space incompatibility through feature-level distillation.
-- **Curriculum is more stable than direct mixing**: Adding external synthetic data from epoch 0 causes performance degradation for certain clients (e.g., CAM17 C3 with extreme class imbalance); a $t_0=30$ warm-up provides a stable baseline.
-- **Clinical value of interpretable modules**: Pseudo-patches inverted by FastGAN allow for manual verification by physicians, alleviating "black box" concerns—a critical gap in medical deployment.
+- **Multi-component matching is critical**: Single mean matching (e.g., FedWSIDD) leads to significant performance drops in WSI; FedHD's GMM matching of mean and covariance protects rare diagnostic components.
+- **Architecture-agnostic collaboration**: Traditional FedAvg fails under heterogeneous combinations like [R50+CLAM] vs [UNI+TransMIL]. FedHD bypasses parameter space incompatibility via feature-level distillation.
+- **Curriculum is more stable than direct mixing**: Directly mixing external data from epoch 0 degrades performance for certain clients (e.g., CAM17 C3 with extreme imbalance); the $t_0=30$ warm-up provides a stable foundation.
+- **Clinical value of interpretability**: Pseudo-patches from FastGAN allow manual review by physicians, bridging the gap for medical deployment.
 
 ## Highlights & Insights
-- Using GMM instead of a single mean is a design perfectly suited to WSI physical morphology. Hard-coding "morphological multi-components" as domain knowledge into the DD loss is a great example of domain-aware distillation.
-- The "anti-trend" choice of one-to-one slide-level distillation (explicitly avoiding extreme compression) reflects a clear understanding of WSI data characteristics—not all domains are suitable for IPC=1.
-- Applying curriculum learning to "cross-client synthetic data integration" is insightful and generalizable to any "self-distillation $\to$ federated integration" workflow, such as federated LLMs or recommendation systems.
-- The single-round communication and feature-level payload design are highly practical for hospital environments with low bandwidth and strict compliance audits. Combined with GCE noise robustness and FastGAN visualization, it offers high engineering completeness.
+- Using GMM instead of a single mean is a design highly tailored to WSI physics, hard-coding morphological knowledge into the DD loss—a great example of domain-aware distillation.
+- The "counter-trend" choice of one-to-one slide-level distillation (avoiding extreme compression) reflects a clear understanding of WSI data characteristics: extreme compression is not suitable for every domain.
+- Applying curriculum learning to "cross-client synthetic data integration" is insightful and generalizable to any "self-distillation $\to$ federated integration" pipeline, such as federated LLMs or recommendation systems.
+- The single-round communication and feature-level payload design are practical for hospital environments with low bandwidth and strict compliance; the inclusion of GCE and FastGAN adds engineering completeness.
 
 ## Limitations & Future Work
-- The GMM component count $M=16$ and synthetic patch count $T=1000$ are empirical and may not be optimal for all WSI datasets; automated selection of $M$ or Bayesian non-parametrics (DPGMM) are natural future directions.
-- Single-round communication is simple but may not converge to the optimum—iterative multi-round distillation might be better, though not discussed by the authors.
-- The small number of clients (2 for CAM16, 5 for CAM17) makes curriculum threshold $t_0$ tuning easier; scalability to dozens or hundreds of clients is unverified.
-- High-dimensional GMM covariance $\Sigma_m$ (e.g., UNI 1024d) incurs $O(d^2)$ computation/storage costs; an overhead analysis for large $d$ is missing.
-- The reliability of pseudo-patches decoded by FastGAN compared to real tissue requires systematic evaluation by pathologists; currently, only visual plausibility is shown without blind assessment.
+- The number of GMM components $M=16$ and synthetic patches $T=1000$ are empirical; automatic selection of $M$ or Bayesian non-parametrics (DPGMM) is a potential direction.
+- Single-round communication is simple but may not reach global optima—iterative multi-round distillation was not discussed.
+- Smaller client counts (2 for CAM16, 5 for CAM17) simplified $t_0$ tuning; scalability to dozens or hundreds of clients is unverified.
+- Covariance $\Sigma_m$ at high dimensions $d$ (e.g., 1024d for UNI) incurs $O(d^2)$ costs; the paper lacks overhead analysis for large $d$.
+- The reliability of FastGAN pseudo-patches requires systematic evaluation by pathologists; currently, only visual plausibility is shown without blind testing.
 
 ## Related Work & Insights
-- **vs FedAvg / FedMut / FedImpro**: Traditional parameter-sharing methods are infeasible for heterogeneous MIL architectures; this paper bypasses this limitation via feature-level distillation.
-- **vs FedHisto (Lu 2022) / HistoFS (Raswa 2025)**: These assume homogeneous MIL and balanced compute power; this paper explicitly targets heterogeneous scenarios, fitting real hospital networks.
-- **vs FedWSIDD (Jin 2025)**: Also performs federated WSI distillation but uses single-mean matching; this paper proves such simplification causes severe loss of diagnostic detail in WSIs.
-- **vs FedD3 (Song 2023) / FedDGM (Jia 2025)**: These perform personalized FL (disentangled dual decoder / diffusion-generated latents) with high compute overhead; FedHD is more lightweight and architecture-agnostic.
-- **vs Natural Image DD (DM, MTT)**: This paper conversely advocates "no extreme compression"—an observation valuable for other "small data + high heterogeneity" domains (rare diseases, satellite remote sensing).
+- **vs FedAvg / FedMut / FedImpro**: Parameter-sharing methods are infeasible under heterogeneous MIL architectures; this work bypasses the constraint using feature-level distillation.
+- **vs FedHisto (Lu 2022) / HistoFS (Raswa 2025)**: These assume homogeneous MIL and balanced compute; FedHD targets heterogeneous scenarios common in real hospital networks.
+- **vs FedWSIDD (Jin 2025)**: Also performs federated WSI distillation but utilizes single mean matching, which this paper proves loses critical diagnostic details.
+- **vs FedD3 (Song 2023) / FedDGM (Jia 2025)**: These focus on personalized FL (disentangled dual decoders or diffusion generation), which are computationally expensive; FedHD is more lightweight and architecture-agnostic.
+- **vs Natural Image DD (DM, MTT)**: This paper advocates against extreme compression—an observation valuable for other "small data + high heterogeneity" domains like rare diseases or satellite imagery.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of GMM multi-component alignment, one-to-one distillation, and curriculum federation is highly targeted for heterogeneous WSI FL scenarios.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 3 datasets across multiple clients and heterogeneous [feature, MIL] pairs with proper statistical significance notation.
-- Writing Quality: ⭐⭐⭐⭐ Logical flow from motivation to method and experiments; loss functions and hyperparameter tables are clear.
-- Value: ⭐⭐⭐⭐ Directly addresses the "heterogeneous architecture + privacy + interpretability" trilemma in medical federated deployment with strong engineering focus.
+- Novelty: ⭐⭐⭐⭐ The combination of GMM multi-component alignment, one-to-one distillation, and curriculum federation is highly targeted for heterogeneous WSI FL.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 datasets × multiple clients × heterogeneous [feature, MIL] pairings with standard statistical significance.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from motivation to method to experiments; loss functions and hyperparameter tables are clear.
+- Value: ⭐⭐⭐⭐ Directly addresses the "heterogeneous architecture + privacy + interpretability" trilemma in medical FL with strong engineering feasibility.
 
 <!-- RELATED:START -->
 
@@ -128,11 +142,11 @@ Local distillation for 1000 iterations; single round of federated communication;
 
 ## Related Papers
 
-- [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
+- [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](../../CVPR2026/medical_imaging/dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
-- [\[CVPR 2026\] Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/parameter-efficient_prompt_tuning_and_hierarchical_textual_guidance_for_few-shot.md)
-- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
-- [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
+- [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
+- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](../../CVPR2026/medical_imaging/toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
+- [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](../../CVPR2026/medical_imaging/mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
 
 </div>
 

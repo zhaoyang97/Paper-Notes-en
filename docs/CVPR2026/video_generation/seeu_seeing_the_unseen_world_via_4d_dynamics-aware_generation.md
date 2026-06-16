@@ -2,133 +2,141 @@
 title: >-
   [Paper Note] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 description: >-
-  [CVPR 2026][Video Generation][4D dynamic modeling] SeeU is a 2D→4D→2D learning framework that reconstructs a 4D world representation from sparse monocular 2D frames…
+  [CVPR 2026][Video Generation][Paper Note] SeeU is proposed as a 2D→4D→2D learning framework: it reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (via B-spline parameterization and physical constraints), and finally re-projects the 4D world back to 2D. A
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "4D dynamic modeling"
-  - "continuous dynamics"
-  - "spatiotemporal generation"
-  - "B-spline"
-  - "physical consistency"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 233c928507903659
+content_hash: 536ffca32730b859
 ---
-
 # SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.03350](https://arxiv.org/abs/2512.03350)  
-**Code**: [https://yuyuanspace.com/SeeU/](https://yuyuanspace.com/SeeU/) (data and code publicly available)  
-**Area**: Video Generation
-**Keywords**: 4D dynamic modeling, continuous dynamics, spatiotemporal generation, B-spline, physical consistency
+**Code**: [https://yuyuanspace.com/SeeU/](https://yuyuanspace.com/SeeU/) (Data and code available)  
+**Area**: Video Generation  
+**Keywords**: 4D Dynamic Modeling, Continuous Dynamics, Spatiotemporal Generation, B-spline, Physical Consistency
 
 ## TL;DR
-SeeU is a 2D→4D→2D learning framework that reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (B-spline parameterization + physical constraints), and reprojects the 4D world back to 2D, completing unseen regions with a spatiotemporally context-aware video generator—enabling generation of unseen visual content across time and space.
+SeeU is proposed as a 2D→4D→2D learning framework: it reconstructs a 4D world representation from sparse monocular 2D frames, learns continuous and physically consistent 4D dynamics on a low-rank representation (via B-spline parameterization and physical constraints), and finally re-projects the 4D world back to 2D. A spatiotemporal context-aware video generator completes unseen regions, enabling the generation of unseen visual content across time and space.
 
 ## Background & Motivation
 
-1. **Background**: Tasks such as video generation, frame interpolation, and frame prediction predominantly model dynamics end-to-end in 2D pixel or latent spaces. Large-scale video diffusion models (e.g., Sora, Wan) perform well on in-distribution scenes. World model approaches learn dynamics in low-dimensional latent spaces for efficiency.
-2. **Limitations of Prior Work**: Modeling dynamics directly on 2D frames entails three fundamental limitations: (a) images and videos are discrete 2D projections of a 4D world (3D space + time), so learning directly in 2D discards important 3D structure and temporal correlations; (b) observations conflate camera motion and scene dynamics, with continuously varying camera poses adding complexity and irregularity to apparent motion; (c) in complex out-of-distribution scenes (occlusions, non-rigid deformations, etc.), 2D models lacking 3D or physical supervision often fail to capture true geometric and physical dynamics.
-3. **Key Challenge**: Real-world motion is typically simple and structured in 4D space—governed by biological/mechanical constraints, classical mechanics, symmetry, etc.—but becomes complex and ill-posed when projected to 2D. Modeling dynamics in 4D naturally exploits these physical priors, yet existing methods either remain in 2D or lack continuous dynamics modeling in 4D reconstruction.
-4. **Goal**: (1) How to reconstruct a 4D dynamic scene from sparse monocular frames? (2) How to learn continuous and physically consistent 4D dynamics? (3) How to generate 2D content at arbitrary times and viewpoints from the 4D world?
-5. **Key Insight**: Three advantages of modeling continuous dynamics in native 4D space—3D awareness (explicit 3D representations handle occlusion and viewpoint changes), physical consistency (motion is simpler in 4D, enabling physical priors as constraints), and motion disentanglement (camera, foreground, and background can be explicitly separated in a unified 4D coordinate system).
-6. **Core Idea**: Through a 2D→4D→2D information flow—first lifting 2D observations to a 4D world representation, then learning continuous physically consistent dynamics via B-splines in 4D, and finally projecting back to 2D with context-aware completion—the framework generates unseen content at arbitrary times and viewpoints.
+1. **Background**: Tasks such as video generation, frame interpolation, and frame prediction primarily model dynamics in 2D pixel or latent spaces through end-to-end learning. Large-scale video diffusion models (e.g., Sora, Wan) perform well in in-distribution scenarios. World model research often learns dynamics in low-dimensional latent spaces for efficiency.
+2. **Limitations of Prior Work**: Modeling dynamics directly on 2D frames has three fundamental limitations: (a) Images and videos are discrete 2D projections of a 4D world (3D space + time); learning directly in 2D loses vital 3D structure and temporal correlations. (b) Observations mix camera motion and scene dynamics; changing camera poses increase motion complexity and irregularity. (c) In complex out-of-distribution scenarios (occlusion, non-rigid deformation, etc.), 2D models lacking 3D or physical supervision often fail to capture realistic geometric and physical dynamics.
+3. **Key Challenge**: Real-world motion is often simple and structured in 4D space (constrained by biological/mechanical limits, classical mechanics, symmetry, etc.), but becomes complex and ill-posed after projection to 2D. Modeling dynamics in 4D can naturally leverage these physical priors, yet existing methods either remain in 2D or lack continuous dynamics modeling in 4D reconstruction.
+4. **Goal**: (1) How to reconstruct 4D dynamic scenes from sparse monocular frames? (2) How to learn continuous and physically consistent 4D dynamics? (3) How to generate 2D content for arbitrary time and viewpoints from the 4D world?
+5. **Key Insight**: Modeling continuous dynamics in native 4D space offers three advantages: 3D-awareness (explicit 3D representation handles occlusion/viewpoint changes), physical consistency (motion is simpler in 4D and can be constrained by physical priors), and motion decoupling (camera, foreground, and background can be explicitly separated in a unified 4D coordinate system).
+6. **Core Idea**: Realize the generation of unseen time and space through a 2D→4D→2D information flow—lifting from 2D to a 4D world representation, learning continuous physically consistent dynamics via B-splines in 4D, and then projecting back to 2D for context completion.
 
 ## Method
 
 ### Overall Architecture
-SeeU is a three-stage pipeline:
-- **Stage 1 (2D→4D)**: Reconstructs a dynamic 4D scene from sparse monocular frames, yielding a set of 3D Gaussian primitives with per-frame transformations and camera poses.
-- **Stage 2 (Discrete 4D→Continuous 4D)**: Learns a continuous temporal dynamics function on a low-rank motion basis using B-spline parameterization, with physical regularization to ensure smoothness and physical consistency.
-- **Stage 3 (4D→2D)**: Evolves the 4D world to arbitrary times and viewpoints, renders 2D scaffold frames (which may be incomplete), and completes missing regions with a spatiotemporally context-aware video generator.
+SeeU aims to solve "seeing the unseen": given a few sparse monocular video frames, it generates what the scene should look like at other times (past/interpolation/future) and from different viewpoints. The core proposition is to avoid direct end-to-end dynamics learning on 2D pixels and instead take a detour—lifting 2D to 4D (3D space + time) to understand the true motion of the world before projecting 4D back to 2D to complete the imagery. The pipeline is thus a 2D→4D→2D loop: The first stage reconstructs a set of 3D Gaussians undergoing rigid transformations over time and camera trajectories from sparse frames, converting discrete observations into a 4D scene. The second stage fits this "frame-wise discrete" 4D scene into a **continuous time function**, making it queryable at any moment. The third stage evolves the 4D world to the target time and viewpoint, renders a typically incomplete 2D "skeleton frame," and hands it to a video generator to fill in the gaps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Sparse Monocular 2D Frames"] --> P["Pre-processing<br/>MegaSaM for Camera/Depth + Track-Anything for FG + TAPIR for Trajectories"]
+    P --> B["Dynamic Scene Reconstruction (2D→4D)<br/>Canonical 3D Gaussians + Frame-wise SE(3) Rigid Transformations"]
+    B --> C["Continuous 4D Dynamics Model (C4DD)<br/>Low-rank Motion Bases + Cubic B-splines + Physical Loss"]
+    C -->|Evolve to Target Time/View & Render| D["2D Skeleton Frame<br/>Holes / Low-confidence / Projection Artifacts"]
+    D --> E["Spatiotemporal Context Video Generation (4D→2D)<br/>VACE + Triple Priors (Text / Projected Frame / Inpainting Mask)"]
+    E --> F["Completed Video of Unseen Space-Time"]
+```
 
 ### Key Designs
 
-1. **Dynamic Scene Reconstruction (2D→4D)**:
+**1. Dynamic Scene Reconstruction (2D→4D): Decoupling camera motion and scene dynamics into explicit 3D representations**
 
-    - **Function**: Constructs a unified 4D representation from sparse monocular frames.
-    - **Mechanism**: Built on the Shape-of-Motion framework. The scene is represented by a set of canonical 3D Gaussians $\{g_0^i\}_{i=1}^N$ (with position $\mu_0^i$, orientation $R_0^i$, scale $s^i$, opacity $o^i$, color $c^i$). Each Gaussian evolves from the canonical frame to frame $t$ via a per-frame rigid transformation $T_{0 \to t} \in SE(3)$: $\mu_t^i = R_{0 \to t} \mu_0^i + t_{0 \to t}$. Preprocessing employs MegaSaM for camera parameter and depth estimation, Track-Anything for foreground segmentation, and TAPIR for 2D point track extraction.
-    - **Design Motivation**: Shape-of-Motion is adopted for its compatibility with casually captured inputs with weak parallax and its ability to explicitly separate static and dynamic regions.
+A fundamental difficulty in learning dynamics directly in 2D is the entanglement of camera and object motion during projection, alongside the loss of 3D structure. SeeU utilizes the Shape-of-Motion framework to represent the scene as a set of canonical 3D Gaussians $\{g_0^i\}_{i=1}^N$ (each with position $\mu_0^i$, orientation $R_0^i$, scale $s^i$, opacity $o^i$, and color $c^i$). Object motion is carried by frame-wise rigid transformations $T_{0 \to t} \in SE(3)$, moving the Gaussians from the canonical frame to the position at frame $t$:
 
-2. **Continuous 4D Dynamics Model (C4DD)**:
+$$\mu_t^i = R_{0 \to t}\,\mu_0^i + t_{0 \to t}$$
 
-    - **Function**: Fits discrete per-frame motion bases and camera poses to continuous temporal functions, supporting interpolation and extrapolation at arbitrary times.
-    - **Mechanism**: Two challenges are addressed. **Efficiency**: The large number of foreground Gaussians (~80K) precludes learning independent trajectories for each. A low-rank motion parameterization is adopted: $P_t^i = P_0^i + B(t) w_i$, where $B(t) \in \mathbb{R}^{m \times K}$ is a globally shared motion basis ($K \ll N$) and $w_i$ are time-invariant per-Gaussian coefficients. **Physical consistency**: Motion basis trajectories in $SE(3)$ exhibit simple, smooth temporal trends (even when raw video motion appears complex), so cubic B-splines are used for parameterization: $\hat{B}_t = \sum_{j=1}^M N_{j,d}(t) q_j$. Camera and motion bases are jointly optimized with a data loss $\mathcal{L}_{data}$ to fit discrete observations, and a physical loss $\mathcal{L}_{phys}$ penalizes translational and rotational acceleration of motion bases and camera trajectories, with higher weights in extrapolation regions.
-    - **Design Motivation**: B-splines possess a natural smoothness inductive bias over MLPs (ablations show MLP variants produce noisy, non-smooth trajectories). The number of control points $M$ governs the capacity–smoothness trade-off. The physical loss prevents non-physical abrupt changes.
+Shape-of-Motion is chosen over other reconstructors because it works on ordinary mobile phone videos with weak parallax and explicitly separates the static background from the dynamic foreground—aligning with the need to decouple "camera motion vs. scene dynamics." Before reconstruction, MegaSaM estimates camera parameters and depth, Track-Anything segments the foreground, and TAPIR extracts 2D point trajectories to provide supervision. The output of this step is a 4D scene that can be replayed frame-by-frame but is only defined at discrete observed moments.
 
-3. **Spatiotemporal Context-aware Video Generation (4D→2D)**:
+**2. Continuous 4D Dynamics Model (C4DD): Interpolating discrete motion into a smooth curve queryable at any time**
 
-    - **Function**: Projects the 4D world into potentially incomplete 2D scaffold frames and completes unseen regions with a generative model.
-    - **Mechanism**: The continuous dynamics learned by C4DD are used to evolve the scene to arbitrary timestamps and camera poses, rendering 2D projections as a video "skeleton." Three types of regions in the skeleton require completion: (1) never-observed regions (novel viewpoints/occluded areas), (2) low-confidence projected Gaussian regions, and (3) projection artifacts at depth discontinuities. The VACE video generation model is employed, conditioned on three contextual priors: structured text prompts generated by a VLM (global semantics + inpainting instructions), projected frames (geometric and photometric references), and per-frame inpainting masks (marking uncertain regions).
-    - **Design Motivation**: Pure reconstruction methods produce holes or artifacts in unseen regions; a generative model leveraging spatiotemporal context is required to complete fine details. The three priors provide a complete guidance chain from semantics and structure to spatial localization.
+The motion reconstructed in the first stage is discrete—one set of transformations per frame with gaps in between; interpolation or extrapolation requires linear guessing (contributing to the base SoM's low 15.5 PSNR). C4DD fits these discrete transformations into a continuous time function while addressing two challenges. First is **efficiency**: with approximately 80,000 foreground Gaussians, learning independent trajectories for each is expensive and prone to overfitting. Thus, low-rank motion parameterization compresses the motion onto a set of **globally shared** motion bases:
+
+$$P_t^i = P_0^i + B(t)\,w_i, \qquad B(t) \in \mathbb{R}^{m \times K},\ K \ll N$$
+
+where $B(t)$ are $K$ motion bases shared by all Gaussians, and $w_i$ are time-invariant coefficients for each Gaussian—reducing the number of continuous functions to learn from 80,000 to $K$. Second is **physical consistency**: the authors observed that these motion bases exhibit simple, smooth temporal trends in $SE(3)$ (even if the original video motion looks complex). Therefore, cubic B-splines are used to parameterize the motion bases themselves:
+
+$$\hat{B}_t = \sum_{j=1}^{M} N_{j,d}(t)\,q_j$$
+
+$N_{j,d}$ represents the B-spline basis functions, and $q_j$ are control points. The number of control points $M$ directly controls the trade-off between capacity and smoothness. B-splines were chosen over MLPs for their natural smoothness inductive bias; replacing them with an MLP in ablations resulted in noisy trajectories and a 3.5-point drop in PSNR. During training, camera and motion bases are optimized jointly: a data loss $\mathcal{L}_{data}$ ensures fit to discrete observations, while a physical loss $\mathcal{L}_{phys}$ penalizes the translation/rotation acceleration of motion bases and camera trajectories (with increased weights in extrapolation zones) to suppress non-physical sudden changes.
+
+**3. Spatiotemporal Context Video Generation (4D→2D): Using the 4D rendered "semi-finished product" as a skeleton for the generator to fill only unseen parts**
+
+With continuous dynamics, the 4D world can evolve to any timestamp and camera pose, rendering a 2D projection as a "skeleton" for the video. However, this skeleton inherently has three types of vacancies: regions never observed (new views or occlusions), regions where projected Gaussian confidence is too low, and projection artifacts at depth discontinuities. SeeU does not force the generator to guess from scratch; instead, it feeds the skeleton and gap information to the VACE video generation model, injecting triple context priors—structured text prompts from a VLM (global semantics and inpainting instructions), the projected frame itself (structural reference for geometry and photometry), and frame-wise inpainting masks (spatial markers for where to generate). Together, these provide the generator with a complete command chain from semantics and structure to spatial location, ensuring it only hallucinates details in marked uncertain areas without damaging correctly reconstructed geometry.
 
 ### Loss & Training
-- Stage 1: 80K foreground + 80K background Gaussians, 10 motion bases, 4,000 iterations; typical runtime ~1 hour for 10 frames at 960×540.
-- Stage 2: Cubic B-splines (degree=3), 8 control points, $\lambda_{phy} = 1 \times 10^{-4}$, lr=1e-5, batch=64, 1,000 epochs in ~10 minutes.
-- Stage 3: VACE fine-tuned on a distribution of multi-semantic masks, ~2 hours.
-- All stages run on a single A100 80GB GPU.
+- Stage 1: 80K foreground + 80K background Gaussians, 10 motion bases, 4000 iterations, taking ~1 hour for a typical 10-frame 960×540 sequence.
+- Stage 2: Cubic B-splines (degree=3), 8 control points, $\lambda_{phy} = 1 \times 10^{-4}$, lr=1e-5, batch=64, taking ~10 minutes for 1000 epochs.
+- Stage 3: Fine-tuning VACE on multi-semantic mask distributions, ~2 hours.
+- All stages completed on a single A100 80GB.
 
 ## Key Experimental Results
 
 ### Main Results
-Temporal unseen generation (SeeU45 dataset):
+Unseen generation in the temporal domain (SeeU45 dataset):
 
 | Method | Past PSNR↑ | Interp PSNR↑ | Future PSNR↑ | Past LPIPS↓ | Interp LPIPS↓ | Future LPIPS↓ |
-|--------|-----------|-------------|-------------|------------|--------------|--------------|
+|------|-----------|-------------|-------------|------------|--------------|--------------|
 | SoM | 15.55 | 16.37 | 15.43 | 0.388 | 0.356 | 0.389 |
 | InterpAny | - | 20.54 | - | - | 0.242 | - |
 | VACE | 17.14 | 18.16 | 17.71 | 0.367 | 0.359 | 0.354 |
-| **SeeU** | **20.47** | **21.07** | **20.54** | **0.248** | **0.227** | **0.243** |
+| **Ours** | **20.47** | **21.07** | **20.54** | **0.248** | **0.227** | **0.243** |
 
-Spatial unseen generation (EE↓ lower is better, EIR↑ higher is better):
+Unseen generation in the spatial domain (EE↓ lower is better, EIR↑ higher is better):
 
 | Method | Dolly Out EE↓ | EIR↑ | CLIP-V↑ |
-|--------|-------------|------|---------|
+|------|-------------|------|---------|
 | ReCamMaster | 0.238 | 0.674 | 0.937 |
-| **SeeU** | **0.200** | **0.785** | **0.969** |
+| **Ours** | **0.200** | **0.785** | **0.969** |
 
 ### Ablation Study
 
 | Configuration | PSNR↑ | LPIPS↓ | EE↓ | CLIP-V↑ |
-|---------------|-------|--------|-----|---------|
+|------|-------|--------|-----|---------|
 | C4DD w/ MLP | 17.54 | 0.427 | 0.313 | 0.739 |
-| w/o physics loss | 19.36 | 0.274 | 0.224 | 0.920 |
+| w/o physical loss | 19.36 | 0.274 | 0.224 | 0.920 |
 | 5 frames input | 18.36 | 0.305 | 0.285 | 0.928 |
 | 10 frames input | 20.16 | 0.251 | 0.204 | 0.955 |
 | 15 frames input | 20.39 | 0.241 | 0.200 | 0.958 |
 | **20 frames input** | **21.08** | **0.239** | **0.197** | **0.960** |
 
 ### Key Findings
-- **B-spline >> MLP**: The MLP variant reduces PSNR by 3.5 points and increases LPIPS by 0.19, demonstrating that the smooth inductive bias of B-splines is critical for continuous dynamics modeling—MLPs can fit the general trend but produce noisy trajectories.
-- **Physical loss is important**: Removing $\mathcal{L}_{phys}$ causes significant degradation in inter-frame consistency, especially in extrapolation regions.
-- **Robust to sparse inputs**: Reducing from 20 to 5 frames causes only ~2.7 PSNR drop, indicating C4DD maintains reasonable temporal continuity under extremely sparse observations.
-- **Temporal prediction error grows approximately linearly**: Extrapolation accuracy degrades roughly linearly with temporal distance, consistent with physical intuition.
-- SeeU comprehensively outperforms task-specific models across all three temporal sub-tasks (past inference, dynamic interpolation, and future prediction).
+- **B-spline >> MLP**: The MLP variant showed a 3.5-point drop in PSNR and a 0.19 increase in LPIPS, indicating that the smooth inductive bias of B-splines is crucial for continuous dynamics modeling—MLPs can fit trends but produce noisy trajectories.
+- **Physical Loss is Crucial**: Removing $\mathcal{L}_{phys}$ significantly decreased inter-frame consistency, especially in extrapolation regions.
+- **Robustness to Sparse Input**: PSNR dropped by only ~2.7 when decreasing from 20 to 5 frames; C4DD maintains reasonable temporal continuity under extremely sparse observations.
+- **Linear Growth of Temporal Prediction Error**: Extrapolation accuracy decays roughly linearly with temporal distance, aligning with physical intuition.
+- SeeU outperforms specialized models across three temporal sub-tasks: past inference, dynamic interpolation, and future prediction.
 
 ## Highlights & Insights
-- **2D→4D→2D information flow paradigm**: Rather than performing end-to-end learning directly in 2D, the framework first lifts observations to 4D for world understanding and then returns to 2D for generation. This "understanding-first" paradigm stands in sharp contrast to purely data-driven generation. A transferable insight: for any generation task governed by physical laws, modeling in the physical space before projecting to the observation space may be preferable.
-- **Low-rank motion parameterization + B-splines**: Two levels of simplification—first compressing the motion of 80K Gaussians into 10 basis functions via low-rank decomposition, then continuously parameterizing the discrete bases with B-splines. This hierarchical strategy for simplifying complex dynamics is both elegant and efficient.
-- **Triple prior injection for unseen region completion**: The combination of text semantics, projected structure, and spatial masks provides the video generator with a complete guidance chain from "what should be generated" to "where to generate it."
+- **2D→4D→2D Information Flow Paradigm**: Rather than direct 2D end-to-end learning, lifting to 4D to understand the world before returning to 2D generation presents a "understanding-first" paradigm contrasting with purely data-driven generation. This approach is transferable: for any generation task involving physical laws, modeling in physical space before projecting to observation space may be superior.
+- **Low-rank Motion Parameterization + B-splines**: A dual simplification strategy—compressing the motion of 80K Gaussians into 10 bases via low-rank decomposition, then continuous-tuning these bases via B-splines. This hierarchical simplification of complex dynamics is both elegant and efficient.
+- **Triple Prior Injection for Unseen Completion**: The combination of text semantics + projection structure + spatial masks provides a complete guidance chain for the video generator, from "what should be generated" to "where to generate."
 
 ## Limitations & Future Work
-- Performance is bounded by the quality of underlying modules (tracking, camera estimation, 4D reconstruction)—small or textureless foreground objects can cause failures.
-- The current approach focuses on scenes with prominent, smooth, and temporally stable foreground motion; highly non-rigid or abruptly changing motion is not well supported.
-- Stage 1 4D reconstruction (~1 hour) is the efficiency bottleneck, precluding real-time applications.
-- The SeeU45 dataset contains only 45 scenes; while diverse, its scale is limited.
-- Extrapolation accuracy degrades linearly with time, and physical consistency in long-range prediction remains to be improved.
+- Dependent on the quality of underlying modules (tracking, camera estimation, 4D reconstruction)—small objects or textureless foregrounds can cause failures.
+- Currently focused on scenes with prominent, smooth, temporally stable foreground motion; support for highly non-rigid or abrupt motion is limited.
+- 4D reconstruction in Stage 1 (~1 hour) is an efficiency bottleneck, hindering real-time applications.
+- The SeeU45 dataset contains only 45 scenes; while diverse, the scale is small.
+- Extrapolation accuracy decays linearly over time; physical consistency in long-range prediction still needs improvement.
 
 ## Related Work & Insights
-- **vs. Shape-of-Motion (SoM)**: Stage 1 of SeeU builds on SoM, but SoM provides only discrete per-frame reconstruction with linear interpolation/extrapolation for temporal transfer, yielding poor results (PSNR 15.5). SeeU adds continuous dynamics modeling and context-aware completion on top of SoM, improving PSNR to 20.5.
-- **vs. VACE**: VACE is a purely 2D video inpainting method without 3D awareness. SeeU provides VACE with 4D-projected scaffold frames and precise masks, relieving VACE of the need to infer geometric structure.
-- **vs. ReCamMaster**: A camera-controllable video generation model that lacks explicit 3D reconstruction. SeeU comprehensively surpasses it in geometric consistency (EE/EIR) and scene coherence (CLIP-V).
-- **vs. physics-aware video generation**: Prior methods either generate first and then simulate physics, simulate first and then generate, or guide generation with distilled physical priors. SeeU directly infers deterministic dynamics from multi-frame observations and uses them as a physical skeleton for generation, representing a new paradigm.
+- **vs Shape-of-Motion (SoM)**: SeeU's Stage 1 is based on SoM, but SoM only provides discrete frame-level reconstruction; temporal extrapolation relies on simple linear guessing, resulting in poor performance (PSNR 15.5). SeeU adds continuous dynamics and context completion, raising PSNR to 20.5.
+- **vs VACE**: VACE is a purely 2D video inpainting method lacking 3D awareness. SeeU provides VACE with 4D-projected skeleton frames and precise masks, removing the need for VACE to guess geometric structures.
+- **vs ReCamMaster**: A camera-controllable video generation model that lacks explicit 3D reconstruction. SeeU outperforms it in geometric consistency (EE/EIR) and scene coherence (CLIP-V).
+- **vs Physics-aware Video Generation**: Prior methods either perform physical simulation after generation, simulation before generation, or use distilled physical priors to guide generation. SeeU infers deterministic dynamics from multi-frame observations to serve as a physical skeleton for generation, representing a new paradigm.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The 2D→4D→2D information flow paradigm is conceptually innovative; learning continuous dynamics in native 4D space is a genuinely novel direction.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers both temporal and spatial dimensions with thorough ablations, though the dataset scale is limited (45 scenes).
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is rigorously articulated (Section 2 provides a dedicated analysis of why dynamics should be modeled in 4D); figures and tables are clear.
-- **Value**: ⭐⭐⭐⭐ Opens a new direction for physically consistent video generation and world models, though practical applicability is currently constrained by efficiency and scene coverage.
+- Novelty: ⭐⭐⭐⭐⭐ The 2D→4D→2D information flow is innovative; learning continuous dynamics in native 4D space is a fresh approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers both temporal and spatial dimensions with thorough ablations, though the dataset scale is small (45 scenes).
+- Writing Quality: ⭐⭐⭐⭐⭐ Strong motivation (Section 2 independently analyzes why 4D modeling is necessary), with clear diagrams.
+- Value: ⭐⭐⭐⭐ Opens new directions for physically consistent video generation and world models, though utility is limited by efficiency and scene constraints.
 
 <!-- RELATED:START -->
 
@@ -138,9 +146,9 @@ Spatial unseen generation (EE↓ lower is better, EIR↑ higher is better):
 
 - [\[AAAI 2026\] Seeing the Unseen: Zooming in the Dark with Event Cameras](../../AAAI2026/video_generation/seeing_the_unseen_zooming_in_the_dark_with_event_cameras.md)
 - [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
-- [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](../../ICLR2026/video_generation/geometry-aware_4d_video_generation_for_robot_manipulation.md)
-- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
-- [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
+- [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
 
 </div>
 

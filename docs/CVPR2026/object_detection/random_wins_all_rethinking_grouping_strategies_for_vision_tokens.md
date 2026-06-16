@@ -2,80 +2,83 @@
 title: >-
   [Paper Note] Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 description: >-
-  [CVPR 2026][Object Detection][Vision Transformer] This paper proposes a minimalist random grouping strategy to replace various elaborately designed token grouping methods in Vision Transformers. The approach achieves nea…
+  [CVPR 2026][Object Detection][Vision Transformer] Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success i
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Vision Transformer"
-  - "Token Grouping"
-  - "Random Grouping"
-  - "Attention Mechanism"
-  - "Efficiency Optimization"
+  - CVPR 2026
+  - Object Detection
+  - Vision Transformer
+  - Attention
 date: 2026-05-08
-content_hash: a1d7899437009752
+content_hash: 7d1cbcead78ee873
 ---
-
 # Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00486](https://arxiv.org/abs/2603.00486)  
-**Authors**: Qihang Fan, Yuang Ai, Huaibo Huang, Ran He (Institute of Automation, Chinese Academy of Sciences)
+**Authors**: Qihang Fan, Yuang Ai, Huaibo Huang, Ran He (CASIA)  
 **Code**: [GitHub](https://github.com/qhfan/random)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Vision Transformer, Token Grouping, Random Grouping, Attention Mechanism, Efficiency Optimization
 
 ## TL;DR
 
-This paper proposes a minimalist random grouping strategy to replace various elaborately designed token grouping methods in Vision Transformers. The approach achieves near-universal improvements over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs, and provides a four-dimensional explanation for its success: positional information, per-head feature diversity, global receptive field, and fixed grouping patterns.
+Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success is explained through four dimensions: positional information, head feature diversity, global receptive field, and fixed grouping patterns.
 
 ## Background & Motivation
 
-- **Background**: The self-attention mechanism in Transformers incurs $O(n^2)$ quadratic complexity, and vision token grouping is the dominant approach to reducing this cost. Grouping strategies have grown increasingly sophisticated, from simple window partitioning (Swin Transformer) to semantically aware tree-structured grouping (Quadtree) and bi-level routing grouping (BiFormer), yet inference efficiency has continuously declined.
-- **Limitations of Prior Work**: Are these elaborately designed grouping methods truly necessary? Complex clustering and routing operations severely hinder deployment efficiency, and it remains unclear whether performance gains originate from the grouping strategy itself.
-- **Key Challenge**: A minimalist random grouping strategy—simply applying a random permutation to tokens followed by equal partitioning—almost universally outperforms existing complex grouping methods across all tasks and baselines, while also achieving faster inference.
-- **Goal**: The paper proposes the Random Grouping Strategy and conducts an in-depth analysis of why such a simple method succeeds, summarizing four key design principles for grouping strategies.
+- **Background**: The self-attention mechanism of Transformers has $O(n^2)$ quadratic complexity. Vision token grouping is a mainstream solution for complexity reduction. Designs have evolved from simple window partitioning (Swin Transformer) to semantic-aware tree-based grouping (Quadtree) and bi-level routing (BiFormer), becoming increasingly complex while decreasing inference efficiency.
+- **Limitations of Prior Work**: Is such elaborate grouping design truly necessary? Complex clustering and routing operations hinder deployment efficiency, and it is unclear if performance gains truly stem from the grouping strategy itself.
+- **Key Insight**: A minimalist random grouping strategy—merely performing random permutation and equal division of tokens—outperforms original complex grouping methods on almost all tasks and baselines with faster inference.
+- **Goal**: Propose the Random Grouping Strategy and analyze the underlying reasons for its success based on four key design elements.
 
 ## Method
 
 ### Overall Architecture
 
-The core mechanism of the random grouping strategy is extremely straightforward: a fixed random tensor is generated to shuffle the token order, and the tokens are then equally partitioned into groups for intra-group self-attention or pooling. The strategy serves as a drop-in replacement for the token grouping modules in various baselines including Swin, CSwin, Quadtree, BiFormer, PVTv2, and Focal, and can be extended to multi-modal tasks such as point cloud processing and VLMs.
+This paper addresses a fundamental question: are the increasingly fancy token grouping methods (windows, quadtrees, bi-level routing) in Vision Transformers necessary? The answer is provocative: shuffling tokens randomly and dividing them into equal groups is sufficient to beat meticulously designed schemes. The process consists of three steps: generating a random tensor, reshuffling tokens according to it, and dividing the sequence into equal groups for intra-group self-attention or pooling. Once generated, the random tensor is frozen; all images and training steps use the same permutation, making the pattern "random" yet "fixed." Beyond this core, three designs are integrated: multi-head independent shuffling for diverse global combinations, nearest neighbor interpolation to migrate fixed-size tensors to high-resolution tasks, and a unified replacement for three backbone types (plain, partition-based, and pooling-based). Requiring no clustering or routing, it serves as a plug-and-play replacement for modules in Swin, CSwin, Quadtree, BiFormer, PVTv2, Focal, and others, including point cloud and VCM models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Input token X (h×w×d)"]
+    H["Multi-head independent shuffling<br/>Expand P to n×h×w, one permutation per head"]
+    I["Nearest neighbor interpolation migration<br/>Scale up P for downstream high-res tasks"]
+    subgraph G["Random Tensor Reshuffling and Grouping"]
+        direction TB
+        P["Generate random tensor P (frozen once)"] --> S["Sort by P descending to get Xp"]
+        S --> D["Equally divide into g groups"]
+    end
+    X --> G
+    H --> P
+    I -.High-res tasks.-> P
+    G --> B["Unified replacement for 3 backbones<br/>Intra-group self-attention or pooling"]
+    B --> O["Output features"]
+```
 
 ### Key Designs
 
-#### Design 1: Random Tensor Generation and Sort-Based Grouping
+**1. Random Tensor Reshuffling: Breaking Local Biases**
 
-- **Function**: Randomly shuffles input tokens and partitions them into equal groups.
-- **Mechanism**: Given input $X \in \mathbb{R}^{h \times w \times d}$, a random tensor $P \in \mathbb{R}^{h \times w}$ is generated with a one-to-one spatial correspondence to $X$. Tokens are reordered by sorting $P$ in descending order to obtain $X_p$, which is then evenly split into groups. Once generated, $P$ is stored and fixed, so all subsequent images share the same token ordering.
-- **Design Motivation**: Random shuffling completely breaks local bias, ensuring that tokens within each group originate from globally distributed positions across the image, thereby naturally acquiring a global receptive field. Fixing $P$ ensures a consistent grouping pattern during training, enabling the model to learn stable feature representations.
+Existing methods prioritize spatial locality (adjacent tokens grouped together), which restricts the receptive field. In contrast, for input $X \in \mathbb{R}^{h \times w \times d}$, a random tensor $P \in \mathbb{R}^{h \times w}$ is sampled. Tokens are sorted by $P$ in descending order to form $X_p$, which is then divided into equal groups. Random sorting ensures that tokens within a group originate from non-adjacent positions, providing a global receptive field at the cost of a simple sort operation. $P$ is fixed after initialization; using the same order across all images allows the model to learn reusable features on a stable grouping structure.
 
-#### Design 2: Per-Head Independent Random Grouping
+**2. Multi-head Independent Shuffling: Head Diversity**
 
-- **Function**: Assigns a distinct random grouping pattern to each head in multi-head attention.
-- **Mechanism**: The shape of $P$ is extended from $h \times w$ to $n \times h \times w$ (where $n$ is the number of attention heads), so each head uses an independent random tensor for grouping.
-- **Design Motivation**: Using different random groupings per head encourages greater diversity in the features learned by each head. Ablation experiments show that sharing a single $P$ across all heads leads to a significant performance drop (e.g., Random-Swin-T drops from 82.7% to 80.5%), confirming the critical role of per-head feature diversity.
+If all heads share the same $P$, the grouping is identical, wasting the diversity of multi-head attention. Ours expands the random tensor to $n \times h \times w$ ($n$ heads), assigning an independent permutation to each head. Consequently, different heads within the same layer combine global tokens differently. Ablation shows that reverting to a shared $P$ causes Random-Swin-T to drop from 82.7% to 80.5%, highlighting multi-head shuffling as a key performance driver.
 
-#### Design 3: Nearest-Neighbor Interpolation for High-Resolution Adaptation
+**3. Nearest Neighbor Interpolation Migration: Handling Variable Resolutions**
 
-- **Function**: Adapts the fixed-resolution random tensor to different scales in downstream tasks.
-- **Mechanism**: Since $P$ is fixed at shape $h \times w$, nearest-neighbor interpolation is used to resize $P$ to the target resolution when applied to high-resolution scenarios such as object detection (800×1333) or semantic segmentation (512×512).
-- **Design Motivation**: Nearest-neighbor interpolation preserves the discrete structural properties of the random permutation, avoiding the smoothing effects that methods such as bilinear interpolation may introduce, and ensures sharp grouping boundaries.
+The size of $P$ is fixed during classification pre-training, but downstream tasks like detection (800×1333) or segmentation (512×512) use higher resolutions. $P$ is scaled using nearest neighbor interpolation. This is preferred over bilinear interpolation because grouping is a discrete assignment—token indices are integers. Linear interpolation would smooth labels into intermediate values, blurring grouping boundaries, whereas nearest neighbor preserves the discrete structure of the permutation.
 
-#### Design 4: Unified Adaptation for Three Backbone Categories
+**4. Unified Replacement for Three Backbone Types: Architecture Agnostic**
 
-- **Function**: Provides a unified grouping replacement scheme for Plain, Partition-based, and Pooling-based backbones.
-- **Mechanism**:
-    - **Plain backbones** (e.g., DeiT): Random grouping is applied directly; intra-group self-attention reduces global $O(n^2)$ complexity to $O((n/g)^2)$.
-    - **Partition-based backbones** (e.g., Swin, CSwin, BiFormer): Original window/routing grouping is replaced by random grouping.
-    - **Pooling-based backbones** (e.g., PVTv2, Focal): Spatial grouping prior to token pooling is replaced by random grouping.
-- **Design Motivation**: Demonstrates that random grouping is a general-purpose strategy that is architecture-agnostic and can uniformly replace diverse grouping methods.
+To demonstrate universality, backbones are classified into three types. For Plain backbones (e.g., DeiT), random grouping is applied to global tokens to reduce $O(n^2)$ attention to $O((n/g)^2)$. For Partition-based backbones (e.g., Swin, BiFormer), original window or routing modules are replaced. For Pooling-based backbones (e.g., PVTv2, Focal), spatial grouping before token pooling is substituted. Ours modifies only the grouping mechanism while keeping other structures intact, consistently delivering gains in both accuracy and speed.
 
 ## Key Experimental Results
 
 ### Main Results: ImageNet-1K Image Classification
 
 | Model | Params (M) | FLOPs (G) | Throughput (img/s) | Top-1 Acc (%) |
-|-------|-----------|-----------|-------------------|---------------|
+|------|-----------|-----------|---------------|---------------|
 | DeiT-T | 6 | 1.3 | 6433 | 72.2 |
 | **Random-DeiT-T** | 6 | 1.1 | 6682 | **73.1 (+0.9)** |
 | DeiT-S | 22 | 4.6 | 3122 | 79.8 |
@@ -113,7 +116,7 @@ The core mechanism of the random grouping strategy is extremely straightforward:
 ### Main Results: ADE20K Semantic Segmentation
 
 | Model | UperNet 160K mIoU (%) |
-|-------|-----------------------|
+|------|-----------------------|
 | Swin-T | 44.5 |
 | **Random-Swin-T** | **46.8 (+2.3)** |
 | Swin-S | 47.6 |
@@ -125,65 +128,55 @@ The core mechanism of the random grouping strategy is extremely straightforward:
 
 ### Ablation Study: Four Key Factors
 
-| Ablation | Model | Acc (%) | Change |
-|----------|-------|---------|--------|
+| Ablation Item | Model | Acc (%) | Change |
+|--------|------|---------|------|
 | **Positional Information** | Random-Swin-T | 82.7 | - |
-|　Remove PE | Random-Swin-T w/o PE | 79.3 | **-3.4** |
-|　Reference: Swin-T w/o PE | - | 80.1 | -1.6 |
-| **Per-Head Feature Diversity** | Random-Swin-T (multi-P) | 82.7 | - |
-|　All heads share single P | Random-Swin-T (single-P) | 80.5 | **-2.2** |
-| **Global Receptive Field** | Random-Swin-T (global) | 82.7 | - |
-|　Restricted to local regions | Random-Swin-T (regional) | 81.5 | **-1.2** |
-| **Fixed Grouping Pattern** | Random-Swin-T (fixed P) | 82.7 | - |
-|　Different P per image | Fully Random Swin-T | 76.4 | **-6.3** |
-
-### Ablation Study: Roadmap from Fully Random to Random-Swin
-
-| Configuration | Throughput (img/s) | Acc (%) |
-|--------------|-------------------|---------|
-| Fully Random (single P) | 1922 | 71.2 |
-| + Fixed grouping pattern | 1922 | 77.6 (+6.4) |
-| + Per-head independent P | 1917 | 80.1 (+2.5) |
-| + CPE positional encoding | 1866 | 82.7 (+2.6) |
-| Swin-T (reference) | 1738 | 81.3 |
+| 　Remove PE | Random-Swin-T w/o PE | 79.3 | **-3.4** |
+| 　Comparison: Swin-T w/o PE | - | 80.1 | -1.6 |
+| **Head Diversity** | Random-Swin-T (Multi-P) | 82.7 | - |
+| 　Shared P across all heads | Random-Swin-T (Single P) | 80.5 | **-2.2** |
+| **Global Receptive Field** | Random-Swin-T (Global) | 82.7 | - |
+| 　Limit to local regions | Random-Swin-T (Regional) | 81.5 | **-1.2** |
+| **Fixed Grouping Patterns** | Random-Swin-T (Fixed P) | 82.7 | - |
+| 　New P per image | Fully Random Swin-T | 76.4 | **-6.3** |
 
 ### Key Findings
 
-1. **Random grouping comprehensively outperforms carefully designed methods**: Across 3 backbone categories × 6+ architectures × 5 tasks, random grouping almost universally surpasses the original grouping strategies while achieving faster inference.
-2. **Larger gains on downstream tasks**: On COCO detection, Random-Swin-T yields gains of up to +2.3 AP^b and +2.6 RetinaNet AP^b, far exceeding the +1.4% improvement on classification.
-3. **Significant speed advantages**: Random-Quadtree-b2 achieves 1926 img/s vs. 467 img/s for the original Quadtree-b2—a 4.1× speedup—alongside a +0.7% accuracy gain.
-4. **Fixed pattern is the most critical factor**: Fully Random (different P per image) causes a catastrophic -6.3% drop, demonstrating that models require a consistent grouping pattern to learn stable feature representations.
-5. **Multi-modal generalization**: On Point Transformer v3, latency is reduced by 23% (88ms→68ms) while mIoU improves by +0.2; all benchmarks improve when applied to LLaVA-1.5/1.6.
+1. **Random grouping outperforms elaborate designs**: Across 3 backbones × 6+ architectures × 5 tasks, random grouping consistently surpasses original designs while being faster.
+2. **Larger gains in downstream tasks**: On COCO detection, Random-Swin-T gains +2.3 AP^b and +2.6 RetinaNet AP^b, exceeding its classification gains.
+3. **Significant speed advantage**: Random-Quadtree-b2 achieves 1926 img/s vs. 467 img/s for the original, a 4.1x speedup, while improving accuracy by +0.7%.
+4. **Fixed patterns are crucial**: Fully Random grouping (new P per image) causes a catastrophic -6.3% drop, indicating that models require consistent patterns to learn stable features.
+5. **Multi-modal generalization**: Reduced latency by 23% (88ms to 68ms) and increased mIoU by +0.2 in Point Transformer v3. Performance improved across all benchmarks in LLaVA-1.5/1.6.
 
 ## Highlights & Insights
 
-- **Counter-intuitive yet profound finding**: Elaborately designed grouping strategies are outperformed by random grouping, overturning the default assumption that "more complex is better." The core contribution lies not only in the method itself but in a deeper understanding of the grouping strategy design space.
-- **Practical guidance from the four-factor analysis**: The four factors—positional information, per-head diversity, global receptive field, and fixed patterns—provide clear design principles for future Transformer efficiency research.
-- **Exceptional engineering simplicity**: No complex clustering, routing, or tree structures are required; only sorting and splitting, making the method deployment-friendly and well-suited for industrial applications.
-- **Elegant roadmap experiment design**: The progressive ablation in Tab. 10 elegantly demonstrates the journey from fully random grouping (71.2%) to incrementally incorporating each key factor, ultimately surpassing Swin-T (82.7% vs. 81.3%).
+- **Counter-intuitive discovery**: Simple random grouping is superior to elaborate strategies, challenging the "more complex is better" mindset. The primary contribution is the profound understanding of grouping design space.
+- **Guidance from four factors**: Positional information, head diversity, global receptive field, and fixed patterns provide clear design criteria for future Transformer efficiency optimization.
+- **Engineering value**: By using only sorting and partitioning without clustering or routing, the method is deployment-friendly and ideal for industrial applications.
+- **Elegant roadmap**: The progressive ablation from fully random (71.2%) to exceeding Swin-T (82.7% vs 81.3%) vividly demonstrates the impact of each design element.
 
 ## Limitations & Future Work
 
-- Random grouping yields smaller gains on architectures that already possess a global receptive field (e.g., CSwin-T gains only +0.4%), suggesting that its advantages stem primarily from enhancing global receptive fields and per-head diversity.
-- The shape of the fixed random tensor is tied to the training resolution; transferring to higher resolutions requires interpolation, which may degrade the quality of the random permutation.
-- The paper does not discuss random seed sensitivity or whether different random initializations introduce performance variance.
+- Random grouping provides smaller gains on architectures that already possess global receptive fields (e.g., CSwin-T gain is only +0.4%), suggesting its advantage stems mainly from global RF and head diversity.
+- Fixed random tensor shapes depend on training resolution; migration to larger resolutions via interpolation might lose some quality of randomness.
+- Seed sensitivity is not discussed; it is unclear if different random initializations lead to significant performance variance.
 
 ## Related Work & Insights
 
-- **Swin Transformer** [ICCV 2021]: The canonical window-based grouping method, universally outperformed by random grouping, demonstrating that local windows are not the optimal choice.
-- **BiFormer** [CVPR 2023]: Bi-level routing grouping with high complexity, surpassed by a simple random approach, revealing the problem of over-engineering.
-- **Point Transformer v3** [CVPR 2024]: Grouping strategies in point cloud scenarios can also be replaced by random grouping, demonstrating cross-modal universality.
+- **Swin Transformer** [ICCV 2021]: Replaced by Random Grouping, suggesting local windows are sub-optimal.
+- **BiFormer** [CVPR 2023]: Complexity of bi-level routing is surpassed by simple randomness, uncovering "over-design" issues.
+- **Point Transformer v3** [CVPR 2024]: Demonstrates that grouping strategies in point cloud scenarios are also replaceable by random grouping, showing cross-modal universality.
 
 ## Rating
 
-| Dimension | Score (1–10) | Notes |
-|-----------|-------------|-------|
-| Novelty | 9 | A minimalist yet counter-intuitive finding that challenges the entire token grouping paradigm. |
-| Technical Depth | 8 | The four-factor analysis is thorough and systematic; ablation design is elegant. |
-| Experimental Thoroughness | 9 | Comprehensive validation across 6 backbone types, 5 tasks, and 3 modalities. |
-| Writing Quality | 8 | Logical and clear, progressively building from observations to explanations. |
-| Value | 9 | Plug-and-play, deployment-friendly, with extremely high engineering value. |
-| **Overall** | **8.6** | A paradigm-shifting work that challenges complex designs with extreme simplicity. |
+| Dimension | Rating (1-10) | Explanation |
+|------|------------|------|
+| Novelty | 9 | Minimalist yet counter-intuitive discovery challenging the token grouping direction. |
+| Technical Depth | 8 | Deep and systematic four-factor analysis with well-designed ablations. |
+| Experimental Thoroughness | 9 | Comprehensive validation across 6 backbones, 5 tasks, and 3 modalities. |
+| Writing Quality | 8 | Clear logic, progressing smoothly from phenomena to explanations. |
+| Value | 9 | Plug-and-play, deployment-friendly, and highly practical. |
+| **Total Score** | **8.6** | A paradigm-shifting work challenging complex designs with extreme simplicity. |
 
 <!-- RELATED:START -->
 
@@ -191,11 +184,11 @@ The core mechanism of the random grouping strategy is extremely straightforward:
 
 ## Related Papers
 
+- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
-- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
+- [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 
 </div>
 

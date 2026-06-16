@@ -2,133 +2,142 @@
 title: >-
   [Paper Note] Particulate: Feed-Forward 3D Object Articulation
 description: >-
-  [CVPR 2026][3D Vision][Articulated Objects] Particulate proposes a feed-forward model that infers complete articulation structures (part segmentation, kinematic tree…
+  [CVPR 2026][3D Vision][Transformer] Particulate proposes a feed-forward model that infers a complete articulated structure (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Trained end-to-end on public datasets using a Part Articulation Transformer, it significantly outperforms existing methods that require
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Articulated Objects"
-  - "3D Part Segmentation"
-  - "Motion Constraint Prediction"
-  - "Feed-Forward Inference"
-  - "Transformer"
+  - CVPR 2026
+  - 3D Vision
+  - Transformer
 date: 2026-05-08
-content_hash: f7b9948a0149fdc6
+content_hash: 3e92e0ad439d6803
 ---
-
 # Particulate: Feed-Forward 3D Object Articulation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.11798](https://arxiv.org/abs/2512.11798)  
 **Code**: [https://ruiningli.com/particulate](https://ruiningli.com/particulate)  
-**Area**: 3D Vision
-**Keywords**: Articulated Objects, 3D Part Segmentation, Motion Constraint Prediction, Feed-Forward Inference, Transformer
+**Area**: 3D Vision  
+**Keywords**: Articulated objects, 3D part segmentation, motion constraint prediction, feed-forward inference, Transformer
 
 ## TL;DR
-Particulate proposes a feed-forward model that infers complete articulation structures (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Built upon the Part Articulation Transformer and trained end-to-end on public datasets, it significantly outperforms existing per-object optimization methods and can be combined with 3D generative models to enable single-image-to-articulated-3D-object generation.
+Particulate proposes a feed-forward model that infers a complete articulated structure (part segmentation, kinematic tree, and motion constraints) from a static 3D mesh within seconds. Trained end-to-end on public datasets using a Part Articulation Transformer, it significantly outperforms existing methods that require per-object optimization and can be integrated with 3D generative models to enable articulation generation from single images.
 
 ## Background & Motivation
 
-1. **Background**: Most real-world objects possess not only shape but also motion capabilities (e.g., cabinet door rotation, drawer sliding). Understanding articulation structure is critical for robotic manipulation, game simulation, and digital twins. Existing methods either rely on rule-based procedural generation that struggles to cover long-tail objects, or require per-object multi-view optimization with prohibitively long runtimes (10–20+ minutes).
+1. **Background**: Most real-world objects possess not only shape but also movement capabilities (e.g., rotating doors, sliding drawers). Understanding articulated structures is crucial for robotic manipulation, game simulation, and digital twins. Existing methods either rely on rule-based procedural generation which fails for long-tail objects, or require per-object multi-view optimization taking 10-20+ minutes.
 
-2. **Limitations of Prior Work**: Learning-based methods fall into three categories: (a) 3D part segmentation methods predict semantic segmentation without modeling articulation relationships; (b) 3D articulated object generation methods cover only a few categories and assume known kinematic structures; (c) VLM-based methods (e.g., Articulate AnyMesh) offer good generalization but require per-object optimization lasting tens of minutes and cannot handle internal or occluded parts.
+2. **Limitations of Prior Work**: Learning-based methods fall into three categories: (a) 3D part segmentation methods predict semantic labels but do not model articulation; (b) 3D articulated object generation methods cover limited categories and assume known kinematic structures; (c) VLM-based methods (e.g., Articulate AnyMesh) generalize well but require lengthy per-object optimization and struggle with internal/occluded parts.
 
-3. **Key Challenge**: How to achieve fast feed-forward inference while maintaining generalization, and handling internally invisible parts?
+3. **Key Challenge**: How to achieve fast feed-forward inference while maintaining generalization and handling invisible internal components?
 
 4. **Goal**: Directly predict complete articulation structures (part segmentation + kinematic tree + motion parameters) from static 3D meshes in a feed-forward manner, supporting multi-joint, multi-category, and AI-generated 3D assets.
 
-5. **Key Insight**: Leverage the flexibility and scalability of Transformers by training end-to-end on large-scale multi-category articulation datasets, using learnable part queries and multi-head decoders to predict each articulation attribute independently.
+5. **Key Insight**: Leverage the flexibility and scalability of Transformers by training end-to-end on large-scale multi-category articulated datasets, using learnable part queries and multi-head decoders to predict specific articulation attributes.
 
-6. **Core Idea**: Employ a standard Transformer with learnable part queries for end-to-end training on point clouds, enabling single-pass feed-forward inference to predict all articulation attributes, including part segmentation, kinematic tree, and motion constraints.
+6. **Core Idea**: Utilize a standard Transformer with learnable part queries for end-to-end training on point clouds, predicting all articulation attributes—including part segmentation, kinematic tree, and motion constraints—in a single forward pass.
 
 ## Method
 
 ### Overall Architecture
-The input is a 3D mesh (converted to point cloud $\mathcal{P}$), and the output is a complete articulation structure $\mathcal{A} = (P, S, K, M)$: the number of parts $P$, face-to-part segmentation mapping $S$, kinematic tree $K$, and motion constraints $M$ (motion type, direction, revolute axis, motion range). The model consists of a Transformer backbone with multiple specialized decoder heads, achieving feed-forward inference in approximately 10 seconds after end-to-end training.
+The objective is to describe "how an object moves" using a single pass with no per-object optimization. This is formalized as a 4-tuple $\mathcal{A} = (P, S, K, M)$, representing the number of parts $P$, a segmentation mapping $S$, a kinematic tree $K$, and motion constraints $M$ (type, direction, axis, range). The pipeline samples the mesh into a point cloud, processes it through a Transformer backbone to encode both point and part representations, and utilizes parallel decoding heads to extract properties. Inference takes approximately 10 seconds, compared to minutes for VLM-based optimization.
+
+```mermaid
+graph TD
+    A["Static 3D Mesh"] --> B["Sampled Point Cloud<br/>Coords + Normals + PartField Features<br/>Summed via MLP to Point Tokens"]
+    subgraph PAT["Part Articulation Transformer (8 Interleaved Blocks)"]
+        direction TB
+        Q["P_max Learnable Part Queries"]
+        C1["Part Query Self-Attention<br/>Negotiating boundaries and hierarchy"]
+        C2["Query-to-Point Cross-Attention<br/>Each part claims its points"]
+        Q --> C1 --> C2
+    end
+    B --> PAT
+    PAT --> D["Multi-head Decoder (Parallel Attribute Extraction)"]
+    D -->|"h_S"| E1["Part Segmentation<br/>N×P_max Point-Part Matrix"]
+    D -->|"h_K"| E2["Kinematic Tree<br/>Parent-Child Probs → Edmonds' MST"]
+    D -->|"Motion Constraints"| E3["Over-parameterized Axis Prediction<br/>Direction Regression + Global Point Voting"]
+    E1 --> F["Articulation Structure (P, S, K, M)"]
+    E2 --> F
+    E3 --> F
+```
 
 ### Key Designs
 
-1. **Part Articulation Transformer**:
+**1. Part Articulation Transformer: Handling Unknown Part Counts with DETR-style Queries**
 
-    - **Function**: Extracts latent representations of point tokens and part tokens from point clouds.
-    - **Mechanism**: Each point $\mathbf{p}_i$ is encoded via three separate MLPs over its coordinates, normal vectors, and PartField semantic features, which are then summed to form the point token $\tilde{\mathbf{p}}_i$. A set of $P_{max}$ learnable part queries $\mathcal{Q}$ (far exceeding the actual number of parts) is initialized. The backbone consists of $B=8$ attention blocks, each alternating between query self-attention and query-to-point cross-attention. Self-attention among point tokens is omitted to save memory, given that $N \gg P_{max}$.
-    - **Design Motivation**: DETR-style part queries elegantly address the unknown part count problem, while the Transformer's attention mechanism flexibly captures inter-part and point-to-part relationships. PartField features introduce 2D semantic part priors that enhance generalization to novel categories.
+The number of parts varies per object. Particulate uses $P_{max}$ learnable part queries $\mathcal{Q}$ (larger than any expected part count), allowing the network to determine which queries activate as real parts. Each point $\mathbf{p}_i$ combines coordinates, normals, and PartField semantic features via an MLP to form a point token $\tilde{\mathbf{p}}_i$. The PartField features introduce 2D semantic priors essential for generalizing to unseen categories and AI-generated assets. The backbone consists of 8 blocks interleaving self-attention among part queries and cross-attention from queries to point tokens.
 
-2. **Multi-Head Decoder**:
+**2. Multi-head Decoder: Decoupling Attributes into Independent MLP Heads**
 
-    - **Function**: Decodes each articulation attribute from point/part tokens independently.
-    - **Mechanism**: **Part segmentation** uses MLP $h_S(\tilde{\mathbf{p}}_i, \tilde{\mathbf{q}}_j)$ to predict an $N \times P_{max}$ logit matrix. **Kinematic tree** uses MLP $h_K(\tilde{\mathbf{q}}_i, \tilde{\mathbf{q}}_j)$ to predict a $P_{max} \times P_{max}$ parent-child probability matrix, from which Edmonds' algorithm extracts the maximum spanning tree at inference time. **Motion type, range, and prismatic direction** are each predicted from part tokens via independent MLPs.
-    - **Design Motivation**: Decomposing articulation structure into independently predictable attributes, each decoded by a dedicated MLP, simplifies the learning problem.
+After the backbone, attributes are processed by independent heads. Part segmentation $h_S(\tilde{\mathbf{p}}_i, \tilde{\mathbf{q}}_j)$ outputs an $N \times P_{max}$ logit matrix. The kinematic tree $h_K(\tilde{\mathbf{q}}_i, \tilde{\mathbf{q}}_j)$ outputs a $P_{max} \times P_{max}$ parent-child probability matrix; Edmonds' algorithm is used during inference to ensure a valid directed tree structure. Motion types, ranges, and prismatic directions are regressed by independent MLPs from corresponding part tokens.
 
-3. **Over-parameterized Revolute Axes**:
+**3. Over-parameterized Axis Prediction: Voting for Robustness**
 
-    - **Function**: Accurately predict the direction and position of revolute axes.
-    - **Mechanism**: The revolute axis direction $\tilde{\mathbf{d}}_{ra}^i$ is directly predicted by an MLP from the part token and normalized. However, the axis position is not regressed directly (which is prone to overfitting); instead, each 3D point belonging to the part votes via MLP $h_{cp}(\tilde{\mathbf{p}}_j, \tilde{\mathbf{q}}_i)$ to predict its orthogonal projection onto the revolute axis. The median of all votes is taken as the final axis position at inference time.
-    - **Design Motivation**: Revolute axis directions are typically axis-aligned and relatively easy to learn, whereas axis position prediction requires high precision. The over-parameterized per-point voting scheme leverages spatial priors for more robust axis position estimation, while median aggregation provides robustness against outliers.
+Predicting rotation axes is difficult. The model regresses the orientation $\tilde{\mathbf{d}}_{ra}^i$ directly. For the axis position, instead of regressing a single coordinate, each point $\mathbf{p}_j$ belonging to a part predicts its orthogonal projection onto the axis via $h_{cp}(\tilde{\mathbf{p}}_j, \tilde{\mathbf{q}}_i)$. The median of all point votes within the part is taken as the final axis position. This geometric constraint ensures consistency across hundreds of points and is more robust than mean or direct regression.
 
 ### Loss & Training
 
-The multi-task loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_K + \mathcal{L}_M$. Part segmentation uses cross-entropy loss, and the kinematic tree uses binary cross-entropy. Motion constraint losses include cross-entropy for motion type, L1 losses for prismatic/revolute ranges and directions, and L1 losses for revolute axis direction and position. During training, Hungarian matching assigns the $P_{max}$ predicted part queries to $P$ ground-truth parts (following DETR). Training data comes from PartNet-Mobility (3,800 objects, 50 categories) and GRScenes; each iteration randomly samples an articulation state and computes PartField features online. The model is trained with the AdamW optimizer at a global batch size of 128 on 8 H100 GPUs for 100K iterations.
+A multi-task loss is used: $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_K + \mathcal{L}_M$. Part segmentation uses cross-entropy, while the kinematic tree uses binary cross-entropy. Motion constraints include cross-entropy for types and L1 loss for ranges, directions, and axis parameters. Hungarian matching aligns $P_{max}$ predicted queries with $P$ ground truth parts. Training is performed on PartNet-Mobility and GRScenes using AdamW with a batch size of 128 on 8 H100 GPUs for 100K iterations.
 
 ## Key Experimental Results
 
-### Main Results (Articulated Part Segmentation)
+### Main Results (Part Segmentation)
 
 | Method | Lightwheel gIoU↑ | Lightwheel PC↓ | PartNet gIoU↑ | PartNet PC↓ |
-|---|---|---|---|---|
+|-----|------------------|----------------|---------------|-------------|
 | Naive Baseline | 0.018 | 0.285 | 0.296 | 0.210 |
 | PartField† | 0.079 | 0.106 | 0.183 | 0.123 |
 | SINGAPO (1@10)† | -0.050 | 0.221 | 0.271 | 0.117 |
 | Articulate AnyMesh† | 0.172 | 0.190 | 0.383 | 0.104 |
-| **Particulate†** | **0.332** | **0.168** | **0.880** | **0.003** |
+| **Ours†** | **0.332** | **0.168** | **0.880** | **0.003** |
 
-†: With mesh connected component refinement
+†: Refined with mesh connectivity.
 
-### Articulation Motion Prediction (Full Articulated Geometry Comparison)
+### Main Results (Full Articulation Geometry)
 
 | Method | Lightwheel gIoU↑ | Lightwheel OC↓ | PartNet gIoU↑ | PartNet OC↓ |
-|---|---|---|---|---|
+|-----|------------------|----------------|---------------|-------------|
 | SINGAPO (1@10)† | -0.056 | 0.019 | 0.264 | 0.041 |
 | Articulate AnyMesh† | 0.158 | 0.010 | 0.378 | 0.022 |
-| **Particulate†** | **0.305** | **0.009** | **0.843** | **0.003** |
+| **Ours†** | **0.305** | **0.009** | **0.843** | **0.003** |
 
 ### Ablation Study
 
-| Configuration | gIoU↑ | Notes |
-|---|---|---|
+| Configuration | gIoU↑ | Description |
+|------|-------|------|
 | Full model | 0.332 | Complete model (Lightwheel, with connectivity) |
-| w/o PartField features | Lower | Generalization degrades without semantic features |
-| w/o connected comp. refinement | 0.183 | Significant drop without mesh connected component refinement |
-| w/o over-parameterized axis | Lower | Direct axis position regression causes offset |
+| w/o PartField features | Lower | Generalization drops without semantic features |
+| w/o connected comp. refinement | 0.183 | Performance drops significantly without mesh connectivity |
+| w/o over-parameterized axis | Lower | Direct axis position regression leads to offsets |
 
 ### Key Findings
-- Particulate achieves a gIoU of 0.880 on PartNet-Mobility, far exceeding the second-best method Articulate AnyMesh at 0.383.
-- The advantage remains clear on the more challenging Lightwheel dataset (0.332 vs. 0.172).
-- PartField and P3SAM predict semantic parts rather than articulation parts, resulting in definition mismatches.
-- VLM-based methods (Articulate AnyMesh) cannot handle internally invisible parts (e.g., the turntable inside a microwave).
-- Particulate generalizes well to AI-generated 3D assets (objects generated by Hunyuan3D).
+- Ours achieves a gIoU of 0.880 on PartNet-Mobility, far exceeding Articulate AnyMesh (0.383).
+- The performance gap remains significant on the challenging Lightwheel dataset (0.332 vs 0.172).
+- Purely semantic methods like PartField do not align well with articulation-based segmentation.
+- VLM-based methods fail to capture occluded internal components (e.g., microwave trays).
+- Generalizes successfully to AI-generated 3D assets (e.g., from Hunyuan3D).
 
 ## Highlights & Insights
-- **The over-parameterized voting mechanism for revolute axes is highly elegant**: having each point vote for the axis position and aggregating via median cleverly exploits the geometric constraint that the axis position must be consistent across all orthogonal projections, avoiding the overfitting issues of direct regression.
-- **DETR-style part queries adapted for articulation prediction**: learnable part queries elegantly handle the unknown part count problem while simultaneously enabling prediction of inter-part kinematic relationships.
-- **Transferable data augmentation strategy**: randomly sampling different articulation states each iteration effectively provides extensive data augmentation, enabling the model to understand objects across diverse poses.
+- **Geometric Voting**: The over-parameterized axis prediction utilizes the global consistency of point cloud projections, making it inherently more robust than single-point regression.
+- **Query-based Articulation**: Adapting DETR-style queries allows the model to handle variable part counts and inter-part relationships within a unified Transformer architecture.
+- **Data Augmentation**: Training on randomized articulation states provides significant augmentation, allowing the model to interpret various object poses.
 
 ## Limitations & Future Work
-- The constraint $P_{max}=16$ limits the maximum number of parts, which may be insufficient for highly complex articulated objects (e.g., robotic arms).
-- Only rigid articulation joints (revolute/prismatic) are considered; soft deformations are not supported.
-- Training data comprises only 3,800 objects; scaling up the dataset may further improve generalization.
-- PartField feature computation at inference time introduces additional overhead.
-- The newly introduced Lightwheel benchmark contains only 243 objects, limiting its scale.
+- The maximum part count is limited by $P_{max}=16$, which may be insufficient for highly complex robots.
+- The model only supports rigid revolute and prismatic joints, not soft-body deformation.
+- Scaling training data beyond 3,800 objects could further enhance generalization.
+- Computing PartField features adds latency to the inference pipeline.
+- The Lightwheel benchmark is relatively small at 243 objects.
 
 ## Related Work & Insights
-- **vs. SINGAPO**: SINGAPO assembles articulated objects via part retrieval, constrained by part library coverage and trained on only a few categories. Particulate predicts end-to-end without relying on retrieval.
-- **vs. Articulate AnyMesh**: The latter uses VLM-based articulation reasoning with good generality, but requires 15 min/object and cannot handle internal parts. Particulate completes inference in 10 seconds and handles internal structures.
-- **vs. PartField**: PartField performs semantic segmentation rather than articulation segmentation, and the two definitions differ. Particulate uses PartField as an input feature, combining the strengths of both approaches.
+- **vs SINGAPO**: SINGAPO relies on part retrieval and is limited by its library. Ours predicts articulation end-to-end without retrieval dependencies.
+- **vs Articulate AnyMesh**: Articulate AnyMesh takes ~15 minutes per object and misses internal parts. Ours takes ~10 seconds and handles internal structures.
+- **vs PartField**: PartField addresses semantic segmentation. Ours incorporates it as a feature to bridge the gap between semantics and physical articulation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First method to feed-forwardly predict complete articulation structures from static 3D meshes; the over-parameterized revolute axis design is creative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Two datasets, detailed ablations, new evaluation protocol, and rich visualizations; comparisons are very comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Formal definitions are clear, method descriptions are thorough, and the Related Work summary table is well-organized.
-- **Value**: ⭐⭐⭐⭐ Significant practical impact for 3D articulation understanding; combined with 3D generative models, it enables end-to-end object creation.
+- Novelty: ⭐⭐⭐⭐ First feed-forward method for full articulation inference from static meshes.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across datasets with extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear formal definitions and detailed method descriptions.
+- Value: ⭐⭐⭐⭐ Significant for 3D understanding and downstream generative tasks.
 
 <!-- RELATED:START -->
 
@@ -136,10 +145,10 @@ The multi-task loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_K + \mathcal{L
 
 ## Related Papers
 
+- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2026\] FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement](fuser_feed-forward_multiview_3d_registration_transformer_and_se3n_diffusion_refi.md)
+- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[CVPR 2026\] Speed3R: Sparse Feed-forward 3D Reconstruction Models](speed3r_sparse_feed-forward_3d_reconstruction_models.md)
-- [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 - [\[CVPR 2026\] PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis](physgm_large_physical_gaussian_4d_synthesis.md)
 
 </div>

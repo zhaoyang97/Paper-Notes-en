@@ -2,140 +2,157 @@
 title: >-
   [Paper Note] DeDelayed: Deleting Remote Inference Delay via On-Device Correction
 description: >-
-  [CVPR 2026][Segmentation][Collaborative inference] DeDelayed is an edge-cloud collaborative inference framework that combines a lightweight on-device image model with a latency-aware cloud-side temporal prediction video…
+  [CVPR 2026][Segmentation][Paper Note] This paper proposes DeDelayed, an edge-cloud collaborative inference framework that combines a lightweight local image model with a delay-aware cloud temporal prediction video model. By training the cloud model for temporal prediction to compensate for network latency, the framework improves mIoU by 6.4 compared to pur
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Collaborative inference"
-  - "real-time video segmentation"
-  - "latency compensation"
-  - "temporal prediction"
-  - "edge-cloud collaboration"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 0d64ea7878037cb0
+content_hash: 5c9eeef009aa1374
 ---
-
 # DeDelayed: Deleting Remote Inference Delay via On-Device Correction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.13714](https://arxiv.org/abs/2510.13714)  
 **Code**: [github.com/InterDigitalInc/dedelayed](https://github.com/InterDigitalInc/dedelayed)  
-**Area**: Image Segmentation
-**Keywords**: Collaborative inference, real-time video segmentation, latency compensation, temporal prediction, edge-cloud collaboration
+**Area**: Image Segmentation  
+**Keywords**: Collaborative inference, Real-time video segmentation, Delay compensation, Temporal prediction, Edge-cloud collaboration
 
 ## TL;DR
-DeDelayed is an edge-cloud collaborative inference framework that combines a lightweight on-device image model with a latency-aware cloud-side temporal prediction video model. By training the network with temporally predictive objectives to compensate for communication delay, DeDelayed achieves gains of 6.4 mIoU over local-only inference and 9.8 mIoU over remote-only inference under 100 ms latency.
+This paper proposes DeDelayed, an edge-cloud collaborative inference framework that combines a lightweight local image model with a delay-aware cloud temporal prediction video model. By training the cloud model for temporal prediction to compensate for network latency, the framework improves mIoU by 6.4 compared to purely local inference and by 9.8 compared to purely remote inference under a 100ms delay.
 
 ## Background & Motivation
-**Background**: The most powerful video understanding models are computationally prohibitive for resource-constrained edge devices, while offloading inference to the cloud introduces communication latency that renders predictions stale.
+**Background**: State-of-the-art video understanding models are too computationally intensive to run on resource-constrained edge devices. Conversely, offloading inference to the cloud introduces communication latency, leading to outdated predictions.
 
-**Limitations of Prior Work**: (1) Existing segmentation offloading methods dedicate all local compute to a single inference pipeline, providing no fallback when the cloud is unavailable; (2) the impact of latency on prediction accuracy is not addressed; (3) computational cost is controlled by reducing spatiotemporal resolution.
+**Limitations of Prior Work**: (1) Existing split computing methods utilize all local resources for a single inference pipeline, lacking a fallback mechanism when the cloud is unavailable; (2) The impact of latency on prediction accuracy is often ignored; (3) Computational costs are typically controlled by reducing spatio-temporal resolution.
 
-**Key Challenge**: Cloud models offer high accuracy but incur latency, whereas local models run in real time but at lower accuracy — how can the advantages of both be combined?
+**Key Challenge**: Cloud models provide high accuracy but suffer from latency, while local models are real-time but exhibit lower accuracy—how can their respective strengths be unified?
 
-**Goal**: Design a real-time inference system that jointly exploits delayed high-quality remote features and instantaneous low-resolution local features.
+**Goal**: Design a real-time inference system that integrates high-quality, delayed remote features with real-time, low-resolution local features.
 
-**Key Insight**: Train the remote model to predict features for **future frames**, so that delayed remote outputs remain useful upon arrival.
+**Key Insight**: Train the remote model to predict features for **future frames**, ensuring that delayed remote outputs remain relevant when they finally arrive at the edge.
 
-**Core Idea**: $\hat{y}_t = f_{\text{local}}(x_t, z_{t-\tau})$, where the local model processes the current frame and the remote model predicts future-frame features; the two are fused via element-wise addition.
+**Core Idea**: $\hat{y}_t = f_{\text{local}}(x_t, z_{t-\tau})$, where the local model processes the current frame and the remote model predicts features for future frames, with the two being integrated through element-wise addition.
 
 ## Method
 
 ### Overall Architecture
-- **Remote model**: A 2D ViT (EfficientViT-L1) extracts per-frame features → temporal concatenation of $K=4$ frames → delay embedding injection → 3D ViT encoder → adaptive pooling + channel bottleneck (DR-AE) → downlink transmission.
-- **Local model**: CNN2D + CoAt2D processes low-resolution current frames; segmentation is performed after fusing remote features.
-- **Fusion**: Remote features are spatially pooled to align with local resolution and then **element-wise added** to the CNN2D output.
+DeDelayed addresses a practical engineering contradiction: high-resolution cloud models offer superior semantic accuracy but suffer from network delays that render their results outdated by the time they arrive. Meanwhile, local small models are real-time but struggle with complex scenes. The proposed approach runs both pipelines simultaneously and merges them: the local model processes the **current frame** at a lower resolution, while the cloud model extracts features at a high resolution and is trained to **predict future frames**. Consequently, the remote output, delayed by $\tau$ frames, aligns with the current visual scene upon arrival.
+
+Specifically, the cloud utilizes a 2D ViT (EfficientViT-L1) for frame-wise feature extraction. Features from the most recent $K=4$ frames are temporally concatenated, augmented with a "delay embedding," and passed into a 3D ViT encoder. These are then compressed via Adaptive Spatial Pooling and a channel bottleneck (DR-AE) for downlink transmission. Locally, a CNN2D + CoAt2D architecture processes the current frame at $704 \times 480$. The aligned cloud features are **element-wise added** to the activation maps between the CNN2D and CoAt2D layers before decoding the segmentation. The core relationship is defined as $\hat{y}_t = f_{\text{local}}(x_t, z_{t-\tau})$: the local model ingests the current frame $x_t$, while the fusion incorporates the remote features $z_{t-\tau}$ that were transmitted $\tau$ frames ago but predicted for the current time.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Input Video Stream 720p 30fps"]
+    V --> RH["High-res Frames + Recent K=4 Frames"]
+    V --> LL["Current Frame x_t<br/>Low-res 704×480"]
+
+    subgraph REMOTE["Remote High-res Stream (Temporal Prediction Training)"]
+        direction TB
+        RH --> R1["ViT2D Frame-wise Feature Extraction<br/>EfficientViT-L1"]
+        R1 --> R2["Temporal Stacking K Frames + Delay Embedding<br/>Conditioned on Actual Latency τ"]
+        R2 --> R3["3D ViT Encoder<br/>Supervised by Future Frame Labels"]
+        R3 --> R4["DR-AE Dimensionality Reduction<br/>Spatial Pooling to Match Local Res → Downlink"]
+    end
+
+    subgraph LOCAL["Local Low-res Real-time Stream"]
+        direction TB
+        LL --> L1["CNN2D Pixel Layers"]
+        L1 --> ADD["Addition Fusion + Local Fallback<br/>Remote Features Added Element-wise to Activation Map"]
+        ADD --> L2["CoAt2D + L-MLP Decoder"]
+    end
+
+    R4 -->|"Delayed τ-frame Features z_t−τ<br/>Zeroed if Missing → Pure Local Inference"| ADD
+    L2 --> OUT["Segmentation Output ŷ_t"]
+```
 
 ### Key Designs
-1. **Temporally Predictive Training**: During training, an artificial delay of $D$ frames (uniformly sampled from 0–5) is applied to the remote model's input, while supervision is provided by the labels of the corresponding future frame. A learnable *delay embedding* (analogous to positional encoding) is introduced so that the model's behavior adapts to the actual delay at inference time. **Design Motivation**: Since network latency is unavoidable, the model is trained to predict future states and thereby proactively compensate for delay.
 
-2. **Full Integration with Local Fallback**: Remote features are fused into an intermediate layer of the local model via element-wise addition — if the remote output is absent, the local model operates independently. **Design Motivation**: Hard real-time applications require a complete local fallback. The element-wise addition ensures that when the remote signal is zero, the system behaves identically to pure local inference.
+**1. Temporal Prediction Training: Offsetting Network Latency via Predictive Buffering**
 
-3. **Mixed-Resolution Inference**: The local model processes low-resolution frames (704×480), while the remote model processes high-resolution frames (720p). **Design Motivation**: Running any model at capture resolution on an edge device is impractical, but cloud GPUs can handle high-resolution video. The remote branch provides semantic understanding, while the local branch provides spatial localization.
+Latency is an unavoidable bottleneck in edge-cloud collaboration—standard remote inference accuracy drops below purely local inference when latency exceeds 67ms because the returned features describe the past. DeDelayed injects artificial delay $D$ (sampled uniformly from 0–5 frames) into the cloud model's input during training, while using labels from **future frames** as supervision. This forces the model to learn to "predict semantics $D$ frames ahead based on current input." A learnable **delay embedding** (functioning similarly to positional encoding and conditioned on the actual latency) is introduced, allowing a single model to adaptively adjust its prediction according to the current real-world delay. Thus, whether the network jitters at 33ms or 167ms, the model outputs features "aligned with the present," effectively internalizing motion compensation within the network instead of performing post-hoc frame alignment.
+
+**2. Addition Fusion + Local Fallback: Graceful Degradation to Purely Local Inference**
+
+Hard real-time applications (e.g., autonomous driving) cannot assume the cloud is always online. DeDelayed integrates remote features by **element-wise addition** to the local intermediate layers rather than concatenation or gated fusion. This choice has a well-defined property: when the remote signal is zero (e.g., due to packet loss), $f_{\text{local}}(x_t, \mathbf{0})$ is numerically equivalent to purely local inference. The model behavior does not collapse; it simply reverts to local accuracy. This positions the remote signal as a "bonus" rather than a hard dependency, providing a natural fallback mechanism that many split computing methods—which commit all local power to the uplink pipeline—lack.
+
+**3. Hybrid Resolution Inference: High-res for Semantic Identification, Low-res for Spatial Localization**
+
+Running models at original capture resolution on edge devices is often impractical, but cloud GPUs can handle it. DeDelayed assigns the local model to process $704 \times 480$ low-resolution frames for precise spatial localization, while the cloud model extracts features from 720p high-resolution frames for semantic understanding. Visualizations demonstrate that remote activation maps accurately distinguish and classify small distant objects (e.g., pedestrians), while the local model provides precise boundary校准. Their resolution roles are complementary: high-resolution semantic features from the cloud are pooled via DR-AE to match local dimensions and then added, saving downlink bandwidth (matching 5G uplink 1–10 Mbps) while assigning "clarity" and "real-time response" to the most suitable processing nodes.
+
+### Mechanism Example
+Consider frame $t$ with a network round-trip delay of $\tau = 3$ frames (≈100ms @30fps). At time $t$, the edge device receives the low-resolution frame $t$, and the CNN2D + CoAt2D immediately computes a real-time but coarse feature map. Simultaneously, the cloud feature $z_{t-3}$ arrives. This feature was sent by the cloud at frame $t-3$ but was trained (via "temporal prediction + delay embedding" conditioned on $D=3$) to **predict the semantics of frame $t$**. After the resolution is aligned via DR-AE, the two features are added element-wise to produce the segmentation $\hat{y}_t$, combining precise local spatial boundaries with distant object classifications from the cloud. If $z_{t-3}$ is lost, the addition term becomes zero, and the local model outputs a slightly coarser result without system failure. This explains why DeDelayed maintains a high mIoU of 0.665 at 100ms latency, showing almost no performance drop as latency increases.
 
 ### Loss & Training
-- Multi-stage training: remote and local models are pretrained separately on ImageNet → Cityscapes → BDD100K, followed by joint fine-tuning.
-- Joint training uses per-pixel cross-entropy loss, the Adan optimizer, and a warmup-stable-decay learning rate schedule.
-- Training delay $\tau$ is uniformly sampled from 0–5 frames (0–167 ms at 30 fps).
+- **Multi-stage Training**: Remote and local models are pre-trained on ImageNet → Cityscapes → BDD100K before joint fine-tuning.
+- **Joint Training**: Uses per-pixel cross-entropy loss, the Adan optimizer, and a warmup-stable-decay learning rate schedule.
+- **Latency Training**: Delay $\tau$ is uniformly sampled from 0–5 frames (0–167ms @30fps), coupled with delay embeddings to cover dynamic latencies within a single model.
 
 ## Key Experimental Results
 
 ### Main Results (BDD100K Semantic Segmentation mIoU)
 
-| Inference Configuration | 0 ms | 33 ms | 67 ms | 100 ms | 167 ms |
-|------------------------|------|-------|-------|--------|--------|
+| Inference Configuration | 0ms | 33ms | 67ms | 100ms | 167ms |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Local only | 0.601 | 0.601 | 0.601 | 0.601 | 0.601 |
 | Remote image | 0.655 | 0.616 | 0.567 | 0.530 | 0.525 |
 | Remote predictive | 0.655 | 0.649 | 0.644 | 0.637 | 0.624 |
-| **DeDelayed** | **0.670** | **0.668** | **0.666** | **0.665** | **0.668** |
+| **Ours (DeDelayed)** | **0.670** | **0.668** | **0.666** | **0.665** | **0.668** |
 
 ### Ablation Study
 
-| Configuration | mIoU @167 ms | Notes |
-|---------------|-------------|-------|
-| Local only | 0.601 | Unaffected by latency but low accuracy |
+| Configuration | mIoU @167ms | Description |
+| :--- | :--- | :--- |
+| Local only | 0.601 | Unaffected by latency but lower accuracy |
 | Remote image | 0.525 | Latency severely degrades accuracy |
-| Remote predictive | 0.624 | Temporal prediction substantially mitigates degradation |
-| **DeDelayed (full)** | **0.668** | Latency effect nearly eliminated |
+| Remote predictive | 0.624 | Temporal prediction significantly mitigates drop |
+| **Ours (DeDelayed full)** | **0.668** | Virtually eliminates the impact of latency |
 
 ### Key Findings
-- Conventional remote inference degrades below local-only performance when latency exceeds 67 ms.
-- DeDelayed surpasses local-only inference by 6.7 mIoU at 167 ms latency, equivalent to using a model that is 10× larger.
-- Activation map visualizations reveal that the remote branch provides accurate object classification while the local branch provides precise spatial localization.
-- The delay embedding enables a single model to adapt dynamically to latencies ranging from 0 to 167 ms.
+- Conventional remote inference performance falls below local inference when latency exceeds 67ms.
+- DeDelayed outperforms local-only inference by 6.7 mIoU at 167ms delay, comparable to using a model 10x larger.
+- Activation map visualizations show that the remote model provides accurate object classification, while the local model provides precise spatial localization.
+- Delay embeddings allow a single model to adapt to a dynamic latency range of 0–167ms.
 
 ## Highlights & Insights
-- **Fallback-first design**: Remote information serves as an auxiliary signal rather than a required dependency, ensuring hard real-time safety.
-- **Delay embedding ≈ learnable motion compensation**: By conditioning on the delay magnitude, the model learns motion prediction of varying degrees.
-- **Complementarity of mixed resolution**: The high-resolution remote branch recognizes small distant objects (e.g., far-away pedestrians), while the low-resolution local branch provides precise spatial calibration.
-- Element-wise addition is simple yet well-defined in behavior, degrading gracefully when the remote signal is absent.
+- **Fallback-first Design**: Remote information acts as an "auxiliary signal" rather than a mandatory dependency, ensuring safety for hard real-time applications.
+- **Delay Embedding ≈ Learnable Motion Compensation**: By conditioning on the latency amount, the model learns varying degrees of motion prediction.
+- **Hybrid Resolution Complementarity**: High-res remote processing identifies small distant targets, while low-res local processing provides spatial alignment.
+- **Simplistic but Robust Fusion**: Element-wise addition is mathematically simple yet provides well-defined behavior for graceful degradation during signal loss.
 
 ## Limitations & Future Work
-- Validation is limited to segmentation; detection and other dense prediction tasks are not evaluated.
-- Pseudo-labels are used for training due to the lack of per-frame annotations in BDD100K; performance with ground-truth labels may be higher.
-- Distortion introduced by uplink video compression is not explicitly modeled.
-- High-latency scenarios beyond 167 ms are not evaluated.
-- Multiple remote models and hierarchical feature fusion are not explored.
-- The feasibility of the local model on ultra-low-power devices (<5 W) remains to be verified.
-- The compression efficiency of DR-AE under downlink bandwidth constraints warrants further optimization.
-- Heterogeneous sensor fusion scenarios (e.g., LiDAR + camera) are not covered.
+- Validated only on segmentation; detection or other dense prediction tasks remain untested.
+- Relies on pseudo-label training (due to lack of per-frame annotations in BDD100K); performance might improve with ground truth.
+- Artifacts from uplink video compression are not explicitly modeled.
+- High-latency scenarios exceeding 167ms were not evaluated.
+- Multi-remote model or hierarchical fusion strategies were not explored.
+- Feasibility on ultra-low power devices (<5W) requires further validation.
+- DR-AE compression efficiency needs optimization for extremely limited downlink bandwidth.
+- Heterogeneous sensor fusion (e.g., LiDAR + Camera) scenarios are not covered.
 
 ## Related Work & Insights
-- **Distinction from split computing**: FCM dedicates all local compute to the uplink pipeline with no fallback capability.
-- **Comparison with Knowledge Boosting**: The latter requires training a separate model for each fixed latency value.
-- The delay embedding design is generalizable to other asynchronous information fusion scenarios.
-- Adaptive Model Streaming updates model weights in a streaming fashion, which is orthogonal to DeDelayed's feature-level fusion.
-
-## Technical Details
-- **Remote model**: EfficientViT-L1 (2D ViT, patch 8×8) → temporal concatenation of $K=4$ frames → 3D ViT + delay embedding.
-- **Local model**: CNN2D + CoAt2D, maximum resolution 704×480.
-- **DR-AE**: Adaptive spatial pooling + channel bottleneck to match local resolution and compress downlink bandwidth.
-- **Uplink compression**: 720p at 30 fps transmitted at 1–10 Mbps (5G cellular network).
-- **Target latency**: 33 ms for both local and remote branches (single frame at 30 fps).
-- **Pseudo-labels**: DepthAnything for the validation set; EoMT for the training set.
-- **Optimizer**: Adan + warmup-stable-decay + gradient clipping + LLRD.
-- **Key insight**: Remote model activation maps show accurate object discrimination and classification (e.g., distant pedestrians); the local model provides precise spatial correction.
-- **Dataset**: BDD100K contains 70K training videos of urban driving scenes at 30 fps.
-- **Evaluation**: Cityscapes 19-class semantic segmentation protocol.
-- **5G suitability**: Design parameters are matched to 5G cellular network uplink capacity (1–10 Mbps).
+- **Contrast with Split Computing**: Methods like FCM devote all local computation to the uplink pipeline, offering no fallback mechanism.
+- **Contrast with Knowledge Boosting**: The latter requires training separate models for each fixed latency.
+- **Extensibility**: The delay embedding design can be generalized to other asynchronous information fusion scenarios.
+- **Orthogonality**: Adaptive Model Streaming (streaming weight updates) is orthogonal to DeDelayed's feature fusion approach.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The edge-cloud collaborative framework combining temporal prediction with delay embeddings is elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive comparison across multiple configurations, though evaluated on only one dataset and one task.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Problem formulation is clear and system diagrams are intuitive.
-- Value: ⭐⭐⭐⭐⭐ — Directly targets practical deployment scenarios with high engineering value.
+- **Novelty**: ⭐⭐⭐⭐ Clever design of the edge-cloud framework using temporal prediction and delay embeddings.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Detailed comparisons across configurations, though limited to one dataset/task.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear problem definition and intuitive system diagrams.
+- **Value**: ⭐⭐⭐⭐⭐ Highly relevant to actual deployment scenarios with significant engineering value.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] A²LC: Active and Automated Label Correction for Semantic Segmentation](../../AAAI2026/segmentation/a2lc_active_and_automated_label_correction_for_semantic_segm.md)
+- [\[CVPR 2025\] EdgeTAM: On-Device Track Anything Model](../../CVPR2025/segmentation/edgetam_on-device_track_anything_model.md)
+- [\[CVPR 2026\] F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation](f2net_a_frequency-fused_network_for_ultra-high_resolution_remote_sensing_segment.md)
 - [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
 - [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[CVPR 2026\] RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images](rdnet_region_proportion-aware_dynamic_adaptive_salient_object_detection_network_.md)
-- [\[NeurIPS 2025\] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas](../../NeurIPS2025/segmentation/self-supervised_synthetic_pretraining_for_inference_of_stellar_mass_embedded_in_.md)
 
 </div>
 

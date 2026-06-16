@@ -2,80 +2,85 @@
 title: >-
   [Paper Note] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 description: >-
-  [CVPR 2026][Multimodal VLM][rare object recognition] This paper proposes an efficient plug-and-play module that learns multimodal class embeddings to enhance VLM recognition and reasoning on rare objects. On the visual s…
+  [CVPR 2026][Multimodal VLM][Paper Note] Proposes an efficient plug-and-play module to enhance the recognition and reasoning capabilities of VLMs for rare objects by learning multi-modal class embeddings: a cross-attention adapter refines visual tokens on the vision side, and object detection prompts are injected on the text side, achieving a significant impr
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "rare object recognition"
-  - "visual token enhancement"
-  - "multimodal class embeddings"
-  - "plug-and-play"
-  - "VLM robustness"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: a7f4916b551b8aa2
+content_hash: a5ffce54fc363905
 ---
-
 # Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19615](https://arxiv.org/abs/2602.19615)  
-**Code**: N/A  
-**Area**: Multimodal VLM
-**Keywords**: rare object recognition, visual token enhancement, multimodal class embeddings, plug-and-play, VLM robustness
+**Code**: None  
+**Area**: Multimodal VLM  
+**Keywords**: Rare object recognition, visual token enhancement, multi-modal class embedding, plug-and-play, VLM robustness
 
 ## TL;DR
-This paper proposes an efficient plug-and-play module that learns multimodal class embeddings to enhance VLM recognition and reasoning on rare objects. On the visual side, a cross-attention adapter refines visual tokens; on the textual side, object detection prompts are injected. Without fine-tuning the VLM, the method achieves a significant gain from 72.8 to 75.4 on CODA-LM.
+Proposes an efficient plug-and-play module to enhance the recognition and reasoning capabilities of VLMs for rare objects by learning multi-modal class embeddings: a cross-attention adapter refines visual tokens on the vision side, and object detection prompts are injected on the text side, achieving a significant improvement from 72.8 to 75.4 on CODA-LM without fine-tuning the VLM.
 
 ## Background & Motivation
-**Background**: VLMs perform well on general visual understanding, but exhibit notable degradation on reasoning tasks involving rare or uncommon objects.
+**Background**: VLMs demonstrate excellent performance in general visual understanding but show a significant performance drop in reasoning tasks involving rare or infrequent objects.
 
 **Limitations of Prior Work**:
-- Attention weights in intermediate decoding layers of VLMs are significantly lower for rare object regions compared to common objects.
-- Approaches that introduce stronger visual encoders or perform full model fine-tuning incur high computational costs and are not optimized at the object level.
-- Retrieval-augmented learning (RAL) requires large-scale external data and VLM fine-tuning, and may cause catastrophic forgetting.
+   - Attention weights for rare object regions in the intermediate decoding layers of VLMs are significantly lower than those for common objects.
+   - Methods introducing stronger vision encoders or full-model fine-tuning incur high computational costs and are not optimized at the object level.
+   - Retrieval-Augmented Learning (RAL) requires large-scale external data and VLM fine-tuning, which may lead to catastrophic forgetting of original capabilities.
 
-**Key Challenge**: Rare objects appear with extremely low frequency in pretraining data, leading to insufficient visual-language alignment. Existing improvement methods are not designed at the object level and require expensive full model fine-tuning.
+**Key Challenge**: Rare objects appear with extremely low frequency in pre-training data, leading to insufficient vision-language alignment. However, existing improvement methods are not designed at the object level and require expensive full-model fine-tuning.
 
-**Goal**: Efficiently improve VLM perception and reasoning for rare objects without fine-tuning the VLM.
+**Goal**: To efficiently improve the perception and reasoning capabilities of VLMs for rare objects without fine-tuning the VLM itself.
 
-**Key Insight**: Attention visualizations reveal that VLMs pay insufficient attention to rare objects in intermediate decoding layers. This motivates remedies from two directions — enhancing visual tokens (making rare objects more salient) and enriching text prompts (guiding attention to target regions).
+**Key Insight**: Attention visualization reveals that VLMs pay insufficient attention to rare objects in the intermediate decoding layers. Therefore, remedies are needed from two perspectives—enhancing visual tokens (making rare objects more "salient") and enriching text prompts (guiding attention to the target regions).
 
-**Core Idea**: Learn multimodal class embeddings that fuse features from visual foundation models and synonym-augmented text descriptions. These embeddings serve both as anchors for visual token refinement and as object detectors for generating text prompts.
+**Core Idea**: Learn multi-modal class embeddings that fuse features from vision foundation models and synonym-enhanced text descriptions. These embeddings serve as both anchors for visual token refinement and as object detectors to generate text prompts.
 
 ## Method
 
 ### Overall Architecture
-Three stages: (a) learning multimodal class embeddings (visual + text alignment) → (b) visual token enhancement (cross-attention adapter) → (c) text prompt injection (class embeddings as detector → generating object prompts).
+This paper aims to solve the "rare object blindness" of VLMs: models see too few rare objects like bollards or traffic cones, resulting in negligible attention to their visual regions during decoding. The proposed approach keeps the VLM backbone frozen and adds patches to both sides—one for vision and one for text—linked by a set of shared "multi-modal class embeddings." The pipeline consists of three steps: first, learning these class embeddings offline (aligning them with both visual features and text descriptions of rare objects); second, using them as anchors to refine VLM visual tokens on the vision side; and finally, using them as a detector on the text side to inject candidate object names into the prompt. By combining visual token enhancement and text prompt injection, the VLM's own parameters remain frozen throughout.
+
+```mermaid
+graph TD
+    subgraph CE["Multi-modal Class Embedding Learning (Offline)"]
+        direction TB
+        A1["Rare Object Region<br/>VFM(DINOv3) Visual Features"] --> A3["Projection to LLM Embedding Space<br/>Alignment Loss + Classification Loss + EMA"]
+        A2["LLM Synonym-enhanced Text<br/>CLIP Text Features"] --> A3
+        A3 --> W["Class Embedding W"]
+    end
+    IMG["Input Image"] --> V["Frozen VLM Visual Tokens V"]
+    V --> VT["Visual Token Enhancement<br/>V as Query, W as Key-Value Cross-attention<br/>Residual Refinement → Inject to 1st Decoding Layer"]
+    W --> VT
+    IMG --> TH["Text Prompt Injection<br/>VFM Tokens & W Similarity for top-k<br/>Candidate Names in Prompt"]
+    W --> TH
+    VT --> LLM["Frozen LLM Decoding"]
+    TH --> LLM
+    LLM --> OUT["Rare Object Recognition & Reasoning Answer"]
+```
 
 ### Key Designs
 
-1. **Multimodal Class Embedding Learning**:
+**1. Multi-modal Class Embedding Learning: Compressing Rare Object Knowledge into Unified Anchors**
 
-    - **Adaptive Semantic Augmentation**: An LLM generates synonyms and descriptive text for each rare category. Categories with fewer samples receive more text variants (re-sampling) to mitigate class imbalance.
-    - **Dual-Branch Feature Extraction**: A VFM (DINOv3) extracts object visual features $z_v$; CLIP extracts text features $z_t$; both are projected into the LLM embedding space.
-    - **Cross-Modal Alignment**: $\mathcal{L}_{align}$ applies contrastive learning to pull together visual and textual features of the same class.
-    - **Class Embedding Optimization**: $\mathcal{L}_{class}$ classification loss with EMA updates, making class embeddings serve as unified anchors for both modalities.
-    - Initialization: Class embeddings are initialized from the mean visual features of same-class samples, yielding greater stability than random initialization.
+Both subsequent steps rely on class embeddings, so the first step is to train them effectively. A learnable embedding vector is assigned to each rare category. During training, the vector is forced closer to two signals: the visual features $z_v$ of the object extracted by a VFM (DINOv3), and the text features $z_t$ extracted by CLIP. Both are mapped to the LLM embedding space via projection layers. To mitigate the data scarcity and imbalance of rare categories, an LLM is used to generate synonyms and descriptive texts for each category, with more variants sampled for categories with less data. Alignment is achieved using a contrastive loss $\mathcal{L}_{align}$ to aggregate similar visual-text features and separate dissimilar ones. A classification loss $\mathcal{L}_{class}$ and EMA updates are applied to ensure the embeddings converge into unified anchors for both vision and text. Instead of random initialization, embeddings start from average visual features of the category for stability.
 
-2. **Visual Token Enhancement (Cross-Attention Adapter)**:
+**2. Visual Token Enhancement: Using Class Embeddings for Cross-attention to Inject Discriminative Knowledge**
 
-    - Input: frozen VLM visual tokens $V$ and class embeddings $W$.
-    - Cross-attention: $V$ as query, $W$ as key-value → refined output $\hat{V} = V + \mathcal{C}_{att}(V, W)$.
-    - Refined tokens are injected only at the first decoding layer of the VLM.
-    - Loss = reconstruction loss $\mathcal{L}_{rec}$ (keeping $\hat{V}$ close to the distribution of $V$) + autoregressive loss $\mathcal{L}_{autoreg}$.
-    - **Design Motivation**: Class embeddings carry discriminative knowledge of rare objects, which is injected into visual tokens via cross-attention.
+The "blindness" of VLMs toward rare objects is directly manifested as low attention weights in intermediate decoding layers. The remedy is a lightweight cross-attention adapter on the vision side: using the frozen VLM visual tokens $V$ as queries and the trained class embeddings $W$ as keys/values. Each visual token retrieves relevant rare object knowledge from the embeddings, which is then added back as a residual:
 
-3. **Text Prompt Injection at Inference**:
+$$\hat{V} = V + \mathcal{C}_{att}(V, W)$$
 
-    - Class embeddings $W$ are used as a detector: cosine similarity is computed between VFM visual tokens and each class embedding.
-    - Top-$k$ categories are selected as candidate objects.
-    - Candidate object names are injected into the text prompt, e.g., "In this image, there might be objects such as: [bollard, debris, ...]".
-    - **Design Motivation**: Explicit text prompts guide the LLM's attention to relevant objects.
+The refined $\hat{V}$ replaces the original tokens only at the first decoding layer of the VLM. Early injection allows subsequent layers to follow this cue and focus attention on rare objects. The adapter's training objective combines a reconstruction loss $\mathcal{L}_{rec}$ to keep $\hat{V}$ close to the original distribution (avoiding corruption of the VLM's existing understanding) and an autoregressive loss $\mathcal{L}_{autoreg}$ to ensure the enhanced tokens improve downstream generation.
+
+**3. Text Prompt Injection for Reasoning: Reusing Embeddings as Object Detectors to Explicitly Prompt the Model**
+
+Modifying visual tokens is supplemented by an explicit textual hint. The class embeddings are repurposed as a detector. During inference, the cosine similarity between VFM visual tokens and each class embedding is calculated. High similarity indicates the likely presence of a rare object. The top-k categories are selected as candidates and appended to the text prompt, e.g., "In this image, there might be objects such as: [bollard, debris, …]". This explicitly directs the LLM's attention to target objects using natural language, complementing the implicit visual enhancement. A key advantage is that this step requires no additional detection head, as it reuses the same embeddings from the first step.
 
 ### Loss & Training
-- Stage 1: $\mathcal{L}_{align} + \mathcal{L}_{class}$ (training class embeddings and projection layers, 20 epochs).
-- Stage 2: $\mathcal{L}_{adapter} = \mathcal{L}_{rec} + \mathcal{L}_{autoreg}$ (training the adapter, 10 epochs).
-- The VLM remains frozen throughout. All training can be completed on a single RTX 4090.
+- Phase 1: $\mathcal{L}_{align} + \mathcal{L}_{class}$ (Training class embeddings and projection layers, 20 epochs)
+- Phase 2: $\mathcal{L}_{adapter} = \mathcal{L}_{rec} + \mathcal{L}_{autoreg}$ (Training the adapter, 10 epochs)
+- The VLM remains frozen. All training can be completed on a single RTX 4090.
 
 ## Key Experimental Results
 
@@ -92,39 +97,39 @@ Three stages: (a) learning multimodal class embeddings (visual + text alignment)
 
 ### Ablation Study
 
-| Configuration | All↑ | Note |
+| Configuration | All↑ | Description |
 |------|:----:|------|
 | LLaVA-1.5-7B baseline | 46.5 | No enhancement |
-| + Text prompt only | 56.2 | Prompt is helpful but insufficient |
+| + Text prompt only | 56.2 | Prompts are effective but insufficient |
 | + Visual enhancement only | 65.8 | Visual enhancement contributes more |
-| + Visual enhancement + Text prompt | **72.8** | Best with both components |
+| + Visual + Text | **72.8** | Dual approach yields best results |
 
 ### Key Findings
-- LLaVA-1.5-7B improves by 26.3 points (46.5→72.8), a remarkably large gain.
-- Generalizes across models: effective for LLaVA, Qwen2.5-VL, and InternVL3.
-- Visual enhancement contributes more than text prompt injection, but the two are complementary.
-- Requires only a single RTX 4090 and minimal training data (CODA-LM, tens of thousands of QA pairs).
-- The largest gain is on the Barrier category (39.3→68.3), a prototypical rare object class.
+- LLaVA-1.5-7B achieves a significant gain of 26.3 points (46.5→72.8).
+- Generalization across models: Effective for LLaVA, Qwen2.5-VL, and InternVL3.
+- Visual enhancement gain > Text prompt gain, but the two are complementary.
+- Requires only a single 4090 and minimal training data (10k QA pairs from CODA-LM).
+- The "Barrier" category shows the most significant improvement (39.3→68.3), representing typical rare objects.
 
 ## Highlights & Insights
-- **Dual utility of multimodal class embeddings**: The same set of class embeddings serves both as visual refinement anchors (keys and values in cross-attention) and as object detectors (similarity matching), achieving two goals simultaneously.
-- **Efficient frozen-VLM paradigm**: Only a lightweight cross-attention adapter and class embeddings are trained, achieving substantial improvements without modifying any VLM parameters — highly valuable for deploying existing large models.
-- **Attention visualization analysis**: Directly demonstrates insufficient attention to rare objects in intermediate VLM layers, providing clear motivation for the proposed method.
+- **Dual Utility of Multi-modal Class Embeddings**: The same embeddings serve as visual refinement anchors (keys/values for cross-attention) and as object detectors (similarity matching), killing two birds with one stone.
+- **Efficient Frozen VLM Solution**: Dramatically improves performance without changing VLM parameters, requiring only a lightweight adapter. This is highly valuable for deploying existing large models.
+- **Attention Visualization Analysis**: Provides clear motivation by demonstrating the lack of focus on rare objects in intermediate VLM layers.
 
 ## Limitations & Future Work
-- Requires a predefined set of rare categories; cannot handle entirely unseen categories at test time.
-- The number of class embeddings is bounded by the number of rare categories $C$; very large-scale category sets would require architectural adjustments.
-- Top-$k$ detection may introduce false positives, generating incorrect text prompts that mislead reasoning.
-- Performance gains on GeoBench-VLM (satellite imagery) are weaker than on CODA-LM, indicating remaining challenges under extremely scarce data.
+- Requires a predefined set of rare categories and cannot handle novel categories never seen during training.
+- The number of class embeddings is limited by the number of rare categories $C$; ultra-large-scale scenarios require adjustments.
+- Top-k detection might introduce false positives, potentially misleading reasoning with incorrect prompts.
+- Performance on GeoBench-VLM (satellite imagery) is weaker than on CODA-LM, indicating challenges in extremely scarce data domains.
 
 ## Related Work & Insights
-- **vs. VLM internal feature supervision methods (LLaVA-Grounding)**: These methods align all visual tokens with VFM features without targeting rare objects; the proposed method uses class embeddings for object-level refinement, achieving greater precision and efficiency.
-- **vs. Retrieval-Augmented Learning (RAL)**: RAL retrieves from large-scale external data and fine-tunes the VLM, incurring high computational cost and risk of forgetting; the proposed method requires neither large-scale data nor VLM fine-tuning.
+- **vs. Supervision of Internal VLM Features (e.g., LLaVA-Grounding)**: These align all visual tokens using a VFM but are not specific to rare objects; Ours achieves object-level refinement using class embeddings, which is more precise.
+- **vs. Retrieval-Augmented Learning (RAL)**: RAL retrieves from large external datasets and fine-tunes the VLM, which is computationally expensive and risks forgetting; Ours does not require mass data or VLM fine-tuning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The dual-purpose design of multimodal class embeddings is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model validation with attention visualization analysis.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and figures are intuitive.
+- Novelty: ⭐⭐⭐⭐ Clever dual-purpose design of multi-modal class embeddings.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple models with attention visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and intuitive diagrams.
 - Value: ⭐⭐⭐⭐ A practical solution for rare object understanding.
 
 <!-- RELATED:START -->
@@ -137,7 +142,7 @@ Three stages: (a) learning multimodal class embeddings (visual + text alignment)
 - [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](../../AAAI2026/multimodal_vlm/llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
 - [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] VL-RouterBench: A Benchmark for Vision-Language Model Routing](vl-routerbench_a_benchmark_for_vision-language_model_routing.md)
+- [\[CVPR 2026\] Visual Funnel: Resolving Contextual Blindness in Multimodal Large Language Models](visual_funnel_resolving_contextual_blindness_in_multimodal_large_language_models.md)
 
 </div>
 

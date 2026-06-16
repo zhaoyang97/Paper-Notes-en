@@ -2,75 +2,92 @@
 title: >-
   [Paper Note] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
 description: >-
-  [CVPR2026][Autonomous Driving][multi-camera 3D object detection] CoIn3D is proposed as a framework that explicitly models spatial prior discrepancies arising from camera intrinsics, extrinsics…
+  [CVPR 2026][Autonomous Driving][Paper Note] The CoIn3D framework is proposed, which explicitly models the spatial prior differences in camera intrinsics, extrinsics, and array layouts through two modules: Spatial-aware Feature Modulation (SFM) and Camera-aware Data Augmentation (CDA). It achieves strong generalization of multi-camera 3D detection models from sou
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "multi-camera 3D object detection"
-  - "cross-configuration generalization"
-  - "spatial prior modulation"
-  - "3D Gaussian data augmentation"
-  - "BEV perception"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 099cf623da30f9e1
+content_hash: 8d0d6f724353efce
 ---
-
 # CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.05042](https://arxiv.org/abs/2603.05042)  
-**Code**: [GitHub](https://github.com/) (open-sourced per authors; link to be confirmed)  
-**Area**: Autonomous Driving
-**Keywords**: multi-camera 3D object detection, cross-configuration generalization, spatial prior modulation, 3D Gaussian data augmentation, BEV perception
+**Code**: [GitHub](https://github.com/) (Author claimed open-sourced, link to be confirmed)  
+**Area**: Autonomous Driving  
+**Keywords**: Multi-camera 3D object detection, cross-configuration generalization, spatial prior modulation, 3D Gaussian data augmentation, BEV perception
 
 ## TL;DR
 
-CoIn3D is proposed as a framework that explicitly models spatial prior discrepancies arising from camera intrinsics, extrinsics, and array layouts via two modules — Spatial-aware Feature Modulation (SFM) and Camera-aware Data Augmentation (CDA) — enabling strong generalization transfer of multi-camera 3D detection models from source configurations to unseen target configurations. The framework is plug-and-play compatible with three mainstream paradigms: BEVDepth, BEVFormer, and PETR.
+The CoIn3D framework is proposed, which explicitly models the spatial prior differences in camera intrinsics, extrinsics, and array layouts through two modules: Spatial-aware Feature Modulation (SFM) and Camera-aware Data Augmentation (CDA). It achieves strong generalization of multi-camera 3D detection models from source configurations to unseen target configurations and is applicable to the three major paradigms: BEVDepth, BEVFormer, and PETR.
 
 ## Background & Motivation
 
-1. **Widespread deployment of multi-camera 3D detection (MC3D)**: Autonomous vehicles and robotic platforms increasingly adopt surround-view multi-camera setups for 3D object detection, creating an urgent need for cross-platform deployment capability.
-2. **Difficulty of cross-configuration generalization**: Current MC3D models perform well under their training configurations but suffer severe performance degradation when transferred to new platforms with different intrinsics, extrinsics, camera counts, and layouts. For instance, direct transfer of BEVDepth from NuScenes to Waymo yields only 0.040 mAP.
-3. **Incompleteness of existing solutions**: Prior methods either align images to a meta-camera via warping (causing resolution loss and 3D scene structure distortion) or address only focal length discrepancies (virtual focal length + depth rescaling), without comprehensively accounting for extrinsics and array layouts.
-4. **Focal length ambiguity**: The same object occupies different pixel-space sizes under different focal lengths, introducing ambiguity in depth estimation and feature aggregation and preventing consistent object distance understanding.
-5. **Ground geometry priors vary with extrinsics**: Cameras mounted at different heights and orientations produce distinct ground depth distributions and depth growth rates, causing models to overfit to specific perspective effects during training.
-6. **Array layout differences affect multi-camera fusion**: Variations in camera count and overlap regions across platforms directly alter multi-camera feature association and fusion patterns, which existing methods do not model.
+1.  **Wide Deployment of Multi-Camera 3D Detection (MC3D)**: Autonomous vehicles and robotic platforms increasingly use multi-camera surround-view solutions for 3D object detection, creating an urgent demand for cross-platform model deployment capabilities.
+2.  **Difficulty in Cross-Configuration Generalization**: Current MC3D models perform excellently on training configurations but suffer significant performance drops when migrated to new platforms (different intrinsics, extrinsics, camera counts, and layouts). For instance, direct transfer of BEVDepth from NuScenes to Waymo yields an mAP of only 0.040.
+3.  **Incomplete Existing Solutions**: Previous methods either align to a meta-camera via image warping (causing resolution loss and 3D scene structure distortion) or only handle focal length differences (virtual focal length + depth rescaling), failing to comprehensively consider extrinsics and array layouts.
+4.  **Focal Length Ambiguity**: Since objects of the same size occupy different pixel areas under different focal lengths, ambiguity arises in depth estimation and feature aggregation, preventing the model from consistently understanding object distances.
+5.  **Ground Geometry Priors Varying with Extrinsics**: Cameras with different mounting heights and orientations produce different ground depth distributions and depth growth rates; models tend to overfit to specific perspective effects during training.
+6.  **Array Layout Differences Affecting Multi-Camera Fusion**: Different platforms have different camera counts and overlap regions, directly affecting the patterns of multi-camera feature correlation and fusion. Existing methods lack modeling for this.
 
 ## Method
 
 ### Overall Architecture
 
-CoIn3D comprises two core modules: **Spatial-aware Feature Modulation (SFM)** and **Camera-aware Data Augmentation (CDA)**. During training, CDA first renders novel-view images under randomly sampled configurations via 3DGS, after which SFM embeds spatial priors into features. During inference, only SFM is required for generalization to new configurations. The framework is plug-and-play across three paradigms: bottom-up BEV (BEVDepth), top-down BEV (BEVFormer), and sparse query (PETR).
+CoIn3D consists of two core modules: **Spatial-aware Feature Modulation (SFM)** and **Camera-aware Data Augmentation (CDA)**. During training, CDA first renders new-view images with random configurations via 3DGS, then SFM embeds spatial priors into features. At inference, only SFM is required to generalize to new configurations. The framework can be plugged into bottom-up BEV (BEVDepth), top-down BEV (BEVFormer), and sparse query (PETR) paradigms.
 
-### Spatial-aware Feature Modulation (SFM)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Multi-camera Images + LiDAR Sequence"]
+    subgraph CDA["Camera-aware Data Augmentation CDA (Training only, training-free 3DGS)"]
+        direction TB
+        C1["Split foreground objects/background via 4D labels<br/>Reconstruct mesh using TSDF integration"]
+        C2["Combine meshes to render depth map + depth completion"]
+        C3["Point sampling in blind spots + texture retrieval via cross-frame depth matching"]
+        C4["Project textured points → Isotropic Gaussians<br/>Point rendering ≈450 fps"]
+        C1 --> C2 --> C3 --> C4
+    end
+    IN --> CDA
+    CDA -->|Render new views with sampled camera configs| BK["Backbone feature extraction"]
+    IN -->|Direct original images during inference| BK
+    subgraph SFM["Spatial-aware Feature Modulation SFM (Training + Inference)"]
+        direction TB
+        S1["Four pixel-level spatial prior maps:<br/>Inv Focal / Ground Depth / Ground Gradient / Plücker Ray"]
+        S2["Multiply Inv Focal map with features → Focal-invariant features F¹"]
+        S3["Project GD / GG / Plücker as spatial embeddings and add to F¹ → F²"]
+        S4["Concatenate four prior maps with F² → Spatial-aware features F³"]
+        S1 --> S2 --> S3 --> S4
+    end
+    BK --> SFM
+    SFM --> DET["Detection Head<br/>BEVDepth / BEVFormer / PETR"]
+    DET --> OUT["3D Bounding Boxes (Cross-config generalization)"]
+```
 
-SFM explicitly encodes camera configurations via four types of pixel-level spatial prior representations:
+### Key Designs
 
-1. **Inverse Focal Map**: Image features are multiplied by the inverse squared focal length $M_{IF} = \mathbf{1} \cdot \frac{1}{f^2}$, eliminating focal length ambiguity. The rationale is that a $k$-fold difference in focal length causes a $k^2$-fold difference in object pixel area; normalization renders feature activations consistent across focal lengths.
-2. **Ground Depth Map**: Assuming a flat ground plane, a plane equation $Ax+By+Cz+D=0$ is fitted from at least three non-collinear ground points, from which per-pixel ground depth $z(u,v) = -\frac{D}{AX+BY+C}$ is derived, providing the model with explicit scene spatial priors.
-3. **Ground Gradient Map**: Obtained by computing row-wise differences of the ground depth map followed by a log-inverse transform $M_{GG} = \log(\frac{1}{\Delta z} + 1)$, encoding differences in depth growth rates across varying mounting heights and preventing overfitting to specific perspective effects.
-4. **Plücker Raymap**: For each pixel, the ray direction $\mathbf{d} = \mathbf{R}\mathbf{K}^{-1}\mathbf{p}$ from the optical center and the moment $\mathbf{m} = \mathbf{t} \times \mathbf{d}$ are computed, yielding a 6-channel Plücker coordinate representation that holistically encodes FoV, rotation, translation, and continuous spatial positions of pixels across cameras.
+**1. Spatial-aware Feature Modulation (SFM): Explicitly Embedding Camera Configurations**
 
-**Fusion pipeline**: The inverse focal map is first multiplied with features to obtain focal-length-invariant features $F^1$; GD, GG, and PR are then concatenated and encoded by a shallow projector into spatial embeddings added to $F^1$ to produce $F^2$; finally, the four raw prior maps are concatenated with $F^2$ to yield the final spatial-aware feature $F^3$.
+Cross-configuration transfer fails because models implicitly learn camera-specific parameters like focal length and mounting poses. SFM explicitly encodes these differences using four pixel-level spatial prior maps and injects them into features, forcing the network to learn the "scene" rather than "this specific camera":
 
-### Camera-aware Data Augmentation (CDA)
+*   **Inverse Focal Map**: A focal length difference of $k$ times leads to a $k^2$ difference in object pixel area. Thus, the image features are normalized by multiplying with $M_{IF} = \mathbf{1} \cdot \frac{1}{f^2}$ to eliminate focal ambiguity (the largest contributor in ablations).
+*   **Ground Depth Map**: Assuming a flat ground, a plane $Ax+By+Cz+D=0$ is fitted using at least 3 non-collinear ground points to derive pixel-wise ground depth $z(u,v) = -\frac{D}{AX+BY+C}$, providing an explicit spatial prior.
+*   **Ground Gradient Map**: Row-wise differentiation is performed on the ground depth map with a log-inverse transform $M_{GG} = \log(\frac{1}{\Delta z} + 1)$ to encode depth growth rates under different mounting heights, preventing overfitting to specific perspectives.
+*   **Plücker Raymap**: Each pixel's ray direction $\mathbf{d} = \mathbf{R}\mathbf{K}^{-1}\mathbf{p}$ and moment $\mathbf{m} = \mathbf{t} \times \mathbf{d}$ from the optical center are calculated, yielding 6-channel Plücker coordinates. This uniformly represents FoV, rotation, translation, and continuous spatial positions across cameras.
 
-A **training-free ego-centric 3DGS construction pipeline** is proposed to dynamically and efficiently generate training images under diverse configurations:
+Fusion is progressive: first, $F^1$ is obtained via inverse focal normalization; then, GD/GG/PR are concatenated and encoded as spatial embeddings by a shallow projector and added to $F^1$ to get $F^2$; finally, the four raw prior maps are concatenated with $F^2$ to produce the final spatial-aware feature $F^3$.
 
-1. **Decomposition and reconstruction**: Using 4D annotations, LiDAR sequences are decomposed into foreground objects and background, each reconstructed as meshes via TSDF integration; object meshes are patched into closed surfaces.
-2. **Depth rendering and completion**: Meshes are assembled per-frame according to annotations and rendered as depth maps, followed by depth completion to fill regions without mesh coverage.
-3. **Texture asset construction**: Point clouds are sampled from object meshes and camera blind spots; textures are retrieved via cross-frame depth matching and completed for invisible regions.
-4. **Gaussian representation**: RGB-D images are projected into textured point clouds, with isotropic Gaussians assigned (fixed radius, no rotation, opacity set to 1), leveraging the high-speed rendering (~450 fps) of 3DGS via point-based rendering.
+**2. Camera-aware Data Augmentation (CDA): On-the-fly Configuration Synthesis via Training-free 3DGS**
 
-During training, novel camera configurations are randomly sampled to render novel-view images; random focal length scaling augmentation is additionally applied to original images.
+SFM alone is insufficient as training data only covers source configurations. CDA proposes a **training-free ego-centric 3DGS pipeline** to dynamically generate diverse configurations: first, LiDAR sequences are split into foreground and background using 4D labels, followed by mesh reconstruction via TSDF integration (foreground objects are completed into closed surfaces); then, depth maps are rendered and completed. Textures are retrieved via cross-frame depth matching for object meshes and camera blind spots. Finally, RGB-D is projected into textured point clouds and treated as isotropic Gaussians (fixed radius, no rotation, opacity of 1) to achieve high-speed rendering at ≈450 fps. During training, new viewpoints are rendered by sampling camera configurations, while original images undergo random focal scaling.
 
 ### Loss & Training
 
-The original detection losses of each backbone model (BEVDepth / BEVFormer / PETR) are retained. SFM and CDA, as plug-and-play modules, introduce no additional training losses.
+The original detection losses of the base models (BEVDepth / BEVFormer / PETR) are retained. As plug-and-play modules, SFM and CDA do not introduce additional training losses.
 
 ## Key Experimental Results
 
-### Main Results: Cross-Dataset Generalization with BEVDepth
+### Main Results: Cross-Dataset Generalization based on BEVDepth
 
 | Setting | Method | mAP↑ | mATE↓ | mAOE↓ | NDS*↑ |
 |------|------|------|-------|-------|-------|
@@ -83,7 +100,7 @@ The original detection losses of each backbone model (BEVDepth / BEVFormer / PET
 | Waymo→NuScenes | **CoIn3D (Ours)** | **0.349** | 0.727 | 0.179 | **0.481** |
 | Lyft→NuScenes | **CoIn3D (Ours)** | **0.303** | **0.647** | 0.377 | **0.452** |
 
-State-of-the-art results are achieved across all settings, with NDS* gains over UDGA-BEV of +0.054 / +0.047 / +0.004 / +0.031 respectively.
+SOTA is achieved in all settings, with NDS* gains of +0.054 / +0.047 / +0.004 / +0.031 compared to UDGA-BEV.
 
 ### Cross-Paradigm Generalization: BEVFormer and PETR
 
@@ -94,11 +111,11 @@ State-of-the-art results are achieved across all settings, with NDS* gains over 
 | N→L (PETR) | Direct Transfer | 0.013 | 0.046 |
 | N→L (PETR) | **CoIn3D** | **0.332** | **0.456** |
 
-CoIn3D is the first unified cross-configuration generalization framework applicable to all three major MC3D paradigms.
+CoIn3D is the first cross-configuration generalization framework uniformly applicable to the three major MC3D paradigms.
 
 ### Ablation Study
 
-**Module ablation (NuScenes→Waymo)**:
+**Module Ablation (NuScenes→Waymo)**:
 
 | CDA | SFM | NDS*↑ |
 |-----|-----|-------|
@@ -107,47 +124,47 @@ CoIn3D is the first unified cross-configuration generalization framework applica
 | ✓ | ✗ | 0.224 |
 | ✓ | ✓ | **0.513** |
 
-- SFM alone is effective (+0.180); CDA alone yields limited gain (+0.046); their combination produces strong synergy.
-- The Camera-Aware SE module in BEVDepth conflicts with SFM; removing CA yields superior performance (0.513 vs. 0.504).
+- SFM is effective on its own (+0.180), while CDA provides limited gains alone (+0.046); the combining of both yields strong synergy.
+- The original Camera-Aware SE module in BEVDepth conflicts with SFM; removing it yielded better results (0.513 vs 0.504).
 
-**SFM spatial prior ablation**: The inverse focal map contributes the most (+0.238), with ground depth/gradient/Plücker adding +0.036 / +0.008 / +0.007 incrementally.
+**SFM Spatial Prior Ablation**: The Inverse Focal Map contributes the most (+0.238), with Ground Depth/Gradient/Plücker cumulatively adding +0.036 / +0.008 / +0.007.
 
-**CDA augmentation ablation**: Focal length augmentation contributes +0.060; novel-view synthesis augmentation adds a further +0.095, demonstrating that NVS substantially outperforms simple focal length scaling for diversifying camera configurations.
+**CDA Augmentation Ablation**: Focal augmentation adds +0.060, and New View Synthesis (NVS) adds an additional +0.095, indicating that NVS provides far better diversity for configurations than simple focal scaling.
 
-## Highlights & Insights
+## Highlights
 
-- **Systematic decomposition of cross-configuration discrepancies**: The generalization problem is systematically decomposed into three dimensions — intrinsics (focal length/FoV), extrinsics (mounting pose), and array layout — with four targeted spatial prior representations designed accordingly.
-- **Inverse focal normalization is concise yet highly effective**: A simple $1/f^2$ multiplication raises NDS* from 0.224 to 0.462, representing the single largest contribution in the ablation study.
-- **Training-free 3DGS data augmentation**: The approach avoids the high training cost of conventional 3DGS by constructing Gaussian representations directly from predefined parameters via point-based rendering at ~450 fps, making online dynamic augmentation practical.
-- **Paradigm-agnostic unified framework**: The same SFM+CDA pipeline is plug-and-play across BEVDepth, BEVFormer, and PETR without relying on paradigm-specific depth prediction designs.
-- **Substantially closes the gap to Oracle**: NDS* on NuScenes→Waymo improves from 0.178 to 0.513 (Oracle: 0.649), bridging approximately 71% of the performance gap.
+- **Comprehensive Analysis of Configuration Differences**: Systematically decomposes the cross-configuration generalization problem into intrinsics (focal/FoV), extrinsics (mounting pose), and array layout, proposing four targeted spatial prior representations.
+- **Simple and Effective Inverse Focal Normalization**: A simple $1/f^2$ multiplication improves NDS* from 0.224 to 0.462, standing out as the largest contributor in ablations.
+- **Training-free 3DGS Augmentation**: Avoids the high training costs of traditional 3DGS by directly constructing Gaussian representations using predefined parameters, rendering at ≈450 fps for online dynamic augmentation.
+- **Paradigm-Agnostic Unified Framework**: The same SFM+CDA set can be plugged into BEVDepth, BEVFormer, and PETR regardless of specific depth prediction designs.
+- **Significantly Narrowing the Gap with Oracle**: NDS* for NuScenes→Waymo increased from 0.178 to 0.513 (Oracle is 0.649), bridging approximately 71% of the performance gap.
 
 ## Limitations & Future Work
 
-- **Semantic distribution shift remains unaddressed**: The current approach handles only configuration discrepancies; category and scene distribution differences across datasets continue to affect cross-domain generalization, which the authors identify as future work.
-- **Dependency on LiDAR for 3DGS construction**: The CDA module requires LiDAR data for mesh reconstruction and depth, limiting applicability to purely vision-based datasets.
-- **Flat ground plane assumption**: The ground depth and gradient maps are derived under a flat ground assumption, which may fail in non-planar scenarios such as ramps or undulating surfaces.
-- **Predominantly single-class evaluation**: Main experiments are primarily validated on a unified "car" category; generalization across multiple categories warrants further investigation.
-- **Storage overhead of CDA**: Per-frame construction and storage of ego-centric Gaussian point clouds incurs non-trivial storage and preprocessing costs for large-scale datasets.
+- **Unresolved Semantic Distribution Gap**: Only configuration differences are handled; differences in class/scene distributions across datasets still affect generalization, which authors list as future work.
+- **LiDAR Dependency for 3DGS**: The CDA module requires LiDAR data for mesh and depth reconstruction, limiting application on vision-only datasets.
+- **Ground Plane Assumption**: Assumes a flat ground for depth and gradient map derivation, which may fail in non-flat scenarios (ramps, undulating roads).
+- **Single-Class Evaluation Focus**: Main experiments predominantly validate on the "car" class; generalization in multi-class scenarios requires further exploration.
+- **CDA Storage Overhead**: Requires constructing and storing ego-centric Gaussian point clouds per frame, posing costs for storage and preprocessing of large-scale datasets.
 
 ## Related Work & Insights
 
-| Method | Focal Length | Extrinsics | Array Layout | Paradigm | NDS* (N→W) |
+| Method | Focal Handling | Extrinsic Handling | Array Layout | Paradigm | NDS* (N→W) |
 |------|---------|---------|---------|---------|------------|
-| DG-BEV | Virtual focal length | ✗ | ✗ | Bottom-up BEV | 0.415 |
-| PD-BEV | Virtual focal length + depth rescaling | ✗ | ✗ | Bottom-up BEV | — |
-| UDGA-BEV | Virtual focal length + depth/photometric consistency | ✗ | ✗ | Bottom-up BEV | 0.459 |
-| UniPAD [47] | Image warping to sphere | Spherical alignment | ✗ | Bottom-up BEV | — |
-| **CoIn3D (Ours)** | **Inverse focal map** | **Ground depth/gradient + Plücker** | **Plücker continuous encoding** | **All paradigms** | **0.513** |
+| DG-BEV | Virtual Focal | ✗ | ✗ | Bottom-up BEV | 0.415 |
+| PD-BEV | Virtual Focal + Rescaling | ✗ | ✗ | Bottom-up BEV | — |
+| UDGA-BEV | Virtual Focal + Consistency | ✗ | ✗ | Bottom-up BEV | 0.459 |
+| UniPAD [47] | Spherical Warping | Spherical Alignment | ✗ | Bottom-up BEV | — |
+| **CoIn3D (Ours)** | **Inv Focal Map** | **GD/GG + Plücker** | **Plücker Encoding** | **All paradigms** | **0.513** |
 
-This work is the first to comprehensively and explicitly model all three categories of configuration priors and the only approach simultaneously applicable to all three major MC3D paradigms.
+This work is the first to comprehensively and explicitly model three configuration priors and is the only solution simultaneously applicable to the three major MC3D paradigms.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The combined design of four spatial priors and the training-free 3DGS augmentation are novel; the inverse focal normalization is concise and elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets × three paradigms × four settings, with detailed ablations and comprehensive comparisons.
-- Writing Quality: ⭐⭐⭐⭐ — Problem analysis is systematic and clear; figures are intuitive; mathematical derivations are complete.
-- Value: ⭐⭐⭐⭐ — Addresses a practical pain point in cross-platform MC3D deployment with strong industrial application potential.
+- Novelty: ⭐⭐⭐⭐ — The combination of four spatial priors and training-free 3DGS augmentation is innovative; inverse focal normalization is simple and elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets × three paradigms × four settings, with exhaustive ablations and comprehensive comparisons.
+- Writing Quality: ⭐⭐⭐⭐ — Systematic and clear problem analysis, intuitive illustrations, and complete derivations.
+- Value: ⭐⭐⭐⭐ — Addresses practical pain points in cross-platform MC3D deployment with high industrial potential.
 
 <!-- RELATED:START -->
 
@@ -156,10 +173,10 @@ This work is the first to comprehensively and explicitly model all three categor
 ## Related Papers
 
 - [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
+- [\[CVPR 2026\] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection](store3d_sparse_token_relevance_in_vits_for_efficient_multi-view_3d_object_detect.md)
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
+- [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
 - [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
-- [\[CVPR 2026\] On the Feasibility and Opportunity of Autoregressive 3D Object Detection](on_the_feasibility_and_opportunity_of_autoregressive_3d_object_detection.md)
 
 </div>
 

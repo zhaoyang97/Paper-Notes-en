@@ -2,46 +2,45 @@
 title: >-
   [Paper Note] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 description: >-
-  [CVPR 2026][AI Safety][collaborative perception] This paper proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By leveraging inter-…
+  [CVPR 2026][AI Safety][collaborative perception] Ours proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By utilizing inter-frame temporal consistency as a self-reference signal through pseudo-random grouping and Bayesian inference, the system efficiently identifies and excludes
 tags:
-  - "CVPR 2026"
-  - "AI Safety"
-  - "collaborative perception"
-  - "adversarial defense"
-  - "Bayesian inference"
-  - "autonomous driving"
-  - "V2V communication"
+  - CVPR 2026
+  - AI Safety
+  - collaborative perception
+  - adversarial defense
+  - Bayesian inference
+  - autonomous driving
+  - V2V communication
 date: 2026-05-08
-content_hash: 656279992791642a
+content_hash: 979577d829c136de
 ---
-
 # All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.08498](https://arxiv.org/abs/2603.08498)  
 **Code**: To be confirmed  
-**Area**: AI Security
+**Area**: AI Security  
 **Keywords**: collaborative perception, adversarial defense, Bayesian inference, autonomous driving, V2V communication
 
 ## TL;DR
 
-This paper proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By leveraging inter-frame temporal consistency as a self-referential signal, PRBI employs pseudo-random grouping combined with Bayesian inference to efficiently identify and exclude malicious vehicles at an average cost of only 2.5 validations per frame, recovering detection accuracy to 79.4%–86.9% of the pre-attack baseline.
+Ours proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By utilizing inter-frame temporal consistency as a self-reference signal through pseudo-random grouping and Bayesian inference, the system efficiently identifies and excludes malicious vehicles with an average of only 2.5 verifications per frame, restoring detection accuracy to 79.4%–86.9% of pre-attack levels.
 
 ---
 
 ## Background & Motivation
 
-**Security vulnerabilities in Collaborative Perception (CP)**: Multiple vehicles share feature maps via V2V communication to extend perception range, but the feature fusion mechanism is inherently exposed to adversarial attacks — malicious vehicles can inject perturbations into shared features, causing severe misperception in the ego vehicle.
+**Security risks of Collaborative Perception (CP)**: Multiple vehicles share feature maps via V2V communication to expand their perception range. However, feature fusion mechanisms are inherently exposed to adversarial attacks—malicious vehicles can inject perturbations into shared features, leading to severe perception misalignment for the ego vehicle.
 
-**Existing methods rely on the "trusted ego" assumption**: Sampling-based defenses (ROBOSAC, PASAC) use the ego vehicle's perception as a reliable reference for consistency verification; classifier-based defenses train binary networks to distinguish benign from malicious features — both assume the ego vehicle itself is not under attack.
+**Limitations of Prior Work relying on the "trusted ego" assumption**: Sampling-based defenses (ROBOSAC, PASAC) use the ego vehicle's perception as a reliable reference for consistency verification; classifier-based defenses train binary classification networks to distinguish between benign and malicious features. Both assume the ego itself is not compromised.
 
-**The ego vehicle can also be attacked in practice**: Through LiDAR injection attacks or data interception attacks, adversaries can interfere with the ego vehicle's feature maps without directly compromising its internal systems. Thus, "All Vehicles Can Lie" reflects the realistic threat model.
+**Key Challenge (Real-world ego vulnerability)**: Through LiDAR injection attacks or data interception, attackers can interfere with the ego's feature maps without directly invading internal systems. Therefore, "All Vehicles Can Lie" is the realistic scenario.
 
-**Linear growth in verification overhead**: The per-frame verification cost of existing sampling and classifier methods scales linearly with the total number of vehicles, making them impractical for large-scale real-time collaborative perception.
+**Linear growth of verification overhead**: High verification frequency in existing sampling/classification methods grows linearly with the total number of vehicles, making it difficult to meet large-scale real-time collaborative perception requirements.
 
-**Detection latency from random sampling**: Purely randomized sampling may require many frames to converge to the complete set of attackers, resulting in prolonged risk exposure.
+**Detection delay in random sampling**: Pure randomized sampling may require many frames to converge to the complete set of attackers, creating continuous risk exposure.
 
-**Need for zero-trust, low-overhead defense**: An ideal solution should require no trust assumption about any vehicle, no prior knowledge of the number or proportion of attackers, and should maintain a constant per-frame verification cost.
+**Goal (Zero-trust and low-overhead defense)**: The ideal solution should neither assume any vehicle is trusted nor require prior knowledge of the number or proportion of attackers, while maintaining a constant per-frame verification cost.
 
 ---
 
@@ -49,129 +48,135 @@ This paper proposes the Pseudo-Random Bayesian Inference (PRBI) framework for co
 
 ### Overall Architecture
 
-The core pipeline of PRBI operates in a four-step cycle:
+The Core Problem PRBI addresses is: in a CP system where **all vehicles may lie**, the ego itself can be attacked, meaning no single vehicle's perception can serve as a trusted reference. The Key Insight of PRBI is to treat "time" as the only trusted anchor. Since attackers cannot easily tamper with the temporal continuity of the physical world, "whether the benign perception of this frame matches the previous frame" becomes a self-reference signal independent of any vehicle.
 
-1. **Initialization**: At $t=0$, the initial frame perception is assumed correct; normal detection counts $\mathbf{c}_{\text{normal}}$ and abnormal detection counts $\mathbf{c}_{\text{abnormal}}$ are initialized for each vehicle.
-2. **Pseudo-random grouping + consistency verification (Soft Sampling)**: Each frame, all vehicles are divided into two groups; each group is compared against the previous frame's benign perception result using Jaccard similarity to update the counts.
-3. **Attacker evaluation**: The empirical normal ratio $\eta$ is used to estimate the number of attackers $m$, and Bayesian inference is applied to compute the benign probability $P_{\text{benign}}[j]$ for each vehicle, identifying the $m$ most suspicious vehicles.
-4. **Hypothesis testing + defensive perception**: A T-test determines whether $m$ has converged; if convergence is confirmed, the attacker set is output; otherwise, vehicles with nonzero benign probability are used for the current frame's collaborative perception and the reference is updated.
+The Mechanism is a frame-by-frame rolling closed loop: each frame pseudo-randomly splits all vehicles into two groups, compares the Jaccard similarity of each group against the validated benign result from the previous frame, and accumulates "normal/abnormal" counts for each vehicle. Based on these counts, it estimates the current number of attackers $m$, calculates the benign probability for each vehicle, and identifies the most suspicious candidates. Finally, a T-test determines if $m$ has stabilized. If not, the remaining trusted vehicles are used for the current frame's CP and to update the reference frame; if stabilized, the final set of attackers is output. In this way, verification relies on time to force attackers out rather than priors about "who is trusted."
 
-### Key Design 1: Inter-Frame Temporal Consistency as a Self-Referential Signal
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["All vehicles share V2V features<br/>+ Prev frame reference D_ref"] --> B["Pseudo-random binary grouping<br/>Sort by suspicion into two groups, verify each once"]
+    B --> C["Inter-frame temporal consistency comparison<br/>Calculate Jaccard similarity with D_ref for both groups"]
+    C --> D["Bayesian probability inference<br/>Estimate attacker count m, update benign probabilities"]
+    D --> E["T-test convergence criterion"]
+    E -->|"Not converged: use trusted vehicles for CP, refresh D_ref"| B
+    E -->|"Converged: m stable and #zero-prob vehicles = m"| F["Output attacker set and permanently exclude"]
+```
 
-- **Function**: The verified benign perception output $D_{\text{ref}}$ from the previous frame serves as the detection reference for the current frame, entirely replacing the "trusted ego" assumption.
-- **Mechanism**: Under benign conditions, the Jaccard similarity between adjacent frames remains stable at approximately 0.8, whereas under adversarial conditions it drops sharply below 0.3. This pronounced distributional difference allows inter-frame temporal consistency to be converted into a self-supervised defense signal.
-- **Design Motivation**: LiDAR perception outputs exhibit natural spatial continuity, with smooth inter-frame transitions under normal conditions — providing the only vehicle-agnostic reference anchor available in a zero-trust environment.
+### Key Designs
 
-### Key Design 2: Pseudo-Random Binary Grouping Strategy
+**1. Inter-frame temporal consistency as a self-reference signal: Finding an anchor when no vehicle is trusted**
 
-- **Function**: Only 2 additional validations are performed per frame — vehicles are sorted by suspicion level and the $\lfloor m \rfloor$ most suspicious vehicles are placed in one group, with the remainder in the other.
-- **Mechanism**: Binary grouping statistically approximates a sampling-without-replacement process. The probability of sampling an all-benign group is $P_{ideal}' = 2^{n-k}/2^n = 2^{-k}$, depending solely on the number of attackers $k$. From the empirical normal ratio $\eta \approx 2^{-k}$, the attacker count can be back-calculated as $m = \log_2(1/\eta)$.
-- **Design Motivation**: This reduces the verification overhead from $O(n)$ to a constant (2 per frame), fully decoupling the number of validations from the total number of vehicles. The pseudo-random grouping based on $m$ and $P_{\text{benign}}$ guarantees monotonic convergence of $m$ to the true value $k$ (Theorem 1).
+The most difficult part of a zero-trust setting is that sampling (ROBOSAC/PASAC) and classifier-based defenses default to a trusted ego. Once the ego is attacked via LiDAR injection, the entire verification baseline is lost. The Novelty of PRBI is using the **previously validated benign perception output $D_{\text{ref}}$** as the current frame's reference, using the Jaccard similarity of detection boxes between adjacent frames to determine consistency. This signal is reliable because LiDAR perception is naturally continuous in space, and object distribution changes smoothly between adjacent frames. Empirically, Jaccard similarity stays around 0.8 in benign scenarios but drops below 0.3 after perturbation. Since these distributions rarely overlap, a simple threshold $\epsilon$ converts "whether a vehicle's perception is contaminated" into a self-supervised criterion.
 
-### Key Design 3: Bayesian Probabilistic Inference for Attacker Identification
+**2. Pseudo-random binary grouping strategy: Compressing overhead from $O(n)$ to constant 2**
 
-- **Function**: For each vehicle $j$, the posterior benign probability $P_{\text{benign}}[j] = P(\mathcal{B}_j | \mathcal{A})$ is computed, and the $\lfloor m \rceil$ vehicles with the lowest probability are selected as suspected attackers.
-- **Mechanism**: The prior $P(\mathcal{B}_j)$ combines short-term (previous frame Bayesian result) and long-term (historical normal detection ratio) components with weighted fusion, incorporating temporal memory to mitigate instability in early grouping stages. The likelihood $P(\mathcal{A}|\mathcal{B}_j)$ is estimated via the system's anomaly ratio after excluding vehicle $j$.
-- **Design Motivation**: Malicious vehicles necessarily appear in every anomalous detection event ($\beta_j = 0$), so their benign probability remains persistently at 0, guaranteeing eventual exclusion.
+Verification in existing sampling defenses scales linearly with the total number of vehicles $n$. PRBI performs only 2 verifications per frame: sorting vehicles by suspicion and placing the $\lfloor m \rfloor$ most suspicious vehicles in one group and the rest in another. This binary grouping statistically approximates randomized sampling without replacement. The probability of sampling an "all-benign group" depends only on the number of attackers $k$:
 
-### Key Design 4: T-Test Convergence Criterion
+$$P_{ideal}' = \frac{2^{\,n-k}}{2^{\,n}} = 2^{-k}$$
 
-- **Function**: A window $W$ stores the estimated $m$ values from the most recent $w_p$ frames; the null hypothesis $H_0: k = m$ is tested, and convergence is declared when the T-test passes and the number of zero-probability vehicles equals exactly $m$.
-- **Mechanism**: $m$ fluctuates slightly around $k$; when the fluctuation remains within the confidence interval for an extended period, convergence is confirmed. The dual condition prevents premature acceptance of $H_0$ during slow convergence of $m$.
-- **Design Motivation**: In continuous scenarios, earlier convergence confirmation enables earlier termination of redundant validations and output of defensive results; empirically, convergence is achieved in approximately 4 frames on average.
+Conversely, by statistically calculating the empirical normal ratio $\eta \approx 2^{-k}$ online, one can directly derive the number of attackers $m = \log_2(1/\eta)$ without prior knowledge of the attacker ratio. Because the grouping is pseudo-random based on current $m$ and benign probability $P_{\text{benign}}$, Theorem 1 proves that $m$ converges monotonically to the true value $k$, decoupling overhead from the number of vehicles and avoiding detection delays inherent in pure random sampling.
+
+**3. Bayesian probability inference to identify attackers: Stable identification from noisy per-frame counts**
+
+Counts alone are insufficient as early groupings are unstable and single-frame anomaly counts are noisy. PRBI maintains a posterior benign probability $P_{\text{benign}}[j] = P(\mathcal{B}_j \mid \mathcal{A})$ for each vehicle, updated in a Bayesian manner to pick the $\lfloor m \rceil$ vehicles with the lowest probabilities as suspects. The prior $P(\mathcal{B}_j)$ combines **short-term memory** (last frame's result) and **long-term memory** (historical normal detection ratio) to smooth early jitter. The likelihood $P(\mathcal{A} \mid \mathcal{B}_j)$ is estimated by the system's abnormal ratio after excluding vehicle $j$. A key invariant is that true malicious vehicles will consistently fall into abnormal detections (normal ratio $\beta_j = 0$), causing their benign probability to be driven to 0.
+
+**4. T-test convergence criterion: Terminating redundant verification in continuous scenes**
+
+Since $m$ fluctuates slightly around the true value $k$, a criterion is needed to stop verification. PRBI maintains a window $W$ of $m$ estimates for the last $w_p$ frames and performs a T-test on the null hypothesis $H_0: k = m$. Convergence is determined only when fluctuations are constrained within the confidence interval **and** the number of vehicles with zero benign probability exactly equals $m$. This dual condition prevents premature acceptance of $H_0$ while $m$ is still climbing. Convergence typically occurs within approximately 4 frames.
 
 ---
 
 ## Loss & Training
 
-PRBI is an **inference-stage defense framework** that involves no additional training or loss functions. It operates on top of pre-trained collaborative perception models, directly utilizing Jaccard similarity between detection outputs for consistency verification. The adversarial perturbation optimization objective follows the standard multi-agent detection loss:
+PRBI is an **inference-stage defense framework** and does not involve additional training or loss functions. It runs on top of pre-trained CP models, directly utilizing the Jaccard similarity between detection outputs. The perturbation optimization of the attacker follows a standard multi-agent detection loss:
 
 $$\max_{\|\delta\| \leq \Delta} \sum_{j=1}^{L} \mathcal{L}_{\text{det}}(d_j, d_j')$$
 
-where $\Delta$ constrains the perturbation magnitude and $\mathcal{L}_{\text{det}}$ denotes the detection loss. The defense distinguishes normal from anomalous frames via the Jaccard threshold $\epsilon$, requiring no fine-tuning of the perception model.
+where $\Delta$ constrains the perturbation magnitude and $\mathcal{L}_{\text{det}}$ is the detection loss. Ours distinguishes normal/abnormal frames via the Jaccard threshold $\epsilon$ without fine-tuning.
 
 ---
 
 ## Key Experimental Results
 
-### Table 1: Per-Frame Verification Count Comparison ($n=5$)
+**Table 1: Per-frame Verification Count Comparison ($n=5$)**
 
-| Method | Metric | Attack ratio 20% | 40% | 60% | 80% | Average ↓ |
+| Method | Metric | Attack Ratio 20% | 40% | 60% | 80% | Avg ↓ |
 |:-----|:-----|:---:|:---:|:---:|:---:|:---:|
 | ROBOSAC | Avg | 4.89 | 10.36 | 8.29 | 4.73 | 7.1 |
 | PASAC | Avg | 4.79 | 6.60 | 7.59 | 8.00 | 6.7 |
 | **PRBI (Ours)** | **Avg** | **2.00** | **2.35** | **2.61** | **2.86** | **2.5** |
 
-- PRBI averages only 2.5 validations per frame, significantly lower than ROBOSAC (7.1) and PASAC (6.7).
-- ROBOSAC reaches a maximum of 30.3 validations per frame; PRBI peaks at only 5.0.
+- PRBI averages only 2.5 verifications/frame, significantly lower than ROBOSAC (7.1) and PASAC (6.7).
+- While ROBOSAC's max verification reaches 30.3/frame, PRBI peaks at only 5.0/frame.
 
-### Table 2: Detection Performance Comparison ($n=5, k=2$, V2VNet backbone + three attack types)
+**Table 2: Detection Performance Comparison ($n=5, k=2$, V2VNet Backbone + 3 Attacks)**
 
 | Setting | AP@0.5 | AP@0.7 |
 |:-----|:---:|:---:|
-| Upper-Bound (attack-free collaborative) | 80.73 | 78.35 |
+| Upper-Bound (No Attack) | 80.73 | 78.35 |
 | Attack w/ PGD | 17.02 | 14.53 |
 | PRBI against PGD | **68.93** (+51.91) | **63.82** (+49.29) |
 | Attack w/ BIM | 13.51 | 11.69 |
 | PRBI against BIM | **68.76** (+55.25) | **64.88** (+53.19) |
 | Attack w/ C&W | 10.68 | 6.04 |
 | PRBI against C&W | **71.87** (+61.19) | **68.54** (+62.50) |
-| Lower-Bound (single-vehicle perception) | 56.35 | 52.89 |
+| Lower-Bound (Single Vehicle) | 56.35 | 52.89 |
 | ROBOSAC | 64.13 (+7.78) | 61.01 (+8.12) |
 | PASAC | 68.39 (+12.04) | 64.73 (+11.83) |
 
-- On V2VNet, PRBI recovers 86.9% of the AP loss incurred under C&W attack, substantially outperforming ROBOSAC and PASAC.
-- Consistent robustness is maintained across multiple fusion strategies (Mean/Max/Sum/V2VNet/DiscoNet).
+- On V2VNet, PRBI restores 86.9% of AP loss against C&W, outperforming ROBOSAC and PASAC.
+- Robustness is maintained across various fusion strategies (Mean/Max/Sum/V2VNet/DiscoNet).
 
-### Convergence and Identification Rate
+**Table 3: Convergence Speed and Identification Rate**
 
-| Attack ratio | Avg. convergence frames | Malicious vehicle identification rate | Benign vehicle false positive rate |
+| Attack Ratio | Avg Conv. Frames | Malicious Identification | Benign False Positive |
 |:---:|:---:|:---:|:---:|
 | 20% | 2.25 | 100% | 0% |
 | 40% | 2.77 | 100% | 6% |
 | 60% | 3.36 | 100% | 0% |
 | 80% | 4.27 | 100% | 0% |
 
-- The malicious identification rate is 100% across all attack ratios, with convergence achieved in approximately 4 frames on average.
+- Identification rate is 100% across all ratios, with convergence averaged at ~4 frames.
 
 ---
 
 ## Highlights & Insights
 
-1. **First efficient defense for the fully untrusted setting**: The framework eliminates reliance on a trusted ego vehicle by introducing inter-frame temporal consistency as a self-referential signal — a conceptually simple yet highly insightful approach.
-2. **Decoupling verification overhead from vehicle count**: The binary grouping strategy reduces per-frame validations from $O(n)$ to a constant of 2, achieving theoretical optimality.
-3. **Rigorous theoretical guarantees**: Theorem 1 proves the monotonic convergence of $m$ to $k$; Theorem 2 proves that floor rounding guarantees exact convergence — the theoretical analysis is thorough.
-4. **Invariant guaranteeing attacker exclusion**: Malicious vehicles satisfy $\beta_j = 0$, keeping their benign probability permanently at 0 and ensuring no missed detections.
-5. **Strong practical utility**: No additional training, no prior knowledge, and no modification of the perception model are required; PRBI operates as a plug-and-play inference-stage defense module.
+1. **First efficient defense for "Fully Untrusted" scenarios**: Breaks the dependency on a trusted ego by using temporal consistency as a self-reference signal.
+2. **Decoupling overhead from vehicle count**: Binary grouping reduces verification from $O(n)$ to constant 2, which is theoretically optimal.
+3. **Rigorous theoretical guarantees**: Theorem 1 proves monotonic convergence of $m$; Theorem 2 proves the necessity of the floor function for precision.
+4. **Invariant malicious exclusion**: Malicious vehicles with $\beta_j = 0$ stay at zero probability, ensuring no false negatives.
+5. **High practicality**: No training, no prior knowledge, and no model modification required; it functions as a plug-and-play inference-stage module.
 
 ---
 
 ## Limitations & Future Work
 
-1. **Fragile scenarios for inter-frame consistency assumption**: Under extreme vehicle motion such as sharp turns or sudden braking, inter-frame perception changes can be large, causing natural drops in Jaccard similarity that may trigger false positives.
-2. **Initial frame correctness assumption**: At $t=0$, the perception is assumed fully correct; if the system is under attack from the very first frame, a reliable reference cannot be established.
-3. **Evaluation limited to small-scale $n=5$ scenarios**: Real-world urban autonomous driving may involve tens of collaborating vehicles; convergence speed and stability at larger scales remain to be validated.
-4. **Static attacker set assumption**: The framework assumes the set of attackers remains fixed throughout the sequence; its adaptability to dynamically joining or leaving attackers is uncertain.
-5. **6% false positive rate at 40% attack ratio**: Premature stabilization of $m$ may cause benign vehicles to be incorrectly excluded; while this does not affect malicious identification rate, it reduces collaborative gain.
-6. **Adaptive attacks not considered**: An adversary aware of PRBI's detection logic could design slowly varying perturbations to maintain inter-frame similarity above the threshold, potentially evading detection.
+1. **Vulnerability in high-dynamic scenes**: In scenarios with sharp turns or emergency braking, inter-frame Jaccard similarity may drop naturally, potentially causing false positives.
+2. **Initial frame assumption**: $t=0$ assumes correct perception; attacks at system startup might prevent the establishment of a reliable reference.
+3. **Scale of evaluation**: Experiments primarily used $n=5$. Large-scale urban scenarios with dozens of vehicles require further validation.
+4. **Static attacker set**: Assumes attackers are fixed throughout the sequence; adaptability to dynamic entry/exit of attackers is unconfirmed.
+5. **False positives at specific ratios**: A 6% false positive rate at a 40% attack ratio suggests early stabilization of $m$ might exclude benign vehicles, losing collaboration gains.
+6. **Adaptive attacks**: Attackers aware of PRBI logic might design slow-varying perturbations to bypass threshold-based Jaccard detection.
 
 ---
 
 ## Related Work & Insights
 
-- **ROBOSAC / PASAC**: Classical sampling-based defenses that use the ego vehicle as a reference for iterative consistency verification. PRBI's key improvement is replacing ego trust with inter-frame temporal consistency and replacing linear sampling with binary grouping.
-- **MATE**: A geometry-based multi-agent trust estimator requiring object tracking and visibility reasoning. PRBI requires no scene geometry modeling and is substantially more lightweight.
-- **Classifier-based defenses**: Binary networks trained to detect malicious features suffer from poor generalization and expand the attack surface. PRBI requires no training and introduces zero attack surface expansion.
-- **Broader inspiration**: The inter-frame consistency signal is not limited to collaborative perception defense; it can be generalized to anomaly detection in any multi-source fusion system, such as malicious client detection in federated learning. The paradigm of pseudo-random grouping combined with Bayesian inference is broadly applicable.
+- **ROBOSAC / PASAC**: Typical sampling defenses using the ego as a reference for iterative consistency. PRBI improves this by replacing ego trust with temporal consistency and linear sampling with binary grouping.
+- **MATE**: A geometric-based trust estimator requiring object tracking. PRBI is more lightweight as it does not rely on geometric modeling.
+- **Classifier-based Defenses**: Uses binary networks to detect malicious features, which often lack generalization and expand the attack surface. PRBI is zero-training and adds no attack surface.
+- **Insight**: Temporal consistency signals are applicable not only to CP defense but also to anomaly detection in any multi-source fusion system (e.g., malicious client detection in Federated Learning).
 
 ---
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First constant-overhead defense under the fully untrusted setting; the inter-frame self-referential signal is a novel contribution
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive coverage of multiple attack types, fusion strategies, and parameter sensitivity analyses, though evaluation at only $n=5$ is a mild limitation
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear problem formulation, rigorous theoretical analysis, and complete mathematical derivations
-- **Value**: ⭐⭐⭐⭐ — Practically significant for collaborative autonomous driving security; the plug-and-play design facilitates real-world deployment
+- **Novelty**: ⭐⭐⭐⭐ — Constant overhead in zero-trust settings is a novel contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive across attacks and fusion strategies, though $n=5$ is limited.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Precise problem definition and rigorous theoretical analysis.
+- **Value**: ⭐⭐⭐⭐ — Plug-and-play design is highly suitable for practical autonomous driving deployment.
 
 <!-- RELATED:START -->
 
@@ -180,10 +185,10 @@ where $\Delta$ constrains the perturbation magnitude and $\mathcal{L}_{\text{det
 ## Related Papers
 
 - [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](../../ICML2026/ai_safety/one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
-- [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
+- [\[CVPR 2026\] RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning](rapa_enhancing_transferable_targeted_attacks_via_random_parameter_pruning.md)
 - [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
 - [\[AAAI 2026\] Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception](../../AAAI2026/ai_safety/detect_all-type_deepfake_audio_wavelet_prompt_tuning_for_enhanced_auditory_perce.md)
-- [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](../../ICML2026/ai_safety/partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
 
 </div>
 

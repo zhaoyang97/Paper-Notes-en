@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
 description: >-
-  [ICML 2026][Model Compression][Speculative Decoding] This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is suboptimal. For small-capacity draft models…
+  [ICML 2026][Model Compression][EAGLE/MEDUSA] This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is sub-optimal—minimizing KL for small-capacity draft models does not imply maximizing the acceptance rate. The authors propose LK losses (direct maximization of the negative log acceptance rate + a trust-region h
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Speculative Decoding"
-  - "Acceptance Rate Optimization"
-  - "KL vs TV Divergence"
-  - "Draft Model Training"
-  - "EAGLE/MEDUSA"
+  - ICML 2026
+  - Model Compression
+  - EAGLE/MEDUSA
 date: 2026-05-08
-content_hash: bd48c31deca13cc2
+content_hash: 85fe1302e7a1da49
 ---
-
 # LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -24,57 +19,60 @@ content_hash: bd48c31deca13cc2
 **Keywords**: Speculative Decoding, Acceptance Rate Optimization, KL vs TV Divergence, Draft Model Training, EAGLE/MEDUSA
 
 ## TL;DR
-This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is suboptimal. For small-capacity draft models, KL minimization does not imply acceptance rate maximization. The authors propose LK losses (directly maximizing negative log acceptance rate combined with a KL trust-region hybrid) as a plug-in replacement, achieving a consistent 8-10% improvement in average acceptance length across 4 draft architectures and 6 target models (8B-685B).
+This paper argues that using KL divergence as a proxy for acceptance rate in speculative decoding training is sub-optimal—minimizing KL for small-capacity draft models does not imply maximizing the acceptance rate. The authors propose LK losses (direct maximization of the negative log acceptance rate + a trust-region hybrid with KL) as a plug-in replacement. Across 4 draft architectures and 6 target models (8B-685B), it consistently improves the average acceptance length by 8-10%.
 
 ## Background & Motivation
 
-**Background**: LLM inference is constrained by memory bandwidth, resulting in low utilization during autoregressive single-token decoding. Speculative decoding utilizes a small draft model $q$ to propose $K$ tokens, which are verified in parallel by a target model $p$. The acceptance probability per token is $\beta = \min(1, p/q)$, and the sequence is truncated at the first rejection. Existing architectures include MEDUSA (parallel heads), EAGLE/EAGLE-3 (autoregressive heads with feature fusion), and MTP (native draft modules in DeepSeek-V3).
+**Background**: LLM inference is limited by memory bandwidth, and autoregressive single-token decoding suffers from low utilization. Speculative decoding allows a small draft model $q$ to propose $K$ tokens, which the target model $p$ validates in parallel. The acceptance probability for each token is $\beta = \min(1, p/q)$, and the first rejected token discards all subsequent ones. Existing architectures include MEDUSA (parallel heads), EAGLE/EAGLE-3 (autoregressive heads + feature fusion), and MTP (DeepSeek-V3 native draft modules).
 
-**Limitations of Prior Work**: Current draft models are trained using KL divergence (or equivalent Cross-Entropy) as the objective, treating KL as a proxy for acceptance rate. While $q = p$ achieves both KL = 0 and an acceptance rate of 1 at the global optimum, draft models typically possess only 1-5% of the target's capacity. At suboptimal points, KL minimization provides no guarantee for maximizing the acceptance rate.
+**Limitations of Prior Work**: Training for all these draft models uses KL divergence (or equivalent Cross-Entropy) as the objective, treating KL as a proxy for the acceptance rate. Theoretically, when $q = p$, KL = 0 and the acceptance rate = 1, making the global optimum consistent. However, draft model capacity is typically only 1-5% of the target model, meaning the global optimum is never reached. At sub-optimal points, minimizing KL **provides no guarantee** for maximizing the acceptance rate.
 
-**Key Challenge**: The actual objective is the acceptance rate (mathematically equivalent to $1 - \text{TV}(p, q)$, where TV is Total Variation distance). However, training utilizes KL, and the behaviors of these two metrics differ significantly at suboptimal points: forward KL is mode-covering (spreading mass, leading to suboptimal acceptance), while reverse KL is mode-seeking (collapsing to dominant modes). Neither perfectly maximizes distributional overlap.
+**Key Challenge**: The direct optimization goal is the acceptance rate (mathematically equivalent to $1 - \text{TV}(p, q)$, where TV is Total Variation distance). However, training uses KL. The behaviors of these two diverge significantly at sub-optimal points—forward KL is mode-covering (spreading mass over the support, leading to sub-optimal acceptance), while reverse KL is mode-seeking (collapsing to the dominant mode). Neither maximizes distributional overlap.
 
-**Goal**: Replace KL with a loss function targeting the acceptance rate directly. Requirements include: (1) applicability to native draft modules trained from scratch, (2) zero additional computational overhead, and (3) universality across architectures and scales.
+**Goal**: Replace KL with a loss targeting the acceptance rate directly. Requirements: (1) Applicable to native training of draft modules from scratch rather than just external pre-trained speculators; (2) Simple implementation with zero computational overhead; (3) Generalizability across architectures and scales.
 
-**Key Insight**: Although DistillSpec identified TV distance as the precise mathematical counterpart to acceptance rate, it performed poorly on pre-trained LMs due to weak TV gradients. This work finds that this limitation primarily applies to pre-trained scenarios; for **randomly initialized native draft modules**, direct TV-style acceptance rate losses are highly effective.
+**Key Insight**: DistillSpec previously identified TV distance as the exact mathematical counterpart to the acceptance rate but found it performed poorly on pre-trained LMs due to weak TV gradients (mass concentrated tokens). This paper discovers that this limitation applies primarily to pre-trained scenarios; for **randomly initialized native draft modules**, direct TV-style acceptance rate losses are effective.
 
-**Core Idea**: LK losses consist of (a) "LK-direct," which maximizes the negative log acceptance rate (similar to maximum likelihood), and (b) "LK-hybrid," which utilizes a gradual switch from KL to LK (acting as a trust-region method to maintain stability early on).
+**Core Idea**: LK losses — (a) Directly maximize the negative log acceptance rate ("LK-direct", similar to maximum likelihood); (b) A progressive transition from KL to LK ("LK-hybrid", a trust-region method that uses KL for stability initially and switches to LK later).
 
 ## Method
 
 ### Overall Architecture
 
-The acceptance rate is defined as $\alpha = \sum_x \min(q(x), p(x)) = 1 - \text{TV}(p, q)$.
-
-Two variants of LK losses are introduced:
-- **LK-direct**: $\mathcal{L}_{\text{LK}} = -\log \alpha = -\log \sum_x \min(q(x), p(x))$
-- **LK-hybrid**: $\mathcal{L}_{\text{hybrid}}(t) = (1 - w(t)) \cdot \text{KL}(p \| q) + w(t) \cdot \mathcal{L}_{\text{LK}}$, where $w(t)$ increases from 0 to 1.
-
-These function as drop-in replacements for the loss function without requiring architectural changes.
+In speculative decoding, the acceptance probability for each token is $\beta = \min(1, p/q)$. The expected acceptance rate for the entire proposal is exactly $\alpha = \sum_x \min(q(x), p(x)) = 1 - \text{TV}(p, q)$. This implies that the quantity to be maximized is the total overlap between the draft distribution $q$ and target distribution $p$ (equivalent to minimizing TV distance), rather than KL divergence. Based on this, LK losses replace the training objective with the acceptance rate itself: LK-direct minimizes the negative log acceptance rate $-\log\alpha$ (its gradient is equivalent to TV optimization with $1/\alpha$ adaptive scaling), while LK-hybrid adaptively mixes KL and TV terms based on the current acceptance rate $\alpha$, transitioning smoothly from KL-dominance in early training to TV-dominance later. Neither variant requires architectural changes or extra computation; they only replace a single line in the loss function and are naturally compatible with pipelines using vocabulary truncation (like EAGLE-3). Consequently, they can be plugged into MEDUSA, EAGLE-3, MTP, or any other existing training framework.
 
 ### Key Designs
 
-1. **LK-direct: Direct Negative Log Acceptance Rate Optimization**:
-    - **Function**: Aligns the training objective with the inference-time acceptance rate (one-to-one mapping with TV).
-    - **Mechanism**: The gradient of $\mathcal{L}_{\text{LK}} = -\log \alpha$ with respect to draft logits $z_q$ differs from KL. While the KL gradient $\nabla_{z_q} \text{KL}(p \| q) = q - p$ applies pressure across all tokens, the LK gradient concentrates on regions of distributional overlap. Similar to TV's mass-focused nature, it encourages the draft model to concentrate its capacity on high-probability tokens of the target model.
-    - **Design Motivation**: In capacity-limited scenarios, the choice between "covering the entire support" (KL requirement) and "aligning with high-probability regions" (TV/LK preference) is critical. In speculative decoding, the latter directly improves the acceptance rate.
+**1. LK-direct: Aligning Loss Directly with Acceptance Rate instead of a Proxy**
 
-2. **LK-hybrid: KL → LK Gradual Switch (Trust-Region Approach)**:
-    - **Function**: Uses KL to provide robust global gradient signals during early training, then switches to LK for fine-tuning the acceptance rate.
-    - **Mechanism**: $\mathcal{L}_{\text{hybrid}}(t) = (1-w(t)) \text{KL}(p\|q) + w(t) \mathcal{L}_{\text{LK}}$, where $w(t)$ follows a schedule (e.g., linear or sigmoid) from 0 to 1. This balances a stable surrogate with the true objective.
-    - **Design Motivation**: At random initialization, the KL gradient $\|q - p\| \sim \mathcal{O}(1/\sqrt{k})$ provides a strong signal. Conversely, the LK gradient can be near zero if distributions are entirely disjoint ($\min(q, p) \to 0$). The hybrid approach uses KL to push the distributions into overlap before LK refines the output.
+The pain point is capacity: draft models have only 1-5% of the target's capacity and never reach $q=p$. KL minimization only equals acceptance rate maximization at the global optimum. LK-direct defines the loss as the negative logarithm of the acceptance rate, treating $\alpha$ as the marginal probability of "proposing a token and it being accepted":
 
-3. **Gradient Structure Analysis**:
-    - **Function**: Mathematically explains why LK is superior at suboptimal points.
-    - **Mechanism**: The forward KL gradient $\nabla_{z_q} \text{KL} = q - p$ penalizes the draft model across all tokens (mass-covering). The LK gradient (derived in the appendix) only contributes for tokens where $q < p$. It specifically updates tokens that are "underestimated by the draft but high-probability for the target."
-    - **Design Motivation**: This selective updating allows limited capacity to be "invested" in high-impact tokens, which is precisely what the acceptance rate requires.
+$$\mathcal{L}_{\text{LK}}^{\alpha} = -\log \alpha = -\log \sum_x \min(p(x), q(x))$$
+
+The relationship with TV is clean: it can be proven that $\nabla_{z_q}\mathcal{L}_{\text{LK}}^{\alpha} = \tfrac{1}{\alpha}\,\nabla_{z_q}\text{TV}(p, q)$. This acts as TV optimization with adaptive scaling. The $1/\alpha$ factor automatically amplifies gradients when the acceptance rate is low ($\alpha \to 0$), compensating for the near-zero gradients of pure TV at initialization. Intuitively, while KL forward is mode-covering, TV/LK maximizes the overlap of two distributions, concentrating finite capacity on target high-probability areas.
+
+**2. LK-hybrid: Adaptive KL and TV Mixing to Solve Random Initialization Cold Starts**
+
+Pure TV or LK-direct has a weakness at initialization: when $q$ is spread across a large vocabulary ($V > 10^5$), overlap with $p$ is minimal, and TV gradients are near zero. LK-hybrid addresses this by weighting the two terms:
+
+$$\mathcal{L}_{\text{LK}}^{\lambda}(p, q) = \lambda \cdot \text{KL}(p\|q) + (1-\lambda)\cdot \text{TV}(p, q)$$
+
+Instead of a fixed weight, the paper uses an adaptive schedule based on the **current acceptance rate $\alpha$**: $\lambda = \exp(-\eta \cdot \text{sg}[\alpha])$. When the acceptance rate is low (early training), $\lambda \to 1$, allowing KL to lead the distributions toward overlap with smooth gradients. As acceptance increases, $\lambda$ decays, switching to TV-dominance for direct refinement. This is interpreted as a trust-region approach: $\min_q \text{TV}(p,q)\ \text{s.t.}\ \text{KL}(p\|q) \le \delta$, where the adaptive schedule implicitly controls the threshold $\delta$.
+
+**3. Gradient Structure Analysis: Why KL is a Proxy and Pure TV Fails at Initialization**
+
+The design motivation stems from gradients. The three losses have distinct gradient structures regarding draft logits $z_q$. The KL forward gradient $\nabla_{z_q}\text{KL}(p\|q) = q - p$ applies pressure based on the difference between prediction and target with a magnitude of $\mathcal{O}(1/\sqrt{k})$, which is strong and smooth regardless of alignment. TV gradients $\nabla_{z_q}\text{TV} = \tfrac{1}{2}q\odot(s - \mathbb{E}_q[s])$ (where $s_i = \text{sign}(q_i - p_i)$) carry only sign information and are near zero during random initialization. This explains why LK-direct (which uses $1/\alpha$ to amplify TV gradients) and LK-hybrid (which uses KL to bridge the cold start) are necessary for native draft modules trained from scratch.
+
+**4. Compatibility with Vocabulary Truncation: No Need for "Proxies for Proxies"**
+
+EAGLE-3 truncates the draft LM head vocabulary to a high-frequency subset to reduce latency. This is problematic for KL because $q_i = 0$ for truncated tokens while $p_i > 0$, causing KL to diverge. Standard practice involves re-normalizing the target distribution $p$, creating a "proxy for a proxy." LK losses handle this naturally: since $\alpha = \sum_x \min(p, q)$, truncated tokens contribute $\min(p_i, 0) = 0$ and do not affect the acceptance rate. Thus, LK optimizes the original target distribution without secondary approximations.
 
 ## Key Experimental Results
 
 ### Main Results: 4 Draft Architectures × 6 Target Models
 
-| Draft Architecture | Target Model | KL Acceptance Length $\tau$ | **LK Acceptance Length $\tau$** | Gain |
-|--------|------|------|------|------|
+| Draft Architecture | Target Model | KL Training $\tau$ | **LK Training $\tau$** | Gain |
+|:---|:---|:---|:---|:---|
 | MEDUSA-3 head | Llama-3-8B | 2.31 | 2.48 | +7.4% |
 | EAGLE-3 | Llama-3-70B | 3.12 | 3.45 | +10.6% |
 | EAGLE-3 | Qwen3-235B-A22B | 2.85 | 3.16 | +10.9% |
@@ -82,55 +80,55 @@ These function as drop-in replacements for the loss function without requiring a
 | MTP module | DeepSeek-V3 | 2.78 | 3.02 | +8.6% |
 | Standalone Qwen-1.5B → Llama-3-70B | – | 2.46 | 2.68 | +8.9% |
 
-An 8-10% improvement in average acceptance length is consistent across all architectures and scales. The advantage becomes more pronounced as the draft length $K$ increases.
+The 8-10% improvement in average acceptance length is consistent across all architectures and scales. The advantage is more pronounced at larger values of $K$.
 
-### Results by Domain
+### Domain Distribution
 
 | Domain | KL $\tau$ | LK $\tau$ | Gain |
-|------|------|------|------|
+|:---|:---|:---|:---|
 | General (MT-Bench) | 2.85 | 3.10 | +8.8% |
 | Code (HumanEval) | 3.12 | 3.43 | +9.9% |
 | Math (GSM8K) | 2.78 | 3.05 | +9.7% |
 
-The gains from LK are larger in Code and Math domains, where token distributions are more skewed and the benefits of TV-style focus are amplified.
+The gains are larger in Code/Math domains where token distributions are more skewed.
 
-### LK-direct vs LK-hybrid Comparison
+### Ablation Study: LK-direct vs LK-hybrid
 
 | Training Phase | KL | LK-direct | LK-hybrid |
-|--------|-----|---------|----------|
-| Early (random init) | Stable convergence ($\tau=2.10$) | Slow start ($\tau=1.85$) | Stable ($\tau=2.12$) |
+|:---|:---|:---|:---|
+| Early (random init) | $\tau=2.10$ Stable | $\tau=1.85$ Slow | $\tau=2.12$ Stable |
 | Late (well-trained) | $\tau=2.85$ | $\tau=3.10$ | $\tau=3.13$ |
 
-LK-direct converges slowly in the early stages due to weak gradient signals. LK-hybrid achieves the best results by combining early stability with late-stage refinement.
+LK-direct converges slowly early on; LK-hybrid achieves both early stability and late refinement.
 
 ### Key Findings
-- **KL is indeed suboptimal for small draft models**: The 8-10% acceptance rate improvement is stable across architectures, scales, and domains.
-- **Longer $K$ benefits more**: As seq length increases, small improvements in per-step acceptance rate compound, leading to larger gaps between LK and KL.
-- **Trust-region hybrid is the robust engineering choice**: LK-hybrid solves the "cold start" problem of direct TV-style optimization.
-- **Plug-and-play practical utility**: Implementing the loss function requires minimal code changes and introduces no overhead.
+- **KL is indeed sub-optimal for small-capacity drafts**: The 8-10% gain is stable across scales and domains.
+- **Larger $K$ benefits more**: Acceptance length $\tau$ widens the gap for $K \geq 4$ as sequential acceptance probabilities compound.
+- **Trust-region hybrid is the robust choice**: It solves the cold-start problem of direct optimization.
+- **Plug-and-play**: Requires changing only one line of code with no extra overhead.
 
 ## Highlights & Insights
-- **Identifying Objective-Proxy Mismatch**: The observation that KL is a poor proxy for acceptance rate in capacity-constrained scenarios highlights a general issue in knowledge distillation (KD) that could apply beyond speculative decoding.
-- **Trust-Region Philosophy**: The LK-hybrid design acts as a general curriculum template for scenarios where the true objective has sparse gradients but a stable surrogate exists.
-- **Theoretical Foundations**: The work provides more than empirical results; the analysis of the gradient structure explains "why" selective investment in tokens is superior to uniform pressure.
-- **Validation at 685B Scale**: Significant improvements on DeepSeek-V3 demonstrate that the method scales to frontier-class models.
+- **Identified target-proxy misalignment**: KL's mass-covering property wastes limited capacity in small models. This perspective is applicable to any Knowledge Distillation (KD) task.
+- **Trust-region design philosophy**: Using a stable surrogate before switching to the true objective is a general template for scenarios with sparse target gradients.
+- **Theoretical support via gradient analysis**: The paper quantifies why KL acts as a smooth proxy and why TV requires specialized handling.
+- **Verification at 685B scale**: Improvements on frontier models like DeepSeek-V3 prove the method's scalability.
 
 ## Limitations & Future Work
-- The $w(t)$ switching schedule is currently handcrafted; an adaptive mechanism based on current KL/LK ratios might be more robust.
-- The effectiveness of LK on established pre-trained standalone draft models remains to be fully verified, given prior reports of TV performing poorly in such settings.
-- While acceptance rate improves, the precise end-to-end wall-clock speedup depends on the specific verifier overhead.
-- Future work could explore more aggressive objectives, such as directly maximizing end-to-end throughput.
+- The $w(t)$ switch schedule is manual; adaptive versions based on relative losses might be more robust.
+- Effectiveness on pre-trained standalone drafts (where TV was previously reported as weak) requires further validation.
+- End-to-end inference speedup was not reported in detail; this depends on the actual cost of verifier steps.
+- Future work could explore maximizing end-to-end throughput directly.
 
 ## Related Work & Insights
-- **vs DistillSpec**: While DistillSpec explored TV on pre-trained external drafts with mixed results, this work demonstrates stability and success on native, randomly initialized draft modules.
-- **vs MEDUSA / EAGLE / MTP**: These existing frameworks use KL. Switching to LK provides an immediate, architecture-agnostic performance boost.
-- **Insight**: In any KD scenario, KL should not be the default assumption; the choice of loss should align with the mathematical metric used for downstream evaluation.
+- **vs DistillSpec**: DistillSpec explored TV in pre-trained external drafts with mixed results; this paper demonstrates stability in native draft modules trained from scratch.
+- **vs MEDUSA/EAGLE/MTP**: These use KL; this paper provides a simple upgrade path for all existing speculative decoding systems.
+- **Insight**: In KD, KL is not always optimal. One must consider which mathematical quantity corresponds to the evaluation metric.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ While the concept of TV optimization exists (e.g., DistillSpec), the clarification of the "native vs. pre-trained" setting and the introduction of LK-hybrid are significant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 architectures, 6 models, and 3 domains, supported by theoretical gradient analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear pedagogical examples (e.g., Gaussian toy models) and precise mathematical analysis.
-- **Value**: ⭐⭐⭐⭐⭐ Speculative decoding is a primary LLM acceleration method; an 8-10% acceptance rate boost with zero overhead is a high-value contribution.
+- Novelty: ⭐⭐⭐⭐ LK-direct exists conceptually, but the native vs. pre-trained clarification and LK-hybrid are new.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive results across 4 architectures, 6 models, and 3 domains.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations and intuitive toy examples.
+- Value: ⭐⭐⭐⭐⭐ Speculative decoding is critical for LLM acceleration; this is a plug-and-play gain.
 
 <!-- RELATED:START -->
 

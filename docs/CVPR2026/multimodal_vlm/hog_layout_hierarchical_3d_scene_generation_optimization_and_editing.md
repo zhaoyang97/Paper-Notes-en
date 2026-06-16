@@ -2,118 +2,133 @@
 title: >-
   [Paper Note] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][3D scene generation] This paper proposes HOG-Layout, a hierarchical framework for 3D indoor scene generation, optimization…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] Ours proposes HOG-Layout, a hierarchical 3D indoor scene generation, optimization, and editing framework based on VLMs and LLMs. By enhancing semantic consistency with RAG and ensuring physical plausibility through force-guided hierarchical optimization, it outperforms LayoutVLM on SceneEval with 4.5x faster speed.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "3D scene generation"
-  - "scene editing"
-  - "vision-language models"
-  - "hierarchical optimization"
-  - "RAG"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
+  - RAG
 date: 2026-05-08
-content_hash: 7e3f3552cbf27bd0
+content_hash: 0c96b33b938fe667
 ---
-
 # HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.10772](https://arxiv.org/abs/2604.10772)  
 **Code**: None  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: 3D scene generation, scene editing, vision-language models, hierarchical optimization, RAG
 
 ## TL;DR
-This paper proposes HOG-Layout, a hierarchical framework for 3D indoor scene generation, optimization, and editing based on VLM and LLM. It achieves superior performance over LayoutVLM on SceneEval at 4.5× faster speed, through RAG-enhanced semantic consistency and force-directed hierarchical optimization for physical plausibility.
+Ours proposes HOG-Layout, a hierarchical 3D indoor scene generation, optimization, and editing framework based on VLMs and LLMs. By enhancing semantic consistency with RAG and ensuring physical plausibility through force-guided hierarchical optimization, it outperforms LayoutVLM on SceneEval with 4.5x faster speed.
 
 ## Background & Motivation
 
-1. **Background**: 3D indoor scene generation serves interior design, VR, and embodied AI. Traditional approaches learn layouts from data (graph networks, Transformers, diffusion models) or directly generate appearance (NeRF, Gaussian Splatting), but are limited by diversity or lack of interactivity. The emergence of LLM/VLM enables open-vocabulary scene generation.
-2. **Limitations of Prior Work**: LLMs directly generating layouts (e.g., LayoutGPT) may produce collisions and implausible placements; incorporating spatial relationship constraints (e.g., Holodeck) improves plausibility at the cost of diversity; VLM-based methods (e.g., LayoutVLM) improve semantic consistency but require predefined object sets and rely on computationally expensive gradient-based optimization (~321s/scene). All methods primarily focus on generation from scratch, neglecting the practically more important need for scene editing.
-3. **Key Challenge**: Generating semantically consistent and physically plausible scenes requires satisfying both soft constraints (semantic relationships) and hard constraints (collision-free, within boundaries). Existing methods struggle to balance both while maintaining computational efficiency.
-4. **Goal**: Build a hierarchical framework that supports both scene generation and editing, achieving low latency while guaranteeing semantic consistency and physical plausibility.
-5. **Key Insight**: Objects are organized into a hierarchical structure based on support relationships (floor → table → objects on table), with optimization applied within each layer and across parent-child levels, decomposing complex 3D constraints into planar forces, vertical forces, and rotational torques.
-6. **Core Idea**: Four modules work in concert: RAG-enhanced scene planning + VLM-based initial layout generation + force-directed hierarchical optimization + LLM-parsed editing instructions, enabling efficient scene generation and editing.
+1. **Background**: 3D indoor scene generation serves interior design, VR, and embodied AI. Traditional methods learn layouts from data (graph networks, Transformers, diffusion models) or directly generate appearances (NeRF, Gaussian Splatting), but are limited by diversity or lack of interactivity. The emergence of LLMs/VLMs enables open-vocabulary scene generation.
+2. **Limitations of Prior Work**: Direct layout generation by LLMs (e.g., LayoutGPT) can produce collisions and unreasonable placements; incorporating spatial constraints (e.g., Holodeck) improves plausibility but sacrifices diversity; VLM methods (e.g., LayoutVLM) improve semantic consistency but require predefined object sets and involve time-consuming gradient-based optimization (~321s/scene). All methods primary focus on generation from scratch, ignoring the more critical real-world need for scene editing.
+3. **Key Challenge**: Generating semantically consistent and physically plausible scenes requires simultaneously satisfying soft constraints (semantic relationships) and hard constraints (collision-free, within boundaries). Existing methods struggle to balance both while maintaining computational efficiency.
+4. **Goal**: Construct a hierarchical framework supporting both scene generation and editing that ensures semantic consistency and physical plausibility with low latency.
+5. **Key Insight**: Organize objects into a hierarchical structure based on support relationships (floor → table → items on table). Optimize within each layer and between parent-child levels separately, decomposing complex 3D constraints into planar forces, vertical forces, and rotational torques.
+6. **Core Idea**: A collaborative system of four modules: RAG-enhanced scene planning, VLM-generated initial layout, force-guided hierarchical optimization, and LLM-parsed editing instructions.
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of four modules: (1) Scene Planning — LLM + RAG generates a structured plan from text; (2) Layout Generation — VLM combines top-down views to generate hierarchical layouts and retrieve objects; (3) Hierarchical Optimization — force-directed iterative optimization for physical and semantic constraints; (4) Scene Editing — LLM parses editing instructions into add/delete/move operations.
+HOG-Layout aims to generate a 3D indoor scene from a text description that is both semantically reasonable (e.g., sofa facing the TV, nightstand next to the bed) and physically plausible (no clipping, within bounds, items stable on surfaces), while supporting natural language editing. The pipeline follows a four-step process: planning, layout, optimization, and editing. First, an LLM, supplemented by retrieved design rules, decomposes the text into a structured object list and functional grouping. Second, a VLM observes a top-down view to arrange objects into a hierarchy based on support relationships and retrieves specific 3D models from a library. Third, the coarse layout is processed by a force-guided optimizer until stable. If the user is dissatisfied, the LLM parses editing instructions into add/delete/move operations, and the optimization is re-run. The key abstraction throughout is a hierarchy tree based on "who supports whom" (floor → table → cup on table), allowing constraints to be decomposed into intra-layer and inter-layer types. Layout generation and optimization are performed group-by-group, with the optimized view of each group serving as the context for the next.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Text Description"] --> P["RAG-Enhanced Scene Planning<br/>Retrieve top-3 design rules + LLM outputs object list & functional groups"]
+    P --> L["Hierarchical Layout Generation<br/>VLM position via top-down view → Support hierarchy tree → 3D model retrieval"]
+    L --> O["Force-Guided Hierarchical Optimization<br/>Planar force / Vertical force / Rotational torque iterated to equilibrium"]
+    O -->|Remaining groups: optimized view as context| L
+    O --> S["Final Scene"]
+    S -->|Natural language editing instructions| E["Text-Driven Scene Editing<br/>LLM parses add / delete / move"]
+    E --> L
+```
 
 ### Key Designs
 
-1. **RAG-Enhanced Scene Planning**:
-    - Function: Generate structured object lists and layout guidance from text descriptions.
-    - Mechanism: A template library of layout constraint rules is constructed; Qwen3-Embedding-4B extracts 1024-dimensional feature vectors stored in a FAISS database. At inference, cosine similarity retrieves the top-3 most relevant layout rules, which are combined with user input and fed to an LLM to generate a scene plan (object IDs, names, sizes, groupings, etc.). Objects are grouped by functional zones (e.g., a bedroom-living room is split into a dining group and a viewing group).
-    - Design Motivation: Direct LLM layout generation lacks domain knowledge constraints; RAG compensates by injecting human design rules.
+**1. RAG-Enhanced Scene Planning: Supplementing LLMs with Interior Design Knowledge**
 
-2. **Force-Directed Hierarchical Optimization**:
-    - Function: Iteratively optimize an initial layout to a physically and semantically stable state.
-    - Mechanism: Objects form a hierarchical tree based on support relationships. Each object maintains three force accumulators: planar force $F_{i,\text{plane}} \in \mathbb{R}^2$ (collision, boundary, proximity, wall-hugging), vertical force $F_{i,\text{vert}} \in \mathbb{R}$ (inter-level collision, vertical boundary), and rotational torque $\tau_i$ (orientation, alignment). Positions and rotations are updated via explicit Euler integration. Deadlock detection and avoidance are incorporated: horizontal deadlocks apply a vertical force to "push out," while vertical deadlocks directly scale the Z-axis. Convergence is declared when residual forces fall below threshold $\epsilon_{\text{conv}}$.
-    - Design Motivation: Unifying all constraints as continuous forces avoids the computational overhead of mixed-integer programming; the hierarchical decomposition enables parallel optimization of intra-level and parent-child constraints.
+A major issue with direct layout generation from text by LLMs is the lack of domain knowledge, such as standard distances between furniture or typical arrangements. Ours encodes layout constraints into rule templates using Qwen3-Embedding-4B into 1024-dimensional vectors stored in FAISS. For a given user description, the 3 most relevant rules are retrieved and fed to the LLM to output a structured scene plan: object IDs, names, dimensions, and functional groupings. Grouping ensures global consistency by generating areas (e.g., dining vs. viewing) sequentially.
 
-3. **Text-Driven Scene Editing**:
-    - Function: Support precise scene modification through natural language.
-    - Mechanism: An LLM maps user text to four primitive operations (plan/add/delete/move). Add operations are routed to the layout generation module; move operations have the VLM output the target object ID and new position; delete operations have the VLM output the ID to remove. After modification, the result is passed to the hierarchical optimization module to produce the final scene.
-    - Design Motivation: In practice, users more often refine than rebuild scenes; editing capability is critical for transitioning to interactive scene design.
+**2. Hierarchical Layout Generation: VLM Positioning via Support Trees**
+
+While planning provides the list, this step determines placement and orientation. The current scene is rendered as a top-down view with grid lines and coordinates. The VLM outputs XY coordinates and Z-axis rotation for each object; Z coordinates are calculated automatically based on the parent object and dimensions (e.g., top surface of a table). The core abstraction is the support hierarchy tree, where each object's "parent" is the supporting surface (floor, wall, ceiling, or another object). Real 3D models are then selected using a weighted score: 
+
+$$Score_{Final}=w_1 S_{sbert}+w_2 S_{clip}+w_3 S_{size}$$
+
+**3. Force-Guided Hierarchical Optimization: Layout as Physical Equilibrium**
+
+To resolve collisions and boundary violations without the high cost of gradient-based optimization, HOG-Layout treats objects as rigid bodies subject to "forces." Constraints are decomposed into: planar forces $F_{i,\text{plane}} \in \mathbb{R}^2$ (collision, boundary, proximity), vertical forces $F_{i,\text{vert}} \in \mathbb{R}$ (inter-layer collisions), and rotational torques $\tau_i$. Positions are updated using explicit Euler integration until residual forces fall below a threshold $\epsilon_{\text{conv}}$.
+
+$$F_{i,\text{plane}} = \sum (\text{collision} + \text{boundary} + \text{proximity} + \text{alignment}), \quad F_{i,\text{vert}}, \quad \tau_i$$
+
+Deadlock detection and avoidance mechanisms are included (e.g., vertically lifting an object to resolve a horizontal jam), avoiding the combinatorial explosion of mixed-integer programming and enabling parallelization across same-layer constraints.
+
+**4. Text-Driven Scene Editing: Iterative Design**
+
+Unlike most works that only support generation from scratch, HOG-Layout allows users to refine scenes via instructions. The LLM maps commands to four operations: plan, add, delete, and move. After any modification, the force-guided optimization is re-run to ensure the updated scene remains physically plausible.
 
 ### Loss & Training
-No training is required. GPT-4o is used uniformly as the LLM/VLM backbone. Object retrieval combines weighted scores from SBERT text similarity, OpenCLIP image-text similarity, and size matching.
+No training is required. GPT-4o is used as the backbone LLM/VLM. The capabilities are derived from prompt engineering and retrieval-based scoring.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | COL_ob↓ | COL_sc↓ | SUP↑ | OAR↑ | SP↑ | Time↓ |
-|--------|---------|---------|------|------|-----|-------|
+|------|---------|---------|------|------|-----|-------|
 | LayoutGPT | 35.67% | 49% | 34.39% | 11.48% | 35.14 | **37s** |
 | Holodeck | 12.24% | 63% | 34.72% | 38.27% | 55.45 | 272s |
 | LayoutVLM | 29.44% | 55% | 77.54% | 61.99% | 65.54 | 322s |
-| **HOG-Layout** | **5.28%** | **16%** | **81.17%** | **75.74%** | **69.69** | **70s** |
+| **Ours** | **5.28%** | **16%** | **81.17%** | **75.74%** | **69.69** | **70s** |
 
 **Human Evaluation (7-point scale)**:
 
 | Method | Plausibility | Semantic Alignment |
-|--------|--------------|--------------------|
+|------|--------|---------|
 | LayoutGPT | 2.43 | 2.58 |
 | Holodeck | 3.97 | 3.66 |
 | LayoutVLM | 3.69 | 4.61 |
-| **HOG-Layout** | **5.33** | **5.75** |
+| **Ours** | **5.33** | **5.75** |
 
 ### Ablation Study
 
-| Configuration | COL_ob↓ | SP↑ | Note |
-|---------------|---------|-----|------|
-| HOG-Layout (full) | 5.28% | 69.69 | All modules |
-| w/o RAG | Higher | ~65 | Weakened semantic constraints |
-| w/o hierarchical optimization | ~20% | ~60 | Significant collision increase |
-| w/o force decomposition | ~15% | ~64 | Improper vertical constraint handling |
+| Configuration | COL_ob↓ | SP↑ | Description |
+|------|---------|-----|------|
+| HOG-Layout Full | 5.28% | 69.69 | All modules |
+| w/o RAG | Higher | ~65 | Reduced semantic constraints |
+| w/o Hierarchical Opt | ~20% | ~60 | Significant increase in collisions |
+| w/o Force Decomp | ~15% | ~64 | Poor vertical constraint handling |
 
 ### Key Findings
-- **6× reduction in collision rate**: HOG-Layout achieves an object collision rate of only 5.28% (vs. 29.44% for LayoutVLM) and a scene collision rate of 16% (vs. 55% for LayoutVLM).
-- **4.5× speed improvement**: 70s vs. 322s for LayoutVLM, as force-directed optimization is substantially faster than gradient-based optimization.
-- **Consistency between automated and human evaluation**: GPT-5 scores align with human evaluation trends; HOG-Layout leads significantly on both metrics.
+- **6x Lower Collision Rate**: Ours achieves an object collision rate of 5.28% compared to LayoutVLM's 29.44%.
+- **4.5x Generation Speedup**: 70s vs. 322s for LayoutVLM, as force-guided optimization is significantly faster than gradient-based methods.
+- **Human Eval Consistency**: GPT-5 scoring trends match human evaluations, with Ours leading in both categories.
 
 ## Highlights & Insights
-- **Force-directed hierarchical optimization** is the core innovation: framing scene layout optimization as a physical force equilibrium problem is both intuitive and efficient. The deadlock detection and avoidance mechanism further enhances robustness.
-- **Editing support** is a critical step toward practical utility: most scene generation works focus solely on generation from scratch; HOG-Layout's add/delete/move editing capabilities bring it closer to real-world usage.
-- **Group-based generation strategy** is worth borrowing: progressive generation by functional zone, where each group's top-down view serves as context for the next, ensures spatial consistency.
+- **Force-guided hierarchical optimization** is the core innovation, treating layout as an intuitive physical equilibrium problem.
+- **Editing support** is a crucial step toward practical utility, moving beyond "one-shot" generation.
+- **Grouping strategy** ensures spatial consistency by generating individual functional areas using previous layers as context.
 
 ## Limitations & Future Work
-- Object retrieval relies on existing 3D asset libraries (3D-FUTURE, Objaverse) and cannot generate objects absent from the database.
-- Force-directed optimization may converge to local optima; the deadlock avoidance strategy is heuristic.
-- Only indoor scenes are supported; applicability to outdoor or large-scale scenes is unverified.
-- Editing operations are relatively basic (add/delete/move); more complex semantic edits (e.g., "make the room cozier") are not supported.
+- Object retrieval is limited by existing 3D asset libraries (3D-FUTURE, Objaverse).
+- Force-guided optimization can fall into local optima; deadlock avoidance is heuristic.
+- Restricted to indoor scenes; outdoor or large-scale environments are not yet validated.
+- Editing operations are basic (add/delete/move) and do not yet support complex semantic changes (e.g., "make the room cozier").
 
 ## Related Work & Insights
-- **vs. LayoutVLM**: LayoutVLM uses gradient-based optimization, incurring high computational cost (322s) and requiring predefined object sets. HOG-Layout's force-directed optimization is 4.5× faster and supports open-vocabulary inputs.
-- **vs. Holodeck**: Holodeck uses DFS/MILP to satisfy hard constraints but neglects soft semantic constraints. HOG-Layout addresses both physical and semantic constraints simultaneously.
+- **vs LayoutVLM**: LayoutVLM uses costly gradient optimization (322s) and requires predefined sets. Ours is 4.5x faster and supports open vocabularies.
+- **vs Holodeck**: Holodeck uses DFS/MILP for hard constraints but ignores soft semantic constraints. Ours handles both concurrently.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of hierarchical force-directed optimization and RAG-enhanced planning is novel and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ SceneEval with 100 scenes + human evaluation + editing experiments.
-- Writing Quality: ⭐⭐⭐ Multiple modules are described clearly, though some details require reference to supplementary materials.
-- Value: ⭐⭐⭐⭐ The unified generation-and-editing framework offers practical value, with clear speed advantages.
+- Novelty: ⭐⭐⭐⭐ Innovative combination of hierarchical force optimization and RAG planning.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 100 SceneEval scenarios, human evaluation, and editing tests.
+- Writing Quality: ⭐⭐⭐ Clear module descriptions, though some details require supplementary material.
+- Value: ⭐⭐⭐⭐ A unified generation and editing framework with significant speed advantages.
 
 <!-- RELATED:START -->
 
@@ -122,10 +137,10 @@ No training is required. GPT-4o is used uniformly as the LLM/VLM backbone. Objec
 ## Related Papers
 
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
+- [\[CVPR 2025\] LayoutVLM: Differentiable Optimization of 3D Layout via Vision-Language Models](../../CVPR2025/multimodal_vlm/layoutvlm_differentiable_optimization_of_3d_layout_via_vision-language_models.md)
 - [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
-- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
-- [\[CVPR 2026\] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration](treeteaming_autonomous_red-teaming_of_vision-language_models_via_hierarchical_s.md)
+- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
 
 </div>
 

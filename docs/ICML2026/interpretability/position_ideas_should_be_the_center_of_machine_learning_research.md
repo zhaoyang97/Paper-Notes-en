@@ -2,128 +2,121 @@
 title: >-
   [Paper Note] Position: Ideas Should be the Center of Machine Learning Research
 description: >-
-  [ICML 2026][Interpretability][Ideas First] The authors propose the "Ideas First" stance: treating "idea $\rightarrow$ observable signature $\rightarrow$ tailored experiment" as the core unit for evaluating machine learni…
+  [ICML 2026][Interpretability][Ideas First] The authors propose the "Ideas First" stance: treating "idea → observable signature → tailored experiment" as the core evaluation unit of machine learning research. This approach opposes treating leaderboard gains or idealized theorems as ends in themselves, aiming to bridge the theory-practice gap while lowering the p
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Ideas First"
-  - "signature"
-  - "tailored experiments"
-  - "benchmark myth"
-  - "computational fairness"
+  - ICML 2026
+  - Interpretability
+  - Ideas First
 date: 2026-05-08
-content_hash: ddbe8dfc4c19f99e
+content_hash: 245e62a1d0521f30
 ---
-
 # Position: Ideas Should be the Center of Machine Learning Research
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.15253](https://arxiv.org/abs/2605.15253)  
 **Code**: None  
 **Area**: Position Paper / ML Research Methodology / Philosophy of Science  
-**Keywords**: Ideas First, signature, tailored experiments, benchmark myth, computational fairness  
+**Keywords**: Ideas First, signature, tailored experiments, benchmark myths, computational fairness  
 
 ## TL;DR
-The authors propose the "Ideas First" stance: treating "idea $\rightarrow$ observable signature $\rightarrow$ tailored experiment" as the core unit for evaluating machine learning research. This approach aims to oppose the pursuit of leaderboard numbers or idealized theorems as ends in themselves, thereby bridging the theory-practice gap and lowering the barrier for entry for researchers with limited computational resources.
+The authors propose the "Ideas First" stance: treating "idea → observable signature → tailored experiment" as the core evaluation unit of machine learning research. This approach opposes treating leaderboard gains or idealized theorems as ends in themselves, aiming to bridge the theory-practice gap while lowering the participation threshold for researchers with limited compute resources.
 
 ## Background & Motivation
 
-**Background**: Current ML research is split into two mainstream modes: Mode A (Benchmark-driven Engineering), which defines contributions through a single metric by scaling models, modifying data, or tuning architectures; and Mode B (Idealized Theory), which proves theorems under highly idealized settings such as infinite width, infinitesimal step sizes, or separable data. Both have produced real progress (AlexNet/ResNet/CLIP/GPT-3 vs. NTK/margin bound/benign overfitting), but both increasingly serve as "barriers" rather than "tools."
+**Background**: Current ML research is split into two dominant modes: Mode A (Benchmark-driven Engineering), which defines contributions via single metrics by scaling models/data or tuning architectures; and Mode B (Idealized Theory), which proves theorems under highly idealized settings (infinite width, infinitesimal steps, separable data). While both have produced real progress (AlexNet/ResNet/CLIP/GPT-3 vs. NTK/margin bound/benign overfitting), they increasingly act as "barriers" rather than "tools."
 
-**Limitations of Prior Work**: (1) **Benchmark myopia** — metric improvements often cannot be attributed to mechanisms, and conclusions become unreadable when multiple changes cancel each other out; (2) **Transfer gap** — idealized theorems rarely provide observable predictions, rendering theory a "post-hoc explanation" rather than a "pre-hoc measurement guide"; (3) **Non-cumulative findings** — exploratory ablations are not anchored to hypotheses, making results difficult to reuse in subsequent work; (4) **Complexity premium** — reviewers equate "complex $\approx$ rigorous," while simple yet sharp ideas are dismissed as "not deep enough"; (5) **Resource asymmetry** — the implicit compute threshold for SOTA excludes researchers without massive clusters ("compute divide" / "Red AI").
+**Limitations of Prior Work**: (1) **Benchmark myopia** — metric improvements often cannot be attributed to specific mechanisms; conclusions become unreadable when multiple changes cancel out. (2) **Transfer gap** — idealized theorems rarely provide observable predictions, turning theory into "post-hoc explanation" rather than "a guide for measurement." (3) **Non-cumulative findings** — exploratory ablations often lack anchored hypotheses, making results difficult to reuse. (4) **Complexity premium** — reviewers equate "complex $\approx$ rigorous," leading simple but sharp ideas to be dismissed as "not deep enough." (5) **Resource asymmetry** — compute thresholds implicit in SOTA exclude researchers without massive clusters ("compute divide" / "Red AI").
 
-**Key Challenge**: The true carrier of scientific value is the *idea* (hypotheses about how learning systems work), whereas the current system treats proxies for value (benchmark scores / abstract theorems) as the value itself. This leads to peer review suppressing both "mechanistic clarification" and "marginalized groups."
+**Key Challenge**: The true vehicle of scientific value is the *idea* (hypotheses about how learning systems function). However, the current system treats proxies for value (benchmark scores / abstract theorems) as the value itself, suppressing both mechanistic explanation and marginalized groups.
 
 **Goal**: (i) Define a framework to translate abstract ideas into falsifiable empirical measurements; (ii) argue that idea-centric evaluation is both scientific and fair; (iii) provide a specific "field guide" for authors and reviewers.
 
-**Key Insight**: Drawing from the "hypothesis-driven" paradigm in physics and biology — instead of asking "what works?" or "what must be true under idealization?", researchers should address the neglected middle question: "If this mechanistic hypothesis were correct, what observable traces should be seen in a real model?"
+**Key Insight**: Borrow the "hypothesis-driven" paradigm from physics and biology. Instead of asking "what works?" or "what must be true under idealization?", address the overlooked middle question: "If this mechanistic hypothesis is correct, what should we observe in a real model?"
 
-**Core Idea**: Shift the center of research from "systems/theorems" to the tripartite chain of "idea $\rightarrow$ signature $\rightarrow$ tailored experiment" — benchmarks and theorems are demoted to testing tools rather than evaluation ends.
+**Core Idea**: Shift the research center from "systems/theorems" to a three-link chain: "idea → signature → tailored experiment." Benchmarks and theorems are demoted to testing tools rather than evaluation goals.
 
 ## Method
 
-As a position paper, the "method" refers to the proposed research framework (Ideas First) and its accompanying guidelines for writing, reviewing, and case analysis. This is organized below as a complete pipeline.
-
 ### Overall Architecture
 
-The authors characterize an idea-centric work as a tripartite chain: $\text{idea} \rightarrow \text{signature} \rightarrow \text{tailored experiment}$. This starts from a "hypothesis," translates it into "what measurable traces should be observed in complex models," and then designs experiments specifically to find or falsify those traces. In this view, benchmarks are no longer "podiums" but "microscopes"; theorems are not "verdicts" but "telescopes." Their legitimacy stems from whether they help expose or debunk an idea.
+As a position paper, the proposed "method" is an idea-centric research framework (Ideas First) structured as an actionable three-link chain: $\text{idea} \rightarrow \text{signature} \rightarrow \text{tailored experiment}$. Research begins with a "hypothesis," translates it into "measurable traces observable in complex models," and culminates in experiments designed specifically to find or falsify these traces. In this view, benchmarks act as "microscopes" and theorems as "telescopes"—their legitimacy derives from their ability to expose or refute an idea. The input is a research concept yet to be rigorously evaluated; the intermediate products are explicit sets of observable signals and experiments with controls; the output is a clear judgment on whether the signal appeared (present, absent, or partially present with new boundary insights), rather than "SOTA + X%."
 
-The input is a research concept that has yet to be rigorously evaluated. The intermediate products are (i) a set of explicitly stated observable signatures and (ii) experiments/controls specifically targeting those signatures. The output is a clear judgment on "whether the signal appeared" (present, absent, or partially present suggesting new boundaries) — rather than "I outperformed the SOTA by X%."
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Research Concept<br/>(Mechanistic hypothesis not yet rigorously evaluated)"] --> IDEA["Idea: Scope-bearing mechanism claim<br/>Mechanism + scope + plausible failure mode"]
+    IDEA --> SIG["Signature: Measurable traces<br/>What to measure / which layer or phase / expected trend or threshold"]
+    SIG --> EXP["Tailored experiment: Designed to see the signal<br/>Select tools + sweep knobs + add negative controls"]
+    EXP --> OUT["Judgment of signal presence<br/>Present / Absent / Partial presence + Refined scope (not SOTA)"]
+```
 
 ### Key Designs
 
-1.  **Idea: A scope-bearing claim**:
-    - **Function**: Condenses "vague intuition" into a scientific statement that can be falsified in the future, clarifying "under what settings I believe this holds, and under what settings I admit it might fail."
-    - **Mechanism**: A valid idea must satisfy three criteria: (a) describe the mechanism in one or two sentences, (b) provide a scope (range of architectures, data scales, training phases, or theoretical assumptions), and (c) list at least one plausible failure mode. It usually takes shape in simplified settings (single-layer attention / infinite width / synthetic data) where controlled analysis is possible. The value of an idea lies in its conceptual and predictive nature rather than its direct score. The paper uses NTK, implicit max-margin bias, and Mixup as real-world examples to demonstrate this "statement + scope" format.
-    - **Design Motivation**: Current reviews often default to "no theorem = no idea" or "no LLM = no idea," which the authors argue mistakes the "carrier" for the "content." Requiring internal scope and failure modes can block both "slogan-style" speculation (Avoid: "letting the idea be defined only via a specific experiment, benchmark gain, or theorem statement") and "high-dimensional theorems with no meaning for real models."
+**1. Idea: Scope-bearing mechanism claim**
 
-2.  **Signature: Translating abstract mechanisms into measurable traces**:
-    - **Function**: If an idea holds in simplified settings and is to be "valid" when transferred to modern complex models, it must first be determined "in what form it will appear" — such as geometric features, trends in training dynamics, causal responses, invariances, thresholds, or characteristic error patterns. The signature is the interface language between the idea and the experiment.
-    - **Mechanism**: A good signature answers three questions: (a) what quantity to measure (margin distribution? cosine similarity of a layer? logit curve along interpolation paths?), (b) where to measure it (which layer / training stage / scale segment), and (c) what trend or threshold is expected (usually monotonic? trend weakening after a certain width?). The paper emphasizes that real systems are "noisy and heterogeneous," so signatures must be evaluated "in expectation / as coarse-grained trends," allowing for bounded exceptions. The criterion is whether the "predicted shape is visible after reasonable aggregation," not whether "every point fits." Section 4 provides three examples: the signature of NTK is "predictions/loss trajectories in early training fit linearized models at large widths"; the signature of max-margin is "normalized margin in the penultimate-layer grows monotonically and aligns with the SVM solution after training error hits zero"; the signature of Mixup is "logits are approximately linear along interpolation coefficient $\lambda$, and memorization decreases under label noise."
-    - **Design Motivation**: Measuring an idea with vague slogans like "better generalization" is not falsifiable. Requiring authors to pin down the idea into a "shape to look for" during the writing stage provides a target for subsequent experiments and allows others to reproduce or challenge the signal — this is key to converting "exploratory ablation" into "hypothesis-driven tests" and solving the problem of non-cumulative findings.
+This step distills "vague intuition" into a scientific statement falsifiable by future work, specifying "under what settings I believe this holds, and where I admit it might fail." A valid idea must satisfy three criteria: a clear mechanism (one or two sentences), an explicit scope (architecture, data scale, training phase, or theoretical assumptions), and at least one plausible failure mode. Ideas often take shape in simplified settings (single-layer attention / infinite width / synthetic data) where controlled analysis is possible. Their value lies in conceptual and predictive power rather than immediate leaderboard rank. The paper demonstrates this with examples like NTK, implicit max-margin bias, and Mixup. Emphasizing scope and failure modes prevents "slogan-based" speculation and keeps high-dimensional theorems grounded in observable consequences.
 
-3.  **Tailored experiment: Experimental design for the purpose of "seeing the signal"**:
-    - **Function**: The success criterion for experiments is explicitly shifted from "gaining points" to "clearly seeing (or confirming the absence of, under proper control) the predicted pattern."
-    - **Mechanism**: The authors provide a five-step procedure: (i) define the signature as a distinguishable statistic or visualization; (ii) choose "instruments" capable of exposing it (measurement, patching ablations, counterfactuals); (iii) place measurements where the idea predicts the signature will be strongest (specific layers / training windows / scale segments); (iv) sweep the knob the idea claims will modulate the signal and include a negative control where the idea claims "there will be no effect"; (v) report qualitative trends, thresholds, and failure cases that refine the scope. Section 6 uses "Topic Inertia in LLMs" for a hypothetical case study — simplified analysis of single-layer unified-KQ attention suggests "the longer the prompt, the higher the semantic similarity trend between generation and prompt." Length is then swept from 10-200 tokens on LLaMA-2 / GPT-NeoX-20B / MPT-7B, with RNN as a negative control (no attention $\rightarrow$ signature should not appear). The signal was visible on all attention models and absent on RNNs. Section 6.1 also rehearses two types of reviewer counterarguments and provides "defensive responses": (a) To "why not use GPT-5.1 / LongBench?": when the signal is clearly distinguishable at 200 tokens, scaling only increases compute barriers without adding mechanistic insight; (b) To "why does the trend fluctuate instead of being strictly monotonic?": treating signatures as mathematical laws is a misunderstanding; real data is noisy, and the key is that negative controls exclude general artifacts.
-    - **Design Motivation**: This step is the framework's most direct response to "complexity premium" and "resource asymmetry." When evaluation criteria shift to "is the mechanism visible," "simple but sharp experiments" automatically gain legitimacy. Work using small models / data / compute is no longer rejected for "lack of scale," while authors are encouraged to report failures and boundaries (refining scope), which is the base of cumulative science.
+**2. Signature: Translating abstract mechanisms into measurable traces**
 
-### Loss & Training
+For an idea established in a simplified setting to remain valid in complex modern models, one must agree on its manifestation: geometric features, training dynamics, causal responses, invariances, thresholds, or characteristic error patterns. The signature serves as the interface between the idea and the experiment. A good signature answers three questions: what to measure (margin distribution? cosine similarity? logit curves?), where to measure (which layer? training phase? scale?), and the expected trend or threshold (monotonicity? weakening beyond a certain width?). Since real systems are noisy and heterogeneous, signatures are evaluated "in expectation" or via coarse-grained trends, allowing for bounded exceptions. This interface transforms exploratory ablation into hypothesis-driven testing, addressing the issue of non-cumulative findings.
 
-This paper does not involve model training. As a counterpart, the "Field Guide" in Section 5 provides an "Aim / Avoid" checklist for both the author side (Specifying the idea / Defining signatures / Designing tailored experiments) and the reviewer side (Evaluating the idea / signatures / experiments). This can be viewed as an operational guide for translating the framework into the "training objectives" of peer review: reviewers should judge the clarity and scope of the idea, the measurability of the signature, and the alignment of experiments with the signature, rather than defaulting to requests for larger models, more benchmarks, or more comprehensive theorems.
+**3. Tailored experiment: Experimental design for "seeing the signal"**
+
+Success for experiments is explicitly redefined from "point-chasing" to "clearly observing (or confirming the absence of) a predicted pattern under proper control." The paper outlines a five-step process: defining the signature as a discernible statistic or visualization; selecting "instruments" (measurements, patches, counterfactuals); placing measurements where the signal is predicted to be strongest; sweeping the "knobs" that modulate the signal; and adding negative controls where the effect is predicted to be absent. Section 6 provides a hypothetical case study on "Topic Inertia in LLMs." It derives from simplified analysis that "longer prompts increase the semantic similarity trend between generation and prompt," then tests this across LLaMA-2/GPT-NeoX/MPT-7B by sweeping length from 10–200 tokens, using an RNN as a negative control (no attention → no signature). This approach directly counters the *complexity premium* and *resource asymmetry*: small-scale experiments gain legitimacy when they provide mechanistic clarity, preventing the dismissal of work due to "insufficient scale."
 
 ## Key Experimental Results
 
-As a position paper, there are no quantitative results, but the authors support the operability of their framework through three types of "cases + counter-cases." These are organized in the tables below.
+As a position paper, there are no quantitative results; instead, the authors support the framework's feasibility through three types of "cases and counter-cases."
 
-### Main Results: Can existing research be restated using the Ideas First framework?
+### Main Results: Re-evaluating existing research via Ideas First
 
-| Case | Idea (Simplified Setting) | Signature (Expected in Complex Models) | Tailored Experiment | Source |
-| :--- | :--- | :--- | :--- | :--- |
-| NTK Linearized Training | Under infinite width + square loss, GD $\equiv$ kernel regression on NTK frozen at initialization | In early training, network prediction/loss trajectories closely follow the NTK-at-init linearized model; fit improves with width, fails as training progresses | Comparative alignment of "full training vs. linearized prediction" across widths/epochs on CNN/ResNet/WRN using CIFAR | Jacot+2018 / Lee+2019 |
-| Implicit Max-margin Bias | Under separable data + exponential-tail loss, GD makes weight directions converge to hard-margin SVM; similar for homogeneous nets | After training error hits zero, penultimate-layer normalized margin continues to rise monotonically; classifier direction aligns with SVM solution | Tracking normalized margin and SVM alignment after interpolation using MLP/CNN on MNIST/CIFAR | Soudry+2018 / Lyu+Li 2020 |
-| Mixup (Heuristic) | Decision regions are "straightened" along sample interpolation segments; logits change smoothly with mixing coefficients | Along the path $x_\lambda = \lambda x_i + (1-\lambda) x_j$, logits are approximately linear w.r.t. $\lambda$; memorization weakens under label noise; gradients are smoother between samples | Sweeping $\lambda$ on real vision/speech data; stress tests with corrupted labels; reporting interpolation linearity + anti-memorization | Zhang+2018 |
+| Case | Idea (Simplified Setting) | Signature (In Complex Models) | Tailored Experiment | Source |
+|------|---------------------------|-------------------------------|---------------------|--------|
+| NTK Linearization | Under infinite width + MSE, GD $\equiv$ kernel regression on frozen NTK. | Prediction/loss trajectories track the linearized NTK-at-init model in early training; alignment improves with width and fails as training progresses. | Comparing "full training vs. linearized prediction" on CNN/ResNet/WRN across widths/epochs on CIFAR. | Jacot+2018 / Lee+2019 |
+| Implicit Max-Margin Bias | On separable data + exponential loss, GD weight direction converges to hard-margin SVM. | After training error hits zero, penultimate-layer normalized margin grows monotonically; classifier direction aligns with SVM solution. | Tracking alignment between SVM solutions and normalized margins post-interpolation in MLP/CNN on MNIST/CIFAR. | Soudry+2018 / Lyu+Li 2020 |
+| Mixup (Heuristic) | Decision regions are "straightened" along interpolation lines; logits change smoothly with the mixing coefficient. | Along path $x_\lambda = \lambda x_i + (1-\lambda) x_j$, logits are approximately linear w.r.t. $\lambda$; reduced memorization under label noise. | Swiping $\lambda$ on real vision/audio data; stress tests with corrupted labels; reporting interpolation linearity + memorization resistance. | Zhang+2018 |
 
-### Ablation Study: Which pain points of standard modes does this framework solve?
+### Ablation Study: Solving pain points of standard paradigms
 
-| Standard Mode Pain Point | Standard Mode Symptom | Ideas First Resolution | Manifestation in Case Study |
-| :--- | :--- | :--- | :--- |
-| Benchmark myopia (Mode A) | Multiple changes entered simultaneously; single numbers lack attribution | Shift evaluation from score differences to "whether the signature is visible / falsified" | Topic Inertia uses similarity trends as the sole main result, reporting no leaderboard |
-| Transfer gap (Mode B) | Idealized theorems provide no measurable predictions | Mandate that ideas must be translated into signatures before experimentation | Single-layer unified-KQ attention conclusions translated into "longer prompt $\rightarrow$ similarity trend $\uparrow$" |
-| Non-cumulative findings | Exploratory ablations are not anchored to hypotheses | Experimental design targets signatures + mandatory negative controls | RNN baseline serves as a negative control for absence of attention |
-| Complexity premium | "Complex $\approx$ rigorous" reviewer bias | Encourage "minimal experiments capable of presenting the signature" | 200 tokens suffice to distinguish signals; no need to chase GPT-5.1 |
-| Resource asymmetry | Compute threshold excludes small groups | Explicitly allow clear experiments at a modest scale | All experiments used open-source weights (LLaMA-2 / GPT-NeoX / MPT-7B) |
+| Standard Paradigm Pain Point | Symptom | Ideas First Solution | Case Study Manifestation |
+|------------------------------|---------|-----------------------|--------------------------|
+| Benchmark myopia (Mode A) | Multiple changes merged; single number lacks attribution. | Replace score delta with "Is the signature visible/falsified?" | Topic Inertia uses similarity trends as the primary result; no leaderboards. |
+| Transfer gap (Mode B) | Idealized theorems yield no measurable predictions. | Mandate that ideas must be translated into signatures before experimentation. | Single-layer attention analysis translated into "length vs. similarity trend." |
+| Non-cumulative findings | Exploratory ablations lack anchored hypotheses. | Design experiments for signatures + mandatory negative controls. | RNN baseline serves as a negative control lacking the attention mechanism. |
+| Complexity premium | Reviewer bias: "Complexity $\approx$ Rigor." | Encourage "minimal experiments capable of showing the signature." | 200 tokens suffice to distinguish signals; GPT-5.1 is unnecessary. |
+| Resource asymmetry | Compute barriers exclude smaller groups. | Explicitly permit clear experiments at modest scales. | Exclusively used open-source weights (LLaMA-2 / GPT-NeoX / MPT-7B). |
 
 ### Key Findings
 
-- The "operability" of the framework primarily comes from the **signature being a mandatory interface between the idea and the experiment**: ideas without signatures cannot be grounded, and experiments without signature anchors degenerate into aimless ablations — the authors repeatedly emphasize that "the unit of explanation and value is signatures, not ranks."
-- The greatest demonstrative value of the Topic Inertia case study lies not in the results themselves, but in the **rehearsed rebuttals and responses in Section 6.1** — it explains the most common reasons for rejection, such as "why not use larger models / more metrics," as specific manifestations of the *complexity premium* and provides two principled counter-strikes: "signatures are already distinguishable at 200 tokens" and "signatures are not mathematical laws."
-- The three illustrative examples (NTK / max-margin / Mixup) are already widely accepted works. By *retrospectively* rewriting them into the "idea $\rightarrow$ signature $\rightarrow$ tailored experiment" format, the authors argue that Ideas First **is not a radical new norm, but a formalization and teachable version of paradigms that "good work has always followed."**
-- Most notable negative boundary: For the risk of "signatures being unconsciously tuned to match expectations," the framework's antidote is *negative controls + pre-declared scope/failure modes*; the authors admit this is harder to standardize than "strict benchmarks," which is an objection explicitly listed in Section 8.
+- The operational power of the framework stems from **signatures acting as the mandatory interface between idea and experiment**. Without a signature, an idea cannot be grounded; without a signature anchor, an experiment degrades into aimless ablation.
+- The "Topic Inertia" case study demonstrates value by **predicting and responding to reviewer counter-arguments** (Section 6.1). It frames demands for "bigger models/more metrics" as manifestations of the *complexity premium* and offers principled rebuttals based on signal differentiability and negative controls.
+- By retroactively rewriting established works (NTK, Mixup, etc.) into the three-stage chain, the authors argue that **Ideas First is not a radical new norm, but the formalization and teaching of what "good work" has already been doing.**
+- To mitigate the risk of "tuning signatures to match expectations," the framework relies on *negative controls and pre-declared scope/failure modes*.
 
 ## Highlights & Insights
 
-- Using "signature" as a mandatory interface between idea and experiment is the sharpest design of this position — it cuts through the common maladies of "claiming contribution through a vague intuition" and "retrofitting stories after a pile of ablations," forcing researchers to commit to "what quantity I intend for others to observe" while stating their hypothesis.
-- Explicitly placing "complexity premium" and "resource asymmetry" within epistemology rather than just ethics is a powerful move — the authors argue that "low-compute experiments are justified not as a concession to fairness, but because they possess superior evidentiary power when isolating mechanisms," transforming frugal AI from a "moral slogan" into a "methodological requirement."
-- The "rehearsed reviewer rebuttals + principled responses" in Section 6.1 are highly reusable — any author wishing to conduct mechanistic research at a low compute scale can use this template to internalize common queries like "why not scale up" into scope arguments rather than responding passively.
+- Establishing "signature" as a mandatory interface is the sharpest design choice. It eliminates papers that claim contributions based solely on "vague intuition" or "post-hoc storytelling" by forcing researchers to commit to specific observable quantities during the hypothesis stage.
+- Integrating "complexity premium" and "resource asymmetry" into epistemology rather than just ethics is a strategic move. The authors argue that small-scale experiments are justified not as a concession for fairness, but because they possess **higher evidentiary power** for isolating mechanisms.
+- The Section 6.1 "Reviewer Rebuttal Template" is highly reusable. Researchers working with limited compute can utilize it to internalize "why not scale up" critiques into scope-based arguments.
 
 ## Limitations & Future Work
 
-- Author-identified (Section 8): (i) Targeted experiments are more prone to "unconscious tuning" to match expectations than broad benchmarks; the framework can only mitigate this via negative controls and pre-registered scopes, lacking institutional guarantees; (ii) this stance will not replace theory or benchmarks, but rather fill the middle layer between "idealized theorems" and "benchmark-driven" research; (iii) in engineering-led ML subfields (e.g., production deployment), the criterion of "signature visibility" may yield to "system utility."
-- Additional insights: (i) While the "Aim / Avoid" checklist in the Field Guide is clear, it lacks quantitative or semi-structured evaluation criteria for "signature strength"; implementation in specific review scenarios still relies heavily on individual judgment, risking "old wine in new bottles"; (ii) Topic Inertia serves only as a *hypothetical* case study without real 200-doc datasets or detailed numerical tables, so the evidence for "replicability of the framework" is more rhetorical; (iii) the paper does not discuss how to arbitrate when "signatures compete" — when an idea predicts multiple signatures and some appear while others don't, should the scope be rewritten? This decision criterion remains a gap in the framework.
-- Specific improvement ideas: A supplementary "signature card" template (similar to model cards / dataset datasheets) could be introduced for authors to structurally disclose "what to measure, where, expected trends, negative controls, and known failure regimes," turning the current "soft call" into "hard disclosure" to significantly reduce review inconsistency.
+- The authors acknowledge (Section 8) that: (i) targeted experiments are more prone to "unconscious tuning" than broad benchmarks, a risk only partially mitigated by negative controls; (ii) this stance supplements rather than replaces theory or benchmarks; (iii) in engineering-heavy subfields (e.g., production deployment), "signature visibility" may remain secondary to "system utility."
+- Independent Observation: (i) The "Field Guide" lacks quantitative scales for "signature strength," remaining dependent on reviewer judgment. (ii) The Topic Inertia case is *hypothetical*; a lack of real 200-document datasets and numerical tables makes the evidence somewhat rhetorical. (iii) The framework does not explicitly address how to adjudicate when an idea predicts multiple signatures and they partially conflict.
+- Potential Improvement: A structured "Signature Card" (similar to Model Cards) could be required for authors to disclose what they measure, where they measure, expected trends, negative controls, and known failure regimes to reduce reviewer inconsistency.
 
 ## Related Work & Insights
 
-- **vs. Lipton & Steinhardt (2018) / Dehghani et al. (2021) (Benchmark Critique School)**: They documented issues like benchmark lotteries and the illusion of complexity. This paper goes beyond "pointing out problems" by providing a *positive alternative* (idea $\rightarrow$ signature $\rightarrow$ tailored experiment) — this is the primary distinction.
-- **vs. Baraniuk et al. (2020) / Drori et al. (2022) (Science of Deep Learning School)**: They advocate for more rigorous scientific methods in studying deep networks. This paper goes a step further methodologically by grounding "science" in the signature interface and explicitly binding "sufficient experimentation" with scope, avoiding the "toy model" criticism often leveled at this school.
-- **vs. Strubell et al. (2019) / Ahmed & Wahed (2020) (Green AI / Compute Divide School)**: They oppose Red AI from ethical and environmental perspectives. This paper further embeds "low-compute experiments" into epistemology, making frugal AI not only "allowable" but "the superior form of evidence for certain mechanistic questions."
-- **Insights**: (i) When writing papers, authors can explicitly add a "signatures we will look for" section at the end of the Intro to replace traditional "contributions" lists; (ii) before performing an ablation, one should ask "which negative control of which signature of which idea does this correspond to" — any ablation that cannot answer this can be removed; (iii) when reviewing others' papers, "whether the author declared scope and failure modes" can serve as the first filter.
+- **vs. Lipton & Steinhardt (2018) / Dehghani et al. (2021)**: While those works critique issues like the benchmark lottery, this paper provides a *positive alternative* (idea → signature → tailored experiment).
+- **vs. Baraniuk et al. (2020) / Science of Deep Learning school**: This paper ground "science" into the specific interface of signatures and explicit scope, avoiding the "toy model" critique often aimed at this school.
+- **vs. Strubell et al. (2019) / Green AI**: Beyond ethical/environmental arguments, this paper embeds "small-compute experiments" into epistemology as a superior form of evidence for mechanistic questions.
+- **Actionable Insights**: (i) Explicitly add a "Signatures We Look For" section in paper intros to replace generic contribution lists. (ii) Use negative controls to justify why certain ablations are chosen or omitted. (iii) Use the presence of "scope and failure modes" as a primary filter when reviewing papers.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Each component (critiquing benchmarks, advocating hypothesis-driven work, focusing on compute fairness) is not new individually, but using "signature" as an interface language combined with case studies and defensive rehearsals is a complete and operational integration.
-- Experimental Thoroughness: ⭐⭐⭐ As a position paper, it uses three real historical cases (NTK/max-margin/Mixup) + one hypothetical case study (Topic Inertia) to demonstrate groundability, but lacks real small-scale reproduction data to harden the demonstration.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure (critique $\rightarrow$ framework $\rightarrow$ examples $\rightarrow$ field guide $\rightarrow$ case study $\rightarrow$ discussion $\rightarrow$ alternative views). Making "Alternative Views" a standalone section and honestly responding to opposing stances shows commendable rhetorical discipline for a position paper.
-- Value: ⭐⭐⭐⭐ For researchers conducting low-compute mechanistic research who are repeatedly rejected for "lack of scale," this paper can almost serve directly as a rebuttal template. For senior PIs and program chairs, it provides a citable roadmap for embedding "frugal AI" into review norms.
+- Novelty: ⭐⭐⭐⭐ Each component is known, but the integration of "signature" as an interface language with defensive case studies is a complete and actionable synthesis.
+- Experimental Thoroughness: ⭐⭐⭐ As a position paper, it uses historical cases and a hypothetical model well, but lacks real "hard" data from fresh small-scale replications to strengthen the demonstration.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure, moving from critique to framework, then to a field guide and case study. The direct address of "Alternative Views" shows high rhetorical discipline.
+- Value: ⭐⭐⭐⭐ Provides a direct rebuttal template for researchers facing "insufficient scale" rejections and a roadmap for program chairs to institutionalize "frugal AI."
 
 <!-- RELATED:START -->
 
@@ -133,8 +126,8 @@ As a position paper, there are no quantitative results, but the authors support 
 
 - [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
 - [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
+- [\[ICML 2025\] Rethinking Explainable Machine Learning as Applied Statistics](../../ICML2025/interpretability/rethinking_explainable_machine_learning_as_applied_statistics.md)
 - [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
-- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Peaked Distributions](universal_one-third_time_scaling_in_learning_peaked_distributions.md)
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
 
 </div>

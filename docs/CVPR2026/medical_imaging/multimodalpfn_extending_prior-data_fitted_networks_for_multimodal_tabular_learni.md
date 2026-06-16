@@ -2,93 +2,101 @@
 title: >-
   [Paper Note] MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Tabular Learning] This paper proposes MMPFN, the first method to extend the pretrained tabular foundation model TabPFN to multimodal settings (tabular + image/text). By introducing a Multi-he…
+  [CVPR 2026][Medical Imaging][TabPFN] MMPFN is proposed to extend the pretrained tabular foundation model TabPFN to multimodal (tabular + image/text) scenarios for the first time. It addresses non-tabular embedding over-compression and token count imbalance through a Multi-Head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), outperforming SOTA on medic
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Tabular Learning"
-  - "Multimodal Fusion"
-  - "TabPFN"
-  - "Attention Imbalance"
-  - "Modality Projection"
+  - CVPR 2026
+  - Medical Imaging
+  - TabPFN
 date: 2026-05-08
-content_hash: 9b56c7ba4de9a106
+content_hash: 0d04cb112981d2c1
 ---
-
 # MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.20223](https://arxiv.org/abs/2602.20223)  
 **Code**: [Available](https://github.com/too-z/MultiModalPFN)  
-**Area**: Medical Imaging
+**Area**: Medical Imaging  
 **Keywords**: Tabular Learning, Multimodal Fusion, TabPFN, Attention Imbalance, Modality Projection
 
 ## TL;DR
 
-This paper proposes MMPFN, the first method to extend the pretrained tabular foundation model TabPFN to multimodal settings (tabular + image/text). By introducing a Multi-head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), MMPFN addresses two failure modes — over-compression of non-tabular embeddings and token-count imbalance — and achieves state-of-the-art performance on both medical and general-purpose datasets.
+MMPFN is proposed to extend the pretrained tabular foundation model TabPFN to multimodal (tabular + image/text) scenarios for the first time. It addresses non-tabular embedding over-compression and token count imbalance through a Multi-Head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), outperforming SOTA on medical and general datasets.
 
 ## Background & Motivation
 
-### 1. State of the Field
-TabPFN is a tabular foundation model that performs Bayesian inference via pretraining on synthetic tabular data, enabling prediction in a single forward pass on small-to-medium-scale datasets. However, TabPFN's pretraining is restricted to synthetic tabular data and cannot handle unstructured modalities such as images or text.
+### 1. Background
+As a tabular foundation model, TabPFN achieves Bayesian inference through pretraining on synthetic tabular data, enabling predictions in a single forward pass on small-to-medium datasets. However, TabPFN pretraining is limited to synthetic tabular data and cannot handle unstructured modalities such as images or text.
 
 ### 2. Limitations of Prior Work
-(1) Real-world domains such as healthcare and marketing frequently require the fusion of structured and unstructured data (e.g., diagnostic records + medical images, sales logs + product reviews); (2) gradient-boosted trees offer limited gains when extended to heterogeneous data; (3) deep multimodal models suffer from poor performance and slow training in data-scarce scenarios.
+(1) Real-world applications in medical and marketing fields often require merging structured and unstructured data (e.g., diagnostic results + medical imaging, sales records + product reviews); (2) The benefits of extending Gradient Boosted Decision Trees to heterogeneous data are limited; (3) Deep multimodal models exhibit poor performance and slow training in data-scarce scenarios.
 
-### 3. Root Cause
-TabPFN possesses strong tabular priors but cannot incorporate unstructured modalities. Naive fusion leads to two failure modes: over-compression of non-tabular embeddings (a single [CLS] token carries insufficient information) and attention imbalance caused by token-count mismatch (when non-tabular tokens greatly outnumber tabular tokens, attention is monopolized by the non-tabular modality).
+### 3. Key Challenge
+TabPFN possesses a strong tabular prior but cannot access unstructured modalities. Simple fusion leads to two failure modes: over-compression of non-tabular embeddings (insufficient information in a single [CLS] token) and attention imbalance caused by token count mismatch (attention is dominated by non-tabular modalities when non-tabular tokens $\gg$ tabular tokens).
 
-### 4. Starting Point
-The paper designs lightweight modality projectors that transform non-tabular embeddings into "tabular-compatible tokens," injecting multimodal information without disrupting TabPFN's tabular priors.
+### 4. Key Insight
+A lightweight modality projector is designed to convert non-tabular embeddings into "tabular-compatible tokens," injecting multimodal information without destroying the tabular prior of TabPFN.
 
 ## Method
 
 ### Overall Architecture
 
-MMPFN consists of three components:
-1. **Per-Modality Encoders**: TabPFN v2 encoder (frozen) for tabular data, DINOv2 ViT-B/14 (frozen) for images, and ELECTRA (frozen) for text.
-2. **Modality Projector**: MGM + CAP, which transform image/text [CLS] embeddings into $K$ tabular-compatible tokens of dimension $d$.
-3. **TabPFN Backbone**: Receives the concatenated multimodal token sequence as a unified tabular input and performs prediction via 2D attention (feature attention + sample attention).
+MMPFN adds only a lightweight "bridge" layer outside the TabPFN backbone, organizing the entire pipeline into three stages:
 
-During training, all encoders are frozen; only the modality projector, TabPFN backbone, and decoder head are trained.
+1. **Per-Modality Encoders**: Tabular data uses the TabPFN v2 encoder, images use DINOv2 ViT-B/14 (taking [CLS]), and text uses ELECTRA (taking [CLS])—all three encoders are frozen.
+2. **Modality Projector**: The core contribution, consisting of MGM and CAP sub-layers in series, converting a single image/text [CLS] embedding into $K$ $d$-dimensional, tabular-compatible tokens.
+3. **TabPFN Backbone**: Joins the projected non-tabular tokens with tabular tokens along the feature dimension to form a unified table. The system reuses TabPFN’s 2D attention (feature attention + sample attention) for prediction, followed by a decoder head.
+
+During training, all modality encoders are frozen. Only the modality projector, TabPFN backbone, and decoder head are trained, with the entire fine-tuning process taking only 100 iterations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T["Tabular Features<br/>TabPFN v2 Encoder (Frozen)"]
+    I["Image / Text<br/>DINOv2 / ELECTRA (Frozen) → Single [CLS]"]
+    subgraph MP["Modality Projector"]
+        direction TB
+        MGM["MGM<br/>Expand [CLS] into N gated tokens"]
+        CAP["CAP<br/>Condense N tokens into fixed K"]
+        MGM --> CAP
+    end
+    I --> MP
+    T --> CC["Concat along feature dimension<br/>K non-tabular tokens + tabular tokens"]
+    MP --> CC
+    CC --> BB["TabPFN Backbone<br/>feature + sample 2D attention"]
+    BB --> H["Decoder Head → Prediction"]
+```
 
 ### Key Designs
 
-#### 1. **Multi-Head Gated MLP (MGM)**
+Connecting non-tabular embeddings to TabPFN might seem to require only a linear projection. However, the authors found that simple approaches fail in two ways: a single [CLS] token compresses entire images/texts into one vector, causing severe information loss (over-compression); conversely, feeding all patch/word tokens from an encoder causes non-tabular tokens to overwhelm tabular tokens, monopolizing attention (imbalance). The following designs address these issues.
 
-**Function**: Expands a single [CLS] embedding into $N$ tokens of dimension $d$, alleviating over-compression.
+**1. Multi-Head Gated MLP (MGM): Expanding [CLS] into complementary tokens to solve over-compression**
 
-**Mechanism**: The [CLS] embedding is simultaneously fed into $N$ MLP heads, each projecting the encoder output to dimension $d$. A Gated Linear Unit (GLU) modulates each head's contribution, encouraging inter-head specialization and preserving diverse aspects of the original non-tabular representation.
+A single [CLS] vector from DINOv2/ELECTRA represents the entire input. Directly projecting it to one tabular token provides only a "thumbnail" view to TabPFN. MGM feeds the same $h_{\text{CLS}}$ into $N$ independent MLP heads, each projecting the encoder dimension to $d$ dimensions to generate $N$ tokens:
 
 $$\text{MGM}(h_{\text{CLS}}) = \{g_i \odot \text{MLP}_i(h_{\text{CLS}})\}_{i=1}^{N}$$
 
-where $g_i = \sigma(W_g^{(i)} h_{\text{CLS}} + b_g^{(i)})$ denotes the GLU gate.
+Each head is element-wise modulated by a GLU gate $g_i = \sigma(W_g^{(i)} h_{\text{CLS}} + b_g^{(i)})$. The gates force different heads to activate different subspaces within the [CLS], producing complementary rather than redundant representations. Ablations show Multi-head MGM (57.37) significantly outperforms Multi-head MLP without gates (55.81).
 
-**Design Motivation**: A single [CLS] token excessively compresses image/text information; multi-head expansion captures complementary, high-resolution information, while GLU gating prevents redundant heads.
+**2. Cross-Attention Pooler (CAP): Regulating tokens to a fixed $K$ to balance token counts**
 
-#### 2. **Cross-Attention Pooler (CAP)**
+While MGM solves the information density problem, it introduces a new one: too many tokens allow the non-tabular modality to dominate TabPFN’s feature attention. CAP uses a set of $K$ learnable query vectors to perform cross-attention, treating the $N$ MGM tokens as key/value pairs to extract information into $K$ compact tokens. These are refined by an MLP and concatenated with tabular tokens. This ensures that regardless of the encoder's output density, the number of non-tabular tokens entering TabPFN is fixed at a controllable $K$. The synergy between MGM's expansion and CAP's contraction eliminates the non-monotonic phenomenon where adding non-tabular tokens previously degraded performance.
 
-**Function**: Compresses $N$ MGM tokens into $K$ compact representations to balance the token count across modalities.
+**3. Theoretical Analysis of Attention Imbalance: Why $K$ must be fixed**
 
-**Mechanism**: $K$ learnable query vectors are introduced; cross-attention is applied to extract information from the $N$ MGM tokens (as keys/values), with the output further refined by an MLP. The $K$ tokens are then concatenated with tabular tokens along the feature dimension and fed into TabPFN.
-
-**Design Motivation**: Without compression, an excessive number of non-tabular tokens dominates the attention budget in TabPFN's feature attention, suppressing tabular signals.
-
-#### 3. **Theoretical Analysis of Attention Imbalance**
-
-The paper provides a mathematical analysis of attention imbalance. Let $N_I$ and $N_T$ denote the number of non-tabular and tabular tokens, respectively. When per-token quality is comparable ($c_I \approx c_T$), the total attention allocated to the non-tabular modality is approximately:
+The authors provide a quantitative explanation for why token imbalance suppresses tabular signals under softmax attention. Let $N_I, N_T$ be the number of non-tabular and tabular tokens, and $c_I, c_T$ be their respective average attention quality per token. The total attention share for the non-tabular modality is approximately:
 
 $$\mathbb{E}[a_I] \approx \frac{N_I c_I}{N_I c_I + N_T c_T}$$
 
-When $N_I \gg N_T$, $a_I \to 1$, and the tabular signal is completely overwhelmed. CAP mitigates this by compressing $N_I$ to a fixed $K$ (e.g., 4 or 24).
+When per-token quality is comparable ($c_I \approx c_T$) but $N_I \gg N_T$, $a_I \to 1$, and the tabular signal is almost entirely drowned out. This formula justifies the CAP design—forcing $N_I$ to a fixed $K$ brings the attention share back to a controllable range.
 
 ### Loss & Training
 
 - **Loss**: Cross-entropy loss
-- **Optimizer**: AdamW, $\text{lr}=1 \times 10^{-5}$, batch size = 1
-- **Training**: Fine-tuned for 100 iterations
-- **Freezing Strategy**: All modality encoders (TabPFN v2, DINOv2, ELECTRA) are frozen; only MGM, CAP, the TabPFN backbone, and decoder head are trained
-- **Inference**: Follows TabPFN's in-context inference protocol
+- **Optimizer**: AdamW, $\text{lr}=1 \times 10^{-5}$, batch size=1
+- **Training**: 100 iterations of fine-tuning
+- **Freezing Strategy**: All modality encoders are frozen (TabPFN v2, DINOv2, ELECTRA); only MGM, CAP, TabPFN backbone, and decoder head are trained.
+- **Inference**: Follows the standard TabPFN in-context inference protocol.
 
 ## Key Experimental Results
 
@@ -97,71 +105,70 @@ When $N_I \gg N_T$, $a_I \to 1$, and the tabular signal is completely overwhelme
 **Table 2: Image-Tabular Datasets (Accuracy)**
 
 | Method | PU20 | Mass | Calc | PetFinder | Avg. Rank |
-|--------|------|------|------|-----------|-----------|
+|------|------|------|------|-----------|-----------|
 | TabPFN | 82.17 | 71.27 | 73.31 | 36.33 | 4.25 |
 | CatBoost | 80.43 | **78.31** | 72.09 | 38.69 | 3.25 |
 | AutoGluon | 81.09 | 76.28 | 71.04 | 38.81 | 3.50 |
 | MMCL | 76.61 | 57.62 | 60.12 | 36.61 | 7.25 |
 | TIP | 78.75 | 73.12 | 67.96 | 37.28 | 5.50 |
 | HEALNet | 74.65 | 68.10 | 71.83 | 37.03 | 6.25 |
-| **MMPFN** | **85.22** | 74.53 | **75.40** | **40.74** | **1.50** |
+| **Ours (MMPFN)** | **85.22** | 74.53 | **75.40** | **40.74** | **1.50** |
 
 **Table 3: Text-Tabular Datasets (Accuracy)**
 
 | Method | Airbnb | Salary | Cloth | PetFinder | Avg. Rank |
-|--------|--------|--------|-------|-----------|-----------|
+|------|--------|--------|-------|-----------|-----------|
 | TabPFN | 46.96 | 44.96 | 55.07 | 36.33 | 5.50 |
 | AutoGluon | 44.60 | 45.24 | **72.07** | 37.96 | 3.00 |
 | TTT | 38.3 | **47.2** | 65.5 | 38.9 | 3.00 |
-| **MMPFN** | **47.78** | 46.17 | 66.26 | **39.04** | **1.75** |
+| **Ours (MMPFN)** | **47.78** | 46.17 | 66.26 | **39.04** | **1.75** |
 
-MMPFN achieves an average rank of 1.50 on image-tabular benchmarks and 1.75 on text-tabular benchmarks, outperforming all baselines. The largest improvement is observed on the medical dataset PU20 (+3.05% vs. TabPFN).
+MMPFN achieves an average rank of 1.50 for Image-Tabular and 1.75 for Text-Tabular, leading overall. The largest gain is observed on the medical dataset PU20 (+3.05% vs TabPFN).
 
 ### Ablation Study
 
-| Configuration | Avg. Accuracy | Note |
-|---------------|---------------|------|
-| Single-head Linear | 53.86 | Simplest projection; over-compression |
-| Single-head MLP | 54.14 | Marginally better than linear |
+| Configuration | Avg. Accuracy | Description |
+|------|---------------|------|
+| Single-head Linear | 53.86 | Simplest projection, suffers from over-compression |
+| Single-head MLP | 54.14 | Slightly better than linear |
 | Multi-head MLP | 55.81 | Multi-head expansion is effective |
-| Multi-head MoE | 53.23 | Sparse routing unstable on small data |
-| **Multi-head MGM** | **57.37** | GLU gating achieves best performance |
+| Multi-head MoE | 53.23 | Sparse routing is unstable on small data |
+| **Multi-head MGM** | **57.37** | GLU gating is optimal |
 
 ### Key Findings
 
-1. **Attention imbalance is empirically confirmed**: With non-tabular input only, increasing the number of MGM heads consistently improves performance; however, when mixing tabular and non-tabular inputs, adding more non-tabular tokens actually degrades performance (non-monotonic behavior), corroborating the theoretical analysis.
-2. **MGM and CAP are synergistic**: MGM first richly extracts features, then CAP compresses them to a fixed token count; their combination eliminates the non-monotonic degradation.
-3. **Cross-modal potential of TabPFN**: When only image/text inputs are used (no tabular data), MMPFN still matches DINOv2+MLP, indicating that TabPFN's synthetic tabular prior transfers to non-tabular features.
-4. **Low-data robustness**: MMPFN outperforms TIP (which leverages all unlabeled data for self-supervised pretraining) even with only 10% of the data, demonstrating the advantage of PFN priors in few-shot settings.
-5. **More modalities consistently help**: On PetFinder, accuracy increases monotonically as modalities are added: T → T+t → T+I → T+I+t.
+1. **Attention Imbalance Exists**: With only non-tabular input, increasing MGM heads consistently improves performance. However, in mixed tabular/non-tabular settings, increasing non-tabular tokens beyond a point decreases performance (non-monotonicity), confirming the theoretical analysis.
+2. **Synergy of MGM + CAP**: MGM performs full extraction while CAP compresses to a fixed token count; the combination eliminates non-monotonicity.
+3. **Cross-modal Potential of TabPFN**: Using only image/text input (no table), MMPFN remains competitive with DINOv2+MLP, suggesting TabPFN's synthetic tabular prior generalizes to non-tabular features.
+4. **Low-data Robustness**: Superior to TIP at 10% data levels despite TIP using full unlabeled data for self-supervised pretraining; PFN priors offer significant advantages in few-shot regimes.
 
 ## Highlights & Insights
 
-1. **First work to extend TabPFN to multimodal settings**: The conceptual novelty lies in "tabularizing" unstructured data to leverage powerful tabular priors.
-2. **Theoretical analysis of attention imbalance**: The paper derives a mathematical formulation of softmax attention behavior under token-count mismatch, providing a principled motivation for CAP.
-3. **Extremely low training cost**: Only 100 iterations of fine-tuning with batch size 1, and all encoders frozen — well-suited for resource-constrained medical settings.
-4. **Cross-modal embedding correlation analysis**: Cosine similarity visualizations confirm that MMPFN learns cross-modal interactions rather than merely intra-modal structures.
+1. **First Work Extending TabPFN to Multimodal**: A novel concept of "tabularizing" unstructured data to leverage powerful tabular priors.
+2. **Theoretical Analysis of Attention Imbalance**: Provides a mathematical derivation for softmax attention behavior under token count mismatch, justifying the CAP design.
+3. **Extremely Low Training Cost**: Only 100 iterations of fine-tuning with batch size 1. All encoders are frozen, making it suitable for resource-constrained medical scenarios.
+4. **Cross-modal Correlation Analysis**: Cosine similarity visualizations show that MMPFN learns cross-modal interactions rather than just intra-modal structures.
 
 ## Limitations & Future Work
 
-1. **Limited medical evaluation beyond PU20**: Results on the two CBIS-DDSM subsets are inconsistent (Mass ranks 3rd, Calc ranks 1st), raising concerns about stability.
-2. **Classification only**: Regression, survival analysis, and other common medical tasks are not evaluated.
-3. **Non-tabular encoders remain frozen**: End-to-end fine-tuning of DINOv2/ELECTRA is not explored.
-4. **Manual tuning of CAP's $K$**: $K = 24$ for PU20 and $K = 4$ for Cloth; dataset-specific hyperparameter selection is required.
-5. **No comparison with large multimodal models**: Baselines such as GPT-4V and LLaVA in multimodal medical settings are absent.
+1. **Limited Medical Evaluation**: Results on CBIS-DDSM varied significantly between sub-splits (Mass ranked 3rd, Calc ranked 1st), suggesting stability concerns.
+2. **Classification Focus**: Common medical tasks like regression or survival analysis were not verified.
+3. **Fixed Encoders**: DINOv2/ELECTRA were frozen; the effects of end-to-end fine-tuning were not explored.
+4. **Manual $K$ Setting**: The optimal $K$ value (e.g., 24 for PU20, 4 for Cloth) requires dataset-specific tuning.
+5. **Comparison with Large Multimodal Models**: Lacks comparisons against GPT-4V or LLaVA in medical multimodal contexts.
 
 ## Related Work & Insights
 
-- **Prior transfer from TabPFN**: The "tabular distributional prior" learned by TabPFN on synthetic data can be ingeniously repurposed for non-tabular features — the paradigm of "tabularizing everything" is conceptually inspiring.
-- **Attention imbalance**: This issue is not unique to multimodal TabPFN; it also arises broadly in VLMs when long text sequences are paired with short image token sequences.
-- **Connection between MGM and Q-Former**: CAP's cross-attention pooling is conceptually analogous to the Q-Former in BLIP-2, but considerably more lightweight.
+- **TabPFN Prior Transfer**: The idea that "tabular distribution priors" learned on synthetic data can be repurposed for non-tabular data is highly inspiring.
+- **Attention Imbalance**: This issue is not unique to Multimodal TabPFN; it exists widely in VLMs where long text sequences compete with image patches.
+- **MGM and Q-Former**: The cross-attention pooling in CAP echoes the Q-Former in BLIP-2 but is optimized for lightweight execution.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First extension of TabPFN to multimodal settings; MGM+CAP design is theoretically grounded.
-- Experimental Thoroughness: ⭐⭐⭐ — Six datasets spanning medical and general domains, but medical evaluation lacks depth.
-- Writing Quality: ⭐⭐⭐⭐ — Theoretical analysis is clear; experimental presentation is well-organized.
-- Value: ⭐⭐⭐⭐ — Opens a new direction for multimodal extension of tabular foundation models; highly practical for small-data medical scenarios.
+- Novelty: ⭐⭐⭐⭐ First to extend TabPFN to multimodal; MGM+CAP design is theoretically grounded.
+- Experimental Thoroughness: ⭐⭐⭐ Six datasets across medical and general domains, though medical depth could be increased.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical analysis and systematic experimental organization.
+- Value: ⭐⭐⭐⭐ Opens a new direction for multimodal extensions of tabular foundation models with high utility in small-data medical scenarios.
 
 <!-- RELATED:START -->
 
@@ -169,11 +176,11 @@ MMPFN achieves an average rank of 1.50 on image-tabular benchmarks and 1.75 on t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes](extending_zach-vit_to_robust_medical_imaging_corruption_and_adversarial_stress_t.md)
-- [\[CVPR 2026\] Multimodal Classification of Radiation-Induced Contrast Enhancements and Tumor Recurrence Using Deep Learning](multimodal_classification_of_radiation-induced_contrast_enhancements_and_tumor_r.md)
-- [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
-- [\[CVPR 2026\] GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification](gleam_a_multimodal_imaging_dataset_and_hamm_for_gl.md)
-- [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+- [\[ECCV 2024\] TIP: Tabular-Image Pre-training for Multimodal Classification with Incomplete Data](../../ECCV2024/medical_imaging/tip_tabular-image_pre-training_for_multimodal_classification_with_incomplete_dat.md)
+- [\[CVPR 2026\] D-Convexity: A Unified Differentiable Convex Shape Prior via Quasi-Concavity for Data-driven Image Segmentation](d-convexity_a_unified_differentiable_convex_shape_prior_via_quasi-concavity_for_.md)
+- [\[CVPR 2026\] OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning](octomed_data_recipes_for_state-of-the-art_multimodal_medical_reasoning.md)
+- [\[CVPR 2026\] TANGO: Learning Distribution-wise Foundation Prior Consistency and Instance-wise Style Calibration for Medical Image Generalization](tango_learning_distribution-wise_foundation_prior_consistency_and_instance-wise_.md)
 
 </div>
 

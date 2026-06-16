@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Multi-Agent] MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. B…
+  [ACL 2026][Code Intelligence][Multi-Agent] MARS2 proposes a multi-agent reinforced tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. By employing Thompson sampling for agent-node selection, tree-consistent reward shaping, and path-level group advantage estimation, it consistently
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Multi-Agent"
-  - "Tree Search"
-  - "Reinforcement Learning"
-  - "Code Generation"
-  - "GRPO"
+  - ACL 2026
+  - Code Intelligence
+  - Multi-Agent
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: ce8150bde6db7e33
+content_hash: 712397c093deb873
 ---
-
 # MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 
 **Conference**: ACL 2026  
@@ -25,55 +22,67 @@ content_hash: ce8150bde6db7e33
 
 ## TL;DR
 
-MARS2 proposes a multi-agent reinforcement tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. By employing Thompson sampling for agent-node selection, tree-consistent reward shaping, and path-level group advantage estimation, it consistently improves single-model Pass@1 by up to 8.0% and system-level Pass@1 (MCTS) by up to 6.5% on code generation benchmarks.
+MARS2 proposes a multi-agent reinforced tree search framework that embeds multiple independently optimized policies into a shared search tree for collaborative exploration. By employing Thompson sampling for agent-node selection, tree-consistent reward shaping, and path-level group advantage estimation, it consistently improves single-model Pass@1 by up to 8.0% and system-level Pass@1(MCTS) by up to 6.5% on code generation benchmarks.
 
 ## Background & Motivation
 
-**Background**: RLVR paradigms like GRPO have achieved significant progress in reasoning tasks such as code generation. Search-augmented RL (e.g., TreeRL) provides more diverse exploration signals by introducing MCTS structures. Multi-agent RL (MARL) generates non-stationary data distributions through multi-policy interaction, potentially overcoming the exploration limits of single policies.
+**Background**: RLVR paradigms such as GRPO have achieved significant progress in reasoning tasks like code generation. Search-augmented RL (e.g., TreeRL) provides more diverse exploration signals by introducing MCTS tree structures. Multi-agent RL (MARL) generates non-stationary data distributions through multi-policy interactions, potentially breaking the exploration limits of single-policy approaches.
 
-**Limitations of Prior Work**: (1) Single-agent tree search is limited—the entire tree is driven by a single policy distribution, leading to diminishing returns as search behavior concentrates on a few high-probability branches during late training; (2) Multi-agent methods are decoupled from structured search—existing multi-agent reasoning frameworks (debate, voting, etc.) perform only lightweight coordination and lack structured search support like branching, backtracking, and budget allocation.
+**Limitations of Prior Work**: (1) Single-agent tree search is constrained—the entire search tree is driven by a single policy distribution, causing search behavior to converge on a few high-probability branches during late training, which diminishes exploration gains. (2) Multi-agent methods are decoupled from structured search—existing multi-agent reasoning frameworks (e.g., debate, voting) only perform lightweight coordination and lack structured search support such as branching, backtracking, and budget allocation.
 
-**Key Challenge**: Single-policy search converges to local optima (Challenge 1), while multi-agent collaboration lacks search structures (Challenge 2). A unified approach is needed.
+**Key Challenge**: Single-policy search converges to local optima (Challenge 1); multi-agent collaboration lacks search structures (Challenge 2). There is a need to unify both.
 
 **Goal**: Construct a multi-agent collaborative tree search RL framework where heterogeneous agents collaborate to generate and refine candidate solutions within a shared search tree.
 
-**Key Insight**: Treat the search tree as a learnable multi-agent interaction environment where different agents contribute distinct policy priors, and exploration budgets are dynamically allocated via Thompson sampling.
+**Key Insight**: View the search tree as a learnable multi-agent interaction environment where different agents contribute distinct policy priors, and exploration budgets are dynamically allocated via Thompson sampling.
 
-**Core Idea**: Nodes are expanded collaboratively on a shared search tree by multiple agents, each optimized independently. Reward signals integrate information from parent and sibling nodes through tree-consistent reward shaping, while path-level group advantages ensure stable credit assignment across complex search trajectories.
+**Core Idea**: Multiple agents collaborate to expand nodes on a shared search tree. Each agent is optimized independently. Reward signals are processed through tree-consistent reward shaping, combining information from parent and sibling nodes, while path-level group advantage ensures stable credit assignment across complex search trajectories.
 
 ## Method
 
 ### Overall Architecture
 
-Multiple heterogeneous LLMs (e.g., Qwen3 + AReaL) act as independent agents collaborating on a shared search tree. At each step, Thompson sampling selects an agent and then a node—either a generation node (horizontal expansion of new solutions) or a refinement node (vertical improvement of existing solutions). After expansion, test cases are executed for each node to obtain rewards, and each agent is optimized independently using tree-consistent reward shaping and path-level group advantages.
+MARS2 addresses the issue where single-policy driven tree search converges to high-probability branches, and multi-agent collaboration remains at the level of lightweight coordination. MARS2 integrates these by allowing multiple independently optimized heterogeneous LLMs (e.g., Qwen3 and AReaL) to share the same search tree. Given a coding problem, each step uses Thompson sampling to select an agent and then an expandable node. It performs horizontal expansion for generation nodes and vertical refinement for refinement nodes. Each expanded node is tested against cases to receive a reward. These rewards are processed via tree-consistent reward shaping and path-level group advantage estimation before being used for independent policy updates for each agent. The final output is the candidate code with the highest pass rate in the tree.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Coding Problem<br/>Heterogeneous LLMs share a search tree"] --> B["Thompson Sampling for Agent-Node Selection<br/>Sample agent then sample node"]
+    B -->|Generation Node| C["Horizontal Expansion of New Candidates"]
+    B -->|Refinement Node| D["Vertical Refinement of Existing Solutions"]
+    C --> E["Run Test Cases for Scoring"]
+    D --> E
+    E --> F["Tree-Consistent Reward Shaping<br/>Compare with Parent and Siblings"]
+    F --> G["Path-Level Group Advantage Estimation<br/>Tree-level relative advantage"]
+    G --> H["Independent Policy Update for Each Agent<br/>Using only self-generated nodes"]
+    H -->|Budget remaining| B
+    H --> I["Output Candidate with Highest Pass Rate"]
+```
 
 ### Key Designs
 
-1.  **Thompson Sampling Agent-Node Selection**:
-    *   **Function**: Dynamically balance exploration budget allocation among heterogeneous agents.
-    *   **Mechanism**: Maintain Beta priors for each agent-node pair. Thompson sampling first selects an agent and then selects an expandable node for that agent. Distinguishing between generation nodes and refinement nodes balances horizontal exploration and vertical depth.
-    *   **Design Motivation**: Different agents excel at different problems; Thompson sampling adaptively balances exploration and exploitation.
+**1. Thompson Sampling for Agent-Node Selection: Allocating Budget to "Who is More Likely to Win"**
 
-2.  **Tree-Consistent Reward Shaping**:
-    *   **Function**: Implement hierarchical credit assignment on a multi-agent shared search tree.
-    *   **Mechanism**: For each non-root node $v$, define a mixed baseline $b(v) = (1-\lambda) r_{p(v)} + \lambda \cdot \mu_{C(p(v)) \setminus v}$ (a weighted combination of parent reward and average sibling reward). The structural consistency gain is defined as $\Delta(v) = r_v - b(v)$, and the shaped reward is $\hat{r}_v = r_v + \gamma \cdot \Delta(v)$.
-    *   **Design Motivation**: Child nodes must not only have high global rewards but also show improvement relative to the parent (vertical) and superiority over sibling candidates (horizontal), encouraging specialization in collaboration.
+Heterogeneous agents have different strengths; fixed rotation or greedy selection wastes budget on suboptimal branches. MARS2 maintains a Beta prior for each agent-node pair. During expansion, it performs Thompson sampling first for the agent and then for that agent's expandable nodes. Nodes are categorized into generation nodes (horizontal exploration) and refinement nodes (vertical depth). The inherent randomness of sampling maintains an exploration-exploitation balance between action types and agents, adaptively directing more opportunities to the most promising agents.
 
-3.  **Path-level Group Advantage Estimation**:
-    *   **Function**: Extend GRPO group relative advantages from parallel sampling to tree structures.
-    *   **Mechanism**: All nodes in a search tree originate from the same problem, forming a natural semantic group. Tree-level group relative advantages are calculated using shaped rewards: $\hat{A}_{v,j} = (\hat{r}_{v,j} - \text{mean}) / \text{std}$. Each agent optimizes only on nodes it generated.
-    *   **Design Motivation**: The parallel trajectory assumption of standard GRPO does not hold in tree search; hierarchical dependencies between parents/children and siblings must be considered.
+**2. Tree-Consistent Reward Shaping: Evaluating Relative Progress**
+
+Pure global tree-level rewards fail to capture whether a child node improved relative to its origin. MARS2 constructs a hybrid baseline for each non-root node $v$: $b(v) = (1-\lambda) r_{p(v)} + \lambda \cdot \mu_{C(p(v)) \setminus v}$. This weights the parent reward $r_{p(v)}$ against the average reward of siblings $\mu_{C(p(v))\setminus v}$. The former measures vertical improvement while the latter measures horizontal competition. The structural consistency gain is defined as $\Delta(v) = r_v - b(v)$, and the shaped reward is $\hat{r}_v = r_v + \gamma \cdot \Delta(v)$. A node receives extra credit only if it outperforms both its origin and its peers, encouraging progress-oriented exploration.
+
+**3. Path-Level Group Advantage Estimation: Adapting GRPO Baselines to Trees**
+
+Standard GRPO assumes trajectories are sampled independently from the same prompt, but nodes in a search tree have hierarchical dependencies, violating the i.i.d. assumption. MARS2 treats all nodes in a tree as a natural semantic group since they derive from the same problem. It calculates tree-level relative advantage on shaped rewards: $\hat{A}_{v,j} = (\hat{r}_{v,j} - \text{mean}) / \text{std}$. Crucially, each agent only uses its own generated nodes to update parameters, utilizing tree-level statistics while avoiding incorrect credit assignment from other agents' trajectories.
 
 ### Loss & Training
 
-Extend GRPO into the MARS2 objective: each agent is optimized independently using the DAPO clip-higher trick and KL regularization. Training data consists of 7,992 filtered code generation problems from DeepCoder. Evaluation benchmarks include LiveCodeBench v6 (2025.01-05).
+Based on the advantage estimation, MARS2 extends the GRPO objective to a multi-agent version. Each agent independently optimizes its policy using the DAPO clip-higher technique to retain exploration, constrained by KL regularization. Training data includes 7,992 filtered DeepCoder problems, with evaluation on LiveCodeBench v6 (2025.01–05).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model/System | Method | Pass@1 | Pass@1 (MCTS) | Pass@N |
-| :--- | :--- | :--- | :--- | :--- |
+| Model/System | Method | Pass@1 | Pass@1(MCTS) | Pass@N |
+|-----------|------|--------|-------------|--------|
 | Qwen3-8B | Base | 50.3 | 54.3 | 68.6 |
 | Qwen3-8B | GRPO | 52.5 (+2.2) | 57.1 (+2.8) | 73.1 |
 | Qwen3-8B | RS2 | 55.4 (+5.1) | 60.6 (+6.3) | 71.4 |
@@ -83,45 +92,45 @@ Extend GRPO into the MARS2 objective: each agent is optimized independently usin
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| GRPO (Single agent, no search) | +2.2 Pass@1 | Baseline |
-| RS2 (Single agent + Tree search) | +5.1 Pass@1 | Search structure is effective |
-| MARS2 (Multi-agent + Tree search) | +8.0 Pass@1 | Multi-agent further improves performance |
-| Weak Agent (DeepCoder) added | Performance still gains | Robust to agent heterogeneity |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| GRPO (Single-agent, no search) | +2.2 Pass@1 | Baseline |
+| RS2 (Single-agent + Tree Search) | +5.1 Pass@1 | Search structure is effective |
+| MARS2 (Multi-agent + Tree Search) | +8.0 Pass@1 | Multi-agent synergy provides further gains |
+| Inclusion of weak agent (DeepCoder) | Performance still gains | Robust to agent heterogeneity |
 
 ### Key Findings
 
-*   MARS2 consistently outperforms GRPO and single-agent tree search (RS2) across all models, with Pass@1 gains up to 8.0%.
-*   For highly optimized code models (AReaL) where GRPO is nearly ineffective or even degrades, MARS2 still provides a 6.2% improvement.
-*   System-level Pass@1 (MCTS) improvements reach up to 6.0%, proving that multi-agent training produces complementary policies.
-*   Performance continues to improve even with the inclusion of a weak agent (DeepCoder-14B), demonstrating robustness to agent heterogeneity.
-*   AReaL-14B under MARS2 achieves 64.6% Pass@1, surpassing O4-Mini (Low) at 63.7%.
+- MARS2 consistently outperforms GRPO and single-agent tree search (RS2) across all models, with Pass@1 gains up to 8.0%.
+- For highly optimized code models (AReaL) where GRPO shows negligible effect or degradation, MARS2 still provides a 6.2% improvement.
+- Multi-agent system-level Pass@1 (MCTS) improved by up to 6.0%, proving that multi-agent training produces complementary policies.
+- Performance gains persist even when including a weak agent (DeepCoder-14B), demonstrating robustness.
+- AReaL-14B with MARS2 reaches 64.6% Pass@1, exceeding O4-Mini (Low) at 63.7%.
 
 ## Highlights & Insights
 
-*   Treating the search tree as a "learnable multi-agent interaction environment" rather than a static sampling process is a paradigm innovation. Every node expansion is a collaborative decision between agents.
-*   Tree-consistent reward shaping simultaneously considers vertical improvement (vs. parent) and horizontal competition (vs. siblings), representing a natural extension of multi-agent credit assignment to tree structures.
-*   Rigorous experimental design: training and inference configurations are explicitly separated, and all methods share the same data budget and inference framework.
+- Treating the search tree as a "learnable multi-agent interaction environment" rather than a static sampling process is a paradigm innovation. Every node expansion is a collaborative decision among agents.
+- Tree-consistent reward shaping, considering both vertical improvement (vs. parent) and horizontal competition (vs. siblings), is a natural extension of multi-agent credit assignment to tree structures.
+- The experimental design is rigorous, with distinct training and inference configurations, ensuring all methods share the same data budget and inference framework.
 
 ## Limitations & Future Work
 
-*   Evaluation is limited to code generation; other RLVR scenarios like mathematical reasoning remain to be verified.
-*   The number of agents is fixed at 2; scaling behavior with more agents is unexplored.
-*   Prior update rules for Thompson sampling are relatively simple; more complex bandit policies might be superior.
-*   Multi-agent training requires running multiple models simultaneously, doubling GPU resource requirements.
+- Evaluation is limited to code generation; other RLVR scenarios like mathematical reasoning remain to be validated.
+- The number of agents is fixed at 2; scaling behavior with more agents is unexplored.
+- The prior update rules for Thompson sampling are relatively simple; more complex bandit strategies might yield better results.
+- Multi-agent training requires running multiple models simultaneously, significantly increasing GPU resource demands.
 
 ## Related Work & Insights
 
-*   **vs TreeRL**: TreeRL uses a single policy to drive the search tree, leading to diminishing exploration gains. MARS2 introduces multiple policies to break the limitations of a single-policy prior.
-*   **vs MAPoRL**: MAPoRL uses multi-agent dialogue for collaboration but lacks a search structure. MARS2 embeds multiple agents into tree search, providing support for branching and backtracking.
+- **vs TreeRL**: TreeRL uses a single policy to drive search, leading to diminishing exploration gains. MARS2 introduces multi-policy interaction to break single-policy prior constraints.
+- **vs MAPoRL**: MAPoRL uses multi-agent dialogue but lacks a search structure. MARS2 embeds agents into tree search, providing branching and backtracking support.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ First to unify multi-agent RL with tree search; tree-consistent reward shaping design is elegant.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Multiple models and scales, but limited to code generation tasks.
-*   Writing Quality: ⭐⭐⭐⭐ Clear framework and rigorous formulas.
-*   Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for search-augmented RL with significant performance gains.
+- Novelty: ⭐⭐⭐⭐⭐ First to unify multi-agent RL with tree search; reward shaping design is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple models and scales, but task variety is limited to code.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework and rigorous formulations.
+- Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for search-augmented RL with significant performance gains.
 
 <!-- RELATED:START -->
 
@@ -129,8 +138,8 @@ Extend GRPO into the MARS2 objective: each agent is optimized independently usin
 
 ## Related Papers
 
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
+- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/code_intelligence/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 - [\[ACL 2026\] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning](chipseek_optimizing_verilog_generation_via_eda-integrated_reinforcement_learning.md)

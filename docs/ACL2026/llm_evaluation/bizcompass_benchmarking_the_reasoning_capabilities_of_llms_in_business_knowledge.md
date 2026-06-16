@@ -2,74 +2,65 @@
 title: >-
   [Paper Note] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 description: >-
-  [ACL 2026 Findings][LLM Evaluation][Business reasoning benchmark] This paper proposes BizCompass, a business reasoning benchmark connecting theoretical foundations with practical applications. It covers four knowledge do…
+  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes BizCompass, a business reasoning benchmark that bridges theoretical foundations and practical applications. It covers four knowledge domains (Finance, Economics, Statistics, Operations) and three application roles (Analyst, Trader, Consultant). The study systematically evaluates the business reasoni
 tags:
-  - "ACL 2026 Findings"
-  - "LLM Evaluation"
-  - "Business reasoning benchmark"
-  - "Knowledge and application evaluation"
-  - "LLM capability diagnosis"
-  - "Finance and economics"
-  - "Dual-axis design"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 67d25df7792388ee
+content_hash: efe525bc84e954c2
 ---
-
 # BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.17305](https://arxiv.org/abs/2604.17305)  
 **Code**: [https://bizcompass.dev.ypemc.com/](https://bizcompass.dev.ypemc.com/)  
 **Area**: LLM Evaluation  
-**Keywords**: Business reasoning benchmark, Knowledge and application evaluation, LLM capability diagnosis, Finance and economics, Dual-axis design
+**Keywords**: Business reasoning benchmark, knowledge and application assessment, LLM capability diagnostics, finance and economics, dual-axis design
 
 ## TL;DR
 
-This paper proposes BizCompass, a business reasoning benchmark connecting theoretical foundations with practical applications. It covers four knowledge domains (Finance, Economics, Statistics, and Operations Management) and three application roles (Analyst, Trader, and Consultant). It systematically evaluates the business reasoning capabilities of open-source and closed-source LLMs, revealing patterns of how theoretical knowledge translates into practical performance.
+This paper proposes BizCompass, a business reasoning benchmark that bridges theoretical foundations and practical applications. It covers four knowledge domains (Finance, Economics, Statistics, Operations) and three application roles (Analyst, Trader, Consultant). The study systematically evaluates the business reasoning capabilities of open-source and closed-source LLMs, revealing the patterns of transforming theoretical knowledge into practical performance.
 
 ## Background & Motivation
 
-**Background**: LLMs hold great promise in business applications, but business analysis is inherently complex, requiring rigorous reasoning and multi-disciplinary knowledge integration. Existing benchmarks (e.g., FinBen, CFLUE) usually target single narrow tasks (e.g., sentiment analysis, entity extraction) and fail to answer a fundamental question: How can LLMs be reliably applied in business, and what are the theoretical foundations for these application capabilities?
+**Background**: LLMs show great promise in business applications, but business analysis is inherently complex, requiring rigorous reasoning and multi-disciplinary knowledge integration. Existing benchmarks (e.g., FinBen, CFLUE) typically target narrow tasks (e.g., sentiment analysis, entity extraction) and fail to answer the fundamental question: How reliably can LLMs be applied in business, and what are the theoretical foundations of these application capabilities?
 
-**Limitations of Prior Work**: (1) Existing benchmarks mostly focus on the financial domain, lacking coverage of other core business areas like economics, statistics, and operations management; (2) There is a lack of a diagnostic framework connecting theoretical knowledge capabilities to actual application performance—knowing that an LLM performs well/poorly on a specific task without knowing which underlying fundamental capabilities are at play.
+**Limitations of Prior Work**: (1) Existing benchmarks mostly focus on the financial domain, lacking coverage of other core business areas like economics, statistics, and operations management; (2) There is a lack of a diagnostic framework to link theoretical knowledge with practical performance—knowing a model performs well or poorly on a specific task without understanding which underlying abilities are at play.
 
-**Key Challenge**: Scaling model size and Chain-of-Thought (CoT) techniques do not guarantee improvements in business reasoning capabilities—DeepSeek-R1 (671B) underperforms much smaller closed-source models in certain tasks, indicating that simple scaling is insufficient and that a deep understanding of the mapping between knowledge and application is required.
+**Key Challenge**: Increases in model scale and Chain-of-Thought (CoT) techniques do not guarantee improvements in business reasoning—DeepSeek-R1 (671B) even underperforms significantly smaller closed-source models on certain tasks, suggesting that simple scaling is insufficient and that a deep understanding of the mapping between knowledge and application is required.
 
-**Goal**: (1) Construct an evaluation benchmark covering the full business landscape; (2) Diagnose how theoretical knowledge drives or limits practical application performance through a dual-axis design; (3) Provide actionable suggestions for model selection and training optimization.
+**Goal**: (1) Construct a benchmark covering the full business landscape; (2) Diagnose how theoretical knowledge drives or limits practical performance through a dual-axis design; (3) Provide actionable suggestions for model selection and training optimization.
 
-**Key Insight**: Adopting a "Knowledge Layer + Application Layer" dual-axis design—the knowledge layer answers "what the model has mastered," while the application layer answers "what the model can do," with cross-analysis answering "why it can or cannot."
+**Key Insight**: A "Knowledge Layer + Application Layer" dual-axis design is adopted—the knowledge layer answers "what the model has mastered," while the application layer answers "what the model can do." Cross-analysis of the two answers "why it can or cannot."
 
-**Core Idea**: Elevating business LLM evaluation from "task performance" to "capability diagnosis" using a dual-axis benchmark, not only measuring performance but also diagnosing the root causes of success or failure.
+**Core Idea**: Elevate business LLM evaluation from "task performance" to "capability diagnosis" using a dual-axis benchmark, measuring not only how well a model performs but also diagnosing the root causes of that performance.
 
 ## Method
 
 ### Overall Architecture
 
-BizCompass consists of two levels. The knowledge layer covers four core domains: Finance (FIN), Economics (ECON), Statistics (STAT), and Operations Management (OM), with each domain including multiple-choice and open-ended questions. The application layer designs tasks around three representative business roles: Analyst (data analysis, risk assessment), Trader (market prediction, investment decision-making), and Consultant (strategic advice, solution evaluation). Evaluation metrics include Accuracy, F1, ROUGE, and GPT-Eval (multi-dimensional scoring using GPT-4o as a judge).
+The core question BizCompass aims to answer is "whether LLMs can be reliably applied in business and what the theoretical foundations behind these application capabilities are." To this end, the benchmark is split into two orthogonal layers. The Knowledge Layer covers four core domains: Finance (FIN), Economics (ECON), Statistics (STAT), and Operations Management (OM), including multiple-choice and open-ended questions to answer "what the model knows." The Application Layer designs tasks around three representative business roles: Analyst, Trader, and Consultant, answering "what the model can do." Scores from both layers are integrated via cross-domain correlation analysis to explain performance. Metrics include Accuracy, F1, ROUGE, and multi-dimensional GPT-Eval using GPT-4o as a judge.
 
 ### Key Designs
 
-1.  **Knowledge Layer Four-Domain Coverage**:
-    *   **Function**: Comprehensively evaluate theoretical business foundation knowledge.
-    *   **Mechanism**: Finance covers professional exam questions such as Financial Risk Manager (FRM) and Chartered Financial Analyst (CFA); Economics covers micro/macroeconomic theories; Statistics covers probability, hypothesis testing, regression analysis, etc.; Operations Management covers supply chains, project management, quality control, etc. Each domain includes questions of varying difficulty.
-    *   **Design Motivation**: Business decisions are not single-domain issues but require the integration of cross-domain knowledge. The four domains cover the core theoretical foundations of business analysis.
+**1. Knowledge Layer with Four-Domain Coverage: Building a Comprehensive Business Theory Base**
 
-2.  **Application Layer Three-Role Design**:
-    *   **Function**: Evaluate the translation of theoretical knowledge into practical business skills.
-    *   **Mechanism**: The **Analyst** role requires analytical capabilities such as data interpretation, trend analysis, and risk quantification; the **Trader** role requires decision-making capabilities such as market judgment, portfolio construction, and risk management; the **Consultant** role requires comprehensive capabilities such as strategic thinking, solution evaluation, and client communication. Each role corresponds to specific task formats (multiple-choice, open-ended questions, case studies, etc.).
-    *   **Design Motivation**: Different business roles have different knowledge requirements and modes of application. The three roles cover the full spectrum from quantitative analysis to qualitative reasoning.
+Existing business benchmarks are mostly clustered in finance, with almost no coverage of economics, statistics, or operations management, making it impossible to measure the cross-domain knowledge integration skills required for business decision-making. BizCompass source finance questions from professional exams like FRM and CFA; economics covers micro/macro theory; statistics covers probability, hypothesis testing, and regression; and operations management covers supply chain, project management, and quality control. Together, these four domains form the core theoretical hierarchy of business analysis, serving as the "foundational scale" for diagnosing application bottlenecks.
 
-3.  **Cross-Domain Correlation Analysis**:
-    *   **Function**: Diagnose how knowledge capabilities drive application performance.
-    *   **Mechanism**: Calculate the correlation matrix between the four domains of the knowledge layer and various tasks in the application layer. It was found that analytical/quantitative tasks have stronger correlations with OM and STAT, while text-based/consulting tasks have weaker correlations with knowledge domains. Correlation with code reasoning ability (SWE-bench) was also analyzed and found to be positive.
-    *   **Design Motivation**: Beyond providing scores, it aims to explain "why"—identifying which fundamental capabilities are bottlenecks to guide targeted training.
+**2. Application Layer with Three-Role Design: Measuring Transformation from Theory to Practice**
+
+Different business roles have distinct knowledge requirements and modes of application. A single task format cannot measure the full spectrum from quantitative to qualitative capabilities. This paper covers this spectrum using three roles: the Analyst requires analytical skills like data interpretation, trend analysis, and risk quantification; the Trader requires decision-making skills like market judgment, portfolio construction, and risk management; and the Consultant requires comprehensive skills like strategic thinking, solution evaluation, and client communication. Each role corresponds to specific task formats (MCQs, open QA, case analysis), allowing the application layer to cover both quantitative analysis and qualitative reasoning.
+
+**3. Cross-Domain Correlation Analysis: Diagnosing How Knowledge Drives Application**
+
+Providing scores alone cannot explain "why." Therefore, this paper calculates a correlation matrix between the four knowledge domains and the various application tasks. Results show that analytical/quantitative tasks correlate more strongly with OM and STAT, while text-based/consulting tasks have weaker correlations with specific knowledge domains. Extending this to code reasoning (SWE-bench) reveals a positive correlation, suggesting that decompositional reasoning and structured thinking are underlying core capabilities shared by both business and coding tasks. This allows the benchmark to upgrade from "scoring" to "bottleneck identification."
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | FIN Acc | ECON Acc | STAT Acc | OM Acc | App Layer Avg Acc |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Fin Acc | Econ Acc | Stat Acc | Op Acc | App Avg Acc |
+|-------|---------|----------|----------|--------|-------------|
 | GPT (Closed) | 80.4% | 83.0% | 83.8% | 79.3% | **79.9%** |
 | Gemini (Closed) | **82.1%** | **87.8%** | **85.7%** | **82.7%** | 77.4% |
 | Claude (Closed) | 81.8% | 85.8% | 84.6% | 80.2% | 75.5% |
@@ -79,47 +70,47 @@ BizCompass consists of two levels. The knowledge layer covers four core domains:
 
 ### Ablation Study
 
-| Analysis Dimension | Finding | Explanation |
-| :--- | :--- | :--- |
-| Scale vs Performance | Non-linear | DeepSeek-R1 (671B) underperforms smaller closed-source models on multiple metrics. |
-| CoT vs No-CoT | Unstable | Adding CoT does not guarantee improvement; effect depends on data quality and alignment. |
-| Knowledge-to-App Correlation | Uneven | OM/STAT have a high impact on analytical tasks, while FIN/ECON have a weaker impact. |
-| Code Reasoning to Business Performance | Positively Correlated | SWE-bench scores are positively correlated with knowledge layer performance. |
+| Dimension | Finding | Description |
+|-----------|---------|-------------|
+| Scale vs Performance | Non-linear | DeepSeek-R1 (671B) underperforms smaller closed models on several metrics |
+| CoT vs No-CoT | Unstable | Adding CoT does not guarantee gains; effectiveness depends on data quality and alignment |
+| Knowledge-App Correlation | Uneven | OM/STAT heavily impact analytical tasks, while FIN/ECON have weaker impacts |
+| Code Reasoning to Business | Positive | SWE-bench scores correlate positively with performance in the Knowledge Layer |
 
 ### Key Findings
 
-*   Closed-source models consistently lead in both the knowledge and application layers, but the gap is more pronounced in the application layer, indicating that application capabilities are harder to acquire through open-source training.
-*   Model scale is not the determining factor: DeepSeek-R1 (671B) scores lower than Qwen (235B) in statistics and operations management, and distilled models perform even worse.
-*   Cross-domain correlation analysis reveals that statistics and operations management knowledge are more critical for analytical application tasks.
-*   Code reasoning ability is positively correlated with business knowledge, suggesting that decomposed reasoning and structured thinking are common underlying capabilities.
+- Closed-source models lead consistently across both layers, but the gap is more pronounced in the Application Layer, suggesting application skills are harder to acquire through open-source training.
+- Model scale is not the sole determinant: DeepSeek-R1 (671B) scores lower than Qwen (235B) in statistics and operations, and distilled models perform even worse.
+- Cross-domain correlation analysis reveals that statistics and operations management knowledge are more critical for analytical application tasks.
+- Code reasoning ability is positively correlated with business knowledge, indicating that decomposition and structured thinking are shared underlying capabilities.
 
 ## Highlights & Insights
 
-*   **Diagnostic Capability of Dual-Axis Design**: Unlike traditional benchmarks that only provide scores, BizCompass can diagnose "why it is good/bad"—through cross-analysis of the knowledge and application layers, it can pinpoint specific capability bottlenecks.
-*   **Empirical Evidence of "Scale ≠ Capability"**: The 671B parameter DeepSeek-R1 underperforms smaller closed-source models on several business reasoning metrics, strongly challenging the applicability of scaling laws in vertical domains.
-*   **Diversified Evaluation Metrics**: The balanced use of Accuracy, F1, ROUGE, and GPT-Eval metrics adapts to different task types, making the evaluation design reasonable.
+- **Diagnostic Power of Dual-Axis Design**: Unlike traditional benchmarks that only provide scores, BizCompass diagnoses "why" by identifying specific capability bottlenecks through cross-analysis.
+- **Empirical Evidence of "Scale $\neq$ Capability"**: DeepSeek-R1 with 671B parameters underperforms smaller closed-source models on multiple business reasoning metrics, challenging the applicability of scaling laws in vertical domains.
+- **Diversified Evaluation Metrics**: The combined use of Accuracy, F1, ROUGE, and GPT-Eval ensures that metrics are well-suited to different task types, making the evaluation design robust.
 
 ## Limitations & Future Work
 
-*   The knowledge layer is primarily based on English exam questions; evaluations in non-English business environments are missing.
-*   Although representative, the three-role design of the application layer does not cover all business scenarios (e.g., HR, marketing).
-*   GPT-Eval uses GPT-4o as a judge, carrying the risk of the judging model's own bias.
-*   The dataset is static, while the business environment changes rapidly; the timeliness of the benchmark remains a challenge.
-*   A large portion of the 40-page paper is dedicated to displaying full result tables; core findings could be more focused.
+- The Knowledge Layer is primarily based on English exams, leaving a gap in evaluating non-English business environments.
+- Although representative, the three-role design does not cover all business scenarios (e.g., HR, marketing).
+- GPT-Eval relies on GPT-4o as a judge, posing a risk of self-preference bias.
+- The dataset is static, whereas business environments evolve rapidly; maintaining the benchmark's timeliness is a challenge.
+- The 40-page paper spends significant space on full result tables; core findings could be more focused.
 
 ## Related Work & Insights
 
-*   **vs FinBen**: Covers only 36 datasets specifically in the financial domain; BizCompass expands to four business domains and adds application layer evaluation.
-*   **vs CFLUE**: A Chinese financial language understanding evaluation; BizCompass is in English and features broader coverage.
-*   **vs MMLU**: General knowledge benchmarks include business-related subcategories but lack diagnostic capabilities specifically for business applications.
-*   **vs BBT-Fin**: Focuses only on financial NLP tasks; BizCompass covers reasoning and decision-making.
+- **vs FinBen**: Covers 36 datasets but only in finance; BizCompass expands to four business domains and adds application layers.
+- **vs CFLUE**: A Chinese financial language understanding evaluation; BizCompass is English-based and broader in scope.
+- **vs MMLU**: General knowledge benchmarks include business subcategories but lack diagnostic capabilities for business applications.
+- **vs BBT-Fin**: Focuses only on financial NLP tasks; BizCompass covers reasoning and decision-making.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ The dual-axis design is innovative, but the technical contribution of the benchmark paper itself is limited.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated many open-source and closed-source models, with diverse metrics and deep analysis.
-*   Writing Quality: ⭐⭐⭐⭐ Clear structure but overly long (40 pages).
-*   Value: ⭐⭐⭐⭐ Fills a gap in LLM evaluation for the business domain, providing reference value for industry applications.
+- Novelty: ⭐⭐⭐⭐ The dual-axis design is innovative, though the technical contribution of the benchmark itself is standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated numerous open and closed models with diverse metrics and deep analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, but excessively long (40 pages).
+- Value: ⭐⭐⭐⭐ Fills a gap in LLM evaluation for the business domain and provides a reference for industrial applications.
 
 <!-- RELATED:START -->
 
@@ -127,11 +118,11 @@ BizCompass consists of two levels. The knowledge layer covers four core domains:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/llm_evaluation/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
 - [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
+- [\[ACL 2025\] VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models](../../ACL2025/llm_evaluation/voxeval_benchmarking_the_knowledge_understanding_capabilities_of_end-to-end_spok.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
-- [\[ACL 2026\] Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs](presupposition_and_reasoning_in_conditionals_a_theory-based_study_of_humans_and_.md)
+- [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/llm_evaluation/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
+- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 
 </div>
 

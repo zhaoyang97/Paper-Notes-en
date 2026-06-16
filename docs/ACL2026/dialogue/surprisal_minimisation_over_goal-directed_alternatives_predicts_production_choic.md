@@ -2,106 +2,107 @@
 title: >-
   [Paper Note] Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue
 description: >-
-  [ACL2026][Dialogue Systems][surprisal] This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It discovers that minimizing surprisal relative to "goal-directe…
+  [ACL 2026][Dialogue Systems][surprisal] This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It finds that minimizing surprisal relative to "goal-directed alternatives" (sharing the same communicative goal) best predicts actual human continuations.
 tags:
-  - "ACL2026"
-  - "Dialogue Systems"
-  - "surprisal"
-  - "goal-directed alternatives"
-  - "language production"
-  - "UID"
-  - "dialogue corpus"
+  - ACL 2026
+  - Dialogue Systems
+  - surprisal
+  - goal-directed alternatives
+  - UID
 date: 2026-05-08
-content_hash: 2ec0f655d75e7e31
+content_hash: 3b65c7083fb44c77
 ---
-
 # Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue
 
 **Conference**: ACL2026  
 **arXiv**: [2605.00506](https://arxiv.org/abs/2605.00506)  
 **Code**: None  
 **Area**: Dialogue Modeling / Psycholinguistics / Information-theoretic Language Production  
-**Keywords**: surprisal, goal-directed alternatives, language production, UID, dialogue corpus  
+**Keywords**: surprisal, goal-directed alternatives, language production, UID, dialogue corpora  
 
 ## TL;DR
-This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It discovers that minimizing surprisal relative to "goal-directed alternatives" (paraphrases sharing the same communicative goal) best predicts the actual continuations produced by humans.
+This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It finds that minimizing surprisal relative to "goal-directed alternatives" (sharing the same communicative goal) best predicts actual human continuations.
 
 ## Background & Motivation
-**Background**: In language comprehension research, surprisal is frequently used to explain reading times, eye movements, brain imaging, and processing load. In language production research, the Uniform Information Density (UID) hypothesis and length costs are common explanations for why speakers choose specific expressions.
+**Background**: In language comprehension, surprisal is used to explain reading times, eye movements, brain imaging, and processing load. In language production, the UID hypothesis and length costs explain why speakers choose specific expressions.
 
-**Limitations of Prior Work**: Many information-theoretic analyses focus only on the observed utterances themselves without explicitly defining the alternative expressions available to the speaker at that moment. Without alternatives, it is difficult to determine whether a sentence was chosen because of its low cost or if it simply happened to appear in the corpus.
+**Limitations of Prior Work**: Many information-theoretic analyses focus solely on observed utterances without identifying the alternatives available to the speaker. Without an alternative set, it is difficult to determine if a sentence was chosen for "low cost" or if it simply appeared by chance.
 
-**Key Challenge**: Production choices must be defined relative to a candidate set, yet natural dialogue exists in an open-ended generation space. Traditional models either study small sets of syntactic variants or define alternatives too narrowly to cover the range of expressions a speaker might consider in real dialogue.
+**Key Challenge**: Production choice must be defined relative to a candidate set, but natural dialogue involves an open-ended generation space. Traditional models either study small sets of syntactic variants or define alternatives too narrowly, failing to cover the expressions speakers actually consider.
 
-**Goal**: The authors aim to use language models to generate open-ended alternatives, distinguishing between two candidate sets: goal-agnostic alternatives, representing reasonable continuations a listener might expect in context; and goal-directed alternatives, representing paraphrases a speaker could choose to achieve the same communicative goal.
+**Goal**: The authors aim to use language models to generate open-ended alternatives, distinguishing between two types: goal-agnostic alternatives representing plausible continuations for the listener, and goal-directed alternatives representing paraphrases the speaker could use to achieve the same goal.
 
-**Key Insight**: If a cost metric truly characterizes language production, it should favor human choices within a set of candidates sharing the same goal. If it primarily reflects listener comprehension pressure, its effect might be more evident among goal-agnostic alternatives.
+**Key Insight**: If a cost metric truly characterizes language production, it should favor human choices within the same communicative goal; if it reflects listener comprehension pressure, it should be more prominent in goal-agnostic alternatives.
 
-**Core Idea**: Use LMs to generate both goal-directed and goal-agnostic alternatives and compare whether human continuations exhibit lower surprisal, UID, or length costs than these alternatives to identify which cost best explains production choices.
+**Core Idea**: Generate goal-directed and goal-agnostic alternatives using LMs and compare whether human continuations have lower surprisal, UID, or length costs than these alternatives.
 
 ## Method
-The key contribution of this paper is not a new neural model, but the redefinition of "production choice" as an experimental framework involving candidate sets, cost functions, and probabilistic choice rules.
+The key contribution is redefining "production choice" as an experimental framework with a candidate set, cost functions, and probabilistic choice rules.
 
-The most critical distinction is: in the same context, the listener does not know what the speaker intends to express, but the speaker knows their own communicative goal. 
-
-Therefore, alternatives used to explain speaker choice should maintain the same goal, rather than just being contextually plausible.
+The crucial distinction is that in the same context, the listener does not know the speaker's intent, while the speaker knows their communicative goal. Therefore, alternatives explaining speaker choice should maintain the same goal.
 
 ### Overall Architecture
-The paper utilizes the Switchboard Dialogue Act Corpus, which consists of natural spoken dialogue data.
+The study utilizes the Switchboard Dialogue Act Corpus (natural spoken dialogue). 
 
-The authors first clean the transcripts, removing backchannels, short pauses, noise markers, and obvious disfluencies.
+Transcripts are cleaned of backchannels, pauses, and disfluencies. Target utterances are restricted to 10-30 words, categorized as statements or questions, following an interlocutor's turn. 
 
-Target utterances are restricted to between 10 and 30 words, with dialogue acts categorized as statements or questions, where the preceding turn comes from a different speaker.
+Each utterance is split into context and continuation: the root verb serves as the choice point; the root verb and preceding tokens form the context, and the following tokens are the human continuation.
 
-Each target utterance is split into context and continuation: the sentence's root verb serves as the selection point; the root verb and everything prior form the context, and everything following is the actual human continuation.
+The final analysis set includes 309 contexts, 309 observed human continuations, and 12,360 generated continuations.
 
-After cleaning, 1,342 utterances were obtained. Following alternative generation and filtering, the final analysis set included 309 contexts, 309 observed human continuations, and 12,360 generated continuations.
+GPT-2 Small estimates cost via surprisal. GPT-4o generates goal-agnostic alternatives (completions under varying histories) and goal-directed alternatives (constrained paraphrases). 
 
-Cost estimation is performed using GPT-2 Small to calculate surprisal, as it is a common proxy for processing load in psycholinguistics.
+A GPT-4o judge filters paraphrases (98.75% accuracy in human sampling). To avoid generation bias, authors use stratified sampling to align the length and global UID distributions of generated alternatives with human data.
 
-Goal-agnostic alternatives are generated by GPT-4o completing sentences under different history conditions: no history, previous turn, or full history.
+A pairwise logistic choice model tests if cost differences predict human preferences.
 
-Goal-directed alternatives are generated by GPT-4o performing constrained paraphrasing of the observed human sentences, requiring that the paraphrase retains the same context and semantic goal.
-
-A GPT-4o judge then filters the paraphrases; manual sampling showed a paraphrase judgment accuracy of 98.75%.
-
-Finally, the authors compare the rank of human continuations across various costs and use a pairwise logistic choice model to test whether cost differences predict human choices.
+```mermaid
+graph TD
+    A["Switchboard Dialogue Corpus<br/>Cleaning + Target Utterance Filtering"] --> B["Splitting by Root Verb<br/>Context / Human Continuation"]
+    subgraph C["Two Types of Contextual Alternatives"]
+        direction TB
+        D["Goal-agnostic Set<br/>GPT-4o Completion (Multi-history)"]
+        E["Goal-directed Set<br/>GPT-4o Paraphrase → Judge Filtering"]
+    end
+    B --> C
+    C --> F["Cost Estimation<br/>GPT-2 Surprisal / UID / Length"]
+    F --> G["Distribution-Aligned Sampling<br/>Stratification by Length & Global UID"]
+    G --> H["Cost-Sensitive Choice Model<br/>Rank-1 Test + Pairwise Logistic"]
+    H --> I["Identifying Costs Explaining Human Production"]
+```
 
 ### Key Designs
-1. **Two Types of Contextual Alternatives**:
-	- **Function**: Separates the producer's perspective from the listener's perspective.
-	- **Mechanism**: The goal-agnostic set $A_c$ is conditioned only on context $c$, containing any grammatically plausible and contextually coherent continuation. The goal-directed set $A_{c,g}$ is conditioned on both context and communicative goal $g$, containing only paraphrases that are semantically equivalent or near-equivalent to the human continuation.
-	- **Design Motivation**: Without distinguishing these sets, the interpretation of surprisal is confounded. Low surprisal relative to all possible continuations reflects listener expectation; low surprisal relative to same-goal paraphrases reflects the speaker choosing an easier-to-produce form to express a goal.
 
-2. **Cost-Sensitive Choice Model**:
-	- **Function**: Converts "why humans say this" into a testable probabilistic choice hypothesis.
-	- **Mechanism**: The production probability of a candidate continuation is exponentially related to its utility, where utility is defined as a constant minus cost. Thus, $P_S(a|c,g)$ is proportional to $\exp(-\alpha C(a;c))$. Lower costs result in a higher probability of selection; as choice noise approaches zero, the human continuation should frequently be rank 1.
-	- **Design Motivation**: This model bridges deterministic rank analysis and probabilistic logistic analysis, answering both "did humans choose the minimum cost item?" and "do cost differences continuously predict selection probability?"
+**1. Two Types of Contextual Alternatives: Separating Producer and Listener Perspectives**
 
-3. **Stratified Sampling of Alternatives**:
-	- **Function**: Prevents generated alternatives from being systematically different from human utterances in length or global UID, which could drive biased conclusions.
-	- **Mechanism**: The authors compared the overall cost distributions of generated vs. human continuations. While surprisal and local UID differences were insignificant, length and global UID showed significant differences. They binned human utterances by length and global UID, then sampled from the generation pool without replacement to align the strata proportions of the alternatives with the human distribution.
-	- **Design Motivation**: If generated sentences are naturally shorter or smoother, the cost comparison is unfair. Stratified sampling ensures results reflect context-specific preferences rather than global distributional differences.
+Previous analyses lacked explicit alternatives. The authors split the candidate set: goal-agnostic sets $A_c$ (conditioned on context $c$) represent listener expectations, while goal-directed sets $A_{c,g}$ (conditioned on $c$ and goal $g$) represent paraphrases with semantic equivalence to the human choice. Lower surprisal in $A_{c,g}$ suggests the speaker chose an efficient form to express a specific meaning.
+
+**2. Cost-Sensitive Choice Model: Probabilistic Hypothesis for Human Choice**
+
+The production probability of a candidate follows an exponential relationship with its utility (utility = constant - cost):
+
+$$P_S(a \mid c, g) \;\propto\; \exp\!\big(-\alpha\, C(a; c)\big)$$
+
+As cost $C$ decreases, selection probability increases. This links deterministic rank analysis with probabilistic logistic analysis.
+
+**3. Stratified Sampling of Alternatives: Preventing Generation Bias**
+
+LMs may inherently favor shorter or smoother sentences. Since generated pools differed significantly from human data in length and global UID, authors used stratified sampling to match the distribution of the generated pool to human data, ensuring comparisons reflect contextual preferences rather than global bias.
 
 ### Loss & Training
-No new models were trained. The experiments rely on existing LMs for cost estimation, alternative generation, and paraphrase judgment.
+No new models were trained. GPT-2 Small provides surprisal. Four cost functions are analyzed:
 
-Surprisal, local UID, global UID, and length are the four classes of cost functions.
+1. **Surprisal**: Negative log-probability of the continuation given context and history.
+2. **Local UID (Uniform Information Density)**: Mean squared difference of surprisal between adjacent words.
+3. **Global UID**: Variance of surprisal across the entire sentence.
+4. **Length**: Word count of the continuation.
 
-Surprisal is the negative log-probability of the continuation given the context and dialogue history.
-
-Local UID measures the mean squared difference in surprisal between adjacent words in a continuation; lower values indicate smoother local information density.
-
-Global UID measures the variance of surprisal across the sentence relative to its mean; lower values indicate more uniform information density throughout the sentence.
-
-Length is the number of words in the continuation, acting as a simple proxy for production effort.
-
-Statistical analyses include the Poisson-binomial rank-1 test, pairwise logistic choice model, one-sided t-tests, and conditional logit analysis.
+Statistical methods include Poisson-binomial rank-1 tests and pairwise logistic choice models.
 
 ## Key Experimental Results
 
 ### Main Results
-In the deterministic cost minimisation analysis, the authors calculated the proportion of times the human continuation was the lowest-cost item among alternatives.
+Deterministic cost minimization results for human continuations across alternatives:
 
 | Cost | Goal-directed rank-1 | Goal-agnostic rank-1 | Uniform baseline |
 |------|----------------------|----------------------|------------------|
@@ -110,80 +111,56 @@ In the deterministic cost minimisation analysis, the authors calculated the prop
 | Global uniformity | 24.1% | 19.3% | 16.5% / 7.2% |
 | Length | 28.6% | 26.6% | 16.5% / 7.2% |
 
-All costs were significantly higher than chance, but the strongest result was surprisal under goal-directed alternatives: 53.4% of human continuations were the minimum surprisal option, approximately 3.24 times the baseline.
-
-The pairwise logistic choice model supported the same conclusion: the negative cost coefficient for surprisal was the most stable, with the effect in the goal-directed condition being about 7 times stronger than in the goal-agnostic condition.
-
-| Cost | Goal-agnostic β | Goal-directed β | Interaction β | Per-item LL |
-|------|-----------------|-----------------|---------------|-------------|
-| Surprisal | -0.304 | -2.073 | -1.769 | -0.615 |
-| Local uniformity | 0.357 | -0.683 | -1.040 | -0.670 |
-| Global uniformity | 0.796 | -0.632 | -1.428 | -0.637 |
-
-A negative coefficient indicates humans are more likely to choose a low-cost continuation; surprisal is most negative under the goal-directed condition and yields the best log-likelihood.
+Surprisal in goal-directed alternatives is the strongest predictor (53.4% rank-1), 3.24x the baseline. The pairwise logistic model shows surprisal is significantly negative, with the effect in goal-directed conditions being ~7x stronger than in goal-agnostic conditions.
 
 ### Ablation Study
-The authors conducted additional analyses on distributional differences and results without stratified sampling to confirm the main conclusion was not an artifact of the sampling strategy.
+T-tests confirm that human continuations have significantly lower surprisal than alternatives:
 
 | Analysis | Goal-directed | Goal-agnostic | Explanation |
 |------|---------------|---------------|------|
-| Surprisal t-test | t=-32.48, p<1e-8 | t=-8.23, p<1e-8 | Human surprisal is significantly lower than alternatives, stronger in goal-directed |
-| Local UID t-test | t=-13.37, p<1e-8 | t=10.57, p=1.00 | UID prediction holds only under goal-directed |
-| Global UID t-test | t=-12.11, p<1e-8 | t=26.48, p=1.00 | Direction reverses under goal-agnostic |
-| Length t-test | t=2.99, p=1.00 | t=-10.72, p<1e-8 | Length acts more like surface pressure in goal-agnostic |
-
-Without stratified sampling, surprisal remains the strongest goal-directed explanatory variable, though absolute proportions decrease.
-
-| Cost | Goal-directed rank-1 | Goal-agnostic rank-1 | Uniform baseline |
-|------|----------------------|----------------------|------------------|
-| Surprisal | 47.6% | 10.7% | 9.3% / 3.3% |
-| Local uniformity | 22.1% | 12.4% | 9.3% / 3.3% |
-| Global uniformity | 13.0% | 13.4% | 9.3% / 3.3% |
-| Length | 22.8% | 22.5% | 9.3% / 3.3% |
+| Surprisal t-test | t=-32.48, p<1e-8 | t=-8.23, p<1e-8 | Human surprisal significantly lower than alts |
+| Local UID t-test | t=-13.37, p<1e-8 | t=10.57, p=1.00 | UID only follows prediction in goal-directed |
+| Global UID t-test | t=-12.11, p<1e-8 | t=26.48, p=1.00 | Direction reverses in goal-agnostic |
 
 ### Key Findings
-- Surprisal relative to goal-directed alternatives has the strongest predictive power, supporting the idea that speakers prefer more conventional, easier-to-produce expressions when achieving the same goal.
-- UID is not ineffective, but its effect is weaker and depends on the alternative set; it even reverses in the goal-agnostic set, suggesting UID is complex and shouldn't be interpreted simply as a unified production goal.
-- Length has some predictive power in the goal-agnostic set but fails to explain why one expression is chosen among paraphrases sharing the same communicative goal.
-- LM-generated alternatives can transform open dialogue production into testable experiments, provided paraphrase filtering and distribution alignment are used to prevent generation bias.
-- This work provides an operational distinction between "speaker cost" and "listener expectation": look at whether the cost operates within a set of same-goal alternatives or across all contextually plausible continuations.
+- Surprisal relative to goal-directed alternatives is the strongest predictor, supporting the idea that speakers prefer conventional, easy-to-generate expressions for a given goal.
+- UID predictability depends on the alternative set and is less stable than surprisal.
+- Length has some predictive power in goal-agnostic sets but fails to explain choice among paraphrases.
+- LM-generated alternatives enable testing open-ended dialogue production if controlled for distribution bias.
 
 ## Highlights & Insights
-- The distinction between goal-directed and goal-agnostic is elegant. While many studies mention "alternatives," they rarely specify if these share a communicative goal; this paper turns that ambiguity into an experimental variable.
-- The paper does not treat the LLM as a cognitive model directly but as a toolchain (generator, estimator, judge). This positioning is robust and facilitates error analysis.
-- The stratified sampling design is crucial. LGMs have their own length and style biases; without stratification, model preferences could easily be misidentified as human production laws.
-- The results are insightful for NLG: to generate natural expressions, systems should optimize costs within a paraphrase set for a fixed communicative goal, rather than just sampling from globally high-probability text.
+- The distinction between goal-directed and goal-agnostic sets resolves ambiguity in previous production research.
+- LLMs are used as a toolchain (generator, estimator, judge) rather than being treated directly as cognitive models.
+- Stratified sampling is essential to prevent global model biases from contaminating contextual findings.
+- Suggests that NLG systems should optimize costs within a paraphrase set rather than just sampling from global high-probability text.
 
 ## Limitations & Future Work
-- The experiment only covers one type of selection point in the English Switchboard corpus (continuations after a matrix verb) and may not generalize to all syntactic choices, languages, or domains.
-- Costs are aggregated over the entire continuation, which might be insensitive to long sentences or incremental planning; tokens closer to the selection point might warrant higher weights.
-- The quality of GPT-4o's generation and filtering affects conclusions, particularly whether goal-directed paraphrases truly maintain the same communicative goal.
-- GPT-2 Small's surprisal may not perfectly align with modern large models or human processing, though its use is traditional in psycholinguistics.
-- The framework does not explicitly model communicative effectiveness, as natural dialogue lacks external success signals for every paraphrase. Integrating a listener interpretation model would be more comprehensive.
+- Focuses only on matrix verb choice points in English Switchboard; generalizability to other languages or syntactic structures is unknown.
+- Costs are aggregate; future work could explore incremental weighting for tokens closer to the choice point.
+- Reliability depends on GPT-4o's ability to maintain semantic equivalence in paraphrasing.
+- Communicative effectiveness is not explicitly modeled due to the difficulty of defining success signals in natural dialogue.
 
 ## Related Work & Insights
-- **vs Uniform Information Density**: UID emphasizes smooth information density, but this paper shows UID's explanatory power depends on the alternative set and is less stable than goal-directed surprisal.
-- **vs Rational Speech Act (RSA) / rate-distortion**: RSA often models choices over small discrete action sets; this paper uses LLMs to generate open alternatives, extending similar ideas to natural dialogue.
-- **vs Traditional Surprisal Comprehension**: Traditional surprisal mostly explains listener processing load; this paper points out that the same metric can have a speaker-oriented interpretation in goal-directed sets.
-- **vs LM Alternative Sampling**: Past work using LM alternatives often predicted listener uncertainty or semantic inference; this paper refines the theoretical interpretation by splitting alternatives into speaker vs. listener categories.
+- **vs UID**: Shows that UID's explanatory power is conditional and weaker than goal-directed surprisal.
+- **vs RSA**: Extends the rational choice framework from discrete small action sets to open dialogue generation via LMs.
+- **vs Comprehension**: Demonstrates that surprisal, traditionally a comprehension metric, has a speaker-oriented interpretation in goal-directed contexts.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The core method of redefining alternatives and systematically comparing costs is a theoretically innovative distinction.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Data cleaning, alternative generation, and statistical testing are complete, though the corpus and selection point scopes are narrow.
-- Writing Quality: ⭐⭐⭐⭐⭐ The argumentation chain is clear, naturally connecting background, models, experiments, and limitations.
-- Value: ⭐⭐⭐⭐☆ Highly insightful for both psycholinguistics and NLG goal design; engineering adoption depends on the quality of alternative generation.
+- Novelty: ⭐⭐⭐⭐☆
+- Experimental Thoroughness: ⭐⭐⭐⭐☆
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2025\] Enhancing Goal-oriented Proactive Dialogue Systems via Consistency Reflection and Correction](../../ACL2025/dialogue/enhancing_goal-oriented_proactive_dialogue_systems_via_consistency_reflection_an.md)
+- [\[ACL 2026\] ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking](reactod_bounded_neuro-symbolic_agentic_nlu_for_zero-shot_dialogue_state_tracking.md)
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
 - [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
-- [\[ACL 2026\] ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking](reactod_bounded_neuro-symbolic_agentic_nlu_for_zero-shot_dialogue_state_tracking.md)
 - [\[ACL 2026\] Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue](frame_of_reference_addressing_the_challenges_of_common_ground_representation_in_.md)
-- [\[ACL 2026\] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue](context-agent_dynamic_discourse_trees_for_non-linear_dialogue.md)
 
 </div>
 

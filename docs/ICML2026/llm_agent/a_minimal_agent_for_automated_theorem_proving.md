@@ -2,92 +2,86 @@
 title: >-
   [Paper Note] A Minimal Agent for Automated Theorem Proving
 description: >-
-  [ICML 2026][LLM Agent][Theorem Proving] AxProverBase is proposed—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"Compiler Feedback + Self-Managed Notebook + Lightweight Tool Search"—it mat…
+  [ICML 2026][LLM Agent][Lean 4] This paper proposes AxProverBase—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"compiler feedback + self-managed notebook + lightweight tool search"—it achieves or exceeds the performance of specialized systems like Hilbert/Seed-Prover using non-fine-tuned frontier LLMs (Claude Opus), w
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Theorem Proving"
-  - "Lean 4"
-  - "Agent Architecture"
-  - "Iterative Refinement"
-  - "Self-managed Memory"
+  - ICML 2026
+  - LLM Agent
+  - Lean 4
 date: 2026-05-08
-content_hash: 5cc791fadde0216c
+content_hash: c93e0ff4da055416
 ---
-
 # A Minimal Agent for Automated Theorem Proving
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.24273](https://arxiv.org/abs/2602.24273)  
 **Code**: https://github.com/Axiomatic-AI/ax-prover-base  
 **Area**: LLM Agent / Formal Mathematics  
-**Keywords**: Theorem Proving, Lean 4, Agent Architecture, Iterative Refinement, Self-managed Memory
+**Keywords**: Theorem Proving, Lean 4, Agent Architecture, Iterative Refinement, Self-Managed Memory
 
 ## TL;DR
-AxProverBase is proposed—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"Compiler Feedback + Self-Managed Notebook + Lightweight Tool Search"—it matches or exceeds specialized systems such as Hilbert/Seed-Prover using non-fine-tuned frontier LLMs (Claude Opus), while reducing costs by 100x.
+This paper proposes AxProverBase—a minimalist Lean 4 theorem-proving agent. By relying on only three components—"compiler feedback + self-managed notebook + lightweight tool search"—it achieves or exceeds the performance of specialized systems like Hilbert/Seed-Prover using non-fine-tuned frontier LLMs (Claude Opus), while reducing costs by 100x.
 
 ## Background & Motivation
 
-**Background**: Significant breakthroughs have occurred in AI theorem proving recently (AlphaProof, Hilbert, Seed-Prover). However, most rely on large-scale synthetic data fine-tuning or reinforcement learning (RL), leading to extreme complexity and cost. Meanwhile, the formal mathematical capabilities of frontier general-purpose LLMs are improving rapidly, yet it remains difficult to decouple the contributions of system design versus model improvements to final performance.
+**Background**: Recent breakthroughs in AI theorem proving (AlphaProof, Hilbert, Seed-Prover) have been significant, but most depend on large-scale synthetic data fine-tuning or reinforcement learning (RL), leading to extremely high complexity and costs. Meanwhile, the formal mathematical capabilities of frontier general-purpose LLMs are improving rapidly, yet it remains difficult to isolate the contributions of system design versus model improvements to final performance.
 
-**Limitations of Prior Work**: (1) Complex architectures are difficult to reproduce; (2) Tight coupling with Lean/Mathlib versions requires retraining for upgrades; (3) GPU clusters or API costs are prohibitive; (4) The individual contributions of iterative feedback, memory, and tool search have not been quantified.
+**Limitations of Prior Work**: (1) Complex architectures are difficult to reproduce; (2) systems are tightly coupled with specific Lean/Mathlib versions, requiring retraining for updates; (3) GPU clusters or API costs are prohibitive; (4) the marginal contributions of iterative feedback, memory, and tool search have not been quantified.
 
-**Key Challenge**: It is widely assumed that strong provers require complex designs, but is this true? Would simplification cause performance to collapse?
+**Key Challenge**: There is a common assumption that a strong prover requires complex design. Is this true? Would simplification lead to a total collapse in performance?
 
-**Goal**: To identify the "minimum necessary combination of modules" to achieve competitive performance with a minimalist architecture and provide a clear ablation baseline.
+**Goal**: Identify the "minimal necessary combination of modules" to achieve competitive performance with a minimalist architecture, while providing a clear ablation baseline.
 
-**Key Insight**: Starting from the ReAct framework, the system is decomposed into three replaceable modules: Proposer, Reviewer, and Memory. These are stacked layer-by-layer from the bottom up to quantify marginal gains.
+**Key Insight**: Starting from the ReAct framework, the system is decomposed into three replaceable modules: Proposer, Reviewer, and Memory. These are stacked bottom-up to quantify marginal benefits.
 
-**Core Idea**: Iterative feedback >> Memory >> Tool search. "Compiler feedback + self-reflective notebook" can already rival the most complex systems; tool search is merely supplementary.
+**Core Idea**: Iterative feedback >> Memory >> Tool Search. The combination of "compiler feedback + self-reflective notebook" is already capable of rivaling the most complex systems; tool search is merely a secondary enhancement.
 
 ## Method
 
 ### Overall Architecture
 
-The core loop:
+The question AxProverBase aims to answer is: Setting aside large-scale fine-tuning and complex search, what are the minimum parts required for a proving agent? The entire system is compressed into a ReAct-style iterative loop containing only three replaceable modules. The Proposer reads the problem, file context, and memory to write a segment of Lean 4 proof. The Reviewer submits this proof to a dual-layer verification process involving the Lean 4 compiler and an LLM reviewer. If the proof is incomplete, the attempt and feedback are written into Memory for the next round, continuing until the proof passes or the iteration budget is exhausted. Each module has several implementations (e.g., the Proposer can be a vanilla LLM or tool-augmented; Memory can be absent, history-based, or self-managed). The paper uses this "bottom-up stacking" design to quantify the marginal value of each component.
 
-```python
-while not_proved and iters < N:
-  proposal = Proposer(theorem, file_context, memory)
-  feedback = Compiler(proposal)
-  if not_proved:
-    memory.update(proposal, feedback, reasoning)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Problem + File Context + Notebook"] --> B["Proposer with restricted tool calls<br/>Max 1 LeanSearch / Tavily per round → Write Lean 4 proof"]
+    B --> C["Reviewer with multi-layer review<br/>Compiler + Residual goal check + LLM review"]
+    C -->|All layers passed| D["Output verified proof"]
+    C -->|Incomplete| E["Self-managed memory<br/>Reflect on round → Update laboratory notebook"]
+    E --> B
 ```
-
-- **Proposer**: A general LLM (Claude Opus) or a ReAct agent, with optional integration of LeanSearch / Tavily tools.
-- **Reviewer**: Dual-layer verification consisting of the Lean 4 compiler and an LLM reviewer to prevent false proofs.
-- **Memory**: Three strategies—No Memory, Historical Memory (previous $N$ full attempts), and Self-Managed Notebook (LLM-maintained refined insights).
 
 ### Key Designs
 
-1. **Proposer with Constrained Tool Use**:
-    - **Function**: Allows the model to retrieve Mathlib theorems and web information while limiting the number of calls to prevent informational noise from dominating the proposal process.
-    - **Mechanism**: Before each proposal, at most one round of parallel calls to LeanSearch (vector retrieval of theorems) and Tavily (web search) is allowed. Web search is permitted because the core difficulty often lies in "writing compilable Lean code" rather than logic.
-    - **Design Motivation**: Tools are helpful but not decisive; excessive calls bloat the context, which degrades quality.
+**1. Proposer with Restricted Tool Calls: Enabling Mathlib lookup without overwhelming reasoning**
 
-2. **Self-Managed Context (Memory)**:
-    - **Function**: The LLM autonomously maintains a "laboratory notebook" recording key technical insights and ways to avoid past errors.
-    - **Mechanism**: After each iteration, the Proposer reflects on the attempt and updates the notebook—retaining important insights while deleting obsolete entries. Subsequent iterations prioritize reading the notebook over the full history. Compared to historical memory, context is reduced by ~50%, costs drop by 20%, and variance is halved.
-    - **Design Motivation**: Mimics how mathematicians work—memorizing key points rather than full logs; allows the LLM to judge information value to avoid hard-coded heuristics.
+The primary challenge for vanilla LLMs in writing Lean code is not mathematical logic, but rather generating code that actually compiles—this requires knowledge of specific lemma names and signatures in Mathlib. Thus, the Proposer triggers at most one parallel round of tool calls before each proposal: LeanSearch uses vector retrieval to fetch relevant theorems, while Tavily performs web searches for background information. Web searching is permitted (though typically restricted in competitions) because the goal here is to find "syntax/library APIs" rather than "answers." However, tool calls are strictly limited to once per round to prevent retrieval noise from overwhelming the model's own reasoning and context.
 
-3. **Multi-layer Review to Prevent False Proofs**:
-    - **Function**: Blocks the use of `sorry`, `admit`, or metaprogramming tricks to fake "proof completion."
-    - **Mechanism**: The first layer uses the Lean compiler to verify that code compiles and lacks `sorry`/`admit`/`suggestion`; the second layer extracts remaining goals to ensure no unclosed subgoals remain; the third layer uses an LLM reviewer to verify the theorem statement has not been tampered with and ensures no circular reasoning due to over-generalization.
-    - **Design Motivation**: Acts as the final line of defense for the Lean system's trustworthiness; the multi-layer design is low-cost but significantly enhances security.
+**2. Multi-layered Reviewer: Blocking "fake proofs" like sorry/admit**
 
-### Loss & Training
-No training; utilizes off-the-shelf LLM inference directly.
+LLMs often resort to shortcuts—using `sorry` or `admit` as placeholders, or utilizing metaprogramming tricks to make code "appear" to compile without proving anything. The Reviewer addresses this with three checkpoints: First, the Lean 4 compiler ensures the code compiles without `sorry`, `admit`, or `suggestion`. Second, residual goals are extracted post-compilation to confirm no unclosed subgoals were bypassed. Third, an LLM reviewer checks if the theorem statement was tampered with or if logical flaws like "circular reasoning via over-generalization" exist. These layers serve as the final line of defense for system reliability.
+
+**3. Self-Managed Context (Memory): Tracking technical insights rather than raw logs**
+
+The memory module determines how failed attempts and feedback are carried into subsequent rounds. While simply appending the last $N$ attempts (History Memory) is straightforward, it leads to context bloat and rising costs. Self-managed memory instead requires the Proposer to reflect after each iteration and maintain a "Laboratory Notebook." This notebook records valuable technical insights and mistakes to avoid, while deleting obsolete entries. Subsequent iterations prioritize this refined notebook over raw history. The decision of what to keep or delete is left entirely to the LLMs' judgment, which proves superior to hard-coded heuristics. Empirically, this reduces context by approximately $50\%$, lowers per-problem costs by $20\%$, and halves the variance of the pass rate.
+
+### A Complete Example
+
+Consider a PutnamBench problem: In Round 1, the Proposer receives the problem, performs a parallel search (retrieving Mathlib lemmas), and writes a proof version. The Reviewer identifies a compiler error regarding a signature mismatch and one unclosed goal. The system records "this lemma's parameter order was incorrect" in the notebook. In Round 2, the Proposer reads the refined notebook (not the full previous context), corrects the lemma usage, fills the missing goal, and resubmits. All three review layers pass, the proof is verified, and the loop terminates early. This linear "write-compile-reflect-rewrite" iteration drives the process without external tree search or fine-tuning.
+
+### Training Strategy
+No training; frontier LLMs are used directly for inference.
 
 ## Key Experimental Results
 
-### Ablation Study (Subset of 100 PutnamBench problems)
+### Ablation Study (PutnamBench 100-problem subset)
 
-| Configuration | Pass@1 (%) | Pass@20 (%) | Avg. Cost | Description |
+| Configuration | Pass@1 (%) | Pass@20 (%) | Average Cost | Description |
 |------|-----------|-----------|--------|------|
-| Single-shot LLM (Claude Opus) | 2.0 | 5.0 | – | Baseline |
-| + Iterative Feedback (1 retry) | 8.5 | 18.0 | $0.30/prob | **Largest single improvement** |
-| + Historical Memory (5x) | 15.2 | 31.0 | $0.80/prob | Effective but context bloats |
-| + Self-Managed Memory (5x) | 16.3 | 33.2 | $0.64/prob | **Optimal trade-off** |
+| Base LLM (Claude Opus) | 2.0 | 5.0 | – | Baseline |
+| + Iterative Feedback (1 retry) | 8.5 | 18.0 | $0.30/prob | **Single largest gain** |
+| + Historical Memory (5 iterations) | 15.2 | 31.0 | $0.80/prob | Effective but bloats context |
+| + Self-Managed Memory (5 iterations) | 16.3 | 33.2 | $0.64/prob | **Optimal tradeoff** |
 | + Tool Search | 17.8 | 35.5 | $0.72/prob | Marginal gain ~8% |
 
 ### Main Results (Full system, 50 iterations)
@@ -102,44 +96,44 @@ No training; utilizes off-the-shelf LLM inference directly.
 
 ### Main Results (Opus 32k, 50 iterations)
 
-| Benchmark | AxProverBase | Prev. SOTA | Remarks |
+| Benchmark | AxProverBase | Prev. SOTA | Note |
 |------|-------------|-----------|------|
 | PutnamBench (pass@1) | **54.7%** | Hilbert 55.9% | 100x lower cost |
 | FATE-M (pass@1) | **98.0%** | REAL-Prover 56.7% | Significant lead |
 | FATE-H (pass@1) | **66.0%** | REAL-Prover 0% | First to >60% |
-| FATE-X (pass@1) | 24.0% | Seed-Prover 33% | Extremely difficult |
-| LeanCat (pass@1) | **59.0%** | Opus single-shot 8.25% | Significant iterative gain |
+| FATE-X (pass@1) | 24.0% | Seed-Prover 33% | Extremely high difficulty |
+| LeanCat (pass@1) | **59.0%** | Opus Zero-shot 8.25% | Significant iteration gain |
 
 ### Key Findings
-- **Iterative Feedback is Decisive**: Simply adding a feedback loop increased pass@1 from 2% to 8.5% (a 4.25x increase), exceeding the cumulative effect of other modifications.
-- **Self-Managed Memory Beats Historical Memory**: It offers better performance and higher stability at the same cost, demonstrating that "curated memory > full memory."
-- **Model Capabilities are Amplified by the Framework**: Opus with 32k thinking outperformed the 10k version by 7.6 percentage points in pass@50, showing that stronger models gain more from this framework.
-- **Tool Search has Limited Value**: In competitive math environments, web search provides almost no help; LeanSearch helps slightly but is not critical.
-- **Cross-Domain Generalization**: The minimalist architecture is applicable across domains, from competitive math to abstract algebra (FATE-M) and category theory (LeanCat).
+- **Iterative feedback is decisive**: Simply adding a feedback loop increased Pass@1 from 2% to 8.5% (a 4.25x increase), exceeding the cumulative effect of other changes.
+- **Self-managed memory outperforms historical memory**: It offers better performance and stability at a lower cost, demonstrating the value of "curated memory over total memory."
+- **Framework amplifies model capability**: Opus 32k thinking achieved a Pass@50 that was 7.6 percentage points higher than 10k thinking; stronger models gain more from this framework.
+- **Limited value of tool search**: In competition environments, web search provides minimal help, while LeanSearch is useful but not critical.
+- **Cross-domain generalization**: The simple architecture generalizes across competition math, abstract algebra (FATE-M), and category theory (LeanCat).
 
 ## Highlights & Insights
-- **The Power of Minimalism**: Proof generation does not require large-scale training or complex search; "compiler feedback + self-reflection + strong models" can rival the SOTA.
-- **Effectiveness of Self-Reflection**: Allowing the LLM to maintain its own notebook outperforms fixed heuristic IR, highlighting the value of "metacognition" in AI systems.
-- **Rigorous Ablation Design**: Layer-by-layer stacking from the ground up provides clear quantification of each layer's contribution, offering direction for future improvements.
-- **New Perspective on Cost-Performance**: The cost of $12.6/problem compared to the hundreds or thousands of dollars for Hilbert significantly lowers the barrier to entry.
+- **The power of minimalism**: Theorem proving does not strictly necessitate large-scale training or complex search; "compiler feedback + self-reflection + strong models" can rival SOTA.
+- **Efficacy of self-reflection**: Allowing the LLM to maintain its own notebook is superior to fixed heuristic information retrieval, highlighting the value of "metacognition" in AI systems.
+- **Rigorous ablation design**: Bottom-up stacking with clear quantification of each layer's contribution provides a roadmap for future improvements.
+- **New cost-performance perspective**: A cost of $\$12.6$/problem compared to hundreds or thousands for Hilbert significantly lowers the barrier to entry.
 
 ## Limitations & Future Work
-- The 24% score on the hardest dataset, FATE-X, indicates a bottleneck in deep mathematical intuition.
-- Only one model family (Claude) was evaluated; performance across different architectures was not tested.
-- The system is Lean 4 specific; its portability to Coq/Isabelle needs verification.
-- Self-managed memory depends on the model's introspective capabilities and may fail with weaker models.
-- Future Directions: Enhancing hybrid semantic+symbolic retrieval; integrating specialized geometric/algebraic solvers; adopting a two-stage "sketch-then-formalize" paradigm.
+- Performance of 24% on FATE-X suggests the system still faces bottlenecks regarding deep mathematical intuition.
+- Evaluation was limited to a single model family (Claude); performance on other architectures was not extensively tested.
+- The system is Lean 4 specific; transferability to Coq/Isabelle requires verification.
+- Self-managed memory relies on the model's capacity for introspection, which may fail for weaker models.
+- Future directions: enhancing hybrid semantic+symbolic retrieval; integrating specialized solvers; and adopting a two-stage "sketch-to-formalization" paradigm.
 
 ## Related Work & Insights
-- **vs. Seed-Prover / Goedel-Prover**: These rely on large-scale synthetic data and RL. This paper demonstrates that general-purpose LLMs can be competitive.
-- **vs. AlphaProof**: AlphaProof uses tree search and complex heuristics; this paper uses a linear iterative process that is concise yet competitive.
-- **Insights**: The paradigm of "Iterative Feedback + Self-Reflection + Light Tools" can be transferred to other complex reasoning tasks such as program synthesis and scientific verification.
+- **vs. Seed-Prover / Goedel-Prover**: These rely on large-scale synthetic data and RL; this paper demonstrates that general-purpose LLMs can also be competitive.
+- **vs. AlphaProof**: AlphaProof utilizes tree search and complex heuristics; this paper uses a linear iterative program that is simpler yet remains competitive.
+- **Insight**: The paradigm of iterative feedback + self-reflection + light tools can be transferred to other complex reasoning tasks such as program synthesis and scientific verification.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Individual modules are not highly novel, but the experimental conclusion that "minimalism is powerful" is itself insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 5 benchmarks, multiple models, and detailed ablations.
+- Novelty: ⭐⭐⭐⭐☆ Individual modules are not highly novel, but the "minimalism is strength" conclusion is insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across 5 benchmarks, multiple models, and detailed ablations.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear architecture, complete pseudocode, and precise presentation of results.
-- Value: ⭐⭐⭐⭐⭐ Lowers the barrier for formal mathematics AI, significantly impacting the open-source community.
+- Value: ⭐⭐⭐⭐⭐ Lowers the barrier for AI in formal mathematics, significantly impacting the open-source community.
 
 <!-- RELATED:START -->
 
@@ -148,10 +142,10 @@ No training; utilizes off-the-shelf LLM inference directly.
 ## Related Papers
 
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
+- [\[ACL 2025\] Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](../../ACL2025/llm_agent/theorem-of-thought_a_multi-agent_framework_for_abductive_deductive_and_inductive.md)
+- [\[ACL 2025\] An Empirical Study on LLM-based Agents for Automated Bug Fixing](../../ACL2025/llm_agent/an_empirical_study_on_llm-based_agents_for_automated_bug_fixing.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](../../NeurIPS2025/llm_agent/zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
-- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
-- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
+- [\[ACL 2025\] Auto-TA: Towards Scalable Automated Thematic Analysis (TA) via Multi-Agent Large Language Models with Reinforcement Learning](../../ACL2025/llm_agent/auto-ta_towards_scalable_automated_thematic_analysis_ta_via_multi-agent_large_la.md)
 
 </div>
 

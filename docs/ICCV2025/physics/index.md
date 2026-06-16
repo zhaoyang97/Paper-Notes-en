@@ -21,7 +21,7 @@ item_total: 2
 
 **📹 ICCV2025** · **2** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (26)](../../ICML2026/physics/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/physics/index.md) · [🔬 ICLR2026 (17)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/physics/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/physics/index.md) · [🧪 ICML2026 (26)](../../ICML2026/physics/index.md) · [🔬 ICLR2026 (17)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/physics/index.md)
 
 **[JPEG Processing Neural Operator for Backward-Compatible Coding](jpeg_processing_neural_operator_for_backward-compatible_coding.md)**
 

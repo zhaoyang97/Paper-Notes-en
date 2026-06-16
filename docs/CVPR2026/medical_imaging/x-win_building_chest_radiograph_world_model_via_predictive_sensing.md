@@ -2,131 +2,133 @@
 title: >-
   [Paper Note] X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 description: >-
-  [CVPR 2026][Medical Imaging][World model] X-WIN is a chest radiograph world model that, for the first time, incorporates 3D CT spatial knowledge into CXR representation learning. By learning to predict 2D projections of…
+  [CVPR 2026][Medical Imaging][World Models] The X-WIN chest radiograph world model is proposed, integrating 3D CT spatial knowledge into CXR representation learning for the first time. By learning to predict 2D projections of CT scans at various rotation angles, the model internalizes 3D anatomical structures. Combined with affinity-guided contrastive alignment
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "World model"
-  - "chest radiograph representation learning"
-  - "CT knowledge distillation"
-  - "contrastive learning"
-  - "domain adaptation"
+  - CVPR 2026
+  - Medical Imaging
+  - World Models
 date: 2026-05-08
-content_hash: a1ed0d1cab0bcbc2
+content_hash: 69864dd40d59a20e
 ---
-
 # X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.14918](https://arxiv.org/abs/2511.14918)  
 **Code**: None  
-**Area**: Medical Imaging
-**Keywords**: World model, chest radiograph representation learning, CT knowledge distillation, contrastive learning, domain adaptation
+**Area**: Medical Imaging  
+**Keywords**: World Model, Chest Radiograph Representation Learning, CT Knowledge Distillation, Contrastive Learning, Domain Adaptation  
 
 ## TL;DR
 
-X-WIN is a chest radiograph world model that, for the first time, incorporates 3D CT spatial knowledge into CXR representation learning. By learning to predict 2D projections of CT volumes at varying rotation angles, the model internalizes 3D anatomical structure. Combined with affinity-guided contrastive alignment and structure-preserving domain adaptation, X-WIN achieves state-of-the-art linear probing performance across 6 CXR benchmarks.
+The X-WIN chest radiograph world model is proposed, integrating 3D CT spatial knowledge into CXR representation learning for the first time. By learning to predict 2D projections of CT scans at various rotation angles, the model internalizes 3D anatomical structures. Combined with affinity-guided contrastive alignment and structure-preserving domain adaptation, it achieves SOTA results via linear probing across 6 CXR benchmarks.
 
 ## Background & Motivation
 
-- **Inherent limitations of CXR**: As 2D projection images, CXRs suffer from structural superimposition and cannot directly capture 3D anatomical information, limiting diagnostic capability.
-- **CT vs. CXR trade-off**: CT provides 3D structural information but is costly, radiation-intensive, and less accessible, while CXR is safe and affordable but informationally limited.
-- **Radiologist insight**: Radiologists viewing frontal/lateral CXRs can cognitively reconstruct a 3D thoracic model to assist in diagnosing occluded structures.
-- **Limitations of existing world models**: CheXWorld only learns 2D local structure and global geometry, lacking 3D spatial awareness.
-- **Mechanism**: If a model can accurately predict X-ray projections of a CT volume at arbitrary rotation angles, it has internalized meaningful 3D anatomical structure.
+- **Inherent Limitations of CXR**: 2D projection images suffer from overlapping structures, making it difficult to capture 3D anatomical information directly and limiting diagnostic capabilities.
+- **Trade-off between CT and CXR**: CT provides 3D structure but is costly, involves high radiation, and has lower accessibility; CXR is safe and inexpensive but information-limited.
+- **Radiologist Inspiration**: Radiologists can mentally reconstruct 3D thoracic models when viewing frontal/lateral CXRs to assist in diagnosing occluded structures.
+- **Limitations of Prior Work**: CheXWorld only learns 2D local structures and global geometry, lacking 3D spatial cognition.
+- **Core Idea**: If a model can accurately predict X-ray projections of a CT at any rotation angle, it implies the model has internalized meaningful 3D anatomical structures.
 
 ## Method
 
-### Overall Architecture (JEPA Variant)
+### Overall Architecture
 
-1. **Context encoder** $f_\theta$: Takes standard frontal/lateral CXRs as input.
-2. **EMA encoder** $f_{\theta'}$: Takes multiple target projections; updated via exponential moving average.
-3. **View predictor** $g_v$: Predicts latent representations of new projections conditioned on action.
-4. **Masked predictor** $g_m$: Reconstructs masked patch tokens.
+X-WIN aims to empower a model trained only on 2D chest radiographs with 3D spatial cognition, inspired by the capability of radiologists to reconstruct 3D thoracic structures from frontal/lateral views. It is a JEPA variant: the context encoder $f_\theta$ processes standard frontal/lateral CXR, the EMA encoder $f_{\theta'}$ processes multiple target projections (updated via exponential moving average), the view predictor $g_v$ predicts latent representations of new projections conditioned on rotation actions, and the mask predictor $g_m$ reconstructs occluded patch tokens. The core hypothesis is that accurate prediction of CT projections at arbitrary rotation angles requires the internalization of 3D anatomical structures.
 
-### Action Design
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Frontal/Lateral CXR +<br/>Multi-angle CT Projections"] --> B["Context Encoder f_θ<br/>Encodes CXR Context"]
+    A --> C["EMA Encoder f_θ'<br/>Encodes Target Projections (EMA Update)"]
+    B --> D["Action-Conditioned Predictive Sensing<br/>Rotation Action → View Predictor g_v"]
+    D --> E["Predicted Projection Latent"]
+    C --> F["Target Projection Latent"]
+    E --> G["Affinity-Guided Contrastive Alignment<br/>Soft Contrastive + Masked Reconstruction g_m"]
+    F --> G
+    G --> H["Structure-Preserving Domain Adaptation<br/>Domain Classifier Aligns Sim↔Real"]
+    H --> I["3D-Aware CXR Representation"]
+```
 
-The action $a_i = k \cdot \Delta\phi$ defines the yaw rotation angle of the X-ray source relative to the input position, constrained to $[-90°, 90°]$, with $N=8$ projections sampled randomly. The optimal step size is $\Delta\phi = 3°$ (corresponding to 60 latent projections).
+### Key Designs
 
-### Affinity-Guided Contrastive Alignment
+**1. Action-Conditioned Predictive Sensing: Forcing 3D Internalization via Rotation Prediction**
 
-Predicted representation: $z_i^{\text{patch}} = g_v(\text{Linear}(a_i) \oplus (f_\theta(u_{\text{context}}) + \text{PE}))$
+Instead of directly regressing 3D features, the model treats "rotating the X-ray source around the axis" as an action to predict corresponding projections. The action $a_i = k \cdot \Delta\phi$ defines the yaw rotation angle of the source relative to the input, constrained within $[-90°, 90°]$. In each step, $N=8$ projections are sampled with an optimal step $\Delta\phi = 3°$ (equivalent to 60 potential projections). The predicted representation is given by $z_i^{\text{patch}} = g_v(\text{Linear}(a_i) \oplus (f_\theta(u_{\text{context}}) + \text{PE}))$. To correctly predict projections from various angles, the model must establish a consistent 3D representation in the latent space.
 
-Standard InfoNCE uses one-hot labels for hard alignment, but different projections of the same CT exhibit rich anatomical correspondences. An affinity matrix $A$ is introduced for soft regularization:
+**2. Affinity-Guided Contrastive Alignment: Soft Alignment for Multi-view Projections**
+
+Standard InfoNCE uses one-hot labels to strictly distinguish positive and negative samples. However, different projections of the same CT share rich anatomical correspondences, and hard alignment might erase this structure. This work introduces an affinity matrix $A$ for soft regularization:
 
 $$A_{ij} = \frac{\exp(\text{sim}(t_i, t_j)/\tilde{\tau})}{\sum_l \exp(\text{sim}(t_i, t_l)/\tilde{\tau})}$$
 
-$$\mathcal{L}_{\text{align}} = \mathcal{L}_{\text{InfoNCE}} + \lambda_{\text{affinity}} \mathcal{L}_{\text{affinity}}$$
+The alignment loss is defined as $\mathcal{L}_{\text{align}} = \mathcal{L}_{\text{InfoNCE}} + \lambda_{\text{affinity}} \mathcal{L}_{\text{affinity}}$. While maintaining discriminative power, it gently pulls related representations together based on the actual geometric similarity between projections.
 
-### Structure-Preserving Domain Adaptation
+**3. Structure-Preserving Domain Adaptation: Bridging the "Simulated vs. Real" Gap**
 
-Simulated CXRs (generated from CT projections) exhibit a domain gap relative to real CXRs. The following strategies are adopted:
-
-1. **Masked image modeling (MIM)**: Applied to both real and simulated CXRs to encode local and contextual features.
-2. **Domain classifier** $f_c$: Learns to distinguish between real and simulated domain representations.
-3. **Domain adaptation loss**:
+Simulated CXRs rendered from CT (via DiffDRR) differ statistically from real CXRs. Direct training biases representations toward the simulated domain. This method applies Masked Image Modeling (MIM) on both real and simulated CXRs to encode local/contextual features and employs a domain classifier $f_c$ to distinguish between domains. The domain adaptation loss:
 
 $$\mathcal{L}_{\text{domain}} = \frac{1}{N} \sum_{i=1}^{N} \|z_i^{\text{patch}} - t_i^{\text{patch}}\|_2^2 - \frac{1}{N} \sum_{i=1}^{N} \log f_c(z_i^{\text{patch}})$$
 
-This encourages projection predictions to preserve structural information while being statistically aligned with the real domain.
+ensures that projection predictions preserve structure (first term) while statistically approaching the real domain (second term via adversarial training). This increases cross-domain cosine similarity from 0.845 to 0.967, which is critical for real-world application.
 
-### Overall Loss
+### Loss & Training
 
-$$\mathcal{L}_{\text{overall}} = \mathcal{L}_{\text{align}} + \lambda_{\text{MIM}} \mathcal{L}_{\text{MIM}} + \lambda_{\text{domain}} \mathcal{L}_{\text{domain}} + \lambda_{\text{cls}} \mathcal{L}_{\text{cls}}$$
+The overall loss integrates four components: $\mathcal{L}_{\text{overall}} = \mathcal{L}_{\text{align}} + \lambda_{\text{MIM}} \mathcal{L}_{\text{MIM}} + \lambda_{\text{domain}} \mathcal{L}_{\text{domain}} + \lambda_{\text{cls}} \mathcal{L}_{\text{cls}}$, representing contrastive alignment, masked reconstruction, domain adaptation, and classification objectives, balanced by their respective $\lambda$ weights.
 
 ## Key Experimental Results
 
-### Main Results: Linear Probing (AUROC)
+### Main Results (Linear Probing AUROC)
 
-| Model | Pretraining Data | VinDr | CheXpert | NIH-CXR | RSNA | JSRT | Avg. |
-|-------|-----------------|-------|----------|---------|------|------|------|
+| Model | Pre-training Data | VinDr | CheXpert | NIH-CXR | RSNA | JSRT | Average |
+|------|-----------|-------|----------|---------|------|------|------|
 | DINOv2 | LVD-142M | 0.795 | 0.776 | 0.711 | 0.798 | 0.559 | 0.728 |
 | CheXFound | 987K CXR | 0.869 | 0.876 | 0.829 | 0.872 | 0.846 | 0.858 |
 | Ark+ | 704K CXR | 0.906 | 0.876 | 0.831 | 0.893 | 0.807 | 0.863 |
 | CheXWorld | 448K CXR | 0.903 | 0.871 | 0.833 | 0.824 | 0.791 | 0.844 |
 | **X-WIN (ViT-L)** | **372K CXR+32K CT** | **0.925** | **0.908** | **0.843** | **0.929** | **0.857** | **0.892** |
 
-X-WIN achieves a mean AUROC of 0.892, surpassing all CXR foundation models and vision-language models.
+X-WIN achieves an average AUROC of 0.892, outperforming all existing CXR foundation models and vision-language models.
 
-### Few-Shot Fine-Tuning (COVIDx, AUROC)
+### Few-shot Fine-tuning (COVIDx, AUROC)
 
 | Model | 4-shot | 8-shot | 16-shot | All |
-|-------|--------|--------|---------|-----|
+|------|--------|--------|---------|-----|
 | CheXFound | 0.823 | 0.883 | 0.897 | 0.977 |
 | CheXWorld | 0.843 | 0.893 | 0.902 | 0.981 |
 | **X-WIN** | **0.868** | **0.924** | **0.939** | **0.993** |
 
-### 3D CT Reconstruction
+### 3D CT Reconstruction Capability
 
-3D CT volumes are reconstructed via a VQ-GAN decoder combined with the FDK algorithm:
-- 2D projection: PSNR 30.23 dB, SSIM 0.888
-- 3D reconstruction: PSNR 27.87 dB, SSIM 0.789
+Using a VQ-GAN decoder and the FDK algorithm to reconstruct 3D CT volumes:
+- 2D Projections: PSNR 30.23 dB, SSIM 0.888
+- 3D Reconstruction: PSNR 27.87 dB, SSIM 0.789
 
 ### Ablation Study
 
 - $\mathcal{L}_{\text{InfoNCE}}$ alone establishes a strong baseline.
-- Combining $\mathcal{L}_{\text{MIM}}$ + $\mathcal{L}_{\text{InfoNCE}}$ yields substantial improvements.
+- The combination of $\mathcal{L}_{\text{MIM}} + \mathcal{L}_{\text{InfoNCE}}$ provides a significant boost.
 - Domain adaptation improves cosine similarity from 0.845 to 0.967.
-- Direct rotation outperforms stepwise rotation; yaw-only rotation outperforms full 3D Euler angle rotation.
+- Direct rotation outperforms incremental rotation; yaw rotation is more effective than full 3D Euler angle rotation.
 
 ## Highlights & Insights
 
-1. **Breakthrough in medical imaging world models**: X-WIN is the first to incorporate 3D CT spatial knowledge into a 2D CXR world model, representing a paradigm shift from 2D to 3D reasoning.
-2. **Elegant predictive sensing design**: 3D structure is internalized by predicting rotated projections rather than directly regressing 3D features.
-3. **Affinity-guided contrastive learning**: Natural correlations among different projections of the same CT are leveraged for soft contrastive supervision, which is more principled than hard InfoNCE.
-4. **Validated 3D reconstruction**: The model's ability to render projections from CXRs and reconstruct CT volumes confirms that genuine 3D knowledge has been acquired.
+1. **Breakthrough in Medical World Models**: First to integrate 3D CT spatial knowledge into a 2D CXR world model, achieving a "leap from 2D to 3D."
+2. **Elegant Predictive Sensing**: Internalizes 3D structures by predicting rotated projections rather than directly regressing 3D features.
+3. **Affinity Guidance**: Leverages natural correlations between different projections of the same CT for soft contrastive learning, which is more anatomically sound than hard InfoNCE.
+4. **Validation of 3D Reconstruction**: The ability to render projections from CXR and reconstruct CT volumes proves the model has successfully acquired 3D knowledge.
 
 ## Limitations & Future Work
 
-- Relies on DiffDRR for simulated projection generation; the simulation-to-real domain gap remains a bottleneck.
-- Only yaw rotation is utilized, leaving pitch and roll dimensions unexplored.
-- 3D reconstruction results exhibit blurring with notable loss of local detail.
-- Training requires 8×A100 40 GB GPUs for 100 epochs, incurring substantial computational cost.
+- Reliance on DiffDRR for generating simulated projections; the sim-to-real domain gap remains a bottleneck.
+- Only yaw rotation is utilized, neglecting potential information from pitch and roll dimensions.
+- 3D reconstruction results exhibit blurriness, with significant loss of local details.
+- High computational cost: Training requires 8×A100 40GB GPUs for 100 epochs.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Novelty | ⭐⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
@@ -139,10 +141,10 @@ X-WIN achieves a mean AUROC of 0.892, surpassing all CXR foundation models and v
 ## Related Papers
 
 - [\[CVPR 2026\] MRI Contrast Enhancement Kinetics World Model](mri_contrast_enhancement_kinetics_world_model.md)
+- [\[CVPR 2026\] Building Robust Vision Encoders for Cross-Dataset Evaluation in Immunofluorescent Microscopy](building_robust_vision_encoders_for_cross-dataset_evaluation_in_immunofluorescen.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
-- [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
-- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
+- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
+- [\[CVPR 2026\] Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration](beyond_the_static-world_lifelong_learning_for_all-in-one_medical_image_restorati.md)
 
 </div>
 

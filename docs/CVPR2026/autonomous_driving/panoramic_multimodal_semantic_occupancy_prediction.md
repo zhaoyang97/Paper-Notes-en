@@ -2,143 +2,119 @@
 title: >-
   [Paper Note] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots
 description: >-
-  [CVPR2026][Autonomous Driving][Panoramic occupancy prediction] This paper introduces PanoMMOcc, the first panoramic multimodal semantic occupancy prediction dataset for quadruped robots…
+  [CVPR 2026][Autonomous Driving][Paper Note] This work constructs PanoMMOcc, the first panoramic multimodal (RGB + Thermal + Polarized + LiDAR) semantic occupancy dataset for quadruped robots. It proposes the VoxelHound framework, which achieves robust 3D occupancy prediction through Vertical Jitter Compensation (VJC) and Multimodal Information Prompt Fusion (MIP
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "Panoramic occupancy prediction"
-  - "multimodal fusion"
-  - "quadruped robots"
-  - "semantic occupancy"
-  - "BEV perception"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 18cfef7a638f421b
+content_hash: 8e4f24d1ed82e0e2
 ---
-
 # Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots
 
-**Conference**: CVPR2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.13108](https://arxiv.org/abs/2603.13108)  
-**Code**: [PanoMMOcc](https://github.com/) (coming soon)  
-**Area**: Autonomous Driving
-**Keywords**: Panoramic occupancy prediction, multimodal fusion, quadruped robots, semantic occupancy, BEV perception
+**Code**: [https://github.com/SXDR/PanoMMOcc](https://github.com/SXDR/PanoMMOcc)  
+**Area**: Autonomous Driving  
+**Keywords**: Panoramic occupancy prediction, quadruped robots, multimodal fusion, vertical jitter compensation, BEV perception  
 
 ## TL;DR
-
-This paper introduces PanoMMOcc, the first panoramic multimodal semantic occupancy prediction dataset for quadruped robots, along with the VoxelHound framework. By incorporating a Vertical Jitter Compensation (VJC) module and a Multimodal Information Prompt Fusion (MIPF) module, VoxelHound achieves 23.34% mIoU under a four-modality setup (panoramic RGB + thermal + polarization + LiDAR), surpassing existing methods by +4.16%.
+This work constructs PanoMMOcc, the first panoramic multimodal (RGB + Thermal + Polarized + LiDAR) semantic occupancy dataset for quadruped robots. It proposes the VoxelHound framework, which achieves robust 3D occupancy prediction through Vertical Jitter Compensation (VJC) and Multimodal Information Prompt Fusion (MIPF) modules, reaching 23.34% mIoU (+4.16%).
 
 ## Background & Motivation
 
-1. **Panoramic perception requirements**: Panoramic images provide 360° blind-spot-free visual coverage, which is critical for mobile agents in dynamic unstructured environments. However, existing occupancy prediction methods are primarily designed for multi-camera narrow-FoV setups in autonomous driving.
-2. **Challenges of quadruped platforms**: Compared to wheeled platforms, quadruped robots inherently suffer from low viewpoints, frequent self-occlusion, and strong ego-motion caused by gait dynamics—challenges that existing methods do not address.
-3. **Limitations of RGB-only sensing**: Relying solely on the RGB modality yields insufficient robustness under illumination changes, low-texture regions, and long-range perception scenarios, necessitating multimodal sensor fusion.
-4. **Dataset gap**: Existing panoramic datasets focus on 2D visual tasks and lack 3D occupancy annotations; existing occupancy benchmarks target autonomous driving and cover neither panoramic imaging nor quadruped platforms.
-5. **Insufficient fusion strategies**: Common multimodal fusion approaches (simple concatenation or addition) treat heterogeneous sensor contributions indiscriminately, diluting geometric consistency and introducing cross-modal interference.
-6. **Gait-induced jitter**: Quadruped locomotion causes vertical body oscillations, leading to spatial misalignment of captured image features and degrading the stability of BEV transformation.
+**Background**: 3D semantic occupancy prediction serves as a critical intermediate representation connecting perception and motion planning by unifying the modeling of free, occupied, and unknown spaces. Panoramic cameras offer 360° visual coverage without blind spots, making them ideal for mobile robots. However, existing occupancy prediction methods and datasets are almost exclusively designed for wheeled autonomous driving scenarios using multi-view pinhole cameras and vehicle-mounted LiDAR. Quadruped robots face three unique challenges: (1) low sensor viewpoints and severe self-occlusion; (2) intense vertical jitter caused by gait motion, leading to image blur and feature misalignment; (3) unreliability of RGB-only solutions under varying lighting, low-texture areas, and long-range scenes. Consequently, a joint panoramic imaging and multimodal perception solution is required, but such datasets and methods did not previously exist.
+
+**Goal**: How to achieve accurate 3D semantic occupancy prediction on a quadruped robot platform by utilizing panoramic cameras and multiple complementary sensors (Thermal, Polarized, LiDAR) to overcome gait jitter and single-modality limitations? This involves addressing three sub-problems: (1) the lack of a panoramic multimodal occupancy dataset for quadrupeds; (2) the disruption of spatial consistency in BEV transformations caused by gait-induced vertical jitter; and (3) effective fusion strategies for heterogeneous modalities.
 
 ## Method
 
-### Overall Architecture: VoxelHound
+### Overall Architecture
 
-The model takes four modalities as input: panoramic RGB image $\mathcal{I}^{pal}$, thermal image $\mathcal{I}^{th}$, polarization image $\mathcal{I}^{pol}$, and LiDAR point cloud $\mathcal{P}$. Each modality is processed by an independent encoder for feature extraction, projected into a unified BEV space for fusion, and the final output is a 3D semantic occupancy prediction $\mathbf{O} \in \mathbb{R}^{X \times Y \times Z}$.
+VoxelHound aims to address 3D semantic occupancy prediction under the triple constraints of low viewpoints, gait jitter, and single-modality instability. It simultaneously receives panoramic RGB (from a PAL camera, 360°×70° FoV), thermal, and polarized images, along with LiDAR point clouds. The camera branch extracts multi-scale features for the three image types using ResNet-18 and aggregates them via FPN. After clearing gait offsets through the Vertical Jitter Compensation (VJC) module, it performs 2D-to-BEV projection. The LiDAR branch voxelizes the point cloud and compresses it into the same BEV plane using sparse 3D convolutions. The four-way BEV features are then aggregated via Multimodal Information Prompt Fusion (MIPF) and processed by a SECOND-FPN encoder for contextual modeling. Finally, the occupancy head reshapes the BEV channel dimension into the vertical dimension to output a 64×64×16 3D occupancy grid (12 semantic classes + free class). VJC and MIPF are the core modules.
 
-### Multimodal Fusion Network
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Panoramic RGB + Thermal + Polarized"] --> CAM["Camera Branch<br/>ResNet-18 Multi-scale Features + FPN Aggregation"]
+    CAM --> VJC["Vertical Jitter Compensation VJC<br/>Width Average → 1D Conv Regression Δh → Resampling Alignment"]
+    VJC --> CB["2D→BEV Projection"]
+    LID["LiDAR Point Cloud"] --> LB["LiDAR Branch<br/>Voxelization + Sparse 3D Conv → BEV Plane"]
+    CB --> MIPF["Multimodal Information Prompt Fusion MIPF<br/>LiDAR for Geometry, Image as Semantic Prompt via Gated Modulation"]
+    LB --> MIPF
+    MIPF --> ENC["SECOND-FPN Encoder<br/>BEV Context Modeling"]
+    ENC --> HEAD["Occupancy Head<br/>Channel Reshape to Vertical"]
+    HEAD --> OUT["3D Semantic Occupancy<br/>64×64×16, 12 Semantic Classes + Free"]
+```
 
-- **Camera branch**: Each of the three image modalities is processed by a ResNet-18 backbone to extract multi-scale features, aggregated via FPN, and then transformed to BEV features $\mathbf{F}_c^m \in \mathbb{R}^{C_m \times H \times W}$ via a 2D-to-BEV view transformation.
-- **LiDAR branch**: The point cloud is voxelized and processed by sparse 3D convolutions (stride=8) to extract hierarchical geometric features, which are collapsed into BEV features $\mathbf{F}_l \in \mathbb{R}^{C_l \times H \times W}$.
-- **Fusion branch**: The fused features are enhanced by a SECOND-FPN BEV encoder for multi-scale spatial representation. The occupancy head reshapes BEV channels into vertical bins, producing a 64×64×16 voxel prediction.
+### Key Designs
 
-### Vertical Jitter Compensation Module (VJC)
+**1. Vertical Jitter Compensation (VJC): Subtracting Gait Jitter from Features**
 
-Inserted between the image encoder and the BEV view transformation:
-1. Mean pooling along the width dimension to obtain vertical structure $\mathbf{F}_v \in \mathbb{R}^{C \times H}$.
-2. Two-layer Conv1D + ReLU to encode vertical features.
-3. Adaptive average pooling + linear layer to predict the global vertical offset $\Delta h$.
-4. Normalization into grid coordinate offsets to construct a displacement sampling grid.
-5. Bilinear grid sampling to obtain the compensated feature $\mathbf{F}_{comp}$.
+As quadruped robots oscillate vertically along the axis during steps, captured images contain systematic vertical offsets, which cause feature misalignment during BEV transformation. VJC is inserted between the image encoder and BEV transformation to specifically estimate and counteract this offset. It averages the feature map along the width dimension to obtain a feature $\mathbf{F}_v \in \mathbb{R}^{C \times H}$ that retains only vertical structures. After encoding this with two levels of 1D convolution and ReLU, a global vertical offset $\Delta h$ is regressed via adaptive average pooling and a linear layer. Finally, a sampling grid with $\Delta h$ is used for bilinear interpolation to realign the features. 
 
-### Multimodal Information Prompt Fusion Module (MIPF)
+This module introduces negligible parameters and memory overhead (+0.04M at 64 hidden channels) but cleans physical noise before it enters the BEV space, effectively providing "stabilized" features for all subsequent modules.
 
-Adopts an asymmetric fusion principle of "geometry-dominant, semantics-supplementary":
-1. Each modality is projected to a shared embedding space via 1×1 convolution.
-2. Global average pooling + MLP over image modalities generates compact semantic prompts $\mathbf{p}_m$.
-3. LiDAR BEV features serve as Query, while modality prompts serve as Key/Value in prompt attention.
-4. Residual modulation: $\mathbf{F}_f = \tilde{\mathbf{F}}_l + \sigma(\gamma(\mathbf{F}_{attn})) \odot \tilde{\mathbf{F}}_l$, ensuring geometric structure remains the primary representational basis.
+**2. Multimodal Information Prompt Fusion (MIPF): LiDAR as Geometric Lead, Image as Semantic Supplement**
+
+Concatenation-based or addition-based fusion treats all modalities equally. However, LiDAR provides a stable 3D geometric skeleton, while image modalities contribute primarily semantic information. Equal treatment can allow noisier images to contaminate the geometry. MIPF adopts an asymmetric "Geometry Lead + Semantic Supplement" approach: each modality is projected into a shared embedding space using 1×1 convolutions. For each image modality, BEV features are compressed into a compact semantic prompt vector $\mathbf{p}_m$ via global average pooling and an MLP. Attention interaction then uses LiDAR BEV features as the query, and semantic prompts as the key/value. The results are residually modulated via sigmoid gating, meaning the prompts adaptively re-weight the LiDAR features rather than overriding the geometric structure.
+
+Since the prompts consist of only 3 tokens, this is significantly more efficient than dense spatial cross-attention across the whole BEV. Furthermore, the residual modulation ensures that even if image branches are unreliable (e.g., at night or in low-texture areas), the geometric backbone remains stable.
 
 ### Loss & Training
 
-$$\mathcal{L}_{occ} = \mathcal{L}_{ce} + \mathcal{L}_{ls} + \mathcal{L}_{scal}^{geo} + \mathcal{L}_{scal}^{sem}$$
-
-Comprising cross-entropy loss, Lovász-Softmax loss, and geometric/semantic affinity losses.
+A comprehensive loss is employed: cross-entropy $\mathcal{L}_{ce}$ + Lovász-Softmax $\mathcal{L}_{ls}$ (to handle class imbalance) + geometric affinity loss $\mathcal{L}_{scal}^{geo}$ + semantic affinity loss $\mathcal{L}_{scal}^{sem}$ (to encourage consistency between adjacent voxels). The AdamW optimizer is used with a learning rate of 4e-4 and weight decay of 0.01, trained for 48 epochs on 4×RTX 3090.
 
 ## Key Experimental Results
 
-### Dataset: PanoMMOcc
-
-- Unitree Go2 quadruped robot equipped with a panoramic camera (360°×70° FoV, 2048×2048), MID360 LiDAR, thermal camera (640×512), and polarization camera (1224×1024).
-- 54 sequences @10Hz, 40 seconds per sequence, totaling 21,600 frames; 42 sequences annotated with 12 semantic classes.
-- Voxel space: 64×64×16, resolution 0.4m, spatial range [-12.8, 12.8]m (xy) × [-2.4, 4.0]m (z).
-- 30 sequences for training / 12 for testing, covering six scene types: campus, urban, residential, green space, rural, and forest.
-
-### Main Results (mIoU %)
-
 | Method | Modality | mIoU |
-|--------|----------|------|
+|------|------|------|
 | MonoScene | C | 8.94 |
 | EFFOcc-C | C | 4.47 |
 | EFFOcc-L | L | 18.77 |
-| EFFOcc-T | C+L | 19.18 |
-| C-CONet | C | 3.79 |
-| M-CONet | C+L | 4.68 |
-| **VoxelHound** | C | 5.79 |
-| **VoxelHound** | C+T+P | 6.14 |
-| **VoxelHound** | C+L | 22.87 |
+| EFFOcc-T (C+L) | C+L | 19.18 |
 | **VoxelHound** | **C+L+T+P** | **23.34** |
 
-- Full-modality VoxelHound outperforms the strongest competing method EFFOcc-T by **+4.16% mIoU**.
-- Compared to camera-only MonoScene: **+14.40% mIoU**.
-- Thermal and polarization modalities yield notable nighttime improvements: nighttime mIoU increases from 3.52% (C) to 4.07% (C+T+P).
+| Lighting | Modality | mIoU |
+|----------|------|------|
+| Day | C+L | 22.56 |
+| Day | C+L+T+P | 23.34 |
+| Night | C+L | 19.17 |
+| Night | C+L+T+P | 18.68 |
 
 ### Ablation Study
-
-| VJC | MIPF | mIoU |
-|-----|------|------|
-| ✗ | ✗ | 22.74 |
-| ✓ | ✗ | 22.92 |
-| ✗ | ✓ | 23.14 |
-| ✓ | ✓ | **23.34** |
-
-- VJC contributes +0.18%, MIPF contributes +0.40%, and their combination yields an additional +0.20%.
-- Optimal hidden channel dimension for VJC: $C_{hd}=64$; optimal MIPF settings: $C_{pd}=8$, $C_{nh}=8$.
+- Baseline (without VJC or MIPF): 22.74 mIoU
+- +VJC: 22.92 (+0.18), verifying jitter compensation effectiveness.
+- +MIPF: 23.14 (+0.40), showing higher contribution from the fusion module.
+- Both: 23.34 (+0.60), showing modules are complementary.
+- VJC Hidden Channel: 64 is optimal (23.34) with minimal parameter increase (0.04M).
+- MIPF: Optimal with prompt channel 8 and attention heads 8 (23.34).
 
 ## Highlights & Insights
-
-1. **Pioneering contribution**: The first panoramic multimodal occupancy prediction dataset and framework for quadruped robots, filling the gap at the intersection of panoramic occupancy and legged platforms.
-2. **Elegant VJC design**: The module estimates vertical offsets via lightweight 1D convolutions for grid-sampling-based compensation, with minimal parameter overhead (+0.04M).
-3. **Asymmetric MIPF fusion**: Image modalities are compressed into compact prompts to avoid dense spatial cross-attention; the "geometry-dominant, semantics-supplementary" design is well aligned with sensor characteristics.
-4. **Four-modality sensing**: Integrating panoramic RGB, thermal, polarization, and LiDAR—four complementary modalities—with polarization imaging introduced to occupancy prediction for the first time.
+- **Novelty**: The first panoramic multimodal occupancy dataset for quadruped robots, filling a major gap.
+- **Efficient VJC Design**: Uses 1D convolution to estimate global vertical offset for jitter compensation; simple logic with near-zero computational overhead.
+- **Asymmetric Fusion Philosophy via MIPF**: Compressing image modalities into compact prompts rather than dense cross-attention preserves LiDAR geometry while introducing semantic enhancement. This "Geometry Lead, Semantic Supplement" approach is transferable to other multimodal fusion scenarios.
+- **Four Sensing Modalities**: Inclusion of non-standard modalities such as thermal (robustness in low light) and polarization (revealing material and subtle target clues) is noteworthy.
+- **Open-source Tools**: Provides LiDAR-camera calibration tools alongside the dataset.
 
 ## Limitations & Future Work
-
-1. **Low absolute performance**: The best mIoU of 23.34% remains limited, with some categories completely undetected (bicycle=0.00%, pedestrian=0.00%), indicating severe deficiency in small-object perception.
-2. **Marginal VJC gain**: VJC alone contributes only +0.18%, suggesting limited compensation for gait-induced jitter; more sophisticated temporal modeling may be required.
-3. **Small dataset scale**: The 21.6k frames are considerably fewer than driving datasets such as nuScenes, and generalization capability remains to be validated.
-4. **Evaluation on proprietary dataset only**: VoxelHound is not validated on existing public occupancy benchmarks, leaving cross-dataset generalization unknown.
-5. **Nighttime degradation with full modality**: Nighttime C+L+T+P (18.68%) underperforms C+L (19.17%), suggesting that thermal and polarization modalities introduce noise under certain conditions.
+- Limited dataset scale (21.6k frames), significantly smaller than large-scale driving datasets (nuScenes 40k, SemanticKITTI 43k), making large-scale model training difficult.
+- Voxel resolution (0.4m) is relatively coarse, unsuitable for task-specific manipulation like grasping that requires fine geometry.
+- Nighttime performance with full modalities (18.68 mIoU) is unexpectedly lower than daytime C+L configuration (22.56), suggesting that the contribution of thermal and polarized data at night requires better fusion strategies.
+- Covers only outdoor scenes; lacks indoor environments.
+- VJC only compensates for global vertical offset and does not model rotation or local deformations.
+- Primarily validated on a custom dataset; lacks generalization testing on other occupancy benchmarks.
 
 ## Related Work & Insights
-
-- **vs. MonoScene / EFFOcc / CONet**: These methods are designed for autonomous driving with pinhole multi-camera setups, and are ill-suited for panoramic imaging on quadruped platforms. VoxelHound substantially outperforms them in the quadruped scenario under full-modality fusion.
-- **vs. QuadOcc**: QuadOcc is also a panoramic occupancy dataset for quadruped platforms, but is limited to RGB-only, 6 semantic classes, and 64×64×8 voxels. PanoMMOcc extends to four modalities, 12 classes, and 64×64×16 voxels.
-- **Existing multimodal fusion**: Most approaches apply simple concatenation or symmetric fusion of Camera+LiDAR. The asymmetric prompt attention in MIPF more effectively exploits cross-modal complementarity.
-- **Panoramic perception**: Prior work in this domain primarily addresses 2D semantic segmentation or BEV mapping. This paper is the first to extend panoramic vision to 3D occupancy prediction.
+- **vs EFFOcc**: The closest existing baseline. VoxelHound outperforms EFFOcc-T by 4.16 mIoU in the C+L configuration, with a wider gap when thermal and polarized modalities are added. Key differences lie in the asymmetric fusion of MIPF and jitter compensation in VJC.
+- **vs MonoScene**: As a monocular occupancy method, MonoScene achieves only 8.94 mIoU in panoramic scenes, indicating that pure vision is insufficient for quadruped platforms (low viewpoints, jitter, lighting changes).
+- **vs QuadOcc**: Also aimed at quadrupeds but uses only panoramic RGB with fewer classes (6). PanoMMOcc has significant advantages in modality diversity and annotation completeness.
+- **Prompt-based Fusion**: The design of "prompt-style fusion" in MIPF can be extended to other multimodal tasks, replacing dense feature interactions with lightweight prompts.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ (First quadruped panoramic multimodal occupancy dataset and framework; VJC and MIPF designs are well-motivated)
-- Experimental Thoroughness: ⭐⭐⭐ (Complete ablations, but low absolute performance and absence of cross-dataset experiments)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure with rich figures and tables)
-- Value: ⭐⭐⭐⭐ (Opens a new direction for panoramic occupancy on quadruped robots; dataset and benchmark hold long-term research value)
+- Novelty: ⭐⭐⭐⭐ First panoramic multimodal occupancy dataset and framework for quadrupeds.
+- Experimental Thoroughness: ⭐⭐⭐ Validated only on a custom dataset, lacking cross-dataset experiments.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with sufficient dataset details and appendices.
+- Value: ⭐⭐⭐⭐ Open-sourced dataset and calibration tools are highly valuable to the community.
 
 <!-- RELATED:START -->
 
@@ -147,10 +123,10 @@ Comprising cross-entropy loss, Lovász-Softmax loss, and geometric/semantic affi
 ## Related Papers
 
 - [\[CVPR 2026\] OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera](oneocc_semantic_occupancy_prediction_for_legged_robots_with_a_single_panoramic_c.md)
-- [\[AAAI 2026\] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction](../../AAAI2026/autonomous_driving/visiononly_gaussian_splatting_for_collaborative_semantic_occupancy_p.md)
-- [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 - [\[CVPR 2026\] Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization](learning_geometric_and_photometric_features_from_p.md)
 - [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
+- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
 
 </div>
 

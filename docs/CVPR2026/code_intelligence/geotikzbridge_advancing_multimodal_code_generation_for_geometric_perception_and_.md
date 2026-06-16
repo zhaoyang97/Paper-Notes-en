@@ -2,88 +2,95 @@
 title: >-
   [Paper Note] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning
 description: >-
-  [CVPR 2026][Code Intelligence][Geometric Perception] GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset…
+  [CVPR 2026][Code Intelligence][Paper Note] GeoTikzBridge constructs the largest 2.5M image-TikZ code dataset and the first auxiliary line instruction dataset. It trains a code generation model capable of precise geometric reconstruction, which serves as a plug-and-play module to enhance the geometric reasoning capabilities of any MLLM/LLM.
 tags:
-  - "CVPR 2026"
-  - "Code Intelligence"
-  - "Geometric Perception"
-  - "TikZ Code Generation"
-  - "Multimodal Reasoning"
-  - "Auxiliary Line Generation"
-  - "Image-to-Code"
+  - CVPR 2026
+  - Code Intelligence
 date: 2026-05-08
-content_hash: 937af20fbc362f67
+content_hash: 3fa0b2e3cf96a0ae
 ---
-
 # GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22687](https://arxiv.org/abs/2603.22687)  
-**Code**: Available (public)  
-**Area**: Code Intelligence
+**Code**: Available (Public)  
+**Area**: Code Intelligence  
 **Keywords**: Geometric Perception, TikZ Code Generation, Multimodal Reasoning, Auxiliary Line Generation, Image-to-Code
 
 ## TL;DR
-GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset, trains a code generation model capable of accurately reconstructing geometric figures, and serves as a plug-and-play module to enhance the geometric reasoning capabilities of arbitrary MLLMs/LLMs.
+GeoTikzBridge constructs the largest 2.5M image-TikZ code dataset and the first auxiliary line instruction dataset. It trains a code generation model capable of precise geometric reconstruction, which serves as a plug-and-play module to enhance the geometric reasoning capabilities of any MLLM/LLM.
 
 ## Background & Motivation
 
-**Background**: Multimodal large language models (MLLMs) have made substantial progress in cross-modal perception and reasoning, yet geometric problems remain challenging. Such problems require integrating fine-grained visual perception with structured symbolic reasoning. Existing image-to-code methods focus primarily on Web UI→HTML/CSS or chart→Python conversions, with little attention to geometric content. In mathematical reasoning, prevailing approaches rely predominantly on textual reasoning and overlook the need for relational propagation in geometric visual reasoning.
+**Background**: Multimodal Large Language Models (MLLMs) have made significant strides in cross-modal perception and reasoning but still face challenges with geometric problems. Geometry requires integrating fine-grained visual perception with structured symbolic reasoning. Existing Image-to-Code methods focus primarily on Web UI to HTML/CSS or charts to Python, rarely touching upon geometric content. In mathematical reasoning, current approaches rely heavily on textual reasoning, neglecting the need for relationship transfer in geometric visual reasoning.
 
-**Limitations of Prior Work**: MLLMs exhibit limited capability in local geometric perception, struggling to precisely parse segment relationships, angle magnitudes, shape constraints, and other fine-grained visual details. This is mainly due to: (1) the absence of large-scale geometric image–code datasets (DaTikZ contains only 145k samples with limited geometric coverage); and (2) insufficient modeling of subtle geometric variations.
+**Limitations of Prior Work**: MLLMs exhibit limited performance in local geometric perception, struggling to accurately parse fine-grained visual details such as segment relationships, angle sizes, and shape constraints. This is primarily due to: (1) a lack of large-scale geometric image-code datasets (DaTikZ contains only 145k samples with limited geometric coverage); and (2) insufficient modeling of subtle geometric variations by existing models.
 
-**Key Challenge**: Geometric reasoning demands precise symbolic representations of figure structures, yet existing data and methods cannot provide adequate geometric perception training signals for MLLMs. TikZ code is more suitable for geometric reasoning than SVG because its syntax inherently records the logical steps and dependencies of geometric construction.
+**Key Challenge**: On one hand, geometric reasoning requires precise symbolic representations of figure structures. On the other hand, existing data and methods cannot provide sufficient geometric perception training signals for MLLMs. TikZ code is better suited for geometric reasoning than SVG because its syntax inherently records the logical steps and dependencies of geometric construction.
 
-**Goal**: (1) How to construct a sufficiently large geometric image–TikZ code dataset for model training? (2) How to direct the model's attention toward local geometric details rather than generating code in a coarse-grained manner? (3) How to transfer geometric perception capabilities to downstream reasoning tasks?
+**Goal**: (1) How to construct a sufficiently large geometric image-TikZ code dataset for model training? (2) How to ensure the model focuses on local geometric details rather than generating generic code? (3) How to transfer geometric perception capabilities to downstream reasoning tasks?
 
-**Key Insight**: The authors propose an iterative self-refinement strategy for dataset scaling, a localized geometric transformation strategy for fine-grained perception enhancement, and instruction-guided auxiliary line generation to empower reasoning.
+**Key Insight**: The authors propose an iterative self-refinement strategy to expand the dataset, a local geometric transformation strategy to enhance detail perception, and instruction-guided auxiliary line generation to empower reasoning.
 
-**Core Idea**: By combining iterative data expansion with localized code transformation to construct a 2.5M-scale geometric TikZ dataset, the work trains a geometric code generation model that can serve as a plug-and-play reasoning module.
+**Core Idea**: By building a 2.5M-scale geometric TikZ dataset through iterative data expansion and local code transformations, a geometric code generation model is trained to serve as a plug-and-play reasoning module.
 
 ## Method
 
 ### Overall Architecture
-The GeoTikzBridge framework consists of three components: (1) an iterative self-refinement framework for constructing the GeoTikz-Base dataset and training the GeoTikzBridge-Base model; (2) an instruction-guided GeoTikz-Instruct dataset and GeoTikzBridge-Instruct model; and (3) a training-free plug-and-play visual reasoning pipeline. The input is a geometric image; the output is compilable TikZ code.
+The core problem GeoTikzBridge aims to solve is accurately "translating" a geometric figure into compilable TikZ code, then using this symbolic code to support downstream geometric reasoning. The pipeline consists of three phases: first, a self-bootstrapping data flywheel expands 145k seed data to 2.5M to train the base perception model, GeoTikzBridge-Base. Next, this model is fine-tuned with auxiliary line instruction data to create GeoTikzBridge-Instruct, enabling it to add auxiliary lines to images based on instructions. Finally, these models are integrated as training-free, plug-and-play perception frontends to any MLLM/LLM, replacing "image viewing" with "code reading" to boost geometric reasoning. The input remains a geometric image, and the output is compilable TikZ code.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Geometric Image<br/>Seed DaTikZ 145k + Codeless candidates from 9 datasets"] --> FW
+    subgraph FW["Iterative Self-Refinement Data Flywheel"]
+        direction TB
+        B["Current Model Predicts TikZ Code"] --> C["Render back to image, calculate CLIP score with original"]
+        C -->|"≥ τ=0.8 Accepted as reliable"| D["Local Geometric Transformation<br/>Randomly delete ≤40% code lines; keep if compilable"]
+        D --> E["Retrain model on merged set"]
+        E -->|"Iterate 4 rounds"| B
+    end
+    FW --> F["GeoTikzBridge-Base<br/>2.5M Geo-TikZ Data"]
+    D -.Reuse code deletion difference.-> G["Instruction-guided Auxiliary Line Gen<br/>Annotated as (Instruction, Image w/o lines, Full code) triplets 419k"]
+    G --> H["SFT to obtain GeoTikzBridge-Instruct"]
+    F --> I["Plug-and-play Frontend: Image → TikZ Code"]
+    H --> I
+    I --> J["Connect to any MLLM/LLM for Geometric Reasoning"]
+```
 
 ### Key Designs
 
-1. **Iterative Self-Refinement Data Construction**:
+**1. Iterative Self-Refinement Data Flywheel: Using Model Output to Scale to 2.5M Data**
 
-    - **Function**: Scales from 145k seed samples to a 2.5M large-scale geometric TikZ dataset.
-    - **Mechanism**: DaTikZ serves as the seed dataset $\mathcal{D}_0$ to train an initial model $M_0$. Candidate images are collected from 9 public geometric datasets. Each iteration proceeds in three steps: (a) the current model predicts TikZ code for candidate images; rendered images are compared against originals using CLIP score, and samples exceeding threshold $\tau=0.8$ are added to the self-refined set $\mathcal{D}_k^R$; (b) localized code transformations are applied to reliable samples to obtain the augmented set $\mathcal{D}_k^T$; (c) the model is retrained on the merged data $\mathcal{D}_k = \mathcal{D}_{k-1} \cup \mathcal{D}_{k-1}^R \cup \mathcal{D}_{k-1}^T$. After 4 iterations, 2.5M samples are obtained.
-    - **Design Motivation**: Geometric image–code data is scarce and direct annotation is costly. Through a bootstrapping cycle of "generate → filter → train," the model grows stronger each round and can annotate more data, forming a virtuous cycle.
+Paired geometric image-code data is extremely scarce (the largest, DaTikZ, has only 145k samples with few geometric cases), and manual annotation of TikZ code is prohibitively expensive. The authors utilize a self-bootstrapping approach: training an initial model $M_0$ on the DaTikZ seed set $\mathcal{D}_0$, then collecting a large number of codeless candidate images from 9 public geometric datasets. Each iteration follows three steps: first, the current model predicts TikZ code for candidates. The rendered image is compared to the original via CLIP score. Only samples with a similarity exceeding $\tau=0.8$ are considered reliable and added to the self-refinement set $\mathcal{D}_k^R$. Next, local code transformations are applied to these samples to create an augmented set $\mathcal{D}_k^T$. Finally, the model is retrained on the merged set $\mathcal{D}_k = \mathcal{D}_{k-1} \cup \mathcal{D}_{k-1}^R \cup \mathcal{D}_{k-1}^T$. The hard threshold for the CLIP score is critical to prevent the flywheel from diverging by filtering out noisy self-generated samples, ensuring only high-confidence samples where the "render-back matches the original" enter training.
 
-2. **Localized Geometric Transformation Strategy**:
+**2. Local Geometric Transformation: Forcing the Model to Focus on Every Geometric Element**
 
-    - **Function**: Enhances the model's perception of fine-grained geometric details.
-    - **Mechanism**: Consists of code transformation and image transformation. Code transformation randomly deletes 1 to $n$ lines from TikZ code (no more than 40%), retaining compilable modified code $\tilde{C}$ and its rendered image $\tilde{I}$ as new training pairs. This forces the model to learn the structural semantics of code rather than memorizing specific text sequences, acting as code noise injection to improve generalization and robustness. This strategy reduces the code repetition prediction rate by 15%.
-    - **Design Motivation**: Complex images often cause models to overlook fine-grained geometric details, resulting in omission or hallucination of critical code lines. Localized editing compels the model to attend to the presence or absence of each geometric element.
+In complex images, models often "slack off," missing or hallucinating key segments or angles because they tend to memorize textual patterns of code rather than parsing the existence of each geometric element. Local code transformation addresses this by randomly deleting 1 to $n$ lines of TikZ code (up to 40%). If the remaining code is still compilable, the partial code $\tilde{C}$ and its newly rendered image $\tilde{I}$ are kept as a new sample. This injects structured noise into the code: if the image changes, the code must follow. The model can no longer rely on memorizing fixed sequences and must learn the precise mapping of "line in image ↔ line in code." This strategy reduced the code repetition rate by 15% and improved generalization and compilation robustness.
 
-3. **Instruction-Guided Auxiliary Line Generation (GeoTikz-Instruct)**:
+**3. Instruction-guided Auxiliary Line Generation: Reversing "Code Deletion" as Supervision for "Adding Lines"**
 
-    - **Function**: Enables the model to add auxiliary lines to geometric figures according to instructions, providing intermediate steps for reasoning.
-    - **Mechanism**: Code transformations are applied to samples in $\mathcal{D}_K$ to obtain transformed images; Qwen2.5-VL-72B annotates instructions $Q$ describing the auxiliary line changes; Doubao performs VLM-based filtering to ensure quality. The final training triplets are (instruction $Q'$, transformed image $\tilde{I}'$, original code $C'$), yielding 419k training samples. GeoTikzBridge-Instruct is obtained via SFT on top of GeoTikzBridge-Base.
-    - **Design Motivation**: Many geometric problems require auxiliary lines to solve, yet existing MLLMs cannot generate accurate auxiliary lines. Code transformation naturally produces before-and-after contrasts of "adding/removing geometric elements," enabling automatic construction of auxiliary line training data.
+Many geometric problems are unsolvable without auxiliary lines, but current MLLMs often generate inaccurate ones, and data specifically annotated for auxiliary lines is nearly non-existent. The authors cleverly reuse the code transformation from Design 2: by deleting lines from samples in $\mathcal{D}_K$, the transition from the transformed image back to the original naturally represents the process of "adding geometric elements." Qwen2.5-VL-72B is used to annotate these differences as natural language instructions $Q$, and Doubao is used as a VLM filter to remove low-quality samples. This results in 419k triplets (Instruction $Q'$, Transformed Image $\tilde{I}'$, Original Code $C'$). The model learns to "view a figure missing lines, read an instruction, and complete the full code with auxiliary lines." GeoTikzBridge-Instruct is derived from SFT on the Base model.
 
 ### Loss & Training
-A standard causal autoregressive modeling objective is used: $\mathcal{L}_{\text{gen}} = -\sum_i \log P_M(c_i | I, c_{<i})$. The 8B model undergoes full-parameter SFT (learning rate 4e-7); the 38B model is fine-tuned with LoRA (learning rate 1e-4). DeepSpeed ZeRO-3 and Flash Attention are employed. Training runs on 8× H100 GPUs for approximately 96 GPU hours (8B) and 488 GPU hours (38B). Greedy decoding (temperature=0) is used at inference.
+The training target is standard causal autoregressive generation: $\mathcal{L}_{\text{gen}} = -\sum_i \log P_M(c_i | I, c_{<i})$, maximizing the log-likelihood of the next token given the image and previous code prefix. The 8B model underwent full-parameter SFT (LR 4e-7), while the 38B model used LoRA (LR 1e-4). Training utilized DeepSpeed ZeRO-3 and Flash Attention. On 8 $\times$ H100 GPUs, 8B required ~96 GPU hours and 38B required ~488 GPU hours. Greedy decoding (temperature=0) was used during inference to ensure code determinism.
 
 ## Key Experimental Results
 
 ### Main Results — Image-to-TikZ Generation
 
 | Method | DaTikZ CLIP-S↑ | DaTikZ FID↓ | MathVista-GPS CLIP-S↑ | EDU CLIP-S↑ |
-|--------|----------------|-------------|----------------------|------------|
+|:---|:---:|:---:|:---:|:---:|
 | Qwen2.5-VL-72B | 0.795 | 49.8 | 0.858 | 0.781 |
 | InternVL3-78B | 0.747 | 62.7 | 0.860 | 0.801 |
 | FigCodifier-8B | 0.785 | 45.8 | 0.884 | 0.675 |
 | **GeoTikzBridge-Base-8B** | **0.804** | 43.6 | **0.895** | **0.795** |
 | **GeoTikzBridge-Base-38B** | **0.813** | **39.7** | **0.915** | **0.821** |
 
-### Downstream Mathematical Reasoning Improvement
+### Downstream Mathematical Reasoning Performance
 
 | Baseline VLM | MathVista-GPS | GAOKAO-MM-Math |
-|--------------|--------------|----------------|
+|:---|:---:|:---:|
 | GLM4.5-V-106B | 0.745 | 0.613 |
 | +GeoTikzBridge-Base | **0.764** (+1.9%) | **0.663** (+5.0%) |
 | Skywork-OR1-32B (LLM)+TikZ | **0.861** | 0.663 |
@@ -92,39 +99,39 @@ A standard causal autoregressive modeling objective is used: $\mathcal{L}_{\text
 ### Ablation Study
 
 | Configuration | MathVista-GPS Accuracy |
-|---------------|----------------------|
-| InternVL3.5-38B baseline | 0.688 |
-| + TikZ code + auxiliary line image | 0.697 |
-| + auxiliary line image + auxiliary line code | 0.707 |
-| + TikZ code + auxiliary line image + code | **0.736** |
+|:---|:---:|
+| InternVL3.5-38B Baseline | 0.688 |
+| + TikZ Code + Aux. Image | 0.697 |
+| + Aux. Image + Aux. Code | 0.707 |
+| + TikZ Code + Aux. Image + Code | **0.736** |
 
 ### Key Findings
-- The combination of LLM + TikZ code generally outperforms VLM direct image observation, attributed to catastrophic forgetting of language reasoning capabilities in VLMs during visual-language alignment training.
-- Auxiliary lines in TikZ code form are more effective than their rendered image form, indicating that symbolic representations are more critical for reasoning.
-- The localized code transformation strategy yields significant improvements in both compilation success rate and CLIP score, with the code repetition rate reduced by 15%.
-- GeoTikzBridge surpasses GPT-5.0 on geometric code perception.
+- The combination of LLM + TikZ code generally outperforms VLMs viewing images directly, likely because catastrophic forgetting during vision-language alignment in VLMs impairs linguistic reasoning.
+- Auxiliary lines represented as TikZ code are more effective than rendered images, suggesting symbolic representations are more critical for reasoning.
+- Local code transformation significantly improves compilation success rates and CLIP scores, while reducing code repetition by 15%.
+- GeoTikzBridge surpasses GPT-5.0 in geometric code perception.
 
 ## Highlights & Insights
-- The dual use of "code transformation" is particularly elegant: it simultaneously serves as data augmentation to improve model robustness and as an automatic construction method for auxiliary line training data—one operation solving two problems.
-- The finding that LLM + TikZ code outperforms VLM direct image observation is highly instructive. It suggests a new multimodal reasoning paradigm: rather than having the reasoning model directly observe images, a dedicated perception model first converts images into executable symbolic representations, which are then passed to a pure language reasoning model—effectively achieving a decoupled "perception–reasoning" architecture.
-- The data flywheel effect of iterative self-refinement is worth emulating: small initial data → weak model training → weak model annotates more data → filtering and augmentation → stronger model training.
+- Using "code transformation" for two distinct purposes is ingenious: as data augmentation to improve robustness, and as an automated method for generating auxiliary line data.
+- The discovery that LLM + TikZ code outperforms direct VLM perception is insightful. It suggests a new multimodal reasoning paradigm: decouple "perception" from "reasoning" by using a specialized perception model to convert images into executable symbolic representations before passing them to a pure language reasoning model.
+- The effect of the iterative self-refinement flywheel is noteworthy: small initial data → weak model → auto-labeling more data → filtering + augmentation → stronger model.
 
 ## Limitations & Future Work
-- The current approach is limited to geometric figures and has not been extended to technical diagrams such as circuit diagrams or engineering drawings.
-- Auxiliary line generation relies on a VLM to first determine whether auxiliary lines are needed; incorrect judgments cause the entire pipeline to fail.
-- The dataset primarily covers planar and analytic geometry, with limited coverage of solid geometry and topological figures.
-- Although the TikZ code compilation success rate exceeds 95%, the remaining ~5% failure rate may affect practical deployment.
+- Currently limited to geometric figures; not yet extended to technical diagrams like circuits or engineering blueprints.
+- Auxiliary line generation depends on the VLM correctly identifying the need for lines; an incorrect initial judgment collapses the pipeline.
+- Coverage is primarily focused on Euclidean and analytical geometry, with less representation of 3D geometry and topology.
+- While TikZ compilation success reaches 95%+, the ~5% failure rate may impact real-world deployment.
 
 ## Related Work & Insights
-- **vs. FigCodifier**: Both are image-to-TikZ models, but FigCodifier has only 8B parameters and limited training data. GeoTikzBridge comprehensively surpasses it through 16× more data and the localized transformation strategy.
-- **vs. DaTikZ dataset**: DaTikZ is the largest existing image–TikZ dataset (145k) but has limited geometric samples. GeoTikz-Base reaches 2.5M samples with a dedicated focus on the geometric domain.
-- **vs. Mathematical reasoning models (R1 series)**: These models excel at textual reasoning but cannot directly process geometric images. GeoTikzBridge "bridges" LLM reasoning capabilities and visual perception by converting images into TikZ code.
+- **vs FigCodifier**: Both are image-to-TikZ models, but FigCodifier uses only 8B parameters and limited data. GeoTikzBridge outperforms it using 16x the data and local transformation strategies.
+- **vs DaTikZ Dataset**: DaTikZ is the previous largest (145k) but lacks geometric depth. GeoTikz-Base reaches 2.5M and specializes in geometry.
+- **vs Mathematical Reasoning Models (R1 Series)**: These models excel in textual reasoning but cannot process geometric images directly. GeoTikzBridge "bridges" their reasoning capabilities with visual perception by converting images to TikZ code.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The complete pipeline from geometric perception → TikZ code → reasoning enhancement is novel in design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers image-to-code generation, downstream reasoning, and auxiliary line generation across multiple dimensions, with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive framework diagrams.
-- Value: ⭐⭐⭐⭐⭐ The 2.5M dataset and plug-and-play reasoning module offer substantial practical value for the geometric reasoning community.
+- Novelty: ⭐⭐⭐⭐ Innovative pipeline from geometric perception to TikZ code to reasoning enhancement.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across image-to-code, downstream reasoning, and auxiliary line generation with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive architecture diagrams.
+- Value: ⭐⭐⭐⭐⭐ The 2.5M dataset and plug-and-play module provide significant utility to the field of geometric reasoning.
 
 <!-- RELATED:START -->
 
@@ -134,9 +141,9 @@ A standard causal autoregressive modeling objective is used: $\mathcal{L}_{\text
 
 - [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
 - [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](../../ACL2026/code_intelligence/omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
-- [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](../../ACL2026/code_intelligence/storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
+- [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
+- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/code_intelligence/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference
 description: >-
-  [CVPR2026][Multimodal VLM][VLM token compression] This paper proposes DUET-VLM, a dual-stage visual token compression framework. Stage 1 operates within the visual encoder: dominant tokens are selected via V2V self-atten…
+  [CVPR 2026][Multimodal VLM][Paper Note] The DUET-VLM framework introduces a dual-stage visual token compression approach: the first stage selects dominant tokens within the vision encoder via V2V self-attention and aggregates the remaining tokens into contextual tokens using attention-guided local clustering; the second stage performs hierarchical pruning of
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "VLM token compression"
-  - "visual token redundancy"
-  - "dual-stage token pruning"
-  - "attention-guided aggregation"
-  - "hierarchical pruning"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: e3b3fdd697fba2e5
+content_hash: 34835f6b49a5482f
 ---
-
 # DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference
 
 **Conference**: CVPR2026  
@@ -24,106 +18,123 @@ content_hash: e3b3fdd697fba2e5
 **Keywords**: VLM token compression, visual token redundancy, dual-stage token pruning, attention-guided aggregation, hierarchical pruning
 
 ## TL;DR
-This paper proposes DUET-VLM, a dual-stage visual token compression framework. Stage 1 operates within the visual encoder: dominant tokens are selected via V2V self-attention, and remaining tokens are merged into contextual tokens through attention-guided local cluster aggregation. Stage 2 operates within the LLM, progressively pruning visual tokens via T2V cross-attention across multiple layers. On LLaVA-1.5-7B, DUET-VLM achieves 67% token compression while retaining 99%+ accuracy, and 89% compression while retaining 97%+ accuracy, with a 31% reduction in training time.
+The DUET-VLM framework introduces a dual-stage visual token compression approach: the first stage selects dominant tokens within the vision encoder via V2V self-attention and aggregates the remaining tokens into contextual tokens using attention-guided local clustering; the second stage performs hierarchical pruning of visual tokens within the LLM using T2V cross-attention. On LLaVA-1.5-7B, it achieves 67% token reduction while maintaining 99%+ accuracy, 89% reduction with 97%+ accuracy, and reduces training time by 31%.
 
 ## Background & Motivation
 
-1. **Background**: VLMs (e.g., LLaVA, InternVL) rely on large numbers of visual tokens to convey image information to the LLM, yet visual tokens exhibit severe redundancy—many tokens correspond to background or repetitive texture regions rather than semantically critical content.
-2. **Limitations of Prior Work**: Existing token compression methods are **unilateral**—they either compress only on the visual encoder side (VisionZip, HiRED) or only on the LLM side (FastV, PyramidDrop), and cannot leverage information from both sides for optimal compression.
-3. **Key Challenge**: Vision-only methods lack text-guided signals and cannot determine which visual tokens are truly relevant to the current query; language-only methods can only perform post-hoc processing within the LLM, having already wasted computation in earlier layers.
-4. **Goal**: To design a unified dual-stage framework that performs complementary token compression within both the visual encoder and the LLM, applicable to both training and inference.
-5. **Key Insight**: Stage 1 uses V2V self-attention among visual tokens for coarse-grained compression; Stage 2 uses T2V cross-attention from text to visual tokens for fine-grained pruning.
-6. **Core Idea**: The V2V stage preserves spatial context via attention-guided local cluster aggregation (local clustering with fixed window width $w$ rather than global averaging); the T2V stage progressively drops low-relevance visual tokens through hierarchical pruning.
+1. **Background**: VLMs (e.g., LLaVA, InternVL) rely on a large number of visual tokens to transfer image information to the LLM. However, visual tokens exhibit significant redundancy, as many tokens correspond to background or repetitive texture areas rather than semantic cores.
+2. **Limitations of Prior Work**: Existing token compression methods are **one-sided**, focusing either only on the vision encoder side (VisionZip, HiRED) or only on the LLM side (FastV, PyramidDrop), failing to utilize information from both sides for optimal compression.
+3. **Key Challenge**: Vision-only methods lack text-guided signals and cannot identify which visual tokens are truly relevant to the current query; language-only methods perform post-processing within the LLM, already wasting computational resources in the initial layers.
+4. **Goal**: To design a unified dual-stage framework for complementary token compression both within the vision encoder and the LLM, applicable to both training and inference.
+5. **Key Insight**: Coarse-grained compression is performed using self-attention between visual tokens (V2V), followed by fine-grained pruning using cross-attention from text to vision (T2V).
+6. **Core Idea**: The V2V stage preserves spatial context through attention-guided local cluster aggregation (clustering within a fixed width $w$ instead of global averaging); the T2V stage gradually drops low-relevance visual tokens through hierarchical pruning.
 
 ## Method
 
 ### Overall Architecture
-DUET-VLM consists of two stages: (1) the V2V (Vision-to-Vision) stage, executed within the final layer of the visual encoder (e.g., CLIP ViT); and (2) the T2V (Text-to-Vision) stage, executed across multiple intermediate layers of the LLM decoder. The two stages are applied sequentially and are compatible with both training and inference.
+DUET-VLM addresses visual token redundancy by employing a complementary approach across both the vision and language components rather than focusing on a single side. The pipeline consists of two stages: images first enter the vision encoder (e.g., CLIP ViT), where the first V2V (Vision-to-Vision) compression stage occurs in the final layer to reduce the original $N$ patch tokens. After these tokens enter the LLM, a second T2V (Text-to-Vision) compression stage is performed across several intermediate decoder layers, further pruning visual tokens unrelated to the query based on textual guidance. Both stages utilize the model's inherent attention mechanisms without introducing extra networks, allowing the same logic to be applied to both training and inference (using a straight-through estimator to enable end-to-end training of discrete selection operations).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image"] --> B["Vision Encoder CLIP ViT"]
+    subgraph V2V["V2V Stage: Coarse Vision Self-Attention Filtering (Encoder Last Layer)"]
+        direction TB
+        C["Sum self-attention by columns<br/>Select top-k₁ dominant tokens"]
+        D["Local cluster aggregation of remaining N-k₁ tokens<br/>(Window width w) → k₂ contextual tokens"]
+    end
+    B --> C
+    B --> D
+    C --> E["Visual tokens: N → k₁+k₂<br/>Fed into LLM"]
+    D --> E
+    subgraph T2V["T2V Stage: Hierarchical Text-Guided Refinement (LLM Intermediate layers l₁, l₂, …)"]
+        direction TB
+        F["Select salient text token set S<br/>last token + high-score text tokens"] --> G["Calculate S→Vision cross-attention per stage<br/>Drop lowest λ ratio of visual tokens"]
+    end
+    E --> T2V
+    T2V --> H["Output Answer"]
+    STE["Unified Training/Inference: STE gradient<br/>Both stages used during training"] -.-> V2V
+    STE -.-> T2V
+```
 
 ### Key Designs
 
-1. **V2V Stage — Token Compression within the Visual Encoder**:
+**1. V2V Stage: Coarse Filtering inside the Vision Encoder via Self-Attention**
 
-    - **Function**: Within the final layer of the visual encoder, V2V self-attention is used to compress $N$ visual tokens into $k_1 + k_2$ tokens.
-    - **Mechanism**: (a) Self-attention scores are computed for all visual tokens (column-wise summation yields each token's "attended-to" score), and the top-$k_1$ tokens are selected as **dominant tokens**—those most globally important for semantics. (b) The remaining $N - k_1$ tokens are merged into $k_2$ **contextual tokens** via **attention-guided local cluster aggregation**—for each contextual token center, neighbors within a fixed window of width $w$ are selected and aggregated through a weighted average based on attention scores.
-    - **Design Motivation**: Global average pooling (as in VisionZip's contextual tokens) dilutes information by mixing semantically dissimilar tokens. Local clustering with fixed width $w$ ensures that merged tokens are spatially proximate and semantically similar, thereby avoiding information loss.
+The first compression stage occurs in the final layer of the vision encoder. The goal is to remove redundant background and repetitive texture tokens without relying on text signals. Visual tokens are categorized into two types. The first are **dominant tokens**: by summing the columns of the self-attention matrix to determine the "attention received" by each token, the top-$k_1$ tokens are retained as global semantic landmarks. The remaining $N-k_1$ tokens are not simply discarded but merged into $k_2$ **contextual tokens** via **attention-guided local cluster aggregation**. This uses cluster centers as anchors to perform weighted averaging of neighbors within a fixed window width $w$. Restricting aggregation to a local window ensures that merged tokens are spatially and semantically similar, preventing information dilution seen in global averaging methods like VisionZip. The token count is reduced from $N$ to $k_1+k_2$.
 
-2. **T2V Stage — Hierarchical Visual Token Pruning within the LLM**:
+**2. T2V Stage: Hierarchical Refinement inside the LLM via Text-to-Vision Attention**
 
-    - **Function**: Visual tokens are progressively pruned across multiple intermediate layers of the LLM.
-    - **Mechanism**: (a) A set $S$ of **salient text tokens** is first selected—comprising the last token (serving as an attention sink) and the text tokens with the highest attention scores. (b) At each pruning stage, T2V cross-attention scores from text tokens in $S$ to visual tokens are computed, and the bottom $\lambda$ fraction of visual tokens by score are discarded. (c) Pruning is applied at multiple stages (e.g., at LLM layers $l_1, l_2, \ldots$), enabling progressive compression.
-    - **Design Motivation**: Text tokens encode "what information is needed to answer the query," making T2V attention a natural indicator of visual token relevance. Hierarchical pruning is safer than one-shot pruning, as shallow-layer attention is less mature and progressive decisions are more reliable.
+Tokens entering the LLM still contain redundancy relative to the specific "question being asked." DUET-VLM selects a set $S$ of **salient text tokens**, including the sequence's last token (acting as an attention sink) and tokens with high attention scores. In designated intermediate layers ($l_1, l_2, \ldots$) of the LLM, the model progressively prunes visual tokens. Each stage calculates the T2V cross-attention scores between text tokens in $S$ and current visual tokens, dropping the lowest $\lambda$ proportion. This multi-stage approach avoids premature pruning in shallow layers where token relationships are not yet fully resolved.
 
-3. **Dual-Stage Compression during Training**:
+**3. Unified Training and Inference Token Reduction**
 
-    - **Function**: Both compression stages are applied during training to reduce resource consumption.
-    - **Mechanism**: The same compression strategy used at inference is applied during training, reducing FLOPs and memory by decreasing the number of tokens fed to the LLM. Dominant/contextual token selection and T2V pruning both employ a straight-through estimator to preserve gradient flow.
-    - **Design Motivation**: Most existing methods (FastV, PyramidDrop) compress only at inference while leaving training costs unchanged. DUET-VLM unifies the compression strategy across training and inference, enabling training-time acceleration.
+Unlike methods that only compress during inference (e.g., FastV, PyramidDrop), DUET-VLM applies the same dual-stage compression during training. By reducing the number of tokens fed into the LLM, it lowers FLOPs and memory consumption. To handle the non-differentiable nature of discrete token selection, a straight-through estimator (STE) is used, allowing gradients to flow back to both selected and discarded tokens, supporting end-to-end training and achieving a 31% reduction in training time.
 
 ### Loss & Training
 - Standard autoregressive language modeling loss, consistent with LLaVA.
-- Dual-stage token compression is applied directly during training without additional distillation or auxiliary losses.
-- V2V stage hyperparameters $k_1, k_2, w$ and T2V stage hyperparameters $\lambda$ and pruning layers are treated as fixed hyperparameters.
+- Dual-stage token compression is applied directly during training without extra distillation or auxiliary losses.
+- Parameters $k_1, k_2, w$ for V2V and $\lambda$ and pruning layers for T2V are treated as hyperparameters.
 
 ## Key Experimental Results
 
 ### Main Results — LLaVA-1.5-7B Inference
 
-| Method | Token Compression Rate | Retained Accuracy | Notes |
-|--------|----------------------|-------------------|-------|
+| Method | Token Reduction | Accuracy Maintenance | Remarks |
+|------|-------------|---------|------|
 | FastV | 50%↓ | ~98% | LLM-only pruning |
 | PyramidDrop | 50%↓ | ~98% | LLM-only hierarchical |
 | VisionZip | 67%↓ | ~97% | Vision-only |
 | HiRED | 67%↓ | ~96% | Vision-only hierarchical |
 | FitPrune | 67%↓ | ~98% | Training-aware pruning |
-| **DUET-VLM** | **67%↓** | **99%+** | Dual-stage |
-| **DUET-VLM** | **89%↓** | **97%+** | Dual-stage extreme compression |
+| **Ours (DUET-VLM)** | **67%↓** | **99%+** | Dual-stage |
+| **Ours (DUET-VLM)** | **89%↓** | **97%+** | Dual-stage extreme |
 
-### Dual-Stage Compression during Training
+### Training-time Dual-stage Compression
 
-| Compression Rate | Retained Accuracy | Training Time Saved |
-|-----------------|-------------------|---------------------|
+| Reduction Rate | Accuracy Maint. | Training Time Saved |
+|--------|---------|-------------|
 | 67%↓ | 99.7% | ~31% |
 | 89%↓ | 97.6% | ~31% |
 
 ### Video-LLaVA-7B
 
-| Compression Rate | Retained Accuracy | Notes |
-|-----------------|-------------------|-------|
-| 53.1%↓ | 100%+ (exceeds baseline) | Compression improves over baseline |
+| Reduction Rate | Accuracy Maint. | Remarks |
+|--------|---------|------|
+| 53.1%↓ | 100%+ (Exceeds baseline) | Gain after compression |
 | 93.4%↓ | 97.6% | Extreme compression |
 
 ### Key Findings
-- **Dual-stage > Unilateral**: V2V-only or T2V-only compression is inferior to their combination, confirming that the two stages provide complementary information.
-- **Local clustering > Global averaging**: Local cluster aggregation with fixed width $w$ substantially outperforms VisionZip's global contextual token strategy.
-- **Video benefits more**: Video-LLaVA surpasses the baseline at 53.1% compression, indicating that token redundancy is more severe in video and that moderate compression acts as denoising.
-- **Training compression is viable**: Applying 67% compression during training incurs only 0.3% accuracy loss while reducing training time by 31%.
-- **Outperforms all prior methods**: At equivalent compression rates, DUET-VLM surpasses VisionZip, FastV, PyramidDrop, HiRED, and FitPrune across all benchmarks.
+- **Dual-stage > Single-sided**: Combining V2V and T2V outperforms using either alone, confirming complementary information.
+- **Local Clustering > Global Averaging**: Local cluster aggregation with fixed width $w$ significantly outperforms global contextual token strategies.
+- **Video Scenarios Benefit More**: Video-LLaVA shows improved accuracy at 53.1% reduction, suggesting that token redundancy is more severe in video and compression can act as a denoiser.
+- **Feasible Training Compression**: Applying 67% reduction during training results in only a 0.3% accuracy loss while saving 31% training time.
+- **Outperforms Existing Methods**: DUET-VLM exceeds VisionZip, FastV, PyramidDrop, HiRED, and FitPrune across all benchmarks at equivalent reduction rates.
 
 ## Highlights & Insights
-- **Philosophy of complementary dual-stage design**: The V2V stage performs coarse filtering using intra-visual information (independent of text); the T2V stage performs fine-grained filtering guided by text. The two stages address redundancy at different levels, avoiding the information blind spots of unilateral methods.
-- **Simplicity and effectiveness of local clustering**: Using a fixed window width $w$ for local clustering avoids complex global clustering algorithms (e.g., k-means), incurring minimal computational overhead while significantly outperforming global averaging.
-- **Unified training and inference**: Most token compression methods target inference efficiency alone; DUET-VLM is effective at training time as well, offering practical value in large-scale VLM training.
-- **Video compression surpasses baseline**: Accuracy improves at 53.1% compression, indicating that redundant tokens not only waste resources but also introduce noise.
+- **Complementary Dual-stage Philosophy**: V2V performs coarse filtering using internal visual information (independent of text), while T2V refined the selection using textual guidance. This approach covers information blind spots inherent in single-sided methods.
+- **Simplicity and Effectiveness of Local Clustering**: Using a fixed width $w$ for local clustering avoids complex algorithms like k-means and yields results superior to global averaging with minimal overhead.
+- **Unified Training and Inference**: Most methods target inference only; DUET-VLM’s applicability during training provides significant engineering value for large-scale VLM development.
+- **Gain on Video Baseline**: Accuracy improvement at 53.1% reduction suggests that redundant tokens in video data can introduce noise that hinders performance.
 
 ## Limitations & Future Work
-- Validation is limited to LLaVA-1.5-7B and Video-LLaVA-7B; experiments on larger-scale models (e.g., 13B/34B) are absent.
-- The V2V stage hyperparameters $k_1, k_2, w$ are fixed; adaptive adjustment for different images or tasks may be necessary.
-- Compatibility with more recent architectures such as InternVL2 and Qwen-VL has not been verified.
-- The salient text token selection in the T2V stage relies on the attention sink assumption; robustness to non-standard prompt formats remains unknown.
-- In-depth analysis of how attention patterns change after compression is lacking.
+- Evaluation is limited to LLaVA-1.5-7B and Video-LLaVA-7B; performance on larger models (e.g., 13B/34B) remains to be verified.
+- V2V parameters ($k_1, k_2, w$) are fixed hyperparameters and may require adaptive adjustment for different images or tasks.
+- Compatibility with latest architectures like InternVL2 or Qwen-VL has not been tested.
+- Salient text token selection in T2V relies on the attention sink hypothesis, and robustness to non-standard prompt formats is unknown.
+- Detailed analysis of attention pattern changes post-compression is lacking.
 
 ## Related Work & Insights
-- **vs. VisionZip**: VisionZip selects dominant and contextual tokens on the visual encoder side, but contextual tokens are computed via global averaging, leading to information dilution. DUET-VLM replaces this with local cluster aggregation and adds the T2V stage.
-- **vs. FastV/PyramidDrop**: Both perform attention-based pruning on the LLM side but lack preliminary filtering in the visual encoder. The V2V stage in DUET-VLM provides coarse pre-filtering, reducing the burden on the T2V stage.
-- **vs. FitPrune**: FitPrune optimizes pruning strategies in a training-aware manner but remains a unilateral method. DUET-VLM applies dual-stage compression in both training and inference.
-- **vs. HiRED**: HiRED performs hierarchical attention-based compression within the visual encoder but does not involve the LLM side. DUET-VLM applies hierarchical compression on both sides.
+- **vs. VisionZip**: VisionZip performs dominant + contextual selection at the encoder side, but its global averaging for contextual tokens dilutes information. DUET-VLM improves this with local clustering and adds the T2V stage.
+- **vs. FastV/PyramidDrop**: These methods perform attention-based pruning at the LLM side but lack an initial vision-side filter. DUET-VLM’s V2V stage reduces the complexity for the T2V stage.
+- **vs. FitPrune**: FitPrune uses training-aware optimization for pruning but remains single-sided. DUET-VLM applies dual-stage compression for both training and inference.
+- **vs. HiRED**: HiRED focuses on hierarchical attention-based compression within the vision encoder only. DUET-VLM performs hierarchical compression on both sides.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The dual-stage V2V+T2V framework is proposed for the first time; the local cluster aggregation design is simple yet effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers both image and video settings, validates both training and inference, and includes complete ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, method descriptions are detailed, and figures are intuitive.
-- Value: ⭐⭐⭐⭐⭐ A practical solution for VLM token compression; the 31% training acceleration carries significant engineering value.
+- Novelty: ⭐⭐⭐⭐ The V2V+T2V framework and local cluster aggregation are effective and novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers image/video and training/inference with complete ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed method, and intuitive illustrations.
+- Value: ⭐⭐⭐⭐⭐ A practical VLM compression solution with significant (31%) training acceleration.
 
 <!-- RELATED:START -->
 
@@ -135,7 +146,7 @@ DUET-VLM consists of two stages: (1) the V2V (Vision-to-Vision) stage, executed 
 - [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/multimodal_vlm/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 - [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/multimodal_vlm/filter_correlate_compress_training-free_token_reduction_for_.md)
 - [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](gtr_turbo_merged_checkpoint_free_teacher.md)
-- [\[ICML 2026\] DCER: Robust Multimodal Fusion via Dual-Stage Compression and Energy-Based Reconstruction](../../ICML2026/multimodal_vlm/dcer_dual-stage_compression_and_energy-based_reconstruction.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
 
 </div>
 

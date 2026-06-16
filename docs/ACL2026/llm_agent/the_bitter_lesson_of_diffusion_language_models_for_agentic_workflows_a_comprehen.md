@@ -2,79 +2,100 @@
 title: >-
   [Paper Note] The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check
 description: >-
-  [ACL2026][LLM Agent][Diffusion Language Models] This paper systematically evaluates the performance of diffusion Language Models (dLLMs) in embodied and tool-calling agents. It discovers that despite their potential for…
+  [ACL 2026][LLM Agent][Diffusion Language Model] This paper systematically evaluates the performance of diffusion language models (dLLMs) in embodied and tool-use agents. It finds that despite the speed potential offered by parallel decoding, dLLMs significantly lag behind autoregressive (AR) LLMs in long-horizon causal planning and strict format generation. Furtherm
 tags:
-  - "ACL2026"
-  - "LLM Agent"
-  - "Diffusion Language Models"
-  - "Agents"
-  - "Tool Calling"
-  - "Long-term Planning"
-  - "DiffuAgent"
+  - ACL 2026
+  - LLM Agent
+  - Diffusion Language Model
+  - DiffuAgent
 date: 2026-05-08
-content_hash: 940ef9aba42139a0
+content_hash: 7d05c6483511ed30
 ---
-
 # The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check
 
 **Conference**: ACL2026  
 **arXiv**: [2601.12979](https://arxiv.org/abs/2601.12979)  
 **Code**: None  
 **Area**: Agent / Diffusion Language Models  
-**Keywords**: Diffusion Language Models, Agents, Tool Calling, Long-term Planning, DiffuAgent  
+**Keywords**: Diffusion Language Models, Agents, Tool Call, Long-horizon Planning, DiffuAgent  
 
 ## TL;DR
-This paper systematically evaluates the performance of diffusion Language Models (dLLMs) in embodied and tool-calling agents. It discovers that despite their potential for speed due to parallel decoding, they lag significantly behind Autoregressive (AR) LLMs in long-term causal planning and strict format generation. The authors introduce DiffuAgent to demonstrate that dLLMs are better suited as auxiliary non-causal modules for memory compression and tool filtering.
+This paper systematically evaluates the performance of diffusion language models (dLLMs) in embodied and tool-use agents. It finds that despite the speed potential offered by parallel decoding, dLLMs significantly lag behind autoregressive (AR) LLMs in long-horizon causal planning and strict format generation. Furthermore, the authors utilize DiffuAgent to demonstrate that dLLMs are better suited as non-causal auxiliary modules, such as for memory compression and tool filtering.
 
 ## Background & Motivation
-**Background**: LLM agents have become the dominant paradigm in ReAct-style embodied tasks, tool calling, and interactive decision-making. Typical systems place the language model at the center of a loop, reading historical trajectories, environmental feedback, or tool descriptions to generate the next thought and action. While powerful, this process is naturally limited by AR decoding, where latency and inference costs scale with multi-round task length.
+**Background**: LLM agents have become the mainstream paradigm in ReAct-style embodied tasks, tool calling, and interactive decision-making. Typical systems place the language model at the center of a loop, reading historical trajectories, environmental feedback, or tool descriptions at each step to generate the next "thought" and "action." While powerful, this workflow is naturally limited by autoregressive decoding; as multi-turn tasks grow longer, latency and inference costs become increasingly significant.
 
-**Limitations of Prior Work**: dLLMs update multiple tokens simultaneously through parallel denoising, seemingly breaking the token-by-token generation bottleneck. However, agent scenarios require more than "fast text generation"; they demand that models adapt plans based on latest feedback, maintain state consistency across interactions, and output perfectly valid JSON or function call formats. While existing dLLMs perform close to same-scale LLMs on general benchmarks, their suitability as agent backbones lacks systematic verification.
+**Limitations of Prior Work**: dLLMs update multiple tokens simultaneously through parallel denoising, theoretically breaking the token-by-token generation bottleneck. However, agent scenarios do not merely require "writing text quickly"; they demand that the model can revise plans based on the latest feedback, maintain state consistency across multiple interactions, and output perfectly valid JSON or function call formats. While existing dLLMs perform close to same-scale LLMs on general language benchmarks, systematic verification of their ability to serve as agent backbones is lacking.
 
-**Key Challenge**: The advantage of dLLMs stems from non-autoregressive parallel generation, whereas critical agent capabilities often rely on causal, step-by-step, and error-correctable decision-making. Embodied tasks require strong constraints from new observations to the next action; tool calling requires precise placement of brackets, field names, and parameters. Bidirectional attention and fuzzy intermediate states during parallel denoising may weaken these functionalities.
+**Key Challenge**: The advantage of dLLMs stems from non-autoregressive parallel generation, whereas the critical capabilities of agents often derive from causal, incremental, and error-correctable decision-making processes. Embodied tasks require the model to strictly constrain new observations into the next action, and tool use requires every bracket, field name, and parameter value to be precisely placed. Bidirectional attention and blurred intermediate states during parallel denoising might specifically weaken these two types of capabilities.
 
-**Goal**: The authors aim to answer three questions: first, whether current dLLMs can directly serve as backbones for embodied and tool-calling agents; second, whether their failures are accidental fluctuations or systematic patterns; and third, whether dLLMs can undertake auxiliary cognitive roles in agentic workflows if they cannot serve as backbones.
+**Goal**: The authors aim to answer three questions: First, can current dLLMs directly serve as the backbone for embodied and tool-use agents? Second, are their failures accidental fluctuations or systematic patterns? Third, if they cannot serve as backbones, can dLLMs still undertake auxiliary cognitive roles in agentic workflows?
 
-**Key Insight**: Instead of looking at single-turn QA, the paper selects ALFWorld, ScienceWorld, and BabyAI from AgentBoard along with BFCL-v3 tool-calling tasks to observe behavior in real multi-round closed loops. This perspective is vital because the short-text generation capabilities of dLLMs do not expose agent-level deficiencies such as "hitting the same wall repeatedly" or execution failures caused by a single character offset in formats.
+**Key Insight**: Instead of looking only at single-turn QA, the paper selects ALFWorld, ScienceWorld, and BabyAI from AgentBoard, alongside BFCL-v3 tool-use tasks, to observe behaviors in realistic multi-turn closed loops. This perspective is vital because a dLLM's ability to generate short text does not expose agent-level defects like "repeatedly hitting a wall" or "execution failure due to a single character error in formatting."
 
-**Core Idea**: Through unified experiments, dLLMs are placed as both agent backbones and auxiliary modules to prove that "diffusion-style parallel generation is suitable for non-causal compression and filtering, but not for the causal planning and symbolic precision required by current agents."
+**Core Idea**: Through unified experiments, dLLMs are placed in both agent backbone and auxiliary module positions to prove that "diffusion parallel generation is suitable for non-causal compression and filtering, but unsuitable for the causal planning and symbolic precision required by current agents."
 
 ## Method
-The method does not propose a single training algorithm but constructs a reality check and modular diagnostic framework. The authors first treat dLLMs as complete agent backbones, replacing AR LLMs like Qwen-8B and Ministral-8B. Subsequently, they propose DiffuAgent, which decomposes dLLMs into modules for memory, verification, tool selection, and format editing to analyze their utility in specific cognitive roles.
+The method does not involve proposing a single training algorithm but rather constructing a reality check and modular diagnostic framework. The authors first treat dLLMs as complete agent backbones, directly replacing AR LLMs like Qwen-8B and Ministral-8B to observe their success or failure. Subsequently, the authors propose DiffuAgent, which deconstructs dLLMs into modules for memory, verification, tool selection, and format editing to analyze which cognitive roles they are fit for.
 
 ### Overall Architecture
-The workflow is divided into two layers.
+The overall process is divided into two layers.
 
-The first layer is the backbone reality check. Embodied tasks use the ReAct process where, at step $t$, the model generates intermediate thoughts $q_t$ and actions $a_t$ based on action/observation history $e_{1:t-1}$ and task description $u_{task}$. Tool-calling tasks involve outputting a set of structured calls $\mathcal{C}=\{(\tau_i,\alpha_i)\}$ based on user requests and tool libraries. In these processes, Qwen-8B and Ministral-8B are compared against LLaDA-8B, Dream-7B, FdLLM-7B, and DVar-8B.
+The first layer is a **backbone reality check**. Embodied tasks use a ReAct workflow where the model generates intermediate thoughts $q_t$ and actions $a_t$ at step $t$ based on historical actions and observations $e_{1:t-1}$ and the task description $u_{task}$. Tool-use tasks provide the user request and a tool library; the model must output a set of structured calls $\mathcal{C}=\{(\tau_i,\alpha_i)\}$, which are then processed by a tool executor. The authors compare Qwen-8B and Ministral-8B against LLaDA-8B, Dream-7B, FdLLM-7B, and DVar-8B.
 
-The second layer is the DiffuAgent modular evaluation. Instead of controlling the whole loop, dLLMs are embedded as pluggable auxiliary cognitive modules. The embodied side includes a pre-hoc memory and a post-hoc early-exit verifier; the tool-calling side includes a pre-hoc tool selector and a post-hoc tool-call editor. This distinguishes between "failure as a backbone" and "unavailability of a specific local capability."
+The second layer is the **DiffuAgent modular evaluation**. Instead of letting dLLMs control the entire loop, they are embedded as pluggable cognitive modules on the periphery of an AR agent. For the embodied side, this includes a pre-hoc memory and a post-hoc early-exit verifier; for the tool-use side, it includes a pre-hoc tool selector and a post-hoc tool-call editor. This allows for distinguishing between "backbone failure" and "unusable specific local capabilities."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Tested Models<br/>Autoregressive LLM vs. Diffusion LLM (dLLM)"]
+    subgraph RC["Backbone Reality Check"]
+        direction TB
+        EMB["Embodied ReAct Loop<br/>ALFWorld / ScienceWorld / BabyAI"]
+        TOOL["Tool-Use Task<br/>BFCL-v3 Structured Calls"]
+        MET["Dual Metric Diagnosis<br/>Success Rate/Progress Rate · Retry Loop · Schema Error"]
+        EMB --> MET
+        TOOL --> MET
+    end
+    IN --> RC
+    RC -->|dLLM Backbone Failure| DA
+    subgraph DA["DiffuAgent Modular Role Decomposition (dLLMs as Auxiliary)"]
+        direction TB
+        AR["AR Agent Main Loop"]
+        MEM["Pre-hoc Memory Compression"]
+        VER["Post-hoc Early-exit Verifier"]
+        SEL["Pre-hoc Tool Selector"]
+        EDIT["Post-hoc Tool-call Editor"]
+        AR --- MEM
+        AR --- VER
+        AR --- SEL
+        AR --- EDIT
+    end
+    DA --> VERIFY["Failure Mechanism Validation<br/>dLLM Decoding Opt. · AR Feedback · Schema Guardrails"]
+    VERIFY --> OUT["Conclusion: dLLM suitable for non-causal tasks<br/>Unsuitable for causal planning/symbolic precision"]
+```
 
 ### Key Designs
-1. **Backbone-level Failure Diagnostics**:
-    - **Function**: Directly measures long-term planning and tool-calling capabilities when dLLMs serve as full agent controllers.
-    - **Mechanism**: In AgentBoard, success rate and progress rate are measured per round. In BFCL-v3, the evaluation checks function names, parameters, structure, and multi-round state. The authors also track "retry loops"—repeating the same action for more than three consecutive steps—to capture the dLLM behavior of fixating on old plans.
-    - **Design Motivation**: Average accuracy alone fails to identify if dLLMs suffer from "weak capability" or "interaction mechanism failure." Comparing embodied tasks with tool calling exposes both non-causal planning failures and fuzzy format generation.
 
-2. **Modular Role Splitting in DiffuAgent**:
-    - **Function**: Downgrades dLLMs from "full-process decision-makers" to auxiliary modules to observe their value in non-causal tasks.
-    - **Mechanism**: A memory module compresses the past trajectory every $k_{mem}=5$ steps. An early-exit verifier determines if the trajectory is stuck in a loop every $k_{earlyexit}=5$ steps. A tool selector filters a subset of relevant tools, and a tool-call editor attempts to correct corrupted formats.
-    - **Design Motivation**: Agent workflows consist of heterogeneous capabilities. dLLMs might struggle with causal action selection but could excel at summarization, filtering, or redundancy judgment due to parallel global modeling.
+**1. Backbone Reality Check: Direct evaluation of long-horizon planning and tool use.**  
+To distinguish whether dLLMs are simply "weaker" or if their "interaction mechanism is fundamentally broken," the authors use them as backbones in a ReAct loop and utilize complementary metrics to diagnose issues. In embodied tasks (ALFWorld/ScienceWorld/BabyAI), success rate measures completion, while progress rate measures how much of the target was reached. In tool use (BFCL-v3), function names, parameters, structures, and multi-turn states are checked. The authors also track "retry loops"—repeating the same action for more than three steps—to identify cases where dLLMs ignore new observations.
 
-3. **Supplementary Validation of Failure Mechanisms**:
-    - **Function**: Rules out explanations that failures are due to suboptimal decoding or can be fixed with simple format repairers.
-    - **Mechanism**: The authors test dLLM decoding optimizations like APD, D2F, and DCD, alongside AR self-refine, periodic AR feedback, and light schema guardrails.
-    - **Design Motivation**: To ensure fairness, supplementary validations show that while optimizations can alleviate local metrics, they do not resolve the bottlenecks in long-term causality and symbolic precision.
+**2. DiffuAgent Modular Role Decomposition: Downgrading dLLMs to auxiliary modules.**  
+Since they fail as backbones, are specific local capabilities still useful? dLLMs are embedded as modular components. On the embodied side: a pre-hoc memory compresses trajectories every $k_{mem}=5$ steps; a post-hoc early-exit verifier predicts if a loop is stuck every $k_{earlyexit}=5$ steps. On the tool side: a pre-hoc selector filters relevant tools from the library, and a post-hoc editor attempts to fix malformed calls. This separates "backbone failure" from "local utility," testing dLLM value in tasks not requiring token-by-token commitment.
+
+**3. Failure Mechanism Validation: Ruling out "poor decoding" as an explanation.**  
+The authors test various remedies: dLLM decoding optimizations like APD, D2F, and DCD; AR self-refine and periodic AR feedback; and mock Tau-Bench with lightweight schema guardrails. These experiments investigate if such techniques can elevate dLLMs to AR agent levels. While they improve local metrics (e.g., D2F raising Dream-7B's BFCL Single-Live from 1.5 to 34.3), they do not resolve the fundamental bottlenecks in long-horizon causal planning and symbolic precision.
 
 ### Loss & Training
-No new dLLMs were trained, and no new supervised losses were proposed. The focus is on inference-only evaluation: AR models are deployed via vLLM, and dLLMs are reproduced using Fast-dLLM/FastAPI, running on NVIDIA A800 80GB GPUs. Tasks use ReAct prompts and BFCL uses OpenAI API style templates to ensure comparisons focus on native agent behavior.
+This paper does not train new dLLMs or propose new supervised losses. The focus is on inference-only evaluation. AR models are deployed via vLLM; dLLMs are implemented using Fast-dLLM/FastAPI, running on a single NVIDIA A800 80GB. Embodied tasks use ReAct prompts; BFCL uses official templates to construct OpenAI API-style inputs.
 
 ## Key Experimental Results
 
 ### Main Results
-The results for embodied tasks are stark: AR Qwen-8B achieves a 45.0% average success rate, while the best dLLM, LLaDA-8B, reaches only 7.5%, and DVar-8B drops to 2.0%. The progress rate follows the same trend, indicating dLLMs struggle even with intermediate sub-goals.
+Embodied task results are stark: AR Qwen-8B achieves an average success rate of 45.0%, while the best dLLM, LLaDA-8B, reaches only 7.5%; DVar-8B scores just 2.0%. Progress rates follow the same trend, indicating dLLMs struggle even with intermediate sub-goals.
 
-| Model | ALFWorld SR | ScienceWorld SR | BabyAI SR | Avg. SR | Avg. Progress |
-|------|----------------|---------------------|---------------|------------|------------|
+| Model | ALFWorld SR | ScienceWorld SR | BabyAI SR | Avg SR | Avg Progress |
+|-------|-------------|------------------|-----------|--------|--------------|
 | Qwen-8B | 76.1 | 26.7 | 32.1 | 45.0 | 62.1 |
 | Ministral-8B | 45.5 | 13.3 | 36.6 | 31.8 | 54.9 |
 | LLaDA-8B | 5.2 | 1.1 | 16.1 | 7.5 | 16.4 |
@@ -82,10 +103,10 @@ The results for embodied tasks are stark: AR Qwen-8B achieves a 45.0% average su
 | FdLLM-7B | 3.3 | 0.7 | 5.4 | 3.1 | 8.9 |
 | DVar-8B | 0.7 | 0.0 | 5.4 | 2.0 | 8.9 |
 
-Tool calling experiments show a similar gap. While Qwen-8B reaches a 57.8% overall success rate on BFCL, DVar-8B (the strongest dLLM) only hits 28.0%. Notably, in multi-turn tool calling, all dLLMs scored 0.0%, highlighting their inability to maintain state and format stability in interactive protocols.
+Tool-use experiments also show a massive gap. While Qwen-8B reaches 57.8% overall in BFCL, DVar-8B (the top dLLM) only hits 28.0%. Crucially, all dLLMs scored 0.0% in multi-turn tool calling, indicating inability to maintain state and format stability.
 
 | Model | Non-Live | Single-Turn Live Avg. | Multi-Turn Avg. | Hallucination Rel. | Hallucination Irrel. | Overall |
-|------|----------|-----------------------|-----------------|--------------------|----------------------|---------|
+|-------|----------|-----------------------|-----------------|--------------------|----------------------|---------|
 | Qwen-8B | 87.5 | 78.0 | 12.5 | 94.4 | 68.0 | 57.8 |
 | Ministral-8B | 49.8 | 60.0 | 4.0 | 66.7 | 58.0 | 39.5 |
 | LLaDA-8B | 23.0 | 11.6 | 0.0 | 66.7 | 56.0 | 19.4 |
@@ -94,68 +115,62 @@ Tool calling experiments show a similar gap. While Qwen-8B reaches a 57.8% overa
 | DVar-8B | 35.0 | 34.1 | 0.0 | 44.4 | 63.0 | 28.0 |
 
 ### Ablation Study
-DiffuAgent results provide more nuance. As backbones, dLLMs are weak; however, as memory modules, they significantly aid AR models. For Qwen-8B, adding LLaDA-8B memory improves SR from 28.4% to 40.5%, outperforming AR-based memory. This suggests dLLM global compression is effective for "history summarization."
+DiffuAgent results show more nuance. While weak as backbones, dLLMs significantly aid AR agents as memory modules. With a Qwen-8B agent, using LLaDA-8B as a memory module (40.5% SR) outperforms using Qwen-8B itself (34.9%). This suggests dLLM global compression is effective in non-causal roles like "summarizing history."
 
-| Agent | Memory Module | Avg. SR | Avg. Progress | Note |
-|-------|-------------|------------|------------|------|
-| Qwen-8B | w/o | 28.4 | 50.6 | Only recent interaction |
-| Qwen-8B | Qwen-8B | 34.9 | 54.8 | AR memory gains |
-| Qwen-8B | LLaDA-8B | 40.5 | 59.6 | Strongest memory setting |
-| Qwen-8B | Dream-7B | 38.9 | 57.3 | Better than AR memory |
-| Qwen-8B | FdLLM-7B | 35.6 | 54.8 | Subtle gains |
-| Qwen-8B | DVar-8B | 37.3 | 56.8 | Consistently better than w/o |
+| Agent | Memory Module | Avg SR | Avg Progress | Note |
+|-------|---------------|--------|--------------|------|
+| Qwen-8B | w/o | 28.4 | 50.6 | Recent interaction only |
+| Qwen-8B | Qwen-8B | 34.9 | 54.8 | AR memory gain |
+| Qwen-8B | LLaDA-8B | 40.5 | 59.6 | Best setting |
+| Qwen-8B | Dream-7B | 38.9 | 57.3 | Outperforms AR memory |
 
-For tool calling, the selector role is more suitable for dLLMs than the editor role. DVar-8B as a selector maintains some efficacy (11.5% success), but as an editor, success drops to 0.0%.
+Tool-use ablations show dLLMs are better selectors than editors. LLaDA-8B as a selector (12.5% multi-turn) remains somewhat effective, but dLLM editors largely fail (0.0% to 2.0%), highlighting their struggle with strict schema repair.
 
-| Main Agent | Selector | Editor | BFCL Multi-Turn Avg. | Interpretation |
-|----------|----------|--------|----------------------|------|
+| Main Agent | Selector | Editor | BFCL Multi-Turn Avg. | Insight |
+|------------|----------|--------|----------------------|---------|
 | Qwen-8B | Qwen-8B | - | 18.5 | AR selector is strongest |
-| Qwen-8B | LLaDA-8B | - | 12.5 | dLLM filters relevant tools |
-| Qwen-8B | Dream-7B | - | 13.0 | Selector performance near LLaDA |
-| Qwen-8B | - | LLaDA-8B | 16.0 | LLaDA as editor is functional |
+| Qwen-8B | LLaDA-8B | - | 12.5 | dLLM is a viable selector |
+| Qwen-8B | - | LLaDA-8B | 16.0 | LLaDA as editor is okay |
 | Qwen-8B | - | FdLLM-7B | 2.0 | Format editing fails |
-| Qwen-8B | DVar-8B | DVar-8B | 0.0 | Combined modules fail |
 
 ### Key Findings
-- Efficiency advantages do not translate into agent success. High throughput models like FdLLM-7B fail to progress significantly in tasks.
-- Embodied failure is characterized by the "retry loop," where models repeat actions despite environmental feedback.
-- Tool-calling failure is primarily due to schema and parameter errors. dLLMs often identify the correct tool but produce invalid syntax.
-- dLLMs are better for non-causal roles like memory compression and tool filtering rather than backbone decision-making.
+- Efficiency advantages in dLLMs do not translate to agent success. While FdLLM-7B and DVar-8B have high throughput, embodied SR is below 3.1% and multi-turn tool use is 0.0%.
+- Embodied failure is characterized by **retry loops**. Models repeat old actions despite new observations, failing to map feedback to new plans during parallel denoising.
+- Tool-use failure is characterized by **schema and parameter errors**. dLLMs often identify the correct tool but generate broken brackets or incorrect keys, rendering the output unparsable.
+- dLLM roles are naturally limited to **non-causal modules**. They perform well in memory compression and tool filtering but fail in backbone decision-making and format editing.
 
 ## Highlights & Insights
-- The paper's greatest value is placing the "diffusion LMs are faster" narrative into the agent loop. Speed is meaningful only if actions are valid; otherwise, high throughput just produces invalid trajectories faster.
-- The modular design of DiffuAgent provides a refined conclusion: dLLMs are not useless for agents, but they shouldn't be the causal control core in the current paradigm.
-- The concepts of "non-causal" vs. "fuzzy" failures are highly explanatory for embodied stalemates and schema collapses, respectively.
+- The primary value of this paper is re-evaluating the "dLLMs are faster" narrative within agent loops. Speed only matters if the action is valid; if every step is a repeat or an error, high throughput just generates invalid trajectories faster.
+- The deconstruction of agent capabilities into different cognitive roles in DiffuAgent is insightful. It demonstrates that dLLMs aren't useless for agents; they are simply unfit for the central causal backbone role in current paradigms.
+- The concepts of "non-causal" and "fuzzy" failures are highly explanatory. One corresponds to the inability to branch in embodied tasks, while the other corresponds to schema collapse in tool use.
 
 ## Limitations & Future Work
-- The coverage of dLLMs and benchmarks is limited (e.g., no web agents or software engineering tasks).
-- Experiments are primarily inference-only, leaving training-based質变 (qualitative leaps) unexplored.
-- The workflow still relies on AR LLMs as the main loop controller.
-- Future work should focus on diffusion-native agents that incorporate causal states and grammar constraints directly into the denoising process.
+- Benchmark coverage is still limited (mainly AgentBoard and BFCL). It remains to be seen how dLLMs perform in web agents, code repair, or software engineering.
+- The focus is solely on inference-only. The study does not address whether training on agent trajectories or co-designing diffusion-native workflows could lead to qualitative improvements.
+- If future agent frameworks are redesigned specifically for diffusion generation, the conclusions here may need re-evaluation.
 
 ## Related Work & Insights
-- **vs. LLaDA / Dream**: While those works emphasize general performance, Ours demonstrates that general benchmarks do not guarantee agent suitability.
-- **vs. ReAct / AgentBoard**: This study extends the evaluation from AR LLMs to dLLMs, specifically diagnosing repetition and error propagation.
-- **vs. BFCL**: Attributes failures to symbolic precision issues under diffusion noise rather than just model scale.
-- **vs. Agent Memory / Verifiers**: Suggests these auxiliary roles are the optimal home for dLLMs due to their global compression strengths.
+- **vs. LLaDA / Dream**: These works emphasize general performance/efficiency. This paper tests them in agents to show that general benchmark competitiveness does not equal agent viability.
+- **vs. ReAct / AgentBoard**: Inherits the thought-action loop but extends the subject to dLLMs, identifying unique behaviors like retry loops.
+- **vs. BFCL**: Attributes failures to symbolic precision issues under diffusion noise and shows that guardrails cannot fix deep semantic/structural errors.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Timely systematic check of dLLMs in agents.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid across main and modular tests, though task variety could be broader.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear argumentation with a strong "bitter lesson" theme.
-- Value: ⭐⭐⭐⭐⭐ Highly influential for both diffusion and agent communities, clarifying the correct roles for dLLMs.
+- Novelty: ⭐⭐⭐⭐☆ Timely topic; shifts focus from general generation to the agentic reality check.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive main experiments and modular deconstructions.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear "bitter lesson" narrative.
+- Value: ⭐⭐⭐⭐⭐ Highly important caveat for the diffusion LLM and agent communities; clearly delineates the roles dLLMs should play.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
+- [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2026\] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](polaris_a_gödel_agent_framework_for_small_language_models_through_experience-abs.md)
+- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
 
 </div>
 

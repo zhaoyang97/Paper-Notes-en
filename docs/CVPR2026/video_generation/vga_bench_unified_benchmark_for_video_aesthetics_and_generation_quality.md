@@ -2,122 +2,133 @@
 title: >-
   [Paper Note] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation
 description: >-
-  [CVPR 2026][Video Generation][Video quality assessment] VGA-Bench proposes a unified AIGC video evaluation benchmark comprising a three-tier taxonomy (aesthetic quality, aesthetic labels, and generation quality), 1…
+  [CVPR 2026][Video Generation][Paper Note] VGA-Bench introduces a unified evaluation benchmark for AIGC videos, featuring a three-layer taxonomy (Aesthetic Quality, Aesthetic Tagging, and Generation Quality), 1,016 prompts, 60,000 videos, and three dedicated evaluation models to achieve automated assessment aligned with human judgment.
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Video quality assessment"
-  - "aesthetic evaluation"
-  - "AIGC evaluation"
-  - "multi-task evaluator"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 5fc62552e36a3180
+content_hash: d1150cea172f8f1a
 ---
-
 # VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.10127](https://arxiv.org/abs/2604.10127)  
-**Code**: Available  
-**Area**: Image/Video Generation Evaluation
-**Keywords**: Video quality assessment, aesthetic evaluation, AIGC evaluation, multi-task evaluator, video generation
+**Code**: Yes  
+**Area**: Video Generation  
+**Keywords**: Video Quality Assessment, Aesthetic Assessment, AIGC Evaluation, Multi-task Evaluator, Video Generation
 
 ## TL;DR
 
-VGA-Bench proposes a unified AIGC video evaluation benchmark comprising a three-tier taxonomy (aesthetic quality, aesthetic labels, and generation quality), 1,016 prompts, 60,000 videos, and three dedicated evaluation models, enabling automated assessment aligned with human judgment.
+VGA-Bench introduces a unified evaluation benchmark for AIGC videos, featuring a three-layer taxonomy (Aesthetic Quality, Aesthetic Tagging, and Generation Quality), 1,016 prompts, 60,000 videos, and three dedicated evaluation models to achieve automated assessment aligned with human judgment.
 
 ## Background & Motivation
 
-**Background**: AIGC video generation has advanced rapidly (diffusion models, Transformers, etc.), yet evaluation frameworks remain focused on technical fidelity metrics (FVD, CLIP Score), overlooking high-level perceptual qualities such as aesthetic appeal.
+**Background**: Technologies for AI-generated content (AIGC) video generation are evolving rapidly (e.g., Diffusion Models, Transformers). However, existing evaluation frameworks primarily focus on technical fidelity (FVD, CLIP Score) and neglect high-level perceptual qualities such as aesthetic appeal.
 
-**Limitations of Prior Work**: Benchmarks such as V-Bench reduce "video aesthetics" to a single score, heavily relying on external scoring models (MUSIQ/DINO), resulting in insufficient granularity, significant bias, and limited controllability.
+**Limitations of Prior Work**: Benchmarks like V-Bench simplify "video aesthetics" into a single score and rely heavily on external scoring models (MUSIQ/DINO), resulting in insufficient granularity, significant bias, and poor controllability.
 
-**Key Challenge**: Video generation models grow increasingly powerful, yet a comprehensive, fine-grained, and interpretable evaluation framework capable of jointly measuring technical quality and aesthetic quality is lacking.
+**Key Challenge**: While video generation models are becoming increasingly powerful, there is a lack of a comprehensive, fine-grained, and interpretable evaluation system to simultaneously measure both technical and aesthetic quality.
 
-**Goal**: Establish a three-dimensional unified evaluation framework covering generation quality, aesthetic quality, and visual formal elements.
+**Goal**: Establish a three-dimensional unified evaluation system encompassing generation quality, aesthetic quality, and visual formal elements.
 
-**Key Insight**: Design a hierarchical taxonomy that decomposes each dimension into fine-grained sub-attributes (composition, color harmony, lighting, motion aesthetics, etc.) and train dedicated evaluation models accordingly.
+**Key Insight**: Design a hierarchical taxonomy that decomposes attributes into fine-grained sub-dimensions (composition, color harmony, lighting, motion aesthetics, etc.) and train dedicated evaluation models.
 
-**Core Idea**: Replace the ad hoc combination of external scoring models with three dedicated neural evaluators, achieving end-to-end, consistent, and scalable automated evaluation.
+**Core Idea**: Replace the patchwork of external scoring models with three dedicated neural evaluators to achieve end-to-end, consistent, and scalable automated evaluation.
 
 ## Method
 
 ### Overall Architecture
 
-A three-tier taxonomy: Aesthetic Quality (composition, color, lighting, motion aesthetics, etc.) + Aesthetic Labels (visual formal elements such as style and scene type) + Generation Quality (temporal consistency, prompt alignment, distortion, etc.). 1,016 prompts → 12 video generation models → 60,000 videos → manually annotated subset → training of three evaluators: VAQA-Net, VTag-Net, and VGQA-Net.
+The core of VGA-Bench is a **three-layer orthogonal taxonomy**, which serves as the foundation for data construction and evaluator training:
+
+- **Aesthetic Quality**: Overall beauty and 10 fine-grained dimensions including composition, camera shot, lighting, shadow, color, depth of field, expression, clothing, and makeup (adapted from the VADB dataset);
+- **Aesthetic Tagging**: 11 categories of quantifiable photographic elements such as composition type, light source number/position/texture/color, camera shot, depth of field, saturation, brightness, color temperature, and contrast, answering "what the visual language of the video looks like";
+- **Generation Quality**: Refined based on V-Bench into three categories with 31 sub-dimensions: video-text consistency, realism/rationality, and basic quality.
+
+The three layers comprise 52 dimensions (21 related to aesthetics). The construction process follows a serial pipeline: Taxonomy → 1,016 diverse prompts → ~60,000 videos generated by 12 models → human-annotated subset → training of VAQA-Net, VTag-Net, and VGQA-Net → automated evaluation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Three-layer Taxonomy<br/>Aesthetic Quality (10) + Aesthetic Tag (11) + Gen Quality (31) = 52 Dims"] --> B["Large-scale Prompt Suite<br/>1,016 Diverse Prompts"]
+    B --> C["12 Video Generation Models<br/>~5,000 each → ~60,000 Total Videos"]
+    C --> D["Human-Annotated Subset"]
+    D --> E
+    subgraph E["Three Dedicated Multi-task Evaluators"]
+        direction LR
+        E1["VAQA-Net<br/>Aesthetic Quality Scoring"]
+        E2["VTag-Net<br/>Aesthetic Tagging"]
+        E3["VGQA-Net<br/>Gen Quality Evaluation"]
+    end
+    E --> F["Automated Evaluation<br/>Aligned with Human Judgment"]
+```
 
 ### Key Designs
 
-1. **Three-Tier Taxonomy Evaluation Framework**:
+**1. Three-layer Classification System: Decomposing Video Quality into Three Non-substitutable Dimensions**
 
-    - Function: Enables systematic and comprehensive video assessment.
-    - Mechanism: Decomposes evaluation into three dimensions — Aesthetic Quality (overall aesthetics and fine-grained attributes such as composition and color harmony), Aesthetic Labels (automatic tagging of visual formal elements such as style and scene type), and Generation Quality (technical fidelity including temporal consistency and artifact detection).
-    - Design Motivation: V-Bench provides only 1 aesthetic dimension across 16 total dimensions; VGA-Bench substantially expands both the granularity and coverage of evaluation.
+Previous benchmarks (e.g., V-Bench) compressed "aesthetics" into a single score, merging independent factors like composition, color, and lighting. VGA-Bench orthogonally splits evaluation into three layers. **Aesthetic Quality** measures overall beauty and 10 fine-grained dimensions. **Aesthetic Tagging** automatically identifies 11 types of quantifiable photographic elements to describe visual language. **Generation Quality** focuses on technical fidelity across 31 sub-dimensions. Compared to V-Bench's 16 dimensions (only 1 for aesthetics), VGA-Bench's 52 dimensions (21 for aesthetics) allow for precise issue localization.
 
-2. **Three Dedicated Multi-Task Evaluation Models**:
+**2. Large-scale Diverse Prompt Suite and Dataset: Fair and Challenging Cross-model Comparison**
 
-    - Function: Eliminates dependence on external scoring models.
-    - Mechanism: VAQA-Net predicts aesthetic quality scores; VTag-Net performs automatic aesthetic label tagging; VGQA-Net assesses generation and basic quality attributes. All three are trained on human annotations to achieve alignment with human judgment.
-    - Design Motivation: External models (e.g., MUSIQ) are not designed for AIGC video and introduce systematic bias.
+To fairly compare generation models, test inputs must be diverse and large-scale. VGA-Bench designs 1,016 prompts covering various scenes, actions, styles, and challenging scenarios. Using 12 SOTA video generation models to produce ~60,000 videos creates the largest integrated testing platform to date, ensuring statistically significant results.
 
-3. **Large-Scale Diverse Prompt Suite**:
+**3. Three Dedicated Multi-task Evaluation Models: Specialized AIGC Evaluators over External Models**
 
-    - Function: Ensures breadth and challenge of evaluation coverage.
-    - Mechanism: 1,016 diverse prompts are designed to cover a wide range of scenes, actions, styles, and challenging scenarios. Each of the 12 state-of-the-art video generation models generates approximately 5,000 videos, yielding 60,000 videos in total.
-    - Design Motivation: Sufficiently diverse and large-scale test data is necessary for fair cross-model comparison.
+Older benchmarks often borrow external models like MUSIQ or DINO, which are not designed for AIGC videos, leading to systematic biases due to distribution shifts. VGA-Bench trains three dedicated evaluators: VAQA-Net for aesthetic scores, VTag-Net for tagging, and VGQA-Net for generation/basic quality. Trained on professional human annotations within a multi-task framework, these models align directly with human judgment rather than relying on disparate external benchmarks.
 
 ### Loss & Training
 
-The three evaluation models are trained separately on human-annotated data. Within a multi-task learning framework, each model handles multiple sub-attributes within its respective dimension.
+The three evaluation models are trained individually using human-annotated data. Within a multi-task learning framework, each model processes multiple sub-attributes under its respective dimension.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Evaluation Model | Human Alignment | Dimensions Covered |
-|---|---|---|
-| VAQA-Net | High alignment | Multi-dimensional aesthetic quality |
-| VTag-Net | High accuracy | Automated aesthetic labeling |
-| VGQA-Net | High alignment | Multi-dimensional generation quality |
+| Evaluator | Human Alignment | Dimension Coverage |
+|-----------|-----------------|--------------------|
+| VAQA-Net  | High Alignment  | Multiple Aesthetic Dims |
+| VTag-Net  | High Accuracy   | Aesthetic Tagging Automation |
+| VGQA-Net  | High Alignment  | Multiple Gen Quality Dims |
 
-### Ablation Study
+### Comparison with Existing Benchmarks (Table 1)
 
 | Dimension | V-Bench | VGA-Bench |
-|---|---|---|
-| Total dimensions | 16 | Substantially expanded |
-| Aesthetic dimensions | 1 | Multiple fine-grained dimensions |
-| Evaluated models | 4 | 12 |
-| Number of prompts | ~1,600 | 1,016 (curated) |
+|-----------|---------|-----------|
+| Total Dimensions | 16 | 52 |
+| Aesthetic Dimensions | 1 | 21 |
+| Evaluation Models | 4 | 12 |
+| Prompt Count | ~1600 | 1016 (Curated) |
 
 ### Key Findings
 
-- Dedicated evaluation models significantly outperform general-purpose external models in aligning with human judgment.
-- Different video generation models exhibit clear divergence in aesthetic and technical quality.
-- Aesthetic quality and generation quality are not always positively correlated — some models achieve high technical fidelity but poor aesthetic performance.
+- Dedicated evaluation models significantly outperform general external models in alignment with human judgment.
+- Different video generation models exhibit distinct strengths and weaknesses between aesthetic and technical quality.
+- Aesthetic quality and generation quality are not always positively correlated—some models show high technical fidelity but poor aesthetic performance.
 
 ## Highlights & Insights
 
-- **From Technical Fidelity to Aesthetic Intelligence**: VGA-Bench elevates AIGC evaluation from "does it look real?" to "does it look beautiful?"
-- **Value of Evaluation Infrastructure**: 60,000 videos, human annotations, and three evaluation models together constitute a complete evaluation ecosystem.
-- **Fully Open-Source Commitment**: Includes the taxonomy, prompt templates, annotation data, API, and video dataset.
+- **Expansion from Technical Fidelity to Aesthetic Intelligence**: VGA-Bench elevates AIGC evaluation from "is it realistic" to "is it beautiful."
+- **Value of Evaluation Infrastructure**: The combination of 60,000 videos, human annotations, and three evaluation models forms a complete evaluation ecosystem.
+- **Open Source Commitment**: Includes taxonomy, prompt templates, annotation data, APIs, and video datasets.
 
 ## Limitations & Future Work
 
-- Aesthetic evaluation is inherently subjective, and human annotations may carry bias.
-- The 1,016 curated prompts, while carefully selected, still offer limited coverage.
-- Evaluation models may require continuous updates as video generation technology advances.
+- Aesthetic evaluation is inherently subjective, and human annotation may contain biases.
+- Although curated, the 1016 prompts still have limited coverage.
+- Evaluation models may require continuous updates as video generation technology evolves.
 
 ## Related Work & Insights
 
-- **vs. V-Bench**: V-Bench represents a systematic first attempt but oversimplifies the aesthetic dimension (a single score); VGA-Bench substantially expands upon it.
-- **vs. FVD/CLIP Score**: Traditional metrics measure only technical fidelity, whereas VGA-Bench covers both aesthetic and generation quality.
+- **vs V-Bench**: V-Bench was the first systematic attempt, but its aesthetic dimension was oversimplified (1 score); VGA-Bench significantly expands this.
+- **vs FVD/CLIP Score**: Traditional metrics only measure technical fidelity, whereas VGA-Bench covers both aesthetic and generation quality.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Fine-grained aesthetic quality taxonomy and dedicated evaluators
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 models × 60,000 videos × human annotation
-- Writing Quality: ⭐⭐⭐⭐ Well-structured and comprehensive framework
-- Value: ⭐⭐⭐⭐ Significant contribution to AIGC evaluation infrastructure
+- Novelty: ⭐⭐⭐⭐ Fine-grained aesthetic taxonomy and dedicated evaluators.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 12 models × 60,000 videos × human annotation.
+- Writing Quality: ⭐⭐⭐⭐ Comprehensive system.
+- Value: ⭐⭐⭐⭐ Significant contribution to AIGC evaluation infrastructure.
 
 <!-- RELATED:START -->
 
@@ -125,11 +136,11 @@ The three evaluation models are trained separately on human-annotated data. With
 
 ## Related Papers
 
+- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 - [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
-- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](../../ICCV2025/video_generation/worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
-- [\[ICML 2026\] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](../../ICML2026/video_generation/t2av-compass_towards_unified_evaluation_for_text-to-audio-video_generation.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
+- [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
+- [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
+- [\[CVPR 2026\] THEval: Evaluation Framework for Talking Head Video Generation](theval_evaluation_framework_for_talking_head_video_generation.md)
 
 </div>
 

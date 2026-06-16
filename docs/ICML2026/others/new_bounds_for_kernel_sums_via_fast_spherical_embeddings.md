@@ -2,70 +2,80 @@
 title: >-
   [Paper Note] New Bounds for Kernel Sums via Fast Spherical Embeddings
 description: >-
-  [ICML 2026][KDE] By accelerating the "Randomized Nash Device" spherical embedding theorem from Bartal-Recht-Schulman 2011 using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$) and u…
+  [ICML 2026][Others][KDE] A fast version of the "randomized Nash device" spherical embedding theorem from Bartal-Recht-Schulman 2011 is developed using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$). By integrating this as a preprocessing step for Gaussian KDE to compress the diameter to $\widetilde{O}(1/
 tags:
-  - "ICML 2026"
-  - "KDE"
-  - "Gaussian kernel"
-  - "Fastfood"
-  - "Randomized Hadamard Transform"
-  - "Wiener chaos"
+  - ICML 2026
+  - Others
+  - KDE
+  - Gaussian kernel
+  - Fastfood
+  - Wiener chaos
 date: 2026-05-08
-content_hash: 1c3a5d14daad14a5
+content_hash: 0a01cd0f229d3240
 ---
-
 # New Bounds for Kernel Sums via Fast Spherical Embeddings
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.01263](https://arxiv.org/abs/2605.01263)  
 **Code**: None  
-**Area**: Algorithm Theory / Kernel Density Estimation / Random Projections  
+**Area**: Algorithm Theory / Kernel Density Estimation / Random Projection  
 **Keywords**: KDE, Gaussian kernel, Fastfood, Randomized Hadamard Transform, Wiener chaos
 
 ## TL;DR
-By accelerating the "Randomized Nash Device" spherical embedding theorem from Bartal-Recht-Schulman 2011 using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$) and utilizing it as a preprocessing step for Gaussian KDE to compress the diameter to $\widetilde{O}(1/\sqrt{\varepsilon})$, a new Gaussian KDE query time bound of $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$ is achieved. This outperforms RFF / FJLT+RFF / Fastfood in the regime of small $\varepsilon$ and moderate diameter.
+A fast version of the "randomized Nash device" spherical embedding theorem from Bartal-Recht-Schulman 2011 is developed using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$). By integrating this as a preprocessing step for Gaussian KDE to compress the diameter to $\widetilde{O}(1/\sqrt{\varepsilon})$, a new query time bound of $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$ is derived. This bound outperforms RFF / FJLT+RFF / Fastfood in the regime of small $\varepsilon$ and medium diameter.
 
 ## Background & Motivation
 
-**Background**: Kernel Density Estimation (KDE) is a fundamental tool in ML, aiming to estimate $\frac{1}{|X|} \sum_{x \in X} \mathbf{k}(x, y)$ for a query $y$ with precision $\pm \varepsilon$ (with high probability). High-dimensional Gaussian KDE query times have been improved by three major methods over the past decade: (i) RFF $O(d/\varepsilon^2)$, (ii) FJLT + RFF $\widetilde{O}(d + 1/\varepsilon^4)$, and (iii) Fastfood $\widetilde{O}(d + \Delta_\sigma^2/\varepsilon^2)$. These are mutually incomparable, depending on specific values of dimension $d$, error $\varepsilon$, and effective diameter $\Delta_\sigma = \Delta/\sigma$.
+**Background**: Kernel Density Estimation (KDE) is a fundamental tool in ML. The goal is to estimate $\frac{1}{|X|} \sum_{x \in X} \mathbf{k}(x, y)$ for a query $y$ with precision $\pm \varepsilon$ (with high probability). Query times for high-dimensional Gaussian KDE have been optimized via three primary methods: (i) RFF $O(d/\varepsilon^2)$, (ii) FJLT + RFF $\widetilde{O}(d + 1/\varepsilon^4)$, and (iii) Fastfood $\widetilde{O}(d + \Delta_\sigma^2/\varepsilon^2)$. These methods are mutually incomparable, depending on the dimension $d$, error $\varepsilon$, and effective diameter $\Delta_\sigma = \Delta/\sigma$.
 
-**Limitations of Prior Work**: Each method has "uncovered" parameter intervals. Fastfood is optimal for small diameters, but in $\Delta_\sigma^2 / \varepsilon^2$, the diameter appears in the numerator (worsening as diameter increases); RFF/FJLT do not depend on diameter but have a heavy dependence on $\varepsilon$. Is it possible to construct a bound where the diameter appears in a "friendlier" way (e.g., $\varepsilon \Delta_\sigma^2$, where smaller $\varepsilon$ is better)?
+**Limitations of Prior Work**: Each method has "uncovered" parameter intervals. Fastfood is optimal for small diameters, but the term $\Delta_\sigma^2 / \varepsilon^2$ places the diameter in the numerator (worsening as diameter increases). RFF/FJLT do not depend on diameter but have a heavy dependence on $\varepsilon$. The question is whether a bound can be constructed where the diameter appears in a "friendlier" manner (e.g., $\varepsilon \Delta_\sigma^2$, where smaller $\varepsilon$ is beneficial).
 
-**Key Challenge**: The bottleneck of Fastfood is the output dimension $d' = O(\Delta_\sigma^2 / \varepsilon^2)$, which must be determined by the diameter of the data region. If a "diameter compression" preprocessing step could be performed before Fastfood to reduce the effective diameter, the overall complexity could be improved. However, this preprocessing must be fast and must not distort distances in a way that affects kernel estimation accuracy.
+**Key Challenge**: The bottleneck of Fastfood is the output dimension $d' = O(\Delta_\sigma^2 / \varepsilon^2)$, which is determined by the diameter of the data region. If a "diameter compression" preprocessing can be applied before Fastfood to reduce the effective diameter, the overall complexity can be improved. However, this preprocessing must be fast and must not distort distances in a way that affects kernel estimation accuracy.
 
-**Goal**: Construct a "fast spherical embedding" with time complexity $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$ that maps points to a unit sphere, preserves "small" distances $\leq \sqrt{\varepsilon}$ within $(1 \pm \varepsilon)$, and prevents "large" distances from collapsing below $\Omega(\sqrt{\varepsilon})$, effectively compressing the diameter to $1/\sqrt{\varepsilon}$. Then, stack a Fastfood layer for KDE.
+**Goal**: Construct a "fast spherical embedding" with time complexity $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$ that maps points to a unit sphere, preserves "small" distances $\leq \sqrt{\varepsilon}$ within $(1 \pm \varepsilon)$, and prevents "large" distances from collapsing below $\Omega(\sqrt{\varepsilon})$, thereby compressing the diameter to $1/\sqrt{\varepsilon}$.
 
-**Key Insight**: A key observation for Gaussian KDE is that when distances $\geq \sqrt{\log(1/\varepsilon)}$, the value $e^{-\|x-y\|^2} \leq \varepsilon$. Thus, these "large" distances do not need precise preservation as long as they do not collapse to values smaller than $\sqrt{\log(1/\varepsilon)}$. This requirement of "precise small distances, non-collapsing large distances" exactly corresponds to the spherical embedding theorem introduced by BRS 2011. However, their implementation used full Gaussian matrices $O(d/\varepsilon^2)$, which is not fast enough.
+**Key Insight**: For Gaussian KDE, $e^{-\|x-y\|^2} \leq \varepsilon$ when distance $\geq \sqrt{\log(1/\varepsilon)}$. Thus, these "large" distances do not require precise preservation as long as they do not collapse below $\sqrt{\log(1/\varepsilon)}$. This requirement matches the spherical embedding theorem introduced by BRS 2011, but their implementation used full Gaussian matrices with $O(d/\varepsilon^2)$ complexity, which is not efficient.
 
-**Core Idea**: Use an iterative Fastfood transform $\psi(H D_2 H D_1 x)$ (two layers of randomized Hadamard transforms) as a "fast version of BRS spherical embedding." This is proven to satisfy the three properties of spherical embedding and is then utilized as a Gaussian KDE preprocessing step layered above Fastfood, resulting in a dual-layer Fastfood: $\psi(H D_4 H D_3 \cdot s^{-1} \psi(H D_2 H D_1 (s x)))$.
+**Core Idea**: Utilize iterative Fastfood $\psi(H D_2 H D_1 x)$ (two layers of randomized Hadamard transforms) as a "fast version of BRS spherical embedding." It is proved to satisfy the three properties of spherical embedding, then cascaded as a preprocessing step for Gaussian KDE, resulting in a dual-layer Fastfood: $\psi(H D_4 H D_3 \cdot s^{-1} \psi(H D_2 H D_1 (s x)))$.
 
 ## Method
 
 ### Overall Architecture
-A two-stage embedding. Stage 1: **Fast Spherical Embedding** $\Phi: \mathbb{R}^d \to \mathbb{S}^m$, $m = \widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$. Data and queries are scaled by $s = \Theta(\sqrt{\varepsilon / \log(1/\varepsilon)})$ and passed through the inner Fastfood. The output lies on $\mathbb{S}^{2m-1}$ with a scaled diameter $\Lambda = s\Delta = \widetilde{O}(\sqrt{\varepsilon} \Delta)$. Stage 2: **Unscaling + Second Layer Fastfood** for KDE. After unscaling, points lie on a sphere of radius $s^{-1}$ with a new diameter $\widehat{\Delta} = 2 s^{-1} = \widetilde{O}(1/\sqrt{\varepsilon})$. Standard Fastfood (Le-Sarlós-Smola 2013) is then applied for KDE approximation with complexity $\widetilde{O}(m + \widehat{\Delta}^2/\varepsilon^2) = \widetilde{O}(m + 1/\varepsilon^3)$. Summing both stages yields exactly $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$.
+A two-stage embedding process is used. Stage 1 involves **Fast Spherical Embedding** $\Phi: \mathbb{R}^d \to \mathbb{S}^m$ with $m = \widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$. Data and queries are scaled by $s = \Theta(\sqrt{\varepsilon / \log(1/\varepsilon)})$ and passed through the **inner Fastfood**, resulting in outputs on $\mathbb{S}^{2m-1}$ with a scaled diameter $\Lambda = s\Delta = \widetilde{O}(\sqrt{\varepsilon} \Delta)$. Stage 2 involves **Descaling + Outer Fastfood** for KDE. After descaling, points are on a sphere of radius $s^{-1}$ with a new diameter $\widehat{\Delta} = 2 s^{-1} = \widetilde{O}(1/\sqrt{\varepsilon})$. Standard Fastfood (Le-Sarlós-Smola 2013) is then applied for KDE approximation with complexity $\widetilde{O}(m + \widehat{\Delta}^2/\varepsilon^2) = \widetilde{O}(m + 1/\varepsilon^3)$. The combined complexity is $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Data X + Query y ∈ ℝ^d<br/>Effective Diameter Δσ"] --> B["Scaling Alignment ×s (Scaling trick)<br/>s = Θ(√(ε / log(1/ε)))"]
+    B --> C["Inner Fastfood Spherical Embedding<br/>V = √m · HGHB, Trig Embedding Φ → Sphere S^(2m−1)<br/>Scaled Diameter Λ = √ε·Δ; Non-collapse proved via Wiener chaos 4th-order analysis"]
+    C --> D["Descaling ×s⁻¹ (Scaling trick)<br/>New Diameter Δ̂ = 2s⁻¹ = Õ(1/√ε)"]
+    D --> E["Outer Fastfood for KDE<br/>Le-Sarlós-Smola, time Õ(m + 1/ε³)"]
+    E --> F["Output: Kernel Sum Estimate ±ε<br/>Total Complexity Õ(d + εΔσ² + 1/ε³)"]
+```
 
 ### Key Designs
 
-1.  **Fastfood as Spherical Embedding (Theorem 1.3 + 1.2)**:
-    - **Function**: Maps any $x \in \mathbb{R}^m$ to a unit sphere $\mathbb{S}^{2m-1}$ (deterministic guarantee $\|\Phi(x)\|_2 = 1$) with three probabilistic conditions: (1) distance expansion does not exceed $1+\varepsilon$, (2) small distances $\|x-y\|^2 \leq \varepsilon$ do not contract more than $1-\varepsilon$, (3) distances $\in (\varepsilon, \Lambda^2]$ do not collapse below $\Omega(\varepsilon)$.
-    - **Mechanism**: The Fastfood matrix is $V = \sqrt{m} \cdot H G H B$, where $H$ is a normalized Hadamard matrix, $G = \text{diag}(g)$ is a Gaussian diagonal, and $B$ is a Rademacher diagonal sign matrix. The mapping is defined as $\Phi(x)_{2j-2} = \frac{1}{\sqrt{m}} \cos((Vx)_j)$ and $\Phi(x)_{2j-1} = \frac{1}{\sqrt{m}} \sin((Vx)_j)$. Fast computation of $Vx$ relies on the Walsh-Hadamard Transform $O(m \log m)$; the unit sphere constraint is automatically guaranteed by the identity $\sin^2 + \cos^2 = 1$.
-    - **Design Motivation**: BRS 2011 implemented the same spherical embedding using a full Gaussian matrix $W$ with time $O(d/\varepsilon^2)$. This work replaces $W$ with the structured matrix $H G H B$ via RHT, reducing time to $O(m \log m)$ while retaining the statistical properties of Gaussian "approximations" inherent in RHT.
+**1. Fastfood as Fast Spherical Embedding: Replacing Full Gaussian with Structured Matrices**
 
-2.  **Fourth-order Wiener Chaos Analysis for Distance Contraction Control**:
-    - **Function**: Proves that $\Phi$ does not contract small distances by more than $(1-\varepsilon)$ (Item 2 of Theorem 1.3).
-    - **Mechanism**: Using the Taylor expansion $1 - \cos(\theta) \geq \frac{1}{2}\theta^2 - \frac{1}{24}\theta^4$, the bound $\|\Phi(x) - \Phi(y)\|^2 \geq Q(z) - \frac{1}{12} W(z)$ is derived, where $Q(z) = \frac{1}{m}\|Vz\|^2$ (quadratic term) and $W(z) = \frac{1}{m}\sum (Vz)_j^4$ (fourth-order term). $Q(z)$ is controlled via Bernstein inequalities; $W(z)$ is a Gaussian chaos function, decomposed using the identity $t^4 - 3 = 6 h_2(t) + h_4(t)$ into a sum of 2nd and 4th order Wiener chaos, controlled respectively by Bernstein and Wiener chaos hypercontractivity (Theorem 3.6).
-    - **Design Motivation**: The Fastfood analysis by Le-Sarlós-Smola 2013 used Lipschitz Gaussian concentration, providing only second-order moments. To prove the collapse lower bound, the four-order term must be controlled, which requires Wiener chaos decomposition—the core technical innovation of this paper.
+BRS 2011 provided a "spherical embedding" tool to map points to a unit sphere while preserving small distances and preventing large distances from collapsing. However, their use of full Gaussian matrices $W$ results in $O(d/\varepsilon^2)$ time. This work replaces it with iterative Fastfood: the mapping $\Phi$ takes $x\in\mathbb{R}^m$ through a Fastfood matrix $V=\sqrt{m}\cdot HGHB$ ($H$ is normalized Hadamard, $G=\text{diag}(g)$ is Gaussian diagonal, $B$ is Rademacher sign diagonal) and then into a trigonometric embedding:
+$$\Phi(x)_{2j-2}=\tfrac{1}{\sqrt m}\cos((Vx)_j),\quad \Phi(x)_{2j-1}=\tfrac{1}{\sqrt m}\sin((Vx)_j)$$
+The output lies on $\mathbb{S}^{2m-1}$. $Vx$ is computed in $O(m\log m)$ via Walsh-Hadamard Transforms. The RHT serves as a sparse approximation of Gaussian matrices while retaining the required statistical properties (Theorem 1.3).
 
-3.  **Scaling Trick to Align "Small Distance Threshold" with Gaussian KDE Effective Distance**:
-    - **Function**: Converts the BRS embedding "small distance threshold $\sqrt{\varepsilon}$" to the $\sqrt{\log(1/\varepsilon)}$ required for KDE.
-    - **Mechanism**: Inputs are scaled by $s = \Theta(\sqrt{\varepsilon / \log(1/\varepsilon)})$ before embedding and inverse-scaled by $s^{-1}$ after. This ensures pairs with original distances $\leq \sqrt{\log(1/\varepsilon)}$ are precisely preserved in the embedding space, while pairs with distances $\geq \sqrt{\log(1/\varepsilon)}$ maintain at least $\Omega(\sqrt{\log(1/\varepsilon)})$ (thus the Gaussian term $e^{-\|x-y\|^2}$ remains less than $\varepsilon$ and can be ignored).
-    - **Design Motivation**: Directly applying the BRS embedding solves for a "$\sqrt{\varepsilon}$ threshold," which is insufficient for KDE; scaling shifts the threshold to the correct scale to maintain KDE precision.
+**2. Fourth-order Wiener Chaos Analysis for Distance Contraction: Technical Control**
+
+Proving that $\Phi$ does not contract small distances by more than $(1-\varepsilon)$ (Theorem 1.3, item 2) requires more than second-moment analysis. Starting from the Taylor lower bound $1-\cos(\theta)\ge\tfrac12\theta^2-\tfrac{1}{24}\theta^4$, one obtains:
+$$\|\Phi(x)-\Phi(y)\|^2 \ge Q(z)-\tfrac{1}{12}W(z),\quad Q(z)=\tfrac1m\|Vz\|^2,\ W(z)=\tfrac1m\sum_j (Vz)_j^4$$
+The second-order term $Q(z)$ is bound via Bernstein's inequality. The fourth-order term $W(z)$ is a Gaussian chaos function. It is decomposed using the identity $t^4-3=6h_2(t)+h_4(t)$ into 2nd and 4th order Wiener chaos, controlled via Bernstein and Wiener chaos hypercontractivity (Theorem 3.6). This technical innovation is necessary because second-order bounds used in prior Fastfood analysis cannot bound the variance of $(Vz)_j^4$.
+
+**3. Scaling Trick to Align Small Distance Thresholds**
+
+BRS embeddings precisely preserve distances $\le\sqrt{\varepsilon}$, but the effective threshold for Gaussian KDE is $\sqrt{\log(1/\varepsilon)}$. These scales are aligned by scaling the input by $s=\Theta(\sqrt{\varepsilon/\log(1/\varepsilon)})$ before embedding and scaling back by $s^{-1}$ after. Consequently, point pairs with original distances $\le\sqrt{\log(1/\varepsilon)}$ are preserved, while those $\ge\sqrt{\log(1/\varepsilon)}$ remain at $\Omega(\sqrt{\log(1/\varepsilon)})$. The resulting new diameter $\widehat\Delta=2s^{-1}=\widetilde O(1/\sqrt\varepsilon)$ allows the outer Fastfood to achieve $\widetilde O(1/\varepsilon^3)$ complexity, making the diameter term multiplicative with $\varepsilon$.
 
 ### Loss & Training
-This is a purely theoretical paper; there is no training or optimization objective. All "parameters" (embedding dimension $m$, scaling factor $s$, Hadamard order) are explicitly determined by theoretical analysis.
+This is a theoretical work; there is no training or optimization. All parameters (dimension $m$, scaling $s$, Hadamard order) are determined explicitly by theoretical analysis.
 
 ## Key Experimental Results
-This is a purely theoretical paper with no experimental tables. Complexity comparison visualizations are provided in Table 1 and Figure 1.
+This is a theoretical paper; it contains no experimental tables. Complexity comparisons are visualized in Table 1 and Figure 1.
 
 ### Main Results
 
@@ -76,46 +86,44 @@ This is a purely theoretical paper with no experimental tables. Complexity compa
 | Fastfood | $\widetilde{O}(d + \Delta_\sigma^2/\varepsilon^2)$ | $\Delta_\sigma \lesssim \min\{\sqrt{d}, \varepsilon^{-0.5}\}$ |
 | **Ours (Theorem 1.2)** | $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$ | $\varepsilon^{-0.5} \lesssim \Delta_\sigma \lesssim \min\{\sqrt{d} \varepsilon^{-1.5}, \varepsilon^{-2.5}\}$ |
 
-The four methods are mutually incomparable; each is optimal within its own parameter interval. The method introduced in this paper occupies the "moderate diameter + small $\varepsilon$" interval, a regime not previously covered.
+The four methods are incomparable; each is optimal within its own parameter regime. The new method occupies the "medium diameter + small $\varepsilon$" regime, which was previously uncovered by efficient bounds.
 
 ### Ablation Study
 
 | Extension | Kernel | Query Time |
 |------|------|----------|
 | Theorem 1.4 | Inverse Multi-Quadratic $\mathbf{k}_\beta^{\text{IMQ}}(x,y) = (1 + \|x-y\|^2/\sigma^2)^{-\beta}$ | $\widetilde{O}(d + \varepsilon (\beta \Delta_\sigma)^2 + 1/\varepsilon^3)$ |
-| Theorem 1.5 | Gaussian + Differential Privacy (function release) | Same as Theorem 1.2, given $|X| \geq \widetilde{O}(1/(\varepsilon^2 \varepsilon_{\text{DP}}))$ |
+| Theorem 1.5 | Gaussian + Differential Privacy (function release) | Same as Theorem 1.2, provided $|X| \geq \widetilde{O}(1/(\varepsilon^2 \varepsilon_{\text{DP}}))$ |
 
-Two extensions verify that the core technology of the main theorem (fast spherical embedding) is applicable beyond Gaussian KDE—IMQ is achieved via functional approximation from Cherapanamjeri-Silwal-Woodruff 2024; DP is achieved by controlling probabilistic dependence between RHT output coordinates (an extra step required for Fastfood and this work that RFF does not need).
+Two extensions demonstrate that the fast spherical embedding is not limited to Gaussian KDE. IMQ is handled via function approximation, and DP is achieved by controlling probabilistic dependencies between RHT output coordinates.
 
 ### Key Findings
-- In the new bound, $\varepsilon$ in the diameter term $\varepsilon \Delta_\sigma^2$ is a **multiplier** rather than a **divisor**—this means a smaller $\varepsilon$ actually makes the diameter term smaller, a fundamental polarity shift compared to Fastfood's $\Delta_\sigma^2/\varepsilon^2$.
-- The fourth-order chaos control is critical: while Bernstein second-order analysis can only provide an upper bound (distance expansion), proving the distance contraction lower bound requires observing the variance of $(Vz)_j^4$, which is a 4th order Wiener chaos quantity requiring hypercontractivity.
-- The composite structure of two-layer Fastfood algorithmically echoes heuristic practices using 3 layers of RHT in SORF 2017 and Andoni et al. LSH 2015, but this paper provides the first theoretical guarantee for a double-layer version.
-- The applications of the Embedding Theorem 1.3 likely extend far beyond KDE—any application requiring fast embeddings with "precise small distances and non-collapsing large distances" can use it directly; the authors list it as an independent contribution.
+- The $\varepsilon$ term in the diameter-related part $\varepsilon \Delta_\sigma^2$ is **multiplicative** rather than **divisive**—implying that smaller $\varepsilon$ reduces the impact of the diameter, a reversal of Fastfood's $\Delta_\sigma^2/\varepsilon^2$.
+- Fourth-order chaos control is vital: while Bernstein's inequality handles distance expansion (upper bound), proving distance contraction (lower bound) requires bounding the variance of $(Vz)_j^4$, which necessitates hypercontractivity.
+- The dual-Fastfood structure mirrors heuristic approaches like SORF (2017) and 3-layer RHT in LSH, but this work provides the first theoretical guarantee for a double-layered version.
+- The spherical embedding theorem (Theorem 1.3) has potential applications beyond KDE where "small distance precision and large distance non-collapse" is required.
 
 ## Highlights & Insights
-- The algorithmic re-composition idea of "using fast embedding to compress diameter then cascading Fastfood" is highly efficient—it does not invent entirely new algorithms but reconnects existing blocks, achieving a new bound through precise scale alignment.
-- Using Wiener chaos decomposition and hypercontractivity for RHT fourth-order term control is a robust technique for the ML community: hypercontractivity of Gaussian polynomials is an old tool rarely seen in random projection literature. This paper provides a clean demonstration; this toolkit will likely reappear in future analyses of SORF, multi-layer RHT, or structured sketches.
-- Translating the conceptual result (the "randomized Nash device") of BRS 2011 into a fast version bridges a tool previously isolated in metric embedding theory into the mainstream of KDE and kernel approximation.
+- The algorithmic strategy of "compressing diameter via fast embedding before cascading Fastfood" is highly efficient—it re-composes existing blocks with careful scale alignment to yield a new bound.
+- Wiener chaos decomposition and hypercontractivity for RHT 4th-order control is a powerful theoretical tool rarely seen in random projection literature; it provides a paradigm for analyzing structured sketches.
+- Translating the conceptual "randomized Nash device" from BRS 2011 into a fast version bridges metric embedding theory with kernel approximation.
 
 ## Limitations & Future Work
-- The upper bound is optimal only in a narrow $\Delta_\sigma$ interval ($\varepsilon^{-0.5} \lesssim \Delta_\sigma \lesssim \varepsilon^{-2.5}$); outside this range, previous bounds still dominate.
-- There is no experimental verification of the constant factors; the logarithmic factors hidden in $\widetilde{O}$ (especially for Wiener chaos) might be large in practice.
-- The work focuses only on additive error KDE; applying this embedding to relative error KDE (like the Backurs et al. series) would require additional work.
-- While the spherical embedding theorem itself may have independent applications (Bartal et al. used BRS embedding for Lipschitz extension and small distortion embedding), this paper only utilizes it for KDE.
+- The upper bound is optimal only in a specific $\Delta_\sigma$ interval ($\varepsilon^{-0.5} \lesssim \Delta_\sigma \lesssim \varepsilon^{-2.5}$).
+- There are no empirical tests to determine the size of constant factors; the logarithmic factors hidden in $\widetilde{O}$ from Wiener chaos analysis could be significant.
+- The work focuses on additive error KDE; extending the embedding to relative error KDE requires further research.
 
 ## Related Work & Insights
-- **vs RFF / FJLT + RFF**: These do not depend on diameter, whereas this work explicitly depends on $\Delta_\sigma$, albeit in the friendlier $\varepsilon \Delta_\sigma^2$ form.
-- **vs Fastfood**: This work essentially nests Fastfood within Fastfood—the former for spherical embedding compression, the latter for actual KDE estimation.
-- **vs Charikar-Siminelakis 2017 series (importance sampling-based KDE)**: That line provides relative error but with higher polynomial complexity; this paper focuses on the additive error track.
-- **vs SORF (Yu et al. 2016) / Multi-layer RHT LSH**: These use multiple RHTs in sequence, but SORF is a heuristic for empirical optimality lacking theory; this paper provides the first theoretical guarantee for two-layer RHT using Wiener chaos.
-- **Insight**: Spherical embedding and Wiener chaos tools might be applicable to ML systems problems like attention sketching or transformer KV-cache compression, where kernel-like operations needing "precise small distances and allowed error for large distances" are required.
+- **vs RFF / FJLT + RFF**: These are diameter-independent; Ours depends on $\Delta_\sigma$ but in a friendlier $\varepsilon \Delta_\sigma^2$ form.
+- **vs Fastfood**: Ours behaves like Fastfood nested within Fastfood, where the first layer performs compression.
+- **vs SORF / Multi-layer RHT LSH**: These use multiple RHTs based on heuristics; this work provides the first theoretical guarantee for a 2-layer RHT chain.
+- Insight: Spherical embeddings and Wiener chaos might be applicable to attention sketching or KV-cache compression in Transformers where kernel-like operations require similar distance preservation properties.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Algorithmic block re-composition, with Wiener chaos as a new tool in the analysis.
-- **Experimental Thoroughness**: ⭐⭐ Purely theoretical, with no measurement of constant factors or comparisons against Fastfood/RFF.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The combination of conceptual diagrams, tables, and complexity interval analysis clearly explains why the new bound is superior.
-- **Value**: ⭐⭐⭐⭐ Fills a specific parameter interval gap in kernel approximation theory; the spherical embedding Theorem 1.3 has potential for independent application.
+- Novelty: ⭐⭐⭐⭐ (Algorithmic re-composition with new Wiener chaos tools)
+- Experimental Thoroughness: ⭐⭐ (Strictly theoretical, lacks constant factor measurement)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Excellent use of diagrams and regime analysis)
+- Value: ⭐⭐⭐⭐ (Fills a theoretical gap in kernel approximation and provides a standalone embedding theorem)
 
 <!-- RELATED:START -->
 
@@ -125,7 +133,7 @@ Two extensions verify that the core technology of the main theorem (fast spheric
 
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](../../ICLR2026/others/probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
-- [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/others/heegnet_hyperbolic_embeddings_for_eeg.md)
+- [\[ICML 2025\] K²IE: Kernel Method-based Kernel Intensity Estimators for Inhomogeneous Poisson Processes](../../ICML2025/others/k2ie_kernel_method-based_kernel_intensity_estimators_for_inhomogeneous_poisson_p.md)
 - [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](../../AAAI2026/others/a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
 - [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](../../ICLR2026/others/characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
 

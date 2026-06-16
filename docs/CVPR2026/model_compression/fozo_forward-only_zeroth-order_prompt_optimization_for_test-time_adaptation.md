@@ -2,83 +2,88 @@
 title: >-
   [Paper Note] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation
 description: >-
-  [CVPR 2026][Model Compression][Test-Time Adaptation] This paper proposes FOZO, a forward-only zeroth-order prompt optimization paradigm that updates prompts via SPSA gradient estimation, a dynamic perturbation strategy…
+  [CVPR 2026][Model Compression][Visual Prompt] Ours proposes FOZO, a forward-only zeroth-order prompt optimization paradigm. By utilizing SPSA gradient estimation, a dynamic perturbation strategy, and shallow-deep feature statistical alignment, FOZO achieves efficient TTA without modifying model weights. It outperforms all forward-only methods on ImageNet-C with 59
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "Test-Time Adaptation"
-  - "Zeroth-Order Optimization"
-  - "Visual Prompt"
-  - "Forward Propagation"
-  - "Quantized Model Deployment"
+  - CVPR 2026
+  - Model Compression
+  - Visual Prompt
 date: 2026-05-08
-content_hash: 3f8de379cad2b9b4
+content_hash: 5dc0c6a202071862
 ---
-
 # FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.04733](https://arxiv.org/abs/2603.04733)  
 **Code**: [eVI-group-SCU/FOZO](https://github.com/eVI-group-SCU/FOZO)  
-**Area**: Model Compression
+**Area**: Model Compression  
 **Keywords**: Test-Time Adaptation, Zeroth-Order Optimization, Visual Prompt, Forward Propagation, Quantized Model Deployment
 
 ## TL;DR
 
-This paper proposes FOZO, a forward-only zeroth-order prompt optimization paradigm that updates prompts via SPSA gradient estimation, a dynamic perturbation strategy, and shallow–deep feature statistics alignment—without modifying model weights. FOZO achieves 59.52% accuracy on ImageNet-C, surpassing all forward-only methods including FOA (58.13%), and supports INT8 quantized models.
+Ours proposes FOZO, a forward-only zeroth-order prompt optimization paradigm. By utilizing SPSA gradient estimation, a dynamic perturbation strategy, and shallow-deep feature statistical alignment, FOZO achieves efficient TTA without modifying model weights. It outperforms all forward-only methods on ImageNet-C with 59.52% accuracy (surpassing FOA's 58.13%) and supports INT8 quantized models.
 
 ## Background & Motivation
 
-**Distribution shift is ubiquitous**: Deep learning models frequently encounter train-test distribution shift in real-world deployment. TTA addresses this by dynamically adapting models using unlabeled test data at inference time.
+**Distribution shifts are ubiquitous**: Deep learning models frequently encounter training-test distribution shifts during real-world deployment. TTA addresses this by dynamically adjusting models using unlabeled data at test time.
 
-**Backpropagation-based methods are resource-intensive**: Gradient-based TTA methods such as TENT, SAR, and EATA require backpropagation to update model weights, incurring high computational and memory overhead (e.g., TENT: 5,495 MiB vs. FOZO: 831 MiB), making them unsuitable for low-power edge devices.
+**High resource consumption of backpropagation (BP) methods**: Gradient-based TTA methods such as TENT, SAR, and EATA require backpropagation to update model weights, leading to high computational and memory overhead (e.g., TENT's 5495 MiB vs. FOZO's 831 MiB), which is unsuitable for low-power edge devices.
 
-**Gradient-free methods have limited capacity**: Methods such as AdaBN, T3A, and LAME do not construct explicit optimization objectives, resulting in limited learning capacity and suboptimal adaptation performance (e.g., LAME achieves only 54.16% on ImageNet-C).
+**Limited capacity of traditional gradient-free methods**: Methods like AdaBN, T3A, and LAME do not construct explicit optimization objectives, resulting in limited learning capacity and suboptimal adaptation performance (LAME achieves only 54.16% on ImageNet-C).
 
-**CMA-ES is inefficient in high-dimensional spaces**: The recent forward-only method FOA employs the CMA-ES evolutionary strategy to update prompts, but CMA-ES has $O(d^2)$ complexity and converges slowly in high-dimensional prompt spaces.
+**Low efficiency of CMA-ES in high-dimensional optimization**: The recent forward-only method FOA uses the CMA-ES evolutionary strategy to update prompts; however, CMA-ES has $O(d^2)$ complexity and converges slowly in high-dimensional prompt spaces.
 
-**ZOA modifies internal model parameters**: ZOA applies zeroth-order optimization to update normalization layer parameters, limiting its applicability in scenarios where model weights cannot be modified (e.g., hardware-encoded or quantized models).
+**ZOA modifies internal model parameters**: ZOA updates normalization layer parameters via zeroth-order optimization, limiting its applicability in scenarios where model weights are immutable (e.g., hardware-encoded or quantized models).
 
-**OOD data streams pose optimization challenges**: The continuously shifting data distribution in TTA makes zeroth-order gradient estimates prone to unreliability, necessitating specialized optimization strategies to ensure convergence stability.
+**Challenges from OOD data streams**: Data distributions change continuously in TTA, making zeroth-order gradient estimation potentially unreliable. Dedicated optimization strategies are required to ensure convergence stability.
 
 ## Method
 
 ### Overall Architecture
 
-FOZO injects a small set of learnable prompts $\mathbf{P} = \{\mathbf{p}^k \in \mathbb{R}^d \mid 1 \leq k \leq p\}$ (default $p=3$) into the input layer of a pretrained ViT, with all model weights frozen. Upon each test batch, the prompts are updated via SPSA zeroth-order gradient estimation using only forward passes. The core pipeline is as follows:
+Ours aims to solve TTA in scenarios such as edge devices and quantized models where "weights are immutable and backpropagation budgets are unavailable." It injects a small number of learnable prompts $\mathbf{P} = \{\mathbf{p}^k \in \mathbb{R}^d | 1 \leq k \leq p\}$ (default $p=3$) into the input layer of a pre-trained ViT. Model weights remain frozen throughout, and only these prompts are updated for each test batch using forward propagation only. The cycle is as follows: dynamically adjust the perturbation scale $\epsilon_t$ based on the current data stream state → apply a pair of positive and negative symmetric perturbations to the prompt → perform one forward pass for each to calculate unsupervised losses ($\ell_+$ / $\ell_-$) based on shallow-deep feature statistical alignment and entropy minimization → estimate the SPSA gradient using the difference between the two losses → update the prompt and continue to the next batch. Three Key Designs address critical points in this loop: SPSA enables gradient estimation via forward passes, dynamic perturbation stabilizes zeroth-order estimation in shifting data streams, and the alignment loss provides a more reliable signal for unsupervised optimization than pure entropy.
 
-1. Apply symmetric positive and negative perturbations to prompt $\mathbf{P}$: $\mathbf{P}_+ = \mathbf{P} + \epsilon_t \mathbf{Z}$, $\mathbf{P}_- = \mathbf{P} - \epsilon_t \mathbf{Z}$ (where $\mathbf{Z} \sim \mathcal{N}(0, I_d)$)
-2. Compute losses $\ell_+$ and $\ell_-$ via separate forward passes
-3. Estimate the projected gradient: $\hat{g} = \frac{\ell_+ - \ell_-}{2\epsilon_t} \mathbf{Z}$
-4. Average gradient estimates over $n$ SPSA samples and update the prompts
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Test batch + Frozen ViT<br/>Inject learnable prompt P into input layer"] --> B["Dynamic Perturbation Strategy<br/>Loss spike → Reset ε₀ for exploration; Else ε×0.9 decay"]
+    B --> C["Symmetric Perturbation<br/>P₊=P+εZ, P₋=P−εZ (Z∼N(0,I))"]
+    C --> D["Two Forward Passes (Shared Frozen ViT)"]
+    D --> E["Unsupervised Loss<br/>L=λ·Shallow-Deep Alignment + Entropy Min → ℓ₊, ℓ₋"]
+    E --> F["SPSA Gradient Estimation<br/>ĝ=(ℓ₊−ℓ₋)/2ε·Z, average n samples"]
+    F --> G["Update prompt P (Weights frozen throughout)"]
+    G --> H["Output Prediction Ŷ"]
+    G -->|Next batch| B
+```
 
-### Key Designs: Dynamic Perturbation Strategy
+### Key Designs
 
-Based on convergence analysis (Theorem 1), the bias term $C\eta\ell\epsilon_t^2 r$ requires $\epsilon_t \to 0$ for accurate convergence, yet large perturbations are needed early in training or after domain shifts to encourage exploration. FOZO introduces an adaptive decay mechanism:
+**1. SPSA Forward Gradient Estimation: Replacing BP with Loss Differences**
+
+BP-based TTA (TENT, SAR, EATA) incurs significant memory overhead (TENT 5495 MiB vs. FOZO 831 MiB), making them infeasible for low-power devices. FOZO adopts SPSA zeroth-order estimation: applying symmetric perturbations $\mathbf{P}_+ = \mathbf{P} + \epsilon_t \mathbf{Z}$ and $\mathbf{P}_- = \mathbf{P} - \epsilon_t \mathbf{Z}$ (where $\mathbf{Z} \sim \mathcal{N}(0, I_d)$), obtaining losses $\ell_+$ and $\ell_-$ via forward passes, and estimating the projected gradient $\hat{g} = \frac{\ell_+ - \ell_-}{2\epsilon_t} \mathbf{Z}$. The prompt is updated after averaging $n$ SPSA samples. Compared to the CMA-ES used in FOA ($O(d^2)$ complexity, slow convergence), SPSA requires only two forward passes per step, and its convergence rate theoretically depends on the effective Hessian rank $r$ rather than the parameter dimension $d$ (Theorem 2), making it more efficient in high-dimensional prompt spaces.
+
+**2. Dynamic Perturbation Strategy: Switching Between Exploration and Precision**
+
+The accuracy of zeroth-order estimation is tied to the perturbation scale $\epsilon_t$. Convergence analysis (Theorem 1) indicates that the bias term $C\eta\ell\epsilon_t^2 r$ requires $\epsilon_t \to 0$ for precise convergence. However, since TTA data distributions change continuously, large perturbations are needed to re-explore when domain shifts occur or optimization stalls. FOZO uses an adaptive decay mechanism to balance both:
 
 $$\epsilon_t = \begin{cases} \epsilon_0 & \text{if } L_t > \tau \cdot \bar{L}_t \\ \max(\epsilon_{\min}, \epsilon_{t-1} \cdot \alpha) & \text{otherwise} \end{cases}$$
 
-- When a loss spike is detected (domain shift or optimization stagnation), $\epsilon_t$ is reset to $\epsilon_0$
-- Otherwise, it decays gradually with factor $\alpha = 0.9$
-- Convergence rate is theoretically shown to depend on the effective Hessian rank $r$ rather than the parameter dimension $d$ (Theorem 2)
+If a loss spike is detected (indicating a domain shift or stagnation), $\epsilon_t$ is reset to $\epsilon_0$ to increase exploration. Otherwise, it gradually decreases with a decay factor $\alpha=0.9$ toward precise convergence; the convergence rate depends on the effective Hessian rank $r$ rather than the parameter dimension $d$ (Theorem 2).
 
 ### Loss & Training
 
-**Shallow–deep feature statistics alignment $\mathcal{L}_{stats}$**: The mean $\mu$ and standard deviation $\sigma$ of [CLS] token activations are collected from shallow ($1 \sim N/2$) and deep ($N/2+1 \sim N$) ViT layers, and aligned to source-domain statistics precomputed offline:
+**Shallow-Deep Feature Statistical Alignment $\mathcal{L}_{stats}$**: Activation statistics (mean $\mu$, standard deviation $\sigma$) of the [CLS] token are collected from shallow ($1 \sim N/2$) and deep ($N/2+1 \sim N$) layers of the ViT. These are aligned with pre-computed source domain statistics. Shallow layers capture low-level textures while deep layers manage semantics; separate alignment better fits the structure of distribution shifts:
 
 $$\mathcal{L}_{stats} = \sum_{k \in \{shallow, deep\}} (\|\mu_k^T - \mu_k^S\|_2 + \|\sigma_k^T - \sigma_k^S\|_2)$$
 
-**Entropy minimization $\mathcal{L}_{ent}$**: Encourages high-confidence predictions on the target domain.
-
-**Total loss**: $\mathcal{L} = \lambda \mathcal{L}_{stats} + \mathcal{L}_{ent}$, where $\lambda = 0.4$.
+**Entropy Minimization $\mathcal{L}_{ent}$**: Encourages the model to produce high-confidence predictions on the target domain. The total loss is $\mathcal{L} = \lambda \mathcal{L}_{stats} + \mathcal{L}_{ent}$, where $\lambda = 0.4$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Comparison with forward-only methods on ImageNet-C (5K, severity level 5, 2 forward passes):**
+**Comparison of Forward-Only Methods on ImageNet-C (5K, level 5, 2 forward passes)**:
 
-| Method | FP | Avg Acc (%) | Time (s) | Memory (MiB) | #Params |
+| Method | FP | Avg Acc(%) | Time(s) | Memory(MiB) | #Params |
 |---|---|---|---|---|---|
 | NoAdapt | 1 | 55.57 | 94 | 819 | 0 |
 | LAME | 1 | 54.16 | 97 | 819 | 0 |
@@ -87,9 +92,9 @@ $$\mathcal{L}_{stats} = \sum_{k \in \{shallow, deep\}} (\|\mu_k^T - \mu_k^S\|_2 
 | ZOA | 2 | 58.56 | 198 | 859 | 26145 |
 | **FOZO** | **2** | **59.52** | **179** | **831** | **2304** |
 
-**Comparison with backpropagation-based methods (28 forward passes):**
+**Comparison with Backpropagation Methods (28 forward passes)**:
 
-| Method | Avg Acc (%) | Time (s) | Memory (MiB) |
+| Method | Avg Acc(%) | Time(s) | Memory(MiB) |
 |---|---|---|---|
 | TENT | 58.32 | 208 | 5495 |
 | EATA | 61.35 | 218 | 5496 |
@@ -99,51 +104,52 @@ $$\mathcal{L}_{stats} = \sum_{k \in \{shallow, deep\}} (\|\mu_k^T - \mu_k^S\|_2 
 
 ### Ablation Study
 
-| Configuration | Acc (%) | Δ |
+| Configuration | Acc(%) | Gain |
 |---|---|---|
-| NoAdapt | 55.1 | — |
+| NoAdapt | 55.1 | - |
 | Base FOZO (ZO + Entropy) | 57.3 | +2.2 |
 | + Deep-Shallow Alignment | 60.1 | +2.8 |
-| + Dynamic Perturbation (full) | 62.7 | +2.6 |
+| + Dynamic Perturbation (Full) | 62.7 | +2.6 |
 
-Shallow–deep feature alignment contributes the most (+2.8%), followed by the dynamic perturbation strategy (+2.6%).
+Shallow-deep feature alignment contributes the most (+2.8%), followed closely by the dynamic perturbation strategy (+2.6%).
 
 ### Key Findings
 
-- **Strong compatibility with quantized models**: On INT8 PTQ4ViT, FOZO achieves 58.00% vs. FOA 57.07% and ZOA 56.91%, demonstrating the advantage of forward-only methods in quantized settings.
-- **Exceptional memory efficiency**: FOZO requires only 831 MiB, on par with the no-adaptation baseline and approximately 15% of backpropagation-based methods (831 vs. 5,495 MiB).
-- **Parameter efficiency**: Only 2,304 prompt parameters are updated, representing 8.8% of ZOA's 26,145 parameters.
-- **Convergence speed**: FOZO reaches 65% accuracy in approximately 66% of the time required by FOA/ZOA.
-- **Cross-dataset generalization**: FOZO outperforms all forward-only methods on ImageNet-R (64.1%) and ImageNet-Sketch (50.5%).
+- **Strong Applicability to Quantized Models**: On INT8 PTQ4ViT, FOZO reaches 58.00% vs. FOA's 57.07% and ZOA's 56.91%, demonstrating the advantage of forward-only methods in quantization scenarios.
+- **High Memory Efficiency**: FOZO requires only 831 MiB, on par with the NoAdapt baseline, and approximately 15% of the memory used by BP methods (831 vs. 5495 MiB).
+- **Parameter Efficiency**: Only 2304 prompt parameters are updated, which is 8.8% of the parameters updated by ZOA (26145).
+- **Convergence Speed**: The time required for FOZO to reach 65% accuracy is only 66% of that for FOA/ZOA.
+- **Cross-dataset Generalization**: Ours outperforms all forward-only methods on ImageNet-R (64.1%) and ImageNet-Sketch (50.5%).
 
 ## Highlights & Insights
 
-- **Solid theoretical foundation**: Convergence is rigorously proven under the SPSA framework and a local effective rank assumption; the convergence rate depends on the effective Hessian rank $r$ rather than the parameter dimension $d$.
-- **Strong practical applicability**: Pure forward-pass inference, no model weight modification, and low memory footprint make FOZO directly deployable on edge devices and quantized models.
-- **Elegant dynamic perturbation design**: Domain shifts are automatically detected to reset the perturbation scale, striking a balance between exploration and convergence.
-- **Comprehensive evaluation**: Experiments cover full-precision and quantized models, multiple datasets, continual adaptation scenarios, clear ablation studies, and hyperparameter sensitivity analysis.
+- **Solid Theory**: Convergence is strictly proven based on SPSA and the local effective rank hypothesis; the convergence rate correlates with the effective Hessian rank $r$ rather than the parameter dimension $d$.
+- **High Practicality**: Pure forward propagation + no weight modification + low memory usage makes it directly applicable to edge devices and quantized models.
+- **Sophisticated Dynamic Perturbation**: Automatically detects domain shifts and resets the perturbation scale, balancing exploration and convergence.
+- **Comprehensive Experiments**: Covers full-precision/quantized models, multiple datasets, and continuous adaptation scenarios with clear ablations.
 
 ## Limitations & Future Work
 
-- **High wall-clock time**: Under multiple forward passes (FP=26/28), adaptation time (2,102 s) is substantially higher than backpropagation-based methods (208–393 s); the memory-for-speed trade-off may be unfavorable in latency-sensitive scenarios.
-- **Validated only on ViT architectures**: CNN or other architectures are not tested, and prompt injection relies on ViT's token concatenation mechanism.
-- **Dependency on source-domain statistics**: Feature statistics must be precomputed from a source-domain validation set, which may be unavailable in fully black-box deployment settings.
-- **Sensitivity to prompt count and batch size**: Although ablations show that 3 prompts and batch size 64 are robust configurations, performance degrades noticeably at small batch sizes (4/8).
+- **Longer Runtime**: With multiple forward passes (FP=26/28), the adaptation time (2102s) is significantly higher than that of BP methods (208-393s). This trade-off between speed and memory might be disadvantageous in time-sensitive scenarios.
+- **Validated Only on ViT**: CNNs or other architectures were not tested; prompt injection relies on ViT's token concatenation mechanism.
+- **Dependency on Source Statistics**: Pre-calculated feature statistics from the source validation set are required, which might be unavailable in purely black-box scenarios.
+- **Sensitivity to Prompt Count and Batch Size**: While 3 prompts and a batch size of 64 are robust, performance drops significantly with small batches (4/8).
+- **Classification as Human Understanding**: While the core is a general TTA method, it is applied here to general vision models rather than specific human understanding tasks.
 
 ## Related Work & Insights
 
-- **FOA** (CVPR 2024): The first forward-only prompt optimization TTA method, which uses CMA-ES to update prompts. FOZO replaces CMA-ES with SPSA to address its $O(d^2)$ complexity.
-- **ZOA** (ACM MM 2025): Applies zeroth-order optimization to TTA but updates normalization layer parameters (26,145 parameters); FOZO updates only prompts (2,304 parameters) without modifying the model.
-- **TENT** (ICLR 2021): A landmark entropy-minimization TTA method that requires backpropagation to update batch normalization parameters; FOZO inherits the entropy loss formulation while eliminating backpropagation.
-- **MeZO** (NeurIPS 2023): Proposes the local effective rank hypothesis to establish the feasibility of zeroth-order optimization; FOZO extends this theoretical framework to the TTA setting.
-- **Visual Prompt Tuning** (ECCV 2022): The seminal method for injecting learnable prompts into the ViT input layer; FOZO adapts this technique to a backpropagation-free test-time setting.
+- **FOA** (CVPR 2024): The first forward-only prompt optimization for TTA, using CMA-ES. FOZO replaces CMA-ES with SPSA to resolve its $O(d^2)$ complexity issues.
+- **ZOA** (ACM MM 2025): Zeroth-order optimization for TTA that updates normalization layer parameters (26,145 params). FOZO only updates prompts (2,304 params) without modifying the model.
+- **TENT** (ICLR 2021): A landmark in entropy minimization for TTA, requiring backpropagation to update BN parameters. FOZO adopts its entropy loss concept but eliminates BP.
+- **MeZO** (NeurIPS 2023): Proposed the local effective rank hypothesis to prove the feasibility of zeroth-order optimization. FOZO extends this theory to TTA scenarios.
+- **Visual Prompt Tuning** (ECCV 2022): The original method for injecting learnable prompts into ViT input layers. FOZO adapts it for BP-free test-time scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Replacing CMA-ES with SPSA zeroth-order estimation for TTA prompt optimization is a well-motivated and novel combination; the dynamic perturbation design is theoretically grounded.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dataset evaluation, quantized model testing, continual adaptation, detailed ablations, and hyperparameter analysis are provided, though non-ViT architectures are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, complete theoretical derivations, and well-articulated motivation.
-- **Value**: ⭐⭐⭐⭐ — Provides a strongly competitive solution for TTA on edge-deployed and quantized models in practical settings.
+- Novelty: ⭐⭐⭐⭐ — Replacing CMA-ES with SPSA for TTA prompt optimization is a logical and novel combination; the dynamic perturbation design is theoretically supported.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Includes multiple datasets, quantized models, continuous adaptation, and detailed ablation/hyperparameter analysis, though it lacks non-ViT architecture experiments.
+- Writing Quality: ⭐⭐⭐⭐ — The structure is clear, theoretical derivations are complete, and motivations are well-articulated.
+- Value: ⭐⭐⭐⭐ — Provides a highly competitive solution for the practical scenarios of edge deployment and quantized model TTA.
 
 <!-- RELATED:START -->
 
@@ -153,9 +159,9 @@ Shallow–deep feature alignment contributes the most (+2.8%), followed by the d
 
 - [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](../../ICLR2026/model_compression/fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
 - [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
+- [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
 - [\[ICML 2026\] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization](../../ICML2026/model_compression/turning_stale_gradients_into_stable_gradients_coherent_coordinate_descent_with_i.md)
-- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
-- [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
 
 </div>
 

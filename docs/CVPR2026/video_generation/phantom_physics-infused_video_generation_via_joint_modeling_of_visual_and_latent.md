@@ -2,143 +2,148 @@
 title: >-
   [Paper Note] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 description: >-
-  [CVPR 2026][Video Generation][Physically consistent video generation] This paper proposes Phantom, a framework that augments a pretrained video diffusion model (Wan2.2-TI2V) with a dedicated physical dynamics branch. Phy…
+  [CVPR 2026][Video Generation][Flow Matching] The Phantom framework is proposed, adding a physical dynamics branch to the pretrained video diffusion model (Wan2.2-TI2V). By utilizing physical-aware embeddings extracted by V-JEPA2 as latent physical states, it jointly models visual content and physical dynamics evolution via bidirectional cross-attention. It signif
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Physically consistent video generation"
-  - "flow matching"
-  - "dual-branch architecture"
-  - "V-JEPA2"
-  - "latent physical dynamics"
+  - CVPR 2026
+  - Video Generation
+  - Flow Matching
+  - V-JEPA2
 date: 2026-05-08
-content_hash: 14c295dc602e0662
+content_hash: 9c4a56168e5bed23
 ---
-
 # Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.08503](https://arxiv.org/abs/2604.08503)  
 **Code**: [https://plan-lab.github.io/phantom](https://plan-lab.github.io/phantom)  
-**Area**: Video Generation / Physical Consistency
-**Keywords**: Physically consistent video generation, flow matching, dual-branch architecture, V-JEPA2, latent physical dynamics
+**Area**: Video Generation / Physical Consistency  
+**Keywords**: Physically Consistent Video Generation, Flow Matching, Dual-branch Architecture, V-JEPA2, Latent Physics Dynamics
 
 ## TL;DR
-This paper proposes Phantom, a framework that augments a pretrained video diffusion model (Wan2.2-TI2V) with a dedicated physical dynamics branch. Physics-aware embeddings extracted by V-JEPA2 serve as latent physical states, and bidirectional cross-attention is employed to jointly model visual content and physical dynamics evolution. Phantom achieves substantial improvements over baselines on physics consistency benchmarks (VideoPhy PC +50.4%) while preserving visual quality.
+The Phantom framework is proposed, adding a physical dynamics branch to the pretrained video diffusion model (Wan2.2-TI2V). By utilizing physical-aware embeddings extracted by V-JEPA2 as latent physical states, it jointly models visual content and physical dynamics evolution via bidirectional cross-attention. It significantly outperforms baselines on physical consistency benchmarks (50.4% improvement on VideoPhy PC) while maintaining visual quality.
 
 ## Background & Motivation
 
-**Background**: Video generation models represented by Sora, HunyuanVideo, and Wan2.2 can produce visually realistic videos, yet they exhibit clear deficiencies in physical consistency—generated objects frequently violate fundamental physical laws such as gravity, inertia, and collision dynamics.
+**Background**: Video generation models represented by Sora, HunyuanVideo, and Wan2.2 can produce visually realistic videos, but they still exhibit significant defects in physical consistency—generated objects often violate basic physical laws such as gravity, inertia, and collisions.
 
-**Limitations of Prior Work**: (1) Simply scaling model size and training data is insufficient to learn generalizable physical laws; models tend to memorize case-specific patterns rather than abstract physical principles. (2) Existing physics-aware methods either rely on external physics simulators (limited by simulator coverage), employ LLM prompt engineering at inference time to guide generation (which does not enhance the model's intrinsic physical understanding and introduces inference overhead), or inject physical priors via representation alignment (which cannot explicitly model physical state evolution).
+**Limitations of Prior Work**: (1) Simply scaling model size and data volume is insufficient for learning generalizable physical laws; models tend towards case-based memory rather than abstract physical rules. (2) Existing physics-aware methods either rely on external physical simulators (limited by simulator coverage), depend on LLM prompt engineering for guidance at inference time (which does not increase internal physical understanding and adds overhead), or inject physical priors via representation alignment (which cannot explicitly model physical state evolution).
 
-**Key Challenge**: Current video generation models primarily rely on a next-frame prediction objective that optimizes visual fidelity without explicitly enforcing physical reasoning, making it difficult for models to internalize and comply with real-world physical laws.
+**Key Challenge**: Current video generation models primarily rely on the next-frame prediction objective, which optimizes visual fidelity but does not explicitly enforce physical reasoning, making it difficult for the model to internalize and obey real-world physical laws.
 
-**Goal**: How to directly integrate reasoning over latent physical properties into the video generation process, enabling models to produce videos that are not only visually realistic but also physically consistent?
+**Goal**: How to directly integrate reasoning about latent physical attributes during the video generation process, so that the model generates videos that are both visually realistic and physically consistent?
 
-**Key Insight**: The authors hypothesize that the inability to learn physical dynamics stems from reliance solely on next-frame prediction objectives. The proposed solution is to have the model simultaneously predict video content and latent physical parameters.
+**Key Insight**: The authors hypothesize that the inability to learn physical dynamics stems from the model's sole reliance on the next-frame prediction objective. The solution is to have the model simultaneously predict video content and latent physical parameters.
 
-**Core Idea**: A dedicated physical branch is introduced into the video generation pipeline. Self-supervised representations from V-JEPA2 serve as "latent physical states" and are jointly trained with the visual branch, enabling the model to reason about physical dynamics while generating video.
+**Core Idea**: A dedicated physics branch is added to the video generation pipeline. Using V-JEPA2 self-supervised representations as "latent physical states," it is trained jointly with the visual branch, allowing the model to reason about physical dynamics while generating video.
 
 ## Method
 
 ### Overall Architecture
-Phantom is built upon Wan2.2-TI2V-5B and adopts a dual-branch parallel latent flow-matching architecture: (1) the **video branch** reuses pretrained Wan2.2 modules to process visual latent sequences; (2) the **physics branch** mirrors the architecture of the video branch but is initialized from scratch, predicting physical dynamics in the V-JEPA2 latent space. The two branches exchange information via bidirectional cross-attention layers—Vis-Attention allows the video branch to attend to hidden states of the physics branch, while Phy-Attention allows the physics branch to attend to hidden states of the video branch.
+Phantom addresses a specific problem: video diffusion models have learned to "look right" but not to "move right"—objects clip through each other, float, or bounce erratically. The authors posit that the root cause is the model only optimizing for next-frame prediction without being explicitly required to reason about physics. Consequently, Phantom parallels a second "physics branch" alongside the pretrained Wan2.2-TI2V-5B, allowing video generation and physical reasoning to occur simultaneously.
 
-The observed input video $\mathbf{x}^o$ is encoded into two complementary latent spaces: (1) a visual latent sequence $\mathbf{v}^o$ obtained via the video VAE encoder; and (2) a physical latent sequence $\mathbf{z}^o$ obtained via V-JEPA2. The model is conditioned on observed frames and physical states, and jointly predicts future video frames along with their corresponding physical dynamics.
+The pipeline operates as follows: an observed video $\mathbf{x}^o$ is encoded into two complementary latent spaces—the video VAE encoder provides the visual latent sequence $\mathbf{v}^o$, and V-JEPA2 provides the physical latent sequence $\mathbf{z}^o$. The visual sequence is fed into the video branch (reusing Wan2.2 weights), while the physical sequence is fed into a physics branch that mirrors the visual architecture but is initialized from scratch. Both branches run flow-matching latent ODEs and interact through bidirectional cross-attention at corresponding depths. Finally, the model jointly predicts future video frames and the corresponding physical dynamics evolution under the constraints of conditional frames and physical states.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Observed Video x^o"] --> VAE["Video VAE Encoder<br/>→ Visual Latent v^o"]
+    X --> JEPA["Physical-aware Latent Representation<br/>V-JEPA2 Encoder → Physical Latent z^o"]
+    VAE --> VB["Video Branch<br/>Reuses Wan2.2 weights · Frozen during training"]
+    JEPA --> PB["Physics Branch<br/>Architecture mirror · Init from scratch · Trainable"]
+    VB <-->|"Bidirectional Cross-Attention Coupling<br/>Vis-Attention / Phy-Attention"| PB
+    VB --> OUT["Joint Prediction<br/>Future Video Frames + Physical Dynamics Evolution"]
+    PB --> OUT
+    OUT --> LOSS["Recursive Loss Weight Scheduling<br/>L = L_v + α_z·L_z, reset α_z if gradient > threshold"]
+```
 
 ### Key Designs
 
-1. **Physics-Aware Latent Representation (V-JEPA2 Embeddings)**:
+**1. Physical-aware Latent Representation: Using V-JEPA2 embeddings as "Latent Physical States"**
 
-    - **Function**: Provides abstract representations of physical states for the video generation model.
-    - **Mechanism**: Representations extracted by V-JEPA2 (a self-supervised video encoder) are used as latent physical states. V-JEPA2 representations have been shown to encode intuitive physical concepts such as object permanence, collision, and gravity, enabling the model to reason in a learned abstract physical space without requiring explicit specification of physical attributes, simulators, or external reasoning modules.
-    - **Design Motivation**: Compared to explicit physics simulators, latent physical representations are not constrained by simulator assumptions and can cover a broader range of physical phenomena. Compared to representation alignment approaches, Phantom explicitly models the temporal evolution of physical states rather than performing only static alignment.
+Models fail to learn physics because they lack a dedicated place to represent "what the current physical state is." Phantom does not construct a physical simulator or manually label parameters like gravity/mass; instead, it leverages representations from V-JEPA2, a self-supervised video encoder. Since it is pretrained on large-scale video data, it has been shown to encode intuitive physical concepts like object permanence, collisions, and gravity. Phantom treats these representations as a "learned abstract physical space," allowing the model to reason about dynamics without external physical inputs. Compared to simulators, this latent representation is not constrained by simulator assumptions and covers more complex phenomena; compared to static alignment methods, Phantom explicitly predicts how physical states evolve over time.
 
-2. **Bidirectional Cross-Attention Coupling**:
+**2. Bidirectional Cross-Attention Coupling: Mutual correction without cross-contamination**
 
-    - **Function**: Dynamically exchanges information between the video and physics branches.
-    - **Mechanism**: Cross-attention layers are inserted at corresponding depths in both branches. Vis-Attention uses video hidden states as queries and physics hidden states as keys/values: $\mathbf{h}'_v = \text{Softmax}(\frac{\mathbf{W}^Q_v\mathbf{h}_v \cdot (\mathbf{W}^K_v\mathbf{h}_z)^T}{\sqrt{d}}) \mathbf{W}^V_v\mathbf{h}_z$; Phy-Attention is handled symmetrically. This allows physical cues to guide visual generation while visual evidence refines physical reasoning.
-    - **Design Motivation**: Compared to joint attention that intermixes the two modalities, bidirectional cross-attention provides finer-grained control and avoids training instability caused by excessive entanglement of visual and physical features.
+If the two branches ran independently, they would behave as separate models, and physical reasoning would not translate to the visual output. Phantom inserts bidirectional cross-attention at corresponding depths. Vis-Attention uses video hidden states as queries and physical hidden states as keys/values to inject physical cues into visual generation:
 
-3. **Selective Freezing Training Strategy**:
+$$\mathbf{h}'_v = \text{Softmax}\!\left(\frac{\mathbf{W}^Q_v\mathbf{h}_v \cdot (\mathbf{W}^K_v\mathbf{h}_z)^T}{\sqrt{d}}\right) \mathbf{W}^V_v\mathbf{h}_z$$
 
-    - **Function**: Injects physical reasoning while preserving pretrained visual generation capabilities.
-    - **Mechanism**: All pretrained parameters of the video branch are frozen during training; only the physics branch and the bidirectional cross-attention layers are updated. In 50% of training instances no conditioning frames are provided (corresponding to text-to-video), while in the remaining 50%, 1–45 conditioning frames are randomly sampled (corresponding to video-to-video).
-    - **Design Motivation**: Protects the strong generative prior of Wan2.2 from being corrupted by gradients from the physics branch.
+Phy-Attention operates symmetrically, refining physical reasoning using visual evidence. This allows physical states to guide motion while the visual output calibrates physical estimation. Using separate cross-attention layers instead of joint-attention prevents excessive entanglement of visual and physical features, which could destabilize training, and allows for fine-grained control over both modalities.
 
-4. **Recursive Loss Weight Scheduling**:
+**3. Selective Freezing Training: Updating new components while preserving Wan2.2 generation priors**
 
-    - **Function**: Stabilizes joint training of the visual and physics branches.
-    - **Mechanism**: The joint loss is $\mathcal{L} = \mathcal{L}_v + \alpha_z \mathcal{L}_z$, where the gradient norm of the physics loss is substantially larger than that of the visual loss. The schedule initializes $\alpha_z=0$ and gradually increases it; when the gradient norm of the physics branch exceeds a threshold $\eta_z$, $\alpha_z$ is reset to $0$ and the schedule restarts. This cyclic weighting prevents the physics branch from overwhelming the shared architecture.
-    - **Design Motivation**: Direct joint training leads to instability due to the large magnitude of the physics loss; cyclic scheduling allows the physics branch to contribute meaningful gradients progressively.
+The physics branch is initialized from scratch. Early gradients are large and noisy; training the entire architecture would destroy the strong generation capabilities of Wan2.2. Phantom's strategy is to freeze all pretrained parameters of the video branch during training, updating only the physics branch and the cross-attention layers. During training, 50% of instances have no condition frames (text-to-video), and 50% use 1–45 sampled frames as conditions (video-to-video), enabling the model to support both modes.
+
+**4. Recursive Loss Weight Scheduling: A "reset gate" for dominant physical losses**
+
+The joint loss is $\mathcal{L} = \mathcal{L}_v + \alpha_z \mathcal{L}_z$. In practice, the gradient norm of $\mathcal{L}_z$ is much larger than that of the visual loss; fixed weights cause the physics branch to overwhelm the shared architecture. Phantom starts $\alpha_z$ at 0 and increases it during training. Once the physics gradient norm exceeds a threshold $\eta_z$, $\alpha_z$ is reset to zero, restarting the scheduling cycle. This cyclic weighting acts as a "trial-and-error" mechanism, allowing the physics branch to contribute meaningful gradients without destabilizing the visual branch.
 
 ### Loss & Training
-The standard flow-matching objective is extended to jointly predict visual and physical velocity fields. Training is conducted on OpenVidHD-0.4M (approximately 400K high-quality video-text pairs), supporting up to 121 frames at a resolution of 480×832. A recursive weight scheduling strategy is adopted to balance dual-branch training.
+The overall objective extends standard flow-matching to jointly predict visual and physical velocity fields, balanced by the recursive weight scheduling. Training data consists of OpenVidHD-0.4M (approx. 400k high-quality video-text pairs, not specifically physical data), supporting up to 121 frames at 480×832 resolution.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Benchmark | Metric | Phantom | Wan2.2-TI2V | Gain |
-|--------|------|------|----------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | VideoPhy | SA | 47.5 | 41.5 | +14.5% |
 | VideoPhy | PC | **37.9** | 25.2 | **+50.4%** |
 | VideoPhy-2 | SA | 27.75 | 24.53 | +13.1% |
 | VideoPhy-2 | PC | 71.74 | 69.20 | +2.6% |
-| Physics-IQ (single-frame) | Score | **29.59** | 22.10 | **+33.9%** |
-| Physics-IQ (multi-frame) | Score | 27.53 | - | - |
+| Physics-IQ (Single) | Score | **29.59** | 22.10 | **+33.9%** |
+| Physics-IQ (Multi) | Score | 27.53 | - | - |
 
-Note: Phantom achieves the highest VideoPhy PC score (37.9) among all methods, surpassing dedicated physics methods such as PhyT2V (37) and WISA (33).
+Note: Achieved the highest VideoPhy PC (37.9) among all methods, surpassing dedicated physics methods like PhyT2V (37) and WISA (33).
 
 ### VBench-2 Comprehensive Evaluation
 
 | Dimension | Phantom | Wan2.2-TI2V | Change |
-|------|---------|-------------|------|
+| :--- | :--- | :--- | :--- |
 | Total | 51.84 | 51.57 | +0.5% |
 | Physics | 43.61 | 40.19 | +6.0% |
 | Human Fidelity | 88.39 | 86.10 | +2.7% |
 | Controllability | 20.23 | 18.50 | +9.4% |
 | Commonsense | 61.43 | 60.57 | +1.4% |
 
-### Physics-IQ Breakdown (Single-Frame)
+### Physics-IQ Breakdown (Single-frame)
 
 | Metric | Phantom | Wan2.2-TI2V | Gain |
-|------|---------|-------------|------|
+| :--- | :--- | :--- | :--- |
 | Spatial IoU | 0.245 | 0.164 | +49.4% |
 | Spatiotemporal IoU | 0.146 | 0.132 | +10.6% |
 | Weighted Spatial IoU | 0.140 | 0.102 | +37.3% |
 | MSE↓ | 0.009 | 0.010 | +11.1% |
 
 ### Key Findings
-- **Physical consistency is substantially improved without sacrificing visual quality**—the VBench-2 total score is on par with or slightly higher than the baseline, demonstrating that physical reasoning and visual generation are mutually compatible.
-- Diversity under Creativity decreases (64.67→45.95), while Composition improves from 40.35 to 45.07; the authors suggest that physically implausible videos may artificially inflate diversity metrics.
-- Phantom achieves a Physics-IQ single-frame score of 29.59, surpassing all methods including CogVideoX-I2V (27.90) and RDPO (25.21).
-- Phantom is trained on only 400K videos without physics-specific data, yet achieves significant gains in physical consistency, validating the effectiveness of V-JEPA2 physical representations combined with joint modeling.
+- **Significant improvement in physical consistency without sacrificing visual quality**—VBench-2 total scores remain stable or slightly higher, indicating that physical reasoning and visual generation are compatible.
+- Diversity in the Creativity category decreased (64.67→45.95), but Composition increased from 40.35 to 45.07. The authors suggest that physically irrational videos might "inflate" diversity metrics.
+- In the Physics-IQ single-frame setting, Phantom reached 29.59, exceeding all methods including CogVideoX-I2V (27.90) and RDPO (25.21).
+- Phantom utilized only 400k training videos (non-specialized physical data), yet significantly improved physical consistency, validating the effectiveness of V-JEPA2 physical representations and joint modeling.
 
 ## Highlights & Insights
-- **V-JEPA2 as a physics prior is an elegant choice**: No physics simulator or physical parameter annotation is required; the intuitive physical knowledge already encoded in self-supervised visual representations is directly leveraged. This constitutes a form of "free lunch"—exploiting the physics-awareness of an existing large model to enhance another.
-- **Dual-branch flow-matching design**: Two parallel ODE processes for vision and physics are coupled via cross-attention, enabling information exchange while preserving the characteristics of each modality. This design is more principled than naively concatenating physical information to the input and offers better scalability.
-- **Recursive loss weight scheduling** is a practical training trick—when the gradient scales of two learning objectives differ substantially, periodic weight resets are more stable than fixed ratio weighting. This approach is transferable to other multi-task learning scenarios.
-- **Zero additional physical input at inference**: In text-to-video mode, the model performs fully joint denoising from pure noise, indicating that physical understanding has been internalized by the model.
+- **Clever choice of V-JEPA2 as a physical prior**: Avoids the need for physical simulators or parameter labeling by leveraging intuitive physical knowledge already encoded in self-supervised visual representations. This is a "free lunch"—using the physical-aware capabilities of one large model to enhance another.
+- **Dual-branch flow-matching design**: The parallel ODE processes for vision and physics are coupled via cross-attention, enabling information exchange while maintaining modality-specific characteristics. This is more elegant than direct concatenation and offers better scalability.
+- **Recursive Loss Weight Scheduling** is a practical trick: when different learning objectives have vastly different gradient scales, periodic weight resets provide more stability than a fixed ratio. This is transferable to other multi-task learning scenarios.
+- **Zero extra physical input at inference**: In text-to-video mode, the model performs joint denoising from pure noise, indicating that the model has internalized physical understanding.
 
 ## Limitations & Future Work
-- The physics branch is initialized from scratch, which may be less training-efficient compared to initialization from an existing physical model.
-- V-JEPA2's physics-awareness remains limited and may insufficiently encode complex phenomena such as fluid dynamics and deformable objects.
-- Training is conducted on only 400K videos, whereas the baseline Wan2.2 is pretrained on substantially larger data—larger-scale training may yield further improvements.
-- Recursive weight scheduling requires manual specification of the threshold $\eta_z$ and may be sensitive to this hyperparameter.
-- The observed decrease in Diversity on VBench-2 warrants attention and may limit applicability in creative generation scenarios.
+- The physics branch is initialized from scratch; training efficiency might improve by initializing with existing physical models.
+- V-JEPA2's physical awareness is still limited and may be insufficient for complex fluid dynamics or deformable objects.
+- Training was limited to 400k samples, while the baseline Wan2.2 was pretrained on much larger datasets—larger scale training may yield further improvements.
+- Recursive weight scheduling requires manual setting of the threshold $\eta_z$, which may be sensitive to hyperparameters.
+- The drop in VBench-2 Diversity is noteworthy and may limit creative application scenarios.
 
 ## Related Work & Insights
-- **vs. PhyT2V/DiffPhy**: These methods refine prompts at inference time using LLM reasoning to guide diffusion, which is an external approach that does not enhance the model's intrinsic physical understanding and incurs inference overhead. Phantom internalizes physical reasoning into the generation process.
-- **vs. VideoREPA**: VideoREPA injects physical priors indirectly via representation alignment, performing static alignment without modeling temporal physical state evolution. Phantom explicitly predicts the temporal evolution of physical dynamics.
-- **vs. PhysAnimator/PhysGen**: These methods rely on external physics simulators and are constrained by simulator coverage and fidelity. Phantom requires no simulator.
+- **vs. PhyT2V/DiffPhy**: These methods use LLM reasoning at inference to refine prompt-guided diffusion. These are external and do not increase the model's internal physical understanding, adding inference overhead. Phantom internalizes physical reasoning.
+- **vs. VideoREPA**: VideoREPA injects physical priors via representation alignment. This is a static alignment and does not model the temporal evolution of physical states. Phantom explicitly predicts physical dynamics over time.
+- **vs. PhysAnimator/PhysGen**: Rely on external physical simulators, limited by simulator coverage and fidelity. Phantom requires no simulator.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — Dual-branch joint modeling of visual and physical dynamics constitutes a novel paradigm; the use of V-JEPA2 as latent physical representations is an elegant choice.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Evaluation covers four benchmarks (VideoPhy, VideoPhy-2, Physics-IQ, VBench-2), though ablation studies analyzing individual component contributions are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated and the methodology is presented systematically.
-- **Value**: ⭐⭐⭐⭐⭐ — Opens a new direction for physically consistent video generation; the paradigm of dual-branch joint modeling combined with self-supervised physical representations is broadly influential.
+- Novelty: ⭐⭐⭐⭐⭐ The dual-branch joint modeling of visual and physical dynamics is a new paradigm; the choice of V-JEPA2 is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers VideoPhy/VideoPhy-2/Physics-IQ/VBench-2, though ablation studies on individual components are limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and systematic method description.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for physically consistent video generation; the paradigm of dual-branch joint modeling + self-supervised physical representations is highly influential.
 
 <!-- RELATED:START -->
 
@@ -147,10 +152,10 @@ Note: Phantom achieves the highest VideoPhy PC score (37.9) among all methods, s
 ## Related Papers
 
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[CVPR 2026\] Physical Simulator In-the-Loop Video Generation](physical_simulator_in-the-loop_video_generation.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](../../ICLR2026/video_generation/javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
-- [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](../../ICML2026/video_generation/olaf-world_orienting_latent_actions_for_video_world_modeling.md)
-- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
 
 </div>
 

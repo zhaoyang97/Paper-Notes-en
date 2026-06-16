@@ -2,119 +2,125 @@
 title: >-
   [Paper Note] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority
 description: >-
-  [ICML 2026][Video Understanding][Evidence misalignment] VideoSEAL identifies the "evidence misalignment" problem (obtaining correct answers without seeing evidence) in existing agentic long video QA systems…
+  [ICML 2026][Video Understanding][inspector gate] VideoSEAL identifies the "evidence misalignment" issue in existing agentic long video QA systems, where models answer correctly without observing sufficient evidence. This is attributed to the "coupled agent conflating planning and answering authority." The proposed planner-inspector decoupling framework assigns exclus
 tags:
-  - "ICML 2026"
-  - "Video Understanding"
-  - "Evidence misalignment"
-  - "planner-inspector decoupling"
-  - "inspector gate"
-  - "GRPO"
-  - "temporal/semantic groundedness"
+  - ICML 2026
+  - Video Understanding
+  - inspector gate
+  - GRPO
+  - temporal/semantic groundedness
 date: 2026-05-08
-content_hash: 1f038767a6cb1fc6
+content_hash: 9fbb4d341da933a1
 ---
-
 # VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.12571](https://arxiv.org/abs/2605.12571)  
 **Code**: <https://github.com/Echochef/VideoSEAL>  
 **Area**: Video Understanding / Agentic RL / Long Video QA  
-**Keywords**: Evidence misalignment, planner-inspector decoupling, inspector gate, GRPO, temporal/semantic groundedness
+**Keywords**: Evidence Misalignment, Planner-Inspector Decoupling, Inspector Gate, GRPO, Temporal/Semantic Groundedness
 
 ## TL;DR
-VideoSEAL identifies the "evidence misalignment" problem (obtaining correct answers without seeing evidence) in existing agentic long video QA systems, attributing the root cause to the "conflation of planning and answering authority in coupled agents." It proposes a planner-inspector decoupling framework: the planner manages long-horizon evidence search, while the inspector holds exclusive answering authority and only proceeds when pixel-level evidence is sufficient. This improves accuracy from 48.2% to 55.1% (↑20.5%) on LVBench and from 52.2% to 62.0% on LongVideoBench.
+VideoSEAL identifies the "evidence misalignment" issue in existing agentic long video QA systems, where models answer correctly without observing sufficient evidence. This is attributed to the "coupled agent conflating planning and answering authority." The proposed planner-inspector decoupling framework assigns exclusive answering authority to an inspector, which only responds when pixel-level evidence is sufficient. On LVBench, the accuracy improved from 48.2% to 55.1% (↑20.5%), and on LongVideoBench from 52.2% to 62.0%.
 
 ## Background & Motivation
-**Background**: Long video understanding (LVU) is significantly more challenging than short video understanding due to sparse evidence, temporal dispersion, and the vast majority of content being irrelevant to the query. The current mainstream paradigm is agentic: a monolithic planner iteratively retrieves candidate clips, invokes tools to check visual evidence, and outputs an answer after multiple rounds of interaction. Representative methods include VideoAgent, DrVideo, Video-MTR, GenS, and Conan.
+**Background**: Long Video QA (LVU) is significantly more challenging than short video QA due to sparse evidence and temporal dispersion, where the vast majority of content is irrelevant to the query. Current mainstream approaches adopt the agentic paradigm: a monolithic planner iteratively retrieves candidate clips and calls tools to inspect visual evidence, outputting an answer after multiple interaction rounds. Representative methods include VideoAgent, DrVideo, Video-MTR, GenS, and Conan.
 
-**Limitations of Prior Work**: Through diagnostic experiments, the authors identify a subtle but pervasive failure mode—"evidence misalignment." This occurs when the agent's final answer is correct, but its trace does not provide sufficient evidence to support it. In other words, the agent "guesses correctly" rather than "answering based on observation." This undermines verifiability and interpretability, suggesting that SOTA accuracy is partially achieved through parametric priors.
+**Limitations of Prior Work**: Diagnostic experiments reveal a subtle but ubiquitous failure mode—"evidence misalignment." The agent's final answer is correct, but the trace does not provide sufficient evidence for support. In other words, the agent "guesses correctly" rather than "answering based on observation." This undermines verifiability and interpretability, implying that SOTA accuracies are partially derived from parametric priors.
 
-**Key Challenge**: Two diagnostic metrics reveal the cause: (i) Reward Pressure (during training): Outcome-only rewards only penalize incorrect answers, making it more efficient for the agent to take shortcuts via priors than to search for evidence; (ii) Prompt Pressure (during inference): As traces become longer and noisier, the planner is forced to make decisions within a shared context, sliding from "searching for evidence" to "fitting evidence" and resorting to general plausibility templates. Both stem from a structural cause: coupled agents conflate "long-horizon planning" and "final answering authority" within a shared context.
+**Key Challenge**: Two diagnostic metrics reveal the cause: (i) Reward Pressure (training phase): outcome-only rewards solely incentivize correct answers, making it more efficient for the agent to take shortcuts via priors than searching for evidence; (ii) Prompt Pressure (inference phase): as traces grow longer and noisier, the planner is forced to make decisions within a shared context, sliding from "searching for evidence" to "fitting evidence" based on general plausibility templates. Both stem from a structural pathology: the coupled agent conflates "long-horizon planning" and "final answer authority" within a shared context.
 
-**Goal**: (i) Formalize "evidence misalignment" and provide temporal/semantic grounding diagnostic metrics; (ii) eliminate both reward and prompt pressures through architectural decoupling; (iii) simultaneously improve accuracy and grounding across four major long video benchmarks.
+**Goal**: (i) Formalize "evidence misalignment" and provide temporal/semantic grounding diagnostic metrics; (ii) eliminate both reward and prompt pressures via architectural decoupling; (iii) improve both accuracy and grounding across four major long video benchmarks.
 
-**Key Insight**: The "answering authority" is a structural resource shaped by the aforementioned pressures. By stripping this authority from the planner and giving it to an inspector that only views raw visual evidence (rather than lengthy traces), and requiring the inspector to remain silent until evidence is sufficient, both types of misalignment can be structurally broken.
+**Key Insight**: Answer authority is a structural resource; whoever possesses it is shaped by these two pressures. If answer authority is removed from the planner and given to an inspector that observes only raw visual evidence (rather than the entire trace), it will only speak when evidence is sufficient. This architecturally breaks both types of misalignment.
 
-**Core Idea**: The monolithic agent is decoupled into a "Planner" (responsible for tool invocation/evidence search, viewing only structured search memory) and an "Inspector" (a frozen MLLM viewing only current pixel evidence, holding exclusive termination and answering rights), with the planner trained via GRPO and the inspector gate serving as a plug-and-play module.
+**Core Idea**: Decompose the monolithic agent into a "Planner (responsible for tool invocation/searching, observing structured search memory)" and an "Inspector (frozen MLLM, observing only the submitted pixel evidence, holding exclusive termination and answer authority)." Only the planner is trained using GRPO, while the inspector gate serves as a plug-and-play module.
 
 ## Method
-The VideoSEAL methodology consists of four components: "Diagnosis → Architecture → Tools → Training."
+The methodology consists of "Diagnosis → Architecture → Tools → Training."
 
 ### Overall Architecture
-Input: Long video $\mathcal{V}$ and query $q$. The system consists of two roles: a planner $P$ (LLM) and an inspector $I$ (frozen MLLM, accessed via the `VisualInspect` tool). In each round $t$, the planner generates a rationale-action pair $(r_t,u_t)\sim P(\cdot\mid h_{t-1},q)$ based on the query and search memory $h_{t-1}$. The environment returns an observation $o_t$, and the inspector evaluates the evidence $v_t=E(o_t)$: $(z_t,f_t)\sim I(\cdot\mid v_t,q)$, where $z_t\in\{0,1\}$ is the sufficiency judgment and $f_t$ is the feedback. Only when $z_t=1$ does the inspector output the final answer $\hat a_t$; otherwise, the planner continues searching. This inspector gate is the core of the architecture.
+Input: Long video $\mathcal{V}$ and query $q$. Roles: Planner $P$ (LLM) and Inspector $I$ (frozen MLLM, accessed via `VisualInspect`). In each round $t$, the planner generates a rationale-action pair $(r_t,u_t)\sim P(\cdot\mid h_{t-1},q)$. The environment returns observation $o_t$, and the inspector evaluates the evidence $v_t=E(o_t)$: $(z_t,f_t)\sim I(\cdot\mid v_t,q)$, where $z_t\in\{0,1\}$ is the sufficiency verdict and $f_t$ is the feedback. Only if $z_t=1$ does the inspector output the final answer $\hat a_t$; otherwise, the planner continues searching. This inspector gate is the core of the architecture.
 
-The toolset includes: (i) Offline indexing: Slicing videos into 16s clips, using Qwen3-VL-8B for captions and text-embedding-3-large for dense embedding; (ii) `VisualRetrieve`: Using cosine similarity to retrieve top-$k$ candidates and DeepSeek-V3.2 for caption filtering; (iii) `VisualInspect(v_t,q)`: The inspector interface returning $(z_t,f_t)$ and the candidate answer $\hat a_t$.
+Three primary tools: (i) Offline indexing partitions video into 16s clips, using Qwen3-VL-8B for captions and text-embedding-3-large for dense indexing; (ii) `VisualRetrieve` uses cosine similarity for top-$k$ candidates with DeepSeek-V3.2 caption filtering; (iii) `VisualInspect(v_t,q)` is the inspector interface, returning $(z_t,f_t)$ and the candidate answer $\hat a_t$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Long Video V + Query q"] --> CLIP["Offline Indexing<br/>16s clips + caption + text embedding"]
+    CLIP --> P["Planner (LLM, observes search memory h)<br/>Retrieve new span / Submit evidence"]
+    P -->|VisualRetrieve| R["Retrieve top-k candidates<br/>cosine + caption filtering"]
+    R --> P
+    P -->|"Submit spans to inspector"| I["Inspector Gate (frozen MLLM, observes q + v_t)<br/>Sufficiency verdict z_t + feedback f_t"]
+    I -->|"z_t=0: Insufficient evidence + feedback"| P
+    I -->|"z_t=1: Sufficient evidence"| ANS["Inspector exclusive answer authority<br/>Output final answer â"]
+    DIAG["Evidence Misalignment Diagnosis<br/>temporal / semantic groundedness"] --> RWD["GRPO + evidence-gated reward<br/>Correctness × Soft tIoU gate (Train Planner only)"]
+    RWD -.Training.-> P
+```
 
 ### Key Designs
 
-1.  **Evidence Misalignment Diagnosis (temporal + semantic groundedness)**:
-    *   **Function**: Provides two complementary metrics to quantify "correct but unsupported" answers, decoupling accuracy from evidence support.
-    *   **Mechanism**: Defines outcome correctness $C\in\{0,1\}$ and trace groundedness $G\in\{0,1\}$, focusing on the $(C=1,G=0)$ "correct but ungrounded" quadrant. Temporal groundedness $G_t=\mathbb{I}[\max_{\tau\in\mathcal{E}(\xi),\tau^*\in\mathcal{E}^*}\mathrm{tIoU}(\tau,\tau^*)\ge\gamma]$ ($\gamma=0.05$) determines if the agent visited relevant time intervals. Semantic groundedness $G_s=1-J_{\text{judge}}(q,\xi,\hat a)$ uses an LLM judge to check if the answer is logically supported by tool outputs in the trace. Hallucination rates are defined as $H_t=\mathbb{P}(G_t=0\mid C=1)$ and $H_s=\mathbb{P}(G_s=0\mid C=1)$.
-    *   **Design Motivation**: Evaluation based solely on accuracy fails to expose dangerous shortcuts via priors; these two metrics audit traces from both temporal and semantic perspectives.
+**1. Evidence Misalignment Diagnosis (Temporal + Semantic Groundedness): Auditing "Correctness" and "Observation" separately**
 
-2.  **Planner-Inspector Decoupling Architecture + Inspector Gate**:
-    *   **Function**: Strips answering authority from the planner, making verification dependent on "raw pixel evidence" rather than "accumulated long traces."
-    *   **Mechanism**: The planner is an LLM-only policy maintaining a compact search memory. In each round, it either retrieves a new span or submits a set of spans to the inspector. The inspector is a frozen MLLM that views only $(q,v_t)$ without access to the planner's reasoning or full history. It outputs $(z_t,f_t)$; only $z_t=1$ triggers the final answer $\hat a_t$. Otherwise, the planner uses $f_t$ (e.g., "missing information X") to adjust the search.
-    *   **Design Motivation**: Diagnosis shows prompt pressure stems from long traces forcing decisions, while reward pressure stems from planners learning to guess. Decoupling ensures the planner cannot bypass evidence search, and the inspector cannot be influenced by the planner's context.
+Existing evaluations only consider accuracy, failing to expose "correct guesses" via priors. VideoSEAL defines result correctness $C\in\{0,1\}$ and trace groundedness $G\in\{0,1\}$, focusing on the $(C=1, G=0)$ quadrant. Two metrics are introduced: Temporal Groundedness $G_t=\mathbb{I}[\max_{\tau\in\mathcal{E}(\xi),\tau^*\in\mathcal{E}^*}\mathrm{tIoU}(\tau,\tau^*)\ge\gamma]$ ($\gamma=0.05$) to check if the agent visited relevant segments, and Semantic Groundedness $G_s=1-J_{\text{judge}}(q,\xi,\hat a)$ via LLM judge to check if the answer is logically supported by the tool outputs in the trace. Hallucination rates are $H_t=\mathbb{P}(G_t=0\mid C=1)$ and $H_s=\mathbb{P}(G_s=0\mid C=1)$.
 
-3.  **GRPO + Evidence-Gated Reward for Planner Training**:
-    *   **Function**: Freezes the inspector while optimizing the planner's search behavior, preventing training contamination of the verification/answer modules.
-    *   **Mechanism**: GRPO is applied only to the planner. Rewards include: (i) Outcome-only $R_{\text{ans}}(\xi)=\mathbb{I}[\hat a=a^*]$ as a baseline; (ii) Evidence-Gated $R_{\text{evd}}(\xi)=R_{\text{ans}}(\xi)\cdot g_{\text{evd}}(\xi)$, where the soft gate $g_{\text{evd}}(\xi)=\min\{1,\tfrac{1}{\gamma}\max_{\tau\in\mathcal{E}(\xi),\tau^*\in\mathcal{E}^*}\mathrm{tIoU}(\tau,\tau^*)\}$ encourages better alignment. A soft gate is necessary as average tIoU is low ($\approx 0.05$), making hard gates too sparse for gradients.
-    *   **Design Motivation**: Architecture alone does not solve reward pressure (the planner might still learn to submit random snippets). Evidence-gated reward aligns the search protocol, forcing the planner to find key evidence to "unlock" the inspector's gate.
+**2. Planner-Inspector Decoupling + Inspector Gate: Transferring "Answer Authority" to a pixel-evidence-only Inspector**
+
+Diagnosis shows that both pressures share a common root: the role mix where the planner both plans and answers. VideoSEAL splits the agent: the planner is an LLM-only strategy maintaining compact search memory (submitted spans + feedback), choosing between retrieving more spans or submitting to the inspector; the inspector is a frozen MLLM that only sees $(q, v_t)$ per call—completely ignoring the planner's internal reasoning or full trace history. It outputs verdict $z_t$ and feedback $f_t$. Decoupling ensures the planner cannot bypass evidence search via priors (it lacks answer authority), and the inspector cannot be biased by noisy context (it doesn't see the trace).
+
+**3. GRPO + Evidence-Gated Reward: Training the planner with soft-gated alignment to correct visitation**
+
+Decoupling alone does not stop reward pressure—planners might still learn lazy strategies like submitting random content. During training, GRPO is run only on the planner. Rewards include the baseline outcome-only $R_{\text{ans}}(\xi)=\mathbb{I}[\hat a=a^*]$ and an evidence-gated reward $R_{\text{evd}}(\xi)=R_{\text{ans}}(\xi)\cdot g_{\text{evd}}(\xi)$. The soft gate $g_{\text{evd}}(\xi)=\min\{1, \tfrac{1}{\gamma}\max_{\tau\in\mathcal{E}(\xi),\tau^*\in\mathcal{E}^*}\mathrm{tIoU}(\tau,\tau^*)\}$ provides denser signals than a hard gate, reinforcing the behavior of "finding key evidence to satisfy the inspector."
 
 ### Loss & Training
-The GRPO objective applies only to planner $P$; inspector $I$ remains frozen. $R_{\text{evd}}$ is used on datasets with ground-truth temporal labels (e.g., CG-Bench), otherwise $R_{\text{ans}}$ is used. Each inspection window is limited to 64 frames, with the search budget $K$ used to balance accuracy and cost.
+The GRPO objective applies only to the planner $P$; the inspector $I$ is frozen. $R_{\text{evd}}$ is used for datasets with ground-truth temporal intervals (e.g., CG-Bench), falling back to $R_{\text{ans}}$ otherwise. Inspection windows are limited to 64 frames.
 
 ## Key Experimental Results
 
 ### Main Results
-Compared against coupled baselines using the same backbone (Qwen3-8B planner + Qwen2.5-VL-7B inspector, 64 frames/inspection):
+Comparison on four benchmarks with a unified backbone (Qwen3-8B planner + Qwen2.5-VL-7B inspector):
 
 | Framework | Answer Authority | MLVU | VideoMME | LongVideoBench | LVBench |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|--------|------|----------|----------------|---------|
 | Qwen2.5-VL-Instruct (Single MLLM, 64f) | Model | 63.9 | 58.4 | 55.3 | 34.6 |
 | VideoAgent (coupled, GPT-4o) | LLM | 55.8 | 59.4 | 50.3 | 42.3 |
 | Video-MTR (coupled, MLLM) | MLLM | 58.4 | 62.7 | 57.3 | 42.0 |
-| Coupled baseline (Ours same backbone) | LLM | 64.6 | 59.9 | 52.2 | 48.2 |
+| Coupled baseline (Ours backbone) | LLM | 64.6 | 59.9 | 52.2 | 48.2 |
 | **VideoSEAL (decoupled)** | **MLLM (inspector)** | **68.2** (↑4.3) | **62.9** (↑4.5) | **62.0** (↑6.7) | **55.1** (↑20.5) |
 
-Switching to the decoupled architecture yielded 4–10+ point gains across all benchmarks with identical backbones.
+Switching to the decoupled architecture yielded 4–10+ point gains across all benchmarks without changing the backbone, with a 20.5% relative improvement on LVBench.
 
 ### Ablation Study
 
-| Configuration | Key Indicator | Description |
-| :--- | :--- | :--- |
-| Full VideoSEAL | Optimal | Decoupling + GRPO + Soft evidence gate. |
-| w/o Inspector Gate (coupled) | Strong drop | Reverts to monolithic paradigm, prompt + reward pressure return. |
-| Outcome-only reward | Minor acc. drop / Grounding drop | Confirms the existence of reward pressure. |
-| Increasing search budget $K$ | Monotonic gain | Decoupling enables sustainable scaling; coupled baseline plateaus. |
-| Inspector 7B → 72B | Significant jump | Modular plug-and-play allows scaling without retraining the planner. |
+| Configuration | Key Metrics | Note |
+|------|---------|------|
+| Full VideoSEAL | Best | Decoupling + GRPO + Soft evidence gate |
+| w/o Inspector Gate (coupled) | Significant drop | Returns to monolithic paradigm; pressures re-emerge |
+| Outcome-only reward | Accuracy drop + Grounding decrease | Confirms existence of reward pressure |
+| Increased budget $K$ | Monotonic accuracy gain | Sustained scaling; coupled baseline plateaus |
+| Inspector 7B → 72B | Significant accuracy jump | Confirms modular plug-and-play capability |
 
 ### Key Findings
-- Coupled agents improve accuracy during training while grounding remains stagnant, leading to a widening outcome-grounding gap. This proves models learn to "guess answers" rather than "find evidence."
-- During inference, as traces lengthen, $G_t$ saturates while $G_s$ drops and $H_s$ rises, showing agents resort to "plausibility hedging" in late stages.
-- Decoupled systems scale effectively with search budget $K$, whereas coupled baselines suffer from context saturation.
-- Soft evidence gates are crucial for training grounding-aware agents when hard temporal signals are too sparse.
+- Coupled agents improve in accuracy through training while grounding stagnates, widening the outcome-grounding gap—direct evidence of reward pressure.
+- During inference, as traces lengthen, $G_s$ (semantic groundedness) decreases while $H_s$ (hallucination) increases, confirming prompt pressure.
+- Decoupled systems benefit more from larger search budgets, whereas coupled baselines are hindered by context saturation.
+- A soft evidence gate $\min\{1,\mathrm{tIoU}/\gamma\}$ is a crucial engineering trick for grounding-aware RL when hard signals are too sparse.
 
 ## Highlights & Insights
-- Treating "answering authority" as a structural resource is a profound insight. Architectural decoupling creates a "fact-checker" within the agent, institutionalizing the principle of "no evidence, no answer."
-- The dual temporal/semantic grounding metrics provide tools to move beyond simple accuracy. This "grounding-aware" evaluation audits why an agent "wins."
-- The frozen, swappable inspector allows for zero-cost upgrades to the verification module, demonstrating the power of modular agent design.
-- The use of soft surrogates for sparse signals is a generalizable trick for any RL task aligning with sparse ground truth.
+- Identifying "answer authority" as a manipulable structural resource is the core insight. Separating it enforces a "fact-checker" role within the agent.
+- The dual-metric diagnostic (temporal + semantic) allows evaluation to move beyond "win/loss" to "why it won," making grounding-aware evaluation a potential standard for agentic systems.
+- The use of a frozen inspector allows the verification module to scale independently, enabling zero-training upgrades as stronger MLLMs emerge.
 
 ## Limitations & Future Work
-- Decoupling increases overhead (latency and tokens) due to separate inspector calls.
-- The inspector is frozen; if the inspector itself lacks the capability to see details, the planner cannot compensate.
-- Training depends on ground-truth temporal annotations, which are limited in many datasets.
-- The LLM judge for semantic groundedness may introduce its own biases.
-- Effectiveness on open-ended video generation remains to be validated.
+- Decoupling adds the overhead of inspector calls, increasing latency and token consumption.
+- If the inspector itself fails (e.g., visual details beyond its capacity), the planner's efforts are wasted; evidence-gated rewards cannot fix verifier inherent errors.
+- Dependency on ground-truth temporal labels for $R_{\text{evd}}$ limits its applicability to datasets without grounding annotations.
+- Effectiveness on open-ended generation (e.g., long-form summarization) remains to be verified as "evidence support" is harder to define.
 
 ## Related Work & Insights
-- **vs VideoAgent/DrVideo**: These use serialized planning and answering in a shared context, suffering from both prompt and reward pressure.
-- **vs Video-MTR/LongVT**: Use RL but lack role separation; rewards strengthen the "cheapest path to the answer," often via priors.
-- **vs verifiers in RAG**: Similar in concept, but VideoSEAL upgrades the verifier to an "inspector with veto power" for temporal video contexts.
+- **vs VideoAgent/DrVideo**: These use a single planner in a shared context; VideoSEAL eliminates both pressures via structural decoupling.
+- **vs Video-MTR/LongVT**: While these use RL, the lack of role separation leads to shortcut learning via outcome-only rewards.
+- **vs RAG (Self-RAG/Verifiers)**: VideoSEAL formalizes "retrieve-reason-verify" for temporal video contexts, elevating the verifier to a "veto-wielding inspector."
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -123,8 +129,8 @@ Switching to the decoupled architecture yielded 4–10+ point gains across all b
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

@@ -2,86 +2,93 @@
 title: >-
   [Paper Note] Learning Multi-View Spatial Reasoning from Cross-View Relations
 description: >-
-  [CVPR 2026][3D Vision][multi-view spatial reasoning] XVR (Cross-View Relations) constructs a large-scale multi-view visual question answering dataset of 100K samples. By explicitly training VLMs on three categories of ta…
+  [CVPR 2026][3D Vision][Vision-Language Model] XVR (Cross-View Relations) constructs a large-scale multi-view Visual Question Answering (VQA) dataset with 100,000 samples. By explicitly training VLMs on three categories of tasks—correspondence, geometric verification, and viewpoint localization—it significantly enhances cross-view spatial reasoning capabilities, ac
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "multi-view spatial reasoning"
-  - "cross-view relations"
-  - "vision-language models"
-  - "robotic manipulation"
-  - "dataset construction"
+  - CVPR 2026
+  - 3D Vision
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 2816b1d275362013
+content_hash: 9a8659b8b6d68203
 ---
-
 # Learning Multi-View Spatial Reasoning from Cross-View Relations
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27967](https://arxiv.org/abs/2603.27967)  
 **Code**: [https://cross-view-relations.github.io](https://cross-view-relations.github.io)  
-**Area**: 3D Vision
-**Keywords**: multi-view spatial reasoning, cross-view relations, vision-language models, robotic manipulation, dataset construction
+**Area**: 3D Vision  
+**Keywords**: Multi-view Spatial Reasoning, Cross-view Relations, Vision-Language Models, Robot Manipulation, Dataset Construction
 
 ## TL;DR
 
-XVR (Cross-View Relations) constructs a large-scale multi-view visual question answering dataset of 100K samples. By explicitly training VLMs on three categories of tasks—correspondence, verification, and viewpoint localization—XVR significantly improves cross-view spatial reasoning, yielding notable gains on both multi-view benchmarks and robotic manipulation tasks.
+XVR (Cross-View Relations) constructs a large-scale multi-view Visual Question Answering (VQA) dataset with 100,000 samples. By explicitly training VLMs on three categories of tasks—correspondence, geometric verification, and viewpoint localization—it significantly enhances cross-view spatial reasoning capabilities, achieving notable improvements across multi-view benchmarks and robotic manipulation tasks.
 
 ## Background & Motivation
 
-Vision-language models (VLMs) excel at single-view visual tasks but are severely limited in multi-view spatial reasoning, which is essential for robotic systems to understand 3D environments and perform cross-view manipulation.
+Vision-Language Models (VLMs) excel at single-view vision tasks but struggle significantly with multi-view spatial reasoning, which is crucial for robotic systems to understand 3D environments and perform cross-view manipulation.
 
-1. **Single-view limitations**: Existing spatial reasoning datasets and benchmarks are almost exclusively single-view, suffering from limited information and frequent occlusions.
-2. **Shallow multi-view understanding**: Even datasets with multi-view data (e.g., AllAnglesBench) focus only on "what objects are visible" in each view, rather than the geometric relationships between views.
-3. **Lack of explicit cross-view supervision**: Without explicit cross-view relational training, VLMs tend to produce predictions that appear locally plausible within individual views but are geometrically inconsistent across views.
+1.  **Limitations of Prior Work (Single-view)**: Existing spatial reasoning datasets and benchmarks are almost exclusively single-view, providing limited information and frequent occlusions.
+2.  **Lack of Depth in Multi-view Understanding**: Even existing multi-view datasets (e.g., AllAnglesBench) focus only on "what objects are seen" in each view rather than the geometric relations between views.
+3.  **Key Challenge (Lack of Explicit Supervision)**: Without explicit cross-view relation training, VLMs tend to generate predictions that appear plausible within a single view but remain spatially inconsistent across views.
 
-**Key Insight**: Inspired by the Structure-from-Motion (SfM) pipeline, which integrates multi-view information through three key steps—establishing correspondences, verifying geometric consistency, and estimating camera poses—the authors translate these steps into three categories of cross-view supervision tasks to construct the XVR dataset and directly train VLMs for cross-view reasoning.
+Key Insight: Inspired by the Structure-from-Motion (SfM) pipeline, which integrates multi-view information through three key steps (establishing correspondence $\to$ verifying geometric consistency $\to$ estimating camera poses), the authors convert these steps into three categories of cross-view supervision tasks and build the XVR dataset to directly train VLMs for cross-view reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-**Input**: Multi-view images from calibrated multi-view captures (general domain) and robotic manipulation trajectories (robot domain). **Data generation pipeline**: Visual QA samples in multiple-choice format are automatically generated using 3D geometric information and spatiotemporal metadata. **Output**: 100K training samples + 1,866 test samples (XVR-Eval), covering 8 specific task types with an average of 4.32 images per sample. Fine-tuning Qwen3-VL-2B on XVR yields substantial improvements.
+The core problem this paper addresses is that VLMs are proficient at identifying objects in a single image but cannot explain "which point in this image corresponds to which point in that image" or "whether the 3D spaces in these two views are consistent." The mechanism of XVR is to decompose the classic SfM pipeline into supervision signals that VLMs can learn: first, it **automatically** casts multiple-choice questions with correct answers from two data domains using 3D geometry and spatio-temporal metadata; then, it finetunes a small model on this data; finally, the finetuned backbone is connected to a robotic VLA to verify transfer performance. The pipeline yields 100,000 training samples and 1,866 XVR-Eval test samples, covering 8 tasks with an average of 4.32 images per question, with Qwen3-VL-2B as the finetuning target.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    S["Three Categories of Cross-view Reasoning Tasks<br/>SfM 3-Step → Correspondence / Verification / Localization (8 Tasks)"]
+    subgraph GEN["Dual-Domain Data Generation Pipeline"]
+        direction TB
+        A["General Domain WildRGB-D<br/>3D points/camera poses projected to precise geometric answers"]
+        B["Robot Domain OXE / AgiBot-World<br/>Spatio-temporal metadata + SSIM filtered discriminating frames"]
+    end
+    S --> GEN
+    GEN --> C["100k Training QA + 1,866 XVR-Eval<br/>Distractors separated by geometric distance"]
+    C --> D["Finetuning Qwen3-VL-2B<br/>Multi-choice VQA Loss → Qwen3-VL-2B-XVR"]
+    D --> E["VLA Downstream Transfer<br/>Diffusion Action Head (GR00T-N1.5) → RoboCasa Eval"]
+```
 
 ### Key Designs
 
-1. **Three Cross-View Reasoning Categories**:
-    - **Function**: Provide structured cross-view relational supervision signals.
-    - **Mechanism**: (a) **Correspondence**: includes point correspondence (matching the same 3D point across views) and directional correspondence (aligning directional arrows across views). (b) **Verification**: includes spatial verification (detecting 3D spatial inconsistencies across views) and temporal verification (identifying temporally discontinuous frames in a sequence). (c) **Localization**: includes four subtasks—viewpoint localization, directional view localization, cross-scene localization, and language-conditioned localization. In total, 8 task types.
-    - **Design Motivation**: Directly mirrors the three core steps of SfM—establishing correspondences, verifying geometric consistency, and estimating camera poses—which constitute the foundational capabilities for multi-view 3D understanding.
+**1. Three Categories of Cross-View Reasoning Tasks: Translating SfM into VLM-learnable QA**
 
-2. **Dual-Domain Generation Pipeline**:
-    - **Function**: Automatically generate high-quality cross-view QA samples at scale.
-    - **Mechanism**: The **general domain** leverages calibrated multi-view RGB-D captures from the WildRGB-D dataset, generating precise correspondence and localization tasks via 3D-to-2D projection. 3D points and camera positions are sampled and projected onto multiple views; spatially separated distractors are generated to ensure non-trivial questions. The **robot domain** leverages manipulation trajectory data from OXE and AgiBot-World, generating verification and localization tasks based on spatiotemporal metadata and camera identifiers. SSIM filtering is applied to ensure temporal differences are visually distinguishable.
-    - **Design Motivation**: The two data sources are complementary—the general domain provides precise geometric supervision, while the robot domain contributes rich viewpoint variation and temporal dynamics.
+SfM integrates multi-view information via correspondence, verification, and pose estimation. XVR segments tasks into these three categories to let models explicitly learn "between-view" relations. **Correspondence** requires the model to match the same 3D point across views (point correspondence) or align arrows pointing in the same direction across views (directional correspondence). **Verification** asks the model to judge if two views describe an internally consistent 3D space (spatial verification) and identify temporal outliers in an image sequence (temporal verification). **Localization** focuses on estimating "from which viewpoint this image was taken," subdivided into viewpoint localization, directional view localization, cross-scene localization, and language-conditioned localization. These eight tasks cover the fundamental requirements for multi-view 3D understanding. Task difficulty is controlled—distractors are geometrically calculated to ensure that incorrect answers reflect a genuine lack of spatial understanding.
 
-3. **VLA Downstream Transfer**:
-    - **Function**: Transfer cross-view reasoning capabilities to robotic manipulation.
-    - **Mechanism**: Qwen3-VL-2B-XVR (fine-tuned on XVR) serves as the vision-language backbone for a VLA model, augmented with a diffusion action head (following the GR00T-N1.5 architecture). The system is trained and evaluated on Franka Emika arm manipulation tasks in the RoboCasa simulation environment.
-    - **Design Motivation**: To validate that cross-view spatial reasoning not only improves perceptual capability but also directly translates into gains in embodied manipulation performance.
+**2. Dual-Domain Data Generation Pipeline: Geometry from General Domain, Viewpoints & Time from Robot Domain**
+
+To build questions at scale without manual labeling, the pipeline derives ground-truth QA from existing geometric metadata. The **General Domain** utilizes calibrated multi-view RGB-D captures from WildRGB-D. 3D points or camera positions are sampled and projected into multiple views ($3\text{D}\to2\text{D}$); the answers for correspondence and localization tasks come directly from these projections. Distractors are spatially distanced to avoid trivial solutions. The **Robot Domain** uses manipulation trajectories from OXE and AgiBot-World. Spatio-temporal metadata and camera identifiers are used to generate verification and localization questions. SSIM is used to filter out sequences where visual differences are too subtle, ensuring that "temporal mismatch" questions are visually decidable. The two domains are complementary: the general domain provides pixel-level geometric supervision, while the robot domain adds the viewpoint variety and temporal dynamics of real manipulation.
+
+**3. VLA Downstream Transfer: Integrating Cross-View Perception into Robotic Manipulation**
+
+To test if improved perception translates into action, the authors used the finetuned Qwen3-VL-2B-XVR as the VLA backbone. A diffusion action head (following the GR00T-N1.5 architecture) was added and trained in the RoboCasa simulation on Franka Emika arm tasks. This step tests the hypothesis that "Better Cross-View Spatial Perception $\to$ Better Embodied Manipulation." Success here would indicate that XVR teaches general spatial capabilities rather than just isolated VQA tricks.
 
 ### Loss & Training
 
-Fine-tuning employs a standard multiple-choice VQA loss. Key data quality control measures include: retaining only samples with point cloud density ≥1M in the general domain; and keeping only sequences with ≥3 cameras, ≥20-second trajectories, and sufficient motion dynamics in the robot domain. XVR-Eval is constructed from data sources unseen during training to ensure generalization.
+Finetuning utilizes a standard multi-choice VQA loss. Critical quality control includes: retaining only high-quality samples from the General Domain (point cloud density $\ge 1\text{M}$); and keeping only sequences in the Robot Domain with $\ge 3$ cameras, $\ge 20\text{s}$ trajectories, and sufficient motion dynamics. XVR-Eval is constructed from data sources never seen during training to ensure generalization.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | XVR-Eval Overall | Type |
-|-------|-----------------|------|
+|------|-----------------|------|
 | Random | 32.64% | Baseline |
-| Human | 83.85% | Human baseline |
+| Human | 83.85% | Human Baseline |
 | Eagle2-2B | 16.99% | Open-source |
 | Qwen3-VL-2B-Instruct | 36.82% | Open-source |
 | Qwen3-VL-4B-Instruct | 45.02% | Open-source |
 | Claude-4.5-Sonnet | 51.18% | Closed-source |
 | GPT-5 | 61.74% | Closed-source |
-| **Qwen3-VL-2B-XVR (Ours)** | **68.06%** | Fine-tuned |
+| **Qwen3-VL-2B-XVR (Ours)** | **68.06%** | Finetuned |
 
-The XVR-fine-tuned 2B model surpasses all closed-source models including GPT-5, achieving a 1.8× improvement over the base model.
+The XVR-finetuned 2B model outperforms all closed-source models (including GPT-5), achieving a $1.8\times$ improvement over its base model.
 
-### Ablation Study (XVR-Eval Subtask Analysis)
+### Ablation Study (XVR-Eval Sub-task Analysis)
 
 | Task | Qwen3-VL-2B | Qwen3-VL-2B-XVR | Gain |
 |------|-------------|-----------------|------|
@@ -89,47 +96,47 @@ The XVR-fine-tuned 2B model surpasses all closed-source models including GPT-5, 
 | Spatial Verification | 23.11% | **84.85%** | +61.74 |
 | Viewpoint Localization | 19.50% | **57.68%** | +38.18 |
 | Directional Correspondence | 26.14% | **53.79%** | +27.65 |
-| Temporal Verification | 45.29% | 41.18% | **−4.11** |
+| Temporal Verification | 45.29% | 41.18% | **-4.11** |
 
-**External benchmark transfer**: Consistent improvements on MindCube-Tiny and RoboSpatial-Home, with +7.6% on the Compatibility subtask and +7.0% on the Among subtask.
+External Benchmark Transfer: Performance on MindCube-Tiny and RoboSpatial-Home consistently improved, with the Compatibility sub-task increasing by +7.6% and the Among sub-task by +7.0%.
 
-**VLA manipulation success rate (RoboCasa)**: TurnOffMicrowave shows the largest gain (~+13%), with notable improvements also on CoffeePressButton and PnPCabToCounter.
+VLA Manipulation Success (RoboCasa): The "TurnOffMicrowave" scenario saw the largest gain ($\approx +13\%$), with significant gains also seen in "CoffeePressButton" and "PnPCabToCounter".
 
 ### Key Findings
 
-- **Point Correspondence and Spatial Verification exhibit the most dramatic improvements** (+47.73 and +61.74 pp, respectively), exceeding human-level performance, indicating that geometric matching tasks benefit most from explicit cross-view training.
-- **Temporal Verification is the only task that declines** (−4.11 pp), as XVR training emphasizes static spatial-geometric reasoning at the expense of temporal sensitivity—revealing a spatial–temporal reasoning trade-off.
-- **2B model > GPT-5**: Explicit cross-view supervision is more valuable than model scale; Qwen3-VL-2B-XVR (2B parameters) outperforms GPT-5.
-- Gemini-Robotics-ER-1.5 achieves only 6.22% on Viewpoint Localization—below random chance—demonstrating that robot-specific training alone cannot substitute for explicit cross-view relational supervision.
-- Cross-domain transfer is effective: XVR training on outside-looking-in configurations generalizes to inside-looking-out scenarios in MindCube.
+- **Point Correspondence and Spatial Verification saw the most dramatic gains** (+47.73 and +61.74 pp, respectively), exceeding human levels, suggesting geometric matching tasks benefit most from explicit cross-view training.
+- **Temporal Verification was the only task to decline** (-4.11 pp), as XVR training biases towards spatial geometric reasoning, potentially weakening temporal sensitivity—indicating a trade-off between spatial and temporal reasoning.
+- **2B Model > GPT-5**: The value of explicit cross-view supervision exceeds model scale; Qwen3-VL-2B-XVR (2B parameters) defeated GPT-5.
+- Gemini-Robotics-ER-1.5 scored only 6.22% on Viewpoint Localization (below random guessing), suggesting specialized robot training alone cannot substitute for explicit cross-view relation supervision.
+- Cross-domain transfer is effective—XVR trained on "outside-looking-in" configurations still improved performance on "inside-looking-out" MindCube tasks.
 
 ## Highlights & Insights
 
-- **The mapping from the SfM pipeline to VLM training** is particularly elegant—translating the classical correspondence–verification–localization workflow into learnable QA tasks represents an effective strategy for injecting geometric knowledge into large models.
-- **The finding that small model + explicit supervision > large model + zero-shot** is significant: for structured tasks such as spatial reasoning, data quality and task design matter more than model scale.
-- **Successful VLA transfer** validates the hypothesis that better spatial perception leads to better manipulation; the XVR-trained visual backbone can be plugged in to improve robotic performance directly.
-- The dual-domain design of the data generation pipeline is noteworthy—automatically generating large-scale training data by exploiting metadata (camera parameters, trajectories) from existing datasets.
+- **SfM-to-VLM Training Mapping**: Translating the correspondence-verification-localization pipeline into VLM-learnable QA is an elegant and effective way to inject geometric knowledge into large models.
+- **Small Model + Explicit Supervision > Large Model + Zero-shot**: This significant finding suggests that for structured tasks like spatial reasoning, data quality and task design are more critical than model scale.
+- **VLA Transfer Success**: Pathing from "better spatial perception" to "better manipulation" validates the practical utility of XVR for downstream robotics.
+- **Dual-Domain Pipeline Design**: Automatically generating large-scale training data by leveraging existing metadata (camera params, trajectories) serves as a valuable template for future data-centric work.
 
 ## Limitations & Future Work
 
-- **Temporal reasoning degradation**: XVR prioritizes static multi-view spatial reasoning, sacrificing temporal dynamic understanding; future work could incorporate explicit temporal relational training.
-- **VLA evaluation is simulation-only**: The RoboCasa simulator does not fully capture the complexity of real physical environments; validation on real hardware is needed.
-- The general domain data is primarily drawn from WildRGB-D, which may offer limited scene diversity (predominantly tabletop objects); extending to outdoor and large-scale scene data could yield further gains.
-- Joint training with 3D perception tasks such as depth estimation and surface normal estimation has not been explored.
+- **Temporal Reasoning Degradation**: XVR emphasizes static multi-view spatial reasoning, sacrificing temporal dynamic understanding; future work could incorporate explicit temporal relation training.
+- **Simulation-only VLA Evaluation**: RoboCasa simulation cannot fully reflect the complexity of real-world physics; real-robot validation is required.
+- **Domain Diversity**: General domain data primarily comes from WildRGB-D (mostly tabletop objects); expanding to outdoor or large-scale scenes could further improve generalization.
+- **Multitask Integration**: Co-training with other 3D perception tasks like depth or surface normal estimation has not yet been explored.
 
 ## Related Work & Insights
 
-- **vs. MultiSPA**: MultiSPA provides large-scale multi-frame spatial reasoning data with depth and visual correspondences, but lacks explicit cross-view geometric relational supervision; XVR's cross-view relations are more structured.
-- **vs. MindCube**: MindCube evaluates scene imagination from limited viewpoints; XVR achieves transferable gains on this benchmark, demonstrating that cross-view training generalizes to spatial imagination tasks.
-- **vs. SpatialVLM / RoboSpatial**: These works inject 3D spatial cues into single-view understanding; XVR extends this to cross-view relational understanding across multiple views, representing a more comprehensive form of spatial intelligence.
-- **vs. pi0.5**: pi0.5 enhances embodied reasoning by strengthening the VLM backbone; XVR provides a data-driven pathway toward similar objectives.
+- **vs MultiSPA**: While MultiSPA provides multi-frame data with depth and correspondence, it lacks explicit structured cross-view geometric supervision; XVR's relations are more formally structured.
+- **vs MindCube**: MindCube evaluates scene imagination from limited views; XVR's transfer gains there suggest cross-view training generalizes to spatial imagination.
+- **vs SpatialVLM/RoboSpatial**: While these inject 3D cues into single-view understanding, XVR extends this to multi-view relation understanding, representing more comprehensive spatial intelligence.
+- **vs pi0.5**: While pi0.5 enhances VLM backbones for embodied reasoning, XVR provides a data-driven path to achieve similar goals.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The mapping from SfM to VLM training is highly innovative; the three-category task design is theoretically grounded and empirically effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comparisons with 10 VLMs (including closed-source), internal and external benchmarks, VLA transfer, and human baselines—comprehensive coverage.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure, rigorous task definitions, well-designed figures, and in-depth analysis.
-- **Value**: ⭐⭐⭐⭐⭐ Fills the gap in training data for multi-view spatial reasoning in VLMs; VLA transfer validates practical applicability.
+- Novelty: ⭐⭐⭐⭐⭐ The SfM-to-VLM mapping is highly innovative and theoretically grounded.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive comparisons with 10 VLMs, internal/external benchmarks, VLA transfer, and human baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, rigorous task definitions, well-designed visuals, and deep analysis.
+- Value: ⭐⭐⭐⭐⭐ Fills a gap in multi-view spatial reasoning training data and demonstrates clear utility for VLA.
 
 <!-- RELATED:START -->
 
@@ -137,11 +144,11 @@ The XVR-fine-tuned 2B model surpasses all closed-source models including GPT-5, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](unisplat_3d_representations_unposed.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
-- [\[CVPR 2026\] MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction](mv-roma_from_pairwise_matching_into_multi-view_track_reconstruction.md)
+- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
+- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
 
 </div>
 

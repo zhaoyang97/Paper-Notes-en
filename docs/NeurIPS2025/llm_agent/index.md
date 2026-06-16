@@ -83,7 +83,7 @@ item_total: 39
 
 **🧠 NeurIPS2025** · **39** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/llm_agent/index.md) · [💬 ACL2026 (78)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (41)](../../CVPR2026/llm_agent/index.md) · [🧪 ICML2026 (42)](../../ICML2026/llm_agent/index.md) · [💬 ACL2026 (78)](../../ACL2026/llm_agent/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
 
 🔥 **Top topics:** LLM ×20 · Agents ×13
 

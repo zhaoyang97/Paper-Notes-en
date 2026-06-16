@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models
 description: >-
-  [ACL 2026][LLM Efficiency][Diffusion Language Models] Ours proposes AHD (Anchor-based History-stable Decoding), a training-free plug-and-play dynamic decoding strategy. By backtracking historical trajectories via dynamic…
+  [ACL 2026][LLM Efficiency][Diffusion Language Model] This paper proposes AHD (Anchor-based History-stable Decoding), a training-free, plug-and-play dynamic decoding strategy. By utilizing dynamic anchors to backtrack historical trajectories and identify cross-block stable tokens in diffusion LLMs, AHD achieves early unlocking. It reduces decoding steps by 80% on BBH whil
 tags:
-  - "ACL 2026"
-  - "LLM Efficiency"
-  - "Diffusion Language Models"
-  - "Semi-autoregressive Decoding"
-  - "Cross-block Stable Tokens"
-  - "Dynamic Anchors"
-  - "Inference Acceleration"
+  - ACL 2026
+  - LLM Efficiency
+  - Diffusion Language Model
+  - Semi-autoregressive Decoding
+  - Cross-block Stable Token
+  - Dynamic Anchor
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: 3623c89106b806cc
+content_hash: 782d831b4083f73b
 ---
-
 # Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models
 
 **Conference**: ACL 2026  
@@ -24,49 +23,54 @@ content_hash: 3623c89106b806cc
 **Keywords**: Diffusion Language Models, Semi-autoregressive Decoding, Cross-block Stable Tokens, Dynamic Anchors, Inference Acceleration
 
 ## TL;DR
-Ours proposes AHD (Anchor-based History-stable Decoding), a training-free plug-and-play dynamic decoding strategy. By backtracking historical trajectories via dynamic anchors to identify cross-block stable tokens in diffusion LLMs, it achieves early unlocking, reducing decoding steps by 80% on BBH while improving performance by 3.67%.
+This paper proposes AHD (Anchor-based History-stable Decoding), a training-free, plug-and-play dynamic decoding strategy. By utilizing dynamic anchors to backtrack historical trajectories and identify cross-block stable tokens in diffusion LLMs, AHD achieves early unlocking. It reduces decoding steps by 80% on BBH while simultaneously improving performance by 3.67%.
 
 ## Background & Motivation
 
-**Background**: Diffusion Large Language Models (dLLMs) such as LLaDA have emerged as powerful alternatives to autoregressive LLMs. Semi-autoregressive (Semi-AR) decoding is widely adopted—partitioning the output sequence into multiple blocks for sequential decoding from left to right, with each block denoised through diffusion iterations.
+**Background**: Diffusion Large Language Models (dLLMs), such as LLaDA, have emerged as powerful alternatives to autoregressive LLMs. Semi-autoregressive (Semi-AR) decoding is widely adopted, where the output sequence is divided into multiple blocks decoded sequentially from left to right, with each block undergoing iterative denoising.
 
-**Limitations of Prior Work**: Semi-AR decoding suffers from a severe "block boundary delay" issue—many tokens converge to final values and remain stable before their corresponding block decoding starts, but are forced to wait for their specific block's turn. Delayed decoding of these "cross-block stable tokens" not only wastes numerous decoding steps but also reduces performance by suppressing the radiation effect in local regions.
+**Limitations of Prior Work**: Semi-AR decoding suffers from a significant "block boundary delay" problem. Many tokens converge to their final values and maintain stability well before their corresponding block is decoded, yet they are forced to wait for their specific block's turn. This delayed decoding of "cross-block stable tokens" wastes decoding steps and suppresses the radiation effects on local regions, leading to performance degradation.
 
-**Key Challenge**: How to accurately identify cross-block stable tokens? Existing methods (single-step judgments based on confidence/entropy) are unreliable: (1) already stable tokens may still exhibit local fluctuations leading to misjudgments; (2) historical information is isolated in standard decoding, where each step's prediction depends only on the previous step.
+**Key Challenge**: How to accurately identify cross-block stable tokens? Existing methods based on single-step confidence or entropy are unreliable because (1) stable tokens may still exhibit local fluctuations, leading to misjudgment; and (2) standard decoding isolates historical information, as each prediction depends only on the previous step.
 
-**Goal**: Break the block boundary constraints of Semi-AR decoding and simultaneously improve efficiency and performance by early unlocking cross-block stable tokens.
+**Goal**: To break the block boundary constraints of Semi-AR decoding and improve both efficiency and performance by early unlocking cross-block stable tokens.
 
-**Key Insight**: Three critical observations—(1) Naive look-ahead decoding is unreliable due to local fluctuations; (2) token stability is highly correlated with convergence trends (absolute stability trends); (3) historical information is isolated in standard decoding. Therefore, historical trajectory information must be introduced to determine global stability.
+**Key Insight**: Three critical observations: (1) Naive lookahead decoding is unreliable due to local fluctuations; (2) token stability is highly correlated with absolute convergence trends; and (3) historical information is isolated in standard decoding. Therefore, historical trajectory information must be introduced to determine global stability.
 
-**Core Idea**: Use the current decoding step as a dynamic anchor at each iteration, backtrack through a historical buffer to calculate the anchored consistency score, capture the absolute stability trend of tokens, and perform early cross-block decoding once stability is confirmed.
+**Core Idea**: At each decoding step, using the current step as a dynamic anchor, the system backtracks through a history buffer to calculate an anchored consistency score. This captures the absolute stability trend of tokens; once verified as stable, tokens are decoded early across blocks.
 
 ## Method
 
 ### Overall Architecture
-Building upon Semi-AR decoding, AHD divides the sequence into a current block $B_{current}^t$ and future blocks $B_{future}^t$. Within the current block, confidence-aware parallel decoding is used. For future blocks, AHD maintains a historical buffer for each position and calculates stability via dynamic anchor backtracking. Tokens meeting the criteria are unlocked early and added to the decoding set.
+AHD modifies the standard semi-autoregressive decoding framework used in diffusion LLMs. At each decoding step, the sequence is partitioned into a current block $B_{current}^t$ and future blocks $B_{future}^t$. The current block follows standard confidence-aware parallel decoding, while the new mechanism operates on the future blocks. AHD maintains a historical distribution trajectory for each position in the future blocks. Using the "current step" as a dynamic anchor, it backtracks this trajectory to measure whether the position exhibits an absolute stability trend. Once confirmed as stable, the token is unlocked early from the future block and merged into the current decoding set to update the sequence. This ensures the input remains a progressive denoising trajectory while historical consistency determines "early convergence," resulting in a generation process that breaks block boundaries and significantly compresses decoding steps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Single Decoding Step: Sequence split into<br/>Current Block + Future Blocks"] --> B["Current Block: Confidence-aware Parallel Decoding"]
+    A --> C["History Buffer & Dynamic Anchor<br/>Store last H steps for future blocks;<br/>Calculate anchored KL divergence"]
+    C --> D["Anchored Consistency Score<br/>Weighted sum of historical divergence<br/>aggregated into scalar D(acs)"]
+    D -->|"D(acs) < ε implies absolute stability"| E["Cross-block Early Unlocking<br/>Stable tokens merged into current decoding set"]
+    B --> E
+    E --> F["Generation result with broken boundaries<br/>and compressed decoding steps"]
+    F -.Next Step.-> A
+```
 
 ### Key Designs
 
-1.  **Historical Buffer + Dynamic Anchor**:
+**1. History Buffer and Dynamic Anchors: Trajectory-based Stability Judgment**
 
-    - **Function**: Maintains historical distribution trajectories for each future block position to enable cross-step stability monitoring.
-    - **Mechanism**: For each position $j$ in the future blocks, a historical buffer $\mathcal{H}_j^t = \{P_j^{t-H+1}, ..., P_j^t\}$ of length $H$ is maintained. Taking the current step $P_j^t$ as the dynamic anchor, the anchored KL divergence is calculated as $\delta_j^{t,\tau} = D_{KL}(P_{j,anchor}^t || P_j^{t-\tau})$.
-    - **Design Motivation**: While single-step confidence/entropy is sensitive to local fluctuations, anchor-based historical consistency provides a global perspective, capturing signals at the early stages of an absolute stability trend.
+To determine if a token is truly stable, relying on single-step confidence or entropy is unreliable, as stabilized tokens may still experience local fluctuations. AHD maintains a history buffer $\mathcal{H}_j^t = \{P_j^{t-H+1}, \dots, P_j^t\}$ of length $H$ for each position $j$ in the future blocks. It uses the current distribution $P_j^t$ as a dynamic anchor to calculate the anchored KL divergence with historical steps: $\delta_j^{t,\tau} = D_{KL}(P_{j,anchor}^t \,\|\, P_j^{t-\tau})$. In contrast to standard decoding where history is isolated, this anchor-based perspective captures early signals of stability trends from the global trajectory.
 
-2.  **Anchored Consistency Score**:
+**2. Anchored Consistency Score: Aggregating Historical Evidence**
 
-    - **Function**: Aggregates stability evidence within the historical window to make reliable cross-block decoding decisions.
-    - **Mechanism**: An exponential decay weighted sum is applied to the historical consistency sequence $\{\delta_j^{t,1}, ..., \delta_j^{t,H-1}\}$ to obtain $D_j^t(acs) = \sum_{\tau=1}^{H-1} w_\tau \delta_j^{t,\tau}$, where $w_\tau = e^{-\lambda\tau}/Z$ assigns higher weights to recent history. A token is judged to have reached an absolute stability trend when $D_j^t(acs) < \varepsilon$.
-    - **Design Motivation**: Exponential decay weights balance sensitivity to recent changes with the robustness of long-term trends, while the threshold $\varepsilon$ controls the conservatism of unlocking.
+AHD performs an exponentially decaying weighted sum of the anchored divergence sequence $\{\delta_j^{t,1}, \dots, \delta_j^{t,H-1}\}$ to obtain the anchored consistency score: $D_j^t(acs) = \sum_{\tau=1}^{H-1} w_\tau \delta_j^{t,\tau}$, where weights $w_\tau = e^{-\lambda\tau}/Z$ prioritize recent history. This decay maintains sensitivity to recent changes while ensuring robustness to long-term trends. A position is deemed to have reached an absolute stability trend when $D_j^t(acs) < \varepsilon$, where $\varepsilon$ serves as a threshold for unlocking conservatism.
 
-3.  **Cross-block Early Unlocking**:
+**3. Cross-block Early Unlocking: Releasing Radiation Effects**
 
-    - **Function**: Breaks block boundaries to decode stable future block tokens ahead of schedule.
-    - **Mechanism**: The set of future block positions meeting the stability condition $G_f^t = \{j | j \in B_{future} \wedge D_j^t(acs) < \varepsilon\}$ is merged with the current block's decoding set $G_c^t$ to form $G_{unmasked}^t$, and the sequence is updated collectively.
-    - **Design Motivation**: Stable tokens exhibit a "radiation effect"—once a token stabilizes, it accelerates the convergence of neighboring tokens. Early unlocking releases this radiation effect, which not only accelerates inference but also enhances generation quality.
+In the final step, AHD merges the set of stable positions in the future blocks $G_f^t = \{j \mid j \in B_{future} \wedge D_j^t(acs) < \varepsilon\}$ with the current decoding set $G_c^t$ to form $G_{unmasked}^t$. These are unlocked and updated together. The efficiency and quality gains stem from the "radiation effect": a confirmed token accelerates the convergence of its neighbors. Semi-AR originally suppressed this by forcing tokens to wait for their block turn. Early unlocking releases this suppressed radiation, turning the trade-off between speed and quality into a mutual benefit.
 
-### Loss & Training
-AHD is a training-free plug-and-play method applied directly during the inference stage. Default hyperparameters: historical buffer length $H=6$, consistency threshold $\varepsilon=0.01$, and decay rate $\lambda$ controlling the weight distribution.
+AHD is a training-free, plug-and-play method that only operates during inference. Default hyperparameters are $H=6$ and $\varepsilon=0.01$.
 
 ## Key Experimental Results
 
@@ -85,36 +89,36 @@ AHD is a training-free plug-and-play method applied directly during the inferenc
 | Method | BBH Score | Step Reduction | Description |
 |------|-----------|----------|------|
 | Vanilla | 53.11 | 0% | Standard Decoding |
-| Fast-dLLM | 53.17 | 78% | Comparable performance but no gain |
-| KLASS | 53.03 | 62% | Slight decrease |
-| Saber | 52.88 | 66% | Performance drop |
-| AHD | 56.78 | 80% | Only method to improve both performance and efficiency |
+| Fast-dLLM | 53.17 | 78% | Performance parity, no gain |
+| KLASS | 53.03 | 62% | Slight degradation |
+| Saber | 52.88 | 66% | Performance degradation |
+| **Ours (AHD)** | **56.78** | **80%** | Simultaneous gain in performance and efficiency |
 
 ### Key Findings
-- AHD is the only method capable of improving performance while accelerating; other acceleration strategies (Saber, KLASS) often lead to performance degradation.
-- Equally effective on LLaDA-1.5, with a BBH improvement of +1.55 and a step reduction of 78%, proving the method's generality.
-- Extension to vision-language (MMaDA) and audio-language (DIFFA) domains remains effective, demonstrating cross-modal applicability.
+- AHD is the only method that improves performance while accelerating inference; other strategies (Saber, KLASS) typically lead to performance drops.
+- AHD is equally effective on LLaDA-1.5 (BBH +1.55, 78% step reduction), demonstrating generalizability.
+- The method extends successfully to Vision-Language (MMaDA) and Audio-Language (DIFFA) domains.
 
 ## Highlights & Insights
-- **"Radiation Effect of Stable Tokens"**: Discovered that stable tokens appear in clusters; the stabilization of one token accelerates the convergence of its neighbors. This insight is valuable for understanding the decoding dynamics of diffusion LLMs.
-- **Counter-intuitive "Acceleration as Improvement"**: Early unlocking not only speeds up inference but also improves generation quality by releasing the radiation effect. This challenges the common assumption of a "speed vs. quality trade-off."
-- **Generality of Anchor Backtracking**: This history-based trajectory method for determining stability can be transferred to any iterative generation process (e.g., pixel-level early determination in diffusion image generation).
+- **"Radiation Effect of Stable Tokens"**: The discovery that stable tokens appear in clusters and accelerate the convergence of neighbors is valuable for understanding dLLM decoding dynamics.
+- **Counter-intuitive "Acceleration as Improvement"**: Early unlocking not only speeds up inference but improves generation quality by releasing radiation effects, challenging the traditional "speed vs. quality" trade-off.
+- **Generality of the Anchor mechanism**: This trajectory-based stability judgment can be transferred to any iterative generation process, such as pixel-level early determination in diffusion image generation.
 
 ## Limitations & Future Work
-- Maintaining a historical buffer increases memory overhead, which may become a bottleneck for ultra-long sequence generation.
-- The threshold $\varepsilon$ and buffer length $H$ require tuning for different models or tasks.
-- Currently validated primarily on the LLaDA series; applicability to other dLLM architectures (e.g., MDLM) remains to be verified.
+- Maintaining a history buffer increases memory overhead, which may be a bottleneck for extremely long sequences.
+- Hyperparameters $\varepsilon$ and $H$ require tuning for different models and tasks.
+- Evaluation is predominantly on the LLaDA series; applicability to other dLLM architectures (e.g., MDLM) requires further validation.
 - Theoretical analysis assumes monotonic convergence of token stability, which may not hold in extreme cases.
 
 ## Related Work & Insights
-- **vs Fast-dLLM**: Fast-dLLM uses confidence thresholds for acceleration but results in stagnant performance; AHD achieves a win-win in acceleration and improvement through historical trajectory assessment.
-- **vs Saber**: Saber uses a predictor for selective denoising but leads to performance drops; AHD's dynamic anchor approach is more robust.
-- **vs PC-sampler**: PC-sampler modifies the sampling process without reducing steps; AHD directly reduces steps by 70-80%.
+- **vs. Fast-dLLM**: Fast-dLLM uses confidence thresholds for acceleration but maintains parity; AHD achieves a win-win in speed and quality via historical trajectories.
+- **vs. Saber**: Saber uses predictors for selective denoising but loses performance; AHD's dynamic anchor is more robust.
+- **vs. PC-sampler**: PC-sampler modifies the sampling process without reducing steps; AHD directly reduces steps by 70-80%.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The derivation chain from three insights to the dynamic anchor method is rigorous and natural; the "acceleration as improvement" discovery is highly valuable.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 language benchmarks + 5 vision + 5 audio, two dLLM models, and 5 baseline comparisons.
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative from observation to insight to method is fluid, with excellent chart design (especially the heatmap analysis).
+- **Novelty**: ⭐⭐⭐⭐⭐ The derivation from three insights to the dynamic anchor method is rigorous, and the "acceleration as improvement" finding is highly valuable.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive testing across 7 language, 5 vision, and 5 audio benchmarks using two dLLM models and 5 baselines.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear narrative flow from observation to insight to method; excellent visualization (especially the heatmap analysis).
 
 <!-- RELATED:START -->
 
@@ -123,9 +127,9 @@ AHD is a training-free plug-and-play method applied directly during the inferenc
 ## Related Papers
 
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
+- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
 - [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
 - [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
 - [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
 
 </div>

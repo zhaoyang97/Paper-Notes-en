@@ -2,82 +2,85 @@
 title: >-
   [Paper Note] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] Focusing on data selection for RLVR post-training, this paper proposes LearnAlign—employing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$"…
+  [ACL 2026][Reinforcement Learning][RLVR] To address data selection for RLVR post-training, LearnAlign is proposed—utilizing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$" as a learnability weight to eliminate response length bias. With only 1,000 samples (~6%), it achieves performance close to full-set training across 5
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "RLVR"
-  - "GRPO"
-  - "Data Selection"
-  - "Gradient Alignment"
-  - "Data Learnability"
-  - "Proximal Development Zone"
+  - ACL 2026
+  - Reinforcement Learning
+  - RLVR
+  - GRPO
 date: 2026-05-08
-content_hash: 3c6ec9a3940b7d66
+content_hash: 70f6231b48a30c66
 ---
-
 # LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2506.11480](https://arxiv.org/abs/2506.11480)  
 **Code**: TBD  
 **Area**: Reinforcement Learning / Data Selection / LLM Reasoning  
-**Keywords**: RLVR, GRPO, Data Selection, Gradient Alignment, Data Learnability, Proximal Development Zone
+**Keywords**: RLVR, GRPO, Data Selection, Gradient Alignment, Data Learnability, Zone of Proximal Development
 
 ## TL;DR
-Focusing on data selection for RLVR post-training, this paper proposes LearnAlign—employing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$" as learnability weights to eliminate response length bias. Using only 1000 samples (approx. 6%), it achieves performance near full-dataset training across 5 reasoning benchmarks (42.4% vs 44.9%), and even surpasses full training on GSM8K (77.5%) using only 13.4% of the data (77.0% for full).
+To address data selection for RLVR post-training, LearnAlign is proposed—utilizing "gradient alignment" as a representativeness metric and "success rate $V(\xi)=p(1-p)$" as a learnability weight to eliminate response length bias. With only 1,000 samples (~6%), it achieves performance close to full-set training across 5 reasoning benchmarks (42.4% vs 44.9%), and on GSM8K, using 13.4% of the data (77.5%) exceeds full-set performance (77.0%).
 
 ## Background & Motivation
 
-**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the standard post-training scheme for reasoning LLMs like OpenAI o1, DeepSeek-R1, and Kimi k1.5—utilizing rule-verifiable rewards (e.g., math answer correctness, code passing) as supervision signals via GRPO/PPO. However, RLVR is characterized by low data efficiency and expensive training costs.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the standard post-training solution for reasoning LLMs like OpenAI o1, DeepSeek-R1, and Kimi k1.5—using rule-verifiable rewards (e.g., math answer correctness, code passing) as supervision signals with GRPO/PPO. However, RLVR is data-inefficient and computationally expensive.
 
-**Limitations of Prior Work**: Most existing data selection methods are designed for SFT (INSTAG, ALPAGASUS, IFD, LESS, SelectIT, Nuggets, etc.), prioritizing "high quality" as high difficulty or low perplexity. Recent RLVR-related works (LIMR, 1-shot RLVR) prove that a few samples are sufficient, but their selection phase requires full training for several epochs, resulting in **extremely high evaluation costs that defeat the purpose of "selection."**
+**Limitations of Prior Work**: Most existing data selection methods are designed for SFT (e.g., INSTAG, ALPAGASUS, IFD, LESS, SelectIT, Nuggets), prioritizing "high quality" as high difficulty or low perplexity. While two RLVR-related works (LIMR, 1-shot RLVR) prove that a few samples are sufficient, their selection phase requires full training for several epochs on the entire dataset, making the **cost of evaluation extremely high, failing the purpose of "selection."**
 
-**Key Challenge**: The objective of SFT is to maximize target likelihood, making "the harder, the better" a viable heuristic. In contrast, the RLVR objective is reward maximization; **only samples with difficulty matching the current policy's capability can generate learning signals**. Samples that are too simple ($p\approx 1$) or too difficult ($p\approx 0$) yield no learning utility for RLVR. Directly applying SFT selection methods to RLVR often yields results inferior to random sampling.
+**Key Challenge**: The goal of SFT is to maximize target likelihood, making "the harder, the better" a viable heuristic. In contrast, the RLVR objective is reward maximization; **only samples whose difficulty matches the current policy's capability generate learning signals**. Samples that are too easy ($p\approx 1$) are already mastered, and those too hard ($p\approx 0$) provide no learnable signal—**samples at both extremes are useless for RLVR**. Directly applying SFT selection to RLVR often performs worse than random sampling.
 
-**Goal**: (1) Identify an efficient (not requiring full training), interpretable, and quantifiable data selection criterion for RLVR; (2) Address two long-standing issues in gradient-based methods—the "short response bias" of gradient magnitude and the loss of magnitude information in cosine similarity; (3) Verify if small data amounts can match or exceed full-set training on GSM8K and DAPO-MATH-17K.
+**Goal**: (1) Establish an efficient (no full-set training required), interpretable, and quantifiable data selection criterion for RLVR; (2) Address two long-standing issues of gradient methods—the "short response bias" of gradient magnitude and the loss of magnitude information in cosine similarity; (3) Verify on GSM8K + DAPO-MATH-17K if a small subset can rival full training.
 
-**Key Insight**: The authors draw inspiration from LESS (gradient alignment) in the SFT era and the "Zone of Proximal Development" (ZPD, Vygotsky) in pedagogy: selection must ensure both that samples align with the full training distribution (gradient direction similarity) and that they reside at the policy's capability boundary (maximum potential at $p\approx 0.5$).
+**Key Insight**: The authors draw inspiration from LESS (gradient alignment) in the SFT era and the "Zone of Proximal Development" (ZPD, Vygotsky) in education—ensuring samples both align with the training distribution (gradient direction similarity) and lie at the policy's capability boundary (maximum learning potential when $p\approx 0.5$).
 
-**Core Idea**: Construct a **learnability-weighted gradient vector** $\mathbf{V}(\xi_i) = \frac{\nabla \mathcal{J}}{\|\nabla \mathcal{J}\|} \cdot V(\xi_i)$, where $V(\xi_i) = p(1-p)$ quantifies "learning potential" using the success rate. Multiplying this by unit gradients eliminates length bias while retaining alignment information. The LearnAlign Score $S_{ij}$ then calculates pairwise learnability and representativeness, choosing top-N samples by row-averaging.
+**Core Idea**: Construct a **learnability-weighted gradient vector** $\mathbf{V}(\xi_i) = \frac{\nabla \mathcal{J}}{\|\nabla \mathcal{J}\|} \cdot V(\xi_i)$, where $V(\xi_i) = p(1-p)$ quantifies "learning potential" via success rate. Multiplying this by the unit gradient eliminates length bias while preserving directional alignment. The LearnAlign Score $S_{ij}$ then calculates pairwise learnability and representativeness, with selection based on top-N row averages.
 
 ## Method
 
 ### Overall Architecture
 
-LearnAlign is a 4-step lightweight selection workflow that **does not require full training on the dataset**:
+LearnAlign aims to solve the problem of "which data to select" for RLVR post-training. Its core is to evaluate each sample for both "representativeness" (gradient alignment with the training set) and "learnability" (potential for improvement by the current policy), synthesizing these into a score to select the top-N samples. The pipeline consists of 4 lightweight steps: first, run a short RLVR warmup on a small random subset to obtain a reference policy $\bm{\theta}_s$; second, estimate success rates and compute GRPO gradients for each data point using $\bm{\theta}_s$; third, multiply success rates as weights onto normalized gradients to compute pairwise scores; finally, select the $N$ highest-scoring samples for formal training. Crucially, this **avoids multiple training epochs on the full dataset**, requiring only one warmup and one gradient estimation pass.
 
-1. **Warmup Training**: Perform RLVR on a small random subset $\mathcal{D}_{\text{warmup}}$ to obtain an initial policy $\bm{\theta}_s$, avoiding high gradient noise during cold starts (300 samples for GSM8K, 1000 for DAPO-MATH-17K).
-2. **Learnability Estimation**: For each sample $\xi_i$, perform $G=8$ rollouts under $\pi_{\bm{\theta}_s}$. Calculate success rate $p_i = \frac{1}{G}\sum_g \mathbb{I}(\mathbf{y}_g = \mathbf{y}^*)$ and derive $V(\xi_i) = p_i(1-p_i)$.
-3. **Gradient Information Estimation + Random Projection**: Calculate the GRPO gradient $\nabla \mathcal{J}_{\text{GRPO}}$ for each sample at $\bm{\theta}_s$. Following the LESS approach, use Johnson-Lindenstrauss random projection $\Gamma$ to compress these into low-dimensional vectors $\phi(\bm{\theta}; \xi) = \Gamma^\top \nabla \mathcal{J}$ to avoid memory overhead.
-4. **LearnAlign Score Calculation + Top-N Selection**: Calculate pairwise $S_{ij} = V(\xi_i)V(\xi_j) \cdot \cos(\phi(\xi_i), \phi(\xi_j))$, sort by the row average $\text{Avg}_i = \frac{1}{n}\sum_j S_{ij}$, and select the top $N$ samples for RLVR training.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Full Candidate Data"] --> B["Warmup Checkpoint<br/>Short RLVR run on small random subset to get reference policy θ_s"]
+    B --> C["Learnability Metric V(ξ)=p(1−p)<br/>Estimate success rate p via G=8 rollouts on θ_s"]
+    B --> D["GRPO Gradient Random Projection<br/>Compute GRPO gradient → JL Projection → Normalized ∇̂J"]
+    C --> E["Learnability-Weighted Gradient Vector<br/>V(ξ)·∇̂J: direction via cosine, magnitude via learnability"]
+    D --> E
+    E --> F["LearnAlign Score S_ij<br/>Pairwise scoring → Sort by row average"]
+    F --> G["Select Top-N → Official RLVR Training"]
+```
 
 ### Key Designs
 
-1. **Learnability Measure $V(\xi) = p(1-p)$ (ZPD Principle)**:
-    - **Function**: Formalizes "the learning value of a sample given the current policy" as a scalar between $[0, 0.25]$, peaking at $p=0.5$ (the capability boundary).
-    - **Mechanism**: Samples $G$ rollouts to compute $p$. $p$ represents the mastery probability and $1-p$ the room for improvement; the product $p(1-p)$ measures "expected learnability." The authors provide theoretical justification (information gain and policy gradient variance minimization) in Appendix B/C.
-    - **Design Motivation**: (a) Replaces length-biased gradient magnitude—decoupling success rate from response length; (b) Aligns with educational psychology ZPD: weights for too easy ($p\to 1$) and too hard ($p\to 0$) samples approach zero; (c) Provides a "difficulty-capability match" mechanism absent in SFT methods.
+**1. Learnability Metric $V(\xi)=p(1-p)$: Quantifying "Value of Learning" via ZPD Principles**
 
-2. **Learnability-Weighted Gradient Vector $\mathbf{V}(\xi_i) = \hat{\nabla}\mathcal{J} \cdot V(\xi_i)$**:
-    - **Function**: Orthogonally combines "representativeness" (gradient alignment) and "learnability" (success rate) in a single vector space, calculating paired scores via inner products.
-    - **Mechanism**: GRPO gradients are first normalized $\hat{\nabla}\mathcal{J}_i = \nabla \mathcal{J}_i / \|\nabla \mathcal{J}_i\|$ (eliminating magnitude bias) and then re-weighted by $V(\xi_i)$. The resulting $S_{ij} = V(\xi_i)V(\xi_j) \cdot \cos(\hat{\nabla}_i, \hat{\nabla}_j)$ peaks when learnable samples have highly aligned gradient directions.
-    - **Design Motivation**: (a) Pure cosine similarity discards magnitude (failing to distinguish "more valuable" samples); (b) Pure inner products suffer from length bias (longer responses naturally have smaller gradients). Weighting by $V$ preserves the benefits of both—direction via cosine and magnitude via learnability.
+The fundamental difference between RLVR and SFT is that while SFT benefits from difficulty, RLVR only generates signals when difficulty matches policy capability. LearnAlign samples $G=8$ rollouts for each data point under $\pi_{\bm{\theta}_s}$, calculates the success rate $p_i=\frac{1}{G}\sum_g \mathbb{I}(\mathbf{y}_g=\mathbf{y}^*)$, and uses $V(\xi_i)=p_i(1-p_i)$ as the learnability metric. This value peaks at $p=0.5$ (the capability boundary) and approaches zero at both ends, corresponding to Vygotsky's "Zone of Proximal Development." Appendix B/C provides theoretical support via information gain and policy gradient variance minimization. An additional benefit is that success rate is naturally decoupled from response length, allowing it to replace length-biased gradient magnitudes and introduce a "difficulty-capability matching" mechanism missing in SFT.
 
-3. **Random Projection of GRPO Gradients + Warmup Checkpoint**:
-    - **Function**: Reduces the computational cost of RLVR data selection—avoiding full-set training (overcoming bottlenecks of LIMR/1-shot RLVR) and massive memory usage.
-    - **Mechanism**: (a) Warmup provides a stable reference point $\bm{\theta}_s$; (b) Calculates the GRPO gradient for each sample on $\bm{\theta}_s$ in a single forward/backward pass; (c) Employs JL projection $\Gamma$ to compress gradients to a few thousand dimensions for inner product calculations.
-    - **Design Motivation**: Migrates the valid JL projection technique from SFT (LESS) to the RLVR scenario. Table 4 indicates that selection time is reduced to levels comparable with SFT selection.
+**2. Learnability-Weighted Gradient Vector $\mathbf{V}(\xi_i)=\hat{\nabla}\mathcal{J}\cdot V(\xi_i)$: Orthogonally Integrating Representativeness and Learnability**
+
+Gradient-based selection has two traditional flaws: pure cosine similarity discards magnitude (failing to identify "more learnable" samples), and pure inner products suffer from length bias (long responses naturally have smaller gradients and are systematically underestimated). LearnAlign first normalizes the GRPO gradient for each sample $\hat{\nabla}\mathcal{J}_i=\nabla\mathcal{J}_i/\|\nabla\mathcal{J}_i\|$ to eliminate magnitude bias, then re-weights it with $V(\xi_i)$. The resulting LearnAlign Score is cleanly decomposed into:
+
+$$S_{ij}=V(\xi_i)V(\xi_j)\cdot\cos(\hat{\nabla}_i,\hat{\nabla}_j)$$
+
+Direction is handled by the cosine term, while magnitude is handled by learnability. The physical meaning is clear: samples that are both highly learnable and gradient-aligned receive the highest scores. Data is selected by sorting the row average $\text{Avg}_i=\frac{1}{n}\sum_j S_{ij}$ and taking the top $N$.
+
+**3. Warmup Checkpoint + GRPO Gradient Random Projection: Reduced Selection Cost**
+
+LearnAlign avoids two cost traps: the bottleneck of training the full set for several epochs (as in LIMR / 1-shot RLVR) and the memory explosion of storing high-dimensional gradients. It adapts the infrastructure validated by LESS in SFT: using a warmup phase (300 samples for GSM8K, 1000 for DAPO) to obtain a stable reference point $\bm{\theta}_s$ for gradient estimation; performing one forward and backward pass on $\bm{\theta}_s$ per sample to calculate GRPO gradients ($\hat{A}_{i,t}+\beta(\pi_{\text{ref}}/\pi_{\bm{\theta}}-1)$); and employing Johnson-Lindenstrauss random projection $\Gamma$ to compress gradients into lower dimensions $\phi(\bm{\theta};\xi)=\Gamma^\top\nabla\mathcal{J}$. This combination enables one-pass selection results, with total time reduced to levels comparable to SFT data selection (Table 4).
 
 ### Loss & Training
 
-Standard GRPO is applied throughout without modification (KL coefficient $\beta=0.04$, clip $\epsilon=0.2$, lr $1\times 10^{-6}$, $G=8$ rollouts at temperature 1.0, batch size 48/64). During DAPO training, gradients are computed using only 1 correct rollout (following Lin et al. 2025 for acceleration).
+Standard GRPO loss is used without modification (KL coefficient $\beta=0.04$, clip $\epsilon=0.2$, lr $1\times 10^{-6}$, $G=8$ rollouts at temperature 1.0, batch=48/64). For DAPO training, only 1 correct rollout is used to calculate gradients (following Lin et al. 2025 for speed).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**GSM8K Data Selection** (Qwen2.5-1.5B-Instruct, selection from the GSM8K training set):
+**GSM8K Data Selection** (Qwen2.5-1.5B-Instruct, selected from GSM8K training set):
 
 | Method | 100 | 500 | 1,000 | 2,000 |
 |------|-----|-----|-------|-------|
@@ -89,9 +92,9 @@ Standard GRPO is applied throughout without modification (KL coefficient $\beta=
 | LIMR (RLVR baseline) | 74.2 | 76.2 | 76.1 | 76.7 |
 | **LearnAlign** | **74.8** | **76.4** | **77.5** | **78.3** |
 
-1000 samples already match full training (77.5% vs 77.0%), and 2000 samples **exceed** the full data performance by 1.3 points.
+1,000 samples already exceed full-set training (77.5% vs 77.0%), while 2,000 samples surpass it by 1.3 percentage points.
 
-**DAPO-MATH-17K → 5 benchmarks** (1000 samples selected, Qwen2.5-7B):
+**DAPO-MATH-17K → 5 Benchmarks** (1,000 samples selected, Qwen2.5-7B):
 
 | Method | GSM8K | MATH500 | AMC2023 | AIME2024 | CRUX | Avg. |
 |------|-------|---------|---------|----------|------|------|
@@ -102,7 +105,7 @@ Standard GRPO is applied throughout without modification (KL coefficient $\beta=
 | LIMR 1K | 84.2 | 61.6 | 27.1 | 16.7 | 39.9 | 45.9 |
 | **LearnAlign 1K** | **88.3** | **70.4** | **35.4** | **30.0** | **44.0** | **54.6** |
 
-Ours achieves an average score of 54.6 using only 5.9% of the data (vs 58.9 for full), outperforming SelectIT by 3.9 points and matching full training performance on AIME2024 (30.0).
+With only 5.9% of the data, Ours achieves an average score of 54.6 (Full 58.9), 3.9 points higher than the runner-up SelectIT; AIME2024 performance matches full-set training (30.0).
 
 ### Ablation Study
 
@@ -110,43 +113,43 @@ Ours achieves an average score of 54.6 using only 5.9% of the data (vs 58.9 for 
 |------|------------------|------------------|----------------|-------------------|-------------------|
 | **Full LearnAlign** | **77.5** | **78.3** | **79.3** | **60.2** | **28.3** |
 | w/o warmup | 76.6 | 76.6 | 76.7 | 58.2 | 26.1 |
-| w/o learnability $V$ | 75.6 | 76.7 | 77.5 | 58.4 | 28.3 |
-| w/ feature similarity | 75.7 | 76.6 | 79.1 | 57.6 | 27.5 |
+| w/o data learnability $V$ | 75.6 | 76.7 | 77.5 | 58.4 | 28.3 |
+| w/ feature similarity (instead of grad) | 75.7 | 76.6 | 79.1 | 57.6 | 27.5 |
 
-Both components are essential: removing $V$ decreases performance by an average of 1.4 points (supporting the ZPD hypothesis), and skipping warmup leads to significant degradation due to noise in cold-start gradients.
+Both components are indispensable: removing $V$ drops performance by 1.4 points (verifying the ZPD hypothesis), and removing warmup also causes degradation (indicating cold-start gradient noise impacts selection quality).
 
 ### Key Findings
-- **Traditional SFT selection is ineffective or harmful for RLVR**: IFD, Top-PPL, and Token Length often perform worse than random sampling; this is because SFT focuses on absolute difficulty while RLVR requires capability matching.
-- **Small data outperforms full data**: 2000 LearnAlign samples (78.3%) > 7.5K full data (77.0%) on GSM8K, indicating that effective signals are concentrated in "ZPD" samples while others are redundant or noisy.
-- **Strong cross-domain generalization**: Models trained on DAPO-MATH perform well on OOD datasets (AMC2023/AIME2024) and different domains (CRUX code tasks).
-- **Significant response length bias**: Pure gradient inner products favor shorter responses with lower performance; $V$ weighting selects mid-range lengths and improves performance.
-- **Warmup is non-negotiable**: Warmup stabilizes gradient estimates to accurately reflect learning potential.
-- **Efficiency advantage**: LearnAlign significantly reduces selection time compared to LIMR and 1-shot RLVR.
+- **Traditional SFT selection is ineffective or harmful for RLVR**: IFD / PPL-Top / Token Length mostly perform worse than random sampling on the 1.5B model; the theoretical reason is that SFT focuses on "difficulty" while RLVR focuses on "capability matching."
+- **Small data can outperform full data**: On GSM8K, 2,000 LearnAlign samples (78.3%) > 7.5K full set (77.0%); this indicates RLVR signals concentrate in a few "ZPD" samples, while most data is redundant or detrimental.
+- **Robustness in Out-of-Distribution (OOD) generalization**: Although trained on DAPO-MATH, LearnAlign maintains its advantage on OOD tests like AMC2023/AIME2024 and cross-domain CRUX code tasks—indicating it selects samples with genuine "reasoning learning potential."
+- **Response length bias is significant**: Fig 3 shows pure gradient inner products select shorter responses with lower performance; replacing this with $V$ shifts response length to a medium range and improves performance.
+- **Warmup is essential**: Experiments show warmup stabilizes gradient estimates enough to reflect true learning potential.
+- **Efficiency advantage**: Compared to LIMR/1-shot RLVR, which require full-set epochs before selection, LearnAlign only needs warmup + one gradient pass.
 
 ## Highlights & Insights
-- **"$V(\xi) = p(1-p)$" elegantly translates ZPD into RLVR**: A single formula simultaneously eliminates length bias, quantifies learnability, and provides rational magnitude for gradient vectors.
-- **The "warmup + projected gradient" combo successfully ports LESS to RLVR**: By substituting the SFT gradient with the GRPO gradient and using a warmup checkpoint, the paper adapts SFT data selection infrastructure for RLVR.
-- **Valuable negative results regarding SFT selection**: Publicly debunking the suitability of SFT selection tools for RLVR saves the community significant trial-and-error costs.
-- **Untapped data efficiency frontier**: The fact that small subsets outperforom full datasets suggests massive redundancy in human-annotated reasoning data for RL purposes.
+- **"$V(\xi) = p(1-p)$" is the simplest form to implement ZPD in RLVR**: This single formula simultaneously eliminates length bias, quantifies learning potential, and provides a reasonable magnitude for gradient vectors.
+- **Warmup + projected gradients elegantly adapt LESS for RLVR**: By using a warmup checkpoint instead of few-shot anchors and GRPO gradients instead of SFT gradients, the authors migrate the gradient alignment paradigm to RLVR.
+- **Negative results of SFT selection are valuable**: The public disproof of applying SFT tools to RL processes saves the community significant trial-and-error costs.
+- **Outperforming full data reveals untapped RLVR efficiency**: The 2K LearnAlign > 7.5K full result suggests significant noise/redundancy in RLVR data, pointing to immense future research potential in data quality.
+- **Transferable Trick**: The $V(\xi) = p(1-p)$ weight can be directly applied to RLHF reward model filtering, self-play curricula, or rollout reweighting.
 
 ## Limitations & Future Work
-- **Dependency on warmup accuracy**: Noisy success rate estimates from insufficient warmup or few rollouts can bias $V(\xi)$. Dynamic or iterative updates might be necessary.
-- **Domain restriction**: Valid only for tasks with verifiable rewards (math/code). Open-domain RLVR lacks a clear definition for $p$.
-- **Projected gradient cost for large models**: While cheaper than training, calculating 17K GRPO gradients for 70B+ models remains storage-intensive.
-- **Static selection approach**: $p$ evolves during training (samples at $p=0.5$ will eventually reach $p\to 1$), suggesting a need for online or curriculum-based LearnAlign.
-- **Lack of analysis on "harmful" samples**: While some samples decrease performance, the paper does not define what constitutes a "noisy sample" in RLVR.
+- **Dependency on warmup model accuracy**: If warmup is insufficient or $G$ is too small, noise in $p$ will bias $V(\xi)$; ideal scenarios would involve dynamic or iterative $V$ updates.
+- **Validated only on verifiable rewards**: The method does not directly apply to open-domain tasks (e.g., dialogue quality) where there is no clear definition of $p$.
+- **Computational cost of gradients and projection**: While cheaper than LIMR, calculating 17K GRPO gradients is still non-trivial; at 70B+ scales, storage and projection costs remain bottlenecks.
+- **Static selection**: $V(\xi)$ is calculated once, but $p$ changes during training (samples at $p=0.5$ will eventually reach $p\to 1$), suggesting a need for online/curriculum-based LearnAlign.
+- **Noisy sample analysis**: While some samples lower performance, the paper does not deeply analyze what constitutes a truly "noisy sample" in RLVR.
 
 ## Related Work & Insights
-- **vs LIMR / 1-shot RLVR**: Both find that small data is sufficient, but LearnAlign avoids full-set training, making it a more practical selection tool.
-- **vs LESS (Xia et al., 2024)**: Inherits the JL projection and gradient alignment framework but addresses LESS's weaknesses (length bias and lost magnitude) using $V(\xi)$.
-- **vs SelectIT / IFD**: These target SFT alignment. Ours provides negative results for these on RLVR and offers the ZPD explanation for the discrepancy.
-- **vs Curriculum Learning**: LearnAlign grounds curriculum concepts ("medium-difficulty first") into a computable $p(1-p)$ metric within a gradient alignment framework.
+- **vs LIMR / 1-shot RLVR**: Similar finding that "small data is enough," but LearnAlign is an order of magnitude more efficient by avoiding full-set training epochs during selection.
+- **vs LESS (Xia et al., 2024)**: The benchmark for gradient alignment in SFT. LearnAlign inherits the JL projection + alignment paradigm but adapts it for GRPO and fixes length bias/magnitude loss.
+- **vs Curriculum Learning**: The $p(1-p)$ metric materializes the "intermediate difficulty priority" of curriculum learning specifically for the LLM RLVR era.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Combining gradient alignment with ZPD learnability is a clear innovation for RLVR.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive testing across 5 benchmarks, 3 models, and multiple baselines.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear mathematical derivations and comprehensive ablations.
-- **Value**: ⭐⭐⭐⭐⭐ High practical impact for optimizing RLVR training costs.
+- Novelty: ⭐⭐⭐⭐ The combination of gradient alignment and $p(1-p)$ learnability is a clear innovation, successfully extending SFT-era concepts to RLVR.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 5 benchmarks, 3 models, multiple data scales, 7 baselines, and ablation/efficiency analyses.
+- Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivation and thorough ablations, though notations are somewhat dense.
+- Value: ⭐⭐⭐⭐⭐ RLVR is a core paradigm for current reasoning LLMs; optimizing data efficiency directly reduces training costs. The findings on GSM8K have strong practical implications.
 
 <!-- RELATED:START -->
 
@@ -157,8 +160,8 @@ Both components are essential: removing $V$ decreases performance by an average 
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](../../ICML2026/reinforcement_learning/single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 - [\[ICCV 2025\] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment](../../ICCV2025/reinforcement_learning/reinforcement_learning-guided_data_selection_via_redundancy_assessment.md)
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
-- [\[ACL 2026\] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](ce-gppo_coordinating_entropy_via_gradient-preserving_clipping_policy_optimizatio.md)
-- [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
+- [\[ICLR 2026\] References Improve LLM Alignment in Non-Verifiable Domains](../../ICLR2026/reinforcement_learning/references_improve_llm_alignment_in_non-verifiable_domains.md)
+- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

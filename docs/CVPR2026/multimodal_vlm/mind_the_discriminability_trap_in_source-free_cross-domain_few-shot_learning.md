@@ -2,94 +2,106 @@
 title: >-
   [Paper Note] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 description: >-
-  [CVPR2026][Multimodal VLM][Source-Free CDFSL] This paper reveals that enhancing visual discriminability during VLM fine-tuning for cross-domain few-shot learning paradoxically degrades cross-modal alignment — a phenomeno…
+  [CVPR 2026][Multimodal VLM][Source-Free CDFSL] This paper reveals that in cross-domain few-shot fine-tuning of VLMs, enhancing visual discriminability actually harms cross-modal alignment (the "discriminability trap"). It proposes two plug-and-play modules, SVL and RA, to suppress visual learning shortcuts and guide cross-modal alignment, achieving SOTA on 4 CDFSL
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Source-Free CDFSL"
-  - "Vision-Language Model"
-  - "Cross-Modal Alignment"
-  - "Visual Discriminability Trap"
-  - "CLIP Fine-tuning"
+  - CVPR 2026
+  - Multimodal VLM
+  - Source-Free CDFSL
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: dd7202c15f98d0aa
+content_hash: a03671260377dc1b
 ---
-
 # Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.13341](https://arxiv.org/abs/2603.13341)  
 **Code**: [zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap](https://github.com/zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap)  
-**Area**: Medical Imaging / Cross-Domain Few-Shot Learning
-**Keywords**: Source-Free CDFSL, Vision-Language Model, Cross-Modal Alignment, Visual Discriminability Trap, CLIP Fine-tuning
+**Area**: Medical Imaging / Cross-domain Few-shot Learning  
+**Keywords**: Source-Free CDFSL, Vision-Language Model, Cross-modal Alignment, Visual Discriminability Trap, CLIP Fine-tuning
 
 ## TL;DR
 
-This paper reveals that enhancing visual discriminability during VLM fine-tuning for cross-domain few-shot learning paradoxically degrades cross-modal alignment — a phenomenon termed the "discriminability trap." Two plug-and-play modules, SVL and RA, are proposed to suppress visual learning shortcuts and guide cross-modal alignment, achieving state-of-the-art performance on 4 CDFSL benchmarks and 11 FSL datasets.
+This paper reveals that in cross-domain few-shot fine-tuning of VLMs, enhancing visual discriminability actually harms cross-modal alignment (the "discriminability trap"). It proposes two plug-and-play modules, SVL and RA, to suppress visual learning shortcuts and guide cross-modal alignment, achieving SOTA on 4 CDFSL datasets and 11 FSL datasets.
 
 ## Background & Motivation
 
-**Background**: The Source-Free CDFSL setting involves target domains (e.g., medical or remote sensing images) with only a handful of labeled samples and no access to source-domain data, requiring direct fine-tuning of pretrained VLMs.
+**Source-Free CDFSL Scenario**: The target domain (e.g., medical or remote sensing images) provides only a few labeled samples, and source domain data is inaccessible, requiring direct fine-tuning of pre-trained VLMs.
 
-**Limitations of Prior Work**: VLMs such as CLIP and SigLIP perform classification by computing cosine similarity between image and text features, making cross-modal alignment quality the decisive performance factor. While conventional wisdom in visual models holds that more discriminative visual features lead to better classification, the authors find that in VLM-based SF-CDFSL, increasing visual discriminability actually reduces cross-modal classification accuracy. Moreover, existing methods — including prompt learning (CoOp/MaPLe), adapters (LP++/LDC), and LoRA fine-tuning — all overlook the shortcut effect of visual learning.
+**Cross-modal Classification Paradigm in VLMs**: Models like CLIP and SigLIP classify by computing the cosine similarity between image and text features. Thus, the quality of cross-modal alignment directly determines performance.
 
-**Key Challenge**: The cross-entropy loss $\mathcal{L}_{\text{vlm}}$ encompasses two optimization directions: visual learning and cross-modal learning. Visual learning can reduce the loss without improving cross-modal alignment, acting analogously to a bypass valve in a dual-valve drainage system that diverts resources away from the intended channel.
+**Traditional Cognition vs. Actual Phenomenon**: In traditional vision models, more discriminative visual features lead to better classification. However, in VLM-based SF-CDFSL, the authors found that enhancing visual discriminability can paradoxically reduce cross-modal classification accuracy.
 
-**Goal**: To identify and mitigate the discriminability trap by suppressing visual learning shortcuts and explicitly guiding cross-modal alignment during VLM fine-tuning for SF-CDFSL.
+**Severe Modal Misalignment in Cross-domain Scenarios**: Existing research indicates that the vision-text alignment of VLMs is severely compromised in cross-domain settings, and fine-tuning needs to repair this misalignment.
+
+**Visual Learning as a "Shortcut" for the Loss Function**: The cross-entropy loss $\mathcal{L}_{\text{vlm}}$ encompasses both visual learning and cross-modal learning components. Visual learning acts as a "shortcut"—it can reduce the loss without improving cross-modal alignment, similar to a bypass valve in a "dual-valve drainage" system.
+
+**Existing Methods Overlook This Issue**: Current approaches, including prompt learning (CoOp/Maple), adapters (LP++/LDC), and LoRA fine-tuning, do not account for the shortcut effect of visual learning.
 
 ## Method
 
 ### Overall Architecture
 
-The method builds upon a VLM backbone (CLIP/SigLIP/PE-Core) and adopts a **two-stage training** strategy:
+Ours aims to address the counter-intuitive phenomenon where enhancing visual discriminability harms cross-modal alignment ("discriminability trap") during VLM cross-domain few-shot fine-tuning. The root cause is that the cross-entropy loss $\mathcal{L}_{\text{vlm}}$ provides two paths: visual learning and cross-modal learning. Visual learning is a "shortcut" that reduces loss without improving alignment. Utilizing **two-stage training** with SVL and RA modules on architectures like CLIP/SigLIP/PE-Core: the initial stage (first 3/5 epochs) applies anti-visual loss $\mathcal{L}_{\text{ad}}$ and relationship alignment loss $\mathcal{L}_{\text{ra}}$ to resist the visual shortcut; the later stage (last 2/5 epochs) removes these constraints to allow standard visual learning via $\mathcal{L}_{\text{vlm}}$.
 
-- **Early stage (first 3/5 epochs)**: $\mathcal{L} = \mathcal{L}_{\text{vlm}} + \beta \mathcal{L}_{\text{ra}} + \lambda \mathcal{L}_{\text{ad}}$, suppressing visual learning while guiding cross-modal alignment.
-- **Late stage (last 2/5 epochs)**: $\mathcal{L} = \mathcal{L}_{\text{vlm}}$, resuming standard fine-tuning to allow visual learning.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Pre-trained VLM (CLIP/SigLIP/PE-Core)<br/>+ Target domain support samples"] --> B["Cross-modal CE fine-tuning L_vlm<br/>(Contains visual learning shortcut)"]
+    B --> C
+    subgraph C["Initial Stage (First 3/5 epochs): Suppress Shortcut + Guide Alignment"]
+        direction TB
+        D["Suppressing Visual Learning (SVL)<br/>Class-shuffle weights → Anti-visual loss L_ad"]
+        E["Relationship Alignment (RA)<br/>Progressive text relationship replacement → L_ra"]
+    end
+    C --> F["Later Stage (Last 2/5 epochs)<br/>Remove constraints, keep only L_vlm"]
+    F --> G["Cross-modally aligned VLM<br/>→ Cross-domain few-shot classification"]
+```
 
 ### Key Designs
 
-**Key Design 1: Suppressing Visual Learning (SVL)**
+**1. Suppressing Visual Learning (SVL): Blocking Shortcuts with "Class-shuffle Weights"**
 
-- **Design Motivation**: Visual learning causes intra-class visual features to cluster and inter-class features to diverge, but this constitutes a shortcut that bypasses cross-modal alignment.
-- **Mechanism**: An anti-visual-learning loss $\mathcal{L}_{\text{ad}}$ is introduced. Classifier weights $w'$ are generated by randomly sampling from the support set; the cross-entropy is then computed and its gradient is negated.
-- **Function**: Perturbs discriminative clustering of visual features, compelling the model to reduce $\mathcal{L}_{\text{vlm}}$ through the cross-modal pathway instead.
+Visual learning encourages intra-class clustering and inter-class separation. While this seems to improve discriminability, it bypasses cross-modal alignment and diverts optimization resources. SVL introduces an anti-visual loss $\mathcal{L}_{\text{ad}}$ to perturb this shortcut. Instead of matching features to their correct class weights, SVL uses "class-shuffled" weights $w'$ sampled from the support set to calculate cross-entropy. Since weights no longer correspond to the true labels, optimizing this loss **scatters** rather than clusters features, forcing the model to rely on the cross-modal path to minimize $\mathcal{L}_{\text{vlm}}$. 
 
-**Key Design 2: Relationship Alignment (RA)**
+**2. Relationship Alignment (RA): Guiding Internal Modality Relationships**
 
-- **Design Motivation**: Suppressing visual learning alone is insufficient; the visual modality requires a correct learning direction for its internal relational structure.
-- **Fused Relationship Matrix**: $A^{\text{fuse}} = (1 - \frac{e}{E}) A^v + \frac{e}{E} A^t[L,L]$, which progressively replaces visual relational structure with textual relational structure as training advances.
-- **Alignment Loss**: $\mathcal{L}_{\text{ra}} = D_{KL}(A^v \| A^{\text{fuse}})$
-- **Progressive Strategy**: In early epochs, $A^{\text{fuse}} \approx A^v$ serves a stabilizing role; in later epochs, textual semantic relations are gradually introduced to guide visual feature alignment.
+Resisting the visual shortcut is insufficient; the internal relationships within the visual modality must also be directed correctly. RA constructs a fused relationship matrix that progressively replaces visual modality relationships with text modality relationships:
+
+$$A^{\text{fuse}} = \left(1 - \frac{e}{E}\right) A^v + \frac{e}{E} A^t[L,L]$$
+
+The alignment is enforced via $\mathcal{L}_{\text{ra}} = D_{KL}(A^v \| A^{\text{fuse}})$. This progressive strategy is critical: in early stages, $A^{\text{fuse}} \approx A^v$ acts as a resistive term, while later stages introduce text semantic relationships to guide visual feature alignment.
 
 ### Loss & Training
 
-$$\mathcal{L} = \begin{cases} \mathcal{L}_{\text{vlm}} + \beta \mathcal{L}_{\text{ra}} + \lambda \mathcal{L}_{\text{ad}} & \text{(early stage)} \\ \mathcal{L}_{\text{vlm}} & \text{(late stage)} \end{cases}$$
+A two-stage loss strategy is employed: early stage combines RA and SVL constraints, while the later stage reverts to standard fine-tuning:
 
-Hyperparameters: $\lambda = 0.1$ (visual branch) or $0.001$ (text branch), $\beta = 3$.
+$$\mathcal{L} = \begin{cases} \mathcal{L}_{\text{vlm}} + \beta \mathcal{L}_{\text{ra}} + \lambda \mathcal{L}_{\text{ad}} & \text{(Initial Stage)} \\ \mathcal{L}_{\text{vlm}} & \text{(Later Stage)} \end{cases}$$
 
-## Key Experimental Results
+Hyperparameters: $\lambda = 0.1$ (for vision branch) or $0.001$ (for text branch), $\beta = 3$.
+
+## Experiments
 
 ### Main Results: 4 CDFSL Datasets (5-way 1-shot / 5-shot)
 
 | Method | Backbone | ISIC | EuroSAT | CropDisease | ChestX | Avg |
-|--------|----------|------|---------|-------------|--------|-----|
+|------|----------|------|---------|-------------|--------|-----|
 | CLIP-LoRA-Vision | ViT/CLIP | 36.40 | 81.72 | 84.62 | 21.86 | 56.07 |
 | **CLIP-LoRA + Ours** | ViT/CLIP | **38.12** | **85.02** | **87.20** | **22.68** | **58.26** |
 | PE-Core-LoRA | ViT/PE-Core | 40.89 | 84.49 | 91.75 | 22.02 | 59.78 |
 | **PE-Core-LoRA + Ours** | ViT/PE-Core | **45.01** | **86.83** | **93.03** | **23.66** | **62.14** |
 
-Under the 5-shot setting, PE-Core-LoRA + Ours achieves an average accuracy of **70.29%** (vs. baseline 68.64%).
+In the 5-shot scenario, PE-Core-LoRA + Ours achieves an average accuracy of **70.29%** (vs. baseline 68.64%).
 
-### Modal Alignment Analysis (Gap Shift Experiment)
+### Key Findings: Modal Alignment Analysis (Gap Shift)
 
 | Method | CropDisease Gap↓ | EuroSAT Gap↓ | ISIC Gap↓ | ChestX Gap↓ |
-|--------|:-:|:-:|:-:|:-:|
+|------|:-:|:-:|:-:|:-:|
 | Fine-tune | 0.014 | 0.048 | 0.406 | 0.356 |
 | FT + $\mathcal{L}_v$ | 0.022 | 0.072 | 0.626 | 0.742 |
 | FT + $\mathcal{L}_{ad}$ | 0.012 | 0.024 | 0.191 | 0.249 |
 | **FT + $\mathcal{L}_{ad}$ + $\mathcal{L}_{ra}$** | **0.009** | **0.027** | **0.171** | **0.238** |
 
-A smaller gap indicates better modal alignment. Enhancing visual learning significantly worsens alignment, whereas SVL+RA yields substantial improvement.
+A smaller Gap indicates better alignment. Enhancing visual learning worsens alignment, whereas SVL+RA improves it significantly.
 
 ### Ablation Study
 
@@ -102,40 +114,40 @@ A smaller gap indicates better modal alignment. Enhancing visual learning signif
 
 ### Key Findings
 
-- **Suppression timing**: Suppressing visual learning in the early stage is most effective (Begin); suppression in the late stage is counterproductive (Last performs worse than the baseline).
-- **Negligible computational overhead**: Parameter count increases by 0.0028%, FLOPs by 0.000021%, while accuracy improves by 3.9%.
-- **Strong generalizability**: The method is effective across three VLM backbones (CLIP, SigLIP2, PE-Core) and three fine-tuning paradigms (CoOp, MaPLe, LoRA).
-- **Consistent gains on 11 FSL datasets** across all shot configurations.
+- **Timing of Suppression**: Inhibiting visual learning is most effective during the early stages (Begin); late-stage inhibition is counterproductive.
+- **Negligible Computational Overhead**: Increase in parameters is 0.0028%, FLOPs increase by 0.000021%, while accuracy improves by ~3.9%.
+- **Strong Generalization**: Effective across CLIP, SigLIP2, and PE-Core backbones, and compatible with CoOp, Maple, and LoRA fine-tuning.
+- Performance leads on **11 FSL datasets** across various shot settings.
 
 ## Highlights & Insights
 
-- **Insightful observation**: This work is the first to reveal that visual discriminability learning constitutes a shortcut that undermines cross-modal alignment in VLM fine-tuning, supported by a triple chain of evidence: theoretical derivation, empirical validation, and visualization.
-- **Intuitive dual-valve analogy**: The optimization process is likened to a dual-valve drainage system, where visual learning acts as a bypass valve that diverts resources away from cross-modal alignment.
-- **Minimalist design**: SVL and RA require only a few lines of code, are plug-and-play, and are compatible with diverse VLM fine-tuning methods.
-- **Zero extra overhead**: Parameters and computation remain virtually unchanged, yet yield significant performance gains.
-- **Elegant Gap Shift experimental design**: Modal alignment is quantified by manually adjusting inter-modal distances, enabling intuitive and precise measurement.
+- **Deep Insight**: First to reveal the contradiction between visual discriminative learning and cross-modal alignment in VLM fine-tuning, supported by theoretical derivation and experimental evidence.
+- **Intuitive Analogy**: Compares loss optimization to drainage, where visual learning is a bypass valve that diverts resources intended for cross-modal alignment.
+- **Extreme Simplicity**: SVL + RA require only a few lines of code and are plug-and-play for various tuning paradigms.
+- **Zero Extra Cost**: Significant performance gains with virtually no change in parameters or computation.
+- **Clever Gap Shift Design**: Quantifies alignment by manually adjusting modal distances, providing an intuitive metric.
 
 ## Limitations & Future Work
 
-- Validation is limited to classification tasks; extension to downstream tasks such as detection and segmentation remains unexplored.
-- The two-stage training switch point (3/5 of total epochs) is a fixed ratio rather than an adaptive schedule.
-- Sensitivity of hyperparameters $\lambda$ and $\beta$ across domain-shift scenarios of varying magnitude is insufficiently discussed.
-- Anti-visual-learning may be unnecessary or even detrimental when the domain gap is small (e.g., in-domain FSL).
-- Text prompts rely on the simple template "a photo of [class]," without leveraging richer textual descriptions.
+- Validated only on classification; downstream tasks like detection or segmentation remain unexplored.
+- The two-stage switching point (3/5 epochs) is fixed and not adaptively adjusted.
+- Discussion on hyperparameter ($\lambda, \beta$) sensitivity across different domain shifts is limited.
+- "Anti-visual learning" might be unnecessary or harmful when domain shifts are minimal (e.g., in-domain FSL).
+- Relies on simple text prompts ("a photo of [class]") without exploring richer descriptions.
 
 ## Related Work & Insights
 
-- **SF-CDFSL**: Methods such as StepSTP and FWT address source-free cross-domain few-shot learning but do not analyze the adverse effects of visual learning.
-- **VLM fine-tuning**: CoOp (prompt learning), CLIP-Adapter, and CLIP-LoRA all employ cross-entropy fine-tuning and are susceptible to the discriminability trap.
-- **Modality gap research**: Liang et al. first identified the modality gap; subsequent work analyzed modal misalignment in cross-domain settings but assumed standard fine-tuning was sufficient for correction.
-- **Shortcut learning**: Previously studied in conventional vision models; this paper is the first to introduce the concept into the context of VLM cross-modal fine-tuning.
+- **SF-CDFSL**: Methods like StepSTP and FWT focus on source-free cross-domain tasks but do not analyze the negative impact of visual learning.
+- **VLM Fine-tuning**: CoOp, CLIP-Adapter, and CLIP-LoRA all use cross-entropy fine-tuning and are susceptible to the discriminability trap.
+- **Modality Gap**: Building on Liang et al.'s discovery of the gap, previous work assumed fine-tuning would naturally repair misalignment; Ours proves otherwise.
+- **Shortcut Learning**: A known phenomenon in vision models, here first introduced into the context of VLM cross-modal fine-tuning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First to expose the conflict between visual discriminability and cross-modal alignment in VLM fine-tuning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Multiple VLM backbones, multiple fine-tuning paradigms, 15 datasets, theoretical analysis, ablations, and visualizations.
-- Writing Quality: ⭐⭐⭐⭐⭐ — The dual-valve analogy is elegant and the argumentation is logically rigorous.
-- Value: ⭐⭐⭐⭐ — A universally applicable plug-and-play method, though currently limited to classification tasks.
+- Novelty: ⭐⭐⭐⭐⭐ — First to identify the conflict between visual discriminability and alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Extensive backbones, tuning methods, and analysis over 15 datasets.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Excellent analogy and logical argumentation.
+- Value: ⭐⭐⭐⭐ — Highly practical and general, though currently limited to classification.
 
 <!-- RELATED:START -->
 
@@ -143,11 +155,11 @@ A smaller gap indicates better modal alignment. Enhancing visual learning signif
 
 ## Related Papers
 
-- [\[ICML 2026\] ATHA: Improving CLIP Adaptation in Source-Free Cross-Domain Few-Shot Learning by Breaking Tail Alignment](../../ICML2026/multimodal_vlm/improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
+- [\[CVPR 2026\] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning](addressing_exacerbated_attention_sink_for_source-free_cross-domain_few-shot_lear.md)
+- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
+- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
 - [\[CVPR 2026\] Towards Multimodal Domain Generalization with Few Labels](towards_multimodal_domain_generalization_with_few_labels.md)
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
 
 </div>
 

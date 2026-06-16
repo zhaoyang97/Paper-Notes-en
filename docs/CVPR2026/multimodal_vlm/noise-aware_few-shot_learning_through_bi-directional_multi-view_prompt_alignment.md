@@ -2,100 +2,111 @@
 title: >-
   [Paper Note] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][noisy labels] This paper proposes NA-MVP, a framework that employs bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT) for fine-grain…
+  [CVPR 2026][Multimodal VLM][prompt learning] The NA-MVP framework is proposed, which achieves fine-grained patch-to-prompt alignment through a bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT). It utilizes classic OT to perform selective label refinement on identified noisy samples, consistently surpass
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "noisy labels"
-  - "prompt learning"
-  - "optimal transport"
-  - "CLIP"
-  - "few-shot learning"
+  - CVPR 2026
+  - Multimodal VLM
+  - prompt learning
+  - CLIP
 date: 2026-05-08
-content_hash: 8276a0b70decc015
+content_hash: f3e1bf1e66a3271d
 ---
-
 # Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.11617](https://arxiv.org/abs/2603.11617)  
 **Code**: None  
-**Area**: Multimodal VLM
-**Keywords**: noisy labels, prompt learning, optimal transport, CLIP, few-shot learning
+**Area**: Multimodal VLM  
+**Keywords**: Noisy labels, prompt learning, optimal transport, CLIP, few-shot learning
 
 ## TL;DR
 
-This paper proposes NA-MVP, a framework that employs bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT) for fine-grained patch-to-prompt alignment, and applies classical OT for selective label correction on identified noisy samples, consistently outperforming state-of-the-art methods in noisy few-shot learning scenarios.
+The NA-MVP framework is proposed, which achieves fine-grained patch-to-prompt alignment through a bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT). It utilizes classic OT to perform selective label refinement on identified noisy samples, consistently surpassing SOTA in noisy few-shot learning scenarios.
 
 ## Background & Motivation
 
-Vision-language models such as CLIP can be efficiently adapted to downstream tasks via prompt learning, particularly in few-shot settings. However, when training labels contain noise, the scarcity of samples per class means that even a small number of incorrect labels can disproportionately bias gradient updates and introduce spurious correlations.
+Vision-Language Models (VLMs) like CLIP can be efficiently adapted to downstream tasks through prompt learning, which is particularly effective in few-shot scenarios. However, when training labels are noisy, the small number of samples per category means even a few incorrect labels can disproportionately bias gradient updates and introduce spurious correlations.
 
-Existing noisy prompt learning methods suffer from three major limitations:
+Existing noisy prompt learning methods face three major limitations:
 
-**Insufficient prompt expressiveness**: Most methods employ only one or two prompts (e.g., positive/negative pairs), and single-view alignment fails to capture diverse, fine-grained semantic cues, making it difficult to effectively distinguish clean from noisy signals.
+**Insufficient Prompt Expressiveness**: Most methods use only 1-2 prompts (e.g., positive/negative pairs). Single-view alignment fails to capture diverse and fine-grained semantic cues, making it difficult to distinguish between clean and noisy signals effectively.
 
-**Rigid explicit negative labels**: Assigning a hard negative label (i.e., a designated counter-class) to each image produces fixed counter-class signals that are often inaccurate or uninformative under noisy conditions, thereby disrupting optimization.
+**Rigid Explicit Negative Labels**: Assigning a hard negative label to each image (specifying a certain counter-class) is problematic, as these fixed signals are often inaccurate or uninformative in noisy environments, hindering optimization.
 
-**Coarse denoising**: Reliance on fixed confidence thresholds or indiscriminate pseudo-label mechanisms leads to either missed noisy samples or erroneous correction of clean labels, causing error propagation.
+**Coarse Denoising**: Reliance on fixed confidence thresholds or non-selective pseudo-labeling mechanisms leads to either missing noisy samples or incorrectly modifying clean labels, causing error propagation.
 
-**Core Insight**: Robust noisy few-shot learning requires a shift from global matching to **region-aware fine-grained alignment**—adaptively disentangling clean and noisy semantics at the image patch level, while performing label correction in a sample-adaptive (rather than globally fixed) manner. This necessitates addressing three sub-problems: (1) how to model clean/noisy signals at the local patch level; (2) how to achieve flexible alignment rather than forced global matching; and (3) how to selectively correct mislabeled samples without over-intervention.
+**Key Insight**: Robust noisy few-shot learning requires a transition from global matching to **region-aware fine-grained alignment**—adaptively distinguishing between clean and noisy semantics at the image patch level, while performing label refinement in a sample-adaptive (rather than globally fixed) manner. This requires addressing three sub-problems: (1) How to model clean/noisy signals at the local patch level; (2) How to perform flexible alignment instead of forced global matching; (3) How to selectively correct mislabeled samples without over-intervention.
 
 ## Method
 
 ### Overall Architecture
 
-NA-MVP consists of two core modules that operate iteratively:
+NA-MVP consists of two core modules that collaborate iteratively:
 
-- **Noise-Aware Alignment Module**: Constructs multiple clean-oriented and noise-aware prompts for each class, performs fine-grained alignment with local image patches via UOT, and produces clean/noisy probability distributions.
-- **Selective Label Correction Module**: Derives adaptive thresholds from bi-directional alignment signals to identify potentially mislabeled samples, and corrects their labels using classical OT (with strict mass conservation).
+- **Noise-Aware Alignment Module**: Constructs multiple clean-oriented and noise-aware prompts for each class. It achieves fine-grained alignment with local image patches via UOT to generate clean/noisy probability distributions.
+- **Selective Label Refinement Module**: Derives adaptive thresholds based on bi-directional alignment signals to identify potential mislabeled samples, correcting their labels using classic OT (strict mass conservation).
 
-The two modules iteratively update the training set and optimize prompt parameters, ultimately yielding a denoised dataset $\mathcal{D}_{\text{denoised}} = \mathcal{D}_{\text{clean}} \cup \mathcal{D}_{\text{refinement}}$ for robust prediction.
+These two modules iteratively update the training set and optimize prompt parameters, eventually producing a denoised dataset $\mathcal{D}_{\text{denoised}} = \mathcal{D}_{\text{clean}} \cup \mathcal{D}_{\text{refinement}}$ for robust prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Noisy Few-Shot Data<br/>Image patch partition → Local features F_i"] --> C
+    B["Bi-directional Multi-View Prompt Construction<br/>N clean + N noise-aware prompts per class"] --> C
+    C["Fine-grained Noise-Aware Alignment based on UOT<br/>patch↔prompt relaxes mass constraints, discards noisy patches"] --> D["Output clean / noise-aware probabilities p_c, p_n"]
+    D --> E["Selective Label Refinement<br/>Adaptive threshold φ per-sample determination"]
+    E -->|Judged as clean| F["Retain original label<br/>D_clean"]
+    E -->|Judged as noisy| G["Classic OT Global Refinement<br/>Strict mass conservation → Pseudo-label D_refinement"]
+    F --> H["Denoised Dataset D_denoised"]
+    G --> H
+    H -->|GCE continues training, iterative prompt optimization| C
+    H --> I["Robust Prediction<br/>p = (1−p_n)·p_c"]
+```
 
 ### Key Designs
 
-**1. Bi-directional Multi-View Prompt Construction**
+**1. Bi-directional Multi-View Prompt Construction: Replacing Rigid Explicit Negative Labels with Implicit Negatives**
 
 For each class $k$, two sets of learnable prompts are constructed: clean-oriented $\{Prompt_{m,k}^c\}_{m=1}^N$ and noise-aware $\{Prompt_{m,k}^n\}_{m=1}^N$ (default $N=4$). Each prompt consists of $M$ learnable context tokens followed by a class-specific token:
 
 $$Prompt_{m,k}^c = [V_1^c, V_2^c, \ldots, V_M^c, \texttt{CLS}_k]$$
 
-Clean prompts capture stable class-relevant semantics, while noise-aware prompts serve as adaptive filters to identify and suppress misleading signals. Crucially, all non-target classes function as implicit negative samples, avoiding the rigidity of explicit negative labels—no specific counter-class needs to be designated; instead, all non-target classes naturally provide contrastive signals.
+Clean prompts capture class-related stable semantics, while noise-aware prompts act as adaptive filters to identify and suppress misleading signals. Crucially, all non-target classes serve as implicit negative samples, avoiding the rigidity of explicit negative labels—there is no need to specify a particular counter-class; instead, all non-target classes naturally provide contrastive signals.
 
-**2. Fine-Grained Noise-Aware Alignment via UOT**
+**2. Fine-grained Noise-Aware Alignment based on UOT: Relaxing Quality Constraints to Safely Discard Noisy Patches**
 
-Local image features $F_i \in \mathbb{R}^{L \times d}$ ($L = H \times W$ patches) and prompt features $G_k \in \mathbb{R}^{N \times d}$ are treated as discrete distributions, with a cost matrix $C_k = 1 - F_i G_k^\top$ computed via cosine similarity.
+Local image features $F_i \in \mathbb{R}^{L \times d}$ ($L = H \times W$ patches) and prompt features $G_k \in \mathbb{R}^{N \times d}$ are treated as discrete distributions. The cost matrix $C_k = 1 - F_i G_k^\top$ is computed via cosine similarity.
 
-The key contribution of UOT is **relaxing the strict mass conservation constraint**:
+The key to UOT is **relaxing the strict mass conservation constraints**:
 
 $$\Pi(\mu, \nu) = \{T \in \mathbb{R}_+^{L \times N} \mid T\mathbf{1}_N \leq \mu, \; T^\top\mathbf{1}_L = \nu\}$$
 
-The inequality $T\mathbf{1}_N \leq \mu$ allows some image patches to remain unassigned to any prompt. This relaxation is naturally suited to noisy settings: noisy or irrelevant patches need not be forcibly aligned and can be safely "discarded." The optimal transport plan $T^* = \text{diag}(\mu^{(t)}) Q \text{diag}(\nu^{(t)})$ is solved efficiently via the Dykstra algorithm (Sinkhorn with entropic regularization).
+Note that $T\mathbf{1}_N \leq \mu$ uses an inequality, allowing some image patches to not be assigned to any prompt. This relaxation is naturally suited for noisy scenarios: noisy or irrelevant patches do not require forced alignment and can be safely "discarded." The optimal transport plan $T^* = \text{diag}(\mu^{(t)}) Q \text{diag}(\nu^{(t)})$ is efficiently solved using the Dykstra algorithm (Sinkhorn + entropy regularization).
 
-**3. Selective Label Correction**
+**3. Selective Label Refinement: Sample-Adaptive Threshold + Classic OT to Refine Only the Necessary Samples**
 
-- **Noise Identification**: UOT distances between samples and clean/noise-aware prompts yield similarities $s_{i,k}^c$ and $s_{i,k}^n$, from which an adaptive threshold is derived:
+- **Noise Identification**: Computes the UOT distance between samples and clean/noise-aware prompts to obtain similarities $s_{i,k}^c$ and $s_{i,k}^n$, deriving an adaptive threshold:
 
 $$\phi_{i,k} = \frac{\exp(s_{i,k}^n / \tau)}{\exp(s_{i,k}^c / \tau) + \exp(s_{i,k}^n / \tau)}$$
 
-A sample is deemed clean when $p_{ik}^c > \phi_{i,k}$, and noisy otherwise. This sample-adaptive threshold is more flexible than DEFT's fixed threshold of $0.5$.
+A sample is judged as clean when $p_{ik}^c > \phi_{i,k}$, and noisy otherwise. This threshold is sample-adaptive, making it more flexible than DEFT's fixed threshold of $0.5$.
 
-- **Label Correction**: For samples identified as noisy, classical OT (with strict mass conservation) is applied to compute the optimal transport plan $T^*$ between global image features and class prompt features, assigning the pseudo-label $\tilde{y}_i = \arg\max_j T_{ij}^*$. Strict mass conservation ensures global assignment rationality.
+- **Label Refinement**: For samples identified as noisy, classic OT (strict mass conservation) is used to compute the optimal transport plan $T^*$ between global image features and class prompt features. The pseudo-label is taken as $\tilde{y}_i = \arg\max_j T_{ij}^*$. Strict mass conservation ensures global rationality in assignment.
 
-- **Selective Strategy**: Correction is applied only to samples satisfying $p_{ik}^c < \phi_{i,k}$, leaving reliable samples unchanged. This prevents the erroneous correction of clean labels that occurs with global pseudo-label methods under low noise conditions.
+- **Selective Strategy**: Only samples with $p_{ik}^c < \phi_{i,k}$ are refined, while confident samples remain unchanged. This avoids the issue where global pseudo-labeling methods incorrectly modify correct labels under low noise conditions.
 
 ### Loss & Training
 
-**Two-Stage Training**:
+**Two-stage Training**:
 
-- **Early Stage** (first $T_{sup}$ epochs): Training on noisy data using $\mathcal{L}_{sup} = \mathcal{L}_{gce} + \lambda_i \cdot \mathcal{L}_{itbp}$
-    - GCE (Generalized Cross-Entropy): A loss function inherently robust to noisy labels.
-    - ITBP Loss: A bi-directional contrastive loss that encourages image features to align with clean prompts and diverge from noise-aware prompts, explicitly separating clean and noisy semantics.
-- **Late Stage**: The label correction module is activated, and training continues on $\mathcal{D}_{\text{denoised}}$ using GCE.
+- **Early Stage** (first $T_{sup}$ epochs): Training on noisy data using $\mathcal{L}_{sup} = \mathcal{L}_{gce} + \lambda_i \cdot \mathcal{L}_{itbp}$.
+    - GCE (Generalized Cross-Entropy): A loss function naturally robust to noisy labels.
+    - ITBP Loss: A bi-directional contrastive loss that encourages image features to align with clean prompts and move away from noise-aware prompts, explicitly separating clean and noisy semantics.
+- **Late Stage**: Activates the label refinement module and continues training with GCE on the denoised dataset $\mathcal{D}_{\text{denoised}}$.
 
-**Inference**: Both clean and noise-aware probabilities are leveraged jointly: $p(y=k|x_i) = (1 - p_{ik}^n) \cdot p_{ik}^c$
+**Inference**: Utilizes both clean and noise-aware probabilities: $p(y=k|x_i) = (1 - p_{ik}^n) \cdot p_{ik}^c$.
 
-**Implementation**: SGD optimizer (lr=0.002, momentum=0.9, weight_decay=5e-4), 50 epochs, 16 shared context tokens, ResNet-50 image encoder, single RTX 4090 GPU.
+**Implementation**: SGD optimizer (lr=0.002, momentum=0.9, weight_decay=5e-4), 50 epochs, 16 shared context tokens, ResNet-50 image encoder, single RTX 4040.
 
 ## Key Experimental Results
 
@@ -115,7 +126,7 @@ A sample is deemed clean when $p_{ik}^c > \phi_{i,k}$, and noisy otherwise. This
 | Flowers102 | NLPrompt | 92.57 | 89.90 | 76.80 | 93.40 | 81.10 |
 | | **NA-MVP** | **93.30** | **90.47** | 76.47 | 91.37 | 78.43 |
 
-**Key Findings**: NA-MVP demonstrates the most significant advantage under high noise rates (75% Sym)—on OxfordPets, it outperforms NLPrompt by **+15.46%** (86.23 vs. 70.77), indicating exceptional robustness under severe noise. Under low noise on Flowers102, performance is comparable to NLPrompt, with the primary advantage concentrated in challenging high-noise scenarios.
+**Key Findings**: NA-MVP shows the most significant advantage at high noise rates (75% Sym)—leading NLPrompt by **+15.46%** (86.23 vs 70.77) on OxfordPets, indicating exceptional robustness when noise is severe. On Flowers102 under low noise, it is close to NLPrompt, with advantages primarily manifesting in difficult, high-noise scenarios.
 
 ### Real-World Noise (Food101N)
 
@@ -124,26 +135,26 @@ A sample is deemed clean when $p_{ik}^c > \phi_{i,k}$, and noisy otherwise. This
 | NLPrompt | 70.57 | 73.93 | 76.46 | 76.87 |
 | **NA-MVP** | **76.10** | **76.27** | **76.90** | **77.03** |
 
-The largest advantage occurs at 4-shot (+5.53), confirming that noise has the greatest impact under extreme data scarcity, where NA-MVP's fine-grained denoising mechanism yields the greatest benefit.
+The advantage is greatest at 4-shot (+5.53), verifying that noise has the largest impact with extremely few samples, and NA-MVP's fine-grained denoising mechanism yields the most benefit here.
 
 ### Ablation Study (DTD, Sym Noise, Accuracy %)
 
 | Configuration | 25% | 50% | 75% | Mean |
 |------|-----|-----|-----|------|
-| (a) CoOp single prompt | 59.83 | 50.73 | 33.67 | 48.08 |
-| (b) + explicit negative labels | 59.53 | 52.53 | 34.40 | 48.82 |
-| (c) + implicit bi-directional | 60.13 | 53.73 | 35.03 | 49.63 |
-| (d) + multi-view | 62.73 | 55.13 | 37.63 | 51.83 |
-| (e) + UOT alignment | 62.50 | 57.70 | 42.33 | 54.18 |
-| (f) + OT alignment | 62.30 | 56.80 | 41.00 | 53.37 |
-| (g) + KL divergence alignment | 62.27 | 56.43 | 39.10 | 52.60 |
-| (h) + global OT correction | 59.60 | 54.77 | 45.77 | 53.38 |
-| (i) + selective correction (ϕ) | **63.13** | **58.50** | **48.63** | **56.75** |
+| (a) CoOp Single Prompt | 59.83 | 50.73 | 33.67 | 48.08 |
+| (b) + Explicit Negative Label | 59.53 | 52.53 | 34.40 | 48.82 |
+| (c) + Implicit Bi-directional | 60.13 | 53.73 | 35.03 | 49.63 |
+| (d) + Multi-view | 62.73 | 55.13 | 37.63 | 51.83 |
+| (e) + UOT Alignment | 62.50 | 57.70 | 42.33 | 54.18 |
+| (f) + OT Alignment | 62.30 | 56.80 | 41.00 | 53.37 |
+| (g) + KL Divergence Alignment | 62.27 | 56.43 | 39.10 | 52.60 |
+| (h) + Global OT Refinement | 59.60 | 54.77 | 45.77 | 53.38 |
+| (i) + Selective Refinement (ϕ) | **63.13** | **58.50** | **48.63** | **56.75** |
 
-**Key Ablation Conclusions**:
-- Implicit bi-directional (c) outperforms explicit negative labels (b), validating the greater flexibility of the implicit negative sample design.
-- UOT (e) > OT (f) > KL (g): relaxing mass conservation yields a clear advantage in noisy settings (UOT outperforms OT by 1.33% at 75% noise).
-- Global OT correction (h) degrades performance at low noise (25%) (59.60 vs. 62.50 without correction) due to erroneous modification of clean labels; selective correction (i) yields consistent improvements across all noise levels.
+**Key Ablation Insights**:
+- Implicit bi-directional (c) outperforms explicit negative labels (b), verifying the flexibility of the implicit negative design.
+- UOT (e) > OT (f) > KL (g), showing that relaxing mass constraints is advantageous in noisy environments (leads OT by 1.33% at 75% noise).
+- Global OT refinement (h) actually harms performance at 25% low noise (59.60 vs 62.50 without refinement) due to incorrect modification of correct labels; selective refinement (i) consistently improves across all noise levels.
 
 ### Comparison with DEFT (OxfordPets, Sym Noise, Accuracy %)
 
@@ -152,38 +163,38 @@ The largest advantage occurs at 4-shot (+5.53), confirming that noise has the gr
 | DEFT | 88.83 | 88.23 | 88.10 | 86.73 | 84.10 | 75.87 |
 | **NA-MVP** | 88.50 | **88.40** | **88.23** | **88.13** | **86.93** | **86.23** |
 
-DEFT degrades sharply at 75% noise (75.87), while NA-MVP maintains 86.23 (+10.36), demonstrating that the adaptive threshold $\phi_{i,k}$ is substantially more robust than DEFT's fixed threshold of 0.5.
+DEFT drops sharply at 75% noise (75.87), while NA-MVP maintains 86.23 (+10.36), proving the adaptive threshold $\phi_{i,k}$ is significantly more robust than DEFT's fixed 0.5 threshold.
 
 ## Highlights & Insights
 
-- **Conceptual reframing**: Noise robustness is redefined as "region-aware clean-noisy semantic decomposition," transcending the global matching paradigm of prior work.
-- **Elegant adaptation of UOT**: Relaxing mass conservation naturally suits noisy settings—noisy patches need not be forcibly aligned and can be safely discarded.
-- **Complementary roles of two OT variants**: UOT enables local fine-grained alignment (tolerating noise), while classical OT enables global label correction (strict mass conservation ensures assignment rationality).
-- The inference formula $(1-p^n) \cdot p^c$ is concise and elegant, jointly leveraging information from both views.
-- Analysis of prompt count $N=4$ reveals a diminishing returns pattern in multi-view benefit (redundancy begins at $N=8$).
+- **New Conceptual Perspective**: Redefines noise robustness as "region-aware clean-noisy semantic decomposition," transcending the global matching paradigm of prior work.
+- **Clever Adaptation of UOT**: Relaxing mass constraints fits noisy scenarios naturally—noisy patches do not require forced alignment and can be safely "discarded."
+- **Complementarity of Two OTs**: UOT is used for local fine-grained alignment (tolerating noise), while classic OT is used for global label refinement (strict mass conservation ensuring assignment rationality).
+- The inference formula $(1-p^n) \cdot p^c$ is simple and elegant, utilizing bi-directional information simultaneously.
+- Analysis of the number of prompts $N=4$ reveals diminishing marginal returns for multi-view (redundancy starts at $N=8$).
 
 ## Limitations & Future Work
 
-- Validation is limited to classification tasks; extension to more complex visual tasks such as detection and segmentation remains unexplored.
-- Only ResNet-50 is used as the backbone; whether the advantage persists with stronger backbones (e.g., ViT-L/14) is unverified.
-- The Sinkhorn iterations in UOT introduce additional computational overhead, which is not discussed in detail in the paper.
-- The noise assumption is limited to standard symmetric/asymmetric patterns; real-world noise may be more complex (e.g., instance-dependent noise).
-- The optimal number of multi-view prompts $N$ may vary by dataset, and no automatic selection mechanism is proposed.
+- Validated only on classification tasks; not extended to more complex vision tasks like detection or segmentation.
+- Focused on ResNet-50 backbone; not verified whether advantages persist with stronger backbones (ViT-L/14, etc.).
+- Sinkhorn iterations in UOT introduce additional computational overhead, which is not discussed in detail.
+- Noise assumptions are limited to standard symmetric/asymmetric patterns; real-world noise may be more complex (e.g., instance-dependent noise).
+- The optimal number of multi-view prompts $N$ may depend on dataset characteristics, and an automatic selection mechanism is lacking.
 
 ## Related Work & Insights
 
-- **vs. CoOp**: The baseline prompt learning method does not account for noise, and performance degrades sharply with increasing noise rate.
-- **vs. NLPrompt**: Employs OT-Filter for noise identification and global OT for relabeling, representing a coarse-grained global approach; NA-MVP achieves finer-grained processing via patch-level UOT and adaptive thresholds.
-- **vs. PLOT**: PLOT applies OT for multi-prompt alignment on clean data; NA-MVP extends this to a noise-aware bi-directional design.
-- **vs. CLIPN**: CLIPN uses positive/negative prompt pairs for OOD detection; NA-MVP transfers the bi-directional idea to noisy label learning with the addition of multi-view prompts.
-- **Broader Implications**: The "relaxed matching" principle of UOT is transferable to scenarios such as noisy annotations in object detection and imprecise labels in medical imaging; the finding that implicit negatives outperform explicit negative labels has general applicability in contrastive learning.
+- **vs CoOp**: Basic prompt learning that does not consider noise; performance drops sharply as noise increases.
+- **vs NLPrompt**: Uses OT-Filter for noise identification + global OT labeling, belonging to coarse-grained global methods. NA-MVP achieves finer processing through patch-level UOT + adaptive thresholds.
+- **vs PLOT**: PLOT uses OT for multi-prompt alignment but targets clean data. NA-MVP extends this to a noise-aware bi-directional design.
+- **vs CLIPN**: CLIPN uses positive/negative prompt pairs for OOD detection. NA-MVP transfers the bi-directional idea to noisy label learning and incorporates multi-view.
+- **Inspiration**: The "relaxed matching" concept of UOT can be transferred to scenarios like noisy object detection annotations or imprecise medical image labels; the conclusion that implicit negatives outperform explicit negative labels is generally applicable to contrastive learning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing UOT into prompt-based noisy label learning is novel, and the bi-directional multi-view design offers distinctive contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five synthetic noise datasets and one real-world noise dataset, with ablations covering components, alignment strategies, prompt counts, and thresholding schemes.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, the three key limitations are well summarized, and the method is described systematically.
-- Value: ⭐⭐⭐⭐ Provides an effective solution for the practically important setting of noisy few-shot learning, with substantial improvements under high noise rates.
+- Novelty: ⭐⭐⭐⭐ Introducing UOT into prompt-based noisy label learning is novel, and the bi-directional multi-view design is unique.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 synthetic noise datasets + 1 real-world noise dataset; ablation studies cover components, alignment types, prompt counts, and threshold strategies.
+- Writing Quality: ⭐⭐⭐⭐ Motivations are clearly articulated, the three major limitations are well-summarized, and the method description is systematic.
+- Value: ⭐⭐⭐⭐ Provides an effective solution for the practical scenario of noisy few-shot learning, with significant gains at high noise levels.
 
 <!-- RELATED:START -->
 
@@ -191,11 +202,11 @@ DEFT degrades sharply at 75% noise (75.87), while NA-MVP maintains 86.23 (+10.36
 
 ## Related Papers
 
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
-- [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
-- [\[AAAI 2026\] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation](../../AAAI2026/multimodal_vlm/few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
+- [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
+- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
 
 </div>
 

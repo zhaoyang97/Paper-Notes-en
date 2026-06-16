@@ -2,87 +2,105 @@
 title: >-
   [Paper Note] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 description: >-
-  [CVPR 2026][Autonomous Driving][Event camera] FlashCap is proposed as the first motion capture system combining flashing LEDs with event cameras…
+  [CVPR 2026][Autonomous Driving][Paper Note] FlashCap is proposed as the first motion capture system based on flashing LEDs and event cameras. By assigning different flashing frequencies to each LED for identity recognition, the authors constructed FlashMotion, the first human motion dataset with 1000Hz annotation accuracy (7.15 million frames). Furthermore, the
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Event camera"
-  - "human motion capture"
-  - "LED markers"
-  - "high temporal resolution"
-  - "spiking neural network"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: cade70ae78989dc5
+content_hash: da3b68eba8c86b7b
 ---
-
 # FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.19770](https://arxiv.org/abs/2603.19770)  
-**Code**: Coming soon  
-**Area**: Autonomous Driving / Human Pose Estimation
-**Keywords**: Event camera, human motion capture, LED markers, high temporal resolution, spiking neural network
+**Code**: Coming Soon  
+**Area**: Autonomous Driving / Human Pose Estimation  
+**Keywords**: Event camera, Human motion capture, LED markers, High temporal resolution, Spiking neural networks
 
 ## TL;DR
 
-FlashCap is proposed as the first motion capture system combining flashing LEDs with event cameras, where each LED is assigned a unique flashing frequency for identity recognition. The system enables the construction of FlashMotion, the first human motion dataset with 1000Hz annotation precision (7.15 million frames), and introduces the ResPose baseline, reducing motion timing error from ~50ms to ~5ms and lowering pose estimation MPJPE by approximately 40%.
+FlashCap is proposed as the first motion capture system based on flashing LEDs and event cameras. By assigning different flashing frequencies to each LED for identity recognition, the authors constructed FlashMotion, the first human motion dataset with 1000Hz annotation accuracy (7.15 million frames). Furthermore, the ResPose baseline method was introduced, reducing motion timing error from ~50ms to ~5ms and improving MPJPE in pose estimation by approximately 40%.
 
 ## Background & Motivation
 
-1. **Background**: Precise motion timing (PMT) is critical in competitive sports and similar domains — a 2ms difference in a luge race can determine medal outcomes. Current human pose estimation (HPE) research predominantly targets spatial accuracy, with insufficient attention to temporal precision. Existing motion capture systems, including Vicon (optical markers, ~330Hz), Xsens (IMU, 60–240Hz), and standard RGB cameras (30–60Hz), cannot meet millisecond-level temporal requirements.
-2. **Limitations of Prior Work**: (a) High-speed RGB cameras (≥1000Hz) offer high frame rates but are prohibitively expensive (NAC HX-7s exceeds $45,000, roughly 9× the cost of event cameras), require intense illumination, and impose bandwidth and storage demands two orders of magnitude higher than event cameras; (b) The highest annotation frame rate among publicly available human motion datasets is only 120Hz (BEAHM), an order of magnitude below millisecond precision; (c) Existing temporal annotation approaches are limited by the sampling ceiling of auxiliary modalities or interpolation errors, preventing them from exceeding 120Hz.
-3. **Key Challenge**: How can high temporal resolution (1000Hz) human motion capture and annotation be achieved at low cost and low bandwidth?
-4. **Goal**: (a) Build a novel low-cost motion capture system that circumvents the bottleneck of high-speed cameras; (b) Collect the first multi-modal human motion dataset with 1000Hz annotation precision; (c) Propose and evaluate HPE baseline methods operating at high temporal resolution.
-5. **Key Insight**: Event cameras offer microsecond-level temporal resolution and extremely low bandwidth, but deriving high-frequency ground-truth annotations from event streams remains a key challenge. The authors creatively employ LEDs with distinct flashing frequencies as body markers — event cameras can precisely capture LED flashing patterns, and frequency analysis automatically resolves LED identity and position, directly generating 1000Hz 2D joint location annotations from the event stream.
-6. **Core Idea**: Joint identity is encoded via unique LED flashing frequencies; the event camera natively captures flashing patterns at high temporal resolution; a frequency-matching algorithm automatically generates 1000Hz pose annotations — all at low cost, low bandwidth, and without high-speed cameras.
+1. **Background**: Precise Motion Timing (PMT) is critical in scenarios like competitive sports—a 2ms difference in a bobsleigh race can determine a medal. Current human pose estimation (HPE) focuses primarily on spatial accuracy with insufficient attention to temporal precision. Temporal resolutions of existing motion capture systems such as Vicon (optical markers, ~330Hz), Xsens (IMU, 60-240Hz), and standard RGB cameras (30-60Hz) fail to meet millisecond-level requirements.
+2. **Limitations of Prior Work**: (a) High-speed RGB cameras (≥1000Hz) can achieve high frame rates but are extremely costly (NAC HX-7s exceeds $45,000, 9x the cost of an event camera), require intense lighting, and demand bandwidth/storage two orders of magnitude higher than event cameras; (b) The highest annotation frame rate for public human motion datasets is only 120Hz (BEAHM), an order of magnitude away from millisecond precision; (c) Existing temporal annotation methods are limited by the sampling caps of auxiliary modalities or interpolation errors, failing to exceed 120Hz.
+3. **Key Challenge**: How to achieve 1000Hz high-temporal-resolution human motion capture and annotation with low cost and low bandwidth?
+4. **Goal**: (a) Build a novel low-cost motion capture system to bypass the high-speed camera bottleneck; (b) Collect the first multimodal human motion dataset with 1000Hz annotation accuracy; (c) Propose and evaluate a baseline HPE method for high temporal resolution.
+5. **Key Insight**: Event cameras possess microsecond-level temporal resolution and extremely low bandwidth. The key challenge is obtaining high-frequency ground truth annotations from the event stream. The authors creatively use LEDs with different flashing frequencies as body markers—event cameras precisely capture the flashing patterns, and frequency analysis automatically matches LED identity and position, generating 1000Hz 2D joint annotations directly from the event stream.
+6. **Core Idea**: Encode joint identity with different flashing frequencies. Event cameras capture flashing patterns with naturally high temporal resolution, and a frequency matching algorithm automatically generates 1000Hz pose annotations—achieving low cost and low bandwidth without high-speed cameras.
 
 ## Method
 
 ### Overall Architecture
 
-The FlashCap system comprises three components: (1) **MoCap Outfit**: a wearable garment embedding 17 LEDs and 17 IMUs; (2) **Multi-modal acquisition rig**: an event camera (Prophesee 1280×720) + RGB camera (Hikrobot 1920×1200, 20fps) + LiDAR (Ouster OS-1 128-line, 20fps), with a beam splitter enabling pixel-aligned and temporally synchronized event-RGB capture; (3) **Annotation pipeline**: automatically identifies LED flashing patterns from the event stream, resolves their identities, and generates 1000Hz 2D joint location annotations. This system underpins the FlashMotion dataset, and the ResPose baseline is proposed for high-temporal-resolution HPE.
+FlashCap addresses a challenge that appears to be a hardware problem but is actually constrained by annotation: training a model to output 1000Hz poses requires 1000Hz ground truth, yet traditional optical MoCap only reaches 120Hz. The overall strategy offloads "high-frequency annotation" to the hardware itself—by having each joint LED on a wearable suit flash at a **unique frequency**, an event camera with microsecond resolution captures these flashes, making the frequency the "ID" of the joint. The system consists of three layers: the wearable end is a motion capture suit with 17 LEDs and 17 IMUs; the capture end uses a beam splitter to achieve pixel alignment and time synchronization between an event camera (Prophesee 1280×720) and an RGB camera (Hikrobot 1920×1200, 20fps), plus a LiDAR (Ouster OS-1 128-beam, 20fps); the software end is an annotation pipeline that identifies flashing patterns from the event stream, matches identities, and outputs 1000Hz 2D joint positions. With this system, the authors collected the FlashMotion dataset and proposed ResPose as a baseline for high-temporal-resolution HPE.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["MoCap Suit<br/>17 Diff-freq Flashing LEDs + 17 IMUs"] --> B["Capture End<br/>Event Camera + RGB + LiDAR (Splitter Alignment/Sync)"]
+    subgraph S1["LED Flash Encoding & ID Recognition"]
+        direction TB
+        D["Slice 1ms Event Frame → DBSCAN Clustering<br/>Est. On/Off Time & Period per Cluster"] --> E["Temporal Smoothing + Outlier Filtering<br/>Bipartite Matching (Cluster ↔ LED ID)"]
+    end
+    B -->|Event Stream| D
+    E --> F["FlashMotion Dataset<br/>Native 1000Hz 2D Annotations + 60Hz 3D (IMU+LiDAR Fusion)"]
+    subgraph S3["ResPose: RGB Anchor + Event Residual"]
+        direction TB
+        G["RGB Branch ViTPose<br/>Provides Anchor Pose P_rgb"]
+        H["Event Branch SNN-CNN<br/>Local Patch Est. High-freq Residual P_Δ"]
+        G --> I["Multimodal Residual Transformer<br/>P = P_rgb + P_Δ, Modeling 17-joint Constraints"]
+        H --> I
+    end
+    F -->|RGB Anchor| G
+    F -->|Local Event Patches| H
+    I --> J["1000Hz High-temporal-resolution Pose Output"]
+```
 
 ### Key Designs
 
-1. **LED Flashing Encoding and Identity Recognition**
+**1. LED Flash Encoding and Identity Recognition: Making "Frequency" the Joint Identity**
 
-    - **Function**: Assigns a unique identity to each joint LED via a distinctive flashing frequency, enabling the event camera to automatically distinguish different joints.
-    - **Mechanism**: Each LED $i$ flashes at a configurable frequency (~4000Hz) with unique on-time $t_i^p$ and off-time $t_i^n$ (in the 100–300μs range), forming a distinctive flashing signature. The event camera asynchronously triggers events $e=(h,w,t,p)$, where high-density event regions correspond to LED locations. The annotation pipeline proceeds in four steps: (a) **Event clustering**: segment the event stream into 1ms event frames and apply DBSCAN to identify high-density regions; (b) **Frequency identification**: analyze positive and negative polarity event sequences per cluster to compute average on-time $\bar{t_j^p}$, off-time $\bar{t_j^n}$, and flashing period $\bar{T_j}$; (c) **Noise filtering**: temporal smoothing combined with outlier rejection; (d) **LED-cluster matching**: compute distance $d_{ji} = \alpha \cdot d_{ji}^t + \beta \cdot d_{ji}^p$ (on/off-time distance + period distance) and apply bipartite graph matching to find the optimal correspondence.
-    - **Design Motivation**: Unlike traditional optical markers (requiring high camera frame rates) or RFID (insufficient precision), LED flashing frequency encoding is naturally compatible with the asynchronous operation of event cameras — any luminance change exceeding the threshold triggers an event, with timestamp precision at the microsecond level.
+Traditional optical markers rely on high camera frame rates for frame-by-frame tracking, while RFID lacks precision. FlashCap assigns each LED $i$ a configurable flashing frequency (~4000Hz), where different LEDs have distinct On-times $t_i^p$ and Off-times $t_i^n$ (within the 100–300μs range). Consequently, each joint naturally carries a unique "flashing signature." As long as the brightness of a pixel changes beyond a threshold, the event camera asynchronously triggers an event $e=(h,w,t,p)$. High-density events are continuously generated at LED locations. The annotation pipeline slices the event stream into 1ms frames and clusters high-density regions using DBSCAN. For each cluster, statistics of positive/negative polarity event sequences are used to estimate mean On/Off times $\bar{t_j^p}$, $\bar{t_j^n}$ and the flashing period $\bar{T_j}$. After temporal smoothing and outlier filtering, the total distance is calculated as:
 
-2. **FlashMotion Dataset**
+$$d_{ji} = \alpha \cdot d_{ji}^t + \beta \cdot d_{ji}^p$$
 
-    - **Function**: Provides the first multi-modal human motion dataset with 1000Hz annotation precision.
-    - **Mechanism**: 20 volunteers (10 male, 10 female), 4 scenes (indoor and outdoor), 11 major action categories comprising 19 sub-categories, 240 sequences. The dataset includes 144,350 RGB frames, 144,350 LiDAR point cloud frames, and 2 hours of event and IMU data. **2D annotations at 1000Hz** (automatically generated by the annotation pipeline and manually corrected); **3D annotations at 60Hz** (SMPL parameters derived from IMU and LiDAR fusion). Total annotated frames: 7.15 million, representing an order-of-magnitude increase over existing datasets.
-    - **Design Motivation**: Annotation frame rates in existing HPE datasets are bounded by traditional optical systems (maximum 120Hz). The FlashCap LED scheme directly generates native 1000Hz annotations from the event stream, bypassing the frequency bottleneck of conventional optical MoCap.
+where $d_{ji}^t$ is the On/Off time distance and $d_{ji}^p$ is the period distance between cluster $j$ and LED $i$. Global optimal correspondence is solved via bipartite matching. This design succeeds by translating the identification problem into flashing frequencies—a signal that event cameras are natively optimized to express. Since timestamp precision is at the microsecond level, annotation is no longer constrained by camera frame rates.
 
-3. **ResPose: Residual Pose Estimation Baseline**
+**2. FlashMotion Dataset: Increasing Annotation Frame Rate from 120Hz to 1000Hz**
 
-    - **Function**: Achieves 1000Hz pose estimation by leveraging structural priors from low-frame-rate RGB and micro-motion captured by high-frequency events.
-    - **Mechanism**: The high-resolution pose is computed as $P_i = P_{rgb} + P_i^{\Delta}$, where $P_{rgb}$ is the anchor pose provided by a low-frame-rate RGB branch (e.g., ViTPose), and $P_i^{\Delta}$ is the residual pose estimated by the event branch. The event branch employs a **SNN-CNN hybrid encoder**: local event patches of size $32 \times 32$ are dynamically cropped centered on RGB anchors, integrated temporally via Leaky Integrate-and-Fire (LIF) spiking neurons, and processed with $1 \times 1$ convolutions to suppress background noise. A **multi-modal residual Transformer** concatenates RGB anchor features and event features before feeding them into a Transformer encoder, which models kinematic constraints across all 17 joints via global self-attention. The model is trained end-to-end with an L2 loss.
-    - **Design Motivation**: High-frequency event streams encode micro-motion variations (residual signals) rather than complete spatial structure. Treating RGB frames as structural anchors and events as residual corrections is a natural and efficient decomposition. SNNs are inherently well-suited to processing asynchronous event data.
+Existing HPE datasets are capped at 120Hz (BEAHM) due to the sampling limits of traditional optical systems. FlashMotion uses the aforementioned LED pipeline to generate native 1000Hz annotations directly from the event stream: 20 volunteers (10 male, 10 female), 4 indoor/outdoor scenes, 11 major and 19 sub-categories of actions, 240 sequences, including 144,350 RGB frames, 144,350 LiDAR point cloud frames, and 2 hours of event and IMU data. 2D annotations are provided at 1000Hz (auto-generated then manually refined), and 3D annotations at 60Hz (solved via IMU + LiDAR fusion for SMPL parameters). With 7.15 million annotated frames, it represents an order of magnitude leap over existing datasets and serves as the foundation for training 1000Hz models.
+
+**3. ResPose: RGB as Structural Anchor, Events for Residuals**
+
+Regressing the full pose directly from pure event streams is ineffective because high-frequency events convey fine-grained motion changes rather than complete spatial structures. The key insight of ResPose is to decompose the pose as:
+
+$$P_i = P_{rgb} + P_i^{\Delta}$$
+
+A low-frame-rate RGB branch (e.g., ViTPose) provides a stable anchor pose $P_{rgb}$, while the event branch estimates the high-frequency residual $P_i^{\Delta}$. The event branch utilizes an SNN-CNN hybrid encoder: $32 \times 32$ local event patches are dynamically cropped around RGB anchors and processed by Leaky Integrate-and-Fire (LIF) spiking neurons for temporal integration, followed by $1 \times 1$ convolutions to suppress background noise. Spiking neurons naturally accumulate inputs over time steps, fitting asynchronous event data. A Multimodal Residual Transformer then concatenates RGB anchor features with event features, using global self-attention to model kinematic constraints between the 17 joints, trained end-to-end with L2 loss. This "Anchor + Residual" decomposition is efficient because it allows each modality to perform its specialized task: RGB handles low-frequency structure, and events handle high-frequency increments.
 
 ### Loss & Training
 
-ResPose is trained end-to-end using an L2 distance loss that minimizes the error between predicted poses and the 1000Hz ground truth. The RGB branch is initialized from a pretrained ViTPose; the event branch is trained from scratch.
+ResPose utilizes an end-to-end L2 distance loss to minimize the error between predicted poses and 1000Hz ground truth. The RGB branch uses a pre-trained ViTPose, while the event branch is trained from scratch.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Precise Motion Timing (PMT) — estimated timing error for joint crossing a line (ms):
+Precise Motion Timing (PMT) — Temporal error (ms) in estimating joint crossing times:
 
 | Method | Kicking | Punching | Jumping |
-|--------|---------|----------|---------|
+|------|---------|----------|---------|
 | ViTPose (RGB) | 48.5 | 62.3 | 31.4 |
 | Hybrid ANN-SNN (Event) | 85.2 | 54.1 | 66.7 |
 | LEIR (RGB+Event) | 112.4 | 135.8 | 78.2 |
 | **ResPose (Ours)** | **7.2** | **4.8** | **6.5** |
 
-High temporal resolution HPE (1000Hz):
+High Temporal Resolution HPE (1000Hz):
 
 | Method | MPJPE↓ | PCK0.3↑ | PCK0.5↑ |
-|--------|--------|---------|---------|
+|------|--------|---------|---------|
 | ViTPose (linear interp.) | 10.06 | 0.96 | 0.98 |
 | Hybrid ANN-SNN | 22.48 | 0.82 | 0.91 |
 | EventPointPose | 51.61 | 0.48 | 0.74 |
@@ -92,51 +110,63 @@ High temporal resolution HPE (1000Hz):
 
 ### Ablation Study
 
-Annotation pipeline ablation (precision / recall):
+Ablation of the annotation pipeline (Precision / Recall):
 
-| Configuration | Kicking Precision | Kicking Recall | Note |
-|---------------|-------------------|----------------|------|
-| w/o $d_{ji}^t$ | 43.34% | 97.80% | Removing on/off-time distance → extensive mismatches |
-| w/o $d_{ji}^p$ | 69.70% | 97.56% | Removing period distance → degraded matching quality |
-| w/o outlier filtering | 96.52% | 95.69% | Noise interference causes missed detections |
-| w/o tracking | 98.38% | 98.16% | Cannot recover under occlusion |
-| **Full pipeline** | **99.99%** | **98.99%** | Near-perfect precision |
+| Configuration | Kicking Precision | Kicking Recall | Description |
+|------|-------------------|----------------|------|
+| w/o $d_{ji}^t$ | 43.34% | 97.80% | Removing On/Off time distance → massive mismatching |
+| w/o $d_{ji}^p$ | 69.70% | 97.56% | Removing period distance → matching quality drops |
+| w/o Outlier Filter | 96.52% | 95.69% | Noise interference causing missed detections |
+| w/o Tracking | 98.38% | 98.16% | Unable to recover during occlusion |
+| **Full Pipeline** | **99.99%** | **98.99%** | Near-perfect precision |
 
 ### Key Findings
 
-- **ResPose achieves an order-of-magnitude improvement on the PMT task**: timing error is reduced from ~50ms (RGB-only) and ~55–86ms (event-only) to ~5–7ms, demonstrating the effectiveness of combining RGB structural anchors with event-based residual correction.
-- **Existing pure-event methods fail on PMT** (LEIR error: 78–136ms), indicating that high temporal resolution input does not automatically yield high temporal resolution output — training with 1000Hz ground truth is essential.
-- **The SNN encoder outperforms its ANN variant**: MPJPE decreases from 8.12 to 5.66, confirming the inherent advantage of spiking neural networks for asynchronous event data.
-- The annotation pipeline achieves 99.99% precision and 98.82% recall, closely matching manual annotation and validating the robustness of the LED frequency encoding scheme.
-- Spline interpolation from 100Hz high-speed cameras still introduces substantial error on fast motions (28.5px on jumping), confirming the necessity of native 1000Hz annotations.
+- **ResPose achieves an order-of-magnitude improvement in PMT tasks**: Temporal error dropped from ~50ms (pure RGB) and ~55-86ms (pure event) to ~5-7ms. This validates the effectiveness of combining RGB structural anchors with event residual corrections.
+- **Existing pure event methods fail at PMT** (LEIR error 78-136ms), indicating that high-temporal-resolution input does not automatically equal high-temporal-resolution output—training with 1000Hz ground truth is required.
+- **SNN encoder outperforms the ANN variant**: MPJPE decreased from 8.12 to 5.66, proving the inherent advantage of Spiking Neural Networks in processing asynchronous event data.
+- The annotation pipeline achieves 99.99% precision and 98.82% recall, highly consistent with manual annotation, verifying the robustness of the LED frequency encoding scheme.
+- Spline interpolation of 100Hz high-speed cameras still shows significant error (28.5px jump) in fast movements, validating the necessity of native 1000Hz annotation.
 
 ## Highlights & Insights
 
-- The combination of **LED frequency encoding and event cameras** is remarkably elegant: hardware design circumvents software algorithmic limitations. Unlike coloring each LED differently (an RGB-camera approach), encoding identity via distinct flashing frequencies is naturally compatible with the asynchronous working principle of event cameras, at minimal cost. This "hardware-in-the-loop" annotation paradigm is transferable to any domain requiring high-frequency annotation.
-- **Residual decomposition (RGB anchor + event residual)** is an elegant framework for cross-temporal-resolution fusion: RGB provides low-frequency structural priors, while events supply high-frequency motion increments. This decomposition generalizes beyond HPE to high-speed object tracking, high-frequency surface deformation estimation, and related tasks.
-- The system's end-to-end completeness is impressive — spanning hardware (LED garment and multi-modal rig), software (annotation pipeline and baseline method), and dataset, forming a closed and coherent loop.
+- The combination of **LED frequency encoding + event cameras** is ingenious: it bypasses software algorithm limitations through hardware design. Unlike assigning different colors to LEDs (for RGB cameras), encoding identity with flashing frequencies natively fits the operational principle of event cameras at a very low cost. This "hardware-in-the-loop" annotation concept can be migrated to any scenario requiring high-frequency labels.
+- **Residual Decomposition (RGB Anchor + Event Residual)** is an elegant framework for cross-temporal resolution fusion: RGB provides low-frequency structural priors, while events provide high-frequency motion increments. This decomposition is applicable not only to HPE but also to high-speed object tracking and high-frequency surface deformation estimation.
+- The completeness of the system design is impressive—bridging hardware (LED suits + multimodal equipment), software (annotation pipeline + baseline method), and datasets into a closed loop.
 
 ## Limitations & Future Work
 
-- LED markers still require specially designed garments, limiting applicability in naturalistic settings. Future work may explore marker-free approaches that directly estimate high-frequency poses from the high dynamic range of event cameras.
-- The 17 LEDs cover only coarse-grained joints and cannot capture fine-grained motions such as finger articulation. Increasing the number of LEDs may introduce frequency conflicts, as the space of unique flashing signatures is finite.
-- Current 3D annotations are limited to 60Hz (constrained by IMU and LiDAR), while 1000Hz annotations are restricted to 2D. Future work combining multi-view event cameras could enable 1000Hz 3D annotation.
-- The FlashMotion dataset remains limited in scale and scene diversity (20 subjects, 4 scenes); extension to larger populations and more action types (e.g., gymnastics, combat sports) is warranted.
-- The SNN-CNN hybrid encoder is relatively simple; more sophisticated event representation learning methods, such as Transformers with fine temporal resolution, may yield further improvements.
+- LED markers still require wearing a specialized suit, limiting use in natural settings. Future work could explore markerless solutions (estimating high-frequency pose directly using the high dynamic range of event cameras).
+- 17 LEDs correspond to coarse-grained joints and cannot capture fine-grained movements like fingers. Increasing the number of LEDs may lead to frequency collisions—the unique space for flashing patterns is finite.
+- Current 3D labels are only 60Hz (limited by IMU+LiDAR), while 1000Hz labels are restricted to 2D. Future work could use multi-view event cameras for 1000Hz 3D annotation.
+- FlashMotion dataset scale and scene diversity remain limited (20 people, 4 scenes). Expansion to more subjects and diverse sports (e.g., gymnastics, combat) is necessary.
+- The SNN-CNN hybrid encoder is relatively simple; more sophisticated event representation learning methods (e.g., Transformers with fine-grained temporal resolution) might further improve performance.
 
 ## Related Work & Insights
 
-- **vs. BEAHM**: BEAHM is the previously highest frame-rate event-based HPE dataset (120Hz, reconstructed via multi-view calibrated RGB cameras). FlashMotion raises the annotation frame rate 8-fold to 1000Hz, with a more native annotation mechanism that does not depend on the RGB frame-rate ceiling.
-- **vs. DHP19**: DHP19 uses a 100Hz Vicon system for ground truth, constrained by Vicon's sampling rate. FlashCap's LED scheme is independent of external MoCap systems and achieves a 10× improvement in temporal resolution.
-- **vs. EventCap**: EventCap uses event cameras for HPE but relies on 100Hz marker-free MoCap for ground truth. FlashCap's key innovation is that its annotations are natively event-derived, so temporal resolution is not bounded by any auxiliary system.
-- High-speed RGB cameras (e.g., Basler, used for validation) are costly and bandwidth-intensive; FlashCap achieves comparable or superior temporal precision at approximately 1/9th the cost.
+- **vs BEAHM**: BEAHM was previously the highest frame-rate event HPE dataset (120Hz, based on multi-view reconstruction from 4 calibrated RGB cameras). FlashMotion increases the annotation rate by 8x to 1000Hz and uses a more native annotation method that does not depend on RGB frame rate bottlenecks.
+- **vs DHP19**: DHP19 uses 100Hz Vicon for ground truth, limited by Vicon's sampling rate. FlashCap's LED solution is independent of external MoCap systems and improves temporal resolution by 10x.
+- **vs EventCap**: EventCap performs HPE with event cameras, but ground truth comes from 100Hz markerless MoCap. FlashCap's innovation lies in event-native annotation, where temporal resolution is not limited by other systems.
+- High-speed RGB cameras (e.g., Basler, used for validation) are high-cost and high-bandwidth. FlashCap achieves comparable or superior temporal precision at approximately 1/9 the cost.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The creative combination of LED frequency encoding and event cameras establishes a groundbreaking paradigm for high-frequency motion capture.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ System validation, dataset quality verification, two novel tasks, and comprehensive ablations — exceptionally thorough.
-- Writing Quality: ⭐⭐⭐⭐ The narrative progresses logically from system design to dataset to methodology, with clear structure.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for millisecond-level motion capture; the dataset and system offer significant value to the broader HPE community.
+- Novelty: ⭐⭐⭐⭐⭐ The creative combination of LED frequency encoding and event cameras is a pioneering paradigm for high-frequency motion capture.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ System validation, dataset quality verification, two new tasks, and complete ablations make it extremely thorough.
+- Writing Quality: ⭐⭐⭐⭐ Logical progression from system to dataset to method.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for millisecond-level motion capture; both the dataset and system are of significant value to the HPE community.
+
+## Related Papers
+
+- [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
+- [\[CVPR 2026\] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting](sharp_short-window_streaming_for_accurate_and_robust_prediction_in_motion_foreca.md)
+- [\[AAAI 2026\] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation](../../AAAI2026/autonomous_driving/mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e.md)
+- [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
+- [\[ECCV 2024\] LiveHPS++: Robust and Coherent Motion Capture in Dynamic Free Environment](../../ECCV2024/autonomous_driving/livehps_robust_and_coherent_motion_capture_in_dynamic_free_environment.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -145,10 +175,10 @@ Annotation pipeline ablation (precision / recall):
 ## Related Papers
 
 - [\[CVPR 2026\] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting](sharp_short-window_streaming_for_accurate_and_robust_prediction_in_motion_foreca.md)
-- [\[AAAI 2026\] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation](../../AAAI2026/autonomous_driving/mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e.md)
+- [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
+- [\[CVPR 2026\] DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving](drivevln_towards_mapless_vision-and-language_navigation_in_autonomous_driving.md)
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
-- [\[CVPR 2026\] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
-- [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](remot_reinforcement_learning_with_motion_contrast_triplets.md)
+- [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
 
 </div>
 

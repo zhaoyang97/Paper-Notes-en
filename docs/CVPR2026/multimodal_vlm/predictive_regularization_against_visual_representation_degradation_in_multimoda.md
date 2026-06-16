@@ -2,70 +2,77 @@
 title: >-
   [Paper Note] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][visual representation degradation] This paper systematically diagnoses visual representation degradation in MLLMs across two levels—global functionality and patch-level semantic structure—reve…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper systematically diagnoses the degradation of visual representations in the intermediate layers of MLLMs at both the global functional level and the patch-level semantic structure level. It reveals that the essence of this phenomenon is "visual sacrifice" under the pure text generation objective and proposes P
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "visual representation degradation"
-  - "multimodal large language models"
-  - "predictive regularization"
-  - "self-supervised learning"
-  - "visual fidelity"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 977b60e5efce07f1
+content_hash: 27337a099dd679cb
 ---
-
 # Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20808](https://arxiv.org/abs/2603.20808)  
 **Code**: None  
-**Area**: Multimodal VLM
-**Keywords**: visual representation degradation, multimodal large language models, predictive regularization, self-supervised learning, visual fidelity
+**Area**: Multimodal VLM  
+**Keywords**: Visual representation degradation, MLLM, predictive regularization, self-supervision, visual fidelity
 
 ## TL;DR
-This paper systematically diagnoses visual representation degradation in MLLMs across two levels—global functionality and patch-level semantic structure—revealing that such degradation is an intrinsic "visual sacrifice" induced by the pure text-generation objective. It proposes Predictive Regularization (PRe), which mitigates degradation by training intermediate-layer features to predict the initial visual features, achieving consistent improvements across multiple vision-language benchmarks.
+This paper systematically diagnoses the degradation of visual representations in the intermediate layers of MLLMs at both the global functional level and the patch-level semantic structure level. It reveals that the essence of this phenomenon is "visual sacrifice" under the pure text generation objective and proposes Predictive Regularization (PRe). By requiring degraded intermediate features to predict initial visual features, PRe mitigates degradation and achieves consistent improvements across multiple VL benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: The dominant MLLM architecture consists of a visual encoder, a projection layer, and an LLM, trained entirely with a language modeling objective (next-token prediction). Visual representations are progressively transformed within the LLM to serve the final text generation task.
-2. **Limitations of Prior Work**: Prior work has focused primarily on the functional role of visual features in cross-modal tasks (e.g., how they facilitate question answering), while overlooking a critical question: what cost does purely language-driven training impose on the intrinsic quality of visual representations?
-3. **Key Challenge**: MLLM training lacks direct visual supervision signals. Under a single text-generation objective, the model sacrifices visual fidelity to optimize language capability. Linear classification performance on intermediate-layer visual representations degrades significantly relative to the input layer, and patch-level semantic boundaries become blurred—this constitutes "visual representation degradation."
-4. **Goal**: (1) Systematically quantify and explain the phenomenon and mechanism of visual degradation in MLLMs; (2) Design a lightweight method to mitigate degradation without interfering with language capability.
-5. **Key Insight**: Inspired by the theory of Predictive Coding—efficient neural systems should continuously predict their own low-level signals to maintain a coherent world model. The authors recontextualize this principle as a regularizer.
-6. **Core Idea**: A lightweight prediction head is used to train the degraded intermediate-layer visual features of the LLM to predict the initial input visual features, thereby anchoring the visual fidelity of intermediate representations via "visual self-prediction" regularization.
+1. **Background**: Current MLLM mainstream architectures follow the "Vision Encoder + Projector + LLM" paradigm, where training objectives are driven entirely by language modeling (next-token prediction). Visual representations are transformed layer-by-layer within the LLM to serve the final text generation task.
+2. **Limitations of Prior Work**: Existing research focuses primarily on the functionality of visual features in cross-modal tasks (e.g., how they help answer questions) but ignores a critical question: What cost does this pure language-driven training impose on the intrinsic quality of the visual representations themselves?
+3. **Key Challenge**: There is no direct visual supervision signal in MLLM training. Under a single text generation objective, models sacrifice visual fidelity to optimize language capabilities. The linear classification performance of intermediate visual representations drops significantly, and patch-level semantic boundaries become blurred—this is termed "visual degradation."
+4. **Goal**: (1) Systematically quantify and explain the phenomenon and mechanism of visual degradation in MLLMs; (2) Design a lightweight method to mitigate degradation without interfering with language capabilities.
+5. **Key Insight**: Inspired by Predictive Coding theory—efficient neural systems should continuously predict their own bottom-up signals to maintain a coherent world model. The authors re-contextualize this principle as a regularizer.
+6. **Core Idea**: Use a lightweight prediction head to let degraded intermediate visual features of the LLM predict the initial input visual features. This "visual self-prediction" regularization anchors the visual fidelity of intermediate representations.
 
 ## Method
 
 ### Overall Architecture
-A bypass branch is added to the standard MLLM training pipeline: visual token hidden states are extracted from an intermediate LLM layer, passed through a 2-layer MLP prediction head, and used to predict the stop-gradient initial visual token features $\mathbf{H}_v^0$ at the LLM input. A cosine similarity loss serves as the regularization term and is jointly optimized with the standard language modeling loss. No additional data or architectural modifications are required.
+The paper first addresses a neglected question—the cost paid by internal visual representations in MLLMs trained under pure text objectives—and then provides a minimal-intervention remedy. The first half involves **diagnosis + attribution** (corresponding to Key Designs 1 & 2): quantifying visual degradation layer-by-layer and explaining it as "visual sacrifice." The second half provides the **remedy** (corresponding to Key Design 3: PRe). The entire pipeline follows the standard "Vision Encoder + Projector + LLM" flow, with the only modification being a bypass: extracting visual token hidden states from a specific intermediate LLM layer, passing them through a lightweight MLP prediction head to predict the initial features before they entered the LLM (using the initial features as a stop-gradient anchor). A patch-level negative cosine similarity is used as a regularization term and optimized alongside the original language modeling loss. No extra data or architectural changes are required. The diagram below illustrates the PRe training data flow:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image → Vision Encoder<br/>CLIP / SigLIP → Projector"] --> B["Initial Visual Features H_v^0<br/>patch tokens before LLM (also anchor)"]
+    B --> C["LLM Decoder<br/>Visual tokens concatenated with text"]
+    C --> D["Intermediate Visual Features H_v^l<br/>Vicuna Layer 16 / Qwen Layer 14"]
+    C --> E["Final Text Output"]
+    D --> F["Prediction Head f_pred (2-layer MLP)"]
+    B -.->|stop-gradient anchor| G["PRe Regularization L_PRe<br/>patch-level negative cosine similarity"]
+    F --> G
+    E --> H["Language Modeling Loss L_LM"]
+    G --> I["Total Loss L_total = L_LM + 0.5·L_PRe"]
+    H --> I
+```
 
 ### Key Designs
 
-1. **Multi-level Diagnosis of Visual Degradation**:
+**1. Multi-level Diagnosis of Visual Degradation: Quantifying the degradation**
 
-    - Function: Reveals the degradation phenomenon and quantifies its extent.
-    - Mechanism: Global average-pooled visual representations are extracted from each layer of the MLLM, and linear classifiers are trained for image classification (linear probing). Results show significant classification accuracy drops at intermediate layers relative to the input layer (global functional degradation). At the patch level, COCO-Stuff segmentation masks are used to compute intra-object cohesion and inter-object coupling; the faster rise in coupling leads to a decline in the semantic contrast ratio (patch structural degradation). Visualization reveals that similarity from one patch "bleeds" into unrelated objects at intermediate layers.
-    - Design Motivation: Precise diagnosis must precede problem-solving. Evidence of degradation is established through a complete chain spanning macro (global classification) to micro (patch semantic boundaries) scales.
+To mitigate degradation, it must first be proven to exist and its severity must be measured. The authors provide evidence at both macro and micro levels. Macrally, visual representations are extracted layer-by-layer for global average pooling, followed by training a linear classifier for linear probing; results show classification accuracy drops significantly in intermediate layers compared to initial layers, indicating a loss in global separability. Micrally, using COCO-stuff segmentation masks to assign patches to objects, the authors calculate intra-object cohesion and inter-object coupling. They find that coupling increases faster than cohesion, causing the semantic contrast ratio (the ratio of the two) to decrease with depth, which corresponds to patch similarity "overflowing" into unrelated objects in visualizations. These two lines of evidence confirm that both global functionality and patch-level semantic boundaries are degrading.
 
-2. **Degradation Attribution: The Visual Sacrifice Hypothesis**:
+**2. Attribution: Explaining degradation as "visual sacrifice" rather than noise**
 
-    - Function: Explains the root cause of degradation.
-    - Mechanism: Statistical properties of intermediate-layer representations are analyzed—PCA effective dimensionality peaks and feature correlation is minimized at intermediate layers, indicating that these layers perform "unfolding and disentangling" to construct representation spaces suited for language generation. The dynamics of VQA performance and linear probing accuracy are tracked throughout pre-training, revealing a clear negative correlation: language capability improves while visual fidelity continuously declines.
-    - Design Motivation: Demonstrates that degradation is not random noise but a systematic byproduct of single-objective text training, providing a theoretical foundation for solution design.
+The authors analyze the statistical properties of intermediate representations and find that they coincide with the highest PCA effective dimensions and lowest feature correlation—meaning the intermediate layers are "unfolding and decoupling" the representation space into a form more suitable for language generation. Tracking the dynamics of VQA performance and linear probing accuracy during pre-training reveals a clear negative correlation: language capability increases while visual fidelity drops. This confirms that degradation is a systematic byproduct of a single text objective—the model actively sacrifices visual quality in exchange for language capability, rather than it being random perturbation. This causal chain points directly to the solution: providing a visual anchor for the intermediate layers.
 
-3. **Predictive Regularization (PRe)**:
+**3. Predictive Regularization (PRe): Predicting initial visual features from degraded intermediate features**
 
-    - Function: Regularizes visual degradation during training.
-    - Mechanism: Visual hidden states $\mathbf{H}_v^l$ are extracted from an intermediate LLM layer (e.g., layer 16 of Vicuna) and passed through a 2-layer MLP prediction head. The negative cosine similarity loss is computed against the stop-gradient initial visual features $\mathbf{H}_v^0$:
-      $$\mathcal{L}_{\text{PRe}} = -\frac{1}{N_p}\sum_{i=1}^{N_p} \mathcal{D}(f_{pred}(\mathbf{h}_{v,i}^l), \text{stopgrad}(\mathbf{h}_{v,i}^0))$$
-      The final loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \lambda \mathcal{L}_{\text{PRe}}$ with $\lambda=0.5$.
-    - Design Motivation: Using an internal anchor (pre-LLM features) rather than features from an external model avoids representation space mismatch; patch-level operation provides richer supervision signals than global aggregation; stop-gradient prevents the anchor from being corrupted by backpropagation.
+Since degradation occurs because intermediate layers dilute visual information for language generation, a constraint is added to "remember the original state." Borrowing from Predictive Coding, the LLM's intermediate visual hidden states $\mathbf{H}_v^l$ are passed through a 2-layer MLP prediction head to align with the initial visual features $\mathbf{H}_v^0$ before they entered the LLM, using negative cosine similarity as the loss.
+
+$$\mathcal{L}_{\text{PRe}} = -\frac{1}{N_p}\sum_{i=1}^{N_p} \mathcal{D}\big(f_{pred}(\mathbf{h}_{v,i}^l),\ \text{stopgrad}(\mathbf{h}_{v,i}^0)\big)$$
+
+$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \lambda\,\mathcal{L}_{\text{PRe}},\quad \lambda=0.5$$
+
+Three details determine its effectiveness: The anchor uses internal Pre-LLM features rather than external models like DINOv2 to avoid representation space mismatch. Supervision is applied at the patch level rather than the global level to preserve fine-grained spatial structure. A stop-gradient is applied to the anchor $\mathbf{H}_v^0$ to prevent the prediction head from degrading the anchor itself, ensuring a clean "reference frame."
 
 ### Loss & Training
-- Standard LLaVA two-stage training (pre-training 558K + instruction tuning 665K)
-- Total loss = language modeling loss + 0.5 × PRe regularization loss
-- Applied to intermediate layers (layer 16 of Vicuna, layer 14 of Qwen); not applied to the final layer, where visual tokens have been actively "silenced" by the model into high-frequency meaningless tokens
+- Standard LLaVA two-stage training (558K pre-training + 665K instruction tuning), no extra data.
+- Total loss = Language modeling loss + $0.5 \times$ PRe regularization loss.
+- Regularization is applied only to intermediate layers (e.g., Layer 16 for Vicuna, Layer 14 for Qwen) and **not** the final layers—visual tokens in the final layers are often "silenced" into high-frequency meaningless tokens; forcing visual structure there can be counterproductive.
 
 ## Key Experimental Results
 
@@ -90,33 +97,33 @@ A bypass branch is added to the standard MLLM training pipeline: visual token hi
 | Anchor: DINOv2 | 62.8 | 35.9 | 46.5 | 54.6 | 28.7 |
 
 ### Key Findings
-- **Mid-layer vs. Last-layer**: PRe performs best when applied at intermediate layers. At the final layer, visual tokens have already been actively collapsed by the model into high-frequency meaningless tokens (e.g., `_in`, `.`, `<<0x0A>>`); forcing visual structure preservation at this stage is detrimental.
-- **Anchor Selection**: Pre-LLM internal features as anchors yield the best overall performance, avoiding both dimensionality alignment difficulties (introduced by patch merging) and representation space mismatch (as with DINOv2). Pre-Proj is particularly strong on MMVP (+12.7) but has practical limitations.
-- **Patch-level vs. Global-level**: Patch-level regularization consistently outperforms global regularization by preserving finer-grained spatial structural information.
-- **Cross-architecture Generality**: PRe is effective across six configurations spanning CLIP/SigLIP encoders × Vicuna/Qwen LLMs × frozen/trainable encoders.
+- **Intermediate vs. Last Layer**: PRe works best at intermediate layers. Final layer visual tokens are often collapsed by the model into high-frequency meaningless tokens (e.g., '_in', '.', '<<0x0A>>'); forcing visual structures here is harmful.
+- **Anchor Selection**: Pre-LLM internal features perform best overall. They avoid dimension alignment issues (after patch merging) and representational space mismatches (e.g., DINOv2). Pre-Proj performs exceptionally well on MMVP (+12.7) but has practical limitations.
+- **Patch-level vs. Global-level**: Patch-level regularization consistently outperforms global regularization because it preserves finer spatial structure information.
+- **Cross-architecture Generality**: PRe is effective across 6 configurations involving CLIP/SigLIP encoders, Vicuna/Qwen LLMs, and frozen/trainable encoders.
 
 ## Highlights & Insights
-- **Complete Research Paradigm of Diagnosis → Attribution → Solution**: The logical chain from phenomenon discovery to causal analysis to solution design is highly coherent. This "understand first, then solve" approach is more persuasive than directly stacking modules.
-- **The Concept of "Visual Degradation" Itself**: The paper uncovers a systematic, previously overlooked issue in MLLM training—representation degradation is the cost of language optimization. This insight can inspire future work on better multi-objective training strategies.
-- **Lightweight and Universal**: PRe requires only a 2-layer MLP and a cosine loss, with zero additional data and zero architectural modifications, making it a plug-and-play addition to various MLLMs. This philosophy of "minimal intervention" is worth emulating.
+- **Complete Research Paradigm**: The logic flow from phenomenon discovery to causal analysis to solution design is exceptionally complete. This "understand before solve" approach is more persuasive than simply adding modules.
+- **Concept of "Visual Degradation"**: Reveals a neglected systematic problem in MLLM training—representation degradation is the price of language optimization. This insight can inspire future research on better multi-objective training strategies.
+- **Lightweight and Universal**: PRe requires only a 2-layer MLP and a cosine loss, with zero extra data and zero architectural changes. This "minimal intervention" philosophy is a valuable design principle.
 
 ## Limitations & Future Work
-- Validation is currently limited to 7B-scale LLMs; degradation patterns and PRe effectiveness at larger scales (e.g., 70B) remain unknown.
-- Regularization is applied at a single intermediate layer; multi-layer cascaded or progressive regularization may yield better results.
-- The PRe anchor is the static initial input feature, which (derived from frozen CLIP/SigLIP) may not constitute an optimal visual representation—could a dynamically updated "ideal visual anchor" be used instead?
-- The quantitative metric for visual degradation (linear probing accuracy) is indirect; more direct metrics reflecting visual fidelity may be needed.
+- Currently validated only on 7B scale LLMs; degradation patterns and PRe effectiveness on larger models (e.g., 70B) remain unknown.
+- Regularization is applied to only a single intermediate layer; multi-layer cascaded or progressive regularization might yield better results.
+- The PRe anchor consists of static initial input features, but these features (from frozen CLIP/SigLIP) may not be the optimal visual representation—could a dynamically updated "ideal visual anchor" be used?
+- Quantitative metrics for visual degradation (linear probing accuracy) are somewhat indirect; are there metrics that more directly reflect "visual fidelity"?
 
 ## Related Work & Insights
-- **vs. JEPA/SimSiam**: PRe recontextualizes the predictive coding principle from self-supervised learning—originally a pre-training objective—as a training regularizer, a clever cross-domain borrowing.
-- **vs. FastV/Token Pruning Methods**: Such methods reduce visual tokens to accelerate inference but may exacerbate degradation; PRe is complementary—preserving visual quality before pruning.
-- **vs. Multimodal Hallucination Mitigation Methods**: Visual degradation may be an underlying cause of hallucinations; PRe addresses the issue at the representation level, complementing output-level calibration approaches.
+- **vs. JEPA/SimSiam**: PRe re-contextualizes the predictive coding principle from self-supervised "pre-training objectives" into a "training regularizer," a clever cross-domain application.
+- **vs. FastV/Token pruning methods**: Those methods accelerate inference by reducing visual tokens but might exacerbate degradation; PRe is complementary—preserving visual quality before pruning.
+- **vs. Multimodal Hallucination Mitigation**: Visual degradation may be an underlying cause of hallucinations. PRe provides a remedy at the representation level, complementing calibration methods at the output level.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Diagnosing the visual degradation phenomenon is itself valuable; the PRe method is simple yet precise.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six architectural configurations, nine benchmarks, and detailed ablations—highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, with analysis, method, and experiments building progressively upon each other.
-- Value: ⭐⭐⭐⭐ The revealed degradation phenomenon has broad implications for the MLLM community; the method is simple and practical.
+- Novelty: ⭐⭐⭐⭐ Diagnosing the visual degradation phenomenon is highly valuable; the PRe method is simple but addresses the core issue.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage with 6 architectural configurations, 9 benchmarks, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, progressing step-by-step from analysis to method to experiments.
+- Value: ⭐⭐⭐⭐ The revealed degradation phenomenon provides broad insights for the MLLM community; the method is practical and easy to implement.
 
 <!-- RELATED:START -->
 
@@ -124,11 +131,11 @@ A bypass branch is added to the standard MLLM training pipeline: visual token hi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
+- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
 
 </div>
 

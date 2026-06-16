@@ -2,129 +2,128 @@
 title: >-
   [Paper Note] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation
 description: >-
-  [ACL 2026][Audio & Speech][Conversational Implicature] DRInQ constructs a conversational implicature evaluation set by fixing the surface form of questions and systematically varying the context. It finds that while LLMs…
+  [ACL 2026][Audio & Speech][speech acts] DRInQ constructs a conversational implicature evaluation set by fixing question surface forms and systematically varying contexts; it finds that while LLMs can generate plausible pragmatic scenarios, they often over-interpret context during inference, performing below human judgment consistency.
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Conversational Implicature"
-  - "Pragmatic Reasoning"
-  - "Context Control"
-  - "Speech Acts"
-  - "LLM Evaluation"
+  - ACL 2026
+  - Audio & Speech
+  - speech acts
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: f19c7a6debeb255b
+content_hash: a1dae324d29fc2bc
 ---
-
 # DRInQ: Evaluating Conversational Implicature with Controlled Context Variation
 
 **Conference**: ACL 2026  
 **arXiv**: [2605.24267](https://arxiv.org/abs/2605.24267)  
 **Code**: https://github.com/hjarai/drinq  
-**Area**: Pragmatic Reasoning / LLM Evaluation  
-**Keywords**: Conversational Implicature, Pragmatic Reasoning, Context Control, Speech Acts, LLM Evaluation
+**Area**: Pragmatic Inference / LLM Evaluation  
+**Keywords**: Conversational Implicature, Pragmatic Inference, Context Control, Speech Acts, LLM Evaluation
 
 ## TL;DR
-DRInQ constructs a conversational implicature evaluation set by fixing the surface form of questions and systematically varying the context. It finds that while LLMs can generate seemingly plausible pragmatic scenarios, they often over-interpret context during reasoning and fall below human judgment consistency.
+DRInQ constructs a conversational implicature evaluation set by fixing question surface forms and systematically varying contexts; it finds that while LLMs can generate plausible pragmatic scenarios, they often over-interpret context during inference, performing below human judgment consistency.
 
 ## Background & Motivation
-**Background**: Human dialogue relies heavily on conversational implicature—meanings not explicitly stated but triggered by context, politeness principles, social relationships, and common knowledge. Existing LLMs are already strong in surface semantics, social common sense, and fluent dialogue, yet they remain unstable regarding "what exactly is implied by this sentence in this specific scenario."
+**Background**: Human conversation relies heavily on conversational implicature—implicit meanings not explicitly stated but triggered by context, politeness principles, social relationships, and common knowledge. Existing LLMs are already strong in surface semantics, social common sense, and fluent dialogue, but remains unstable regarding "what this sentence actually implies in this specific scenario."
 
-**Limitations of Prior Work**: Existing pragmatic benchmarks often use coarse-grained labels, such as literal/non-literal, or focus on well-defined phenomena like irony, metaphor, presupposition, and scalar implicature. These resources struggle to isolate variations where "the same question yields different meanings due to different contexts," making it difficult to determine whether model errors stem from misunderstanding the question, ignoring the context, or over-extending contextual details.
+**Limitations of Prior Work**: Existing pragmatic benchmarks often use coarse-grained labels (e.g., literal / non-literal) or focus on explicit phenomena like irony, metaphor, presupposition, or scalar implicature. These resources struggle to isolate variations where "the same question yields different meanings due to different contexts," making it difficult to determine if model errors stem from misunderstanding the question, ignoring the context, or over-extending contextual details.
 
-**Key Challenge**: Conversational implicature depends on context, yet the context must not explicitly state the answer. Data construction must simultaneously satisfy three conditions: the context provides enough support for a unique interpretation, distractors are plausible in other contexts, and the varying factors are pragmatically relevant rather than random paraphrasing. This makes large-scale human construction very costly.
+**Key Challenge**: Conversational implicature depends on context, yet the context must not explicitly state the answer. Data construction must simultaneously satisfy three conditions: the context sufficiently supports a unique interpretation, distractors are plausible in other contexts, and the variation factors are truly pragmatically relevant rather than random paraphrasing. This makes large-scale manual construction costly.
 
-**Goal**: The authors propose DRInQ, a multiple-choice task using question-context-interpretation to evaluate whether models can recover the implied intent of a question utterance from context. It also compares model-generated data with human-authored data to analyze the differing capabilities of LLMs in pragmatic scenario construction versus pragmatic reasoning.
+**Goal**: The authors propose DRInQ, a multiple-choice task using question-context-interpretation to evaluate whether models can recover the implicit intent of a question utterance from context. It also compares model-generated data with human-written data to analyze the differing capabilities of LLMs in pragmatic scenario construction versus pragmatic inference.
 
-**Key Insight**: The paper focuses on question utterances because question forms frequently serve non-literal functions, such as requests, reproaches, invitations, comfort, or sarcasm. The authors use speech acts as intent labels and organize context variations into controllable dimensions rather than relying solely on free generation.
+**Key Insight**: The paper focuses on question utterances because question forms frequently serve non-literal functions, such as requests, blame, invitations, comfort, or sarcasm. The authors use speech acts as intent labels to organize contextual variations into controllable dimensions rather than relying solely on free generation.
 
-**Core Idea**: By keeping the question $Q$ fixed and only varying the context $C$, each candidate interpretation is designed to be a plausible meaning of the same question in a different context. This specifically tests whether the model can calibrate "which specific implied meaning the context actually supports."
+**Core Idea**: By keeping the question $Q$ constant and only varying the context $C$, and designing each candidate interpretation to be a plausible meaning of the same question in a different context, the task specifically tests the model's ability to calibrate "which implicit meaning the context actually supports."
 
 ## Method
-The key to DRInQ is not asking models to answer commonsense questions, but controlling pragmatic variables. Each sample contains a question, a context, and 5 candidate implied comments, only one of which is supported by the current context. The other options are rational interpretations of the same question in different contexts. Thus, the model cannot rely on the question itself or the surface wording of the options but must judge the strength of the contextual evidence.
 
 ### Overall Architecture
-The data construction pipeline begins with 30 hand-written everyday questions, expanded to 300 base questions using GPT-4o. For each question, the authors first obtain a default intent and a default implied comment, then select semantically distant intents from 23 speech act intent labels to generate multiple context-interpretation pairs. These pairs are converted into multiple-choice tasks and verified by Prolific annotators. Samples with at least 4/5 agreement are retained, from which 400 difficult samples are extracted as a benchmark.
+DRInQ does not test whether a model understands common sense, but whether it can calibrate "what this sentence actually implies" within a context. To isolate pragmatic inference from other confounding factors, each sample consists of a fixed question, a context, and 5 candidate implied comments. Only one is supported by the current context; the other four are valid interpretations of the same question in different contexts. This prevents models from taking shortcuts based on the question itself or option surface forms, forcing them to weigh the strength of contextual evidence. The data construction pipeline starts with 30 hand-written daily questions, expanded to 300 base questions by GPT-4o. For each question, a default intent and implied comment are established, then multi-set context-interpretation pairs are generated by selecting distant intents from 23 speech act labels. These are converted into multiple-choice questions validated by Prolific annotators (requiring $\ge 4/5$ agreement), finally sampling 400 hard instances as the benchmark.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["30 hand-written seed questions<br/>→ Expanded to 300 base questions via GPT-4o"] --> B["Define default intent + default implied comment for each"]
+    B --> C["Organize pragmatic variations via speech act intents<br/>Select distant intents by embedding distance from 23 labels<br/>Generate context–interpretation pairs"]
+    C --> D["Minimal contrastive task: Fixed question, varied context<br/>Assemble (Q,C,A): Fixed Q + 5 candidates<br/>1 supported by current C, 4 valid in other contexts"]
+    D --> E["Dual evaluation: Human validation & model inference<br/>62 Prolific annotators, ≥4/5 agreement → 819 samples, 400 hard subset sampled<br/>12 SOTA models evaluated with vanilla / explanation prompting"]
+```
 
 ### Key Designs
-1. **Minimal Contrast Task with Fixed Question and Varying Context**:
-    - **Function**: Isolates the impact of context variation on conversational implicature.
-    - **Mechanism**: Each instance is represented as $(Q,C,A)$, where $Q$ is a fixed question, $C$ is the current context, and $A$ consists of 5 candidate interpretations. Incorrect options are not random distractors but implied comments that could hold true for the same question in other contexts.
-    - **Design Motivation**: If standard multiple-choice questions were used, models might rely on option saliency or question templates. Fixing $Q$ while ensuring all candidates remain pragmatically plausible more closely mirrors real-world pragmatic disambiguation.
 
-2. **Organizing Pragmatic Variation via Speech Act Intents**:
-    - **Function**: Ensures data generation covers diverse communicative functions like requests, reproaches, invitations, warnings, thanks, and complaints.
-    - **Mechanism**: The authors extract four major categories (Directive, Assertive, Commissive, Expressive) from Searle's speech act theory, totaling 23 representative act verbs. For each question, they rank the embedding distance between the default implied comment and other intents, then select intents with large semantic differences to generate new contexts.
-    - **Design Motivation**: Variations in conversational implicature are not arbitrary paraphrases but reflect speakers performing different communicative acts. Intent labels make the generation process more controllable and easier to cover fine-grained pragmatic functions.
+**1. Organizing Pragmatic Variation with Speech Act Intents: Ensuring differences are "doing different things"**
+Arbitrary paraphrasing of context is neither controllable nor fine-grained enough to guarantee variations fall on the "pragmatic" dimension. The authors select 23 representative act verbs from Searle’s Speech Act Theory across four categories: Directive, Assertive, Commissive, and Expressive. For each question, they generate new contexts by picking intents with large embedding distances from the default. This ensures each variation corresponds to the speaker performing a different communicative act (request, blame, invitation, warning, complaint, etc.), making generation controllable and systematically covering fine-grained pragmatic functions.
 
-3. **Dual Assessment via Human Verification and Model Reasoning**:
-    - **Function**: Ensures the data is not merely a model's internal loop while observing systematic differences between LLM and human judgment.
-    - **Mechanism**: 62 pre-screened Prolific annotators participated in verification, retaining 819 samples with at least 4/5 agreement and constructing a 400-sample hard subset. Evaluation covers 12 SOTA models, comparing vanilla few-shot with explanation prompting. An additional human-authoring study compared the quality of contexts generated by 16 humans versus GPT-4o.
-    - **Design Motivation**: Pragmatic meaning is naturally ambiguous; a single gold label can be overly deterministic. Human consistency filters unreliable samples and exposes the asymmetry between a model's ability to "generate a scenario" and "identify a meaning."
+**2. Minimal Contrastive Task with Fixed Question and Varied Context: Context as the sole variable**
+The difficulty in evaluating conversational implicature lies in its contextual dependence without the context "spoiling" the answer. In standard multiple-choice sets, models often guess correctly based on option salience. DRInQ formats each instance as $(Q,C,A)$—where $Q$ is fixed, $C$ is the context, and $A$ consists of 5 candidate interpretations. Incorrect options are not random distractors but implied comments that would be correct for the same $Q$ in other contexts. Since all candidates are pragmatically plausible, the model must rely solely on the strength of contextual evidence, mimicking real-world pragmatic disambiguation.
+
+**3. Dual Evaluation via Human Validation and Model Inference: Filtering unreliable samples and exposing generation-recognition asymmetry**
+Pragmatic meaning is inherently ambiguous; a single gold label can be over-determined, and data generated and answered solely by models lacks credibility. 62 pre-screened Prolific annotators participated in validation, retaining 819 samples with at least 4/5 agreement to form a hard subset of 400. On the model side, 12 SOTA models were tested, comparing vanilla few-shot with explanation prompting. A separate human-authoring study with 16 participants compared human-written contexts with GPT-4o's. Human consensus filters unreliable samples while revealing a systematic asymmetry: LLMs can "generate a decent pragmatic scenario" but may not "recover the appropriate meaning in scenarios created by others."
 
 ### Loss & Training
-The paper does not train new models, focusing instead on data generation, human verification, and prompting evaluation. During the generation phase, GPT-4o is used to produce context-interpretation pairs, with an instruction to abstain on unreasonable question-intent combinations. Reasoning evaluation uses few-shot prompts: the vanilla condition provides 3 in-context examples, while the explanation condition requires the model to provide a brief rationale before selecting an answer. Subsequent prompt interventions include conservative, charitable, reasoning, and all, designed to suppress over-inference and malicious intent attribution.
+The paper does not train new models; the core involves data generation, human validation, and prompting evaluation. During generation, GPT-4o produces context-interpretation pairs and is instructed to abstain on implausible question-intent combinations. Inference evaluation uses few-shot prompts: the vanilla condition provides 3 in-context examples, while the explanation condition requires a brief rationale before selecting an answer. Four prompt interventions (conservative, charitable, reasoning, all) were designed to suppress model over-inference and malicious intent attribution.
 
 ## Key Experimental Results
 
 ### Main Results
 | Dataset / Setting | Metric | Ours | Comparison | Description |
-|--------|------|------|----------|------|
-| DRInQ Construction | Base questions / intents | 300 / 23 | 30 hand-written seed questions | Each question linked to at least 5 different intents |
-| Human Verification | Retained samples | 819 | 4/5 annotator agreement | Forms the validated pool |
-| Benchmark | Hard subset | 400 | Low model consistency/disputed samples | Used for main model evaluation |
-| Hard subset | Human Avg | 0.88 ± 0.10 | SOTA LLM ~0.56-0.67 | Humans maintain a significant lead |
-| Hard subset | Best Model | OpenAI-o3: 0.67 ± 0.02/0.03 | GPT-4o: 0.62/0.63 | Explanation yields limited gains for large models |
+|-----------|--------|------|------------|-------------|
+| DRInQ Construction | base questions / intents | 300 / 23 | 30 hand-written seed questions | Each question linked to at least 5 different intents |
+| Human Validation | Retained samples | 819 | At least 4/5 annotator agreement | Used to form validated pool |
+| Benchmark | hard subset | 400 | Low model consensus or controversial samples | Used for main model evaluation |
+| hard subset | Human Avg | $0.88 \pm 0.10$ | SOTA LLM approx. 0.56-0.67 | Humans still lead significantly |
+| hard subset | Best Model | OpenAI-o3: $0.67 \pm 0.02/0.03$ | GPT-4o: 0.62/0.63 | Explanation yields limited gains for large models |
 
 ### Ablation Study
 | Configuration | Key Metric | Description |
-|------|---------|------|
+|---------------|------------|-------------|
 | GPT-5-Nano prompting | 41% -> 73% | Structured prompts help small models most |
-| GPT-5-Mini prompting | 71% -> 81% | Reasoning scaffold narrow gap with strong models |
-| GPT-4o prompting | ~82% ceiling | Large models are less sensitive to prompt intervention |
-| LLM Gen vs Human Writing | LLM novelty 37%, human novelty 22%, tie 40% | LLMs generate more novel scenarios; humans are more conservative |
-| Human consensus vs generated label | Standard sampling 81%, validated overall 67%, hard baseline 27% | Hard samples specifically retain model/human disagreements |
+| GPT-5-Mini prompting | 71% -> 81% | Reasoning scaffold closes the gap with strong models |
+| GPT-4o prompting | ~82% ceiling | Large models are less sensitive to prompt interventions |
+| LLM Gen vs. Human Writing | LLM novelty 37%, human 22%, tie 40% | LLMs prefer novel scenarios; humans are more conservative |
+| Human consensus vs. Gen label | Standard sample 81%, validated overall 67%, hard baseline 27% | Hard samples deliberately retain more model/human disagreement |
 
 ### Key Findings
-- The primary errors of LLMs are not a complete lack of semantic understanding but rather poorly calibrated inference strength. They often amplify negative details in the context into malicious intent or treat a possible interpretation as the only one.
-- Human annotators tend toward more charitable interpretations unless the context explicitly supports malice or reproach; models are more likely to select overly strong or negative options.
-- Prompt intervention is effective for small models, suggesting some errors can be mitigated by reasoning process constraints. However, gains for strong models are limited, indicating that pragmatic calibration is more than just a prompt formatting issue.
-- Regarding data generation, LLM-generated scenarios exhibit more variation and novelty, but they sometimes make implied comments too explicit or exceed the support of the context. Human contexts are safer and more predictable but can be underspecified.
+- The primary error of LLMs is not a total lack of semantic understanding, but poor calibration of inference strength. They tend to amplify negative details in context into malicious intent or treat a possible explanation as the only explanation.
+- Human annotators tend toward more "charitable" interpretations unless the context explicitly supports malice or blame; models are more likely to choose overly strong or negative options.
+- Prompt interventions are effective for small models, suggesting some errors can be mitigated by reasoning constraints; however, gains for strong models are limited, indicating pragmatic calibration is not just a prompting format issue.
+- In data generation, LLM-generated scenarios show more variety and novelty, but sometimes write implied comments that are too explicit or exceed contextual support. Human contexts are safer and more predictable but can be underspecified.
 
 ## Highlights & Insights
-- The task design is clever: by fixing the same question and making the context the sole source of variation, it locates whether a model truly understands the scenario more clearly than standard pragmatic multiple-choice tests.
-- The paper translates the abstract linguistic concept of "conversational implicature" into a scalable generation pipeline. Speech act labels serve as practical tools for controlling data diversity rather than theoretical ornaments.
-- The "Generation-Inference asymmetry" is a critical observation. The fact that a model can generate a plausible pragmatic scenario does not mean it can recover the appropriate meaning in someone else's scenario like a human.
-- Error analysis provides insights for safety evaluation: model over-attribution of malice or hidden intents could impact scenarios requiring careful intent understanding, such as customer service, psychological support, or content moderation.
+- Clever task design: Fixing the question and making context the sole variable allows for clearer localization of whether a model truly understands a scenario compared to standard pragmatic MCQ.
+- The paper translates "conversational implicature" from an abstract linguistic concept into a scalable generation pipeline; speech act labels serve as practical tools for controlling data diversity rather than just theoretical decoration.
+- The "generation-inference asymmetry" is a significant observation. A model's ability to generate a plausible pragmatic scenario does not imply it can recover appropriate meanings in others' scenarios like a human.
+- Error analysis provides insights for safety evaluation: models over-attributing malice or over-reading hidden intents could impact scenarios like customer service, psychological support, or content moderation where cautious intent understanding is required.
 
 ## Limitations & Future Work
-- The multiple-choice format serves only as a diagnostic proxy and cannot fully measure real-world dialogue capability. True pragmatic understanding should involve the ability to generate appropriate responses, ask follow-ups, or maintain uncertainty.
-- Fixed candidate interpretations may overshadow other plausible meanings. Even with 4/5 agreement, it does not mean the remaining interpretations are strictly incorrect.
-- The data is English-centric and reflects the cultural and linguistic backgrounds of Prolific annotators. As conversational implicature is highly dependent on cultural norms, generalization to low-context/high-context cultures or non-English communities is limited.
-- Intent-conditioned generation places GPT-4o in the data production chain, which may introduce model-specific stylistic biases. Future work could introduce stronger uncertainty modeling, open-ended generation evaluation, and cross-cultural annotation.
+- The multiple-choice format serves only as a diagnostic proxy and does not fully measure real-world conversational competence. True pragmatic understanding should manifest in generating appropriate responses or maintaining uncertainty.
+- Fixed candidate interpretations may overshadow other valid meanings. Even with 4/5 agreement, it does not mean the remaining interpretations are strictly incorrect.
+- The data is English-centric and reflects the cultural/linguistic backgrounds of Prolific annotators. Conversational implicature depends heavily on cultural norms, limiting generalization to low/high-context cultures or non-English communities.
+- Intent-conditioned generation places GPT-4o in the production chain, which may introduce model-specific stylistic biases. Future work could include stronger uncertainty modeling, open-ended generation evaluation, and cross-cultural annotation.
 
 ## Related Work & Insights
-- **vs IMPRES / GRICE**: These datasets also focus on implicature or presupposition but are more oriented toward linguistic phenomena and rule control; DRInQ emphasizes fine-grained pragmatic differences under context variation for the same question.
-- **vs FLUTE**: FLUTE covers irony, metaphor, and idioms; DRInQ focuses on the communicative functions of interrogative sentences, making the task closer to indirect expressions in daily conversation.
-- **vs Social Commonsense Benchmarks**: Social commonsense tasks often ask "what happens next" or "how does the character feel," whereas DRInQ requires judging what communicative act the speaker is performing through a question.
-- **Insights for LLM Eval**: Future evaluations should look beyond whether a model can provide a plausible interpretation and instead check if it recognizes when interpretations are "insufficiently evidenced."
+- **vs. IMPRES / GRICE**: These datasets also focus on implicature or presupposition but lean more toward linguistic phenomena and rule-based control; DRInQ emphasizes fine-grained pragmatic differences under contextual variation of the same question.
+- **vs. FLUTE**: FLUTE covers figurative language like irony and metaphor; DRInQ focuses on the communicative function of interrogative sentences, closer to indirect expressions in daily dialogue.
+- **vs. Social Commonsense benchmarks**: Social commonsense tasks often ask "what happens next" or "how does the character feel," whereas DRInQ requires judging what communicative act the speaker is performing via a question.
+- **Insight for LLM Evaluation**: Future evaluation should not just check if a model provides a plausible interpretation, but whether it knows which interpretations are "insufficiently supported by evidence."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The pragmatic evaluation design of fixing questions while controlling context is highly distinctive, and the speech act-based generation is practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Includes data validation, 12 models, prompt intervention, human-AI writing comparisons, and error analysis, though limited by the multiple-choice format.
-- Writing Quality: ⭐⭐⭐⭐☆ Motivation and error patterns are clearly explained; some summary statistics and main table splits may require careful reading to align.
-- Value: ⭐⭐⭐⭐☆ Directly valuable for pragmatic reasoning, LLM dialogue evaluation, and intent calibration in safety-critical scenarios.
+- **Novelty**: ⭐⭐⭐⭐☆ The design of evaluating conversational implicature with fixed questions and controlled context is highly distinctive.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Includes data validation, 12 models, prompt interventions, human-AI writing comparisons, and error analysis, though limited by the MCQ format.
+- **Writing Quality**: ⭐⭐⭐⭐☆ Task motivation and error patterns are clearly explained.
+- **Value**: ⭐⭐⭐⭐☆ Directly relevant for pragmatic inference, LLM dialogue evaluation, and intent calibration in safety-critical scenarios.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
-- [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
+- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
 - [\[ACL 2026\] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions](still_between_us_evaluating_and_improving_voice_assistant_robustness_to_third-pa.md)
+- [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
 - [\[ACL 2026\] S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models](s2s-arena_evaluating_paralinguistic_instruction_following_in_speech-to-speech_mo.md)
-- [\[AAAI 2026\] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](../../AAAI2026/audio_speech/hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio.md)
+- [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 
 </div>
 

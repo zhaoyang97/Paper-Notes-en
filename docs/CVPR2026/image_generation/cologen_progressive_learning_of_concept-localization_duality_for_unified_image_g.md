@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Unified Generation Framework] Introduces CoLoGen, a unified image generation framework based on "Concept-Localization Duality." Through progressive staged training and the Progressive Repres…
+  [CVPR 2026][Image Generation][FLUX] Ours proposes CoLoGen, a unified image generation framework based on "Concept-Localization Duality." By employing progressive multi-stage training and a Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously reaches or exceeds the performance of specialized models across instruc
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Unified Generation Framework"
-  - "Concept-Localization Duality"
-  - "Progressive Training"
-  - "Expert Routing"
-  - "FLUX"
+  - CVPR 2026
+  - Image Generation
+  - FLUX
 date: 2026-05-08
-content_hash: 1045a06dcd00602b
+content_hash: 0c6ca29ef8fce940
 ---
-
 # CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 
 **Conference**: CVPR 2026  
@@ -25,55 +20,69 @@ content_hash: 1045a06dcd00602b
 
 ## TL;DR
 
-Introduces CoLoGen, a unified image generation framework based on "Concept-Localization Duality." Through progressive staged training and the Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously matches or exceeds specialized models across three major tasks: instruction editing, controllable generation, and personalized generation.
+Ours proposes CoLoGen, a unified image generation framework based on "Concept-Localization Duality." By employing progressive multi-stage training and a Progressive Representation Weaving (PRW) dynamic expert routing architecture, it simultaneously reaches or exceeds the performance of specialized models across instruction editing, controllable generation, and personalized generation.
 
 ## Background & Motivation
 
-Unified multimodal image generation (covering mask inpainting, visual grounding, controllable generation, personalized generation, and instruction editing) faces a core dilemma of **representation conflict**:
+Unified multimodal image generation (encompassing mask inpainting, visual grounding, controllable generation, personalized generation, and instruction editing) faces a core dilemma of **representation conflict**:
 
-- **Concept Representation $\mathcal{R}_c$**: Encodings for semantic consistency and object-level understanding; controllable generation (e.g., canny/depth/seg conditions) mainly relies on this capability.
-- **Localization Representation $\mathcal{R}_l$**: Encodings for spatial alignment, geometry, and structural consistency; personalized generation requires precise localization of identity features in reference images.
+- **Concept Representation $\mathcal{R}_c$**: Encodes semantic consistency and object-level understanding; specialized for tasks like controllable generation (e.g., Canny/depth/seg conditions).
+- **Localization Representation $\mathcal{R}_l$**: Encodes spatial alignment, geometric, and structural consistency; essential for personalized generation to precisely locate identity features from reference images.
 
-Existing unified frameworks force these two heterogeneous representations to be shared, causing interference between conceptual understanding and spatial precision (jointly optimizing $f_c$ may damage $f_l$). This explains why current general-purpose models often perform well on certain tasks while degrading on others.
+Existing unified frameworks force these two heterogeneous representations to share parameters, leading to mutual interference between conceptual understanding and spatial accuracy (optimizing $f_c$ may degrade $f_l$). This explains why universal models often perform well in some tasks but deteriorate in others.
 
 ## Method
 
 ### Overall Architecture
 
-Built upon the FLUX.1 architecture, the core consists of two parts:
+CoLoGen aims to enable a single generative model to perform instruction editing, controllable generation, and personalized generation simultaneously without maintaining separate representations for conceptual and spatial capabilities. Based on the FLUX.1 MMDiT backbone, it introduces two key designs: first, the KV projection of the source latent in each multimodal attention block is transformed into a dynamically routable expert pool (PRW), allowing the model to select appropriate representation paths per task. Second, a 5-step progressive training pipeline (from easy to hard) sequentially activates these experts; previously learned capabilities are frozen, and only new experts are unlocked for subsequent tasks. When data flows from the source latent to the attention block, a router selects and fuses experts before interacting with noisy/text latents. Conceptual and localization representations utilize distinct expert paths throughout the process, avoiding mutual interference.
 
-- **PRW (Progressive Representation Weaving)**: A dynamic expert routing module embedded into each MMDiT block.
-- **Progressive Staged Training**: A 5-step training strategy that progresses from foundational capabilities to complex tasks.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SRC["source latent (Reference / Control)"] --> ROUTE
+    subgraph PRW["PRW: KV Projection Expert Routing (Decoupling Concept and Localization)"]
+        direction TB
+        ROUTE["top-1 Noisy Router<br/>Task-based Selection"] --> EXP["Expert Pool Residual Sum<br/>KV = base + Σ Expert corrections"]
+    end
+    EXP --> ATT["Two-step Attention<br/>Source self-attention absorbs expert info → Interacts with noisy/text latent"]
+    ATT --> OUT["Unified Output: Instruction Editing / Controllable Gen / Personalized Gen"]
+    TRAIN["Progressive Multi-stage Training<br/>5 steps (easy to hard), each unlocking one new expert while freezing old ones"] -->|Sequentially fill expert pool| EXP
+    VET["Veteran Gate Routing Supervision<br/>Auxiliary loss constraining new expert ratio ρ=0.8"] -->|Supervise Routing| ROUTE
+```
 
 ### Key Designs
 
-1. **Progressive Representation Weaving (PRW)**: In each multimodal attention block, an expert pool $\{E_k\}_{k=1}^N$ and a dynamic router $G$ are introduced for the KV projection of the source latent. The router selects the most relevant expert via noisy top-1 softmax:
+**1. Progressive Representation Weaving (PRW): Decoupling Concept and Localization via KV Layer Expert Routing**
 
-    $\mathbf{w} = hW_r + \epsilon \odot \text{softplus}(hW_n), \quad \epsilon \sim \mathcal{N}(0, \mathbf{I})$
-    $(K_{\hat{h}}, V_{\hat{h}}) = \text{KV\_proj}_{\text{base}}(h) + \sum_{k \in \mathcal{S}} \text{softmax}(\mathbf{w})_k E_k(h)$
+The primary bottleneck for unified frameworks is forcing concept representation $\mathcal{R}_c$ and localization representation $\mathcal{R}_l$ into the same shared parameters. PRW addresses this by modifying only the KV projection layer of the source latent, augmenting it with an expert pool $\{E_k\}_{k=1}^N$ and a noisy top-1 router. Routing weights are calculated from the current hidden state $h$, with an additive noise term for exploration:
 
-   Attention occurs in two steps: first, the source latent integrates expert information via self-attention, then the noisy/text latent interacts with it. Design Motivation: Allowing different tasks to automatically activate different experts to avoid representation confusion.
+$$\mathbf{w} = hW_r + \epsilon \odot \text{softplus}(hW_n), \quad \epsilon \sim \mathcal{N}(0, \mathbf{I})$$
 
-2. **Progressive Staged Training Strategy**: 5 steps from easy to difficult:
+Selected experts are added as residuals to the base KV projection, providing task-specific corrections without destroying original FLUX representations:
 
-    - **Step 0-1 (Inherent Pre-training)**: Mask Inpainting (3M synthetic data) to learn concepts + Visual Grounding (1M data) to learn localization.
-    - **Step 2 (Condition Injection)**: Controllable Generation (20M data) adapted for Canny/Depth/HED/Lineart/Seg.
-    - **Step 3-4 (Instruction-Image Alignment)**: Customized Generation (200K) + Instruction Editing (1.6M).
+$$(K_{\hat{h}}, V_{\hat{h}}) = \text{KV\_proj}_{\text{base}}(h) + \sum_{k \in \mathcal{S}} \text{softmax}(\mathbf{w})_k E_k(h)$$
 
-   Each step only unlocks a new expert $E_{N-1}$, while historical experts are frozen to retain learned knowledge, similar to lifelong learning.
+The attention mechanism proceeds in two steps: the source latent self-attention incorporates the selected expert information, followed by the interaction between the noisy/text latent and this "task-colored" source representation. Since routing occurs within each block and only affects KV projections, different tasks activate different experts, keeping conceptual and spatial paths non-overlapping.
 
-3. **Veteran Gate Routing Supervision**: To balance the utilization of new and old experts, an auxiliary loss is introduced to constrain the routing density of the new expert:
+**2. Progressive Multi-stage Training: Sequential Expert Activation to Prevent Forgetting**
 
-    $\mathcal{L}_{\text{veteran}} = \alpha \cdot |U_t - \rho|, \quad U_t = \frac{1}{L_n} \sum_{i=1}^{L_n} \mathbb{I}(e_i = N-1)$
+Mixing all tasks from the start causes conflicts that prevent the model from mastering any specific task. CoLoGen splits training into 5 steps based on capability dependencies: Step 0-1 involves endogenous pre-training (3M synthetic samples for Mask Inpainting to develop concept capabilities, and 1M for Visual Grounding for localization). Step 2 introduces conditional signals using 20M samples (Canny/Depth/HED/Lineart/Seg). Step 3-4 focuses on instruction-image alignment (200K samples for Customized Generation, 1.6M for Instruction Editing). Critically, each step unlocks only one new expert $E_{N-1}$ while freezing all previous ones, ensuring new tasks do not overwrite existing capabilities—a form of parameter isolation for lifelong learning.
 
-   Where $\rho = 0.8$ represents the expectation that the new expert is activated 80% of the time, with 20% reserved for historical experts. Total loss $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{task}} + \mathcal{L}_{\text{veteran}}$.
+**3. Veteran Gate Routing Supervision: Constraining New Expert Density**
+
+Freezing old experts is insufficient if the router "lazily" assigns all tokens to the newest expert. CoLoGen introduces a veteran gate loss to supervise the routing ratio $U_t$ of the new expert $E_{N-1}$, pulling it toward a target density $\rho$:
+
+$$\mathcal{L}_{\text{veteran}} = \alpha \cdot |U_t - \rho|, \quad U_t = \frac{1}{L_n} \sum_{i=1}^{L_n} \mathbb{I}(e_i = N-1)$$
+
+Setting $\rho = 0.8$ allows the new expert to handle 80% of tokens while forcing 20% to rely on historical experts, ensuring old capabilities remain active during inference. This is combined with the task loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{task}} + \mathcal{L}_{\text{veteran}}$.
 
 ### Loss & Training
 
 - Main Loss: Standard diffusion generation loss $\mathcal{L}_{\text{task}}$ (Flow Matching).
-- Auxiliary Loss: Veteran Gate Routing Supervision $\mathcal{L}_{\text{veteran}}$, weight $\alpha = 0.5$.
+- Auxiliary Loss: Veteran Gate Routing Supervision $\mathcal{L}_{\text{veteran}}$ with weight $\alpha = 0.5$.
 - PRW experts are implemented using LoRA (rank=128) for parameter efficiency.
-- Each stage is trained for 200K-400K iterations, global batch size 128-256.
+- Each stage is trained for 200K-400K iterations with a global batch size of 128-256.
 - Total training data: ~25M samples.
 
 ## Key Experimental Results
@@ -92,47 +101,47 @@ Built upon the FLUX.1 architecture, the core consists of two parts:
 
 ### Ablation Study
 
-| Config | CLIP-T ↑ | CLIP-I ↑ | DINO ↑ | Description |
+| Configuration | CLIP-T ↑ | CLIP-I ↑ | DINO ↑ | Description |
 |------|---------|---------|--------|------|
 | Baseline (w/o $\mathcal{R}_l$ & $\mathcal{R}_c$) | 0.260 | 0.889 | 0.901 | No experts on MagicBrush |
-| w $\mathcal{R}_l$ only | 0.279 | 0.922 | 0.927 | Localization improves structure preservation |
-| w $\mathcal{R}_c$ only | 0.302 | 0.881 | 0.905 | Concept improves instruction following |
-| Co-training ($\mathcal{R}_c$ & $\mathcal{R}_l$) | 0.269 | 0.918 | 0.922 | Joint training performs worse than separate |
-| CoLoGen (Progressive) | **0.301** | **0.931** | **0.932** | Progressive training resolves conflict |
+| w $\mathcal{R}_l$ only | 0.279 | 0.922 | 0.927 | Localization improves structure |
+| w $\mathcal{R}_c$ only | 0.302 | 0.881 | 0.905 | Concept improves faithfulness |
+| Co-training ($\mathcal{R}_c$ & $\mathcal{R}_l$) | 0.269 | 0.918 | 0.922 | Joint training lags behind |
+| CoLoGen (Progressive) | **0.301** | **0.931** | **0.932** | Resolves conflicts |
 
 ### Key Findings
 
-- The Co-training strategy yielded DINO and CLIP-I scores lower than the baseline in personalized generation, validating the "representation conflict" hypothesis.
-- Progressive training outperformed co-training across all metrics, proving that staged learning effectively mitigates the concept-localization conflict.
-- Veteran Gate Routing $\rho = 0.8$ is optimal; an excessively large $\alpha$ restricts flexibility.
-- LoRA rank=128 was established as the best setting.
+- Co-training strategies result in lower DINO and CLIP-I scores in personalized generation compared to the baseline, validating the "representation conflict" hypothesis.
+- Progressive training outperforms co-training across all metrics, proving phased learning mitigates concept-localization conflicts.
+- Veteran Gate Routing with $\rho = 0.8$ is optimal; excessively large $\alpha$ values restrict flexibility.
+- LoRA rank=128 provides the best performance setting.
 
 ## Highlights & Insights
 
-- **Concept-Localization Duality** provides a profound theoretical insight into the unified image generation dilemma—formalizing "different tasks require different representations" into two competing subspaces.
-- The PRW architecture cleverly reuses the MoE concept but restricts it to the KV projection layer and uses only top-1 routing to remain lightweight.
-- Progressive training + expert freezing is an effective application of lifelong learning in generative models, effectively alleviating catastrophic forgetting.
-- Meticulous data engineering: 3 types of masks for mask inpainting (random/object-shaped/Bessel curve irregular) with a 20:40:40 sampling ratio.
+- **Concept-Localization Duality** provides deep theoretical insight into the difficulties of unified image generation by formalizing requirements as two competing subspaces.
+- The PRW architecture intelligently adapts MoE concepts by restricting them to the KV projection layer with top-1 routing, maintaining efficiency.
+- Progressive training combined with expert freezing is an effective application of lifelong learning in generative models, mitigating catastrophic forgetting.
+- Meticulous data engineering: three types of masks for inpainting (random, object-shaped, Bessel curve) in a 20:40:40 sampling ratio.
 
 ## Limitations & Future Work
 
-1. As the number of tasks and experts increases, the memory footprint of PRW grows continuously, limiting scalability.
-2. Currently, only 5 tasks have been validated; generalization to more condition types (e.g., pose, sketch) remains unknown.
-3. Some metrics are slightly lower than specialized models like UniReal, indicating a gap in absolute performance for unified models.
-4. The parameter count for LoRA rank=128 is not exactly "lightweight," and the performance gap relative to full fine-tuning is not reported.
+1. Memory footprint of PRW increases with the number of tasks and experts, limiting scalability.
+2. Only 5 tasks were validated; generalization to other conditions (e.g., pose, sketch) remains unknown.
+3. Some metrics remain slightly lower than specialized models like UniReal, indicating a performance gap for unified models.
+4. Parameters for LoRA rank=128 are significant; the performance gap compared to full fine-tuning is not reported.
 
 ## Related Work & Insights
 
-- Compared to OmniGen (unified multimodal generation but without explicit representation management), CoLoGen achieves a better balance between editing/customization via PRW.
-- Compared to general-purpose editing models like PixWizard and UniReal, CoLoGen's core advantage lies in its simultaneous handling of controllable generation.
-- Insight: Unified generation should not strive for "one representation fits all tasks" but should enable the model to learn task-adaptive representation switching through dynamic routing.
+- Compared to OmniGen (unified multimodal generation without explicit representation management), CoLoGen achieves a better balance of editing and customization via PRW.
+- Compared to general editing models like PixWizard and UniReal, CoLoGen's competitive advantage lies in its strength in controllable generation.
+- Insight: Unified generation should not aim for a single representation for all tasks but should use dynamic routing to allow task-adaptive representation switching.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The perspective of concept-localization duality is novel, and the combined design of PRW + progressive training is systematic.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers editing, controllable, and personalized tasks across 6 benchmarks with deep ablation.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem definitions are clear, visualization quality is high, and training strategies are detailed.
-- **Value**: ⭐⭐⭐⭐ Provides a theoretically grounded and practical solution for unified image generation; PRW is transferable to other multi-task scenarios.
+- **Novelty**: ⭐⭐⭐⭐ Fresh perspective on duality; systematic design of PRW and progressive training.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers major task lines with 6 benchmarks and deep ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear problem definition, high-quality illustrations, and detailed strategies.
+- **Value**: ⭐⭐⭐⭐ Provides a theoretically grounded and practical solution for unified generation; PRW is transferable to other multi-task scenarios.
 
 <!-- RELATED:START -->
 
@@ -141,10 +150,10 @@ Built upon the FLUX.1 architecture, the core consists of two parts:
 ## Related Papers
 
 - [\[CVPR 2026\] PureCC: Pure Learning for Text-to-Image Concept Customization](purecc_pure_learning_for_text-to-image_concept_customization.md)
+- [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
+- [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
+- [\[CVPR 2026\] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation](imontage_unified_versatile_highly_dynamic_many-to-many_image_generation.md)
 - [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
-- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
-- [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](unified_vector_floorplan_generation_via_markup_representation.md)
-- [\[CVPR 2026\] VecGlypher: Unified Vector Glyph Generation with Language Models](vecglypher_unified_vector_glyph_generation_with_language_models.md)
 
 </div>
 

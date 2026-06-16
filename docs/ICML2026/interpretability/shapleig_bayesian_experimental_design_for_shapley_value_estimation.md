@@ -2,122 +2,116 @@
 title: >-
   [Paper Note] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation
 description: >-
-  [ICML 2026][Interpretability][Shapley Values] For expensive games where evaluation budgets are extremely limited (e.g., requiring model retraining)…
+  [ICML 2026][Interpretability][EIG] On expensive games where the evaluation budget is extremely limited (e.g., requiring model retraining), this work utilizes a Gaussian Process (GP) with a Hamming kernel as a surrogate for the value function. It adaptively selects the next coalition based on the "Expected Information Gain (EIG) relative to the Shapley v
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Shapley Values"
-  - "Bayesian Experimental Design"
-  - "EIG"
-  - "Gaussian Processes"
-  - "Hamming Kernel"
+  - ICML 2026
+  - Interpretability
+  - EIG
 date: 2026-05-08
-content_hash: 7118ff505a73e055
+content_hash: 0544e3ac233e3c67
 ---
-
 # ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.02247](https://arxiv.org/abs/2606.02247)  
-**Code**: Yes (Open repository in Appendix D.1.5)  
+**Code**: Yes (In Appendix D.1.5 of the paper, public repository)  
 **Area**: Explainable Machine Learning / Shapley Value Estimation / Bayesian Experimental Design  
-**Keywords**: Shapley Values, Bayesian Experimental Design, EIG, Gaussian Processes, Hamming Kernel
+**Keywords**: Shapley Value, Bayesian Experimental Design, EIG, Gaussian Process, Hamming Kernel
 
 ## TL;DR
-For expensive games where evaluation budgets are extremely limited (e.g., requiring model retraining), this work utilizes a Gaussian Process (GP) with a Hamming kernel as a surrogate for the value function. It adaptively selects the next coalition based on the "Expected Information Gain (EIG) for Shapley Values" and compresses the EIG computation complexity from $O(4^p t)$ to $O(p^4 + t^3)$.
+On expensive games where the evaluation budget is extremely limited (e.g., requiring model retraining), this work utilizes a Gaussian Process (GP) with a Hamming kernel as a surrogate for the value function. It adaptively selects the next coalition based on the "Expected Information Gain (EIG) relative to the Shapley values" and reduces the EIG computation complexity from $O(4^p t)$ to $O(p^4 + t^3)$.
 
 ## Background & Motivation
 
-**Background**: Shapley Value (SV) is the most widely used axiomatic attribution metric in explainable ML. However, exact calculation requires enumerating $2^p$ coalitions and calling the value function $\nu(S)$ for each. Existing methods generally follow two paradigms: (1) Monte Carlo methods (permutation sampling, MSR, SVARM) which sample coalitions from a **fixed predefined distribution**; (2) Surrogate regression methods (Kernel SHAP, Leverage SHAP, Regression MSR) which fit a surrogate model and then extract SVs, typically using fixed sampling distributions as well.
+**Background**: The Shapley Value (SV) is the most widely used axiomatic attribution measure in explainable ML. However, exact computation requires enumerating $2^p$ coalitions and calling the value function $\nu(S)$ for each. Existing methods generally fall into two categories: (1) Monte Carlo methods (Permutation sampling, MSR, SVARM) which sample coalitions from a **fixed preset distribution**; (2) Surrogate regression methods (Kernel SHAP, Leverage SHAP, Regression MSR) which fit a surrogate and then extract the SV, where coalitions are also sampled from a fixed distribution.
 
-**Limitations of Prior Work**: When the value function itself is expensive—such as TabPFN feature importance (requiring in-context inference), Ghorbani-Zou style data valuation (retraining a RF/GB), HyperSHAP hyperparameter importance (running a round of HPO), or local explanations for large vision models (costly API calls)—the budget may be limited to a few hundred evaluations. Fixed distribution sampling wastes precious query budget on samples that provide redundant information relative to previous coalitions.
+**Limitations of Prior Work**: When the value function itself is expensive—such as TabPFN feature importance (requiring in-context inference reruns), Ghorbani-Zou style data valuation (requiring RF/GB retraining), HyperSHAP hyperparameter importance (requiring HPO rounds), or local explanations for large vision models (requiring API costs)—the budget may be as low as a few hundred evaluations. Fixed distribution sampling wastes precious query budget on samples that provide "homogeneous information" compared to previous coalitions.
 
-**Key Challenge**: The natural inclination is to perform "adaptive coalition selection." However, within the BED framework, EIG usually lacks a closed-form solution. Standard EIG on GPs typically targets the uncertainty of the **surrogate itself** (e.g., Uncertainty Sampling, US), which does not directly align with the downstream SV quantity. Furthermore, even with a selection criterion, brute-force traversal of $2^p$ coalitions is exponential.
+**Key Challenge**: While "adaptive coalition selection" is a natural solution, EIG under the BED framework typically lacks a closed-form solution. Standard EIG on GPs often targets the uncertainty of the surrogate **itself** (e.g., uncertainty sampling, US) rather than the downstream SV. Furthermore, even with a criterion, brute-force traversal over $2^p$ coalitions remains exponential.
 
-**Goal**: (i) Derive a closed-form expression for "EIG for SV"; (ii) reduce EIG computation from $O(4^p t)$ to a polynomial in $p$; (iii) outperform SOTA sampling/surrogate methods in low-budget regimes.
+**Goal**: (i) Deriving a closed-form for the "EIG relative to SV"; (ii) Reducing EIG computation from $O(4^p t)$ to polynomial in $p$; (iii) Outperforming SOTA sampling/surrogate methods in low-budget regimes.
 
-**Key Insight**: SV is a **linear transformation** of the value function $\phi=A\nu$ (based on the Linearity axiom of Shapley). By reframing "selecting coalitions for SV" as a **Bayesian Linear Inverse Problem + Goal-Oriented OED (GOODE)**, the EIG depends only on the GP posterior covariance rather than specific observations, allowing for a closed-form: $-\tfrac12 \log\det(A\Sigma_{\theta\mid y}A^\top)+C$.
+**Key Insight**: SV is a **linear transformation** of the value function $\phi=A\nu$ (linearity axiom of Shapley). By reframing "coalition selection with a focus on SV" within the framework of **Bayesian Linear Inverse Problems + Goal-Oriented OED (GOODE)**, the EIG depends only on the GP posterior covariance rather than specific observations, yielding a closed-form: $-\tfrac12 \log\det(A\Sigma_{\nu\mid y}A^\top)+C$.
 
-**Core Idea**: Use a Hamming kernel GP as the surrogate + derive a closed-form EIG with SV as the linear end-goal + expand the multiplicative structure of the Hamming kernel using Elementary Symmetric Polynomials (ESP) to make EIG calculable in polynomial time.
+**Core Idea**: Use a Hamming kernel GP as a surrogate + formulate SV as a linear end-goal to derive closed-form EIG + utilize Elementary Symmetric Polynomials (ESP) to expand the multiplicative structure of the Hamming kernel, making EIG computable in polynomial time.
 
 ## Method
 
 ### Overall Architecture
-ShaplEIG is a greedy Bayesian Adaptive Design (BAD) loop. **Input**: Player set $P=\{1,\dots,p\}$, value function $\nu:2^P\to\mathbb{R}$ to be estimated, initial coalition subset $\mathcal{C}_0$ (sampled using leverage scores, $T_0=p+1$), candidate pool $\mathcal{C}$, and budget $T$ (typically $\le 512$ in the paper). **Output**: Consistent estimates $\hat\phi$ for all $p$ SVs. In each round $t$, four steps are performed: (1) Select the coalition that maximizes $\mathrm{EIG}^{(t)}_\phi(z^{(i)})$ by **exhaustive search** in the pool $\mathcal{C}$ or over up to 1024 candidates; (2) Evaluate the chosen coalition via $\nu$; (3) Add the new $(z,\nu(z))$ to dataset $\mathcal{D}_{t+1}$; (4) Refit GP hyperparameters $\xi$ via MLE/MAP (this step is the primary mechanism for "true adaptivity," allowing historical observations $y$ to influence subsequent choices). Upon termination, SVs are read directly from the GP posterior mean via $\hat\phi = A\mu_{\nu\mid\mathcal{D}_{T+1}}$.
+ShaplEIG recasts the challenge of enumerating $2^p$ coalitions into a greedy Bayesian Adaptive Design (BAD) loop: using a probabilistic surrogate to fit the expensive value function $\nu$, and at each round asking "which coalition evaluation best reduces uncertainty regarding the SV," spending the limited budget precisely. Given player set $P=\{1,\dots,p\}$, value function $\nu:2^P\to\mathbb{R}$, an initial set $\mathcal{C}_0$ ($T_0=p+1$ samples) via leverage score sampling, and budget $T$ (tested $\le 512$), each round selects the coalition with the maximum expected information gain $\mathrm{EIG}^{(t)}_\phi$ from a candidate pool. The function $\nu$ is then evaluated, $(z,\nu(z))$ is added to the dataset, and surrogate hyperparameters are retrained. Finally, all $p$ SVs are extracted from the posterior mean using a linear operator $\hat\phi = A\mu_{\nu\mid\mathcal{D}_{T+1}}$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Expensive value function ν + Player set P + Budget T<br/>Initial coalition set C₀ via leverage score"] --> B["Hamming kernel GP fits ν<br/>Closed-form posterior mean/covariance"]
+    B --> C["Compute 'EIG for SV' on candidate coalitions<br/>GOODE linear end-goal φ=Aν, closed-form log-det"]
+    C --> D["ESP expansion reduces complexity to O(p⁴+t³)<br/>Scalable to large p (≤101)"]
+    D --> E["Select coalition z* with max EIG<br/>Evaluate ν(z*) and add to dataset"]
+    E -->|Budget T not reached: Refit GP hyper ξ| B
+    E -->|Budget T reached| F["Extract p SVs via linear operator φ̂ = A·μ"]
+```
 
 ### Key Designs
 
-1.  **Hamming Kernel GP as Value Function Surrogate**:
-    - **Function**: Provides a fully probabilistic surrogate for $\nu$ on the binary coalition space $\{0,1\}^p$, offering well-calibrated uncertainty in low-data regimes.
-    - **Mechanism**: Represents coalitions as indicator vectors $z\in\{0,1\}^p$ and uses a weighted Hamming distance kernel $k_\xi(z,z')=\prod_{j=1}^p \xi_j^{\mathbb{1}[z_j\ne z'_j]}$ (with one learnable weight $\xi_j$ per player). For a fixed $\xi$, $\nu(Z)\mid\mathcal{D}_t,\xi$ is a $2^p$-dimensional MVN with **closed-form posterior mean and covariance**.
-    - **Design Motivation**: Traditional Kernel SHAP uses a linear surrogate with fixed weights, where posterior uncertainty depends only on the selected coalitions and is **independent of observations**, making the design inherently non-adaptive. A GP with learnable $\xi$ injects information from observations into subsequent EIG computations through kernel hyperparameters, enabling outcome-adaptive design. The multiplicative structure of the Hamming kernel also facilitates ESP expansion, which is essential for $O(p^4)$ computation.
+**1. Hamming Kernel GP Surrogate: Enabling Outcome-Adaptive Design**
+Classic Kernel SHAP uses a linear surrogate with fixed weights, where posterior uncertainty depends only on "which coalitions were chosen" and not on the actual observed $\nu$ values, making the design non-adaptive. ShaplEIG adopts a Gaussian Process defined on the binary coalition space $\{0,1\}^p$ using a weighted Hamming kernel: $k_\xi(z,z')=\prod_{j=1}^p \xi_j^{\mathbb{1}[z_j\ne z'_j]}$, where each player has a learnable weight $\xi_j$. For a fixed $\xi$, $\nu(Z)\mid\mathcal{D}_t,\xi$ is a $2^p$-dimensional multivariate Gaussian with closed-form posterior moments, providing well-calibrated uncertainty even in low-data regimes. Crucially, $\xi$ is retrained each round, allowing historical $\nu$ values to influence future EIG via kernel hyperparameters, making the design truly outcome-adaptive. The multiplicative structure of the Hamming kernel is also the prerequisite for the ESP expansion that achieves $O(p^4)$ complexity.
 
-2.  **SVs as the Linear End-Goal for GOODE with Closed-form EIG**:
-    - **Function**: Converts the difficult "EIG for the $p$-dimensional SV vector $\phi$" (usually requiring nested MC) into a single log-det expression.
-    - **Mechanism**: The Shapley axioms guarantee $\phi = A\nu$, where $A \in \mathbb{R}^{p \times 2^p}$ has elements $\frac{\mathbb{1}_S}{p}\binom{p-1}{|S|-1}^{-1} - \frac{1-\mathbb{1}_S}{p}\binom{p-1}{|S|}^{-1}$. Under a GP prior, this is a linear projection from "parameters → end-goal" in a Bayesian linear inverse problem. EIG can be written as $\mathrm{EIG}_\phi(z^{(i)}) \propto C' + \log[e_i^\top(\Sigma_{\nu\mid\mathcal{D}_t}+\sigma_\epsilon^2 I)e_i] - \log[e_i^\top(\Sigma_{\nu\mid\mathcal{D}_t}+\sigma_\epsilon^2 I - Q)e_i]$, where $Q_{i,i}=(A\Sigma_{\nu\mid\mathcal{D}_t}e_i)^\top (A\Sigma_{\nu\mid\mathcal{D}_t}A^\top)^{-1}(A\Sigma_{\nu\mid\mathcal{D}_t}e_i)$. This instantiates Attia (2018) GOODE results for the SV setting.
-    - **Design Motivation**: Applying EIG directly to the untransformed $\nu$ (known as ITL in information theory) on a GP reduces to pure US, selecting coalitions where the surrogate itself is most uncertain while ignoring the impact on the downstream uncertainty of $\phi$. The paper also demonstrates that EPIG is computationally infeasible over the $2^p$ target distribution. Embedding $A$ into the log-det directly optimizes for the downstream quantity of interest.
+**2. Treating SV as a Linear End-Goal in GOODE for Closed-form EIG**
+Calculating EIG directly on the untransformed $\nu$ (standard ITL) in a GP setting degenerates into simple uncertainty sampling (US)—selecting coalitions where the surrogate is most uncertain, regardless of its impact on the target $\phi$. ShaplEIG leverages the linearity axiom $\phi=A\nu$ (where $A\in\mathbb{R}^{p\times 2^p}$ consists of elements $\frac{\mathbb{1}_S}{p}\binom{p-1}{|S|-1}^{-1} - \frac{1-\mathbb{1}_S}{p}\binom{p-1}{|S|}^{-1}$) to frame the problem within Goal-Oriented Optimal Experimental Design (GOODE). Here, SV is a linear projection of the parameters $\nu$. Consequently, EIG depends only on the posterior covariance, yielding a closed-form: $\mathrm{EIG}_\phi(z^{(i)}) \propto C' + \log[e_i^\top(\Sigma_{\nu\mid\mathcal{D}_t}+\sigma_\epsilon^2 I)e_i] - \log[e_i^\top(\Sigma_{\nu\mid\mathcal{D}_t}+\sigma_\epsilon^2 I - Q)e_i]$, where $Q_{i,i}=(A\Sigma_{\nu\mid\mathcal{D}_t}e_i)^\top (A\Sigma_{\nu\mid\mathcal{D}_t}A^\top)^{-1}(A\Sigma_{\nu\mid\mathcal{D}_t}e_i)$. This specialization of the GOODE result (Attia 2018) to the SV setting replaces nested MC estimation with a single log-det, ensuring the criterion targets the SV rather than the surrogate.
 
-3.  **Compressing EIG from $O(4^p t)$ to $O(p^4 + t^3)$ using ESP**:
-    - **Function**: Makes closed-form EIG calculable for games up to $p \approx 100$. Vectorization over candidate batches yields $O(p^4+t^3+|W|t^2)$.
-    - **Mechanism**: A naive algorithm would construct the $2^p \times 2^p$ matrix $\Sigma_{\nu\mid\mathcal{D}_t}$ and then perform projections, with a dominant term of $O(4^p t)$. Theorems B.1/B.2 in the paper rewrite the linear term $AK_\xi(Z,z^{(i)}) \in \mathbb{R}^p$ and the quadratic term $AK_\xi(Z,Z)A^\top \in \mathbb{R}^{p \times p}$ as "weighted kernel sums across coalitions." By identifying shared weights and correlating sums with **univariate/bivariate ESPs**, the complexity drops to $O(p^2)$ and $O(p^4)$ respectively. This is enabled by the multiplicative structure of the Hamming kernel.
-    - **Design Motivation**: Without this optimization, closed-form EIG is only "theoretically elegant"—a $p=10$ game would already imply $4^{10} \approx 10^6$ dimensional matrices. This allows the method to scale to real-world tasks like the Crime dataset ($p=101$).
+**3. Complexity Reduction from $O(4^p t)$ to $O(p^4 + t^3)$ via ESP**
+The closed-form EIG is theoretically elegant but a naive implementation requires constructing the $2^p\times 2^p$ covariance $\Sigma_{\nu\mid\mathcal{D}_t}$, which is $O(4^p t)$. Theorem B.1/B.2 in the paper rewrites the linear term $AK_\xi(Z,z^{(i)})\in\mathbb{R}^p$ and the quadratic term $AK_\xi(Z,Z)A^\top\in\mathbb{R}^{p\times p}$ as sums of weighted kernel evaluations across coalitions. By observing that many evaluations share weights, these sums are mapped to unary and binary Elementary Symmetric Polynomials (ESP). This reduces the complexity of these terms to $O(p^2)$ and $O(p^4)$ respectively, resulting in a total complexity of $O(p^4+t^3+|W|t^2)$ after vectorizing candidates. This breakthrough enables application to scales as large as $p=101$ (LE on Crime data), relying entirely on the multiplicative structure of the Hamming kernel $k(z,z')=\prod_j\xi_j^{\mathbb{1}[\cdot]}$.
 
 ### Loss & Training
-The GP hyperparameters $\xi$ are retrained via MAP from the posterior $p(\xi \mid \mathcal{D}_{t+1})$ at each round (or according to a refit schedule for large $p$). Value function evaluations are assumed to have Gaussian noise $\epsilon \sim \mathcal{N}(0, \sigma_\epsilon^2)$, though the paper notes consistency for noiseless GPs: when all $2^p$ coalitions are evaluated, GP interpolativity $\mu_{\nu(z)\mid \mathcal{D}_{2^p+1}} = \nu(z)$ ensures $\mu_\phi = \phi(\nu)$. This **structural consistency** is an advantage over Regression MSR (where tree surrogates are inconsistent and require residual correction).
+GP hyperparameters $\xi$ are retrained every round (or per a refit schedule for large $p$) using MAP optimization of the posterior $p(\xi\mid\mathcal{D}_{t+1})$. This is the primary channel for historical observations to feedback into the design. While function evaluation is assumed to have Gaussian noise $\epsilon\sim\mathcal{N}(0,\sigma_\epsilon^2)$, the paper notes consistency under a noiseless GP: if all $2^p$ coalitions were evaluated, the interpolation property $\mu_{\nu(z)\mid\mathcal{D}_{2^p+1}}=\nu(z)$ ensures $\mu_\phi=\phi(\nu)$, making the estimator **constructively consistent**.
 
 ## Key Experimental Results
 
-Experiments used 15 games across 4 task categories with $p \in [8, 101]$, each run with 30 or 100 seeds. All baselines were evaluated with an equal budget per round for fair comparison.
+Experiments used 15 games across 4 categories with player counts $p\in[8,101]$, across 30 or 100 seeds. Baselines were given equivalent $\nu$ evaluation budgets.
 
 ### Main Results
-| Task Category | Representative Game | $p$ | ShaplEIG vs SOTA (Low-Budget MSE) |
-| :--- | :--- | :--- | :--- |
-| FI (TabPFN) | Diabetes Reg. | 10 | Strictly superior to Kernel/Leverage SHAP, Perm. Sampling, and Reg. MSR throughout. |
-| DV (RF on Bike Sharing) | Bike Sharing | 10 | Leads all baselines by multiple orders of magnitude. |
-| HPI (XGBoost on Chess) | Chess | 16 | Competitive with Reg. MSR initially, then leads in the low MSE regime. |
-| LE (ViT 16-patch) | ImageNet | 16 | Outperforms all competitors throughout. |
-| LE (RF on Crime, Large $p$) | Crime | 101 | Despite scheduled hyperparameter retraining, it remains feasible and eventually leads. |
-
-The paper describes ShaplEIG as strictly dominant across all budgets on most games, with Regression MSR occasionally matching it over narrow intervals. Other baselines are significantly outperformed in low-budget regions.
+| Task Category | Representative Game | $p$ | ShaplEIG vs SOTA (Low-budget MSE) |
+|---------------|---------------------|-----|-----------------------------------|
+| FI (TabPFN) | Diabetes Reg. | 10 | Strictly superior to Kernel/Leverage SHAP, Perm. Sampling, Reg. MSR |
+| DV (RF on Bike Sharing) | Bike Sharing | 10 | Significant lead over all baselines by multiple orders of magnitude |
+| HPI (XGBoost on Chess) | Chess | 16 | Competitive with Reg. MSR early, then leads in low MSE regimes |
+| LE (ViT 16-patch) | ImageNet | 16 | Superior to all competitors throughout |
+| LE (RF on Crime, large $p$) | Crime | 101 | Scalable and eventually leading despite schedule-based refitting |
 
 ### Ablation Study
 | Configuration | Key Finding |
-| :--- | :--- |
+|---------------|-------------|
 | Full ShaplEIG | Best overall performance. |
-| GP + Random sampling | Significantly outperformed by ShaplEIG in most games. |
-| GP + Leverage Score Sampling | Occasionally approaches ShaplEIG but is consistently surpassed. |
-| GP + Uncertainty Sampling (US) | **Worse than GP + Random**, suggesting classic BED US criteria are unsuitable for SV. |
-| ShaplEIG (Large $p \ge 60$, periodic refit) | Slightly outperformed by weak baselines in the first 100 rounds, then overtakes them. |
+| GP + Random sampling | Outperformed by ShaplEIG by a large margin on most games. |
+| GP + Leverage Score Sampling | Occasionally competitive, but consistently surpassed by ShaplEIG. |
+| GP + Uncertainty Sampling (US) | **Worse than GP+Random**, proving standard US is unsuitable for SV estimation. |
+| ShaplEIG (Large $p\ge 60$) | Slightly slower start compared to weak baselines, but overtakes later. |
 
 ### Key Findings
-- **Performance Source**: High performance is not merely from the GP surrogate itself—ShaplEIG beats GP+Random and GP+US, indicating that EIG-based coalition selection is the primary contribution.
-- **US vs. Random**: Counter-intuitively, US performs worse than random for SV estimation because it targets coalitions where the surrogate is most uncertain, ignoring the downstream impact on SV. This justifies the necessity of EIG formulated directly for SV.
-- **Computational Overhead**: For $p \le 16$, hyperparameter retraining takes $\le 2$ min/round and EIG takes $< 1$ sec. For $p \le 100$, retraining takes $\le 25$ min/round and EIG takes $\le 30$ sec. **Hyperparameter retraining is the bottleneck**, making GP-based ablations (even without EIG) equally expensive, which supports the efficiency of the EIG derivation itself.
-- **Sweet Spot**: ShaplEIG is ideal when $\nu$ is very expensive (heavy retraining/API calls) and $p$ is moderate (optimal for $\le 16$, acceptable for $\sim 100$).
+- Strong performance is not solely due to the GP surrogate—the fact that GP+Random/Leverage/US are beaten by ShaplEIG proves that EIG-based selection is the core contribution.
+- US performs poorly because it targets surrogate uncertainty while ignoring impact on the downstream $\phi$, highlighting the necessity of the GOODE formulation.
+- Computational Overhead: For $p\le 16$, hyperparameter refitting takes $\le 2$ mins/round, EIG takes $<1$s. For $p\approx 100$, refitting takes $\le 25$ mins/round, EIG $\le 30$s. **Refitting is the bottleneck**, making ShaplEIG ideal when $\nu$ itself is the dominant cost (e.g., training a model).
 
 ## Highlights & Insights
-- **Goal-Oriented Targeting**: Directly rejects the naive view that "an accurate surrogate naturally leads to accurate SVs." It proves that while EIG for $\nu$ reduces to US, it is a highly effective criterion for the linear projection $A\nu$.
-- **Hamming Kernel + ESP Synergy**: The multiplicative structure $\prod_j \xi_j^{\mathbb{1}[\dots]}$ allows the kernel sums over player subsets to map perfectly to Elementary Symmetric Polynomials. This custom-fit synergy provides the polynomial-time efficiency that other kernel classes (like categorical RBF) cannot achieve.
-- **Consistency and Closed-form**: Offers engineering advantages over Regression MSR. While MSR's tree surrogate is biased and requires residual MSR correction, ShaplEIG is automatically consistent under noiseless GP settings.
-- **Transferable Design**: The GOODE + Hamming-GP + ESP framework can be reused for any linear functional of $\nu$ in expensive games (e.g., Sobol indices, fANOVA decomposition) simply by changing the matrix $A$.
+- **SV as an "End-goal"**: Directly contradicts the naive view that "better surrogate accuracy automatically leads to better SV accuracy." Proving EIG for $\nu$ is just US, whereas EIG for $A\nu$ is a superior criterion for SV.
+- **Hamming Kernel + ESP Synergy**: The structure $\prod_j \xi_j^{\mathbb{1}[\cdot]}$ allows the weighted sum of kernels across player subsets to map exactly to ESPs, converting exponential complexity to polynomial. This is uniquely suited for the Hamming kernel.
+- **Constructive Consistency**: Unlike Regression MSR which requires residual correction for consistency, ShaplEIG is inherently consistent in the noiseless GP case.
 
 ## Limitations & Future Work
-- **Bottleneck**: The authors acknowledge that GP hyperparameter retraining is the primary cost. For $p > 100$, the multi-minute per-round cost makes the method viable only if $\nu$ is even more expensive. It is inefficient for cheap $\nu$ (e.g., standard SHAP).
-- **Evaluation Scenarios**: Evaluations relied on **precomputed games** (cached value tables) for ground-truth comparison. The framework has not been stress-tested in end-to-end "in-the-loop" scenarios like retraining LLMs or diffusion models where evaluations take hours.
-- **Greedy Selection**: The suboptimality of greedy BAD and consistency under noisy GPs are discussed primarily in the Appendix. The poor performance of pure exploration (US) suggests sensitivity to game symmetry, though this is not yet quantified.
-- **Future Directions**: (i) Amortized/lazy hyperparameter retraining; (ii) Batch BED for picking multiple coalitions; (iii) More expressive kernels that preserve ESP compatibility; (iv) Extension to high-order Shapley interaction indices.
+- Computational cost of GP refitting: For $p>100$, the overhead (minutes to hours) makes the method practical only when $\nu$ is significantly more expensive.
+- Reliance on pre-computed games: Evaluation mainly used cached tables; end-to-end tests on real-time training of large models (LLMs/Diffusion) are not yet fully stress-tested.
+- Future directions: (i) Amortized or lazy hyperparameter refitting; (ii) Batch BED for multi-coalition selection; (iii) Extension to higher-order Shapley interaction indices.
 
 ## Related Work & Insights
-- **vs. Kernel SHAP / Leverage SHAP / Regression MSR**: These use fixed sampling distributions and observation-agnostic surrogates. ShaplEIG uses an outcome-adaptive design targeting SV directly and is inherently consistent.
-- **vs. BayesSHAP (Slack 2021)**: BayesSHAP uses Bayesian linear models with US. ShaplEIG improves this by (a) using GPs for better outcome-adaptivity and (b) upgrading the criterion from US to EIG for SV.
-- **vs. Mitchell 2022 / Nguyen 2025 (GP+BQ for SV)**: Their kernels are defined on permutations or data distributions, usually reducing uncertainty for one player at a time with fixed kernels (non-adaptive). ShaplEIG's kernel is in the coalition space and targets the joint uncertainty of all players' SVs with adaptive retraining.
-- **vs. Active Learning / ITL / EPIG**: ITL collapses to US here, and EPIG is computationally intractable over the $2^p$ space. ShaplEIG leverages the linearity of SV to achieve a closed-form solution, bypassing standard nested MC issues in BED.
+- **vs Kernel SHAP / Regression MSR**: These use fixed distributions; ShaplEIG is outcome-adaptive and inherently consistent.
+- **vs BayesSHAP (Slack 2021)**: BayesSHAP uses Bayesian linear models + US. ShaplEIG upgrades to GP (for outcome-adaptivity) and EIG for SV (overcoming US limitations).
+- **vs GP+BQ for SV**: Prior GP approaches typically defined kernels on permutations and were non-adaptive; ShaplEIG's kernel operates on coalition space and targets joint SV uncertainty adaptively.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Introduces the GOODE perspective to Shapley estimation with original theoretical and algorithmic results (closed-form EIG + ESP $O(p^4)$ computation).
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 15 games across 4 categories with $p \in [8, 101]$, including strong baselines and ablations, though lacks end-to-end online "expensive $\nu$" verification.
-- Writing Quality: ⭐⭐⭐⭐ Clearly links BED terminology, Shapley axioms, and GP derivations, though the reliance on the appendix for core proofs makes the main text feel slightly abstract.
-- Value: ⭐⭐⭐⭐ Provides a SOTA estimator for the specific "expensive $\nu$ + low budget" regime with a clear interface for related problems like fANOVA or Sobol indices.
+- Novelty: ⭐⭐⭐⭐⭐ Framing SV estimation as GOODE and providing $O(p^4)$ calculation via ESP is highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage across multiple game types and ablation studies is strong; real-world "live" evaluation on expensive models would be better.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical flow; however, core proofs in the appendix make the main text somewhat dense.
+- Value: ⭐⭐⭐⭐ Provides a SOTA estimator for expensive game scenarios with a clear interface for reuse in similar linear functional problems (Sobol indices, etc.).
 
 <!-- RELATED:START -->
 
@@ -126,7 +120,7 @@ The paper describes ShaplEIG as strictly dominant across all budgets on most gam
 ## Related Papers
 
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ICML 2026\] Verified SHAP: Provable Bounds for Exact Shapley Values in Neural Networks](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
+- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
 - [\[ICML 2026\] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models](dual_mechanisms_of_value_expression_intrinsic_vs_prompted_values_in_large_langua.md)
 - [\[ICML 2026\] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere](neural_collapse_by_design_learning_class_prototypes_on_the_hypersphere.md)

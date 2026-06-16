@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding
 description: >-
-  [ICML 2026][LLM Safety][Speculative Decoding] This paper proposes PipeSD: transforming speculative decoding from sequential cloud-edge execution to a token-batch pipeline…
+  [ICML 2026][LLM Safety][Speculative Decoding] This paper proposes PipeSD: a framework that transforms speculative decoding from sequential execution into a token-batch pipeline. It replaces fixed draft lengths with dual-threshold NAV (Next-token Adaptive Validation) triggers and Bayesian Optimization for automatic parameter tuning. On a real-world cloud-edge testb
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Speculative Decoding"
-  - "Cloud-Edge"
-  - "Pipeline Scheduling"
-  - "Bayesian Optimization"
-  - "Dynamic Programming"
+  - ICML 2026
+  - LLM Safety
+  - Speculative Decoding
+  - Cloud-Edge
+  - Pipeline Scheduling
+  - Bayesian Optimization
 date: 2026-05-08
-content_hash: 8c186d552e164766
+content_hash: 0ad212ef5b80e308
 ---
-
 # PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -24,108 +22,117 @@ content_hash: 8c186d552e164766
 **Keywords**: Speculative Decoding, Cloud-Edge, Pipeline Scheduling, Bayesian Optimization, Dynamic Programming
 
 ## TL;DR
-This paper proposes PipeSD: transforming speculative decoding from sequential cloud-edge execution to a token-batch pipeline, replacing fixed draft length with dual-threshold NAV triggering and Bayesian autotuning. On a real 5G cloud-edge testbed, PipeSD achieves 1.16×–2.16× speedup and 14–25% reduction in cloud energy consumption.
+This paper proposes PipeSD: a framework that transforms speculative decoding from sequential execution into a token-batch pipeline. It replaces fixed draft lengths with dual-threshold NAV (Next-token Adaptive Validation) triggers and Bayesian Optimization for automatic parameter tuning. On a real-world cloud-edge testbed with 5G bandwidth, it achieves $1.16\times–2.16\times$ speedup and $14–25\%$ reduction in cloud energy consumption.
 
 ## Background & Motivation
-**Background**: The bottleneck of large model inference lies in the serial dependency of autoregressive generation. Speculative decoding breaks this serialism by having a small draft model generate $N$ tokens, then a large target model verifies them via NAV in one shot. Cloud-edge collaborative deployment is naturally suited: draft runs on the edge for energy efficiency and privacy, target runs on the cloud for compute. Existing frameworks include HSL, HAT, and SpecEdge.
+**Background**: The bottleneck of LLM inference lies in the serial dependency of autoregressive generation. Speculative decoding (SD) breaks this by using a "small draft model to generate $N$ tokens $\rightarrow$ large target model for one-time NAV verification." Cloud-edge collaborative deployment is a natural fit: the draft model resides on the edge for energy efficiency and privacy, while the target model leverages powerful cloud compute. Existing frameworks include HSL, HAT, and SpecEdge.
 
-**Limitations of Prior Work**: (1) Existing frameworks follow a "generate all drafts → upload as a whole → NAV" sequential pipeline, causing the edge to wait for NAV feedback and the cloud to wait for draft upload, leaving both bandwidth and compute underutilized; (2) NAV triggering either uses a fixed draft length (HSL uses $N=6$), or a single confidence signal (HSL uses single token confidence, EdgeLLM uses cumulative sequence confidence), which cannot jointly reflect token difficulty—leading to either premature triggering (wasting compute) or late triggering (causing large rollbacks).
+**Limitations of Prior Work**: (1) Existing frameworks follow a sequential pipeline of "generate all drafts $\rightarrow$ upload as a whole $\rightarrow$ NAV," causing idle time for both edge (waiting for NAV feedback) and cloud (waiting for draft uploads). (2) NAV triggers either use fixed draft lengths (e.g., $N=6$ in HSL) or single confidence signals (e.g., single token confidence in HSL, cumulative sequence confidence in EdgeLLM), which fail to jointly reflect token difficulty—leading to either premature triggers that waste compute or late triggers causing massive rollbacks.
 
-**Key Challenge**: Communication startup cost $\alpha$ is significant, so sending each token immediately (extreme pipelining) can be slower than batching; but fully sequential execution wastes waiting time. The optimal batch strategy—how many tokens to merge before sending—must be found. NAV triggering should consider both "is the whole segment still credible" (sequence confidence) and "is any token already unreliable" (single token confidence); a single signal is biased.
+**Key Challenge**: The communication startup overhead $\alpha$ is significant; thus, an extreme pipeline (sending every token immediately) is slower than batch transmission. However, pure sequential execution wastes time. The challenge is to find the optimal batching strategy for clusters of tokens. Simultaneously, NAV triggers must monitor both the "reliability of the entire segment" (sequence confidence) and "individual token anomaly" (single-token confidence), as single signals are inherently biased.
 
-**Goal**: (1) Formalize token generation-communication pipeline scheduling and find the optimal batch boundaries; (2) Use dual-threshold NAV to combine sequence and token-level signals; (3) Automatically tune thresholds on the edge to adapt to dynamic network and compute.
+**Goal**: (1) Formalize the token generation-communication pipeline and solve for optimal batch boundaries; (2) Implement a dual-threshold NAV trigger accounting for both sequence and token signals; (3) Automatically tune thresholds at the edge to adapt to dynamic network and compute conditions.
 
-**Key Insight**: Communication startup cost $\alpha$, per-token transmission time $\beta$, and per-token compute $\gamma$ can be measured online. The scheduling problem is a classic DAG scheduling problem, solvable by DP in $O(\hat N^2)$ time; the effect of thresholds on TPT is non-analytic but sample-efficient, so Bayesian optimization can approach optimality within 16 samples.
+**Key Insight**: Communication startup cost $\alpha$, per-token transmission time $\beta$, and per-token compute time $\gamma$ can be measured online. The scheduling problem is a classic DAG scheduling task solvable via DP in $O(\hat N^2)$ time. Although the impact of thresholds on Time Per Token (TPT) is non-analytical, sampling is cheap, allowing Bayesian Optimization (BO) to approach the optimum within 16 samples.
 
-**Core Idea**: The combination of "DP-optimal token-batch pipelining + dual-threshold NAV + BO autotuning" pushes cloud-edge speculative decoding's compute/bandwidth utilization close to the Pareto frontier.
+**Core Idea**: By combining "DP-optimal token-batch pipelining + Dual-threshold NAV + BO autotuning," the framework pushes cloud-edge speculative decoding efficiency toward the Pareto front.
 
 ## Method
 
 ### Overall Architecture
-A speculative round in PipeSD consists of four steps: (1) The edge draft model autoregressively generates draft tokens; (2) The edge Token-batch Pipeline Scheduler uses DP to determine batch boundaries $\mathbb B=(b_1,\dots,b_K)$ and uploads batches in real time, overlapping with generation; (3) The Dual-threshold NAV Trigger continuously monitors both single token and cumulative sequence confidence, triggering NAV if either threshold is crossed, with the BO autotuner periodically updating thresholds; (4) The cloud target model performs NAV and returns accept/reject. The system is implemented with llama-cpp-python (edge) + PyTorch + FastAPI (cloud); the edge also has an Environment Monitor that continuously measures $(\alpha,\beta,\gamma)$ and triggers DP rerun on significant changes.
+PipeSD resolves the bidirectional idling in cloud-edge speculative decoding. A speculative round operates as follows: the edge draft model performs autoregressive generation while the Token-batch Pipeline Scheduler packs and uploads tokens according to DP-calculated boundaries $\mathbb B=(b_1,\dots,b_K)$ to overlap transmission with generation. Simultaneously, the Dual-threshold NAV Trigger monitors single-token and cumulative sequence confidence, initiating NAV if either crosses a threshold. The cloud target model validates and returns accepted/rejected tokens. All adaptive logic resides at the edge: the Environment Monitor captures $(\alpha,\beta,\gamma)$ to trigger DP recalculations, and the BO autotuner periodically updates trigger thresholds. The system is implemented using llama-cpp-python (edge) + PyTorch + FastAPI (cloud).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Edge Draft Model<br/>Autoregressive Generation"] --> B["Token-batch Pipeline DP Scheduler<br/>Pack and upload via optimal boundaries B"]
+    B -->|Overlap Gen & Comm| C["Dual-threshold NAV Trigger<br/>C1≤R1 or P(Dn)≤R2"]
+    C -->|Threshold Violated| D["Cloud Target Model NAV Verification<br/>Return accepted tokens"]
+    D -->|Next Round| A
+    E["Environment Monitor<br/>Online Measure α,β,γ"] -->|α/β/γ change → Rerun DP| B
+    F["BO autotuner<br/>16-sample search for R1,R2"] -->|TPT change → Update Thresholds| C
+```
 
 ### Key Designs
 
-1. **DP-Optimal Scheduling for Token-batch Pipelining**:
+**1. DP-Optimal Token-batch Pipeline: Finding optimal batch boundaries when communication startup overhead is non-negligible.**
 
-    - **Function**: Given communication startup cost $\alpha$, per-token transmission time $\beta$, and per-token compute $\gamma$, find batch boundaries $\mathbb B$ that minimize total generation and transmission time.
-    - **Mechanism**: For batch $k$, communication time is $t_c^{(k)}=\alpha+\beta\cdot(b_{k+1}-b_k)$, generation time is $t_{ag}^{(k)}=\gamma\cdot(b_{k+1}-b_k)$. Communication depends on "previous batch communication finished and current batch generation finished", recursively $\tau_c^{(k)}=\max\{\tau_c^{(k-1)}+t_c^{(k-1)},\tau_{ag}^{(k)}+t_{ag}^{(k)}\}$. The objective is $\min T=\tau_c^{(K)}+t_c^{(K)}-\tau_{ag}^{(1)}$. Algorithm 1 uses $dp[j]$ to represent the optimal time for the first $j$ tokens, enumerating previous batch start $i<j$ to get $dp[j]=\min_i\{\max(dp[i],\gamma j)+\alpha+\beta(j-i)\}$; backtracking yields $\mathbb B$, with complexity $O(\hat N^2)$. The paper proves this is optimal (Theorem 4.1).
-    - **Design Motivation**: Naive batching (all tokens together or sending each token immediately) is not Pareto optimal since $\alpha$ is non-negligible; DP considers both amortizing $\alpha$ and the "cover window" of generation time, dynamically deciding whether batching 2 or 3 tokens is more efficient.
+The trade-off is clear: waiting for completion (edge idle) vs. immediate per-token transmission (startup overhead $\alpha$) are both suboptimal. PipeSD formalizes this as DAG scheduling. For batch $k$, communication duration is $t_c^{(k)}=\alpha+\beta\cdot(b_{k+1}-b_k)$, generation duration is $t_{ag}^{(k)}=\gamma\cdot(b_{k+1}-b_k)$. Communication for a batch must wait for both the previous transmission and its own generation to finish: $\tau_c^{(k)}=\max\{\tau_c^{(k-1)}+t_c^{(k-1)},\tau_{ag}^{(k)}+t_{ag}^{(k)}\}$. The objective is $\min T=\tau_c^{(K)}+t_c^{(K)}-\tau_{ag}^{(1)}$. Algorithm 1 uses $dp[j]$ to denote optimal duration for the first $j$ tokens, iterating over previous batch start $i<j$:
 
-2. **Dual-threshold NAV Triggering Mechanism**:
+$$dp[j]=\min_{i<j}\big\{\max(dp[i],\,\gamma j)+\alpha+\beta(j-i)\big\},$$
 
-    - **Function**: Simultaneously monitors "whether the whole sequence is still worth drafting" and "whether any token falls below the alert line", avoiding premature or delayed triggering caused by single-signal approaches.
-    - **Mechanism**: Define cumulative sequence confidence $C_1=\prod_{n}P(D_n)$ (product of probabilities for draft tokens not yet verified) and single token confidence $P(D_n)$. For each new token, compute tentative $C_1^*=C_1\cdot P(D_n)$; if $C_1^*\le R_1$ or $P(D_n)\le R_2$, trigger NAV and reset $C_1=1$.
-    - **Design Motivation**: HSL only considers $P(D_n)$, so if each token is moderately credible, NAV is never triggered—leading to over-generation; EdgeLLM only considers $C_1$, which can mask single-point failures—delaying error detection. The dual-threshold covers both failure modes.
+Backtracking yields the boundaries $\mathbb B$. With complexity $O(\hat N^2)$, this is proven globally optimal (Theorem 4.1). It outperforms naive batching by accounting for amortized $\alpha$ and the overlap between generation and communication windows.
 
-3. **Bayesian Autotuning + Dynamic Scheduling Window**:
+**2. Dual-threshold NAV Trigger: Complementing sequence signals with single-token signals.**
 
-    - **Function**: The mapping from thresholds to TPT is non-analytic and varies with task difficulty and network jitter; BO is used to find near-optimal $(R_1,R_2)$ online.
-    - **Mechanism**: The BO autotuner aims to minimize average TPT, sampling $(R_1,R_2,\text{TPT})$ triplets and using a Gaussian process to predict the next optimal query; near-optimality is reached within 16 samples. When TPT changes significantly (monitor triggered), BO is rerun; when $(\alpha,\beta,\gamma)$ change, DP is rerun. A scheduling window $\hat N$ is introduced (sliding average of the last 100 draft sequence lengths, initially 20), with two rules: when NAV is triggered, any untransmitted tokens are immediately sent as a batch; while waiting for NAV, continue generating the next window of drafts to further overlap.
-    - **Design Motivation**: All adaptive logic is placed on the edge (no dependency on the cloud framework), making PipeSD compatible with any cloud inference backend such as vLLM or TensorRT-LLM; BO, rather than grid/random search, ensures sample efficiency, aligning with the "edge must be lightweight" deployment constraint.
+Single signal triggers are biased. Relying only on single-token confidence $P(D_n)$ (like HSL) may lead to over-generation when every token is "moderately" confident. Relying only on cumulative confidence (like EdgeLLM) allows single-point failures to be masked by the average, delaying detection. PipeSD maintains both cumulative sequence confidence $C_1=\prod_{n}P(D_n)$ (product of probabilities for unverified tokens) and single-token confidence $P(D_n)$. For every new token, it evaluates $C_1^*=C_1\cdot P(D_n)$. NAV is triggered if $C_1^*\le R_1$ or $P(D_n)\le R_2$, after which $C_1$ is reset to 1. This dual-track approach covers both "segment unreliability" and "token anomaly."
+
+**3. BO Autotuning + Dynamic Scheduling Window: Edge-side online adaptation.**
+
+The mapping from thresholds to TPT is non-analytical and drifts with task difficulty or network jitter. The BO autotuner targets minimal average TPT, sampling $(R_1, R_2, \text{TPT})$ triplets and using Gaussian Processes to predict the next query point. It approaches optimality within 16 samples—more efficient than grid or random search. DP is rerun when $(\alpha, \beta, \gamma)$ change, while BO is rerun when TPT changes significantly. The scheduling window $\hat N$ uses a sliding average of the last 100 draft lengths (initially 20). When NAV is triggered, unsent tokens are immediately batched and sent, while generation for the next window continues during the NAV wait time.
 
 ### Loss & Training
-PipeSD has no training loss (inference framework). Key parameters: DP algorithm inputs $(\hat N,\alpha,\beta,\gamma)$ are measured in real time by the Environment Monitor; BO autotuner converges in 16 samples by default; average draft length is about 6 for programming tasks, 4 for math tasks; NAV thresholds $(R_1,R_2)$ are searched by BO in the 0–1 range.
+PipeSD is a pure inference framework with no training loss. Key parameters are determined online: DP inputs $(\hat N,\alpha,\beta,\gamma)$ are measured by the Environment Monitor; the BO autotuner searches $(R_1, R_2)$ in the $(0, 1)$ interval. Empirical results show mean draft lengths of $\sim 6$ for programming tasks and $\sim 4$ for math.
 
 ## Key Experimental Results
 
 ### Main Results
-Four scenarios (Scenario 1: laptop + static 20/200Mbps; Scenarios 2/3: simulated phone/IoT compute 2.5/1.2 GHz; Scenario 4: dynamic bandwidth 10–80 Mbps), two model pairs (DeepSeek-Coder 1.3B→6.7B, TinyLlama 1.1B→Llama-2 7B), two datasets (HumanEval, GSM8K), compared with Vanilla / HSL / EdgeLLM:
+Evaluated across 4 scenarios (Scenario 1: Laptop + 20/200Mbps; Scenario 2/3: Mobile/IoT compute 2.5/1.2 GHz; Scenario 4: Dynamic bandwidth 10–80 Mbps), 2 model pairs (DeepSeek-Coder 1.3B $\rightarrow$ 6.7B, TinyLlama 1.1B $\rightarrow$ Llama-2 7B), and 2 datasets (HumanEval, GSM8K).
 
-| Scenario | Dataset | Vanilla TPT(ms) | HSL | EdgeLLM | PipeSD | vs Vanilla |
-|----------|---------|-----------------|-----|---------|--------|------------|
+| Scenario | Dataset | Vanilla TPT (ms) | HSL | EdgeLLM | PipeSD | Gain vs Vanilla |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | HumanEval | 194 | 155 | 153 | 129 | 1.50× |
 | 1 | GSM8K | 193 | 174 | 169 | 145 | 1.33× |
 | 3 (IoT) | HumanEval | 306 | 244 | 201 | 152 | 2.01× |
 | 3 (IoT) | GSM8K | 402 | 296 | 231 | 186 | 2.16× |
-| 4 (Dynamic BW) | HumanEval | 160 | 132 | 127 | 108 | 1.48× |
+| 4 (Dynamic) | HumanEval | 160 | 132 | 127 | 108 | 1.48× |
 
-Cloud energy consumption (Scenario 1, per 100 accepted tokens):
+Cloud Energy Consumption (Scenario 1, per 100 accepted tokens):
 
-| Dataset | Vanilla(J) | HSL | EdgeLLM | PipeSD | Reduction vs EdgeLLM |
-|---------|------------|-----|---------|--------|----------------------|
+| Dataset | Vanilla (J) | HSL | EdgeLLM | PipeSD | Gain vs EdgeLLM |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | HumanEval | 68 | 71 | 75 | 56 | 25.3% |
 | GSM8K | 98 | 102 | 100 | 84 | 16.0% |
 
 ### Ablation Study
-**BO Tuning Comparison (HumanEval Scenario 1, TPT ms):**
+**BO Tuning Comparison (Scenario 1, TPT ms):**
 
-| Tuning Strategy | HumanEval | GSM8K |
-|-----------------|-----------|-------|
+| Strategy | HumanEval | GSM8K |
+| :--- | :--- | :--- |
 | BO Autotuner | 129 | 145 |
 | Grid Search | 139 | 155 |
 | Random Search | 148 | 162 |
 
-**Bandwidth Sensitivity (HumanEval Scenario 1, PipeSD vs Vanilla):** 10 Mbps 1.32×, 20 Mbps 1.47×, 40 Mbps 1.45×, 80 Mbps 1.34×; after 80 Mbps, communication is no longer the bottleneck and speedup saturates.
+**Bandwidth Sensitivity (HumanEval Scenario 1, PipeSD vs Vanilla):** 10 Mbps: $1.32\times$, 20 Mbps: $1.47\times$, 40 Mbps: $1.45\times$, 80 Mbps: $1.34\times$. Beyond 80 Mbps, communication ceases to be the bottleneck, and speedup saturates.
 
 ### Key Findings
-- The weaker the compute (IoT scenario), the higher the speedup (2.16×), confirming the intuition that "pipeline mainly benefits from hiding communication"—the slower the edge, the more generation time can cover the communication window.
-- DP rerun overhead is <0.013% of total time, essentially negligible; BO converges in only 16 samples, so autotuning cost is also negligible.
-- The dual-threshold mechanism is the main contributor to ECS reduction: it reduces invalid NAV requests (fewer target model computations on the cloud), so energy savings exceed TPT reduction.
+- Weaker compute (IoT scenario) yields higher speedups ($2.16\times$), confirming that the pipeline primarily benefits from hiding communication—the slower the edge, the larger the communication window that generation can cover.
+- DP overhead is $<0.013\%$ of total time, effectively free.
+- The dual-threshold mechanism is the primary contributor to energy savings: it reduces invalid NAV requests (reducing cloud target model execution), leading to energy reductions that outpace TPT gains.
 
 ## Highlights & Insights
-- **Reframing cloud-edge speculative decoding as a scheduling problem**: Previous works patched individual components (HSL modifies triggering, HAT modifies accuracy constraints), while PipeSD formalizes it as DP pipelining + BO adaptation, providing a complete system-level abstraction.
-- **DP algorithm is simple yet precise**: Complexity $O(\hat N^2)$, with $\hat N\sim 20$, is fully online; this "cheap exact algorithm + online monitoring-triggered rerun" pattern is well-suited for system optimization with slowly drifting parameters.
-- **Dual-threshold approach is transferable**: Any early stopping/triggering problem involving "cumulative score + instantaneous score" can benefit—for example, early stopping in multi-step chain-of-thought reasoning, or truncation in long-sequence retrieval.
-- **BO tuning as a core component**: Making Bayesian optimization a general-purpose "thresholding" module on the edge is lighter than RL-trained controllers and enables zero cold-start for new deployment environments.
+- **Reconceptualizing Cloud-Edge SD as a Scheduling Problem**: Unlike prior works that patch specific issues (e.g., HSL on triggers, HAT on precision constraints), PipeSD provides a complete system-level abstraction via DP pipelining and BO adaptation.
+- **Precise yet Lightweight DP**: Efficient enough for online use ($O(\hat N^2)$ with $\hat N \sim 20$). This "cheap exact algorithm + online monitoring" pattern is ideal for system optimization with drifting parameters.
+- **Transferability of Dual-thresholds**: The "cumulative score + instant score" logic is applicable to any early-stopping or triggering problem, such as Chain-of-Thought stopping or long-sequence retrieval truncation.
+- **BO as a System Component**: Using BO as a generic edge "thresholder" is lighter than RL-based controllers and requires zero cold-start for new deployments.
 
 ## Limitations & Future Work
-- Only implemented for a single draft-target pair and single client; for multi-client or heterogeneous batching with multiple draft models, the DP formula needs to be re-derived.
-- BO uses global average TPT as the objective, but draft acceptance rates differ greatly between tasks (code vs math), so per-task thresholds or multi-task BO may be needed.
-- Edge energy consumption is only theoretically analyzed, not empirically measured; frequent BO + DP triggering on CPU may impact power in battery-constrained scenarios, which remains to be validated.
-- Security/privacy aspects are not considered: the dual-threshold exposes per-token confidence from the draft model, which could be a side-channel for inferring private data—this is not discussed in the paper.
+- Implementation is limited to single draft-target pairs and single clients; heterogeneous batching across multiple clients would require a re-derivation of the DP formula.
+- BO targets global average TPT, but acceptance rates vary wildly by task (e.g., code vs. math); per-task thresholds or multi-task BO might be necessary.
+- Actual edge power consumption (battery drain) from frequent BO/DP execution on CPUs remains to be verified.
+- Privacy concerns: The dual-threshold mechanism exposes per-token confidence of the draft model, which could potentially serve as a side-channel for inferring private data.
 
 ## Related Work & Insights
-- **vs HSL (hao2024)**: HSL triggers on single token confidence, uses fixed draft length, and lacks pipelining; this method uses dual thresholds + DP pipelining, achieving 1.61× speedup in Scenario 3.
-- **vs EdgeLLM (xu2025)**: EdgeLLM uses cumulative sequence confidence and continues generation while waiting for NAV; PipeSD adds token-level thresholds and DP-optimal batching, reducing ECS by 16–25%.
-- **vs HAT, SpecEdge**: HAT focuses on accuracy constraints, SpecEdge on multi-edge collaboration; these are orthogonal to PipeSD and can be combined.
-- **vs Medusa, EAGLE (cloud-side SD)**: These works improve the acceptance rate of the draft head itself; PipeSD improves deployment and triggering, and can be combined for cloud-edge scenarios.
+- **vs. HSL (hao2024)**: HSL uses single token-confidence triggers and fixed draft lengths without pipelining; PipeSD is $1.61\times$ faster in Scenario 3.
+- **vs. EdgeLLM (xu2025)**: EdgeLLM uses cumulative sequence confidence and parallel generation during NAV; PipeSD adds token-level thresholds and DP-optimal batching, reducing energy by $16–25\%$.
+- **vs. HAT, SpecEdge**: These focus on precision and multi-edge collaboration respectively; PipeSD's scheduling logic is orthogonal and can be combined with them.
+- **vs. Medusa, EAGLE (Cloud SD)**: These improve the acceptance rate of the draft heads. PipeSD improves deployment and triggering and is complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of DP pipelining, dual thresholds, and BO autotuner is the first Pareto-complete framework for cloud-edge speculative decoding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Real cloud-edge testbed, 4 scenarios × 2 models × 2 datasets + bandwidth sweep + energy measurement.
-- Writing Quality: ⭐⭐⭐⭐ Consistent from bottleneck analysis to DP derivation to system implementation, with clear notation.
-- Value: ⭐⭐⭐⭐ A directly reusable framework for mobile/IoT cloud-edge inference in the 5G era, with open-source code as a bonus.
+- Novelty: ⭐⭐⭐⭐ First comprehensive Pareto framework for cloud-edge SD combining DP pipelining and BO.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Real-world testbeds, multiple scenarios, bandwidth scans, and energy analysis.
+- Writing Quality: ⭐⭐⭐⭐ Consistent flow from bottleneck analysis to DP derivation and implementation.
+- Value: ⭐⭐⭐⭐ Highly reusable framework for cloud-edge collaborative inference in the 5G era.
 
 <!-- RELATED:START -->
 
@@ -135,9 +142,9 @@ Cloud energy consumption (Scenario 1, per 100 accepted tokens):
 
 - [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](../../AAAI2026/llm_safety/prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
 - [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](../../ACL2026/llm_safety/fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
-- [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
 - [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
-- [\[ICML 2026\] Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping](memory_as_a_markov_matrix_sample_efficient_knowledge_expansion_via_token-to-dict.md)
+- [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
+- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 
 </div>
 

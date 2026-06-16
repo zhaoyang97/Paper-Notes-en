@@ -2,135 +2,145 @@
 title: >-
   [Paper Note] A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos
 description: >-
-  [CVPR 2026][Model Compression][Temporal sentence grounding] This paper proposes the first fully end-to-end framework for Temporal Sentence Grounding in Videos (TSGV). A Sentence-Conditioned Adapter (SCADA) is introduced…
+  [CVPR 2026][Model Compression][TSGV] Proposes the first fully end-to-end temporal sentence grounding (TSGV) framework that dynamically modulates visual features by injecting sentence embeddings into intermediate backbone layers via a Sentence-Conditioned ADapter (SCADA), while accelerating training with a video-centric learning strategy to outperform SOTA
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "Temporal sentence grounding"
-  - "end-to-end training"
-  - "sentence-conditioned adapter"
-  - "vision-language alignment"
-  - "TSGV"
+  - CVPR 2026
+  - Model Compression
+  - TSGV
 date: 2026-05-08
-content_hash: bfba2e20fef445ee
+content_hash: 4726ddb08fd70e20
 ---
-
 # A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos
 
-**Conference**: CVPR 2026
-**arXiv**: [2604.02860](https://arxiv.org/abs/2604.02860)  
-**Code**: Coming soon  
-**Area**: Model Compression
-**Keywords**: Temporal sentence grounding, end-to-end training, sentence-conditioned adapter, vision-language alignment, TSGV
+**Conference**: CVPR 2024  
+**arXiv**: [2404.02860](https://arxiv.org/abs/2604.02860)  
+**Code**: Coming Soon  
+**Area**: Model Compression  
+**Keywords**: Temporal Sentence Grounding, End-to-End Training, Sentence-Conditioned Adapter, Vision-Language Alignment, TSGV
 
 ## TL;DR
-This paper proposes the first fully end-to-end framework for Temporal Sentence Grounding in Videos (TSGV). A Sentence-Conditioned Adapter (SCADA) is introduced to inject sentence embeddings into intermediate layers of the video backbone, dynamically modulating visual features. Combined with a video-centric learning strategy to accelerate training, the method surpasses state-of-the-art performance on Charades-STA and ActivityNet.
+Proposes the first fully end-to-end temporal sentence grounding (TSGV) framework that dynamically modulates visual features by injecting sentence embeddings into intermediate backbone layers via a Sentence-Conditioned ADapter (SCADA), while accelerating training with a video-centric learning strategy to outperform SOTA on Charades-STA and ActivityNet.
 
 ## Background & Motivation
 
-**Background**: TSGV aims to localize the temporal segment in an untrimmed video corresponding to a natural language query. Most existing methods employ frozen pre-trained video encoders (e.g., C3D/I3D) for feature extraction and train only the grounding module.
+**Background**: TSGV aims to locate temporal segments in untrimmed videos based on natural language queries. Most existing methods adopt pre-trained video encoders (e.g., C3D/I3D) with frozen features and only train the localization module.
 
-**Limitations of Prior Work**: (1) Video backbones are trained for visual classification but applied to TSGV—a task mismatch exists; (2) Pre-trained models learn only phrase-level object/action concepts and struggle to understand complex natural language semantics; (3) Some methods do not leverage sentence features during the grounding stage, resulting in insufficient cross-modal alignment.
+**Limitations of Prior Work**: (1) Video backbones are pre-trained for visual classification, leading to a task mismatch with TSGV; (2) Pre-trained models capture phrase-level objects/actions but struggle with complex natural language semantics; (3) Some methods fail to utilize sentence features during the localization stage, resulting in insufficient cross-modal alignment.
 
-**Key Challenge**: Frozen backbones → features cannot adapt to the TSGV task → limited grounding accuracy. However, directly fine-tuning large backbones incurs substantial memory overhead and risks catastrophic forgetting.
+**Key Challenge**: Freezing the backbone prevents features from adapting to TSGV tasks, limiting localization accuracy. However, directly fine-tuning large backbones incurs massive memory overhead and risks catastrophic forgetting.
 
-**Key Insight**: Design a lightweight adapter that achieves sentence-conditioned backbone adaptation while fine-tuning only a minimal number of parameters.
+**Key Insight**: Designing a lightweight adapter to achieve sentence-conditioned backbones while fine-tuning only a minimal number of parameters.
 
-**Core Idea**: SCADA injects sentence embeddings into each backbone layer via inner and outer branches, enabling sentence-guided visual feature extraction. A video-centric learning strategy allows multiple queries for the same video to share the feature extraction pass.
+**Core Idea**: SCADA injects sentence embeddings into various backbone layers via internal and external dual branches to achieve sentence-guided visual feature extraction; a video-centric learning strategy allows multiple queries for the same video to share feature extraction, accelerating training.
 
 ## Method
 
 ### Overall Architecture
-Sentence encoding (DistilBERT) → Video encoding (ViT/I3D/C3D) + **SCADA adapter** → Cross-modal fusion → Detection head (BiLSTM + sentence modulation) → Temporal boundary prediction.
+The core problem addressed is that previous TSGV methods typically freeze the video backbone, leading to visual features that are misaligned with the task of "finding segments by language." This work bridges the entire pipeline for end-to-end training: sentences are encoded into embeddings via DistilBERT, while video is fed into a backbone (C3D/I3D or ViT) to extract features layer by layer. The backbone is no longer a black box; SCADA adapters are inserted between layers to involve sentence embeddings in modulation while features are still inside the backbone. Features are then aggregated and passed to a BiLSTM detection head with deep sentence modulation to regress temporal boundaries. Video-centric learning groups multiple queries of the same video into one batch, requiring only a single backbone pass. Only the adapters and the detection head are trained while the backbone body remains frozen, achieving E2E benefits while controlling memory and forgetting.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    S["Sentence Query S"] --> DB["DistilBERT Encoder<br/>→ Sentence Embedding q"]
+    V["Untrimmed Video V<br/>C3D / I3D / ViT backbone (Main Frozen)"]
+    VC["Video-Centric Learning<br/>Multi-query per batch, single backbone pass"] -. batch construction .-> V
+    DB -->|Modulation with q| SCADA
+    V --> SCADA
+    subgraph SCADA["Sentence-Conditioned ADapter (Layer-wise)"]
+        direction TB
+        IN["Inner Branch: Dim Reduction → Sentence Modulation → DWConv1D → Dim Expansion + Residual<br/>Back to next backbone layer"]
+        OUT["Outer Branch: 3D Conv Spatial Compression → Sentence Modulation → Dim Expansion + Pooling<br/>Skip subsequent layers for aggregation"]
+    end
+    SCADA --> AGG["Final Aggregation<br/>F = Normalize( x_b + Σ outer features )"]
+    AGG --> HEAD["Deep Fusion Detection Head<br/>BiLSTM + Resid, repeated element-wise multiplication"]
+    HEAD --> OUT2["Boundary Regression<br/>𝓛_b + 𝓛_iou + 𝓛_offset"]
+```
 
 ### Key Designs
 
-1. **Sentence-Conditioned Adapter (SCADA)**:
+**1. Sentence-Conditioned ADapter (SCADA): Engaging language in feature extraction inside the backbone**
 
-    - Function: Inserted between backbone layers to dynamically modulate visual features using sentence embeddings.
-    - **Inner Branch**: Dimensionality reduction → multiplicative sentence modulation → depthwise separable 1D convolution (capturing temporal context) → dimensionality expansion + residual. Output is passed to the next backbone layer.
-    - **Outer Branch**: 3D convolution for dimensionality reduction + spatial compression → sentence modulation → 3D convolution for dimensionality expansion → spatial pooling. Output bypasses subsequent backbone layers and is directly aggregated.
-    - Final output: $F = \text{Normalize}(x_b + \sum_{i=1}^{n} x_{outer}^i)$
-    - Design Motivation: The inner branch enables each backbone layer to perceive sentence semantics; the outer branch extracts query-guided multi-scale features. Only a small number of adapter parameters are trained while the backbone is frozen, resolving memory and forgetting issues.
+The limitation is that frozen backbones are pre-trained for classification and only extract "what objects/actions are present" without considering the current query. SCADA inserts a lightweight bypass between backbone layers to modulate visual features using sentence embeddings. It consists of two branches: the Inner Branch reduces dimensionality, applies sentence multiplication modulation, uses Depthwise Separable 1D convolution for temporal context, and expands dimensions with a residual connection back to the next backbone layer, allowing semantics to penetrate the backbone. The Outer Branch uses 3D convolution to compress spatial dimensions and apply sentence modulation, then expands dimensions and pools the result, skipping subsequent layers to aggregate into the final representation. The features are fused as:
 
-2. **Video-Centric Learning Strategy**:
+$$F = \text{Normalize}\Big(x_b + \sum_{i=1}^{n} x_{outer}^i\Big)$$
 
-    - Function: Accelerates end-to-end training.
-    - Mechanism: All queries associated with the same video are grouped into the same mini-batch, so the backbone extracts video features only once and shares them across multiple queries.
-    - Design Motivation: Standard sampling causes the same video to repeatedly pass through the backbone, leading to severe computational redundancy. Video-centric sampling also enables the network to align a single video with diverse linguistic contexts within one iteration.
+where $x_b$ represents backbone trunk features and $x_{outer}^i$ represents query-guided features from various outer branches.
 
-3. **Sentence Fusion in the Detection Head**:
+**2. Video-Centric Learning Strategy: Eliminating redundant backbone passes**
 
-    - BiLSTM architecture with residual connections to capture temporal dependencies.
-    - Sentence embeddings are repeatedly fused via element-wise multiplication during detection, achieving deep integration of both modalities.
+The main cost of E2E training comes from backbone forward passes. Since TSGV datasets naturally pair one video with multiple queries, standard sampling repeats backbone extraction for the same video across iterations. Video-centric sampling groups all queries for the same video into a single mini-batch, extracting features once and sharing them. This reduces computation and provides multi-context alignment supervision in a single step.
+
+**3. Deep Sentence Fusion in Detection Head: Retaining language influence during localization**
+
+Unlike methods that discard sentence information in the localization head, this work uses a BiLSTM with residual connections to model temporal dependencies and repeatedly injects sentence embeddings via element-wise multiplication, ensuring deep multi-modal coupling until the final boundary prediction.
 
 ### Loss & Training
-$\mathcal{L} = \mathcal{L}_b + \mathcal{L}_{iou} + \mathcal{L}_{offset}$: boundary probability loss (balanced BCE for positive/negative samples) + IoU loss (classification + L2 regression) + offset loss (Smooth L1).
+The total loss is $\mathcal{L} = \mathcal{L}_b + \mathcal{L}_{iou} + \mathcal{L}_{offset}$: $\mathcal{L}_b$ is the boundary probability loss (balanced BCE), $\mathcal{L}_{iou}$ includes classification and L2 regression terms for interval overlap, and $\mathcal{L}_{offset}$ uses Smooth L1 for boundary offset regression.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Backbone | Method | Charades R1@0.5 | Charades R1@0.7 | ActivityNet R1@0.5 | ActivityNet mIoU |
-|----------|--------|-----------------|-----------------|--------------------|----|
+|----------|------|-----------------|-----------------|--------------------|----|
 | C3D | MS-2D-TAN | 41.10 | 23.25 | 46.16 | - |
 | C3D | APGN | 48.20 | 29.37 | - | - |
 | C3D | **Ours** | **50.44** | - | - | - |
-| I3D | PGSR et al. | ~53 | ~30 | ~48 | ~48 |
-| I3D | **Ours** | **Rank 1** | **Rank 1** | **Leading** | **Leading** |
+| I3D | PGSR, etc. | ~53 | ~30 | ~48 | ~48 |
+| I3D | **Ours** | **Best Rank1** | **Best Rank1** | **Leading** | **Leading** |
 
-Charades-STA: R1@0.5 = **48.1%** (ViT); ActivityNet: R1@0.5 = **30.5%**.
+Charades-STA: R1@0.5 = **48.1%** (ViT), ActivityNet: R1@0.5 = **30.5%**.
 
 ### Ablation Study
 
-| Configuration | Charades R1@0.5 | Note |
-|---------------|-----------------|------|
-| Frozen backbone (baseline) | Baseline | Standard frozen paradigm |
-| Full end-to-end fine-tuning | +Large gain | Validates E2E effectiveness |
-| + SCADA | +Further gain | Value of sentence conditioning |
-| + Video-centric learning | Training speedup | Reduces redundant computation |
-| w/o outer branch | Degraded | Multi-scale features are important |
-| w/o inner branch | Degraded | Layer-wise modulation is important |
+| Configuration | Charades R1@0.5 | Description |
+|------|-----------------|------|
+| Frozen backbone (baseline) | Base | Standard frozen paradigm |
+| E2E Full Fine-tuning | +Significant Gain | Validates E2E effectiveness |
+| + SCADA | +Further Gain | Value of sentence conditioning |
+| + Video-Centric Learning | Faster Training | Reduces redundant computation |
+| w/o Outer Branch | Decrease | Importance of multi-scale features |
+| w/o Inner Branch | Decrease | Importance of layer-wise modulation |
 
 ### Key Findings
-- End-to-end training yields an **average gain of 16%** over frozen baselines, consistently across different backbones and datasets.
-- SCADA improves Charades R1@0.5 from ~38 to ~53 on the I3D backbone, a substantial improvement.
-- The potential of ViT as a video encoder for TSGV is fully explored for the first time.
-- Video-centric learning accelerates training by several times (depending on the number of queries per video).
+- E2E training brings an **average gain of 16%** compared to frozen baselines across different backbones and datasets.
+- SCADA significantly improves I3D backbone performance on Charades R1@0.5 from ~38 to ~53.
+- The potential of ViT as a video encoder for TSGV is explored for the first time.
+- Video-centric learning accelerates training several times over depending on the number of queries per video.
 
 ## Highlights & Insights
-- **Systematic validation of the end-to-end paradigm**: The first work to systematically validate the substantial benefit of end-to-end training for TSGV across multiple backbones (C3D/I3D/ViT-S/B/g), challenging the default assumption that frozen backbones are sufficient.
-- **Elegant design of SCADA**: The dual-branch structure enables sentence information to influence both the internal backbone layers (inner branch) and produce skip connections (outer branch), achieving deep cross-modal fusion with minimal additional parameters.
-- **Practical value of video-centric learning**: This strategy exploits the natural characteristic of TSGV datasets—multiple queries per video—offering a high-return engineering optimization at low overhead.
+- **Systematic Validation of E2E Paradigm**: Systematically validates the value of E2E training for TSGV across C3D/I3D/ViT backbones, challenging the assumption that frozen backbones are sufficient.
+- **Clever SCADA Design**: The dual-branch structure ensures sentence information affects internal backbone processing while providing skip connections, achieving deep fusion with minimal parameters.
+- **Utility of Video-Centric Learning**: A high-return engineering optimization that leverages the "one video, many queries" nature of TSGV datasets.
 
 ## Limitations & Future Work
-- Evaluation is limited to Charades-STA and ActivityNet; additional datasets (e.g., TACoS, DiDeMo) remain unexplored.
-- The insertion positions and number of SCADA modules are manually configured; automatic search for optimal configurations warrants investigation.
-- Comparison with Video LLM-based methods (e.g., D2VLM R1@0.5 = 50.30) is not yet comprehensive.
-- Training time and GPU memory consumption for the ViT backbone are not reported in detail.
+- Currently validated only on Charades-STA and ActivityNet; other datasets (TACoS, DiDeMo) remain to be explored.
+- SCADA placement and quantity are manually set; remains to be seen if optimal configurations can be automatically searched.
+- Comparison with Video LLM methods (e.g., D2VLM R1@0.5=50.30) is not yet exhaustive.
+- Training time and memory overhead for ViT backbones are not detailed.
 
 ## Related Work & Insights
-- **vs. 2D-TAN/APGN et al.**: These methods freeze the backbone and train only the grounding module; this paper demonstrates that end-to-end training is a superior paradigm.
-- **vs. Video LLMs**: LLM-based methods predict timestamps via temporally sensitive instruction tuning; this paper achieves comparable performance on certain metrics without relying on LLMs.
-- **vs. Other adapter methods**: General-purpose adapters such as LoRA do not consider sentence conditioning; SCADA is specifically designed for cross-modal tasks.
+- **vs 2D-TAN/APGN**: These freeze the backbone; this work proves E2E is a superior paradigm.
+- **vs Video LLMs**: While LLMs use instruction tuning to predict timestamps, this method achieves comparable results without the overhead of an LLM.
+- **vs Other Adapters**: Unlike LoRA, SCADA is specifically designed for cross-modal conditioning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ SCADA is a creative design; while the E2E paradigm is not entirely novel, its systematic validation is valuable.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-backbone evaluation and thorough ablations; dataset coverage could be broader.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and method description is complete.
-- Value: ⭐⭐⭐⭐ Provides a new training paradigm reference for the TSGV community.
+- Novelty: ⭐⭐⭐⭐ SCADA design is innovative; E2E validation is high-value.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive backbones and ablations, though dataset coverage could be wider.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and comprehensive methodology.
+- Value: ⭐⭐⭐⭐ Provides a new training paradigm reference for the TSGV field.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](../../ICML2026/model_compression/end-to-end_compression_for_tabular_foundation_models.md)
 - [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](../../ICML2026/model_compression/towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
-- [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
-- [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](../../ICLR2026/model_compression/grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
-- [\[ICCV 2025\] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration](../../ICCV2025/model_compression/partial_forward_blocking_a_novel_data_pruning_paradigm_for_lossless_training_acc.md)
+- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
+- [\[CVPR 2026\] CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)
+- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 
 </div>
 

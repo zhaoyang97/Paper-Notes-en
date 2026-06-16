@@ -2,77 +2,82 @@
 title: >-
   [Paper Note] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Egocentric Video QA] This paper proposes the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method…
+  [CVPR 2026][Video Understanding][Paper Note] The paper introduces the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method. By encoding 3D hand keypoints into hand intent tokens and interleaving them with vision tokens as input to an MLLM, the approach solves gesture-based deictic question answering in egocentric videos. HINT-14B achieves 68.1% accuracy,
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Egocentric Video QA"
-  - "Gesture Understanding"
-  - "Deictic Reference"
-  - "3D Hand Keypoints"
-  - "Multimodal Large Language Models"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 9733166984705a9e
+content_hash: 6058f21b735cf9dd
 ---
-
 # Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12533](https://arxiv.org/abs/2603.12533)  
-**Code**: [https://yuuraa.github.io/papers/choi2026egovqa](https://yuuraa.github.io/papers/choi2026egovqa) (coming soon)  
-**Area**: Video Understanding
-**Keywords**: Egocentric Video QA, Gesture Understanding, Deictic Reference, 3D Hand Keypoints, Multimodal Large Language Models
+**Code**: [https://yuuraa.github.io/papers/choi2026egovqa](https://yuuraa.github.io/papers/choi2026egovqa) (Coming soon)  
+**Area**: Video Understanding  
+**Keywords**: Egocentric Video QA, Gesture Understanding, Deictic Reference, 3D Hand Keypoints, Multi-modal Large Language Models
 
 ## TL;DR
-This paper proposes the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method, which encodes 3D hand keypoints into hand intent tokens interleaved with visual tokens as input to an MLLM, addressing deictic gesture-based question answering in egocentric video. HINT-14B achieves 68.1% accuracy, surpassing InternVL3-14B by 5.4 pp.
+The paper introduces the EgoPointVQA dataset and the HINT (Hand Intent Tokens) method. By encoding 3D hand keypoints into hand intent tokens and interleaving them with vision tokens as input to an MLLM, the approach solves gesture-based deictic question answering in egocentric videos. HINT-14B achieves 68.1% accuracy, outperforming InternVL3-14B by 5.4pp.
 
 ## Background & Motivation
-With the growing prevalence of AR/VR devices (Apple Vision Pro, Meta Orion) and smart glasses, AI assistants must understand where users are directing their attention in the environment. In natural communication, people frequently use deictic expressions (e.g., "What is this?" or "Should I use this one?"), which can only be answered by interpreting the user's pointing gesture.
+With the increasing popularity of AR/VR devices (e.g., Apple Vision Pro, Meta Orion) and smart glasses, AI assistants need to understand the user's focus of attention within the environment. In natural communication, people frequently use deictic expressions (e.g., "What is this?", "Should I use this?"), which can only be answered by combining the user's gesture pointing.
 
-**Limitations of Prior Work**: Current MLLMs (including GPT-4o and Qwen3-VL-32B) perform poorly on such tasks for two reasons: (1) training data lacks gesture-rich egocentric video; and (2) at the architectural level, there is no explicit mechanism to encode gesture information—models perform only global vision-language fusion and cannot map "this" to the specific object indicated by a pointing finger.
+**Limitations of Prior Work**: Current MLLMs (including GPT-4o and Qwen3-VL-32B) perform poorly on such tasks for two reasons: (1) training data lacks egocentric videos rich in gestures; (2) architectures lack explicit mechanisms to encode gesture information—models only perform global vision-text fusion and fail to map "this" to a specific object pointed at by a finger.
 
-**Core Idea**: A lightweight adapter encodes 3D hand keypoints into hand intent tokens aligned with visual tokens, explicitly supplying the model with pointing gesture information.
+**Core Idea**: Use a lightweight adapter to encode 3D hand keypoints into hand intent tokens aligned with vision tokens, explicitly providing gesture pointing information to the model.
 
 ## Method
 
 ### Overall Architecture
-HINT adds a parallel hand intent stream to the standard MLLM architecture. For each video frame: (1) a visual encoder extracts visual tokens $V_t$; (2) WiLoR extracts 21 3D hand keypoints $K_t \in \mathbb{R}^{21 \times 3}$; (3) a Keypoint Adapter maps the keypoints to hand intent tokens $H_t$. Visual tokens and hand intent tokens are then interleaved frame-by-frame before being fed into the LLM.
+The goal of HINT is to enable MLLMs to understand exactly what "this/that" refers to, which is determined by the user's gesture. It maintains the backbone and introduces a parallel hand intent stream: while processing frame-by-frame, the vision encoder outputs vision tokens $V_t$, while a pre-existing WiLoR model reconstructs 21 3D hand keypoints $K_t \in \mathbb{R}^{21 \times 3}$ from the image. A lightweight Keypoint Adapter then compresses these geometric coordinates into a hand intent token $H_t$. Rather than concatenating features, the tokens are interleaved chronologically (a hand intent token immediately follows the vision tokens of the corresponding frame) and fed into the LLM. This allows the model to simultaneously perceive "what is in the scene" and "where the hand is pointing" when generating answers. The method is accompanied by the EgoPointVQA dataset, as the lack of training data is a primary bottleneck.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    F["Egocentric Video Frame t"] --> VE["Vision Encoder<br/>→ Vision token V_t"]
+    F --> WL["WiLoR Reconstruction<br/>→ 21 3D Hand Keypoints K_t"]
+    WL --> KA["Keypoint Adapter<br/>LN + 2-layer MLP → Hand Intent Token H_t"]
+    VE --> IL["Interleaved Frame-Keypoint Input<br/>Frame-t: V_t, Keypoint-t: H_t"]
+    KA -->|"Insert if c_t ≥ 0.5"| IL
+    DATA["EgoPointVQA Dataset<br/>4000 Syn + 400 Real, 18745 QA"] -->|"LoRA Finetuning"| LLM
+    IL --> LLM["MLLM (LoRA Finetuning)<br/>Autoregressive Generation"]
+    LLM --> OUT["Deictic QA Answer"]
+```
 
 ### Key Designs
-1. **EgoPointVQA Dataset**:
 
-    - **Function**: Constructs the first egocentric video dataset for deictic gesture-based question answering.
-    - **Mechanism**: 4,000 synthetic videos (AI2-THOR simulator, 184 indoor scenes + MIXAMO inverse kinematics animations for pointing gestures) + 400 real videos (Meta Ray-Ban smart glasses, 20 participants, 360 indoor + 40 outdoor), totaling 18,745 QA pairs.
-    - Six task categories: Reference (pointing target identification), Counting (same-category counting), Spatial (spatial relations), Temporal (sequential multi-pointing order), Attribute, and Feedback (functional feedback).
-    - Test set: 300 real videos, 672 QA pairs, manually verified for correctness and referential ambiguity.
-    - **Design Motivation**: No existing egocentric VQA dataset focuses on gesture-pointing scenarios; the absence of such training data is the root cause of model performance bottlenecks.
+**1. EgoPointVQA Dataset: Filling the gap in "gesture-pointing QA" training data**
 
-2. **Keypoint Adapter (Hand Intent Token Encoder)**:
+One root cause of the performance bottleneck lies in data: existing egocentric VQA datasets do not focus on gesture pointing scenarios. The authors constructed EgoPointVQA, consisting of 4000 synthetic videos from the AI2-THOR simulator (184 indoor scenes) using MIXAMO inverse kinematics to generate natural pointing gestures. Additionally, 400 real videos were collected by 20 participants using Meta Ray-Ban smart glasses (360 indoor + 40 outdoor segments). Collectively, there are 18,745 QA pairs covering 6 task categories: Reference (identifying the pointed object), Counting (counting similar items), Spatial (spatial relationships), Temporal (sequence of multiple points), Attribute (properties), and Feedback (functional feedback). The test set consists of 300 real videos with 672 QA pairs, manually verified for answer correctness and unambiguous deixis.
 
-    - **Function**: Compresses 21 3D hand keypoints into a single hand intent token.
-    - **Mechanism**: The keypoints are first flattened into a 63-dimensional vector $\tilde{k}_t = \text{flatten}(K_t) \in \mathbb{R}^{63}$, then mapped to the LLM hidden dimension via LayerNorm + two-layer MLP + GeLU:
-    $H_t = W_2 \sigma(W_1 \text{LN}(\tilde{k}_t)), \quad W_1 \in \mathbb{R}^{d_h \times 63}, W_2 \in \mathbb{R}^{d \times d_h}$
-      When hand detection confidence $c_t < \tau = 0.5$, no token is inserted (frames without hands are skipped).
-    - **Design Motivation**: Overlaying keypoints or arrows directly onto frames performs poorly (as shown in ablation studies); learned encoding allows the model to discover how to exploit geometric information. The adapter is extremely lightweight (< 1% token overhead, adding only 0.26 s at inference).
+**2. Keypoint Adapter: Encoding 3D hand keypoints as tokens rather than visual overlays**
 
-3. **Frame-Keypoint Interleaving**:
+Instead of superimposing keypoints or arrows on frames—which ablation studies show can interfere with visual understanding—HINT uses learned encoding. $K_t$ is flattened into a 63-dimensional vector $\tilde{k}_t = \text{flatten}(K_t) \in \mathbb{R}^{63}$, processed via LayerNorm and a two-layer MLP with GeLU to map it to the LLM's hidden dimension, resulting in a hand intent token:
 
-    - **Function**: Interleaves hand intent tokens with the visual tokens of the corresponding frame.
-    - **Mechanism**: The sequence format is `Frame-1: <vis> Keypoint-1: <key> Frame-2: <vis> ...`, and the model conditions on hand intent signals during autoregressive answer generation:
-    $p(X_a | V, X_q, H) = \prod_{i=1}^{L} p(x_i | V, X_{q,<i}, X_{a,<i}, H_{<i})$
-    - **Design Motivation**: Interleaving rather than concatenation enables the LLM to naturally associate gestures with their corresponding frames along the temporal dimension, achieving spatiotemporal alignment.
+$$H_t = W_2\,\sigma\!\big(W_1\,\text{LN}(\tilde{k}_t)\big), \quad W_1 \in \mathbb{R}^{d_h \times 63},\; W_2 \in \mathbb{R}^{d \times d_h}.$$
+
+The token is only inserted when the hand detection confidence $c_t \geq \tau = 0.5$, naturally skipping frames without hands. This allows the model to learn how to utilize geometric information rather than imposing a fixed visual prompt format. The adapter is extremely lightweight, with tokens accounting for less than 1% of the total count and adding only 0.26s to inference time.
+
+**3. Interleaved Frame-Keypoint Input: Temporal alignment of gesture tokens and frames**
+
+HINT arranges the sequence in an interleaved format: `Frame-1: <vis> Keypoint-1: <key> Frame-2: <vis> ...`. By placing the hand intent token immediately after the corresponding frame's vision tokens, the LLM autoregressively generates answers conditioned on the gesture signals:
+
+$$p(X_a \mid V, X_q, H) = \prod_{i=1}^{L} p\big(x_i \mid V, X_{q,<i}, X_{a,<i}, H_{<i}\big).$$
+
+Compared to concatenating all gesture tokens separately, this alignment allows the model to naturally bind each gesture to its corresponding frame along the temporal axis, facilitating spatiotemporal alignment for temporal sequence questions.
 
 ### Loss & Training
-- LoRA fine-tuning applied to both the vision encoder and the LLM; the Keypoint Adapter is trained from scratch.
-- AdamW + cosine schedule, batch size 32, 1 epoch.
-- Training data combines synthetic videos with 100 real videos.
+- LoRA is used to finetune the vision encoder and LLM, while the Keypoint Adapter is trained from scratch.
+- AdamW optimizer with a cosine learning rate scheduler, batch size of 32, for 1 epoch.
+- Training data consists of synthetic data mixed with 100 real videos.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Params | Reference | Temporal | Spatial | Count | Attr. | Feed. | Avg. |
-|-------|--------|-----------|----------|---------|-------|-------|-------|------|
+| Model | Params | Reference | Temporal | Spatial | Count | Attr. | Feed. | Average |
+|------|--------|-----------|----------|---------|-------|-------|-------|------|
 | GPT-5 | - | 75.6 | 53.6 | 62.3 | 50.0 | 56.1 | 77.8 | 62.6 |
 | Qwen3-VL | 32B | 63.7 | 67.9 | 65.8 | 66.7 | 63.4 | 77.2 | 67.5 |
 | InternVL3 | 14B | 63.1 | 66.1 | 61.4 | 50.0 | 58.5 | 77.2 | 62.7 |
@@ -80,55 +85,55 @@ HINT adds a parallel hand intent stream to the standard MLLM architecture. For e
 | InternVL3 | 8B | 66.1 | 57.5 | 63.2 | 33.3 | 51.3 | 76.8 | 58.0 |
 | **HINT-InternVL3** | **8B** | **75.0** | **66.1** | **64.9** | **35.4** | **61.0** | **79.8** | **63.7** |
 
-HINT-14B achieves an average accuracy of 68.1%, surpassing the InternVL3-14B baseline by 5.4 pp and even exceeding GPT-5 (62.6%).
+HINT-14B achieves an average of 68.1%, surpassing the InternVL3-14B baseline by 5.4pp and even exceeding GPT-5 (62.6%).
 
 ### Ablation Study
 
-| Configuration | Reference | Temporal | Spatial | Attribute | Notes |
-|---------------|-----------|----------|---------|-----------|-------|
-| InternVL3-8B (zero-shot) | 66.1 | 57.5 | 63.2 | 51.3 | No fine-tuning |
-| + SFT only | 68.5 | 60.7 | 59.6 | 56.7 | Fine-tuning only, no hand intent tokens |
+| Configuration | Reference | Temporal | Spatial | Attribute | Description |
+|------|-----------|----------|---------|-----------|------|
+| InternVL3-8B (zero-shot) | 66.1 | 57.5 | 63.2 | 51.3 | No finetuning |
+| + SFT only | 68.5 | 60.7 | 59.6 | 56.7 | Finetuning only, no hand tokens |
 | + SFT + HINT | **75.0** | **66.1** | **64.9** | **61.0** | Full method |
 
-| Hand Intent Modeling | Reference | Temporal | Spatial |
-|----------------------|-----------|----------|---------|
+| Gesture Modeling Method | Reference | Temporal | Spatial |
+|---------------|-----------|----------|---------|
 | None (SFT only) | 68.5 | 60.7 | 59.6 |
-| Visual Keypoints (overlaid on frame) | 57.1 | 60.7 | 61.4 |
-| Visual Arrow (overlaid on frame) | 70.2 | 60.7 | 62.3 |
+| Visual Keypoints (Points on frame) | 57.1 | 60.7 | 61.4 |
+| Visual Arrow (Arrows on frame) | 70.2 | 60.7 | 62.3 |
 | 3D Keypoints in Text | 68.5 | 55.4 | 58.8 |
-| **HINT (learned encoding)** | **75.0** | **66.1** | **64.9** |
+| **HINT (Learned Encoding)** | **75.0** | **66.1** | **64.9** |
 
 ### Key Findings
-- SFT alone yields only +2.4 pp improvement; adding HINT delivers +8.9 pp on Reference, demonstrating that explicit gesture encoding is far more important than data scaling alone.
-- Overlaying keypoints on frames actually hurts performance (Reference drops to 57.1%), as visual overlays interfere with the MLLM's visual comprehension.
-- Even InternVL3 at 78B achieves only 66.6% average accuracy, confirming that scaling up model size does not resolve the problem.
-- HINT tokens account for less than 1% of total tokens, and inference latency increases by only 0.26 s (2.58 s → 2.84 s).
-- Mixed synthetic + real training outperforms either data source used alone.
+- SFT alone only provides a +2.4pp improvement, whereas adding HINT yields +8.9pp (Reference), suggesting explicit gesture encoding is more crucial than being purely data-driven.
+- Drawing keypoints on frames actually hurts performance (Reference drops to 57.1%), as visual overlays interfere with the MLLM's visual understanding.
+- Even the 78B InternVL3 only reaches 66.6% average accuracy, indicating that scaling up does not solve the problem.
+- HINT tokens occupy <1% of the total tokens, and inference time increases by only 0.26s.
+- Mixed training with synthetic and real data outperforms using either in isolation.
 
 ## Highlights & Insights
-- The paper precisely identifies a critical yet overlooked problem: MLLMs fail to understand what "this" refers to.
-- The dataset design is comprehensive: synthetic + real data, six task categories, and rigorous human quality control.
-- The HINT method is extremely lightweight (< 1% token overhead) while yielding substantial performance gains.
-- The approach generalizes consistently across multiple backbones (LLaVA-OV, InternVL3-8B, InternVL3-14B).
-- The work has strong implications for embodied AI and AR assistant research directions.
+- Target a critical yet neglected problem: MLLMs do not understand what "this" refers to in egocentric contexts.
+- Robust dataset design: Combines synthetic and real data with 6 task categories and strict manual quality control.
+- HINT is extremely lightweight (<1% token overhead) yet achieves significant gains.
+- Effective across multiple backbones (LLaVA-OV, InternVL3-8B, InternVL3-14B).
+- Highly inspiring for embodied AI and AR assistant directions.
 
 ## Limitations & Future Work
-- Only pointing gestures are supported; other gesture types (e.g., grasping, waving, size indication) are not covered.
-- The method relies on the accuracy of WiLoR hand reconstruction and may fail in challenging scenarios (heavy occlusion, incomplete hand visibility).
-- A domain gap remains between synthetic and real-world data, and the real training set is small (only 100 of 400 real videos used for training).
-- The test set comprises only 672 QA pairs, which is relatively small in scale.
-- Gesture disambiguation in multi-person scenarios has not been explored.
+- Currently supports only pointing gestures; does not cover other types (e.g., grasping, waving, measuring size).
+- Relies on the accuracy of WiLoR hand reconstruction; may fail in complex scenes (high occlusion, incomplete hands).
+- A gap remains between synthetic and real data; the amount of real training data is relatively small (100 videos).
+- The test set (672 QA pairs) is small.
+- Gesture disambiguation in multi-person scenarios remains unexplored.
 
 ## Related Work & Insights
-- Unlike region-specific VQA methods (Ferret, Osprey, Artemis), this work does not rely on provided bounding boxes but instead infers the referent region from gestures.
-- Visual prompting approaches (SoM, alphanumeric tags) guide MLLMs with manually designed markers; this paper uses natural gesture signals instead.
-- EgoGPT and Ego-R1 focus on long-term memory and habit analysis, whereas this work targets fine-grained gesture-pointing comprehension—the two directions are complementary.
+- Unlike region-specific VQA (Ferret, Osprey), this work infers the target region from gestures rather than relying on provided bounding boxes.
+- While visual prompting (SoM) uses manual tags, this work utilizes natural gesture signals.
+- Complementary to EgoGPT/Ego-R1, which focus on long-term memory, as HINT focuses on fine-grained gesture pointing.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First deictic gesture egocentric VQA task and dataset; HINT is a novel and effective design.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 15 baseline comparisons + extensive ablation studies, though dataset scale is relatively small.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem definition is clear, structure is complete, and figures are informative.
-- **Value**: ⭐⭐⭐⭐⭐ Identifies a key direction for AR/VR assistants; both the dataset and method are broadly impactful.
+- Novelty: ⭐⭐⭐⭐⭐ First deictic gesture egocentric VQA task and dataset; HINT design is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison with 15 baselines and rich ablations, though dataset scale is limited.
+- Writing Quality: ⭐⭐⭐⭐ Problem definition is clear with a complete structure and rich visualizations.
+- Value: ⭐⭐⭐⭐⭐ Identifies a key direction for AR/VR assistants with high impact.
 
 <!-- RELATED:START -->
 
@@ -136,11 +141,11 @@ HINT-14B achieves an average accuracy of 68.1%, surpassing the InternVL3-14B bas
 
 ## Related Papers
 
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 - [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
-- [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](../../NeurIPS2025/video_understanding/egogazevqa_egocentric_gaze_guided_video_question_answering.md)
+- [\[CVPR 2026\] Time Blindness: Why Video-Language Models Can't See What Humans Can?](time_blindness_why_video-language_models_cant_see_what_humans_can.md)
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
 - [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
-- [\[ICCV 2025\] What You Have is What You Track: Adaptive and Robust Multimodal Tracking](../../ICCV2025/video_understanding/what_you_have_is_what_you_track_adaptive_and_robust_multimodal_tracking.md)
 
 </div>
 

@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] DiffBMP: Differentiable Rendering with Bitmap Primitives
 description: >-
-  [CVPR2026][differentiable rendering] This paper proposes DiffBMP — the first general-purpose differentiable rendering engine for **bitmap primitives** — which enables efficient gradient-based optimization of position…
+  [CVPR 2026][Others][differentiable rendering] Ours proposes DiffBMP—the first general-purpose differentiable rendering engine for **bitmap primitives**. It implements an efficient custom CUDA parallel pipeline to enable gradient optimization of position, rotation, scaling, color, and opacity for thousands of bitmap primitives, filling the gap where 2D differentiab
 tags:
-  - "CVPR2026"
-  - "differentiable rendering"
-  - "bitmap primitives"
-  - "CUDA kernel"
-  - "soft rasterization"
-  - "alpha compositing"
-  - "creative workflow"
+  - CVPR 2026
+  - Others
+  - differentiable rendering
+  - bitmap primitives
+  - CUDA kernel
+  - soft rasterization
+  - alpha compositing
+  - creative workflow
 date: 2026-05-08
-content_hash: e659c3d09c651c6a
+content_hash: 52f20413bcf63953
 ---
-
 # DiffBMP: Differentiable Rendering with Bitmap Primitives
 
 **Conference**: CVPR2026  
@@ -25,54 +25,70 @@ content_hash: e659c3d09c651c6a
 
 ## TL;DR
 
-This paper proposes DiffBMP — the first general-purpose differentiable rendering engine for **bitmap primitives** — which enables efficient gradient-based optimization of position, rotation, scale, color, and opacity across thousands of bitmap primitives via a custom CUDA parallel pipeline, filling the gap left by 2D differentiable rendering methods that are restricted to vector graphics.
+Ours proposes DiffBMP—the first general-purpose differentiable rendering engine for **bitmap primitives**. It implements an efficient custom CUDA parallel pipeline to enable gradient optimization of position, rotation, scaling, color, and opacity for thousands of bitmap primitives, filling the gap where 2D differentiable rendering was previously restricted to vector graphics.
 
 ## Background & Motivation
 
-**Core requirement of differentiable rendering**: Large-scale optimization problems rely on first-order gradient methods, requiring the rendering process to be differentiable with respect to scene parameters. While mature solutions exist in 3D (NeRF, 3DGS), 2D differentiable rendering remains confined to vector graphics.
+**Core demand of differentiable rendering**: Large-scale optimization problems rely on first-order gradient methods, which require the rendering process to be differentiable with respect to scene parameters. While mature solutions exist in the 3D domain (NeRF, 3DGS), 2D rendering remains limited to vector graphics.
 
-**Existing methods support only vector primitives**: DiffVG and its follow-up works perform well on vector paths, but the vast majority of real-world 2D assets are bitmaps, which cannot directly participate in gradient-based optimization.
+**Limitations of Prior Work (Vector Primitives)**: DiffVG and its successors perform excellently on vector paths, but the vast majority of real-world 2D assets are bitmaps, which cannot directly participate in gradient optimization.
 
-**Challenges of differentiable bitmap rendering**: Bitmaps are discrete, high-dimensional pixel arrays that impose substantial memory and computational overhead. Although Spatial Transformer Networks (STN) introduced differentiable image sampling, this idea has not been generalized to general bitmap composition optimization.
+**Key Challenge of bitmap differentiable rendering**: Bitmaps are discrete high-dimensional pixel arrays, leading to massive memory and computational overhead. Although STN introduced differentiable image sampling, it has not been generalized to universal bitmap composition optimization.
 
-**Limitations of Prior Work on bitmaps**: Reddy et al. represent the only prior attempt at differentiable bitmap rendering, but their approach lacks transparency support, parallel acceleration, and is restricted to narrow tasks such as repeating opaque patterns.
+**Background of existing bitmap methods**: Reddy et al. made the only attempt at bitmap differentiable rendering, but it lacked transparency support and parallel acceleration, handling only narrow tasks like repeating opaque patterns.
 
-**DiffVG cannot handle complex primitives**: Experiments show that DiffVG suffers a sharp drop in PSNR and a dramatic increase in runtime when confronted with complex SVG curves, rendering even a vectorize-then-optimize pipeline infeasible.
+**Limitations of vector approaches**: Experiments demonstrate that DiffVG suffers from sharp PSNR drops and dramatic increases in runtime when facing complex SVG curves; even pre-vectorizing before using DiffVG is infeasible.
 
-**Missing creative workflow**: No existing tool supports exporting optimization results as layered PSD files for seamless integration into designer workflows.
+**Goal**: To create a bitmap differentiable rendering tool capable of exporting optimization results as layered PSD files for seamless integration into creative workflows.
 
 ## Method
 
 ### Overall Architecture
 
-The DiffBMP pipeline proceeds as follows: given a set of bitmap primitives and a target image as **input**, differentiable forward rendering (coordinate transformation + bilinear interpolation sampling + Porter-Duff alpha compositing) produces a rendered result; a loss is computed; gradients are efficiently computed via custom CUDA backward kernels; each primitive's parameters $(x_i, y_i, s_i, \theta_i, \nu_i, \mathbf{c}_i)$ are updated; and upon convergence, a layered PSD file is exported.
+DiffBMP addresses the long-standing void in 2D differentiable rendering where bitmap manipulation was impossible. The core is a custom tile-based CUDA **differentiable rendering engine**. Given a set of bitmap primitives and a target image, the system performs structure-aware initialization and applies soft rasterization blurring to primitives. It then enters an optimization loop: differentiable forward rendering (coordinate transformation + bilinear interpolation sampling + Porter-Duff alpha compositing) generates the rendered result $\to$ compute loss $\to$ backpropagation via CUDA for precise gradients $\to$ update primitive parameters $(x_i, y_i, s_i, \theta_i, \nu_i, \mathbf{c}_i)$. This loops until convergence, where a dedicated export kernel generates layered PSD files. Techniques like noisy canvases stabilize optimization by rewriting the forward background.
 
-### Forward Pass
-
-- **Coordinate transformation and sampling**: For each canvas pixel $(x,y)$, a rotation matrix combined with translation and scale transforms maps the pixel to the primitive's normalized coordinates $(u,v) \in [-1,1]^2$, which are then converted to discrete coordinates $(U,V)$ and sampled via **bilinear interpolation**, making spatial transformations fully differentiable.
-- **Alpha compositing**: The alpha value of each primitive is defined as $\alpha_{\max} \cdot \sigma(\nu_i) \cdot M_i(x,y)$, and standard Porter-Duff over compositing is applied to accumulate transmittance and final color.
-- **Tile-based CUDA parallelism**: The canvas is divided into $T \times T$ tiles (default $T=32$), with each tile handled by one CUDA thread block, achieving full pixel-level parallelism.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Bitmap Primitives + Target Image"] --> INIT["Structure-aware Init<br/>Position primitives by 7×7 local variance"]
+    INIT --> BLUR["Soft Rasterization<br/>Gaussian blur to widen gradients"]
+    BLUR --> ENGINE
+    subgraph ENGINE["Differentiable Rendering Engine (tile-based CUDA)"]
+        direction TB
+        FWD["Forward Rendering<br/>Transformation → Bilinear Sampling → Porter-Duff Compositing"] --> LOSS["Loss<br/>MSE / Spatial Constraints / CLIP"]
+        LOSS --> BWD["Backpropagation<br/>FP16 Precise Chain-rule Gradients"]
+        BWD --> UPD["Update Primitive Parameters (x,y,s,θ,ν,c)"]
+        UPD -->|Not converged| FWD
+    end
+    NOISE["Noisy Canvas<br/>Random background forces coverage of same-color zones"] -. Rewrite Forward Background .-> FWD
+    ENGINE -->|Converged| OUT["Dedicated Export Kernel<br/>Layered PSD (2×/4× High Res)"]
+```
 
 ### Key Designs
 
-1. **Soft Rasterization**: A Gaussian blur is applied to each primitive to extend the spatial support of gradients, addressing the sparsity of bilinear interpolation gradients (which are non-zero only near object boundaries). Ablation studies confirm consistent PSNR improvements (Tab. 3).
-2. **Structure-aware Initialization**: The local variance of the target image (computed over a $7 \times 7$ window) guides primitive placement — high-variance regions receive densely placed small primitives, while low-variance regions receive sparsely placed large ones; colors are initialized to target pixel values plus noise.
-3. **Noisy Canvas**: The background is set to uniform random noise $\mathbf{b}(x,y) \sim \mathcal{U}[0,1]^3$, forcing primitives to cover regions whose color matches the background and thereby preventing coverage holes.
-4. **Color Constraint**: An optional parameter $\mu_{\text{blend}}$ controls whether the original primitive colors are preserved; setting $\mu_{\text{blend}}=1$ fully retains original colors (e.g., for brand logo mosaic applications).
+**1. Differentiable Rendering Engine: A tile-based CUDA pipeline with full forward and backward differentiability**
 
-### Loss & Training
+Bitmaps are discrete high-dimensional pixel arrays; direct compositional rendering is typically non-differentiable and computationally expensive. DiffBMP's Core Idea is an end-to-end differentiable custom CUDA engine that solves forward, backward, and parallelization simultaneously. **Mechanism (Forward)**: For canvas pixels $(x,y)$, coordinates are mapped via rotation, translation, and scaling matrices to normalized coordinates $(u,v)\in[-1,1]^2$ (Eq.1), then converted to discrete coordinates $(U,V)$ for bilinear interpolation to obtain the primitive contribution $M_i(x,y)$, making spatial transformations fully differentiable. Each primitive's alpha is defined as $\alpha = \alpha_{\max} \cdot \sigma(\nu_i) \cdot M_i(x,y)$. Porter-Duff "over" compositing is used to accumulate transmittance $T_k$ and final color $I(x,y)$ (Eqs.3–5). **Mechanism (Backward)**: Gradients for position, scale, and rotation are precisely propagated from $I$ through $M_i$ and $(u,v)$ to each parameter via the chain rule (Eq.7) without approximations. **Mechanism (Parallelization)**: The canvas is divided into $T \times T$ tiles (default $T=32$). On the CPU, primitives are binned into tiles based on bounding boxes. On the GPU, each tile is processed by a thread block, with $T \times T$ threads performing pixel-level parallelization. Gradients are accumulated using FP16 (`__half2` packing + `atomicAdd`) to minimize bandwidth and VRAM. Additionally, a specialized export CUDA kernel renders editable layered PSDs at high resolution ($2\times/4\times$). An optional color constraint $\mu_{\text{blend}}$ (Eq.6) preserves original primitive colors for brand-sensitive scenarios like logo mosaics.
 
-- **Base loss**: $\| I - I^{\text{target}} \|_2^2$ (pixel-wise MSE).
-- **Spatial constraint loss** (Eq. 9): $\mathcal{L} = \|(I_\alpha^{\text{target}} > 0) \odot (I - I^{\text{target}})\|_2^2 + \lambda_\alpha \|I_\alpha - I_\alpha^{\text{target}}\|_2^2$, used for foreground rendering to enforce primitive disappearance in background regions.
-- **CLIP loss**: Can be combined with CLIP to enable text-driven bitmap composition.
+**2. Soft Rasterization: Widening sparse gradients**
 
-### Backward Pass and Efficiency
+Gradients from bilinear interpolation are only non-zero near primitive boundaries and essentially zero elsewhere. This sparsity often causes optimization to stall. DiffBMP applies Gaussian blurring to each primitive before optimization, smoothing edges and expanding the spatial reach of gradients. This step adds negligible computational cost while making gradients more continuous and informative, consistently improving PSNR in ablation studies (Tab.3).
 
-- Gradients are propagated via the chain rule from rendered outputs to all primitive parameters (position, scale, rotation, color, opacity) and can be computed exactly without approximation.
-- **FP16 half-precision** arithmetic combined with `__half2` packing and `atomicAdd` substantially reduces bandwidth and memory consumption.
-- Dedicated export CUDA kernels support high-resolution PSD export (optimizing at low resolution and exporting at 2×/4× higher resolution).
+**3. Structure-aware Init: Placing primitives by target complexity**
 
-## Experiments
+Random initialization often places primitives poorly, slowing convergence. DiffBMP uses the local variance of a $7\times7$ sliding window on the target image (normalized as $\mathrm{NLV}\in[0,1]$) to guide placement: high-variance (high-detail) areas receive dense, small primitives, while low-variance (flat) areas receive sparse, large primitives ($s_i$ scales inversely with NLV). Colors are initialized with the target pixel value plus noise $c_i\sim\mathcal{N}(I(x_i,y_i),\sigma_c^2)$, and opacity is fixed at $\nu_i=-2.0$ ($\approx 12\%$) to ensure gradient flow through all layers. This initial layout matches the target structure, providing another stable Gain in ablations.
+
+**4. Noisy Canvas: Forcing primitives to cover same-colored areas**
+
+When a target region matches the canvas background color, primitives may "lazy-out" and fail to cover the area, leaving holes. DiffBMP sets the background to uniform random noise $\mathbf{b}(x,y)\sim\mathcal{U}[0,1]^3$ and rewrites the forward compositing as $I_{\text{FG+BG}}=I_{\text{FG}}+T_N\odot\mathbf{b}$ (Eq.8). This forces primitives to cover regions even if they match the original background color. Compared to mesh-based methods that sample noise 5 times per iteration, Ours samples only once.
+
+### Loss
+
+- **Basic Loss**: $\| I - I^{\text{target}} \|_2^2$ (Pixel-level MSE).
+- **Spatial Constraint Loss** (Eq. 9): $\mathcal{L} = \|(I_\alpha^{\text{target}} > 0) \odot (I - I^{\text{target}})\|_2^2 + \lambda_\alpha \|I_\alpha - I_\alpha^{\text{target}}\|_2^2$, used for foreground rendering to ensure primitives disappear in background regions.
+- **CLIP Loss**: Can be combined with CLIP for text-driven bitmap composition.
+
+## Key Experimental Results
 
 ### Main Results
 
@@ -82,7 +98,7 @@ The DiffBMP pipeline proceeds as follows: given a set of bitmap primitives and a
 | CUDA-FP32 (RTX 3090) | 3.9/11.6 ms, 1.0 GB | 7.6/9.3 ms, 2.0 GB | 16.1/10.0 ms, 6.1 GB |
 | CUDA-FP16 (RTX 3090) | **2.3/6.2 ms, 1.1 GB** | **4.3/5.5 ms, 1.6 GB** | **9.0/6.4 ms, 3.8 GB** |
 
-> CUDA-FP16 is approximately **350–600× faster** than the PyTorch baseline, with memory reduced by approximately **2.5–6×**.
+> CUDA-FP16 is **~350–600× faster** than the PyTorch baseline, with VRAM usage reduced by **~2.5–6×**.
 
 ### Ablation Study
 
@@ -97,39 +113,39 @@ The combination of both techniques achieves the best PSNR across all scenarios.
 
 ### Key Findings
 
-- **DiffVG fails on complex SVGs**: When confronted with bitmap-level complexity in vector primitives, DiffVG exhibits significant PSNR degradation and sharp runtime increases, demonstrating the necessity of DiffBMP.
-- **Dynamic video**: Combining sequential initialization, removal of stuck primitives, and freezing of unchanged regions, DiffBMP achieves the best temporal consistency (tOF=1.84) across 17 video sequences while maintaining competitive per-frame fidelity (PSNR=24.38).
-- **Noisy canvas** effectively eliminates coverage holes in regions whose color matches the background.
-- **Spatial constraints** combined with opacity loss and re-initialization of low-opacity primitives yield the cleanest foreground rendering.
+- **DiffVG failure on complex SVGs**: When handling vector primitives at bitmap-level complexity, DiffVG’s PSNR drops significantly and runtime spikes, proving the necessity of DiffBMP.
+- **Dynamic Video**: Combining sequence initialization, removal of stuck primitives, and freezing of unchanged regions achieves the best temporal consistency (tOF=1.84) while maintaining competitive frame fidelity (PSNR=24.38) across 17 video segments.
+- **Noisy Canvas Effectiveness**: Successfully eliminates holes in primitive coverage in same-colored regions.
+- **Spatial Constraints**: Combining opacity loss with re-initialization of low-opacity primitives yields the cleanest foreground rendering results.
 
 ## Highlights & Insights
 
-- **Filling a gap**: DiffBMP is the first general-purpose, high-efficiency differentiable rendering engine for arbitrary bitmap primitives, serving as the bitmap counterpart to DiffVG.
-- **Engineering excellence**: A custom tile-based CUDA kernel with FP16 mixed precision enables optimization of thousands of primitives within one minute on a consumer-grade GPU.
-- **Strong practicality**: Layered PSD export, a Python interface, and CLIP-driven text-guided creation allow direct integration into designer workflows.
-- **Complete optimization toolkit**: Soft rasterization, structure-aware initialization, and noisy canvas are each validated by ablation studies, with notable combined gains.
-- **Diverse applications**: Brand logo mosaics, video modeling, foreground-constrained rendering, and text-driven creation are demonstrated.
+- **Novelty**: First general-purpose, high-efficiency differentiable rendering engine for arbitrary bitmap primitives; serves as the bitmap counterpart to DiffVG.
+- **Engineering Excellence**: Custom tile-based CUDA kernels with FP16 mixed precision optimize thousands of primitives in under a minute on consumer-grade GPUs.
+- **Value**: High practical utility with layered PSD export, Python interfaces, and CLIP-driven creation, allowing direct integration into professional designer workflows.
+- **Novelty (Tricks)**: Soft rasterization, structure-aware initialization, and noisy canvases are all ablation-verified, with significant combined effects.
+- **Diverse Applications**: Showcases brand logo mosaics, video modeling, foreground constrained rendering, and text-driven creative workflows.
 
 ## Limitations & Future Work
 
-- **GPU dependency**: Unlike DiffVG, which can run on CPU, DiffBMP is CUDA-based and requires an NVIDIA GPU.
-- **Hyperparameter sensitivity**: The generality of the framework makes hyperparameter selection and initialization strategy highly influential on results, with a risk of local optima and no automatic tuning mechanism.
-- **Autoregressive/RL not explored**: The paper notes that differentiable bitmap rendering could serve as a foundation for autoregressive painting and reinforcement learning, but neither is implemented.
-- **Trade-offs remain in video**: Dynamic DiffBMP still exhibits a trade-off between flicker suppression and per-frame fidelity that has not been fully resolved.
+- **GPU Dependency**: Unlike DiffVG which can run on CPUs, DiffBMP is built on CUDA and requires NVIDIA GPUs.
+- **Hyperparameter Sensitivity**: The general nature of the engine makes results sensitive to hyperparameter choices and initialization strategies, risking local optima without an auto-tuning mechanism.
+- **Untapped Potential (RL/Autoregressive)**: While the paper notes that bitmap differentiable rendering could support autoregressive painting and reinforcement learning, these were not implemented.
+- **Video Trade-offs**: Dynamic DiffBMP still faces a trade-off between anti-flicker stability and frame fidelity, which has yet to be perfectly balanced.
 
 ## Related Work & Insights
 
-- **Vector differentiable rendering**: DiffVG [Li et al., 2020] and its extensions (image vectorization, text-driven SVG generation); Bézier Splatting [Liu et al., 2025] is likewise restricted to vector primitives.
-- **Bitmap differentiable rendering**: STN [Jaderberg et al., 2015] introduced differentiable spatial transformations; Reddy et al. applied this to pattern composition but without parallelism or transparency support.
-- **3D differentiable rendering**: NeRF, 3DGS, and their accelerated variants (Plenoxels, 3D Convex Splatting) inform DiffBMP's tile-based parallelism design.
-- **Neural painting**: RL- or feedforward-based painting methods such as Paint Transformer [Liu et al., 2021] and CLIPDraw [Frans et al., 2022]; DiffBMP offers a gradient-optimization alternative to these approaches.
+- **Vector Differentiable Rendering**: DiffVG [Li et al., 2020] and its extensions (vectorization, text-to-SVG); Bézier Splatting [Liu et al., 2025] is also limited to vectors.
+- **Bitmap Differentiable Rendering**: STN [Jaderberg et al., 2015] introduced differentiable spatial transforms; Reddy et al. applied this to pattern composition but lacked parallelism and transparency.
+- **3D Differentiable Rendering**: NeRF, 3DGS, and accelerated variants (Plenoxels, 3D Convex Splatting) provided references for the tile-based parallel architecture of DiffBMP.
+- **Neural Painting**: Paint Transformer [Liu et al., 2021] and CLIPDraw [Frans et al., 2022] use RL or feed-forward networks; DiffBMP provides an alternative path via gradient optimization.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Fills the gap in differentiable bitmap rendering; the problem is clearly defined and previously unsolved
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers performance comparisons, ablation studies, and multi-scenario applications, though quantitative comparisons with more baselines are limited
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, complete mathematical derivations, and rich, intuitive figures
-- Value: ⭐⭐⭐⭐ — Opens a new paradigm for bitmap gradient optimization with strong practical utility; actual impact depends on community adoption
+- Novelty: ⭐⭐⭐⭐⭐ — Fills a clear void in bitmap differentiable rendering with a clean problem definition.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Performance, ablations, and diverse applications are covered, though more quantitative comparisons with baselines would be beneficial.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, complete mathematical derivations, and intuitive, rich visualizations.
+- Value: ⭐⭐⭐⭐ — Establishes a new paradigm for bitmap gradient optimization; utility depends on community adoption of the tool.
 
 <!-- RELATED:START -->
 
@@ -137,11 +153,11 @@ The combination of both techniques achieves the best PSNR across all scenarios.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](../../NeurIPS2025/others/a_differentiable_model_of_supply-chain_shocks.md)
-- [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](../../NeurIPS2025/others/exact_learning_of_arithmetic_with_differentiable_agents.md)
+- [\[CVPR 2025\] Locally Orderless Images for Optimization in Differentiable Rendering](../../CVPR2025/others/locally_orderless_images_for_optimization_in_differentiable_rendering.md)
+- [\[CVPR 2026\] Lens Component Deletion based on Differentiable Ray Tracing](lens_component_deletion_based_on_differentiable_ray_tracing.md)
+- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
 - [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](../../ICML2026/others/disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
-- [\[NeurIPS 2025\] Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch](../../NeurIPS2025/others/scalable_gpu-accelerated_euler_characteristic_curves_optimization_and_differenti.md)
-- [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
+- [\[CVPR 2025\] TensoFlow: Tensorial Flow-based Sampler for Inverse Rendering](../../CVPR2025/others/tensoflow_tensorial_flow-based_sampler_for_inverse_rendering.md)
 
 </div>
 

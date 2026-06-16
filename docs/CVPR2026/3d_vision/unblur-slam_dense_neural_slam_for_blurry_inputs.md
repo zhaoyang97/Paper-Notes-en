@@ -2,92 +2,99 @@
 title: >-
   [Paper Note] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs
 description: >-
-  [CVPR 2026][3D Vision][blur-robust SLAM] Rather than naively inserting a deblurring network into the SLAM front-end, Unblur-SLAM is designed around a central decision: which blurry frames can be deblurred prior to tracki…
+  [CVPR 2026][3D Vision][3DGS] Unblur-SLAM does not simply integrate a deblurring network into the SLAM front-end. Instead, it revolves around the critical decision of "which blurry frames can be deblurred before tracking and which must be modeled directly in 3D space." It designs a complete pipeline including blur detection, physically constrained
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "blur-robust SLAM"
-  - "3DGS"
-  - "single-image deblurring"
-  - "sub-frame modeling"
-  - "hybrid bundle adjustment"
+  - CVPR 2026
+  - 3D Vision
+  - 3DGS
 date: 2026-05-08
-content_hash: 21ea01bc18b25e55
+content_hash: 9041faf10b28f66f
 ---
-
 # Unblur-SLAM: Dense Neural SLAM for Blurry Inputs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.26810](https://arxiv.org/abs/2603.26810)  
 **Code**: [https://github.com/SlamMate/Unblur-SLAM.git](https://github.com/SlamMate/Unblur-SLAM.git)  
-**Area**: 3D Vision / Neural SLAM
-**Keywords**: blur-robust SLAM, 3DGS, single-image deblurring, sub-frame modeling, hybrid bundle adjustment
+**Area**: 3D Vision / Neural SLAM  
+**Keywords**: Blur-robust SLAM, 3DGS, Single-frame deblurring, Sub-frame modeling, Hybrid bundle adjustment
 
 ## TL;DR
 
-Rather than naively inserting a deblurring network into the SLAM front-end, Unblur-SLAM is designed around a central decision: which blurry frames can be deblurred prior to tracking, and which must be modeled directly in 3D space. This insight drives a complete pipeline comprising blur detection, physically constrained deblurring, 3D Gaussian blur refinement, and a severe-blur fallback, enabling the system to handle both motion blur and defocus blur while substantially improving tracking and reconstruction quality.
+Unblur-SLAM does not simply integrate a deblurring network into the SLAM front-end. Instead, it revolves around the critical decision of "which blurry frames can be deblurred before tracking and which must be modeled directly in 3D space." It designs a complete pipeline including blur detection, physically constrained deblurring, 3D Gaussian blur refinement, and a fallback mechanism for severe blur, effectively handling both motion and defocus blur while significantly improving tracking and reconstruction quality.
 
 ## Background & Motivation
 
-Most SLAM systems assume sufficiently sharp input frames. Both classical feature-based methods and modern dense/neural SLAM approaches fundamentally rely on establishing reliable correspondences across adjacent views. Once images are degraded by motion blur or defocus blur, front-end tracking deteriorates and back-end reconstruction is consequently impaired.
+Most SLAM systems assume that input frames are sufficiently sharp. Both traditional feature-based methods and modern dense/neural SLAM essentially require establishing reliable correspondences between adjacent views. Once images are affected by motion or defocus blur, front-end tracking weakens, and back-end reconstruction suffers.
 
-Existing blur-aware SLAM works suffer from two main problems. First, many methods assume blur originates exclusively from camera motion and therefore focus on modeling motion blur while neglecting defocus blur. Real-world data does not conform to this assumption, as both types of blur frequently co-occur in smartphone, handheld, and indoor low-light capture scenarios. Second, many blur-aware SLAM approaches treat every frame as blurry, which significantly increases computational cost and is inconsistent with the reality that blurry frames constitute only a fraction of typical sequences.
+Existing blur-aware SLAM works face two main issues. First, many assume blur originates solely from camera motion, focusing on motion blur while ignoring defocus blur. However, real-world data from smartphones, handheld cameras, or low-light indoor environments often involve both. Second, many methods treat all frames as blurry, which significantly increases computational costs and contradicts the fact that blurry frames only constitute a portion of real data.
 
-The authors therefore propose a more refined problem formulation:
+The authors propose a more refined problem setting:
 
-- Not every frame requires expensive blur optimization.
-- Not every blurry frame can be recovered by a single-image deblurring network.
-- When single-image deblurring fails, the system should switch to a more robust 3D modeling strategy rather than collapse.
+- Not all frames require expensive blur optimization.
+- Not all blurry frames can be fixed by a single-frame deblurring network.
+- If single-frame deblurring fails, the system should not crash but switch to a more robust 3D modeling approach.
 
-In other words, what SLAM needs is not a universal deblurrer, but a system capable of routing frames of different blur levels and types through appropriate processing branches. Unblur-SLAM is designed under this premise.
+In other words, SLAM needs a system that can triage different blur levels and types rather than a "universal deblurrer." Unblur-SLAM is designed under this premise.
 
 ## Method
 
 ### Overall Architecture
 
-The system first evaluates the blur magnitude of each input frame and then routes it into one of three categories:
+The system first evaluates the blur level of input frames and classifies them into three categories:
 
-- **Sharp frames**: Passed directly to the Droid-SLAM front-end and 3DGS back-end without additional expensive processing.
-- **Successfully deblurred blurry frames**: Blurry frames that can be recovered by the single-image deblurring network; these are deblurred before tracking and mapping, with residual blur further refined in the back-end.
-- **Failed blurry frames**: Frames where blur is too severe or of too complex a type for single-image deblurring to succeed. These frames are not forced through the tracker; instead, their imaging process is explained directly in 3DGS space via multi-sub-frame rendering and a blur network.
+- **sharp frames**: Processed directly by the Droid-SLAM front-end and 3DGS back-end without expensive overhead.
+- **successfully deblurred blurry frames**: Frames that can be restored by the single-frame network are deblurred before tracking and mapping, with residual blur further refined in the back-end.
+- **failed blurry frames**: Frames with excessive blur or complex types where single-frame deblurring fails. These are not forced into the tracker but modeled via multi-sub-frame rendering and a blur network to explain the imaging process within the 3DGS space.
 
-This three-way routing is the central contribution of the paper. It avoids both extremes: it does not assume every frame requires heavy blur optimization, nor does it discard information when deblurring fails.
+This tri-path branching is the core of the paper, avoiding the extremes of either assuming heavy optimization for all frames or discarding information when deblurring fails.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Frame"] --> B["Blur Detection & Branching<br/>ARNIQA Score + Thresholding"]
+    B -->|Score < Threshold| C["sharp frames"]
+    B -->|Score > Threshold| D["Physically Constrained Deblurring Net<br/>Restore central exposure sharp image"]
+    D -->|Laplacian Check Passed| F["deblurred frames"]
+    D -->|Check Failed| G["failed frames (severe blur)"]
+    subgraph BLUR3["3DGS Residual Blur Modeling & Severe Blur Fallback"]
+        direction TB
+        F --> H["Blur Proposal Network<br/>Depth-dependent residual deblurring"]
+        G --> I["Virtual Trajectory Multi-sub-frame Rendering<br/>Averaging with blur proposal"]
+    end
+    C --> J["3DGS Back-end Map<br/>Weighted Loss w_sharp &gt; w_deblur = w_fail"]
+    H --> J
+    I --> J
+```
 
 ### Key Designs
 
-1. **Blur Detection and Frame Routing**
+**1. Blur Detection and Branching: Quantifying blur before deciding on heavy optimization**
 
-    - **Function**: Determine whether a given frame should follow the standard SLAM pipeline, the deblur-then-SLAM pipeline, or the 3D blur fallback.
-    - **Mechanism**: The authors construct a blur detection benchmark comprising real and semi-synthetic data, evaluate 39 image quality/blur metrics, and select ARNIQA as the default blur detector. At runtime, frames with blur scores below a threshold are treated as sharp; otherwise they enter the deblurring branch, where additional criteria such as the Laplacian ratio are used to assess whether deblurring succeeds.
-    - **Design Motivation**: The system should not treat all frames uniformly. Identifying blur magnitude first allows computational budget to be allocated where it is genuinely needed.
+The entry point is a branching decision rather than deblurring itself. The authors note that blurry frames only represent a portion of real sequences. To identify blur levels, a benchmark was constructed comparing 39 quality/blur metrics, selecting ARNIQA as the default detector. The logic involves two stages: if the blur score is low, it passes as a sharp frame; if high, it enters the deblurring branch, followed by a post-check (e.g., Laplacian ratio) to determine if restoration succeeded. This "quantify then branch" design concentrates the computational budget on frames that truly need it.
 
-2. **Physically Constrained Single-Image Deblurring Network**
+**2. Physically Constrained Single-frame Deblurring Network: Restoring the mid-exposure ground truth rather than simple sharpening**
 
-    - **Function**: Provide the front-end tracker and depth estimator with images as close as possible to the mid-exposure sharp frame.
-    - **Mechanism**: A two-stage training strategy is adopted. The first stage trains on semi-synthetic motion blur data (RED, GoPro, ReplicaBlurry) to teach the network to recover the mid-exposure frame rather than merely sharpen the image. The second stage fine-tunes on the DPDD defocus dataset to improve robustness to defocus blur. Physics-based mid-frame constraints are applied during training to prevent the network from learning spurious sharp textures inconsistent with 3D geometry.
-    - **Design Motivation**: Methods such as I2-SLAM have demonstrated that conventional 2D deblurring networks, without geometric consistency constraints, tend to produce textures that appear sharp but are detrimental to multi-view matching. The authors therefore emphasize recovering the mid-exposure ground truth rather than pursuing purely visual sharpening.
+For "repairable" frames, a two-stage trained network provides sharp images near the mid-exposure time for tracking and depth estimation. It is trained on semi-synthetic motion blur data (RED, GoPro) and fine-tuned on defocus data (DPDD). The key is the training constraint: using mid-frame constraints based on imaging physics to ensure alignment with real mid-exposure imaging rather than pursuing visual "sharpness." This avoids the generation of clear but geometrically inconsistent pseudo-textures that could harm multi-view matching.
 
-3. **3DGS Residual Blur Modeling and Severe-Blur Fallback**
+**3. 3DGS Residual Blur Modeling and Severe Blur Fallback: Repairing light blur for tracking, modeling heavy blur in 3D**
 
-    - **Function**: Continue modeling residual blur for imperfectly deblurred frames; provide a robust alternative path for frames where deblurring fails.
-    - **Mechanism**: The system uses Splat-SLAM-style 3D Gaussian Splatting as the map representation. For successfully deblurred frames, a Blur Proposal Network estimates per-pixel convolution kernels and masks to apply depth-conditioned residual deblurring and detail enhancement to rendered images. For failed frames, multiple sub-frames are rendered along a virtual camera trajectory, each processed by the blur proposal, and then averaged to form an observation that directly models the blurry imaging process.
-    - **Design Motivation**: Mildly to moderately blurry frames are better suited to a deblur-then-track strategy, while severely blurry frames are better handled by explaining their blur in 3D space. This is more robust than forcing all frames through a single pipeline.
+The map uses 3D Gaussian Splatting (as in Splat-SLAM). For successful but imperfectly deblurred frames, a Blur Proposal Network estimates pixel-wise kernels and masks to apply depth-dependent residual deblurring in the back-end. For failed frames, the system synthesizes an observation by rendering multiple sub-frames along a virtual camera trajectory and averaging them with blur proposals. This follows the insight that light blur is best "fixed before tracking," while heavy blur is better "explained in 3D space" by modeling why it became blurry.
 
 ### Loss & Training
 
-Back-end optimization employs three categories of losses.
+Back-end optimization involves three types of losses:
 
-- **Sharp frame loss**: Higher weight is assigned to sharp frames, which serve as strong geometric and appearance anchors.
-- **Deblur frame loss**: Multi-scale RGB and depth consistency optimization is applied to successfully deblurred frames, regularized by a sparse mask term.
-- **Fail frame loss**: RGB and depth errors computed from multi-sub-frame synthesis are used to optimize failed frames.
+- **Sharp frame loss**: High weight assigned to sharp frames as strong geometric and appearance anchors.
+- **Deblur frame loss**: Multi-scale RGB and depth consistency optimization for successfully deblurred frames, with sparse mask regularization.
+- **Fail frame loss**: Optimization using RGB/Depth error after multi-sub-frame synthesis for failed frames.
 
-The total loss is a weighted sum over all frames, with $w_\text{sharp} > w_\text{deblur} = w_\text{fail}$. Sliding-window BA, loop closure, and global BA are retained, and a Gaussian scale regularizer is incorporated in global optimization to prevent excessive stretching.
+The total loss is a weighted sum where $w_{sharp} > w_{deblur} = w_{fail}$. The system maintains sliding-window BA, loop closure, and global BA, using regularization on Gaussian scales to prevent over-stretching.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The method is evaluated on extreme-blur synthetic scenes, an offline deblurring standard benchmark, and real-world SLAM datasets, measuring both tracking ATE and reconstruction PSNR/SSIM/LPIPS.
+Tests were conducted on synthetic extreme blur scenes, offline deblurring benchmarks, and real SLAM datasets, measuring Tracking ATE and reconstruction PSNR/SSIM/LPIPS.
 
 | Dataset / Method | Key Metric 1 | Key Metric 2 | Result |
 |---|---|---|---|
@@ -97,77 +104,54 @@ The method is evaluated on extreme-blur synthetic scenes, an offline deblurring 
 | ArchViz-2 Ours | ATE | PSNR | **0.0027 / 32.71** |
 | ArchViz-3 MBA-SLAM | ATE | PSNR | 0.0141 / 27.85 |
 | ArchViz-3 Ours | ATE | PSNR | **0.0067 / 30.09** |
-| Deblur-NeRF offline Prev. SOTA (CoMoGaussian) | PSNR / SSIM / LPIPS | - | 27.85 / 0.8431 / 0.0822 |
+| Deblur-NeRF offline SOTA (CoMoGaussian) | PSNR / SSIM / LPIPS | - | 27.85 / 0.8431 / 0.0822 |
 | **Ours** | PSNR / SSIM / LPIPS | - | **29.49 / 0.9213 / 0.0728** |
 
-Two observations stand out. First, Unblur-SLAM outperforms MBA-SLAM on the ArchViz synthetic scenes, which consist almost entirely of extreme blur, with particularly notable gains in ATE and PSNR on the third sequence. Second, and more strikingly, the online method surpasses a range of offline methods on the Deblur-NeRF benchmark, demonstrating the effectiveness of its 3D blur modeling.
-
-### Real-World Data and Runtime Efficiency
-
-The authors further evaluate trajectory error on TUM RGB-D and IndoorMCD, and report mapping quality and runtime speed on TUM.
-
-| Experiment | Comparison | Metric | Result |
-|---|---|---|---:|
-| TUM Tracking | Droid-SLAM | ATE [m] | 0.380 |
-| TUM Tracking | Ours* | ATE [m] | 0.352 |
-| TUM Tracking | **Ours** | ATE [m] | **0.336** |
-| MCD Tracking | Droid-SLAM | ATE [m] | 0.138 |
-| MCD Tracking | **Ours** | ATE [m] | **0.128** |
-| TUM Mapping fr1_desk | I2-SLAM / Ours | PSNR | 27.23 / **28.03** |
-| TUM Mapping fr2_xyz | I2-SLAM / Ours | PSNR | **32.06** / 31.14 |
-| TUM Mapping fr3_office | I2-SLAM / Ours | PSNR | 28.91 / **29.22** |
-| Runtime Speed | Splat-SLAM | FPS | 1.24 |
-| Runtime Speed | I2-SLAM | FPS | 0.095 |
-| Runtime Speed | Ours w/o ref. | FPS | 0.85 |
-| Runtime Speed | **Ours** | FPS | **0.74** |
+Unblur-SLAM is more robust than MBA-SLAM in extreme blur scenes (ArchViz), particularly in sequence 3. Notably, this online method outperforms several offline methods on the Deblur-NeRF benchmark, demonstrating the effectiveness of its 3D blur modeling.
 
 ### Key Findings
 
-- Frame routing is critical. Routing all frames through heavy blur refinement slows the system considerably, while feeding all blurry frames directly to the tracker leads to tracking failures. Unblur-SLAM achieves a balance between stability and speed precisely through its routing mechanism.
-- Physically constrained mid-frame deblurring training is necessary. The authors specifically note that conventional single-image deblurring without 3D consistency constraints can actually harm SLAM performance.
-- The severe-blur fallback is not a rare edge case. Whenever the camera undergoes rapid motion or significant defocus is present, this branch prevents frame dropping or system failure.
-- Although the final speed remains below that of pure Splat-SLAM, it is substantially faster than I2-SLAM, indicating that the system retains a degree of practical online usability.
+- **Blur branching is critical**: Treating all frames with heavy refinement is slow; ignoring blur leads to tracking failure. Branching balances stability and speed.
+- **Physically constrained mid-frame training is necessary**: Standard single-frame deblurring without 3D consistency can harm SLAM.
+- **Severe blur fallback is not a corner case**: During fast motion or significant defocus, this path prevents frame dropping or system collapse.
+- While slower than pure Splat-SLAM, it is significantly faster than I2-SLAM (0.74 FPS vs 0.095 FPS), retaining online usability.
 
 ## Highlights & Insights
 
-- The most commendable aspect of this paper is its systems perspective. Much related work addresses only one of two problems — sharper deblurring or more robust SLAM — whereas this paper designs distinct branches around the failure modes of the entire pipeline.
-- The authors do not overestimate single-image deblurring. It is treated as a preprocessing corrector, and upon failure, the system immediately switches to blur modeling in 3D space — a mature engineering approach.
-- The use of distinct losses and update strategies for successfully deblurred frames and failed frames reflects the authors' understanding that blur is not a scalar intensity but represents different perturbations to the imaging process.
-- The online method's ability to surpass offline methods on Deblur-NeRF is notable, indicating that the 3DGS + blur network combination possesses strong deblurring capability beyond its role in SLAM.
+- The paper emphasizes a **systems approach**, designing different branches for different failure modes rather than just a better deblurring network.
+- Single-frame deblurring is treated as a pre-processor rather than a silver bullet. The fallback to 3D space when it fails reflects mature engineering thinking.
+- The fact that an online method surpasses offline SOTA on Deblur-NeRF proves that the 3DGS + blur network combination possesses intrinsic deblurring power beyond SLAM utility.
 
 ## Limitations & Future Work
 
-- Although faster than many blur-aware SLAM systems, 0.74 FPS remains far from real-time, particularly on mobile platforms.
-- The system currently targets static scenes. In the presence of prominent dynamic objects, blur sources and geometric changes become coupled, which the existing model may not handle stably.
-- The severe-blur fallback relies on virtual sub-frames and the blur proposal network, resulting in a long and parameter-heavy pipeline; more compact representations warrant future exploration.
-- The current blur detector uses a fixed threshold strategy, and its generalization to different devices and exposure settings requires more extensive external evaluation.
-- A natural future direction is to incorporate spatial priors from 3D foundation models into blur-aware SLAM, enabling the system not only to see more clearly but to reason more deeply about geometry.
+- **Latency**: At 0.74 FPS, the system is not yet truly real-time, especially for mobile platforms.
+- **Dynamic Scenes**: Blur and geometric changes become coupled in dynamic environments, which the current model may not handle stably.
+- **Parameters**: The severe blur branch depends on virtual sub-frames and blur proposal networks, which are computationally heavy.
+- **Thresholding**: The blur detector currently relies on fixed thresholds; generalization across different devices remains to be tested.
 
 ## Related Work & Insights
 
-- **vs. MBA-SLAM / Deblur-SLAM**: These methods focus primarily on motion blur and typically assume all frames are blurry. Unblur-SLAM covers both motion blur and defocus blur and explicitly handles three frame categories: sharp, blurry, and failed.
-- **vs. I2-SLAM**: I2-SLAM recognizes the importance of imaging process modeling but does not fully exploit the geometric consistency of single-image deblurring. This paper addresses that gap through physically constrained training and 3DGS refinement.
-- **vs. offline 3DGS deblurring methods**: Methods such as BAGS and CoMoGaussian target high-quality offline reconstruction; this paper brings those ideas into online SLAM and adds a fallback for severely blurry frames.
-- A broader insight for the research community is that perceptual preprocessing modules should not be designed in isolation. What most determines system-level performance is often the handling of preprocessing failures. The routing philosophy of Unblur-SLAM is equally applicable to other challenging imaging conditions such as low light, noise, and haze.
+- **vs MBA-SLAM / Deblur-SLAM**: Those focus on motion blur and assume all frames are blurry; "Ours" covers both motion and defocus and explicitly handles three frame categories.
+- **vs I2-SLAM**: While I2-SLAM models the imaging process, its use of single-frame consistency is less effective; "Ours" succeeds via physical constraints and 3DGS refinement.
+- **Related Insight**: Pre-processing modules should not be designed in isolation. System performance often depends on "what happens when pre-processing fails." The branching concept is applicable to other challenging conditions like low light or rain.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Jointly addresses motion blur and defocus blur, and systematically incorporates a deblurring-failure branch into SLAM; the combined design is strong.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Synthetic, real-world, offline benchmark, and runtime evaluations are all included, though additional long real-world sequences and dynamic scenes would strengthen the paper.
-- **Writing Quality**: ⭐⭐⭐⭐ — The pipeline is lengthy but well-organized, with clearly delineated responsibilities for each module.
-- **Value**: ⭐⭐⭐⭐⭐ — Highly relevant for real-world SLAM deployment, particularly in handheld and mobile device scenarios where blur is frequent.
+- **Novelty**: ⭐⭐⭐⭐ Simultaneously handles motion and defocus blur and systematizes a fallback for deblurring failure.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluated on synthetic, real, and offline benchmarks, though dynamic scenes need further testing.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear organization of a complex pipeline.
+- **Value**: ⭐⭐⭐⭐⭐ High relevance for real-world SLAM on handheld and mobile devices where blur is frequent.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM](sgad-slam_splatting_gaussians_at_adjusted_depth_for_better_radiance_fields_in_rg.md)
-- [\[CVPR 2026\] VGGT-SLAM++: Visual SLAM with DEM-Based Covisibility and Local Bundle Adjustment](vggt-slam.md)
-- [\[CVPR 2026\] DROID-W: DROID-SLAM in the Wild](droid-slam_in_the_wild.md)
-- [\[AAAI 2026\] FoundationSLAM: Unleashing the Potential of Deep Foundation Models in End-to-End Dense Visual SLAM](../../AAAI2026/3d_vision/foundationslam_unleashing_the_power_of_depth_foundation_models_for.md)
-- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[CVPR 2026\] S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs](s2d_sparse_to_dense_lifting_for_3d_reconstruction_with_minimal_inputs.md)
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
 
 </div>
 

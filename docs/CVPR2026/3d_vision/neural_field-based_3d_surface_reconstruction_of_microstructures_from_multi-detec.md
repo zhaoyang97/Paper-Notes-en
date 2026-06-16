@@ -2,132 +2,145 @@
 title: >-
   [Paper Note] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][Scanning Electron Microscopy] This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds the physical model of electron scattering in SEM into a neural field optimization pipeli…
+  [CVPR 2026][3D Vision][Paper Note] Ours proposes NFH-SEM, a hybrid neural field-based framework that embeds the physical model of SEM electron scattering into the neural field optimization process. By reconstructing high-fidelity 3D surfaces of microstructures from multi-view multi-detector SEM images, it achieves self-calibrated and shadow-resistant re
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Scanning Electron Microscopy"
-  - "3D Reconstruction"
-  - "Neural Fields"
-  - "Microstructures"
-  - "Photometric Stereo"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 27adfc99568832c6
+content_hash: 5c960663017cf632
 ---
-
 # Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2508.04728](https://arxiv.org/abs/2508.04728)  
 **Code**: [https://github.com/zju3dv/NFH-SEM](https://github.com/zju3dv/NFH-SEM)  
-**Area**: 3D Vision
-**Keywords**: Scanning Electron Microscopy, 3D Reconstruction, Neural Fields, Microstructures, Photometric Stereo
+**Area**: 3D Vision  
+**Keywords**: Scanning Electron Microscope, 3D Reconstruction, Neural Field, Microstructures, Photometric Stereo
 
 ## TL;DR
-This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds the physical model of electron scattering in SEM into a neural field optimization pipeline, enabling high-fidelity 3D surface reconstruction of microstructures from multi-view, multi-detector SEM images. The framework achieves self-calibration and shadow-robust reconstruction at nanometer-scale accuracy (478 nm stacked features, 782 nm pollen textures, 1.559 μm fracture steps).
+Ours proposes NFH-SEM, a hybrid neural field-based framework that embeds the physical model of SEM electron scattering into the neural field optimization process. By reconstructing high-fidelity 3D surfaces of microstructures from multi-view multi-detector SEM images, it achieves self-calibrated and shadow-resistant reconstruction with nanometer-scale precision (e.g., 478nm layering features, 782nm pollen textures, and 1.559μm fracture steps).
 
 ## Background & Motivation
 
-1. **Background**: Scanning electron microscopy (SEM) is widely used in materials science, biology, and industrial manufacturing, producing high-resolution micro/nanoscale images. However, SEM images are inherently 2D intensity distributions of secondary electrons (SE) or backscattered electrons (BSE), and do not directly encode 3D information. Existing SEM 3D reconstruction methods fall into two main categories: multi-view methods (SfM+MVS) and single-view methods (photometric stereo, PS).
+1. **Background**: Scanning Electron Microscopy (SEM) is a widely used imaging tool in material science, biology, and industrial manufacturing, capable of producing high-resolution micro/nanoscale images. However, SEM images are essentially 2D intensity distributions of secondary electrons (SE) or backscattered electrons (BSE) and do not directly contain 3D information. Existing 3D reconstruction methods for SEM are mainly divided into multi-view methods (SfM+MVS) and single-view methods (Photometric Stereo, PS).
 
 2. **Limitations of Prior Work**:
-    - Multi-view methods frequently fail in weakly textured or repetitive regions commonly found in microscopic specimens.
-    - Single-view PS methods require reference samples for detector calibration and are highly sensitive to shadow artifacts—shadowed regions cause distorted gradient estimates.
-    - Hybrid methods that combine both approaches are still limited by calibration requirements and shadow artifacts, and their 2D heightmap representation cannot capture complex microstructures.
-    - Learning-based methods (NeuS, 3DGS, feed-forward reconstruction) either lack large-scale SEM training data and fail to generalize, or rely on RGB optical rendering models that cannot exploit the geometric cues encoded in SEM signals.
+    - Multi-view methods often fail in areas with weak textures or repetitive patterns common in microscopic samples.
+    - Single-view PS methods require reference samples for detector calibration and are highly sensitive to shadow artifacts—shadow regions cause distorted gradient estimation.
+    - Hybrid methods, while combining the advantages of both, remain constrained by calibration requirements, shadow issues, and the use of 2D height maps which fail to capture complex microscopic structures.
+    - Learning-based methods (NeuS, 3DGS, feed-forward reconstruction) either lack large-scale SEM training data for generalization or rely on RGB optical rendering models that cannot capture geometric cues in SEM signals.
 
-3. **Key Challenge**: The physics of SEM signal generation (electron scattering) differs fundamentally from conventional RGB imaging, yet existing 3D reconstruction methods either ignore SEM physics (multi-view methods) or rely on simplified physical models requiring complex calibration procedures (single-view methods).
+3. **Key Challenge**: The physics of signal generation in SEM (electron scattering) is entirely different from conventional RGB imaging. However, existing 3D reconstruction methods either ignore SEM physics (multi-view methods) or rely on simplified physical models requiring complex calibration (single-view methods).
 
-4. **Goal**: To design a neural field reconstruction framework capable of automatically learning SEM imaging physics, self-calibrating detector parameters, and autonomously separating shadow regions.
+4. **Goal**: Design a neural field reconstruction framework capable of automatically learning SEM imaging physics, self-calibrating detector parameters, and automatically separating shadow regions.
 
-5. **Key Insight**: Model BSE signal scattering and detector response as a learnable forward model, embedded within the volume rendering pipeline of an SDF-based neural field, and jointly optimized with geometry.
+5. **Key Insight**: Model the scattering of BSE signals and detector response as a learnable forward model, embedded within the volume rendering pipeline of an SDF neural field to be optimized jointly with geometry.
 
-6. **Core Idea**: By embedding a learnable BSE forward model into neural field optimization, the framework achieves self-calibration of SEM imaging physics and automatic shadow separation, yielding high-fidelity microscale 3D reconstruction.
+6. **Core Idea**: By embedding a learnable BSE forward model into neural field optimization, achieve self-calibration of SEM imaging physics and automatic shadow separation, thereby obtaining high-fidelity microscopic 3D reconstruction.
 
 ## Method
 
 ### Overall Architecture
-The input consists of multi-view, multi-detector SEM images (one SE image and four 4Q-BSE images per viewpoint). The pipeline proceeds in two stages: (1) SfM+MVS on multi-view SE images to obtain coarse initial geometry and camera parameters; (2) using the coarse geometry as initialization, an SDF-based neural field jointly optimizes geometry and BSE forward model parameters by fusing multi-view depth priors and 4Q-BSE photometric information. The output is a high-fidelity 3D surface mesh.
+The input consists of multi-view, multi-detector SEM images (one SE image + four 4Q-BSE images per view). The process comprises two stages: (1) SfM+MVS using multi-view SE images to obtain coarse initial geometry and camera parameters; (2) Using coarse geometry as initialization, fuse multi-view depth priors and 4Q-BSE photometric information through an SDF neural field to jointly optimize geometry and BSE forward model parameters. This second stage optimization is further divided into three progressive training phases: "establishing geometry, learning photometry, and enabling shadow masks," during which the BSE forward model regularizes the four-quadrant parameters. The output is a high-fidelity 3D surface mesh.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Multi-view SE images<br/>+ 4Q-BSE images"] --> B["SfM+MVS<br/>Coarse Geometry + Camera Parameters"]
+    B --> S
+    subgraph S["Three-stage Training (Joint SDF Neural Field Optimization)"]
+        direction TB
+        C["Stage I: Depth loss only<br/>Solidify coarse geometry as initial SDF"]
+        C --> D["Stage II: Learnable BSE forward model<br/>Predict BSE intensity for each quadrant from normal n"]
+        D --> E["Stage III: Iterative shadow separation<br/>Residual > αd categorized as shadow and excluded"]
+    end
+    R["BSE Forward Model Regularization<br/>Variance constraint on 4Q parameters"] -.Constraint.-> D
+    S --> F["Output: High-fidelity 3D surface mesh"]
+```
 
 ### Key Designs
 
-1. **Learnable BSE Forward Model**:
+**1. Learnable BSE Forward Model: Replacing calibrated analytical formulas with a differentiable physical layer**
 
-    - **Function**: Maps predicted surface normals to 4Q-BSE intensities, enabling BSE images to directly supervise geometric learning in the neural field.
-    - **Mechanism**: Traditional PS methods use $I_i(n) = d_i \cos(\varphi_i - \varphi_n)\tan(\theta_n) + c_i$ to compute gradients directly from BSE images, requiring calibration of $c/d$. NFH-SEM inverts this paradigm—a forward model with 16 learnable parameters, $\mathcal{F}_i(n) = \mathbf{R}(\theta_n)[d_i\cos(\varphi_i-\varphi_n)\sin(\theta_n) + c_i\cos(\theta_n)] + e_i$, maps normals to BSE intensities. The emission amplification term $\mathbf{R}(\theta)$ replaces the conventional $\sec(\theta)$ with a fourth-order polynomial to better fit real BSE responses. Each of the four quadrants has independent $c, d, e$ parameters and shares polynomial coefficients $p$.
-    - **Design Motivation**: (1) Traditional analytic models are insufficiently accurate (confirmed by ablation); (2) the learnable formulation enables self-calibration without reference samples; (3) embedding the forward model into volume rendering effectively backpropagates gradient information into the neural field.
+A pain point of traditional Photometric Stereo (PS) is the necessity of calibrating detector parameters: it uses $I_i(n) = d_i \cos(\varphi_i - \varphi_n)\tan(\theta_n) + c_i$ to calculate surface gradients directly from BSE images, where $c_i/d_i$ must be measured using reference samples—a tedious process specific to each device. NFH-SEM reverses this process: instead of calculating gradients from images, it predicts the BSE intensity each quadrant should see from the normal $n$ predicted by the neural field, then uses real 4Q-BSE images as supervision to backpropagate gradients. The forward model is formulated as:
 
-2. **Iterative Shadow Separation**:
+$$\mathcal{F}_i(n) = \mathbf{R}(\theta_n)\big[d_i \cos(\varphi_i-\varphi_n)\sin(\theta_n) + c_i \cos(\theta_n)\big] + e_i$$
 
-    - **Function**: Automatically detects and excludes shadow regions in BSE images to prevent shadow contamination of geometric reconstruction.
-    - **Mechanism**: Large discrepancies between the forward model output $\mathcal{F}(\hat{n};\hat{\Phi})$ and the actual BSE image $b$ are observed predominantly in shadowed regions, since shadows cannot be modeled by surface normal functions alone. A dynamic binary shadow mask is defined as $S = (|\mathcal{F}(\hat{n};\hat{\Phi}) - b| < \alpha d)$, where the threshold $\alpha d$ is updated dynamically with parameter $d$ during training. Since $d$ controls the sensitivity of BSE intensity to surface normals, setting the threshold proportionally prevents geometry-induced intensity variations from being misclassified as shadows.
-    - **Design Motivation**: Shadows are pervasive in 4Q-BSE images, and supervising with shadow-corrupted images leads to severe geometric distortion. Iterative separation establishes a positive feedback loop—better shadow masks yield cleaner supervision, which in turn produces more accurate geometry and forward model estimates, enabling better shadow detection.
+Each of the four quadrants has independent $c, d, e$, sharing a set of polynomial coefficients $p$, totaling 16 learnable parameters. The key modification is the emission amplification term $\mathbf{R}(\theta)$—traditional models use $\sec(\theta)$ to approximate intensity rise at grazing angles, but real BSE responses do not strictly follow this curve. Thus, a fourth-order polynomial is used to fit the measured response. This approach provides two direct benefits: first, the 16 parameters are optimized alongside geometry, effectively allowing the network to perform self-calibration and bypassing reference samples; second, by making the physical model a layer in the neural field volume rendering, the photometric information from BSE images can be stably backpropagated through this layer to correct the SDF geometry. Ablations show that using direct gradient supervision (removing this forward model) worsens the Chamfer distance by nearly 8 times, proving that "forward prediction + image supervision" is much more reliable than "backward gradient calculation."
 
-3. **Three-Stage Training Strategy**:
+**2. Iterative Shadow Separation: Identifying shadows via forward model residuals**
 
-    - **Function**: Stably integrates multi-source geometric cues into the neural field.
-    - **Mechanism**: **Stage I**: Initializes coarse geometry priors using only depth loss $\mathcal{L}_d$ and SDF regularization $\mathcal{R}_s$. **Stage II**: Introduces BSE loss $\mathcal{L}_{BSE}(1)$ (without shadow masking) and forward model regularization $\mathcal{R}_\Phi$ to jointly learn the normal-to-BSE mapping. **Stage III**: Activates the dynamic shadow mask $\mathcal{L}_{BSE}(S)$ to refine geometry and model parameters. Each stage runs for only 1,000 iterations, with total training taking approximately 2 minutes.
-    - **Design Motivation**: Directly co-optimizing all components leads to instability; establishing a geometric prior before progressively introducing photometric supervision and shadow handling is essential.
+4Q-BSE images are riddled with shadows—when a quadrant detector is blocked by the sample itself, the intensity in that region becomes independent of the normal. Using it as hard supervision would distort the geometry. The authors noticed a useful phenomenon: shadow regions correspond exactly to parts where the deviation between the forward model prediction $\mathcal{F}(\hat{n};\hat{\Phi})$ and the measurement $b$ is largest, as shadows cannot be explained by functions of the normal. Thus, the shadow mask is defined by the residual:
 
-4. **BSE Forward Model Regularization**:
+$$S = \big(|\mathcal{F}(\hat{n};\hat{\Phi}) - b| < \alpha d\big)$$
 
-    - **Function**: Constrains the four quadrant parameters from diverging excessively.
-    - **Mechanism**: The variance of each parameter group $c, d, e$ is computed separately and summed as the regularization term $\mathcal{R}_\Phi = \text{Var}(c) + \text{Var}(d) + \text{Var}(e)$, encouraging quadrant consistency while permitting small deviations due to manufacturing tolerances.
-    - **Design Motivation**: The four BSE detector quadrants are nominally symmetric by design, so their parameters should be close, yet manufacturing and installation tolerances introduce small differences.
+Pixels with residuals below the threshold are considered credible, while those above are judged as shadows and excluded from supervision. Using $\alpha d$ instead of a fixed constant is a clever design: $d$ controls the sensitivity of BSE intensity to normal changes. Since the dynamic range of intensity scales with $d$, the threshold scales proportionally to avoid misclassifying "normal intensity changes caused by geometric undulation" as shadows. This mask is updated dynamically during training, creating a positive feedback loop—cleaner mask → purer supervision → more accurate geometry and forward model → residuals better distinguishing shadows → cleaner mask. Measurements show an average shadow detection accuracy of approximately 81.7%.
+
+**3. Three-stage Training: Establishing geometry, adding photometry, then enabling shadow masks**
+
+Feeding depth priors, 4Q-BSE photometry, and shadow masks into a single optimization objective simultaneously causes oscillations and divergence. Therefore, training is split into three progressive stages. Stage I uses only the weighted depth loss $\mathcal{L}_d$ and SDF regularization $\mathcal{R}_s$ to solidify the coarse geometry from SfM+MVS into a stable initial SDF. Stage II introduces the BSE loss $\mathcal{L}_{BSE}(1)$ without the shadow mask and the forward model regularization $\mathcal{R}_\Phi$, allowing the network to learn the mapping from normals to BSE intensity on the existing geometric skeleton. Stage III activates the dynamic shadow mask $\mathcal{L}_{BSE}(S)$ to refine geometry and forward model parameters while excluding shadow contamination. Each stage takes 1000 iterations, totaling approximately 3000 iterations and 2 minutes on a single RTX 4090. The progressive order ensures stability, as each new signal is built upon previous convergence.
+
+**4. BSE Forward Model Regularization: Preventing divergence of four-quadrant parameters**
+
+The four quadrants of a 4Q-BSE detector are designed to be symmetrical. Ideally, $c, d, e$ should be nearly identical, though manufacturing tolerances cause slight variations. The regularization term takes the variance of the three sets of parameters and sums them:
+
+$$\mathcal{R}_\Phi = \text{Var}(c) + \text{Var}(d) + \text{Var}(e)$$
+
+This pulls the four quadrants towards consistency, preventing learnable parameters from diverging into physically meaningless solutions during optimization, while retaining enough freedom to accommodate real manufacturing differences.
 
 ### Loss & Training
-The total loss is $\mathcal{L} = \lambda_1 \mathcal{L}_d + \lambda_2 \mathcal{R}_s + \lambda_3 \mathcal{L}_{BSE} + \lambda_4 \mathcal{R}_\Phi$, where $\mathcal{L}_d$ is a weighted depth loss (weighted by MVS confidence), $\mathcal{R}_s$ is the standard unit-norm SDF gradient constraint, and $\mathcal{L}_{BSE}$ is the MAE loss on the 4Q-BSE images.
+The total loss is $\mathcal{L} = \lambda_1 \mathcal{L}_d + \lambda_2 \mathcal{R}_s + \lambda_3 \mathcal{L}_{BSE} + \lambda_4 \mathcal{R}_\Phi$, where $\mathcal{L}_d$ is the weighted depth loss (weighted by MVS confidence), $\mathcal{R}_s$ is the standard SDF gradient unit norm constraint, and $\mathcal{L}_{BSE}$ is the MAE loss of 4Q-BSE images.
 
 ## Key Experimental Results
 
-### Main Results (Qualitative Comparison on Real Datasets)
-Evaluated on TPL microstructures (Wukong, Lucy, Lion), peach pollen, and silicon carbide particles:
-- Multi-view baselines recover only coarse shapes and fail to reconstruct smooth base surfaces and fine details (e.g., filaments, stacked steps, pollen textures).
-- Single-view PS baselines recover limited texture but suffer from severe global shape distortion.
-- Six learning-based methods (NeuS, 2DGS, PGSR, DN-Splatter, VGGT, MapAnything) all fail substantially when applied directly.
-- NFH-SEM accurately recovers 478 nm printed layer stacking (Lucy sample), 782 nm pollen adhesion texture, and 1.559 μm fracture steps.
+### Main Results (Qualitative comparison on real datasets)
+On TPL microstructures (Wukong, Lucy, Lion), peach pollen, and silicon carbide particles:
+- Multi-view baselines only obtain coarse shapes, failing to recover smooth base surfaces and details (e.g., hair strands, layering steps, pollen textures).
+- Single-view PS baselines recover limited texture but suffer from severe global deformation.
+- 6 learning-based methods (NeuS, 2DGS, PGSR, DN-Splatter, VGGT, MapAnything) fail significantly when applied directly.
+- NFH-SEM accurately recovers 478nm printed layers (Lucy sample), 782nm pollen adhesion textures, and 1.559μm fracture steps.
 
-### Ablation Study (Simulated Dataset, Unit: nm)
+### Ablation Study (Simulation dataset, units in nm)
 
 | Configuration | Chamfer ↓ | Normal Angular Error ↓ | BSE Model Error ↓ |
-|---|---|---|---|
-| Input coarse model | 25.11 | 7.85° | - |
-| Single-view PS | 512.22 | 12.99° | - |
-| w/o BSE-$\mathcal{F}$ (direct gradient supervision) | 135.61 | 7.48° | - |
-| w/o Poly-$\mathbf{R}$ (simplified emission model) | 19.96 | 4.34° | 7.16 |
-| w/o 4Q-Var (shared quadrant parameters) | 19.90 | 3.91° | 1.35 |
-| w/o S-Mask (no shadow mask) | 29.38 | 4.36° | 0.61 |
-| **Full model** | **17.48** | **3.70°** | **0.27** |
+|---------------|-----------|------------------------|-------------------|
+| Coarse Input  | 25.11     | 7.85°                  | -                 |
+| Single-view PS| 512.22    | 12.99°                 | -                 |
+| w/o BSE-$\mathcal{F}$ (Direct Gradient) | 135.61 | 7.48° | - |
+| w/o Poly-$\mathbf{R}$ (Simplified Emission) | 19.96 | 4.34° | 7.16 |
+| w/o 4Q-Var (Shared Parameters) | 19.90 | 3.91° | 1.35 |
+| w/o S-Mask (No Shadow Mask) | 29.38 | 4.36° | 0.61 |
+| **Complete Model** | **17.48** | **3.70°** | **0.27** |
 
 ### Key Findings
-- The learnable forward model is the most critical component—replacing it with direct gradient supervision (w/o BSE-$\mathcal{F}$) degrades Chamfer distance by 7.75×.
-- The polynomial emission term (Poly-$\mathbf{R}$) reduces BSE modeling error from 7.16 to 0.27 compared to the simplified $\sec(\theta)$ formulation.
-- Removing the shadow mask increases Chamfer distance from 17.48 to 29.38, demonstrating that shadow separation is essential for geometric accuracy.
-- Shadow detection achieves an average accuracy of 81.7%.
-- The entire training requires approximately 2 minutes on a single RTX 4090 GPU across 3,000 iterations.
+- The learnable forward model is the most critical component—direct gradient supervision (w/o BSE-$\mathcal{F}$) worsens Chamfer distance by 7.75 times.
+- The polynomial emission term (Poly-$\mathbf{R}$) reduces BSE modeling error from 7.16 to 0.27 compared to simplified $\sec(\theta)$.
+- Removing the shadow mask increases Chamfer distance from 17.48 to 29.38, proving shadow separation is vital for geometric accuracy.
+- Average shadow detection accuracy reaches 81.7%.
+- The entire training takes about 2 minutes (Single RTX 4090) for 3000 iterations.
 
 ## Highlights & Insights
-- **Paradigm of embedding physical models into neural fields**: Rather than computing gradients directly from physics formulas to serve as supervision, the physical model is embedded as a differentiable layer within the optimization—a paradigm generalizable to other domains requiring specialized imaging physics (e.g., X-ray, ultrasound).
-- **Elegant realization of self-calibration**: By treating detector parameters as learnable variables and optimizing them jointly, the framework eliminates the cumbersome reference-sample calibration required by traditional methods, substantially lowering the barrier to practical use.
-- **Positive feedback mechanism in iterative shadow separation**: Using forward model residuals to define the shadow mask and adaptively adjusting the threshold via the physical parameter $d$ forms a self-reinforcing cycle—a particularly elegant engineering design.
+- **Paradigm of Physical Model Embedding in Neural Fields**: Instead of using physical formulas to calculate gradients directly for supervision, the physical model is embedded as a differentiable layer within the optimization. This approach can generalize to other fields requiring specialized imaging physics (e.g., X-ray, Ultrasound).
+- **Elegant Self-Calibration**: By jointly optimizing detector parameters as learnable variables, Ours eliminates the tedious process of calibration using reference samples required by traditional methods, significantly lowering the barrier to entry.
+- **Positive Feedback Mechanism for Shadow Separation**: Utilizing forward model residuals to define shadow masks and adaptively adjusting thresholds based on the physical parameter $d$ creates a self-enhancing cycle—a very clever engineering design.
 
 ## Limitations & Future Work
-- The framework assumes a homogeneous electron emission coefficient, which may not hold for multi-material composite specimens.
-- Severely occluded microporous structures where all quadrants are shadowed may be irrecoverable.
-- Charging effects in low-conductivity samples cause pixel drift that may compromise multi-view alignment.
-- The dataset, while pioneering, is limited in scale (only three sample categories).
-- Future extensions may include piecewise emission coefficient estimation for heterogeneous materials and validation across a broader range of specimen types.
+- The assumption of homogeneous electron emission coefficients may not hold for samples with mixed materials.
+- Microporous structures with extreme occlusion might have all quadrants covered by shadows, preventing information recovery.
+- Charging effects in low-conductivity samples cause pixel shifts, potentially affecting multi-view alignment.
+- While groundbreaking, the dataset scale is limited (only 3 sample categories).
+- Extensible: Support for segmented emission coefficient estimation for heterogeneous materials and validation on more sample types.
 
 ## Related Work & Insights
-- **vs. Agisoft Metashape (multi-view baseline)**: Multi-view methods rely solely on SE images and fail in weakly textured regions; NFH-SEM additionally exploits the photometric information in 4Q-BSE images to compensate for insufficient feature matching.
-- **vs. Single-view PS**: PS methods require calibration and are severely affected by shadows; NFH-SEM addresses both fundamental limitations through the learnable forward model and shadow separation.
-- **vs. NeuS/3DGS**: These methods are built on RGB rendering models and cannot interpret the geometric encoding in SEM signals; NFH-SEM bridges this domain gap by embedding SEM physics.
+- **vs Agisoft Metashape (Multi-view Baseline)**: Multi-view methods use only SE images and fail in weak texture areas; NFH-SEM utilizes additional photometric information from 4Q-BSE to compensate for matching deficiencies.
+- **vs Single-view PS**: PS methods require calibration and are severely impacted by shadows; NFH-SEM addresses these fundamental issues through a learnable forward model and shadow separation.
+- **vs NeuS/3DGS**: These methods rely on RGB rendering models and cannot understand geometric encoding in SEM signals; NFH-SEM bridges this domain gap by embedding SEM physics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — First complete adaptation of neural field methods to SEM imaging physics; self-calibration and shadow separation strategies are elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Both real and simulated data are evaluated with comprehensive ablations, though quantitative ground-truth comparison on real data is absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ — SEM physical background is clearly introduced, method derivations are rigorous, and figures are well-crafted.
-- Value: ⭐⭐⭐⭐⭐ — Significant application value for microscale 3D characterization in materials science and biology; pioneering work at the intersection of SEM and neural fields.
+- Novelty: ⭐⭐⭐⭐⭐ First to fully adapt neural field methods to SEM imaging physics with sophisticated self-calibration and shadow separation strategies.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation on both real and simulated data with comprehensive ablations, though real data lacks quantitative GT comparisons.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear introduction of SEM physics background, rigorous method derivation, and excellent visualizations.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for micro-3D characterization in material science and biology, opening up the cross-disciplinary field of SEM + Neural Fields.
 
 <!-- RELATED:START -->
 
@@ -137,9 +150,9 @@ Evaluated on TPL microstructures (Wukong, Lucy, Lion), peach pollen, and silicon
 
 - [\[CVPR 2026\] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy](emgauss_continuous_slice-to-3d_reconstruction_via_dynamic_gaussian_modeling_in_v.md)
 - [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
-- [\[CVPR 2026\] Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences](neu-pig_neural_preconditioned_grids_for_fast_dynamic_surface_reconstruction_on_l.md)
-- [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](../../ICLR2026/3d_vision/lito_surface_light_field_tokenization.md)
-- [\[AAAI 2026\] Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction](../../AAAI2026/3d_vision/surface-based_visibility-guided_uncertainty_for_continuous_active_3d_neural_reco.md)
+- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
+- [\[CVPR 2026\] Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals](seeing_through_boxes_non-line-of-sight_3d_reconstruction_from_radar_signals.md)
+- [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
 
 </div>
 

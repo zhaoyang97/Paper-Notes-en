@@ -2,144 +2,157 @@
 title: >-
   [Paper Note] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 description: >-
-  [CVPR 2026][Video Understanding][Video Temporal Grounding] HieraMamba proposes a Mamba-based hierarchical architecture for video temporal grounding. Its core contribution is the Anchor-MambaPooling (AMP) module…
+  [CVPR 2026][Video Understanding][State Space Model] HieraMamba proposes a Mamba-based hierarchical video temporal grounding architecture centered on the Anchor-MambaPooling (AMP) module. This module uses Mamba's selective scanning to compress video features layer-by-layer into multi-scale anchor tokens. Combined with anchor-conditioned and segment-pooled contrastive los
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video Temporal Grounding"
-  - "State Space Models"
-  - "Mamba"
-  - "Hierarchical Representation"
-  - "Contrastive Learning"
+  - CVPR 2026
+  - Video Understanding
+  - State Space Model
+  - Mamba
 date: 2026-05-08
-content_hash: 1daeb003e82cc5a8
+content_hash: a30715d081ecd7e0
 ---
-
 # HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.23043](https://arxiv.org/abs/2510.23043)  
 **Code**: [https://vision.cs.utexas.edu/projects/hieramamba](https://vision.cs.utexas.edu/projects/hieramamba)  
-**Area**: Video Understanding
-**Keywords**: Video Temporal Grounding, State Space Models, Mamba, Hierarchical Representation, Contrastive Learning
+**Area**: Video Understanding  
+**Keywords**: Video Temporal Grounding, State Space Model, Mamba, Hierarchical Representation, Contrastive Learning
 
 ## TL;DR
 
-HieraMamba proposes a Mamba-based hierarchical architecture for video temporal grounding. Its core contribution is the Anchor-MambaPooling (AMP) module, which employs Mamba's selective scanning to progressively compress video features into multi-scale anchor tokens. Complementary anchor-conditioned and segment-pooled contrastive losses enhance the compactness and discriminability of hierarchical representations, achieving state-of-the-art performance on Ego4D-NLQ, MAD, and TACoS.
+HieraMamba proposes a Mamba-based hierarchical video temporal grounding architecture centered on the Anchor-MambaPooling (AMP) module. This module uses Mamba's selective scanning to compress video features layer-by-layer into multi-scale anchor tokens. Combined with anchor-conditioned and segment-pooled contrastive losses, it enhances the compactness and discriminativeness of hierarchical representations, achieving SOTA on Ego4D-NLQ, MAD, and TACoS.
 
 ## Background & Motivation
 
-1. **Background**: Video Temporal Grounding (VTG) requires localizing start and end timestamps in untrimmed videos given natural language queries. The task has evolved from predefined action localization to free-text queries, supporting applications such as VQA and automatic video editing. Recent methods including ActionFormer, SnAG, and DeCafNet have introduced multi-scale feature pyramids.
+1. **Background**: The Video Temporal Grounding task requires localizing start and end times in untrimmed videos based on natural language queries. Evolving from predefined action localization to free-form text queries, this task supports applications like VQA and automatic video editing. Existing methods such as ActionFormer, SnAG, and DeCafNet have introduced multi-scale feature pyramids.
 
-2. **Limitations of Prior Work**: Long videos (ranging from minutes to hours) present two intertwined challenges: (a) **Temporal fidelity** — many methods reduce computational cost via fixed-length pooling, naive downsampling, or fixed windows, all of which discard critical temporal cues or sever temporal structure at window boundaries; (b) **Multi-granularity** — different queries require different temporal granularities ("what did the detective do in the library?" requires coarse understanding, whereas "when did the detective pull the note from the shelf?" requires fine-grained localization), which single-resolution methods fail to address simultaneously.
+2. **Limitations of Prior Work**: Long videos (minutes to hours) present two intertwined challenges: (a) **Temporal Fidelity issue**—many methods reduce computational costs through fixed-length pooling, naive downsampling, or fixed windows, but these operations discard critical temporal cues or sever temporal structures at window boundaries; (b) **Multi-granularity issue**—different queries require different temporal granularities ("What did the detective do in the library" requires coarse-grained understanding, while "When did the detective pull a note from the shelf" requires fine-grained localization), making single-resolution methods difficult to apply effectively.
 
-3. **Key Challenge**: The quadratic attention cost of Transformers is the root cause driving downsampling and windowing heuristics — processing long sequences necessitates sacrificing temporal resolution. Although recent multi-scale models (SnAG, DeCafNet, OSGNet) incorporate multi-scale representations, these are still produced via uniform downsampling or coarse pooling, lacking content-aware compression.
+3. **Key Challenge**: The quadratic attention cost of Transformers is the root cause of downsampling and windowing heuristics—temporal resolution must be sacrificed to handle long sequences. Existing multi-scale models (SnAG, DeCafNet, OSGNet), while introducing multiple scales, still generate them via uniform downsampling or coarse pooling, lacking content-aware compression.
 
-4. **Goal**: (1) How to process full-length video sequences in linear time, avoiding downsampling or windowing? (2) How to construct content-aware multi-scale hierarchical representations rather than simple downsampled pyramids? (3) How to ensure that hierarchical anchors are both compact (faithfully summarizing local information) and discriminative (distinguishable from other events)?
+4. **Goal**: (1) How to process full-length video sequences within linear time complexity without downsampling or windowing? (2) How to construct content-aware multi-scale hierarchical representations rather than simple downsampled pyramids? (3) How to ensure hierarchical anchors are both compact (faithfully summarizing local information) and discriminative (distinguishable from other events)?
 
-5. **Key Insight**: Human episodic memory is inherently hierarchical — from the overall layout of a room to the precise movement of fingers, humans seamlessly switch between temporal scales. The authors identify quadratic Transformer attention as the root cause of temporal downsampling and propose replacing it with Mamba's linear-time selective scanning to enable full-resolution long-range modeling.
+5. **Key Insight**: Human episodic memory is naturally hierarchical—shifting seamlessly across temporal scales from the overall layout of a room to precise finger movements. The authors identify Transformer's quadratic attention as the cause of temporal downsampling and propose replacing it with Mamba's linear-time selective scanning to achieve full-resolution long-range modeling.
 
-6. **Core Idea**: Leverage Mamba's selective scanning to build content-aware hierarchical anchor compression (rather than naive downsampling). Stacking AMP modules forms a fine-to-coarse multi-scale temporal pyramid that achieves accurate long-video temporal grounding at linear complexity.
+6. **Core Idea**: Utilize Mamba's selective scanning to build content-aware hierarchical anchor compression (rather than naive downsampling). Stacked AMP modules form a fine-to-coarse multi-scale temporal pyramid, achieving precise long-video temporal grounding with linear complexity.
 
 ## Method
 
 ### Overall Architecture
 
-**Input**: Clip-level features $V \in \mathbb{R}^{L_V \times D_v}$ extracted by a frozen video backbone (e.g., EgoVLP) and query embeddings $Q \in \mathbb{R}^{L_Q \times D_q}$ from a frozen text encoder (e.g., CLIP). The video encoder consists of $L$ hierarchically stacked AMP modules, each producing refined features $\tilde{V}^{(l)}$ and anchors $A^{(l+1)}$ for the next layer, forming a feature pyramid $\mathcal{V}_{\text{pyr}} = \{\tilde{V}^{(0)}, \ldots, \tilde{V}^{(L-1)}\}$. The pyramid is fused with text embeddings via cross-modal attention, and a lightweight decoder regresses the temporal boundaries $(t_s, t_e)$.
+Input: Clip-level features $V \in \mathbb{R}^{L_V \times D_v}$ extracted from a frozen video backbone (e.g., EgoVLP) and query embeddings $Q \in \mathbb{R}^{L_Q \times D_q}$ from a frozen text encoder (e.g., CLIP). The video encoder is a hierarchical stack of $L$ AMP modules, generating refined features $\tilde{V}^{(l)}$ and anchors $A^{(l+1)}$ for the next layer at each step, forming a feature pyramid $\mathcal{V}_{\text{pyr}} = \{\tilde{V}^{(0)}, \ldots, \tilde{V}^{(L-1)}\}$. Within each layer, AMP first performs anchor generation and interleaving, followed by bidirectional Mamba global encoding, narrow-window Transformer local encoding, and finally gated fusion to pass salient information. Simultaneously, two contrastive losses, ACC and SPC, are applied to the anchors layer by layer. The pyramid and text embeddings are fused via cross-modal attention, and a lightweight decoder regresses the start and end times $(t_s, t_e)$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Video Features V<br/>Frozen Backbone EgoVLP"] --> AMP
+    subgraph AMP["Anchor-MambaPooling (AMP) Module · Layer Stack ×L"]
+        direction TB
+        S1["Anchor Generation & Interleaving<br/>Pooling anchors every s frames and inserting into sequence"]
+        S2["Global Encoding<br/>Bidirectional Mamba (Hydra) Linear Scan"]
+        S3["Local Encoding<br/>Narrow-Window Transformer for Short-Range Details"]
+        S4["Gated Fusion & Role Decoupling<br/>Sigmoid Gating + RMSNorm Residuals"]
+        S1 --> S2 --> S3 --> S4
+    end
+    S4 -.->|In-layer Self-supervision (Structure)| ACC["Anchor-Conditioned Contrastive (ACC) Loss<br/>Pull anchor to window frames, push away distant anchors"]
+    S4 -.->|In-layer Supervision (Semantics)| SPC["Segment-Pooled Contrastive (SPC) Loss<br/>GT segment prototype contrast"]
+    AMP -->|"Refined features + Compressed anchors for next layer"| PYR["Feature Pyramid V_pyr"]
+    Q["Query Embedding Q<br/>Frozen CLIP Text"] --> FUSE["Cross-modal Attention Fusion"]
+    PYR --> FUSE
+    FUSE --> DEC["Lightweight Decoder<br/>Regress start/end times (t_s, t_e)"]
+```
 
 ### Key Designs
 
-1. **Anchor-MambaPooling (AMP) Module**:
+**1. Anchor-MambaPooling (AMP) Module: Refining and Compressing in a Single Mamba Scan**
 
-    - **Function**: Simultaneously performs feature refinement at the current resolution and content-aware compression to the next level.
-    - **Mechanism**: A three-step pipeline — (a) **Anchor generation and interleaving**: An anchor token is initialized every $s$ frames (via local window pooling) and inserted before the frames it summarizes, forming an interleaved sequence $\hat{V} = [a_0, v_0, \ldots, v_{s-1}, a_1, v_s, \ldots] \in \mathbb{R}^{(L_0+L_1) \times D_v}$; (b) **Global encoding**: Hydra (bidirectional Mamba scanning) processes the interleaved sequence, enabling linear-complexity global context modeling — the forward scan allows anchors to receive information from preceding frames, and the backward scan from succeeding frames; (c) **Local encoding**: A narrow-window Transformer (window size 5) supplements short-range fine-grained attention patterns. The final outputs are refined current-layer features $\tilde{V}^{(l)}$ and compressed next-layer anchors $A^{(l+1)}$.
-    - **Design Motivation**: The interleaving design allows anchors and frame features to share a single Mamba scan. Anchors broadcast coarse-grained context to neighboring frames, while frame features provide fine-grained details to refine anchors — a bidirectional information flow. The key distinction from conventional feature pyramids is that AMP produces multi-scale representations through token-level compression rather than naive downsampling, enabling content-aware abstraction.
+The core contradiction in long-video modeling is either retaining full resolution at a quadratic attention cost or downsampling to save computation at the expense of temporal detail. AMP bypasses this by performing three steps per layer. First is **Anchor Generation and Interleaving**: an anchor token is initialized using local window pooling every $s$ frames and inserted before the frames it summarizes, creating an interleaved sequence $\hat{V} = [a_0, v_0, \ldots, v_{s-1}, a_1, v_s, \ldots] \in \mathbb{R}^{(L_0+L_1) \times D_v}$. Second is **Global Encoding**: Hydra (bidirectional Mamba scanning) processes this sequence; the forward scan allows each anchor to absorb information from preceding frames, while the backward scan absorbs from subsequent frames, maintaining linear complexity. Third is **Local Encoding**: A narrow-window Transformer (window size 5) is added to supplement short-range fine-grained attention patterns. After one pass, AMP outputs both refined features $\tilde{V}^{(l)}$ at the current resolution and compressed anchors $A^{(l+1)}$ for the next layer.
 
-2. **Gated Fusion and Decoupling**:
+The brilliance of this interleaved design is that anchors and frame features share the same Mamba scan, allowing bidirectional information flow—anchors broadcast coarse-grained context to neighboring frames, and frames feed back details to refine the anchors. Compared to traditional feature pyramids (like ActionFormer's stride pooling), AMP generates multi-scale representations through token-level content-aware compression rather than indiscriminate uniform downsampling, ensuring key moments are not smoothed out during pooling.
 
-    - **Function**: Controls the quality of information propagation across hierarchy levels.
-    - **Mechanism**: RMS normalization and residual connections are applied between global encoding, local encoding, and FFN. Between stages, learnable sigmoid gates $\boldsymbol{\sigma}$ replace unconditional residual addition, providing content-adaptive control over information propagation.
-    - **Design Motivation**: Mamba captures global structure while the narrow-window Transformer captures local patterns — the roles of the two components are explicitly decoupled, avoiding the role ambiguity common in hybrid architectures. Gating ensures that only salient information propagates up the hierarchy.
+**2. Gated Fusion & Role Decoupling: Distinguishing Global Structure from Local Patterns**
 
-3. **Anchor-Conditioned Contrastive (ACC) Loss**:
+AMP internally contains three stages: Mamba (global), narrow-window Transformer (local), and FFN. If connected using unconditional residual additions, a common issue in hybrid architectures arises—the roles of the branches become blurred. HieraMamba applies RMS normalization and residuals between stages but replaces unconditional residuals with a learnable sigmoid gate $\boldsymbol{\sigma}$, letting the content decide how much output from each stage to pass. This explicitly preserves the division of labor—Mamba for global long-range and Transformer for local details—while the gating ensures only salient information propagates up the hierarchy, preventing noise from amplifying through the pyramid.
 
-    - **Function**: A self-supervised objective ensuring anchors are compact and discriminative.
-    - **Mechanism**: At each layer, each anchor $a_i^{(l+1)}$ is pulled toward the $s$ frame tokens it summarizes (positives $\mathcal{P}_i^{(l)}$) and pushed away from temporally distant anchors (negatives $\mathcal{N}_i^{(l)}$, separated by a temporal margin to avoid penalizing adjacent anchors):
-     $$\mathcal{L}_{\text{acc}}(a_i^{(l+1)}) = -\log \frac{\sum_{p \in \mathcal{P}_i^{(l)}} \exp(a_i^{(l+1)} \cdot p / \tau)}{\sum_{c \in \mathcal{P}_i^{(l)} \cup \mathcal{N}_i^{(l)}} \exp(a_i^{(l+1)} \cdot c / \tau)}$$
-    - **Design Motivation**: Compactness requires anchors to faithfully summarize their local window (alignment with intra-window frames), while discriminability requires different anchors to represent different events (separation from distant anchors). The multi-positive design avoids the information loss that can arise from single-positive contrastive objectives.
+**3. Anchor-Conditioned Contrastive (ACC) Loss: Enforcing "Faithfulness" and "Distinguishability"**
 
-4. **Segment-Pooled Contrastive (SPC) Loss**:
+Anchors compressed solely by architecture might not be optimal—they might fail to faithfully summarize window content or look too similar to other events. ACC is an in-layer self-supervised objective targeting this. At each layer, it pulls the anchor $a_i^{(l+1)}$ toward the $s$ frame tokens it summarizes (positive samples $\mathcal{P}_i^{(l)}$) and pushes it away from distant anchors (negative samples $\mathcal{N}_i^{(l)}$, with deliberate temporal gaps to avoid harming adjacent anchors):
 
-    - **Function**: A supervised objective that distinguishes representations of ground-truth segments from surrounding non-target content.
-    - **Mechanism**: At each layer, frame tokens within the GT segment $[t_{\text{start}}, t_{\text{end}})$ are pooled into a segment prototype $z_{\text{seg}}^{(l)}$, with intra-segment frames as positives and extra-segment frames as negatives. Using the pooled prototype rather than individual frames avoids forcing distinct sub-actions within a segment (e.g., "reach → grasp → retract") to align to a single representation.
-    - **Design Motivation**: ACC provides structural consistency (intra-hierarchy self-supervision), while SPC provides semantic alignment (alignment with query annotations). The two losses are complementary: ACC ensures anchor quality, and SPC ensures anchors are semantically matched to the query.
+$$\mathcal{L}_{\text{acc}}(a_i^{(l+1)}) = -\log \frac{\sum_{p \in \mathcal{P}_i^{(l)}} \exp(a_i^{(l+1)} \cdot p / \tau)}{\sum_{c \in \mathcal{P}_i^{(l)} \cup \mathcal{N}_i^{(l)}} \exp(a_i^{(l+1)} \cdot c / \tau)}$$
+
+Pulling positive samples ensures "compactness" (anchors resemble their window frames), while pushing negative samples ensures "discriminativeness" (anchors represent unique events). Using multiple positive samples instead of a single one fits the "one-to-many" proxy relationship where an anchor must faithfully represent multiple frames, preventing information loss from single-frame alignment.
+
+**4. Segment-Pooled Contrastive (SPC) Loss: Separating Target Segments from Surroundings**
+
+While ACC handles structural consistency, anchors must also align with query semantics—this is where SPC comes in. It is a supervised objective that pools frame tokens within the GT segment $[t_{\text{start}}, t_{\text{end}})$ into a segment prototype $z_{\text{seg}}^{(l)}$ at each layer, performing contrastive learning with in-segment frames as positives and out-of-segment frames as negatives. A key detail is using the pooled prototype as the positive anchor rather than frame-by-frame alignment. Since action segments often contain sub-actions (e.g., "reach → grasp → retract"), forcing them to a single representation is distortive; the prototype preserves this internal diversity. ACC (structural self-supervision) and SPC (semantic supervision) are thus complementary.
 
 ### Loss & Training
 
-The total contrastive loss is $\mathcal{L}_{\text{contrast}} = \lambda_{\text{ACC}} \mathcal{L}_{\text{ACC}} + \lambda_{\text{SPC}} \mathcal{L}_{\text{SPC}}$, jointly optimized with the standard temporal grounding task loss (boundary regression + classification).
+The total contrastive loss $\mathcal{L}_{\text{contrast}} = \lambda_{\text{ACC}} \mathcal{L}_{\text{ACC}} + \lambda_{\text{SPC}} \mathcal{L}_{\text{SPC}}$ is optimized jointly with standard temporal grounding losses (boundary regression + classification).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Results on Ego4D-NLQ (with EgoVLP features):
+Results on Ego4D-NLQ (using EgoVLP features):
 
 | Method | R@1 IoU=0.3 | R@1 IoU=0.5 | R@5 IoU=0.3 | R@5 IoU=0.5 | Avg. |
-|---|---|---|---|---|---|
+|------|------------|------------|------------|------------|------|
 | SnAG | 15.72 | 10.78 | 38.39 | 27.44 | 23.08 |
 | DeCafNet | 18.10 | 12.55 | 38.85 | 28.27 | 24.44 |
 | RGNet | 18.28 | 12.04 | 34.02 | 22.89 | 21.81 |
 | OSGNet | 16.13 | 11.28 | 36.78 | 25.63 | 22.46 |
 | **HieraMamba** | **18.81** | **13.04** | **40.82** | **29.96** | **25.66** |
 
-State-of-the-art results are also reported on MAD and TACoS (detailed numbers in the paper).
+SOTA was also achieved on MAD and TACoS (detailed data reported in the paper).
 
 ### Method Characteristics Comparison
 
 | Method | Naive Downsampling | Fixed Pooling | Quadratic Cost | Sliding Window | Ego4D Avg.R |
-|---|---|---|---|---|---|
+|------|-----------|---------|-----------|---------|------------|
 | 2D-TAN | ✓ | ✓ | ✓ | — | 6.46 |
 | CONE | — | — | ✓ | ✓ | 17.67 |
 | SnAG | ✓ | — | — | — | 23.08 |
 | DeCafNet | ✓ | — | — | — | 24.44 |
 | **HieraMamba** | **—** | **—** | **—** | **—** | **25.66** |
 
-HieraMamba is the only method that simultaneously avoids all four undesirable properties.
+HieraMamba is the only method that avoids all four undesirable characteristics simultaneously.
 
 ### Key Findings
 
-- The benefits of avoiding downsampling and windowing are especially pronounced on long videos — HieraMamba achieves the largest gains on Ego4D (8-minute average) and MAD (feature-length movies).
-- ACC and SPC losses contribute complementarily — ACC primarily improves intra-hierarchy anchor quality and consistency, while SPC primarily improves semantic alignment with queries (ablation studies in the appendix).
-- The global–local decoupling of Mamba and narrow-window Transformer outperforms either component alone.
-- The gating mechanism (sigmoid gate) outperforms unconditional residual connections, demonstrating the importance of content-adaptive information propagation in hierarchical models.
+- The benefits of avoiding downsampling and windowing are particularly evident in long videos—HieraMamba shows the largest gains on Ego4D (8-minute average) and MAD (multi-hour movies).
+- The contributions of ACC and SPC losses are complementary—ACC primarily improves anchor quality and consistency within the hierarchy, while SPC improves semantic alignment with queries.
+- The global-local decoupling of Mamba + narrow-window Transformer outperforms pure Mamba or pure Transformer setups.
+- The gating mechanism (sigmoid gate) outperforms unconditional residual connections, indicating that content-adaptive information propagation is crucial for hierarchical models.
 
 ## Highlights & Insights
 
-- **The interleaving design of AMP is particularly elegant**: Inserting anchor tokens into the frame sequence for joint Mamba scanning allows anchors to naturally acquire global context summarization capability (via Mamba's state compression) while enabling frame features to obtain neighborhood summaries from anchors — achieving bidirectional information flow in a single scan at linear cost.
-- **A methodology of eliminating all undesirable properties**: By systematically analyzing four limitations of prior methods (downsampling, fixed pooling, quadratic cost, sliding windows), the authors design an architecture that simultaneously avoids all of them, reflecting a principled engineering approach.
-- **Multi-positive design in the ACC loss**: Conventional contrastive learning uses a single positive, but in temporal grounding an anchor must faithfully represent the content of multiple frames. The multi-positive InfoNCE formulation naturally accommodates this requirement.
+- **Ingenious Interleaved Design of AMP**: Inserting anchor tokens into the frame sequence for Mamba scanning allows anchors to naturally gain global context summary capabilities (Mamba's state compression) while frame features gain neighborhood summaries from anchors—bidirectional information flow in a single pass with linear complexity.
+- **Methodology of "Avoiding All Bad Traits"**: By systematically analyzing the limitations of existing methods (downsampling, fixed pooling, quadratic cost, sliding windows), the authors designed an architecture that circumvents all issues, reflecting elegant engineering intuition.
+- **Multi-positive Design in ACC Loss**: Traditional contrastive learning uses single positives, but in temporal grounding, an anchor must represent multiple frames. Multi-positive InfoNCE naturally fits this requirement, ensuring the anchor acts as a faithful proxy for the entire window.
 
 ## Limitations & Future Work
 
-- The method relies on frozen video backbones (EgoVLP/InternVideo); insufficient clip feature quality from the backbone cannot be compensated by the subsequent hierarchical modeling.
-- The stride $s$ in AMP is a fixed hyperparameter; different queries may benefit from different strides — adaptive stride selection warrants exploration.
-- The unidirectional causal structure of Mamba requires compensation through bidirectional Hydra, which increases complexity — more native bidirectional SSM designs could be investigated.
-- Inference speed is not discussed; while the theoretical complexity is linear, the practical latency of AMP interleaving, bidirectional scanning, and multi-layer stacking requires empirical validation.
-- The sensitivity analysis of the temperature $\tau$ and the negative sampling strategy in the contrastive losses is insufficient.
+- Dependence on frozen video backbones (EgoVLP/InternVideo); if the distilled clip features are of poor quality, hierarchical modeling cannot fully compensate.
+- The AMP stride $s$ is a fixed hyperparameter; different temporal scales of queries may require adaptive strides.
+- Mamba's unidirectional causal structure requires compensation via bidirectional Hydra, which increases complexity—whether a more native bidirectional SSM design exists remains to be explored.
+- Inference speed is not discussed in detail—though theoretically linear, the actual speed of interleaved, bidirectional scanning across multiple layers needs verification.
+- Sensitivity analysis for the temperature $\tau$ and negative sample selection strategies in the contrastive losses is insufficient.
 
 ## Related Work & Insights
 
-- **vs. ActionFormer**: ActionFormer first introduced temporal feature pyramids but builds them via stride pooling, incurring information loss. HieraMamba replaces pooling with Mamba scanning for content-aware compression.
-- **vs. SnAG / DeCafNet / OSGNet**: These are strong recent baselines, but all still rely on uniform downsampling for multi-scale construction. HieraMamba demonstrates that learned token compression surpasses these methods.
-- **vs. CONE / RGNet**: Sliding-window methods suffer from boundary artifacts that disrupt temporal continuity. HieraMamba avoids this via Mamba's global state.
-- This work suggests a broader direction: SSMs can serve not only as efficient alternatives to Transformers but also as tools for learning hierarchical compression.
+- **vs ActionFormer**: ActionFormer introduced temporal feature pyramids but built them via stride pooling—which is lossy. HieraMamba replaces pooling with Mamba scanning for content-aware compression.
+- **vs SnAG / DeCafNet / OSGNet**: These recent strong baselines still rely on uniform downsampling for multi-scale construction. HieraMamba proves that learned token compression can outperform these methods.
+- **vs CONE / RGNet**: These sliding window methods suffer from window boundary discontinuities. HieraMamba uses Mamba's global state to avoid this issue.
+- This work suggests a direction: SSMs can serve not just as efficient alternatives to Transformers, but also as tools for learning hierarchical compression.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The interleaved scanning design of AMP and the dual contrastive losses are clearly novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ State-of-the-art on three benchmarks with a systematic method characteristics comparison.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated; the comparison table is cleverly designed; figures are intuitive.
-- **Value**: ⭐⭐⭐⭐ Establishes a clean paradigm for long-video temporal grounding — linear complexity combined with hierarchical content compression.
+- Novelty: ⭐⭐⭐⭐ The interleaved scanning design of the AMP module and the dual contrastive losses show clear innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ SOTA on three benchmarks with systematic characteristic comparisons.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, clever table design, and intuitive illustrations.
+- Value: ⭐⭐⭐⭐ Provides a clear paradigm for long-video temporal grounding—linear complexity + hierarchical content compression.
 
 <!-- RELATED:START -->
 
@@ -147,11 +160,11 @@ HieraMamba is the only method that simultaneously avoids all four undesirable pr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mamba-VMR: Multimodal Query Augmentation via Generated Videos for Precise Temporal Grounding](mamba-vmr_multimodal_query_augmentation_via_generated_videos_for_precise_tempora.md)
+- [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
+- [\[CVPR 2026\] MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](ms-temba_multi-scale_temporal_mamba_for_understanding_long_untrimmed_videos.md)
+- [\[CVPR 2026\] Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition](gamba_mamba-based_graph_convolutional_network_with_dynamic_graph_topology_learni.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding](slotvtg_object-centric_adapter_for_generalizable_video_temporal_grounding.md)
-- [\[CVPR 2026\] How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms](how_should_video_llms_output_time.md)
-- [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](../../ICCV2025/video_understanding/hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
+- [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
 
 </div>
 

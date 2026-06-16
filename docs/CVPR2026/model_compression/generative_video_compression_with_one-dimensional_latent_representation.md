@@ -2,83 +2,78 @@
 title: >-
   [Paper Note] Generative Video Compression with One-Dimensional Latent Representation
 description: >-
-  [CVPR 2026][Model Compression][Video Compression] This paper proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D m…
+  [CVPR 2026][Model Compression][Paper Note] Ours proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, it achieves over 60% bitrate savings in perceptual quality metrics.
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "Video Compression"
-  - "1D Latent Representation"
-  - "Generative Codec"
-  - "Long-term Memory"
-  - "Token Compression"
+  - CVPR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 60ebf2edf0a929c7
+content_hash: c8fa45267f37c62e
 ---
-
 # Generative Video Compression with One-Dimensional Latent Representation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.15302](https://arxiv.org/abs/2603.15302)  
 **Code**: [https://gvc1d.github.io/](https://gvc1d.github.io/)  
-**Area**: Model Compression
-**Keywords**: Video Compression, 1D Latent Representation, Generative Codec, Long-term Memory, Token Compression
+**Area**: Model Compression  
+**Keywords**: Video compression, 1D latent representation, generative codec, long-term memory, Token compression
 
 ## TL;DR
 
-This paper proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, GVC1D achieves over 60% bitrate savings on perceptual quality metrics.
+Ours proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, it achieves over 60% bitrate savings in perceptual quality metrics.
 
 ## Background & Motivation
 
-Conventional and neural video codecs typically encode frames as **2D latent grids** (e.g., 2D feature maps or blocks). This paradigm suffers from two fundamental limitations:
+**Background**: Conventional and neural video codecs typically encode frames as **2D latent grids** (e.g., 2D feature maps or blocks).  
+**Limitations of Prior Work**: This paradigm suffers from two core flaws:
+- **Difficulty in Spatial Redundancy Elimination**: The rigid structure of 2D grids forces a fixed number of tokens per image patch. Assigning the same capacity to both simple and complex regions results in significant redundancy.
+- **Limited Temporal Modeling**: 2D representations focus more on spatial variations than semantic dynamics, making it difficult to aggregate common content across time intervals, which limits the utilization of long-term context.
 
-**Irreducible spatial redundancy**: The rigid structure of 2D grids forces each image patch to correspond to a fixed number of tokens, allocating the same capacity to simple and complex regions alike, resulting in substantial redundancy.
-
-**Limited temporal modeling**: 2D representations prioritize spatial variation over semantic dynamics, making it difficult to aggregate shared content across frames and limiting the exploitation of long-term context.
-
-Generative video codecs (GVC) improve perceptual quality through powerful generative models but remain constrained by the above limitations of 2D representations. While 1D tokenization has demonstrated its potential for compact semantic compression in image generation (TiTok) and image compression (DLF), it has yet to be applied to video compression.
+**Key Insight**: Although Generative Video Codecs (GVC) enhance perceptual quality through powerful generative models, they remain constrained by these 2D representation limitations. 1D tokenization has shown potential for compact semantic compression in image generation (TiTok) and image compression (DLF) but has not yet been applied to video compression.
 
 ## Method
 
 ### Overall Architecture
 
-GVC1D adopts an encoder–entropy model–decoder architecture. The core innovations are:
-- **Encoder**: Encodes the current frame $x_t \in \mathbb{R}^{3 \times H \times W}$ into a small number of 1D latent tokens $y_t$.
-- **Entropy model**: An autoregressive Transformer performs probabilistic modeling and arithmetic coding of 1D tokens.
-- **Decoder**: Reconstructs the frame $\hat{x}_t$ from 1D tokens.
-- **Context model**: Combines short-term context (previous frame features) and long-term context (1D memory).
+GVC1D aims to break the convention of video codecs "encoding frames into 2D latent grids"—where 2D grids allocate the same number of tokens to simple and complex regions, making redundancy difficult to eliminate and emphasizing spatial changes over cross-frame semantic aggregation. The **Core Idea** is to replace the latent representation with a minimal sequence of 1D tokens. The encoder compresses the current frame $x_t \in \mathbb{R}^{3 \times H \times W}$ into 1D latent tokens $y_t$. An autoregressive Transformer entropy model performs probability modeling and arithmetic coding on these tokens, and the decoder reconstructs $\hat{x}_t$ from the tokens. A context model permeates all three stages, concatenating short-term context (previous frame decoded features $C_s$) and long-term context (provided by 1D Memory $C_l$) into $C$ to feed the codec. The 1D Memory is updated via the decoded tokens $\hat{y}_t$, forming cross-frame temporal feedback.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Current Frame x_t"] --> EMB["Patch Embedding<br/>→ 2D Block Embedding E_t"]
+    EMB --> ENC["ViT-based 1D Tokenization<br/>Local+Global Transformer → 1D token y_t"]
+    ENC --> ENT["Autoregressive Entropy Model<br/>Quantization Q + AR Transformer Arithmetic Coding"]
+    ENT --> DEC["Decoder Design<br/>Iteratively spread 1D to 2D via mask tokens"]
+    DEC --> OUT["Reconstructed Frame x̂_t"]
+    ENT -->|Decoded tokens ŷ_t| MEM["1D Memory Long-term Context<br/>Update Memory + Query Readout C_l"]
+    CTX["Context C = Long-term C_l ⊕ Short-term C_s"] --> ENC
+    CTX --> DEC
+    MEM -->|Long-term Context C_l| CTX
+    PREV["Prev Frame Decoded Feature f_t (Short-term C_s)"] --> CTX
+```
 
 ### Key Designs
 
-1. **ViT-based 1D Tokenization**: The input frame is projected via patch embedding to obtain $E_t \in \mathbb{R}^{D \times (h \cdot w)}$, which is concatenated with learnable 1D latent tokens $L \in \mathbb{R}^{D \times (N \cdot 32)}$ and fed into the encoder. The encoder consists of alternating Local Transformers (parallel processing within windows) and Global Transformers (cross-window global interaction):
+**1. ViT-based 1D Tokenization: Decoupling token count from spatial resolution**  
+The rigid structure of 2D grids forcing a fixed number of tokens per patch is the root of redundancy. GVC1D converts input frame patches into embeddings $E_t \in \mathbb{R}^{D \times (h \cdot w)}$, which are concatenated with learnable 1D latent tokens $L \in \mathbb{R}^{D \times (N \cdot 32)}$ and fed into the encoder. The encoder consists of alternating Local Transformers (parallel within windows) and Global Transformers (global interaction across windows): $y_t = \text{Enc}(E_t \oplus L \oplus C)$, where $C = C_l \oplus C_s$ represents long and short-term context. The **Mechanism** ensures 1D tokens are not bound to fixed spatial locations, allowing adaptive capacity allocation to semantic regions. With only 32 tokens per window (compared to $16 \times 16 = 256$ patches in 2D), spatial redundancy is fundamentally reduced.
 
-    $y_t = \text{Enc}(E_t \oplus L \oplus C)$
+**2. Autoregressive Entropy Model: Low-cost AR modeling for few tokens**  
+The entropy model uses an AR Transformer to sequentially predict probability distributions for quantized 1D tokens $Q(y_t)$. While AR is typically slow, having only 32 tokens per frame with parallelizable windows makes the overhead manageable. In contrast, 2D grid entropy models must handle $h \times w$ tokens, where AR complexity is higher by 1–2 orders of magnitude. This fundamental difference in token count turns sequential modeling into a viable choice.
 
-   where $C = C_l \oplus C_s$ denotes the combined long- and short-term context. **Key insight**: 1D tokens do not maintain fixed spatial correspondences, allowing them to adaptively attend to semantically salient regions. The token count is decoupled from spatial resolution (only 32 tokens per window vs. $16 \times 16 = 256$ patches in 2D), fundamentally reducing spatial redundancy.
+**3. Decoder Design: Redistributing 1D information to 2D space using mask tokens**  
+The decoder uses a symmetric architecture to the encoder, introducing learnable mask tokens $M \in \mathbb{R}^{D \times (h \cdot w)}$. These are concatenated with decoded 1D tokens $\hat{y}_t$ and context $C$ to iteratively extract information, followed by a convolutional output head for frame reconstruction: $\hat{x}_t = \text{Out}(\text{Dec}(\hat{y}_t \oplus M \oplus C))$. During decoding, mask tokens "read" content from 1D tokens to restore the compact 1D representation into full 2D spatial features.
 
-2. **1D Memory Long-term Context Module**: A fixed-size memory state is maintained and operates in two stages:
-
-    - **Update stage**: The memory state is updated using a small number of 1D tokens $\hat{y}_t$.
-    - **Readout stage**: Learnable query tokens retrieve long-term context from memory.
-
-   This module is implemented with a simple Transformer architecture. Because 1D tokens are semantically rich and far fewer in number than 2D grids, more information can be stored within the same memory capacity, effectively mitigating information forgetting. Short-term context provides fine-grained structural details, while long-term context supplies global semantics — the two are complementary.
-
-3. **Autoregressive Entropy Model**: An AR Transformer sequentially predicts the probability distribution of quantized 1D tokens $Q(y_t)$. Since the number of 1D tokens per frame is small (only 32), and different windows can be processed in parallel, the computational overhead of the AR model remains manageable. This contrasts sharply with entropy models on 2D grids, which must process $h \times w$ tokens — one to two orders of magnitude more complex for AR modeling.
-
-4. **Decoder Design**: The decoder adopts a symmetric architecture to the encoder. Learnable mask tokens $M \in \mathbb{R}^{D \times (h \cdot w)}$ are concatenated with decoded 1D tokens $\hat{y}_t$ and context $C$, and passed through the decoder to iteratively extract information; a convolutional output head then produces the reconstructed frame:
-
-    $\hat{x}_t = \text{Out}(\text{Dec}(\hat{y}_t \oplus M \oplus C))$
-
-   During decoding, mask tokens progressively "read" information from 1D tokens, recovering complete 2D spatial features.
+**4. 1D Memory Long-term Context Module: Longer temporal memory with compact tokens**  
+Video requires long-term context, but 2D features quickly fill a fixed-size memory. 1D Memory maintains a fixed-size state operating in two stages: an update stage using a small number of decoded 1D tokens $\hat{y}_t$ to refresh memory, and a readout stage where learnable query tokens retrieve long-term context $C_l$ via a simple Transformer. Due to the high semantic density and low count of 1D tokens, the same memory capacity can store more information, alleviating forgetting. It supplements short-term context $C_s$ (from the previous frame) to form $C$, providing complementary fine-grained structure and global semantics.
 
 ### Loss & Training
 
-Rate-distortion optimization is employed: $\mathcal{L} = R + \lambda D$, where $R$ is the bitrate and $D$ is the distortion. $\lambda$ is log-uniformly sampled from 8 points in the interval $[0.07, 1.5]$ to train a variable-rate model. Training is conducted on the Vimeo and OpenVid-HD datasets with perceptual loss to enhance visual quality.
+A rate-distortion optimization $\mathcal{L} = R + \lambda D$ is used, where $\lambda$ is log-uniformly sampled across 8 points in the range $[0.07, 1.5]$ to train a variable bitrate model. Training is performed on Vimeo and OpenVid-HD datasets, supplemented by perceptual loss to enhance visual quality.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | GVC1D (Ours) | GLC-Video | BD-Rate Savings |
+| Dataset | Metric | GVC1D (**Ours**) | GLC-Video | BD-Rate **Gain** |
 |--------|------|-------------|-----------|-------------|
 | HEVC-B | LPIPS | Best | Baseline | **-60.4%** |
 | HEVC-B | DISTS | Best | Baseline | **-68.8%** |
@@ -89,50 +84,50 @@ Rate-distortion optimization is employed: $\mathcal{L} = R + \lambda D$, where $
 
 ### Ablation Study
 
-| Configuration | HEVC-B BD-Rate | UVG BD-Rate | Note |
+| Configuration | HEVC-B BD-Rate | UVG BD-Rate | Description |
 |------|---------------|-------------|------|
-| No AR + No Memory | +67.8% | +67.4% | Baseline configuration |
-| AR + No Memory | +20.1% | +40.6% | AR effectively reduces inter-token redundancy |
-| AR + 2D Memory | +11.5% | +16.8% | 2D feature memory management offers limited gains |
-| AR + 1D Memory (Ours) | 0.0% | 0.0% | 1D memory management achieves best performance |
+| w/o AR + w/o Memory | +67.8% | +67.4% | Base configuration |
+| w/ AR + w/o Memory | +20.1% | +40.6% | AR effectively reduces inter-token redundancy |
+| w/ AR + 2D Memory | +11.5% | +16.8% | Limited effectiveness of 2D memory management |
+| w/ AR + 1D Memory (**Ours**) | 0.0% | 0.0% | Optimal memory management via 1D |
 
-Token size ablation: 32×16 (count × channels) is the optimal configuration; too few tokens lead to insufficient capacity, while too many increase bitrate.
+Token size ablation: $32 \times 16$ (count $\times$ channel) is the optimal configuration; too few tokens lack capacity, while too many increase the bitrate.
 
 ### Key Findings
 
-- 1D tokens **consistently track the same semantic regions across frames** (e.g., the left foreleg of a horse), even under large motion.
-- When new objects appear, attention weights of 1D tokens **dynamically redistribute** to the new content.
-- Encoding time is 0.262s and decoding time is 0.207s (1080P on A100), comparable to GLC-Video.
+- 1D tokens consistently **track the same semantic regions** across frames (e.g., a horse's front leg), even under large movements.
+- When new objects appear, 1D token attention weights **dynamically reallocate** to the new content.
+- Encoding time is 0.262s, and decoding is 0.207s (1080P@A100), comparable to GLC-Video speed.
 
 ## Highlights & Insights
 
-- **Paradigm innovation**: This is the first work to demonstrate that 1D latent representations outperform conventional 2D grids in video compression, opening a new direction for the field.
-- **Elegant redundancy elimination**: Decoupling token count from spatial resolution naturally enables adaptive bitrate allocation.
-- The 1D memory design is elegant — leveraging the compactness and semantic richness of 1D tokens, effective long-term context modeling is achieved with a simple Transformer.
+- **Novelty**: First to demonstrate that 1D latent representations outperform traditional 2D grids in video compression, opening a new direction.
+- **Elegant Redundancy Removal**: Decoupling token count from spatial resolution naturally achieves adaptive bitrate allocation.
+- **Value**: Clever 1D memory design leverages the compactness and semantic richness of 1D tokens to achieve effective long-term context modeling with a simple Transformer.
 
 ## Limitations & Future Work
 
-- With only 32 1D tokens per frame, the information capacity is limited; the current approach is only suitable for **low-bitrate lossy compression**, and the authors explicitly acknowledge it cannot be extended to lossless scenarios.
-- The number of tokens is fixed; the possibility of **dynamically adjusting token count** based on frame complexity remains unexplored — simple frames (e.g., static backgrounds) could use fewer tokens, while complex frames (fast motion/scene cuts) may require more.
-- The generative decoder may still produce semantically inconsistent **hallucinated details** in certain scenarios; failure cases are not presented in the paper's visual comparisons.
-- Validation is limited to 1080p resolution; scalability to 4K and beyond remains uncertain.
-- Training data are general-purpose videos (Vimeo + OpenVid-HD); performance on domain-specific videos (e.g., medical imaging, satellite remote sensing) is unknown.
+- With only 32 tokens per frame, information capacity is limited; **Ours** currently only applies to **low-bitrate lossy compression**, and the authors acknowledge it cannot scale to lossless scenarios.
+- The token count is fixed; the possibility of **dynamically adjusting token counts** based on frame complexity—using fewer tokens for simple frames (e.g., static backgrounds) and more for complex frames (rapid motion/scene cuts)—remains unexplored.
+- Generative decoders may still produce **hallucinated details** in certain scenarios that are semantically inconsistent; failure cases were not shown in visual comparisons.
+- Scalability to 4K+ ultra-high resolution is unverified, as experiments were limited to 1080p.
+- Performance on domain-specific videos (e.g., medical imaging, remote sensing) is unknown since training used general videos.
 
 ## Related Work & Insights
 
-- **vs. GLC-Video [ECCV24]**: GLC-Video encodes video into a 2D latent grid via VQ-VAE with a generative decoder, constrained by VQ-VAE capacity and 2D structural redundancy. GVC1D uses continuous 1D tokens to entirely bypass the 2D structural limitation, achieving 60–68% BD-Rate reduction.
-- **vs. DiffVC**: DiffVC enhances perceptual quality using a pretrained diffusion model but at the cost of high bitrate, failing to fully exploit low-bitrate advantages. GVC1D achieves high perceptual quality at extremely low bitrates through 1D representation combined with long-term context.
-- **vs. DCVC-FM/DCVC-RT**: The DCVC series are PSNR-oriented conditional coding frameworks using only short-term context. The 1D Memory concept of GVC1D may be complementary to DCVC-style conditional coding.
-- **vs. DLF [Image Compression]**: DLF is the first to apply discrete 1D tokens to image compression, but the discrete format disrupts temporal consistency in video. GVC1D adopts continuous 1D tokens, which are more suitable for video.
-- **vs. TiTok/TA-TiTok**: 1D tokenization has already demonstrated the value of compact semantic compression in image generation; GVC1D extends this to video compression and validates its effectiveness.
-- Inspiration: Can the flexibility and semantic richness of 1D representations be extended to downstream tasks such as video understanding and action recognition? The semantic tracking property of 1D tokens may be naturally suited for object tracking.
+- **vs GLC-Video [ECCV24]**: GLC-Video uses VQ-VAE to encode video into 2D latent grids, limited by VQ-VAE capacity and 2D redundancy. GVC1D bypasses 2D constraints using continuous 1D tokens, reducing BD-Rate by 60-68%.
+- **vs DiffVC**: DiffVC uses pre-trained diffusion models for perceptual quality but at higher bitrates. GVC1D achieves high perceptual quality at extremely low bitrates via 1D representation and long-term context.
+- **vs DCVC-FM/DCVC-RT**: The DCVC series uses PSNR-oriented conditional encoding with only short-term context. GVC1D's 1D Memory could complement DCVC’s conditional encoding.
+- **vs DLF [Image Compression]**: DLF first used discrete 1D tokens for images, but discrete formats disrupt temporal consistency. GVC1D's continuous 1D tokens are better suited for video.
+- **vs TiTok/TA-TiTok**: 1D tokenization proved valuable in image generation; GVC1D extends this to video compression effectively.
+- **Insight**: Could the flexibility and semantic richness of 1D representations be extended to downstream tasks like video understanding or action recognition? The semantic tracking property of 1D tokens might naturally suit object tracking.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First introduction of 1D latent representation to video compression — a paradigm-level innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset comparisons, comprehensive ablations, and attention visualizations, though speed–quality Pareto curves are absent.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, well-designed architecture diagrams, and thorough analysis.
-- Value: ⭐⭐⭐⭐⭐ Over 60% bitrate savings, with significant impact on the video compression field.
+- **Novelty**: ⭐⭐⭐⭐⭐ Paradigm-level innovation introducing 1D latent representations to video compression.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-dataset comparisons and extensive ablations/visualizations, though lacking speed-quality Pareto curves.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, high-quality diagrams, and in-depth analysis.
+- **Value**: ⭐⭐⭐⭐⭐ Over 60% bitrate savings significantly advances the field of video compression.
 
 <!-- RELATED:START -->
 
@@ -140,11 +135,11 @@ Token size ablation: 32×16 (count × channels) is the optimal configuration; to
 
 ## Related Papers
 
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
 - [\[ICCV 2025\] DLF: Extreme Image Compression with Dual-generative Latent Fusion](../../ICCV2025/model_compression/dlf_extreme_image_compression_with_dual-generative_latent_fusion.md)
-- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](rdvq_differentiable_vq_image_compression.md)
-- [\[CVPR 2026\] Adversarial Concept Distillation for One-Step Diffusion Personalization](adversarial_concept_distillation_for_one-step_diffusion_personalization.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
+- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
+- [\[CVPR 2026\] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)
 
 </div>
 

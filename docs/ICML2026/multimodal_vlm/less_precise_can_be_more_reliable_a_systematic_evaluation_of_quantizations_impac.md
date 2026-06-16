@@ -2,80 +2,74 @@
 title: >-
   [Paper Note] Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy
 description: >-
-  [ICML 2026][Multimodal VLM][CLIP] This work conducts 700,000 experiments covering 16 quantization methods across 10 VLMs and multiple reliability metrics. It discovers that quantization is not a simple disruptor—it suppr…
+  [ICML 2026][Multimodal VLM][CLIP] This paper executes 700,000 experiments across 16 quantization methods $\times$ 10 VLMs $\times$ multiple reliability metrics. It discovers that quantization is not a simple disruptor—it improves calibration, OOD detection, and noise robustness by suppressing high-rank, low-variance spectral components, while simultane
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "CLIP"
-  - "W8A8"
-  - "Calibration"
-  - "OOD"
-  - "Spectral Filtering"
+  - ICML 2026
+  - Multimodal VLM
+  - CLIP
+  - W8A8
+  - OOD
 date: 2026-05-08
-content_hash: 3d7e5d6c4cebda3e
+content_hash: ee2459d08362d4fb
 ---
-
 # Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.21173](https://arxiv.org/abs/2509.21173)  
 **Code**: None  
-**Area**: Multi-modal VLM / Model Quantization / Reliability Evaluation  
+**Area**: Multimodal VLM / Model Quantization / Reliability Evaluation  
 **Keywords**: CLIP, W8A8, Calibration, OOD, Spectral Filtering
 
 ## TL;DR
-This work conducts 700,000 experiments covering 16 quantization methods across 10 VLMs and multiple reliability metrics. It discovers that quantization is not a simple disruptor—it suppresses high-rank, low-variance spectral components, simultaneously improving calibration, OOD detection, and noise robustness, while amplifying dependencies on covariate shifts and spurious correlations.
+This paper executes 700,000 experiments across 16 quantization methods $\times$ 10 VLMs $\times$ multiple reliability metrics. It discovers that quantization is not a simple disruptor—it improves calibration, OOD detection, and noise robustness by suppressing high-rank, low-variance spectral components, while simultaneously amplifying reliance on covariate shifts and spurious correlations.
 
 ## Background & Motivation
 
-**Background**: VLMs such as CLIP have become the de facto standard for zero-shot classification and OOD detection. Reliability evaluation is supported by mature benchmarks like OpenOOD and ImageNet-X. Meanwhile, quantization (PTQ / QAT) is a standard requirement for deploying VLMs to edge devices. These two fields have developed in parallel with limited intersection.
+**Background**: VLMs such as CLIP have become de facto standards for zero-shot classification and OOD detection, supported by mature benchmarks like OpenOOD and ImageNet-X. Meanwhile, quantization (PTQ / QAT) is a standard practice for deploying VLMs on edge devices. These two fields have developed in parallel with minimal intersection.
 
-**Limitations of Prior Work**: Existing quantization literature focuses almost exclusively on top-1 accuracy, remaining largely silent on metrics like calibration, OOD detection, covariate robustness, and spurious correlations—aspects that are "critical once deployed." The community defaults to the assumption that "quantization noise = inevitable sacrifice," but this has not been systematically challenged.
+**Limitations of Prior Work**: Existing quantization literature focuses almost exclusively on top-1 accuracy, remaining largely silent on metrics like calibration, OOD, covariate robustness, and spurious correlations—factors that are critical for safety once a model is deployed. The community generally assumes "quantization noise = inevitable sacrifice," but this has not been systematically falsified.
 
-**Key Challenge**: Reliability research typically examines FP32 models, while quantization research focuses on accuracy. When compressed models are deployed in safety-sensitive scenarios like autonomous driving or healthcare, whether reliability properties persist, vanish, or strengthen remains a significant blind spot.
+**Key Challenge**: Reliability research typically examines only FP32 models, while quantization research focuses solely on accuracy. When compressed models are deployed in safety-sensitive scenarios such as autonomous driving or healthcare, whether reliability attributes persist, disappear, or are enhanced remains a complete blind spot.
 
-**Goal**: Systematically characterize the "reliability landscape of VLM quantization" across five dimensions: (1) robustness to quantization noise; (2) calibration and uncertainty; (3) OOD detection; (4) covariate shift robustness; and (5) spurious correlation bias.
+**Goal**: To systematically characterize the "reliability landscape of VLM quantization" across five dimensions: (1) robustness to quantization noise; (2) calibration and uncertainty; (3) OOD detection; (4) covariate shift robustness; and (5) spurious correlation bias.
 
-**Key Insight**: The authors reconceptualize quantization as a "non-uniform spectral domain filter." While it appears as uniform discretization in the numerical domain, the vast differences in variance across SVD components mean that discretization has negligible impact on low-rank, high-variance components but drowns high-rank, low-variance components in quantization noise.
+**Key Insight**: The authors reconceptualize quantization as a "non-uniform spectral filter." Although it appears as uniform discretization in the numerical domain, the vast differences in variance across different SVD components mean that discretization has almost no effect on low-rank, high-variance components, while drowning high-rank, low-variance components in quantization noise.
 
-**Core Idea**: Use large-scale empirical evidence and SVD spectral analysis to reveal the dual mechanism of "passive spectral filtering + active subspace concentration." It is noted that rotation-based quantization (QuaRot+LSQ) preserves mid-frequency spectral components, which is key to avoiding the amplification of spurious correlations.
+**Core Idea**: Large-scale empirical evidence combined with SVD spectral analysis reveals a dual mechanism of "passive spectral filtering + active subspace concentration." The study highlights that rotation-based quantization (QuaRot+LSQ) preserves mid-frequency components, which is key to avoiding the amplification of spurious correlation.
 
 ## Method
 
 ### Overall Architecture
-The experiments cover 10 VLM architectures (CLIP ViT, CLIP ConvNeXt, SigLIP, ALIGN, CoCa), two quantization scopes (vision-only vs. vision+text), and 16 quantization methods (8 PTQ + 8 QAT variants). Bit-widths include W8A8, W6A8, and W4A8. In total, 8,000+ quantized models and 700,000+ evaluation runs were conducted. All quantization used 1,000 image-caption pairs for calibration. Logit Scale Tuning was applied during post-processing. Evaluation covered the OpenOOD series, ImageNet-A/R/V2/Sketch, CIFAR-10-C, and CounterAnimal. SVD analysis was then performed to reveal the underlying mechanisms.
+The experiments cover 10 VLM architectures (CLIP ViT, CLIP ConvNeXt, SigLIP, ALIGN, CoCa), two quantization scopes (vision-only vs. vision+text), and 16 quantization methods (8 PTQ + 8 QAT variants). Bit-widths include W8A8, W6A8, and W4A8. In total, 8,000+ quantized models were evaluated across 700,000+ runs. All quantization processes used 1,000 image-caption pairs for calibration. Logit Scale Tuning was applied as a uniform post-processing step. Evaluation covered the OpenOOD series, ImageNet-A/R/V2/Sketch, CIFAR-10-C, and CounterAnimal. SVD analysis was subsequently performed to reveal the underlying mechanisms.
 
 ### Key Designs
 
-1. **Unified Evaluation Protocol Across 5 Reliability Dimensions**:
-    - Function: Characterizes the "relative impact of quantization on each reliability dimension" using a set of unified formulas to avoid conflicting results from different reporting standards.
-    - Mechanism: Defines relative change for each metric as $\delta(\mathcal{D}) = \frac{A(f,\mathcal{D}) - A(q,\mathcal{D})}{A(f,\mathcal{D})}$. For OOD, the relative change in AUROC $\delta_{\text{OOD}}$ is used. For spurious correlations, the Relative Spurious Gap $\text{RSG}(m) = \frac{A(m, \mathcal{D}_N) - A(m, \mathcal{D}_C)}{A(m, \mathcal{D}_N)}$ is introduced, along with quantization-induced $\Delta\text{RSG}$ and Added Vulnerability $\text{Vuln}_{\text{add}} = \delta_C - \delta_N$.
-    - Design Motivation: Decouple "absolute accuracy changes" from "spurious correlation amplification" to avoid conflating simple drop in performance with bias amplification—the latter being the true ethical risk signal.
+**1. Unified Evaluation Protocol: Decoupling "Accuracy Drop" from "Bias Amplification"**
 
-2. **Logit Scale Tuning to Repair Quantization Degradation**:
-    - Function: Recalibrates logit temperature using only proxy data without modifying the backbone to rescue quantization-induced over/under-confidence.
-    - Mechanism: Treats the CLIP logit scale as a temperature parameter optimized separately on a calibration set. A "trajectory reliability diagram" tracks the movement of conference bins from FP32 $\rightarrow$ QAT $\rightarrow$ Logit Tuning.
-    - Design Motivation: Ours found that quantizing the text encoder causes a mismatch between the "inner product of two independently quantized manifolds" and the pre-trained logit scale, leading to an ECE surge of +98%. Scalar recalibration can pull the ECE of a fully quantized model from 6.9% to 1.1% without retraining, outperforming the FP32 model.
+Quantization evaluation has long focused solely on top-1 accuracy, while reliability dimensions like calibration, OOD, covariate shift, and spurious correlation were measured in isolation without a comparable scale. Specifically, "accuracy drop" and "amplification of spurious correlations" are often conflated, whereas the latter represents a genuine ethical risk signal. This work defines a unified relative change for each reliability dimension: for general metrics, $\delta(\mathcal{D}) = \frac{A(f,\mathcal{D}) - A(q,\mathcal{D})}{A(f,\mathcal{D})}$ (where $f$ is full-precision and $q$ is quantized); for OOD, the relative change in AUROC $\delta_{\text{OOD}}$ is used. Spurious correlation is handled by introducing a Relative Spurious Gap $\text{RSG}(m) = \frac{A(m, \mathcal{D}_N) - A(m, \mathcal{D}_C)}{A(m, \mathcal{D}_N)}$, followed by calculating $\Delta\text{RSG}$ and Added Vulnerability $\text{Vuln}_{\text{add}} = \delta_C - \delta_N$ to isolate whether the bias is specifically amplified by quantization rather than just a result of overall performance degradation.
 
-3. **SVD Spectral Analysis Revealing "Low-Pass Filter + Principal Component Concentration"**:
-    - Function: Quantitatively explains why quantization can simultaneously improve noise robustness and degrade semantic robustness and spurious correlation.
-    - Mechanism: (a) Projecting quantized features onto FP32 SVD bases reveals that SQNR decays monotonically with rank—fixed quantization steps consume low-variance components first, equivalent to low-pass filtering. (b) Re-performing SVD on quantized features shows that QAT accuracy in the Rank 0-8 subspace is higher than FP32, indicating discriminative information is compressed into the most stable principal components. (c) Accuracy significantly drops for Rank 64+, corresponding to the loss of fine-grained semantics.
-    - Design Motivation: Unify the seemingly contradictory phenomenon of "calibration $\uparrow$ + spurious $\uparrow$" under one mechanism: coarse-grained information is reinforced while fine-grained information is smoothed out. Rotation-based quantization mitigates premature decay of mid-frequency components by aligning activations with the quantization grid.
+**2. Logit Scale Tuning: Recalibrating Logit Temperature without Backpropagation**
+
+Quantizing the text encoder causes the inner product of two independent quantized manifolds to mismatch with the pre-trained logit scale, which can cause ECE to spike by +98%. By treating the CLIP logit scale as a temperature parameter and optimizing it alone on a proxy calibration set while keeping the backbone frozen, the ECE of a fully quantized model can be reduced from 6.9% to 1.1%—even better than the full-precision version. Visualization through "trajectory reliability diagrams" tracks the movement of each confidence bin from FP32 $\to$ QAT $\to$ Logit Tuning, intuitively showing how over- or under-confidence is corrected. This nearly zero-cost scalar recalibration proves that a significant portion of quantization-induced calibration degradation is simply logit scale mismatch.
+
+**3. SVD Spectral Analysis: Quantization as a "Low-pass Filtering + Principal Component Concentration" Mechanism**
+
+A counter-intuitive phenomenon of quantization is that it simultaneously improves noise robustness while worsening semantic robustness and spurious correlation. SVD analysis unifies this under one mechanism. First, projecting quantized features onto the FP32 SVD basis reveals that SQNR decays monotonically with rank—fixed quantization steps primary eliminate low-variance components, acting as a low-pass filter. Second, performing SVD on quantized features shows that QAT achieves higher accuracy in the Rank 0–8 subspace than FP32, suggesting discriminative information is compressed into the most stable principal components. However, accuracy drops significantly for Rank 64+, as fine-grained semantic information is smoothed out. This explains the "calibration $\uparrow$ + spurious $\uparrow$" observation: coarse-grained information is reinforced while fine-grained details are lost. Rotation-based quantization (QuaRot+LSQ), by aligning activations with the quantization grid, mitigates the premature decay of mid-frequency components, which is why it avoids amplifying $\Delta\text{RSG}$.
 
 ### Loss & Training
-QAT uses LSQ (Esser et al. 2020) with two distillation mechanisms (contrastive-only and contrastive + feature MSE), all utilizing 1,000 images from CC3M / YFCC / SBU as a proxy calibration/fine-tuning set. The focus is on the "relative differences between quantization method families (PTQ / QAT / Rotation+LSQ)" rather than a single SOTA point.
+QAT uses LSQ (Esser et al. 2020) with two distillation mechanisms (contrastive-only and contrastive + feature MSE), all utilizing 1,000 images from CC3M / YFCC / SBU as a proxy calibration/fine-tuning set. The research focuses on the "relative differences between quantization families (PTQ / QAT / Rotation+LSQ)" rather than pushing a specific single-point SOTA.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dimension | Change Post-Quantization | Correlation with Quantization Method |
+| Dimension | Change After Quantization | Correlation with Quantization Method |
 |------|-----------|----------------|
 | Zero-shot accuracy | $\approx 40\%$ runs improved calibration | Strongly correlated with pre-training data quality |
-| ECE (calibration) | Reaches 1.1% with Full Quant + Logit Tuning (FP32 = 6.9%) | QAT series generally superior to PTQ |
+| ECE (calibration) | Fully quantized + Logit Tuning reaches 1.1% (FP32 = 6.9%) | QAT family generally outperforms PTQ |
 | OOD AUROC | Statistically significant improvement in some configs | ConvNeXt > Transformer |
-| Synthetic robustness | Average +8.9% | Universal improvement (Low-pass effect) |
-| Semantic robustness | General decline | High-frequency details are smoothed out |
+| Synthetic robustness | Average +8.9% | Universal improvement (low-pass effect) |
+| Semantic robustness | Universal decline | Smoothing of high-frequency details |
 
 ### Ablation Study
 
@@ -88,33 +82,33 @@ QAT uses LSQ (Esser et al. 2020) with two distillation mechanisms (contrastive-o
 | W4A8 | Rot+LSQ | $\mathbf{+4.0}$ *** | $\mathbf{+4.4}$ *** |
 
 ### Key Findings
-- Pre-training data quality determines "whether quantization acts as a regularizer": VLMs trained on high-quality datasets like WIT / DFN show further ECE reduction after quantization. Models trained on noisy data like LAION see ECE surge by +49% because capacity is saturated by noise, leaving no redundancy to absorb quantization noise.
-- Quantization brings a relative $+8.9\%$ robustness improvement to synthetic corruption (Gaussian noise / defocus blur) across almost all architectures. This is consistent with the "low-pass filter" explanation: models do not rely on high-frequency info, so noise/detail removal is inconsequential.
-- Quantization causes drops on semantic shifts like ImageNet-A/R/Sketch, as these tasks require fine-grained high-frequency features to distinguish hard examples.
-- Under extreme low-bit settings (W4A8), even Rotation+LSQ cannot recover the amplified spurious correlations, suggesting a hard lower bound for bit depth.
-- ConvNeXt benefits more from quantization than Transformer because it relies more heavily on texture (high frequency); spectral filtering helps remove the source of overconfidence during OOD.
+- Pre-training data quality dictates whether quantization can act as a regularizer: VLMs trained on high-quality datasets (WIT / DFN) show further reduced ECE after quantization. In contrast, models trained on noisy data (LAION) see ECE spike by +49% after quantization because the capacity is already saturated by noise, leaving no redundancy to absorb quantization noise.
+- Quantization brings a $+8.9\%$ relative robustness improvement across almost all architectures for synthetic corruption (Gaussian noise / defocus blur). This aligns with the "low-pass filter" explanation: models do not rely on high-frequency noise, so removing fine details helps.
+- Quantization leads to performance drops on semantic shifts like ImageNet-A/R/Sketch, as these tasks require fine-grained, high-frequency features to distinguish hard examples.
+- At extreme low bits (W4A8), even Rotation+LSQ cannot prevent the amplification of spurious correlations, indicating a hard lower bound for bit depth.
+- ConvNeXt benefits more from quantization than Transformers because it relies more heavily on texture (high frequency); spectral filtering helps it remove sources of over-confidence during OOD.
 
 ## Highlights & Insights
-- Directly challenges the default assumption that "quantization is just a trade-off" using 700,000 runs—and provides an interpretable mechanism via SVD rather than stopping at "an interesting observation."
+- Directly challenges the default assumption that "quantization is just a trade-off" using 700,000 runs and provides an explainable SVD mechanism rather than just observing an "interesting phenomenon."
 - Proposes $\Delta\text{RSG}$ and $\text{Vuln}_{\text{add}}$ metrics to isolate spurious correlation amplification from accuracy degradation, which can be reused in any "compression + fairness" research.
-- The link between rotation-based quantization and spectral preservation provides specific design principles for future "reliability-aware quantization": align the quantization grid with activation principal axes $\rightarrow$ preserve mid-frequencies $\rightarrow$ do not amplify bias.
+- The link between rotation-based quantization and spectral preservation provides design principles for "reliability-aware quantization": aligning the quantization grid with activation principal axes $\to$ preserving mid-frequencies $\to$ avoiding bias amplification.
 
 ## Limitations & Future Work
-- Primarily focuses on discriminative VLMs (CLIP family), not covering generative LVLMs like LLaVA / Qwen-VL; these models involve additional considerations like KV cache quantization.
-- Calibration sets only use three text-image pair sources (CC3M / YFCC / SBU); domain-specific calibration in industrial deployment is not discussed.
-- SVD analysis was performed on the penultimate layer of the vision encoder; layer-wise differences in spectral response were not explored.
-- Provides Rotation+LSQ as a mitigation but does not propose a complete "reliability-aware quantization method," remaining an observational study.
+- Primarily focuses on discriminative VLMs (CLIP family) and does not cover generative LVLMs like LLaVA or Qwen-VL, which involve extra considerations like KV cache quantization.
+- The calibration set is limited to three data sources (CC3M / YFCC / SBU); domain-specific calibration in industrial deployment is not discussed.
+- SVD analysis is performed on the penultimate layer of the vision encoder; whether differentiated spectral responses exist across different layers is not explored.
+- While it identifies Rotation+LSQ as a mitigation, it does not propose a complete "reliability-aware quantization method," remaining an observational study.
 
 ## Related Work & Insights
-- **vs. AskariHemmat 2022 "QReg"**: They proposed quantization as implicit regularization but only tested accuracy and domain generalization; Ours extends this insight to calibration / OOD / spurious dimensions.
-- **vs. Tu et al. 2023 (CLIP Robustness Evaluation)**: Tu evaluated FP32 CLIP; Ours is an extension to its quantized version, adding spectral filtering as a new mechanism to the explanatory framework.
-- **vs. QuaRot / OutlierSuppression**: Ours maps the "outlier removal" of rotation methods directly to "preserving mid-frequency spectral components," providing a representation-level reliability explanation for such methods beyond just accuracy.
+- **vs AskariHemmat 2022 "QReg"**: They proposed quantization as implicit regularization but only tested accuracy and domain generalization; this paper extends that insight to calibration, OOD, and spurious correlation.
+- **vs Tu et al. 2023 (CLIP Robustness Evaluation)**: Tu evaluated FP32 CLIP; this work is an expansion for its quantized versions, adding the spectral filtering mechanism to the explanatory framework.
+- **vs QuaRot / OutlierSuppression**: This paper maps the "outlier elimination" of rotation methods directly to "preserving mid-frequency components," providing a representation-level reliability explanation for these methods rather than just an accuracy-based one.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic characterization of the VLM quantization reliability landscape with a spectral filtering mechanism.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 700,000 runs across 10 models, 16 methods, and multiple bit-widths.
-- Writing Quality: ⭐⭐⭐⭐ Clear mechanism mapping, though some appendix details are extensive.
-- Value: ⭐⭐⭐⭐⭐ Provides a new dimension and toolkit for safety assessments of edge-deployed VLMs.
+- Novelty: ⭐⭐⭐⭐ First systematic mapping of the reliability landscape for VLM quantization with a spectral mechanism.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 700,000 runs across 10 models $\times$ 16 methods $\times$ multiple bit-widths.
+- Writing Quality: ⭐⭐⭐⭐ Mechanism diagrams are clear, though some appendix details are dense.
+- Value: ⭐⭐⭐⭐⭐ Provides a new dimension and toolkit for the safety evaluation of edge-deployed VLMs.
 
 <!-- RELATED:START -->
 
@@ -123,10 +117,10 @@ QAT uses LSQ (Esser et al. 2020) with two distillation mechanisms (contrastive-o
 ## Related Papers
 
 - [\[ACL 2026\] Learning More from Less: Exploiting Counterfactuals for Data-Efficient Chart Understanding](../../ACL2026/multimodal_vlm/learning_more_from_less_exploiting_counterfactuals_for_data-efficient_chart_unde.md)
+- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/multimodal_vlm/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
 - [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](../../ICCV2025/multimodal_vlm/is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
+- [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](../../CVPR2026/multimodal_vlm/beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
 - [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
-- [\[ACL 2026\] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations](../../ACL2026/multimodal_vlm/beyond_screenshots_evaluating_vlms_understanding_of_ui_animations.md)
-- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/multimodal_vlm/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
 
 </div>
 

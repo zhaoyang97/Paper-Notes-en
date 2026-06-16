@@ -1,21 +1,15 @@
 ---
 title: >-
-  [Paper Note] WarmServe: A Multi-Model Loading GPU Warm-up Mechanism
+  [Paper Note] WarmServe：一次加载多模型的 GPU 预热机制
 description: >-
-  [ICML 2026][LLM Efficiency][GPU Warm-up] WarmServe proactively pre-loads multiple model parameters onto GPUs by analyzing long-term periodic patterns of LLM workloads. Combined with optimized placement algorithms and dyn…
+  [ICML 2026][LLM Efficiency][Paper Note] WarmServe reduces tail TTFT by 50.8x compared to existing systems by analyzing long-term periodic patterns in LLM serving workloads. It proactively preloads multiple model parameters into GPUs, using optimized placement algorithms and dynamic KV cache reservation strategies to quickly launch new instances during reques
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "GPU Warm-up"
-  - "Multi-LLM Serving"
-  - "Workload Prediction"
-  - "Cold Start"
-  - "Resource Efficiency"
+  - ICML 2026
+  - LLM Efficiency
 date: 2026-05-08
-content_hash: b465ae05990b8466
+content_hash: 083c050fe0728b08
 ---
-
-# WarmServe: A Multi-Model Loading GPU Warm-up Mechanism
+# WarmServe: Multi-model GPU Warm-up Mechanism via Load-Once-Many
 
 **Conference**: ICML 2026  
 **arXiv**: [2512.09472](https://arxiv.org/abs/2512.09472)  
@@ -24,46 +18,50 @@ content_hash: b465ae05990b8466
 **Keywords**: GPU Warm-up, Multi-LLM Serving, Workload Prediction, Cold Start, Resource Efficiency
 
 ## TL;DR
-WarmServe proactively pre-loads multiple model parameters onto GPUs by analyzing long-term periodic patterns of LLM workloads. Combined with optimized placement algorithms and dynamic KV cache reservation strategies, the system enables rapid instantiation of new instances during request bursts—reducing tail TTFT by 50.8× compared to existing systems.
+WarmServe reduces tail TTFT by 50.8x compared to existing systems by analyzing long-term periodic patterns in LLM serving workloads. It proactively preloads multiple model parameters into GPUs, using optimized placement algorithms and dynamic KV cache reservation strategies to quickly launch new instances during request bursts.
 
 ## Background & Motivation
 
-**Background**: Multi-LLM serving systems must concurrently deploy multiple models in shared GPU clusters to improve resource utilization. Two mainstream approaches exist—(1) Auto-scaling: Dynamically creates instances based on current load but suffers from high cold-start latency; (2) GPU Sharing: Colocates multiple models on the same GPU but is severely limited by KV cache capacity.
+**Background**: Multi-LLM serving systems must deploy multiple models concurrently in shared GPU clusters to improve resource utilization. Two mainstream solutions exist: (1) Auto-scaling: dynamically creates instances based on current load but suffers from large cold-start latency; (2) GPU Sharing: co-locates multiple models on the same GPU but is severely limited by KV cache capacity.
 
-**Limitations of Prior Work**: Auto-scaling requires on-the-fly loading of model parameters during request bursts, leading to severe TTFT. While GPU sharing avoids initialization delay, each model receives very little KV cache.
+**Limitations of Prior Work**: Auto-scaling requires loading model parameters on the fly during request bursts, leading to severe TTFT. GPU sharing avoids initialization delay but allocates minimal KV cache to each model.
 
-**Key Challenge**: Existing systems lack awareness of future workload characteristics—auto-scaling can only respond passively, and the placement strategies for GPU sharing must remain stable over time.
+**Key Challenge**: Existing systems lack awareness of future workload characteristics—auto-scaling only responds passively, while GPU sharing placement strategies must remain stable over time.
 
-**Key Observations**: Although short-term request arrivals are stochastic, the long-term statistical properties of LLM services in actual production environments exhibit strong periodicity—peak loads within a 5-minute window can be predicted with an average relative error of 7.3%.
+**Key Observation**: While short-term request arrivals are stochastic, the long-term statistical properties of LLM serving in production environments exhibit strong periodicity—peak loads can be predicted within a 5-minute window with an average relative error of 7.3%.
 
-**Key Insight**: Fully exploit this predictability by employing a proactive warm-up strategy—actively loading standby model copies onto idle GPUs before a predicted future load surge.
+**Key Insight**: Fully utilize this predictability by adopting a proactive warm-up strategy—load spare model replicas onto idle GPUs before predicted workload surges.
 
-**Core Idea**: Introducing a "load multiple models once" mechanism—simultaneously loading multiple model parameters into a single GPU's memory. When a model encounters a request burst, it immediately utilizes the warmed-up parameters to start an active instance and then quickly evicts other model parameters. Evicting weights is significantly faster than loading them on demand.
+**Core Idea**: Introduce a "load multiple models once" mechanism—load parameters of multiple models into a single GPU's memory simultaneously. When a model experiences a request burst, it immediately uses the warmed-up parameters to start an active instance and then quickly evicts other model parameters. Weight eviction is much faster than on-demand loading.
 
 ## Method
 
 ### Overall Architecture
-GPU cluster worker nodes are categorized into three types—idle, universal, and dedicated. The system warms up multiple LLMs on idle nodes to convert them into universal nodes. When a warmed-up model receives a burst of requests, the node is upgraded to a dedicated node while other models are evicted. Warm-up is also permitted within unused KV cache space on dedicated nodes.
+WarmServe addresses the cold start problem in multi-LLM serving: loading hundreds of gigabytes of parameters on-the-fly destroys tail TTFT. The approach involves prediction, warm-up, and rapid switching. The system categorizes GPU cluster worker nodes into three types—idle, universal, and dedicated. After the predictor calculates future loads for each model, the placement algorithm selects idle nodes to warm up multiple spare models at once, upgrading them to universal nodes. Once a warmed-up model receives a burst of requests, the node is immediately upgraded to a dedicated node, running that model exclusively and evicting others; additionally, dedicated nodes about to be released are borrowed, using their unused KV cache space to stealthily warm up the next batch of models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Historical Load Sequences"] --> B["Corrected Seasonal Predictor (CSP)<br/>Seasonal Baseline + EWMA Correction<br/>→ Future Load (5-min window)"]
+    B --> C["Priority-Isolated Placement Algorithm<br/>Greedy selection of GPU groups to prevent cross-model eviction"]
+    C --> D["Proactive Warm-up + KV Cache Reservation<br/>Borrow unused KV space from releasing nodes to preload models"]
+    D --> E["Idle Node → Universal Node<br/>Warm up multiple spare models on one GPU"]
+    E -->|Model receives burst request| F["Universal Node → Dedicated Node<br/>Exclusively run model and evict other parameters → Reduce tail TTFT"]
+```
 
 ### Key Designs
 
-1. **Workload Prediction (Corrective Seasonal Predictor, CSP)**:
+**1. Corrected Seasonal Predictor (CSP): Transforming "short-term stochastic, long-term periodic" load into predictable signals**
 
-    - **Function**: Predicts the average and peak loads of each model in the next time window based on historical data.
-    - **Mechanism**: Combines a seasonal pattern $P_{k,i} = \frac{1}{D}\sum_{d=1}^{D}L_{k-d,i}$ with a correction term $\Delta_{k,i} = \frac{\sum_{w=1}^{\min(i,N)}(L_{k,i-w}-P_{k,i-w})\cdot 2^{w-1}}{2^{\min(i,N)}-1}$, resulting in the final prediction $\hat{L}_{k,i} = P_{k,i} + \Delta_{k,i}$. The correction term assigns higher weight to recent errors.
-    - **Design Motivation**: While LLM workloads are unpredictable in the short term, they exhibit long-term periodicity; adding a correction term allows for rapid adaptation to current trends, achieving 92.7% prediction accuracy.
+Proactive warm-up requires knowing which model to scale. Since short-term LLM requests are stochastic, WarmServe splits prediction into two parts: a seasonal baseline $P_{k,i} = \frac{1}{D}\sum_{d=1}^{D}L_{k-d,i}$ using the average load from the same period $i$ over the past $D$ days, and a correction term $\Delta_{k,i} = \frac{\sum_{w=1}^{\min(i,N)}(L_{k,i-w}-P_{k,i-w})\cdot 2^{w-1}}{2^{\min(i,N)}-1}$ that applies exponential weighting to recent deviations. The final prediction is $\hat{L}_{k,i} = P_{k,i} + \Delta_{k,i}$. The baseline captures periodicity while the correction tracks daily drift, achieving 92.7% accuracy for peak loads in 5-minute windows.
 
-2. **Model Placement Algorithm**:
+**2. Priority-Isolated Placement Algorithm: Avoiding cascading evictions during GPU release**
 
-    - **Function**: Decides which model copies need to be warmed up and where to place them on GPUs to minimize cross-model warm-up interference.
-    - **Mechanism**: Calculates a priority score for each copy to be warmed up (based on the gap between expected load and current instances, cold start latency, etc.) and sorts them in descending order. For each copy, it greedily selects the optimal GPU group—prioritizing GPU groups where high-score copies can be protected (not evicted by low-score copies).
-    - **Design Motivation**: LLMs are distributed across multiple GPUs (tensor parallelism), and releasing a single GPU can trigger a chain reaction of evictions across multiple models (cross-model interference). The placement algorithm ensures that important models are not disrupted by minor ones through priority isolation.
+When placing warmed-up replicas, the challenge is that LLMs use tensor parallelism across multiple GPUs. Losing one GPU forces the entire group offline, causing "cross-model interference." The algorithm assigns a priority score to each replica based on the gap between expected load and current instances. It processes replicas in descending order of priority, greedily selecting GPU groups where high-priority replicas will not be evicted by lower-priority ones. This approach maintains low runtime overhead without requiring online integer programming while protecting critical models.
 
-3. **Proactive Warm-up + KV Cache Reservation**:
+**3. Proactive Warm-up + KV Cache Reservation: Hiding massive checkpoint I/O during GPU idle periods**
 
-    - **Function**: Utilizes unused KV cache space to pre-load new model parameters before load decreases and model instances are released.
-    - **Mechanism**: When the auto-scaler detects a load drop and prepares to shut down instances, these instances usually have ample unused KV cache. The system calculates the required KV cache to reserve as $R = \max(C \cdot Q/B, T + C/B)$; anything exceeding this can be used for warm-up. If space is insufficient, warmed-up weights are dynamically evicted.
-    - **Design Motivation**: LLM checkpoints are massive (128GB+), and traditional warm-up often fails within short windows. By "stealthily" pre-loading on GPUs about to be released, I/O is spread across idle periods while the GPU is still operational.
+LLM checkpoints often exceed 128GB, making on-demand loading impossible within narrow windows. WarmServe utilizes the timing when workloads decrease and instances are about to close. Before the auto-scaler reclaims an instance, its unused KV cache space is used to stealthily preload parameters for the next batch of models. To avoid impacting active requests, the system reserves KV cache based on $R = \max(C \cdot Q/B, T + C/B)$ (the upper bound for queue satisfaction and throughput), using only the remaining space for warm-up. This spreads the 128GB transfer cost over the idle bandwidth of a serving GPU.
 
 ## Key Experimental Results
 
@@ -76,48 +74,48 @@ GPU cluster worker nodes are categorized into three types—idle, universal, and
 | WarmServe (w/o Proactive) | 0.18 | 0.31 | 6.8×-11.1× vs SLLM | 20 |
 | WarmServe (Full) | 0.17 | 0.29 | 7.2×-11.9× vs SLLM / 5.2× vs MuxServe | 25 |
 
-Under a setting of 15 RPS and $\alpha$=0.5, WarmServe achieves a 1.53-50.79× reduction in P99 TTFT compared to SLLM-GPU.
+At 15 RPS and $\alpha$=0.5, WarmServe achieves a 1.53-50.79× reduction in P99 TTFT compared to SLLM-GPU.
 
 ### Ablation Study
 
-| Configuration | Ratio of TTFT < 100ms | Description |
+| Configuration | % TTFT within 100ms | Description |
 |------|---------------|------|
 | Full Model | 100% | baseline |
-| w/o Model Warm-up | 15% | Performance collapse |
-| w/o Placement Algorithm | 29% | Interference surge |
-| w/o Proactive Warm-up | 88% | Still improved but 32.87× worse than Full |
-| 3-min Warm-up Window | 46% | Window too small, prediction unstable |
-| 40-min Warm-up Window | 30% | Window too large, fails to capture short-term changes |
+| W/o Model Warm-up | 15% | Performance collapse |
+| W/o Placement Algorithm | 29% | Sharp increase in interference |
+| W/o Proactive Warm-up | 88% | Improved but 32.87× worse than full |
+| 3-min Window | 46% | Unstable prediction due to small window |
+| 40-min Window | 30% | Fails to capture short-term changes |
 
 ### Key Findings
-- Model warm-up provides dozens of times improvement in TTFT.
-- The proactive warm-up strategy brings the most significant improvement (up to 32×).
-- The placement algorithm prevents model interference avalanches under high load.
+- Model warm-up provides orders of magnitude improvement in TTFT.
+- Proactive warm-up is the most significant contributor (up to 32x improvement).
+- The placement algorithm prevents interference cascades under high load.
 - A 5-minute warm-up window is optimal.
-- Workload Prediction: Average load prediction accuracy of 94.7% and peak accuracy of 92.7% under a 5-minute window.
+- Workload prediction: Average load prediction accuracy is 94.7%, with 92.7% for peak loads under a 5-minute window.
 
 ## Highlights & Insights
-- **Discovery of long-term periodicity in LLM workloads**: Challenges the perception that LLM requests are completely unpredictable.
-- **Innovation of loading multiple models once**: Perfectly balances resource efficiency and performance advantages.
-- **Dual-purpose KV cache**: Expands the role of KV cache from pure activation storage to temporary storage for warm-ups.
-- **Priority isolation in greedy placement**: Simple and efficient, eliminating the need to solve complex integer programs at runtime.
+- **Discovery of long-term periodicity in LLM workloads**: Challenges the assumption that LLM requests are entirely unpredictable.
+- **Innovation in "Loading Multiple Models Once"**: Successfully balances resource efficiency with performance.
+- **Dual-purpose KV cache**: Expands the role of KV cache from simple activation storage to temporary storage for warm-up.
+- **Priority isolation in greedy placement**: Simple and efficient, avoiding complex integer programming at runtime.
 
 ## Limitations & Future Work
-- Boundary of workload prediction applicability—may fail for entirely new models or special business events.
-- Lack of multi-datacenter/multi-tenancy scenarios.
-- Insufficient handling of model size disparities—limited effectiveness when colocating 7B + 70B models.
-- Future improvements: Integration of online learning, multi-model ensemble forecasting, and detailed analysis of warm-up failure rates and energy consumption impacts.
+- Applicability boundaries of workload prediction—may fail for entirely new models or unique business events.
+- Lack of evaluation in multi-datacenter or multi-tenant scenarios.
+- Insufficient handling of model size disparities (e.g., co-locating 7B and 70B models).
+- Improvements: Incorporating online learning, multi-model ensemble prediction, and detailed analysis of energy consumption.
 
 ## Related Work & Insights
 - **vs ServerlessLLM/MuxServe**: WarmServe finds a new design space between the two by using a warm-up intermediate layer.
-- **vs Serverless Warm-up**: WarmServe is specialized for three major LLM challenges (cross-multi-GPU dependencies, extreme model sizes, and KV cache).
-- **vs KV Cache Optimization**: Utilizing unused cache space as temporary warm-up storage reflects the philosophy of "maximizing system resource utilization."
+- **vs Serverless Warm-up**: Specifically addresses the unique challenges of LLMs (multi-GPU dependencies, extreme model sizes, and KV cache).
+- **vs KV Cache Optimization**: Leverages unused cache space as temporary warm-up storage, embodying the philosophy of maximizing system resource utilization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐  Identifies long-term predictability of LLM workloads and introduces an innovative multi-model loading mechanism.
-- Experimental Thoroughness: ⭐⭐⭐⭐  Includes single-machine tests, large-scale simulations, ablation studies, and prediction accuracy verification.
-- Writing Quality: ⭐⭐⭐⭐⭐  Clear logic with a natural progression of motivations.
-- Value: ⭐⭐⭐⭐⭐  A 50× improvement in TTFT holds significant practical deployment value.
+- Novelty: ⭐⭐⭐⭐⭐  Identifies long-term predictability and introduces innovative multi-model loading.
+- Experimental Thoroughness: ⭐⭐⭐⭐  Extensive simulations, ablation studies, and prediction accuracy validation.
+- Writing Quality: ⭐⭐⭐⭐⭐  Clear logic with a natural progression of motivation.
+- Value: ⭐⭐⭐⭐⭐  50× TTFT improvement offers significant practical deployment value.
 
 <!-- RELATED:START -->
 
@@ -125,11 +123,11 @@ Under a setting of 15 RPS and $\alpha$=0.5, WarmServe achieves a 1.53-50.79× re
 
 ## Related Papers
 
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](../../ACL2026/llm_efficiency/mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
-- [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
-- [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](../../ICLR2026/llm_efficiency/fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
-- [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
+- [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
+- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
+- [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
+- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
+- [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
 
 </div>
 

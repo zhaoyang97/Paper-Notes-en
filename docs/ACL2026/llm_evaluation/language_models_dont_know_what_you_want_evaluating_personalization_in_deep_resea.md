@@ -2,73 +2,87 @@
 title: >-
   [Paper Note] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users
 description: >-
-  [ACL 2026][LLM Evaluation][Personalized Deep Research] The authors construct the first open-source personalized Deep Research (DR) system, MyScholarQA (featuring a profile → action → report triad)…
+  [ACL 2026][LLM Evaluation][LLM-as-Judge] The authors developed MyScholarQA, the first open-source personalized Deep Research (DR) system (utilizing a profile → action → report three-stage pipeline). While it outperformed other DR baselines across 16 offline metrics, a 90-minute interview study with 21 real researchers revealed 9 types of personalization failu
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Personalized Deep Research"
-  - "LLM-as-Judge"
-  - "User Study"
-  - "Interpretable Agents"
-  - "User-Centered Eval"
+  - ACL 2026
+  - LLM Evaluation
+  - LLM-as-Judge
+  - user-centered eval
 date: 2026-05-08
-content_hash: 901e5e51b4b2ab95
+content_hash: cf10108d99159732
 ---
-
 # Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users
 
 **Conference**: ACL 2026  
 **arXiv**: [2603.16120](https://arxiv.org/abs/2603.16120)  
 **Code**: https://github.com/allenai/personalized-scholarqa-eval  
 **Area**: LLM Evaluation / Personalization / Deep Research / Human-Computer Interaction  
-**Keywords**: Personalized Deep Research, LLM-as-Judge, User Study, Interpretable Agents, User-Centered Eval
+**Keywords**: Personalized Deep Research, LLM-as-Judge, User Study, Interpretable Agents, User-centered Eval
 
 ## TL;DR
-The authors construct the first open-source personalized Deep Research (DR) system, MyScholarQA (featuring a profile → action → report triad), which outperforms other DR baselines across 16 offline metrics. however, 90-minute interviews with 21 real researchers reveal 9 types of personalization failure modes that offline evaluations fail to detect entirely. Furthermore, four mainstream LLM judges are unable to predict user satisfaction accurately, sounding an alarm for the practice of replacing real users with LLM judges.
+The authors developed MyScholarQA, the first open-source personalized Deep Research (DR) system (utilizing a profile → action → report three-stage pipeline). While it outperformed other DR baselines across 16 offline metrics, a 90-minute interview study with 21 real researchers revealed 9 types of personalization failure modes that offline evaluations completely failed to detect. Furthermore, four major LLM judges were unable to accurately predict user satisfaction, serving as a warning against replacing real users with LLM judges.
 
 ## Background & Motivation
 
-**Background**: Deep Research (DR) tools using LLM retrieval and synthesis to write multi-section reports with citations have become essential for researchers. However, most DR systems lack personalization; a Diffusion researcher and an NLP researcher asking "what is Attention" receive nearly identical answers. A few DR systems (e.g., OpenAI/Gemini DR) ask clarifying questions, but users must re-explain themselves for every new query.
+**Background**: Deep Research (DR) tools, which use LLMs to retrieve and synthesize papers into multi-section reports with citations, have become essential for researchers. However, most DR systems lack personalization; asking "What is Attention?" yields nearly identical answers for a Diffusion researcher and an NLP researcher. Some systems (e.g., OpenAI/Gemini DR) ask clarifying questions, but users must re-explain themselves for every new query.
 
-**Limitations of Prior Work**: Among 31 personalization-related papers at ACL'25, **all 31** conducted offline evaluations (18 used synthetic user datasets + 17 used LLM judges), while only 2 conducted real-user studies. This "offline evaluation hegemony" assumes LLM judges can substitute for user judgment—a premise the authors question as a potential "systemic illusion."
+**Limitations of Prior Work**: Among 31 personalization-related papers at ACL'25, **all 31** relied on offline evaluation (18 used synthetic user datasets and 17 used LLM judges), while only 2 conducted human user studies. This "offline evaluation hegemony" assumes LLM judges can effectively substitute for user judgment—a premise the authors challenge as a potential "systemic illusion."
 
-**Key Challenge**: (1) Personalization is not a verifiable objective attribute; it is fundamentally about "whether this specific user finds it useful," yet an LLM judge lacks a "self." (2) DR reports take 5 minutes to generate, requiring a persistent user model rather than repeated prompting. (3) Metrics that correlate with real-user satisfaction may not align with those scoring high in offline evaluations.
+**Key Challenge**: (1) Personalization is not a verifiable objective attribute; it is fundamentally about whether a specific user finds the output useful, yet an LLM judge lacks a subjective "I." (2) DR reports take minutes to generate, necessitating a persistent user model rather than repeated prompting. (3) Metrics where real users find value may not overlap with metrics that score highly in offline evaluations.
 
-**Goal**: (1) Build a deployable, controllable, and interpretable personalized DR system as a vehicle for research. (2) Verify its superiority across 16 offline metrics. (3) Use this system as a "technology probe" for real users to expose failure modes missed by LLM judges. (4) Distill a methodology and design lessons for "user-essential" evaluation.
+**Goal**: (1) Build a deployable, controllable, and interpretable personalized DR system. (2) Validate its performance across 16 offline metrics. (3) Use this system as a "technology probe" for real users to expose failure modes missed by LLM judges. (4) Extract methodologies and design lessons for user-centered evaluation.
 
-**Key Insight**: Borrowing from Brusilovsky’s 1980s "adaptive hypermedia," the authors construct a persistent user model (inferred from user-selected papers), transform it into an editable list of actions for each query, and drive a multi-step LLM retrieval-writing pipeline. Every step allows user toggles/edits to turn "where and how personalization happens" into observable experimental variables.
+**Key Insight**: Drawing from Brusilovsky’s adaptive hypermedia (1980s), the authors construct a persistent user model (inferred from papers chosen by the user), transform it into an editable list of actions for each query, and drive a multi-step retrieval-writing pipeline. Making each step toggleable/editable allows "where and how personalization occurs" to be an observable experimental variable.
 
-**Core Idea**: Run two sets of evaluations on a functional personalized DR system—offline metrics and 21 real-user interviews—using the discrepancies between them to prove that LLM judges cannot replace real users.
+**Core Idea**: Running two sets of evaluations—offline metrics and 21 human interviews—on a functional personalized DR system to demonstrate that LLM judges cannot replace real users.
 
 ## Method
 
 ### Overall Architecture
-MyScholarQA (MYSQA) consists of three steps: (1) **Infer Profile**—From 5 papers $D$ selected by the user, the LLM infers $n_1{=}25$ sentence-level inferences $P=\{I_1,\dots,I_{n_1}\}$ covering five aspects: knowledge, research style, writing style, audience, and positions. Each inference $I$ explicitly cites passages from $D$. Users can edit/disable these to get $P^*$. (2) **Propose Actions**—Upon receiving a query $q$, the system generates $n_2{=}16$ actions $A=A_{\text{gen}}\cup A_{\text{person}}$ (four categories: content, style, specificity, research ideas; generic actions look only at $q$, while personalized actions consider both $q$ and $P^*$). Users select/edit these to get $A^*$. (3) **Synthesize Report**—Based on the ScholarQA pipeline (Semantic Scholar retrieval + clustering + multi-section generation), $A^*$ is inserted into the prompts with two modifications: retrieval generates multiple sets of search terms, and generation executes all $A^*$ while highlighting corresponding report segments with specific colors per action. Claude-4 Sonnet serves as the backbone LLM. All steps are open-sourced with an online UI demo.
+To resolve the conflict between the long generation time of DR reports and the need for preference alignment, MyScholarQA (MYSQA) decomposes personalization into a three-stage pipeline visible to and editable by the user. It extracts a persistent profile from user-selected papers, translates the profile and query into a checklist of actions, and finally synthesizes a multi-section report where personalized segments are color-coded. The input consists of 5 seed papers and a query; intermediate products are editable profiles $P^*$ and actions $A^*$; and the output is a report traceable to specific actions. This makes "personalization" an explicit entity for user intervention and observation. The backbone LLM is Claude-4 Sonnet, and all steps are open-sourced.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: 5 seed papers D + query q"]
+    IN --> P["5-Dimension Persistent Profile<br/>knowledge / research style / writing style / audience / positions<br/>Inferences with citations → 25 profile items P* (editable)"]
+    subgraph ACT["Dual-track Action Proposal"]
+        direction TB
+        AG["A_gen: Based only on q"]
+        AP["A_person: Based on q + P*"]
+        AG --> MG["Merge into 16 actions<br/>Categorized by content / style / specificity / research ideas"]
+        AP --> MG
+    end
+    P --> AP
+    IN -->|query q| AG
+    MG -->|User selection/editing into A*| R1
+    subgraph REP["Highlighted Report Synthesis (Modified ScholarQA)"]
+        direction TB
+        R1["Generate search terms based on A*<br/>Semantic Scholar retrieval + clustering"]
+        R2["Execute A* item by item; highlight text (one color per action)"]
+        R1 --> R2
+    end
+    R2 --> OUT["Output: Multi-section report with traceable, highlighted personalized actions"]
+```
 
 ### Key Designs
 
-1. **Persistent User Model from Papers to 5-Dimension Profile**:
-    - **Function**: Transitions the "who the user is" from transient clarifying questions to a persistent profile across queries, with each inference citing specific paper segments as evidence.
-    - **Mechanism**: Users upload 5 papers $D$. The LLM is prompted to produce 5 sentence-level inferences for each of the five aspects: knowledge, research style, writing style, audience, and positions. Each $I$ explicitly cites $D$ snippets with explanations. The profile is editable, and individual items can be disabled. Gemini-2.5 Pro was selected as the profile backbone for its optimal performance (97.1% inference accuracy, 97.4% citation relevance, 3.73/5 specificity).
-    - **Design Motivation**: Since DR reports take 5 minutes to generate, it is too costly to ask users to re-input preferences (the follow-up Q paradigm of OpenAI DR). A persistent, editable profile directly satisfies user expectations (e.g., "I want it to understand me once and follow through").
+**1. Inferring 5-dimension persistent profiles: Building a chain of evidence for "Who you are"**
+A pain point in DR is the high cost of expressing preferences. MYSQA allows users to upload 5 papers $D$, and prompts an LLM to generate 5 sentence-level inferences across five aspects: knowledge, research style, writing style, audience, and positions, resulting in $n_1{=}25$ profile items $P=\{I_1,\dots,I_{25}\}$. Each inference $I$ must explicitly cite specific passages in $D$, transforming the profile from vague labels into a verifiable chain of evidence. Gemini-2.5 Pro achieved an inference accuracy of 97.1% and citation relevance of 97.4%, making it the preferred backbone for profiling.
 
-2. **Dual-Track Action Proposals (Generic + Personalized)**:
-    - **Function**: Explicitly lists the system's personalization intent as an action list for user control prior to report generation.
-    - **Mechanism**: Two prompts generate $A_{\text{gen}}$ (conditioned on $q$) and $A_{\text{person}}$ (conditioned on $q+P^*$), which are then merged. Categories include content, style, specificity, and research ideas. Soft prompts (e.g., "skip basic terms for experts") are used instead of hard rules to observe "how personalization occurs." LLM judges gave $A_{\text{person}}$ a win rate of 91-95% and uniqueness of 60-72%, proving actions vary significantly based on the profile.
-    - **Design Motivation**: Generating reports directly makes personalization a "black box." Providing an action list first acts as a form of query clarification and allows for fine-grained analysis of which action types cause user dissatisfaction.
+**2. Generic and Personalized dual-track action proposals: Exposing personalization strategies before writing**
+Direct generation from a profile makes personalization a black box. MYSQA instead generates two sets of actions: $A_{\text{gen}}$ (query only) and $A_{\text{person}}$ (query + $P^*$), resulting in $n_2{=}16$ actions organized into four categories. This externalizes "how to personalize" as a discrete set of actions, allowing for fine-grained attribution of which types of personalization succeed or fail. LLM judges preferred $A_{\text{person}}$ with a win rate of 91–95%, confirming these actions are distinctively tailored to the profile.
 
-3. **Color-Highlighted Personalized Report Generation + Multi-step Prompt Refinement**:
-    - **Function**: Embeds $A^*$ into the SCHOLARQA pipeline and uses per-action color highlighting in the report to show which text serves which action, making personalization visible and auditable.
-    - **Mechanism**: Minimalist changes to two SCHOLARQA prompts: (i) `q → search terms` is modified to "produce multiple search terms based on $A^*$"; (ii) `section generation` is modified to "execute $A^*$ step-by-step and highlight corresponding text snippets with one color per action." Action adherence evaluates whether an action is followed anywhere in the report.
-    - **Design Motivation**: Highlighting is a low-cost transparency method for users to "see personalization at a glance." It also serves as a probe to observe neglected or misused actions (e.g., "why does this action have no color?" reveals IGNORE-type failures).
+**3. Color-highlighted report synthesis: Using minimal prompts for observability and probing**
+The report generation, based on the ScholarQA pipeline, is modified to inject $A^*$ during both the retrieval stage (generating search terms based on actions) and the generation stage (executing actions and color-coding results). This transparency allows users to easily see which sentences were influenced by which actions. User research found a "trust trap": when an action was not highlighted, participants often assumed the information was irrelevant rather than recognizing the system failed to execute the action.
 
 ### Loss & Training
-Ours does not involve training new models; MYSQA relies entirely on prompt engineering and multi-LLM chains. Backbone LLMs: Gemini-2.5 Pro / Claude-4 Sonnet (thinking) / o3 / DS-r1 for profiling; Gemini-2.5 Flash / GPT-4.1 / Claude-4 Sonnet / DS-V3 for actions; Claude-4 Sonnet for reporting by default. Profile temperature is 1.0, max tokens 40,960, retrieved via Semantic Scholar API. MYSQA uses 200 DR queries from ScholarQA-CS2 for a synthetic benchmark, with user expertise (low/medium/high) simulated using author papers from CS-PaperSum categorized by GRIT-LM embedding cosine similarity.
+No new models are trained; MYSQA relies on prompt engineering and LLM chains. Backbones were selected per stage: Gemini-2.5 Pro for profiling, Claude-4 Sonnet for actions and reporting. Evaluation used 200 queries from ScholarQA-CS2, simulating three levels of user expertise (low/medium/high) based on author publications from CS-PaperSum, categorized by cosine similarity using GRIT-LM embeddings.
 
 ## Key Experimental Results
 
 ### Main Results
-**Profiles** (4 LLMs × 4 metrics, 0-100% / specificity 1-5):
+**Profiles** (4 LLMs across 4 metrics, 0-100% / specificity 1-5):
 
 | LLM | Inf. Acc | Cit. Rel. | Cat. Acc. | Specificity |
 |-----|----------|-----------|-----------|-------------|
@@ -77,67 +91,66 @@ Ours does not involve training new models; MYSQA relies entirely on prompt engin
 | OpenAI o3 | 88.6 | 91.8 | **99.8** | **4.20** |
 | DeepSeek-R1 | 77.8 | 80.7 | 97.2 | 3.56 |
 
-**Reports** (vs. 5 DR baselines, 5 metrics):
+**Reports** (vs. 5 DR baselines):
 
 | System | Ans. Cov ↑ | Ans. Prec ↑ | Cit. Prec ↑ | Cit. Rec ↑ | Action Adh ↑ |
 |------|------------|-------------|-------------|------------|--------------|
-| **Ours (MYSQA)** | **91.4** | 89.9 | **91.8** | **81.4** | 83.2 |
+| **MYSQA** | **91.4** | 89.9 | **91.8** | **81.4** | 83.2 |
 | ScholarQA (Base) | 88.9 | 89.1 | 90.5 | 76.9 | 81.3 |
 | OpenScholar | 77.2 | **97.4** | 82.5 | 60.4 | 82.5 |
 | STORM | 72.0 | 92.2 | 73.3 | 64.7 | 74.4 |
 | Sonar DR | 81.0 | 82.9 | 64.3 | 46.3 | 75.0 |
 | o3 DR | 89.1 | 90.2 | 79.2 | 56.7 | **93.8** |
 
-MYSQA achieved the best results in 3 out of 5 metrics and second in one, outperforming all baselines and consistently exceeding the base ScholarQA.
+MYSQA achieved the best performance in 3 out of 5 metrics and remained superior to its base model, ScholarQA.
 
 ### Ablation Study (9 Failure Modes Missed by Offline Metrics)
 
 | Output | Failure Type | Description | Frequency |
 |------|----------|------|----------|
-| Profile | DOMAIN | Misused domain terminology | 27.6% |
-| Profile | OVERCLAIM | Generalizing local paper findings to the entire user | 17.9% |
-| Profile | CONVENTION | Mistaking general domain practices as a "user" trait | 12.8% |
-| Profile | CONTRAST | Distorting user stance with incorrect comparisons | 12.2% |
-| Action | NARROW | Action is too narrow, lacking full coverage | 43.8% |
-| Action | OFFTOPIC | Action deviates from query intent | 23.6% |
-| Report | UNINFORM | Content is too vague or lacks detail | 38.0% |
-| Report | PRESENT | Mismatched presentation style or format | 25.3% |
-| Report | IGNORE | Neglected implicit or explicit requirements in actions | 22.8% |
+| Profile | DOMAIN | Misused domain-specific terminology | 27.6% |
+| Profile | OVERCLAIM | Extrapolated specific paper conclusions to the user | 17.9% |
+| Profile | CONVENTION | Mistook general field practices for user-specific traits | 12.8% |
+| Profile | CONTRAST | Distorted user stance via incorrect comparisons | 12.2% |
+| Action | NARROW | Action was too specific, lacking coverage | 43.8% |
+| Action | OFFTOPIC | Action drifted from query intent | 23.6% |
+| Report | UNINFORM | Content was too generic or lacked depth | 38.0% |
+| Report | PRESENT | Presentation style or format mismatch | 25.3% |
+| Report | IGNORE | Failed to execute implicit/explicit action requirements | 22.8% |
 
-**LLM Judge Prediction of User Satisfaction**: 4 LLM judges (Gemini-2.5 Flash / GPT-4.1 / Claude-4 Sonnet / DS-V3) performed binary classification on these 9 failure types to predict "if the user would be satisfied," given identical context + 6-shot examples + definitions. Results: **No LLM significantly outperformed the majority-class baseline on any failure type** (α=0.05 Binomial test + Bonferroni correction). Removing few-shots, removing definitions, or adding zero/3-shot prompts did not improve performance.
+**LLM Judge Performance**: Four LLM judges performed a binary classification on whether a user would be satisfied given these 9 failure types. **No LLM judge significantly outperformed the majority-class baseline** for any failure category (verified via Binomial test with Bonferroni correction).
 
 ### Key Findings
-- **MYSQA Overall Usability at 73%**: 21 real users had a total satisfaction of 73% for profile/action/report; however, the remaining 27% corresponded almost entirely to zero-hits on offline metrics.
-- **DOMAIN + NARROW + UNINFORM are the most common pain points**: Profiles are easily swayed by general terms, actions are often too narrow, and reports are often too vague—forming the primary axis of "Personalization Hallucination."
-- **Inconsistency between Human and LLM Judge Preferences**: LLM judges gave personalized actions a 91-95% win rate, but humans only felt personalized actions were better than generic ones ~60% of the time, suggesting LLM judges systematically over-prefer "specialized-looking" answers.
-- **Humans want more control**: Users expressed desires to add new actions (U3, U16), weight emphasis (U4), and use paper filters, multi-turn dialogues, or long-term memory, validating the "persistent + editable user model" approach.
-- **The Over-trust Trap**: When an action lacked highlighting, most users assumed "that information does not exist" rather than "the system failed to execute the action," representing a hidden risk in personalization.
-- **LLM Judges as "Necessary but Insufficient"**: The authors explicitly propose that offline evaluations should be treated as preliminary screenings rather than final verdicts.
+- **MYSQA Usability (73%)**: Real users were satisfied with the profile/action/report overall, but the remaining 27% unsatisfied cases were missed by offline metrics.
+- **Primary Pain Points**: DOMAIN, NARROW, and UNINFORM failures constitute the main axis of "personalization hallucinations."
+- **Preference Divergence**: LLM judges gave personalized actions a 91-95% win rate, but humans only preferred personalized actions over generic ones about 60% of the time, suggesting LLM judges over-prefer "specialized-looking" responses.
+- **Desire for Control**: Users wanted to add new actions, weight emphasis, and use paper filters, validating the "persistent + editable" user model approach.
+- **The Trust Trap**: When actions were not highlighted, users tended to assume the information was irrelevant rather than spotting a system execution failure.
+- **LLM Judges as "Necessary but Insufficient"**: The authors argue that offline evaluations should act as a preliminary screen rather than a final verdict.
 
 ## Highlights & Insights
-- Reconceptualizes "DR personalization" as an adaptive hypermedia problem in HCI, introducing persistent user models and controllable action lists to turn the invisible dimension of personalization into observable entities.
-- The statistic that 0 out of 31 personalization papers at ACL'25 used human evaluation is a powerful quantification of the current state of the community.
-- The experimental design—running offline and online evaluations on the same system and using binary satisfaction classification to challenge LLM judges—provides empirical evidence against replacing humans with LLM judges.
-- Some of the 9 failure types are known NLP issues (DOMAIN ≈ factuality, PRESENT ≈ style transfer), but others were only discovered by humans (TRUST, UNIMPORT), highlighting the irreplaceable epistemic value of user studies in NLP.
+- Reconceptualizes DR personalization as an HCI adaptive hypermedia problem, making personalization observable through persistent models and editable actions.
+- Quantifies the "offline evaluation hegemony" at ACL'25 (0/31 papers used real users), highlighting a major community blind spot.
+- The experimental design—directly comparing offline metrics and human satisfaction on the same system—provides robust evidence against the reliability of LLM-as-a-Judge for personalization.
+- Identifies that while some failures are known NLP issues (e.g., factuality), others (e.g., TRUST, UNINFORM) are only discoverable through user studies.
 
 ## Limitations & Future Work
-- MYSQA takes ~5 minutes for a report and ~3 minutes for a profile; while faster than OpenAI DR, it is still too slow. Model distillation or pre-computation are potential engineering directions.
-- The study was limited to 21 interviews in the DR setting; whether the conclusion regarding LLM judges holds for other personalized tasks (dialogue, recommendation, RAG) remains to be verified.
-- LLM judge performance is susceptible to prompt engineering; the authors acknowledge that specialized reward models might better approximate user judgment.
-- User models are based only on published papers, which limits applicability for those without publications (students, industry researchers).
-- Personalization may reinforce filter bubbles and carries risks of identity bias (e.g., "odd grammar → non-native speaker → implies lower research quality"), requiring more robust safeguards.
+- **Execution Speed**: Reports take ~5 minutes and profiles ~3 minutes; distillation into smaller models is needed.
+- **Task Scope**: Findings are limited to the DR setting; replicability in personalized RAG or dialogue is yet to be tested.
+- **Prompt Sensitivity**: Stronger prompts or specialized reward models for LLM judges might improve correlation with humans.
+- **User Representation**: The system relies on published papers, limiting utility for students or industry researchers without a publication record.
+- **Ethical Risks**: Potential for reinforcing filter bubbles or introducing identity biases (e.g., associating linguistic patterns with research quality).
 
 ## Related Work & Insights
-- **vs. Co-STORM / OpenAI DR**: These rely on lightweight personalization via clarifying questions during queries; MYSQA uses persistent profiles + editable actions, which user studies show are preferred.
-- **vs. OpenScholar / STORM / Perplexity Sonar / o3 DR**: While MYSQA outperforms these in outcome quality, its more significant contribution is revealing that "high scores ≠ good personalization."
-- **vs. LaMP / Persona-DB / Step-back Profiling**: These are offline personalization methods; this paper challenges the entire paradigm through a user study.
-- **vs. Liang et al. 2025 (Personalized DR benchmark)**: They use synthetic data and LLM judges without releasing a system or conducting human studies; Ours directly counters the blind spots of that paradigm.
+- **Comparison with Co-STORM / OpenAI DR**: These rely on clarifying questions per query; MYSQA’s persistent profile is preferred by users.
+- **Comparison with STORM / OpenScholar**: MYSQA leads in objective quality, but its core contribution is proving that "high scores $\neq$ good personalization."
+- **Critique of LaMP / Persona-DB**: These benchmarks rely on offline paradigms that this paper calls into question.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First open-source personalized DR system + first large-scale user study challenging LLM-judge hegemony.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Combined 16 offline metrics × 5 baselines × 4 LLM judges × 21 humans × 90-minute interviews × 9 failure modes.
-- Writing Quality: ⭐⭐⭐⭐ Seamless integration of system, experiments, user studies, and lessons; Figures 5 and 6 are particularly compelling.
-- Value: ⭐⭐⭐⭐⭐ Provides a significant methodological critique for the personalization NLP community while offering a deployable personalization architecture.
+- **Novelty**: ⭐⭐⭐⭐ First open-source personalized DR system + large-scale user study challenging the LLM-judge paradigm.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive combination of 16 offline metrics, 5 baselines, 4 LLM judges, and 21 qualitative human interviews.
+- **Writing Quality**: ⭐⭐⭐⭐ Logical flow between system design, experimentation, and derived lessons.
+- **Value**: ⭐⭐⭐⭐⭐ A methodological wake-up call for the personalization community and a viable architecture for personalized agents.
 
 <!-- RELATED:START -->
 
@@ -145,11 +158,11 @@ MYSQA achieved the best results in 3 out of 5 metrics and second in one, outperf
 
 ## Related Papers
 
-- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 - [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 - [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
-- [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
+- [\[ACL 2025\] AbGen: Evaluating Large Language Models in Ablation Study Design and Evaluation for Scientific Research](../../ACL2025/llm_evaluation/abgen_evaluating_large_language_models_in.md)
 
 </div>
 

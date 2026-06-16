@@ -2,74 +2,85 @@
 title: >-
   [Paper Note] From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 description: >-
-  [ACL 2026][Model Compression][Post-Training Quantization] Through systematic mechanistic interpretability analysis, this paper reveals two qualitatively different failure modes in LLM quantization: signal degradation in…
+  [ACL 2026][Model Compression][Paper Note] Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively different failure modes: 4-bit Signal Degradation (computational patterns remain intact but precision is impaired, allowing for local repair) and 2-bit Computation Collapse (functional destructi
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "Post-Training Quantization"
-  - "Signal Degradation"
-  - "Computation Collapse"
-  - "Mechanistic Interpretability"
-  - "Causal Tracing"
-  - "Knowledge Recall"
-  - "PTQ"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 960c4df1efa3c385
+content_hash: 395951e2e140d81e
 ---
-
 # From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19884](https://arxiv.org/abs/2604.19884)  
 **Code**: None  
 **Area**: Model Quantization / Interpretability  
-**Keywords**: Post-Training Quantization, Signal Degradation, Computation Collapse, Mechanistic Interpretability, Causal Tracing, Knowledge Recall, PTQ
+**Keywords**: Post-training Quantization, Signal Degradation, Computation Collapse, Mechanistic Interpretability, Causal Tracing, Knowledge Recall, PTQ
 
 ## TL;DR
 
-Through systematic mechanistic interpretability analysis, this paper reveals two qualitatively different failure modes in LLM quantization: signal degradation in 4-bit (complete computational patterns with compromised precision, partially repairable) and computation collapse in 2-bit (functional destruction of key components, requiring structural reconstruction).
+Through systematic mechanistic interpretability analysis, this paper reveals that LLM quantization exhibits two qualitatively different failure modes: 4-bit Signal Degradation (computational patterns remain intact but precision is impaired, allowing for local repair) and 2-bit Computation Collapse (functional destruction of key components, requiring structural reconstruction).
 
 ## Background & Motivation
 
-**Background**: Post-training quantization (PTQ) is a critical technology for the efficient deployment of LLMs. While 4-bit quantization is widely regarded as the optimal balance between precision and compression, 2-bit quantization typically triggers a catastrophic "performance cliff," where accuracy plummets to near zero.
+**Background**: Post-Training Quantization (PTQ) is a critical technology for the efficient deployment of LLMs. While 4-bit quantization is widely regarded as the optimal balance between precision and compression, 2-bit quantization typically triggers a catastrophic "performance cliff"—where accuracy plummets to near zero.
 
-**Limitations of Prior Work**: Existing research focuses on three directions: (1) macro-evaluation (measuring the magnitude of performance loss); (2) algorithmic improvement (numerical optimizations such as outlier suppression and rotation matrices); and (3) preliminary mechanistic exploration (layer/component sensitivity analysis). A common limitation is treating quantization damage solely as a "numerical problem" without exploring why internal model mechanisms fail.
+**Limitations of Prior Work**: Existing research focuses on three directions: (1) Macro-evaluation (measuring the magnitude of performance degradation); (2) Algorithmic improvement (numerical optimizations like outlier suppression and rotation matrices); (3) Preliminary mechanistic exploration (layer/component sensitivity analysis). A common limitation is treating quantization damage solely as a "numerical problem" without investigating why internal model mechanisms fail.
 
-**Key Challenge**: Is the catastrophic failure of 2-bit quantization a cumulative "quantitative change" of 4-bit degradation, or does it represent a qualitative shift? If it is a qualitative shift, it implies that current numerical optimization-based repair strategies are fundamentally misdirected for 2-bit scenarios.
+**Key Challenge**: Is the catastrophic failure of 2-bit quantization merely a quantitative accumulation of 4-bit degradation, or does it represent a qualitative shift? If it is a qualitative shift, it implies that current numerical optimization-based repair strategies are fundamentally misdirected for 2-bit quantization.
 
-**Goal**: This study aims to reveal internal mechanism differences in quantization failures through systematic mechanistic interpretability analysis (layer-wise information flow, causal paths, component functions, and representation spaces) and to verify that different failure modes require distinct repair strategies.
+**Goal**: This work aims to reveal the internal mechanistic differences in quantization failures through systematic mechanistic interpretability analysis (layer-wise information flow, causal paths, component functions, representation space) and verify that different failure modes correspond to different repair strategies.
 
-**Key Insight**: Quantization failure is likened to a signal processing problem—is the signal weakened by noise (degradation), or is the computation pipeline itself broken (collapse)?
+**Key Insight**: Quantization failure is analogous to signal processing—is the signal weakened by noise (degradation) or is the calculation pipeline itself broken (collapse)?
 
-**Core Idea**: The failures of 4-bit and 2-bit are essential differences rather than differences in degree. Signal degradation can be recovered through targeted training-free repairs, whereas computation collapse requires structural reconstruction (e.g., fine-tuning). This difference provides the strongest evidence for distinguishing the two modes.
+**Core Idea**: The difference between 4-bit and 2-bit failures is essential rather than incremental. Signal degradation can be recovered through targeted training-free repairs, whereas computation collapse requires structural reconstruction (e.g., fine-tuning). This difference is the strongest evidence for distinguishing the two modes.
 
 ## Method
 
-**Overall Architecture**: Using Llama-3.1-8B as the primary subject, the study systematically compares the internal behaviors of FP16, 4-bit, and 2-bit models on a factual knowledge recall task (Pararel). A five-layer analysis establishes and verifies hypotheses: Macro Phenomena $\rightarrow$ Layer-wise Probing $\rightarrow$ Causal Analysis $\rightarrow$ Component/Representation Verification $\rightarrow$ Mechanism-oriented Intervention.
+**Overall Architecture**: Taking Llama-3.1-8B as the primary subject, the study systematically compares the internal behaviors of FP16, 4-bit, and 2-bit models on a factual knowledge recall task (Pararel). Starting from macro-performance phenomena, the analysis proceeds through layer-wise signal tracing, component functional diagnosis, and mechanism-oriented repair to confirm "which component fails in what way," finally using "repairability" to prove the essential difference between the two failure modes.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: FP16 / 4-bit / 2-bit Models<br/>Factual Knowledge Recall Task (Pararel)"] --> B["Macro Phenomenon: 4-bit Smooth Degradation vs. 2-bit Performance Cliff"]
+    B --> S1
+    subgraph S1["Multi-level Knowledge Signal Tracing"]
+        direction TB
+        C["Layer-wise Logit Lens Projection<br/>Correct Token Probability and Rank"] --> D["Cross-model Causal Activation Patching<br/>Injecting FP16 Clean Activations"]
+    end
+    S1 --> S2
+    subgraph S2["Component-level Functional Diagnosis"]
+        direction TB
+        E["Attention: Normalized Entropy + JSD Divergence"] --> F["FFN Key-Value Memory: SFR + Jaccard + Cosine"]
+    end
+    S2 --> S3
+    subgraph S3["Mechanism-Aware Repair vs. Irreversibility Verification"]
+        direction TB
+        G["4-bit: Source Protection + Peak Signal Amplification"] --> H["2-bit: Domino Experiment Proving Irreversibility"]
+    end
+    S3 --> I["Conclusion: Signal Degradation vs. Computation Collapse<br/>Two Qualitatively Different Failure Modes"]
+```
 
 **Key Designs**:
 
-1.  **Multi-level Knowledge Signal Tracing**
-    *   **Function**: Traces the existence and causal transmission integrity of knowledge signals within the model.
-    *   **Mechanism**: Employs Logit Lens to project hidden states into the vocabulary space layer-by-layer, observing changes in the probability and rank of the correct token. In 4-bit, signals appear in middle-to-late layers but with weakened intensity (degradation); in 2-bit, signals remain near zero (absence). Cross-model causal activation patching further verifies this: injecting "clean" FP16 activations into key positions of the quantized model (last subject token) allows 4-bit models to recover, whereas 2-bit models remain completely non-responsive.
-    *   **Design Motivation**: Distinguishing "weakened signals" from "signals never generated" is core evidence for the two-mode hypothesis.
+**1. Multi-level Knowledge Signal Tracing: Determining if the signal is "weakened" or "never generated"**
 
-2.  **Component-level Functional Diagnosis (Attention + FFN Key-Value Memory)**
-    *   **Function**: Pinpoints which specific components fail and how they fail.
-    *   **Mechanism**: Uses normalized entropy (global concentration) + JSD divergence (focus deviation) for attention layers. For FFN layers, it uses the gating Sign Flip Rate (SFR, $>30\%$ indicates severe instability), Jaccard overlap of Top-1% activated neurons ($\approx 0.1$ indicates complete activation misalignment), and output cosine similarity ($\approx 0$ indicates complete semantic deviation). 2-bit quantization shows functional collapse across all indicators.
-    *   **Design Motivation**: Attributing macro "signal loss" to specific component failures confirms whether the issue is a loss of precision or a loss of function.
+The first step in distinguishing the two failure modes is clarifying the state of knowledge signals for the correct answer. The authors use Logit Lens to project hidden states of each layer back to the vocabulary space, observing the probability and rank of the correct token. In 4-bit models, signals still emerge in middle-to-late layers but with weakened intensity (typical degradation); in 2-bit models, signals remain near zero throughout, appearing as if they were never generated. To confirm this, cross-model causal activation patching is performed—injecting "clean" activations from the FP16 model at critical positions (the last subject token) into the quantized models. The 4-bit model restores output upon receiving the correct activation, whereas the 2-bit model shows no response. This proves that 2-bit failure is not about signals being buried in noise but a broken computational pipeline.
 
-3.  **Mechanism-Aware Two-Stage Repair vs. System Irreversibility Verification**
-    *   **Function**: Verifies the fundamental difference in repairability between the two modes.
-    *   **Mechanism**: A "Source Protection + Signal Recovery" scheme is designed for 4-bit: protecting the first few layers (8-bit for the first 2 layers in Llama/Mistral, $\approx 4.25$ avg bits; kurtosis-based selection for Qwen/Gemma, $\approx 4.1$ avg bits) + peak signal amplification ($\alpha$-times logit scale). These strategies and EORA low-rank compensation prove ineffective for 2-bit. A "domino experiment" shows that quantizing only the first 2 layers leads to a drop from $100\%$ to $41.65\%$.
-    *   **Design Motivation**: Differences in repairability serve as the most direct and powerful practical evidence for distinguishing the two modes.
+**2. Component-level Functional Diagnosis: Attributing signal loss to specific components**
+
+After identifying signal-level differences, the failure is localized to Attention or FFN modules. For Attention, normalized entropy measures the global concentration of attention distribution, and JSD divergence measures the focus shift relative to FP16. For FFN (viewed as key-value memory), the authors use three metrics: Symbol Flipping Rate (SFR, where >30% indicates severe instability), Jaccard overlap of Top-1% activated neurons ($\approx 0.1$ indicates almost complete misalignment), and output cosine similarity ($\approx 0$ indicates total semantic deviation). 2-bit models exhibit functional collapse across all component metrics, confirming that macro-signal loss stems from component failure rather than mere numerical precision loss.
+
+**3. Mechanism-Aware Two-Stage Repair vs. Irreversibility Verification: Proving modes by "Repairability"**
+
+If the two failures are essentially different, they should respond differently to repairs. For 4-bit signal degradation, a "Source Protection + Signal Recovery" approach is designed: protecting early layers with higher precision (8-bit for the first 2 layers in Llama/Mistral, ~4.25 avg bits; kurtosis-selected layers for Qwen/Gemma, ~4.1 avg bits) and applying $\alpha$-fold logit amplification to peak signals. This training-free scheme restores accuracy from 0% to 64–81% in the failure subset. Conversely, the same strategy and EORA low-rank compensation both fail on 2-bit models. The "Domino Experiment" further clinches this: quantizing only the first 2 layers of a 100% accurate model to 2-bit drops accuracy to 41.65%, even if the remaining 30 layers stay in FP16. This demonstrates the irreversibility of computation collapse.
 
 ## Key Experimental Results
 
 **4-bit Repair Experiments (Accuracy on Failure Subset)**:
 
-| Model | Baseline (4-bit) | + Basic Repair | + Signal Amp (Final) |
-| :--- | :--- | :--- | :--- |
+| Model | Baseline (4-bit) | +Basic Repair | +Signal Amp (Final) |
+|-------|------------------|---------------|---------------------|
 | Llama3.1-8B | 0.00% | 67.91% | 75.19% ($\alpha=3$) |
 | Mistral-7B | 0.00% | 66.86% | 81.26% ($\alpha=9$) |
 | Qwen3-8B | 0.00% | 40.24% | 79.88% ($\alpha=7$) |
@@ -78,53 +89,53 @@ Through systematic mechanistic interpretability analysis, this paper reveals two
 **2-bit "Domino Effect" (Llama3.1-8B)**:
 
 | Quantized Layers | Robust Subset | Failure Subset |
-| :--- | :--- | :--- |
+|------------------|---------------|----------------|
 | None (FP16) | 100.00% | 100.00% |
 | Layer 0 | 65.47% | 15.03% |
 | Layers 0-1 | 41.65% | 5.29% |
 | Layers 0-5 | 2.51% | 0.38% |
 
 **Representation Space Analysis**:
-*   4-bit: CKA maintains a clear diagonal structure, with activation subspace similarity to FP16 $>0.8$.
-*   2-bit: CKA is almost entirely dark (structural collapse), with activation subspace similarity $\approx 0$.
-*   4-bit error subspace alignment with signals is $\approx 0.3$ (resembling random noise).
-*   2-bit error subspace alignment with signals is $\approx 0.8$ (directly interfering with core features).
+- **4-bit**: CKA maintains a clear diagonal structure; activation subspace similarity with FP16 $> 0.8$.
+- **2-bit**: CKA is almost entirely dark (structural collapse); activation subspace similarity $\approx 0$.
+- **4-bit** error subspace alignment with signal $\approx 0.3$ (resembles random noise).
+- **2-bit** error subspace alignment with signal $\approx 0.8$ (systematically interferes with core features).
 
 **Key Findings**:
-*   4-bit results in a "drop in answer rank" (correct answer remains in Top-5), while 2-bit results in "rank collapse" (dropping to thousands, equivalent to random guessing).
-*   Architecture-dependent degradation: Llama/Mistral exhibit an "early representation bottleneck," while Qwen/Gemma show "uniform degradation."
-*   2-bit models cannot process signals correctly even when receiving high-precision inputs—the components themselves have failed.
-*   The distinction between the two failure modes is consistent across both GPTQ and AWQ methods.
+- 4-bit is characterized by "answer rank drop" (correct answer remains in Top-5), while 2-bit is "rank collapse" (drops to thousands, equivalent to random guessing).
+- Architecture-dependent degradation patterns: Llama/Mistral show an "early representation bottleneck," while Qwen/Gemma show "uniform degradation."
+- 2-bit models cannot process high-precision signal inputs correctly—the components themselves are defunct.
+- The distinction between the two failure modes is consistent across both GPTQ and AWQ quantization methods.
 
 ## Highlights & Insights
 
-*   **Valuable Framework for Qualitative Distinction**: This is the first systematic proof that 4-bit and 2-bit are not different degrees on the same continuum but two fundamentally different failure modes.
-*   **Closed Loop from Diagnosis to Repair**: Mechanistic analysis directly guides the design of repair strategies, and the variance in repair effectiveness further validates the diagnosis.
-*   **Compelling "Domino Experiment"**: Demonstrating that quantizing just the first two layers in 2-bit leads to catastrophic collapse—unrecoverable by 30 subsequent FP16 layers—visually illustrates the irreversibility of computation collapse.
-*   **Deep Insight into Error Directions**: The high alignment of 2-bit quantization error with the signal subspace implies that noise is not random but systematically destroys the model's core features.
+- **Framework Value of Qualitative Distinction**: The paper is the first to systematically prove that 4-bit and 2-bit are not different degrees on a continuum but two fundamentally different failure modes.
+- **Closed Loop from Diagnosis to Repair**: Mechanistic analysis directly guides the design of repair strategies, and the difference in repair effectiveness validates the diagnosis.
+- **Persuasiveness of the "Domino Experiment"**: Showing that quantizing just the first 2 layers to 2-bit causes catastrophic collapse that 30 FP16 layers cannot fix provides a vivid demonstration of the irreversibility of computation collapse.
+- **Deep Insights from Error Direction Analysis**: Higher alignment of 2-bit quantization error with the signal subspace implies that noise is not random but systematically destroys the model's core features.
 
 ## Limitations & Future Work
 
-*   The study focuses on weight-only quantization; failure modes in activation quantization remain to be explored.
-*   Evaluations are anchored in factual recall tasks; performance in complex reasoning tasks needs verification.
-*   Repair strategies require additional precision overhead ($\approx 4.1-4.25$ avg bits), and their practicality needs optimization.
-*   The boundary between the two modes (behavior of 3-bit) warrants further research.
-*   The cutoff point for failure modes may vary across different model architectures.
+- Focused on weight-only quantization; failure modes of activation quantization remain to be investigated.
+- Evaluations are anchored to factual recall tasks; performance in complex reasoning tasks needs verification.
+- Repair strategies incur extra precision overhead (~4.1-4.25 avg bits); practical utility needs optimization.
+- The boundary between the two modes (behavior of 3-bit) deserves in-depth study.
+- The threshold for failure mode transitions may vary across different model architectures.
 
 ## Related Work & Insights
 
-*   **GPTQ (Frantar et al., 2023)**: The most widely used weight-only PTQ method and the primary quantization baseline in this paper.
-*   **Causal Tracing (Meng et al., 2022)**: A knowledge localization method extended here for cross-model repair experiments.
-*   **Logit Lens (nostalgebraist, 2020)**: A tool for intermediate layer decoding.
-*   **SpQR (Dettmers et al., 2023)**: A mixed-precision method echoed by the source protection strategy used in this paper.
-*   **Insight**: Quantization research should move beyond numerical optimization; mechanistic understanding is vital for overcoming performance bottlenecks. Making 2-bit practical requires a shift from "compensation" to "reconstruction."
+- **GPTQ (Frantar et al., 2023)**: The most widely used weight-only PTQ method, serving as the main quantization baseline.
+- **Causal Tracing (Meng et al., 2022)**: A knowledge localization method, extended here into cross-model repair experiments.
+- **Logit Lens (nostalgebraist, 2020)**: Tool for decoding intermediate layers.
+- **SpQR (Dettmers et al., 2023)**: Mixed-precision approach, echoed by the source protection strategy in this paper.
+- **Insight**: Quantization research should move beyond numerical optimization; mechanistic understanding is vital for breaking performance bottlenecks. The practical implementation of 2-bit quantization requires a shift from "compensation" to "reconstruction."
 
 ## Rating
 
-*   **Novelty**: ★★★★★ — The systematic distinction and verification of two failure modes is a fresh and significant contribution.
-*   **Experimental Thoroughness**: ★★★★★ — The evidence chain is complete, covering four models, multi-level analysis, and multiple metric validations.
-*   **Writing Quality**: ★★★★★ — The narrative is extremely clear, progressing logically from phenomena to hypothesis, verification, and intervention.
-*   **Value**: ★★★★☆ — Provides a critical diagnostic framework and mechanistic insights for future quantization research.
+- **Novelty**: ★★★★★ — The systematic distinction and validation of two failure modes is a fresh and significant contribution.
+- **Experimental Thoroughness**: ★★★★★ — Evidence chain is complete across 4 models, multi-level analysis, and multiple metrics.
+- **Writing Quality**: ★★★★★ — Narrative progresses clearly from phenomenon to hypothesis, validation, and intervention.
+- **Value**: ★★★★☆ — Provides an important diagnostic framework and mechanistic insights for quantization research.
 
 <!-- RELATED:START -->
 
@@ -133,10 +144,10 @@ Through systematic mechanistic interpretability analysis, this paper reveals two
 ## Related Papers
 
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](two-stage_regularization-based_structured_pruning_for_llms.md)
-- [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](../../ICLR2026/model_compression/paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
+- [\[ICML 2025\] Speculative Decoding in Decentralized LLM Inference: Turning Communication Latency into Computation Throughput](../../ICML2025/model_compression/speculative_decoding_in_decentralized_llm_inference_turning_communication_latenc.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
-- [\[ICML 2026\] WUSH: Near-Optimal Adaptive Transforms for LLM Quantization](../../ICML2026/model_compression/wush_near-optimal_adaptive_transforms_for_llm_quantization.md)
-- [\[ICLR 2026\] The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm](../../ICLR2026/model_compression/the_geometry_of_llm_quantization_gptq_as_babais_nearest_plane_algorithm.md)
+- [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](../../ICLR2026/model_compression/paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
+- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 
 </div>
 

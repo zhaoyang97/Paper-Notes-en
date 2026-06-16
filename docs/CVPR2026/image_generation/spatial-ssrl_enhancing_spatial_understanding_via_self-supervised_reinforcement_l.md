@@ -2,86 +2,103 @@
 title: >-
   [Paper Note] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 description: >-
-  [CVPR 2026][Image Generation][Spatial Understanding] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm that automatically constructs five pretext tasks (patch reordering…
+  [CVPR 2026][Image Generation][Self-Supervised Learning] This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm. By automatically constructing five pretext tasks (patch reordering, flip identification, crop inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images, it utilizes GRPO to optimize the spatial und
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Spatial Understanding"
-  - "Self-Supervised Learning"
-  - "Reinforcement Learning (RLVR)"
-  - "Large Vision-Language Models"
-  - "Depth Perception"
+  - CVPR 2026
+  - Image Generation
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: 7da4f02504f33d99
+content_hash: ee2d86fcad6a0208
 ---
-
 # Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.27606](https://arxiv.org/abs/2510.27606)  
 **Code**: [GitHub](https://github.com/InternLM/Spatial-SSRL)  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: Spatial Understanding, Self-Supervised Learning, Reinforcement Learning (RLVR), Large Vision-Language Models, Depth Perception
 
 ## TL;DR
-This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm that automatically constructs five pretext tasks (patch reordering, flip recognition, cropped patch inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images. By optimizing LVLMs with GRPO, the method achieves average improvements of 3.89%–4.63% across seven spatial benchmarks without any human annotation or external tools.
+This paper proposes Spatial-SSRL, a self-supervised reinforcement learning paradigm. By automatically constructing five pretext tasks (patch reordering, flip identification, crop inpainting, depth ordering, and relative 3D position prediction) from standard RGB/RGB-D images, it utilizes GRPO to optimize the spatial understanding capabilities of LVLMs. This approach achieves an average improvement of 3.89%-4.63% across seven spatial benchmarks without requiring human annotations or external tools.
 
 ## Background & Motivation
 
-**Background**: Large Vision-Language Models (LVLMs) are approaching saturation on tasks such as VQA and image captioning, yet their spatial understanding capabilities remain far below human-level performance. Existing approaches fall into two categories: data-driven SFT (constructing spatial QA pairs for fine-tuning) and RLVR (reinforcement learning with verifiable rewards).
+**Background**: Large Vision-Language Models (LVLMs) are reaching saturation in tasks like VQA and image captioning, yet their spatial understanding remains significantly below human levels. Existing enhancement methods are categorized into data-driven SFT (constructing spatial QA pairs for fine-tuning) and RLVR (reinforcement learning with verifiable rewards).
 
-**Limitations of Prior Work**: SFT methods rely on costly human annotation or GPT-4-generated QA pairs and tend to overfit to dataset-specific patterns. Tool-augmented approaches (e.g., using depth estimators or object detectors) involve complex pipelines and high computational costs. Simulation-based methods (rendering 3D scenes) suffer from domain gaps with the real world. RLVR approaches are constrained by specific environments (e.g., 3D scans), limiting data scale and coverage.
+**Limitations of Prior Work**: SFT methods rely on expensive human annotations or GPT-4 generated QA pairs, often overfitting to specific dataset patterns. Tool-based methods (e.g., using depth estimators or object detectors) involve complex pipelines and high computational costs. Simulation-based methods (rendering 3D scenes) suffer from a domain gap with the real world. RLVR methods are limited by specific environments (e.g., 3D scans), resulting in restricted data scale and coverage.
 
-**Key Challenge**: Spatial understanding requires large-scale verifiable supervision signals, yet all existing methods incur prohibitive costs to obtain them—either through expensive human annotation, complex toolchains, or dependence on specialized 3D datasets.
+**Key Challenge**: Spatial understanding requires large-scale verifiable supervision signals. However, the cost of obtaining these signals via current methods—whether through expensive human labor, complex toolchains, or restricted 3D datasets—is prohibitively high.
 
-**Goal**: Design a zero-annotation, tool-free, and scalable self-supervised scheme that generates verifiable spatial understanding training signals and integrates naturally with the RLVR training paradigm.
+**Goal**: Design a zero-annotation, tool-free, and scalable self-supervised scheme to generate verifiable spatial understanding signals and naturally integrate them with the RLVR training paradigm.
 
-**Key Insight**: The inherent structural consistency within images (relative depth, geometric consistency, viewpoint invariance) itself provides deterministic and verifiable supervision signals. Pretext tasks from visual self-supervised learning (SSL) are repurposed as reward functions for RLVR rather than traditional feature pre-training objectives.
+**Key Insight**: The inherent structural consistency of images (relative depth, geometric consistency, viewpoint invariance) provides deterministic, verifiable supervision signals. This work repositions Visual Self-Supervised Learning (SSL) pretext tasks as reward functions for RLVR, rather than traditional feature pre-training objectives.
 
-**Core Idea**: Classic SSL tasks (jigsaw puzzles, flip detection, etc.) are reformulated as QA prompts with deterministic verification functions for LVLMs, and GRPO is directly applied for post-training.
+**Core Idea**: Transform classic SSL tasks (jigsaw, flip detection, etc.) into LVLM QA prompts with deterministic verification functions, followed by post-training using GRPO.
 
 ## Method
 
 ### Overall Architecture
-Spatial-SSRL consists of two stages: (1) self-supervised task construction—automatically generating QA pairs for five pretext tasks from RGB/RGB-D images (the Spatial-SSRL-81k dataset, with 100% annotation accuracy); and (2) RL training—an SFT cold-start phase to familiarize the model with task formats, followed by GRPO optimization. The five tasks span 2D layout understanding (depth-free) and 3D spatial reasoning (depth-based).
+The core challenge addressed is the need for massive "verifiable" supervision signals for training LVLM spatial understanding. Spatial-SSRL breaks this bottleneck by identifying that deterministic geometric ground truth is hidden within ordinary images (e.g., which patch goes where, which area is closer). By applying controlled transformations, the correct answer is "programmatically" generated without human or detector intervention.
+
+The pipeline follows two steps. First, data construction: five pretext tasks' QA pairs are automatically generated from RGB or RGB-D images to form the Spatial-SSRL-81k dataset. Since all answers derive from deterministic transformations, the label accuracy is 100%. Second, RL training: a cold-start SFT is performed on approximately 3,600 samples to teach the model the required answer format (otherwise, the success rate of producing the correct format during RL is below 5%), followed by optimization using GRPO. The five tasks range from 2D layout (RGB-only) to 3D spatial reasoning (depth-dependent), increasing in complexity.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["RGB / RGB-D Image"] --> DC
+    subgraph DC["Data Construction: Five Pretext Tasks (Deterministic Transformation → 100% Accuracy)"]
+        direction TB
+        T1["Patch Reordering<br/>Shuffle patches, predict inverse permutation"]
+        T2["Flip Recognition<br/>Identify flipped patch and direction"]
+        T3["Crop Inpainting<br/>4-choice selection for masked area"]
+        T4["Regional Depth Ordering<br/>Sort 3 regions by depth"]
+        T5["Relative 3D Position Prediction<br/>Orientation in object coordinate system"]
+    end
+    DC --> D["Spatial-SSRL-81k Dataset"]
+    D --> SFT["SFT Cold Start<br/>~3600 samples, learn answer format"]
+    SFT --> GRPO["GRPO RL<br/>Reward r = 0.9·acc + 0.1·fmt"]
+    GRPO --> OUT["Spatial-Enhanced LVLM"]
+```
 
 ### Key Designs
 
-1. **Shuffled Patch Reordering**:
+**1. Shuffled Patch Reordering: Transforming global 2D layout into a verifiable restoration problem**
 
-    - **Function**: The image is divided into an $M \times N$ grid, randomly shuffled, and the model is asked to predict the permutation $\pi^{-1}$ that restores the original arrangement.
-    - **Mechanism**: For image $I$, a patch grid $\mathcal{X} = \{x_{i,j}\}$ is constructed and a random permutation $\pi$ is applied to obtain the shuffled image. The ground-truth answer is the inverse permutation $\pi^{-1} = [\pi^{-1}(0), \pi^{-1}(1), \ldots, \pi^{-1}(M \times N - 1)]$. Optionally, one random patch is masked in white to increase difficulty and prevent the model from exploiting boundary artifacts.
-    - **Design Motivation**: Recovering the original patch ordering inherently requires understanding global 2D layout consistency and relative positional relationships—skills that transfer directly to understanding object arrangements in real scenes.
+This task addresses the lack of global spatial awareness. The image $I$ is divided into an $M \times N$ patch grid $\mathcal{X} = \{x_{i,j}\}$, and a random permutation $\pi$ is applied. The ground-truth is the inverse permutation:
 
-2. **Flipped Patch Recognition**:
+$$\pi^{-1} = [\pi^{-1}(0),\ \pi^{-1}(1),\ \ldots,\ \pi^{-1}(M \times N - 1)]$$
 
-    - **Function**: One randomly selected patch is flipped horizontally or vertically, and the model must identify the index of the flipped patch and the flip direction.
-    - **Mechanism**: The selected patch $\hat{x}_t$ is transformed with equal probability via vertical flip $x_{\text{vert}}(r,c) = x(P_H - 1 - r, c)$ or horizontal flip $x_{\text{horz}}(r,c) = x(r, P_W - 1 - c)$, with the answer being $[t, d]$.
-    - **Design Motivation**: Detecting subtle orientation violations requires sensitivity to local geometry, mirror symmetry, and directional cues such as text, faces, and shadows.
+The model must predict this sequence. To prevent exploitation of low-level edge-stitching cues, one patch is randomly whitened. Success requires understanding relative positions and overall layout consistency.
 
-3. **Cropped Patch Inpainting**:
+**2. Flipped Patch Recognition: Testing local geometry sensitivity via directional violations**
 
-    - **Function**: A randomly cropped region is masked in black, and the model must select the correct filling patch from four candidates (including three distractors).
-    - **Mechanism**: The distractors are carefully designed—a 90° rotated version, an interior sub-region, and an exterior expanded region—all visually similar to the correct answer, forcing the model to attend to fine-grained texture continuity and semantic consistency.
-    - **Design Motivation**: Tests texture-context matching and fine-grained structural reasoning ability.
+While reordering focuses on the global view, this task targets local details. A patch $\hat{x}_t$ is randomly chosen and flipped either vertically or horizontally with equal probability:
 
-4. **Regional Depth Ordering**:
+$$x_{\text{vert}}(r,c) = x(P_H - 1 - r,\, c), \qquad x_{\text{horz}}(r,c) = x(r,\, P_W - 1 - c)$$
 
-    - **Function**: Three regions with clearly separated depths are selected, labeled with numeric indices, presented in shuffled order, and the model is asked to sort them from nearest to farthest.
-    - **Mechanism**: Three regions satisfying the following constraints are selected from depth map $D$: intra-region depth range $r(R_i) < r_{\max} = 0.15$ (intra-region consistency), and inter-region separation $d(R_i, R_{i+1}) > d_{\min} = 0.05$ (inter-region discriminability).
-    - **Design Motivation**: Sorting requires integrating depth cues, perspective understanding, and ordinal reasoning—foundational capabilities for 3D scene understanding.
+The model predicts the index $t$ and direction $d$, i.e., $[t, d]$. This requires sensitivity to local geometry, symmetry, and directional cues like text, faces, or shadows.
 
-5. **Relative 3D Position Prediction**:
+**3. Cropped Patch Inpainting: Forcing texture continuity comprehension via adversarial distractors**
 
-    - **Function**: Given the orientation of an object, the model predicts the relative position of another point in the object's coordinate frame (combinations of left/right/front/back).
-    - **Mechanism**: A 2D rigid-body transformation maps camera-frame coordinates $(x_2, z_2)$ to the object frame $(\tilde{x}_2, \tilde{z}_2)$, and direction labels $(\tilde{p}_x, \tilde{p}_z)$ are determined by thresholding. Object orientation $\theta$ is sampled uniformly from the four cardinal directions.
-    - **Design Motivation**: Requires mental rotation, egocentric coordinate transformation, and depth integration—the highest-order task among the five for spatial understanding.
+This task evaluates texture-context matching and structural reasoning. One area is masked, and the model selects the correct fill from 4 candidates. The distractors include the correct patch rotated 90°, its internal sub-region, and an expanded outer region. These are visually similar to the target, forcing the model to scrutinize fine-grained texture continuity.
+
+**4. Regional Depth Ordering: Transforming depth maps into verifiable ordinal problems**
+
+This 3D task selects three regions from a depth map $D$ with distinct depths. They are labeled with numbers and presented in random order for the model to sort by distance. Region selection follows two constraints: internal depth variance must be low, and inter-region depth differences must be high:
+
+$$r(R_i) < r_{\max} = 0.15 \quad(\text{Internal Consistency}), \qquad d(R_i, R_{i+1}) > d_{\min} = 0.05 \quad(\text{Inter-region Separability})$$
+
+This ensures a unique deterministic answer, forcing the model to integrate depth cues, perspective, and ordinal reasoning.
+
+**5. Relative 3D Position Prediction: Ego-centric coordinate transformation**
+
+The most advanced task involves predicting the relative orientation of one point in another object's coordinate system, given the object's orientation $\theta$. This involves a 2D rigid body transformation: rotating point $(x_2, z_2)$ in the camera frame to $(\tilde{x}_2, \tilde{z}_2)$ in the object's frame. Correctness requires mental rotation and a shift to an object-centric frame of reference, which is core to real-world spatial reasoning.
 
 ### Loss & Training
-- **Cold-Start SFT**: Fine-tuning for 5 epochs on approximately 3,600 samples (lr=$1 \times 10^{-5}$) to familiarize the model with task formats.
-- **GRPO Optimization**: KL regularization weight 0.01, 5 rollouts per sample, temperature 1.0, batch size 128, lr=$1 \times 10^{-6}$, 360 steps.
-- **Reward Design**: $r = 0.9 \cdot r_{\text{acc}} + 0.1 \cdot r_{\text{fmt}}$, with accuracy weighted substantially higher than format.
-- Think tags are used to guide chain-of-thought output.
+- **Cold-start SFT**: Conducted on ~3,600 samples for 5 epochs (lr=$1 \times 10^{-5}$) to familiarize the model with the task format.
+- **GRPO Optimization**: KL divergence weight 0.01, 5 rollouts per sample, temperature 1.0, batch size 128, lr=$1 \times 10^{-6}$, 360 steps.
+- **Reward Design**: $r = 0.9 \cdot r_{\text{acc}} + 0.1 \cdot r_{\text{fmt}}$, where accuracy is significantly prioritized over format.
+- **Thinking Process**: Uses `<think>` tags to guide the output of a Chain-of-Thought (CoT).
 
 ## Key Experimental Results
 
@@ -91,52 +108,52 @@ Spatial-SSRL consists of two stages: (1) self-supervised task construction—aut
 |------|-----------|-----------|-------------|-----------|----------|-------------|-----------|-----|
 | Qwen2.5-VL-3B | 33.70 | 50.30 | 54.65 | 33.66 | 85.85 | 35.38 | 27.84 | 45.91 |
 | Spatial-SSRL-3B | 46.07 | 51.72 | 59.59 | 39.60 | 86.71 | 36.62 | 33.49 | 50.54 |
-| Δ | **+12.37** | +1.42 | +4.94 | +5.95 | +0.86 | +1.24 | +5.65 | **+4.63** |
+| Gain | **+12.37** | +1.42 | +4.94 | +5.95 | +0.86 | +1.24 | +5.65 | **+4.63** |
 | Qwen2.5-VL-7B | 44.67 | 53.39 | 62.37 | 46.53 | 86.95 | 36.83 | 38.08 | 52.69 |
 | Spatial-SSRL-7B | 53.34 | 56.53 | 64.03 | 54.46 | 90.61 | 37.81 | 39.29 | 56.58 |
-| Δ | **+8.67** | +3.14 | +1.66 | +7.93 | +3.66 | +0.98 | +1.21 | **+3.89** |
+| Gain | **+8.67** | +3.14 | +1.66 | +7.93 | +3.66 | +0.98 | +1.21 | **+3.89** |
 
-Improvements are observed across all seven benchmarks, with the largest gain of +12.37% on Spatial457.
+Improvements were observed across all seven benchmarks, with a maximum gain of +12.37% on Spatial457.
 
 ### Reasoning Capability Verification
 
-| Configuration | Avg Accuracy | Notes |
+| Configuration | Avg Accuracy | Description |
 |------|----------|------|
-| Qwen2.5-VL-7B (w/o reasoning) | 52.69 | Baseline |
-| Qwen2.5-VL-7B (w/ reasoning) | 49.58 | Reasoning hurts! (−3.11) |
-| Spatial-SSRL-7B (w/ reasoning) | **56.58** | Reasoning chain is effective (+3.89) |
+| Qwen2.5-VL-7B (No Reasoning) | 52.69 | baseline |
+| Qwen2.5-VL-7B (With Reasoning) | 49.58 | Reasoning drops performance! (-3.11) |
+| Spatial-SSRL-7B (With Reasoning) | **56.58** | Reasoning chain becomes effective (+3.89) |
 
-Enabling chain-of-thought reasoning in the baseline model actually degrades performance (What'sUp: 86.95→70.61), indicating that the base model lacks effective spatial reasoning ability. Spatial-SSRL successfully trains the model to generate effective reasoning chains through RL.
+Enabling CoT reasoning in the baseline model actually degrades performance (e.g., What'sUp: 86.95 → 70.61), indicating that base models lack intrinsic spatial reasoning logic. Spatial-SSRL successfully trains the model to generate valid reasoning chains via RL.
 
 ### Key Findings
-- 3D reasoning benchmarks benefit most (Spatial457 +12.37%, QSpatial+ +7.93%), validating the contribution of depth-based tasks.
-- The finding that enabling CoT reasoning in the base model degrades performance is significant—it demonstrates that spatial reasoning ability requires dedicated training rather than simple prompt engineering.
-- On Qwen3-VL-4B, spatial performance improves by +1.29% while general VQA also improves by +1.18%, confirming that the method does not harm general capabilities.
-- The Spatial-SSRL-81k dataset achieves 100% annotation accuracy because all answers are derived from deterministic transformations—a standard that noisy-detector-based methods cannot match.
-- The cold-start SFT is necessary: direct RL training results in a success rate below 5% for generating correctly formatted outputs.
+- 3D reasoning benchmarks benefit the most (Spatial457 +12.37%, QSpatial+ +7.93%), validating the contribution of depth-based tasks.
+- A critical finding is that CoT drops performance in base models—spatial reasoning must be learned rather than prompted.
+- Results on Qwen3-VL-4B show a +1.29% spatial gain and a +1.18% gain in general VQA, proving the method does not harm general capabilities.
+- Spatial-SSRL-81k achieves 100% label accuracy, superior to methods relying on noisy detectors.
+- Cold-start SFT is essential; direct RL results in a format success rate of less than 5%.
 
 ## Highlights & Insights
-- **The combination of SSL and RLVR** is the primary contribution. SSL pretext tasks naturally provide deterministic and verifiable answers, perfectly aligning with the verifiable reward requirement of RLVR. This insight may inspire a substantial body of follow-up work extending other SSL tasks to LVLM post-training.
-- **The complementary design of five tasks** covers the full hierarchy from 2D layout to 3D spatial relations: patch reordering (global layout) → flip recognition (local orientation) → inpainting (texture consistency) → depth ordering (3D depth) → 3D position (egocentric coordinate transformation).
-- **The ingenuity of distractor design**: in the inpainting task, distractors consisting of rotated versions, interior sub-regions, and exterior expanded regions prevent the model from exploiting low-level features.
+- **Integration of SSL + RLVR** is the primary innovation. SSL pretext tasks naturally provide deterministic verifiable answers, aligning perfectly with the verifiable reward requirement of RLVR.
+- **Complementary Task Design** covers the full hierarchy from 2D layout to 3D spatial relations: patch reordering (global) → flip recognition (local) → inpainting (texture) → depth ordering (3D depth) → 3D position (ego-centric transformation).
+- **Distractor Design** in the inpainting task (rotated, sub-region, expanded) prevents the model from relying on low-level visual shortcuts.
 
 ## Limitations & Future Work
-- The two depth-dependent tasks require RGB-D data, limiting the range of applicable data sources (although depth can be estimated monocularly, this introduces noise).
-- The relative weighting of the five tasks is not carefully tuned; the current setup uses equal mixing ratios.
-- Evaluation is conducted only on Qwen2.5-VL and Qwen3-VL; generalization to other LVLM architectures (e.g., LLaVA, InternVL) remains unknown.
-- While the 81k data scale is already smaller than typical SFT approaches, there is further room to improve RL training efficiency.
-- Additional SSL tasks could be explored—such as color channel permutation, frequency-domain transformation prediction, and multi-view consistency verification.
+- Depth-dependent tasks require RGB-D data, which limits potential data sources (though monocular estimation can be used with added noise).
+- The relative weights of the five tasks have not been finely tuned (currently equal proportions).
+- Generalization to other LVLM architectures (e.g., LLaVA, InternVL) remains untested.
+- While 81k is smaller than typical SFT datasets, RL training efficiency could still be improved.
+- Future work could explore other SSL tasks like color channel reordering or frequency domain prediction.
 
 ## Related Work & Insights
-- **vs. SpatialLadder/SpaceR**: These methods depend on 3D scan datasets and complex pipelines, whereas Spatial-SSRL requires only standard RGB/RGB-D images with a minimal pipeline. In terms of performance, Spatial-SSRL-7B (56.58) surpasses SpaceR-7B (54.54).
-- **vs. Jigsaw-R1/Visual Jigsaw**: These methods share a similar SSL+RL philosophy but cover only the jigsaw task. Spatial-SSRL designs five complementary tasks, achieving more comprehensive spatial understanding improvements.
-- **vs. SSL4RL**: Focuses exclusively on 2D tasks, whereas Spatial-SSRL covers both 2D and 3D; the depth-based tasks contribute substantial performance gains.
+- **vs SpatialLadder/SpaceR**: These rely on 3D scan datasets and complex pipelines. Spatial-SSRL uses simple RGB/RGB-D images and a minimal pipeline, with its 7B version (56.58) outperforming SpaceR-7B (54.54).
+- **vs Jigsaw-R1/Visual Jigsaw**: Similar SSL+RL logic but limited to jigsaw tasks. Spatial-SSRL is more comprehensive with five complementary tasks.
+- **vs SSL4RL**: Focused only on 2D; Spatial-SSRL covers both 2D and 3D, with depth-based tasks providing significant gains.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The paradigm of using SSL pretext tasks as RLVR rewards is pioneering, and the five-task design is comprehensive.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Seven benchmarks, three base models, and general capability verification are provided, though ablation studies could be more detailed.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Method motivation is clearly articulated, mathematical formalization of task designs is rigorous, and figures are excellent.
-- **Value**: ⭐⭐⭐⭐⭐ Zero annotation, scalable, and naturally compatible with RLVR; opens a new direction for improving spatial understanding in LVLMs.
+- Novelty: ⭐⭐⭐⭐⭐ The paradigm of SSL pretext tasks as RLVR rewards is pioneering.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 7 benchmarks across 3 base models, though ablation could be more granular.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous mathematical formalization of tasks.
+- Value: ⭐⭐⭐⭐⭐ Zero-annotation and scalable; opens a new path for LVLM spatial enhancement.
 
 <!-- RELATED:START -->
 
@@ -146,9 +163,9 @@ Enabling chain-of-thought reasoning in the baseline model actually degrades perf
 
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
-- [\[CVPR 2026\] Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods](training-free_detection_of_generated_videos_via_spatial-temporal_likelihoods.md)
-- [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
+- [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] Exploring Spatial Intelligence from a Generative Perspective](exploring_spatial_intelligence_from_a_generative_perspective.md)
+- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
 
 </div>
 

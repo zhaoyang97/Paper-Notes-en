@@ -1,73 +1,75 @@
 ---
 title: >-
-  [Paper Note] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks
+  [Paper Note] 机器遗忘的两个盲点：过度遗忘与原型重学习攻击
 description: >-
-  [ICML 2026][AI Safety][Machine Unlearning] This paper reveals two critical blind spots in machine unlearning—over-unlearning (inadvertent damage to samples near the decision boundary) and prototype relearning attacks (re…
+  [ICML 2026][AI Safety][Paper Note] This paper reveals two critical blind spots in machine unlearning—over-unlearning (collateral damage to samples near the decision boundary) and prototype relearning attacks (recovering forgotten knowledge using a few samples). It proposes the Spotter framework to simultaneously mitigate these issues via boundary mask d
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Machine Unlearning"
-  - "Over-unlearning"
-  - "Relearning Attack"
-  - "Privacy"
-  - "Classifier"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: cbf48b952fad1ae9
+content_hash: 3a41520949e5a6ba
 ---
-
-# Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks
+# Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Relearning Attacks
 
 **Conference**: ICML 2026  
 **arXiv**: [2506.01318](https://arxiv.org/abs/2506.01318)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: AI Security / Privacy Protection / Machine Unlearning  
 **Keywords**: Machine Unlearning, Over-unlearning, Relearning Attack, Privacy, Classifier
 
 ## TL;DR
-This paper reveals two critical blind spots in machine unlearning—over-unlearning (inadvertent damage to samples near the decision boundary) and prototype relearning attacks (restoration of forgotten knowledge using a few samples). It proposes the Spotter framework to simultaneously mitigate these issues through boundary masked distillation and intra-class dispersion loss.
+This paper reveals two critical blind spots in machine unlearning—over-unlearning (collateral damage to samples near the decision boundary) and prototype relearning attacks (recovering forgotten knowledge using a few samples). It proposes the Spotter framework to simultaneously mitigate these issues via boundary mask distillation and intra-class dispersion loss.
 
 ## Background & Motivation
 
-**Background**: Machine Unlearning (MU) aims to rapidly remove the influence of specific data from a model to avoid the high cost of full retraining. Existing methods include parameter resetting, decision boundary shifting, data partitioning, and knowledge distillation.
+**Background**: Machine Unlearning (MU) aims to rapidly remove the influence of specific data from a model to avoid expensive full retraining. Existing methods include parameter resetting, decision boundary shifting, data partitioning, and knowledge distillation.
 
-**Limitations of Prior Work**: Existing unlearning methods suffer from two severe but long-neglected issues—**over-unlearning** (where remaining samples close to the forgotten class suffer performance degradation when the class is removed) and **post-unlearning vulnerability** (where an adversary can quickly relearn deleted knowledge using only a few samples).
+**Limitations of Prior Work**: Existing unlearning methods suffer from two serious but long-neglected issues: **Over-unlearning** (performance degradation of nearby retained samples when deleting a forgotten class) and **vulnerability after unlearning** (adversaries can rapidly relearn deleted knowledge with only a few samples).
 
-**Key Challenge**: How to achieve thorough unlearning while maintaining preservation integrity? Current methods typically focus only on unlearning quality (forget class accuracy $\rightarrow$ 0) or global retain accuracy, ignoring hidden damage in boundary regions and the threat of subsequent relearning attacks.
+**Key Challenge**: How to simultaneously achieve thorough unlearning and maintain retain integrity? Existing methods typically focus only on unlearning quality (forget accuracy $\to 0$) or retain accuracy, ignoring hidden damage in boundary regions and the threat of subsequent relearning attacks.
 
-**Goal**: Target class-level unlearning—quantifying over-unlearning, exposing relearning risks, and designing defense solutions.
+**Goal**: For class-level unlearning—quantify over-unlearning, expose relearning risks, and design a defense scheme.
 
-**Key Insight**: The focus is shifted from global retain accuracy to the **boundary neighborhood**, as remaining samples near the boundary are most vulnerable when decision boundaries move. Additionally, it is observed that features of the forgotten class remain highly clustered in the embedding space, providing an opportunity for prototype relearning.
+**Key Insight**: The focus is shifted from global retain accuracy to the **boundary neighborhood**, as proximal retained samples are most susceptible to damage when the decision boundary moves. Furthermore, it is observed that features of the forgotten class remain highly clustered in the embedding space, providing an opportunity for prototype relearning.
 
-**Core Idea**: Define boundary neighborhoods using reversible perturbations and design a remaining-data-independent over-unlearning metric $OU@\varepsilon$; combine boundary masked distillation and intra-class feature dispersion to build an unlearning framework resistant to both attacks.
+**Core Idea**: Define the boundary neighborhood using invertible perturbations, design a retain-data-independent over-unlearning metric $OU@\varepsilon$, and construct an unlearning framework that resists both attacks by combining boundary mask distillation and intra-class feature dispersion.
 
 ## Method
 
 ### Overall Architecture
-The Spotter framework for class-level unlearning consists of two main components—(1) **Over-unlearning Quantification and Mitigation**: Perturbed samples are generated along decision boundaries, distribution drift between the original and unlearned models in the boundary neighborhood is measured via KL divergence, and boundary predictions are corrected through masked distillation loss; (2) **Defense Against Relearning Attacks**: Intra-class dispersion loss is used to scatter features of the forgotten class as much as possible, destroying the prototype structure.
+Spotter aims to resolve two side effects in class-level unlearning: the collateral damage to retained samples near the decision boundary (over-unlearning) and the ease with which the model can be recovered with few samples (relearning attack). It splits these problems into two tracks—"quantification" and "defense." First, it generates perturbed samples along the decision boundary and uses a retain-data-independent metric to quantify boundary damage, which is corrected by mask distillation. Simultaneously, it forcibly scatters the forgotten class in the feature space, preventing attackers from obtaining a usable prototype structure.
 
 ### Key Designs
 
-1.  **Over-unlearning Metric $OU@\varepsilon$**:
-    - **Function**: Quantifies the extent of inadvertent damage caused by class-level unlearning to remaining samples in the boundary neighborhood.
-    - **Mechanism**: Defines a perturbation set $\mathcal{A}_{\varepsilon}(\mathcal{D}_f) = \{\boldsymbol{x} + \delta \mid \boldsymbol{x} \in \mathcal{D}_f, \delta \in \Delta_{\varepsilon}\}$. Using a masked softmax to zero out probabilities of forgotten classes, it calculates the KL divergence between the original and unlearned models over the perturbation set: $OU@\varepsilon := \mathbb{E}_{\boldsymbol{x}_p \sim \mathcal{A}_\varepsilon}[D(\tilde{\sigma}(\boldsymbol{z}(\boldsymbol{x}_p;\theta)) \| \sigma(\boldsymbol{z}(\boldsymbol{x}_p;\theta_u)))]$.
-    - **Design Motivation**: Global retain accuracy fails to expose damage near the boundary; being independent of the remaining data makes it feasible in scenarios where the original training set is inaccessible.
+**1. Over-Unlearning Metric $OU@\varepsilon$: Quantifying Invisible Boundary Damage**
 
-2.  **Prototype Relearning Attack (PRA)**:
-    - **Function**: Rapidly restores the performance of deleted classes using a small number of forgotten samples.
-    - **Mechanism**: Observes that the feature extractor $\phi_{\theta_u}$ of the unlearned model still exhibits high clustering for the forgotten class. The attacker computes a class prototype from $k$ samples $\mathbf{p}^{(c)} = \frac{1}{k}\sum_{i=1}^k \phi_{\theta_u}(\boldsymbol{x}_i^{(c)})$ and uses this prototype as the classifier head weights—restoring near-original performance with only 1-10 samples.
-    - **Design Motivation**: Reveals a deep vulnerability in current unlearning methods—while decision heads are removed, the structure of the feature space remains intact.
+Global retain accuracy hides a pain point: when unlearning pushes the decision boundary outward, retained samples close to the boundary are easily misclassified, yet average accuracy remains nearly unchanged. This paper instantiates the "boundary neighborhood" by adding an invertible perturbation $\delta$ around each forgotten sample $\boldsymbol{x}$ to obtain the perturbation set $\mathcal{A}_{\varepsilon}(\mathcal{D}_f) = \{\boldsymbol{x} + \delta \mid \boldsymbol{x} \in \mathcal{D}_f, \delta \in \Delta_{\varepsilon}\}$. Using a masked softmax $\tilde{\sigma}$ to zero out the forgotten class probability (avoiding contamination of the metric by the deletion itself), the predictive distribution shift between the original model $\theta$ and the unlearned model $\theta_u$ is compared:
 
-3.  **Combined Optimization Objective**:
-    - **Function**: Simultaneously achieves thorough unlearning and relearning resistance through three loss terms (basic unlearning, boundary masked distillation, intra-class dispersion).
-    - **Mechanism**: The loss function is $\mathcal{L} = \lambda_1 \mathcal{L}_u + (1-\lambda_1) \mathcal{L}_o + \lambda_2 \mathcal{L}_{sim}$, where $\mathcal{L}_u$ is the standard unlearning loss, $\mathcal{L}_o$ is the boundary masked distillation, and $\mathcal{L}_{sim}$ is the sum of intra-class cosine similarities (to drive feature dispersion).
-    - **Design Motivation**: Each loss performs a specific role—the first two ensure unlearning and boundary protection, while the third actively defends against relearning.
+$$OU@\varepsilon := \mathbb{E}_{\boldsymbol{x}_p \sim \mathcal{A}_\varepsilon}\left[D\big(\tilde{\sigma}(\boldsymbol{z}(\boldsymbol{x}_p;\theta)) \,\|\, \sigma(\boldsymbol{z}(\boldsymbol{x}_p;\theta_u))\big)\right]$$
+
+A larger KL divergence indicates more significant alterations near the boundary. Crucially, the metric uses only the forgotten samples and does not require the original retain set, making it practical for real-world scenarios.
+
+**2. Prototype Relearning Attack (PRA): Exposing Feature Space Vulnerabilities**
+
+Many unlearning methods only modify the classification head. While the forget accuracy reaches zero, the feature extractor $\phi_{\theta_u}$ still clusters forgotten samples together. Attackers can exploit this: with $k$ forgotten samples, they compute the mean of their features as a class prototype $\mathbf{p}^{(c)} = \frac{1}{k}\sum_{i=1}^k \phi_{\theta_u}(\boldsymbol{x}_i^{(c)})$ and insert this prototype back into the classifier head. In experiments, only 1–10 images are needed to recover near-original accuracy. This attack demonstrates that unlearning is often incomplete.
+
+**3. Joint Optimization Objective: Simultaneous Pressure on Decision and Feature Spaces**
+
+Spotter combines standard unlearning, boundary protection, and anti-relearning into a single objective:
+
+$$\mathcal{L} = \lambda_1 \mathcal{L}_u + (1-\lambda_1) \mathcal{L}_o + \lambda_2 \mathcal{L}_{sim}$$
+
+Where $\mathcal{L}_u$ is the standard unlearning loss; $\mathcal{L}_o$ is the mask distillation loss on the boundary neighborhood that constrains the unlearned model's predictions on $\mathcal{A}_\varepsilon$ to match the original model's distribution; and $\mathcal{L}_{sim}$ is the sum of intra-class cosine similarities, which minimizes feature clustering for the forgotten class.
+
+### Function
+Taking the unlearning of the "plane" class in CIFAR-10 as an example: boundary points are generated from plane samples, revealing $OU@\varepsilon \approx 0.16$ after basic unlearning. Enabling $\mathcal{L}_o$ reduces $OU@\varepsilon$ to the $0.03$ level. Simultaneously, while a PRA with 10 images could recover 60%+ accuracy without $\mathcal{L}_{sim}$, enabling $\lambda_2=1$ for $\mathcal{L}_{sim}$ scatters the features, suppressing recovery accuracy to 0.24%—making unlearning truly irreversible.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | CIFAR-10 Forget Acc↓ | CIFAR-10 Retain Acc↑ | Over-unlearning↓ | Prototype Attack Acc↓ | CIFAR-100 Retain↑ |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Method | CIFAR-10 Forget Acc↓ | CIFAR-10 Retain Acc↑ | Over-Unlearning↓ | PRA Acc↓ | CIFAR-100 Retain↑ |
+|------|----------|----------|---------|---------|----------|
 | Original Model | 100.00 | 100.00 | - | 100.00 | 99.99 |
 | Retrain Baseline | 0.00 | 100.00 | 0.2384 | 58.70 | 99.78 |
 | NegGrad | 0.18 | 87.73 | 0.3269 | 2.54 | 15.61 |
@@ -78,40 +80,40 @@ The Spotter framework for class-level unlearning consists of two main components
 
 ### Ablation Study
 
-| Base Method | Before PRA | After Spotter | Gain |
-| :--- | :--- | :--- | :--- |
+| Base Method | PRA (Before) | PRA (After Spotter) | Gain |
+|--------|---------|---------|------|
 | SalUn | 11.70% | 4.44% | ↓62% |
 | DELETE | 31.72% | 3.34% | ↓89% |
 | UNSC | 73.62% | 18.54% | ↓75% |
 
 ### Key Findings
-- Spotter serves as a plug-and-play module that can be stacked onto any base unlearning method.
-- When combined with SalUn, $OU@\varepsilon$ decreased from 0.1664 to 0.0345 (79% reduction).
-- When combined with DELETE, over-unlearning decreased from 0.1216 to 0.0232.
-- At $\lambda_2=1$, relearning is completely defeated, though over-unlearning increases slightly.
+- Spotter serves as a plug-and-play module for any base unlearning method.
+- Combined with SalUn, $OU@\varepsilon$ decreased from 0.1664 to 0.0345 (79% reduction).
+- Combined with DELETE, over-unlearning decreased from 0.1216 to 0.0232.
+- At $\lambda_2=1$, PRA is almost completely defeated, though over-unlearning increases slightly.
 
 ## Highlights & Insights
-- **Quantification of Boundary Damage**: The first to propose the remaining-data-independent metric $OU@\varepsilon$.
-- **Empirical Threat of PRA**: Only 1-10 images are needed to recover over 90% accuracy, posing a real security risk to identity-aware applications like face recognition.
-- **Ingenious Dual Defense**: Masked distillation and intra-class dispersion loss exert pressure from different dimensions (decision space vs. feature space).
-- **Versatility of Plug-and-play Framework**: Requires adding only two terms to the loss function; effectiveness is verified across heterogeneous methods such as DELETE, UNSC, and SalUn.
+- **Quantification of Boundary Damage**: The first to propose the retain-data-independent $OU@\varepsilon$ metric.
+- **Empirical Threat of PRA**: Recovering 90%+ accuracy with just 1-10 images poses a real security risk for identity-sensitive applications like face recognition.
+- **Dual Defense Design**: Mask distillation and intra-class dispersion loss exert pressure from different dimensions (decision space vs. feature space).
+- **Plug-and-play Framework**: Simple addition of two terms in the loss function, validated across heterogeneous methods like DELETE, UNSC, and SalUn.
 
 ## Limitations & Future Work
-- Parameter sensitivity of the boundary definition—the choice of $\varepsilon$ impacts the $OU@\varepsilon$ calculation.
-- Sample size assumptions—PRA experiments are based on the premise that "the attacker possesses $k$ forgotten samples."
-- Extension to other unlearning scenarios—focus is on class-level unlearning; applicability to sample-level or concept unlearning is not yet explicitly defined.
-- Future work: Incorporating sample difficulty weighting; exploring adaptive $\lambda_1, \lambda_2$ scheduling strategies.
+- Parameter sensitivity of the boundary definition—the choice of $\varepsilon$ affects $OU@\varepsilon$ calculations.
+- Sample size assumptions—PRA experiments assume the attacker possesses $k$ forgotten samples.
+- Extension to other unlearning scenarios—currently focuses on class-level unlearning; applicability to sample-level or concept unlearning is yet to be clarified.
+- Improvement: Incorporating sample difficulty weighting; exploring adaptive $\lambda_1, \lambda_2$ scheduling strategies.
 
 ## Related Work & Insights
-- **vs. Over-unlearning Research (Hu et al., 2024a)**: Prior work reported the existence qualitatively; this paper quantifies it ($OU@\varepsilon$) for the first time.
-- **vs. Relearning Defense (Lynch et al., 2024)**: LLM scenarios use robust optimization like SAM; this paper proposes feature dispersion strategies for visual classification.
-- **vs. Knowledge Distillation Unlearning**: Masked distillation reuses distillation concepts but adds unlearning constraints and boundary neighborhood regularization.
+- **vs. Over-unlearning Research (Hu et al., 2024a)**: Prior work reported the existence qualitatively; this paper provides the first quantification ($OU@\varepsilon$).
+- **vs. Relearning Defense (Lynch et al., 2024)**: LLM scenarios use SAM for robust optimization; this work proposes feature dispersion for visual classification.
+- **vs. Knowledge Distillation Unlearning**: Reuses distillation concepts but introduces unlearning constraints and boundary neighborhood regularization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The first to systematically expose two long-neglected but practically severe blind spots.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comparisons across multiple datasets (CIFAR-10/100, TinyImageNet, Face Recognition) and over 8 base methods.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear, and method derivation is rigorous.
-- Value: ⭐⭐⭐⭐⭐ Spotter’s plug-and-play nature can enhance existing unlearning methods, offering direct industrial value for GDPR compliance and privacy protection.
+- Novelty: ⭐⭐⭐⭐⭐  Systematically exposes two long-ignored but serious practical blind spots.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Evaluated across CIFAR-10/100, TinyImageNet, Face Recognition datasets with 8+ base methods.
+- Writing Quality: ⭐⭐⭐⭐  Clear problem formulation and rigorous methodological derivation.
+- Value: ⭐⭐⭐⭐⭐  Spotter is plug-and-play, enhancing existing unlearning methods with direct industrial value for GDPR compliance.
 
 <!-- RELATED:START -->
 
@@ -119,11 +121,11 @@ The Spotter framework for class-level unlearning consists of two main components
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](../../NeurIPS2025/ai_safety/efficient_verified_machine_unlearning_for_distillation.md)
-- [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[NeurIPS 2025\] Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions](../../NeurIPS2025/ai_safety/rewind-to-delete_certified_machine_unlearning_for_nonconvex_functions.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](../../NeurIPS2025/ai_safety/position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
-- [\[NeurIPS 2025\] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](../../NeurIPS2025/ai_safety/the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)
+- [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
+- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
+- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
+- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
 
 </div>
 

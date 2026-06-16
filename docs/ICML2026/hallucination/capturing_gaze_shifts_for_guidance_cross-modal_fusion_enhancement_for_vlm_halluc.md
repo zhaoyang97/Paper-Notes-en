@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation
 description: >-
-  [ICML 2026][Hallucination Detection][VLM Hallucination Mitigation] The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") when a VLM understan…
+  [ICML 2026][Hallucination Detection][Paper Note] The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") as the VLM interprets user queries. During the decoding stage, it simultaneously enhances attention for both visual and query tokens to maintain cross-modal fusion balance, achieving up t
 tags:
-  - "ICML 2026"
-  - "Hallucination Detection"
-  - "VLM Hallucination Mitigation"
-  - "Attention Shift"
-  - "Cross-Modal Fusion"
-  - "Visual Saliency"
-  - "Inference-time Intervention"
+  - ICML 2026
+  - Hallucination Detection
 date: 2026-05-08
-content_hash: c9b07c021f7cac81
+content_hash: 9fd9c9f8aef7320b
 ---
-
 # Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation
 
 **Conference**: ICML 2026  
@@ -24,50 +18,63 @@ content_hash: c9b07c021f7cac81
 **Keywords**: VLM Hallucination Mitigation, Attention Shift, Cross-Modal Fusion, Visual Saliency, Inference-time Intervention  
 
 ## TL;DR
-The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") when a VLM understands user queries, and enhances both visual and query token attention during the decoding phase to maintain cross-modal fusion balance. It achieves up to a 20.7% improvement on CHAIR with only a 1.13× latency increase.
+The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") as the VLM interprets user queries. During the decoding stage, it simultaneously enhances attention for both visual and query tokens to maintain cross-modal fusion balance, achieving up to 20.7% improvement on CHAIR with only 1.13× latency overhead.
 
 ## Background & Motivation
 
-**Background**: Vision-Language Models (VLMs) have made significant progress in tasks such as visual question answering and image description, but they remain prone to hallucinations—generating content that cannot be supported by text or visual input. This poses a serious threat in high-risk areas such as medicine, autonomous driving, and robotics.
+**Background**: Visual Language Models (VLMs) have achieved significant progress in tasks like visual question answering and image captioning, but remain prone to hallucinations—generating content unsupported by textual or visual inputs. This poses a serious threat in high-risk domains such as medicine, autonomous driving, and robotics.
 
-**Limitations of Prior Work**: Research has found that hallucinations primarily stem from VLMs' over-reliance on language priors while ignoring visual inputs. Existing inference-time mitigation methods are mainly divided into three categories: contrastive decoding (requires generating contrastive distributions, high computational cost), visual input modification (requires additional forward passes), and attention guidance (e.g., VAF, which amplifies visual token attention proportional to attention scores). However, these methods have two key flaws: first, they ignore the **visual attention sink** problem, where attention is continuously allocated to task-irrelevant visual regions; second, they only enhance visual attention without adjusting query token attention, leading to **cross-modal fusion imbalance**.
+**Limitations of Prior Work**: Research indicates that hallucinations primarily stem from VLMs over-relying on language priors while ignoring visual inputs. Existing inference-time mitigation methods are categorized into three types: contrastive decoding (requires generating contrastive distributions, high computational cost), visual input modification (requires additional forward passes), and attention guidance (e.g., VAF, which scales visual token attention proportional to absolute scores). However, these methods suffer from two critical flaws: first, they ignore the **visual attention sink** problem, where attention is consistently allocated to task-irrelevant visual regions; second, they only enhance visual attention without adjusting query token attention, leading to **cross-modal fusion imbalance**.
 
-**Key Challenge**: Simply amplifying visual token attention simultaneously intensifies attention on incorrect regions and weakens the model's understanding of user queries, failing to resolve the three problems of attention sinks, insufficient visual contribution, and cross-modal fusion imbalance concurrently.
+**Key Challenge**: Simply amplifying visual token attention simultaneously scales attention in erroneous regions and weakens the model's understanding of the user query, failing to concurrently resolve the attention sink, insufficient visual contribution, and cross-modal fusion imbalance.
 
-**Goal**: Design an inference-time method capable of (1) precisely locating task-relevant visual regions and filtering attention sink noise; (2) simultaneously enhancing visual and query token attention to maintain cross-modal fusion balance.
+**Goal**: Design an inference-time method capable of (1) precisely locating task-relevant visual regions and filtering attention sink noise; and (2) simultaneously enhancing visual and query token attention to maintain cross-modal fusion balance.
 
-**Key Insight**: Inspired by human vision—humans dynamically shift their "gaze" to capture relevant visual information while reading a question. When a VLM processes information-rich words in a query (nouns, verbs, adjectives, etc.), visual attention undergoes positive changes. Tracking this "gaze shift" can naturally filter out attention sink noise (as attention change in irrelevant regions is very small).
+**Key Insight**: Inspired by human vision—humans dynamically shift their "gaze" to capture relevant visual information while reading a question. As a VLM processes informative words in a query (nouns, verbs, adjectives, etc.), its visual attention undergoes positive changes. Tracking these "gaze shifts" naturally filters out attention sink noise, as attention changes in irrelevant regions are minimal.
 
-**Core Idea**: Construct a pre-computed saliency map by tracking positive changes in visual attention during query processing, and use this map to simultaneously guide the enhancement of visual and query token attention during decoding.
+**Core Idea**: Precompute a saliency map by tracking positive changes in visual attention while the VLM processes the query, and use this map during decoding to simultaneously guide attention enhancement for both visual and query tokens.
 
 ## Method
 
 ### Overall Architecture
-GIFT consists of two stages: (1) the pre-filling stage, which tracks positive changes in visual attention ("gaze shifts") while the model processes the user query to construct a visual saliency map; (2) the decoding stage, which utilizes the saliency map to enhance both visual and query token attention in key cross-modal fusion layers. The input is a standard VLM triplet (system instruction $X_S$, visual tokens $X_V$, query tokens $X_T$), and the output is the hallucination-mitigated generated text.
+GIFT consists of two phases: (1) The prefilling phase, where "gaze shifts" (positive changes in visual attention) are tracked as the model processes the user query to construct a visual saliency map; (2) The decoding phase, where the saliency map is utilized in key cross-modal fusion layers to simultaneously enhance both visual and query token attention. The input is a standard VLM triplet (system instruction $X_S$, visual tokens $X_V$, query tokens $X_T$), and the output is the hallucination-mitigated generated text.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input<br/>System Instructions + Visual Tokens + Query Tokens"]
+    subgraph S1["1. Gaze Shift Tracking for Saliency Map (Prefilling Phase)"]
+        direction TB
+        A["spaCy POS Tagging<br/>Select Informative Words X_Tr"] --> B["Calculate Positive Change ΔA<br/>Select Top-50% Heads"]
+        B --> C["Mean Calculation + Min-Max Normalization<br/>Obtain Layer-wise Saliency Maps"]
+        C --> D["Select Layer with Max Total Positive Change<br/>→ Final Saliency Map Ŝ"]
+    end
+    IN --> S1
+    S1 --> E["2. Saliency-Guided Visual Attention Enhancement<br/>Visual Heads Scaled by exp(α·Ŝ)"]
+    E --> F["3. Cross-Modal Fusion Balance<br/>Query Attention Scaled by β·r + Re-normalization"]
+    F --> OUT["Output: Hallucination-Mitigated Text"]
+```
 
 ### Key Designs
 
-1.  **Gaze Shift Tracking for Saliency Map Construction**:
-    - **Function**: Constructs a task-relevant visual saliency map during the pre-filling stage while naturally mitigating the attention sink problem.
-    - **Mechanism**: First, information-rich words are extracted from the query using spaCy POS tagging (NOUN/VERB/ADJ/ADV/NUM/PROPN), corresponding to token set $X_{Tr}$. Then, in each layer, the top-50% attention heads $\hat{\mathcal{H}}^l_{TrV}$ with the largest cumulative positive attention changes are selected. The positive change in visual attention is calculated as $\Delta \mathbf{A}^l_{h,i,j} = \max(\mathbf{A}^l_{h,i,j} - \mathbf{A}^l_{h,i-1,j}, 0)$. The saliency map $\hat{\mathcal{S}^l}$ is obtained by averaging across selected heads and informative tokens, followed by min-max normalization. Finally, the layer with the largest total positive change is selected as the final saliency map.
-    - **Design Motivation**: Tracking only positive changes rather than average attention is effective because irrelevant regions produce almost no change in attention, thereby naturally filtering attention sink noise. Experimental verification shows that the normalized saliency score of the "shift" method is 11.92, which is 2.2 times that of the "static" method (5.40).
+**1. Gaze Shift Tracking for Saliency Map: Using "Positive Change" instead of absolute values to naturally filter attention sinks**
 
-2.  **Saliency-Guided Visual Attention Enhancement**:
-    - **Function**: Enhances the attention weights of task-relevant visual tokens during the decoding phase.
-    - **Mechanism**: In the selected enhancement layers $\mathcal{L}$, for the top-50% visual attention heads $\mathcal{H}^l_{OV}$, the attention is multiplied by a saliency guidance factor $\hat{\bm{A}}^l_{h,-1,j} = \bm{A}^l_{h,-1,j} \cdot \exp(\alpha \hat{\mathcal{S}}_j)$, where $\alpha$ is a scaling factor. The saliency map is truncated at 3 standard deviations before normalization to avoid over-focusing.
-    - **Design Motivation**: Using a pre-computed saliency map instead of current-step attention scores provides a global visual saliency view based on the complete query context, avoiding attention sink noise in step-by-step attention scores.
+Existing attention guidance methods (like VAF) amplify visual tokens based on absolute attention scores. However, attention is often stuck in task-irrelevant regions (visual attention sinks); amplifying absolute attention thus scales this noise. GIFT changes the signal source: when reading a question, humans shift their gaze to capture relevant visual info. VLMs also show positive changes in visual attention when processing informative words in a query—while irrelevant regions show almost no change. Thus, spaCy POS tagging is first used to select informative words (NOUN/VERB/ADJ/ADV/NUM/PROPN) to form the token set $X_{Tr}$. For each layer, the top-50% heads $\hat{\mathcal{H}}^l_{TrV}$ with the largest cumulative positive changes are chosen. The positive change is calculated as $\Delta\mathbf{A}^l_{h,i,j}=\max(\mathbf{A}^l_{h,i,j}-\mathbf{A}^l_{h,i-1,j},0)$. By averaging over selected heads and informative tokens, the saliency map $\hat{\mathcal{S}^l}$ is obtained and min-max normalized. Finally, the layer with the highest total positive change is selected. By tracking only positive shifts rather than average attention, the method uses a differential signal to automatically filter sink noise—the normalized saliency score for the shift method (11.92) is 2.2x higher than the static method (5.40).
 
-3.  **Cross-Modal Fusion Balance**:
-    - **Function**: Proportionally boosts query token attention while enhancing visual attention to prevent cross-modal fusion imbalance.
-    - **Mechanism**: The visual attention enhancement ratio $r^l = \sum_{h,j} \hat{\bm{A}}^l_{h,-1,j} / \bm{A}^l_{h,-1,j}$ is calculated. Then, the query token attention in query attention heads $\mathcal{H}^l_{OT}$ is multiplied by $\beta r^l$ (default $\beta$ is 1.0), and finally, the entire attention matrix is normalized. Enhancement layers are selected by analyzing the ratio of output tokens' attention to visual and query tokens—layers where the two show consistent trends are chosen.
-    - **Design Motivation**: Enhancing only visual attention weakens query understanding, causing the model to focus on the correct region but misunderstand the question. Scalable query attention maintains the original cross-modal balance.
+**2. Saliency-Guided Visual Attention Enhancement: Using precomputed global saliency rather than step-wise attention**
+
+Once the saliency map is obtained, in the selected enhancement layers $\mathcal{L}$, the top-50% visual attention heads $\mathcal{H}^l_{OV}$ are amplified according to the saliency: $\hat{\bm{A}}^l_{h,-1,j}=\bm{A}^l_{h,-1,j}\cdot\exp(\alpha\hat{\mathcal{S}}_j)$ (where $\alpha$ is a scaling factor). The saliency map is truncated at 3 standard deviations before normalization to avoid excessive focusing. The key here is using the saliency map computed during prefilling rather than the current decoding step's attention scores—the former provides a global view based on the full query context, while the latter re-introduces sink noise from step-wise attention. In other words, "where to look" is determined once during prefilling, and decoding simply follows this map to avoid being distracted by noise.
+
+**3. Cross-Modal Fusion Balance: Scaling query attention proportionally to vision to prevent "looking right but reading wrong"**
+
+Amplifying only visual attention carries a risk: as visual weight increases, the relative attention the model pays to the user query is diluted. This results in the model focusing on the right image region but misunderstanding the question, leading to imbalanced cross-modal fusion. GIFT compensates for this with synchronized scaling—first, the visual enhancement ratio is calculated as $r^l=\sum_{h,j}\hat{\bm{A}}^l_{h,-1,j}/\bm{A}^l_{h,-1,j}$. Then, the query token attention in query heads $\mathcal{H}^l_{OT}$ is multiplied by $\beta r^l$ (default $\beta=1.0$), followed by a re-normalization of the entire attention matrix. The enhancement layers are chosen by analyzing the attention ratio of output tokens to visual and query tokens, selecting middle layers where both trends are consistent. This "sync-scaling" mechanism is simple yet critical, preserving the original vision-text balance; ablation shows full GIFT improves up to 25.4% over vision-only enhancement.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Method | CHAIR $C_s$↓ | CHAIR $C_i$↓ | POPE F1↑ | POPE Acc↑ | MMHal Hal↓ | MMHal Score↑ |
-|-------|--------|-------------|-------------|----------|----------|------------|-------------|
+|------|------|-------------|-------------|----------|----------|------------|-------------|
 | LLaVA-1.5 7B | Greedy | 50.2 | 15.4 | 82.4 | 79.5 | 65.2 | 2.22 |
 | LLaVA-1.5 7B | VAF | 49.6 | 14.3 | 81.0 | 77.2 | 66.3 | 2.16 |
 | LLaVA-1.5 7B | VCD | 52.2 | 16.3 | 80.9 | 77.7 | 60.5 | 2.37 |
@@ -80,37 +87,37 @@ GIFT consists of two stages: (1) the pre-filling stage, which tracks positive ch
 ### Ablation Study
 
 | Model | Configuration | MMHal Hal↓ | MMHal Score↑ | POPE F1↑ | POPE Acc↑ |
-|-------|---------------|------------|-------------|----------|----------|
-| LLaVA-1.5 7B | Inc. V. (Visual Only) | 60.8 | 2.36 | 82.3 | 79.3 |
-| LLaVA-1.5 7B | Cal. V. (Distribution Calib.) | 61.5 | 2.32 | 82.4 | 79.5 |
+|------|------|------------|-------------|----------|----------|
+| LLaVA-1.5 7B | Inc. V. (Vision Only) | 60.8 | 2.36 | 82.3 | 79.3 |
+| LLaVA-1.5 7B | Cal. V. (Calibrate Only) | 61.5 | 2.32 | 82.4 | 79.5 |
 | LLaVA-1.5 7B | **GIFT (Full)** | **57.3** | **2.48** | **83.8** | **81.9** |
 | Qwen2-VL 7B | Inc. V. | 35.2 | 3.41 | 85.3 | 86.0 |
 | Qwen2-VL 7B | Cal. V. | 31.9 | 3.56 | 85.8 | 86.4 |
 | Qwen2-VL 7B | **GIFT (Full)** | **27.5** | **3.58** | **86.8** | **86.9** |
 
 ### Key Findings
-- Both components (visual attention enhancement + cross-modal fusion balance) are indispensable; the full GIFT improves performance by up to 25.4% compared to visual-only enhancement.
-- GIFT's performance on general vision-language benchmarks (MME, SEED) is comparable to greedy decoding, while several baseline methods show performance degradation.
-- GIFT's latency is only 1.13× that of greedy decoding, much lower than VCD (1.99×) and VAR (11.10×).
-- Enhancement layer selection is robust; multiple mid-range configurations yield good results.
-- LLM-based informative word extraction is more accurate than POS tagging (MMHal hallucination rate 52.6% vs. 57.3%) but at a higher computational cost.
+- Both components (visual attention enhancement + cross-modal fusion balance) are indispensable; full GIFT improves performance by up to 25.4% over visual-only enhancement.
+- GIFT maintains performance parity with greedy decoding on general vision-language benchmarks (MME, SEED), whereas several baseline methods suffer performance degradation.
+- GIFT introduces only 1.13× latency compared to greedy decoding, significantly lower than VCD (1.99×) and VAR (11.10×).
+- Layer selection for enhancement is robust, with various mid-range configurations yielding strong results.
+- LLM-based informative word extraction is more accurate than POS tagging (MMHal hallucination rate 52.6% vs 57.3%), but at a higher computational cost.
 
 ## Highlights & Insights
-- The "gaze shift" analogy is very clever: using the **positive change** of attention instead of absolute values to build a saliency map essentially replaces static signals with differential signals, naturally filtering attention sink noise without extra modules.
-- The design of cross-modal fusion balance is worth emulating: enhancing only visual attention disrupts the visual-textual attention ratio. Synchronous scaling of query attention is a simple but often overlooked critical step. This "synchronous scaling" idea can be transferred to any attention intervention method requiring multimodal balance.
-- The choice of saliency map extraction layers is an intrinsic model property rather than data-dependent: peak layers remain consistent across different datasets and random seeds, suggesting that VLM visual information integration occurs at fixed network depths.
+- The "gaze shift" analogy is highly intuitive: utilizing the **positive change** in attention rather than absolute values to build a saliency map essentially uses a differential signal to replace a static one, naturally filtering attention sink noise without extra modules.
+- The design of cross-modal fusion balance is a significant takeaway: solely enhancing visual attention disrupts the visual-textual attention ratio. Scaling query attention proportionally is a simple but often overlooked necessity. This "synchronized scaling" approach could be transferred to any attention intervention method requiring multi-modal balance.
+- Saliency map extraction layers appear to be an intrinsic model property rather than data-dependent: peak layers remain consistent across different datasets and random seeds, suggesting that visual information integration in VLMs occurs at fixed network depths.
 
 ## Limitations & Future Work
-- When the query is irrelevant to the image or most of the query content is non-visual, gaze shifts might produce inaccurate saliency maps.
-- POS tagging is not precise enough for extracting informative words; LLM-based methods are better but increase computational overhead. A lightweight classifier might be a compromise.
-- Validated only on LLaVA-1.5 and Qwen series, not covering other architectures like InternVL.
-- Applicability to multi-turn dialogue scenarios has not been explored; the quality of saliency maps under more complex query contexts needs verification.
+- When queries are irrelevant to the image or largely contain non-visual content, gaze shifts may produce inaccurate saliency maps.
+- POS tagging is not precise enough for extracting informative words; LLM-based methods are superior but increase overhead—a lightweight classifier might be a middle-ground solution.
+- The method was validated only on LLaVA-1.5 and Qwen series, excluding other architectures like InternVL.
+- Applicability to multi-turn dialogue scenarios has not been explored; the quality of saliency maps under complex query contexts needs verification.
 
 ## Related Work & Insights
-- **VAF** (ClearSight): Amplifies visual token attention proportional to current-step attention scores but ignores attention sinks and cross-modal balance.
-- **VAR**: Identifies visual sink tokens and redistributes attention but does not solve the issue of insufficient visual contribution and has a latency of up to 11.10×.
-- **VCD**: Compares output distributions of original and perturbed visual inputs; requires generating contrastive outputs with a latency of 1.99×.
-- The attention sink phenomenon is found in LLMs, ViTs, and VLMs. The gaze shift mechanism in this paper provides a new strategy to circumvent it.
+- **VAF** (ClearSight): Scales visual token attention based on current-step scores but ignores attention sinks and cross-modal balance.
+- **VAR**: Identifies visual sink tokens and redistributes attention but does not address insufficient visual contribution and has high latency (11.10×).
+- **VCD**: Contrasts output distributions of original and disturbed visual inputs; requires generating contrastive outputs with 1.99× latency.
+- The attention sink phenomenon is present in LLMs, ViTs, and VLMs; this paper's gaze shift mechanism offers a novel strategy to circumvent it.
 
 <!-- RELATED:START -->
 
@@ -118,11 +125,11 @@ GIFT consists of two stages: (1) the pre-filling stage, which tracks positive ch
 
 ## Related Papers
 
+- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](../../CVPR2026/hallucination/mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
-- [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
-- [\[AAAI 2026\] PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement](../../AAAI2026/hallucination/pase_leveraging_the_phonological_prior_of_wavlm_for_low-hallucination_generative.md)
 
 </div>
 

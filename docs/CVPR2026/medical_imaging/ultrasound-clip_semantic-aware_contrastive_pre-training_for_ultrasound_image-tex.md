@@ -2,105 +2,101 @@
 title: >-
   [Paper Note] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][ultrasound image-text pre-training] The core contribution of this paper is not merely an "ultrasound version of CLIP…
+  [CVPR 2026][Medical Imaging][Paper Note] The core contribution of this paper is not merely creating an "Ultrasound version of CLIP," but redefining the image-text alignment objective around the unique anatomical hierarchy and diagnostic attributes of ultrasound. The authors first construct the Ultrasonographic Diagnostic Taxonomy (UDT) and the large-scale US-
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "ultrasound image-text pre-training"
-  - "diagnostic taxonomy"
-  - "semantic soft labels"
-  - "heterogeneous graph encoding"
-  - "cross-modal retrieval"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 244dd8fe202f6bde
+content_hash: b65da9324c41071a
 ---
-
 # Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.01749](https://arxiv.org/abs/2604.01749)  
 **Code**: [https://github.com/ZJUDataIntelligence/Ultrasound-CLIP](https://github.com/ZJUDataIntelligence/Ultrasound-CLIP)  
-**Area**: Medical Imaging / Ultrasound Multimodal Understanding
-**Keywords**: ultrasound image-text pre-training, diagnostic taxonomy, semantic soft labels, heterogeneous graph encoding, cross-modal retrieval
+**Area**: Medical Imaging / Ultrasound Multi-modal Understanding  
+**Keywords**: Ultrasound image-text pre-training, diagnostic taxonomy, semantic soft labels, heterogeneous graph encoding, cross-modal retrieval
 
 ## TL;DR
 
-The core contribution of this paper is not merely an "ultrasound version of CLIP," but rather a redefinition of the image-text alignment objective around ultrasound-specific anatomical hierarchies and diagnostic attributes. The authors first construct the Ultrasonographic Diagnostic Taxonomy (UDT) and the large-scale US-365K dataset, then explicitly inject clinical relationships from text into contrastive learning via semantic soft labels and an attribute heterogeneous graph, yielding visual-language representations that are more genuinely "ultrasound-aware."
+The core contribution of this paper is not merely creating an "Ultrasound version of CLIP," but redefining the image-text alignment objective around the unique anatomical hierarchy and diagnostic attributes of ultrasound. The authors first construct the Ultrasonographic Diagnostic Taxonomy (UDT) and the large-scale US-365K dataset, then explicitly inject clinical relationships from the text into contrastive learning using semantic soft labels and attribute heterogeneous graphs to obtain more "ultrasound-literate" vision-language representations.
 
 ## Background & Motivation
 
-Ultrasound is one of the most widely used imaging modalities in clinical practice, yet it is substantially underrepresented in existing medical vision-language pre-training frameworks. The authors report that ultrasound images account for less than 5% of mainstream medical image-text datasets and are nearly negligible in many large-scale collections. As a result, existing Medical CLIP models are predominantly shaped by the language distributions of CT, MRI, and pathology images.
+**Background**: Ultrasound is a widely used imaging modality in clinical practice, yet it is significantly underrepresented in current medical vision-language pre-training frameworks. Statistics in the paper show that ultrasound typically accounts for less than 5% of mainstream medical image-text datasets, and is almost negligible in many large-scale datasets. Consequently, existing Medical CLIP models are predominantly dominated by the language distributions of CT, MRI, and pathological images.
 
-This imbalance leads to two direct problems. First, ultrasound images are highly dependent on the acoustic properties of tissue; the same lesion can exhibit entirely different textures and echo patterns across different organs and scanning planes, making the standard CLIP paradigm of "natural-image captions plus binary positive-negative pairs" insufficient to capture such complex semantics. Second, ultrasound reports contain a large number of modality-specific diagnostic descriptors—such as echogenicity, margins, posterior acoustic phenomena, and vascularity—whose attributes are structurally interrelated in ways that a generic text encoder cannot automatically learn.
+**Limitations of Prior Work**: This leads to two direct issues. First, ultrasound images highly depend on the acoustic properties of tissues; the same lesion can present entirely different textures and echo patterns across different organs and scan planes. The standard CLIP approach of "natural image descriptors + binary positive/negative samples" struggles to cover this complex semantics. Second, ultrasound reports contain many modality-specific diagnostic descriptions, such as echogenicity, margins, posterior acoustic phenomena, and vascularity. These attributes possess structural relationships that common text encoders fail to capture automatically.
 
-The paper thus identifies two root causes:
+**Key Challenge**: The paper identifies two root causes:
+- **Semantic Ambiguity**: The same lesion can be expressed through different descriptions, and binary contrastive learning introduces noise by treating "similar but not identical" samples as negatives.
+- **Missing Structural Priors**: Ultrasound diagnosis is not simple caption matching but a joint judgment of multi-dimensional attributes; the dependencies between attributes should be encoded.
 
-- **Semantic ambiguity**: The same lesion can be described in multiple ways, and binary contrastive learning treats "similar but not identical" samples as hard negatives, introducing noise.
-- **Absence of structural priors**: Ultrasound diagnosis is not simple caption matching but a joint judgment over multiple attributes whose interdependencies should be encoded.
-
-The authors' starting point is pragmatic: given that existing models lack data, taxonomy, and structure, the paper first addresses all three—constructing the large-scale ultrasound-specific dataset US-365K, defining the diagnostic knowledge taxonomy UDT, and then explicitly leveraging this knowledge in the training objective rather than expecting the model to infer it from weak text supervision.
+**Goal**: Since existing models lack data, taxonomy, and structure, the authors aim to fill these gaps by constructing the large-scale US-365K dataset, defining the UDT, and explicitly utilizing this knowledge in training objectives rather than relying on the model to infer it from weak text.
 
 ## Method
 
 ### Overall Architecture
 
-Ultrasound-CLIP retains the dual-encoder framework of CLIP: image encoder $f_\theta$ processes ultrasound images and text encoder $g_\phi$ encodes ultrasound descriptive text. On top of this, two domain-specific enhancement pathways are introduced:
+Ultrasound-CLIP addresses the dual shortcomings of generic CLIP in ultrasound: the lack of data and the lack of structure. It maintains a CLIP-style dual-encoder backbone—an image encoder $f_\theta$ and a text encoder $g_\phi$—but moves beyond simple one-hot positive/negative pairing. Instead, it inserts two domain-specific enhancement paths on the text side.
 
-- A **UDAF-guided heterogeneous graph encoder** that encodes diagnostic labels and attribute relationships into a structured graph and fuses the result into the text representation.
-- A **UDAF-based semantic prior** that computes continuous-valued semantic similarity between any two samples in a batch, replacing the binary positive-negative pairing.
+The first path encodes the diagnostic attribute relationships in each case report into a heterogeneous graph, which is then fused back into the text vector to imbue the representation with structural matching (e.g., "lesion type—echo—margin—vascularity"). The second path replaces standard binary labels for non-paired samples in a batch with continuous semantic similarity priors based on attribute overlap. The final objective combines a standard contrastive loss with a semantic alignment loss, $L = L_{\text{CLIP}} + \lambda L_{\text{semantic}}$, ensuring cross-modal retrieval capability while respecting clinically "similar but distinct" cases.
 
-The final training objective combines the standard CLIP contrastive loss with a semantic alignment loss: $\mathcal{L} = \mathcal{L}_\text{CLIP} + \lambda \cdot \mathcal{L}_\text{semantic}$. This enables the model to retain cross-modal alignment capability while not being forced by binary labels to ignore fine-grained clinical similarity.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph FND["UDT Taxonomy + US-365K Dataset"]
+        direction TB
+        T1["UHAT Anatomical Hierarchy<br/>9 Systems / 52 Organs"]
+        T2["UDAF Nine Diagnostic Attributes"]
+        T1 --> T3["Standardized US Text<br/>364K Pairs / 11,676 Cases"]
+        T2 --> T3
+    end
+    FND --> IMG["US Image → Image Encoder"]
+    FND --> TXT["US Text → Text Encoder"]
+    TXT --> GE["UDAF Heterogeneous Graph Encoder<br/>Graph Summary Fused via Attention"]
+    IMG --> SIM["Cross-modal Similarity Matrix P"]
+    GE --> SIM
+    FND --> SP["Semantic Soft Label Prior<br/>Continuous Similarity via Attributes"]
+    SIM --> L["Dual-objective Loss<br/>Contrastive Alignment + Semantic Regularization"]
+    SP --> L
+```
 
 ### Key Designs
 
-1. **UDT and US-365K Data Foundation**
+**1. UDT and US-365K: Defining the Pre-training Targets**
+Existing Medical CLIP models are dominated by CT/MRI language distributions and lack concepts such as echogenicity or posterior acoustic phenomena. The authors propose the Ultrasonographic Diagnostic Taxonomy (UDT), consisting of two layers: `UHAT` for anatomical hierarchy (9 body systems, 52 organs) and `UDAF` for nine clinical diagnostic attributes (body system, organ, diagnosis, shape, margins, echogenicity, internal characteristics, posterior acoustic phenomena, vascularity). They used this taxonomy to standardize raw text and build US-365K, containing 364,365 image-text pairs covering 11,676 clinical cases.
 
-    - **Function**: Provides a large-scale, structured, modality-specific training semantic space for ultrasound image-text pre-training.
-    - **Mechanism**: The authors propose UDT (Ultrasonographic Diagnostic Taxonomy), consisting of two components. `UHAT` handles the anatomical hierarchy, organizing 9 body systems and 52 organs into a tree structure; `UDAF` defines nine clinical diagnostic attribute categories: body system, organ, diagnosis, shape, margins, echogenicity, internal characteristics, posterior acoustic phenomena, and vascularity. Based on this taxonomy, 364,365 image-text pairs covering 11,676 clinical cases are constructed from five publicly available sources.
-    - **Design Motivation**: If training data does not encompass the ultrasound-specific attribute space, refining the contrastive loss afterward merely treats symptoms. By first using the taxonomy to normalize raw ultrasound text, the authors address the fundamental question of "what exactly is being pre-trained on."
+**2. UDAF Heterogeneous Graph Encoder: Attributes as a "Clinical Memo"**
+Directly averaging word embeddings in a text encoder flattens the structural dependencies between attributes (e.g., specific lesions pairing with certain echoes). This design inserts an enhancement branch after the text encoder: text labels are converted into a heterogeneous graph with "diagnosis" and "attribute" nodes. A lightweight graph network computes node representations, yielding a graph summary vector $g_i$ via attention pooling. The original text vector $t_i$ then queries this graph vector via multi-head attention and a gated residual connection to produce the enhanced representation $\tilde{t}_i$. This allows the model to perceive clinical sets of matching features rather than isolated words.
 
-2. **Semantic Soft Label Prior**
-
-    - **Function**: Injects into the training objective the fact that samples are not binary opposites but exhibit varying degrees of semantic overlap.
-    - **Mechanism**: For each attribute task $k$ in UDAF, a label similarity matrix $S^{(k)}$ is maintained. For samples $i$ and $j$, the average similarity between their label sets is computed for each task and then averaged across all tasks to obtain the overall soft similarity $\tilde{s}_{ij}$. Consequently, a batch no longer has a diagonal of ones and zeros elsewhere, but instead yields a continuous-valued soft prior matrix.
-    - **Design Motivation**: Ultrasound text frequently contains "semantically close but differently expressed" descriptions. Hard negative constraints would force the model to push apart clinically similar cases. Soft labels more naturally reflect similarities among cases sharing the same organ or diagnostic attributes.
-
-3. **UDAF Heterogeneous Graph Encoder**
-
-    - **Function**: Explicitly encodes attribute relationships within ultrasound text, rather than averaging attribute tokens through a language model.
-    - **Mechanism**: Each sample's textual labels are converted into a heterogeneous graph with diagnosis nodes and attribute nodes, forming a bipartite graph with full connectivity between the two node types. A lightweight graph network produces node representations, and attention pooling yields a graph summary vector $g_i$. Multi-head attention then allows the original text vector $t_i$ to query the graph vector, followed by a gated residual connection to produce the enhanced text representation $\tilde{t}_i$.
-    - **Design Motivation**: The lesion type, echogenicity, margins, and vascularity of the same ultrasound case exhibit co-occurring structural relationships that differ fundamentally from word co-occurrence in natural language. An explicit graph structure enables the model to perform something closer to clinical reasoning rather than mere caption alignment.
+**3. Semantic Soft Label Prior: Managing "Similar but Different" Cases**
+In ultrasound, cases with similar semantics but different phrasings are common. Standard contrastive learning forces the model to push these apart in the representation space, introducing structural noise. The authors incorporate "degrees of similarity" into the supervision: for each attribute task $k$ in UDAF, a label similarity matrix $S^{(k)}$ is maintained. The overall soft similarity $\tilde{s}_{ij}$ between samples $i$ and $j$ is calculated as the mean similarity across the nine tasks. Thus, the target matrix for a batch is a continuous soft prior rather than a binary diagonal matrix.
 
 ### Loss & Training
 
-The training objective comprises two components:
-
-- **Contrastive alignment loss**: The standard symmetric CLIP loss that pulls image and corresponding text representations closer.
-- **Semantic loss**: A constraint applied to the predicted cross-modal similarity matrix, encouraging it to approximate the UDAF prior both numerically and distributionally via a KL divergence term.
-
-The two components are combined because $\mathcal{L}_\text{CLIP}$ alone ignores the continuous nature of ultrasound semantics, while relying solely on the semantic matrix would sacrifice cross-modal retrieval performance. Their combination enables the model to both retrieve effectively and capture attribute-level details.
+The training objective consists of two terms. The **Contrastive Alignment Loss** is a standard symmetric CLIP loss responsible for pulling corresponding image and text representations together. The **Semantic Loss** constrains the predicted cross-modal similarity matrix to numerically approximate the UDAF soft prior while maintaining distributional consistency via a KL divergence term. These are combined using a weight $\lambda$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The paper first evaluates general CLIP, medical CLIP variants, and several ablations of the proposed model on nine diagnostic attribute classification tasks within US-365K. The full model achieves the highest average accuracy and average recall by a clear margin.
+The model was evaluated on nine diagnostic attribute classification tasks using US-365K, comparing generic CLIP, Medical CLIP, and several variants.
 
 | Method | AvgAcc | AvgRecall | Notes |
 |---|---:|---:|---|
-| CLIP | 13.29 | 28.75 | General CLIP; barely understands ultrasound semantics |
-| MedCLIP | 25.37 | 31.88 | Medical pre-training; insufficient ultrasound coverage |
-| BiomedCLIP | 33.81 | 35.11 | Stronger medical baseline |
-| Ultrasound-CLIP-Ds+g | 50.84 | 52.87 | Basic combination of semantic loss and graph encoding |
-| Ultrasound-CLIP-Ds | 48.62 | 53.12 | Semantic prior only |
-| Ultrasound-CLIP-Dg | 49.87 | 55.12 | Graph structure enhancement only |
-| **Ultrasound-CLIP** | **59.61** | **61.08** | Both modules combined; best overall performance |
+| CLIP | 13.29 | 28.75 | Generic CLIP, lacks ultrasound semantics |
+| MedCLIP | 25.37 | 31.88 | Medical pre-training, insufficient US coverage |
+| BiomedCLIP | 33.81 | 35.11 | Strong medical baseline |
+| Ultrasound-CLIP-Ds+g | 50.84 | 52.87 | Combination of semantic loss and graph encoding |
+| Ultrasound-CLIP-Ds | 48.62 | 53.12 | Focused on semantic priors only |
+| Ultrasound-CLIP-Dg | 49.87 | 55.12 | Focused on graph structural enhancement only |
+| **Ultrasound-CLIP** | **59.61** | **61.08** | Best performance with both modules |
 
-The full model surpasses the strongest medical baseline BiomedCLIP by more than 25 points in AvgAcc, indicating that the gain reflects a fundamental change in how the modality is understood rather than a minor improvement.
+The full model outperforms the strongest baseline, BiomedCLIP, by over 25 points in AvgAcc, suggesting a fundamental shift in modality understanding.
 
-### Ablation Study
+### Ablation Study (Retrieval)
 
-The authors evaluate image-text retrieval Recall@K on the US-365K test set, revealing the complementary roles of the graph structure and semantic prior.
+Recall@K was also evaluated on the US-365K test set to observe how graph structures and semantic priors complement each other.
 
 | Method | I2T R@5 | I2T R@10 | I2T R@50 | T2I R@5 | T2I R@10 | T2I R@50 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -109,45 +105,42 @@ The authors evaluate image-text retrieval Recall@K on the US-365K test set, reve
 | BiomedCLIP | 0.1788 | 0.2979 | 0.7029 | 0.1864 | 0.3089 | 0.7206 |
 | Ultrasound-CLIP-Ds | 0.1568 | 0.2683 | 0.6692 | 0.1550 | 0.2659 | 0.6707 |
 | Ultrasound-CLIP-Dg | 0.2147 | 0.3444 | 0.7638 | 0.2147 | 0.3520 | 0.7774 |
-| **Ultrasound-CLIP** | **0.2359** | **0.3745** | **0.7909** | **0.2383** | **0.3781** | **0.8022** |
-
-Notably, the graph-only variant `Dg` already achieves strong retrieval performance, demonstrating that the heterogeneous graph directly improves text representation quality. Adding the semantic loss in the full model yields further gains, confirming that soft label priors benefit retrieval ranking and not merely classification.
+| **Ultrasound-CLIP** | **23.59** | **0.3745** | **0.7909** | **0.2383** | **0.3781** | **0.8022** |
 
 ### Key Findings
 
-- Compared with general and medical CLIP models, the primary gains come first from the data and taxonomy rather than from a modified loss function alone.
-- `Dg` and `Ds` are each individually effective, but the full model is significantly superior, indicating that structural priors and semantic soft supervision address errors at different levels.
-- The paper also reports strong downstream transfer results: linear probing achieves an average accuracy of 75.40%, full fine-tuning reaches 84.23% on average, and 92.13% on the Breast dataset, demonstrating that the learned representations generalize well beyond the in-house benchmark.
-- Patient-level data splitting is critical. Due to the high visual similarity among ultrasound images, failure to enforce strict patient-level splits would substantially overestimate model performance. The authors handle this rigorously.
+- Compared to generic and standard medical CLIP, the gains primarily stem from the data and taxonomy rather than just the loss function.
+- Both `Dg` and `Ds` are effective independently, but the full model is significantly better, indicating that structural priors and semantic soft supervision address different layers of errors.
+- Pre-trained representations transfer well to downstream tasks: achieving 75.40% in linear probing, 84.23% in full fine-tuning, and 92.13% on a specific Breast dataset.
+- Patient-level data splitting is critical; otherwise, high visual similarity in ultrasound can lead to overestimated performance.
 
 ## Highlights & Insights
 
-- The most significant contribution of this paper is that it does not simply "train CLIP on ultrasound data" but redefines the semantic coordinate system for ultrasound. The value of UDT extends beyond this work; subsequent ultrasound multimodal research can directly inherit this hierarchical label framework.
-- Semantic soft labels are particularly well suited to medical settings. Synonymy, relatedness, and partial overlap in medical text are far more prevalent than in natural image captions, making hard negative constraints inherently disadvantageous.
-- The heterogeneous graph encoder does not replace the text encoder but provides the text vector with an "attribute-relationship reference." This lightweight grafting approach is more practical than designing an entirely new, large-scale medical language model from scratch.
-- The dataset construction pipeline also deserves attention. Rather than simply collecting image-text pairs, the authors use UDT to drive label extraction and normalization, making US-365K simultaneously suitable as both a pre-training corpus and an evaluation benchmark.
+- **Novelty**: The primary highlight is the redefinition of the ultrasound semantic coordinate system. The UDT's value extends beyond this paper, providing a hierarchical label system for future ultrasound multi-modal research.
+- **Value**: Semantic soft labels are exceptionally well-suited for medical scenarios where synonyms and partial overlaps are frequent.
+- **Mechanism**: The heterogeneous graph encoder acts as a "clinical memo" for text vectors, which is more practical than designing a massive medical LLM from scratch.
+- **Quality**: The dataset construction process, driven by UDT for label extraction and standardization, ensures US-365K serves effectively for both pre-training and evaluation.
 
 ## Limitations & Future Work
 
-- Although US-365K is already large-scale for the ultrasound domain, it primarily originates from public case repositories and educational resources; the noise distribution, equipment variability, and reporting styles encountered in real hospital workflows may be considerably more complex.
-- UDAF currently covers nine attribute categories, which is highly practical, but cannot exhaustively represent all subspecialty ultrasound scenarios. More dynamic diagnostic information such as echocardiography and interventional ultrasound has yet to be incorporated.
-- The model currently centers on static image-text pairs. Video frames, probe motion, and multi-plane joint assessment—which are common in clinical ultrasound practice—have not been genuinely exploited within this framework.
-- The semantic prior matrix relies on manually designed or rule-based label similarity, which ensures controllability but may limit the model's ability to express more implicit clinical similarity relationships.
-- A natural next step would be to extend UDT into a cross-task knowledge graph, allowing retrieval, classification, report generation, and visual question answering to share a unified ultrasound semantic foundation.
+- **Background**: While US-365K is large, it relies on public case sites and educational resources; noise distributions and reporting styles in real hospital workflows may be more complex.
+- **Function**: UDAF covers nine attribute classes but does not exhaust all sub-specialties like echocardiography or interventional ultrasound, which involve more dynamic data.
+- **Mechanism**: The model focuses on static image-text pairs; it does not yet utilize video frames, probe movement, or multi-plane joint assessments common in ultrasound.
+- **Novelty**: The reliance on rule-based or manual similarity for the semantic prior matrix, while providing controllability, may limit the expression of more implicit clinical similarities.
 
 ## Related Work & Insights
 
-- **vs. General CLIP**: The gap between general CLIP and ultrasound understanding is not merely domain shift; the entire attribute space is misaligned. This paper addresses that gap at the ontology level.
-- **vs. Medical CLIP**: Many medical CLIP methods target broader radiology pre-training with minimal ultrasound coverage, resulting in representations that are "wide but shallow" in medical semantics. This paper achieves "narrow but deep" coverage instead.
-- **vs. Specialist Small-Data Ultrasound Models**: Models such as Fetal-CLIP or breast-specific models may excel on their respective tasks but offer limited coverage; this paper emphasizes a unified pre-training backbone across anatomical regions.
-- A broader research insight is that medical multimodal models often require "knowledge structure" as a prerequisite before scaling model capacity. Taxonomy, graph structure, and soft labels tend to be more effective than blindly increasing parameter count in the context of specialty medical imaging.
+- **vs Gen CLIP**: Addresses the domain gap at the ontology level, not just the data level.
+- **vs Med CLIP**: While many medical CLIPs offer "broad but shallow" radiology pre-training, this method provides "narrow but deep" ultrasound expertise.
+- **vs Specialist Models**: Offers a unified pre-training foundation across anatomical regions rather than being limited to specific organs like the breast or fetus.
+- **Key Insight**: In specialized medical imaging, building "knowledge structures" (taxonomy, graph priors, soft labels) is often more effective than blindly scaling model parameters.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The dataset, taxonomy, graph structure, and semantic loss together form a complete solution rather than a single incremental modification.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Pre-training tasks, retrieval, and transfer tasks are all covered with strong evidence, though additional external hospital validation would further strengthen the claims.
-- **Writing Quality**: ⭐⭐⭐⭐ The logic is clear and the transitions among problem formulation, data construction, method, and experiments are well connected.
-- **Value**: ⭐⭐⭐⭐⭐ Highly significant for the ultrasound multimodal direction; US-365K and UDT themselves carry long-term reuse value.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -156,10 +149,10 @@ Notably, the graph-only variant `Dg` already achieves strong retrieval performan
 ## Related Papers
 
 - [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
-- [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
 - [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
+- [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
+- [\[CVPR 2026\] F$^2$-Assist: Multi-Phase Fetal Growth Forecast and Report Generation from Ultrasound Examination](f2-assist_multi-phase_fetal_growth_forecast_and_report_generation_from_ultrasoun.md)
 - [\[ICML 2026\] MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training](../../ICML2026/medical_imaging/meg-xl_data-efficient_brain-to-text_via_long-context_pre-training.md)
-- [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](../../AAAI2026/medical_imaging/denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 
 </div>
 

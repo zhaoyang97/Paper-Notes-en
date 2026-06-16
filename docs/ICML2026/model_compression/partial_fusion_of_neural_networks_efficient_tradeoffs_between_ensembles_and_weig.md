@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation
 description: >-
-  [ICML 2026][Model Compression][Model Fusion] The authors propose **Partial Fusion**: using partial optimal transport (partial OT) to merge only the "most similar" neurons in two networks while keeping the remaining neuro…
+  [ICML 2026][Model Compression][Paper Note] The authors propose **Partial Fusion**: using partial optimal transport (partial OT) to merge only the "most similar" neurons between two networks while allowing others to remain independent. This creates a smooth, monotonic, and tunable accuracy–parameter curve between "weight aggregation (1× parameters)" and "full en
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Model Fusion"
-  - "Ensemble"
-  - "Partial Optimal Transport"
-  - "Generalized Pruning"
-  - "Neuron Similarity"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: aab8e5fe8877c6c7
+content_hash: cc5320cf63988e2e
 ---
-
 # Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation
 
 **Conference**: ICML 2026  
@@ -24,105 +18,110 @@ content_hash: aab8e5fe8877c6c7
 **Keywords**: Model Fusion, Ensemble, Partial Optimal Transport, Generalized Pruning, Neuron Similarity  
 
 ## TL;DR
-The authors propose **Partial Fusion**: using partial optimal transport (partial OT) to merge only the "most similar" neurons in two networks while keeping the remaining neurons independent. This creates a smooth, monotonic, and adjustable accuracy–parameter curve between "weight aggregation ($1\times$ parameters)" and "full ensemble ($2\times$ parameters)." It is further unified into a "generalized pruning of ensembles" perspective, allowing the same toolkit to compress individual models.
+The authors propose **Partial Fusion**: using partial optimal transport (partial OT) to merge only the "most similar" neurons between two networks while allowing others to remain independent. This creates a smooth, monotonic, and tunable accuracy–parameter curve between "weight aggregation (1× parameters)" and "full ensemble (2× parameters)". The method is further unified under the perspective of "generalized pruning of ensembles," enabling the same framework to compress individual models.
 
 ## Background & Motivation
 
-**Background**: There are two main approaches to combining multiple independently trained neural networks. One is the **ensemble**: retaining all models and averaging their outputs during inference. This is robust and accurate but has parameter counts and inference times that scale linearly with the number of models. The other is **weight aggregation / model fusion**: aligning neurons of different networks through permutation alignment (Git Re-Basin, Ainsworth et al. 2023) or optimal transport alignment (OT Fusion, Singh & Jaggi 2020) and then averaging the weights to obtain a fused model of the same size as a single network.
+**Background**: There are two main paradigms for combining multiple independently trained neural networks. One is **ensemble**: maintaining all models and averaging their outputs during inference, which is robust and accurate but has parameter and inference costs that grow linearly with the number of models. The other is **weight aggregation / model fusion**: aligning neurons across networks via permutation (Git Re-Basin, Ainsworth et al. 2023) or optimal transport (OT Fusion, Singh & Jaggi 2020) and then averaging the weights to produce a single fused model of the same size.
 
-**Limitations of Prior Work**: These two routes stand at opposite ends of the curve, leaving the **middle region empty**. Ensembles are expensive but accurate; fusion is cheap but often less accurate than ensembles. Especially when networks are trained on heterogeneous data slices and neuron functions differ significantly, forcing all neurons to pair up averages "functionally non-overlapping neurons," causing unnecessary accuracy loss.
+**Limitations of Prior Work**: These two paradigms occupy extreme ends of the spectrum, leaving the **middle region empty**. Ensembles are expensive but accurate; fusion is cheap but often lags in accuracy, especially when networks are trained on heterogeneous data shards where functional differences between neurons are large, causing forced averaging of non-overlapping neurons.
 
-**Key Challenge**: existing methods only offer a choice between the two extremes of "full pairing (fusion)" or "full retention (ensemble)." However, the most informative aspect is the **neuron-level variance**: identifying which neurons are truly similar and worth merging, and which have unique functions and should remain separate. Utilizing this variance could draw a continuous, smooth Pareto curve between accuracy and parameter count.
+**Key Challenge**: Existing methods force a choice between "full pairing (fusion)" or "no pairing (ensemble)." However, the most informative aspect is the **neuron-level heterogeneity**—identifying which neurons are truly similar enough to merge and which are unique enough to keep separate. Utilizing this variance could yield a continuous Pareto curve between accuracy and parameter count.
 
-**Goal**: (1) Provide a fusion method that can interpolate arbitrarily between weight aggregation and ensembles; (2) Place it within a more general "generalized pruning of ensembles" framework to prove they are the same concept; (3) Apply the same framework back to single model compression.
+**Goal**: (1) Provide a fusion method capable of interpolating between weight aggregation and ensembles; (2) unify it under a more general framework of "generalized pruning of ensembles"; (3) apply this framework back to single-model compression.
 
-**Key Insight**: Observing that leaving the "least similar neurons" unmerged causes the average similarity of the "merged part" to significantly increase (Appendix L). Thus, **pairing only the most similar subset** and keeping others as independent branches recovers substantial accuracy with few extra parameters.
+**Key Insight**: Leaving the "least similar neurons" independent causes the average similarity of the "merged portion" to increase significantly (Appendix L). By **pairing only the most similar subset** and keeping others as independent branches, significant accuracy can be recovered with minimal additional parameters.
 
-**Core Idea**: Use **partial optimal transport (partial OT)** to match only a $(1-\alpha)$ proportion of neuron mass. The remaining $\alpha$ proportion of neurons is retained as independent channels in the fused network, resulting in a "partially fused network" of size $(1+\alpha)\times$ the single network—where $\alpha=0$ is OT Fusion and $\alpha=1$ is an ensemble.
+**Core Idea**: Use **partial optimal transport (partial OT)** to match only a $(1-\alpha)$ fraction of neuron mass. The remaining $\alpha$ fraction is preserved as independent channels in the fused network, resulting in a "partially fused network" of size $(1+\alpha)\times$ the original model. $\alpha=0$ corresponds to OT Fusion, while $\alpha=1$ recovers the full ensemble.
 
 ## Method
 
 ### Overall Architecture
-Input: Two $L$-layer feedforward networks $A$ and $B$ with weights $W_\ell^A, W_\ell^B$, an interpolation factor $\lambda \in [0,1]$, and an "independent retention ratio" $\alpha \in [0,1]$. Output: A **partial fusion network** $C$, with layers sized between a single network ($\alpha=0$) and an ensemble ($\alpha=1$). The process follows four steps: (i) Extract feature vectors (activations or weight columns) for neurons at each layer $\ell$ and assign probability distributions $\mu_\ell^A, \mu_\ell^B$; (ii) Solve $\alpha$-partial OT to obtain a partial coupling matrix $\tilde\pi_\ell^{A,B}$, identifying "matched" and "independent" neurons; (iii) Weight-merge the matched parts as in OT Fusion and retain independent parts as new channels; (iv) Assemble the layer weights $W_\ell^C$ into a 3-block structure: independent blocks for $A$ (top-left) and $B$ (bottom-right), a fused block (center), and stochastic kernels $K_\ell^{A\to B}, K_\ell^{B\to A}$ derived from OT to stitch the transitions.
+Given two $L$-layer feedforward networks $A$ and $B$, an interpolation factor $\lambda\in[0,1]$, and a "share of independents" $\alpha\in[0,1]$, the goal is to produce a **partially fused network** $C$ whose layer sizes are continuously adjustable between a single network ($\alpha=0$) and an ensemble ($\alpha=1$). Neurons are treated as support points of a probability measure layer-by-layer. First, $\alpha$-partial OT automatically partitions neurons into "mergeable" and "independent" groups. The mergeable group is weighted-averaged as in OT Fusion, while the independent groups remain as new channels. The resulting weights comprise a 3-block matrix (block $A$ independent, fusion block, block $B$ independent), with transitions between blocks handled via OT-derived stochastic kernels. Since alignments across layers are coupled, the pairings for all layers are solved jointly using **fixed-point iteration**. This post-hoc weight reorganization requires no retraining. The authors further unify this as **generalized pruning**, where an ensemble is mapped to a smaller network via stochastic kernels.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Two trained networks A, B<br/>+ Interpolation λ, share of independents α"]
+    IN --> OT["Partial OT Pairing<br/>α-partial OT transports 1−α mass<br/>Splits into 'Merged' vs 'Independent' groups; derives kernel K"]
+    OT -->|Matched 1−α mass| MERGE["Merged group: Weighted average via OT Fusion"]
+    OT -->|Unmatched α mass| INDEP["Independent group: Retained as new channels"]
+    MERGE --> BLOCK["3-block fusion layer + fixed-point alignment<br/>Constructs 'A-indep | Fused | B-indep' weight matrix<br/>Jointly solved across layers"]
+    INDEP --> BLOCK
+    BLOCK --> OUT["Partially Fused Network C<br/>Size (1+α)× single network"]
+    OUT -.Unified as.-> GP["Generalized Pruning Perspective<br/>partial fusion = generalized pruning of ensemble A⊕B<br/>Clustering-derived K also compresses single models"]
+```
 
 ### Key Designs
 
-1.  **Partial OT Fusion**:
-    - **Function**: Determines which neurons at each layer are merged versus left independent and provides the alignment matrix for merging.
-    - **Mechanism**: Views neurons as support points in probability measures, with similarity measured by Euclidean distance of feature vectors. While standard OT Fusion requires the coupling $\pi$ to transport $\mu^A$ entirely to $\mu^B$, this work uses $\alpha$-partial OT, relaxing constraints to $\sum_j \tilde\pi[i,j]\le\mu^A[i]$ and $\sum_{i,j}\tilde\pi[i,j]=1-\alpha$, solving $\tilde\pi_\ell^{A,B}=\arg\min_{\pi\in\Pi_\alpha}\int\|x-y\|^2\,\pi(dx,dy)$. Neurons corresponding to untransported mass are "independent"; matched parts are normalized to form stochastic kernels via $K_\ell^{A\to B}=(\pi^{A,B})^T/\mu^A$ and $K_\ell^{B\to A}=\pi^{A,B}/\mu^B$. Partial OT is computationally equivalent to standard OT.
-    - **Design Motivation**: Avoids forced merging of functionally dissimilar neurons and turns "merging" into a continuous knob $\alpha$, making the tradeoff between model size and accuracy smooth and controllable at layer granularity.
+**1. Partial OT Pairing: Automatically deciding which neurons to merge**
 
-2.  **3-block Fusion Layer + Global Fixed-point Alignment**:
-    - **Function**: Unifies "independent retention + weighted fusion" into a single weight matrix and jointly optimizes alignment across layers.
-    - **Mechanism**: The weight matrix $W_\ell^C$ from layer $\ell$ to $\ell+1$ is partitioned into a $3\times 3$ block structure (corresponding to $A$-independent, fused, and $B$-independent). Diagonal blocks either copy original weights or fuse them via $W_\ell^C=(1-\lambda)W_\ell^B+\lambda K_{\ell+1}^{A\to B} W_\ell^A[F,F] K_\ell^{B\to A}$, while off-diagonal blocks facilitate transitions between independent and fused branches using $K$. Following Ainsworth et al. (2023), alignment is formulated as a global objective $(\pi_\ell^{A,B})_\ell=\arg\min\sum_\ell\int\|x-y\|^2\pi_\ell(dx,dy)$, solved via **fixed-point iteration**—updating one $\pi_\ell$ at a time while freezing others, maintaining a (partial) OT problem at each step.
-    - **Design Motivation**: When features are defined by weight columns, alignment at layer $\ell$ depends on layer $\ell+1$; joint solving is necessary. Fixed-point iteration achieves higher accuracy than greedy approaches (Figure 5(a) vs 5(b)). The 3-block structure is a clean way to represent ensembles and fusion simultaneously in tensors.
+Standard OT Fusion requires the coupling $\pi$ to transport **all** mass from $\mu^A$ to $\mu^B$, forcing every neuron into a pair even if their functions do not overlap, leading to accuracy loss. This work relaxes the "full transport" constraint. In the probability measure view, each neuron is a support point with similarity measured by the Euclidean distance of feature vectors (activation vectors or weight columns). The problem becomes $\alpha$-partial OT: minimizing $\sum_{i,j} \tilde\pi[i,j] \|x_i - y_j\|^2$ subject to $\sum_j \tilde\pi[i,j] \le \mu^A[i]$ and a total transport of $1-\alpha$. **Neurons corresponding to the $\alpha$ fraction of untransported mass become "independent neurons"**. Matched portions are converted to stochastic kernels $K_\ell^{A\to B}=(\pi^{A,B})^T/\mu^A$ and $K_\ell^{B\to A}=\pi^{A,B}/\mu^B$ for fusion. This allows the tradeoff between model size and accuracy to be a smooth, layer-wise adjustable knob $\alpha$, with computational complexity identical to standard OT.
 
-3.  **Generalized Pruning via Clustering**:
-    - **Function**: Reconciles "pruning an ensemble" with "pruning a single network," providing a form of pruning that allows for linear combinations of neurons rather than just deletion.
-    - **Mechanism**: For a large model $E$ (e.g., an ensemble or any over-parameterized network), stochastic kernels $K_\ell^{E\to S}\in\mathbb{R}^{n_\ell^S\times n_\ell^E}$ and $K_\ell^{S\to E}$ are introduced to map to a small model $S$, defining $W_\ell^S:=K_{\ell+1}^{E\to S} W_\ell^E K_\ell^{S\to E}$. If $K$ is a 0/1 row/column stochastic matrix, this reduces to standard pruning. This work generalizes it to kernels derived from **clustering**: solving $\pi_\ell^{E,S}=\arg\min_{\pi\in\Pi(\mu^E,*_m)}\int\|x-y\|^2\,\pi(dx,dy)$, where the second marginal is supported on at most $m$ centroids (K-means for uniform $\mu^E$). Neurons within a cluster are linearly combined into one centroid to form $S$. Partial fusion is proven to be a special case of generalized pruning applied to the $A\oplus B$ ensemble with inductive biases (merging only cross-network neurons, maximum pairwise combinations).
-    - **Design Motivation**: Standard pruning only deletes (losing processing steps), while OT post-processing only merges (blurring processing steps). These error sources vary with compression rates. Clustering-based generalized pruning allows both operations and balances them automatically, significantly outperforming both on MLP-on-MNIST (Figure 1(b)). In practice, Lloyd's K-means performs poorly in relevant compression ranges; **hierarchical clustering** is used for near-global optimal solutions.
+**2. 3-block Fusion Layer + Global Fixed-point Alignment**
+
+The "independent" and "fused" channels are represented simultaneously in a single weight matrix. For a layer $\ell\to\ell+1$, weights $W_\ell^C$ are divided into a $3\times3$ block structure. Diagonal blocks represent either original weights or merged weights (e.g., $W_\ell^C=(1-\lambda)W_\ell^B+\lambda K_{\ell+1}^{A\to B} W_\ell^A[F,F] K_\ell^{B\to A}$). Off-diagonal blocks use the stochastic kernels $K$ to manage transitions between independent and fused branches. This structure ensures that independent channels can linearly sum with fused channels while avoiding interference. To handle the coupling where alignment at layer $\ell$ depends on layer $\ell+1$, the authors optimize the global objective $(\pi_\ell^{A,B})_\ell = \arg\min \sum_\ell \int \|x-y\|^2 \pi_\ell(dx,dy)$ via **fixed-point iteration**, updating one $\pi_\ell$ at a time. This approach yields higher accuracy than greedy single-layer alignment.
+
+**3. Generalized Pruning and Clustering: Unifying fusion and compression**
+
+Partial fusion is a special case of a broader framework. For an over-parameterized large model $E$ (e.g., an ensemble), stochastic kernels $K_\ell^{E\to S} \in \mathbb{R}^{n_\ell^S \times n_\ell^E}$ and $K_\ell^{S\to E}$ map it to a smaller model $S$ via $W_\ell^S := K_{\ell+1}^{E\to S} W_\ell^E K_\ell^{S\to E}$. While standard pruning uses 0/1 matrices, this work uses kernels derived from **clustering**: solving for $\pi_\ell^{E,S}$ where the second marginal supports at most $m$ centroids (equivalent to K-means for uniform $\mu^E$). This generalizes pruning from "deletion" to "linear combination." Since deletion and blurring (combination) have different error characteristics at different compression rates, clustering-based pruning can balance both, outperforming standard unstructured pruning on MLP-on-MNIST.
 
 ### Loss & Training
-The entire process is **training-free**: partial fusion and generalized pruning are post-hoc weight reorganizations. Only in comparison experiments (Section 3.2), **slight fine-tuning** is performed using 1% of MNIST or 5% of CIFAR-10 data to verify the further potential of fused models. $\alpha$ and $\lambda$ are the core adjustable parameters: $\lambda$ controls the relative weight of the two networks in fused blocks, and $\alpha$ controls the "independent retention ratio," both in $[0,1]$.
+The entire process is **post-hoc weight reorganization** and requires **no retraining**. In comparative experiments (Section 3.2), **minimal fine-tuning** (1% MNIST or 5% CIFAR-10 data) is used to explore the further potential of the fused models. Core hyperparameters are $\lambda$ (weighting between networks) and $\alpha$ (share of independents), both in $[0, 1]$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Accuracy comparison under heterogeneous data slices + fine-tuning (Table 1):
+Accuracy comparison under heterogeneous data shards and fine-tuning (Table 1):
 
-| Model / Data | $\alpha=0.0$ (OT Fusion) | $\alpha=0.4$ | $\alpha=0.5$ | $\alpha=0.8$ | $\alpha=1.0$ (Ensemble) | Single Model A / B |
+| Model / Data | $\alpha=0.0$ (OT Fusion) | $\alpha=0.4$ | $\alpha=0.5$ | $\alpha=0.8$ | $\alpha=1.0$ (Ensemble) | Single A / B |
 |---|---|---|---|---|---|---|
 | MLP/MNIST Fusion (No FT) | 84.1 | 87.4 | 87.5 | 87.9 | 88.1 | 93.8 / 87.8 |
 | MLP/MNIST FT (1% data) | 95.1 | 96.1 | 96.2 | 96.5 | 96.5 | 93.8 / 87.8 |
 | ResNet-18/CIFAR-10 Fusion | 66.4 | 83.4 | 87.4 | 90.6 | 91.3 | 79.8 / 76.7 |
 | ResNet-18/CIFAR-10 FT (5%) | 85.3 | 90.0 | 90.3 | 91.4 | 91.8 | 79.8 / 76.7 |
 
-Key Observations: (i) Accuracy rises **monotonically** with $\alpha$ without abrupt jumps, validating that partial fusion provides a truly continuous interpolation between OT Fusion and ensembles; (ii) On ResNet-18, $\alpha=0.4$ recovers 83.4%, significantly higher than OT Fusion's 66.4% while using only $\approx 1.4\times$ the parameters of a single network; (iii) After fine-tuning, all $\alpha$ configurations outperform single models, suggesting independent neurons provide capacity for the optimizer to bridge distribution shifts quickly.
+Key Observations: (i) Accuracy rises **monotonically** with $\alpha$, providing a truly continuous interpolation between OT Fusion and ensembles. (ii) On ResNet-18, $\alpha=0.4$ recovers 83.4% accuracy (vs. 66.4% for OT Fusion) using only $\sim 1.4\times$ parameters. (iii) After fine-tuning, all $\alpha > 0$ configurations outperform single models, indicating that independent neurons provide the capacity needed for the optimizer to bridge distribution shifts.
 
 ### Ablation Study
 
-Relative performance of partial fusion / generalized pruning on MLP-MNIST splits (Qualitative summary from Figures 5, 6):
+Relative performance of partial fusion / generalized pruning configurations on MLP-MNIST:
 
 | Configuration | Key Phenomenon | Explanation |
 |------|---------|------|
-| Partial OT (weight feat., fixed-point) | Highest, most monotonic accuracy | Global joint alignment is optimal; recommended config |
-| Partial OT (weight feat., greedy) | Slightly below fixed-point | Greedy single-layer misses cross-layer coupling |
-| Partial OT (activation feat.) | One tier lower than weight-based | Activation features are noisier |
-| Generalized Pruning (Clustering) | Better than Partial OT at large $\alpha$ | Higher precision via NP-hard clustering |
-| Unstructured Pruning of Ensemble | **Non-monotonic**, beats ensemble at $\lambda{=}0.3$ | Double scaling of weights in output + saliency; equivalent $\lambda$ shift |
-| Single VGG11 Pruning (clustering vs OT) | Clustering wins slightly | Advantage narrows when blurring error dominates |
-| Fixed 1/2/3 layers as ensemble | Significant boost for all methods | Huge variance in "fusibility" across layers |
+| Partial OT (weight feat., fixed-point) | Highest, most monotonic curve | Best joint alignment; recommended config |
+| Partial OT (weight feat., greedy) | Slightly lower than fixed-point | Greedy optimization misses cross-layer coupling |
+| Partial OT (activation feat.) | Lower than weight-based | Activation features are noisier |
+| Generalized Pruning (Clustering) | Better than Partial OT at large $\alpha$ | Clustering finds more flexible global solutions |
+| Unstructured Pruning of Ensemble | **Non-monotonic**; peaks near $\lambda=0.3$ | Implementation artifact: dual scaling of weights and importance |
+| Single VGG11 Pruning | Clustering slightly superior | Clustering automatically balances deletion vs. blurring |
 
 ### Key Findings
-- **Core Mechanism Validated**: Keeping the few most dissimilar neurons independent significantly increases the average similarity of the merged portion (Appendix L), which is the root cause of efficiency in partial fusion and clustering pruning.
-- **Task-Dependent "Winners"**: On CNNs, the inductive bias of partial OT (cross-network merging, pairwise combinations) is more effective; on MLPs, more flexible clustering pruning wins.
-- **Significant Layer Heterogeneity**: Keeping wide layers as ensembles while using partial fusion for narrow layers allowed VGG11 to outperform single models with only a 38% increase in channels. This suggests future work should focus on **automated per-layer $\alpha$**.
-- **Anomalies**: Unstructured ensemble pruning showed non-monotonic curves, attributed to implementations where $\lambda$ scales both output weights and neuron importance simultaneously.
+- **Mechanism Validation**: Retaining a few dissimilar neurons increases the average similarity of the merged portion, which is the fundamental reason for the effectiveness of partial fusion and clustering-based pruning.
+- **Task-Dependent Performance**: On CNNs, the inductive bias of partial OT (matching across networks, pairwise combinations) is more effective; on MLPs, more flexible clustering wins.
+- **Layer Heterogeneity**: Fixing wider layers as ensembles while merging narrower layers (partial fusion) allows a VGG11 to outperform both single models with only a 38% increase in width. This suggests a need for **layer-wise automatic $\alpha$**.
 
 ## Highlights & Insights
-- **Unified Perspective**: Framing model fusion, ensembles, pruning, and post-processed pruning within a framework that maps a large network $E$ to a small network $S$ using a stochastic kernel $K$. Partial fusion is a specific case with added inductive bias. This redefines pruning from "selecting 0/1 matrices" to "linear combinations as a valid atomic operation."
-- **Precise Application of Partial OT**: Existing OT Fusion's requirement to transport all mass is a mathematical constraint rather than a problem requirement; releasing the $\alpha$ portion perfectly matches the "voluntary mismatch" intent without increasing solving complexity.
-- **Deletion vs. Blurring Dichotomy**: The authors categorize pruning errors into "losing steps (deletion)" and "blurring steps (linear combination)," noting that clustering pruning balances these automatically by supporting both operations.
-- **Layer Heterogeneity Hint**: The observation that fixing just 3 layers as ensembles provides massive gains implies that for LLMs/ViTs, the value of this work lies in adaptive $\alpha$ per layer rather than a global $\alpha$.
+- **Unified Perspective**: Framing model fusion, ensembles, and pruning under the mapping of a large network $E$ to a smaller network $S$ via kernels $K$ is a major theoretical contribution. It redefines pruning as a choice of kernels beyond 0/1 matrices.
+- **Precise Application of Partial OT**: Relaxing the standard OT constraint to allow partial transport fits the semantic requirement of "only merging what is similar." The fact that this adds no computational complexity makes it a powerful tool for alignment problems.
+- **Deletion vs. Blurring**: The distinction between error from "dropping steps" and "merging steps" provides a clean cognitive framework for model compression, potentially applicable to LLMs.
 
 ## Limitations & Future Work
-- **Scale Constraints**: Experiments are limited to small architectures (MLP, VGG11, ResNet-18) and small datasets (MNIST, CIFAR-10). Scalability to ViTs/LLMs is unverified; clustering pruning involves NP-hard paths that may be prohibitive for billion-parameter models.
-- **Limited Similarity Metrics**: Partial OT and clustering rely on Euclidean distance and permutation invariance. The authors acknowledge that richer metrics like CCA or Procrustes might be more appropriate.
-- **Lack of Automated $\alpha$**: Selecting which layers to remain as ensembles was manual. A principled criterion for "layer fusibility" is needed for scaling.
-- **Non-monotonicity in Unstructured Pruning**: Highlighting risks where weights are scaled in multiple places simultaneously, requiring careful semantic alignment of scaling factors in future generalizations.
+- **Scale**: Experiments are limited to small architectures (VGG11, ResNet-18) and datasets (MNIST, CIFAR-10). Scalability to ViTs or LLMs remains unverified.
+- **Similarity Metrics**: The use of Euclidean distance and permutation invariance is basic. Metrics like CCA or Procrustes might yield better alignments.
+- **Manual Layer-wise $\alpha$**: Currently, determining which layers should remain as ensembles versus which should be fused relies on manual heuristics. Principled automated criteria are required.
 
 ## Related Work & Insights
-- **vs. OT Fusion (Singh & Jaggi 2020)**: This is a strict generalization (equivalent at $\alpha=0$) and introduces the fixed-point joint optimization from Ainsworth et al. (2023) to OT-based methods for the first time.
-- **vs. Git Re-Basin (Ainsworth et al. 2023)**: While Git Re-Basin is restricted to permutation matrices (same-size layers), this method uses stochastic kernels to handle heterogeneous layers, unequal widths, and partial matches.
-- **vs. ZipIt! (Stoica et al. 2024)**: Shares the "concatenate then merge" philosophy; this work formalizes it specifically as "generalized pruning of an ensemble" and identifies the exact inductive bias of partial fusion.
-- **vs. Luenam et al. 2025**: Uses similar clustering-based aggregation for multi-network merging; this work explicitly places it in a pruning framework and demonstrates that clustering acts as an excellent pruning kernel.
+- **vs. OT Fusion (Singh & Jaggi 2020)**: This work is a strict generalization ($\alpha=0$ recovers OT Fusion) and introduces cross-layer fixed-point optimization to the OT framework.
+- **vs. Git Re-Basin (Ainsworth et al. 2023)**: While Git Re-Basin is restricted to permutation matrices and equal-width layers, this framework uses stochastic kernels to handle heterogeneous and unequal widths.
+- **vs. ZipIt! (Stoica et al. 2024)**: Shares the "concatenate then merge" philosophy but formalizes it as generalized pruning of an ensemble.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Significant framework contribution by unifying partial OT, fusion, and generalized pruning.
-- Experimental Thoroughness: ⭐⭐⭐ Multiple tasks and backbones, but limited to small-scale scenarios; lacks large model validation.
-- Writing Quality: ⭐⭐⭐⭐ Good pace; 3-block weight diagrams make abstract designs intuitive.
-- Value: ⭐⭐⭐⭐ Provides a unified coordinate system for "merging ↔ ensemble ↔ pruning." High theoretical value; engineering value depends on scalability to LLMs.
+- Novelty: ⭐⭐⭐⭐ Strong framework contribution by unifying partial OT with generalized pruning.
+- Experimental Thoroughness: ⭐⭐⭐ Good range of backbones but lacks large-scale (LLM/ImageNet) verification.
+- Writing Quality: ⭐⭐⭐⭐ Clear presentation of the 3-block matrix design and a well-paced mathematical narrative.
+- Value: ⭐⭐⭐⭐ High theoretical value for the model merging/pruning community; engineering impact depends on future scalability.
 
 <!-- RELATED:START -->
 

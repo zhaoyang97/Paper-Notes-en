@@ -51,70 +51,70 @@ item_total: 16
 
 **💬 ACL2026** · **16** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (7)](../../ICML2026/aigc_detection/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/aigc_detection/index.md) · [🧪 ICML2026 (7)](../../ICML2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md)
 
 🔥 **Top topics:** LLM ×8
 
 **[AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)**
 
-:   AEGIS is the first comprehensive benchmark for academic image forgery forensics, covering 7 major academic image categories and 39 subcategories, 4 forgery strategies (entirely fabricated, reference-based rewriting, local inpainting, local editing), and 25 generative models. It proposes four tasks—forgery scope discrimination, text artifact recognition, manipulation type classification, and tampered pixel localization. Evaluating 25 MLLMs and 9 expert models reveals that even GPT-5.1 achieves a composite score of only 48.80%, and expert models reach only 30.09% in pixel IoU, highlighting the structural complementarity of "generation evolving faster than forensics" and "MLLM reasoning vs. expert model sensitivity."
+:   AEGIS is the first comprehensive benchmark for academic image forgery forensics, covering 7 major academic categories (39 sub-categories), 4 forgery strategies (Text-constrained Fabrication, Image-informed Fabrication, Tampering via Reconstruction, Tampering via Editing), and 25 generative models. It introduces four tasks: Forgery Scope Discrimination (FSD), Text Artifact Recognition (TAR), Manipulation Classification (MC), and Tampered Pixel Localization (TP). Evaluation of 25 MLLMs and 9 expert models reveals a structural complementarity: even GPT-5.1 achieves an aggregate NFI of only 48.80%, while expert models reach only 30.09% pixel IoU, highlighting the gap where "generation outpaces forensics" and "MLLM reasoning vs. expert model sensitivity" intersect.
 
 **[Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)**
 
-:   Proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which utilizes Rhetorical Structure Theory (RST) to construct logic graphs for modeling the "creator's" cognitive architecture while extracting discourse unit-level features to capture the "editor's" linguistic style, achieving fine-grained four-way detection (Human-written, LLM-written, LLM-polished human text, and Human-revised LLM text).
+:   Ours proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), which utilizes Rhetorical Structure Theory (RST) to construct logic graphs for modeling the thought architecture of the "Creator," while extracting discourse unit-level features to capture the linguistic style of the "Editor." This enables four-way fine-grained LLM-generated text detection (Human-written / LLM-generated / LLM-polished Human / Human-rewritten LLM).
 
 **[BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories](biasedtales-ml_a_multilingual_dataset_for_analyzing_narrative_attribute_distribu.md)**
 
-:   BiasedTales-ML constructs a multilingual corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through an exhaustive combinatorial prompt design and a distributional analysis framework, it reveals that **social attribute distributions in narratives vary significantly across languages**, and English-centric evaluations fail to reflect bias patterns in multilingual scenarios.
+:   BiasedTales-ML constructs a multilingual corpus of approximately 350,000 LLM-generated children's stories across 8 languages. Through a permuted prompt design and a distributional analysis framework, it reveals that **social attribute distributions in narratives exhibit significant differences across languages**, demonstrating that English-centric evaluations fail to reflect bias patterns in multilingual scenarios.
 
 **[C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)**
 
-:   C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and prompts derived from real-world usage. It demonstrates that detection difficulty depends heavily on domain, generator, and prompt complexity, while fine-tuning on C-ReD significantly improves generalization to unseen models and external Chinese datasets.
+:   C-ReD constructs a Chinese AI-generated text detection benchmark covering five writing scenarios, nine LLM generators, and real-world prompts. It demonstrates that detection difficulty depends heavily on the domain, generator, and prompt, while fine-tuning on C-ReD significantly enhances generalization to unseen models and external Chinese data.
 
 **[Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)**
 
-:   This paper introduces Persuaficial—a high-quality multilingual benchmark for AI-generated persuasive text covering six languages. It systematically evaluates the differences in automatic detection difficulty between persuasive texts generated by LLMs and those written by humans. The study finds that subtle AI persuasion is harder to detect than human persuasion (F1 decreases by approximately 20%), while overly intensified persuasion is easier to identify.
+:   This paper introduces Persuaficial—a high-quality multilingual benchmark for AI-generated persuasive text covering six languages. It systematically evaluates the differences in automatic detection difficulty between LLM-generated and human-authored persuasive texts, finding that subtle AI persuasion is significantly harder to detect than human persuasion (F1 drops by approximately 20%), while overly intensified persuasion is actually easier to identify.
 
 **[DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)**
 
-:   DetectRL-X constructs a multilingual, multi-domain, multi-attack, and multi-length benchmark with 3.456 million samples for parallel binary/ternary LLM-generated text detection. It demonstrates that existing detectors still possess significant robustness deficiencies in real-world multilingual and human-AI collaborative writing scenarios.
+:   DetectRL-X constructs a benchmark featuring 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary and ternary classification tasks. It demonstrates that existing detectors still exhibit significant robustness deficiencies in real-world multilingual and human-machine collaborative writing scenarios.
 
 **[ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)**
 
-:   ExaGPT reformulates the task of "determining whether a text is human-written or LLM-generated" as "finding which side has more similar spans in a datastore." By utilizing BERT embeddings, k-NN retrieval, and dynamic programming for optimal span segmentation, it provides interpretable evidence (most similar retrieved spans) and improves accuracy by up to +37.0 points over previous interpretable detectors at a 1% FPR.
+:   ExaGPT reformulates "determining whether text is human or LLM-generated" as "finding which side of a datastore contains more similar spans." By utilizing BERT embeddings, k-NN retrieval, and Dynamic Programming (DP) for optimal span segmentation, it provides interpretable evidence (most similar retrieved spans) and improves accuracy by up to +37.0 percentage points over previous interpretable detectors at 1% FPR.
 
 **[Frame In, Frame Out: Measuring Framing Bias in LLM-Generated News Summaries](frame_in_frame_out_measuring_framing_bias_in_llm-generated_news_summaries.md)**
 
-:   This paper proposes FIFO, a method using an LLM jury with expert calibration to measure framing bias in LLM-generated news summaries at scale on XSum. The study finds that several high-capacity models exhibit higher framing rates compared to human summary baselines.
+:   This paper proposes FIFO, a method that utilizes an LLM jury combined with expert calibration to measure whether LLM-generated news summaries introduce framing bias on the XSum dataset at scale. It finds that several high-capacity models exhibit higher framing rates compared to human summary baselines.
 
 **[From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)**
 
-:   This paper proposes a sentence-level evaluation framework for automated rubric scoring. By comparing fine-tuned PLMs, prompted LLMs, SHAP attribution, and LLM rationales in the task of feedback quality scoring for classroom teaching, the authors find that fine-tuned PLMs are more accurate, while SHAP provides more faithful and transferable explanations than LLM-generated rationales.
+:   This paper proposes a sentence-level explanation evaluation framework for automated rubric scoring. By comparing fine-tuned PLMs, prompted LLMs, SHAP attribution, and LLM rationales in a classroom teaching feedback quality scoring task, it finds that fine-tuned PLMs are more accurate, while SHAP provides more faithful and transferable explanations than LLM-generated rationales.
 
 **[GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization](gigacheck_detecting_llm-generated_content_via_object-centric_span_localization.md)**
 
-:   GigaCheck is proposed as a dual-strategy framework: it utilizes a fine-tuned LLM for document-level classification and innovatively treats AI-generated text spans as "objects," implementing end-to-end character-level localization via a DETR-like architecture.
+:   GigaCheck is proposed as a dual-strategy framework: it utilizes a fine-tuned LLM for document-level classification and innovatively treats AI-generated text spans as "objects," employing a DETR-like architecture to achieve end-to-end, character-level localization.
 
 **[MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)**
 
-:   This paper proposes MASH (Multi-stage Alignment for Style Humanization), a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors in a black-box setting with an average attack success rate of 92% while maintaining excellent linguistic quality.
+:   This paper proposes MASH (Multi-Stage Style Humanization Alignment), which utilizes a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors with an average attack success rate of 92% in black-box settings while maintaining excellent linguistic quality.
 
 **[mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)**
 
-:   The authors adapt the finetuning paradigm of "mdok" (a machine-generated text detector that won PAN@CLEF2025) to conspiracy detection: the training set is expanded using four types of data augmentation (anonymization / casing / homoglyphs / de-duplication), followed by a round of self-training (retaining only high-confidence pseudo-labels with $p \ge 0.99$ or $p \le 0.01$). By finetuning Qwen3-32B via QLoRA 4-bit PEFT, the system achieved a Macro F1 of 0.78 in SemEval-2026 Task 10 subtask 2, ranking 8/52 (85th percentile).
+:   The authors port the finetuning paradigm of their PAN@CLEF2025-winning machine-generated text (MGT) detector, mdok, to conspiracy detection: four types of data augmentation (anonymization, case variation, homoglyphs, and deduplication) are used to expand the training set, followed by a round of self-training (retaining only high-confidence pseudo-labels where $p \ge 0.99$ or $p \le 0.01$). Qwen3-32B is then finetuned using QLoRA 4-bit PEFT, ultimately achieving a Macro F1 = 0.78 and ranking 8/52 (85th percentile) in SemEval-2026 Task 10 subtask 2.
 
 **[REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control](reflex_self-refining_explainable_fact-checking_via_verdict-anchored_style_contro.md)**
 
-:   REFLEX couples verdict prediction and explanation generation in fact-checking. By constructing internal steering vectors from self-disagreement samples between the backbone and fine-tuned models, it enhances verdict Macro-F1 and produces shorter, more consistent, and less misleading explanations without relying on search APIs or closed-source teacher models.
+:   REFLEX couples verdict prediction and explanation generation in fact-checking by constructing internal steering vectors from self-disagreement samples between a backbone and a fine-tuned model. This approach improves verdict Macro-F1 and produces shorter, more consistent, and less misleading explanations without relying on search APIs or closed-source teacher models.
 
 **[Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)**
 
-:   By constructing a longitudinal writing dataset spanning 12 years, this paper discovers a "temporal flattening" phenomenon in LLM-generated text—while lexical diversity is high, temporal drift in semantic and cognitive-emotional dimensions is significantly lower than in humans. Distinguishing human and LLM texts solely based on temporal variation patterns achieves 94% accuracy.
+:   By constructing a longitudinal writing dataset spanning 12 years, this study discovers a "temporal flattening" phenomenon in LLM-generated text—while lexical diversity is high, temporal drift in semantic and cognitive-emotional dimensions is significantly lower than in humans. Human and LLM texts can be distinguished with 94% accuracy based solely on temporal variation patterns.
 
 **[When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)**
 
-:   This study reveals a "Feature-Inversion Trap" for MGT detectors in personalized scenarios—where features distinguishing human-written text (HWT) from machine-generated text (MGT) in general domains are reversed in personalized domains, causing detector performance to plummet or even invert. The authors propose the StyloCheck framework to predict cross-domain performance changes by quantifying the detector's dependence on inverted features, achieving a prediction correlation exceeding 0.85.
+:   This paper reveals the "feature-inversion trap" of MGT detectors in personalized scenarios—features that distinguish human-written text (HWT) from machine-generated text (MGT) in general domains undergo inversion in personalized domains, causing detector performance to crash or even flip. The authors propose the StyloCheck framework to predict cross-domain performance changes by quantifying detector reliance on inverted features, achieving a prediction correlation of over 0.85.
 
 **[Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)**
 
-:   This paper constructs the first detection benchmark for LLM-generated classical Chinese poetry, ChangAn (containing 30,664 poems), systematically evaluates 12 AI detection methods under different text granularities and generation strategies, and reveals the severe limitations of current Chinese text detectors in the field of classical poetry.
+:   This paper constructs ChangAn, the first detection benchmark for LLM-generated classical Chinese poetry (containing 30,664 poems). It systematically evaluates the performance of 12 AI detection methods across different text granularities and generation strategies, revealing the significant limitations of current Chinese text detectors in the domain of classical poetry.

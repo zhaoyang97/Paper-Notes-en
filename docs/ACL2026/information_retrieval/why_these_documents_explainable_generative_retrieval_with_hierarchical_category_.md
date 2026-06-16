@@ -2,68 +2,77 @@
 title: >-
   [Paper Note] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Generative Retrieval] The HyPE framework is proposed to provide query-relevant explainable paths for retrieval results in generative retrieval by first generating hierarchical cate…
+  [ACL 2026][Information Retrieval & RAG][Paper Note] The HyPE framework is proposed to enhance generative retrieval by first generating a hierarchical category path (e.g., "Government >> Government by cities") before decoding document identifiers. This provides query-relevant explainable paths while simultaneously improving retrieval accuracy.
 tags:
-  - "ACL 2026"
-  - "Information Retrieval & RAG"
-  - "Generative Retrieval"
-  - "Explainable Retrieval"
-  - "Hierarchical Category Paths"
-  - "Docid"
-  - "Path-Aware Ranking"
+  - ACL 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: 6ec0899c0df0d9b8
+content_hash: d0b41a189e939b04
 ---
-
 # Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2411.05572](https://arxiv.org/abs/2411.05572)  
 **Code**: [GitHub](https://augustinlib.github.io/HyPE/)  
 **Area**: Information Retrieval  
-**Keywords**: Generative Retrieval, Explainable Retrieval, Hierarchical Category Paths, Docid, Path-Aware Ranking
+**Keywords**: Generative Retrieval, Explainable Retrieval, Hierarchical Category Paths, Document Identifiers, Path-aware Ranking
 
 ## TL;DR
-The HyPE framework is proposed to provide query-relevant explainable paths for retrieval results in generative retrieval by first generating hierarchical category paths (e.g., "Government >> Government by cities") before decoding document identifiers (docids), while simultaneously improving retrieval accuracy.
+The HyPE framework is proposed to enhance generative retrieval by first generating a hierarchical category path (e.g., "Government >> Government by cities") before decoding document identifiers. This provides query-relevant explainable paths while simultaneously improving retrieval accuracy.
 
 ## Background & Motivation
 
-**Background** Generative Retrieval (GR) responds to queries by directly decoding document identifiers (docids) through a single generative model, achieving end-to-end optimization and reducing reliance on external indices. Existing methods have explored two main categories of docid designs: semantic (numeric clustering indices) and lexical (titles, keywords, substrings).
+**Background** Generative Retrieval (GR) responds to queries by directly decoding document identifiers (docids) through a single generative model, enabling end-to-end optimization and reducing dependence on external indices. Existing methods explore two main categories of docid design: semantic (numeric clustering indices) and lexical (titles, keywords, substrings).
 
-**Limitations of Prior Work** Regardless of whether semantic or lexical docids are used, existing generative retrieval methods cannot answer "why a document was retrieved." For instance, for the document "Dubai," different queries might focus on "Dubai Economy" or "Dubai Government," but the retrieval system returns the same docid, failing to explain the correspondence between retrieval decisions and query intentions.
+**Limitations of Prior Work** Regardless of whether semantic or lexical docids are used, current generative retrieval systems cannot answer "why a specific document was retrieved." For instance, for the document "Dubai," different queries might focus on the "Economy of Dubai" or the "Government of Dubai," but the system returns the same docid, failing to explain the correspondence between retrieval decisions and query intent.
 
-**Key Challenge** Explainability is crucial in retrieval—lack of explanation undermines user trust in retrieval results and hinders users from exploring related information. However, existing explainable retrieval methods are either limited to keyword attribution (lacking semantic context) or rely on LLM-generated natural language explanations (high inference latency, unsuitable for real-time retrieval).
+**Key Challenge** Interpretability is crucial in retrieval—a lack of explanation weakens user trust and hinders the exploration of related information. However, existing explainable retrieval methods are either limited to keyword attribution (lacking semantic context) or rely on LLMs to generate natural language explanations (high inference latency, unsuitable for real-time retrieval).
 
-**Goal** Design an explainable generative retrieval framework that provides clear and reasonable explanations during the retrieval process while maintaining or even enhancing retrieval performance.
+**Goal** To design an explainable generative retrieval framework that provides clear and reasonable explanations during the retrieval process while maintaining or even enhancing retrieval performance.
 
-**Key Insight** Utilize structured hierarchical category paths (such as Wikipedia category trees) as explanation carriers. By progressively generating category paths from coarse to fine before decoding the docid, the system provides an explanation for the retrieval decision and guides the model to better locate relevant documents through a coarse-to-fine reasoning process.
+**Key Insight** Structured hierarchical category paths (such as the Wikipedia category tree) serve as effective explanation carriers. By progressively generating semantic category paths from coarse to fine before decoding docids, the system provides an explanation for the retrieval decision and guides the model to better locate relevant documents through a coarse-to-fine reasoning process.
 
-**Core Idea** Hierarchical category paths are a "just right" form of explanation—more semantically structured than keywords and more compact and efficient than natural language (averaging only 13.5 tokens vs. 61 tokens for natural language). They also allow for the generation of different explanatory paths for the same document based on different queries.
+**Core Idea** Hierarchical category paths represent a "just-right" form of explanation—more semantically structured than keywords and more compact than natural language (averaging 13.5 tokens vs. 61 tokens for natural language). Furthermore, they allow for the generation of different explanatory paths for the same document based on varying queries.
 
 ## Method
 
 ### Overall Architecture
-HyPE consists of three stages: (1) Candidate Path Set Construction—utilizing external semantic hierarchical structures (Wikipedia category trees) and LLMs to select appropriate category paths for each document; (2) Path-Enhanced Training—associating queries with paths to build a path-enhanced training set and optimize the generative retrieval model; (3) Path-Aware Inference—generating multiple category paths first, then decoding docids under the condition of each path, and aggregating the final ranking through a path-aware ranking strategy.
+HyPE integrates an "explain-then-retrieve" paradigm into the generative retrieval decoding flow. Before outputting a document identifier (docid), the model generates a hierarchical category path from coarse to fine (e.g., "Government >> Government by cities"). This provides an explanation for the retrieval decision while narrowing the search space through coarse-to-fine reasoning. The framework consists of three coupled segments: offline construction of candidate path sets for each document, path-augmented training where queries are bound to the most relevant paths for joint "indexing" and "retrieval" learning, and inference where multiple paths are generated via beam search followed by docid decoding and path-aware ranking to aggregate final results.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph CONS["Candidate Path Set Construction (Offline)"]
+        direction TB
+        A["Wikipedia Category Tree<br/>(Depth limited to 4 levels)"] --> B["Bi-encoder coarse filtering<br/>of per-document candidate sets"]
+        B --> C["LLM selection of 1-3<br/>most representative paths"]
+    end
+    CONS --> D["Path-augmented Training<br/>Query associated with most similar path; multi-task learning"]
+    D --> E["Inference: Beam search to generate K category paths"]
+    E --> F["Constrained beam search per path<br/>to decode docid + score"]
+    F --> G["Path-aware Ranking<br/>Max score for same docid across paths"]
+    G --> H["Final Ranking + Explainable Paths"]
+```
 
 ### Key Designs
 
-1. **Candidate Path Set Construction**:
-    - **Function**: Assign 1-3 semantically appropriate hierarchical category paths to each document in the corpus.
-    - **Mechanism**: Use the Wikipedia category tree as the backbone hierarchy (limited to 4 levels). First, a bi-encoder filters the candidate path set $\hat{\mathcal{P}}_D$ for each document from all paths based on semantic similarity. Then, an LLM selects up to 3 paths that best represent the document content from the candidates.
-    - **Design Motivation**: Directly inputting all paths into an LLM exceeds context length limits. The two-stage approach (encoder filtering + LLM selection) ensures path quality while controlling costs.
+**1. Candidate Path Set Construction: Encoder filtering + LLM selection for 1-3 semantic paths per document**
 
-2. **Path-Enhanced Training**:
-    - **Function**: Train the model to generate category paths before decoding docids.
-    - **Mechanism**: For each query-document pair in the training set, associate the query with the most semantically similar path from the document's candidate paths, resulting in a path-enhanced training set $\mathcal{X}^+ = \{(q, p^q, D, d)\}$. The model jointly learns two tasks: the indexing task $\mathcal{M}^\theta(p^q, d | D)$ and the retrieval task $\mathcal{M}^\theta(p^q, d | q)$.
-    - **Design Motivation**: By prepending paths to docids, the model undergoes a coarse-to-fine pseudo-reasoning process during decoding, first determining the semantic category and then locating the specific document. This aligns more closely with human information retrieval logic than jumping directly to a docid.
+For explanations to be reliable, each document must be associated with semantically appropriate hierarchical paths. HyPE utilizes the Wikipedia category tree as the backbone structure (limited to 4 levels). Since the tree contains tens of thousands of paths, a two-stage process is employed: a bi-encoder first filters a candidate set $\hat{\mathcal{P}}_D$ based on semantic similarity, and an LLM then selects up to 3 paths that best represent the document content. This approach balances cost and path quality.
 
-3. **Path-Aware Ranking Strategy**:
-    - **Function**: Aggregate retrieval results from multiple paths during inference to generate the final ranking.
-    - **Mechanism**: Use beam search to generate $K_p$ category paths. For each path, use constrained beam search to decode $m$ docid-score pairs. Finally, retain the maximum score for each docid and rank them in descending order. Formula: $$\tilde{Y} = \{(d, s) | s = \max\{s' | (d, s') \in Y_j\}\}$$.
-    - **Design Motivation**: A single path can only capture one semantic aspect of a query. A multi-path strategy covers multiple topical dimensions of the query, allowing the most relevant documents a better chance to be ranked higher.
+**2. Path-augmented Training: Inserting paths before docids for coarse-to-fine pseudo-reasoning**
+
+To train the model to determine categories before documents, HyPE associates each query-document pair in the training set with the candidate path most semantically similar to the query, forming the augmented set $\mathcal{X}^+ = \{(q, p^q, D, d)\}$. The model optimizes two tasks simultaneously: an indexing task $\mathcal{M}^\theta(p^q, d \mid D)$ mapping documents to "path + docid," and a retrieval task $\mathcal{M}^\theta(p^q, d \mid q)$ mapping queries to "path + docid." Generating a path before the docid aligns the decoding process with human-like retrieval reasoning.
+
+**3. Path-aware Ranking: Aggregating results across multiple paths to cover semantic facets**
+
+Since a single path may only capture one semantic aspect of a query, HyPE generates $K_p$ category paths during inference via beam search. For each path, constrained beam search decodes $m$ docid-score pairs. The framework then retains only the highest score for a single docid across all paths for the final ranking: $\tilde{Y} = \{(d, s) \mid s = \max\{s' \mid (d, s') \in Y_j\}\}$. This ensures that documents scoring highly in any relevant topic dimension are ranked appropriately.
+
+### Mechanism Example
+Consider the query "How the government of Dubai works." The model first uses beam search to generate paths, such as "Government >> Government by cities." Under this path, constrained beam search with a prefix trie decodes valid docids like "Dubai" along with their scores. If another path like "Economy >> Economy by city" is generated, it would favor docids related to the economy. Path-aware ranking then takes the maximum score for "Dubai"—likely from the "Government" path—placing it at the top. This demonstrates how the same document can provide different explanatory paths based on the query.
 
 ### Loss & Training
-Based on a T5-base backbone, standard seq2seq cross-entropy loss is used for multi-task learning (indexing + retrieval). The indexing task uses FirstP (the first $k$ tokens of a document) as the document representation, supplemented by 5 synthetic queries. During inference, constrained beam search with a prefix trie ensures the generation of valid docids.
+The model uses T5-base as the backbone and is trained with standard seq2seq cross-entropy loss for multi-task learning (indexing and retrieval). The indexing task uses FirstP (the first $k$ tokens) as the document representation, supplemented by 5 synthetic queries to mitigate the distribution gap between indexing and retrieval. Constrained beam search with a prefix trie is used during inference to ensure valid docid generation.
 
 ## Key Experimental Results
 
@@ -79,42 +88,42 @@ Based on a T5-base backbone, standard seq2seq cross-entropy loss is used for mul
 
 ### Ablation Study
 
-| Analysis Dimension | Result | Description |
+| Dimension | Result | Description |
 |---------|------|------|
-| Path Count K=1 vs K=3 | K=1 already outperforms none; K=3 is significantly better | Multi-path strategy effectively captures multiple topical dimensions |
-| Path Quality (GPT-5 Eval) | 94.6% of paths judged relevant | High path generation quality, low risk of error propagation |
-| Human Re-ranking Exp | R@1 improved by 23.7% with paths; confidence up 12% | Path explanations truly help users make better decisions |
-| Inference Overhead | Only increases by ~0.1s/sample | Explainability barely impacts efficiency |
-| Token Efficiency | Path 13.5 tokens vs. Natural Language 61 tokens | 4.5x more efficient |
+| Path Count K=1 vs K=3 | K=1 beats baseline; K=3 is significantly better | Multi-path strategy effectively captures topic dimensions |
+| Path Quality (GPT-5 Eval) | 94.6% of paths judged relevant | High quality minimizes risk of error propagation |
+| Human Reranking | R@1 improved by 23.7%, Confidence +12% | Path explanations help users make better decisions |
+| Inference Overhead | Increase of ~0.1s/sample | Interpretability added with negligible efficiency impact |
+| Token Efficiency | Path 13.5 tokens vs. NL 61 tokens | 4.5x more efficient than natural language |
 
 ### Key Findings
-- HyPE can be orthogonally applied to all docid types (title, keyword, summary, atomic), demonstrating excellent versatility.
-- Title docids benefit most from HyPE because titles encode coarse-grained semantics, which perfectly matches the coarse-to-fine structure of hierarchical paths.
-- It is equally effective on non-Wikipedia corpora (MS MARCO), proving the generalization of the method does not depend on the co-origination of the corpus and the category tree.
-- Even when paths are not perfectly accurate (5.4% judged irrelevant), retrieval performance does not drop significantly, indicating the method's robustness to path errors.
+- HyPE can be applied orthogonally to all docid types (title, keyword, summary, atomic), demonstrating high versatility.
+- Title docids benefit most as they encode coarse-grained semantics that match the coarse-to-fine structure of hierarchical paths.
+- Effectiveness on non-Wikipedia corpora (MS MARCO) proves that the method's generalization does not depend on a shared source between the corpus and the taxonomy.
+- Performance remains robust even when paths are not perfectly accurate (5.4% irrelevant), indicating resilience to path errors.
 
 ## Highlights & Insights
-- The design of hierarchical category paths as an explanation form is ingenious: structured, compact, automatically generated, and dynamically adjustable based on the query.
-- The "explain then retrieve" paradigm transforms explainability from post-hoc attribution into an organic part of the retrieval process.
-- The path-aware ranking strategy cleverly utilizes multiple paths to cover various semantic aspects of a query.
-- Human re-ranking experiments (R@1 improvement of 23.7%) strongly prove the value of explainability to actual users.
+- The design of hierarchical category paths as an explanation form is elegant: structured, compact, automatically generated, and dynamically adjustable.
+- The "explain-then-retrieve" paradigm shifts interpretability from post-hoc attribution to an organic part of the retrieval process.
+- The path-aware ranking strategy cleverly utilizes multiple paths to cover various semantic facets of a query.
+- Human reranking experiments (23.7% R@1 improvement) provide strong evidence for the practical value of interpretability for end-users.
 
 ## Limitations & Future Work
-- The current backbone hierarchy is based on the Wikipedia category tree, which might need to be replaced with domain-specific taxonomies for specialized fields (e.g., medical, legal).
-- It is not applicable to semantic docids (due to their existing built-in hierarchical structure), limiting its scope somewhat.
-- The path depth is fixed at 4 levels, which may be insufficient for extremely fine-grained retrieval needs.
-- Future work could explore allowing the model to automatically construct hierarchical structures instead of relying on external category trees.
+- The current backbone structure relies on the Wikipedia category tree; specific domains (e.g., medical, legal) may require domain-specific taxonomies.
+- It is less applicable to semantic docids (which have inherent hierarchical structures), somewhat limiting its scope.
+- Fixed path depth (4 levels) may be insufficient for extremely fine-grained retrieval needs.
+- Future work could explore automatic structure construction rather than relying on external taxonomies.
 
 ## Related Work & Insights
 - Compared to free-text explanation methods, category paths offer a 4.5x advantage in token efficiency with almost no increase in latency.
-- Orthogonal to generative retrieval methods like DSI and NCI, it can serve as a plug-and-play enhancement module.
-- It provides a new paradigm for retrieval system explainability: not post-hoc explanation, but driving retrieval through explainable intermediate steps.
+- Orthogonal to generative retrieval methods like DSI and NCI, acting as a plug-and-play enhancement module.
+- Introduces a new paradigm for system interpretability: driving retrieval through explainable intermediate steps rather than justifying results after the fact.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Hierarchical paths as an intermediary for explainable retrieval is a novel idea.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across two datasets, four docid types, human evaluation, LLM evaluation, and efficiency analysis.
+- Novelty: ⭐⭐⭐⭐ Hierarchical paths as intermediaries for explainable retrieval is a novel concept.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across datasets, docid types, human assessment, and efficiency.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain with intuitive case studies.
-- Value: ⭐⭐⭐⭐ Meaningful insights for both the explainable retrieval and generative retrieval fields.
+- Value: ⭐⭐⭐⭐ Highly insightful for both explainable AI and generative retrieval communities.
 
 <!-- RELATED:START -->
 
@@ -123,10 +132,10 @@ Based on a T5-base backbone, standard seq2seq cross-entropy loss is used for mul
 ## Related Papers
 
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
-- [\[ACL 2026\] GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval](glier_generative_legal_inference_and_evidence_ranking_for_legal_case_retrieval.md)
+- [\[ACL 2025\] On Synthetic Data Strategies for Domain-Specific Generative Retrieval](../../ACL2025/information_retrieval/on_synthetic_data_strategies_for_domain-specific_generative_retrieval.md)
 - [\[ACL 2026\] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy](hybrid-vector_retrieval_for_visually_rich_documents_combining_single-vector_effi.md)
-- [\[ACL 2026\] IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization](if-geo_conflict-aware_instruction_fusion_for_multi-query_generative_engine_optim.md)
 - [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
+- [\[ACL 2026\] GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval](glier_generative_legal_inference_and_evidence_ranking_for_legal_case_retrieval.md)
 
 </div>
 

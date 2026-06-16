@@ -2,124 +2,113 @@
 title: >-
   [Paper Note] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][token pruning] This paper identifies a phenomenon in which existing token pruning methods underperform random pruning in deep layers of VLLMs…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper discovers that existing token pruning methods perform worse than random pruning in deep layers of VLLMs. It proposes a method to quantify visual token information based on output probability variations, revealing the "Information Horizon"—a critical layer where visual token information uniformly dissipates t
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "token pruning"
-  - "information horizon"
-  - "visual token informativeness"
-  - "random pruning"
-  - "VLM inference acceleration"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 438ef42da6a13464
+content_hash: 28038af860d4149c
 ---
-
 # When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.07580](https://arxiv.org/abs/2512.07580)  
 **Code**: [https://github.com/YahongWang1/Information-Horizon](https://github.com/YahongWang1/Information-Horizon)  
-**Area**: Multimodal VLM
-**Keywords**: token pruning, information horizon, visual token informativeness, random pruning, VLM inference acceleration
+**Area**: Multimodal VLM  
+**Keywords**: token pruning, information horizon, visual token information, random pruning, VLM inference acceleration
 
 ## TL;DR
-This paper identifies a phenomenon in which existing token pruning methods underperform random pruning in deep layers of VLLMs, proposes a method for quantifying visual token information based on changes in output probability, and reveals the "Information Horizon"—a critical layer at which visual token information uniformly dissipates to zero. The position of this horizon is dynamically influenced by task visual complexity and model capability. The paper further demonstrates that simply integrating random pruning can effectively improve existing methods.
+This paper discovers that existing token pruning methods perform worse than random pruning in deep layers of VLLMs. It proposes a method to quantify visual token information based on output probability variations, revealing the "Information Horizon"—a critical layer where visual token information uniformly dissipates to zero. This horizon is dynamically influenced by task visual complexity and model capability, and the study proves that integrating simple random pruning effectively enhances existing methods.
 
 ## Background & Motivation
-**Background**: VLLMs encode images into large numbers of visual tokens (576 for LLaVA-1.5; up to thousands for Qwen2.5-VL). Training-free token pruning is the mainstream acceleration paradigm, comprising importance-based methods (FastV/SparseVLM) and diversity-based methods (DivPrune/DART).
+**Background**: VLLMs encode images into a large number of visual tokens (576 for LLaVA-1.5, up to thousands for Qwen2.5-VL). Training-free token pruning is a mainstream acceleration scheme, categorized into importance-based methods (FastV/SparseVLM) and diversity-based methods (DivPrune/DART).
 
-**Limitations of Prior Work**: A key observation is that in deep decoder layers (e.g., beyond layer 20), all existing pruning methods perform no better than—or even worse than—random pruning. This phenomenon consistently appears after layers 16–20 on LLaVA-1.5-7B and after layer 21 on Qwen2.5-VL-7B.
+**Limitations of Prior Work**: A key observation reveals that in deep decoder layers (e.g., after layer 20), all existing pruning methods perform no better than, or even worse than, random pruning. This phenomenon consistently appears after layer 16-20 in LLaVA-1.5-7B and after layer 21 in Qwen2.5-VL-7B.
 
-**Key Challenge**: Regardless of whether attention or similarity is used as the selection criterion, existing pruning methods fail to identify more informative tokens than random selection in deep layers—indicating that visual token information has "dissipated" at depth.
+**Key Challenge**: Regardless of whether attention or similarity is used as the selection criterion, existing pruning methods cannot identify tokens more informative than random selection in deep layers—implying that visual token information has "dissipated" in deep layers.
 
-**Goal**: (a) Why does deep-layer pruning underperform random pruning? (b) How does visual token information evolve across layers? (c) At which layer can all visual tokens be safely removed? (d) How can these findings be used to improve existing methods?
+**Goal**: (a) Why is deep pruning worse than random? (b) How does visual token information change across layers? (c) At which layer can all visual tokens be safely removed? (d) How can these findings be utilized to improve existing methods?
 
-**Key Insight**: Define and quantify the informativeness of individual visual tokens at specific layers, and track their cross-layer variation patterns.
+**Key Insight**: Define and quantify the information of individual visual tokens at specific layers and track their cross-layer evolution patterns.
 
-**Core Idea**: Visual token information uniformly dissipates to zero in deep layers (the "Information Horizon"); beyond this layer, pruning is equivalent to random selection, and integrating random pruning can improve existing methods.
+**Core Idea**: Visual token information uniformly dissipates to zero in deep layers (the "Information Horizon"). Beyond this layer, pruning is equivalent to random selection. Integrating random pruning can improve existing methods.
 
 ## Method
 
 ### Overall Architecture
-(1) Define visual token information based on changes in output probability upon removing a single token; (2) Analyze the cross-layer distribution of information and identify the "Information Horizon" phenomenon, where information variance decays to zero; (3) Investigate factors governing the horizon's position—task complexity and model capability; (4) Application: integrate random pruning to improve existing methods.
+This paper does not propose a new pruning method but instead investigates the counter-intuitive phenomenon of why existing pruning methods fail against random pruning in deep decoder layers. The logical flow involves defining a measurable metric for "how much information a single visual token possesses at a certain layer," tracking how this information evolves across layers, identifying the "Information Horizon" where information dissipates to zero, and characterizing what determines this horizon. Finally, these findings are translated into a zero-cost improvement: switching to random pruning after the horizon.
 
 ### Key Designs
 
-1. **Visual Token Information Definition**:
+**1. Visual Token Information Definition: Quantifying contribution by "output probability drop"**
 
-    - Function: Quantify the informational contribution of an individual visual token at a specific decoder layer.
-    - Mechanism: At layer $i$, retain only the target token $\mathbf{V}_k$ (removing all other visual tokens) and perform a forward pass to obtain probability $p_k$; then remove all visual tokens to obtain the text-only probability $p_{text}$; information is defined as the difference $I_i(\mathbf{V}_k) = p_k - p_{text}$.
-    - Design Motivation: Directly measures the causal effect of token removal on the output probability of the ground-truth label; isolating the target token eliminates interference from other visual tokens.
-    - Validation: Consistently removing low-information tokens improves model performance (MME +27.8%), indicating that low-information tokens act as distractors.
+To explain "why deep pruning fails," one must first quantify the value of each visual token at each layer. This paper uses a causal leave-one-out measurement: at layer $i$, all visual tokens except the target token $\mathbf{V}_k$ are removed, and a forward pass is performed to obtain the output probability $p_k$ of the Ground Truth label. Then, all visual tokens are removed to obtain a text-only baseline probability $p_{text}$. The difference is defined as the information carried by that token:
 
-2. **Information Horizon**:
+$$I_i(\mathbf{V}_k) = p_k - p_{text}$$
 
-    - Function: Identify the critical layer at which visual token information uniformly dissipates to zero.
-    - Core Finding: From shallow to deep layers, token informativeness transitions from high variance to uniform distribution, ultimately converging to zero at a certain layer (the Information Horizon). Beyond this layer, removing all visual tokens does not affect performance.
-    - The horizon for MME on LLaVA-1.5-7B is approximately layer 16; for TextVQA it is approximately layer 24.
-    - This explains why deep-layer pruning underperforms random pruning: once all token informativeness approaches zero, no selection criterion has a usable signal.
+Isolating the target token by excluding others prevents information mixing and ensures the metric truly reflects $\mathbf{V}_k$. This definition is not just an analysis tool—removing low-information tokens based on this metric actually improves model performance (MME increases by 27.8% on LLaVA-1.5-7B), indicating these tokens are active sources of interference rather than harmless noise.
 
-3. **Dynamic Nature of the Information Horizon**:
+**2. Information Horizon: The critical layer where visual token information dissipates to zero**
 
-    - **Effect of task visual complexity**: Knowledge-based QA and hallucination detection have shallow horizons (Qwen2.5-VL: ~layer 20), while visually intensive tasks such as OCR have deeper horizons (~layer 27).
-    - **Effect of model visual capability**: Qwen2.5-VL (stronger) exhibits a deeper horizon than LLaVA-1.5 (weaker), enabling utilization of visual tokens at greater depth.
+With layer-wise information quantified, its evolution can be tracked. A stable pattern emerges: in shallow layers, information varies significantly across tokens (high variance; some are critical, others useless). As depth increases, this variance is smoothed out until a specific layer where information for all tokens approaches zero—the "Information Horizon." Beyond this layer, removing all visual tokens barely affects the output. For LLaVA-1.5-7B, the MME horizon is around layer 16, while for TextVQA it is around layer 24. This explains why pruning fails in deep layers: since all tokens have near-zero information, criteria like attention or similarity lose their signal, and any "selection" degrades to random choice.
 
-4. **Random Pruning Integration Strategy**:
+**3. Dynamics of the Information Horizon: Determined by task complexity and model capability**
 
-    - Function: Augment existing pruning methods with random pruning in deep layers.
-    - Mechanism: Since token information is uniform in deep layers, no selection criterion offers an advantage; direct random pruning suffices.
-    - Effectiveness: DivPrune+Random retains 96.9% of original performance on Qwen2.5-VL-7B while pruning 50% of tokens.
+The horizon is not a fixed layer number but fluctuates based on the scenario. First, task visual complexity: tasks like knowledge-based QA or hallucination detection, which rely on text knowledge, have shallower horizons (dissipating around layer 20 in Qwen2.5-VL). Conversely, visual-intensive tasks like OCR have deeper horizons (around layer 27). Second, the model's visual capability: the stronger Qwen2.5-VL has a deeper horizon than the weaker LLaVA-1.5, meaning it can utilize visual information in deeper layers. Together, these rules suggest that the "effective life" of visual tokens is longer when the task requires more visual processing and the model is more capable of it.
+
+**4. Random Pruning Integration Strategy: Abandoning selection after the horizon**
+
+Since deep information is uniform and no criterion holds an advantage, there is no need to calculate importance or similarity after the horizon. Random pruning can be applied directly at zero cost and integrated into any existing method. This "+Random" approach allows Qwen2.5-VL-7B to retain 96.9% of its original performance while pruning 50% of tokens (DivPrune+Random). Its value lies in pragmatism: converting the diagnostic of "information dissipation" into a deployable one-line fix.
 
 ## Key Experimental Results
 
-### Main Results — Qwen2.5-VL-7B, 50% Token Pruning
+### Main Results — Qwen2.5-VL-7B with 50% Pruning
 
 | Method | MME | TextVQA | MMB | OCRBench | Avg. | Rel.(%) |
-|--------|-----|---------|-----|----------|------|---------|
+|------|-----|---------|------|---------|------|---------|
 | Original | 2313 | 85.4 | 79.8 | 88.5 | 83.6 | 100.0 |
 | DART | 2295 | 82.1 | 79.6 | 75.5 | 77.3 | 92.7 |
 | DivPrune | 2291 | 83.1 | 79.4 | 84.1 | 80.7 | 96.7 |
 | DART+Random | 2318 | 82.7 | 79.6 | 77.9 | 78.3 | 93.9 |
 | **DivPrune+Random** | **2302** | **83.4** | **79.5** | **85.3** | **80.9** | **96.9** |
 
-### Ablation Study — Information Quantification Validity (LLaVA-1.5-7B)
+### Ablation Study — Validity of Information Quantification (LLaVA-1.5-7B)
 
 | Operation | MME Change | TextVQA Change |
-|-----------|-----------|----------------|
-| Remove 75% low-information tokens @ layer 10 | **+27.8%** | **+6.1%** |
-| Remove 88% low-information tokens @ layer 10 | Still above baseline | Still above baseline |
+|------|---------|-----------|
+| Remove 75% low-info tokens @ layer 10 | **+27.8%** | **+6.1%** |
+| Remove 88% low-info tokens @ layer 10 | Better than original | Better than original |
 
 ### Key Findings
-- **Information dissipation is universal**: Observed on both LLaVA-1.5 and Qwen2.5-VL, independent of model architecture.
-- In shallow layers (1–7), pruning methods effectively retain high-information tokens; diversity-based methods outperform importance-based methods.
-- In deep layers (after layer 14), all methods degrade to random-level performance as information variance approaches zero.
-- Removing low-information tokens actually improves performance, indicating that such tokens act as distractors rather than benign noise.
-- The improvement from +Random is most pronounced on OCRBench (DART: 75.5→77.9), since OCR tasks have deeper horizons with exploitable information remaining in deep layers.
+- **Information dissipation is universal**: Observed in both LLaVA-1.5 and Qwen2.5-VL, regardless of architecture.
+- In shallow layers (1-7), pruning methods effectively retain high-info tokens, with diversity methods outperforming importance methods.
+- In deep layers (after layer 14), all methods degrade to random levels because information variance approaches zero.
+- Removing low-info tokens significantly boosts performance, proving they are sources of interference rather than neutral noise.
+- The +Random improvement is most evident on OCRBench (DART: 75.5→77.9) because the OCR horizon is deeper, leaving usable information in deep layers.
 
 ## Highlights & Insights
-- **Counter-intuitive finding that "pruning underperforms random"**: This phenomenon is mechanistically explained through rigorous experiments and information quantification, elevating an empirical observation to actionable theory.
-- **Information Horizon concept**: Provides a concise and practical framework for understanding the lifecycle of visual tokens in VLLMs—information generation → propagation → dissipation.
-- **Simple yet effective improvement strategy**: The +Random augmentation improves existing methods at virtually zero additional cost, offering high practical value.
-- **Task–Model–Horizon triangle**: Reveals the dynamic mechanism by which visual complexity and model capability jointly determine the effective depth of visual token utility.
+- **Counter-intuitive "Pruning Worse than Random" Discovery**: Explained mechanistically through rigorous experiments and information quantification, elevating observations to actionable theory.
+- **Information Horizon Concept**: Provides a concise and practical framework to understand the visual token lifecycle in VLLMs: Generation → Propagation → Dissipation.
+- **Simple and Effective Strategy**: The +Random strategy improves existing methods with near-zero cost, offering high practical value.
+- **Task-Model-Horizon Triangle**: Reveals the dynamic mechanism where visual complexity and model capability jointly determine the useful depth of visual tokens.
 
 ## Limitations & Future Work
-- The information definition requires ground-truth labels and cannot be applied directly at inference time.
-- The information metric requires additional forward passes (per-token removal), imposing substantial computational overhead.
-- The precise location of the Information Horizon must be measured separately for each task/model/sample; no predictive model is provided.
-- Only two models are evaluated: LLaVA-1.5 and Qwen2.5-VL.
-- The +Random strategy, while effective, lacks theoretical guarantees and essentially amounts to "abandoning fine-grained selection" after information dissipation.
+- The information definition requires Ground Truth labels, making it unusable directly during inference.
+- Information measurement requires extra forward passes (token-by-token removal), incurring high computational overhead.
+- The precise location of the Information Horizon requires individual measurement for each task/model/sample, as a predictive model is currently lacking.
+- Only LLaVA-1.5 and Qwen2.5-VL were tested.
+- While effective, the +Random strategy lacks theoretical guarantees; it essentially represents "giving up fine selection" after info dissipation.
 
 ## Related Work & Insights
-- **vs. FastV/SparseVLM/DART**: Rather than proposing a new pruning method, this paper explains from an information perspective why existing methods fail in deep layers, and provides a simple remedy.
-- **vs. EmbedLens**: Complementary relationship—EmbedLens identifies sink/dead/alive token categories from a representational structure perspective, while this paper reveals deep-layer information dissipation from an information quantification perspective; together, both support the conclusion that "the genuine contribution of visual tokens to MLLMs is concentrated in shallow-to-middle layers."
-- **Practical application**: The +Random strategy can be directly stacked on top of any existing method.
+- **vs. FastV/SparseVLM/DART**: This paper does not propose a new method but explains why existing ones fail in deep layers and provides a simple patch from an information perspective.
+- **vs. EmbedLens**: A complementary relationship—EmbedLens classifies tokens as sink/dead/alive from a representational structure perspective, while this paper discovers dissipation from an information quantification perspective. Both support the conclusion that visual token contribution is concentrated in shallow-to-middle layers.
+- **Practical Application**: The +Random strategy can be directly superimposed on any existing method professionally.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The Information Horizon concept is novel; the information quantification method is direct and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across multiple models × multiple benchmarks × multiple pruning methods.
-- Writing Quality: ⭐⭐⭐⭐ The logical chain of observation → hypothesis → validation → application is clear.
-- Value: ⭐⭐⭐⭐ Provides important theoretical understanding for token pruning research.
+- Novelty: ⭐⭐⭐⭐ The Information Horizon concept is novel; the quantification method is direct and effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across multiple models, benchmarks, and pruning methods.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from observation → hypothesis → verification → application.
+- Value: ⭐⭐⭐⭐ Provides critical theoretical understanding for token pruning research.
 
 <!-- RELATED:START -->
 
@@ -128,10 +117,10 @@ This paper identifies a phenomenon in which existing token pruning methods under
 ## Related Papers
 
 - [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
 - [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
+- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 - [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](../../ICLR2026/multimodal_vlm/ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
 
 </div>
 

@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation
 description: >-
-  [ICML 2026][LLM Agent][self-evolving agent] Focusing on self-evolving LLM agents for CUDA kernel generation, this paper proposes CUDAnalyst. It performs generation-level intervention by "freezing intermediate program sta…
+  [ICML 2026][LLM Agent][self-evolving agent] For self-evolving LLM agents generating CUDA kernels, this paper proposes CUDAnalyst: it performs generation-level intervention by "freezing intermediate program states + selective feedback injection/masking" and deconstructs the marginal contributions and high-order interactions of debugger/analyzer/profiler feedback
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "self-evolving agent"
-  - "CUDA kernel"
-  - "feedback attribution"
-  - "trajectory freezing"
-  - "Banzhaf value"
+  - ICML 2026
+  - LLM Agent
+  - self-evolving agent
+  - CUDA kernel
+  - Banzhaf value
 date: 2026-05-08
-content_hash: f7c789ef710a95f1
+content_hash: f2bc067dfe03020d
 ---
-
 # Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation
 
 **Conference**: ICML 2026  
@@ -24,108 +21,133 @@ content_hash: f7c789ef710a95f1
 **Keywords**: self-evolving agent, CUDA kernel, feedback attribution, trajectory freezing, Banzhaf value
 
 ## TL;DR
-Focusing on self-evolving LLM agents for CUDA kernel generation, this paper proposes CUDAnalyst. It performs generation-level intervention by "freezing intermediate program states and selectively injecting/masking feedback." Utilizing the Banzhaf value from coalitional game theory, it deconstructs the marginal contributions and high-order interactions of three feedback types: debugger, analyzer, and profiler. The study yields four key findings, such as "explicit plans are only useful when feedback is aligned" and "plans from strong models can be transferred to weaker models of the same family." Based on these, the CuGEdit plugin was designed, achieving a $2.08\times$–$10.32\times$ speedup over torch.compile.
+For self-evolving LLM agents generating CUDA kernels, this paper proposes CUDAnalyst: it performs generation-level intervention by "freezing intermediate program states + selective feedback injection/masking" and deconstructs the marginal contributions and high-order interactions of debugger/analyzer/profiler feedback using Banzhaf cooperative game values. The study yields four key findings, such as "explicit plans are only useful when feedback is aligned" and "plans from strong models can migrate to weak models of the same family." Based on these, the CuGEdit plugin was designed, outperforming torch.compile by 2.08×–10.32×.
 
 ## Background & Motivation
 
-**Background**: Current automatic CUDA kernel generation has shifted from one-shot synthesis to "self-evolving agents." In each generation, the LLM reads output from a debugger, static analyzer, and profiler of the previous generation, formulates a Plan, and generates new code. Frameworks like FM Agent, STARK, ConCuR, and OpenEvolve have reported significant acceleration.
+**Background**: Currently, automatic CUDA kernel generation has shifted from one-shot synthesis to "self-evolving agents"—where the LLM reads outputs from debuggers, static analyzers, and profilers from the previous generation to plan modifications and generate new code. Representative systems including FM Agent, STARK, ConCuR, and OpenEvolve have reported significant speedups.
 
-**Limitations of Prior Work**: Mainstream evaluation typically uses *end-to-end ablation*—disabling a feedback source and re-running the entire evolution trajectory from the start or a checkpoint to compare final speedup. This paradigm suffers from two issues: (1) Small early perturbations are amplified by subsequent generation plans, causing "feedback effects" and "trajectory drift" to become completely entangled; (2) Aggregating an entire trajectory into a single scalar erases fine-grained signals regarding which feedback played what role in which generation.
+**Limitations of Prior Work**: When evaluating these agents, the mainstream approach is *end-to-end ablation*—disabling a feedback source and rerunning the entire evolution trajectory from the start or a checkpoint to compare the final speedup. This paradigm has two issues: (1) Minor early perturbations are amplified by subsequent multi-generation planning, causing "feedback effects" and "trajectory drift" to become completely entangled; (2) Aggregating the entire trajectory into a single scalar erases fine-grained signals regarding "which generation, which feedback, and what role it played."
 
-**Key Challenge**: The essence of self-evolution is *cross-generation coupling*, whereas attribution requires causal effects at a *fixed decision point*—the two are naturally in conflict. As long as the agent is allowed to evolve on its own, it is impossible to distinguish between "changes in feedback" and "deviations in trajectory."
+**Key Challenge**: The essence of self-evolution is *cross-generation coupling*, while attribution requires causal effects at a *fixed decision point*—the two are naturally in conflict. As long as the agent is allowed to continue its own trajectory, it remains impossible to distinguish whether "the feedback changed" or "the trajectory diverged."
 
-**Goal**: (1) Design an analysis layer capable of performing feedback intervention at fixed decision points; (2) Quantify the marginal contribution and pairwise interaction of each feedback using game-theoretic tools; (3) Verify if conclusions remain stable across different backbones, workloads, and evolutionary operators; (4) Encapsulate stable patterns into pluggable modules to accelerate real-world systems.
+**Goal**: (1) Design an analysis layer capable of feedback intervention at fixed decision points; (2) Quantify the marginal contribution and pairwise interaction of each feedback using game theory tools; (3) Verify whether the resulting findings remain stable across different backbones, workloads, and evolutionary operators; (4) Encapsulate stable patterns into plug-and-play modules to accelerate real-world systems.
 
-**Key Insight**: The authors observe that feedback attribution must occur at a *fixed generation*. By *freezing* the generated program state of a specific generation as a fixture, one can repeatedly replay the plan on the same code, varying only the feedback input. Any differences in the plan or resulting code can then be attributed solely to the feedback itself.
+**Key Insight**: The authors' key observation is that feedback attribution must occur at a *fixed generation*. By *freezing* the generated program state of a specific generation as a fixture, one can repeatedly replay plans on the same code while only varying the feedback input. Thus, any differences in plans or code can only be attributed to the feedback itself.
 
-**Core Idea**: Decouple "self-evolution" and "feedback attribution" in the time dimension. Evolution proceeds as usual to produce trajectory snapshots, while attribution performs controlled patching on each snapshot, using Banzhaf values for a game-theoretic decomposition of feedback coalitions.
+**Core Idea**: Decouple "self-evolution" and "feedback attribution" in the time dimension—evolution runs normally to produce trajectory snapshots, while attribution performs controlled patching on each snapshot, using Banzhaf values for game-theoretic deconstruction of feedback coalitions.
 
 ## Method
 
 ### Overall Architecture
-CUDAnalyst is an analysis layer "sandwiched" between a self-evolution framework (e.g., OpenEvolve) and an LLM planner. It explicitly separates feedback generation, plan generation, and code generation for each iteration:
+CUDAnalyst is an analysis layer "sandwiched" between a self-evolving framework (e.g., OpenEvolve) and the LLM planner. Its core task is to quantify the causal contribution of each feedback to the plan in each generation without letting the agent continue its trajectory or suffering from trajectory drift. This is achieved by decoupling evolution and attribution in time: the evolution framework runs as usual to produce the $g$-th generation program $P_g$, while CUDAnalyst freezes $P_g$ into an immutable snapshot. On this fixed fixture, it only toggles "which feedbacks are sent to the planner" and repeatedly replays the plan→code→evaluation cycle.
 
-1.  **Feedback Generation**: The original framework runs as usual to produce the $g$-th generation program $P_g$ and its reference cache. CUDAnalyst uses three analysis modules—Debugger (compile/runtime errors), Analyzer (static features via Tree-sitter), and Profiler (NCU/cProfile metrics)—to transform $P_g$ into a structured profile, which can be further compressed by a SummaryAgent.
-2.  **Freezing + Intervention**: $P_g$ and references are frozen as immutable snapshots. "Selective switches" are applied to the feedback report to construct $2^N$ feedback coalitions $S \subseteq \{d,a,p\}$. For each coalition, a PlanAgent with fixed prompts/temperature produces a plan, followed by a fixed code generator.
-3.  **Generation-level Evaluation**: Each $(g, S)$ combination is executed 10 times. Statistics on compiled, pass, and fast results are collected to formulate the characteristic function $v(S)$.
-4.  **Game-theoretic Attribution**: The Banzhaf value $\phi_i$ calculates the average marginal contribution of each feedback, while Grabisch-Roubens interaction terms $\sigma_{ij}$ calculate pairwise synergy/conflict, resulting in a fine-grained feedback-to-plan attribution map.
+The workflow follows four steps: First, the Debugger (compile/runtime errors), Analyzer (Tree-sitter-based static features), and Profiler (NCU/cProfile runtime metrics) modules convert $P_g$ into structured feedback reports, optionally compressed by a SummaryAgent. Second, $P_g$ and the reference set are frozen, and $2^N$ combinations of feedback toggles $S \subseteq \{d,a,p\}$ are enumerated. For each coalition, the PlanAgent (with fixed prompt/temperature) generates a plan, and the code generator writes a new kernel. Each $(g,S)$ combination is run 10 times to calculate the characteristic function $v(S)$ based on compiled/pass/fast metrics. Finally, the Banzhaf value and Grabisch-Roubens interaction terms are used to decompose $v(S)$ into the marginal contribution of each feedback and pairwise synergies. This process intentionally prevents the PlanAgent from seeing historical plans, excluding "evolutionary memory" from the attribution boundary.
 
-The process ensures the *Plan only observes current feedback and not historical plans*, thereby excluding "evolutionary memory" from the attribution.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Evolution framework outputs Pg<br/>(Scaffold, unchanged by CUDAnalyst)"]
+    subgraph FB["Feedback Analysis: Converting Pg to structured reports"]
+        direction TB
+        D["Debugger<br/>Compile/Run Errors"]
+        A["Analyzer<br/>Tree-sitter Static Features"]
+        PR["Profiler<br/>NCU/cProfile Runtime Metrics"]
+        SUM["SummaryAgent (Optional)<br/>Compressing into structured summaries"]
+        D --> SUM
+        A --> SUM
+        PR --> SUM
+    end
+    subgraph FREEZE["Trajectory Freezing + Selective Injection"]
+        direction TB
+        FZ["Freeze Pg and reference as immutable fixture"]
+        EN["Enumerate 2^3 feedback combinations S (incl. empty baseline)"]
+        PL["Fixed PlanAgent generates plan"]
+        CG["Fixed code generator writes new kernel"]
+        EV["Run each (g,S) 10 times independently<br/>Collect compiled/pass/fast → v(S)"]
+        FZ --> EN --> PL --> CG --> EV
+    end
+    BZ["Coalition Attribution via Banzhaf Value<br/>Marginal Contribution φi + Pairwise Interaction σij"]
+    OUT["Four stable cross-setting patterns<br/>→ CuGEdit pluggable acceleration plugin"]
+    P --> FB --> FREEZE --> BZ --> OUT
+```
 
 ### Key Designs
 
-1.  **Trajectory Freezing & Patching Intervention**:
-    - **Function**: Under the premise that the $g$-th generation program state, reference set, planner, prompt, and decoding hyperparameters are all locked, it uniquely attributes subsequent plan/code differences to the feedback set by switching which feedbacks are sent to the PlanAgent.
-    - **Mechanism**: Caches $P_g$ as an immutable snapshot and fixes references to avoid resampling pollution. It tests $2^3=8$ combinations of the feedback trio $\{d, a, p\}$ (including the empty set baseline $v(\emptyset)$). Unlike traditional ablation which re-runs entire trajectories from scratch, this method's computational budget is $O(2^{|N|} k)$ rather than $O(\text{generations} \times k)$, and results are strictly comparable since they are based on identical code fixtures.
-    - **Design Motivation**: Self-evolving scenarios naturally violate "IID" assumptions. Traditional ablation cannot mathematically support causal attribution; physical "slicing" in the time dimension is required to run controlled experiments.
+**1. Trajectory Freezing + Selective Feedback Injection: Controlled patching on the same code fixture**
 
-2.  **Coalitional-Style Feedback Attribution**:
-    - **Function**: Quantifies "how much each feedback contributes" and "synergy/redundancy between feedback pairs" into readable scalars.
-    - **Mechanism**: Models feedback attribution as a cooperative game $\mathcal{G}=(N, v)$, where players $N=\{\text{debugger}, \text{analyzer}, \text{profiler}\}$ and $v(S)$ is the expected generation-level success. Marginal contribution uses the Banzhaf value:
-      $$\phi_i(v) = \frac{1}{2^{|N|-1}} \sum_{S \subseteq N \setminus \{i\}} [v(S \cup \{i\}) - v(S)]$$
-      Pairwise interaction uses Grabisch-Roubens terms:
-      $$\sigma_{ij} = v(\{i,j\}) - v(\{i\}) - v(\{j\}) + v(\emptyset)$$
-      Positive values indicate complementarity; negative indicates redundancy. Banzhaf is chosen over Shapley because feedback in plan decisions appears *simultaneously* without an arrival order.
-    - **Design Motivation**: Comparing simple "on/off" differences overestimates individual roles due to high synergy (e.g., an analyzer finding a race condition before a debugger can locate it). Coalitional games provide a standard tool for fair credit assignment and interaction isolation.
+Feedback attribution in self-evolution faces a fundamental difficulty—it naturally violates IID assumptions: early perturbations are amplified by subsequent planning. In traditional end-to-end ablation, differences caused by "changed feedback" and "diverged trajectories" are entangled. This design solves this by "slicing" the time dimension: $P_g$ generated in each generation is cached as an immutable snapshot, and the reference set is fixed to avoid resampling noise. Then, the planner, prompt, and decoding hyperparameters are locked, while *only* the feedback provided to the PlanAgent is toggled. For the feedback set $\{d,a,p\}$, $2^3=8$ combinations are enumerated (including the empty baseline $v(\emptyset)$). Because each experiment only changes the feedback input, any observed differences in plan or code can be strictly attributed to the feedback itself.
 
-3.  **CuGEdit — From Invariant Insights to Actionable Design**:
-    - **Function**: Encapsulates stable findings—"feedback alignment is crucial," "multi-feedback synergy," "strong-to-weak plan transfer," and "summarization helps weak models"—into a module for any self-evolving framework.
-    - **Mechanism**: Includes three components: (a) Kernel-similarity-aware activation: activates full feedback only when the kernel is similar to cached cases to save tokens; (b) Feedback summarization: compresses profiles into structured summaries for weak models; (c) Strong-to-weak plan distillation: injects plans from strong models (e.g., DeepSeek-R1) into the context of weak models (e.g., DeepSeek-V3.2).
-    - **Design Motivation**: To demonstrate that attribution insights can directly improve system performance, addressing "why attribution matters" by informing designers when to use specific feedback or distillation.
+**2. Banzhaf-based Coalition Attribution: Cleanly separating individual contributions and interactions**
+
+Only looking at the difference between "on/off" for a single feedback overestimates its role due to significant synergies—for instance, an analyzer might identify a potential race, which a debugger then localizes. This design models feedback attribution as a cooperative game $\mathcal{G}=(N,v)$, where players are $N=\{\text{debugger},\text{analyzer},\text{profiler}\}$ and the characteristic function $v(S)$ is the expected generation-level success under coalition $S$. The marginal contribution of each feedback is calculated using the Banzhaf value:
+
+$$\phi_i(v) = \frac{1}{2^{|N|-1}} \sum_{S \subseteq N \setminus \{i\}} [v(S \cup \{i\}) - v(S)]$$
+
+which averages over all subsets with equal weight. Pairwise interaction uses the Grabisch-Roubens term $\sigma_{ij} = v(\{i,j\}) - v(\{i\}) - v(\{j\}) + v(\emptyset)$, where positive values indicate complementarity and negative values indicate redundancy or competition. Banzhaf is chosen over Shapley because feedback exists *simultaneously* in planning without an arrival order; equal weighting fits the semantic reality better than Shapley's permutation-based weighting.
+
+**3. CuGEdit: Encapsulating stable patterns into deployable plugins**
+
+To prove the practical value of the attribution findings, four stable patterns identified in RQ1–RQ3—feedback alignment necessity, late-stage synergy, strong-to-weak model plan transfer, and the effectiveness of summaries for weak models—are encapsulated into the CuGEdit module. It consists of three components: (a) Kernel-similarity-aware activation, which only activates full feedback analysis if the current kernel resembles cached cases; (b) Feedback summarization, using a SummaryAgent to compress raw profiles; and (c) Strong-to-weak plan distillation, injecting plans from strong models (DeepSeek-R1 / Qwen3-235B) into the context of weak models (DeepSeek-V3.2 / Qwen3-Coder-30B). Applied to OpenEvolve on KernelBench Level 3, it achieved $2.08\times$–$10.32\times$ speedup over torch.compile.
+
+### Loss & Training
+No models are trained in this work; all PlanAgents, SummaryAgents, and CodeAgents utilize *fixed-prompt, fixed-decoding* off-the-shelf LLM calls. Experiments on PolyBench-ACC were conducted with 10 independent runs, using 95% CI for confidence. Evaluations were performed using a unified LLM evaluator to ensure cross-experimental comparability.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Research Question | Setting | Key Findings |
+| Research Question | Setup | Key Findings |
 |---|---|---|
-| RQ0 Is explicit planning useful | 2×2: {implicit, explicit} × {no feedback, full feedback} | P+NF (Plan without feedback) consistently drops performance; P+F (Plan with feedback) improves across all models, especially for weak models. |
-| RQ1 Which feedback is critical | Banzhaf Value + $\sigma_{dap}$ 3rd-order interaction | Early stage (gen 0-2) contributions are sparse; late stage (gen 5-7) interaction terms dominate. Analyzer drives compilation, Profiler drives speed. |
-| RQ2 Can Summary replace Plan | NP+S vs P+S vs P+F | Summarization (P+S) aids weak models significantly but offers little to strong models. NP+S is weaker than P+S, proving summary $\neq$ plan. |
-| RQ3 Strong $\rightarrow$ Weak Plan Distillation | Injustice strong plans into weak model context | Intra-family transfer (R1 $\rightarrow$ V3.2) yields maximum Gain; cross-family is partially effective. |
-| CuGEdit Performance | KernelBench Level 3 vs torch.compile | $2.08\times$ – $10.32\times$ acceleration, surpassing Prev. SOTA. |
+| RQ0: Utility of Explicit Planning | 2×2: {implicit, explicit} × {no feedback, full feedback} | P+NF (plan without feedback) consistently dropped performance; P+F (plan with feedback) showed stable gains across all models, with weak models (DeepSeek-V3.2, Qwen3-Coder-30B) ganning the most. |
+| RQ1: Most Critical Feedback | Banzhaf Value + $\sigma_{dap}$ third-order interaction | Early stages (gen 0-2) showed sparse/unstable contributions; late stages (gen 5-7) were dominated by interaction terms. Analyzer leads compilation, Profiler leads performance, Debugger works through interaction. |
+| RQ2: Summarization vs. Planning | NP+S vs P+S vs P+F | Summaries (P+S) significantly accelerated weak models but offered minimal gains to strong models (R1, Qwen3-235B). NP+S was generally weaker than P+S, proving summaries $\neq$ planning. |
+| RQ3: Strong-to-Weak Plan Distillation | Injecting strong model plans into weak model contexts | Same-family transfers (R1→V3.2, Qwen3→Qwen3-Coder) yielded the highest gains; cross-family transfers were partially effective. |
+| CuGEdit Performance | KernelBench Level 3 vs torch.compile | $2.08\times$ – $10.32\times$ speedup, exceeding SOTA. |
 
 ### Ablation Study
 
-| Configuration | Key Metric Change | Description |
+| Configuration | Metric Changes | Description |
 |---|---|---|
-| Implicit (OpenEvolve Default) | Baseline | Planning and code generation coupled in a single step. |
-| P+NF (Plan only) | Overall Decrease | Proves plan tokens themselves are useless without content. |
-| P+F (Plan + Feedback) | Stable Gain | Feedback is the critical component. |
-| DP (Dummy Plan) | Decrease in weak models | Excludes "token budget/structure" as confounding factors. |
-| P+RF (Random Feedback) | Decrease for all | Proves "alignment" is key, not just "information volume." |
-| Cross Backbone | Stable $\sigma_{ij}$ patterns | Tool synergy structure is independent of the base model. |
-| Cross Evolution Operator | High trajectory sync | Attribution structure is decoupled from the evolutionary operator. |
-| Cross Domain (CPU Numba) | $12.5\times$ peak acceleration | Attribution framework is not tied solely to CUDA. |
+| Implicit (OpenEvolve default) | Baseline | Planning and code generation are coupled in a single step. |
+| P+NF (Plan without feedback) | Universal decrease | Proves plan tokens themselves are useless without content. |
+| P+F (Plan with feedback) | Stable improvement | Feedback is the key driver. |
+| DP (Dummy Plan, template fill) | Decrease in weak models | Rules out "token budget/text structure" as confounding factors. |
+| P+RF (Random feedback) | Decrease across all models | Proves "alignment" is critical, not just "information volume." |
+| Cross-backbone (Kimi-K2 / MiniMax-M2.5 / Gemini-2.5-Pro) | Stable $\sigma_{ij}$ patterns | Tool synergy structure is independent of the backbone model. |
+| Cross-workload (NPB / XSBench / rkbench) | Qualitative patterns consistent | Convergence speed varies but attribution structure remains stable. |
+| Cross-evolutionary operator (EoH / MCTS / LHNS / hill-climbing) | Trajectories highly synced | Attribution structure decoupled from the evolutionary operator. |
+| Cross-domain (CPU Numba N-body) | $12.5\times$ peak speedup | Attribution framework is not restricted to CUDA. |
 
 ### Key Findings
-- **Plan tokens provide no intrinsic value**: P+NF and DummyPlan do not improve, or even hinder, performance. The role of a plan is to "organize and reuse aligned feedback."
-- **Late-stage reliance on interaction**: As generations progress, $\sigma_{dap}$ dominates score growth—failure modes become coupled (e.g., a race condition affecting both compilation and performance), requiring multi-feedback consensus.
-- **Strong models are insensitive to plan semantics**: DummyPlan barely affects R1, but P+RF (Random Feedback) causes a drop—strong models have self-correction but are not immune to "misleading signals."
-- **Intra-family transfer friendliness**: Plan transferability is limited by representational compatibility. Cross-family gains are lower, suggesting model lineage matters for agent ensembles.
-- **CuGEdit turns analysis into productivity**: The three laws discovered by attribution—feedback alignment, tool synergy, and intra-family distillation—achieve $10.32\times$ speedup, proving the analysis is not just "post-hoc explanation."
+- **Plan tokens alone have no value**: P+NF and DummyPlan do not improve or even hinder performance; the role of a plan is to "organize and reuse aligned feedback," not to provide "extra thinking steps" for the LLM.
+- **Late stage relies on interaction, early stage on individual items**: As generations increase, $\sigma_{dap}$ dominates score growth—late-stage failure modes are coupled (e.g., race conditions affecting both compilation and performance), requiring multi-tool consensus.
+- **Strong models are insensitive to plan semantics**: DummyPlan barely affected R1/Qwen3-235B, but P+RF (random feedback) caused total performance drops—indicating strong models have self-correction but no immunity to misleading signals.
+- **Family-specific transfer is superior**: Plan portability is limited by representational compatibility; cross-family gains (e.g., DeepSeek→Qwen3) are discounted, suggesting agent ensembles should consider model lineage.
+- **CuGEdit turns analysis into productivity**: The three laws—feedback alignment, multi-tool synergy, and same-family distillation—directly translated into $10.32\times$ speedup, proving the analysis is not merely a "post-hoc explanation."
 
 ## Highlights & Insights
-- **Methodological Highlight**: Introducing coalitional game theory (Banzhaf / Grabisch-Roubens) into LLM agent attribution clearly separates "individual contribution" and "interaction," offering more insight than simple leave-one-out methods. This can be extended to any multi-tool agent analysis.
-- **Universality of Trajectory Freezing**: Applicable to any long-horizon, multi-feedback agent. "Frozen snapshots + controlled patching" is a general cure for trajectory drift in ablation studies.
-- **Counter-intuitive Insight**: Experience shows plans are useless without feedback; the fact that DummyPlan doesn't hurt much suggests LLMs can synthesize structure on the fly from feedback. This challenges the "longer Chain-of-Thought is always better" narrative.
-- **Transferable Trick**: The P+RF (Random Feedback) control should be a standard baseline for any planning agent paper to verify if the plan signal is useful or just the token length.
+- **Methodological Highlight**: Introducing Banzhaf values and Grabisch-Roubens interactions from game theory into LLM agent attribution cleanly separates "individual credit" and "synergy." This recipe is highly portable to other multi-tool agents (browse + code + retrieve).
+- **Universality of Trajectory Freezing**: Applicable beyond CUDA agents—any "long-horizon, multi-feedback, iterative" agent (multi-agent debate, deep research) suffers from trajectory drift during ablation. Snapshot freezing is the general remedy.
+- **Anti-intuitive Insight**: Plans themselves are useless; feedback is the core. The fact that DummyPlan hardly degrades performance for strong models challenges the narrative that "longer CoT is always better."
+- **Transferable Trick**: The P+RF (Random Feedback) control should be a standard baseline for any plan/tool agent paper to verify that the signal is useful, not just the token length.
 
 ## Limitations & Future Work
-- **Ours Acknowledges**: The method assumes intermediate program states can be frozen, but what constitutes a "semantic state element" in CUDA evolution remains an open question in compiler research.
-- **Potential Improvements**: (1) The coalition is limited to $\{d,a,p\}$; $2^N$ scales exponentially. Monte-Carlo sampling for Banzhaf could support more sources. (2) Evaluated mainly on PolyBench-ACC; "long-tail operators" (e.g., fused MoE) lack direct verification. (3) Prompt stability for PlanAgent and CodeAgent was not analyzed.
-- **Big Question**: Attribution results may rely on the quality of feedback implementation—if a finer-grained profiler were used, would the relative $\phi_p$ flip? This requires "attribution of the attribution."
+- **Author Acknowledgement**: The method assumes intermediate program states can be frozen, but what constitutes the "semantic evolution" of a CUDA kernel is still an open question in compiler research. Crucially, cross-generation memory was excluded from the attribution boundary to maintain causality.
+- **Potential Improvements**: (1) Feedback members are currently fixed to a triplet $\{d,a,p\}$, as $2^N$ coalitions scale exponentially. Future work could use Monte-Carlo sampling for Banzhaf values to support more sources (retrieval, perf counters). (2) Evaluations were limited to PolyBench and KernelBench; generalization to "long-tail operators" (fused MoE, sparse attention) is not explicitly verified. (3) Prompts were fixed; the stability of attribution results relative to prompt engineering was not explored.
+- **Open Question**: Attribution conclusions may rely on the quality of feedback implementation—if a finer-grained hardware counter profiler were used, would the relative magnitude of $\phi_p$ flip? This suggests a need for "attribution of attribution."
 
 ## Related Work & Insights
-- **vs OpenEvolve / FM Agent**: These focus on *how to make agents write better*, while CUDAnalyst focuses on *how to scientifically analyze why they write well*.
-- **vs Traditional E2E Ablation**: This paper systematically refutes the "E2E ablation is enough" approach through P+RF and DummyPlan controls.
-- **vs Shapley-based prompt valuation**: Uses Banzhaf because feedback is parallel, not sequential, in the decision process—a subtle but important modeling distinction.
+- **vs. OpenEvolve / FM Agent / STARK**: While these systems focus on "how to make agents write better," this paper focuses on "scientifically analyzing why they write better." CUDAnalyst serves as an analysis layer for these frameworks.
+- **vs. Traditional E2E Ablation**: The paper uses Fig. 1 to visualize trajectory drift and systematically refutes the sufficiency of E2E ablation via P+RF and DummyPlan controls.
+- **vs. Shapley-based Prompt Valuation**: This work uses Banzhaf over Shapley, arguing that feedback in planning is reached in parallel rather than sequentially—a subtle but important modeling distinction.
+- **vs. CUDA-L1**: While CUDA-L1 improves the generator via RL, this work modifies nothing in the model, focusing purely on attribution and plug-in design. The two are orthogonal and stackable.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Introducing Banzhaf attribution and trajectory freezing provides a reusable paradigm for agent attribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive generalizations across workloads, operators, and domains, plus the CuGEdit E2E validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear arguments; Figure 1 effectively frames why E2E is unreliable.
-- **Value**: ⭐⭐⭐⭐⭐ A contribution to both methodology (attribution tools) and engineering (CuGEdit speedup); highly useful for LLM4Code/HPC teams.
+- Novelty: ⭐⭐⭐⭐ Introducing Banzhaf attribution and trajectory freezing provides a reusable paradigm for agent behavior analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 RQs + broad generalization experiments + end-to-end plugin validation makes this a rare "analysis paper with a deployable module."
+- Writing Quality: ⭐⭐⭐⭐ Clear argumentation; Fig. 1 is excellent for framing, though some notation (P+NF/NP+S) is dense.
+- Value: ⭐⭐⭐⭐⭐ Both a methodological contribution for the self-evolving agent community and an engineering contribution ($10\times$ speedup) for LLM4Code/HPC teams.
 
 <!-- RELATED:START -->
 
@@ -135,9 +157,9 @@ The process ensures the *Plan only observes current feedback and not historical 
 
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](../../ICLR2026/llm_agent/your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
-- [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](../../ACL2026/llm_agent/mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
-- [\[CVPR 2026\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](../../CVPR2026/llm_agent/sceneassistant_a_visual_feedback_agent_for_openvoc.md)
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
+- [\[ICLR 2026\] InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios](../../ICLR2026/llm_agent/infiagent_self-evolving_pyramid_agent_framework_for_infinite_scenarios.md)
 
 </div>
 

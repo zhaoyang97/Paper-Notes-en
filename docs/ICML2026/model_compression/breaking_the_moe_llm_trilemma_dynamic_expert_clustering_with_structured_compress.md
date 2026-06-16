@@ -2,68 +2,89 @@
 title: >-
   [Paper Note] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression
 description: >-
-  [ICML 2026][Model Compression][Mixture-of-Experts] Addressing the MoE LLM trilemma of "load imbalance – parameter redundancy – communication overhead…
+  [ICML 2026][Model Compression][Mixture-of-Experts] To address the "load imbalance – parameter redundancy – communication overhead" trilemma in MoE LLMs, this paper proposes a unified framework: using online clustering based on "parameter + activation" dual similarity to group experts. Within groups, structured compression (~5×) is applied via a "shared base matrix + lo
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Mixture-of-Experts"
-  - "Dynamic Expert Clustering"
-  - "Low-rank Residual"
-  - "Hierarchical Routing"
-  - "Heterogeneous Precision"
+  - ICML 2026
+  - Model Compression
+  - Mixture-of-Experts
 date: 2026-05-08
-content_hash: 39500448a8c34499
+content_hash: 3dbe2b46ca9c64ab
 ---
-
 # Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.02345](https://arxiv.org/abs/2510.02345)  
 **Code**: https://github.com/szdtzpj/Breaking_the_moe_trilemma (Available)  
 **Area**: Model Compression / MoE LLM / System Optimization  
-**Keywords**: Mixture-of-Experts, Dynamic Expert Clustering, Low-rank Residual, Hierarchical Routing, Heterogeneous Precision
+**Keywords**: Mixture-of-Experts, Dynamic Expert Clustering, Low-rank Residuals, Hierarchical Routing, Heterogeneous Precision
 
 ## TL;DR
-Addressing the MoE LLM trilemma of "load imbalance – parameter redundancy – communication overhead," this paper proposes a unified framework: online expert grouping using "parameter + activation" dual-similarity clustering, structured compression (~5×) within groups via "shared base matrix + low-rank residual," two-level hierarchical routing ("select group then select expert"), FP16/INT4 heterogeneous precision, and offline offloading of idle groups. On GLUE/WikiText-103, it matches standard MoE performance with ~80% parameter reduction, 10–20% throughput gain, and a 3× reduction in expert load variance.
+To address the "load imbalance – parameter redundancy – communication overhead" trilemma in MoE LLMs, this paper proposes a unified framework: using online clustering based on "parameter + activation" dual similarity to group experts. Within groups, structured compression (~5×) is applied via a "shared base matrix + low-rank residuals." This is combined with two-stage hierarchical routing ("select group then select expert"), FP16/INT4 heterogeneous precision, and offline offloading of idle groups. On GLUE/WikiText-103, Ours matches standard MoE performance with ~80% parameter reduction, 10–20% throughput gain, and a 3× reduction in expert load variance.
 
 ## Background & Motivation
 
-**Background**: MoE has become the critical path for scaling LLMs (e.g., Switch, GShard, Mixtral)——theoretically increasing parameter capacity without significantly increasing FLOPs.
+**Background**: Mixture-of-Experts (MoE) has become the critical path for scaling LLMs (Switch, GShard, Mixtral, etc.)—theoretically increasing parameter capacity without significantly increasing FLOPs.
 
-**Limitations of Prior Work**: Deploying MoE on A100/H100 hardware encounters an "optimization trilemma": (i) **Load imbalance**—top-$k$ gating results in a few overloaded experts and many idle ones; (ii) **Parameter redundancy**—the linear increase in parameters with the number of experts exhausts HBM capacity; (iii) **All-to-all communication overhead**—dispatching tokens to experts across different devices often becomes the dominant latency, especially for long sequences.
+**Limitations of Prior Work**: Running MoE on A100/H100 clusters encounters an "optimization trilemma": (i) **Load Imbalance**—top-$k$ gating causes a few experts to be overloaded while most remain idle; (ii) **Parameter Redundancy**—the linear increase in parameters with expert count exhausts HBM capacity; (iii) **All-to-all Communication Overhead**—dispatching tokens to experts across different devices often becomes the dominant latency, especially for long sequences.
 
-**Key Challenge**: Existing methods address these issues in isolation. Load balancing losses (Switch loss) are reactive and fail under distribution shifts; compression methods like MoE-Lite treat experts as independent entities, ignoring structural similarities; communication-aware routing (Tutel, SmILE) optimizes data paths on fixed architectures without addressing redundancy or imbalance. Worse, these three goals often conflict—optimizing one variable frequently degrades another.
+**Key Challenge**: Existing methods address these issues in isolation. Load balancing losses (Switch loss) are reactive and fail under distribution shifts; compression methods like MoE-Lite treat experts as independent entities, ignoring structural similarities; communication-aware routing (Tutel, SmILE) optimizes data paths on fixed architectures without addressing redundancy or imbalance. Worse, these three objectives often conflict—optimizing one variable frequently degrades another.
 
-**Goal**: Establish a unified framework to simultaneously reduce total storage, minimize activation parameters per token, maintain model quality, decrease cross-device traffic, and keep re-clustering overhead controllable.
+**Goal**: A single framework to simultaneously reduce total storage, compress per-token active parameters, maintain model quality, lower cross-device traffic, and keep re-clustering overhead controllable.
 
-**Key Insight**: The core observation is that "experts activated by semantically similar inputs also exhibit parameter redundancy." This hypothesis enables the co-optimization of architecture (grouping) and systems (routing/storage/communication).
+**Key Insight**: The core insight is that "experts activated by semantically similar inputs also exhibit redundancy in their parameters." This hypothesis enables the co-optimization of architecture (grouping) and systems (routing/storage/communication).
 
-**Core Idea**: Use dynamic clustering to group functionally similar experts → use a shared base + low-rank residual within groups to compress parameters → route first to groups then to experts, reducing all-to-all communication to a two-level process.
+**Core Idea**: Use dynamic clustering to group functionally similar experts → compress parameters within groups using shared bases and low-rank residuals → route first to groups then to experts, reducing all-to-all communication to a hierarchical two-level process.
 
 ## Method
 
 ### Overall Architecture
-The unified objective (Eq. 1) is $\min L_{\text{task}}+A_1 I_{\text{load}}+A_2 R_{\text{red}}+A_3 C_{\text{comm}}$, where the four learnable/designable variables are: Grouping, Parameterization (Param, Factors), and Routing strategy. The pipeline executes four tasks: (1) Online dual-similarity clustering → dividing $E$ experts into $G$ groups of $K=E/G$ each; (2) Shared base + low-rank residual compression within groups; (3) Two-level hierarchical routing; (4) Heterogeneous precision (FP16 base + INT4 residual) + dynamic offloading of idle groups.
+This paper addresses the bottlenecks of load imbalance, parameter redundancy, and communication overhead using a "group structure" as a unified abstraction. The objective is formulated as $\min L_{\text{task}}+A_1 I_{\text{load}}+A_2 R_{\text{red}}+A_3 C_{\text{comm}}$ (Eq. 1). Beyond the task loss, the three terms penalize load imbalance, parameter redundancy, and communication volume. The grouping mechanism, compressed parameterization, and routing strategy are all designable variables. A forward pass proceeds as follows: $E$ experts are clustered online into $G$ groups (each with $K=E/G$ experts) based on "parameter + activation" dual similarity → weights are compressed using a "shared base matrix + low-rank residuals" → incoming tokens are routed to a group and then to specific experts within that group → parameters are stored using heterogeneous precision (FP16 base + INT4 residuals) with idle groups offloaded to CPU/NVMe.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["E Experts<br/>Maintain Weight Vectors + Activation Centroids"] --> CL
+    subgraph CL["Online Dual-Similarity Clustering (Re-cluster every T steps)"]
+        direction TB
+        B["Fused Similarity<br/>S = α·Param Sim + (1−α)·Task Sim"] --> C["Threshold τ Pruning<br/>K-means++ into G Groups"]
+    end
+    CL --> D["Shared Base + Low-Rank Residual Compression<br/>Expert = Shared Base + Low-Rank Residual (r=16)"]
+    D --> E["Token Input"]
+    subgraph RT["Hierarchical Routing (Two-stage Dispatch)"]
+        direction TB
+        F["First Stage: Select Group (Search Space O(G))"] --> G["Second Stage: Select Expert within Group"]
+    end
+    E --> RT
+    RT --> H["Expert Output"]
+    D -.->|Storage Strategy| I["Heterogeneous Precision + Dynamic Offloading<br/>Base FP16 · Residual INT4 · Offload Idle Groups"]
+```
 
 ### Key Designs
 
-1. **Online Dual-Similarity Clustering**:
-    - **Function**: Re-groups experts every $T$ steps using "parameter + activation" similarity as a foundation for compression, routing, and memory strategies.
-    - **Mechanism**: Maintains two features for each expert $\mathcal{E}_i$: weight vector $\text{vec}(W_i)$ and activation centroid $\mu_i$ (updated via EMA: $\mu_i\leftarrow(1-\beta)\mu_i+\beta\bar{x}_i$, default $\beta=0.05$). Parameter similarity $S_{\text{param}}$ and task similarity $S_{\text{task}}$ are both cosine-based, fused by weight $\alpha$: $S=\alpha S_{\text{param}}+(1-\alpha)S_{\text{task}}$ (default $\alpha>0.5$). Every $T$ steps: use threshold $\tau$ (default 0.1) to prune low-similarity pairs for a neighbor graph to reduce $O(E^2)$ comparisons; perform K-means++ on distance $D=1-S$ to get $G$ groups; greedily relocate boundary experts if imbalanced. Cache $S_{\text{param}}$ for $m$ steps, recalculating only if weights change beyond $\epsilon$.
-    - **Design Motivation**: Parameter similarity reflects structural likeness, while activation similarity reflects input processing. Fusing them ensures groups can share parameters and be activated by similar tokens simultaneously. EMA + periodic re-clustering makes the grouping robust to distribution shifts compared to static grouping.
+**1. Online Dual-Similarity Clustering: Aligning Appearance and Purpose**
 
-2. **Structured Compression with Shared Base + Low-Rank Residual**:
-    - **Function**: Significantly reduces parameter storage within each group while preserving "fine-grained specialization."
-    - **Mechanism**: For each group $g$, compute the shared base $W_{\text{base}}^g=\frac{1}{|\mathcal{G}_g|}\sum_{i\in\mathcal{G}_g}W_i$. Each expert is represented as $\tilde W_i=W_{\text{base}}^g+A_i B_i^\top$, where $A_i\in\mathbb{R}^{d_{in}\times r}, B_i\in\mathbb{R}^{d_{out}\times r}$, with $r\ll \min(d_{in},d_{out})$ (default $r=16$). During the forward pass, $\tilde W_i x=W_{\text{base}}^g x+A_i(B_i^\top x)$. The base computation $W_{\text{base}}^g x$ can be reused for all experts in the group processing the same tokens. Compression ratio $CR=\frac{K d_{in} d_{out}}{d_{in} d_{out}+K r(d_{in}+d_{out})}$, approximately 6.6× for $d=4096, K=8, r=16$. Initialization uses $\text{TSVD}(W_i-W_{\text{base}}^g)$ for a warm start.
-    - **Design Motivation**: Since intra-group experts are functionally similar, their unique "expertise" likely resides in a low-rank subspace. Extracting the commonality into a base matrix and compressing specializations into rank-16 residuals achieves high compression with minimal diversity loss. Frobenius reconstruction error is kept under 1.5%.
+If experts are grouped only by parameter similarity, they may "look similar" but not be activated by the same tokens. Conversely, grouping only by activation similarity might force experts with vastly different weights into the same group, making low-rank compression ineffective. Ours maintains weight vectors $\text{vec}(W_i)$ and activation centroids $\mu_i$ (updated via EMA: $\mu_i\leftarrow(1-\beta)\mu_i+\beta\bar{x}_i$, default $\beta=0.05$) for each expert $\mathcal{E}_i$. Cosine similarities yield parameter similarity $S_{\text{param}}$ and task similarity $S_{\text{task}}$, fused as $S=\alpha S_{\text{param}}+(1-\alpha)S_{\text{task}}$ (default $\alpha>0.5$). This ensures groups are both compressible and activated by similar tokens.
 
-3. **Two-Level Hierarchical Routing + Heterogeneous Precision + Dynamic Offloading**:
-    - **Function**: Addresses system-side communication and memory bottlenecks.
-    - **Mechanism**: (a) **Hierarchical Routing**: The router first assigns tokens to groups ($O(G)$ instead of $O(E)$), then to specific experts within the group. This reduces cross-device all-to-all traffic as group-level dispatch acts as a coarse load balancer. (b) **Heterogeneous Precision**: $W_{\text{base}}^g$ uses FP16 (shared and precision-sensitive), while residuals $A_i, B_i$ use INT4 quantization (small magnitude, error-absorbable). (c) **Dynamic Offloading**: Inactive expert groups are offloaded from GPU to CPU/NVMe as needed, keeping peak VRAM close to dense models.
-    - **Design Motivation**: All three system optimizations leverage the same group structure. Clustering serves not just compression but also communication (group granularity), memory (group offloading), and precision (heterogeneous base/residual).
+Re-clustering occurs every $T$ steps: a threshold $\tau$ (default 0.1) prunes low-similarity pairs to reduce the $O(E^2)$ comparison; K-means++ is run on distance $D=1-S$. Boundary experts are greedily moved to balance group sizes. To amortize costs, $S_{\text{param}}$ is cached for $m$ steps, and similarity is only recalculated for experts whose weights change by more than $\epsilon$.
+
+**2. Shared Base + Low-Rank Residual Structured Compression**
+
+Since group members are functionally similar, their "expertise" likely resides in a low-rank subspace. For each group $g$, the shared base is the mean weight $W_{\text{base}}^g=\frac{1}{|\mathcal{G}_g|}\sum_{i\in\mathcal{G}_g}W_i$. Each expert is represented by a low-rank residual:
+
+$$\tilde W_i=W_{\text{base}}^g+A_i B_i^\top,\quad A_i\in\mathbb{R}^{d_{in}\times r},\; B_i\in\mathbb{R}^{d_{out}\times r},\; r\ll\min(d_{in},d_{out})$$
+
+With $r=16$, the forward pass is $\tilde W_i x=W_{\text{base}}^g x+A_i(B_i^\top x)$, where the base computation is shared across all experts in a group for the same tokens. This achieves a compression ratio (CR) of ~6.6× for $d=4096, K=8, r=16$. Residuals are initialized via $\text{TSVD}(W_i-W_{\text{base}}^g)$ after each re-clustering.
+
+**3. Hierarchical Routing: Two-Stage Dispatch**
+
+This design leverages the group structure to optimize communication. Flat top-$k$ routing is replaced by two levels: the first selects the group (reducing search space from $O(E)$ to $O(G)$), and the second selects the expert within the group. All-to-all communication is performed at the group level, significantly reducing cross-device traffic. Group-level dispatch acts as a coarse load balancer, structurally suppressing load variance.
+
+**4. Heterogeneous Precision + Dynamic Offloading**
+
+To keep peak memory close to dense model levels, Ours employs heterogeneous precision: $W_{\text{base}}^g$ is stored in FP16 due to its sensitivity, while $A_i, B_i$ are quantized to INT4 since residual errors are easily absorbed. Furthermore, inactive groups are dynamically offloaded from GPU to CPU/NVMe. Both strategies benefit from the group granularity established by clustering.
 
 ### Loss & Training
-Optimizes task loss plus three regularizers $I_{\text{load}}, R_{\text{red}}, C_{\text{comm}}$ as per Eq. 1. Parameters such as $T$, $m$, $\tau$, $\alpha$, $\beta$, $r$, $G$, and quantization bits are configurable. Default values ensure stable convergence on GLUE/WikiText-103.
+Training optimizes Eq. 1, balancing task loss with the three regulatory terms $I_{\text{load}}, R_{\text{red}}, C_{\text{comm}}$ using hyperparameters $A_1, A_2, A_3$. Parameters such as clustering period $T$, cache life $m$, and rank $r$ are configurable.
 
 ## Key Experimental Results
 
@@ -71,62 +92,62 @@ Optimizes task loss plus three regularizers $I_{\text{load}}, R_{\text{red}}, C_
 
 | Metric | Standard MoE | Ours |
 |---|---|---|
-| Total Parameters (Relative) | 1.0× | ≈ 0.20× (~80% reduction) |
+| Total Parameters (Relative) | 1.0× | ≈ 0.20× (~80% Reduction) |
 | Inference Throughput | 1.0× | 1.10–1.20× |
-| Expert Load Variance | 1.0× | < 0.33× (> 3× reduction) |
+| Expert Load Variance | 1.0× | < 0.33× (> 3× Reduction) |
 | GLUE / WikiText-103 Quality | baseline | Comparable |
-| Peak VRAM | High (Linear with experts) | Near dense model |
+| Peak Memory | High (Linear with experts) | Near-dense level |
 
 ### Ablation Study
 
 | Configuration | Observation |
 |---|---|
-| Low-rank residual only (no grouping) | Shared base fails, poor intra-group correlation, reconstruction error spikes |
-| Clustering only (no compression) | Improved communication and load variance, but no parameter reduction |
-| Hierarchical routing only (fixed experts) | Reduced communication, but redundancy and load shift persist |
-| Full Framework | Simultaneously reaches Pareto front for all three system metrics |
-| $r=4$ | High CR but reconstruction error > 1.5%, quality drops |
-| $r\in\{16, 32\}$ | Reconstruction error plateaus; $r=16$ offers best cost-performance |
+| Low-rank residuals only (No grouping) | Shared base fails; high reconstruction error |
+| Clustering only (No compression) | Communication and load variance improved; params unchanged |
+| Hierarchical routing only | Lower traffic; parameter redundancy and load drift remain |
+| Full Framework | All system metrics reach Pareto frontier |
+| $r=4$ | High CR; reconstruction error > 1.5%; quality drop |
+| $r\in\{16, 32\}$ | Error plateaus; $r=16$ is most cost-effective |
 
 ### Key Findings
-- $r=16$ is the sweet spot: higher values (32) barely reduce reconstruction error while linearly increasing VRAM/latency; lower values (4/8) lack sufficient residual capacity.
-- Both similarity components are essential: removing $S_{\text{param}}$ leads to large intra-group weight variance and residual failure; removing $S_{\text{task}}$ causes fragmented activation patterns, making hierarchical routing essentially random.
-- Using router logits as token semantic embeddings provides a cheap, LLM-native semantic signal for clustering, enabling the "online learning" of functional grouping.
+- $r=16$ is the "sweet spot": higher ranks increase latency linearly with minimal error reduction; lower ranks lack capacity for residuals.
+- Both similarity metrics are necessary: removing $S_{\text{param}}$ leads to poor compression; removing $S_{\text{task}}$ makes hierarchical routing behave like random partitioning.
+- Using router logits as semantic embeddings provides an efficient, LLM-native signal for online functional clustering.
 
 ## Highlights & Insights
-- Elevates grouping from a "post-hoc compression trick" to a "first-class architectural citizen"—a dynamic grouping mechanism driving compression, routing, and memory policies.
-- The shared base + low-rank residual approach ("centralize commonality + retain individuality") is conceptually aligned with LoRA/MoLE/PERFT but applied internally to experts and maintained dynamically during training.
-- Heterogeneous precision (FP16 base + INT4 residual) exploits the fact that residuals have small magnitudes, avoiding the "accuracy cliff" of uniform INT4 quantization. This can be extended to any "backbone + adapter" compression scenario.
+- Promotes grouping from a "post-hoc compression trick" to a "first-class architectural citizen"—a dynamic grouping mechanism that simultaneously drives compression, routing, and memory policies.
+- The "Shared Base + Low-Rank Residual" approach follows the lineage of LoRA/MoLE but is applied internally to experts and maintained dynamically during training.
+- Heterogeneous precision (FP16 base + INT4 residual) exploits the physical fact that residuals are small in magnitude, avoiding the performance cliff of uniform INT4 quantization.
 
 ## Limitations & Future Work
-- Online clustering involves $O(E^2)$ comparisons; while mitigated by neighbor graphs and caching, it may become an overhead for thousands of experts.
-- Evaluation is limited to GLUE/WikiText-103, which is small compared to modern MoE LLMs (e.g., Mixtral, DeepSeek-V3), leaving scalability evidence limited.
-- Re-clustering causes momentary "oscillations" in low-rank residual warm starts; while SVD helps, stability in long training runs requires further validation.
-- The interaction between dynamic offloading and expert parallelism in multi-node training is complex and not fully discussed relative to ZeRO-3/FSDP.
+- Online clustering entails $O(E^2)$ overhead; although mitigated by pruning and caching, its impact on training throughput needs verification at scales like DeepSeek-MoE.
+- Evaluation is limited to GLUE/WikiText-103, which is small compared to modern MoE LLM training scales.
+- Re-clustering causes "spikes" in warm-started residuals; stable training on larger runs needs more investigation.
+- Interaction between dynamic offloading and expert parallelism in multi-node setups remains unexplored.
 
 ## Related Work & Insights
-- **vs MoE-Lite**: Treats experts as independent; Ours uses clustering to discover inter-expert similarity for shared bases, achieving higher compression while retaining specialization.
-- **vs Sub-MoE / Expert-Fusion**: These perform static/permanent merging, losing specialization; Ours uses dynamic clustering + residuals to preserve individuality without permanent information loss.
-- **vs Tutel / SmILE / MoE-Lightning**: These optimize communication for fixed architectures; Ours restructures expert organization to provide group-level granularity for system optimization.
-- **vs StableMoE / Switch-loss**: These modify router behavior to suppress imbalance; Ours provides structural suppression (group dispatch is a coarse balancer) without depending solely on auxiliary losses.
+- **vs MoE-Lite**: Treats experts independently; Ours uses clustering to discover inter-expert similarity for shared compression, achieving higher ratios.
+- **vs Sub-MoE / Expert-Fusion**: These perform static/permanent merging, losing specialization; Ours uses dynamic clustering + residuals to preserve specialization.
+- **vs Tutel / SmILE**: They focus on communication for fixed architectures; Ours restructures expert organization to provide better granularity for system optimization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Dynamic clustering as a unified carrier for compression, routing, and memory is a rare "unified prescription" in MoE co-design.
-- Experimental Thoroughness: ⭐⭐⭐ GLUE/WikiText-103 are small; lacks validation on massive MoE LLMs, though ablations and hyperparameter sweeps are relatively complete.
-- Writing Quality: ⭐⭐⭐⭐ The trilemma narrative is clear, Eq. 1 explicitly defines targets and variables, and the methodology is well-structured.
-- Value: ⭐⭐⭐⭐ ~80% parameter reduction, 10–20% throughput gain, and 3× lower load variance is a highly attractive combination for MoE deployment.
+- Novelty: ⭐⭐⭐⭐⭐ Dynamic clustering as a unified host for compression, routing, and memory is a rare "unified prescription."
+- Experimental Thoroughness: ⭐⭐⭐ Datasets are small; lacks validation on massive MoE LLMs, though ablation studies are complete.
+- Writing Quality: ⭐⭐⭐⭐ The trilemma narrative is clear, and Eq. 1 explicitly defines objectives.
+- Value: ⭐⭐⭐⭐ ~80% parameter reduction with 10–20% throughput gain and 3× lower load variance is a highly attractive engineering direction for MoE deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICML 2026\] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
 - [\[AAAI 2026\] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis](../../AAAI2026/model_compression/camera_multi-matrix_joint_compression_for_moe_models_via_mic.md)
 - [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](../../ICLR2026/model_compression/sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
-- [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
 
 </div>
 

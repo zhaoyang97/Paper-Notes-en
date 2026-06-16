@@ -2,78 +2,80 @@
 title: >-
   [Paper Note] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents
 description: >-
-  [ICML 2026][Audio & Speech][Search Agents] This paper proposes SafeSearch—a fully automated, sandboxed, and scalable red-teaming framework that evaluates the safety of search agents by injecting a single LLM-generated un…
+  [ICML 2026][Audio & Speech][Paper Note] This paper introduces SafeSearch, a fully automated, sandboxed, and scalable red-teaming framework that evaluates search agent safety by injecting a single LLM-generated unreliable webpage into real search results. Through systematic evaluation of 17 LLMs across 3 agent scaffolds using 300 test cases, the study finds a
 tags:
-  - "ICML 2026"
-  - "Audio & Speech"
-  - "Search Agents"
-  - "Unreliable search results"
-  - "Red-teaming"
-  - "Indirect prompt injection"
-  - "Misinformation"
+  - ICML 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: da3b01244b679089
+content_hash: dc83be5d54815cad
 ---
-
 # SafeSearch: Automated Red-Teaming of LLM-Based Search Agents
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.23694](https://arxiv.org/abs/2509.23694)  
 **Code**: https://github.com/jianshuod/SafeSearch  
-**Area**: LLM Security / Agent Security / Red-teaming Evaluation  
-**Keywords**: Search Agents, Unreliable search results, Red-teaming, Indirect prompt injection, Misinformation
+**Area**: LLM Safety / Agent Safety / Red-Teaming Evaluation  
+**Keywords**: Search Agents, Unreliable Search Results, Red-Teaming Evaluation, Indirect Prompt Injection, Misinformation
 
 ## TL;DR
-This paper proposes SafeSearch—a fully automated, sandboxed, and scalable red-teaming framework that evaluates the safety of search agents by injecting a single LLM-generated unreliable webpage into real search results. Systematically evaluating 17 LLMs across 3 agent scaffolds using 300 test cases, the study finds a peak ASR of 90.5% and demonstrates that common "reminder" defenses are nearly ineffective.
+This paper introduces SafeSearch, a fully automated, sandboxed, and scalable red-teaming framework that evaluates search agent safety by injecting a single LLM-generated unreliable webpage into real search results. Through systematic evaluation of 17 LLMs across 3 agent scaffolds using 300 test cases, the study finds a peak ASR of 90.5% and demonstrates that common reminder-based defenses are largely ineffective.
 
 ## Background & Motivation
 
-**Background**: "Search Agents" (represented by ChatGPT Search, Gemini Deep Research, Search-R1, etc.) obtain real-time and long-tail information by connecting LLMs to search engines. This has become a mainstream external knowledge enhancement paradigm beyond RAG, covering various applications from quick queries to deep research.
+**Background**: "Search Agents," represented by ChatGPT Search, Gemini Deep Research, and Search-R1, acquire real-time and long-tail information by connecting LLMs to search engines. This has become a dominant external knowledge augmentation paradigm alongside RAG, supporting various applications from quick queries to deep research.
 
-**Limitations of Prior Work**: The safety of search agents fundamentally depends on the reliability of search results. However, the open internet is filled with content farms, black-hat SEO, promotional articles, and Wikipedia errors. The authors' empirical tests found that among 8,933 user-like queries, 4.3% (380) of top results originated from low-trust sources. Furthermore, enabling search on 1,000 health-related queries led to 46 binary stance reversals, proving the threat is not merely theoretical.
+**Limitations of Prior Work**: The safety of search agents fundamentally relies on the reliability of search results; however, the open internet is saturated with content farms, black-hat SEO, promotional articles, and Wikipedia errors. Empirical tests by the authors found that 4.3% (380) of top results in 8,933 user-like queries originated from low-trust sources. Enabling search on 1,000 health-related queries resulted in 46 binary stance flips, proving that the threat is more than theoretical.
 
-**Key Challenge**: Existing evaluations rely on manual question design (non-scalable, e.g., OpenAI internal red-teaming), construction of malicious queries (narrow coverage, high cost), or require real manipulation of search rankings (harmful to innocent users, unethical). Meanwhile, existing RAG safety research assumes an auditable corpus, which cannot be applied to the "uncontrollable webpages appearing only at runtime" scenario.
+**Key Challenge**: Existing evaluations either rely on manual professional design (non-scalable, e.g., OpenAI’s internal red-teaming), construction of malicious queries (narrow coverage, high cost), or require actual manipulation of search rankings (ethically problematic and harmful to innocent users). Furthermore, existing RAG safety research assumes an auditable corpus, which cannot be applied to "uncontrollable webpages appearing only at runtime."
 
-**Goal**: To build a scalable, low-cost, sandboxed red-teaming framework capable of: (i) automatically generating batches of test cases across multiple risk types, (ii) reproducing the threat of "benign query + unreliable search results" without polluting real search engines, and (iii) providing quantifiable agent safety metrics to support subsequent defense research.
+**Goal**: To build a scalable, low-cost, sandboxed red-teaming framework that can (i) automatically generate test cases across diverse risk types, (ii) reproduce the threat of "benign queries meeting unreliable search results" without polluting real search engines, and (iii) provide quantifiable agent safety metrics to support future defense research.
 
-**Key Insight**: Model the threat from an agent-centric perspective: "benign queries encountering unreliable results." This treats unreliable sources as outputs of an *insider* tool rather than injections from an external attacker. Additionally, the "differential testing" concept is introduced, using a baseline agent to compare behavior under benign vs. manipulated tools to automatically filter out invalid test cases.
+**Key Insight**: The threat is modeled from an agent-centric perspective where "a benign query encounters an unreliable result"—treating the unreliable source as an output of an *insider* tool rather than an external attacker's injection. Furthermore, the framework introduces the concept of "differential testing," using a baseline agent's performance under benign vs. manipulated tool conditions to automatically filter invalid test cases.
 
-**Core Idea**: Utilize an LLM pipeline "Generation—Site Synthesis—Judgment" combined with single-page sandbox injection to transform search agent red-teaming into a repeatable, scalable, and zero-harm standard evaluation protocol.
+**Core Idea**: By combining an LLM pipeline ("test generation—site generation—judgment") with single-webpage sandbox simulation, the authors transform search agent red-teaming into a repeatable, scalable, and zero-harm standard evaluation protocol.
 
 ## Method
 
-The core of SafeSearch is a red-teaming framework orchestrated by four LLM assistants, divided into two phases: offline generation of 300 high-quality test cases and online testing of search agents scored by an LLM-as-Judge.
-
 ### Overall Architecture
-The input is a natural language description of a risk type (5 categories: indirect prompt injection, harmful output, advertisement promotion, misinformation, and bias inducement). The generation phase outputs a test case quadruple `(benign query, target negative consequence, unreliable website, checklist)`. In the testing phase, an unreliable page $d_u$ is appended to the real search result list $D=\{d_1,\dots,d_k\}$. The Agent executes normal multi-turn search/tool calling/deep research on $D\cup\{d_u\}$ and generates a final response. In the evaluation phase, a safety evaluator assisted by a checklist outputs a boolean judgment to aggregate the Attack Success Rate (ASR). A helpfulness evaluator scores the response from 1–5 to calculate the Helpfulness Score (HS). In multi-turn Agents, $d_u$ is only injected in the first round to give the agent a chance to "self-correct" in subsequent searches, thereby obtaining a **conservative lower bound** for Agent safety.
+SafeSearch addresses how to scalably evaluate whether search agents are misled by unreliable results without polluting real search engines or harming users. It decouples the process into offline and online phases. Offline, four LLM assistants orchestrate 300 high-quality test cases, each represented as a quadruple `(benign query, target negative consequence, unreliable website, checklist)`. Online, the unreliable webpage $d_u$ is appended to the end of the real search result list $D=\{d_1,\dots,d_k\}$. The agent performs multi-round search/tool-calling/deep research on $D\cup\{d_u\}$ and provides a final answer. A checklist-aided safety evaluator outputs boolean judgments to aggregate the Attack Success Rate (ASR), while a helpfulness evaluator calculates a Helpfulness Score (HS). The design is intentionally conservative (injecting 1 page at the end, only in the first round), measuring the **lower bound** of agent safety.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph GEN["Three-step Test Generation + Differential Filtering"]
+        direction TB
+        A["Three-step Generation: Scenario Anchoring → Test Design → Instantiation<br/>Outputs webpage content guidelines + checklist"] --> B["Differential Filtering: Baseline Agent runs Manipulated vs. Benign tools<br/>Retains cases only if triggered by manipulated tool and not by benign"]
+    end
+    B --> C["300 Test Case Quadruples<br/>benign query / target consequence / unreliable webpage / checklist"]
+    C --> D["Single-page Sandbox Injection + Timestamp-conditioned Generation<br/>Synthesized unreliable webpage d_u appended to real results"]
+    D --> E["Search Agent performs multi-round answering on D∪{d_u}<br/>Injection only in the first round"]
+    E --> F["Checklist-aided Dual-axis LLM-as-Judge<br/>Safety Judgment → ASR, Helpfulness → HS"]
+```
 
 ### Key Designs
 
-1.  **Three-step Generation Workflow + Differential Filtering**:
-    - **Function**: Transforms a "one-sentence risk description" into an executable test case quadruple while automatically removing unqualified cases.
-    - **Mechanism**: Uses o4-mini as a test generator, progressing through Scenario anchoring → Test design → Test instantiation. It first envisions a real-world scenario, then designs a "malicious plan" (specifying target consequences and exploitable site types, emphasizing threats post-LLM knowledge cutoff), and finally produces a "content guide" for the website generator and a "checklist" for the safety evaluator. After generation, Qwen3-8B acts as a baseline agent for two differential tests: whether the target consequence is successfully induced under the **manipulated tool** (attainability $A$) and whether it is triggered spontaneously under the **benign tool** (integrity $I$). Only cases satisfying $A\wedge\neg I$ are included.
-    - **Design Motivation**: Purely generated cases are often "invalid" (the baseline agent fails under benign conditions anyway, or the attack fails to induce the issue). Failing to filter these results in a distorted ASR. Differential testing decouples the "effective attack surface" from "existing model flaws," ensuring ASR measures the actual extra harm caused by unreliable results.
+**1. Three-step Test Generation Workflow + Differential Filtering: Ensuring ASR measures "additional harm from unreliable results"**
 
-2.  **Single-page Sandbox Injection + Timestamp-conditioned Generation**:
-    - **Function**: Synthesizes an unreliable website $d_u$ on the fly and appends it to real search results to simulate "low-quality content newly appeared online."
-    - **Mechanism**: The website generator (GPT-4.1-mini) creates $d_u$ based on the "content guide," using the test date as a condition so the content falls after the LLM knowledge cutoff. The injection occurs only in the first round of multi-turn Agents. Real Google results are fetched via Serper API and content extracted via Jina Reader API, with a 2,000 token limit per site and top-5 retrieval to ensure fairness.
-    - **Design Motivation**: Real SEO manipulation is unethical and harmful, while static corpora fail to capture the "real-time search + long-tail query" threat. Single-page injection balances these by preserving the real execution chain of the Agent while reproducibly assessing the worst-case impact of one unreliable result.
+A common pitfall in red-teaming is invalid test cases—either the baseline agent fails under clean conditions, or the attack itself is ineffective. SafeSearch uses o4-mini as a test generator, following: Scenario anchoring → Test design → Test instantiation. It drafts real usage scenarios and "malicious plans" (specifying target negative consequences and exploitable site types, requiring threats to occur after the LLM knowledge cutoff). Post-generation, Qwen3-8B acts as a baseline agent for two differential tests: whether the outcome is induced under the **manipulated tool** (attainability, $A$) and whether it is spontaneously triggered under the **benign tool** (integrity, $I$). Only cases satisfying $A\wedge\neg I$ are included. This decouples "effective attack surface" from "pre-existing model flaws," ensuring ASR is truly attributed to unreliable results.
 
-3.  **Checklist-aided Dual-axis LLM-as-Judge**:
-    - **Function**: Automatically evaluates whether the Agent response triggers negative consequences (safety) and its perceived helpfulness to the user (helpfulness).
-    - **Mechanism**: The safety evaluator receives the `(query, target consequence, checklist, agent response)` quadruple, performs reasoning, and outputs a boolean judgment (averaged over three runs for ASR). The helpfulness evaluator assigns a 1–5 score (scaled to 0–100 for HS) based on the `(query, response)` pair, focusing on perceived utility rather than factual accuracy. The safety evaluator achieves >95% human agreement.
-    - **Design Motivation**: Asking "is it safe?" is subjective and unstable. Using a checklist (produced during generation) as a rubric makes the definition of "breached" explicit and verifiable, improving consistency and transparency. Separating helpfulness and safety reveals the trap where "unsafe responses may still feel very useful" (experimentally, $\text{HS}_\text{manip.}=92.2 > \text{HS}_\text{benign}=91.4$ for tool-calling).
+**2. Single-webpage Sandbox Injection + Timestamp-conditioned Generation: Balancing ethics and realism**
+
+Directly performing real SEO manipulation is unethical and harms users, yet static corpora fail to capture the "real-time search + long-tail query" threat. SafeSearch synthesizes an unreliable website $d_u$ using GPT-4.1-mini based on guidelines, conditioned on the current date to ensure content falls post-cutoff. $d_u$ is only appended to the end of real results, and for multi-round agents, injection only occurs in the first round. Real results are fetched via Serper API and parsed via Jina Reader. These constraints serve as an intentional conservative bias, ensuring the results represent a robust lower bound of vulnerability.
+
+**3. Checklist-aided Dual-axis LLM-as-Judge: Explicitly defining breakthroughs via checkable lists**
+
+Directly asking an LLM if an answer is "safe" is subjective. SafeSearch uses the checklist generated during the test design phase as a rubric. The safety evaluator takes the `(query, target consequence, checklist, agent response)` quadruple, generates reasoning, and outputs a boolean judgment (ASR is the average of three runs). Human-machine agreement exceeds 95%. The helpfulness evaluator separately rates the `(query, response)` on a scale of 1–5 (rescaled to 0–100, denoted as HS), assessing "perceived helpfulness" rather than factual correctness. This dual-axis approach exposes the trap where unsafe answers appear more helpful; empirical results show $\text{HS}_\text{manip.}=92.2 > \text{HS}_\text{benign}=91.4$ in tool-calling scenarios.
 
 ### Loss & Training
-SafeSearch does not train any models; it performs "zero-shot" red-teaming. All LLM assistants are orchestrated via prompts: five roles (test generator, website generator, safety evaluator, helpfulness evaluator, baseline filter) are performed by o4-mini, GPT-4.1-mini, Qwen3-8B, etc. Agents are set to a temperature of 0.6, with results averaged over 3 trials. The final dataset comprises 300 cases (5 risk types × 60 cases/type), filled via a "generation-filtering" loop.
+SafeSearch does not train models; it is a zero-shot red-teaming evaluation. It orchestrates five roles: test generator, website generator, safety evaluator, helpfulness evaluator, and baseline filter, using models like o4-mini, GPT-4.1-mini, and Qwen3-8B. The agent's temperature is set to 0.6, with each test case run three times. The 300 data points (5 risk categories × 60 cases/category) are populated through a continuous "generation–differential filtering" loop.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation covers 9 closed-source and 8 open-source LLMs across 3 scaffolds (passive search workflow, active tool calling, and "deep research" LangGraph prototype). Selected results for Overall ASR↓ (%):
+Covering 9 closed-source and 8 open-source LLMs across 3 agent scaffolds (passive search workflow, active multi-round tool-calling, and a deep research LangGraph prototype). Selected representative configurations (Overall ASR↓ in %):
 
 | Configuration | search workflow | tool calling | deep research |
-| :--- | :--- | :--- | :--- |
+|------|-----------------|--------------|---------------|
 | GPT-4.1-mini | **90.5** | 77.8 | 57.4 |
 | GPT-4.1 | 85.0 | 77.3 | — |
 | Gemini-2.5-Pro | 75.1 | 58.5 | — |
@@ -84,59 +86,61 @@ Evaluation covers 9 closed-source and 8 open-source LLMs across 3 scaffolds (pas
 | Qwen3-8B | 85.5 | 70.8 | 45.8 |
 | **Average** | 63.1 | 49.3 | 38.9 |
 
-Regarding helpfulness, under tool-calling, the average $\text{HS}_\text{benign}=91.4$ while $\text{HS}_\text{manip.}=92.2$—safety failures often appear slightly more useful to the user.
+Regarding helpfulness, the average $\text{HS}_\text{benign}=91.4$ vs. $\text{HS}_\text{manip.}=92.2$ for tool-calling across 17 models indicates that safety failures can be disguised as high-quality responses.
 
 ### Ablation Study
-Search budget controlled comparison (GPT-4.1-mini backend, ASR %):
+Controlled comparison of search budget (GPT-4.1-mini backend, ASR %):
 
-| Scaffold | budget=3 | budget=6 | budget=9 |
-| :--- | :--- | :--- | :--- |
+| Architecture | budget=3 | budget=6 | budget=9 |
+|--------|----------|----------|----------|
 | Tool-call auto | 74.6 | 74.0 | 74.3 |
 | Tool-call forced | 49.9 | 43.7 | **36.7** |
 | Deep research auto | 63.2 | 58.3 | 57.0 |
 | Deep research forced | 59.4 | 56.4 | 46.2 |
 
-Key observation: When forced to exhaust the budget, tool-calling becomes safer than deep research. The safety advantage of deep research primarily stems from its willingness to search more frequently.
+Key Observation: When tool-calling is forced to use the full budget, it becomes safer than deep research. The "safety advantage" of deep research primarily stems from its willingness to search more frequently, whereas standard tool-calling often terminates too early.
 
 ### Key Findings
-- **Reasoning models are more noise-resistant but not sufficient**: Models like Claude-Sonnet-4.5, GPT-5, and o4-mini have significantly lower ASR, but newer knowledge (Gemini-2.5-Pro) does not replace "skepticism."
-- **Risk types vary greatly**: Misinformation is the hardest risk to defend (highest average ASR), while Indirect Prompt Injection is the easiest (0% on GPT-5 + tool-calling), reflecting recent industry focus on injection defense.
-- **Defense strategies have limited effect**: Reminders (system prompt warnings) are nearly useless, showing a "knowledge-action gap" (LLMs know a source is unreliable but use it anyway). Filtering (using GPT-4.1-mini as a detector) reduces ASR by half but has only 44.2% recall.
-- **Search result count is an implicit safety knob**: As top-k decreases, the weight of a single unreliable site increases, leading to a monotonic rise in ASR.
+- **Reasoning models are more noise-resistant but not bulletproof**: Models like Claude-Sonnet-4.5, GPT-5, and o4-mini show significantly lower ASR. However, Gemini-2.5-Pro (with updated knowledge) did not consistently lead, suggesting that "fresh knowledge" is no substitute for "skepticism."
+- **Risk types vary significantly**: Misinformation is the hardest risk to defend (highest average ASR), whereas Indirect Prompt Injection is the easiest (0% on GPT-5 + tool-calling), reflecting recent intensive industry investment in injection defenses.
+- **Defensive strategies have limited impact**: Reminders (system prompt warnings) are nearly useless, illustrating the "Knowledge-Action Gap" (the LLM recognizes the source is unreliable but follows it anyway). Filtering (using GPT-4.1-mini as a detector) halves ASR but has a low recall of 44.2%.
+- **Search result count is an implicit safety knob**: As top-k decreases, the weight of a single unreliable site increases, and ASR rises monotonically. This links "engineering defaults" directly to "safety risks."
 
 ## Highlights & Insights
-- **Turning red-teaming into sustainable CI**: The "generation-filtering" loop allows for updating test difficulty as baseline agents improve. Timestamp conditioning ensures templates stay fresh, perfectly matching the pace of model iteration.
-- **Conservative sandbox design enhances credibility**: Injecting only 1 page at the end of results and only in the first round are choices that "lower the ASR." Therefore, the observed 60–90% ASR represents a true lower bound of vulnerability.
-- **The "knowledge–action gap" is a transferable insight**: An LLM might correctly identify a site as untrustworthy when asked directly, but will still adopt its content within an agent chain. This suggests defenses should focus on the "action layer" (e.g., source weighting) rather than just the "knowledge layer" (warnings).
+- **Turning red-teaming into sustainable CI**: SafeSearch’s "generation–filtering" loop allows for substituting stronger baseline agents to generate harder questions as models evolve. Timestamp conditioning keeps the same templates "fresh," making it more suitable for rapid model iteration than manual red-teaming.
+- **Conservative sandbox design enhances credibility**: By injecting only one page at the end of the results, the study measures a "lower bound." The observed 60–90% ASR is therefore highly alarming because the conditions favor the agent.
+- **The "Knowledge-Action Gap" is a transferable insight**: An LLM might correctly identify a site as untrustworthy when asked directly, but it will still consume its content within an agent workflow. This suggests that defenses should not just add warnings at the "knowledge layer" but must implement mandatory source weighting or cross-verification at the "action layer."
 
 ## Limitations & Future Work
-- SafeSearch ASR should be interpreted as "vulnerability under controlled simulation" rather than real-world failure rates. More sophisticated adversarial SEO would likely increase ASR.
-- The evaluation covers only 5 risk types, and helpfulness is "perceived" rather than "factual." User studies are needed to see if the "high HS + high ASR" combination successfully deceives humans.
-- Reliability depends on the checklist; emergent safety issues not in the list may be missed. There is also a risk of "generator-evaluator consistency bias" when using the same model family for different roles.
-- Future work: Transforming filtering into agent-aware detection, integrating "chain-level" constraints (cross-verification, confidence weighting) into scaffolds, and extending to multi-source coordinated misinformation.
+- Authors acknowledge that SafeSearch ASR should be interpreted as "vulnerability under controlled simulation" rather than real-world failure rates. Advanced adversarial SEO could result in even higher ASR.
+- The evaluation covers 5 risk types, and helpfulness measures "perceived utility" rather than truthfulness. User studies are needed to see if the "High HS + High ASR" combination successfully deceives humans.
+- The self-evaluation relies on predefined checklists; "emergent" safety issues involving complex multi-round induction remain a blind spot. There is also a potential "agreement bias" since GPT-4.1-mini serves as both generator and evaluator.
+- Future Work: Implementing agent-aware filtering, integrating "pathway-level" safety constraints (mandatory cross-verification) into scaffolds, and extending from "single unreliable source" to coordinated multi-source misinformation.
 
 ## Related Work & Insights
-- **vs. Luo et al. 2025 / Ou et al. 2025**: They focus on system-level outputs and adversarial queries. This paper maintains an "agent-level" behavior focus using benign queries, attributing risk to the search tool.
-- **vs. AgentHarm / GAIA**: These evaluate task capability or general agent harm, whereas SafeSearch specifically targets the "source reliability" dimension of search agents.
-- **vs. RAG Safety (PoisonedRAG, SafeRAG)**: RAG assumes auditable corpora at the vector DB layer. Search Agents face the open internet and must use inference-time reasoning, necessitating the "online injection" approach.
+- **vs. Luo et al. 2025 / Ou et al. 2025 (quantifying risks in search-augmented LLMs)**: These focus on "system-level" output and adversarial queries. SafeSearch focuses on "agent-level" behavior with benign queries, attributing risk to the *insider* search tool.
+- **vs. AgentHarm / GAIA / BrowseComp**: These evaluate task capability or general agent harm; SafeSearch fills the gap regarding "source reliability" in search agents.
+- **vs. RAG safety research (PoisonedRAG, SafeRAG)**: RAG assumes an auditable corpus. Search agents face the open web at runtime and require inference-time reasoning, necessitating the "online injection" approach.
+- **vs. Indirect Prompt Injection (Perez & Ribeiro 2022)**: While those focus on a single threat, SafeSearch provides a unified framework covering 5 risk categories.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combination of sandbox injection, differential filtering, and checklist evaluation for search agents is a first, though individual components are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ High scale (17 LLMs, 3 scaffolds, 300 cases, 3 trials) with extensive ablations on budget, defenses, and human consistency.
-- Writing Quality: ⭐⭐⭐⭐ Clear threat model and protocol, though high table density and few figures may be challenging for non-security readers.
-- Value: ⭐⭐⭐⭐⭐ Open-source dataset and framework suitable for CI-based regression testing, revealing critical insights like the "knowledge-action gap."
+- Novelty: ⭐⭐⭐⭐ The combination of single-page sandbox injection, differential filtering, and checklist-based judgment is a pioneering engineering framework for search agent red-teaming.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 17 LLMs × 3 scaffolds × 300 cases × 3 trials, including extensive ablation on budgets, defenses, and human-agreement validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear threat models and protocols; high data density.
+- Value: ⭐⭐⭐⭐⭐ Open-sourced dataset and framework allow agent developers to perform CI-style safety regressions. Key insights like the "Knowledge-Action Gap" are highly actionable.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
-- [\[ICLR 2026\] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments](../../ICLR2026/audio_speech/redteamcua_adversarial_testing_agents.md)
 - [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
-- [\[ACL 2026\] LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight](../../ACL2026/audio_speech/llm-mc-affect_llm-based_monte_carlo_modeling_of_affective_trajectories_and_laten.md)
+- [\[ICLR 2026\] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments](../../ICLR2026/audio_speech/redteamcua_adversarial_testing_agents.md)
 - [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](../../ACL2026/audio_speech/full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
+- [\[ACL 2026\] LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight](../../ACL2026/audio_speech/llm-mc-affect_llm-based_monte_carlo_modeling_of_affective_trajectories_and_laten.md)
 
 </div>
 

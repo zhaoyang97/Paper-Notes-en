@@ -2,77 +2,95 @@
 title: >-
   [Paper Note] MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Scientific Ideation] Explicitly models scientific ideation as a two-stage conditional reasoning task of 「context → motivation → reasoning → method」. Based on an SFT cold start…
+  [ACL 2026][LLM (Other)][Motivation-grounded Reasoning] Scientific ideation is explicitly modeled as a two-stage conditional reasoning task: "context → motivation → reasoning → method." Based on SFT cold-starting, a 14B model is trained using GRPO and a pair of novel verifiable rewards (**Entropy-Aware Information Gain, EAIG** and **Contrastive Semantic Gain, CSG**). The mo
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Scientific Ideation"
-  - "Motivation-grounded Reasoning"
-  - "GRPO"
-  - "Entropy-Aware Information Gain"
-  - "Contrastive Semantic Gain"
+  - ACL 2026
+  - LLM (Other)
+  - Motivation-grounded Reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: ca6ec18f67b7fe92
+content_hash: e35bc1e7fde8bfbb
 ---
-
 # MoRI: Learning Motivation-Grounded Reasoning for Scientific Ideation in Large Language Models
 
 **Conference**: ACL 2026  
 **arXiv**: [2603.19044](https://arxiv.org/abs/2603.19044)  
-**Code**: See paper GitHub (mentioned as available, no specific URL provided)  
+**Code**: See the paper's GitHub (The paper mentions "The code is available on GitHub" but provides no specific URL)  
 **Area**: Scientific Ideation / LLM Reasoning / RL for Reasoning  
 **Keywords**: Scientific Ideation, Motivation-grounded Reasoning, GRPO, Entropy-Aware Information Gain, Contrastive Semantic Gain  
 
 ## TL;DR
-Explicitly models scientific ideation as a two-stage conditional reasoning task of 「context → motivation → reasoning → method」. Based on an SFT cold start, a 14B model is trained using GRPO with two novel verifiable rewards (**Entropy-Aware Information Gain EAIG** + **Contrastive Semantic Gain CSG**). It outperforms GPT-4o, Claude-3.5-Sonnet, and agentic frameworks like AI-Scientist-V2 on held-out ICLR/NeurIPS test sets.
+Scientific ideation is explicitly modeled as a two-stage conditional reasoning task: "context → motivation → reasoning → method." Based on SFT cold-starting, a 14B model is trained using GRPO and a pair of novel verifiable rewards (**Entropy-Aware Information Gain, EAIG** and **Contrastive Semantic Gain, CSG**). The model outperforms agentic frameworks such as GPT-4o, Claude-3.5-Sonnet, and AI-Scientist-V2 on held-out test sets from ICLR/NeurIPS.
 
 ## Background & Motivation
 
-**Background**: LLMs are evolving from chatbots to "scientific assistants/autonomous researchers," with scientific ideation (input research context, output new methods) regarded as the most upstream task. Existing solutions primarily rely on **agentic pipelines**—AI-Scientist-V2, ResearchAgent, and VirSci use multi-agent debate, tree search, or peer review to simulate human research workflows.
+**Background**: LLMs are evolving from chatbots toward "scientific assistants / autonomous researchers," with scientific ideation (generating new methods from research context) considered the most upstream task. Existing solutions primarily rely on **agentic pipelines**—such as AI-Scientist-V2, ResearchAgent, and VirSci—which simulate the human research process through multi-agent debates, tree search, or peer reviews.
 
-**Limitations of Prior Work**: (1) These agentic frameworks essentially use heuristic scaffolding to "patch" base LLMs into researchers without improving the model's intrinsic scientific reasoning capability, often resulting in **superficial conceptual recombinations** lacking technical depth; (2) Large-scale human evaluations (Si et al. 2024 / Kumar et al. 2025) confirm that while base LLMs generate "new ideas," they lack implementation details and feasibility; (3) Sutton’s Bitter Lesson warns that external scaffolding is unsustainable; reasoning must be internalized.
+**Limitations of Prior Work**: (1) These agentic frameworks essentially use heuristic scaffolding to "patch together" base LLMs into researchers without enhancing the model's intrinsic scientific reasoning capabilities. The outputs often consist of **superficial conceptual recombinations** lacking technical depth. (2) Large-scale human evaluations (Si et al. 2024 / Kumar et al. 2025) confirm that native LLMs capture "new ideas" but struggle with implementation details and feasibility. (3) Sutton’s *Bitter Lesson* warns that relying on external scaffolding is unsustainable; reasoning must be internalized.
 
-**Key Challenge**: Scientific ideation has no "standard answer"—the same context can lead to multiple valid Method sections, which vary significantly in literal wording. Consequently, RL training faces three difficulties: (a) Absence of a deterministic verifier (unlike math/code with unit tests); (b) High noise in rewards based on reference probability or perplexity; (c) LLM-as-a-judge rewards are expensive and prone to reward hacking.
+**Key Challenge**: Scientific ideation lacks a "standard answer"—a single context can have multiple valid Method sections, and these methods vary significantly in wording. This presents three difficulties for RL training: (a) lack of a deterministic verifier (unlike math or code with unit tests); (b) high noise when using reference probability or perplexity as rewards; and (c) the high cost and hackability of LLM-as-a-judge rewards.
 
-**Goal**: Abandon agentic scaffolding and instead **use RL to internalize scientific reasoning** into the model—enabling it to explicitly learn the chain of thought from "research motivation to method."
+**Goal**: Rather than relying on agentic scaffolding, the goal is to **internalize the scientific reasoning process into the model via RL**, forcing the model to explicitly learn the chain of thought from "research motivation to method."
 
-**Key Insight**: High-quality method sections contain "unpredictable, high-information" tokens that carry the "hard knowledge" of innovation (e.g., specific algorithms/parameters), while boilerplate like "we propose to" provides near-zero information. Furthermore, a method should move the model **from the context toward the ground-truth method** in semantic space, rather than simply restating the context.
+**Key Insight**: High-quality method sections contain "hard knowledge" (e.g., specific algorithms or parameters) within high-entropy, unpredictable tokens, whereas boilerplate text like "we propose to" carries almost zero information. Furthermore, a method should move the model **from the context toward the ground-truth method** in semantic space, rather than merely restating the context.
 
-**Core Idea**: Explicitly decompose ideation into two stages $x \to m \to (z, y)$, and use two **complementary verifiable rewards** for RL—EAIG (measuring if reasoning truly improves prediction on high-entropy tokens of the ground-truth method) and CSG (using a contrastive baseline to measure if the generated method truly "advances" in semantic space), supplemented by length anchoring and format constraints to prevent reward hacking.
+**Core Idea**: Ideation is split into a two-stage process $x \to m \to (z, y)$. RL is applied using two **complementary verifiable rewards**: EAIG (measuring whether reasoning improves prediction accuracy on high-entropy tokens of the ground-truth method) and CSG (measuring whether the generated method truly "advances" in semantic space relative to a contrastive baseline), supplemented by length anchoring and format constraints to prevent reward hacking.
 
 ## Method
 
 ### Overall Architecture
 MoRI is a three-stage pipeline (Figure 2 + 7):
-(1) **Data Construction**: Extract context $x$, motivation $m$, and de-symbolized method $y^*$ from ICLR 2024-2025 papers. Use "posterior reconstruction"—let Qwen3-235B-Thinking generate initial reasoning $z_{\text{init}}$ from context alone, then let Qwen3-235B-Instruct rewrite $z_{\text{init}}$ to align with ground-truth $z$ given $(x, y^*)$. Reverse-engineer 4,000 SFT samples + 2,000 RL prompt samples.
-(2) **SFT Cold Start**: Train DeepSeek-R1-Distilled-Qwen-14B on two tasks—motivation generation ($x \to m$) and method generation ($x \to (z, y)$).
-(3) **Motivation-grounded RL**: Use GRPO with token-level loss and clip-higher optimization. Each prompt is formed as $q = x \oplus m$, rolling out $G=16$ trajectories $(z_i, y_i)$. Calculate group-normalized advantage based on the composite reward.
-**Inference**: Generate motivation $m$ first, then reason and output the method conditioned on $x \oplus m$.
+(1) **Data Construction**: Context $x$, motivation $m$, and de-symbolized method $y^*$ are extracted from ICLR 2024-2025 papers. Using "posterior reconstruction," Qwen3-235B-Thinking first generates an initial reasoning $z_{\text{init}}$ from the context alone. Then, Qwen3-235B-Instruct rewrites $z_{\text{init}}$ into $z$ aligned with the ground-truth given $(x, y^*)$, reverse-engineering a 4000-sample SFT set and a 2000-sample RL prompt set.
+(2) **SFT Cold-starting**: Two tasks are trained simultaneously on DeepSeek-R1-Distilled-Qwen-14B: motivation generation ($x \to m$) and method generation ($x \to (z, y)$).
+(3) **Motivation-grounded RL**: Optimized using GRPO with token-level loss and clip-higher. Each prompt is concatenated as $q = x \oplus m$, and $G=16$ trajectories $(z_i, y_i)$ are rolled out. Group-normalized advantages are calculated based on a compound reward.
+**Inference**: The model first generates motivation $m$, then produces reasoning and the method conditioned on $x \oplus m$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["ICLR/NeurIPS Papers<br/>Extract context x · motivation m · de-symbolized method y*"] --> B["Data Construction (Posterior Reconstruction)<br/>Qwen3-235B reverse-engineers reasoning z → 4000 SFT + 2000 RL prompts"]
+    B --> C["SFT Cold-starting (14B)<br/>Learn x→m and x→(z,y) simultaneously"]
+    C --> D["Motivation-grounded RL (GRPO)<br/>Prompt q=x⊕m, rollout G=16 trajectories (z,y)"]
+    D --> R
+    subgraph R["Compound Reward R_total = α·1[valid]·(w_e·EAIG + w_s·CSG)"]
+        direction TB
+        E["Entropy-Aware Info Gain (EAIG)<br/>Measure prediction gain only on top-25% high-entropy GT tokens"]
+        F["Contrastive Semantic Gain (CSG)<br/>Subtract restatement baseline to reward semantic jumps"]
+        G["Length Anchoring + Format Constraints<br/>Counter GRPO short bias and block hacking paths"]
+    end
+    R --> H["Group-normalized advantage updates πθ"]
+    H -->|Convergence| I["Inference: Generate m, then output (z,y) conditioned on x⊕m"]
+```
 
 ### Key Designs
 
-1. **Entropy-Aware Information Gain EAIG (Micro-level Technical Depth Reward)**:
-    - **Function**: Measures whether "reasoning makes the model predict more accurately" specifically on the "hard" tokens of the ground-truth method, focusing rewards on technical details rather than boilerplate.
-    - **Mechanism**: First, use a fixed SFT model via teacher-forcing to calculate entropy at each position $H_t = -\sum_v \pi_{\text{sft}}(v \mid x, m, y^*_{<t}) \log \pi_{\text{sft}}(\cdot)$. Select the top-25% highest-entropy tokens to form a mask $\mathcal{M}_t$ (34.2% of technical terms are selected vs. 14.5% of common words). Calculate per-token gain $g_t(z) = \log \pi_\theta(y^*_t \mid x, m, z, y^*_{<t}) - \log \pi_{\text{sft}}(y^*_t \mid x, m, y^*_{<t})$, resulting in $\Delta_{IG}(z) = \frac{1}{\sum \mathcal{M}_t} \sum_t \mathcal{M}_t \cdot g_t(z)$.
-    - **Design Motivation**: Solves the core difficulty of no deterministic verifiers in open tasks—ignoring full method probability (noisy, bias toward brevity) and focusing on relative improvement on "hard tokens." Unlike Wang et al. 2025b, MoRI applies the mask to the **ground-truth method** rather than the reasoning trace, fundamentally suppressing reward hacking.
+**1. Entropy-Aware Information Gain (EAIG): Rewarding Prediction Gains on "Hard Tokens"**
 
-2. **Contrastive Semantic Gain CSG (Macro-level Logical Direction Reward)**:
-    - **Function**: Ensures the generated method moves toward the ground-truth solution space rather than just piling up details.
-    - **Mechanism**: Use Qwen3-Embedding-8B embeddings $\mathbf{E}(\cdot)$ to calculate $S_{gen} = \cos(\mathbf{E}(\hat{y}), \mathbf{E}(y^*))$ and a **counterfactual baseline** $S_{base} = \cos(\mathbf{E}(x \oplus m), \mathbf{E}(y^*))$ (the similarity gained by restating the input). Define gain as $\Delta_{sem} = S_{gen} - S_{base}$. $\Delta_{sem} > 0$ implies the model pushed the semantic focus from the problem space to the solution space.
-    - **Design Motivation**: Using $\cos(\hat{y}, y^*)$ alone rewards lazy strategies like paraphrasing the context. By introducing $S_{base}$ as a contrastive baseline, the model must make a "real semantic jump" to receive a positive reward.
+The fundamental difficulty in open-ended ideation is the lack of a deterministic verifier. EAIG focuses only on the "hard" tokens in the ground-truth method. First, a fixed SFT model calculates the entropy of each position under teacher-forcing: $H_t = -\sum_v \pi_{\text{sft}}(v \mid x, m, y^*_{<t}) \log \pi_{\text{sft}}(\cdot)$. The top 25% highest-entropy tokens form a mask $\mathcal{M}_t$. Empirically, this selects 34.2% of technical terms while common words and numbers account for only 14.5% and 5.5%, respectively. The per-token prediction improvement is then calculated:
 
-3. **Length Anchoring + Format Constraints (Preventing Reward Collapse)**:
-    - **Function**: Prevents GRPO from inducing reward hacking such as "reasoning chain shrinking" or "entropy injection" under high-variance EAIG.
-    - **Mechanism**: Use a length modulation factor $\alpha(z) = \min(1, 1 - \lambda \frac{L_{anchor} - |z|}{L_{anchor}})$. Rewards are discounted when $|z| < L_{anchor}$, forcing the model to maintain reasoning depth. Format indicator $\mathds{1}[\text{valid}]$ requires CoT to be non-empty, ≥ 1000 characters, and **void of `##`/`###`** (preventing smuggling method content into reasoning). Final reward $R_{\text{total}} = \alpha(z) \cdot \mathds{1}[\text{valid}] \cdot (w_e f_{\text{step}}(\Delta_{IG}) + w_s f_{\text{step}}(\Delta_{sem}))$. Optimal weights: $w_s = 0.7, w_e = 0.3$.
-    - **Design Motivation**: Theoretical analysis in Appendix F shows GRPO group normalization implicitly favors low-variance strategies; since long reasoning chains have higher variance, they are suppresses. Length anchoring provides a positive gradient to offset this bias.
+$$g_t(z) = \log \pi_\theta(y^*_t \mid x, m, z, y^*_{<t}) - \log \pi_{\text{sft}}(y^*_t \mid x, m, y^*_{<t})$$
+
+The final reward is the average over the mask: $\Delta_{IG}(z) = \frac{1}{\sum \mathcal{M}_t} \sum_t \mathcal{M}_t \cdot g_t(z)$. By anchoring rewards to fixed GT tokens, MoRI prevents reward hacking; no matter what the model writes, it cannot change which GT tokens are technical details.
+
+**2. Contrastive Semantic Gain (CSG): Forcing Real Semantic Leaps**
+
+While EAIG handles technical depth, CSG ensures the method moves toward the ground-truth solution space. Using $S_{gen} = \cos(\mathbf{E}(\hat{y}), \mathbf{E}(y^*))$ alone allows for "lazy" high scores by simply rephrasing the context. CSG introduces a counterfactual baseline $S_{base} = \cos(\mathbf{E}(x \oplus m), \mathbf{E}(y^*))$, representing the similarity gained by paraphrasing the input. The reward is only given for the increment $\Delta_{sem} = S_{gen} - S_{base}$. $\Delta_{sem} > 0$ implies the model has pushed the semantic focus from the problem space to the solution space.
+
+**3. Length Anchoring + Format Constraints: Countering GRPO's Implicit Short Bias**
+
+EAIG's high variance can trigger two types of collapse: shrinking reasoning chains or "entropy hacking" through gibberish. Format constraints $\mathds{1}[\text{valid}]$ require the CoT to be non-empty, $\ge 1000$ characters, and free of `##`/`###` (to prevent leaking method content into the reasoning segment). Length anchoring uses a modulation factor:
+
+$$\alpha(z) = \min\Big(1,\ 1 - \lambda \frac{L_{anchor} - |z|}{L_{anchor}}\Big)$$
+
+This discounts rewards when $|z| < L_{anchor}$, forcing the model to maintain reasoning depth. The total reward is $R_{\text{total}} = \alpha(z) \cdot \mathds{1}[\text{valid}] \cdot (w_e f_{\text{step}}(\Delta_{IG}) + w_s f_{\text{step}}(\Delta_{sem}))$, with optimal weights at $w_s = 0.7, w_e = 0.3$. 
 
 ### Loss & Training
-GRPO with token-mean loss, $\varepsilon_{\text{low}}/\varepsilon_{\text{high}} = 0.2/0.28$ (clip-higher), KL coefficient 0.001, rollout $G=16$, lr $5 \times 10^{-7}$ with 10% warmup cosine, global batch 8, temperature 1.0, max prompt/response 5000 each. Reward step-shaping quantifies continuous gains into 4 levels to resist noise: EAIG thresholds $[1.0, 1.5, 2.0]$, CSG thresholds $[0.01, 0.05, 0.1]$, reward levels $[0, 0.5, 0.8, 1.0]$.
+GRPO with token-mean loss, $\varepsilon_{\text{low}}/\varepsilon_{\text{high}} = 0.2/0.28$ (clip-higher), KL coefficient 0.001, rollout $G=16$, lr $5 \times 10^{-7}$ with 10% warmup cosine, global batch 8, temperature 1.0, and max prompt/response length of 5000. Continuous gains are quantized into 4 discrete levels for noise resistance: EAIG thresholds $[1.0, 1.5, 2.0]$, CSG thresholds $[0.01, 0.05, 0.1]$, with reward levels $[0, 0.5, 0.8, 1.0]$.
 
 ## Key Experimental Results
 
 ### Main Results
-Tested on 83 ICLR 2025 in-domain and 67 NeurIPS 2025 OOD papers (Metrics: Novelty / Tech Rigor / Feasibility / Mean, scale 1-5, Gemini-2.5-Pro RAG LLM-judge + 3 PhD human evaluators):
+Evaluated on 83 ICLR 2025 in-domain papers and 67 NeurIPS 2025 OOD papers (Metrics: Novelty / Tech Rigor / Feasibility / Mean, 1-5 scale; Gemini-2.5-Pro RAG LLM-judge + 3 PhD human evaluators):
 
 | Model / Framework | ICLR Mean | NeurIPS OOD Mean | Combined Mean | Δ vs MoRI |
 |------------|-----------|------------------|---------------|-----------|
@@ -83,57 +101,57 @@ Tested on 83 ICLR 2025 in-domain and 67 NeurIPS 2025 OOD papers (Metrics: Novelt
 | ResearchAgent | 2.60 | 2.37 | 2.50 | +27.2% |
 | VirSci | 2.25 | 2.23 | 2.24 | +42.0% |
 | Full-SFT (x → m → y) | 2.99 | 2.85 | 2.93 | +8.5% |
-| **Ours (MoRI)** | **3.19** | **3.15** | **3.18** | — |
+| **MoRI** | **3.19** | **3.15** | **3.18** | — |
 | Ground Truth (oracle) | 3.58 | 3.59 | 3.59 | – |
 
-On ICLR, MoRI's Feasibility (3.11) is 10.3% higher than Claude-3.5-Sonnet (2.82), and Rigor is 2.9% higher. The only dimension where Claude Sonnet (3.39) and AI-Scientist-V2†(Sonnet) (3.45) lead is Novelty. Human-LLM correlation Pearson $r = 0.715$ ($p < 0.001$), with 95% bootstrap CI [3.11, 3.25] showing no overlap with any agentic baseline.
+On ICLR, MoRI's Feasibility (3.11) is 10.3% higher than Claude-3.5-Sonnet (2.82), and Rigor is 2.9% higher. The only dimension where it is surpassed by Claude Sonnet (3.39) and AI-Scientist-V2†(Sonnet) (3.45) is Novelty. Human-LLM correlation Pearson $r = 0.715$ ($p < 0.001$), and the 95% bootstrap CI [3.11, 3.25] does not overlap with any agentic baselines.
 
 ### Ablation Study
 
-| Configuration | Novelty | Rigor | Feas. | Mean | Phenomenon |
+| Config | Novelty | Rigor | Feas. | Mean | Observation |
 |------|---------|-------|-------|------|------|
 | Full-SFT (direct $x \to y$) | 2.80 | 2.69 | 2.81 | 2.75 | No explicit motivation modeling |
 | Full-SFT (two-stage $x \to m \to y$) | 2.85 | 2.76 | 2.94 | 2.85 | +0.10, motivation conditioning helps |
 | MoRI (full) | 3.30 | 3.00 | 3.16 | 3.15 | +0.30 vs two-stage SFT |
 | EAIG only ($w_s=0, w_e=1$) | 2.68 | 2.22 | 2.63 | 2.51 | Reward collapse + length explosion |
 | CSG only ($w_s=1, w_e=0$) | 3.16 | 2.93 | 3.06 | 3.05 | Stable but suboptimal |
-| Balanced ($w_s=w_e=0.5$) | 3.32 | 2.96 | 2.98 | 3.09 | Near optimal |
-| **Optimal ($w_s=0.7, w_e=0.3$)** | **3.34** | **3.04** | **3.07** | **3.15** | EAIG as garnish, CSG as primary |
-| Top-50% entropy mask | 3.16 | 2.78 | 3.00 | 2.98 | Noisy tokens drag down performance |
-| **Top-25% entropy mask** | **3.32** | **2.96** | 2.98 | **3.09** | +3.7%, purer tech token signal |
+| Balanced ($w_s=w_e=0.5$) | 3.32 | 2.96 | 2.98 | 3.09 | Close to optimal |
+| **Optimal ($w_s=0.7, w_e=0.3$)** | **3.34** | **3.04** | 3.07 | **3.15** | CSG as primary, EAIG as supplement |
+| Top-50% Entropy Mask | 3.16 | 2.78 | 3.00 | 2.98 | Noisy tokens hinder performance |
+| **Top-25% Entropy Mask** | **3.32** | **2.96** | **2.98** | **3.09** | +3.7%, purer tech token signal |
 | Optimal w/o Length Anchor | 3.22 | 2.94 | 3.00 | 3.05 | -0.10 |
 | **Optimal w/ Length Anchor** | **3.34** | **3.04** | **3.07** | **3.15** | +3.2% |
 
 ### Key Findings
-- **EAIG alone causes explosion**: Training with only EAIG leads to CoT length explosion and gibberish content ("hacking entropy"), proving macro-level direction signals are essential.
-- **CSG is the chassis, EAIG is the garnish**: $w_s : w_e = 7 : 3$ outperforms 5:5, indicating the "semantic direction" provided by CSG is the stable signal.
-- **Strict entropy masking is required**: A top-50% mask includes common words, introducing noise and causing CoT decay; a top-25% mask ensures the model learns to "explain hard tokens" rather than "pad word count."
-- **Length Anchoring is essential against GRPO's implicit short-bias**: Appendix F formalizes this—GRPO group normalization maximizes the implicit Sharpe ratio, favoring low variance (short CoT). Anchoring provides positive gradients to neutralize this.
-- **Negligible OOD decay**: ICLR 3.19 → NeurIPS 3.15 ($\Delta = 0.04$ not significant), proving the model learns reasoning patterns rather than venue templates. CoT spontaneously exhibits target decomposition, self-criticism loops, and paradigm questioning.
-- **Dominates agentic frameworks**: MoRI's 14B single model + internalized RL > AI-Scientist-V2 + GPT-4o multi-agent + tree search (3.18 vs 2.60, +22.3%), significant at Bonferroni-corrected $p < 0.001$.
+- **EAIG cannot function alone**: Pure EAIG leads to CoT length explosion and gibberish content ("entropy hacking"), proving the need for a macro-level directional signal.
+- **CSG is the foundation**: A $w_s : w_e = 7 : 3$ ratio outperforms 5:5, suggesting that the "semantic direction" provided by CSG is the stable signal, while EAIG adds technical depth.
+- **Entropy masks must be strict**: A top-50% mask includes common words, introducing noise; a top-25% mask ensures the model learns to "explain hard tokens" rather than "padding word count."
+- **Length Anchoring is essential**: Appendix F explains that GRPO's group normalization maximizes the Sharpe ratio, favoring low-variance (short) CoTs. Anchoring provides the necessary positive gradient to stabilize training.
+- **Minimal OOD performance decay**: ICLR 3.19 → NeurIPS 3.15 ($\Delta = 0.04$) is not significant, proving the model learns reasoning patterns rather than venue templates.
+- **Outperforming agentic frameworks**: MoRI (14B + internalized reasoning) significantly outperforms AI-Scientist-V2 using GPT-4o (3.18 vs 2.60, +22.3%) with $p < 0.001$.
 
 ## Highlights & Insights
-- **"Motivation as RL condition" is a key conceptual decoupling**: Conditioning $(z, y) \sim \pi_\theta(\cdot | x, m)$ allows RL to focus on "probing to solution" reasoning rather than learning "questioning + solving" simultaneously—a general insight for RLVR in open tasks.
-- **EAIG as a surrogate verifier via "relative likelihood gain on hard tokens" is brilliant**: Resolves the absence of deterministic verifiers in open generation. Anchoring the verifier to ground-truth rather than generated content structurally avoids reward hacking.
-- **The CSG contrastive baseline $S_{base}$ is a critical detail**: Since $\cos(\hat{y}, y^*)$ rewards restating input, subtracting $S_{base}$ forces the model to produce semantic content "beyond the input" to gain a positive reward.
-- **Theory-Experiment Loop**: The use of the Sharpe ratio analogy to explain GRPO's short-bias and the derivation of length anchoring corrections turns an empirical observation into an analyzable phenomenon.
+- **Decoupling using "motivation as RL condition"**: Conditioning $(z, y)$ on $m$ simplifies RL by focusing on "problem to solution" reasoning rather than simultaneous "questioning + solving."
+- **EAIG as a surrogate verifier**: By measuring relative likelihood gains on "hard tokens," EAIG solves the lack of verifiers in open-ended generation. Anchoring it to the ground truth prevents reward hacking.
+- **$S_{base}$ in CSG is a vital detail**: Subtracting the restatement baseline ensures the model is rewarded only for generating content that "goes beyond the input."
+- **Theory-Experiment Closure**: The use of Sharpe ratio analogies to explain and correct GRPO's short bias provides a formal understanding of training dynamics.
 
 ## Limitations & Future Work
-- **Limitations**: (1) Restricted to CS/ML; domain logic in Physics/Biology remains unverified; (2) Evaluation relies on LLM-judge + partial human assessment, lacking "experimental execution" ground truth; (3) Risk of misuse for mass-producing low-quality papers.
-- **Additional Insights**: (1) Still trails Claude-3.5-Sonnet in Novelty—MoRI is "stable/practical" but lacks "creative leaps," as the ground-truth anchor pulls the distribution toward the known; (2) "Posterior reconstruction" introduces hindsight bias, as generated $z_i$ traces are "cleaner" than real research processes; (3) Fixed SFT reference distribution for EAIG may become "outdated" during training.
-- **Improvements**: Update the EAIG reference distribution online using the previous checkpoint; introduce retrieval-augmented contexts to detach Novelty from fixed ground-truth; replace posterior reconstruction with motivation extraction from real introductions to reduce hindsight bias.
+- **Limitations**: (1) Limited to CS/ML; (2) Evaluation relies on LLM-judge/manual checks rather than physical experiments; (3) Risk of large-scale "paper mill" usage.
+- **Ours**: (1) Novelty still lags behind Claude-3.5-Sonnet; (2) Posterior reconstruction introduces hindsight bias; (3) Entropy masks are static and may drift during training; (4) Sensitivity to the embedding model for CSG.
+- **Future Work**: Implementing online updates for EAIG reference distributions; introducing RAG to improve Novelty; using real introductions instead of posterior reconstruction to reduce hindsight bias.
 
 ## Related Work & Insights
-- **vs Agentic Frameworks (AI-Scientist-V2, etc.)**: These rely on scaffolding without optimizing the model. MoRI internalizes reasoning via RL in a 14B model, outperforming them (+22.3%) with single inference.
-- **vs Verifier-free RL (NOVER, RLPR)**: These use intrinsic signals (e.g., reference probability) as rewards, but are noisy for multi-solution tasks. MoRI’s EAIG + CSG provide more granular signals.
-- **vs Rubrics-as-Rewards (Dr. Tulu)**: MoRI is model-based (embeddings + logprobs), making gradient estimation much cheaper than LLM-judge rubrics.
-- **vs Beyond 80/20 (Wang et al. 2025b)**: While Wang filters high-entropy tokens in reasoning, MoRI applies this to the **ground-truth target**, fundamentally cutting off reward hacking paths.
+- **vs Agentic Frameworks (AI-Scientist-V2, etc.)**: These rely on scaffolding; MoRI internalizes reasoning into weights, achieving better performance and faster inference.
+- **vs Verifier-free RL (NOVER, etc.)**: MoRI uses localized signals (EAIG) and contrastive baselines (CSG) to reduce the noise typical of reference-based rewards.
+- **vs LLM-as-a-judge (Dr. Tulu, etc.)**: MoRI is model-based (embeddings and logprobs), making it significantly cheaper and harder to hack.
+- **vs Beyond 80/20**: While that work filters entropy on reasoning tokens, MoRI filters entropy on the **ground-truth target**, providing a more robust anchor.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Motivation-grounded RL + EAIG + CSG" is the first end-to-end RL solution for open scientific ideation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Dual-venue testing, 6 baselines, 4 ablation types, training dynamics curves, and rigorous statistical checking.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical analysis of CoT shortening in Appendix F is excellent; the motivation section is slightly verbose.
-- Value: ⭐⭐⭐⭐ Establish a reproducible paradigm for "RL + LLM as research assistant." The EAIG/CSG philosophy is transferable to any open-ended LLM RL task.
+- Novelty: ⭐⭐⭐⭐ First end-to-end RL for open-ended scientific ideation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing, ablations, and statistical corrections.
+- Writing Quality: ⭐⭐⭐⭐ Strong theoretical and visual evidence.
+- Value: ⭐⭐⭐⭐ Provides a reproducible paradigm for "internalizing reasoning" in open-ended tasks.
 
 <!-- RELATED:START -->
 
@@ -141,11 +159,11 @@ On ICLR, MoRI's Feasibility (3.11) is 10.3% higher than Claude-3.5-Sonnet (2.82)
 
 ## Related Papers
 
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
+- [\[ACL 2025\] The Role of Deductive and Inductive Reasoning in Large Language Models](../../ACL2025/llm_nlp/the_role_of_deductive_and_inductive_reasoning_in_large_language_models.md)
+- [\[ACL 2025\] Disentangling Memory and Reasoning Ability in Large Language Models](../../ACL2025/llm_nlp/disentangle_memory_reasoning.md)
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
 - [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
-- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
 
 </div>
 

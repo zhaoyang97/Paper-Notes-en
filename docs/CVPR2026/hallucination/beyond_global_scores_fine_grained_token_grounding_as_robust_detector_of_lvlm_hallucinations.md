@@ -2,108 +2,132 @@
 title: >-
   [Paper Note] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 description: >-
-  [CVPR 2026][Hallucination Detection][LVLM] A patch-level LVLM hallucination detection framework is proposed. Hallucinated tokens are found to exhibit two characteristic signatures—dispersed attention patterns and low sem…
+  [CVPR 2026][Hallucination Detection][LVLM] Ours proposes a patch-level LVLM hallucination detection framework, discovering that hallucinated tokens exhibit dispersed attention patterns and low semantic alignment. Based on these signatures, Attention Dispersion Score (ADS) and Cross-modality Grounding Consistency (CGC) are designed as lightweight metrics, achiev
 tags:
-  - "CVPR 2026"
-  - "Hallucination Detection"
-  - "LVLM"
-  - "attention dispersion"
-  - "patch-level grounding"
-  - "token-level"
+  - CVPR 2026
+  - Hallucination Detection
+  - LVLM
+  - attention dispersion
+  - patch-level grounding
+  - token-level
 date: 2026-05-08
-content_hash: d4998961598bfb96
+content_hash: b95121d10f49b366
 ---
-
 # Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04863](https://arxiv.org/abs/2604.04863)  
-**Code**: Available  
-**Area**: Hallucination Detection
+**Code**: Yes  
+**Area**: Hallucination detection  
 **Keywords**: hallucination detection, LVLM, attention dispersion, patch-level grounding, token-level
 
 ## TL;DR
 
-A patch-level LVLM hallucination detection framework is proposed. Hallucinated tokens are found to exhibit two characteristic signatures—dispersed attention patterns and low semantic alignment—based on which two lightweight metrics are designed: Attention Dispersion Score (ADS) and Cross-modal Grounding Consistency (CGC), achieving 90% detection accuracy.
+Ours proposes a patch-level LVLM hallucination detection framework, discovering that hallucinated tokens exhibit dispersed attention patterns and low semantic alignment. Based on these signatures, Attention Dispersion Score (ADS) and Cross-modality Grounding Consistency (CGC) are designed as lightweight metrics, achieving a detection accuracy of 90%.
 
 ## Background & Motivation
 
-LVLMs are prone to visual hallucinations—describing objects or attributes absent from the image. Existing detection methods rely on coarse-grained global statistics (e.g., aggregated overall attention, output probabilities, global embedding similarity). This global strategy has a fundamental limitation: hallucinated tokens may have weak but dispersed correlations with multiple local regions, which aggregate into a deceptively high overall correlation that evades global detectors.
+LVLMs are prone to visual hallucinations—describing objects or attributes not present in the image. Existing detection methods rely on coarse-grained global statistics (e.g., aggregated attention, output probability, global embedding similarity). Such global strategies have fundamental limitations: a hallucinated token might have weak but dispersed correlations with multiple local regions, which, when aggregated, produce deceptively high correlation scores that bypass global detectors.
 
-Core insight: A faithful object token must be strongly grounded to a specific image region. Hallucination detection must therefore shift from whole-image analysis to patch-level grounding analysis.
+**Key Insight**: Faithful object tokens must be strongly grounded to specific image regions. Therefore, hallucination detection must shift from global analysis to patch-level grounding analysis.
 
 ## Method
 
 ### Overall Architecture
 
-Fine-grained interactions between generated tokens and image patches are analyzed to extract two types of structural features, which are then used to train a lightweight classifier for token-level hallucination detection.
+This work addresses the limitation where existing detectors only examine globally aggregated attention/probability/similarity, allowing hallucinated tokens to hide behind dispersed correlations. The proposed mechanism sinks the perspective from global to the patch level—analyzing fine-grained interactions between each token and image patches. By extracting structural features like "spatial attention distribution" and "cross-modality semantic alignment," a lightweight classifier is used to identify hallucinations. The pipeline runs two parallel branches: ADS calculated from the attention map and CGC calculated from embedding similarities. These are concatenated across layers into a feature vector for the classifier.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LVLM generates target token<br/>Extract token→patch attention map + layer-wise embeddings"] --> ADS
+    A --> CGC
+    subgraph ADS["Attention Dispersion Score (ADS)"]
+        direction TB
+        B1["Retain top-10% attention activations"] --> B2["8-connected component grouping<br/>Suppress attention sinks"]
+        B2 --> B3["Foreground blob quality × Background normalized entropy<br/>Obtain layer-wise ADS"]
+    end
+    subgraph CGC["Cross-modality Grounding Consistency (CGC)"]
+        direction TB
+        C1["Cosine similarity between token embedding & patch embeddings"] --> C2["Mean of top-k similar patches<br/>Obtain layer-wise CGC"]
+    end
+    ADS --> D["Layer-wise feature concatenation + lightweight classification<br/>Concat ADS‖CGC into feature vector"]
+    CGC --> D
+    D --> E["XGB / MLP / Random Forest Classifiers"]
+    E -->|Middle layers most discriminative| F["Decision: Faithful token / Hallucinated token"]
+```
 
 ### Key Designs
 
-1. **Attention Dispersion Score (ADS)**: Quantifies the spatial compactness of a target token's attention distribution. The top-$k$% attention activations are retained, and attention sinks (small blobs with area $< \tau_{ADS}$) are filtered using 8-connected components. The foreground blob mass $m_t^{(n)} = \sum_{c \in \mathcal{C}_t^{(n)*}} \sum_{p \in c} \bar{\mathbf{A}}_t^{(n)}(p)$ and background normalized entropy $\hat{H}_t^{(n)} = -\sum_{p \in \mathcal{B}} \mathbf{E}(p) \log \mathbf{E}(p) / \log|\mathcal{P}|$ are computed, yielding $ADS_t^{(n)} = (1-m_t^{(n)}) \cdot \hat{H}_t^{(n)}$. Low ADS indicates compact focus (faithful object); high ADS indicates diffuse dispersion (hallucination). Middle layers exhibit the strongest separation; the gap converges in deeper layers where language priors dominate.
+**1. Attention Dispersion Score (ADS): Distinguishing "Focused" vs "Dispersed" via Spatial Compactness**
 
-2. **Cross-modal Grounding Consistency (CGC)**: Per-layer cosine similarity between the token embedding and each image patch embedding is computed, with the mean similarity of the top-$k$ patches taken as the score. Faithful tokens exhibit sharp similarity peaks with corresponding regions, while hallucinated tokens show low and diffuse similarity across all regions.
+**Design Motivation**: Faithful tokens are anchored to specific regions, while hallucinated tokens exhibit dispersed attention. ADS quantifies this by retaining top-k% activations and filtering "attention sinks" (scattered small blobs with area $< \tau_{ADS}$) via 8-connected components. It computes: foreground blob quality $m_t^{(n)} = \sum_{c \in \mathcal{C}_t^{(n)*}} \sum_{p \in c} \bar{\mathbf{A}}_t^{(n)}(p)$ to measure concentration, and background normalized entropy $\hat{H}_t^{(n)} = -\sum_{p \in \mathcal{B}} \mathbf{E}(p) \log \mathbf{E}(p) / \log|\mathcal{P}|$ to measure dispersion. The final score is $ADS_t^{(n)} = (1-m_t^{(n)}) \cdot \hat{H}_t^{(n)}$. Low ADS indicates compact focus (faithful), while high ADS indicates dispersion (hallucination).
 
-3. **Layer-wise Feature Concatenation for Classification**: ADS and CGC values from all layers are concatenated into a feature vector, and an XGB/MLP/random forest classifier is trained. Middle layers provide the strongest discriminability; differences converge in deeper layers due to increasing language prior dominance.
+**2. Cross-modality Grounding Consistency (CGC): Verifying Semantic Alignment**
+
+ADS only observes distribution; CGC provides semantic evidence. A faithful token should be highly similar to its corresponding image region in the embedding space. CGC computes the cosine similarity between the token embedding and each patch embedding layer-wise, taking the mean of the top-k patches. Faithful tokens exhibit sharp similarity peaks, whereas hallucinated tokens show low, flat similarities across all regions.
+
+**3. Layer-wise Concatenation + Lightweight Classification: Leveraging Middle Layers**
+
+Single-layer analysis is insufficient; thus, ADS and CGC from all layers are concatenated into a feature vector for lightweight classifiers (XGB/MLP/RF). A **Key Finding** is that discriminative power is concentrated in middle layers. Shallow layers lack feature fusion, while deep layers are dominated by language priors, causing the gap between faithful and hallucinated tokens to converge. Middle layers best expose visual grounding.
 
 ### Loss & Training
 
-Classifiers are trained with cross-entropy loss. Labels are derived from GPT-4o semantic verification combined with the CHAIR metric and human-written descriptions. Experiments are conducted on 4,000 images from the MS-COCO 2014 validation set with a 90/10 split.
+Classifiers are trained using cross-entropy loss. Labels are derived from GPT-4o semantic verification (combining CHAIR metrics and manual descriptions). Experiments are conducted on 4,000 images from MS-COCO 2014 val set, using a 90/10 train/test split.
 
 ## Key Experimental Results
 
 ### Main Results (Image Captioning Task)
 
 | Method | LLaVA-1.5-7B F1 | Qwen2.5-VL-7B F1 | InternVL2.5-8B F1 |
-|--------|----------------|------------------|-------------------|
+|------|----------------|------------------|-------------------|
 | MetaToken | 0.51 | 0.54 | — |
 | SVAR | — | — | — |
-| Ours (XGB) | **0.90** | **0.88** | **0.88** |
+| **Ours (XGB)** | **0.90** | **0.88** | **0.88** |
 
 ### Key Findings
 
-- Faithful tokens exhibit compact, well-localized attention in early and middle layers, while hallucinated tokens show dispersed attention
-- Faithful tokens have high semantic similarity with corresponding patches, while hallucinated tokens show low similarity with all patches
-- Both findings jointly indicate that hallucinations primarily stem from over-reliance on language priors rather than deficiencies in the visual encoder
-- Middle-layer features are most discriminative; the gap converges in deeper layers where language priors dominate
-- ADS alone as a classifier achieves F1 = 0.73–0.77; combined with CGC it reaches F1 = 0.88–0.90
-- Experiments are conducted on 4,000 images from the MS-COCO 2014 validation set with a 90/10 split
-- Labels are determined by GPT-4o semantic verification combined with the CHAIR metric
+- Faithful tokens show compact, well-localized attention in early/middle layers; hallucinated tokens show dispersed attention.
+- Faithful tokens have high semantic similarity with corresponding patches; hallucinated tokens show low similarity everywhere.
+- **Key Insight**: Hallucinations primarily stem from over-reliance on language priors rather than vision encoder failures.
+- Middle-layer features are most discriminative; deep layers converge due to language prior dominance.
+- ADS alone achieves F1 0.73-0.77; combined with CGC, performance reaches F1 0.88-0.90.
+- Labels were determined via GPT-4o semantic verification combined with CHAIR metrics.
 
 ## Highlights & Insights
 
-- The shift from "global to local" perspective captures the key to hallucination detection
-- The connected-component filtering and background entropy design in ADS elegantly address the attention sink phenomenon
-- Strong interpretability—attention heatmaps can be visualized to explain detection results
-- A lightweight classifier suffices to achieve 90% accuracy
+- The perspective shift "from global to local" captures the essence of hallucination detection.
+- The 8-connected component filtering and background entropy in ADS elegantly handle the attention sink phenomenon.
+- High interpretability—detection results can be explained via attention heatmap visualizations.
+- Achieving 90% accuracy with only a lightweight classifier.
 
 ## Limitations & Future Work
 
-- Requires access to internal attention weights, necessitating white-box model access
-- The classifier must be trained separately for each LVLM
-- Only validated on object-level hallucinations; attribute hallucinations are not addressed
-- Lightweight classifiers such as XGB/MLP/random forest offer strong interpretability but limited capacity for capturing complex patterns
-- CGC computes per-layer cosine similarity between token embeddings and patch embeddings, taking the top-$k$ patch mean; faithful tokens exhibit sharp peaks while hallucinated tokens are diffuse and low
-- The analysis of the fundamental limitations of existing global statistical methods such as SVAR is insightful: weak but widespread dispersed correlations aggregate into deceptively high global scores
+- Requires white-box access to internal model attention weights.
+- Classifiers must be trained individually for each LVLM.
+- Evaluated primarily on object-level hallucinations; attribute-level hallucinations remain unexplored.
+- While lightweight classifiers like XGB/MLP are interpretable, their ability to capture extremely complex patterns might be limited.
+- Deep analysis of existing global methods (like SVAR) reveals their fundamental limitation: dispersed weak correlations aggregate into deceptively high global scores.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Pioneering work on patch-level hallucination analysis
-- Technical Depth: ⭐⭐⭐⭐ — ADS and CGC are elegantly designed
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Validated across multiple models and benchmarks
-- Practical Value: ⭐⭐⭐⭐ — Lightweight and interpretable hallucination detector
+- **Novelty**: ⭐⭐⭐⭐⭐ — Pioneering work in patch-level hallucination analysis.
+- **Technical Depth**: ⭐⭐⭐⭐ — Sophisticated design of ADS and CGC.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Validated across multiple models and benchmarks.
+- **Value**: ⭐⭐⭐⭐ — A lightweight and interpretable hallucination detector.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
+- [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
 - [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](../../NeurIPS2025/hallucination/robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
-- [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[NeurIPS 2025\] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT](../../NeurIPS2025/hallucination/beyond_token_probes_hallucination_detection_via_activation_tensors_with_act-vit.md)
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 
 </div>
 

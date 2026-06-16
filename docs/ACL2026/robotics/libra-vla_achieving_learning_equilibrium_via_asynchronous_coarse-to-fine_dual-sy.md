@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System
 description: >-
-  [ACL 2026][Robotics][Vision-Language-Action Models] Libra-VLA decomposes robotic actions into a hybrid action space of "discrete macro-intents + continuous micro-poses." It employs System 2 (VLM + parallel coarse-action…
+  [ACL 2026][Robotics & Embodied AI][coarse-to-fine] Libra-VLA decomposes robot actions into a hybrid action space of "discrete macro-intent + continuous micro-pose." It utilizes System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Achieving true asynchrono
 tags:
-  - "ACL 2026"
-  - "Robotics"
-  - "Vision-Language-Action Models"
-  - "Hybrid Action Space"
-  - "Dual-System"
-  - "Asynchronous Execution"
-  - "Coarse-to-Fine"
+  - ACL 2026
+  - Robotics & Embodied AI
+  - coarse-to-fine
 date: 2026-05-08
-content_hash: 2a5cce4df40be644
+content_hash: 4fea994f7baf171e
 ---
-
 # Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System
 
 **Conference**: ACL 2026  
@@ -24,64 +19,81 @@ content_hash: 2a5cce4df40be644
 **Keywords**: Vision-Language-Action Models, Hybrid Action Space, Dual-System, Asynchronous Execution, Coarse-to-Fine
 
 ## TL;DR
-Libra-VLA decomposes robotic actions into a hybrid action space of "discrete macro-intents + continuous micro-poses." It employs System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Facilitated by an intent buffer for asynchronous execution, it achieves a State-of-the-Art (SoTA) success rate of 97.2% on LIBERO and 79.5% zero-shot on LIBERO-Plus (10% higher than the previous OpenVLA-OFT+).
+Libra-VLA decomposes robot actions into a hybrid action space of "discrete macro-intent + continuous micro-pose." It utilizes System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Achieving true asynchronous execution via an intent buffer, it reaches a SoTA of 97.2% on LIBERO and 79.5% zero-shot on LIBERO-Plus (10% higher than the previous OpenVLA-OFT+).
 
 ## Background & Motivation
-**Background**: VLA models (OpenVLA, π0, π0.5, GR00T-N1, etc.) have become the mainstream paradigm for open-world general-purpose robots, directly grounding language instructions into motor commands. Predominant approaches follow two paths: (a) discretizing continuous actions into 256 bins for Autoregressive (AR) prediction (OpenVLA, π0-FAST); (b) attaching a diffusion head to a VLM backbone to output continuous actions directly (π0, GR00T-N1, Diffusion Policy).
+**Background**: VLA models (OpenVLA, π0, π0.5, GR00T-N1, etc.) have become the mainstream paradigm for open-world general-purpose robots, directly grounding language instructions into motor commands. Predominant approaches follow two paths: (a) discretizing continuous actions into 256 bins for AR prediction (OpenVLA, π0-FAST); (b) attaching a diffusion head to a VLM backbone for direct continuous action output (π0, GR00T-N1, Diffusion Policy).
 
-**Limitations of Prior Work**: Both approaches are **monolithic** "flat mappings"—a single network simultaneously processes high-level abstract semantic reasoning and low-level high-frequency motor control. This unified architecture ignores the natural hierarchical structure of robotic manipulation (coarse positioning followed by fine alignment), placing the massive "semantic-execution" gap on a single model, which leads to heavy representation burdens.
+**Limitations of Prior Work**: Both approaches are **monolithic** "flat mappings"—a single network simultaneously processes high-level abstract semantic reasoning and low-level high-frequency motor control. This unified architecture ignores the inherent hierarchical structure of robot manipulation (coarse positioning followed by fine alignment), forcing a single model to bridge the massive "semantic-execution" gap and leading to excessive representation burden.
 
-**Existing hierarchical attempts** are insufficient: HAMSTER/MOKA use keypoints, while ViLA/Hi Robot use sub-instructions, focusing on **temporal** decomposition (shortening planning horizons). However, each step still must bridge high-level modalities to continuous motor commands, leaving single-step representation complexity unsimplified. HybridVLA, despite its name, uses two independent branches for fine-grained prediction followed by arithmetic averaging, which is essentially a parallel structure without a hierarchy.
+**Existing hierarchical attempts** are also insufficient: HAMSTER/MOKA use keypoints, and ViLA/Hi Robot use sub-instructions, focusing primarily on **temporal dimension** decomposition (shortening planning horizons). However, each step still requires crossing from high-level modalities to continuous motor commands, failing to simplify single-step representation complexity. HybridVLA, despite its name, independently predicts fine-grained actions and performs arithmetic averaging, which is essentially a parallel structure lacking hierarchy.
 
-**Key Challenge**: There is a lack of hierarchy in the **action representation space**. Finer discrete bins reduce quantization error but deviate from VLM semantic abstraction; meanwhile, continuous outputs demand excessive geometric precision from the VLM. In dual-system architectures, GR00T-N1 uses static latents as bridges that can become "outdated," FiS-VLA suffers from "feature squeezing" due to multi-tasking on a single backbone, and OpenHelix relies on uninterpretable high-dimensional black-box latents.
+**Key Challenge**: There is a lack of hierarchy in the **action representation space**. Finer discrete bins reduce quantization error but diverge from the semantic abstraction of VLMs, while continuous outputs demand excessive geometric precision from the VLM. In dual-system architectures, GR00T-N1 uses static latents as bridges which become "outdated," FiS-VLA forces dual tasks on a single backbone causing "feature squeezing," and OpenHelix relies on uninterpretable high-dimensional black-box latents.
 
-**Goal**: (1) Decompose actions hierarchically within the **action representation space** rather than just the timeline; (2) Balance the learning difficulty between two subsystems through task division; (3) Achieve truly asynchronous, interpretable, and low-latency execution.
+**Goal**: (1) Decompose hierarchy in the **action representation space** rather than just the timeline; (2) Balance the learning difficulty of two subsystems through task specialization; (3) Achieve truly asynchronous, interpretable, and low-latency execution.
 
 **Key Insight**: Explicitly split actions into a hybrid space—discrete coarse directions (macro-intent, answering "where to go") + continuous micro-poses (micro-alignment, answering "how to interact"). The former naturally aligns with the discrete token output space of VLMs, while the latter only needs to generate residuals around anchors, significantly compressing the search space.
 
-**Core Idea**: Replace "flat modality translation" with "two-stage simple mapping" + asynchronous dual-system execution + an intent buffer for multi-step coarse direction look-ahead.
+**Core Idea**: Replace "flat modality translation" with "two-stage simple mapping" + dual-system asynchronous execution + intent buffer for multi-step coarse direction pre-prediction.
 
 ## Method
 
 ### Overall Architecture
-- **Input**: Instruction $L$ + Observation $\mathbf{o}_t$
-- **Probability Decomposition**: $P(\mathbf{a}_t \mid \mathbf{o}_t, L) \approx \underbrace{P(\mathbf{a}_t^f \mid \mathbf{a}_t^c, \mathbf{o}_t)}_{\text{Action Refiner}} \cdot \underbrace{P(\mathbf{a}_t^c \mid \mathbf{o}_t, L)}_{\text{Semantic Planner}}$
-- **System 2 (Semantic Planner)**: InternVL2.5-2B backbone + Parallel Coarse-Action Head (12-layer transformer, hidden=1024), outputting $L_{\text{macro}} = M \times H_{\text{chunk}}$ coarse tokens at low frequency (per step $D$-dimensional action, $N$ bins per dimension).
-- **System 1 (Action Refiner)**: Diffusion transformer + independent SigLIP vision encoder $\mathcal{E}_{\text{vis}}$, denoising continuous actions at high frequency by taking slices from the intent buffer as conditions.
-- **Bridge**: FIFO Intent Buffer $\mathcal{Q}$ + a learnable codebook $\mathbf{E} \in \mathbb{R}^{N \times D}$ that maps discrete bins to embeddings.
-- **Output**: Continuous actions $\mathbf{a}_t \in [-1, 1]^D$.
+
+Libra-VLA addresses the issue that most existing VLAs are monolithic flat mappings. Its solution is a hierarchical decomposition in the **action representation space**, explicitly splitting actions into "discrete macro-intent (where to go) + continuous micro-pose (how to interact)." Consequently, the conditional probability of an action is decomposed as $P(\mathbf{a}_t \mid \mathbf{o}_t, L) \approx \underbrace{P(\mathbf{a}_t^f \mid \mathbf{a}_t^c, \mathbf{o}_t)}_{\text{Action Refiner}} \cdot \underbrace{P(\mathbf{a}_t^c \mid \mathbf{o}_t, L)}_{\text{Semantic Planner}}$. Architecturally, this is realized as dual-system asynchronous collaboration: System 2 (Semantic Planner, InternVL2.5-2B backbone + 12-layer parallel coarse-action head, hidden=1024) performs low-frequency planning, outputting $L_{\text{macro}} = M \times H_{\text{chunk}}$ coarse tokens (each $D$ dimensions, $N$ bins per dimension). System 1 (Action Refiner, diffusion transformer + independent SigLIP visual encoder $\mathcal{E}_{\text{vis}}$) high-frequency samples slices from the intent buffer as conditions to denoise continuous actions $\mathbf{a}_t \in [-1,1]^D$. The systems communicate via a FIFO Intent Buffer $\mathcal{Q}$ and a learnable codebook $\mathbf{E} \in \mathbb{R}^{N \times D}$ that converts discrete bins into embeddings.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Observation o_t + Language L"]
+    subgraph S2["System 2·Semantic Planner (Low frequency, runs every M chunks)"]
+        direction TB
+        VLM["InternVL2.5-2B Backbone<br/>Outputs hidden state H_t"]
+        HEAD["Parallel coarse-action head<br/>K queries output full coarse token sequence"]
+        VLM --> HEAD
+    end
+    IN --> S2
+    S2 --> MACRO["macro-intent tokens<br/>N bins per dimension (intentionally small N)"]
+    MACRO --> CB["Learnable codebook E + Adaptive Injection<br/>Discrete bin → intent embedding"]
+    CB --> BUF["Intent Buffer Q (FIFO)<br/>Predicts future M·H_chunk steps"]
+    subgraph S1["System 1·Action Refiner (High frequency, runs every control step)"]
+        direction TB
+        SIG["Independent SigLIP Visual Encoder<br/>High-res geometric features"]
+        DIT["diffusion transformer<br/>Uses H_chunk slice as denoising condition"]
+        SIG --> DIT
+    end
+    BUF -->|Each step pop H_chunk tokens| S1
+    S1 --> OUT["Continuous micro-pose a_t ∈ [−1,1]^D (How to interact)"]
+```
 
 ### Key Designs
 
-1.  **Hybrid Action Space + Coarse-Grained Directional Discretization**:
-    - **Function**: Quantizes each dimension of the action into $N$ uniform bins, $y_{t,i}^{gt} = \mathrm{clip}(\lfloor (a_{t,i}+1)/2 \times N \rfloor, 0, N-1)$, but **intentionally uses a very small $N \ll 256$**.
-    - **Mechanism**: Previous discrete VLAs (OpenVLA) pursued $N=256$ to approximate continuous control, which bloated the token space beyond the VLM's capacity. Ours reduces $N$ significantly (ablations show an inverted U-curve where moderate $N$ performs best). Tokens represent "coarse directions (macro-intent)," allowing the VLM's semantic abstraction to hit a sweet spot, while quantization loss is compensated by the subsequent continuous refiner.
-    - **Design Motivation**: The authors identify the "**learning complexity equipartition**" principle—performance peaks when the learning difficulty is balanced between the two subsystems.
+**1. Hybrid Action Space + Coarse-Grained Direction Discretization: Intentionally reducing bin counts**
 
-2.  **Parallel Coarse-Action Head + Adaptive Intent Injection (Curriculum to solve teacher forcing bias)**:
-    - **Function**: Uses $K$ learnable queries to perform self-attention with VLM outputs $\mathbf{H}_t$, predicting coarse tokens for the entire chunk in parallel: $\mathbf{Z}_{\text{act}} = \mathrm{SelfAttn}([\mathbf{Q}_{\text{act}}; \mathbf{H}_t])_{0:K}$, followed by Linear+Softmax to output $P(\mathbf{a}_t^c)$.
-    - **Mechanism**: During training, System 1 requires $\mathbf{e}_{\text{intent}}$ as a condition. Since System 2 might be unreliable early on, using its predictions directly introduces noise that harms System 1 training; conversely, standard teacher forcing causes System 1 to fail at inference when it encounters noisy predictions. Ours uses a **dynamic curriculum**: when System 2's accuracy is below a threshold $\tau$, it uses GT codebook embeddings; once above $\tau$, it switches to sampling from $P(\mathbf{a}_t^c)$.
-    - **Design Motivation**: The parallel head ensures inference speed (no AR); the curriculum bridges the train-test gap and enables the refiner to internalize tolerance for planner deviations.
+Previous discrete VLAs (OpenVLA, π0-FAST) aimed for $N=256$ to approximate continuous control, resulting in a token space too large for VLMs to learn, alongside cumulative quantization errors. Libra-VLA does the opposite: it quantizes each dimension as $y_{t,i}^{gt} = \mathrm{clip}(\lfloor (a_{t,i}+1)/2 \times N \rfloor, 0, N-1)$ but intentionally chooses a very small $N \ll 256$. This allows tokens to represent "macro-intents," utilizing the VLM's semantic abstraction for discrete outputs while leaving quantization loss compensation to the subsequent continuous refiner. A key empirical finding is the **learning complexity equipartition** principle: performance follows an inverted U-curve relative to granularity $N$. Performance peaks when learning difficulties of both subsystems are balanced.
 
-3.  **Asynchronous Execution with Intent Buffer + Horizon Expansion**:
-    - **Function**: System 2 predicts macro tokens for $L_{\text{macro}} = M \cdot H_{\text{chunk}}$ future steps into a FIFO buffer $\mathcal{Q}$. System 1 pops $H_{\text{chunk}}$ tokens as conditions at each control step. System 2 remains dormant for the next $M-1$ chunks.
-    - **Mechanism**: Unlike traditional dual-systems (GR00T-N1) that use static latents prone to environment decoupling, our **predictive intent buffer** allows System 2 to plan the discrete direction sequence for the entire horizon. System 1's slices are **time-synchronized**, preventing lagging. Discrete tokens are also physically interpretable (e.g., "+x large, +y small"), offering more transparency than black-box latents.
-    - **Design Motivation**: Amortizes the expensive VLM computation across $M$ chunks, decoupling control frequency from planning frequency—a critical engineering breakthrough for real-time robotics.
+**2. Parallel Coarse-Action Head + Adaptive Intent Injection: Parallel token output and gap bridging**
+
+For fast inference, the coarse-action head uses $K$ learnable queries to perform self-attention with the VLM output $\mathbf{H}_t$, predicting the entire chunk of coarse tokens in parallel: $\mathbf{Z}_{\text{act}} = \mathrm{SelfAttn}([\mathbf{Q}_{\text{act}}; \mathbf{H}_t])_{0:K}$. However, System 1 faces a dilemma during training: using early, inaccurate System 2 predictions introduces noise that damages refiner training, while standard teacher forcing leaves the refiner unable to handle planner noise during inference. The authors use a dynamic curriculum: when System 2 accuracy is below a threshold $\tau$, GT codebook embeddings are used; once above $\tau$, the system switches to sampling from $P(\mathbf{a}_t^c)$, allowing the refiner to internalize tolerance for planner deviations.
+
+**3. Intent Buffer Powered Asynchronous Execution + Horizon Expansion: Amortizing VLM calls**
+
+Traditional dual-systems (GR00T-N1) use static latents as bridges, which can decouple from the environment over time (lagging). Libra-VLA introduces a predictive intent buffer: System 2 predicts future $L_{\text{macro}} = M \cdot H_{\text{chunk}}$ steps of macro tokens to push into a FIFO buffer $\mathcal{Q}$. System 1 pops $H_{\text{chunk}}$ tokens as conditioning each step, while System 2 remains dormant for the next $M-1$ chunks. This ensures System 1 slices are time-synchronized, avoiding static latent lag. Furthermore, discrete tokens are physically interpretable, aiding debugging and safety auditing, while amortizing the expensive VLM computational cost across $M$ chunks.
 
 ### Loss & Training
-Jointly optimizes two losses:
+The system jointly optimizes two losses:
+
 - **Planner loss**: $\mathcal{L}_{\text{plan}} = \mathcal{L}_{\text{CE}}(P(\mathbf{a}_t^c), \mathbf{y}_t^{gt})$ (Standard cross-entropy, $N$-way classification per dimension).
 - **Refiner loss**: $\mathcal{L}_{\text{diff}} = \mathbb{E}_{k, \mathbf{x}_0, \epsilon}[\|\epsilon - \epsilon_\theta(\mathbf{x}_k, \mathbf{F}_t^{\text{geo}}, \mathbf{e}_{\text{intent}})\|^2]$ (Standard DDPM noise prediction).
-- **Total loss**: $\mathcal{L}_{\text{total}} = \lambda_{\text{diff}} \mathcal{L}_{\text{diff}} + \lambda_{\text{plan}} \mathcal{L}_{\text{plan}}$, with weights calibrated for gradient magnitude balance.
-- **Key Hyperparameters**: $M=2$ (horizon expansion factor), $H_{\text{chunk}}=5$, $L_{\text{macro}}=10$, moderate $N$.
-- **Training**: All experiments are conducted **without massive robot data pre-training**, fine-tuning directly from InternVL2.5-2B + SigLIP.
+- **Total loss**: $\mathcal{L}_{\text{total}} = \lambda_{\text{diff}} \mathcal{L}_{\text{diff}} + \lambda_{\text{plan}} \mathcal{L}_{\text{plan}}$, with weights calibrated to balance gradient magnitudes.
+- **Training**: All experiments were conducted **without large-scale robot pre-training**, fine-tuning directly from InternVL2.5-2B + SigLIP.
 
 ## Key Experimental Results
 
-### Main Results: LIBERO Benchmark (4 task suites, 50 rollouts per task, 500 total)
+### Main Results: LIBERO Benchmark (4 task suites, 500 total rollouts)
 
 | Method | Action Space | Spatial | Object | Goal | Long | **Avg** |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|--------------|---------|--------|------|------|---------|
 | OpenVLA | Discrete | 84.7 | 88.4 | 79.2 | 53.7 | 76.5 |
 | π0-FAST | Discrete | 96.4 | 96.8 | 88.6 | 60.2 | 85.5 |
 | DD-VLA | Discrete | 97.2 | 98.6 | 97.4 | 92.0 | 96.3 |
@@ -95,65 +107,56 @@ Jointly optimizes two losses:
 | π0.5 | Continuous | 98.8 | 98.2 | 98.0 | 92.4 | 96.9 |
 | **Libra-VLA (Ours)** | **Hybrid** | **98.6** | **99.4** | **98.0** | **92.8** | **97.2** |
 
-Highlights: Object 99.4 (validating refiner geometric precision), Long 92.8 (validating planner long-range guidance), Average 97.2 (Rank 1).
+Ours achieves 97.2 Avg, leading the leaderboard, with particularly high scores in Object (99.4) and Long (92.8).
 
-### LIBERO-Plus Robustness (7 perturbations: Camera/Robot/Lang/Light/BG/Noise/Layout)
+### LIBERO-Plus Robustness (7 perturbation types)
 
 | Method | Camera | Robot | Lang | Light | BG | Noise | Layout | **Avg** |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|--------|-------|------|-------|-----|-------|--------|---------|
 | **Zero-Shot Transfer** | | | | | | | | |
 | OpenVLA | 0.8 | 3.5 | 23.0 | 8.1 | 34.8 | 15.2 | 28.5 | 15.6 |
 | π0-FAST | 65.1 | 21.6 | 61.0 | 73.2 | 73.2 | 74.4 | 68.8 | 61.6 |
 | OpenVLA-OFT | 56.4 | 31.9 | 79.5 | 88.7 | 93.3 | 75.8 | 74.2 | 69.6 |
 | **Ours (Hybrid)** | **68.9** | **48.8** | **92.7** | **97.9** | **93.4** | **86.3** | **77.5** | **79.5** |
-| **Supervised Fine-Tuning** | | | | | | | | |
-| π0.5* | 70.3 | 41.7 | 81.1 | 97.3 | 94.6 | 71.8 | 84.9 | 75.7 |
-| OpenVLA-OFT+ | 92.8 | 30.3 | 85.8 | 94.9 | 93.9 | 89.3 | 77.6 | 79.6 |
-| **Ours (Hybrid)** | **94.5** | 41.8 | — | — | — | — | — | — |
 
-**Key Finding**: In zero-shot transfer, Libra-VLA outperforms the runner-up OpenVLA-OFT by **+9.9 points** (79.5 vs 69.6), with notable gains in Language (92.7 vs 79.5) and Light (97.9 vs 88.7), demonstrating that the hybrid space significantly reduces reliance on the training distribution.
+**Key Findings**: In zero-shot settings, Libra-VLA outperforms the runner-up (OpenVLA-OFT) by **+9.9 points** on average, proving that the hybrid space significantly reduces dependence on training distribution.
 
 ### Ablation Study
 
 | Configuration | Trend | Description |
-| :--- | :--- | :--- |
-| Varying bin count $N$ | **Inverted U-curve** | Low $N$ lacks detail; high $N$ makes VLM learning difficult. Verification of "learning complexity equipartition." |
-| Removing Adaptive Intent Injection | Performance drops | Train-test gap; refiner is unprepared for planner noise. |
-| Removing independent SigLIP | Performance drops | Verification of "feature squeezing" bottleneck seen in FiS-VLA. |
-| $M=1$ (Synchronous) | High latency | Asynchronous design primarily provides latency benefits. |
-| Static latent bridge | Long-horizon drops | Predictive intent buffer mitigates lagging. |
-
-## Key Findings
-- The **inverted U-curve** is the most valuable methodological discovery: elevating "hyperparameter $N$" to the "learning complexity equipartition principle" provides clear guidance for VLA design.
-- The **+10 point zero-shot gain** on LIBERO-Plus indicates that hybrid action space is more than just a performance trick; it significantly improves OOD generalization because macro-intents are naturally robust to environment perturbations.
-- **SoTA without large-scale pre-training**: Unlike π0/GR00T which require massive robot data, Ours wins by fine-tuning InternVL2.5.
-- **Latency Advantage**: Asynchronous execution amortizes VLM costs, significantly reducing measured latency.
+|------|------|------|
+| Varying bin count $N$ | **Inverted U-Curve** | Validates the "learning complexity equipartition" principle; extreme $N$ values hinder one of the systems. |
+| Removing Adaptive Intent Injection | Performance drop | Planner noise during inference collapses the refiner. |
+| Removing independent SigLIP | Performance drop | Validates the "feature squeezing" bottleneck in shared backbones. |
+| $M=1$ (Synchronous execution) | Similar performance | Significantly **increased inference latency**. |
+| Static latent bridge | Long-horizon drop | Validates that the predictive intent buffer resists lagging. |
 
 ## Highlights & Insights
-- **Hierarchy in "Action Representation Space"** is a paradigm shift: previous hierarchical VLAs decomposed the temporal axis (waypoints/sub-instructions). Ours explores the orthogonal discrete/continuous dichotomy.
-- **"Learning Complexity Equipartition" Principle**: This design philosophy, backed by the **empirical** inverted U-curve, serves as a "Rosetta Stone" for dual-system VLA architectures.
-- **Predictive Intent Buffer as a Key to Asynchrony**: Using future discrete direction sequences instead of static latents ensures time-synchronized guidance for System 1.
-- **Inter-system Communication via Discrete Tokens**: Unlike black-box latents, discrete tokens are physically interpretable, aiding debugging and safety audits.
-- **Independent SigLIP for Refiner**: Assigning a high-resolution vision encoder to the fast system resolves the "feature squeezing" bottleneck in a cost-effective way.
+- **Hierarchical decomposition in the "action representation space"** is a paradigm shift: unlike previous temporal decompositions, this focuses on the discrete/continuous dichotomy of action spaces.
+- **"Learning Complexity Equipartition" Principle**: Elevates hyperparameter $N$ tuning to a design philosophy of balancing difficulty between subsystems.
+- **Predictive Intent Buffer for Asynchronous Execution**: Replacing static latents with future macro-intent sequences provides time-synced guidance, making dual-system VLAs practical for real-time robotics.
+- **Inter-system Communication via Discrete Tokens**: Offers physical interpretability over black-box latents, facilitating safety audits and debugging.
+- **Independent SigLIP for Refiner**: Decouples high-resolution geometric features from semantic features, resolving the "feature squeezing" found in single-backbone designs.
 
 ## Limitations & Future Work
-- **Task/Dataset-dependent optimal $N$**: No automated method for selecting $N$ is provided.
-- **Static Hyperparameter $M$**: If $M$ is too large, macro-intents become outdated; if $M$ is too small, VLM calls become too frequent.
-- **Uniform Discretization Assumption**: Assumes dimensions are decomposable; might fail for highly coupled multi-joint coordination (e.g., dexterous hands).
-- **Scale and Domain**: Validated primarily on LIBERO/LIBERO-Plus; testing on industrial-grade long-horizon tasks or massive data scaling remains for the future.
+- **Optimal $N$ is task-dependent**: The paper does not provide an automated method for selecting $N$.
+- **Fixed horizon expansion factor $M$**: Hard-coded as $M=2$; excessive $M$ might lead to outdated macro-intents.
+- **Assumed independence of dimensions**: Independent quantization may fail for highly coupled multi-joint coordination.
+- **Limited Real-World Scale**: Only validated on LIBERO and small-scale real-robot experiments.
+- **Backbone Constraints**: Only InternVL2.5-2B was explored; larger backbones might shift the inverted U-curve.
 
 ## Related Work & Insights
-- **vs. OpenVLA / π0-FAST (Discrete AR VLA)**: They use $N=256$ to approximate continuous control; Ours uses $N \ll 256$ to treat discretization as a semantic abstraction tool.
-- **vs. π0 / GR00T-N1 (Continuous Diffusion VLA)**: They force the VLM to handle continuous output directly; Ours uses macro-intents to anchor the search space, letting diffusion learn only residuals.
-- **vs. HAMSTER / Hi Robot (Temporal Hierarchical VLA)**: They decompose time; Ours decomposes the action **representation**, making them orthogonal and potentially combinable.
-- **vs. HybridVLA**: HybridVLA is a parallel structure; Ours is a strictly hierarchical coarse-to-fine dependency.
-- **vs. FiS-VLA**: Ours decouples features using an independent SigLIP encoder.
+- **vs OpenVLA / π0-FAST**: These use $N=256$ to mimic continuity, incurring high VLM learning costs. Libra-VLA uses $N \ll 256$ to let the VLM focus on semantic coarse-grained direction.
+- **vs π0 / GR00T-N1 (Continuous)**: These force VLMs to directly output continuous actions. Libra-VLA inserts "macro-intent" as an intermediate representation to anchor the search space for diffusion.
+- **vs HAMSTER / Hi Robot (Temporal)**: These decompose steps in time but still use monolithic mappings; Libra-VLA's representation hierarchy is orthogonal and could be combined.
+- **vs FiS-VLA**: Avoids "feature squeezing" by utilizing an independent SigLIP encoder.
+- **vs HybridVLA**: Moves beyond parallel structures to a strict hierarchical decomposition with conditional dependency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Decoupling hierarchy in the action representation space is a significant insight.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Strong results on LIBERO and robustness benchmarks; lacks a scaling curve.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear justifications for the architecture and findings.
-- Value: ⭐⭐⭐⭐⭐ Provides actionable principles for dual-system VLA design with impressive zero-shot gains.
+- Novelness: ⭐⭐⭐⭐⭐ Hierarchical action representation + learning complexity equipartition is a major insight.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong LIBERO results and ablations, but lacks large-scale scaling curves.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivations and clean justifications for each design choice.
+- Value: ⭐⭐⭐⭐⭐ Provides generalizable design principles for dual-system VLAs with significant zero-shot gains.
 
 <!-- RELATED:START -->
 
@@ -164,8 +167,8 @@ Highlights: Object 99.4 (validating refiner geometric precision), Long 92.8 (val
 - [\[AAAI 2026\] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](../../AAAI2026/robotics/affordance-guided_coarse-to-fine_exploration_for_base_placem.md)
 - [\[ICML 2026\] Dual Advantage Fields](../../ICML2026/robotics/dual_advantage_fields.md)
 - [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
+- [\[ECCV 2024\] LLM as Copilot for Coarse-Grained Vision-and-Language Navigation](../../ECCV2024/robotics/llm_as_copilot_for_coarse-grained_vision-and-language_navigation.md)
 - [\[NeurIPS 2025\] LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition](../../NeurIPS2025/robotics/lumia_a_handheld_vision-to-music_system_for_real-time_embodied_composition.md)
-- [\[AAAI 2026\] Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling](../../AAAI2026/robotics/cross_modal_fine-grained_alignment_via_granularity-aware_and_region-uncertain_mo.md)
 
 </div>
 

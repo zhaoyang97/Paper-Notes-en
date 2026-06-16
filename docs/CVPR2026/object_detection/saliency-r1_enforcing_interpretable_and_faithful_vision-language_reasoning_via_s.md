@@ -2,74 +2,86 @@
 title: >-
   [Paper Note] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 description: >-
-  [CVPR 2026][Object Detection][Vision-language models] This paper proposes Saliency-R1, which uses a logit-decomposition-based efficient saliency map technique and chain-of-thought bottleneck attention rollout to compute…
+  [CVPR 2026][Object Detection][Vision-Language Model] This paper proposes Saliency-R1, which leverages an efficient saliency map technique based on logit decomposition and Chain-of-Thought (CoT) bottleneck attention backtracking. By using the alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, the model is trained to focus on task-relevant
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Vision-language models"
-  - "saliency maps"
-  - "GRPO reinforcement learning"
-  - "interpretable reasoning"
-  - "attention alignment"
+  - CVPR 2026
+  - Object Detection
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 4b225c1ffa436c4c
+content_hash: b96b7c26d5ee9a78
 ---
-
 # Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04500](https://arxiv.org/abs/2604.04500)  
 **Code**: [https://github.com/peterant330/Saliency_R1](https://github.com/peterant330/Saliency_R1)  
-**Area**: Object Detection
-**Keywords**: Vision-language models, saliency maps, GRPO reinforcement learning, interpretable reasoning, attention alignment
+**Area**: Object Detection  
+**Keywords**: Vision-Language Models, Saliency Map, GRPO Reinforcement Learning, Interpretable Reasoning, Attention Alignment
 
 ## TL;DR
 
-This paper proposes Saliency-R1, which uses a logit-decomposition-based efficient saliency map technique and chain-of-thought bottleneck attention rollout to compute alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, training VLMs to focus on task-relevant image regions during reasoning and thereby improving the interpretability and faithfulness of the reasoning process.
+This paper proposes Saliency-R1, which leverages an efficient saliency map technique based on logit decomposition and Chain-of-Thought (CoT) bottleneck attention backtracking. By using the alignment between saliency maps and human-annotated bounding boxes as a GRPO reward, the model is trained to focus on task-relevant image regions during inference, enhancing the interpretability and faithfulness of VLM reasoning.
 
 ## Background & Motivation
 
-1. **Background**: VLMs have achieved remarkable progress on reasoning and question-answering tasks. To enhance trustworthiness, models are typically prompted to generate natural language explanations (e.g., Chain-of-Thought) to demonstrate their reasoning process. Reasoning models such as DeepSeek-R1 are also trained to produce detailed chains of thought.
+1. **Background**: VLMs have achieved significant progress in reasoning and question-answering tasks. To enhance trustworthiness, models are often trained to generate natural language explanations (e.g., Chain-of-Thought) to demonstrate their reasoning process. Reasoning models like DeepSeek-R1 have also been trained to produce detailed CoT.
 
-2. **Limitations of Prior Work**: (1) VLMs tend to over-rely on textual cues, with visual signals playing a relatively minor role; (2) the generated reasoning traces are inconsistent with the final answers — models "think" one thing and "do" another; (3) the reasoning process itself may misuse visual cues or hallucinate details that do not exist.
+2. **Limitations of Prior Work**: (1) VLMs tend to rely excessively on textual cues, with visual signals playing a relatively minor role; (2) Inconsistencies exist between the generated reasoning trajectories and the final answers—what the model "thinks" differs from what it "does"; (3) The reasoning process itself may misuse visual cues or hallucinate non-existent details.
 
-3. **Key Challenge**: Different reasoning processes may attend to different image regions even when they arrive at the same correct answer. Unfaithful reasoning either focuses on irrelevant regions or ignores the image entirely, arriving at the answer through textual shortcuts.
+3. **Key Challenge**: Different reasoning processes may focus on different image regions even if they arrive at the same correct answer. Unfaithful reasoning processes either focus on irrelevant regions or ignore the image entirely, reaching the answer via textual shortcuts.
 
-4. **Goal**: (1) Design an efficient saliency map method to visualize how visual information influences generated tokens; (2) track how visual information flows through the chain of thought to the final answer; (3) use saliency alignment as a reward to train models via GRPO to attend to the correct regions.
+4. **Goal**: (1) Design an efficient saliency map method to visualize how visual information influences generated tokens; (2) Trace the flow of visual information through the CoT to the final answer; (3) Use saliency alignment as a reward to train the model to focus on correct regions via GRPO.
 
-5. **Key Insight**: Decompose token logits into the first-order direct contributions of each context token, extracting the contributions of visual tokens as saliency maps without any additional forward or backward passes.
+5. **Key Insight**: Decompose token logits into first-order direct contributions from each context token, extracting the contribution of visual tokens as a saliency map without requiring additional forward or backward passes.
 
-6. **Core Idea**: Use zero-overhead logit-decomposition saliency maps to measure the visual focus region of VLM reasoning, and employ alignment with human annotations as a GRPO reward to train more faithful reasoning.
+6. **Core Idea**: Measure the visual focus of VLM reasoning using a zero-computational-overhead logit decomposition saliency map, and use its alignment with human annotations as a GRPO reward to train more faithful reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-The method proceeds in three steps: (1) generate per-token saliency maps via logit decomposition at zero additional computational cost; (2) propagate visual information through the chain-of-thought token bottleneck to answer tokens via attention rollout to produce an overall saliency map; (3) compute an alignment score against bounding box annotations and use it as a saliency reward in GRPO training.
+The core problem addressed is: when a VLM provides a correct answer, is it "looking at the right place" or "guessing correctly via textual shortcuts"? Saliency-R1 transforms this into an optimizable reward. It first extracts "which image regions each generated token is looking at" from the model's inference process in a zero-overhead manner, then propagates visual attention along the CoT to the final answer tokens to obtain a global saliency map. Finally, it compares this map with human-annotated bounding boxes; higher alignment yields a higher reward, which is integrated into the GRPO reinforcement learning loop. These three stages—extracting, propagating, and rewarding saliency—form a training paradigm where "being right requires looking at the right place."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Image + Question"] --> B["VLM (Qwen2.5-VL)<br/>Generates CoT + Answer"]
+    B --> C["Logit Decomposition Saliency<br/>Extract visual attribution from KV cache for free"]
+    C --> D["CoT Bottleneck Attention Backtracking<br/>Vision→Thought→Answer, aggregated into global saliency"]
+    D --> E["Alignment Score<br/>Saliency quality in BBox / Total quality"]
+    E --> F["GRPO Saliency Alignment Reward<br/>Accuracy + Format + Saliency Alignment"]
+    F -->|Group-relative Advantage Update| B
+```
 
 ### Key Designs
 
-1. **Logit-Decomposition-Based Saliency Map Generation**:
+**1. Logit Decomposition Saliency: "Zero-overhead" Attribution from KV Cache**
 
-    - **Function**: Efficiently localize the image regions on which each generated token depends.
-    - **Mechanism**: The residual connections in Transformers allow the final output to be decomposed into a sum of direct contributions from tokens at each position. When predicting $t_{i+1}$, the direct contribution of token $t_p$ is $c_p = \sum_{l=1}^{L} \sum_{j=1}^{H} \alpha_{i,j,p}^l \mathbf{W}_{o,j}^l \mathbf{W}_{v,j}^l \mathbf{h}_p^{l-1} \mathbf{E}_u$, where $\alpha$ denotes attention weights, $\mathbf{W}_o$ and $\mathbf{W}_v$ are the output and value projection matrices, and $\mathbf{E}_u$ is the unembedding matrix. The contributions corresponding to visual tokens are extracted, rearranged by patch position, and filtered through ReLU to remove negative contributions, yielding the saliency map.
-    - **Design Motivation**: Attention weights are naturally accessible in most attention implementations, and $\mathbf{W}_v^l \mathbf{h}_p^{l-1}$ is already computed in the KV cache. Consequently, this approach requires **zero additional forward or backward passes**, with negligible computational overhead, making it suitable for embedding directly into a training pipeline. Although only direct contributions are considered (indirect contributions are ignored), prior work shows that indirect contributions are small, and aligning on direct contributions is sufficient.
+Traditional saliency methods (Grad-CAM needs backprop, TAM needs optimization) are too costly for RL training with multiple rollouts. This work leverages the linearity of Transformer residual connections: the final output logit can be decomposed into the sum of direct contributions from each context token. When predicting $t_{i+1}$, the direct contribution of context token $t_p$ is:
 
-2. **Chain-of-Thought Bottleneck Attention Rollout**:
+$$c_p = \sum_{l=1}^{L} \sum_{j=1}^{H} \alpha_{i,j,p}^l\, \mathbf{W}_{o,j}^l \mathbf{W}_{v,j}^l \mathbf{h}_p^{l-1}\, \mathbf{E}_u$$
 
-    - **Function**: Track how visual information flows through thinking tokens to answer tokens.
-    - **Mechanism**: Define the visual-to-thinking-token attention matrix $\mathcal{A}_{vt}^{l,h}$ and the thinking-to-answer-token attention matrix $\mathcal{A}_{ta}^{l,h}$; multiplying them yields the transitive visual-to-answer attention $\tilde{\mathcal{A}}_{va}^{l,h} = \mathcal{A}_{vt}^{l,h} \mathcal{A}_{ta}^{l,h}$, with thinking tokens serving as the information-passing bottleneck. Column normalization of the attention matrices is deliberately omitted, since certain tokens (e.g., prepositions) inherently receive little contribution from thinking or visual tokens and should therefore exert minimal influence on the overall saliency map.
-    - **Design Motivation**: A faithful reasoning process should follow the flow "visual information → thinking process → final answer." If answer tokens draw information directly from visual tokens while bypassing the thinking tokens, the CoT is unfaithful. Bottleneck rollout enables the detection and penalization of such shortcut behavior.
+where $\alpha$ is the attention weight, $\mathbf{W}_o, \mathbf{W}_v$ are output and value projections, and $\mathbf{E}_u$ is the unembedding matrix. By taking $c_p$ for visual tokens, rearranging them into a 2D grid, and filtering negative contributions with ReLU, a saliency map is obtained. Crucially, **this requires no extra forward or backward passes** because components like $\mathbf{W}_v^l \mathbf{h}_p^{l-1}$ already exist in the KV cache and $\alpha$ is readable. The trade-off is ignoring multi-layer indirect contributions, but literature suggests direct contributions suffice for reflecting patch importance.
 
-3. **Saliency Alignment Training via GRPO**:
+**2. CoT Bottleneck Attention Backtracking: Forcing Information through "Thought Gates"**
 
-    - **Function**: Encourage the model to attend to correct image regions during reasoning through reinforcement learning.
-    - **Mechanism**: The alignment score is defined as $\frac{\sum_{i \in \text{BBox}} \text{Saliency}(i)}{\sum_{i \in \text{Image}} \text{Saliency}(i)}$, i.e., the proportion of total saliency mass that falls within the bounding box. The total reward is $\mathcal{R} = \mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}} + \mathcal{R}_{\text{saliency}}$, where $\mathcal{R}_{\text{accuracy}}$ evaluates answer correctness via LLM-as-judge (GPT-4o-mini, binary 0/1), $\mathcal{R}_{\text{format}}$ checks for the `<think></think>` format (binary 0/1), and $\mathcal{R}_{\text{saliency}}$ is the alignment score. The GRPO algorithm samples 8 rollouts and uses normalized rewards as the advantage function.
-    - **Design Motivation**: Accuracy reward alone cannot distinguish between "attended to the right region and answered correctly" and "attended to the wrong region but guessed correctly." The saliency reward directly encourages the model to focus on image regions relevant to the question, thereby producing more faithful and interpretable reasoning.
+Single-token saliency is insufficient; the goal is to judge if the answer is derived "through thinking." The model treats CoT tokens as the unique information bottleneck between vision and the answer. It multiplies the vision-to-thought attention matrix $\mathcal{A}_{vt}^{l,h}$ and the thought-to-answer attention matrix $\mathcal{A}_{ta}^{l,h}$ to get the transition attention:
+
+$$\tilde{\mathcal{A}}_{va}^{l,h} = \mathcal{A}_{vt}^{l,h}\, \mathcal{A}_{ta}^{l,h}$$
+
+If an answer token bypasses the CoT and takes information directly from visual tokens (textual shortcut), the weight on this product path will be low, exposing unfaithful CoT behavior. **Column normalization is intentionally avoided**: tokens like prepositions naturally receive low contributions; original magnitudes are preserved to maintain their appropriately small weights in the global saliency map.
+
+**3. GRPO-based Saliency Alignment Reward: Optimizing "Looking at the Right Place"**
+
+With the global saliency map, the alignment score is defined as the ratio of saliency mass within the bounding box to the total mass:
+
+$$\text{Align} = \frac{\sum_{i \in \text{BBox}} \text{Saliency}(i)}{\sum_{i \in \text{Image}} \text{Saliency}(i)}$$
+
+The total reward $\mathcal{R}$ is the sum of three parts: $\mathcal{R} = \mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}} + \mathcal{R}_{\text{saliency}}$. $\mathcal{R}_{\text{accuracy}}$ uses LLM-as-judge (GPT-4o-mini) for correctness (0/1), $\mathcal{R}_{\text{format}}$ checks for `<think></think>` tags (0/1), and $\mathcal{R}_{\text{saliency}}$ is the alignment score. Training uses GRPO with 8 rollouts per sample, using group-standardized rewards as the advantage function. The saliency term distinguishes "right for the right reasons" from "right by guessing," forcing the model to use the image faithfully.
 
 ### Loss & Training
 
-Training proceeds in two stages: (1) cold-start SFT using the filtered Vision-R1-cold dataset (272,881 samples) with llama-factory; (2) GRPO training using the saliency-r1-8k dataset (8,080 VQA samples with bounding box annotations) via the TRL framework, with batch size 64, KL coefficient 0.001, LoRA rank 16, learning rate $10^{-5}$, and 8× A6000 GPUs. The base models are Qwen2.5-VL (3B and 7B).
+Two-stage training: (1) Cold-start SFT using a filtered Vision-R1-cold dataset (272,881 samples) via llama-factory; (2) GRPO training using the saliency-r1-8k dataset (8,080 VQA samples with BBox annotations) via TRL framework. Hyperparameters: batch size 64, KL coefficient 0.001, LoRA rank 16, learning rate $10^{-5}$, 8x A6000 GPUs. Base models: Qwen2.5-VL (3B and 7B).
 
 ## Key Experimental Results
 
@@ -82,52 +94,51 @@ Training proceeds in two stages: (1) cold-start SFT using the filtered Vision-R1
 | TAM | 83.91 | 79.33 | 73.29 | 45.24 |
 | **Ours** | **70.96** | **59.45** | **50.34** | 45.22 |
 
-On COCO Captions, the deletion metrics are 5.46%/4.77%/2.57% lower than the second-best method, demonstrating that the proposed approach faithfully captures the relative importance of visual patches.
+On COCO Captions, the deletion metric is 5.46%/4.77%/2.57% lower than the second-best method, proving the method faithfully captures the relative importance of visual patches.
 
 ### Ablation Study
 
-| Reward Configuration | Description |
+| Reward Config | Description |
 |---------|------|
-| $\mathcal{R}_{\text{accuracy}}$ only | Accuracy reward only; baseline |
-| $\mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}}$ | Adding format reward |
-| $\mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}} + \mathcal{R}_{\text{saliency}}$ | Full Saliency-R1; improves reasoning faithfulness and accuracy |
+| $\mathcal{R}_{\text{accuracy}}$ only | Pure accuracy reward, baseline |
+| $\mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}}$ | Added format reward |
+| $\mathcal{R}_{\text{accuracy}} + \mathcal{R}_{\text{format}} + \mathcal{R}_{\text{saliency}}$ | Full Saliency-R1, improves both faithfulness and accuracy |
 
 ### Key Findings
 
-- **Zero-cost saliency maps outperform gradient-based methods**: By exploiting only attention weights and computations already present in the KV cache, the proposed method surpasses ATTN-LRP (which requires backpropagation) and TAM (which requires solving an optimization problem) on deletion tests.
-- **Saliency reward improves both faithfulness and accuracy**: Adding the saliency reward not only leads the model to attend to correct regions (higher alignment scores) but also improves answer accuracy on downstream tasks, indicating that attending to the right regions inherently enhances reasoning quality.
-- **CoT bottleneck rollout reveals differences in reasoning faithfulness**: Different reasoning trajectories may focus on entirely different visual regions even when reaching the same answer; unfaithful reasoning can be detected through this mechanism.
-- **The method is effective for both 3B and 7B models**: Improvements are observed for both scales of Qwen2.5-VL, demonstrating the generalizability of the approach.
+- **Zero-cost saliency outperforms gradient methods**: By leveraging attention weights and KV cache, this method surpasses ATTN-LRP (requires backprop) and TAM (requires optimization) in deletion tests.
+- **Saliency rewards improve both faithfulness and accuracy**: Adding saliency rewards not only helps the model focus on correct regions (higher alignment) but also improves final answer accuracy, suggesting that correct focus inherently improves reasoning quality.
+- **CoT bottleneck backtracking reveals faithfulness gaps**: Different reasoning trajectories reaching the same answer can have entirely different visual focus; this mechanism detects such unfaithful behavior.
+- **Effective across model scales**: Improvements are consistent on both 3B and 7B Qwen2.5-VL models, demonstrating generalizability.
 
 ## Highlights & Insights
 
-- **"Zero-overhead" saliency maps are a key innovation**: By cleverly leveraging already-available attention weights and KV cache computations in Transformers, the method achieves gradient-free efficient saliency maps. This allows the saliency signal to be embedded directly into the GRPO training loop without additional computational burden.
-- **Training philosophy of "correct attention before correct answers"**: Traditional RL rewards only correct answers, whereas Saliency-R1 additionally requires the model to "look at the right place." This fundamentally addresses the problem of models that guess correct answers without faithful reasoning, and the idea can be generalized to any scenario requiring interpretable reasoning.
-- **The chain-of-thought bottleneck concept**: Modeling thinking tokens as an information-passing bottleneck between visual inputs and final answers provides not only a visualization framework but also a quantitative tool for detecting CoT faithfulness.
-- **Data efficiency**: Significant improvements are achieved with only 8,080 bounding-box-annotated VQA samples, indicating that the saliency reward constitutes a highly efficient training signal.
+- **Zero-overhead saliency is a key innovation**: Exploiting existing attention weights and KV cache enables efficient saliency maps that can be embedded directly into GRPO loops without increasing computational burden.
+- **"Right for the right reasons" philosophy**: Traditional RL only rewards the final answer. Saliency-R1 requires the model to "look at the right place," fundamentally addressing the issue of unfaithful reasoning. This can be extended to any interpretable reasoning scenario.
+- **CoT Bottleneck concept**: Modeling CoT tokens as the information bottleneck between vision and the answer provides both a visualization tool and a quantitative metric for CoT faithfulness.
+- **Data Efficiency**: Significant improvements were achieved using only 8,080 BBox-labeled VQA samples, showing that saliency rewards provide a high-quality training signal.
 
 ## Limitations & Future Work
 
-- Only direct contributions (first-order decomposition) are considered; multi-layer indirect contributions (e.g., nonlinear transformations in FFN layers) are ignored, so the saliency maps are not fully precise.
-- Training data with bounding box annotations are required, and annotation costs limit scalability.
-- The current attention rollout is heuristic (matrix multiplication approximates information flow) and lacks theoretical guarantees.
-- Validation is limited to Qwen2.5-VL; applicability to other architectures (e.g., LLaVA, InternVL) remains unknown.
-- Complementary validation with methods such as GradCAM, or the use of finer-grained region annotations (segmentation masks vs. bounding boxes), could be explored.
-- No detailed hyperparameter search is conducted for the weight of the saliency reward $\mathcal{R}_{\text{saliency}}$.
+- Only considers direct contributions (1st-order decomposition), ignoring multi-layer indirect effects (e.g., non-linear FFN transformations), making the maps slightly imprecise.
+- Requires BBox-annotated training data, which limits scalability due to annotation costs.
+- The current attention backtracking is heuristic (matrix multiplication approximation) and lacks rigorous theoretical guarantees.
+- Only validated on Qwen2.5-VL; applicability to other architectures (e.g., LLaVA, InternVL) remains unconfirmed.
+- Future work could introduce finer region annotations (segmentation masks) or more detailed hyperparameter searches for $\mathcal{R}_{\text{saliency}}$.
 
 ## Related Work & Insights
 
-- **vs. DeepSeek-R1 / Claude**: These models are trained for CoT reasoning but do not monitor visual focus regions, potentially producing unfaithful reasoning that "looks at the wrong place but guesses correctly." Saliency-R1 directly addresses this issue through saliency alignment rewards.
-- **vs. Grad-CAM / ATTN-LRP**: Conventional saliency methods require additional computation (backpropagation/perturbation). The logit-decomposition method in Saliency-R1 achieves comparable or superior faithfulness at zero computational cost.
-- **vs. ADAPTVIS**: ADAPTVIS adaptively adjusts attention at inference time, whereas Saliency-R1 shapes attention patterns during training through reward design; the two approaches are complementary.
-- This work is the first to align visual attention with human annotations during the post-training stage, opening a new direction for interpretable RL training of VLMs.
+- **vs DeepSeek-R1 / Claude**: These models train CoT but do not monitor visual focus, potentially leading to "right answer, wrong reason" scenarios. Saliency-R1 addresses this via alignment rewards.
+- **vs Grad-CAM / ATTN-LRP**: Traditional methods require extra computation (gradients/perturbations). Saliency-R1's logit decomposition is comparable or superior in faithfulness while being zero-cost.
+- **vs ADAPTVIS**: While ADAPTVIS adjusts attention during inference, Saliency-R1 shapes attention patterns during training via rewards; the two could be complementary.
+- This work represents the first attempt to align visual attention with human annotations during the post-training phase of VLMs, opening a new direction for interpretable RL training.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Zero-overhead saliency maps + CoT bottleneck rollout + saliency-aligned GRPO reward — each of the three contributions is individually novel and they are organically integrated.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Faithfulness evaluation (deletion/insertion) is thorough; however, the complete downstream task performance table is truncated in the cache.
-- Writing Quality: ⭐⭐⭐⭐⭐ The motivation figure (different reasoning trajectories attending to different regions) is highly intuitive, the method pipeline diagram is clear, and the mathematical derivations are rigorous.
-- Value: ⭐⭐⭐⭐⭐ The work is highly significant for trustworthy VLM reasoning; the method is practical and reproducible, and it opens a new direction for saliency-guided RL training.
+- Novelty: ⭐⭐⭐⭐⭐ Zero-overhead saliency + CoT bottleneck backtracking + Saliency-aligned GRPO reward.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong faithfulness evaluations, though downstream task tables are slightly truncated.
+- Writing Quality: ⭐⭐⭐⭐⭐ Intuitive motivation and clear flowcharts with rigorous derivation.
+- Value: ⭐⭐⭐⭐⭐ Significant for trustworthy VLM reasoning; practical, reproducible, and introduces a new direction for RL training.
 
 <!-- RELATED:START -->
 
@@ -135,11 +146,11 @@ On COCO Captions, the deletion metrics are 5.46%/4.77%/2.57% lower than the seco
 
 ## Related Papers
 
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[CVPR 2026\] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
-- [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
+- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
+- [\[ECCV 2024\] SHINE: Saliency-aware HIerarchical NEgative Ranking for Compositional Temporal Grounding](../../ECCV2024/object_detection/shine_saliency-aware_hierarchical_negative_ranking_for_compositional_temporal_gr.md)
 
 </div>
 

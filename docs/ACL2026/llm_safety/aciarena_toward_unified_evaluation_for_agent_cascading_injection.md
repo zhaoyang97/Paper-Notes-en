@@ -2,70 +2,81 @@
 title: >-
   [Paper Note] ACIArena: Toward Unified Evaluation for Agent Cascading Injection
 description: >-
-  [ACL 2026][LLM Safety][Multi-Agent Systems] This paper constructs ACIArena, the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks, covering 6 mainstream Multi-Agent Systems (MAS)…
+  [ACL 2026][LLM Safety][ACI-Sentinel] This paper constructs ACIArena, the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks. It covers 1,356 test cases across 6 mainstream Multi-Agent Systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltrat
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Multi-Agent Systems"
-  - "Cascading Injection"
-  - "ACI Attack"
-  - "MAS Robustness"
-  - "ACI-Sentinel"
+  - ACL 2026
+  - LLM Safety
+  - ACI-Sentinel
 date: 2026-05-08
-content_hash: 37a5cf501e31fe52
+content_hash: 4722efcf9fbf6234
 ---
-
 # ACIArena: Toward Unified Evaluation for Agent Cascading Injection
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.07775](https://arxiv.org/abs/2604.07775)  
 **Code**: https://github.com/Greysahy/aciarena  
 **Area**: LLM Reasoning / Multi-Agent Security  
-**Keywords**: Multi-Agent Systems, Cascading Injection, ACI Attack, MAS Robustness, ACI-Sentinel
+**Keywords**: Multi-Agent Systems, Cascading Injection, ACI Attacks, MAS Robustness, ACI-Sentinel
 
 ## TL;DR
-This paper constructs ACIArena, the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks, covering 6 mainstream Multi-Agent Systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration) with 1,356 test cases. It also proposes ACI-Sentinel, a minimalist yet effective defense that reduces the Hijacking attack success rate from 92.78% to 8.06%.
+This paper constructs ACIArena, the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks. It covers 1,356 test cases across 6 mainstream Multi-Agent Systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration). Furthermore, it proposes ACI-Sentinel, a minimalist yet effective defense that reduces the Hijacking success rate from 92.78% to 8.06%.
 
 ## Background & Motivation
-**Background**: LLM multi-agent systems such as MetaGPT, AutoGen, CAMEL, and AgentVerse have been widely adopted by industrial products like Cursor and Salesforce Agentforce, enhancing performance in complex tasks (programming, mathematical reasoning) through expert division of labor and A2A protocols.
+**Background**: LLM Multi-Agent Systems (MAS) such as MetaGPT, AutoGen, CAMEL, and AgentVerse have been widely adopted in industrial products like Cursor and Salesforce Agentforce. These systems enhance performance on complex tasks (programming, mathematical reasoning) through expert division of labor and A2A protocols.
 
-**Limitations of Prior Work**: MAS amplify the hazards of prompt injection through extensive inter-agent messaging—a compromised agent can cascade malicious instructions throughout the system via peer trust, a phenomenon the authors name **Agent Cascading Injection (ACI)**. Current research suffers from three flaws: (1) **Incomplete threat surfaces**: Existing works focus either only on profiles or only on messages, with goals limited to system paralysis or privacy leakage; (2) **Non-standard evaluation settings**: Many studies use simplified, self-built MAS, making horizontal comparisons impossible; (3) **Non-extensible codebases**: Frameworks like MASLab provide only a unified entry point, lacking attack and defense modules.
+**Limitations of Prior Work**: MAS amplify the hazards of prompt injection through extensive inter-agent message passing—where a compromised agent cascades malicious instructions to the entire system via peer trust. The authors name this phenomenon **Agent Cascading Injection (ACI)**. Existing research has three significant flaws: (1) **Incomplete threat surfaces**: Prior works target either only profiles or messages, with goals limited to system paralysis or privacy leaks; (2) **Non-standard evaluation settings**: Many studies use simplified, self-built MAS, making horizontal comparisons impossible; (3) **Non-extensible codebases**: Toolkits like MASLab provide only unified execution entries without integrated attack/defense modules.
 
-**Key Challenge**: Studying MAS security requires simultaneous control over the MAS implementation, attack strategy, and attack surface. However, prior works typically modify only one variable within a custom environment, rendering results non-transferable.
+**Key Challenge**: Studying MAS security requires simultaneous control over three variables: MAS implementation, attack strategy, and attack surface. However, existing studies typically modify only one variable in a custom environment, making their conclusions non-transferable.
 
-**Goal**: To establish an MAS robustness evaluation framework that is (i) comprehensive in attack surfaces and goals, (ii) standardized, and (iii) modularly extensible.
+**Goal**: Establish a MAS robustness evaluation framework that is (i) comprehensive across multiple attack surfaces and goals, (ii) standardized, and (iii) modularly extensible.
 
-**Key Insight**: Starting from the formal agent definition $\mathcal{A} = (\pi, \mathcal{P}, \mathcal{M}, \mathcal{T})$, the authors enumerate all components susceptible to injection (instructions $\mathcal{I}$, profiles $\mathcal{P}$, memory $\mathcal{M}$, tool descriptions $\mathcal{T}$, and message edges $\mathcal{E}$), categorizing all ACI attacks into 3 surfaces crossed with 3 goals.
+**Key Insight**: Starting from the formal definition of an agent $\mathcal{A} = (\pi, \mathcal{P}, \mathcal{M}, \mathcal{T})$, the authors enumerate all components susceptible to injection (instructions $\mathcal{I}$, profile $\mathcal{P}$, memory $\mathcal{M}$, tool descriptions $\mathcal{T}$, and message edges $\mathcal{E}$). They categorize all ACI attacks into 3 attack surfaces and intersect them with 3 attack goals, forming a 9-grid evaluation matrix.
 
-**Core Idea**: Transforming MAS robustness research into a horizontally comparable scientific experiment using a "Surface × Goal" 2D matrix combined with standardized MAS/attack-defense interfaces.
+**Core Idea**: Utilize a 2D matrix of "Attack Surface × Attack Goal" combined with standardized MAS and attack/defense interfaces to transform MAS robustness research into horizontally comparable scientific experiments.
 
 ## Method
 
 ### Overall Architecture
-ACIArena consists of four modules: **Benign Tasks** (filtered via LLM judge from GSM8K, MATH500, HumanEval, etc., based on difficulty and decomposability); **Attacks** (28 ACI attacks covering 3 surfaces × 3 goals, automatically optimized through a generate-mutate-select loop); **MAS Library** (6 MAS refactored into a unified interface); and **Evaluation Suites** (1,356 test cases with BU/ASR/UA/PVI metrics). During execution, an attacker injects a malicious prompt into a specified surface to observe cascading propagation and final output.
+ACIArena consists of four modules: **Benign Task Library** (selected from GSM8K, MATH500, HumanEval, MBPP, GPQA, and MedMCQA using an LLM judge based on difficulty, decomposability, and low ambiguity); **Attack Library** (28 types of ACI attacks covering 3 surfaces × 3 goals, automatically optimized via a generate-mutate-select loop); **MAS Library** (6 MAS refactored into a unified interface); and **Evaluation Suites** (1,356 test cases with four types of metrics: BU/ASR/UA/PVI). During execution, an attacker injects malicious prompts into a specified surface to observe the cascading propagation and final output.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Benign Task Library<br/>GSM8K/MATH/HumanEval…<br/>LLM judge selects moderate decomposable tasks"] --> GEN
+    subgraph GEN["3-Axis Threat Model & Attack Generator"]
+        direction TB
+        B["Seed Attack a₀<br/>Surface × Goal Cross"] --> C["Mutation Operator ω generates variant a′"]
+        C --> D["Execute on N MAS"]
+        D --> E["LLM judge scoring<br/>Stealthiness + Harmfulness → Select Best"]
+        E -->|Not Converged| C
+    end
+    GEN -->|Inject into designated surface| F["MAS Library<br/>6 MAS Unified Interface Execution"]
+    F --> G["Malicious Information Cascading"]
+    G --> H["Evaluation Suites<br/>BU/ASR/UA + PVI Quantifying Penetration"]
+    F -.Defense Side.-> I["ACI-Sentinel<br/>Retain minimal set of mission-critical semantics<br/>Remove additional injected instructions"]
+    I --> F
+```
 
 ### Key Designs
-1.  **Three-axis Threat Model and Attack Generator**:
-    - **Function**: Formalizes ACI attacks as a three-axis combination of "Surface × Goal × MAS" and uses an LLM to automatically generate attack prompts.
-    - **Mechanism**: The three surfaces correspond to three mathematical forms: **Adversarial Input** injects any input component $\mathcal{I}/\mathcal{M}/\mathcal{T}$; **Malicious Agent** tampers with profile $\mathcal{P}$ to make an agent autonomously output malicious messages; **Message Poison** intercepts and replaces messages on communication edges $(\mathcal{A}_i, \mathcal{A}_j) \in \mathcal{E}$. The three goals are Hijacking, Disruption, and Exfiltration. Prompts are optimized via a generate-mutate-select loop: starting from a manual seed $a_0$, mutations $\omega \in \Omega$ are sampled to generate $a' = \omega(a_t)$. These are executed across $N$ MAS, and an LLM judge scores them based on stealthiness (similarity to benign prompts) and harmfulness (alignment with the original malicious goal).
-    - **Design Motivation**: Manual prompt engineering is slow and fails to cover all patterns; the automated loop allows the framework to adapt quickly to new MAS and models.
+**1. 3-Axis Threat Model & Attack Generator: Formalizing ACI Attacks and Automating Generation**
 
-2.  **Propagation Vulnerability Index (PVI) and Fine-grained Agent-level Analysis**:
-    - **Function**: Quantifies the intensity of malicious information cascading within the system, beyond the final ASR.
-    - **Mechanism**: Defined as $\mathrm{PVI} = \sum_{a_i \in \mathcal{A}} \frac{L_{a_i}}{\sum_{a_j \in \mathcal{A}} L_{a_j}} \mathrm{ASR}_{a_i}$, where $L_{a_i}$ is the minimum topological distance from agent $a_i$ to the final response, and $\mathrm{ASR}_{a_i}$ is the attack success rate when that agent is the entry point. Higher PVI indicates stronger system "infectivity."
-    - **Design Motivation**: Final ASR ignores cases where local success is corrected downstream or where an attack penetrates multiple layers. PVI extends evaluation from the "output layer" to the "process layer."
+Manually writing attack prompts is slow and difficult to exhaust, especially for new MAS. Starting from the formal agent definition $\mathcal{A}=(\pi,\mathcal{P},\mathcal{M},\mathcal{T})$, the authors group injectable components into three surfaces: **Adversarial Input** (injecting into instruction/memory/tool components $\mathcal{I}/\mathcal{M}/\mathcal{T}$); **Malicious Agent** (tampering with profile $\mathcal{P}$ to let the agent autonomously output malicious messages); and **Message Poison** (intercepting and replacing messages on communication edges $(\mathcal{A}_i,\mathcal{A}_j)\in\mathcal{E}$). These are intersected with three goals: Hijacking, Disruption, and Exfiltration. Attack prompts are optimized via a generate-mutate-select loop: starting from a manual seed $a_0$, variants $a'=\omega(a_t)$ are generated using mutation operators $\omega \in \Omega$, executed across $N$ MAS, and scored by an LLM judge based on stealthiness (similarity to benign prompts) and harmfulness (alignment with the attack goal).
 
-3.  **ACI-Sentinel: Task-aligned Semantic Minimality Defense**:
-    - **Function**: Proposes a stable defense in a context where existing defenses often fail or even amplify attacks.
-    - **Mechanism**: Existing defenses (BERT detector, Delimiter, Sandwich, AGrail, G-Safeguard) attempt to identify "suspicious messages," which is difficult for ACI attacks disguised as normal outputs. ACI-Sentinel takes the opposite approach: **instead of identifying the bad, it enforces the good**. It enumerates the minimum necessary information aligned with the current task (task-aligned semantic minimality) and strips away all extraneous instructions and metadata.
-    - **Design Motivation**: Large-scale observations show that attack patterns involve embedding extra instructions in valid messages. Compressing messages to the semantic minimum automatically eliminates injections. This approach reduced Hijacking ASR on AutoGen from 92.78% to 8.06%.
+**2. Propagation Vulnerability Index (PVI): Downshifting Evaluation from "Output" to "Process"**
 
-### Loss & Training
-The optimization objective for attack generation is $J(a') = J_{\text{stealth}}(a' | c) + \frac{1}{N}\sum_{j=1}^N J_{\text{harm}}(\mathcal{S}^{(j)}(a'), a_0)$, where both terms are scored by an LLM judge (black-box optimization). No new training was performed for the MAS or defenses themselves.
+Standard ASR (Attack Success Rate) on final responses hides two critical differences: "local success corrected by downstream agents" versus "success that penetrates multiple layers." PVI is defined as:
+
+$$\mathrm{PVI}=\sum_{a_i\in\mathcal{A}}\frac{L_{a_i}}{\sum_{a_j\in\mathcal{A}}L_{a_j}}\,\mathrm{ASR}_{a_i},$$
+
+where $L_{a_i}$ is the minimum topological distance from agent $a_i$ to the final response, and $\mathrm{ASR}_{a_i}$ is the success rate when that agent is the entry point. Success from an entry point further from the final output yields a higher weight. A higher PVI indicates stronger "infectivity" within the MAS, allowing researchers to see the true impact of topology and role design on cascading propagation.
+
+**3. ACI-Sentinel: Forced Retention of "Task-Essential Good" Over Identification of "Bad"**
+
+Existing defenses (BERT detector, Delimiter, Sandwich, AGrail, G-Safeguard) mostly attempt to identify and filter "suspicious messages." However, ACI attacks often masquerade as normal agent outputs, making identification extremely difficult; over-filtering can collapse system utility. The authors observed that the common pattern in attacks is "embedding extra instructions within legitimate messages." ACI-Sentinel flips the logic: instead of judging if a message is bad, it enumerates the "task-aligned semantic minimality" required to complete the current task and strips everything else. This approach focuses on semantic minimality rather than suspicion, reducing Hijacking ASR on AutoGen from 92.78% to 8.06% and Exfiltration ASR from 54.00% to 0.22% with only a minor drop in Utility Alignment (UA).
 
 ## Key Experimental Results
 
-### Main Results: Robustness of 6 MAS across 3 Attack Goals (GPT-4o-mini, Math/Code domains)
+### Main Results: Robustness of 6 MAS across 3 Attack Goals (GPT-4o-mini, Math/Code Domains)
 
 | Domain | MAS | BU | Hijacking ASR | Disruption ASR | Exfiltration ASR |
 |----|-----|-----|---------------|----------------|------------------|
@@ -83,10 +94,10 @@ The optimization objective for attack generation is $J(a') = J_{\text{stealth}}(
 
 ### Ablation Study: Comparison of 6 Defenses on AutoGen
 
-| Defense | BU Retention | Hijacking ASR | Disruption ASR | Exfiltration ASR |
+| Defense | BU Retained | Hijacking ASR | Disruption ASR | Exfiltration ASR |
 |------|---------|---------------|----------------|------------------|
-| No Defense (Baseline) | 57.78% | 92.78% | 96.44% | 54.00% |
-| +BERT Detector | 45.56% | 96.39% (Increase) | 99.78% (Increase) | 36.67% |
+| None (Baseline) | 57.78% | 92.78% | 96.44% | 54.00% |
+| +BERT Detector | 45.56% | 96.39% (Incr.) | 99.78% (Incr.) | 36.67% |
 | +Delimiter | 55.56% | 95.56% | 96.67% | 44.22% |
 | +Sandwich | 66.67% | 79.72% | 78.67% | 60.00% |
 | +AGrail | 32.22% | 35.56% (UA Drop) | 96.44% | 29.33% |
@@ -94,32 +105,35 @@ The optimization objective for attack generation is $J(a') = J_{\text{stealth}}(
 | **+ACI-Sentinel** | 52.22% | **8.06%** | 82.89% | **0.22%** |
 
 ### Key Findings
--   **Topology alone does not explain robustness**: Even with 5 agents, AgentVerse and CAMEL show massive differences in robustness; changing agent profiles within the same topology leads to huge ASR fluctuations, refuting the practice of evaluating security based solely on topology.
--   **Simple topologies are more fragile**: Topologies with local views like MetaGPT and Self Consistency exhibit nearly 100% ASR in Hijacking due to implicit trust in executing malicious instructions.
--   **Utility-security trade-off is prevalent**: CAMEL's low Hijacking ASR is coupled with extremely low UA (7% in some cases)—the attack didn't "fail to bypass defense," but rather the system failed to execute anything effectively.
--   **Code generation is a high-risk area**: Multiple MAS suffer 90-100% Hijacking ASR in the Code domain because code is executable and complex, allowing malicious instructions to hide easily.
--   **Existing defenses often fail or backfire**: BERT Detector increased ASR in some scenarios, while AGrail/G-Safeguard severely degraded system utility, showing that simplified-environment defenses do not transfer to real MAS.
+- **Topology alone does not explain robustness**: Even with 5 agents, AgentVerse and CAMEL show massive robustness variance; changing agent profiles within the same topology also causes ASR to fluctuate significantly. This refutes the common practice of evaluating MAS security solely through topology.
+- **Simple topologies are actually more fragile**: Topologies like MetaGPT and Self Consistency with local visibility reach near 100% Hijacking ASR due to implicit trust and direct execution of malicious instructions.
+- **Utility-security trade-offs are ubiquitous**: CAMEL's Hijacking ASR is near 0, but its Benign Utility (BU) is extremely low (as low as 7% in some scenarios)—it is not "defended," it simply fails to execute correctly. Joint BU/UA examination is necessary to avoid "false robustness."
+- **Code generation is a high-risk domain**: Hijacking ASR reaches 90-100% on multiple MAS in Code tasks since code is an executable language where malicious instructions are easily embedded and hard to detect.
+- **Key roles + controlled interactions are vital**: Both AgentVerse and CAMEL use "critic" roles; the former has dense robust interactions but high data leakage, while the latter's unidirectional interaction is robust against propagation.
+- **Existing defenses often fail or backfire**: BERT Detector actually increased ASR in some scenarios; AGrail/G-Safeguard crushed system utility. This indicates that defenses designed for simplified environments do not transfer to real-world MAS.
 
 ## Highlights & Insights
--   **Engineering contribution of unified interfaces**: Refactoring 6 heterogeneous MAS into a single entry point is an enabler for future research.
--   **PVI incorporates process into evaluation**: Unlike final ASR, PVI reveals the intensity of agent-level propagation.
--   **Anti-intuitive insight of ACI-Sentinel**: Shifting the goal from "identifying bad" to "preserving good" bypasses the cat-and-mouse game of detection.
--   **Early warning for code generation**: Data highlights the vulnerability of MAS in code scenarios, offering direct implications for products like Cursor.
+- **The engineering contribution of unified interfaces is undervalued**: Refactoring 6 heterogeneous MAS into the same execution entry is what makes fair comparison possible; this "infrastructure contribution" is an enabler for future MAS research.
+- **PVI incorporates the "process" into evaluation**: While traditional ASR looks at the end state, PVI exposes agent-level propagation intensity—crucial for designing targeted defenses.
+- **ACI-Sentinel's counter-intuitive insight**: Switching the defense goal from "identifying bad" to "retaining good" avoids the cat-and-mouse game of detection. Semantic minimality is one of the few truly deployable defenses.
+- **Warning on "Code = Most Dangerous Domain"**: The data reveals the extreme vulnerability of MAS in code generation, providing direct security implications for products like Cursor.
 
 ## Limitations & Future Work
--   **Limitations**: (1) Assumes a single malicious agent under Byzantine Fault Tolerance; (2) Relies on LLM judges which may have evaluation bias; (3) Evaluated mainly on GPT-4o-mini/Qwen2.5-7B.
--   **Future Work**: (i) Extend to collaborative attacks with multiple compromised agents; (ii) Develop formal verification for "task semantic envelopes"; (iii) Explore active defense based on dynamic topological pruning.
+- **Ours acknowledges**: (1) Following the Byzantine Fault Tolerance assumption of a single malicious agent, multi-agent collaborative attacks were not systematically evaluated; (2) Attack generation relies on an LLM judge, which may introduce evaluation bias.
+- **Additional limitations**: Evaluations were mainly conducted on GPT-4o-mini / GPT-4o / Qwen2.5-7B; trends for larger models (e.g., Claude Opus) are not yet verified. ACI-Sentinel's "semantic minimality" check itself relies on an LLM and could theoretically be bypassed by adaptive attacks.
+- **Future directions**: (i) Extend evaluation to "collaborative attacks" where multiple agents are compromised; (ii) design formally verifiable "task semantic envelopes" to elevate ACI-Sentinel from heuristic to a provable property; (iii) explore active topology defenses based on dynamic connection pruning.
 
 ## Related Work & Insights
--   **vs AgentDojo / Agent Security Bench**: These focus on single-agent setups; this work is the first to systematically cover internal cascading in MAS.
--   **vs Corba**: While they focus on contagious recursive blocking, this work integrates such attacks into a larger ACI framework.
--   **vs G-Safeguard / AGrail**: This work quantifies the failure modes of these defenses in real MAS (where functional loss outweighs security gain).
+- **vs AgentDojo / Agent Security Bench**: These focus on single-agent settings, whereas this paper systematically covers internal cascading in MAS.
+- **vs Corba**: Focusing on contagious recursive blocking, this work situates such attacks within the broader ACI framework.
+- **vs G-Safeguard / AGrail**: This paper not only evaluates these defenses but quantifies their failure modes (utility loss exceeding security gains) in real MAS.
+- **vs NetSafe**: While NetSafe evaluates MAS via topology, this work empirically demonstrates that topology alone is insufficient without considering role design and interaction patterns.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐⭐ "Agent Cascading Injection" as a unified concept is original.
--   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale evaluation across MAS, domains, goals, and LLMs.
--   Writing Quality: ⭐⭐⭐⭐ Clear formal definitions; dense tables require careful reading.
--   Value: ⭐⭐⭐⭐⭐ An immediately usable testbed for MAS deployment teams.
+- Novelty: ⭐⭐⭐⭐⭐ "Agent Cascading Injection" is proposed as a unified concept; the 3-axis evaluation, PVI, and semantic minimality defense are original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale evaluation (6 MAS × 4 Domains × 3 Goals × 3 Surfaces); includes defense comparisons and adaptive attack discussions.
+- Writing Quality: ⭐⭐⭐⭐ Clear formal definitions; the dense tables require careful cross-referencing.
+- Value: ⭐⭐⭐⭐⭐ Provides a directly usable security testbed for MAS development teams.
 
 <!-- RELATED:START -->
 
@@ -130,8 +144,8 @@ The optimization objective for attack generation is $J(a') = J_{\text{stealth}}(
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
 - [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](../../ICML2026/llm_safety/bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ACL 2026\] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction](robustness_via_referencing_defending_against_prompt_injection_attacks_by_referen.md)
-- [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
+- [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+- [\[ACL 2026\] Permutation-Consensus Listwise Judging for Robust Factuality Evaluation](permutation-consensus_listwise_judging_for_robust_factuality_evaluation.md)
 
 </div>
 

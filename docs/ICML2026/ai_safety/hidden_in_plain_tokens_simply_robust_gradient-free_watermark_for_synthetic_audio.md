@@ -2,75 +2,84 @@
 title: >-
   [Paper Note] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio
 description: >-
-  [ICML 2026][AI Safety][Autoregressive Audio Watermarking] Addressing the issue where KGW-style token watermarks in autoregressive audio models suffer exponential decay due to "decoding $\to$ re-encoding non-idempotency…
+  [ICML 2026][AI Safety][KGW] To address the exponential decay of watermark signals caused by "decoding → re-encoding non-idempotency" in autoregressive audio generation under KGW-style token watermarking, the authors perform Leiden community detection on the codec's confusion matrix to derive a contracted "cluster vocabulary." By defining green/re
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Autoregressive Audio Watermarking"
-  - "KGW"
-  - "Re-encoding Robustness"
-  - "Vocabulary Community Detection"
-  - "Gradient-Free"
+  - ICML 2026
+  - AI Safety
+  - KGW
 date: 2026-05-08
-content_hash: aaba30ccbb56290f
+content_hash: 48948e81f5984cd2
 ---
-
 # Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.25967](https://arxiv.org/abs/2605.25967)  
 **Code**: https://g-milis.github.io/projects/nograd-audio-wm.html (Project Page + Partial Code)  
-**Area**: AI Safety / Content Attribution / Audio Watermarking  
+**Area**: AI Safety / Content Provenance / Audio Watermarking  
 **Keywords**: Autoregressive Audio Watermarking, KGW, Re-encoding Robustness, Vocabulary Community Detection, Gradient-Free
 
 ## TL;DR
-Addressing the issue where KGW-style token watermarks in autoregressive audio models suffer exponential decay due to "decoding $\to$ re-encoding non-idempotency," the authors apply Leiden community detection to the codec's confusion matrix to derive a contracted "cluster vocabulary." By defining green/red sets on clusters rather than tokens, the method raises the exponential base of the $z$-score from $r$ to $r_{cl} > r$ under fully gradient-free, black-box access. Detectability is improved by several orders of magnitude compared to baselines and WMAR (which requires fine-tuning), and it is naturally robust against perturbations such as MP3 compression, denoising, and cropping.
+To address the exponential decay of watermark signals caused by "decoding → re-encoding non-idempotency" in autoregressive audio generation under KGW-style token watermarking, the authors perform Leiden community detection on the codec's confusion matrix to derive a contracted "cluster vocabulary." By defining green/red sets on clusters rather than individual tokens, this gradient-free, black-box approach raises the exponential base of the $z$-score from $r$ to $r_{cl} > r$. Detectability is improved by several orders of magnitude compared to baselines and WMAR (which requires fine-tuning), demonstrating inherent robustness to perturbations like MP3 compression, denoising, and cropping.
 
 ## Background & Motivation
 
-**Background**: The mainstream watermark for LLM text generation is KGW (Kirchenbauer et al.), which pseudo-randomly partitions the vocabulary into green/red sets and adds a $\delta$ logit bias to green tokens. Detection only requires binomial testing of the green token proportion. This "injection during sampling, detection during statistics" paradigm is training-free and incurs almost zero cost for autoregressive models. Consequently, efforts have been made to adapt it to autoregressive audio models (e.g., Moshi/Mimi, MusicGen/EnCodec) to solve the attribution problem of synthetic audio.
+**Background**: The mainstream watermarking scheme for Large Language Model (LLM) text generation is the KGW method by Kirchenbauer et al., which pseudo-randomly splits the vocabulary into "green" and "red" sets and applies a $\delta$ logit bias to green tokens. The detector performs a binomial test by counting the proportion of green tokens. This "injection during sampling, detection during statistics" paradigm is training-free and costs nearly zero for autoregressive models. Consequently, researchers have attempted to adapt it to autoregressive audio models (e.g., Moshi/Mimi, MusicGen/EnCodec) to solve provenance issues related to malicious misuse of synthetic audio.
 
-**Limitations of Prior Work**: Directly applying KGW to audio fails immediately—audio codec encoder-decoders are not idempotent. Re-encoding the decoded waveform $x_{1:N}$ yields $y_{1:N}$, which is inconsistent with the original tokens; the token match rate $r$ is much less than 1 (near 1 for text, but roughly 0.4 for audio/images). Since the detector uses $y$ for statistics, the green token count is severely discounted, and the signal decays faster as the hash context length $h$ increases. Existing solutions (WMAR, Jovanović et al. for images) choose to fine-tune the codec for idempotency, but they sacrifice the training-free and black-box nature, requiring expensive training and white-box access. Distortion-free schemes based on k-means (Wu et al.) sacrifice detectability and perform worse than the KGW baseline.
+**Limitations of Prior Work**: Directly applying KGW to audio fails immediately—audio codec encoder-decoders are not idempotent. Mapping a token sequence $x_{1:N}$ to a waveform and then re-encoding it to $y_{1:N}$ results in inconsistencies, where the token match rate $r$ is much less than 1 (text is near 1, while audio/image might be around 0.4). Since detectors use $y$ instead of $x$ for statistics, green token counts are significantly discounted, and the signal decays faster as the hash context length $h$ increases. Existing solutions (e.g., WMAR, or Jovanović et al. for images) choose to fine-tune the codec to make it near-idempotent, sacrificing the "gradient-free + black-box" advantage, requiring expensive training, and necessitating white-box access. Distortion-free schemes based on k-means (e.g., Wu et al.) sacrifice detectability, performing weaker than the KGW baseline.
 
-**Key Challenge**: Watermark detectability highly depends on the token-level match rate $r$, whereas continuous-modality codecs inherently do not satisfy $r \approx 1$. Preserving token-level matching requires modifying the codec, while maintaining "training-free" status forces one to accept exponential signal decay.
+**Key Challenge**: Watermark detectability highly depends on the token-level match rate $r$, but continuous modality codecs intrinsically do not satisfy $r \approx 1$. Preserving token-level matching requires modifying the codec, while preserving "training-free" status forces acceptance of exponential signal decay.
 
-**Goal**: To elevate the actual detection signal of audio KGW to reach or even exceed that of WMAR (which requires fine-tuning), without modifying codec parameters and using only black-box encoder/decoder queries.
+**Goal**: To improve the actual detection signal of audio KGW to meet or exceed that of WMAR (which requires fine-tuning), without modifying codec parameters and using only black-box encoder/decoder queries.
 
-**Key Insight**: The authors observe that re-encoding errors are not uniformly random but structured—a token is typically confused only with a small set of "semantic neighbors." By grouping these neighbors into a cluster and establishing green/red rules on "whether the cluster falls in the green set" rather than the token, the watermark hits as long as the re-encoded token remains within the same cluster. This raises the exponential base from the token match rate $r$ to the cluster match rate $r_{cl} > r$.
+**Key Insight**: The authors observe that re-encoding errors are not uniform or random but structured—a token is typically confused only with a small set of "semantic neighbors." By grouping these neighbors into a "cluster" and establishing watermarking rules on "whether the cluster falls into the green set" rather than the token, a hit is recorded as long as the re-encoded token remains in the same cluster. This raises the exponential base from the token match rate $r$ to the cluster match rate $r_{cl} > r$.
 
-**Core Idea**: Construct a token graph using confusion counts from the codec on a dataset, and use community detection to obtain a "semantic cluster vocabulary." The partition and context hashing of KGW are then performed at the cluster level. This can be implemented via a lookup table and is fully compatible with existing autoregressive inference.
+**Core Idea**: Construct a token graph using confusion counts from the codec on a dataset, apply community detection to obtain a "semantic cluster vocabulary," and then perform KGW green/red partitioning and context hashing at the cluster level. This can be implemented with a simple lookup table and does not conflict with original autoregressive inference.
 
 ## Method
 
 ### Overall Architecture
-The method consists of two decoupled stages. **Off-line Distillation Stage**: Select an audio dataset (labels not required), perform $E \to D \to E$ encoding passes, and record which tokens $j$ replace the original token $i$. Accumulate these into a confusion matrix $M \in \mathbb{N}^{|V| \times |V|}$. Use $M$ as the adjacency matrix for a weighted directed graph and run Leiden community detection to obtain a many-to-one mapping $\mathcal{C}$ from token $\to$ cluster. This is done independently for each RVQ channel, allowing multi-scale watermarking via different resolution parameters $\rho$. **On-line Watermarking Stage**: Move the two KGW steps—pseudo-random green/red partitioning and adding $\delta$ logit bias—to the cluster level. Partitions are applied to the set of clusters, and the bias is added simultaneously to all tokens belonging to green clusters. The hash context uses cluster indices of the previous $h$ tokens instead of token indices, ensuring stability against re-encoding. During detection, the received waveform is re-encoded into tokens, mapped to clusters, and the $z$-score is calculated based on cluster occurrences in the green set.
+The method solves the core issue of exponential watermark signal decay caused by the non-idempotency of audio codec decoding-re-encoding. The breakthrough is decoupling the watermark rules from token identities by first offline clustering tokens that are easily confused into "clusters," then lifting the KGW rules to the cluster level. The workflow is divided into two stages: an offline stage where a token $\to$ cluster mapping table is distilled using confusion statistics from the codec itself, and an online stage where the standard KGW sampling-detection paradigm is reused, only replacing the green/red partitioning and hash context with cluster-level granularity.
 
-Theoretical analysis provides the core quantitative result: under a noisy channel approximation with conditional independence, the expected $z$-score of the KGW baseline for an $h$-gram context is $\mathbb{E}[z|H_1] = \sqrt{N} \frac{g-\gamma}{\sqrt{\gamma(1-\gamma)}} r^{h+1}$. Ours replaces $r$ with $r_{cl}$, resulting in $\mathbb{E}[z|H_1] = \sqrt{N} \frac{g-\gamma}{\sqrt{\gamma(1-\gamma)}} r_{cl}^{h+1}$. Since $r_{cl} > r$ and it appears to the power of $h+1$, the gain is exponentially amplified. This is the algorithmic basis for the title "hidden in plain tokens"—there is no need to modify the codec; one simply acknowledges the redundant structure hidden in the vocabulary.
+```mermaid
+flowchart TD
+    subgraph OFF["Confusion Matrix-based Community Detection Vocabulary Distillation (Offline)"]
+        direction TB
+        A["Unlabeled Audio Dataset"] --> B["逐条 E→D→E Re-encoding<br/>Collect Token Confusion Counts"]
+        B --> C["Confusion Matrix M (Weighted Directed Graph)"]
+        C --> D["Leiden Community Detection<br/>Maximize Modularity"]
+        D --> E["Token→Cluster Map C<br/>Vocabulary contraction factor c"]
+    end
+    R["Multi-channel resolution<br/>Set ρ for each RVQ channel (Entropy vs. Robustness)"] -.-> D
+    E --> F
+    subgraph ONL["Cluster-level KGW (Online + Detection)"]
+        direction TB
+        F["Hash of previous h tokens' clusters → Green cluster set G_i"] --> G["Apply δ bias to all tokens in G_i<br/>Sampling → Watermarked Audio"]
+        G --> H["Detection: Waveform Re-encoding → Token→Cluster mapping"]
+        H --> I["Cluster-level Binomial Test → z-score"]
+    end
+```
 
 ### Key Designs
 
-1.  **Community Detection-based Vocabulary Distillation from Confusion Matrix**:
-    - **Function**: Compresses a token vocabulary of size $|V|$ into a cluster vocabulary of size $c|V|$ ($c \in (0, 1)$), such that the probability $r_{cl}$ of a re-encoded token staying in the same cluster is much higher than the probability $r$ of it staying the same token.
-    - **Mechanism**: Treats $M_{ij}$ (count of $i$ being confused with $j$) as a directed weighted graph. The Leiden algorithm maximizes modularity—high intra-cluster weights and low inter-cluster weights correspond exactly to errors occurring mainly within clusters. The resolution parameter $\rho$ controls cluster granularity. Leiden is chosen over Louvain because it handles edge direction, ensures cluster connectivity, and converges faster while being more favorable for detectability.
-    - **Design Motivation**: While k-means or semantic embedding clustering are common, they do not encode behavior-specific information about "what a codec actually confuses." Using the codec’s own confusion counts as the adjacency matrix aligns the clustering objective with the detection objective, which is key to ensuring a "gradient-free + black-box" approach.
+**1. Confusion Matrix-based Community Detection Vocabulary Distillation: Aligning Clustering with Detection Goals**
 
-2.  **Cluster-level KGW: Synchronized Elevation of Partitions and Hash Context**:
-    - **Function**: Modifies the two positions where KGW depends on token identity—green/red partitioning and $h$-gram hash keys—to depend on cluster identity, making the pipeline invariant to re-encoding.
-    - **Mechanism**: At each timestep, calculate the hash using the cluster indices of the previous $h$ tokens to define the green cluster set $G_i$. Apply bit $\delta$ to all tokens in $c \in G_i$. The detector maps tokens to clusters and performs the binomial test. Being confused with a neighbor in the same cluster is indistinguishable from perfect restoration to the detector. This requires only a single cluster lookup during inference, adding zero overhead.
-    - **Design Motivation**: This is the minimal intrusive modification to bring the off-line structure into on-line KGW—preserving statistical rigor while lifting the exponential decay base.
+The bottleneck is that the token match rate $r$ is low in audio ($\approx 0.4$). The authors' key observation is that re-encoding errors are structured. In the offline phase, an unlabeled dataset is processed through $E \to D \to E$ to record how often original token $i$ is replaced by token $j$, forming a confusion matrix $M \in \mathbb{N}^{|V| \times |V|}$. Treating $M_{ij}$ as an adjacency matrix for a directed weighted graph, Leiden community detection is applied to maximize modularity. This ensures "intra-cluster edges are heavy and inter-cluster edges are light," resulting in a many-to-one mapping $\mathcal{C}$ that compresses $|V|$ to $c|V|$. This relaxes the hit condition from "identical tokens" to "tokens falling in the same cluster," increasing the probability from $r$ to $r_{cl} > r$. Unlike k-means or semantic embedding clustering, this method directly encodes the codec's actual confusion behavior, ensuring the clustering target is aligned with the watermarking goal.
 
-3.  **Explicit Entropy-Key Space Trade-off and Multi-channel Resolution**:
-    - **Function**: Characterizes the cost of losing generation entropy and potential hash collisions when compressing the vocabulary, and mitigates this through channel-wise resolution.
-    - **Mechanism**: Compressing from $|V|$ to $c|V|$ reduces the $h$-gram key space from $|V|^h$ to $(c|V|)^h$. The authors require $(c|V|)^h \geq K_{\min}$ to avoid collisions, with unwatermarked sampling deferral as a fallback. Since RVQ channels are clustered independently, some channels can use fine clusters (preserving entropy) while others use coarse clusters (ensuring robustness).
-    - **Design Motivation**: While extremely small cluster sets maximize $r_{cl}$, they collapse the key space, making watermarks forgeable. Characterizing this trade-off provides the engineering "knobs" necessary for deployment on multi-channel RVQ models like Moshi or MusicGen.
+**2. Cluster-level KGW: Lifting Green/Red Partitioning and Hash Contexts**
+
+To ensure the pipeline is invariant to re-encoding, all token-dependent components in KGW are migrated to clusters. Online, every time step uses the cluster indices of the previous $h$ tokens for hashing to determine the green cluster set $G_i$. Logit bias $\delta$ is applied to all tokens belonging to clusters in $G_i$. The detector follows the same rules. Theoretically, this replaces the base $r$ in the expected $z$-score with $r_{cl}$: under a noisy channel approximation, the KGW baseline $\mathbb{E}[z|H_1] = \sqrt{N}\frac{g-\gamma}{\sqrt{\gamma(1-\gamma)}}r^{h+1}$ becomes $\mathbb{E}[z|H_1] = \sqrt{N}\frac{g-\gamma}{\sqrt{\gamma(1-\gamma)}}r_{cl}^{h+1}$. Because $r_{cl} > r$ and it is raised to the power of $h+1$, the improvement is exponentially amplified.
+
+**3. Explicit Entropy-Key Space Trade-off and Multi-channel Resolution**
+
+Compressing the vocabulary maximizes $r_{cl}$ but loses generation entropy and shrinks the $h$-gram key space from $|V|^h$ to $(c|V|)^h$. To prevent key collisions, the authors ensure $(c|V|)^h \geq K_{\min}$. The solution utilizes the independence of RVQ channels, allowing some channels to use fine-grained clusters (preserving entropy) and others to use coarse clusters (ensuring robustness), creating a multi-scale watermark. Providing a resolution knob $\rho$ for each channel allows the method to be deployed on multi-channel RVQ models like Moshi or MusicGen.
 
 ### Loss & Training
-The method is entirely training-free. Off-line, it runs community detection once to compute $\mathcal{C}$. On-line, it adds a constant bias $\delta$ to logits without gradients. Hyperparameters include KGW's $\gamma$, $\delta$, $h$, and Leiden's per-channel resolution $\rho$.
+The method is entirely training-free. The offline phase involves a single run of community detection to calculate $\mathcal{C}$. Online, only a constant bias $\delta$ is added to logits. Hyperparameters include KGW's $\gamma$ (green set proportion), $\delta$ (logit bias), $h$ (context order), and Leiden's resolution $\rho$ per channel.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors sampled 500 audio clips each from Moshi (Mimi codec, speech) and MusicGen (EnCodec, music), comparing Base (Vanilla KGW), WMAR, WMAR (aug) (two fine-tuning schemes), and Ours. Quality was measured via FAD (VGGish/CLAP) and MOS (NISQA/DNSMOS).
+The authors sampled 500 audio clips each from Moshi (Mimi codec, speech) and MusicGen (EnCodec, music), comparing Base (KGW), WMAR, WMAR (aug), and the proposed method. Quality was measured by FAD (lower is better) and MOS (higher is better).
 
 | Dataset | $h$ | Metric | None | Base | WMAR | WMAR(aug) | Ours |
 |---|---|---|---|---|---|---|---|
@@ -78,9 +87,8 @@ The authors sampled 500 audio clips each from Moshi (Mimi codec, speech) and Mus
 | Moshi/Dialogue | 1 | FAD-VGGish ↓ | 0.080 | 0.068 | 0.357 | 0.218 | **0.051** |
 | Moshi/LibriSpeech | 0 | FAD-VGGish ↓ | 1.921 | 1.858 | 2.195 | 2.153 | **1.670** |
 | Moshi/Dialogue | 1 | NISQA MOS ↑ | 3.54 | 3.56 | 3.37 | 3.54 | **3.58** |
-| Moshi/LibriSpeech | 1 | NISQA MOS ↑ | 3.15 | 3.23 | 3.12 | 3.19 | 3.22 |
 
-In terms of quality, Ours is comparable to Base and sometimes better than "None" (unwatermarked), suggesting cluster-level bias does not harm codec decodability. WMAR variants show significant FAD degradation due to modified codec weights.
+Quality is comparable to the Base and sometimes better than None, indicating the cluster-level bias does not harm codec decodability, whereas WMAR degrades FAD due to codec fine-tuning.
 
 ### Robustness / Detection Strength (Moshi)
 
@@ -88,42 +96,39 @@ In terms of quality, Ours is comparable to Base and sometimes better than "None"
 |---|---|---|---|---|---|
 | Baseline | Identity | 8.51 | 17.44 | 13.72 | **42.47** |
 | Signal | Lowpass | 5.82 | 9.23 | 10.52 | **41.51** |
-| Signal | Smooth | 1.99 | 1.61 | 3.73 | **32.68** |
 | Signal | Noise | 2.23 | 0.61 | 8.01 | **20.59** |
 | Compression | MP3 | 7.47 | 15.31 | 12.66 | **41.26** |
-| Compression | EnCodec | 2.59 | 2.82 | 2.78 | **32.64** |
-| Time-domain | Crop | 1.51 | 1.27 | 1.51 | **16.48** |
-| Time-domain | Speedup | 1.52 | 1.20 | 1.35 | **26.49** |
+| Temporal | Crop | 1.51 | 1.27 | 1.51 | **16.48** |
+| Temporal | Speedup | 1.52 | 1.20 | 1.35 | **26.49** |
 
-Without attacks, Ours achieves a $-\log p$ roughly $3 \times$ that of WMAR(aug) and $5 \times$ that of Base. Under all 12 attacks, it outperforms the runner-up by several-fold to an order of magnitude, with particularly large gaps in time-domain attacks like cropping and speedup. In Figure 3-5, at very low FPR ($10^{-6}$), Ours is the only scheme maintaining high TPR.
+The $-\log p$ of the proposed method is approximately 3x higher than WMAR(aug) and 5x higher than Base under no attack. It outperforms competitors across all 12 attack types, especially in temporal cropping and speed-up.
 
 ### Key Findings
-- The improvement stems entirely from replacing $r$ with $r_{cl}$: the gap between Ours and Base widens as $h$ increases (e.g., $h=2$), as the $r^{h+1}$ vs $r_{cl}^{h+1}$ difference is exponentially amplified, consistent with theory.
-- Multi-channel differentiated resolution is essential: token-level KGW barely works on RVQ channels, while multi-scale clusters allow different channels to handle "high entropy" and "high robustness" roles respectively.
-- WMAR collapses under time-domain attacks despite fine-tuning, showing that "making a codec idempotent" does not solve alignment-breaking attacks like cropping. Cluster-level hashing ensures the same key is produced even if tokens are replaced by neighbors, fundamentally aligning the clustering geometry with attack behavior.
+- Improvements stem entirely from replacing the exponential base $r$ with $r_{cl}$. The gap between the proposed method and Base increases as $h$ grows due to exponential amplification.
+- Multi-channel differentiated resolution is essential. Pure token-level KGW fails on RVQ, while multi-scale clusters allow different channels to balance entropy and robustness.
+- WMAR fails on temporal attacks even with fine-tuning, as making a codec idempotent does not fix alignment issues. Cluster-level hashing ensures that even if tokens are replaced by neighbors, the key remains consistent.
 
 ## Highlights & Insights
-- Quantizing the empirical observation that "re-encoding errors are structured" into a Confusion Matrix $\to$ Graph $\to$ Leiden Community pipeline, and then mapping this to cluster-level KGW, is a beautiful "identification of the right abstraction."
-- Fully gradient-free and black-box nature means this is friendly for closed-source codecs or API deployments, allowing attribution for commercial services where retraining is not permitted.
-- The multi-channel resolution strategy is transferable to any RVQ-based multimodal generation (VQ-VAE images, video tokens, SEED-LLaMA): distributing "robustness budget" and "entropy budget" across codebooks is a universal trick.
+- Quantifying "structured re-encoding errors" through confusion matrices and graph clustering, then mapping this to cluster-level KGW, is a clean "identify the right abstraction" approach.
+- Being gradient-free and black-box makes this suitable for closed-source APIs or commercial services that forbid retraining.
+- The differentiated resolution for multi-channel RVQ is a generic trick transferable to any VQ-based multi-modal generation (e.g., VQ-VAE, video tokens).
 
 ## Limitations & Future Work
-- The paper does not fully characterize the Pareto front of the "$c$ (compression) - $h$ (context) - $\delta$ (bias)" space, relying on data-driven heuristics.
-- The conditional independence assumption holds for non-sliding window codecs, but Mimi/EnCodec have overlapping convolutions; detection estimates under extreme attacks might be slightly optimistic.
-- Cluster vocabularies are dataset-dependent—shifting to a significantly different distribution (e.g., extreme music genres) might require re-running community detection.
-- As part of the KGW family, it remains vulnerable to "rewrite attacks" where another LM paraphrases or regenerates the content, though it effectively cleans up "noise in the signal channel."
+- The Pareto front of $(c, h, \delta)$ is not fully explored; hyperparameter tuning remains empirical.
+- The conditional independence assumption is an approximation for overlapping conv structures in Mimi/EnCodec.
+- Cluster vocabularies are dataset-dependent; moving to sharply different audio distributions (e.g., niche music genres) might require new clustering.
+- As a KGW variant, it remains vulnerable to "rewrite attacks" where another model regenerates the content.
 
 ## Related Work & Insights
-- **vs WMAR (Wu et al., 2025a,b)**: WMAR fine-tunes the codec so $r \to 1$, while Ours keeps the codec and ensures $r_{cl} \to 1$. Ours is cheaper, avoids quality loss, and shows better detection.
-- **vs k-means Distort-free Audio Watermark (Wu et al., 2025a)**: k-means uses semantic embedding distance, which may mismatch actual codec confusion behavior; Ours uses the confusion graph itself to better align objectives.
-- **vs Image Token Watermarks (Tong 2025 / Jovanović 2025)**: These works face similar re-encoding errors but choose fine-tuning; the "community detection + cluster KGW" approach is modality-agnostic and could potentially be applied to image/video VQ tokens.
-- **vs Post-processing Audio Watermarks (San Roman 2024, Liu 2024)**: Post-processing embeds payloads in waves, but modern codecs can wipe these out; Ours embeds in the token distribution and utilizes the codec's confusion structure rather than fighting it.
+- **vs WMAR (Wu et al., 2025a,b)**: WMAR fine-tunes the codec to $r \to 1$, while this method leaves the codec intact and makes $r_{cl} \to 1$.
+- **vs k-means-based Distortion-Free Watermarking (Wu et al., 2025a)**: k-means uses semantic distances, while this method uses the codec's actual confusion behavior, leading to higher $r_{cl}$.
+- **vs Image Token Watermarking (Tong 2025 / Jovanović 2025)**: Previous image-based works also faced re-encoding errors but chose fine-tuning. This "community detection + cluster KGW" approach is modality-agnostic and could potentially be applied to image or video VQ tokens.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The dual relationship between codec confusion graphs and cluster-level KGW is clean, original, and obvious-in-hindsight.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Solid grid of 2 codecs $\times$ 3 $h$-values $\times$ 12 attacks $\times$ 4 baselines, though OOD cluster transferability is missing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear derivation from $r^{h+1}$ to $r_{cl}^{h+1}$; diagrams and tables are well-structured.
-- Value: ⭐⭐⭐⭐⭐ Achieves a new SOTA without training costs, offering high practical value for real-world attribution systems across RVQ/VQ modalities.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -132,10 +137,10 @@ Without attacks, Ours achieves a $-\log p$ roughly $3 \times$ that of WMAR(aug) 
 ## Related Papers
 
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
+- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](../../CVPR2026/ai_safety/x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 - [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](flatness-aware_stochastic_gradient_langevin_dynamics.md)
 - [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
-- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
 
 </div>
 

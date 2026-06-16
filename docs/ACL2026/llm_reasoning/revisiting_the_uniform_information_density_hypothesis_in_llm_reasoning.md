@@ -2,74 +2,76 @@
 title: >-
   [Paper Note] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Uniform Information Density] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis. It proposes an entropy-based step-level in…
+  [ACL 2026][LLM Reasoning][Chain-of-Thought] This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis, proposing an entropy-based step-level information density measurement framework. It discovers a counter-intuitive pattern of "local uniformity + global non-uniformity" in high-quality reasoning tra
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Uniform Information Density"
-  - "Reasoning Quality Assessment"
-  - "Entropy Analysis"
-  - "Best-of-N Selection"
-  - "Chain-of-Thought"
+  - ACL 2026
+  - LLM Reasoning
+  - Chain-of-Thought
 date: 2026-05-08
-content_hash: e4e91f0e50406074
+content_hash: 2d6ce189724e3ca2
 ---
-
 # Revisiting the Uniform Information Density Hypothesis in LLM Reasoning
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.06953](https://arxiv.org/abs/2510.06953)  
 **Code**: [GitHub](https://github.com/talzoomanzoo/uid-reasoning)  
 **Area**: LLM Evaluation  
-**Keywords**: Uniform Information Density, Reasoning Quality Assessment, Entropy Analysis, Best-of-N Selection, Chain-of-Thought
+**Keywords**: Uniform Information Density, reasoning quality evaluation, entropy analysis, Best-of-N selection, Chain-of-Thought
 
 ## TL;DR
 
-This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis. It proposes an entropy-based step-level information density measurement framework, discovering that high-quality reasoning trajectories exhibit a counter-intuitive pattern of "local uniformity + global non-uniformity." The study demonstrates that this pattern significantly outperforms traditional confidence/entropy baselines in Best-of-N sampling.
+This paper introduces the Uniform Information Density (UID) hypothesis from psycholinguistics into LLM reasoning analysis, proposing an entropy-based step-level information density measurement framework. It discovers a counter-intuitive pattern of "local uniformity + global non-uniformity" in high-quality reasoning trajectories and demonstrates that this pattern significantly outperforms traditional confidence/entropy baselines in Best-of-N sampling.
 
 ## Background & Motivation
 
-**Background**: Chain-of-Thought (CoT) reasoning has become a core technology for enhancing LLM performance on complex tasks. However, quality assessment of reasoning trajectories primarily relies on coarse-grained signals such as final answer correctness or token-level confidence, lacking a structural characterization of "process quality."
+**Background**: Chain-of-Thought (CoT) reasoning has become a core technology for enhancing LLM performance on complex tasks. However, quality assessment of reasoning trajectories relies mainly on coarse-grained signals like final answer correctness or token-level confidence, lacking structural characterization of "process quality."
 
-**Limitations of Prior Work**: (1) Intermediate reasoning steps often show logical inconsistency or incoherence; (2) Existing internal signal methods (self-certainty, high confidence, low entropy) treat reasoning trajectories as a whole, failing to capture the information flow structure between steps; (3) Even if long reasoning chains are generated, models may fail to generalize on out-of-distribution tasks.
+**Limitations of Prior Work**: (1) Logic inconsistencies or incoherence often occur in intermediate reasoning steps; (2) existing internal signal methods (self-certainty, high confidence, low entropy) treat reasoning trajectories as a whole, failing to capture the information flow structure between steps; (3) even with long reasoning chains, models may fail to generalize on out-of-domain tasks.
 
-**Key Challenge**: It is impossible to determine whether an LLM is "truly reasoning" or merely generating "surfacely coherent" text based solely on the final output—a framework is needed to characterize the quality of the reasoning process from an information-theoretic perspective.
+**Key Challenge**: It is impossible to determine whether an LLM is "truly reasoning" or merely generating "superficially coherent" text solely through final output—this requires a framework to characterize the quality of the reasoning process from an information-theoretic perspective.
 
-**Goal**: To extend the UID hypothesis from human linguistic communication to LLM reasoning scenarios, establish a quantitative framework for step-level information density, and verify its effectiveness as a reasoning quality metric.
+**Goal**: To extend the UID hypothesis from human language communication to LLM reasoning scenarios, establish a quantitative framework for step-level information density, and verify its effectiveness as a reasoning quality metric.
 
-**Key Insight**: The UID hypothesis suggests that effective human communication requires a uniform distribution of information to reduce cognitive load. The authors draw an analogy to the reasoning process—each reasoning step is similar to a linguistic unit in communication, and its entropy change reflects the "exploration-convergence" structure of information.
+**Key Insight**: The UID hypothesis suggests that effective human communication requires a uniform distribution of information to reduce cognitive load. The authors analogize the reasoning process—each reasoning step is similar to a linguistic unit in communication, and its entropy change reflects the "exploration-convergence" structure of information.
 
-**Core Idea**: High-quality LLM reasoning does not follow the global uniformity of human communication. Instead, it presents a unique pattern of "smooth local transitions (high local uniformity) + global structured non-uniformity (from high-entropy exploration to low-entropy convergence)"—reflecting the fundamental difference in goals between reasoning and communication.
+**Core Idea**: High-quality LLM reasoning does not follow the global uniformity of human communication. Instead, it presents a unique pattern of "smooth local transitions (high local uniformity) + global structural non-uniformity (from high-entropy exploration to low-entropy convergence)"—reflecting the fundamental difference in goals between reasoning and communication.
 
 ## Method
 
 ### Overall Architecture
 
-Given a reasoning trajectory $\mathbf{z} = [z_1, \dots, z_N]$ (divided into $N$ steps by `\n\n`), each step $z_i$ contains $M_i$ tokens. The authors first calculate the prediction distribution entropy $H_t$ for each token position, then aggregate it into step-level information density $ID_i = \frac{1}{M_i}\sum_{t=1}^{M_i} H_t$. Based on this, two complementary measures are defined: global uniformity (variance) and local uniformity (count of inter-step spikes), used for Best-of-N reasoning trajectory selection.
+Given a reasoning trajectory $\mathbf{z} = [z_1, \dots, z_N]$ (split into $N$ steps by `\n\n`), each step $z_i$ contains $M_i$ tokens. The authors first calculate the prediction distribution entropy $H_t$ for each token position, then aggregate it into step-level information density $ID_i = \frac{1}{M_i}\sum_{t=1}^{M_i} H_t$. Based on this, two complementary metrics are defined: global uniformity (variance) and local uniformity (step mutation count), used for Best-of-N reasoning trajectory selection.
+
+```mermaid
+flowchart TD
+    A["Reasoning Trajectory<br/>Split into N steps by double newlines"] --> B["Step-level ID<br/>Average token prediction entropy ID_i per step"]
+    B --> C["Global Uniformity<br/>Variance Var of normalized ID sequence"]
+    B --> D["Local Uniformity<br/>Step-to-step mutation count S_local"]
+    C --> E["Best-of-N Trajectory Selection"]
+    D --> E
+```
 
 ### Key Designs
 
-1.  **Step-level Information Density (Step-level ID)**:
+**1. Step-level ID: Elevating reasoning trajectories from token sequences to "information per step" perspective**
 
-    *   **Function**: Lifts the reasoning trajectory from a token sequence to a step-level information flow perspective.
-    *   **Mechanism**: Uses the entropy of the prediction distribution as a proxy for information density, averaging the entropy of all tokens within each step to obtain $ID_i$. Low entropy indicates model confidence, while high entropy indicates uncertainty among multiple possible continuations. The entropy curve of correct reasoning trajectories shows a downward "exploration-then-convergence" trend, while incorrect trajectories appear as flat noise.
-    *   **Design Motivation**: Compared to log-probability and confidence methods, entropy simultaneously encodes model certainty and reasoning difficulty, quantifying the bits required to encode the prediction distribution in information-theoretic terms.
+Existing internal signals (self-certainty, confidence, log-probs) mostly score the entire trajectory as a whole, failing to observe the information flow between steps. This paper uses the entropy of the prediction distribution as a proxy for information density: calculating the prediction entropy $H_t$ for each token position and averaging the entropy of all tokens within a step to obtain the information density for that step:
 
-2.  **Global Uniformity via Variance**:
+$$ID_i = \frac{1}{M_i}\sum_{t=1}^{M_i} H_t.$$
 
-    *   **Function**: Characterizes whether information is uniformly distributed across the entire reasoning trajectory.
-    *   **Mechanism**: Calculates the variance $\text{Var}(\tilde{\mathbf{u}})$ of the normalized $ID$ vector. High variance indicates global non-uniformity (information concentrated in specific stages), while low variance indicates global uniformity. High-quality reasoning trajectories are found to have high global variance due to clear stage transitions from exploration to convergence.
-    *   **Design Motivation**: Unlike human communication, LLM reasoning is an "audience-less" internal computational process. Global non-uniformity is not a flaw but reflects the natural stage structure of problem-solving.
+Low entropy implies model confidence, while high entropy implies hesitation between multiple possible continuations. Entropy is used instead of log-probability or confidence because it simultaneously encodes both the model's certainty and the reasoning difficulty of the step from an information-theoretic standpoint—it quantifies how many bits are needed to encode this prediction distribution. The authors observe that correct trajectories show a declining $ID$ curve representing "exploration then convergence," while incorrect trajectories typically show flat noise.
 
-3.  **Local Uniformity via Spike/Fall Detection**:
+**2. Global Uniformity (Measured by Variance): Discovering that high-quality reasoning is "globally non-uniform"**
 
-    *   **Function**: Detects abrupt jumps in information density between adjacent steps.
-    *   **Mechanism**: Calculates inter-step changes $\Delta_i = ID'_i - ID'_{i-1}$, sets thresholds $T^{\pm} = \mu_\Delta \pm \tau \sigma_\Delta$ ($\tau \in \{2, 3\}$), and counts the total number of upward and downward spikes $S_{\text{local}}$ exceeding the threshold. A small $S_{\text{local}}$ indicates high local uniformity.
-    *   **Design Motivation**: Local spikes imply "thought breaks" or "sudden confusion" during reasoning, which provides significant discriminative power between correct and incorrect trajectories.
+The UID hypothesis originally suggests that human communication requires a uniform distribution of information to reduce the listener's cognitive load. Intuition suggests reasoning should follow this as well. However, this paper finds the opposite: calculating the variance $\text{Var}(\tilde{\mathbf{u}})$ of the normalized $ID$ vector shows that high variance indicates information concentration in specific stages (global non-uniformity), while low variance indicates global uniformity. The result is that high-quality reasoning trajectories possess **high** global variance. This occurs because LLM reasoning is a "listener-less" internal computation with clear phase transitions from high-entropy exploration to low-entropy convergence. This global non-uniformity is not a flaw but a manifestation of the natural stage structure of problem-solving—direct evidence of the goal difference between reasoning and communication.
+
+**3. Local Uniformity (Mutation Detection): Distinguishing trajectory quality by "chain of thought consistency"**
+
+Beyond global structure, the authors investigate whether information density transitions smoothly between adjacent steps. By calculating step-to-step changes $\Delta_i = ID'_i - ID'_{i-1}$, and setting thresholds $T^{\pm} = \mu_\Delta \pm \tau \sigma_\Delta$ ($\tau \in \{2, 3\}$), they count the total number of upward and downward mutations exceeding the threshold, $S_{\text{local}}$. A smaller $S_{\text{local}}$ represents higher local uniformity. A local mutation often corresponds to a "break in thought" or "sudden confusion" in the reasoning process. This breakage is highly discriminative between correct and incorrect trajectories, making local uniformity the most stable quality signal among the three metrics. Combined, these metrics characterize a unique fingerprint of high-quality reasoning—"locally smooth + globally segmented"—which can be directly used for Best-of-N trajectory selection.
 
 ### Loss & Training
 
-This paper is an analytical work and does not involve model training. DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Llama-8B, and Qwen3-8B are used as reasoning models. The effectiveness of UID metrics as selection criteria is evaluated under a Best-of-5 sampling setting (temperature=0.6, top-p=0.95, top-k=20).
+This is an analytical work and does not involve model training. DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Llama-8B, and Qwen3-8B were used as reasoning models. Evaluation focused on the effectiveness of UID metrics as selection criteria under a Best-of-5 sampling setting (temperature=0.6, top-p=0.95, top-k=20).
 
 ## Key Experimental Results
 
@@ -78,7 +80,7 @@ This paper is an analytical work and does not involve model training. DeepSeek-R
 **Best-of-5 Selection Accuracy (DS-R1-Distill-Qwen-7B)**
 
 | Method | AIME25 | BRUMO25 | HMMT25 | MinervaMath |
-| :--- | :--- | :--- | :--- | :--- |
+|------|--------|---------|--------|-------------|
 | Mean Acc. | 0.40 | 0.54 | 0.24 | 0.30 |
 | Self-Certainty | 0.48 | 0.52 | 0.28 | 0.30 |
 | High Conf. | 0.48 | 0.52 | 0.27 | 0.30 |
@@ -91,7 +93,7 @@ This paper is an analytical work and does not involve model training. DeepSeek-R
 **Model Scale Analysis (Qwen3 Series, AIME2025)**
 
 | Method | Qwen3-1.7B | Qwen3-4B | Qwen3-8B |
-| :--- | :--- | :--- | :--- |
+|------|-----------|----------|----------|
 | Mean Acc. | 0.35 | 0.65 | 0.67 |
 | Self-Certainty | 0.45 | 0.73 | 0.63 |
 | Loc. uni | 0.41 | 0.69 | 0.69 |
@@ -100,7 +102,7 @@ This paper is an analytical work and does not involve model training. DeepSeek-R
 **Sampling Scale Analysis (Qwen3-8B, AIME2025)**
 
 | Method | Sample-3 | Sample-5 | Sample-10 |
-| :--- | :--- | :--- | :--- |
+|------|----------|----------|-----------|
 | Loc. uni | 0.73 | 0.69 | 0.72 |
 | Glob. non-uni | 0.70 | 0.70 | 0.70 |
 | Self-Certainty | 0.70 | 0.63 | 0.62 |
@@ -108,37 +110,37 @@ This paper is an analytical work and does not involve model training. DeepSeek-R
 
 ### Key Findings
 
-*   Local uniformity consistently outperforms traditional baselines across all models and benchmarks, with DS-R1-Qwen-7B achieving a +33% Gain on AIME25.
-*   Global non-uniformity performs best on harder benchmarks (reaching 0.64 on BRUMO25 vs. 0.52 for Self-Certainty).
-*   Smaller models benefit more from local smoothing (1.7B shows a 17% Gain), while larger models better utilize global non-uniformity (8B reaches an optimal 0.70).
-*   As sampling increases (Sample-10), traditional baselines degrade (High Conf. drops from 0.63 to 0.57), but UID metrics remain stable.
-*   Results are equally effective on non-mathematical reasoning tasks (GPQA-D, LSAT-AR, LSAT-LR), achieving a +12.7% relative improvement on LSAT-AR.
-*   Communication-style prompt experiments verify the difference in goals between reasoning and communication: adding "explain to an audience" instructions pushes the model toward human UID patterns, but reasoning performance actually decreases.
+- Local uniformity consistently outperforms traditional baselines across all models and benchmarks, with DS-R1-Qwen-7B achieving a +33% Gain on AIME25.
+- Global non-uniformity performs best on harder benchmarks (reaching 0.64 on BRUMO25 vs. 0.52 for Self-Certainty).
+- Smaller models benefit more from local smoothing (17% Gain for 1.7B), while larger models better utilize global non-uniformity (8B reaches an optimal 0.70).
+- When sampling increases (Sample-10), traditional baselines degrade (High Conf. drops from 0.63 to 0.57), but UID metrics remain stable.
+- The metrics are also effective on non-mathematical reasoning tasks (GPQA-D, LSAT-AR, LSAT-LR), achieving a +12.7% relative improvement on LSAT-AR.
+- Communicative prompt experiments verify the goal difference: adding "explain to the audience" instructions shifts models toward the human UID pattern but degrades reasoning performance.
 
 ## Highlights & Insights
 
-*   The insight that "reasoning is not communication" is profound—explaining UID deviation as a difference between internal computation and external communication goals rather than a model defect.
-*   UID metrics offer the advantage of being sample-efficient: they do not require majority voting or external verifiers, allowing quality assessment based solely on internal signals from a single trajectory.
-*   The framework can be directly applied to Best-of-N selection strategies for reasoning models, significantly improving accuracy while keeping computational costs controllable.
+- The insight that "reasoning is not communication" is profound—explaining deviations from UID as differences between internal computation and external communication goals rather than model defects.
+- UID metrics offer sample-efficient advantages: they do not require majority voting or external verifiers, allowing quality assessment based solely on internal signals from a single trajectory.
+- The framework can be directly applied to Best-of-N selection strategies for reasoning models, significantly improving accuracy while keeping computational costs manageable.
 
 ## Limitations & Future Work
 
-*   Analysis is primarily focused on structured reasoning datasets (math, logic); generalization to open conversation or interactive scenarios has not been verified.
-*   Token-level entropy is used as a proxy for information density, but a mechanistic explanation for why these UID patterns emerge is not provided.
-*   Step segmentation is based on `\n\n` heuristics; although robustness is verified in the appendix, finer-grained segmentation strategies are worth exploring.
-*   No direct comparison with external reward models such as ORM/PRM was conducted.
+- Analysis primarily focuses on structured reasoning datasets (math, logic); generalization to open-ended dialogue or interactive scenarios is not yet verified.
+- Token-level entropy is used as a proxy for information density without providing a mechanistic explanation for why these UID patterns emerge.
+- Step segmentation relies on `\n\n` heuristics; although the appendix confirms robustness, finer-grained segmentation strategies are worth exploring.
+- No direct comparison is made with external reward models like ORM/PRM.
 
 ## Related Work & Insights
 
-*   **vs. Self-Certainty (Kang et al., 2025)**: The latter uses response-level confidence signals, whereas this paper proposes step-level structural signals, showing more stability as sample volume increases.
-*   **vs. ROSCOE (Golovneva et al., 2023)**: The latter requires scoring from external evaluation models, whereas the UID metrics in this paper are based entirely on the generative model's own prediction distributions, requiring no additional models.
+- **vs Self-Certainty (Kang et al., 2025)**: The latter uses response-level confidence signals, whereas this paper proposes step-level structural signals—found to be more stable as sampling volume increases.
+- **vs ROSCOE (Golovneva et al., 2023)**: The latter requires scoring from an external evaluation model; the UID metrics in this paper are entirely based on the generative model's own predictive distribution, requiring no additional models.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ First to introduce UID hypothesis to LLM reasoning, discovering the counter-intuitive "local uniformity + global non-uniformity" pattern.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across 7 benchmarks, 3 models, and various sampling and model scales.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Clear analogy from psycholinguistics to LLM reasoning, with progressive experimental logic.
-*   Value: ⭐⭐⭐⭐ Provides a new theoretical perspective and practical tools for reasoning trajectory quality assessment.
+- Novelty: ⭐⭐⭐⭐⭐ First to introduce the UID hypothesis to LLM reasoning, discovering the counter-intuitive "local uniformity + global non-uniformity" pattern.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across 7 benchmarks, 3 models, and various sampling and model scales.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear analogy from psycholinguistics to LLM reasoning, with logical progression of experiments.
+- Value: ⭐⭐⭐⭐ Provides a new theoretical perspective and practical tool for assessing the quality of reasoning trajectories.
 
 <!-- RELATED:START -->
 
@@ -149,8 +151,8 @@ This paper is an analytical work and does not involve model training. DeepSeek-R
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
-- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
+- [\[CVPR 2026\] Revisiting the Necessity of Lengthy Chain-of-Thought in Vision-centric Reasoning Generalization](../../CVPR2026/llm_reasoning/revisiting_the_necessity_of_lengthy_chain-of-thought_in_vision-centric_reasoning.md)
+- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](../../ICML2026/llm_reasoning/an_information-theoretic_criterion_for_efficient_data_synthesis.md)
 
 </div>
 

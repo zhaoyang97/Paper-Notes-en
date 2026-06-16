@@ -32,7 +32,7 @@ item_list:
   - u: "vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr/"
     t: "VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions"
   - u: "where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan/"
-    t: "Capability-Oriented Failure Attribution for Vision-Language Navigation Agents"
+    t: "Ability-Oriented Failure Attribution for Vision-Language Navigation Agents"
 item_total: 10
 ---
 
@@ -41,46 +41,46 @@ item_total: 10
 
 **💬 ACL2026** · **10** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (42)](../../ICML2026/robotics/index.md) · [📷 CVPR2026 (36)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (149)](../../CVPR2026/robotics/index.md) · [🧪 ICML2026 (42)](../../ICML2026/robotics/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
 🔥 **Top topics:** Navigation ×6 · Multimodal/VLM ×3 · Reasoning ×3 · Robotics ×2
 
 **[Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)**
 
-:   SkillNav decomposes the Vision-and-Language Navigation task into 5 atomic skills (Direction Adjustment, Vertical Movement, Stop, Landmark Detection, Area Identification) plus 1 temporal planning skill. Each skill fine-tunes a DUET sub-agent using synthetic data, coupled with a training-free VLM router for temporal reordering, subgoal localization, and skill selection. It achieves SOTA generalization on GSA-R2R (48% Test-N-Scene SPL compared to the previous best of 43%).
+:   SkillNav decomposes the Vision-and-Language Navigation (VLN) task into five atomic skills (Directional Adjustment, Vertical Movement, Stop, Landmark Recognition, and Area Recognition) plus one Temporal Planning skill. Each skill fine-tunes a DUET sub-agent using synthetic data, while a training-free VLM router performs temporal reordering, sub-goal localization, and skill selection. SkillNav achieves SOTA generalization on GSA-R2R (Test-N-Scene SPL of 48% vs. the previous high of 43%).
 
 **[Cultivating Forensic Reasoning for Generalizable Multimodal Manipulation Detection](cultivating_forensic_reasoning_for_generalizable_multimodal_manipulation_detecti.md)**
 
-:   This paper proposes REFORM, which shifts multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, a dual-decoder architecture, and GRPO training, it achieves superior cross-domain generalization and interpretable detection results on ROM, DGM4, and MMFakeBench.
+:   This paper proposes REFORM, shifting multimodal forgery detection from "direct label fitting" to "learning a verifiable forensic reasoning process." Through the ROM reasoning-annotated dataset, a dual-decoder architecture, and GRPO training, REFORM achieves superior cross-domain generalization and interpretable detection results on ROM, DGM4, and MMFakeBench.
 
 **[ElasticFlow: One-Step Physics-Consistent Policy with Elastic Time Horizons for Language-Guided Manipulation](elasticflow_one-step_physics-consistent_policy_with_elastic_time_horizons_for_la.md)**
 
-:   The authors propose ElasticFlow, which replaces instantaneous velocity field learning with a mean velocity field (MeanFlow) to learn language-conditioned robot actions. By explicitly encoding control granularity via an "Elastic Time Horizon $\Delta t=t-r$," it achieves 1-NFE single-step inference (~71Hz) and outperforms OpenVLA and $\pi_0$ on long-horizon tasks such as LIBERO-Long and CALVIN ABC-D.
+:   ElasticFlow is proposed to replace instantaneous velocity field learning with a Mean Velocity Field (MeanFlow) for language-conditioned robot actions. Combined with an "Elastic Time Horizon $\Delta t=t-r$" to explicitly encode control granularity, it achieves 1-NFE one-step inference (~71Hz), outperforming OpenVLA and $\pi_0$ on long-horizon tasks such as LIBERO-Long and CALVIN ABC-D.
 
 **[GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)**
 
-:   GoViG proposes a new task for generating navigation instructions using **only first-person initial and goal observations**. The task is decomposed into two steps: "imagine intermediate frames, then write instructions." By training Anole-7B under a dual objective of token-level MSE and label-smoothing CE, and employing one-pass or interleaved multimodal reasoning strategies, the method improves BLEU-4 from a baseline of 0.08 to 0.32, maintaining 0.27 on cross-domain real-world videos.
+:   GoViG proposes a new task for generating navigation instructions based **solely on initial and goal egocentric observations**. The process is decomposed into two steps: "imagine intermediate visuals first, then write instructions." By joint training Anole-7B with a dual objective of token-level MSE and label-smoothing CE, and employing one-pass or interleaved multimodal reasoning strategies, the model pushes BLEU-4 from a baseline of 0.08 to 0.32, maintaining 0.27 on cross-domain real-world videos.
 
 **[GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)**
 
-:   GROKE proposes evaluating navigation instructions **entirely without vision**—by serializing OSM maps into JSON and having Gemini-3 Pro act as a follower agent to execute instructions along the graph. Navigation Error (NE), Success Rate (SR), and SDTW are utilized as proxies for instruction quality. Compared to heuristic baselines, GROKE reduces navigation error by 68.5% on Map2Seq, and NE correlates significantly with human judgment of "instruction clarity" ($r = -0.31, p < 0.01$).
+:   GROKE proposes evaluating navigation instructions **without any visual input**. By serializing OpenStreetMap (OSM) data into JSON, it utilizes Gemini-3 Pro as a follower agent to execute instructions along the graph. Performance metrics like Navigation Error (NE), Success Rate (SR), and SDTW are used as proxies for instruction quality. Compared to heuristic baselines on Map2Seq, GROKE reduces NE by 68.5%, and its NE scores correlate significantly with human judgments of "instruction clarity" ($r = -0.31, p < 0.01$).
 
 **[Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](libra-vla_achieving_learning_equilibrium_via_asynchronous_coarse-to-fine_dual-sy.md)**
 
-:   Libra-VLA decomposes robotic actions into a hybrid action space of "discrete macro-intents + continuous micro-poses." It employs System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Facilitated by an intent buffer for asynchronous execution, it achieves a State-of-the-Art (SoTA) success rate of 97.2% on LIBERO and 79.5% zero-shot on LIBERO-Plus (10% higher than the previous OpenVLA-OFT+).
+:   Libra-VLA decomposes robot actions into a hybrid action space of "discrete macro-intent + continuous micro-pose." It utilizes System 2 (VLM + parallel coarse-action head) for low-frequency planning and System 1 (diffusion transformer + independent SigLIP encoder) for high-frequency refinement. Achieving true asynchronous execution via an intent buffer, it reaches a SoTA of 97.2% on LIBERO and 79.5% zero-shot on LIBERO-Plus (10% higher than the previous OpenVLA-OFT+).
 
 **[Limited Linguistic Diversity in Embodied AI Datasets](limited_linguistic_diversity_in_embodied_ai_datasets.md)**
 
-:   This paper conducts a systematic "linguistic diversity checkup" on mainstream VLA training corpora (RT-1, BRIDGE, TacoPlay, Language Table, LIBERO). By quantifying lexical, semantic, and syntactic dimensions, it finds: **< 2% unique instructions**, RT-1 has only **49 unique words** in total, and **negation/conditional sentences appear in < 1%** of data. This "templated poverty" is significantly lower than instruction-tuning corpora (OASST2 93%, Alpaca 99.8% unique) and likely causes VLA model fragility to paraphrases and generalization failure.
+:   This study conducts a systematic "linguistic diversity checkup" on mainstream VLA training corpora (RT-1, BRIDGE, TacoPlay, Language Table, LIBERO), quantifying them across lexical, semantic, and syntactic dimensions. Findings reveal that **< 2% of instructions are unique, the entire RT-1 corpus contains only 49 unique words, and negation/conditional sentences account for < 1%**. This is significantly inferior to instruction-tuning corpora (OASST2 93%, Alpaca 99.8% unique). This "template-driven poverty" may be the root cause of VLA models' vulnerability to paraphrasing and generalization failures.
 
 **[Mango: Multi-Agent Web Navigation via Global-View Optimization](mango_multi-agent_web_navigation_via_global-view_optimization.md)**
 
-:   Mango constructs a lightweight approximate global structure of a website before navigation and utilizes Thompson Sampling to dynamically allocate a finite navigation budget among candidate URLs. This prevents LLM web agents from searching blindly from the homepage and significantly outperforms baselines such as AgentOccam and WebWalker on WebVoyager and WebWalkerQA.
+:   Mango constructs a global approximate structure of a website before navigation and uses Thompson Sampling to dynamically allocate a limited navigation budget among candidate URLs. This prevents LLM web agents from blindly exploring from the root URL and significantly outperforms baselines like AgentOccam and WebWalker on WebVoyager and WebWalkerQA.
 
 **[VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)**
 
-:   This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework. ROAM achieves a 6.1 REV-SPL, representing a 45% improvement over supervised baselines.
+:   This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It further introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework, where ROAM achieves 6.1 REV-SPL, representing a 45% improvement over supervised baselines.
 
-**[Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)**
+**[Ability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)**
 
-:   Addressing multi-level capability failures in embodied agents (specifically vision-language navigation VLN agents), this paper proposes the CanTest framework. Through capability-oriented test oracles and failure attribution mechanisms, it precisely locates specific capability defects (perception/memory/planning/decision) causing task failure, discovering 23–34% more failure cases than existing methods.
+:   This paper addresses multi-level ability failures in embodied agents (specifically Vision-Language Navigation VLN agents) by proposing the CanTest framework. Through ability-oriented test oracles and failure attribution mechanisms, it precisely localizes specific ability defects (Perception/Memory/Planning/Decision-making) leading to task failure, discovering 23–34% more failure cases than existing methods.

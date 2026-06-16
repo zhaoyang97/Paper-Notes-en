@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Alignment-Aware Decoding
 description: >-
-  [ICML 2026][LLM Alignment][alignment-aware decoding] Alignment-Aware Decoding (AAD) directly utilizes the token probability ratio of a DPO model relative to its SFT reference model as an implicit alignment reward during…
+  [ICML 2026][Alignment & RLHF][alignment-aware decoding] Alignment-Aware Decoding (AAD) directly leverages the token probability ratio of a DPO model relative to an SFT reference model as an implicit alignment reward during inference. Without additional training or external reward models, it generates high-quality aligned responses more stably than greedy, Bo2, and EFT decod
 tags:
-  - "ICML 2026"
-  - "LLM Alignment"
-  - "alignment-aware decoding"
-  - "DPO"
-  - "inference-time alignment"
-  - "token-level reward"
-  - "preference optimization"
+  - ICML 2026
+  - Alignment & RLHF
+  - alignment-aware decoding
+  - DPO
+  - token-level reward
 date: 2026-05-08
-content_hash: fd656010e847209b
+content_hash: d1c5737a4cca7c50
 ---
-
 # Alignment-Aware Decoding
 
 **Conference**: ICML 2026  
@@ -24,53 +21,57 @@ content_hash: fd656010e847209b
 **Keywords**: alignment-aware decoding, DPO, inference-time alignment, token-level reward, preference optimization  
 
 ## TL;DR
-Alignment-Aware Decoding (AAD) directly utilizes the token probability ratio of a DPO model relative to its SFT reference model as an implicit alignment reward during inference. Without additional training or external reward models, it generates responses with higher alignment quality more stably than greedy, Bo2, and EFT, and can further generate synthetic preference data to improve DPO.
+Alignment-Aware Decoding (AAD) directly leverages the token probability ratio of a DPO model relative to an SFT reference model as an implicit alignment reward during inference. Without additional training or external reward models, it generates high-quality aligned responses more stably than greedy, Bo2, and EFT decoding, while also serving as a mechanism to generate synthetic preference data for iterative DPO improvement.
 
 ## Background & Motivation
-**Background**: Mainstream LLM alignment is typically completed during the training phase. For instance, RLHF trains a reward model followed by PPO optimization, while DPO directly trains models from chosen/rejected preference pairs. After training, most deployments use standard decoding such as greedy, sampling, or best-of-N.
+**Background**: Mainstream LLM alignment is typically completed during the training phase. For instance, RLHF trains a reward model followed by PPO optimization, while DPO optimizes the model directly from chosen/rejected preference pairs. Once trained, most models are deployed using standard decoding methods such as greedy, sampling, or best-of-N.
 
-**Limitations of Prior Work**: Although DPO can move a model closer to preference data, it is essentially still constrained by the prior of the SFT reference model. Theoretically, even if a response has a higher true reward, the DPO optimal policy might favor another lower-reward response as long as the SFT model assigns a sufficiently low prior probability to the former. Consequently, standard decoding inherits the bias of the reference model and fails to fully exploit the fine-grained preference signals learned during DPO training.
+**Limitations of Prior Work**: While DPO brings the model closer to preference data, it is inherently constrained by the prior of the SFT reference model. Theoretically, even if a response has a higher true reward, the DPO optimal policy might favor a lower-reward response if the SFT model's prior probability for the higher-reward one is sufficiently low. Consequently, standard decoding inherits the biases of the reference model and fails to fully exploit the fine-grained preference signals learned during DPO training.
 
-**Key Challenge**: Preference optimization during training encodes "which token is more representative of a high-preference response" into the probability difference between DPO and SFT. However, at inference time, if tokens are selected solely based on DPO probabilities, this alignment signal is often masked by language fluency and the SFT prior. Conversely, directly maximizing the probability ratio can lead to selecting "weird" tokens with low probability, resulting in degenerate output.
+**Key Challenge**: Preference optimization encodes "which token corresponds to a higher-preference response" into the probability difference between the DPO and SFT models. However, at inference time, if tokens are selected solely based on DPO probabilities, this alignment signal is often masked by linguistic fluency and the SFT prior. Conversely, directly maximizing the probability ratio can lead to the selection of rare, low-probability tokens, resulting in degenerate output.
 
-**Goal**: The authors aim to design a simple, training-free inference-time alignment method that only relies on a standard SFT+DPO model pair. It should be better aligned than greedy DPO without requiring extra reward models, complex searches, or extensive hyperparameter tuning for each dataset.
+**Goal**: The authors aim to design a simple, training-free inference-time alignment method that relies only on a standard SFT+DPO model pair. It should achieve better alignment than greedy DPO without requiring extra reward models, complex searches, or extensive hyperparameter tuning for each dataset.
 
-**Key Insight**: The DPO objective can be interpreted as learning an implicit reward or token-level advantage. AAD applies this interpretation directly to decoding: the DPO model is responsible for providing the feasibility of candidate tokens, while the DPO/SFT probability ratio provides the alignment preference.
+**Key Insight**: The DPO objective can be interpreted as learning an implicit reward or a token-level advantage. AAD applies this interpretation directly to decoding: the DPO model determines the viability of candidate tokens, while the DPO/SFT probability ratio provides the alignment preference.
 
-**Core Idea**: Within a set of tokens considered "sufficiently probable" by the DPO model, select the token with the largest probability increase relative to the SFT model, thereby maximizing the implicit alignment reward while maintaining fluency.
+**Core Idea**: Within a set of tokens deemed "sufficiently likely" by the DPO model, select the token with the largest probability increase relative to the SFT model, thereby maximizing the implicit alignment reward while maintaining fluency.
 
 ## Method
-The AAD method is concise, but the key lies in changing the decoding objective. Standard greedy DPO selects the token with the highest $\pi_{\mathrm{dpo}}$ probability; AAD treats $\pi_{\mathrm{dpo}}$ only as a candidate filter and uses $\log \pi_{\mathrm{dpo}}(v|s)-\log \pi_{\mathrm{sft}}(v|s)$ for actual ranking, representing how much support preference optimization has added to a token relative to the SFT prior.
+The AAD approach is concise, but its core lies in shifting the decoding objective. While standard greedy DPO selects the token with the highest $\pi_{\mathrm{dpo}}$ probability, AAD uses $\pi_{\mathrm{dpo}}$ as a candidate filter and ranks tokens using $\log \pi_{\mathrm{dpo}}(v|s)-\log \pi_{\mathrm{sft}}(v|s)$, which represents how much preference optimization has increased the support for a token relative to the SFT prior.
 
 ### Overall Architecture
-Input includes prompt $x$, current prefix $y_{1:t-1}$, post-DPO model $\pi_{\mathrm{dpo}}$, pre-DPO SFT model $\pi_{\mathrm{sft}}$, maximum length, and a filtering threshold $\alpha$. At each step, the next-token distributions for both models are computed via forward passes. A candidate set $\mathcal{V}_{\alpha}$ is filtered from the DPO distribution where probabilities are at least $\alpha$ times the maximum probability. Within this set, AAD selects the token with the largest log-ratio. Decoding stops at `<eos>` or the maximum length.
+The input includes a prompt $x$, the current prefix $y_{1:t-1}$, the DPO model $\pi_{\mathrm{dpo}}$, the SFT reference model $\pi_{\mathrm{sft}}$, a maximum length, and a filtering threshold $\alpha$. At each step, forward passes are performed for both models to obtain the next-token distributions. A candidate set $\mathcal{V}_{\alpha}$ is formed from tokens in the DPO distribution with probabilities no less than $\alpha$ times the maximum probability. Within this set, AAD selects the token with the maximum log-ratio. The process repeats until the `<eos>` token is encountered or the maximum length is reached. Beyond being an inference strategy, AAD's high-quality outputs can be recycled as synthetic preference data to iteratively improve DPO.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: prompt + current prefix<br/>DPO model π_dpo, SFT reference π_sft, threshold α"] --> B["Two forward passes per step<br/>to get next-token distributions for π_dpo and π_sft"]
+    B --> C["DPO/SFT probability ratio as token-level reward<br/>A(v) = log π_dpo(v) − log π_sft(v)"]
+    B --> D["Min-α credible token filtering<br/>Candidate set V_α: π_dpo(v) ≥ α·max π_dpo"]
+    C --> E["Select token in V_α with largest log-ratio<br/>y_t = argmax A(v)"]
+    D --> E
+    E -->|No eos and length < max| B
+    E -->|Eos or max length reached| F["Output aligned response y"]
+    F --> G["Feedback AAD output as synthetic preference data<br/>AAD as chosen, nucleus sampling as rejected → Iterative DPO"]
+```
 
 ### Key Designs
-1. **DPO/SFT probability ratio as token-level reward**:
-	- Function: Converts preference signals learned during DPO training into a token score usable at each decoding step.
-	- Mechanism: The implicit reward of DPO can be written as $r_{\theta}(x,y)=\beta\log \frac{\pi_{\theta}(y|x)}{\pi_{\mathrm{sft}}(y|x)}$. AAD localizes this to $A(v|s)=\log\frac{\pi_{\mathrm{dpo}}(v|s)}{\pi_{\mathrm{sft}}(v|s)}$, selecting tokens significantly up-weighted by DPO compared to SFT.
-	- Design Motivation: Relying solely on DPO probability leaves the model heavily influenced by the SFT prior; the probability ratio more closely reflects "what the preference optimization actually rewarded."
+**1. DPO/SFT probability ratio as token-level reward: Bringing preference signals to every step of decoding.** Standard greedy decoding follows only the probability ranking of $\pi_{\mathrm{dpo}}$. The problem is that the DPO optimal policy remains bound by the SFT prior. The paper proves using $\log\frac{\pi^*(y_1|x)}{\pi^*(y_2|x)}=\Delta_{\mathrm{sft}}+\frac1\beta\Delta_r$ that if the SFT prior for a high-reward answer is low enough ($\Delta_{\mathrm{sft}}<-\frac1\beta\Delta_r$), the optimal policy will favor the lower-reward answer, as the alignment signal is masked. AAD uses the DPO implicit reward $r_{\mathrm{dpo}}(x,y)=\beta\log\frac{\pi_{\mathrm{dpo}}(y|x)}{\pi_{\mathrm{sft}}(y|x)}$ and localizes it to a token-level advantage $A(v|s)=\log\frac{\pi_{\mathrm{dpo}}(v|s)}{\pi_{\mathrm{sft}}(v|s)}$ ($\beta$ is omitted as it doesn't change the ranking). By picking tokens most "up-voted" by preference optimization relative to SFT, the ratio strips away the SFT prior to reveal what the preference optimization actually rewards, making it closer to the true reward than $\pi_{\mathrm{dpo}}$ alone.
 
-2. **min-$\alpha$ credible token filtering**:
-	- Function: Avoids selecting low-probability, incoherent, or numerically unstable tokens caused by simply maximizing the probability ratio.
-	- Mechanism: AAD only compares the advantage among tokens satisfying $\pi_{\mathrm{dpo}}(v|s) \ge \alpha \max_{v'}\pi_{\mathrm{dpo}}(v'|s)$. The main experiments consistently use $\alpha=0.1$ across multiple datasets and model scales without additional tuning.
-	- Design Motivation: High-probability tokens ensure grammatical and semantic feasibility according to the language model, while probability ratio ranking reinforces alignment preference among these viable options. This design decouples fluency and alignment.
+**2. Min-$\alpha$ credible token filtering: Imposing fluency constraints on advantage.** Maximizing the probability ratio without constraints causes degradation. Essential linguistic tokens often receive high probabilities from both models, resulting in small ratios that might be ignored. Conversely, tokens with extremely low $\pi_{\mathrm{sft}}$ probabilities can produce massive relative ratios from minor absolute increases in $\pi_{\mathrm{dpo}}$, leading to numerical instability. Borrowing from contrastive decoding, AAD applies min-$\alpha$ filtering to keep only candidates where $\pi_{\mathrm{dpo}}(v|s)\ge \alpha\max_{v'}\pi_{\mathrm{dpo}}(v'|s)$, then takes the argmax of the advantage within this set $\mathcal{V}_{\alpha}$ (the main experiment uses $\alpha=0.1$ across datasets and scales). High-probability candidates ensure linguistic viability, while the ratio ranking reinforces alignment—this separation of fluency and alignment is the key engineering detail for stability.
 
-3. **AAD for synthetic preference data generation**:
-	- Function: Uses AAD output as chosen samples to continue training the DPO model when preference data is scarce.
-	- Mechanism: The authors use AAD to generate high-quality chosen completions and nucleus sampling from the DPO model to generate rejected completions. This constructs synthetic preference pairs for further training from SFT or existing DPO checkpoints.
-	- Design Motivation: AAD is not just a deployment strategy but also a bootstrap data generator. Experiments show that with only 10% of the original preference data, AAD-generated data significantly closes the gap with full-data DPO.
+**3. AAD output as synthetic preference data: Turning a decoding strategy into a self-improving generator.** Since labeled preference data is scarce and expensive, AAD can serve as a generator. By taking AAD's high-quality outputs as "chosen" completions and nucleus-sampled outputs from $\pi_{\mathrm{dpo}}$ as "rejected" completions, one can construct synthetic preference pairs to continue DPO training. This loop "distills" inference-time alignment gains back into model parameters. Experiments show that with only 10% of the original preference data, a model trained with synthetic data approach full-data DPO performance under standard decoding, though multi-round bootstrapping may eventually saturate or degenerate.
 
 ### Loss & Training
-AAD itself has no training loss and only performs two forward passes during inference. DPO models in the experiments are trained for two epochs using a 10% preference training split with LoRA rank 64 and a default DPO coefficient $\beta=0.1$. Reward oracles and picker reward models are trained for two epochs using Bradley-Terry loss. During generation, AAD fixes $\alpha=0.1$, with computational costs roughly equivalent to EFT and Bo2 as all require two forward passes or two candidate generations.
+AAD does not use a training loss; instead, it performs two forward passes during inference. In experiments, the DPO model is trained for two epochs on a 10% preference training split using LoRA (rank 64) with a default $\beta=0.1$. Reward oracles and picker reward models are trained for two epochs using the Bradley-Terry loss. During generation, AAD fixes $\alpha=0.1$, resulting in a computational cost comparable to EFT and Bo2, as they also require two model forward passes or two candidate generations.
 
 ## Key Experimental Results
 
 ### Main Results
-The main table compares average oracle rewards across datasets like UltraFeedback, Argilla, and OpenRLHF Mixture on Llama/Qwen at various scales. Representative results from three datasets are extracted below, with AAD achieving the highest scores.
+The main results across UltraFeedback, Argilla, and OpenRLHF Mixture datasets and multiple scales of Llama/Qwen show average oracle reward. The following table highlights representative results where AAD achieved the highest scores.
 
-| Dataset / Model | Greedy SFT | Greedy DPO | Bo2 | EFT | AAD | Gain over strongest baseline |
-|---------------|------------|------------|-----|-----|-----|------------------|
+| Dataset / Model | Greedy SFT | Greedy DPO | Bo2 | EFT | AAD | AAD Gain over Best Baseline |
+|-----------------|------------|------------|-----|-----|-----|-----------------------------|
 | UltraFeedback / Llama 3B | 0.58 | 0.68 | 0.85 | 1.04 | 2.21 | +1.17 over EFT |
 | UltraFeedback / Qwen 4B | 0.22 | 0.29 | 0.47 | 0.58 | 1.19 | +0.61 over EFT |
 | Argilla / Llama 8B | 1.72 | 2.55 | 3.16 | 4.65 | 5.90 | +1.25 over EFT |
@@ -79,46 +80,46 @@ The main table compares average oracle rewards across datasets like UltraFeedbac
 | OpenRLHF Mixture / Qwen 4B | 2.63 | 3.56 | 4.48 | 5.29 | 5.45 | +0.16 over EFT |
 
 ### Ablation Study
-The paper also analyzes external evaluation, human preference, reference choice, data scarcity, and hyperparameters.
+The paper analyzes external evaluation, human preference, reference choice, data scarcity, and hyperparameters.
 
-| Configuration | Key Metrics | 说明 |
-|------|----------|------|
-| AlpacaEval / Skywork | AAD win rates against Greedy SFT, Greedy DPO, Bo2, EFT on Llama/Qwen mostly range from 0.73 to 0.79 | Outperforms baselines under external GPT-4 evaluator |
-| AlpacaEval / Nectar | AAD win rate against Greedy SFT is 0.80/0.82 on Llama 3B/8B, and 0.70/0.63 against EFT | Maintains advantage on another external oracle dataset |
-| Contrastive decoding reference | On Llama-8B DPO, Argilla CD 1B/3B reward is 2.79/2.46, AAD is 5.90 | AAD requires the matching SFT reference, not just any weak model's logits |
-| OLMo-2 open-source DPO | 7B AAD reward 3.84, win rate 71.5% vs Greedy DPO; 13B reward 7.22, win rate 75.2% vs Greedy DPO | Method transfers to public DPO models |
-| Human evaluation / Skywork 3B | AAD win rate against Greedy DPO 58.7%, against Bo2 73.5%, Elo 1610.1 (Rank 1) | Human evaluation supports reward-model results |
-| $\alpha$ Ablation | Optimal range is approx. 0.1 to 0.2 | Loose filtering causes over-optimization; tight filtering approaches greedy |
-| Full fine-tuning data ratio | At 5% data, Skywork AAD reward is 1.25 (Bo2 -1.81); at 100%, AAD is 8.36 (Bo2 -0.56) | AAD advantage is more pronounced with less data |
-| Latency | Single GPU throughput approx. 0.5x of greedy; 0.75x with dual GPU parallelism | Cost stems from dual model forward passes per token |
+| Configuration | Key Metric | Description |
+|---------------|------------|-------------|
+| AlpacaEval / Skywork | AAD win rate vs. Greedy SFT, DPO, Bo2, EFT mostly between 0.73 and 0.79 | Outperforms baselines under external GPT-4 evaluator |
+| AlpacaEval / Nectar | AAD win rate vs. Greedy SFT 0.80/0.82, vs. EFT 0.70/0.63 on Llama 3B/8B | Prevails on separate external oracle datasets |
+| Contrastive decoding reference | On Llama-8B DPO (Argilla), CD with 1B/3B yields 2.79/2.46 vs. AAD 5.90 | AAD requires the matching SFT reference, not just a smaller model |
+| OLMo-2 open-source DPO | On 7B, AAD reward 3.84 (71.5% win vs. DPO); on 13B, reward 7.22 (75.2% win) | Generalizable to public DPO models |
+| Human evaluation / Skywork 3B | AAD vs. Greedy DPO win rate 58.7%, vs. Bo2 73.5%, Elo 1610.1 (Rank 1) | Human evaluation aligns with reward-model findings |
+| $\alpha$ Ablation | Optimal range approximately 0.1 to 0.2 | Too loose leads to over-optimization; too tight converges to greedy |
+| Data scaling (Full fine-tuning) | At 5% data, AAD reward 1.25 (Bo2 -1.81); at 100%, AAD 8.36 (Bo2 -0.56) | AAD advantage is more pronounced with limited data |
+| Latency | Single GPU throughput is ~0.5x of greedy; Dual GPU parallelization ~0.75x | Overhead mainly from double forward passes per token |
 
 ### Key Findings
-- AAD's advantage over BoN stems from using "per-token preference signals" rather than selecting from complete responses post-hoc. On Argilla and Nectar, BoN with $N=50$ using an oracle reward still struggles to match AAD.
-- The AAD reference must be the SFT model used during DPO training. Using a general weak instruct model for contrastive decoding (CD) is significantly inferior to AAD, indicating gains come from the actual DPO-SFT probability gap semantics rather than just counteracting small model bias.
-- AAD serves as a data generator. Constructing iterative DPO data using AAD outputs approaches full-data training performance using only 10% of original data, though multi-round bootstrapping may show saturation or degradation.
+- AAD's advantage over BoN stems from applying preference signals at the token level rather than selecting from finished responses. On Argilla and Nectar, even BoN with $N=50$ using an oracle reward struggles to match AAD.
+- The AAD reference must be the exact SFT model used for DPO training. Using a generic weak instruct model (standard contrastive decoding) is significantly worse, indicating the gains come from specific DPO-SFT semantic shifts.
+- AAD serves as a data generator. Iterative DPO using AAD-generated data with 10% of preference data reaches performance comparable to full-data training, although multi-round iterations may saturate.
 
 ## Highlights & Insights
-- The method is minimalist but captures a frequently wasted byproduct: the probability difference between the DPO and SFT models is the preference signal itself. Standard decoding uses only the DPO distribution, effectively merging this differential signal into the total probability and then losing information.
-- The min-$\alpha$ filtering is a critical engineering detail. Without it, maximizing the probability ratio easily selects anomalous tokens weakly supported by SFT but slightly up-weighted by DPO. With it, AAD preserves both linguistic quality and alignment preference.
-- This paper makes inference-time alignment lightweight: no extra reward model, no complex tree search, and no parameter changes. It is highly practical for the open-source ecosystem where only SFT/DPO checkpoints are available.
+- The method is minimalist but captures a frequently overlooked byproduct of DPO: the probability difference between the DPO and SFT models is inherently a preference signal. Standard decoding only uses the DPO distribution, discarding information by blending the difference signal back into the total probability.
+- Min-$\alpha$ filtering is a critical engineering detail. Without it, maximizing the ratio favors anomalous tokens that the DPO model only slightly up-voted from a near-zero SFT base; with it, AAD preserves linguistic quality while enhancing alignment—achieving a functional division between fluency and preference.
+- This paper makes inference-time alignment lightweight: it requires no extra reward model, no complex tree search, and no parameter updates. This is highly practical for the open-source ecosystem where SFT/DPO checkpoints are common.
 
 ## Limitations & Future Work
-- AAD requires simultaneous access to the DPO model and its corresponding SFT checkpoint. Many closed-source models or merged checkpoints cannot use it directly.
-- Each token requires two forward passes, roughly halving single-GPU throughput. For long texts or high-concurrency services, it must rely on parallelism, KV cache sharing, or fused kernels to reduce overhead.
-- The method is primarily applicable to standard SFT+DPO pipelines. The paper notes mixed results with PPO-trained models, as PPO optimizes an external reward directly and may not preserve the SFT-DPO probability gap that AAD depends on.
-- AAD optimizes the alignment signals learned from existing preference data. If the preference data is biased or the reward oracle is unreliable, AAD might amplify these biases more stably rather than inherently being safer.
+- AAD requires simultaneous access to both the DPO model and its corresponding SFT checkpoint. It cannot be used directly for closed-source models or those released only as merged checkpoints.
+- Doubling forward passes per token roughly halves single-GPU throughput. For long contexts or high-concurrency services, deployment depends on parallelization, KV cache sharing, or fused kernels.
+- The method is primarily tailored for standard SFT+DPO pipelines. Results for models trained with PPO are mixed, as PPO optimizes an external reward and may not maintain the specific SFT-DPO probability gap that AAD exploits.
+- AAD optimizes the alignment signals learned from existing preference data. If the preference data is biased or the reward oracle is unreliable, AAD might amplify those biases more stably rather than improving safety.
 
 ## Related Work & Insights
-- **vs DPO greedy decoding**: Greedy DPO selects the highest probability token, while AAD selects the token most up-weighted by preference optimization relative to SFT that remains credible, thus using alignment signals more directly.
-- **vs EFT / proxy alignment**: EFT also uses probability differences between model pairs for inference-time guidance but is often used to transfer alignment signals to a third base model. AAD focuses on directly improving the DPO model's own decoding.
-- **vs BoN / reward reranking**: BoN requires generating multiple full candidates and relies on a picker reward model. AAD makes local decisions at each token without an extra reward model, with computation similar to Bo2 but stronger results.
-- **vs contrastive decoding**: Traditional CD subtracts weaker model logits to reduce common errors. AAD subtracts the exact SFT reference, aiming not to "oppose weak models" but to explicitly extract the preference increment learned by DPO.
+- **vs. DPO greedy decoding**: Greedy DPO selects the highest-probability token; AAD selects the token with the highest relative increase from the SFT prior that remains credible, thus more directly utilizing alignment signals.
+- **vs. EFT / proxy alignment**: EFT uses probability differences for inference-time guidance but often to transfer signals to a third base model; AAD focuses on improving the DPO model itself.
+- **vs. BoN / reward reranking**: BoN requires generating multiple complete candidates and depends on a picker reward model; AAD makes local decisions per token without an extra reward model, achieving better results with computations similar to Bo2.
+- **vs. contrastive decoding**: Traditional CD subtracts weak model logits to reduce common errors; AAD subtracts a specific SFT reference not to counter "weakness," but to explicitly extract preference increments learned during DPO.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Using the DPO/SFT probability ratio for decoding is not complex, but the combination of theoretical explanation and engineering constraints is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple preference datasets, Llama/Qwen/OLMo, external oracles, AlpacaEval, human evaluation, and data scarcity settings; verification is solid.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative where formula derivations serve the method; figure/table numbering and extensive appendix results require some cross-referencing.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for open-source DPO model deployment and highlights that inference-time alignment can fully exploit reference-model information left behind by training.
+- Novelty: ⭐⭐⭐⭐ Simple but elegant combination of DPO/SFT ratios with theoretical justification and engineering constraints.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across datasets, Llama/Qwen/OLMo, oracles, AlpacaEval, human evaluation, and data scarcity.
+- Writing Quality: ⭐⭐⭐⭐ Clear main narrative with derivations supporting the method; however, navigating the extensive appendix and numerous figure labels requires effort.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for open-source DPO deployment and demonstrates how inference can better utilize reference-model information left over from training.
 
 <!-- RELATED:START -->
 
@@ -129,8 +130,8 @@ The paper also analyzes external evaluation, human preference, reference choice,
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](../../ICLR2026/llm_alignment/semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 - [\[ICML 2026\] Implicit Preference Alignment for Human Image Animation](implicit_preference_alignment_for_human_image_animation.md)
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
-- [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
 
 </div>
 

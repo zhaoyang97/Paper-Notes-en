@@ -2,97 +2,98 @@
 title: >-
   [Paper Note] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 description: >-
-  [CVPR2026][Autonomous Driving][3D human pose estimation] This paper proposes Adaptive Weight Constraint (AWC) regularization, combining Shapley-value-based modality contribution assessment and Fisher Information Matrix (…
+  [CVPR 2026][Autonomous Driving][3D human pose estimation] Proposes Shapley value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted Adaptive Weight Constraint (AWC) regularization to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation, achieving balanced optimization without additional learnable parameter
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "3D human pose estimation"
-  - "multi-modal learning"
-  - "modality imbalance"
-  - "Shapley value"
-  - "Fisher Information Matrix"
+  - CVPR 2026
+  - Autonomous Driving
+  - 3D human pose estimation
+  - multi-modal learning
+  - modality imbalance
+  - Shapley value
+  - Fisher Information Matrix
 date: 2026-05-08
-content_hash: 3f52050c0b0f5ffa
+content_hash: 4880120fb5145ad7
 ---
-
 # Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2501.05264](https://arxiv.org/abs/2501.05264)  
 **Code**: [MICLAB-BUPT/AWC](https://github.com/MICLAB-BUPT/AWC)  
-**Area**: Autonomous Driving
+**Area**: Autonomous Driving  
 **Keywords**: 3D human pose estimation, multi-modal learning, modality imbalance, Shapley value, Fisher Information Matrix
 
 ## TL;DR
 
-This paper proposes Adaptive Weight Constraint (AWC) regularization, combining Shapley-value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted parameter penalties, to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation. Balanced optimization is achieved without introducing any additional learnable parameters.
+Proposes Shapley value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted Adaptive Weight Constraint (AWC) regularization to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation, achieving balanced optimization without additional learnable parameters.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-3D human pose estimation (3D HPE) is a fundamental computer vision task with broad applications in human–computer interaction, action assessment, and rehabilitation monitoring. While conventional approaches rely primarily on RGB images, their performance degrades under occlusion and privacy-sensitive scenarios. This has motivated multi-modal methods that fuse non-intrusive sensors such as LiDAR, mmWave radar, and WiFi.
+3D Human Pose Estimation (3D HPE) is a critical task in computer vision, widely used in human-computer interaction, action assessment, and rehabilitation monitoring. Traditional methods primarily rely on RGB images but face limitations in occluded and privacy-sensitive scenarios. Consequently, multi-modal approaches integrating non-intrusive sensors (LiDAR, mmWave radar, WiFi) have become a significant trend.
 
-### Core Motivation
+### Design Motivation
 
-Joint multi-modal training suffers from **modality imbalance**: dominant modalities (e.g., RGB, LiDAR) converge rapidly in early training and suppress the optimization of weaker modalities (mmWave, WiFi). Existing balancing methods exhibit three key deficiencies:
+Multi-modal joint training suffers from **modality imbalance**: dominant modalities (e.g., RGB, LiDAR) converge rapidly during early training, suppressing the optimization of weaker modalities (mmWave, WiFi). Existing balance methods have three major flaws:
 
-**Poor task adaptability**: Methods such as G-Blending and OGM-GE are designed around cross-entropy loss or explicit class membership, making them suitable only for classification tasks and not directly transferable to regression.
+**Poor task adaptability**: Methods like G-Blending and OGM-GE are designed based on cross-entropy loss or explicit category membership, making them suitable only for classification tasks and difficult to migrate directly to regression tasks.
 
-**Additional parameters**: Methods such as MMPareto require unimodal auxiliary heads, increasing model complexity.
+**Additional parameters**: Methods like MMPareto require auxiliary uni-modal heads, increasing model complexity.
 
-**Neglect of weak-modality overfitting**: These methods regulate only the gradients of dominant modalities without accounting for the risk of weak modalities overfitting to noisy signals.
+**Neglecting weak modality overfitting**: They only adjust the gradients of dominant modalities without considering the risk of weak modalities overfitting to noisy signals.
 
-A key observation motivating this work is that in regression tasks, the prediction standard deviation of weak modalities (mmWave, WiFi) approaches zero (i.e., predictions collapse to constant values). Using MSE/MAE as the Shapley profit function in this setting produces misleading assessments — constant predictions are erroneously assigned high contribution scores.
+The authors' key observation: in regression tasks, the prediction standard deviation of weak modalities (mmWave, WiFi) tends toward zero (prediction collapse to constant values). Using MSE/MAE as the Shapley profit function leads to misleading assessments—constant predictions are incorrectly judged as high contribution.
 
 ## Method
 
 ### Overall Architecture
 
-The framework comprises two core components:
+The model uses modality-specific encoders to extract features (VideoPose3D for RGB, Point Transformer for LiDAR/mmWave, and MetaFi++ for WiFi). After multi-modal fusion, a pose regression head predicts 3D joint coordinates. Two components are integrated to address "modality imbalance": a Shapley modality contribution assessment module, which uses Shapley values + Pearson correlation to quantify each modality's contribution and identify strengths/weaknesses; and an Adaptive Weight Constraint (AWC) regularization, which uses the Fisher Information Matrix to weight parameter importance, balancing the learning speed of each modality within the "learning window" of early training.
 
-- **Shapley Modality Contribution Assessment Module**: Quantifies per-modality contribution via Shapley values combined with Pearson correlation coefficients to detect modality imbalance.
-- **Adaptive Weight Constraint (AWC) Regularization**: Applies FIM-weighted parameter deviation penalties within an early "learning window" to balance the learning speed across modalities.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Four Modality Inputs<br/>RGB / LiDAR / mmWave / WiFi"] --> B["Modality-Specific Encoders<br/>VideoPose3D / Point Transformer / MetaFi++"]
+    B --> C["Multi-modal Fusion + Pose Regression Head<br/>Predict 3D Joint Coordinates"]
+    C --> D["MPJPE Task Loss"]
+    C --> E["Shapley Contribution Assessment<br/>Pearson Profit Function calculates marginal contributions"]
+    E --> F["K-Means (K=2) Clustering<br/>Dominant Modalities / Weak Modalities"]
+    F --> G["Adaptive Weight Constraint (AWC)<br/>FIM Weighted Penalty, α_S > α_I"]
+    D --> H["Total Loss L_total = L_MPJPE + L_AWC"]
+    G -->|"Only first K epochs of learning window"| H
+```
 
-The model employs modality-specific encoders (VideoPose3D for RGB, Point Transformer for LiDAR/mmWave, MetaFi++ for WiFi), followed by a multi-modal fusion module and a pose regression head predicting 3D joint coordinates.
+### Key Designs
 
-### Key Design 1: Shapley Contribution Assessment for Regression Tasks
+**1. Shapley Contribution Assessment for Regression: Replacing Profit Function with Pearson**
 
-**Classification vs. Regression**: For feature-concatenation fusion, the final prediction can be decomposed as $\hat{y} = \hat{y}^R + \hat{y}^L + \hat{y}^M + \hat{y}^W$. In classification, weak-modality logits approximate a uniform distribution, contributing negligibly to the softmax output; cross-entropy therefore serves as a valid Shapley profit function. In regression, however, weak-modality predictions have near-zero standard deviation (nearly constant), causing MSE-based evaluation to be biased toward large-output modalities and to overestimate the reliability of weak modalities.
-
-**Solution**: The Pearson correlation coefficient replaces MSE as the profit function:
+Directly applying modality contribution assessment from classification tasks fails in regression. For feature concatenation fusion, the final prediction can be decomposed into the sum of predictions from each modality $\hat{y} = \hat{y}^R + \hat{y}^L + \hat{y}^M + \hat{y}^W$. In classification, the logits of weak modalities are close to a uniform distribution, so adding or subtracting them has minimal impact on softmax, allowing cross-entropy to serve as the profit function. However, the authors observed that in regression, predictions from weak modalities (mmWave, WiFi) collapse into near-constants (standard deviation approaching zero). Using MSE evaluation at this point biases towards modalities with large outputs, misidentifying constant predictions as high contributions. The solution is to use the Pearson correlation coefficient as the profit function:
 
 $$s(y, \hat{y}) = \sum_{i=1}^{j \times 3} \rho(y_i, \hat{y}_i), \quad \rho(y_i, \hat{y}_i) = \frac{\text{cov}(y_i, \hat{y}_i)}{\sigma_{y_i} \cdot \sigma_{\hat{y}_i}}$$
 
-The Pearson correlation coefficient measures the linear relationship between predictions and ground truth rather than numerical distance, making it inherently robust to constant bias and scale differences. When a weak modality produces near-constant predictions with standard deviation approaching zero, its Pearson correlation coefficient approaches zero, accurately reflecting its lack of informative content.
+Pearson correlation measures the linear correlation between predictions and ground truth rather than numerical distance, making it naturally immune to constant bias and scale differences. When a weak modality yields constant predictions, its correlation coefficient is near zero, accurately reflecting its lack of information. Features of missing modalities are zero-filled, and Shapley values are calculated by traversing all combinations of modality subsets to determine marginal contributions.
 
-Missing modality features are zero-padded, and Shapley values are computed by enumerating all modality subsets to derive marginal contributions.
+**2. Adaptive Weight Constraint (AWC): Using Fisher Information Matrix to "Brake" Dominant Modalities**
 
-### Key Design 2: Adaptive Weight Constraint (AWC) Regularization
+Knowing which modalities are dominant is insufficient; one must also suppress the rapid convergence of dominant modalities while preventing weak modalities from overfitting to noise. AWC first performs K-Means ($K=2$) clustering on the Shapley scores of the four modalities, designating the high-score cluster as the dominant modality set $\mathcal{M}_\mathcal{S}$ and the low-score cluster as the weak modality set $\mathcal{M}_\mathcal{I}$. Different regularization coefficients $\alpha_\mathcal{S}$ and $\alpha_\mathcal{I}$ are assigned. The regularization term uses the diagonal of the Fisher Information Matrix (FIM) to weight the penalty on parameter deviation:
 
-**K-Means Grouping**: The Shapley scores of the four modalities are clustered via K-Means ($K=2$). The high-score cluster constitutes the dominant modality set $\mathcal{M}_\mathcal{S}$, and the low-score cluster the inferior modality set $\mathcal{M}_\mathcal{I}$, with distinct regularization coefficients $\alpha_\mathcal{S}$ and $\alpha_\mathcal{I}$ assigned accordingly.
+$$\mathcal{L}_{AWC} = \sum_{m \in \mathcal{M}} \left[\alpha_\mathcal{S} \cdot \mathbf{1}_{\{m \in \mathcal{M}_\mathcal{S}\}} + \alpha_\mathcal{I} \cdot \mathbf{1}_{\{m \in \mathcal{M}_\mathcal{I}\}}\right] \cdot \mathcal{L}_W^m, \quad \mathcal{L}_W^m = \sum_i \frac{[\mathcal{I}_\mathcal{D}]_{ii} (\theta_{t,i}^m - \theta_{0,i}^{m,*})^2}{2}$$
 
-**AWC Loss**: The FIM diagonal is used to apply importance-weighted penalties on parameter deviations:
-
-$$\mathcal{L}_{AWC} = \sum_{m \in \mathcal{M}} \left[\alpha_\mathcal{S} \cdot \mathbf{1}_{\{m \in \mathcal{M}_\mathcal{S}\}} + \alpha_\mathcal{I} \cdot \mathbf{1}_{\{m \in \mathcal{M}_\mathcal{I}\}}\right] \cdot \mathcal{L}_W^m$$
-
-where $\mathcal{L}_W^m = \sum_i \frac{[\mathcal{I}_\mathcal{D}]_{ii} (\theta_{t,i}^m - \theta_{0,i}^{m,*})^2}{2}$
-
-**Core Insight**: The FIM diagonal $[\mathcal{I}]_{ii}$ measures the empirical importance of each parameter (mean squared gradient). Dominant modalities exhibit large gradients early in training, yielding high FIM values and thus stronger penalties on parameter updates; weak modalities have small gradients, low FIM values, and lighter penalties. Combined with $\alpha_\mathcal{S} > \alpha_\mathcal{I}$, this achieves a dual effect: **suppressing premature convergence of dominant modalities** while **moderately constraining weak modalities against noise overfitting**.
+The ingenuity lies in the fact that the FIM diagonal $[\mathcal{I}]_{ii}$ (mean of squared gradients) inherently measures the empirical importance of parameters. During the early stages of dominant modality training, gradients are large, leading to high FIM values and heavier penalties on parameter shifts, which naturally slows them down. For weak modalities, gradients and FIM values are small, resulting in lighter penalties and protected learning. By setting $\alpha_\mathcal{S} > \alpha_\mathcal{I}$, the method simultaneously "suppresses the dominant and protects the weak" without introducing any additional learnable parameters.
 
 ### Loss & Training
 
-- **Total loss**: $\mathcal{L}_{total} = \mathcal{L}_{MPJPE} + \mathcal{L}_{AWC}$ (AWC applied only within the learning window)
-- **Learning window**: AWC regularization is applied during the first $K$ epochs; thereafter, only the task loss is used. This is motivated by the "critical learning period" theory — most task-relevant information is acquired early in training.
-- **FIM update frequency**: Recomputed once at the beginning of each epoch.
-- **Training setup**: Adam optimizer, lr=1e-3, batch size=192, 50 epochs, learning rate decayed by 10× at epoch 30.
+- **Total Loss**: $\mathcal{L}_{total} = \mathcal{L}_{MPJPE} + \mathcal{L}_{AWC}$ (only within the learning window).
+- **Learning Window**: AWC regularization is applied during the first $K$ epochs, after which only the task loss is used. This is based on the "critical learning period" theory, suggesting that most task-relevant information is acquired early in training.
+- **FIM Update Frequency**: Re-calculated at the start of each epoch.
+- **Training Setup**: Adam optimizer, lr=1e-3, batch=192, 50 epochs, lr decays by 10x at the 30th epoch.
 
 ## Key Experimental Results
 
-### Main Results: Comparison with Existing Balancing Methods (MM-Fi Dataset)
+### Main Results: Comparison with Existing Balance Methods (MM-Fi Dataset)
 
-| Method | Fusion | P1 MPJPE↓ | P1 PA-MPJPE↓ | P3 MPJPE↓ | P3 PA-MPJPE↓ |
-|--------|--------|-----------|-------------|-----------|-------------|
+| Method | Fusion Strategy | P1 MPJPE↓ | P1 PA-MPJPE↓ | P3 MPJPE↓ | P3 PA-MPJPE↓ |
+|------|----------|-----------|-------------|-----------|-------------|
 | MM-Fi baseline | - | 72.90 | 47.70 | 89.80 | 63.20 |
 | Concatenation | concat | 53.87 | 35.09 | 48.17 | 32.18 |
 | + G-Blending | concat | 58.40 | 37.20 | 53.13 | 33.28 |
@@ -103,7 +104,7 @@ where $\mathcal{L}_W^m = \sum_i \frac{[\mathcal{I}_\mathcal{D}]_{ii} (\theta_{t,
 | Attention | attn | 53.35 | 35.20 | 49.97 | 32.33 |
 | **+ Ours** | **attn** | **51.29** | **34.65** | **49.08** | **32.10** |
 
-Key findings: (1) The proposed method reduces P1 MPJPE by 2.71 mm under concat fusion. (2) G-Blending and AGM perform worse than the baseline, demonstrating that balancing strategies designed for classification are counterproductive in regression settings. (3) The method is effective across all protocols and fusion strategies.
+Key Findings: (1) Ours reduces P1 MPJPE by 2.71mm under concat fusion; (2) G-Blending and AGM perform worse than the baseline, indicating that balance strategies for classification can be counterproductive when migrated to regression; (3) The method is effective across all protocols and fusion strategies.
 
 ### Ablation Study: AWC Hyperparameter Sensitivity (Protocol 1, Concat)
 
@@ -117,56 +118,56 @@ Key findings: (1) The proposed method reduces P1 MPJPE by 2.71 mm under concat f
 | 20k | 20k | 51.69 (-2.18) | 34.84 (-0.25) |
 | 30k | 20k | 51.34 (-2.53) | 34.56 (-0.53) |
 
-Key findings: (1) The optimal configuration is $\alpha_\mathcal{S}=20k, \alpha_\mathcal{I}=10k$, i.e., dominant modalities receive twice the regularization strength of inferior ones. (2) Constraining only the dominant modality ($\alpha_\mathcal{I}=0$) is less effective than constraining both, confirming that weak modalities also require moderate regularization against overfitting. (3) A learning window of $K=20$ (40% of total epochs) is optimal.
+Key Findings: (1) The optimal configuration is $\alpha_\mathcal{S}=20k, \alpha_\mathcal{I}=10k$, meaning the regularization strength for dominant modalities is twice that for weak modalities; (2) Constraining only dominant modalities ($\alpha_\mathcal{I}=0$) is less effective than constraining both, suggesting weak modalities also need moderate protection against overfitting; (3) A learning window of $K=20$ (40% of total epochs) is optimal.
 
 ### Modality Fusion Analysis
 
 | Modality Combination | MPJPE↓ | PA-MPJPE↓ |
-|----------------------|--------|-----------|
+|---------|--------|-----------|
 | RGB only | 63.61 | 35.75 |
 | LiDAR only | 66.95 | 45.70 |
 | mmWave only | 102.89 | 52.21 |
 | WiFi only | 166.92 | 97.39 |
 | R+L | 52.93 | 34.96 |
-| R+L+M+W (four modalities) | 53.87 | 35.09 |
+| R+L+M+W (Four Modalities) | 53.87 | 35.09 |
 
-**Key finding**: Four-modality fusion (53.87) is inferior to RGB+LiDAR two-modality fusion (52.93), providing direct empirical evidence of modality competition — weak modalities not only fail to provide performance gains but actively interfere with the learning of strong modalities.
+**Key Findings**: Four-modality fusion (53.87) is actually worse than RGB+LiDAR dual-modality fusion (52.93), providing direct evidence of modality competition—weak modalities not only failed to provide gains but interfered with the learning of dominant ones.
 
 ### Computational Overhead
 
-The overhead of Shapley contribution assessment is negligible: under Concat/MLP fusion, it accounts for only 0.41%–0.93% of total training time; under Attention fusion, approximately 3.5%–5.4%, posing no practical bottleneck.
+The overhead for Shapley contribution assessment is extremely low: it accounts for only 0.41%–0.93% of training time under Concat/MLP fusion and approximately 3.5%–5.4% under Attention fusion, which is not a bottleneck.
 
 ## Highlights & Insights
 
-1. **Key insight on Shapley values for regression**: Weak modalities in regression collapse to constant predictions (standard deviation ≈ 0), causing MSE/MAE to misestimate their contribution. The Pearson correlation coefficient is a more appropriate profit function — a finding with broad implications for all regression-based multi-modal tasks.
-2. **FIM as adaptive regularization weights**: FIM naturally captures modality-wise differences in parameter importance — dominant modalities have large gradients → high FIM → heavy penalty → slower update; weak modalities have small gradients → low FIM → light penalty → protected learning — without requiring manual design of modality-specific adjustment strategies.
-3. **Zero additional parameters**: Unlike methods such as MMPareto that require auxiliary unimodal heads, AWC relies entirely on statistics derived from existing parameters (mean squared gradients), making it elegant and lightweight.
-4. **Direct evidence of modality competition**: Four-modality fusion yielding worse MPJPE than two-modality fusion provides compelling empirical support for the "more is not always better" phenomenon in multi-modal learning.
+1. **Key Insight into Shapley Values for Regression**: The collapse of weak modality predictions into constants (standard deviation ≈ 0) in regression causes MSE/MAE to misjudge their contributions. Pearson correlation is a more reasonable profit function—a finding valuable for all regression-based multi-modal tasks.
+2. **FIM as Adaptive Regularization Weight**: FIM naturally captures modality differences in parameter importance—large gradients in dominant modalities lead to high FIM, heavy penalties, and deceleration; small gradients in weak modalities lead to low FIM, light penalties, and protection, eliminating the need for manually designed tuning strategies per modality.
+3. **Zero Extra Parameters**: Unlike methods such as MMPareto that require auxiliary uni-modal heads, AWC is based entirely on the statistics of existing parameters (mean squared gradients), making it elegant and lightweight.
+4. **Direct Evidence of Modality Competition**: The fact that four-modality MPJPE is worse than dual-modality is strong empirical evidence that "more is not always better" in multi-modal learning.
 
 ## Limitations & Future Work
 
-1. **Validation on a single dataset (MM-Fi)**: Generalization to additional datasets and diverse scenarios remains unverified.
-2. **Fixed set of four modalities**: Scalability to a larger number of modalities is untested; Shapley value computation grows factorially with the number of modalities, likely requiring approximation algorithms beyond 5–6 modalities.
-3. **Manual tuning of the learning window $K$**: While $K=20$ is optimal for 50-epoch training, an adaptive selection mechanism for $K$ across different tasks and data scales is absent.
-4. **Hard binary partitioning via K-Means**: The two-way split (dominant/inferior) is coarse; finer-grained continuous grouping may yield better performance.
-5. **Limited improvement to weak modality representations**: The method mitigates suppression of weak modalities but does not enhance their feature extraction capacity at the encoder level.
+1. **Validated only on MM-Fi**: Lacks validation of generalization across more datasets and scenarios.
+2. **Fixed Modality Count**: Scalability for a larger number of modalities is not verified; Shapley value calculation complexity grows factorially with the number of modalities, which may require approximation algorithms for more than 5-6 modalities.
+3. **Manual Tuning of Learning Window K**: While $K=20$ is optimal for 50 epochs, an adaptive $K$ selection mechanism for different tasks/data scales is missing.
+4. **Hard Partition via K-Means**: Simple binary clustering (dominant/weak) is relatively coarse; finer-grained or continuous grouping might be superior.
+5. **Improvement Space for Weak Modalities**: While the current method mitigates the suppression of weak modalities, it does not explicitly enhance their representation power at the feature extraction level.
 
 ## Related Work & Insights
 
-- **Modality imbalance theory**: OGM-GE (CVPR 2022) and G-Blending (ICLR 2020) pioneered the study of multi-modal competition but are limited to classification tasks.
-- **Shapley values in multi-modal learning**: SHAPE (IJCAI 2022) first introduced Shapley values for modality contribution assessment; this paper extends the framework to regression settings.
-- **Fisher information and continual learning**: The design of AWC regularization draws inspiration from EWC (Elastic Weight Consolidation), which uses FIM to protect important parameters in continual learning. This paper inverts the paradigm — applying FIM to constrain the excessively fast learning of dominant modalities.
-- **Broader implications**: The substitution of Pearson correlation for MSE is generalizable to other regression-based multi-modal tasks (e.g., depth estimation, optical flow); FIM-adaptive regularization can serve as a plug-and-play module.
+- **Modality Imbalance Theory**: OGM-GE (CVPR 2022) and G-Blending (ICLR 2020) pioneered the revelation of multi-modal competition but were limited to classification tasks.
+- **Shapley Values in Multi-Modal Learning**: SHAPE (IJCAI 2022) first introduced Shapley values to evaluate modality contribution; this work extends it to regression scenarios.
+- **Fisher Information and Continual Learning**: The design of AWC regularization is inspired by EWC (Elastic Weight Consolidation), which uses FIM to protect important parameters in continual learning. This paper reverses the concept—using FIM to constrain the excessively fast learning of dominant modalities.
+- **Insight**: The approach of replacing MSE with Pearson correlation can be generalized to other regression-based multi-modal tasks (e.g., depth estimation, optical flow). FIM adaptive regularization can serve as a plug-and-play module.
 
 ## Rating
 
-| Dimension | Score (1–10) | Remarks |
-|-----------|-------------|---------|
-| Novelty | 7 | The regression adaptation of Shapley+Pearson and FIM-adaptive regularization are original, though core components build on established theory |
-| Experimental Thoroughness | 6 | Single dataset (MM-Fi), but ablations are comprehensive |
-| Writing Quality | 7 | Analysis is thorough, motivation is clearly articulated, derivations are complete |
-| Value | 7 | No additional parameters, plug-and-play design; broadly applicable to multi-modal regression tasks |
-| **Overall** | **7** | Elegant method design, but generalization validation is insufficient |
+| Dimension | Score (1-10) | Explanation |
+|------|------------|------|
+| Novelty | 7 | Regression adaptation of Shapley+Pearson and FIM adaptive regularization are novel, but core components are based on existing theories. |
+| Experimental Thoroughness | 6 | Single dataset (MM-Fi), though ablation is comprehensive. |
+| Writing Quality | 7 | Analytical depth is good, motivation is clear, and formulas are complete. |
+| Value | 7 | No extra parameters and plug-and-play capability offer general reference value for multi-modal regression tasks. |
+| **Total Score** | **7** | Method is ingeniously designed, but generalization validation is insufficient. |
 
 <!-- RELATED:START -->
 
@@ -175,10 +176,10 @@ The overhead of Shapley contribution assessment is negligible: under Concat/MLP 
 ## Related Papers
 
 - [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
-- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
 - [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
-- [\[CVPR 2026\] InCaRPose: In-Cabin Relative Camera Pose Estimation Model and Dataset](incarpose_in-cabin_relative_camera_pose_estimation_model_and_dataset.md)
+- [\[CVPR 2026\] LA-Pose: Latent Action Pretraining Meets Pose Estimation](la-pose_latent_action_pretraining_meets_pose_estimation.md)
 - [\[CVPR 2026\] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency](ptc-depth_pose-refined_monocular_depth_estimation_with_temporal_consistency.md)
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
 
 </div>
 

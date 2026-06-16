@@ -2,77 +2,88 @@
 title: >-
   [Paper Note] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 description: >-
-  [ACL 2026][LLM Alignment][Instruction Tuning] This paper proposes SFTMix, a Mixup-based instruction tuning method that partitions SFT datasets into high-confidence and low-confidence subsets based on training dynamics. B…
+  [ACL 2026][Alignment & RLHF][Paper Note] This paper proposes SFTMix, a Mixup-based instruction tuning method. By partitioning SFT datasets into high-confidence and low-confidence subsets through training dynamics, it performs linear interpolation in the hidden representation space and applies Mixup regularization. SFTMix consistently improves instruction-foll
 tags:
-  - "ACL 2026"
-  - "LLM Alignment"
-  - "Instruction Tuning"
-  - "Mixup Regularization"
-  - "Training Dynamics"
-  - "Confidence Partitioning"
-  - "Data Efficiency"
+  - ACL 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: e8d4c6d3ff969cda
+content_hash: 3397b529df9d0901
 ---
-
 # SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 
 **Conference**: ACL 2026  
 **arXiv**: [2410.05248](https://arxiv.org/abs/2410.05248)  
 **Code**: None  
 **Area**: LLM Alignment  
-**Keywords**: Instruction Tuning, Mixup Regularization, Training Dynamics, Confidence Partitioning, Data Efficiency
+**Keywords**: Instruction Tuning, Mixup Regularization, Training Dynamics, Confidence Partitioning, Data Utilization Efficiency
 
 ## TL;DR
 
-This paper proposes SFTMix, a Mixup-based instruction tuning method that partitions SFT datasets into high-confidence and low-confidence subsets based on training dynamics. By performs linear interpolation in the hidden representation space and applying Mixup regularization, it consistently improves instruction-following capabilities across different LLM families and dataset scales without relying on high-quality dataset curation.
+This paper proposes SFTMix, a Mixup-based instruction tuning method. By partitioning SFT datasets into high-confidence and low-confidence subsets through training dynamics, it performs linear interpolation in the hidden representation space and applies Mixup regularization. SFTMix consistently improves instruction-following capabilities across different LLM families and dataset scales without relying on high-quality dataset curation.
 
 ## Background & Motivation
 
-**Background**: LLM Instruction Fine-Tuning (SFT) is the critical phase for models to acquire instruction-following capabilities. Current mainstream methods train on instruction-response pairs using Next Token Prediction (NTP) loss. Major efforts to improve SFT effectiveness focus on data quality: filtering data via LLM scoring (AlpaGasus), manual annotation of high-quality data (LIMA), or using stronger LLM-generated responses (GPT-4 distillation).
+**Background**: LLM instruction fine-tuning (SFT) is a critical stage for enabling models to follow instructions. Current mainstream methods train on instruction-response pairs using the Next Token Prediction (NTP) loss. Major efforts to improve SFT focus on data quality: filtering data via LLM scoring (AlpaGasus), manual annotation of high-quality data (LIMA), or using stronger LLMs to generate responses (GPT-4 distillation).
 
-**Limitations of Prior Work**: (1) Obtaining high-quality SFT data depends on powerful closed-source LLMs or expensive manual annotation; (2) Standard NTP training treats all samples equally, while the model's learning state varies significantly across different samples; (3) High-confidence samples are prone to overfitting, while low-confidence samples are difficult to generalize, with both being clearly separated in the semantic space.
+**Limitations of Prior Work**: (1) Obtaining high-quality SFT data depends on powerful closed-source LLMs or expensive human annotation; (2) Standard NTP training treats all samples equally, ignoring significant differences in the model's learning state across samples; (3) High-confidence samples are prone to overfitting, while low-confidence samples are difficult to generalize, with both being clearly separated in the semantic space.
 
-**Key Challenge**: The NTP paradigm treats every training sample equally, ignoring the non-uniform confidence of LLMs in the semantic representation space—samples in different regions should play different roles during training.
+**Key Challenge**: The NTP paradigm treats every training sample equally, overlooking the non-uniformity of LLM confidence in the semantic representation space—samples in different regions should play different roles during training.
 
-**Goal**: Design a general method that enhances instruction tuning by optimizing how data is utilized, rather than relying on dataset curation quality.
+**Goal**: To design a general method that improves instruction tuning by optimizing data utilization rather than relying on dataset curation quality.
 
-**Key Insight**: Partition SFT data into high-confidence and low-confidence subsets via training dynamics (perplexity statistics across multiple checkpoints), then use Mixup to interpolate between them, facilitating the flow of supervision signals across confidence regions.
+**Key Insight**: SFT data is divided into high-confidence and low-confidence subsets via training dynamics (perplexity statistics across multiple checkpoints). Mixup is then utilized to interpolate between the two, facilitating the flow of supervisory signals across confidence regions.
 
-**Core Idea**: Perform linear interpolation between high/low confidence samples in the hidden representation space combined with Mixup regularization. This establishes a smooth transition between "learned" and "unlearned" regions, mitigating overfitting and enhancing generalization.
+**Core Idea**: Perform linear interpolation between high- and low-confidence samples in the hidden representation space. Combined with Mixup regularization, this establishes a smooth transition between "learned" and "unlearned" regions, alleviating overfitting and enhancing generalization.
 
 ## Method
 
 ### Overall Architecture
 
-SFTMix follows a three-step process: (1) Conduct one round of NTP training on SFT data using a reference LLM to collect perplexity statistics across multiple checkpoints, calculate confidence for each sample, and split the dataset into high/low confidence subsets by the median; (2) During target LLM training, perform linear interpolation of hidden representations and labels for high/low confidence samples in each batch; (3) Integrate Mixup cross-entropy as a regularization term into the standard NTP loss.
+SFTMix aims to address the issue where standard NTP treats every instruction-response pair equally, despite varying model mastery across samples. It first runs one epoch of training with a reference LLM on the SFT data, recording perplexity at multiple checkpoints to split the data into high-confidence and low-confidence halves based on the median. During target LLM training, these subsets are linearly interpolated in the hidden representation space, and the Mixup cross-entropy is added to the original NTP loss as a regularization term. The pipeline takes a standard SFT dataset as input, produces two subsets partitioned by learning difficulty, and outputs a model smoothed between mastered and non-mastered regions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Standard SFT Dataset"] --> B
+    subgraph PART["Confidence Partitioning via Training Dynamics"]
+        direction TB
+        B["Train reference LLM for 1 epoch<br/>Record multi-checkpoint perplexity"] --> C["Calculate negative mean for confidence<br/>Split by median"]
+        C --> D["High-Confidence Subset (Learned)"]
+        C --> E["Low-Confidence Subset (Unlearned)"]
+    end
+    D --> F["Hidden-space Mixup Interpolation<br/>Final hidden states + Label interpolation"]
+    E --> F
+    F --> G["Mixup as Regularization<br/>NTP Loss + μ·Mixup Loss"]
+    G --> H["Output: Smoothed Instruction Model"]
+```
 
 ### Key Designs
 
-1. **Confidence Partitioning based on Training Dynamics**:
-    - **Function**: Divides the SFT dataset into two complementary subsets based on model-specific learning difficulty.
-    - **Mechanism**: Compute perplexity for each sample across $C$ training checkpoints of the reference LLM. The confidence is defined as the negative average: $\text{Conf}(\mathcal{Y}_i|\mathcal{X}_i) = -\frac{1}{C}\sum_{c=1}^{C}\text{Perp}_c(\mathcal{Y}_i|\mathcal{X}_i)$. The dataset is split equally into $\mathcal{D}^c$ (high confidence) and $\mathcal{D}^u$ (low confidence) based on the median. t-SNE visualization shows clear separation between these subsets in the representation space.
-    - **Design Motivation**: Data quality (GPT-4 generated vs. original) does not correspond directly to training dynamic confidence—confidence reflects model-specific learning states rather than intrinsic data quality, which is the prerequisite for Mixup's effectiveness.
+**1. Confidence Partitioning via Training Dynamics: Splitting Data by the Model's Learning Curve**
 
-2. **Hidden-space Mixup Interpolation**:
-    - **Function**: Creates "middle ground" training signals between high and low confidence samples.
-    - **Mechanism**: Perform linear interpolation on the hidden states of the last Transformer layer and one-hot labels of the target LLM: $\tilde{\mathbf{Z}}_n = \lambda \mathbf{Z}_n^c + (1-\lambda)\mathbf{Z}_n^u$, $\tilde{\mathbf{Y}}_n = \lambda \mathbf{Y}_n^c + (1-\lambda)\mathbf{Y}_n^u$, where $\lambda \sim \text{Beta}(\alpha, \alpha)$ and $\alpha=0.5$. Lengths are aligned to $\min(N_i^c, N_i^u)$ for shorter responses.
-    - **Design Motivation**: Due to the non-linearity of softmax, the interpolated gradient does not equal the weighted sum of the two original gradients—this means Mixup introduces truly distinct gradient directions rather than simple sample weighting.
+To determine if a sample is "difficult," SFTMix observes how smoothly the reference LLM learns it rather than looking at the data source quality. Specifically, perplexity is calculated at $C$ training checkpoints of the reference LLM, and confidence is derived as $\text{Conf}(\mathcal{Y}_i|\mathcal{X}_i) = -\frac{1}{C}\sum_{c=1}^{C}\text{Perp}_c(\mathcal{Y}_i|\mathcal{X}_i)$. The dataset is then split into a high-confidence subset $\mathcal{D}^c$ and a low-confidence subset $\mathcal{D}^u$ at the median. t-SNE visualization shows these subsets are clearly separated in the representation space, corresponding to "mastered" and "un-digested" regions.
 
-3. **Mixup as a Regularization Term**:
-    - **Function**: Introduces cross-confidence supervision signals without interfering with standard NTP learning.
-    - **Mechanism**: The total loss is defined as $\ell_{\text{SFTMix}} = \ell_{\text{NTP}}(\mathcal{D}) + \mu \cdot \ell_{\text{Mixup}}(\mathcal{D}^c, \mathcal{D}^u)$, with $\mu=0.2$. Each batch ensures an equal number of high/low confidence samples, paired randomly for interpolation.
-    - **Design Motivation**: Experiments prove that Mixup performs best as a regularizer (rather than the primary or equal-weight loss), retaining basic NTP learning capabilities while gaining Mixup's generalization benefits.
+Critically, confidence does not correlate with data quality: the confidence distribution of GPT-4 generated "high-quality" responses significantly overlaps with that of original responses. This indicates that partitioning characterizes model-specific learning states rather than intrinsic data quality—making interpolation between these regions meaningful.
+
+**2. Hidden-space Mixup Interpolation: Building a Bridge Between Regions**
+
+With the two subsets, SFTMix performs linear interpolation on both the hidden states of the final Transformer layer and the one-hot labels: $\tilde{\mathbf{Z}}_n = \lambda \mathbf{Z}_n^c + (1-\lambda)\mathbf{Z}_n^u$ and $\tilde{\mathbf{Y}}_n = \lambda \mathbf{Y}_n^c + (1-\lambda)\mathbf{Y}_n^u$, where the mixing coefficient $\lambda \sim \text{Beta}(\alpha, \alpha)$ with $\alpha=0.5$. When responses have unequal lengths, they are truncated to $\min(N_i^c, N_i^u)$ before interpolation. This effectively creates continuous "middle ground" supervisory signals between high-confidence samples (far from decision boundaries, prone to overfitting) and low-confidence samples (near boundaries, difficult to learn).
+
+This interpolation is more than simple sample weighting due to the non-linearity of softmax: the resulting gradient is not just a weighted sum of the two original gradients, but a truly new gradient direction. This explains why Mixup improves generalization more effectively than simple resampling or reweighting.
+
+**3. Integration of Mixup as a Regularizer: Maintaining the NTP Backbone with Gentle Constraints**
+
+SFTMix does not replace NTP loss with Mixup but treats it as a regularization term: the total loss is $\ell_{\text{SFTMix}} = \ell_{\text{NTP}}(\mathcal{D}) + \mu \cdot \ell_{\text{Mixup}}(\mathcal{D}^c, \mathcal{D}^u)$, with weight $\mu=0.2$. Each batch ensures an equal number of high/low-confidence samples for random pair interpolation. Ablation studies prove this lightweight integration is optimal—it preserves basic NTP learning capabilities while gaining cross-confidence generalization benefits, whereas using Mixup as the primary or equal-weight loss degrades instruction-following performance.
 
 ### Loss & Training
 
-Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$, $\alpha=0.5$. Uses AdamW optimizer, learning rate $2\times10^{-6}$, weight decay 0.1, cosine scheduler, and warm-up ratio 0.1. Alpaca-52K is trained for 3 epochs, while UltraChat-200K and Tulu3-939K are trained for 1 epoch, using a batch size of 32 on 8 H100 GPUs.
+Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$, $\alpha=0.5$. Using the AdamW optimizer with a learning rate of $2\times10^{-6}$, weight decay 0.1, cosine scheduler, and a warm-up ratio of 0.1. Alpaca-52K is trained for 3 epochs, while UltraChat-200K and Tulu3-939K are trained for 1 epoch with a batch size of 32 on 8 H100 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Instruction Following Evaluation (Alpaca-52K Dataset)**
+**Instruction-Following Evaluation (Alpaca-52K Dataset)**
 
 | LLM | Method | MT-Bench Overall | AlpacaEval-2 WR | AlpacaEval-2 LC WR |
 |-----|------|-----------------|-----------------|-------------------|
@@ -94,7 +105,7 @@ Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$,
 
 ### Ablation Study
 
-**Mixup Role Analysis (Llama-3.1-8B + Alpaca-52K)**
+**Role of Mixup Analysis (Llama-3.1-8B + Alpaca-52K)**
 
 | NTP Role | Mixup Role | MT-Bench | AlpacaEval-2 LC WR |
 |----------|-----------|----------|-------------------|
@@ -105,37 +116,37 @@ Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$,
 
 ### Key Findings
 
-- SFTMix shows larger gains in multi-turn conversation capabilities (MT-Bench multi-turn avg +0.32 vs. single-turn +0.27), suggesting Mixup regularization aids context understanding.
+- SFTMix yields larger improvements in multi-turn dialogue capabilities (MT-Bench multi-turn avg +0.32 vs. single-turn +0.27), suggesting Mixup regularization aids context understanding.
 - In human evaluation, SFTMix won 42.5% of head-to-head comparisons, while NTP won only 26.5%.
-- Training dynamic confidence does not align with data quality—confidence distributions of GPT-4 generated "high-quality" responses and original "low-quality" responses significantly overlap.
-- Confidence partitioning from a weak reference LLM (Gemma-2B) can transfer to a strong target LLM (Llama-8B), supporting weak-to-strong generalization.
-- SFTMix is compatible with data selection methods (AlpaGasus, Long); combining them yields further improvements. It is also compatible with LoRA for compute-constrained scenarios.
+- Training dynamics confidence does not correspond to data quality—the confidence distribution of GPT-4 "high-quality" responses overlaps heavily with original "low-quality" ones.
+- Confidence partitioning from a weak reference LLM (Gemma-2B) transfers to a strong target LLM (Llama-8B), supporting weak-to-strong generalization.
+- SFTMix is compatible with data selection methods (AlpaGasus, Long); combined use leads to further gains. It is also compatible with LoRA, suiting compute-constrained scenarios.
 - SFTMix reduced the standard deviation of confidence scores by 7%, indicating a more uniform confidence distribution and mitigated overfitting.
 
 ## Highlights & Insights
 
-- The insight that "samples of different confidence should play different roles" is simple yet powerful—high-confidence samples are far from the decision boundary and prone to overfitting, while low-confidence samples are near the boundary and hard to learn. Mixup bridges the gap.
-- Gradient analysis proves that Mixup introduces truly new gradient directions (softmax nonlinearity prevents gradient decomposition), rather than simple sample weighting—explaining why Mixup is more effective than resampling.
-- The method is highly practical: it only requires one extra training pass to obtain confidence and can be plugged into any SFT pipeline.
+- The insight that "samples of different confidence should play different roles" is simple yet powerful—high-confidence samples are far from the decision boundary and prone to overfitting, while low-confidence samples are near the boundary and hard to learn. Mixup bridges this gap.
+- Gradient analysis proves that Mixup introduces a truly new gradient direction (softmax non-linearity prevents gradient decomposition), making it more effective than simple sample reweighting.
+- The method is highly practical: only one extra round of training is needed to obtain confidence, and it can be plugged into any SFT pipeline.
 
 ## Limitations & Future Work
 
 - Experiments were not conducted on models exceeding 14B; effectiveness on larger models remains to be verified.
-- Requires an additional training pass to obtain training dynamics (similar to the overhead of data selection methods like LESS or Rho-1).
-- Binary partitioning (median split) might be too coarse; multi-level partitioning or continuous weighting is worth exploring.
-- Not verified in the pre-training stage—dynamic Mixup scheduling and pre-training scaling are promising future directions.
+- Requires an additional training pass for training dynamics (similar to the overhead of data selection methods like LESS or Rho-1).
+- Binary confidence partitioning (median split) might be too coarse; multi-level partitioning or continuous weighting is worth exploring.
+- Not yet verified in the pre-training stage—dynamic Mixup scheduling and pre-training scaling are promising future directions.
 
 ## Related Work & Insights
 
-- **vs IR-DRO (Chen et al., 2024b)**: The latter optimizes distribution robustness via sample reweighting, but underperforms SFTMix on MT-Bench and AlpacaEval-2—indicating that hidden-space interpolation is more effective than loss weighting.
-- **vs Data Selection (AlpaGasus, LESS)**: These methods improve quality by "selecting good data," while SFTMix improves utilization by "using data well." The two approaches are orthogonal and complementary.
+- **vs IR-DRO (Chen et al., 2024b)**: The latter optimizes distribution robustness via sample reweighting but underperforms compared to SFTMix on MT-Bench and AlpacaEval-2—indicating that hidden-space interpolation is more effective than loss weighting.
+- **vs Data Selection (AlpaGasus, LESS)**: These methods improve quality by "selecting good data," whereas SFTMix improves efficiency by "utilizing data well." The two are orthogonal and can be combined.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing Mixup to LLM SFT combined with training dynamic confidence is a clear idea, though Mixup itself is established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Verified across 3 LLM families, 3 dataset scales, the medical domain, and 6 dimensions of analysis.
-- Writing Quality: ⭐⭐⭐⭐ Method motivation and gradient analysis are clear; ablation studies are systematically designed.
-- Value: ⭐⭐⭐⭐ Highly practical, plug-and-play, and compatible with existing methods.
+- Novelty: ⭐⭐⭐⭐ Introducing Mixup to LLM SFT combined with training dynamics is a clear idea, though Mixup itself is established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Verified across 3 LLM families, 3 dataset scales, medical domain tasks, and 6 analysis dimensions.
+- Writing Quality: ⭐⭐⭐⭐ Motivations and gradient analysis are clear; ablation studies are systematically designed.
+- Value: ⭐⭐⭐⭐ High practicality, plug-and-play capability, and compatibility with existing methods.
 
 <!-- RELATED:START -->
 
@@ -143,11 +154,11 @@ Standard NTP cross-entropy loss + Mixup cross-entropy regularization, $\mu=0.2$,
 
 ## Related Papers
 
-- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
 - [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
-- [\[ICML 2026\] GIST: Targeted Data Selection for Instruction Tuning via Gradient Subspace Projection](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
-- [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
-- [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
+- [\[ACL 2025\] Federated Data-Efficient Instruction Tuning for Large Language Models](../../ACL2025/llm_alignment/federated_data-efficient_instruction_tuning_for_large_language_models.md)
+- [\[ICML 2026\] GIST: 用梯度子空间投影做 instruction tuning 的 targeted 数据选择](../../ICML2026/llm_alignment/gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
+- [\[ACL 2025\] Rethinking Table Instruction Tuning](../../ACL2025/llm_alignment/rethinking_table_instruction_tuning.md)
+- [\[ICML 2025\] Instruction Tuning of Large Language Models for Tabular Data Generation—in One Day](../../ICML2025/llm_alignment/instruction_tuning_of_large_language_models_for_tabular_data_generation-in_one_d.md)
 
 </div>
 

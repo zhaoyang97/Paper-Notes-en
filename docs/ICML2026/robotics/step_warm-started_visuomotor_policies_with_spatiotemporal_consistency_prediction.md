@@ -2,76 +2,79 @@
 title: >-
   [Paper Note] STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction
 description: >-
-  [ICML 2026][Robotics][diffusion policy] STEP attaches a lightweight Transformer predictor ("previous action history + current observation $\to$ next action") to the diffusion policy. Its output serves as the denoising st…
+  [ICML 2026][Robotics & Embodied AI][diffusion policy] STEP integrates a lightweight Transformer predictor ("previous action history + current observation → next action") with a diffusion policy to serve as a denoising starting point (warm-start). This reduces 100 denoising steps to 2 while adding a velocity-aware defense mechanism against execution deadlocks. It achieves
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "diffusion policy"
-  - "warm-start"
-  - "spatiotemporal consistency"
-  - "local contraction"
-  - "velocity-aware perturbation"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - diffusion policy
+  - warm-start
 date: 2026-05-08
-content_hash: 1217727125d31d52
+content_hash: 4cbb012cfe6befc6
 ---
-
 # STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.08245](https://arxiv.org/abs/2602.08245)  
 **Code**: <https://github.com/Kimho666/STEP>  
-**Area**: Robotics / Embodied AI / Acceleration for Diffusion Policy  
-**Keywords**: diffusion policy, warm-start, spatiotemporal consistency, local contraction, velocity-aware perturbation
+**Area**: Robotics / Embodied AI / Diffusion Policy Acceleration  
+**Keywords**: diffusion policy, warm-start, spatiotemporal consistency, local contraction, velocity-aware perturbation  
 
 ## TL;DR
-STEP attaches a lightweight Transformer predictor ("previous action history + current observation $\to$ next action") to the diffusion policy. Its output serves as the denoising starting point (warm-start), compressing 100 denoising steps to 2. It also includes a velocity-aware perturbation mechanism to prevent execution deadlocks when action changes are too small. On 9 simulation tasks and 2 real-world tasks, it outperforms BRIDGER/DDIM by an average of 21.6% / 27.5% in success rate.
+STEP integrates a lightweight Transformer predictor ("previous action history + current observation → next action") with a diffusion policy to serve as a denoising starting point (warm-start). This reduces 100 denoising steps to 2 while adding a velocity-aware defense mechanism against execution deadlocks. It achieves an average success rate improvement of 21.6% and 27.5% over BRIDGER and DDIM, respectively, across 9 simulation and 2 real-world tasks.
 
 ## Background & Motivation
 
-**Background**: Diffusion Policy (DP) is the current de facto standard for visuomotor control: it models action sequences as a generative distribution, iteratively denoising from Gaussian noise through 100 steps. While it captures multi-model, long-range dependencies with high success rates, it suffers from high latency.
+**Background**: Diffusion Policy (DP) is the de facto standard for visuomotor control, modeling action sequences as a generative distribution and iteratively denoising from Gaussian noise over 100 steps. While it excels at capturing multi-modal distributions and long-range dependencies, it suffers from high latency.
 
-**Limitations of Prior Work**: Existing DP acceleration methods fall into three categories: (1) Numerical solvers (DDIM, DPM-Solver series) can compress 100 steps to 4-2 steps, but performance collapses at 2 steps (Push-T drops to 0.29); (2) Distillation/Direct prediction (CP, OneDP, BRIDGER) replace the denoising process with smaller predictors but lack expressiveness, leading to failures in complex tasks; (3) Action recycling (RTI-DP, RNR-DP, Falcon) uses actions from the previous timestep as a warm-start, which ensures temporal continuity but fails when states change rapidly. All three types only achieve partial solutions for speed or accuracy.
+**Limitations of Prior Work**: Existing DP acceleration methods fall into three categories: (1) Numerical solvers (DDIM, DPM-Solver series), which compress 100 steps into 2–4 but collapse at 2 steps (e.g., 0.29 success rate on Push-T); (2) Distillation or direct prediction (CP, OneDP, BRIDGER), which replace the denoising process with a small predictor but lack expressiveness for complex tasks; (3) Action reuse (RTI-DP, RNR-DP, Falcon), which use actions from the previous timestep as a warm-start, providing temporal continuity but failing when states change rapidly. None of these fully solve the trade-off between speed and accuracy.
 
-**Key Challenge**: The key to acceleration is providing a "good starting point" for denoising. A good starting point must **simultaneously** satisfy two conditions: **Spatial Consistency** (closeness to the target action manifold given the current state) and **Temporal Consistency** (smooth transition from the previously executed action). Existing methods satisfy at most one (BRIDGER only spatial, Falcon only temporal).
+**Key Challenge**: The key to acceleration is providing a "good starting point" for denoising. A high-quality starting point must simultaneously satisfy two conditions: **spatial consistency** (proximity to the target action manifold conditioned on the current state) and **temporal consistency** (smooth transition from the previously executed action). Existing methods satisfy at most one (e.g., BRIDGER lacks temporal, Falcon lacks spatial consistency).
 
-**Goal**: (a) Design a warm-start that preserves the original DP's expressiveness while possessing both spatial and temporal consistency; (b) Ensure stability even with only 2 denoising steps; (c) Prevent robots from getting stuck at zero-velocity (static friction) due to overly "smooth" warm-starts during real-world deployment.
+**Goal**: (a) Design a warm-start that maintains the expressiveness of the original DP while ensuring both spatial and temporal consistency; (b) ensure stability with only 2 denoising steps; (c) prevent the robot from getting stuck at zero-velocity (static friction) due to over-smoothed warm-starts during real-world deployment.
 
-**Key Insight**: Instead of replacing or distilling the original DP, **attach a lightweight predictor** that maps $(\mathbf o_t, \mathbf A_{t-H})$ to $\hat{\mathbf A}_t$ as a starting point. Then, inject a small amount of noise at an intermediate denoising step $K'<K$ and proceed—this leverages the speed of warm-starts while retaining the multi-modal generation of DP.
+**Key Insight**: Instead of replacing or distilling the original DP, the authors use a **lightweight external predictor** to map $(\mathbf o_t, \mathbf A_{t-H})$ to $\hat{\mathbf A}_t$ as a starting point. Denoising proceeds from an intermediate step $K' \ll K$ with a small amount of added noise, preserving multi-modal generation while benefiting from the speed of a warm-start.
 
-**Core Idea**: Use a conditional Transformer predictor with "previous action block + current observation" to achieve initialization that is both temporally (via previous actions) and spatially (via observations) consistent. Additionally, implement a velocity-aware perturbation mechanism to combat real-world deadlocks. Finally, use contraction-mapping theory to prove that this starting point yields better convergence.
+**Core Idea**: A conditional Transformer predictor using "previous action block + current observation" provides initialization with both temporal and spatial consistency. This is supplemented by a velocity-aware perturbation mechanism to counter real-world deadlocks. The convergence is theoretically justified using contraction-mapping theory.
 
 ## Method
 
 ### Overall Architecture
-Inference pipeline (Algorithm 1): (1) Observe $\mathbf o_t$; if the action cache is filled with $H$ steps, use the predictor to compute $\hat{\mathbf A}_t=f_\theta(\mathbf o_t,\mathbf A_{cache})$; (2) Construct the warm-start $\tilde{\mathbf A}_{K'}=\sigma\hat{\mathbf A}_t+\sigma_t\boldsymbol\epsilon_t$, where $K'\ll K$ denotes starting from an intermediate step; (3) Run the $K'\to 0$ reverse diffusion to obtain the final action $\mathbf A_t$ and execute it; (4) Update the cache with $\mathbf A_t$ for the next loop. During training, the predictor and DP are trained decoupled: the DP follows standard noise prediction training (Eq. 5), while the predictor is trained via MSE. They are cascaded during inference.
+Inference pipeline (Algorithm 1): (1) Observe $\mathbf o_t$. If the action cache contains $H$ steps, compute $\hat{\mathbf A}_t=f_\theta(\mathbf o_t,\mathbf A_{cache})$ via the predictor. (2) Construct the warm-start $\tilde{\mathbf A}_{K'}=\sigma\hat{\mathbf A}_t+\sigma_t\boldsymbol\epsilon_t$, where $K'\ll K$ is the intermediate denoising step. The scaling factor $\sigma$ and noise magnitude $\sigma_t$ are toggled by the velocity-aware perturbation mechanism based on whether "stagnation" is detected. (3) Run reverse diffusion from $K'\to 0$ to obtain the final action $\mathbf A_t$. (4) Update the cache with $\mathbf A_t$. During training, the predictor and DP are decoupled.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Observation o_t + Action cache A_cache"] -->|Cache < H steps| Z["Cold Start: Run full K steps from pure noise"]
+    A -->|Cache >= H steps| B["Spatiotemporal Consistency Predictor<br/>Â_t = f_θ(o_t, A_cache)<br/>2-layer cross-attention Transformer"]
+    B --> C["Velocity-Aware Perturbation Injection<br/>If ‖ΔA_t‖ < ε_a: apply noise and scale<br/>Else: (σ, σ_t)=(1, 0) full trust"]
+    C --> D["Warm-start Starting Point<br/>Ã_K′ = σ·Â_t + σ_t·ε (Intermediate step K′≪K)"]
+    Z --> E
+    D -->|Local Contraction: Error decays exponentially by ∏c_k| E["Reverse Denoising K′→0<br/>Converges in only 2 steps"]
+    E --> F["Execute Action A_t, Update Cache"]
+    F -.Next step.-> A
+```
 
 ### Key Designs
 
-1.  **Spatiotemporal Consistency Predictor**:
-    - **Function**: Provides an action starting point in a single forward pass that satisfies both temporal consistency ($\|\tilde a_t-a_{t-1}\|\le\epsilon_t$) and spatial consistency ($\mathrm{dist}(\tilde a_t,\mathcal M(s_t))\le\epsilon_s$).
-    - **Mechanism**: $f_\theta:\mathcal O\times\mathcal A^H\to\mathcal A^H$ utilizes a **2-layer cross-attention Transformer** (actions as queries, observations as keys/values, 128-dim embedding) to map $(\mathbf o_t,\mathbf A_{t-H})$ to $\hat{\mathbf A}_t$. The training objective is simply $\mathcal L_{pred}=\mathbb E\|\hat{\mathbf A}_t-\mathbf A_t\|^2$, learning the conditional expectation $\mathbb E[\mathbf A_t\mid\mathbf o_t,\mathbf A_{t-H}]$.
-    - **Design Motivation**: Temporal consistency is derived from including $\mathbf A_{t-H}$ in the conditions, while spatial consistency comes from $\mathbf o_t$. No extra regularization is needed. Cross-attention is better suited for mixing heterogeneous sequences than self-attention. Experiments (Fig. 3) show performance saturates at 2 blocks; adding more only increases latency.
+**1. Spatiotemporal Consistency Predictor: Single Forward for Dual Consistency**
+Acceleration requires a starting point that is both temporally consistent (smooth transition from the previous action, $\|\tilde a_t-a_{t-1}\|\le\epsilon_t$) and spatially consistent (landing near the target action manifold, $\mathrm{dist}(\tilde a_t,\mathcal M(s_t))\le\epsilon_s$). STEP defines a predictor $f_\theta:\mathcal O\times\mathcal A^H\to\mathcal A^H$ that takes both $\mathbf o_t$ and $\mathbf A_{t-H}$. Including $\mathbf A_{t-H}$ ensures temporal consistency, while $\mathbf o_t$ ensures spatial consistency. The predictor is a 2-layer cross-attention Transformer (actions as queries, observations as keys/values). It is trained using MSE: $\mathcal L_{pred}=\mathbb E\|\hat{\mathbf A}_t-\mathbf A_t\|^2$. 
 
-2.  **Velocity-Aware Perturbation Injection**:
-    - **Function**: Automatically injects noise when the predictor's output change is extremely small (approaching static friction deadlock) to help the actuator cross the dead zone, otherwise maintaining the original signal.
-    - **Mechanism**: Calculates the action difference $\Delta\mathbf A_t=\mathbf A_{cache}-\mathbf A_{t-2H}$ and detects stagnation using an indicator function $\mathbb I_t=\mathbb I(\|\Delta\mathbf A_t\|<\epsilon_a)$. The warm-start scale $\sigma$ and noise amplitude $\sigma_t$ switch between two levels according to Eq. 14: under normal conditions, $(\sigma,\sigma_t)=(1,0)$; during stagnation, $(\sigma,\sigma_t)=(\sigma_{scale},\sigma_{stall})$ to reduce amplitude and inject small Gaussian noise ($\epsilon_a=0.01$, simulation $\sigma_{stall}=0.1$).
-    - **Design Motivation**: Real-world deployment faces "control dead zones + static friction" issues. Perfectly predicted actions in simulation may result in motor "laziness" in reality. Vanilla DDPM's inherent randomness can overcome these zones; this observation led to "on-demand stochasticity" as a toggle rather than constant noise.
+**2. Velocity-Aware Perturbation Injection: Targeted Randomness to Prevent Deadlocks**
+While the predictor's outputs are accurate in simulation, real-world deployment reveals a "deadlock" issue: when action changes are minute, motor torque may fail to overcome static friction. Vanilla DDPM avoids this due to inherent noise. STEP introduces a mechanism to toggle noise: it computes the difference $\Delta\mathbf A_t=\mathbf A_{cache}-\mathbf A_{t-2H}$ and uses an indicator function $\mathbb I_t=\mathbb I(\|\Delta\mathbf A_t\|<\epsilon_a)$ to detect stagnation. If detected, it scales down the prediction and injects Gaussian noise ($\sigma_{stall}$) to "push" the robot past the dead zone. This reduces real-world episode execution time by 59%.
 
-3.  **Convergence Proof via Local Contraction Mapping**:
-    - **Function**: Provides a theoretical explanation for why a "good warm-start + few reverse steps" converges stably to the correct action.
-    - **Mechanism**: Formulates DDPM, DDIM, and DPM-Solver as $\mathbf A_{k-1}=\mu_k(\mathbf A_k,\mathbf o_t)+\boldsymbol\xi_k$ (Eq. 15). Assuming the denoising network $\epsilon_\theta$ has a Lipschitz constant $L$ within the neighborhood $\mathcal U$ of the data manifold, the reverse mean $\mu_k$ is also Lipschitz with coefficient $c_k<1$ (Eq. 16). Recursing through the steps yields $\|\tilde{\mathbf A}_0-\mathbf A_0\|\le\prod_{k=1}^{K'}c_k\|\tilde{\mathbf A}_{K'}-\mathbf A_{K'}\|$ (Eq. 18). Thus, if the predictor brings the starting point into $\mathcal U$, the error decays exponentially.
-    - **Design Motivation**: Uses a unified contraction framework to explain why denoising from an intermediate step is superior to starting from pure noise, valid for DDIM/DPM-Solver regardless of the specific solver.
+**3. Convergence via Local Contraction Mapping: Theoretical Justification**
+The authors unify the reverse updates of DDPM, DDIM, and DPM-Solver as $\mathbf A_{k-1}=\mu_k(\mathbf A_k,\mathbf o_t)+\boldsymbol\xi_k$. Assuming the denoising network over the data manifold neighborhood $\mathcal U$ has a Lipschitz constant $L$, the reverse mean $\mu_k$ is also Lipschitz with a contraction coefficient $c_k<1$. This leads to $\|\tilde{\mathbf A}_0-\mathbf A_0\|\le\prod_{k=1}^{K'}c_k\,\|\tilde{\mathbf A}_{K'}-\mathbf A_{K'}\|$. This implies that as long as the predictor places the starting point within $\mathcal U$, the error decays exponentially, allowing convergence to the correct action in just 2 steps.
 
 ### Loss & Training
-- Predictor: $\mathcal L_{pred}=\mathbb E\|\hat{\mathbf A}_t-\mathbf A_t\|^2$, 100k steps.
-- DP: Follows original codebase default settings.
-- Inference Hyperparameters: $K'$ = starting denoising step (i.e., STEP = 2 / 4); $\sigma=1, \sigma_t=0.1$ for simulation; real-world $\sigma_{stall}$ is larger to overcome dead zones.
+- Predictor: $\mathcal L_{pred}=\mathbb E\|\hat{\mathbf A}_t-\mathbf A_t\|^2$, trained for 100k steps.
+- DP: Standard noise prediction loss $\mathcal L_{diff}$, following the original codebase configurations.
+- Inference: $K'$ is the starting denoising step (e.g., 2 or 4); $\sigma=1, \sigma_t=0.1$ for simulation; higher $\sigma_{stall}$ for real-world tasks.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**State-based RoboMimic / Push-T (Partial Table 2)**: Score (higher is better) / Time (ms, lower is better).
+**State-based RoboMimic / Push-T (Table 2 excerpt)**: Score (higher is better) / Time (ms, lower is better).
 
 | Method | Step | Push-T | Square | ToolHang |
 |---|---|---|---|---|
@@ -82,55 +85,53 @@ Inference pipeline (Algorithm 1): (1) Observe $\mathbf o_t$; if the action cache
 | Falcon | 2 | 0.21 | 1.00 | 0 |
 | **STEP (Ours)** | **2** | **0.49** | **0.96** | **0.64** |
 
-**Image-based RoboMimic (Partial Table 3)**: Long-range tasks like ToolHang show particularly significant improvement under visual input.
+**Image-based RoboMimic (Table 3 excerpt)**: The contrast is significant in long-horizon tasks like ToolHang.
 
 | Method | Step | Square | ToolHang |
 |---|---|---|---|
 | DDIM | 2 | 0.74 | 0.5 |
 | BRIDGER | 2 | 0.92 | 0.72 |
-| **STEP (Ours)** | **2** | – | – |
+| **STEP (Ours)** | **2** | – (>BRIDGER) | – |
 
-Core Conclusion: At 2 steps, STEP achieves an average success rate increase of 21.6% compared to BRIDGER and 48.8% compared to Falcon (temporal-only) on RoboMimic. In real-world tasks, it improves success rates by 27.5% over DDIM and reduces execution time by 59% via velocity-aware perturbations.
+Core Conclusion: STEP with 2 steps outperforms BRIDGER by an average of 21.6% and Falcon by 48.8% on RoboMimic; it improves success rates by 27.5% over DDIM in real-world tasks.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
+| Configuration | Key Metrics | Note |
 |------|---------|------|
-| Full STEP (2 step) | Push-T 0.49 / Lift 1.0 / Square 0.96 | Spatiotemporal consistency + perturbation + intermediate start. |
-| No Predictor (= DDIM) | Push-T 0.29 / Lift 0.80 / Square 0.84 | Degenerates to pure noise start; performance collapses. |
-| Spatial Only (BRIDGER) | Push-T 0.37 / Lift 1.0 / Square 0.84 | Lacks temporal continuity; fails on long-horizon tasks. |
-| Temporal Only (Falcon) | Push-T 0.21 / Square 1.00 / ToolHang 0 | Lacks spatial consistency; ToolHang drops to zero. |
-| Cross-attn block 1/2/4 | 2 is the sweet spot | 4 blocks increase latency without gain (Fig 3). |
+| Full STEP (2 step) | Push-T 0.49 / Lift 1.0 / Square 0.96 | Spatiotemporal + Perturbation + Interm. Step |
+| W/O Predictor (= DDIM) | Push-T 0.29 / Lift 0.80 / Square 0.84 | Collapses without spatiotemporal warm-start |
+| Spatial Only (BRIDGER) | Push-T 0.37 / Lift 1.0 / Square 0.84 | Fails on long-horizon tasks (no continuity) |
+| Temporal Only (Falcon) | Push-T 0.21 / Square 1.00 / ToolHang 0 | Fails on ToolHang (no spatial consistency) |
+| Cross-attn block 1/2/4 | 2 is the sweet spot | 4 blocks increase latency without gains |
 
 ### Key Findings
-- **2-step inference is the core selling point**: While other methods fail almost completely at 2 steps (Falcon ToolHang=0), STEP maintains a success rate close to 100-step DDPM, pushing the Pareto frontier (latency vs success) significantly.
-- **Spatiotemporal consistency is non-negotiable**: Any method with only TC or SC fails on at least one task at 2 steps; STEP remains robust across all.
-- **Sim-to-Real Gap**: $\sigma_{stall}$ of 0.1 works in simulation, but larger values are needed for real robots, highlighting "friction/dead zones" as a major bottleneck.
-- **Minimalist Predictor**: Uses only a 128-dim, 2-block cross-attention Transformer trained for 100k steps. It is extremely lightweight and easy to embed.
+- **2-step inference is the primary selling point**: While other methods collapse at 2 steps, STEP maintains a success rate close to 100-step DDPM.
+- **Dual consistency is mandatory**: Methods with only TC (Temporal Consistency) or SC (Spatial Consistency) fail on at least one task at 2 steps; STEP remains robust across all.
+- **Sim-to-Real gap**: The necessity for larger $\sigma_{stall}$ in real experiments identifies friction/stiction as a critical bottleneck for high-speed diffusion policies.
 
 ## Highlights & Insights
-- **Clear Perspective**: Explicitly formalizes the requirement that "warm-starts must be spatiotemporally consistent" (Eq. 7-8 + Table 1), providing a simple analytical dimension for DP acceleration.
-- **Decoupled Training Pattern**: This engineering route preserves the multi-modal generation of the original DP (no distillation or replacement) while providing lightweight acceleration—a practical design pattern applicable to any DP backbone.
-- **Velocity-Aware Perturbation**: The idea of "on-demand stochasticity" can be migrated to any field needing dynamic switching between deterministic prediction and exploration (e.g., hybrid imitation/RL).
-- **Contraction Proof**: Simple yet powerful, providing a unified theoretical explanation for "intermediate warm-starts" rather than just a narrative.
+- **Clear Conceptual Framework**: Explicitly formalizing the dual requirement of spatiotemporal consistency for warm-starts provides a clear analytical dimension for DP acceleration.
+- **Decoupled Training**: This design pattern preserves the multi-modal generative capability of the original DP without needing distillation, making it compatible with various DP backbones.
+- **Velocity-Aware Perturbation**: The idea of "triggering randomness on demand" is transferable to any domain requiring a dynamic switch between deterministic prediction and exploration.
+- **Theoretical Contraction Proof**: It provides a unified explanation for all intermediate warm-start methods rather than relying solely on empirical results.
 
 ## Limitations & Future Work
-- Temporal consistency relies on the previous $\mathbf A_{t-H}$, which may introduce bias during sudden state changes (e.g., encountering an obstacle). The current perturbation mechanism only monitors action magnitude, not observation changes.
-- The predictor is a single forward pass and does not explicitly model multi-modality; it may "average out" meaningful actions if multiple modes exist (a common issue for BRIDGER-like methods).
-- Only validated in imitation learning; compatibility between warm-starts and policy drift in closed-loop RL remains untested.
-- Real-world $\sigma_{stall}$ requires manual tuning; a learned critic for adaptive perturbation could be a future improvement.
+- Temporal consistency relies on $\mathbf A_{t-H}$, which may introduce bias during sudden environmental changes (e.g., obstacles), necessitating the perturbation mechanism.
+- The predictor is a single forward pass and does not explicitly model multi-modality; it may produce "averaged" actions in highly multi-modal scenarios.
+- The method was validated in imitation learning; compatibility with closed-loop RL where policies drift significantly remains untested.
 
 ## Related Work & Insights
-- **vs. DDIM / DPM-Solver++**: These only modify the solver without warm-starts, failing at 2 steps. STEP is orthogonal and can be applied to any solver.
-- **vs. BRIDGER (Spatial-only)**: BRIDGER uses a predictor as a starting point but only considers the current state. STEP achieves a 21.6% average gain simply by adding $\mathbf A_{t-H}$.
-- **vs. Falcon / RTI-DP (Temporal-only)**: These assume smooth dynamics and fail on tasks with rapid state changes like ToolHang/Push-T. STEP handles state mutations using observation conditions.
-- **vs. CP / OneDP (Distillation)**: Distillation destroys multi-modal expressiveness; STEP preserves it, allowing more denoising steps for complex tasks and 2 steps for simple ones.
+- **vs DDIM / DPM-Solver++**: These only optimize the solver. STEP is orthogonal and can be applied on top of any solver.
+- **vs BRIDGER (Spatial-only)**: BRIDGER uses current state for warm-starts. By adding history, STEP achieves a 21.6% average gain.
+- **vs Falcon / RTI-DP (Temporal-only)**: These fail when states change rapidly (e.g., ToolHang). STEP captures state dynamics through observation conditioning.
+- **vs CP / OneDP (Distillation)**: Distillation removes multi-modality. STEP preserves the original DP, allowing for adjustable step counts based on task complexity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Spatiotemporal二分 dimension + intermediate warm-start + velocity-aware perturbation; simple but effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 sim tasks + 2 real tasks × 8 baselines × state/image inputs; exhaustive ablation.
-- Writing Quality: ⭐⭐⭐⭐ Conceptual diagrams (Fig 1) and consistency tables (Table 1) build the framework quickly; contraction proof is concise.
-- Value: ⭐⭐⭐⭐⭐ A directly applicable engineering solution; open-source and easy to use for any robotics team deploying diffusion policies.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -138,11 +139,11 @@ Core Conclusion: At 2 steps, STEP achieves an average success rate increase of 2
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning Predictive Visuomotor Coordination](../../CVPR2026/robotics/learning_predictive_visuomotor_coordination.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
 - [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
+- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[ICML 2026\] The Lie We Tell: Correcting the Euclidean Fallacy in Vision-Language-Action Policies via Score Matching on Tangent Space](the_lie_we_tell_correcting_the_euclidean_fallacy_in_vision_language_action_polic.md)
 
 </div>
 

@@ -2,72 +2,88 @@
 title: >-
   [Paper Note] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 description: >-
-  [CVPR 2026][Image Restoration][Extreme-dark imaging] This paper proposes NEC-Diff, a diffusion-based event–RAW hybrid imaging framework that uses the illumination prior from RAW images to guide event denoising…
+  [CVPR 2026][Image Restoration][Diffusion Model] Proposes NEC-Diff, a diffusion-based event-RAW hybrid imaging framework that utilizes illumination priors from RAW images to guide event denoising and high dynamic range edges from events to assist image denoising. By combining dual-modal SNR-guided reliable information extraction and cross-modal attention diffusion, i
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Extreme-dark imaging"
-  - "event camera"
-  - "RAW image"
-  - "collaborative denoising"
-  - "diffusion model"
+  - CVPR 2026
+  - Image Restoration
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 8d71e71edffc258f
+content_hash: 7a2ddbc9722cc9b4
 ---
-
 # NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20005](https://arxiv.org/abs/2603.20005)  
 **Code**: [https://github.com/jinghan-xu/NEC-Diff](https://github.com/jinghan-xu/NEC-Diff)  
-**Area**: Image Restoration / Low-Light Enhancement
-**Keywords**: Extreme-dark imaging, event camera, RAW image, collaborative denoising, diffusion model
+**Area**: Image Restoration / Low-light Enhancement  
+**Keywords**: Extreme low-light imaging, Event camera, RAW image, Collaborative denoising, Diffusion model
 
 ## TL;DR
 
-This paper proposes NEC-Diff, a diffusion-based event–RAW hybrid imaging framework that uses the illumination prior from RAW images to guide event denoising, and leverages the high-dynamic-range edges from denoised events to assist image denoising. Combined with dual-modality SNR-guided reliable information extraction and cross-modal attention diffusion, the method achieves high-quality dynamic scene reconstruction in extreme darkness (0.001–0.8 lux), reaching 24.51 dB PSNR on the REAL dataset.
+Proposes NEC-Diff, a diffusion-based event-RAW hybrid imaging framework that utilizes illumination priors from RAW images to guide event denoising and high dynamic range edges from events to assist image denoising. By combining dual-modal SNR-guided reliable information extraction and cross-modal attention diffusion, it achieves high-quality dynamic scene reconstruction in extreme darkness (0.001-0.8 lux) with a PSNR of 24.51 dB on the REAL dataset.
 
 ## Background & Motivation
 
-1. **Background**: Low-light image enhancement methods are categorized into sRGB-based, RAW-based, event-based, and hybrid approaches. RAW-based methods model noise more accurately but cannot recover information lost under short exposure; event cameras offer high dynamic range but cannot restore smooth-region intensities.
-2. **Limitations of Prior Work**: In extreme darkness (<1 lux), both modalities suffer from severe noise—RAW images face extreme photon-shot noise, while event cameras are dominated by shot noise that becomes the primary background activity at low light levels (with a density more than 50× higher than other noise types). Existing hybrid methods either ignore noise (EvRAW) or consider only single-modality SNR (EvLight), failing to effectively suppress noise.
-3. **Key Challenge**: Under extremely low illumination, signal and noise become indistinguishable, and simple filtering or single-network denoising cannot simultaneously preserve weak signals and suppress noise.
-4. **Goal**: How to effectively denoise two severely degraded modal signals and recover fine scene details?
-5. **Key Insight**: Exploit the physical complementarity between RAW and event modalities—the linear illumination response of RAW can guide event denoising, while the denoised events provide high-dynamic-range edges that in turn assist image denoising.
-6. **Core Idea**: Physics-constrained cross-modal collaborative denoising + SNR-guided adaptive fusion + high-fidelity reconstruction via diffusion models.
+1. **Background**: Low-light image enhancement methods are categorized into sRGB-based, RAW-based, event-based, and hybrid methods. RAW methods model noise more effectively but cannot resolve information loss due to short exposures; event cameras offer a high dynamic range but fail to recover intensity in smooth regions.
+2. **Limitations of Prior Work**: In extreme darkness (<1 lux), both modalities suffer from severe noise—RAW images are photon-starved with extreme noise, and shot noise in event cameras becomes the dominant background activity (with density exceeding other noise types by over 50 times). Existing hybrid methods either ignore noise (EvRAW) or only consider single-modal SNR (EvLight), failing to denoise effectively.
+3. **Key Challenge**: In extreme low light, signals and noise are difficult to distinguish. Simple filtering or single-network denoising cannot simultaneously preserve weak signals and suppress noise.
+4. **Goal**: How can fine scene details be effectively denoised and recovered from two severely degraded modal signals?
+5. **Key Insight**: Leverage the physical complementarity between RAW and events—RAW's linear response to illumination can guide event denoising, while denoised events provide high dynamic range edges to assist image denoising.
+6. **Core Idea**: Physics-constrained cross-modal collaborative denoising + SNR-guided adaptive fusion + high-fidelity diffusion reconstruction.
 
 ## Method
 
 ### Overall Architecture
 
-Three modules in series: (1) **ECNS** (Event–RAW Collaborative Noise Suppression): RAW illumination prior guides event denoising → denoised events assist image denoising, with an intensity consistency constraint; (2) **SRIE** (SNR-guided Reliable Information Extraction): adaptively selects reliable features based on dual-modality SNR maps; (3) **CAD** (Cross-modal Attention Diffusion): bidirectional cross-attention fusion + conditional generation via diffusion model.
+NEC-Diff aims to reconstruct clean frames from RAW images and event streams, both heavily contaminated by noise in extreme dark dynamic scenes (0.001–0.8 lux). The core premise is that rather than performing independent hard denoising before fusion, it is more effective to let the two modalities reduce noise for each other through physical relationships before fusion and generation. The pipeline follows three stages: **Event–RAW Collaborative Noise Suppression** (ECNS), followed by **SNR-guided Reliable Information Extraction** (SRIE) to identify reliable components per pixel, and finally **Cross-modal Attention Diffusion** (CAD) to fuse features and perform high-fidelity reconstruction. The first two steps focus on noise suppression and weighting, while the third stage completes the weak signals into a full image.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    R["RAW Image<br/>Extreme darkness, Photon-starved"] --> E1
+    EV["Event Stream<br/>Shot noise dominant"] --> E1
+    subgraph E1["Event–RAW Collaborative Noise Suppression (ECNS)"]
+        direction TB
+        A["RAW Gaussian Blur<br/>Illumination Prior"] -->|Conditional Guidance| B["Event Denoising EDformer"]
+        B -->|"HDR Edge Flowback"| C["RAW Denoising"]
+        C -.->|"Intensity Consistency Loss Calibration"| B
+    end
+    E1 --> S["SNR-guided Reliable Information Extraction (SRIE)<br/>Pixel-wise SNR → Softmax weights"]
+    S --> D["Cross-modal Attention Diffusion (CAD)<br/>Bi-directional attention fusion → Diffusion completion"]
+    D --> O["Clear Dynamic Scene Reconstruction"]
+```
 
 ### Key Designs
 
-1. **Event–RAW Collaborative Noise Suppression (ECNS)**:
+**1. Event–RAW Collaborative Noise Suppression (ECNS): Mutual Denoising via Physical Relationships**
 
-    - Function: Achieves bidirectional denoising by exploiting cross-modal physical complementarity.
-    - Mechanism: **Illumination-guided event denoising**—event shot noise density is positively correlated with illumination under low light (empirically verified); a coarse illumination prior is obtained from RAW images via Gaussian blurring and fed into an event denoising network (EDformer architecture) to guide denoising. **Event-assisted image denoising**—denoised events provide high-dynamic-range edge information, helping distinguish signal from noise in weakly textured regions and avoiding over-smoothing. **Intensity consistency loss**: derived from the physical model $\tilde{E}(t) = \frac{1}{C}\log\frac{\tilde{R}(t)}{\tilde{R}(t-\Delta t)}$, constraining the denoised RAW and events to satisfy the logarithmic relationship: $\mathcal{L}_{\text{cons}} = \|\hat{E}(t)\cdot C - \log\frac{\hat{R}(t)+\epsilon}{\hat{R}(t-\Delta t)+\epsilon}\|_1$
-    - Design Motivation: Unlike prior work that directly fuses modalities or applies single-modality denoising, ECNS leverages the physical relationship between the two modalities for mutual denoising before fusion.
+In extreme darkness, both modalities are heavily degraded: RAW is photon-starved, and event shot noise density can exceed other noise types by 50 times. ECNS exploits a physical fact—event shot noise density positively correlates with light intensity (validated experimentally), and RAW responds linearly to light. It uses a Gaussian-blurred RAW image as a coarse illumination prior for the event denoising network (EDformer). In areas with high illumination, real events are more likely and noise criteria are relaxed; in low illumination, background noise is suppressed more aggressively. Conversely, denoised events provide high dynamic range edge info to help the RAW network distinguish true details from noise in weak texture regions.
 
-2. **SNR-guided Reliable Information Extraction (SRIE)**:
+To ensure physical consistency, Ours derives a logarithmic relationship between RAW and events from the event imaging model: $\tilde{E}(t) = \frac{1}{C}\log\frac{\tilde{R}(t)}{\tilde{R}(t-\Delta t)}$ (where $C$ is the contrast threshold). An intensity consistency loss is enforced:
 
-    - Function: Adaptively selects the most reliable modality at each spatial location based on signal reliability.
-    - Mechanism: SNR maps are computed from the difference between inputs and denoised outputs: $M_{\text{SNR}} = 10\cdot\log\frac{M_{\text{in}}^2}{(M_{\text{in}}-M_{\text{den}})^2+\epsilon}$. Events yield high SNR in textured/motion regions but near-zero SNR in smooth areas; images yield high SNR in bright regions but poor SNR in dark areas. Dual-modality SNR maps are jointly processed and channel-wise softmax is applied to generate fusion weights $W_{\text{img}}, W_{\text{evt}}$.
-    - Design Motivation: More comprehensive than EvLight (image-SNR-only guidance)—when event SNR approaches zero in dark smooth regions, the method avoids over-reliance on events and preserves weak image signals.
+$$\mathcal{L}_{\text{cons}} = \left\|\hat{E}(t)\cdot C - \log\frac{\hat{R}(t)+\epsilon}{\hat{R}(t-\Delta t)+\epsilon}\right\|_1$$
 
-3. **Cross-modal Attention Diffusion (CAD)**:
+This loss calibrates event jumps and RAW temporal changes against each other. In ablation studies, this component contributed most to performance (improving PSNR by 3.45 dB).
 
-    - Function: Deeply fuses dual-modality features and reconstructs high-fidelity outputs via a diffusion model.
-    - Mechanism: Weighted image and event features are processed with bidirectional cross-attention (image query + event key/value and vice versa), concatenated to form a unified multimodal representation $F_{\text{fused}}$, which is fed as a condition into the diffusion model: $\hat{\epsilon}_\theta = \epsilon_\theta(x_t, F_{\text{fused}}, t)$, with 50-step DDIM deterministic sampling for reconstruction.
-    - Design Motivation: The progressive denoising of diffusion models outperforms single-step regression in low-SNR regions; the conditioned multimodal features provide a strong prior.
+**2. SNR-guided Reliable Information Extraction (SRIE): Weighting by Pixel-wise SNR**
+
+Denoising is followed by intentional fusion based on modal blind spots: events have high SNR in textured/motion areas but near-zero SNR in smooth regions; RAW is reliable in brighter areas but noise-dominated in extreme darkness. SRIE quantifies reliability using residuals before and after denoising to calculate SNR maps:
+
+$$M_{\text{SNR}} = 10\cdot\log\frac{M_{\text{in}}^2}{(M_{\text{in}}-M_{\text{den}})^2+\epsilon}$$
+
+Lower differences indicate cleaner signals and higher SNR. Jointly processed SNR maps are converted to spatial weights $W_{\text{img}}, W_{\text{evt}}$ via channel-wise softmax. This dual-modal strategy ensures that in dark, smooth areas where event SNR is near zero, the system retains weak signals from the image rather than relying blindly on events. SRIE improves performance by 0.76 dB over direct fusion.
+
+**3. Cross-modal Attention Diffusion (CAD): Bi-directional Attention and Diffusion Completion**
+
+Using weighted features, CAD performs deep fusion and reconstruction. It employs bi-directional cross-attention—image features query event K/V, and vice versa—to complete context before concatenating into a multi-modal representation $F_{\text{fused}}$. This representation serves as a condition for the diffusion model $\hat{\epsilon}_\theta = \epsilon_\theta(x_t, F_{\text{fused}}, t)$, utilizing 50-step DDIM deterministic sampling. Diffusion is preferred over single-step regression because extreme dark regions have such low SNR that single-step networks often produce residual noise; the progressive denoising of diffusion approaches the clean distribution while constraints from $F_{\text{fused}}$ ensure high fidelity.
 
 ### Loss & Training
 
-- Two-stage training: Stage 1 trains image and event denoising modules independently; Stage 2 introduces cross-modal consistency constraints for joint training.
-- $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + 10\cdot\mathcal{L}_{\text{grad}} + 0.5\cdot\mathcal{L}_{\text{cons}}$
-- Adam optimizer, learning rate $1\times10^{-4}$, 50 epochs, input crops of 256×256.
-- Forward diffusion with 1000 steps, trained on a single RTX 4090.
+A two-stage training strategy is adopted: Stage 1 trains image and event denoising modules independently. Stage 2 introduces cross-modal consistency constraints for joint training. The total loss is:
+
+$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + 10\cdot\mathcal{L}_{\text{grad}} + 0.5\cdot\mathcal{L}_{\text{cons}}$$
+
+The gradient term (weight 10) emphasizes edge sharpness, and the consistency term (weight 0.5) enforces physical constraints. Optimization uses Adam with a learning rate of $1\times10^{-4}$ for 50 epochs, with 256×256 crops. Diffusion uses 1000 forward steps on an RTX 4090.
 
 ## Key Experimental Results
 
@@ -79,7 +95,7 @@ Three modules in series: (1) **ECNS** (Event–RAW Collaborative Noise Suppressi
 | RAW | BRVE | 27.58/0.817/0.137 | 21.87/0.717/0.334 |
 | RAW | RID(NoiseModelling) | 26.76/0.825/0.127 | 22.72/0.729/0.258 |
 | Event+sRGB | EvLight | 17.06/0.677/0.291 | 21.20/0.626/0.277 |
-| **Event+RAW** | **NEC-Diff** | **27.74/0.828/0.125** | **24.51/0.742/0.201** |
+| **Event+RAW** | **Ours** | **27.74/0.828/0.125** | **24.51/0.742/0.201** |
 
 ### Ablation Study
 
@@ -88,41 +104,41 @@ Three modules in series: (1) **ECNS** (Event–RAW Collaborative Noise Suppressi
 | w/o ECNS (SRIE+CAD only) | 21.06 | 0.653 | 0.278 |
 | w/o SRIE (ECNS+CAD) | 23.24 | 0.698 | 0.243 |
 | w/o CAD (ECNS+SRIE) | 22.53 | 0.671 | 0.265 |
-| Full model | **24.51** | **0.742** | **0.201** |
+| Full Model | **24.51** | **0.742** | **0.201** |
 
 ### Key Findings
 
-- ECNS contributes most significantly (removing it causes a 3.45 dB PSNR drop), confirming that collaborative denoising is the foundation of the entire pipeline.
+- ECNS provides the largest contribution (3.45 dB drop without it), proving collaborative denoising is the foundation of the pipeline.
 - Dual SNR guidance outperforms image-only SNR guidance by 0.43 dB and direct fusion by 0.76 dB.
-- The advantage is more pronounced on the REAL dataset (+1.79 dB over the best RAW method), attributed to more complex real-world noise.
-- The method excels particularly in extremely dark scenes at 0.001–0.3 lux (comprising 70% of the dataset).
-- Using both cross-modal input and consistency loss for event denoising yields the best results; using either alone provides limited improvement.
+- Advantages are more pronounced on the REAL dataset (+1.79 dB over the best RAW method) due to complex real-world noise.
+- Performance gains are particularly superior in extreme darkness (0.001–0.3 lux), which covers 70% of the dataset.
+- Using both cross-modal input and consistency loss yields the best event denoising results.
 
 ## Highlights & Insights
 
-- **Physics-driven cross-modal denoising** is the core contribution: by leveraging the linear illumination response of RAW and the positive correlation between event shot noise and illumination, the paper establishes a physically grounded mutual denoising framework—considerably more principled than direct fusion or post-processing filters.
-- **The REAL dataset** construction is valuable—a coaxial imaging system with optical attenuation simulates 0.001 lux extreme darkness, providing 47,800 pixel-aligned triplets (RAW/event/GT) that fill a critical gap in event–RAW low-light data.
-- **SNR maps as fusion weights** is a simple yet effective design that generalizes to arbitrary multimodal fusion scenarios.
+- **Physics-driven cross-modal denoising** is the core contribution: utilizing the linear response of RAW and the luminance correlation of event shot noise creates a robust mutual denoising framework beyond simple fusion or post-processing.
+- **REAL Dataset** construction is highly valuable, using a co-axial imaging system with optical attenuation to simulate 0.001 lux, providing 47,800 pixel-aligned triplets (RAW/Event/GT).
+- **SNR maps as fusion weights** is a simple yet effective strategy applicable to various multi-modal fusion scenarios.
 
 ## Limitations & Future Work
 
-- The event contrast threshold $C$ in the intensity consistency loss is learned from data; varying thresholds across different event cameras in real deployment may reduce generalizability.
-- Diffusion model inference is relatively slow (50-step DDIM), limiting real-time applicability.
-- Training and evaluation are conducted only at 256×256 resolution; high-resolution scenarios remain unexplored.
-- Future work could investigate test-time adaptation to accommodate different event camera parameters.
+- The event contrast threshold $C$ is learned from data; varying thresholds across different event cameras in deployment may reduce generalization.
+- Inference speed of the diffusion model is slow (50-step DDIM), limiting real-time applications.
+- Evaluation was limited to 256×256 resolution; high-resolution scenarios require further validation.
+- Future work could explore test-time adaptation for different event camera parameters.
 
 ## Related Work & Insights
 
-- **vs. EvLight**: Uses only image SNR for fusion guidance, overlooking the near-zero event SNR in smooth dark regions. NEC-Diff's dual-SNR strategy is more comprehensive.
-- **vs. ELEDNet/RETINEV**: Applies low-pass filtering or CNNs for event noise suppression, but simple filtering cannot balance noise suppression and detail preservation.
-- **vs. EvRAW**: Focuses on detail and color recovery from event–RAW pairs but ignores sensor noise, limiting performance in extreme darkness.
+- **vs EvLight**: EvLight only uses image SNR for fusion, ignoring zero SNR in smooth dark event regions. The dual SNR strategy in NEC-Diff is more comprehensive.
+- **vs ELEDNet/RETINEV**: These use low-pass filters or CNNs for event noise, but simple filtering cannot balance noise suppression and detail preservation.
+- **vs EvRAW**: EvRAW focuses on detail and color recovery but neglects sensor noise, leading to limited performance in extreme darkness.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The physics-driven cross-modal collaborative denoising approach is novel, though the overall diffusion framework and conditional generation are relatively established.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparisons on both synthetic and real datasets with clear ablations, but broader real-world generalization evaluation is lacking.
-- Writing Quality: ⭐⭐⭐⭐ Physical modeling derivations are clear and figures are well-crafted, though the method description is somewhat verbose.
-- Value: ⭐⭐⭐⭐ The dataset contribution is significant, and the method addresses a well-defined application in extreme-dark imaging.
+- Novelty: ⭐⭐⭐⭐ The physics-driven cross-modal collaborative denoising is novel, though the diffusion framework with conditional generation is common.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient comparison on synthetic and real datasets with clear ablations, though lacking broader real-world generalization testing.
+- Writing Quality: ⭐⭐⭐⭐ Clear physical modeling and high-quality illustrations, though method descriptions are slightly long.
+- Value: ⭐⭐⭐⭐ Significant dataset contribution with clear application scenarios in extreme low-light imaging.
 
 <!-- RELATED:START -->
 
@@ -130,11 +146,11 @@ Three modules in series: (1) **ECNS** (Event–RAW Collaborative Noise Suppressi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
-- [\[ICLR 2026\] Are Deep Speech Denoising Models Robust to Adversarial Noise?](../../ICLR2026/image_restoration/are_deep_speech_denoising_models_robust_to_adversarial_noise.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
+- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
+- [\[CVPR 2026\] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor](spatio-temporal_difference_guided_motion_deblurring_with_the_complementary_visio.md)
+- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 
 </div>
 

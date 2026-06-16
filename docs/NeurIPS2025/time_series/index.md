@@ -82,7 +82,7 @@ item_total: 54
 
 **🧠 NeurIPS2025** · **54** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (7)](../../CVPR2026/time_series/index.md) · [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
 
 🔥 **Top topics:** Time-Series Forecasting ×30 · Diffusion Models ×3 · GNNs ×2 · Adversarial Robustness ×2 · Self-Supervised Learning ×2
 

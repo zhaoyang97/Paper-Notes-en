@@ -2,138 +2,142 @@
 title: >-
   [Paper Note] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overl…
+  [CVPR 2026][3D Vision][Paper Note] This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap. This approach avoids the information loss inherent in pre-rectification and achieves or exceeds SOTA performance on multiple public datasets.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "fisheye camera"
-  - "cross-view joint optimization"
-  - "novel view synthesis"
-  - "Kannala-Brandt model"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: fa7e4f4de1c5cb34
+content_hash: 991ab5b475309976
 ---
-
 # DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.00648](https://arxiv.org/abs/2604.00648)  
 **Code**: None  
-**Area**: 3D Vision / Novel View Synthesis
-**Keywords**: 3D Gaussian Splatting, fisheye camera, cross-view joint optimization, novel view synthesis, Kannala-Brandt model
+**Area**: 3D Vision / Novel View Synthesis  
+**Keywords**: 3D Gaussian Splatting, Fisheye Camera, Cross-view Joint Optimization, Novel View Synthesis, Kannala-Brandt Model
 
 ## TL;DR
 
-This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap, eliminating the information loss caused by pre-undistortion and achieving state-of-the-art performance on multiple public benchmarks.
+This paper natively integrates the Kannala-Brandt fisheye projection model into the 3DGS pipeline and proposes a cross-view joint optimization strategy based on feature overlap. This approach avoids the information loss inherent in pre-rectification and achieves or exceeds SOTA performance on multiple public datasets.
 
 ## Background & Motivation
 
-3D Gaussian Splatting (3DGS) has achieved breakthrough progress in novel view synthesis; however, its core rasterization renderer relies on the pinhole camera model and cannot directly handle the nonlinear distortion images produced by fisheye cameras. Fisheye cameras are widely adopted in autonomous driving, robotics, and VR/AR applications due to their ultra-wide field of view (>90°, commonly 120°–180°).
+3D Gaussian Splatting (3DGS) has achieved breakthrough progress in novel view synthesis, but its core relies on the rasterization of the pinhole camera model, making it unable to directly process nonlinear distorted images from fisheye cameras. Fisheye cameras are widely used in autonomous driving, robotics, and VR/AR due to their ultra-wide Field of View (>90°, commonly 120°-180°).
 
-Two major limitations of existing approaches:
+Two main **Limitations of Prior Work**:
 
-**Information loss from pre-undistortion**: Converting fisheye images to pinhole images crops or stretches peripheral regions through interpolation, diluting high-frequency details. 3DGS tends to overfit these low-frequency regions, producing blurring and floating artifacts.
+**Information Loss during Pre-rectification**: Converting fisheye images to pinhole images causes peripheral areas to be cropped or stretched via interpolation, diluting high-frequency details. 3DGS tends to overfit these low-frequency regions, resulting in blur and floater artifacts.
 
-**Geometric inconsistency from single-view optimization**: Even with a correct fisheye projection model, the original single-view random sampling strategy in 3DGS ignores inter-view correlations of the same Gaussian. Regions with the most severe edge distortion are especially prone to excessively large or elongated Gaussians, degrading reconstruction quality.
+**Geometric Inconsistency in Single-View Optimization**: Even when fisheye projection is correctly modeled, the original 3DGS strategy of single-view random sampling ignores the correlation of the same Gaussian across different views. Areas with severe peripheral distortion are particularly prone to creating excessively large or elongated Gaussians, leading to degraded reconstruction quality.
 
 Limitations of existing fisheye 3DGS methods:
-- **Fisheye-GS**: Still requires preprocessing into equidistant projection; cannot directly use raw fisheye images.
-- **3DGUT**: Approximates projection via the Unscented Transform with only 7 sigma points, yielding insufficient accuracy in strongly distorted regions; also disrupts the fully explicit architecture of 3DGS.
-- **Self-Cali-GS**: Learns a deformation field via a neural network, converging slowly and losing high-frequency details.
+- **Fisheye-GS**: Still requires pre-processing into equidistant projections and cannot use raw fisheye images directly.
+- **3DGUT**: Uses Unscented Transform to approximate projection with only 7 sigma points, which lacks precision in high-distortion areas and breaks the fully explicit architecture of 3DGS.
+- **Self-Cali-GS**: Learns deformation fields through neural networks, leading to slow convergence and loss of high-frequency details.
 
 ## Method
 
 ### Overall Architecture
 
-DirectFisheye-GS comprises two core innovations: (1) deep coupling of the Kannala-Brandt fisheye projection model into both the forward rendering and backward gradient computation of 3DGS; and (2) a cross-view joint optimization (CVO) strategy based on feature overlap and viewpoint diversity.
+DirectFisheye-GS aims to solve the problem where 3DGS natively only recognizes pinhole cameras. The method consists of two steps: first, integrating the real projection laws of fisheye lenses into the 3DGS forward rendering and backward gradients so each Gaussian is projected to pixels in a fisheye manner; second, replacing the original "one view at a time" random sampling with a joint optimization of related views to force consistency for the same Gaussian across multiple images. Simple projection ensures it is "projected correctly," while joint optimization ensures the "stable optimization," preventing failure in peripheral regions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw Fisheye Images + COLMAP SfM<br/>(Sparse Point Cloud + SIFT Matches)"] --> B
+    subgraph KB["Kannala-Brandt Fisheye Projection Integration"]
+        direction TB
+        B["Forward Projection<br/>Four-parameter polynomial mapping θ → θd"] --> C["Backward Jacobian Jθ (3×3)<br/>Radial + Tangential variation terms"]
+    end
+    C --> D
+    subgraph CVO["Cross-View Joint Optimization (CVO)"]
+        direction TB
+        D["Camera Association Graph<br/>Sorted by shared SIFT features"] --> E["Angle Difference Ranking<br/>Select combinations with large view variance"]
+        E --> F["Per iteration: Sample anchor + top-(batchsize−1) associated views<br/>Unified backprop after multi-view loss accumulation"]
+    end
+    F --> G["3DGS Model<br/>Compatible with existing viewers and tools"]
+```
 
 ### Key Designs
 
-1. **Kannala-Brandt Fisheye Projection Integration**: Natively supports fisheye distortion via a polynomial-expansion-based general model, avoiding the information loss introduced by pre-undistortion.
+**1. Kannala-Brandt Fisheye Projection Integration: Rendering with distortion instead of rectifying images**
 
-    - Given a 3D point $\mu_{cam} = (x_c, y_c, z_c)^T$ in camera coordinates, the incident angle $\theta$ is computed.
-    - The effective incident angle is approximated by a four-parameter polynomial: $\theta_d = \theta + k_1\theta^3 + k_2\theta^5 + k_3\theta^7 + k_4\theta^9$
-    - After obtaining the projected pixel coordinates, the complete Jacobian matrix $\mathbf{J}_\theta \in \mathbb{R}^{3\times3}$ is derived.
-    - The Jacobian consists of two components: a radial variation term (related to $\theta_d'$) and a tangential variation term (related to $\theta_d/d$).
-    - **Design Motivation**: Preserves the fully rasterized architecture of 3DGS, ensuring complete compatibility with existing 3DGS viewers and commercial tools.
+The conventional approach rectifies fisheye images into pinhole images before feeding them to 3DGS. However, rectification crops or stretches peripheral pixels, diluting high-frequency details; 3DGS then overfits these smoothed low-frequency regions, leaving blur and floater artifacts. This paper builds the actual fisheye projection curve directly into the rendering. Specifically, given a 3D point $\mu_{cam} = (x_c, y_c, z_c)^T$ in camera coordinates, it first calculates the incident angle $\theta$ relative to the optical axis, then uses a four-parameter polynomial to map it to the actual imaging angle: $\theta_d = \theta + k_1\theta^3 + k_2\theta^5 + k_3\theta^7 + k_4\theta^9$. This Kannala-Brandt model is high-order enough to fit nonlinear distortion in 120°-180° wide-angle lenses without edge distortion seen in equidistant projections. Furthermore, the paper derives the full Jacobian $\mathbf{J}_\theta \in \mathbb{R}^{3\times3}$ for this projection chain, consisting of radial (related to $\theta_d'$) and tangential (related to $\theta_d/d$) parts. This ensures the pipeline remains purely analytical and rasterization-based, without involving neural networks or sampling approximations, and the resulting Gaussians can be opened by standard 3DGS viewers.
 
-2. **Cross-View Joint Optimization (CVO)**: Addresses geometric inconsistency from single-view optimization via adaptive view grouping based on feature overlap and viewpoint diversity, enabling each Gaussian to receive consistent constraints across multiple views.
+**2. Cross-View Joint Optimization (CVO): Constraining Gaussians with multiple related views**
 
-    - **Step 1 – Camera association graph**: Leverages COLMAP SfM feature matching results to rank neighboring cameras by the number of shared SIFT feature points.
-    - **Step 2 – Angular difference ranking**: Computes the pose angular difference for each camera pair in the association graph and sorts them in descending order.
-    - **During training**: Each iteration samples one primary view and the top-(batchsize-1) associated cameras, accumulates multi-view losses, and performs a unified backward pass.
-    - **Design Motivation**: Maximizes Gaussian overlap across training views while ensuring sufficient viewpoint diversity, promoting cross-view consistency in both shape and appearance.
+Even with correct projection, the "randomly sample one image per iteration" strategy of 3DGS is problematic: it assumes views are independent, ignoring that a Gaussian appears in multiple views. In highly distorted image edges, Gaussians without cross-constraints are pulled into large, elongated shapes. CVO groups views that see the same region but from different perspectives. It reuses feature matches from COLMAP SfM, ranking adjacent cameras by the number of shared SIFT features to build a camera association graph. It then sorts pairs in the graph by pose angle difference in descending order to select combinations with large viewpoint variance. During training, it samples one anchor view and the top-(batchsize-1) associated cameras, accumulating their losses for a single backpropagation. Feature overlap ensures the views constrain the same Gaussians, while angle variance ensures constraints come from different directions, fixing the shape and color of peripheral Gaussians for cross-view consistency. This strategy is camera-model agnostic and introduces almost no overhead as it uses existing SfM results.
 
 ### Loss & Training
 
-- The loss function follows the standard 3DGS formulation: $L_k = L_1(I_k, \hat{I}_k) + \text{SSIM}(I_k, \hat{I}_k)$
-- Multi-view losses are accumulated: $L_{total} = \sum_{k} L_k$, followed by a unified backward pass to update Gaussian parameters.
-- Default batch size is set to 2 (one primary view + one associated view).
-- All experiments are conducted on a single NVIDIA A100 80 GB GPU.
+- The loss function follows the standard 3DGS setting: $L_k = L_1(I_k, \hat{I}_k) + \lambda \text{SSIM}(I_k, \hat{I}_k)$
+- Multi-view loss accumulation: $L_{total} = \sum_{k} L_k$, followed by a unified backpropagation to update Gaussian parameters.
+- Batch size is set to 2 by default (anchor view + 1 associated view).
+- All experiments were performed on a single NVIDIA A100 80GB.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**FisheyeNeRF dataset** (6 object-level small scenes, training views):
+**FisheyeNeRF Dataset** (6 object-level small scenes, training views):
 
 | Method | SSIM ↑ | PSNR ↑ | LPIPS ↓ |
-|--------|--------|--------|---------|
-| 3DGS (direct fisheye input) | 0.6124 | 18.85 | 0.5228 |
-| 3DGS* (undistorted) | 0.8240 | 25.54 | 0.2431 |
+|------|--------|--------|---------|
+| 3DGS (Direct Fisheye Input) | 0.6124 | 18.85 | 0.5228 |
+| 3DGS* (Rectified) | 0.8240 | 25.54 | 0.2431 |
 | Fisheye-GS | 0.8183 | 25.18 | 0.2658 |
 | 3DGUT | 0.8020 | 25.28 | 0.3290 |
 | Self-Cali-GS | 0.7460 | 24.01 | 0.4507 |
 | **Ours** | **0.8284** | **26.25** | **0.2295** |
 
-**Scannet++ dataset** (6 medium-scale indoor scenes, test views): The proposed method ranks first or second among all baselines on this dataset as well.
+**Scannet++ Dataset** (6 medium-scale indoor scenes, test views): The method is optimal or second-best among all baselines.
 
-**Den-SOFT dataset** (large-scale outdoor scenes): The proposed method significantly outperforms other approaches on outdoor scenes such as Ruziniu, attributed to large illumination variation and rich fine-grained details.
+**Den-SOFT Dataset** (Large-scale outdoor scenes): Significantly outperforms other methods on outdoor scenes like Ruziniu, as outdoor scenes have larger lighting variations and rich details.
 
 ### Ablation Study
 
 | Configuration | Description |
-|---------------|-------------|
-| Vanilla 3DGS + fisheye | Complete failure; SSIM only 0.61 |
-| 3DGS + undistortion | Acceptable but loses edge information |
-| Fisheye projection model alone | Effective but floating artifacts remain at edges |
-| Fisheye projection + CVO | Edge artifacts significantly reduced; global illumination consistency improved |
+|------|------|
+| Original 3DGS + Fisheye | Complete failure, SSIM only 0.61. |
+| 3DGS + Rectification | Acceptable but loses peripheral information. |
+| Fisheye Projection Model alone | Effective, but peripheral areas still have floater artifacts. |
+| Fisheye Projection + CVO | Significant reduction in peripheral artifacts, improved global illumination consistency. |
 
 ### Key Findings
 
-- Even with a correct fisheye camera model, single-view optimization still produces floating Gaussians at image boundaries — **cross-view constraints are necessary**.
-- The CVO strategy is not limited to fisheye cameras; it also improves reconstruction quality in conventional pinhole camera pipelines.
-- 3DGUT achieves comparable performance on indoor scenes but falls noticeably behind on unbounded outdoor scenes, where its strong illumination modeling introduces discontinuous artifacts.
-- Fisheye-GS suffers sharp quality degradation at image boundaries due to the overly simplified equidistant projection model.
-- While undistort-then-train is a viable alternative, the proposed method matches or surpasses it on all metrics, validating the advantage of direct native input.
+- Even with a correct fisheye camera model, single-view optimization still produces floater Gaussians at image edges—**cross-view constraints are necessary**.
+- The CVO strategy is not only applicable to fisheye cameras but can also improve the reconstruction quality of traditional pinhole camera pipelines.
+- 3DGUT is close to this method in indoor scenes but shows a significant gap in unbounded outdoor scenes—its strong illumination modeling causes discontinuous artifacts.
+- Fisheye-GS shows a sharp decline in quality at image edges because its equidistant projection model is overly simplified.
+- Although training after rectification is feasible, the proposed method is superior or equal across all metrics, proving the advantage of direct input.
 
 ## Highlights & Insights
 
-1. **High engineering completeness**: The paper derives the full Jacobian for fisheye projection (complete $3\times3$ matrix in Eq. 7) while maintaining full compatibility with the original 3DGS viewer — a significant practical advantage for real-world deployment.
-2. **Generality of CVO**: The cross-view joint optimization strategy reuses feature matching information already available from SfM at no additional computational cost, and is applicable to any camera model.
-3. **Precise problem diagnosis**: The paper clearly identifies that "even with a correct camera model, insufficient optimization leads to extreme Gaussian shapes," and addresses this from both geometric and photometric consistency perspectives.
-4. **Efficiency**: A batch size of 2 is sufficient to achieve the effect, incurring minimal additional training cost.
+1. **High Engineering Completeness**: It not only derives the Jacobian for fisheye projection (Eq.7, full 3×3 matrix) but also maintains full compatibility with original 3DGS viewers, which is highly valuable for deployment.
+2. **Universality of CVO**: The cross-view joint optimization strategy is based on existing SfM feature matching, incurs no additional computational cost, and is universal to any camera model.
+3. **Precise Problem Diagnosis**: It clearly points out that "even if the camera model is correct, insufficient optimization leads to extreme Gaussian shapes," and solves this from both geometric and photometric consistency perspectives.
+4. **Efficient and Practical**: Effective with a batchsize of 2, with minimal increase in training cost.
 
 ## Limitations & Future Work
 
-1. The batch size in CVO is fixed at 2; whether larger batches yield further improvements remains unexplored.
-2. The method relies on COLMAP for feature matching to construct the association graph — if SfM quality is poor, the effectiveness of CVO may be limited.
-3. Validation is performed solely on the Kannala-Brandt model; extensibility to other nonlinear camera models (e.g., omnidirectional cameras) has not been verified.
-4. The paper does not report a comparison of training time against vanilla 3DGS, despite the increased rendering volume introduced by batch size 2.
+1. Batchsize in CVO is fixed at 2; whether a larger batch can further improve performance has not been fully explored.
+2. Relies on COLMAP for feature matching as the basis for the association graph—CVO effectiveness may be limited if SfM quality is poor.
+3. Validated only on the Kannala-Brandt model; scalability to other nonlinear camera models (e.g., omnidirectional) remains to be verified.
+4. The paper does not discuss training time comparison with original 3DGS (though it mentions batchsize=2 increases rendering volume).
 
 ## Related Work & Insights
 
-- **MVGS**: An early exploration of multi-view training, but relies on random sampling of view subsets without geometric association.
-- **3DGUT**: Handles nonlinear projection via the Unscented Transform, representing an alternative paradigm (sampling-based approximation vs. analytical derivation).
-- **Scaffold-GS / Compact3DGS**: Works focused on optimizing 3DGS data structures and memory, orthogonal to the proposed method.
-- Insight: The single-view optimization paradigm of 3DGS is inherently limited; cross-view consistency constraints should become a standard component of future pipelines.
+- **MVGS**: One of the first to explore multi-view training, but it randomly samples view subsets and lacks geometric correlation.
+- **3DGUT**: Handles nonlinear projection via Unscented Transform, representing an alternative approach (sampling approximation vs. analytical derivation).
+- **Scaffold-GS / Compact3DGS**: Works optimizing 3DGS data structures and memory, which are orthogonal to this method.
+- **Insight**: The single-view optimization paradigm of 3DGS is inherently flawed; cross-view consistency constraints should become a standard component.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Fisheye projection integration is an engineering innovation; the CVO strategy constitutes a methodological contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets, comprehensive comparisons, and analysis across training/test views.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure and precise problem formulation.
+- Novelty: ⭐⭐⭐⭐ — Fisheye projection integration is an engineering innovation; CVO is a methodological contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets, comprehensive comparisons, and analysis of training/test views.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure and precise problem definition.
 - Value: ⭐⭐⭐⭐ — High direct applicability to VR/AR and autonomous driving scenarios.
 
 <!-- RELATED:START -->
@@ -142,11 +146,11 @@ DirectFisheye-GS comprises two core innovations: (1) deep coupling of the Kannal
 
 ## Related Papers
 
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation](ng_gs_nerf_guided_3d_gaussian_splatting_segmentation.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](../../ICLR2026/3d_vision/moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
+- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
 
 </div>
 

@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Less Is More: Elevating RAG via Performance-Driven Context Compression
 description: >-
-  [ICML 2026][Information Retrieval & RAG][RAG] CORE-RAG utilizes Group Relative Policy Optimization (GRPO) reinforcement learning with a "performance-as-reward" mechanism to train a 1.5B small compressor. It compresses re…
+  [ICML 2026][Information Retrieval & RAG][RAG] CORE-RAG utilizes "Performance-as-Reward" GRPO reinforcement learning to train a 1.5B small compressor that compresses retrieved top-k documents into summaries approximately 3% of their original length. Consequently, this method not only avoids performance degradation but also achieves an average improvement of 3.3 EM
 tags:
-  - "ICML 2026"
-  - "Information Retrieval & RAG"
-  - "RAG"
-  - "Context Compression"
-  - "GRPO"
-  - "Knowledge Distillation"
-  - "Performance-Driven"
+  - ICML 2026
+  - Information Retrieval & RAG
+  - RAG
+  - GRPO
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: a11e0cfde9573489
+content_hash: 727bf1610b9b0972
 ---
-
 # Less Is More: Elevating RAG via Performance-Driven Context Compression
 
 **Conference**: ICML 2026  
@@ -24,110 +21,114 @@ content_hash: a11e0cfde9573489
 **Keywords**: RAG, Context Compression, GRPO, Knowledge Distillation, Performance-Driven
 
 ## TL;DR
-CORE-RAG utilizes Group Relative Policy Optimization (GRPO) reinforcement learning with a "performance-as-reward" mechanism to train a 1.5B small compressor. It compresses retrieved top-k documents into summaries at ~3% of their original length. Instead of performance degradation, it achieves an average 3.3 EM improvement over full-context RAG across four QA benchmarks.
+CORE-RAG utilizes "Performance-as-Reward" GRPO reinforcement learning to train a 1.5B small compressor that compresses retrieved top-k documents into summaries approximately 3% of their original length. Consequently, this method not only avoids performance degradation but also achieves an average improvement of 3.3 EM across four QA benchmarks compared to full-context RAG.
 
 ## Background & Motivation
 
-**Background**: RAG enhances factual QA performance of LLMs by 10+ EM by prepending top-k retrieved documents to the query. However, token counts increase linearly—5 documents require ~700 tokens, and 10 documents require ~1400 tokens—leading to high encoding costs and latency.
+**Background**: RAG enhances the factual QA performance of LLMs by over 10 EM by prepending top-k retrieved documents to the query. However, token counts increase linearly—approximately 700 tokens for 5 documents and 1400 tokens for 10 documents—leading to high encoding costs and latency.
 
-**Limitations of Prior Work**: Existing compression methods (RECOMP / NoiseFilter-IB / LongLLMLingua / QGC, etc.) almost inevitably lead to performance drops, typically 2-6 EM lower than the full-context baseline. This is because their training objectives rely on **proxy heuristics**: maximizing mutual information between source and summary, imitating teacher outputs, BM25 lexical overlap, or information entropy pruning. There is no causal chain between these objectives and whether the "downstream LLM answers correctly."
+**Limitations of Prior Work**: Existing compression methods (RECOMP / NoiseFilter-IB / LongLLMLingua / QGC, etc.) almost invariably suffer from performance drops, typically losing 2-6 EM compared to the full-context baseline. This is because their training objectives rely on **proxy heuristics**: maximizing mutual information between the original and the summary, imitating teacher outputs, BM25 surface-level overlap, or information entropy pruning. There is no causal chain between these objectives and whether the downstream LLM answers correctly.
 
-**Key Challenge**: Compression tasks lack ground-truth labels—it is unknown what kind of summary is "optimal" for a downstream LLM to answer a specific question. All surrogate losses are speculative, leading to performance drops when those guesses are inaccurate. Meanwhile, some compression models (e.g., NoiseFilter-IB) have parameter counts approaching those of the downstream LLM itself, causing the saved computation to be consumed by the compressor.
+**Key Challenge**: The compression task lacks ground-truth labels—it is unknown which summary is "optimal" for a downstream LLM to answer a specific question. All surrogate losses are approximations; inaccuracies lead to performance loss. Meanwhile, some compression models (e.g., NoiseFilter-IB) have parameters comparable to the downstream LLMs themselves, causing the saved compute to be consumed by the compressor itself.
 
-**Goal**: (i) Align the compression objective strictly with downstream task performance to achieve "lossless or superior" results; (ii) Ensure the compressor is significantly smaller than the downstream LLM to truly save computational resources.
+**Goal**: (i) Align the compression objective strictly with downstream task performance to achieve "lossless or superior" results; (ii) Ensure the compressor is much smaller than the downstream LLM to realize actual compute savings.
 
-**Key Insight**: Since gold summaries do not exist, the **accuracy of the downstream LLM itself is treated as the reward**. The compressor is trained as a policy within an RL framework. The downstream LLM remains frozen throughout (black box), while only the lightweight compressor is trained, making it naturally compatible with API-based model scenarios.
+**Key Insight**: Since gold summaries do not exist, **the downstream LLM's answer accuracy should be used directly as the reward**, allowing the compressor to learn as a policy within an RL framework. The downstream LLM remains frozen (black-box), only training the lightweight compressor, which naturally fits API-based model scenarios.
 
-**Core Idea**: Compression is treated as a decision-making process. GRPO is used to optimize the compressor using downstream EM/F1 as rewards. A distillation phase using DeepSeek-V3 combined with data filtering rules provides a warm-start, followed by RL refinement.
+**Core Idea**: Compression is viewed as a decision process. GRPO is used to optimize the compressor with downstream EM/F1 as rewards. A warm-start is performed using DeepSeek-V3 distillation combined with data filtering rules, followed by RL refinement.
 
 ## Method
 
 ### Overall Architecture
-Input: question $q$ + retrieved $k$ documents $D$ (obtained via existing retrievers like DPR / BM25 / Contriever).
-Compressor: A small language model $\pi_\theta:(q,D)\mapsto s$ (the study uses Qwen2.5-1.5B-Instruct).
-Downstream LLM: A black-box large model $M:(s,q)\mapsto \hat{y}$ (the study uses Qwen2.5-14B-Instruct, with transfer to Llama-3.1-8B for generalization verification), frozen during training and inference.
 
-Training consists of two stages: **Stage 1: Distillation Warm-Start** (enabling the small model to generate "reasonable" summaries and learn "when to output empty strings"), and **Stage 2: Performance-Driven RL via GRPO** (refinement using downstream accuracy as the reward). During inference, the process involves only two steps: $s = \pi_\theta(q,D)$ → $\hat{y}=M(s,q)$, with the compressor acting as a plug-in.
+CORE-RAG addresses the issue of unavoidable performance loss in RAG compression by redefining compression from "finding a good summary" to "finding a summary that enables the downstream LLM to answer correctly." The system involves three roles: a retriever (DPR / BM25 / Contriever) that fetches question $q$ and $k$ documents $D$; a small language model compressor $\pi_\theta:(q,D)\mapsto s$ (Main Experiment: Qwen2.5-1.5B-Instruct); and a frozen black-box downstream LLM $M:(s,q)\mapsto\hat{y}$ (Main Experiment: Qwen2.5-14B-Instruct). Training consists of two stages: first, distillation using DeepSeek-V3 to give the small model a stable starting point, followed by GRPO reinforcement learning using downstream answer accuracy as the reward. During inference, only two steps remain: $s=\pi_\theta(q,D)$ and $\hat{y}=M(s,q)$, with the compressor acting as a plug-in for any LLM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    R["Retriever DPR / BM25 / Contriever<br/>Fetch question q + top-k documents D"]
+    R --> S1["Stage 1 · DeepSeek-V3 Distillation + Performance-Gated Filtering<br/>Teacher summaries selected via downstream accuracy; teach model to output empty strings when harmful"]
+    S1 --> S2["Stage 2 · Performance-Driven GRPO Reward<br/>Sample G summaries → Frozen LLM answers → r = EM + α·F1 to update policy"]
+    S2 --> C["Trained Compressor π_θ"]
+    subgraph ASYM["Asymmetric Architecture: Small Compressor + Black-box Large LLM (~1:10)"]
+        direction TB
+        C --> SUM["Summary s (~3% length)"]
+        SUM --> M["Frozen Downstream LLM M (Black-box, no gradient backpropagation)"]
+    end
+    M --> Y["Answer ŷ"]
+```
 
 ### Key Designs
 
-1. **Performance-Driven RL with GRPO**:
+**1. Performance-Driven GRPO Reward: Using "Direct Accuracy" as Reward**
 
-    - **Function**: Trains the compressor using the downstream LLM's accuracy directly as the reward, bypassing the ill-posed question of "what constitutes a good summary."
-    - **Mechanism**: The compressor $\pi_\theta$ serves as the policy. For each input $x=(q,D)$, $G$ summaries $\{s_i\}$ are sampled. Each summary is prepended to $q$ and fed into the frozen downstream LLM $M$ to obtain an answer $\hat{y}_i = M(s_i,q)$. The reward $r = r_{\text{EM}} + \alpha \cdot r_{\text{F1}}$ is computed, where $r_{\text{EM}}=\mathbb{I}(\hat{y}=y)$ provides a sparse hard signal and $r_{\text{F1}}$ provides a dense partial signal, with $\alpha\in(0,1]$ as a weight. GRPO (proposed by DeepSeek-Math) is used for optimization, normalizing advantages $A_i=(r_i-\text{mean})/\text{std}$ across the group of $G$ rollouts without a critic model, saving memory. A KL term $\beta\mathbb{D}_{\text{KL}}(\pi_\theta\|\pi_{\theta_{\text{ref}}})$ is added to prevent deviation from the warm-start.
-    - **Design Motivation**: Previous RL-for-RAG methods (e.g., TACO using token-level keep/drop) still used proxy rewards and were restricted to selection rather than rewriting. Here, the reward directly equals downstream performance, and the generative compressor can synthesize content. The frozen black-box LLM makes the method compatible with commercial APIs.
+Compression tasks lack gold summaries, and proxy heuristics (MI, BM25 overlap) fail to guarantee downstream success. CORE bypasses this by treating the compressor $\pi_\theta$ as a policy. For each input $x=(q,D)$, it samples $G$ summaries $\{s_i\}$, feeds them with $q$ into the frozen $M$ to get answers $\hat{y}_i=M(s_i,q)$, and calculates reward $r=r_{\text{EM}}+\alpha\cdot r_{\text{F1}}$—where $r_{\text{EM}}=\mathbb{I}(\hat{y}=y)$ is a sparse hard signal and $r_{\text{F1}}$ is a dense token-level partial credit signal. $\alpha\in(0,1]$ adjusts the weights. Optimization follows GRPO, normalizing group rollouts for advantage $A_i=(r_i-\text{mean})/\text{std}$, which eliminates the need for a critic model and reduces VRAM. A KL term $\beta\mathbb{D}_{\text{KL}}(\pi_\theta\|\pi_{\theta_{\text{ref}}})$ prevents deviation from the warm-start. This design is effective because the reward simplifies the target to the objective the user actually cares about, and group comparisons naturally suit the "long input to short output" compression scenario. Unlike TACO, which uses binary token-level decisions and proxy rewards, CORE's generator-based compressor is more flexible and API-compatible.
 
-2. **Distillation Warm-Start with Performance-Gated Filtering**:
+**2. DeepSeek-V3 Distillation + Performance-Gated Filtering: A Robust Start for RL**
 
-    - **Function**: Provides a robust initial policy for the 1.5B compressor to prevent RL cold-start collapse and teaches the model critical defensive behaviors, such as outputting an empty string when a summary might be detrimental.
-    - **Mechanism**: DeepSeek-V3 (671B) acts as a teacher generating a summary $\hat{s}$ for each $(q,D)$ in the training set. The downstream LLM then scores two conditions: the summary-aided score $p_{\text{summary}}$ and the bare query score $p_{\text{original}}$. Training samples are constructed based on these scores: (a) If $p_{\text{summary}}>p_{\text{original}}$, the sample is retained with the teacher summary $\hat{s}$ as the target; (b) If $p_{\text{original}}=1$ and $p_{\text{summary}}<p_{\text{original}}$ (the summary caused a correct answer to become incorrect), the target is set to an empty string to teach "refusal when necessary"; all other samples are discarded. Standard SFT is performed on the filtered set $\mathcal{X}_f$ with loss $\mathcal{L}_d = -\frac{1}{|\mathcal{X}_f|}\sum \sum_t \log P_{\pi_\theta}(\hat{s}_t\mid q,D,\hat{s}_{<t})$.
-    - **Design Motivation**: Teacher summaries are not guaranteed to be optimal. Bidirectional data filtering aligns distillation data with task performance, embedding the groundwork for RL rewards during the SFT phase. Ablations show an average drop of ~3 EM without distillation, verifying it as critical for RL success.
+Directly applying RL to a 1.5B model often leads to exploration failure due to a weak initial policy. CORE utilizes distillation data aligned with task performance: DeepSeek-V3 (671B) generates summary $\hat{s}$ for $(q,D)$. The downstream LLM scores answers under "summary" and "original" conditions ($p_{\text{summary}}$, $p_{\text{original}}$). Training samples are selected: if $p_{\text{summary}}>p_{\text{original}}$, the sample is kept with $\hat{s}$ as target; if $p_{\text{original}}=1$ and $p_{\text{summary}}<p_{\text{original}}$ (summary causes error), the target is set to an empty string to teach "refusal when necessary"; otherwise, the sample is discarded. Standard SFT is then performed on the filtered set $\mathcal{X}_f$ using token-level cross-entropy $\mathcal{L}_d=-\frac{1}{|\mathcal{X}_f|}\sum\sum_t\log P_{\pi_\theta}(\hat{s}_t\mid q,D,\hat{s}_{<t})$. This embeds the logic of the RL reward into the SFT phase and introduces the critical "empty output" functionality often overlooked in other works.
 
-3. **Asymmetric Compressor/Generator Architecture**:
+**3. Asymmetric Architecture: Realizing Compute Savings**
 
-    - **Function**: Ensures the computational savings of compression are realized by keeping the compressor lightweight.
-    - **Mechanism**: $\pi_\theta$ is intentionally designed to be much smaller than $M$ (1.5B vs. 14B, roughly 1:10). Only the compressor's gradients are backpropagated; $M$ is frozen as a reward function. During inference, the compressor generates a ~30-50 token summary from 5-10 documents, reducing the LLM's input sequence from ~700-1400 tokens to ~50 tokens (compression ratio ~3-6%).
-    - **Design Motivation**: Many prior works (e.g., NoiseFilter-IB) used compressors of similar scale to the downstream LLM, where "FLOPs saved via compression were consumed by the compressor itself." Unlike search-augmented RL paths (e.g., ReSearch / R1-Searcher) that require training the large generator, CORE's training and inference costs are significantly lower.
+Many prior works (e.g., NoiseFilter-IB) utilize compressors nearly as large as the downstream LLM, making speedups illusory. CORE intentionally designs $\pi_\theta \ll M$ (1.5B vs. 14B). Only compressor gradients are backpropagated. During inference, the compressor generates ~30-50 tokens for 5-10 documents, reducing the input sequence from ~700-1400 tokens to ~50 tokens (compression ratio ~3-6%). Since $M$ is not involved in training, the framework is compatible with proprietary API models (GPT-4/Claude) and the compressor generalizes zero-shot across different downstream LLMs. This is significantly more cost-effective than the search-reasoning paths (e.g., ReSearch) that require training large white-box generators.
 
 ### Loss & Training
-- **Stage 1 (Distillation)**: Standard token-level cross-entropy, objective $\mathcal{L}_d$ (Eq. 1).
-- **Stage 2 (GRPO)**: Objective $\mathcal{J}(\theta)$ (Eq. 2), including clipping $\epsilon$ and KL coefficient $\beta$, with group size $G$ rollouts.
-- **Composite reward**: $r = r_{\text{EM}} + \alpha r_{\text{F1}}$, with $\alpha\in(0,1]$ analyzed in Figure 4.
-- **Inference**: Uses **greedy decoding** for the compressor to ensure deterministic and reproducible summaries.
+
+Stage 1 (Distillation) uses token-level cross-entropy $\mathcal{L}_d$ (Eq. 1). Stage 2 (GRPO) uses the objective $\mathcal{J}(\theta)$ (Eq. 2), including clipping coefficient $\epsilon$, KL coefficient $\beta$, and group size $G$. The composite reward is $r=r_{\text{EM}}+\alpha r_{\text{F1}}$. Inference uses greedy decoding for deterministic summaries.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing on 4 QA benchmarks (NQ / TriviaQA / HotpotQA / 2WikiMultihopQA) with downstream LLM = Qwen2.5-14B-Instruct. All trainable baselines were initialized with Qwen2.5-1.5B-Instruct and trained on 5 documents.
+4 QA benchmarks (NQ / TriviaQA / HotpotQA / 2WikiMultihopQA), Downstream LLM = Qwen2.5-14B-Instruct. Trainable baselines use Qwen2.5-1.5B-Instruct initialization with 5 documents.
 
-| Dataset | Metric | Full Context Top-5 | CORE(1.5B) | Gain over Full Context | Token Compression Ratio |
-|--------|------|----------------|-------------|---------------|----------------|
+| Dataset | Metric | Full Context (top-5) | CORE (1.5B) | Gain over Full | Token Ratio |
+|---------|--------|----------------------|-------------|----------------|-------------|
 | NQ | EM | 38.03 | **41.02** | +2.99 | 712→46 (~6.5%) |
 | TriviaQA | EM | 64.10 | **65.63** | +1.53 | 715→32 (~4.5%) |
 | HotpotQA | EM | 32.99 | **33.67** | +0.68 | 737→36 (~4.9%) |
 | 2WikiMultihopQA | EM | 29.64 | **36.72** | +7.08 | 766→49 (~6.4%) |
 
-Compared to strong baselines (trained on 5 docs): RECOMP-Abs/Ext, NoiseFilter-IB, LongLLMLingua, and QGC suffered 2-6 EM drops across almost all datasets. DeepSeek-V3 (671B) summaries also failed to beat full context on NQ/2Wiki. CORE (1.5B) outperformed all compression baselines and the DeepSeek-V3 teacher by 4-5 EM, and even surpassed the full-context top-10 baseline (top-10 EM 38.67 vs. CORE-top5 41.02).
+Compared to strong baselines (RECOMP-Abs/Ext, NoiseFilter-IB, LongLLMLingua, QGC) which typically lose 2-6 EM vs. full context, CORE (1.5B) exceeds all compression baselines and the DeepSeek-V3 teacher by 4-5 EM. It even outperforms the top-10 full context baseline (38.67 EM on NQ) using only top-5 compressed inputs (41.02 EM).
 
-**Length Generalization**: A compressor trained on top-5 documents was applied zero-shot to top-10 documents. CORE achieved 41.88 EM on NQ using only 52 tokens (compression ratio ~3.6%), maintaining a 3.2-point lead over the top-10 full-context baseline.
+**Length Generalization**: A compressor trained on top-5 generalizes zero-shot to top-10 documents. On NQ, it achieves 41.88 EM with only 52 tokens (ratio ~3.6%), still beating the top-10 full context (38.67 EM).
 
 ### Ablation Study
-| Configuration | NQ EM | TQA EM | HotpotQA EM | 2Wiki EM | Description |
-|------|-------|--------|-------------|----------|------|
+| Configuration | NQ EM | TQA EM | HotpotQA EM | 2Wiki EM | Note |
+|---------------|-------|---------|-------------|----------|------|
 | CORE (full) | **41.02** | **65.63** | **33.67** | **36.72** | Distillation + GRPO RL |
-| w/o distillation | 36.37 | 65.23 | 32.01 | 31.40 | Direct RL cold start; ~5 EM drop on NQ/2Wiki |
-| w/o RL | 34.18 | 60.31 | 28.96 | 30.25 | Distillation only; 3-6 EM drop across datasets |
+| w/o distillation | 36.37 | 65.23 | 32.01 | 31.40 | RL cold start; NQ/2Wiki drop ~5 EM |
+| w/o RL | 34.18 | 60.31 | 28.96 | 30.25 | SFT only; universal 3-6 EM drop |
 
 ### Key Findings
-- **RL is the primary driver**: Removing RL resulted in larger drops than removing distillation (NQ 41.02→34.18 vs. 41.02→36.37), confirming that teacher summaries are not task-optimal and performance-driven signals are irreplaceable.
-- **Distillation is non-trivial**: RL still functions without distillation but is significantly weaker (e.g., 36.72→31.40 on 2Wiki), suggesting that 1.5B models struggle to converge to optimal policies through GRPO alone; warm-starting determines the RL ceiling.
-- **Cross-length and cross-LLM generalization**: Compressors trained on top-5 documents remain superior on top-10, indicating they learn task-relevant trade-offs rather than fixed length limits. Transfer to Llama-3.1-8B also maintained the advantage.
-- **Small compressors are sufficient**: 1B-3B Llama/Qwen backbones all benefited (Figure 5); 3B was not significantly stronger than 1.5B, suggesting the bottleneck is the training signal rather than capacity.
+- **RL is the primary driver**: Removing RL causes a larger drop than removing distillation (NQ 41.02→34.18 vs. 41.02→36.37), confirming that teacher summaries are sub-optimal and performance-driven signals are indispensable.
+- **Distillation is essential for warm-start**: Removing distillation significantly weakens RL (especially 2Wiki 36.72→31.40), indicating 1.5B models struggle to converge to optimal strategies via GRPO from scratch.
+- **Cross-length/LLM Generalization**: Top-5 trained compressors still excel on top-10 inputs, suggesting they learn task-relevant tradeoffs rather than simple truncation. Generalization to Llama-3.1-8B remains robust.
+- **Small compressors are sufficient**: 1B-3B Llama/Qwen backbones all benefit. 3B does not significantly outperform 1.5B, suggesting the bottleneck lies in training signals rather than capacity.
 
 ## Highlights & Insights
-- **Simplicity of "Downstream Accuracy as Reward"**: By discarding surrogate losses (mutual information, BM25, teacher imitation) and directly optimizing for the user's goal, this "reward-as-task" approach can be applied beyond compression to reranking, query rewriting, and prompt engineering.
-- **"Summary Can Be Empty" is a Critical Freedom**: Explicitly modeling "when to remain silent" during the distillation phase acts as a safeguard. This behavior is rarely explicitly modeled in other compression research.
-- **Black-box LLM + Lightweight Plug-in Training**: Since the downstream LLM requires no gradients, the method is easily applied to commercial APIs like GPT-4 or Claude, contrasting with search-reasoning methods that require training the generator.
-- **Paradigm Value of GRPO in Generative Compression**: Previously popular in mathematical reasoning, this work proves GRPO is applicable to generative compression tasks as long as rewards can be defined from downstream tasks. Group-wise comparisons naturally fit the "which summary makes the LLM answer correctly" scenario.
+- **Simplicity of "Performance-as-Reward"**: Abandoning surrogate losses (MI, BM25) to optimize the actual goal directly. This "Reward-is-the-Task" approach is extensible to reranking, query rewriting, and prompt engineering.
+- **"Summary as Empty" as a Critical Degree of Freedom**: By using specific training signals to teach "silence when harmful," CORE gives the compressor a switch frequently overlooked by other works.
+- **Black-box LLM + Lightweight Plug-in**: Downstream LLMs do not require gradient access, making the method perfectly compatible with API-only models like GPT-4 or Claude.
+- **Paradigm Value of GRPO in Compression**: CORE demonstrates that GRPO, typically used in mathematical reasoning, is equally effective for "long-to-short" generative compression where group comparisons identify the summary that helps the LLM succeed.
 
 ## Limitations & Future Work
-- **Lack of hard rewards for open generation**: For tasks like dialogue or long-form generation where EM/F1 is unsuitable, LLM-as-Judge or ROUGE/BARTScore with hallucination penalties would be required. This was discussed (Section 3.4) but not empirically tested.
-- **Dependence on ground-truth answers**: The method is essentially supervised RL. The cost of cold-starting on domains without labeled answers (e.g., private knowledge bases) might be significant, potentially requiring LLM-as-Judge for pseudo-labels.
-- **Coupling with downstream LLMs**: Rewards are calculated by a specific $M$. While the Qwen-trained compressor transferred well to Llama-3.1-8B, the effectiveness of more radical transfers (e.g., different languages or domains) remains unknown.
-- **Future Directions**: (i) Introducing process rewards (token or sentence-level) to improve credit assignment; (ii) End-to-end joint training of the compressor and retriever; (iii) Upgrading rewards to calibrated LLM-as-Judge for open generation; (iv) Introducing compression ratio as an auxiliary reward to explicitly control the token-quality trade-off.
+- **Lack of Hard Rewards for Open Tasks**: Open-ended generation lacks EM/F1 metrics. LLM-as-Judge or ROUGE and BARTScore combined with hallucination penalties are suggested remedies but were not tested.
+- **Reliance on Ground-truth Answers**: The method is essentially supervised RL, posing a high cost for domains without labeled QA pairs (e.g., proprietary knowledge bases).
+- **Coupling with Downstream LLM**: Reward signals are tied to a specific $M$. While zero-shot transfer (Qwen to Llama) worked, radical transfers (e.g., to code LLMs or different languages) are uncertain.
+- **Future Improvements**: (i) Process rewards for better credit assignment; (ii) Joint training with retrievers; (iii) Upgrading rewards to calibrated LLM-as-Judge; (iv) Introducing compression ratio as an auxiliary reward for explicit token-quality control.
 
 ## Related Work & Insights
-- **vs RECOMP (Xu et al., 2024)**: RECOMP uses token-level cross-entropy to imitate teacher summaries. CORE replaces this with performance rewards, achieving significantly higher results (CORE 41.02 vs. RECOMP-Abs 34.18 on NQ).
-- **vs NoiseFilter-IB (Zhu et al., 2024)**: NoiseFilter-IB uses Information Bottleneck to maximize mutual information, which remains a proxy objective; additionally, its compressor scale is similar to the downstream LLM. CORE uses performance alignment and a ~10x smaller compressor.
-- **vs LongLLMLingua / QGC (Jiang/Cao et al., 2024)**: These use query-guided token-level pruning (hard pruning). CORE is generative (rewriting) and guided by downstream rewards rather than entropy.
-- **vs TACO (Shandilya et al., 2025)**: TACO uses RL for binary keep/drop decisions but is not specialized for RAG. CORE's generative approach with pure performance rewards avoids the performance drops seen in TACO.
-- **vs ReSearch / R1-Searcher / WebThinker / DeepResearcher**: This family integrates search+reasoning into the LLM via RL, requiring white-box models and high inference costs. CORE treats the LLM as a black box and trains only a lightweight plug-in, reducing costs by an order of magnitude.
+- **vs RECOMP (Xu et al., 2024)**: RECOMP uses token-level CE to mimic teachers. CORE replaces this with performance-driven RL, achieving 41.02 EM on NQ vs. RECOMP's 34.18.
+- **vs NoiseFilter-IB (Zhu et al., 2024)**: NoiseFilter-IB uses Information Bottleneck (IB) as a proxy; its compressor is nearly as large as the LLM. CORE aligns with performance and is 10x smaller.
+- **vs LongLLMLingua / QGC**: These focus on token-level pruning. CORE is generative, can rewrite/synthesize, and uses performance rather than entropy for guidance.
+- **vs TACO (Shandilya et al., 2025)**: Also uses RL but focuses on binary keep/drop decisions. CORE's generative approach avoids TACO's performance degradation.
+- **vs Search-Reasoning Models (ReSearch, R1-Searcher)**: Those models train the main generator to integrated search. CORE trains a plug-in compressor, which is cheaper and compatible with black-box APIs.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ "Downstream performance as reward" is powerful and the "empty string" supervision is clever; however, GRPO is an existing technique, making this a precise application to a new scenario rather than an entirely new algorithm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive coverage across 4 QA benchmarks, multiple retrievers, cross-LLM transfer (Qwen2.5-14B / Llama-3.1-8B), cross-compressor backbones, and length generalization.
-- **Writing Quality**: ⭐⭐⭐⭐ Logical progression of motivations and clear descriptions; the only minor drawback is the lack of empirical tests for open generation mentioned in the discussion.
-- **Value**: ⭐⭐⭐⭐⭐ Directly addresses the "compression-induced drop" bottleneck in RAG, achieving performance gains at 3-6% length. Highly valuable for industrial RAG systems using API-based LLMs.
+- Novelty: ⭐⭐⭐⭐ "Downstream performance as reward" is elegant for compression; empty string supervision is a clever addition.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across benchmarks, retrievers, LLMs, and backbones.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow and clear methodology, though open-ended generation remained theoretical.
+- Value: ⭐⭐⭐⭐⭐ Solves the "compression loss" pain point for industrial RAG systems (API LLMs + long context) with high potential for extensibility.
 
 <!-- RELATED:START -->
 
@@ -136,21 +137,10 @@ Compared to strong baselines (trained on 5 docs): RECOMP-Abs/Ext, NoiseFilter-IB
 ## Related Papers
 
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](../../ACL2026/information_retrieval/more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
+- [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 - [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
 - [\[ICML 2026\] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains](ranking_free_rag_replacing_re-ranking_with_selection_in_rag_for_sensitive_domain.md)
-- [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](../../ACL2026/information_retrieval/more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
-- [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
-- [\[ICLR 2026\] Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
-- [\[AAAI 2026\] Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs](../../AAAI2026/information_retrieval/does_less_hallucination_mean_less_creativity_an_empirical_investigation_in_llms.md)
-- [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
 
 </div>
 

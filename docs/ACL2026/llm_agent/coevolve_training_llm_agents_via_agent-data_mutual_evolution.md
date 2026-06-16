@@ -2,74 +2,87 @@
 title: >-
   [Paper Note] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 description: >-
-  [ACL 2026][LLM Agent][Agent Training] CoEvolve proposes an **agent-data mutual evolution framework** that extracts three types of weakness signals (forgetting, boundary…
+  [ACL 2026][LLM Agent][Reinforcement Learning] CoEvolve proposes an **agent-data coevolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare patterns—from training trajectories to guide targeted environmental re-exploration and task synthesis. By dynamically adapting the training data distribution to the agent's evolving cap
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Agent Training"
-  - "Data Synthesis"
-  - "Co-evolution"
-  - "Forgetting Signals"
-  - "Reinforcement Learning"
+  - ACL 2026
+  - LLM Agent
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 5a5c186bde6c5df6
+content_hash: d4c243998bf68c77
 ---
-
 # CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.15840](https://arxiv.org/abs/2604.15840)  
 **Code**: [https://github.com/AMAP-ML/CoEvolve](https://github.com/AMAP-ML/CoEvolve)  
 **Area**: LLM Agent  
-**Keywords**: Agent Training, Data Synthesis, Co-evolution, Forgetting Signals, Reinforcement Learning
+**Keywords**: Agent training, data synthesis, coevolution, forgetting signals, reinforcement learning
 
 ## TL;DR
-CoEvolve proposes an **agent-data mutual evolution framework** that extracts three types of weakness signals (forgetting, boundary, and rare) from training trajectories. These signals guide the LLM to perform targeted environment re-exploration and task synthesis, allowing the training data distribution to adapt dynamically to the agent's capabilities, resulting in absolute improvements of 19-23% on AppWorld and BFCL.
+CoEvolve proposes an **agent-data coevolution framework** that extracts three types of weakness signals—forgetting, boundary, and rare patterns—from training trajectories to guide targeted environmental re-exploration and task synthesis. By dynamically adapting the training data distribution to the agent's evolving capabilities, it achieves absolute improvements of 19-23% on AppWorld and BFCL.
 
 ## Background & Motivation
 
-**Background**: LLM Agents are typically trained in interactive environments via RL, but the source of training data is a core bottleneck—relying either on human expert trajectories (expensive, limited coverage) or static data synthesized by LLMs (lacks feedback, unable to adapt to agent evolution).
+**Background**: LLM agents are typically trained via Reinforcement Learning (RL) in interactive environments. However, the source of training data remains a critical bottleneck, as it relies either on expensive and limited expert trajectories or static LLM-synthesized data that lacks feedback and fails to adapt to agent evolution.
 
-**Limitations of Prior Work**: (1) Human expert trajectories are "static snapshots" that fail to cover real-world long-tail variants (e.g., failure when a button label changes from "Book Now" to "Reserve Now"); (2) Although LLM-synthesized data reduces human dependence, it is based on random exploration with shallow and incomplete environment coverage; (3) Crucially, synthesized data is static and cannot adjust as agent capabilities evolve—skills already mastered by the agent are over-trained while weaknesses are ignored.
+**Limitations of Prior Work**: (1) Expert trajectories are "static snapshots" that fail to cover real-world long-tail variants (e.g., failure when a button label changes from "Book Now" to "Reserve Now"). (2) Existing synthetic data methods rely on random exploration, resulting in shallow and incomplete environment coverage. (3) Most importantly, synthetic data is static and cannot adjust to the agent's evolving capabilities, leading to over-training on mastered skills while neglecting persistent weaknesses.
 
-**Key Challenge**: Agent capabilities change continuously, but the training data distribution remains fixed—the lack of closed-loop feedback leads to low training efficiency and an inability to achieve continuous improvement.
+**Key Challenge**: While agent capabilities change continuously during training, the training data distribution remains fixed. This lack of closed-loop feedback leads to low training efficiency and stalls continuous improvement.
 
-**Goal**: Design a framework without human supervision where the training data distribution dynamically adjusts according to the agent's evolving weaknesses, achieving a closed loop of "agent improvement → discovery of new weaknesses → targeted data synthesis → further agent improvement."
+**Goal**: To design a framework without human supervision where the training data distribution evolves dynamically according to the agent's weaknesses, creating a loop: "agent improvement $\rightarrow$ discovery of new weaknesses $\rightarrow$ targeted data synthesis $\rightarrow$ further agent improvement."
 
-**Key Insight**: Utilize trajectory replay signals during training (forgetting, boundary, and rare patterns) to identify specific agent weaknesses, using these as conditions to guide the LLM in directional environment exploration.
+**Key Insight**: Utilize trajectory replay signals (forgetting, boundary, and rare patterns) during training to identify specific agent weaknesses and use these as conditions to guide directional environmental exploration.
 
-**Core Idea**: Extract weakness signals from RL training rollout trajectories, conditionally guide the LLM to re-explore the environment, synthesize new tasks targeting these weaknesses, and update the training distribution to form an agent-data mutual evolution loop.
+**Core Idea**: Extract weakness signals from RL training rollout trajectories to conditionally guide LLMs in re-exploring environments, synthesizing new tasks targeting these weaknesses, and updating the training distribution to form an agent-data coevolution loop.
 
 ## Method
 
 ### Overall Architecture
-A three-stage closed loop: (1) **Training + Signal Extraction**: Use GRPO to train the agent and extract three types of signals (forgetting, boundary, and rare) from rollout trajectories; (2) **Signal-Guided Re-exploration**: Provide signal trajectories to the LLM for reflection, generating structured exploration contexts to guide the LLM in discovering new interaction patterns in the environment; (3) **Task Synthesis & Verification**: Abstract discovered interactions into executable tasks, which are added to the training set after environmental verification to update the data distribution.
+CoEvolve addresses the mismatch between "static training data" and "dynamic agent capabilities" by coupling data synthesis with current agent weaknesses. In each iteration, the agent is trained using GRPO to produce rollout trajectories, from which the system extracts forgetting, boundary, and rare signals. These signals, along with failed trajectories, are fed to an LLM to reflect and generate structured exploration contexts, guiding it back into the environment for targeted re-exploration. Newly discovered interaction patterns are abstracted into tasks, verified by the environment, and merged into the next training set.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Training Set D_t"] --> B["GRPO Training<br/>Rollout Trajectories"]
+    subgraph SIG["Weakness Signal Extraction"]
+        direction TB
+        C1["Forgetting Signal<br/>Prev. Success, Now Failure"]
+        C2["Boundary Signal<br/>Inconsistent Results"]
+        C3["Rare Signal<br/>Low Frequency"]
+    end
+    B --> SIG
+    SIG --> D["Guided Re-exploration<br/>Reflection → Context → Targeted Exploration"]
+    subgraph SYN["Synthesis & Verification"]
+        direction TB
+        E1["Abstract Patterns into Tasks"] --> E2["Environment Verification<br/>Filter Hallucinations"]
+    end
+    D --> SYN
+    SYN --> F["Next Training Set D_t+1"]
+    F -->|Next Iteration| A
+```
 
 ### Key Designs
 
-1. **Extraction of Three Weakness Signals**:
-    - **Function**: Systematically identify specific agent weaknesses from training trajectories.
-    - **Mechanism**: (1) **Forgetting Signals**: Detected via a sliding window—if a task succeeded in the last $W$ iterations but currently fails ($\exists s_i \geq 0.5$ and $s_{\text{now}} < 0.5$), it indicates the agent has "forgotten" a previously learned capability; (2) **Boundary Signals**: A single training iteration for the same task contains both successful and failed trajectories among $K$ samples, indicating the agent is at a decision boundary with unstable behavior; (3) **Rare Signals**: Action patterns with a frequency below a threshold ($c_p/N < \theta/100$) but occurring more than 0 times, indicating systematically under-explored interaction patterns in the environment.
-    - **Design Motivation**: The three signals capture complementary weaknesses: forgetting = capability regression, boundary = instability, rare = insufficient exploration. Signal-driven data synthesis is more efficient than random generation.
+**1. Weakness Signal Extraction: Locating specific shortboards from trajectories**
 
-2. **Signal-Guided Environment Re-exploration**:
-    - **Function**: Use weakness signals to guide the LLM toward targeted environment exploration.
-    - **Mechanism**: Provide failed trajectories annotated with signals (including task descriptions, action sequences, and environment feedback) to the LLM, requiring it to reflect on the failure causes and generate structured exploration contexts (describing where and how it failed/was unstable). This context then conditions the LLM to interact with the real environment to discover new interaction patterns and task variants.
-    - **Design Motivation**: Unlike random exploration, signal-conditioned exploration focuses on the agent's current weakness regions, significantly improving exploration efficiency.
+The issue with random synthesis is the lack of knowledge regarding agent weaknesses, leading to wasted computation on mastered skills. CoEvolve extracts three complementary signals: **Forgetting signals** detect regression using a sliding window; if a success exists in the last $W$ attempts ($\exists s_i \geq 0.5$) but the current attempt fails ($s_{\text{now}} < 0.5$), the agent has "forgotten" a learned skill. **Boundary signals** capture instability where a task shows both success and failure across $K$ sampled trajectories, indicating the agent is at a decision boundary. **Rare signals** identify exploration gaps where action patterns appear with frequency $c_p/N < \theta/100$. Together, these provide a comprehensive weakness map.
 
-3. **Task Synthesis and Environmental Verification**:
-    - **Function**: Transform interactions discovered during exploration into executable training tasks.
-    - **Mechanism**: Abstract new interaction patterns found during re-exploration into task descriptions, perform execution verification in the environment (to ensure executability), and add verified tasks to the training set $\mathcal{D}_{t+1}$. The entire process is automated without human supervision.
-    - **Design Motivation**: Environmental verification ensures the executability of synthesized tasks (avoiding hallucinated tasks), while task abstraction ensures reusability.
+**2. Signal-Guided Re-exploration: Learning from failed frames**
+
+Identifying weaknesses is insufficient; they must be converted into exploration directions. CoEvolve provides failed trajectories (task descriptions, action sequences, environment feedback) to an LLM to first reflect on failure causes and then generate structured exploration contexts. Using this context, the LLM explores the real environment with a specific "target," discovering new interaction patterns and task variants related to the weakness. Compared to aimless random exploration, this signal-guided approach focuses the exploration budget on the most critical areas.
+
+**3. Task Synthesis & Environment Verification: Solidifying interactions into executable tasks**
+
+Interactions discovered during re-exploration can include LLM hallucinations if used directly. CoEvolve abstracts these patterns into reusable task descriptions and executes them in the environment for verification. Only tasks that are executable and produce valid feedback are merged into the next training set $\mathcal{D}_{t+1}$. This entire pipeline—exploration, synthesis, verification—requires no human intervention, with the environment serving as an objective judge.
 
 ### Loss & Training
-Train the agent using GRPO, sampling $K$ trajectories for each task and calculating policy gradients based on relative advantages within the group, with KL regularization to prevent deviation from the reference policy. Signal extraction, re-exploration, and task synthesis are performed after each training iteration.
+The agent is trained using Group Relative Policy Optimization (GRPO). For each task, $K$ trajectories are sampled, and policy gradients are calculated based on relative advantage within the group, constrained by KL regularization against a reference model. Signal extraction and data updates are performed at the end of each training iteration to update the data distribution for the subsequent round.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | AppWorld-TestN TGC | AppWorld-TestC TGC | BFCL Multi-turn | Average Gain |
+| Model | AppWorld-TestN TGC | AppWorld-TestC TGC | BFCL Multi-turn | Avg. Gain |
 |--------|------|------|------|------|
 | Qwen2.5-7B + CoEvolve | 27.98 (+26.79) | 8.39 (+7.67) | 61.50 (+48.00) | **+19.43%** |
 | Qwen3-4B + CoEvolve | 35.71 (+19.04) | 17.03 (+9.12) | 63.00 (+36.50) | **+15.58%** |
@@ -79,49 +92,48 @@ Train the agent using GRPO, sampling $K$ trajectories for each task and calculat
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Forgetting Signal Only | Effective but incomplete | Captures only capability regression |
+| Forgetting Signal Only | Effective but incomplete | Captures only performance regression |
 | Boundary Signal Only | Effective but incomplete | Captures only unstable behavior |
-| Rare Signal Only | Effective but incomplete | Captures only insufficient exploration |
+| Rare Signal Only | Effective but incomplete | Captures only under-explored areas |
 | Combined Signals | **Optimal** | Comprehensive coverage of complementary weaknesses |
-| No Env. Verification | Significant drop | Hallucinated tasks introduce noise |
+| No Env Verification | Significant Drop | Noise introduced by hallucinated tasks |
 
 ### Key Findings
-- CoEvolve transforms Qwen2.5-7B from almost unusable (1.19%) to a competitive level (27.98%), showing a massive improvement.
-- On BFCL, Qwen2.5-7B+CoEvolve reaches 61.50%, even surpassing GPT-4 (54.00%), demonstrating that data quality can compensate for gaps in model scale.
+- CoEvolve transforms Qwen2.5-7B from nearly unusable (1.19%) to a competitive level (27.98%).
+- On BFCL, Qwen2.5-7B+CoEvolve reaches 61.50%, surpassing GPT-4 (54.00%), demonstrating that data quality can bridge the gap in model scale.
 - Qwen3-30B-A3B+CoEvolve reaches 54.76% on AppWorld-TestN, approaching Claude-Sonnet-4.5 (73.81%).
-- The three types of signals are complementary—using any single type is less effective than using them in combination.
+- The three signals are complementary; using any single signal is less effective than the combined approach.
 
 ## Highlights & Insights
-- **"Forgetting signals" as a data selection criterion** is the most clever design in this paper: borrowing the concept of forgetting events from curriculum learning and applying it to guide data synthesis rather than just data selection. This idea is transferable to any training scenario requiring dynamic data distribution adjustment.
-- The **closed-loop design** (training → identifying weaknesses → synthesizing data → retraining) is more fundamental than simple data augmentation—it allows the training distribution and model capabilities to co-evolve, acting as a form of adaptive curriculum learning.
-- The result where a 7B model surpasses GPT-4 on BFCL is very striking, strongly proving that "targeted data" is more valuable than "large amounts of random data."
+- **"Forgetting signals" as a data selection metric** is an ingenious design, borrowing from curriculum learning to guide data synthesis rather than just data pruning. This concept is transferable to any scenario requiring dynamic data distribution adjustment.
+- The **closed-loop design** (train $\rightarrow$ discover weakness $\rightarrow$ synthesize $\rightarrow$ retrain) is more fundamental than simple data augmentation; it allows the training distribution and model capability to evolve together as adaptive curriculum learning.
+- The 7B model surpassing GPT-4 on BFCL provides strong evidence that "targeted data" is significantly more valuable than "large-scale random data."
 
 ## Limitations & Future Work
-- It requires interaction with real environments for verification, limiting it to scenarios with executable environments (e.g., API calls, web navigation), making it difficult to generalize to open-domain tasks.
-- Hyperparameters for signal extraction (sliding window size $W$, rare threshold $\theta$) may need adjustment for different environments.
-- The re-exploration stage relies on a strong LLM (for reflection and exploration), which introduces additional computational costs.
-- There is no direct comparison with other adaptive curriculum learning methods.
+- Requires a real environment for verification, limiting its application to scenarios with executable environments (e.g., API calls, Web navigation) rather than open-domain tasks.
+- Hyper-parameters for signal extraction (sliding window $W$, rare threshold $\theta$) may require environment-specific tuning.
+- The re-exploration phase depends on a strong LLM for reflection, introducing additional computational costs.
+- Lack of direct comparison with other existing adaptive curriculum learning methods.
 
 ## Related Work & Insights
-- **vs Static Synthetic Data (Ye et al., 2024; Ding et al., 2024)**: The latter generates data offline in a one-off manner, while CoEvolve continuously evolves the data distribution via closed-loop feedback.
-- **vs Self-Play/Self-Improvement**: The latter usually performs trajectory optimization on a fixed query set, whereas CoEvolve discovers entirely new tasks and environment states beyond just rewriting existing data.
+- **vs. Static Synthetic Data (Ye et al., 2024; Ding et al., 2024)**: The latter generates offline data once, while CoEvolve evolves the distribution continuously via closed-loop feedback.
+- **vs. Self-Play/Self-Improve**: These typically optimize trajectories on fixed query sets; CoEvolve discovers entirely new tasks and environment states beyond rewriting existing data.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The closed-loop framework for agent-data mutual evolution is a novel paradigm, and using forgetting signals for data synthesis is clever.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes multiple models (7B/4B/30B), multiple benchmarks (AppWorld/BFCL), detailed ablations, and comparisons with closed-source models.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated and the methodology flowchart is intuitive, though signal extraction formulas could be further streamlined.
+- Novelty: ⭐⭐⭐⭐ The coevolution framework is a novel paradigm for agent training.
+- Experimental Thoroughness: ⭐⭐⭐⭐ tested across multiple models (4B/7B/30B) and benchmarks with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and intuitive diagrams.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
-- [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
-- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
 - [\[ACL 2026\] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents](zara_training-free_motion_time-series_reasoning_via_evidence-grounded_llm_agents.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
+- [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
+- [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
 
 </div>
 

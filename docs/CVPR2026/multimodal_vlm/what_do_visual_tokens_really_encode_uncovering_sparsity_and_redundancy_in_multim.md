@@ -2,135 +2,139 @@
 title: >-
   [Paper Note] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][visual token analysis] This paper proposes EmbedLens, a probing tool for systematically analyzing the internal structure of visual tokens in MLLMs. It reveals that visual tokens fall into thre…
+  [CVPR 2026][Multimodal VLM][Token Redundancy] The authors propose the EmbedLens probing tool to systematically analyze the internal structure of visual tokens in MLLMs. They discover that visual tokens are categorized into three types: sink, dead, and alive (approximately 40% are useless). Alive tokens already encode rich semantics before entering the LLM ("pre-li
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "visual token analysis"
-  - "semantic sparsity"
-  - "MLLM interpretability"
-  - "attention sink"
-  - "token redundancy"
+  - CVPR 2026
+  - Multimodal VLM
+  - Token Redundancy
 date: 2026-05-08
-content_hash: b523de97ee1751d1
+content_hash: ff36410b2de7fd11
 ---
-
 # What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00510](https://arxiv.org/abs/2603.00510)  
 **Code**: [https://github.com/EIT-NLP/EmbedLens](https://github.com/EIT-NLP/EmbedLens)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: visual token analysis, semantic sparsity, MLLM interpretability, attention sink, token redundancy
 
 ## TL;DR
-This paper proposes EmbedLens, a probing tool for systematically analyzing the internal structure of visual tokens in MLLMs. It reveals that visual tokens fall into three categories—sink, dead, and alive (approximately 40% are uninformative)—that alive tokens already encode rich semantics before entering the LLM (a "pre-linguistic" property), and that intra-LLM visual computation is redundant for most tasks, such that direct mid-layer injection suffices.
+The authors propose the EmbedLens probing tool to systematically analyze the internal structure of visual tokens in MLLMs. They discover that visual tokens are categorized into three types: sink, dead, and alive (approximately 40% are useless). Alive tokens already encode rich semantics before entering the LLM ("pre-linguistic" property), and internal visual computation within the LLM is redundant for most tasks, allowing for direct middle-layer injection.
 
 ## Background & Motivation
-**Background**: MLLMs map patch embeddings from visual encoders such as CLIP into the LLM embedding space via projection layers, achieving notable progress on vision-language tasks. However, the structured organization and processing of visual tokens inside the LLM remain poorly understood.
+**Background**: MLLMs map patch embeddings from visual encoders like CLIP into the LLM embedding space via projection layers, achieving significant progress in vision-language tasks. However, the structured organization and processing of visual tokens within the LLM remain unclear.
 
-**Limitations of Prior Work**: Contrastive pretraining encourages global image-text alignment, whereas LLMs process inputs as sequences of local patch-level tokens. This mismatch creates a critical gap: how is globally aligned semantic information distributed across local tokens? Do all patches carry meaningful semantics?
+**Limitations of Prior Work**: Contrastive pre-training encourages global image-text alignment, while the LLM processes inputs as local patch-level token sequences. This inconsistency creates a critical gap in understanding: how is globally aligned semantic information distributed among local tokens? Do all patches carry meaningful semantics?
 
-**Key Challenge**: Existing analysis methods (e.g., LogitLens using the unembedding matrix) cannot distinguish whether semantics are intrinsic to the visual encoder/projection layer or injected by the language backbone.
+**Key Challenge**: Existing analysis methods (such as LogitLens using the unembedding matrix) cannot distinguish whether semantics are inherent to the visual encoder/projection layer or injected by the language backbone.
 
-**Goal**: (a) The semantic organization of visual tokens at the input layer; (b) how much information alive tokens carry before entering the LLM; (c) the necessity and optimal depth of intra-LLM visual computation.
+**Goal**: (a) Identify the semantic organizational structure of visual tokens at the input layer; (b) determine how much information alive tokens carry before entering the LLM; (c) assess the necessity and depth of internal visual computation within the LLM.
 
-**Key Insight**: EmbedLens is proposed to probe token semantics directly in the input embedding space, avoiding confounds introduced by subsequent layer transformations.
+**Key Insight**: Propose EmbedLens to directly probe token semantics in the input embedding space, avoiding confusion caused by transformations in subsequent layers.
 
-**Core Idea**: Visual tokens exhibit a tripartite sink/dead/alive structure; alive tokens are already "pre-linguistic," and intra-LLM visual computation is largely redundant.
+**Core Idea**: Visual tokens exhibit a tripartite structure of sink/dead/alive; alive tokens are already "pre-linguistic," and most internal visual computations in the LLM are redundant.
 
 ## Method
 
 ### Overall Architecture
-A two-level analytical framework: (1) macro-level—similarity-based clustering reveals the structured organization of tokens; (2) micro-level—EmbedLens probes the fine-grained semantic attributes of individual tokens and clusters. Based on these findings, three token categories are identified and analyzed in depth with respect to their behavior and function.
+Rather than proposing a new model, this paper aims to clarify what each of the hundreds of patch tokens encoded by MLLMs actually represents and which ones are redundant. The authors decompose the problem using a two-level analysis: macroscopically, they perform similarity clustering on all visual tokens to see how they group in the embedding space; microscopically, they use a probe called EmbedLens to interpret the semantic content of each token individually. By cross-referencing these levels, visual tokens naturally fall into sink, dead, and alive categories. The subsequent work involves investigating the behavior of each class—identifying which are useless placeholders, which are the true information carriers, and whether information is encoded before or after entering the LLM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Projected Visual Tokens<br/>(Before entering LLM)"] --> B["Macro: Similarity Clustering<br/>Group tokens in embedding space"]
+    A --> C["Micro: EmbedLens Probe<br/>Decode semantics token-by-token at input"]
+    B --> D["Tripartite Classification: sink / dead / alive<br/>≈10% / 30% / 60%"]
+    C --> D
+    D -->|"sink + dead ≈40%"| E["Useless Placeholders<br/>Pruning does not reduce performance"]
+    D -->|"alive ≈60%"| F["Alive: Sole Information Carriers"]
+    F --> G["Pre-linguistic Property<br/>Single patches encode multiple semantics before LLM"]
+    F --> H["Redundant Internal Computation<br/>Skip visual FFN / Self-Attention"]
+    H --> I["Architectural Insight: Direct middle-layer injection"]
+```
 
 ### Key Designs
 
-1. **EmbedLens Probing Tool**:
+**1. EmbedLens Probe: Reading semantics at the input embedding space instead of the output**
 
-    - Function: Directly probes the semantic content of visual tokens in the input embedding space.
-    - Mechanism: Computes cosine similarity between a target representation $\mathbf{h}$ and the embeddings $\mathbf{e}_i$ of all vocabulary tokens, returning the Top-k results: $\text{EmbedLens}(\mathbf{h}) = \text{TopK}_{i \in \mathcal{V}} \frac{\mathbf{h}^\top \mathbf{e}_i}{\|\mathbf{h}\|_2 \|\mathbf{e}_i\|_2}$
-    - Design Motivation: Unlike LogitLens, which operates via the unembedding matrix, EmbedLens works in the input embedding space and can thus distinguish whether semantics originate from the projection layer or are injected by the LLM. Experiments confirm higher matching accuracy at shallow and intermediate layers.
+To determine whether semantics originate from the projection layer or the LLM, it is crucial to decide where to read the tokens. Existing LogitLens methods use the unembedding matrix to project representations back to the vocabulary at the output stage, but the decoded semantics at that point have been transformed by LLM layers, making it impossible to distinguish the source. EmbedLens changes this by directly calculating the cosine similarity between the target representation $\mathbf{h}$ and the input embedding $\mathbf{e}_i$ of each token in the vocabulary, selecting the Top-k nearest words as the explanation for what the representation "looks like":
 
-2. **Discovery of Three Token Categories**:
+$$\text{EmbedLens}(\mathbf{h}) = \text{TopK}_{i \in \mathcal{V}} \frac{\mathbf{h}^\top \mathbf{e}_i}{\|\mathbf{h}\|_2 \|\mathbf{e}_i\|_2}$$
 
-    - **Sink Tokens (~10%)**: Embeddings are nearly identical across images (cosine similarity > 0.99) and carry no image-specific semantics. ViT sinks originate from CLIP (high L2 norm); LLM sinks align with ⟨bos⟩ after the layer-2 MLP. Pruning them does not degrade performance.
-    - **Dead Tokens (~30%)**: The largest cluster, exhibiting high cross-image similarity; EmbedLens retrieves fragmented, semantically void subwords. Pruning them yields performance improvements. Their representations remain nearly unchanged throughout the network, and they receive less than 8% of cross-modal attention.
-    - **Alive Tokens (~60%)**: Cluster near text-semantic centroids and serve as the sole carriers of image-specific semantics.
+Because this compares with input-side embeddings, it reads the semantics currently carried by the representation without interference from subsequent layer transformations. The authors verify that its matching accuracy in shallow and middle layers is higher than LogitLens across multiple model families including LLaVA, Qwen-VL, and InternVL.
 
-3. **"Pre-linguistic" Property of Alive Tokens**:
+**2. Sink / Dead / Alive Categories: Approximately 40% of visual tokens are placeholders**
 
-    - Core Finding: Individual alive tokens can simultaneously encode multiple semantic attributes (object identity, color, shape, OCR).
-    - Validation: A patch-level compression benchmark is constructed by rendering individual objects or characters within exactly one visual patch, then testing whether the VLM can decode multiple semantic traces from a single patch.
-    - Key Insight: Among correctly identified objects, the majority of color and counting questions are also answered correctly, demonstrating that a single patch indeed encodes multiple semantic dimensions.
+By overlaying clustering results with EmbedLens interpretations, visual tokens are clearly divided into three categories with proportions of roughly 10%, 30%, and 60%. Sink tokens (~10%) are nearly identical vectors across different images (cosine similarity > 0.99) and carry no image-specific information. Dead tokens (~30%) form the largest cluster and are also highly similar across images; EmbedLens decodes them as fragmented, non-semantic subwords. Their representations remain almost unchanged throughout the network, receiving less than 8% of cross-modal attention. Alive tokens (~60%) cluster near textual semantic centers and are the sole carriers of image-specific semantics.
 
-4. **Redundancy of Intra-LLM Visual Computation**:
+**3. "Pre-linguistic" Property of Alive Tokens: Semantics are encoded before entering the LLM**
 
-    - Overall Finding: For most standard tasks, completely bypassing visual-only FFN and self-attention layers has negligible or even positive impact on performance.
-    - Shallow-Layer Processing Is Unnecessary: The vector norms of alive tokens naturally align with intermediate LLM layers; the projector intentionally amplifies visual norms to bypass redundant shallow-layer processing.
-    - Experimental Validation: Scaling visual embeddings down to 0.01× reintroduces text-like transformations but degrades performance, indicating that high norm is an intentional design choice.
+The authors find that a single alive token can simultaneously encode multiple semantic trajectories—object identity, color, shape, and OCR text can be packed into one token. To confirm this, they created a patch-level compression benchmark where an object or character is rendered exactly into one visual patch. Results show that for patches where the object is correctly identified, most color and counting questions are also answered correctly, proving that a single patch indeed contains multi-layered semantics formed at the visual encoder + projection stage.
+
+**4. Redundancy in internal visual computation: Shallow text-centric transformations are unnecessary for visual tokens**
+
+The authors demonstrate that for most standard tasks, skipping the FFN and self-attention layers that act only on visual tokens results in nearly identical or even better performance. Projection layers intentionally amplify the L2 norm of visual tokens to skip shallow transformations designed for text. This leads to the architectural insight that visual tokens can be directly injected into middle layers rather than the first layer.
 
 ## Key Experimental Results
 
-### Main Results — Impact of Sink Token Pruning
+### Main Results — Impact of Sink Pruning
 
 | Method | General | OCR | CV Centric | Hallu. | Avg. |
-|--------|---------|-----|------------|--------|------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | LLaVA-v1.5 7B | 58.7 | 36.9 | 54.0 | 61.1 | 52.7 |
 | −Sink(LLM) | 58.6 | 37.0 | 54.4 | 61.3 | 52.7 |
 | −Sink(ViT) | 58.7 | 37.2 | 53.8 | 61.1 | 52.8 |
-| −All Sinks | 58.6 | 37.2 | 54.1 | 61.3 | 52.8 |
+| −All Sink | 58.6 | 37.2 | 54.1 | 61.3 | 52.8 |
 
 ### Ablation Study — Dead Token Pruning
 
 | Method | General | OCR | CV Centric | Hallu. | Avg. |
-|--------|---------|-----|------------|--------|------|
-| Original | 58.7 | 36.9 | 54.0 | 61.1 | 52.7 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Original Model | 58.7 | 36.9 | 54.0 | 61.1 | 52.7 |
 | −Dead | 58.7 | 37.1 | **57.7** | 61.2 | **53.7** |
-| −Same # Remaining | 57.2 | 34.3 | 48.5 | 60.2 | 50.1 |
+| −Same Amount Remaining | 57.2 | 34.3 | 48.5 | 60.2 | 50.1 |
 
 ### Key Findings
-- Removing approximately 40% of sink and dead tokens yields performance improvement rather than degradation (52.7 → 53.7), confirming input-level semantic sparsity.
-- Randomly removing the same number of alive tokens causes a notable performance drop (50.1), confirming that alive tokens are the sole information carriers.
-- Dead token representations remain nearly unchanged throughout the network (cross-layer cosine similarity approaching 1) and receive minimal cross-modal attention.
-- The layer-2 MLP in the LLM acts as a "sink aligner," projecting LLM sink tokens into a direction nearly identical to ⟨bos⟩.
-- The L2 norms of visual tokens substantially exceed those of text tokens, suppressing effective transformation at shallow layers—an intentional design of the projector.
+- Removing approximately 40% of sink+dead tokens does not decrease performance (52.7 → 53.7), confirming input-level semantic sparsity.
+- Randomly removing the same number of alive tokens significantly degrades performance (50.1), proving alive tokens are the sole information carriers.
+- Dead tokens remain almost unchanged throughout the network (cross-layer cosine similarity near 1).
+- The 2nd MLP layer of the LLM acts as a "sink aligner," projecting LLM sink tokens into nearly the same direction as ⟨bos⟩.
+- Visual token L2 norms are significantly higher than text tokens, which suppresses effective transformations in shallow layers—an intentional design of the projector.
 
 ## Highlights & Insights
-- **Tripartite Classification (sink/dead/alive)**: The first work to empirically delineate the functional roles of visual tokens, providing theoretical grounding for token pruning—directly discarding 40% of uninformative tokens suffices.
-- **EmbedLens Probe**: A model-agnostic practical tool validated across multiple model families including LLaVA, Qwen-VL, and InternVL, demonstrating higher accuracy than LogitLens at shallow layers.
-- **Architectural Implications of the Pre-linguistic Finding**: Since alive tokens already encode sufficient semantics, intra-LLM visual computation is redundant, suggesting that (a) visual FFN/self-attention can be bypassed, and (b) visual tokens can be injected at intermediate rather than first layers.
-- **Fine-grained Color Bias Finding**: Model color predictions frequently rely on background statistics rather than the target object itself, exposing a systematic bias in VLMs.
+- **Tripartite Framework (sink/dead/alive)**: Provides the first empirical evidence clearly delineating the functional roles of visual tokens, offering a theoretical basis for token pruning.
+- **EmbedLens Probe**: A model-agnostic utility verified across LLaVA, Qwen-VL, and InternVL families, proving more accurate than LogitLens in shallow layers.
+- **Architectural Implications of "Pre-linguistic" Findings**: Since alive tokens already encode sufficient semantics, visual computation within the LLM is redundant, suggesting visual tokens can skip certain layers or be injected directly into middle layers.
+- **Fine-grained Discovery of Color Bias**: Model color predictions often rely on background statistics rather than the target object itself, exposing a systemic bias in VLMs.
 
 ## Limitations & Future Work
-- The analysis is primarily based on the LLaVA-1.5 architecture; although consistency is verified on InternVL and Qwen-VL, broader coverage of visual encoders (e.g., SigLIP) is lacking.
-- The tripartite categorization relies on clustering, and the proportions may vary across images.
-- The patch compression benchmark used for "pre-linguistic" validation is highly controlled (70 images), and its generalizability to natural images remains to be verified.
-- No concrete efficient architecture is proposed to exploit these findings; the contribution is primarily mechanistic insight.
-- The optimal position for mid-layer injection may vary across tasks and models.
+- The analysis is primarily based on the LLaVA-1.5 architecture; while consistency was verified on InternVL/Qwen-VL, it does not cover all visual encoders (e.g., SigLIP).
+- The tripartite definition depends on clustering, and proportions may fluctuate across different images.
+- The patch compression benchmark used for "pre-linguistic" verification is highly controlled; generalizability to natural images requires further study.
+- No specific efficient architecture was proposed to exploit these findings beyond mechanistic insights.
 
 ## Related Work & Insights
-- **vs. FastV/VLM-Pruner and other pruning methods**: These methods prune based on attention or redundancy heuristics, whereas this paper reveals from an information-theoretic perspective that approximately 40% of tokens are inherently uninformative, providing more fundamental theoretical grounding.
-- **vs. LogitLens**: LogitLens decodes at the output side via the unembedding matrix and cannot distinguish the source of semantics; EmbedLens operates at the input side, yielding a cleaner signal.
-- **Connection to Other Papers in This Batch**: Complements "When Token Pruning is Worse than Random"—this paper explains from a representational structure perspective why deep-layer pruning is equivalent to random pruning (information has already dissipated), while that paper validates the same observation from an information quantification perspective.
+- **Vs. Pruning Methods (FastV/VLM-Pruner)**: While those methods prune based on attention or redundancy heuristics, this paper reveals from an information theory perspective that ~40% of tokens are inherently useless.
+- **Vs. LogitLens**: LogitLens decodes at the output with an unembedding matrix, failing to distinguish semantic sources; EmbedLens works at the input for a "purer" analysis.
+- **Relation to other papers**: Complements "When Token Pruning is Worse than Random"—explaining why deep pruning is equivalent to random (information dissipation) from a representation structure perspective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to systematically reveal the tripartite structure of visual tokens and the pre-linguistic property, with deep insight.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive multi-model validation, though the patch benchmark is small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical progression, advancing systematically from macro to micro.
-- Value: ⭐⭐⭐⭐⭐ Provides critical mechanistic understanding for the design of efficient MLLM architectures.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
 - [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](../../ACL2026/multimodal_vlm/what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
-- [\[CVPR 2026\] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning](vision-language_models_encode_clinical_guidelines_for_concept-based_medical_reas.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
+- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
+- [\[ICML 2025\] Do Vision-Language Models Really Understand Visual Language?](../../ICML2025/multimodal_vlm/do_vision-language_models_really_understand_visual_language.md)
+- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
 
 </div>
 

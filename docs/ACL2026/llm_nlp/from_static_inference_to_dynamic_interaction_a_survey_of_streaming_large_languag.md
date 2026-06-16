@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 description: >-
-  [ACL 2026][LLM/NLP][Streaming LLMs] This paper presents the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency…
+  [ACL 2026][LLM (Other)][Paper Note] This paper provides the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency, categorizing existing methods into a three-level progressive taxonomy: Output-streaming, Sequential-streaming, and Concurrent-streaming, c
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Streaming LLMs"
-  - "Real-time Interaction"
-  - "Incremental Encoding"
-  - "Full-duplex"
-  - "Speculative Decoding"
+  - ACL 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: c13228efc3db96b9
+content_hash: ef2d11de73e310a6
 ---
-
 # From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -25,103 +19,123 @@ content_hash: c13228efc3db96b9
 
 ## TL;DR
 
-This paper presents the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency, categorizing existing methods into a three-stage progressive hierarchy: Output-streaming, Sequential-streaming, and Concurrent-streaming, covering methodologies and applications across text, speech, and video modalities.
+This paper provides the first systematic survey of Streaming Large Language Models (Streaming LLMs). It proposes a unified definition based on data flow and interaction concurrency, categorizing existing methods into a three-level progressive taxonomy: Output-streaming, Sequential-streaming, and Concurrent-streaming, covering methodologies and applications across text, audio, and video modalities.
 
 ## Background & Motivation
 
-**Background**: Standard LLMs adopt a "one-time full-input reading" static inference paradigm—encoding the complete input into KV caches before autoregressive decoding. While effective for benchmarks, this fundamentally limits applicability in dynamic scenarios such as real-time translation, streaming video understanding, and interactive tool agents.
+**Background**: Standard LLMs adopt a "one-time full input reading" static inference paradigm—encoding the entire input into the KV cache before autoregressive decoding. While effective for benchmarks, this fundamentally limits applicability in dynamic scenarios such as real-time translation, streaming video understanding, and interactive tool agents.
 
-**Limitations of Prior Work**: (1) Information in the real world arrives incrementally, accumulates over time, and may be unbounded in length, which the static paradigm cannot handle; (2) Definitions of "Streaming LLM" are currently fragmented—concepts like autoregressive decoding, incremental/chunked encoding, and full-duplex interaction are often conflated under the same label; (3) There is a lack of large-scale pre-training data that supports real-time interaction, partial input supervision, and fine-grained temporal alignment.
+**Limitations of Prior Work**: (1) In real-world settings, information arrives incrementally, accumulates over time, and can be infinitely long, which the static paradigm cannot handle; (2) Existing definitions of "Streaming LLM" are inconsistent—concepts like autoregressive decoding, incremental/chunked encoding, and full-duplex interaction are often conflated under the same label; (3) There is a lack of large-scale pre-training data supporting real-time interaction, partial input supervision, and fine-grained temporal alignment.
 
-**Key Challenge**: There is a fundamental mismatch between the offline, all-context design of LLMs and the online, incremental, interactive data streams of the real world—models need to dynamically decide when to respond, when to wait for more information, and when to terminate.
+**Key Challenge**: A fundamental mismatch exists between the offline, full-context design of LLMs and the online, incremental, interactive data streams of the real world—models must dynamically decide when to respond, when to wait for more information, and when to terminate.
 
-**Goal**: To propose a unified definition and systematic taxonomy of Streaming LLMs, clarify terminological ambiguities, and provide a structured research roadmap for this emerging field.
+**Goal**: Propose a unified definition and systematic classification for Streaming LLMs to clarify terminology and provide a structured research roadmap for this emerging field.
 
-**Key Insight**: Streaming LLMs are defined along two dimensions—data flow and interaction concurrency—rather than being categorized solely by modality or architecture.
+**Key Insight**: Categorize Streaming LLMs based on two dimensions—data flow and interaction concurrency—rather than modality or architecture.
 
-**Core Idea**: Streaming LLMs constitute a three-stage progressive hierarchy: (1) Output-streaming: static input + streaming output (standard autoregressive); (2) Sequential-streaming: streaming input + streaming output (generation after incremental encoding); (3) Concurrent-streaming: simultaneous streaming input and output (full-duplex interaction), with each level introducing new challenges atop the previous one.
+**Core Idea**: Streaming LLMs form a three-level progressive hierarchy: (1) Output-streaming: Static input + streaming output (standard autoregressive); (2) Sequential-streaming: Streaming input + streaming output (generation after incremental encoding); (3) Concurrent-streaming: Simultaneous streaming input and output (full-duplex interaction). Each level introduces new challenges atop the previous one.
 
 ## Method
 
 ### Overall Architecture
 
-The survey is structured around the three-stage taxonomy: Output-streaming focuses on streaming generation mechanisms and efficiency; Sequential-streaming focuses on incremental encoding and context management; Concurrent-streaming additionally introduces architectural adaptation and interaction strategies. Specific methods for text, speech, and video modalities are discussed within each stage.
+Rather than modality, this survey redefines the field through data flow and interaction concurrency. "Streaming LLM" is decomposed into a three-level progressive hierarchy: Output-streaming focuses on streaming generation and efficiency; Sequential-streaming adds incremental encoding and context management; Concurrent-streaming further incorporates architecture adaptation and interaction strategies.
+
+```mermaid
+graph TD
+    subgraph L1["Output-streaming (Static Input + Streaming Output)"]
+        direction TB
+        A1["Generation Mechanism<br/>Token-level / Block-level / Refinement"]
+        A2["Efficiency Techniques<br/>Speculative Decoding · Layer Skipping · Memory Optimization"]
+        A1 --> A2
+    end
+    subgraph L2["Sequential-streaming (Streaming Input + Delayed Streaming Output)"]
+        direction TB
+        B1["Incremental Encoding<br/>Atomic Encoding / Fragment Encoding"]
+        B2["Context Management<br/>KV Cache Compression · Retrieval Memory · SSMs"]
+        B1 --> B2
+    end
+    subgraph L3["Concurrent-streaming (Simultaneous Input & Output · Full-duplex)"]
+        direction TB
+        C1["Architecture Adaptation<br/>Single-channel / Dual-channel"]
+        C2["Interaction Strategy<br/>Explicit Token · Implicit Threshold · Learning-based"]
+        C1 --> C2
+    end
+    L1 -->|Incremental Encoding Challenges| L2
+    L2 -->|Full-duplex Interaction Challenges| L3
+```
 
 ### Key Designs
 
-1.  **Output-Streaming LLMs**:
-    *   **Function**: Achieve efficient streaming output based on static inputs.
-    *   **Mechanism**: Three types of generation mechanisms—(a) Token-level: standard autoregressive (GPT, LlamaGen); (b) Block-level: semi-autoregressive (SoT parallel token generation) and block diffusion (SSD-LM); (c) Refined: multi-scale (VAR from coarse to fine) and global diffusion (LLaDA iterative denoising). Efficient technologies include speculative decoding (small draft model + large verification model), layer skipping (AdaInfer dynamic skipping of redundant layers), and memory optimization (StreamingLLM's attention sink mechanism to retain initial token KV caches).
-    *   **Design Motivation**: The low efficiency of token-by-token autoregressive generation is the main bottleneck for streaming applications; throughput must be increased while maintaining quality.
+**1. Output-streaming LLMs: Maximizing Throughput on Static Inputs**
 
-2.  **Sequential-Streaming LLMs**:
-    *   **Function**: Process incrementally arriving input streams and generate output at appropriate timings.
-    *   **Mechanism**: Two core challenges—(a) Incremental encoding: segmenting continuous inputs into "atomic encoding" (existing discrete units like subwords, ViT patches) and "fragment encoding" (requiring segmentation, such as fixed-interval or semantic-driven CTC/DiSeg); (b) Context management: KV cache compression (token eviction like H2O, quantization like KVQuant, merging like CaM), retrieval-augmented memory (MemWalker hierarchical navigation of long context), and State Space Models (Mamba’s linear complexity suited for streaming input).
-    *   **Design Motivation**: Streaming input implies the full context is unavailable during encoding, requiring decisions under incomplete information; the linear growth of KV caches for long sequences makes memory consumption infeasible.
+The main bottleneck is low efficiency in token-by-token generation. This level seeks higher throughput given full input. Generation mechanisms include: Token-level (standard autoregressive), Block-level (Semi-autoregressive like SoT, or block diffusion like SSD-LM), and Refinement (multi-scale like VAR, or global diffusion like LLaDA). Efficiency is further enhanced via Speculative Decoding, Layer Skipping (AdaInfer), and memory optimization (e.g., StreamingLLM’s attention sink for preserving initial KV caches).
 
-3.  **Concurrent-Streaming LLMs**:
-    *   **Function**: Achieve full-duplex interaction with simultaneous input and output.
-    *   **Mechanism**: Two core challenges—(a) Architectural adaptation: single-channel architectures interleave input/output into a single sequence (e.g., SpeechGPT, MiniOmni), while dual-channel architectures use independent channels (e.g., Moshi’s dual Transformer for inner/outer streams); (b) Interaction strategies: explicit strategies based on special tokens (using `<wait>/<speak>` tokens to control timing), implicit strategies based on heuristics (triggering generation when output probability exceeds a threshold), and learned strategies (learning optimal interaction timing via RL).
-    *   **Design Motivation**: Full-duplex interaction is the natural mode of human conversation—people listen while speaking, but the "turn-taking" mode of traditional LLMs cannot achieve this parallelism.
+**2. Sequential-streaming LLMs: Encoding while Receiving Incomplete Information**
+
+Models must decide when to respond with incremental, potentially infinite inputs. The first challenge is Incremental Encoding: splitting continuous input into "Atomic" units (discrete units like subwords) or "Fragments" (segmented by fixed intervals or semantics via CTC/DiSeg). The second is Context Management to handle linear KV cache growth: using KV cache compression (H2O, KVQuant), Retrieval-Augmented Memory (MemWalker), or State Space Models (Mamba’s linear complexity).
+
+**3. Concurrent-streaming LLMs: Full-duplex Interaction (Simultaneous Speaking and Listening)**
+
+Full-duplex is natural for human dialogue but difficult for standard "turn-taking" LLMs. Architecture Adaptation challenges include: Single-channel (interleaving input/output in one sequence, e.g., SpeechGPT) which is simple but prone to interference, and Dual-channel (independent channels, e.g., Moshi’s dual-Transformer) which allows parallelism at the cost of doubled parameters. Interaction Strategies ("when to respond") include explicit strategies (special `<wait>/<speak>` tokens), implicit heuristic strategies (triggering on output probability thresholds), and learning-based strategies (using RL to find optimal timing).
 
 ### Loss & Training
-
-As a survey paper, specific loss functions are not proposed. The paper outlines key streaming training challenges: the lack of streaming pre-training data, the design of partial input supervision, and the high cost of temporal alignment annotations.
+As a survey, this work identifies three common difficulties: lack of streaming pre-training data, design of partial input supervision, and the high cost of temporal alignment annotations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The survey organizes key technical comparisons:
+The paper compares existing paradigms and techniques through systematic categorization:
 
 **Comparison of the Three Streaming Paradigms**
 
-| Paradigm | Input Mode | Output Mode | Core Challenge | Representative Methods |
-| :--- | :--- | :--- | :--- | :--- |
+| Paradigm | Input Mode | Output Mode | Key Challenge | Representative Methods |
+|:---|:---|:---|:---|:---|
 | Output-streaming | Static | Streaming | Efficient Generation | Speculative Decoding, SoT |
-| Sequential-streaming | Streaming | Streaming (Delayed) | Incremental Encoding + Context Management | StreamingLLM, H2O, Mamba |
-| Concurrent-streaming | Streaming | Streaming (Simultaneous) | Full-duplex Architecture + Interaction Strategy | Moshi, MiniOmni, OmniChat |
+| Sequential-streaming | Streaming | Streaming (Delayed) | Incremental Encoding + Context Mgmt | StreamingLLM, H2O, Mamba |
+| Concurrent-streaming | Streaming | Streaming (Simultaneous) | Full-duplex Architecture + Interaction | Moshi, MiniOmni, OmniChat |
 
 **Comparison of KV Cache Compression Methods**
 
-| Method Category | Representative Work | Mechanism | Pros/Cons |
-| :--- | :--- | :--- | :--- |
-| Token Eviction | H2O, FastGen | Evict unimportant tokens based on attention scores | Simple/efficient but may lose critical info |
-| Quantization | KVQuant, KIVI | Reduce KV cache precision | High compression but possible accuracy loss |
-| Merging | CaM, D2O | Merge KV representations of similar tokens | Retains info but higher compute overhead |
+| Category | Representative Work | Mechanism | Pros/Cons |
+|:---|:---|:---|:---|
+| Token Eviction | H2O, FastGen | Evict unimportant tokens based on attention | Simple but may lose key info |
+| Quantization | KVQuant, KIVI | Reduce KV cache bit-precision | High compression but potential accuracy loss |
+| Merging | CaM, D2O | Merge similar token representations | Preserves info but higher computation |
 
 ### Key Findings
 
-*   The three-stage taxonomy clearly illustrates the progression of technical challenges—Concurrent-streaming builds on the previous two, adding architectural adaptation and interaction strategies.
-*   Speech streaming is currently the most mature direction (Moshi, SpeechGPT-Gen), followed by text, with video streaming being the least mature.
-*   KV cache management is a common bottleneck across all streaming scenarios—the discovery of "attention sinks" in StreamingLLM (initial tokens are critical for attention scores) has driven this direction.
-*   The primary open problem in full-duplex interaction is learning the strategy for "when to respond"—heuristic/threshold methods are simple but brittle, while RL methods are promising but difficult to train.
+- The three-level classification clearly illustrates the progression of technical challenges—Concurrent-streaming builds on the previous two by adding architectural and interaction layers.
+- Speech streaming is currently the most mature direction (e.g., Moshi), followed by text, while video streaming remains the least explored.
+- KV cache management is a universal bottleneck; the "attention sink" discovery in StreamingLLM (importance of initial tokens) has been pivotal.
+- The most significant open problem in full-duplex interaction is strategy learning for "when to respond"—threshold methods are brittle, while RL is promising but difficult to train.
 
 ## Highlights & Insights
 
-*   The three-stage progressive taxonomy is highly clear—unifying confusing terminology from a data flow perspective and providing a structured roadmap for future research.
-*   The comparison between single-channel and dual-channel architectures reveals the core design trade-off in full-duplex interaction: single-channel is simple but suffers from input-output interference, while dual-channel allows parallelism but doubles parameter counts.
-*   The systematic categorization of "when to respond" (explicit tokens, implicit thresholds, learned strategies) covers the full spectrum from simple to complex.
+- The progressive three-level framework unifies fragmented terminology from a data flow perspective, providing a structured roadmap.
+- The comparison of Single-channel vs. Dual-channel architectures reveals core trade-offs: simplicity vs. interference/parameter redundancy.
+- The systematic categorization of interaction strategies (explicit, implicit, learning-based) covers the full spectrum from simple heuristics to complex optimization.
 
 ## Limitations & Future Work
 
-*   Evaluation standards for Streaming LLMs are not yet unified—there is no consensus on how to synthesize latency, quality, and interactivity.
-*   The scarcity of streaming pre-training data is a fundamental bottleneck, especially for full-duplex interactive scenarios.
-*   Unified architectures for multimodal concurrent streaming (simultaneous speech, video, and text processing) remain an open problem.
-*   Safety considerations are insufficient—once a streaming generation is output, it is difficult to retract, making the cost of errors higher than in static inference.
+- Evaluation standards are not yet unified—latency, quality, and interactivity dimensions lack a consensus metric.
+- Scarcity of streaming pre-training data is a fundamental bottleneck, especially for full-duplex scenarios.
+- Unified architectures for multimodal concurrent streaming (simultaneous speech, video, text) remain an open challenge.
+- Safety considerations are insufficient—streaming outputs are harder to retract, making error costs higher than in static inference.
 
 ## Related Work & Insights
 
-*   **vs Xiao et al. (2023) StreamingLLM**: StreamingLLM is a specific method (attention sink + sliding window); this survey categorizes it as a KV cache management method under Sequential-streaming.
-*   **vs Speculative Decoding Surveys**: Speculative decoding is an efficient generation technique within Output-streaming; this survey places it within the broader Streaming LLM framework.
-*   **vs Speech Dialogue Model Surveys**: Speech dialogue models focus mainly on Concurrent-streaming; this survey encompasses text and video scenarios simultaneously.
+- **vs. Xiao et al. (2023) StreamingLLM**: StreamingLLM is a specific method (attention sink + sliding window); this survey categorizes it as a KV cache management technique within Sequential-streaming.
+- **vs. Speculative Decoding Surveys**: These focus on efficient generation (Output-streaming); this survey places them within a broader streaming context.
+- **vs. Speech Dialogue Model Surveys**: Those focus primarily on Concurrent-streaming; this survey extends the scope to text and video.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ The three-stage progressive taxonomy and unified definition provide significant conceptual contributions.
-*   Experimental Thoroughness: ⭐⭐ Survey paper with no original experiments.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Clear categorization, excellent diagram design, and comprehensive coverage.
-*   Value: ⭐⭐⭐⭐⭐ The first systematic survey of Streaming LLMs, providing a much-needed structural framework for a rapidly evolving field.
+- **Novelty**: ⭐⭐⭐⭐ The three-level classification framework and unified definition offer significant conceptual contributions.
+- **Experimental Thoroughness**: ⭐⭐ This is a survey without its own experimental benchmarks.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear taxonomy, excellent diagrams, and comprehensive coverage.
+- **Value**: ⭐⭐⭐⭐⭐ Provides a much-needed structured framework for the rapidly evolving field of Streaming LLMs.
 
 <!-- RELATED:START -->
 
@@ -130,10 +144,10 @@ The survey organizes key technical comparisons:
 ## Related Papers
 
 - [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
+- [\[ACL 2025\] Large Language Models in Bioinformatics: A Survey](../../ACL2025/llm_nlp/large_language_models_in_bioinformatics_a_survey.md)
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
+- [\[ACL 2025\] Knowledge Boundary of Large Language Models: A Survey](../../ACL2025/llm_nlp/knowledge_boundary_survey.md)
+- [\[ACL 2025\] Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling](../../ACL2025/llm_nlp/token_recycling.md)
 
 </div>
 

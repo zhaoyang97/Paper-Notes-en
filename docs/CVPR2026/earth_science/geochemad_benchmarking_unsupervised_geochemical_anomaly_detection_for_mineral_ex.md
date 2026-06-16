@@ -2,77 +2,83 @@
 title: >-
   [Paper Note] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration
 description: >-
-  [CVPR 2026][Earth Science][Geochemical Anomaly Detection] This paper introduces GeoChemAD, an open-source benchmark dataset, and GeoChemFormer…
+  [CVPR 2026][Earth Science][Transformer] This paper proposes the GeoChemAD open-source benchmark dataset and the GeoChemFormer framework. It achieves unsupervised geochemical anomaly detection through spatial context learning and element dependency modeling, reaching an average AUC of 0.7712 across eight subsets.
 tags:
-  - "CVPR 2026"
-  - "Earth Science"
-  - "Geochemical Anomaly Detection"
-  - "Unsupervised Learning"
-  - "Transformer"
-  - "Benchmark Dataset"
-  - "Mineral Exploration"
+  - CVPR 2026
+  - Earth Science
+  - Transformer
 date: 2026-05-08
-content_hash: a486f4f7318957d2
+content_hash: e20b6382677c6577
 ---
-
 # GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.13068](https://arxiv.org/abs/2603.13068)  
 **Code**: [https://github.com/yihaoding/geochemad](https://github.com/yihaoding/geochemad)  
-**Area**: Self-Supervised Learning
-**Keywords**: Geochemical Anomaly Detection, Unsupervised Learning, Transformer, Benchmark Dataset, Mineral Exploration
+**Area**: Scientific Computing  
+**Keywords**: Geochemical Anomaly Detection, Unsupervised Learning, Transformer, Benchmark Dataset, Mineral Exploration  
 
 ## TL;DR
 
-This paper introduces GeoChemAD, an open-source benchmark dataset, and GeoChemFormer, a two-stage framework that performs unsupervised geochemical anomaly detection via spatial context learning and elemental dependency modeling, achieving an average AUC of 0.7712 across 8 subsets.
+This paper proposes the GeoChemAD open-source benchmark dataset and the GeoChemFormer framework. It achieves unsupervised geochemical anomaly detection through spatial context learning and element dependency modeling, reaching an average AUC of 0.7712 across eight subsets.
 
 ## Background & Motivation
 
-Geochemical anomaly detection (GAD) is critical for mineral exploration, as it identifies locations where elemental concentrations deviate from regional baselines to indicate mineralization zones. Surface geochemical distributions result from primary in-situ and secondary dispersion processes (weathering, erosion), and collected data may reflect multi-stage, multi-source mineralization processes, leading to high spatial discontinuity, uncertainty, and stochasticity. Three key issues exist in prior work:
+Geochemical Anomaly Detection (GAD) is vital in mineral exploration for identifying mineralized zones where element concentrations deviate from regional baselines. Surface geochemical distributions result from primary mineralization and secondary dispersion (weathering, erosion), reflecting multi-stage, multi-source processes characterized by high spatial discontinuity, uncertainty, and randomness. Existing research faces three key challenges:
 
-**Non-reproducible data**: Most studies rely on proprietary datasets (primarily from the China Geological Survey), precluding fair comparison and result reproduction. Some papers even omit critical metadata.
+**Data Irreproducibility**: Most studies use private datasets (primarily from the China Geological Survey), precluding fair comparisons and replication. Critical metadata is often omitted.
 
-**Narrow scenario coverage**: Studies typically focus on a single region, single sampling medium (sediment), and single target element (gold), leaving model generalizability across different spatial scales, sampling densities, and element types unknown.
+**Single Scenarios**: Studies typically focus on a single region, a single sampling source (e.g., sediment), and a single target element (e.g., Gold). Generalization across spatial scales, sampling densities, and element types remains unknown.
 
-**Disconnect between anomalies and targets**: Anomalies detected by unsupervised methods may be unrelated to actual mineralization or the target element — a core pain point in practical exploration.
+**Disconnect Between Anomalies and Targets**: Anomalies detected by unsupervised methods may be irrelevant to actual mineralization or the target elements—a core pain point in exploration.
 
-Traditional statistical methods (PCA, factor analysis) struggle to capture complex nonlinear patterns. Deep learning approaches such as AE/VAE can model compositional relationships but neglect spatial dependencies. CNNs are constrained by fixed receptive fields, and graph models are limited in depth and representational capacity. The application of Transformers to GAD remains in its early stages, with systematic investigation of self-supervised pretraining strategies largely absent.
+Traditional statistical methods (PCA, Factor Analysis) struggle with complex non-linear patterns. Deep learning methods like AE/VAE model compositional relationships but ignore spatial dependencies. CNNs are limited by fixed receptive fields, and Graph models suffer from limited depth and representation capability. The application of Transformers in GAD is in its infancy, lacking systematic research on self-supervised pre-training.
 
 ## Method
 
 ### Overall Architecture
 
-The paper contributes two components: (1) the GeoChemAD benchmark dataset; and (2) the GeoChemFormer two-stage framework:
-- **Stage 1**: Spatial Context Learning (SCL), which learns spatial geochemical representations from neighborhood samples.
-- **Stage 2**: Elemental dependency modeling for anomaly detection, computing anomaly scores via reconstruction error.
+The paper develops both a benchmark and a methodology. The GeoChemAD benchmark standardizes GAD by providing the first multi-scenario open-source dataset. The GeoChemFormer framework decouples "spatial" and "compositional" modeling into two stages: Spatial Context Learning (SCL) to learn geological spatial representations from neighborhood samples, and Element Dependency Modeling to use reconstruction error as the anomaly score. This ensures the model captures spatial discontinuities while correlating with target mineralization elements.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["GeoChemAD Benchmark Data<br/>Sample Coordinates + 124–126 Element Concentrations"] --> SCL
+    subgraph SCL["Spatial Context Learning (SCL)"]
+        direction TB
+        B["KD-tree retrieves K nearest neighbors<br/>Concatenated into token sequence"] --> C["Transformer Encoding<br/>Masks center concentration, views neighborhood only"]
+        C --> D["Predict center target element concentration<br/>MSE self-supervised pre-training"]
+    end
+    SCL --> E["Spatial Context Representation q′<br/>Extracted per-sample as geological context"]
+    E --> F["Element Dependency Modeling<br/>Context token + Element tokens processed by Transformer"]
+    F --> G["Reconstruct element concentrations<br/>Calculate average reconstruction error"]
+    G --> H["Anomaly Score<br/>High score for deviations from normal paragenetic patterns"]
+```
 
 ### Key Designs
 
-1. **GeoChemAD Dataset**: Sourced from publicly available data of the Geological Survey of Western Australia (GSWA) Accelerated Geoscience Program, the dataset comprises 8 subsets covering 3 sampling media (2 sediment, 3 rock chips, 3 soil), 4 target elements (Au, Cu, W, Ni), and spatial scales ranging from 6 km² to 8,500 km². Each subset provides a geochemical sample CSV (containing metadata, spatial coordinates, and 124–126 elemental concentrations) and a known mineralization site CSV. Raw anomalous values (e.g., −9999, −0.5) are retained to preserve data integrity and require appropriate preprocessing. All data use the GDA2020 coordinate reference system to ensure spatial consistency. Compared to existing studies — mostly single-region, single-element, and non-public — this is the first standardized, multi-scenario open-source GAD benchmark.
+**1. GeoChemAD Benchmark: Standardizing GAD evaluation for reproducibility**
 
-2. **Spatial Context Learning (SCL)**: For a query location $p_i$, a KD-tree retrieves $K$ nearest neighbors, constructing a neighborhood token sequence $\mathcal{S} = [\mathbf{e}, \mathbf{q}_i, \mathbf{t}_1, \ldots, \mathbf{t}_K]$, where $\mathbf{e}$ is the target element token, $\mathbf{q}_i$ is the query location encoding, and $\mathbf{t}_j = [\Delta x_j, \Delta y_j, \mathbf{f}_j]$ contains the relative spatial offset and concentration vector. After processing by a Transformer encoder, a spatial context representation $\mathbf{q}_i'$ is obtained. The training objective is to predict the target elemental concentration at the query location:
+The field has long been hindered by non-public data and single scenarios. GeoChemAD utilizes public data from the Geological Survey of Western Australia (GSWA) Accelerated Geosciences Program. It includes 8 subsets covering 3 sampling sources (2 sediment, 3 rock chip, 3 soil) and 4 target elements (Au, Cu, W, Ni), with spatial scales ranging from $6 \text{ km}^2$ to $8500 \text{ km}^2$. Each subset provides CSV files for geochemical samples (metadata, coordinates, 124–126 element concentrations) and known mineralization sites. Outliers (e.g., -9999, -0.5) are preserved for integrity, using the GDA2020 coordinate system. This is the first standardized, multi-scenario open-source GAD benchmark.
 
-    $\mathcal{L}_{\text{sc}} = \frac{1}{N}\sum_{i=1}^{N}(\hat{y}_i - y_i)^2$
+**2. Spatial Context Learning (SCL): Learning spatial regularities by "predicting the center from the neighborhood"**
 
-   **Core Idea**: The model predicts the center-point concentration solely from neighborhood information, compelling it to learn geological spatial context rather than simple memorization.
+Surface geochemistry is highly spatially discontinuous. Directly modeling locations risk memorizing noise rather than learning geological structures. SCL uses a KD-tree to retrieve $K$ nearest neighbors for a query position $p_i$, forming a token sequence $\mathcal{S} = [\mathbf{e}, \mathbf{q}_i, \mathbf{t}_1, \ldots, \mathbf{t}_K]$, where $\mathbf{e}$ is the target element token, $\mathbf{q}_i$ is the query position encoding, and $\mathbf{t}_j = [\Delta x_j, \Delta y_j, \mathbf{f}_j]$ contains relative spatial offsets and concentration vectors. After Transformer encoding, the spatial context representation $\mathbf{q}_i'$ is obtained. The training goal is to predict the target element concentration at the query point: $$\mathcal{L}_{\text{sc}} = \frac{1}{N}\sum_{i=1}^{N}(\hat{y}_i - y_i)^2$$ The model is forced to learn how the surrounding context determines the center, similar to masked prediction paradigms.
 
-3. **Elemental Dependency Modeling**: In Stage 2, the spatial representation learned by SCL serves as a geological context token, which is concatenated with individual element tokens and fed into a Transformer encoder to learn inter-elemental dependencies. The anomaly score is defined as the mean reconstruction error across all elements:
+**3. Element Dependency Modeling: Identifying deviations in element paragenesis**
 
-    $s_i = \frac{1}{C}\sum_{c=1}^{C}(x_{i,c} - \hat{x}_{i,c})^2$
-
-   Samples that deviate from the learned elemental dependency patterns receive higher anomaly scores.
+Mineralization manifests as anomalous co-occurrence of multiple elements. The second stage uses the spatial representation from SCL as a geological context token, concatenated with element tokens, and processed by a Transformer to learn inter-element dependencies. The anomaly score $s_i$ is the average reconstruction error: $$s_i = \frac{1}{C}\sum_{c=1}^{C}(x_{i,c} - \hat{x}_{i,c})^2$$ Samples deviating from normal paragenetic patterns result in high reconstruction errors, isolating anomalies related to mineralization.
 
 ### Loss & Training
 
-Training proceeds in two stages: Stage 1 pretrains SCL with MSE loss (20–60 epochs); Stage 2 performs anomaly detection via reconstruction error. The evaluation metric is AUC, averaged over 20 repeated random samplings of background samples. Data preprocessing includes CLR/ILR transformations to address compositional closure, PCA/causal discovery/LLM-assisted feature selection, and IDW/Kriging spatial interpolation.
+A two-stage training strategy is adopted: Stage 1 pre-trains SCL using MSE loss (20–60 epochs); Stage 2 performs anomaly detection via reconstruction error. Evaluation uses AUC (averaged over 20 random samplings of background samples). Preprocessing includes CLR/ILR transforms for compositional data, PCA/Causal Discovery/LLM-assisted feature selection, and IDW/Kriging for spatial interpolation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | GeoChemFormer (T2) | Vanilla Transformer (T1) | AE | VAE-GAN | Best Baseline |
-|--------|-------------------|--------------------------|------|---------|---------|
+| Dataset | GeoChemFormer (Ours) | Vanilla Transformer | AE | VAE-GAN | Best Baseline |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | sed1 | **0.7228** | 0.7111 | 0.5851 | 0.6843 | T1: 0.7111 |
 | rock1 | **0.7844** | 0.7031 | 0.5516 | 0.6953 | T1: 0.7031 |
 | soil1 | **0.8704** | 0.7242 | 0.5934 | 0.7124 | T1: 0.7242 |
@@ -81,50 +87,50 @@ Training proceeds in two stages: Stage 1 pretrains SCL with MSE loss (20–60 ep
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|------|---------|------|
-| SCL pretraining 20 epochs | rock2 AUC = 0.919 | Fast convergence on small datasets |
-| SCL pretraining 40 epochs | sed1 AUC = 0.743 | Sediment data requires more training |
-| K = 16 (neighborhood size) | Best on soil2 | Compact neighborhood suits soil samples |
-| K = 256 (neighborhood size) | Best on sed1 = 0.720 | Sediment requires larger spatial context |
-| ILR transformation | Average 0.6788 | Best preprocessing for Transformer-based models |
-| LLM feature selection | Average 0.7412 | Automated selection outperforms manual |
+| Configuration | Key Metrics | Description |
+| :--- | :--- | :--- |
+| SCL Pre-training (20 epochs) | rock2 AUC=0.919 | Fast convergence on small datasets |
+| SCL Pre-training (40 epochs) | sed1 AUC=0.743 | Sediment data requires more training |
+| $K=16$ (Neighborhood size) | soil2 optimal | Soil samples suit compact neighborhoods |
+| $K=256$ (Neighborhood size) | sed1 optimal=0.720 | Sediment requires larger spatial context |
+| ILR Transform | Avg 0.6788 | Best preprocessing for Transformer models |
+| LLM Feature Selection | Avg 0.7412 | Automated selection outperforms manual selection |
 
 ### Key Findings
 
-- GeoChemFormer achieves the best performance on 5 of 8 subsets and exhibits the lowest variance (0.0039), demonstrating strong stability.
-- Spatial context learning is critical to performance gains, especially on sediment and soil datasets.
-- Preprocessing strategies (feature selection, transformation type) have significantly different impacts across model types.
+- GeoChemFormer achieves the best performance in 5 out of 8 subsets with the lowest variance (0.0039), demonstrating high stability.
+- Spatial context learning is critical for performance, particularly on sediment and soil datasets.
+- Data preprocessing strategies (feature selection, transformations) significantly impact model performance.
 
 ## Highlights & Insights
 
-- **Filling a field gap**: Provides the first open, multi-region, multi-element, multi-sampling-medium GAD benchmark dataset.
-- **Target-element awareness**: The target-element token design links anomaly detection to the specific mineralization element of interest.
-- The two-stage design decouples spatial context and elemental dependency, yielding a natural and effective pretraining strategy.
+- **Fills Domain Gaps**: Provides the first public, multi-region, multi-element, multi-source GAD benchmark.
+- **Target-element Awareness**: The target-element token links anomaly detection to specific mineralization targets.
+- The two-stage design effectively decouples spatial context and element dependency with an intuitive pre-training strategy.
 
 ## Limitations & Future Work
 
-- Data originate from a **single geographic region in Western Australia**; generalizability to other continents or geological settings (e.g., tropical weathering environments, glacial geomorphology) remains unverified.
-- The number of positive samples (mineralization sites) is limited (7–32 per subset), constraining statistical robustness of evaluation and potentially causing large AUC variance.
-- The **temporal dimension** is not considered (sampling variation across time periods and the dynamic effects of weathering/erosion).
-- On some subsets, deep generative models (AE) still outperform GeoChemFormer (e.g., rock2 AUC 0.9185 vs. T2 0.8050; rock3 AUC 0.8446 vs. T2 0.7302), suggesting Transformers are not always optimal in small-sample or high-contrast scenarios.
-- The KD-tree-based K-nearest-neighbor retrieval in SCL may face scalability challenges on large-scale datasets (>100,000 samples), which the paper does not discuss.
-- The choice of feature selection strategy (PCA/CD/LLM) substantially affects results, yet the paper provides no guidance for automatically selecting the optimal strategy.
+- Data is sourced from a **single geographic region** (Western Australia); generalization to other environments (e.g., tropical weathering, glacial landforms) is unverified.
+- The number of positive samples (mineralization sites) is limited (7–32), which may result in statistical instability for AUC calculations.
+- The **temporal dimension** is not considered (e.g., seasonal sampling variations or dynamic erosion impacts).
+- Deep generative models (AE) still outperform GeoChemFormer on specific subsets (e.g., rock2 AUC 0.9185 vs Ours 0.8050), indicating Transformers may not be optimal for small-sample/high-contrast scenarios.
+- Scalability to very large datasets ($>10^5$ samples) due to KD-tree dependencies is not discussed.
+- Guidance for automatically selecting optimal feature selection strategies (PCA vs. LLM) is lacking.
 
 ## Related Work & Insights
 
-- **vs. Traditional statistical methods (Z-score, Mahalanobis)**: Average AUC of only 0.50–0.53; unable to capture complex nonlinear patterns in geochemical data.
-- **vs. AE/VAE family**: AE performs excellently on certain subsets (rock2: 0.9185) but exhibits high cross-dataset variance (0.0220) and poor stability. GeoChemFormer achieves more stable cross-scenario performance through spatial context learning.
-- **vs. VAE-GAN**: VAE-GAN achieves an average AUC of 0.7279 with low variance (0.0041), making it the most stable non-Transformer method, yet GeoChemFormer still surpasses it by 0.0433.
-- **vs. existing GAD deep learning studies (Yang2023, Yu2024, etc.)**: These works employ proprietary data and single-region evaluation, precluding fair comparison. The standardized GeoChemAD dataset enables rigorous future benchmarking.
-- **Insight**: The SCL "predict center from neighborhood" strategy resembles masked prediction paradigms and is transferable to other geospatial anomaly detection tasks (environmental monitoring, urban heat island effects). The target-element-aware design philosophy — directing the model's attention toward "anomalies related to what" rather than simply "whether an anomaly exists" — offers valuable reference for anomaly detection in any domain.
+- **vs. Traditional Statistical Methods (Z-score, Mahalanobis)**: Traditional methods show average AUC 0.50–0.53, failing to capture complex non-linear patterns.
+- **vs. AE/VAE Series**: AE performs excellently on certain subsets but shows high variance (0.0220). GeoChemFormer provides more stable across-scenario performance.
+- **vs. VAE-GAN**: VAE-GAN is the most stable non-Transformer method (AUC 0.7279), but GeoChemFormer exceeds it by 0.0433.
+- **vs. Prior GAD Deep Learning Studies**: Previous works use private data and single-region evaluations. GeoChemAD enables fair standardized comparisons.
+- **Insights**: The SCL strategy of "predicting the center from the neighborhood" mirrors the masked prediction paradigm and can be transferred to other geospatial anomaly tasks. The concept of "related-to-what" anomaly detection is highly valuable across domains.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ — The methodological design is sound but not groundbreaking; the primary contribution lies in the dataset.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation with 12 baselines, multi-dimensional preprocessing analysis, ablation studies, and case studies.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with thorough dataset description.
-- Value: ⭐⭐⭐⭐ — The open-source dataset makes an important contribution to the intersection of geoscience and AI.
+- Novelty: ⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -132,11 +138,11 @@ Training proceeds in two stages: Stage 1 pretrains SCL with MSE loss (20–60 ep
 
 ## Related Papers
 
+- [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
+- [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
 - [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
 - [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
 - [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](../../AAAI2026/earth_science/renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
-- [\[NeurIPS 2025\] Predicting Public Health Impacts of Electricity Usage](../../NeurIPS2025/earth_science/predicting_public_health_impacts_of_electricity_usage.md)
-- [\[NeurIPS 2025\] A Probabilistic U-Net Approach to Downscaling Climate Simulations](../../NeurIPS2025/earth_science/a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)
 
 </div>
 

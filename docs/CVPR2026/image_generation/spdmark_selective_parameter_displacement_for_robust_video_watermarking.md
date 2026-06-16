@@ -2,144 +2,153 @@
 title: >-
   [Paper Note] SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 description: >-
-  [CVPR 2026][Image Generation][Video watermarking] SPDMark proposes a video diffusion model watermarking framework based on Selective Parameter Displacement (SPD). By learning a low-rank basis shift dictionary in the deco…
+  [CVPR 2026][Image Generation][LoRA] SPDMark proposes an in-model video watermarking framework based on Selective Parameter Displacement (SPD). By learning a dictionary of low-rank base shifts in the decoder and combining them based on a watermark key, it achieves per-frame embedding, imperceptibility, high robustness, and low computational overhead, whil
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Video watermarking"
-  - "parameter displacement"
-  - "LoRA"
-  - "diffusion models"
-  - "robustness"
+  - CVPR 2026
+  - Image Generation
+  - LoRA
+  - Diffusion Model
 date: 2026-05-08
-content_hash: da941b9a8e9f8b82
+content_hash: 99aa6d1f2a5ad9a4
 ---
-
 # SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.12090](https://arxiv.org/abs/2512.12090)  
-**Code**: Available (mentioned in the paper)  
-**Area**: Diffusion Models / Video Watermarking
-**Keywords**: Video watermarking, parameter displacement, LoRA, diffusion models, robustness
+**Code**: Available (mentioned in paper)  
+**Area**: Diffusion Models / Video Watermarking  
+**Keywords**: Video Watermarking, Parameter Displacement, LoRA, Diffusion Models, Robustness
 
 ## TL;DR
-SPDMark proposes a video diffusion model watermarking framework based on Selective Parameter Displacement (SPD). By learning a low-rank basis shift dictionary in the decoder and selecting combinations according to the watermark key, it achieves per-frame watermark embedding with imperceptibility, high robustness, and low computational overhead, while supporting temporal tampering detection and localization.
+SPDMark proposes an in-model video watermarking framework based on Selective Parameter Displacement (SPD). By learning a dictionary of low-rank base shifts in the decoder and combining them based on a watermark key, it achieves per-frame embedding, imperceptibility, high robustness, and low computational overhead, while supporting temporal tampering detection and localization.
 
 ## Background & Motivation
 
-1. **Background**: The emergence of high-quality video generation models (e.g., Sora, SVD) has made the provenance of AI-generated video an increasingly pressing problem. Both the EU AI Act and U.S. AI executive orders recommend watermarking AI-generated content. Video watermarking must simultaneously satisfy imperceptibility, robustness, and computational efficiency.
+1. **Background**: The emergence of high-quality video generation models (e.g., Sora, SVD) has made the provenance of AI-generated videos increasingly critical. The EU AI Act and US Executive Orders suggest watermarking AI-generated content. Video watermarking must simultaneously satisfy imperceptibility, robustness, and computational efficiency.
 
-2. **Limitations of Prior Work**: (a) Post-processing methods (e.g., VideoSeal) introduce latency and cannot leverage generative priors; (b) noise-space methods (e.g., VideoShield) decode via DDIM inversion, incurring high computational cost and susceptibility to perturbations; (c) model fine-tuning methods (e.g., LVMark) uniformly modulate all layers, limiting per-frame control, while VidSig embeds only a single fixed signature and cannot detect temporal tampering. All three categories exhibit trade-offs among imperceptibility, robustness, and efficiency.
+2. **Limitations of Prior Work**: (a) Post-processing methods (e.g., VideoSeal) increase latency and fail to leverage generative priors; (b) Noise-space methods (e.g., VideoShield) rely on DDIM inversion for decoding, which is computationally expensive and sensitive to perturbations; (c) Model-finetuning methods (e.g., LVMark) modulate all layers uniformly, limiting per-frame control, while VidSig embeds only a single fixed signature, failing to detect temporal tampering. These three types of methods exhibit trade-offs between imperceptibility, robustness, and efficiency.
 
-3. **Key Challenge**: How can one achieve efficient multi-key per-frame watermark embedding with frame-level temporal tampering detection, without sacrificing video quality?
+3. **Key Challenge**: How to achieve efficient multi-key per-frame watermark embedding without sacrificing video quality, while enabling frame-level temporal tampering detection?
 
 4. **Goal**: Design an in-generation video watermarking scheme that supports arbitrary keys, per-frame watermarking, and temporal tampering detection with negligible computational overhead.
 
-5. **Key Insight**: Rather than perturbing pixels or noise, the method learns a dictionary of low-rank basis shifts and selectively displaces the generative model's parameters according to the watermark key to embed the watermark.
+5. **Key Insight**: Instead of perturbing pixels or noise, the watermark is embedded by learning a dictionary of low-rank base shifts and selectively displacing generative model parameters according to the watermark key.
 
-6. **Core Idea**: Learn a fixed LoRA basis shift dictionary; the watermark key for each frame determines which basis shift is selected per layer, thereby embedding per-frame watermarks in the decoder parameter space—without inference overhead or per-key retraining.
+6. **Core Idea**: Learn a fixed dictionary of LoRA base shifts. The watermark key for each frame determines which base shift is selected for each layer, thereby embedding per-frame watermarks in the decoder parameter space without inference overhead or per-key retraining.
 
 ## Method
 
 ### Overall Architecture
-The SPDMark pipeline proceeds as follows: (1) Given a video-level key $K_{base}$, a unique watermark message $\kappa_t$ is generated for each frame via a cryptographic hash function; (2) each $\kappa_t$ is mapped to a binary mask $\mathbf{b}(\kappa_t)$ that selects one LoRA basis shift per decoder layer; (3) a watermarked video $\tilde{\mathbf{x}}$ is generated using the displaced decoder; (4) after per-frame watermark extraction, maximum bipartite matching and hypothesis testing are applied to verify watermark validity and localize temporal tampering.
+SPDMark aims to "write" the watermark during the generation process of the video diffusion model, embedding different watermarks per frame to maintain quality while tracking per-frame modifications. Rather than altering pixels or noise, it modifies decoder parameters. Given a video-level key $K_{base}$, a unique watermark message $\kappa_t$ is derived for each frame using a cryptographic hash. Each $\kappa_t$ is translated into a binary mask to select a "base shift" from the dictionary for each decoder layer. Selected base shifts are added to the original parameters, and the video $\tilde{\mathbf{x}}$ generated by this fine-tuned decoder carries per-frame watermarks. The extraction end uses a ResNet-50 to read messages frame-by-frame, followed by bipartite matching and hypothesis testing between the extracted and reference sequences to verify the watermark and locate deleted, swapped, or inserted frames.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    K["Video Key K_base"] --> HMAC["Per-frame Key Derivation<br/>κ_t = HMAC-SHA256(K_base, t)"]
+    HMAC --> SPD["Selective Parameter Displacement<br/>Key split into L chunks, 1 base shift per layer"]
+    DICT["LoRA Base Shift Dictionary<br/>P=4 low-rank pairs ζ=AB (r=32) per layer"] --> SPD
+    SPD --> GEN["Accumulate to Decoder for Per-frame Generation x̃<br/>Zero extra inference overhead"]
+    GEN --> EXT["ResNet-50 Per-frame 28-bit Extraction"]
+    EXT --> MATCH["Bipartite Matching (Hungarian) + Hypothesis Testing"]
+    MATCH --> OUT["Verify Watermark + Locate Deleted/Swapped/Inserted Frames"]
+```
 
 ### Key Designs
 
-1. **Selective Parameter Displacement Framework**:
+**1. Selective Parameter Displacement: Converting "Which Watermark" to "Which Base Shift per Layer"**
 
-    - **Function**: Encodes the watermark key as a parameter displacement in the generative model.
-    - **Mechanism**: The model parameters are partitioned into an unmodified set $\Phi_U$ and a modifiable set $\Phi_M$ (decoder only). $\Phi_M$ spans $L$ layers, each with $P$ basis shifts $\zeta_{\ell,p}$; the displacement is $\Delta\phi_\ell = \sum_{p=1}^P b_{\ell,p} \zeta_{\ell,p}$. The key-to-mask mapping splits an $M = L\log_2 P$-bit key into $L$ chunks, where the decimal value of each chunk selects the basis shift for that layer. In practice, exactly one basis shift is selected per layer: $\Delta\Phi_M(\kappa) = [\zeta_{1,i_1+1}, \ldots, \zeta_{L,i_L+1}]^T$.
-    - **Design Motivation**: The full parameter displacement space is too large to be learnable directly. Decomposing it into a layer-wise basis shift selection problem drastically reduces the search space. A fixed dictionary supports arbitrary keys without per-key retraining.
+Directly learning a mapping from "key to parameter displacement" is impractical because decoder parameters are high-dimensional and the displacement space is too vast. SPDMark decomposes the problem: parameters are divided into frozen $\Phi_U$ and mutable $\Phi_M$ (decoder only). Let $\Phi_M$ span $L$ layers, with $P$ candidate base shifts $\zeta_{\ell,p}$ prepared for each layer. The actual displacement for a layer is $\Delta\phi_\ell = \sum_{p=1}^P b_{\ell,p}\,\zeta_{\ell,p}$, where the mask $b_{\ell,p}$ is determined by the key. Specifically, the $M = L\log_2 P$ bit key is split into $L$ chunks; the decimal value of the $\ell$-th chunk selects the base shift for that layer. Since only one shift is selected per layer, the displacement collapses into a pure selection:
 
-2. **LoRA-Based Parameter-Efficient Implementation**:
+$$\Delta\Phi_M(\kappa) = [\zeta_{1,i_1+1},\ \ldots,\ \zeta_{L,i_L+1}]^{T}$$
 
-    - **Function**: Implements basis shifts in a parameter-efficient manner.
-    - **Mechanism**: Each basis shift is factorized as $\zeta_{\ell,p} = A_{\ell,p} B_{\ell,p}$, where $A \in \mathbb{R}^{d \times r}$, $B \in \mathbb{R}^{r \times d}$, and $r \ll d$ (with $r=32$ in the paper). The displaced layer output is $\mathbf{h}_\ell = \mathcal{F}_{\phi_\ell}(\mathbf{h}_{\ell-1}) + \alpha \mathcal{F}_{\Delta\phi_\ell}(\mathbf{h}_{\ell-1})$. The method is applied to $L=14$ spatial ResNet blocks in the decoder, each with $P=4$ LoRA modules, yielding $\log_2 4 = 2$ bits per layer and a per-frame payload of 28 bits.
-    - **Design Motivation**: Learning full-rank shift parameters directly is prohibitively expensive. Low-rank LoRA decomposition preserves expressiveness while drastically reducing parameter count, making the scheme deployable on large-scale models.
+This ensures the dictionary $\{\zeta_{\ell,p}\}$ is fixed after training. New keys simply switch combinations within the dictionary without retraining. This reduces the search space from high-dimensional continuous displacement to discrete selection per layer.
 
-3. **Per-Frame Watermarking and Temporal Tampering Detection**:
+**2. LoRA for Base Shifts: Keeping the Dictionary Lightweight**
 
-    - **Function**: Embeds a unique per-frame watermark message and supports frame-level tampering localization.
-    - **Mechanism**: A frame-level message is generated as $\kappa_t = \text{Trunc}_M(\mathcal{H}(K_{base}, t))$ using HMAC-SHA256. During extraction, a ResNet-50 extracts 28-dimensional logits per frame. For verification, a bipartite graph is constructed from reference messages $\mathbf{K}$ and extracted messages $\hat{\mathbf{K}}$, with edge weights defined by Hamming similarity $\bar{S}_{m,n} = 1 - \psi(\kappa_m, \hat{\kappa}_n)/M$. The Hungarian algorithm finds the maximum-weight matching, followed by binomial hypothesis testing (frame-level threshold $\tau_f$ and video-level threshold $\tau_v$) to determine watermark validity. Unmatched frames are identified as tampered.
-    - **Design Motivation**: Per-frame unique messages enable frame-level deletion, swapping, and insertion to be detected through matching failures—a capability unavailable to prior methods that embed only a single fixed signature.
+Static base shifts as full-rank matrices would make the dictionary larger than the original model. SPDMark uses low-rank decomposition $\zeta_{\ell,p} = A_{\ell,p} B_{\ell,p}$ where $A \in \mathbb{R}^{d\times r}, B \in \mathbb{R}^{r\times d}, r \ll d$ (typically $r=32$). Selected layers perform forward passes as:
+
+$$\mathbf{h}_\ell = \mathcal{F}_{\phi_\ell}(\mathbf{h}_{\ell-1}) + \alpha\,\mathcal{F}_{\Delta\phi_\ell}(\mathbf{h}_{\ell-1})$$
+
+In implementation, watermarks are attached to $L=14$ spatial ResNet blocks in the decoder, with $P=4$ LoRA pairs per block. Thus, each layer carries $\log_2 4 = 2$ bits, totaling a 28-bit payload per frame. Low-rank decomposition preserves expressiveness while compressing dictionary size, which is key to "zero additional inference overhead."
+
+**3. Per-frame Watermarking + Bipartite Matching: Detecting Temporal Tampering**
+
+Prior in-model watermarks (e.g., VidSig) embed a single fixed signature for the entire video, making temporal tampering (deletion, reordering, insertion) undetectable. SPDMark generates unique messages per frame via HMAC-SHA256: $\kappa_t = \text{Trunc}_M(\mathcal{H}(K_{base}, t))$. Verification treats the reference sequence $\mathbf{K}$ and extracted sequence $\hat{\mathbf{K}}$ as nodes in a bipartite graph. Edge weights are Hamming similarities $\bar{S}_{m,n} = 1 - \psi(\kappa_m, \hat{\kappa}_n)/M$. The Hungarian algorithm finds the maximum weight matching, followed by binomial hypothesis testing (frame threshold $\tau_f$, video threshold $\tau_v$). Matched frames confirm watermark validity, while mismatches indicate tampering.
 
 ### Loss & Training
-
-The total loss is $\min_{\zeta,\eta} \mathcal{L}_{imp}(\mathbf{x}, \tilde{\mathbf{x}}) + \mathcal{L}_{rec}(\mathcal{V}_\eta(\tilde{\mathbf{x}}), \kappa)$. Message recovery uses BCEWithLogitsLoss; the imperceptibility loss is $\mathcal{L}_{imp} = \lambda_{ps} \mathbb{E}_t[\text{LPIPS}(x_t, \tilde{x}_t)] + \lambda_{tc} \mathbb{E}_t[\|\delta y_t - \delta \tilde{y}_t\|_1]$, where LPIPS ensures perceptual similarity and the temporal consistency term (L1 on luminance differences) suppresses flickering. Training is conducted on 10,000 videos from OpenVid-1M, optimizing over expectations of $\kappa, \mathbf{c}, \mathbf{z}$. The extractor is a ResNet-50 (ImageNet pretrained); at inference, batch normalization over all frames of the test video is applied to stabilize predictions.
+The objective optimizes for both imperceptibility and message recovery: $\min_{\zeta,\eta}\ \mathcal{L}_{imp}(\mathbf{x}, \tilde{\mathbf{x}}) + \mathcal{L}_{rec}(\mathcal{V}_\eta(\tilde{\mathbf{x}}), \kappa)$. Recovery uses BCElogits. Imperceptibility loss $\mathcal{L}_{imp} = \lambda_{ps}\,\mathbb{E}_t[\text{LPIPS}(x_t, \tilde{x}_t)] + \lambda_{tc}\,\mathbb{E}_t[\|\delta y_t - \delta \tilde{y}_t\|_1]$ combines LPIPS for frame quality and a temporal consistency term (L1 of adjacent frame brightness differences) to prevent flickering. Training is conducted on 10,000 videos from OpenVid-1M. The extractor uses an ImageNet-pretrained ResNet-50 with batch normalization applied across all video frames during inference for stability.
 
 ## Key Experimental Results
 
-### Main Results (Video Quality + Watermark Detection)
+### Main Results (Video Quality + Detection)
 
 **SVD-XT Model**:
 
 | Method | Payload | Bit Acc↑ | SC↑ | BC↑ | MS↑ | IQ↑ |
-|--------|---------|----------|-----|-----|-----|-----|
+|------|---------|----------|-----|-----|-----|-----|
 | VideoShield | 512 | 0.979 | 0.954 | 0.954 | 0.956 | **0.695** |
 | VideoSeal | 256 | **0.999** | 0.955 | 0.950 | 0.961 | 0.682 |
 | VidSig | 48 | 0.958 | 0.951 | 0.953 | 0.956 | 0.693 |
-| **SPDMark** | 28×25 | 0.995 | **0.966** | **0.958** | **0.975** | 0.690 |
+| **Ours** | 28×25 | 0.995 | **0.966** | **0.958** | **0.975** | 0.690 |
 
-### Robustness Evaluation (SVD-XT Average Bit Acc)
+### Robustness (SVD-XT Average Bit Acc)
 
-| Method | Photometric Attacks | Temporal Attacks | Post-processing | Average |
-|--------|--------------------|--------------------|-----------------|---------|
+| Method | Photometric | Temporal | Post-proc | Average |
+|------|---------|---------|--------|------|
 | VideoShield | ~0.82 | ~0.94 | ~0.83 | 0.833 |
 | VideoSeal | ~0.94 | ~1.00 | ~0.82 | 0.912 |
 | VidSig | ~0.66 | ~0.96 | ~0.53 | 0.685 |
-| **SPDMark** | ~0.94 | ~0.99 | ~0.89 | **0.935** |
+| **Ours** | ~0.94 | ~0.99 | ~0.89 | **0.935** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Full SPDMark | Avg Bit Acc 0.935 | Full model |
-| SPDMark on ModelScope | High Avg Bit Acc | Generalizes across architectures (UNet→DiT) |
-| Temporal tampering localization | High Precision/Recall/F1 | Detects frame deletion/insertion/swapping |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Full SPDMark | Avg Bit Acc 0.935 | Complete model |
+| SPDMark on ModelScope | High Avg Bit Acc | Cross-architecture generalization (UNet→DiT) |
+| Temporal Localization | High Precision/Recall/F1 | Validates detection of deletion/insertion/swap |
 
 ### Key Findings
-- SPDMark consistently outperforms all baselines on video quality metrics (SC/BC/MS), indicating that parameter displacement minimally affects visual quality.
-- SPDMark achieves an average Bit Acc of 0.935 on robustness benchmarks, surpassing VideoSeal (0.912) and VideoShield (0.833).
-- Under screen recording attacks, SPDMark achieves 0.837, far exceeding VideoSeal's 0.598, demonstrating that in-generation watermarks are more robust than post-processing approaches.
-- Under the Crop&Drop compound attack, SPDMark (0.856) significantly outperforms competing methods (0.458–0.513).
-- Per-frame watermarking enables detection and localization of temporal tampering (frame deletion, swapping, and insertion).
+- SPDMark consistently outperforms baselines in video quality metrics (SC/BC/MS), suggesting parameter displacement has minimal impact on visual quality.
+- Achieves an average Bit Acc of 0.935, surpassing VideoSeal (0.912) and VideoShield (0.833).
+- In Screen Recording attacks, SPDMark reaches 0.837, far exceeding VideoSeal's 0.598, indicating generative watermarks are more robust than post-processing ones.
+- Under Crop & Drop composite attacks, SPDMark (0.856) significantly outperforms others (0.458-0.513).
+- The per-frame mechanism allows successful detection and localization of temporal tampering.
 
 ## Highlights & Insights
-- **Watermarking in parameter space is an elegant paradigm shift**: Rather than operating in pixel or noise space, embedding watermarks directly in the model parameter space inherits the model's generative quality by design, with negligible overhead.
-- **LoRA basis shift dictionary supports unlimited keys**: Once the dictionary is trained, any new key requires only a different combination of basis shifts—no retraining needed. This is far more efficient than per-key fine-tuning.
-- **Cryptographic hash for per-frame messages + Hungarian matching for verification**: Combining cryptographic tools with graph matching algorithms elegantly solves the temporal tampering detection problem. This framework is generalizable to other scenarios requiring sequence integrity verification.
+- **Parameter Space Watermarking as a Paradigm Shift**: Operating in parameter space rather than pixel/noise space naturally inherits model generation quality with minimal overhead.
+- **LoRA-based Shift Dictionary for Infinite Keys**: The dictionary is trained once; new keys are merely new combinations of shifts. This is far more efficient than per-key fine-tuning.
+- **Cryptographic Hashing + Hungarian Matching**: Combining cryptographic tools with graph matching algorithms provides an elegant solution for verifying sequence integrity, extendable to other sequence verification tasks.
 
 ## Limitations & Future Work
-- Each frame carries only 28 bits of payload; capacity is limited (14 layers × 2 bits/layer). Increasing bit depth requires more LoRA bases or additional layers.
-- Watermarking is applied only to the decoder; if an adversary replaces the decoder, the watermark is invalidated (though this is unlikely in API-controlled deployment scenarios).
-- The ResNet-50 extractor is relatively lightweight and may lack robustness under extreme attacks (e.g., high-ratio H.265 compression).
-- Training requires paired watermarked/non-watermarked videos, incurring non-trivial data costs.
+- Payload is limited to 28 bits per frame (14 layers × 2 bits). Increasing depth requires more LoRA bases or layers.
+- Watermarking is localized to the decoder; replacing the decoder would strip the watermark (though unlikely in API-controlled scenarios).
+- The ResNet-50 extractor is relatively simple and may lack robustness against extreme attacks like high-compression H.265.
+- Training requires paired watermarked/non-watermarked videos, which is data-intensive.
 
 ## Related Work & Insights
-- **vs. VideoShield**: Operates in noise space with DDIM inversion, incurring high computational cost; Bit Acc drops to only 0.521 under crop attacks. SPDMark avoids inversion entirely.
-- **vs. VideoSeal**: A post-processing method that degrades severely under screen recording (0.598). SPDMark leverages generative priors for greater robustness.
-- **vs. VidSig**: Freezes PAS layers with temporal alignment but embeds only a fixed signature, precluding temporal tampering detection. SPDMark's per-frame mechanism is significantly more flexible.
-- **vs. AQuaLoRA**: An image-level LoRA watermarking method; SPDMark extends the paradigm to video and incorporates temporal consistency and tampering detection.
+- **vs VideoShield**: Noise-space based with DDIM inversion, high overhead, and poor robustness under Crop attacks (0.521). SPDMark avoids inversion.
+- **vs VideoSeal**: Post-processing method, vulnerable to Screen Recording (0.598). SPDMark leverages generative priors for better robustness.
+- **vs VidSig**: Frozen PAS layers + temporal alignment, but fixed signature cannot detect temporal tampering. SPDMark's per-frame mechanism is more flexible.
+- **vs AQuaLoRA**: Image-level LoRA watermarking; SPDMark extends this to video while adding temporal consistency and tampering detection.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The parameter displacement framework and LoRA basis shift dictionary design are highly original; the temporal tampering detection mechanism is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers two generative architectures and multiple attack types; ablation experiments could be more extensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Formal derivations are clear, though the dense notation requires careful reading.
-- **Value**: ⭐⭐⭐⭐⭐ A highly practical video watermarking scheme directly deployable in video generation API services.
+- Novelty: ⭐⭐⭐⭐⭐ The parameter displacement framework and LoRA-shift dictionary are highly novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers two architectures and various attacks, though ablation studies could be more detailed.
+- Writing Quality: ⭐⭐⭐⭐ Formal derivations are clear, though notation is dense.
+- Value: ⭐⭐⭐⭐⭐ Highly practical video watermarking scheme, directly deployable in video generation API services.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Robust Content Watermarking Against Removal and Forgery Attacks](towards_robust_content_watermarking_against_removal_and_forgery_attacks.md)
 - [\[CVPR 2026\] Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing](rel-zero_harnessing_patch-pair_invariance_for_robust_zero-watermarking_against_a.md)
-- [\[CVPR 2026\] TRACE: Structure-Aware Character Encoding for Robust and Generalizable Document Watermarking](trace_structure-aware_character_encoding_for_robust_and_generalizable_document_w.md)
 - [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
-- [\[CVPR 2026\] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training](beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_.md)
+- [\[ECCV 2024\] Robust-Wide: Robust Watermarking against Instruction-driven Image Editing](../../ECCV2024/image_generation/robust-wide_robust_watermarking_against_instruction-driven_image_editing.md)
+- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
 
 </div>
 

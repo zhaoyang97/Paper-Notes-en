@@ -2,141 +2,155 @@
 title: >-
   [Paper Note] Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 description: >-
-  [CVPR 2026][Audio & Speech][Active Learning] This paper proposes Refine, an ensemble active learning method that employs a two-stage strategy—progressive filtering (iteratively refining the unlabeled pool via multiple st…
+  [CVPR 2026][Audio & Speech][Paper Note] The authors propose Refine, an ensemble active learning method that consistently outperforms individual AL strategies and existing ensemble methods. It employs a two-stage strategy: progressive filtering (iterative refinement of the unlabeled pool using multiple strategies) followed by coverage selection (selecting hig
 tags:
-  - "CVPR 2026"
-  - "Audio & Speech"
-  - "Active Learning"
-  - "Ensemble Strategy"
-  - "Progressive Filtering"
-  - "Foundation Models"
-  - "Coverage-Based Selection"
+  - CVPR 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: b0fe24adcd481e55
+content_hash: b65db78ac780f378
 ---
-
 # Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22344](https://arxiv.org/abs/2511.22344)  
 **Code**: [GitHub](https://github.com/dhuseljic/dal-toolbox)  
-**Area**: Audio/Speech (Active Learning)
-**Keywords**: Active Learning, Ensemble Strategy, Progressive Filtering, Foundation Models, Coverage-Based Selection
+**Area**: Audio/Speech (Active Learning)  
+**Keywords**: Active learning, ensemble strategies, progressive filtering, foundation models, coverage selection
 
 ## TL;DR
 
-This paper proposes Refine, an ensemble active learning method that employs a two-stage strategy—progressive filtering (iteratively refining the unlabeled pool via multiple strategies) and coverage-based selection (selecting high-value, diverse samples from the refined pool)—to consistently outperform individual AL strategies and existing ensemble methods without requiring prior knowledge of the optimal strategy.
+The authors propose Refine, an ensemble active learning method that consistently outperforms individual AL strategies and existing ensemble methods. It employs a two-stage strategy: progressive filtering (iterative refinement of the unlabeled pool using multiple strategies) followed by coverage selection (selecting high-value diverse samples from the refined pool) without requiring prior knowledge of the optimal strategy.
 
 ## Background & Motivation
 
-**Background**: Pre-trained foundation models (DINOv2, CLIP) still require labeled data for downstream task adaptation. Active learning reduces annotation costs through intelligent sample selection, yet recent benchmarks indicate that no single strategy is consistently optimal.
+**Background**: Adapting pre-trained foundation models (DINOv2, CLIP) to downstream tasks still requires labeled data. Active learning (AL) reduces annotation costs by intelligently selecting samples, but recent benchmarks show no single strategy is universally optimal.
 
-**Limitations of Prior Work**: (a) Different AL strategies capture distinct notions of "data value"—uncertainty vs. representativeness—with no strategy universally dominant; (b) selecting the wrong strategy can perform worse than random sampling; (c) existing ensemble methods (TCM/TAILOR/SelectAL) rely on heuristic switching or learned scheduling, leading to unstable performance.
+**Limitations of Prior Work**: (a) Different AL strategies capture distinct views of "data value"—uncertainty vs. representativeness—with no strategy consistently dominating; (b) selecting an inappropriate strategy can perform worse than random sampling; (c) existing ensemble methods (TCM, TAILOR, SelectAL) rely on heuristic switching or learned scheduling, leading to unstable performance.
 
-**Key Challenge**: AL is a one-shot problem (no opportunity for trial and error), requiring decisions without knowing the optimal strategy in advance.
+**Key Challenge**: AL is a one-shot problem (no opportunity for trial and error); selection must be made without knowing the optimal strategy beforehand.
 
-**Goal**: Design a learning-free ensemble method that automatically integrates the complementary advantages of multiple strategies.
+**Goal**: Design a learning-free ensemble method that automatically integrates the advantages of multiple complementary strategies.
 
-**Key Insight**: Shift the focus from "which samples to select" to "cleaning the pool by removing uninformative samples first."
+**Key Insight**: Shift the focus from "which samples to select" to "cleaning the pool first to remove valueless samples."
 
-**Core Idea**: Allow multiple strategies to iteratively vote for sample retention—samples surviving multiple rounds must have been deemed valuable by at least one strategy, while samples never selected by any strategy are necessarily uninformative.
+**Core Idea**: Use multiple strategies for repeated voting and filtering. Samples retained after multiple rounds are deemed valuable by at least one strategy, while samples never selected by any strategy are considered valueless.
 
 ## Method
 
 ### Overall Architecture
 
-Two-stage selection: (1) progressive filtering to iteratively refine the unlabeled pool; (2) coverage-based selection to choose the final batch from the refined pool.
+Refine avoids the dilemma of "which AL strategy to use in this round" by decoupling selection into two steps: first, **cleaning the unlabeled pool**, then selecting the batch from the cleaned pool. The first step is progressive filtering, where multiple complementary strategies vote iteratively to eliminate "unwanted" samples, leaving a high-value candidate pool recognized by at least one strategy. The second step is coverage selection; since the pool contains only valuable samples, the final step maximizes diversity within this subset. This process requires no learning or scheduling, and new strategies can be added modularly.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Unlabeled Pool C_0"] --> B
+    subgraph PF["Progressive Filtering (Iterative R rounds)"]
+        direction TB
+        B["Random Subsampling<br/>α·|C| samples"] --> C["M Complementary Strategies<br/>Select J batches each"]
+        C --> D["Union set forms candidate pool C_r"]
+    end
+    D -->|"R rounds not reached: continue with C_r"| B
+    D -->|"R rounds reached"| E["Refined Pool C_R<br/>Only high-value samples remain"]
+    E --> F["Coverage Selection<br/>UHerding for max coverage batch"]
+    F --> G["Labeled Batch B*"]
+```
 
 ### Key Designs
 
-1. **Progressive Filtering**: $R=5$ iterative rounds, where in each round every strategy selects $J=10$ batches from a random subsample of fraction $\alpha=0.4$, and the union of all batches forms the candidate pool for the next round:
-    $$\mathcal{C}_r = \bigcup_{m=1}^M \bigcup_{j=1}^J s_m(\text{SubSample}(\mathcal{C}_{r-1}, \alpha \cdot |\mathcal{C}_{r-1}|), b)$$
+**1. Progressive Filtering: Using Multiple Strategies to Vote and Exponentially Remove Valueless Samples**
 
-    Three key design decisions and their motivations:
-    - **Union rather than intersection**: Retains all samples deemed valuable by any strategy, avoiding the loss of uniquely discovered samples.
-    - **Multi-round iteration**: A single round merely concatenates outputs; across multiple rounds, the survival probability of uninformative samples decays exponentially.
-    - **Subsampling with $\alpha < 1$**: Encourages deterministic strategies to produce diverse batches and reduces memory requirements.
+Active learning is a one-shot problem where choosing the wrong strategy can be worse than random, and the optimal strategy is unknown. Progressive filtering bypasses this by allowing $M$ strategies to vote on the pool. In each round, every strategy $s_m$ selects $J=10$ batches from a random subsample ($\alpha=0.4$) of the current pool $\mathcal{C}_{r-1}$. The **union** of all selections across strategies and subsamples forms the next candidate pool:
 
-2. **Coverage-Based Selection**: UHerding is applied to select a batch from the refined pool $\mathcal{C}_R$ that maximizes coverage:
-    $$\mathcal{B}^* = \arg\max_{\mathcal{B} \subset \mathcal{C}_R} \mathbb{E}_{\mathbf{x}}[\max_{\mathbf{x}' \in (\mathcal{L}_t \cup \mathcal{B})} k(\mathbf{x}, \mathbf{x}')]$$
-    **Design Motivation**: After filtering, the pool already consists of high-value candidates; coverage-based selection then ensures diversity within this refined set.
+$$\mathcal{C}_r = \bigcup_{m=1}^M \bigcup_{j=1}^J s_m(\text{SubSample}(\mathcal{C}_{r-1}, \alpha \cdot |\mathcal{C}_{r-1}|), b)$$
 
-3. **Theoretical Guarantees**:
-    - Theorem 1 (Value Preservation): $P_r(\mathbf{x}) \geq 1 - (1 - \alpha \cdot \max_m p_{m,r}(\mathbf{x}))^J$
-    - Theorem 2 (Exponential Decay): The survival probability of an $\epsilon$-uninformative sample after $R$ rounds is $\leq (MJ\alpha\epsilon)^R$
-    - Theorem 3 (Value Monotonicity): $\mathbb{E}[V|\mathcal{C}_R] \geq \ldots \geq \mathbb{E}[V|\mathcal{C}_0]$
+The design choices are interconnected. Using the **union instead of intersection** ensures that complementary "values" (uncertainty vs. representativeness) are preserved; an intersection might discard unique discoveries by one strategy, while a union ensures retention if at least one strategy approves. Using **iterative rounds instead of a single concatenation** is key to noise reduction: a truly valueless sample survives $R$ rounds only if it is selected by at least one strategy in every random subsample, a probability that decreases exponentially with the number of rounds. Furthermore, **subsampling $\alpha<1$** allows deterministic strategies (like Margin) to see different subsets each round, generating diversity and reducing memory consumption.
 
-### Loss & Training
+**2. Coverage Selection: Focusing on Diversity within the Cleaned Pool**
 
-- Three backbones: DINOv2-ViT-S/14, DINOv2-ViT-S/16, CLIP-ViT-B/16
-- Frozen backbone with trained classification head; SGD with LR 0.01, 200 epochs per cycle
+The filtered pool $\mathcal{C}_R$ is already a high-value candidate set, so the final step focuses solely on ensuring the selected batch is well-distributed in the feature space. Refine uses UHerding on $\mathcal{C}_R$ to select a batch that maximizes coverage, ensuring each data point is "represented" by a neighbor in the labeled set $\mathcal{L}_t$ or the new batch $\mathcal{B}$:
+
+$$\mathcal{B}^* = \arg\max_{\mathcal{B} \subset \mathcal{C}_R} \mathbb{E}_{\mathbf{x}}\big[\max_{\mathbf{x}' \in (\mathcal{L}_t \cup \mathcal{B})} k(\mathbf{x}, \mathbf{x}')\big]$$
+
+By delegating "value search" to filtering and "diversity preservation" to coverage, the method outperforms ensemble approaches that rely on rigid heuristic switching.
+
+**3. Three Theorems: From Intuition to Guaranteed Filtering Efficiency**
+
+The reliability of progressive filtering is supported by three proven properties. **Value Preservation** (Theorem 1) establishes a lower bound for the probability of a valuable sample being retained in a single round: $P_r(\mathbf{x}) \geq 1 - (1 - \alpha \cdot \max_m p_{m,r}(\mathbf{x}))^J$. As long as any strategy selects it with reasonable probability, $J$ repeated samplings ensure its retention. **Exponential Decay** (Theorem 2) guarantees that an $\epsilon$-valueless sample (selection probability $\leq \epsilon$ by any strategy) has a survival probability $\leq (MJ\alpha\epsilon)^R$ after $R$ rounds, which tends toward zero. Together, these lead to **Value Monotonicity** (Theorem 3): the expected value of the refined pool does not decrease across rounds, $\mathbb{E}[V|\mathcal{C}_R] \geq \dots \geq \mathbb{E}[V|\mathcal{C}_0]$, ensuring filtering never degrades the pool.
+
+> ⚠️ Probability notation and constants (e.g., $p_{m,r}$, $MJ\alpha\epsilon$) are as defined in the original paper.
+
+### Training Settings
+
+- 3 Backbones: DINOv2-ViT-S/14, DINOv3-ViT-S/16, CLIP-ViT-B/16
+- Frozen backbone + trained classification head, SGD LR 0.01, 200 epochs/cycle
 - 20 AL cycles, 10 independent runs
 
 ## Key Experimental Results
 
 ### Main Results — Overall Win Rate
 
-| Refine vs. | Win Rate (3 backbones × 5 datasets × 10 trials) |
-|-----------|--------------------------------------------------|
-| BAIT | 85% |
-| UHerding | 80% |
-| SelectAL | 100% |
-| TAILOR | 100% |
-| TCM | 98% |
-| AutoAL | 97% |
+| Refine vs | Win Rate (3 backbones × 5 datasets × 10 trials) |
+|-----------|-----------------------------------------------|
+| BAIT      | 85%                                           |
+| UHerding  | 80%                                           |
+| SelectAL  | 100%                                          |
+| TAILOR    | 100%                                          |
+| TCM       | 98%                                           |
+| AutoAL    | 97%                                           |
 
-### Ablation Study — Progressive Filtering as Preprocessing
+### Ablation Study — Progressive Filtering as Pre-processing
 
-| Strategy | AULC from Original Pool | AULC from Refined Pool | Gain |
-|----------|------------------------|------------------------|------|
-| Random | Baseline | +3.7% | Filtering alone + random is already effective |
-| BAIT | Worse than Random | **Better than Random** | Filtering rescues a failing strategy |
-| AlfaMix | Baseline | +2.6% | Universally beneficial |
-| UHerding | High | +0.7% | Strong strategies also benefit |
+| Strategy | AULC from Raw Pool | AULC from Refined Pool | Gain |
+|----------|-------------------|------------------------|------|
+| Random   | Baseline          | +3.7%                  | Filtering + Random is effective |
+| BAIT     | Worse than Random | **Better than Random** | Filtering rescues failed strategies |
+| AlfaMix  | Baseline          | +2.6%                  | Universal benefit |
+| UHerding | High              | +0.7%                  | Strong strategies also benefit |
 
-### Effect of Number of Filtering Rounds
+### Effect of Filtering Rounds
 
-| R (rounds) | CIFAR-10 AULC Gain | Snacks AULC Gain |
-|------------|-------------------|-----------------|
-| 1 | +3.02% | +6.91% |
-| 3 | +3.72% | +7.22% |
-| 5 | +3.71% | +7.79% |
-| 9 | +3.78% | +8.43% |
+| R (Rounds) | CIFAR-10 AULC Gain | Snacks AULC Gain |
+|------------|--------------------|------------------|
+| 1          | +3.02%             | +6.91%           |
+| 3          | +3.72%             | +7.22%           |
+| 5          | +3.71%             | +7.79%           |
+| 9          | +3.78%             | +8.43%           |
 
 ### Key Findings
 
-1. Refine achieves the highest overall win rate against all individual strategies and all ensemble methods.
-2. Progressive filtering is a general-purpose preprocessing step—any AL strategy applied to the refined pool consistently outperforms the same strategy applied to the original pool.
-3. BAIT underperforms random sampling on the original pool but surpasses it after filtering, demonstrating that filtering removes misleading samples.
-4. Using only two strategies—Margin and TypiClust—for filtering automatically integrates uncertainty and representativeness.
-5. Performance is stable for $\alpha \in [0.3, 0.9]$.
+1. Refine achieves the highest overall win rate against all individual strategies and ensemble methods.
+2. Progressive filtering serves as a universal pre-processing step—any AL strategy performs better when applied to the refined pool than to the raw pool.
+3. BAIT performs worse than random on the raw pool but better than random after filtering, as filtering removes misleading samples.
+4. Filtering with just two strategies (Margin + TypiClust) automatically integrates uncertainty and representativeness.
+5. Performance remains stable within the range of $\alpha \in [0.3, 0.9]$.
 
 ## Highlights & Insights
 
-- **Progressive filtering as preprocessing** is the most practically impactful contribution—it can be grafted onto any AL strategy at negligible cost.
-- The theoretical analysis is elegant: three theorems respectively guarantee value preservation, noise removal, and monotonic quality improvement.
-- The insight that "samples never selected by any strategy are necessarily uninformative" is concise yet profound.
-- The framework is easily extensible: new strategies can be incorporated directly without retraining.
+- **Progressive filtering as pre-processing** is a practical contribution that can be integrated into any AL strategy at zero cost.
+- The theoretical analysis is robust, with three theorems guaranteeing value preservation, noise removal, and monotonic quality improvement.
+- The insight "samples never selected by any strategy are likely valueless" is simple yet profound.
+- Scalability: New strategies can be added to the ensemble without retraining.
 
 ## Limitations & Future Work
 
-- Invoking multiple strategies multiple times incurs additional computational overhead, though parallelization is feasible.
-- The quality of the refined pool may degrade when the majority of ensemble strategies fail (e.g., the Dopanim+CLIP case).
-- Strategy weighting is unexplored; the current approach assigns equal weight, whereas dynamic weighting based on historical performance could be beneficial.
-- Validation is primarily conducted on image classification; further evaluation on detection and segmentation tasks is needed.
+- Invoking multiple strategies repeatedly increases computational overhead (though parallelizable).
+- Refined pool quality may decrease if the majority of strategies in the ensemble fail (e.g., Dopanim + CLIP cases).
+- Strategy weighting has not been explored; currently, strategies are weighted equally, but dynamic weighting based on historical performance could be beneficial.
+- Validation was primarily on image classification; detection and segmentation require further testing.
 
 ## Related Work & Insights
 
-- Unlike the hard switching of TCM, Refine achieves a natural soft transition through progressive filtering.
-- The union-plus-iteration design is generalizable to other scenarios that require the integration of multiple heuristics.
-- This work provides a practical, theoretically grounded solution for AL in the era of foundation models.
+- Unlike the hard switching in TCM, Refine achieves "soft switching" naturally through progressive filtering.
+- The union+iteration design can be generalized to other scenarios requiring the integration of multiple heuristics.
+- Provides a practical and theoretically grounded solution for AL in the era of foundation models.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The progressive filtering concept is concise and novel, though it constitutes a strategy combination rather than a fundamentally new paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 6 datasets × 3 backbones × 8 individual strategies + 4 ensemble methods + extensive ablations + theoretical analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Theory and experiments complement each other perfectly; structure is clear.
-- **Value**: ⭐⭐⭐⭐ Serves as a general AL preprocessing step with high practical utility.
+- Novelty: ⭐⭐⭐⭐ The progressive filtering concept is elegant and novel, though it represents an ensemble of strategies rather than a fundamentally new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 datasets × 3 backbones × 8 individual strategies + 4 ensemble methods + extensive ablation + theoretical analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical and experimental components complement each other perfectly with clear structure.
+- Value: ⭐⭐⭐⭐ High practical value as a universal AL pre-processing step.
 
 <!-- RELATED:START -->
 
@@ -145,10 +159,10 @@ Two-stage selection: (1) progressive filtering to iteratively refine the unlabel
 ## Related Papers
 
 - [\[ACL 2026\] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling](../../ACL2026/audio_speech/controlaudio_tackling_text-guided_timing-indicated_and_intelligible_audio_genera.md)
+- [\[CVPR 2026\] Pushing the Frontier of Audiovisual Perception with Large-Scale Multimodal Correspondence Learning](pushing_the_frontier_of_audiovisual_perception_with_large-scale_multimodal_corre.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
+- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
 - [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
-- [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
-- [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 
 </div>
 

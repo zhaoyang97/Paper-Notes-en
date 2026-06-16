@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods
 description: >-
-  [ICML 2026][AI Safety][Continuous Fairness] This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed for linear models by Ravfogel et al.…
+  [ICML 2026][AI Safety][SVR] This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed by Ravfogel et al. for linear models, to kernel methods. By deriving a closed-form transformation $\mathbf{T}$ that directly acts on the kernel matrix $\mathbf{K}$ via the empirical feature space, the authors ensure tha
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Continuous Fairness"
-  - "Null-Space Projection"
-  - "Kernel Methods"
-  - "Empirical Feature Space"
-  - "SVR"
+  - ICML 2026
+  - AI Safety
+  - SVR
 date: 2026-05-08
-content_hash: 2d445fa9298b454b
+content_hash: d8def171eec2097c
 ---
-
 # Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods
 
 **Conference**: ICML 2026  
@@ -24,111 +19,120 @@ content_hash: 2d445fa9298b454b
 **Keywords**: Continuous Fairness, Null-Space Projection, Kernel Methods, Empirical Feature Space, SVR
 
 ## TL;DR
-This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed for linear models by Ravfogel et al., to kernel methods. By deriving a closed-form transformation $\mathbf{T}$ acting directly on the kernel matrix $\mathbf{K}$ within the empirical feature space, the resulting $\mathbf{K}_{(m)}$ remains a positive semi-definite kernel but is stripped of predictive information regarding continuous protected attributes. This allows any kernel-based algorithm (e.g., KRR, SVR) to be converted into a "continuously fair" version, achieving competitive or superior fairness–accuracy Pareto fronts on Crimes, ACSIncome, and ACSTravelTime datasets.
+This paper extends the "Iterative Null-Space Projection (INLP)" fairness method, originally designed by Ravfogel et al. for linear models, to kernel methods. By deriving a closed-form transformation $\mathbf{T}$ that directly acts on the kernel matrix $\mathbf{K}$ via the empirical feature space, the authors ensure that the transformed $\mathbf{K}_{(m)}$ remains a positive semi-definite (PSD) kernel while being stripped of predictive information regarding continuous protected attributes. This allows any kernel-based algorithm (KRR, SVR) to be converted into a "continuously fair" version, achieving competitive or superior fairness–accuracy Pareto fronts on Crimes, ACSIncome, and ACSTravelTime datasets.
 
 ## Background & Motivation
-**Background**: Most mainstream fair machine learning research assumes that both protected attributes and targets are discrete—such as "race" bins or binary "gender"—and defines metrics like Demographic Parity or Equalized Odds accordingly. However, anti-discrimination laws (e.g., in the EU) explicitly mention attributes like "age," which is inherently continuous. Furthermore, "race" in social science surveys often appears as continuous values like "percentage of Black population." Forcing these into bins is unnatural and leads to information loss. "Continuous fairness" (where both the target and protected attributes are continuous) is thus a neglected but practically necessary setting.
+**Background**: Most mainstream fair machine learning research assumes that both protected attributes and targets are discrete—such as "race" bins or binary "gender"—and defines metrics like Demographic Parity or Equalized Odds accordingly. However, protected attributes like "age," as explicitly mentioned in EU anti-discrimination laws, are inherently continuous. In social science surveys, "race" often appears as a continuous value like "percentage of the Black population." Forcing these into bins is unnatural and leads to information loss. "Continuous fairness" (where both target and protected attributes are continuous) is thus a neglected but practically essential setting.
 
-**Limitations of Prior Work**: Current methods for continuous fairness typically embed a fairness metric (HGR, GDP, PF) as a regularization term or adversarial constraint into the optimization objective. This approach binds the fairness score to a specific model and optimizer, requiring a loss function redesign for every new score. Another approach, INLP (Ravfogel et al., 2020), offers a more elegant conceptual framework: iteratively finding directions that predict the protected attribute and projecting the data into their null space. While INLP is a "model-agnostic + metric-agnostic" preprocessing method, it has only been verified for linear models or neural network embeddings and **cannot be directly applied to kernel methods**. The feature spaces induced by kernels are often infinite-dimensional (e.g., RBF kernels), making it impossible to store feature vectors for projection naively.
+**Limitations of Prior Work**: Existing approaches to continuous fairness typically embed fairness metrics (HGR, GDP, PF) as regularization terms or adversarial constraints into the optimization objective. Such methods are tied to specific metrics, models, and optimizers; changing the fairness score requires redefining the loss. Another approach, INLP (Ravfogel et al., 2020), is more elegant: it iteratively finds directions that predict the protected attribute and projects the data onto their null space. While INLP is a model-agnostic and metric-agnostic preprocessing method, it has only been validated on linear models or neural network embeddings and **cannot be directly applied to kernel methods**. The feature spaces induced by kernels (like RBF) are often infinite-dimensional, making it impossible to naively store feature vectors for projection.
 
-**Key Challenge**: To bring the decoupling advantage of INLP—"stripping information first, then feeding it to any downstream model"—to kernel methods (especially Kernel Ridge Regression and Support Vector Regression for regression tasks), a method must be found to **perform null-space projection using only the $n\times n$ kernel matrix $\mathbf{K}$**. This requires avoiding the infinite-dimensional feature space while ensuring the projected matrix remains a valid (positive semi-definite) kernel to maintain the convexity of downstream optimization.
+**Key Challenge**: To bring the decoupling advantage of INLP ("strip information first, then feed to any downstream model") to kernel methods—particularly Kernel Ridge Regression (KRR) and Support Vector Regression (SVR)—one must find a way to **perform null-space projection using only the $n \times n$ kernel matrix $\mathbf{K}$**. This requires bypassing infinite-dimensional feature spaces while ensuring the projected matrix remains a valid PSD kernel to maintain the convexity of downstream optimization.
 
-**Goal**: (1) Derive a closed-form transformation acting directly on $\mathbf{K}$ that is equivalent to null-space projection in the feature space; (2) Prove that the transformation preserves PSD properties, is extensible to test points, and supports multiple iterations; (3) Validate its effectiveness as a general preprocessing tool on real-world "continuous fairness" datasets.
+**Goal**: (1) Derivation of a closed-form transformation acting directly on $\mathbf{K}$, equivalent to null-space projection in the feature space; (2) Proof that the transformation preserves PSD property, allows out-of-sample extension to test points, and supports multiple iterations; (3) Validation of its effectiveness as a general preprocessing tool on real-world "continuous fairness" datasets.
 
-**Key Insight**: The authors utilize the "empirical feature space" as a classic tool: the kernel matrix $\mathbf{K}=\mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\top = \mathbf{G}\mathbf{G}^\top$, where $\mathbf{G}\coloneq \mathbf{Q}\boldsymbol{\Lambda}^{1/2}$ is an $n$-dimensional explicit representation isometric to the subspace spanned by the training set. Performing INLP on $\mathbf{G}$ is a finite-dimensional operation, which can then be rewritten back to $\mathbf{K}$ using the kernel trick.
+**Key Insight**: The authors utilize the classical tool of the "empirical feature space." The kernel matrix $\mathbf{K} = \mathbf{Q} \boldsymbol{\Lambda} \mathbf{Q}^\top = \mathbf{G} \mathbf{G}^\top$, where $\mathbf{G} \coloneq \mathbf{Q} \boldsymbol{\Lambda}^{1/2}$ is an $n$-dimensional explicit representation that is geometrically isometric to the subspace spanned by the training set. Performing INLP on $\mathbf{G}$ is a finite-dimensional operation, which can then be rewritten back onto $\mathbf{K}$ using the kernel trick.
 
-**Core Idea**: "Perform INLP in the empirical feature space, then algebraically transform all projections on $\mathbf{G}$ into a single right-multiplication transformation $\mathbf{T}^{\mathbf{K}}=\mathrm{Id}-\mathbf{M}\mathbf{K}$ on the kernel matrix." This method is termed Fair Kernel Decomposition (FKD).
+**Core Idea**: "Perform INLP in the empirical feature space, then algebraically collapse all projections on $\mathbf{G}$ into a single right-multiplication transformation $\mathbf{T}^{\mathbf{K}} = \mathrm{Id} - \mathbf{M} \mathbf{K}$ on the kernel matrix." This is the method the paper terms Fair Kernel Decomposition (FKD).
 
 ## Method
 
 ### Overall Architecture
-Input: Raw kernel matrix $\mathbf{K}\in\mathbb{R}^{n\times n}$ (induced by any kernel, RBF used here), continuous protected attribute vector $\mathbf{p}\in\mathbb{R}^n$, iteration count $m$, and ridge regression regularization $\tilde{\alpha}$.
-Output: A "fair kernel matrix" $\mathbf{K}_{(m)}$ stripped of information related to $\mathbf{p}$, and a corresponding cumulative transformation matrix $\mathbf{T}_{(m)}$, such that $\mathbf{K}_{(m)} = \mathbf{K}_{(0)}\mathbf{T}_{(m)}$. Any downstream kernel method (KRR and SVR in experiments) is trained normally using $\mathbf{K}_{(m)}$. For new test points, the test kernel $\mathbf{K}_{\text{test}}\in\mathbb{R}^{k\times n}$ is transformed using $\mathbf{T}_{(m)}$ for out-of-sample extension.
+This paper addresses the contradiction that INLP can only be performed on finite-dimensional features, while kernel feature spaces (especially RBF) are often infinite-dimensional. The core of FKD is: rather than touching the infinite-dimensional space, decompose the kernel matrix as $\mathbf{K} = \mathbf{G} \mathbf{G}^\top$, perform INLP on the finite-dimensional $\mathbf{G}$, and fold the projection back into a transformation $\mathbf{T}^{\mathbf{K}} = \mathrm{Id} - \mathbf{M} \mathbf{K}$ on $\mathbf{K}$. The process follows an "outer iterative, inner closed-form update" loop: each round fits a ridge regression direction to predict the protected attribute $\mathbf{p}$, constructs its null-space projection, compresses it into a kernel transform, and accumulates it into the total transform $\mathbf{T}_{(m)}$. This outputs a "fair" kernel $\mathbf{K}_{(m)}$ stripped of $\mathbf{p}$ information but still PSD. Any downstream kernel method (KRR, SVR) is trained normally, and test kernels are transformed using the same $\mathbf{T}_{(m)}$.
 
-The overall pipeline consists of an outer iteration and inner closed-form updates: In each round $(i)$, (i) fit a ridge regression direction $\mathbf{w}$ on the current $\mathbf{K}_{(i-1)}$ to predict $\mathbf{p}$; (ii) construct its null-space projection; (iii) compress this projection into a right-multiplication $\mathbf{T}^{\mathbf{K}_{(i)}}$ on $\mathbf{K}_{(i-1)}$ via Theorem 3.2 to obtain $\mathbf{K}_{(i)}$; (iv) accumulate the multiplication into the total transformation $\mathbf{T}_{(i)}$. Multiple iterations are used because a single projection only eliminates the "most significant predictive direction," while residual non-linear dependencies are stripped away round by round.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Kernel K + Continuous Protected Attribute p"] --> B["Empirical Feature Space Decomposition<br/>K = G·Gᵀ, mapping infinite-dim INLP to finite-dim G"]
+    B --> C["Ridge Regression for direction w predicting p<br/>Expressed as linear combination of samples"]
+    C --> D["Closed-form Kernel Transform<br/>T^K = Id − M·K, Null-space projection keeps PSD"]
+    D --> E["Accumulate T_m, Update K_(m)<br/>(Nystroem approximation for speed)"]
+    E -->|Residual dependence exists, next iteration| C
+    E -->|After m rounds| F["Output Fair Kernel K_(m)<br/>Valid PSD kernel, p information stripped"]
+    F --> G["Downstream KRR / SVR Training"]
+    F --> H["Apply T_m to test kernel for OOS extension"]
+```
 
 ### Key Designs
 
-1.  **Null-Space Projection in Empirical Feature Space (Core Theoretical Bridge)**:
-    *   **Function**: Replaces the "desirable but impossible" INLP in the infinite-dimensional kernel feature space with an equivalent finite-dimensional operation on $\mathbf{G}$.
-    *   **Mechanism**: Decomposes the PSD kernel matrix as $\mathbf{K}=\mathbf{G}\mathbf{G}^\top$ where $\mathbf{G}=\mathbf{Q}\boldsymbol{\Lambda}^{1/2}$. Each row $\mathbf{g}_i$ of $\mathbf{G}$ represents the sample $\mathbf{x}_i$ in an $n$-dimensional representation isometric to the training subspace, where $k(\mathbf{x}_i,\mathbf{x}_j)=\langle \mathbf{g}_i,\mathbf{g}_j\rangle$. Running INLP on $\mathbf{G}$ involves using ridge regression to find $\mathbf{w} = \mathbf{G}^\top(\mathbf{G}\mathbf{G}^\top+\tilde{\alpha}\mathrm{Id})^{-1}\mathbf{p}$ (this formulation is crucial as it expresses $\mathbf{w}$ purely in terms of $\mathbf{K}$), then performing the projection $\mathbf{P}^{\mathbf{G}}=\mathrm{Id}-\mathbf{w}(\mathbf{w}^\top\mathbf{w})^{-1}\mathbf{w}^\top$. Lemma 3.1 proves that the product of consecutive projections is still a projection.
-    *   **Design Motivation**: Direct projection in feature space is infeasible for infinite-dimensional kernels like RBF. In INLP, $\mathbf{w}$ typically exists as a linear combination of samples, allowing the entire process to close on $\mathbf{K}$, avoiding the explicit construction of $\mathbf{G}$ while remaining $\mathcal{O}(n^2)$ in memory.
+**1. Null-Space Projection in Empirical Feature Space: Solving INLP for Infinite Dimensions**
 
-2.  **Closed-Form Kernel Matrix Transformation $\mathbf{T}^{\mathbf{K}}=\mathrm{Id}-\mathbf{M}\mathbf{K}$ (Theorem 3.2 + Cor. 3.3)**:
-    *   **Function**: Compresses the two-step process of "projecting on $\mathbf{G}$ and calculating $\mathbf{G}'{\mathbf{G}'}^\top$" into a single right-multiplication on $\mathbf{K}_{(m-1)}$, proving the result remains PSD.
-    *   **Mechanism**: Define $\tau_{\text{norm}}\coloneq(\mathbf{w}^\top\mathbf{w})^{-1}$ and $\mathbf{M}\coloneq(\mathbf{K}_{(m)}+\tilde{\alpha}\mathrm{Id})^{-1}\mathbf{p}\,\tau_{\text{norm}}\,\mathbf{p}^\top(\mathbf{K}_{(m)}+\tilde{\alpha}\mathrm{Id})^{-1}$. Then $\mathbf{K}_{(m)}=\mathbf{K}_{(m-1)}(\mathrm{Id}-\mathbf{M}\mathbf{K}_{(m-1)})$. The cumulative form $\mathbf{T}_m=\prod_{i=0}^{m-1}\mathbf{T}^{\mathbf{K}_{(i)}}$ ensures $\mathbf{K}_{(m)}=\mathbf{K}_{(0)}\mathbf{T}_m$, which naturally applies to test kernels for out-of-sample extension. Corollary 3.3 ensures valid kernels through PSD preservation. The authors also state extension to multiple protected attributes only requires replacing $\mathbf{p}\in\mathbb{R}^{n}$ with a matrix $\mathbf{p}\in\mathbb{R}^{n\times l}$.
-    *   **Design Motivation**: Unlike Pérez-Suay's HSIC-based approach (KRR-FKL), FKD does not modify the downstream objective or depend on a specific fairness score. It encapsulates fairness logic in kernel preprocessing, achieving "model-agnostic + metric-agnostic" properties. Using $\mathrm{Id}-\mathbf{M}\mathbf{K}$ rather than a general similarity transform preserves PSD.
+Standard INLP iteratively identifies directions predicting protected attributes and projects data onto their null space. For infinite-dimensional kernels like RBF, the feature vectors cannot be stored. The authors solve this using the empirical feature space: decomposing the PSD kernel matrix $\mathbf{K} = \mathbf{Q} \boldsymbol{\Lambda} \mathbf{Q}^\top = \mathbf{G} \mathbf{G}^\top$. $\mathbf{G} \coloneq \mathbf{Q} \boldsymbol{\Lambda}^{1/2}$ is an $n$-dimensional explicit representation isometric to the subspace spanned by the training data, satisfying $k(\mathbf{x}_i, \mathbf{x}_j) = \langle \mathbf{g}_i, \mathbf{g}_j \rangle$. INLP is performed on $\mathbf{G}$: first find $\mathbf{w} = \mathbf{G}^\top (\mathbf{G} \mathbf{G}^\top + \tilde{\alpha} \mathrm{Id})^{-1} \mathbf{p}$ via ridge regression. This formulation is crucial as it expresses $\mathbf{w}$ as a "linear combination of samples," allowing subsequent operations to use only $\mathbf{K}$. Multi-round projection $\mathbf{G}_{(m)} = \mathbf{G}_{(0)} \prod_{i=0}^{m-1} \mathbf{P}^{\mathbf{G}_{(i)}}$ is performed, where Lemma 3.1 guarantees the product of projections remains a projection. Iteration is necessary because a single projection only removes the most prominent predictive direction.
 
-3.  **Nystroem Approximation + Algorithmic Implementation (Algorithm 1)**:
-    *   **Function**: Reduces the $\mathcal{O}(n^3)$ matrix inversion bottleneck in each iteration to an acceptable complexity for medium-scale data.
-    *   **Mechanism**: Algorithm 1 maintains $\mathbf{B}=(\mathbf{K}_{(i-1)}+\tilde{\alpha}\mathrm{Id})^{-1}$, $\tau_{\text{norm}}=(\mathbf{p}^\top \mathbf{B}\mathbf{K}_{(i-1)}\mathbf{B}\mathbf{p})^{-1}$, $\mathbf{M}=\mathbf{B}\mathbf{p}\tau_{\text{norm}}\mathbf{p}^\top \mathbf{B}$, and $\mathbf{T}^{\mathbf{K}_i}=\mathrm{Id}-\mathbf{M}\mathbf{K}_{(i-1)}$ per round. The inversion of $\mathbf{B}$ is replaced with Nystroem approximation. Matrix multiplication orders are optimized to save memory (Appendix C).
-    *   **Design Motivation**: The exact version's complexity of $\mathcal{O}(m\cdot n^3)$ is impractical for tens of thousands of samples. Nystroem makes the inverse term manageable. Experimental results (§4.5) show the fairness-accuracy Pareto front of the approximate version nearly overlaps with the exact version, proving no loss of critical properties. However, $\mathcal{O}(n^2)$ storage of the kernel matrix still limits large-scale expansion.
+**2. Closed-form Transformation $\mathbf{T}^{\mathbf{K}} = \mathrm{Id} - \mathbf{M} \mathbf{K}$: Preserving PSD Property**
+
+Projecting $\mathbf{G}$ is insufficient; downstream models require a kernel matrix. The "projection then compute $\mathbf{G}' {\mathbf{G}'}^\top$" sequence must be folded into a direct kernel operation without breaking PSD property (otherwise, SVR's quadratic programming is no longer convex). Theorem 3.2 provides this one-step right-multiplication: defining $\tau_{\text{norm}} \coloneq (\mathbf{w}^\top \mathbf{w})^{-1}$ and $\mathbf{M} \coloneq (\mathbf{K}_{(m)} + \tilde{\alpha} \mathrm{Id})^{-1} \mathbf{p} \, \tau_{\text{norm}} \, \mathbf{p}^\top (\mathbf{K}_{(m)} + \tilde{\alpha} \mathrm{Id})^{-1}$, the single-round update is $\mathbf{K}_{(m)} = \mathbf{K}_{(m-1)} (\mathrm{Id} - \mathbf{M} \mathbf{K}_{(m-1)})$. The cumulative form $\mathbf{T}_m = \prod_{i=0}^{m-1} \mathbf{T}^{\mathbf{K}_{(i)}}$ allows $\mathbf{K}_{(m)} = \mathbf{K}_{(0)} \mathbf{T}_m$, and applying the same $\mathbf{T}_m$ to test kernels provides natural out-of-sample extension. Corollary 3.3 proves this transform preserves PSD. The choice of the right-multiplication form $\mathrm{Id} - \mathbf{M} \mathbf{K}$ over general similarity transforms is precisely to maintain the PSD property.
+
+**3. Nystroem Approximation + Implementation: Optimizing $\mathcal{O}(n^3)$ Complexity**
+
+The exact version requires inverting $n \times n$ matrices each round, resulting in $\mathcal{O}(m \cdot n^3)$ complexity, which is prohibitive for large datasets. Algorithm 1 breaks down each round into maintaining $\mathbf{B} = (\mathbf{K}_{(i-1)} + \tilde{\alpha} \mathrm{Id})^{-1}$, $\tau_{\text{norm}}$, and $\mathbf{M}$. The bottleneck is the inversion of $\mathbf{B}$, which is replaced by the Nystroem approximation (Drineas & Mahoney). Memory is further saved by avoiding explicit storage of $\mathbf{T}_{(i)}$ and optimizing matrix multiplication order (details in Appendix C). Section 4.5 shows that the fairness–accuracy Pareto front of the approximate version nearly matches the exact one, though $\mathcal{O}(n^2)$ storage remains a limitation for massive scaling.
 
 ### Loss & Training
-The method itself introduces no new loss functions. Inner ridge regression uses standard closed-form solutions. Downstream models are trained with their respective standard objectives (KRR: closed-form; SVR: standard dual QP). Fairness is achieved via kernel matrix preprocessing. Hyperparameters include the number of iterations $m$ (controlling stripping strength) and ridge regularization $\tilde{\alpha}$ (controlling the "granularity" of information removal). RBF bandwidth and downstream hyperparameters are fixed via grid-search on non-fair baselines.
+The method introduces no new loss function. The inner ridge regression uses a standard closed-form solution. Downstream models are trained using their standard objectives (KRR: closed-form; SVR: dual QP). Fairness is achieved via kernel matrix preprocessing. Hyperparameters include the number of iterations $m$ (controlling stripping strength) and ridge regularization $\tilde{\alpha}$ (controlling the "granularity" of information removal). RBF bandwidth and model hyperparameters are locked via grid search on a non-fair baseline first.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation is performed on three typical fair regression benchmarks: Communities & Crimes (predicting crime rate, protected attribute = \% Black population), ACSIncome (Montana, protected attribute = Age), and ACSTravelTime (Montana, protected attribute = Age). Prediction accuracy is measured by MAE, and fairness is reported across three metrics: HGR [DP], GDP [DP], and PF [EO]. Results are shown as Pareto fronts of "MAE vs. fairness" (Figure 1) via 5-fold cross-validation. Baselines include KRR-FKL, NN-HGR, and a dummy regressor.
+Evaluation is performed on three standard fairness regression benchmarks: Communities & Crimes (target = crime rate, protected = % Black population), ACSIncome (Montana, protected = age), and ACSTravelTime (Montana, protected = age). Prediction accuracy is measured by MAE, and fairness is reported using HGR [DP], GDP [DP], and PF [EO]. Results are 5-fold cross-validated and presented as "MAE vs fairness" Pareto fronts (Figure 1). Baselines include KRR-FKL (HSIC + KRR), NN-HGR, and a dummy regressor.
 
 | Dataset | Fairness Metric | Best Performing Method | Notes |
-| :--- | :--- | :--- | :--- |
-| Crimes | HGR | NN-HGR / KRR-FKL (Strong reg.); SVR-FKD (Slightly better in weak reg.) | Gap closes on GDP/PF |
-| Crimes | GDP / PF | SVR-FKD (Clear lead in weak reg.) | Pareto front further towards bottom-left |
-| ACSIncome | GDP (Overall) | **SVR-FKD** (Significantly best) | KRR-FKD outperformed by KRR-FKL, but both better than NN-HGR |
-| ACSTravelTime | All 3 metrics | **Only SVR-FKD** | Only one to improve fairness while maintaining low MAE; others collapse to dummy level |
+|---------|-----------------|------------------------|-------|
+| Crimes | HGR | NN-HGR / KRR-FKL (High reg.); SVR-FKD (Slightly better in low reg.) | Gaps are smaller in GDP/PF |
+| Crimes | GDP / PF | SVR-FKD (Significant lead in low reg. region) | Pareto front shifted bottom-left |
+| ACSIncome | GDP (Overall) | **SVR-FKD** (Significantly the best) | KRR-FKD is suppressed by KRR-FKL, but both outperform NN-HGR |
+| ACSTravelTime | All 3 metrics | **Only SVR-FKD** | Other methods collapse to dummy levels while maintaining MAE |
 
 ### Ablation Study
-| Configuration | Key Finding | Description |
-| :--- | :--- | :--- |
-| SVR-FKD vs SVR-INPL (Fig. 3) | SVR-INPL improves fairness much slower; MAE rises while fairness plateaus at large $m$ | Proves linear null-space projection fails to capture non-linear dependencies (especially on HGR/PF) |
-| Multiple Attributes (Fig. 2a) | "Multi" better handles multiple attributes without performance collapse | Theorem 3.2 naturally supports $\mathbf{p}\in\mathbb{R}^{n\times l}$ |
-| Ridge Regularization $\tilde{\alpha}$ (Fig. 2b) | Larger $\tilde{\alpha}$ increases MAE faster; small $\tilde{\alpha}$ allows "finer" information stripping | Recommended: small $\tilde{\alpha}$ + adjust strength via $m$ |
-| Nystroem Approx. (Fig. 4) | Curves qualitatively identical to exact version | Engineering approximation does not compromise fairness performance |
+| Configuration | Key Finding | Explanation |
+|---------------|-------------|-------------|
+| SVR-FKD vs SVR-INPL (Linear projection + non-linear SVR) | SVR-INPL improves fairness much slower; after $m \in \{160, 180, 200\}$, fairness plateaus while MAE worsens | Linear projection fails to capture non-linear dependencies between data and protected attributes |
+| Multi-protected Attributes (Crimes: Black + White pop. %) | "Multi" improves Pareto on the White % side compared to "Single" (Black-only protection) | Theorem 3.2 naturally supports $\mathbf{p} \in \mathbb{R}^{n \times l}$ without performance collapse |
+| Ridge Reg. $\tilde{\alpha}$ Sweep | Higher $\tilde{\alpha}$ harms MAE more per round; smaller $\tilde{\alpha}$ allows "finer" information stripping | Suggests using small $\tilde{\alpha}$ and tuning strength via $m$ |
+| Nystroem Approximation | Pareto curves are qualitatively consistent with exact versions | Allows significant speedup without losing fairness performance |
 
 ### Key Findings
-*   SVR + FKD is the strongest combination: It achieves the Pareto front across nearly all datasets. The authors hypothesize that the $\epsilon$-insensitive loss of SVR is more robust to the preprocessed kernel structure, whereas KRR is sometimes outperformed by the HSIC approach (KRR-FKL).
-*   The necessity of "non-linear projection" is most evident in ACSTravelTime—all baselines collapse to dummy performance, whereas FKD suppresses fairness while maintaining MAE, indicating non-linear coupling between attributes and targets in reality.
-*   The role of $\tilde{\alpha}$ is not classic "overfitting prevention" but "granularity control of information stripping," providing a new intuition for tuning: use $m$ as the primary knob.
-*   Extension to multiple protected attributes is virtually free: By increasing the dimension of $\mathbf{p}$, the theory and algorithm remain unchanged—a benefit of the metric-agnostic preprocessing paradigm.
+- SVR + FKD is the strongest combination: It dominates the Pareto front in nearly all datasets. The authors hypothesize that SVR’s $\epsilon$-insensitive loss is more robust to the preprocessed kernel structure.
+- The necessity of non-linear projection is most evident in ACSTravelTime, where baseline methods collapse to dummy performance, but FKD retains predictive power while improving fairness.
+- The role of $\tilde{\alpha}$ is not standard "overfitting prevention" but rather a "granularity knob" for information stripping.
+- Multi-attribute extension is practically free: Only the dimension of $\mathbf{p}$ needs to be increased; the theory and algorithm remain the same.
 
 ## Highlights & Insights
-*   The combination of "Empirical Feature Space + INLP" is a clean paradigm synthesis: Empirical feature spaces are a classic tool in kernel learning, and INLP is a known NLP debiasing trick. Combining them for the "continuous fairness + regression + arbitrary kernel" gap requires Theorem 3.2 to close the projection into a PSD-preserving kernel transformation, which is a non-trivial contribution.
-*   The "preprocessing instead of constraint" decoupling is transferable: As long as a downstream model is based on a kernel matrix, $\mathbf{K}_{(m)}$ can replace the original kernel without changing training code—offering a different engineering approach compared to fairness loss terms.
-*   The form $\mathbf{T}^{\mathbf{K}}=\mathrm{Id}-\mathbf{M}\mathbf{K}$ is noteworthy: It is PSD-preserving, supports closed-form iteration, extends to multiple attributes, and can be accelerated by Nystroem. This form likely has utility in other "attribute stripping" tasks in kernel methods beyond fairness.
-*   The reinterpretation of $\tilde{\alpha}$ as a knob for "information stripping vs. signal preservation" is insightful, suggesting that classic tools should not always be used with classic intuitions.
+- The combination of "Empirical Feature Space + INLP" is a clean paradigm shift. While both are known tools, combining them for "continuous fairness + regression + arbitrary kernels" requires Theorem 3.2's PSD-preserving closed-form transformation, which is a non-trivial contribution.
+- The philosophy of "preprocessing vs. constraints" allows logic decoupling. Since fairness is handled in the kernel matrix, no changes are needed for downstream training code—making it easier to integrate into existing ML pipelines as a pluggable constraint.
+- The "right-multiplication of a saddle-point structure" ($\mathbf{T}^{\mathbf{K}} = \mathrm{Id} - \mathbf{M} \mathbf{K}$) is a valuable mathematical form: it preserves PSD, allows iterative stacking, handles multi-attributes, and is Nystroem-compatible.
+- Redefining the ridge parameter $\tilde{\alpha}$ as an "information stripping granularity" tool provides a useful heuristic for hyperparameter tuning.
 
 ## Limitations & Future Work
-*   Storage bottleneck remains: $\mathcal{O}(n^2)$ storage for the kernel matrix is an inherent ceiling for kernel methods. Nystroem only addresses the $\mathcal{O}(n^3)$ inversion. Scaling to hundreds of thousands of samples may require Random Fourier Features or performing projections directly in Nystroem's low-rank representation.
-*   Conservative experimental setup: Evaluation uses classic fairness benchmarks whose validity has been questioned (Bao et al., 2021). Sample sizes are small (e.g., Montana), so scalability to large-scale real-world tasks is unverified.
-*   Fairness evaluation is highly sensitive to hyperparameters: Different $m / \tilde{\alpha}$ choices yield different Pareto points without an automated selection principle.
-*   Scope limited to regression + continuous attributes: "Classification + continuous attributes," "Regression + discrete attributes," Gaussian Processes, and feature-space projections are left for future work. Privacy-preserving scenarios (stripping identity features) are potential research directions.
-*   Lack of integration with modern deep models: Most current ML systems are end-to-end neural networks. This method acts on kernel matrices; integration into deep models would require acting on intermediate representations with external kernels.
+- **Storage Bottleneck**: $\mathcal{O}(n^2)$ storage for the kernel matrix remains the fundamental limit of kernel methods. Nystroem only solves the $\mathcal{O}(n^3)$ time complexity. Scaling to millions of samples would require Random Fourier Features or performing projections directly within low-rank Nystroem representations.
+- **Conservative Experimental Setup**: The datasets are standard fairness benchmarks, but the sample sizes are relatively small (e.g., choosing Montana for ACS). Usability on large-scale real-world tasks remains to be seen.
+- **Hyperparameter Sensitivity**: The choice of $m$ and $\tilde{\alpha}$ significantly impacts the Pareto points, and the paper lacks an automated principle for selecting these.
+- **Restricted Scope**: Currently focuses on regression with continuous protected attributes. Future work includes classification with continuous attributes, Gaussian Processes, and feature-space projections.
+- **Modern Deep Learning Integration**: Most modern systems are end-to-end neural networks. This method acts on kernel matrices and would require using kernels as neural layers to be directly compatible with deep learning.
 
 ## Related Work & Insights
-*   **vs Ravfogel 2020 (INLP)**: Both share the "iterative direction finding + projection" logic. This paper extends the scope from linear models/embeddings to kernel feature spaces (including infinite-dimensional ones). The key addition is Theorem 3.2 compressing projection into a PSD-preserving kernel transformation for regression.
-*   **vs Pérez-Suay 2017 (KRR-FKL)**: Their work embeds HSIC independence into KRR optimization (the "loss modification" school). This paper belongs to the "preprocessing" school—metric-agnostic and compatible with SVR. While KRR-FKD is weaker than KRR-FKL, SVR-FKD outperforms most, showing the flexibility of the preprocessing paradigm.
-*   **vs Mary 2019 (NN-HGR)**: NN + HGR bound regularization is a strong baseline. Ours performs better on GDP/PF metrics and medium datasets, is training-gradient free, and does not require neural architecture selection.
-*   **vs Tan 2020 (GP fair subspace)**: Both involve subspace methods, but Tan finds alignment subspaces in the hypothesis space, whereas Ours projects directly on the data feature space, offering a more intuitive geometric interpretation.
+- **vs. Ravfogel 2020 (INLP)**: Both use "iterative projection," but this paper extends the scope to kernel-induced (including infinite-dimensional) spaces via Theorem 3.2.
+- **vs. Pérez-Suay 2017 (KRR-FKL)**: KRR-FKL modifies the optimization objective using HSIC. This paper is "preprocessing-based"—metric-agnostic and combinable with SVR. While KRR-FKD is sometimes weaker than KRR-FKL, SVR-FKD often outperforms it.
+- **vs. Mary 2019 (NN-HGR)**: NN-HGR is a strong neural baseline. FKD performs better in GDP/PF metrics and on small-to-medium datasets, without the need for architecture selection or gradient-based tuning.
+- **Insight**: The "preprocessing + closed-form transform" abstraction can be applied to other scenarios requiring information removal, such as privacy (stripping identity), domain generalization (stripping domain IDs), and disentangled representations.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ Solid "filling the gap" work extending INLP to kernels via closed-form PSD transformations.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Extensive datasets, metrics, baselines, and ablations, though constrained by small dataset scales.
-*   Writing Quality: ⭐⭐⭐⭐ Rigorous derivation and clear motivation regarding the real-world need for continuous fairness.
-*   Value: ⭐⭐⭐⭐ Provides a pluggable, PSD-preserving, extensible tool for kernel-based continuous fairness, specifically valuable for SVR in anti-discrimination regression.
+- **Novelty**: ⭐⭐⭐⭐ Solidly fills a gap by extending INLP to kernels with PSD preservation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive across metrics and multi-attribute/approximation ablations, though datasets are small.
+- **Writing Quality**: ⭐⭐⭐⭐ Rigorous derivations and clear motivation regarding continuous fairness.
+- **Value**: ⭐⭐⭐⭐ Provides a pluggable, PSD-preserving tool for kernel-based continuous fairness, especially valuable for SVR.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+<!-- Paper links or references could go here -->
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
+- [\[CVPR 2026\] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack](../../CVPR2026/ai_safety/batman_benign_knowledge_alignment_through_malicious_null_space_in_federated_back.md)
 - [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
-- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
 - [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
 - [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
-- [\[AAAI 2026\] Fair Model-Based Clustering](../../AAAI2026/ai_safety/fair_model-based_clustering.md)
+- [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
 
 </div>
 

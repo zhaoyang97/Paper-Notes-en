@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Topology-Aware Layer Pruning for Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Layer Pruning] Ours proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA). It models hidden states across layers as point clouds and quantifies inter-layer topolo…
+  [ACL 2026][Multimodal VLM][Vision-Language Model] Ours proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA), which models hidden states of each layer as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology. This enables adaptive retention of transition-critical layers and pruning of structurally
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Layer Pruning"
-  - "Topological Data Analysis"
-  - "Persistent Homology"
-  - "Vision-Language Models"
-  - "Model Compression"
+  - ACL 2026
+  - Multimodal VLM
+  - Vision-Language Model
+  - Model Compression
 date: 2026-05-08
-content_hash: 44339e1c37939d8a
+content_hash: 266476ccd67127c5
 ---
-
 # Topology-Aware Layer Pruning for Large Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -25,65 +21,76 @@ content_hash: 44339e1c37939d8a
 
 ## TL;DR
 
-Ours proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA). It models hidden states across layers as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology. This approach adaptively preserves critical representation transition layers and removes structurally redundant ones, significantly outperforming existing pruning methods at 50-60% sparsity.
+Ours proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA), which models hidden states of each layer as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology. This enables adaptive retention of transition-critical layers and pruning of structurally redundant layers, significantly outperforming existing pruning methods at 50-60% sparsity.
 
 ## Background & Motivation
 
-**Background**: Large Vision-Language Models (LVLMs) such as LLaVA-NeXT and VideoLLaMA2 exhibit excellent performance in multimodal understanding, but the computational and memory overhead of deep Transformer decoder architectures limits practical deployment. Layer pruning has gained attention as an effective structural compression strategy.
+**Background**: Large Vision-Language Models (LVLMs) such as LLaVA-NeXT and VideoLLaMA2 excel in multimodal understanding tasks, but the computational and memory overhead associated with deep Transformer decoder architectures limits practical deployment. Layer pruning has emerged as an effective structured compression strategy.
 
-**Limitations of Prior Work**: Existing layer pruning methods are divided into two categories: (1) Similarity-based methods (e.g., LLM-Pruner, LLM-Streamline) rely on local metrics like cosine similarity between adjacent layers; (2) Signal-driven methods (e.g., SparseGPT, Wanda) rely on static proxy signals like weight magnitude and activation statistics. Both categories only provide local snapshot views and fail to capture the global dynamic evolution of representations along the model depth.
+**Limitations of Prior Work**: Existing layer pruning methods fall into two categories: (1) similarity-based methods (e.g., LLM-Pruner, LLM-Streamline) which rely on local metrics like cosine similarity between adjacent layers; (2) signal-driven methods (e.g., SparseGPT, Wanda) which rely on static proxy signals such as weight magnitude or activation statistics. Both categories provide only local snapshot views and fail to capture the global dynamic evolution of representations along the model depth.
 
-**Key Challenge**: Representations in LVLMs undergo non-monotonic structural changes along the depth—from fine-grained visual encoding to vision-language alignment and then to instruction-conditioned reasoning. Layers that appear locally redundant may actually serve as critical bridges between different semantic stages; pruning these "transition-critical layers" leads to non-linear performance degradation.
+**Key Challenge**: Representations in LVLMs undergo non-monotonic structural transformations along the depth—shifting from fine-grained visual encoding to vision-language alignment and then to instruction-conditioned reasoning. Layers that appear locally redundant may actually serve as critical bridges between different semantic stages; pruning these "transition-critical layers" leads to non-linear performance degradation.
 
-**Goal**: Design a pruning criterion capable of capturing the global evolution of representations to distinguish between true structural redundancy and transition-critical layers.
+**Goal**: Design a pruning criterion capable of capturing the global evolution process of representations to distinguish true structural redundancy from transition-critical layers.
 
-**Key Insight**: Topological Data Analysis (TDA) focuses on the global geometry and structural organization of data. Persistent homology can track the birth and death of topological features (connected components, loops, voids) across different scales, making it ideally suited for analyzing the dynamic evolution of representations along depth.
+**Key Insight**: Topological Data Analysis (TDA) focuses on the global geometry and structural organization of data. Persistent homology can track the birth and death of topological features (connected components, loops, voids) across various scales, making it suitable for analyzing the dynamic evolution of representations along depth.
 
-**Core Idea**: Treat hidden states of each layer as point clouds to construct simplicial complexes via k-nearest neighbor graphs. Track birth and death patterns of topological features across layers using zigzag persistent homology and define inter-layer topological consistency to quantify structural redundancy. High consistency implies that a layer introduces no new topological structures and can be safely pruned.
+**Core Idea**: Treat the hidden states of each layer as point clouds, construct simplicial complexes using k-nearest neighbor (k-NN) graphs, and track the birth/death patterns of topological features across layers via zigzag persistent homology. Inter-layer topological consistency is defined to quantify structural redundancy—high consistency implies that a layer introduces no new topological structures and can be safely pruned.
 
 ## Method
 
 ### Overall Architecture
 
-Input image-instruction pairs pass through the LVLM to obtain hidden states for each layer, with a special [RET] token inserted to aggregate multimodal information. Hidden states are transformed into point clouds to construct k-nearest neighbor graphs and simplicial complexes. Persistent homology is computed through zigzag filtration to generate Effective Persistence Images (EPI). Inter-layer topological consistency scores are extracted from the EPI, and layers exceeding a threshold are marked for pruning.
+TopoVLM addresses an overlooked pitfall in layer pruning: LVLM representations do not evolve smoothly but alternate between fine-grained visual encoding, vision-language alignment, and instruction-conditioned reasoning. Certain layers may look redundant locally but are critical bridges between semantic stages. Existing methods only capture local snapshots. TopoVLM introduces TDA by treating hidden states as point clouds and using zigzag persistent homology to track the birth and death of topological features (connected components, loops) across layers. Inter-layer topological consistency simplifies decision-making: high consistency means no new structures are introduced, allowing for safe pruning. The pipeline entails: image-instruction pairs passing through the LVLM, inserting [RET] tokens to aggregate multimodal information into hidden states → converting to point clouds, building complexes, and calculating persistent homology via zigzag filtration → generating Effective Persistence Images (EPI) → extracting consistency scores to identify layers for pruning.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Image-Instruction Input"] --> B["LVLM Forward Pass + [RET] Token Insertion<br/>Aggregate multimodal info into hidden states"]
+    B --> C["Zigzag Filtration Construction<br/>Hidden states to point clouds → kNN graph to simplicial complex → Intersection of adjacent layers → 0D/1D persistent homology"]
+    C --> D["Effective Persistence Images (EPI)<br/>Project birth-death intervals to layer indices → Gaussian kernel smoothing"]
+    D --> E["Inter-layer Topological Consistency & Adaptive Pruning<br/>Calculate topological activity and inter-layer consistency scores"]
+    E -->|Consistency > Threshold| F["Structural Redundant Layer → Prune"]
+    E -->|Consistency < Threshold| G["Transition-Critical Layer → Retain"]
+    F --> H["Compressed LVLM"]
+    G --> H
+```
 
 ### Key Designs
 
-1. **Zigzag Filtration Construction**:
+**1. Zigzag Filtration Construction: Capturing Non-monotonic Representation Evolution**
 
-    - **Function**: Capture the topological evolution of representations along the model depth.
-    - **Mechanism**: For hidden states $\mathbf{H}_{L_\ell} \in \mathbb{R}^{N \times d}$ of each layer $L_\ell$, construct a k-nearest neighbor graph and obtain the simplicial complex $\mathcal{K}_{L_\ell}$ via clique expansion. An intersection complex $\mathcal{K}_{L_\ell, L_{\ell+1}} = \mathcal{K}_{L_\ell} \cap \mathcal{K}_{L_{\ell+1}}$ is defined between adjacent layers, forming a zigzag filtration sequence. 0-dimensional and 1-dimensional persistent homology are computed for this sequence to obtain birth-death intervals of topological features.
-    - **Design Motivation**: Classical persistent homology requires monotonic filtration and cannot handle non-monotonic changes in inter-layer representations. Zigzag persistent homology allows forward and backward inclusion maps, enabling the tracking of topological feature appearance, persistence, and disappearance.
+Classic persistent homology requires monotonic filtrations, while LVLM layer representations evolve non-monotonically. TopoVLM builds a k-NN graph for each layer's hidden state $\mathbf{H}_{L_\ell} \in \mathbb{R}^{N \times d}$ and expands it into a simplicial complex $\mathcal{K}_{L_\ell}$. By defining intersection complexes $\mathcal{K}_{L_\ell, L_{\ell+1}} = \mathcal{K}_{L_\ell} \cap \mathcal{K}_{L_{\ell+1}}$, a zigzag filtration sequence is formed. Calculating 0D and 1D persistent homology on this sequence identifies birth-death intervals of topological features. The zigzag approach allows for forward and backward inclusion mappings, enabling the tracking of when a feature appears, how long it persists, and when it vanishes.
 
-2. **Effective Persistence Image (EPI)**:
+**2. Effective Persistence Images (EPI): Projecting Discrete Diagrams to Differentiable Planes**
 
-    - **Function**: Transform discrete persistence diagrams into continuous layer-persistence plane representations.
-    - **Mechanism**: Project each birth-death interval $[b_j, d_j]$ onto the nearest model layer indices to obtain effective intervals $[\tilde{b}_j, \tilde{d}_j]$. Then, generate a continuous image using a weighted sum of Gaussian kernels: $\text{EPI}_p(u,v) = \sum_j \omega(\tau_j) \exp(-\frac{(u-\tilde{b}_j)^2 + (v-\tau_j)^2}{2\sigma^2})$, where $\tau_j$ is the persistence length.
-    - **Design Motivation**: Persistence diagrams are discrete multisets not conducive to hierarchical analysis and comparison. EPI provides a differentiable and stable representation while emphasizing long-lived features and suppressing noise through the weight function $\omega(\tau_j)$.
+Original persistence diagrams are discrete multisets, which are difficult for layer-wise analysis or cross-layer comparison. EPI projects each birth-death interval $[b_j, d_j]$ onto model layer indices to get an effective interval $[\tilde{b}_j, \tilde{d}_j]$, then applies a continuous image via Gaussian kernel weighted summation:
 
-3. **Inter-layer Topological Consistency and Adaptive Pruning**:
+$$\text{EPI}_p(u,v) = \sum_j \omega(\tau_j) \exp\!\Big(-\frac{(u-\tilde{b}_j)^2 + (v-\tau_j)^2}{2\sigma^2}\Big)$$
 
-    - **Function**: Quantify structural redundancy for each layer and guide pruning decisions.
-    - **Mechanism**: First calculate layer-wise topological activity $A(\ell)$ (aggregating EPI along the persistence dimension), then calculate the inter-layer consistency score $\bar{S_p}(\ell)$—a weighted probability measuring the persistence of topological features generated by layer $\ell$ in other layers, using a distance weight $\omega(\ell, \ell') = |\ell - \ell'|^\alpha$. Layers with consistency higher than threshold $\epsilon \cdot \bar{S_p}^{max}$ are pruned.
-    - **Design Motivation**: High consistency implies that the topological contribution of a layer is already covered by other layers; removing it does not disrupt global topological continuity. The fundamental difference from local similarity measures is that it considers redundancy within the global structural evolution rather than local similarity between adjacent layers.
+where $\tau_j$ is the persistence length. This representation is differentiable and stable. The weighting function $\omega(\tau_j)$ emphasizes long-lived features while suppressing short-lived noise, highlighting stable topological structures.
 
-### Loss & Training
+**3. Inter-layer Topological Consistency & Adaptive Pruning: Global Coverage vs. Local Similarity**
 
-A maintenance-free, pure inference-time pruning method. It requires only one calibration forward pass (512 samples), with zigzag filtration performed offline, introducing no inference-time overhead. Hyperparameters include the k value for k-NN and the distance weight index α.
+TopoVLM calculates layer-wise topological activity $A(\ell)$ by aggregating EPI along the persistence dimension, and then derives an inter-layer consistency score $\bar{S_p}(\ell)$. This score measures the weighted probability that topological features generated by layer $\ell$ persist in other layers, using a distance-based weight $\omega(\ell, \ell') = |\ell - \ell'|^\alpha$. Layers with consistency higher than a threshold $\epsilon \cdot \bar{S_p}^{max}$ are pruned. This criterion determines if a layer is redundant within the global structural evolution rather than simply comparing it to its neighbors.
+
+### Training Strategy & Overhead
+
+This is a pruning-at-inference method requiring no training. It only needs a single calibration forward pass (512 samples). Zigzag filtration is performed offline and does not introduce inference overhead. Primary hyperparameters include the $k$ value for k-NN and the distance weight exponent $\alpha$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-LLaVA-NeXT (8B) at 50% sparsity:
+LLaVA-NeXT (8B) at 50% Sparsity:
 
 | Method | MME-cognition | MMMU | MathVista | MMBench | Relative Score |
 |------|-------------|------|-----------|---------|---------|
 | Full Model | 376.8 | 40.1 | 36.2 | 72.2 | 100% |
 | TAMP | 341.0 | 35.7 | 31.9 | 66.3 | 90.9% |
-| **Ours** | **353.1** | **38.2** | **34.6** | **69.8** | **94.6%** |
+| **Ours** | **353.1** | **38.2** | **34.6** | **69.8** | **91.6%** |
 
-VideoLLaMA2 (7B) at 60% sparsity:
+VideoLLaMA2 (7B) at 60% Sparsity:
 
 | Method | Clotho-AQA | MuchoMusic | VideoMME | NextQA-MC | Relative Score |
 |------|-----------|-----------|---------|----------|---------|
@@ -95,43 +102,43 @@ VideoLLaMA2 (7B) at 60% sparsity:
 
 | Configuration | Description | Relative Score Change |
 |------|------|------------|
-| Remove zigzag (Standard PH only) | Cannot handle non-monotonic evolution | -2.1% |
-| Remove EPI (Raw PD) | Unstable layer-wise analysis | -1.5% |
+| Remove zigzag (standard PH only) | Cannot handle non-monotonic evolution | -2.1% |
+| Remove EPI (original PD) | Unstable layer-wise analysis | -1.5% |
 | k=5 vs k=15 vs k=25 | k=15 is optimal; too small/large degrades | k=15 Best |
 | α=0.5 vs α=1.0 vs α=2.0 | α=1.0 is optimal | α=1.0 Best |
 
 ### Key Findings
 
-- High topological activity in shallow layers (forming low-level multimodal structures) and high topological consistency in middle/deep layers (structural redundancy) aligns with intuition.
-- Advantages are more pronounced at high sparsity rates (>60%), indicating that topology-aware pruning more accurately identifies truly important layers.
-- The search phase takes only 5.7 minutes (single calibration), much faster than SparseGPT/Wanda which require multiple forward passes.
-- VRAM reduced by 43% at 50% sparsity, with inference latency dropping from 105.4ms to 60.3ms (1.75x speedup).
+- Shallow layers exhibit high topological activity (forming low-level multimodal structures), while mid-deep layers show high topological consistency (structural redundancy).
+- Advantages are more pronounced at high sparsity levels (>60%), indicating that topology-aware pruning accurately identifies essential layers.
+- The search phase takes only 5.7 minutes (single calibration), significantly faster than SparseGPT/Wanda which require multiple forward passes.
+- At 50% sparsity, VRAM is reduced by 43%, and inference latency drops from 105.4ms to 60.3ms (1.75x speedup).
 
 ## Highlights & Insights
 
-- **Innovative connection between TDA and Model Compression** is elegant—transforming persistent homology from a pure mathematical tool into a practical pruning criterion, providing a new perspective for understanding the representation structure of deep networks.
-- **The "Transition-Critical Layer" concept** is insightful—layers that appear redundant locally but are indispensable globally are difficult for traditional methods to identify; topological analysis is naturally suited for this type of global structure reasoning.
-- **Generality of the method** is noteworthy—it does not depend on specific model architectures and is effective for both image and video LVLMs, with direct transferability to pure LLMs or other modalities.
+- **Novelty**: The innovative connection between TDA and model compression is elegant—transforming persistent homology from a mathematical tool into a practical pruning criterion.
+- **Key Insight**: The concept of "transition-critical layers" is enlightening. These layers, which are locally redundant but globally indispensable, are difficult for traditional methods to identify.
+- **Function**: The method's universality is noteworthy; it is independent of specific model architectures and effective for both image and video LVLMs.
 
 ## Limitations & Future Work
 
-- Only 0D and 1D persistent homology are considered; higher dimensions might contain valuable structural information but incur higher computational overhead.
-- Selection of calibration data may affect topological analysis results; robustness to out-of-distribution data remains to be verified.
-- Currently a one-shot pruning method; progressive pruning or recovery post-fine-tuning has not been explored.
-- Although the computational complexity of zigzag filtration is linear with the number of layers, the efficiency of practical implementation is still limited by the size of the point cloud.
+- Only 0D and 1D persistent homology are considered; higher dimensions may contain valuable information but increase computational cost.
+- Calibration data selection may influence topological analysis; robustness to out-of-distribution data remains to be verified.
+- Currently a one-shot pruning method; progressive pruning or recovery via fine-tuning has not been explored.
+- The computational complexity of zigzag filtration, while linear to the number of layers, is still affected by the size of the point clouds.
 
 ## Related Work & Insights
 
-- **vs LLM-Pruner / LLM-Streamline**: Local metrics based on cosine similarity of adjacent layers cannot capture global representation evolution; Ours provides a global perspective through zigzag PH.
-- **vs TAMP**: TAMP is the strongest baseline but still relies on local signals; Ours shows more significant advantages at high sparsity rates.
-- **vs other TDA applications in LLMs**: Existing TDA work primarily focuses on hallucination detection and reasoning analysis; Ours is the first to apply it to structural pruning.
+- **vs LLM-Pruner / LLM-Streamline**: These use local metrics based on adjacent layer cosine similarity and fail to capture global evolution; Ours provides a global view via zigzag PH.
+- **vs TAMP**: TAMP is a strong baseline but still relies on local signals; Ours demonstrates a clearer advantage at higher sparsity.
+- **vs Other TDA applications in LLMs**: Existing TDA works focus on hallucination detection and reasoning analysis; Ours is the first to apply it to structured pruning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First application of zigzag persistent homology to LVLM layer pruning, theoretically novel and practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of two architectures and multiple benchmarks, but verification is missing for larger-scale models.
-- Writing Quality: ⭐⭐⭐⭐ Clear mathematical formalization, but the barrier to entry is high for readers without a TDA background.
-- Value: ⭐⭐⭐⭐ Provides a new theoretical tool for model compression, though practical deployment requires TDA expertise.
+- **Novelty**: ⭐⭐⭐⭐⭐ First to apply zigzag persistent homology to LVLM layer pruning; theoretically novel and practical.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers two architectures and multiple benchmarks, though validation on even larger-scale models is missing.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear mathematical formalization, though the threshold for readers without a TDA background is high.
+- **Value**: ⭐⭐⭐⭐ Provides a new theoretical tool for model compression, though actual deployment requires TDA expertise.
 
 <!-- RELATED:START -->
 
@@ -139,11 +146,11 @@ VideoLLaMA2 (7B) at 60% sparsity:
 
 ## Related Papers
 
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
-- [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](../../CVPR2026/multimodal_vlm/comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
-- [\[CVPR 2026\] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models](../../CVPR2026/multimodal_vlm/variation-aware_vision_token_dropping_for_faster_large_vision-language_models.md)
+- [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](../../CVPR2026/multimodal_vlm/comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/multimodal_vlm/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](../../AAAI2026/multimodal_vlm/branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
 
 </div>
 

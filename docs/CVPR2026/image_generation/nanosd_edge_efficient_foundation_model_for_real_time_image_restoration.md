@@ -2,152 +2,145 @@
 title: >-
   [Paper Note] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model distillation] This paper proposes NanoSD, a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters…
+  [CVPR 2026][Image Generation][Model Compression] NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA perfo
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Diffusion model distillation"
-  - "edge deployment"
-  - "image restoration"
-  - "super-resolution"
-  - "model compression"
-  - "multi-objective optimization"
-  - "Stable Diffusion"
+  - CVPR 2026
+  - Image Generation
+  - Model Compression
 date: 2026-05-08
-content_hash: 1b0b65ed20ab3efd
+content_hash: aa0d6b44366e9fac
 ---
-
 # NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2601.09823](https://arxiv.org/abs/2601.09823)  
 **Code**: To be confirmed  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Diffusion model distillation, edge deployment, image restoration, super-resolution, model compression, multi-objective optimization, Stable Diffusion
 
 ## TL;DR
 
-This paper proposes NanoSD, a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, as fast as 12 ms inference) built upon SD 1.5 through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. NanoSD serves as a drop-in backbone that achieves state-of-the-art performance across multiple tasks including super-resolution, face restoration, deblurring, and monocular depth estimation.
+NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA performance in tasks such as super-resolution, face restoration, deblurring, and monocular depth estimation.
 
 ## Background & Motivation
 
-**Conflict between diffusion model restoration capability and deployment constraints**: Latent diffusion models such as SD 1.5 possess powerful generative priors that are highly valuable for image restoration; however, their full pipeline (U-Net + VAE) is computationally prohibitive for real-time inference on edge devices.
+**Restoration Capability vs. Deployment Paradox of Diffusion Models**: Latent Diffusion Models (LDM) like SD 1.5 possess powerful generative priors valuable for image restoration, but their full pipeline (U-Net + VAE) is computationally prohibitive for real-time execution on edge devices.
 
-**Limitations of Prior Work**: Existing edge-efficient methods (AdcSR, TinySR, PocketSR, etc.) primarily target super-resolution using limited distillation datasets and fail to fully exploit the rich priors embedded in pretrained text-to-image (T2I) models, resulting in suboptimal architectures or poor perceptual detail.
+**Existing Lightweight Methods Limited to Single Tasks**: Current edge-efficient methods (AdcSR, TinySR, PocketSR, etc.) primarily target super-resolution using limited datasets, failing to fully leverage the rich priors in pretrained T2I models, leading to suboptimal architectures or poor perceptual details.
 
-**Theoretical FLOPs ≠ actual latency**: NPUs are optimized for specific operator patterns (e.g., GEMM); reducing FLOPs/GMACs alone does not guarantee proportional latency reduction, necessitating a hardware-aware perspective on architectural design.
+**Theoretical FLOPs $\neq$ Actual Latency**: NPUs are optimized for specific operator patterns (e.g., GEMM). Reducing FLOPs/GMACs does not guarantee a proportional decrease in actual latency, necessitating a hardware-centric re-evaluation of architecture design.
 
-**Lack of a unified conditioning mechanism**: Different restoration tasks require distinct conditioning strategies (LoRA, ControlNet, visual prompts, etc.), and existing lightweight models cannot flexibly accommodate these control plugins.
+**Lack of Unified Conditional Mechanism Support**: Different restoration tasks require various control strategies (LoRA, ControlNet, visual prompts, etc.). Existing lightweight models lack flexible compatibility with these control plugins.
 
-**Importance of preserving the latent space**: Most prior methods compress the denoising U-Net or shorten the diffusion trajectory, thereby disrupting the underlying latent manifold and limiting cross-task generalization.
+**Importance of Latent Space Preservation**: Previous methods mostly compress the denoising U-Net or shorten diffusion trajectories, which disrupts the underlying latent manifold and limits cross-task generalization.
 
-**Lack of end-to-end pipeline co-optimization**: The majority of prior work compresses only the U-Net while neglecting the VAE encoder–decoder, leaving the overall pipeline unnecessarily heavyweight.
+**Lack of End-to-End Pipeline Co-optimization**: Most works only compress the U-Net while ignoring the VAE encoder-decoder, leaving the overall pipeline bulky.
 
 ## Method
 
 ### Overall Architecture
 
-NanoSD is built upon SD 1.5 and follows a five-stage pipeline: *decompose → distill → search → assemble → fine-tune*:
+NanoSD addresses the contradiction between the value of SD 1.5 priors and the heavy computation of its U-Net+VAE pipeline on edge NPUs. Instead of manual pruning, it decomposes SD 1.5 into replaceable modules, pre-distills several lightweight variants for each module, and uses multi-objective search to automatically assemble a family of Pareto-optimal small models. The pipeline follows five steps: hardware-aware U-Net decomposition (removing low-contribution blocks and creating shape-compatible variants for retained stages); block-wise feature distillation to align with SD 1.5 teacher blocks; encoding module selection into discrete vectors for multi-objective Bayesian optimization to find the Pareto front; distilling a matching VAE while freezing the U-Net; and finally, end-to-end fine-tuning to eliminate accumulated errors.
 
-1. Perform hardware-aware decomposition of the SD 1.5 U-Net by removing the lowest-contributing deep encoder/decoder/middle blocks, and construct shape-compatible module variants for the retained 6 stages.
-2. Apply block-wise feature distillation for each variant, aligning outputs to the corresponding SD 1.5 teacher blocks.
-3. Encode module selections as discrete vectors and search for Pareto-optimal U-Net configurations via multi-objective Bayesian optimization.
-4. Freeze the selected U-Net and distill the accompanying VAE encoder–decoder.
-5. Perform end-to-end fine-tuning to correct accumulated errors, yielding the final NanoSD models.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["SD 1.5 Teacher<br/>(U-Net + VAE)"] --> B["Hardware-aware U-Net Decomposition<br/>Remove 3 low-contribution blocks, construct shape-compatible variants"]
+    B --> C["Block-wise Feature Distillation<br/>30 proxy blocks aligned to teacher, parallelizable"]
+    C --> D["Multi-objective Bayesian Optimization<br/>taFID vs Latency/Params search for Pareto front"]
+    D -->|Selected Balanced Model 2| E["Full Pipeline VAE Distillation<br/>Freeze U-Net, distill lightweight VAE enc/dec"]
+    E --> F["End-to-End Fine-tuning<br/>Denoising loss to fix accumulated errors"]
+    F --> G["NanoSD Family<br/>7 Pareto models → SR/Restoration/Depth"]
+```
 
 ### Key Designs
 
-**Hardware-aware U-Net decomposition (Sec. 3.1)**: Encoder-4, the middle block, and decoder-4 of SD 1.5 are removed as the lowest contributors, retaining 3 encoder stages and 3 decoder stages. For each stage, the original block structure (e.g., R-A-R-A) is examined and variants that strictly preserve input–output tensor shapes are constructed (e.g., residual-only, reduced-attention), ensuring that any combination requires no additional adapters. The resulting search space comprises $4\times4\times4\times8\times8\times8 = 32{,}768$ candidate architectures.
+**1. Hardware-aware U-Net Decomposition: Making FLOPs Savings Reflect in Latency**
 
-**Block-wise feature distillation (Sec. 3.2)**: Each candidate variant at each stage is independently trained using an L2 feature-matching loss against the corresponding SD 1.5 teacher block:
-$$\mathcal{L}_{\text{distill}}^{(i,j)} = \|O_S - O_T\|_2^2$$
-The 6 stages yield 30 distilled proxy blocks in total (3+3+3+7+7+7). The process is highly parallelizable and incurs minimal computational overhead.
+NPUs are optimized for specific operator patterns like GEMM. Purely reducing FLOPs does not proportionally reduce latency, and manual simplification risk damaging generative priors. NanoSD (Sec 3.1) first removes the least contributory components (encoder-4, middle block, decoder-4) from SD 1.5, retaining 3 encoders and 3 decoders. It then derives a set of variants for each stage (e.g., pure residual, reduced attention) that strictly maintain input/output tensor shapes. Shape compatibility is crucial—it ensures any module combination works without adapters, allowing $4 \times 4 \times 4 \times 8 \times 8 \times 8 = 32,768$ candidate architectures in the search space.
 
-**Multi-objective Bayesian optimization (Sec. 3.4)**: A teacher-aligned FID (taFID) metric is defined to quantify distributional deviation from SD 1.5 outputs. Two bi-objective optimization problems are formulated, pairing taFID with device latency and parameter count, respectively. Discrete search variables are relaxed to a continuous space $\mathbf{x} \in [0,1]^6$, with Gaussian processes modeling both objectives. Candidate configurations are sampled by maximizing the Expected Hypervolume Improvement (EHVI). This procedure yields 7 Pareto-optimal architectures; Model 2 (NanoSD-Prime) is selected as the representative: 315M parameters, 27 ms latency, taFID = 10.
+**2. Block-wise Feature Distillation: "Divide and Conquer" for Efficient Training**
 
-### Loss & Training
+Training 32K architectures from scratch is infeasible. NanoSD (Sec 3.2) independently performs L2 feature matching distillation for each candidate variant against its corresponding SD 1.5 teacher block: $\mathcal{L}_{\text{distill}}^{(i,j)} = \|O_S - O_T\|_2^2$. This requires training only 30 distillation proxy blocks ($3+3+3+7+7+7$), which is highly parallelizable and efficient. During assembly, these pretrained blocks are reused, eliminating the need to retrain entire candidate networks.
 
-- **Block-level distillation**: L2 feature-matching loss.
-- **VAE distillation**: Standard feature-matching loss (U-Net frozen; VAE encoder–decoder distilled).
-- **End-to-end fine-tuning**: Standard diffusion denoising loss.
+**3. Multi-objective Bayesian Optimization: Searching the Pareto Front**
 
-## Key Experimental Results
+NanoSD (Sec 3.4) defines Teacher-aligned FID (taFID) to measure divergence from the SD 1.5 output distribution. It performs dual-objective optimization (taFID vs. latency; taFID vs. parameters) by relaxing discrete module selection into a continuous space $\mathbf{x} \in [0,1]^6$, modeling objectives with Gaussian Processes, and sampling via Expected Hypervolume Improvement (EHVI). This identifies 7 Pareto-optimal models, such as NanoSD-Prime (Model 2: 315M params, 27ms latency, taFID=10), demonstrating that parameter count and latency are not strictly correlated.
+
+**4. Full-pipeline VAE Distillation: Extending Compression Beyond the U-Net**
+
+Prior edge methods often neglect the VAE, leaving the latent diffusion pipeline heavy and damaging the latent manifold. NanoSD (Sec 3.5) freezes the searched Pareto U-Net and performs feature matching distillation on the VAE. The student VAE utilizes Tiny ResNet blocks with a fixed 64-channel width and lightweight up/downsampling, replacing the 64→128→256→512 structure of the teacher. This compresses the encoder/decoder to ~2M/1.3M parameters (10ms/8ms in FP16). The final end-to-end fine-tuning with standard denoising loss corrects accumulated errors from block-wise assembly.
 
 ### Main Results
 
-**Super-resolution (DIV-2K Val)**:
+**Super-Resolution (DIV-2K Val)**:
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ | NIQE↓ | MUSIQ↑ | MACs(G) | Para.(M) |
-|--------|-------|-------|--------|------|-------|--------|---------|----------|
+|------|-------|-------|--------|------|-------|--------|---------|----------|
 | Edge-SD-SR | 24.10 | 0.617 | 0.249 | 25.37 | - | 69.58 | - | 169 |
 | AdcSR | 23.74 | 0.602 | 0.285 | 25.52 | 4.36 | 68.00 | 496 | 456 |
 | TinySR | - | 0.572 | 0.279 | 22.94 | 4.15 | 69.90 | 427 | 341 |
 | **Nano-S3Diff** | 23.13 | 0.573 | **0.278** | **22.34** | **4.09** | **70.44** | **285** | **318** |
 | **Nano-OSEDiff** | **24.29** | **0.628** | 0.296 | 27.46 | 4.92 | 66.41 | 340 | 448 |
 
-**Face restoration (CelebA-Test)**:
+**Face Restoration (CelebA-Test)**:
 
 | Method | LPIPS↓ | NIQE↓ | MUSIQ↑ | FID↓ | LMD↓ | MACs(G) | Para.(M) |
-|--------|--------|-------|--------|------|------|---------|----------|
+|------|--------|-------|--------|------|------|---------|----------|
 | OSDFace | 0.336 | 3.884 | 75.64 | 45.41 | 5.286 | 2465 | 1887 |
 | **Nano-OSDFace** | 0.341 | 3.913 | **76.01** | 45.92 | **5.172** | **479** | **415** |
 
-Nano-OSDFace achieves superior MUSIQ and LMD scores compared to the original OSDFace while reducing MACs by approximately 5× and parameter count by approximately 4.5×.
+Nano-OSDFace achieves ~5x reduction in MACs and ~4.5x reduction in parameters while outperforming the original OSDFace in MUSIQ and LMD.
 
 ### Ablation Study
 
-- **Pareto frontier analysis**: The 7 NanoSD variants span a latency range of 12–41 ms and a parameter range of 130M–315M. Manually tuned models and Segmind TinySD both lie far from the Pareto frontier, demonstrating that hand-crafted simplification cannot effectively preserve the generative prior.
-- **Latency vs. parameter count discrepancy**: Model 5 achieves the lowest latency (12 ms / 170M parameters) while Model 7 has the fewest parameters (27 ms / 130M), validating the paper's central claim that parameter count and latency are not positively correlated.
-- **Multi-task generality**: The same NanoSD backbone is successfully integrated into six frameworks — OSEDiff, S3Diff, OSDFace, DiffBIR, Diff-Plugin, and Marigold — covering super-resolution, face restoration, deblurring/dehazing/deraining/desnowing, and monocular depth estimation.
+- **Pareto Front Analysis**: 7 NanoSD variants cover 12ms–41ms latency and 130M–315M parameters. Manual models and Segmind TinySD are far from the Pareto front, proving manual simplification fails to retain priors effectively.
+- **Latency vs. Parameter Inconsistency**: Model 5 has the lowest latency (12ms/170M), while Model 7 has the fewest parameters (27ms/130M), validating that parameter count is not a direct proxy for latency.
+- **Multi-task Versatility**: The same NanoSD backbone is successfully integrated into OSEDiff, S3Diff, OSDFace, DiffBIR, Diff-Plugin, and Marigold frameworks.
 
-### Key Findings
+## Highlights
 
-1. Block-wise distillation combined with Bayesian search efficiently explores a search space of 32K architectures without full-network training.
-2. NanoSD-Prime (Model 2) achieves generation quality nearly on par with SD 1.5 (taFID = 10) at 27 ms NPU latency.
-3. On depth estimation, Nano-Marigold achieves AbsRel = 7.2 and $\delta_1$ = 94.6 on NYUv2, a manageable gap relative to Marigold (5.5 / 96.4).
-
-## Highlights & Insights
-
-- This is the first work to co-compress the full SD 1.5 pipeline (U-Net + VAE) rather than the denoising network alone.
-- The "divide-and-conquer" strategy of block-wise distillation followed by combinatorial search is highly efficient: 30 proxy blocks can be assembled into 32K architectures.
-- Rigorous hardware-aware design ensures all variants maintain tensor shape compatibility without requiring adapters.
-- A genuinely multi-task foundation model: the same backbone is compatible with multiple conditioning plugins including LoRA and ControlNet.
-- Practical deployment validation: 27 ms measured on a Qualcomm NPU with 8-bit weights and 16-bit activations.
+- First to co-compress the entire SD 1.5 pipeline (U-Net + VAE) rather than just the denoising network.
+- Highly efficient "divide and conquer" strategy: 30 proxy blocks enable assembly of 32K architectures.
+- Strict hardware-aware design: Shape-compatible variants eliminate the need for adapters.
+- Universal foundation model: Backbone is compatible with LoRA, ControlNet, and various condition plugins.
+- Real-world deployment: 27ms verified on Qualcomm NPU with 8-bit weights/16-bit activations.
 
 ## Limitations & Future Work
 
-- Distillation is based solely on SD 1.5; the compression potential of newer architectures such as SDXL or SD3 remains unexplored.
-- taFID as a search metric measures only distributional deviation from the teacher and does not directly correlate with downstream task performance.
-- A non-trivial performance gap remains between Nano-Marigold and full-scale Marigold on depth estimation (AbsRel 7.2 vs. 5.5).
-- All latency measurements are conducted on Qualcomm NPUs; applicability to other hardware platforms (e.g., Apple ANE, MediaTek APU) is not validated.
-- VAE distillation details are insufficiently described in the main text, impeding full reproducibility.
+- Distillation is based solely on SD 1.5; compression potential of SDXL or SD3 remains unexplored.
+- taFID only measures distribution divergence from the teacher and may not directly correlate with downstream task metrics.
+- Performance gap exists in depth estimation compared to full-sized Marigold (AbsRel 7.2 vs 5.5).
+- Latency measurements are specific to Qualcomm NPUs; applicability to other platforms (Apple ANE, MediaTek APU) is unverified.
+- Lack of detailed VAE distillation specifics in the main text hinders full reproducibility.
 
 ## Related Work & Insights
 
-- **Diffusion-based restoration**: StableSR, DiffBIR, Diff-Plugin, and SeeSR exploit T2I priors but are computationally expensive.
-- **Single-step diffusion acceleration**: SinSR (bidirectional distillation), OSEDiff (variational score distillation), S3Diff (degradation-aware LoRA).
-- **Architecture compression**: SnapFusion (module contribution analysis), MobileDiff (Transformer relocation), SnapGen (depthwise separable convolutions).
-- **Edge-efficient SR**: AdcSR (adversarial diffusion compression), Edge-SD-SR (LR conditioning mechanism), TinySR (deep U-Net pruning), PocketSR (multi-layer feature distillation).
-- **Segmind TinySD**: A hand-simplified SD 1.5 model that lies far from the Pareto frontier compared to the NanoSD family.
+- **Diffusion Restoration**: StableSR, DiffBIR, and SeeSR use T2I priors but are computationally heavy.
+- **Single-step Acceleration**: SinSR (bidirectional distillation), OSEDiff (variational score distillation), and S3Diff.
+- **Architecture Compression**: SnapFusion (module contribution), MobileDiff (Transformer relocation), and SnapGen.
+- **Edge-efficient SR**: AdcSR, Edge-SD-SR, TinySR, and PocketSR.
+- **Segmind TinySD**: A manually simplified SD 1.5 that is significantly outperformed by NanoSD on the Pareto front.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The full-pipeline co-compression scheme combining block-wise distillation and multi-objective Bayesian search is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers 7 restoration tasks, multiple datasets, 6 integration frameworks, and hardware benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ — Architecture diagrams are clear and the Pareto analysis is thorough, though VAE distillation details are insufficient.
-- Value: ⭐⭐⭐⭐⭐ — Provides a practical general-purpose foundation model solution for deploying diffusion models on edge devices.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](cod_a_diffusion_foundation_model_for_image_compression.md)
 - [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
-- [\[CVPR 2026\] V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration](v-bridge_bridging_video_generative_priors_to_versatile_few-shot_image_restoratio.md)
-- [\[CVPR 2026\] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
+- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
+- [\[ECCV 2024\] MotionLCM: Real-time Controllable Motion Generation via Latent Consistency Model](../../ECCV2024/image_generation/motionlcm_real-time_controllable_motion_generation_via_latent_consistency_model.md)
 
 </div>
 

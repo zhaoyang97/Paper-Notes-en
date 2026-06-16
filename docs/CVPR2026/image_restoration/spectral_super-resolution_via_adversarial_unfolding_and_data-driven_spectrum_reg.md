@@ -2,157 +2,144 @@
 title: >-
   [Paper Note] Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 description: >-
-  [CVPR 2026][Image Restoration][Spectral Super-Resolution] This paper proposes UALNet, which integrates a data-driven spectral prior (PriorNet) and an adversarial learning term into a deep unfolding framework to perform s…
+  [CVPR 2026][Image Restoration][Remote Sensing] Proposes UALNet, which achieves spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral images (186 bands) by embedding data-driven spectral priors (PriorNet) and adversarial learning terms into a deep unfolding framework. It outperforms Transformers while requiring only 15%
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Spectral Super-Resolution"
-  - "Deep Unfolding"
-  - "Adversarial Learning"
-  - "Hyperspectral Reconstruction"
-  - "Remote Sensing"
-  - "Sentinel-2"
-  - "AVIRIS"
+  - CVPR 2026
+  - Image Restoration
+  - Remote Sensing
+  - Sentinel-2
 date: 2026-05-08
-content_hash: adc558399802ccdc
+content_hash: 81b71f835b651952
 ---
-
 # Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00920](https://arxiv.org/abs/2603.00920)  
 **Code**: [IHCLab/UALNet](https://github.com/IHCLab/UALNet)  
-**Area**: Image Restoration
+**Area**: Image Restoration  
 **Keywords**: Spectral Super-Resolution, Deep Unfolding, Adversarial Learning, Hyperspectral Reconstruction, Remote Sensing, Sentinel-2, AVIRIS
 
 ## TL;DR
 
-This paper proposes UALNet, which integrates a data-driven spectral prior (PriorNet) and an adversarial learning term into a deep unfolding framework to perform spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral imagery (186 bands), surpassing Transformer-based methods while requiring only 15% of their computation and 1/20 of their parameters.
+Proposes UALNet, which achieves spectral super-resolution from Sentinel-2 multispectral data (12 bands) to NASA AVIRIS hyperspectral images (186 bands) by embedding data-driven spectral priors (PriorNet) and adversarial learning terms into a deep unfolding framework. It outperforms Transformers while requiring only 15% of the computation and 1/20 of the parameters.
 
 ## Background & Motivation
 
-**Demand for global hyperspectral coverage**: ESA's Sentinel-2 satellite provides global multispectral coverage, but offers only 12 bands at inconsistent spatial resolutions (60/20/10 m), which is insufficient for fine-grained remote sensing recognition. NASA's AVIRIS-NG sensor delivers high spectral and spatial resolution, but is limited to coverage over the Americas due to operational constraints.
+**Background**: ESA's Sentinel-2 satellites provide global multispectral coverage but only offer 12 bands with inconsistent spatial resolutions (60/20/10 m), which is insufficient for fine-grained remote sensing identification. NASA's AVIRIS-NG sensor provides high-spectral and high-spatial resolution but is limited to certain regions in the Americas due to operational constraints.
 
-**Core scientific problem**: Can computational methods reconstruct global Sentinel-2 data into NASA-grade hyperspectral imagery? Expanding from 12 bands to 186 bands ($12 \rightarrow 186$) is a severely ill-posed inverse problem, and simultaneously requires unifying spatial resolution to 5 m.
+**Key Challenge**: Can computational methods reconstruct global Sentinel-2 data into NASA-grade hyperspectral images? Super-resolving 12 bands into 186 bands is a highly ill-posed inverse problem ($12 \rightarrow 186$), and it also requires unifying the spatial resolution to 5 m.
 
-**Limitations of existing methods**:
-   - Traditional deep unfolding methods rely on implicit deep priors and lack explicit modeling of physical spectral characteristics
-   - Most spectral super-resolution methods operate only on CAVE-scale 31-band visible-light reconstruction, far short of the complexity demanded by AVIRIS-level hyperspectral data
-   - Purely data-driven Transformer/CNN methods are parameter-heavy, computationally expensive, and lack interpretability
-   - GAN discriminators are used only during training and discarded at inference, wasting discriminative information
+**Limitations of Prior Work**:
+   - Traditional deep unfolding methods rely on implicit deep priors and lack explicit modeling of spectral physical characteristics.
+   - Most spectral super-resolution methods only handle 31-band visible light reconstruction (e.g., CAVE dataset), failing to reach the complexity of AVIRIS-grade hyperspectral data.
+   - Purely data-driven Transformer/CNN methods have high parameter counts and computational costs, with poor interpretability.
+   - GAN discriminators only function during training and are discarded during inference, wasting discriminative information.
 
 ## Method
 
-### Problem Formulation
+### Overall Architecture
 
-Spectral super-resolution is modeled as a linear inverse problem:
+UALNet addresses a specific scientific question: whether it is possible to computationally reconstruct Sentinel-2 data (12 bands, global coverage) into NASA AVIRIS-grade hyperspectral images (186 bands). This is a highly underdetermined linear inverse problem—the observation is modeled as $\mathbf{Y} = \mathbf{R}\mathbf{X} + \mathbf{N}$, where $\mathbf{Y} \in \mathbb{R}^{12 \times P}$ is the multispectral observation, $\mathbf{X} \in \mathbb{R}^{186 \times P}$ is the target hyperspectral image, and $\mathbf{R} \in \mathbb{R}^{12 \times 186}$ is the spectral response matrix. Solving for 186 unknowns with 12 equations requires strong regularization. UALNet unfolds this optimization problem into a multi-stage network, where each stage performs an iteration of "data fidelity gradient descent + regularization constraint." It introduces two novel components: PriorNet for explicit spectral priors and a discriminator that participates in reconstruction during both training and inference. Furthermore, since Sentinel-2 bands are distributed across 60/20/10 m resolutions, UALNet couples spectral and spatial super-resolution into a joint task, unifying the output at 5 m.
 
-$$\mathbf{Y} = \mathbf{R} \mathbf{X} + \mathbf{N}$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Sentinel-2 Multispectral<br/>12 bands / 60·20·10 m"] --> B["Deep Unfolding Framework<br/>K stages iterative solution 12→186"]
+    subgraph STG["Single Unfolding Stage (Repeated K times)"]
+        direction TB
+        C["Data Fidelity Gradient Descent<br/>Update along ‖Y − RX‖²"] --> D["PriorNet<br/>Data-driven spectral prior regularization"]
+        D --> E["Unfolding Adversarial Learning (UAL)<br/>Discriminator evaluates quality and backpropagates gradients"]
+    end
+    B --> STG
+    STG -->|Not converged, next stage| B
+    STG -->|Complete K iterations| F["AVIRIS-grade Hyperspectral<br/>186 bands @ 5 m"]
+```
 
-where $\mathbf{Y} \in \mathbb{R}^{12 \times P}$ denotes the Sentinel-2 multispectral observation, $\mathbf{X} \in \mathbb{R}^{186 \times P}$ is the hyperspectral image to be reconstructed, $\mathbf{R} \in \mathbb{R}^{12 \times 186}$ is the spectral response matrix, and $P$ is the number of pixels. This problem is highly underdetermined (12 equations, 186 unknowns), necessitating effective regularization.
+### Key Designs
 
-### Overall Architecture of UALNet
+**1. Deep Unfolding Framework: Decomposing iterative optimization into a learnable multi-stage network**
 
-UALNet integrates three key modules within a unified deep unfolding framework:
+Direct end-to-end regression of a 12→186 mapping lacks interpretability and is difficult to constrain. UALNet adopts a deep unfolding approach, unfolding the iterative solution of the inverse problem into several stages. Each stage corresponds to an update: first, gradient descent is performed along the data fidelity term $\|\mathbf{Y} - \mathbf{R}\mathbf{X}\|^2$ to ensure consistency between reconstruction and observation, followed by a regularization term to pull the solution toward a plausible spectral space. Each step has physical meaning, and the regularization term serves as a plug-and-play module.
 
-**1. Deep Unfolding Framework**: The iterative solution of the optimization problem is unrolled into a multi-stage network, where each stage corresponds to one iteration update. Each stage consists of:
-   - A data fidelity term: ensuring the reconstruction is consistent with the observation, i.e., gradient descent on $\|\mathbf{Y} - \mathbf{R}\mathbf{X}\|^2$
-   - A regularization term: incorporating spectral prior constraints
+**2. PriorNet: Replacing implicit network regularization with explicit spectral priors**
 
-**2. PriorNet — Data-Driven Spectral Prior**:
-   - Unlike traditional deep unfolding methods that use implicit network regularization, UALNet designs PriorNet to explicitly learn the spectral prior distribution
-   - PriorNet learns the low-dimensional manifold structure of hyperspectral signals from paired Sentinel-2 and AVIRIS training data
-   - At each unfolding stage, PriorNet provides a data-driven spectral regularization signal that guides reconstructions toward the plausible spectral space
-   - Compared to implicit priors, the explicit prior offers better interpretability and generalizability
+Regularization terms in traditional deep unfolding are often implicit networks, making it unclear what priors are learned and lacking explicit constraints on spectral physical properties. UALNet designs PriorNet to learn the low-dimensional manifold structure of hyperspectral signals directly from paired Sentinel-2/AVIRIS data. In each unfolding stage, it outputs a data-driven spectral regularization signal, guiding the reconstruction toward the real spectral distribution. Compared to implicit priors, it is more interpretable and provides larger gains in PSNR/SSIM/SAM.
 
-**3. Unfolding Adversarial Learning (UAL)**:
-   - Core innovation: the discriminator is embedded within the unfolding framework rather than serving solely as an external training signal
-   - The discriminator evaluates reconstruction quality at each unfolding stage, and its gradient feedback directly participates in the iterative updates
-   - **The discriminator is used during both training and inference** — this is the fundamental distinction from conventional GANs, which discard the discriminator at inference. UAL allows the discriminator to continue guiding reconstruction at test time
-   - The adversarial term acts as an additional regularizer, encouraging the reconstructed hyperspectral image to match the spectral statistical distribution of real AVIRIS data
+**3. Unfolding Adversarial Learning (UAL): Enabling the discriminator to work during inference**
 
-### Spatial Resolution Unification
-
-Sentinel-2's 12 bands span three spatial resolutions (60 m / 20 m / 10 m). UALNet unifies all bands to 5 m resolution prior to or jointly with spectral super-resolution, formulating the task as a joint spatial-spectral reconstruction problem.
+In typical GANs, the discriminator only provides adversarial signals during training and is discarded during inference. UAL embeds the discriminator within the unfolding framework: it evaluates the current reconstruction quality at each stage, and its gradients directly participate in the iterative updates. This discriminator is retained during both training and inference—a fundamental difference from traditional GANs. Effectively, the adversarial term acts as a distribution-matching regularizer, forcing the reconstructed hyperspectral data to match the statistical characteristics of real AVIRIS data.
 
 ### Loss & Training
 
-The total loss comprises three components:
-- Reconstruction loss: $\ell_1$ or $\ell_2$ metric measuring the error between the reconstructed hyperspectral image and the ground truth
-- Spectral Angle Mapper (SAM) loss: preserving the fidelity of spectral curve shapes
-- Adversarial loss: a distribution matching term guided by the discriminator
+The total loss consists of three parts: reconstruction loss ($\ell_1$ or $\ell_2$ error relative to ground truth), spectral angle loss (SAM, constraining the fidelity of spectral curve shapes), and discriminator-guided adversarial loss (for distribution matching). With these combined, UALNet surpasses Transformers in accuracy while using only ~15% of the MACs and 1/20 of the parameters.
 
 ## Key Experimental Results
 
-### Experimental Setup
+### Main Results
 
-- **Data**: Paired data from Sentinel-2 multispectral satellite imagery (global coverage, 12 bands) and NASA AVIRIS-NG airborne hyperspectral data (Americas, 186 bands)
-- **Task**: Spectral super-resolution from 12 bands to 186 bands, with spatial resolution unified to 5 m
-- **Metrics**: PSNR (Peak Signal-to-Noise Ratio), SSIM (Structural Similarity Index), SAM (Spectral Angle Mapper, lower is better), MACs (Multiply-Accumulate Operations), and parameter count
-- **Baselines**: Transformer-based methods and other state-of-the-art spectral super-resolution approaches
+- **Data Sources**: Paired data from Sentinel-2 multispectral satellites (global, 12 bands) and NASA AVIRIS-NG hyperspectral airborne sensors (Americas, 186 bands).
+- **Task**: 12-band → 186-band spectral super-resolution + spatial resolution unification to 5 m.
+- **Metrics**: PSNR, SSIM, SAM (Spectral Angle Mapper, lower is better), MACs, Parameters.
+- **Baselines**: Includes Transformer-based methods and other SOTA spectral super-resolution models.
 
-### Table 1: Quantitative Comparison with State-of-the-Art Methods
+**Table 1: Quantitative comparison with SOTA methods**
 
-| Method | PSNR ↑ | SSIM ↑ | SAM ↓ | Params | MACs |
-|--------|--------|--------|-------|--------|------|
-| CNN-based baseline | Low | Low | High | Medium | Medium |
+| Method | PSNR ↑ | SSIM ↑ | SAM ↓ | Parameters | MACs |
+|------|--------|--------|-------|--------|------|
+| CNN-based baseline | Lower | Lower | Higher | Medium | Medium |
 | Transformer (2nd best) | 2nd | 2nd | 2nd | 20× UALNet | 6.7× UALNet |
-| **UALNet (Ours)** | **Best** | **Best** | **Best** | **Fewest** | **Fewest (15%)** |
+| **UALNet (Ours)** | **Best** | **Best** | **Best** | **Least** | **Least (15%)** |
 
-UALNet outperforms the second-best Transformer method on all three metrics while achieving substantially superior computational efficiency:
-- MACs are only **15%** of the Transformer
-- Parameter count is only **1/20** of the Transformer (20× compression)
+UALNet outperforms the runner-up Transformer method across all three metrics while being significantly more efficient:
+- MACs are only **15%** of the Transformer.
+- Parameters are only **1/20** of the Transformer (20× compression).
 
 ### Ablation Study
 
-| Configuration | PSNR | SSIM | SAM | Notes |
-|---------------|------|------|-----|-------|
-| Base unfolding framework | Baseline | Baseline | Baseline | Data fidelity term only |
-| + Implicit deep prior | ↑ | ↑ | ↓ | Conventional unfolding regularization |
-| + PriorNet (explicit spectral prior) | ↑↑ | ↑↑ | ↓↓ | Data-driven prior is more effective |
-| + UAE (adversarial training only) | ↑ | ↑ | ↓ | Standard GAN-style training |
-| + UAL (adversarial training + inference) | **↑↑↑** | **↑↑↑** | **↓↓↓** | Full framework; discriminator guides continuously |
+**Table 2: Contribution of components**
 
-The ablation study demonstrates that:
-- The explicit spectral prior from PriorNet significantly outperforms the conventional implicit deep prior
-- UAL (discriminator used at both training and inference) further improves performance over using the discriminator only during training
-- The combination of all three modules achieves the best overall performance
+| Configuration | PSNR | SSIM | SAM | Description |
+|------|------|------|-----|------|
+| Basic Unfolding Framework | Baseline | Baseline | Baseline | Data fidelity term only |
+| + Implicit Deep Prior | ↑ | ↑ | ↓ | Traditional unfolding regularization |
+| + PriorNet (Explicit Spectral Prior) | ↑↑ | ↑↑ | ↓↓ | Data-driven prior is more effective |
+| + UAE (Adversarial during training only) | ↑ | ↑ | ↓ | Standard GAN-style training |
+| + UAL (Adversarial during training + inference) | **↑↑↑** | **↑↑↑** | **↓↓↓** | Full framework, continuous discriminator guidance |
 
-### Qualitative Results
-
-- Reconstructed hyperspectral images exhibit spectral curves highly consistent with AVIRIS ground truth across diverse land cover types (vegetation, water bodies, urban areas, and bare soil)
-- Band-wise error maps across all 186 bands show substantially lower reconstruction error for UALNet compared to competing methods, particularly in the shortwave infrared region
-- Spatial detail is well preserved, with edges and textures remaining sharp
+Ablation results show:
+- PriorNet's explicit spectral prior is significantly better than traditional implicit deep priors.
+- UAL (using the discriminator in both training and inference) further improves performance compared to using it only during training.
+- The combination of the three modules achieves the optimal effect.
 
 ## Highlights & Insights
 
-- **Unfolding Adversarial Learning (UAL)**: This work is the first to retain the discriminator during inference, breaking the conventional GAN paradigm of discarding the discriminator after training. Each test sample receives adversarial quality feedback, establishing a new inference-time enhancement strategy
-- **Explicit vs. implicit priors**: PriorNet provides data-driven spectral priors as an explicit replacement for the implicit network priors used in traditional unfolding, yielding improved interpretability and reconstruction quality
-- **Extreme efficiency**: UALNet surpasses Transformer-based methods using only 15% of their MACs and 1/20 of their parameters, making it highly practical for resource-constrained remote sensing platforms such as on-board satellite computing
-- **Scientific significance**: If deployed at scale, this approach could convert the entire global archive of Sentinel-2 data into AVIRIS-grade hyperspectral imagery, dramatically expanding the geographic coverage of hyperspectral data
-- **New deep unfolding paradigm**: Integrating a data fidelity term, data-driven prior, and adversarial regularization within a unified unfolding framework establishes a novel design paradigm for solving inverse problems
+- **Concept of Unfolding Adversarial Learning (UAL)**: Proposes allowing the discriminator to participate in reconstruction during the inference stage, breaking the paradigm where GAN discriminators are only used for training. This means each sample receives adversarial quality feedback during testing, representing a new inference enhancement strategy.
+- **Explicit vs. Implicit Priors**: By providing data-driven spectral priors via PriorNet instead of implicit network priors, the model achieves better interpretability and reconstruction quality.
+- **Extreme Efficiency**: Surpasses Transformer performance while requiring only 15% of the computation and 1/20 of the parameters, offering high practical value for resource-constrained remote sensing platforms (on-board computing).
+- **Scientific Significance**: If successfully deployed, this method could transform all global Sentinel-2 historical data into AVIRIS-grade hyperspectral data, significantly expanding the global coverage of hyperspectral data.
+- **New Paradigm for Deep Unfolding**: It integrates data fidelity terms, data-driven priors, and adversarial regularization within a unified unfolding framework, providing a new design paradigm for solving inverse problems.
 
 ## Limitations & Future Work
 
-- **Dependence on paired data**: Training requires spatially co-registered Sentinel-2 and AVIRIS-NG data, but AVIRIS-NG coverage is limited to the Americas, restricting geographic diversity in the training set
-- **Generalization not fully validated**: The model is trained on data from the Americas; its transferability to other continents (Africa, Asia) remains insufficiently evaluated, and different land cover distributions may degrade performance
-- **Atmospheric correction assumptions**: Radiometric consistency between Sentinel-2 and AVIRIS data depends on accurate atmospheric correction; correction errors may propagate into reconstruction artifacts
-- **Discriminator inference overhead**: Although the overall parameter count is far smaller than Transformers, UAL still requires running the discriminator at inference, incurring additional computational cost
-- **Band coverage limitation**: The current model reconstructs 186 bands; since AVIRIS originally captures up to 224 bands (reduced to 186 after removing absorption/damaged bands), some spectral information remains unrecoverable
+- **Paired Data Dependency**: Training requires spatially paired Sentinel-2 and AVIRIS-NG data. AVIRIS-NG only covers parts of the Americas, limiting the geographic diversity of training data.
+- **Generalization Challenges**: Since the model is trained on American data, its generalization to other continents (Africa, Asia) with different land cover distributions has not been fully verified.
+- **Atmospheric Correction Assumptions**: Radiometric consistency between Sentinel-2 and AVIRIS data depends on accurate atmospheric correction; errors may propagate to the reconstruction.
+- **Discriminator Inference Overhead**: Although total parameters are much fewer than Transformers, UAL still requires running the discriminator during inference, adding to the computational cost of the inference stage.
+- **Band Coverage Constraints**: The model currently reconstructs 186 bands, but AVIRIS can originally reach 224 bands (186 remain after removing absorption/damaged bands); some spectral information remains unrecoverable.
 
 ## Related Work & Insights
 
-- **Spectral super-resolution**: The inverse problem of reconstructing hyperspectral images from RGB or multispectral inputs. Traditional methods include sparse coding and matrix factorization; deep learning methods are dominated by CNNs and Transformers, but most are limited to the CAVE dataset (31 bands), far below the AVIRIS level
-- **Deep unfolding**: Unrolling optimization algorithms such as ADMM and ISTA into learnable networks. Works such as ADMM-ADAM and CODE-IF have demonstrated the effectiveness of unfolding frameworks for hyperspectral problems, but regularization terms typically remain implicit network priors
-- **GANs for image reconstruction**: SRGAN, ESRGAN, and related methods are widely used in spatial super-resolution, but their discriminators are used only during training and discarded at inference. UALNet's UAL is the first to retain and leverage the discriminator during inference
-- **Sentinel-2 super-resolution**: The predecessor work COS2A similarly investigates Sentinel-2 to AVIRIS conversion using a hybrid convex optimization and deep learning framework (CODE) with spectral-spatial duality; UALNet builds upon this foundation by introducing adversarial learning to further improve performance and efficiency
+- **Spectral Super-Resolution**: The inverse problem of reconstructing hyperspectral data from RGB/multispectral inputs. Traditional methods include sparse coding and matrix factorization; deep methods are dominated by CNNs and Transformers, but most are restricted to the CAVE dataset (31 bands) and do not address AVIRIS-level complexity.
+- **Deep Unfolding**: Unfolding optimization algorithms like ADMM or ISTA into learnable networks. Works like ADMM-ADAM and CODE-IF have proven the effectiveness of unfolding for hyperspectral problems, but regularization terms are mostly implicit network priors.
+- **GANs in Image Reconstruction**: SRGAN and ESRGAN are widely used in spatial super-resolution, but the discriminator is discarded after training. UALNet's UAL is the first to allow the discriminator to function during inference.
+- **Sentinel-2 Super-Resolution**: The prior work COS2A also studied the Sentinel-2 to AVIRIS conversion using a convex optimization/deep hybrid framework (CODE) + spectral-spatial duality; UALNet builds on this by introducing adversarial learning to further improve performance and efficiency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The concept of unfolding adversarial learning (retaining the discriminator at inference) is original, and PriorNet's replacement of implicit priors represents a meaningful methodological contribution
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive ablation studies and efficiency comparisons are provided, though geographic diversity in the dataset is limited
-- Writing Quality: ⭐⭐⭐⭐ — Problem motivation is clearly articulated, method derivation is rigorous, and the narrative from physical modeling to algorithmic design is logically coherent
-- Value: ⭐⭐⭐⭐ — Addresses a practical need for global hyperspectral coverage with strong application potential in the remote sensing community
+- Novelty: ⭐⭐⭐⭐ — The concept of Unfolding Adversarial Learning (retaining the discriminator during inference) is novel, and PriorNet's replacement of implicit priors is a methodological contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive ablation studies and efficiency comparisons are provided, though geographic diversity of datasets is limited.
+- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, rigorous derivation, and a coherent logic from physical modeling to algorithm design.
+- Value: ⭐⭐⭐⭐ — Addresses the practical need for global hyperspectral coverage, with high application value in the remote sensing community.
 
 <!-- RELATED:START -->
 
@@ -160,11 +147,11 @@ The ablation study demonstrates that:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
 - [\[ICML 2026\] Coloring the Noise: Adversarial Sobolev Alignment for Faithful Image Super Resolution](../../ICML2026/image_restoration/coloring_the_noise_adversarial_sobolev_alignment_for_faithful_image_super_resolu.md)
+- [\[ECCV 2024\] Learning Exhaustive Correlation for Spectral Super-Resolution: Where Spatial-Spectral Attention Meets Linear Dependence](../../ECCV2024/image_restoration/learning_exhaustive_correlation_for_spectral_super-resolution_where_spatial-spec.md)
 - [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
-- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](sat_selective_aggregation_transformer_for_image_super_resolution.md)
-- [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
+- [\[ECCV 2024\] Rethinking Image Super-Resolution from Training Data Perspectives](../../ECCV2024/image_restoration/rethinking_image_super-resolution_from_training_data_perspectives.md)
 
 </div>
 

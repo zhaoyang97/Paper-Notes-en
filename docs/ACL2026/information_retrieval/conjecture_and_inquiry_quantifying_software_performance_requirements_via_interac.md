@@ -2,124 +2,132 @@
 title: >-
   [Paper Note] Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Requirement Quantification] Ours proposes the IRAP method, which quantifies natural language software performance requirements into mathematical functions through Interactive Retri…
+  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes IRAP, a method that quantifies natural language software performance requirements into mathematical functions through Interactive Retrieval-Augmented Preference Elicitation. It achieves up to 40x performance improvement over 10 SOTA methods on four real-world datasets with only five interaction roun
 tags:
-  - "ACL 2026"
-  - "Information Retrieval & RAG"
-  - "Requirement Quantification"
-  - "Preference Elicitation"
-  - "Retrieval-Augmented Generation"
-  - "Interactive Systems"
-  - "Software Performance Requirements"
+  - ACL 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: a14d13724b1d67ef
+content_hash: 4c8a21eb056121f3
 ---
-
 # Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.21380](https://arxiv.org/abs/2604.21380)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Information Retrieval  
 **Keywords**: Requirement Quantification, Preference Elicitation, Retrieval-Augmented Generation, Interactive Systems, Software Performance Requirements
 
 ## TL;DR
 
-Ours proposes the IRAP method, which quantifies natural language software performance requirements into mathematical functions through Interactive Retrieval-Augmented Preference Elicitation. It achieves up to a 40x performance improvement compared to 10 SOTA methods across four real-world datasets, requiring only five rounds of interaction.
+This paper proposes IRAP, a method that quantifies natural language software performance requirements into mathematical functions through Interactive Retrieval-Augmented Preference Elicitation. It achieves up to 40x performance improvement over 10 SOTA methods on four real-world datasets with only five interaction rounds.
 
 ## Background & Motivation
 
-**Background**: Software performance requirements (e.g., response time, throughput, availability) are typically recorded in natural language within requirement documents. However, performance analysis, testing, and optimization in software engineering require these to be converted into computable mathematical forms (e.g., utility functions, constraints).
+**Background**: Software performance requirements (e.g., response time, throughput, availability) are typically documented in natural language. However, performance analysis, testing, and optimization in software engineering require these to be converted into computable mathematical forms (e.g., utility functions, constraints).
 
-**Limitations of Prior Work**: Natural language descriptions of performance requirements are often vague (e.g., "the system should respond quickly," "latency should be within an acceptable range"). Coupled with uncertainty in human cognition, the same requirement text can be interpreted as completely different mathematical forms by different stakeholders. This high degree of ambiguity makes automated quantification an under-addressed challenge.
+**Limitations of Prior Work**: Natural language descriptions of performance requirements are often vague (e.g., "system should respond quickly", "latency should be within acceptable limits"). Combined with human cognitive uncertainty, the same requirement text can be interpreted as vastly different mathematical forms by different stakeholders. This high degree of ambiguity makes automated quantification an unresolved challenge.
 
-**Key Challenge**: There is a tension between the need to translate vague natural language into precise mathematical functions and the highly personalized, context-dependent nature of stakeholder preferences. Traditional NLP methods fail to directly infer precise quantitative parameters from text.
+**Key Challenge**: There is a conflict between the need to convert fuzzy natural language into precise mathematical functions and the highly personalized, context-dependent nature of stakeholder preferences. Traditional NLP methods cannot directly infer precise quantitative parameters from text alone.
 
-**Goal**: To formalize the problem of performance requirement quantification and propose a method that reasons about preferences by retrieving domain-specific knowledge while guiding progressive interaction with stakeholders to achieve high-precision quantification with minimal cognitive load.
+**Goal**: To formalize the problem of performance requirement quantification and propose a method that reasons about preferences by retrieving domain-specific knowledge while guiding stakeholders through progressive interactions, achieving high-precision quantification while reducing cognitive load.
 
-**Key Insight**: The problem is modeled as "Conjecture and Inquiry"—the system first forms quantitative conjectures based on retrieved domain knowledge and then verifies and refines these conjectures through targeted interactions with stakeholders.
+**Key Insight**: The problem is modeled as "Conjecture and Inquiry"—the system first forms a quantification conjecture based on retrieved domain knowledge and then verifies and corrects it through targeted interactions with stakeholders.
 
-**Core Idea**: Rather than attempting to infer mathematical functions from text in a single step, the method utilizes retrieval-augmented techniques to obtain problem-specific domain knowledge for initializing conjectures, followed by step-by-step refinement of preference parameters through a few interaction rounds.
+**Core Idea**: Instead of attempting to infer mathematical functions from text in a single step, the method utilizes retrieval-augmented generation to obtain problem-specific domain knowledge for draft initialization, followed by a small number of interaction rounds to refine preference parameters progressively.
 
 ## Method
 
 ### Overall Architecture
 
-IRAP (Interactive Retrieval-Augmented Preference Elicitation) consists of two coupled core components: (1) a retrieval-augmented preference reasoning module, which retrieves cases and reference information related to the current requirement from a domain knowledge base to reason about potential stakeholder preferences; (2) a progressive interaction module, which designs targeted interaction questions based on reasoning results to elicit true preferences with minimal rounds, ultimately transforming natural language requirements into mathematical functions.
+IRAP models the transition from "natural language performance requirements → mathematical functions" as a **finite state transition** process. The authors observe that satisfaction with performance requirements follows three piecewise linear patterns: P1 (larger is better, with tolerance below a threshold, e.g., "throughput must be $> 100$ req/s"), P2 (smaller is better, e.g., "response time $< 5$s"), and P3 (exactly a certain value is best); each pattern is characterized by a threshold $T$ and a tolerance $\Delta$. The goal of quantification is to start from an initial function $f_{t,0}$ and reach the stakeholder-approved function $f_t^*$ using operations such as ADD/REMOVE pattern points (controlling precision) or CHANGE threshold/tolerance/satisfaction (controlling difficulty) within minimal rounds.
+
+To achieve this, IRAP integrates three sequential stages: first, **retrieval-generative quantification** converts fuzzy requirement text into an initial draft function $f_{t,0}$; second, **retrieval-analogical preference reasoning** leverages the user's historical cases to move the draft to a starting point $f'_{t,0}$ closer to their actual preference; finally, **interactive preference tuning** uses tree-based QA to fine-tune the function round-by-round until it converges to the computable piecewise function $f_t^*$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["NL Performance Requirement"] --> P1
+    subgraph P1["Retrieval-Generative Quantification"]
+        direction TB
+        C["Retrieval-based Classification<br/>Anchor Phrases + Contrastive Loss Fine-tuned RoBERTa → Mode P1/P2/P3"]
+        T["Generative Threshold Extraction<br/>Full-parameter Fine-tuned GPT-2 → Threshold T"]
+    end
+    P1 -->|"Initial Draft f_t,0"| P2["Retrieval-Analogical Preference Reasoning<br/>Retrieve Similar Historical Case + PAOE/KM Matching → Apply Operations"]
+    P2 -->|"Optimized Starting Point f'_t,0"| P3["Interactive Preference Tuning<br/>Tree-based Multiple-choice QA, 1 Operation per Round: ADD/REMOVE/CHANGE"]
+    P3 -->|"Below N Rounds / Not Approved"| P3
+    P3 -->|"Converged"| OUT["Optimal Quantified Function f_t*"]
+```
 
 ### Key Designs
 
-1.  **Retrieval-Augmented Preference Reasoning**:
-    - **Function**: Obtains quantitative priors from domain knowledge to provide a basis for preference conjectures.
-    - **Mechanism**: Builds a problem-specific knowledge base (containing historical performance requirement cases, industry standards, etc.). When a new natural language requirement is received, it retrieves semantically relevant cases and knowledge snippets to reason about possible quantitative forms (e.g., function shapes, parameter ranges).
-    - **Design Motivation**: Unlike directly letting an LLM generate mathematical functions from text, the retrieval-augmented approach provides evidence-based priors, reducing hallucination risks and making the reasoning process traceable.
+**1. Retrieval-Generative Quantification: Converting Requirement Text into Initial Drafts**
 
-2.  **Progressive Interaction**:
-    - **Function**: Elicits precise stakeholder preferences with minimal cognitive burden.
-    - **Mechanism**: Based on retrieval-augmented reasoning, the system identifies parameters with the highest uncertainty in the current conjecture and designs targeted binary or multiple-choice questions (rather than open questions) to guide stakeholders. Quantitative models are updated after each interaction round.
-    - **Design Motivation**: Open questions impose a heavy cognitive load (e.g., "describe your mathematical preference for latency"). Targeted closed questions significantly lower the barrier to participation.
+Having an LLM generate a complete mathematical function from "the system should respond quickly" in one step is prone to hallucinations because not every number in the text is a threshold. IRAP decomposes the first stage into two sub-tasks: (1) **Retrieval-based Classification**—extracting 10 anchor phrases for each mode from known requirements (e.g., "at least" for P1, "at most" for P2, "exactly" for P3), and fine-tuning RoBERTa with a contrastive loss derived from InfoNCE to embed requirements and anchors in the same space. The mode is determined by the highest cosine similarity. (2) **Generative Threshold Extraction**—fine-tuning a lightweight GPT-2 (774M) to identify the actual threshold $T$. These the combined into $f_{t,0}$ (with $\Delta$ defaulting to $10\% \times T$). Contrastive loss is used because similar contexts for "at least" and "at most" require strong constraints to differentiate matching and non-matching patterns.
 
-3.  **Requirement-to-Function Mapping**:
-    - **Function**: Finally transforms natural language requirements into computable mathematical functions.
-    - **Mechanism**: Combines retrieved domain knowledge and interactively elicited preference information to select appropriate function families (e.g., linear, exponential, step functions) and precisely estimate parameters. The final output is a complete mathematical specification.
-    - **Design Motivation**: The ultimate goal of quantification is to provide directly usable mathematical representations for software performance analysis, test generation, and optimization.
+**2. Retrieval-Analogical Preference Reasoning: Moving the Starting Point Closer to Preferences**
+
+Starting interaction directly from $f_{t,0}$ might increase cognitive burden if the draft is far from the user's actual preference. Since a single user often provides multiple requirements, IRAP retrieves historical cases $s_k=\{f_{k,0}, f_k^*\}$ from the same user that are semantically similar. It then adapts the historical transformation (from $f_{k,0}$ to $f_k^*$) to $f_{t,0}$ to obtain $f'_{t,0}$. To handle non-unique transformation paths, IRAP uses **Path-Aware Operation Extraction** (PAOE): it constructs a bipartite graph of function points with negative Euclidean distance as weights and applies the Kuhn-Munkres (KM) algorithm for maximum weight matching. Points without matches correspond to ADD/REMOVE, while points with different values correspond to CHANGE. This transfers the user's subjective preference from history to the current task.
+
+**3. Interactive Preference Tuning: Tree-based QA for Round-by-Round Convergence**
+
+The bottleneck in eliciting true preferences is the human; open-ended questions impose a heavy cognitive load. IRAP uses $f'_{t,0}$ as a starting point for **tree-based multiple-choice QA**. The question tree consists of 5 levels and 7 candidate questions. Each round moves from the root to a leaf, where the leaf represents an operation in the finite state transition: ADD/REMOVE (adjusting precision) or CHANGE (adjusting difficulty by slightly changing $T$, $\Delta$, or satisfaction). The maximum number of rounds $N$ is limited (5 rounds are sufficient in experiments), allowing the system to approximate the stakeholder's preferred $f_t^*$ with a very low cognitive barrier.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | IRAP | Best Baseline | Gain |
-| :--- | :--- | :--- | :--- | :--- |
-| Dataset 1 | Quant. Accuracy | Best | Runner-up | Up to 40x |
-| Dataset 2 | Quant. Accuracy | Best | Runner-up | Significant |
-| Dataset 3 | Quant. Accuracy | Best | Runner-up | Significant |
-| Dataset 4 | Quant. Accuracy | Best | Runner-up | Significant |
+|--------|------|------|-------------|---------|
+| Dataset 1 | Quantization Accuracy | Best | Runner-up | Up to 40x |
+| Dataset 2 | Quantization Accuracy | Best | Runner-up | Significant |
+| Dataset 3 | Quantization Accuracy | Best | Runner-up | Significant |
+| Dataset 4 | Quantization Accuracy | Best | Runner-up | Significant |
 
-(Note: Across 4 real-world datasets compared against 10 SOTA methods, IRAP achieved the best performance in all cases, with a maximum improvement of 40x using only 5 interaction rounds.)
+(Note: Across 4 real-world datasets compared against 10 SOTA methods, IRAP achieved the best results in all cases, with a maximum improvement of 40x using only 5 rounds of interaction.)
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
-| :--- | :--- | :--- |
-| W/O Retrieval | Accuracy Drop | Lack of domain knowledge leads to conjecture bias |
-| W/O Interaction | Significant Drop | Pure automation cannot handle preference ambiguity |
-| Reduced Rounds | Accuracy improves with rounds | 5 rounds is the sweet spot for accuracy-efficiency |
-| Different Retrieval | Varying Accuracy | Retrieval quality affects initial conjecture accuracy |
+| Config | Key Metric | Remarks |
+|------|---------|------|
+| W/O Retrieval-Augmentation | Accuracy Decrease | Lack of domain knowledge leads to conjecture bias |
+| W/O Interaction | Accuracy Significant Decrease | Pure automation cannot handle preference ambiguity |
+| Reduced Interaction Rounds | Accuracy increases with rounds | 5 rounds is the sweet spot for accuracy-efficiency |
+| Different Retrieval Strategies | Varied Accuracy | Retrieval quality affects initial conjecture accuracy |
 
 ### Key Findings
 
-- IRAP comprehensively outperforms 10 SOTA methods across four real-world datasets, proving the effectiveness of the retrieval-augmented + interactive preference elicitation paradigm.
-- A 40x precision improvement is achieved with only 5 interaction rounds, indicating that the progressive interaction design strikes an excellent balance between efficiency and accuracy.
-- The domain priors provided by the retrieval-augmented module are critical to the quality of initial conjectures, directly impacting the efficiency of subsequent interactions.
-- Compared to pure automated methods (e.g., direct LLM generation), the interactive approach has a fundamental advantage in handling preference ambiguity.
+- IRAP outperformed 10 SOTA methods across 4 real-world datasets, validating the effectiveness of the retrieval-augmented interactive preference elicitation paradigm.
+- Achieving a 40x precision improvement with only 5 rounds of interaction indicates that the progressive interaction design balances efficiency and accuracy well.
+- Domain priors provided by the retrieval module are critical for the quality of the initial conjecture, directly impacting subsequent interaction efficiency.
+- Compared to purely automated methods (e.g., direct LLM generation), the interactive approach has a fundamental advantage in resolving preference ambiguity.
 
 ## Highlights & Insights
 
-- **Value of Problem Definition**: This work formalizes "performance requirement quantification," a practical yet neglected problem, providing a new direction for cross-disciplinary research between software engineering and NLP.
-- **"Conjecture and Inquiry" Paradigm**: Unlike "one-shot generation," the progressive interaction design of IRAP aligns better with the incremental cognitive patterns of human decision-making.
-- **Cognitive Load Minimization**: The interaction design avoids open-ended questions, using closed questions to guide stakeholders and significantly lowering the entry barrier.
-- **Practical Significance of 40x Gain**: In precision-sensitive tasks like requirement quantification, a 40x improvement represents a qualitative leap from "unusable" to "usable."
+- **Value of Problem Definition**: This work formalizes "performance requirement quantification," a practical but overlooked problem, providing a new direction for cross-disciplinary research in software engineering and NLP.
+- **"Conjecture and Inquiry" Paradigm**: Unlike "one-shot generation," IRAP's progressive interaction design aligns better with the incremental cognitive patterns of human decision-making.
+- **Minimizing Cognitive Load**: The interaction design avoids open-ended questions and uses closed-ended queries to guide stakeholders, significantly lowering the barrier to participation.
+- **Significance of 40x Gain**: In precision-sensitive tasks like requirement quantification, a 40x improvement represents a qualitative leap from "unusable" to "usable."
 
 ## Limitations & Future Work
 
-- The abstract does not detail the specific domains and scales of the four datasets.
-- While five rounds of interaction are minimal, human involvement is still required, limiting applicability in fully automated scenarios.
-- The cost of constructing domain knowledge bases and their coverage may affect the cold-start performance in new domains.
-- There is no discussion on how to handle internal contradictions within a stakeholder's preferences.
-- Future work could extend IRAP to other types of requirement quantification (e.g., security or reliability requirements).
+- The abstract does not specify the specific domains or scale of the 4 datasets used.
+- Although 5 rounds are minimal, human involvement is still required, limiting applicability in fully automated scenarios.
+- The cost and coverage of domain knowledge base construction may affect the cold-start performance in new domains.
+- The paper does not discuss how to handle internal contradictions within stakeholder preferences.
+- Future work could extend IRAP to other types of requirement quantification, such as security or reliability requirements.
 
 ## Related Work & Insights
 
-- **vs. Traditional Requirement Engineering**: Traditional methods rely on manual modeling by domain experts. IRAP achieves semi-automation via retrieval and interaction, significantly reducing dependence on experts.
-- **vs. RAG Methods**: IRAP uses retrieval not just for text generation augmentation, but innovatively for preference reasoning and interaction design, representing a new application of the RAG paradigm in requirement engineering.
-- **vs. Preference Learning**: Unlike learning preferences from large sets of comparison data, IRAP efficiently acquires preferences through a few targeted interactions, making it more suitable for low-data scenarios.
+- **vs. Traditional Requirement Engineering**: Traditional methods rely on manual modeling by domain experts. IRAP achieves semi-automation through retrieval and interaction, significantly reducing dependence on experts.
+- **vs. RAG Methods**: IRAP uses retrieval not only to enhance text generation but also to reason about preferences and design interactions, representing a novel application of the RAG paradigm in requirement engineering.
+- **vs. Preference Learning**: Unlike learning preferences from massive comparison data, IRAP efficiently elicits preferences through a few targeted interactions, making it more suitable for low-data scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First to formalize and solve the performance requirement quantification problem; the retrieval-augmented + progressive interaction paradigm is innovative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comparison with 10 SOTA methods across 4 real-world datasets; results are persuasive.
-- **Writing Quality**: ⭐⭐⭐ Based on the abstract, the title is literary, but the niche subject matter (SE + NLP) might be slightly specialized.
-- **Value**: ⭐⭐⭐⭐ Addresses a genuine engineering pain point; a 40x improvement holds significant practical value.
+- Novelty: ⭐⭐⭐⭐ First to formalize and solve the performance requirement quantification problem with a novel retrieval-augmented progressive interaction paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comparisons against 10 SOTA methods across 4 real-world datasets provide convincing results.
+- Writing Quality: ⭐⭐⭐ Based on the summary, the title is literary, though the niche subject at the intersection of SE and NLP might be specialized.
+- Value: ⭐⭐⭐⭐ Addresses a genuine engineering pain point; the 40x improvement has significant practical utility.
 
 <!-- RELATED:START -->
 
@@ -128,10 +136,10 @@ IRAP (Interactive Retrieval-Augmented Preference Elicitation) consists of two co
 ## Related Papers
 
 - [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
-- [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
+- [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
+- [\[ICLR 2026\] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations](../../ICLR2026/information_retrieval/amemgym_interactive_memory_benchmarking_for_assistants_in_long-horizon_conversat.md)
+- [\[ACL 2025\] GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis](../../ACL2025/information_retrieval/gainrag_preference_alignment.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
-- [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
-- [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
 
 </div>
 

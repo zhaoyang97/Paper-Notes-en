@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios
 description: >-
-  [ACL2026][Audio & Speech][Long-form Speech Generation] This paper introduces SwanBench-Speech, a system that systematically measures long-form speech generation using 1…
+  [ACL 2026][Audio & Speech][Paper Note] This paper introduces SwanBench-Speech, a systematic framework for measuring long-form speech generation using 1,101 samples across 17 real-world downstream scenarios and 7 automatic evaluation dimensions. The study concludes that while current models approach usability in content accuracy, they still significantly lag
 tags:
-  - "ACL2026"
-  - "Audio & Speech"
-  - "Long-form Speech Generation"
-  - "Speech Evaluation Benchmark"
-  - "Expressiveness Assessment"
-  - "Prosodic Consistency"
-  - "Multi-scenario TTS"
+  - ACL 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 96532b55e8783df6
+content_hash: ae57135ed167b5b7
 ---
-
 # Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios
 
 **Conference**: ACL2026 Findings  
@@ -24,100 +18,98 @@ content_hash: 96532b55e8783df6
 **Keywords**: Long-form Speech Generation, Speech Evaluation Benchmark, Expressiveness Assessment, Prosodic Consistency, Multi-scenario TTS  
 
 ## TL;DR
-This paper introduces SwanBench-Speech, a system that systematically measures long-form speech generation using 1,101 samples across 17 real-world downstream scenarios and 7 automatic evaluation dimensions. The study concludes that while current models approach usability in content accuracy, they still significantly lag behind real recordings in reverb consistency, long-range prosody, and expressive hierarchy.
+This paper introduces SwanBench-Speech, a systematic framework for measuring long-form speech generation using 1,101 samples across 17 real-world downstream scenarios and 7 automatic evaluation dimensions. The study concludes that while current models approach usability in content accuracy, they still significantly lag behind real recordings in reverb consistency, long-range prosody, and expressive hierarchy.
 
 ## Background & Motivation
-**Background**: Speech generation is evolving from sentence-level TTS toward paragraph-level and minute-level generation. Typical applications include podcasts, audiobooks, course explanations, news broadcasts, interviews, and multi-person dialogues. Existing models can generate high-fidelity short speech, but long-text scenarios require models to simultaneously maintain timbre, sound field, semantics, rhythm, and emotional transitions.
+**Background**: Speech generation is transitioning from sentence-level TTS to paragraph-level and multi-minute generation. Typical applications include podcasts, audiobooks, educational explanations, news broadcasts, interviews, and multi-person dialogues. While existing models generate high-fidelity short speech, long-form scenarios require the simultaneous maintenance of timbre, sound fields, semantics, rhythm, and emotional dynamics.
 
-**Limitations of Prior Work**: Existing test sets often cover only a few domains or single-speaker scenarios, with metrics still biased toward short-sentence quality, such as WER/CER, MOS, or single-sentence similarity. This leads to two issues: first, evaluation scenarios diverge significantly from real applications; second, model failures common in long text—such as timbre drift, reverb drift, prosodic collapse, and flat expression—are difficult to quantify.
+**Limitations of Prior Work**: Existing test sets often cover only a few domains or single-speaker scenarios, with metrics biased toward short-sentence quality (e.g., WER/CER, MOS, or single-sentence similarity). This leads to two issues: first, a significant gap between evaluation scenarios and real-world applications; second, difficulty in quantifying common long-form failures like timbre drift, reverb drift, prosodic collapse, and flat expression.
 
-**Key Challenge**: The quality of long-form speech is not a single score but is determined by acoustic stability, semantic intelligibility, and expressive dynamics. Traditional metrics can measure clarity but fail to address whether a segment sounds like a continuous natural narrative, whether the sound field of a multi-person dialogue is unified, or whether emotions evolve with the progression of paragraphs.
+**Key Challenge**: Long-form speech quality is not a single score but is determined by acoustic stability, semantic intelligibility, and expressive dynamics. Traditional metrics can measure clarity but struggle to answer whether a segment sounds like a continuous natural narrative, whether multi-person dialogues have a unified sound field, or if emotions evolve with the paragraph.
 
-**Goal**: The authors aim to construct a standardized benchmark for long-form speech: covering various speaking styles in real applications while decomposing "long-form quality" into metrics that are automatically evaluable, interpretable, and correlated with human perception.
+**Goal**: The authors aim to construct a standardized benchmark for long-form speech that covers diverse speaking styles in real applications while decomposing "long-form quality" into interpretable, automatic metrics correlated with human perception.
 
-**Key Insight**: Instead of proposing a new TTS model, the paper focuses on the evaluation system. It organizes data and metrics around three challenges: Acoustics (timbre, reverb, fidelity), Semantics (content accuracy and prosodic naturalness), and Expressiveness (emotional richness and paragraph-level expression hierarchy).
+**Key Insight**: Instead of proposing a new TTS model, the paper focuses on the evaluation system. It organizes data and metrics around three types of challenges: Acoustics (timbre, reverb, fidelity); Semantics (content accuracy, prosodic naturalness); and Expressiveness (emotional richness, paragraph-level hierarchy).
 
-**Core Idea**: Replace single MOS-style evaluations with "multi-scenario data + decomposed metrics + human correlation verification" to expose the genuine weak points of long-form speech generation models.
+**Core Idea**: Replace single MOS-style evaluations with a "multi-scenario data + decomposed metrics + human correlation validation" approach to expose the actual weaknesses of long-form speech generation models.
 
 ## Method
-The methodology of SwanBench-Speech resembles a complete evaluation protocol rather than a model training algorithm. It first constructs a long-form speech test set covering a wide range of scenarios, then designs a set of automatic metrics to evaluate different models, and finally validates the key automatic metrics against human hearing via preference experiments.
+The methodology of SwanBench-Speech serves as a complete evaluation protocol rather than a training algorithm. It constructs a long-form speech test set covering broad scenarios, designs a set of automatic metrics to evaluate different models, and validates key automatic metrics against human hearing via preference experiments.
 
 ### Overall Architecture
-The input is a long text or dialogue script designed for a specific scenario, along with the TTS or dialogue speech generation model to be evaluated. After the model generates long-form speech, SwanBench-Speech calculates metrics along three axes: the acoustic axis measures timbre consistency, reverb consistency, and no-reference sound quality; the semantic axis measures content restoration and prosodic coherence; and the expressive axis measures local emotional richness and overall expression hierarchy. The output is a set of diagnostic multi-dimensional results rather than a black-box total score.
+The input consists of a long-form text or dialogue script for a specific scenario and the TTS/dialogue speech generation models to be evaluated. After the model generates long speech, SwanBench-Speech calculates metrics along three axes: the Acoustic axis (timbre consistency, reverb consistency, and no-reference quality); the Semantic axis (content restoration and prosodic coherence); and the Expressiveness axis (local emotional richness and overall expressive hierarchy). The output is a set of diagnostic multi-dimensional results rather than a black-box total score.
 
-Data construction involves three sources. The first is online text corpora, such as audiobooks, dramas, and news scripts; the second is online audio media, processed through noise reduction, DNS-MOS quality filtering, speaker diarization, and SenseVoice transcription followed by manual verification; the third is supplemental test samples generated by GPT-5 to expand topic and scenario diversity. The final data undergoes semantic deduplication, content quality filtering, privacy/ethical risk detection, and manual review, resulting in 1,101 samples.
+Data construction involves three sources. The first is online text corpora (audiobooks, dramas, news scripts); the second is online audio media (processed via denoising, DNS-MOS filtering, speaker diarization, and SenseVoice transcription followed by manual verification); and the third is supplementary test samples generated by GPT-5 to expand topic and scenario diversity. After semantic deduplication, content quality filtering, privacy/ethical risk detection, and manual review, a final set of 1,101 samples was obtained.
 
 ### Key Designs
-1. **Long-form Test Set with Three Axes and Seventeen Scenarios**:
-	- **Function**: Decomposes long-form speech generation into three challenge types—Acoustics, Semantics, and Expressiveness—mapped to 17 downstream scenarios.
-	- **Mechanism**: Acoustic-related scenarios include customer service, podcasts, chit-chat, debates, audiobooks, and interviews; semantic-intensive scenarios include courses, science communication, presentations, seminars, and news; expressive scenarios include drama, talk shows, hosting, speeches, live streaming, and sports commentary.
-	- **Design Motivation**: Short-sentence TTS tests cannot expose cumulative errors in minute-level generation. Splitting by real scenarios allows for a clearer view of where models fail in specific applications.
 
-2. **Seven Diagnostic Automatic Metrics**:
-	- **Function**: Breaks down "long-form quality" into timbre consistency, reverb consistency, sound quality, content accuracy, prosodic coherence, expressive richness, and hierarchy.
-	- **Mechanism**: Timbre consistency is measured by pairwise cosine similarity of sliding-window speaker embeddings; reverb consistency is measured by the standard deviation of SRMR sequences (lower is more stable); content accuracy uses WER/CER between ASR transcriptions and the original text; prosody is scored by SpeechJudge; expressive richness and hierarchy are evaluated by LALM/Gemini3-Pro using specialized prompts.
-	- **Design Motivation**: Long-form failures are often not due to "unclear speech," but rather unstable identity, sound field, and expressive state over time. Decomposed metrics help researchers identify whether to improve data, architecture, or expressive modeling.
+**1. Long-form Test Set with Three Axes and Seventeen Scenarios: Decomposing "Long-form Quality" into 17 Real-world Scenarios.**
 
-3. **Human Perception Alignment Verification**:
-	- **Function**: Ensures automatic metrics reflect human preferences rather than being arbitrary.
-	- **Mechanism**: For prosody, 50 pairs of audio generated by different models from the same text were selected, and 10 evaluators gave relative preferences from -2 to 2; for expressiveness, 200 audio segments were selected, scored by 10 evaluators using the same prompts, and the correlations (SRCC) between various MOS networks/LALM evaluators and human MOS were compared.
-	- **Design Motivation**: Expressive metrics are particularly prone to model evaluator bias, so SRCC is used to verify consistency between automatic scores and human judgments.
+Short-sentence TTS test sets only reflect clarity and fail to expose accumulated timbre drift, sound field instability, and expressive collapse in minute-level generation. SwanBench-Speech decomposes long-form speech quality into three challenge axes—Acoustics (timbre, reverb, fidelity), Semantics (content accuracy, prosodic naturalness), and Expressiveness (emotional richness, expressive hierarchy)—and maps them to 17 downstream scenarios: acoustic-related (customer service, podcasts, chit-chat, debates, audiobooks, interviews); semantic-intensive (courses, science pop, demos, workshops, news); and highly expressive (drama, talk shows, hosting, speeches, live streaming, sports commentary). This granular breakdown turns vague scores into diagnostic results.
+
+**2. Seven Diagnostic Automatic Metrics: Decomposing MOS into Seven Traceable Dimensions.**
+
+Long-form failures are rarely about "unintelligibility" but rather identity, sound field, and expressive states drifting over several minutes. The paper decomposes quality into seven algorithmic metrics: timbre consistency (sliding window speaker embedding cosine similarity); reverb consistency (standard deviation of SRMR sequences); content accuracy (WER/CER of ASR transcriptions); prosodic coherence (SpeechJudge scores); and expressive richness/hierarchy (evaluated by LALM/Gemini3-Pro using specialized prompts). These metrics allow researchers to determine whether to improve data, architecture, or expressive modeling.
+
+**3. Human Perception Alignment: Using SRCC to Prove Automatic Scores Predict Human Preferences.**
+
+Expressiveness metrics risk becoming "models talking to themselves," so the authors performed manual calibration. For prosody, 50 pairs of speech with identical text from different models were sampled for relative preference voting by 10 evaluators (-2 to 2). For expressiveness, 200 clips were scored by 10 evaluators based on the same prompts. Spearman Rank Correlation Coefficient (SRCC) was used to compare various MOS networks and LALM evaluators against human MOS, ensuring the metrics are reliable and interpretable.
 
 ### Loss & Training
-Since this paper does not train a new speech generation model, there is no traditional loss function. Its "training strategy" is reflected in the evaluation protocol: using sliding window analysis, ASR restoration, no-reference quality models, SpeechJudge, and Gemini3-Pro evaluators on generated audio; and calibrating evaluator reliability using manual SRCC. For the models evaluated, the paper covers two tasks: single-speaker long-form text and dialogue generation, comparing open-source and closed-source systems respectively.
+The paper does not train new models, so there is no traditional loss function. Its "training strategy" is reflected in the evaluation protocol: using sliding window analysis, ASR restoration, no-reference quality models, SpeechJudge, and Gemini3-Pro evaluators; the evaluator reliability is calibrated via manual SRCC. The study covers both single-speaker long-form and dialogue generation tasks, comparing open-source and closed-source systems.
 
 ## Key Experimental Results
 
 ### Main Results
-| Evaluated Object | Timbre↑ | Reverb↓ | Fidelity↑ | CER/WER↓ | Prosody↑ | Richness↑ | Hierarchy↑ |
-|---------|---------|---------|-----------|----------|----------|-----------|------------|
-| Avg. Open-source (Single) | 0.93 | 1.95 | 3.63 | 0.073 / 0.164 | 3.43 | 3.03 | 2.67 |
-| Avg. Closed-source (Single) | 0.93 | 1.96 | 3.55 | 0.065 / 0.138 | 3.79 | 3.42 | 3.01 |
-| Real Recording (Single) | 0.96 | 1.91 | 3.62 | 0.070 / 0.074 | 4.04 | 4.35 | 3.94 |
-| Avg. Open-source (Dialogue) | 0.92 | 3.45 | 3.02 | 0.129 / 0.137 | 3.41 | 3.07 | 3.06 |
-| Avg. Closed-source (Dialogue) | 0.92 | 3.36 | 3.17 | 0.095 / 0.103 | 3.83 | 3.51 | 3.76 |
-| Real Recording (Dialogue) | 0.95 | 2.73 | 2.94 | 0.050 / 0.137 | 3.95 | 4.42 | 4.17 |
+| Evaluated Target | Timbre↑ | Reverb↓ | Fidelity↑ | CER/WER↓ | Prosody↑ | Richness↑ | Hierarchy↑ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| OS Avg. (Single Speaker) | 0.93 | 1.95 | 3.63 | 0.073 / 0.164 | 3.43 | 3.03 | 2.67 |
+| CS Avg. (Single Speaker) | 0.93 | 1.96 | 3.55 | 0.065 / 0.138 | 3.79 | 3.42 | 3.01 |
+| Real Rec. (Single Speaker) | 0.96 | 1.91 | 3.62 | 0.070 / 0.074 | 4.04 | 4.35 | 3.94 |
+| OS Avg. (Dialogue) | 0.92 | 3.45 | 3.02 | 0.129 / 0.137 | 3.41 | 3.07 | 3.06 |
+| CS Avg. (Dialogue) | 0.92 | 3.36 | 3.17 | 0.095 / 0.103 | 3.83 | 3.51 | 3.76 |
+| Real Rec. (Dialogue) | 0.95 | 2.73 | 2.94 | 0.050 / 0.137 | 3.95 | 4.42 | 4.17 |
 
-Closed-source systems generally outperform open-source systems in prosody and expression but still show a significant gap compared to real recordings. In single-speaker scenarios, real recordings achieve a Richness of 4.35 and Hierarchy of 3.94, while closed-source averages are only 3.42 and 3.01. In dialogue scenarios, the closed-source hierarchy average reaches 3.76, still lower than the 4.17 of real dialogues; reverb consistency also shows a clear gap, with closed-source dialogues averaging 3.36 Reverb against 2.73 for real dialogues.
+Closed-source systems generally outperform open-source systems in prosody and expressiveness but still lag behind real recordings. In single-speaker scenarios, the Richness of real recordings is 4.35 and Hierarchy is 3.94, while closed-source averages are only 3.42 and 3.01. In dialogue scenarios, closed-source expressive hierarchy reaches 3.76, still below the 4.17 of real dialogues. Significant gaps also exist in reverb consistency (CS Dialogue Reverb: 3.36 vs. Real: 2.73).
 
 ### Ablation Study
 | Validation Item | Setting | Key Result | Description |
-|-----------|---------|------------|-------------|
-| Prosody Metric Alignment | 50 pairs, 10 human evaluators | $SRCC = 0.82$ | The modified SpeechJudge prosody score correlates highly with human preference. |
-| Expressive Richness Alignment | 200 segments, 10 human evaluators | $SRCC = 0.71$ | Gemini3-Pro has the highest correlation with human MOS for expressive richness. |
-| Expressive Hierarchy Alignment | 200 segments, 10 human evaluators | $SRCC = 0.62$ | Paragraph-level expressive dynamics are harder to evaluate automatically than local emotion. |
-| Generation Length Analysis | MegaTTS3, F5TTS, CosyVoice2, etc. | Multi-dimensional degradation after 100 words | Long-range dependency issues affect content accuracy, prosody, and expression. |
+| :--- | :--- | :--- | :--- |
+| Prosody Metric Alignment | 50 pairs, 10 evaluators | SRCC = 0.82 | Modified SpeechJudge prosody scores correlate highly with human preference. |
+| Richness Alignment | 200 clips, 10 evaluators | SRCC = 0.71 | Gemini3-Pro has the highest correlation with human MOS for richness. |
+| Hierarchy Alignment | 200 clips, 10 evaluators | SRCC = 0.62 | Paragraph-level dynamics are harder to evaluate automatically than local emotions. |
+| Generation Length Analysis | MegaTTS3, F5TTS, etc. | Degradation > 100 words | Long-range dependencies affect accuracy, prosody, and expression. |
 
 ### Key Findings
-- Content accuracy is no longer the sole bottleneck. Many models have CER/WER close to real speech, but Prosody, Richness, and Hierarchy remain significantly lower.
-- Expressive scenarios are where models fail most easily. Theoretically, drama, hosting, and sports commentary should have higher expressive caps, but current models show degradation across multiple metrics in these scenarios, indicating insufficient training data and modeling.
-- Clear trade-offs exist between AR and NAR architectures. NAR models are more stable and efficient but prone to over-smoothing; AR models are more expressive but prone to error propagation in long sequences.
-- Data quality is more critical than pure scaling. Short-fragment training data brings short-form bias; unstable sound fields in "in-the-wild" data induce acoustic drift; and large-scale averaging may weaken dynamic expression.
+- Content accuracy is no longer the sole bottleneck. Many models approach real speech in CER/WER, but Prosody, Richness, and Hierarchy remain significantly lower.
+- Expressive scenarios suffer the most. Theoretically, drama and sports commentary should have higher expressive caps, but current models show degraded metrics in these areas, indicating insufficient training data and modeling.
+- Clear trade-offs exist between AR and NAR architectures. NAR models are more stable and efficient but prone to over-smoothing; AR models are more expressive but susceptible to error propagation in long sequences.
+- Data quality is more critical than mere scaling. Short-clip training data creates short-text bias, unstable sound fields in wild data induce acoustic drift, and large-scale averaging can weaken dynamic expression.
 
 ## Highlights & Insights
-- A key highlight of this paper is the granular decomposition of long-form TTS failure modes. It does not just ask "which model is best," but rather where models lose out in terms of timbre, reverb, prosody, and expressive hierarchy.
-- SwanBench-Speech is highly relevant to real-world applications. The 17 scenarios correspond to speech forms actually encountered by users, making the results more effective for guiding model iteration than single-reading tests.
-- Human perception alignment makes the evaluation protocol credible. For expressiveness metrics in particular, without manual SRCC validation, they risk becoming another uninterpretable model score.
-- An important insight is that "long-form capability" cannot be solved simply by a larger context window. Speech models require training data that is temporally continuous, acoustically stable, and expressively structured at the paragraph level.
+- The highlight of this paper is its detailed breakdown of long-form TTS failure modes. It asks where models fail in timbre, reverb, prosody, and hierarchy rather than just asking which model is "best."
+- SwanBench-Speech is application-friendly. The 17 scenarios correspond to actual speech forms encountered by users, making the results more conductive to model iteration than simple reading tests.
+- Human correlation validation lends credibility to the protocol. Particularly for expressiveness, without SRCC validation, these would just be another set of uninterpretable model scores.
+- A critical insight is that "long-form capability" cannot be solved simply by larger context windows. Speech models require training data that is temporally continuous, acoustically stable, and structurally expressive at the paragraph level.
 
 ## Limitations & Future Work
-- Limited language coverage. SwanBench-Speech currently covers mainly Chinese and English; low-resource languages, dialects, and accents are not yet fully included.
-- Semantic understanding metrics are still preliminary. The paper admits that current metrics prioritize acoustic consistency over transitions in emotion and style driven by deep semantics.
-- Reference timbre lacks diversity. Prompt speech in experiments primarily comes from approximately 20 open-source speakers, which may introduce timbre bias.
-- Expressiveness evaluation partially relies on the closed-source model Gemini3-Pro, affecting reproducibility if API updates occur; future work could distill an open-source evaluator.
-- Future directions should include broader language coverage, stronger open expressive evaluators, more real long-context recordings, and curriculum training from sentence-level to paragraph-level.
+- Language coverage is limited. SwanBench-Speech currently focuses on Chinese and English, with low-resource languages, dialects, and accents yet to be fully included.
+- Semantic understanding metrics remain preliminary. The current metrics prioritize acoustic consistency over emotional or stylistic transitions driven by deep semantics.
+- Reference timbres lack diversity. Prompt speech in experiments primarily comes from ~20 open-source speakers, potentially introducing timbre bias.
+- Expressiveness evaluation partially relies on the closed-source Gemini3-Pro, making reproducibility subject to API updates; future work could involve distilling open-source evaluators.
+- Future directions include broader language coverage, stronger open expression evaluators, more real long-context recordings, and curriculum training from sentence to paragraph levels.
 
 ## Related Work & Insights
-- **vs. SeedTTS-Eval / EmergentTTS-Eval**: These benchmarks cover some short speech or limited scenarios. SwanBench-Speech's advantage lies in the completeness of its 17 scenarios and long-form dimensions, though at the cost of a more complex evaluation protocol.
-- **vs. MultiDialog / LibriSpeech-long**: The latter provide long text or dialogue materials, but their metrics may not fully capture expressive hierarchy. This paper integrates data coverage with multi-dimensional automatic metrics for better model diagnostics.
-- **vs. MOS / WER single-metric evaluation**: While easy to use, MOS and WER conflate multiple failure modes. SwanBench-Speech suggests that long-form generation quality should be decomposed into addressable sub-problems.
-- **Insights for subsequent research**: To improve long-form TTS, researchers should not only pursue larger models but also design specific training objectives and data recipes targeting reverb drift, paragraph prosody, emotional hierarchy, and high-quality continuous data.
+- **vs. SeedTTS-Eval / EmergentTTS-Eval**: These benchmarks cover some short speech or limited scenarios. SwanBench-Speech offers more complete coverage with 17 scenarios and long-form dimensions at the cost of a more complex protocol.
+- **vs. MultiDialog / LibriSpeech-long**: While the latter provides long-form or dialogue material, their metrics may not fully capture expressive hierarchy. This paper combines data coverage with multi-dimensional automatic metrics for better model diagnostics.
+- **vs. MOS / WER Single-metric Evaluation**: MOS and WER are easy to use but conflate multiple failure modes. SwanBench-Speech suggests that long-form generation should be decomposed into localized sub-problems.
+- **Inspiration for Future Research**: To improve long-form TTS, researchers should not only pursue larger models but also design training objectives and data recipes specifically for reverb drift, paragraph prosody, and emotional hierarchy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The technical form of the benchmark paper is not radical, but the organization of 3 axes, 7 metrics, and 17 scenarios is highly diagnostic.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers over 20 models, both single-speaker and dialogue tasks, with human correlation validation; the experimental scale is robust.
-- Writing Quality: ⭐⭐⭐⭐ The structure is clear and metrics are well-explained; some tables have high information density requiring careful reading.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for the long-form TTS field, directly informing researchers that current models lack long-range consistency and expressive structure rather than just sound quality.
+- Novelty: ⭐⭐⭐⭐ The technical form of the benchmark is not radical, but the organization of 3 axes, 7 metrics, and 17 scenarios is highly diagnostic.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers over 20 models, both single-speaker and dialogue tasks, with solid human correlation validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-explained metrics, though high information density in tables requires careful reading.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for the long-form TTS field, demonstrating that current models lack long-range consistency and expressive structure rather than just audio quality.
 
 <!-- RELATED:START -->
 
@@ -126,10 +118,10 @@ Closed-source systems generally outperform open-source systems in prosody and ex
 ## Related Papers
 
 - [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
+- [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
-- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 - [\[ACL 2026\] Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation](anchored_cyclic_generation_a_novel_paradigm_for_long-sequence_symbolic_music_gen.md)
-- [\[ACL 2026\] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness](sdiareward_modeling_and_benchmarking_spoken_dialogue_rewards_with_modality_and_c.md)
+- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 
 </div>
 

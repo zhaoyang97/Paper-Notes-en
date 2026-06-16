@@ -40,7 +40,7 @@ item_total: 9
 
 **🧠 NeurIPS2025** · **9** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (7)](../../ICML2026/aigc_detection/index.md) · [💬 ACL2026 (16)](../../ACL2026/aigc_detection/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/aigc_detection/index.md) · [🧪 ICML2026 (7)](../../ICML2026/aigc_detection/index.md) · [💬 ACL2026 (16)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md)
 
 🔥 **Top topics:** LLM ×4 · Agents ×2
 

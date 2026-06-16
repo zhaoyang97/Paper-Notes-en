@@ -2,116 +2,131 @@
 title: >-
   [Paper Note] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body
 description: >-
-  [CVPR 2026][Human Understanding][Conversational Virtual Agent] This paper proposes ViBES, a 3D conversational agent that unifies language, speech…
+  [CVPR 2026][Human Understanding][Paper Note] ViBES is proposed as a 3D conversational agent that unifies language, speech, and body movement. Through a Modality Mixture of Experts (MoME) architecture and cross-modal attention mechanisms, it generates temporally aligned facial expressions and full-body motions while preserving the conversational intelligence of pr
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Conversational Virtual Agent"
-  - "Mixture of Modal Experts"
-  - "Co-speech Gesture Generation"
-  - "Speech-Motion Synchronization"
-  - "3D Body Animation"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: 7f384482111938b3
+content_hash: 73e3994a9c6ab962
 ---
-
 # ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.14234](https://arxiv.org/abs/2512.14234)  
 **Code**: [ai.stanford.edu/~juze/ViBES/](https://ai.stanford.edu/~juze/ViBES/)  
-**Area**: Human Understanding / Multimodal Interaction
-**Keywords**: Conversational Virtual Agent, Mixture of Modal Experts, Co-speech Gesture Generation, Speech-Motion Synchronization, 3D Body Animation
+**Area**: Human Understanding / Multimodal Interaction  
+**Keywords**: Conversational Virtual Human, Modality Mixture of Experts, Co-speech Gesture Generation, Speech-Motion Synchronization, 3D Body Animation
 
 ## TL;DR
 
-This paper proposes ViBES, a 3D conversational agent that unifies language, speech, and body motion via a Mixture of Modal Experts (MoME) architecture and cross-modal attention mechanisms. ViBES generates temporally aligned facial expressions and whole-body motions while preserving the conversational capabilities of a pretrained speech LLM, surpassing the paradigm that treats behavior as simple "modality translation."
+ViBES is proposed as a 3D conversational agent that unifies language, speech, and body movement. Through a Modality Mixture of Experts (MoME) architecture and cross-modal attention mechanisms, it generates temporally aligned facial expressions and full-body motions while preserving the conversational intelligence of pre-trained speech LLMs, shifting the paradigm beyond viewing behavior as simple "modality translation."
 
 ## Background & Motivation
 
-- **Background**: Existing conversational AI systems have achieved fluent text and speech interaction, yet they lack a body. Human communication is inherently multimodal — verbal content, prosody, and body language jointly convey intent.
-- **Limitations of Prior Work**: Approaches that model behavior as "modality translation" (e.g., speech→gesture, text→motion) are fundamentally flawed: they do not require intelligent decisions about *when to move*, *what to do*, or *how to adapt across dialogue turns*, leading to fragile temporal alignment and weak social grounding. Naively chaining a speech LLM with a motion generator (two-stage) is also problematic in practice: there is no unified temporal and selection strategy, no shared dialogue state, and no guarantee of cross-turn consistency. The most closely related works, LoM and SOLAMI, focus on modality alignment rather than preserving conversational intelligence.
-- **Goal**: To build a genuine *embodied conversational agent* — one that not only generates co-speech gestures during responses but also follows explicit motion instructions (e.g., "please step back and wave"). This requires elevating non-verbal behavior from "conditional generation" to "intelligent agent behavior."
+Existing conversational AI systems possess fluent text and speech interaction capabilities but **lack a body**—human communication is inherently multimodal, where speech, prosody, and body language collectively convey intent. Current methods that model behavior as "modality translation" (e.g., speech-to-gesture, text-to-motion) have fundamental flaws: they do not require intelligent decisions on "when to move, what to do, and how to adapt to multi-turn dialogues," resulting in temporal fragility and weak social grounding.
+
+Intuitively, speech LLMs and motion generators could be concatenated (two-stage), but practical implementation faces significant hurdles: no unified timing or selection strategy, no shared dialogue state, and an inability to ensure consistency across turns. The most relevant works, LoM and SOLAMI, focus on modality alignment rather than preserving conversational intelligence.
+
+Goal: Build a true "embodied conversational agent" that can not only generate co-speech gestures while answering but also follow explicit motion instructions (e.g., "Please take a step back and wave"). This requires elevating non-verbal behavior from "conditional generation" to "intelligent agent behavior."
 
 ## Method
 
 ### Overall Architecture
 
-ViBES is a Speech-Language-Behavior (SLB) model built on a Mixture of Modal Experts (MoME) architecture. Three Transformer experts — a Speech-Text expert (frozen from GLM-4-Voice), a facial expression expert, and a body motion expert — are coupled via SLB cross-modal attention. All modalities are tokenized into an interleaved token stream and generated autoregressively on a unified timeline.
+The core problem ViBES addresses is enabling a conversational model that can already "speak" to simultaneously develop a "body" and decide when to move, what to do, and how to coordinate with language in multi-turn dialogues. The approach involves tokenizing speech, language, face, and body into tokens, which are then interleaved on the same timeline and emitted auto-regressively—essentially treating "embodied behavior" as another output modality of the dialogue model rather than attaching a motion generator post-hoc.
+
+The overall model is a Speech-Language-Behavior (SLB) model using MoME to separate three categories of parameters: the speech-text expert is frozen from the pre-trained GLM-4-Voice to handle dialogue intelligence; the facial expression and body motion experts are two lightweight sidecars responsible for translating intention in language/speech into specific actions. The three experts are coupled through SLB cross-modal attention, jointly generating an interleaved token stream on a unified timeline.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["User Speech / Text"] --> B["Tokenization<br/>Speech, Text, Face, Body → tokens"]
+    B --> R["Fractional RoPE<br/>Interpolate by timestamp, unify frame rates to one rotary timeline"]
+    R --> MOME
+    subgraph MOME["Modality Mixture of Experts (MoME) · Hard Routing"]
+        direction TB
+        TS["Speech-Text Expert<br/>Frozen GLM-4-Voice · Self-Attention"]
+        FACE["Facial Expert<br/>Query uni-directionally attends TS"]
+        BODY["Body Expert<br/>Query uni-directionally attends TS"]
+        TS -->|Cross-Modal Attention| FACE
+        TS -->|Cross-Modal Attention| BODY
+    end
+    D["1000h Sync Dataset<br/>YouTube Monocular Recovery · Tri-modal Alignment"] -->|Training| MOME
+    MOME --> S["Interleaved Token Stream"]
+    S --> O["Decode SMPL-X + FLAME<br/>→ Frame-aligned 3D Animation with Speech"]
+```
 
 ### Key Designs
 
-1. **Mixture of Modal Experts (MoME) Architecture**:
+**1. Modality Mixture of Experts (MoME): Enabling motion experts to "read" dialogue state without breaking existing LLM capabilities**
 
-    - **Function**: Separates parameters by modality while maintaining cross-modal information sharing.
-    - **Mechanism**: Each of the three experts has independent FFN and LayerNorm modules, with hard routing (deterministic assignment by modality label, no learned router). Key attention topology: the Speech-Text (TS) expert performs internal self-attention; the facial and body experts' Queries attend only to the TS expert's Keys/Values (unidirectional read); no cross-attention exists between the facial and body experts. Ablations confirm that facial–body attention yields no improvement — once conditioned on TS, the two are nearly independent.
-    - **Design Motivation**: Avoids the destruction of the pretrained LLM's conversational capability through fully dense fusion. The TS expert directly inherits GLM-4-Voice weights (frozen), while the facial/body experts serve as lightweight sidecar modules that read TS states via cross-attention, eliminating the need for large-scale audio-text-motion joint pretraining.
+The most direct approach would be feeding all modalities into a large Transformer for dense fusion, but that would wash out the pre-trained dialogue capabilities of GLM-4-Voice—a cost that two-stage concatenation and methods like LoM/SOLAMI cannot avoid. The solution in ViBES is to equip each of the three experts with independent FFNs and LayerNorms, using hard routing: tokens are deterministically assigned to their corresponding expert based on modality labels, avoiding a learnable router. The attention topology is crucial—the Speech-Text (TS) expert performs self-attention, while the Query of facial and body experts only uni-directionally attends to the Key/Value of the TS expert. This allows the TS expert to maintain frozen GLM-4-Voice weights, while facial/body experts act as sidecars that "read" the TS dialogue state to decide actions without needing large-scale joint pre-training from scratch. Ablations confirm this topology: once conditioned on TS, face and body are nearly independent, and adding cross-attention between them yields no improvement.
 
-2. **Multimodal Fractional RoPE**:
+**2. Fractional RoPE: Precisely aligning modalities with different frame rates on a single rotary timeline**
 
-    - **Function**: Precisely encodes cross-modal temporal alignment on a unified rotary timeline.
-    - **Mechanism**: The TS stream serves as the anchor (integer indices); motion tokens obtain fractional indices via linear interpolation: $s_t = s_{a_i} + \alpha_t$, where $\alpha_t$ is the normalized position of the actual timestamp between adjacent TS anchors. This resolves inconsistent frame rates across modalities (speech at 12.5 fps, motion at 25 fps, body at 6.25 fps).
-    - **Design Motivation**: Standard RoPE assumes equally spaced integer positions and cannot express precise temporal correspondence between modalities of different frame rates. Fractional indices allow attention scores to naturally reflect true temporal distances across modalities.
+The frame rates for speech, motion, and body tokens are inconsistent (speech at 12.5fps, motion at 25fps, body at 6.25fps) ⚠️. Standard RoPE assumes positions are equally spaced integer indices, which cannot express cross-modal temporal correspondence like "motion frame $t$ falls between speech tokens $i$ and $i+1$." ViBES uses the TS stream as anchors at integer indices, while motion tokens obtain a fractional index via linear interpolation:
 
-3. **1,000-Hour Synchronized Dataset**:
+$$s_t = s_{a_i} + \alpha_t$$
 
-    - **Function**: Provides large-scale, temporally aligned audio-text-motion triplets.
-    - **Mechanism**: Monocular 3D human motion (SMPL-X body+hands + FLAME face) is automatically recovered from YouTube conversational videos (interviews, podcasts, talks) and temporally aligned with speech and text transcriptions. This supplements existing motion datasets to form a 1,000-hour training corpus.
-    - **Design Motivation**: Existing datasets contain only pairwise alignment (text→motion or audio→motion); large-scale three-modality synchronized data is absent, constituting the core bottleneck for training unified conversational agents.
+Where $\alpha_t$ is the normalized position of the actual timestamp of the motion token between two adjacent TS anchors (0 to 1). The attention scores calculated via rotary position embeddings naturally reflect the true cross-modal temporal distance without requiring all modalities to be resampled to the same frame rate—making it more efficient and precise than frame resampling.
+
+**3. 1000h Synchronized Dataset: Filling the gap in "tri-modal simultaneous alignment" training corpora**
+
+The bottleneck for training such a unified agent is data: existing datasets mostly provide paired alignment (text-to-motion or audio-to-motion), lacking large-scale triples of audio-text-motion aligned simultaneously. ViBES automatically recovers 3D human motion from YouTube dialogue videos (interviews, podcasts, speeches)—using SMPL-X for the body/hands and FLAME for the face—and aligns them temporally with speech and text transcriptions. This is combined with existing motion datasets to create approximately 1000 hours of training data. The trade-off is noise from monocular recovery (occlusion, depth ambiguity), but experiments show the model still learns meaningful dialogue behavior patterns after large-scale training.
 
 ### Loss & Training
 
-Standard next-token prediction loss is used for autoregressive training. Faces are tokenized using the LoM tokenizer (25 fps); bodies use a compositional tokenizer (upper body / lower body / hands, 6.25 fps). All streams are aligned to a 25 fps master clock. Training proceeds in stages: large-scale data pretraining followed by fine-tuning on conversational interaction data.
+Standard next-token prediction loss is used for auto-regressive training. Facial tokens follow the LoM tokenizer (25fps), and body tokens use a compositional tokenizer for upper/lower body and hands (6.25fps), with all streams aligned to a 25fps master clock. Training is multi-stage: pre-training on large-scale data followed by fine-tuning on conversational interaction data.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | Method | Key Metric | Notes |
-|------|--------|-----------|-------|
-| Multi-turn dialogue + motion | ViBES | Best on dialogue-motion alignment / behavior quality / social appropriateness | Comprehensive benchmark |
-| Co-speech gesture | ViBES | SOTA | On BEAT2 benchmark |
-| Text-to-motion | ViBES | SOTA | On HumanML3D benchmark |
+| Task | Method | Key Metrics | Description |
+|------|------|---------|------|
+| Multi-turn Dialogue + Motion | Ours | Dialog-motion alignment / Quality / Social appropriateness are optimal | Comprehensive benchmark |
+| Co-speech Gesture | Ours | SOTA | On BEAT2 benchmark |
+| Text-to-Motion | Ours | SOTA | On HumanML3D benchmark |
 
 ### Ablation Study
 
-| Configuration | Effect | Notes |
-|---------------|--------|-------|
-| Enable facial↔body attention | No improvement | Facial/body are independent once conditioned on TS |
-| Remove Fractional RoPE | Temporal alignment degrades | Confirms importance of precise temporal encoding |
-| Two-stage (LLM + motion generator) | Poor consistency | No shared dialogue state |
+| Configuration | Effect | Description |
+|------|------|------|
+| Enable Face $\leftrightarrow$ Body Attention | No improvement | Face/Body are independent once conditioned on TS |
+| Remove Fractional RoPE | Drop in temporal alignment | Proves importance of precise temporal encoding |
+| Two-stage (LLM+Motion Gen) | Poor consistency | Lack of shared dialogue state |
 
 ### Key Findings
 
-- Hard modal routing combined with unidirectional cross-attention (facial/body→TS) is the most effective architectural choice, outperforming bidirectional or fully connected attention.
-- Monocular 3D motion recovered from YouTube is noisy, yet meaningful conversational behavior patterns can still be learned at scale.
-- Fractional RoPE is critical for maintaining multimodal temporal synchronization.
+- Hard modality routing + uni-directional cross-attention (Face/Body $\rightarrow$ TS) is the most effective architectural choice, superior to bi-directional or fully connected attention.
+- Though monocular 3D motion recovered from YouTube is noisy, the model learns meaningful conversational behavior patterns after large-scale training.
+- Fractional RoPE is vital for maintaining cross-modal temporal synchronization.
 
 ## Highlights & Insights
 
-- **Elevating non-verbal behavior from "modality translation" to "agent behavior"**: ViBES not only generates speech-synchronized gestures but also comprehends and executes natural language motion instructions — a qualitative shift from generation to intelligence.
-- **Frozen pretrained LLM + lightweight sidecar experts** as an architectural paradigm: avoids the astronomical data and compute requirements of training a three-modality model from scratch, and is generalizable to the introduction of other new modalities.
-- **Fractional RoPE** elegantly resolves the temporal alignment problem across multi-rate modalities, offering a more principled solution than frame resampling.
+- **Elevating non-verbal behavior to "agentic behavior" rather than "modality translation"**: Ours not only generates gestures synced with speech but also understands and executes natural language motion instructions, a qualitative shift from generation to intelligence.
+- **Frozen Pre-trained LLM + Lightweight Sidecar Experts** architecture: Avoids the astronomical data and compute requirements of training a tri-modal model from scratch, adaptable to other new modalities.
+- **Fractional RoPE** elegantly solves temporal alignment for modalities with different frame rates, proving more refined than frame resampling.
 
 ## Limitations & Future Work
 
-- 3D motion is recovered from monocular YouTube videos, limiting quality due to occlusion and depth ambiguity.
-- No direct interaction modeling between face and body may miss subtle social signals such as gaze–gesture coordination.
-- Cache file truncation limits access to complete experimental data.
-- Only single-agent scenarios are supported; multi-person interaction is not addressed.
+- 3D motion recovered from YouTube monocular video has limited quality (occlusion, depth ambiguity).
+- No direct interaction modeling between face and body may miss subtle social signals like gaze-gesture coordination.
+- Cache file truncation results in limited full experimental data.
+- Currently only supports single-person agents; multi-person interaction scenarios are not covered.
 
 ## Related Work & Insights
 
-- **vs. LoM/SOLAMI**: Perform only modality alignment without an LLM reasoning backbone; do not support motion instructions.
-- **vs. Co-speech methods**: Perform audio→motion translation only, without dialogue understanding.
-- **vs. Two-stage systems**: Lack a unified strategy and shared dialogue state.
+- **vs LoM/SOLAMI**: Those only perform modality alignment, lack an LLM reasoning backbone, and do not support motion instructions.
+- **vs Co-speech Methods**: Only perform audio-to-motion translation without dialogue understanding capabilities.
+- **vs Two-stage Systems**: Lack unified strategy and shared dialogue state.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First 3D agent to unify conversational intelligence with embodied behavior; MoME + Fractional RoPE design is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-task evaluation with ablations (cache truncation leaves some data incomplete).
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Problem formulation is clear; architecture description is thorough.
-- **Value**: ⭐⭐⭐⭐⭐ Opens a new direction for embodied conversational AI; dataset and framework offer significant contributions to the community.
+- Novelty: ⭐⭐⭐⭐⭐ First to unify dialogue intelligence with embodied behavior in a 3D agent; MoME + Fractional RoPE design is ingenious.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task evaluation and ablations (partially limited by data truncation).
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition and detailed architectural description.
+- Value: ⭐⭐⭐⭐⭐ Opens new directions for embodied conversational AI; datasets and framework are highly valuable to the community.
 
 <!-- RELATED:START -->
 
@@ -119,11 +134,11 @@ Standard next-token prediction loss is used for autoregressive training. Faces a
 
 ## Related Papers
 
+- [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
+- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
+- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
 - [\[CVPR 2026\] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)
-- [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)
-- [\[CVPR 2026\] RefTon: Reference Person Shot Assist Virtual Try-on](refton_reference_person_shot_assist_virtual_try-on.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
+- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
 
 </div>
 

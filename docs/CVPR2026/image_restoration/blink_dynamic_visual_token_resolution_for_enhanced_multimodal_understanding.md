@@ -2,84 +2,80 @@
 title: >-
   [Paper Note] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 description: >-
-  [CVPR 2026][Image Restoration][Visual token resolution] This paper proposes Blink, a framework that dynamically expands and discards visual tokens across different Transformer layers of an MLLM — simulating the human "ra…
+  [CVPR 2026][Image Restoration][Paper Note] The Blink framework is proposed to adaptively enhance visual perception in a single forward pass by dynamically expanding and discarding visual tokens across different Transformer layers of MLLMs (mimicking human "rapid-blink" scanning), improving LLaVA-1.5 performance across multiple multimodal benchmarks.
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Visual token resolution"
-  - "dynamic attention"
-  - "multimodal large language models"
-  - "saliency guidance"
-  - "token super-resolution"
+  - CVPR 2026
+  - Image Restoration
 date: 2026-05-08
-content_hash: 7d46fd2374bc2bb1
+content_hash: c70eb4a1fe92fe6f
 ---
-
 # Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.10548](https://arxiv.org/abs/2512.10548)  
-**Code**: N/A  
-**Area**: Multimodal Large Language Models / Image Restoration (Visual Perception Enhancement)
-**Keywords**: Visual token resolution, dynamic attention, multimodal large language models, saliency guidance, token super-resolution
+**Code**: None  
+**Area**: Multimodal Large Language Models / Image Restoration (Perception Enhancement)  
+**Keywords**: Visual token resolution, dynamic attention, Multimodal Large Language Models, saliency-guided, token super-resolution
 
 ## TL;DR
-This paper proposes Blink, a framework that dynamically expands and discards visual tokens across different Transformer layers of an MLLM — simulating the human "rapid blinking" scanning process — to adaptively enhance visual perception within a single forward pass, improving LLaVA-1.5 performance across multiple multimodal benchmarks.
+The Blink framework is proposed to adaptively enhance visual perception in a single forward pass by dynamically expanding and discarding visual tokens across different Transformer layers of MLLMs (mimicking human "rapid-blink" scanning), improving LLaVA-1.5 performance across multiple multimodal benchmarks.
 
 ## Background & Motivation
-**Background**: Multimodal large language models (MLLMs) have achieved remarkable progress on vision-language tasks (e.g., LLaVA, Qwen-VL), yet their visual perception capability remains insufficient and prone to hallucinations.
+**Background**: Multimodal Large Language Models (MLLMs), such as LLaVA and Qwen-VL, have made significant progress in vision-language tasks, yet their visual perception remains insufficient, often leading to hallucinations.
 
-**Limitations of Prior Work**: Existing MLLMs process visual inputs using conventional LLM architectures, lacking explicit exploitation of salient visual regions. Post-processing methods (e.g., identifying salient regions followed by cropping and re-inference) are computationally inefficient and can only focus on a single region at a time.
+**Limitations of Prior Work**: Existing MLLMs utilize traditional LLM architectures for visual inputs without explicit exploitation of salient visual regions; post-processing methods (e.g., identifying salient regions followed by cropping and secondary inference) are inefficient and typically focus only on a single region.
 
-**Key Challenge**: Humans perceive visual scenes through a dynamic "scan–focus–shift" process, whereas MLLMs treat all visual tokens uniformly and cannot simulate cross-layer attention shifts.
+**Key Challenge**: Humans perceive visual scenes through a dynamic "scan-focus-shift" process, whereas MLLMs treat all visual tokens equally and lack the capability for cross-layer attention shifts.
 
-**Goal**: How can an MLLM's visual perception capability be dynamically enhanced within a single forward pass?
+**Goal**: How to dynamically enhance the visual perception capabilities of MLLMs during a single forward pass?
 
-**Key Insight**: A pilot study first uncovers two key insights — (a) different layers attend to different visual regions, and (b) allocating additional computation to high-attention tokens improves perception — which then motivate the design of the dynamic framework.
+**Key Insight**: A pilot study revealed two critical insights: (a) different layers attend to different visual regions, and (b) increasing computation for high-attention tokens improves perceptual ability. Based on these, a dynamic framework was designed.
 
-**Core Idea**: Leveraging the non-uniform distribution of attention maps, the framework dynamically decides at each layer whether to expand (via super-resolution enhancement) or discard visual tokens, thereby simulating the human "scan–focus–shift" cognitive process.
+**Core Idea**: Leveraging the non-uniform distribution of attention maps, the framework dynamically decides whether to expand (super-resolution enhancement) or discard visual tokens at each layer, simulating the human cognitive process of "scan-focus-shift."
 
 ## Method
 
 ### Overall Architecture
-Standard MLLM forward pass → At selected layers: compute saliency map → determine whether expansion/discard thresholds are exceeded → if so, apply the TokenSR module to expand tokens in salient regions → discard expanded tokens in subsequent layers if attention shifts → final output.
+
+Blink aims to dynamically enhance MLLM visual perception in one forward pass. Its starting point is derived from two findings in a pilot study: different Transformer layers focus on different regions in an image, and allocating more computation to high-attention tokens indeed improves perception. Thus, Blink inserts a "scan-focus-shift" loop into the standard forward pass. In selected layers, a saliency map is calculated first; if attention is sufficiently concentrated, TokenSR is used to expand tokens in the salient region via super-resolution. Once attention shifts elsewhere, these expanded tokens are discarded. The entire process mimics human "rapid-blink" visual scanning while keeping the backbone model frozen.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Image + Text Input<br/>Visual tokens enter frozen MLLM backbone"] --> B["Saliency-Guided Scanning<br/>Calc text-to-vision attention & saliency ratio ρ per layer"]
+    B -->|"ρ > τ_exp: Attention Concentrated"| C["Dynamic Token Resolution · Expand<br/>Super-resolve salient patches & re-insert into sequence"]
+    C --> D["TokenSR Module<br/>3-layer CNN restores details from low-res tokens"]
+    D --> E["Continue forward pass in subsequent layers"]
+    B -->|"ρ Intermediate: Maintain sequence"| E
+    E -->|"ρ < τ_drop: Attention Shifted"| F["Dynamic Token Resolution · Discard<br/>Remove expanded tokens & restore original sequence"]
+    F --> G["Output: Enhanced Visual Perception"]
+    E -->|"Still Concentrated: Keep Expansion"| G
+```
 
 ### Key Designs
 
-1. **Saliency-Guided Scanning (SGS)**:
+**1. Saliency-Guided Scanning: Judging enhancement based on attention concentration**
 
-    - At each participating layer $L$, the attention of the last text token over all visual tokens is computed as:
-    $S_v^{(L)} = q_{t_n}^{(L)} (k_v^{(L)})^\top$
-    - Visual tokens are reshaped into an $H \times W$ grid and divided into $p \times p$ patches; the aggregated saliency of each patch is then computed.
-    - A saliency ratio is defined as $\rho^{(L)} = \frac{\mathcal{S}_{r_{\max}}^{(L)}}{\sum_i \mathcal{S}_{r_i}^{(L)}}$, reflecting the degree of attention concentration.
-    - **Design Motivation**: The pilot study reveals substantial variation in attention distributions across layers; high concentration indicates that the model is "confident" in attending to a specific region, making that region a suitable candidate for enhancement.
+To simulate "focus," the model must first determine where it is looking and how confident it is. At each participating layer $L$, Blink calculates the attention of the last text token on all visual tokens $S_v^{(L)} = q_{t_n}^{(L)} (k_v^{(L)})^\top$. Visual tokens are reshaped into an $H \times W$ grid, aggregated into $p \times p$ patches, and the saliency ratio is characterized by $\rho^{(L)} = \frac{\mathcal{S}_{r_{\max}}^{(L)}}{\sum_i \mathcal{S}_{r_i}^{(L)}}$. A larger $\rho$ indicates the model is "confidently" staring at a specific region, making it an ideal time for enhancement—this directly corresponds to the pilot study observation that attention distributions vary significantly across layers.
 
-2. **Dynamic Token Resolution (DTR)**:
+**2. Dynamic Token Resolution: Expanding for concentration and discarding for shifts**
 
-    - **Token Expansion**: When $\rho^{(L)} > \tau_{\text{exp}}$, the TokenSR module performs super-resolution enhancement on the salient patch:
-    $hs_{SR}^{(L)} = \text{TokenSR}^{(L)}(hs_{LR}^{(L)})$
-      The enhanced tokens are then inserted into the sequence: $[hs_s; hs_v; hs_{SR}; hs_t]$
-    - **Token Discarding**: When $\rho^{(L)} < \tau_{\text{drop}}$, previously expanded tokens are removed and the original sequence is restored.
-    - **Design Motivation**: Expansion increases computational investment in salient regions, while discarding prevents low-information tokens from interfering with subsequent reasoning.
+Identifying saliency is insufficient; computation must be actively allocated and reclaimed. When $\rho^{(L)} > \tau_{\text{exp}}$, Blink uses TokenSR to perform super-resolution enhancement on salient patches $hs_{SR}^{(L)} = \text{TokenSR}^{(L)}(hs_{LR}^{(L)})$ and inserts the enhanced tokens into the sequence $[hs_s; hs_v; hs_{SR}; hs_t]$. When attention shifts in subsequent layers ($\rho^{(L)} < \tau_{\text{drop}}$), the previously expanded tokens are removed to restore the original sequence. Expansion allows the model to spend more computation on salient regions, while discarding prevents low-information tokens from interfering with subsequent reasoning. Replacing this module with a fixed cycle in ablation studies caused the largest performance drop (-41.07), identifying it as the core of the framework.
 
-3. **Token Super-Resolution Module (TokenSR)**:
+**3. TokenSR Module: Restoring details from low-res tokens via lightweight convolution**
 
-    - A lightweight module consisting of three 2D convolutional layers with ReLU activations.
-    - During training, salient-region tokens from the full image are upscaled, with tokens from the corresponding cropped image serving as reference; the training objective minimizes KL divergence between the two.
-    - The MLLM backbone is frozen; only TokenSR parameters are trained.
-    - **Design Motivation**: Inspired by image super-resolution, a lightweight network recovers fine-grained details from low-resolution tokens while preserving semantic consistency.
+Expanding salient tokens requires a component capable of truly "magnifying" features. TokenSR is a lightweight module consisting of three layers of 2D convolution + ReLU. During training, it magnifies tokens of salient regions from the full image and minimizes the KL divergence with tokens from the corresponding cropped image as a reference. The MLLM backbone is frozen throughout, and only TokenSR is trained. This effectively applies the image super-resolution concept to tokens—restoring details from low-resolution tokens without breaking semantic consistency, allowing for plug-and-play functionality.
 
 ### Loss & Training
-- TokenSR training: minimizes KL divergence between enhanced tokens and cropped reference tokens.
-- Training data: LLaVA-1.5 training set (COCO + GQA + OCR-VQA + TextVQA + VisualGenome).
-- All operations are performed prior to layer normalization, ensuring the Transformer correctly handles expanded or pruned sequences.
+
+The training objective for TokenSR is to minimize the KL divergence between the enhanced tokens and the reference tokens of the cropped image. Training data is sourced from the LLaVA-1.5 training set (COCO + GQA + OCR-VQA + TextVQA + VisualGenome). All expansion/cropping operations are executed before Layer Normalization to ensure the Transformer correctly processes sequences of varying lengths.
 
 ## Key Experimental Results
 
 ### Main Results (LLaVA-1.5-7B)
 
 | Benchmark | Vanilla | Blink-interp | Blink | Gain |
-|-----------|---------|-------------|-------|------|
+|------|---------|-------------|-------|------|
 | MME Perception | 1505.72 | 1514.08 | **1519.74** | +14.02 |
 | MME Cognition | 357.86 | 353.21 | **361.79** | +3.93 |
 | GQA | 61.93 | 61.93 | **61.98** | +0.05 |
@@ -91,42 +87,42 @@ Standard MLLM forward pass → At selected layers: compute saliency map → dete
 
 ### Ablation Study
 
-| Configuration | MME Total | Change | Notes |
-|---------------|-----------|--------|-------|
-| Blink (full) | **1881.53** | — | Best |
-| w/o SGS (random selection) | 1879.38 | -2.15 | Saliency guidance is necessary |
-| w/o DTR (fixed period) | 1840.46 | -41.07 | Dynamic resolution adjustment is critical |
-| w/o Drop | 1884.03 | +2.50 | Omitting discard yields a marginal gain under Blink |
-| High $\tau_{\text{exp}}$ | 1865.54 | -15.99 | Excessively high threshold limits effective expansion |
+| Configuration | MME Total | Change | Description |
+|------|-----------|------|------|
+| Blink Full | **1881.53** | — | Optimal |
+| w/o SGS (Random) | 1879.38 | -2.15 | Saliency-guided is necessary |
+| w/o DTR (Fixed) | 1840.46 | -41.07 | Dynamic resolution adjustment is critical |
+| w/o Drop | 1884.03 | +2.50 | Slight improvement without dropping in Blink |
+| High $\tau_{\text{exp}}$ | 1865.54 | -15.99 | Excessive threshold limits effective expansion |
 
 ### Key Findings
-- Removing the DTR module causes the largest performance drop (−41.07), confirming it as the core component of the framework.
-- Blink-interp (training-free interpolation) also improves MME Perception by 8.36 points, demonstrating the intrinsic value of the dynamic inference pipeline.
-- The full Blink model consistently matches or outperforms the baseline across all benchmarks.
-- The selected layer range (layers 12–18) corresponds to the "correct-attention intermediate layer" interval identified in the pilot study.
+- The removal of the DTR module caused the most significant performance decrease (-41.07), proving it is the framework core.
+- Blink-interp (interpolation without training) also improved MME Perception by 8.36 points, proving the value of the dynamic inference pipeline itself.
+- Fully-trained Blink consistently outperformed or matched the baseline across all benchmarks.
+- The layer range selection (layers 12-18) corresponds to the "middle layers with correct attention" identified in the pilot study.
 
 ## Highlights & Insights
-- The two findings from the pilot study (cross-layer attention shifts + efficacy of increased computation on salient tokens) provide a solid empirical foundation for the method design.
-- The "dynamic scan–focus" mechanism elegantly simulates the human visual cognition process.
-- The plug-and-play design requires training only the lightweight TokenSR module, with the backbone entirely frozen.
-- The Blink-interp variant demonstrates that gains can be achieved through the inference pipeline alone, even without training.
+- The two findings from the pilot study (cross-layer attention shift + effectiveness of increasing salient token computation) provide a solid empirical foundation for the method design.
+- "Dynamic scan-focus" mimics the human visual cognitive process, offering an elegant conceptual approach.
+- Plug-and-play design—only requires training the lightweight TokenSR module while the backbone remains completely frozen.
+- The Blink-interp variant demonstrates that the inference pipeline provides benefits even without specific training.
 
 ## Limitations & Future Work
-- The absolute performance gains are modest (MME total score +17.95), though the direction is promising.
-- Validation is limited to LLaVA-1.5-7B; evaluation on larger models and more recent architectures remains to be conducted.
-- The thresholds $\tau_{\text{exp}}$ and $\tau_{\text{drop}}$ require manual tuning; adaptive learning of these values warrants exploration.
-- Currently, only one salient patch is selected per layer; scenarios with multiple salient regions may require an extended design.
+- The absolute improvement magnitude is modest (MME total score +17.95), though the direction is promising.
+- Validated only on LLaVA-1.5-7B; larger models and newer architectures remain to be tested.
+- Thresholds $\tau_{\text{exp}}$ and $\tau_{\text{drop}}$ require manual tuning; adaptive learning could be considered.
+- Currently, only one salient patch is selected per layer; scenarios with multiple salient regions may require expansion.
 
 ## Related Work & Insights
-- Post-processing zoom methods (e.g., LLaVA-HR) require multiple forward passes and are computationally inefficient.
-- Visual token pruning approaches (e.g., FastV, LLaVA-PruMerge) represent a complementary direction — Blink focuses on "enhancing the important" rather than "removing the unimportant."
-- Insight: The internal attention distributions of MLLMs contain rich visual perception signals that merit further investigation.
+- Post-processing magnification methods (e.g., LLaVA-HR) require multiple forward passes and are inefficient.
+- Visual token pruning (FastV, LLaVA-PruMerge) is a complementary approach—Blink "enhances the important" rather than "removing the unimportant."
+- Insight: The internal attention distribution of MLLMs contains rich visual perception signals that warrant further exploitation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of dynamic token resolution adjustment is novel, and the pilot study provides strong motivation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Seven benchmarks, detailed ablation studies, and visualization analyses.
-- Writing Quality: ⭐⭐⭐⭐ The logical chain from empirical findings to method design is clearly articulated.
-- Value: ⭐⭐⭐⭐ Introduces a new perspective for enhancing MLLM visual perception in a plug-and-play manner.
+- Novelty: ⭐⭐⭐⭐ The idea of dynamic token resolution adjustment is novel; the pilot study provides strong motivation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered 7 benchmarks + detailed ablations + visualization analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from findings to method.
+- Value: ⭐⭐⭐⭐ Provides a new direction for enhancing MLLM visual perception with plug-and-play capability.
 
 <!-- RELATED:START -->
 
@@ -134,11 +130,11 @@ Standard MLLM forward pass → At selected layers: compute saliency map → dete
 
 ## Related Papers
 
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
+- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
+- [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
+- [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
-- [\[CVPR 2026\] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration](shiftlut_spatial_shift_enhanced_look-up_tables_for_efficient_image_restoration.md)
-- [\[CVPR 2026\] POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction](polishing_the_sky_wide-field_and_high-dynamic_range_interferometric_image_recons.md)
-- [\[AAAI 2026\] TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis](../../AAAI2026/image_restoration/tmdc_a_two-stage_modality_denoising_and_complementation_framework_for_multimodal.md)
-- [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
 
 </div>
 

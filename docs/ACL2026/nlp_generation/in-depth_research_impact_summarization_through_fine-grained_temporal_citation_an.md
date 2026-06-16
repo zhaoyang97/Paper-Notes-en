@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis
 description: >-
-  [ACL2026][Text Generation][Research Impact Summarization] This paper proposes the task of "Scientific Impact Summarization": first identifying fine-grained intents that truly reveal impact from the citation contexts of a…
+  [ACL 2026][Text Generation][citation context] This paper proposes the task of "Scientific Impact Summarization": first identifying fine-grained intents that reveal true impact from citation contexts, and then generating an evolving narrative of impact over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work
 tags:
-  - "ACL2026"
-  - "Text Generation"
-  - "Research Impact Summarization"
-  - "Citation Intent"
-  - "Time-aware Summarization"
-  - "citation context"
-  - "LLM Evaluation"
+  - ACL 2026
+  - Text Generation
+  - citation context
 date: 2026-05-08
-content_hash: 3f06871ebd064818
+content_hash: 1493d76206a97855
 ---
-
 # In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis
 
 **Conference**: ACL2026  
@@ -24,51 +19,54 @@ content_hash: 3f06871ebd064818
 **Keywords**: Research Impact Summarization, Citation Intent, Time-aware Summarization, citation context, LLM Evaluation  
 
 ## TL;DR
-This paper proposes the task of "Scientific Impact Summarization": first identifying fine-grained intents that truly reveal impact from the citation contexts of a paper, and then generating an impact narrative that evolves over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work than simple citation counts.
+This paper proposes the task of "Scientific Impact Summarization": first identifying fine-grained intents that reveal true impact from citation contexts, and then generating an evolving narrative of impact over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work compared to simple citation counts.
 
 ## Background & Motivation
-**Background**: Research impact is typically measured by citation counts, h-index, or similar bibliometric indicators. In NLP and scientometrics, significant work has also focused on citation intent classification, using coarse-grained labels to indicate whether a citation serves as background, method, result, or motivation.
+**Background**: Research impact is typically measured by citation counts, h-index, or similar metrics. In NLP and scientometrics, significant work has focused on citation intent classification, using coarse-grained labels to indicate whether a citation serves as background, method, result, or motivation.
 
-**Limitations of Prior Work**: Citation counts only indicate "how many times" a paper is cited, not "why." For two papers with 200 citations each, one might be primarily reused as a method, while another might be criticized for its limitations, and a third might only be cited as background. Existing citation intent classifications often remain at the level of a single citation context, rarely aggregating a large number of citations into a readable impact narrative.
+**Limitations of Prior Work**: Citation counts only indicate "how many times" a paper was cited, not "why." Two papers with 200 citations each could differ significantly: one might be reused as a primary method, another criticized for its limitations, and a third cited only as background. Existing intent classifications often stop at the individual citation context level and rarely aggregate large volumes of citations into a readable impact narrative.
 
-**Key Challenge**: Genuine scientific impact involves both confirmation and correction. Subsequent papers may adopt a method or point out flaws and propose corrections. Focusing only on positive adoption or coarse labels misses the trajectory of "criticism, correction, and rediscovery" in scientific progress.
+**Key Challenge**: Genuine scientific impact encompasses both confirmation and correction. Subsequent papers may adopt a method or point out flaws and propose fixes. Relying solely on positive adoption or coarse labels misses the trajectory of "criticism, correction, and rediscovery" central to scientific progress.
 
 **Goal**: The authors aim to filter "impact-revealing contexts" from all citation contexts of a target paper, identify their fine-grained citation reasons and years, and generate a time-aware impact summary describing how the paper influenced subsequent research across different stages.
 
-**Key Insight**: Rather than letting an LLM generate freely based on titles and citation counts, the paper decomposes the task into two steps: first, using in-context learning to generate fine-grained citation intents in free-text form and judging if they are impact-revealing; second, providing only the filtered impact-revealing contexts, years, and intents to the LLM for summary generation.
+**Key Insight**: Instead of allowing an LLM to generate freely based on titles and citation counts, the task is decomposed into two steps: first, utilizing in-context learning to generate fine-grained citation intents in free-text form and determining if they are impact-revealing; second, providing only the filtered impact-revealing contexts, years, and intents to an LLM to generate the summary.
 
-**Core Idea**: Using "fine-grained citation intent + temporal information" as a structured intermediate layer transforms research impact from static numbers into verifiable, readable, and comparable historical narratives.
+**Core Idea**: Use "fine-grained citation intent + temporal information" as a structured intermediate layer to transform research impact from static numbers into verifiable, readable, and comparable historical narratives.
 
 ## Method
-The paper first provides four definitions. A citation context is the text surrounding a citation of a target paper; fine-grained citation intent is a free-text description of the citation reason; impact-revealing intent refers to intents that directly reflect the impact of the cited paper, categorized into confirmation and critique/correction; a scientific impact summary describes how a paper was directly used, extended, criticized, or corrected by subsequent work over time.
-
-The entire pipeline follows a "filter evidence first, then summarize" approach. The input is a set of citation contexts and their years for a target paper. The system first generates a fine-grained intent for each context and classifies it as impact-revealing or other. Subsequently, only contexts with impact signals are retained and passed into the generation prompt along with years and intents to produce a semi-structured impact summary. Since no gold summaries exist for this task, the authors designed a reference-free evaluation, using an LLM to assess faithfulness, coverage, citation year compliance, insightfulness, trend awareness, and specificity, validated by human assessment for relevance.
 
 ### Overall Architecture
-The first stage is citation intent generation/classification. The authors manually construct in-context examples covering various citation reasons, including method use, background mention, pointing out unreliable datasets and proposing better ones, and identifying research gaps. For each citation context, the LLM outputs both a free-text intent and an impact-revealing/other category. To support this task, a 4K citation context dataset was constructed: 1K existing positive instances from PST-Bench, 1K impact-revealing contexts filtered from S2AG using confirmation/correction patterns, and 2K non-impact-revealing examples. Human inspection showed 90% label accuracy.
+The paper defines four concepts: citation context (text surrounding a citation), fine-grained citation intent (free-text description of the reason), impact-revealing intent (intents specifically showing impact, categorized as confirmation or critique/correction), and scientific impact summary (a temporal description of how a paper was used, extended, or corrected). The pipeline follows a three-step process—"filter evidence, write summary, reference-free evaluation": given citation contexts and years, the system generates intents and identifies impact-revealing ones; these indicators are fed to an LLM to generate a semi-structured impact summary; finally, a reference-free framework evaluates trustworthiness and informativeness.
 
-The second stage is impact summary generation. The system filters contexts based on the first stage results and passes the impact-revealing citations, corresponding years, and generated intents to the LLM. The prompt requires the model to summarize the impact trajectory of the target paper by time periods—for instance, early adoption by a specific category of methods, mid-term exposure of certain limitations, and late-stage repurposing by new methods.
-
-The third stage is evaluation. The trustworthiness side includes faithfulness, coverage, and citation year compliance; the informativeness side includes insightfulness, trend awareness, and specificity. Faithfulness splits the summary into impact descriptions for different time periods and asks the evaluator LLM to check if they are supported by citation contexts from the same period. The informativeness side utilizes a G-Eval style LLM-as-a-judge approach.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["All citation contexts of target paper<br/>+ Years"] --> B["Impact-revealing intents<br/>LLM generates free-text intents"]
+    B --> C{"Is it impact-revealing?"}
+    C -->|"confirmation / correction"| D["Retain as impact evidence"]
+    C -->|"background / other"| E["Discard (background noise)"]
+    D --> F["Generate summary using only impact-revealing contexts<br/>Contexts + Years + Intents fed to LLM"]
+    F --> G["Time-aware impact summary"]
+    G --> H["Reference-free evaluation framework<br/>Trustworthiness + Informativeness scoring"]
+```
 
 ### Key Designs
-1.  **Impact-revealing citation intent as an intermediate representation**:
-    - **Function**: Filters evidence from a large number of citations that truly explains "how this paper impacted subsequent work."
-    - **Mechanism**: Instead of fixed coarse labels, the LLM generates free-text intents and judges whether they are confirmation, correction, or other. For example, "use of minimization methodology" is impact-revealing, while "background about NER methods" is not.
-    - **Design Motivation**: Research impact is often hidden in specific usage; fixed taxonomies are too coarse, and citation counts are too shallow. Free-text intents preserve finer semantics.
 
-2.  **Generating summaries using only impact-revealing contexts**:
-    - **Function**: Reduces noise from common background citations, making the generated results more faithful to direct impact.
-    - **Mechanism**: The authors compared input settings including no citations, all citations, all citations + intents, only impact-revealing citations, and impact-revealing citations + intents.
-    - **Design Motivation**: Longer context is not necessarily better; high volumes of incidental citations can mislead LLMs into hallucinating background mentions as impact stories.
+**1. Impact-revealing citation intent as an intermediate representation: Upgrading "why cited" from coarse labels to free-text evidence**
 
-3.  **Reference-free evaluation framework for new tasks**:
-    - **Function**: Measures whether a summary is trustworthy and informative in the absence of a gold impact summary.
-    - **Mechanism**: Faithfulness checks if summary statements are supported by citation contexts of the same period; coverage measures how many impact intents the summary covers; trend awareness, insightfulness, and specificity evaluate if the summary captures temporal changes and specific impacts.
-    - **Design Motivation**: Traditional ROUGE cannot be used as there is no standard answer; there is a need to evaluate "support by evidence" and "actual explanation of impact."
+Scientific impact is often hidden in specific usage—fixed taxonomies are too coarse, and citation counts lose the semantics of how subsequent work actually utilizes a paper. The authors task the LLM to output a free-text intent for each context and categorize it as confirmation, correction, or other (e.g., "use of minimization methodology" is impact-revealing, while "background about NER methods" is not). To support this, a 4K context dataset was constructed: 1K positive examples from PST-Bench, 1K impact-revealing contexts filtered from S2AG via patterns, and 2K non-impact-revealing examples. Human checks showed 90% label accuracy. Free-text intents preserve fine-grained semantics and serve as "evidence labels" for summarization, reducing LLM hallucination.
+
+**2. Generating summaries using only impact-revealing contexts: Filtering background noise from generation**
+
+Citation contexts of highly cited papers often contain incidental background mentions. Including these in prompts can induce LLMs to misinterpret passing mentions as major impacts. The second stage filters results to keep only impact-revealing citations, years, and generated intents. The prompt requires the model to summarize the impact trajectory chronologically (e.g., early adoption of methods, mid-stage exposure of limitations, late-stage repurposing). Comparisons across different input settings (no citations, all citations, all + intents, only impact-revealing, only impact-revealing + intents) showed the latter performed best across most metrics.
+
+**3. Reference-free evaluation framework for the new task: Assessing "trustworthiness" and "informativeness"**
+
+Since no gold impact summaries exist, the authors split evaluation into trustworthiness and informativeness. Trustworthiness includes faithfulness, coverage, and citation year compliance: faithfulness breaks the summary into temporal segments, requiring an evaluator LLM to verify if segments are supported by contexts from the same period; coverage measures how many impact intents are captured. Informativeness includes insightfulness, trend awareness, and specificity, using G-Eval style LLM-as-a-judge scoring to assess whether the summary captures temporal shifts and specific impacts rather than generic paraphrasing.
 
 ### Loss & Training
-This work does not train a new model but primarily uses a prompt-based LLM pipeline. Intent classification uses GPT-4o-mini with ICL, employing $K=50$ shots in comparisons; each test sample was run 3 times with majority voting, showing a 72% perfect consistency rate. Summary generation and automatic evaluation mainly use GPT-4o; the appendix also uses Qwen-2.5-72B and Gemini-2.5-flash to check cross-model robustness. A human study invited 9 university professors to evaluate the impact summaries of their own papers.
+The study employs a prompt-based LLM pipeline rather than training new models. Intent classification uses GPT-4o-mini with ICL ($K=50$ shots); each test sample is run 3 times with majority voting (72% complete agreement rate). Summary generation and automatic evaluation primarily use GPT-4o, with Qwen-2.5-72B and Gemini-2.5-flash used to check robustness. A human study involved 9 university professors evaluating impact summaries of their own papers.
 
 ## Key Experimental Results
 
@@ -82,44 +80,44 @@ This work does not train a new model but primarily uses a prompt-based LLM pipel
 | Impact-revealing Classification | Multi-cite | 0.59 | 0.41 | 0.48 | 0.53 |
 | Impact-revealing Classification | Ours | 0.74 | 0.65 | 0.69 | 0.69 |
 
-Ours achieves the best overall performance in precision, recall, F1, and accuracy, particularly with a recall 19 percentage points higher than the next best existing method. For generating impact summaries, high recall is crucial, as missing impactful citations directly results in missing key impact trajectories.
+Ours achieves the best performance across precision, recall, F1, and accuracy. High recall is particularly crucial for generating impact summaries, as missing influential citations results in incomplete impact trajectories.
 
 ### Ablation Study
-| Summary Input | Provide intents? | Faithfulness | Coverage | Coverage@3 | Citation Year Compliance | Insightfulness | Trend Awareness | Specificity |
+| Summary Input | Provide Intents | Faithfulness | Coverage | Coverage@3 | Year Compliance | Insightfulness | Trend Awareness | Specificity |
 |----------|------------------|--------------|----------|------------|--------------------------|----------------|-----------------|-------------|
 | No citations | No | 0.77 | 0.25 | 0.58 | n/a | 0.70 | 0.94 | 0.75 |
 | All citations | No | 0.83 | 0.32 | 0.74 | 0.55 | 0.80 | 0.95 | 0.85 |
 | All citations | Yes | 0.84 | 0.32 | 0.73 | 0.48 | 0.80 | 0.97 | 0.86 |
-| Impact-revealing only | No | 0.87 | 0.33 | 0.73 | 0.59 | 0.80 | 0.96 | 0.87 |
-| Impact-revealing only | Yes | 0.88 | 0.34 | 0.75 | 0.56 | 0.83 | 0.98 | 0.88 |
+| Only impact-revealing | No | 0.87 | 0.33 | 0.73 | 0.59 | 0.80 | 0.96 | 0.87 |
+| Only impact-revealing | Yes | 0.88 | 0.34 | 0.75 | 0.56 | 0.83 | 0.98 | 0.88 |
 
 ### Key Findings
-- After subdividing into confirmatory and correction citations, the F1 of this method reached 0.88 and 0.98 respectively, significantly stronger than existing intent classifiers, indicating a particular strength in identifying signal impacts that "point out limitations and improve."
-- The best summary input is impact-revealing citations + intents, which achieves the highest or tie-for-highest scores in faithfulness, coverage, Coverage@3, insightfulness, trend awareness, and specificity.
-- In professor human evaluations, the summaries from this paper were selected 63% of the time for relevance and 75% for insightfulness compared to a zero-knowledge baseline. Approximately 60% of professors felt the summary details were appropriate and provided new, non-obvious insights; this ratio rose to 75% for papers in the top 10% of impact-revealing citations.
+- By distinguishing between confirmatory and correction citations, Ours achieves F1 scores of 0.88 and 0.98 respectively, significantly outperforming existing intent classifiers in identifying "limitation and improvement" signals.
+- The optimal summary input is "impact-revealing citations + intents," reaching the highest or tied-highest scores in faithfulness, coverage, insightfulness, trend awareness, and specificity.
+- In manual evaluations by professors, Ours was preferred over a no-knowledge baseline by 63% for relevance and 75% for insightfulness. Approximately 60% of professors felt the summaries provided appropriate detail and new insights; this rose to 75% for papers in the top 10% of impact-revealing citation counts.
 
 ## Highlights & Insights
-- The greatest highlight is the redefinition of "impact": impact is not the number of citations, but how subsequent work uses, extends, questions, and corrects the original paper. This perspective is more suitable for researchers to quickly judge the true historical role of a paper than bibliometrics.
-- Free-text intents are highly valuable. They avoid the information loss of coarse taxonomies and provide the summary generation with an intermediate layer akin to "evidence labels," reducing the risk of LLMs hallucinating stories.
-- The evaluation framework itself is reusable. The combination of faithfulness, coverage, year compliance, and trend awareness can be transferred to tasks like literature review generation, related work writing, and research trend analysis.
+- The primary highlight is the redefinition of "impact": impact is not the number of citations, but how subsequent work uses, extends, questions, and corrects the original paper. This perspective is more useful for researchers to quickly judge a paper's historical role.
+- Free-text intents are highly valuable. They avoid the information loss of coarse taxonomies and provide an "evidence label" layer for summary generation, reducing LLM hallucination risk.
+- The evaluation framework is reusable. The combination of faithfulness, coverage, year compliance, and trend awareness can be migrated to tasks like survey generation, related work writing, and research trajectory analysis.
 
 ## Limitations & Future Work
-- The authors only processed English papers; cross-lingual citation contexts and writing habits in different disciplines may affect intent expression. Research impact summarization in Chinese, German, or multiple languages still needs separate validation.
-- The scale of human evaluation was limited to 9 professors. While expert evaluation is high quality, the sample pool is small, and authors may only be familiar with a portion of their papers' impact.
-- The full coverage for the best setting is only 0.34, and citation year compliance is only around 0.56 to 0.59, suggesting LLMs still miss long-tail impact themes and are distracted by other year figures in citation contexts.
-- The paper primarily tested the GPT-4o series. Although Qwen and Gemini were added in the appendix, systematic model comparison is insufficient; using the same LLM for both generation and evaluation may introduce bias due to consistency in task interpretation.
-- Currently, impact is primarily operationalized as confirmation and correction. Real scientific impact includes parallel development, standardization, educational dissemination, and cross-domain transfer, which could expand the intent space in the future.
+- The study only processes English papers; cross-lingual citation contexts and varying disciplinary writing habits might affect intent expression.
+- Human evaluation was limited in scale (9 professors). While quality is high, the sample pool is small.
+- The full coverage of the best setting is only 0.34, and citation year compliance is around 0.56 to 0.59, suggesting LLMs still miss long-tail impact themes and are distracted by other years mentioned in contexts.
+- Reliance on GPT-4o series models might introduce bias due to internal consistency between generation and evaluation tasks.
+- Current impact is operationalized as confirmation and correction; future work could expand to parallel development, standardization, and cross-domain transfer.
 
 ## Related Work & Insights
-- **vs citation count / h-index**: Traditional metrics are simple and scalable but cannot explain the reason for the citation; this paper extracts impact paths from citation contexts, distinguishing between method reuse, critique of limitations, and subsequent corrections.
-- **vs citation intent classification**: Existing methods mostly perform coarse classification of single citations; this paper uses intent classification as an intermediate step, with the ultimate goal being a multi-document, time-aware impact summary.
-- **vs query-focused scientific summarization**: General scientific summarization focuses on paper content or related work; the query in this paper is "how did this paper impact subsequent research," and the input evidence is subsequent citation contexts, making it more like an automated draft of the history of scientific ideas.
+- **vs citation count / h-index**: Traditional metrics are scalable but fail to explain citation reasons; this work extracts impact paths from citation context.
+- **vs citation intent classification**: Existing methods focus on coarse single-citation classification; this work uses intent as a middle step for multi-document, time-aware summarization.
+- **vs query-focused scientific summarization**: General scientific summaries focus on content or related work; here the query is "how did this paper influence others," using subsequent citations as evidence, effectively creating an automated draft of scientific history.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The task definition is very fresh, combining citation intent, timelines, and impact summarization into a clear new problem.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Automatic evaluation, ablation, expert evaluation, and cross-model supplements are relatively complete, but human evaluation scale and coverage remain limited.
-- Writing Quality: ⭐⭐⭐⭐☆ The paper structure is clear, and definitions and evaluation metrics are explained in detail; some high-density tables require patient alignment by the reader.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for literature review, academic evaluation, survey writing, and research trend analysis, especially when integrated with paper retrieval systems.
+- Novelty: ⭐⭐⭐⭐⭐ Highly novel task definition combining citation intent, timelines, and impact summarization.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive automatic metrics and expert evaluation, though human eval scale and coverage remain limited.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure and definitions; dense tables require careful review.
+- Value: ⭐⭐⭐⭐⭐ Extremely practical for literature review, academic evaluation, and analyzing research trajectories.
 
 <!-- RELATED:START -->
 
@@ -129,9 +127,9 @@ Ours achieves the best overall performance in precision, recall, F1, and accurac
 
 - [\[AAAI 2026\] AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research](../../AAAI2026/nlp_generation/automaldesc_large-scale_script_analysis_for_cyber_threat_research.md)
 - [\[ACL 2026\] Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](investigating_the_representation_of_backchannels_and_fillers_in_fine-tuned_langu.md)
-- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
 - [\[ACL 2026\] Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety](childrens_english_reading_story_generation_via_supervised_fine-tuning_of_compact.md)
-- [\[ACL 2026\] FACTS: Table Summarization via Offline Template Generation with Agentic Workflows](facts_table_summarization_via_offline_template_generation_with_agentic_workflows.md)
+- [\[ACL 2025\] Multi-document Summarization through Multi-document Event Relation Graph Reasoning in LLMs](../../ACL2025/nlp_generation/event_graph_bias_mitigation_summarization.md)
+- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
 
 </div>
 

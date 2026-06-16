@@ -2,86 +2,88 @@
 title: >-
   [Paper Note] Asking like Socrates: Socrates helps VLMs understand remote sensing images
 description: >-
-  [CVPR 2026][Multimodal VLM][Remote sensing image understanding] This paper identifies the "pseudo-reasoning" phenomenon in remote sensing VLMs—where explicit reasoning chains actually degrade performance—attributing it t…
+  [CVPR 2026][Multimodal VLM][Paper Note] This work reveals the "pseudo-reasoning" phenomenon in remote sensing VLMs (where explicit reasoning chains lead to performance degradation), attributed to the "glance effect" (insufficient single coarse-grained perception). It proposes the RS-EoT (Evidence-of-Thought) iterative evidence search paradigm. The method use
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Remote sensing image understanding"
-  - "evidence-chain reasoning"
-  - "pseudo-reasoning"
-  - "Socratic method"
-  - "two-stage reinforcement learning"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: d9822168776fd042
+content_hash: 05cb2347b6e29c44
 ---
-
 # Asking like Socrates: Socrates helps VLMs understand remote sensing images
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22396](https://arxiv.org/abs/2511.22396)  
 **Code**: [https://geox-lab.github.io/Asking_like_Socrates](https://geox-lab.github.io/Asking_like_Socrates)  
-**Area**: Remote Sensing / Multimodal Reasoning
-**Keywords**: Remote sensing image understanding, evidence-chain reasoning, pseudo-reasoning, Socratic method, two-stage reinforcement learning
+**Area**: Remote Sensing / Multimodal Reasoning  
+**Keywords**: Remote Sensing Image Understanding, Chain-of-Evidence Reasoning, Pseudo-reasoning, Socratic Method, Two-stage Reinforcement Learning
 
 ## TL;DR
-This paper identifies the "pseudo-reasoning" phenomenon in remote sensing VLMs—where explicit reasoning chains actually degrade performance—attributing it to the "Glance Effect" (insufficient single-pass perception). It proposes RS-EoT (Evidence-of-Thought), an iterative evidence search paradigm. A SocraticAgent self-play mechanism synthesizes reasoning trajectories for SFT cold-start, followed by two-stage progressive RL (grounding → VQA) to enhance and generalize reasoning. RS-EoT-7B achieves state-of-the-art performance across multiple remote sensing VQA and grounding benchmarks.
+This work reveals the "pseudo-reasoning" phenomenon in remote sensing VLMs (where explicit reasoning chains lead to performance degradation), attributed to the "glance effect" (insufficient single coarse-grained perception). It proposes the RS-EoT (Evidence-of-Thought) iterative evidence search paradigm. The method uses SocraticAgent self-play to synthesize reasoning trajectories for SFT cold startup, followed by two-stage progressive RL (grounding → VQA) for enhancement and generalization. RS-EoT-7B achieves SOTA on multiple remote sensing VQA and grounding benchmarks.
 
 ## Background & Motivation
 
-**Background**: Deep reasoning models (DeepSeek-R1-style SFT-RL paradigm) have achieved breakthroughs in mathematics and code, and have been extended to multimodal settings (Vision-R1, WeThink, R1-OneVision, etc.). However, anomalous behavior emerges in remote sensing tasks.
+**Background**: Deep reasoning models (DeepSeek-R1 style SFT-RL paradigm) have achieved breakthroughs in mathematics/code and have been extended to multimodal domains (Vision-R1, WeThink, R1-OneVision, etc.). However, anomalous phenomena occur in remote sensing tasks.
 
-**Pseudo-Reasoning Problem**: Remote sensing VLMs generate explicit reasoning chains, yet performance shows **no improvement or even degrades**. Models merely "narrate reasoning processes" rather than "genuinely reason."
+**Limitations of Prior Work**: Remote sensing VLMs generate explicit reasoning chains, but performance **stagnates or decreases**. Models merely "narrate the reasoning process" rather than performing "actual reasoning."
 
-**Glance Effect**: Remote sensing images cover large spatial extents with significant scale variation and sparse, subtle visual cues. Models perform a single shallow perception pass ("one glance") before reasoning, leading to reasoning based on incomplete visual evidence—reasoning degenerates into linguistically self-consistent narration rather than evidence-grounded logic.
+**Glance Effect**: Remote sensing images involve large spatial extents, significant scale variations, and sparse, subtle visual cues. Models start reasoning after a single coarse perception ("glance") $\rightarrow$ based on incomplete visual evidence $\rightarrow$ reasoning degrades into linguistically self-consistent narration rather than logic grounded in visual evidence.
 
-**Key Challenge**: Remote sensing reasoning requires iterative, non-static evidence acquisition, whereas existing models adopt a "glance-then-reason" paradigm. Human remote sensing analysts employ repeated inspection-refinement cycles.
+**Key Challenge**: Remote sensing reasoning requires iterative, non-static evidence acquisition, yet existing models adopt a "glance-and-reason" paradigm. Human remote sensing analysts utilize repeated check-refinement loops.
 
-**Core Idea**: RS-EoT — reasoning guides perception, dynamically searching for new visual evidence during the reasoning process (reasoning → perception → reasoning → perception... loop), rather than relying on a fixed initial view.
+**Key Insight**: RS-EoT — Let reasoning guide perception, dynamically searching for new visual evidence during the reasoning process (reasoning $\rightarrow$ perception $\rightarrow$ reasoning $\rightarrow$ perception... loop), rather than relying on a fixed initial perspective.
 
 ## Method
 
 ### Overall Architecture
-**SFT Cold-Start** (SocraticAgent synthesizes RS-EoT-4K dataset) → **Stage 1 RL: Grounding** (IoU reward enhances evidence search capability) → **Stage 2 RL: VQA** (multiple-choice reconstruction + graded reward generalizes reasoning) → RS-EoT-7B.
+To address "pseudo-reasoning," RS-EoT replaces "glance-and-reason" with an iterative "reasoning $\rightarrow$ evidence search $\rightarrow$ re-reasoning" loop. The reasoning process drives perception to find new evidence as needed.
+
+The pipeline consists of three steps to produce RS-EoT-7B (base: Qwen2.5-VL-7B). Step 1 is SFT cold startup: a three-role self-play SocraticAgent synthesizes reasoning trajectories featuring iterative evidence search (RS-EoT-4K dataset). This is followed by two-stage progressive RL—Stage 1 utilizes IoU rewards on grounding tasks to sharpen evidence search capabilities, and Stage 2 generalizes these capabilities to general remote sensing VQA.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["RS Image + Task Question<br/>(RGB / IR / SAR)"]
+    subgraph SA["SocraticAgent: Tri-role Self-play Trajectory Synthesis"]
+        direction TB
+        R["Reasoner (GPT-5-mini)<br/>Text-only · Questioning · Integration"]
+        P["Perceiver (Gemini-2.5-flash)<br/>Vision-only · Concise Answers"]
+        R -->|Incremental Questions| P
+        P -->|Visual Evidence| R
+        V["Verifier (Doubao)<br/>Included only if Blind-Correct"]
+    end
+    IN --> SA
+    SA --> D["RS-EoT-4K Reasoning Trajectories"]
+    D --> SFT["SFT Cold Start<br/>Injecting Iterative Evidence Reasoning"]
+    SFT --> RL1["Two-stage RL · Stage 1: Grounding<br/>IoU Reward for Evidence Search"]
+    RL1 --> RL2["Two-stage RL · Stage 2: VQA<br/>MCQ Reconstruction + Tiered Reward"]
+    RL2 --> OUT["RS-EoT-7B<br/>Reasoning-Perception-Reasoning Loop"]
+```
 
 ### Key Designs
 
-1. **SocraticAgent (RS-EoT Reasoning Trajectory Synthesis)**:
+**1. SocraticAgent: Tri-role Self-play for Iterative Evidence Search Trajectories**
 
-    - Function: Synthesizes reasoning trajectories with iterative evidence-search characteristics from scratch.
-    - **Reasoner** (GPT-5-mini): Pure text reasoning without image access. Responsible for reasoning, querying the Perceiver, and integrating feedback.
-    - **Perceiver** (Gemini-2.5-flash): Has image access but no original task query. Only answers questions posed by the Reasoner.
-    - **Verifier** (doubao-seed-1.6-thinking): Validates the final answer — if the image-blind Reasoner still arrives at the correct answer, the dialogue constitutes a reliable reasoning trajectory.
-    - **Self-Play Prompting Mechanism (Core Ingenuity)**: The Reasoner is told "the Perceiver is weak and cannot handle complex questions," forcing it to decompose problems and pose simple, incremental queries; the Perceiver is told "the Reasoner has weak reasoning ability," forcing it to provide concise, accurate answers. This mutual "capability deprecation" strategy ensures detailed, progressive reasoning trajectories.
-    - Output: RS-EoT-4K dataset (covering RGB, infrared, and SAR modalities), with a maximum of 6 dialogue turns.
+The SocraticAgent synthesizes trajectories using three roles: The Reasoner (GPT-5-mini) only reads text and manages reasoning/questioning; the Perceiver (Gemini-2.5-flash) only sees the image and answers specific questions; the Verifier (Doubao-seed-1.6-thinking) ensures that if the blind Reasoner can reach the correct answer through the dialogue, the evidence is reliable. This "information isolation" decouples reasoning from perception. Self-play prompts (e.g., telling the Reasoner the Perceiver is "weak") force the decomposition of complex tasks into incremental questions, resulting in the RS-EoT-4K dataset.
 
-2. **Two-Stage Progressive RL**:
+**2. Two-stage Progressive RL: Grounding First, VQA Generalization Second**
 
-    - **Stage 1: Fine-grained Grounding RL**
-        - Function: Reinforces the model's evidence search capability through precise localization tasks.
-        - Mechanism: "Sharpening iron with iron" — grounding tasks inherently require progressively refined visual evidence search, most directly reinforcing RS-EoT behavior.
-        - Reward: IoU score + format reward.
-        - Data: DIOR-RSVG + VRSBench.
-    - **Stage 2: General RS VQA RL**
-        - Function: Generalizes RS-EoT capability to broad remote sensing understanding scenarios.
-        - Problem: Existing RS VQA data predominantly consists of simple Yes/No questions, making reward hacking trivially easy.
-        - **Multiple-Choice Reconstruction Strategy**: Exploits the property of multiple QA pairs per image by randomly inverting $n$ answers into incorrect options, constructing multiple-choice questions that require the model to verify each option individually.
-        - **Graded Reward**: $r_{qa} = 1 - \frac{1}{N}\sum|y_i - \hat{y}_i|$ — correct selections and correct rejections both yield positive rewards, producing a stable training signal.
-        - Design Motivation: Symmetric penalties and equally weighted options force multi-step reasoning and evidence aggregation.
+Stage 1 uses grounding tasks because they require precise, iterative visual evidence search. Rewards utilize IoU scores and format rewards based on DIOR-RSVG and VRSBench data. Stage 2 generalizes to general VQA. To prevent reward hacking in simple Yes/No questions, Multiple-Choice Question (MCQ) reconstruction is used, forcing the model to verify each option. The hierarchical reward is defined as:
 
-3. **Two Core Principles of the RS-EoT Reasoning Paradigm**:
+$$r_{qa} = 1 - \frac{1}{N}\sum_i |y_i - \hat{y}_i|$$
 
-    - Reasoning is driven by natural language — language serves not only as a descriptive tool but as a controller for perceptual operations.
-    - Visual information functions as on-demand evidence — rather than relying on a single global perception pass, the model progressively searches, validates, and integrates local visual evidence according to reasoning demands.
+**3. RS-EoT Paradigm: Language-Driven Reasoning and On-demand Evidence**
+
+The paradigm follows two principles: reasoning is driven by natural language as a "control signal" for perception, and visual information serves as on-demand evidence. This replaces the "glance" with iterative evidence acquisition to eliminate pseudo-reasoning.
 
 ### Loss & Training
-SFT uses RS-EoT-4K (5 epochs, lr=3e-5). Two-stage RL uses GRPO (2 epochs each, lr=1e-6, batch=512). Based on Qwen2.5-VL-7B.
+SFT uses RS-EoT-4K (5 epochs, lr=3e-5). Both RL stages employ GRPO (2 epochs each, lr=1e-6, batch=512) based on Qwen2.5-VL-7B.
 
 ## Key Experimental Results
 
-### Main Results (Remote Sensing VQA + Grounding)
+### Main Results (RS VQA + Grounding)
 
 | Benchmark | Metric | RS-EoT-7B | Qwen2.5VL | WeThink | VL-Rethinker | Geo-R1 |
-|-----------|--------|-----------|-----------|---------|-------------|--------|
+|------|------|-----------|-----------|---------|-------------|--------|
 | RSFG-VQA | Avg@5 | **67.85** | 62.45 | 55.04 | 58.80 | 45.03 |
 | RSFG-SC | Object@F1 | **56.52** | 36.78 | 38.35 | 34.84 | 20.82 |
 | VRSBench | Avg@5 | **63.09** | 62.45 | 62.17 | 55.04 | 57.00 |
@@ -89,45 +91,56 @@ SFT uses RS-EoT-4K (5 epochs, lr=3e-5). Two-stage RL uses GRPO (2 epochs each, l
 | DIOR-RSVG | mIoU | **45.29** | 35.64 | 33.96 | 25.48 | 20.97 |
 | VRSBench-Ref | mIoU | **48.04** | 21.99 | 34.07 | 25.29 | 4.51 |
 
-RS-EoT-7B achieves **consistent state-of-the-art performance across all VQA and grounding tasks**, with particularly notable gains in Object@F1 (36.78 → 56.52, +53.7%) and grounding mIoU (35.64 → 45.29, +27.1%).
+RS-EoT-7B achieves **SOTA across all VQA and Grounding tasks**, notably improving Object@F1 from 36.78 to 56.52 (+53.7%) and Grounding mIoU from 35.64 to 45.29 (+27.1%).
 
-### Ablation Study (Per-Stage Contributions)
+### Ablation Study
 
-| Stage | RSFG-VQA | DIOR mIoU | Notes |
-|-------|----------|-----------|-------|
+| Stage | RSFG-VQA | DIOR mIoU | Explanation |
+|------|----------|-----------|------|
 | Qwen2.5-VL Baseline | 62.45 | 35.64 | No reasoning |
-| + SFT Cold-Start | +gain | +gain | RS-EoT pattern injection |
-| + RL-Grounding | +further | **Large gain** | Evidence search enhancement |
-| + RL-VQA | **Best** | Maintained | Generalization to broad VQA |
+| + SFT Cold Start | + Gain | + Gain | Injection of RS-EoT mode |
+| + RL-Grounding | + Further Gain | **Massive Gain** | Enhanced evidence search |
+| + RL-VQA | **Optimal** | Maintained | Generalization to VQA |
 
 ### Key Findings
-- **Quantitative Validation of Pseudo-Reasoning**: Reasoning models such as WeThink perform worse than non-reasoning baselines on RS tasks (Fig. 1a), confirming that pseudo-reasoning is a genuine and widespread problem.
-- Attention map analysis of RS-EoT reveals clear alternating "reasoning → evidence search → reasoning" cycles, demonstrating genuine evidence-driven reasoning rather than pseudo-reasoning.
-- Grounding RL exhibits positive transfer to VQA tasks — fine-grained localization capability enhances global understanding.
-- The multiple-choice reconstruction strategy successfully prevents reward hacking, as evidenced by steadily increasing rather than oscillating reward curves.
+- **Quantification of Pseudo-reasoning**: Reasoning models like WeThink performed worse than non-reasoning baselines on RS tasks, confirming the issue.
+- Attention map analysis shows clear alternating cycles of "reasoning $\rightarrow$ evidence search $\rightarrow$ reasoning."
+- Grounding RL exhibits positive transfer to VQA tasks.
+- MCQ reconstruction effectively avoids reward hacking.
 
 ## Highlights & Insights
-- **Diagnosis of Pseudo-Reasoning**: This work is the first to systematically identify and explain the anomalous phenomenon of "reasoning reducing performance" in remote sensing VLMs; the attribution to the Glance Effect is precise and compelling.
-- **Elegance of the Self-Play Prompting Mechanism**: Informing each agent that the other is "weak" forces both to fulfill their respective roles. This is an exceptionally concise and effective prompt engineering technique with broad applicability to other multi-agent data synthesis scenarios.
-- **"Sharpening Iron with Iron" Training Philosophy**: First refining the model on grounding tasks—which most directly demand fine-grained evidence search—before generalizing to VQA represents an intuitive curriculum that mirrors skill acquisition.
-- **Practical Multiple-Choice Reconstruction Strategy**: Transforming simple Yes/No VQA into RL-friendly formats addresses the reward hacking problem inherent in remote sensing RL training.
+- **Diagnosis of Pseudo-reasoning**: Systematically identifies and explains why reasoning can decrease performance in RS VLMs.
+- **SocraticAgent Mechanism**: The "mutual depreciation" prompt strategy effectively decouples reasoning and perception for high-quality data synthesis.
+- **Progressive RL Strategy**: Starting with the most difficult evidence-seeking task (grounding) before generalizing to VQA follows an intuitive skill-learning curriculum.
+- **MCQ Reconstruction**: A practical solution to reward hacking in RS RL training with simple ground-truth labels.
 
 ## Limitations & Future Work
-- RS-EoT currently operates as an in-language loop (alternating reasoning and "self-questioning" in text) without explicitly retrieving image sub-regions; integration with visual grounding tools could enable genuine region retrieval.
-- SocraticAgent relies on expensive APIs such as GPT-5-mini and Gemini-2.5-flash for data synthesis.
-- Built upon Qwen2.5-VL-7B; effectiveness at larger scales remains unverified.
-- Coverage is currently limited to RGB, infrared, and SAR modalities; other remote sensing modalities such as hyperspectral imagery remain to be explored.
+- The current loop is within the language domain; it does not yet explicitly crop image sub-regions.
+- SocraticAgent relies on expensive APIs for data synthesis.
+- Scaling effects for models larger than 7B are not yet verified.
+- Expansion to hyperspectral and other modalities is needed.
 
 ## Related Work & Insights
-- **vs. Geo-R1/VHM-RL**: These methods adopt SFT-RL but rely on single-pass global perception, leading to pseudo-reasoning in RS tasks. RS-EoT addresses this through iterative evidence search.
-- **vs. Vision-R1/WeThink/R1-OneVision**: General-purpose multimodal reasoning models whose performance on RS tasks falls below even the baseline.
-- **vs. EagleVision**: The latter actively acquires new viewpoints for spatial reasoning in video; RS-EoT iteratively searches for local evidence within single remote sensing images. Both share the core philosophy of "reasoning-driven perception."
+- **vs Geo-R1/VHM-RL**: These use SFT-RL but rely on single global perception, leading to pseudo-reasoning in RS. RS-EoT solves this through iterative search.
+- **vs EagleVision**: RS-EoT shares the "reasoning-driven perception" philosophy but applies it to iterative local evidence search within single remote sensing images.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Pseudo-reasoning diagnosis + RS-EoT paradigm + SocraticAgent are all entirely original.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple VQA and grounding benchmarks, attention visualizations, reward curves, and per-stage ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation (pseudo-reasoning + Glance Effect) is exceptionally clear and compelling.
-- Value: ⭐⭐⭐⭐⭐ Significant implications for both remote sensing AI and the broader multimodal reasoning field.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐
+
+## Related Papers
+
+- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
+- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)
+- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -135,11 +148,11 @@ RS-EoT-7B achieves **consistent state-of-the-art performance across all VQA and 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
-- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[CVPR 2026\] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher](purify-then-align_towards_robust_human_sensing_under_modality_missing_with_knowl.md)
-- [\[CVPR 2026\] See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models](see_hear_and_understand_benchmarking_audiovisual_human_speech_understanding_in_mul.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
+- [\[CVPR 2026\] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval](tiger_a_unified_framework_for_time_images_and_geo-location_retrieval.md)
+- [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
+- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
 
 </div>
 

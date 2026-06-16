@@ -2,129 +2,143 @@
 title: >-
   [Paper Note] Compressed-Domain-Aware Online Video Super-Resolution
 description: >-
-  [CVPR 2026][Video Generation][Online video super-resolution] CDA-VSR leverages compressed-domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: mo…
+  [CVPR 2026][Video Generation][Paper Note] CDA-VSR proposes leveraging video compressed domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and precise registration, residual-map-gated fusion to suppress misaligned regions, and fra
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Online video super-resolution"
-  - "compressed-domain information"
-  - "motion vectors"
-  - "deformable alignment"
-  - "frame-type-aware processing"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 7eaa8d9f726218b9
+content_hash: 89b1dc3bf43723bd
 ---
-
 # Compressed-Domain-Aware Online Video Super-Resolution
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.07694](https://arxiv.org/abs/2603.07694)  
 **Code**: [https://github.com/sspBIT/CDA-VSR](https://github.com/sspBIT/CDA-VSR)  
-**Area**: Video Generation
-**Keywords**: Online video super-resolution, compressed-domain information, motion vectors, deformable alignment, frame-type-aware processing
+**Area**: Video Generation  
+**Keywords**: Online Video Super-Resolution, Compressed Domain Information, Motion Vectors, Deformable Alignment, Frame-Type Awareness
 
 ## TL;DR
-CDA-VSR leverages compressed-domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and accurate registration, residual-map-gated fusion to suppress misalignment artifacts, and frame-type-aware reconstruction to adaptively allocate computation. The method achieves state-of-the-art PSNR on REDS4 at 93 FPS—more than twice the speed of prior SOTA.
+CDA-VSR proposes leveraging video compressed domain information (motion vectors, residual maps, and frame types) to guide three key stages of online video super-resolution: motion-vector-guided deformable alignment for efficient and precise registration, residual-map-gated fusion to suppress misaligned regions, and frame-type-aware reconstruction for adaptive computational resource allocation. It achieves optimal PSNR on REDS4 at 93 FPS (>2x the speed of SOTA).
 
 ## Background & Motivation
 
-1. **Background**: Online video super-resolution (Online VSR) requires real-time reconstruction of the current frame during playback, using only past and current frames. Recent methods (e.g., TMP, DAP, MMVSR) have improved performance through better alignment and fusion modules, yet still struggle to meet real-time requirements at higher resolutions such as 2K.
+1. **Background**: Online Video Super-Resolution (Online VSR) requires real-time reconstruction of the current frame during video playback using only historical and current frame information. Recent methods (e.g., TMP, DAP, MMVSR) have improved performance through enhanced alignment and fusion modules, but still struggle to meet real-time requirements at higher resolutions (e.g., 2K).
 
-2. **Limitations of Prior Work**: (1) **Computationally intensive motion estimation**: Optical-flow-based alignment methods (e.g., BasicVSR) are accurate but computationally expensive; implicit alignment methods (e.g., RRN) are efficient but degrade under large motions. (2) **Uniform treatment of redundant frames**: Existing methods apply the same computational budget to all frames, resulting in unnecessary redundant computation for the frequently occurring P-frames. (3) **Wasted information**: Compressed-domain information obtained during decoding (motion vectors, residual maps, frame types) is discarded rather than exploited.
+2. **Limitations of Prior Work**: (1) **Computationally intensive motion estimation**: Optical flow-based alignment (e.g., BasicVSR) is accurate but computationally expensive; implicit alignment (e.g., RRN) is efficient but degrades under large motion. (2) **Redundant processing of sequential frames**: Existing methods apply the same computational budget to all frames, leading to unnecessary redundancy for frequently occurring P-frames. (3) **Information waste**: Compressed domain information obtained during decoding (motion vectors, residual maps, frame types) is discarded rather than utilized.
 
-3. **Key Challenge**: In bandwidth-constrained online video streaming, video is downsampled and transmitted in compressed form. Rich compressed-domain priors are available at the decoder at virtually no cost, yet existing methods rely solely on decoded low-resolution frames and ignore these valuable auxiliary signals.
+3. **Key Challenge**: In bandwidth-constrained online video streaming, videos are downsampled and compressed for transmission. The decoder side has access to rich compressed domain priors for "free," yet existing methods only use decoded low-resolution frames, ignoring these valuable auxiliary cues.
 
-4. **Goal**: To design dedicated modules tailored to the distinct characteristics of three types of compressed-domain information—motion vectors, residual maps, and frame types—so as to simultaneously improve super-resolution quality and substantially accelerate inference.
+4. **Goal**: How to customize dedicated modules for motion vectors, residual maps, and frame types—each with distinct characteristics—to significantly accelerate inference speed while enhancing super-resolution quality.
 
-5. **Key Insight**: Within a video bitstream, motion vectors describe block-level inter-frame motion (serving as a coarse substitute for optical flow), residual maps reflect regions where motion compensation fails (naturally marking unreliable areas), and frame types determine inter-frame reference relationships (I-frames require high-quality reconstruction; P-frames can be processed more lightly). Each type of information offers distinct utility.
+5. **Key Insight**: Within the video codec bitstream, motion vectors describe block-level inter-frame motion (serving as coarse registration to replace optical flow), residual maps reflect regions where motion compensation failed (naturally marking unreliable areas), and frame types determine inter-frame reference relationships (I-frames require high-quality reconstruction, while P-frames can be handled lightly). Each has a unique utility.
 
-6. **Core Idea**: Treat the three categories of compressed-domain information—motion vectors for coarse alignment, residual maps for quality gating, and frame types for computation allocation—as natural priors for online VSR, allowing "free" information to yield simultaneous gains in quality and speed.
+6. **Core Idea**: Utilizing the three types of compressed domain information (motion vectors for coarse alignment → residual maps for quality gating → frame types for computation allocation) as natural priors for online VSR, allowing "free" information to deliver dual improvements in both quality and speed.
 
 ## Method
 
 ### Overall Architecture
-CDA-VSR adopts a recurrent structure that takes decoded low-resolution frames together with compressed-domain information (MVs, residual maps, and frame types) as input and produces high-resolution frames. The pipeline proceeds as follows: (1) a shallow feature extraction network maps each frame to latent features; (2) the **MVGDA module** uses motion vectors to guide deformable convolutions for inter-frame alignment; (3) the **RMGF module** generates spatial weights from the residual map for selective feature fusion; (4) the **FTAR module** selects reconstruction branches of different depths based on frame type. The entire pipeline enforces the causal constraint (using only past and current frames) while meeting real-time processing requirements.
+CDA-VSR adopts a recurrent structure that takes decoded low-resolution frames and compressed domain information (MV, residual maps, frame types) as input to output high-resolution frames. The workflow consists of: (1) A shallow feature extraction network mapping each frame to latent features; (2) The **MVGDA module**, which uses motion vectors to guide deformable convolution for inter-frame alignment; (3) The **RMGF module**, which uses residual maps to generate spatial weights for selective fusion; (4) The **FTAR module**, which selects reconstruction branches of different depths based on frame type. The entire pipeline maintains causal constraints (using only past and current frames) and meets real-time processing requirements. The three types of compressed domain information are fed into dedicated modules: MV to MVGDA, residual maps to RMGF, and frame types to FTAR.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Decoded LR Frames + Compressed Domain Info<br/>(MV / Residual Maps / Frame Types)"] --> B["Shallow Feature Extraction<br/>Mapping frames to latent features"]
+    B --> C["Motion Vector Guided Deformable Alignment (MVGDA)<br/>MV for coarse warp + DCN for residual offsets"]
+    C --> D["Residual Map Gated Fusion (RMGF)<br/>Residual maps as spatial gates to suppress misalignment"]
+    D --> E{Frame Type?}
+    subgraph FTAR["Frame Type Aware Reconstruction (FTAR)"]
+        direction TB
+        F["I-frame: 24 Residual Block branch"]
+        G["P-frame: 12 Residual Block branch"]
+    end
+    E -->|I-frame| F
+    E -->|P-frame| G
+    F --> H["Output HR Frame"]
+    G --> H
+```
 
 ### Key Designs
 
-1. **Motion-Vector-Guided Deformable Alignment (MVGDA)**:
+**1. Motion Vector Guided Deformable Alignment (MVGDA): Using MV for rough drafts and DCN for detail refinement, eliminating expensive optical flow estimation.**
 
-    - **Function**: Efficiently and accurately aligns preceding-frame features with the current frame.
-    - **Mechanism**: A two-step approach is employed. First, the motion vector is used to perform coarse warping of the previous frame features: $\bar{h}_{t-1} = \mathcal{W}(h_{t-1}; MV_{t-1 \to t})$, efficiently compensating for large-scale inter-frame motion. The MV is then used to initialize the offset $o_{MV}$ of a deformable convolutional network (DCN), while a lightweight convolutional network predicts a residual offset $\Delta o$ and a modulation mask $m$. The final aligned feature is: $\hat{h}_{t-1} = \mathcal{D}(h_{t-1}; o_{MV} + \Delta o, m)$. In practice, two complementary features are used: encoder coarse features $h^L$ (structural prior) and reconstruction-module fine features $h^H$ (textural detail), both guided by the same MV-based alignment.
-    - **Design Motivation**: MVs are "free"—they are available at decode time and provide block-level displacement priors. However, their block-level nature means all pixels within a block share the same vector, leading to inaccuracies at object boundaries and under complex motion. By initializing the DCN offsets with MVs, the network only needs to learn **local residual offsets** rather than estimating full motion from scratch, greatly simplifying offset learning. Ablation results show that MV-only (OnlyMV) outperforms DCN-only (OnlyDCN) by 0.24 dB, and combining both (MVGDA) yields a further 0.17 dB gain.
+Alignment is the bottleneck for VSR speed: optical flow is accurate but slow, while implicit alignment is fast but fails under large motion. MVGDA's advantage lies in treating the motion vectors already available at decoding as a "free rough draft." In the first step, it uses MVs to warp previous frame features for coarse registration $\bar{h}_{t-1} = \mathcal{W}(h_{t-1}; MV_{t-1 \to t})$, compensating for large-scale inter-frame displacement. However, MVs are block-based—all pixels within a coding block share one vector—leading to inaccuracies at object boundaries and complex motion. Thus, the second step uses the MV as the initial value $o_{MV}$ for deformable convolution offsets, employing a lightweight convolution network to predict **local residual offsets** $\Delta o$ and a modulation mask $m$. The final alignment is:
 
-2. **Residual-Map-Gated Fusion (RMGF)**:
+$$\hat{h}_{t-1} = \mathcal{D}(h_{t-1}; o_{MV} + \Delta o, m)$$
 
-    - **Function**: Selectively leverages reliable information from previous frames while suppressing interference from misaligned regions.
-    - **Mechanism**: The residual map $Res_t$ represents pixel-level differences between the current frame and its motion-compensated prediction—large values indicate regions where motion compensation fails (occlusions, complex motion). A lightweight network converts the residual map into a spatial gating map: $M_t = \sigma(\mathcal{F}_{res}(Res_t))$. This gating weight is then used to suppress unreliable regions in the aligned previous-frame features: $h_t^f = \mathcal{C}^f([M_t \odot \hat{h}_{t-1}^L, M_t \odot \hat{h}_{t-1}^H, h_t^L])$.
-    - **Design Motivation**: Naively concatenating inter-frame features propagates errors from misaligned regions. The residual map serves as a natural "reliability indicator"—large residual values directly identify regions where motion compensation has failed. Visualization of the gating heatmap confirms that stable regions (e.g., vehicle bodies) receive high weights, while dynamic regions (e.g., rotating wheels) are suppressed. Ablation results show that removing the gate (NoGate) reduces PSNR by 0.13 dB compared to RMGF.
+The key lies in "residual": DCN does not need to estimate full motion from scratch but only fine-tunes the initial value provided by the MV, making offset learning significantly simpler and more stable. Alignment is applied to two complementary features—encoder coarse features $h^L$ for structural priors and reconstruction fine features $h^H$ for texture details—both sharing the same MV guidance. Ablations show the value of this division: using only MV (OnlyMV) outperforms using only DCN (OnlyDCN) by 0.24dB, indicating the strength of compressed domain motion priors. Combining both adds another 0.17dB, as residual offsets correct the block-level granularity of MVs.
 
-3. **Frame-Type-Aware Reconstruction (FTAR)**:
+**2. Residual Map Gated Fusion (RMGF): Using codec-calculated residual maps as masks for "untrustworthy" regions.**
 
-    - **Function**: Adaptively allocates computational resources according to the differing importance of I-frames and P-frames.
-    - **Mechanism**: I-frames contain complete spatial information and serve as critical references for subsequent frames; they are processed by a **high-capacity reconstruction branch** $\mathcal{R}_I$ (24 residual blocks) operating on encoder features $h_t^L$. P-frames primarily store incremental updates and appear far more frequently; they are processed by a **lightweight reconstruction branch** $\mathcal{R}_P$ (12 residual blocks) operating on fused features $h_t^f$. During inference, only the branch corresponding to the current frame type is activated.
-    - **Design Motivation**: Applying identical computational budgets to all frames is inefficient—P-frames are over-computed, wasting resources, while under-computing I-frames degrades overall sequence quality. Ablation results show that I=P=12 (uniform lightweight) underperforms FTAR by 0.16 dB at nearly identical speed (10.7 ms vs. 10.8 ms), while I=P=24 (uniform heavy) gains only 0.04 dB over FTAR at 57% higher latency (16.8 ms). FTAR thus recovers most of the quality benefit at a negligible latency cost.
+Even with accurate alignment, failures occur due to occlusion, rotation, or complex motion. RMGF observes that the residual map $Res_t$ calculated by the encoder is exactly this "unreliability map." It represents the pixel-level difference between the current frame and its motion-compensated prediction; high residuals correspond to areas where motion compensation failed. The method uses a lightweight network to compress the residual map into a $[0,1]$ spatial gate map $M_t = \sigma(\mathcal{F}_{res}(Res_t))$, which weights the aligned previous features—allowing reliable regions and suppressing misaligned ones:
+
+$$h_t^f = \mathcal{C}^f([M_t \odot \hat{h}_{t-1}^L,\; M_t \odot \hat{h}_{t-1}^H,\; h_t^L])$$
+
+The gating heatmap clearly illustrates this: stable car bodies receive high weights, while rotating wheels are suppressed. The cost is negligible—adding only 0.02M parameters—while consistently improving stability by 0.13dB over the ungated version (NoGate).
+
+**3. Frame-Type Aware Reconstruction (FTAR): Routing the 97% of P-frames through a lightweight branch, saving computation for critical I-frames.**
+
+Applying equal computation to every frame in online VSR is wasteful: P-frames only store incremental updates and appear frequently, while I-frames carry complete spatial information and serve as references for subsequent sequences. FTAR diverts traffic based on frame type—I-frames are processed by a high-capacity branch $\mathcal{R}_I$ (24 residual blocks), and P-frames by a lightweight branch $\mathcal{R}_P$ (12 residual blocks). Only the branch corresponding to the current frame type is activated. Ablations verify this: a fully lightweight configuration (I=P=12) is 0.16dB lower than FTAR with almost no time savings (10.7ms vs 10.8ms), while a fully heavy configuration (I=P=24) only gains 0.04dB but increases latency by 57% (16.8ms). FTAR's I=24/P=12 configuration hits the "sweet spot," capturing ~80% of the quality gains of the heavy solution for only 0.1ms extra.
 
 ### Loss & Training
-Training employs the Charbonnier loss: $\mathcal{L} = \frac{1}{T}\sum_{t=1}^T \sqrt{(I_t^{SR} - I_t^{GT})^2 + \epsilon^2}$. Inputs are H.264-encoded low-resolution video frames at CRF 18/23/28, with a 4× upsampling factor. The model is trained for 300K iterations with a batch size of 8, using 15-frame clips and 64×64 random crops. The Adam optimizer is used with an initial learning rate of $2 \times 10^{-4}$ and cosine annealing scheduling, on a single RTX 3090 GPU.
+The Charbonnier Loss is used: $\mathcal{L} = \frac{1}{T}\sum_{t=1}^T \sqrt{(I_t^{SR} - I_t^{GT})^2 + \epsilon^2}$. Inputs are H.264 encoded low-resolution video frames (CRF 18/23/28) with 4x upsampling. Training involved 300K iterations, batch size 8, 15-frame clips, and 64×64 random crops. Adam optimizer was used with an initial learning rate of $2 \times 10^{-4}$ and cosine annealing. Training was performed on a single RTX 3090.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset / Method | PSNR (CRF18) | PSNR (CRF28) | FPS | MACs (G) | Real-time |
-|------------------|--------------|--------------|-----|----------|-----------|
-| CDA-VSR | **27.76** | **25.30** | **93** | **78** | Gaming real-time ✓ |
-| TMP | 27.68 | 25.17 | 45 | 176 | Cinema real-time ✓ |
-| BasicVSR* | 27.63 | 25.13 | 29 | 254 | Cinema real-time ✓ |
-| KSNet-uni | 27.58 | 25.12 | 34 | 148 | Cinema real-time ✓ |
-| RRN | 27.10 | 24.96 | 59 | 193 | Cinema real-time ✓ |
+| Dataset/Method | PSNR(CRF18) | PSNR(CRF28) | FPS | MACs(G) | Real-time |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Ours** | **27.76** | **25.30** | **93** | **78** | Gaming Real-time ✓ |
+| TMP | 27.68 | 25.17 | 45 | 176 | Cinema Real-time ✓ |
+| BasicVSR* | 27.63 | 25.13 | 29 | 254 | Cinema Real-time ✓ |
+| KSNet-uni | 27.58 | 25.12 | 34 | 148 | Cinema Real-time ✓ |
+| RRN | 27.10 | 24.96 | 59 | 193 | Cinema Real-time ✓ |
 
-On Inter4K at 2K resolution: CDA-VSR achieves 29.98 dB at 25.1 FPS—the only method to exceed 24 FPS—compared to TMP at 29.76 dB / 11.4 FPS.
+Inter4K 2K resolution: **Ours** 29.98dB / 25.1 FPS (the only method exceeding 24 FPS), TMP 29.76dB / 11.4 FPS.
 
 ### Ablation Study
 
-| Configuration | PSNR (CRF18) | Runtime (ms) | Notes |
-|---------------|--------------|--------------|-------|
-| OnlyMV | 27.59 | 10.2 | Coarse alignment via MV only |
+| Configuration | PSNR(CRF18) | Runtime(ms) | Description |
+| :--- | :--- | :--- | :--- |
+| OnlyMV | 27.59 | 10.2 | MV coarse registration only |
 | OnlyDCN | 27.35 | 10.6 | Deformable convolution only |
-| OnlyGL (optical flow) | 27.73 | 15.5 | Optical flow alignment; 1.4× latency |
-| **MVGDA** | **27.76** | **10.8** | Best quality with high efficiency |
-| NoGate | 27.63 | 10.8 | Without residual-map gating |
-| **RMGF** | **27.76** | **10.8** | Gated fusion gains 0.13 dB |
+| OnlyGL (Flow) | 27.73 | 15.5 | Optical flow alignment, 1.4x latency |
+| **MVGDA** | **27.76** | **10.8** | Best quality and efficiency |
+| NoGate | 27.63 | 10.8 | Without residual map gating |
+| **RMGF** | **27.76** | **10.8** | Gated fusion Gain 0.13dB |
 | I=12, P=12 | 27.60 | 10.7 | Uniform lightweight reconstruction |
 | I=24, P=24 | 27.80 | 16.8 | Uniform heavy reconstruction |
 | **I=24, P=12 (FTAR)** | **27.76** | **10.8** | Adaptive allocation |
 
 ### Key Findings
-- **MV guidance substantially outperforms DCN-only**: OnlyMV exceeds OnlyDCN by 0.24 dB, demonstrating that compressed-domain motion vectors provide a strong motion prior, particularly for large-motion scenarios. MVGDA further improves upon OnlyMV by 0.17 dB, confirming that residual offset learning effectively corrects the block-level inaccuracies of MVs.
-- **Residual maps serve as natural reliability indicators**: RMGF consistently outperforms NoGate by 0.08–0.13 dB across all CRF levels with negligible additional overhead (only 0.02M additional parameters).
-- **FTAR is the key to efficiency**: The I=24, P=12 FTAR configuration recovers approximately 80% of the quality gain from the uniform heavy configuration at virtually zero latency cost (+0.1 ms), confirming that redundant computation on P-frames can be safely eliminated.
-- **Efficiency advantage amplifies at higher resolutions**: CDA-VSR is the only method to achieve cinema real-time (>24 FPS) on Inter4K 2K (25.1 vs. TMP's 11.4 FPS), with the efficiency advantage growing with resolution.
-- **Robustness across compression levels**: CDA-VSR maintains top performance across all CRF levels (18/23/28), with larger absolute gains at higher compression (CRF28: +0.13 dB over TMP), indicating that compressed-domain information is more valuable under higher compression rates.
+- **MV guidance far outperforms pure DCN**: OnlyMV is 0.24dB higher than OnlyDCN, proving compressed domain MVs provide a strong motion prior, especially for large motion. MVGDA combines both for a further 0.17dB Gain, correcting MV's block-level imprecision.
+- **Residual maps are natural reliability indicators**: RMGF consistently improves by 0.08-0.13dB across all CRF levels with almost zero overhead.
+- **FTAR is key to efficiency**: The I=24, P=12 configuration achieves ~80% of the heavy scheme's quality gain with nearly zero latency cost (+0.1ms), proving redundant computation on P-frames can be safely removed.
+- **Advantage scales with resolution**: **Ours** is the only method to achieve cinema real-time (>24 FPS) at 2K on Inter4K (25.1 vs TMP 11.4), with the efficiency gap widening at higher resolutions.
+- **Compression sensitivity**: **Ours** remains optimal across all CRF levels (18/23/28), but the absolute gain is larger at high compression (CRF28, +0.13dB vs TMP), suggesting compressed domain info is more valuable at lower bitrates.
 
 ## Highlights & Insights
-- **"Free lunch" design philosophy**: Motion vectors, residual maps, and frame types are all byproducts of bitstream decoding, obtainable at zero additional computational cost. Repurposing these signals rather than discarding them reflects an elegant systems-level perspective that could be extended to other compressed-video tasks such as video editing and video analysis.
-- **Complementary MV + DCN design**: MVs handle large-scale global motion (coarse alignment), while DCN is responsible only for local residual correction—a division of labor that simplifies and stabilizes offset learning. Heatmap visualizations clearly demonstrate that MVGDA produces the cleanest alignment results.
-- **Differentiated processing via frame-type awareness**: Assigning different computational budgets to I- and P-frames is a simple yet effective strategy. Routing 97% of frames (P-frames) through the lightweight branch yields substantial overall acceleration, while the heavy branch reserved for the 3% I-frames preserves reference quality.
+- **The "Free Lunch" Philosophy**: Motion vectors, residual maps, and frame types are "by-products" of the decoding process, obtainable with zero extra computation. Reusing rather than discarding them is an elegant system-level approach transferable to other tasks like video editing or analysis.
+- **Complementary MV+DCN Design**: Using MV for large-scale global motion (coarse registration) and DCN for local residual refinement simplifies and stabilizes offset learning.
+- **Differentiated Processing via Frame Types**: Allocating different computational budgets for I/P frames is a simple yet effective idea. Routing 97% of frames through a light path yields significant speedups, while the 3% of I-frames ensure reference quality.
 
 ## Limitations & Future Work
-- **H.264-only validation**: The method is evaluated solely on H.264-encoded video; the impact of motion vector quality differences in modern codecs (H.265/VVC/AV1) remains unexplored.
-- **Fixed GOP structure**: The method assumes a standard I-P frame structure and does not address B-frame handling (though B-frames are not required in online streaming scenarios).
-- **Dependence on MV quality**: MV accuracy degrades at low bitrates, potentially affecting alignment quality; the paper does not analyze extremely low-bitrate scenarios.
-- **Unused quantization parameter (QP) information**: QP maps and other signals present in the bitstream are not exploited and could serve as additional priors for compression quality.
-- **Dual-branch parameter overhead**: Although only one branch is active during inference, the total parameter count (3.3M) is slightly higher than some competing methods.
+- **H.264 Specific**: Only validated on H.264; quality differences for MV in H.265/VVC/AV1 are untested.
+- **Fixed GOP Structure**: Assumes standard I-P structures; B-frame processing is not addressed (though B-frames are typically avoid in online scenarios).
+- **MV Quality Dependency**: MV accuracy drops at low bitrates, potentially affecting alignment.
+- **Unused Quantization Parameters (QP)**: QP maps in the bitstream could serve as additional compression quality priors.
+- **Parameter Count**: The dual-branch structure increases total parameters (3.3M), though only one branch is active at inference.
 
 ## Related Work & Insights
-- **vs. TMP**: TMP propagates offsets by exploiting inter-frame motion continuity but still estimates motion purely from LR frames. CDA-VSR directly uses bitstream MVs as coarse motion priors, reducing the computational burden of motion estimation while consistently outperforming TMP across all CRF levels.
-- **vs. CDVSR/CIAF**: Earlier compressed-domain VSR methods also utilize MVs and residual maps, but they are not designed for online scenarios and do not meet real-time requirements. CDA-VSR specifically addresses online constraints by introducing a frame-type-aware differentiated processing strategy.
-- **vs. BasicVSR\***: BasicVSR\* is a causally constrained variant of BasicVSR with the backward propagation branch removed; it satisfies online constraints but remains slow (29 FPS). CDA-VSR is more than three times faster while achieving 0.13 dB higher PSNR.
+- **vs TMP**: TMP uses inter-frame motion continuity to propagate offsets but still estimates motion from LR frames. **Ours** uses bitstream MVs as coarse priors, reducing computation and consistently outperforming TMP across all CRF levels.
+- **vs CDVSR/CIAF**: Previous compressed domain VSR methods use MVs/residuals but are not designed for online scenarios, failing real-time requirements. **Ours** introduces frame-type-aware differentiation.
+- **vs BasicVSR***: BasicVSR* (BasicVSR without the backward branch) satisfies causal constraints but remains slow (29 FPS). **Ours** is >3x faster with a 0.13dB higher PSNR.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ Leveraging compressed-domain information is not entirely new, but the tailored module designs for three distinct types of information represent meaningful engineering innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive comparisons across multiple CRF levels, resolutions, and baselines, with thorough ablation studies and visualizations.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-structured with clear correspondence between motivation and methodology.
-- **Value**: ⭐⭐⭐⭐ Offers direct practical value for real-world online video streaming super-resolution; 2K real-time processing represents a significant milestone.
+- Novelty: ⭐⭐⭐ Utilizing compressed domain info is not entirely new, but the customized modular design is an engineering innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete across CRF levels, resolutions, and methods; ablation and visualization are thorough.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with good mapping between motivation and method.
+- Value: ⭐⭐⭐⭐ High engineering value for practical online VSR; 2K real-time is a significant breakthrough.
 
 <!-- RELATED:START -->
 
@@ -132,11 +146,11 @@ On Inter4K at 2K resolution: CDA-VSR achieves 29.98 dB at 25.1 FPS—the only me
 
 ## Related Papers
 
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
 - [\[ICCV 2025\] VSRM: A Robust Mamba-Based Framework for Video Super-Resolution](../../ICCV2025/video_generation/vsrm_a_robust_mamba-based_framework_for_video_super-resolution.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video Models](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
-- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
-- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
-- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
+- [\[CVPR 2026\] Latent-Compressed Variational Autoencoder for Video Diffusion Models](latent-compressed_variational_autoencoder_for_video_diffusion_models.md)
+- [\[CVPR 2025\] VideoGigaGAN: Towards Detail-rich Video Super-Resolution](../../CVPR2025/video_generation/videogigagan_towards_detail-rich_video_super-resolution.md)
+- [\[CVPR 2025\] PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-Wise Video Super-Resolution](../../CVPR2025/video_generation/patchvsr_breaking_video_diffusion_resolution_limits_with_patch-wise_video_super-.md)
 
 </div>
 

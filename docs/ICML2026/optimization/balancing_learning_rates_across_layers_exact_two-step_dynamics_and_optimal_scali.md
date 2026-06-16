@@ -2,42 +2,36 @@
 title: >-
   [Paper Note] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks
 description: >-
-  [ICML 2026][Optimization][Layer-wise learning rate] This work derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two-layer and three-layer linear neural networks. It re…
+  [ICML 2026][Optimization & Theory][Paper Note] This paper derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two- and three-layer linear neural networks. It reveals a phase transition phenomenon: asymmetric learning rates are optimal for the first step, while symmetric (balanced) learning rates become locally opti
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Layer-wise learning rate"
-  - "linear networks"
-  - "gradient decomposition"
-  - "training dynamics"
-  - "learning rate balancing"
+  - ICML 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: 2fca482d4f1a5abd
+content_hash: a92c4ea39227a912
 ---
-
 # Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00340](https://arxiv.org/abs/2606.00340)  
 **Code**: https://github.com/TDCSZ327/Layer-Balancing  
 **Area**: Optimization Theory  
-**Keywords**: Layer-wise learning rate, linear networks, gradient decomposition, training dynamics, learning rate balancing  
+**Keywords**: Layer-wise Learning Rates, Linear Networks, Gradient Decomposition, Training Dynamics, Learning Rate Balancing  
 
 ## TL;DR
 
-This work derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two-layer and three-layer linear neural networks. It reveals a phase transition: asymmetric learning rates are optimal for the first step update, while symmetric (balanced) learning rates become locally optimal after the second step, providing a theoretical foundation for layer-wise learning rate scheduling.
+This paper derives exact closed-form expressions for the test loss after one and two steps of gradient descent in two- and three-layer linear neural networks. It reveals a phase transition phenomenon: asymmetric learning rates are optimal for the first step, while symmetric (balanced) learning rates become locally optimal after the second step, providing a theoretical foundation for layer-wise learning rate scheduling.
 
 ## Background & Motivation
 
-**Background**: In deep network training, layer-wise learning rate scheduling (e.g., LARS, LAMB, TempBalance, Adam-mini) has been widely adopted to accelerate convergence and improve generalization. These methods adapt to differences in gradient characteristics across layers by assigning different learning rates.
+**Background**: In deep network training, layer-wise learning rate scheduling (e.g., LARS, LAMB, TempBalance, Adam-mini) has been widely adopted to accelerate convergence and improve generalization. These methods assign different learning rates to different layers to adapt to differences in gradient characteristics across layers.
 
-**Limitations of Prior Work**: Existing layer-wise learning rate strategies are primarily based on heuristic designs or asymptotic analysis, lacking exact formulas that directly link learning rate selection to test loss. Neither continuous-time gradient flow analysis nor NTK approximations capture the signal-residual coupling effect in discrete, finite-step settings. Inter-layer interactions make it difficult to quantify the impact of learning rate allocation on generalization.
+**Limitations of Prior Work**: Existing layer-wise learning rate strategies are primarily based on heuristic designs or asymptotic analysis, lacking exact formulas that directly link learning rate selection to test loss. Neither continuous-time gradient flow analysis nor NTK approximations capture the signal-residual coupling effects in discrete finite-step settings. The interaction between layers makes it difficult to quantify the impact of learning rate allocation on generalization.
 
-**Key Challenge**: In multi-layer networks, the norms of the signal component and the self-interaction component of gradients vary across layers, and the learning rate plays a critical role in determining training dynamics. Existing theoretical frameworks either assume infinitesimal step sizes (mean-field / $\mu$P) or analyze each layer independently (ignoring cross-layer coupling), failing to precisely characterize the impact of layer-wise learning rates on generalization in finite-step training.
+**Key Challenge**: In multi-layer networks, the norms of signal components and self-interaction components of gradients differ across layers, and the learning rate plays a crucial role in determining training dynamics. Existing theoretical frameworks either assume infinitesimal step sizes (mean-field / µP) or analyze layers independently (ignoring cross-layer coupling), failing to precisely characterize the effect of layer-wise learning rates on generalization in finite-step training.
 
-**Goal**: To derive exact closed-form expressions for the test loss with respect to layer-wise learning rates after one and two steps of gradient descent in linear networks, thereby precisely characterizing when asymmetric vs. symmetric learning rates should be used.
+**Goal**: To derive exact closed-form expressions for the test loss after one and two steps of gradient descent in linear networks with respect to layer-wise learning rates, thereby precisely characterizing when asymmetric vs. symmetric learning rates should be used.
 
-**Key Insight**: By utilizing the algebraic structure of orthogonal initialization, the gradient is decomposed into a signal-alignment term $A_\ell^t$ (dominating the learning signal) and a self-interaction term $B_\ell^t$ (coupling between weights). It is proven that the self-interaction term is negligible below a critical learning rate threshold, enabling the derivation of an analytical proxy loss.
+**Key Insight**: By utilizing the algebraic structure of orthogonal initialization, the gradient can be decomposed into signal alignment terms $A_\ell^t$ (dominant learning signals) and self-interaction terms $B_\ell^t$ (coupling between weights). It is proven that below a critical learning rate threshold, self-interaction terms are negligible, allowing for an analytical proxy loss.
 
 **Core Idea**: The optimal allocation of layer-wise learning rates is dynamic—early training benefits from asymmetric allocation to exploit layer-specific signal propagation, while later training favors balanced allocation to facilitate cross-layer coordination.
 
@@ -45,70 +39,75 @@ This work derives exact closed-form expressions for the test loss after one and 
 
 ### Overall Architecture
 
-Linear networks with orthogonal initialization are considered: a two-layer model $f(x) = \frac{1}{h}x^\top W_1 W_2$ (input/output in $\mathbb{R}^h$) and a three-layer model $f^*(x) = \frac{1}{\sqrt{h}}x^\top W_1 W_2 a$ (scalar output, fixed $a$). Training data is generated by a linear teacher model, and the optimization objective is MSE loss. The analysis workflow consists of: (1) decomposing the gradient into signal and residual terms; (2) proving the residual terms are negligible in wide networks; (3) deriving closed-form solutions for test loss using signal-only trajectories; (4) analyzing the symmetry of the optimal learning rate allocation.
+The study considers linear networks with orthogonal initialization: a two-layer model $f(x) = \frac{1}{h}x^\top W_1 W_2$ (input/output in $\mathbb{R}^h$) and a three-layer model $f^*(x) = \frac{1}{\sqrt{h}}x^\top W_1 W_2 a$ (scalar output, $a$ fixed). Training data is generated by a linear teacher model, and the optimization objective is the MSE loss. The analysis workflow consists of: (1) decomposing the gradient into signal and residual terms; (2) proving the residual terms are negligible in wide networks; (3) deriving closed-form solutions for test loss using signal-only trajectories; (4) analyzing the symmetry of optimal learning rate allocation.
 
 ### Key Designs
 
-1.  **Gradient Decomposition and Signal Dominance Proof**:
-    *   **Function**: Decomposes the exact gradient into a signal-alignment term and a self-interaction term, proving the former dominates.
-    *   **Mechanism**: For the $\ell$-th layer of a two-layer network, the gradient $G_\ell^t = B_\ell^t - A_\ell^t$, where $A_1^t = \frac{1}{h}M W_2^{t\top}$ captures the label signal and $B_1^t = \frac{1}{h^2}W_1^t W_2^t W_2^{t\top}$ represents weight self-interaction. Proposition 5.1 proves that when $\eta_1, \eta_2 \leq O(h\sqrt{h})$, $\|G_\ell^t - A_\ell^t\| \leq \|G_\ell^t\| / (\sqrt{h}-1)$, meaning the residual term is suppressed by a $1/\sqrt{h}$ factor.
-    *   **Design Motivation**: This decomposition replaces the non-analytical exact gradient with a structurally simple signal term, making closed-form test loss derivation possible while identifying critical learning rate scales $\eta = \Theta(h\sqrt{h})$ (two-layer) and $\eta = \Theta(h)$ (three-layer).
+**1. Gradient Decomposition and Proof of Signal Dominance: Replacing non-analytical exact gradients with structurally simple signal terms**
 
-2.  **Exact Two-Step Test Loss Formula**:
-    *   **Function**: Provides an exact polynomial expression for the test loss with respect to $\eta_1, \eta_2$.
-    *   **Mechanism**: The one-step test loss for a two-layer network is $L^{(1)} = \frac{\eta_1^2}{h^4} + \frac{\eta_2^2}{h^4} + \frac{2\eta_1\eta_2}{h^4} + \frac{\eta_1^2\eta_2^2}{h^7} - \frac{2\eta_1}{h^2} - \frac{2\eta_2}{h^2} + \frac{1}{h} + \frac{2\eta_1\eta_2}{h^5} + 1$, which includes linear improvement terms, quadratic interaction terms, and residual variance terms. The two-step loss contains higher powers of $(1+\eta_1\eta_2/h^3)$, reflecting multiplicative representation learning across layers.
-    *   **Design Motivation**: The exact formula allows for rigorous analysis of whether the learning rate symmetry point $\eta_1 = \eta_2$ is a local minimum, thereby revealing the phase transition phenomenon.
+Exact gradients cannot be written in closed form due to inter-layer coupling. The authors initially split the gradient of the $\ell$-th layer $G_\ell^t=B_\ell^t-A_\ell^t$ into two parts: a signal alignment term (e.g., $A_1^t=\frac{1}{h}M W_2^{t\top}$ for two-layer networks, capturing label signals) and a weight self-interaction term ($B_1^t=\frac{1}{h^2}W_1^t W_2^t W_2^{t\top}$, characterizing coupling between weights). Proposition 5.1 proves that when $\eta_1,\eta_2\le O(h\sqrt h)$,
 
-3.  **Phase Transition Theorem from Asymmetry to Balance**:
-    *   **Function**: Proves that the optimal learning rate allocation undergoes a qualitative change as training steps progress.
-    *   **Mechanism**: Under the constraint $\eta_1 + \eta_2 = 2h^\alpha$, Corollary 5.4 proves: (a) for any $0 < \alpha \leq 3/2$, the symmetry point $\eta_1 = \eta_2$ is not a local minimum of the one-step loss; (b) for $1 < \alpha \leq 3/2$ and sufficiently large $h$, $\eta_1 = \eta_2$ is a local minimum of the two-step loss. Similar conclusions hold for three-layer networks but with the critical scale reduced to $O(h)$.
-    *   **Design Motivation**: This provides the first theoretical explanation for why layer-wise learning rate scheduling should be asymmetric in early training (exploiting role differences between representation and readout layers) and move toward balance in later stages (promoting cross-layer coordination and alignment).
+$$\|G_\ell^t-A_\ell^t\|\le \frac{\|G_\ell^t\|}{\sqrt h-1},$$
+
+meaning the residual term is suppressed by a $1/\sqrt h$ factor and is negligible in wide networks. This step makes subsequent derivation of closed-form test loss possible and identifies the critical learning rate scales—$\eta=\Theta(h\sqrt h)$ for two layers and $\eta=\Theta(h)$ for three layers—beyond which the signal approximation fails, defining the boundaries of the analysis.
+
+**2. Exact Two-Step Test Loss Formula: Allowing rigorous determination of whether the symmetric point is a local optimum**
+
+With signal-only trajectories, the test loss can be written as a precise polynomial of $\eta_1,\eta_2$. For a two-layer network, the one-step loss is
+
+$$L^{(1)}=\frac{\eta_1^2}{h^4}+\frac{\eta_2^2}{h^4}+\frac{2\eta_1\eta_2}{h^4}+\frac{\eta_1^2\eta_2^2}{h^7}-\frac{2\eta_1}{h^2}-\frac{2\eta_2}{h^2}+\frac{1}{h}+\frac{2\eta_1\eta_2}{h^5}+1,$$
+
+containing linear improvement terms, quadratic interaction terms, and residual variance terms. The two-step loss involves higher powers of $(1+\eta_1\eta_2/h^3)$, reflecting multiplicative representation learning between layers. Mathematical precision is key—only with exactness can one rigorously judge whether the symmetric point $\eta_1=\eta_2$ is a local minimum in the first and second steps, respectively, turning the "phase transition" from a conjecture into a provable proposition.
+
+**3. Phase Transition Theorem from Asymmetry to Balance: Explaining why layer-wise LR should shift from asymmetric to balanced**
+
+Under the constraint $\eta_1+\eta_2=2h^\alpha$, Corollary 5.4 provides a qualitative shift: for any $0<\alpha\le 3/2$, the symmetric point $\eta_1=\eta_2$ is not a local minimum for the one-step loss; however, for $1<\alpha\le 3/2$ and sufficiently large $h$, $\eta_1=\eta_2$ becomes a local minimum for the two-step loss (similar conclusions hold for three-layer networks, with the critical scale dropping to $O(h)$). This theoretically clarifies practical intuition for the first time: in early training, representation and readout layers play different roles and should be treated asymmetrically to exploit specific signal propagation; later, cross-layer coordination dominates, favoring balance. This provides a unified explanation for the early and late behaviors of schedulers like LARS/LAMB/TempBalance within a single set of closed-form formulas.
 
 ## Key Experimental Results
 
 ### Main Results: Theoretical Predictions vs. Actual Test Loss
 
 | Setting | Network | Steps | Theory-Experiment Deviation | Symmetry Conclusion |
-| :--- | :--- | :--- | :--- | :--- |
-| $h=1000$, Orthogonal Init | 2-layer | 1 step | Closely matched | Symmetric LR not optimal |
-| $h=1000$, Orthogonal Init | 2-layer | 2 steps | Closely matched | Symmetric LR locally optimal |
-| $h=1000$, Orthogonal Init | 3-layer | 1 step | Closely matched | Symmetric LR not optimal |
-| $h=1000$, Orthogonal Init | 3-layer | 2 steps | Closely matched | Symmetric LR locally optimal |
-| $h=1000$, Gaussian Init | 2/3-layer | Multi-step | Consistent trend | Same as above, transition persists |
+|------|------|------|--------------|-----------|
+| $h=1000$, Ortho Init | 2-layer | 1-step | Tight match | Symmetric LR non-optimal |
+| $h=1000$, Ortho Init | 2-layer | 2-step | Tight match | Symmetric LR locally optimal |
+| $h=1000$, Ortho Init | 3-layer | 1-step | Tight match | Symmetric LR non-optimal |
+| $h=1000$, Ortho Init | 3-layer | 2-step | Tight match | Symmetric LR locally optimal |
+| $h=1000$, Gaussian Init | 2/3-layer | Multi-step | Consistent trend | Same as above, phase transition persists |
 
-### Ablation Study: Generalization Verification
+### Ablation Study: Generalization Validation
 
-| Extension Condition | Key Findings |
-| :--- | :--- |
-| Label noise $\xi \sim \mathcal{N}(0,\rho)$ | Asymmetric $\to$ Balance transition still holds |
-| 4-layer/8-layer Deep Linear | One-step asymmetric, two-step balanced transition maintained |
-| 3-layer Nonlinear (ReLU) | Curve symmetry slightly weaker but transition trend is consistent |
-| Multi-step Training (to 512 steps) | Balanced LR remains locally optimal in subsequent steps |
+| Extended Condition | Key Findings |
+|----------|---------|
+| Label noise $\xi \sim \mathcal{N}(0,\rho)$ | Asymmetric $\to$ balanced phase transition still holds |
+| 4/8-layer Deep Linear Networks | Transition from one-step asymmetric to two-step balanced remains |
+| 3-layer Non-linear Network (ReLU) | Curve symmetry is slightly weaker but phase transition trend is consistent |
+| Multi-step Training (up to 512 steps) | Balanced learning rate remains locally optimal in subsequent steps |
 | Frobenius Norm-driven LR Scheduler | Achieves lower training/test loss than uniform baseline |
 
 ### Key Findings
-*   Critical learning rate thresholds: $O(h\sqrt{h})$ for two-layer networks and $O(h)$ for three-layer networks; gradient approximations fail beyond these thresholds.
-*   Two-step loss in three-layer networks shows stronger dependence on higher-order $\eta_1\eta_2$ terms (e.g., $\eta_1^4\eta_2^4/h^6$), reflecting deeper cross-layer coupling.
-*   The adaptive layer-wise LR scheduler designed based on $\|W_1\|_F, \|W_2\|_F$ validates theoretical predictions: the norm difference $\|W_1\|_F - \|W_2\|_F \to 0$ corresponds to learning rates tending toward balance while converging to a flatter minimum.
+- Critical learning rate thresholds: $\eta = O(h\sqrt{h})$ for two-layer networks and $\eta = O(h)$ for three-layer networks; beyond these, gradient approximations no longer hold.
+- The two-step loss of three-layer networks has stronger dependence on higher-order terms of $\eta_1\eta_2$ (e.g., $\eta_1^4\eta_2^4/h^6$), reflecting deeper cross-layer coupling.
+- An adaptive layer-wise LR scheduler designed based on $\|W_1\|_F, \|W_2\|_F$ validates theoretical predictions: the norm difference $\|W_1\|_F - \|W_2\|_F \to 0$ corresponds to learning rates tending toward balance, while converging to flatter minima.
 
 ## Highlights & Insights
-*   **Signal-residual gradient decomposition** is the most ingenious tool in this work: by proving the self-interaction term $B_\ell^t$ is suppressed by $1/\sqrt{h}$, the non-analytical exact dynamics are simplified into signal-only trajectories, enabling closed-form test loss derivations. This decomposition approach is transferable to other theoretical works requiring analysis of finite-step gradient descent.
-*   The **"Asymmetric then Balanced" phase transition perspective** provides a unified theoretical explanation for practical layer-wise learning rate schedulers (LARS, LAMB, TempBalance): early stages treat layers differently due to distinct roles (representation vs. readout), while later stages favor balance as cross-layer coordination dominates.
-*   The norm-driven LR scheduler design $\eta_{W_i}^{(t)} = \frac{2\|W_j^t\|_F}{\|W_1^t\|_F + \|W_2^t\|_F} \cdot lr$ is a direct mapping from theory to practice, being both simple and effective.
+- **Signal-residual gradient decomposition** is the most ingenious tool in this paper: by proving the self-interaction term $B_\ell^t$ is suppressed by $1/\sqrt{h}$, the authors simplify non-analytical exact dynamics into signal-only trajectories, enabling the derivation of closed-form test loss. This decomposition approach can be transferred to other theoretical works analyzing finite-step gradient descent.
+- **The "asymmetric-to-balanced" phase transition perspective** provides a unified theoretical explanation for practical layer-wise learning rate schedulers (LARS, LAMB, TempBalance): different layers play different roles (representation vs. readout) in early stages and should be treated differently; later, cross-layer coordination dominates, requiring balance.
+- The norm-driven LR scheduler design $\eta_{W_i}^{(t)} = \frac{2\|W_j^t\|_F}{\|W_1^t\|_F + \|W_2^t\|_F} \cdot lr$ is a direct mapping from theory to practice, being both simple and effective.
 
 ## Limitations & Future Work
-*   Theoretical analysis is limited to linear networks and orthogonal/Gaussian initializations; although nonlinear ReLU experiments show similar trends, theoretical guarantees are lacking.
-*   Only one-step and two-step dynamics are analyzed; conclusions for optimal LR allocation during long-term training rely on experimental observations.
-*   Assumes $n = h = d$, without considering different regimes like over-parameterization or under-parameterization.
-*   Does not address Stochastic Gradient Descent (SGD) or mini-batch settings, leaving a gap with practical training.
-*   Future work could extend analysis to practical architectures like Transformers, specifically exploring optimal LR allocation between attention layers and FFN layers.
+- Theoretical analysis is limited to linear networks and orthogonal/Gaussian initialization; although non-linear ReLU experiments show similar trends, they lack theoretical guarantees.
+- Only one- and two-step dynamics are analyzed; optimal learning rate allocation for long-term training is based only on experimental observation.
+- The study assumes $n = h = d$, without considering different regimes of over-parameterization or under-parameterization.
+- Stochastic Gradient Descent (SGD) and mini-batch settings are not covered, leaving a gap with actual practice.
+- Future work could extend the analysis to real architectures like Transformers, exploring optimal LR allocation specifically between attention and FFN layers.
 
 ## Related Work & Insights
-*   **LARS/LAMB** (You et al., 2017; 2018): Layer-wise LR based on "trust ratios"; this work provides theoretical support for their early-stage asymmetric allocation.
-*   **TempBalance** (Zhou et al., 2023; Liu et al., 2024): Layer-wise LR based on heavy-tailedness of weight spectra; this work's norm-balancing perspective is complementary.
-*   **Adam-mini / Blockwise-LR** (Zhang et al., 2024; Wang et al., 2025): Layer-wise LR based on Hessian block structures.
-*   **Du et al. (2018)**: Proved automatic balancing of layer norms in deep homogeneous models; this work further reveals the role of learning rates in driving this balance.
-*   **Kunin et al. (2024)**: Studied feature learning under unbalanced initialization, finding that layer-balanced learning rates facilitate rapid feature learning.
+- **LARS/LAMB** (You et al., 2017; 2018): Layer-wise LR based on "trust ratios"; this paper provides theoretical support for their early asymmetric allocation.
+- **TempBalance** (Zhou et al., 2023; Liu et al., 2024): Layer-wise LR based on the heavy-tailedness of weight spectra; the norm-balancing perspective in this paper is complementary.
+- **Adam-mini / Blockwise-LR** (Zhang et al., 2024; Wang et al., 2025): Layer-wise LR based on Hessian block structures.
+- **Du et al. (2018)**: Proof that layer norms in deep homogeneous models automatically balance; this paper reveals the role of learning rates in driving this balance.
+- **Kunin et al. (2024)**: Study of feature learning under unbalanced initialization, finding that inter-layer balanced learning rates promote rapid feature learning.
 
 <!-- RELATED:START -->
 
@@ -120,7 +119,7 @@ Linear networks with orthogonal initialization are considered: a two-layer model
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
 - [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
-- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
+- [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](../../ICLR2026/optimization/pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
 
 </div>
 

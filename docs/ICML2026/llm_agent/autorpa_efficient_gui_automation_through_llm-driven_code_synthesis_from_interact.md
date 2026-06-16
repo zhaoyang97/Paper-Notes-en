@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions
 description: >-
-  [ICML2026][LLM Agent][GUI Automation] The AutoRPA framework is proposed to automatically distill interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. Combined…
+  [ICML 2026][LLM Agent][Paper Note] The authors propose the AutoRPA framework, which automatically distills interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. By combining iterative optimization with a hybrid repair strategy, the method maintains or exceeds original Agent success rates while
 tags:
-  - "ICML2026"
-  - "LLM Agent"
-  - "GUI Automation"
-  - "Robotic Process Automation"
-  - "Code Synthesis"
-  - "Trajectory Distillation"
+  - ICML 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 2353d8e5e728c49f
+content_hash: ad524de36decc334
 ---
-
 # AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions
 
 **Conference**: ICML2026  
@@ -23,49 +18,63 @@ content_hash: 2353d8e5e728c49f
 **Keywords**: GUI Automation, Robotic Process Automation, Code Synthesis, LLM Agent, Trajectory Distillation  
 
 ## TL;DR
-The AutoRPA framework is proposed to automatically distill interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. Combined with a hybrid repair strategy for iterative code optimization, it reduces token consumption by 82%~96% while maintaining or exceeding the success rate of the original Agent.
+The authors propose the AutoRPA framework, which automatically distills interaction trajectories of ReAct-style GUI Agents into reusable RPA functions via a Translator-Builder pipeline. By combining iterative optimization with a hybrid repair strategy, the method maintains or exceeds original Agent success rates while reducing token consumption by 82%~96%.
 
 ## Background & Motivation
 
-**Background**: LLM-based GUI Agents (e.g., SeeAct, M3A) can complete various GUI tasks through multi-step interactions using the ReAct paradigm. However, these methods require LLM inference for every task instance, resulting in high token consumption and slow execution.
+**Background**: LLM-based GUI Agents (e.g., SeeAct, M3A) can complete various GUI tasks through the ReAct paradigm across multi-step interactions. However, these methods require LLM inference for every task instance, leading to high token consumption and slow execution.
 
-**Limitations of Prior Work**: In practical deployment scenarios, many GUI tasks are repetitive—the same user submitting reports daily or different users booking flights. Repeatedly calling LLM inference for such tasks is expensive and inefficient. Traditional RPA is efficient but relies on manually written scripts, incurring high development/maintenance costs and vulnerability to GUI layout changes.
+**Limitations of Prior Work**: In deployment scenarios, many GUI tasks are repetitive (e.g., the same user submitting daily reports, or different users booking flights). Repeatedly calling LLM inference for these tasks is expensive and inefficient. Traditional RPA is efficient but relies on manually written scripts, incurring high development costs and fragility to GUI layout changes.
 
-**Key Challenge**: LLM Agents are flexible but expensive (requiring inference every time), while traditional RPA is efficient but rigid (manually written and hard to generalize). Directly letting LLMs generate complete code often fails due to a lack of environment knowledge; skill learning methods that store successful trajectories have limited generalization capabilities.
+**Key Challenge**: LLM Agents are flexible but expensive (inference per step), while traditional RPA is efficient but rigid (manually written, hard to generalize). Directly generating full code from LLMs often fails due to a lack of environment knowledge, and skill-learning methods that store success trajectories offer limited generalization.
 
-**Goal**: Automatically distill the decision logic of LLM Agents into generalized, low-token-consumption RPA functions that can execute robustly across different environment states and task instructions.
+**Goal**: Automatically distill the decision logic of LLM Agents into generalizable, low-token RPA functions that can execute robustly across different environment states and task instructions.
 
-**Key Insight**: The authors observe that while ReAct Agents have high inference costs, their successful trajectories contain the complete decision logic for task completion. By converting hard-coded actions into soft-coded ones and then synthesizing RPA code with conditional logic, both flexibility and efficiency can be achieved.
+**Key Insight**: The authors observe that although ReAct Agents have high inference costs, their success trajectories contain the complete decision logic for a task. By converting hardcoded actions into softcoded equivalents and synthesizing them into RPA code with conditional logic, both flexibility and efficiency can be achieved.
 
-**Core Idea**: Use a Translator to convert hard-coded actions from ReAct into soft-coded actions based on semantic attributes, use a Builder to synthesize robust RPA functions from multiple translated trajectories, and iteratively optimize code quality through a hybrid repair strategy.
+**Core Idea**: A Translator agent converts hardcoded ReAct actions into softcoded actions based on semantic attributes. A Builder agent then synthesizes robust RPA functions from multiple translated trajectories, iteratively optimizing code quality through a hybrid repair strategy.
 
 ## Method
 
 ### Overall Architecture
-AutoRPA models the GUI environment as a POMDP $(\mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{G}, \mathcal{O})$. The goal is to generate an RPA function $F_k$ for a specified task type $\mathcal{G}^k$ that minimizes token consumption while ensuring task success. The framework consists of three phases: (1) Exploration Phase: A ReAct Agent interacts to generate trajectories, and the Translator converts hard-coded actions into soft-coded ones; (2) RPA Generation Phase: The Builder synthesizes RPA code based on translated trajectories, retrieving detailed information from a trajectory library via RAG; (3) Validation & Repair Phase: The code is validated on seen tasks; if it fails, an Analyzer locates the breakpoint, the ReAct Agent continues exploration to fix it, and the Builder iteratively improves the code accordingly.
+AutoRPA models the GUI environment as a POMDP $(\mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{G}, \mathcal{O})$ to distill a reusable RPA function $F_k$ for a task class $\mathcal{G}^k$ with minimal token overhead. The pipeline utilizes three agents: the ReAct Agent explores the environment to obtain success trajectories; the Translator rewrites hardcoded actions into softcoded versions using semantic attribute-based `find_element` calls; and the Builder synthesizes RPA code with conditions and loops. The code is validated on seen tasks; upon failure, an Analyzer locates the breakpoint, the ReAct Agent generates a corrective trajectory in the real environment, and the Builder iteratively updates the code for up to three rounds.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Task Class G^k (POMDP GUI Environment)"] --> B["ReAct Agent explores environment<br/>Produces success trajectory (hardcoded click(index) actions)"]
+    B --> C["Translator: Hardcoded → Softcoded<br/>Uses find_element by semantic attributes + assertions"]
+    C --> D["Builder: Synthesizes RPA function F_k with conditions/loops"]
+    E["Tree-structured trajectory library<br/>fetch_info pulls multimodal details on demand"] -.->|RAG| D
+    D --> F{"Validation on Seen Tasks"}
+    F -->|Pass| H["Zero-inference RPA function F_k<br/>Reusable, token ≈ 0"]
+    F -->|Fail| G["Analyzer locates breakpoint → ReAct fills corrective trajectory"]
+    G -->|"Hybrid Repair, max 3 rounds per task"| D
+```
 
 ### Key Designs
 
-1.  **Translator-Builder Pipeline**:
-    - **Function**: Transforms hard-coded interaction trajectories from ReAct Agents into reusable RPA function code.
-    - **Mechanism**: The Translator Agent receives each action along with pre- and post-observations, performs robustness analysis, and converts hard-coded actions (e.g., `click(index=2)`) into soft-coded actions based on semantic attribute positioning (e.g., using `find_element` by text content and element type), optionally inserting assertion statements to verify execution effects. The Builder Agent receives simplified translated trajectories $\psi(\tau'_{\text{ReAct}}(g))$ (removing raw observations and keeping only actions and execution summaries) to generate RPA functions containing conditional logic and loops. The Builder uses a Tree-organized RAG mechanism to retrieve detailed observation information from the trajectory library as needed: the bottom layer stores interaction blocks $(o_t, a'_t, \rho_t, o_{t+1})$, the middle layer contains simplified trajectories, and the top layer contains conclusion summaries.
-    - **Design Motivation**: Directly generating complete GUI code often fails due to a lack of environmental knowledge; meanwhile, hard-coded actions are fragile to GUI layout changes. The "explore-then-translate-then-synthesize" pipeline leverages ReAct's exploration to gain environment knowledge and uses soft-coding to enhance cross-environment generalization.
+**1. Translator-Builder Pipeline: Decoupling "Exploration" and "Coding"**
 
-2.  **Hybrid Repair Strategy**:
-    - **Function**: Iteratively repairs code when validation fails by combining RPA execution with ReAct fallback.
-    - **Mechanism**: The RPA code is executed on a seen task until the first failure. An Analyzer Agent diagnoses the breakpoint (analyzing executed trajectories and current observations to output failure reasons, completed sub-tasks, and feasible continuation plans). The ReAct Agent continues the task from the breakpoint (or restarts) to produce a corrective demonstration trajectory $\tau'_{\text{hybrid}}(F_k, g_*) = F_k(g_*) \oplus (A, o_{t*}, a'_{t*}, \rho_{t*}, \ldots, C)$, which the Builder uses to improve the code. Each task allows $M=3$ modification attempts.
-    - **Design Motivation**: Unlike simply letting the Builder debug, hybrid repair utilizes the ReAct Agent's exploration in a real environment to obtain actual corrective trajectories, providing the Builder with concrete evidence rather than speculative improvements, which significantly increases the repair success rate.
+Directly generating whole GUI code from scratch usually fails because the LLM lacks knowledge of the target interface. While ReAct trajectories contain environment knowledge, they use hardcoded actions like `click(index=2)` tied to specific positions. AutoRPA employs a Translator Agent to analyze each step and its observations, converting hardcoded actions into softcoded ones using semantic attributes (e.g., converting "click element 2" to "click button with text 'Submit'"). The Builder Agent then receives these simplified translated trajectories $\psi(\tau'_{\text{ReAct}}(g))$—omitting raw observations while keeping action summaries—to synthesize RPA functions with logic. This division of labor preserves ReAct's exploration capabilities while ensuring code robustness across UI variations.
 
-3.  **Tree-organized Trajectory RAG**:
-    - **Function**: Allows the Builder to retrieve detailed observation information from historical interactions as needed, avoiding incorrect code generation due to missing interface states.
-    - **Mechanism**: The trajectory library $\mathcal{D}_\tau$ is organized as a three-layer tree—bottom layer for interaction blocks (including screenshots and DOM info), middle layer for simplified trajectories (action summaries), and top layer for conclusion summaries. The Builder can retrieve context level-by-level using the `fetch_info(traj, step)` tool function, pulling multimodal observations only when necessary to balance information completeness and prompt length.
-    - **Design Motivation**: Providing full trajectory observations leads to excessively long prompts; providing only simplified trajectories can cause the Builder to make wrong assumptions about interface states. The RAG approach lets the Builder decide which details are required.
+**2. Tree-structured Trajectory RAG: On-demand Detail Retrieval**
+
+To write correct code, the Builder needs interface states, but including all screenshots and DOMs in the prompt exceeds length limits. AutoRPA organizes the trajectory library $\mathcal{D}_\tau$ into a three-layer tree: raw interaction blocks (screenshots/DOM), action summaries, and high-level conclusions. The Builder primarily views summaries and calls `fetch_info(traj, step)` to pull specific multimodal observations only when needed. This approach balances information completeness with prompt efficiency.
+
+**3. Hybrid Repair Strategy: In-the-loop Correction via Environment Exploration**
+
+When synthesized code fails, static debugging often involves guesswork. AutoRPA uses "in-the-loop" repair: execution stops at the first failure, where an Analyzer Agent diagnoses the cause. Subsequently, the ReAct Agent completes the task in the real environment from the breakpoint to produce a corrective demonstration trajectory $\tau'_{\text{hybrid}}(F_k, g_*) = F_k(g_*) \oplus (A, o_{t*}, a'_{t*}, \rho_{t*}, \ldots, C)$. The Builder then updates the code based on empirical success rather than speculation, limited to $M=3$ attempts per task.
+
+### A Walkthrough Example
+
+Consider a mobile "submit report" task. The ReAct Agent completes the process, producing a trajectory with a `click(index=2)` action. The Translator rewrites this as a click on a button with text "Submit" and adds an assertion to verify the page transition. The Builder notices that different users have different numbers of items and synthesizes a `for` loop. If execution fails because of an unexpected confirmation popup, the Analyzer identifies the blockage, the ReAct Agent clears the popup to finish the task, and the Builder adds a conditional branch to handle popups in the next code iteration.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Experiments were conducted on three GUI benchmarks: AndroidWorld (116 task types, 20 real Apps), WebArena (Reddit domain, 19 task types), and MiniWoB++ (53 task types).
+Experiments were conducted on AndroidWorld (116 task types, 20 apps), WebArena (Reddit domain, 19 task types), and MiniWoB++ (53 task types).
 
 | Method | Model | Time (min) ↓ | Tokens (k) ↓ | Success Rate (%) ↑ |
 |------|------|-------------|--------------|-------------|
@@ -93,38 +102,38 @@ On MiniWoB++ (GPT-4.1):
 | Configuration | Success Rate (%) |
 |------|-----------|
 | AutoRPA (Full) | 51.7 |
-| Remove ReAct in Construction | 32.5 |
-| Remove Translator in Construction | 40.2 |
-| Remove ReAct in Code Repair | 45.5 |
-| Remove RAG in Builder | 48.8 |
+| w/o ReAct in construction | 32.5 |
+| w/o Translator | 40.2 |
+| w/o ReAct in repair | 45.5 |
+| w/o RAG for Builder | 48.8 |
 
 ### Key Findings
-- Removing ReAct exploration causes the success rate to plummet from 51.7% to 32.5%, indicating that directly generating GUI code without environment knowledge is unreliable.
-- The Translator's contribution is significant (success rate drops 11.5% without it); soft-coded actions are vital for code generalization.
-- Executing RPA code alone (code only) achieves success rates close to ReAct, while token consumption drops to 4%~7% of the original, proving that the decision logic for most tasks can indeed be distilled into deterministic code.
-- As the number of construction tasks $N$ increases, the success rate of AutoRPA (code only) continues to approach ReAct, verifying that more samples help generate more robust RPA code.
-- In highly diverse real-world web environments like WebArena, AutoRPA maintains comparable success rates to existing methods while drastically reducing token consumption.
+- Removing ReAct exploration drops success rates from 51.7% to 32.5%, proving that environment knowledge from exploration is vital.
+- The Translator's contribution is significant (-11.5% success rate when removed), as softcoded actions are essential for generalization.
+- Running synthesized RPA code alone (code only) matches ReAct's performance while reducing tokens to 4%~7% of the original.
+- As the number of construction tasks $N$ increases, AutoRPA consistently approaches ReAct's success rate, verifying that more samples yield more robust code.
+- In highly diverse environments like WebArena, AutoRPA maintains competitive success rates with significantly lower token costs.
 
 ## Highlights & Insights
-- **Trajectory Distillation Paradigm**: Converting online inference of LLM Agents into offline code is essentially a transition from "inference-time computation" to "compile-time computation." This idea can be migrated to any repetitive Agent task (e.g., data processing pipelines, test automation).
-- **Soft-coded Translation**: Locating GUI elements via semantic attributes rather than hard-coded positions/indices elegantly solves the classic RPA pain point of script failure due to layout changes. This design philosophy applies to all automation scripts requiring cross-environment generalization.
-- **Hybrid Repair = Code Debugging + Environment Exploration**: Instead of letting the LLM debug code purely through imagination, the Agent explores the real environment to obtain corrective trajectories. This "in-the-loop debugging" strategy is more reliable than pure static code repair.
+- **Trajectory Distillation Paradigm**: Converting LLM Agent online inference into offline code is essentially a shift from "inference-time computation" to "compile-time computation." This is applicable to any repetitive Agent task.
+- **Softcoded Translation**: Locating GUI elements via semantic attributes instead of hardcoded coordinates addresses the classic RPA vulnerability to layout changes.
+- **Hybrid Repair = Code Debugging + Environment Exploration**: Rather than relying on LLM "imagination" for debugging, the agent explores the real environment to find the fix. This "in-the-loop" strategy is more reliable than static code fixing.
 
 ## Limitations & Future Work
-- The construction phase still consumes a significant amount of tokens (requiring $N$ task samples per task type + repeated validation/repair), and the author does not fully discuss the equilibrium between construction cost and savings during the testing phase.
-- For highly diverse task types (e.g., WebArena), a single RPA function may struggle to cover all scenarios, requiring a fallback to ReAct, which diminishes AutoRPA's advantages.
-- Positioning relies on semantic attributes of GUI elements; this may be inapplicable to interfaces poor in attribute information (e.g., pure image UIs).
-- Future work could explore automatically determining when it is worthwhile to build RPA for a specific task (ROI analysis), as well as combining local updates of RPA functions with incremental validation to lower maintenance costs.
+- The construction phase still consumes significant tokens (sampling $N$ tasks + iterative repair). The balance between construction cost and test-time savings warrants further discussion.
+- For highly diverse task types (e.g., WebArena), a single RPA function may not cover all cases, requiring a fallback to ReAct.
+- Dependencies on semantic attributes might fail on attribute-poor interfaces (e.g., pure image-based UIs).
+- Future work could explore automatically determining when a task is worth distilling (cost-benefit analysis) and incremental updates for RPA functions.
 
 ## Related Work & Insights
-- **ReAct Paradigm** (Yao et al., 2023): The foundational paradigm for alternating reasoning and acting; AutoRPA's exploration and repair phases are based on this.
-- **AutoManual** (Chen et al., 2024): Generalizes environment rules from interactions to guide subsequent tasks, complementing AutoRPA's skill distillation approach.
-- **AdaPlanner** (Sun et al., 2023): A skill-learning method in the Plan-and-Execute paradigm, but dependent on human demonstrations.
-- **Insight**: For any LLM inference task requiring repetition, consider the strategy of "using high-cost methods to explore and collect trajectories, then distilling them into low-cost deterministic workflows."
+- **ReAct Paradigm** (Yao et al., 2023): The foundational reasoning-action loop used in AutoRPA's exploration and repair.
+- **AutoManual** (Chen et al., 2024): Induces environment rules to guide tasks; complementary to AutoRPA's skill distillation.
+- **AdaPlanner** (Sun et al., 2023): A skill-learning method for Plan-and-Execute, though it relies on human demonstrations.
+- **Insight**: For any repetitive LLM inference task, consider a strategy of "using high-cost methods to explore and collect trajectories, then distilling them into low-cost deterministic workflows."
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 

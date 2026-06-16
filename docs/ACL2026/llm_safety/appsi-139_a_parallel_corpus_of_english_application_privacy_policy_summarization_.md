@@ -2,68 +2,79 @@
 title: >-
   [Paper Note] APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation
 description: >-
-  [ACL 2026][LLM Safety][Privacy Policy] APPSI-139 is the first English application privacy policy summarization and interpretation parallel corpus meticulously annotated by legal experts (139 policies / 36…
+  [ACL 2026][LLM Safety][Paper Note] APPSI-139 is the first parallel corpus for English application privacy policy summarization and interpretation, meticulously annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads t
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Privacy Policy"
-  - "Parallel Corpus"
-  - "Multi-task Learning"
-  - "Summarization and Interpretation"
-  - "Legal NLP"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: d506131d6a477ca7
+content_hash: 3a00983c0b6914dc
 ---
-
 # APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.27550](https://arxiv.org/abs/2604.27550)  
 **Code**: https://github.com/EnlightenedAI/APPSI-139  
-**Area**: LLM Security / Privacy / Text Summarization  
+**Area**: LLM Safety / Privacy / Text Summarization  
 **Keywords**: Privacy Policy, Parallel Corpus, Multi-task Learning, Summarization and Interpretation, Legal NLP
 
 ## TL;DR
-APPSI-139 is the first English application privacy policy summarization and interpretation parallel corpus meticulously annotated by legal experts (139 policies / 36,351 annotations / 15,692 paraphrase pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with 5 alternately trained expert heads to implement sub-tasks for "Importance / Risk / Sensitivity / Topic / Paraphrase." Compared to TCSI-pp v1, encoding time is reduced by 73% and memory consumption drops from 7.3GB to 2.7GB, while subjective readability votes outperform GPT-4o and Llama3-70b.
+APPSI-139 is the first parallel corpus for English application privacy policy summarization and interpretation, meticulously annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads to achieve five sub-tasks: "Importance / Risk / Sensitivity / Topic / Interpretation." Compared to TCSI-pp v1, it reduces encoding time by 73% and memory consumption from 7.3GB to 2.7GB, while its subjective readability surpasses GPT-4o and Llama3-70b.
 
 ## Background & Motivation
 
-**Background**: Privacy policies are the legal foundation for user authorization of personal data processing by applications. However, they are generally lengthy, filled with legalese and technobabble, and compounded by "rational ignorance" and "dark patterns," leading most users to click "agree" without reading, which results in the silent use of sensitive data. While standardized labels like "Privacy Nutrition Labels," "LPL," and "TILT" have been attempted, their implementation depends entirely on the service provider's integrity.
+**Background**: Privacy policies serve as the legal foundation for user authorization of personal data processing. However, they are typically lengthy, filled with legalese and technobabble, and compounded by "rational ignorance" and "dark patterns." Consequently, most users agree without reading, leading to the silent exploitation of sensitive data. While standardized labels like "Privacy Nutrition Labels," "LPL," and "TILT" have been proposed, their adoption depends entirely on service providers.
 
-**Limitations of Prior Work**: Automatic summarization is seen as a solution, but existing privacy policy corpora are almost entirely oriented toward English **Information Extraction** (OPP-115 / APP-350 / PI-Extract / Optoutchoice / PrivacyQA / PolicyQA), which solves the "length" issue but not the "comprehensibility" issue. The only corpus with paraphrased interpretations, CAPP-130, is in Chinese, and machine translation into English loses legal precision.
+**Limitations of Prior Work**: Automated summarization is considered a viable path forward. However, existing privacy policy corpora are almost exclusively oriented toward **Information Extraction** (e.g., OPP-115, APP-350, PI-Extract, Optoutchoice, PrivacyQA, PolicyQA), addressing length but not comprehensibility. The only corpus with rewrite interpretations, CAPP-130, is in Chinese, and machine translations to English lose legal precision.
 
-**Key Challenge**: Summarizing privacy policies requires being **concise**, **easy to understand**, and **legally precise**—three goals that are naturally in conflict. Without a parallel corpus, mapping "original text → easy-to-understand paraphrase" cannot be learned; using general LLMs leads to degraded legal semantics; using small models suffers from a lack of professional data.
+**Key Challenge**: Privacy policy summarization requires being **concise**, **easy to understand**, and **legally accurate**—three goals that are inherently in conflict. Without parallel corpora, models cannot learn the "original text $\rightarrow$ comprehensible rewrite" mapping; using general LLMs leads to degraded legal semantics; and small models lack specialized training data.
 
-**Goal**: ① Construct an English parallel corpus featuring "sentence-level multi-labeling + paraphrasing"; ② Design an efficient framework that unifies five tasks—identifying important/risk/sensitive clauses, topic classification, and paraphrasing—under a shared encoder, avoiding the redundancy of running one encoder per sub-task in v1.
+**Goal**: ① Construct an English "sentence-level multi-label + rewrite" parallel corpus. ② Design an efficient framework that unifies five tasks—identifying important/risk/sensitive clauses, topic classification, and rewrite interpretation—under a shared encoder to avoid the redundancy of running separate encoders for each task in v1.
 
-**Key Insight**: Instead of machine translation, 5 LL.M. holders and 1 Law Professor were recruited to manually annotate the English version using the CAPP-130 schema. On the model side, five tasks are integrated into one shared encoder with five parallel expert heads and trained using an alternating strategy.
+**Key Insight**: The authors reuse the CAPP-130 annotation schema but employ five LL.M. students and one law professor to meticulously annotate the English version from scratch (avoiding machine translation). On the model side, five tasks are integrated into a single shared encoder with five parallel expert heads using an alternating training strategy.
 
-**Core Idea**: By utilizing human-annotated English parallel corpora, a multi-task shared encoder, and an alternating training strategy, the triangle of "computational efficiency + comprehensibility + trustworthiness" is addressed simultaneously.
+**Core Idea**: By combining legal-expert-annotated English parallel corpora with a multi-task shared encoder and an alternating training strategy, the authors aim to simultaneously satisfy the requirements of scalability, comprehensibility, and reliability.
 
 ## Method
 
 ### Overall Architecture
-The methodology follows two tracks. **Data Track**: Latest privacy policies (as of 2023-10) were collected from Top-100 English apps on Google Play and the App Store. After deduplication, 139 policies were retained and split into 30,877 sentences. Five LL.M. holders each specialized in one sub-task (Importance / Risk / Sensitivity / Topic / Paraphrase). A pilot annotation yielded Cohen’s Kappa = 0.892, followed by formal annotation with a senior reviewer for final arbitration of ambiguous terms. **Model Track**: TCSI-pp-V2 consists of a shared bottom encoder + 4 classification heads (Importance / Topic / Risk / Sensitivity) + 1 paraphrase decoder. The inference pipeline involves Importance filtering, Topic filtering based on user selection, Risk/Sensitivity highlighting, and finally, Rewrite generation for readability.
+This paper presents both a dataset and a model to resolve the trilemma of privacy policies being long, difficult to understand, and legally sensitive. For the dataset, the authors selected policies from the Top-100 English applications on Google Play and the App Store as of October 2023. After deduplication, 139 policies remain, which were segmented into 30,877 sentences. Five LL.M. students annotated respective sub-tasks (Importance / Risk / Sensitivity / Topic / Rewrite). Following a pilot study achieving Cohen's Kappa = 0.892, formal annotation was conducted, with ambiguous terms finalized by a senior reviewer. The TCSI-pp-V2 model consists of a shared bottom encoder, four classification heads, and one rewrite decoder. When a policy sentence is input, it is filtered by the Importance head, categorized by the Topic head, highlighted by Risk/Sensitivity heads, and finally rewritten into a comprehensible version by the Rewrite head—all in a single pass.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph CORP["APPSI-139 Corpus Schema (Design 1)"]
+        direction TB
+        A["139 English Policies segmented<br/>into 30,877 sentences"] --> B["Triple Orthogonal Legal Labels<br/>Importance / Risk / Sensitivity + 11 Topics"]
+        B --> C["15,692 Human Rewrites<br/>Sentence length 27→20 words"]
+    end
+    subgraph MODEL["TCSI-pp-V2 Shared Encoder + 5 Expert Heads (Design 2)"]
+        direction TB
+        E["Shared Bottom Encoder<br/>Single sentence encoding"] --> F["Importance Head: Filters irrelevant sentences"]
+        F --> G["Topic Head: Matches 11 categories"]
+        G --> H["Risk + Sensitivity Heads: Highlights hazardous/sensitive clauses"]
+        H --> I["Rewrite Decoder: Autoregressive comprehensible rewriting"]
+    end
+    CORP --> E
+    MODEL --> J["Comprehensible Summary + Risk Highlighting"]
+    TRAIN["Alternating Training + Single-task Annotation per Person (Design 3)"] -.->|Backprop one expert head per step| MODEL
+```
 
 ### Key Designs
 
-1.  **APPSI-139 Corpus Schema: 11 Data Practices + 3 Special Labels + Paraphrase Pairs**:
-    *   **Function**: Slices privacy policies along legal risk dimensions and provides human-written paraphrases for high-risk clauses.
-    *   **Mechanism**: Each sentence can have multiple labels. The 11 data practices cover First-Party Collection / Permission Acquisition / Third Party Sharing / Usage / Data Retention / Data Security / Edit-Control / Specific Audiences / Contact / Policy Change / Cease Operation. The 3 special labels are Importance (critical clauses), Risk (vague compliance language violating GDPR/CCPA), and Sensitivity (biometric, precise location, financial accounts, aligned with GDPR + NIST SP 800-122 + GB/T 35273-2020). The paraphrase set contains 15,692 pairs, reducing average sentence length from 27 words to 20 words (-26%).
-    *   **Design Motivation**: Topic classification alone solves "length" but not "readability." Introducing orthogonal labels for Importance/Risk/Sensitivity allows the model to identify "what must be read" and "what is dangerous/sensitive," providing a complete legal perspective for trustworthy decision-making. Risk labels account for only 1.9% but hold the highest value, reflecting legal blind spots.
+**1. APPSI-139 Corpus Schema: Slicing policies with triple orthogonal legal labels and human rewrites for high-risk clauses.**
 
-2.  **TCSI-pp-V2 Shared Encoder + 5 Expert Heads Multi-task Architecture**:
-    *   **Function**: Compresses the v1 architecture from one encoder per sub-task to "one shared encoder + 5 parallel experts," reducing encoding redundancy by 5x.
-    *   **Mechanism**: Sentence-level embeddings $E=\{e_1,\dots,e_n\}$ are passed through a shared bottom $F_f(e_j,\theta_f)$ to obtain $\{f_1,\dots,f_n\}$. Five expert heads perform $F_i$ (Importance binary), $F_t$ (11-class Topic), $F_r$ (Risk binary), $F_s$ (Sensitivity binary), and $F_{rewrite}$ (Autoregressive rewriting $P(z_t\mid f_j;z_{1:t-1})$).
-    *   **Design Motivation**: Sub-tasks share high-level features as they make judgments on the same legal text. A shared encoder learns more general legal semantic representations and slashes inference memory from 7.3GB to 2.7GB.
+Topic classification alone solves the "length" problem but not "comprehensibility" or "legal risk." APPSI-139 assigns multiple labels per sentence across 11 data practice categories (First-Party Collection, Third Party Sharing, Data Retention, etc.). On top of these, three orthogonal special labels are layered: **Importance** (essential clauses), **Risk** (ambiguous language potentially violating GDPR/CCPA), and **Sensitivity** (biometrics, precise location, financial accounts). The sensitivity definition aligns with GDPR, NIST SP 800-122, and GB/T 35273-2020 for cross-regional transferability. The 15,692 rewrite pairs reduce average sentence length from 27 to 20 words (a 26% reduction).
 
-3.  **Alternating Training Strategy + Single-Expert/Single-Task Labor Division**:
-    *   **Function**: Uses alternating updates for expert heads instead of weighted joint loss, and assigns one annotator per sub-task to avoid cognitive confusion.
-    *   **Mechanism**: For annotation, individual workers focus on one task to reduce cognitive bias between labels. For training, only one expert head backpropagates per step, allowing the shared bottom to transfer stably across tasks.
-    *   **Design Motivation**: In joint training, strong tasks (e.g., Sensitivity) dominate gradients, drowning out weak tasks (e.g., Cease Operation at 0.04%). Alternating training ensures fair updates for all tasks.
+**2. TCSI-pp-V2 Shared Encoder + 5 Expert Heads: One backbone for five tasks to eliminate v1 encoding redundancy.**
+
+Version 1 assigned an encoder to each sub-task, resulting in the same legal text being encoded five times, wasting memory and latency. V2 adopts a shared bottom with five parallel heads. Sentences are embedded as $E=\{e_1,\dots,e_n\}$ and processed through a shared backbone $F_f(e_j,\theta_f)$ to produce $\{f_1,\dots,f_n\}$. These are then passed to specialized heads: $F_i$ (Importance binary), $F_t$ (Topic multi-class), $F_r$ (Risk binary), $F_s$ (Sensitivity binary), and $F_{rewrite}$ (Autoregressive rewriting $P(z_t\mid f_j;z_{1:t-1})$). This approach maintains performance because the five tasks share feature characteristics while reducing inference memory from 7.3GB to 2.7GB.
+
+**3. Alternating Training + Single-task Annotation: Preventing task suppression from training and annotation ends.**
+
+Unified loss weighting can cause "strong" tasks (e.g., Sensitivity) to dominate gradients, drowning out "weak" tasks (e.g., the 0.04% Cease Operation class). V2 uses alternating training: each step activates only one expert head for backpropagation. On the annotation side, each annotator focuses on a single task to avoid cognitive interference. The high Cohen’s Kappa (0.892) confirms that this division of labor improves quality without sacrificing consistency.
 
 ### Loss & Training
-Classification heads use standard Cross-Entropy; the rewriting head uses teacher-forcing language modeling. During alternating training, each mini-batch backpropagates only one expert head. Backbones include mT5-small / Bert2GPT / XLNet2GPT / Electra2GPT. Data is split 80:10:10. Hardware: NVIDIA V100. Cease/Permission classes were excluded from binary evaluation due to extreme sparsity.
+The classification heads utilize standard Cross-Entropy loss, while the rewrite head uses teacher-forcing language modeling. During alternating training, each mini-batch backpropagates through only one expert head. Backbones selected include mT5-small, Bert2GPT, XLNet2GPT, and Electra2GPT. Data was split 80:10:10 for training/validation/testing, using NVIDIA V100 GPUs. Classes with insufficient samples (Cease/Permission) were excluded from binary evaluation.
 
 ## Key Experimental Results
 
@@ -80,20 +91,20 @@ Classification heads use standard Cross-Entropy; the rewriting head uses teacher
 | Rewritten | BERTScore | 0.8970 | 0.8520 | 0.8950 | 0.9070 | **0.9430** |
 | Rewritten | BARTScore | -2.76 | -3.03 | -2.89 | -2.78 | **-1.68** |
 
-Subjective Readability Voting (53 participants, 10 multiple-choice questions): TCSI-pp-V2 **39.06%** > Llama3-70b 25.28% > GPT-4o 24.52% > Kimi 11.13%; the proposed model won 7 out of 10 questions.
+Subjective Readability Vote (53 subjects, 10 single-choice questions): TCSI-pp-V2 **39.06%** > Llama3-70b 25.28% > GPT-4o 24.52% > Kimi 11.13%. The proposed model won 7 out of 10 questions.
 
-### Ablation Study 1: V1 vs V2 Memory and Latency (mT5-small back-end, 1,893 sentences)
+### Ablation Study 1: V1 vs V2 Memory and Latency (mT5-small backend, 1,893 sentences)
 
 | Metric | TCSI-pp (V1) | TCSI-pp-V2 | Improvement |
 |---|---|---|---|
 | Encoding Time | 92.66 s | 24.72 s | **-73%** |
 | Total Time | 191.94 s | 123.26 s | -36% |
 | Avg. Time / Sent | 0.101 s | 0.065 s | -36% |
-| Inference VRAM | 7,343 MB | **2,766 MB** | -62% |
+| Inf. Memory | 7,343 MB | **2,766 MB** | -62% |
 
-### Ablation Study 2: Input Length Robustness (Longest 100 vs Shortest 100 vs All)
+### Ablation Study 2: Input Length Robustness
 
-| Task | Metric | Longest | Shortest | All |
+| Task | Metric | Longest 100 | Shortest 100 | Full Set |
 |---|---|---|---|---|
 | Topic | Micro-F1 | 79.41 | 76.23 | 78.18 |
 | Risk | Micro-F1 | 94.74 | 94.34 | 95.60 |
@@ -101,34 +112,34 @@ Subjective Readability Voting (53 participants, 10 multiple-choice questions): T
 | Rewritten | ROUGE-L | 0.6979 | 0.6542 | 0.6903 |
 
 ### Key Findings
--   **Specialized Data + Small Model > Large Model + Prompt Engineering**: mT5-small (300M parameters) outperforms GPT-4o-mini / Llama3-8B / Gemini-2.5 across all tasks. Particularly on the Sensitive task, TCSI-pp-V2 (96.96) crushes Gemini-2.5 (23.33)—general LLMs struggle to identify specific legal sensitive semantics like "biometrics."
--   **Shared Encoder Gains**: Differences between V2 and V1 single-task models are <0.02, but VRAM is reduced by 62% and encoding time by 73%. ROUGE/BERTScore for rewriting improved slightly, indicating generalization benefits from multi-task regularization.
--   **Readability Wins Over GPT-4o**: In subjective voting, GPT-4o often "almost verbatim restates the original text," leading to verbosity. TCSI-pp-V2's multi-level bullet structure + mandatory paraphrasing scored highest.
--   **Severe Data Imbalance**: Important (51.04%), Risk (1.9%), Cease (0.04%). The lower macro-F1 for Risk (~60) compared to micro (~96) indicates the need for more minority class data or resampling.
+- **Specialized Data + Small Model > LLM + Prompt Engineering**: mT5-small (300M parameters) outperforms GPT-4o-mini and Gemini-2.5 across all tasks. Notably, on the Sensitive task, TCSI-pp-V2 scored 96.96 compared to Gemini-2.5's 23.33, indicating that general LLMs struggle with niche legal semantics.
+- **Shared Encoder Benefits**: The performance gap between V2 and V1 is negligible (<0.02), yet V2 reduces memory by 62% and encoding time by 73%. Multi-task regularization even slightly improved rewrite scores.
+- **Legal Readability**: Subjective votes showed GPT-4o often paraphrases too closely to the original, while Llama3-70b lacks coherence. TCSI-pp-V2's multi-level bullet structure and mandatory rewriting scored highest.
+- **Data Imbalance**: Highly skewed distribution (Importance 51.04% vs. Risk 1.9%) suggests that minority classes still require more data or oversampling.
 
 ## Highlights & Insights
--   **Orthogonal Legal Labels (Importance / Risk / Sensitivity)**: Unlike prior corpora that only label "topics," this work treats "must-read / dangerous / sensitive" as independent labels, enabling both "extractive filtering" and "risk highlighting."
--   **Global Standard Alignment (GDPR + NIST + GB/T)**: Aligning sensitivity labels with cross-regional standards ensures global transferability.
--   **Shared Encoder + Alternating Training**: A practical paradigm for the small-model era, applying "expert routing" logic at the 300M parameter scale for edge-friendly deployment.
--   **Expert Single-Task Annotation**: Cohen's Kappa of 0.892 proves the labor division strategy is effective and transferable to other multi-label legal corpora.
+- **Triple Orthogonal Labels**: Dividing "essential, dangerous, and sensitive" into independent labels allows downstream models to support both filtered summarization and risk highlighting simultaneously.
+- **Cross-Regional Alignment**: Aligning sensitivity definitions with GDPR, NIST, and GB/T standards ensures the dataset remains applicable across different legal jurisdictions.
+- **Efficient MTL**: The shared encoder plus alternating training brings the "expert routing" logic of the LLM era down to the 300M parameter level, making it friendly for edge deployment.
+- **Single-task Annotation**: Professional division of labor proved to be a viable strategy for high-consistency multi-label legal corpora.
 
 ## Limitations & Future Work
--   Limited to English; multi-lingual coverage is missing.
--   Policies are from 2023-10 and may become outdated as regulations evolve.
--   Generative rewriting still carries hallucination risks—it may omit critical clauses or distort legal meaning.
--   Subjective evaluation samples demographic bias (students/young adults).
--   No comparison with latest reasoning models (e.g., o1 / DeepSeek-R1), which might close the gap via chain-of-thought.
+- The corpus is currently limited to English, excluding other major European and Asian languages.
+- Policies from October 2023 may become outdated as GDPR or CCPA are revised.
+- Generative rewriting still carries hallucination risks, such as omitting key clauses or distorting legal meanings.
+- The subjective evaluation lacked representation from older or less-educated user demographics.
+- The study did not compare against the latest reasoning models (e.g., o1, DeepSeek-R1), which might close the gap via chain-of-thought.
 
 ## Related Work & Insights
--   **vs OPP-115 / PolicyQA**: Those focus on classification/QA; APPSI-139 is the first English **paraphrase** parallel corpus.
--   **vs CAPP-130 (NeurIPS 2023)**: CAPP-130 is the Chinese predecessor; APPSI-139 is a ground-up English reconstruction with extended sensitivity standards.
--   **vs GPT Prompting**: Pure prompting fails on niche legal semantics (Sensitivity); this work confirms that "high-quality data + fine-tuning" still beats zero-shot LLMs in legal NLP.
+- **Comparison to OPP-115/APP-350**: While previous works focused on extraction/QA, APPSI-139 is the first English **rewrite** parallel corpus.
+- **Comparison to CAPP-130**: APPSI-139 builds on the CAPP-130 schema but provides a native English version with improved multi-regional standard alignment.
+- **Small Models vs. LLMs**: This work confirms that high-quality annotated data and fine-tuning small models still outperform zero-shot general LLMs in specialized legal domains.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ First English paraphrase corpus + orthogonal legal labels are practical breakthroughs.
--   Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison with 13 backbones and 4 LLMs; latency and robustness tests included.
--   Writing Quality: ⭐⭐⭐ Generally clear, with some inconsistencies in tense usage.
--   Value: ⭐⭐⭐⭐⭐ Dataset + Model + Evaluation suite provides a complete path for consumer protection products.
+- Novelty: ⭐⭐⭐⭐ First English rewrite parallel corpus with triple orthogonal legal labels; practical breakthrough in design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparisons across 13 backbones and 4 LLMs; includes efficiency and robustness tests.
+- Writing Quality: ⭐⭐⭐ Clear structure, though some tense inconsistencies in experimental sections.
+- Value: ⭐⭐⭐⭐⭐ Comprehensive dataset, model, and evaluation suite that is directly applicable to consumer protection products.
 
 <!-- RELATED:START -->
 
@@ -136,11 +147,11 @@ Subjective Readability Voting (53 participants, 10 multiple-choice questions): T
 
 ## Related Papers
 
-- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[CVPR 2026\] Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation](../../CVPR2026/llm_safety/select_hypothesize_and_verify_towards_verified_neuron_concept_interpretation.md)
-- [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](../../ICLR2026/llm_safety/heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
-- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
+- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
+- [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
+- [\[ACL 2025\] Improving Fairness of Large Language Models in Multi-document Summarization](../../ACL2025/llm_safety/improving_fairness_of_large_language_models_in_multi-document_summarization.md)
 
 </div>
 

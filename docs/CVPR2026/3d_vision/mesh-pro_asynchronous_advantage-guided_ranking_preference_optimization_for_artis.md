@@ -2,138 +2,145 @@
 title: >-
   [Paper Note] Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 description: >-
-  [CVPR2026][3D Vision][mesh generation] This paper proposes Mesh-Pro, the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm…
+  [CVPR 2026][3D Vision][mesh generation] Mesh-Pro is proposed as the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage function weighting. This approach achieves simultaneous improv
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "mesh generation"
-  - "reinforcement-learning"
-  - "preference optimization"
-  - "artist-style mesh"
-  - "quadrilateral mesh"
-  - "online RL"
+  - CVPR 2026
+  - 3D Vision
+  - mesh generation
+  - reinforcement-learning
+  - preference optimization
+  - artist-style mesh
+  - quadrilateral mesh
+  - online RL
 date: 2026-05-08
-content_hash: 6b41f0b1c9fdc7d0
+content_hash: ce8a6e1ed64eed03
 ---
-
 # Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.00526](https://arxiv.org/abs/2603.00526)  
 **Code**: To be confirmed  
-**Area**: LLM Alignment  
+**Area**: 3D Vision  
 **Keywords**: mesh generation, reinforcement-learning, preference optimization, artist-style mesh, quadrilateral mesh, online RL
 
 ## TL;DR
-This paper proposes Mesh-Pro, the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage-function weighting to achieve simultaneous improvements in efficiency (3.75× faster than offline DPO) and generalization, attaining state-of-the-art generation quality for both artist-style and dense meshes.
+Mesh-Pro is proposed as the first asynchronous online reinforcement learning framework for 3D quadrilateral mesh generation. Its core algorithm, ARPO (Advantage-guided Ranking Preference Optimization), combines the Plackett-Luce ranking model with advantage function weighting. This approach achieves simultaneous improvements in efficiency (3.75x faster than offline DPO) and generalization, reaching SOTA generation quality for both artist-style and dense meshes.
 
 ## Background & Motivation
-3D mesh generation is one of the core tasks in computer graphics. In recent years, autoregressive transformer-based methods (e.g., MeshGPT, MeshAnything) have modeled mesh generation as a sequence generation problem and achieved significant progress. Nevertheless, producing meshes that qualify as "artist-style"—clean topology, well-organized edge flow, and high quadrilateral ratio—remains a challenge.
+3D mesh generation is a core task in computer graphics. Recently, methods based on autoregressive transformers (e.g., MeshGPT, MeshAnything) have modeled mesh generation as a sequence generation problem, achieving significant progress. However, generating "artist-style" meshes—characterized by clean topology, reasonable flow lines, and high quadrilateral ratios—remains a challenge.
 
-Reinforcement learning (RL) has been shown to effectively improve the output quality of generative models, yet applying RL to 3D mesh generation faces unique difficulties:
+Reinforcement Learning (RL) has proven effective in improving the output quality of generative models, but applying RL to 3D mesh generation faces unique difficulties:
 
-1. **Limitations of offline DPO**: Existing work (e.g., MeshAnything V2) uses offline DPO to align mesh generation quality. Offline DPO relies on pre-collected preference data pairs, but the output space of mesh generation is enormous (vertex coordinates + face topology), making it difficult for pre-collected preference data to cover sufficient diversity, leading to poor generalization.
-2. **Low training efficiency**: Offline DPO requires first generating a large number of candidate meshes, annotating preferences manually or automatically, and then training the model—this "generate–annotate–train" loop is very time-consuming.
-3. **Mesh-specific evaluation challenges**: Unlike text or images, mesh quality evaluation must account for geometric integrity (broken faces) and topological quality (quadrilateral ratio, edge-flow direction), making standard reward design difficult.
-4. **Resource overhead**: 3D mesh models typically have large parameter counts (1B+), and the computational cost of sampling and policy updates in online RL is substantial.
+1. **Limitations of Offline DPO**: Existing works (e.g., MeshAnything V2) use offline DPO to align mesh generation quality. Offline DPO relies on pre-collected preference pairs. However, the output space of mesh generation is immense (incorporating vertex coordinates and face topology), making it difficult for pre-collected data to cover sufficient diversity, which leads to poor generalization.
+2. **Low Training Efficiency**: Offline DPO requires generating a large number of candidate meshes, followed by manual or automatic preference labeling, and finally training the model—this "generation-labeling-training" cycle is extremely time-consuming.
+3. **Mesh-specific Evaluation Difficulties**: Unlike text or images, mesh quality evaluation must consider geometric attributes such as geometric integrity (presence of broken faces) and topological quality (quadrilateral ratio, flow direction), making standard reward design difficult.
+4. **Resource Overhead**: 3D mesh models typically have large parameter counts (1B+), and the computational overhead for sampling and policy updates in online RL is significant.
 
-The core motivation is: **Can an efficient online RL framework be designed that leverages real-time generated samples for policy optimization while avoiding the coverage deficiency of offline DPO?**
+The core motivation is: **Can an efficient online RL framework be designed to utilize real-time generated samples for policy optimization while avoiding the coverage issues of offline DPO?**
 
 ## Core Problem
 How to design an efficient online preference optimization algorithm for 3D mesh generation models that improves generalization and training efficiency while ensuring convergence stability?
 
 ## Method
 
-### Overall Architecture: Asynchronous Online RL
+### Overall Architecture
 
-Mesh-Pro adopts an asynchronous architecture that decouples generation (rollout) from training (update):
+Mesh-Pro treats artist-style quadrilateral mesh generation as an autoregressive token sequence generation problem and uses online reinforcement learning to align the policy toward "clean topology, high quadrilateral ratio, and no broken faces." The pipeline is decoupled into three non-blocking roles: multiple rollout workers perform parallel sampling of $N$ candidate meshes based on the current policy on their respective GPUs; a reward evaluator uses a purely geometric ray-based reward to score each candidate without manual labeling; the trainer asynchronously retrieves samples with scores from a buffer to perform policy updates using the ARPO algorithm.
 
-- **Rollout Workers**: Multiple GPUs perform mesh sampling in parallel; each worker independently samples $N$ candidate meshes based on the current policy.
-- **Reward Evaluator**: Computes reward scores for generated meshes (based on the Ray-based reward described below).
-- **Trainer**: Asynchronously draws reward-annotated samples from the rollout buffer for policy updates.
+The reason this "generation-scoring-updating" cycle avoids blocking is that the three components are pipelined: while the trainer processes the current batch, rollout workers are already generating samples for the next round. Compared to the serial cycle of offline DPO (completing all generation, then labeling, then training), the asynchronous architecture eliminates significant wait times, resulting in a 3.75× training speedup—an improvement derived purely from architectural design without relying on algorithmic approximations.
 
-The key efficiency gain lies in **pipelining** rollout and training—while the trainer processes the current batch, rollout workers are already generating the next round of samples. Compared to the serial "generate completely → annotate → train" pipeline of offline DPO, the asynchronous architecture delivers a **3.75×** training speedup.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Conditional Input<br/>(Point Cloud / Image)"] --> B["Rollout workers parallel sampling<br/>Diagonal-aware hybrid tri/quad tokenization<br/>N candidates per condition"]
+    B --> C["Ray-based geometric integrity reward<br/>Ray parity check for broken faces → Scalar score"]
+    C --> D[("Shared Buffer<br/>Core of Async Online RL Pipeline")]
+    subgraph ARPO["ARPO Policy Update (Trainer Async Sampling)"]
+        direction TB
+        E1["Plackett-Luce Ranking Modeling<br/>Likelihood of N candidates sorted by reward"]
+        E2["Advantage Function Weighting<br/>Aᵢ = rᵢ − r̄, concentrate gradient on distinct samples"]
+        E3["KL Regularization<br/>Constraint πθ not to deviate from πref"]
+        E1 --> E2 --> E3
+    end
+    D --> ARPO
+    ARPO -->|"Updated Policy (slightly stale version)"| B
+```
 
-### ARPO: Advantage-guided Ranking Preference Optimization
+### Key Designs
 
-ARPO is the paper's core algorithmic contribution, integrating two key ideas:
+**1. Asynchronous Online RL Pipeline: Eliminating Serial Waiting via Decoupling and Pipelining**
 
-#### 1. Plackett-Luce Ranking Model
-Given $N$ candidate meshes $\{y_1, \ldots, y_N\}$ generated under the same input condition and their rewards $\{r_1, \ldots, r_N\}$, the candidates are sorted by reward in descending order to obtain a permutation $\sigma$. The Plackett-Luce model defines a probability distribution over rankings:
+Offline DPO is slow because "full generation → labeling → training" must be completed sequentially, while naive synchronous online RL forces the trainer to wait for rollout sampling. Mesh-Pro decouples the rollout worker, reward evaluator, and trainer into independent stages connected via a shared buffer: rollouts continuously feed scored candidates into the buffer, while the trainer continuously retrieves samples for updates. The trade-off is that the trainer uses a slightly older policy version (staleness), but as long as the lag is controlled, it yields a 3.75× end-to-end speedup.
 
-$$P(\sigma | \theta) = \prod_{i=1}^{N} \frac{\exp(\log \pi_\theta(y_{\sigma(i)}))}{\sum_{j=i}^{N} \exp(\log \pi_\theta(y_{\sigma(j)}))}$$
+**2. Plackett-Luce Ranking Modeling: Capturing Full Preference Information of N Candidates**
 
-where $\pi_\theta(y)$ denotes the probability of the policy model generating $y$. The optimization objective is to maximize the ranking likelihood ordered by reward.
+DPO can only process binary comparisons of one preferred and one rejected sample at a time, whereas $N$ candidates sampled under the same condition contain a complete ranking. ARPO sorts these $N$ candidates $\{y_1,\ldots,y_N\}$ by their rewards $\{r_1,\ldots,r_N\}$ to form a permutation $\sigma$. It then uses the Plackett-Luce model to assign a probability to this specific ranking:
 
-Compared to DPO, which can only handle pairwise preferences (one preferred + one rejected), the Plackett-Luce model exploits the ranking information of all $N$ candidates simultaneously, making more complete use of available information.
+$$P(\sigma \mid \theta) = \prod_{i=1}^{N} \frac{\exp\big(\log \pi_\theta(y_{\sigma(i)})\big)}{\sum_{j=i}^{N} \exp\big(\log \pi_\theta(y_{\sigma(j)})\big)}$$
 
-#### 2. Advantage Function Weighting
-To further improve optimization efficiency, ARPO introduces advantage function weighting on the ranking gradients. The advantage value of the $i$-th candidate is defined as:
+where $\pi_\theta(y)$ is the probability of the policy generating $y$. Intuitively, it requires the current best candidate to have the highest probability of being selected from the remaining pool. By using the full relative order of $N$ samples, information utilization is much more efficient than pairwise modeling.
 
-$$A_i = r_{\sigma(i)} - \bar{r}, \quad \bar{r} = \frac{1}{N}\sum_{j=1}^N r_j$$
+**3. Advantage Function Weighting: Concentrating Gradients on Clear Samples to Denoise Ranking Signals**
 
-The final ARPO loss is:
+Ranking likelihood alone is insufficient; two candidates with similar rewards and adjacent rankings provide weak signals and may introduce noise. ARPO weights the ranking gradient of each candidate using an advantage function relative to the group mean:
 
-$$\mathcal{L}_{\text{ARPO}} = -\sum_{i=1}^{N} A_i \cdot \log P_i(\sigma | \theta) + \beta \cdot D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})$$
+$$A_i = r_{\sigma(i)} - \bar{r}, \quad \bar{r} = \frac{1}{N}\sum_{j=1}^{N} r_j$$
 
-where $P_i$ is the $i$-th term of the Plackett-Luce probability and $\beta$ controls the KL regularization strength. The intuition behind advantage weighting is to allocate larger gradient signals to samples that are clearly above or below the mean reward, while reducing gradient updates for samples with small margins, thereby reducing noise.
+This advantage is multiplied by the Plackett-Luce terms, combined with KL regularization to prevent the policy from deviating too far from the reference model, resulting in the final loss:
 
-### Diagonal-aware Mixed Tri-Quad Tokenization
-To address the overly strict constraints of pure quadrilateral mesh tokenization, a mixed tri/quad tokenization scheme is proposed:
+$$\mathcal{L}_{\text{ARPO}} = -\sum_{i=1}^{N} A_i \cdot \log P_i(\sigma \mid \theta) + \beta \cdot D_{\text{KL}}(\pi_\theta \,\|\, \pi_{\text{ref}})$$
 
-- Quadrilateral faces are split into two triangular faces via a diagonal edge, with the diagonal edge shared.
-- Diagonal-aware tokens are introduced to represent the presence and orientation of the diagonal, enabling the decoder to distinguish between "genuine triangular faces" and "halves of a quadrilateral face" during generation.
-- This mixed representation balances the topological quality of quadrilaterals with the flexibility of triangles.
+Consequently, candidates significantly above or below the mean receive large weights, while those near the mean receive weights near zero, preventing the gradient from being misled by ambiguous samples.
 
-### Ray-based Reward
-A geometric integrity reward based on ray casting is designed:
+**4. Diagonal-aware Hybrid Tri/Quad Tokenization: Balancing Topology Quality and Flexibility**
 
-- Rays are cast through the generated mesh from multiple directions, and entry/exit intersection points along each ray are detected.
-- If the entry/exit parity of a ray is inconsistent (e.g., enters but does not exit), the mesh is flagged as geometrically broken.
-- The reward score is computed by combining the quadrilateral ratio, face count, vertex distribution, and other metrics.
-- This reward can be computed automatically without manual annotation.
+Pure quadrilateral tokenization is overly restrictive, forcing awkward topologies. Mesh-Pro uses a hybrid tri/quad representation: quadrilateral faces are split into two triangular faces along a diagonal that they share, and an additional "diagonal-aware" token is introduced to mark the existence and direction of this diagonal. The decoder can distinguish between a "truly independent triangle" and "half of a split quad" using this token, maintaining the flexibility of triangular sequence modeling while allowing the reconstruction of quadrilaterals during decoding.
+
+**5. Ray-based Geometric Integrity Reward: Automatic Reward without Manual Labeling**
+
+There is no standard scalar reward for mesh quality, and broken faces are the most critical flaw in artist-style generation. This work designs a purely geometric ray-based reward: rays are cast toward the generated mesh from multiple directions, and the entry/exit intersections with the surface are counted. For a closed manifold, rays should enter and exit in pairs; any odd parity indicates a broken face. Combining this detection with quadrilateral ratios, face counts, and vertex distribution creates a scalar score for the asynchronous rollout.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | FID ↓ | Broken Ratio ↓ | Quad Ratio ↑ | Edge Quality ↑ | User Study ↑ |
-|--------|-------|----------------|--------------|----------------|--------------|
-| MeshGPT | 38.7 | 12.3% | 0% (pure tri) | 0.72 | 2.1/5 |
+|------|-------|-----------------|--------------|----------------|--------------|
+| MeshGPT | 38.7 | 12.3% | 0% (Pure Tri) | 0.72 | 2.1/5 |
 | MeshAnything | 31.2 | 8.1% | 68.2% | 0.78 | 3.2/5 |
 | MeshAnything V2 (DPO) | 27.5 | 5.4% | 74.5% | 0.83 | 3.6/5 |
 | **Mesh-Pro (ARPO)** | **23.1** | **2.1%** | **82.3%** | **0.89** | **4.3/5** |
 
 ### Efficiency Comparison
 
-| Method | Training Mode | Training Time | GPUs | Relative Speedup |
-|--------|--------------|---------------|------|-----------------|
-| MeshAnything V2 (offline DPO) | Offline | ~3.75 days | 64 | 1× |
-| **Mesh-Pro (async ARPO)** | Async online | **~1 day** | 64 | **3.75×** |
+| Method | Training Type | Training Time | GPU Count | Relative Gain |
+|------|---------|---------|---------|---------|
+| MeshAnything V2 (offline DPO) | Offline | ~3.75 days | 64 | 1x |
+| **Mesh-Pro (async ARPO)** | Async Online | **~1 day** | 64 | **3.75x** |
 
 ### Ablation Study
-- **ARPO vs. DPO**: Under the same number of training steps, ARPO achieves a broken ratio 3.3% lower and a quad ratio 7.8% higher than DPO.
-- **Effect of advantage weighting**: Removing advantage weighting increases the broken ratio by 1.5%, demonstrating the effectiveness of gradient signal filtering.
-- **Ranking ($N=4$) vs. pairwise ($N=2$)**: Using 4-candidate ranking improves quad ratio by 2.1% over pairwise comparison.
-- **Async vs. sync**: The asynchronous architecture is approximately 2× faster in wall-clock time compared to synchronous online RL.
+- **ARPO vs DPO**: Given the same training steps, ARPO reduces the broken ratio by 3.3% and increases the quad ratio by 7.8% compared to DPO.
+- **Advantage Weighting**: Removing advantage weighting increases the broken ratio by 1.5%, demonstrating its effectiveness in filtering gradient signals.
+- **Ranking (N=4) vs Pairwise (N=2)**: Using a ranking of 4 candidates yields a 2.1% higher quad ratio than pairwise comparisons.
+- **Async vs Sync**: The asynchronous architecture is approximately 2x faster than synchronous online RL in terms of wall-clock time.
 
 ## Highlights & Insights
-- **First online RL framework for mesh generation**: A paradigm shift from offline DPO to asynchronous online RL, opening a new direction for RL-based optimization in 3D generation.
-- **Elegant ARPO algorithm design**: The combination of the Plackett-Luce ranking model and advantage weighting balances information utilization efficiency with gradient stability.
-- **Significant training efficiency improvement**: The 3.75× speedup does not rely on algorithmic tricks or approximations but stems purely from the architectural asynchronous pipeline design.
-- **Extremely low geometric broken ratio**: A broken ratio of 2.1% is far below competing methods, demonstrating the effectiveness of the ray-based reward and ARPO in optimizing geometric quality.
-- **Mixed tokenization**: The diagonal-aware design is a clever engineering contribution.
+- **First Online RL Framework for Mesh Generation**: A paradigm shift from offline DPO to asynchronous online RL, opening new directions for RL alignment in 3D generation.
+- **Sophisticated ARPO Algorithm**: The combination of Plackett-Luce ranking and advantage weighting balances information utilization with gradient stability.
+- **Significant Training Acceleration**: The 3.75x speedup is derived from architectural pipelining rather than algorithmic approximations.
+- **Extremely Low Geometric Failure Rate**: The 2.1% broken ratio is significantly lower than competitors, validating the effectiveness of the ray-based reward and ARPO in geometric optimization.
+- **Hybrid Tokenization**: The diagonal-aware design is a clever engineering contribution.
 
 ## Limitations & Future Work
-1. **High model scale requirements**: The configuration of 1.1B parameters and 64 GPUs presents a high barrier to entry; applicability in small-scale settings remains to be explored.
-2. **Scalability of reward design**: The ray-based reward primarily evaluates geometric integrity; modeling higher-level aesthetic properties (e.g., edge-loop quality, flow direction) still has room for improvement.
-3. **Limited to closed meshes**: Ray parity detection assumes meshes are closed manifolds and is not fully applicable to open meshes (e.g., planes, cloth).
-4. **Integration with 3D reconstruction pipelines**: The current evaluation covers only independently generated quality; effectiveness as a post-processing step in 3D reconstruction pipelines has not been validated.
-5. **Stability of asynchronous training**: A version lag exists between the rollout policy and the trainer policy, which may introduce staleness issues during prolonged training.
+1. **High Compute Requirements**: The configuration of 1.1B parameters and 64 GPUs presents a high entry barrier; applicability in smaller-scale scenarios remains to be explored.
+2. **Reward Scalability**: The ray-based reward primarily evaluates geometric integrity; modeling more advanced aesthetic attributes (e.g., edge loop quality) requires further work.
+3. **Closed Mesh Assumption**: Ray parity detection assumes the mesh is a closed manifold, which is not fully applicable to open meshes (e.g., planes, cloth).
+4. **Integration with 3D Reconstruction**: Currently, only independent generation quality is evaluated; its performance as a post-processing step in reconstruction pipelines is unverified.
+5. **Stability of Async Training**: The version lag between rollout and trainer policies may cause staleness issues during extended training.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First online RL framework for mesh generation; ARPO algorithm is original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers quantitative evaluation, user studies, efficiency comparisons, and ablations.
+- Novelty: ⭐⭐⭐⭐ First online RL framework for mesh; ARPO is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers quantitative, user study, efficiency, and ablation.
 - Writing Quality: ⭐⭐⭐⭐ Clear structure with complete technical details.
 - Value: ⭐⭐⭐⭐ Advances the intersection of 3D generation and RL alignment.
 
@@ -144,10 +151,10 @@ A geometric integrity reward based on ray casting is designed:
 ## Related Papers
 
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](../../ICCV2025/3d_vision/meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
-- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
-- [\[AAAI 2026\] Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation](../../AAAI2026/3d_vision/learning_conjugate_direction_fields_for_planar_quadrilateral_mesh_generation.md)
-- [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](../../ICCV2025/3d_vision/meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 - [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
+- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
+- [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
+- [\[AAAI 2026\] Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation](../../AAAI2026/3d_vision/learning_conjugate_direction_fields_for_planar_quadrilateral_mesh_generation.md)
 
 </div>
 

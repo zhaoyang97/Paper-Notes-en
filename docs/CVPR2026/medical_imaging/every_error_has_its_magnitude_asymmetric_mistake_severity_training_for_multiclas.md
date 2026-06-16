@@ -2,144 +2,144 @@
 title: >-
   [Paper Note] Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 description: >-
-  [CVPR2026][Medical Imaging][Multiple Instance Learning] This paper proposes PAMS (Priority-Aware Mistake Severity), a framework that significantly reduces the risk of severe misdiagnosis in multiclass MIL-based WSI diagn…
+  [CVPR 2026][Medical Imaging][Multiple Instance Learning] Ours proposes the PAMS (Priority-Aware Mistake Severity) method, which significantly reduces the risk of severe misdiagnosis in multiclass MIL WSI diagnosis through Asymmetric Mistake Severity Cross-Entropy loss (MSCE), Semantic Feature Remix (SFR), and Asymmetric Mikel's Wheel metrics.
 tags:
-  - "CVPR2026"
-  - "Medical Imaging"
-  - "Multiple Instance Learning"
-  - "Mistake Severity"
-  - "Whole Slide Image"
-  - "Asymmetric Misclassification"
-  - "Hierarchical Classification"
-  - "Pathological Diagnosis"
+  - CVPR 2026
+  - Medical Imaging
+  - Multiple Instance Learning
+  - Mistake Severity
+  - Whole Slide Image
 date: 2026-05-08
-content_hash: 04d0b541c360c740
+content_hash: d13db9cfb2e58ad0
 ---
-
 # Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.13682](https://arxiv.org/abs/2603.13682)  
 **Code**: To be confirmed  
-**Area**: Medical Imaging
+**Area**: Medical Imaging  
 **Keywords**: Multiple Instance Learning, Mistake Severity, Whole Slide Image, Asymmetric Misclassification, Hierarchical Classification, Pathological Diagnosis
 
 ## TL;DR
 
-This paper proposes PAMS (Priority-Aware Mistake Severity), a framework that significantly reduces the risk of severe misdiagnosis in multiclass MIL-based WSI diagnosis through an asymmetric severity-aware cross-entropy loss (MSCE), semantic feature remix (SFR), and an asymmetric Mikel's Wheel evaluation metric.
+Ours proposes the PAMS (Priority-Aware Mistake Severity) method, which significantly reduces the risk of severe misdiagnosis in multiclass MIL WSI diagnosis through Asymmetric Mistake Severity Cross-Entropy loss (MSCE), Semantic Feature Remix (SFR), and Asymmetric Mikel's Wheel metrics.
 
 ## Background & Motivation
 
-1. **Wide adoption of MIL in pathological diagnosis**: Multiple Instance Learning (MIL) models WSIs as patch bags and has become the dominant paradigm in computational pathology; however, existing methods focus primarily on maximizing accuracy while ignoring the varying severity of misclassification errors.
-2. **Asymmetric cost of misclassification in clinical settings**: Missing a malignant tumor (false negative) carries far greater consequences than over-diagnosing a normal case as malignant (false positive), yet conventional cross-entropy imposes equal penalties on all errors.
-3. **Priority structure in WSI multiclass classification**: Pathologists annotate the most urgent diagnosis when multiple co-existing conditions are observed in a WSI; an implicit priority hierarchy exists among categories, which fundamentally differs from natural image annotation where each object is labeled independently.
-4. **Limitations of existing Mistake Severity methods**: Prior approaches define severity weights solely based on inter-class distance (e.g., CDW-CE), disregarding directionality—misclassifications of equal distance in opposite directions carry entirely different clinical risks.
-5. **Absence of MS solutions tailored for clinical WSI**: Existing MS research is primarily conducted on natural images and fails to address the annotation constraints inherent to WSIs, including weak labels, complex co-existing conditions, and category priorities.
-6. **Limitations of evaluation metrics**: Existing MS metrics (ECC/EMC) rely on symmetric distances and cannot distinguish between misclassifications of different directions, rendering them inadequate for evaluating model safety.
+1.  **Background**: Multiple Instance Learning (MIL) is widely used in pathological diagnosis, modeling WSI as a bag of patches. Existing methods focus on maximizing accuracy, ignoring differences in misclassification severity.
+2.  **Limitations of Prior Work**: Misclassification costs are asymmetric in clinical scenarios. Missing a diagnosis (misclassifying malignant as normal) is far more severe than over-diagnosis (misclassifying normal as malignant), yet traditional cross-entropy penalizes all errors equally.
+3.  **Key Challenge**: WSI multiclassification has priority characteristics. Pathologists label the most urgent diagnosis when observing co-existing symptoms. There is an implicit priority hierarchy between classes, unlike natural images where objects are labeled independently.
+4.  **Key Insight**: Existing Mistake Severity (MS) methods (e.g., CDW-CE) define severity weights based on inter-class distance but ignore directionality—misclassifications of the same distance have completely different clinical risks in different directions.
+5.  **Goal**: Address the lack of clinical WSI MS solutions. Existing MS research is mainly conducted on natural images and fails to handle WSI constraints (weak labels, complex co-existing symptoms, class priorities).
+6.  **Limitations of Prior Work (Metrics)**: Existing MS metrics (ECC/EMC) are based on symmetric distances and cannot distinguish the directionality of misclassifications, failing to evaluate model performance from a safety perspective.
 
 ## Method
 
 ### Overall Architecture
 
-PAMS organizes the multiclass problem into a hierarchical structure from the finest granularity $\mathcal{H}$ to the root node $\mathcal{R}$, training a dedicated classifier $f_{\theta_h}$ at each level. The training objective is $\mathcal{L} = \lambda_1 \mathcal{L}_{MSCE} + \lambda_2 \mathcal{L}_{HA}$, with SFR applied as a data augmentation strategy.
+PAMS aims to solve the problem where "MIL pathological diagnosis only pursues accuracy regardless of misdiagnosis severity"—misjudging malignant as normal is much more dangerous than the reverse, yet cross-entropy treats them the same. The training pipeline consists of four synergistic components: First, **Semantic Feature Remix (SFR)** synthesizes hard cases in the feature space where "high-risk symptoms are hidden in low-risk slides" to compensate for the lack of co-existing samples in weakly labeled WSIs. Then, multiclass labels are organized into a hierarchical structure (from fine-grained $\mathcal{H}$ to root $\mathcal{R}$), with one classifier $f_{\theta_h}$ per layer outputting prediction probabilities $\hat{p}^h$. The training objective $\mathcal{L} = \lambda_1 \mathcal{L}_{MSCE} + \lambda_2 \mathcal{L}_{HA}$ includes: **Mistake Severity Cross-Entropy (MSCE)** which adds directional penalties to cross-entropy to heavily penalize missing diagnoses, and **Hierarchy Alignment (HA)** which uses JS divergence to align predictions between adjacent layers for consistency. Finally, a set of **Asymmetric Mikel's Wheel metrics** (AsCC/AsMC) is used for safety evaluation.
 
-### Mistake Severity Cross-Entropy (MSCE)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["WSI → Instance Bag (patch features)"] --> B["Semantic Feature Remix (SFR)<br/>Cluster high/low priority bags into L clusters; Sort by high-risk ratio<br/>Mix high-risk patches from top-k clusters into low-priority bags"]
+    B --> C["Hierarchical MIL Classifier<br/>Each layer fθ outputs probability p̂"]
+    C --> D["Mistake Severity Cross-Entropy (MSCE)<br/>Asymmetric matrix M penalizes missing diagnosis"]
+    C --> E["Hierarchy Alignment (HA)<br/>JS divergence aligns adjacent layer predictions"]
+    D --> F["Total Loss L = λ₁·MSCE + λ₂·HA<br/>End-to-end training"]
+    E --> F
+    F --> G["Asymmetric Mikel's Wheel Metrics<br/>AsCC / AsMC directional penalty evaluation"]
+```
 
-- An asymmetric weight matrix $M^h$ is defined such that when the ground-truth class $c_i^h$ is more urgent than the predicted class $c_j^h$, the penalty is $\alpha^{|i-j|}$ (with $\alpha > 1$); misclassifications in the reverse direction receive a weight of 1.
-- The final loss is $\mathcal{L}_{MSCE} = -\sum_h \hat{p}^h M^h (\tilde{Y}^h)^\top \sum_c \tilde{Y}^h[c] \log \hat{p}^h[c]$
-- **Core Idea**: A directional regularization weight $\hat{p}^h M^h (\tilde{Y}^h)^\top$ is multiplied before the cross-entropy term, jointly accounting for the severity relationship between the predicted probability distribution and the ground-truth label.
-- **Distinction from Weighted CE**: Weighted CE relies on class frequency or fixed weights without modeling the directional asymmetry between predictions and ground-truth labels.
+### Key Designs
 
-### Hierarchy Alignment (HA)
+**1. Semantic Feature Remix (SFR): Synthesizing hard cases of "high-risk hidden in low-risk" using weak labels**
 
-- Jensen-Shannon divergence is used to align predicted probabilities across adjacent hierarchy levels.
-- Predictions from a finer-grained level $\hat{p}^{h+1}$ are aggregated into a coarser representation $\dot{p}^{h+1}$ and aligned with the current level $\hat{p}^h$.
-- This ensures consistent predictions across classifiers at different hierarchy levels for the same sample.
+The first step solves the lack of co-existing hard cases. In clinical practice, symptoms often co-exist, but WSIs only have weak labels and lack pixel-level annotations. Given two bags of different priorities ($Y_a \succ Y_b$), SFR clusters all instances into $L$ clusters, ranks them by the proportion of patches from the high-priority sample $Z_a$, and mixes $Z_a$ patches from top-$k$ clusters into the low-priority bag $Z_b$ to form synthetic sample $Z_{a+b}$ with label $Y_a$. This simulates clinical cases where high-risk symptoms are hidden in low-risk slides, forcing the model to learn to prioritize the most urgent diagnosis.
 
-### Semantic Feature Remix (SFR)
+**2. Mistake Severity Cross-Entropy (MSCE): Adding directional penalties to cross-entropy**
 
-- Given two WSIs of different priorities ($Y_a \succ Y_b$), all instances from both are clustered into $L$ clusters.
-- Clusters are ranked by the proportion of patches from the higher-priority sample $Z_a$, and patches from the top-$k$ clusters in $Z_a$ are selected.
-- These semantically representative high-severity patches are mixed into the lower-priority bag $Z_b$ to form a synthetic sample $Z_{a+b}$ with label $Y_a$.
-- Efficient GPU-parallel clustering is implemented via the FAISS library.
+Traditional cross-entropy penalizes all errors equally. MSCE defines an asymmetric weight matrix $M^h$: when the ground truth class $c_i^h$ is more urgent than the predicted class $c_j^h$, the penalty is $\alpha^{|i-j|}$ ($\alpha>1$); for the reverse direction, the weight is 1. The final loss is $\mathcal{L}_{MSCE} = -\sum_h \hat{p}^h M^h (\tilde{Y}^h)^\top \sum_c \tilde{Y}^h[c] \log \hat{p}^h[c]$. Unlike Weighted CE, which weights by class frequency, MSCE dynamically captures directional differences between predicted and true labels.
 
-### Asymmetric Mikel's Wheel Metrics
+**3. Hierarchy Alignment (HA): Consistency across granularity levels**
 
-- Two new metrics are proposed: AsCC (Asymmetric Classification Confidence) and AsMC (Asymmetric Misclassification Confidence).
-- The confusion weight is defined as $W_{i,j}^h = 1 + |i-j| + \mathbb{1}(c_i^h \succ c_j^h) \times P$, where $P=2$.
-- An additional penalty is applied when a higher-priority class is misclassified as a lower-priority class, reflecting the true clinical risk.
+HA ensures that classifiers at different hierarchy levels do not provide contradictory diagnoses. It uses Jensen-Shannon divergence to align predictions of adjacent layers by aggregating fine-grained predictions $\hat{p}^{h+1}$ into a coarse-grained representation $\dot{p}^{h+1}$ and matching it with the current layer $\hat{p}^h$. The total objective is $\mathcal{L} = \lambda_1 \mathcal{L}_{MSCE} + \lambda_2 \mathcal{L}_{HA}$.
+
+**4. Asymmetric Mikel's Wheel Metrics: Direction-aware evaluation**
+
+Existing MS metrics (ECC/EMC) use symmetric distances and cannot distinguish the direction of misclassification. PAMS proposes AsCC (Asymmetric Classification Confidence) and AsMC (Asymmetric Misclassification Confidence). The confusion weight is defined as $W_{i,j}^h = 1 + |i-j| + \mathbb{1}(c_i^h \succ c_j^h) \times P$ ($P=2$), adding an extra penalty when high-priority classes are misclassified as low-priority, reflecting true clinical risk.
 
 ## Key Experimental Results
 
 ### Datasets
 
-- **BRACS**: 547 H&E-stained breast cancer WSIs, 7 classes (normal to invasive carcinoma), organized into a three-level hierarchy of benign/atypical/malignant.
-- **In-house**: 4,734 colon biopsy WSIs, 7 classes, organized into a three-level hierarchy of benign/serrated/adenoma; includes a test set of 182 complex mixed-condition cases.
+- **BRACS**: Breast cancer H&E WSIs, 547 slides, 7 classes (Normal → Invasive Carcinoma), 3-level hierarchy (Benign/Atypical/Malignant).
+- **In-house**: 4734 Colon biopsy WSIs, 7 classes, 3-level hierarchy; includes a test set of 182 complex mixed-symptom cases.
 
 ### Main Results (Table 1, BRACS + TransMIL)
 
 | Method | ACC | AUC | AsCC | AsMC |
-|--------|-----|-----|------|------|
+|------|-----|-----|------|------|
 | Cross Entropy | 40.23 | 74.90 | 58.48 | 50.18 |
 | Chang et al. | 47.51 | 79.48 | 63.98 | 51.02 |
-| Hong et al. (τ=10) | 47.13 | 79.80 | 62.44 | 45.54 |
+| Hong et al. ($\tau=10$) | 47.13 | 79.80 | 62.44 | 45.54 |
 | CDW-CE | 44.83 | 79.06 | 61.05 | 47.32 |
 | **PAMS (Ours)** | **47.59** | **80.61** | **64.92** | **55.65** |
 
-PAMS achieves the best performance across all metrics, with the most pronounced improvements in AsCC and AsMC. It similarly leads across all metrics on the in-house dataset.
+Ours achieves the best performance across all metrics, with the most significant gains in AsCC and AsMC.
 
 ### Ablation Study (Table 2, BRACS + TransMIL)
 
-| Ablated Component | ACC Drop | AsMC Drop |
-|-------------------|----------|-----------|
+| Ablation Item | ACC Gain | AsMC Gain |
+|--------|----------|-----------|
 | w/o MSCE | -2.46 | -4.84 |
 | w/o HA | -2.84 | -0.53 |
 | w/o SFR | -0.54 | -4.02 |
-| All removed | -7.82 | -1.76 |
+| Remove All | -7.82 | -1.76 |
 
-- MSCE contributes most to severity-aware metrics (AsMC drop of 4.84).
-- SFR also yields a substantial contribution to AsMC (drop of 4.02).
-- All three components work synergistically for optimal performance.
+- MSCE contributes most to severity metrics (AsMC drops 4.84).
+- SFR also contributes significantly to AsMC (drops 4.02).
+- The three components work best in synergy.
 
-### CIFAR-10 Natural Image Experiments (Table 4)
+### CIFAR-10 Results (Table 4)
 
 | Method | ACC | AsCC | AsMC |
-|--------|-----|------|------|
+|------|-----|------|------|
 | CE | 83.24 | 87.23 | 34.84 |
 | CDW-CE | 84.11 | 87.87 | 34.63 |
 | **MSCE (Ours)** | **85.64** | **89.12** | **35.70** |
 
-These results validate the generalizability of MSCE to the natural image domain.
+This verifies the generalization ability of MSCE in the natural image domain.
 
 ## Highlights & Insights
 
-- **Asymmetric severity modeling**: This work is the first to introduce directional misclassification penalties in MIL-based WSI diagnosis, accurately reflecting the clinical reality that missed malignancies are more dangerous than over-diagnoses.
-- **Semantic data augmentation via SFR**: SFR leverages weak label information to intelligently mix samples in feature space, simulating complex co-existing conditions without requiring pixel-level annotations.
-- **Metric innovation**: AsCC/AsMC address the fundamental limitation of existing symmetric metrics that cannot distinguish misclassification direction, making them applicable to all safety-critical classification tasks.
-- **Broad generalizability**: The method proves effective across BRACS, the in-house medical dataset, and CIFAR-10 natural images, and is compatible with multiple MIL architectures.
+- **Novelty (Asymmetric Modeling)**: First to introduce directional misclassification penalties in MIL WSI diagnosis, accurately reflecting the clinical need that missing a diagnosis is more dangerous than over-diagnosis.
+- **Novelty (SFR)**: Dynamically mixes samples in feature space using weak label information to simulate complex co-existing symptoms without pixel-level labels.
+- **Novelty (Metrics)**: AsCC/AsMC address the flaw where symmetric metrics cannot distinguish misclassification directions, applicable to all safety-critical classification tasks.
+- **Universality**: Validated on BRACS, In-house medical data, and CIFAR-10; compatible with multiple MIL architectures.
 
 ## Limitations & Future Work
 
-- The hierarchical structure must be predefined manually, relying on domain expert knowledge, and different diseases may require different hierarchy designs.
-- The hyperparameters $\alpha$ and $P$ in MSCE require tuning; sensitivity analysis is deferred to the supplementary material.
-- SFR depends on clustering quality, and the choices of cluster count $L$ and top-$k$ may affect performance.
-- Validation is limited to pathology; generalization to other medical imaging modalities such as radiology and dermoscopy remains unexplored.
-- The in-house dataset is not publicly released, limiting reproducibility.
+- Hierarchical structures require manual pre-definition and domain expertise; different diseases may require different designs.
+- Hyperparameters $\alpha$ and $P$ in MSCE require tuning.
+- SFR depends on clustering quality; the choice of $L$ and top-$k$ affects performance.
+- Validated only in pathology; not yet tested on other modalities like radiology or dermoscopy.
+- In-house dataset is not public, limiting reproducibility.
 
 ## Related Work & Insights
 
-- **vs. Weighted CE**: Uses fixed weights and cannot capture the directional asymmetry between predictions and ground-truth; MSCE computes penalties dynamically.
-- **vs. HXE / Soft Labels (Bertinetto et al.)**: Exploits LCA-based hierarchy information but yields limited improvement on severity metrics.
-- **vs. HAF (Garg et al.)**: A feature-space regularization approach that generalizes poorly on DTFD-MIL.
-- **vs. Hong et al.**: The random remix strategy is effective on the in-house data but unstable on BRACS; SFR is more robust through semantic guidance.
-- **vs. CDW-CE**: Distance-based weighting remains symmetric; PAMS's asymmetric design better aligns with clinical requirements.
+- **vs. Weighted CE**: Uses fixed weights and cannot capture directional differences; MSCE calculates penalties dynamically based on prediction vs. ground truth.
+- **vs. HXE / Soft Labels**: Improves hierarchical information but has limited impact on severity metrics.
+- **vs. HAF**: Feature space regularization method with poorer generalization on DTFD-MIL.
+- **vs. Hong et al.**: Their random remix strategy is unstable on BRACS; SFR is more robust via semantic guidance.
+- **vs. CDW-CE**: Based on class distance but still symmetric; PAMS's asymmetric design better fits clinical needs.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The combination of an asymmetric severity loss, semantic remix, and asymmetric evaluation metrics forms a coherent framework with a clearly defined problem.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers public and private datasets, multiple MIL architectures, ablation studies, remix strategy comparisons, and natural image generalization experiments.
-- Writing Quality: ⭐⭐⭐⭐ — Figures and tables are clearly presented; problem motivation is convincingly established; mathematical derivations are complete.
-- Value: ⭐⭐⭐⭐ — Addresses a core safety concern in clinical MIL deployment; the asymmetric metrics have broad applicability.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -147,11 +147,11 @@ These results validate the generalizability of MSCE to the natural image domain.
 
 ## Related Papers
 
-- [\[CVPR 2026\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](milpf_multiple_instance_learning_on_precomputed_fe.md)
-- [\[CVPR 2026\] Fair Lung Disease Diagnosis from Chest CT via Gender-Adversarial Attention Multiple Instance Learning](fair_lung_disease_diagnosis_from_chest_ct_via_gend.md)
+- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
+- [\[CVPR 2025\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](../../CVPR2025/medical_imaging/mil-pf_multiple_instance_learning_on_precomputed_features_for_mammography_classi.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 - [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
-- [\[NeurIPS 2025\] Ordinal Label-Distribution Learning with Constrained Asymmetric Priors for Imbalanced Retinal Grading](../../NeurIPS2025/medical_imaging/ordinal_label-distribution_learning_with_constrained_asymmetric_priors_for_imbal.md)
-- [\[CVPR 2026\] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)
 
 </div>
 

@@ -1,76 +1,70 @@
 ---
 title: >-
-  [Paper Note] Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker
+  [Paper Note] 结构化广义线性 token mixing：用 SND + Kronecker 在复杂度与表达力之间换挡
 description: >-
-  [ICML 2026][LLM/NLP][token mixing] The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recurrent mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSM…
+  [ICML 2026][LLM (Other)][token mixing] The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recursive mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSMs, linear recurrence, and high-order recurrence. It proves that the sparsity pattern of $A$ and $B$ directly controls the complexity gradient from $\math
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "token mixing"
-  - "attention"
-  - "SSM"
-  - "higher-order recurrence"
-  - "time complexity"
-  - "cache size"
+  - ICML 2026
+  - LLM (Other)
+  - token mixing
+  - attention
+  - SSM
+  - cache size
 date: 2026-05-08
-content_hash: 6b6da16fee5f0ab5
+content_hash: 69955c87ebcfd4dc
 ---
-
 # Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31367](https://arxiv.org/abs/2605.31367)  
 **Code**: Not listed  
 **Area**: Attention / State Space Models / Efficient Sequence Modeling  
-**Keywords**: token mixing, attention, SSM, higher-order recurrence, time complexity, cache size
+**Keywords**: token mixing, attention, SSM, high-order recurrence, time complexity, cache size
 
 ## TL;DR
-The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recurrent mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSM, linear recurrence, and higher-order recurrence. It proves that the sparsity pattern of $A, B$ directly controls the complexity gradient from $\mathcal{O}(n^{\log n})$ to $\mathcal{O}(n^2)$. Two translation-invariant patterns, $f(k) = 2^k$ and $f(k) = k^2+1$, are introduced to provide new options with $\mathcal{O}(n \log n)$ and $\mathcal{O}(n \sqrt{n})$ complexity, while the cache can be reduced to $\mathcal{O}(\log n)$ or $\mathcal{O}(\sqrt{n})$.
+The paper proposes a unified "direct input mixing $\mathbf{A}$ + output recursive mixing $\mathbf{B}$" framework $Y = (I - B)^{-1} A X$ that encompasses attention, SSMs, linear recurrence, and high-order recurrence. It proves that the sparsity pattern of $A$ and $B$ directly controls the complexity gradient from $\mathcal{O}(n \log n)$ to $\mathcal{O}(n^2)$. Two translation-invariant modes, $f(k) = 2^k$ and $f(k) = k^2+1$, are introduced as new choices for $\mathcal{O}(n \log n)$ and $\mathcal{O}(n \sqrt{n})$ complexity, with cache sizes reducible to $\mathcal{O}(\log n)$ or $\mathcal{O}(\sqrt{n})$.
 
 ## Background & Motivation
 
-**Background**: Token mixing is the core of sequence models—it determines how models exchange information across tokens. Transformers use self-attention for global one-hop mixing at $\mathcal{O}(n^2)$; linear attention uses kernels to reduce this to $\mathcal{O}(n)$; State Space Models (S4/Mamba) utilize linear recurrence at $\mathcal{O}(n)$; and Hybrids (Griffin/Nemotron-H) mix various mixers.
+**Background**: Token mixing is the core of sequence models, determining how information is exchanged across tokens. Transformers use self-attention for global one-hop interaction at $\mathcal{O}(n^2)$; linear attention uses kernels to reduce this to $\mathcal{O}(n)$; state space models (S4/Mamba) utilize linear recurrence at $\mathcal{O}(n)$; and hybrid models (Griffin/Nemotron-H) combine multiple mixers.
 
-**Limitations of Prior Work**: (1) Relationships between different mixers have been analyzed on a case-by-case basis (e.g., the equivalence of Mamba-2 and linear attention, or the connection between Chimera and SSM-on-graph), lacking a unified framework; (2) Most mixers utilize first-order recurrence (looking only at the previous state), but Chen et al. 2025 proved that memory must grow with $L^\beta$ to scale effectively, meaning first-order models are inherently limited on long sequences; (3) Higher-order recurrences (log-linear attention, ChaCAL) have appeared sporadically but without a systematic theory explaining "which sparsity pattern yields what complexity and expressivity."
+**Limitations of Prior Work**: (1) The relationships between different mixers are typically analyzed case-by-case (e.g., equivalence between Mamba-2 and linear attention, or Chimera and SSM-on-graph), lacking a unified framework. (2) Most mixers utilize first-order recurrence (tracking only the previous state), but Chen et al. (2025) proved that memory must grow as $L^\beta$ to scale effectively; first-order models are inherently limited on long sequences. (3) Higher-order recurrences (log-linear attention, ChaCAL) have appeared sporadically without a systematic theory explaining which sparsity patterns yield specific complexity and expressivity.
 
-**Key Challenge**: To express long-range dependencies, global connectivity is required ($\mathcal{O}(n^2)$ attention); for speed, models must be local or recurrent. The design space in between (e.g., $\mathcal{O}(n \log n)$ or $\mathcal{O}(n \sqrt{n})$) has seen almost no systematic exploration.
+**Key Challenge**: Global connectivity for long-range dependencies requires $\mathcal{O}(n^2)$ attention, while speed necessitates local or recurrent designs. The intermediate design space (e.g., $\mathcal{O}(n \log n)$ or $\mathcal{O}(n \sqrt{n})$) has remained largely unexplored.
 
-**Goal**: (1) Provide a unified form for all causal linear token mixers; (2) Systematically characterize the correspondence between sparsity pattern → complexity/cache/expressivity; (3) Design new mixers that span the full spectrum from $\mathcal{O}(n)$ to $\mathcal{O}(n^2)$.
+**Goal**: (1) Provide a unified form for all causal linear token mixers; (2) Systematically characterize the correspondence between sparsity patterns and complexity, cache size, and expressivity; (3) Design new mixers spanning the spectrum from $\mathcal{O}(n)$ to $\mathcal{O}(n^2)$.
 
-**Key Insight**: Any causal linear token mixer can be decomposed into "direct input influence + output recurrent propagation." By introducing matrices $A$ (lower triangular, input influence) and $B$ (strict lower triangular, output recurrence), the relationship $Y = AX + BY$ or $Y = (I-B)^{-1} A X$ holds. Attention corresponds to $B=0$; recurrence corresponds to diagonal $A$ + sub-diagonal $B$; hybrids are achieved by mixing sparsity patterns.
+**Key Insight**: It is observed that any causal linear token mixer can be decomposed into "direct input influence" and "recursive output propagation." By introducing matrix $A$ (lower triangular, input influence) and $B$ (strict lower triangular, output recurrence), the system is represented as $Y = AX + BY$, which simplifies to $Y = (I-B)^{-1} A X$. Attention corresponds to $B=0$, while recurrence involves diagonal $A$ and sub-diagonal $B$. Hybrid models are achieved by mixing sparsity patterns.
 
-**Core Idea**: Sparsity patterns of $A$ and $B$ are used as design knobs—different patterns correspond to different complexities (time per token, cache size) and expressivity (shortest path between tokens, graph congestion). New mixers using translation-invariant patterns like $f(k) = 2^k$ (exponential) or $f(k) = k^2+1$ (quadratic) provide intermediate tiers at $\mathcal{O}(n \log n)$ and $\mathcal{O}(n \sqrt{n})$.
+**Core Idea**: The sparsity patterns of $A$ and $B$ are used as design knobs. Different patterns correspond to varying complexities (time per token, cache size) and expressivity (shortest path between tokens, graph congestion). New mixers are designed using translation-invariant patterns like $f(k) = 2^k$ (exponential) or $f(k) = k^2+1$ (quadratic), providing intermediate complexity tiers at $\mathcal{O}(n \log n)$ and $\mathcal{O}(n \sqrt{n})$.
 
 ## Method
 
 ### Overall Architecture
 
-The Generalized Linear Recurrence Layer is defined as: $y_i = \sum_{j=1}^i \alpha_{i,j} x_j + \sum_{j=1}^{i-1} \beta_{i,j} y_j$, where $\alpha_{i,j}, \beta_{i,j}$ are input-dependent coefficients (attention weights, SSM gating, etc.). In matrix form, $Y = (I-B)^{-1} A X$, where $A$ is lower triangular and $B$ is strict lower triangular (ensuring $I - B$ is invertible). The sparsity pattern determines everything—sparsity leads to lower complexity, while $(I-B)^{-1}$ remains a dense lower-triangular matrix that preserves expressivity.
+The paper decomposes any causal linear token mixer into "direct input influence" and "recursive output propagation," formulated as a Generalized Linear Recurrence Layer: $y_i = \sum_{j=1}^i \alpha_{i,j} x_j + \sum_{j=1}^{i-1} \beta_{i,j} y_j$. In matrix form, this is $Y = (I-B)^{-1} A X$, where $A$ is lower triangular (input influence) and $B$ is strict lower triangular (output recurrence, ensuring $I-B$ is invertible). The core observation is that the sparsity patterns of $A$ and $B$ simultaneously determine complexity (sparser patterns lead to faster matrix-vector multiplication) and expressivity (though $(I-B)^{-1}$ expands to a dense lower-triangular matrix, distant tokens communicate via multi-hop recurrence). Thus, designing a sequence mixer is reduced to selecting a sparsity pattern.
 
 ### Key Designs
 
-1.  **Unified Framework: $A, B$ Sparsity Patterns Covering All Causal Linear Mixers**:
-    - **Function**: Views attention, SSM, linear attention, and recurrence as special cases of $(A, B)$ selection, providing a unified language for system design.
-    - **Mechanism**: (a) Standard attention: $B=0, A=\mathrm{softmax}(QK^\top/\sqrt{d_k})$ $\rightarrow$ $Y = AX$, complexity $\mathcal{O}(n^2)$; (b) Local attention: $A$ is banded $\rightarrow$ $\mathcal{O}(nk)$; (c) Gated linear recurrence: $A$ is diagonal, $B$ is sub-diagonal $\rightarrow$ $y_t = \alpha_{t,t} x_t + \beta_{t,t} y_{t-1}$; (d) Diagonal SSM: A specific parameterization of linear recurrence + state expansion; (e) Mamba-2: Equivalent to a 1-semiseparable transformation matrix, connecting SSM and masked linear attention. All these are instances of the same $(I-B)^{-1} A$ framework under different sparsity patterns.
-    - **Design Motivation**: Previous comparisons between attention and SSM were case-by-case; this paper provides a unified matrix algebra language. Discussing "why SSM is faster than attention" is equivalent to discussing "sparser patterns $\rightarrow$ faster matrix-vector products"; discussing "why attention is more expressive" is equivalent to discussing "$A$ dense $\rightarrow$ any pairwise relationship is expressible." This unification is the foundation for subsequent system design.
+**1. Unified Framework: Unifying Causal Linear Mixers via $(A, B)$ Sparsity Patterns**
 
-2.  **Translation-invariant Patterns + $\mathcal{O}(f^{-1}(n))$ Complexity Family**:
-    - **Function**: Uses a single function $f$ to control the sparsity pattern, allowing complexity, shortest path, and congestion to be derived directly.
-    - **Mechanism**: Defines a pattern induced by a strictly increasing $f: \mathbb{N}_{\ge 0} \to \mathbb{N}_{> 0}$ such that $\alpha_{i,j} \ne 0 \iff \exists k: j = i - f(k)$, meaning token $i$ can only attend to past tokens at distance $f(k)$. For example, $f(k) = 2^k$ restricts token $i$ to look at $i-1, i-2, i-4, i-8, \dots, i-2^{\lfloor \log_2 i \rfloor}$, resulting in $\mathcal{O}(\log n)$ complexity per token. Proposition 4.2 generalizes this: complexity is $\mathcal{O}(f^{-1}(n))$—linear $f$ $\rightarrow$ $\mathcal{O}(n)$, quadratic $f$ $\rightarrow$ $\mathcal{O}(\sqrt{n})$, and exponential $f$ $\rightarrow$ $\mathcal{O}(\log n)$.
-    - **Design Motivation**: Previous sparse attention (e.g., Longformer, BigBird) used handcrafted sparsity patterns (sliding window + global tokens) without a principled complexity hierarchy. The abstraction of translation-invariance + $f$ makes "choosing $f$ = choosing a complexity tier" a simple engineering decision, covering the full spectrum from $\mathcal{O}(\log n)$ and $\mathcal{O}(\sqrt n)$ to $\mathcal{O}(n)$.
+Previously, comparing attention and SSMs required case-by-case analysis. This work reveals they are instances of $Y=(I-B)^{-1}AX$ under different sparsity modes. Standard attention uses $B=0$ and $A=\mathrm{softmax}(QK^\top/\sqrt{d_k})$, resulting in $Y=AX$ with $\mathcal{O}(n^2)$ complexity. Local attention restricts $A$ to a banded matrix ($\mathcal{O}(nk)$). Gated linear recurrence uses diagonal $A$ and sub-diagonal $B$, expanding to $y_t=\alpha_{t,t}x_t+\beta_{t,t}y_{t-1}$. Diagonal SSMs are specific parameterizations of recurrence with state expansion. Mamba-2 is equivalent to a 1-semiseparable transformation matrix, bridging SSMs and masked linear attention. This algebraic language translates "why SSMs are faster" into sparsity and "why attention is more expressive" into the density of $A$.
 
-3.  **Shortest Path + Congestion: Two New Expressivity Metrics**:
-    - **Function**: Quantifies "how fast and smoothly information travels under different patterns" from a graph theory perspective.
-    - **Mechanism**: Constructs a communication graph $\mathcal{G}$, where token $i \to$ token $j$ has an edge iff $i - j = f(k)$ for some $k$. The shortest path is $d(i, j) = \min\{d : \exists a \in \mathbb{N}^d, \sum_k f(a_k) = i - j\}$. When $f(k) = 2^k$, $d(i, j) \le \log_2 (i-j)$ (number of 1s in binary decomposition); when $f(k) = k^2+1$, $d(i, j) \le 4$ (Lagrange's four-square theorem). Congestion $C(\mathcal{G}) = \min_\mathcal{P} \max_i \#\{p \in \mathcal{P}: i \in p\}$ quantifies "how many paths crowd through a single node for copy tasks"; standard recurrent model congestion = $n$ (all information through one state), whereas higher-order recurrence can reduce this to $\log n$ or even 4. Propositions 4.7-4.8 provide tight upper/lower bounds for congestion.
-    - **Design Motivation**: Previously, "long-range dependency capability" could only be described qualitatively. This paper provides two quantitative indicators. Shortest path measures "steps for information from $j$ to $i$," and congestion measures the "degree of information bottleneck." Together, they explain why $f(k) = k^2+1$ achieves an elegant trade-off of $\mathcal{O}(\sqrt n)$ complexity with a 4-step path and 4 congestion.
+**2. Translation-invariant Pattern: Tuning the $\mathcal{O}(f^{-1}(n))$ Complexity Spectrum via a Single Function $f$**
 
-### Cache-efficient pattern
+Sparse attention models like Longformer or BigBird used heuristic connectivity (sliding windows + global tokens), lacking a principled complexity ladder and clear expressivity bounds. Ours generates patterns using a strictly increasing function $f:\mathbb{N}_{\ge 0}\to\mathbb{N}_{>0}$ such that $\alpha_{i,j}\ne 0 \iff \exists k:\ j=i-f(k)$. For $f(k)=2^k$, token $i$ only attends to $i-1, i-2, i-4, \dots, i-2^{\lfloor\log_2 i\rfloor}$, requiring $\mathcal{O}(\log n)$ operations per token. Proposition 4.2 generalizes this: complexity is $\mathcal{O}(f^{-1}(n))$. Linear $f$ yields $\mathcal{O}(n)$, quadratic $f$ yields $\mathcal{O}(\sqrt n)$, and exponential $f$ yields $\mathcal{O}(\log n)$, turning the intermediate $\mathcal{O}(n\log n)$ and $\mathcal{O}(n\sqrt n)$ ranges into adjustable engineering knobs.
 
-Translation-invariant pattern decoding is $\mathcal{O}(f^{-1}(n))$, but the cache remains $\mathcal{O}(n)$ because any token $j$ might be attended to by an arbitrarily distant future token. Definition 4.10 introduces a constraint: when decoding token $i$, it can only attend to positions in $S_{i-1} \cup \{i\}$, allowing the cache to evolve to $\mathcal{O}(f^{-1}(n))$. Proposition 4.12 provides a closed-form $S_i = \{a_k \lceil (i - f(k))/a_k \rceil : k \in \mathbb{N}, f(k) < i\}$, where $a_{k+1} = a_k \lceil (f(k+1) - f(k))/a_k \rceil$. Cache positions are quantized on a lattice of step $a_k$, creating a periodic structure that hardware implementations can exploit.
+**3. Shortest Path and Congestion: Quantifying Expressivity with Graph Metrics**
+
+Long-range dependency capability is quantified using the communication graph $\mathcal{G}$ (edge $i\to j$ exists if $i-j=f(k)$) through two metrics. First, the shortest path $d(i,j)=\min\{d:\exists a\in\mathbb{N}^d,\ \sum_k f(a_k)=i-j\}$ measures communication latency: for $f(k)=2^k$, $d(i,j)\le\log_2(i-j)$; for $f(k)=k^2+1$, Lagrange's four-square theorem ensures $d(i,j)\le 4$. Second, congestion $C(\mathcal{G})=\min_{\mathcal{P}}\max_i \#\{p\in\mathcal{P}:i\in p\}$ measures information bottlenecks: standard first-order recurrence compresses everything into one state ($C=n$), while higher-order patterns can achieve $\log n$ or even 4. This explains why $f(k)=k^2+1$ achieves a superior trade-off with $\mathcal{O}(\sqrt n)$ complexity and a path/congestion bound of 4.
+
+**4. Cache-efficient Pattern: Compressing KV Cache from $\mathcal{O}(n)$ to $\mathcal{O}(f^{-1}(n))$**
+
+While translation-invariant patterns reduce computation, the cache usually remains $\mathcal{O}(n)$. Definition 4.10 introduces a constraint: decoding token $i$ only allows attending to positions in $S_{i-1}\cup\{i\}$, reducing cache size to $\mathcal{O}(f^{-1}(n))$. Proposition 4.12 provides a closed-form for these positions: $S_i=\{a_k\lceil(i-f(k))/a_k\rceil:k\in\mathbb{N},\ f(k)<i\}$, where $a_{k+1}=a_k\lceil(f(k+1)-f(k))/a_k\rceil$. These positions fall on lattices with step size $a_k$, creating a periodic structure that is hardware-friendly.
 
 ## Key Experimental Results
 
-### Complexity vs. Expressivity Comparison
+### Complexity + Expressivity Comparison Table
 
 | Structure | Time/token | Cache | Shortest path | Congestion | Copy% | Assoc recall% | Multi-hop% |
 |---|---|---|---|---|---|---|---|
@@ -86,45 +80,45 @@ Translation-invariant pattern decoding is $\mathcal{O}(f^{-1}(n))$, but the cach
 
 ### Key Findings
 
-- **Clear Ladder from Theoretical Complexity to Empirical Expressivity**: Moving from Diagonal SSM (weakest) to Attention (strongest), the sparse pattern $f(k) = k^2+1$ at $\mathcal{O}(\sqrt n)$ complexity achieves 99.66% Copy accuracy—nearly matching Attention's 100%. This identifies an "almost free intermediate tier" in the design space.
-- **Dense recurrence (infinite order) is as strong as attention**: Achieving 100% Copy, 99.99% Assoc Recall, and 99.80% Multi-hop demonstrates that recurrence is not inherently weaker than attention; the key factor is the "order." This supports the theory from Chen et al. 2025 that memory must scale with $L^\beta$.
-- **Cache-efficient version involves minimal sacrifice**: $f(k) = 2^k$ + cache-eff drops from 92.63 to 75.47 in Copy accuracy, but the cache is reduced from $\mathcal{O}(n)$ to $\mathcal{O}(\log n)$, which is highly valuable for long-sequence deployment.
-- **Congestion acts as a hard bottleneck**: Diagonal SSM (congestion = $n$) results in only 42.98% Copy accuracy, while $f(k) = k^2+1$ (congestion = 4) reaches 99.66%. Congestion directly predicts copy performance.
-- **Shortest path bounds are tight**: The use of Lagrange's four-square theorem to guarantee a shortest path $\le 4$ for $f(k) = k^2+1$ is an elegant mathematical result, and experiments confirm that shorter paths correlate with better long-range dependency capture.
+- **Clear Ladder from Theoretical Complexity to Empirical Expressivity**: From Diagonal SSM (weakest) to Attention (strongest), the sparse pattern $f(k) = k^2+1$ achieves 99.66% copy accuracy at $\mathcal{O}(\sqrt n)$ complexity, demonstrating the existence of "nearly free" intermediate tiers.
+- **Dense Recurrence (Infinite Order) Matches Attention**: It achieves 100% copy and near-perfect associative/multi-hop recall, indicating that recurrence efficiency limits are a matter of order, not an inherent weakness. This aligns with the "memory must grow with $L^\beta$" theory.
+- **Minimal Sacrifice for Cache-efficiency**: The cache-efficient version of $f(k) = 2^k$ reduces copy accuracy from 92.63% to 75.47%, but reduces cache from $\mathcal{O}(n)$ to $\mathcal{O}(\log n)$, showing significant value for long-sequence deployment.
+- **Congestion as a Hard Bottleneck**: Diagonal SSM has congestion $n$ and poor copy performance (42.98%), while $f(k) = k^2+1$ has congestion 4 and high performance (99.66%). Congestion metrics directly predict copy capability.
+- **Tight Shortest Path Bounds**: The use of Lagrange's four-square theorem to guarantee a path length $\le 4$ for $f(k) = k^2+1$ is validated by the strong correlation between short paths and long-range dependency performance.
 
 ## Highlights & Insights
 
-- **$Y = (I-B)^{-1} A X$ as an Elegant Unified Framework**: Incorporates attention, SSM, linear recurrence, higher-order recurrence, and Mamba-2 into a single matrix algebra. This unification is an actionable design tool rather than just a retroactive summary.
-- **Design Space of Translation-invariant + $f$**: Choosing $f$ is equivalent to choosing complexity. This single-knob design allows architects to systematically slide along the complexity ladder rather than making case-by-case adjustments.
-- **Ingenious Use of Number Theory**: Utilizing the four-square theorem to guarantee expressivity limits is a rare and elegant application of "borrowed" mathematical concepts.
-- **Congestion as an Expressivity Metric**: Quantifying "information bottlenecks" from a graph routing perspective creates a perfect theoretical loop with researchers like Jelassi et al. 2024 regarding the copy dilemma in recurrent models.
-- **Closed-form Lattice for Cache Efficiency**: Proposition 4.12 reveals that cache positions follow a periodic step-$a_k$ lattice, providing direct inspiration for hardware-friendly implementations like FlashAttention-style GPU kernels.
-- **Theory Guiding Empirical Validation**: The table represents an empirical ladder predicted by theory; every trade-off point has a clear mathematical explanation without cherry-picking.
+- **$Y = (I-B)^{-1} A X$ as an Elegant Unified Framework**: It places various mixers into a single algebraic structure, serving as an actionable design tool rather than just an academic categorization.
+- **Design Space of Translation-invariant Patterns**: Choosing $f$ allows architects to navigate the complexity spectrum systematically rather than through trial-and-error manual tuning.
+- **Application of Lagrange's Four-Square Theorem**: Utilizing classical number theory to guarantee shortest path length is both rare and mathematically elegant.
+- **Congestion as an Expressivity Metric**: Analyzing information bottlenecks from a graph routing perspective complements existing research on the limitations of recurrent model copying.
+- **Closed-form Lattice for Cache Efficiency**: Proposition 4.12's periodic structure provides a foundation for developing hardware-friendly GPU kernels similar to FlashAttention.
+- **Theory-Driven Empirical Validation**: Table 1 represents an empirical ladder predicted by theory, with each trade-off point supported by clear mathematical reasoning.
 
 ## Limitations & Future Work
 
-- **Restricted to Linear Token Mixers**: Non-linear mixers (e.g., Mixture-of-Experts, attention with non-linear feature maps) are currently outside this framework and require extension.
-- **Focus on Synthetic Tasks**: Tasks like Copy, Associative Recall, and Multi-hop are controlled; the perplexity gap in real-world language model pre-training is not as exhaustively demonstrated in the main results.
-- **Limited Selection of $f$**: Experiments only explored linear, $2^k$, and $k^2+1$. Finer-grained functions like $f(k) = k \log k$ remain unexplored.
-- **Lack of Hardware implementation for Cache-efficiency**: The closed-form lattice quantization is a theoretical result; actual GPU kernel optimization has not yet been demonstrated.
-- **Training Stability of Higher-order Recurrence**: While infinite-order Dense recurrence is highly expressive, there is no data on whether it remains stable during training on models larger than 8B parameters.
-- **Missing Throughput Comparisons**: The empirical study focuses on task accuracy rather than wall-clock speed, which is a critical reference for practitioners compared to Mamba-2 or Linear Attention.
+- **Restricted to Linear Token Mixers**: Non-linear mixers (e.g., MoE, attention with non-linear maps) are not currently covered and require expansion.
+- **Focus on Synthetic Tasks**: Reliability on controlled tasks like copy or recall is shown, but full-scale language model pre-training perplexity is not extensively detailed in the main results.
+- **Limited Function Choices**: Only linear, $2^k$, and $k^2+1$ were explored; more nuanced functions (e.g., $f(k) = k \log k$) remain untested.
+- **Pending Hardware Implementation**: The closed-form lattices for cache efficiency are theoretical; optimized GPU kernels for these structures have yet to be developed.
+- **Training Stability of Higher-order Recurrence**: Data regarding the stability of infinite-order dense recurrence, especially for models larger than 8B parameters, is missing.
+- **Throughput Comparisons**: The study focuses on task accuracy rather than wall-clock speed, which is a critical reference for deployment.
 
 ## Related Work & Insights
 
-- **vs. S4/Mamba/Mamba-2**: These are first-order linear recurrences. This paper proves first-order models are inherently sub-optimal for long sequences (congestion = $n$), and higher-order represents a necessary enhancement.
-- **vs. Log-linear attention (Guo et al. 2026)**: They proposed an instance of logarithmic-order recurrence; this paper provides a systematic framework where that is a special case of $f(k) = 2^k$.
-- **vs. ChaCAL (Fagnou et al. 2024) / Block-Chacal**: They proposed instances of infinite-order recurrence. Ours includes these while offering finer complexity-expressivity trade-offs.
-- **vs. FlashAttention**: FlashAttention optimizes kernels for standard attention; this paper reduces complexity at the algorithmic level. Both are orthogonal and combinable.
-- **vs. Chimera (Lahoti et al. 2025)**: They generalized SSMs to graphs; this paper uses communication graphs as an analytical tool for expressivity, introducing graph theory from a different angle.
-- **Insights**: (1) Any sequence model design problem can be explored via $(A, B)$ sparsity patterns; (2) The Pareto frontier of complexity-expressivity can be parameterized by a single function $f$; (3) Congestion is an undervalued dimension of expressivity that should be included in future architecture searches; (4) The closed-form lattice for cache efficiency provides a building block for hardware-aware design.
+- **vs S4/Mamba/Mamba-2**: These are first-order linear recurrences; Ours proves that first-order models are sub-optimal for long sequences (congestion $n$), making higher-order designs necessary.
+- **vs Log-linear Attention (Guo et al. 2026)**: They introduced a specific logarithmic-order recurrence instance; Ours provides a systematic framework treating it as a special case of $f(k) = 2^k$.
+- **vs ChaCAL / Block-Chacal**: They proposed infinite-order recurrence instances; the unified framework in Ours includes these while providing finer-grained complexity-expressivity trade-offs.
+- **vs FlashAttention**: While FlashAttention optimizes kernels for standard attention, Ours reduces complexity at the algorithmic level. Both are orthogonal and potentially combinable.
+- **vs Chimera (Lahoti et al. 2025)**: They generalized SSMs to graphs; Ours uses communication graphs as an analytical tool for expressivity.
+- **Insights**: (1) Sequence model design can be explored systematically via $(A, B)$ sparsity; (2) Pareto frontiers for complexity and expressivity can be parameterized by $f$; (3) Congestion should be a key metric in future architecture searches.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The unified framework $(I-B)^{-1} A$ is a fresh perspective, and the combination of translation-invariant patterns with number theory is highly innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Synthetic tasks are fully covered with LM validation, though wall-clock speeds and large-scale model validation are missing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Mathematically rigorous with proofs in the appendix; the sparsity visualizations are intuitive, and the main table clearly illustrates the trade-offs.
-- Value: ⭐⭐⭐⭐⭐ Provides a principled framework for sequence model architecture design, directly guiding the design of future hybrid models or Mamba-3; offers closed-form tools for hardware-aware kernel development.
+- **Novelty**: ⭐⭐⭐⭐⭐ The $(I-B)^{-1} A$ framework and the application of number theory to design patterns are highly innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive coverage of synthetic tasks and LM validation, though missing wall-clock comparisons and large-scale scaling data.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Mathematically rigorous with clear visualizations and a comprehensive trade-off table.
+- **Value**: ⭐⭐⭐⭐⭐ Provides a principled framework for designing next-generation hybrid models and hardware-aware kernels.
 
 <!-- RELATED:START -->
 
@@ -133,10 +127,10 @@ Translation-invariant pattern decoding is $\mathcal{O}(f^{-1}(n))$, but the cach
 ## Related Papers
 
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
-- [\[ICML 2026\] Why Are Linear RNNs More Parallelizable?](why_are_linear_rnns_more_parallelizable.md)
-- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
-- [\[ICLR 2026\] Neural Synchrony Between Socially Interacting Language Models](../../ICLR2026/llm_nlp/neural_synchrony_between_socially_interacting_language_models.md)
 - [\[ICML 2026\] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)
+- [\[ICML 2025\] Interchangeable Token Embeddings for Extendable Vocabulary and Alpha-Equivalence](../../ICML2025/llm_nlp/interchangeable_token_embeddings_for_extendable_vocabulary_and_alpha-equivalence.md)
+- [\[ACL 2025\] Token Prepending: A Training-Free Approach for Eliciting Better Sentence Embeddings from LLMs](../../ACL2025/llm_nlp/token_prepending_training_free.md)
+- [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
 
 </div>
 

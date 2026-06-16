@@ -2,101 +2,111 @@
 title: >-
   [Paper Note] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm
 description: >-
-  [ICML 2026][LLM Efficiency][SiameseNorm] Addressing the structural contradiction where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm…
+  [ICML 2026][LLM Efficiency][SiameseNorm] Addressing the structural conflict where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm, a dual-stream residual architecture. It maintains one unnormalized stream to preserve the Pre-Norm identity gradient highway and one normalized stream to retain Post-Norm
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "SiameseNorm"
-  - "Pre-Norm"
-  - "Post-Norm"
-  - "Dual-stream residual"
-  - "Training stability"
+  - ICML 2026
+  - LLM Efficiency
+  - SiameseNorm
+  - Pre-Norm
+  - Post-Norm
 date: 2026-05-08
-content_hash: 860054373cbb8329
+content_hash: 1c327f0f0ce2f526
 ---
-
 # SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.08064](https://arxiv.org/abs/2602.08064)  
 **Code**: https://github.com/Qwen-Applications/SiameseNorm  
 **Area**: LLM Efficiency / Transformer Architecture / Normalization  
-**Keywords**: SiameseNorm, Pre-Norm, Post-Norm, Dual-stream residual, Training stability
+**Keywords**: SiameseNorm, Pre-Norm, Post-Norm, Dual-stream Residual, Training Stability
 
 ## TL;DR
-Addressing the structural contradiction where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm, a dual-stream residual architecture. It maintains an unnormalized stream as the Pre-Norm identity gradient highway and a normalized stream for Post-Norm representation control. By coupling both streams via shared residual blocks, it consistently outperforms Pre-Norm baselines across 400M~15B dense/MoE language models, ViT, and DiT with negligible overhead.
+Addressing the structural conflict where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm, a dual-stream residual architecture. It maintains one unnormalized stream to preserve the Pre-Norm identity gradient highway and one normalized stream to retain Post-Norm representation control. By coupling these streams through shared residual blocks, it consistently outperforms Pre-Norm baselines across 400M~15B dense/MoE language models, ViT, and DiT with negligible overhead.
 
 ## Background & Motivation
 
-**Background**: Modern Transformers (GPT-3, LLaMA, DeepSeek-V3, Qwen3, ViT) almost exclusively use Pre-Norm because it places LayerNorm inside the residual branch, leaving the main path as a clean identity connection. This naturally provides a "gradient highway," enabling stable training for networks with hundreds of layers. Post-Norm places LN after the residual addition, periodically normalizing the main path representation, which offers higher per-layer expressiveness and performance but suffers from extreme training instability.
+**Background**: Modern Transformers (GPT-3, LLaMA, DeepSeek-V3, Qwen3, ViT) almost exclusively use Pre-Norm. By placing LayerNorm inside the residual branch, the main path maintains clean identity connections, providing a natural "gradient highway" that enables stable training for networks with hundreds of layers. Post-Norm places LN after the residual addition, periodically normalizing the main path representation. While this offers stronger single-layer expressiveness and often higher final performance, training is notoriously unstable.
 
-**Limitations of Prior Work**: While Pre-Norm enables stable training, recent studies have identified a "deep layer collapse" issue—removing several deep layers barely impacts performance. This reflects that the Pre-Norm main path representation $\|X_i\|_2$ grows nearly exponentially with depth (Paper Fig. 2(a) shows a 1.3B model reaching magnitudes of $\sim 10^3$ at the deepest layer), while each layer $F_i$ receives normalized inputs (constant magnitude). Residual updates in deep layers become increasingly "diluted" relative to the massive main path, leading to low utilization and limited effective depth. Post-Norm, however, requires multiplying by the Jacobian of LN $\mathbf{J}_{\mathrm{LN}}$ at each layer, making it prone to gradient explosion or disappearance during backpropagation, leading to divergence under high learning rates.
+**Limitations of Prior Work**: Although Pre-Norm enables stable training, recent research identifies a "depth decay" problem—removing several deep layers results in almost no performance loss. This reflects that the Pre-Norm main path representation $\|X_i\|_2$ grows near-exponentially with depth (as shown in Fig.2(a), reaching $\sim 10^3$ in a 1.3B model), while each layer $F_i$ receives a normalized input of constant magnitude. Consequently, deep residual updates become increasingly "diluted" relative to the massive main path, leading to low utilization of deep layers and limited effective depth. Post-Norm, however, requires multiplying by the LN Jacobian $\mathbf{J}_{\mathrm{LN}}$ at every layer, making gradients highly susceptible to exploding or vanishing after multiple multiplications during backpropagation, causing divergence at high learning rates ($\eta=10^{-3}$ or $2\times 10^{-3}$).
 
-**Key Challenge**: The two paradigms demand conflicting properties on the **same residual main path**: Pre-Norm requires an "unnormalized identity path for gradient stability," while Post-Norm requires a "normalized main path for representation scale control." Existing hybrid schemes (HybridNorm, Mix-LN, SpanNorm) assign different paradigms to different layers, yet all updates accumulate on the same path, failing to satisfy both requirements simultaneously. These methods typically diverge under high learning rates ($\eta=10^{-3}$ or $2\times 10^{-3}$).
+**Key Challenge**: These two paradigms demand conflicting properties for the **same residual main path**: Pre-Norm requires an "unnormalized identity path for gradient stability," while Post-Norm requires a "normalized main path for representation scale control." Existing hybrid schemes (HybridNorm, Mix-LN, SpanNorm) assign different paradigms to different layers, yet all updates still accumulate on a single main path. Thus, they inherently fail to satisfy both requirements simultaneously; HybridNorm and SpanNorm both diverge under high learning rates ($\eta=10^{-3}$ or $2\times 10^{-3}$).
 
-**Goal**: To design an architecture that enjoys both the optimization stability of Pre-Norm and the representation control of Post-Norm, while remaining fully compatible with existing Pre-Norm training recipes (learning rate, warm-up, initialization) without requiring re-tuning.
+**Goal**: Design an architecture that simultaneously enjoys the optimization stability of Pre-Norm and the representation control of Post-Norm, while remaining fully compatible with existing Pre-Norm training recipes (learning rate, warm-up, initialization) without requiring re-tuning.
 
-**Key Insight**: Since the two requirements are irreconcilable in a single stream, they are **structurally decoupled into two streams**. By maintaining two independently evolving residual states $X_i$ and $Y_i$, one acts as a Post-Norm normalized main path and the other as a Pre-Norm identity path. They share the same residual block $F_i$, allowing $F_i$ to receive gradient signals from both paths with zero parameter overhead.
+**Key Insight**: Since the two requirements are irreconcilable in a single stream, they should be **structurally decoupled into two streams**. By maintaining two independently evolving residual states $X_i$ and $Y_i$, one acts as the Post-Norm-style normalized main path and the other as the Pre-Norm-style identity path. Sharing the same residual block $F_i$ allows $F_i$ to receive gradient signals from both paths simultaneously at zero parameter overhead.
 
-**Core Idea**: Replacing the "normalization position debate in single-stream" with "Siamese dual-stream"—where two streams share computation modules, each fulfilling a specific normalization semantic.
+**Core Idea**: Replace the "single-stream normalization placement debate" with a "Siamese dual-stream" approach—where two streams share computation modules, each serving a specific normalization semantic.
 
 ## Method
 
 ### Overall Architecture
-SiameseNorm maintains two coupled residual streams. Following Embedding, two streams are initialized as $X_0=Y_0=h$. For each layer $i=0,\dots,N-1$, the forward pass is (see Paper Algorithm 1):
+SiameseNorm avoids the dilemma of "LN before or after the residual" by maintaining two independently evolving residual streams: a Post-Norm-style normalized main path $X$ and a Pre-Norm-style identity highway $Y$. After embedding, both streams are initialized to the same value $X_0=Y_0=h$. Subsequently, each layer shares a single residual block $F_i$ (i.e., Attention or MLP) but updates according to its own normalization semantics. Specifically for layer $i$ (see Algorithm 1): first, the two streams are added in the normalized space to serve as the shared block input $O = F_i(X_i + \mathrm{LN}_i^Y(Y_i))$; then, $O$ is used to update the normalized stream $X_{i+1} = \mathrm{LN}_i^X(X_i + O)$ and the identity stream $Y_{i+1} = Y_i + O$ respectively. At the end of the network, the streams are combined as $X_N + \mathrm{LN}_{\mathrm{final}}(Y_N)$. This structure adds only two lightweight operators $\mathrm{LN}_i^X$ and $\mathrm{LN}_i^Y$ per layer, with parameter and FLOP increases $<0.1\%$. In a 15B MoE model, the measured training speed decreased by only 0.5% with a 2% increase in activation memory.
 
-1. Sum the two streams after aligning them in normalized space to serve as input for the shared residual block: $O = F_i(X_i + \mathrm{LN}_i^Y(Y_i))$
-2. Update the Post-Norm stream (normalized main path): $X_{i+1} = \mathrm{LN}_i^X(X_i + O)$
-3. Update the Pre-Norm stream (identity main path): $Y_{i+1} = Y_i + O$
-
-The final output is $X_N + \mathrm{LN}_{\mathrm{final}}(Y_N)$. Both streams share the same $F_i$ (Attention/MLP), adding only two lightweight normalization operators $\mathrm{LN}_i^X$ and $\mathrm{LN}_i^Y$. The increase in parameters and FLOPs is $<0.1\%$. On a 15B MoE, training speed decreases by only 0.5%, and activation memory increases by only 2%.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    H["Initialization after embedding<br/>X0 = Y0 = h (X normalized stream · Y identity stream)"]
+    subgraph TOPO["Dual-stream coupled residual topology: Each layer shares the same Fi"]
+        direction TB
+        AGG["Normalized input of aggregated representation<br/>X_i + LN_Y(Y_i) is normalized before entering Fi"]
+        F["Shared residual block Fi: Attention / MLP<br/>Produces shared update O"]
+        SCALE["Depth-wise update scaling<br/>O injected into X stream is multiplied by 1/√(l+1)"]
+        UX["Normalized stream (Post-Norm)<br/>Xi+1 = LN_X(Xi + O)"]
+        UY["Identity stream (Pre-Norm)<br/>Yi+1 = Yi + O"]
+        AGG --> F
+        F --> SCALE --> UX
+        F --> UY
+    end
+    H --> AGG
+    UX -.->|N iterations per layer| AGG
+    UY -.-> AGG
+    UX --> OUT["Final combined output<br/>XN + LN_final(YN)"]
+    UY --> OUT
+```
 
 ### Key Designs
 
-1. **Dual-stream Coupled Residual Topology (Core Innovation)**:
-    - **Function**: Physically separates the Pre-Norm identity gradient path and Post-Norm normalized main path into two streams $X$ and $Y$, coupled via a shared residual block $F_i$.
-    - **Mechanism**: Let $S_i=[X_i,Y_i]^\top$. The dual-stream transition Jacobian $\partial S_{j+1}/\partial S_j$ has diagonal blocks exactly equal to the pure Pre-Norm transition $\mathbf{I}+\mathbf{J}_{F_j}\mathbf{J}_{\mathrm{LN}_j^Y}$ and the pure Post-Norm transition $\mathbf{J}_{\mathrm{LN}_j^X}(\mathbf{I}+\mathbf{J}_{F_j})$. This means $F_i$ simultaneously receives "identity highway" gradients from the $Y$ stream and "normalized main path" gradients from the $X$ stream.
-    - **Design Motivation**: Resolves the fundamental contradiction of conflicting normalization semantics on a single path. This topology can also revert to Pre-Norm ($\mathrm{LN}^X=0$), Post-Norm ($\mathrm{LN}^Y=0$), or layer-wise hybrid (Mix-LN) through simple parameter configuration, covering a broader design space.
+**1. Dual-stream coupled residual topology: Splitting the normalization debate into two physical paths**
 
-2. **Depth-wise Scaling**:
-    - **Function**: Multiplies updates injected into the Post-Norm stream ($X$ stream) by $1/\sqrt{l+1}$ (where $l$ is the layer index) to balance the relative contributions of the two streams.
-    - **Mechanism**: Inspired by DeepNorm. In deep layers, the Pre-Norm stream $\|Y_i\|_2$ grows naturally while the Post-Norm stream $\|X_i\|_2$ remains bounded by LN. Consequently, the same shared update $O$ is too small for $Y$ and too large for $X$. Decaying the update amplitude into $X$ reduces optimization sensitivity for the Post-Norm stream in deep layers, ensuring compatibility with Pre-Norm training recipes.
-    - **Design Motivation**: Allows SiameseNorm to be a "drop-in" replacement for Pre-Norm, avoiding the burden of new hyperparameter tuning—a key aspect of its practical value.
+Pre-Norm and Post-Norm are irreconcilable because they impose mutually exclusive requirements on the **same main path**. SiameseNorm simply assigns these two semantics to streams $X$ and $Y$ and stitches them together with a shared $F_i$. The elegance lies in the gradients: stacking the streams into a state $S_i=[X_i,Y_i]^\top$, the dual-stream transition Jacobian $\partial S_{j+1}/\partial S_j$ reveals that its diagonal blocks correspond **exactly** to the pure Pre-Norm transition $\mathbf{I}+\mathbf{J}_{F_j}\mathbf{J}_{\mathrm{LN}_j^Y}$ and pure Post-Norm transition $\mathbf{J}_{\mathrm{LN}_j^X}(\mathbf{I}+\mathbf{J}_{F_j})$. Thus, during backpropagation, $F_i$ simultaneously receives the "identity highway" gradient from the $Y$ stream and the "normalized main path" gradient from the $X$ stream. These optimization signals converge at the parameters of $F_i$—preserving the stable gradient channel of Pre-Norm while gaining the periodic representation scale constraints of Post-Norm. This topology also possesses degradation capabilities: setting $\mathrm{LN}^X=0$ reverts to Pre-Norm, and setting $\mathrm{LN}^Y=0$ reverts to Post-Norm. Intermediate states cover layer-wise mixtures like Mix-LN, effectively encapsulating the entire hybrid normalization design space within one parameterized framework.
 
-3. **Normalized Input**:
-    - **Function**: Applies another LN to the aggregated representation $X_i + \mathrm{LN}_i^Y(Y_i)$ before it enters the shared residual block $F_i$.
-    - **Mechanism**: Ensures that Attention/MLP modules always receive stable, normalized input distributions, aligning with standard Transformer training conventions. Ablations (Table 3) show removing this step increases PPL from 10.43 up to 10.51~10.88.
-    - **Design Motivation**: Acts as necessary "glue" to maintain compatibility with modern Transformer training habits, even though individual sub-streams are already normalized.
+**2. Normalized Input: Ensuring distributionally stable inputs for shared blocks**
+
+While $X_i$ (already a Post-Norm result) and $\mathrm{LN}_i^Y(Y_i)$ are individually normalized, their fusion can result in distribution drift. If fed directly to $F_i$, the input distribution for Attention/MLP would be unstable. Therefore, before entering the shared block, the aggregated representation $X_i + \mathrm{LN}_i^Y(Y_i)$ is normalized (noting $X_i$ is already normalized), keeping the module input aligned with standard Transformer training habits. This step is a necessary "glue" for compatibility; the ablation study (Table 3) shows that removing it increases PPL from 10.43 to 10.51~10.88.
+
+**3. Depth-wise Scaling: Balancing the scales of the two streams in deep layers**
+
+Since each stream evolves independently, scale imbalance can occur in deep layers: the Pre-Norm stream $\|Y_i\|_2$ grows naturally, whereas the Post-Norm stream $\|X_i\|_2$ remains bounded. Consequently, the shared update $O$ becomes relatively small for the $Y$ stream but too large for the $X$ stream, making the deep $X$ stream overly sensitive. Borrowing from DeepNorm, the authors apply a $1/\sqrt{l+1}$ decay (where $l$ is the layer index) to the update specifically injected into the $X$ stream, reducing optimization sensitivity in deep Post-Norm streams. This design allows full compatibility with existing Pre-Norm learning rates and warm-ups—enabling aggressive settings like $\eta=2\times 10^{-3}$ without divergence. This drop-in capability eliminates the need for new hyperparameter tuning.
 
 ### Loss & Training
-The architecture follows the Pre-Norm training recipe exactly: standard AdamW, cosine learning rate, 2K-step warm-up, and no additional hyperparameters. All $\mathrm{LN}$ scales are initialized to 1.0. Language modeling is based on OLMo + FineWeb-Edu trained from scratch, and MoE experiments use OLMoE, totaling over 60,000 A100 hours.
+Ours strictly follows the Pre-Norm training recipe: standard AdamW, cosine learning rate, and 2K-step warm-up with no additional hyperparameters. All $\mathrm{LN}$ scales are initialized to 1.0 (unlike Hyper-Connections, which relies on Pre-Norm-biased initialization), testing the intrinsic stability of the architecture. Language modeling was trained from scratch on OLMo + FineWeb-Edu, and MoE experiments were based on OLMoE, totaling 60,000+ A100 hours.
 
 ## Key Experimental Results
 
-### Main Results: 1.3B Dense Model, Comparison with 8 Normalization Schemes at Different LRs
+### Main Results: 1.3B dense model, comparison with 8 normalization schemes across different learning rates
 
 | Learning Rate $\eta$ | Training Tokens | Pre-Norm PPL | HybridNorm PPL | SpanNorm PPL | SiameseNorm PPL | Avg. Downstream Score |
 |----------------------|-----------------|--------------|----------------|--------------|-----------------|-----------------------|
-| $4\times 10^{-4}$ Conservative | 100B | 11.21 | 10.91 | 11.00 | **10.57** | 52.26 |
-| $1\times 10^{-3}$ High | 100B | 10.84 | **diverge** | 10.86 | **10.43** | 53.53 |
-| $2\times 10^{-3}$ Aggressive | 100B | 10.89 | **diverge** | **diverge** | **10.48** | 55.63 |
-| $2\times 10^{-3}$ Aggressive | 350B | 9.67 | — | — | **9.42** | 58.70 |
+| $4\times 10^{-4}$ (Conservative) | 100B | 11.21 | 10.91 | 11.00 | **10.57** | 52.26 |
+| $1\times 10^{-3}$ (High) | 100B | 10.84 | **diverge** | 10.86 | **10.43** | 53.53 |
+| $2\times 10^{-3}$ (Aggressive) | 100B | 10.89 | **diverge** | **diverge** | **10.48** | 55.63 |
+| $2\times 10^{-3}$ (Aggressive) | 350B | 9.67 | — | — | **9.42** | 58.70 |
 | MoE 15A2B $\eta=10^{-3}$ | 100B | 7.92 | — | — | **7.76** | 63.07 |
 
-Key Observation: HybridNorm and SpanNorm are competitive at conservative LRs but diverge when the LR increases. SiameseNorm is the only method that converges stably at all LRs while maintaining the lowest PPL. At an aggressive LR with 100B tokens, SiameseNorm's Arithmetic accuracy reaches 39.6%, a 41% relative gain over Pre-Norm's 27.0%, reflecting the reasoning benefits of Post-Norm representation control.
+Key observation: While HybridNorm and SpanNorm approach SiameseNorm at conservative learning rates, they diverge once the learning rate increases. SiameseNorm is the only method that stably converges and maintains the lowest PPL across all learning rates. At an aggressive learning rate in the 100B setting, SiameseNorm achieves an Arithmetic accuracy of 39.6%, a 41% relative Gain over Pre-Norm (27.0%), demonstrating the sequence reasoning dividends brought by Post-Norm representation control.
 
-### Cross-depth and Cross-modal Generalization (390M Parameters, 12B tokens, $\eta=10^{-3}$)
+### Cross-depth and cross-modal generalization (390M params fixed, 12B tokens, $\eta=10^{-3}$)
 
 | Configuration | Pre-Norm | SiameseNorm | Gain |
 |---------------|----------|-------------|------|
-| 10 Layers / d=1280 | 17.47 PPL | 16.15 | -1.32 |
-| 17 Layers / d=1024 | 17.23 | 15.69 | -1.54 |
-| 33 Layers / d=768 | 17.29 | **15.64** | -1.65 |
-| 80 Layers / d=512 | 18.02 | 15.98 | **-2.04** |
+| 10 layers / d=1280 | 17.47 PPL | 16.15 | -1.32 |
+| 17 layers / d=1024 | 17.23 | 15.69 | -1.54 |
+| 33 layers / d=768 | 17.29 | **15.64** | -1.65 |
+| 80 layers / d=512 | 18.02 | 15.98 | **-2.04** |
 | DeiT-S (ImageNet) | 79.8 Acc | **81.3** | +1.5 |
 | DiT-L/4 (FID) | 45.21 | **41.34** | -3.87 |
 
-Pre-Norm begins degrading at 33 layers, while SiameseNorm achieves its best PPL at that depth. The gain increases with depth, validating that SiameseNorm mitigates Pre-Norm's "deep dilution" problem.
+Pre-Norm begins to degrade at 33 layers, while SiameseNorm achieves its best PPL at 33 layers. The gain increases with depth, directly validating that SiameseNorm mitigates the "depth dilution" issue of Pre-Norm.
 
 ### Ablation Study (Table 3, $\eta=10^{-3}$)
 
@@ -111,33 +121,33 @@ Pre-Norm begins degrading at 33 layers, while SiameseNorm achieves its best PPL 
 | ✓ | ✓ | Siamese | **10.43** |
 
 ### Key Findings
-- **Siamese topology is the core of stability**: HybridNorm diverges without Depth-Scaling, while the Siamese topology reaches 10.68 PPL even without it and can train with 0 warm-up.
-- **Synergy between Depth-wise Scaling and Siamese**: While scaling is a known technique, it further drops PPL from 10.68 to 10.43 within the SiameseNorm framework.
-- **Gradient statistics validate the mechanism**: Under high LR, HybridNorm gradient norm spikes exceed 100, whereas SiameseNorm and Pre-Norm remain stable below 0.5.
-- **Improved deep layer utilization**: Pruning deep layers in Pre-Norm results in minimal performance drops, whereas doing so in SiameseNorm causes significant degradation, proving deep layers are effectively utilized.
+- **Siamese topology as the core of stability**: HybridNorm diverges without Depth-Scaling, whereas the Siamese topology reaches 10.68 PPL even without Depth-Scaling and can train with 0 warm-up (HybridNorm diverges even when warm-up is reduced to 300 steps).
+- **Synergy between Depth-wise Scaling and Siamese**: Although Depth-wise Scaling is an existing technique, within the SiameseNorm framework, it further reduces PPL from 10.68 to 10.43.
+- **Gradient statistics validate the mechanism**: Under high learning rates, HybridNorm's gradient norm spikes exceed 100, while SiameseNorm and Pre-Norm both remain stable below 0.5—confirming that SiameseNorm inherits Pre-Norm’s optimization stability.
+- **Improved deep layer utilization**: When pruning deep layers, Pre-Norm shows almost no performance drop (indicating useless deep layers), whereas SiameseNorm shows significant drops, proving that deep layers actively contribute to representations.
 
 ## Highlights & Insights
-- **Methodological value of "Structural Decoupling"**: When an open problem (Pre vs Post-Norm) is irreconcilable in a single-stream framework, it is better to split conflicting requirements into two physical paths than to optimize normalization positions. This "coupled dual-stream" approach can be applied to other trade-offs like BatchNorm vs LayerNorm.
-- **Jacobian derivation as a "Compass"**: The block matrix derivation of $\partial S_{j+1}/\partial S_j$ allows the architecture to be "configured as needed"—re-zeroing $\mathrm{LN}^X$ or $\mathrm{LN}^Y$ covers the entire hybrid normalization design space.
-- **Product value in drop-in compatibility**: In industrial-scale models, not needing to retune hyperparameters is a hard requirement for adoption. The $1/\sqrt{l+1}$ scaling delivers this by ensuring the Post-Norm stream works with standard Pre-Norm recipes.
+- **Methodological value of "structural decoupling"**: When a long-standing open problem (Pre vs. Post-Norm) cannot be reconciled within a single-stream framework, rather than continuing to optimize the normalization position, it is better to split the conflicting requirements into two physical paths. This "dual-stream coupling" approach can be transferred to other design trade-offs (e.g., BatchNorm vs. LayerNorm, sparse vs. dense routing).
+- **Jacobian derivation as both "proof" and "compass"**: By representing the block matrix of $\partial S_{j+1}/\partial S_j$, where diagonal blocks correspond to Pre/Post-Norm transitions, the architecture can be "configured on demand"—zeroing $\mathrm{LN}^X$ yields Pre-Norm, while zeroing $\mathrm{LN}^Y$ yields Post-Norm, covering the entire hybrid normalization design space.
+- **Drop-in compatibility as product value**: In industrial-scale models like Qwen3, the requirement to "change architecture without re-tuning hyperparameters" is a critical threshold for adoption. The $1/\sqrt{l+1}$ scaling of Depth-wise Scaling is key to delivering this, as it prevents scale imbalance in deep streams that would otherwise necessitate searching for a new LR.
 
 ## Limitations & Future Work
-- SiameseNorm increases activation memory by ~2%, which might be a bottleneck in VRAM-constrained ultra-large models, necessitating activation checkpointing.
-- The largest scale tested is 15B MoE / 100B tokens; performance on 70B+ dense models or trillion-token scales remains to be verified.
-- Depth-wise Scaling ($1/\sqrt{l+1}$) is empirical; a theoretical analysis of optimal scaling factors is absent.
-- Experiments on ViT/DiT are relatively small-scale (DeiT-S, DiT-L/4); scalability to SD3-level DiTs or ViT-22B is not yet proven.
+- The authors acknowledge that SiameseNorm increases activation memory by approximately 2% (due to two stream states), which may become a bottleneck for ultra-large models with tight memory constraints, requiring activation checkpointing.
+- The maximum experimental scale is 15B MoE / 100B tokens; the performance on 70B+ dense models or trillion-token long training sessions has not yet been verified. Whether the relative scales of the two streams will re-balance over long training periods remains to be seen.
+- The $1/\sqrt{l+1}$ Depth-wise Scaling factor is empirical; a theoretical analysis of the optimal scaling factor is missing, and better layer-dependent scaling strategies may exist.
+- Experiments on ViT/DiT are relatively small-scale (DeiT-S, DiT-L/4) and do not verify scalability on SD3-level DiT or ViT-22B.
 
 ## Related Work & Insights
-- **vs HybridNorm / SpanNorm / Mix-LN**: These stack different normalization semantics on a single path and fail at high LRs; SiameseNorm avoids this via physical separation.
-- **vs ResiDual**: ResiDual uses dual branches but adds them only at the end; SiameseNorm couples both streams at every layer via shared $F_i$.
-- **vs Hyper-Connections**: Hyper-Connections relies on Pre-Norm-biased initialization for stability, whereas SiameseNorm achieves stability through topology even with standard initialization.
-- **vs DeepNorm**: DeepNorm uses residual scaling for single-stream Post-Norm; SiameseNorm incorporates this into a dual-stream framework to make Post-Norm-style flows usable under Pre-Norm recipes.
+- **vs. HybridNorm / SpanNorm / Mix-LN (Single-stream hybrid normalization)**: These methods still stack different normalization semantics on one main path, failing to resolve Post-Norm instability at high learning rates. SiameseNorm avoids this conflict via physical separation, remaining stable at $\eta=10^{-3}$ while HybridNorm diverges.
+- **vs. ResiDual**: ResiDual also employs dual residual branches but fuses them at the end. SiameseNorm couples the streams at every layer through shared $F_i$, combined with Normalized Input and Depth-wise Scaling. In ablations, ResiDual still exhibited loss spikes while Siamese remained stable.
+- **vs. Hyper-Connections (Multi-path residual)**: Hyper-Connections relies on Pre-Norm-biased initialization for stability. This work initializes all LN scales to 1.0, proving SiameseNorm's stability stems from the topology itself rather than initialization tricks.
+- **vs. DeepNorm**: DeepNorm uses residual scaling to enable Post-Norm in deep networks but remains single-stream. SiameseNorm adapts the $1/\sqrt{l+1}$ concept from DeepNorm as an auxiliary mechanism to make Post-Norm-style streams compatible with Pre-Norm recipes.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Reframes normalization as a topological design rather than a local improvement.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 400M / 1.3B / 15B MoE, ViT, DiT, multiple LRs, and depths (60K A100 hours).
-- Writing Quality: ⭐⭐⭐⭐ Clear Jacobian derivations and Algorithm 1; however, some figure descriptions (Fig. 2, 4) are fragmented.
-- Value: ⭐⭐⭐⭐⭐ Fully compatible with Pre-Norm recipes, <2% overhead, already engineered by the Qwen team; extremely low barrier for industrial adoption.
+- Novelty: ⭐⭐⭐⭐⭐ Reframing the "normalization position debate" as "dual-stream topological design" is a paradigmatic rather than incremental improvement.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 400M / 1.3B / 15B MoE, ViT, DiT, 4 learning rates, and 5 depth configurations using 60K A100 hours.
+- Writing Quality: ⭐⭐⭐⭐ Clear Jacobian derivation and concise Algorithm 1; however, descriptions for some figures (Fig.2, Fig.4) are somewhat scattered.
+- Value: ⭐⭐⭐⭐⭐ Fully compatible with Pre-Norm recipes, <2% overhead, and already engineered by the Qwen application team, making the barrier for industrial adoption extremely low.
 
 <!-- RELATED:START -->
 

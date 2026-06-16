@@ -2,78 +2,92 @@
 title: >-
   [Paper Note] IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages
 description: >-
-  [ACL 2026][Medical NLP][Indic Medical Dialogue] This paper introduces IndicMedDialog, the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese, Bengali…
+  [ACL 2026][Medical NLP][Paper Note] This paper constructs IndicMedDialog—the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese / Bengali / Gujarati / Hindi / Marathi / Punjabi / Tamil / Telugu / Urdu), consisting of 2,980 dialogues per language (29,800 instances). The pipeline involves LLaM
 tags:
-  - "ACL 2026"
-  - "Medical NLP"
-  - "Indic Medical Dialogue"
-  - "Parallel Multilingual Dataset"
-  - "LoRA Fine-tuning"
-  - "Clinical Diagnosis"
-  - "Asha Translation Quality Assurance"
+  - ACL 2026
+  - Medical NLP
 date: 2026-05-08
-content_hash: 5bc5bcccdb952207
+content_hash: 8563f52a32fd4645
 ---
-
 # IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages
 
 **Conference**: ACL 2026  
 **arXiv**: [2605.13292](https://arxiv.org/abs/2605.13292)  
 **Code**: https://github.com/ShubhamKumarNigam/IndicMedDialog (Available)  
 **Area**: Medical NLP  
-**Keywords**: Indic Medical Dialogue, Parallel Multilingual Dataset, LoRA Fine-tuning, Clinical Diagnosis, Asha Translation Quality Assurance
+**Keywords**: Indic medical dialogue, parallel multilingual dataset, LoRA fine-tuning, clinical diagnosis, Asha translation quality assurance  
 
 ## TL;DR
-This paper introduces IndicMedDialog, the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese, Bengali, Gujarati, Hindi, Marathi, Punjabi, Tamil, Telugu, and Urdu), comprising 2,980 dialogues × 10 languages (29,800 instances). The data was generated via LLaMA-3.3-70B synthesis, TranslateGemma translation, native speaker validation, and script-aware post-processing for phonetic/orthographic correction. Based on 4-bit quantized LLaMA-3.2-3B and LoRA, IndicMedLM was trained, achieving the highest post-processed accuracy in 7/10 languages (including English, Hindi, and Marathi) and a 95.3% medical safety pass rate. The study also identifies 5 types of systemic failure modes (ID, LC, CDC, TTF, PLG).
+This paper constructs IndicMedDialog—the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese / Bengali / Gujarati / Hindi / Marathi / Punjabi / Tamil / Telugu / Urdu), consisting of 2,980 dialogues per language (29,800 instances). The pipeline involves LLaMA-3.3-70B for dialogue synthesis + TranslateGemma for translation + native speaker verification + script-aware post-processing for phonetic/spelling/character spacing correction. Based on 4-bit quantized LLaMA-3.2-3B + LoRA, the authors developed IndicMedLM, which achieves the highest post-processed accuracy in 7/10 languages (including English, Hindi, and Marathi) with a 95.3% medical safety pass rate, while identifying 5 systematic failure modes (ID/LC/CDC/TTF/PLG).
 
 ## Background & Motivation
 
-**Background**: Medical dialogue AI holds significant potential for symptom assessment and preliminary diagnostic advice. However, current systems are mostly single-turn QA and English-centric. Authentic clinical diagnosis requires multi-turn follow-ups to narrow down differential diagnoses, but multi-turn medical dialogue data is virtually non-existent for the 1.5 billion speakers of Indic languages.
+**Background**: Medical dialogue AI has significant potential for symptom assessment and initial diagnostic advice. However, existing systems are mostly single-turn QA and English-centric. Realistic clinical diagnosis requires multi-turn follow-ups to narrow down the differential diagnosis space, yet there are almost no multi-turn medical dialogue datasets accessible for the 1.5 billion Indic language speakers.
 
-**Limitations of Prior Work**: (1) **Single-turn Dominance**: Systems like ChatDoctor assume single-turn interactions, failing to simulate the iterative inquiry-to-diagnosis process; (2) **Templated Datasets**: While MDDial provides multi-turn English diagnostic corpora, its template-based generation lacks linguistic diversity; (3) **Multilingual Gap**: BiMediX addresses English-Arabic, but a parallel corpus for the nine major Indic languages is missing; (4) **Translation Failures**: Off-the-shelf LLM translations for Indic languages suffer from systemic errors in transliteration, vocabulary, and character spacing.
+**Limitations of Prior Work**: (1) **Single-turn dominance**: Systems like ChatDoctor assume single-turn interactions, failing to simulate the "physician inquiry -> differential diagnosis" process; (2) **Templated datasets**: MDDial provides multi-turn English diagnostic corpora but uses template generation, resulting in weak linguistic diversity; (3) **Multilingual gap**: BiMediX addresses English-Arabic bilingualism, but parallel data for the nine major Indic languages is completely absent; (4) **Naive translation failure**: Off-the-shelf LLM translations for Indic languages frequently exhibit systematic errors in transliteration, lexical accuracy, and character spacing.
 
-**Key Challenge**: Deploying usable medical dialogue AI in low-resource languages requires solving the "triple constraint" of high-quality multi-turn clinical corpora × parallel multilingualism × affordable compute—factors where data is expensive or private, and technical barriers are high.
+**Key Challenge**: Deploying usable medical dialogue AI for low-resource languages requires solving the "triple constraint" of high-quality multi-turn clinical corpora × multilingual parallelism × affordable compute—the former is expensive and involves privacy issues, while the latter two present high technical barriers.
 
-**Goal**: (a) Construct the first 10-language parallel multi-turn medical dialogue corpus using a hybrid pipeline of synthesis, translation, and human verification; (b) Train IndicMedLM using 4-bit quantized small models + LoRA for commodity hardware; (c) Introduce optional patient pre-context (age, gender, allergies, etc.) to simulate realistic clinical contexts; (d) Reveal real failure modes in Indic medical dialogues through physician evaluation and a structured error taxonomy.
+**Goal**: (a) Construct the first 10-language parallel multi-turn medical dialogue corpus via a hybrid pipeline of synthesis + translation + human correction; (b) Train IndicMedLM using 4-bit quantized small models + LoRA for deployment on commodity hardware; (c) Introduce optional patient pre-context (age/sex/allergies) to simulate realistic clinical contexts; (d) Reveal real-world failure modes of Indic medical dialogue through physician evaluation and error taxonomy.
 
-**Key Insight**: Using MDDial as seed data → LLM-based augmentation for dialogue diversity → TranslateGemma combined with native speaker rating and script-aware post-processing for translation reliability → LoRA + quantization for deployable small models.
+**Key Insight**: Utilize MDDial as a seed corpus → expand dialogue diversity via LLM synthesis → ensure translation reliability via TranslateGemma + native speaker raters + script-aware post-processing → enable deployment via LoRA + quantization.
 
-**Core Idea**: A tripartite approach of "corpus construction + small-model engineering + systematic error diagnosis" to address the challenges of low-resource Indic medical NLP.
+**Core Idea**: A three-part approach comprising "corpus construction + small model engineering deployment + systematic error diagnosis" to tackle the challenges of low-resource Indic medical NLP.
 
 ## Method
 
 ### Overall Architecture
 The framework is divided into data construction, model training, and error analysis:
 
-1.  **Data Construction**: (i) Llama-3.3-70B-Versatile (via Groq) synthesized 1,101 multi-turn diagnostic dialogues covering 12 diseases, 118 symptoms, and 4-8 turns, incorporating non-deterministic patient responses and vague descriptions; merged with 1,879 turns from MDDial to reach 2,980. (ii) TranslateGemma translated the English version into 9 Indic languages with structured prompting to preserve clinical semantics. (iii) Script-aware post-processing mapped phonetic/spelling/spacing errors to the nearest correct forms. (iv) Two native speakers per language independently rated translation quality (T) and clinical safety (S) on 10-point scales (means: $\bar T = 9.50$, $\bar S = 9.56$).
-2.  **Model Training (IndicMedLM)**: LLaMA-3.2-3B-Instruct base + 4-bit NF4 quantization + LoRA (rank 16, $\alpha=16$). LoRA was applied to all attention and MLP projections. Training used AdamW-8bit ($lr=2\times 10^{-4}$, $wd=0.001$), batch size 8 (2×4 grad accum), 300 steps with 5 warmups using BF16/FP16. Each language was trained separately using ShareGPT-style formatting; optional patient pre-context was prefixed to dialogues to allow context-aware questioning.
-3.  **Two-stage Post-processing Evaluation**: Model outputs often wrap the correct diagnosis in explanatory text, causing raw accuracy to underestimate performance. ChatGPT was utilized as an LLM judge for "constrained semantic equivalence classification"—mapping free-form text to one of 12 standard labels or "NULL," thereby mitigating hallucinations while recovering formatted errors.
+1.  **Data Construction**: (i) Llama-3.3-70B-Versatile (via Groq) was used to synthesize 1,101 multi-turn diagnostic dialogues covering 12 diseases / 118 symptoms / 4-8 turns, incorporating non-deterministic patient responses and vague descriptions; these were merged with 1,879 MDDial dialogues for a total of 2,980 instances; (ii) TranslateGemma translated the English version into 9 Indic languages with structured prompts; (iii) Script-aware post-processing mapped phonetic/spelling/spacing errors to the nearest correct forms; (iv) Two native speakers per language independently scored translation quality $T$ and clinical safety $S$ (out of 10), yielding means of $\bar T = 9.50$ and $\bar S = 9.56$.
+2.  **Model Training (IndicMedLM)**: LLaMA-3.2-3B-Instruct base model + 4-bit NF4 quantization + LoRA (rank 16, α=16, dropout 0) applied to all attention and MLP projections. Training used AdamW-8bit, $lr=2\times 10^{-4}$, weight decay 0.001, batch size 8, over 300 steps. Conversations follow the ShareGPT format (human/gpt). Optional patient pre-context is prefixed to the dialogue.
+3.  **Two-stage Post-processing Evaluation**: Model outputs often wrap correct diagnoses in long explanatory sentences, causing raw accuracy to underestimate true capability. A ChatGPT-based LLM judge was used for "constrained semantic equivalence classification"—given the free-text output and 12 standard disease names, the judge selects from the closed set or returns NULL, avoiding hallucinations while recovering "correct but incorrectly formatted" cases.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 4}}}%%
+flowchart TD
+    A["MDDial English Seed<br/>1,879 turns"] --> S1
+    subgraph S1["Corpus Chain"]
+        direction TB
+        B["Llama-3.3-70B Synthesis<br/>12 Diseases / 118 Symptoms"] --> C["TranslateGemma 9 Indic Langs"]
+        C --> D["Script-aware Post-processing<br/>Unicode Mapping"]
+        D --> E["Native Speaker Review<br/>T=9.50 / S=9.56"]
+    end
+    S1 --> F["IndicMedDialog<br/>2,980 x 10 langs = 29,800"]
+    F --> S2
+    subgraph S2["LoRA + Quantization + Context"]
+        direction TB
+        G["LLaMA-3.2-3B + 4-bit NF4"] --> H["LoRA on Attention & MLP"]
+        H --> I["Patient Pre-context<br/>Age/Sex/Allergies"]
+    end
+    S2 -->|Language-specific SFT| J["IndicMedLM"]
+    J --> S3
+    subgraph S3["Evaluation & Failure Diagnosis"]
+        direction TB
+        K["ChatGPT closed-set judge<br/>Free-text → Class/NULL"] --> L["Post-accuracy Recovery<br/>Hindi/Marathi +53/+55pp"]
+        L --> M["5 Failure Mode Taxonomy<br/>ID / LC / CDC / TTF / PLG"]
+    end
+```
 
 ### Key Designs
 
-1.  **Multilingual Pipeline with Synthesis + Translation + Script-aware Post-processing**:
-    *   **Function**: Generates semantically consistent, clinically sound, and linguistically accurate 10-language parallel corpora without access to real clinical multi-turn transcripts.
-    *   **Mechanism**: Llama-3.3-70B synthesis → TranslateGemma translation → Script-aware post-processing for phonetic/orthographic correction → Native speaker double-blind arbitration. Post-processing corrects script-specific issues (e.g., Bengali character spacing) via nearest-form mapping.
-    *   **Design Motivation**: Direct translation often produces "Bengali-looking but incorrectly spelled" strings. Post-processing based on Unicode rules for target scripts, validated by native speakers ($\bar T = 9.50$), avoids self-scoring traps.
+**1. Three-stage corpus chain (Synthesis + Translation + Script-aware Post-processing): Creating 10-language parallel corpora that are semantically consistent and clinically sound.**
+The primary obstacle for low-resource Indic languages is that off-the-shelf LLMs often produce strings that look like the target script but are misspelled. By utilizing script-aware post-processing, the pipeline maps distorted Unicode forms back to the nearest correct linguistic representation. Human verification by native speakers ensures the upper bound of quality.
 
-2.  **Deployable Small Model with LoRA + 4-bit Quantization + Patient Pre-context**:
-    *   **Function**: Enables 3B models to perform multi-turn personalized history taking on consumer hardware.
-    *   **Mechanism**: (i) 4-bit NF4 quantization reduces VRAM requirements. (ii) LoRA covers both attention and MLP layers ($r=16$) to adapt both linguistic representation and task knowledge. (iii) Optional patient pre-context (age, gender, allergies, etc.) allows the model to skip known info and focus on differential questioning.
-    *   **Design Motivation**: The bottleneck for medical AI deployment in rural clinics is the lack of GPU clusters. The architecture is driven by low-compute constraints. Pre-context mirrors real clinical workflows where doctors do not repeat known information.
+**2. LoRA + 4-bit Quantization + Patient Pre-context: Enabling 3B models to perform personalized inquiry on commodity hardware.**
+To address the lack of high-end GPUs in rural clinics, the authors used 4-bit NF4 quantization and LoRA. Applying LoRA to all projections ensures the model adapts both linguistic representation and task knowledge. The patient pre-context allows the model to skip known information (e.g., age, allergies) and focus follow-up questions on differentiating symptoms, mimicking real-world clinical workflows.
 
-3.  **Two-stage Post-processing Evaluation + 5-Category Failure Mode Taxonomy**:
-    *   **Function**: (a) Recovers "correct but poorly formatted" predictions; (b) Explains the divergence in failure modes across Indic languages.
-    *   **Mechanism**: Post-processing uses ChatGPT as a closed-set judge. The study identifies 5 Failure Modes: **FM1 Instruction Drift** (prose without labels), **FM2 Label Collapse** (multiple diseases mapped to one label, e.g., mapping all Bengali cases to "Lung Infection"), **FM3 Cross-Domain Confusion** (e.g., CAD → Thyroiditis), **FM4 Tokenization/Truncation Failure** (truncation in Punjabi/Telugu), and **FM5 Paraphrase-over-Label Generation** (descriptive output instead of standard labels).
-    *   **Design Motivation**: Raw accuracy severely underestimates Hindi/Marathi performance (19% vs. 73% post-processed). The taxonomy categorizes "model failure" into formatting, label collision, domain confusion, truncation, or paraphrasing.
+**3. Two-stage post-processing + 5 Failure Mode taxonomy: Recovering hidden accuracy and identifying specific failure mechanisms.**
+The "Raw vs. Post" evaluation highlights that models often provide correct diagnoses but fail to follow formatting instructions. The 5 Failure Modes (FMs) categorize errors into: FM1 Instruction Drift, FM2 Label Collapse (mapping multiple diseases to one pseudonym), FM3 Cross-Domain Confusion, FM4 Tokenization/Truncation Failure (specific to Punjabi/Telugu), and FM5 Paraphrase-over-Label Generation.
 
 ### Loss & Training
-Standard causal LM SFT loss (no special reward/KD). Each language was trained with identical hyperparameters. Inference parameters: $temp=0.1, top\_p=0.95, max\_new=128$. Evaluation included (i) automated diagnostic accuracy (raw vs. post) and (ii) expert Likert scoring (1-5) and safety checks by three medical students (MBBS), achieving Krippendorff's $\alpha=0.81$.
+Standard causal LM SFT loss; individual language training with identical hyperparameters; inference with temperature=0.1, top-p=0.95, max_new_tokens=128. Evaluation included (i) automated diagnostic accuracy (raw vs. post) and (ii) expert Likert scoring (1-5) and safety checks by three MBBS students (Krippendorff's α=0.81).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Diagnostic accuracy (%) across 10 languages (Raw: original string match; Post: LLM judge recovery):
+Diagnostic accuracy (%) across 10 languages:
 
 | Language | GEMMA Post | Tiny-AYA Post | LLaMA Base Post | **IndicMedLM Raw** | **IndicMedLM Post** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -88,63 +102,61 @@ Diagnostic accuracy (%) across 10 languages (Raw: original string match; Post: L
 | Tamil | 11.91 | 3.83 | 6.80 | 6.38 | 6.80 |
 | Telugu | 6.38 | 0.00 | 4.68 | 1.28 | 5.96 |
 
-**Ours** achieves the highest post-processed accuracy in 7/10 languages. The massive Raw-to-Post jumps in Hindi (+53.6pp) and Marathi (+55.3pp) indicate that true diagnostic capability was hidden by formatting artifacts.
+### Ablation Study / Evaluation (IndicMedLM Performance)
 
-### Ablation Study / Expert Evaluation
-
-| Dimension | IndicMedLM |
+| Metric | IndicMedLM |
 | :--- | :--- |
 | Medical Safety Pass Rate | **95.3%** |
 | Symptom Extraction (1-5) | 4.20 |
 | Context Memory (1-5) | 4.40 |
 | Diagnostic Correctness (1-5) | 4.10 |
 | Conversational Flow (1-5) | 4.30 |
-| Efficiency (1-5) | 4.00 |
-| Inter-annotator Krippendorff $\alpha$ | 0.81 (Strong) |
-| Translation Quality (10-pt) | $\bar T = 9.50$ |
-| Clinical Safety (10-pt) | $\bar S = 9.56$ |
+| Inter-annotator Krippendorff α | 0.81 |
 
 ### Key Findings
--   **Pseudo-low scores in Hindi/Marathi**: Raw scores of 19%/13% jumped to 73%/69% post-processing, showing that the model tends to wrap answers in idiomatic hedging, a metric artifact rather than a lack of capability.
--   **Extreme variance across diseases**: Traumatic Brain Injury achieved 94.7% in English/Hindi but 0% in Assamese/Tamil/Telugu; conversely, Conjunctivitis achieved 100% in Punjabi despite low overall language scores.
--   **Tokenizer Gap**: FM4 Truncation appeared only in Punjabi/Telugu (Gurmukhi/Telugu scripts) and not in Hindi/Marathi (Devanagari), proving that LLaMA's Unicode coverage is the bottleneck rather than data quantity.
--   **Bengali Label Collapse**: Mapping all cases to "Lung Infection" reflects a majority-class bias in semantic hypernyms, suggesting the need for balanced SFT labels.
--   **95.3% Safety Pass**: 1483/1556 dialogues were physician-verified as safe, indicating controlled medical risk in the synthesis + LoRA route.
+-   **Artificially Low Raw Scores**: Hindi/Marathi raw scores (19%/13%) jump to (73%/69%) after post-processing, suggesting models possess diagnostic knowledge but use idiomatic hedging that breaks exact matching.
+-   **Disease Variance**: Performance for "Traumatic Brain Injury" reaches 94.7% in English/Hindi but 0% in Assamese/Tamil/Telugu, indicating high heterogeneity across language-disease pairs.
+-   **Tokenizer Gap**: FM4 (Truncation) occurred in Punjabi/Telugu but not Hindi/Marathi, proving the bottleneck is the LLaMA base model's Unicode coverage rather than training data volume.
+-   **Bengali Label Collapse**: Five diseases were flattened into "lung infection," reflecting a majority-class bias in semantic hypernyms.
 
 ## Highlights & Insights
--   The creation of the first 10-language parallel multi-turn medical dialogue corpus is a significant community contribution for 1.5 billion people.
--   The **5-Category Failure Mode Taxonomy** serves as a "diagnostic framework for diagnostic errors," providing a roadmap for improvement (e.g., FM1 requires formatting rewards, while FM4 requires better tokenizers).
--   **Post-processing recovery** highlights a universal lesson: idiomatic hedging in low-resource languages can lead hard-matching metrics to drastically underestimate model intelligence.
--   **Patient Pre-context** is a simple but effective clinical design that prevents AI from asking redundant questions.
--   **LoRA + 4-bit Quantization** explicitly addresses the accessibility mission by enabling deployment in resource-constrained regions.
+-   The construction of a **10-language parallel multi-turn corpus** provides immense value to the community, addressing a resource gap for 1.5 billion people.
+-   The **5-category FM taxonomy** is the first systematic error diagnosis framework for this field, offering specific prescriptions (e.g., FM4 requires changing the tokenizer, FM1 requires format rewards).
+-   The **post-processing recovery** highlights a universal lesson for low-resource NLP: idiomatic hedging in target languages can lead to significant underestimation of model capabilities.
+-   The **4-bit + LoRA engineering path** specifically targets deployment in resource-constrained regions, aligning the technical approach with the paper's mission of accessibility.
 
 ## Limitations & Future Work
--   The dataset covers only 12 diseases and 118 symptoms; it uses synthetic data which lacks the ground-truth nuance of real doctor-patient interactions.
--   Accuracy remains below 10% for languages like Assamese, Tamil, and Telugu, largely due to base model tokenizer limitations. A potential fix is using Indic-optimized base models (e.g., Sarvam-1).
--   Evaluation relies on ChatGPT as a judge (evaluator dependency). Expert evaluation was conducted on a limited sample size.
+-   Data coverage is limited to 12 diseases and 118 symptoms; the corpus lacks real patient-physician interactions as ground truth.
+-   Performance in Assamese, Tamil, Telugu, and Urdu remains low (<10% accuracy), primarily due to base model tokenization and pre-training distribution.
+-   Evaluation relies on ChatGPT as a judge, creating a circular dependency on closed-source models.
+-   The logic for when to stop inquiry and finalize a diagnosis (termination logic) was not fully explored.
 
 ## Related Work & Insights
--   **vs. MDDial (2023)**: MDDial uses English templates; **Ours** upgrades it with synthesis-based diversity and 10-language parallel scaling.
--   **vs. BiMediX (2024)**: BiMediX covers English-Arabic; **Ours** extends this to the high-demand Indic language group.
--   **vs. NoteChat (2024)**: NoteChat generates dialogues from clinical notes; **Ours** uses disease schemas. Future work could combine both for higher realism.
+-   **vs. MDDial**: MDDial is English-template based; this work upgrades it to a diverse, verified, and parallel multilingual corpus.
+-   **vs. BiMediX**: Expands multilingual coverage from 2 to 10 languages.
+-   **vs. ChatDoctor / AMIE**: While those focus on English or Chinese, this work proves that small models with LoRA/Quantization can achieve usable multi-turn diagnosis in low-resource settings.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ (First parallel corpus; engineering composition is strong).
--   Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive 10-language analysis, 12-disease breakdown, and physician evaluation).
+-   Novelty: ⭐⭐⭐⭐ (First of its kind dataset; engineering-focused but high social impact).
+-   Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive 10-language analysis and expert evaluation, though some ablations are missing).
 -   Writing Quality: ⭐⭐⭐⭐ (Clear structure and well-designed tables).
--   Value: ⭐⭐⭐⭐⭐ (Opens source data and models for underserved regions).
+-   Value: ⭐⭐⭐⭐⭐ (Strong community impact via open-source data and code).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+- (Macherla et al., 2023) MDDial: Multi-turn Differential Diagnosis Dialogue
+- (Pieri et al., 2024) BiMediX: Bilingual Medical Mixture of Experts
+- (Wang et al., 2024) NoteChat: Leveraging Clinical Notes for Medical Dialogue
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](../../ICLR2026/medical_nlp/atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
 - [\[ACL 2026\] Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework](region-grounded_report_generation_for_3d_medical_imaging_a_fine-grained_dataset_.md)
-- [\[ACL 2026\] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)
-- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
 - [\[NeurIPS 2025\] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs](../../NeurIPS2025/medical_nlp/shallow_robustness_deep_vulnerabilities_multi-turn_evaluation_of_medical_llms.md)
+- [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
+- [\[ACL 2025\] VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare](../../ACL2025/medical_nlp/vital_pluralistic_alignment_healthcare.md)
 
 </div>
 

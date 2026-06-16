@@ -2,109 +2,104 @@
 title: >-
   [Paper Note] ECSEL: Explainable Classification via Signomial Equation Learning
 description: >-
-  [ICML 2026][Causal Inference][signomial function] ECSEL employs "one signomial function (sum of power-law terms with real exponents) per class + softmax" as a classifier. Combined with L1 sparse regularization and multi-…
+  [ICML 2026][Causal Inference][Paper Note] ECSEL employs "one signomial (sum of power-law terms with real exponents) per category + softmax" as a classifier. Combined with L1 sparse regularization and multi-stage optimization, it recovers 95.86% of target equations on symbolic regression benchmarks like AI Feynman with significantly lower compute than SOTA, whi
 tags:
-  - "ICML 2026"
-  - "Causal Inference"
-  - "signomial function"
-  - "symbolic regression"
-  - "explainable classification"
-  - "L1 sparse regularization"
-  - "closed-form attribution"
+  - ICML 2026
+  - Causal Inference
 date: 2026-05-08
-content_hash: 9b372743ec879bde
+content_hash: 4f6b14c5f4aa85ea
 ---
-
 # ECSEL: Explainable Classification via Signomial Equation Learning
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.21789](https://arxiv.org/abs/2601.21789)  
 **Code**: https://github.com/AdiaLumadjeng/ecsel (Available)  
-**Area**: Explainable Machine Learning / Symbolic Regression / Inherently Interpretable Classifiers  
-**Keywords**: signomial function, symbolic regression, explainable classification, L1 sparse regularization, closed-form attribution  
+**Area**: Explainable Machine Learning / Symbolic Regression / Inherently Interpretable Classifier  
+**Keywords**: signomial functions, symbolic regression, explainable classification, L1 sparse regularization, closed-form attribution  
 
 ## TL;DR
-ECSEL employs "one signomial function (sum of power-law terms with real exponents) per class + softmax" as a classifier. Combined with L1 sparse regularization and multi-stage optimization, it recovers 95.86% of target equations on symbolic regression benchmarks like AI Feynman with significantly less compute than SOTA methods, while matching XGBoost/MLP performance across 11 classification datasets. All feature attributions are derived closed-form from model parameters.
+ECSEL employs "one signomial (sum of power-law terms with real exponents) per category + softmax" as a classifier. Combined with L1 sparse regularization and multi-stage optimization, it recovers 95.86% of target equations on symbolic regression benchmarks like AI Feynman with significantly lower compute than SOTA, while achieving parity with XGBoost/MLP on 11 classification datasets. All feature attributions are derived in closed-form from model parameters.
 
 ## Background & Motivation
 
-**Background**: Current Explainable AI (XAI) follows two main paradigms. The first is *post-hoc* explanation (LIME, SHAP, Integrated Gradients), which trains a surrogate model to explain black-box predictions. The second is *inherently interpretable* models (Decision Trees, GAM, sparse linear models), where the structure itself serves as the explanation. Symbolic Regression (SR) represents an extreme form of the latter, directly producing human-readable equations.
+**Background**: Current explainable AI follows two main tracks. One is *post-hoc* explanation (LIME, SHAP, Integrated Gradients), which trains surrogate models to explain black-box predictions. The second is *inherently interpretable* models (decision trees, GAMs, sparse linear models), where the structure itself provides the explanation. Symbolic Regression (SR) represents an extreme form of the second category, directly producing human-readable equations.
 
-**Limitations of Prior Work**: General SR methods (GP, PySR, DGSR, NeSymRes) define the search space as "arbitrary functional forms," leading to two issues: (1) extreme computational cost (e.g., DGSR averages 612s per equation and frequently times out); (2) performance collapse on high-dimensional data. Meanwhile, post-hoc explanations are criticized by researchers like Rudin for being unreliable in high-stakes decision-making.
+**Limitations of Prior Work**: General SR methods (GP, PySR, DGSR, NeSymRes) define the search space as "arbitrary functional forms," leading to two issues: (1) extreme computational cost, with DGSR averaging 612s per equation and frequent timeouts; (2) performance collapse on high-dimensional data. Meanwhile, post-hoc explanations are criticized by researchers like Rudin for being unreliable in high-stakes decision-making.
 
-**Key Challenge**: The expressive capacity of general SR is *not realized in benchmarks*. The authors observed that 45 out of 100 physical equations in AI Feynman are essentially signomials (of the form $\sum_k \alpha_k \prod_{j} x_j^{\beta_{k,j}}$). Benchmarks already suggest a specific structure, yet general methods persist in blind-searching massive spaces.
+**Key Challenge**: The expressive power of general SR is *not fully realized by benchmarks*. The authors observed that 45 out of 100 physics equations in AI Feynman are inherently signomials (of the form $\sum_k \alpha_k \prod_j x_j^{\beta_{k,j}}$). Thus, while benchmarks exhibit specific structures, general methods persist in blind searches within an expansive space.
 
-**Goal**: (1) Establish signomials as a formal "model family" rather than just an optimization target; (2) Enable signomials for both SR and classification; (3) Derive "global/decision-boundary/local" explanations *closed-form* from model parameters, eliminating the need for sampling.
+**Goal**: (1) To establish signomials as a formal "model family" rather than just an optimization target; (2) to enable signomials for both SR and classification; and (3) to derive "global/decision boundary/local" explanations *in closed-form* from model parameters without sampling.
 
-**Key Insight**: In log-space, a signomial term is a linear function ($\log z = \sum_j \beta_j \log x_j + \log\alpha$). Thus, the exponents $\beta_{k,j}$ directly encode the "elasticity of features relative to the output" (as defined in economics). This provides a natural "parameters-as-explanation" structure.
+**Key Insight**: Signomials are linear functions in log-space ($\log z = \sum_j \beta_j \log x_j + \log\alpha$). Thus, exponents $\beta_{k,j}$ directly encode the "elasticity of features relative to the output" (a concept from economics). This provides a natural "parameters-as-explanation" structure.
 
-**Core Idea**: Replace deep classifiers with "one signomial per class + softmax + L1 regularization," trading training complexity for zero-cost interpretability.
+**Core Idea**: Replace deep classifiers with "one signomial per class + softmax + L1 regularization," trading training cost for "zero-cost explanations."
 
 ## Method
 
 ### Overall Architecture
 
-The input consists of an arbitrary feature vector $x \in \mathbb{R}^m$, initially mapped to $[1, 10]$ via affine transformation to satisfy the positivity requirement of signomials. For a $C$-class problem, each class $c$ learns a signomial score function composed of $K$ power-law terms:
+ECSEL addresses the dual tasks of symbolic regression and classification while ensuring that explanations are read directly from parameters rather than through post-hoc sampling. It treats "one signomial function per category + softmax" as the classifier backbone. Given a feature vector $x \in \mathbb{R}^m$, an affine transformation first maps each dimension to $[1, 10]$ (to ensure positive bases for power laws). For each class $c$, the model learns a score function $z_c(x) = \sum_{k=1}^{K} \alpha_{c,k} \prod_{j=1}^{m} x_j^{\beta_{c,k,j}}$ composed of $K$ additive power-law terms. Parameters include coefficients $\alpha_{c,k} \in \mathbb{R}$ and exponents $\beta_{c,k,j} \in \mathbb{R}$, with hyperparameter $K$ controlling complexity. Probabilities are generated via softmax for multi-class or sigmoid for binary problems. For SR, the cross-entropy loss is replaced by MSE. The authors support this structure with the **Signomial Universal Approximation Theorem**: signomials are dense for continuous functions on compact subsets of $\mathbb{R}^m_{>0}$, positioning them as "universal approximators" like neural networks, albeit with a natural bias toward multiplicative power-law relationships.
 
-$$z_c(x) = \sum_{k=1}^{K} \alpha_{c,k} \prod_{j=1}^{m} x_j^{\beta_{c,k,j}}$$
-
-Specifically, $z_c(x) = \sum_{k=1}^{K} \alpha_{c,k} \prod_{j=1}^{m} x_j^{\beta_{c,k,j}}$, where parameters include coefficients $\alpha_{c,k} \in \mathbb{R}$ and exponents $\beta_{c,k,j} \in \mathbb{R}$. $K$ controls complexity: $K=1$ is a single power law, while $K>1$ is an additive combination. Probabilities are given via softmax (multi-class) or sigmoid (binary). The SR version replaces cross-entropy with MSE.
-
-The authors prove a **Signomial Universal Approximation Theorem**: by mapping exponential-linear functions on the positive orthant via $\log$ transformations and applying Stone-Weierstrass, signomials are shown to be dense in continuous functions on compact subsets of $\mathbb{R}^m_{>0}$. This places signomials on par with neural networks as universal approximators, though with an inherent preference for multiplicative power-law relationships.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Feature Vector x"] --> B["Affine Mapping to [1, 10]<br/>Ensures positive power-law bases"]
+    B --> C["Class-specific signomial + L1 Exponent Sparsification<br/>One power-law sum score z_c per class"]
+    C --> D["softmax / sigmoid Output Probabilities"]
+    E["Multi-stage staged optimization<br/>L-BFGS-B for K=1; Adam→Fine-tune→L-BFGS for K>1"] -->|"Train coefficients α and exponents β"| C
+    C -->|"Direct parameter reading post-training"| F["Closed-form Triple Explanation Family<br/>Global Elasticity / Decision Boundary / Local Attribution"]
+```
 
 ### Key Designs
 
-1.  **Class-specific Signomial + L1 Exponent Sparsification**:
-    - **Function**: Ensures the classifier's score function is a human-readable "multiplication/division" equation with automatic feature selection.
-    - **Mechanism**: Each class $c$ has independent $\{\alpha_{c,k}, \beta_{c,k,j}\}$. The training objective is $\mathcal{L} = -\frac{1}{N}\sum_i \log p_{y_i}(x_i) + \lambda \sum_{c,k,j} |\beta_{c,k,j}|$. The L1 term acts only on the *exponents*, pushing $\beta$ of irrelevant features to 0. This is equivalent to removing $x_j^0 = 1$ from the term, producing sparse equations. This differs from coefficient $(\alpha)$ sparsification: sparsifying $\beta$ performs "feature selection," while sparsifying $\alpha$ performs "term selection."
-    - **Design Motivation**: Traditional GAMs/linear models are additive and cannot capture multiplicative interactions (e.g., PageValue/ExitRate in e-commerce). Signomials naturally express these interactions, and since they are linear after a $\log$ transformation, they allow closed-form attribution.
+**1. Class-specific signomial + L1 Exponent Sparsification: Turning score functions into readable equations with automatic feature selection**
 
-2.  **Staged Optimization ($K=1$ vs $K>1$)**:
-    - **Function**: Ensures reliable convergence in the non-convex exponent space, transforming "theoretically elegant signomials" into a "practically runnable" method.
-    - **Mechanism**: For $K=1$, the objective is a low-dimensional smooth function solved via L-BFGS-B. For $K>1$, the space is high-dimensional and non-convex, requiring a three-stage strategy: ① Adam + strong L1 for "structure discovery" to differentiate terms; ② Adam with reduced L1 for "refinement"; ③ L-BFGS initialized from the best Adam point for final "polishing." Multi-start with random seeds is used, along with $\log$-domain transformations and feature scaling for numerical stability.
-    - **Design Motivation**: Signomial exponents can be any real number (negative, fractional). Gradients with respect to $\beta$ involve $z_{c,k}(x) \cdot \log x_j$, which are prone to explosion. Direct Adam optimization often fails; the staged strategy uses noisy gradients to escape local optima before refining with second-order methods, increasing recovery rates from 59% (DGSR) to 95.86%.
+Traditional GAMs and sparse linear models only allow additive combinations, failing to capture multiplicative interactions like PageValue and ExitRate in e-commerce. While black-box models capture these, they require SHAP for explanation. ECSEL gives each class $c$ an independent set of $\{\alpha_{c,k}, \beta_{c,k,j}\}$, making its score function a human-readable "fractional/multiplicative" equation. Significant sparsification is achieved by applying L1 penalties specifically to the *exponents*: the objective $\mathcal{L} = -\frac{1}{N}\sum_i \log p_{y_i}(x_i) + \lambda \sum_{c,k,j} |\beta_{c,k,j}|$ pushes irrelevant feature exponents $\beta$ toward 0. Since $\beta=0$ implies $x_j^0 = 1$, the feature is effectively removed from that term, producing sparse equations. Unlike sparsifying coefficients $\alpha$ (which performs "term selection"), sparsifying $\beta$ enables finer "feature selection" within each term.
 
-3.  **Closed-form Tri-level Explanations (Global Elasticity / Decision Boundary / Local Attribution)**:
-    - **Function**: Once trained, explanation queries are simple algebraic operations on parameters with zero additional computation.
-    - **Mechanism**: (a) **Global Elasticity** $E_{c,j}(x) = \partial \log z_c / \partial \log x_j = \sum_k \frac{z_{c,k}(x)}{z_c(x)} \beta_{c,k,j}$, which simplifies to the constant $\beta_{c,j}$ when $K=1$; (b) **Counterfactuals**: the new score after scaling $x_j$ by $q$ is $z_c^{\text{new}}(x) = \sum_k q^{\beta_{c,k,j}} z_{c,k}(x)$ without re-prediction; (c) **Decision Boundary Sensitivity** $\partial(z_c - z_{c'})/\partial \log x_j$, which for $K=1$ is $z_c \beta_{c,j} - z_{c'} \beta_{c',j}$, directly showing which exponent difference drives class competition; (d) **Local Attribution** uses $\log z_{c,k}(x) = \log z_{c,k}(b) + \sum_j \beta_{c,k,j} \log(x_j/b_j)$, which is an *exact* SHAP-style decomposition for $K=1$ and a first-order linearization $\phi_j \approx G_{c,j}(x^*)(\log x_j - \log x_j^*)$ for $K>1$.
-    - **Design Motivation**: SHAP/LIME are slow because they use Monte Carlo sampling to approximate quantities that should be closed-form. The $\log$-linear structure of signomials provides analytical forms—a "structural dividend." Theorem 3.2 formally proves that ECSEL satisfies seven axiomatic properties (G1-G3, D1-D2, L1-L2).
+**2. Multi-stage staged optimization: Reliable convergence in non-convex exponent space**
+
+While signomials are mathematically elegant, exponents $\beta$ can take any real value, and gradients relative to $\beta$ (of the form $z_{c,k}(x) \cdot \log x_j$) are prone to explosion. Direct optimization with Adam often leads to local minima or divergence. ECSEL uses staged optimization: for $K=1$, the objective is a low-dimensional smooth function solved via L-BFGS-B. For $K>1$, a three-stage strategy is used: (1) Adam with strong L1 for "structure discovery"; (2) reduced L1 for "refinement"; and (3) L-BFGS initialized from the best Adam point for final "polishing," using multi-start with random seeds. Log-domain transformations and feature scaling are applied to ensure numerical stability.
+
+**3. Closed-form Triple Explanation Family: Algebraically deriving global elasticity, decision boundaries, and local attribution**
+
+Methods like SHAP and LIME are slow (KernelSHAP takes 28.5s on OSI) because they use Monte Carlo sampling to approximate quantities that should have analytical forms. ECSEL's log-linear structure allows these to be written in closed-form: (a) **Global Elasticity** $E_{c,j}(x) = \partial \log z_c / \partial \log x_j = \sum_k \frac{z_{c,k}(x)}{z_c(x)} \beta_{c,k,j}$, which simplifies to the constant $\beta_{c,j}$ when $K=1$; (b) **Counterfactuals**—multiplying $x_j$ by $q$ results in a new score $z_c^{\text{new}}(x) = \sum_k q^{\beta_{c,k,j}} z_{c,k}(x)$ without re-prediction; (c) **Decision Boundary Sensitivity** $\partial(z_c - z_{c'})/\partial \log x_j$, which reveals which exponent differences drive inter-class competition; (d) **Local Attribution** leverages the decomposition of $\log z_{c,k}(x)$. The authors formally prove (Theorem 3.2) that ECSEL satisfies seven interpretability properties (G1-G3, D1-D2, L1-L2), elevating "claimed interpretability" to "provable interpretability."
 
 ### Loss & Training
 
-Classification uses cross-entropy with L1 on $\beta$: $\mathcal{L} = -\frac{1}{N}\sum_i \log p_{y_i}(x_i) + \lambda \sum_{c,k,j} |\beta_{c,k,j}|$; SR uses the MSE version $\mathcal{L}_{\text{SR}} = \frac{1}{N}\sum_i (y_i - z(x_i))^2 + \lambda \sum_{k,j}|\beta_{k,j}|$. $\lambda$ is a critical hyperparameter ($2 \times 10^4$ for PaySim). Optimization uses L-BFGS-B for $K=1$ and the Adam-Adam-LBFGS staged approach for $K>1$. Hyperparameters are searched via Optuna TPE within 30 trials.
+Classification uses cross-entropy with exponent L1: $\mathcal{L} = -\frac{1}{N}\sum_i \log p_{y_i}(x_i) + \lambda \sum_{c,k,j} |\beta_{c,k,j}|$. SR uses an MSE version $\mathcal{L}_{\text{SR}} = \frac{1}{N}\sum_i (y_i - z(x_i))^2 + \lambda \sum_{k,j}|\beta_{k,j}|$. $\lambda$ is a critical hyperparameter (e.g., $2 \times 10^4$ for PaySim). Optimization uses L-BFGS-B for $K=1$ and a three-stage Adam/L-BFGS pulse for $K>1$, with hyperparameters tuned via Optuna TPE.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Symbolic Regression (45 AI Feynman signomial subset + Livermore/Jin/Korns/DGSR synthetic sets, 5 random seeds 42-46)**:
+**Symbolic Regression (45 AI Feynman signomial subsets + Livermore/Jin/Korns/DGSR synthetic sets, 5 random seeds):**
 
-| Method | Symbolic Recovery Rate | Avg. Time (s/Eq) |
+| Method | Symbolic Recovery Rate | Avg Time (s/equation) |
 |------|-----------|--------------------|
 | NeSymRes | 56% | 126.3 |
 | NGGP | 58.54% | 468.7 |
-| DGSR (Prev. SOTA) | 59.10% | 612.9 |
-| **Ours (ECSEL)** | **95.86%** | **86.4** |
+| DGSR (SOTA) | 59.10% | 612.9 |
+| **ECSEL** | **95.86%** | **86.4** |
 
-**Classification (11 binary/multi-class benchmarks, 5-fold CV, 3 representative datasets)**:
+**Classification (11 binary/multi-class benchmarks, 5-fold CV, 3 representative datasets):**
 
 | Dataset | Method | Acc. | F1 | Minority Recall |
 |--------|------|------|------|---------------|
 | Ilpd | LR | 71.55 | 58.45 | 3.03 |
 | Ilpd | XGBoost | 72.41 | 63.03 | 6.06 |
-| Ilpd | **Ours** | **75.86** | **74.39** | **42.42** |
+| Ilpd | **ECSEL** | **75.86** | **74.39** | **42.42** |
 | Compas | XGBoost | 68.18 | 68.08 | 62.54 |
-| Compas | **Ours** | **68.47** | **68.36** | **62.82** |
+| Compas | **ECSEL** | **68.47** | **68.36** | **62.82** |
 | Transfusion | XGBoost | 80.06 | 78.72 | 38.89 |
-| Transfusion | **Ours** | 79.33 | 77.95 | **41.67** |
+| Transfusion | **ECSEL** | 79.33 | 77.95 | **41.67** |
 
-ECSEL ranked first in F1 on 4 out of 11 datasets (Seeds/Hearts/ILPD/Compas) and maintained a $<1\%$ gap with the best method on 9 datasets. On ILPD, F1 is 11.36 higher than XGBoost, with minority recall increasing by +36 points.
+ECSEL ranked first in F1 on 4 out of 11 datasets and maintained a margin of $<1\%$ against the best method on 9 datasets. On ILPD, its F1 was 11.36 higher than XGBoost, with a +36.36 point increase in minority recall.
 
-### Ablation Study / Explainer Comparison (OSI e-commerce dataset)
+### Ablation Study / Interpreter Comparison (OSI e-commerce dataset)
 
-| Method | Explainer | Comp. Time (s) | Top-3 Features |
+| Method | Interpreter | Computation Time (s) | Top-3 Features |
 |------|--------|--------------|-----------|
-| **Ours** | Exact Exponent | **0.1** | PVER, SI, PV |
+| **ECSEL** | Exact Exponent | **0.1** | PVER, SI, PV |
 | LR | LinearSHAP | 0.1 | PVER, Mo, PR |
 | LR | LIME | 5.3 | PVER, Mo, PR |
 | RF | TreeSHAP | 1.5 | PVER, PV, SI |
@@ -115,35 +110,35 @@ ECSEL ranked first in F1 on 4 out of 11 datasets (Seeds/Hearts/ILPD/Compas) and 
 
 ### Key Findings
 
-- **Structural Dividend**: While DGSR is SOTA on AI Feynman, its inability to constrain functional forms results in only 59% recovery. ECSEL's hardcoded signomial form increases recovery by 37 points and reduces time to 1/7.
-- **Minority Recall Advantage**: On ILPD, XGBoost's minority recall is only 6%, whereas ECSEL reaches 42%. On the PaySim fraud detection dataset, ECSEL achieves 79.08% F1, surpassing the previous 78% (DSC), with precision reaching 94.27%.
-- **Zero Amortized Explanation Cost**: Investing slightly more in training time (5.5s vs 0.1s for LR on OSI) eliminates the need for post-hoc inference. KernelSHAP takes 28.5s for test set explanations on MLP, while ECSEL takes 0.1s.
-- **Domain-Meaningful Equations**: On PaySim, $\beta_{\text{OBO}} = 1.42$ reveals that "fraudsters target high-value accounts super-linearly"—an actionable insight missing from black-box models. On OSI, PVER (PageValue/ExitRate) naturally emerges as a dominant predictor.
+- **Structural Dividend**: While DGSR is SOTA on the AI Feynman subset, its lack of functional constraints limits recovery to 59%. ECSEL’s signomial prior increases recovery by 37 points while reducing time to 1/7.
+- **Minority Recall Advantage**: On ILPD, XGBoost's minority recall was only 6%, whereas ECSEL reached 42%. On PaySim (fraud detection), ECSEL’s F1 exceeded the previous DSC SOTA.
+- **Zero-cost Explanation**: Increasing training time slightly (5.5s vs 0.1s for LR) eliminates the need for SHAP/LIME inference. While KernelSHAP took 28.5s for test set explanations on MLP, ECSEL took 0.1s.
+- **Domain Meaningful Equations**: On PaySim, $\beta_{\text{OBO}} = 1.42$ revealed that fraudsters super-linearly target high-value accounts—an actionable insight unavailable from black-box models.
 
 ## Highlights & Insights
 
-- **Absolute "Parameters-as-Explanation"**: Many inherently interpretable models (e.g., GAM) still require partial dependence plots. ECSEL transforms elasticity, counterfactuals, decision boundaries, and local attributions into algebraic expressions of $\beta$ and $z_{c,k}$. Theorem 3.2 formalizes this into seven provable properties.
-- **From Benchmark Observation to Algorithm Design**: The method is derived from an empirical observation (45/100 AI Feynman equations are signomials). This strategy of recognizing structural cues in benchmarks that general methods overlook is highly transferable.
-- **L1 on Exponents, Not Coefficients**: This detail is crucial. $\beta_j = 0$ implies $x_j^0 = 1$, meaning the feature is absent from that term. Sparsifying $\beta$ acts as per-term feature selection, which is finer-grained than sparsifying $\alpha$ (which only eliminates entire terms).
+- **"Parameters as Explanation"**: Unlike GAMs that require plotting partial dependence, ECSEL converts all explanations into algebraic expressions of $\beta$ and $z_{c,k}$. Theorem 3.2 formalizes this into "provable interpretability."
+- **Benchmark Observation to Algorithm Design**: The method was derived from the empirical observation that nearly half of physics benchmark equations are signomials. This suggests that general methods may be "over-generalizing" structured tasks.
+- **Exponent-based L1 Regularization**: Applying L1 to exponents rather than coefficients is a critical detail. This allows for feature selection within each power-law term, providing finer granularity than traditional "term selection."
 
 ## Limitations & Future Work
 
-- $K$ must be pre-specified, which is a standard hyperparameter for classification but a constraint for SR. It still lags behind specialized methods on high-degree univariate polynomials (e.g., Nguyen).
-- **Limitations**: (1) Requires all features $x > 0$, necessitating $[1, 10]$ mapping; handling negative or categorical features is currently suboptimal. (2) For $K > 1$, local attribution degrades to first-order linearization. (3) Multi-stage optimization hyperparameters (Adam steps, L1 annealing) affect equation "aesthetics," challenging reproducibility. (4) Lack of discussion on discrete/categorical features limits application beyond tabular data.
-- **Future Work**: Make $K$ learnable (growth-on-demand), constrain exponents to rational subsets for exact recovery, explore group-L1 for shared feature selection across classes, and use Mixture-of-signomials for multimodal distributions.
+- $K$ must be specified in advance, which is a constraint in SR. The model still struggles with high-degree univariate polynomials compared to specialized methods.
+- Limitations: (1) Requires features $>0$, necessitating affine mappings; (2) for $K>1$, local attribution reverts to first-order linearization; (3) multi-stage optimization hyperparameters affect equation conciseness; (4) discrete/categorical features are not elegantly handled.
+- Future work: Learning $K$ dynamically, constraining exponents to rational subsets for exact SR, and exploring "Mixture-of-signomials."
 
 ## Related Work & Insights
 
-- **vs DGSR/NeSymRes/gplearn**: These search arbitrary functions in massive spaces. ECSEL locks into the signomial subspace, trading non-power-law structures for a 37-point gain in recovery and 7x speedup.
-- **vs GAM / Neural Additive Models (NAM)**: GAM/NAM are *additive* and fail to capture multiplicative interactions. ECSEL is *multiplicative*, naturally handling elasticity-based features. They are complementary and could be merged into "Generalized Additive + Multiplicative Models."
-- **vs SHAP/LIME**: Post-hoc methods sample to estimate values; ECSEL provides them as analytical identities. This turns SHAP's "estimate" into a "property" of the signomial.
-- **vs KAN (Kolmogorov-Arnold Networks)**: KAN uses learnable splines and symbolification for interpretability. ECSEL's signomial is a more constrained but naturally closed-form subspace.
+- **vs DGSR/NeSymRes/gplearn**: These search vast spaces for arbitrary functions, whereas ECSEL explores the signomial subspace. This trade-off yields a 37 point recovery gain at the cost of excluding non-power-law structures (e.g., $\sin$).
+- **vs GAM / Neural Additive Models (NAM)**: GAMs/NAMs are additive and miss multiplicative interactions. ECSEL is multiplicative, naturally handling elasticity in economic or biological features. 
+- **vs SHAP/LIME**: Post-hoc methods estimate via sampling; ECSEL provides closed-form identities that are faster, deterministic, and provable.
+- **vs KAN (Kolmogorov-Arnold Networks)**: KAN uses learnable splines and symbolification; ECSEL provides a more constrained but naturally closed-form subspace.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Reframing signomials from optimization targets to a model class is a key insight, though individual components are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 45 SR equations, 11 classification datasets, 2 case studies, and comparison with 4 baseline categories and 5 explainers.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with rigorous indexing; equation numbering is slightly dense in the classification section.
-- Value: ⭐⭐⭐⭐⭐ Provides a true "non-post-hoc" interpretable classifier for high-stakes scenarios (finance/healthcare).
+- Novelty: ⭐⭐⭐⭐ Reframing signomials as a model class is a significant insight, though individual components are known.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive comparison across 45 SR equations, 11 classification datasets, and multiple interpreters.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with rigorous naming/numbering of properties.
+- Value: ⭐⭐⭐⭐⭐ Provides a true inherently interpretable classifier for high-stakes scenarios with practical evidence from PaySim and OSI.
 
 <!-- RELATED:START -->
 

@@ -2,124 +2,117 @@
 title: >-
   [Paper Note] Hallucinations Undermine Trust; Metacognition is a Way Forward
 description: >-
-  [ICML 2026 (Position Paper)][Hallucination Detection][Hallucination] This position paper argues that "completely eliminating LLM hallucinations" is fundamentally subject to a "discrimination gap" (discrimination gap → ut…
+  [ICML 2026][Hallucination Detection][faithful uncertainty] This position paper argues that "totally eliminating LLM hallucinations" is theoretically impossible without incurring a "utility tax" (discrimination gap); the authors advocate shifting the goal from "eliminating hallucinations" to **faithful uncertainty** and treating this metacognition as an indispensable control la
 tags:
-  - "ICML 2026 (Position Paper)"
-  - "Hallucination Detection"
-  - "Hallucination"
-  - "Calibration vs Discrimination"
-  - "faithful uncertainty"
-  - "metacognition"
-  - "agentic control layer"
+  - ICML 2026
+  - Hallucination Detection
+  - faithful uncertainty
 date: 2026-05-08
-content_hash: de718931c2076518
+content_hash: 0493480a263e9706
 ---
-
 # Hallucinations Undermine Trust; Metacognition is a Way Forward
 
 **Conference**: ICML 2026 (Position Paper)  
 **arXiv**: [2605.01428](https://arxiv.org/abs/2605.01428)  
 **Code**: None  
 **Area**: Hallucination Detection  
-**Keywords**: Hallucination, Calibration vs Discrimination, faithful uncertainty, metacognition, agentic control layer
+**Keywords**: Hallucination, Calibration vs. Discrimination, Faithful Uncertainty, Metacognition, Agentic Control Layer
 
 ## TL;DR
-This position paper argues that "completely eliminating LLM hallucinations" is fundamentally subject to a "discrimination gap" (discrimination gap → utility tax); the authors advocate shifting the goal from "eliminating hallucinations" to **faithful uncertainty**, and view such metacognition as an indispensable control layer when agentic LLMs invoke tools.
+This position paper argues that "totally eliminating LLM hallucinations" is theoretically impossible without incurring a "utility tax" (discrimination gap); the authors advocate shifting the goal from "eliminating hallucinations" to **faithful uncertainty** and treating this metacognition as an indispensable control layer for agentic LLMs when calling tools.
 
 ## Background & Motivation
-**Background**: Despite frontier models continuously improving factual reliability, hallucination remains the biggest obstacle to industrial deployment. Research directions fall into two main categories: (1) Training interventions—data filtering, alignment penalties, reward model calibration; (2) Inference interventions—special decoding (DOLA), internal signal probes, self-verification. Meanwhile, uncertainty quantification has shown that modern LLMs can output **well-calibrated** confidence signals.
+**Background**: Despite frontier models continuously improving scores on factual reliability, hallucinations remain the primary barrier to industrial deployment. Research follows two main paths: (1) training-stage interventions—data filtering, alignment penalties, and reward model calibration; (2) inference-stage interventions—specialized decoding (DOLA), internal signal probing, and self-verification. Meanwhile, the field of uncertainty quantification has demonstrated that modern LLMs can output **well-calibrated** confidence signals.
 
-**Limitations of Prior Work**: All efforts implicitly aim to "reduce hallucination rate to zero." However, even with perfectly calibrated confidence, to reduce hallucination from 25% to 5%, the model must forgo **52% of correct answers** (utility tax). AUROC on real tasks stabilizes at $0.70$–$0.85$; only by surpassing $0.95$ can the utility tax drop below 5%—which no current method achieves.
+**Limitations of Prior Work**: All efforts implicitly aim to "reduce the hallucination rate to 0." However, even if confidence is perfectly calibrated, reducing the hallucination rate from 25% to 5% requires the model to abandon **52% of its correct answers** (utility tax). AUROC on real tasks remains stable between $0.70$–$0.85$; it would need to exceed $0.95$ to bring the utility tax below 5%—a feat currently unattainable by any method.
 
-**Key Challenge**: The authors formalize the dilemma as a gap between calibration and discrimination. **Calibration** only requires "among samples with confidence 0.6, 60% are correct"—alignment in an average sense; **discrimination** requires "I can pick out which 60% are correct." A constant predictor always outputting 0.6 is perfectly calibrated but has zero discrimination. Existing theory (Halting Problem analogies, calibrated-models must hallucinate, consistency–breadth trade-off) all suggest that the discrimination ceiling for LLMs is fundamentally limited.
+**Key Challenge**: The authors formalize the contradiction as the gap between calibration and discrimination. **Calibration** only requires that "in samples with 0.6 confidence, 60% are correct"—an alignment in an average sense. **Discrimination** requires "being able to pick out exactly which 60% are correct." A constant predictor that always outputs 0.6 is perfectly calibrated but has zero discrimination. Existing theories (Halting Problem arguments, the necessity of hallucinations in calibrated models, and the consistency–breadth trade-off) imply that the discrimination ceiling for LLMs is finite regardless of training.
 
-**Goal**: (1) Formalize the unattainability of "eliminating hallucinations"; (2) Propose an alternative goal that circumvents this unattainability; (3) Extend this goal to agentic systems as a control layer for tool invocation.
+**Goal**: (1) Formalize the unreachability of "eliminating hallucinations"; (2) Propose an alternative goal that bypasses this unreachability; (3) Generalize this goal to agentic systems as a control layer for tool invocation.
 
-**Key Insight**: Redefine "hallucination"—not as "any error," but as "**confidently** wrong." If an error is accompanied by appropriate hedging ("I'm not sure, maybe 1961"), it is no longer a hallucination but a hypothesis. This redefinition dissolves the binary opposition between "eliminating errors" and "maintaining utility"—a third path emerges: honestly expressing uncertainty.
+**Key Insight**: Redefine "hallucination" not as "any error," but as "an error made **confidently**." If an error is accompanied by appropriate hedging ("I am not sure, it might be 1961"), it is no longer a hallucination but a hypothesis. This redefinition collapses the binary opposition between "eliminating errors" and "maintaining utility," offering a third path: honestly expressing uncertainty.
 
-**Core Idea**: Replace "zero hallucination" with **faithful uncertainty** (aligning linguistic uncertainty with intrinsic uncertainty), making metacognition a core capability of LLMs and agents.
+**Core Idea**: Replace "zero hallucinations" with **faithful uncertainty** (aligning linguistic uncertainty with intrinsic uncertainty) and establish metacognition as a core capability for LLMs and agents.
 
 ## Method
 
 ### Overall Architecture
-As a position paper, there is no new algorithm, but a conceptual framework of **problem redefinition + feasibility argument + research roadmap** is proposed. The argument proceeds in three steps: (1) Demonstrate that "completely eliminating hallucinations" is fundamentally impossible; (2) Argue that faithful uncertainty is **possible** in principle and can unlock reliable utility; (3) In agentic scenarios, metacognition serves as the control layer for tool invocation. Six major research challenges and three hallucination mitigation evaluation criteria are presented.
+As a position paper, it addresses the question: "Since hallucinations cannot be eliminated, what should the goal of trustworthy LLMs be reset to?" It does not propose a new algorithm but builds a three-step argumentative chain: first, a quantitative argument showing the prohibitively high cost of forcing the hallucination rate to 0; second, the proposal of faithful uncertainty as a theoretically reachable alternative goal; and third, its application to agentic scenarios, illustrating metacognition as an unavoidable control layer for tool calling. It also provides six major research challenges and a new evaluation framework.
 
 ### Key Designs
 
-1. **Clear Separation of Calibration vs Discrimination + Visualization of Discrimination Tax**:
+**1. Separation of Calibration vs. Discrimination: Mapping the "Discrimination Tax"**
 
-    - **Function**: Visually demonstrates the counterintuitive fact that "good calibration still incurs a large utility tax."
-    - **Mechanism**: Simulated data reproduces Nakkiran 2025's reliability diagram: confidence for correct ($y=1$) samples from $\text{Beta}(1.8,1.0)$, incorrect ($y=0$) from $\text{Beta}(1.0,1.3)$, then Isotonic regression enforces calibration to smECE $\approx 0.014$. AUROC = 0.71 (matching literature $0.70$–$0.85$). Then, plot the utility-error trade-off: sweep the refusal threshold from 0 to 1, and observe how many correct answers are lost at each target error rate. Conclusion: to reduce a 25% error rate to 5%, 52% of correct answers must be discarded; even with AUROC rising to 0.85, the tax is still $\sim$28%; only at $\geq 0.95$ does it drop below 5%. This trade-off quantifies "why model providers are unwilling to pay this tax."
-    - **Design Motivation**: Previous discussions often conflated calibration and discrimination, leading to "our model is well-calibrated" being misread as "our model does not hallucinate." This visualization thoroughly separates the two concepts and concretizes the cost as "how many correct answers must be lost," which is far more impactful than ECE numbers.
+Addressing the community's long-standing confusion between calibration and discrimination, which leads to misinterpreting "our model is well-calibrated" as "our model does not hallucinate." The authors decouple the two through simulations: confidence for correct answers ($y=1$) is drawn from $\text{Beta}(1.8,1.0)$ and for incorrect answers ($y=0$) from $\text{Beta}(1.0,1.3)$, followed by Isotonic regression to force calibration at smECE $\approx 0.014$, replicating the reliability diagram of Nakkiran 2025. In this state, the model is nearly perfectly calibrated, but the AUROC is only 0.71 (falling within the typical $0.70$–$0.85$ range for real tasks).
 
-2. **Faithful Uncertainty: Shifting the Goal from "Aligning with the World" to "Aligning Internally"**:
+Qualified calibration does not imply the ability to "select" which answers are correct, the latter of which determines the cost of a rejection strategy. By sweeping the rejection threshold from 0 to 1, the utility-error trade-off curve illustrates the cost: reducing the 25% error rate to 5% requires discarding **52% of correct answers**. Even if AUROC is improved to a state-of-the-art 0.85, the tax remains $\sim$28%; only an AUROC $\geq 0.95$ can reduce the tax below 5%, which no method achieves on knowledge-intensive tasks. This curve quantifies why model providers are reluctant to pay this tax.
 
-    - **Function**: Proposes a **theoretically attainable** relaxed goal—the model's linguistic uncertainty must faithfully reflect its internal uncertainty, but does not require this internal uncertainty to match the world's ground truth.
-    - **Mechanism**: Based on Yona 2024's definition. Intrinsic confidence $\text{conf}_M(A)=1-\frac{1}{k}\sum_i\mathbf 1[A\text{ contradicts }A_i]$ (semantic consistency over $k$ resamplings). Linguistic decisiveness $\text{dec}(A;R,Q)=\Pr[A\text{ True}\mid R,Q]$ (estimated by LLM-as-judge based on hedge strength). Faithfulness $=1-\frac{1}{|A(R)|}\sum_{A}|\text{dec}(A;R,Q)-\text{conf}_M(A)|$. The authors argue this goal is **closed-loop observable**—since $\text{conf}_M$ is a function of model weights, "linguistic output aligns with conf" is an internal consistency issue, not dependent on external ground truth; thus, it avoids the halting-problem barrier of xu2024 in principle.
-    - **Design Motivation**: By shifting the goal from "internal → real world" to "internal → internal," the discrimination tax disappears—the model need not refuse to answer to avoid errors, but can provide uncertain answers in hedged form; users still receive useful guesses, now honestly labeled.
+**2. Faithful Uncertainty: Shifting the Goal from "World-Alignment" to "Self-Alignment"**
 
-3. **Agentic Metacognition: Uncertainty as the Control Layer for Tool Invocation**:
+Since "aligning with external ground truth" hits the theoretical barriers of the discrimination tax and undecidability of truth, the authors adopt the definition from Yona 2024 to propose a weakened but reachable goal: the model's linguistic uncertainty must only faithfully reflect its own internal uncertainty, without requiring this internal signal to match the ground truth of the world. Internal confidence is defined as $\text{conf}_M(A)=1-\frac{1}{k}\sum_i\mathbf 1[A\text{ contradicts }A_i]$, where $k$ resamples are taken for answer $A$ and semantic consistency measures the model's certainty. Linguistic decisiveness $\text{dec}(A;R,Q)=\Pr[A\text{ True}\mid R,Q]$ is estimated using an LLM-as-judge to gauge the credibility a reader would assign to $A$ based on the strength of the hedging. The degree of alignment is faithfulness $=1-\frac{1}{|A(R)|}\sum_{A}|\text{dec}(A;R,Q)-\text{conf}_M(A)|$.
 
-    - **Function**: In the agent era, self-perceived uncertainty is not redundant but **foundational**—it determines when to invoke tools, when to trust retrieval results, and how to resolve conflicts with priors.
-    - **Mechanism**: The agent harness is viewed as a coarse external scheduler, currently relying entirely on query-type heuristics to decide whether to search; introducing "model self-reported confidence" as a yellow control layer allows the harness to: high confidence → answer directly (save tool calls); low confidence → retrieve; retrieval result conflicts with prior → output hedged answer instead of blindly trusting context. The paper cites qian2025smart and others, noting that current search agents lack such self-awareness, leading to tool overuse or underuse.
-    - **Design Motivation**: It is commonly assumed that "tool invocation can bypass hallucination problems," but the authors rebut: tools only solve the **storage problem** (not needing to encode all facts in weights), but introduce a **control problem** (when to retrieve, how to assess retrieved information's reliability). Faithful uncertainty precisely fills this control layer.
+This goal is "theoretically feasible" because it is closed-loop observable: $\text{conf}_M$ is strictly a function of model weights. "Aligning linguistic output with conf" is a pure internal consistency problem that does not rely on external ground truth, thus bypassing the Halting-problem-like barriers of xu2024 regarding external truth determination. By shifting from "Internal → World" to "Internal → Internal," the discrimination tax disappears—the model does not need to reject answers to avoid errors but simply presents uncertain answers in a hedged format; the user still receives useful guesses, but with an honest label.
 
-### Loss & Training
-Not applicable (position paper). However, in §6, the authors propose six concrete research challenges: bootstrapping paradox (dynamic labels vs static SFT), protecting confidence signals during post-training, confidence attribution (distinguishing aleatoric/epistemic/normative uncertainties), strict causal evaluation (avoiding models merely learning hedging style rather than genuine self-awareness), agent evaluation should control process rather than end-to-end accuracy, and hallucination mitigation evaluation should use utility-error trade-off curves instead of single-point reports.
+**3. Agentic Metacognition: Uncertainty as a Control Layer for Tool Use**
+
+Countering the optimistic view that "tool calling can bypass hallucinations," the authors argue that tools only solve the **storage problem** (not needing to store all facts in weights) while introducing the **control problem**—deciding when to retrieve and determining the credibility of retrieved content. This control layer requires faithful uncertainty. Current agent harnesses are coarse external schedulers relying almost entirely on query-type heuristics for search decisions. Integrating "model-reported confidence" as a control signal allows the harness to shunt tasks: high confidence leads to direct answers to save tool calls, while low confidence triggers retrieval. When retrieval results conflict with model priors, it outputs hedged answers rather than blindly trusting the context. The paper cites evidence like qian2025smart to show that current search agents lack this self-awareness, leading to over- or under-utilization of tools.
+
+### Research Roadmap
+As a position paper, there are no training objectives, but §6 identifies six challenges for future work: the bootstrapping paradox (confidence labels are dynamic and hard to fit with static SFT), how to preserve existing pre-train confidence signals during post-training, confidence attribution (distinguishing aleatoric, epistemic, and normative uncertainty), rigorous causal evaluation (preventing models from learning hedging tones without true self-awareness), agent evaluation focused on processes rather than end-to-end accuracy, and shifting hallucination mitigation evaluation to utility-error trade-off curves.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Data/Scenario | Phenomenon | Meaning |
-|---------------|------------|---------|
-| Beta simulation, AUROC=0.71, base error rate 25% | Reducing to 5% requires discarding 52% correct answers | Discrimination tax is significant |
-| Beta simulation, AUROC=0.85 | Tax $\sim$28% | Still heavy at current best levels |
-| Beta simulation, AUROC=0.95 | Tax $<5\%$ | No method achieves this in knowledge-intensive tasks |
-| SimpleQA Verified (multiple frontier models) | All distributed along diagonal or shifted left | Top-right "ideal" region is empty |
-| AUROC literature review (farquhar2024, savage2025, kang2025) | AUROC 0.70–0.85 on real knowledge-intensive QA | Confirms discrimination gap |
+| Data/Scenario | Phenomenon | Implication |
+|----------|------|------|
+| Beta Simulation, AUROC=0.71, Base Error 25% | Reducing error to 5% requires discarding 52% correct answers | Significant discrimination tax |
+| Beta Simulation, AUROC=0.85 | Tax $\sim$28% | Heavy cost even at SOTA levels |
+| Beta Simulation, AUROC=0.95 | Tax $<5\%$ | Unattainable on knowledge-intensive tasks |
+| SimpleQA Verified (Multiple frontier models) | All distributed along diagonal or shifted left | Top-right "ideal" region is empty |
+| AUROC Literature Review (farquhar2024, savage2025, kang2025) | AUROC 0.70–0.85 on real knowledge-intensive QA | Confirms discrimination gap |
 
 ### Ablation Study
-(None; replaced by cMFG and other faithful uncertainty evaluation proxies.)
+(None; replaced by proxy evaluations for faithful uncertainty like cMFG.)
 
-| Evaluation Dimension | Prev. SOTA | Ours |
-|---------------------|------------|------|
-| cMFG (conditional mean faithful generation) | 0.5–0.7 | 1.0 |
-| Reasoning model vs standard model confidence expression | Reasoning models better but hallucinate more | Metacognitive and factual signals decoupled |
-| Internal truth probe AUROC (mech interp) | Collapses on OOD | Does not assume universal truth direction |
+| Evaluation Dimension | Current SOTA | Target |
+|---------|----------|------|
+| cMFG (Conditional Mean Faithful Generation) | 0.5–0.7 | 1.0 |
+| Reasoning vs. Standard model confidence | Reasoning models are better but hallucinate more | Metacognitive signals decoupled from factual signals |
+| Internal truth probe AUROC (mech interp) | Collapses on OOD | Does not assume a universal truth direction |
 
 ### Key Findings
-- **Calibration ≠ No Hallucination**: Even with perfect calibration, insufficient discrimination inevitably incurs utility tax; this is the paper's most counterintuitive and persuasive argument.
-- **SimpleQA Scatter Plot (Fig. 3)**: No model occupies the "ideal" top-right—frontier models either hug the diagonal or shift left, paying a high refusal tax, indicating all current methods are stuck on the trade-off curve.
-- **Extended reasoning increases hallucination**: o1-type reasoning models have lower refusal rates but higher hallucination rates; the authors attribute this to "reward optimizing utility, not honest uncertainty expression."
-- **Pre-trained model uncertainty signals are eroded post-training**: he2025rewarding, song2025outcome, etc., show RLHF makes models mode-seeking and overconfident—this is a top-priority issue for metacognitive research.
-- **Agentic evaluation must be process-based**: Current evaluations reward agents for "guessing the right answer," masking metacognitive failures (e.g., inefficiently searching known facts, trusting sources conflicting with priors = sycophancy).
+- **Calibration $\neq$ Absence of Hallucinations**: Even perfect calibration incurs a utility tax if discrimination is insufficient; this is the paper's most counter-intuitive and compelling argument.
+- **SimpleQA Scatter Plot (Fig. 3)**: The "ideal" top-right corner is unoccupied—all frontier models either stick to the diagonal or shift left, paying a high rejection tax, suggesting current methods are trapped on the trade-off curve.
+- **Extended Reasoning exacerbates Hallucinations**: Reasoning models like o1 show lower rejection rates but higher hallucination rates, attributed by the authors to rewards optimizing utility rather than honest uncertainty.
+- **Post-training erodes Pre-trained uncertainty signals**: Works like he2025rewarding and song2025outcome show RLHF makes models mode-seeking and overconfident—a primary problem for metacognitive research.
+- **Agentic evaluation must be process-based**: Current evaluations reward agents that "hit" the right answer, masking metacognitive failures (e.g., searching for known facts is inefficient; trusting sources that conflict with priors is sycophancy).
 
 ## Highlights & Insights
-- **Redefining the goal as "faithful ≠ correct"**: Shifting the goal from "aligning with external truth" to "aligning with internal state" cleverly circumvents the "truth is undecidable" barrier. This is a reusable thinking template for all trustworthy ML problems—for example, explainability can also be relaxed from "explanations must be correct" to "explanations must be faithful to the model's internals."
-- **Utility-Error curve as a new evaluation**: Using a curve instead of a single-point metric, shifting the claim from "our method reduces hallucination rate" to "at a fixed error rate, I provide more utility"—a concrete proposal for evaluation culture reform.
-- **Decomposing storage vs control problems**: By splitting reliability in the agent era into two layers, the necessity of metacognition becomes immediately apparent, avoiding the naive optimism of "retrieval alone suffices."
-- **Honestly acknowledging that reasoning models hallucinate more**: The authors do not conceal this counterexample, but use it to show that utility-only training objectives actively disincentivize honesty.
+- **Goal Redefinition (Faithfulness vs. Correctness)**: Shifting the goal from "external truth alignment" to "internal state alignment" cleverly bypasses the theoretical obstacle of "undecidability of truth." This serves as a template for other trustworthy ML problems—e.g., weakening explainability from "correct explanation" to "explanation faithful to the model's internals."
+- **Utility-Error Curve as a New Metric**: Replacing single-point metrics with a curve forces the claim "our method reduces hallucinations" into "at a fixed error rate, I provide more utility"—a concrete suggestion for improving evaluation culture.
+- **Storage vs. Control Problem Decoupling**: Splitting reliability in the agent era into these two layers highlights the necessity of metacognition, countering the naive optimism that "retrieval is enough."
+- **Reasoning Models as a Counter-example**: The authors do not hide the fact that reasoning models hallucinate more; they use it to prove that utility-only objectives disincentivize honesty.
 
 ## Limitations & Future Work
-- The paper is a position paper, with no new algorithms or experimental data; simulation in Fig. 2 is illustrative, not empirical evidence.
-- The claim that "faithful uncertainty is feasible in principle" rests on an implicit assumption—that the model indeed has an internal confidence signal that can be read out. If the pessimistic view of mech interp is correct (no separable truth direction in latent state), this path is blocked; the authors acknowledge this in §7.3 but offer no fallback.
-- The six proposed research challenges lack actionable solutions; how to "combine dynamic SFT labels with preserving base model confidence" remains open.
-- Suggestions for agent evaluation are abstract, with no generalizable metric provided.
-- Feasibility of "hedge per assertion" in multimodal or long-form generation is not discussed.
+- As a position paper, there are no new algorithms or experimental raw data; the simulation in Fig. 2 is illustrative rather than empirical evidence.
+- The claim "faithful uncertainty is theoretically feasible" assumes models have readable internal confidence signals. If mechanistic interpretability pessimists are right (that there is no separable truth direction in latent states), this path fails; §7.3 acknowledges this without a definitive backup.
+- The six research challenges lack operational solutions; specifically, how to perform "dynamic SFT labeling + preserving base model confidence" remains an open question.
+- Suggestions for agent evaluation are somewhat abstract and lack a deployable metric.
+- Feasibility of "hedge per assertion" in multimodal or long-form generation scenarios is not discussed.
 
 ## Related Work & Insights
-- **vs Kadavath et al. on calibration**: They show LLMs can be well-calibrated; this paper argues that's far from enough—discrimination must be considered, deepening the dimensional distinction on the same object.
-- **vs Kalai 2024 (calibrated models must hallucinate)**: This paper cites and inherits Kalai's impossibility result, but proposes a reframing: since zero hallucination is unattainable, change the goal.
-- **vs Yona 2024 (faithful uncertainty)**: Yona provides the definition and cMFG metric; this paper upgrades the tool to a policy proposal—all training pipelines should move in this direction.
-- **vs Tool-augmented LLMs (ReAct, Toolformer, search agents)**: This paper argues in reverse that tool use cannot replace metacognition; current search agent failures (qian2025smart, lin2025adasearch) are cited as key evidence.
-- **Insights**: All "trustworthy XX" research should ask—is your goal to align with the world or with internals? The former is usually unattainable, the latter usually attainable. This line of thinking applies to explainability, safety, and honest AI.
+- **vs. Calibration work by Kadavath et al.**: They prove LLMs can be well-calibrated; this paper argues that is insufficient and discrimination must be considered.
+- **vs. Kalai 2024 (Calibrated models must hallucinate)**: Inherits the impossibility conclusion but proposes a reframe: if zero hallucination is unreachable, change the goal.
+- **vs. Yona 2024 (Faithful Uncertainty)**: Yona provides definitions and cMFG metrics; this paper elevates the tool to a policy proposal for training pipelines.
+- **vs. Tool-augmented LLM trends (ReAct, Toolformer, search agents)**: Argues that tool use cannot replace metacognition; uses evidence of search agent failures (qian2025smart, lin2025adasearch) as support.
+- **Insight**: All "trustworthy XX" research can ask—is the goal to align with the world or the internal state? The former is usually unreachable; the latter usually reachable. This logic applies to explainability, safety, and honest AI.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Shifting the goal from aligning with the world to aligning internally" is a clear conceptual leap, though the definition of faithful uncertainty comes from Yona 2024
-- Experimental Thoroughness: ⭐⭐ Position paper, only simulation and literature review, no new data
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation, honest counterexamples and rebuttals, six challenges provide concrete directions for future research
-- Value: ⭐⭐⭐⭐ Significant for calibrating research directions in trustworthy LLMs and agent metacognition, but practical implementation requires further work
+- Novelty: ⭐⭐⭐⭐ The conceptual shift from "world-alignment" to "internal-alignment" is clear, though the faithful uncertainty definition originates from Yona 2024.
+- Experimental Thoroughness: ⭐⭐ Position paper with only simulations and literature reviews; no new data.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentative chain; honest treatment of counter-examples; challenges provide a strong roadmap.
+- Value: ⭐⭐⭐⭐ Significant value for re-aligning research directions in trustworthy LLMs and agent metacognition, though implementation requires follow-up work.
 
 <!-- RELATED:START -->
 
@@ -127,7 +120,7 @@ Not applicable (position paper). However, in §6, the authors propose six concre
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](../../NeurIPS2025/hallucination/auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 - [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
 - [\[ICML 2026\] From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity](from_flat_facts_to_sharp_hallucinations_detecting_stubborn_errors_via_gradient_s.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)

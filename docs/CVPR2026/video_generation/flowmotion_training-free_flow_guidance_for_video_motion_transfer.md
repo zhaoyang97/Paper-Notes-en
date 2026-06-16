@@ -2,77 +2,84 @@
 title: >-
   [Paper Note] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer
 description: >-
-  [CVPR 2026][Video Generation][Video Motion Transfer] FlowMotion is a training-free video motion transfer framework that directly leverages the latent prediction output of flow-based T2V models to construct motion guidanc…
+  [CVPR 2026][Video Generation][video motion transfer] FlowMotion is proposed as a training-free video motion transfer framework that constructs motion guidance signals directly using the latent prediction from flow-based T2V models. By avoiding gradient backpropagation through internal model layers, it achieves high motion fidelity while significantly reducing inference t
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Video Motion Transfer"
-  - "Flow Matching"
-  - "Training-Free"
-  - "Latent Prediction"
-  - "Velocity Regularization"
+  - CVPR 2026
+  - Video Generation
+  - video motion transfer
+  - flow matching
+  - training-free
+  - latent prediction
+  - velocity regularization
 date: 2026-05-08
-content_hash: f1c191ae39aad357
+content_hash: c32f708e57f4e7f6
 ---
-
 # FlowMotion: Training-Free Flow Guidance for Video Motion Transfer
 
-**Conference**: CVPR 2026  
+**Conference**: CVPR2026  
 **arXiv**: [2603.06289](https://arxiv.org/abs/2603.06289)  
 **Code**: [HKUST-LongGroup/FlowMotion](https://github.com/HKUST-LongGroup/FlowMotion)  
-**Area**: LLM Pretraining  
-**Keywords**: Video Motion Transfer, Flow Matching, Training-Free, Latent Prediction, Velocity Regularization
+**Area**: Video Generation  
+**Keywords**: video motion transfer, flow matching, training-free, latent prediction, velocity regularization
 
 ## TL;DR
 
-FlowMotion is a training-free video motion transfer framework that directly leverages the latent prediction output of flow-based T2V models to construct motion guidance signals, avoiding gradient backpropagation through internal model layers while maintaining motion fidelity and significantly reducing inference time and memory overhead.
+FlowMotion is proposed as a training-free video motion transfer framework that constructs motion guidance signals directly using the latent prediction from flow-based T2V models. By avoiding gradient backpropagation through internal model layers, it achieves high motion fidelity while significantly reducing inference time and GPU memory overhead.
 
 ## Background & Motivation
 
-1. **Video motion transfer demand**: Given a source video and a text prompt, the goal is to generate a target video that preserves the motion patterns (object movement, camera trajectories, etc.) of the source while rendering a new scene—widely applicable in virtual reality, filmmaking, and related fields.
-2. **High cost of training-based methods**: MotionDirector, MotionInversion, and similar methods require fine-tuning temporal attention or LoRA parameters for each reference video, taking 20 minutes to 2+ hours, making them unsuitable for real-time or large-scale scenarios.
-3. **Inefficiency of existing training-free methods**: MotionClone, SMM, DiTFlow, and others depend on intermediate layer outputs (attention maps / diffusion features), requiring gradient backpropagation through deep internal layers, consuming 51–89 GB of GPU memory and 350–1800+ seconds of inference time.
-4. **Internal layer dependency limits flexibility**: Existing training-free methods are tied to specific architectures (U-Net / DiT) and are difficult to generalize to new models; some also require additional inversion processes, further increasing time overhead.
-5. **Rise of flow-based T2V models**: Models such as Wan and HunyuanVideo based on flow matching + DiT have become SOTA, but existing motion transfer methods have not fully exploited the properties of flow-based models.
-6. **Key observation—early latent predictions encode rich temporal information**: The authors find that in the first few denoising steps of flow-based T2V models, the latent prediction (single-step estimate of the clean latent) already contains coarse motion trajectories and temporal dynamics, with appearance details accumulating subsequently—providing the theoretical basis for constructing motion guidance directly on prediction outputs.
+1.  **Demand for Video Motion Transfer**: Given a source video and a text prompt, the goal is to generate a target video that preserves the source motion patterns (object movement, camera trajectories, etc.) while rendering a new scene. This has wide applications in VR and film production.
+2.  **High Cost of Training-based Methods**: Methods like MotionDirector and MotionInversion require fine-tuning temporal attention or LoRA parameters for each reference video, taking 20 minutes to over 2 hours, which is unsuitable for real-time or large-scale scenarios.
+3.  **Low Efficiency of Existing Training-free Methods**: Methods such as MotionClone, SMM, and DiTFlow rely on intermediate outputs (attention maps / diffusion features) and require backpropagation through deep internal layers. This results in GPU memory usage as high as 51–89 GB and inference times of 350–1800+ seconds.
+4.  **Architectural Dependency**: Most training-free methods are tied to specific architectures (U-Net / DiT) and are difficult to generalize to new models; some also require an additional inversion process, further increasing time costs.
+5.  **Rise of Flow-based T2V Models**: Models based on flow matching and DiT, such as Wan and HunyuanVideo, have become SOTA, yet existing motion transfer methods haven't fully exploited the characteristics of flow-based models.
+6.  **Key Insight — Early Latent Prediction Encodes Rich Temporal Information**: Analysis reveals that in the early steps of the denoising process in flow-based T2V models, the latent prediction (a single-step estimation of the clean latent) already contains coarse motion trajectories and temporal dynamics, while appearance details accumulate later. This provides a theoretical basis for constructing motion guidance directly on the predicted output.
 
 ## Method
 
 ### Overall Architecture
 
-FlowMotion is built on top of flow-based T2V models (e.g., Wan2.1/2.2), with the core workflow:
+FlowMotion addresses specific pain points: existing training-free motion transfer either relies on internal layers (attention maps/diffusion features) for backpropagation—requiring 51–89 GB VRAM and hundreds of seconds—or is locked to specific architectures and requires inversion. The key observation is that the **latent prediction** in flow-based T2V models already encodes coarse motion and dynamics in early denoising steps. FlowMotion operates directly on this output: the source video is encoded into a clean latent $z_0^{src}$, forward-noised to $z_t^{src}$, and passed through the model to predict velocity $v_t^{src}$ to compute the motion representation $\hat{z}_0^{src}(t) = z_t^{src} - t \cdot v_t^{src}$ (without inversion). During target generation, the target latent prediction is computed in the first 10 steps, stabilized via **Velocity Regularization**, and aligned with the source motion via **Flow Guidance**. **Gradients are only backpropagated to the latent itself, not through internal layers**, resulting in extremely low memory usage and architecture independence.
 
-1. **Source video motion representation extraction** (no inversion needed): The source video is encoded to clean latent $z_0^{src}$, forward-noised to $z_t^{src}$, fed to the T2V model to predict velocity $v_t^{src}$, and then the latent prediction $\hat{z}_0^{src}(t) = z_t^{src} - t \cdot v_t^{src}$ is computed as the motion representation.
-2. **Flow guidance during target video generation**: In the first 10 denoising steps, the latent prediction $\hat{z}_0(t)$ of the target latent $z_t$ is computed and aligned with the source video's motion representation via a flow guidance loss. Gradients are backpropagated only to the latent itself, not through internal model layers.
-3. **Velocity regularization**: The velocity at each step is regularized to suppress over-alignment and directional abrupt changes, ensuring smooth and stable motion evolution.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    SRC["Source Video"] --> SENC["Encode to Clean Latent + Forward Noise<br/>(Inversion-free)"]
+    SENC --> SMOT["Empty-prompt Velocity Prediction<br/>→ Source Motion Rep (Latent Prediction)"]
 
-### Flow Guidance Design (Two Objectives)
+    TGT["Target Noise Latent"] --> TVEL["Predict Target Velocity"]
+    TVEL --> VR["Velocity Regularization<br/>Project along cumulative dir, attenuate orthogonal"]
+    VR --> TPRED["Target Latent Prediction"]
 
-- **Latent Alignment (LA)**: Directly aligns source and target latent predictions to maintain global motion consistency: $\mathcal{L}_{LA} = \|\hat{z}_0^{src}(t) - \hat{z}_0(t)\|_2^2$
-- **Difference Alignment (DA)**: Computes frame-to-frame differences $\triangle(\hat{z}_0^{src}(t))$ and $\triangle(\hat{z}_0(t))$ and aligns them, emphasizing temporal changes and suppressing static appearance information: $\mathcal{L}_{DA} = \|\triangle(\hat{z}_0^{src}(t)) - \triangle(\hat{z}_0(t))\|_2^2$
-- Total loss: $\mathcal{L}_{FG} = \alpha \cdot \mathcal{L}_{LA} + \beta \cdot \mathcal{L}_{DA}$, where $\alpha:\beta = 4:1$
+    SMOT --> FG["Flow Guidance<br/>Latent Alignment + Difference Alignment"]
+    TPRED --> FG
+    FG -->|"First 10 steps, gradient backprops to latent only"| TGT
+    FG --> OUT["Target Video"]
+```
 
-### Velocity Regularization
+### Key Designs
 
-To prevent over-fitting to appearance details and temporal instability from directly optimizing the latent prediction:
+**1. Flow Guidance: Dual Alignment on Latent Prediction for Motion Extraction**
 
-1. Compute the cumulative average velocity $v_t^{avg} = (z_t - z_1) / (t-1)$
-2. Decompose the current velocity into a projection component $v_t^{proj}$ along $v_t^{avg}$ and an orthogonal component $v_t^{orth}$
-3. Suppress the orthogonal component with a decay factor $\gamma=0.1$: $v_t^{reg} = v_t^{proj} + \gamma \cdot v_t^{orth}$
-4. Compute the latent prediction using the regularized velocity: $\hat{z}_0(t) = z_t - t \cdot v_t^{reg}$
+Simply guiding the latent prediction is insufficient; it must align "motion" rather than "appearance." Two alignment objectives are designed: **Latent Alignment (LA)** directly aligns the source and target latent predictions to maintain global motion consistency, $\mathcal{L}_{LA} = \|\hat{z}_0^{src}(t) - \hat{z}_0(t)\|_2^2$; **Difference Alignment (DA)** aligns inter-frame differences $\triangle(\hat{z}_0^{src}(t))$ and $\triangle(\hat{z}_0(t))$. Since inter-frame differences emphasize temporal changes, they suppress static appearance information: $\mathcal{L}_{DA} = \|\triangle(\hat{z}_0^{src}(t)) - \triangle(\hat{z}_0(t))\|_2^2$. These are weighted with $\alpha:\beta = 4:1$ as $\mathcal{L}_{FG} = \alpha \cdot \mathcal{L}_{LA} + \beta \cdot \mathcal{L}_{DA}$, where LA governs global consistency and DA governs temporal variation.
 
-### Loss Function & Optimization
+**2. Velocity Regularization: Suppressing Orthogonal Components to Prevent Over-alignment**
 
-- Guidance is applied only during the first 10 / 50 denoising steps; at each step, Adam optimizer performs 3 iterations to optimize the target latent
-- Learning rate 0.003, CFG scale = 6
-- Gradients backpropagate only to the latent, not through internal model layers → extremely low memory overhead
+Directly optimizing latent prediction can lead to overfitting appearance details and unstable updates across steps. The velocity is decomposed relative to the "cumulative average velocity": the cumulative average velocity is computed as $v_t^{avg} = (z_t - z_1) / (t-1)$. The current velocity is decomposed into a projection component $v_t^{proj}$ along $v_t^{avg}$ and an orthogonal component $v_t^{orth}$. The orthogonal component is suppressed using an attenuation factor $\gamma=0.1$: $v_t^{reg} = v_t^{proj} + \gamma \cdot v_t^{orth}$. The regularized velocity is then used to recompute the latent prediction $\hat{z}_0(t) = z_t - t \cdot v_t^{reg}$. The projection component represents the main direction of motion evolution and is preserved, while the orthogonal component represents jitters and is attenuated, ensuring both stability and alignment. Removing this in ablations causes all metrics to drop significantly (Text Sim. from 0.347 to 0.313).
+
+### Loss & Training
+
+-   Guidance is applied only during the first 10 out of 50 denoising steps.
+-   Each step involves 3 iterations of optimization for the target latent using the Adam optimizer.
+-   Learning rate is 0.003, CFG scale = 6.
+-   Gradients are only backpropagated to the latent rather than internal model layers, resulting in minimal memory overhead.
 
 ## Key Experimental Results
 
 ### Main Results (Table 1)
 
-| Method | Type | Backbone | Text Sim.↑ | Motion Fid.↑ | Temp. Cons.↑ | Train Time(s) | Infer Time(s) | Memory(GB) |
-|--------|------|----------|-----------|-------------|-------------|-----------|-----------|---------|
+| Method | Type | Backbone | Text Sim.↑ | Motion Fid.↑ | Temp. Cons.↑ | Training Time (s) | Inference Time (s) | VRAM (GB) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | LoRA Tuning | train | Wan2.1-1.3B | 0.327 | 0.782 | 0.977 | 8100 | 135 | 25.0 |
 | MotionDirector | train | ZeroScope-0.7B | 0.335 | 0.801 | 0.969 | 1662 | 140 | 28.0 |
 | MotionInversion | train | ZeroScope-0.7B | 0.328 | 0.839 | 0.970 | 1170 | 115 | 24.0 |
@@ -83,58 +90,69 @@ To prevent over-fitting to appearance details and temporal instability from dire
 | DiTFlow | free | CogVideoX-2B | 0.350 | 0.691 | 0.983 | - | 349 | 63.5 |
 | **FlowMotion** | **free** | **Wan2.1-1.3B** | **0.347** | **0.850** | **0.986** | **-** | **213** | **19.3** |
 
-FlowMotion achieves the **best Motion Fidelity (0.850) and Temporal Consistency (0.986)**, with Text Similarity second only to DiTFlow; inference time is only 213s (fastest among training-free methods) and memory is only 19.3 GB (lowest among all methods).
+FlowMotion is **optimal in Motion Fidelity (0.850) and Temporal Consistency (0.986)**, with Text Similarity ranking second only to DiTFlow. Inference time is only 213s (fastest among training-free), and VRAM is only 19.3 GB (lowest among all methods).
 
 ### Ablation Study (Table 3)
 
 | Variant | Text Sim.↑ | Motion Fid.↑ | Temp. Cons.↑ |
-|---------|-----------|-------------|-------------|
-| w/o DA (remove difference alignment) | 0.341 | 0.842 | 0.981 |
-| w/o VR (remove velocity regularization) | 0.313 | 0.809 | 0.968 |
+| :--- | :--- | :--- | :--- |
+| w/o DA (No Difference Alignment) | 0.341 | 0.842 | 0.981 |
+| w/o VR (No Velocity Regularization) | 0.313 | 0.809 | 0.968 |
 | **Full FlowMotion** | **0.347** | **0.850** | **0.986** |
 
-Removing VR causes significant drops across all metrics (especially Text Sim. from 0.347→0.313), demonstrating that velocity regularization is crucial for stable optimization.
+Removing VR leads to a significant drop in all metrics (especially Text Sim. from 0.347 to 0.313), proving its importance for stable optimization.
 
-### Memory Efficiency Analysis (Table 4, same backbone Wan2.1-1.3B)
+### VRAM Efficiency Analysis (Table 4, same Wan2.1-1.3B backbone)
 
-| Guidance Source | Memory (GB) |
-|----------------|------------|
-| Pure inference (no guidance) | 17.7 |
-| **Latent Prediction (this method)** | **19.3** |
-| Velocity output | 93.1 |
+| Guidance Source | VRAM (GB) |
+| :--- | :--- |
+| Pure Inference (No Guidance) | 17.7 |
+| **Latent Prediction (Ours)** | **19.3** |
+| Velocity Output | 93.1 |
 | Attention Map & Feature | OOM |
 
-Latent prediction guidance adds only 1.6 GB over pure inference, while velocity-based guidance requires 93 GB and attention-based guidance results in OOM.
+Latent prediction guidance only adds 1.6 GB over pure inference, whereas using velocity directly requires 93 GB, and attention-based guidance results in OOM.
 
-### User Study (Table 2, 20 volunteers, 1–5 scale)
+### User Study (Table 2, 20 volunteers, scale 1-5)
 
 | Method | Motion↑ | Temp.↑ | Text↑ | Overall↑ |
-|--------|---------|--------|-------|----------|
+| :--- | :--- | :--- | :--- | :--- |
 | MotionInversion | 3.41 | 3.34 | 2.69 | 2.83 |
 | DiTFlow | 2.48 | 3.18 | 3.16 | 2.63 |
 | DeT | 3.87 | 3.83 | 3.38 | 3.47 |
 | **FlowMotion** | **4.51** | **4.52** | **4.51** | **4.45** |
 
-## Highlights & Insights
+## Highlights
 
-- **Extremely simple and efficient**: Guidance signals are based directly on model prediction outputs; gradients do not pass through internal model layers, requiring only 19.3 GB memory and 213s inference—the most efficient training-free method
-- **No inversion needed**: Source video motion representation is extracted via forward noising + empty prompt, skipping the time-consuming inversion process
-- **Architecture-agnostic**: Does not depend on specific attention structures or U-Net/DiT internal modules; validated on both Wan2.1-1.3B and Wan2.2-5B
-- **Elegant velocity regularization design**: Decomposing velocity into projection along the cumulative direction and an orthogonal component, then decaying the orthogonal component to suppress over-alignment—a concise and effective approach
+-   **Simple and Efficient**: Guidance signals are based directly on the model's predicted output. Gradients do not pass through internal layers, requiring only 19.3 GB VRAM and 213s inference time, making it the most efficient training-free method.
+-   **Inversion-free**: Extracts source motion representations via forward noise and empty prompts, skipping the time-consuming inversion process.
+-   **Architecture-agnostic**: Does not rely on specific attention structures or internal U-Net/DiT modules; validated on Wan2.1-1.3B and Wan2.2-5B.
+-   **Elegant Velocity Regularization**: Decomposes velocity into projection and orthogonal components relative to the cumulative direction, attenuating the latter to suppress over-alignment—a simple yet effective approach.
 
 ## Limitations & Future Work
 
-- The motion representation is still global latent-level alignment, lacking fine-grained control over local/regional motion (e.g., transferring only foreground motion while keeping background free)
-- Using latent prediction as the motion representation couples appearance information to some extent; the authors note that using clean latent $z_0^{src}$ instead improves accuracy but reduces text alignment and background diversity—adaptive balancing remains an open question
-- Evaluation is conducted only at 480×720, 49 frames; scalability to higher resolutions and longer videos is not verified
-- Baseline methods use different backbones (due to architecture incompatibility), somewhat limiting fairness
+-   Motion representation is still global latent-level alignment, lacking fine-grained control over local/regional motion (e.g., transferring foreground motion while keeping the background free).
+-   Using latent prediction as a motion representation couples appearance information to some extent. The authors note that using clean latent $z_0^{src}$ improves accuracy but decreases text alignment and background diversity; adaptive balancing remains to be explored.
+-   Evaluation was conducted at 480×720 and 49 frames; scalability to higher resolutions and longer videos is not verified.
+-   Baselines use different backbones due to architectural incompatibility, which limits the fairness of comparisons.
+
+## Related Work & Insights
+
+| Dimension | Training-based (MotionDirector/DeT) | Training-free (DiTFlow/SMM) | FlowMotion |
+| :--- | :--- | :--- | :--- |
+| Needs Training | Yes, per-video fine-tuning | No | No |
+| Motion Guidance Source | Learned parameters | Internal intermediate outputs | Model predicted output (latent prediction) |
+| VRAM Requirement | 20-28 GB | 51-89 GB | **19.3 GB** |
+| Inference Time | 115-140s (+ training) | 349-1839s | **213s** |
+| Arch. Dependency | Tied to specific backbone | Tied to internal structure | **Architecture-agnostic** |
+| Motion Fidelity | High (Overfits appearance easily) | Medium | **Highest** |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Approaching motion transfer from the latent prediction perspective of flow matching is novel and the design is concise
-- Experimental Rigor: ⭐⭐⭐⭐ — Covers quantitative/qualitative/ablation/user study/memory analysis with comprehensive baselines
-- Writing Quality: ⭐⭐⭐⭐ — Clear figures and tables, convincing motivation analysis, well-structured
-- Significance: ⭐⭐⭐⭐ — Achieves significant improvements in both efficiency and performance for training-free motion transfer, with practical value
+-   Novelty: ⭐⭐⭐⭐ — Approaches motion transfer from the perspective of flow matching latent prediction; observations are novel and designs are concise.
+-   Experimental Thoroughness: ⭐⭐⭐⭐ — Covers quantitative, qualitative, ablation, user study, and memory analysis with complete baseline comparisons.
+-   Writing Quality: ⭐⭐⭐⭐ — Clear diagrams, persuasive motivation analysis, and standard structure.
+-   Value: ⭐⭐⭐⭐ — Achieves significant improvements in efficiency and performance for training-free motion transfer, offering high practical value.
 
 <!-- RELATED:START -->
 
@@ -142,11 +160,11 @@ Latent prediction guidance adds only 1.6 GB over pure inference, while velocity-
 
 ## Related Papers
 
+- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
+- [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
 - [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
-- [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
-- [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
+- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
 
 </div>
 

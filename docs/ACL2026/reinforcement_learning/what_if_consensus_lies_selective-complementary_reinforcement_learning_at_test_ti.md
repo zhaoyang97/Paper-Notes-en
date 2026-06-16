@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 description: >-
-  [ACL 2026][Reinforcement Learning][Test-Time Reinforcement Learning] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label nois…
+  [ACL 2026][Reinforcement Learning][Paper Note] This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label noise amplification by using selective positive pseudo-labels (filtering unreliable majorities with strict consensus criteria) and entropy-gated negative pseudo-labels (intr
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "Test-Time Reinforcement Learning"
-  - "Pseudo-label Noise"
-  - "Negative Labels"
-  - "Consensus Reliability"
-  - "Unsupervised Reasoning"
+  - ACL 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 71a075d03ccff338
+content_hash: 96c5c707e56f378b
 ---
-
 # SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 
 **Conference**: ACL 2026  
@@ -25,71 +19,82 @@ content_hash: 71a075d03ccff338
 
 ## TL;DR
 
-This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label noise amplification through selective positive pseudo-labels (filtering unreliable majorities with strict consensus criteria) and entropy-gated negative pseudo-labels (introducing negative supervision signals to prune incorrect trajectories for the first time in TTRL), achieving up to a 10.1 percentage point improvement over TTRL on AIME25.
+This paper proposes SCRL (Selective-Complementary Reinforcement Learning), a robust test-time reinforcement learning framework. It mitigates label noise amplification by using selective positive pseudo-labels (filtering unreliable majorities with strict consensus criteria) and entropy-gated negative pseudo-labels (introducing negative supervision signals in TTRL for the first time to prune incorrect trajectories). SCRL achieves up to a 10.1 percentage point improvement over TTRL on AIME25.
 
 ## Background & Motivation
 
-**Background**: Test-Time Reinforcement Learning (TTRL) has become a key paradigm for unsupervised reasoning, allowing LLMs to self-improve on unlabeled test streams by deriving pseudo-rewards via majority voting consensus.
+**Background**: Test-Time Reinforcement Learning (TTRL) enables LLMs to self-improve on unlabeled test streams by deriving pseudo-rewards via majority voting consensus, becoming a key paradigm for unsupervised reasoning.
 
-**Limitations of Prior Work**: Existing TTRL methods rely entirely on a positive pseudo-label strategy—majority voting to select the most frequent answer as the positive label. However, on difficult problems, answer distributions are highly dispersed and consensus is weak. The group normalization in GRPO amplifies noise: when the positive label ratio $f$ is small, the normalized advantage of positive samples $\hat{A}^+ = \sqrt{(1-f)/f}$ becomes large. A few incorrect positive pseudo-labels can disproportionately affect policy updates, leading to premature convergence to spurious solutions.
+**Limitations of Prior Work**: Existing TTRL methods rely entirely on a positive pseudo-labeling strategy, where majority voting selects the most frequent answer as the positive label. However, on difficult problems, the answer distribution is highly dispersed and consensus is weak. The group normalization in GRPO amplifies noise: when the positive label frequency $f$ is small, the normalized advantage of positive samples $\hat{A}^+ = \sqrt{(1-f)/f}$ becomes very large. Consequently, a few incorrect positive pseudo-labels disproportionately influence policy updates, leading to premature convergence on spurious solutions.
 
-**Key Challenge**: On difficult problems, identifying the correct answer is hard, but identifying incorrect answers is relatively easier. However, existing methods neglect the potential of negative labels—when the correct answer cannot be reliably identified, the search space can be narrowed by pruning incorrect trajectories.
+**Key Challenge**: On difficult problems, identifying the correct answer is hard, but identifying incorrect ones is relatively easy. Existing methods overlook the potential of negative labels; when the correct answer cannot be reliably identified, the search space can still be narrowed by pruning incorrect trajectories.
 
-**Goal**: To utilize both positive and negative signals in TTRL, pruning the search space with negative labels when consensus is unreliable rather than forcing a positive label choice.
+**Goal**: To simultaneously utilize positive and negative signals in TTRL, pruning the search space with negative labels when consensus is unreliable rather than forcing the selection of a positive label.
 
-**Key Insight**: Distinguish between "low-frequency but possibly correct" and "low-frequency and definitely incorrect" answers using generation uncertainty (token-level entropy). High frequency with low entropy indicates "likely correct," while low frequency with high entropy indicates "highly likely incorrect."
+**Key Insight**: Distinguish between "infrequent but potentially correct" and "infrequent and definitely incorrect" answers using generation uncertainty (token-level entropy). High frequency with low entropy suggests a likely correct answer, while low frequency with high entropy suggests a high probability of error.
 
-**Core Idea**: Provide positive supervision only when the consensus is sufficiently strong (selectivity) and prune definitely incorrect trajectories via negative labels when consensus is insufficient (complementarity). These cooperate through dynamic reward shaping for robust test-time learning.
+**Core Idea**: Provide positive supervision only when the consensus is sufficiently strong (selectivity) and prune definitely incorrect trajectories with negative labels when consensus is insufficient (complementarity). These cooperate through dynamic reward shaping to achieve robust test-time learning.
 
 ## Method
 
 ### Overall Architecture
 
-SCRL consists of three components: (1) Selective positive pseudo-labels—assigning positive labels only when the answer distribution is sharply concentrated and clearly separated from the runner-up; (2) Entropy-gated negative pseudo-labels—assigning negative labels to answers that satisfy both low frequency and high uncertainty; (3) Dynamic reward shaping—calibrating reward magnitudes based on consensus strength and integrating positive/negative signals. It is built upon the GRPO algorithm.
+SCRL aims to prevent test-time reinforcement learning from being misled by noise in difficult, weak-consensus scenarios. It layers three defenses over GRPO: first, it uses strict criteria to decide whether to provide a positive label; second, it identifies clearly incorrect low-frequency trajectories as negative labels to prune the search space; finally, it adaptively scales the magnitude of positive and negative reward signals based on consensus strength. Together, these transform the "naive majority voting" of TTRL into a robust framework that "learns from positives when consensus is credible and excludes errors when it is not."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Test Problem (Unlabeled)"] --> B["GRPO rollout<br/>Generate N responses → Dist. {p_j} + token-level entropy"]
+    B --> C{"Strong Consensus?<br/>p_j* ≥ τ_pos & Margin > τ_marg"}
+    C -->|Yes| D["Selective Positive Pseudo-label<br/>y⁺ = Top-freq answer a_j*"]
+    C -->|No| E["Discard Positive Label y⁺ = ∅"]
+    B --> F["Entropy-Gated Negative Pseudo-label<br/>Low freq p_j < τ_neg & High entropy H_j ≥ H̄ → Mark Negative"]
+    D --> G["Dynamic Reward Shaping<br/>Pos rew p(a_i), Neg rew (p − τ_neg), Entropy pen −λ_H(H − H̄)"]
+    E --> G
+    F --> G
+    G --> H["GRPO Policy Update"]
+```
 
 ### Key Designs
 
-1.  **Selective Positive Pseudo-labels**:
-    - **Function**: Prevents reinforcing incorrect answers as positive labels during weak consensus.
-    - **Mechanism**: Given an answer distribution $\{p_j\}$ of $N$ responses, declare a positive pseudo-label $y^+ = a_{j^*}$ if and only if the top proportion $p_{j^*} \geq \tau_{\text{pos}}$ (sufficient support) and $(p_{j^*} - p_{(2)}) > \tau_{\text{marg}}$ (sufficient margin from the second-best). Otherwise, $y^+ = \varnothing$, foregoing positive supervision.
-    - **Design Motivation**: When the distribution is dispersed, the majority answer might be only slightly more frequent than others and thus unreliable. The dual conditions of a strict threshold and margin ensure positive signals are provided only during high confidence.
+**1. Selective Positive Pseudo-labeling: No Positive Label if Consensus is Weak**
 
-2.  **Entropy-gated Negative Pseudo-labels**:
-    - **Function**: Introduces negative supervision in TTRL for the first time to prune definitely incorrect trajectories.
-    - **Mechanism**: Calculate the average token-level entropy $\bar{H}_j$ for the trajectory corresponding to each answer $a_j$. Answer $a_j$ is marked as a negative pseudo-label if and only if $p_j < \tau_{\text{neg}}$ (low frequency) and $\bar{H}_j \geq \bar{H}$ (above the global average uncertainty). The key constraint $\bar{H}_j \geq \bar{H}$ ensures that low-frequency but low-uncertainty answers (potential rare correct solutions) are not penalized.
-    - **Design Motivation**: Low frequency can indicate either "rare but correct" or "definitely incorrect." The entropy condition distinguishes these—high uncertainty suggests the model is "unconfident" in the trajectory, making it likely to be incorrect reasoning.
+A pain point of TTRL is that majority voting on difficult problems often selects an answer that is only "slightly more frequent" than others. Reinforcing this as a positive label cements incorrect solutions. SCRL adds a dual-gate to positive supervision: for $N$ responses, the answer distribution $\{p_j\}$ is analyzed. A positive pseudo-label $y^+ = a_{j^*}$ is declared only if the highest proportion $p_{j^*} \geq \tau_{\text{pos}}$ (sufficient support) **and** the margin over the second-best answer $(p_{j^*} - p_{(2)}) > \tau_{\text{marg}}$ (clear lead) are both met. Otherwise, $y^+ = \varnothing$, and positive supervision is discarded for the current round. This dual condition ensures consensus is only trusted when the distribution is both "sharp and separated," cutting off noise amplification at the source.
 
-3.  **Dynamic Reward Shaping**:
-    - **Function**: Calibrates the reward magnitude of positive and negative signals based on consensus strength.
-    - **Mechanism**: Positive reward = answer proportion $p(a_i)$ (stronger consensus yields larger reward); Negative reward = $(p(a_i) - \tau_{\text{neg}})$ (rarer answers receive heavier penalties); Entropy penalty = $-\lambda_H(\bar{H}(a_i) - \bar{H})$ (biases toward low-uncertainty responses). These are combined in a weighted sum.
-    - **Design Motivation**: Fixed rewards amplify noise when consensus strength varies. Dynamic scaling ensures signal intensity is proportional to consensus reliability.
+**2. Entropy-Gated Negative Pseudo-labeling: Using Uncertainty to Separate Errors from Rare Truths**
+
+When a positive label cannot be provided, SCRL introduces negative supervision to prune definitely incorrect trajectories—a first in TTRL. The challenge is that low-frequency answers can be either rare correct solutions or incorrect reasoning. SCRL uses token-level entropy during generation for disambiguation: for each answer $a_j$, the average trajectory entropy $\bar{H}_j$ is calculated. A negative label is assigned only if $p_j < \tau_{\text{neg}}$ (low frequency) **and** $\bar{H}_j \geq \bar{H}$ (above global average uncertainty). The condition $\bar{H}_j \geq \bar{H}$ is crucial—it protects rare correct solutions where the model is certain, while only punishing trajectories that are both scarce and uncertain.
+
+**3. Dynamic Reward Shaping: Aligning Reward Magnitude with Consensus Reliability**
+
+Fixed reward values can amplify noise when consensus fluctuates. SCRL adaptively scales both positive and negative signals: the positive reward is set to the answer proportion $p(a_i)$, granting more reward for stronger consensus; the negative reward is $(p(a_i) - \tau_{\text{neg}})$, imposing heavier penalties for rarer answers. An entropy penalty $-\lambda_H(\bar{H}(a_i) - \bar{H})$ is added to push the policy toward low-uncertainty responses. By combining these three weighted components, the reward intensity always follows consensus reliability, preventing a one-size-fits-all reward from over-reinforcing incorrect samples in weak-consensus situations.
 
 ### Loss & Training
 
-Uses GRPO as the base RL algorithm. AdamW optimizer is used with a cosine learning rate scheduler (peak $5 \times 10^{-7}$). 64 (or 32) candidate responses are generated per rollout for label estimation, with 32 (or 16) downsampled for training updates. Thresholds are set at $\tau_{\text{pos}}=0.375, \tau_{\text{marg}}=0.125, \tau_{\text{neg}}=0.125$. Training is conducted on 8×A100 80GB GPUs.
+GRPO is used as the base RL algorithm. It utilizes the AdamW optimizer with a cosine learning rate schedule (peak $5 \times 10^{-7}$). Updates involve generating 64 (or 32) candidate responses for label estimation and downsampling to 32 (or 16) for training. Thresholds are set at $\tau_{\text{pos}}=0.375, \tau_{\text{marg}}=0.125, \tau_{\text{neg}}=0.125$. The experiments were conducted on 8×A100 80GB GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**pass@1 Accuracy (%) on Qwen2.5-Math-7B**
+**Pass@1 Accuracy (%) on Qwen2.5-Math-7B**
 
 | Method | AIME25 | AMC | MATH-500 | Minerva | Average |
 |------|--------|-----|---------|---------|------|
 | Baseline | 4.6 | 34.0 | 46.5 | 10.1 | 23.6 |
 | + TTRL | 16.8 | 65.7 | 85.7 | 14.5* | 41.6 |
-| **+ Ours (SCRL)** | **26.9** | **66.9** | **85.6** | **41.6** | **49.3** |
+| **+ SCRL** | **26.9** | **66.9** | **85.6** | **41.6** | **49.3** |
 | Gain vs TTRL | +10.1 | +1.2 | -0.1 | +27.1 | +7.7 |
 
-*\*Note: TTRL performance on Minerva degraded sharply after reaching a peak of 14.5%*
+*Note: TTRL performance degrades sharply after reaching a 14.5% peak on Minerva.*
 
-**pass@1 (%) on Llama-3.1-8B-Instruct**
+**Pass@1 (%) on Llama-3.1-8B-Instruct**
 
 | Method | AIME24 | AMC | Average |
 |------|--------|------|------|
 | + TTRL | 10.0 | 32.3 | 21.2 |
 | + RESTRAIN | 16.7 | 40.0 | 28.4 |
-| **+ Ours (SCRL)** | **21.9** | 36.1 | **29.0** |
+| **+ SCRL** | **21.9** | 36.1 | **29.0** |
 
 ### Ablation Study
 
@@ -103,37 +108,37 @@ Uses GRPO as the base RL algorithm. AdamW optimizer is used with a cosine learni
 
 ### Key Findings
 
-- The performance gain is largest (+10.1) on the hardest task (AIME25), which is precisely where the weak consensus problem is most severe.
-- TTRL exhibits training instability on Minerva (performance peaks then drops sharply), while SCRL maintains stable training dynamics (41.6% vs 14.5%).
-- Negative labels contribute most to difficult tasks (+7.5 on AIME25), validating the strategy of "excluding what is wrong when unsure what is right."
-- SCRL efficacy is more significant under low rollout budgets—when budgets are constrained, consensus is less reliable, making SCRL's protection mechanisms more critical.
-- Consistently effective across model families (Qwen, Llama) and scales (1B-7B), demonstrating model-agnosticism.
+- The largest improvement (+10.1) occurs on the most difficult task (AIME25), which is exactly where weak consensus is most prevalent.
+- While TTRL exhibits training instability on Minerva (performance rises then drops sharply), SCRL maintains stable training dynamics (41.6% vs 14.5%).
+- Negative labels contribute most significantly to difficult tasks (+7.5 on AIME25), validating the strategy of "excluding what is wrong when the right is unknown."
+- SCRL's effectiveness is more pronounced under low rollout budgets; when budgets are limited, consensus is less reliable, making SCRL's protective mechanisms more critical.
+- Consistent effectiveness across model families (Qwen, Llama) and scales (1B-7B) demonstrates model-agnosticism.
 
 ## Highlights & Insights
 
-- The insight "consensus can be wrong" directly addresses the fundamental bottleneck of TTRL, and the negative label mechanism provides a natural and elegant solution.
-- Entropy gating is critical for distinguishing "rarely correct" from "definitely incorrect"—relying solely on frequency or uncertainty is insufficient; their intersection provides the necessary reliability.
-- Dynamic reward shaping ensures signal intensity adaptively matches consensus reliability, preventing the noise amplification inherent in fixed rewards.
+- The insight "consensus can be wrong" directly challenges the fundamental assumption of TTRL; the negative label mechanism provides a natural and elegant solution.
+- Entropy gating is the key to distinguishing "rare truths" from "actual errors." Neither frequency nor uncertainty alone is sufficient; it is the intersection of the two that provides reliability.
+- Dynamic reward shaping ensures the intensity of positive and negative signals matches consensus reliability, avoiding noise amplification inherent in fixed rewards.
 
 ## Limitations & Future Work
 
-- Threshold parameters ($\tau_{\text{pos}}, \tau_{\text{marg}}, \tau_{\text{neg}}$) are fixed across all experiments, which may lack flexibility for certain tasks.
-- Evaluation is limited to mathematics and general reasoning; code generation and other tasks remain unexplored.
-- Negative labels contribute less to simple tasks and may introduce unnecessary complexity.
+- Threshold parameters ($\tau_{\text{pos}}, \tau_{\text{marg}}, \tau_{\text{neg}}$) were fixed across all experiments, which may lack flexibility for certain tasks.
+- Validation was limited to mathematics and general reasoning; tasks like code generation were not explored.
+- Negative labels contribute less to simple tasks and may introduce unnecessary complexity there.
 - Future work could explore adaptive threshold mechanisms and finer-grained uncertainty estimation.
 
 ## Related Work & Insights
 
-- **vs TTRL**: TTRL uses only positive labels and amplifies noise during weak consensus; SCRL adds selectivity and negative labels as protective mechanisms.
-- **vs RESTRAIN**: RESTRAIN penalizes overconfidence and low-consistency responses but remains within a positive label framework; SCRL introduces genuine negative supervision signals.
+- **vs TTRL**: TTRL uses only positive labels, amplifying noise under weak consensus. SCRL adds selectivity and negative labels as protective mechanisms.
+- **vs RESTRAIN**: RESTRAIN penalizes overconfidence and low-consistency responses but remains within a positive-label framework. SCRL introduces true negative supervision signals.
 - **vs SPINE**: SPINE limits updates to high-entropy forking tokens; SCRL operates at the answer level, offering strong complementarity.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Introduces negative supervision signals in TTRL for the first time; the selective-complementary framework is elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across models, scales, and tasks, featuring detailed ablation and label quality analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation with complete formal derivations.
-- Value: ⭐⭐⭐⭐⭐ Successfully addresses a core bottleneck in TTRL with significant performance gains.
+- Novelty: ⭐⭐⭐⭐⭐ First to introduce negative supervision to TTRL; the selective-complementary framework is elegantly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multi-model, multi-scale, multi-task, with detailed ablation and label quality analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and complete mathematical derivation.
+- Value: ⭐⭐⭐⭐⭐ Significantly addresses the core bottleneck of TTRL with substantial performance gains.
 
 <!-- RELATED:START -->
 
@@ -144,8 +149,8 @@ Uses GRPO as the base RL algorithm. AdamW optimizer is used with a cosine learni
 - [\[ACL 2026\] Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning](beyond_majority_voting_towards_fine-grained_and_more_reliable_reward_signal_for_.md)
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_teachers_of_test_time_scaling.md)
 - [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
+- [\[ICML 2025\] Test-Time Adaptation with Binary Feedback](../../ICML2025/reinforcement_learning/test-time_adaptation_with_binary_feedback.md)
 - [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](../../AAAI2026/reinforcement_learning/aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
-- [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](../../ICLR2026/reinforcement_learning/p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 
 </div>
 

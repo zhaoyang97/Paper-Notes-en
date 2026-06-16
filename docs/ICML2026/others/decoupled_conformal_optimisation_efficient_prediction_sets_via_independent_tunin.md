@@ -2,121 +2,123 @@
 title: >-
   [Paper Note] Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration
 description: >-
-  [ICML2026][Split Conformal Prediction] This paper proposes DCO-Warmstart—a tripartite "Train–Tune–Calibrate" Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reser…
+  [ICML 2026][Others][Paper Note] This paper proposes DCO-Warmstart—a "train–tune–calibrate" tripartite Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reserving the conformal quantile for an untouched calibration split, it achieves standard finite-sample marginal coverage guarantees on candidat
 tags:
-  - "ICML2026"
-  - "Split Conformal Prediction"
-  - "Bayesian Optimization"
-  - "Marginal Coverage"
-  - "Data Partitioning"
-  - "Efficiency–Validity Decoupling"
+  - ICML 2026
+  - Others
 date: 2026-05-08
-content_hash: 54c65f6668180f1c
+content_hash: 8a9d795d00b4506b
 ---
-
 # Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration
 
 **Conference**: ICML2026  
 **arXiv**: [2605.18354](https://arxiv.org/abs/2605.18354)  
-**Code**: Public link not provided in the paper  
-**Area**: Uncertainty Quantization / Conformal Prediction / Bayesian Optimization  
+**Code**: No public link provided  
+**Area**: Uncertainty Quantification / Conformal Prediction / Bayesian Optimization  
 **Keywords**: Split Conformal Prediction, Bayesian Optimization, Marginal Coverage, Data Partitioning, Efficiency–Validity Decoupling
 
 ## TL;DR
-This paper proposes DCO-Warmstart—a tripartite "Train–Tune–Calibrate" Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reserving the conformal quantile for an untouched calibration split, it achieves standard finite-sample marginal coverage guarantees on arbitrary (even infinite) candidate structure classes without requiring a confidence parameter $\delta$. Empirically, the resulting prediction set sizes are typically smaller than those of coupled calibration methods like CRC or BQ.
+This paper proposes DCO-Warmstart—a "train–tune–calibrate" tripartite Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reserving the conformal quantile for an untouched calibration split, it achieves standard finite-sample marginal coverage guarantees on candidate structures of any size (even infinite) without requiring a confidence parameter $\delta$. Empirically, it typically produces smaller prediction sets than coupled calibration methods like CRC or BQ.
 
 ## Background & Motivation
 
-**Background**: Conformal Prediction (CP) has become a mainstream uncertainty quantization paradigm due to its "distribution-free + finite-sample marginal coverage" properties. Split CP divides data into $D_{\text{train}}$ and $D_{\text{cal}}$. After fixing a non-conformity score $S(x,y)$, the prediction set $C(x)=\{y:S(x,y)\le \hat q_{1-\alpha}\}$ is derived using the empirical $(1-\alpha)$ quantile $\hat q_{1-\alpha}$. Recently, researchers have pursued "smaller yet valid" prediction sets, leading to conformal optimization methods that minimize size by searching over scores, priors, model architectures, or threshold rules.
+**Background**: Conformal Prediction (CP) has become a mainstream uncertainty quantification paradigm due to its "distribution-free + finite-sample marginal coverage" properties. Split CP partitions data into $D_{\text{train}}$ and $D_{\text{cal}}$. After fixing a non-conformity score $S(x,y)$, the empirical $(1-\alpha)$ quantile $\hat q_{1-\alpha}$ is used to construct the prediction set $C(x)=\{y:S(x,y)\le \hat q_{1-\alpha}\}$. Recently, research has pivoted toward "smaller yet valid" prediction sets, leading to conformal optimization methods that search for optimal scores, priors, model architectures, or threshold rules to minimize set size.
 
-**Limitations of Prior Work**: Representative methods such as BCP-CRC, Bayesian Quadrature calibration, and Learn-then-Test perform both "optimal threshold search" and "coverage certification" on the **same** hold-out dataset $D_{\text{cal}}$. Consequently, the quantile is no longer calculated on data independent of the search process, invalidating the exchangeability proof of standard split CP. These methods must resort to PAC-style weak guarantees ("risk is satisfied with probability $1-\delta$") and apply multiple testing corrections—which significantly inflate thresholds and prediction sets when the candidate class is large.
+**Limitations of Prior Work**: Representative methods such as BCP-CRC, Bayesian Quadrature calibration, and Learn-then-Test perform both "optimal threshold search" and "coverage certification" on the **same** hold-out dataset $D_{\text{cal}}$. Consequently, the quantile is no longer calculated on data independent of the search process, causing the exchangeability proof of standard Split CP to fail. These methods must settle for PAC-style "risk satisfied with probability $1-\delta$" guarantees and apply multiple testing corrections—which significantly inflate thresholds and prediction sets, especially when the candidate class is large.
 
-**Key Challenge**: Statistically, optimization and calibration are distinct tasks—the former requires repeated evaluation of candidate rules on data, while the latter requires data uncontaminated by any prior search. Bundling them into a single $D_{\text{cal}}$ might seem data-efficient but replaces a strong, simple marginal coverage guarantee with a weaker, more complex guarantee requiring $\delta$.
+**Key Challenge**: Optimization (efficiency) and calibration (validity) are statistically distinct tasks. The former requires repeated evaluation of candidate rules on data, while the latter requires data that has not been "polluted" by any prior search. Bundling them on a single $D_{\text{cal}}$ might seem data-efficient, but it replaces a strong, simple marginal coverage guarantee with a weaker, more complex guarantee requiring $\delta$.
 
-**Goal**: In the context of Bayesian conformal optimization, **restore** the finite-sample marginal coverage guarantee $\mathbb P\{Y_{m+1}\in C(X_{m+1})\}\ge 1-\alpha$ while retaining the ability to explicitly optimize efficiency over structures (score types, prior hyperparameters, model architectures, etc.) and eliminating the impact of candidate class size on the final threshold.
+**Goal**: In the context of Bayesian conformal optimization, this work aims to **restore** the finite-sample marginal coverage guarantee $\mathbb P\{Y_{m+1}\in C(X_{m+1})\}\ge 1-\alpha$ while maintaining the ability to explicitly optimize efficiency across structures (score types, prior hyperparameters, architectures, etc.) and eliminating the impact of candidate class size on the final threshold.
 
-**Key Insight**: The authors observe that "using a validation set to select a model and then performing split CP" is already valid in naive CP—provided the selection does not depend on $D_{\text{cal}}$. The issue is that Bayesian conformal optimization blurs the boundary between search and calibration. By explicitly partitioning data into three sets and enforcing that the calibration split is used only once in the final step, the theory reverts to the classical framework.
+**Key Insight**: The authors observe that "using a validation set to select a model before performing Split CP" is already valid in naive CP—provided the choice does not depend on $D_{\text{cal}}$. The issue is that Bayesian conformal optimization blurs the boundary between search and calibration. By explicitly partitioning data into three sets and enforcing that the calibration split is used only once in the final step, the theory reverts to the classical framework.
 
-**Core Idea**: Utilize an independent tuning split $D_{\text{tune}}$ for all efficiency-oriented structural selections, while the calibration split $D_{\text{cal}}$ is used solely to compute the final conformal quantile. The threshold $\hat\lambda_{\text{tune}}$ obtained during the tuning phase serves only as a ranking tool and is **discarded upon deployment**.
+**Core Idea**: Utilize an independent tuning split $D_{\text{tune}}$ to handle all efficiency-oriented structural selections, while the calibration split $D_{\text{cal}}$ is reserved solely for calculating the final conformal quantile. The threshold $\hat\lambda_{\text{tune}}$ obtained during the tuning phase serves only as a ranking tool and is **discarded during deployment**.
 
 ## Method
 
 ### Overall Architecture
 Given an exchangeable dataset $D_n$, DCO-Warmstart partitions it into three disjoint subsets: $D_{\text{train}}\cup D_{\text{tune}}\cup D_{\text{cal}}$:
 
-1.  **Training Phase**: Fit the posterior $\pi(\theta\mid D_{\text{train}})$ on $D_{\text{train}}$ to fix a family of non-conformity scores $\{S_\phi(x,y)\}_{\phi\in\Phi}$. In the BCP setting, $S_\phi(x,y)=-\log p(y\mid x,D_{\text{train}})$ is the negative log-posterior predictive density, where $\phi$ encodes structural choices.
-2.  **Tuning Phase**: Perform constrained optimization on $D_{\text{tune}}$: $(\hat\phi_{\text{tune}},\hat\lambda_{\text{tune}})=\arg\min_{(\phi,\lambda)\in\Phi\times\Lambda}\widehat{\mathcal S}_{\text{tune}}(\phi,\lambda)$ s.t. $\widehat R_{\text{tune}}(\phi,\lambda)\le\alpha$, where $\widehat{\mathcal S}_{\text{tune}}$ is the empirical average prediction set size and $\widehat R_{\text{tune}}$ is the empirical miscoverage rate. Line search can be applied to $\lambda$ for each fixed $\phi$ due to monotonicity.
-3.  **Calibration Phase**: **Discard** $\hat\lambda_{\text{tune}}$, recalculate the quantile $\hat q_{1-\alpha}=S_{(k_\alpha)}$ on $D_{\text{cal}}$ (where $k_\alpha=\lceil(m+1)(1-\alpha)\rceil$), and deploy the prediction set $C_{\text{DCO}}(x)=\{y:S_{\hat\phi_{\text{tune}}}(x,y)\le \hat q_{1-\alpha}\}$.
+1. **Training Phase**: Fit the posterior $\pi(\theta\mid D_{\text{train}})$ on $D_{\text{train}}$ to fix a family of non-conformity scores $\{S_\phi(x,y)\}_{\phi\in\Phi}$. In the BCP setting, $S_\phi(x,y)=-\log p(y\mid x,D_{\text{train}})$ represents the negative log-posterior predictive density, where $\phi$ encodes structural choices like score types or prior hyperparameters.
+2. **Tuning Phase**: Perform constrained optimization on $D_{\text{tune}}$ to find $(\hat\phi_{\text{tune}},\hat\lambda_{\text{tune}})=\arg\min_{(\phi,\lambda)\in\Phi\times\Lambda}\widehat{\mathcal S}_{\text{tune}}(\phi,\lambda)$ s.t. $\widehat R_{\text{tune}}(\phi,\lambda)\le\alpha$, where $\widehat{\mathcal S}_{\text{tune}}$ is the empirical average prediction set size and $\widehat R_{\text{tune}}$ is the empirical miscoverage rate. Leveraging the monotonicity of $\widehat R_{\text{tune}}(\phi,\cdot)$ with respect to $\lambda$, line search can be used for acceleration.
+3. **Calibration Phase**: **Discard** $\hat\lambda_{\text{tune}}$ and recalculate the quantile on $D_{\text{cal}}$ as $\hat q_{1-\alpha}=S_{(k_\alpha)}$ where $k_\alpha=\lceil(m+1)(1-\alpha)\rceil$. The deployed prediction set is $C_{\text{DCO}}(x)=\{y:S_{\hat\phi_{\text{tune}}}(x,y)\le \hat q_{1-\alpha}\}$.
 
-The critical statistical observation is that since $\hat\phi_{\text{tune}}$ depends only on $D_{\text{train}}\cup D_{\text{tune}}$, the scores on $D_{\text{cal}}$ remain exchangeable with the test point score given this structure. Thus, the classical split CP proof applies directly, yielding $\mathbb P\{Y_{m+1}\in C_{\hat\phi_{\text{tune}},\hat q_{1-\alpha}}(X_{m+1})\}\ge 1-\alpha$ for **any candidate class** $\Phi$ (finite or infinite) without $\delta$ or multiple testing corrections.
+The critical statistical observation is that since $\hat\phi_{\text{tune}}$ depends only on $D_{\text{train}}\cup D_{\text{tune}}$, the scores on $D_{\text{cal}}$ remain exchangeable with the test point score given this fixed structure. Thus, the classical Split CP proof applies directly, yielding $\mathbb P\{Y_{m+1}\in C_{\hat\phi_{\text{tune}},\hat q_{1-\alpha}}(X_{m+1})\}\ge 1-\alpha$. This holds for **any candidate class** $\Phi$ (finite or infinite) without requiring $\delta$ or multiple testing corrections.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Exchangeable Dataset D_n → Tripartite Partitioning<br/>D_train / D_tune / D_cal are disjoint"]
+    A --> B["Training Phase (D_train)<br/>Fit posterior π(θ|D_train), fix score family S_φ"]
+    B --> C["Tuning Phase (D_tune)<br/>Constrained optimization to select structure φ̂_tune and threshold λ̂_tune"]
+    C -->|Discard λ̂_tune, retain structure φ̂_tune only| D["Calibration Phase (D_cal)<br/>Recalculate quantile q̂_(1−α) on untouched D_cal"]
+    D --> E["Deploy Prediction Set C_DCO(x)<br/>Finite-sample marginal coverage, no δ, no multiple testing correction"]
+```
 
 ### Key Designs
 
-1.  **Tripartite Data Partitioning + "Discard Tuning Threshold"**:
-    *   **Function**: Physically separates efficiency search from coverage certification, reviving standard split CP exchangeability in Bayesian conformal optimization.
-    *   **Mechanism**: Separate splits handle model fitting, structural selection, and threshold determination. The optimization $\min \widehat{\mathcal S}_{\text{tune}}$ s.t. $\widehat R_{\text{tune}}\le\alpha$ yields both $\hat\phi_{\text{tune}}$ and $\hat\lambda_{\text{tune}}$, but the latter is used only to rank candidates within $\Phi$ and is **discarded**. The operational threshold is the subsequent $\hat q_{1-\alpha}$ from $D_{\text{cal}}$.
-    *   **Design Motivation**: To ensure $\hat\phi_{\text{tune}}$ is measurable with respect to $D_{\text{cal}}$, obtaining finite-sample marginal coverage without $\delta$. Unlike BCP-CRC which bundles optimization into $D_{\text{cal}}$, DCO decouples these tasks.
+**1. Tripartite Partitioning + "Discarding Tuning Threshold": Physical Isolation of Search and Certification**
 
-2.  **Decoupling Candidate Class Size from Final Threshold**:
-    *   **Function**: Prevents the conformal threshold from inflating with the number of candidate structures $K=|\Phi|$, allowing for richer search spaces.
-    *   **Mechanism**: CRC/BQ-style methods must certify risks for multiple candidates on $D_{\text{cal}}$, requiring a penalty term that grows with $K$. DCO leaves candidate filtering entirely within $D_{\text{tune}}$, running the quantile calculation only once for the fixed $\hat\phi_{\text{tune}}$.
-    *   **Design Motivation**: Theorem 3.1 explicitly states that the coverage guarantee holds for "any finite or infinite $\Phi$." The cost is borne only by the tuning sample complexity (Proposition 3.2): $m_{\text{tune}}\ge \max\{\log(4|\mathcal A|/\eta)/(2\varepsilon_R^2),\,B^2\log(4|\mathcal A|/\eta)/(2\varepsilon_S^2)\}$. Candidate size only affects "tuning quality," not "final validity."
+The loss of guarantees in Bayesian conformal optimization stems from performing both threshold optimization and coverage certification on the same $D_{\text{cal}}$—once the quantile is calculated on data "contaminated" by search, exchangeability is broken, forcing a fallback to weak PAC guarantees with $\delta$ risk. This method decouples these tasks: $D_{\text{train}}$ fits the model, $D_{\text{tune}}$ selects the structure, and $D_{\text{cal}}$ determines the threshold. While the tuning phase outputs both a structure $\hat\phi_{\text{tune}}$ and a threshold $\hat\lambda_{\text{tune}}$, the **latter is only used for ranking candidates and is discarded before deployment**. The actual effective threshold is recalculated later on $D_{\text{cal}}$. This ensures $\hat\phi_{\text{tune}}$ is measurable with respect to $D_{\text{cal}}$, restoring the classical exchangeability argument and retrieving the standard marginal coverage guarantee $\mathbb P\{Y_{m+1}\in C(X_{m+1})\}\ge 1-\alpha$. Compared to BCP-CRC, DCO simply "adds one more split" to obtain a stronger and simpler guarantee.
 
-3.  **Asymptotic Equivalence to PAC Methods + DirectTune Diagnostic Baseline**:
-    *   **Function**: Clarifies the relationship between DCO and CRC/BQ styles—different guarantees in finite samples (marginal coverage vs. high-probability risk control) but convergence to the same population threshold $\lambda^\star=\inf\{\lambda:R(\lambda)\le\alpha\}$ in large samples.
-    *   **Mechanism**: Under conditions where $R(\lambda)$ is continuous and strictly monotonic near $\lambda^\star$, the split conformal threshold is consistent $\hat\lambda_{\text{DCO}}\xrightarrow{p}\lambda^\star$, and the CRC bias term $b_m(\lambda,\delta_m)$ vanishes, Proposition 3.3 proves $\hat\lambda_{\text{CRC}}-\hat\lambda_{\text{DCO}}\xrightarrow{p}0$. DirectTune (tuning only without calibration) is used as a negative baseline to quantify the cost of skipping the calibration split.
-    *   **Design Motivation**: To clarify that DCO does not "replace" CRC/BQ but serves different objectives; DirectTune empirically shows smaller sets but fails coverage, proving the necessity of the final calibration step.
+**2. Decoupling Candidate Class Size from Final Threshold: Enabling Richer Search Spaces**
+
+CRC/BQ-style methods must certify risks for multiple candidates on $D_{\text{cal}}$ simultaneously. Multiple testing corrections force a penalty that grows with the number of candidates $K=|\Phi|$, pushing thresholds higher and sets larger. DCO confines candidate selection entirely to $D_{\text{tune}}$. Calibration is performed only once for the fixed $\hat\phi_{\text{tune}}$, allowing Theorem 3.1 to state that coverage guarantees hold for "any finite or infinite $\Phi$." Neural architectures or continuous hyperparameters can be used as candidates without discretization or multiple testing costs. The cost of a large candidate space only affects the tuning sample complexity in Proposition 3.2: $m_{\text{tune}}\ge \max\{\log(4|\mathcal A|/\eta)/(2\varepsilon_R^2),\,B^2\log(4|\mathcal A|/\eta)/(2\varepsilon_S^2)\}$, meaning candidate size affects "tuning quality" rather than "validity."
+
+**3. Asymptotic Equivalence to PAC Methods + DirectTune Diagnostics**
+
+DCO is not intended to replace CRC/BQ, so the authors characterize their relationship: while guarantees differ in finite samples (marginal coverage vs. high-probability risk control), they converge to the same population threshold $\lambda^\star=\inf\{\lambda:R(\lambda)\le\alpha\}$ in the large-sample limit. Under conditions where $R(\lambda)$ is continuous and strictly monotonic near $\lambda^\star$, $\hat\lambda_{\text{DCO}}\xrightarrow{p}\lambda^\star$, and the CRC bias term $b_m(\lambda,\delta_m)$ vanishes, Proposition 3.3 proves $\hat\lambda_{\text{CRC}}-\hat\lambda_{\text{DCO}}\xrightarrow{p}0$. To visualize the "cost of skipping the calibration split," the authors introduce DirectTune as a negative control: it merges $D_{\text{cal}}$ into $D_{\text{tune}}$ and deploys $\hat\lambda_{\text{tune}}$ directly. This lacks exchangeability, and experiments show that while its prediction sets are smallest, it fails to meet coverage targets.
 
 ### Loss & Training
-The tuning objective follows equation (9): $\min_{(\phi,\lambda)} \widehat{\mathcal S}_{\text{tune}}(\phi,\lambda)$ s.t. $\widehat R_{\text{tune}}(\phi,\lambda)\le\alpha$. In practice, this is solved via grid search over $\Phi\times\Lambda$ combined with monotonic line search. If no candidate satisfies the constraint, the one with minimum empirical miscoverage is selected. Total complexity is $O(K|\Lambda|m_{\text{tune}})$ for tuning and $O(m_{\text{cal}}\log m_{\text{cal}})$ for calibration sorting.
+The objective in the tuning phase is given by Equation (9): $\min_{(\phi,\lambda)} \widehat{\mathcal S}_{\text{tune}}(\phi,\lambda)$ s.t. $\widehat R_{\text{tune}}(\phi,\lambda)\le\alpha$. In practice, this is solved via grid search over $\Phi\times\Lambda$ combined with monotonic line search. If no candidate satisfies the constraint, the one with the minimum empirical miscoverage is selected. Total computational complexity is $O(K|\Lambda|m_{\text{tune}})$ (tuning) + $O(m_{\text{cal}}\log m_{\text{cal}})$ (calibration sorting).
 
 ## Key Experimental Results
 
 ### Main Results
-The authors compared DCO-Warmstart against CRC/BQ-style calibration on ImageNet-A (classification), CIFAR-100 (classification), and Diabetes, California Housing, and Concrete (regression). The target coverage $1-\alpha$ was set to 90%. DCO consistently matched the nominal coverage while providing tighter prediction sets:
+The authors compared DCO-Warmstart with CRC/BQ-style calibration on ImageNet-A (classification), CIFAR-100 (classification), and regression datasets (Diabetes, California Housing, Concrete). With a target coverage $1-\alpha=0.9$, DCO closely tracks the nominal level while providing tighter prediction sets:
 
-| Dataset | Metric | CRC/BQ style | DCO-Warmstart | Gain |
-| :--- | :--- | :--- | :--- | :--- |
-| ImageNet-A | Avg. Set Size | 26.52 | 25.26 | ↓ 1.26 |
-| ImageNet-A | 95th Percentile Size | 58.95 | 53.73 | ↓ 5.22 |
-| Diabetes (Reg.) | Avg. Interval Width | 2.098 | 1.914 | ↓ 0.184 |
+| Dataset | Metric | CRC/BQ Style | DCO-Warmstart | Change |
+|---------|--------|--------------|---------------|--------|
+| ImageNet-A | Avg Set Size | 26.52 | 25.26 | ↓ 1.26 |
+| ImageNet-A | 95th Pctl Size | 58.95 | 53.73 | ↓ 5.22 |
+| Diabetes (Reg) | Avg Interval Width | 2.098 | 1.914 | ↓ 0.184 |
 
 ### Ablation Study
-Systematic ablations were performed on search ranges, split ratios, and coverage levels, using DirectTune as a "no-calibration" diagnostic baseline:
+A systematic ablation of search range, split ratios, and target coverage was performed, using DirectTune as a "no-calibration" diagnostic baseline:
 
 | Configuration | Coverage | Set Size | Description |
-| :--- | :--- | :--- | :--- |
-| DCO-Warmstart | Close to $1-\alpha$ | Smaller | Full method; theoretical + empirical validity |
-| CRC/BQ-style (Coupled) | $\ge 1-\alpha$ (Conservative) | Larger | Multiple testing correction inflates threshold |
-| DirectTune | Generally < $1-\alpha$ | Smallest | Low empirical threshold; no exchangeability guarantee |
+|---------------|----------|----------|-------------|
+| DCO-Warmstart | Near $1-\alpha$ | Small | Full method, valid theoretically & empirically |
+| CRC/BQ-style | $\ge 1-\alpha$ (Conservative) | Large | Multiple testing penalty inflates threshold |
+| DirectTune | Usually < $1-\alpha$ | Smallest | Empirical threshold is too low; lacks exchangeability |
 
 ### Key Findings
-- **Calibration cannot be skipped**: While DirectTune yields the tightest sets, its miscoverage exceeds nominal levels, confirming that quantiles must be calculated on a $D_{\text{cal}}$ untouched by search to ensure $\ge 1-\alpha$ coverage.
-- **Candidate class richness**: DCO's advantage over CRC/BQ increases as the candidate class becomes more diverse, because the latter suffers from heavier multiple testing corrections while DCO is immune.
-- In scenarios with extremely few samples requiring a $\delta$-risk certificate, CRC/BQ-style remains appropriate. DCO is positioned for settings where a tripartite split is feasible and the goal is classic marginal coverage.
+- Calibration **cannot be omitted**: While DirectTune yields the tightest sets, its miscoverage exceeds the nominal level. This confirms that calculating the quantile on $D_{\text{cal}}$ (untouched by search) is necessary for $\ge 1-\alpha$ coverage.
+- As the candidate class becomes richer, DCO's advantage over CRC/BQ grows, as the latter pays a heavier price for multiple testing corrections while the former is immune.
+- In scenarios with extremely small samples where a $\delta$-risk certificate is mandatory, CRC/BQ-style methods remain appropriate. DCO's role is for settings where a tripartite split is feasible and the goal is classic marginal coverage.
 
 ## Highlights & Insights
-- **Reorienting the problem rather than inventing new algorithms**: The method is essentially "split data three ways and perform split CP," but the authors elevate it to a "design principle for Bayesian conformal optimization." By distinguishing marginal coverage from high-probability risk control, complex coupled calibration tricks can often be replaced by simply "cutting the data once more."
-- **Unconditional coverage for infinite candidate classes**: The property in Theorem 3.1 allowing for infinite $\Phi$ is highly useful—neural architectures and continuous hyperparameters can be treated as candidates without the discretization and multiple testing costs required by LTT/CRC.
-- **DirectTune as a counter-example** is more persuasive than pure theory. Showing that an "almost right" method fails miscoverage empirically is more effective at convincing practitioners to allocate 20–30% of data for a calibration split.
+- **Repositioning the problem rather than inventing an algorithm**: The method is essentially "split data three ways and perform Split CP rigorously," yet it is elevated to a "design principle for Bayesian conformal optimization." It clearly distinguishes between marginal coverage and high-probability risk control.
+- **Unconditional coverage even with infinite candidates**: Theorem 3.1's support for infinite $\Phi$ is highly useful—neural architectures and continuous hyperparameters can be used as candidates without discretization or multiple testing costs, offering a direct trick for AutoML + UQ pipelines.
+- **DirectTune as a counter-example** is more convincing than pure theory. Demonstrating that an "almost correct" method fails empirically effectively motivates practitioners to sacrifice 20–30% of their data for a proper calibration split.
 
 ## Limitations & Future Work
-- Tripartite splits partition data more finely. In small-sample regimes, both $D_{\text{tune}}$ and $D_{\text{cal}}$ may be insufficient, potentially inflating the variance of the tuning rank and the final quantile. While DKW inequalities provide a $m_{\text{cal}}^{-1/2}$ rate, the paper lacks guidance on optimal split ratios.
-- The objective only guarantees marginal coverage, not conditional coverage or risk control. If a "high-probability risk $\le \alpha$" guarantee is required, one must revert to CRC/LTT.
-- Experiments focused on small-to-medium classification/regression benchmarks. Efficiency gains in high-dimensional tasks like LLM generation or structured output require further validation.
-- The constrained optimization still uses grid + line search. Computational overhead may become a bottleneck for very large candidate classes; future work could integrate smarter searchers like Bayesian Optimization.
+- Tripartite splitting fragments data. In small-sample regimes, both $D_{\text{tune}}$ and $D_{\text{cal}}$ may be insufficient, increasing variances of both the tuning selection and final quantile. While DKW inequalities are provided for calibration rates, there is no guidance on the optimal split ratio.
+- The objective is marginal coverage only; it does not guarantee conditional coverage or specific risk control. For applications strictly requiring $\delta$-risk bounds, CRC/LTT remains necessary.
+- Experiments focus on small-to-medium classification/regression tasks. Verification on high-dimensional tasks like LLM generation or structured output is needed.
+- Constrained optimization in the tuning phase still relies on grid + line search. If the candidate class is extremely large, computational overhead might become a bottleneck.
 
 ## Related Work & Insights
-- **vs BCP-CRC (Coupled Calibration)**: BCP-CRC optimizes thresholds and certifies risk on the same $D_{\text{cal}}$ to provide PAC-style guarantees; DCO decouples these for simpler marginal coverage at the cost of an extra tuning split.
-- **vs Learn-then-Test (LTT)**: LTT certifies candidates via hypothesis testing at the population risk level; like CRC, it requires $\delta$ and corrections. DCO's value proposition is "no $\delta$, no corrections, candidate size is irrelevant."
-- **vs ROCP (Risk-Optimal CP)**: ROCP also follows an "optimize then independently calibrate" approach but focuses on the entire prediction set construction + downstream decision. DCO refines this for Bayesian structures and threshold search.
-- **vs Score-tuned CP (e.g., RAPS)**: These methods already "tune scores then perform split CP." DCO generalizes this principle to all Bayesian structural selections (priors, architectures, rules).
+- **vs BCP-CRC (Coupled Calibration)**: BCP-CRC performs threshold optimization and risk certification on the same $D_{\text{cal}}$, yielding PAC-style guarantees $\mathbb{P}(\mathbb{P}(Y\notin C(X;\lambda))\le\alpha)\ge 1-\delta$. DCO decouples these to gain simpler marginal coverage.
+- **vs Learn-then-Test (LTT)**: LTT certifies candidates via hypothesis testing at the population risk level. Like CRC, it requires $\delta$ and multiple testing corrections. DCO avoids $\delta$ and remains indifferent to candidate class size.
+- **vs ROCP (Risk-Optimal CP)**: ROCP also follows an "optimize then independently calibrate" route, but optimizes the entire prediction set construction and downstream decision. DCO refines this for Bayesian structures and threshold search rules.
+- **vs Score-tuned CP (e.g., RAPS)**: These methods already "tune scores then perform Split CP." DCO generalizes this principle to entire Bayesian structures, including priors and architectures, formalizing it as a unified design principle.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Clear and practical, though essentially a systematized packaging of "one more split" for classic CP.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five benchmarks across classification/regression + three-dimensional ablations + DirectTune control support the arguments well.
-- Writing Quality: ⭐⭐⭐⭐ Table 1 clearly situates six categories of methods across four dimensions (optimization/calibration/guarantee/confidence).
-- Value: ⭐⭐⭐⭐ Provides a clear decision framework for when to use PAC vs. marginal coverage in conformal optimization; easily reproducible in engineering.
+- Novelty: ⭐⭐⭐ Clear and practical, though essentially a systematization of "adding one more split" to Split CP.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of 5 benchmarks + 3 ablation dimensions + DirectTune comparison strongly supports the claims.
+- Writing Quality: ⭐⭐⭐⭐ Table 1 clearly positions six classes of methods across four dimensions (optimisation/calibration/guarantee/confidence).
+- Value: ⭐⭐⭐⭐ Provides a clear decision framework for when to use PAC vs marginal guarantees, easily reproducible in engineering.
 
 <!-- RELATED:START -->
 
@@ -125,10 +127,10 @@ Systematic ablations were performed on search ranges, split ratios, and coverage
 ## Related Papers
 
 - [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
-- [\[ICML 2026\] Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning](vision_transformer_finetuning_benefits_from_non-smooth_components.md)
+- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](../../CVPR2026/others/adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
+- [\[ECCV 2024\] Dropout Mixture Low-Rank Adaptation for Visual Parameters-Efficient Fine-Tuning](../../ECCV2024/others/dropout_mixture_low-rank_adaptation_for_visual_parameters-efficient_fine-tuning.md)
 - [\[ICML 2026\] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation](industrializing_prediction-powered_inference_the_glide_library_for_reliable_gena.md)
 - [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](../../ICLR2026/others/on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[NeurIPS 2025\] Evolutionary Prediction Games](../../NeurIPS2025/others/evolutionary_prediction_games.md)
 
 </div>
 

@@ -2,130 +2,154 @@
 title: >-
   [Paper Note] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 description: >-
-  [CVPR 2026][3D Vision][2D-to-3D conversion] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-path a…
+  [CVPR 2026][3D Vision][Paper Note] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. Through a dual-path architecture that decouples global depth style and local artistic effects, the model learns directorial intent from professional 3D movie
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "2D-to-3D conversion"
-  - "artistic disparity synthesis"
-  - "stereoscopic film"
-  - "dual-path architecture"
-  - "depth style"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 8dd92e70783c6289
+content_hash: 9b1adc9cd26168c5
 ---
-
 # Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.05906](https://arxiv.org/abs/2603.05906)  
-**Code**: None (not yet open-sourced)  
-**Area**: LLM Reasoning
-**Keywords**: 2D-to-3D conversion, artistic disparity synthesis, stereoscopic film, dual-path architecture, depth style
+**Code**: None (Not yet open-sourced)  
+**Area**: 3D Vision  
+**Keywords**: 2D-to-3D Conversion, Artistic Disparity Synthesis, Stereoscopic Cinema, Dual-path Architecture, Depth Style
 
 ## TL;DR
-A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-path architecture decouples global depth style from local artistic effects, learning directorial intent from professional 3D film data.
+A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. Through a dual-path architecture that decouples global depth style and local artistic effects, the model learns directorial intent from professional 3D movie data.
 
 ## Background & Motivation
-**Background**: Current 2D-to-3D conversion methods (e.g., diffusion-based StereoCrafter, Eye2Eye) have achieved geometric accuracy but lack artistic immersion—a significant gap remains compared to the viewing experience of professional 3D films such as *Avatar*.
+**Background**: Current 2D-to-3D conversion methods (e.g., diffusion-based StereoCrafter, Eye2Eye) have achieved geometric accuracy but lack artistic immersion—showing a significant gap compared to the viewing experience of professional 3D films like *Avatar*.
 
-**Limitations of Prior Work**: Geometric reconstruction paradigms (MonoDepth, MiDaS, etc.) treat the artistic disparity adjustments found in professional 3D films as "noise" to be suppressed, resulting in an "artistic poverty" problem—geometrically correct but narratively barren outputs.
+**Limitations of Prior Work**: The geometric reconstruction paradigm (MonoDepth, MiDaS, etc.) treats artistic disparity adjustments in professional 3D movies as "noise" to be suppressed, leading to the problem of "artistic poverty"—geometrically correct but narratively barren.
 
-**Key Challenge**: The three principal artistic operations in professional 3D post-production—Global Depth control, Zero-Plane selection, and Local Sculpting—are all encoded in disparity maps, yet existing methods cannot learn these artistic intentions.
+**Key Challenge**: Three major artistic operations in professional 3D movie post-production—Global Depth control, Zero-Plane selection, and Local Sculpting—are encoded within disparity maps, but existing methods fail to learn these artistic intentions.
 
-**Goal**: To generate disparity maps from 2D images that embody the director's artistic intent, rather than merely physically accurate disparity.
+**Goal**: How to generate disparity maps from 2D images that contain directorial artistic intent, rather than just physically correct disparity.
 
-**Key Insight**: The disparity map is treated as a carrier of artistic expression, enabling indirect learning of global depth style and local pop-out effects from professional 3D films.
+**Key Insight**: Treat the disparity map as a carrier of artistic expression, indirectly learning global depth styles and local out-of-screen effects from professional 3D movies.
 
-**Core Idea**: A dual-path supervision mechanism decouples the director's global macro-intent from local "artistic brushstrokes," learning artistic disparity style from professional 3D films through indirect supervision.
+**Core Idea**: A dual-path supervision mechanism is used to decouple the director's macro-intent and local "artistic strokes," learning artistic disparity styles from professional 3D films via indirect supervision.
 
 ## Method
 
 ### Overall Architecture
-Art3D employs a three-network architecture: a frozen DepthNet for geometric feature extraction (Depth Anything V2), a frozen StereoNet for extracting the target artistic blueprint (SEA-RAFT), and a trainable CameraNet (lightweight U-Net) for synthesizing virtual camera parameters.
 
-The core formulation models the artistic blueprint as a linear transform of the geometric canvas:
+Art3D aims not for geometrically correct disparity, but for disparity carrying directorial intent—moving 2D-to-3D conversion from "geometric reconstruction" to "artistic disparity synthesis." It utilizes a three-network architecture: a frozen DepthNet (Depth Anything V2) provides the geometric canvas, a frozen StereoNet (SEA-RAFT) extracts the target artistic blueprint from professional 3D movies, and the only trainable component, CameraNet (a lightweight U-Net), synthesizes virtual camera parameters. The core modeling treats the artistic blueprint as a pixel-wise linear transformation of the geometric canvas:
 
 $$\hat{d}^L = vs \cdot iz + vt$$
 
-where $vs$ and $vt$ are per-pixel scale and offset tensors, and $iz$ is the inverse depth map.
+where $vs$ and $vt$ are pixel-wise scale and shift tensors, and $iz$ is the inverse depth map. This means artistic effects are decomposed into "scaling + shifting the geometric depth," allowing the network to learn just these two parameter maps. Supervision signals come from professional 3D movies filtered by DDC-IoU, extracted by StereoNet into a target disparity blueprint, and used to train CameraNet via dual-path supervision.
+
+```mermaid
+graph TD
+    A["2D Input Image"] --> B["DepthNet (Frozen·Depth Anything V2)<br/>Inverse Depth Map iz as Geometric Canvas"]
+    A --> C["CameraNet (Lightweight U-Net·Trainable)<br/>Pixel-wise vs / vt + Right Disparity"]
+    B --> D["Pixel-wise Linear Synthesis<br/>Synthesized Disparity = vs × iz + vt"]
+    C --> D
+    subgraph DATA["DDC-IoU Data Filtering"]
+        direction TB
+        E["25 3D Movie Original Frames"] --> F["DDC-IoU ≥ 0.8 Screening<br/>Remove Frames with Over-simplified Depth Layers"]
+        F --> G["90K High-quality Stereo Pairs"]
+    end
+    G --> H["StereoNet (Frozen·SEA-RAFT)<br/>Extract Target Artistic Disparity Blueprint (Supervision Goal)"]
+    subgraph SUP["Dual-path Supervision"]
+        direction TB
+        I["Global Style Path M_global<br/>Depth Control / Zero-Plane"]
+        J["Local Sculpting Path M_local<br/>Lang-SAM Text Mask"]
+    end
+    D --> SUP
+    H --> SUP
+    SUP -->|Residual Least Squares·Backprop| C
+    D --> K["Artistic Disparity Map Output"]
+```
 
 ### Key Designs
-1. **Dual-Path Supervision Mechanism**: The mixed signal $d^L$ is decomposed into global style ($M_{global}$) and local effects ($M_{local}$). The global mask is obtained by taking valid regions from StereoNet's left-right consistency check and removing the local regions: $M_{global} = M_{valid} \cdot (1 - M_{local})$. The local mask is generated via Lang-SAM with text prompts (e.g., "foreground character popping out"). This design is highly robust to errors—undetected pop-out regions naturally degrade to global-path supervision.
-2. **CameraNet Architecture**: A lightweight encoder-decoder structure (3 downsampling + 3 upsampling stages) that outputs only 3 channels ($vs$, $vt$, and the right-view disparity $\hat{d}^R$). It is the only trainable component in the entire framework.
-3. **DDC-IoU Data Filtering**: A Depth-Disparity Consistency IoU metric is proposed to filter low-quality frames (those with overly simplistic depth layering), with a threshold of 0.8. This yields 90K high-quality stereo image pairs from 25 3D films.
+
+**1. Dual-path Supervision: Decoupling Global Depth Style and Local Out-of-screen Effects**
+
+Disparities in professional 3D movies mix two types of artistic operations: global depth control/zero-plane selection and local out-of-screen sculpting. Learning them together causes interference. Art3D decomposes the supervision signal $d^L$ into a global style path (mask $M_{global}$) and a local effect path (mask $M_{local}$). Local masks are generated via Lang-SAM using text prompts (e.g., "foreground character popping out"), while global masks take the valid regions from StereoNet's left-right consistency check and subtract the local regions, $M_{global} = M_{valid} \cdot (1 - M_{local})$. This split is naturally robust to errors—local regions missed by detection naturally fall into global path supervision without being lost, while sparse global masks act as data augmentation.
+
+**2. CameraNet: The Minimal Trainable Synthesizer**
+
+To prove that the performance stems from the framework design rather than network capacity, Art3D minimizes the trainable part: CameraNet is a lightweight encoder-decoder (3 downsamplings + 3 upsamplings) that outputs only 3 channels: $vs$, $vt$, and the right disparity map $\hat{d}^R$. It is the only component requiring training. All other perception networks are frozen, placing the entire burden of learning artistic style on these 3 channels.
+
+**3. DDC-IoU Data Filtering: Removing Low-quality Frames with Simple Layering**
+
+Raw 3D movie frames vary in quality; some frames have overly simple depth layering or poor structural alignment, which could pollute style learning if used directly. The authors propose the Depth-Disparity Consistency IoU metric to measure the consistency between depth maps and disparity maps. With a threshold of 0.8, 90,000 high-quality stereo pairs were filtered from 25 3D movies. Experiments show some raw frames have a DDC-IoU of 0, justifying the necessity of this filtering step.
 
 ### Loss & Training
-The core loss $\mathcal{L}_{Art}$ is defined as the sum of dual-path masked least-squares residuals:
+
+The core loss $\mathcal{L}_{Art}$ is the sum of the least squares residuals of the dual-path masks:
 
 $$\mathcal{L}_{Art} = \mathcal{L}_{path}(M_{global}) + \mathcal{L}_{path}(M_{local}) + \mathcal{L}_{st}$$
 
-where $\mathcal{L}_{path}(M) = \min_{s,t} \sum_k M_k \cdot \|d^L_k - (s \cdot \hat{d}^L_k + t)\|^2$.
-
-The global style regularization $\mathcal{L}_{st} = \|s-1\|^2 + \|t\|^2$ encourages the synthesized disparity to directly reflect the global supervision signal. Auxiliary losses include a smoothness loss and a left-right consistency loss. Training runs for 50 epochs on a single A800 GPU, with batch size 32 and input resolution 512×512.
+where $\mathcal{L}_{path}(M) = \min_{s,t} \sum_k M_k \cdot \|d^L_k - (s \cdot \hat{d}^L_k + t)\|^2$. This fits the scale/shift using least squares within each path's mask and calculates the residual. The global style regularization $\mathcal{L}_{st} = \|s-1\|^2 + \|t\|^2$ encourages the synthesized disparity to directly reflect the global supervision signal. Additional smoothness and left-right consistency losses serve as auxiliary. Training lasted 50 epochs on a single A800 with a batch size of 32 and $512 \times 512$ inputs.
 
 ## Key Experimental Results
 
 ### Main Results: Global Depth Style Evaluation
 
-| Method | Global Depth $s$ (mean/std) | Zero-Plane $t$ (mean/std) |
-|---|---|---|
+| Method | Global Depth $s$ (Mean/Std) | Zero-Plane $t$ (Mean/Std) |
+|------|--------------------------|------------------------|
 | Baseline (w/o $\mathcal{L}_{Art}$) | 0.030 / 0.018 | 6.98 / 2.35 |
 | **Art3D (Ours)** | **0.020 / 0.009** | **6.08 / 1.80** |
 | Ground Truth | 0.013~0.023 / 0.010~0.020 | 4.35~5.28 / 2.09~4.68 |
 
-Art3D achieves significantly reduced standard deviation ($\sigma$), indicating that a stable and consistent artistic style has been learned rather than random geometric disparity.
+Art3D's standard deviation ($\sigma$) is significantly lower, indicating it has learned a stable and consistent artistic style rather than random geometric disparity.
 
 ### Ablation Study: Paradigm Comparison
 
 | Method | Global Control (Zero-Plane) | Local Sculpting (Artistic) |
-|---|---|---|
-| StereoCrafter | Manual (global shift) | None |
-| Eye2Eye | Physical (reproduced) | None |
-| **Art3D (Ours)** | **Learned (global style)** | **Yes (learned)** |
+|------|-----------------|----------------|
+| StereoCrafter | Manual (Global Shift) | None |
+| Eye2Eye | Physical (Replication) | None |
+| **Art3D (Ours)** | **Learning (Global Style)** | **Yes (Learning)** |
 
-### Geometric Consistency Validation (DDC-IoU)
-Art3D consistently achieves DDC-IoU of 0.83–0.89 in the right-view coordinate system, demonstrating that artistic style learning does not compromise underlying geometric consistency. In contrast, raw 3D film data exhibits inconsistent quality—some frames have DDC-IoU of 0 (poor structural alignment)—underscoring the necessity of data filtering.
+### Geometric Consistency Verification (DDC-IoU)
+Art3D consistently achieves a DDC-IoU of 0.83~0.89 in the right-view coordinate system, proving that artistic style learning does not destroy the underlying geometric consistency. In contrast, raw 3D movie data varies in quality—some frames have a DDC-IoU of 0 (poor structural alignment), highlighting the necessity of data filtering.
 
 ### Key Findings
-- Removing $\mathcal{L}_{path}(M_{local})$ allows the model to learn only global style, with no local pop-out effects produced.
-- Art3D consistently achieves DDC-IoU of 0.83–0.89, confirming that artistic style learning does not degrade geometric consistency.
-- Professional 3D software Owl3D produces inconsistent 3D perception across different scenes, whereas Art3D maintains stable pop-out effects.
+- Removing $\mathcal{L}_{path}(M_{local})$ results in the model only learning global style, failing to produce local out-of-screen effects.
+- Art3D stably achieves 0.83-0.89 on the DDC-IoU metric, proving artistic style learning does not harm geometric consistency.
+- Professional 3D software Owl3D shows inconsistent 3D perception across different scenes, while Art3D maintains stable out-of-screen effects.
 
 ## Highlights & Insights
-- **Paradigm Innovation**: The first work to explicitly propose a paradigm shift from "geometric reconstruction" to "artistic disparity synthesis," repositioning the disparity map as a vehicle for cinematic storytelling.
-- **Elegant Indirect Supervision**: Rather than directly supervising at the pixel level with GT, style parameters $(s, t)$ are extracted via least-squares fitting to assess artistic consistency through distributional alignment.
-- **Robust Design**: The dual-path masks are complementary—missed local detections degrade gracefully to global supervision, and sparse global masks act as a form of data augmentation.
-- **Compelling Motivation via Avatar**: The Jake/Ikran flying sequence from *Avatar* is used to concretely illustrate the three-layer artistic intent, making the motivation highly persuasive.
-- **Minimal CameraNet**: As the only trainable component, its 3-downsampling + 3-upsampling + 1-output-layer design demonstrates that the framework architecture, rather than network capacity, is the primary driver of performance.
+- **Paradigm Innovation**: For the first time, a paradigm shift from "geometric reconstruction" to "artistic disparity synthesis" is explicitly proposed, positioning the disparity map as a carrier for cinematic storytelling.
+- **Clever Indirect Supervision**: Instead of direct pixel-level GT supervision, the model is evaluated via the distribution of style parameters $(s, t)$ extracted through least squares fitting to assess artistic consistency.
+- **Elegant Robustness Design**: The dual-path masks are complementary—missed local detections degrade to global supervision, and sparse global masks act as data augmentation.
+- **Vivid *Avatar* Case Introduction**: Specifically explaining three layers of artistic intent using Jake/Ikran flight scenes from *Avatar* makes the motivation highly persuasive.
+- **Minimalist CameraNet Design**: The only trainable component consists of 3 downsamplings + 3 upsamplings + 1 output layer, proving the framework design is the primary contributor rather than network size.
 
 ## Limitations & Future Work
-- The paper self-identifies as a "preliminary exploration"; the CameraNet architecture is relatively simple (only 6 layers), limiting generative capacity.
-- Local pop-out data consists of only 201 clips (~15K frames), representing a limited data volume.
-- Validation is confined to 3D film data; generalization to non-cinematic scenarios (e.g., AR/VR content) remains unexplored.
-- Evaluation relies primarily on statistical distribution comparisons, with no user perceptual studies.
-- Integration with existing diffusion-based generation pipelines (e.g., StereoCrafter) has not been explored.
-- A unified model is used across all film types (animation, sci-fi, contemporary) rather than training style-specific models.
+- The paper describes itself as a "preliminary exploration"; the CameraNet architecture is simple (only 6 layers), limiting generation capacity.
+- Data for local out-of-screen effects is limited to 201 clips/15K frames.
+- Validation is restricted to 3D movie data; generalization to non-movie scenes (e.g., AR/VR content) remains unknown.
+- Evaluation metrics still rely on statistical distribution comparisons, lacking user subjective studies.
+- No exploration of reinforcement or integration schemes with existing diffusion generation pipelines (like StereoCrafter).
+- No separate models were trained for different movie genres (animation, sci-fi, modern); a single model covers all styles.
 
 ## Related Work & Insights
-- Traditional heuristic disparity remapping methods (nonlinear remapping, saliency-based editing) require stereo pairs as input and cannot generalize to monocular settings.
-- Geometric reconstruction paradigms (Deep3D, MonoDepth → StereoCrafter, Eye2Eye), despite incorporating diffusion models, remain geometry-driven.
-- Art3D fills the gap between heuristic artistic editing and geometric reconstruction, enabling cross-film 3D style transfer from monocular input.
-- StereoCrafter normalizes the zero-plane position during data processing, actively discarding the director's original artistic intent.
-- Eye2Eye can produce pop-out effects, but these are learned from physically accurate VR180 data and thus represent reproductions of physical disparity rather than artistic design.
-- The three-layer artistic intent framework defined in this work (global depth / zero-plane / local sculpting) provides a clear analytical framework for future research in 3D visual creation.
+- Traditional heuristic disparity remapping (non-linear remapping, saliency editing) requires stereo pairs as input and cannot generalize to monocular images.
+- Geometric reconstruction paradigms (Deep3D, MonoDepth → StereoCrafter, Eye2Eye), while using diffusion models, remain geometry-driven.
+- Art3D fills the gap between heuristic artistic editing and geometric reconstruction, enabling 3D style transfer across movies with monocular input.
+- StereoCrafter unifies zero-plane positions during data processing, actively discarding the director's original artistic intent.
+- While Eye2Eye can produce out-of-screen effects, it learns from physically correct VR180 data, replicating physical disparity rather than artistic design.
+- The three-layer artistic intent defined here (Global Depth/Zero-Plane/Local Sculpting) provides a clear analytical framework for future 3D visual creation research.
 
 ## Data Construction Details
-- Data is drawn from 25 well-known 3D films (e.g., *Hugo*, *The Amazing Spider-Man*, *The Great Gatsby*), following the data protocol of Ranftl et al.
-- After DDC-IoU ≥ 0.8 filtering, 90K pairs of 1080P stereo images are retained: 80K for training and 10K for testing.
-- Local pop-out data is manually collected from YouTube (201 clips), yielding ~15K frames after processing, which are added to the training set.
-- Both positive and negative disparities are extracted by StereoNet, preserving complete pop-out/push-in information.
+- Selected from 25 well-known 3D movies (e.g., *Hugo*, *The Amazing Spider-Man*, *The Great Gatsby*), following the data protocols of Ranftl et al.
+- After DDC-IoU ≥ 0.8 filtering, 90K high-quality 1080P stereo pairs were retained (80K for training, 10K for testing).
+- Local out-of-screen data was manually collected from YouTube (201 clips), and approximately 15K processed frames were added to the training set.
+- Both positive and negative disparities were extracted by StereoNet, preserving complete out-of-screen/in-screen information.
 
 ## Rating ⭐
-- **Novelty**: ⭐⭐⭐⭐⭐ — Paradigm-level innovation; the first work to incorporate "artistic intent" into 2D-to-3D conversion.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Ablations are thorough, but quantitative comparisons against SOTA and perceptual user studies are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is articulated with exceptional persuasiveness; the *Avatar* case study is vivid and effective.
-- **Value**: ⭐⭐⭐⭐ — Opens a new research direction, though as a preliminary exploration, practical deployment requires further development.
+- Novelty: ⭐⭐⭐⭐⭐ — Paradigm-level innovation, first to incorporate "artistic intent" into 2D-to-3D conversion.
+- Experimental Thoroughness: ⭐⭐⭐ — Valid ablations but lacking quantitative comparisons with SOTAs and subjective evaluation.
+- Writing Quality: ⭐⭐⭐⭐ — Highly persuasive motivation with a vivid *Avatar* case study.
+- Value: ⭐⭐⭐⭐ — Opens a new direction, though in the preliminary exploration stage; practical application requires further refinement.
 
 <!-- RELATED:START -->
 
@@ -133,11 +157,11 @@ Art3D consistently achieves DDC-IoU of 0.83–0.89 in the right-view coordinate 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
-- [\[CVPR 2026\] Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas](stepper_stepwise_immersive_scene_generation_with_multiview_panoramas.md)
-- [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](../../ICLR2026/3d_vision/reducing_class-wise_performance_disparity_via_margin_regularization.md)
-- [\[CVPR 2026\] Marker-Based 3D Reconstruction of Aggregates with a Comparative Analysis of 2D and 3D Morphologies](markerbased_3d_reconstruction_of_aggregates_with_a.md)
-- [\[CVPR 2026\] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)
+- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
+- [\[CVPR 2026\] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval](dino_eats_clip_adapting_beyond_knowns_for_open-set_3d_object_retrieval.md)
+- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
+- [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)
+- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
 
 </div>
 

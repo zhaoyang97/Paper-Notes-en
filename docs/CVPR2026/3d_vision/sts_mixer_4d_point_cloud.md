@@ -2,113 +2,126 @@
 title: >-
   [Paper Note] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding
 description: >-
-  [CVPR 2026][3D Vision][4D point cloud video] STS-Mixer is the first to introduce the Graph Fourier Transform (GFT) into 4D point cloud video understanding. By decomposing point clouds in the frequency domain to capture g…
+  [CVPR 2026][3D Vision][Segmentation] STS-Mixer first introduces the Graph Fourier Transform (GFT) into 4D point cloud video understanding, capturing geometric structures across scales through frequency domain decomposition (Low-frequency = global shape, High-frequency = local details). By mixing these with spatio-temporal information, it achieves SOTA per
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "4D point cloud video"
-  - "graph Fourier transform"
-  - "spectral representation"
-  - "action recognition"
-  - "semantic segmentation"
+  - CVPR 2026
+  - 3D Vision
+  - Segmentation
 date: 2026-05-08
-content_hash: 0b5f0d75b38ff356
+content_hash: 9dcfaf279f647260
 ---
-
 # STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.11637](https://arxiv.org/abs/2604.11637)  
 **Code**: [https://github.com/Vegetebird/STS-Mixer](https://github.com/Vegetebird/STS-Mixer)  
-**Area**: 3D Vision
-**Keywords**: 4D point cloud video, graph Fourier transform, spectral representation, action recognition, semantic segmentation
+**Area**: 3D Vision  
+**Keywords**: 4D Point Cloud Video, Graph Fourier Transform, Spectral Representation, Action Recognition, Semantic Segmentation
 
 ## TL;DR
-STS-Mixer is the first to introduce the Graph Fourier Transform (GFT) into 4D point cloud video understanding. By decomposing point clouds in the frequency domain to capture geometric structures at different scales (low frequency = global shape, high frequency = local details) and mixing spectral features with spatio-temporal information, STS-Mixer achieves state-of-the-art performance on action recognition and semantic segmentation.
+STS-Mixer first introduces the Graph Fourier Transform (GFT) into 4D point cloud video understanding, capturing geometric structures across scales through frequency domain decomposition (Low-frequency = global shape, High-frequency = local details). By mixing these with spatio-temporal information, it achieves SOTA performance in action recognition and semantic segmentation.
 
 ## Background & Motivation
 
-**Background**: 4D point cloud videos contain 3D spatial and temporal information. Existing methods (e.g., P4Transformer, PST-Transformer) model short- and long-term dynamics in the spatio-temporal domain.
+**Background**: 4D point cloud videos contain 3D spatial and temporal information. Existing methods (P4Transformer, PST-Transformer, etc.) model short-term and long-term dynamics in the spatio-temporal domain.
 
-**Limitations of Prior Work**: Existing methods operate exclusively in the spatio-temporal domain and struggle to capture the underlying geometric properties of point clouds — namely abstract shapes and local-global context. The irregular and unordered nature of point clouds renders standard frequency-domain transforms (e.g., DCT) inapplicable.
+**Limitations of Prior Work**: Current methods operate exclusively in the spatio-temporal domain, struggling to capture underlying geometric properties such as abstract shapes and local-global context. The irregular and unordered nature of point clouds makes standard frequency domain transforms (e.g., DCT) inapplicable.
 
-**Key Challenge**: While the spatio-temporal domain can model motion dynamics, it lacks explicit modeling of static geometric structure, which is essential for understanding 4D scenes (e.g., global shape, local detail).
+**Key Challenge**: Spatio-temporal domains can model motion dynamics but lack explicit modeling of static geometric structures—such as global shapes and local details—which are crucial for understanding 4D scenes.
 
-**Key Insight**: The Graph Fourier Transform (GFT) is naturally suited for irregular point clouds — it transforms point clouds into the frequency domain via eigendecomposition of the graph Laplacian, with different frequency bands capturing geometric structures at different scales.
+**Key Insight**: Graph Fourier Transform (GFT) is naturally suited for irregular point clouds. Through the eigendecomposition of the Graph Laplacian, point clouds are transformed into the frequency domain, where different frequency bands capture geometric structures at varying scales.
 
-**Core Idea**: Decompose 4D point clouds into multi-band signals (low/mid/high frequency), where each band captures distinct geometric features, and mix them with spatio-temporal information to achieve comprehensive representation learning.
+**Core Idea**: Decompose 4D point clouds into multi-band signals (Low/Mid/High frequency). Each band captures distinct geometric features, which are then mixed with spatio-temporal information for comprehensive representation learning.
 
 ## Method
 
 ### Overall Architecture
-Input 4D point cloud video → 4D point convolution encodes local spatio-temporal context → GFT maps to frequency domain → Spectral filters decompose into low/mid/high frequency bands → IGFT maps back to spatial domain, yielding three frequency-band-specific point clouds → STS-Mixer blocks (FA-Attention for intra-band refinement + FM-MLP for inter-band interaction) → MLP for final prediction.
+STS-Mixer aims to address the issue that prior 4D point cloud video understanding focused only on the "spatio-temporal" dimensions, neglecting the explicit characterization of geometric shapes—specifically, the global contours versus local details. This approach supplements point clouds with a third dimension: "Spectrum." Upon inputting a point cloud video, a 4D point convolution first encodes local spatio-temporal features for each point. Subsequently, a graph is constructed for each frame, and a Graph Fourier Transform (GFT) projects coordinates into the frequency domain. Frequency band filters slice the signal into low, medium, and high bands, which are transformed back into the spatial domain via an inverse transform, resulting in three sets of point clouds each retaining a specific geometric scale. Finally, these three band-specific point clouds are fed into stacked STS-Mixer blocks. Within each block, FA-Attention performs refinement within each band, followed by FM-MLP to facilitate inter-band communication. An MLP head outputs the action category or point-wise semantic labels. The core mechanism is to "decompose geometry by frequency, process independently, and reintegrate."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["4D Point Cloud Video"] --> B["4D Point Convolution Encoding<br/>Extract Local Spatiotemporal Features"]
+    subgraph GFT["GFT Frequency Decomposition"]
+        direction TB
+        C["Frame-wise KNN Graph + GFT<br/>Project to Frequency Domain"] --> D["Three-band Filtering + IGFT<br/>Reconstruct Low/Mid/High Frequencies"]
+    end
+    B --> GFT
+    GFT --> E["Three Sets of Band Point Clouds<br/>Low = Global Shape · High = Local Detail"]
+    subgraph MIX["STS-Mixer Blocks (Stacked)"]
+        direction TB
+        F["Frequency-Aware Attention (FA-Attention)<br/>Intra-band Self-attention Refinement"] --> G["Frequency Mixing MLP (FM-MLP)<br/>Inter-band Information Exchange"]
+    end
+    E --> MIX
+    MIX --> H["MLP Head"]
+    H -->|Action Recognition| I["Action Category"]
+    H -->|Semantic Segmentation| J["Point-wise Semantic Labels"]
+```
 
 ### Key Designs
 
-1. **Frequency-Domain Decomposition via Graph Fourier Transform**:
+**1. GFT Frequency Decomposition: Distinguishing "Global Shape" and "Local Details" as Distinct Signals**
 
-    - **Function**: Explicitly decomposes point cloud geometry into multi-scale representations.
-    - **Mechanism**: A KNN graph is constructed for each frame's point cloud. The normalized graph Laplacian is eigendecomposed, and its eigenvectors — sorted by eigenvalue — form the frequency basis. Point coordinates are projected onto this basis to obtain GFT coefficients, which are partitioned into low/mid/high frequency bands via band-pass filters. Each band is then mapped back to the spatial domain via IGFT to obtain frequency-band-specific point cloud reconstructions.
-    - **Design Motivation**: Band rejection experiments confirm that low-frequency components preserve global shape while high-frequency components encode fine-grained details. This separation enables the network to process geometric information at different scales independently.
+While spatio-temporal modeling excels at capturing motion, it tends to conflate static geometric structures. Since point clouds are irregular, standard DCT/FFT cannot be applied. GFT is designed for graph structures: for each point cloud frame, a KNN graph is constructed to calculate the normalized Graph Laplacian $L = I - D^{-1/2} A D^{-1/2}$. Eigendecomposition $L = U \Lambda U^\top$ is performed, where eigenvectors ordered by eigenvalues (frequencies) form a basis. Projecting point coordinates $x$ onto this basis yields the GFT coefficients:
 
-2. **Frequency-Aware Attention (FA-Attention)**:
+$$\hat{x} = U^\top x, \qquad x = U \hat{x}\ \text{(IGFT)}$$
 
-    - **Function**: Independently refines the representation of each frequency band within the band.
-    - **Mechanism**: Self-attention is applied independently to each frequency band (low/mid/high), allowing points within the same band to attend to one another and capture geometric patterns specific to that scale.
-    - **Design Motivation**: Different frequency bands carry semantically distinct geometric information (global vs. local). Independent processing avoids cross-band interference that would arise from mixing them prematurely.
+Low eigenvalues correspond to smooth, slowly changing components (global contours), while high eigenvalues correspond to rapidly changing components (edges, local details). Three band-pass filters split $\hat{x}$ into Low/Mid/High segments. Each segment undergoes an Inverse Graph Fourier Transform (IGFT) to return to the spatial domain, producing three reconstructed point clouds. Band rejection experiments verify this: removing low frequencies causes the global structure to collapse, while removing high frequencies preserves the shape but blurs edges—proving that band separation allows the network to process different geometric scales independently.
 
-3. **Frequency Mixing MLP (FM-MLP)**:
+**2. Frequency-Aware Attention (FA-Attention): Intra-scale Alignment**
 
-    - **Function**: Facilitates information exchange across frequency bands.
-    - **Mechanism**: Features from the three bands are concatenated along the frequency dimension, passed through an MLP for cross-band interaction, and then split back into their respective bands. This enables mutual enhancement across bands.
-    - **Design Motivation**: Although each band captures distinct information, all bands describe the same object or scene. Cross-band complementarity produces a more comprehensive understanding.
+The semantics of the three frequency bands are not directly interchangeable—the low-frequency band describes "humanoid shape" while the high-frequency band describes "edges." Conflating them in a single attention mechanism causes interference. FA-Attention performs independent self-attention within each frequency band, allowing points to focus on patterns specific to that scale. This step refines features internally, ensuring clear representation in each path.
+
+**3. Frequency Mixing MLP (FM-MLP): Facilitating Inter-scale Dialogue**
+
+While independent processing prevents interference, it can isolate information—low, mid, and high frequencies ultimately describe the same object. FM-MLP restores connectivity by concatenating features along the frequency dimension and applying an MLP for cross-band information exchange. This allows global positions from low frequencies to localize local details from high frequencies, and high-frequency details to sharpen low-frequency contours. FA-Attention handles "intra-band refinement" while FM-MLP handles "inter-band fusion," forming the core of the STS-Mixer block.
 
 ### Loss & Training
-Cross-entropy loss is used for action recognition. For semantic segmentation, cross-entropy loss combined with Lovász-softmax is employed.
+Action recognition utilizes Cross-Entropy loss. Semantic segmentation utilizes Cross-Entropy loss combined with Lovász-softmax loss (to optimize mIoU directly).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task / Dataset | Metric | STS-Mixer | Prev. SOTA | Gain |
-|---|---|---|---|---|
-| MSR-Action3D Action Recognition | Acc | SOTA | PST-Transformer | Gain |
-| NTU RGB+D 60 Action Recognition | Acc | SOTA | PPTr | Gain |
-| Synthia 4D Semantic Segmentation | mIoU | SOTA | PST-Transformer | Gain |
+| Task/Dataset | Metric | Ours | Prev. SOTA | Gain |
+|--------------|--------|-------|------------|------|
+| MSR-Action3D | Acc | SOTA | PST-Transformer | Improvement |
+| NTU RGB+D 60 | Acc | SOTA | PPTr | Improvement |
+| Synthia 4D   | mIoU | SOTA | PST-Transformer | Improvement |
 
 ### Ablation Study
 
-| Configuration | Accuracy | Notes |
-|---|---|---|
-| Full STS-Mixer | Best | Spatio-temporal + spectral |
-| Spatio-temporal only (w/o GFT) | Degraded | Lacks geometric structure modeling |
-| w/o FA-Attention | Degraded | Missing intra-band refinement |
-| w/o FM-MLP | Degraded | Missing inter-band interaction |
-| Single frequency band | Degraded | Multi-band decomposition is necessary |
+| Configuration | Accuracy | Description |
+|---------------|----------|-------------|
+| Full STS-Mixer | Optimal | Spatio-temporal + Spectral |
+| Spatio-temporal only (no GFT) | Decrease | Lack of geometric structure modeling |
+| w/o FA-Attention | Decrease | Missing intra-band refinement |
+| w/o FM-MLP | Decrease | Missing inter-band interaction |
+| Single-band | Decrease | Multi-band decomposition is necessary |
 
 ### Key Findings
-- Spectral and spatio-temporal representations are highly complementary, each capturing distinct aspects of the input.
-- Low-frequency components contribute most to action recognition (global shape distinguishes action categories), while high-frequency components are more critical for fine-grained segmentation.
-- Three-band decomposition outperforms two-band decomposition; further increasing the number of bands yields diminishing returns.
+- Spectral representations and spatio-temporal representations are highly complementary, capturing different aspects of the data.
+- Low frequencies contribute most to action recognition (global shape distinguishes categories), whereas high frequencies are more critical for fine-grained segmentation.
+- Three-band decomposition outperforms two-band decomposition, though returns diminish as the number of bands increases further.
 
 ## Highlights & Insights
-- **First frequency-domain perspective on 4D point clouds**: GFT opens a new information dimension for point cloud understanding, analogous to frequency-domain processing in 2D image analysis.
-- **Intuitive validation via band rejection**: Removing individual frequency bands and observing reconstruction quality provides a clear, interpretable demonstration of each band's semantic role.
+- **First Frequency View for 4D Point Clouds**: GFT introduces a new informational dimension to point cloud understanding, analogous to frequency domain processing in RGB images.
+- **Intuitive Validation via Band Rejection**: Visually demonstrates the informational meaning of each band by observing reconstruction effects after removing specific frequencies.
 
 ## Limitations & Future Work
 - GFT computation (eigendecomposition) may become a bottleneck for large-scale point clouds.
-- The number of frequency bands and filter parameters require manual specification.
-- Future work may explore adaptive frequency band decomposition and more computationally efficient spectral methods.
+- The number of bands and filter parameters require manual tuning.
+- Future work could explore adaptive band decomposition and more efficient spectral methods.
 
 ## Related Work & Insights
-- **vs. P4Transformer / PST-Transformer**: These methods rely purely on spatio-temporal modeling and do not exploit frequency-domain geometric information.
-- **vs. PointGST / PointWavelet**: These methods apply frequency-domain analysis to static point clouds only, without extension to 4D video understanding.
+- **vs P4Transformer/PST-Transformer**: These focus on pure spatio-temporal modeling and ignore frequency-domain geometric information.
+- **vs PointGST/PointWavelet**: These are frequency methods for static point clouds and have not been extended to 4D videos.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First application of GFT to 4D point cloud understanding; highly original perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated on two tasks (action recognition and semantic segmentation) across multiple datasets.
-- **Writing Quality**: ⭐⭐⭐⭐ Frequency-domain analysis is presented clearly and intuitively.
-- **Value**: ⭐⭐⭐⭐ Opens a new dimension for 4D scene understanding.
+- Novelty: ⭐⭐⭐⭐⭐ First to introduce GFT to 4D point cloud understanding; unique perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across action recognition and semantic segmentation on multiple datasets.
+- Writing Quality: ⭐⭐⭐⭐ Spectral analysis is clear and intuitive.
+- Value: ⭐⭐⭐⭐ Opens a new dimension for 4D scene understanding.
 
 <!-- RELATED:START -->
 
@@ -116,11 +129,11 @@ Cross-entropy loss is used for action recognition. For semantic segmentation, cr
 
 ## Related Papers
 
+- [\[CVPR 2026\] MORE-STEM: Long-Short MemOry REcall and Spatio-TEmporal Consistency Model for Query-Driven 3D/4D Point Cloud Segmentation](more-stem_long-short_memory_recall_and_spatio-temporal_consistency_model_for_que.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](../../ICCV2025/3d_vision/ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
-- [\[CVPR 2026\] STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction](stac_plug-and-play_spatio-temporal_aware_cache_compression_for_streaming_3d_reco.md)
-- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
 
 </div>
 

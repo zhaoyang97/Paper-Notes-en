@@ -2,83 +2,87 @@
 title: >-
   [Paper Note] Pull Requests as a Training Signal for Repo-Level Code Editing
 description: >-
-  [ICML2026][Code Intelligence][Repo-level code editing] This paper proposes the Clean-PR training paradigm, which converts 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace edit block corpor…
+  [ICML 2026][Code Intelligence][mid-training] This paper proposes the Clean-PR training paradigm, converting 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace editing block corpora through filtering, reconstruction, and round-trip validation. By combining Agentless-aligned SFT with error-driven data augmentation, Qwen2.5-Coder-32B ac
 tags:
-  - "ICML2026"
-  - "Code Intelligence"
-  - "Repo-level code editing"
-  - "Pull Request training signals"
-  - "Search/Replace edit blocks"
-  - "mid-training"
-  - "SWE-bench"
+  - ICML 2026
+  - Code Intelligence
+  - mid-training
+  - SWE-bench
 date: 2026-05-08
-content_hash: 50062c409259b07e
+content_hash: 6fdbbb66c664d752
 ---
-
 # Pull Requests as a Training Signal for Repo-Level Code Editing
 
 **Conference**: ICML2026  
 **arXiv**: [2602.07457](https://arxiv.org/abs/2602.07457)  
 **Code**: To be confirmed  
-**Area**: code_intelligence  
-**Keywords**: Repo-level code editing, Pull Request training signals, Search/Replace edit blocks, mid-training, SWE-bench
+**Area**: Code Intelligence  
+**Keywords**: repo-level code editing, Pull Request training signals, Search/Replace editing blocks, mid-training, SWE-bench
 
 ## TL;DR
-This paper proposes the Clean-PR training paradigm, which converts 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace edit block corpora through filtering, reconstruction, and replay verification. By combining Agentless-aligned SFT and error-driven data augmentation, Qwen2.5-Coder-32B achieves relative improvements of 13.6% and 12.3% on SWE-bench Lite and Verified respectively, surpassing the 72B Lingma-SWE and SWE-Fixer with only 32B parameters.
+This paper proposes the Clean-PR training paradigm, converting 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace editing block corpora through filtering, reconstruction, and round-trip validation. By combining Agentless-aligned SFT with error-driven data augmentation, Qwen2.5-Coder-32B achieves relative gains of 13.6% and 12.3% on SWE-bench Lite and Verified respectively, surpassing 72B models like Lingma-SWE and SWE-Fixer with only 32B parameters.
 
 ## Background & Motivation
 
-**Background**: Repo-level software engineering (repo-level SWE) has become the core benchmark for testing code LLMs. Current SOTA systems on SWE-bench almost exclusively follow the "complex agent scaffolding" path—stacking agentic tool calls, structured localization, and large-scale test-time scaling. While performance is strong, it is difficult to attribute the source of gains.
+**Background**: Repository-level software engineering (repo-level SWE) has become the core benchmark for evaluating code LLMs. Currently, SOTA systems on SWE-bench almost exclusively follow the "complex agent scaffolding" path—a combination of agentic tool calling, structured localization, and large-scale test-time scaling. While performance is strong, it is difficult to attribute the source of these gains.
 
-**Limitations of Prior Work**: Training data shows a clear polarization. SWE-bench-like data (e.g., Multi-SWE-bench, SWE-Gym, R2E-Gym) is execution-verifiable but small in scale (thousands to tens of thousands); meanwhile, natural code corpora like The Stack and CodeReview are large enough but lack editing instruction signals on "how to modify multi-file code based on an issue." Neither is sufficient to truly "internalize" repo-level editing capabilities into model weights.
+**Limitations of Prior Work**: Training data exhibits a stark polarization. SWE-bench style datasets (e.g., Multi-SWE-bench, SWE-Gym, R2E-Gym) are execution-verifiable but small in scale (thousands to tens of thousands of instances). Conversely, natural code corpora like The Stack or CodeReview are large-scale but lack structured editing instructions on "how to modify multi-file code based on an issue." Neither is sufficient to truly "internalize" repo-level editing capabilities into model weights.
 
-**Key Challenge**: To encode repo-level editing capabilities into weights, one needs (i) the scale of natural corpora, (ii) the structural signals of multi-file editing, and (iii) high-fidelity executability—triality which is difficult to achieve simultaneously.
+**Key Challenge**: To encode repo-level editing capabilities into weights, one needs to simultaneously achieve (i) the scale of natural corpora, (ii) the structured signals of multi-file editing, and (iii) high-fidelity executability—a difficult trifecta to balance.
 
-**Goal**: To answer a fundamental question—in repo-level editing capabilities, how much can be directly encoded into model weights to move away from reliance on complex inference-time scaffolding? This is decomposed into two sub-questions: (a) how to extract "model-learnable" training signals from the extremely noisy GitHub PR stream; (b) if mid-training alone is insufficient for localization and navigation in large repositories, what additional training phases are needed.
+**Goal**: To answer a fundamental question—how much repo-level editing capability can be directly encoded into model weights to reduce reliance on complex inference-time scaffolding? This is decomposed into two sub-questions: (a) How to extract "learnable" training signals from highly noisy GitHub PR streams; (b) Since mid-training alone is insufficient for localization and navigation in large repos, what additional training phases are required?
 
-**Key Insight**: The authors observe that GitHub Pull Requests naturally couple "natural language intent (description + linked issue)" with "accepted multi-file code changes," making them an ideal middle ground between SWE-bench and The Stack. However, only 18.59% of the 16.4 million raw PRs are considered "clean," requiring strict cleaning, edit block reconstruction, and replay verification for use.
+**Key Insight**: The authors noted that GitHub Pull Requests naturally couple "natural language intent (description + linked issue)" with "accepted multi-file code changes," forming an ideal middle ground between SWE-bench and The Stack. However, only 18.59% of the 16.4 million raw PRs are considered "clean," requiring strict cleaning, editing block reconstruction, and round-trip validation.
 
-**Core Idea**: Replace "fragile unified diffs" with "round-trip verified Search/Replace edit blocks" as PR training signals. Combined with step-by-step SFT aligned with Agentless and error-driven hard-negative augmentation, repo-level editing capabilities are solidified into the weights, allowing a 32B model to surpass 72B agentic solutions under a simplified Agentless protocol.
+**Core Idea**: Use "round-trip validated Search/Replace editing blocks" instead of "fragile unified diffs" as PR training signals. This is coupled with Agentless-aligned multi-step SFT and error-driven hard-negative augmentation to solidify repo-level editing capabilities into the weights. This allows the 32B model to outperform 72B agentic solutions under a simplified Agentless protocol.
 
 ## Method
 
 ### Overall Architecture
-Clean-PR is a complete recipe consisting of two-stage training and a single data pipeline:
+Clean-PR addresses whether repo-level editing can be encoded into weights to bypass complex agent scaffolding. It processes 8.6 TB of raw GitHub data through cleaning, reconstruction, and validation into 2 million executable Search/Replace blocks. A round of repo-level editing mid-training is performed on Qwen2.5-Coder-32B-Base to solidify priors on "where and how to edit." This is followed by Agentless-aligned multi-step SFT using verifiable trajectories from SWE-Gym/SWE-rebench to teach the model localization, navigation, and patch generation. At inference, a linear Simplified Agentless protocol is used without multi-round tool calls.
 
-- **Data Construction (Left)**: 8.6 TB raw GitHub data → Noise filtering (PR validity + language alignment) → Search/Replace reconstruction (round-trip verification based on patch replay) → Issue augmentation (concatenating linked issue titles/descriptions) → Clean-PR-full (3.05M / 46.4B tokens) → Complexity control + repo-level sampling → **Clean-PR-train (2.0M PRs / 17.7B tokens / 12 languages)**.
-- **Training Phase 1 (Mid-training)**: Starting from Qwen2.5-Coder-32B-Base, repo-level editing mid-training is performed on Clean-PR-train to encode priors for "where to edit" and "how to edit" into the weights.
-- **Training Phase 2 (Agentless-Aligned Step-by-step SFT)**: Based on verifiable trajectories from SWE-rebench / SWE-Gym, each repair sample is decomposed into three supervised tasks (file localization → fine-grained navigation → patch generation), with hard negatives and distractor files/regions injected via error-driven augmentation.
-- **Inference Time**: A Simplified Agentless protocol is used (linear localization → navigation → editing), without an agent loop.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    RAW["16.4M Raw GitHub PRs (8.6TB)"] --> FILTER["Coarse Filtering: remove bots/unmerged/doc-only<br/>+ Core Extension Rules → 18.59% remaining"]
+    FILTER --> SR["Search/Replace Blocks + Round-Trip Validation<br/>apply patch→infer minimal span→select unique anchor Search block→byte-by-byte replay validation"]
+    ISSUE["Issue-Augmented Intent<br/>Parse linked issues into context"] --> CORPUS["2.0M Executable S/R Corpus"]
+    SR --> CORPUS
+    CORPUS --> MID["Repo-level Editing mid-training<br/>(Qwen2.5-Coder-32B-Base, solidify 'where and how to edit')"]
+    MID --> SFT["Agentless-Aligned Multi-step SFT + Error-Driven Augmentation<br/>Step1 File Localization→Step2 Fine-grained Navigation (w/ hard negatives)→Step3 Patch Generation"]
+    SFT --> INFER["Inference: Simplified Agentless Protocol<br/>Localization→Navigation→Editing (linear, no multi-turn tool use)"]
+```
 
 ### Key Designs
 
-1. **Search/Replace Edit Blocks + Round-Trip Verification Data Reconstruction Pipeline**:
-    - **Function**: Converts 16.4M noisy PR diffs into 2.0M Search/Replace training samples verifiable by byte-level replay, serving as the "foundation" of the paradigm.
-    - **Mechanism**: First, coarse filtering is done based on PR validity (dropping bots/unmerged/docs-only) and "core expansion rules" (at least one core source file in 12 target languages must be modified), retaining only 18.59% of samples. For each PR: ① apply the original patch to the *before* repository snapshot to get *after*; ② algorithmically derive the minimal edit span and select the "shortest unique anchoring context" in *before* as the Search block; ③ re-apply the generated S/R blocks to *before*, and drop if it is not bitwise consistent with the ground-truth *after*. Finally: complexity control (≤5 core files, average files $3.0 \to 1.7$), window cropping around S/R blocks for >100k token files, and random sampling of 2000 entries per repo to prevent distribution skew.
-    - **Design Motivation**: The authors analyzed the fragility of unified diffs—they rely heavily on exact line number prediction, and models often fail during generation due to format drift. S/R uses unique context matching to locate edit points, bypassing line number fragility, and round-trip verification ensures the executability of every sample. In experiments, the Valid Patch rate jumped from 89.7% (StarCoder-style) to 96.3%, and Line Acc. rose from 47.0% to 55.7%, verifying that "unique search block" signals allow the model to output more precise navigation cues.
+**1. Search/Replace Blocks + Round-Trip Validation: Refining Dirty PRs into Executable Signals**
 
-2. **Issue-Augmented Intent (Intent Completion via Linked Issues)**:
-    - **Function**: Solves the problem where PR descriptions often only say "Fixes #123," leading to missing original bug reports/requirements in training signals, and aligns the training distribution with the real-world "issue → patch" workflow.
-    - **Mechanism**: Parse issue reference identifiers in PR bodies and concatenate the titles and bodies of all linked issues into the training context as input alongside code context. This completes PR descriptions that originally only had "solution summaries" into "full problem statements + solution summaries." The average description length in Clean-PR-train thus increased from 50.0 to 59.5 words.
-    - **Design Motivation**: In reality, models face "detailed bug reports" rather than "one-sentence summaries." Training-inference distribution consistency allows the model to learn "alignment from natural language intent to code implementation." Ablations show that removing linked issues and using PR Desc Only drops Verified performance from 27.8% to 25.7%; while stronger than the baseline alone, the combination with S/R format yields the best results.
+The foundation of the paradigm is the data reconstruction pipeline, turning 16.4M noisy PR diffs into 2.0M byte-level replay-verifiable samples. Coarse filtering discards bot submissions, unmerged PRs, and doc-only changes, requiring PRs to modify at least one core source file in 12 target languages ("Core Extension Rules"). For surviving PRs, a three-step reconstruction is performed: apply the original patch to the "before" repo to get "after," algorithmically derive the minimal edit span, select the "shortest unique anchoring context" in the "before" file as the Search block, and finally re-apply the S/R block. Samples are kept only if the result is bitwise identical to the ground-truth "after." Complexity control limits samples to $\le 5$ core files (averaging $1.7$ files, down from $3.0$), clips windows around S/R blocks for $>100k$ token files, and downsamples contributions per repo to 2000 to prevent distribution skew.
 
-3. **Agentless-Aligned Step-by-step SFT + Error-Driven Augmentation**:
-    - **Function**: Further aligns the "ability to edit given clean context" learned in mid-training to real-world SWE-bench scenarios (finding 1.7 files to change in a 3010-file repo and navigating precisely), while preventing "over-editing" when retrieval is imperfect.
-    - **Mechanism**: Decomposition into three-stage supervision using ground-truth trajectories from SWE-rebench/SWE-Gym—Step 1 File Localization (Issue + Repo Tree → Filepath, excluding non-code tags like .md/.txt); Step 2 Fine-grained Navigation (using AST to map ground-truth edits to functions/classes, acting as target for Issue + File Content → Relevant Context); Step 3 Patch Generation (Localized Context → Minimal unique S/R block). Error-driven augmentation uses Qwen-2.5-Coder-32B-Instruct as an intermediate model to generate hard negatives: Step 2 uses $\text{Issue} + (F_{gt} \cup F_{neg}) \to \text{Relevant Context}$, requiring the model to output "No changes needed" for $F_{neg}$; Step 3 uses $\text{Issue} + (C_{relevant} \cup C_{noise}) \to \text{Search/Replace}$, teaching the model to refuse modifications on semantically similar but irrelevant code blocks. Total SFT data: 18,891 / 30,752 / 25,439 = 75,082, including 21,864 negative samples from error augmentation.
-    - **Design Motivation**: Standard SFT only trains the "perfect localization" happy path, but real inference retrieval is inherently noisy. Without explicit distractor injection, models tend to over-edit irrelevant files because they "saw it and changed it" (Zeng et al., 2025). In ablations under the All-Languages setting, error augmentation improved Lite Pass@1 from 21.8% to 24.3% and Verified from 27.4% to 30.6%, with a synchronized increase in Line Acc., proving it learns "precise discrimination amidst interference" rather than just memorizing patterns.
+The choice of S/R over unified diffs is because diffs rely on precise line number prediction, which often fails due to minor formatting drifts. S/R uses unique context matching for localization, bypassing line number fragility. Result: Valid Patch rate jumped from 89.7% (StarCoder-style) to 96.3%, and Line Acc. rose from 47.0% to 55.7%.
+
+**2. Issue-Augmented Intent: Recovering Real Intent from One-Line Summaries**
+
+In reality, many PR descriptions only state "Fixes #123," losing the original bug report. This creates a mismatch with the inference workflow. The authors parse issue reference identifiers in PR bodies and concatenate the titles and bodies of all linked issues into the training context. This transforms "solution summaries" into "complete problem statements + solutions," increasing the average description length from 50.0 to 59.5 words. This aligns the training and inference distributions. Ablations show that removing linked issues and using only PR descriptions drops Verified performance from 27.8% to 25.7%.
+
+**3. Agentless-Aligned Multi-step SFT + Error-Driven Augmentation: Learning "Only Edit When Necessary"**
+
+Mid-training teaches "how to edit given clean context," but SWE-bench requires finding $\sim 1.7$ target files out of thousands. Using ground-truth trajectories from SWE-rebench/SWE-Gym, the authors decompose supervision into three stages: Step 1 File Localization (Issue + Repo Tree $\to$ Filepath), Step 2 Fine-grained Navigation (mapping edits to function/class via AST), and Step 3 Patch Generation (Localized Context $\to$ S/R block).
+
+The key is error-driven augmentation: Qwen-2.5-Coder-32B-Instruct is used to generate hard negatives. In Step 2, the model is fed $\text{Issue} + (F_{gt} \cup F_{neg}) \to \text{Relevant Context}$ and required to output "No changes needed" for distractor files $F_{neg}$. In Step 3, the model is taught to reject semantically similar but irrelevant code segments. The final SFT data consists of 18,891 / 30,752 / 25,439 = 75,082 samples, including 21,864 hard-negative examples. This prevents over-editing—a common failure where models modify irrelevant files just because they are retrieved.
 
 ### Loss & Training
-- Base: Qwen2.5-Coder-32B-Base (Ablations include 7B Base).
-- Hardware: 32×H200, context window 32,768 tokens; Python-only mid-training ~60 wall-clock hours, All-Languages full mid-training 259 hours, step-by-step SFT another 38 hours.
-- Loss: Standard next-token CE, supervised via unified format across three-stage SFT tasks; hard negative samples are mixed with positives (no separate weighting).
-- Inference: Simplified Agentless protocol executing localization → navigation → editing linearly, without multi-turn or external tool calls.
+- Base: Qwen2.5-Coder-32B-Base.
+- Hardware: 32×H200, 32k context window. Python-only mid-training $\sim 60$ hours; All-Languages mid-training 259 hours; multi-step SFT 38 hours.
+- Loss: Standard next-token CE; hard negatives mixed with positive samples without special weighting.
+- Inference: Simplified Agentless protocol (linear: localization $\to$ navigation $\to$ editing), no multi-turn tool calling.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison on SWE-bench Lite / Verified with a 32B base (Pass@1 as the primary metric):
+Comparison on SWE-bench Lite / Verified (Pass@1):
 
-| Setting | Mid-Train | SFT | Valid Patch | File Acc. | Line Acc. | Pass@1 |
+| Setup | Mid-Train | SFT | Valid Patch | File Acc. | Line Acc. | Pass@1 |
 |------|-----------|-----|-------------|-----------|-----------|--------|
 | Qwen-Coder-32B-Instruct (Lite) | None | ✗ | 77.0 | 74.7 | 38.3 | 10.7 |
 | Qwen-Coder-32B-Base + SFT (Lite) | None | ✓ | 84.0 | 78.3 | 46.7 | 11.3 |
@@ -88,59 +92,57 @@ Comparison on SWE-bench Lite / Verified with a 32B base (Pass@1 as the primary m
 | + StarCoder2-style (17.4B, Verified) | Diff | ✓ | 82.4 | 77.7 | 48.4 | 20.4 |
 | **Clean-PR-train All (17.7B, Verified)** | S/R | ✓ | **95.2** | **80.7** | **52.2** | **30.6** |
 
-Relative to the Instruct baseline, Lite absolute gain is $+13.6\%$, Verified $+12.3\%$; relative to StarCoder2-style with the same token count, Lite $+8.6\%$, Verified $+10.2\%$.
+Relative to Instruct baseline, Lite Gain is $+13.6\%$ and Verified Gain is $+12.3\%$.
 
-Comparison with external open-source SOTA (pass@1):
+External SOTA Comparison (Pass@1):
 
 | Method | Framework | Params | Lite | Verified |
 |------|------|------|------|----------|
 | SWE-Gym | OpenHands | 32B | 15.3 | 20.6 |
 | Lingma-SWE | SWESynInfer | 72B | 22.0 | 30.2 |
 | SWE-Fixer | SWE-Fixer | 72B | 22.0 | 30.2 |
-| **Clean-PR** | Agentless | **32B** | **24.3** | **30.6** |
+| **Ours** | Agentless | **32B** | **24.3** | **30.6** |
 
 ### Ablation Study
 
-| Configuration | Lite Pass@1 | Verified Pass@1 | Description |
+| Configuration | Lite Pass@1 | Verified Pass@1 | Note |
 |------|-------------|------------------|------|
-| Full (S/R + Linked Issue, Python) | 22.3 | 27.8 | Full Clean-PR setting (Python subset) |
-| w/o S/R (to Diff) + Linked Issue | 19.1 | 24.4 | Replacing edit format only: Verified drops 3.4% |
-| w/o Linked Issue (PR Desc only) | 20.4 | 25.7 | Removing issue augmentation: Verified drops 2.1% |
-| StarCoder-style (Diff + PR Desc Only) | 15.7 | 20.4 | Combined changes, overall drop |
-| Standard SFT (All Languages) | 21.8 | 27.4 | Without Error-Driven augmentation |
-| + Error Aug. (All Languages) | 24.3 | 30.6 | Gains in Line Acc. synchronized with Pass@1 |
+| Full (S/R + Linked Issue, Python) | 22.3 | 27.8 | Complete Clean-PR (Python subset) |
+| w/o S/R (to Diff + Linked Issue) | 19.1 | 24.4 | Verified drops 3.4% |
+| w/o Linked Issue (PR Desc only) | 20.4 | 25.7 | Verified drops 2.1% |
+| StarCoder-style (Diff + PR Desc Only) | 15.7 | 20.4 | Significant drop across all metrics |
+| Standard SFT (All languages) | 21.8 | 27.4 | No Error-Driven Augmentation |
+| + Error Aug. (All languages) | 24.3 | 30.6 | Line Acc. and Pass@1 both improve |
 
 ### Key Findings
-- **Data Format > Data Scale**: Python-only Clean-PR with only 3.8B tokens outperforms the 17.4B token StarCoder2-style baseline (Lite 22.3% vs 15.7%), showing that "clean and execution-verified" training signals are far more important than stacking tokens.
-- **Avoiding Catastrophic Forgetting**: StarCoder2-style diff training caused HumanEval to degrade from 54.1% to 47.6% ($-6.5\%$), whereas Clean-PR improved HumanEval to 59.8% ($+5.7\%$) and LiveCodeBench from 29.0% to 32.6%—the precise context matching objective positively transfers to general code capabilities.
-- **Small Models Also Benefit**: Applying the recipe to Qwen2.5-Coder-7B increased Lite Pass@1 from 10.3% to 14.5% and Verified from 14.2% to 20.4%, with localization metrics improving more than the 32B model, showing high-quality PR supervision is critical for capacity-constrained models.
-- **Pass@k Reveals Ranking Bottleneck**: Verified Pass@1 30.6% → Pass@10 41.5% (Lite 24.3% → 37.5%), implying the model's intrinsic reasoning power is stronger than single-decoding indicates; adding a verifier/re-ranker could yield further gains.
-- **Multi-lingual Transfer**: On Multi-SWE-bench Flash, Clean-PR achieved 12.3% Pass@1, outperforming Instruct and StarCoder2-style baselines, indicating that 12-language mid-training gives the model cross-lingual repo-editing generalization.
+- **Data Format > Data Scale**: Clean-PR (Python-only, 3.8B tokens) outperforms StarCoder2-style (17.4B tokens) baseline (Lite 22.3% vs 15.7%), proving executable signals are more important than token volume.
+- **Avoiding Catastrophic Forgetting**: Unlike StarCoder2-style diff training which dropped HumanEval from 54.1% to 47.6%, Clean-PR improved HumanEval to 59.8% and LiveCodeBench to 32.6%.
+- **Small Models Benefit**: Migrating to Qwen2.5-Coder-7B improved Lite Pass@1 from 10.3% to 14.5% and Verified from 14.2% to 20.4%.
+- **Pass@k Highlights Ranking Bottlenecks**: Verified Pass@1 (30.6%) vs. Pass@10 (41.5%) suggests that the model's intrinsic reasoning is stronger than single-decoding results show.
 
 ## Highlights & Insights
-- **"Reconstructing dirty data with LLM-friendly intermediate representations" is the key unlock for PR training**: Replacing unified diffs with Search/Replace and adding round-trip bitwise verification treats "training sample executability" as a first-class citizen. This aligns directly with mainstream edit pipelines like Aider/SWE-agent while avoiding "looks correct but fails on apply" issues caused by line number fragility.
-- **Error-driven augmentation is a "cheap prescription" for training-inference consistency**: Instead of complex RL or rejection sampling, it uses an intermediate model to generate hard negative files/blocks and requires the main model to output "No changes needed" or avoid modifications. This essentially writes "imperfect retrieval" into the training distribution; the idea is generalizable to any "retrieve-then-generate" task.
-- **Challenging the "agents are mandatory to win" narrative**: By using a linear Simplified Agentless protocol, 32B parameters, and pure weight internalization, the model exceeds 72B + agentic loop solutions. This provides clean causal evidence for "data > scaffolding," offering practical significance for both academic control of variables and industrial cost reduction.
-- **Mid-training is neither pretrain nor SFT**: This paper positions it as a distinct stage "between base and SFT, specifically for encoding priors with domain-specific executable signals," a paradigm worth extending to other vertical domains (e.g., SQL, Notebook editing, robotics code).
+- **Refactoring "dirty" data into LLM-friendly IR is the key unlock**: Replacing unified diffs with Search/Replace and adding round-trip validation treats "executability" as a first-class citizen, avoiding line-number fragility.
+- **Error-driven augmentation as a cheap prescription for train-inference alignment**: Instead of RL or rejection sampling, simple hard-negative injection teaches the model to handle imperfect retrieval, a technique widely applicable to RAG tasks.
+- **Challenging the "Agent-is-Mandatory" narrative**: Achieving SOTA using a 32B model with a linear protocol versus 72B agentic loops provides evidence for "data > scaffolding."
+- **Mid-training as a distinct phase**: Positioned between base and SFT, it encodes domain-specific priors using executable signals, a paradigm transferable to SQL, robotics, or notebooks.
 
 ## Limitations & Future Work
-- **Acknowledged Limitations**: The 11% gap between Pass@1 and Pass@10 indicates imperfect likelihood ranking, necessitating verifiers or re-rankers. The wall-clock cost of mid-training (259 hours × 32×H200) is not academic-friendly for reproduction.
-- **Data Availability vs Legal Risks**: Claiming to release the largest PR corpus (2M), but GitHub PRs involve open-source license compliance (GPL/AGPL, etc.) which the authors did not fully discuss; uncertainty exists for downstream commercial model training.
-- **Evaluation Constraints**: SWE-bench Lite/Verified remains primarily Python-focused; multi-lingual capabilities were only validated on 300 samples of Multi-SWE-bench Flash. True capabilities in languages like C/C++ (dependent on complex compilation/linking) require larger-scale evaluation.
-- **No RL/Self-Improvement**: The entire pipeline falls within the SFT category (mid-training + supervision) and does not utilize the executable nature of SWE-bench for outcome-based RL; RL + Clean-PR is a natural next step.
-- **Sensitivity of Error Augmentation to "Intermediate Model" Quality**: Using Qwen-2.5-Coder-32B-Instruct to generate hard negatives might inject "noise" that doesn't represent real retrieval failure modes if the intermediate model's distribution is biased.
+- **Author-acknowledged Limitations**: The 11% gap between Pass@1 and Pass@10 indicates imperfect likelihood ranking, requiring verifiers. High GPU costs (259h on 32×H200) hinder academic replication.
+- **Data Availability vs. Legal Risks**: Releasing 2M PR samples raises open-source license compliance questions (GPL/AGPL) not fully addressed.
+- **Evaluation Scope**: SWE-bench remains Python-centric; performance on languages like C/C++ requiring complex build systems remains untested at scale.
+- **No RL/Self-Improvement**: The current pipeline is supervised; using SWE-bench's execution for outcome-based RL is the next natural step.
 
 ## Related Work & Insights
-- **vs StarCoder2 / The Stack (Natural Corpora)**: These prioritize scale and multi-lingual coverage but do not constrain edit formats or single PR verification. This paper exchanges "scale" for "density" via round-trip verification and S/R format, significantly outperforming them with equal tokens and improving on general code benchmarks, negating the pessimistic assumption that specialized training must hurt general performance.
-- **vs SWE-Gym / R2E-Gym (SWE-bench-style data)**: These are high-fidelity but limited to thousands of episodes. This paper provides a scalable path from "millions of PRs → executable training signals." They are complementary rather than alternative (the SFT stage here actually used trajectories from SWE-Gym/SWE-rebench).
-- **vs Agentless (Xia et al., 2025)**: Agentless simplified the process into localization → navigation → editing. This paper not only adopts its S/R edit block convention but also explicitly distills this whole process into weights, further reducing reliance on scaffolding at inference.
-- **vs OpenHands / SWE-agent (Agentic Frameworks)**: These rely on multi-turn tool usage + iterative planning—powerful but expensive. This paper achieves SOTA with "weight internalization + linear pipeline," providing an alternative standard: "whether an agent is needed depends on whether the corresponding prior exists in the weights."
+- **vs. StarCoder2/The Stack**: Those focus on scale/languages but lack editing constraints. Ours trades "volume" for "density" of executable signals.
+- **vs. SWE-Gym**: SWE-Gym is high-fidelity but small scale ($<10^5$). Ours provides a scalable path for millions of PRs.
+- **vs. Agentless**: Ours distills the Agentless workflow into the weights, reducing inference-time dependency.
+- **vs. Agentic Frameworks (OpenHands/SWE-agent)**: These rely on expensive multi-turn planning. Ours demonstrates that "whether an agent is needed depends on the priors stored in the weights."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of the data paradigm (Search/Replace + round-trip verification + linked issue + error augmentation) is new, and clearly defines mid-training as an independent stage. Individual techniques are not all original, but the recipe is complete and reproducible.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes 32B main results, 7B scaling generalization, multi-lingual generalization, Pass@k extension, three sets of crucial ablations (data format/Issue/Error-Aug), and catastrophic forgetting analysis on HumanEval/LiveCodeBench. The chain of evidence is very solid.
-- Writing Quality: ⭐⭐⭐⭐ The data pipeline, training stages, and causal decomposition in ablations are clear. Minor drift in table references (e.g., "Table 3 presents..." vs actual table numbers) exists but does not hinder understanding.
-- Value: ⭐⭐⭐⭐⭐ Releasing 2M verified PR samples is a scarce resource for the community; exceeding 72B with 32B directly challenges the mainstream narrative that agent scaffolding is indispensable, impacting both industrial deployment and academic research.
+- Novelty: ⭐⭐⭐⭐ The combination of S/R blocks, round-trip validation, and error-driven mid-training is a cohesive and reproducible recipe.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage from 32B/7B scaling, ablation, to catastrophic forgetting analysis.
+- Writing Quality: ⭐⭐⭐⭐ Logical breakdown of the pipeline, though some table references have minor number drifts.
+- Value: ⭐⭐⭐⭐⭐ Releasing 2M validated PR samples is a massive community contribution; the 32B-surpassing-72B result shifts the discourse on agent scaffolding.
 
 <!-- RELATED:START -->
 
@@ -148,11 +150,11 @@ Comparison with external open-source SOTA (pass@1):
 
 ## Related Papers
 
-- [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
-- [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](../../NeurIPS2025/code_intelligence/qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
-- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](../../ACL2026/code_intelligence/swe-qa_can_language_models_answer_repository-level_code_questions.md)
+- [\[ACL 2025\] CoRet: Improved Retriever for Code Editing](../../ACL2025/code_intelligence/coret_improved_retriever_for_code_editing.md)
+- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
 - [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
-- [\[ACL 2026\] To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing](../../ACL2026/code_intelligence/to_diff_or_not_to_diff_structure-aware_and_adaptive_output_formats_for_efficient.md)
+- [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](../../NeurIPS2025/code_intelligence/qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
+- [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
 
 </div>
 

@@ -82,7 +82,7 @@ item_total: 49
 
 **📹 ICCV2025** · **49** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (63)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (180)](../../CVPR2026/video_generation/index.md) · [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [💬 ACL2026 (4)](../../ACL2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md)
 
 🔥 **Top topics:** Video Generation ×20 · Diffusion Models ×12 · Adversarial Robustness ×5 · Personalized Generation ×3 · Face & Gaze ×2
 

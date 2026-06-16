@@ -2,74 +2,91 @@
 title: >-
   [Paper Note] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Theory of Mind] This paper proposes VisionToM, a lightweight vision-based intervention framework that probes and intervenes on attention heads sensitive to visual input and ToM reasoning withi…
+  [CVPR 2026][Multimodal VLM][Paper Note] VisionToM is a lightweight vision-based intervention framework that enhances Theory of Mind (ToM) reasoning in MLLMs by probing and intervening in attention heads sensitive to visual input and ToM logic. Without fine-tuning, the method significantly improves performance on the EgoToM benchmark by guiding the model to f
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Theory of Mind"
-  - "Multimodal Large Language Models"
-  - "Attention Intervention"
-  - "Visual Reasoning"
-  - "Hallucination Mitigation"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: e0f415126553f813
+content_hash: a52041286c3c8d99
 ---
-
 # Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24484](https://arxiv.org/abs/2603.24484)  
 **Code**: None (Project page: [https://founce.github.io/VisionToM](https://founce.github.io/VisionToM))  
-**Area**: Multimodal VLM / Theory of Mind
+**Area**: Multimodal VLM / Theory of Mind  
 **Keywords**: Theory of Mind, Multimodal Large Language Models, Attention Intervention, Visual Reasoning, Hallucination Mitigation
 
 ## TL;DR
 
-This paper proposes VisionToM, a lightweight vision-based intervention framework that probes and intervenes on attention heads sensitive to visual input and ToM reasoning within MLLMs. Without fine-tuning the backbone, VisionToM substantially enhances Theory of Mind reasoning in multimodal large language models, achieving significant performance gains on the EgoToM benchmark.
+VisionToM is a lightweight vision-based intervention framework that enhances Theory of Mind (ToM) reasoning in MLLMs by probing and intervening in attention heads sensitive to visual input and ToM logic. Without fine-tuning, the method significantly improves performance on the EgoToM benchmark by guiding the model to focus on visual evidence.
 
 ## Background & Motivation
 
-1. **Background**: Theory of Mind (ToM) refers to the capacity to infer mental states—desires, beliefs, and intentions—of oneself and others in order to predict behavior. As LLMs have advanced, their ToM capabilities have drawn increasing attention. However, existing ToM evaluations predominantly focus on textual input, leaving scenarios grounded in purely visual information underexplored.
+1. **Background**: Theory of Mind (ToM) involves inferring mental states (desires, beliefs, intentions) to predict behavior. While LLMs show promise in text-based ToM, research on ToM reasoning based purely on visual information remains insufficient.
 
-2. **Limitations of Prior Work**: (1) Most MLLMs perform poorly on ToM tasks with vision-only input, particularly exhibiting large gaps relative to human baselines on Belief and Action reasoning; (2) existing approaches treat models as black boxes with little investigation into the internal behavior of attention in multiple-choice QA; (3) the influence of LLM hallucinations on ToM tasks has not been sufficiently studied from an interpretability perspective; (4) most multimodal ToM benchmarks rely on simulated environments and lack ecological validity in real-world settings.
+2. **Limitations of Prior Work**: (1) Most MLLMs perform poorly on vision-only ToM tasks, showing a massive gap compared to human baselines in Belief and Action reasoning; (2) Existing methods treat models as black boxes and rarely explore internal attention behavior; (3) The impact of hallucinations on ToM tasks has not been sufficiently studied from an interpretability perspective; (4) Most multimodal ToM benchmarks lack real-world ecological validity.
 
-3. **Key Challenge**: When handling ToM tasks, MLLMs over-rely on linguistic priors and neglect visual evidence. When visual information conflicts with linguistic priors, models tend to produce inaccurate inferences based on language patterns, leading to hallucinations. Existing interpretability-based enhancement methods are confined to the text modality.
+3. **Key Challenge**: MLLMs rely excessively on linguistic priors while ignoring visual evidence. When visual information conflicts with these priors, models tend to produce inferences based on linguistic patterns rather than visual facts, leading to hallucinations.
 
-4. **Goal**: How can one enhance an MLLM's visual attention and ToM reasoning capabilities—and reduce dependence on spurious linguistic priors—by intervening on internal representations, without fine-tuning the model?
+4. **Goal**: To enhance visual attention and ToM reasoning in MLLMs without fine-tuning by intervening in internal representations to reduce reliance on spurious linguistic priors.
 
-5. **Key Insight**: Interpretability analysis reveals that MLLMs exhibit cross-task consistency in visual attention across multiple ToM tasks, while internal representations for ToM reasoning diverge across tasks but are consistent within each task. This observation provides a principled basis for targeted intervention.
+5. **Key Insight**: Interpretability analysis reveals that MLLMs exhibit cross-task consistency in visual attention, while representations for ToM reasoning are task-divergent but intra-task consistent. This provides a basis for targeted intervention.
 
-6. **Core Idea**: Linear probes identify attention heads sensitive to visual input and ToM reasoning. Intervention vectors are computed pointing from incorrect to correct representations, and are injected at inference time to guide the model toward attending to visual evidence and producing correct reasoning.
+6. **Core Idea**: Use linear probes to locate attention heads sensitive to visual input and ToM reasoning, then calculate and inject intervention vectors to steer the model toward correct reasoning during inference.
 
 ## Method
 
 ### Overall Architecture
 
-VisionToM proceeds in four stages: (1) **Internal Representation Extraction**—constructing positive/negative sample pairs and extracting representations of visual attention and ToM reasoning from MLLM attention heads; (2) **Probing**—training linear classifiers to identify which attention heads are most sensitive to visual input and ToM reasoning; (3) **ToM Reasoning Representation Disentanglement**—using clustering and encoder networks to align negative sample representations toward positive samples; (4) **Intervention**—injecting the computed intervention vectors into sensitive attention heads at inference time. The MLLM backbone remains frozen throughout.
+VisionToM solves the issue where MLLMs "hallucinate" in vision-only ToM tasks by favoring linguistic patterns over conflicting visual evidence. Instead of fine-tuning, the framework identifies specific attention heads responsible for "visual perception" and "mental state inference" and injects correction vectors during the forward pass. The pipeline consists of four steps: extracting activations from frozen heads to construct calibration pairs; identifying sensitive heads via linear probing; calculating visual and ToM-specific correction directions; and superimposing these vectors during inference. The backbone remains frozen throughout.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Video-only + ToM Question<br/>(Frozen MLLM, no fine-tuning)"] --> B["Extract activation of attention heads<br/>Construct positive/negative pairs"]
+    B --> C["Visual Attention Enhancement<br/>PGD attack creates negative samples → Mean diff yields δV"]
+    B --> D["ToM Reasoning Guidance<br/>Cluster incorrect answers → Cluster-wise encoder yields δT"]
+    B --> E["Probing: Linear probes locate sensitive heads<br/>Top-K=64"]
+    C --> F["Intervention: Superimpose Δ=δV+δT on sensitive heads<br/>Strength α=1.0 (Inference)"]
+    D --> F
+    E --> F
+    F --> G["Output correct ToM answer"]
+```
 
 ### Key Designs
 
-1. **Visual Attention Enhancement**:
-    - **Function**: Reduce the MLLM's over-reliance on linguistic priors and strengthen attention to visual input.
-    - **Mechanism**: PGD adversarial attacks ($\epsilon=16/255$, 300 steps) generate visually perturbed samples as negatives while keeping textual questions unchanged. Activation values from all attention heads are extracted from positive/negative pairs, and the mean offset vector is computed as: $\{\delta_{V,l}^h\} = \frac{1}{S}\sum_{i=1}^{S}(X_{V,i,l}^{pos,h} - X_{V,i,l}^{neg,h})$. This offset encodes the direction from "correct visual information" to "perturbed visual information"; applying it in reverse guides the model to attend more faithfully to genuine visual input.
-    - **Design Motivation**: PGD attacks more effectively expose attention failure modes than random noise—after PGD attack, Goal accuracy drops from 61.5% to 29.1%, whereas random noise only reduces it to 47.0%, confirming that adversarial samples provide more accurate gradient directions.
+**1. Visual Attention Enhancement: Reversing directions that ignore visual input**
 
-2. **ToM Reasoning Guidance**:
-    - **Function**: Strengthen the model's ToM reasoning ability and guide correct mental state inference.
-    - **Mechanism**: Visual input is fixed; correct answers serve as positive samples and incorrect answers as negatives. Since the semantic diversity of negative samples produces non-uniform representation distributions, offset vectors cannot be computed directly. A clustering-based approach is adopted: negative samples for each sensitive attention head are clustered (with $k$ selected automatically in the range 2–15), and a dedicated encoder network $f_{h,c}$ is trained per cluster to learn correction vectors $\delta_{h,c,i} = f_{h,c}(x_{T,i}^{neg,h})$ that map negative to positive representations. At inference time, the nearest cluster center determines which encoder to apply.
-    - **Design Motivation**: Different types of reasoning failures require interventions in different directions. Naïve averaging blurs distinctions among failure modes; the clustering plus dedicated encoder design achieves more fine-grained, targeted correction.
+The authors identify directions in the attention space that signify "ignoring visual evidence." PGD adversarial attacks ($\epsilon=16/255$, 300 steps) are used to perturb only visual input, creating negative samples. For each head, the mean activation difference provides the visual offset vector:
 
-3. **Probing & Intervention**:
-    - **Function**: Identify sensitive heads and precisely apply interventions at inference time.
-    - **Mechanism**: An independent linear binary probe (logistic regression) is trained for each attention head; heads with high validation accuracy are designated "sensitive heads." Key finding: visually sensitive heads are distributed across layers and consistent across tasks, while ToM reasoning sensitive heads are concentrated in middle layers and diverge across tasks. Intervention selects the Top-$K$=64 sensitive heads and injects the sum of visual and ToM intervention vectors: $T_{l+1} = T_l + \sum_{h=1}^H(Attn_l^h(P_l^hT_l) + \alpha \times \Delta) \cdot W_l^o$, with intervention strength $\alpha=1.0$.
-    - **Design Motivation**: Cross-task consistency of visual attention sensitive heads enables sharing the same head set; within-task consistency of ToM reasoning enables VisionToM to probe task-specific ToM embeddings. Reverse intervention ($-\alpha\Delta$) causes a sharp performance drop, validating the correctness of the intervention direction.
+$$\{\delta_{V,l}^h\} = \frac{1}{S}\sum_{i=1}^{S}\left(X_{V,i,l}^{pos,h} - X_{V,i,l}^{neg,h}\right)$$
+
+Applying this vector in reverse during inference steers the model to rely more on the actual visual scene.
+
+**2. ToM Reasoning Guidance: Cluster-wise correction encoders**
+
+Since ToM reasoning failures are diverse (e.g., wrong intentions vs. wrong beliefs), a simple average direction is insufficient. The framework clusters incorrect representations for each head and trains dedicated encoders $f_{h,c}$ to map negative samples to positive ones:
+
+$$\delta_{h,c,i} = f_{h,c}\!\left(x_{T,i}^{neg,h}\right)$$
+
+During inference, the model applies the encoder corresponding to the nearest cluster to provide a refined "remedy" for specific reasoning failures.
+
+**3. Probing and Intervention Mechanism: Locating and intervening in Top-K heads**
+
+Linear probes (logistic regression) identify "sensitive heads" that can distinguish positive from negative samples. Findings show visual heads are distributed across layers, while ToM heads are concentrated in middle layers. Intervention involves adding both visual and ToM vectors to the Top-K=64 heads:
+
+$$T_{l+1} = T_l + \sum_{h=1}^{H}\left(Attn_l^h(P_l^h T_l) + \alpha \times \Delta\right)\cdot W_l^o$$
+
+### Mechanism
+
+Using LLaVA-Next-Video-7B on an EgoToM Goal question: **Offline Calibration** calculates $\delta_V$ via PGD and $\delta_T$ via cluster-wise encoders. **Inference** identifies 64 sensitive heads and superimposes these vectors. While the baseline suffers from linguistic bias (61.5% accuracy), VisionToM pulls the model toward visual evidence and correct logic, reaching 74.5%.
 
 ### Loss & Training
 
-- **Probe training**: Standard cross-entropy loss for optimizing logistic regression parameters.
-- **Encoder training**: $L_{total} = \sum_h \sum_{c=1}^{k_h^*} \frac{1}{|C_{h,c}|} \sum_{i \in C_{h,c}} \|(x_{T,i}^{neg,h} + \delta_{h,c,i}) - x_{T,i}^{pos,h}\|^2$
-- Probes and encoders are trained on a 30% calibration split; inference is performed on the remaining 70% evaluation split.
-- One-time calibration: probe training takes approximately 0.2 hours, encoder training approximately 1 hour; the MLLM backbone remains frozen.
+Probes use cross-entropy loss. Encoders minimize the squared error between corrected negative samples and positive targets:
+
+$$L_{total} = \sum_h \sum_{c=1}^{k_h^*} \frac{1}{|C_{h,c}|} \sum_{i \in C_{h,c}} \left\|\left(x_{T,i}^{neg,h} + \delta_{h,c,i}\right) - x_{T,i}^{pos,h}\right\|^2$$
 
 ## Key Experimental Results
 
@@ -79,70 +96,61 @@ VisionToM proceeds in four stages: (1) **Internal Representation Extraction**—
 |--------|------|------|----------|------|
 | LLaVA-Next-Video-7B | Goal | 61.5% | 74.5% | +13.0% |
 | LLaVA-Next-Video-7B | Belief | 38.9% | 45.3% | +6.4% |
-| LLaVA-Next-Video-7B | Actions | 24.0% | 29.7% | +5.7% |
-| Qwen2.5-VL-7B | Goal | 86.9% | 88.9% | +2.0% |
 | Qwen2.5-VL-7B | Belief | 35.6% | 42.0% | +6.4% |
 | Qwen2.5-VL-7B | Actions | 31.1% | 37.6% | +6.5% |
 | Human Baseline | Goal/Belief/Actions | 88/72/78% | - | - |
 
 ### Ablation Study
 
-| Configuration | Goal | Belief | Actions | Note |
+| Configuration | Goal | Belief | Actions | Description |
 |------|---------|------|------|------|
 | LLaVA Baseline | 61.5% | 38.9% | 24.0% | No intervention |
-| Visual only (w/o $\delta_T$) | 73.2% | 39.2% | 25.3% | Large gain on Goal; small on Belief/Actions |
-| ToM only (w/o $\delta_V$) | 72.6% | 45.3% | 29.0% | Large gain on Belief/Actions |
-| Random intervention (Rnd-$\Delta$) | 62.1% | 39.2% | 25.4% | Random direction nearly ineffective |
-| Reverse intervention ($-\alpha\Delta$) | 50.6% | 20.6% | 10.1% | Sharp drop; validates direction correctness |
-| Full (+$\alpha\Delta$) | 74.5% | 45.3% | 29.7% | Both interventions complementary |
+| Vision Only (w/o $\delta_T$) | 73.2% | 39.2% | 25.3% | Large Goal gain |
+| ToM Only (w/o $\delta_V$) | 72.6% | 45.3% | 29.0% | Large Belief/Actions gain |
+| Reverse Intervention ($-\alpha\Delta$) | 50.6% | 20.6% | 10.1% | Performance crashes |
 
 ### Key Findings
 
-- Visual attention enhancement is most effective for the Goal task (+11.7%), as goal inference relies more heavily on visual cues.
-- ToM reasoning intervention is critical for Belief and Actions tasks, which require deeper cognitive reasoning.
-- The two intervention directions are orthogonally complementary; applying both simultaneously outperforms either alone.
-- PGD attacks provide more precise intervention directions than random noise: after PGD-based intervention, Goal accuracy recovers from 29.1% to 74.5%, whereas random noise intervention recovers only from 47.0% to 70.4%.
-- VisionToM is also effective on open-ended generation tasks: LLaVA-Next-Video's True∧Info metric improves from 8.5% to 27.2%.
-- Qwen2.5-VL with VisionToM on the Goal task (88.9%) approaches the human baseline (88%).
+- Visual intervention is most effective for Goal tasks (+11.7%), which depend heavily on visual cues.
+- ToM intervention is critical for Belief and Action tasks requiring deeper cognitive logic.
+- PGD attacks provide significantly more precise intervention directions than random noise.
+- VisionToM also enhances open-ended generation, improving LLaVA-Next-Video's True∧Info score from 8.5% to 27.2%.
 
 ## Highlights & Insights
 
-- A significant finding from interpretability analysis: visual attention is consistent across tasks, whereas ToM reasoning representations cluster within tasks but diverge across them—an insight that provides theoretical grounding for precise intervention.
-- The ingenious use of adversarial attacks as probing tools: PGD is not employed to attack the model but to uncover vulnerable directions in visual attention; reversing the perturbation direction serves as an enhancement mechanism.
-- The clustering plus dedicated encoder strategy for ToM reasoning correction accounts for the diversity of reasoning failures, offering finer-grained correction than a simple mean direction.
-- The entire method is lightweight with a frozen backbone—probes are linear classifiers and encoders are two-layer MLPs; once calibrated, intervention vectors are reusable.
+- Discovered a structural pattern in MLLMs: visual attention is task-generic while ToM reasoning is task-specific.
+- Leveraged adversarial attacks (PGD) as a diagnostic tool rather than an attack to identify fragile attention directions.
+- Clustering heterogenous reasoning failures allows for more precise "correction medications" than simple linear averaging.
+- The framework is highly efficient, using only linear probes and two-layer MLPs while keeping the backbone frozen.
 
 ## Limitations & Future Work
 
-- Evaluation is currently limited to the EgoToM benchmark; generalization to other ToM benchmarks (e.g., MMToM-QA, GridToM) remains unknown.
-- Intervention vectors are computed once on a calibration set and may require recalibration for out-of-distribution video scenarios.
-- Although the automatic determination of cluster count (Silhouette + Elbow + CH Index) is reasonable, it may be unstable with small samples.
-- Substantial gaps relative to human baselines remain on Belief and Actions tasks (45.3% vs. 72%; 29.7% vs. 78%), indicating that attention intervention is only one component of a broader solution.
+- Evaluation is currently limited to the EgoToM benchmark; generalization to other ToM datasets is yet to be verified.
+- Calibration depends on a predefined set; out-of-distribution scenarios may require new calibration.
+- Despite gains, a significant gap remains compared to human baselines in Belief and Action tasks.
 
 ## Related Work & Insights
 
-- **vs. GridToM**: GridToM derives intervention directions from linear probe coefficient vectors in binary classification settings; VisionToM introduces clustering plus encoders to handle the heterogeneity of multi-class negative samples, enabling finer-grained intervention.
-- **vs. ICT (CVPR'25)**: ICT uses random noise to guide visual attention; VisionToM uses PGD adversarial samples, providing more accurate directional estimates.
-- **Insights**: The visual attention intervention paradigm is transferable to other tasks requiring enhanced VLM visual reasoning (e.g., visual commonsense reasoning, causal inference); the core pattern is "probe → find direction → intervene."
+- **vs GridToM**: Unlike GridToM's binary probe coefficients, VisionToM handles the diversity of multi-choice reasoning errors via clustering.
+- **vs ICT (CVPR'25)**: While ICT uses random noise, VisionToM uses PGD adversarial samples for more accurate direction estimation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Novel perspective combining interpretability probing and intervention for ToM enhancement.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two models, three tasks, comprehensive ablations, but only a single benchmark dataset.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear; visualizations (PCA, KDE) aid understanding.
-- Value: ⭐⭐⭐⭐ Provides an interpretable approach to enhancing cognitive reasoning in MLLMs, though practical application scenarios are limited.
+- Novelty: ⭐⭐⭐⭐ Innovative combination of probing and intervention for ToM.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid results on two models, though limited to one benchmark.
+- Writing Quality: ⭐⭐⭐⭐ Clear presentation with supportive visualization.
+- Value: ⭐⭐⭐⭐ Provides an interpretable path to improving cognitive reasoning in VLMs.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2025\] From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models](../../ICML2025/multimodal_vlm/from_black_boxes_to_transparent_minds_evaluating_and_enhancing_the_theory_of_min.md)
 - [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
-- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
-- [\[CVPR 2026\] StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues](structxlip_enhancing_vision-language_models_with_multimodal_structural_cues.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
 - [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 
 </div>
 

@@ -2,118 +2,109 @@
 title: >-
   [Paper Note] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations
 description: >-
-  [ACL 2026][NLP Understanding][Annotation Disagreement] The LiTEx reasoning taxonomy is extended from "variation within the same label" to "label disagreement" scenarios. It is discovered that annotators may have differen…
+  [ACL 2026][NLP Understanding][Paper Note] The LiTEx reasoning taxonomy is extended from "explanation variation under label agreement" to "label disagreement" scenarios. It is found that annotators may assign different labels while employing similar reasoning, and reasoning category consistency reflects the semantic similarity of explanations more accurately th
 tags:
-  - "ACL 2026"
-  - "NLP Understanding"
-  - "Annotation Disagreement"
-  - "Natural Language Inference"
-  - "LiTEx Taxonomy"
-  - "Reasoning Strategies"
-  - "Human Annotation Variation"
+  - ACL 2026
+  - NLP Understanding
 date: 2026-05-08
-content_hash: 09ecaf5bfd125963
+content_hash: 149d58ba5007f062
 ---
-
 # Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.16458](https://arxiv.org/abs/2510.16458)  
 **Code**: None  
 **Area**: NLI / Annotation Analysis  
-**Keywords**: Annotation Disagreement, Natural Language Inference, LiTEx Taxonomy, Reasoning Strategies, Human Annotation Variation
+**Keywords**: Annotation Disagreement, Natural Language Inference, LiTEx Taxonomy, Reasoning Strategies, Human Label Variation
 
 ## TL;DR
 
-The LiTEx reasoning taxonomy is extended from "variation within the same label" to "label disagreement" scenarios. It is discovered that annotators may have different labels but similar reasoning, and the consistency of reasoning categories reflects the semantic similarity of explanations better than label consistency does.
+The LiTEx reasoning taxonomy is extended from "explanation variation under label agreement" to "label disagreement" scenarios. It is found that annotators may assign different labels while employing similar reasoning, and reasoning category consistency reflects the semantic similarity of explanations more accurately than label consistency.
 
 ## Background & Motivation
 
-**Background**: Annotation variations are prevalent in NLI datasets; understanding these disagreements is crucial for building reliable NLU systems. Explanation-based methods reveal the nature of disagreement by analyzing the reasoning behind annotator decisions.
+**Background**: Annotation disagreement is prevalent in NLI datasets. Understanding these disagreements is vital for building reliable NLU systems. Explanation-based methods reveal the essence of disagreement by analyzing the reasoning behind annotator decisions.
 
-**Limitations of Prior Work**: The LiTEx taxonomy classifies free-text explanations into 8 reasoning strategies, but it was previously used only for analyzing "consistent label, different explanation" (within-label variation), ignoring label inconsistency itself.
+**Limitations of Prior Work**: The LiTEx taxonomy categorizes free-text explanations into eight reasoning strategies, but it was previously used only to analyze within-label variation where labels agree but explanations differ, ignoring instances of label disagreement.
 
-**Key Challenge**: Label inconsistency may mask reasoning consistency (the same reasoning leading to different labels), while label consistency might mask reasoning disagreement (different reasoning yielding the same label by chance). Looking at labels alone cannot reveal the true cognitive disagreement.
+**Key Challenge**: Label inconsistency may mask reasoning consistency (the same reasoning leading to different labels), while label consistency may mask reasoning divergence (different reasoning coincidentally resulting in the same label). Relying solely on labels fails to reveal true cognitive divergence.
 
-**Goal**: Extend LiTEx to label variation scenarios, and analyze NLI annotation variation from three dimensions: labels, reasoning categories, and explanation text similarity.
+**Goal**: To extend LiTEx to label variation scenarios and analyze NLI annotation variation across three dimensions: labels, reasoning categories, and explanation text similarity.
 
-**Key Insight**: Annotate LiTEx categories on two NLI datasets with explanations (LiveNLI and VariErr) and track individual annotator label and reasoning strategy preferences.
+**Key Insight**: By annotating LiTEx categories on the LiveNLI and VariErr datasets (which include explanations), individual annotator preferences for labels and reasoning strategies can be tracked.
 
-**Core Idea**: The consistency of reasoning categories reflects the semantic similarity between explanations better than label consistency itself, indicating that more attention should be paid to the reasoning process rather than the final labels.
+**Core Idea**: Reasoning category consistency reflects the semantic similarity between explanations better than label consistency itself, indicating that more attention should be paid to the reasoning process rather than the final label.
 
 ## Method
 
 ### Overall Architecture
 
-The LiTEx taxonomy is applied to annotate explanations across three datasets (e-SNLI, LiveNLI, VariErr). Variations are then analyzed across three dimensions: (1) NLI label consistency; (2) reasoning category consistency (LiTEx); and (3) semantic similarity of explanation text. Behavior patterns are revealed by tracking individual annotators.
+The LiTEx taxonomy is applied to annotate explanations across three datasets (e-SNLI, LiveNLI, VariErr). Variation is then analyzed via three dimensions: (1) NLI label consistency; (2) reasoning category consistency (LiTEx); and (3) semantic similarity of explanation text. Behavior patterns are revealed by tracking individual annotators.
 
 ### Key Designs
 
-1.  **Cross-dataset Expansion of LiTEx Taxonomy**:
-    - **Function**: Applying the reasoning taxonomy originally developed on e-SNLI to LiveNLI and VariErr.
-    - **Mechanism**: 8 reasoning categories are divided into textual (coreference, syntax, semantics, pragmatics, absence of mention, logical contradiction) and world knowledge (factual knowledge, reasoning knowledge). Trained annotators classify all explanations.
-    - **Design Motivation**: To verify the cross-dataset generalizability of LiTEx while extending its scope to label variation scenarios.
+**1. Cross-dataset extension of the LiTEx taxonomy: Moving reasoning classification from label-consistent scenarios to label-varying scenarios**
 
-2.  **Multi-dimensional Consistency Analysis**:
-    - **Function**: Revealing the asymmetric relationship between label consistency and reasoning consistency.
-    - **Mechanism**: Comparing the consistency of annotators on the same NLI instance across three dimensions—cases may arise where "labels differ but reasoning categories are the same" or "labels are the same but reasoning categories differ."
-    - **Design Motivation**: A single dimension of consistency measurement is insufficient to reveal the true nature of annotation disagreement.
+LiTEx was originally developed on e-SNLI to analyze within-label variation. Ours migrates it to LiveNLI and VariErr, datasets where labels themselves exhibit disagreement. Trained annotators assign categories to all free-text explanations. The eight reasoning categories are grouped into Textual (Coreference, Syntactic, Semantic, Pragmatic, Absence of Mention, Logic/Conflict) and World Knowledge (Factual, Inferential). This tests the cross-dataset generalization of LiTEx and expands its scope from label agreement to label disagreement.
 
-3.  **Individual Annotator Tracking**:
-    - **Function**: Discovering systematic preferences of annotators.
-    - **Mechanism**: Tracking label distribution and reasoning category preferences of 4 annotators in LiveNLI and 4 in VariErr to reveal individual consistency patterns.
-    - **Design Motivation**: Annotation disagreement may stem not only from text ambiguity but also from the individual reasoning styles of annotators.
+**2. Multi-dimensional consistency analysis: Comparing label, reasoning category, and text consistency on the same NLI instance**
+
+NLI labels alone cannot distinguish the source of disagreement. This study performs side-by-side comparisons of three dimensions for each instance: (1) NLI label agreement; (2) LiTEx reasoning category agreement; and (3) semantic similarity of explanation text. This explicitly decouples cases of "different labels but same reasoning" and "same labels but different reasoning," revealing the asymmetric relationship between label and reasoning consistency.
+
+**3. Individual annotator tracking: Attributing disagreement to specific individuals to find systematic preferences**
+
+Annotation disagreement may stem from individual reasoning styles rather than just textual ambiguity. Ours tracks label distributions and reasoning strategy preferences for four annotators each in LiveNLI and VariErr. For example, Annotator 2 in VariErr labeled nearly 60% of instances as "neutral." Mapping group-level disagreement to individual levels shows that some "disagreements" are actually stable personal preferences.
 
 ### Loss & Training
 
-This work is an empirical analysis study and does not involve model training. Inter-annotator agreement is measured using Cohen's Kappa (LiveNLI $\kappa=0.828$, VariErr $\kappa=0.792$).
+This is an empirical analysis; no model training is involved. Inter-annotator agreement is measured using Cohen's $\kappa$ (LiveNLI $\kappa = 0.828$, VariErr $\kappa = 0.792$).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Annotation Count | $\kappa$ value | Main Findings |
+| Dataset | Annotation Count | $\kappa$ Value | Key Findings |
 | :--- | :--- | :--- | :--- |
-| e-SNLI | Original labels | - | Reasoning knowledge and absence of mention are the primary categories |
-| LiveNLI | 1404 pairs | 0.828 | Absence of mention biases toward the neutral label |
-| VariErr | 1933 pairs | 0.792 | Absence of mention is the most frequent category |
+| e-SNLI | Original | - | Inferential Knowledge and Absence of Mention are primary categories |
+| LiveNLI | 1404 pairs | 0.828 | Absence of Mention correlates with the Neutral label |
+| VariErr | 1933 pairs | 0.792 | Absence of Mention is the most frequent category |
 
 ### Key Findings
 
 | Finding | Description |
 | :--- | :--- |
-| Inconsistent labels but consistent reasoning | Annotators use the same reasoning strategy but arrive at different labels, showing disagreement lies in judgment rather than understanding |
-| Stable reasoning category-label co-occurrence | Despite differences in absolute distributions across datasets, the label distribution for each reasoning category is highly consistent |
-| Significant individual label preferences | For example, VariErr annotator 2 has a nearly 60% preference for the neutral label, and w7 has a 52% preference |
-| Reasoning similarity > Label similarity | Reasoning category consistency predicts the semantic similarity of explanations more effectively |
+| Label disagreement but reasoning consistency | Annotators use the same reasoning strategy but arrive at different labels, suggesting disagreement in judgment rather than understanding. |
+| Stable reasoning-label co-occurrence | Despite different absolute distributions across datasets, the label distribution for each reasoning category remains highly consistent. |
+| Significant individual label preference | For instance, VariErr Annotator 2 and w7 show neutral preferences of nearly 60% and 52%, respectively. |
+| Reasoning similarity > Label similarity | Reasoning category consistency is a better predictor of semantic similarity in explanations. |
 
 ### Key Findings
-- The LiTEx taxonomy generalizes well across datasets; category-label co-occurrence patterns are highly consistent across all three datasets.
-- "Inconsistent labels but similar explanations" occurs frequently, suggesting that surface disagreement may mask deep-level understanding consistency.
-- The strong correlation between the "Absence of Mention" category and the neutral label is consistent across all datasets.
+- The LiTEx taxonomy generalizes well across datasets, with category-label co-occurrence patterns being highly consistent across all three datasets.
+- Scenarios of "label disagreement but similar explanations" occur frequently, suggesting surface disagreements may mask deep conceptual alignment.
+- The strong correlation between the "Absence of Mention" category and the "neutral" label is consistent across all datasets.
 - Individual annotators exhibit stable label preferences and reasoning strategy preferences.
 
 ## Highlights & Insights
-- The core finding that "labels do not represent understanding" challenges the traditional practice of treating labels as ground truth.
-- Explanations are not merely tools for interpretability, but a window into understanding the nature of annotation disagreement.
-- Individual annotator tracking reveals systematic personal preferences, which has direct implications for the design of annotation processes.
+- The core finding that "labels do not equal understanding" challenges the traditional practice of treating labels as absolute ground truth.
+- Explanations are not just tools for interpretability but serve as a window into understanding annotation disagreement.
+- Individual annotator tracking reveals systematic personal biases, which has direct implications for the design of annotation pipelines.
 
 ## Limitations & Future Work
-- The study only covers English NLI datasets; cross-lingual generalizability remains unverified.
-- The 8 categories of LiTEx may not encompass all reasoning types.
-- The number of annotators is limited (only 4 tracked per dataset), which restricts statistical power.
-- Future work could extend the methodology to analyze annotation disagreement in other NLU tasks.
+- The study only covers English NLI datasets; cross-lingual generalization remains unverified.
+- The eight LiTEx categories may not encompass all possible types of reasoning.
+- The number of tracked annotators is limited (4 per dataset), which may constrain statistical power.
+- Future work could extend this methodology to analyze annotation disagreements in other NLU tasks.
 
 ## Related Work & Insights
-- **vs Traditional Annotation Consistency Research**: Examines the reasoning process rather than just the labels, providing a more fine-grained analysis.
-- **vs ChaosNLI/AmbiEnt**: These datasets focus on quantifying disagreement; this work focuses on the cognitive sources of disagreement.
-- **vs Original LiTEx Work**: Extends the analysis scope from within-label variation to label variation.
+- **vs. Traditional Annotation Consistency Research**: Moves beyond labels to examine reasoning processes, providing finer-grained analysis.
+- **vs. ChaosNLI/AmbiEnt**: While those datasets focus on quantifying disagreement, this work focuses on the cognitive origins of disagreement.
+- **vs. Original LiTEx Work**: Expands the scope of analysis from within-label variation to label variation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The perspective of extending reasoning analysis to label variation scenarios is novel.
-- Experimental Thoroughness: ⭐⭐⭐ The analysis is deep but limited in scale.
-- Writing Quality: ⭐⭐⭐⭐ Clear case illustrations and distinct layers of analysis.
-- Value: ⭐⭐⭐⭐ Provides significant insights for research on annotation pipelines and data quality.
+- **Novelty**: ⭐⭐⭐⭐ The perspective of extending reasoning analysis to label variation scenarios is novel.
+- **Experimental Thoroughness**: ⭐⭐⭐ The analysis is deep but the scale is relatively small.
+- **Writing Quality**: ⭐⭐⭐⭐ Case illustrations are clear and the analysis is well-structured.
+- **Value**: ⭐⭐⭐⭐ Provides important insights for annotation processes and data quality research.
 
 <!-- RELATED:START -->
 
@@ -122,10 +113,10 @@ This work is an empirical analysis study and does not involve model training. In
 ## Related Papers
 
 - [\[ACL 2026\] Exploring Concreteness Through a Figurative Lens](exploring_concreteness_through_a_figurative_lens.md)
-- [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
 - [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/nlp_understanding/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
-- [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
+- [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
+- [\[ACL 2026\] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction](hcre_llm-based_hierarchical_classification_for_cross-document_relation_extractio.md)
 
 </div>
 

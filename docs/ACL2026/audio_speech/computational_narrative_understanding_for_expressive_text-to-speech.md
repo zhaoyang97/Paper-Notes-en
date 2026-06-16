@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] Computational Narrative Understanding for Expressive Text-to-Speech
 description: >-
-  [ACL 2026][Audio & Speech][Audiobooks] This paper extracts character direct speech from fictional audiobooks to construct LibriQuote…
+  [ACL 2026][Audio & Speech][Audiobook] This paper extracts character direct quotes from audiobook fiction to construct LibriQuote, a large-scale expressive speech dataset (5.3K hours of quotes + 12.7K hours of narration). It annotates speaking styles using speech verbs and adverbs as pseudo-labels. Experiments demonstrate that fine-tuning flow-matching mode
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Audiobooks"
-  - "Expressive Speech"
-  - "Narrative Understanding"
-  - "Character Dialogue"
-  - "Dataset"
+  - ACL 2026
+  - Audio & Speech
+  - Audiobook
+  - Expressive Speech
+  - Narrative Understanding
+  - Dataset
 date: 2026-05-08
-content_hash: 806a4b2a8753063e
+content_hash: 077f895aff024f1f
 ---
-
 # Computational Narrative Understanding for Expressive Text-to-Speech
 
 **Conference**: ACL 2026 Findings  
@@ -25,48 +23,59 @@ content_hash: 806a4b2a8753063e
 
 ## TL;DR
 
-This paper extracts character direct speech from fictional audiobooks to construct LibriQuote, a large-scale expressive speech dataset (5.3K hours of quotes + 12.7K hours of narration). It utilizes speech verbs and adverbs as pseudo-labels for speaking styles. Experiments demonstrate that fine-tuning flow-matching models on this data improves both expressiveness and intelligibility, establishing LibriQuote-test as a challenging benchmark for expressive TTS.
+This paper extracts character direct quotes from audiobook fiction to construct LibriQuote, a large-scale expressive speech dataset (5.3K hours of quotes + 12.7K hours of narration). It annotates speaking styles using speech verbs and adverbs as pseudo-labels. Experiments demonstrate that fine-tuning flow-matching models improves both expressiveness and intelligibility, and LibriQuote-test serves as a challenging benchmark for expressive TTS.
 
 ## Background & Motivation
 
-**Background**: Recent TTS systems have achieved significant progress via large-scale multi-domain speech corpora (e.g., Emilia, ~100K hours), demonstrating naturalness and voice-following capabilities. Audiobooks (e.g., LibriSpeech, LibriHeavy) remain the most common open-source TTS data sources.
+**Background**: Recently, TTS systems have achieved significant progress through large-scale multi-domain speech corpora (e.g., Emilia, ~100K hours), demonstrating naturalness and voice-following capabilities. Audiobooks (e.g., LibriSpeech, LibriHeavy) are the most common open-source data sources for TTS.
 
-**Limitations of Prior Work**: (1) Existing audiobook datasets (LibriTTS, LibriHeavy) completely ignore narrative structure during segmentation—either discarding character quotes or mixing quotes with neutral narration in 30-second clips, leading to inconsistent prosodic distributions within segments; (2) There is a misconception that audiobooks lack expressive diversity, ignoring the rich prosodic variations inherent in character dialogues of fiction; (3) Existing expressive datasets are either small-scale (EXPRESSO is only tens of hours) or have limited labeling schemes (discrete emotion labels only).
+**Limitations of Prior Work**: (1) Existing audiobook datasets (LibriTTS, LibriHeavy) completely ignore narrative structure during segmentation—either discarding character quotes or mixing quotes with neutral narration in the same 30-second segments, leading to multiple prosodic distributions within a single clip. (2) There is a perception that audiobooks lack expressive diversity, which overlooks the rich prosodic variations inherent in character dialogues within fiction. (3) Existing expressive speech datasets are either small-scale (EXPRESSO is only dozens of hours) or have limited annotation schemes (only discrete emotion labels).
 
-**Key Challenge**: Audiobooks contain rich expressive speech, but current segmentation methods make it difficult for TTS models to utilize these resources. Segments mixing neutral narration and expressive quotes force models to lean towards learning simpler neutral components.
+**Key Challenge**: Audiobooks contain rich expressive speech (character dialogue), but current segmentation methods make it difficult for TTS models to utilize these resources. Segments mixing neutral narration and expressive quotes force models to learn the simpler neutral components.
 
-**Goal**: (1) Build a large-scale expressive speech dataset centered on character quotes; (2) Label speaking styles using speech verbs/adverbs from narrative contexts as pseudo-labels; (3) Verify the impact of this dataset on TTS expressiveness and intelligibility.
+**Goal**: (1) Construct a large-scale expressive speech dataset centered on character quotes. (2) Annotate speaking styles using speech verbs/adverbs from narrative context as pseudo-labels. (3) Verify the effectiveness of this dataset in improving TTS expressiveness and intelligibility.
 
-**Key Insight**: Grounded in narratology (Genette’s Narrative Discourse theory), the authors utilize quote detection and text-audio alignment to systematically extract and label character quotes from LibriVox fiction.
+**Key Insight**: Drawing from narratology (Genette’s narrative discourse theory), this work systematically extracts and labels character quotes from LibriVox fiction using quote detection and text-audio alignment techniques.
 
-**Core Idea**: Character quotes in audiobooks naturally constitute large-scale, diverse expressive speech data. Narrators switch speaking styles based on context, while surrounding speech verbs/adverbs (e.g., "he whispered softly") provide natural style pseudo-labels.
+**Core Idea**: Character quotes in audiobooks naturally constitute large-scale, diverse expressive speech data. Narrators switch speaking styles based on context when reading dialogue, while surrounding speech verbs/adverbs (e.g., "he whispered softly") provide natural style pseudo-labels.
 
 ## Method
 
 ### Overall Architecture
 
-Data construction pipeline: LibriVox fiction audio → Corresponding Project Gutenberg text → BookNLP quote detection → ASR transcription (Zipformer-Transducer) → Text-audio alignment (Levenshtein alignment) → Quote audio segmentation → LLM extraction of speech verb/adverb pseudo-labels → Construction of high-expressiveness subset $\mathbf{Q}_f$.
+The core of this paper is the data rather than the model: it isolates the naturally expressive "character dialogue" from massive audiobooks and assigns style labels. The pipeline starts with LibriVox fiction audio, downloads the corresponding Project Gutenberg text, and uses BookNLP to locate quote boundaries. Simultaneously, it performs ASR transcription and aligns it with the original text to extract precise audio segments for each quote. Returning to the original context, an LLM extracts speech verbs and adverbs describing the manner of speaking as pseudo-labels. Finally, a high-expressivity subset $\mathbf{Q}_f$ is filtered based on expressiveness. The final product is LibriQuote, a large-scale expressive TTS corpus with style labels.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LibriVox Fiction Audio<br/>+ Project Gutenberg Text"] --> SEG
+    subgraph SEG["Narrative-Aware Quote Segmentation"]
+        direction TB
+        B["BookNLP Detects Quote Boundaries"] --> C["ASR Transcription + Two-stage Alignment<br/>LCS Coarse Alignment → Levenshtein Fine Alignment"]
+        C --> D["Extract Quote Audio Segments<br/>Quotes 5.5s / Narration 11.8s"]
+    end
+    SEG --> E["Speech Verb/Adverb Pseudo-labels<br/>~100 Word Context → Phi-4 Few-shot Extraction"]
+    E --> F["High-expressivity Subset Qf<br/>Retain Non-empty Adverbs + Expressive Verbs, 377K Quotes / 379h"]
+    F --> G["LibriQuote Corpus<br/>5.3Kh Quotes + 12.7Kh Narration"]
+```
 
 ### Key Designs
 
-1.  **Narrative-Aware Quote Segmentation**:
-    *   **Function**: Separating character direct quotes from neutral narration in audiobooks.
-    *   **Mechanism**: BookNLP detects quote boundaries in the original text. Combined with ASR transcripts and text-audio alignment (two-stage: Longest Common Subsequence coarse alignment + Levenshtein fine alignment), each quote is mapped to precise audio segments. Average quote duration is 5.5s, while narration averages 11.8s.
-    *   **Design Motivation**: Existing datasets segment randomly by sentence boundaries; 75% of segments contain only narration, while 25% contain 1-12 quotes. More quotes correlate with higher prosodic standard deviation (Spearman $\rho=0.218$). Isolating quotes provides clean expressive samples.
+**1. Narrative-Aware Quote Segmentation: Separating Expressive Character Dialogue from Neutral Narration**
 
-2.  **Speech Verb/Adverb Pseudo-Label Extraction**:
-    *   **Function**: Extracting natural language descriptions of speaking styles from narrative context.
-    *   **Mechanism**: A context window (approx. 100 words) surrounding the quote is used, replacing all quotes with special tokens to preserve narrative structure. An LLM (Phi-4) performs few-shot extraction of speech verbs (e.g., whispered, shouted) and adverbs (e.g., softly, angrily). LLM self-reported confidence scores are used to prune uncertain predictions.
-    *   **Design Motivation**: Speech verbs and adverbs are critical cues used by narrators to adjust styles. Cohen's $\kappa=0.87$ indicates high labeling consistency.
+Existing audiobook datasets slice segments randomly based on sentence boundaries; 75% of segments contain only narration, while 25% mix 1-12 quotes. More quotes correlate with higher standard deviation in prosody (Spearman $\rho=0.218$). Mixing expressive and neutral speech in one 30-second segment encourages models to prioritize the easier neutral parts. This design uses BookNLP to detect quote boundaries in text and maps them to audio via two-stage alignment: Longest Common Subsequence (LCS) for coarse alignment and Levenshtein for fine alignment. This maps each quote to a precise audio segment. Quotes average 5.5s and narration 11.8s, resulting in clean expressive samples.
 
-3.  **High-Expressiveness Subset Construction $\mathbf{Q}_f$**:
-    *   **Function**: Filtering the most expressive quotes for data-efficient expressive TTS training.
-    *   **Mechanism**: Includes quotes with non-empty adverb pseudo-labels or speech verbs belonging to a manually defined list of expressive verbs. $\mathbf{Q}_f$ contains 377,776 quotes (11%), totaling 379 hours.
-    *   **Design Motivation**: The full set contains many neutral verbs like "said"; the high-expressiveness subset achieves better expressive gains with less data.
+**2. Speech Verb/Adverb Pseudo-labels: Using Contextual Cues as Free Style Annotations**
+
+Narrators change their tone based on context, and speech verbs or adverbs like "he whispered softly" in the text are the basis for these shifts. These serve as natural style labels. The extraction uses a window of ~100 words around each quote, replaces all quotes with special tokens to focus on narrative structure, and uses an LLM (Phi-4) with few-shot prompting to extract speech verbs (e.g., whispered, shouted) and adverbs (e.g., softly, angrily). The LLM also provides confidence scores to filter uncertain predictions and increase precision. Human verification yielded a Cohen's $\kappa=0.87$, indicating high consistency that is much finer-grained than discrete emotion labels at zero cost.
+
+**3. High-Expressivity Subset $\mathbf{Q}_f$: Using Less but More "Performative" Data for Stronger Expressiveness**
+
+The full quote set contains many neutral verbs like "said," which dilutes expressiveness gains. The $\mathbf{Q}_f$ filtering rule retains all quotes with non-empty adverb pseudo-labels and quotes where the speech verb belongs to a manually defined expressive list. This results in 377,776 quotes (11% of the total), totaling 379 hours. Subsequent experiments confirm that this small but high-quality subset brings significant expressive improvements in data-efficient settings.
 
 ### Loss & Training
 
-SparkTTS (Autoregressive): Standard language modeling loss on semantic tokens fine-tuning the LLM backbone (Qwen2-0.5B). F5-TTS (Flow-matching): Official fine-tuning scripts. Training configurations include fine-tuning on different subsets and training from scratch.
+SparkTTS (Autoregressive) fine-tunes the LLM backbone (Qwen2-0.5B) using standard language modeling loss on semantic tokens. F5-TTS (Flow-matching) follows official fine-tuning scripts. Training includes both fine-tuning on different data subsets and training from scratch.
 
 ## Key Experimental Results
 
@@ -75,7 +84,7 @@ SparkTTS (Autoregressive): Standard language modeling loss on semantic tokens fi
 **TTS Evaluation on LibriQuote-test**
 
 | Model Configuration | WER ↓ | SIM-O ↑ | CtxMOS ↑ |
-| :--- | :--- | :--- | :--- |
+|:---|:---:|:---:|:---:|
 | GT (Ground Truth) | 6.5 | - | 3.55 |
 | SparkTTS (Baseline) | 4.8 | 0.46 | 2.94 |
 | SparkTTS FT($\mathbf{Q}_f$) | 4.6 | 0.47 | 2.97 |
@@ -89,43 +98,43 @@ SparkTTS (Autoregressive): Standard language modeling loss on semantic tokens fi
 **Out-of-Domain Evaluation (LibriSpeech-PC / SeedTTS)**
 
 | Configuration | LibriSpeech WER ↓ | SeedTTS WER ↓ |
-| :--- | :--- | :--- |
+|:---|:---:|:---:|
 | SparkTTS | 3.06 | 2.64 |
 | FT($\mathbf{Q}_f$) | **2.10** | **2.07** |
 | FT($\mathbf{Q}$) | **2.00** | **1.90** |
 
 ### Key Findings
 
-*   F5-TTS fine-tuning improved CtxMOS from 2.95 to 3.33 (significant) while decreasing WER—flow-matching models can improve both expressiveness and intelligibility simultaneously.
-*   SparkTTS fine-tuning mainly improved intelligibility (OOD WER dropped from 3.06 to 2.10) with limited expressiveness gains.
-*   Training from scratch improves expressiveness (CtxMOS 3.09) but sacrifices intelligibility (WER 9.5).
-*   The full dataset (Narration + Quotes) works better when trained from scratch (CtxMOS 3.30), showing complementarity.
-*   67% of quotes in LibriQuote-test were predicted as non-neutral, compared to only 9% in LibriHeavy.
+- F5-TTS fine-tuning increased CtxMOS from 2.95 to 3.33 (significant) while decreasing WER—flow-matching models can simultaneously improve expressiveness and intelligibility.
+- SparkTTS fine-tuning primarily improved intelligibility (OOD WER dropped from 3.06 to 2.10), with limited gains in expressiveness.
+- Training from scratch improved expressiveness (CtxMOS 3.09) but sacrificed intelligibility (WER 9.5).
+- Training from scratch on the full dataset (narration + quotes) yielded better results (CtxMOS 3.30), showing complementarity.
+- In LibriQuote-test, 67% of quotes were predicted as non-neutral, compared to only 9% in LibriHeavy.
 
 ## Highlights & Insights
 
-*   Solving TTS data issues from the perspective of narratology—audiobooks do not lack expressiveness; they lack the correct data segmentation method.
-*   Speech verb/adverb pseudo-labels offer a natural and low-cost expressive annotation method, bypassing manual emotional labeling.
-*   The high-expressiveness subset $\mathbf{Q}_f$, despite being only 379 hours, yields significant results, proving data quality > data volume.
+- Addresses TTS data issues from the perspective of narratology—audiobooks do not lack expressiveness; they lack correct data segmentation.
+- Speech verb/adverb pseudo-labels provide an extremely natural and low-cost expressive annotation method without manual effort.
+- The high-expressivity subset $\mathbf{Q}_f$ (only 379 hours) achieves significant results, proving that data quality > data quantity.
 
 ## Limitations & Future Work
 
-*   LibriVox readers are volunteers, resulting in inconsistent recording quality and expressive skills.
-*   Only covers English fiction; not yet extended to other languages or genres.
-*   Does not yet explore how to use contextual speech verbs/adverbs to control synthesis style during inference.
+- LibriVox narrators are volunteers, leading to varied recording quality and performance levels.
+- Currently covers only English fiction; not yet extended to other languages or genres.
+- Does not explore how to utilize contextual speech verbs/adverbs to control synthesis style during inference.
 
 ## Related Work & Insights
 
-*   **vs LibriHeavy**: LibriHeavy does not distinguish between quotes and narration; the narrative-aware segmentation in Ours reveals neglected expressive signals.
-*   **vs EXPRESSO**: EXPRESSO is high quality but only tens of hours with 26 predefined styles; LibriQuote provides 5.3K hours of natural expressive diversity.
-*   **vs Emotion Speech Datasets**: Discrete emotion labels are too coarse; speech verbs/adverbs provide fine-grained style descriptions.
+- **vs LibriHeavy**: LibriHeavy does not distinguish between quotes and narration; this paper's narrative-aware segmentation reveals neglected expressive signals.
+- **vs EXPRESSO**: EXPRESSO is high-quality but only dozens of hours with 26 predefined styles; LibriQuote offers 5.3K hours of natural expressive diversity.
+- **vs Emotion Speech Datasets**: Discrete emotion labels are too coarse; speech verbs/adverbs provide finer-grained style descriptions.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ Narrative-aware segmentation + speech verb pseudo-labeling paradigm is novel.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model and multi-config experiments involving OOD and human evaluation.
-*   Writing Quality: ⭐⭐⭐⭐ Clear motivation and detailed data construction pipeline.
-*   Value: ⭐⭐⭐⭐ Dataset and methodology are of direct value to the expressive TTS community.
+- Novelty: ⭐⭐⭐⭐ Innovative data construction paradigm with narrative-aware segmentation and pseudo-labels.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model and multi-config experiments including OOD and human evaluations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and detailed data construction process.
+- Value: ⭐⭐⭐⭐ Dataset and methodology offer direct value to the expressive TTS community.
 
 <!-- RELATED:START -->
 
@@ -133,11 +142,11 @@ SparkTTS (Autoregressive): Standard language modeling loss on semantic tokens fi
 
 ## Related Papers
 
-- [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
-- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
+- [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](../../CVPR2026/audio_speech/audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
 - [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
 - [\[ICLR 2026\] Latent Speech-Text Transformer](../../ICLR2026/audio_speech/latent_speech_text_transformer.md)
 - [\[ICCV 2025\] Understanding Co-speech Gestures in-the-wild](../../ICCV2025/audio_speech/understanding_co-speech_gestures_in-the-wild.md)
+- [\[ICML 2026\] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability](../../ICML2026/audio_speech/evaluating_and_rewarding_lalms_for_expressive_role-play_tts_via_mean_continuatio.md)
 
 </div>
 

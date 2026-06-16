@@ -2,117 +2,118 @@
 title: >-
   [Paper Note] Interpretable Debiasing of Vision-Language Models for Social Fairness
 description: >-
-  [CVPR 2026][LLM Safety][VLM debiasing] This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM encoders to localize "social neurons" encoding social attributes…
+  [CVPR 2026][LLM Safety][Interpretability] DeBiasLens is proposed to locate "social neurons" encoding social attributes by training Sparse Autoencoders (SAEs) on VLM encoders, then selectively deactivating these neurons during inference to mitigate bias. It reduces Max Skew by 9-16% on CLIP and gender bias ratios by 40-50% on InternVL2 while maintaining general
 tags:
-  - "CVPR 2026"
-  - "LLM Safety"
-  - "VLM debiasing"
-  - "social fairness"
-  - "sparse autoencoder"
-  - "interpretability"
-  - "neuron manipulation"
+  - CVPR 2026
+  - LLM Safety
+  - Interpretability
 date: 2026-05-08
-content_hash: f535fa8bdf2979d3
+content_hash: 5fd59277d6d1e23f
 ---
-
 # Interpretable Debiasing of Vision-Language Models for Social Fairness
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.24014](https://arxiv.org/abs/2602.24014)  
-**Code**: To be confirmed  
-**Area**: Multimodal VLM
-**Keywords**: VLM debiasing, social fairness, sparse autoencoder, interpretability, neuron manipulation
+**Code**: TBD  
+**Area**: Multimodal VLM  
+**Keywords**: VLM debiasing, social fairness, Sparse Autoencoders (SAE), interpretability, neuron modulation
 
 ## TL;DR
-This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM encoders to localize "social neurons" encoding social attributes, then selectively deactivates these neurons at inference time to mitigate bias. The method reduces Max Skew by 9–16% on CLIP and reduces gender bias rates by 40–50% on InternVL2, while preserving general performance.
+DeBiasLens is proposed to locate "social neurons" encoding social attributes by training Sparse Autoencoders (SAEs) on VLM encoders, then selectively deactivating these neurons during inference to mitigate bias. It reduces Max Skew by 9-16% on CLIP and gender bias ratios by 40-50% on InternVL2 while maintaining general performance.
 
 ## Background & Motivation
-**Background**: VLMs and LVLMs inherit and amplify social biases from large-scale training data — e.g., CLIP retrieves male-skewed results for "CEO," and InternVL exhibits gender bias in ambiguous contexts. Existing debiasing approaches include fine-tuning, prompt tuning, and pruning.
+**Background**: VLMs/LVLMs inherit and amplify social biases from large-scale data—e.g., CLIP's "CEO" retrieval is biased towards males, and InternVL favors specific genders in ambiguous contexts. Existing debiasing methods include fine-tuning, prompt tuning, and pruning.
 
-**Limitations of Prior Work**: Existing debiasing methods address surface-level bias symptoms without targeting the propagation mechanisms of bias in internal representations. Although pruning attempts to identify critical parameters, the polysemantic nature of neurons (a single neuron simultaneously encodes both biased and useful knowledge) means debiasing often sacrifices general performance.
+**Limitations of Prior Work**: Existing debiasing methods address surface bias symptoms without touching the internal propagation mechanisms of bias in representations. Although pruning attempts to find key parameters, debiasing often comes at the cost of general performance due to neuron polysemanticity (where a single neuron encodes both bias and useful knowledge).
 
-**Key Challenge**: Bias and useful knowledge are entangled in model weights, making direct weight modification inevitably lead to performance degradation.
+**Key Challenge**: Bias and useful knowledge are entangled within model weights; direct modification of weights inevitably leads to performance degradation.
 
-**Goal**: To precisely localize and manipulate bias-related monosemantic features within an interpretable framework without affecting useful knowledge.
+**Goal**: How to accurately locate and modulate bias-related monosemantic features within an interpretable framework without affecting useful knowledge.
 
-**Key Insight**: SAEs are leveraged to decompose the entangled feature space into sparse, monosemantic neurons (satisfying monosemanticity), enabling bias-related "social neurons" to be independently localized and manipulated.
+**Key Insight**: Utilize SAEs to decompose entangled feature spaces into sparse, monosemantic neurons (satisfying monosemanticity), allowing bias-related "social neurons" to be independently located and manipulated.
 
-**Core Idea**: SAE decouples polysemantic features into monosemantic ones → social neurons encoding specific social attributes are identified → deactivating these neurons at inference time eliminates bias signals.
+**Core Idea**: SAE decouples polysemantic features into monosemantic ones → Filter neurons encoding specific social attributes → Deactivate these neurons during inference to eliminate bias.
 
 ## Method
 
 ### Overall Architecture
-**Three-stage pipeline**: (1) Attach and train an SAE on the last layer of the VLM encoder; (2) Localize social neurons via activation consistency and specificity analysis; (3) Deactivate social neurons at inference time, blending reconstructed features with original features through weighted mixing.
+The core difficulty DeBiasLens solves is the entanglement of bias and useful knowledge within model weights. The strategy is to "cleanly decompose" the entangled feature space before performing targeted surgery. The pipeline consists of three steps: first, attach a Sparse Autoencoder (SAE) to the last layer of the VLM encoder to decouple dense, polysemantic encoder outputs into high-dimensional, monosemantic sparse representations; second, identify "social neurons" specifically encoding certain social attributes within this sparse space; finally, deactivate these neurons during inference and replace the original features with reconstructed features for downstream tasks. This process freezes the original model and only operates on the SAE.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Frozen VLM Image/Text Encoder<br/>Last Layer Dense Polysemantic Feature v"] --> B["SAE Decoupling<br/>Overcomplete Sparse Coding (Expansion Factor 8)<br/>Produces Monosemantic Sparse Code z"]
+    B --> C["Social Neuron Detection<br/>High Consistency (τ=0.9) + Group Difference<br/>Identifies Attribute-Specific Neurons 𝒵B"]
+    C --> D["Social Neuron Modulation Inference<br/>Set Activations in 𝒵B to γ → Reconstruction v̂"]
+    D -->|Weighted Blending v'=αv̂+(1−α)v, α=0.6| E["Debiased Feature v'<br/>Input to Downstream T2I / Retrieval / VQA"]
+```
 
 ### Key Designs
 
-1. **SAE Training**:
+**1. SAE Decoupling: Decomposing Polysemantic Features into Monosemantic Neurons**
 
-    - **Function**: Decomposes encoder output into high-dimensional sparse representations.
-    - **Mechanism**: $\phi(\mathbf{v}) = \sigma(\mathbf{W}_{enc}^\top(\mathbf{v} - \mathbf{b}_1))$, using Matryoshka SAE multi-scale reconstruction loss with an expansion factor of 8.
-    - **Design Motivation**: SAE training requires no social attribute labels; training on face/description datasets allows the SAE to automatically capture social attribute features.
-    - **Key Findings**: After attaching the SAE, the difference in cosine similarity between image pairs sharing social attributes and random image pairs increases significantly.
+The root cause of debiasing failure lies in neuron polysemanticity—a single neuron may encode both gender and useful knowledge. Removing it damages general capabilities. SAE uses an overcomplete sparse coding $\phi(\mathbf{v}) = \sigma(\mathbf{W}_{enc}^\top(\mathbf{v} - \mathbf{b}_1))$ to project the encoder output $\mathbf{v}$ into a much higher-dimensional sparse space (expansion factor set to 8), forcing each active neuron to represent a single concept (monosemanticity). Training utilizes the multi-scale reconstruction loss of Matryoshka SAE. Crucially, **no social attribute labels are required during SAE training**—reconstruction on face or caption datasets allows the SAE to spontaneously capture social attribute directions. A direct validation signal is that after applying the SAE, the cosine similarity difference between image pairs with overlapping social attributes and random pairs increases significantly, indicating that social attributes are indeed encoded by specific neurons.
 
-2. **Social Neuron Probing**:
+**2. Social Neuron Detection: Locating Attribute-Specific Neurons via Group Set Difference**
 
-    - **Function**: Identifies neurons in the SAE's sparse representation that encode specific social attributes (gender/age/ethnicity).
-    - **Mechanism**: Computes each neuron's effectiveness within a specific group (non-zero activation ratio ≥ τ=0.9), derives the group-exclusive neuron set $\mathcal{N}_g = \mathcal{E}_g \setminus \bigcup_{h \neq g} \mathcal{E}_h$, and selects the top neurons with the highest mean activation.
-    - **Design Motivation**: Group specificity combined with high consistency identifies monosemantic neurons encoding group-specific social attributes.
+After decoupling, it is necessary to identify which neurons are responsible for gender, age, or race. The paper calculates the effectiveness of neurons for each social group $g$—a neuron is considered "stably active in this group" if its non-zero activation ratio reaches threshold $\tau=0.9$, forming the effective neuron set $\mathcal{E}_g$. High activation alone is insufficient because general neurons are active across all groups. Neurons truly encoding a specific group should only be active for that group. Thus, the group set difference is taken:
 
-3. **Social Neuron Manipulation at Inference**:
+$$\mathcal{N}_g = \mathcal{E}_g \setminus \bigcup_{h \neq g} \mathcal{E}_h$$
 
-    - **Function**: Selectively deactivates social neurons at inference time to eliminate bias signals.
-    - **Mechanism**: Social neuron activations in the SAE are set to $\gamma$ (typically 0), yielding reconstructed features $\hat{\mathbf{v}} = \psi(\mathbf{z}')$, which are then blended with the original features as $\mathbf{v}' = \alpha\hat{\mathbf{v}} + (1-\alpha)\mathbf{v}$, with $\alpha=0.6$.
-    - **Design Motivation**: Only the SAE's sparse representation is modified without touching the original model weights, minimizing impact on general capabilities.
+By excluding neurons that are also effective for other groups and selecting the top neurons with the highest mean activation, the combination of "high consistency ($\geq\tau$)" and "group specificity (set difference)" isolates monosemantic neurons encoding only the social attributes of that group.
+
+**3. Social Neuron Modulation Inference: Deactivating Neurons Without Modifying Weights**
+
+Once social neurons are identified, their activations in the SAE sparse code are forcibly set to $\gamma$ (usually 0) during inference, resulting in a debiased sparse code $\mathbf{z}'$. This is then reconstructed into a debiased feature $\hat{\mathbf{v}} = \psi(\mathbf{z}')$ via the SAE decoder. To prevent reconstruction errors from harming downstream tasks, the final output is a weighted blend of the reconstructed and original features: $\mathbf{v}' = \alpha\hat{\mathbf{v}} + (1-\alpha)\mathbf{v}$, with $\alpha=0.6$. The entire process only modifies the SAE sparse representation and does not touch the original model weights, ensuring that bias is stripped away while general capabilities remain nearly intact—a key advantage over pruning or fine-tuning.
 
 ## Key Experimental Results
 
 ### Main Results (CLIP ViT-B/16 Gender Bias, Max Skew↓)
 
 | Method | Interpretable? | Adj | Occup | Act | Ster |
-|--------|---------------|-----|-------|-----|------|
+|------|--------|------|-------|------|------|
 | CLIP Baseline | - | 21.9 | 33.5 | 19.8 | 32.5 |
 | Bend-VLM | ✗ | 10.8 | 10.2 | 9.8 | 9.1 |
 | SANER | ✗ | 8.9 | 14.5 | 7.7 | - |
-| **DeBiasLens (T)** | **✓** | **7.1** | **16.2** | **14.2** | **8.1** |
-| **DeBiasLens (I)** | **✓** | 14.2 | 21.5 | 20.0 | 18.3 |
+| **Ours (T)** | **✓** | **7.1** | **16.2** | **14.2** | **8.1** |
+| **Ours (I)** | **✓** | 14.2 | 21.5 | 20.0 | 18.3 |
 
-### LVLM Debiasing Results
+### LVLM Results
 
-| Configuration | Gender Bias Rate Reduction | General Performance Drop |
-|---------------|---------------------------|--------------------------|
-| DeBiasLens-InternVL2 (α=0.6) | 40–50% | Only 4–10 points |
+| Configuration | Gender Bias Reduction | Gen. Performance Drop |
+|------|-------------|------------|
+| DeBiasLens-InternVL2 (α=0.6) | 40-50% | Only 4-10 points |
 | Pruning Methods | Similar | Larger drop |
 | Prompt Engineering | Limited | Minimal |
 
 ### Key Findings
-- DeBiasLens (T) achieves the best results on adjective and stereotype prompts without requiring attribute label supervision during training.
+- DeBiasLens(T) performs best on adjectives and stereotype prompts without requiring attribute labels for training.
 - Deactivating only the top-1 social neuron achieves performance comparable to deactivating all effective neurons, confirming that neurons do not interfere with each other.
-- Gender neurons exhibit high specificity — deactivating gender neurons does not affect age bias; however, age neurons show cross-attribute effects (40% of age neurons exhibit gender skew).
-- The image encoder is more effective for high-resolution VLMs (ViT-L/14@336), while the text encoder is more effective for standard-resolution models.
+- Gender neurons exhibit high specificity—deactivating them does not affect age bias; however, age neurons show crosstalk (40% of age neurons exhibit gender skew).
+- Image encoders are more effective for high-resolution VLMs (ViT-L/14@336), while text encoders are more effective for standard resolutions.
 
 ## Highlights & Insights
-- **Interpretability-driven debiasing** represents a fundamentally new paradigm: rather than mitigating biased outputs in a black-box manner, it precisely localizes and manipulates the internal mechanisms that produce bias.
-- The monosemantic property of SAE neurons makes them ideal tools for debiasing: each neuron encodes a single concept, so deactivation produces no cascading effects.
-- The framework applies to both encoder-only (CLIP) and encoder-decoder (InternVL2) VLMs, demonstrating strong generality.
-- Only intermediate representations are modified without altering model weights, making deployment straightforward.
+- **Interpretability-driven debiasing** is a new paradigm: it does not mitigate bias outputs in a "black-box" manner but precisely locates and manipulates the internal mechanisms where bias arises.
+- The monosemantic nature of SAEs makes them an ideal tool for debiasing: each neuron encodes a single concept, and deactivation does not trigger chain reactions.
+- The framework is applicable to both encoder-only (CLIP) and encoder-decoder (InternVL2) VLMs, showing good versatility.
+- Only middle representations are modified without changing model weights, making deployment simple.
 
 ## Limitations & Future Work
-- The social neuron probing stage still requires social attribute labels to partition groups, even though SAE training does not.
-- Validation is primarily focused on gender bias; ablation studies on age and ethnicity are relatively limited.
-- The SAE expansion factor and threshold τ require hyperparameter tuning.
-- Debiasing effectiveness across cultures and languages has not been verified.
+- The social neuron detection phase still requires social attribute labels to partition groups (though SAE training does not).
+- Current validation focuses primarily on gender bias, with fewer ablations on age and race.
+- The SAE expansion factor and threshold $\tau$ require hyperparameter tuning.
+- Bias mitigation effectiveness across different cultures/languages has not been verified.
 
 ## Related Work & Insights
-- **vs. Bend-VLM**: Bend-VLM directly debiases embeddings in a black-box manner; DeBiasLens operates through interpretable neuron manipulation, offering transparency and auditability.
-- **vs. SANER**: SANER trains residual layers on the text encoder to erase attribute information; DeBiasLens achieves more precise debiasing through SAE-based feature disentanglement followed by selective deactivation.
-- **vs. MMNeuron**: MMNeuron identifies attribute-specific neurons in pretrained weights, but weight-level neurons are polysemantic; SAE neurons are monosemantic, enabling more precise debiasing.
+- **vs Bend-VLM**: Bend-VLM directly debiases embeddings via black-box operations; DeBiasLens uses interpretable neuron manipulation, making it transparent and auditable.
+- **vs SANER**: SANER trains residual layers on the text encoder to erase attribute information; DeBiasLens performs selective deactivation after SAE decoupling, providing higher precision.
+- **vs MMNeuron**: MMNeuron looks for attribute-specific neurons in pre-trained weights, but weight neurons are polysemantic; SAE neurons are monosemantic, enabling more precise debiasing.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First application of SAE for interpretable VLM debiasing, with a unique and well-motivated entry point.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple VLMs/LVLMs, multiple evaluation dimensions, and neuron specificity validation.
-- Writing Quality: ⭐⭐⭐⭐ Methodology is clearly articulated; the concept of "social neurons" is vivid and intuitive.
-- Value: ⭐⭐⭐⭐⭐ Provides a new interpretable and auditable tool for AI fairness research.
+- Novelty: ⭐⭐⭐⭐⭐ First to use SAE for interpretable VLM debiasing with a unique entry point.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple VLMs/LVLMs + multiple evaluation dimensions + neuron specificity validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology; the "social neuron" concept is intuitive.
+- Value: ⭐⭐⭐⭐⭐ Provides a new interpretable and auditable tool for AI fairness.
 
 <!-- RELATED:START -->
 
@@ -122,9 +123,9 @@ This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM e
 
 - [\[CVPR 2026\] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)
 - [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
 - [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
 
 </div>
 

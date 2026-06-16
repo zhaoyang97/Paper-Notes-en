@@ -2,130 +2,129 @@
 title: >-
   [Paper Note] Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
 description: >-
-  [ICML 2026][LLM Evaluation][Symbolic Regression] DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression to perform simultaneous qualitative (physical plausibility) and quantitative (ablati…
+  [ICML 2026][LLM Evaluation][LLM Agent] DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression. By performing joint qualitative (physical plausibility) and quantitative (ablative MSE contribution) evaluations on candidates, it pushes LLM-SR beyond "low-error but bloated and physically nonsensical" equations toward results that
 tags:
-  - "ICML 2026"
-  - "LLM Evaluation"
-  - "Symbolic Regression"
-  - "Ordinary Differential Equations"
-  - "LLM Agent"
-  - "Physical Interpretability"
-  - "Hypothesis Search"
+  - ICML 2026
+  - LLM Evaluation
+  - LLM Agent
 date: 2026-05-08
-content_hash: d8d5b48ca4fba0b3
+content_hash: 571c68bd8a4a7242
 ---
-
 # Discovering Ordinary Differential Equations with LLM-Based Qualitative and Quantitative Evaluation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.07323](https://arxiv.org/abs/2605.07323)  
 **Code**: https://github.com/Bon99yun/DoLQ  
-**Area**: Scientific Discovery / Symbolic Regression / LLM Multi-Agent  
-**Keywords**: Symbolic Regression, Ordinary Differential Equations, LLM Agent, Physical Interpretability, Hypothesis Search
+**Area**: Science Discovery / Symbolic Regression / LLM Multi-Agent  
+**Keywords**: Symbolic Regression, ODE, LLM Agent, Physical Interpretability, Hypothesis Search
 
 ## TL;DR
-DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression to perform simultaneous qualitative (physical plausibility) and quantitative (ablative MSE contribution) evaluations. This forces LLM-SR from producing "low-error but bloated and physically absurd" candidates toward equations that are both numerically precise and structurally compact.
+DoLQ inserts a "Scientist Agent" into the search loop of LLM-based symbolic regression. By performing joint qualitative (physical plausibility) and quantitative (ablative MSE contribution) evaluations on candidates, it pushes LLM-SR beyond "low-error but bloated and physically nonsensical" equations toward results that are both numerically accurate and structurally compact.
 
 ## Background & Motivation
-**Background**: Reconstructing Ordinary Differential Equations (ODEs) from observational data is a core problem in scientific machine learning. Early methods like SINDy relied on predefined basis function libraries and sparse regression; subsequent symbolic regression (SR) utilized evolutionary algorithms or Transformers (e.g., ODEformer) for automated search. The latest generation, such as LLM-SR and LASR, employs LLMs as candidate generators, leveraging scientific priors to significantly compress the search space.
+**Background**: Inferring ordinary differential equations (ODEs) from observed data is a core problem in scientific machine learning. Early methods like SINDy relied on predefined basis function libraries and sparse regression; subsequent symbolic regression (SR) utilized evolutionary algorithms or Transformers (ODEformer) for automatic search. The latest generation leverages LLMs as candidate generators (e.g., LLM-SR, LASR), using scientific priors to significantly compress the search space.
 
-**Limitations of Prior Work**: Existing methods evaluate candidate equations primarily through numerical metrics like MSE and complexity. However, Figure 1 presents a critical counterexample: two equations with nearly identical MSE can differ drastically in extrapolation performance and physical meaning. LLM-SR frequently outputs "garbage bag" equations containing over ten terms, where the true terms are diluted by physically meaningless ones, leading to mutual interference during parameter optimization.
+**Limitations of Prior Work**: Existing methods evaluate candidate equations solely based on numerical metrics such as MSE and complexity. However, Figure 1 presents a critical counterexample: two equations with nearly identical MSE can differ entirely in their extrapolation behavior and physical meaning. LLM-SR often outputs "garbage bag" equations with over 10 terms, where the ground-truth terms are diluted by physically meaningless ones, leading to mutual interference during parameter optimization.
 
-**Key Challenge**: Purely numerical evaluation only reflects "current fitting quality" but cannot determine whether a specific term corresponds to a real physical mechanism. The latter is precisely what determines stable extrapolation in ID-Ext / OOD intervals.
+**Key Challenge**: Pure numerical evaluation indicates "how well it fits currently" but cannot ascertain "whether a term corresponds to a real physical mechanism." The latter is precisely what determines stable extrapolation in ID-Ext / OOD regions.
 
-**Goal**: (1) Explicitly inject physical plausibility into the search loop; (2) Actively prune terms that "appear to contribute but are actually overfitting"; (3) Stably recover structures in multi-dimensional ODEs (including 4D systems like Glider).
+**Goal**: (1) Explicitly inject physical plausibility into the search loop; (2) Proactively prune terms that "seem contributory but are actually overfitted"; (3) Stably recover structures in multi-dimensional ODEs (even the 4D Glider).
 
-**Key Insight**: LLMs possess both numerical reasoning capabilities and domain knowledge. Instead of using them solely as "Nominators," an independent LLM can act as a "Reviewer" to score candidates from orthogonal semantic and numerical dimensions, feeding this feedback into the next round of the nominator's prompt.
+**Key Insight**: LLMs possess both numerical reasoning capabilities and domain knowledge. Rather than using an LLM only as a "nominator," an independent LLM can act as a "reviewer" to score candidates from orthogonal semantic and numerical dimensions, feeding this feedback into the nominator's next iteration.
 
-**Core Idea**: A dual-track review system (Qualitative + Quantitative) $\rightarrow$ Double Veto: remove semantically unreasonable terms immediately and remove terms with no numerical contribution after a delay. This guides the search toward compact equations that are both physically plausible and numerically optimal.
+**Core Idea**: Qualitative + Quantitative dual-track review → Double Veto: Delete semantically unreasonable terms immediately and delay the removal of terms with no numerical contribution, thereby guiding the search toward compact equations that are both physically plausible and numerically optimal.
 
 ## Method
 
 ### Overall Architecture
-DoLQ is a three-agent iterative closed loop, operating through a "Nominate $\rightarrow$ Optimize $\rightarrow$ Review" cycle:
+DoLQ is a training-free, three-agent iterative closed loop consisting of "Nomination → Optimization → Review." The **Sampler Agent** receives the system description $\mathcal{T}$ and Scientist feedback to output executable Python code snippets for several candidates (e.g., `params[0] * np.sin(x[1])`) along with natural language physical justifications. The **Parameter Optimizer** instantiates these symbolic terms into differentiable skeleton functions $f_j(t, \boldsymbol{x}; \boldsymbol{\theta})$ and fits parameters. The **Scientist Agent** performs simultaneous quantitative and qualitative reviews on the optimized equations, producing keep/hold/remove decisions and cumulative insights for the Sampler. The outer loop runs for 100 iterations, maintaining a "Global Best." The dual-track review of the Scientist Agent is the core innovation of this work.
 
-1. **Sampler Agent**: Receives the system description $\mathcal{T}$ and Scientist feedback, then produces executable Python code snippets for several candidate terms (e.g., `params[0] * np.sin(x[1])`) along with natural language physical explanations for each term.
-2. **Parameter Optimizer**: Instantiates symbolic terms into differentiable skeleton functions $f_j(t, \boldsymbol{x}; \boldsymbol{\theta})$ and fits parameters $\boldsymbol{\theta}$ using a hybrid optimizer.
-3. **Scientist Agent**: Performs quantitative (ablation MSE) and qualitative (semantic alignment) reviews of the optimized equations, yielding keep/hold/remove decisions and cumulative insights to be fed back to the Sampler.
-
-The outer loop executes for 100 rounds. In each round, the Sampler proposes multiple candidate hypotheses, which are evaluated in parallel, and the "Global Best" is continuously updated.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Observed Data + System Description 𝒯<br/>(Physical principles only, no equations)"] --> SAMP
+    FB["Feedback Loop<br/>Cumulative Insights + Term-by-term keep/hold + Skeleton Blacklist"] -.-> SAMP
+    SAMP["Sampler Agent<br/>Multi-hypothesis Parallel Nomination<br/>Executable Python Code + Physical Justification"] --> OPT["Parameter Optimizer<br/>Skeleton Function + DE Global Search → BFGS Local Refinement<br/>(Residual MSE)"]
+    OPT --> SCI
+    subgraph SCI["Scientist Agent (Dual-Track Review)"]
+        direction TB
+        QUANT["Quantitative: Term-wise Ablation<br/>Zero out coefficient → Recalculate MSE → good/neutral/bad"] --> FUSE
+        QUAL["Qualitative: Semantic Plausibility<br/>Score against 𝒯 → good/neutral/bad"] --> FUSE
+        FUSE["Asymmetric Fusion<br/>Semantic bad: Delete / Double good: Keep / Else: Hold<br/>Two consecutive holds → Remove"]
+    end
+    SCI -->|No Convergence: Feedback| FB
+    SCI -->|Refresh Global Best| OUT["Output: Compact, Physically Plausible, and Numerically Accurate ODE"]
+```
 
 ### Key Designs
 
-1. **Dual-Track Review by Scientist Agent**:
-    - **Function**: Determines whether to keep or remove each candidate term.
-    - **Quantitative Track**: Performs ablation for each term by setting its coefficient to zero and recalculating the residual MSE. If the error rises significantly $\rightarrow$ good; if it remains unchanged $\rightarrow$ neutral; if it decreases $\rightarrow$ bad (indicating the term is "point-hunting" through overfitting). In Figure 2, `np.sin(x1)` is judged good because the MSE increases by 78.2% upon its removal, while `x1**4` is judged bad because the MSE decreases.
-    - **Qualitative Track**: The LLM reads the system description $\mathcal{T}$, the symbolic form of the term, and the Sampler's explanation, scoring it as good/neutral/bad. The criterion is whether it corresponds to physical mechanisms mentioned in the description (e.g., "air resistance" corresponding to $-cx^2$ is good).
-    - **Track Fusion**: Terms that are semantically bad are removed immediately. Terms must be good in both tracks to be kept; others are held. Any term held for two consecutive rounds is automatically removed. Removed skeletons (with parameters replaced by placeholders) are added to a blacklist to prevent regeneration, featuring a probabilistic forgetting mechanism to avoid permanent "mis-kills."
-    - **Design Motivation**: Numerical MSE alone retains spurious terms that fit noise, while semantic review alone might miss "unfamiliar but necessary" forms. Independent tracks with mutual veto power are the core differentiators from standard LLM-SR.
+**1. Structured Prompting + Multi-Hypothesis Parallelism for the Sampler Agent: Generating "Executable + Interpretable" Candidates**
 
-2. **Structured Prompting & Parallel Hypotheses**:
-    - **Function**: Enables the LLM to propose "executable and interpretable" candidates rather than just symbols.
-    - **Mechanism**: The prompt is divided into: (a) task definition and system description $\mathcal{T}$; (b) Scientist feedback, including cumulative insights, term-by-term reviews, and blacklisted skeletons; (c) output format constraints, forcing each term into a Python format like `params[0] * np.cos(x[0])` with a physical justification. 
-    - **Design Motivation**: (1) Executable formats bypass symbolic parsing; (2) Mandatory justifications externalize the LLM's "implicit physical knowledge" for the Scientist's review; (3) Parallel hypotheses and blacklisting prevent entrapment in a single search path.
+The Sampler's prompt consists of: (a) task definition and system description $\mathcal{T}$; (b) Scientist feedback, including cumulative insights, term-by-term reviews, and a blacklist of removed skeletons; (c) output format constraints forcing each term into Python code (e.g., `params[0] * np.cos(x[0])`) plus a physical justification. Executable formats eliminate the need for symbolic parsing, while mandatory justifications externalize the LLM’s implicit physical knowledge for the Scientist's review. Multiple hypotheses are generated per round to enable parallel evaluation without cross-contamination between ablations.
 
-3. **Hybrid DE + BFGS Parameter Optimization**:
-    - **Function**: Moves correct skeletons from local optima to global optima.
-    - **Mechanism**: Primarily uses Differential Evolution (DE) for global search in the parameter space, followed by BFGS for local refinement. Three strategies (BFGS only, DE only, Hybrid) are run simultaneously, and the one with the lowest MSE is selected. The objective is the residual MSE: $$\sum_i (\dot{x}_j(t_i) - f_j(t_i, \boldsymbol{x}; \boldsymbol{\theta}))^2$$.
-    - **Design Motivation**: BFGS is highly sensitive to initialization. Correct skeletons are often rejected because poor initial values lead to poor MSE, causing the Scientist to incorrectly remove them. The DE backup prevents such "false negatives" where the skeleton is correct but parameters are not found.
+**2. DE + BFGS Hybrid Parameter Optimization: Preventing False Negatives Due to Optimization Failure**
+
+The optimization objective is Residual MSE $\sum_i (\dot{x}_j(t_i) - f_j(t_i, \boldsymbol{x}; \boldsymbol{\theta}))^2$. To ensure that correct structures are not rejected due to poor initialization, the system uses Differential Evolution (DE) for global search followed by BFGS for local refinement. The system runs BFGS-only, DE-only, and Hybrid strategies, selecting the one with the lowest MSE. This prevents the Scientist from mistakenly removing a correct skeleton simply because BFGS failed to find the parameters (Figure 8).
+
+**3. Scientist Agent Dual-Track Review: Judging Each Term via Orthogonal Semantic and Numerical Dimensions**
+
+The quantitative track performs an ablation for each term by setting its coefficient to zero and recalculating the Residual MSE: a significant error increase is labeled `good`, no change is `neutral`, and a decrease is `bad` (indicating overfitting). In Figure 2, removing `np.sin(x1)` increased MSE by 78.2% (`good`), while removing `x1**4` decreased it (`bad`). The qualitative track has the LLM evaluate whether a term corresponds to the mechanisms in $\mathcal{T}$ (e.g., "air resistance" matching $-cx^2$). An **asymmetric fusion rule** is used: semantic `bad` results in immediate `remove`; double `good` results in `keep`; otherwise, the term is `hold`. This prevents "fit-the-noise" terms while retaining necessary but structurally complex terms.
 
 ### Loss & Training
-This is a training-free framework without backpropagation. The core "training signal" is the Scientist Agent's term-wise keep/hold/remove decisions, which modify the Sampler's distribution through prompt rewriting. Performance is measured using Normalized MSE (NMSE) and success rates. Each system is run three times, and the best is taken over 100 rounds for fair comparison with baselines.
+Ours is a training-free framework. The "training signals" are the Scientist Agent's keep/hold/remove decisions, which alter the Sampler's sampling distribution via prompt updates. The parameter optimization objective is Residual MSE (Eq. 2), and performance is evaluated using Normalized MSE (NMSE) and success rate. Each search is capped at 100 iterations.
 
 ## Key Experimental Results
 
 ### Main Results
-Using Gemini 2.5 Flash Lite as the backbone, the method was evaluated on 8 systems from ODEbench. Dimensional average NMSE (Residual / Integral) comparison:
+Using Gemini 2.5 Flash Lite as the backbone, evaluations were conducted on 8 systems from ODEbench. Average Dimension NMSE (Residual / Integral) results:
 
-| System | Metric | ICSR | LASR | LLM-SR | EDL | **DoLQ** |
+| System | Metric | ICSR | LASR | LLM-SR | EDL | **Ours** |
 |------|------|------|------|--------|-----|----------|
 | SIR(2D) ID | Residual | 2.8e-8 | 1.8e-8 | 1.7e-8 | 18.6 | **1.7e-8** |
 | CDIMA(2D) ID | Integral | 3.8e-4 | 2.9e-1 | 3.1e-3 | 1.3e5 | **2.4e-8** |
 | Glider(4D) ID | Residual | 2.6e-2 | 2.5e-2 | 9.95e-7 | 1.5e4 | **1.2e-6** |
 | CDIMA(2D) ID-Ext | Integral | 2.6e-4 | 4.9e1 | 9.4e-3 | NaN | **1.2e-7** |
 
-CDIMA is a nonlinear saturation system where all baselines collapse during extrapolation (ID-Ext), while DoLQ remains stable at the 1e-7 magnitude—a 5 to 6 order of magnitude improvement, highlighting that correct structure is essential for stable extrapolation. Success rates for both NMSE tests and structural term tests show DoLQ achieving SOTA performance.
+CDIMA is a nonlinear saturation system where all baselines failed during extrapolation (ID-Ext), while DoLQ remained stable at the 1e-7 magnitude—a 5 to 6 order of magnitude improvement. This demonstrates that identifying the correct structure is essential for stable extrapolation.
 
 ### Ablation Study
 
-| Configuration | Convergence Iteration (Glider 2D) | Note |
+| Configuration | Glider(2D) Convergence Iteration | Description |
 |------|---------------------|------|
-| Full DoLQ | Round 27 | Full Scientist feedback |
-| w/o Scientist | Round 62 | MSE feedback only, no qualitative |
-| BFGS only | Failed | Correct skeletons fail to find parameters |
-| DE only | Unstable | Global search without fine-tuning |
-| **DE + BFGS** | Stable Convergence | Hybrid strategy as used in Figure 8 |
-
-Ablations show that ground truth terms are judged as "keep" much more frequently than others. Even if misclassified as "remove," the probabilistic forgetting allows them to resurface and eventually converge.
+| Full DoLQ | Iteration 27 | Complete Scientist Agent feedback |
+| w/o Scientist | Iteration 62 | Feeding MSE directly to Sampler without qualitative review |
+| BFGS only | Failure | Correct skeleton fails to find parameters |
+| DE only | Unstable | Global search without sufficient refinement |
+| **DE + BFGS** | Stable Convergence | Hybrid strategy from Figure 8 |
 
 ### Key Findings
-- **Qualitative Review acts as an Accelerator**: Removing the Scientist Agent more than doubles the convergence time because the Sampler lacks guidance on "which physical direction to explore."
-- **Token Efficiency**: DoLQ consumes fewer tokens than LLM-SR on 4D systems because it maintains compact equations, whereas LLM-SR's redundant terms lead to increasingly long prompts.
-- **CDIMA as a Watershed**: For non-polynomial saturation terms like $\frac{4 x_0 x_1}{x_0^2 + 1}$, pure evolution (LASR) and LLM-SR fail. Only DoLQ recovers it by identifying semantic clues like "saturation" through the Scientist.
-- **Hybrid Optimization Prevents False Negatives**: Correct skeletons are often rejected by BFGS alone due to local minima; DE provides the necessary backbone for structural discovery.
+- **Qualitative Review = Accelerator**: Removing the Scientist doubles the convergence time because the Sampler lacks guidance on "which physical direction to explore."
+- **Token Efficiency**: Figure 5 shows that LLM-SR consumes significantly more tokens on Glider(4D) as its redundant terms bloat the prompt; DoLQ remains efficient due to compactness.
+- **CDIMA as a Watershed**: Only DoLQ successfully recovered the non-polynomial saturation terms $\frac{4 x_0 x_1}{x_0^2 + 1}$, as the Scientist recognized "saturation" semantic cues.
+- **Hybrid Optimizer Avoids False Negatives**: BFGS alone often traps correct skeletons in local minima, leading to their erroneous removal.
 
 ## Highlights & Insights
-- **"Reviewer Agent" as a Pattern for LLM4Science**: Using LLMs as both generators and reviewers, but isolating them with independent prompts and contexts, reduces LLM overconfidence/hallucination via adversarial design.
-- **Asymmetric Rules**: Qualitative = Veto power for immediate removal of nonsense; Quantitative = Delayed decision for terms with no current contribution, preventing accidental deletion of useful terms.
-- **Probabilistic Blacklist**: Reviving removed skeletons periodically is a rare design in SR that helps counter "early-stage bias" in LLMs.
-- **Execution-Ready Expressions**: Outputting Python code directly instead of LaTeX minimizes parser errors and is a highly practical engineering choice.
+- **"Reviewer Agent" as a Template**: Decoupling the LLM into a generator and a reviewer with independent contexts mitigates LLM overconfidence. This is transferable to protein design or chemical reaction path discovery.
+- **Asymmetric Fusion Policy**: Immediately discarding semantically wrong terms while using a "two-strike" rule for numerical contribution balances exploration and exploitation.
+- **Probabilistic Forgetfulness**: Reintroducing previously removed skeletons helps overcome early search biases in the LLM.
+- **Executable Symbolic Expressions**: Moving from LaTeX to executable Python code eliminates parsing errors and is a highly practical engineering choice.
 
 ## Limitations & Future Work
-- **Noise Sensitivity**: Using finite differences for $\dot{x}$ makes the Residual MSE vulnerable to noise; future work could use integral-based estimations.
-- **Reasoning Fixation**: The Scientist may prematurely anchor on a specific physical interpretation, leading to sub-optimal local convergence.
-- **Reliance on LLM Priors**: If descriptions are vague or the system is rare (e.g., novel materials), the qualitative review's reliability may degrade.
-- **PDE Generalization**: Extending to PDEs is difficult due to the lack of universal solvers compared to ODEs.
+- **Noise Sensitivity**: Residual MSE is sensitive to derivative estimation noise; integral-based estimation may be needed for noisy observations.
+- **Reasoning Fixation**: Scientists occasionally anchor to a physical explanation too early, leading to sub-optimal structural convergence.
+- **Dependency on LLM Priors**: In systems where descriptions are vague or rare, the qualitative review may degrade to simple MSE-based search.
+- **PDE Generalization**: The lack of general PDE solvers is a barrier compared to the mature solver ecosystem for ODEs.
 
 ## Related Work & Insights
-- **vs LLM-SR**: Both use LLMs as Samplers, but LLM-SR prioritizes MSE and tends to stack terms, whereas DoLQ enforces structural compactness and excels in extrapolation.
-- **vs LASR**: Evolution handles polynomials well but lacks the semantic capability to explore non-polynomial forms like sine/cosine or rational saturations found in CDIMA.
-- **Insight**: The "Reviewer Agent" framework is transferable to other scientific tasks like theorem proving step validation, semantic linting in code synthesis, or fact-checking in automated literature reviews.
+- **vs LLM-SR (Shojaee 2025)**: Both use LLMs as Samplers, but LLM-SR tends to stack terms due to an MSE-only focus. DoLQ produces stable extrapolation results (5 orders of magnitude better on CDIMA).
+- **vs LASR (Grayeli 2024)**: Evolutionary algorithms struggle with non-polynomial forms like the saturation terms in CDIMA.
+- **vs ODEformer (d'Ascoli 2024)**: End-to-end Transformers do not utilize semantic descriptions and provide no control over physical interpretability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ High value in the dual-track review incremental design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Strong comparison across 8 systems and multiple baselines, though OOD and heavy noise tests are missing.
-- Writing Quality: ⭐⭐⭐⭐ Clear pipeline, well-structured examples, and logical flow.
-- Value: ⭐⭐⭐⭐ Provides a reusable template for LLM-driven scientific discovery with significant performance gains in complex systems.
+- Novelty: ⭐⭐⭐⭐ Adding dual-track "Qualitative + Quantitative" review to the LLM-SR framework is a critical and clear innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 8 ODE systems and 4 SOTA baselines with extrapolation and ablation tests.
+- Writing Quality: ⭐⭐⭐⭐ Excellent coordination between figures and pipeline descriptions.
+- Value: ⭐⭐⭐⭐ Provides a reusable "Reviewer Agent" template for LLM-driven scientific discovery.
 
 <!-- RELATED:START -->
 
@@ -134,10 +133,10 @@ Ablations show that ground truth terms are judged as "keep" much more frequently
 ## Related Papers
 
 - [\[ICML 2026\] Resolution Diagnostics for Paired LLM Evaluation](resolution_diagnostics_for_paired_llm_evaluation.md)
-- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL for Fine-Grained Human-Centric LLM Evaluation](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ACL 2026\] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference](../../ACL2026/llm_evaluation/statistically_reliable_llm-based_ranking_evaluation_via_prediction-powered_infer.md)
+- [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](../../ACL2026/llm_evaluation/if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
 
 </div>
 

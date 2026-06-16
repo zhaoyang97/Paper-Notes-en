@@ -2,72 +2,74 @@
 title: >-
   [Paper Note] Demystifying When Pruning Works via Representation Hierarchies
 description: >-
-  [ICML 2026][Model Compression][Network Pruning] Starting from the "embedding → logit → probability" representation hierarchy, this paper uses Taylor expansion theory to prove that pruning-induced perturbations in embeddi…
+  [ICML 2026][Model Compression][Paper Note] Starting from the three-level representation hierarchy of "embedding $\rightarrow$ logit $\rightarrow$ probability," this paper uses second-order Taylor expansion theory to prove: perturbations caused by pruning in the embedding and logit spaces are inherently small, but the non-linear softmax step amplifies these pert
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Network Pruning"
-  - "Generative Task Degradation"
-  - "Softmax Amplification"
-  - "Representation Hierarchies"
-  - "KL Divergence"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: f6d54625f70f9dea
+content_hash: ba82903bdae665fb
 ---
-
 # Demystifying When Pruning Works via Representation Hierarchies
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.24652](https://arxiv.org/abs/2603.24652)  
-**Code**: Mentioned as "available in the project repository" in the paper, but no public link is provided  
-**Area**: LLM Compression / Network Pruning / Representation Analysis  
+**Code**: Mentioned in the paper as "available in the project repository" but no public link provided  
+**Area**: LLM Model Compression / Network Pruning / Representation Analysis  
 **Keywords**: Network Pruning, Generative Task Degradation, Softmax Amplification, Representation Hierarchies, KL Divergence
 
 ## TL;DR
-Starting from the "embedding → logit → probability" representation hierarchy, this paper uses Taylor expansion theory to prove that pruning-induced perturbations in embedding and logit spaces are naturally small. However, the non-linear softmax step amplifies these perturbations into the probability space by $\mathrm{Var}_r(\Delta z)/(2T^2)$. Combined with step-wise accumulation in autoregressive decoding, this ultimately leads to generative task collapse. Conversely, non-generative tasks are naturally robust because they rely only on candidate token subspaces and are not exposed to this amplification loop—unifying the explanation for why pruning maintains performance on MMLU and retrieval but drops to zero on GSM8K and HumanEval.
+Starting from the three-level representation hierarchy of "embedding $\rightarrow$ logit $\rightarrow$ probability," this paper uses second-order Taylor expansion theory to prove: perturbations caused by pruning in the embedding and logit spaces are inherently small, but the non-linear softmax step amplifies these perturbations into the probability space by a factor of $\mathrm{Var}_r(\Delta z)/(2T^2)$. Combined with step-wise accumulation through auto-regressive decoding, this ultimately causes generative tasks to collapse. In contrast, non-generative tasks remain naturally robust because they rely only on candidate token subspaces—unifying the explanation for why pruning is nearly lossless on MMLU and retrieval but drops to zero on GSM8K and HumanEval.
 
 ## Background & Motivation
-**Background**: As LLM scales expand, network pruning (Wanda, SparseGPT, ShortGPT, Attn/MLP Drop, etc.) has become a mainstream compression solution. Intra-layer approaches sparsify individual layers (unstructured / 2:4 / 4:8), while inter-layer approaches directly remove specific transformer blocks or attention/MLP sub-layers. These methods have been proven to preserve performance near-losslessly on "non-generative tasks" such as retrieval, multiple-choice QA, and text classification.
+**Background**: As LLM scales expand, network pruning (Wanda, SparseGPT, ShortGPT, Attn/MLP Drop, etc.) has become a mainstream compression solution. Intra-layer approaches sparsify individual layers (unstructured / 2:4 / 4:8), while inter-layer approaches directly remove specific transformer blocks or attention/MLP sub-layers. These methods have been proven to preserve performance nearly losslessly on "non-generative tasks" such as retrieval, multiple-choice QA, and text classification.
 
-**Limitations of Prior Work**: A recurring anomaly has been observed in practical deployments—the same pruned model shows almost no degradation on MMLU but collapses to zero on GSM8K, HumanEval, and NarrativeQA (e.g., after removing 8 MLP layers, Mistral-7B-Instruct's GSM8K drops from 48.4 → 0.0). However, there is no theoretical explanation for where this "task-dependent vulnerability" originates, leaving the industry to rely on empirical trial and error.
+**Limitations of Prior Work**: However, a recurring anomaly has been observed in practical deployment—the same pruned model shows almost no degradation on MMLU, yet collapses to zero on GSM8K / HumanEval / NarrativeQA (e.g., Mistral-7B-Instruct dropping from 48.4 $\rightarrow$ 0.0 on GSM8K, 4.9 $\rightarrow$ 0.0 on HumanEval, and 13.8 $\rightarrow$ 0.0 on MBPP after removing 8 MLP layers). No theoretical explanation has accounted for this "task-dependent vulnerability," leaving the industry to rely on empirical trial and error.
 
-**Key Challenge**: Existing explanations attribute the failure to "large output spaces in generative tasks (vocabulary $|\mathcal{V}|$ far exceeding embedding dimension $d$)" or "autoregressive accumulation." These are intuitive descriptions that lack quantitative predictive power. Most importantly, they fail to answer how small embedding perturbations transform into catastrophic probability shifts.
+**Key Challenge**: Existing explanations attribute this to "the high dimensionality of the output space in generative tasks (vocabulary $|\mathcal{V}|$ far exceeding embedding dimension $d$ or candidate count $k$)" or "auto-regressive accumulation." These are intuitive descriptions that fail to provide quantitative predictions. More importantly, they do not answer how small embedding perturbations transform into catastrophic shifts in probability.
 
-**Goal**: (1) Segment LLM inference into three representation spaces (embedding $h$, logit $z$, probability $p$) to quantify perturbations; (2) Provide closed-form formulas to analytically predict the impact of pruning on each space; (3) Explain the robustness of non-generative tasks vs. the fragility of generative tasks; (4) Provide practical guidance.
+**Goal**: (1) Decompose LLM inference along the information flow into three representation spaces (embedding $h$, logit $z$, probability $p$) and quantify perturbations in each; (2) Provide closed-form formulas to analytically predict the impact of pruning on each space; (3) Explain why non-generative tasks are robust while generative tasks are fragile; (4) Provide practical implementation guidance.
 
-**Key Insight**: The authors focus on a specific detail—after pruning, the perturbation $\Delta z = W \Delta h$ in logit space is a linear transformation (rotation + stretching), but in the probability space, $\Delta p = \mathrm{softmax}(z + \Delta z)/T - \mathrm{softmax}(z)/T$ is significantly amplified by the non-linear exponential normalization. Autoregressive decoding further compounds small single-step errors into multi-step accumulation.
+**Key Insight**: The authors focus on a specific detail: for the same post-pruning $\Delta h$, the shift in logit space $\Delta z = W \Delta h$ is a linear transformation (rotation + scaling), but in the probability space, $\Delta p = \mathrm{softmax}(z + \Delta z)/T - \mathrm{softmax}(z)/T$ is significantly amplified by the non-linear exponential normalization. Auto-regressive decoding then transforms single-step small errors into accumulated multi-step divergence.
 
-**Core Idea**: The "task-dependency" of pruning performance is attributed to **differences in perturbation propagation across representation hierarchies**. Linear layers (embedding → logit) mostly maintain similarity, the softmax non-linearity acts as the actual amplifier, and multi-step decoding functions as a "circular horn" for this amplifier. Non-generative tasks only care about logit order or small candidate subspaces, thus avoiding this amplification loop.
+**Core Idea**: The paper attributes the "task dependency" of pruning performance to **differences in perturbation propagation across representation hierarchies**. Linear layers (embedding $\rightarrow$ logit) largely maintain similarity; the softmax non-linearity acts as the true amplifier, and multi-step decoding functions as a "looping speaker" for that amplifier. Non-generative tasks remain robust because they only care about logit order or a small candidate subspace, never being fully exposed to this amplification loop.
 
 ## Method
 
 ### Overall Architecture
-The paper does not propose a new pruning algorithm; instead, it establishes an **analysis framework**: (1) Split LLM inference into three representation spaces: $e \to h^{(l)} \to z \to p$; (2) Independently apply pruning to each layer to obtain $\Delta h$, $\Delta z$, and $\Delta p$, quantifying perturbations using angular deviation and KL divergence; (3) Derive closed-form expressions for perturbations in each space using second-order Taylor expansion; (4) Extend single-step analysis to multi-step generation to analyze error accumulation; (5) Analyze local stability by isolating multiple-choice tasks to "candidate token subspaces." Representative pruning methods include Wanda/SparseGPT (intra-layer) and ShortGPT/Attn-Drop/MLP-Drop (inter-layer), using Qwen-2.5-7B-Instruct and Mistral-7B.
+The paper does not propose a new pruning algorithm; instead, it builds a **diagnostic framework** to answer "why pruning is task-selective." It decomposes LLM inference into three representation spaces—embedding $h^{(l)}$, logit $z$, and probability $p$—applies pruning to each layer individually, and tracks how perturbations flow from $\Delta h$ to $\Delta z$ and finally $\Delta p$. The framework uses empirical measurements (cosine similarity + KL divergence) to reveal the phenomena and second-order Taylor expansion to derive closed-form formulas for the underlying causes. Finally, it extends the single-step analysis to multi-step auto-regressive generation and demonstrates the "candidate token subspace" mechanism. Representative pruning methods used include Wanda / SparseGPT (intra-layer) and ShortGPT / Attn-Drop / MLP-Drop (inter-layer), using Qwen-2.5-7B-Instruct and Mistral-7B as backbones.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Single-layer pruning introduces perturbation Δh"] --> B["Embedding Space h<br/>Cosine Similarity ≈ 1 (Stable)"]
+    B -->|"LM head linear projection z=Wh"| C["Logit Space z<br/>Orthogonal components compressed (Still stable)"]
+    C -->|"softmax(z/T) non-linear amplification"| D["Probability Space p<br/>Amplified by Var_r(Δz)/(2T²) (Oscillates)"]
+    D --> E{"Which representation does the task use?<br/>Subspace size / Multi-step dependency?"}
+    E -->|"Non-generative: Single-step + Candidate subspace (Tail stable)"| F["Robust: MMLU/BEIR nearly lossless"]
+    E -->|"Generative: Full vocab + Auto-regressive accumulation"| G["Collapse: GSM8K/HumanEval → 0"]
+```
 
 ### Key Designs
 
-1.  **Three-space Perturbation Measurement Protocol**:
-    - Function: Segregate the impact of pruning on embedding, logit, and probability representations to avoid confounding perturbations from different spaces.
-    - Mechanism: During the baseline model's forward pass, a single layer is replaced with its pruned version (other layers remain original) to obtain $\Delta h_l$. Angular deviation $1-\mathrm{CosineSim}(h_l, h_l+\Delta h_l)$ quantifies the embedding shift. This is projected to logit space $z^{(l)}=W h^{(l)}$ to measure $1-\mathrm{CosineSim}(z, z+\Delta z)$, followed by $p^{(l)}=\mathrm{softmax}(z^{(l)}/T)$ for the probability space shift. This is repeated for every layer and decoding step. Empirical findings: Cosine similarity in embedding and logit spaces remains near 1.0, while the probability space oscillates violently, identifying the exact stage of amplification.
-    - Design Motivation: Previous works either only examined weight sparsity or final perplexity, obscuring internal propagation rules. This isolated design acts as a controlled probe to separate "layer-wise local perturbation" from "end-to-end accumulation."
+**1. Three-Space Perturbation Measurement Protocol: Pinpointing the Amplification Step**
 
-2.  **Taylor Local Theory (Theorem 1-3)**:
-    - Function: Provide a closed-form explanation for empirical observations, answering why logit space is stable while probability space is not.
-    - Mechanism: Angular deviation in embedding/logit space is approximated via second-order Taylor expansion as $1-\mathrm{CosineSim}(h, h+\Delta h) \approx \|\Delta h_\perp\|^2 / (2\|h\|^2)$, depending only on the squared ratio of the orthogonal component to the original vector norm. Since $\|\Delta h\|$ is naturally much smaller than $\|h\|$, this ratio is small. **The critical amplification point is softmax**: $1-\mathrm{CosineSim}(p, p+\Delta p) \approx \mathrm{Var}_r(\Delta z)/(2T^2)$, where $r_i = p_i^2/\|p\|^2$. Distribution shift via KL divergence is $\mathrm{KL}(p\|q) \approx \mathrm{Var}_{i\sim p}(\Delta z_i)/(2T^2)$. Crucial is the **variance of $\Delta z$**, not its magnitude—even if $\Delta z$ is small, if its distribution across the vocabulary is non-uniform (high variance), softmax amplifies the "flat vs. peak" difference exponentially. Temperature $T$ is in the denominator—lower temperatures lead to more aggressive amplification.
-    - Design Motivation: This theory provides the first computable benchmark for "softmax amplification of pruning errors." Fig. 6 confirms that theoretical estimates for angular deviation and KL divergence align closely with ground truth. This allows predicting generative failure directly from single-layer perturbation statistics without actual generation.
+Previous works often focused on weight sparsity or end-to-end perplexity, which masks the internal propagation of perturbations. Here, a controlled probe is established: during a standard forward pass of the baseline model, only the current layer is replaced with its pruned version while others remain unchanged. This isolates the "single-layer" perturbation $\Delta h_l$. Its effect is then quantified along the representation chain: angular deviation $1-\mathrm{CosineSim}(h_l, h_l+\Delta h_l)$ in the embedding space, $1-\mathrm{CosineSim}(z, z+\Delta z)$ after the LM head in logit space, and finally $\Delta p$ after $p^{(l)}=\mathrm{softmax}(z^{(l)}/T)$ in probability space. Results show that while cosine similarity remains near 1 for embedding and logit spaces, the probability space exhibits violent oscillations. This isolation design reveals that the amplification occurs specifically during the final non-linear transition.
 
-3.  **Subspace Mechanism (Multi-Scale Analysis)**:
-    - Function: Explain why the probability space oscillates violently yet multiple-choice/retrieval tasks remain robust.
-    - Mechanism: Generative tasks involve sampling from the full $|\mathcal{V}|$ at each step. Small single-step deviations are fed back into history via KV cache, causing the baseline and pruned models to condition on different token histories after step 1, resulting in explosive error accumulation (Fig. 7). Non-generative tasks only look at step 1 and the logit ranking or a candidate subset $\mathcal{C}\subset\{1,\dots,|\mathcal{V}|\}$ (e.g., A/B/C/D). Fig. 8 shows that candidate tokens are usually in the **tail** of the probability distribution, where relative perturbations are smaller than those of top tokens, leaving argmax largely unchanged. Retrieval tasks operate in the embedding space via cosine similarity, which is inherently stable.
-    - Design Motivation: This links "macro task performance" to "micro representation geometry," proposing three practical takeaways for pruning feasibility: the representation layer used, the dimensionality of the task-relevant subspace, and temporal dependency.
+**2. Taylor Local Theory (Theorem 1-3): Proving Softmax as the Amplifier**
+
+The paper uses second-order Taylor expansion to provide a closed-form formula for why logits remain stable while probabilities do not. Linear stability is confirmed as the offset in embedding/logit space is approximated as $1-\mathrm{CosineSim}(h, h+\Delta h) \approx \|\Delta h_\perp\|^2 / (2\|h\|^2)$, depending only on the squared ratio of the orthogonal component to the original vector norm. Since $\|\Delta h\| \ll \|h\|$ for single layers, this ratio is naturally small. The true amplification occurs at the softmax step: the probability space offset $1-\mathrm{CosineSim}(p, p+\Delta p) \approx \mathrm{Var}_r(\Delta z)/(2T^2)$, where $r_i = p_i^2/\|p\|^2$. When measured via KL divergence, $\mathrm{KL}(p\|q) \approx \mathrm{Var}_{i\sim p}(\Delta z_i)/(2T^2)$. The crucial factor is not the magnitude of $\Delta z$ but its **variance** across the vocabulary—even a small $\Delta z$ can be exponentially amplified if its distribution is non-uniform. Furthermore, the temperature $T$ in the denominator means lower temperatures (sharper distributions) amplify the pruning error more severely.
+
+**3. Generative vs. Non-Generative Subspace Mechanism: Multi-Scale Analysis**
+
+Since probabilities oscillate, why are multiple-choice and retrieval tasks robust? The difference lies in the representation chain location, subspace size, and step count. Generative tasks sample from the full vocabulary $|\mathcal{V}|$ at every step; single-step errors are fed back via the KV cache, causing the pruned model to diverge from the baseline's token history (Fig 7 shows similarity dropping from ~1 at step 1 to near 0 at step 10). Conversely, non-generative tasks usually focus on the first step and examine only logit rankings or a candidate token subset $\mathcal{C}\subset\{1,\dots,|\mathcal{V}|\}$ (e.g., A/B/C/D). Fig 8 shows these candidate tokens typically fall in the **tail** of the probability distribution, where relative perturbations are much smaller than at the top tokens, leaving the argmax stable. This decomposes target robustness into three variables: the representation space used, the dimensionality of the task-relevant subspace, and the presence of temporal dependency.
 
 ### Loss & Training
-This is a training-free analysis and does not involve training losses. All pruning methods (Wanda, SparseGPT, ShortGPT, Attn-Drop, MLP-Drop) are executed according to their original protocols. Experiments focus on forward measurements rather than fine-tuning.
+This study is a training-free analysis and does not involve specific training loss functions. All pruning methods (Wanda, SparseGPT, ShortGPT, Attn-Drop, MLP-Drop) follow their original protocols; experiments primarily involve forward pass measurements rather than fine-tuning.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of non-generative vs. generative tasks for Mistral-7B under inter-layer pruning (dropping 8 attention layers, Drop-8A, or 8 MLP layers, Drop-8M):
+Comparison of non-generative vs. generative tasks for Mistral-7B under inter-layer pruning (removing 8 attention layers Drop-8A or 8 MLP layers Drop-8M):
 
 | Task Type | Task | Full (7.1B) | Drop-8A (6.8B) | Drop-8M (5.7B) |
 |-----------|------|-------------|----------------|----------------|
@@ -81,57 +83,57 @@ Comparison of non-generative vs. generative tasks for Mistral-7B under inter-lay
 | Generative | NarrativeQA | 16.3 | 9.6 | 2.0 |
 | Generative Avg | 5 Tasks | 22.3 | 13.2 | **0.8** |
 
-Drop-8M loses only 5 points on multi-choice Avg but collapses from 22.3 to 0.8 (97% degradation) on generative Avg.
+Drop-8M loses only 5 points on Multi-choice Avg but collapses from 22.3 to 0.8 on Generative Avg (97% degradation).
 
 ### Ablation Study
-Consistency between theoretical estimates and actual measurements (Fig. 6, Qwen-2.5-7B Layer 14 attention pruning):
+Consistency between theoretical estimates and actual measurements (Fig 6, Qwen-2.5-7B Layer 14 Attention Pruning):
 
-| Metric | Theory vs. Measured | Description |
-|--------|---------------------|-------------|
-| Angular deviation $\Delta p$ | Close Fit | $\mathrm{Var}_r(\Delta z)/(2T^2)$ formula is accurate |
-| KL divergence $p\|q$ | Close Fit | $\mathrm{Var}_{i\sim p}(\Delta z_i)/(2T^2)$ formula is accurate |
-| Embedding CosSim | ~1.0 | Single layer $\|\Delta h\| \ll \|h\|$ |
-| Logit CosSim | ~1.0 | LM head further compresses relative orthogonal components |
-| Probability CosSim | Large Fluctuation | Softmax non-linearly amplifies variance |
+| Metric | Theory vs. Empirical | Notes |
+|--------|----------------------|-------|
+| Angular deviation $\Delta p$ | Tight Fit | $\mathrm{Var}_r(\Delta z)/(2T^2)$ formula is accurate |
+| KL divergence $p\|q$ | Tight Fit | $\mathrm{Var}_{i\sim p}(\Delta z_i)/(2T^2)$ formula is accurate |
+| Embedding Cosine Sim | ~1.0 | Single-layer $\|\Delta h\| \ll \|h\|$ |
+| Logit Cosine Sim | ~1.0 | LM head further compresses relative orthogonal components |
+| Probability Cosine Sim | High Fluctuation | Softmax non-linearly amplifies variance |
 
-Deviation accumulation during generation (Fig. 7, Drop-8A on Qwen-2.5-7B):
+Perturbation accumulation during generation (Fig 7, Drop-8A on Qwen-2.5-7B):
 
-| Decoding Step | Embedding/Logit Sim | Probability Sim | Note |
-|---------------|---------------------|-----------------|------|
-| 1 (Within prompt) | ~1.0 | Lower but manageable | Identical conditioning |
-| 2-3 | ~0.95 | Sharp decline | Token history divergence begins |
-| 10+ | < 0.5 | Near 0 | Total divergence, gibberish output |
+| Decoding Step | Embedding/Logit Sim | Probability Sim | Remarks |
+|---------------|---------------------|-----------------|---------|
+| 1 (Prompt) | ~1.0 | Lower but stable | Models share identical history |
+| 2-3 | ~0.95 | Sharp drop | History tokens begin to differ |
+| 10+ | < 0.5 | Near 0 | Complete divergence; garbled output |
 
 ### Key Findings
-- **Softmax, not LM head, is the primary amplifier**: Intuition might suggest that $z = Wh$ amplifies perturbations due to vocabulary dimensionality, but logit cosine similarity matches the embedding space. The linear transformation actually compresses relative orthogonal components. Softmax is the real amplifier because $\mathrm{Var}_r(\Delta z)/(2T^2)$ explicitly depends on the variance of $\Delta z$ across the vocabulary and the inverse of the temperature.
-- **Candidate token subspaces act as shields**: In multiple-choice tasks, answer tokens usually reside in the tail of the distribution, where absolute perturbation magnitudes are small. The argmax remains largely unaffected by probability oscillations at the top.
-- **Autoregressive decoding is the "echo chamber"**: Even if single-step $\Delta z$ variance is moderate, autoregressive decoding amplifies KV cache state differences into sequence differences. The resulting gibberish (e.g., "ILUNNIE M ` <%=>t...") visualizes this feedback loop.
-- **Temperature $T$ regulates pruning robustness**: As $T^2$ is in the denominator, lower temperatures (sharper outputs) make pruned models significantly more fragile—a major warning for low-temperature deployments.
+- **Softmax, not the LM head, is the key amplifier**: Intuition suggests $z = Wh$ might amplify noise due to the massive vocabulary dimension, but logit cosine similarity matches embedding similarity. Linear transformation actually compresses relative orthogonal components. Softmax is the real amplifier because of its explicit dependence on logit variance and inverse temperature.
+- **Candidate token subspaces act as safety shields**: Answer tokens for multiple-choice questions often reside in the tail of the distribution, where absolute probability values and perturbation magnitudes are small. Argmax remains largely unaffected by the probability oscillations of head tokens.
+- **Auto-regression is an echo chamber, not the root cause**: Even if single-step $\Delta z$ has moderate variance, auto-regression propagates this difference into the KV cache, turning state differences into sequence divergence.
+- **Temperature $T$ regulates pruning robustness**: Since $T^2$ is in the denominator, lower temperatures (yielding sharper outputs) make the model more fragile to pruning. This provides a "red flag" for deploying pruned models with low temperature.
 
 ## Highlights & Insights
-- **Theoretical-Empirical-Performance "Closed Loop"**: The work progresses from controlled probing of representation spaces to Taylor-derived formulas, then validates predictions against task benchmarks.
-- **Decomposition of Task Robustness into Engineering Variables**: Layer hierarchy + subspace dimensionality + temporal dependency—allows predicting pruning feasibility for new tasks more efficiently than "trial-and-error" perplexity checks.
-- **Actionable `Var_r(Δz)/(2T²)` Formula**: Since it only requires single-layer perturbation statistics, it can be used for early stopping or adjusting pruning rates during the process, rather than requiring full generation for evaluation.
-- **Unified Failure Mode for Pruning and Quantization**: The authors suggest in Appendix I that quantization-induced errors follow the same logic, providing a unified mathematical perspective on model compression.
+- **Closed-loop of Theory, Empiricism, and Performance**: Using controlled probing to reveal phenomenological differences, Taylor expansion for derivation, and benchmarks for verification creates a robust analysis chain.
+- **Reduction of task robustness to three engineering variables**: Representation space (Embedding / Logit / Probability) + Task-relevant subspace dimensionality + Temporal dependency. This allows for the prediction of pruning feasibility without full benchmark runs.
+- **Actionability of `Var_r(Δz)/(2T²)`**: This metric requires only single-layer perturbation statistics, allowing it to be used for early-stopping or adjusting pruning rates during the compression process.
+- **Unified logic for pruning and quantization**: The paper suggests that quantization-induced error follows the same theoretical framework, potentially unifying compression-induced degradation research.
 
 ## Limitations & Future Work
-- The framework is training-free and does not discuss how post-training or fine-tuning might repair softmax amplification—crucial as most industrial models undergo SFT/distillation.
-- Taylor expansions are local; for multi-layer joint pruning or extreme perturbations in the first/last layers, deviations between theory and measurement require finer boundaries.
-- Experiments focus on dense LLMs (Qwen-2.5, Mistral); the behavior in MoE models (partial expert activation) or SSMs (Mamba) remains unexplored.
-- The explanation that answer tokens are "in the tail" for multiple-choice tasks is an empirical observation; the boundary conditions for prompt engineering that might shift candidates to the head are not defined.
-- Lacks an algorithmic tool for layer selection based on the $\mathrm{Var}_r(\Delta z)/(2T^2)$ metric to prevent generative collapse.
+- The framework is training-free and does not explore how post-training or fine-tuning might repair softmax amplification; in practice, most pruned models undergo SFT/distillation.
+- Taylor expansions are only valid for "local, single-layer" perturbations; joint multi-layer pruning or severe perturbations (first/last layers) might require more refined boundary analyses.
+- Experiments focus on dense LLMs (Qwen-2.5, Mistral); it is unclear if "softmax amplification" remains the primary bottleneck for MoE (partial expert activation) or SSM (Mamba) architectures.
+- The "tail token" explanation for MC task robustness is an empirical observation; the boundary conditions based on prompt engineering styles (which might shift candidate tokens to the head) are not fully explored.
+- No automated algorithm was provided for optimal layer selection based on $\mathrm{Var}_r(\Delta z)/(2T^2)$.
 
 ## Related Work & Insights
-- **vs. ShortGPT / Attn-Drop / MLP-Drop**: These methods are the subjects of analysis. This paper acts as a diagnostic tool for their failure cases rather than a replacement.
-- **vs. Wanda / SparseGPT**: The paper proves that the generative vs. non-generative split holds for both unstructured and structured intra-layer patterns.
-- **vs. Gromov et al. 2024**: While previous work noted that deeper layers are easier to prune, this work upgrades that observation by explaining *why* based on the representation space and temporal dimensions used by specific tasks.
-- **Insight**: This "controlled probe + Taylor expansion + task decomposition" paradigm can be extended to quantization, distillation, and early exit techniques. It also suggests that temperature and sampling length should be considered as co-variables for pruning feasibility.
+- **vs ShortGPT / Attn-Drop / MLP-Drop**: These methods are used as the subjects of analysis. This paper provides a closed-loop explanation for their specific failures rather than replacing them.
+- **vs Wanda / SparseGPT**: The paper demonstrates that the generative vs. non-generative split holds regardless of unstructured or structured (2:4 / 4:8) intra-layer pruning patterns.
+- **vs Gromov et al. (2024)**: While prior work observed that deeper layer removal has less impact, this paper upgrades that finding to explain *why* the impact depends on the representation space and temporal dimension used by the task.
+- **Insight**: This paradigm of "controlled probe + Taylor expansion + task decomposition" can be extended to other compression techniques. It suggests that when designing LLM deployment pipelines, temperature and output subspace should be considered co-variables of pruning feasibility.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Does not propose a new algorithm but provides the first unified framework explaining task-dependency in pruning via hierarchy and Taylor expansion.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various pruning modes, multiple LLMs, and diverse task types (retrieval/MCQ/generative); lacks MoE and post-fine-tuning scenarios.
-- Writing Quality: ⭐⭐⭐⭐⭐ Seamless integration of formulas and experiments, with clear visualization in Figures 4-8.
-- Value: ⭐⭐⭐⭐ Directly informs deployment strategies (which tasks can be pruned, temperature sensitivity), although it lacks a realized layer-selection tool.
+- Novelty: ⭐⭐⭐⭐ (While not a new algorithm, it is a high-quality analysis that first provides a unified framework for the "task-dependent" pruning gap.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Covers multiple pruning types, LLMs, and task categories; could benefit from MoE or fine-tuning scenarios.)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Excellent flow between formulas and visualization; each theoretical point is mapped clearly to experimental figures.)
+- Value: ⭐⭐⭐⭐ (Directly informs deployment strategies, though lacks a finished tool for automated layer selection.)
 
 <!-- RELATED:START -->
 
@@ -141,9 +143,9 @@ Deviation accumulation during generation (Fig. 7, Drop-8A on Qwen-2.5-7B):
 
 - [\[ICML 2026\] Multi-Adapter Representation Interventions via Energy Calibration](multi-adapter_representation_interventions_via_energy_calibration.md)
 - [\[ICML 2026\] The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works](the_bridge-garden_dilemma_in_llm_distillation_why_mixing_hard_and_soft_labels_wo.md)
+- [\[ACL 2025\] Disentangling the Roles of Representation and Selection in Data Pruning](../../ACL2025/model_compression/disentangling_the_roles_of_representation_and_selection_in_data_pruning.md)
 - [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
-- [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](../../ACL2026/model_compression/why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
-- [\[ICML 2026\] Effective Model Pruning: Measure the Redundancy of Model Components](effective_model_pruning_measure_the_redundancy_of_model_components.md)
+- [\[ICML 2025\] From Logits to Hierarchies: Hierarchical Clustering made Simple](../../ICML2025/model_compression/from_logits_to_hierarchies_hierarchical_clustering_made_simple.md)
 
 </div>
 

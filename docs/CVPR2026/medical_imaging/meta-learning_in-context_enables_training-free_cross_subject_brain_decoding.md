@@ -2,93 +2,92 @@
 title: >-
   [Paper Note] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 description: >-
-  [CVPR 2026][Medical Imaging][Brain decoding] This paper proposes BrainCoDec, a framework that performs fMRI-based visual decoding generalizable to new subjects without any fine-tuning. It employs a two-stage hierarchical…
+  [CVPR 2026][Medical Imaging][fMRI] The proposed BrainCoDec framework achieves fMRI visual decoding that generalizes to new subjects without fine-tuning through two-stage hierarchical in-context learning (estimating encoder parameters for each voxel first, then performing functional inversion via cross-voxel aggregation). It improves Top-1 retrieval accu
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Brain decoding"
-  - "meta-learning"
-  - "in-context learning"
-  - "fMRI"
-  - "cross-subject generalization"
+  - CVPR 2026
+  - Medical Imaging
+  - fMRI
 date: 2026-05-08
-content_hash: b535e547c4a6a920
+content_hash: 844315695f3e4469
 ---
-
 # Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.08537](https://arxiv.org/abs/2604.08537)  
 **Code**: [https://github.com/ezacngm/brainCodec](https://github.com/ezacngm/brainCodec)  
-**Area**: 3D Vision
-**Keywords**: Brain decoding, meta-learning, in-context learning, fMRI, cross-subject generalization
+**Area**: 3D Vision  
+**Keywords**: Brain Decoding, Meta-learning, In-Context Learning, fMRI, Cross-subject Generalization
 
 ## TL;DR
 
-This paper proposes BrainCoDec, a framework that performs fMRI-based visual decoding generalizable to new subjects without any fine-tuning. It employs a two-stage hierarchical in-context learning approach: first estimating encoder parameters for each voxel, then aggregating across voxels via functional inversion. Top-1 retrieval accuracy improves from 3.9% (MindEye2) to 22.7%.
+The proposed BrainCoDec framework achieves fMRI visual decoding that generalizes to new subjects without fine-tuning through two-stage hierarchical in-context learning (estimating encoder parameters for each voxel first, then performing functional inversion via cross-voxel aggregation). It improves Top-1 retrieval accuracy from MindEye2's 3.9% to 22.7%.
 
 ## Background & Motivation
 
-1. **Background**: fMRI-based visual decoding has achieved significant progress — by learning mappings from brain activity to visual semantic spaces, conditional generative models can reconstruct viewed images from neural signals. Methods such as MindEye2 have achieved high-fidelity reconstruction in single-subject settings.
+1.  **Background**: fMRI-based visual decoding has made significant progress—by learning mappings from brain activity to visual semantic spaces, combined with conditional generative models, viewed images can be reconstructed from brain signals. Methods like MindEye2 have achieved high-fidelity reconstruction in single-subject settings.
 
-2. **Limitations of Prior Work**: Existing models cannot generalize across subjects. Due to large inter-individual differences in neural signals (anatomical structure, functional organization, neural plasticity, etc.), training or fine-tuning a dedicated model for each new subject requires substantial data collection and computational resources.
+2.  **Limitations of Prior Work**: Current models cannot generalize across subjects. Due to immense variations in neural signals between individuals (anatomical structure, functional organization, neural plasticity, etc.), a dedicated model must be re-trained or fine-tuned for each new subject, requiring extensive data collection and computational resources.
 
-3. **Key Challenge**: Cross-subject differences in neural representations render mapping functions learned for one individual invalid for another. Existing approaches either rely on anatomical alignment (flatmaps) or employ 1D pooling or surface-based learning, all of which implicitly or explicitly require anatomical registration.
+3.  **Key Challenge**: Differences in neural representations across subjects render mapping functions learned for one individual ineffective for another. Existing methods either rely on anatomical alignment (flatmaps) or require 1D pooling/surface learning, but all implicitly or explicitly require anatomical registration.
 
-4. **Goal**: Achieve zero-shot cross-subject visual decoding — adapting to a new subject using only a small number of examples (e.g., 200 image–brain pairs), without requiring anatomical alignment or stimulus overlap.
+4.  **Goal**: Achieve zero-fine-tuning cross-subject visual decoding: adapting to a new subject using only a few examples (e.g., 200 image-brain pairs) without the need for anatomical alignment or stimulus overlap.
 
-5. **Key Insight**: Brain decoding is reformulated as the functional inversion of an encoding model — first estimating per-voxel forward model parameters (image → brain activity) via in-context learning, then inverting this forward model to decode images.
+5.  **Key Insight**: Redefining brain decoding as a functional inversion problem of encoding models—first using in-context learning to estimate forward model parameters for each voxel (image → brain activity), then inverting this forward model to decode the image.
 
-6. **Core Idea**: A meta-optimized Transformer learns the voxel-level encoding function of a new subject in-context, followed by cross-voxel contextual aggregation for functional inversion decoding — all without any gradient updates.
+6.  **Core Idea**: Use a meta-optimized Transformer to learn voxel-level encoding functions for new subjects in-context, followed by functional inversion decoding through cross-voxel contextual aggregation, entirely without gradient updates.
 
 ## Method
 
 ### Overall Architecture
 
-BrainCoDec operates through two stages of hierarchical inference:
+The core challenge BrainCoDec addresses is why brain decoding models fail when applied to different individuals. The root cause is that the tuning properties of each voxel (the smallest unit of brain activity) differ; thus, a "brain activity → image" mapping learned for one subject is invalid for another. This paper addresses this by not learning that mapping directly, but by reframing decoding as a two-step process: "build the encoding model, then invert it." Stage 1 uses in-context learning to estimate the forward response function (image → voxel activation) for each voxel of a new subject on the fly. Stage 2 feeds the response functions of all voxels, along with their activations under new stimuli, into another Transformer for cross-voxel aggregation to infer the image embedding. The entire pipeline relies on forward inference without a single gradient update, so adapting to a new subject only requires providing a few hundred "image-brain" example pairs. The two Transformers supporting this inference ($T_\theta$ for Stage 1 and $P_\gamma$ for Stage 2) are meta-optimized offline through a three-stage training process inspired by LLM paradigms. The following diagram shows the complete data flow from offline training to two-stage inference for a new subject:
 
-- **Stage 1 (Encoder Parameter Estimation)**: For each voxel, a set of (image embedding, voxel activation) pairs is provided as context, and the pretrained BrainCoRL Transformer infers the response function parameters $\omega_q$ for that voxel. This is repeated independently for all voxels of interest.
-- **Stage 2 (Contextual Functional Inversion)**: The encoder parameters $\omega_k$ and the corresponding activations $\beta_k$ for all voxels are concatenated into context tokens $c_k = [\omega_k, \beta_k]$, which are fed into a second Transformer $P_\gamma$ for cross-voxel aggregation, yielding the predicted image embedding $\hat{\mathcal{I}}$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    TR["Three-stage Training (Offline Meta-optimization of T_θ & P_γ)<br/>① Pre-training: Synthetic weights + Gaussian noise · Fixed 200 voxels<br/>② Context Extension: Random voxels U(200,4000)<br/>③ Supervised Fine-tuning: Real fMRI · Leave-one-subject-out"]
+    TR -->|Get frozen T_θ / P_γ| A["Few-shot examples from new subject<br/>~200 pairs (Image embedding ℐ + Voxel response β)"]
+    A --> B["Stage 1: In-context Encoder Parameter Estimation<br/>Estimate response function parameters ω_q per voxel using T_θ (Parallelizable)"]
+    B --> C["Collect activation β from test stimulus<br/>Pack per-voxel tokens c_k = [ω_k, β_k]"]
+    C --> D["Stage 2: Contextual Functional Inversion<br/>Variable-length token sequences (no PE + logit scaling) via P_γ [CLS] to output image embedding ℐ̂"]
+    D --> E["Nearest neighbor retrieval → Decoded image"]
+```
 
 ### Key Designs
 
-1. **Stage 1: In-Context Encoder Parameter Estimation**
+**1. Stage 1: In-context Encoder Parameter Estimation—Turning "understanding a voxel" into a forward inference**
 
-    - **Function**: Infer the visual response function parameters for each voxel of a new subject without fine-tuning.
-    - **Mechanism**: Following BrainCoRL, for voxel $v_q$, a context $\{(\mathcal{I}_t, \beta_{t,q})\}_{t=1}^n$ is constructed, where $\mathcal{I}_t$ denotes image embeddings (CLIP/DINO/SigLIP) and $\beta_{t,q}$ denotes the response of that voxel to the $t$-th image. Transformer $T_\theta$ takes these pairs as input and outputs voxel parameters: $\omega_q = T_\theta(\{(\mathcal{I}_t, \beta_{t,q})\}_{t=1}^n)$.
-    - **Design Motivation**: Each voxel exhibits distinct tuning properties (e.g., selectivity for faces or scenes). Contextual examples enable the model to infer the functional role of a given voxel.
+The direct cause of cross-subject failure is the inability to pre-determine what visual content (faces, scenes, or edge textures) a specific voxel in a new subject is sensitive to. Following the BrainCoRL approach, a set of contextual pairs $\{(\mathcal{I}_t, \beta_{t,q})\}_{t=1}^n$ is collected for a target voxel $v_q$, where $\mathcal{I}_t$ is the image embedding (CLIP / DINO / SigLIP) and $\beta_{t,q}$ is the ground-truth response of that voxel to the $t$-th image. A meta-optimized Transformer $T_\theta$ then directly reads these examples into the response function parameters for that voxel:
 
-2. **Stage 2: Contextual Functional Inversion**
+$$\omega_q = T_\theta\big(\{(\mathcal{I}_t, \beta_{t,q})\}_{t=1}^n\big)$$
 
-    - **Function**: Integrate information across multiple voxels to infer image embeddings from brain activity.
-    - **Mechanism**: Each voxel is represented as $c_k = [\omega_k, \beta_k]$; tokens from all voxels form a variable-length sequence fed into Transformer $P_\gamma$. A [CLS] token produces the output image embedding. No positional encoding is used to ensure permutation invariance. Logit scaling $\alpha_{\text{scaled}} = \frac{\log(l) \cdot q \cdot k}{\sqrt{d}}$ is applied to handle variable-length contexts.
-    - **Design Motivation**: Traditional inversion requires an overdetermined system where the number of voxels far exceeds the embedding dimension. A learned approach can handle underdetermined systems and compensate for biases in encoder estimation.
+This step is repeated independently for all voxels of interest. It eliminates the need for fine-tuning because the information regarding "what role this voxel plays" is already encoded in the contextual examples—the model does not fit parameters but **reads** them from the examples; a new subject simply requires a different set of examples.
 
-3. **Three-Stage Training Pipeline**
+**2. Stage 2: Contextual Functional Inversion—Inverting multiple forward models back to an image**
 
-    - **Function**: Progressively transition from synthetic to real fMRI data for robust training.
-    - **Mechanism**: (1) *Pre-training* — synthetic weights and Gaussian noise simulate voxel responses with a fixed context of 200 voxels; (2) *Context extension* — variable-length voxel counts (200–4000, randomly sampled) are introduced to adapt the model to varying context lengths; (3) *Supervised fine-tuning* — training on real fMRI data using leave-one-subject-out cross-validation.
-    - **Design Motivation**: This three-stage pipeline mirrors LLM training best practices. Synthetic pre-training provides large-scale training signal; variable-length context training improves generalization; real-data fine-tuning bridges the domain gap.
+Having forward functions for each voxel is insufficient; the primary goal is the reverse: given all-brain activations under a new stimulus, infer what the subject is seeing. Traditional inversion involves solving an overdetermined linear system where the number of voxels far exceeds the embedding dimensions, which is fragile and cannot correct estimation biases from the previous stage. This paper employs learned inversion: each voxel is packed into a token $c_k = [\omega_k, \beta_k]$ (its response function parameters concatenated with the current activation value). All voxel tokens form a variable-length sequence fed into Transformer $P_\gamma$, with the [CLS] token outputting the image embedding $\hat{\mathcal{I}}$. Positional encoding is intentionally omitted to ensure invariance to voxel order, and logit scaling $\alpha_{\text{scaled}} = \frac{\log(l)\cdot q\cdot k}{\sqrt{d}}$ is used to stabilize the variable-length context (where $l$ is sequence length). Learned inversion naturally handles underdetermined systems and can compensate for estimation errors from Stage 1 during aggregation.
+
+**3. Three-stage Training Process—From synthetic noise to real fMRI**
+
+Training this hierarchical model from scratch on real fMRI is hindered by insufficient data. The paper borrows from LLM training paradigms with three phases: **Pre-training** uses synthetic weights and Gaussian noise to simulate voxel responses with a fixed 200 contextual voxels, allowing the model to learn the basic "read examples to estimate parameters, aggregate to invert" routine on massive, low-cost signals. **Context Extension** changes the number of contextual voxels to a random sample of 200–4000, forcing the model to adapt to arbitrary input lengths. Finally, **Supervised Fine-tuning (SFT)** concludes with leave-one-subject-out cross-validation on real fMRI to bridge the domain gap between synthetic and real data. The value of this pipeline lies in acquiring large-scale training signals from cost-free synthetic data, achieving generalization through variable-length context training, and ensuring realism via final fine-tuning.
 
 ### Loss & Training
 
-- Combined cosine-contrastive loss: $\mathcal{L} = \mathcal{L}_{\cos} + \alpha \mathcal{L}_{\text{infoNCE}}$, jointly optimizing reconstruction fidelity and instance-level discriminability.
-- Embedding vectors are normalized to unit length.
-- Evaluation uses nearest-neighbor retrieval (Top-1/Top-5 accuracy, Mean Rank, cosine similarity).
+Training utilizes a hybrid cosine-contrastive loss $\mathcal{L} = \mathcal{L}_{\cos} + \alpha \mathcal{L}_{\text{infoNCE}}$, where the former maximizes the directional consistency between the reconstructed embedding and the ground truth, and the latter provides instance-level discriminability to prevent all outputs from collapsing into a single "average image." All embedding vectors are first normalized to unit vectors; evaluation is performed via nearest neighbor retrieval (Top-1/Top-5 accuracy, Mean Rank, Cosine Similarity).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Cross-subject decoding on NSD (held-out subjects, CLIP backbone):**
+**Cross-subject decoding on NSD dataset (Unseen subject, CLIP backbone):**
 
 | Method | S1 Top-1 | S2 Top-1 | S5 Top-1 | S7 Top-1 | Mean Top-1 | Mean Top-5 |
-|--------|----------|----------|----------|----------|------------|------------|
-| MindEye2 (w/ anatomical alignment) | 4.11% | 3.82% | 2.87% | 2.51% | 3.90% | 9.81% |
+|------|----------|----------|----------|----------|------------|------------|
+| MindEye2 (w/ Anatomical Align) | 4.11% | 3.82% | 2.87% | 2.51% | 3.90% | 9.81% |
 | TGBD | 1.27% | 0.56% | 0.84% | 0.39% | 0.82% | 3.09% |
 | **BrainCoDec-200** | **25.5%** | **22.9%** | **23.2%** | **19.2%** | **22.7%** | **54.0%** |
 
-**Cross-scanner generalization on BOLD5000 (only 20 context images):**
+**BOLD5000 Cross-scanner Generalization (Only 20 context images):**
 
 | Backbone | Top-1 Acc | Top-5 Acc | Mean Rank | Cosine Sim |
 |----------|-----------|-----------|-----------|------------|
@@ -96,47 +95,47 @@ BrainCoDec operates through two stages of hierarchical inference:
 
 ### Ablation Study
 
-| Configuration | Cosine Similarity | Note |
-|---------------|-------------------|------|
-| BrainCoDec (leave-one-subject-out) | ~0.55 | Full model |
-| BrainCoDec (no held-out subject) | ~0.56 | Target subject included in training; marginal gain |
-| Synthetic pre-training only | ~0.25 | Large gap without real data |
-| Gradient inversion | ~0.20 | Direct optimization performs worst |
+| Configuration | Cosine Sim | Description |
+|------|-----------|------|
+| BrainCoDec (Leave-one-out) | ~0.55 | Full model |
+| BrainCoDec (No leave-out) | ~0.56 | Inclusion of target subject; minimal gain |
+| Synthetic Pre-training only | ~0.25 | Large gap without real data |
+| Gradient Inversion | ~0.20 | Direct optimization performs worst |
 
 ### Key Findings
 
-- **Decisive improvement over prior methods**: Top-1 accuracy increases from 3.9% (MindEye2) to 22.7%, an approximately 6× gain, without anatomical alignment.
-- **High data efficiency**: Only 200 context images and 4,000 voxels are sufficient to approach performance with the full 9,000-image set.
-- **Cross-scanner generalization**: Tested directly on BOLD5000 (3T) with a model trained on NSD (7T); 31.45% Top-1 is achieved with only 20 context images.
-- **Robustness across functional regions**: Masking category-selective regions (e.g., face-selective FFA) has minimal impact on most categories, indicating that the model learns distributed representations.
-- **Interpretable attention maps**: Last-layer attention weights align closely with known functional regions (face stimuli → FFA/EBA; scenes → PPA/OPA/RSC).
-- **Negligible gap between leave-one-out and no-held-out settings**: This confirms genuine cross-subject generalization capability.
+-   **Significant Performance Gain**: Top-1 improved from 3.9% (MindEye2) to 22.7%, approximately a 6x gain, without anatomical alignment.
+-   **High Data Efficiency**: Using only 200 context images + 4000 voxels achieves performance close to using all 9000 images.
+-   **Cross-scanner Generalization**: Tested directly on 3T BOLD5000 (model trained on 7T NSD); 20 context images achieved 31.45% Top-1.
+-   **Functional ROI Robustness**: Masking category-selective regions (like FFA for faces) has minimal impact on most categories, suggesting the model learns distributed representations.
+-   **Explainable Attention Maps**: Final layer attention weights align highly with known functional regions (Face stimulus → FFA/EBA; Scene → PPA/OPA/RSC).
+-   **Minimal Leave-one-out vs. No leave-out Gap**: Validates the true cross-subject generalization capability of the method.
 
 ## Highlights & Insights
 
-- **"Decoding as inversion of encoding"**: Reformulating decoding as forward model estimation followed by inversion leverages the structural information of the encoding model as a strong constraint. This paradigm is transferable to other inverse problems (e.g., image restoration, signal processing).
-- **Hierarchical in-context learning**: The two stages perform in-context learning along the "stimulus" and "voxel" dimensions respectively, each with clear semantic meaning — an elegant design. The architecture of voxel-level parallelism combined with functional inversion aggregation naturally accommodates varying numbers of voxels.
-- **Synthetic pre-training pipeline**: Pre-training requires no real fMRI data, reducing dependence on expensive neural recordings. The three-stage pipeline of synthetic pre-training → variable-length context training → real-data fine-tuning mirrors LLM training best practices.
+-   **"Decoding as Encoding Inversion"**: Reconceptualizing decoding as first estimating the forward model and then inverting it utilizes the structural info of encoding models as a strong constraint.
+-   **Hierarchical In-Context Learning**: Two-stage in-context learning along "stimulus" and "voxel" dimensions respectively, with clear semantics for each stage—an elegant design. The architecture of voxel-level parallelism + functional inversion aggregation naturally adapts to varying voxel counts.
+-   **Synthetic Pre-training Pipeline**: Enables pre-training without real fMRI data, reducing reliance on expensive neural data. The three-stage flow matches LLM best practices.
 
 ## Limitations & Future Work
 
-- **Image embedding decoding only**: Current evaluation is limited to retrieval tasks; end-to-end image reconstruction is not demonstrated (though the paper notes compatibility with IP-Adapter).
-- **Context size constraint**: 200 context images still require approximately 20 minutes of fMRI scanning, which may be excessive for clinical applications.
-- **Restricted to visual cortex**: Only higher visual cortex voxels are used; whole-brain decoding is not explored.
-- **Directions for improvement**: (a) Integrating generative models for end-to-end image reconstruction; (b) Reducing the required number of context images (e.g., 10–50); (c) Extending to more accessible neural signals such as EEG/MEG; (d) Exploring cross-modal decoding (video, speech).
+-   **Embedding-only Decoding**: Current evaluation is limited to retrieval tasks, without end-to-end generative image reconstruction (though the paper mentions IP-Adapter compatibility).
+-   **Context Size Constraints**: 200 images still require approx. 20 minutes of fMRI scanning, which remains high for clinical applications.
+-   **Vision Cortex Only**: Currently restricted to high-level visual cortex voxels; possibilities for whole-brain decoding are unexplored.
+-   **Future Directions**: (a) End-to-end image reconstruction with generative models; (b) Reducing required context (e.g., 10-50 images); (c) Extending to EEG/MEG; (d) Exploring cross-modal decoding (video, speech).
 
 ## Related Work & Insights
 
-- **vs. MindEye2**: MindEye2 uses MNI anatomical alignment for cross-subject adaptation but achieves only 3.9% Top-1, far below BrainCoDec's 22.7%. The key difference is that BrainCoDec bypasses anatomical alignment through functional in-context learning.
-- **vs. TGBD**: TGBD attempts template-guided brain decoding but achieves only 0.82% Top-1, demonstrating that approaches that ignore subject-specific information perform poorly.
-- **vs. BrainCoRL**: Stage 1 of BrainCoDec directly adopts BrainCoRL's encoder parameter estimation; the innovation lies in the addition of the Stage 2 functional inversion decoder, which translates encoding capability into decoding capability.
+-   **vs. MindEye2**: MindEye2 uses MNI anatomical alignment for cross-subject adaptation, but Top-1 is only 3.9%, far below BrainCoDec's 22.7%. The key difference is that BrainCoDec bypasses the need for anatomical alignment through functional in-context learning.
+-   **vs. TGBD**: TGBD attempts template-guided decoding but reaches only 0.82% Top-1, indicating methods neglecting subject-specific info perform poorly.
+-   **vs. BrainCoRL**: Stage 1 of BrainCoDec directly adopts BrainCoRL's encoder parameter estimation but innovates by adding the Stage 2 functional inversion decoder.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The hierarchical in-context learning approach to brain decoding is highly original; the formalization of "decoding = inversion of encoding" is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Leave-one-subject-out cross-validation on four NSD subjects, cross-scanner evaluation on BOLD5000, ROI dropout analysis, attention visualization, and multi-backbone validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clearly articulated, methods are described in detail, and figures are visually refined and highly informative.
-- Value: ⭐⭐⭐⭐⭐ Represents a critical step toward a general-purpose brain decoding foundation model; substantial practical performance gains with far-reaching implications for BCI research.
+-   Novelty: ⭐⭐⭐⭐⭐ 
+-   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+-   Writing Quality: ⭐⭐⭐⭐⭐ 
+-   Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -145,10 +144,10 @@ BrainCoDec operates through two stages of hierarchical inference:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
+- [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/medical_imaging/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
 - [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](../../AAAI2026/medical_imaging/mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
 - [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](../../NeurIPS2025/medical_imaging/zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
-- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 
 </div>
 

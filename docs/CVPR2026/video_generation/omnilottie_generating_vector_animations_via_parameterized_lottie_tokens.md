@@ -2,132 +2,125 @@
 title: >-
   [Paper Note] OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 description: >-
-  [CVPR 2026][Video Generation][Lottie] OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences…
+  [CVPR 2026][Video Generation][Lottie] OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences. This enables pre-trained VLMs to generate high-quality vector animations based on multi-modal cross-instructions. The work also constructs the MMLottie-2M large-scale dataset to support training.
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Lottie"
-  - "vector animation"
-  - "tokenization"
-  - "multimodal instruction"
-  - "VLM generation"
+  - CVPR 2026
+  - Video Generation
+  - Lottie
+  - tokenization
 date: 2026-05-08
-content_hash: b0fea873d3dafc85
+content_hash: 822c6fae32c9bee0
 ---
-
 # OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.02138](https://arxiv.org/abs/2603.02138)  
-**Code**: To be confirmed (paper references a Project Page)  
-**Area**: Multimodal VLM / Vector Animation Generation
-**Keywords**: Lottie, vector animation, tokenization, multimodal instruction, VLM generation
+**Code**: To be confirmed (Paper mentions Project Page)  
+**Area**: Video Generation  
+**Keywords**: Lottie, Vector Animation, tokenization, Multi-modal instruction, VLM generation
 
 ## TL;DR
-OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences, enabling pretrained VLMs to generate high-quality vector animations from multimodal cross-modal instructions. The work also introduces the MMLottie-2M large-scale dataset to support training.
+OmniLottie proposes a Lottie Tokenizer that converts Lottie JSON files into structured command-parameter sequences. This enables pre-trained VLMs to generate high-quality vector animations based on multi-modal cross-instructions. The work also constructs the MMLottie-2M large-scale dataset to support training.
 
 ## Background & Motivation
 
-### State of the Field
-Vector animations (e.g., SVG animations, Lottie format) are widely used in UI design, mobile applications, and web development. They are compact, resolution-independent, and programmatically editable. However, automated vector animation generation remains largely unexplored—existing work primarily focuses on static vector graphics or pixel-level video generation.
+### Background
+Vector animations (e.g., SVG animations, Lottie format) are widely used in UI design, mobile apps, and web pages due to their small size, resolution independence, and programmable editability. However, automated generation of vector animations remains an underexplored direction—existing works primarily focus on static vector graphics or pixel-level video generation.
 
 ### Limitations of Prior Work
 
-**Redundancy in Lottie JSON**: Raw Lottie files contain large amounts of invariant structural metadata and format tokens (e.g., brackets, key names), which constitute significant noise for learning animation generation.
+**Redundancy of Lottie JSON**: Original Lottie files contain substantial invariant structural metadata and formatting tokens (e.g., brackets, key names), which act as significant noise for learning animation generation.
 
-**Lack of training data**: No large-scale paired dataset of vector animations and text descriptions exists.
+**Lack of Training Data**: There is a lack of large-scale paired datasets for vector animation and text.
 
-**VLMs cannot understand animation formats**: Existing VLMs generate only text or images and cannot directly output structured animation representations.
+**VLM's Lack of Format Understanding**: Existing VLMs can only generate text or images and cannot directly output structured animation descriptions.
 
-### Root Cause
-Lottie is the most popular vector animation format, yet its JSON representation is unfriendly to machine learning—redundant format tokens cause sequence lengths to explode, making it difficult to learn effective generative models.
+### Key Challenge
+Lottie is the most popular vector animation format, but its JSON representation is unfriendly to machine learning. Redundant formatting tokens cause sequence lengths to explode, making it difficult to learn effective generative models.
 
 ### Core Idea
-Design a **Lottie Tokenizer** that converts Lottie JSON into compact command-plus-parameter sequences (eliminating all structural redundancy), enabling pretrained VLMs to autoregressively generate vector animations in the same manner as natural language generation.
+Design a **Lottie Tokenizer** to convert Lottie JSON into compact command + parameter sequences (removing all structural redundancy), allowing pre-trained VLMs to generate vector animations autoregressively, similar to natural language generation.
 
 ## Method
 
 ### Overall Architecture
-OmniLottie comprises three core components:
-1. **Lottie Tokenizer**: JSON → command-parameter sequences
-2. **OmniLottie Model**: Built upon a pretrained VLM, accepts multimodal instruction inputs, and autoregressively generates Lottie token sequences
-3. **MMLottie-2M Dataset**: Large-scale vector animation corpus with text and visual annotations
+OmniLottie transforms the task of "generating a vector animation" into "autoregressive sequence generation," a task pre-trained VLMs already excel at. Its key observation is that while Lottie is essentially a JSON file, the majority of characters are invariant structural metadata (version numbers, key names, indentation). Only the layer shapes, transformations, and keyframe interpolations carry animation semantics. The pipeline first uses a Tokenizer to parse and parameterize the Lottie JSON into a compact "command + parameter" token sequence. A VLM with an expanded vocabulary (Qwen2.5-VL) then receives multi-modal instructions (text/image/video) and autoregressively generates the tokens. Finally, these are de-tokenized back into valid Lottie files for rendering. To support training and evaluation, the authors created the MMLottie-2M dataset (2 million samples) and the MMLottie-Bench baseline.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    DATA["MMLottie-2M Dataset<br/>Multi-platform Animations + SVG-Lottie + Motion Library Augmentation"] --> TOK
+    RAW["Lottie JSON"] --> TOK["Lottie Tokenizer Encoding<br/>Parse 5 Layer Types + Offset Quantization"]
+    TOK --> SEQ["Command-Parameter Token Sequence<br/>Lossless Compression, Significant Length Reduction"]
+    INSTR["Multi-modal Instructions<br/>Text / Image / Video"] --> MODEL
+    SEQ --> MODEL["OmniLottie Model<br/>Qwen2.5-VL with Extended Lottie Vocab, Autoregressive Generation"]
+    MODEL --> GEN["Generated Lottie Tokens"]
+    GEN --> DETOK["Tokenizer Decoding<br/>Restore Valid Lottie JSON"]
+    DETOK --> OUT["Rendering & Playback<br/>Vector Animation"]
+```
 
 ### Key Designs
 
-#### 1. Lottie Tokenizer
-- **Function**: Converts Lottie JSON files into structured command-parameter sequences
-- **Mechanism**: Traverses the JSON tree structure and extracts three categories of meaningful information:
-    - **Shape Commands**: Geometric instructions such as `MOVE_TO(x, y)` and `BEZIER(cx1, cy1, cx2, cy2, x, y)`
-    - **Animation Functions**: Keyframe interpolation descriptors such as `EASE_IN(start_frame, end_frame, start_val, end_val)`
-    - **Control Parameters**: Color, opacity, transformation matrices, etc.
-- **Design Motivation**: All redundant JSON formatting (indentation, brackets, key names) is eliminated, compressing sequence length to approximately 15–20% of the original
-- **Novelty**: Methods that train directly on raw JSON must handle sequences of ~10k+ tokens; the Lottie Tokenizer reduces this to ~1–2k tokens
+**1. Lottie Tokenizer: Parsing and parameterizing redundant JSON into command-parameter sequences to shorten sequences for effective learning.**
 
-#### 2. OmniLottie Model Architecture
-- **Function**: Extends a pretrained VLM (e.g., LLaVA) by augmenting its vocabulary with Lottie command tokens, enabling autoregressive generation of Lottie sequences from multimodal instructions
-- **Mechanism**:
-    - Approximately 200 Lottie-specific tokens (shape commands, animation function names, etc.) are added to the VLM vocabulary
-    - Parameter values (coordinates, colors, etc.) are represented as quantized numeric tokens
-    - Standard next-token prediction loss is used during training
-- **Design Motivation**: Leverages the language and visual understanding capabilities of pretrained VLMs, casting vector animation generation as a sequence generation problem
-- **Multimodal Support**: Accepts diverse inputs including text descriptions (e.g., "draw a bouncing ball"), reference images, and sketches
+The main issue with feeding raw Lottie JSON into models is sequence explosion—most characters are structural metadata with zero contribution to animation semantics, diluting effective signals. The Tokenizer operates in two steps. **First, Parameterization**: The Lottie tree is decomposed into basic metadata $M=\{v, fr, ip, op, w, h, nm, ddd\}$ and $N$ layers. Each layer is parsed according to its type (the paper supports five types: pre-composition ty=0, solid ty=1, null ty=3, shape ty=4, text ty=5) into transformations, effects, and shape paths, then flattened into a series of "command + parameter" function calls (e.g., `CMD_ANIMATION`, `CMD_POINT`). **Second, Discretization**: Offset-based quantization maps continuous parameters (coordinates, time, transformations) to discrete tokens: $\text{token}(x,t)=\lfloor x\cdot s_t\rfloor+o_t$, where $s_t$ is the scaling factor for the parameter type and $o_t$ is the vocabulary offset. Different parameter types (time, space, index, speed, style) occupy non-overlapping offset ranges to avoid token conflicts while preserving semantics. This process is lossless. Removing format redundancy significantly shortens sequences, allowing the autoregressive model to perceive the entire animation structure within a limited context.
 
-#### 3. MMLottie-2M Dataset
-- **Function**: A large-scale vector animation dataset containing 2 million professionally designed vector animations
-- **Mechanism**: Professionally designed Lottie animations are collected from platforms such as LottieFiles; VLMs are used to automatically generate text descriptions and visual annotations
-- **Scale**: 2 million animations with text descriptions and visual annotations (keyframe screenshots)
+**2. OmniLottie Model: Integrating Lottie tokens into the Qwen2.5-VL vocabulary to align animation generation with the language modeling paradigm.**
 
-## Key Experimental Results
+The authors use Qwen2.5-VL as the backbone and extend its vocabulary with randomly initialized Lottie token embeddings. This integrates the Lottie sequence into the same discrete vocabulary. Training uses the standard next-token cross-entropy loss: $$\theta^*=\arg\min_\theta -\sum_{i} \log P(x_s^{[i]}\mid x_c; x_s^{[<i]}; \theta)$$, where $x_c$ represents the multi-modal instruction condition. Leveraging a pre-trained VLM inherits its multi-modal understanding, enabling support for three tasks: Text-to-Lottie, Text-Image-to-Lottie, and Video-to-Lottie.
 
-### Main Results: Vector Animation Generation Quality
+**3. MMLottie-2M and MMLottie-Bench: Addressing the lack of large-scale paired data and standardized evaluation.**
+
+Data: The authors crawled Lottie animations from platforms like LottieFiles, IconScout, and Flaticon, cleaning unparameterizable elements (base64 images, audio). To mitigate the scarcity of native animations, they used static SVGs from OmniSVG paired with preset motions (SVG-Lottie) and extracted motion trajectories from 1 million real Lotties to create a "motion template library" for augmentation. This resulted in a 2-million-scale dataset. Each animation was automatically labeled by a VLM with descriptions and frame-by-frame temporal details. Evaluation: MMLottie-Bench was established, containing 450 real samples (Real Subset) and a Synthetic Subset generated via GPT-4o / Gemini, evaluated based on visual quality and multi-modal alignment.
+
+### Main Results: Generation Quality
 
 | Method | FID ↓ | CLIP Score ↑ | Human Preference (%) |
-|--------|-------|-------------|----------------------|
+|------|-------|-------------|-------------|
 | DeepSVG + Motion | 142.3 | 0.21 | 12.3 |
 | SVGDreamer | 98.7 | 0.28 | 22.8 |
 | AnimateDiff (pixel) | 45.2 | 0.35 | 28.4 |
-| **OmniLottie** | **38.6** | **0.41** | **36.5** |
+| **Ours** | **38.6** | **0.41** | **36.5** |
 
 ### Ablation Study
 
-| Configuration | CLIP Score ↑ | Notes |
-|---------------|-------------|-------|
+| Configuration | CLIP Score ↑ | Description |
+|------|-------------|------|
 | Full OmniLottie | 0.41 | Complete method |
-| w/o Lottie Tokenizer (raw JSON) | 0.24 | Raw JSON text; overly long sequences degrade quality |
-| w/o Animation Functions | 0.33 | Only static shapes generated; no animation |
-| w/o MMLottie Pretrain | 0.31 | No large-scale dataset pretraining |
+| w/o Lottie Tokenizer (raw JSON) | 0.24 | Direct JSON text; sequence too long, quality drops |
+| w/o Animation Functions | 0.33 | Generates static shapes only, no animation |
+| w/o MMLottie Pretrain | 0.31 | Without large-scale pre-training |
 
 ### Key Findings
-- **The Lottie Tokenizer is the critical component**—removing it drops CLIP Score from 0.41 to 0.24, as raw JSON is too verbose for the model to learn effectively
-- Generated vector animations play smoothly on mobile devices at roughly 1/100th the file size of pixel-based video
-- The flexibility of multimodal instruction is validated—text, images, and sketches all yield semantically aligned animations
-- The model can generate complex scenes involving multiple objects and multi-layer animations
+- **The Lottie Tokenizer is core**: Removing it drops the CLIP Score from 0.41 to 0.24 because raw JSON is too verbose for the model to learn effectively.
+- Generated vector animations play smoothly on mobile devices with file sizes ~1/100th of equivalent pixel videos.
+- Multi-modal instruction flexibility is verified—text, image-text, and video inputs all generate semantically aligned animations.
+- The model can generate complex scenes with multiple objects and multi-layered animations.
 
 ## Highlights & Insights
-- **Casting vector animation generation as sequence generation**—the Lottie Tokenizer design elegantly aligns this seemingly unconventional task with the LLM paradigm
-- **MMLottie-2M fills a critical data gap**—a professionally designed vector animation dataset at the 2-million scale is a valuable community resource
-- **High practical utility**—generated Lottie files can be directly integrated into app and web development without post-processing
-- **Broader implications for structured format design**—the Lottie Tokenizer approach is generalizable to other structured format generation tasks (e.g., CAD, SVG, code ASTs)
+- **Transforming vector animation generation into sequence generation**: The Lottie Tokenizer design perfectly aligns this task with the LLM paradigm.
+- **Filling the data gap with MMLottie-2M**: The 2-million-scale professional vector animation dataset is a major resource for the community.
+- **High practical value**: Generated Lottie files can be used directly in App/Web development without post-processing.
+- **Inspiration for serialized format design**: The logic of the Lottie Tokenizer can be extended to other structured formats (e.g., CAD, SVG, Code AST).
 
 ## Limitations & Future Work
-- Currently limited to the Lottie format; extension to SVG animation or CSS animation is not addressed
-- Generation quality for complex animations (e.g., those involving masks, blend modes, or expressions) requires further improvement
-- Parameter value quantization introduces precision loss—subtle animation curves may be coarsened
-- Automatic evaluation metrics for animation temporal quality are lacking—FID and CLIP Score primarily assess static frames
-- The model does not support interactive editing of generated animations
+- Currently supports only the Lottie format; not extended to SVG or CSS animations.
+- Generation quality for complex animations (e.g., masks, blend modes, expressions) needs improvement.
+- Quantization of parameter values introduces precision loss; subtle animation curves may be coarsened.
+- Lack of automatic metrics for evaluating temporal animation quality—FID and CLIP primarily assess static frames.
+- The model does not support interactive editing of generated animations.
 
 ## Related Work & Insights
-- **vs. DeepSVG**: DeepSVG targets static vector graphic generation via VAEs and does not support animation. OmniLottie is specifically designed for animation dynamics.
-- **vs. AnimateDiff**: AnimateDiff generates pixel-level video. OmniLottie produces vector format output that is compact and editable.
-- **vs. SVGDreamer**: SVGDreamer uses diffusion models to generate SVGs but does not support animation or multimodal input.
-- **Insight**: Tokenization of structured formats serves as a key bridging mechanism for integrating traditional design tools with AI generation.
+- **vs. DeepSVG**: DeepSVG focuses on VAE generation of static vector graphics and does not support animation.
+- **vs. AnimateDiff**: AnimateDiff generates pixel videos; OmniLottie generates editable, small-footprint vector formats.
+- **vs. SVGDreamer**: SVGDreamer uses diffusion for SVGs but lacks animation and multi-modal input support.
+- **Insight**: Tokenization of structured formats is the key bridge connecting traditional design tools with AI generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First work to model vector animation generation as sequence generation; the Lottie Tokenizer design is elegant
-- Experimental Thoroughness: ⭐⭐⭐⭐ Human evaluation + automatic metrics + ablation study; animation temporal quality evaluation is absent
-- Writing Quality: ⭐⭐⭐⭐ Problem motivation is clearly articulated; tokenizer design visualizations are well executed
-- Value: ⭐⭐⭐⭐⭐ Triple contributions of dataset, method, and application value; pioneering significance for the vector animation generation field
+- Novelty: ⭐⭐⭐⭐⭐ Modeling vector animation as sequence generation is a first; Tokenizer design is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes human evaluation and ablations, but lacks temporal quality metrics.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem introduction and good visualization of tokenizer design.
+- Value: ⭐⭐⭐⭐⭐ Significant contributions in dataset, method, and application value.
 
 <!-- RELATED:START -->
 
@@ -136,10 +129,10 @@ OmniLottie comprises three core components:
 ## Related Papers
 
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
+- [\[CVPR 2026\] Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure](vector_prism_animating_vector_graphics_by_stratifying_semantic_structure.md)
+- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
-- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
-- [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](../../ICCV2025/video_generation/generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
+- [\[CVPR 2026\] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](yose_you_only_select_essential_tokens_for_efficient_dit-based_video_object_remov.md)
 
 </div>
 

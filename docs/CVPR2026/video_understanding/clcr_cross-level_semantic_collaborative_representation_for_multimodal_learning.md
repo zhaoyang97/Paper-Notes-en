@@ -2,41 +2,35 @@
 title: >-
   [Paper Note] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 description: >-
-  [CVPR 2026][Video Understanding][Cross-level semantic alignment] This paper proposes the CLCR framework, which organizes each modality's features into three semantic hierarchy levels (shallow/middle/deep). An intra-level…
+  [CVPR 2026][Video Understanding][Paper Note] The CLCR framework is proposed to organize each modal feature into three semantic levels (shallow/middle/deep). It utilizes an Intra-level Controlled Exchange Domain (IntraCED) to restrict cross-modal interaction within a shared subspace and an Inter-layer Collaborative Aggregation Domain (InterCAD) for adaptive cross-
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Cross-level semantic alignment"
-  - "shared-private disentanglement"
-  - "multimodal fusion"
-  - "sentiment analysis"
-  - "event localization"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: e0d965dc97f2b282
+content_hash: bd884bd779b0fa82
 ---
-
 # CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19605](https://arxiv.org/abs/2602.19605)  
-**Code**: N/A  
-**Area**: Video Understanding
-**Keywords**: Cross-level semantic alignment, shared-private disentanglement, multimodal fusion, sentiment analysis, event localization
+**Code**: None  
+**Area**: Video Understanding  
+**Keywords**: Cross-level semantic alignment, shared-private decoupling, multimodal fusion, sentiment analysis, event localization
 
 ## TL;DR
 
-This paper proposes the CLCR framework, which organizes each modality's features into three semantic hierarchy levels (shallow/middle/deep). An intra-level Controlled Exchange Domain (IntraCED) restricts cross-modal interaction to the shared subspace only, while an inter-level Collaborative Aggregation Domain (InterCAD) enables adaptive cross-level fusion, addressing the cross-level semantic asynchrony problem in multimodal learning.
+The CLCR framework is proposed to organize each modal feature into three semantic levels (shallow/middle/deep). It utilizes an Intra-level Controlled Exchange Domain (IntraCED) to restrict cross-modal interaction within a shared subspace and an Inter-layer Collaborative Aggregation Domain (InterCAD) for adaptive cross-layer fusion, addressing the cross-level semantic asynchrony problem in multimodal learning.
 
 ## Background & Motivation
 
-Multimodal learning aims to capture shared and private information from multiple modalities (language, vision, acoustics). Two dominant paradigms both suffer from a common limitation:
+Multimodal learning aims to capture shared and private information across multiple modalities (language, visual, acoustic). Existing mainstream directions exhibit shared limitations:
 
-**Feature disentanglement methods** (MISA, DMD, etc.): Learn modality-invariant/modality-specific subspaces, but assume cross-modal interaction occurs at a single semantic level.
+**Feature Decoupling Methods** (MISA, DMD, etc.): These learn modality-invariant/modality-specific subspaces but assume cross-modal interactions occur at a single semantic level.
 
-**Dynamic calibration methods** (MLA, ARL, etc.): Adjust contribution weights at the sample/modality level, but equally ignore hierarchical structure.
+**Dynamic Calibration Methods** (MLA, ARL, etc.): These adjust contribution weights at the sample/modality level but similarly overlook the hierarchical structure.
 
 **Core Problem: Cross-Level Semantic Asynchrony**
-- Shallow layers capture lexical/frame-level cues; middle layers encode phrase/prosodic structure; deep layers reflect discourse intent/event context.
+- Shallow levels capture lexical/frame-level cues, middle levels encode phrase/prosodic structures, and deep levels reflect discourse intent/event context.
 - Mixing tokens from different levels leads to semantic confusion, error propagation, and private information leakage.
 - From an information bottleneck perspective, unstructured mixing tends to increase $I(Z;N)$ rather than $I(Z;Y)$.
 
@@ -44,66 +38,55 @@ Multimodal learning aims to capture shared and private information from multiple
 
 ### Overall Architecture
 
-CLCR consists of three core components:
-1. **Semantic-Hierarchy Encoder**: Constructs three semantic hierarchy levels for each modality.
-2. **Intra-level Controlled Exchange Domain (IntraCED)**: Performs controlled cross-modal exchange independently at each level.
-3. **Inter-level Collaborative Aggregation Domain (InterCAD)**: Synchronizes and aggregates the final task representation across levels.
+CLCR aims to address the fact that features for language, vision, and acoustics are distributed across different semantic levels—lexical vs. intent in text, appearance vs. event in video. Traditional multimodal fusion often flattens all tokens into the same level, causing contamination between shallow details and deep semantics. CLCR explicitly preserves these "levels": each modality is expanded into shallow/middle/deep levels (Semantic Hierarchy Encoder). Then, **within each level**, only cross-modal shared information is allowed a controlled exchange while isolating private information (IntraCED). Finally, the results of the three levels are weighted by importance, synchronized, and aggregated into a task representation (InterCAD). The pipeline consists of: Three-level Encoding → Level-wise Controlled Interaction → Cross-layer Weighted Aggregation → Output Prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Trimodal Input<br/>Language / Visual / Acoustic"] --> ENC["Semantic Hierarchy Encoder<br/>BERT Early/Mid/Late · TCN 3-stage → S/M/D Levels"]
+    ENC -->|Level-wise| INTRA
+    subgraph INTRA["IntraCED: Intra-level Controlled Exchange"]
+        direction TB
+        ORTH["Shared-Private Orthogonal Decomposition<br/>Stiefel Manifold Isolates Private Components"] --> EXCH["Controlled Token Budget Exchange<br/>Truncated Simplex Sparsity + Cross-modal Attention"]
+    end
+    INTRA --> INTER
+    subgraph INTER["InterCAD: Cross-layer Aggregation"]
+        direction TB
+        SYNC["Cross-layer Weighted Synchronization<br/>Level Weights ω Weights Three Summaries"] --> AGG["Dual-path Aggregation<br/>Shared Attn Selects Modality + Private Confidence Gating"]
+    end
+    INTER --> OUT["Prediction Head<br/>Shared Flow ⊕ Private Flow → ŷ"]
+```
 
 ### Key Designs
 
-#### 1. Semantic-Hierarchy Encoder
+**1. Semantic Hierarchy Encoder: Expanding each modality into shallow/mid/deep levels rather than compressing into a single vector.**
 
-For each modality $m \in \{L, V, A\}$, three-level features of uniform width $d$ are constructed:
+The root of cross-level semantic asynchrony is that "intra-modal hierarchies exist but are flattened during fusion." CLCR explicitly builds this hierarchy: for each modality $m \in \{L, V, A\}$, it constructs three levels of features $H_\ell^{(m)} = \text{LN}(Z_\ell^{(m)} W_\ell^{(m)} + P_\ell^{(m)})$ with a uniform width $d$, where $\ell \in \{1,2,3\}$. For language, it takes the early/mid/late layers of a pre-trained BERT. For visual and acoustic modalities, it uses a three-stage TCN with increasing receptive fields to approximate the same shallow-to-deep structure—local appearance, component structure, and long-range scene context. This ensures all subsequent exchange and aggregation occur on "aligned hierarchical semantics."
 
-$$H_\ell^{(m)} = \text{LN}(Z_\ell^{(m)} W_\ell^{(m)} + P_\ell^{(m)})$$
+**2. IntraCED: Restricting intra-level interaction to the shared subspace and exchanging only high-value tokens.**
 
-- **Language modality**: Early/middle/late layers of pretrained BERT → lexical-syntactic / phrase-level sentiment / discourse intent.
-- **Visual/acoustic modalities**: Three-stage TCN with increasing receptive fields → local appearance / part structure / long-range scene context.
-
-#### 2. IntraCED: Intra-Level Controlled Exchange
-
-**Shared-private orthogonal decomposition**: Orthonormal bases $U_\ell^{sh}$ and $U_{\ell,m}^{pr}$ are learned via Stiefel parameterization:
-
-$$h_{\ell,t,sh}^{(m)} = h_{\ell,t}^{(m)} P_\ell^{sh}, \quad h_{\ell,t,pr}^{(m)} = h_{\ell,t}^{(m)} P_{\ell,m}^{pr}$$
-
-Only shared components participate in cross-modal exchange; private components are fully isolated.
-
-**Controlled Token Budget**: Not all shared tokens are worth exchanging. The shared evidence strength $e_{\ell,t}^{(m)} = \|h_{\ell,t,sh}^{(m)}\|_2$ is measured for each token, mapped to activation weights via learnable scales and level-specific thresholds, and projected onto a truncated simplex to enforce sparsity:
+Even with levels, fusing entire features via cross-modal attention allows private information leakage and noise interference. IntraCED employs two gates. The first is **Shared-Private Orthogonal Decomposition**: through Stiefel manifold parameterization, each token is projected into a shared component $h_{\ell,t,sh}^{(m)} = h_{\ell,t}^{(m)} P_\ell^{sh}$ and a private component $h_{\ell,t,pr}^{(m)} = h_{\ell,t}^{(m)} P_{\ell,m}^{pr}$. Orthogonality ensures no structural overlap, allowing only shared components to be exchanged. The second is a **Controlled Token Budget**: a shared evidence score $e_{\ell,t}^{(m)} = \|h_{\ell,t,sh}^{(m)}\|_2$ is calculated for each token, mapped via learnable scales and thresholds, and projected onto a truncated simplex with a budget cap to enforce sparsity:
 
 $$\boldsymbol{\alpha}_\ell^{(m)} = \text{Proj}_{\Delta(B_\ell)}(\tilde{\boldsymbol{\alpha}}_\ell^{(m)})$$
 
-where $B_\ell$ is a learnable budget controlling the number of tokens participating in exchange.
+where $B_\ell$ is a learnable budget controlling how many tokens enter the exchange pool. The actual exchange involves each modality querying the shared token pools of others: $\tilde{h}_{\ell,t,sh}^{(m)} = \alpha_{\ell,t}^{(m)} \text{Attn}(Q_{\ell,t}^{(m)}, K_\ell^{(-m)}, V_\ell^{(-m)})$.
 
-**Three-modality shared-space exchange**: Each modality queries the shared token pool of the remaining modalities:
+**3. InterCAD: Weighted synchronization of levels and modality-aware aggregation.**
 
-$$\tilde{h}_{\ell,t,sh}^{(m)} = \alpha_{\ell,t}^{(m)} \text{Attn}(Q_{\ell,t}^{(m)}, K_\ell^{(-m)}, V_\ell^{(-m)})$$
-
-The budget $\alpha$ controls how much external evidence each token absorbs.
-
-#### 3. InterCAD: Inter-Level Collaborative Aggregation
-
-**Cross-level semantic synchronization**: Mean pooling + LN are applied to the shared/private streams at each level and modality to obtain summaries $s_\ell^{(m)}$ and $p_\ell^{(m)}$. Level weights $\omega = [\omega_1, \omega_2, \omega_3]$ are computed via MLP + softmax:
-
-$$\bar{s}^{(m)} = \sum_{\ell=1}^3 \omega_\ell s_\ell^{(m)}, \quad \bar{p}^{(m)} = \sum_{\ell=1}^3 \omega_\ell p_\ell^{(m)}$$
-
-**Modality selection and private aggregation**:
-- Shared path: A global context $\bar{g}$ serves as query; per-modality $\bar{s}^{(m)}$ serve as keys; scaled dot-product attention selects the most informative modality.
-- Private path: Confidence-gated aggregation $\eta_m = \sigma(w_p^\top \text{LN}(W_p \bar{p}^{(m)}))$.
-
-Final task representation: $\hat{y} = f_\theta(z_{sh} \oplus u_{pr})$
+After level-wise exchange, the framework determines which level and modality are more important for the sample. InterCAD performs **Cross-layer Synchronization**: for each level and modality, the shared and private flows are mean-pooled to obtain summaries $s_\ell^{(m)}$ and $p_\ell^{(m)}$. A set of level weights $\omega = [\omega_1, \omega_2, \omega_3]$ is computed via MLP + softmax, yielding modality-level summaries $\bar{s}^{(m)} = \sum_{\ell} \omega_\ell s_\ell^{(m)}$ and $\bar{p}^{(m)} = \sum_{\ell} \omega_\ell p_\ell^{(m)}$. Aggregation follows two paths: the Shared Path uses global context $\bar{g}$ to attend to informative modalities, while the Private Path uses confidence gating $\eta_m = \sigma(w_p^\top \text{LN}(W_p \bar{p}^{(m)}))$ to retain modality-specific cues. The concatenated result is fed to the prediction head: $\hat{y} = f_\theta(z_{sh} \oplus u_{pr})$.
 
 ### Loss & Training
 
 $$\mathcal{L}_{all} = \mathcal{L}_{task} + \lambda_{inter} \mathcal{L}_{Inter} + \lambda_{intra} \mathcal{L}_{Intra}$$
 
-**Intra-level regularization $\mathcal{L}_{Intra}$**: A whitening cross-correlation identifiability regularizer that penalizes correlation between private streams of different modalities and between private-shared streams of the same modality.
+**Intra-level Regularization $\mathcal{L}_{Intra}$**: Identifiability regularization based on whitened cross-correlation, penalizing correlation between private flows of different modalities and between private/shared flows of the same modality.
 
-**Inter-level regularization $\mathcal{L}_{Inter}$**: Three constraints —
-- $\mathcal{L}_{pr}$: Reduces cross-level private redundancy.
-- $\mathcal{L}_{sp}$: Suppresses cross-level shared-private leakage.
-- $\mathcal{L}_{mix}$: Penalizes the simultaneous activation of semantically incompatible level pairs.
+**Inter-layer Regularization $\mathcal{L}_{Inter}$**: Three constraints—
+- $\mathcal{L}_{pr}$: Reduces cross-layer private redundancy.
+- $\mathcal{L}_{sp}$: Inhibits cross-layer shared-private leakage.
+- $\mathcal{L}_{mix}$: Penalizes simultaneous activation of semantically incompatible level pairs.
 
-Training configuration: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch size 64, 100 epochs, A100 GPU.
+Training Config: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch 64, 100 epochs, A100 GPU.
 
 ## Key Experimental Results
 
@@ -112,7 +95,7 @@ Training configuration: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch si
 **Table 1: Audio-Visual Benchmarks (Acc% / F1%)**
 
 | Method | CREMA-D Acc | KS Acc | AVE Acc | UCF101 Acc |
-|--------|-------------|--------|---------|------------|
+|------|-----------|--------|---------|-----------|
 | ARL | 76.46 | 74.09 | 72.61 | 83.06 |
 | D&R | 73.52 | 69.10 | 69.62 | 82.11 |
 | **CLCR** | **77.92** | **75.41** | **73.82** | **83.64** |
@@ -120,7 +103,7 @@ Training configuration: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch si
 **Table 2: Multimodal Sentiment Analysis (CMU-MOSI / CMU-MOSEI)**
 
 | Method | MOSI MAE↓ | MOSI Acc-2 | MOSEI MAE↓ | MOSEI Acc-2 |
-|--------|-----------|------------|------------|-------------|
+|------|----------|-----------|-----------|-----------|
 | DLF | 0.731 | 85.06 | 0.536 | 85.42 |
 | EMOE | 0.710 | 85.4 | 0.536 | 85.3 |
 | **CLCR** | **0.678** | **88.05** | **0.511** | **87.96** |
@@ -130,49 +113,49 @@ Training configuration: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch si
 **Table 3: Key Component Ablation (MOSI MAE↓ / KS Acc)**
 
 | Variant | MOSI MAE | KS Acc |
-|---------|----------|--------|
+|------|---------|--------|
 | w/o Hierarchy | 0.720 | 71.9 |
 | w/o IntraCED | 0.703 | 73.0 |
 | w/o InterCAD | 0.699 | 73.4 |
-| Full Mix (shuffled levels) | 0.743 | 70.3 |
-| w/o both regularizations | 0.725 | 71.2 |
-| **CLCR (full)** | **0.678** | **75.41** |
+| Full Mix (Shuffled) | 0.743 | 70.3 |
+| w/o Regularization | 0.725 | 71.2 |
+| **CLCR (Full)** | **0.678** | **75.41** |
 
 ### Key Findings
 
-1. **Semantic hierarchy is essential**: Removing the hierarchical structure causes the largest performance drop; Full Mix (completely shuffled) performs worst.
-2. **IntraCED is more critical than InterCAD**: Removing IntraCED generally yields a larger performance drop, indicating that intra-level shared/private separation and controlled exchange are the key factors.
-3. **Optimal sparsity of token budget**: Performance peaks at participation rate $r \approx 0.68$ ($\gamma \approx 1.0$); fully dense exchange performs worst.
-4. **Noise robustness**: Under Gaussian noise injection experiments, CLCR exhibits the smallest performance degradation compared to baseline methods.
-5. **Adaptive modality importance**: The language modality dominates on MOSI, while visual modality receives the highest weight on KS; CLCR adapts automatically.
+1. **Hierarchy is Core**: Removing the hierarchical structure causes the largest performance drop; Full Mix performs the worst.
+2. **IntraCED vs. InterCAD**: Removing IntraCED typically results in a larger drop, highlighting the importance of level-wise shared/private separation.
+3. **Optimal Token Sparsity**: Performance peaks at a participation rate $r \approx 0.68$ ($\gamma \approx 1.0$); fully dense exchange is suboptimal.
+4. **Noise Robustness**: CLCR shows the smallest performance degradation under Gaussian noise injection.
+5. **Adaptive Modality Importance**: Language dominates in MOSI, while visual weights are highest in KS; CLCR adapts automatically.
 
 ## Highlights & Insights
 
-1. **Problem formulation of cross-level semantic asynchrony**: The paper provides an information bottleneck perspective explaining why mixing features across levels degrades representation quality.
-2. **Controlled token budget mechanism**: Differentiable sparse token selection is achieved via truncated simplex projection, avoiding noisy dense fusion.
-3. **Dual protection of shared-private structure**: Orthogonal projection (structural constraint) and whitening cross-correlation regularization (statistical constraint) are applied jointly.
-4. **Comprehensive validation across six benchmarks**: Covers four task types — emotion recognition, event localization, sentiment analysis, and action recognition.
+1. **Definition of Cross-Level Semantic Asynchrony**: Explains why mixed-level fusion degrades representation quality via an information bottleneck perspective.
+2. **Controlled Token Budget**: Achieves differentiable sparse token selection via truncated simplex projection, avoiding dense noise fusion.
+3. **Dual Shared-Private Protection**: Combines orthogonal projection (structural constraint) with whitened cross-correlation regularization (statistical constraint).
+4. **Comprehensive Validation**: Covers sentiment recognition, event localization, sentiment analysis, and action recognition across six benchmarks.
 
 ## Limitations & Future Work
 
-1. The three-level hierarchy is a hard-coded design; different tasks may require a different number of levels.
-2. Computational overhead analysis is insufficient — actual training time for whitening operations and Stiefel parameterization is not reported.
-3. Validation is limited to classification/regression tasks and has not been extended to generative multimodal tasks.
-4. Handling of missing-modality scenarios (addressed only in ablation analysis) has not been developed into a systematic solution.
+1. The three-level hierarchy is a hard-coded design; different tasks might require a variable number of levels.
+2. Insufficient computational overhead analysis—actual training time for whitening and Stiefel parameterization is not reported.
+3. Validated only on classification/regression; not yet extended to generative multimodal tasks.
+4. Handling of missing modality scenarios (beyond ablation analysis) is not yet a systematic solution.
 
 ## Related Work & Insights
 
-- **MISA**: A classical approach for modality-invariant and modality-specific subspace decomposition; CLCR extends this by introducing hierarchical structure.
-- **DMD**: Graph-based cross-modal knowledge distillation; CLCR replaces distillation with controlled attention.
-- **ARL**: Dual-path calibration strategy; CLCR achieves analogous functionality through the modality selection mechanism in InterCAD.
-- The token budget mechanism is transferable to vision-language pretraining for controlling the granularity of cross-modal interaction.
+- **MISA**: A classic method for invariant/specific subspace decomposition; CLCR introduces a hierarchical structure.
+- **DMD**: Graph-based distillation; CLCR replaces distillation with controlled attention.
+- **ARL**: Dual-path calibration; CLCR achieves similar functions via InterCAD's modality selection.
+- The token budget mechanism could be transferred to Vision-Language Pre-training (VLP) to control interaction granularity.
 
 ## Rating
 
-- **Novelty**: ★★★★☆ — The problem formulation of cross-level semantic asynchrony and the controlled exchange design are original.
-- **Technical Depth**: ★★★★★ — Orthogonal decomposition + truncated simplex projection + whitening regularization; theoretically well-grounded.
-- **Experimental Thoroughness**: ★★★★★ — Six benchmarks, detailed ablations, t-SNE visualization, noise robustness, and hyperparameter sensitivity analysis.
-- **Writing Quality**: ★★★★☆ — Framework diagrams are clear, but the high density of notation raises the reading barrier.
+- **Novelty**: ★★★★☆ — Innovative problem definition and controlled exchange design.
+- **Technical Depth**: ★★★★★ — Solid theoretical foundation with orthogonal decomposition, truncated simplex, and whitening.
+- **Experimental Thoroughness**: ★★★★★ — Six benchmarks, detailed ablations, t-SNE, noise robustness, and sensitivity analysis.
+- **Writing Quality**: ★★★★☆ — Clear framework diagrams, though high formula density increases reading difficulty.
 
 <!-- RELATED:START -->
 
@@ -181,10 +164,10 @@ Training configuration: SGD (momentum 0.9), lr 1e-3, weight decay 1e-4, batch si
 ## Related Papers
 
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
-- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
-- [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](../../AAAI2026/video_understanding/explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2025\] SEAL: SEmantic Attention Learning for Long Video Representation](../../CVPR2025/video_understanding/seal_semantic_attention_learning_for_long_video_representation.md)
+- [\[CVPR 2026\] MTLLFM: Multimodal-Temporal Laughter Localization](mtllfm_multimodal-temporal_laughter_localization_ur-funny-temporal_and_smile-tem.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
 
 </div>
 

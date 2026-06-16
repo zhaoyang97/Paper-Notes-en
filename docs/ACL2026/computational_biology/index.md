@@ -33,26 +33,26 @@ item_total: 5
 
 **💬 ACL2026** · **5** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (36)](../../ICML2026/computational_biology/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/computational_biology/index.md) · [🔬 ICLR2026 (38)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (21)](../../CVPR2026/computational_biology/index.md) · [🧪 ICML2026 (36)](../../ICML2026/computational_biology/index.md) · [🔬 ICLR2026 (38)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
 
 🔥 **Top topics:** Reasoning ×2
 
 **[AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)**
 
-:   The AROMA framework is proposed, which achieves interpretable and precise genetic perturbation effect prediction through a multimodal architecture integrating textual evidence, knowledge graph (KG) topological information, and protein sequence features, combined with a two-stage training strategy (SFT + GRPO).
+:   Ours proposes the AROMA framework, a multimodal architecture that integrates textual evidence, knowledge graph (KG) topological information, and protein sequence features. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise prediction of genetic perturbation effects.
 
 **[BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)**
 
-:   BioTool constructs an instruction fine-tuning dataset covering 34 common tools from three major biomedical databases (NCBI/Ensembl/UniProt), consisting of 7,040 human-verified "query–API call" pairs. After fine-tuning a 4B-parameter open-source LLM with this data, the tool-calling quality exceeds commercial models such as GPT-5.1, Gemini-3 Pro, and Claude-4.5-Sonnet by more than 15%.
+:   BioTool constructs an instruction fine-tuning dataset consisting of 7,040 human-verified "query–API call" pairs covering 34 commonly used tools from the NCBI, Ensembl, and UniProt databases. After fine-tuning 4B-scale open-source LLMs with this data, the tool-calling quality exceeds commercial models such as GPT-5.1, Gemini-3 Pro, and Claude-4.5-Sonnet by more than 15%.
 
 **[ChemAmp: Amplified Chemistry Tools via Composable Agents](chemamp_amplified_chemistry_tools_via_composable_agents.md)**
 
-:   This paper proposes a novel "tool amplification" paradigm (distinct from conventional tool orchestration) and introduces the ChemAmp framework, which treats chemistry-specific tools (UniMol2, Chemformer, etc.) as composable building blocks to dynamically construct task-specialized super-agents. ChemAmp surpasses both domain-specific models and general-purpose LLMs on four core chemistry tasks—including molecular design and reaction prediction—while reducing inference token costs by 94%.
+:   This paper proposes the "Tool Amplification" paradigm (distinct from traditional tool orchestration). Through the ChemAmp framework, chemistry-specific tools (UniMol2, Chemformer, etc.) are treated as composable building blocks to dynamically construct task-specific super-agents. It outperforms specialized models and general LLMs on four core chemistry tasks, including molecular design and reaction prediction, while reducing inference token costs by 94%.
 
 **[ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)**
 
-:   ProtoCycle proposes a **reflective agent framework** that utilizes an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. By replacing one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle, it improves ProTrek to 14.681 and Retrieval to 0.936 on Mol-Instructions. Using only ~2,000 SFT trajectories and online RL, it achieves language alignment performance that approaches or exceeds specialized protein design models.
+:   ProtoCycle proposes a **reflective agent framework** that uses an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. It replaces one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle. On Mol-Instructions, it improves ProTrek to 14.681 and Retrieval to 0.936, achieving language alignment that nears or exceeds specialized protein design models using only ~2,000 SFT trajectories and online RL.
 
 **[ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)**
 
-:   This paper proposes ToxReason, a mechanistic chemical toxicity reasoning benchmark based on the Adverse Outcome Pathway (AOP) framework. It integrates drug-target experimental data with toxicity labels, requiring models to reason from molecular initiating events to organ-level adverse outcomes. A 4B model trained via GRPO reinforcement learning outperforms larger models such as GPT-5 in both toxicity prediction (F1 71.4%) and reasoning quality.
+:   This paper proposes ToxReason, a benchmark for mechanistic chemical toxicity reasoning based on the Adverse Outcome Pathway (AOP) framework. By integrating drug-target experimental data with toxicity labels, the benchmark requires models to reason from molecular initiating events to organ-level adverse outcomes. A 4B model trained via GRPO reinforcement learning outperforms large models like GPT-5 in both toxicity prediction (F1 71.4%) and reasoning quality.

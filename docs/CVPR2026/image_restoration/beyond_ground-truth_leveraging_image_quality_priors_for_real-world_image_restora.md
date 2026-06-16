@@ -2,73 +2,83 @@
 title: >-
   [Paper Note] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Image Quality Prior] This paper proposes IQPIR, a framework that introduces image quality priors (IQP) derived from pretrained NR-IQA models as conditioning signals. Through three mechanism…
+  [CVPR 2026][Image Restoration][NR-IQA] The IQPIR framework is proposed, which introduces Image Quality Priors (IQP) from pre-trained NR-IQA models as conditioning signals. Through three mechanisms—a quality-conditioned Transformer, a dual-codebook structure, and quality optimization in discrete representation space—the model guides the restoration process t
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Image Quality Prior"
-  - "Dual Codebook"
-  - "NR-IQA"
-  - "Quality-Conditioned"
+  - CVPR 2026
+  - Image Restoration
+  - NR-IQA
 date: 2026-05-08
-content_hash: 08aa748c3c0d5804
+content_hash: ca6ae022298ee325
 ---
-
 # Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.29773](https://arxiv.org/abs/2603.29773)  
 **Code**: [https://github.com/fengyang1399-pixel/IQPIR](https://github.com/fengyang1399-pixel/IQPIR)  
-**Area**: Image Restoration
-**Keywords**: Image Restoration, Image Quality Prior, Dual Codebook, NR-IQA, Quality-Conditioned
+**Area**: Image Restoration  
+**Keywords**: Image Restoration, Image Quality Prior, Dual Codebook, NR-IQA, Quality Conditioning
 
 ## TL;DR
-This paper proposes IQPIR, a framework that introduces image quality priors (IQP) derived from pretrained NR-IQA models as conditioning signals. Through three mechanisms—quality-conditioned Transformer, dual Codebook architecture, and quality optimization in discrete representation space—IQPIR guides the restoration process toward maximal perceptual quality, achieving state-of-the-art performance on blind face restoration and related tasks.
+The IQPIR framework is proposed, which introduces Image Quality Priors (IQP) from pre-trained NR-IQA models as conditioning signals. Through three mechanisms—a quality-conditioned Transformer, a dual-codebook structure, and quality optimization in discrete representation space—the model guides the restoration process toward the highest perceptual quality, comprehensively outperforming SOTA on tasks such as blind face restoration.
 
 ## Background & Motivation
 
-**Background**: Real-world image restoration aims to recover high-quality images from inputs suffering from complex degradations. Codebook-based methods reformulate restoration as a code prediction problem in discrete representation space, effectively reducing reconstruction ambiguity.
+**Background**: Real-world image restoration aims to recover high-quality (HQ) images from low-quality (LQ) inputs with complex degradations. Codebook-based methods transform restoration into a code prediction problem in a discrete representation space, effectively reducing reconstruction ambiguity.
 
-**Limitations of Prior Work**: All existing methods implicitly assume that ground-truth (GT) images are perfect and serve as the sole supervision source. However, as shown in Figure 1, the perceptual quality of GT datasets (e.g., FFHQ) is inconsistent—most GT quality scores fall between 5 and 8, with very few reaching 9. As a result, models converge to the **average quality level** of the GT rather than the highest achievable quality.
+**Limitations of Prior Work**: Existing methods implicitly assume that the Ground-Truth (GT) is the perfect and unique source of supervision. However, as shown in Figure 1, the perceptual quality of GT datasets (e.g., FFHQ) is inconsistent—most GT quality scores fall between 5-8, with very few reaching 9. Models tend to converge to the **average quality level** of the GT rather than the maximum achievable quality.
 
-**Key Challenge**: (1) Training exclusively on the highest-quality GT leads to insufficient data diversity, causing artifacts and degraded features; (2) Training on all GT images pulls the model toward average quality.
+**Key Challenge**: (1) Training only on the highest-quality GT leads to insufficient data diversity, resulting in artifacts and failure to handle various degradations; (2) Training on the entire GT dataset pulls the performance down to the average quality.
 
-**Key Insight**: GT images of different quality levels serve distinct roles—HQ+ GT excels at fine structural control, while average-quality GT is better suited for recovering large blurred regions.
+**Key Insight**: Different quality levels of GT provide different functions—HQ+ GT is proficient in fine structural control, while average GT is better suited for restoring large-scale blur.
 
-**Core Idea**: NR-IQA scores are injected as conditioning signals into the restoration model; setting the score to its maximum value at inference time guides the network to produce the highest-quality output. A dual Codebook learns general structures and HQ+-specific details separately.
+**Core Idea**: Inject NR-IQA scores as conditioning signals into the restoration model and set them to the maximum value during inference to guide the network toward the highest quality output. A dual-codebook structure is used to learn general structures and HQ+ details separately.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two stages: (1) **Codebook learning**—a dual Codebook architecture that learns general and HQ+-specific features separately; (2) **Code prediction**—a quality-conditioned Transformer predicts dual code sequences with a quality optimization loss.
+The core problem IQPIR addresses is that inconsistent GT quality pulls the model toward the average quality level. IQPIR explicitly treats "quality" as a controllable condition, pulling the network toward the highest quality during inference. The process consists of two stages. In the first stage, a set of discrete representations (Dual Codebook) is learned to decouple "common structure" and "high-quality specific details" into separate codebooks. In the second stage, the codebooks are frozen, and a quality-conditioned Transformer is trained to predict two code sequences from the LQ input. These codes are used to query the codebooks to reconstruct the restored image. During training, an NR-IQA model scores the output to form a quality loss. At inference, the quality condition is set to the maximum value to ensure the network outputs the highest achievable perceptual quality.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    LQ["LQ Input"] --> ENC["Encoder → LQ Feature Z_l"]
+    IQA["Multi NR-IQA Ensemble<br/>Average Score S"] --> ADD["Quality Condition Injection Ẑl = Zl + s"]
+    ENC --> ADD
+    ADD --> TR["Quality-Conditioned Transformer<br/>Predicts Sequences c1, c2"]
+    subgraph CB["Dual Codebook Architecture"]
+        direction TB
+        CC["Common Codebook<br/>Common Structure (All GT)"]
+        HQ["HQ+ Codebook<br/>Fine Details (HQ+ Samples)"]
+    end
+    TR --> CC
+    TR -->|"Enabled if S > S_thr"| HQ
+    CC --> FU["Fusion Zq = Zq1 + α·Zq2 → Decoder Reconstruction"]
+    HQ --> FU
+    FU --> OUT["Restored Image"]
+    OUT -.During Training.-> QL["Discrete Space Quality Optimization<br/>NR-IQA Scoring → Quality Loss"]
+    QL -.Guides High Score.-> TR
+```
 
 ### Key Designs
 
-1. **Dual Codebook Architecture**:
+**1. Dual Codebook Architecture: Decoupling "General Restoration" and "High-Quality Details"**
 
-    - **Function**: Decouple general structural features from high-quality-specific fine details.
-    - **Mechanism**: The Common Codebook is trained on all GT images; the HQ+ Codebook participates in quantization only when the GT quality score satisfies $S > S_{thr}$. The fused representation is $Z_q = Z_q^1 + \alpha Z_q^2$ (or simply $Z_q^1$ when $S \leq S_{thr}$). The decoder reconstructs images from the fused representation.
-    - **Design Motivation**: Fine visual details in HQ GT (e.g., hair strand tips) require a dedicated Codebook for encoding, while the Common Codebook ensures broad degradation recovery capability.
+Training a single codebook on all GT data causes fine visual details (hair ends, skin textures) from high-quality GT to be diluted by mediocre GT. Conversely, training only on high-quality GT results in poor degradation coverage. IQPIR splits the representation into two: the Common Codebook is trained on all GT for broad structure and degradation recovery, while the HQ+ Codebook is only utilized when a GT sample's quality score $S > S_{thr}$, specifically capturing fine details from high-quality samples. Quantized features are fused via $Z_q = Z_q^1 + \alpha Z_q^2$ (degrading to $Z_q^1$ only when $S \le S_{thr}$). This ensures the common codebook handles robust restoration while the HQ+ codebook adds high-frequency details without interference.
 
-2. **Quality-Conditioned Transformer**:
+**2. Quality-Conditioned Transformer: Quality Scores as Controllable Knobs**
 
-    - **Function**: Predict code sequences conditioned on quality scores.
-    - **Mechanism**: An NR-IQA model estimates the GT quality score $S$, which is embedded as a vector $\mathbf{s} \in \mathbb{R}^{h \times w \times c}$ and added directly to the LQ features: $\hat{Z}_l = Z_l + \mathbf{s}$. The Transformer takes $\hat{Z}_l$ as input and predicts two code sequences $\mathbf{c}_1, \mathbf{c}_2$ to query the respective Codebooks.
-    - **At inference**: $S$ is set to its maximum value, guiding the network to produce restorations of the highest perceptual quality.
-    - **Design Motivation**: Analogous to class-conditional generation, the model learns quality-image correspondences, enabling **controllable quality restoration**.
+The codebook serves as a "dictionary," but the output quality is determined by the code prediction in the second stage. IQPIR uses an NR-IQA model to score the target quality $S$, which is embedded as a vector $\mathbf{s} \in \mathbb{R}^{h \times w \times c}$ and added to the LQ features $\hat{Z}_l = Z_l + \mathbf{s}$. The Transformer reads $\hat{Z}_l$ to predict two code sequences $\mathbf{c}_1$ and $\mathbf{c}_2$. During training, the network learns the mapping from "quality score to corresponding quality image." During inference, setting $S$ to its maximum value guides the output toward the highest perceptual quality, bypassing the limitations of the GT average.
 
-3. **Quality Optimization in Discrete Representation Space**:
+**3. Quality Optimization in Discrete Space: Preventing "Over-optimization"**
 
-    - **Function**: Perform quality optimization in discrete representation space to avoid over-optimization in continuous space.
-    - **Mechanism**: An NR-IQA model computes the quality loss $\mathcal{L}_{quality}$ on the restored output.
-    - **Design Motivation**: Directly optimizing IQA scores in continuous space is prone to over-optimization and artifacts; the discrete Codebook naturally constrains the output space, inherently mitigating this issue.
+To further push the output toward higher quality, a quality loss $\mathcal{L}_{quality}$ is added during training, using NR-IQA scores as optimization targets. Maximizing IQA scores in continuous pixel or feature spaces often leads to "reward hacking," where the model generates artifacts that yield high scores but look unrealistic. By performing optimization in the discrete representation space, the output is restricted to combinations of finite codebook entries. This naturally constrains the search space and prevents the model from drifting toward adversarial or unnatural outputs.
 
-4. **Quality Prior Integration**:
+**4. Multi NR-IQA Ensemble for Quality Scoring**
 
-    - Scores from multiple NR-IQA models are averaged as $S = \frac{1}{n}\sum s_i$, reducing bias from any single model.
+A single NR-IQA model may have specific biases (e.g., favoring over-sharpening or over-smoothing). IQPIR averages the scores from multiple NR-IQA models, $S = \frac{1}{n}\sum_{i=1}^{n} s_i$, to define the final quality score. This ensures the conditioning signal reflects a more "universal" consensus on quality rather than the bias of a single metric.
 
 ### Loss & Training
-Codebook stage: reconstruction loss + quantization commitment loss + perceptual loss. Code prediction stage: cross-entropy for code prediction + quality optimization loss.
+The Codebook stage uses reconstruction loss, quantization commitment loss, and perceptual loss to learn the dual codebooks. The code prediction stage uses cross-entropy loss for the code sequences combined with the aforementioned quality optimization loss $\mathcal{L}_{quality}$.
 
 ## Key Experimental Results
 
@@ -82,55 +92,55 @@ Codebook stage: reconstruction loss + quantization commitment loss + perceptual 
 | Interlcm | 0.831 | 0.834 | 4.55 | 0.721 |
 | **IQPIR (Ours)** | **0.861** | **0.878** | **4.67** | **0.790** |
 
-IQPIR also achieves comprehensive improvements on WebPhoto-Test and WIDER-Test.
+The method also demonstrates comprehensive leads on WebPhoto-Test and WIDER-Test.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
+| Configuration | Main Metric | Description |
 |------|---------|------|
-| w/o quality conditioning | Degraded | Demonstrates necessity of IQP conditioning |
-| Single Codebook | Degraded | HQ+ Codebook is critical for fine details |
-| Quality optimization in continuous space | Over-optimized | Highlights advantage of discrete space |
-| Single IQA model | Slightly degraded | Multi-model ensemble is more robust |
+| w/o Quality Condition | Decrease | Proves the necessity of IQP conditioning |
+| Single Codebook | Decrease | HQ+ Codebook is critical for fine details |
+| Continuous Space Optimization | Over-optimization | Advantages of discrete space optimization |
+| Single IQA Model | Slight decrease | Multi-model ensemble is more robust |
 
 ### Key Findings
-- **IQP is a general quality-enhancement strategy**: Applying the proposed quality conditioning to DifFace (DifFace+) also yields significant quality improvements, demonstrating plug-and-play applicability.
-- The HQ+ Codebook primarily improves fine-grained details such as hair tips and skin texture.
-- Setting the quality score to its maximum value at inference time leads to perceptual quality that substantially exceeds the average GT level.
+- **IQP is a universal strategy**: Applying the quality conditioning method to DifFace (DifFace+) significantly improves restoration quality, demonstrating its plug-and-play capability.
+- In the dual-codebook setup, the HQ+ Codebook primarily improves fine details such as hair ends and skin textures.
+- Setting the quality score to the maximum during inference leads to perceptual quality that significantly exceeds the GT average.
 
 ## Highlights & Insights
-- **Challenging the perfect GT assumption**: This is the first work to systematically reveal the impact of inconsistent GT quality on restoration models, proposing a "beyond GT" restoration paradigm.
-- **Plug-and-play quality conditioning**: IQP can be inserted into any restoration architecture as an independent module without structural modifications.
-- **Discrete-space quality optimization**: The work elegantly leverages the discrete nature of VQ-VAE to avoid the over-optimization pitfalls of IQA reward optimization in continuous space.
+- **Challenging the GT Perfection Assumption**: This work is the first to systematically reveal the impact of inconsistent GT quality on restoration models and proposes a "Beyond Ground-Truth" paradigm.
+- **Plug-and-play Nature**: IQP can be inserted as an independent module into any restoration architecture without structural modifications.
+- **Discrete Space Quality Optimization**: Cleverly leverages the discreteness of VQ-VAE to avoid the IQA reward hacking problem common in continuous spaces.
 
 ## Limitations & Future Work
-- NR-IQA models themselves carry biases (some may favor particular styles); ensemble integration mitigates but does not fully eliminate this issue.
-- The threshold $S_{thr}$ and weight $\alpha$ require manual tuning.
-- When GT quality is extremely low, the HQ+ Codebook has limited information to learn from.
-- Extending quality priors to video restoration and 3D restoration is a promising direction.
+- NR-IQA models themselves have biases; although mitigated by ensembling, they cannot be completely eliminated.
+- The $S_{thr}$ threshold and $\alpha$ weight require manual adjustment.
+- When GT quality is extremely low across the dataset, the HQ+ Codebook may have limited learning potential.
+- Future work could explore extending quality priors to video and 3D restoration.
 
 ## Related Work & Insights
-- **vs. CodeFormer/DAEFR**: These methods assume GT perfection and rely on direct supervision. This work breaks that constraint by introducing a quality dimension.
-- **vs. GAN/diffusion-based restoration**: Generative priors are powerful but may introduce hallucinations; Codebook priors combined with quality priors offer greater controllability.
-- **vs. NR-IQA research**: This work repositions IQA from an evaluation tool to a training signal, substantially broadening the application scope of IQA.
+- **vs CodeFormer/DAEFR**: These methods assume perfect GT and perform direct supervision. This work introduces a quality dimension to break this limitation.
+- **vs GAN/Diffusion-based Restoration**: While generative priors are powerful, they may produce hallucinations. Codebook priors combined with quality priors offer better control.
+- **vs NR-IQA Research**: This work transforms IQA from an evaluation tool into a training signal, expanding the boundaries of IQA applications.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The idea of leveraging quality priors for restoration is original; the system design integrating dual Codebook, quality conditioning, and discrete optimization is coherent and complete.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-dataset, multi-metric evaluation with thorough ablations; plug-and-play validation is convincing.
-- **Writing Quality**: ⭐⭐⭐⭐ The motivation figure (GT quality distribution) is intuitive and compelling.
-- **Value**: ⭐⭐⭐⭐⭐ The general quality-guided strategy has broad implications for the image restoration community.
+- **Novelty**: ⭐⭐⭐⭐⭐ The idea of using quality priors for restoration is novel, and the system design (dual-codebook + conditioning + discrete optimization) is comprehensive.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid results across multiple datasets and metrics, with convincing plug-and-play validation.
+- **Writing Quality**: ⭐⭐⭐⭐ The motivation figures (GT quality distribution) are intuitive and compelling.
+- **Value**: ⭐⭐⭐⭐⭐ As a universal quality guidance strategy, it has a broad impact on the restoration field.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
-- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
-- [\[CVPR 2026\] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors](phasr_generalized_image_shadow_removal_with_physically_aligned_priors.md)
+- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
+- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
 
 </div>
 

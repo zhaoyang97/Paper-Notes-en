@@ -2,87 +2,106 @@
 title: >-
   [Paper Note] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 description: >-
-  [CVPR 2026][Remote Sensing][hyperspectral video] This paper presents Lumosaic, an active hyperspectral video system that synchronizes an array of 12 narrowband LEDs with a coded-exposure pixel (CEP) camera at microsecond…
+  [CVPR 2026][Remote Sensing][hyperspectral video] The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (40
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "hyperspectral video"
-  - "coded-exposure pixel"
-  - "active illumination"
-  - "motion-robust"
-  - "spectral reconstruction"
+  - CVPR 2026
+  - Remote Sensing
+  - hyperspectral video
+  - coded-exposure pixel
+  - active illumination
+  - motion-robust
+  - spectral reconstruction
 date: 2026-05-08
-content_hash: ad00bd6fdb3cbebb
+content_hash: ceaea840e9034690
 ---
-
 # Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22140](https://arxiv.org/abs/2602.22140)  
-**Code**: N/A  
-**Area**: Computational Imaging / Hyperspectral Video
+**Code**: None  
+**Area**: Computational Imaging / Hyperspectral Video  
 **Keywords**: hyperspectral video, coded-exposure pixel, active illumination, motion-robust, spectral reconstruction
 
 ## TL;DR
 
-This paper presents Lumosaic, an active hyperspectral video system that synchronizes an array of 12 narrowband LEDs with a coded-exposure pixel (CEP) camera at microsecond precision. Within 158 sub-frames per video frame, the system jointly encodes spatial, temporal, and spectral information, achieving motion-robust hyperspectral video reconstruction at 30 fps, VGA resolution, and 31 spectral channels (400–700 nm), with PSNR exceeding passive snapshot systems by more than 10 dB.
+The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (400–700nm) hyperspectral video at 30fps VGA resolution, surpassing passive snapshot systems by over 10dB in PSNR.
 
 ## Background & Motivation
 
-**Background**: Hyperspectral imaging (HSI) captures multi-band reflectance and finds wide application in material classification, physiological monitoring, and spectral relighting. Traditional scanning-based HSI achieves high spectral fidelity but is slow. Snapshot HSI systems (CASSI, DOE, MSFA) enable single-frame acquisition but suffer from low light efficiency and severe motion artifacts. Active HSI exploits programmable light sources to encode spectra along temporal or spatial dimensions, improving photon utilization.
+**Background**: Hyperspectral imaging (HSI) captures multi-band reflectance and is widely used in material classification, physiological monitoring, and spectral relighting. Traditional scanning HSI is spectrally accurate but slow, while snapshot HSI (CASSI, DOE, MSFA) enables single-frame acquisition at the cost of low light efficiency and severe motion artifacts. Active HSI utilizes programmable light sources to encode spectra in the temporal/spatial domains, enhancing photon utilization.
 
 **Limitations of Prior Work**:
 
-1. Passive snapshot systems distribute light across multiple spectral channels, incurring heavy photon loss and amplifying noise through ill-posed inversion.
-2. Existing active systems (e.g., LED time-division multiplexing, structured light projection) apply fine control along only a single dimension, leading to inter-frame spectral misalignment in dynamic scenes.
-3. Even when rolling shutters enable within-frame spectral multiplexing, fast motion still produces rolling shutter distortion.
+1. Passive snapshot systems disperse light into multiple spectral channels, resulting in significant light loss and ill-posed inversion that amplifies noise.
+2. Existing active systems (e.g., LED time-division multiplexing, structured light projection) only exercise fine control along a single dimension, leading to inter-frame spectral misalignment in dynamic scenes.
+3. Even if rolling shutters can multiplex spectra within a single frame, fast motion still induces rolling shutter distortion.
 
-**Key Challenge**: Hyperspectral video demands simultaneous spectral resolution, light efficiency, and temporal sampling density — requirements that neither passive nor active prior systems can jointly satisfy.
+**Key Challenge**: Hyperspectral video must simultaneously satisfy spectral resolution, light efficiency, and temporal sampling; existing passive and active systems fail to balance all three.
 
-**Goal**: To achieve compact, motion-robust, real-time hyperspectral video acquisition.
+**Goal**: Achieve compact, motion-robust, real-time hyperspectral video acquisition.
 
-**Key Insight**: Coupling the per-pixel, high-speed modulation capability of CEP sensors with time-varying narrowband LED illumination to jointly encode spatial, temporal, and spectral information within a single frame.
+**Key Insight**: Couple the per-pixel high-speed modulation capability of CEP sensors with time-varying narrowband LED illumination to jointly encode 3D spatial-temporal-spectral information within a single frame.
 
-**Core Idea**: By combining per-pixel exposure control from a CEP camera with time-varying LED illumination, the system constructs dense spatial–spectral–temporal mosaic codes within each frame, with all signal integration performed entirely on-chip.
+**Core Idea**: Utilize per-pixel exposure control of the CEP camera and time-varying LED illumination to construct a dense spatial-spectral-temporal mosaic within each frame, with signal acquisition performed entirely on-silicon.
 
 ## Method
 
 ### Overall Architecture
 
-**Hardware**: 12 narrowband LEDs (20–30 nm FWHM, Lumileds Luxeon C) + VGA CEP camera (640×480, 12,500 sub-frames/sec) + ESP32 microcontroller for microsecond-level synchronization. Each frame consists of $S=158$ sub-frames (170 µs/sub-frame), with ~27 ms total integration and ~6 ms readout/synchronization. **Software pipeline**: spectral demosaicking → RIFE optical flow temporal alignment → HAN network reconstruction of 31-channel hyperspectral video.
+Lumosaic aims to capture spatial, spectral, and temporal dimensions simultaneously within a standard color exposure interval to obtain motion-robust real-time hyperspectral video. The workflow is a "hardware optical encoding → software decoding reconstruction" pipeline. On the hardware side, 12 narrowband LEDs (20–30nm FWHM, Lumileds Luxeon C) serve as programmable active light sources, paired with a VGA CEP camera (640×480, 12,500 sub-frames/sec). An ESP32 microcontroller aligns the "illumination code" (which LED is active) and "exposure code" (which pixels are exposing) at microsecond precision. This weaves a spatial-spectral-temporal mosaic within a single frame. Each frame is divided into $S=158$ sub-frames (170µs each), totaling ~27ms integration plus ~6ms readout/sync to reach 30fps. On the software side, the system performs spectral demosaicing to extract 12 LED sub-images, followed by bilinear upsampling. RIFE optical flow aligns these sub-images to a single reference timestamp, which are finally fed into a HAN network to reconstruct 31-channel (400–700nm) hyperspectral video.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SC["Dynamic Scene"]
+    subgraph ENC["Hardware Optical Encoding (within single frame)"]
+        direction TB
+        I["Joint Illumination-Exposure Encoding<br/>12 Narrowband LEDs cycled per sub-frame (Illumination Code I)"]
+        C["CEP Per-pixel Coded Exposure<br/>1-bit memory per pixel controls exposure timing (Exposure Code C)"]
+    end
+    SC --> ENC
+    ENC --> Y["Raw Coded Frame Y<br/>Spatial-Spectral-Temporal Mosaic"]
+    Y --> DM["Spectral Demosaicing (Scaffolding)<br/>Extract 12 LED sub-images + Bilinear Upsampling"]
+    subgraph REC["Temporal Alignment + Learned Reconstruction"]
+        direction TB
+        RIFE["RIFE Optical Flow Alignment<br/>Motion estimation via adjacent frames of same LED, warp to 'lime' reference time"]
+        HAN["HAN Network Reconstruction<br/>10 Residual Groups × 18 Blocks, outputs 33 channels (middle 31 used)"]
+        RIFE --> HAN
+    end
+    DM --> REC
+    REC --> OUT["31-Channel Hyperspectral Video<br/>30fps · VGA · 400–700nm"]
+```
 
 ### Key Designs
 
-1. **Joint Illumination–Exposure Coding Scheme**
+**1. Joint Illumination-Exposure Encoding: Packing Space-Spectrum-Time into One Frame**
 
-    - **Function**: Creates dense spatial–spectral–temporal codes within each frame.
-    - **Mechanism**: Pixels are partitioned into $T=16$ tiles (4×4 mosaic), each with a unique exposure code $\mathbf{C}_{\text{tile}} \in \{0,1\}^{T \times S}$ and illumination code $\mathbf{I}_{\text{tile}} \in \{0,1\}^{T \times S \times L}$. Each sub-frame activates one LED, so neighboring pixels observe different spectral bands at different times. The forward model is: $Y_p = \sum_{s=1}^{S} C_{p,s} \cdot \mathbf{a}_{p,s}^\top \mathbf{r}_p + \eta_p$, where $\mathbf{a}_{p,s} = \mathcal{S} \odot \boldsymbol{\mathcal{I}}_{p,s}$ is the effective spectral sensing vector.
-    - **Design Motivation**: Active illumination ensures the full narrowband output of each LED contributes to the effective signal without attenuation by filters; CEP per-pixel control provides dense spatial coding.
+The fundamental flaw of passive snapshot systems is dispersing incident light and then filtering for narrow bands, which causes photon loss and ill-posed inversion. Lumosaic instead uses "who illuminates" and "who observes" codes to weave a dense mosaic: pixels are divided into $4\times4$ tiles ($T=16$), each assigned a unique exposure code $\mathbf{C}_{\text{tile}} \in \{0,1\}^{T \times S}$ and illumination code $\mathbf{I}_{\text{tile}} \in \{0,1\}^{T \times S \times L}$. Only one LED is lit per sub-frame, so adjacent pixels see different bands at different times, creating a spatial spectral-temporal mosaic. The forward imaging model is:
 
-2. **CEP Per-Pixel Coded Exposure**
+$$Y_p = \sum_{s=1}^{S} C_{p,s} \cdot \mathbf{a}_{p,s}^\top \mathbf{r}_p + \eta_p,\qquad \mathbf{a}_{p,s} = \mathcal{S} \odot \boldsymbol{\mathcal{I}}_{p,s}$$
 
-    - **Function**: Each pixel switches at high speed between two charge buckets according to a binary control code within a frame.
-    - **Mechanism**: Each pixel contains a 1-bit writable memory that governs the active bucket for each sub-frame. At the frame level, the two buckets are read out independently, yielding complementary integrated signals. The modulation rate exceeds 39 kHz at VGA resolution.
-    - **Design Motivation**: Breaks the constraint of conventional cameras where all pixels share the same exposure, making each pixel an independent spectral–temporal sampling unit.
+where $\mathbf{r}_p$ is the reflectance spectrum, and the effective spectral sensitivity $\mathbf{a}_{p,s}$ is the Hadamard product of camera response $\mathcal{S}$ and LED spectrum $\boldsymbol{\mathcal{I}}_{p,s}$. Under active illumination, the full narrowband output of each LED contributes to the signal, yielding a much higher SNR than filtering.
 
-3. **Temporal Alignment and Learning-Based Reconstruction**
+**2. CEP Camera Per-pixel Coded Exposure: Independent Sampling Points**
 
-    - **Function**: Compensates for sub-millisecond motion differences between LED sub-images, followed by neural network reconstruction of hyperspectral output.
-    - **Mechanism**: The lime-LED sub-image is selected as the temporal reference (central wavelength + median exposure time). RIFE optical flow estimates inter-frame motion between sub-images of the same LED, and each sub-image is warped to the reference timestamp. The HAN network (18 residual blocks, 10 residual groups, 128 channels) takes 12-channel LED sub-images as input and produces 33 channels, of which the middle 31 channels (400–700 nm) are retained.
-    - **Design Motivation**: Different LED sub-images correspond to different temporal intervals within a frame; direct fusion would introduce spectral–spatial aliasing. Sub-images from the same LED maintain photometric consistency, making them suitable for optical flow estimation.
+Implementing the above code scheme relies on the CEP camera's ability to control exposure per pixel. Traditional cameras share exposure timing across all pixels. CEP embeds a 1-bit writable memory within each pixel to determine which of two charge buckets the photoelectrons flow into per sub-frame. At the end of the frame, two buckets are read out as complementary signals. With modulation rates exceeding 39kHz at VGA resolution, the $16\times158$ exposure table $\mathbf{C}_{\text{tile}}$ is physically written to the silicon, turning every pixel into an independently programmable spatial-spectral-temporal sampling point.
+
+**3. Temporal Alignment + Learned Reconstruction: Bridging Snapshots to Video**
+
+Since the 12 LED sub-images correspond to different intervals within a frame, scene motion introduces spectral-spatial aliasing. Lumosaic selects the "lime" LED sub-image as the temporal reference. RIFE estimates motion between adjacent frames of the same LED (chosen for photometric consistency) and warps all sub-images to the reference time. These aligned 12-channel sub-images are processed by a HAN network (10 residual groups, 18 residual blocks, 128 channels) to output 31 channels (400–700nm).
 
 ### Loss & Training
 
-$\mathcal{L}_1$ loss, Adam optimizer (lr=1e-4), batch size 14 with 2-step gradient accumulation, 50,000 iterations, ~24 h on an RTX A6000. Data augmentation includes 0–15% Gaussian noise injection. Training set: CAVE (32 scenes) + KAUST (409 scenes) + ARAD (949 scenes), resampled to 31 channels (400–700 nm, 10 nm interval), with an 80/10/10 train/val/test split.
+$\mathcal{L}_1$ loss, Adam optimizer (lr=1e-4), batch size 14 with 2-step gradient accumulation, 50,000 iterations, ~24h on RTX A6000. Data augmentation includes 0–15% Gaussian noise. Dataset: CAVE (32) + KAUST (409) + ARAD (949), resampled to 31 channels (400–700nm, 10nm interval) with an 80/10/10 split.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Simulated Reconstruction Quality (Noise-Free)**
+**Simulation Reconstruction Quality (Noiseless)**
 
 | Method | Type | PSNR (dB)↑ | SSIM↑ | SAM↓ |
-|---|---|---|---|---|
+|------|------|-----------|-------|------|
 | MST++ | Passive RGB→HSI | ~30 | ~0.92 | ~0.25 |
 | QDO | Passive DOE Snapshot | ~32 | ~0.93 | ~0.22 |
 | Lumosaic + SRNet | Active CEP | ~42 | ~0.98 | ~0.06 |
@@ -91,59 +110,59 @@ $\mathcal{L}_1$ loss, Adam optimizer (lr=1e-4), batch size 14 with 2-step gradie
 
 ### Ablation Study
 
-**Noise Robustness (Lumosaic + HAN)**
+**Noise Robustness (Lumosaic+HAN)**
 
-| Noise Level σ | PSNR (dB) | Notes |
-|---|---|---|
-| 0% | 44.0 | Best under noise-free conditions |
-| 5% | ~38 | Mild noise; still far exceeds passive systems |
-| 10% | ~35 | High fidelity maintained |
-| 20% | 32.0 | Under heavy noise, still outperforms passive systems at 0% noise |
+| Noise Level σ | PSNR (dB) | Description |
+|-----------|-----------|------|
+| 0% | 44.0 | Best performance |
+| 5% | ~38 | Far exceeds passive systems |
+| 10% | ~35 | Maintains high fidelity |
+| 20% | 32.0 | Still better than passive at 0% noise |
 
 **Reconstruction Backbone Comparison**
 
-| Backbone | PSNR↑ | Inference Speed | Notes |
-|---|---|---|---|
-| HAN | 44.0 dB | 4.7 s/frame | Highest accuracy |
-| MCAN | Slightly lower | 52 ms/frame | Accuracy–speed trade-off |
-| SRNet | Lowest | 27 ms/frame | Near real-time |
+| Backbone | PSNR↑ | Inference Speed | Description |
+|----------|-------|---------|------|
+| HAN | 44.0 dB | 4.7s/frame | Highest accuracy |
+| MCAN | ~43 dB | 52ms/frame | Accuracy-speed trade-off |
+| SRNet | ~42 dB | 27ms/frame | Near real-time |
 
 ### Key Findings
 
-- Lumosaic comprehensively outperforms passive snapshot systems (by 10+ dB PSNR), validating the fundamental advantage of active illumination combined with coded exposure.
-- All three backbones surpass passive baselines; the performance gains are primarily attributable to the hardware coding scheme rather than network complexity.
-- In ColorChecker experiments, reconstructed spectra closely match ground truth measured by a Konica Minolta CS-2000 spectroradiometer.
-- Metameric disambiguation experiments demonstrate the system's ability to distinguish visually similar but spectrally distinct materials (genuine objects vs. printed replicas).
-- Dynamic scene reconstructions at 30 fps (rotating globe, hand gestures, liquid diffusion, bubbles) are temporally coherent and spectrally accurate.
+- Lumosaic significantly outperforms passive snapshot systems (>10dB PSNR gain), validating the fundamental advantage of active illumination and coded exposure.
+- All three backbones outperform passive baselines, suggesting performance gains stem from the hardware encoding scheme rather than network complexity.
+- ColorChecker experiments show reconstructed spectra highly consistent with Konica Minolta CS-2000 ground truth.
+- Metamerism experiments demonstrate the ability to distinguish visually identical but spectrally different materials (e.g., authentic vs. printed copies).
+- 30fps dynamic scenes (rotating globe, hand gestures, liquid diffusion) exhibit temporal coherence and spectral accuracy.
 
 ## Highlights & Insights
 
-- This work pioneers the use of CEP sensors for hyperspectral video; all signal encoding is performed entirely on-chip, yielding a compact system that requires no complex optical calibration.
-- The system co-design is elegant: illumination codes, exposure codes, and the reconstruction network are tightly coupled.
-- The coding density of 158 sub-frames × 12 LEDs × 16 tiles achieves extremely high information capacity within a single frame.
-- RIFE optical flow alignment addresses the inherent inter-sub-frame motion problem of active illumination systems and is the key step that enables hyperspectral "video" reconstruction.
+- Pioneering use of CEP sensors for hyperspectral video, with signal encoding performed entirely on-silicon, eliminating complex optical calibration.
+- Elegant system co-design: Illumination codes, exposure codes, and reconstruction networks are tightly coupled.
+- High information capacity: 158 sub-frames × 12 LEDs × 16 tiles achieve extreme encoding density within a single frame.
+- RIFE alignment effectively addresses sub-frame motion inherent in active systems, which is the "missing link" for true hyperspectral video.
 
 ## Limitations & Future Work
 
-- Reconstruction inference is slow (HAN: 4.7 s/frame vs. 30 fps acquisition); real-time deployment requires a lightweight backbone (SRNet at 27 ms is feasible but at reduced accuracy).
-- Only one CEP bucket (Bucket 1) is utilized; joint modeling of both buckets could further improve dynamic range and light efficiency.
-- Active illumination restricts applicable scenarios (requires a controllable light source); outdoor or long-range scenes are not supported.
-- Frames are processed independently, leaving inter-frame temporal redundancy unexploited, partly due to the scarcity of hyperspectral video training data.
-- The coding pattern is fixed; adaptive or randomized mosaics could potentially yield further improvements.
+- Reconstruction inference is slow (HAN at 4.7s/frame vs. 30fps acquisition); real-time deployment requires lighter backbones like SRNet.
+- Only one CEP bucket (Bucket 1) is used; dual-bucket modeling could further enhance dynamic range and light efficiency.
+- Active illumination limits application to controlled environments; unsuitable for outdoor/long-range scenes.
+- Frame-by-frame processing does not yet exploit inter-frame temporal redundancy.
+- Fixed encoding schemes; adaptive or randomized mosaics might offer further optimization.
 
 ## Related Work & Insights
 
-- **vs. CASSI and other passive systems**: Active illumination fundamentally changes photon utilization efficiency — all LED output contributes to the effective signal, whereas passive filtering discards the majority of photons.
-- **vs. Verma et al.**: Both exploit time-varying LED illumination, but Verma et al. rely on rolling shutter row-level multiplexing, which still introduces distortion under fast motion; Lumosaic's per-pixel coding offers greater flexibility.
-- **vs. Yu et al. (event camera)**: That approach uses an event camera with rainbow illumination but depends on mechanically rotating optics, limiting compactness and robustness.
-- **Inspiration**: The CEP + time-varying illumination paradigm is extensible to fluorescence imaging, Raman spectroscopy, and other domains requiring active excitation combined with spectral resolution.
+- **vs. Passive Systems (CASSI, etc.)**: Active illumination fundamentally changes photon efficiency—full LED output contributes to the signal, whereas passive filters attenuate most photons.
+- **vs. Verma et al.**: Both use time-varying LEDs, but Verma relies on rolling shutter row-level multiplexing, which suffers from motion distortion; Lumosaic’s per-pixel encoding is more flexible and robust.
+- **vs. Yu et al. (Event Camera)**: Yu uses event cameras and rainbow scanning, but requires mechanical rotation, lacking the compactness and robustness of solid-state Lumosaic.
+- **Insights**: The CEP + time-varying illumination paradigm could be extended to fluorescence imaging and Raman spectroscopy where active excitation and spectral resolution are required.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The hyperspectral video system combining CEP sensors with active illumination is unprecedented; a system-level innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers simulation, real prototype, static/dynamic scenes, and metameric disambiguation; lacks quantitative real-scene comparisons against more recent systems.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The forward model is developed progressively from pixel to system level; hardware–software co-design logic is clearly articulated.
-- **Value**: ⭐⭐⭐⭐ — Exceptionally high system-level innovation, though active illumination narrows the scope of applicable scenarios.
+- Novelty: ⭐⭐⭐⭐⭐ Unprecedented CEP + active illumination system, system-level innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Simulation + real prototype + dynamic scenes, though lacks quantitative comparison with some SOTA systems in real-world scenes.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear progression from forward model to system layers; logical hardware-software co-design.
+- Value: ⭐⭐⭐⭐ High innovation, though application range is bounded by the need for active illumination.
 
 <!-- RELATED:START -->
 
@@ -151,11 +170,11 @@ $\mathcal{L}_1$ loss, Adam optimizer (lr=1e-4), batch size 14 with 2-step gradie
 
 ## Related Papers
 
+- [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 - [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
 - [\[CVPR 2026\] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors](no_labels_no_look-ahead_unsupervised_online_video_stabilization_with_classical_p.md)
+- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
 - [\[CVPR 2026\] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging](metaspectra_a_compact_broadband_metasurface_camera_for_snapshot_hyperspectral_im.md)
-- [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
-- [\[AAAI 2026\] Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification](../../AAAI2026/remote_sensing/perceive_act_and_correct_confidence_is_not_enough_for_hyperspectral_classificati.md)
 
 </div>
 

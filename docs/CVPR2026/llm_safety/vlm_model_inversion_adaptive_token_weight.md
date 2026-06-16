@@ -2,86 +2,104 @@
 title: >-
   [Paper Note] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks
 description: >-
-  [CVPR 2026][LLM Safety][Model inversion attack] This paper presents the first systematic study of model inversion (MI) attacks against VLMs…
+  [CVPR 2026][LLM Safety][Paper Note] This paper presents the first systematic study of Model Inversion (MI) attacks on VLMs. It proposes a set of inversion strategies tailored for token generation characteristics (TMI/TMI-C/SMI) and the SMI-AW method, which dynamically weights token gradient contributions based on visual attention intensity. The approach
 tags:
-  - "CVPR 2026"
-  - "LLM Safety"
-  - "Model inversion attack"
-  - "VLM privacy leakage"
-  - "adaptive token weighting"
-  - "visual attention guidance"
-  - "training data reconstruction"
+  - CVPR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 00c8f345ece398ad
+content_hash: cfd1ce137ef908bc
 ---
-
 # Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2508.04097](https://arxiv.org/abs/2508.04097)  
 **Code**: [https://ngoc-nguyen-0.github.io/SMI_AW/](https://ngoc-nguyen-0.github.io/SMI_AW/)  
-**Area**: Multimodal VLM / AI Security
-**Keywords**: Model inversion attack, VLM privacy leakage, adaptive token weighting, visual attention guidance, training data reconstruction
+**Area**: Multimodal VLM / AI Security  
+**Keywords**: Model Inversion Attack, VLM Privacy Leakage, Adaptive Token Weighting, Visual Attention Guidance, Training Data Reconstruction  
 
 ## TL;DR
-This paper presents the first systematic study of model inversion (MI) attacks against VLMs, proposing a suite of inversion strategies tailored to token generation (TMI/TMI-C/SMI) and an adaptive attention-weighted method SMI-AW that dynamically weights token gradient contributions based on visual attention intensity. Evaluated across 4 VLMs and 3 datasets, SMI-AW achieves up to 61.21% human-evaluated attack accuracy, revealing severe training data privacy leakage risks in VLMs.
+This paper presents the first systematic study of Model Inversion (MI) attacks on VLMs. It proposes a set of inversion strategies tailored for token generation characteristics (TMI/TMI-C/SMI) and the SMI-AW method, which dynamically weights token gradient contributions based on visual attention intensity. The approach achieves a human-evaluated attack accuracy of up to 61.21% across 4 VLMs and 3 datasets, revealing significant privacy risks regarding training data in VLMs.
 
 ## Background & Motivation
-Model inversion (MI) attacks aim to reconstruct private training data from trained models and have been extensively studied for unimodal DNNs, especially face recognition. However, VLMs present unique characteristics that prevent direct application of conventional MI methods:
+Model Inversion (MI) attacks aim to reconstruct private training data from a trained model and have been extensively studied in unimodal DNNs, particularly face recognition. However, VLMs possess unique characteristics that render traditional MI inapplicable:
 
 1. VLM outputs are token sequences rather than class labels, requiring new inversion objective functions.
-2. VLMs comprise multiple modules (visual encoder, projection layer, language model), with the visual encoder typically frozen—private information is primarily embedded in the language model and projection layer parameters.
-3. Different output tokens vary in their dependence on visual input—some tokens are strongly visually grounded, while others are driven purely by linguistic context.
+2. VLMs consist of multiple modules (visual encoder, projection layer, language model), where visual encoders are often frozen—meaning private information is primarily embedded in the language model and projection layer parameters.
+3. Different output tokens exhibit varying degrees of dependence on visual input—some are strongly visually grounded, while others are driven solely by linguistic context.
 
-As VLMs are increasingly deployed in sensitive domains such as healthcare and finance, understanding their privacy risks is of urgent importance.
+As VLMs are deployed in sensitive domains like healthcare and finance, understanding their privacy risks is urgent.
 
 ## Core Problem
-Are VLMs as vulnerable to model inversion attacks as unimodal DNNs? How can effective MI attacks be designed to exploit the token generation characteristics of VLMs?
+Are VLMs as susceptible to model inversion attacks as unimodal DNNs? How can effective MI attack methods be designed to account for the token generation characteristics of VLMs?
 
 ## Method
 
 ### Overall Architecture
-White-box attack setting: the adversary has full access to the VLM's architecture, parameters, and attention maps. Given a text prompt $t$ (e.g., "Who is the person in the image?") and a target answer $y$ (e.g., a person's name), the method optimizes a latent code $w$ in the latent space of a pretrained StyleGAN2 such that $x = G(w)$ causes the VLM to output $y$.
+
+This is a white-box model inversion attack where the attacker possesses the full architecture, parameters, and attention maps of the VLM. The goal is to "reverse-engineer" private training images. Specifically, a latent code $w$ is optimized in the StyleGAN2 latent space such that the generated image $x = G(w)$, when fed to the VLM with a text prompt $t$ (e.g., "Who is the person in the image?"), produces the target answer $y$ (e.g., a specific name). The pipeline is an iterative optimization loop: Generate candidate image $\to$ pass through VLM to obtain answer token sequence $\to$ calculate inversion loss $\to$ backpropagate to update $w \to$ repeat $N$ steps until the generated image consistently induces the target answer. The difficulty lies in how to aggregate the loss from a sequence of tokens into a single inversion signal. The authors incrementally refine this aggregation from token-wise to sequence-level to attention-weighted (SMI-AW).
+
+```mermaid
+graph TD
+    A["Latent Code w (StyleGAN2 latent space, optimized)"] --> B["Generate Candidate Image x = G(w)"]
+    B --> C["VLM M(t, x): Text Prompt t + Image x<br/>→ Output Answer Token Sequence y"]
+    C --> AGG
+    subgraph AGG["Inversion Loss Aggregation (4 progressive strategies, SMI-AW as final)"]
+        direction TB
+        D1["1. TMI: Update per token (High gradient noise)"] --> D2["2. TMI-C: Update per token until convergence (Conflicting directions, worst)"]
+        D2 --> D3["3. SMI: Average full sentence loss (Global gradient, stable)"]
+        D3 --> D4["4. SMI-AW: Dynamic weighting by cross-attention β (Core contribution)"]
+    end
+    AGG --> E["Gradient Update w = w − λ·∂L/∂w"]
+    E -->|N-step Loop| B
+    E --> F["Output: Reconstructed Private Training Image"]
+```
 
 ### Key Designs
 
-1. **Token-based MI (TMI)**: Iterates token-by-token—computes the inversion loss for each token $y_i$ in the sequence and updates the latent variable $w$ independently. All $m$ tokens are traversed once per round. Limitation: per-token gradients are noisy, and gradients from weakly visually grounded tokens may mislead optimization.
+**1. Token-based MI (TMI): Token-wise inversion with noisy gradients**  
+The most direct approach calculates inversion loss for each token $y_i$ in the answer sequence independently and updates $w$ for each. After one iteration, $m$ updates are performed. However, single-token gradients are noisy; tokens with weak visual grounding (e.g., articles) can misguide optimization in incorrect directions.
 
-2. **Convergent Token-based MI (TMI-C)**: Applies $K$ updates per token until convergence before proceeding to the next. Limitation: convergence directions are unstable, resulting in the lowest match rates (<30%).
+**2. Convergent Token-based MI (TMI-C): Convergence per token leads to degradation**  
+To address noise, this variant updates $w$ for $K$ steps until convergence for each token. This proves counterproductive as the convergence directions of individual tokens are unstable and conflict with each other, dropping the target matching rate to its lowest point (<30%).
 
-3. **Sequence-based MI (SMI)**: Aggregates losses across all tokens into a unified objective $\mathcal{L} = \frac{1}{m}\sum_{i=1}^m \mathcal{L}_{inv}(M(t, G(w), y_{<i}), y_i)$, updating $w$ with a global gradient at each step. Achieves match rates >95%, substantially outperforming TMI.
+**3. Sequence-based MI (SMI): Unified objective for the full sequence**  
+SMI addresses the issues of per-token methods by aggregating losses of all tokens into a unified objective, using global gradients to update $w$ at each step:
 
-4. **SMI-AW (core contribution)**: Observes that different tokens exhibit different levels of visual attention—tokens with strong visual grounding (e.g., descriptive parts of a name) have high cross-attention values and carry richer visual information in their gradients, whereas language-driven tokens (e.g., articles) have weak attention and less informative gradients. SMI-AW dynamically computes per-token weights $\beta_i = \alpha_i / \sum_j \alpha_j$ from cross-attention values $\alpha_i$ and aggregates the loss as $\mathcal{L} = \sum_{i=1}^m \beta_i \mathcal{L}_{inv}$. Crucially, the weights are updated dynamically at each inversion step, since token dependence on visual input evolves as the reconstructed image progressively approximates the target.
+$$\mathcal{L} = \frac{1}{m}\sum_{i=1}^m \mathcal{L}_{inv}(M(t, G(w), y_{<i}), y_i)$$
+
+The global signal is significantly more stable than single tokens, pushing the target matching rate to >95%, far outperforming TMI.
+
+**4. SMI-AW: Dynamic weighting via visual attention (Core Contribution)**  
+While SMI treats all tokens equally, the authors observe that tokens vary in visual dependency. Tokens with high visual grounding (e.g., descriptive parts of a name) show strong cross-attention and carry richer visual information in their gradients. Linguistically driven tokens (e.g., articles) have weak attention and nearly useless gradients. SMI-AW uses cross-attention values $\alpha_i$ to calculate weights $\beta_i = \alpha_i / \sum_j \alpha_j$, aggregating the loss as $\mathcal{L} = \sum_{i=1}^m \beta_i \mathcal{L}_{inv}$. Importantly, these weights are recomputed at every inversion step because as the reconstructed image approaches the target, the visual dependency of tokens changes.
 
 ### Loss & Training
-- Three inversion losses are evaluated: cross-entropy $\mathcal{L}_{CE}$, maximum margin loss $\mathcal{L}_{MML}$, and logit maximization $\mathcal{L}_{LOM}$ (best performing).
-- $\mathcal{L}_{LOM}$ directly maximizes the target token's logit with regularization to prevent unbounded growth.
-- Inversion steps $N = 70$, update rate $\lambda = 0.05$.
-- Initial candidate selection: 2,000 latent codes $w$ are sampled and the top-16 low-loss candidates are selected; final selection: 8 optimal samples chosen after 10 random augmentations.
+- Three types of inversion loss: Cross-entropy $\mathcal{L}_{CE}$, Maximum Margin $\mathcal{L}_{MML}$, and Logit Maximization $\mathcal{L}_{LOM}$ (Optimal). $\mathcal{L}_{LOM}$ directly maximizes the target token logit with regularization to prevent unbounded growth.
+- Inversion steps $N = 70$, learning rate $\lambda = 0.05$.
+- Initial candidate selection: Sample 2,000 $w$ codes, select top-16 low-loss candidates. Final selection: Choose 8 best after 10 random augmentations.
 
 ## Key Experimental Results
 
 ### FaceScrub Dataset (LLaVA-v1.6-7B)
 
 | Method | AttAcc_M ↑ | AttAcc_D Top1 ↑ | AttAcc_D Top5 ↑ | δ_face ↓ |
-|--------|-----------|-----------------|-----------------|---------|
+| :--- | :--- | :--- | :--- | :--- |
 | TMI | 42.20% | 18.03% | 40.25% | 0.8901 |
 | TMI-C | 16.08% | 3.85% | 11.64% | 1.1825 |
 | SMI | 57.83% | 33.50% | 61.56% | 0.7473 |
 | **SMI-AW** | **61.01%** | **37.62%** | **66.16%** | **0.7265** |
 
-### Cross-Dataset Results (LLaVA-v1.6-7B + SMI-AW)
+### Cross-Dataset (LLaVA-v1.6-7B + SMI-AW)
 
 | Dataset | AttAcc_M ↑ | AttAcc_D Top1 ↑ |
-|---------|-----------|-----------------|
+| :--- | :--- | :--- |
 | FaceScrub | 61.01% | 37.62% |
 | CelebA | 67.05% | 45.25% |
 | StanfordDogs | 78.13% | 55.83% |
 
-### Cross-Model Results (FaceScrub + SMI-AW)
+### Cross-Model (FaceScrub + SMI-AW)
 
 | VLM | AttAcc_M ↑ | δ_eval ↓ |
-|-----|-----------|---------|
+| :--- | :--- | :--- |
 | LLaVA-v1.6-7B | 61.01% | 134.94 |
 | InternVL2.5-8B | 55.05% | 139.18 |
 | MiniGPT-v2 | 47.92% | 161.25 |
@@ -89,60 +107,55 @@ White-box attack setting: the adversary has full access to the VLM's architectur
 
 ### Human Evaluation
 
-| VLM | Dataset | AccAcc_H ↑ |
-|-----|---------|-----------|
+| VLM | Dataset | AttAcc_H ↑ |
+| :--- | :--- | :--- |
 | LLaVA-v1.6-7B | CelebA | **61.21%** |
 | LLaVA-v1.6-7B | FaceScrub | 56.93% |
 | MiniGPT-v2 | FaceScrub | 57.22% |
 
 ### Ablation Study
-- **Sequence vs. token**: Sequence-based methods achieve target match rates >95%, whereas token-based methods reach only 60–79% (TMI-C <30%), confirming that global gradient signals are more stable.
-- **Adaptive vs. uniform weighting**: SMI-AW consistently outperforms SMI across all metrics, validating the effectiveness of visual attention-guided weighting.
-- **Loss functions**: $\mathcal{L}_{LOM}$ performs best, followed by $\mathcal{L}_{CE}$; $\mathcal{L}_{MML}$ performs worst.
-- **Prompt robustness**: Varying input prompts has minimal impact on attack performance (AttAcc_M ranges 59–61%).
-- **Attack on public models**: Celebrity facial images are successfully reconstructed from publicly released LLaVA-v1.6-7B and MiniGPT-v2.
+- **Sequence vs Token**: Sequence-based target matching exceeds 95%, while token-based methods reach only 60-79% (TMI-C <30%), proving global gradient stability.
+- **Adaptive vs Uniform Weighting**: SMI-AW consistently outperforms SMI, validating the effectiveness of visual attention-guided weighting.
+- **Loss Functions**: $\mathcal{L}_{LOM}$ is the most effective, followed by $\mathcal{L}_{CE}$, with $\mathcal{L}_{MML}$ performing worst.
+- **Prompt Robustness**: Different input prompts have minimal impact on attack performance (AttAcc_M remains within 59-61%).
+- **Public Model Attacks**: Successfully reconstructed celebrity facial images from public LLaVA-v1.6-7B and MiniGPT-v2 checkpoints.
 
 ## Highlights & Insights
-- **Pioneering problem formulation**: This is the first systematic study of model inversion attacks against VLMs, addressing an important gap in multimodal privacy security research.
-- **Key insight**: Different output tokens exhibit varying degrees of visual grounding, and this grounding evolves dynamically across inversion steps—a property unique to VLMs that has no counterpart in unimodal MI.
-- **Elegant method design**: Cross-attention maps serve as a proxy for gradient informativeness, converting VLM-internal mechanisms into an attack advantage.
-- **Practical validation**: Successful reconstruction of celebrity faces from publicly deployed VLMs demonstrates that the privacy risk is realistic rather than merely theoretical.
-- **Large-scale human evaluation**: Results are validated by 4,240–8,000 crowdsourced participants, lending credibility to the evaluation.
+- **Pioneering Problem**: This is the first systematic exploration of MI attacks on VLMs, filling a critical gap in multimodal privacy security.
+- **Key Insight**: Different output tokens exhibit varying levels of visual grounding that change dynamically during inversion—a property unique to VLMs and absent in unimodal MI.
+- **Clever Design**: Uses cross-attention maps as a proxy for gradient informativeness, turning the VLM's internal mechanisms into an advantage for the attacker.
+- **Empirical Validation**: Successful reconstruction of celebrity faces from public VLMs demonstrates that privacy risks are real and not just theoretical.
+- **Large-scale Human Evaluation**: Conducted with 4,240-8,000 crowd-sourced participants, ensuring highly credible results.
 
 ## Limitations & Future Work
-- **White-box assumption**: In realistic scenarios, adversaries may not have full access to model parameters and attention maps.
-- **Domain coverage**: Experiments are limited to face and dog breed datasets; generalization to natural scenes or medical images remains unexplored.
-- **Frozen visual encoder assumption**: Attack effectiveness may differ if the visual encoder is also fine-tuned.
-- **Defenses not explored**: The paper focuses exclusively on attacks and does not propose concrete defense mechanisms.
-- **Weaker performance on Qwen2.5-VL** (only 32%), likely due to architectural differences, warrants further analysis.
+- **White-box Assumption**: Practical attackers may not have access to full model parameters and attention maps.
+- **Domain Constraints**: Validation is limited to faces and dog breeds; extension to natural scenes or medical imaging is required.
+- **Frozen Visual Encoder Assumption**: Attack efficacy may vary if the visual encoder is also fine-tuned.
+- **Defense Exploration**: The paper focuses on attacks and does not propose specific defense mechanisms.
+- **Qwen2.5-VL Performance**: The lower attack success rate (32%) on this model warrants a deeper analysis of its architectural differences.
 
 ## Related Work & Insights
-- **vs. conventional MI (GMI/PPA/KEDMI)**: Traditional methods perform inversion against class labels of classification models; this paper extends MI to token sequence generation in VLMs, requiring fundamentally new optimization strategies.
-- **vs. MI under contrastive learning**: Prior work primarily investigates alignment leakage in contrastive models such as CLIP; this paper targets the generative language modeling stage of VLMs, representing a different attack surface.
-- **vs. federated learning privacy attacks**: Gradient inversion attacks in FL rely on intercepting gradients during training; this paper operates on already-trained models without requiring access to training-time gradients.
-
-**Implications and connections:**
-- **VLM privacy defense**: The attack surface identified in this paper suggests the need for privacy-preserving measures during VLM training—such as differential privacy, regularization, or decoy-signal mechanisms analogous to Trap-MID.
-- **Connection to RED (Rationale-Enhanced Decoding)**: Both papers exploit the varying degrees of visual grounding among VLM output tokens, but in opposite directions—RED leverages this property to enhance reasoning, while SMI-AW leverages it to strengthen attacks.
-- **Multimodal security**: As VLMs are increasingly adopted in high-stakes medical applications (e.g., radiology report generation), the real-world risks of such attacks cannot be overlooked.
+- **vs Traditional MI (GMI/PPA/KEDMI)**: Traditional methods target classification labels; this work extends MI to token sequence generation in VLMs using new optimization strategies.
+- **vs Contrastive Learning MI**: Prior work focused on alignment leakage in models like CLIP; this study targets the generative language modeling stage of VLMs, representing a different attack surface.
+- **vs Federated Learning Attacks**: Gradient inversion in FL targets intercepted gradients; this work operates on a fully trained model without needing access to the training process.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First extension of MI attacks to VLMs; the problem is significant and the method design is well-motivated.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 4 VLMs, 3 datasets, 5 evaluation metrics (including large-scale human evaluation), and validation on publicly released models.
-- Writing Quality: ⭐⭐⭐⭐ Logic is clear and problem formulation is precise; supplementary material is overly extensive and could be condensed.
-- Value: ⭐⭐⭐⭐⭐ Carries significant implications for privacy security in VLM deployment and opens a new research direction.
+- Novelty: ⭐⭐⭐⭐⭐ Pioneering application of MI to VLMs with sound methodology.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Inclusive of 4 VLMs, 3 datasets, 5 metrics (including massive human eval), and public model validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and precise problem description, though some supplemental material could be distilled.
+- Value: ⭐⭐⭐⭐⭐ High impact for VLM privacy security, opening new research directions for sensitive deployments.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization](oslash_source_models_leak_what_they_shouldnt_nrightarrow_unlearning_zero-shot_tr.md)
 - [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/llm_safety/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
 - [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](../../ACL2026/llm_safety/do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
+- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
 
 </div>
 

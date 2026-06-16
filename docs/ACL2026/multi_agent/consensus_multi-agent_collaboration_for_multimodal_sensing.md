@@ -2,127 +2,136 @@
 title: >-
   [Paper Note] ConSensus: Multi-Agent Collaboration for Multimodal Sensing
 description: >-
-  [ACL2026][Multi-Agent][Multi-agent collaboration] ConSensus is a training-free multi-agent sensor fusion framework that assigns different sensing modalities to specialized agents for independent interpretation…
+  [ACL 2026][Multi-Agent][Paper Note] ConSensus is a training-free multi-agent sensor fusion framework that assigns different sensing modalities to specialized agents for independent interpretation. It then utilizes semantic fusion, statistical consensus, and hybrid arbitration to derive final judgments. Across five multimodal sensing benchmarks, it achiev
 tags:
-  - "ACL2026"
-  - "Multi-Agent"
-  - "Multi-agent collaboration"
-  - "multimodal sensing"
-  - "sensor fusion"
-  - "statistical consensus"
-  - "semantic fusion"
+  - ACL 2026
+  - Multi-Agent
 date: 2026-05-08
-content_hash: c14b9db3239c31a4
+content_hash: 19f2bfbf993d6d81
 ---
-
 # ConSensus: Multi-Agent Collaboration for Multimodal Sensing
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2601.06453](https://arxiv.org/abs/2601.06453)  
 **Code**: https://github.com/nokia/multi-agent-collaboration-for-multimodal-sensing  
 **Area**: Multimodal Sensing / LLM Agent  
-**Keywords**: Multi-agent collaboration, multimodal sensing, sensor fusion, statistical consensus, semantic fusion  
+**Keywords**: Multi-agent collaboration, Multimodal sensing, Sensor fusion, Statistical consensus, Semantic fusion  
 
 ## TL;DR
-ConSensus is a training-free multi-agent sensor fusion framework that assigns different sensing modalities to specialized agents for independent interpretation, followed by semantic fusion, statistical consensus, and hybrid arbitration to obtain final judgments. It achieves an average accuracy improvement of 7.1% over single-agent methods across five multimodal sensing benchmarks while reducing fusion token costs to approximately 1/12.7 of multi-round debate methods.
+ConSensus is a training-free multi-agent sensor fusion framework that assigns different sensing modalities to specialized agents for independent interpretation. It then utilizes semantic fusion, statistical consensus, and hybrid arbitration to derive final judgments. Across five multimodal sensing benchmarks, it achieves an average accuracy improvement of 7.1% over single-agent methods while reducing fusion token costs to approximately 1/12.7 of multi-round debate methods.
 
 ## Background & Motivation
-**Background**: LLMs are being utilized to interpret real-world sensor data, such as motion recognition, sleep stage identification, stress detection, and health monitoring. A common practice is to include statistical features from multiple sensors in a single prompt to let a single LLM perform inference in one go.
+**Background**: LLMs are increasingly utilized to interpret real-world sensor data, such as motion recognition, sleep stage identification, stress detection, and health monitoring. A common approach involves embedding statistical features from multiple sensors into a single prompt for a single LLM to perform inference in one go.
 
-**Limitations of Prior Work**: Information density, reliability, and semantic meaning vary across heterogeneous sensors. Single agents tend to ignore certain modalities or be dominated by a prominent modality. Furthermore, pure LLM judges are influenced by prior knowledge biases (e.g., over-relying on medically significant ECG), while pure majority voting is fragile when sensors are missing or noise is high.
+**Limitations of Prior Work**: Heterogeneous sensors vary in information density, reliability, and semantic meaning. A single agent tends to overlook certain modalities or be dominated by one prominent modality. Furthermore, pure LLM judges are influenced by prior knowledge (e.g., over-relying on medically significant ECG), while pure majority voting is fragile when sensors are missing or noise is high.
 
-**Key Challenge**: Multimodal sensing requires both semantic understanding and statistical robustness. Semantic aggregation can identify sensor failures and contextual clues but suffers from knowledge bias; statistical voting can suppress individual agent errors but relies on voters being reliable and independent. In real sensing environments, these two conditions often fail simultaneously.
+**Key Challenge**: Multimodal sensing requires both semantic understanding and statistical robustness. Semantic aggregation can identify sensor failures and contextual clues but suffers from knowledge bias; statistical voting can suppress individual agent errors but depends on voters being reliable and independent. In real-world sensing environments, these two conditions are often simultaneously violated.
 
-**Goal**: The authors aim to propose a training-agnostic and model-agnostic collaboration protocol deployable to various sensing tasks, enabling LLMs to fuse heterogeneous sensing modalities more stably without retraining sensor encoders.
+**Goal**: The authors aim to propose a training-agnostic, model-agnostic collaboration protocol that can be deployed across various sensing tasks, enabling LLMs to fuse heterogeneous modalities more robustly without re-training sensor encoders.
 
-**Key Insight**: The paper decomposes an "all-in-one" multimodal prompt into multiple modality-aware agents. Each agent interprets only one sensing modality, followed by explicitly defined roles for semantic fusion, statistical fusion, and final hybrid arbitration to balance different inductive biases.
+**Key Insight**: This work decomposes a "one-size-fits-all" multimodal prompt into multiple modality-aware agents, where each agent interprets only one sensing modality. It then explicitly introduces three types of roles—semantic fusion, statistical fusion, and final hybrid arbitration—to balance different inductive biases.
 
-**Core Idea**: By letting each sensing modality speak independently first, and then allowing the final fusion agent to observe both "semantic interpretations" and "statistical consensus," the system can dynamically choose between knowledge bias and voting fragility.
+**Core Idea**: Each sensing modality speaks independently first. The final fusion agent then observes both the "semantic interpretation" and the "statistical consensus," allowing for dynamic selection between knowledge bias and voting vulnerability.
 
 ## Method
-The core of ConSensus is not training new models but designing a multi-agent reasoning workflow. Given a task description and $N$ sensing modalities, the system creates a specialized agent for each modality to obtain predictions and explanations. Subsequently, three fusion agents sequentially generate semantic aggregation, statistical consensus explanations, and the final hybrid decision.
+
+The core of ConSensus is not training a new model but designing a multi-agent reasoning workflow. Given a task description and $N$ sensing modalities, the system assigns a specialized agent to each modality to output a prediction and interpretation. Subsequently, three fusion agents sequentially perform semantic aggregation, statistical consensus, and final hybrid arbitration.
 
 ### Overall Architecture
-Inputs include task descriptions, category sets, and multimodal sensor features. Each modality agent receives features from a single modality and task instructions, outputting a prediction $\hat{y}_i$ and rationale $r_i$. These outputs are forwarded to the semantic fusion agent and statistical fusion agent: the former generates a knowledge-driven prediction based on cross-modal semantic evidence, while the latter generates a consensus-driven explanation centered on the majority vote result. Finally, the hybrid fusion agent reads both to output the final category and explanation.
 
-This workflow relies solely on prompts and LLM calls without additional supervised training. The main experiments use gpt-oss-20B with temperature set to 0, evaluating performance using accuracy across five sensing tasks.
+The input consists of the task description, category sets, and multimodal sensor features. In the first layer, each modality agent receives only features from a single modality and the task instructions, outputting its own prediction $\hat{y}_i$ and rationale $r_i$. These unimodal conclusions are simultaneously sent to two parallel fusion agents: the semantic fusion agent integrates cross-modal semantic evidence for a knowledge-driven prediction, while the statistical fusion agent provides a consensus-driven explanation centered on the majority vote. Finally, the hybrid fusion agent reads both streams to output the final category and explanation. The entire process relies solely on prompts and LLM calls without any supervised training. The main experiments use gpt-oss-20B with temperature set to 0, evaluating accuracy across five sensing tasks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Task Description + Category Set + N Modality Features"]
+    A --> M
+    subgraph M["Modality-Specific Agent Decomposition"]
+        direction TB
+        M1["Modality Agent 1: Modality 1 only → Prediction + Rationale"]
+        M2["Modality Agent N: Modality N only → Prediction + Rationale"]
+    end
+    subgraph F["Parallel Semantic and Statistical Fusion Modeling"]
+        direction TB
+        SEM["Semantic Fusion Agent: Prediction via cross-modal causality + domain knowledge"]
+        STAT["Statistical Fusion Agent: Calculates majority vote + consensus explanation"]
+    end
+    M --> F
+    F --> HY["Hybrid Arbitration Agent: Sample-level selection between semantic and statistical"]
+    HY --> OUT["Final Prediction + Explanation"]
+```
 
 ### Key Designs
-1.  **Modality-Specific Agent Decomposition**:
 
-	- **Function**: Decomposes complex multi-sensor inputs into multiple single-modality interpretation tasks.
-	- **Mechanism**: The $i$-th agent only observes modality $m_i$ and task $T$, outputting its own prediction $\hat{y}_i$ and explanation $r_i$. This ensures each agent explicitly processes evidence from its modality rather than being drowned out in a large prompt.
-	- **Design Motivation**: The primary issues with single agents are context overload and modality dominance. Decomposition ensures that even weak signal modalities are interpreted independently.
+**1. Modality-Specific Agent Decomposition: Ensuring independent interpretation of each weak signal**
 
-2.  **Parallel Modeling of Semantic and Statistical Fusion**:
+When a single agent processes all sensor features in one large prompt, common issues include context overload and modality dominance (where weak signals are drowned out by prominent modalities). ConSensus decomposes the prompt: the $i$-th agent only sees modality $m_i$ and task $T$, forced to explicitly state evidence for that modality and output $(\hat{y}_i, r_i)$. This ensures that even modalities with low information density have a distinct voice before fusion.
 
-	- **Function**: Models knowledge-driven and consensus-driven fusion biases separately.
-	- **Mechanism**: The semantic fusion agent reads all $(\hat{y}_i, r_i)$ to form predictions based on cross-modal causal relationships and domain knowledge. The statistical fusion agent first calculates the majority vote $\hat{y}_{vote}=\arg\max_c \sum_i \mathbf{1}[\hat{y}_i=c]$, then generates an explanation for this voting result.
-	- **Design Motivation**: Semantic fusion is adept at identifying sensor failures but may over-rely on priors. Statistical fusion can mitigate the impact of individual errors but fails under missing modalities and correlated errors.
+**2. Parallel Semantic and Statistical Fusion Modeling: Cultivating two mutually exclusive inductive biases**
 
-3.  **Hybrid Arbitration Agent**:
+The difficulty in fusion lies in the fact that no single bias is always correct. Semantic aggregation excels at detecting sensor failures and reading contextual clues but is prone to over-reliance on priors (e.g., blindly trusting ECG in medical contexts). Majority voting reduces the impact of a single erroneous agent, but only if voters are reliable and independent—a premise that fails during sensor loss or high noise. ConSensus cultivates two parallel agents: the semantic fusion agent provides predictions based on cross-modal causality and domain knowledge after reading all $(\hat{y}_i, r_i)$, while the statistical fusion agent calculates the majority vote $\hat{y}_{vote}=\arg\max_c \sum_i \mathbf{1}[\hat{y}_i=c]$ and generates an explanation for it. Their respective blind spots offset each other, preparing independent evidence sources for sample-level selection.
 
-	- **Function**: Performs instance-wise arbitration between semantic and statistical predictions.
-	- **Mechanism**: The hybrid fusion agent observes $(\hat{y}_{sem}, r_{sem})$ and $(\hat{y}_{stat}, r_{stat})$ simultaneously, providing a final prediction $\hat{y}$ based on the reliability of both explanations. Instead of simple averaging, the LLM judges whether to trust semantic consistency or statistical stability for the specific sample.
-	- **Design Motivation**: Real sensing tasks lack a fixed optimal fusion rule. The most reliable evidence source fluctuates based on samples, missingness patterns, and noise levels.
+**3. Hybrid Arbitration Agent: Dynamic decision-making per sample**
+
+Optimal fusion rules are not fixed; the most reliable evidence source changes based on specific samples, missingness patterns, and noise levels. The hybrid fusion agent observes both $(\hat{y}_{sem}, r_{sem})$ and $(\hat{y}_{stat}, r_{stat})$, providing the final prediction $\hat{y}$ based on the current reliability of the rationales. Instead of simple averaging, the LLM determines on a per-sample basis whether to trust semantic consistency or statistical stability. This step provides significant gains: when statistical certainty drops (e.g., high missingness), the agent pivots to semantic interpretation, avoiding the rapid performance degradation of pure voting.
 
 ### Loss & Training
-ConSensus is a training-free method with no parameter updates or loss functions. In experiments, all models run with deterministic inference using 1-shot in-context learning, where sensor features are embedded in structured text prompts. The "training strategy" is effectively the design of the inference-time protocol: a single round of modality interpretation followed by a single round of semantic/statistical/hybrid fusion, rather than Self-Consistency or multi-round debate.
+
+ConSensus is a training-free method with no parameter updates or loss functions. All models run deterministic inference using 1-shot in-context learning, representing sensor features as structured text prompts. The "training strategy" is essentially the inference-time protocol design: a single round of modality interpretation followed by a single round of semantic/statistical/hybrid fusion, rather than Self-Consistency or multi-round debate.
 
 ## Key Experimental Results
 
 ### Main Results
-| Method | WESAD | SleepEDF | ActionSense | MMFit | PAMAP2 | Avg. | Fusion Extra Tokens |
+| Method | WESAD | SleepEDF | ActionSense | MMFit | PAMAP2 | Avg. | Extra Fusion Tokens |
 |------|-------|----------|-------------|-------|--------|------|----------------|
 | Single-Agent | 0.793 | 0.519 | 0.577 | 0.819 | 0.551 | 0.652 | None |
 | Self-Consistency | 0.786 | 0.541 | 0.555 | 0.862 | 0.547 | 0.658 | Multi-path sampling |
-| Self-Refine | 0.747 | 0.551 | 0.566 | 0.822 | 0.563 | 0.650 | Two rounds refinement |
+| Self-Refine | 0.747 | 0.551 | 0.566 | 0.822 | 0.563 | 0.650 | Two refinement rounds |
 | Debate | 0.873 | 0.548 | 0.609 | 0.984 | 0.561 | 0.715 | ~76K |
 | ReConcile | 0.880 | 0.571 | 0.640 | 0.964 | 0.579 | 0.727 | ~78.6K |
 | Semantic Fusion | 0.825 | 0.580 | 0.605 | 0.964 | 0.559 | 0.707 | ~6K |
 | Statistical Fusion | 0.927 | 0.592 | 0.597 | 0.960 | 0.534 | 0.722 | ~6K |
-| ConSensus | 0.880 | 0.600 | 0.611 | 0.967 | 0.558 | 0.723 | ~6K |
+| **Ours** (ConSensus) | 0.880 | 0.600 | 0.611 | 0.967 | 0.558 | 0.723 | ~6K |
 
-ConSensus achieves an average Gain of 7.1 percentage points over Single-Agent. Its average accuracy is slightly lower than ReConcile's 0.727, but it only requires a single round of fusion, reducing aggregation tokens from ~78.6K to 6K. Compared to the average overhead of multi-agent debate, the paper reports a 12.7x reduction in fusion tokens.
+ConSensus improves accuracy by an average of 7.1 percentage points over Single-Agent. While its accuracy is slightly lower than ReConcile's 0.727, it requires only one round of fusion, reducing aggregation tokens from ~78.6K to 6K—a 12.7x reduction in cost compared to typical multi-agent debate.
 
 ### Ablation Study
-| Experiment | Key Findings | Note |
+| Experiment | Key Experimental Results | Explanation |
 |------|----------|------|
-| Semantic vs Statistical | Statistical Fusion (Avg 0.722) vs Semantic Fusion (Avg 0.707) | Statistical consensus is generally stronger, but optimal strategies vary by dataset. |
-| Hybrid Fusion | Outperformed single-branch semantic/statistical on SleepEDF, ActionSense, and MMFit | Hybrid agents can select more reliable biases at the instance level. |
-| Robustness to Missing Modalities | Statistical Fusion drops to 41.4% at 50% missingness, Semantic Fusion remains at 59.9% | Pure voting is highly fragile at high missingness rates. |
-| ConSensus vs Statistical Fusion | Higher by 9.1% and 18.4% at 30% and 50% missingness, respectively | Hybrid shifts to semantic interpretation when statistical certainty decreases. |
-| Small Model Generalization | Single-Agent (0.293) vs ConSensus (0.456) on Llama-3.1-8B | Small models benefit from a +16.3 point Gain through agent decomposition. |
+| Semantic vs Statistical | Statistical Fusion Avg 0.722, Semantic Fusion Avg 0.707 | Statistical consensus is stronger overall, but optimal strategies vary by dataset. |
+| Hybrid Fusion | Outperforms semantic/statistical branches on SleepEDF, ActionSense, MMFit | Hybrid agents select more reliable biases at the sample level. |
+| Missing Modality Robustness | Statistical Fusion drops to 41.4% at 50% missingness; Semantic Fusion holds 59.9% | Pure voting is highly fragile under high missingness. |
+| ConSensus vs Statistical | 9.1% and 18.4% higher at 30% and 50% missingness respectively | Hybrid pivots to semantic explanation when statistical certainty decreases. |
+| Small Model Generalization | Single-Agent 0.293 vs ConSensus 0.456 on Llama-3.1-8B | Small models gain +16.3 points via agent decomposition. |
 
 ### Key Findings
-- Modality decomposition itself is critical. Even without hybrid fusion, both semantic and statistical fusion significantly outperform single-agent baselines.
-- While ReConcile achieves high average accuracy, its token cost is heavy; ConSensus serves as a structured single-round protocol trade-off for near-debate performance.
-- Statistical voting is effective in tasks like WESAD where semantic priors can be misleading, but it degrades rapidly with missing modalities.
-- ConSensus is particularly valuable for smaller models. Llama-3.1-8B's single-agent performance is weak, but multi-agent decomposition yields a larger relative Gain.
+- Modality decomposition itself is critical. Even without hybrid fusion, semantic/statistical fusion significantly outperforms a single agent.
+- Although ReConcile yields high accuracy, its token cost is prohibitive; ConSensus serves as a structured single-round protocol that approaches debate-level performance.
+- Statistical voting is useful for tasks where semantic priors might mislead (like WESAD), but it degrades rapidly with missing modalities.
+- ConSensus is particularly valuable for small models. The single-agent performance of Llama-3.1-8B is weak, but multi-agent decomposition provides substantial relative gains.
 
 ## Highlights & Insights
-- The most inspiring aspect is the explicit split of "fusion" into two inductive biases rather than relying on a single judge. Semantic interpretation and statistical consensus each have blind spots; the value of the hybrid agent lies in making these biases complementary.
-- The paper improves performance across multiple datasets without training sensing models, a direction highly suitable for real-world deployment where large-scale labeling is often unavailable.
-- "Majority vote" in sensor fusion is not inherently reliable. Missing modalities break the assumption of independent and reliable voters, a point equally applicable to multimodal LLM systems.
-- This work suggests that in multimodal tasks, building an intermediate interpretation layer to explicitly preserve evidence from each modality is superior to stuffing all inputs into a single context window.
+- The most insightful aspect is explicitly splitting "fusion" into two inductive biases rather than letting a single judge decide. Semantic interpretation and statistical consensus have complementary blind spots.
+- Improving performance across multiple datasets without training sensor models makes this approach highly suitable for real-world deployment where labeled data is scarce.
+- Majority voting in sensor fusion is not inherently reliable. Missing modalities violate the assumptions of voter independence and reliability, a principle that applies to multimodal LLM systems as well.
+- This work suggests that in multimodal tasks, constructing an intermediate interpretation layer to preserve evidence from each modality is superior to stuffing all inputs into a single context window.
 
 ## Limitations & Future Work
-- Experimental scale is constrained by multi-agent inference costs. To cover more tasks and baselines, the authors used computable subsets of each dataset rather than full data.
-- Current evaluations are primarily classification tasks, as LLM-based multimodal sensing lacks standard benchmarks covering a broader range of task types; subjective and open-ended generative sensing reasoning have not been fully tested.
-- ConSensus does not stack Self-Consistency, Self-Refine, or more advanced confidence-aware debate, meaning its upper bound could be further increased.
-- Future work could explicitly model sensor reliability, such as through confidence-weighted voting, using tools to estimate signal quality, or leveraging historical sensing streams to learn modality reliability.
+- The scale of experiments is limited by the reasoning costs of multi-agent systems. The authors used computable subsets of datasets rather than full data.
+- The current evaluation focuses primarily on classification tasks; standard benchmarks for open-ended generative sensing or subjective reasoning are still lacking.
+- ConSensus has not yet integrated Self-Consistency, Self-Refine, or confidence-aware debate, which could further push its performance upper bound.
+- Future work could explicitly model sensor reliability, such as weighted voting, using tools to estimate signal quality, or learning modality reliability from historical sensor streams.
 
 ## Related Work & Insights
-- **vs Single-Agent Sensing Reasoning**: Single agents concatenate all features into one prompt, often missing modality evidence; ConSensus ensures each signal path is independently interpreted via modality agents.
-- **vs Multi-Agent Debate**: Debate, MAD, and ReConcile rely on multiple interactions, which are effective but token-intensive; ConSensus uses fixed fusion roles for one-time aggregation, making it more suitable for resource-constrained deployment.
-- **vs Traditional Supervised Sensor Fusion**: Traditional methods usually requires task-specific training data; ConSensus uses the world knowledge and prompt protocols of pre-trained LLMs for training-free inference, though it relies on the LLM's capability to understand sensing features textually.
-- **Inspiration for Other Tasks**: Multimodal medical diagnosis, autonomous driving, and robotic state estimation can all benefit from the "modality-specific interpretation + statistical anchor + semantic arbitration" paradigm.
+- **vs Single-Agent Sensing**: Single agents merge all features into one prompt, often missing specific modality evidence; ConSensus ensures each signal is interpreted independently.
+- **vs Multi-Agent Debate**: Methods like MAD and ReConcile rely on multi-round interactions, which are effective but token-expensive; ConSensus uses fixed fusion roles for one-shot aggregation.
+- **vs Supervised Fusion**: Traditional methods require task-specific training; ConSensus achieves training-free inference via LLM world knowledge and prompt protocols, though it remains dependent on the LLM's ability to understand textual sensor features.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Specifically applies multi-agent collaboration to heterogeneous sensor fusion and explicitly distinguishes between semantic and statistical biases with a clear design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 datasets, 12 sensor modalities, multiple backbones, and missing modality experiments; limited only by computational cost from being a full-scale evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Coherent motivation and observations with informative tables.
-- Value: ⭐⭐⭐⭐ Highly valuable for training-free sensing reasoning and multi-agent systems, especially in low-annotation and low-training-budget scenarios.
+- Novelty: ⭐⭐⭐⭐ Clearly designed multi-agent collaboration for heterogeneous sensor fusion with a distinct split between semantic and statistical biases.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 datasets, 12 modalities, multiple backbones, and missing modality experiments; limited only by computational costs for full-scale evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Coherent motivation and observations; rich information in tables.
+- Value: ⭐⭐⭐⭐ Highly relevant for training-free sensing and multimodal agent systems, especially in low-annotation or low-budget scenarios.
 
 <!-- RELATED:START -->
 
@@ -131,10 +140,10 @@ ConSensus achieves an average Gain of 7.1 percentage points over Single-Agent. I
 ## Related Papers
 
 - [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
 - [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
 - [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](../../AAAI2026/multi_agent/llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
-- [\[NeurIPS 2025\] Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks](../../NeurIPS2025/multi_agent/belief-calibrated_multi-agent_consensus_seeking_for_complex_nlp_tasks.md)
+- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
 
 </div>
 

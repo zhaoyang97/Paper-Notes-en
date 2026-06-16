@@ -2,100 +2,103 @@
 title: >-
   [Paper Note] Reinforcing Structured Chain-of-Thought for Video Understanding
 description: >-
-  [CVPR 2026][LLM Reasoning][VideoQA] This paper proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework that requires no SFT. By introducing a structured CoT (Summarize→Think→Answer) and two sel…
+  [CVPR 2026][LLM Reasoning][Reinforcement Learning] Proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework without SFT. By utilizing structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), it enhances video temporal reasoning and achieves SOTA results on 7 VideoQA benchmarks.
 tags:
-  - "CVPR 2026"
-  - "LLM Reasoning"
-  - "VideoQA"
-  - "Reinforcement Learning"
-  - "Structured CoT"
-  - "GRPO"
-  - "Temporal Reasoning"
+  - CVPR 2026
+  - LLM Reasoning
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: 8d48b239a78bdbc9
+content_hash: 89ebbb9286908414
 ---
-
 # Reinforcing Structured Chain-of-Thought for Video Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25942](https://arxiv.org/abs/2603.25942)  
 **Code**: None  
-**Area**: Video Understanding / Video Reasoning
+**Area**: Video Understanding / Video Reasoning  
 **Keywords**: VideoQA, Reinforcement Learning, Structured CoT, GRPO, Temporal Reasoning
 
 ## TL;DR
 
-This paper proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework that requires no SFT. By introducing a structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), SDRL enhances temporal reasoning in video understanding and achieves state-of-the-art results on 7 VideoQA benchmarks.
+Proposes SDRL (Summary-Driven Reinforcement Learning), a single-stage RL framework without SFT. By utilizing structured CoT (Summarize→Think→Answer) and two self-supervised mechanisms (CVK and DVR), it enhances video temporal reasoning and achieves SOTA results on 7 VideoQA benchmarks.
 
 ## Background & Motivation
 
-Multimodal large language models (MLLMs) have shown promise in video understanding, yet two core challenges remain:
+Multimodal Large Language Models (MLLMs) have shown potential in video understanding but face two core challenges:
 
-**Thinking Drift**: Existing RL methods (e.g., GRPO) optimize solely based on reward signals from final answers, leaving intermediate reasoning steps unconstrained. This causes models to generate verbose or visually irrelevant reasoning chains, severely undermining result stability.
+**Thinking Drift**: Existing RL methods (e.g., GRPO) rely solely on the reward signal of the final answer for optimization, leaving intermediate reasoning steps unconstrained. This causes models to generate redundant or irrelevant reasoning content, severely impacting stability.
 
-**Weak Temporal Understanding**: MLLMs typically represent videos as stacked or averaged frame embeddings, neglecting fine-grained temporal dependencies, which leads to poor performance on temporally sensitive VideoQA tasks.
+**Weak Temporal Understanding**: MLLMs typically represent videos as stacked or averaged frame embeddings, ignoring fine-grained temporal dependencies, which leads to poor performance on temporal-sensitive VideoQA tasks.
 
-Limitations of existing solutions:
-- **Pure RL methods**: Unconstrained reasoning, unstable
-- **SFT+RL methods**: Require costly CoT annotations, involve complex multi-stage training, and token-level imitation in SFT may limit generalization and risk overfitting
+**Limitations of Prior Work**:
+- **Pure RL methods**: Unconstrained reasoning and instability.
+- **SFT+RL methods**: Require expensive CoT annotations and complex multi-stage training; token-level imitation in SFT restricts generalization and may cause overfitting.
 
-The core innovation of SDRL lies in **directly integrating structured CoT into the RL objective**, constraining the reasoning process in a self-supervised manner without requiring an additional SFT stage or CoT annotation data.
+**Key Insight**: The core innovation of SDRL is the **direct integration of structured CoT into the RL objective**. It constrains the reasoning process through self-supervision without requiring additional SFT stages or CoT annotation data.
 
 ## Method
 
 ### Overall Architecture
 
-SDRL adopts Qwen2.5-VL-7B as the backbone. Given a (video, question) input, the model is prompted to produce structured output consisting of:
-- **Summary segment** (`<summary>`): Extracts key actions and their temporal order
-- **Think segment** (`<think>`): Conducts logical reasoning grounded in the summary
-- **Answer segment**: Produces the final answer
+SDRL employs Qwen2.5-VL-7B as the backbone. Given a (video, question) input, the model is required to generate structured output:
+- **Summary Section** (`<summary>`): Extracts key actions and their temporal order.
+- **Think Section** (`<think>`): Performs logical reasoning based on the summary.
+- **Answer Section**: Provides the final answer.
 
-For each input, $G$ groups of outputs are sampled. Group advantage values are computed via token-level weights (CVK+DVR) and standard rewards (accuracy + format) to optimize the policy.
+G groups of outputs are sampled for each input. Policy optimization is performed by calculating group advantages using token-level weights (CVK+DVR) and standard rewards (accuracy + format). The key to the pipeline is: building a framework with structured CoT, where the CVK branch constrains the Summary section to be faithful to the video, and the DVR branch allows the Think section to explore when necessary. These weights are then merged with standard rewards into group advantages.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Video + Question"] --> B["Structured CoT<br/>Summarize → Think → Answer"]
+    B --> C["Sample G groups of structured outputs per input"]
+    C -->|Summary Section| D["Consistency of Visual Knowledge (CVK)<br/>Intra-group Consistency → Consistency Weight"]
+    C -->|Think Section| E["Dynamic Video-reasoning-diversity (DVR)<br/>Diversity Weight modulated by Group Accuracy"]
+    D --> F["Token-level Weight W + Standard Reward<br/>Accuracy + Format"]
+    E --> F
+    F --> G["Group Advantage → GRPO Policy Update"]
+```
 
 ### Key Designs
 
-1. **Structured CoT (Summarize→Think→Answer)**:
+**1. Structured CoT (Summarize → Think → Answer)**
 
-    - Empirical analysis confirms that CoT chains associated with correct predictions exhibit higher BLEU and sBERT similarity to ground-truth CoT chains.
-    - Effective CoT must capture two core elements: (1) key actions/events and (2) their temporal order.
-    - The Summary segment serves as a top-down reasoning anchor, providing a factual grounding for the subsequent Think segment.
-    - **Design Motivation**: Using the summary as a structured anchor fundamentally addresses the thinking drift problem.
+Empirical findings show that CoT leading to correct predictions shares higher similarity (BLEU and sBERT) with ground-truth CoT. Effective CoT typically captures: (1) key actions/events, and (2) temporal order. Therefore, the model is forced to generate a `<summary>` first as a factual anchor for the subsequent `<think>`. This anchor acts as the foundation for "top-down reasoning," suppressing thinking drift at the root.
 
-2. **Consistency of Vision Knowledge (CVK)**:
+**2. Consistency of Visual Knowledge (CVK): Constraining Summary to the Video**
 
-    - **Core assumption**: The visual content of a video is fixed and factual; therefore, summaries sampled multiple times from the same input should exhibit high semantic consistency.
-    - **GT-supervised mode**: When ground-truth summaries are available, alignment is measured using a combined sBERT+BLEU similarity metric as an additional reward.
-    - **Self-supervised mode**: A consistency anchor $S^C$ (position-wise centroid) is dynamically derived from correct predictions; KL divergence measures inconsistency and is converted into a Summary Token Weight $\omega_t^S$.
-    - Higher KL divergence → lower consistency → smaller weight, encouraging the model to produce stable and consistent summary segments.
-    - **Design Motivation**: Rather than directly supervising summary content, factual faithfulness is indirectly constrained through intra-group consistency.
+**Key Insight**: Video content comprises fixed facts; thus, multiple summaries sampled for the same input **should be highly consistent semantically**. CVK avoids direct text supervision and ensures faithfulness via intra-group consistency:
+- **GT Supervision Mode**: When ground-truth summaries are available, alignment is measured using a combination of sBERT and BLEU.
+- **Self-supervised Mode**: Without GT, a consistency anchor $S^C$ (position-level center) is dynamically derived from correct predictions. KL divergence measures how much each summary token deviates from the anchor, which is converted into a Summary Token Weight $\omega_t^S$. Larger KL leads to lower weight, concentrating gradients on "stable and consistent" summary parts.
 
-3. **Dynamic Variety of Reasoning (DVR)**:
+**3. Dynamic Video-reasoning-diversity (DVR): Strategic Exploration in the Think Section**
 
-    - Encourages diversity in reasoning paths within the Think segment, measured by the entropy of token distributions.
-    - High-entropy tokens receive higher diversity weights $\omega_{g,t}^d$.
-    - **Dynamic modulation**: Diversity incentives are adjusted according to group accuracy $\mathcal{A}$:
-        - Low-accuracy groups: $(1-\mathcal{A})$ is large, reinforcing exploration.
-        - High-accuracy groups: $(1-\mathcal{A})$ is small, preserving stable reasoning paths.
-    - **Design Motivation**: Prevents forced diversity from introducing noise when the model is already confident, while encouraging exploration under uncertainty.
+Diversity in the reasoning path is encouraged in the `<think>` section, measured by the entropy of the token distribution. High-entropy tokens receive a higher diversity weight $\omega_{g,t}^d$. Crucially, this is **dynamically modulated by group accuracy $\mathcal{A}$**: low-accuracy groups $(1-\mathcal{A})$ receive higher weights to reinforce exploration, while high-accuracy groups maintain stability.
 
-4. **EventFlowQA Dataset Construction**:
+**4. EventFlowQA Dataset**
 
-    - A VideoQA dataset focused on complex action sequences and temporal causality.
-    - 53K high-quality QA pairs (50K training + 3K validation), covering 15 temporal dimensions.
-    - Serves as the core benchmark for all ablation experiments.
+A VideoQA dataset focused on complex action sequences and temporal causality, containing 53K high-quality QA pairs (50K training + 3K validation) covering 15 temporal dimensions.
+
+### Mechanism Walkthrough (Example: "What did the person do first, then next?", G=8)
+1. **Sampling**: 8 groups of structured outputs are sampled, each containing `<summary>`, `<think>`, and `answer`.
+2. **Summary Section + CVK**: If 6 groups describe "open fridge, then pour milk" and 2 groups drift to "pour milk first," the self-supervised anchor $S^C$ aligns with the majority. The drifting groups are down-weighted by $\omega_t^S$ due to high KL divergence.
+3. **Think Section + DVR**: If the current group accuracy $\mathcal{A}$ is low, the diversity weight is raised for high-entropy tokens in the think section, encouraging the model to try different reasoning paths.
+4. **Reward & Advantage**: Standard rewards (accuracy + format) combined with token-level weights $W_{g,t}$ are used to calculate group advantages for policy updates.
+5. **Convergence**: The model learns to generate faithful summaries to lock in facts and reason flexibly when uncertain.
 
 ### Loss & Training
 
-Structured policy objective: $\mathcal{J}_{total}(\theta) = \mathcal{J}_{grpo}^{SCoT}(\theta) - \mathcal{J}_{reg}(\theta)$
+Structured policy objective: $$\mathcal{J}_{total}(\theta) = \mathcal{J}_{grpo}^{SCoT}(\theta) - \mathcal{J}_{reg}(\theta)$$
 
 Token-level weights:
-$$W_{g,t} = \begin{cases} \omega_t^S & \text{(Summary segment, consistency weight)} \\ \omega_{g,t}^{d'} & \text{(Think segment, dynamic diversity weight)} \end{cases}$$
+$$W_{g,t} = \begin{cases} \omega_t^S & \text{(Summary Section, Consistency Weight)} \\ \omega_{g,t}^{d'} & \text{(Think Section, Dynamic Diversity Weight)} \end{cases}$$
 
-Training configuration:
-- Single-stage RL (no SFT), 32 A100 GPUs
-- GRPO group size $G=8$, 1000 RL iterations in total
-- 16 frames uniformly sampled, resolution $128\times28\times28$
-- Hyperparameters: $\alpha=0.7$, $\beta=0.3$, $\gamma_1=1$, $\gamma_2=1$, $\lambda=0.5$, $\lambda'=0.7$
+**Training Configuration**:
+- Single-stage RL (no SFT), 32x A100 GPUs.
+- GRPO group size G=8, 1000 RL iterations.
+- 16-frame uniform sampling, 128x28x28 resolution.
+- Hyperparameters: $\alpha=0.7$, $\beta=0.3$, $\gamma_1=1$, $\gamma_2=1$, $\lambda=0.5$, $\lambda'=0.7$.
 
 ## Key Experimental Results
 
@@ -113,66 +116,65 @@ Performance on 7 public VideoQA benchmarks (Accuracy %):
 | TempCompass | 74.4† | 72.6 | 73.1 | 73.3 | +1.1† |
 | VideoMME | 54.7 | 57.4 | 58.1 | 55.1 | - |
 
-Note: † denotes variants trained on EventFlowQA using only 20% of the data volume of Video-R1.
+Note: † indicates variants trained on EventFlowQA (using only 20% of Video-R1's data volume).
 
 ### Ablation Study
 
 Ablation of CVK and DVR modules on EventFlowQA:
 
-| Configuration | Accuracy | Notes |
+| Configuration | Accuracy | Description |
 |------|----------|------|
-| Vanilla GRPO | 42.37 | Baseline |
+| Original GRPO | 42.37 | Baseline |
 | +sBERT (GT) | 43.85 | Semantic consistency helps |
 | +BLEU (GT) | 46.32 | Lexical consistency helps more |
 | +sBERT+BLEU (GT) | 48.56 | Combined is optimal |
-| +GT CVK + Static Entropy DVR | 50.09 | Diversity brings further gains |
+| +GT CVK + Static Entropy DVR | 50.09 | Diversity further improves results |
 | +GT CVK + Dynamic DVR (Full) | 52.22 | Dynamic adjustment is optimal |
-| Self-supervised CVK | 54.28 | **Self-supervision surpasses GT supervision** |
+| Self-supervised CVK | 54.28 | **Self-supervised > GT Supervision** |
 | Self-supervised CVK + Dynamic DVR | **56.10** | Best configuration |
 
-Effect of model scale on supervision mode:
+Impact of model scale on supervision:
 
-| Configuration | 3B Model | 7B Model |
+| Config | 3B Model | 7B Model |
 |------|---------|---------|
-| GT supervision gain | +3.01 | +6.19 |
-| Self-supervised gain | +2.40 | **+11.91** |
+| GT Supervision Gain | +3.01 | +6.19 |
+| Self-supervision Gain | +2.40 | **+11.91** |
 
 ### Key Findings
 
-1. **Self-supervision outperforms GT supervision (7B)**: Larger models benefit more from self-supervised consistency (+11.91 vs +6.19), possibly because strict GT alignment suppresses pretrained semantic priors and causes catastrophic forgetting.
+1. **Self-supervision outperforms GT supervision (7B)**: Larger models benefit more from self-supervised consistency (+11.91 vs +6.19), potentially because strict GT alignment suppresses pre-trained semantic priors, leading to catastrophic forgetting.
 2. **Smaller models rely more on GT guidance**: The 3B model performs slightly better under GT supervision (+3.01 vs +2.40).
-3. **Entropy outperforms KL divergence as a diversity measure**: Entropy as a global uncertainty control better preserves semantic diversity, whereas position-dependent KL alignment suppresses global variability.
-4. **Dynamic diversity modulation significantly outperforms static**: Avoids introducing noise through excessive exploration in high-accuracy groups.
-5. **Competitive performance with only 20% of the data**: SDRL trained on EventFlowQA surpasses all baselines on TempCompass, demonstrating high data efficiency.
+3. **Entropy outperforms KL divergence for diversity**: Entropy acts as a global uncertainty controller, better preserving semantic diversity.
+4. **Dynamic diversity modulation is significantly better than static**: It prevents excessive exploration noise in high-accuracy groups.
+5. **High data efficiency**: Training on just 20% of data enabled SDRL to surpass all baselines on TempCompass.
 
 ## Highlights & Insights
 
-- **Single-stage RL replaces the SFT+RL pipeline**: By leveraging structured CoT and self-supervised constraints, the need for costly CoT annotations and multi-stage training is eliminated, representing an elegant simplification.
-- **Summary as a factual anchor**: Positioning the summary at the front of the reasoning chain ensures factual extraction precedes logical inference, fundamentally resolving thinking drift.
-- **Balancing alignment and exploration**: CVK is responsible for consistency/alignment, while DVR handles diversity/exploration; both are unified within the same objective function through token-level weights.
-- **Unexpected finding on self-supervised consistency**: Self-supervised performance surpassing GT supervision in larger models suggests that overly strong supervision signals may constrain expressive capacity.
+- **Single-stage RL replaces SFT+RL pipeline**: By using structured CoT and self-supervised constraints, the need for expensive CoT annotations and multi-stage training is eliminated.
+- **Summary as a Factual Anchor**: Positioning the summary at the start of the reasoning chain ensures fact extraction precedes logical reasoning, addressing thinking drift.
+- **Balance of Alignment and Exploration**: CVK handles consistency/alignment while DVR handles diversity/exploration.
+- **Surprising Self-supervision Results**: The fact that self-supervision outperforms GT in larger models suggests that overly strong supervision signals might constrain expressive power.
 
 ## Limitations & Future Work
 
-1. Experiments are conducted only under the 16-frame setting; scalability to longer videos (e.g., 64 frames or minute-level) remains unexplored.
-2. Summary segment generation may introduce additional computational overhead; its impact on real-time applications requires evaluation.
-3. Construction details of the EventFlowQA dataset are underreported in the main text, and quality control mechanisms lack transparency.
-4. SDRL does not reach the best performance of SFT+RL methods on VideoMME (54.7 vs 58.1), indicating room for improvement in generalization.
-5. The self-supervised consistency anchor relies on the existence of correct predictions and may fail in extremely low-accuracy scenarios.
+1. Limited to 16-frame settings; scalability to longer videos (e.g., 64 frames or minutes) is unknown.
+2. Generation of the Summary section may introduce additional latency overhead.
+3. Dataset construction details for EventFlowQA are sparse.
+4. Performance on VideoMME still lags behind some SFT+RL methods (54.7 vs 58.1), suggesting room for generalization improvements.
+5. Self-supervised anchors depend on the presence of correct predictions; performance may degrade in extremely low-accuracy scenarios.
 
 ## Related Work & Insights
 
-- **GRPO/DAPO**: Provide the foundational RL optimization framework; SDRL introduces structured constraints on top of this.
-- **Video-R1**: The first to apply GRPO to video understanding, but relies on a two-stage SFT+RL pipeline.
-- **GRPO-CARE**: The idea of group-level consistency is related to CVK, but does not distinguish between different segments of the reasoning chain.
-- **Process Reward Models**: The notion of process-level supervision shares conceptual similarities with the token-level weight design of CVK and DVR.
+- **GRPO/DAPO**: Provide the foundation for RL optimization; SDRL introduces structured constraints.
+- **Video-R1**: First introduced GRPO to video understanding but relies on a two-stage SFT+RL pipeline.
+- **Process Reward Models**: The idea of process-level supervision is similar to the token-level weight design of CVK/DVR.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Innovative combination of structured CoT and self-supervised RL; single-stage pipeline is clean and effective)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (7 benchmarks, detailed ablations, multi-scale analysis, visual comparisons)
-- Writing Quality: ⭐⭐⭐⭐ (Method description is clear but formula-heavy; dataset details are insufficient)
-- Value: ⭐⭐⭐⭐⭐ (Provides a more concise and efficient training paradigm for video reasoning)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -180,11 +182,11 @@ Effect of model scale on supervision mode:
 
 ## Related Papers
 
-- [\[CVPR 2026\] EagleVision: A Dual-Stage Framework with BEV-grounding-based Chain-of-Thought for Spatial Intelligence](eaglevision_a_dual-stage_framework_with_bev-grounding-based_chain-of-thought_for.md)
+- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
+- [\[CVPR 2026\] FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle](firescope_wildfire_risk_raster_prediction_with_a_chain-of-thought_oracle.md)
 - [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
-- [\[ICCV 2025\] Video-T1: Test-Time Scaling for Video Generation](../../ICCV2025/llm_reasoning/video-t1_test-time_scaling_for_video_generation.md)
+- [\[CVPR 2025\] VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection](../../CVPR2025/llm_reasoning/videoespresso_a_large-scale_chain-of-thought_dataset_for_fine-grained_video_reas.md)
 - [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
 
 </div>
 

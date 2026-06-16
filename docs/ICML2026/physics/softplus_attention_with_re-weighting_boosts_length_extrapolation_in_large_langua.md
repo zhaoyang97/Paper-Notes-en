@@ -2,76 +2,97 @@
 title: >-
   [Paper Note] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Softmax alternative] The authors decompose traditional Softmax attention into two independent components: "non-negativization + L1 normalization…
+  [ICML 2026][Physics & Scientific Computing][attention sink] The authors deconstruct traditional Softmax attention into two independent components: "non-negativity" and "L1 normalization." They demonstrate that L1 normalization, rather than the exponential function, is the critical factor. By replacing the exponential with Softplus paired with a dynamic length scale factor, they
 tags:
-  - "ICML 2026"
-  - "Physics & Scientific Computing"
-  - "Softmax alternative"
-  - "Softplus attention"
-  - "length extrapolation"
-  - "attention sharpening"
-  - "attention sink"
+  - ICML 2026
+  - Physics & Scientific Computing
+  - attention sink
 date: 2026-05-08
-content_hash: dabd1d6274ff1b69
+content_hash: 89525d9c0e60e93e
 ---
-
 # Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2501.13428](https://arxiv.org/abs/2501.13428)  
-**Code**: Not explicitly provided (experiments based on GPT-2 small + RoPE reproduction)  
-**Area**: LLM Efficiency / Attention Mechanisms / Length Extrapolation  
-**Keywords**: Softmax alternative, Softplus attention, length extrapolation, attention sharpening, attention sink
+**Code**: Not explicitly provided (experiments reproduced based on GPT-2 small + RoPE)  
+**Area**: LLM Efficiency / Attention Mechanism / Length Extrapolation  
+**Keywords**: Softmax Alternatives, Softplus Attention, Length Extrapolation, Attention Sharpening, Attention Sink
 
 ## TL;DR
-The authors decompose traditional Softmax attention into two independent components: "non-negativization + L1 normalization," and demonstrate that the truly critical part is L1 normalization rather than the exponential. They replace the exponential with Softplus plus a dynamic length scaling factor to obtain LSSA, and then apply a power function-based "re-weighting" to sharpen the attention. The resulting LSSAR maintains nearly unchanged validation loss at 16× the training length and enables GPT-109M to "rediscover" Newton's law of universal gravitation from trajectory data.
+The authors deconstruct traditional Softmax attention into two independent components: "non-negativity" and "L1 normalization." They demonstrate that L1 normalization, rather than the exponential function, is the critical factor. By replacing the exponential with Softplus paired with a dynamic length scale factor, they derive LSSA. Adding a power-function-based "re-weighting" for sharpening results in LSSAR, which maintains nearly constant validation loss at 16× training length and enables a GPT-109M to "rediscover" Newton's law of universal gravitation from trajectory data.
 
 ## Background & Motivation
 
-**Background**: The core of the Transformer is scaled dot-product attention $A = \mathrm{Softmax}(QK^T/\sqrt{d} + M)$. Softmax, due to its smoothness, differentiability, and "non-negative normalization," has become the default component in LLMs. However, attention learned in two scenarios fails badly: (i) At trillion-scale model sizes, the exponential $e^x$ is prone to numerical instability; (ii) When inference token length far exceeds training length, the attention distribution becomes increasingly flat, making it difficult to focus on key tokens—these are the notorious "attention smoothing" and "attention sink" problems, which are among the main architectural bottlenecks limiting LLM length extrapolation.
+**Background**: The core of the Transformer is scaled dot-product attention $A = \mathrm{Softmax}(QK^T/\sqrt{d} + M)$. Softmax has become the default for LLMs due to its smoothness, differentiability, and "non-negative normalization." However, Softmax-based attention fails in two scenarios: (i) numerical instability at trillion-parameter scales due to the exponential $e^x$; (ii) "attention smoothing" and "attention sink" issues when inference length exceeds training length, making it difficult for the model to focus on critical tokens.
 
-**Limitations of Prior Work**: Existing Softmax-free attentions (Sigmoid attention, ReLU attention, etc.) address numerical stability but either completely lose length extrapolation ability (loss increases several-fold at 8K) or, due to "dead neurons," sever gradient paths for distant tokens. Post-hoc remedies like positional interpolation and ALiBi merely stretch embeddings for the training length, without addressing the root cause of attention distribution flattening.
+**Limitations of Prior Work**: Existing Softmax-free attentions (e.g., Sigmoid, ReLU) solve numerical stability but either lose length extrapolation capability (loss spikes at 8K) or suffer from "dead neurons" that block gradient paths for distant tokens. Post-hoc remedies like Position Interpolation or ALiBi stretch embeddings but do not address the fundamental flattening of the attention distribution.
 
-**Key Challenge**: All existing approaches assume that the non-negativity of Softmax is its core effective property and focus on finding a "better non-negative activation." However, coupling "non-negativization" and "L1 normalization" within a single function prevents independent control, making it impossible to replace the numerically unstable exponential while retaining the benefits of normalization.
+**Key Challenge**: Current approaches assume the non-negativity of Softmax is its core strength and focus on finding better non-negative activations. By coupling "non-negativity" and "L1 normalization" in one function, they cannot independently control them to replace the unstable exponential while maintaining normalization benefits.
 
-**Goal**: (i) Re-examine which part of Softmax truly determines attention performance; (ii) Design a numerically stable and length-extrapolatable normalization stage; (iii) Further, structurally eliminate attention smoothing so that the attention distribution naturally remains sharp.
+**Goal**: (i) Re-analyze which part of Softmax drives attention performance; (ii) Design a numerically stable, length-extrapolatable normalization; (iii) Structurally eliminate attention smoothing to keep distributions sharp.
 
-**Key Insight**: The authors rewrite Softmax as $\mathrm{Softmax}(x) = \phi(x)/\|\phi(x)\|_1$, where $\phi(x) = e^x$ is responsible only for non-negativization, and the $L_1$ norm handles normalization and competition. Ablation studies (Appendix Table A4/A6) show that replacing $\phi$ with any globally nonzero function like Softplus does not degrade performance, but removing $L_1$ normalization causes model collapse—thus, L1 is the key.
+**Key Insight**: The authors express Softmax as $\mathrm{Softmax}(x) = \phi(x)/\|\phi(x)\|_1$, where $\phi(x) = e^x$ handles non-negativity and the $L_1$ norm handles competitive normalization. Ablations (Appendix Table A4/A6) reveal that replacing $\phi$ with any "globally non-zero" function (like Softplus) yields no performance drop, whereas removing $L_1$ normalization leads to model collapse—identifying L1 as the critical component.
 
-**Core Idea**: Decompose attention into two stages: "normalization + sharpening." The normalization stage uses Softplus plus a dynamic length scaling factor for stability and extrapolation; the sharpening stage applies a power function of ReLU (i.e., $\mathrm{ReLU}^p$) followed by normalization, squeezing the attention distribution onto a few most relevant tokens, structurally curing attention smoothing.
+**Core Idea**: Attention is split into "Normalization + Sharpening" stages. The normalization stage uses Softplus with a dynamic length scale factor for stability and extrapolation. The sharpening stage uses a $\mathrm{ReLU}^p$ power function followed by re-normalization to "squeeze" the distribution onto sparse, relevant tokens, structurally addressing attention smoothing.
 
 ## Method
 
 ### Overall Architecture
-LSSAR (Length Scaled Softplus Attention with Re-weighting) consists of two sequential stages. The first stage (Normalization, LSSA): $Q, K$ rows are $L_2$ normalized to constrain dot products to $[-1, 1]$; Softplus replaces $e^x$ as the non-negative function; $\log d \cdot \log N$ serves as a position-dependent scaling factor; each row is then $L_1$ normalized. The second stage (Sharpening): On LSSA's output, perform "multiply by $N$ (number of tokens per position) → subtract bias matrix $O$ → apply ReLU and raise to the $p$-th power → $L_1$ normalization." Both stages are integrated into the original GPT-2 small (124M) + RoPE framework, with all other components unchanged.
+LSSAR (Length Scaled Softplus Attention with Re-weighting) consists of two serial stages. Stage 1 (Normalization, LSSA): $L_2$ normalization is applied to $Q$ and $K$ rows to lock dot products in $[-1, 1]$; Softplus replaces $e^x$; $\log d \cdot \log N$ serves as a position-aware dynamic scale factor; finally, $L_1$ normalization is applied. Stage 2 (Sharpening): The LSSA output is multiplied by $N$ (number of tokens), shifted by a bias matrix $O$, truncated via ReLU, raised to power $p$, and re-normalized via $L_1$. Both stages integrate into the GPT-2 small (124M) + RoPE framework with mid-layer modifications only.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    QK["Q, K (row-wise)"]
+    subgraph S1["LSSA Normalization Stage"]
+        direction TB
+        A["L2 Normalize Q, K<br/>Lock dot product in [−1, 1]"]
+        B["Softplus replaces e^x<br/>Apply dynamic scale log d · log N"]
+        C["Apply causal mask M' (0/1)"]
+        D["Row-wise L1 normalization<br/>Stable but dense distribution"]
+        A --> B --> C --> D
+    end
+    subgraph S2["Re-weighting Sharpening Stage"]
+        direction TB
+        E["Multiply by N, subtract bias O<br/>Shift center to near 0"]
+        F["ReLU truncation + Power p<br/>Amplify peaks (p→∞ approaches argmax)"]
+        G["Secondary row-wise L1 normalization"]
+        E --> F --> G
+    end
+    QK --> S1
+    S1 --> S2
+    S2 --> OUT["Sharpened Attention A → Weighted V Output"]
+```
 
 ### Key Designs
 
-1. **Softmax Decomposition + LSSA: Softplus + Dynamic $\log N$ Scaling in Normalization Stage**:
+**1. Softmax Deconstruction + LSSA: Isolating L1 and replacing the unstable exponential**
 
-    - **Function**: Replace $e^x$ with a numerically stable, length-extrapolatable function, and use a row-wise scaling factor to maintain relative entropy invariance across different token counts.
-    - **Mechanism**: First, $Q_i \leftarrow Q_i/\|Q_i\|_2$, $K_i \leftarrow K_i/\|K_i\|_2$ so $QK^T \in [-1,1]$; then $A = \mathrm{Softplus}((\log d \cdot \log \mathbf N)\odot QK^T)\odot M'$, where $\mathbf N$ is an $L\times L$ matrix with the $i$-th row filled with $i$ (i.e., the number of tokens attended by that row); finally, $A_i \leftarrow A_i/\|A_i\|_1$. The $\log N$ factor ensures entropy invariance with respect to length during training and adaptively rescales for any inference length, providing stable dynamics.
-    - **Design Motivation**: Ablations show $L_1$ is the core; $e^x$ is just one globally nonzero, differentiable choice, but its range can explode. Softplus $=\log(1+e^x)$ is also globally nonzero but numerically stable, and its derivative (sigmoid) is steep in $[-1,1]$, naturally matching cosine normalization. The $\log N$ factor, from Chiang & Cholak 2022's entropy invariance analysis, adjusts scaling per row rather than by total length, ensuring both head and tail tokens receive appropriate "temperature."
+The work starts by rewriting $\mathrm{Softmax}(x)=\phi(x)/\|\phi(x)\|_1$. Finding that the specific non-negative function $\phi$ is irrelevant as long as it is non-zero, LSSA replaces $e^x$ with Softplus and introduces position-aware scaling. By setting $Q_i\leftarrow Q_i/\|Q_i\|_2$ and $K_i\leftarrow K_i/\|K_i\|_2$, the dot product is constrained to $[-1,1]$. Then:
 
-2. **Re-weighting: $\mathrm{ReLU}^p$ + L1 Normalization in Sharpening Stage**:
+$$A=\mathrm{Softplus}\big((\log d\cdot\log\mathbf N)\odot QK^T\big)\odot M',\qquad A_i\leftarrow A_i/\|A_i\|_1,$$
 
-    - **Function**: Further sharpen the stable, dense distribution from the normalization stage, pulling weights toward the maximum and structurally eliminating attention smoothing on long sequences.
-    - **Mechanism**: $A \leftarrow \mathrm{ReLU}^p(A\odot\mathbf N - O)$, $A_i \leftarrow A_i/\|A_i\|_1$. $O$ is an all-ones bias matrix (first 3 rows set to 0 to avoid early training instability), shifting the distribution center near zero; ReLU masks out elements below threshold; raising to the $p$-th power further amplifies peaks. The paper proves: as $p\to\infty$, for any $x_l<x_m$, $\lim_{p\to\infty}(x_m^p - x_l^p)/\sum_k x_k^p = 1$, i.e., after sharpening, the maximum approaches 1 and all others approach 0, equivalent to the hard argmax limit.
-    - **Design Motivation**: Using ReLU directly as $\phi$ leads to "dead neurons"—once a token's score drops below zero, it never receives gradients again. The key insight is to fully separate "non-negativization" and "sharpening": first use Softplus so all tokens participate in L1 competition and retain gradient paths, then apply post-hoc sharpening on the stabilized distribution. Since the gradient chain is already established, even if some tokens are masked by ReLU in the sharpening stage, learning is not interrupted. $p$ acts as an "inverse temperature," equivalent to annealing the existing softmax-like distribution.
+where $\mathbf N$ is an $L\times L$ matrix with the $i$-th row equal to $i$. Softplus $\log(1+e^x)$ is globally non-zero but prevents explosion. The $\log N$ factor ensures entropy invariance (Chiang & Cholak 2022) by adjusting "temperature" per position, maintaining entropy stability across inference lengths.
 
-3. **Minimal-Intrusive Integration into Existing LLMs**:
+**2. Re-weighting: Decoupling "Non-negativity" and "Sharpening" to cure smoothing**
 
-    - **Function**: Enable the entire scheme to be plugged into GPT architectures with near-zero modification, without altering RoPE/PE/FFN or any other components.
-    - **Mechanism**: Replace the attention module's $\mathrm{Softmax}(\cdot)$ with "LSSA → re-weighting" in one step; the mask matrix $M'$ (lower triangle is 1) replaces the original $-\infty$ mask (since Softplus outputs non-negative values, masking changes from adding $-\infty$ to multiplying by 0/1). All other modules retain GPT-2 small defaults, and FlashAttention-style kernel functions can directly reuse the elementwise nature for forward/backward passes.
-    - **Design Motivation**: The engineering value of length extrapolation requires the solution to be plug-and-play. All innovations are deliberately confined within attention, avoiding conflicts with RoPE, positional interpolation, sliding window attention, etc., so LSSAR can be orthogonally combined with existing long-context techniques.
+Normalization produces a stable but dense distribution that flattens in long sequences. The sharpening stage applies a post-weighting:
+
+$$A\leftarrow \mathrm{ReLU}^p(A\odot\mathbf N - O),\qquad A_i\leftarrow A_i/\|A_i\|_1,$$
+
+$O$ is a bias matrix of ones. Shifting the distribution and applying $\mathrm{ReLU}^p$ amplifies peaks. The paper proves that as $p\to\infty$, the distribution converges to a hard argmax. The decoupling is critical: using ReLU directly as $\phi$ creates "dead neurons" (zero gradients). By using Softplus first, all tokens maintain a gradient path during L1 competition, while the subsequent ReLU/power operation enforces sparsity without killing learning.
+
+**3. Minimally Invasive Integration: Encapsulating changes within attention**
+
+To ensure engineering utility, LSSAR keeps RoPE and feed-forward layers unchanged. It replaces the $\mathrm{Softmax}(\cdot)$ block with the "LSSA → Re-weighting" pipeline. Since Softplus is non-negative, the causal mask $M'$ is changed from $-\infty$ addition to $0/1$ multiplication. This design allows LSSAR to be orthogonally combined with other techniques like Position Interpolation or Sliding Window Attention.
 
 ### Loss & Training
-All models are based on GPT-2 small (124M) + RoPE, trained on FineWeb-10B with sequence length 1024 for 18,865 steps, totaling 10.2B training tokens + 0.1B validation tokens, on 8×A100 80GB. $p$ is a key hyperparameter; the paper reports $p\in\{3, 15\}$: $p=3$ is optimal at 1K length, $p=15$ is optimal at 8K and above (smaller $p$ balances sparsity and smoothness, larger $p$ strongly sharpens).
+Models are based on GPT-2 small (124M) + RoPE, trained on FineWeb-10B with a sequence length of 1024 for 18,865 steps (10.2B tokens). Training used 8×A100 80GB GPUs. The parameter $p$ is a key hyper-parameter; $p=3$ is reported as optimal for 1K lengths, while $p=15$ is optimal for 8K+ lengths to provide stronger sharpening.
 
 ## Key Experimental Results
 
 ### Main Results
-All methods use the same GPT-2 124M + RoPE, trained at length 1K and extrapolated to 2K/4K/8K for validation loss:
+Validation loss comparison (GPT-2 124M + RoPE, trained at 1K, extrapolated to 8K):
 
 | Attention | 1K | 2K | 4K | 8K |
 |-----------|-----|-----|-----|-----|
@@ -82,17 +103,17 @@ All methods use the same GPT-2 124M + RoPE, trained at length 1K and extrapolate
 | LSSAR ($p=3$) | 3.18 | 4.24 | 5.41 | 6.30 |
 | **LSSAR ($p=15$)** | **3.19** | **3.19** | **3.23** | **3.32** |
 
-Downstream zero-shot (Softmax 124M vs LSSAR 124M): ARC-E 39.77→40.57, HellaSwag 32.42→33.03, PIQA 64.09→65.34, SciQ 60.6→62.1, SummScreen 1.68→6.31.
+Downstream zero-shot (Softmax 124M vs LSSAR 124M): ARC-E 39.77→40.57, HellaSwag 32.42→33.03, PIQA 64.09→65.34, SciQ 60.6→62.1.
 
 ### Ablation Study
 
-| Configuration | 8K Validation Loss | Notes |
-|---------------|-------------------|-------|
-| Full LSSAR ($p=15$) | 3.32 | Complete model, nearly lossless extrapolation |
-| LSSA only (no re-weighting) | 5.94 | Contribution of sharpening stage, largest gap on long sequences |
-| Re-weighting + Softmax ($p=15$) | 7.02 | Using Softmax for normalization collapses, showing two stages must match |
-| Sigmoid + L1 + re-weighting ($p=15$) | 3.86 | Shows L1 + re-weighting is the truly effective combination, but still inferior to LSSAR |
-| ReLU as $\phi$ | >10 | "Dead neurons," unusable for long sequences |
+| Configuration | 8K Val Loss | Description |
+|---------------|--------------|-------------|
+| Full LSSAR ($p=15$) | 3.32 | Full model, near-lossless extrapolation |
+| LSSA only (No re-weighting) | 5.94 | Contribution of sharpening stage |
+| Re-weighting + Softmax ($p=15$) | 7.02 | Softmax is incompatible as a normalization base |
+| Sigmoid + L1 + re-weighting | 3.86 | L1 + Re-weighting is the effective combination |
+| ReLU as $\phi$ | >10 | "Dead neurons" failure in long sequences |
 
 Passkey retrieval (needle-in-a-haystack):
 
@@ -101,48 +122,36 @@ Passkey retrieval (needle-in-a-haystack):
 | 1K | 64% | **86%** |
 | 1.5K | 0% | 45% |
 | 4K | 0% | 20% |
-| 8K | 0% | Nonzero |
+| 8K | 0% | Non-zero |
 
 ### Key Findings
-- Validation loss at 8K length barely increases (3.19→3.32), representing the first "almost free" length extrapolation among all candidate methods.
-- On the Passkey task, Softmax models drop to 0% immediately past training length, while LSSAR maintains nonzero accuracy at 8× training length—this is the cleanest probe for whether attention is truly sharpened.
-- In symbolic regression, GPT-109M + LSSAR can recover Newton's law $F\propto m_1/r^2$ from planetary trajectory sequences, while Softmax GPT produces physically meaningless formulas; even trillion-parameter LLMs like o3, Claude 4 Sonnet, Gemini 2.5 Pro fail on this task, suggesting that the inductive bias of the attention mechanism may matter more than model scale for learning physical laws.
-- $p$ is optimal at 3 for 1K, but needs to be larger (15) for long sequences; this indicates the optimal degree of sparsity is length-dependent, suggesting future work on adaptive $p$.
+- Validation loss remains almost constant at 8K length (3.19→3.32), a first for "free" length extrapolation.
+- LSSAR maintains non-zero accuracy on Passkey tasks at 8× training length, whereas Softmax drops to 0% immediately.
+- In symbolic regression, a GPT-109M + LSSAR recovered Newton’s $1/r^2$ law from trajectory data, while the Softmax version and even trillion-parameter models like o3 failed, suggesting attention inductive bias is more critical than scale for physical laws.
+- Optimal $p$ depends on sequence length ($p=3$ for 1K, $p=15$ for long context), suggesting a need for adaptive $p$ in the future.
 
 ## Highlights & Insights
-- The conclusion "Softmax decomposition → L1 is the key" alone warrants a re-examination of the entire attention replacement research direction: years of Softmax-free work have focused on replacing the non-negative function, which is the wrong direction.
-- Decoupling "sparsity and gradient paths" is the key insight—first use Softplus to ensure all tokens receive gradients, then apply ReLU + power function for post-hoc sharpening. This is akin to pruning the fully connected gradient graph of Softmax rather than building a sparse graph directly, avoiding the "dead neuron" problem of ReLU attention.
-- The row-wise scaling factor $\log d \cdot \log N$ can be transferred to any normalization operation requiring length extrapolation (e.g., cross attention, retrieval scoring); its essence is "scaling temperature by the actual number of tokens participating in normalization."
-- The symbolic regression experiment provides a novel and rigorous evaluation: whether the model can learn the $1/r^2$ law from physical trajectories, which better reflects the inductive bias of attention than traditional NLP benchmarks.
+- The conclusion that "L1 is the core of Softmax performance, not $\phi$" redirects the entire Softmax-free research field.
+- Decoupling sparsity from the gradient path (LSSA first, then sharpening) avoids the pitfalls of direct ReLU attention.
+- The $\log d \cdot \log N$ factor provides a universal scaling rule for normalization that preserves attention temperature regardless of input length.
+- Symbolic regression experiments provide a rigorous new benchmark for attention inductive bias beyond traditional NLP tasks.
 
 ## Limitations & Future Work
-- The scaling factor $\log d \log N$ in LSSA is validated at $L=1024$, $d=64$; the authors acknowledge that the $\log d$ part may need retuning for larger $d$, and no hyperparameter sweep for large models is provided.
-- $p=15$ is empirically optimal, but lacks theoretical justification; whether a learnable or adaptive $p$ is needed for unknown tasks/lengths remains an open question.
-- Experiments are only reported for 124M / 109M scale; no loss comparison for 7B/13B models is given, so whether the long-sequence extrapolation advantage holds at large scale remains to be verified.
-- $\mathrm{ReLU}^p$ at large $p$ still risks numerical overflow, especially at $p=15$ where $x^{15}$ has a huge dynamic range, requiring dedicated kernels for FP16 training stability.
+- The scale factor $\log d \log N$ was validated at $d=64$; it may require tuning for larger embedding dimensions.
+- The choice of $p=15$ is empirical; future work should explore learnable or adaptive $p$ parameters.
+- Experiments were limited to 124M/109M scales; performance on 7B+ models remains to be verified.
+- High $p$ values ($p=15$) risk numerical overflow ($x^{15}$), requiring optimized kernels for FP16 training stability.
 
 ## Related Work & Insights
-- **vs Sigmoid attention (Ramapuram 2024)**: The authors show that the performance drop is due to missing L1 normalization; adding L1 brings sigmoid close to Softmax—essentially, "non-negative + L1" suffices, and LSSA is even more stable.
-- **vs ReLU attention series**: ReLU's hard threshold causes dead neurons and catastrophic failure on long sequences; LSSAR places the hard threshold in the re-weighting stage (after L1 normalization), avoiding the pitfall of direct sparsification in the main attention.
-- **vs Positional Interpolation / ALiBi / NTK rope**: These are post-hoc remedies at the PE layer and do not address the root cause of attention smoothing; LSSAR directly solves smoothing at the attention level and can be combined with these positional encoding schemes.
+- **vs Sigmoid attention**: Demonstrates that Sigmoid fails primarily due to the lack of L1 normalization.
+- **vs ReLU attention**: LSSAR avoids "dead neurons" by applying thresholds after a stable L1 competition.
+- **vs PE-based methods**: LSSAR solves attention smoothing at the structural level and is orthogonal to ALiBi or RoPE-based techniques.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ "Softmax = $\phi$ + L1, L1 is the core" is a disruptive conclusion; the two-stage design and symbolic regression experiment are highly insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validation loss, downstream zero-shot, passkey retrieval, and symbolic regression experiments are mutually reinforcing; lacks large-scale model validation.
-- Writing Quality: ⭐⭐⭐⭐ The logical chain from Softmax decomposition to LSSA to re-weighting is very clear, and the theoretical analysis ($p\to\infty$ limit) is concise.
-- Value: ⭐⭐⭐⭐⭐ Length extrapolation is nearly free + numerically stable, making this one of the few "both stable and extrapolatable" alternatives for LLM attention.
-
-## Related Papers
-
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
-- [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](../../AAAI2026/llm_efficiency/the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
-- [\[ACL 2025\] Giraffe: Design Choices for Extending the Context Length of Visual Language Models](../../ACL2025/llm_efficiency/design_choices_for_extending_the_context_length_of_visual_language_models.md)
-- [\[ICLR 2026\] EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models](../../ICLR2026/llm_efficiency/evoengineer_mastering_automated_cuda_kernel_code_evolution_with_large_language_m.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐⭐ "Softmax = $\phi$ + L1" is a groundbreaking insight.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong internal validation; needs larger-scale LLM testing.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical progression from deconstruction to two-stage design.
+- Value: ⭐⭐⭐⭐⭐ Offers a numerically stable and practically "free" length extrapolation solution.
 
 <!-- RELATED:START -->
 
@@ -150,11 +159,11 @@ Passkey retrieval (needle-in-a-haystack):
 
 ## Related Papers
 
+- [\[ICML 2025\] L2D: Large Language Models to Diffusion Finetuning](../../ICML2025/physics/large_language_models_to_diffusion_finetuning.md)
 - [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
-- [\[NeurIPS 2025\] Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries](../../NeurIPS2025/physics/encoding_and_understanding_astrophysical_information_in_large_language_model-gen.md)
-- [\[ICML 2026\] $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval](mathbbr2k_is_theoretically_large_enough_for_embedding-based_top-k_retrieval.md)
+- [\[ICML 2025\] Liger: Linearizing Large Language Models to Gated Recurrent Structures](../../ICML2025/physics/liger_linearizing_large_language_models_to_gated_recurrent_structures.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
+- [\[ICML 2026\] $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval](mathbbr2k_is_theoretically_large_enough_for_embedding-based_top-k_retrieval.md)
 
 </div>
 

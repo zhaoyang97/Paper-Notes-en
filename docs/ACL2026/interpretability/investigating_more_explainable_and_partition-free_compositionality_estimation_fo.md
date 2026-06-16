@@ -2,83 +2,85 @@
 title: >-
   [Paper Note] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective
 description: >-
-  [ACL 2026][Interpretability][Compositional Generalization] The paper moves beyond the traditional paradigm of "creating test sets for compositional generalization tests." Instead…
+  [ACL 2026][Interpretability][Paper Note] The paper moves beyond the traditional paradigm of "constructing test sets for compositional generalization testing." Instead, it requires LLMs to generate a Python program as a mapping rule for an entire dataset. By using $\mathcal{C}(\text{P})$ based on the upper bound of Kolmogorov complexity, the "program compactne
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Compositional Generalization"
-  - "Kolmogorov Complexity"
-  - "Rule Generation"
-  - "Program Length"
-  - "LLM Evaluation"
+  - ACL 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: c7b8e97d22af3ac1
+content_hash: 30111c95c348dc75
 ---
-
 # Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.27340](https://arxiv.org/abs/2604.27340)  
 **Code**: https://github.com/xzy-xzy/RGP (Available)  
-**Area**: Interpretability / Compositionality Evaluation / LLM Evaluation  
+**Area**: Interpretability / Compositionality Evaluation / LLM Benchmarking  
 **Keywords**: Compositional Generalization, Kolmogorov Complexity, Rule Generation, Program Length, LLM Evaluation
 
 ## TL;DR
-The paper moves beyond the traditional paradigm of "creating test sets for compositional generalization tests." Instead, it prompts the LLM to generate a Python program as a mapping rule for the entire dataset. A compositionality score $\mathcal{C}(\text{P})$ ranging from 0–100 is derived based on the upper bound of Kolmogorov complexity, combining "program compactness + accuracy." By shifting from "checking output correctness" to "evaluating rule compactness," it bypasses data contamination from pre-training and provides an explainable, introspective evaluation.
+The paper moves beyond the traditional paradigm of "constructing test sets for compositional generalization testing." Instead, it requires LLMs to generate a Python program as a mapping rule for an entire dataset. By using $\mathcal{C}(\text{P})$ based on the upper bound of Kolmogorov complexity, the "program compactness + accuracy" is converted into a compositionality score of 0–100. This shifts the focus from "checking output correctness" to "measuring rule compression," bypassing data contamination from pre-training while providing an explainable, introspective evaluation.
 
 ## Background & Motivation
-**Background**: The standard practice for studying LLM compositionality is "compositional generalization testing"—splitting the training/test sets such that "test set combinations do not appear in training" and comparing the model's accuracy on the test set.
+**Background**: The standard approach for studying LLM compositionality involves "compositional generalization tests"—splitting training/test sets such that test combinations do not appear in training, then comparing accuracy.
 
-**Limitations of Prior Work**: (L1) This paradigm only considers the correctness of results, failing to capture the model's understanding of "compositionality itself," thus lacking explainability; (L2) Current LLMs have already "seen" most so-called unseen combinations in massive pre-training corpora. "Compositional leakage" undermines the foundation of such evaluations. In other words, the "unseen" assumption for test sets has largely failed for large-scale pre-trained models.
+**Limitations of Prior Work**: (L1) This paradigm only considers the final output, losing insight into the model's internal understanding of compositionality itself, thus lacking interpretability. (L2) Current LLMs have already "seen" the vast majority of supposedly unseen combinations in massive pre-training corpora; "compositional leakage" undermines the foundation of these evaluations. In other words, the "unseen" assumption for test sets has largely failed for large-scale pre-trained models.
 
-**Key Challenge**: To truly measure "whether the model has abstracted compositional laws," one must avoid the black-box approach of "testing if it can guess unseen combinations." However, as LLMs are pre-trained giants, it is nearly impossible to construct a clean train-test split.
+**Key Challenge**: To truly measure whether a model has abstracted compositional laws, one must avoid the black-box approach of "guessing unseen combinations." However, LLMs are pre-trained giants, making it nearly impossible to construct clean train-test splits.
 
-**Goal**: (1) Enable evaluation to directly capture the model's internal understanding of "compositional rules"; (2) Eliminate dependency on train-test splits to avoid leakage; (3) Provide a comparable, automated scalar metric consistent with human intuition.
+**Goal**: (1) Capture the model's internal understanding of compositional rules directly. (2) Completely remove reliance on train-test splits to avoid leakage. (3) Provide a comparable, automated scalar metric consistent with human intuition.
 
-**Key Insight**: According to the complexity theory of Elmoznino 2025, compositionality can be defined as $\mathcal{K}(D_Y)/\mathcal{K}(D_Y|D_X)$—the degree to which the input can "compress" the output. While Kolmogorov complexity is uncomputable, an upper bound can be obtained, and the length of a program generated by the LLM itself serves as a natural upper bound.
+**Key Insight**: According to the complexity theory of Elmoznino 2025, compositionality can be defined as $\mathcal{K}(D_Y)/\mathcal{K}(D_Y|D_X)$—the degree to which the input can "compress" the output. While Kolmogorov complexity is uncomputable, it can be upper-bounded, and the length of a program generated by the LLM serves as a natural upper bound.
 
-**Core Idea**: After the LLM observes the complete dataset, it is asked to write a Python program to reproduce the mapping. The number of component values used in the program is mapped into a unified format $\mathrm{P}^+$ to determine the "mapping table size." Combined with an accuracy penalty, this yields $L(\mathrm{P})$, which is normalized to $\mathcal{C}(\mathrm{P})\in[0,100]$. A higher score indicates that the LLM more successfully compressed the data using compositionality.
+**Core Idea**: After observing the full dataset, the LLM writes a Python program to reproduce the mapping. The "number of component values used in the program" is mapped to a unified format $\mathrm{P}^+$ to calculate the "mapping table size." Combined with an accuracy penalty, this results in $L(\mathrm{P})$, which is normalized to $\mathcal{C}(\mathrm{P})\in[0,100]$. A higher score indicates the LLM more successfully compressed the data using compositionality.
 
 ## Method
 
 ### Overall Architecture
-The task is string-to-grid: input is a 4-character string, output is a $4\times 4$ grid, where each character determines 4 fixed grid points. All $d=16$ samples are provided to the LLM at once to write a Python program $\mathrm{P}$ that reproduces $D=\{(x_i,y_i)\}$. The evaluation pipeline:
+The task is intentionally designed to be simple: string-to-grid—where a 4-character input string outputs a $4\times 4$ grid, and each character position determines a fixed set of 4 grid points. The dataset $D$ consists of only $d=16$ samples $D=\{(x_i,y_i)\}$. The authors provide all samples to the LLM at once and request a Python program $\mathrm{P}$ to reproduce the mapping. The evaluation pipeline executes the program to count errors, "decompiles" it via static analysis into a unified mapping table, and finally converts the "table size" and "error count" into a 0–100 compositionality score $\mathcal{C}(\mathrm{P})$. Higher scores indicate successful compression via compositional rules rather than rote memorization of the 16 samples.
 
-1. **Execute $\mathrm{P}$** to calculate the number of errors $E(\mathrm{P})=\sum_i[\mathrm{P}(x_i)\ne y_i]$.
-2. **Statically parse $\mathrm{P}$** (based on Python AST) to extract all "input component value → output component value" pairs, obtaining $\sum n_z$ (length of involved input components) and $\sum m_z$ (length of involved output components).
-3. **Format into a unified** "mapping table $\mathrm{P}^+$," with a table size $L(\mathrm{P}^+)=\sum_z(n_z+m_z)$.
-4. **Add accuracy penalty**: $L(\mathrm{P})=L(\mathrm{P}^+)+(N+M)\cdot E(\mathrm{P})$; where $N=4, M=16$.
-5. **Normalization**: $\mathcal{C}(\mathrm{P})=100\cdot\frac{L_z-\mathrm{Clip}(L(\mathrm{P}),L_z,L_s)}{L_z-L_s}$, where the lower bound $L_s=U(N+M)=40$ (full compositionality) and the upper bound $L_z=d(N+M)=320$ (zero compositionality, equivalent to listing the entire dataset in the program).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: 16 string→grid samples D"] --> B["LLM generates Python program P in one shot"]
+    B --> C["Execute program: count errors E(P)"]
+    B --> D["AST decompilation to mapping table P+: <br/>Table size L(P+)=Σ(n_z+m_z)"]
+    C --> E["Program length as compression: <br/>L(P)=L(P+)+(N+M)·E(P)<br/>Normalize to C(P)∈[0,100]"]
+    D --> E
+    E --> F["Three compositionality profiles: <br/>T1 Full / T2 Rote / T3 Over-compressed"]
+```
 
 ### Key Designs
 
-1. **"Program Length as Compression" under Complexity Theory**:
-    - Function: Externalize the LLM's understanding of samples into a program, using program length to directly quantify the upper bound of $\mathcal{K}(D_Y|D_X)$, thereby determining if the model has truly extracted compositional rules.
-    - Mechanism: Use "component values appearing in the program" as the sole unit of measurement—whenever the LLM writes a mapping like `"AC" → row 1=*...*`, $n_z$ (input component length) and $m_z$ (output component length) are accumulated. If the model independently models 4 positions × 2 values = 8 atomic mappings, the theoretical minimum $L(\mathrm{P}^+)=U(N+M)=40$; if the model gives up on compositionality and enumerates all 16 samples, $L(\mathrm{P}^+)=320$.
-    - Design Motivation: Use the unified mapping table $\mathrm{P}^+$ to eliminate "non-essential length" differences such as variable naming, comments, or formatting, making the program lengths of different LLMs directly comparable. Simultaneously, transform the error count into "supplementary mapping entries" within the same coordinate system, allowing a single scalar $\mathcal{C}(\mathrm{P})$ to reflect both "compactness" and "correctness."
+**1. Program Length as Compression: Quantifying Compositionality via Kolmogorov Upper Bounds**
 
-2. **AST-based Program-to-Mapping Table Decompilation**:
-    - Function: Automatically extract all "component combination → output" entries from any Python program written by an LLM to calculate $\sum n_z$ and $\sum m_z$.
-    - Mechanism: Use Python AST to extract three types of compositional sources—(a) key→value in explicit dicts; (b) input values co-occurring in the same assignment or literal; (c) implicit conditional combinations in nested if/elif/else paths. Maintain "variable → set of involved input values" propagation for assignments; use "if/elif complementarity" to virtualize a hypothetical value for else. Multiple occurrences of the same combination are counted only once.
-    - Design Motivation: LLM programming styles vary significantly (dicts, if-else, lists, comprehensions). Manually writing rules for each style would be labor-intensive and biased. AST + set propagation allows most Python styles to be mapped to the $\mathrm{P}^+$ table, ensuring fairness across models.
+Theoretically, compositionality is equivalent to the degree of "compressing output with input," i.e., smaller $\mathcal{K}(D_Y|D_X)$ implies higher compositionality. Since Kolmogorov complexity is uncomputable, the authors use the length of the LLM-generated program as a natural upper bound, counting "component value occurrences" as the metric. Specifically, the program is statically parsed into a mapping table $\mathrm{P}^+$ with size $L(\mathrm{P}^+)=\sum_z(n_z+m_z)$, where $n_z$ is the length of input components and $m_z$ is the length of output components. If a model abstracts compositional rules (e.g., modeling 4 positions × 2 values = 8 atomic mappings), the theoretical minimum $L(\mathrm{P}^+)=U(N+M)=40$. If it ignores compositionality and enumerates all 16 samples, $L(\mathrm{P}^+)=d(N+M)=320$.
 
-3. **Three Profiles of Compositionality (T1/T2/T3)**:
-    - Function: Cross-reference $L(\mathrm{P}^+)$ (compression) and $E(\mathrm{P})$ (compression loss) to obtain three typical patterns, providing qualitative diagnosis beyond a single $\mathcal{C}$.
-    - Mechanism: T1 = Low $L(\mathrm{P}^+)$ + Low $E(\mathrm{P})$ = Full Compositionality ("captured the rule correctly"); T2 = High $L(\mathrm{P}^+)$ + Low $E(\mathrm{P})$ = Failed to capture compositionality but correct via enumeration ("cannot compress, can only memorize"); T3 = Low $L(\mathrm{P}^+)$ + High $E(\mathrm{P})$ = Wrote a short algorithm but with many errors ("forced/incorrect compression"). T2 and T3 both yield low $\mathcal{C}$ but reveal opposite failure modes.
-    - Design Motivation: A pure scalar score would conflate "conservative memorization" with "aggressive incorrect logic." The 2D profiles directly correspond to "how the model perceives compositionality," guiding subsequent improvements.
+Accuracy is integrated into the same metric: executing the program yields error count $E(\mathrm{P})=\sum_i[\mathrm{P}(x_i)\ne y_i]$. Each error is treated as a requirement to add a full mapping, resulting in $L(\mathrm{P})=L(\mathrm{P}^+)+(N+M)\cdot E(\mathrm{P})$ (where $N=4, M=16$), normalized as:
+
+$$\mathcal{C}(\mathrm{P})=100\cdot\frac{L_z-\mathrm{Clip}(L(\mathrm{P}),L_z,L_s)}{L_z-L_s},\quad L_s=40\ (\text{Full Composition}),\ L_z=320\ (\text{Zero Composition}).$$
+
+Normalizing to $\mathrm{P}^+$ before counting length removes variations in naming, comments, and formatting, ensuring fairness across different LLM coding styles.
+
+**2. AST-based Program to Mapping Table Decompilation: Unifying Python Variations**
+
+LLMs use diverse styles (dicts, if-else, list comprehensions). To avoid bias, the authors use Python AST to automatically extract three types of compositional sources: (a) Explicit dict key→value pairs; (b) Co-occurring values in assignments or literals; (c) Implicit conditional combinations in nested if/elif/else paths. The system maintains forward propagation of "variable → involved input values" and handles "else" branches through "if/elif complement" virtual values. Duplicate combinations are counted only once. This AST-based set propagation maps most styles to the $\mathrm{P}^+$ table for stable calculation of $\sum n_z$ and $\sum m_z$.
+
+**3. Three Compositionality Profiles (T1/T2/T3): Two-Dimensional Diagnosis**
+
+A single scalar score might conflate "conservative rote learning" with "aggressive failed compression." Thus, the authors cross-reference compression degree $L(\mathrm{P}^+)$ and compression loss $E(\mathrm{P})$ to identify three patterns: T1 (low $L(\mathrm{P}^+)$ + low $E(\mathrm{P})$) represents full compositionality; T2 (high $L(\mathrm{P}^+)$ + low $E(\mathrm{P})$) represents "rote learning" where accuracy is achieved through enumeration; T3 (low $L(\mathrm{P}^+)$ + high $E(\mathrm{P})$) represents "over-compression" where a short but incorrect algorithm is generated. Both T2 and T3 yield low $\mathcal{C}$ scores but indicate opposite causes, helping diagnose whether a model needs better compression or better error correction.
 
 ### Loss & Training
-The protocol is entirely training-free and serves as an external evaluation for pre-trained LLMs. There is no training or fine-tuning; all "compositionality" is assessed by prompting the LLM to generate a program once, which is then scored by the parser.
+The entire method is training-free. It is an external evaluation protocol for pre-trained LLMs. "Compositionality" is derived from program generation via a single prompt and automated scoring by the parser.
 
 ## Key Experimental Results
 
 ### Main Results
-Average $\mathcal{C}(\mathrm{P})$ for 11 LLMs across 4 rule settings (Horizontal / Block / Vertical / Random), with 30 sampled functions each:
+Evaluation of 11 LLMs across 4 rule settings (30 sampled functions each), average $\mathcal{C}(\mathrm{P})$:
 
 | Model | Horizontal | Block | Vertical | Random |
 |---|---|---|---|---|
 | o3-mini | **95.69** | **57.07** | 27.31 | 0.67 |
-| Gemini-2.5 Pro | 92.92 | 42.96 | **30.39** | **10.00** |
+| Gemini-1.5 Pro | 92.92 | 42.96 | **30.39** | **10.00** |
 | o1-mini | 94.49 | 19.38 | 4.29 | 0.00 |
 | DeepSeek-R1 | 89.80 | 7.62 | 0.00 | 0.00 |
 | Claude-3.7 | 84.67 | 47.57 | 14.71 | 3.52 |
@@ -89,51 +91,50 @@ Average $\mathcal{C}(\mathrm{P})$ for 11 LLMs across 4 rule settings (Horizontal
 | Gemini-2.0 | 7.77 | 0.43 | 0.67 | 3.71 |
 | Claude-3.5 | 6.69 | 0.00 | 0.00 | 0.00 |
 
-Overall order: Horizontal > Block > Vertical > Random, reflecting that whether components are contiguous in a linear text view determines if the LLM can capture compositionality; non-reasoning models almost entirely failed on Random (except GPT-4o, which scored 0 even on Horizontal).
+Overall order: Horizontal > Block > Vertical > Random. This suggests compositionality capture depends on whether components are contiguous in linear text. Non-reasoning models failed almost entirely on Random (except GPT-4o, which even failed on Horizontal).
 
-### Ablation Study (Robustness Testing)
+### Ablation Study (Robustness Tests)
 
-| Model | RI(H) $\mathcal{C}$ (vs Baseline Horizontal) | SC(H+R) $\mathcal{C}$ (vs Average) |
+| Model | RI(H) $\mathcal{C}$ (vs Base Horizontal) | SC(H+R) $\mathcal{C}$ (vs Mean of two) |
 |---|---|---|
 | DeepSeek-R1 | 26.54 (−63.26) | 27.43 (−17.47) |
 | o3-mini | 73.20 (−22.49) | **78.79 (+30.61)** |
-| Gemini-2.5 Pro | 76.58 (−16.33) | 38.98 (−12.48) |
+| Gemini-1.5 Pro | 76.58 (−16.33) | 38.98 (−12.48) |
 | Claude-3.7 | **79.04** (−5.63) | 66.39 (+22.30) |
 | QwQ-Plus | 0.00 (−44.00) | 4.00 (−18.00) |
 | Qwen-Max | 1.38 (−45.29) | 6.67 (−16.67) |
 | GPT-4o | 0.00 (0) | 0.00 (0) |
 
-RI(H) = "Scrambling the $i$-th character determines the $i$-th row" index; SC(H+R) = 2 random rows use Horizontal, while the remaining 14 cells use Random. Under RI, $\mathcal{C}$ for most reasoning models plummeted (indicating a reliance on sequential correspondence rather than a true understanding of "decoupling characters and points"); under SC, only o3-mini and Claude-3.7 outperformed the mean of the two settings, showing they can "independently" divide and conquer easy/hard sub-components.
+RI(H) = Randomizing index mapping (e.g., instead of pos $i$ to row $i$). Most reasoning models saw a sharp drop in $\mathcal{C}$ under RI, showing reliance on spatial order rather than true input-output decoupling. SC under "Setting Combination" showed o3-mini and Claude-3.7 performing better than the mean, suggesting they can independently apply "divide and conquer" to heterogeneous components.
 
 ### Key Findings
-- **Reasoning Models > Non-reasoning Models, but only on intuitive settings**: Reasoning models score 84–96 on Horizontal but drop to nearly 0 on Random, proving their advantage lies in "understanding 2D spatial intuition" rather than "understanding compositionality."
-- **Sequential Correspondence $\ne$ Compositional Understanding**: After scrambling Horizontal's $i \to i$ index, 5 out of 6 reasoning models saw a sharp drop in $\mathcal{C}$ (DeepSeek-R1 −63, QwQ −44), indicating that a significant portion of their previous high scores relied on the low-dimensional shortcut of "position $i$ matches row $i$."
-- **Independent Component Capture is the true differentiator**: In the Setting Combination, Claude-3.7 and o3-mini performed better than the average of single settings. Counts show that in 29/27 out of 30 samples, they successfully "modeled the H part separately + enumerated the R part separately," representing the closest ability to "true compositionality" found.
-- **Rule Perspective $\ne$ Result Perspective**: Compared to traditional compositional generalization accuracy $\mathcal{A}$ (Table 3), the same model could achieve 100% accuracy on Horizontal but only 30% in $\mathcal{C}(\mathrm{P})$, confirming that "calculating the right result" is not equivalent to "explaining the rule." The correlation between the two is weak.
-- **Method Controllability**: The authors verified (a) ranking remains unchanged across three different prompt styles (prompt insensitivity); (b) when rules were given in natural language, models achieved $\ge 98\%$ accuracy in translating them to code, proving that programming ability is not the bottleneck.
+- **Reasoning Models > Non-reasoning Models, but only on intuitive settings**: Reasoning models score 84–96 on Horizontal but drop to nearly 0 on Random, proving their advantage lies in spatial intuition rather than pure "compositional logic."
+- **Sequential Correspondence $\ne$ Compositional Understanding**: Randomizing the index mapping caused 5/6 reasoning models to crash (DeepSeek-R1 −63, QwQ −44), showing their high scores relied on "shortcuts" like $i$-th row corresponding to $i$-th character.
+- **Independent Component Capture as a Differentiator**: Under Setting Combination (SC), Claude-3.7 and o3-mini outperformed the mean. Data shows they successfully modeled the H portion while enumerating the R portion, exhibiting the closest behavior to "true compositionality."
+- **Rule View $\ne$ Result View**: Comparing with traditional accuracy $\mathcal{A}$, models can achieve 100% result accuracy on Horizontal while having only 30% $\mathcal{C}(\mathrm{P})$. This confirms that "getting the result right" does not imply "understanding the rule."
 
 ## Highlights & Insights
-- **Shifting Evaluation from Black-box to White-box**: Asking the LLM to write down "the rules it thinks exist" as an executable program is a paradigm shift in compositionality research. Previously, one could only observe outputs; now, one can directly read the rules and qualitatively diagnose failure modes.
-- **Engineering Implementation of Kolmogorov Complexity**: Although $\mathcal{K}$ is theoretically uncomputable, the authors use the "unified mapping table $\mathrm{P}^+$" to make program lengths across different LLMs comparable and integrate "errors" as "patch counts" into the same coordinate system—an elegant way to package complex theory.
-- **Explainability of the 2D Diagnostic Map**: The T1/T2/T3 categorization directly distinguishes between "compressing correctly," "not daring to compress," or "compressing blindly," providing far more information than a single scalar and offering clear directions for model improvement.
-- **Partition-free approach addresses LLM-era pain points**: As pre-training corpora cover nearly all possible combinations, the concept of an "unseen test set" is no longer valid. This work is among the few to acknowledge and systematically address this issue.
+- **From Black-box to White-box Evaluation**: Forcing LLMs to externalize "rules they believe in" into executable programs is a paradigm shift. One can now read the rules and qualitatively distinguish failure modes.
+- **Engineering Kolmogorov Complexity**: While $\mathcal{K}$ is uncomputable, the authors use the unified "mapping table $\mathrm{P}^+$" to make program lengths comparable across diverse LLM outputs.
+- **Explainability of Two-Dimensional Diagnosis**: The T1/T2/T3 split informs whether a model is "correctly compressing," "afraid to compress," or "erroneously compressing," providing clearer direction for model improvement compared to a single accuracy score.
+- **Addressing LLM-era Pain Points**: By being partition-free, the work acknowledges that "unseen test sets" are largely a myth in the age of massive pre-training data.
 
 ## Limitations & Future Work
-- The authors acknowledge: (a) Tasks must be simple enough to ensure correct code generation (string-to-grid only); scaling to SCAN/COGS might be bottlenecked by programming ability; (b) Program-to-mapping table decompilation relies on heuristic AST rules, which might miss new models or coding styles; (c) Using natural language as a rule language could bypass programming bottlenecks, but quantifying its compression remains an open problem.
-- Observation: (d) The task structure depends heavily on the LLM's "2D intuition" (a 60+ point difference between Horizontal and Random), making the results partly a proxy for "can the LLM think in 2D" rather than pure compositionality; (e) Evaluation uncertainty regarding prompts and random seeds is high (standard deviations in the dozens), requiring 30-trial averages; (f) T2 and T3 cases share the same $\mathcal{C}(\mathrm{P})$ but stem from different causes; while the profiling is good, specific repair suggestions are not yet provided.
-- Potential improvements: Extend basic tasks to algebra or semantic parsing and design LLM-graded natural language compression metrics; introduce more granular "component independence" test sets to isolate the contribution of "2D intuition."
+- **Task Simplicity**: The authors admit tasks must be simple (like string-to-grid) to ensure code generation is successful; scaling to SCAN/COGS might be hindered by programming ability.
+- **AST Heuristics**: Program-to-table decompilation relies on heuristic rules; new coding styles might fall outside current coverage.
+- **Spatial Biases**: The dependence on "spatial intuition" (Horizontal vs Random difference > 60) suggests the tasks might be proxies for spatial reasoning rather than pure compositionality.
+- **Future Directions**: Extending tasks to algebraic or semantic parsing while designing LLM-graded natural language compression metrics.
 
 ## Related Work & Insights
-- **vs Lake & Baroni (SCAN) / Keysers (COGS)**: Classic compositional generalization paradigms that rely on data splitting; this paper acknowledges "splitting has failed for pre-trained LLMs" and adopts a partition-free approach.
-- **vs Elmoznino 2025 complexity-based theory**: This is the first engineering implementation of that theory for LLM evaluation, translating the abstract "$\mathcal{K}(D_Y|D_X)$ upper bound" into "total length of a unified mapping table."
-- **vs Chuang/Soulos 2024 "internal mechanism" research**: While they look at neurons/activations, this paper looks at externalized "programs," which is model-agnostic and has a lower technical barrier.
-- **vs FrugalGPT / RouteLLM result-level benchmarks**: Such works focus only on accuracy. Table 3 in this paper proves that accuracy is largely uncorrelated with rule compression, suggesting the need for expanded evaluation dimensions.
+- **vs SCAN/COGS**: Traditional paradigms rely on splits; this work addresses their failure in the pre-training era via a partition-free approach.
+- **vs Elmoznino 2025**: This is the first engineering implementation of that theory for LLM evaluation, grounding uncomputable complexity in "unified mapping table length."
+- **vs Internal Mechanism Studies**: While others study neurons/activations, this work focuses on externalized "programs," which is model-agnostic and easier to implement.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ "Using code generation instead of answering questions" is a paradigm-level new evaluation idea, elegantly implementing Kolmogorov theory.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 11 models × 4 basic settings × 2 extended settings + significance tests + prompt sensitivity scanning + programming baselines; well-covered, though task complexity is limited.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical definitions are clear, and the three profiles are intuitive. Appendix provides detailed AST parsing rules.
-- Value: ⭐⭐⭐⭐ Significant methodological contribution to the compositionality research community, revealing that reasoning models rely on 2D intuition for simple compositional tasks.
+- Novelty: ⭐⭐⭐⭐⭐ "Using code generation to replace task answering" is a genuine paradigm shift for evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 11 models across complex settings and robustness tests; however, task complexity remains limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear definitions and intuitive profiles.
+- Value: ⭐⭐⭐⭐ Significant methodological contribution, revealing that reasoning models rely heavily on spatial shortcuts.
 
 <!-- RELATED:START -->
 

@@ -2,121 +2,120 @@
 title: >-
   [Paper Note] Smoothness Errors in Dynamics Models and How to Avoid Them
 description: >-
-  [ICML 2026][3D Vision][GNN] The authors theoretically demonstrate that "unitary GNNs" by Kiani et al. over-constrain physical systems that naturally increase in smoothness (such as heat diffusion) by forcibly preserving…
+  [ICML 2026][3D Vision][GNN] The authors theoretically point out that the "unitary GNN" by Kiani et al. over-constrains physical systems that "naturally become smooth," such as heat diffusion, by forcibly maintaining the Rayleigh quotient. They further propose "relaxed unitary convolution" (R-UniGraph / R-UniMesh) and extend the entire Rayleigh qu
 tags:
-  - "ICML 2026"
-  - "3D Vision"
-  - "GNN"
-  - "Mesh Learning"
-  - "Over-smoothing/Under-smoothing"
-  - "Unitary Convolution"
-  - "Rayleigh Quotient"
-  - "Weather Forecasting"
+  - ICML 2026
+  - 3D Vision
+  - GNN
 date: 2026-05-08
-content_hash: e4f28f11644399f6
+content_hash: 198bd7a60463cb38
 ---
-
 # Smoothness Errors in Dynamics Models and How to Avoid Them
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.05352](https://arxiv.org/abs/2602.05352)  
 **Code**: Available (provided at the end of the paper)  
-**Area**: 3D Vision / Geometric Deep Learning / Neural PDE Solvers  
-**Keywords**: GNN, Mesh Learning, Over-smoothing/Under-smoothing, Unitary Convolution, Rayleigh Quotient, Weather Forecasting
+**Area**: 3D Vision / Geometric Deep Learning / PDE Neural Solvers  
+**Keywords**: GNN, mesh learning, oversmoothing/undersmoothing, Unitary convolution, Rayleigh quotient, weather forecasting
 
 ## TL;DR
-The authors theoretically demonstrate that "unitary GNNs" by Kiani et al. over-constrain physical systems that naturally increase in smoothness (such as heat diffusion) by forcibly preserving the Rayleigh quotient. Consequently, they propose "relaxed unitary convolutions" (R-UniGraph / R-UniMesh) and extend the Rayleigh quotient-unitary convolution framework from graphs to triangular meshes, outperforming several strong baselines on MeshPDE and WeatherBench22.
+The authors theoretically point out that the "unitary GNN" by Kiani et al. over-constrains physical systems that "naturally become smooth," such as heat diffusion, by forcibly maintaining the Rayleigh quotient. They further propose "relaxed unitary convolution" (R-UniGraph / R-UniMesh) and extend the entire Rayleigh quotient-unitary convolution framework from graphs to triangular meshes, outperforming several strong baselines in MeshPDE and WeatherBench22.
 
-## Core Problem: Core Proposition
-GNNs should be neither over-smooth nor non-smooth—the smoothing tendency of the architecture must precisely match the smoothing tendency of the ground-truth physical process.
+## One-sentence Supplement: Core Proposition
+GNNs should neither be oversmoothed nor undersmoothed—the smoothing tendency of the architecture must precisely match the smoothing tendency of the true physical process.
 
 ## Background & Motivation
 
-**Background**: Solving PDEs defined on meshes or manifolds (e.g., heat diffusion, wave equations, Cahn–Hilliard, global atmosphere) using neural networks is a highly active research area. The standard approach involves discretizing the manifold into a mesh and employing mesh-GNNs (GCN, MPNN, EGNN, Gauge-Equivariant CNN, Hermes, etc.) that support high-order connectivity for message passing. However, GNNs generally suffer from over-smoothing: as layers increase, features of adjacent nodes tend towards uniformity. Kiani et al. recently introduced "unitary graph convolution," which constrains the weight matrix to be a unitary matrix to preserve the Rayleigh quotient $R_\mathcal{G}(X) = \mathrm{Tr}(X^\dagger L X)/\|X\|_F^2$, thereby strictly preventing over-smoothing.
+**Background**: Solving PDEs defined on meshes/manifolds (heat diffusion, wave equations, Cahn–Hilliard, global atmosphere) using neural networks has been one of the most active directions in scientific computing over the past two years. The mainstream approach involves discretizing the manifold into a mesh and using mesh-GNNs that support high-order connectivity (GCN, MPNN, EGNN, Gauge-Equivariant CNN, Hermes, etc.) for message passing. However, GNNs generally suffer from oversmoothing: as the number of layers increases, neighbor node features tend to converge. Kiani et al. recently proposed "unitary graph convolution," which constrains the weight matrix to be a unitary matrix, effectively maintaining the Rayleigh quotient $R_\mathcal{G}(X) = \mathrm{Tr}(X^\dagger L X)/\|X\|_F^2$ to strictly prevent oversmoothing.
 
-**Limitations of Prior Work**: Unitary convolutions are to GCNs what "zero smoothing" is to "over-smoothing." Yet, most real-world physical systems possess an "intrinsic degree of smoothness"—heat diffusion makes features increasingly smooth, while the wave equation requires the preservation of high-frequency structures. Forcing unitary convolutions onto these systems leads to "under-smoothing," where the network cannot learn the intermediate smoothing processes required by the physics.
+**Limitations of Prior Work**: Compared to GCN, unitary convolution represents the extreme of "zero smoothing" versus "excessive smoothing." However, most real-world physical systems possess a "just-right" degree of smoothness—heat diffusion makes features increasingly smooth, while the wave equation requires maintaining high-frequency structures. Forcing unitary convolution onto these systems leads to "undersmoothing," where the network cannot learn the intermediate smoothing process required by the physics.
 
-**Key Challenge**: GCNs and unitary convolutions represent two extremes regarding the Rayleigh quotient: GCNs strictly decrease the Rayleigh quotient (continuous smoothing), while unitary convolutions strictly preserve it (no smoothing). Real physical dynamics require a "tunable" smoothing rate rather than a choice between two extremes.
+**Key Challenge**: GCN and unitary convolution represent two extremes regarding the Rayleigh quotient: GCN strictly reduces the Rayleigh quotient (continuous smoothing), while unitary convolution strictly maintains it (no smoothing). Any realistic physical dynamics requires a "tunable" smoothing rate rather than a choice between two extremes.
 
-**Goal**: (i) Theoretically derive the lower bound of approximation errors for unitary functions to prove they are over-constrained on targets with strong angular dependence; (ii) design controllable "relaxed unitary convolutions" that allow the network to switch freely between the two extremes; (iii) extend the Rayleigh quotient and unitary convolutions from graphs to meshes for real physical tasks like PDE solving and weather forecasting.
+**Goal**: (i) Theoretically provide a lower bound for the approximation error of unitary functions, proving they are over-constrained on targets with strong angular dependence; (ii) design controllable "relaxed unitary convolutions" that allow the network to switch freely between the two extremes; (iii) extend the Rayleigh quotient and unitary convolution from graphs to meshes, making them applicable to real physical tasks such as PDE solving and weather forecasting.
 
-**Key Insight**: The authors observe that the unitary property of Lie unitary convolutions $f(X) = \exp(AXW)$ (where $W = -W^\dagger$) stems from the Taylor expansion "extending to infinity." Truncating the expansion to the $T_\max$-th order results in layers that are no longer strictly unitary but approximate unitarity in a tunable manner—serving as a natural "continuous relaxation knob."
+**Key Insight**: The authors found that the unitarity of Lie unitary convolution $f(X) = \exp(AXW)$, where $W = -W^\dagger$, stems from expanding the Taylor series to "infinite orders." If truncated at a specific order $T_\max$, the resulting layer is no longer strictly unitary but approaches unitarity in a tunable manner—this serves as a natural "continuous relaxation knob."
 
-**Core Idea**: Relaxing the strict preservation of the Rayleigh quotient through either Taylor-truncated Lie convolutions or a "zero-pad + unitary encoder + arbitrary decoder" approach. This allows the network to adaptively match the true smoothness of the physical process during training. The framework is extended to meshes using a Robust Laplacian and tangent weights.
+**Core Idea**: Relaxing strict Rayleigh quotient preservation is achieved through Taylor-truncated Lie convolutions or a "zero-pad + unitary encoder + arbitrary decoder" approach. This allows the network to adaptively match the true smoothness of the physical process during training. The entire theory is migrated to meshes using a Robust Laplacian and cotangent weights.
 
 ## Method
 
 ### Overall Architecture
-Starting from the unified smoothness measure of the Rayleigh quotient $R_\mathcal{G}(X)$, the approach follows four steps: (1) theoretically prove the non-vanishing approximation error lower bound of unitary functions for targets where magnitude depends on angle; (2) propose two relaxation strategies: "Taylor truncation" and "Encoder-Decoder"; (3) generalize the Rayleigh quotient and unitary convolutions from graphs to triangular meshes (Mesh Rayleigh quotient + UniMesh convolution) via a Robust Laplacian; (4) stack these components into the final R-UniGraph (for graphs) and R-UniMesh (for meshes) models, using GroupSort for activation and MLP/GCN as decoders to break the unitary constraint.
+The methodology aims to address the mismatch between the smoothing tendency of GNNs and the actual physical processes—it should neither become progressively smoother like GCNs nor remain entirely unsmoothed like strict unitary convolutions. Instead, the smoothing rate should be tunable. The general idea revolves around the Rayleigh quotient $R_\mathcal{G}(X) = \mathrm{Tr}(X^\dagger L X)/\|X\|_F^2$ as a unified metric for smoothness. First, it is theoretically proven that strict unitary functions have a non-vanishing lower bound on approximation error for targets where "magnitude varies with angle," explaining "why relaxation is necessary." Second, two relaxation paths are provided to transform "strict Rayleigh quotient preservation" into a "tunable smoothing rate": Taylor truncation (resulting in R-UniGraph on graphs) and zero-padded encoding-decoding (resulting in R-UniMesh on meshes). Finally, the Rayleigh quotient and unitary convolution are bridged from graphs to triangular meshes using the Robust Laplacian, allowing the framework to be applied to manifold PDE tasks. The final model uses GroupSort as an activation (preserving magnitude) and employs an MLP/GCN decoder to actively break unitary constraints for flexibility.
 
 ### Key Designs
 
-1.  **Taylor-Truncated Relaxed Lie Convolution (R-UniGraph)**:
-    *   **Function**: Precision matching of the target system's true smoothing rate by smoothly interpolating between "GCN-style over-smoothing" and "unitary-style zero-smoothing" via the Taylor expansion order $T_\max$.
-    *   **Mechanism**: The matrix exponential in the Lie unitary convolution $\exp(AXW)$ is truncated to the $T_\max$ order using a Taylor series: $f_{\text{Relaxed}}(X; A, T_\max) = \sum_{i=0}^{T_\max} \frac{1}{i!} L^i(X)$, where $L(X) = AXW$ and $W = -W^\dagger$. If $T_\max = 1$, it approximates GCN behavior; as $T_\max \to \infty$, it recovers the strict Lie unitary convolution. Intermediate values ($T_\max = 3$ for heat diffusion, $T_\max = 10$ for others) allow the network to perform small smoothing corrections while maintaining most of the Rayleigh quotient.
-    *   **Design Motivation**: While Kiani et al. proposed a "relaxation" for separable unitary convolutions, their method mixed two sources—truncating Taylor series and allowing $U$ to be non-unitary—making it impossible to quantitatively analyze the origin of the relaxation. R-UniGraph retains the antisymmetric Lie form $W$, making $T_\max$ the sole knob for Rayleigh quotient preservation.
+**1. Taylor-Truncated Relaxed Lie Convolution (R-UniGraph): A knob for seamless switching between oversmoothing and undersmoothing**
 
-2.  **Encoder-Decoder Relaxation (R-UniMesh)**:
-    *   **Function**: Addresses the limitation that Taylor truncation cannot change channel dimensions, providing a high-capacity, smoothness-aware model for meshes.
-    *   **Mechanism**: First, a zero-padding operation $f_{\text{pad}}: \mathbb{R}^{n\times d_{in}} \to \mathbb{R}^{n\times d_{out}}$ pads node features to a hidden dimension (zero-padding naturally preserves the Rayleigh quotient by preserving the norm). Then, $k$ layers of Lie unitary mesh convolutions $f_{\text{UniMeshConv}}^{\text{Lie}}(X; A, \mathcal{W}) = \exp(\tilde A X W)$ are used as an encoder $E$, where $\tilde A = D^{-1/2}(\mathcal{W}\odot A)D^{-1/2}$ introduces cotangent weights $\mathcal{W}$. Finally, an MLP or GCN decoder $D$ maps to the target channel count and breaks the unitary constraint, providing the flexibility to express the target smoothing rate.
-    *   **Design Motivation**: Lie unitary convolutions cannot change channels; increasing capacity requires deeper stacks, which can be unstable (e.g., "shattered gradients"). This "wide + shallow" approach concentrates parameter degrees of freedom in the decoder, letting the unitary encoder preserve geometric/smoothness structures while the decoder fits the target label smoothness.
+The pain point is that GCN strictly reduces the Rayleigh quotient (continuous smoothing) and unitary convolution strictly maintains it (zero smoothing); both are hard-coded extremes. Realistic physical dynamics require an intermediate, tunable smoothing rate. The authors noticed that the unitarity of Lie unitary convolution $\exp(AXW)$ ($W=-W^\dagger$) comes from the infinite-order Taylor expansion of the matrix exponential. By truncating it at the $T_\max$-th order, they obtain $f_{\text{Relaxed}}(X; A, T_\max) = \sum_{i=0}^{T_\max} \frac{1}{i!} L^i(X)$, where $L(X)=AXW$. Thus, $T_\max$ becomes a continuous knob for the smoothing rate: at $T_\max=1$, it approximates GCN behavior; as $T_\max\to\infty$, it recovers strict Lie unitary convolution. Intermediate values (e.g., $T_\max=3$ for heat diffusion, $T_\max=10$ for others) allow the network to perform small smoothing corrections while largely maintaining the Rayleigh quotient.
 
-3.  **Mesh Rayleigh Quotient and Unitary Convolutions on Robust Laplacian**:
-    *   **Function**: Extends the smoothness analysis framework to real manifold PDE tasks by generalizing the Rayleigh quotient and unitary convolutions to triangular meshes.
-    *   **Mechanism**: Traditional symmetric cotangent Laplacians $\tilde L$ can have negative weights on non-Delaunay triangulations, causing the Rayleigh quotient to lose its positive-definite meaning. The authors adopt the Robust Laplacian from Sharp & Crane, which ensures all cotangent weights $\mathcal{W}_{ij} = \frac{1}{2}(\cot\alpha_{ij} + \cot\beta_{ij})$ satisfy the Delaunay criterion ($\alpha_{ij}+\beta_{ij}\le\pi$) through minimal edge intrinsic flips, ensuring non-negative off-diagonal elements. The mesh Rayleigh quotient is defined as $R_\mathcal{M}(X) = \mathrm{Tr}(X^\dagger \tilde L X)/\|X\|_F^2$, and the normalized adjacency matrix in unitary convolutions is updated with cotangent weights.
-    *   **Design Motivation**: Previous mesh-GNNs used cotangent weights primarily for numerical precision. The authors link these weights to "strict smoothness preservation" via the Robust Laplacian, allowing the mathematical conclusions of the unitary framework to transfer automatically to meshes.
+The key difference compared to the "separable unitary convolution" relaxation previously proposed by Kiani et al. is the isolation of the source of relaxation. Their relaxation modified two aspects simultaneously—truncating the Taylor series and making $U$ non-unitary—making it impossible to quantify the source of relaxation. R-UniGraph keeps the anti-symmetric $W$ in Lie form, making $T_\max$ the sole knob for Rayleigh quotient preservation. If the smoothness of the target process is known physically, $T_\max$ can even be selected via a lookup table.
+
+**2. Zero-Padded Encoder-Decoder Relaxation (R-UniMesh): Concentrating capacity in the decoder to bypass training instability of deep unitary stacks**
+
+The Taylor truncation path cannot change channel dimensions; increasing parameters requires deepening the network, but deep unitary stacks face "shattered gradients" training instability as noted by Balduzzi et al. R-UniMesh adopts a "wide + shallow" approach: it first uses zero-padding $f_{\text{pad}}: \mathbb{R}^{n\times d_{in}}\to\mathbb{R}^{n\times d_{out}}$ to lift node features to the hidden dimension (zero-padding preserves magnitude and thus naturally the Rayleigh quotient), then stacks $k$ layers of Lie unitary mesh convolution $f_{\text{UniMeshConv}}^{\text{Lie}}(X; A, \mathcal{W}) = \exp(\tilde A X W)$ as an encoder $E$, where $\tilde A = D^{-1/2}(\mathcal{W}\odot A)D^{-1/2}$ introduces cotangent weights $\mathcal{W}$. Finally, an MLP or GCN decoder $D$ is attached.
+
+The decoder serves a dual purpose: mapping features to the target channel count and actively breaking unitary constraints. This is equivalent to a clear division of labor—the unitary encoder maintains geometric and smoothness structures, while the decoder fits the output to arbitrary label smoothness. Parameter freedom is concentrated at the decoder side, which is not restricted by unitarity, thus retaining the strong inductive bias of the backbone while insulating training instability from the shallow unitary core.
+
+**3. Mesh Rayleigh Quotient and Unitary Convolution on Robust Laplacian: Moving smoothness analysis to triangular meshes**
+
+To apply the above paths to manifold PDE tasks, the Rayleigh quotient and unitary convolution must be extended from graphs to meshes. The obstacle is that the traditional symmetric cotangent Laplacian $\tilde L$ can have negative weights under non-Delaunay triangulations, causing the Rayleigh quotient to lose its positive-definite meaning. The authors utilize the Robust Laplacian of Sharp & Crane, which ensures all cotangent weights $\mathcal{W}_{ij} = \frac{1}{2}(\cot\alpha_{ij} + \cot\beta_{ij})$ satisfy the Delaunay criterion ($\alpha_{ij}+\beta_{ij}\le\pi$) through minimal edge intrinsic flips, ensuring all off-diagonal elements are non-negative.
+
+$$R_\mathcal{M}(X) = \frac{\mathrm{Tr}(X^\dagger \tilde L X)}{\|X\|_F^2}$$
+
+On top of this mesh Rayleigh quotient, one only needs to replace the original $\tilde A$ in separable/Lie unitary convolutions with the normalized adjacency matrix using cotangent weights. Corollary 1 proves that both mesh versions of unitary convolution similarly preserve the mesh Rayleigh quotient. The ingenuity lies in the fact that while mesh-GNNs previously used cotangent weights for numerical precision, no one linked them to "strict smoothness preservation." By using the Delaunay assumption and the Robust Laplacian to secure the "positive weights" condition, all mathematical conclusions of the unitary framework on graphs migrate automatically to meshes, bypassing the need for redundant algebraic proofs.
 
 ### Loss & Training
-All tasks directly minimize regression losses like MSE/NRMSE. No additional Rayleigh loss terms are introduced; the core argument is that smoothness preservation should be determined by the architecture's inductive bias rather than soft constraints. R-UniMesh uses GroupSort (Anil et al. 2019) to ensure activations do not destroy the norm.
+All tasks directly minimize regression losses such as MSE/NRMSE; no additional Rayleigh loss term is introduced. The authors' key argument is that "smoothness preservation" should be determined by the architecture's inductive bias rather than soft constraints. R-UniMesh uses GroupSort (Anil et al., 2019) as the activation to ensure it does not destroy magnitude. It utilizes orthogonal weights (sufficient for real-valued tasks) and is trained end-to-end with a GCN decoder via backpropagation.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation was conducted on two task categories: (1) MeshPDE (autoregressive solving of heat, wave, and Cahn–Hilliard equations on complex PyVista meshes); (2) WeatherBench22 global weather forecasting (T850 temperature, Z500 geopotential).
+The authors evaluate on two types of tasks: (1) MeshPDE (autoregressive solving of heat, wave, and Cahn–Hilliard equations on complex PyVista meshes); (2) WeatherBench22 global weather forecasting (T850 temperature and Z500 geopotential).
 
 | Dataset | Task | Metric | R-UniMesh | Prev. SOTA | Remarks |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| MeshPDE / Heat | 196-step Autoregressive | NRMSE ↓ | **51.9 ± 3.6** | 73.0 ± 4.7 (Hermes) | Nearly halved |
-| MeshPDE / Heat | As above | RE ↓ | **9.1 ± 7.4** | 14.2 ± 1.4 (EMAN) | Best smoothness match |
-| MeshPDE / Wave | 196-step Autoregressive | NRMSE ↓ | **236.5 ± 6.4** | 281.3 ± 15.5 (EMAN) | Significant lead |
-| MeshPDE / C-H | As above | NRMSE ↓ | 123.9 ± 2.6 | **121.2 ± 1.8** (GemCNN) | Close to SOTA |
-| WB22 / T850 | RMSE @ 1-10 d | RMSE / ACC | Comparable | Pangu / GraphCast | Competitive under data limits |
+|--------|------|------|-----------|----------|------|
+| MeshPDE / Heat | Autoregressive 196 steps | NRMSE ↓ | **51.9 ± 3.6** | 73.0 ± 4.7 (Hermes) | Nearly halved |
+| MeshPDE / Heat | Same as above | RE ↓ | **9.1 ± 7.4** | 14.2 ± 1.4 (EMAN) | Best smoothness match |
+| MeshPDE / Wave | Autoregressive 196 steps | NRMSE ↓ | **236.5 ± 6.4** | 281.3 ± 15.5 (EMAN) | Still leading |
+| MeshPDE / Cahn–Hilliard | Same as above | NRMSE ↓ | 123.9 ± 2.6 | **121.2 ± 1.8** (GemCNN) | Close to SOTA |
+| WB22 / T850 | RMSE @ 1-10 d | RMSE / ACC | Comparable to early SOTA | Pangu/GraphCast | Competitive despite limited data |
 
 ### Ablation Study
-A motivating experiment compared GCN, Lie unitary, and R-UniGraph on 2D mesh heat diffusion:
+The authors compare GCN, Lie unitary, and R-UniGraph for heat diffusion on a 2D grid in a motivating experiment:
 
 | Configuration | MSE ($\times 10^{-2}$) ↓ | MRE ($\times 10^{-2}$) ↓ | Interpretation |
-| :--- | :--- | :--- | :--- |
-| GCN | 1.08 | 5.99 | Over-smooth, high error |
-| Lie Uni | 0.14 | 8.86 | Zero smoothing, under-smooth |
-| **R-UniGraph (Ours, $T_\max=3$)** | **0.11** | **2.07** | Optimal MSE & Rayleigh error |
+|------|--------------------------|---------------------------|------|
+| GCN | 1.08 | 5.99 | Oversmoothed, high error |
+| Lie Uni | 0.14 | 8.86 | Zero smoothing, undersmoothed |
+| **R-UniGraph (Ours, $T_\max=3$)** | **0.11** | **2.07** | Optimal MSE and Rayleigh error |
 
 ### Key Findings
-- R-UniGraph outperforms both GCN and strict unitary models in both MSE and Rayleigh error, demonstrating that "just enough smoothing" is closer to the physical truth than "none" or "too much."
-- In mesh heat diffusion, the Rayleigh Error (RE) of R-UniMesh aligns almost perfectly with the ground truth at every timestep; visualizations show rollouts that are neither over-smooth (like EMAN) nor under-smooth (like Hermes).
-- On simple geometries (e.g., toroid mesh for Cahn-Hilliard), most equivariant/unitary/MPNN models perform similarly. Performance gaps emerge primarily in complex geometry generalization (different PyVista meshes), proving that geometric inductive bias is critical for cross-mesh generalization.
-- GCNs and EGNNs performed worst across tasks, indicating that message passing or Euclidean equivariance alone is insufficient for manifold PDEs without explicit consideration of mesh smoothing structures.
+- R-UniGraph outperforms both GCN and strict unitary in MSE and Rayleigh error, indicating that "just-right smoothness" is closer to physical ground truth than "never changing" or "always changing."
+- In heat diffusion prediction on meshes, R-UniMesh's Rayleigh error perfectly aligns with the ground truth at almost every timestep. Visualizations show its rollouts are neither oversmoothed like EMAN nor undersmoothed like Hermes.
+- On simple geometries (e.g., toroid mesh for Cahn–Hilliard), almost all equivariant/unitary/MPNN models perform similarly. Differences emerge mainly in complex geometry generalization (different PyVista meshes), proving that "geometric inductive bias" is crucial for cross-mesh generalization.
+- GCN and EGNN rank last in all tasks, suggesting that message passing or Euclidean equivariance alone is insufficient to simulate PDEs on manifolds; smoothing structures on the mesh must be explicitly considered.
 
 ## Highlights & Insights
-- The design logic of "approximation lower bound + knob-based relaxation" is elegant: Theorem 1 proves the "cost" of strict unitarity, followed by Taylor truncation to turn "strict" into "tunable."
-- The Rayleigh Error (RE) metric is a significant contribution, providing a physically meaningful smoothness alignment measure for PDE neural surrogates beyond standard RMSE.
-- Integrating the Robust Laplacian, tangent weights, and unitary convolutions into a complete mesh framework provides a ready-to-use "scaffold" for researchers in manifold PDE solvers.
+- The design logic of "approximation error lower bound + knob-style relaxation" is elegant: starting with Theorem 1 (providing a lower bound on $\int p(\|te\|)\mathbb{V}_{Gz}[\|f\|]dz$ through integration of magnitude variance over a fundamental domain) to explain the "cost" of strict unitarity, then using Taylor truncation to turn "strict" into "tunable." This "diagnosis-treatment" writing template is instructive for other inductive bias studies.
+- The Rayleigh Quotient Error (RE) metric is itself a significant contribution: it provides a smoothness alignment metric for PDE neural surrogates that is more physically meaningful than RMSE. Future mesh-GNN papers should adopt it as a standard metric.
+- Packaging the Robust Laplacian, cotangent weights, and unitary convolution into a complete mesh framework provides a "ready-to-use scaffold" for researchers working on manifold PDE solvers.
 
 ## Limitations & Future Work
-- $T_\max$ and zero-pad dimensions still require tuning based on task priors. Future work could consider learnable $T_\max$ or adaptive attention to dynamically determine truncation orders.
-- Performance gains are less pronounced on equations like Cahn–Hilliard, which are neither strictly smoothing nor strictly norm-preserving, suggesting the current binary view of relaxation might be too coarse for some systems.
-- The WB22 experiments were limited by compute to $1.5°$ resolution and small-scale training; scalability to larger models compared to ECMWF SOTA remains for future verification.
+- $T_\max$ and zero-pad dimensions still require tuning based on task priors. The authors suggest using a lookup table for $T_\max$ when target smoothness is known, but there is no automatic scheduling strategy for unknown PDEs. Future work could consider learnable $T_\max$ or adaptive attention to dynamically determine truncation orders.
+- The advantage is less pronounced on equations like Cahn–Hilliard, which are neither strictly smoothing nor strictly preserving; the current binary perspective of "loosening both ends" may be too coarse for truly intermediate systems. Finer Rayleigh quotient spectral analysis might be required.
+- The WB22 experiments were limited by compute to $1.5°$ resolution and small-scale training, leaving a gap compared to ECMWF SOTA. Scalability on large scales needs further verification.
 
 ## Related Work & Insights
-- **vs Kiani et al. 2024 (Unitary GNN)**: Ours is a direct extension and "correction"—proving strict Rayleigh preservation is a flaw in dynamics tasks, providing controllable relaxation, and extending the theory to meshes.
-- **vs Hermes / EMAN / GemCNN (Gauge equivariant mesh GNN)**: These methods use gauge equivariance for mesh orientation invariance; R-UniMesh provides an orthogonal inductive bias through Rayleigh quotient preservation, proving superior in strongly smoothing tasks like heat diffusion.
-- **vs Subich 2025 / Bonev 2025 (Spectral domain training)**: These works improve effective resolution via soft spectral losses. R-UniMesh achieves similar goals through architectural constraints, avoiding loss-weight tuning.
+- **vs Kiani et al. 2024 (Unitary GNN)**: This work is a direct extension and "reverse correction"—proving that strict Rayleigh quotient preservation is a defect in dynamics tasks while providing controllable relaxation through Taylor truncation and extending the theory to meshes.
+- **vs Hermes / EMAN / GemCNN (Gauge equivariant mesh GNN)**: These methods handle directional invariance on meshes via gauge equivariance. R-UniMesh provides an orthogonal and complementary inductive bias through Rayleigh quotient preservation, performing significantly better on strongly smoothing tasks like heat diffusion.
+- **vs Subich 2025 / Bonev 2025 (Spectral training targets)**: These works improve the effective resolution of weather models via soft constraints (spectral loss). R-UniMesh achieves similar goals through architectural constraints, avoiding loss-weight tuning and providing clearer physical meaning for PDE tasks.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Unifies "over- vs under-smoothing" via the Rayleigh quotient for the first time; provides controllable relaxation and mesh extensions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across motivating experiments, MeshPDE (multiple PDEs/meshes), and WB22 real-world data.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Seamless transition between theory and method; clear citations for theorems and propositions.
-- **Value**: ⭐⭐⭐⭐ Serves as both a SOTA PDE neural surrogate and a theoretically significant study of mesh-GNN inductive biases.
+- Novelty: ⭐⭐⭐⭐⭐ First unified characterization of "oversmoothing vs undersmoothing" via Rayleigh quotient, with controllable relaxation and mesh extension. Both theory and method are new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across motivating experiments, MeshPDE (multi-PDE, multi-mesh), and real-world WB22 data. WB22 is slightly limited by compute.
+- Writing Quality: ⭐⭐⭐⭐⭐ Seamless transition between theory and method, motivation and experiments; citations for theorems and propositions are clearly marked.
+- Value: ⭐⭐⭐⭐ Serves as both a usable PDE neural surrogate (SOTA on tasks like heat diffusion) and a theoretically significant study of mesh-GNN inductive biases.
 
 <!-- RELATED:START -->
 
@@ -124,11 +123,11 @@ A motivating experiment compared GCN, Lie unitary, and R-UniGraph on 2D mesh hea
 
 ## Related Papers
 
+- [\[CVPR 2025\] One Diffusion to Generate Them All](../../CVPR2025/3d_vision/one_diffusion_to_generate_them_all.md)
 - [\[NeurIPS 2025\] Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting](../../NeurIPS2025/3d_vision/temporal_smoothness-aware_rate-distortion_optimized_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](../../CVPR2026/3d_vision/lumimotion_gaussian_relighting_dynamics.md)
-- [\[ICLR 2026\] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](../../ICLR2026/3d_vision/omni-view_unlocking_how_generation_facilitates_understanding_in_unified_3d_model.md)
 - [\[ICML 2026\] FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation](foundobj_self-supervised_foundation_models_as_rewards_for_label-free_3d_object_s.md)
-- [\[CVPR 2026\] OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness](../../CVPR2026/3d_vision/openvo_open-world_visual_odometry_with_temporal_dynamics_awareness.md)
+- [\[ICLR 2026\] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](../../ICLR2026/3d_vision/omni-view_unlocking_how_generation_facilitates_understanding_in_unified_3d_model.md)
 
 </div>
 

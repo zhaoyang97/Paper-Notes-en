@@ -2,115 +2,116 @@
 title: >-
   [Paper Note] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 description: >-
-  [CVPR 2026][Signal & Communication][LoRA] This paper proposes FAAR, a frequency-aware parameter-efficient fine-tuning method for multi-task learning. It introduces Performance-Driven Rank Shrinking (PDRS) to dynamically…
+  [CVPR 2026][Signal & Communications][LoRA] FAAR is proposed as a frequency-aware multi-task parameter-efficient fine-tuning method. It dynamically selects the optimal rank for each task and layer through Performance-Driven Rank Shrinking (PDRS) and enhances spatial awareness and cross-task consistency using the Task-Spectral Pyramidal Decoder (TS-PD) with FFT f
 tags:
-  - "CVPR 2026"
-  - "Signal & Communication"
-  - "LoRA"
-  - "automatic rank selection"
-  - "FFT"
-  - "multi-task learning"
-  - "PEFT"
+  - CVPR 2026
+  - Signal & Communications
+  - LoRA
+  - FFT
+  - multi-task learning
+  - PEFT
 date: 2026-05-08
-content_hash: 0efec4d9f4740d1d
+content_hash: 50214e5702d4cb65
 ---
-
 # FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20403](https://arxiv.org/abs/2603.20403)  
-**Code**: Available (mentioned in paper)  
-**Area**: Parameter-Efficient Fine-Tuning / Multi-Task Learning
-**Keywords**: LoRA, automatic rank selection, FFT, multi-task learning, PEFT
+**Code**: Available (as mentioned in the paper)  
+**Area**: Parameter-Efficient Fine-Tuning / Multi-Task Learning  
+**Keywords**: LoRA, Automatic Rank Selection, FFT, multi-task learning, PEFT
 
 ## TL;DR
 
-This paper proposes FAAR, a frequency-aware parameter-efficient fine-tuning method for multi-task learning. It introduces Performance-Driven Rank Shrinking (PDRS) to dynamically select the optimal rank per task and per layer, and designs a Task-Spectral Pyramidal Decoder (TS-PD) that leverages FFT frequency information to enhance spatial awareness and cross-task consistency. FAAR achieves superior performance using only 1/9 the parameters of full fine-tuning.
+FAAR is proposed as a frequency-aware multi-task parameter-efficient fine-tuning method. It dynamically selects the optimal rank for each task and layer through Performance-Driven Rank Shrinking (PDRS) and enhances spatial awareness and cross-task consistency using the Task-Spectral Pyramidal Decoder (TS-PD) with FFT frequency information. It achieves superior performance with only 1/9 of the parameters compared to traditional fine-tuning.
 
 ## Background & Motivation
 
-Multi-task learning (MTL) aims to learn multiple tasks simultaneously, leveraging shared representations to discover inter-task relationships and structure. As backbone model sizes continue to grow, traditional full fine-tuning becomes increasingly impractical. Parameter-efficient fine-tuning (PEFT), particularly methods based on Low-Rank Adaptation (LoRA), has become the dominant approach.
+Multi-task learning (MTL) aims to learn multiple tasks simultaneously, sharing representations to discover relationships and structures between tasks. As backbone model parameters grow, traditional full fine-tuning becomes increasingly infeasible. Parameter-efficient fine-tuning (PEFT), particularly methods based on Low-Rank Adaptation (LoRA), has become mainstream.
 
-However, existing LoRA-based MTL methods suffer from two core limitations:
+However, existing LoRA-based MTL methods face two core limitations:
 
-**Fixed-rank problem**: Existing methods apply a uniform rank across all layers and tasks, which is counterintuitive — different tasks may require different adaptation strengths, and different layers may need varying degrees of fine-tuning flexibility. Deeper layers require stronger adaptation capacity to handle task-specific fine-grained information, while shallower layers may require only minor adjustments.
+**Fixed Rank Issue**: Current methods use a uniform rank for all layers and tasks. This is counter-intuitive, as different tasks may require different adaptation strengths, and different layers require varying degrees of fine-tuning flexibility. Deep layers often need stronger adaptation for task-specific fine-grained information, while shallow layers may only require minor adjustments.
 
-**Lack of spatial inductive bias**: Existing LoRA-based MTL strategies overlook cross-task interactions in deeper layers. For dense visual tasks such as semantic segmentation, depth estimation, and surface normal estimation, strong spatial awareness and cross-task geometric consistency are critical, yet low-rank adaptation inherently lacks such capability.
+**Lack of Spatial Inductive Bias**: Existing LoRA-based MTL strategies neglect the role of cross-task interactions in deep layers. For dense visual tasks such as semantic segmentation, depth estimation, and surface normal estimation, strong spatial awareness and cross-task geometric consistency are crucial, but low-rank adaptation inherently lacks this capability.
 
-FAAR addresses these issues by:
-- Resolving the fixed-rank problem through dynamic rank shrinking (PDRS), enabling each task/layer to automatically identify its optimal rank.
-- Introducing inexpensive yet effective spatial information and cross-task relationships through frequency analysis (TS-PD).
+The approach of FAAR:
+- Resolves the fixed rank issue via PDRS, allowing each task/layer to automatically find the optimal rank.
+- Introduces cost-effective yet efficient spatial information and cross-task relationships via frequency analysis (TS-PD).
 
 ## Method
 
 ### Overall Architecture
 
-FAAR is built upon a frozen Swin Transformer backbone, with DoRA adapters placed in the attention and MLP layers. Within each Transformer stage, the final block uses task-specific adapters while preceding blocks share adapters. The backbone is followed by a Task-Spectral Pyramidal Decoder (TS-PD) for frequency enhancement and cross-task alignment. The entire training process is governed by PDRS, which dynamically reduces adapter rank.
+FAAR addresses two intertwined challenges in dense visual multi-task fine-tuning: selecting appropriate ranks for each layer and task without manual tuning, and compensating for the lack of spatial awareness and cross-task consistency in low-rank adaptation. The overall pipeline is as follows: the input image passes through a **frozen** Swin Transformer backbone equipped with DoRA adapters—where the last block of each stage uses task-specific adapters and previous blocks share the same set of adapters. Multi-task features from the backbone are fed into the Task-Spectral Pyramidal Decoder (TS-PD) for frequency enhancement and cross-task alignment, finally producing dense predictions for each task via HRNet decoding heads. PDRS operates throughout training, gradually shrinking the adapter ranks from 64 down to single digits.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image"] --> B["Frozen Swin Transformer Backbone<br/>with DoRA Adapters<br/>(Shared Shallow / Task-Specific Last Block)"]
+    B --> C["Multi-Task Features per Stage"]
+    subgraph TSPD["Task-Spectral Pyramidal Decoder (TS-PD)"]
+        direction TB
+        C --> D["CW-SP Spectral Filtering<br/>FFT Band Selection, Edge & Semantic Preservation"]
+        D --> E["XT-Cons Cross-Task Alignment<br/>Frequency Consensus Re-injection"]
+    end
+    E --> F["HRNet Decoder Heads"]
+    F --> G["Dense Predictions per Task"]
+    P["PDRS Rank Shrinking<br/>Random Truncation → Directional Derivative Scoring → Permanent Pruning via Coverage"] -. Rank Shrinking per Epoch during Training .-> B
+```
 
 ### Key Designs
 
-1. **Performance-Driven Rank Shrinking (PDRS)**:
+**1. Performance-Driven Rank Shrinking (PDRS): Allowing Loss to Determine Rank Distribution**
 
-    - **Rank Masking**: At each forward pass, a prefix size $b \in \{1, ..., r_{curr}\}$ is randomly sampled to construct a binary mask $m$, allowing only the first $b$ rank components to participate in computation:
-        - $A^{eff} = \text{diag}(m) A$, $B^{eff} = B \text{diag}(m)$
-        - This forces important rank-1 updates to concentrate toward lower dimensions.
-    - **Coverage Strategy**:
-        - At each backward pass, an importance score is computed for each active rank $i$: $s_i = \frac{1}{2}(|\langle A_{:,i}^{eff}, \frac{\partial \mathcal{L}}{\partial A_{:,i}^{eff}} \rangle| + |\langle B_{i,:}^{eff}, \frac{\partial \mathcal{L}}{\partial B_{i,:}^{eff}} \rangle|)$
-        - Scores are accumulated across batches via EMA: $\hat{s}_i \leftarrow \beta \hat{s}_{i-1} + (1-\beta) s_i$
-        - At the end of each epoch, scores are sorted in descending order and the minimum number of ranks $K$ satisfying coverage ratio $\rho$ is selected: $K = \min\{k : c(k) \geq \rho\}$
-        - Ranks that are not covered are permanently removed from optimization.
-    - **Design Motivation**: The directional derivative of the MTL loss reflects the actual contribution of each rank-1 component. Performance-driven shrinking ensures that critical updates are preserved.
+The drawback of fixed ranks is the assumption of uniform adaptation strength across all layers and tasks. In reality, deep and task-specific layers require more fine-tuning capacity. PDRS dynamically removes ranks during training via a two-step process. During the forward pass, **Rank Masking** is performed by randomly sampling a prefix length $b \in \{1, ..., r_{curr}\}$ and constructing a binary mask to allow only the first $b$ rank components: $A^{eff} = \text{diag}(m) A$, $B^{eff} = B \text{diag}(m)$. This truncation forces important rank-1 updates to concentrate in lower dimensions. During the backward pass, **Coverage Selection** calculates an importance score for each active rank $i$ using the directional derivative of the MTL loss (inner product of gradients and parameters), reflecting the rank's contribution to loss reduction:
 
-2. **DoRA Adapters (instead of LoRA)**:
+$$s_i = \frac{1}{2}\left(\left|\left\langle A_{:,i}^{eff}, \frac{\partial \mathcal{L}}{\partial A_{:,i}^{eff}} \right\rangle\right| + \left|\left\langle B_{i,:}^{eff}, \frac{\partial \mathcal{L}}{\partial B_{i,:}^{eff}} \right\rangle\right|+\right)$$
 
-    - DoRA decouples low-rank adaptation into magnitude and direction: $\text{Out}_i^{DoRA} = m_i \frac{W_i + \alpha B_i A_i}{\|W_i + \alpha B_i A_i\|_2} x + b_i$
-    - DoRA is more stable than LoRA at extremely low ranks and works more effectively with PDRS rank shrinking.
-    - Empirical validation shows that at high ranks DoRA does not necessarily outperform LoRA, but at low ranks DoRA is substantially better.
+Scores are smoothed across batches using EMA: $\hat{s}_i \leftarrow \beta \hat{s}_{i-1} + (1-\beta) s_i$. At the end of each epoch, ranks are sorted by score, and the minimum number of ranks $K$ satisfying a coverage ratio $\rho$ is retained: $K = \min\{k : c(k) \geq \rho\}$. Remaining ranks are **permanently deleted**. Unlike AdaLoRA, which prunes based on singular values, the PDRS criterion is tied directly to the optimization objective, resulting in a rank distribution where deep/task-specific layers retain more capacity.
 
-3. **Task-Spectral Pyramidal Decoder (TS-PD)**:
+**2. DoRA Adapters: Decoupling Magnitude and Direction for Extreme Low Ranks**
 
-    - **Channel-wise Spectral Filter (CW-SP)**:
-        - FFT is applied to each task-specific feature map; a task- and resolution-specific 2D frequency filter matrix $W_t^{res}$ is learned.
-        - Selected frequencies are selectively enhanced or suppressed via element-wise multiplication: $Y = W \odot FFT(I)$.
-        - After inverse FFT back to feature space, the output is modulated with learnable scale and shift parameters.
-        - **Design Motivation**: Different tasks require different frequency information — edge detection relies on high frequencies, while depth estimation leverages both high and low frequencies.
+PDRS shrinks ranks to extreme levels (global average $\approx 5$), where standard LoRA performance becomes unstable. FAAR utilizes DoRA, which decouples weight updates into a scalar magnitude $m_i$ and a normalized direction:
 
-    - **Cross-Task Consensus Alignment (XT-Cons)**:
-        - For the primary task, an average spectral representation $F_{avg}$ is computed from auxiliary task spectra.
-        - High- and low-frequency masks $M_{low}$, $M_{high}$ are extracted from the primary task spectrum.
-        - Alignment differences are computed as: $\Delta_{low,high} = M_{low,high} * (F_{avg} - FFT(X_i^{main}))$
-        - Contributions are scaled by learnable scalars $\alpha_{low,high}$.
-        - **Design Motivation**: The frequency-domain "consensus" of auxiliary tasks is used to drive geometric consistency in the primary task representation, at lower cost than direct spatial-domain interaction.
+$$\text{Out}_i^{DoRA} = m_i \frac{W_i + \alpha B_i A_i}{\|W_i + \alpha B_i A_i\|_2} x + b_i$$
+
+Learning magnitude and direction separately ensures that even if the directional subspace is constrained, the magnitude can be adjusted independently, maintaining update stability. This advantage is primarily realized in low-rank regimes—ablation studies show DoRA is less effective than LoRA at high ranks (+1.36 vs +2.55) but superior after PDRS shrinking (+4.92), indicating a synergistic effect between DoRA and PDRS.
+
+**3. Task-Spectral Pyramidal Decoder (TS-PD): Compensating for Low-Rank Adaptation via FFT**
+
+Low-rank adaptation lacks spatial inductive bias, which is essential for dense tasks like segmentation or depth estimation. TS-PD addresses this in the frequency domain, where edges (high frequency) and semantics (low frequency) are naturally separated, and operations are more efficient. It consists of two modules. **Channel-wise Spectral Filter (CW-SP)** performs FFT on task features and learns task/resolution-specific 2D spectral filters $W_t^{res}$. It selectively amplifies or suppresses frequency bands via element-wise multiplication $Y = W \odot FFT(I)$ before transforming back to spatial features. **Cross-Task Consensus Alignment (XT-Cons)** calculates an average spectrum $F_{avg}$ from all auxiliary tasks as a "consensus." It then computes the frequency difference between the main task and this consensus using low/high-frequency masks $M_{low}, M_{high}$:
+
+$$\Delta_{low,high} = M_{low,high} * (F_{avg} - FFT(X_i^{main}))$$
+
+Re-injecting this difference allows auxiliary task consensus to guide the geometric representation of the main task in the frequency domain cost-effectively.
+
+### An Illustrative Example
+
+Consider rank shrinking for an adapter in PASCAL-Context: the initial rank is $r_{init}=64$. During training, each batch randomly masks prefixes (e.g., $b=23$ then $b=51$), forcing effective updates into lower dimensions. Importance scores are calculated via directional derivatives and accumulated via EMA. After the first epoch, using a coverage ratio $\rho=0.95$, it might be found that the first 30 ranks account for 95% of the total importance; thus, the remaining 34 ranks are deleted. By convergence, shared shallow layers might retain only 3-4 ranks, while task-specific deep layers retain over a dozen, resulting in a global average of approximately 5.
 
 ### Loss & Training
 
-- MTL loss: $L_{MTL} = \sum_{i=1}^T w \times L_i$
-    - Semantic segmentation and human part segmentation: pixel-wise cross-entropy
-    - Depth estimation and surface normal estimation: L1 loss
-    - Saliency detection: balanced cross-entropy
-- Coverage ratio: $\rho_{shared} = \rho_{task} = 0.95$
-- Backbone: Swin-Tiny (ImageNet-1k pretrained); decoder: HRNet
-- Initial rank $r_{init} = 64$, dynamically shrunk to approximately $r_{global} \approx 5$ during training
-- Single NVIDIA A40; learning rate $5 \times 10^{-4}$; batch size 32
+The total objective is a weighted sum of task losses: $L_{MTL} = \sum_{i=1}^T w \times L_i$. Semantic and human parts segmentation use pixel-wise cross-entropy, depth and normals use L1 loss, and saliency uses balanced cross-entropy. The coverage ratio is set to $\rho_{shared} = \rho_{task} = 0.95$. The backbone is an ImageNet-1k pretrained Swin-Tiny, and the decoder is HRNet. Initial ranks of 64 are dynamically shrunk. Models are trained on a single NVIDIA A40 with a learning rate of $5 \times 10^{-4}$ and batch size of 32.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**PASCAL-Context dataset** (4 tasks):
+**PASCAL-Context Dataset** (4 tasks):
 
 | Method | SemSeg (mIoU↑) | HumanParts (mIoU↑) | Saliency (mIoU↑) | Normals (rmse↓) | Δm (%) | Params (M) |
-|--------|----------------|---------------------|-------------------|-----------------|--------|------------|
+|------|----------------|---------------------|-------------------|-----------------|--------|-----------|
 | Single Task | 67.21 | 61.93 | 62.35 | 17.97 | 0 | 112.62 |
 | MTL Full FT | 67.56 | 60.24 | 65.21 | 16.64 | +2.23 | 30.06 |
 | MTLoRA (r=64) | 67.90 | 59.84 | 65.40 | 16.60 | +2.55 | 8.34 |
 | TADFormer (r=64) | 70.82 | 60.45 | 65.88 | 16.48 | +4.24 | 7.38 |
 | **FAAR** | **72.02** | **61.25** | **66.11** | **16.35** | **+5.28** | **3.38** |
 
-**NYUDv2 dataset** (3 tasks):
+**NYUDv2 Dataset** (3 tasks):
 
 | Method | SemSeg (mIoU↑) | Depth (rmse↓) | Normals (rmse↓) | Δm (%) | Params (M) |
-|--------|----------------|---------------|-----------------|--------|------------|
+|------|----------------|---------------|-----------------|--------|-----------|
 | Single Task | 42.65 | 0.60 | 22.83 | 0 | 84.00 |
 | MTL Full FT | 38.85 | 0.66 | 24.33 | -8.49 | 28.10 |
 | TADFormer (r=64) | 40.85 | 0.64 | 27.48 | -10.42 | 8.90 |
@@ -120,10 +121,10 @@ FAAR is built upon a frozen Swin Transformer backbone, with DoRA adapters placed
 
 Component ablation on PASCAL-Context:
 
-| Configuration | SemSeg | HumanParts | Saliency | Normals | Δm |
-|---------------|--------|------------|----------|---------|-----|
+| Config | SemSeg | HumanParts | Saliency | Normals | Δm |
+|------|--------|------------|----------|---------|-----|
 | MTLoRA (r=64) | 67.90 | 59.84 | 65.40 | 16.60 | +2.55 |
-| + DoRA (high rank) | 67.55 | 60.00 | 64.70 | 17.20 | +1.36 |
+| + DoRA (High Rank) | 67.55 | 60.00 | 64.70 | 17.20 | +1.36 |
 | + PDRS w/ LoRA | 68.11 | 59.93 | 65.54 | 16.50 | +2.83 |
 | + PDRS w/ DoRA (1) | 71.35 | 61.02 | 65.92 | 16.42 | +4.92 |
 | + TS-PD (2) | 70.73 | 60.95 | 65.92 | 16.40 | +4.63 |
@@ -131,52 +132,52 @@ Component ablation on PASCAL-Context:
 
 ### Key Findings
 
-1. **Rank shrinkage patterns are intuitive**: Task-specific and deeper layers tend to retain larger ranks, as they handle finer task-specific information; shared and shallower layers have their ranks substantially reduced.
-2. **DoRA significantly outperforms LoRA at low ranks**: At high ranks, DoRA performs worse (+1.36 vs. +2.55), but after PDRS shrinks the rank to low values, DoRA yields a substantial advantage (+4.92).
-3. **Initial rank has minimal impact on final performance**: Results are nearly identical across $r_{init} \in \{16, 32, 64\}$, indicating that the PDRS search space is sufficient.
-4. **Cross-task alignment via XT-Cons is effective**: An additional +0.8% Δm gain over TS-PD alone validates the value of frequency-domain cross-task consistency.
-5. **9× parameter reduction**: FAAR (3.38M) vs. MTL Full FT (30.06M), with superior performance.
+1. **Rank Shrinking Patterns**: Task-specific and deep layers retain higher ranks to handle fine-grained information, while shared and shallow layers are significantly pruned.
+2. **DoRA Superiority at Low Ranks**: While DoRA underperforms LoRA at high ranks (+1.36 vs +2.55), it provides massive gains when compressed by PDRS (+4.92).
+3. **Robustness to Initial Rank**: Results are consistent for $r_{init} \in \{16, 32, 64\}$, indicating the search space of PDRS is sufficient.
+4. **Effectiveness of XT-Cons**: Adds +0.8% Δm on top of TS-PD, validating the value of frequency-domain cross-task consistency.
+5. **9x Parameter Savings**: FAAR (3.38M) vs MTL Full FT (30.06M) with improved performance.
 
 ## Highlights & Insights
 
-- **Performance-driven rank shrinking**: Unlike AdaLoRA (singular value importance) or DyLoRA (robustness to low-rank training), PDRS directly uses the directional derivative of the MTL loss to guide rank pruning, aligning more directly with the optimization objective.
-- **Frequency domain as a cross-task bridge**: This work is the first to leverage FFT for dense visual MTL. The frequency domain naturally separates edge and semantic information, providing a meaningful shared basis for different tasks.
-- **Synergy between DoRA and extremely low rank**: At high ranks, DoRA does not necessarily outperform LoRA, but when ranks are dynamically compressed to very low values by PDRS, the magnitude-direction decoupling in DoRA becomes critical.
-- **Simultaneous improvement across all tasks**: FAAR outperforms baselines on all 4 PASCAL tasks without sacrificing any task for another.
+- **Performance-Driven Shrinking**: Unlike AdaLoRA (singular values) or DyLoRA (rank robustness), PDRS uses directional derivatives of the MTL loss, aligning pruning directly with the optimization goal.
+- **Frequency Domain as a Bridge**: This is the first work to utilize FFT in dense visual MTL. Frequency domains naturally separate edge/semantic information, providing a meaningful basis for task sharing.
+- **DoRA + Extreme Low Rank Synergy**: Magnitude-direction decoupling becomes critical when ranks are dynamically compressed to extremely low values.
+- **Universal Improvement**: FAAR improves performance across all tasks simultaneously without task-interference trade-offs.
 
 ## Limitations & Future Work
 
-1. On NYUDv2, no MTL PEFT method surpasses single-task training; FAAR does not fully resolve the difficulty of MTL on small datasets.
-2. The coverage ratio $\rho$ still requires manual specification (although the paper reports 0.95 selected on the validation set, different datasets may require different values).
-3. Only the Swin-Tiny backbone is evaluated; effectiveness on larger backbones (e.g., Swin-Base/Large) or ViT architectures remains unknown.
-4. The TS-PD frequency filter matrices are learned separately for each resolution and task, causing parameter count to grow with the number of tasks.
-5. Cross-task alignment is performed only in the frequency domain; spatial-domain interactions may provide additional complementary information.
+1. On NYUDv2, no MTL PEFT method surpassed single-task training, indicating lingering difficulties in small-dataset MTL.
+2. The coverage parameter $\rho$ still requires manual setting (though 0.95 worked across datasets).
+3. Only evaluated on Swin-Tiny; performance on larger backbones (Swin-Base/Large) or ViT is unexplored.
+4. TS-PD spectral filters are learned per resolution and task, leading to parameter growth with more tasks.
+5. Cross-task alignment is restricted to the frequency domain; spatial interactions might offer complementary benefits.
 
 ## Related Work & Insights
 
-- **MTLoRA / TADFormer**: LoRA-based baselines for MTL with fixed ranks.
-- **AdaLoRA / AutoLoRA / DyLoRA**: Automatic rank selection methods for single-task settings; FAAR extends these to the multi-task setting.
-- **FADA / NightAdapter**: Frequency adapters applied to domain generalization and nighttime segmentation, which inspired the design of TS-PD.
-- **DiTASK**: An alternative approach that adapts singular values via neural diffeomorphisms.
+- **MTLoRA / TADFormer**: Baseline LoRA methods for MTL using fixed ranks.
+- **AdaLoRA / AutoLoRA / DyLoRA**: Automatic rank selection in single-task settings, extended by FAAR to MTL.
+- **FADA / NightAdapter**: Frequency adapters in domain generalization, inspiring TS-PD.
+- **DiTASK**: Alternative using neural diffeomorphic adaptation for singular values.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Both PDRS and TS-PD are individually novel, though each represents an incremental combination of existing ideas)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Two datasets, detailed ablations, and comprehensive parameter efficiency comparisons)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, though the density of formulas and abbreviations somewhat hinders readability)
-- Value: ⭐⭐⭐⭐ (Provides a practical and efficient solution for MTL PEFT; the 9× parameter reduction is compelling)
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2025\] DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations](../../CVPR2025/signal_comm/ditask_multi-task_fine-tuning_with_diffeomorphic_transformations.md)
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](../../AAAI2026/signal_comm/task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
-- [\[AAAI 2026\] Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion](../../AAAI2026/signal_comm/text-guided_channel_perturbation_and_pretrained_knowledge_integration_for_unifie.md)
-- [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
+- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
 - [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
-- [\[CVPR 2026\] Dual-Imbalance Continual Learning for Real-World Food Recognition](dual-imbalance_continual_learning_for_real-world_food_recognition.md)
+- [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
 
 </div>
 

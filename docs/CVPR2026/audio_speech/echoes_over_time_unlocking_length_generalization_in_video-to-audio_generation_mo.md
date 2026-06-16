@@ -2,60 +2,78 @@
 title: >-
   [Paper Note] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 description: >-
-  [CVPR 2026][Audio & Speech][Video-to-Audio generation] This paper proposes MMHNet, a Multimodal Hierarchical Network based on a hierarchical architecture and non-causal Mamba-2…
+  [CVPR 2026][Audio & Speech][Mamba] Ours proposes MMHNet, a multi-modal hierarchical network based on a hierarchical architecture and non-causal Mamba-2. It achieves length generalization capabilities—training on short segments (8s) while generating high-quality aligned audio for long videos (5+ minutes)—significantly outperforming existing methods on Un
 tags:
-  - "CVPR 2026"
-  - "Audio & Speech"
-  - "Video-to-Audio generation"
-  - "long-sequence generation"
-  - "hierarchical network"
-  - "Mamba"
-  - "multimodal alignment"
+  - CVPR 2026
+  - Audio & Speech
+  - Mamba
 date: 2026-05-08
-content_hash: f30f1068c7dc3028
+content_hash: c5ff1d0eeee95f72
 ---
-
 # Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.20981](https://arxiv.org/abs/2602.20981)  
-**Code**: None (Project page: [https://echoesovertime.github.io](https://echoesovertime.github.io))  
-**Area**: Speech/Audio
-**Keywords**: Video-to-Audio generation, long-sequence generation, hierarchical network, Mamba, multimodal alignment
+**Code**: None (Project Page: [https://echoesovertime.github.io](https://echoesovertime.github.io))  
+**Area**: Speech/Audio  
+**Keywords**: Video-to-Audio, Long-sequence generation, Hierarchical networks, Mamba, Multi-modal alignment
 
 ## TL;DR
-This paper proposes MMHNet, a Multimodal Hierarchical Network based on a hierarchical architecture and non-causal Mamba-2, achieving length generalization by training on short clips (8 seconds) while generating high-quality, well-aligned audio for long videos (5+ minutes). MMHNet substantially outperforms existing methods on the UnAV100 and LongVale benchmarks.
+Ours proposes MMHNet, a multi-modal hierarchical network based on a hierarchical architecture and non-causal Mamba-2. It achieves length generalization capabilities—training on short segments (8s) while generating high-quality aligned audio for long videos (5+ minutes)—significantly outperforming existing methods on UnAV100 and LongVale benchmarks.
 
 ## Background & Motivation
-Video-to-Audio (V2A) generation aims to synthesize semantically and temporally aligned audio for silent videos, with significant applications in filmmaking and game development. Existing V2A methods (e.g., MMAudio, Diff-Foley) are primarily optimized for short audio generation (8–10 seconds) and fail to generalize effectively to long video scenarios.
+Video-to-audio (V2A) generation aims to produce semantically and temporally aligned audio for silent videos, which is crucial for film production and gaming. Existing V2A methods (e.g., MMAudio, Diff-Foley) are primarily optimized for 8-10s short audio generation and fail to generalize effectively to long video scenarios.
 
-The **root cause** lies in three compounding issues: (1) long audio-video training data is scarce, with public datasets typically capped at one minute; (2) Transformer architectures rely on positional encodings (e.g., RoPE), causing sharp performance degradation when inference sequence length exceeds training length; (3) naive segmentation-and-concatenation approaches result in fragmented audio, unnatural transitions, and degraded audio quality.
+**Key Challenge**: (1) Scarcity of long audio-video training data, with public datasets typically capped at 1 minute; (2) Transformer architectures rely on position encodings (e.g., RoPE), leading to sharp performance drops when inference sequence length exceeds training length; (3) Naive segment-wise stitching results in fragmented audio, unnatural transitions, and sound quality degradation.
 
-The paper identifies that **explicit positional encodings** are the fundamental bottleneck — effective when training length is fixed, but a limiting factor for length generalization. Experiments show that removing positional encodings from MMAudio causes the generated sounds to become homogeneous, while retaining them leads to quality degradation on long sequences (FD_PANN drops by 3–4 points). The **core idea** is therefore to replace Transformer attention modules with **Mamba-2, which requires no positional encodings**, combined with **hierarchical token routing** for efficient long-sequence processing.
+**Key Insight**: Ours identifies **explicit position encoding** as the root cause—it is effective for fixed lengths but becomes a bottleneck for length generalization. Experiments show that removing position encoding causes MMAudio to generate homogenized sound, while retaining it leads to quality degradation in long sequences (FD_PANN drops by 3-4 points). Therefore, the **Core Idea** is to replace Transformer attention modules with **Mamba-2 (which requires no position encoding)** and employ **hierarchical token routing** for efficient long-sequence processing.
 
 ## Method
 
 ### Overall Architecture
-MMHNet extends MMAudio's multimodal DiT architecture, comprising multimodal blocks (processing joint audio, visual, and text information) and single-modal blocks (processing audio only). A conditional velocity field is modeled in the compressed latent space via flow matching, and audio is generated using an ODE solver. Key innovations include: (1) replacing attention modules with non-causal Mamba-2; (2) introducing a hierarchical framework with temporal routing and multimodal routing; and (3) dynamic chunking and upsampling for token compression and reconstruction.
+MMHNet addresses the "length generalization" of V2A: the model is trained only on 8s clips but generates coherent aligned audio for videos exceeding 5 minutes. It modifies the multi-modal DiT architecture of MMAudio, retaining multi-modal blocks (audio+visual+text) and unimodal blocks (audio only). It uses flow matching to model the conditional velocity field in a latent space, solved via an ODE solver. Three key modifications enable length-unconstrained processing: replacing attention with non-causal Mamba-2, utilizing a hierarchical framework with temporal and multi-modal routing to filter redundant tokens, and using hierarchical chunking/upsampling to switch between compressed and original resolutions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    C["Silent Video → Multimodal Conditional Encoding<br/>CLIP Semantic + Synchformer Audio-Visual Sync + Text CLIP"]
+    N["Noisy Audio Latent Variable"]
+    C --> DS["Hierarchical Chunking · Downsampling<br/>Select tokens via boundary indicators to compressed space"]
+    N --> DS
+    DS --> TR["Temporal Routing<br/>Mask high-similarity redundant tokens; retain temporal boundaries"]
+    TR --> MM["Multimodal Routing<br/>Forward tokens with cross-modal similarity ≥0.5"]
+    MM --> CORE["Non-causal Mamba-2 Core Network<br/>No position encoding; omni-directional flow for multimodal fusion"]
+    CORE --> US["Hierarchical Upsampling · De-chunking<br/>Restore details to original resolution using STE"]
+    US -->|Flow matching velocity field + ODE solver| OUT["Aligned Audio for Long Video (≥5 min)"]
+```
 
 ### Key Designs
-1. **Non-Causal Mamba-2 as the Core Network**: Replaces Transformer attention modules, thereby eliminating dependence on positional encodings entirely. Causal Mamba-2 models the mask matrix via cumulative products, which introduces modulation decay in long sequences. Non-causal Mamba-2 instead defines the mask as the inverse of the transformation matrix, avoiding decay from cumulative products and enabling bidirectional information flow. This allows the model to handle arbitrary-length sequences at inference without architectural modification. Compared to causal Mamba, the non-causal variant allows a global hidden state to simultaneously fuse all modalities without constraint from scan order, making it better suited for multimodal fusion under offline video conditions.
 
-2. **Temporal Routing Layer**: Audio and video events contain substantial redundancy (e.g., similar frames and sound events within the same temporal segment). Temporal routing identifies change boundaries by computing cosine similarity between adjacent tokens. Tokens with high similarity are masked (indicating redundancy), while those with low similarity are retained (indicating temporal boundaries or event transitions). This effectively filters redundant temporal information and reduces computational complexity.
+**1. Non-causal Mamba-2 Core Network: Removing Position Encoding Bottlenecks**
 
-3. **Multimodal Routing Layer (MM Routing)**: Selects tokens highly correlated with a reference modality for forward propagation. Only tokens with similarity $\geq 0.5$ are selected for processing. For example, audio-visual synchronization features from Synchformer can be aligned with text conditioning. This improves alignment efficiency by attending only to cross-modal highly relevant tokens.
+The root of length generalization failure was localized to explicit position encoding. Ours replaces Transformer attention with Mamba-2, completely removing position encoding dependency. While causal Mamba-2 suffers from modulation decay in long sequences due to cumulative products, the non-causal version defines the mask as the inverse of a transformation matrix, avoiding cumulative products and enabling omni-directional information flow. This allows the model to handle arbitrary lengths during inference without architectural changes, where the global hidden state fuses all modalities simultaneously regardless of scanning order.
 
-4. **Hierarchical Chunking and Upsampling**: The downsampler compresses encoder outputs into fewer vectors by selecting tokens at boundary positions identified by boundary indicators. Processed tokens are restored to the original resolution by an upsampler, using the Straight-Through Estimator (STE) to allow gradients to flow through the selection operation. Earlier layers operate in the compressed space for multimodal alignment, while later layers process fine-grained details in the original space.
+**2. Temporal Routing Layer: Filtering Redundant Timesteps by Similarity**
+
+Adjacent time segments in audio-visual events are often highly redundant. Temporal routing uses cosine similarity between adjacent tokens to identify change boundaries: high-similarity tokens are masked as redundant, while low-similarity tokens are retained as temporal boundaries or event change points, reducing computational complexity without losing critical events.
+
+**3. MM Routing Layer: Forwarding Cross-modal Relevant Tokens Only**
+
+Weakly relevant tokens can interfere with alignment. MM routing forwards only tokens with a similarity $\ge 0.5$ relative to the reference modality. For instance, it aligns Synchformer sync features with text conditions, concentrating computation on cross-modal relevant positions.
+
+**4. Hierarchical Chunking and Upsampling: Alignment in Compressed Space**
+
+To ensure routing does not break sequence structure, ours uses a downsampler that selects tokens at boundary positions based on indicators. After processing, an upsampler restores the original dimensions, using a Straight-Through Estimator (STE) to allow gradients to flow through discrete selection operations. Early layers focus on multi-modal alignment in compressed space, while later layers restore details in original space.
 
 ### Loss & Training
-The model is trained with a conditional flow matching objective on the VGGSound dataset using 8-second clips, and directly generalizes to arbitrary lengths at inference. The small model (S) uses $N=5$ multimodal blocks and $N'=4$ single-modal blocks (157M parameters); the large model (L) uses $N=10$ and $N'=7$ (1.09B parameters).
+The model is trained using a conditional flow matching objective on the VGGSound dataset using 8s clips. During inference, it generalizes directly to any length. The small model (S) uses $N=5$ multi-modal blocks and $N'=4$ unimodal blocks (157M parameters); the large model (L) uses $N=10$ and $N'=7$ (1.09B parameters).
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | MMHNet-S | MMHNet-L | MMAudio-L | LoVA | HunyuanVideo-Foley |
-|---------|--------|----------|----------|-----------|------|-------------------|
+|--------|------|----------|----------|-----------|------|-------------------|
 | UnAV100 | FD_PANNs ↓ | **5.87** | 5.29 | 9.01 | 7.50 | 10.28 |
 | UnAV100 | IB-Score ↑ | **36.82** | 36.27 | 30.71 | 24.62 | 32.90 |
 | UnAV100 | DeSync ↓ | 0.439 | **0.410** | 0.593 | 1.232 | 0.757 |
@@ -65,54 +83,53 @@ The model is trained with a conditional flow matching objective on the VGGSound 
 
 ### Ablation Study
 
-| Configuration | FD_PANNs ↓ | IB-Score ↑ | DeSync ↓ | Notes |
-|---------------|-----------|-----------|---------|-------|
-| Transformer (no positional encoding) | 9.00 | 28.41 | 0.638 | Baseline; loses temporal structure |
-| Causal Mamba-2 | 9.18 | 33.32 | 0.497 | Constrained by scan direction |
-| **Non-Causal Mamba-2** | **5.87** | **36.82** | **0.439** | Bidirectional information flow; best overall |
+| Configuration | FD_PANNs ↓ | IB-Score ↑ | DeSync ↓ | Description |
+|------|-----------|-----------|---------|------|
+| Transformer (No PE) | 9.00 | 28.41 | 0.638 | Baseline; lacks temporal structure |
+| Causal Mamba-2 | 9.18 | 33.32 | 0.497 | Directional constraints |
+| **Non-causal Mamba-2** | **5.87** | **36.82** | **0.439** | Omni-directional flow; Best |
 | Non-hierarchical (UnAV100) | 6.31 | 35.00 | 0.621 | No token compression |
-| **Hierarchical** (UnAV100) | **5.87** | **36.82** | **0.439** | Routing compression yields consistent gains |
+| **Hierarchical** (UnAV100) | **5.87** | **36.82** | **0.439** | Routing compression helps significantly |
 
 ### Key Findings
-- Non-causal Mamba-2 significantly outperforms both the Transformer and causal Mamba-2 across all metrics, particularly in long-video multimodal alignment (IB-Score improves by 8+ points).
-- Hierarchical token routing yields consistent improvements, with more pronounced gains on LongVale (IB-Score from 26.34 to 30.62).
-- The token selection threshold of 0.5 is optimal; an overly high threshold (0.7) causes catastrophic failure.
-- The autoregressive method (V-AURA) performs worst on length generalization, validating that error accumulation from step-by-step prediction is a fundamental limitation.
-- On VGGSound (same-length train and test), MMHNet achieves performance on par with MMAudio, demonstrating that length generalization does not sacrifice short-clip quality.
+- Non-causal Mamba-2 significantly outperforms Transformer and Causal Mamba-2 across all metrics, particularly in long-video multi-modal alignment (IB-Score gain > 8).
+- Hierarchical token routing brings consistent improvements, especially on LongVale (IB-Score increased from 26.34 to 30.62).
+- A token selection threshold of 0.5 is optimal; too high (0.7) leads to catastrophic failure.
+- Autoregressive methods (V-AURA) perform worst in length generalization, validating the issue of error accumulation in step-by-step prediction.
+- MMHNet maintains performance parity with MMAudio on VGGSound (same train/test length), proving length generalization does not sacrifice short-clip quality.
 
 ## Highlights & Insights
-- **Train-short, test-long paradigm**: Training exclusively on 8-second clips enables generation of high-quality audio exceeding 5 minutes.
-- **Non-causal Mamba-2 as a replacement for positional encodings**: The approach is transferable to other sequence generation tasks requiring length generalization.
-- **Hierarchical routing for token compression**: Temporal and multimodal routing selectively retains informative tokens, simultaneously reducing computational cost and improving alignment quality.
-- **Evaluation methodology innovation**: Multi-segment chunked evaluation is adopted for long audio, circumventing the inability of pretrained classifiers to process full-length long audio.
+- **Train-short, test-long paradigm**: Generates high-quality audio exceeding 5 minutes using only 8s training clips.
+- **Non-causal Mamba-2 as PE alternative**: This approach can be migrated to other sequence generation tasks requiring length generalization.
+- **Token compression via hierarchical routing**: Filters important tokens via temporal and multi-modal routing, reducing costs while improving alignment.
+- **Evaluation Innovation**: Employs multi-segment chunked evaluation for long audio to avoid pre-trained classifier limitations.
 
 ## Limitations & Future Work
-- Generation quality depends on the quality of pretrained conditioning features (CLIP, Synchformer).
-- Validation is limited to audio-video scenarios; applicability to other long-sequence multimodal generation tasks remains to be explored.
-- The fixed routing threshold (0.5) could be further optimized with an adaptive thresholding mechanism.
+- Generation quality depends on the quality of pre-trained conditional features (CLIP, Synchformer).
+- Only validated in audio-video scenarios; applicability to other long-sequence multimodal tasks remains for exploration.
+- Fixed routing thresholds (0.5) could be further optimized with adaptive thresholds.
 
 ## Related Work & Insights
-- **vs. MMAudio**: MMHNet directly extends MMAudio by replacing the Transformer with Mamba-2 to achieve length generalization.
-- **vs. LoVA**: LoVA represents the prior SOTA in the long V2A domain, but exhibits notable quality degradation beyond one minute.
-- **vs. V-AURA**: Although autoregressive methods can theoretically handle arbitrary lengths, error accumulation results in the worst empirical performance.
+- **vs MMAudio**: Directly extends MMAudio by replacing Transformer with Mamba-2 for length generalization.
+- **vs LoVA**: LoVA is a Prev. SOTA in LV2A, but quality degrades significantly beyond 1 minute.
+- **vs V-AURA**: Autoregressive models theoretically handle arbitrary lengths, but error accumulation results in the poorest practical performance.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First systematic study of length generalization in V2A; the combination of non-causal Mamba and hierarchical routing is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Two long-video benchmarks plus VGGSound; multi-dimensional ablations and cross-length analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Pilot experiments provide clear motivation; architectural descriptions are thorough.
-- **Value**: ⭐⭐⭐⭐ Addresses a practical bottleneck in V2A length generalization with direct applications to film and game audio synthesis.
+- Novelty: ⭐⭐⭐⭐ First systematic study of V2A length generalization; novel non-causal Mamba + hierarchical routing.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two long-video benchmarks plus VGGSound with extensive ablation and cross-duration analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation from pilot experiments; detailed architecture descriptions.
+- Value: ⭐⭐⭐⭐ Solves practical V2A length generalization bottlenecks; direct application value in film/game sound effects.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
 - [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
 - [\[CVPR 2026\] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods](unlocking_strong_supervision_a_data-centric_study_of_general-purpose_audio_pre-t.md)
-- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](../../NeurIPS2025/audio_speech/node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
+- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
 
 </div>
 

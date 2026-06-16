@@ -1,74 +1,90 @@
 ---
 title: >-
-  [Paper Note] Geo-Expert: Fine-tuning 8B Models into Expert-Level Geological Reasoning LLMs using LoRA
+  [Paper Note] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM
 description: >-
-  [ICML 2026][Model Compression][Geological LLM] Geo-Expert fine-tunes Qwen3-8B/32B and Gemma-3-27B using LoRA on 11,518 CoT-enhanced instruction pairs distilled from five classic geology textbooks. On Geo-Eval (387 hard b…
+  [ICML 2026][Model Compression][LoRA] Geo-Expert utilizes 11,518 CoT-enhanced instruction data points distilled from five classic geology textbooks to fine-tune Qwen3-8B/32B and Gemma-3-27B models via LoRA. On Geo-Eval (comprising 387 hard boundary problems), Qwen3-8B-geo achieves an average score of 6.27, surpassing Llama-3.1-70B-Instruct (4.12) and GPT-4
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Geological LLM"
-  - "LoRA"
-  - "Instruction Synthesis"
-  - "CoT"
-  - "AI for Science"
+  - ICML 2026
+  - Model Compression
+  - LoRA
+  - CoT
+  - AI for Science
 date: 2026-05-08
-content_hash: 37fe5bc9ff71a717
+content_hash: 0fb365fafad9a3d1
 ---
-
-# Geo-Expert: Fine-tuning 8B Models into Expert-Level Geological Reasoning LLMs using LoRA
+# Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.24844](https://arxiv.org/abs/2605.24844)  
-**Code**: Not provided  
+**Code**: Not provided in the paper  
 **Area**: Domain Adaptation / Scientific LLM / Geological Reasoning  
 **Keywords**: Geological LLM, LoRA, Instruction Synthesis, CoT, AI for Science
 
 ## TL;DR
-Geo-Expert fine-tunes Qwen3-8B/32B and Gemma-3-27B using LoRA on 11,518 CoT-enhanced instruction pairs distilled from five classic geology textbooks. On Geo-Eval (387 hard boundary problems), Qwen3-8B-geo averaged 6.27, surpassing Llama-3.1-70B-Instruct (4.12) and GPT-4o (5.93), while Qwen3-32B-geo reached 6.82, approaching GPT-5.4 (7.15). This demonstrates that high-quality domain alignment is more critical than scaling.
+Geo-Expert utilizes 11,518 CoT-enhanced instruction data points distilled from five classic geology textbooks to fine-tune Qwen3-8B/32B and Gemma-3-27B models via LoRA. On Geo-Eval (comprising 387 hard boundary problems), Qwen3-8B-geo achieves an average score of 6.27, surpassing Llama-3.1-70B-Instruct (4.12) and GPT-4o (5.93), while Qwen3-32B-geo reaches 6.82, approaching GPT-5.4 (7.15). This demonstrates that high-quality domain alignment is more critical than scaling.
 
 ## Background & Motivation
 
-**Background**: Current Earth Science LLMs (K2, GeoGalactica, GeoGPT, UnivEARTH) excel at surface-level tasks but lack deep reasoning for solid Earth topics such as subsurface stratigraphic interpretation, tectonic evolution, and petrogenesis. Geological reasoning requires complex spatio-temporal relationships and vast domain-specific data.
+**Background**: Current Earth Science large models (K2, GeoGalactica, GeoGPT, UnivEARTH) excel at surface tasks but lack deep reasoning capabilities for solid Earth (e.g., subsurface stratigraphic interpretation, tectonic evolution, petrogenesis). Geological reasoning necessitates understanding complex spatio-temporal relationships and vast amounts of specialized data.
 
-**Limitations of Prior Work**: General LLMs often suffer from severe hallucinations in geology—for instance, misidentifying a "wedge" in geological structures as a mechanical engineering wedge and suggesting the use of carbon fiber for concrete reinforcement. Existing geoscience foundation models are primarily pre-trained on surface-level literature with almost no specialized adaptation for subsurface stratigraphic reasoning.
+**Limitations of Prior Work**: General LLMs frequently exhibit severe hallucinations in geology—for instance, misidentifying a "wedge" in geological structures as a mechanical engineering wedge and suggesting carbon fiber reinforcement for concrete. Existing geoscience foundation models are primarily pre-trained on surface literature, with minimal specialized adaptation for subsurface stratigraphic reasoning.
 
-**Key Challenge**: General LLMs lack domain alignment in geology. Scaling alone cannot resolve this, as geological terminology is highly polysemous, reasoning chains are long, and cross-disciplinary interference is significant. Deep domain anchoring is required rather than simply adding more parameters.
+**Key Challenge**: General LLMs lack domain alignment in geology. Scaling alone cannot resolve this issue, as geological terminology is highly polysemous, reasoning chains are long, and cross-disciplinary interference is significant. Deep domain anchoring, rather than simply increasing parameters, is required.
 
-**Goal**: Establish a reproducible pipeline to transform general LLMs into "expert-level geological reasoners," controlling costs via PEFT, and proving that small aligned models can outperform large generalists.
+**Goal**: Establish a reproducible pipeline to transform general LLMs into "expert-level geological reasoners" using PEFT to manage costs, proving that small, aligned models can outperform large generalist models.
 
-**Key Insight**: Ground truth is extracted from authoritative textbooks (Catuneanu, Fossen, Gao, Rowland). LLMs are used to systematically generate CoT-enhanced instruction data. LoRA fine-tuning is applied to three backbones to observe scaling behavior. An adversarial mining + expert verification approach is used to build the Geo-Eval benchmark for testing hard boundary problems.
+**Key Insight**: Extract ground truth from five authoritative textbooks (Catuneanu, Fossen, Gao, Rowland); systematically generate CoT-enhanced instruction data using LLMs; perform LoRA fine-tuning across three backbones to observe scaling effects; and construct the Geo-Eval benchmark for hard boundary problems via adversarial mining and expert verification.
 
-**Core Idea**: A tripartite approach consisting of high-quality domain-aligned data, PEFT, and a difficult benchmark. CoT-enhanced data enables the model to learn reasoning chains rather than just keyword matching. LoRA allows fine-tuning up to 32B on an RTX 5090. Geo-Eval specifically targets expert-level reasoning through boundary mining.
+**Core Idea**: A triad consisting of high-quality domain-aligned data, PEFT, and a challenging benchmark. CoT-enhanced data enables the model to learn reasoning chains rather than just term matching; LoRA allows for fine-tuning up to 32B models on an RTX 5090; and Geo-Eval targets true expert reasoning through boundary mining.
 
 ## Method
 
 ### Overall Architecture
 
-(1) Textbook digitization and cleaning—MinerU converts PDFs to Markdown, and Python modules perform paragraph-based chunking and deduplication. (2) Domain-Structured Instruction Synthesis—utilizing chapter-aware chunking, domain tree question generation, and CoT answer generation to obtain 11,518 instruction pairs. (3) LoRA fine-tuning on three backbones. (4) Geo-Eval evaluation—incorporating boundary mining and GPT-4o scoring.
+Geo-Expert aims to convert a standard general LLM into an expert capable of deep geological reasoning (subsurface sequence interpretation, tectonic evolution, petrogenesis). It employs an end-to-end data-driven pipeline: first, five classic geological textbooks are digitized and cleaned into clean text (using MinerU for PDF-to-Markdown and Python for paragraph chunking and deduplication). Subsequently, 11,518 CoT-enhanced instruction data points are systematically synthesized from these texts. LoRA is then used to fine-tune three backbones (8B, 27B, and 32B). Finally, a specialized Geo-Eval benchmark, designed to identify "hard problems," is used for validation. This triad—high-quality data, PEFT, and a difficult benchmark—supports the core argument that "small models + aligned data outperform large models + general data."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Five Classic Geological Textbooks<br/>MinerU PDF→Markdown + Chunking & Deduplication"] --> B
+
+    subgraph SYN["Domain-Structured CoT Instruction Synthesis"]
+        direction TB
+        B["Chapter-Aware Recursive Chunking<br/>Follows Markdown headers to preserve context"] --> C["Domain Tree Question Generation<br/>Knowledge tree construction→Tagging→Generation by character density"]
+        C --> D["CoT Answer Construction<br/>DeepSeek-R1 generates answers with reasoning chains"]
+    end
+
+    SYN -->|"11,518 CoT Instructions"| E["Three-Scale LoRA Fine-Tuning<br/>Qwen3-8B / Gemma-3-27B / Qwen3-32B"]
+
+    subgraph EVAL["Geo-Eval Boundary Benchmark"]
+        direction TB
+        F["DeepSeek-R1 extracts 2,591 hard problems"] --> G["Geo Model vs R1 Dual Answering<br/>GLM-4.5 scores; select diff ≤ 4"]
+        G --> H["387 Hard Boundary Problems<br/>Checked by Geology Professors"]
+    end
+
+    E --> EVAL
+```
 
 ### Key Designs
 
-1.  **Domain-Structured CoT Instruction Synthesis Pipeline**:
-    *   **Function**: Converts static geological textbooks into high-quality instruction-response pairs for fine-tuning.
-    *   **Mechanism**: (a) Chapter-Aware Recursive Chunking segments blocks by Markdown headers for semantic integrity. (b) Domain-Structured Question Generation uses an LLM to build a hierarchical domain tree to bind tags to text, then dynamically generates questions based on tags and character density. (c) CoT Answer Construction employs reasoning-oriented models (DeepSeek-R1) to generate answers including intermediate reasoning steps.
-    *   **Design Motivation**: General fine-tuning teaches models what to say but not how to reason; CoT-enhanced data forces the learning of reasoning chains. Chapter-aware chunking ensures context completeness, while domain trees prevent redundancy.
+**1. Domain-Structured CoT Instruction Synthesis: Teaching "How to Reason" Instead of Just "What to Say"**
 
-2.  **Three-Scale LoRA Fine-Tuning + Scaling Analysis**:
-    *   **Function**: Validates domain adaptation scaling behavior across different model sizes.
-    *   **Mechanism**: Qwen3-8B uses LoRA with rank=32, $\alpha=32$, lr=2e-5, FP16, on a single RTX 5090. Gemma-3-27B and Qwen3-32B use rank=64, $\alpha=128$, BF16 with gradient checkpointing and accumulation (grad accum=4) on 4×RTX 5090s. LoRA is applied to all linear layers.
-    *   **Design Motivation**: Scaling effects cannot be observed at a single size. Using three backbones across 8B/27B/32B enables a comparison between "small model + high-quality data" vs. "large model + general data."
+Standard fine-tuning on raw text often results in models that merely repeat terminology but fail on geological problems requiring multi-step reasoning. The key to this pipeline is transforming textbook text into instruction-response pairs with reasoning chains. It involves three steps: first, Chapter-Aware Recursive Chunking follows the Markdown header structure to ensure each semantic block maintains context integrity. Second, Domain-Structured Question Generation requires an LLM to build a hierarchical domain tree for the entire corpus, binding each text segment to domain tags and dynamically generating questions based on tags and character density to ensure coverage and avoid redundancy. Finally, CoT Answer Construction uses the reasoning-oriented DeepSeek-R1 to generate answers, mandating the inclusion of intermediate reasoning steps. The resulting 11,518 data points are complete reasoning chains rather than simple fill-in-the-blank pairs. In experiments, the Engineering dimension saw the largest gain (+46%), precisely because the model learned reasoning rather than just terms.
 
-3.  **Geo-Eval: Hard Boundary Benchmark via Adversarial Mining + Expert Verification**:
-    *   **Function**: Builds a benchmark that truly tests expert-level reasoning.
-    *   **Mechanism**: (a) DeepSeek-R1 extracts 2,591 complex questions/answers from textbooks. (b) Qwen3-8B-Geo and DeepSeek-R1 answer independently. (c) GLM-4.5 acts as LLM-as-judge (10-point scale) to select 387 "hard boundary" problems where score differences are $\le 4$. (d) Manual verification by geology professors across three domains: Concept, Process, and Engineering.
-    *   **Design Motivation**: Traditional static MCQs are saturated by modern LLMs. Boundary mining automatically identifies problems just beyond the reach of general models, representing a methodological advancement for discriminative benchmarks.
+**2. Three-Scale LoRA Fine-Tuning: Establishing a Valid Scaling Comparison**
+
+To determine how domain adaptation varies with model size, this study performs LoRA fine-tuning on three separate backbones: 8B, 27B, and 32B. For Qwen3-8B, parameters were set to rank=32, $\alpha=32$, lr=2e-5, and FP16, allowing for training on a single RTX 5090. For Gemma-3-27B and Qwen3-32B, LoRA was scaled to rank=64, $\alpha=128$, using BF16, gradient checkpointing, and grad accum=4 on 4×RTX 5090, with adapters attached to all linear layers. Testing across three scales allows for a comparable "small model + good data" vs. "large model + general data" framework, leading to the conclusion that 8B is a "sweet spot" with diminishing marginal returns for larger parameters. This recipe remains accessible for research groups with prosumer-grade GPUs.
+
+**3. Geo-Eval: Using Adversarial Mining + Expert Verification for a True Reasoning Benchmark**
+
+Traditional static MCQs are often saturated by modern LLMs and fail to differentiate reasoning ability. Geo-Eval actively mines "boundary problems" where general models struggle: DeepSeek-R1 extracts 2,591 complex questions and answers from textbooks; Qwen3-8B-Geo and DeepSeek-R1 answer them independently; GLM-4.5 acts as the LLM-as-judge to score both on a 10-point scale; the 387 "hard boundary" problems with a score difference $\leq 4$ are selected and verified by geology professors. Questions are categorized into Concept, Process, and Engineering dimensions. This boundary mining methodology provides a sharper capacidad threshold than manual question design, advancing the evaluation methodology for vertical scientific LLMs.
 
 ## Key Experimental Results
 
 ### Main Results: Geo-Eval Scores Across Three Dimensions
 
-| Model | Size | Concept | Process | Engineering | Average | $\Delta$ vs Base |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Size | Concept | Process | Engineering | Average | Gain vs Base |
+|-------|-----|---------|---------|-------------|---------|-----------|
 | GPT-5.4 | - | 7.35 | 7.10 | 7.00 | 7.15 | - |
 | DeepSeek-V3.2 | - | 6.80 | 6.75 | 6.67 | 6.74 | - |
 | GPT-4o | - | 6.10 | 5.90 | 5.80 | 5.93 | - |
@@ -80,49 +96,49 @@ Geo-Expert fine-tunes Qwen3-8B/32B and Gemma-3-27B using LoRA on 11,518 CoT-enha
 | **Gemma-3-27B-geo** | 27B | 6.70 | 6.60 | 6.47 | 6.59 | +1.43 |
 | **Qwen3-8B-geo** | **8B** | 6.10 | 6.27 | 6.44 | **6.27** | **+1.64** |
 
-Qwen3-32B-geo ranked second overall (6.82), trailing only GPT-5.4 (7.15). Qwen3-8B-geo (6.27) outperformed GPT-4o and all open-source models under 70B, which is statistically significant ($p = 3.7 \times 10^{-106}$).
+Qwen3-32B-geo ranks second overall with 6.82, following only GPT-5.4 (7.15). Qwen3-8B-geo (6.27) outperforms GPT-4o and all open-source models under 70B, which is statistically significant ($p = 3.7 \times 10^{-106}$).
 
 ### Key Findings
 
-- **8B + Domain Alignment Outperforms 70B Generalist**: Qwen3-8B-geo (6.27) vs. Llama-3.1-70B (4.12), a +51% improvement. This proves scaling laws can falter in vertical domains.
-- **Diminishing Returns from 8B to 32B**: The improvement from 8B-geo (6.27) to 32B-geo (6.82) is only +0.55, suggesting marginal utility for extra parameters in geological reasoning.
-- **Largest Gains in Engineering**: Qwen3-8B rose from 4.41 to 6.44 (+46%), demonstrating that the model learns reasoning beyond mere terminology.
-- **Architecture Stability**: Consistent gains of 1.5+ points across three backbones indicate the robustness of the method.
-- **Qualitative Insights**: GPT-4o incorrectly answered "wedge thickening" as concrete reinforcement (0/10), while Qwen3-8B-geo accurately explained geological mechanisms like thrust fault sliding (9/10).
+- **8B + domain alignment outperforms a 70B generalist**: Qwen3-8B-geo (6.27) vs. Llama-3.1-70B (4.12) represents a +51% improvement, suggesting that the scaling law is less effective in vertical domains.
+- **Minimal gains from 8B to 32B**: Increasing from 8B-geo (6.27) to 32B-geo (6.82) yields only a +0.55 gain, indicating marginal utility for extra parameters in geological reasoning.
+- **Largest improvement in the Engineering dimension**: Qwen3-8B rose from 4.41 to 6.44 (+46%), demonstrating that the model learned reasoning rather than just terminology.
+- **Consistency across architectures**: All three backbones showed gains of 1.5+ points, proving the robustness of the method.
+- **Dramatic qualitative differences**: While GPT-4o incorrectly suggested concrete reinforcement for "wedge thickening" (0/10), Qwen3-8B-geo accurately explained geological mechanisms such as thrust fault sliding (9/10).
 
 ## Highlights & Insights
 
-- **CoT Augmentation as a Key Trick**: The +46% gain in Engineering suggests CoT data is far more valuable than raw text for domain adaptation.
-- **Methodological Value of 3-Backbone Scaling Analysis**: This work identifies 8B as a "sweet spot," providing direct guidance for budget-constrained research groups.
-- **Hard Boundary Benchmarking Paradigm**: Automatically mining problems that generalists fail to solve is an effective way to test expert reasoning.
-- **Consumer GPU Recipe**: Using 4×RTX 5090s to fine-tune 32B models makes this research reproducible for academic labs.
-- **Classic Textbooks as Anchors**: Selecting authoritative sources ensures high data quality and domain rigor.
-- **Triple-Layer Bias Mitigation**: Using expert re-writes, GPT-4o judging, and multi-model verification.
+- **CoT enhancement is a vital trick for domain adaptation**: Based on the +46% Engineering gain, CoT data's value significantly exceeds that of raw text.
+- **Methodological value of 3-backbone scaling analysis**: This work identifies 8B as the sweet spot, providing direct guidance for resource-constrained research groups.
+- **Hard Boundary Benchmark as a paradigm for discriminative evaluation**: Automatically mining problems that generalists fail targets expert reasoning directly, a method applicable to all vertical scientific LLM evaluations.
+- **Consumer GPU recipe**: Support for fine-tuning a 32B model on 4×RTX 5090 makes replication feasible for academic groups.
+- **Textbooks as anchors**: Using five classic, authoritative textbooks ensures data quality and domain rigor.
+- **Three-layer selection bias mitigation**: Expert re-writing, GPT-4o judging, and multi-model verification.
 
 ## Limitations & Future Work
 
-- **Textbook Selection Bias**: The 5 textbooks lean towards structural geology and stratigraphy; coverage of mineralogy, geochemistry, and geophysics is insufficient.
-- **Scale of Geo-Eval**: 387 questions is small compared to general benchmarks, potentially weakening statistical power.
-- **Text-Only**: The current framework ignores the multimodal nature of geology (cross-sections, well logs, field photos).
-- **GPT-4o Judge Bias**: Reference-guided scoring may still inherit verbosity or style biases from the LLM judge.
-- **Lack of RAG Baseline**: The study does not compare whether RAG + General LLM could achieve similar results; PEFT's advantages might be slightly exaggerated.
-- **Engineering Complexity**: Fine-tuning 32B models on 5090s requires specific optimizations (BF16, gradient checkpointing) and remains prosumer-grade rather than entry-level consumer.
+- **Textbook selection bias**: The textbooks lean toward structural geology, stratigraphy, and tectonics; coverage of mineralogy, geochemistry, and geophysics is insufficient.
+- **Small scale of Geo-Eval (387 problems)**: Compared to general benchmarks with tens of thousands of problems, the statistical power is lower.
+- **Text-only limitation**: The framework does not currently handle the inherent multimodality of geological data (e.g., cross-sections, well logs, field photos).
+- **GPT-4o judge bias**: Reference-guided scoring may still reflect the verbosity or style bias of the LLM judge.
+- **Lack of retrieval-augmented baseline**: It remains untested whether RAG + a general LLM could achieve similar results, which might lead to an overestimation of PEFT's benefits.
+- **Engineering constraints for 32B**: While titled as consumer-grade, the requirement of BF16 + gradient checkpointing + grad accum=4 on 4×RTX 5090 remains more "prosumer" than "consumer."
 
 ## Related Work & Insights
 
-- **vs K2 / GeoGalactica**: Those models focus on continued pre-training for factual recall; Ours uses PEFT + CoT instruction tuning for multi-step reasoning.
-- **vs GeoGPT / UnivEARTH**: These function as geospatial agents for 2D surface tasks; Ours focuses on subsurface deep reasoning.
-- **vs MedLLM / FinGPT / LawGPT**: While similar in domain adaptation, most use raw text; Ours differs via CoT-enhanced data synthesis.
-- **vs LIMA / Alpaca**: Ours represents vertical instruction tuning combined with boundary benchmarking rather than general instruction tuning.
-- **vs ProcessBench / PRM**: Similar in step-level evaluation; Ours innovates via adversarial mining and boundary identification.
-- **Insights**: (1) Vertical scientific LLMs should prioritize CoT-enhanced data and boundary benchmarks. (2) "Small + aligned > large + general" should be revisited across all vertical domains. (3) Textbooks are a cost-effective alternative to papers/RAG for ground-truth data.
+- **vs. K2 / GeoGalactica**: These models utilize continued pre-training on broad geoscience corpora, prioritizing factual recall, whereas Ours uses PEFT + CoT instruction tuning focusing on multi-step reasoning.
+- **vs. GeoGPT / UnivEARTH**: These function as geospatial agents for 2D surface tasks, whereas Ours targets subsurface deep reasoning.
+- **vs. MedLLM / FinGPT / LawGPT**: These are domain LLMs, but many use raw text fine-tuning; the use of CoT-enhanced data is a primary methodological difference in Ours.
+- **vs. LIMA / Alpaca**: These focus on general instruction tuning, while Ours applies vertical instruction tuning with a boundary benchmark.
+- **vs. ProcessBench / PRM**: While reasoning evaluation via step-level monitoring is similar, Ours introduces innovation through adversarial mining and boundary problems.
+- **Insights**: (1) Vertical scientific LLMs should be evaluated using CoT-enhanced data and boundary benchmarks; (2) The "small + aligned > large + general" thesis should be revisited across all vertical domains; (3) Textbooks are a cost-effective ground truth alternative to paper repositories and RAG.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Combination of domain-structured CoT synthesis, boundary mining, and multi-backbone scaling provides solid methodological innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Complete evidence via 3 backbones, 3 evaluation dimensions, 11 baselines, paired t-tests, and qualitative cases.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear flowcharts, detailed tables, and persuasive qualitative analysis with a reviewer-conscious approach to bias.
-- **Value**: ⭐⭐⭐⭐⭐ Empirical proof that "8B + aligned > 70B" provides direct guidance for vertical AI deployment and democratizing scientific LLMs.
+- Novelty: ⭐⭐⭐⭐ The combination of domain-structured CoT instruction synthesis, boundary mining benchmarks, and 3-backbone scaling analysis represents solid methodological innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 backbones × 3 Geo-Eval dimensions + 11 baselines + paired t-test + qualitative case studies provide complete evidence.
+- Writing Quality: ⭐⭐⭐⭐ Clear flowcharts, detailed data tables, and persuasive qualitative cases. The selection bias mitigation reflects a reviewer-conscious approach.
+- Value: ⭐⭐⭐⭐⭐ The demonstration that "8B + aligned > 70B" provides direct guidance for vertical AI deployment. The benchmarking methodology is generalizable across STEM domains, offering practical value for democratizing scientific LLMs.
 
 <!-- RELATED:START -->
 
@@ -130,11 +146,11 @@ Qwen3-32B-geo ranked second overall (6.82), trailing only GPT-5.4 (7.15). Qwen3-
 
 ## Related Papers
 
+- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
 - [\[ICML 2026\] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization](prism_synergizing_vision_foundation_models_via_self-organized_expert_specializat.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
-- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
-- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
 
 </div>
 

@@ -2,84 +2,81 @@
 title: >-
   [Paper Note] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 description: >-
-  [CVPR 2026][Human Understanding][facial albedo capture] This paper proposes WildCap, a hybrid inverse rendering framework that reconstructs high-quality 4K facial diffuse albedo maps from casual in-the-wild smartphone vi…
+  [CVPR 2026][Human Understanding][facial albedo capture] WildCap is proposed as a hybrid inverse rendering framework (data-driven SwitchLight delighting + model-based texel grid lighting optimization + diffusion prior sampling). It reconstructs high-quality 4K facial diffuse albedo maps from smartphone in-the-wild videos, significantly narrowing the quality gap between uncon
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "facial albedo capture"
-  - "inverse rendering"
-  - "diffusion prior"
-  - "texel grid lighting"
-  - "in-the-wild"
+  - CVPR 2026
+  - Human Understanding
+  - facial albedo capture
+  - inverse rendering
+  - diffusion prior
+  - texel grid lighting
+  - in-the-wild
 date: 2026-05-08
-content_hash: 67b31bcc5f6b9a9b
+content_hash: f83acdcc669fa60f
 ---
-
 # WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2512.11237](https://arxiv.org/abs/2512.11237)  
-**Code**: [Released](https://arxiv.org/abs/2512.11237) (as declared in the paper)  
-**Area**: Human Understanding
+**Code**: [Released](https://arxiv.org/abs/2512.11237) (Code release declared in paper)  
+**Area**: Human Understanding  
 **Keywords**: facial albedo capture, inverse rendering, diffusion prior, texel grid lighting, in-the-wild
 
 ## TL;DR
 
-This paper proposes WildCap, a hybrid inverse rendering framework that reconstructs high-quality 4K facial diffuse albedo maps from casual in-the-wild smartphone videos. The approach combines data-driven relighting (SwitchLight), model-based texel grid lighting optimization, and diffusion prior sampling, substantially closing the quality gap between in-the-wild capture and controlled-illumination methods.
+WildCap is proposed as a hybrid inverse rendering framework (data-driven SwitchLight delighting + model-based texel grid lighting optimization + diffusion prior sampling). It reconstructs high-quality 4K facial diffuse albedo maps from smartphone in-the-wild videos, significantly narrowing the quality gap between uncontrolled capture and professional light stage methods.
 
 ## Background & Motivation
 
-1. **Facial albedo capture is central to digital human creation**: Cloning a real person into the digital world requires high-quality facial reflectance maps, a problem studied for over two decades.
-2. **High-quality methods rely on controlled illumination**: From Light Stage equipment to smartphone flash lighting, existing approaches assume known scene illumination, increasing capture cost and limiting accessibility.
-3. **Model-based inverse rendering is unstable under complex illumination**: Jointly optimizing illumination and reflectance to match observed images becomes highly ill-posed and unstable in the presence of complex light transport effects such as shadows.
-4. **Data-driven methods are robust but suffer from baking artifacts**: Networks such as SwitchLight can directly predict reflectance components but inevitably bake illumination effects (e.g., shadows) into their predictions.
-5. **The two paradigms are complementary**: Model-based methods yield physically plausible decompositions but lack robustness; data-driven methods are robust but imperfect. Combining them is a natural direction.
-6. **In-the-wild capture has significant practical value**: Enabling high-quality facial capture from casually recorded smartphone videos would substantially lower the barrier to digital human production.
+1.  **Facial albedo capture is core to digital humans**: Cloning real people into the digital world requires high-quality facial reflectance maps, a problem researched for over two decades.
+2.  **Existing high-quality methods rely on controlled lighting**: From professional Light Stage setups to smartphone flashes, these methods assume specific illumination, increasing capture cost and limiting usability.
+3.  **Model-based inverse rendering is unstable under complex lighting**: Optimizing lighting and reflectance to match observed images is highly ill-posed and unstable when complex light transport effects like shadows are present.
+4.  **Data-driven methods are robust but suffer from baking artifacts**: Networks like SwitchLight can predict reflectance components directly but inevitably "bake" some lighting effects (e.g., shadows) into the output.
+5.  **Complementary nature of the two approaches**: Model-based methods produce physically plausible decompositions but lack robustness; data-driven methods are robust but imperfect. Combining them is a natural progression.
+6.  **Immense practical value for in-the-wild capture**: Enabling high-quality facial capture from casual smartphone videos would drastically lower the barrier to digital human creation.
 
 ## Method
 
-### Overall Architecture: Hybrid Inverse Rendering
+### Overall Architecture
 
-The pipeline consists of three stages:
-1. **Data preprocessing**: Uniformly sample 300 frames (960×720) from a smartphone capture session, calibrate camera parameters via COLMAP, reconstruct a fine mesh with 2DGS, register the ICT template using Wrap3D, and select $V=16$ frames for reflectance estimation.
-2. **Data-driven relighting**: Apply SwitchLight to predict per-frame diffuse albedo images $\{I^i\}$, converting complex in-the-wild illumination into a more constrained condition.
-3. **Model-based optimization**: Interpret SwitchLight's baking artifacts as illumination effects in UV space, jointly optimizing a texel grid lighting model and sampling a diffusion prior to obtain a clean albedo map $A$.
+WildCap aims to reconstruct high-quality 4K facial diffuse albedo, previously requiring Light Stage setups, using only casual smartphone "orbit" videos. The core idea combines two distinct approaches: data-driven methods (e.g., SwitchLight), which are robust but bake shadows into predictions, and model-based inverse rendering, which is physically grounded but ill-posed. The pipeline consists of three stages: First, data preprocessing involves sampling 300 frames (960×720) from the video, using COLMAP for camera calibration, 2DGS for mesh reconstruction, Wrap3D for ICT template registration, and selecting $V=16$ frames for estimation. Second, SwitchLight predicts diffuse albedo $\{I^i\}$ per frame, compressing messy in-the-wild lighting into a constrained condition. Finally, remaining baking artifacts from SwitchLight are treated as "lighting effects" in UV space. A texel grid lighting model and diffusion prior sampling are jointly optimized to recover a clean albedo map $A$. Finally, RCAN upscales the 1K map to 4K. While DoRA takes 508 minutes for 4K sampling, WildCap requires only 8 minutes on a 24GB RTX 4090.
 
-### Key Design 1: Texel Grid Lighting Model
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["In-the-wild Smartphone Orbit Video"] --> B["Data Preprocessing<br/>Sample 300 frames · COLMAP · 2DGS · Wrap3D ICT Registration · Select V=16 frames"]
+    B --> C["SwitchLight Delighting<br/>Per-frame diffuse albedo prediction (Data-driven, with baking artifacts)"]
+    C --> D
+    subgraph OPT["UV Space Joint Optimization (Hybrid Inverse Rendering)"]
+        direction TB
+        D["Texel Grid Lighting Model<br/>Global SH + Local Grid SH to explain baking artifacts"] --> E["Diffusion Prior + Posterior Sampling<br/>Sample albedo from plausible distribution, joint light estimation"]
+        E -->|"Alternate updates of albedo and lighting parameters per timestep"| D
+    end
+    OPT --> F["RCAN Super-resolution<br/>1K → 4K"]
+    F --> G["4K Facial Diffuse Albedo Map (Output)"]
+```
 
-SwitchLight predictions are not produced by physical light sources; conventional spherical harmonics (SH) environment lighting cannot explain the non-physical shadow baking artifacts in these predictions.
+### Key Designs
 
-- **Design motivation**: Assign local SH illumination to facial regions exhibiting baking artifacts, so that artifacts can be interpreted as "clean albedo under dark local lighting."
-- **Specific structure**:
-    - Global SH illumination $\gamma^g \in \mathbb{R}^{N_c}$ models the base illumination over the entire face.
-    - A 2D UV-space grid $V \in \mathbb{R}^{\frac{H}{g} \times \frac{W}{g} \times N_c}$ stores local SH parameters.
-    - Modulated via a binary mask $M$: $\gamma = \gamma^g + \gamma^V \cdot M[u][v]$.
-    - Grid size $g=96$, second-order SH ($N_c=27$), queried via bilinear interpolation.
-- **Mask acquisition**: Supports both manual annotation (Photoshop polygon lasso) and automatic detection (DiFaReli shadow detection lifted into UV space).
+**1. Texel Grid Lighting Model: Explaining Baking Artifacts with Non-physical Local Lighting**
 
-### Key Design 2: Diffusion Prior and Posterior Sampling Optimization
+Since SwitchLight outputs are not generated by physical sources, traditional Spherical Harmonic (SH) environment light models cannot account for non-physical shadow baking artifacts. TGL addresses this by assigning additional local SH lighting to artifact-prone facial regions, re-interpreting artifacts as a combination of "clean albedo + dark local lighting." It uses a global SH $\gamma^g \in \mathbb{R}^{N_c}$ for base illumination, superimposed with a 2D UV grid $V \in \mathbb{R}^{\frac{H}{g} \times \frac{W}{g} \times N_c}$ storing local SH parameters, modulated by a binary mask $M$: $\gamma = \gamma^g + \gamma^V \cdot M[u][v]$. The grid size is $g=96$, using 2nd-order SH ($N_c=27$) with bilinear interpolation. The mask $M$ is obtained via manual selection or automated DiFaReli shadow detection. Ablations show that global SH alone leaves visible shadows, whereas the grid successfully explains these artifacts.
 
-Increasing the expressiveness of the lighting model exacerbates ill-posedness (scale ambiguity between illumination and albedo), necessitating prior constraints:
+**2. Diffusion Prior + Posterior Sampling: Regularizing Ill-posed Optimization**
 
-- **Patch-level diffusion prior training**: A patch-level diffusion model at 64×64 resolution is trained on 48 Light Stage scans, modeling a 7-channel signal (3ch diffuse albedo + 3ch normal + 1ch specular albedo).
-- **Initialization strategy**: The scan with the closest skin tone $x_0^{ref}$ is selected from the training set; $T_{init}=0.6T$ steps of noise are added before sampling begins (rather than starting from pure noise), reducing the number of sampling steps required.
-- **Joint optimization**: At each diffusion timestep, both the reflectance map $x_t$ (diffusion denoising + photometric gradient guidance) and the lighting parameters $\theta_t$ (gradient descent + regularization) are updated simultaneously.
+Increased lighting model expressivity exacerbates scale ambiguity between lighting and albedo, requiring prior constraints. WildCap trains a 64×64 patch-level diffusion model on 48 Light Stage scans, modeling 7-channel signals (3ch diffuse albedo + 3ch normal + 1ch specular albedo). During sampling, it initializes from a scan $x_0^{ref}$ with closely matched skin tone from the training set, adding $T_{init}=0.6T$ steps of noise to reduce sampling time. Each timestep alternately updates the reflectance map $x_t$ (via denoising and photometric gradient guidance) and lighting parameters $\theta_t$ (via gradient descent and regularization). This coupling of "sampling albedo from a reasonable distribution" and "joint light estimation" stabilizes the ill-posed problem.
 
 ### Loss & Training
 
-- **Photometric loss**: $\mathcal{L}_{pho} = \|I_{UV} - \Gamma_\theta(A, N_c)\|_2^2$
-- **Lighting regularization**: $\mathcal{L}_{reg} = 0.1 \cdot \mathcal{L}_{TV} + \mathcal{L}_{neg}$
-    - TV regularization enforces spatial smoothness of the lighting field.
-    - Negative shading regularization $\mathcal{L}_{neg}$ ensures local lighting produces dark shading (to explain shadow baking).
-- **Texture map construction**: Minimizes LPIPS + gradient-space L1 loss.
-
-### Post-processing: 4K Super-Resolution
-
-An RCAN super-resolution network upsamples the 1K reflectance map to 4K. Compared to DoRA, which requires 508 minutes to directly sample a 4K map, WildCap requires only **8 minutes** (24 GB RTX 4090).
+- **Photometric Loss**: $\mathcal{L}_{pho} = \|I_{UV} - \Gamma_\theta(A, N_c)\|_2^2$
+- **Lighting Regularization**: $\mathcal{L}_{reg} = 0.1 \cdot \mathcal{L}_{TV} + \mathcal{L}_{neg}$
+    - TV regularization ensures spatial smoothness of lighting.
+    - Negative shading regularization $\mathcal{L}_{neg}$ ensures local lighting produces darkening effects (to explain shadow baking).
+- **Texture Map Construction**: Minimizes LPIPS + gradient-space L1 loss.
 
 ## Key Experimental Results
 
-### Main Results (Facial Relighting, Average over 6 Subjects)
+### Main Results (Facial Reconstruction, Average of 6 Subjects)
 
 | Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
 |------|--------|--------|---------|
@@ -87,7 +84,7 @@ An RCAN super-resolution network upsamples the 1K reflectance map to 4K. Compare
 | FLARE* | 27.81 | 0.9411 | 0.0929 |
 | **WildCap (Ours)** | **28.79** | **0.9520** | **0.0610** |
 
-### Main Results (Synthetic Data — Digital Emily, Albedo Reconstruction)
+### Main Results (Synthetic Data Digital Emily, Albedo Reconstruction)
 
 | Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
 |------|--------|--------|---------|
@@ -97,41 +94,41 @@ An RCAN super-resolution network upsamples the 1K reflectance map to 4K. Compare
 
 ### Ablation Study
 
-- **w/o Hybrid** (optimizing directly on raw images): Fails to effectively separate specular highlights and shadows under complex illumination.
-- **w/o TGL** (global SH only): Cannot explain non-physical baking artifacts; visible shadow residuals remain.
-- **w/o Prior** (no diffusion prior; direct Adam optimization per texel): Produces severe artifacts and fails to converge to a plausible reflectance map.
-- **Grid size ablation**: $g=1/24$ provides insufficient expressiveness; $g=384$ is overly smooth and loses fine detail; $g=96$ achieves the best balance.
+- **w/o Hybrid** (Optimizing on raw images): Failed to effectively separate specularities and shadows under complex lighting.
+- **w/o TGL** (Global SH only): Could not explain non-physical baking artifacts, leaving significant shadow residue.
+- **w/o Prior** (No diffusion prior, direct Adam optimization): Produced severe artifacts and failed to converge to a plausible reflectance map.
+- **Grid size ablation**: $g=1/24$ lacked expressivity, $g=384$ was over-smoothed, $g=96$ provided the best balance.
 
 ## Highlights & Insights
 
-1. **Elegant hybrid inverse rendering framework**: The approach organically combines the robustness of data-driven methods with the physical plausibility of model-based methods in a concise and well-motivated design.
-2. **Novel and effective Texel Grid Lighting Model**: Transcends the limitations of physical illumination models by using a non-physical yet more expressive local SH grid to account for baking artifacts in network predictions.
-3. **Diffusion prior elegantly resolves scale ambiguity**: Sampling albedo from a reasonable distribution while jointly optimizing illumination converts an ill-posed problem into a well-posed one.
-4. **High efficiency**: Requires only 8 minutes versus 508 minutes for DoRA, while achieving comparable quality to controlled-illumination methods.
-5. **Thorough experimentation**: Includes comprehensive ablations, quantitative evaluation on synthetic data, cross-setting comparison with DoRA, diverse scene demonstrations, and failure case analysis.
+1.  **Clever Hybrid Inverse Rendering**: Elegantly combines the robustness of data-driven methods with the physical plausibility of model-based approaches.
+2.  **Novel Texel Grid Lighting**: Breaks the limitations of physical lighting models by using a more expressive, non-physical local SH grid to explain baking artifacts in network predictions.
+3.  **Elegant Scale Ambiguity Solution**: Uses a diffusion prior to sample albedo from a plausible distribution while jointly optimizing lighting, converting an ill-posed problem into a well-posed one.
+4.  **High Efficiency**: Requires only 8 minutes (vs. 508 minutes for DoRA), while maintaining quality comparable to controlled lighting methods.
+5.  **Thorough Evaluation**: Includes extensive ablations, synthetic quantitative evaluation, cross-setting comparisons with DoRA, diverse scene demonstrations, and failure case analysis.
 
 ## Limitations & Future Work
 
-1. **Dependency on SwitchLight preprocessing**: SwitchLight is a closed-source commercial model accessible only via API, limiting the reproducibility and extensibility of the method.
-2. **Automatic shadow detection relies on DiFaReli**: Iterative diffusion sampling is slow and may miss ambient occlusion effects.
-3. **Continuity constraints on lighting representation**: When SwitchLight predictions contain sharp shadow boundaries (e.g., under harsh noon sunlight), the continuous grid representation cannot fully remove them.
-4. **Limited training data scale**: The diffusion prior is trained on only 48 Light Stage scans, with limited racial and skin-tone diversity (33 Caucasian / 9 African / 6 Asian subjects).
-5. **Requires a target skin tone reference**: Although obtainable manually or automatically, this introduces an additional step in the pipeline.
+1.  **Dependency on SwitchLight**: SwitchLight is a closed-source commercial model available only via API, hindering reproducibility.
+2.  **Automatic Shadow Detection**: Relies on DiFaReli; iterative diffusion sampling is slow and may miss effects like ambient occlusion.
+3.  **Lighting Continuity**: Continuous grid representations struggle to fully remove sharp shadow boundaries (e.g., from direct noon sun) present in SwitchLight predictions.
+4.  **Training Data Scale**: The diffusion prior was trained on only 48 Light Stage scans, lacking ethnic/skin tone diversity (33 Caucasian / 9 African / 6 Asian).
+5.  **Required Skin Tone Reference**: While it can be automated, providing a target skin tone adds an extra step.
 
 ## Related Work & Insights
 
-- **vs. DeFace**: DeFace partitions the face into a limited number of regions (5–10), each corresponding to a trainable network, offering limited expressiveness; WildCap's texel grid provides finer granularity.
-- **vs. FLARE**: FLARE employs a split-sum approximation to model illumination; the physical model cannot account for non-physical baking artifacts.
-- **vs. DoRA** (controlled-illumination method): WildCap achieves quality comparable to DoRA under the more challenging in-the-wild setting, better preserves personal features (e.g., moles), and is approximately 63× faster.
-- **vs. Rainer et al.**: Using a small MLP to model shading is difficult to optimize within a diffusion posterior sampling framework; WildCap's grid representation is more amenable to optimization.
-- **vs. test scenarios in Xu et al. / Rainer et al.**: Prior methods are evaluated only on mildly shadowed scenes; WildCap addresses the more challenging case of strong cast shadows.
+- **vs DeFace**: DeFace segments the face into limited regions (5-10), each with a trainable network; WildCap's texel grid is significantly finer.
+- **vs FLARE**: FLARE uses a split-sum approximation for lighting; the physical model cannot account for non-physical baking artifacts.
+- **vs DoRA** (Controlled Methods): WildCap achieves quality comparable to DoRA in challenging in-the-wild settings, preserves personal traits (e.g., moles) better, and is roughly 63x faster.
+- **vs Rainer et al.**: Uses small MLPs for shading, which is difficult to optimize within a diffusion posterior sampling framework; WildCap's grid is easier to optimize.
+- **Test Scenarios**: Previous methods were tested on mild shadow scenarios; WildCap handles challenging, strong cast shadows.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The hybrid inverse rendering framework and the texel grid lighting model are conceptually novel; the joint diffusion prior optimization is technically sophisticated.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive ablations, thorough quantitative and qualitative comparisons, synthetic data evaluation, and failure case analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Overall clear presentation with well-motivated problem setup and detailed supplementary material.
-- Value: ⭐⭐⭐⭐ — Substantially lowers the barrier to facial appearance capture with practical implications for digital human production.
+- Novelty: ⭐⭐⭐⭐ — Hybrid framework and Texel Grid Lighting are novel; joint optimization with diffusion priors is skillful.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive ablations, quantitative/qualitative comparisons, synthetic data evaluation, and failure analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Generally clear, well-motivated, and documented with extensive supplementary materials.
+- Value: ⭐⭐⭐⭐ — Significantly lowers the barrier for facial appearance capture, providing practical utility for digital human creation.
 
 <!-- RELATED:START -->
 
@@ -140,10 +137,10 @@ An RCAN super-resolution network upsamples the 1K reflectance map to 4K. Compare
 ## Related Papers
 
 - [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](../../ICCV2025/human_understanding/monocular_facial_appearance_capture_in_the_wild.md)
+- [\[CVPR 2026\] Occluded Human Body Capture with Frequency Domain Denoising Prior](occluded_human_body_capture_with_frequency_domain_denoising_prior.md)
+- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](hum4d_markerless_motion_capture.md)
-- [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](../../AAAI2026/human_understanding/facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
+- [\[CVPR 2026\] Bézier Degradation Modeling for LiDAR-based Human Motion Capture](bézier_degradation_modeling_for_lidar-based_human_motion_capture.md)
 
 </div>
 

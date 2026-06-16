@@ -2,144 +2,156 @@
 title: >-
   [Paper Note] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Mixture-of-Experts] This paper models expert selection in MoE as a sequential decision problem and optimizes the routing strategy via GRPO-based reinforcement learning. By introducing modality…
+  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Expert selection in MoE is modeled as a sequential decision-making problem. The routing policy is optimized via GRPO reinforcement learning with modality-aware routing guidance. This approach consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks for VLMs.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Mixture-of-Experts"
-  - "Reinforcement Learning"
-  - "Routing Strategy Optimization"
-  - "Vision-Language Models"
-  - "GRPO"
+  - CVPR 2026
+  - Multimodal VLM
+  - Reinforcement Learning
+  - Vision-Language Model
+  - GRPO
 date: 2026-05-08
-content_hash: c82023bbf9891701
+content_hash: c16245d4af04684f
 ---
-
 # MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24984](https://arxiv.org/abs/2603.24984)  
 **Code**: None  
-**Area**: Multimodal VLM
-**Keywords**: Mixture-of-Experts, Reinforcement Learning, Routing Strategy Optimization, Vision-Language Models, GRPO
+**Area**: Multimodal VLM  
+**Keywords**: Mixture-of-Experts, Reinforcement Learning, Routing Policy Optimization, Vision-Language Models, GRPO
 
 ## TL;DR
 
-This paper models expert selection in MoE as a sequential decision problem and optimizes the routing strategy via GRPO-based reinforcement learning. By introducing modality-aware router guidance, the proposed method consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks in VLMs.
+Expert selection in MoE is modeled as a sequential decision-making problem. The routing policy is optimized via GRPO reinforcement learning with modality-aware routing guidance. This approach consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks for VLMs.
 
 ## Background & Motivation
 
-**Background**: Mixture-of-Experts (MoE) reduces the computational cost of Transformers by sparsely activating a subset of parameters while maintaining high model capacity. MoE has recently been extended to vision-language models (VLMs) for efficient multimodal understanding. The standard practice is to greedily select experts layer-wise using deterministic top-K routing.
+**Background**: Mixture-of-Experts (MoE) reduces the computational overhead of Transformers by sparsely activating a subset of parameters while maintaining high model capacity. Recently, MoE has been extended to Vision-Language Models (VLMs), achieving efficient multimodal understanding. The standard practice is to use deterministic top-K greedy selection for experts at each layer.
 
-**Limitations of Prior Work**: Deterministic top-K routing restricts exploration of diverse expert combinations and is prone to overfitting to a small subset of experts. Methods such as V-MoE introduce stochasticity by adding Gaussian noise to gating scores, but this heuristic perturbation only partially alleviates the problem without explicitly optimizing the expert selection "policy."
+**Limitations of Prior Work**: Deterministic top-K routing limits the exploration of diverse expert combinations, often leading the model to overfit to a small subset of experts. Methods like V-MoE introduce randomness by adding Gaussian noise to gating scores, but this heuristic perturbation only partially alleviates the issue and does not explicitly optimize the expert selection "policy."
 
-**Key Challenge**: Existing approaches are either deterministic (lacking exploration) or noise-based stochastic (lacking directional guidance), and neither truly learns an optimal expert routing policy. Expert routing is inherently a sequential decision problem, yet it has consistently been treated as a simple softmax + top-K operation.
+**Key Challenge**: Existing methods rely on either deterministic selection (lacking exploration) or noisy random selection (lacking directionality), neither of which truly learns an optimal expert routing policy. Expert routing is essentially a sequential decision-making problem, yet it has traditionally been treated as a simple softmax + top-K operation.
 
-**Goal**: (1) How can MoE routers learn better expert combinations? (2) How can routing policy exploration be conducted efficiently and stably in multimodal settings?
+**Goal**: (1) How to enable the MoE router to learn superior expert combinations? (2) How to perform efficient and stable routing policy exploration in multimodal scenarios?
 
-**Key Insight**: Expert selection is explicitly modeled as a sequential decision problem. Reinforcement learning (GRPO) is employed to explore diverse expert combinations through multiple rollouts and to optimize the routing policy based on reward feedback. The observation that tokens from different modalities exhibit distinct expert preferences is leveraged as a prior to constrain the exploration space.
+**Key Insight**: Explicitly model expert selection as a sequential decision-making problem. Leverage reinforcement learning (GRPO) to explore different expert combinations through multiple rollouts and optimize the routing policy based on reward feedback. Additionally, observe that tokens from different modalities have distinct preferences for experts, which can be used as a prior to constrain the exploration space.
 
-**Core Idea**: Deterministic top-K routing is replaced by GRPO-based reinforcement learning. Token-GRPO and Gate-GRPO are jointly applied to optimize token generation and layer-wise expert selection policies, respectively, while modality-aware guidance is introduced to accelerate convergence.
+**Core Idea**: Replace deterministic top-K routing with GRPO reinforcement learning. Jointly optimize token generation and hierarchical expert selection policies through Token-GRPO + Gate-GRPO, and introduce modality-aware guidance to accelerate convergence.
 
 ## Method
 
 ### Overall Architecture
 
-Given an input image (or video) and a question $\boldsymbol{x}$, the rollout module $g_\text{old}$ samples $G$ groups of expert routing strategies $\{\boldsymbol{E}^i\}_{i=1}^G$ from the gating network. Each routing strategy $\boldsymbol{E}^i$ corresponds to a sequence of expert selections across all layers. Under each routing, the model generates an output token sequence $\boldsymbol{y}^i$ and computes an accuracy reward $R^i$. Group-relative rewards are used to compute advantage estimates $\hat{A}^i$, which guide policy updates toward higher-reward expert combinations.
+This paper addresses the issue that MoE routers "cannot explore." Standard approaches use deterministic top-K greedy selection at each layer; once the router is fixed, it repeatedly activates the same experts. The core idea of MoE-GRPO is to treat "which experts to select" as a policy optimizable via reinforcement learning, allowing the router to learn better expert combinations through trial and error.
+
+The workflow is as follows: Given an input image (or video) and a question $\boldsymbol{x}$, the rollout module $g_\text{old}$ first samples $G$ different expert routing policies $\{\boldsymbol{E}^i\}_{i=1}^G$ from the gating network. Each $\boldsymbol{E}^i$ represents a complete sequence of expert choices across all layers. Before sampling, **modality-aware routing guidance** masks experts irrelevant to the current modality, narrowing the exploration budget to a meaningful range. The model generates an output token sequence $\boldsymbol{y}^i$ for each of the $G$ routes. Accuracy rewards $R^i$ are calculated based on whether the answers are correct, and advantage values $\hat{A}^i$ are computed using relative intra-group rewards. Finally, this advantage drives two complementary objectives: **Token-GRPO** updates routing policies from the output side, and **Gate-GRPO** updates them from the gating side of each layer, pushing the policy towards expert combinations with higher rewards. In other words, the same problem is tested with 8 parallel "expert combinations"; the successful ones are reinforced, and the updated gating network enters the next round of sampling.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Image/Video + Question x"] --> B["Modality-aware Routing Guidance<br/>Mask bottom 25% experts for each modality"]
+    B --> C["Rollout Sampling g_old<br/>Multinomial sampling of G routing policies {E^i}"]
+    C --> D["Generate output token sequences y^i<br/>under each routing policy E^i"]
+    D --> E["Accuracy Reward R^i<br/>→ Intra-group Relative Advantage Â^i"]
+    E --> F["Token-GRPO<br/>Optimize token generation conditioned on routing"]
+    E --> G["Gate-GRPO<br/>Dense supervision of layer-wise gating networks"]
+    F --> H["Joint Objective<br/>L = L_Token-GRPO + L_Gate-GRPO"]
+    G --> H
+    H -->|Update Gating Policy| C
+```
 
 ### Key Designs
 
-1. **Token-GRPO (Token-level Generation Optimization)**:
+**1. Token-GRPO: Driving Expert Selection via Task Rewards**
 
-    - **Function**: Optimizes expert selection strategies at the output token level.
-    - **Mechanism**: Building on standard GRPO, expert routing conditions are incorporated. For each rollout-sampled expert strategy $\boldsymbol{E}^i$, the model generates the corresponding token sequence $\boldsymbol{y}^i$. A PPO-style clipped ratio objective optimizes token-level generation probabilities based on group-relative rewards. The ratio is defined as $r_t^i = \pi_\theta(y_t^i | \boldsymbol{x}, \boldsymbol{y}_{<t}^i; \boldsymbol{E}_{<t}^i) / \pi_\text{old}(y_t^i | \boldsymbol{x}, \boldsymbol{y}_{<t}^i; \boldsymbol{E}_{<t}^i)$.
-    - **Design Motivation**: Token-level optimization is directly tied to task rewards and serves as the primary driver of performance gains. Ablation studies show that removing Token-GRPO alone causes average accuracy to drop sharply from 55.7% to 50.9%.
+Simply allowing the router to try combinations randomly is insufficient; signals must indicate which routes are better. Token-GRPO connects this signal to the output tokens: for each rollout-sampled expert policy $\boldsymbol{E}^i$, the model generates the corresponding token sequence $\boldsymbol{y}^i$. Then, a PPO-style clipped ratio objective optimizes the generation probability of each token based on the relative advantage within the group. Crucially, the probability is **conditioned on the expert routing**:
 
-2. **Gate-GRPO (Layer-wise Routing Strategy Optimization)**:
+$$r_t^i = \frac{\pi_\theta(y_t^i \mid \boldsymbol{x}, \boldsymbol{y}_{<t}^i; \boldsymbol{E}_{<t}^i)}{\pi_\text{old}(y_t^i \mid \boldsymbol{x}, \boldsymbol{y}_{<t}^i; \boldsymbol{E}_{<t}^i)}$$
 
-    - **Function**: Directly optimizes the expert selection strategy of the gating network at each layer.
-    - **Mechanism**: At each layer and token position, the routing ratio is computed as $\hat{r}_{t,l}^i = g_\theta^l(E_{t,l}^i) / g_\text{old}^l(E_{t,l}^i)$, averaged over all layers and token positions, and optimized using the same clipped objective. Unlike Token-GRPO, Gate-GRPO provides dense layer-wise supervision signals that directly act on the gating function.
-    - **Design Motivation**: Token-GRPO only indirectly influences routing through output-level feedback, whereas Gate-GRPO provides fine-grained, dense supervision at each layer. The two are complementary: removing Gate-GRPO reduces average accuracy by 1.8%.
+Since routing $\boldsymbol{E}$ appears in the condition, rewards for correct answers flow back through this probability chain to the decisions that initially selected those experts. This component directly links to task accuracy and serves as the primary performance engine: removing it in ablation studies drops the average accuracy from 55.7% to 50.9%.
 
-3. **Modality-Aware Router Guidance**:
+**2. Gate-GRPO: Dense Supervision for Each Layer's Routing**
 
-    - **Function**: Constrains the routing exploration space to avoid wasting exploration on irrelevant experts.
-    - **Mechanism**: The selection counts of each expert for visual tokens and text tokens, $N_v(e_i)$ and $N_t(e_i)$, are first accumulated to compute normalized modality-aware scores $\hat{s}_v(e_i)$ and $\hat{s}_t(e_i)$. When processing visual tokens, experts are ranked by score and the bottom $P\%$ are masked by setting their gating scores to $-\infty$; multinomial sampling is then performed over the remaining experts. $P = 25\%$ is used in experiments.
-    - **Design Motivation**: The search space for RL exploration is large (choosing $K$ out of $N$ experts per layer, across all layers and token positions). Undirected exploration is inefficient. Modality-aware guidance leverages prior knowledge of expert modality preferences to reduce redundant exploration and accelerate convergence. Ablations show gains of 1.5% and 0.9% over noise-based and multinomial sampling without guidance, respectively.
+The issue with Token-GRPO is that it only indirectly influences routing from the final output; the signals reaching expert selections in middle layers are sparse. Gate-GRPO applies supervision directly to the gating network of each layer: at each layer $l$ and token position $t$, a routing ratio is calculated as $\hat{r}_{t,l}^i = g_\theta^l(E_{t,l}^i) / g_\text{old}^l(E_{t,l}^i)$. This is similarly optimized using a clipped objective after averaging across all layers and token positions. This provides fine-grained, dense gradients for routing decisions at every layer without waiting for output rewards to backpropagate. It complements Token-GRPO: one handles coarse-grained goal alignment, while the other handles hierarchical fine-grained routing correction. Removing Gate-GRPO results in a 1.8% drop in average accuracy.
+
+**3. Modality-aware Routing Guidance: Pruning Invalid Exploration with Modality Priors**
+
+RL training inevitably faces efficiency challenges: selecting $K$ experts out of $N$ across all layers and tokens leads to an extraordinarily large combinatorial space, making convergence through pure random sampling difficult. A simple but effective prior is utilized: visual and text tokens prefer different experts. Specifically, the frequencies of each expert being selected by visual tokens $N_v(e_i)$ and text tokens $N_t(e_i)$ are counted and normalized into modality-aware scores $\hat{s}_v(e_i)$ and $\hat{s}_t(e_i)$. When processing a visual token, experts are ranked by $\hat{s}_v$, and the gating scores of the bottom P% (experimentally P=25%) are set to $-\infty$ to be masked. Multinomial sampling then occurs among the remaining experts. This concentrates the exploration budget on experts that "this type of token typically uses," avoiding wasted trials on clearly irrelevant experts. Ablation studies show this outperforms unguided noisy sampling and multinomial sampling by 1.5% and 0.9%, respectively, with faster convergence and lower reward variance.
 
 ### Loss & Training
 
-The final objective is $\mathcal{L}_\text{MoE-GRPO} = \mathcal{L}_\text{Token-GRPO} + \mathcal{L}_\text{Gate-GRPO}$. Since the gating network is trained from scratch without a pre-trained routing policy, KL divergence regularization is omitted (unlike standard GRPO). The reward function uses accuracy reward (correct = 1, incorrect = 0). Training is based on InternVL3.5-1B converted to a MoE architecture ($N = 8$ experts, $K = 2$ activated), with 2.9B total parameters and 1.3B activated. A dataset of 100K multi-choice visual instruction tuning samples is used for 25K training steps, completing in approximately one day on 4 GPUs.
+The final objective function is $\mathcal{L}_\text{MoE-GRPO} = \mathcal{L}_\text{Token-GRPO} + \mathcal{L}_\text{Gate-GRPO}$. Since the gating network is trained from scratch without a pre-trained routing policy, KL divergence regularization is not used (unlike standard GRPO). The reward function employs an accuracy reward (correct=1, incorrect=0). Training is based on an MoE architecture converted from InternVL3.5-1B (N=8 experts, K=2 active), with total parameters of 2.9B and 1.3B activated. It uses 100K multiple-choice visual instruction tuning samples, 25K training steps, and takes approximately one day on 4 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Architecture | Activated/Total Params | MMBench | MMStar | MLVU | LongVideoBench | Avg. |
-|-------|-------------|----------------------|---------|--------|------|----------------|------|
+| Model | Architecture | Active/Total Params | MMBench | MMStar | MLVU | LongVideoBench | Avg. |
+|------|------|-----------|---------|--------|------|----------------|------|
 | InternVL3.5 + Det-FT | MoE | 1.3B/2.9B | 75.8 | 45.6 | 48.6 | 45.3 | 54.0 |
 | InternVL3.5 + Stoch-FT-Noise | MoE | 1.3B/2.9B | 76.3 | 46.1 | 51.1 | 45.3 | 54.3 |
-| InternVL3.5 + MoE-GRPO | MoE | 1.3B/2.9B | **77.5** | 45.7 | **53.1** | **46.5** | **56.0** |
+| InternVL3.5 + MoE-GRPO (Ours) | MoE | 1.3B/2.9B | **77.5** | 45.7 | **53.1** | **46.5** | **56.0** |
 | InternVL2.5 (Dense) | Dense | 1B/1B | 70.7 | 50.1 | 57.3 | 47.9 | - |
 
-MoE-GRPO achieves the best results on 7 out of 9 benchmarks, surpassing the three baselines by 2.0%, 2.3%, and 1.7% in average accuracy, respectively.
+MoE-GRPO achieves the best performance on 7 out of 9 benchmarks, outperforming the three baselines by an average accuracy of 2.0%, 2.3%, and 1.7%, respectively.
 
 ### Ablation Study
 
-| Configuration | Avg. | Note |
-|--------------|------|------|
+| Configuration | Avg. | Description |
+|------|------|------|
 | Token-GRPO + Gate-GRPO (Full) | 55.7 | Full model |
-| Token-GRPO only | 53.9 | −1.8% without Gate-GRPO |
-| Gate-GRPO only | 50.9 | −4.8% without Token-GRPO; token-level optimization is the primary driver |
-| Modality-aware guidance | 55.7 | Best |
-| Modality-agnostic (noise) | 54.2 | −1.5% |
-| Modality-agnostic (multinomial) | 54.8 | −0.9% |
+| Token-GRPO only | 53.9 | -1.8% without Gate-GRPO |
+| Gate-GRPO only | 50.9 | -4.8% without Token-GRPO; token-level optimization is core |
+| Modality-aware Guidance | 55.7 | Optimal |
+| Modality-agnostic (Noise) | 54.2 | -1.5% |
+| Modality-agnostic (Multinomial) | 54.8 | -0.9% |
 
 ### Key Findings
 
-- Token-GRPO is the primary driver of performance; Gate-GRPO provides complementary fine-grained layer-wise supervision.
-- Modality-aware guidance outperforms undirected approaches by 0.9–1.5% on average, with faster convergence and lower reward variance.
-- MoE-GRPO substantially improves expert diversity: routing distribution entropy increases from 1.05 (Det-FT) to 1.82.
-- In cross-dataset generalization experiments (CLIP-MoE), MoE-GRPO outperforms Det-FT by 3.1% on average, while Det-FT degrades due to overfitting.
-- In cross-domain generalization, MoE-GRPO consistently improves across all OOD datasets, outperforming CLIP-MoE by 4.1% on average.
+- Token-GRPO is the core driver of performance, while Gate-GRPO provides complementary hierarchical fine-grained supervision.
+- Modality-aware guidance outperforms unguided methods by 0.9-1.5% on average, with faster convergence and lower reward variance.
+- MoE-GRPO significantly improves expert diversity: routing distribution entropy increases from 1.05 (Det-FT) to 1.82.
+- In cross-dataset generalization experiments (CLIP-MoE), MoE-GRPO outperforms Det-FT by 3.1% on average, whereas Det-FT degrades due to overfitting.
+- In cross-domain generalization, MoE-GRPO shows consistent gains across all OOD datasets, outperforming CLIP-MoE by 4.1% on average.
 
 ## Highlights & Insights
 
-- **A New Paradigm for RL-based Routing Optimization**: This is the first work to model MoE expert selection as a sequential decision problem and optimize it with RL. The formulation is novel and effective, opening a new direction for routing optimization in MoE architectures. More sophisticated RL algorithms can be explored in future work.
-- **Complementary Dual-level GRPO Design**: Token-GRPO and Gate-GRPO provide supervision at the output level and layer level, respectively, combining coarse-grained task alignment with fine-grained routing optimization. This hierarchical optimization paradigm is transferable to other layered decision-making problems.
-- **Modality-Aware Constraint on Exploration Space**: By leveraging modality–expert statistical priors to constrain the exploration space, training efficiency and stability are significantly improved without additional complexity. This idea of using prior knowledge to guide RL exploration is broadly applicable to other RL + large model settings.
+- **New Paradigm for RL Routing Policy Optimization**: This is the first work to model MoE expert selection as a sequential decision-making problem and optimize it using RL. The approach is novel and effective, opening new directions for MoE architectural optimization, with potential for exploring more complex RL algorithms in the future.
+- **Dual-layer GRPO Complementary Design**: Token-GRPO and Gate-GRPO provide supervision from the output and layer levels, respectively, combining coarse-grained goal alignment with fine-grained routing optimization. this hierarchical optimization strategy is transferable to other hierarchical decision problems.
+- **Modality-aware Constraint on Exploration Space**: Leveraging modality-expert statistical priors to constrain the exploration space significantly improves training efficiency and stability without adding extra complexity. This strategy of using prior knowledge to guide RL exploration is applicable to other RL + Large Model scenarios.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to relatively small-scale models (1.3B activated parameters); effectiveness on larger-scale MoE-VLMs (e.g., DeepSeek-V3 scale) remains unknown.
-- Using $G = 8$ rollouts increases training computation (requiring generation of 8 output sets); maintaining efficiency at larger training scales is a challenge.
-- The reward function relies solely on accuracy (multiple-choice tasks); applicability to open-ended generation tasks has yet to be verified.
-- Modality-aware guidance is based on static expert preference statistics, which may limit dynamic adaptability.
+- Currently only validated on relatively small-scale models (1.3B active parameters); the effectiveness on larger MoE-VLMs (e.g., DeepSeek-V3 scale) is unknown.
+- The rollout count G=8 increases training computational overhead (requiring 8 sets of outputs); maintaining efficiency in large-scale training is a challenge.
+- The reward function relies only on accuracy (multiple-choice); applicability to open-ended generation tasks remains to be verified.
+- Modality-aware guidance is based on static statistics of expert preferences; dynamic adaptation capabilities might be insufficient.
 
 ## Related Work & Insights
 
-- **vs. V-MoE**: V-MoE introduces exploration via Gaussian noise on gating scores, but this is an undirected heuristic perturbation that does not optimize a "policy." MoE-GRPO explicitly optimizes the routing policy and achieves superior results.
-- **vs. Expert Choice / Optimal Transport Routing**: These methods optimize routing from a load-balancing perspective, whereas MoE-GRPO optimizes from a task reward perspective. The two are complementary: combining them yields a further gain of 0.9%.
-- **vs. Standard GRPO (DeepSeek-R1)**: Standard GRPO explores only at the token level. MoE-GRPO extends the action space to layer-wise expert selection, enabling finer-grained control.
+- **vs V-MoE**: V-MoE introduces exploration via Gaussian noise, but the noise is a directionless heuristic perturbation that does not optimize the "policy." MoE-GRPO explicitly optimizes the routing policy, yielding better results.
+- **vs Expert Choice / Optimal Transport Routing**: These methods optimize routing for load balancing. MoE-GRPO optimizes from the perspective of task rewards and is complementary to load balancing losses (providing an extra 0.9% gain when combined).
+- **vs Standard GRPO (DeepSeek-R1)**: Standard GRPO explores only at the token level. MoE-GRPO extends the action space to hierarchical expert selection, providing finer control.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First application of RL to MoE routing strategy optimization with a clear formulation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Nine benchmarks covering image and video understanding, cross-dataset and cross-domain generalization, multiple ablations, and routing analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear logic, rich figures and tables, complete methodological derivation.
-- **Value**: ⭐⭐⭐⭐ Provides a new paradigm for MoE routing optimization, though rollout overhead may limit practical deployment.
+- Novelty: ⭐⭐⭐⭐ First application of RL to MoE routing policy optimization with a clear formulation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 benchmarks for image + video, cross-dataset generalization, domain generalization, multiple ablations, and routing analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic, rich visualizations, and complete methodological derivation.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for MoE routing optimization, although rollout overhead may limit application in actual deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
-- [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

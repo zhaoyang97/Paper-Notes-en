@@ -2,76 +2,95 @@
 title: >-
   [Paper Note] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Safety][Reasoning Hijacking] This paper proposes AutoRAN, the first automated framework to attack the internal safety reasoning of Large Reasoning Models (LRMs). By utilizing a **weak but unaligned** small…
+  [ACL 2026][LLM Safety][Paper Note] This paper proposes AutoRAN, the first framework to automate the hijacking of internal safety reasoning in Large Reasoning Models (LRMs). It utilizes a **weak but minimally aligned** small model to simulate the "execution reasoning" of the target LRM to generate narrative prompts. It further employs iterative refinemen
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Reasoning Hijacking"
-  - "Weak-to-Strong Attack"
-  - "Execution Simulation"
-  - "Feedback Refinement"
-  - "LRM Safety"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: d697061b977d7202
+content_hash: 05e2337e61e214e5
 ---
-
 # AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.10846](https://arxiv.org/abs/2505.10846)  
 **Code**: https://github.com/JACKPURCELL/AutoRAN-public  
-**Area**: LLM Reasoning / Safety Attack / Jailbreak  
-**Keywords**: Reasoning Hijacking, Weak-to-Strong Attack, Execution Simulation, Feedback Refinement, LRM Safety
+**Area**: LLM Reasoning / Safety Attacks / Jailbreak  
+**Keywords**: Reasoning Hijacking, Weak-to-Strong Attacks, Execution Simulation, Feedback Refinement, LRM Safety
 
 ## TL;DR
-This paper proposes AutoRAN, the first automated framework to attack the internal safety reasoning of Large Reasoning Models (LRMs). By utilizing a **weak but unaligned** small model to simulate "execution reasoning" and generate narrative prompts, and then iteratively refining them based on the chain-of-thought (CoT) feedback leaked during the target's refusal, the framework achieves **nearly 100% attack success rates** on gpt-o3, o4-mini, and Gemini-2.5-Flash on datasets like AdvBench, HarmBench, and StrongReject, often requiring only a single turn.
+This paper proposes AutoRAN, the first framework to automate the hijacking of internal safety reasoning in Large Reasoning Models (LRMs). It utilizes a **weak but minimally aligned** small model to simulate the "execution reasoning" of the target LRM to generate narrative prompts. It further employs iterative refinement based on the Chain-of-Thought (CoT) feedback leaked during the target's refusal. AutoRAN achieves **near 100% attack success rates** on AdvBench, HarmBench, and StrongReject against gpt-o3, o4-mini, and Gemini-2.5-Flash, often requiring only a single turn.
 
 ## Background & Motivation
-**Background**: LRMs such as o1/o3, Gemini-Flash, and DeepSeek-R1 explicitly output their CoT. Organizations like OpenAI consider this "internal deliberation" a safety mechanism—where the model evaluates the compliance of a request during the deliberation phase. The community generally believes this "reasoning-as-defense" makes LRMs more difficult to jailbreak than standard LLMs.
+**Background**: Large Reasoning Models (LRMs) such as o1/o3, Gemini-Flash, and DeepSeek-R1 explicitly output their chain-of-thought. Entities like OpenAI consider this "deliberation" a safety mechanism—the model evaluates whether a request is compliant during this phase. The community generally assumes this "reasoning-as-defense" makes LRMs more resilient to jailbreaking than standard LLMs.
 
-**Limitations of Prior Work**: Existing LRM attacks either rely on manual effort—H-CoT uses human-written narratives to concatenate reasoning traces, and PolicyPuppetry mimics XML/JSON policy documents—leading to poor scalability; or they rely on static rules—Mousetrap uses preset mapping to rewrite prompts without adapting to the target's refusal signals. Overall, an **automated, feedback-driven** attack pipeline is currently missing.
+**Limitations of Prior Work**: Existing LRM attacks are either manual—H-CoT uses hand-written narratives to concatenate reasoning traces, and PolicyPuppetry mimics XML/JSON policy documents—which lack scalability; or they rely on static rules—Mousetrap uses preset mappings to rewrite prompts but fails to adapt to the target's refusal signals. Overall, an **automated, feedback-driven** attack pipeline is missing.
 
-**Key Challenge**: While exposing CoT improves transparency and alignment, it also publicizes internal decision logic. The thinking process during refusal leaks specific information (e.g., "ensuring all guidance aligns with ethical guidelines"), which can be reverse-engineered by attackers into precise attack clues.
+**Key Challenge**: While exposing CoT improves transparency and alignment, it simultaneously reveals internal decision logic. The thinking process during refusal leaks specific concerns (e.g., "ensuring all guidance aligns with ethical guidelines"), which can be reversed by attackers into precise clues for targeted attacks.
 
-**Goal**: (i) Transform the hijacking of LRM safety reasoning into an automated feedback loop; (ii) Trigger "execution mode" from scratch to bypass deliberation while utilizing CoT feedback for targeted repairs; (iii) Verify that "weak models attacking strong models" (weak-to-strong) holds true for LRMs.
+**Goal**: (i) Transform the hijacking of LRM safety reasoning into an automated feedback loop; (ii) trigger an "execution mode" to bypass deliberation from scratch and leverage CoT feedback for targeted patching; (iii) verify that the "weak-to-strong" attack paradigm (where a weak model attacks a stronger one) holds for LRMs.
 
-**Key Insight**: The authors found that the structure of "execution reasoning" (executing the task) is highly similar across different LRMs—breaking the task into steps and providing a methodology per step. Thus, a small unaligned model (e.g., Qwen3-8B-abliterated) can simulate the high-level execution framework of the target LRM, serving as an "anchor" to force the target into execution mode while skipping deliberation.
+**Key Insight**: The authors discovered that the "execution reasoning" (executing the task) mode is highly structurally similar across different LRMs—breaking tasks into discrete steps and providing instructions. Therefore, a minimally aligned small model (e.g., Qwen3-8B-abliterated) can simulate the high-level execution framework of a target LRM. This framework acts as an "anchor" to force the target into execution mode, thereby bypassing deliberation.
 
-**Core Idea**: A weak-to-strong reasoning hijacking loop consisting of "weak model simulating execution trajectories $\to$ populating narrative templates for initial prompts $\to$ categorizing target refusal CoT feedback (direct refusal/refusal with reasons/partial answer) for different refinement strategies."
+**Core Idea**: A weak-to-strong reasoning hijacking loop consisting of "weak model simulates execution traces → populates narrative templates for initial prompts → performs specific refinement strategies based on the categorization of target refusal CoT (direct refusal, refusal with reasons, or partial answers)."
 
 ## Method
 
 ### Overall Architecture
-The attack involves three parties: the victim LRM $f$ (e.g., gpt-o3), the attacker LRM $g$ (Qwen3-8B-abliterated), and a judge (also $g$). An attack cycle for a query entails: (1) **Prompt Initialization**: $g$ simulates a high-level execution thinking process $\tilde p$ without safety checks for the original harmful request $q$, then fills elements of $\tilde p$ into a narrative template (e.g., educational/role-playing) to generate the initial hijack prompt $x_0$; (2) **Query & Categorize**: $x_0$ is fed to $f$ to obtain $(y_0, p_0)$ (response + thinking), which is categorized into three types; (3) **Refinement**: Different rewriting strategies are invoked based on the feedback category to obtain $x_1$; the loop continues until success ($h(y, q) \geq 7$ on a 1–10 scale) or $n_{\text{turn}} = 10$. Note that **each refinement occurs in a fresh session window** without dialogue history, which is fundamentally different from the multi-turn jailbreak paradigm.
+The attack involves three participants: the victim LRM $f$ (e.g., gpt-o3), the attacker LRM $g$ (Qwen3-8B-abliterated), and a judge (also $g$). The attack cycle for a query: (1) **Prompt Initialization**: $g$ simulates high-level thinking $\tilde p$ for a harmful request $q$ without safety checks, filling a narrative template (e.g., educational, role-playing, risk disclosure) to generate the initial hijack prompt $x_0$; (2) **Query & Categorize**: $x_0$ is fed to $f$ to obtain $(y_0, p_0)$ (response + thinking), which is categorized based on the response type; (3) **Refinement**: Different rewrite strategies are applied based on Categorization to obtain $x_1$; the loop continues until success ($h(y, q) \geq 7$ on a 1–10 scale) or $n_{\text{turn}} = 10$. Note that **each refinement occurs in a fresh session window** without dialogue history, fundamentally different from the multi-turn jailbreak paradigm.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Harmful Request q"] --> SIM
+    subgraph W2S["Weak-to-Strong Loop (Attacker uses only 8B unaligned model g)"]
+        direction TB
+        SIM["Execution Simulation<br/>g fakes 'already executing' high-level reasoning as an anchor"]
+        TPL["Narrative Template Filling<br/>Educational / Role-play / Risk Disclosure → Initial prompt x₀"]
+        JUDGE{"Judge (g self-evaluation)<br/>Helpfulness h(y, q)"}
+        subgraph REF["Feedback-Driven Tri-branch Refinement"]
+            direction TB
+            C1["Case 1: Direct refusal, no CoT leakage<br/>Switch template and regenerate from scratch"]
+            C2["Case 2: Refusal with CoT leakage<br/>AddressCoTConcern: Resolve concerns point-by-point"]
+            C3["Case 3: Content provided but not ideal<br/>EnhanceObjectiveClarity: Align closer to q"]
+        end
+        SIM --> TPL
+    end
+    TPL --> QRY["Query Target LRM f<br/>Obtain response y and CoT p"]
+    QRY --> JUDGE
+    JUDGE -->|"h ≥ 7, Success"| OUT["Output Harmful Content"]
+    JUDGE -->|"Failure after 10 turns"| FAIL["Attack Failed"]
+    JUDGE -->|"Unsuccessful, categorize response"| REF
+    REF -->|"New prompt (Fresh session, no history)"| QRY
+```
 
 ### Key Designs
 
-1.  **Execution Simulation (SimulateReasoning + Narrative Template Filling)**:
-    - **Function**: Allows the weak, de-aligned $g$ to generate a "pretend I am already executing" high-level reasoning $\tilde p$ (steps, key points, examples) for the harmful request $q$, then uses it as filler for a pre-written narrative template (e.g., "educational explanation / role-playing / risk notification") to produce prompt $x_0$.
-    - **Mechanism**: Directly asking a target model to "teach me how to make a bomb" triggers safety checks during deliberation. However, if the prompt already looks like "an educator deconstructing an adversarial topic, listing strategies A/B/C, and explaining the rationale," the target model's CoT is "anchored" to "my current task is to elaborate on existing structure" rather than "should I answer this request," thereby skipping deliberation and entering execution mode. Weak-to-Strong is feasible because execution reasoning is structurally similar across LRMs—the weak model's scaffolding is sufficient to trigger the strong model's execution mode.
-    - **Design Motivation**: Traditional persuasion attacks attempt to convince the target that "this request is reasonable," but LRM deliberation is becoming too strong to be persuaded. This paper shifts the approach—instead of persuading it, provide a context that appears to be already in progress, leaving deliberation with no object to evaluate.
+**1. Execution Simulation: Using a weak model to forge "already executing" high-level reasoning as an anchor**
 
-2.  **Feedback-Driven Three-Branch Refinement Strategy**:
-    - **Function**: Selects different rewrites based on $f$'s $i$-th response:
-        - Case 1: Immediate refusal (no CoT leakage): Switch to a different narrative template where $g$ generates a new $x_0$ from scratch.
-        - Case 2: Refusal with leaked CoT $p_i$: Invoke `AddressCoTConcern`—have $g$ parse the specific concerns mentioned by the target in $p_i$ (e.g., "needs to comply with ethical guidelines") and append targeted justification paragraphs to $x_i$ to neutralize these concerns.
-        - Case 3: Substantive but insufficient helpfulness ($h(y_i, q) < h^*$): Invoke `EnhanceObjectiveClarity`—have $g$ rewrite the topic, high-level goal, target audience, or illustrative examples in the template to better align with the original harmful goal $q$.
-    - **Mechanism**: The target model's thinking trace is treated as a "gradient"—every time it refuses, it reveals what it cares about, allowing for specific reasons to be written in the next turn. This is equivalent to black-box reward shaping where the feedback source is the LRM's own transparent CoT.
-    - **Design Motivation**: Previous jailbreaks relied on random mutation or hand-crafted template reuse. This paper uses precise feedback of "responding to exactly what the target says," leading to extremely fast convergence (most queries succeed in 1 turn).
+Directly asking a target "teach me how to make a bomb" inevitably triggers safety reviews during the deliberation phase. The first step of the attack is to leave the review without an object to scrutinize. AutoRAN uses the small, unaligned $g$ to generate a high-level reasoning $\tilde p$ for the harmful request $q$, pretending execution is already underway—breaking it into steps, providing key points, and offering examples. These elements are then populated into a narrative template (Educational, Role-playing, or Risk Disclosure) to create the initial prompt $x_0$. When a prompt resembles "an educator breaking down an adversarial topic, listing strategies A/B/C, and explaining the rationale," the target LRM's CoT is anchored to "my task is to complete the existing structure (elaborate on existing structure)" rather than "should I answer this request." Consequently, deliberation is bypassed, and the model enters execution mode directly.
 
-3.  **Weak-to-Strong + Self-Evaluation Judge Loop**:
-    - **Function**: $g$ performs three tasks—(a) simulating execution reasoning, (b) generating/rewriting prompts, and (c) acting as a judge to score helpfulness $h(y, q) \in [1, 10]$, where $\geq 7$ is success. The target $f$ is only accessed via black-box API, and the attacker relies entirely on $g$ (an 8B de-aligned small model).
-    - **Mechanism**: The de-aligned Qwen3-8B-abliterated has a refusal rate of <2% on harmful queries on StrongReject/HarmBench, while commercial LRMs have >98%—this alignment gap allows the small model to serve as a "tool" unhindered by its own safety mechanisms. To validate self-judge bias, the authors use gpt-4o / Gemini-2.5-Flash as external judges for cross-verification.
-    - **Design Motivation**: Weak-to-strong is not just an engineering choice—it reveals a deep risk: when strong LRMs coexist with weak de-aligned models, the latter can systematically attack the former due to similar reasoning structures but different safety budgets.
+The reason an 8B model can influence GPT-o3 is that high-level execution reasoning structures are highly similar across LRMs—the scaffolding built by the weak model is sufficient to trigger the strong model's execution framework. The fundamental difference from traditional persuasion attacks is that persuasion tries to convince the target "this request is reasonable," but deliberation is increasingly hard to persuade. AutoRAN does not persuade; it hands the model a context that seems already in progress, leaving deliberation with no point of leverage.
+
+**2. Feedback-Driven Tri-branch Refinement: Treating leaked CoT during refusal as attack gradients**
+
+An execution anchor might not succeed on the first try; the key lies in how it is modified after failure. AutoRAN treats the target's thinking trace as "black-box gradients"—every time it refuses, it articulates what it cares about, and the next turn specifically rewrites to address that concern. Three branches are handled based on the target's $i$-th response: In Case 1 (immediate refusal without CoT leakage), a different narrative template is chosen, and $g$ regenerates $x_0$ from scratch. In Case 2 (refusal with CoT $p_i$ leakage), `AddressCoTConcern` is called, where $g$ parses the specific concerns mentioned in $p_i$ (e.g., "must comply with ethical guidelines") and appends targeted justification paragraphs to $x_i$ to resolve them one by one. In Case 3 (substantive content provided but low helpfulness, $h(y_i, q) < h^*$), `EnhanceObjectiveClarity` is called, where $g$ rewrites the topic, high-level goal, target audience, and illustrative examples in the template to be closer to the original harmful goal $q$.
+
+Compared to previous jailbreaks that rely on random mutation or hand-crafted template reuse, this precise feedback of "modifying based on what the target says" ensures extremely fast convergence—most queries are broken in a single turn. Essentially, this is reward shaping under black-box conditions, where the feedback source is the transparent CoT that LRMs take pride in.
+
+**3. Weak-to-Strong Loop: An 8B unaligned model running the attack and self-evaluation independently**
+
+The entire pipeline requires only one model $g$ on the attacker's side, performing three tasks: simulating execution reasoning, generating/rewriting prompts, and acting as a judge to score helpfulness $h(y, q) \in [1, 10]$ (where $\geq 7$ denotes success). The target $f$ only exposes a black-box API. This is possible due to the massive alignment gap—the unaligned Qwen3-8B-abliterated has a refusal rate of <2% on StrongReject/HarmBench for harmful queries, while commercial LRMs have >98%. The small model is perfectly suited as a "tool" unhindered by its own safety mechanisms. To prevent self-judge overestimation, the authors used gpt-4o / Gemini-2.5-Flash as external judges for verification.
+
+The risks revealed by this closed loop are deeper than a single attack: when strongly aligned LRMs and weak unaligned models coexist in the same ecosystem, their similar reasoning structures but vastly different safety budgets allow weak models to be systematically cultivated into tools for attacking strong models with a very low barrier to entry.
 
 ### Loss & Training
-No training involved; this is a pure inference-time attack. Hyperparameters: $n_{\text{turn}} = 10$, $h^* = 7$. The template library is hot-swappable and refinement strategies are extensible. The paper also includes red-teaming experiments using AutoRAN-generated adversarial data for safety SFT, which can reduce ASR of aligned models by 92%.
+No training is involved; this is a pure inference-time attack. Hyperparameters: $n_{\text{turn}} = 10$, $h^* = 7$. Templates are hot-swappable, and refinement strategies are extensible. The paper also includes red-teaming experiments using adversarial data generated by AutoRAN for safety SFT, which reduced the ASR of aligned models by 92%.
 
 ## Key Experimental Results
 
-### Main Results (Success turn distribution; ASR near 100% within 10 turns)
+### Main Results (Success Turn Distribution, near 100% ASR within 10 turns)
 
-| Dataset | Victim Model | Success at Turn 1 | Turn 2 | Turn 3-5 | Turn 6-9 | Total Success / Total Samples |
+| Dataset | Victim Model | 1st Turn Success | 2nd Turn | 3-5 Turns | 6-9 Turns | Total Success / Total Samples |
 |---|---|---|---|---|---|---|
 | AdvBench | Gemini-2.5-Flash | 49 | 1 | 0 | 0 | 50/50 |
 | AdvBench | GPT-o3 | 50 | 0 | 0 | 0 | 50/50 |
@@ -82,46 +101,46 @@ No training involved; this is a pure inference-time attack. Hyperparameters: $n_
 | HarmBench | Gemini-2.5-Flash | 49 | 1 | 0 | 0 | 50/50 |
 | HarmBench | GPT-o4-mini | 31 | 11 | 7 | 1 | 50/50 |
 
-On GPT-o3 and Gemini-2.5-Flash, **almost all cases are broken in the first turn**. GPT-o4-mini and Claude-3.7 are slightly more stable but still reach 100% within 10 turns. External judge (gpt-4o) verification shows only a slight decrease in ASR, indicating responses are truly harmful rather than just "seemingly harmful."
+**Nearly all queries were broken in a single turn** on GPT-o3 and Gemini-2.5-Flash. GPT-o4-mini and Claude-3.7 were more stable but still reached 100% success within 10 turns. Verification by external judge (gpt-4o) showed only a small decrease in ASR, indicating the responses were genuinely harmful rather than just appearing so.
 
 ### Ablation Study
 
-| Configuration | Observation | Implication |
+| Configuration | Phenomenon | Implication |
 |---|---|---|
-| Only SimulateReasoning (no refinement) | Most queries pass in 1 turn; single-turn ASR near 100% on GPT-o3/Gemini | Execution simulation alone can pierce deliberation |
-| No SimulateReasoning (iterative rewrite only) | Significant drop in ASR; requires multiple turns to break through | The "Execution Anchor" is core; refinement is supplementary |
-| Safety SFT with AutoRAN data | ASR of high-ASR aligned models drops 92% | Can be used for red-teaming training |
-| Fresh session per turn (no history) | Still near 100% | Unrelated to multi-turn jailbreak paradigms; it is a single-point attack |
+| SimulateReasoning only (no refinement) | Most queries passed in 1 turn; single-turn ASR near 100% on GPT-o3 / Gemini | Execution simulation alone can penetrate deliberation |
+| No SimulateReasoning (iterative rewrite only) | Significant drop in ASR; multi-turn required to barely break through | "Execution anchor" is the core; refinement is a reinforcement |
+| Safety SFT with AutoRAN data | ASR of an aligned model dropped by 92% | Can be used inversely for red-teaming training |
+| Fresh session per turn (no history) | Still near 100% ASR | independent of multi-turn jailbreak paradigms; it is a single-point attack |
 
 ### Key Findings
-- **CoT Transparency = Attack Surface**: The publicized thinking process in LRMs is both an alignment feature and an inverse alignment gradient—refusal concerns tell attackers exactly what to change next.
-- **Weak-to-Strong Structural Similarity**: High structural similarity in high-level execution reasoning across LRMs allows an 8B model to act as a scaffolding generator for GPT-o3, lowering the threshold for using de-aligned small models as attack tools.
-- **Deliberation is Not an Immune Shield**: When a prompt places the model into an "active role," deliberation loses its object of inspection, and safety checks are skipped—a fundamental structural vulnerability in LRM safety mechanisms.
-- **Red-teaming Utility**: Feeding AutoRAN-produced attack data back into safety SFT can drop the ASR of aligned models by 92%, proving this data has training value beyond destructiveness.
+- **CoT Transparency = Attack Surface**: The publicly available thinking process of an LRM is both an alignment feature and an alignment "reverse gradient"—concerns voiced during refusal tell the attacker exactly what to change next.
+- **"Weak-to-Strong" Structural Similarity**: The high structural similarity in high-level execution reasoning across LRMs allows an 8B model to serve as a scaffolding generator for GPT-o3, making the barrier to using unaligned small models as attack tools extremely low.
+- **Deliberation is Not an Immune Shield**: When a prompt places the model in an "already executing role," the deliberation phase loses its object of inspection, causing safety checks to be skipped. This is a fundamental structural vulnerability in LRM safety mechanisms.
+- **Red-teaming Utility**: Feeding AutoRAN-generated attack data back into safety SFT significantly reduced model ASR, proving such attack data has training value beyond mere destruction.
 
 ## Highlights & Insights
-- **The paradigm of "Automated CoT Anchoring + Feedback Refinement"**: Upgrades jailbreaking from "trial and error" to "closed-loop optimization," elegantly replacing black-box gradients with the target model's CoT feedback.
-- **Weak-to-Strong Mirroring in Alignment**: Weak-to-strong is often discussed as "weak supervision of strong models," but this paper proves it holds on the attack side—weak de-aligned models can systematically attack strong aligned models.
-- **Portability of Execution Anchors**: The idea of "forcing the target into execution mode" is not limited to safety attacks—it can also be used to make strong LRMs skip lengthy thinking to produce answers directly (legal use), which is suitable for latency optimization.
-- **Fundamental Reflection on CoT Safety**: This paper essentially challenges the OpenAI deliberative alignment paradigm—if deliberation is exposed and easily bypassed, future safety mechanisms must protect the reasoning trace itself, not just the final output.
+- **The "Automated CoT Anchor + Feedback Refinement" Paradigm**: This evolves jailbreaking from "trial and error" to "closed-loop optimization" and treats the target model's CoT as a feedback signal, providing an elegant substitute for black-box gradients.
+- **Weak-to-Strong Mirroring in Alignment**: Previous discussions of weak-to-strong mainly concerned "weak supervision of strong models." This paper proves it also holds for the attack side—weak unaligned models can systematically attack strongly aligned ones.
+- **Transferability of Execution Anchors**: The concept of "forcing the target into execution mode" is not limited to safety attacks—it could also be used to bypass lengthy deliberation in LRMs to produce answers directly (a legitimate use case) for latency optimization.
+- **Fundamental Reflection on CoT Safety**: The paper essentially challenges OpenAI's deliberative alignment paradigm—if deliberation is exposed and easily bypassed, future safety mechanisms must protect the reasoning trace itself rather than just the final output.
 
 ## Limitations & Future Work
-- Experiments only cover 3 commercial LRMs + Claude-3.7, lacking systematic testing on open-source LRMs (e.g., DeepSeek-R1); the robustness of the attack against different RLHF recipes is unknown.
-- The weak attacker must be a model capable of outputting CoT-style scaffolding; whether this works for small LMs with no CoT ability remains unverified.
-- Using $g$ as the judge introduces self-evaluation bias; while external judges were used, overestimation may still occur. The helpfulness threshold $h^*=7$ is empirical, and ASR under stricter thresholds is not fully reported.
-- The "danger level" after a successful attack is not quantified—does it only generate a framework or provide actionable details? More granular harmfulness classification is needed.
+- The experiments only cover three commercial LRMs plus Claude-3.7 and lack systematic testing on open-source LRMs like DeepSeek-R1; robustness across different RLHF recipes remains unknown.
+- The weak attacker must be a model capable of outputting CoT-style scaffolding; whether this works for small LMs completely lacking CoT capabilities is unverified.
+- The judge is also $g$. Although self-evaluation bias was mitigated with external judges, overestimation is still possible. The helpfulness threshold $h^*=7$ is empirical; ASR under stricter thresholds is not fully reported.
+- The "danger level" after a successful attack is not quantified—does it only generate a framework or provide actionable details? Finer harmfulness grading is needed.
 
 ## Related Work & Insights
-- **vs H-CoT**: Both rely on hijacking reasoning traces, but H-CoT uses non-scalable manual narratives; AutoRAN automates the pipeline and adapts via feedback.
-- **vs Mousetrap**: Mousetrap uses static transformation rules without reading target feedback; AutoRAN uses the thinking trace as a gradient, leading to much faster convergence.
-- **vs PolicyPuppetry**: PolicyPuppetry uses XML/JSON policy files for obfuscation; AutoRAN does not rely on obfuscation but rather structurally anchors the execution mode.
-- **vs standard PAIR / TAP (multi-round jailbreak)**: These methods rely on accumulating persuasiveness through in-context history; AutoRAN uses independent windows per turn, proving single-point attacks suffice and are harder to detect by dialogue-level defenses.
+- **vs H-CoT**: Both rely on hijacking reasoning traces, but H-CoT uses manual narratives and is not scalable; AutoRAN automates the pipeline and adapts via feedback.
+- **vs Mousetrap**: Mousetrap uses static transformation rules without reading target feedback; AutoRAN uses the target's thinking trace as a gradient, resulting in much faster convergence.
+- **vs PolicyPuppetry**: PP mimics XML/JSON policy documents for obfuscation; AutoRAN does not rely on obfuscation but directly anchors the execution mode, which is more structural.
+- **vs Standard PAIR / TAP (multi-round jailbreak)**: These methods rely on accumulating persuasiveness through in-context history; AutoRAN explicitly uses independent windows for each turn, proving that single-point attacks are sufficient and harder to identify by dialogue-level defenses.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of execution simulation, feedback refinement, and weak-to-strong is a systematic first and a wake-up call for the LRM safety community.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage across three benchmarks, four top-tier LRMs, internal/external judges, and red-teaming SFT experiments.
-- Writing Quality: ⭐⭐⭐⭐ The three refinement cases are explained clearly, complemented by pseudo-code, templates, and case studies.
-- Value: ⭐⭐⭐⭐⭐ Directly exposes the "CoT-as-defense" illusion and provides a data pipeline usable for red-teaming.
+- Novelty: ⭐⭐⭐⭐⭐ The systematic combination of execution simulation, feedback refinement, and weak-to-strong is a wake-up call for the LRM safety community.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of three major benchmarks across four top-tier LRMs with internal/external judges and red-teaming SFT experiments is strong.
+- Writing Quality: ⭐⭐⭐⭐ The three refinement cases are explained clearly, complemented by pseudocode, template diagrams, and case studies.
+- Value: ⭐⭐⭐⭐⭐ Directly exposes the illusion of "CoT-as-defense" and provides a data pipeline usable for red-teaming.
 
 <!-- RELATED:START -->
 

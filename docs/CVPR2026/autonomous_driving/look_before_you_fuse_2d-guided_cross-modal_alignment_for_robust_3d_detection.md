@@ -2,111 +2,106 @@
 title: >-
   [Paper Note] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Object Detection] This work identifies that feature misalignment in LiDAR-Camera fusion is concentrated at **foreground-background depth discontinuity boundaries**…
+  [CVPR 2026][Autonomous Driving][Paper Note] This paper reveals that feature misalignment in LiDAR-Camera fusion is primarily concentrated at **foreground-background depth discontinuity boundaries**. It proposes three collaborative modules—PGDC (Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structure-Guided Depth Modulato
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "3D Object Detection"
-  - "LiDAR-Camera Fusion"
-  - "Cross-Modal Alignment"
-  - "BEV Perception"
-  - "Depth Estimation"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 930a88d6836b6068
+content_hash: cba7223b5545b0dd
 ---
-
 # Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2507.16861](https://arxiv.org/abs/2507.16861)  
-**Code**: N/A  
-**Area**: Autonomous Driving
+**Code**: None  
+**Area**: Autonomous Driving  
 **Keywords**: 3D Object Detection, LiDAR-Camera Fusion, Cross-Modal Alignment, BEV Perception, Depth Estimation
 
 ## TL;DR
 
-This work identifies that feature misalignment in LiDAR-Camera fusion is concentrated at **foreground-background depth discontinuity boundaries**, and proposes three synergistic modules — PGDC (2D Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structural Guidance Depth Modulator) — to proactively correct misalignment prior to fusion, achieving state-of-the-art mAP of 71.5% and NDS of 73.6% on the nuScenes validation set.
+This paper reveals that feature misalignment in LiDAR-Camera fusion is primarily concentrated at **foreground-background depth discontinuity boundaries**. It proposes three collaborative modules—PGDC (Prior-Guided Depth Calibration), DAGF (Discontinuity-Aware Geometric Fusion), and SGDM (Structure-Guided Depth Modulator)—to actively correct misalignment before fusion. The method achieves SOTA performance on the nuScenes validation set with 71.5% mAP and 73.6% NDS.
 
 ## Background & Motivation
 
-LiDAR-Camera fusion is the dominant paradigm for 3D perception in autonomous driving. Cameras provide rich semantic information but lack accurate depth, while LiDAR offers precise geometry but is sparse and semantically impoverished. Fusing both modalities into a unified Bird's-Eye View (BEV) representation is central to current state-of-the-art methods such as BEVFusion.
+LiDAR-Camera fusion is a dominant paradigm in autonomous driving 3D perception. Cameras provide rich semantic information but lack accurate depth, while LiDAR provides precise geometry but is sparse and lacks semantics. Fusing both into a unified BEV representation is the core approach of current SOTA methods like BEVFusion.
 
-However, these methods face a **fundamental technical bottleneck: cross-modal spatial misalignment**, which arises from two sources:
+However, these methods face a **fundamental technical bottleneck: cross-modal spatial misalignment**. Misalignment stems from two sources:
 
-**Extrinsic calibration error**: imprecise relative poses between sensors.
+**Background**:
+- **Extrinsic Calibration Errors**: Inaccurate relative poses between sensors.
+- **Rolling Shutter Effect**: Motion distortion caused by row-by-row exposure in CMOS cameras.
 
-**Rolling shutter effect**: motion distortion caused by the row-by-row exposure of CMOS cameras.
+**Limitations of Prior Work**:
+Existing strategies have fundamental flaws:
+- **TransFusion**: Uses attention to query single-modality features, avoiding projection errors but **sacrificing complementary information**.
+- **MetaBEV/RobBEV**: Designs more robust fusion modules but **cannot correct already misaligned features**, effectively "cleverly fusing erroneous data."
+- **GraphBEV**: Global alignment techniques can eliminate misalignment in high-depth-gradient regions but **over-smooth already aligned areas**, damaging correct depth values.
 
-This misalignment introduces **projection errors** with two consequences:
-- **Depth supervision contamination**: erroneous LiDAR projections provide noisy depth labels for the camera branch.
-- **Feature fusion degradation**: semantically mismatched image and geometric features are associated in BEV space.
+**Key Insight**:
+The **Core Idea** of this paper is that **misalignment is not randomly distributed but highly predictable**—it concentrates at boundaries where sharp depth jumps occur between foreground objects and the background. Projection errors are larger at long ranges and most severe at depth discontinuities. **2D object detectors can reliably locate these regions**.
 
-Existing mitigation strategies each carry fundamental shortcomings:
-- **TransFusion**: queries single-modality features via attention, avoiding projection error but **sacrificing complementary information**.
-- **MetaBEV/RobBEV**: design more robust fusion modules but **cannot correct already-misaligned features** — effectively "cleverly fusing incorrect data."
-- **GraphBEV**: applies global alignment that resolves misalignment in high-depth-gradient regions but **over-smooths already-aligned regions**, corrupting correct depth values.
-
-The **core insight** of this paper is that **misalignment is not randomly distributed but highly predictable** — it concentrates at boundaries where abrupt depth transitions occur between foreground objects and the background. Projection errors grow with distance and are most severe at depth discontinuities. Crucially, **2D object detectors can reliably localize these regions**.
-
-The proposed strategy is therefore to **"Look Before You Fuse"**: use 2D object priors to proactively identify and correct misalignment before fusion occurs, while leaving already-aligned regions intact.
+**Goal**:
+The strategy is "**Look Before You Fuse**"—using 2D object priors to actively locate and correct misalignment before fusion occurs, while keeping already aligned regions intact.
 
 ## Method
 
 ### Overall Architecture
 
-Built upon the BEVFusion baseline, the pipeline proceeds as follows:
+To address cross-modal spatial misalignment, the framework corrects misaligned depth that would otherwise contaminate camera branch supervision and lead to incorrect BEV feature association. Built upon BEVFusion, the LiDAR branch generates BEV features via TransFusion-L, while the camera branch extracts features using Swin Transformer + FPN. PGDC utilizes 2D box priors for local depth calibration and feature enhancement. DAGF converts calibrated sparse depth into dense depth and gradient representations. SGDM employs gated attention to modulate pixel-wise depth prediction using geometric cues. Finally, features are projected into BEV via LSS and fused with LiDAR features for 3D detection.
 
-1. LiDAR branch → TransFusion-L → LiDAR BEV features
-2. Camera branch → Swin Transformer + FPN → image features
-3. **PGDC**: localizes misaligned regions via 2D detection boxes → local depth correction + feature enhancement
-4. **DAGF**: generates dense depth + gradient representations from the corrected sparse depth
-5. **SGDM**: gated attention fusion of image features and geometric representations → predicts per-pixel depth distributions
-6. LSS projection to BEV → fusion with LiDAR BEV → 3D detection
+```mermaid
+graph TD
+    L["LiDAR Point Cloud"] --> LB["LiDAR Branch<br/>TransFusion-L → LiDAR BEV Features"]
+    I["Multi-view Images"] --> CB["Camera Branch<br/>Swin Transformer + FPN → Image Features"]
+    I --> Y["YOLOv9 → 2D Box Priors"]
+    subgraph PGDC["Prior-Guided Depth Calibration (PGDC)"]
+        direction TB
+        DAM["Depth Alignment Module (DAM)<br/>In-box KD-Tree → 4 Critical Neighbors → Calibrated Depth"]
+        FEM["Feature Enhancement Module (FEM)<br/>Category-specific Scale for Small Objects"]
+    end
+    Y --> PGDC
+    L --> DAM
+    CB --> FEM
+    PGDC --> DAGF["Discontinuity-Aware Geometric Fusion (DAGF)<br/>Error Correction Mask + Densification → Depth ⊕ Gradient"]
+    DAGF --> SGDM["Structure-Guided Depth Modulator (SGDM)<br/>Gated Attention + Residual Semantic Preservation → Pixel-wise Depth"]
+    SGDM --> LSS["LSS Projection → Camera BEV"]
+    LB --> FUSE["BEV Fusion"]
+    LSS --> FUSE
+    FUSE --> DET["3D Detection Head"]
+```
 
 ### Key Designs
 
-1. **Prior-Guided Depth Calibration (PGDC)**: Composed of two sub-modules:
+**1. Prior-Guided Depth Calibration (PGDC): Targeted Correction at Discontinuity Boundaries**
 
-   **2D-Guided Depth Alignment Module (DAM)**: YOLOv9 generates 2D detection boxes $\{B_j^{(i)}\}$ on the image. For each LiDAR projection point $p$ (with depth $d_p$) within a box, a KD-Tree is used to retrieve 10 nearest neighbors $\mathcal{N}_p$, from which the **2 shallowest** and **2 deepest** points are selected to form 4 critical neighbors $\mathcal{N}_{\text{critical}}$. This selection simultaneously captures depth consistency within objects and foreground-background depth discontinuities. The original depth and the four neighbor depths are concatenated into a 5-channel feature, which is passed through a lightweight convolutional block to yield the calibrated depth:
+**Design Motivation**: Misalignment is concentrated at FG-BG depth boundaries. PGDC restricts correction to 2D boxes to avoid affecting aligned areas.
+- **Mechanism**: **Depth Alignment Module (DAM)** uses YOLOv9 2D boxes $\{B_j^{(i)}\}$. For each LiDAR point $p$, it finds 10 nearest neighbors via KD-Tree and selects 4 critical neighbors $\mathcal{N}_{\text{critical}}$ (2 minimum and 2 maximum depths) to capture depth consistency and jumps. These are concatenated $f_p = \text{concat}(d_p, \{d_q\}_{q \in \mathcal{N}_{\text{critical}}})$ and passed through a light conv to get $d'_{\text{aligned}}(p)$.
+- **Feature Enhancement Module (FEM)** uses category-specific coefficients $\alpha_k$ to scale image features $F_{\text{enhanced}}(p,c) = \alpha_k \cdot F_{\text{img}}(p,c)$, where smaller objects (pedestrians) get larger $\alpha_k$ to avoid being submerged during fusion.
 
-    $f_p = \text{concat}(d_p, \{d_q\}_{q \in \mathcal{N}_{\text{critical}}})$
-    $d'_{\text{aligned}}(p) = \text{ReLU}(\text{BN}(\text{Conv}(f_p)))$
+**2. Discontinuity-Aware Geometric Fusion (DAGF): Error-Correcting Densification**
 
-   **2D Feature Enhancement Module (FEM)**: Image features within detection boxes are amplified using class-specific hyperparameters $\alpha_k$:
+- **Mechanism**: Calculates difference $\Delta = |D_{\text{raw}} - D_{\text{aligned}}|$. Pixels exceeding 10% deviation are masked as unreliable, suppressing errors from poor 2D priors.
+- **Function**: The sparse map is divided into 20×20 blocks. Each block computes average depth $d_{\text{avg}}$ (for densification) and maximum gradient $g_{\max}$ (for structural info). The final 2-channel feature $F_{\text{FA}} = [D_{\text{dense}} \oplus G_{\text{dense}}]$ explicitly guides the fusion.
 
-    $F_{\text{enhanced}}(p,c) = \alpha_k \cdot F_{\text{img}}(p,c)$
+**3. Structure-Guided Depth Modulator (SGDM): Geometric Modulation of Depth**
 
-   Larger $\alpha_k$ values are assigned to small objects (pedestrians, traffic cones) and smaller values to large objects (trucks, buses). Channel-wise adaptive recalibration is then applied via an SE block. The motivation is that small object features are easily overwhelmed during fusion and thus require stronger amplification.
-
-2. **Discontinuity-Aware Geometric Fusion (DAGF)**: Starting from the PGDC-calibrated sparse depth map $D_{\text{aligned}}$ and the original sparse depth map $D_{\text{raw}}$:
-
-   **Discrepancy mask**: The difference $\Delta = |D_{\text{raw}} - D_{\text{aligned}}|$ is computed; pixels where the discrepancy exceeds 10% of the original depth are deemed unreliable and masked out. This serves as PGDC's **self-correction mechanism**: when inaccurate 2D priors cause over-smoothing, the resulting large discrepancy is automatically suppressed.
-
-   **Patch-wise densification + gradient extraction**: The masked sparse map is divided into non-overlapping $20 \times 20$ patches, and two statistics are computed per patch:
-    - Mean depth $d_{\text{avg}}$: average of all valid points in the patch → densified by broadcasting to the entire patch.
-    - Maximum gradient $g_{\max}$: maximum pairwise depth difference within the patch → identifies depth discontinuity regions.
-
-   The final output is a 2-channel feature map: $F_{\text{FA}} = [D_{\text{dense}} \oplus G_{\text{dense}}]$
-
-3. **Structural Guidance Depth Modulator (SGDM)**: A gated attention fusion module. Camera image features and DAGF geometric representations are each encoded via parallel convolutional layers, concatenated, and passed through a gated attention mechanism to generate a spatial attention map that modulates depth prediction. A key design choice is the **residual connection** that preserves the original camera features, preventing semantic information from being diluted during fusion. The output is a per-pixel discrete depth distribution (i.e., depth estimation is formulated as a classification problem).
+- **Mechanism**: Parallel convolutions encode camera features and DAGF geometric representations. Gated attention generates spatial maps to modulate depth prediction.
+- **Novelty**: Uses residual connections to preserve original camera semantics, preventing semantic dilution during geometric fusion. The output is a pixel-wise discrete depth distribution for LSS projection.
 
 ### Loss & Training
 
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{focal}} + \mathcal{L}_{\text{edge}} + \mathcal{L}_{\text{cls}} + \mathcal{L}_{\text{box}}$$
 
-- **Focal Loss** $\mathcal{L}_{\text{focal}}$: supervised by the dense depth map $D_{\text{dense}}$ ($\gamma=2.0, \alpha=0.25$).
-- **Edge-Critical Loss** $\mathcal{L}_{\text{edge}}$: uses the gradient map $G_{\text{dense}}$ as a weight to amplify the loss at depth discontinuity regions, compelling the network to achieve higher accuracy at structurally critical locations:
-
+- **Focal Loss** $\mathcal{L}_{\text{focal}}$: Targets $D_{\text{dense}}$ with $\gamma=2.0, \alpha=0.25$.
+- **Edge-Critical Loss** $\mathcal{L}_{\text{edge}}$: Uses gradient map $G_{\text{dense}}$ as weights to amplify losses in depth discontinuity regions.
    $$\mathcal{L}_{\text{edge}} = \frac{1}{|\mathcal{V}|}\sum_{(u,v) \in \mathcal{V}} G^{(i)}(u,v) \cdot l_{\text{focal}}(u,v)$$
-
-- Training: 8× RTX 4090 GPUs; Swin Transformer backbone (heads: 3/6/12/24).
 
 ## Key Experimental Results
 
 ### Main Results — nuScenes Validation Set
 
 | Method | Conference | mAP(%) | NDS(%) |
-|--------|------------|--------|--------|
+|------|------|--------|--------|
 | TransFusion-L | CVPR 22 | 65.5 | 70.2 |
 | BEVFusion-PKU | NeurIPS 22 | 67.9 | 71.0 |
 | BEVFusion-MIT | ICRA 23 | 68.5 | 71.4 |
@@ -114,75 +109,72 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{focal}} + \mathcal{L}_{\text{e
 | GraphBEV | ECCV 24 | 70.1 | 72.9 |
 | **Ours** | — | **71.5** | **73.6** |
 
-Compared to GraphBEV: mAP +1.4%, NDS +0.7%. On Argoverse 2, the proposed method achieves 41.7% mAP.
+**Gain** over GraphBEV: +1.4% mAP, +0.7% NDS. Achieved 41.7% mAP on Argoverse 2.
 
-### Ablation Study — Contribution of Each Module (nuScenes)
+### Ablation Study — Module Contributions (nuScenes)
 
-| PGDC | DAGF | SGDM | mAP(%) | NDS(%) | Latency Increase (ms) |
-|------|------|------|--------|--------|-----------------------|
+| PGDC | DAGF | SGDM | mAP(%) | NDS(%) | Latency Gain (ms) |
+|------|------|------|--------|--------|-------------|
 | ✗ | ✗ | ✗ | 67.9 | 71.0 | +0.0 |
 | ✓ | ✗ | ✓ | 69.8 | 72.5 | +13.0 |
 | ✗ | ✓ | ✓ | 69.0 | 71.6 | +7.0 |
 | ✓ | ✓ | ✓ | **71.5** | **73.6** | +15.0 |
 
-### Fine-Grained Ablation — Intra-Module Components
+### Fine-grained Ablation — Internal Components
 
 | DAM | FEM | $D_{\text{dense}}$ | $G_{\text{dense}}$ | mAP(%) | NDS(%) |
-|-----|-----|--------------------|--------------------|--------|--------|
+|-----|-----|-----|-----|--------|--------|
 | ✗ | ✗ | ✗ | ✗ | 67.9 | 71.0 |
 | ✓ | ✗ | ✗ | ✗ | 69.4 | 72.1 |
 | ✓ | ✓ | ✗ | ✗ | 69.8 | 72.5 |
 | ✓ | ✓ | ✓ | ✗ | 70.8 | 73.1 |
 | ✓ | ✓ | ✓ | ✓ | **71.5** | **73.6** |
 
-### Impact of 2D Prior Quality
+### 2D Prior Quality Impact
 
 | 2D Prior Source | mAP(%) | NDS(%) |
-|-----------------|--------|--------|
-| Random prior | 68.5 | 71.2 |
-| No prior | 69.0 | 71.6 |
-| Full-image prior | 69.4 | 71.8 |
+|-----------|--------|--------|
+| Random Prior | 68.5 | 71.2 |
+| No Prior | 69.0 | 71.6 |
+| Full Image | 69.4 | 71.8 |
 | YOLO-X | 70.3 | 72.5 |
 | YOLOv9 | 71.5 | 73.6 |
 | Ground Truth | 73.5 | 74.2 |
 
 ### Key Findings
 
-- **Each module contributes independently and significantly**: DAM alone yields +1.5 mAP; FEM adds +0.4; densification adds +1.0; gradient map adds +0.7 — each component incrementally improves performance.
-- **2D detection quality directly determines final performance**: the gap between random priors (68.5) and GT priors (73.5) is 5% mAP, meaning advances in 2D detection directly translate to 3D detection gains.
-- **Random priors are worse than no priors**: random boxes are not merely uninformative but harmful (68.5 < 69.0), as they incorrectly modify already-aligned regions.
-- **PGDC offers exceptional cost-effectiveness**: a gain of 3.6% mAP is achieved at only +15 ms additional latency.
-- **DAGF's self-correction mechanism is effective**: the discrepancy mask reliably filters out errors introduced by PGDC when 2D priors are inaccurate.
+- **Significant individual module contributions**: DAM alone adds +1.5 mAP, FEM adds +0.4, densification adds +1.0, and the gradient map adds +0.7.
+- **2D detection quality directly impacts 3D performance**: The gap between random priors (68.5) and GT (73.5) shows that 3D detection improves alongside 2D detectors.
+- **Random Prior < No Prior**: Random boxes are harmful (68.5 vs 69.0) as they incorrectly modify aligned regions.
+- **PGDC efficiency**: A 15ms latency increase yields a significant 3.6% mAP improvement.
+- **DAGF Self-Correction**: The difference mask effectively filters errors introduced by inaccurate 2D priors in PGDC.
 
 ## Highlights & Insights
 
-- The insight that **"misalignment is predictable"** is particularly profound: it connects what appears to be random sensor error to structured scene properties (foreground-background boundaries).
-- The **"Look Before You Fuse" paradigm** is fundamentally more principled than "fuse first, then repair" — errors are eliminated before they propagate.
-- The DAGF discrepancy mask is an elegant design: it automatically reverts to the original depth when PGDC over-corrects, providing a built-in safety net.
-- The Edge-Critical Loss incorporates structural priors into the training objective by weighting Focal Loss with the gradient map.
-- The fine-grained ablation study (Table 4) provides a textbook-style analysis of incremental module contributions.
+- **Predictable Misalignment**: The insight that sensor errors are not random but tied to structural scene attributes (FG-BG boundaries) is profound.
+- **"Look Before You Fuse"**: Eliminating errors before they propagate is fundamentally more sound than post-fusion patching.
+- **Safety Net**: The DAGF difference mask provides a robust fallback when 2D priors are inaccurate.
+- **Structural Guidance**: Edge-Critical Loss incorporates geometric structure directly into the training objective.
 
 ## Limitations & Future Work
 
-- Performance depends on the quality of the 2D object detector and may degrade in scenarios where 2D detection is challenging (e.g., extreme weather, severe occlusion).
-- The additional computational overhead introduced by YOLOv9 is not quantified; reported latency figures cover only the proposed modules, excluding the 2D detector.
-- The patch-wise densification uses a fixed $20 \times 20$ block size; the impact of this choice on regions of varying distance and point density is not analyzed.
-- The class-specific enhancement parameters $\alpha_k$ are manually set hyperparameters; whether they can be learned automatically remains an open question.
-- Evaluation is limited to nuScenes and Argoverse 2; results on larger-scale datasets such as Waymo are absent.
+- **2D Dependency**: Performance may degrade in scenarios where 2D detection is difficult (extreme weather, severe occlusion).
+- **YOLO Overhead**: The total computational cost including the 2D detector was not fully quantified.
+- **Hyperparameter Sensitivity**: The block size for densification and category scale $\alpha_k$ are manually set.
+- **Dataset Scaling**: Performance on larger datasets like Waymo remains to be verified.
 
 ## Related Work & Insights
 
-- **GraphBEV** (ECCV 2024) is the most direct point of comparison: it performs global alignment but over-smooths, whereas the proposed method performs local, precise alignment.
-- **BEVFusion-PKU/MIT** serve as baselines that demonstrate the performance ceiling imposed by misalignment on fusion methods.
-- The paradigm of 2D priors informing 3D improvements is broadly generalizable — for instance, 2D tracking priors could assist fusion in 3D tracking.
-- Depth estimation quality in the LSS (Lift-Splat-Shoot) framework is a bottleneck for camera-based BEV methods; this paper addresses the problem from an alignment perspective.
+- **GraphBEV** (ECCV 2024): Performs global alignment but suffers from over-smoothing; **Ours** performs precise local alignment.
+- **BEVFusion**: Demonstrated the baseline constraints imposed by misalignment.
+- **LSS Paradigm**: Depth estimation quality remains a bottleneck for camera-BEV; this work tackles it via pre-fusion alignment.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The insight that misalignment concentrates at boundaries is profound; the "Look Before You Fuse" paradigm is original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Ablations are exceptionally detailed (5 tables), with 2D prior sensitivity analysis and cross-dataset validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Figure 1 is highly intuitive; the motivation is communicated clearly.
-- **Value**: ⭐⭐⭐⭐ BEV fusion is the dominant approach in industry; alignment improvements carry direct engineering value.
+- **Novelty**: ⭐⭐⭐⭐ Deep insight into boundary-focused misalignment.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive ablation (5 tables) and sensitivity analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and intuitive illustrations.
+- **Value**: ⭐⭐⭐⭐ Direct engineering value for industrial BEV fusion.
 
 ## Rating
 - Novelty: TBD
@@ -196,11 +188,11 @@ Compared to GraphBEV: mAP +1.4%, NDS +0.7%. On Argoverse 2, the proposed method 
 
 ## Related Papers
 
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
+- [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
+- [\[ECCV 2024\] GraphBEV: Towards Robust BEV Feature Alignment for Multi-Modal 3D Object Detection](../../ECCV2024/autonomous_driving/graphbev_towards_robust_bev_feature_alignment_for_multi-modal_3d_object_detectio.md)
 - [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
-- [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](../../AAAI2026/autonomous_driving/driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
-- [\[CVPR 2026\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
-- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
 
 </div>
 

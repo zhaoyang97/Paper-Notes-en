@@ -2,171 +2,164 @@
 title: >-
   [Paper Note] ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 description: >-
-  [CVPR2026][Segmentation][personalized diffusion models] This paper proposes ConceptPrism, which introduces image-level residual tokens and cross-image repulsion losses to automatically disentangle shared target concepts…
+  [CVPR 2026][Segmentation][Textual Inversion] ConceptPrism is proposed to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models. By introducing image-level residual tokens and cross-image exclusion loss, the method achieves state-of-the-art performance across CLIP-T, DINO, and CLIP-I metrics
 tags:
-  - "CVPR2026"
-  - "Segmentation"
-  - "personalized diffusion models"
-  - "concept disentanglement"
-  - "residual token optimization"
-  - "Textual Inversion"
-  - "LoRA"
-  - "contrastive learning"
+  - CVPR 2026
+  - Segmentation
+  - Textual Inversion
+  - LoRA
 date: 2026-05-08
-content_hash: dc6eee4a2e47acb1
+content_hash: 162422335888ac25
 ---
-
 # ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.19575](https://arxiv.org/abs/2602.19575)  
-**Code**: To be confirmed  
-**Area**: Image Segmentation
-**Keywords**: personalized diffusion models, concept disentanglement, residual token optimization, Textual Inversion, LoRA, contrastive learning
+**Code**: TBD  
+**Area**: Image Segmentation  
+**Keywords**: Personalized Diffusion Models, Concept Disentanglement, Residual Token Optimization, Textual Inversion, LoRA, Contrastive Learning
 
 ## TL;DR
 
-This paper proposes ConceptPrism, which introduces image-level residual tokens and cross-image repulsion losses to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models, achieving state-of-the-art performance on DreamBench across all three metrics: CLIP-T, DINO, and CLIP-I.
+ConceptPrism is proposed to automatically disentangle shared target concepts from image-specific residual information in personalized T2I diffusion models. By introducing image-level residual tokens and cross-image exclusion loss, the method achieves state-of-the-art performance across CLIP-T, DINO, and CLIP-I metrics on DreamBench.
 
 ## Background & Motivation
 
-1. **Concept entanglement in personalized T2I**: Methods such as Textual Inversion and DreamBooth learn concept tokens from a small number of images, but the learned tokens inevitably conflate the target concept (e.g., the appearance of a specific dog) with image-specific information (e.g., background, pose, and lighting).
-2. **Concrete consequences of entanglement**: When generating new scenes, residual information "leaks" into the output—for instance, indoor background elements from training images may appear in "a [V] dog on the beach"—degrading text alignment and reducing generation diversity.
-3. **Limitations of existing disentanglement methods**: Break-A-Scene requires segmentation mask annotations; Custom Diffusion only indirectly mitigates entanglement by constraining the fine-tuned parameters; Cones requires manual specification of concept-corresponding layers—all relying on additional supervision or hand-crafted priors.
-4. **Cross-image contrast as a disentanglement signal**: Different images of the same concept share target information while each carrying unique residual information; cross-image contrastive learning can naturally separate shared from image-specific components without any extra annotation.
-5. **Information allocation in token space**: When multiple tokens are learned without explicit constraints, all tokens redundantly encode the same information; a mechanism is needed to ensure different tokens serve distinct roles.
+1.  **Concept entanglement in personalized T2I**: Methods like Textual Inversion and DreamBooth learn concept tokens from a few images, but these tokens inevitably conflate the target concept (e.g., a specific dog's appearance) with image-specific information (e.g., background, pose, lighting).
+2.  **Harms of entanglement**: When generating new scenes, residual information "leaks" into the output—for example, elements of an indoor background from training images might appear in a "dog on a beach" prompt, leading to reduced text alignment and lower generation diversity.
+3.  **Limitations of prior work**: Break-A-Scene requires segmentation mask annotations, Custom Diffusion only indirectly mitigates the issue by limiting fine-tuning parameters, and Cones requires manual specification of concept-related layers—all of which depend on extra supervision or priors.
+4.  **Disentanglement signals in cross-image contrast**: Different images of the same concept share the target information but possess unique residual details. Cross-image contrast can naturally separate shared vs. specific components without additional annotations.
+5.  **Information allocation in token space**: When learning multiple tokens without explicit constraints, all tokens redundantly encode the same information; a mechanism is needed to ensure different tokens perform distinct roles.
 
 ## Core Problem
 
-How can a clean concept representation be learned from a small number of reference images—without additional annotations—such that it retains only the shared target concept while stripping away image-specific residual information (background, pose, lighting, etc.)?
+How to learn a pure concept representation from a small set of reference images without extra annotations, such that it contains only the shared target concept while stripping away image-specific residual information (background, pose, lighting, etc.)?
 
 ## Method
 
 ### Overall Architecture
 
-ConceptPrism defines two types of learnable tokens: a single shared target token $t_{target}$ (encoding the cross-image shared concept) and per-image residual tokens $t_{residual}^{(i)}$ (absorbing the image-specific information of the $i$-th image). Joint optimization via a reconstruction loss and a repulsion loss enables automatic concept disentanglement.
+ConceptPrism addresses the entanglement between concepts and image-specific information in personalized T2I. It assigns two types of learnable tokens to each concept: a global target token $t_{target}$ shared across all reference images to capture recurring target concepts, and an image-specific residual token $t_{residual}^{(i)}$ for each image to absorb unique background, pose, and lighting details. The process consists of two stages: first, the U-Net is frozen while optimizing these tokens (using reconstruction loss to ensure the combination of "target + residual" can reconstruct the original image, and a cross-image exclusion loss to eject shared information from residual tokens). Second, LoRA is integrated into attention layers for joint fine-tuning to enhance model-level fidelity. During inference, only the purified target token is used, while all residual tokens are discarded.
 
-### Token Definition and Initialization
+```mermaid
+graph TD
+    A["N Reference Images<br/>Sharing one target concept"]
+    subgraph INIT["Asymmetric Initialization"]
+        direction TB
+        B["Target Token: Random Initialization<br/>(Information Vacuum)"]
+        C["Residual Token: CLIP mean embedding<br/>of VLM-generated image captions"]
+    end
+    A --> INIT
+    subgraph OPT["Stage 1: Token Optimization (Frozen U-Net, 200 steps)"]
+        direction TB
+        D["Reconstruction Loss<br/>Target with Residual(i) restores Image i"]
+        E["Cross-image Exclusion Loss<br/>Residual(i) as condition for Image j≠i<br/>→ Approximates null condition"]
+    end
+    INIT --> OPT
+    OPT -->|"L_total = L_rec + β·L_excl"| F["Stage 2: Fine-tuning (120 steps)<br/>Jointly tune LoRA in attention layers<br/>+ Token embeddings"]
+    F --> G["Inference: Use purified target token only<br/>Discard residual tokens, generate with any prompt"]
+```
 
-- **Target token $t_{target}$**: Randomly initialized and shared across all images, responsible for learning a clean representation of the target concept. Random initialization creates an "information vacuum," which is filled with cross-image shared concept information driven by the reconstruction loss.
-- **Residual tokens $\{t_{residual}^{(i)}\}_{i=1}^N$**: One token per reference image, initialized with the CLIP embedding of a descriptive caption for that image. Captions are automatically generated by BLIP-2 (e.g., "a photo of a dog sitting on a couch"), providing rich image-level initial information.
-- **Asymmetric initialization is key**: The target token learns shared signals from scratch, while residual tokens start from image captions and discard the shared components; the two are complementary.
+### Key Designs
 
-### Reconstruction Loss $\mathcal{L}_{recon}$
+**1. Asymmetric Initialization: Establishing Role Differentiation**
 
-The conditioning "[$t_{target}$] with [$t_{residual}^{(i)}$]" should reconstruct the $i$-th reference image $x^{(i)}$:
+Entanglement often stems from multiple tokens redundantly encoding the same information. ConceptPrism utilizes initialization to enforce division of labor. The target token is randomly initialized, creating an "information vacuum" that naturally fills with recurring cross-image content (the shared concept) under reconstruction loss. Unlike previous methods, it does not rely on a class noun prior. Conversely, each residual token is initialized with the mean CLIP embedding of an image caption (8–32 words, automatically generated by a VLM like Gemini 2.5 Flash). Starting with rich image details, the residual token only needs to "yield" shared parts to the target token. This "start from zero vs. start from full" design guides information flow naturally.
+
+**2. Reconstruction Loss: Establishing Information Conservation**
+
+Before disentanglement, an "information conservation" anchor is required to prevent the loss of target concepts when pushing them out of residual tokens. The reconstruction loss requires that the condition "[$t_{target}$] with [$t_{residual}^{(i)}$]" can reconstruct the $i$-th reference image $x^{(i)}$:
 
 $$\mathcal{L}_{recon} = \mathbb{E}_{i, t, \epsilon} \left[ \| \epsilon - \epsilon_\theta(z_t^{(i)}, c_{target+residual}^{(i)}) \|^2 \right]$$
 
-where $z_t^{(i)}$ is the noised $i$-th image and $c_{target+residual}^{(i)}$ is the text conditioning incorporating both token types. This loss ensures that the target and residual tokens together fully encode the image information.
+where $z_t^{(i)}$ is the noisy image and $c_{target+residual}^{(i)}$ is the text condition containing both token types. This ensures the combined tokens cover the full image information.
 
-### Repulsion Loss $\mathcal{L}_{excl}$ (Core Contribution)
+**3. Cross-image Exclusion Loss: Ejecting Shared Concepts from Residual Tokens**
 
-This loss forces residual tokens to discard shared concept information and retain only image-specific content. The intuition is: if $t_{residual}^{(i)}$ still encodes shared concept information, conditioning on it to generate **another image** $x^{(j)}$ ($j \neq i$) will cause the generation to deviate from the unconditional output; conversely, if the residual token contains no shared information, it should have no effect on other images' generation and should be consistent with unconditional generation.
+This is the core of disentanglement. If a residual token still contains shared concepts, using it as a condition for generating a **different** image $x^{(j)}$ ($j \neq i$) would deviate from unconditional generation. If it contains no shared information, it should contribute nothing to other images, effectively acting as a null condition. The loss penalizes this "cross-image leakage":
 
 $$\mathcal{L}_{excl} = \mathbb{E}_{i, j \neq i, t, \epsilon} \left[ \| \epsilon_\theta(z_t^{(j)}, c_{residual}^{(i)}) - \epsilon_\theta(z_t^{(j)}, \varnothing) \|^2 \right]$$
 
-- $c_{residual}^{(i)}$ uses only the residual token of image $i$ as conditioning.
-- $\varnothing$ denotes the unconditional (empty text) baseline.
-- **$j \neq i$ is critical**: cross-image noise samples ensure that what is measured is "concept information leakage" rather than "image-specific information matching."
-- Minimizing this loss is equivalent to minimizing $\text{KL}(p(x|c_{residual}^{(i)}) \| p(x))$, driving the residual token's conditional distribution toward the unconditional distribution.
+where $c_{residual}^{(i)}$ is the condition using only the $i$-th residual token, and $\varnothing$ is the null text condition. The $j \neq i$ cross-pairing is crucial; using $j = i$ would fail to distinguish concept leakage from image-specific matching because the noise sample of an image is naturally correlated with its own residual token. Minimizing this is equivalent to minimizing $\text{KL}(p(x) \| p(x|c_{residual}^{(i)}))$, forcing shared concepts into the target token.
 
-### Total Loss
+### Loss & Training
 
-$$\mathcal{L}_{total} = \mathcal{L}_{recon} + \lambda \mathcal{L}_{excl}$$
+The total loss combines reconstruction and exclusion with a weight $\beta = 0.05$ (too small leads to insufficient exclusion; too large forces residual tokens toward null, making target tokens re-absorb residuals):
 
-### Two-Stage Optimization
+$$\mathcal{L}_{total} = \mathcal{L}_{recon} + \beta\, \mathcal{L}_{excl}$$
 
-1. **Token optimization stage** (200 steps): The U-Net parameters are frozen; only the embeddings of $t_{target}$ and $\{t_{residual}^{(i)}\}$ are optimized. This stage rapidly learns a coarse-grained concept representation.
-2. **LoRA fine-tuning stage** (120 steps): LoRA is applied to the attention layers of the U-Net, jointly fine-tuning the LoRA parameters and token embeddings. LoRA provides model-level fine-grained adaptation to enhance concept fidelity.
-
-### Inference
-
-Only $t_{target}$ is used at inference time (all residual tokens are discarded), combined with arbitrary text prompts to generate new images. Since $t_{target}$ is disentangled, generated results contain only the target concept without any residual information leakage.
+The optimization uses a target token length of 1 and residual token lengths of 8. Stage 1 freezes the U-Net for 200 steps to optimize embeddings. Stage 2 adds LoRA to attention layers and jointly tunes for 120 steps to capture fine-grained fidelity. Inference discards residual tokens completely.
 
 ## Key Experimental Results
-
-### Dataset and Setup
-
-- **DreamBench**: 30 subjects, 4–6 reference images per subject, 25 text prompts.
-- **Concept types**: object (specific objects), style (artistic styles), pose (body poses), etc.
-- **Evaluation metrics**: CLIP-T (text alignment), DINO (subject fidelity), CLIP-I (image similarity).
-- **Baselines**: Textual Inversion, DreamBooth, Custom Diffusion, Break-A-Scene, SVDiff, ELITE, Cones, P+.
 
 ### Main Results
 
 | Method | CLIP-T↑ | DINO↑ | CLIP-I↑ |
-|--------|---------|-------|---------|
+| :--- | :--- | :--- | :--- |
 | Textual Inversion | 0.321 | 0.154 | 0.305 |
 | DreamBooth | 0.340 | 0.189 | 0.332 |
 | Custom Diffusion | 0.338 | 0.183 | 0.328 |
 | Break-A-Scene | 0.335 | 0.178 | 0.322 |
 | SVDiff | 0.331 | 0.171 | 0.319 |
 | P+ | 0.342 | 0.192 | 0.341 |
-| **ConceptPrism** | **0.357** | **0.210** | **0.353** |
+| **Ours** | **0.357** | **0.210** | **0.353** |
 
-ConceptPrism achieves the best performance across all three metrics. The highest CLIP-T indicates superior text alignment (the repulsion loss effectively reduces interference from residual information on text following); the highest DINO indicates superior concept fidelity (the target token precisely encodes the shared concept).
+ConceptPrism outperforms others across all metrics. High CLIP-T indicates superior text alignment (exclusion loss reduces residual interference), while high DINO indicates high concept fidelity.
 
-### Analysis by Concept Type
+### Multi-concept Analysis
 
 | Concept Type | CLIP-T↑ | DINO↑ |
-|--------------|---------|-------|
+| :--- | :--- | :--- |
 | Object | 0.361 | 0.223 |
 | Style | 0.349 | 0.185 |
 | Pose | 0.352 | 0.198 |
 
-ConceptPrism is effective across all three concept types—object, style, and pose—demonstrating that the disentanglement mechanism is general and not limited to specific concept categories.
+The effectiveness across object, style, and pose demonstrates the universality of the disentanglement mechanism.
 
 ### Ablation Study
 
-- **Removing $\mathcal{L}_{excl}$**: CLIP-T drops by 0.020 and DINO by 0.018, degenerating to standard multi-token learning where target and residual tokens encode redundant information.
-- **$j = i$ (non-cross repulsion)**: Performance degrades substantially, as noise from the same image is naturally correlated with its residual token, making it impossible to separate shared from image-specific information.
-- **Removing residual tokens (target only)**: CLIP-T drops by 0.015; the target token is forced to encode all information, compromising concept purity.
-- **Removing descriptive caption initialization**: DINO drops by 0.012; randomly initialized residual tokens learn more slowly and fail to fully absorb residual information.
-- **Removing the LoRA stage**: DINO drops by 0.025; token optimization alone cannot capture fine-grained concept details.
-- **Sensitivity to $\lambda$**: $\lambda = 0.5$ is optimal; too small yields insufficient repulsion, while too large over-suppresses residual tokens and degrades reconstruction quality.
+- **Without $\mathcal{L}_{excl}$**: CLIP-T drops by 0.020, DINO by 0.018; degrades to standard multi-token learning.
+- **$j = i$ (No cross-exclusion)**: Performance drops significantly due to natural correlation between image noise and its own residual.
+- **Without residual tokens**: CLIP-T drops by 0.015; target token is forced to encode all information.
+- **Without VLM initialization**: DINO drops by 0.012; residual tokens learn slower.
+- **Without LoRA stage**: DINO drops by 0.025; token optimization alone cannot capture fine-grained details.
 
-### Qualitative Analysis
+### Key Findings
 
-- Visualizations show that ConceptPrism preserves precise characteristics of the target concept (e.g., a dog's coat color and breed features) in novel scenes while fully adhering to the text prompt.
-- Compared to DreamBooth and Custom Diffusion, the latter two leak indoor background elements from training images into "beach" scenes.
-- When residual tokens are used alone for generation, they produce blurry images unrelated to the target concept, validating the effectiveness of the repulsion loss.
+- Qualitative results show ConceptPrism maintains precise target features (e.g., dog breed) in new scenes while strictly following prompts.
+- Compared to DreamBooth, it avoids leaking indoor training backgrounds into "beach" scenes.
+- Generating with residual tokens alone produces blurry images unrelated to the target, verifying exclusion effectiveness.
 
 ## Highlights & Insights
 
-- **Elegant design of the repulsion loss**: Cross-image comparison ($j \neq i$) forces residual tokens to discard shared information; this is theoretically equivalent to minimizing KL divergence, with clear motivation and concise implementation.
-- **No additional annotations required**: The method requires no segmentation masks, concept labels, or manual specification—learning disentanglement entirely from natural cross-image contrast, making it more practical than Break-A-Scene and Cones.
-- **Sophisticated initialization strategy**: The asymmetric design of random initialization for target tokens and descriptive caption initialization for residual tokens leverages the "information vacuum" principle to naturally guide information flow without complex optimization strategies.
-- **Applicable to multiple concept types**: Effective for objects, styles, and poses alike; the disentanglement mechanism is general rather than domain-specific.
-- **Lightweight and efficient**: 200-step token optimization plus 120-step LoRA fine-tuning totaling only 320 steps, far fewer than the full fine-tuning of DreamBooth.
-- **Clear theoretical grounding**: The repulsion loss is derived from KL divergence and further simplified to noise prediction matching, with a complete derivation.
+- **Clever exclusion loss**: Cross-image contrast ($j \neq i$) forces residual tokens to discard shared info, grounded in KL divergence minimization.
+- **No extra labels**: Unlike Break-A-Scene (masks) or Cones (manual layer selection), it learns disentanglement from natural image contrast.
+- **Asymmetric initialization**: Using "information vacuums" guides information flow naturally without complex optimization schedules.
+- **Efficiency**: Only 320 total steps (200 Stage 1 + 120 Stage 2), significantly fewer than DreamBooth's full fine-tuning.
 
 ## Limitations & Future Work
 
-- Experiments are conducted only on Stable Diffusion v1.5; effectiveness on more recent architectures such as SDXL and SD3 has not been verified.
-- The repulsion loss requires at least two reference images ($j \neq i$); in single-image settings it degrades to having no repulsion loss, limiting disentanglement capability.
-- The number of residual tokens is tied one-to-one to the number of reference images; token optimization overhead grows with the number of reference images.
-- Descriptive captions are automatically generated by BLIP-2, and their quality affects residual token initialization; captions for complex scenes (e.g., multiple overlapping objects) may be inaccurate.
-- The potential value of residual tokens themselves is unexplored—residual information (e.g., background style) could theoretically be leveraged independently, but the paper discards it at inference time.
-- No comparison is made against training-free personalization methods such as IP-Adapter, which offer significant efficiency advantages.
+- Experiments limited to Stable Diffusion v1.5; performance on SDXL/SD3 is unverified.
+- Requires at least 2 reference images; single-image cases lack cross-image contrast.
+- Residual token count scales with image count, increasing overhead for large datasets.
+- VLM caption quality affects initialization; complex scenes may pose challenges.
+- Potential value of residual tokens (e.g., style transfer) remains unexplored.
 
 ## Related Work & Insights
 
-- **vs. Textual Inversion**: Textual Inversion encodes all information in a single token, making concept-residual disentanglement impossible; ConceptPrism's multi-token design with repulsion explicitly separates the two.
-- **vs. DreamBooth**: DreamBooth fully fine-tunes the U-Net for concept learning, achieving high fidelity but severe entanglement; ConceptPrism achieves a better balance between fidelity and disentanglement via LoRA and the repulsion loss.
-- **vs. Custom Diffusion**: Custom Diffusion only fine-tunes the K/V matrices of cross-attention to indirectly reduce entanglement—a parameter-restriction approach rather than explicit disentanglement; ConceptPrism directly optimizes a disentanglement objective via the repulsion loss.
-- **vs. Break-A-Scene**: Break-A-Scene requires segmentation mask annotations to separate foreground/background concepts, constituting supervised disentanglement; ConceptPrism requires no annotations and achieves self-supervised disentanglement through cross-image contrast.
-- **vs. Cones**: Cones requires manual specification of U-Net layers (at the neuron level) corresponding to each concept, relying on human priors; ConceptPrism's token-level disentanglement is more natural and fully automatic.
+- **vs. Textual Inversion**: TI uses one token for all info; Ours uses multiple tokens + exclusion for explicit separation.
+- **vs. DreamBooth**: DreamBooth fine-tunes the whole U-Net, causing high entanglement; Ours uses LoRA + exclusion for better balance.
+- **vs. Custom Diffusion**: CD limits parameters to reduce entanglement indirectly; Ours uses a direct disentanglement objective.
+- **vs. Break-A-Scene**: BAS requires masks for supervised disentanglement; Ours is self-supervised.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The residual token + repulsion loss disentanglement mechanism is the core contribution; the cross-image contrastive design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive comparison on DreamBench with multiple concept types and complete ablations, though limited to SD1.5.
-- Writing Quality: ⭐⭐⭐⭐ — The derivation from KL divergence to noise matching is clear and the figures are intuitive.
-- Value: ⭐⭐⭐⭐ — Addresses a core pain point in personalized T2I; highly practical and easy to integrate as a lightweight solution.
+- Novelty: ⭐⭐⭐⭐ — Residual tokens + exclusion loss is a core contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive benchmarks, though restricted to SD1.5.
+- Writing Quality: ⭐⭐⭐⭐ — Clear derivation from KL divergence to noise matching.
+- Value: ⭐⭐⭐⭐ — Addresses a core pain point in personalized T2I with a lightweight solution.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -174,8 +167,8 @@ ConceptPrism is effective across all three concept types—object, style, and po
 - [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
 - [\[CVPR 2026\] Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness](concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr.md)
-- [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
-- [\[CVPR 2026\] RSONet: Region-guided Selective Optimization Network for RGB-T Salient Object Detection](rsonet_region-guided_selective_optimization_network_for_rgb-t_salient_object_det.md)
+- [\[ECCV 2024\] Diffusion Models for Open-Vocabulary Segmentation](../../ECCV2024/segmentation/diffusion_models_for_open-vocabulary_segmentation.md)
+- [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
 
 </div>
 

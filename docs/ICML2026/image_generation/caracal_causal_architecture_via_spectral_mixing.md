@@ -2,72 +2,78 @@
 title: >-
   [Paper Note] Caracal: Causal Architecture via Spectral Mixing
 description: >-
-  [ICML 2026][Image Generation][FFT] Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. By employing a "pad-FFT-multiply-iFFT-truncate" pipeli…
+  [ICML 2026][Image Generation][FFT] Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. It achieves strict causal masking in the frequency domain via a "pad-FFT-multiply-iFFT-truncate" mechanism and completely removes positional embeddings. Using only standard FFT operators (w
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "FFT"
-  - "Attention Alternative"
-  - "Causal Modeling"
-  - "Long Sequence"
-  - "SSM Comparison"
+  - ICML 2026
+  - Image Generation
+  - FFT
 date: 2026-05-08
-content_hash: e6bfc9fae729b042
+content_hash: 3081f4ac20f15ad2
 ---
-
 # Caracal: Causal Architecture via Spectral Mixing
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00292](https://arxiv.org/abs/2605.00292)  
-**Code**: See paper Appendix E  
+**Code**: See Appendix E of the paper  
 **Area**: LLM Efficiency / Sequence Modeling / Long Context  
 **Keywords**: FFT, Attention Alternative, Causal Modeling, Long Sequence, SSM Comparison
 
 ## TL;DR
-Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. By employing a "pad-FFT-multiply-iFFT-truncate" pipeline, it achieves strict causal masking in the frequency domain. It removes positional encodings entirely and utilizes standard FFT operators (independent of custom CUDA kernels like Mamba), achieving performance comparable to Llama, Mamba, Mamba-2, and Jamba across scales from Tiny to Large.
+Caracal replaces the $\mathcal{O}(L^2)$ attention in Transformers with an $\mathcal{O}(L \log L)$ Multi-Head Fourier (MHF) module. It achieves strict causal masking in the frequency domain via a "pad-FFT-multiply-iFFT-truncate" mechanism and completely removes positional embeddings. Using only standard FFT operators (without relying on custom CUDA kernels like Mamba), it matches the performance of Llama, Mamba, Mamba-2, and Jamba across scales from Tiny to Large.
 
 ## Background & Motivation
-**Background**: Long-sequence modeling follows two main paths: Transformer attention (high expressivity but $\mathcal{O}(L^2)$ complexity and requiring positional encodings) and SSMs represented by Mamba (linear complexity but dependent on custom CUDA kernels, leading to poor portability). Spectral methods (FNet, AFNO, SPECTRE) offer $\mathcal{O}(L \log L)$ complexity but are mostly limited to encoder-only architectures due to the difficulty of implementing frequency-domain causal masking.
+**Background**: Long-context modeling follows two main paths: Transformer attention (strong expressivity but $\mathcal{O}(L^2)$ complexity and requiring positional embeddings) and SSMs like Mamba (linear complexity but dependent on custom CUDA kernels, leading to poor portability). Spectral methods (FNet, AFNO, SPECTRE) offer $\mathcal{O}(L \log L)$ complexity but are mostly restricted to encoder-only architectures due to the difficulty of implementing causal masking in the frequency domain.
 
-**Limitations of Prior Work**: (1) Sparse attention (Longformer/BigBird) sacrifices information coverage; (2) Positional encodings like RoPE, YaRN, and ALiBi are "patches" with limited extrapolation capabilities; (3) Mamba-like models require SSD-style operators that are difficult to debug and inconsistent across GPUs; (4) Existing spectral methods (FNet, Hyena) are either non-causal or use static position-based filters, lacking data-dependent mixing.
+**Limitations of Prior Work**: (1) Sparse attention (Longformer/BigBird) sacrifices information coverage; (2) Positional embeddings like RoPE/YaRN/ALiBi are "patches" with limited extrapolation capabilities; (3) Mamba-like models require SSD-style operators, which are difficult to debug and behave inconsistently across GPUs; (4) Existing spectral methods (FNet, Hyena) are either non-causal or use static position-based filters, lacking data-dependent mixing.
 
-**Key Challenge**: The causality constraint of autoregressive generation naturally conflicts with the "global atomic operation" of FFT. While attention can zero out the upper-triangle of a weight matrix, FFT has no explicit weight matrix to mask. Achieving causality by running FFTs of length $t$ for each step $t$ results in $\mathcal{O}(L^2 \log L)$ complexity, slower than $\mathcal{O}(L^2)$.
+**Key Challenge**: The causal constraint of autoregressive generation naturally conflicts with the "global atomic operation" of the FFT. While attention can zero out the upper-triangle of a weight matrix, FFT has no explicit weight matrix to mask. Achieving causality by running a length-$t$ FFT for each step $t$ would result in $\mathcal{O}(L^2 \log L)$ complexity, slower than $\mathcal{O}(L^2)$.
 
-**Goal**: (1) Enable FFT-based mixing to maintain causality in a single parallel forward pass during training; (2) Remove positional encodings while maintaining extrapolation capabilities; (3) Use only standard torch/numpy FFT operators without hardware dependencies; (4) Introduce data-dependent gating to compensate for the expressivity limitations of static FFT weights.
+**Goal**: (1) Enable FFT-based mixing to maintain strict causality in a single parallel forward pass during autoregressive training; (2) Remove positional embeddings while maintaining extrapolation; (3) Use only standard torch/numpy FFT operators without hardware dependencies; (4) Introduce data-dependent gating to compensate for the expressivity limitations of static FFT weights.
 
-**Key Insight**: The authors start from the equivalence of "frequency domain multiplication = time domain causal convolution." By padding the input to $2L$, performing FFT, element-wise multiplication, iFFT, and then truncating back to $L$, the pipeline is mathematically equivalent to a strict causal convolution, yet all steps are completed via parallel FFTs.
+**Key Insight**: Starting from the equivalence where "frequency domain multiplication = time domain causal convolution," the input is padded to $2L$ → FFT → element-wise multiply → iFFT → truncate back to $L$. This pipeline is mathematically equivalent to a strict causal convolution, but all steps are completed using parallel FFTs.
 
-**Core Idea**: Replace attention with a unified module featuring content-adaptive kernels, FFT acceleration, and frequency-domain causality, while retaining a small amount of sliding-window attention for local precision.
+**Core Idea**: The architecture replaces attention with a unified module combining "content-adaptive convolution kernels, FFT acceleration, and frequency-domain causality," while retaining a small amount of sliding-window attention for local precision.
 
 ## Method
 
 ### Overall Architecture
-Caracal's structure is nearly identical to GPT-2, with two modifications: (1) Global masked multi-head attention is replaced by the MHF module; (2) Positional encodings are removed (FFT sinusoidal bases inherently encode positional information). To preserve local precision, a Sliding-Window Attention (SWA) layer (window 256) is inserted every two MHF layers. The overall complexity remains $\mathcal{O}(L \log L + L \cdot W)$. Feed-forward, LN, and residual connections remain unchanged, allowing direct reuse of the existing Transformer ecosystem.
+Caracal addresses the long-standing problem of maintaining strict causality in $\mathcal{O}(L \log L)$ FFT mixing for autoregresson. It keeps the GPT-2 structure largely intact (Feed-forward, LN, and residuals are preserved for ecosystem compatibility) but makes two changes: it replaces global masked multi-head attention with the frequency-domain mixing MHF module and removes positional embeddings entirely. To compensate for the FFT's weakness in local precision, a Sliding-Window Attention (SWA) layer with a window of 256 is inserted after every two MHF layers, resulting in an overall complexity of $\mathcal{O}(L \log L + L \cdot W)$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Sequence (No PE)"] --> MHF
+    subgraph MHF["Multi-Head Fourier Module"]
+        direction TB
+        B["Causal depthwise conv (kernel=3)<br/>Injects local inductive bias"] --> C["LN + Parallel projection<br/>value flow x_v / gate flow x_g"]
+        C --> D["zero-pad to 2L → FFT → freq-domain element-wise multiply<br/>V_fft ⊙ G_fft = time-domain causal convolution"]
+        D --> E["iFFT + truncate back to L (Freq-domain causal mask) → Linear_O"]
+    end
+    MHF --> G["Hybrid SWA Local Compensation<br/>1 layer per 2 MHF layers, window 256"]
+    G --> H["next-token prediction"]
+```
 
 ### Key Designs
 
-1.  **Multi-Head Fourier (MHF) Module**:
-    - **Function**: Achieves $\mathcal{O}(L \log L)$ global information mixing between tokens via frequency-domain multiplication, supporting autoregressive generation.
-    - **Mechanism**: A 4-step pipeline. Step 1: Use causal depthwise 1D conv (kernel=3) to inject local inductive bias, compensating for local pattern loss after removing positional encodings. Step 2: After LayerNorm, project in parallel to a value stream $x_v = \text{Linear}_V(x_{norm})$ and a gate stream $x_g = \text{Conv1d}_{G2}(\sigma(\text{Linear}_{G1}(x_{norm})))$, where group convolutions ($n_{head}$ groups) handle intra-head channel interactions. Step 3: Zero-pad the sequence to $N=2L$, compute FFT for $V_{fft}$ and $G_{fft}$, and perform frequency-domain element-wise multiplication $X_{fft} = V_{fft} \odot G_{fft}$, equivalent to time-domain causal convolution $r_t = \sum_{j=0}^{t} v_j g_{t-j}$. Step 4: After iFFT, truncate back to length $L$ to remove "future" signals introduced by padding, followed by $\text{Linear}_O$.
-    - **Design Motivation**: Reformulate "attention as a sum of data-dependent weights from query/key" into "data-dependent weights provided by the gate stream as a convolution kernel," retaining selectivity while avoiding SSM serial scans using standard FFT operators.
+**1. Multi-Head Fourier Module: $\mathcal{O}(L \log L)$ Content-Adaptive Mixing via Frequency Domain Multiplication**
 
-2.  **Frequency-Domain Causal Masking (pad-FFT-multiply-iFFT-truncate)**:
-    - **Function**: Enables FFT to strictly satisfy the condition that "output $t$ depends only on inputs $\leq t$" while maintaining parallelism.
-    - **Mechanism**: Pure FFT causality is a complex mathematical challenge as weights cannot be masked like in attention. The authors circumvent this by zero-padding a sequence of length $L$ to $2L$, performing the FFT/multiplication/iFFT, and retaining only the first $L$ elements. Since the circular convolution of a $2L$ FFT degenerates into a linear convolution $r_t = \sum_{j=0}^{t} v_j g_{t-j}$ when truncated to the first $L$ dimensions, dependencies on future tokens are automatically eliminated.
-    - **Design Motivation**: Transform the "seemingly unsolvable" causality problem into a geometric arrangement of padding and truncation, essentially trading $2\times$ sequence length to complete causal convolution in one forward pass without running FFTs for each $t$ individually.
+The essence of attention is a "data-dependent weight sum calculated by query/key," but it is $\mathcal{O}(L^2)$ and requires positional embeddings. MHF reformulates this as a "data-dependent weight sum where the gate stream acts as the convolution kernel," preserving selectivity while avoiding the serial scan of SSMs and using only standard FFT operators. The pipeline consists of 4 steps: first, a causal depthwise 1D conv (kernel=3) injects local inductive bias to recover local patterns lost by removing PE; next, after LayerNorm, parallel projections create the value flow $x_v = \text{Linear}_V(x_{norm})$ and the gate flow $x_g = \text{Conv1d}_{G2}(\sigma(\text{Linear}_{G1}(x_{norm})))$, where the gate flow uses group convolution by $n_{head}$ for intra-head channel interaction; then, the sequence is zero-padded to $N=2L$ for FFT to obtain $V_{fft}$ and $G_{fft}$, which are multiplied element-wise $X_{fft} = V_{fft} \odot G_{fft}$ (equivalent to the time-domain causal convolution $r_t = \sum_{j=0}^{t} v_j g_{t-j}$); finally, iFFT and truncation back to length $L$ are followed by $\text{Linear}_O$. The dynamic convolution kernel generated from the input upgrades the "static Fourier filter" to content-aware mixing.
 
-3.  **No Positional Encoding + Hybrid SWA Local Compensation**:
-    - **Function**: Completely remove explicit positional encodings like RoPE/ALiBi while maintaining local resolution via SWA.
-    - **Mechanism**: The FFT basis $e^{-i \frac{2\pi}{L} tj}$ contains built-in sequence position information, and downstream SWA layers do not require PE either. SWA is implemented via FlashAttention with a window of 256 to prevent cost explosion. A MHF:SWA ratio of 2:1 is used to balance global long-range dependencies and local phrase-level patterns.
-    - **Design Motivation**: Modern PEs (RoPE, YaRN) are increasingly complex but fail to fully solve extrapolation; making the architecture inherently position-aware is theoretically better for arbitrary long contexts.
+**2. Frequency Domain Causal Masking: The Geometry of pad-FFT-multiply-iFFT-truncate**
+
+Achieving causality with pure FFT is mathematically difficult because there is no explicit weight matrix to mask. The authors bypass this using a DSP technique: by zero-padding a sequence of length $L$ to $2L$ on the right, performing FFT, multiplying by the gate, and iFFT, only the first $L$ elements are retained. While a $2L$ FFT normally corresponds to circular convolution, truncating to the first $L$ dimensions causes it to degenerate into a linear convolution $r_t = \sum_{j=0}^{t} v_j g_{t-j}$, where dependence on future tokens is automatically removed. This uses $2\times$ sequence length to achieve "causal convolution in a single parallel forward pass," converting the causality problem into a geometric arrangement of padding and truncation.
+
+**3. No PE + Hybrid SWA Local Compensation: Built-in Position Awareness**
+
+Caracal removes all modern positional embeddings (RoPE, YaRN, ALiBi) since the FFT basis $e^{-i \frac{2\pi}{L} tj}$ inherently contains sequence position information. Theoretically, this makes the architecture more suitable for arbitrary context lengths. However, since pure MHF is weaker in local resolution (as seen in ARC-c drops), SWA is inserted at a 2:1 ratio (MHF:SWA) with a window of 256. Implemented via FlashAttention, SWA captures phrase-level local patterns, complementing the global long-range dependencies of MHF.
 
 ### Loss & Training
-The model uses standard next-token prediction CE loss without external auxiliary losses. Training follows GPT-3 style hyperparameter settings (Tiny 63M → Large 724M), with all baselines utilizing hardware-optimized kernels (mamba_ssm for Mamba, FlashAttention for Llama).
+The model uses standard next-token prediction CE loss without auxiliary losses. Training follows GPT-3 style hyperparameter settings, sweeping scales from Tiny (63M) to Large (724M). For fairness, all baselines use their respective hardware-optimized kernels (Mamba uses `mamba_ssm`, Llama uses `FlashAttention`).
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation across 9 zero-shot common-sense reasoning and LM tasks, sweeping across 4 sizes:
+Evaluation on 9 zero-shot common-sense reasoning and LM tasks (LMB, Hellaswag, ARC-e/c, Wino, BoolQ, PIQA, SIQA) across 4 sizes:
 
 | Size | Model | LMB ppl↓ | Avg acc↑ |
 |------|-------|----------|----------|
@@ -81,12 +87,12 @@ Evaluation across 9 zero-shot common-sense reasoning and LM tasks, sweeping acro
 | Medium | Llama (360M) | 32.65 | 47.07 |
 | Medium | **Caracal (345M)** | 38.50 | 46.47 |
 | Large | Llama (757M) | 24.92 | 48.73 |
-| Large | **Caracal (724M)** | 29.39 | **49.01** |
+| Large | **Caracal (724M)** | 29.39 | 49.01 |
 
-Caracal's average accuracy is competitive with Llama, Mamba, and Jamba across all sizes, slightly exceeding Llama at the Large scale (49.01 vs 48.73).
+Ours matches the average accuracy of Llama, Mamba, and Jamba across all sizes, slightly exceeding Llama (49.01 vs 48.73) at the Large scale.
 
 ### Ablation Study
-Aligned with a broader range of baselines at 345M parameters, 15B tokens, and 4096 context length:
+Alignment with broader baselines under 345M parameters, 15B tokens, and 4096 context length:
 
 | Model | LMB ppl↓ | Avg acc↑ |
 |-------|----------|----------|
@@ -98,34 +104,37 @@ Aligned with a broader range of baselines at 345M parameters, 15B tokens, and 40
 | Moneta | 29.31 | 46.45 |
 | Yaad | 29.11 | 45.94 |
 
-Caracal ranks in the top tier alongside Mamba and DeltaNet, significantly outperforming earlier models like Transformer++ and RetNet.
+Caracal performs in the top tier alongside Mamba and DeltaNet, significantly outperforming early Transformer++ and RetNet.
 
 ### Key Findings
-- **Algorithmic "Middle Ground" replacing hardware tricks**: Trading SSM's $\mathcal{O}(L)$ for $\mathcal{O}(L \log L)$ maintains performance while drastically reducing implementation complexity since all operations use standard FFT.
-- **High LMB ppl on Tiny (219.90)** is a weakness of Caracal—dynamic gating lacks sufficient fitting in small models; however, the Avg acc remains competitive, indicating that ppl $\neq$ task performance.
-- **Removing PE without performance loss** suggests that implicit positional information in FFT bases is sufficient, potentially enabling better long-context extrapolation.
-- **SWA is essential**: Ablations show pure MHF is weak on ARC-c; adding SWA at a 2:1 ratio recovers local modeling capabilities.
+- **Algorithmic "Middle Ground" replaces hardware tricks**: Replacing SSM's $\mathcal{O}(L)$ with $\mathcal{O}(L \log L)$ maintains performance while significantly reducing implementation complexity.
+- **High LMB ppl on Tiny (219.90)** is a weakness of Caracal, likely due to insufficient dynamic gating fit at small capacities; however, Avg acc remains competitive, suggesting ppl $\neq$ task performance.
+- **Removing PE does not cause performance drops**, indicating the implicit positional information in FFT bases is sufficient, leaving room for long-context extrapolation.
+- **SWA is essential**: Ablations show pure MHF is weak on ARC-c; adding SWA at a 2:1 ratio recovers local capabilities.
 
 ## Highlights & Insights
-- **Mathematically elegant causal trick**: The pad-2L → FFT → multiply → iFFT → truncate pipeline adapts classic DSP techniques to generative LMs, successfully addressing a long-standing issue for Fourier-based generative models by pairing it with data-dependent gating.
-- **Unified perspective on "Content-Adaptive Kernels"**: Attention, SSMs, and FFT are all viewed as different sources of weights for $r_t = \sum_j w_{tj} v_j$. Attention uses query/key, S4 is static, Mamba uses input-dependent states, and Caracal uses gate-generated content-aware filters. This framing clarifies the fundamental differences between these architectures.
-- **Hardware independence** represents true engineering value. Caracal can be deployed on any hardware supporting FFT (including TPUs and specialized NPUs) without being locked into NVIDIA GPUs.
+- **Mathematically Elegant Causal Trick**: The pad-2L → FFT → multiply → iFFT → truncate pipeline is a classic DSP technique applied effectively for the first time in generative LMs with data-dependent gating.
+- **Unified Vision of "Content-Adaptive Kernels"**: Attention, SSM, and FFT are viewed as different weight sources for $r_t = \sum_j w_{tj} v_j$. Attention uses query/key, S4 uses static weights, Mamba uses input-dependent states, and Caracal uses gate-generated content-aware filters.
+- **Hardware Agnostic** value: It can be deployed on any hardware supporting FFT (including TPUs and NPUs) without being locked into NVIDIA GPUs.
+- The approach is transferable to other causal + long-context tasks such as speech autoregression, long video generation, and protein sequence modeling.
 
 ## Limitations & Future Work
-- **Theoretically $\mathcal{O}(L \log L)$ is slower than SSM's $\mathcal{O}(L)$**, which may be disadvantageous at extreme context lengths (100k+ tokens); million-token experiments were not conducted.
-- **Lack of explicit length extrapolation experiments**: The claim that "FFT bases inherently carry position" is theoretically argued but lacks zero-shot stretching results (e.g., 50k to 200k).
-- **2L padding wastes half the computation**: Whether actual wall-clock throughput beats FlashAttention depends on specific FFT implementations; the paper did not report speed comparisons for short contexts (1k–4k).
+- **Theoretical complexity $\mathcal{O}(L \log L)$ is slower than SSM**: This may become a disadvantage at extreme context lengths (100k+); the paper lacks million-token experiments.
+- **Lack of explicit length extrapolation experiments**: The claim that "FFT bases naturally carry position" is theoretically sound but not tested via 50k→200k zero-shot stretching.
+- **2L padding wastes half the computation**: Real-world throughput against FlashAttention depends on the FFT implementation; the paper does not report speed comparisons for short contexts (1k–4k).
+- Future Work: (a) Use RFFT (real FFT) to halve computation; (b) Explore aggressive MHF:SWA ratios (e.g., 4:1); (c) Apply to image autoregression for sub-quadratic ViT.
 
 ## Related Work & Insights
-- **vs Mamba/Mamba-2**: Both are attention alternatives, but Caracal is more portable without hardware kernels; performance is comparable in small-to-medium scales.
-- **vs Hyena**: Hyena uses FFT, but its filters are position-based (generated via MLP from $t$) rather than content-aware; Caracal’s gate-driven filters are closer to Mamba’s selectivity.
-- **vs FNet/FNO/AFNO**: These encoder-only models are non-causal and cannot perform generation; Caracal is among the first strictly causal FFT replacements.
+- **vs Mamba/Mamba-2**: Caracal is an attention alternative that doesn't require hardware kernels, offering better portability with similar performance at small-to-medium scales.
+- **vs Hyena**: Hyena uses FFT with position-based filters (generated by MLP), whereas Caracal uses input-generated gate streams, closer to Mamba's selectivity.
+- **vs FNet / FNO / AFNO**: These are encoder-only and non-causal; Caracal is among the first strictly causal FFT replacements.
+- **vs Monarch Mixer**: Monarch uses GEMM for convolution approximations for hardware efficiency; Caracal uses standard FFT for simplicity.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of frequency-domain causality and content-aware gating is a novel and elegant realization for autoregressive LMs.
-- **Experimental Thoroughness**: ⭐⭐⭐ Solid sweeps across sizes and baselines, but lacks hard data on extreme long contexts (≥32k) and training throughput.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logical progression from first principles of attention/FFT to causal masking dilemmas and the pad-truncate solution.
-- **Value**: ⭐⭐⭐⭐ Provides a portable SSM alternative for non-NVIDIA hardware users, friendly for industrial deployment.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 

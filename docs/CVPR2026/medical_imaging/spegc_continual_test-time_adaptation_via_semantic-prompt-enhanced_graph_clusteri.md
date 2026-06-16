@@ -2,148 +2,145 @@
 title: >-
   [Paper Note] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 description: >-
-  [CVPR2026][Medical Imaging][Continual Test-Time Adaptation] This paper proposes the SPEGC framework, which combines semantic-prompt-enhanced feature representations with a differentiable graph clustering solver to refine…
+  [CVPR 2026][Medical Imaging][Paper Note] The SPEGC framework is proposed to refine the raw similarity matrix into high-order structural representations using semantic-prompt-enhanced features and a differentiable graph clustering solver. This guides the adaptation of medical image segmentation models on continuously changing target domains, effectively allevi
 tags:
-  - "CVPR2026"
-  - "Medical Imaging"
-  - "Continual Test-Time Adaptation"
-  - "Graph Clustering"
-  - "Semantic Prompt"
-  - "Optimal Transport"
-  - "Domain Shift"
-  - "Retinal/Polyp Segmentation"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 959c61e475018dd6
+content_hash: a2ed19ac612ccec6
 ---
-
 # SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.11492](https://arxiv.org/abs/2603.11492)  
 **Code**: [Jwei-Z/SPEGC-for-MIS](https://github.com/Jwei-Z/SPEGC-for-MIS)  
-**Area**: Medical Image Segmentation
-**Keywords**: Continual Test-Time Adaptation, Graph Clustering, Semantic Prompt, Optimal Transport, Domain Shift, Retinal/Polyp Segmentation
+**Area**: Medical Image Segmentation  
+**Keywords**: Continual Test-Time Adaptation, Graph Clustering, Semantic Prompt, Optimal Transport, Domain Shift, Retina/Polyp Segmentation
 
 ## TL;DR
 
-This paper proposes the SPEGC framework, which combines semantic-prompt-enhanced feature representations with a differentiable graph clustering solver to refine raw similarity matrices into higher-order structural representations. These representations guide the adaptation of medical image segmentation models to continuously shifting target domains, effectively mitigating error accumulation and catastrophic forgetting.
+The SPEGC framework is proposed to refine the raw similarity matrix into high-order structural representations using semantic-prompt-enhanced features and a differentiable graph clustering solver. This guides the adaptation of medical image segmentation models on continuously changing target domains, effectively alleviating error accumulation and catastrophic forgetting.
 
 ## Background & Motivation
 
-**Domain shift challenges in clinical deployment**: Variations in acquisition devices, operators, and scanning protocols cause significant performance degradation in pre-trained models when deployed in new target domains, rendering them unsuitable for direct clinical use.
+**Background**: Medical images suffer from performance degradation when pre-trained models are deployed to new target domains due to differences in acquisition equipment, operators, and scanning protocols, making them unsuitable for direct clinical use.
 
-**CTTA better reflects real-world conditions**: Conventional TTA assumes a static target domain, whereas real clinical data arrives as a continuously streaming distribution. Continual Test-Time Adaptation (CTTA) is therefore more practically relevant.
+**Background**: Classical TTA assumes a static target domain, whereas real clinical data arrives as a continuous stream with evolving distributions, making Continual Test-Time Adaptation (CTTA) more practically significant.
 
-**Existing CTTA methods rely on unreliable supervision signals**: Entropy minimization and pixel-level/instance-level signal-based methods tend to produce misleading gradients under severe domain shift, triggering a vicious cycle of self-reinforcing error accumulation.
+**Limitations of Prior Work**: Existing CTTA methods relying on entropy minimization or pixel/instance-level signals often produce misleading gradients under severe domain shift, triggering a vicious cycle of "self-reinforced error accumulation."
 
-**Limited expressiveness of prompt-based methods**: Methods that freeze the backbone and learn only lightweight prompts in the input space leave core parameters unchanged, resulting in a limited performance ceiling.
+**Limitations of Prior Work**: Prompt-based methods with frozen backbones only learn lightweight prompts in the input space. Without updating core parameters, the performance ceiling remains low.
 
-**Local features are sensitive to noise**: Under domain shift, local features of unlabeled test samples are highly susceptible to noise and style variations, making directly computed similarity matrices unreliable.
+**Limitations of Prior Work**: Local features of unlabeled test samples are highly susceptible to noise and style variations under domain shift, rendering directly calculated similarity matrices unreliable.
 
-**Lack of higher-order structural supervision**: Existing methods do not fully exploit intra-data cluster-level structural information to guide adaptation, preventing decision boundaries from being dynamically adjusted.
+**Key Challenge**: Existing methods fail to fully exploit the internal cluster-level structural information of data to guide adaptation, preventing dynamic adjustment of decision boundaries.
 
 ## Method
 
 ### Overall Architecture
 
-SPEGC consists of two core modules: **Semantic Prompt Feature Enhancement (SPFE)** and a **Differentiable Graph Clustering Solver (DGCS)**. The pipeline proceeds as follows:
+SPEGC aims to break the "self-reinforced error accumulation" cycle in CTTA—where entropy or pixel-level signals become unreliable under severe domain shift. Instead of relying on these fragile signals, it seeks supervision from the **internal high-order clustering structures** of the test data. The process involves: a ResNet backbone extracting local features; MC Dropout estimating uncertainty to sample reliable foreground nodes; Semantic-Prompt-Enhanced Feature Augmentation (SPFE) injecting global context into these nodes; enhanced features forming a pseudo mini-batch to compute a global similarity matrix; and a Differentiable Graph Clustering Solver (DGCS) refining this matrix into clean structural representations via an optimal transport formulation. Finally, graph consistency and clustering losses backpropagate these structural signals to the model to guide adaptation.
 
-1. A ResNet backbone extracts local features; MC Dropout estimates uncertainty and samples low-uncertainty foreground nodes.
-2. SPFE injects global contextual information into local features via decoupled commonality/heterogeneity prompt pools.
-3. Enhanced features are enqueued to construct a pseudo mini-batch, from which a global similarity matrix is computed.
-4. DGCS reformulates edge sparsification as an optimal transport problem and end-to-end refines the similarity matrix.
-5. The refined structural representation jointly guides model adaptation via a graph consistency loss and a clustering loss.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Test Image Stream (Continual Target Domain)"] --> B["ResNet Backbone<br/>Extract Local Node Features V"]
+    subgraph SPFE["SPFE: Semantic-Prompt-Enhanced Feature Augmentation"]
+        direction TB
+        C["Estimate uncertainty via MC Dropout<br/>Sample low-uncertainty foreground nodes"]
+        C --> D["Attention pooling for global query"]
+        D --> E["Dual prompt pool retrieval<br/>Commonality (Reverse Attn) + Heterogeneity (Softmax)"]
+        E --> F["Enhanced Feature = Original + Commonality + Heterogeneity"]
+    end
+    B --> C
+    F --> G["Feature queue to form pseudo mini-batch<br/>Calculate global similarity matrix S"]
+    subgraph DGCS["DGCS: Differentiable Graph Clustering Solver"]
+        direction TB
+        H["Node density + Sigmoid gating<br/>Construct directed edge matrix S′"]
+        H --> I["Generating forest budget k=V−Z<br/>Edge selection as Optimal Transport"]
+        I --> J["Sinkhorn iteration for transport plan<br/>Reshape to refined edge matrix S⋆"]
+    end
+    G --> H
+    J --> K["Graph consistency loss + Clustering loss<br/>End-to-end update of all model parameters"]
+    K -.->|Continual Adaptation| A
+```
 
 ### Key Designs
 
-**SPFE — Semantic Prompt Feature Enhancement**:
+**1. SPFE — Semantic-Prompt-Enhanced Feature Augmentation: Providing global context via decoupled prompt pools**
 
-- Attentive pooling aggregates node features into a global query $\hat{q}_i$.
-- **Heterogeneity prompt pool** $P_{HE}$: Standard Softmax attention retrieves domain-specific information matching the query, capturing class-discriminative patterns.
-- **Commonality prompt pool** $P_{CO}$: Reverse attention (negative match scores truncated by ReLU) retrieves cross-domain shared semantics that do not match the query, preserving core discriminative knowledge.
-- Both prompts are added as decoupled contextual biases to the original node features: $V_i^* = V_i + p_{CO}(i) + p_{HE}(i)$
+Local features under domain shift are easily biased by noise and style. SPFE first uses MC Dropout for multiple forward passes to estimate an uncertainty map based on feature variance, selecting only the top $p\%$ least uncertain foreground nodes to filter out noise (this step alone provides a ~1.9% gain). For selected nodes, SPFE uses attention pooling to form a global query $\hat{q}_i$, then retrieves context from two decoupled pools: the **Heterogeneity Prompt Pool** $P_{HE}$ uses standard Softmax attention to capture domain-specific patterns and category-discriminative information; the **Commonality Prompt Pool** $P_{CO}$ uses reverse attention with ReLU truncation to retrieve cross-domain shared semantics that do **not** match the query, preventing core knowledge from being washed away by domain styles. These are integrated as context: $V_i^* = V_i + p_{CO}(i) + p_{HE}(i)$. Ablations show that adding heterogeneity prompts alone decreases performance due to unconstrained noise, while commonality prompts combined with clustering loss yield a 4.55% gain, proving the necessity of "discriminative info + shared knowledge" decoupling.
 
-**DGCS — Differentiable Graph Clustering Solver**:
+**2. DGCS — Differentiable Graph Clustering Solver: Edge sparsification as differentiable Optimal Transport**
 
-- Learnable projections $W_q, W_k$ compute the global similarity matrix $S$ without Softmax, preserving high-confidence signals.
-- A directed edge similarity matrix $S'$ is constructed based on node density $D(v_i)$ and Sigmoid gating.
-- Core insight: A spanning forest with $Z$ connected components contains exactly $k = V - Z$ edges, which sets the global sparsification budget.
-- Edge selection is formulated as a binary optimal transport problem and solved iteratively via the Sinkhorn algorithm to obtain the entropy-regularized transport plan $\Gamma^*$.
-- The second column of $\Gamma^*$ is reshaped into the refined edge similarity matrix $S^\star$.
+To refine the similarity matrix into a reliable structure, DGCS uses learnable projections $W_q, W_k$ for a global matrix $S$ (omitting Softmax to preserve high-confidence signals), then incorporates node density $D(v_i)$ and Sigmoid gating for a directed edge matrix $S'$. Based on graph theory, a spanning forest with $Z$ connected components has exactly $k = V - Z$ edges. DGCS models edge selection as a binary optimal transport problem, using the Sinkhorn algorithm to iteratively solve for an entropy-regularized transport plan $\Gamma^*$, which is reshaped into the refined edge matrix $S^\star$. This process is fully differentiable, allowing clustering structures to participate in end-to-end training rather than serving as offline post-processing.
 
 ### Loss & Training
 
 $$L = L_G + \lambda L_C$$
 
-- **Graph consistency loss** $L_G$: For any two nodes that are structurally similar in $S^\star$, their semantic predictions are enforced to be consistent (KL divergence with stop-gradient).
-- **Clustering loss** $L_C$: Constrains the commonality prompt pool by encouraging the commonality prompts of all images within a batch to be close in semantic space (cosine distance), explicitly preserving cross-domain shared knowledge.
-- $\lambda = 0.2$
+- **Graph Consistency Loss** $L_G$: Forces semantic predictions to be consistent for nodes with high structural similarity in $S^\star$ (via KL divergence + stop-gradient), converting structural signals into model constraints.
+- **Clustering Loss** $L_C$: Constraints the Commonality Prompt Pool to ensure shared prompts across all images in a batch are close in semantic space (via cosine distance), explicitly locking cross-domain knowledge.
+- $\lambda=0.2$
 
 ## Key Experimental Results
 
-### Datasets & Setup
-
-- **Retinal fundus segmentation** (OD/OC): Five public datasets (RIM-ONE, REFUGE, ORIGA, REFUGE-Test, Drishti-GS), evaluated under cross-domain settings.
-- **Polyp segmentation**: Four public datasets (BKAI-IGH, CVC-ClinicDB, ETIS, Kvasir).
-- Backbone: ResNet-50 + ResUNet-50, ImageNet pre-trained.
-- Online single-sample adaptation, label-free, on a single NVIDIA 3090 GPU.
-
 ### Main Results
 
-| Method | OD/OC Avg. DSC | Polyp Avg. DSC |
-|--------|:-:|:-:|
+| Method | Avg DSC (Retina) | Avg DSC (Polyp) |
+|------|:---:|:---:|
 | No Adapt | 72.75 | 71.49 |
 | SAR (ICLR'23) | 73.44 | 69.21 |
 | VPTTA (CVPR'24) | 73.40 | 73.40 |
 | NC-TTT (CVPR'24) | 79.23 | 75.44 |
 | GraTa (AAAI'25) | 78.66 | 76.24 |
 | TTDG (CVPR'25) | 82.88 | 76.20 |
-| **SPEGC (Ours)** | **84.37** | **78.27** |
+| **Ours (SPEGC)** | **84.37** | **78.27** |
 
 ### Ablation Study
 
-| Configuration | Avg. DSC |
-|---------------|:-:|
-| No Adapt (baseline) | 72.75 |
-| + Graph clustering | 74.64 |
-| + MC Dropout uncertainty sampling | 76.52 |
-| + Heterogeneity prompt only (unconstrained) | 75.39 (↓) |
-| + Commonality prompt only + $L_C$ | 81.07 |
-| + Commonality + heterogeneity prompts (full) | **84.37** |
+| Configuration | Avg DSC |
+|------|:---:|
+| No Adapt (Baseline) | 72.75 |
+| + Graph Clustering | 74.64 |
+| + MC Dropout Uncertainty Sampling | 76.52 |
+| + Heterogeneity Prompt Only (Unconstrained) | 75.39 (↓) |
+| + Commonality Prompt + $L_C$ | 81.07 |
+| + Complete (Common + Hetero) | **84.37** |
 
 ### Key Findings
 
-- **Structure-driven adaptation outperforms entropy minimization**: Entropy-based methods such as SAR even fall below the No Adapt baseline on polyp segmentation due to overconfident erroneous predictions caused by "camouflaged targets"; SPEGC avoids this pitfall by relying on intra-data structure.
-- **Superior long-term CTTA stability**: Over five rounds of continual adaptation, SPEGC achieves the highest average DSC (83.10%) with only 1.27% performance degradation, demonstrating robustness against both catastrophic forgetting and error accumulation.
-- **Commonality prompts are critical**: Adding the heterogeneity prompt alone actually degrades performance (75.39 < 76.52), indicating that unconstrained prompts introduce noise; the commonality prompt combined with the clustering loss yields a substantial gain of 4.55%.
-- **Efficiency–performance trade-off in feature pool size**: A pool size of 7 achieves the highest DSC (85.24%) but increases FLOPs to 21.7G; a pool size of 3 (84.37%, 5.8G FLOPs) represents the optimal balance.
+- **Structure-driven beats Entropy-driven**: Entropy methods like SAR fall below the "No Adapt" baseline in polyp tasks due to "overconfident" wrong predictions on camouflaged objects; SPEGC avoids this by relying on internal data structures.
+- **Excellent Long-term CTTA Stability**: In 5-round continuous adaptation experiments, SPEGC achieved the highest average DSC (83.10%) with only a 1.27% performance decay, balancing anti-forgetting and anti-error accumulation.
+- **Commonality Prompt is Crucial**: Adding heterogeneity prompts alone reduced performance (75.39 vs 76.52), indicating noise introduction; the commonality prompt + clustering loss provided a significant 4.55% gain.
+- **Efficiency-Performance Trade-off**: A pool size of 7 yielded the highest DSC (85.24%) but increased FLOPs to 21.7G; a size of 3 (84.37%, 5.8G FLOPs) was selected as the optimal balance.
 
 ## Highlights & Insights
 
-- Introducing graph clustering into CTTA and replacing unreliable pixel-level/entropy signals with higher-order structural information is a novel and principled approach.
-- The decoupled design of commonality/heterogeneity prompt pools is elegant: reverse attention captures cross-domain shared knowledge while standard attention retrieves domain-specific information.
-- Formulating edge sparsification as an optimal transport problem and solving it via Sinkhorn enables end-to-end differentiable graph clustering.
-- SPEGC comprehensively outperforms state-of-the-art methods on two medical segmentation benchmarks; long-term CTTA experiments thoroughly validate its robustness against catastrophic forgetting and error accumulation.
+- Introduces graph clustering into CTTA, replacing unreliable pixel/entropy signals with high-order structural information.
+- Sophisticated decoupled prompt pool design: Reverse attention captures cross-domain shared knowledge, while standard attention extracts domain-specific information.
+- Models edge sparsification as an Optimal Transport problem solved via Sinkhorn, achieving end-to-end differentiable graph clustering.
+- Comprehensively outperforms SOTA on two medical segmentation benchmarks, with long-term CTTA experiments validating robustness against catastrophic forgetting.
 
 ## Limitations & Future Work
 
-- The similarity matrix computation in DGCS has $O(V^2)$ complexity, and FLOPs grow sharply as the feature pool increases (reaching 120G at pool size 15), limiting scalability.
-- The number of clusters $Z$ is a manually set hyperparameter that requires tuning across different tasks.
-- Validation is limited to ResNet-50/ResUNet-50; stronger backbones (e.g., ViT/Swin) and larger-scale datasets have not been evaluated.
-- Only the online single-sample adaptation scenario is explored; mini-batch arrival settings are not investigated.
-- The commonality prompt pool relies on the clustering loss, which assumes that sequentially arriving data share core semantics — an assumption that may not hold under extreme domain shift.
+- DGCS similarity matrix computation has $O(V^2)$ complexity; FLOPs grow sharply with feature pool size (reaching 120G at pool size 15), limiting scalability.
+- The number of clusters $Z$ is a manual hyperparameter requiring tuning for different tasks.
+- Validated only on ResNet-50/ResUNet-50; stronger backbones (e.g., ViT/Swin) or larger datasets have not been tested.
+- Focused on single-sample online adaptation; mini-batch scenarios remain unexplored.
+- The commonality pool relies on the assumption that continuous data shares core semantics, which may not hold under extreme domain shifts.
 
 ## Related Work & Insights
 
-- **Clustering-based segmentation**: Yu et al. reformulate cross-attention as a clustering solver; Liang et al. propose recurrent cross-attention for iterative clustering; Ding et al. extend clustering to 3D volumetric data. However, these methods operate as static in-domain post-processing and cannot exploit dynamic graph structures to guide adaptation.
-- **CTTA methods**: SAR (entropy filtering), DomainAdaptor (BN statistics), VPTTA (visual prompts + BN alignment), NC-TTT (noise estimation), GraTa (gradient alignment), TTDG (graph matching + pre-trained priors). SPEGC is most closely related to TTDG, but whereas TTDG relies on source-domain prototype alignment, SPEGC derives all adaptation signals purely from the internal structure of the target data.
+- **Clustering-based Segmentation**: Yu et al. recast cross-attention as a clustering solver; Liang et al. proposed recurrent cross-attention; Ding et al. extended clustering to 3D. However, these are static in-domain post-processing methods and cannot use dynamic graph structures to guide adaptation.
+- **CTTA**: SAR (entropy filtering), DomainAdaptor (BN stats), VPTTA (visual prompts + BN alignment), NC-TTT (noise estimation), GraTa (gradient alignment), TTDG (graph matching + pre-trained priors). SPEGC is most related to TTDG but differs by relying entirely on internal target data structure rather than source prototypes.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The combination of decoupled prompts and optimal-transport-based graph clustering is new to the CTTA literature.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Two benchmarks, multi-domain cross-evaluation, long-term CTTA, ablation studies, hyperparameter analysis, and t-SNE visualization.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete mathematical derivations, and well-motivated problem formulation.
-- Value: ⭐⭐⭐⭐ — Practically meaningful for clinical medical imaging deployment, though computational cost remains a barrier to real-world adoption.
+- Novelty: ⭐⭐⭐⭐ — The combination of prompt decoupling and Optimal Transport based graph clustering is novel in CTTA.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Multiple benchmarks, cross-domain tests, long-term CTTA, ablations, and visualizations provided.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete mathematical derivations, and well-articulated motivation.
+- Value: ⭐⭐⭐⭐ — Highly relevant for medical imaging deployment, though computational overhead remains a minor hurdle for implementation.
 
 <!-- RELATED:START -->
 
@@ -153,9 +150,9 @@ $$L = L_G + \lambda L_C$$
 
 - [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](../../ICCV2025/medical_imaging/progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
-- [\[CVPR 2026\] From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation](apex_adaptive_visual_prompting.md)
-- [\[ICML 2026\] MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery](../../ICML2026/medical_imaging/medcrp-cl_continual_medical_image_segmentation_via_bayesian_nonparametric_semant.md)
 - [\[AAAI 2026\] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction](../../AAAI2026/medical_imaging/cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo.md)
+- [\[ICML 2026\] MedCRP-CL: Continual Medical Image Segmentation via Bayesian Nonparametric Semantic Modality Discovery](../../ICML2026/medical_imaging/medcrp-cl_continual_medical_image_segmentation_via_bayesian_nonparametric_semant.md)
+- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
 
 </div>
 

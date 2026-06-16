@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] End-to-End Compression for Tabular Foundation Models
 description: >-
-  [ICML 2026][Model Compression][Tabular Foundation Models] TACO prepends a learnable transformer compressor to TabPFN-style tabular foundation models…
+  [ICML 2026][Model Compression][TabPFN] TACO prepends a learnable transformer compressor to TabPFN-like tabular foundation models. It compresses $N$ rows of training context into a latent representation of $K \ll N$ rows before passing it to the predictor. Through end-to-end joint meta-learning, it achieves a $94\times$ speedup and $97\%$ memory reduction at
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Tabular Foundation Models"
-  - "Context Compression"
-  - "TabPFN"
-  - "End-to-End Meta-Learning"
-  - "Inference Acceleration"
+  - ICML 2026
+  - Model Compression
+  - TabPFN
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: 7372bf5d81774349
+content_hash: 56eb68d0e0f4ecde
 ---
-
 # End-to-End Compression for Tabular Foundation Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -24,21 +20,21 @@ content_hash: 7372bf5d81774349
 **Keywords**: Tabular Foundation Models, Context Compression, TabPFN, End-to-End Meta-Learning, Inference Acceleration  
 
 ## TL;DR
-TACO prepends a learnable transformer compressor to TabPFN-style tabular foundation models, compressing $N$ rows of training context into $K \ll N$ latent representations before feeding them to the predictor. Through end-to-end joint meta-learning, it achieves 94x faster inference and 97% VRAM savings at a 1% compression rate with almost no loss in ROC-AUC.
+TACO prepends a learnable transformer compressor to TabPFN-like tabular foundation models. It compresses $N$ rows of training context into a latent representation of $K \ll N$ rows before passing it to the predictor. Through end-to-end joint meta-learning, it achieves a $94\times$ speedup and $97\%$ memory reduction at a $1\%$ compression rate with almost no loss in ROC-AUC.
 
 ## Background & Motivation
 
-**Background**: The paradigm in tabular prediction has shifted from GBDT to In-Context Learning (ICL) via Tabular Foundation Models (TFMs) such as TabPFN, TabICL, and TabDPT. These models are pre-trained on synthetic data and perform inference by feeding the entire training set as context into a bidirectional transformer in a single forward pass.
+**Background**: Recent paradigms in tabular prediction have shifted from GBDT to in-context learning (ICL) Tabular Foundation Models (TFMs) like TabPFN, TabICL, and TabDPT. These models are pre-trained on synthetic data and perform inference by feeding the entire training set as context into a bidirectional transformer in a single forward pass.
 
-**Limitations of Prior Work**: TFMs utilize row-column 2D bidirectional attention, with a complexity of $\mathcal{O}(N^2 M)$ relative to the number of training samples $N$. Even with KV caching, this only reduces to $\mathcal{O}(NM)$. When $N \times M$ reaches hundreds of thousands of cells, VRAM is exhausted, forcing authors to use small-to-medium tables or resort to aggressive row/column subsampling.
+**Limitations of Prior Work**: TFMs utilize 2D bidirectional attention across rows and columns, with a complexity of $\mathcal{O}(N^2 M)$ regarding the number of training samples $N$. Even with KV caching, this only reduces to $\mathcal{O}(NM)$. When $N \times M$ reaches hundreds of thousands of cells, memory usage explodes, forcing authors to use small-to-medium datasets or resort to aggressive row/column subsampling.
 
-**Key Challenge**: The attention context length directly couples "input information volume" with "inference cost." To maintain prediction accuracy, the full table must be provided, yet processing the full table is computationally prohibitive. Existing mitigations—such as distilling MotherNet into an MLP or TabFlex’s linear attention—either sacrifice accuracy or require architectural changes. **No prior work has attempted to directly compress the training context itself in an end-to-end manner.**
+**Key Challenge**: The attention context length directly couples "input information volume" with "inference cost"—high prediction accuracy requires the full table, but the full table is computationally prohibitive. Existing mitigations (e.g., distilling MotherNet into an MLP or utilizing TabFlex’s linear attention) either sacrifice accuracy or require architectural modifications; **no prior work has attempted to directly compress the training context itself in an end-to-end manner.**
 
-**Goal**: To compress the in-context training set from $N$ rows to $K$ rows ($K \ll N$) without altering the TFM backbone or losing accuracy, thereby linearly reducing inference complexity by $N/K$ times.
+**Goal**: To compress the in-context context from $N$ rows to $K$ rows ($K \ll N$) while maintaining the TFM backbone and accuracy, linearly reducing inference complexity by $N/K$ times.
 
-**Key Insight**: Decompose in-context learning into two modules: a "compressor $g$" and a "predictor $f$." The compressor is trained specifically to produce the minimal training set summary $D^{\text{mini-train}}$ that enables accurate downstream prediction. This effectively adapts the concept of dataset distillation into the TFM inference pipeline.
+**Key Insight**: Decompose in-context learning into two modules: a "compressor $g$" and a "predictor $f$". The compressor is tasked solely with producing the minimal training set summary $D^{\text{mini-train}}$ that allows the downstream predictor to make accurate predictions. This effectively adapts the concept of dataset distillation into the TFM inference pipeline.
 
-**Core Idea**: Insert a transformer compressor to compress the training table into $K$ prototypical rows, followed by **joint meta-learning** with the predictor, ensuring that the "compression" directly serves the "downstream prediction accuracy."
+**Core Idea**: Insert a transformer compressor to compress the training table into $K$ prototypical rows, then perform **joint meta-learning** with the predictor so that the "compression" process directly serves "downstream prediction accuracy."
 
 ## Method
 
@@ -46,58 +42,70 @@ TACO prepends a learnable transformer compressor to TabPFN-style tabular foundat
 
 TACO consists of two TabPFN v2-style 2D-attention transformers connected in series:
 
-1.  **Compressor** $g_\phi$: Takes $D^{\text{train}} \in \mathbb{R}^{N \times (M+1)}$ and a dummy table of $K \times (M+1)$ (initialized by random sampling from the training set, with target columns masked by placeholders). After several layers of alternating row-column attention, the dummy row positions absorb information from the actual training table, outputting $D^{\text{mini-train}} \in \mathbb{R}^{K \times (M+1) \times L}$.
+1.  **Compressor $g_\phi$**: Takes $D^{\text{train}} \in \mathbb{R}^{N \times (M+1)}$ plus a dummy table of $K \times (M+1)$ (dummy rows are initialized by random sampling from the training set, with the target column masked by a special placeholder). After several layers of alternating row/column attention, the dummy row positions absorb information from the actual training table, outputting $D^{\text{mini-train}} \in \mathbb{R}^{K \times (M+1) \times L}$.
 2.  **MLP Bridge**: A two-layer residual MLP connects the latent spaces of the two transformers.
-3.  **Predictor** $f_\theta$: Uses a standard TabPFN v2 architecture to concatenate $D^{\text{mini-train}}$ with the test batch embedding $\mathcal{E}_f(x^{\text{test}})$, feeding them into attention blocks to output class scores for test points.
+3.  **Predictor $f_\theta$**: Uses a standard TabPFN v2 architecture to concatenate $D^{\text{mini-train}}$ with the test batch embedding $\mathcal{E}_f(x^{\text{test}})$ for the attention blocks, outputting class scores for test points.
 
-Both modules consist of 12 layers / 6 heads / 192 dimensions, each with 7M parameters. The entire pipeline optimizes:
+Both modules consist of 12 layers / 6 heads / 192 dimensions, each with 14M total parameters. The entire pipeline is optimized simultaneously:
 
 $$\arg\min_{\theta,\phi}\;\mathbb{E}_{(D^{\text{train}},D^{\text{test}})\sim p(D)}\;\mathcal{L}\!\left(y^{\text{test}},\;f(x^{\text{test}},g(D^{\text{train}};\phi);\theta)\right)$$
 
-Pre-training involves 80k steps on synthetic data and 11k steps on real data, with a sequence length curriculum progressing from 1k to 60k rows. The compression rate is defined as $r = K/N$.
+Pre-training involves 80k steps on synthetic data + 11k steps on real data, with a sequence length curriculum progressing from 1k to 60k rows. The compression rate is $r = K/N$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Training Table D_train (N×(M+1))<br/>For millions of rows, use chunk-and-stitch: compress blocks then concatenate"] --> B
+    subgraph CMP["1. Dummy-row Compressor g_φ (Multi-rate training, adjustable r=K/N)"]
+        direction TB
+        B["Concatenate K dummy rows<br/>Target column masked with placeholder"] --> C["Row-column 2D bidirectional attention<br/>Dummy rows absorb prototypes from N rows"]
+        C --> D["Retain only K dummy row latent representations<br/>D_mini-train (K×(M+1)×L)"]
+    end
+    D --> E["MLP Bridge (Two-layer residual)"]
+    E --> F["Predictor f_θ<br/>Apply 2D attention on concatenated test batch embedding"]
+    F --> G["Test point class scores y_test"]
+    G -.->|"2. End-to-end joint meta-learning: Loss backprop updates both φ and θ"| CMP
+```
 
 ### Key Designs
 
-1.  **Dummy-row attention as context compressor**:
-    *   **Function**: Compresses a training table $D^{\text{train}}$ of arbitrary size into $K$ latent row representations, where $K \ll N$.
-    *   **Mechanism**: Concatenates $K$ dummy rows (with masked target columns) at the compressor input. Bidirectional attention allows information to flow freely between $N+K$ rows, while the output **retains only the latent representations of the dummy rows** as $D^{\text{mini-train}}$. Dummy rows essentially act as "learned queries," extracting prototypical patterns from the $N$ training samples.
-    *   **Design Motivation**: Compared to "hard" selection like random or kNN subsampling, dummy-row attention makes the compression process **differentiable** and does not restrict compressed rows to being identical to original rows. The compressor can create synthetic prototypes, which is why TACO significantly outperforms random/kNN sampling (Insight 5).
+**1. Dummy-row attention: Compressing the training table into a differentiable "learned query"**
 
-2.  **End-to-end joint meta-learning vs. "frozen predictor + learned compressor"**:
-    *   **Function**: Allows both compressor and predictor parameters to be updated simultaneously to optimize downstream in-context prediction loss.
-    *   **Mechanism**: During training with fixed or mixed compression rates $r$, each synthetic dataset is compressed and then used for prediction, with the loss backpropagated to both $\phi$ and $\theta$. Insight 3 provides a key ablation: fixing the predictor with TabPFN v2 weights and only training the compressor results in **consistently worse performance** across all compression rates compared to joint training.
-    *   **Design Motivation**: It is much easier for the predictor to **actively adapt** to the compressed latent space than to force a compressor to align with a fixed predictor. This redefines "compression" as "finding a pair of compression-prediction languages that understand each other."
+To compress a training table of $N$ rows into $K \ll N$ rows without the hard information loss seen in random/kNN subsampling, TACO concatenates $K$ dummy rows at the compressor input (with target labels masked). Bidirectional attention allows information to flow freely between the $N+K$ rows, but **only the latent representations of these $K$ dummy rows are retained** as $D^{\text{mini-train}}$. These dummy rows act as learned queries that extract prototypical patterns from the $N$ rows of real data. This is more powerful than hard selection because the compression is **differentiable**, and compressed rows do not have to equal any original row—the compressor can synthesize prototypes from scratch, which explains why TACO significantly outperforms random/kNN subsampling (Insight 5).
 
-3.  **Multi-rate training + chunk-and-stitch for scaling to millions of rows**:
-    *   **Function**: A single checkpoint supports arbitrary switching between $r \in \{1\%, 2\%, 4\%, 8\%, 16\%\}$ at inference time and extends TFMs to $N > 10^6$ via a chunking strategy.
-    *   **Mechanism**: During training, compression rates are uniformly sampled from $\{1, 2, 4, 8, 16\}$ for each synthetic dataset, teaching the model variable-rate compression. For massive tables (e.g., $N=10^6$), the data is divided into 100 chunks of $C=10^4$. Each chunk is independently compressed to $K_C=100$ rows, and these summaries are stitched into a global $D^{\text{mini-train}}$ for the predictor.
-    *   **Design Motivation**: Variable-rate training avoids the need for multiple checkpoints. Insight 4 verifies that this dynamic training suffers no significant performance loss compared to rate-specific training (within 95% confidence). Chunk-and-stitch extends the compressor's experience (limited to $\le 10^4$ rows) to arbitrary $N$, which is critical for the million-row experiments in Insight 6.
+**2. End-to-end joint meta-learning: Aligning the compressor and predictor to the same "language"**
+
+Updating only the compressor while freezing the predictor (e.g., using fixed TabPFN v2 weights) forces the compressor to align with a downstream model it cannot influence, which is extremely difficult. TACO instead updates **both simultaneously**: during multi-rate training, each sampled synthetic dataset is compressed and then used for prediction. Losses backpropagate to both $\phi$ and $\theta$ parameters, allowing the predictor to **actively adapt** to the compressed latent space. Ablation studies (Insight 3) where the predictor was frozen show significantly worse performance across all compression rates compared to joint training—this proves that compression and prediction must share the same representation space.
+
+**3. Multi-rate training + chunk-and-stitch: One checkpoint for any compression rate and million-row tables**
+
+To avoid training separate models for each compression rate, during training, $r$ is uniformly sampled from $\{1\%, 2\%, 4\%, 8\%, 16\%\}$. This allows a single checkpoint to perform variable-rate compression, switchable via the $r$ parameter at inference time. Insight 4 confirms no significant performance loss relative to rate-specific training. For massive tables exceeding the compressor's training limit ($\le 10^4$ rows), a "chunk-and-stitch" approach is used: $N=10^6$ is split into 100 blocks of $C=10^4$, each compressed independently to $K_C=100$, and then concatenated into a global $D^{\text{mini-train}}$. This generalizes local compression to any $N$, which was key to the million-row experiments in Insight 6.
 
 ### Loss & Training
-The model directly reuses the classification cross-entropy or regression MSE as the in-context loss. Continuous targets are discretized into $\le 10$ bins for compatibility with classification training. Training uses the AdamW optimizer with cosine annealing, learning rate warmup to $1 \times 10^{-4}$, weight decay of $1 \times 10^{-2}$, gradient clipping at 1.0, and mixed precision. Pre-training took 20 days on 8 $\times$ H100 GPUs.
+The model reuses the classification cross-entropy / regression MSE from TFMs as the in-context loss. Continuous targets are discretized into $\le 10$ bins for compatibility with classification training. Optimization uses AdamW with cosine annealing, learning rate warmup to $1 \times 10^{-4}$, weight decay $1 \times 10^{-2}$, gradient clipping at 1.0, and mixed precision. Training took 20 days on 8×H100.
 
 ## Key Experimental Results
 
 ### Main Results
 
-ROC-AUC (one-vs-one for multi-class) on 26 datasets from TabArena:
+On 26 classification datasets from TabArena, measuring ROC-AUC (one-vs-one for multi-class):
 
-| Model | Mean ROC-AUC ↑ | Description |
+| Model | Mean ROC-AUC ↑ | Notes |
 | :--- | :--- | :--- |
 | TabICL | 0.866 ± 0.103 | SOTA TFM Baseline |
 | TabPFN v2.0 | 0.866 ± 0.103 | SOTA TFM Baseline |
-| POT (No Compression) | 0.862 ± 0.101 | Same architecture, no compression baseline |
+| POT (No compression) | 0.862 ± 0.101 | Same architecture, no compression control |
 | TACO ($r=1\%$) | 0.855 ± 0.097 | Only 1% context |
 | TACO ($r=2\%$) | 0.857 ± 0.098 | |
 | TACO ($r=4\%$) | 0.857 ± 0.099 | |
 | TACO ($r=8\%$) | 0.858 ± 0.100 | |
 | TACO ($r=16\%$) | 0.858 ± 0.101 | |
 
-The CD diagram indicates **no statistically significant difference** between TACO at 1% compression and the uncompressed POT baseline.
+The CD diagram shows no statistically significant difference between $1\%$ compression and POT.
 
 ### Inference Efficiency (Synthetic 15k rows × 500 features, no KV cache)
 
-| Method | Subsequent Predict | Gain | Predict VRAM | Gain |
+| Method | Subsequent Predict | Speedup | Predict VRAM | VRAM Savings |
 | :--- | :--- | :--- | :--- | :--- |
 | POT | 28.67 s | 1× | 22.45 GB | — |
 | TACO 1% | 306 ms | **93.6×** | 549 MB | **−97.6%** |
@@ -107,34 +115,34 @@ The CD diagram indicates **no statistically significant difference** between TAC
 | TACO 16% | 1.91 s | 15× | 4.89 GB | −78.2% |
 
 ### Key Findings
-- **Compression to 1% is nearly "free"**: Reducing context from 100% to 1% only drops ROC-AUC from 0.862 to 0.855 (within the standard deviation) while accelerating inference by 94x and saving 97.6% VRAM.
-- **Joint training is a necessary condition**: Freezing the predictor and training only the compressor leads to inferior performance across all rates (Insight 3), proving that compression and prediction must share a common "language."
-- **TACO significantly outperforms random/kNN subsampling**: The ROC-AUC gap narrows as the compression rate increases, confirming that learned prototypes are superior to hard selection (Insight 5).
-- **Chunk-and-stitch unlocks million-row processing**: On MetroPT-3 (~1.2M rows), compressing to 1214 rows ($r=0.1\%$) yielded an AUPRC of 0.8955, outperforming POT/TabPFN v2 baselines using random/kNN context (Insight 6).
+- **Compression to 1% is nearly "free"**: Dropping context from 100% to 1% only reduced ROC-AUC from 0.862 to 0.855 (within standard deviation), while accelerating inference by $94\times$ and saving $97.6\%$ VRAM.
+- **Joint training is a necessary condition**: Freezing the predictor yielded worse results across all rates (Insight 3), indicating the necessity of a shared representation.
+- **TACO significantly outperforms random/kNN subsampling**: The ROC-AUC gap widens at higher compression rates, validating that learned prototypes are superior to hard selections (Insight 5).
+- **Chunk-and-stitch unlocks million-row datasets**: On MetroPT-3 (~1.2M rows compressed to 1214 rows, $r=0.1\%$), TACO achieved 0.8955 AUPRC, outperforming random/kNN-based POT/TabPFN v2 baselines (Insight 6).
 
 ## Highlights & Insights
-- **Embedding dataset distillation into in-context inference**: Unlike traditional distillation used for training acceleration, TACO introduces training set summarization as a part of the TFM inference pipeline through joint learning. This effectively automates "prompt engineering" in TFMs as "prompt compression."
-- **Dummy-row as a differentiable query**: This adapts the latent bottleneck concept from Perceiver or Set Transformer to the tabular domain, while maintaining the interpretability of "unlabeled summaries" by masking the target column.
-- **Multi-rate training facilitates flexible deployment**: The accuracy-latency trade-off is parameterized by $r$ at inference time within a single model, incurring almost zero operational overhead.
-- **Transferable chunk-and-stitch logic**: Any scenario where "global self-attention is bottlenecked by $O(N^2)$" (e.g., long-sequence inference, large corpus retrieval compression) can benefit from the "local compression + global stitching" approach.
+- **Embedding dataset distillation into in-context inference**: Unlike traditional distillation used for training acceleration, TACO is the first to make "summarizing the training set" part of the TFM inference pipeline through joint learning—automating "prompt engineering" into "prompt compression."
+- **Dummy-row as a differentiable query**: This adapts the latent bottleneck idea from Perceiver / Set Transformer to tabular data. Since the target column is masked, it maintains the interpretability of "unlabeled summaries."
+- **Multi-rate training for flexible deployment**: Continuous accuracy-latency trade-offs are handled by a single model using the $r$ parameter, incurring almost zero operational cost.
+- **Transferable chunk-and-stitch logic**: Any scenario where global self-attention is bottlenecked by $\mathcal{O}(N^2)$ (e.g., long-sequence inference, large corpus retrieval) can benefit from this "local compression + global stitching" approach.
 
 ## Limitations & Future Work
-- Evaluation was focused on TabArena classification and **did not cover regression or time-series**. The predictor currently uses discretization for regression; extending this to native regression is a clear next step.
-- Synthetic priors are largely based on SCMs, with limited coverage of **real-world missing value distributions or temporal distribution shifts**. Incorporating time-drift priors (cf. Helli et al. 2024) would be valuable.
-- While 1% compression is not statistically significant in ROC-AUC, there is an **absolute drop of 0.007**, which might be unstable for applications requiring precise calibration or long-tail class accuracy.
-- Chunk-and-stitch assumes IID chunks and **lacks a specific alignment mechanism for chunks with covariate shift**, representing a potential engineering risk.
+- Evaluation focused on TabArena classification and **did not cover regression or time-series**. The predictor currently uses discretization for regression; extending this is a clear next step.
+- Synthetic priors are still primarily SCM-based and have limited coverage of **real-world missing value distributions or temporal distribution shifts**; time-drift priors (e.g., Helli et al. 2024) should be introduced.
+- While the $1\%$ compression is not statistically significant in ROC-AUC, the **absolute drop of 0.007** might matter for applications requiring calibration or targeting long-tail classes.
+- Chunk-and-stitch assumes IID chunks; there is **no specific alignment mechanism for blocks with covariate shift**, representing a potential engineering risk.
 
 ## Related Work & Insights
-- **vs. TabPFN v2 / TabICL**: Uses the same 2D attention architecture but adds a context compressor; reduces inference complexity from $\mathcal{O}(N^2 M)$ to $\mathcal{O}(K^2 M)$ where $K=0.01 N$, with comparable performance.
-- **vs. MotherNet**: MotherNet distills a transformer into a per-dataset MLP ("model compression"). TACO performs "context compression," achieving acceleration while retaining the flexibility of ICL.
-- **vs. TabFlex**: TabFlex uses linear attention to reduce complexity from $N^2$ to $N$, but with limited accuracy. TACO directly reduces context length, providing a more aggressive optimization.
-- **vs. random / kNN subsampling**: Hard selection loses information. TACO’s differentiable dummy-row compression synthesizes prototypes, consistently outperforming selection across 1–16% compression rates.
+- **vs TabPFN v2 / TabICL**: Uses the same 2D attention architecture but adds a context compressor; reduces complexity from $\mathcal{O}(N^2 M)$ to $\mathcal{O}(K^2 M)$ where $K=0.01 N$, while maintaining performance.
+- **vs MotherNet**: MotherNet distills transformers into per-dataset MLPs ("model compression"); TACO performs "context compression," retaining in-context flexibility while gaining speed.
+- **vs TabFlex**: TabFlex uses linear attention to reduce complexity to $\mathcal{O}(N)$, but accuracy is limited; TACO's approach of reducing context length is more effective.
+- **vs random / kNN subsampling**: Hard selection loses information; TACO’s differentiable dummy-row compression synthesizes prototypes and is consistently superior at 1–16% rates.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Introducing differentiable context compression into the TFM pipeline is original, though dummy-row concepts draw from Perceiver / Set Transformer.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive 6-Insight evaluation + TabArena/TabFSbench/TableShift/MetroPT-3 benchmarks + detailed ablations (joint training / multi-rate / baselines / chunking).
-- Writing Quality: ⭐⭐⭐⭐ Clear labeling of Insights; theoretical sections are concise yet sufficient.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses the primary bottleneck of TFMs (processing large tables); the open-source checkpoints are practically "plug-and-play" for real-time industrial inference.
+- Novelty: ⭐⭐⭐⭐ First to use end-to-end differentiable context compression in TFM pipelines, though dummy-row concepts draw from Perceiver / Set Transformer.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 key Insights + TabArena/TabFSbench/TableShift/MetroPT-3 benchmarks + detailed ablations (joint training / multi-rate / baselines / chunking).
+- Writing Quality: ⭐⭐⭐⭐ Clear labeling of Insights; theoretical sections are concise; figures and tables are well-positioned.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses the primary bottleneck of TFMs (scalability to large tables); open-source checkpoints make it plug-and-play for industrial real-time prediction.
 
 <!-- RELATED:START -->
 

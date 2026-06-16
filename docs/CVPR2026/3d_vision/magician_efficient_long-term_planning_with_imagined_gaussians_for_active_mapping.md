@@ -2,69 +2,73 @@
 title: >-
   [Paper Note] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 description: >-
-  [CVPR 2026][3D Vision][Active Mapping] This paper proposes MAGICIAN, a framework that leverages a pretrained occupancy network to generate "Imagined Gaussians" for efficiently estimating surface coverage gain. Combined w…
+  [CVPR 2026][3D Vision][Paper Note] The MAGICIAN framework is proposed, which utilizes a pre-trained occupancy network to generate "Imagined Gaussians" for efficient surface coverage gain estimation. Combined with beam search, it achieves long-term trajectory planning in active mapping, reaching SOTA status in both indoor and outdoor scenes with over a 1
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Active Mapping"
-  - "Long-Term Planning"
-  - "3D Gaussian Splatting"
-  - "Scene Reconstruction"
-  - "Viewpoint Selection"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: ce48e59abcee3d45
+content_hash: af034eccee545515
 ---
-
 # MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22650](https://arxiv.org/abs/2603.22650)  
 **Code**: [https://shiyao-li.github.io/magician/](https://shiyao-li.github.io/magician/)  
-**Area**: 3D Vision
-**Keywords**: Active Mapping, Long-Term Planning, 3D Gaussian Splatting, Scene Reconstruction, Viewpoint Selection
+**Area**: 3D Vision  
+**Keywords**: Active Mapping, Long-Term Planning, 3D Gaussian Splatting, Scene Reconstruction, View Selection
 
 ## TL;DR
 
-This paper proposes MAGICIAN, a framework that leverages a pretrained occupancy network to generate "Imagined Gaussians" for efficiently estimating surface coverage gain. Combined with beam search, MAGICIAN enables long-term trajectory planning for active mapping, achieving state-of-the-art performance in both indoor and outdoor scenes with coverage improvements exceeding 10%.
+The MAGICIAN framework is proposed, which utilizes a pre-trained occupancy network to generate "Imagined Gaussians" for efficient surface coverage gain estimation. Combined with beam search, it achieves long-term trajectory planning in active mapping, reaching SOTA status in both indoor and outdoor scenes with over a 10% increase in coverage.
 
 ## Background & Motivation
 
-1. **Background**: Active Mapping requires agents to autonomously select optimal viewpoints for efficient reconstruction of unknown environments. Current mainstream methods adopt greedy Next-Best-View (NBV) strategies, selecting the next pose based on information gain, Fisher information, or surface coverage gain.
-2. **Limitations of Prior Work**: Greedy NBV methods optimize only single-step local gain, causing agents to fall into dead ends, backtrack inefficiently, and explore suboptimally. Although some methods attempt longer-horizon planning (e.g., FisherRF selects frontier targets; NextBestPath predicts path-level gain), they either still rely on frontier heuristics or are sensitive to training data quality.
-3. **Key Challenge**: Long-term planning faces a chicken-and-egg problem — optimal trajectory planning requires knowledge of the environment map, yet that map is precisely what planning aims to construct. Meanwhile, combinatorial explosion of the trajectory space and high computational cost make long-term planning extremely challenging.
-4. **Goal**: (1) Efficiently estimate surface coverage gain in unobserved regions; (2) Search for optimal long-term paths in the combinatorially explosive trajectory space; (3) Achieve scalable closed-loop planning.
-5. **Key Insight**: Inspired by the human ability to rapidly infer the structure of unfamiliar environments and plan exploration accordingly, the paper proposes "imagining" unseen regions via a pretrained occupancy network.
-6. **Core Idea**: Occupancy predictions are converted into a 3D Gaussian representation, enabling fast volumetric rendering to compute coverage gain and making beam-search-based long-term planning feasible.
+1.  **Background**: Active Mapping requires an agent to autonomously select optimal viewpoints to efficiently reconstruct unknown environments. Current mainstream methods use a greedy "Next Best View" (NBV) strategy, selecting the next pose based on information gain, Fisher information, or surface coverage gain.
+2.  **Limitations of Prior Work**: Greedy NBV methods only locally optimize single-step gains, leading to inefficient exploration behaviors such as getting stuck in dead ends or oscillating back and forth. Although some methods attempt longer path planning (e.g., FisherRF selecting frontier targets, NextBestPath predicting path gain), they either still rely on frontier heuristics or depend on the quality of training data.
+3.  **Key Challenge**: Long-term planning faces a "chicken and egg" problem—to plan an optimal trajectory, one needs an environmental map, but the map itself is exactly what is being constructed through planning. Simultaneously, the combinatorial explosion and computational cost of trajectory space make long-term planning extremely difficult.
+4.  **Goal**: (1) Efficiently estimate surface coverage gain in unobserved regions; (2) Search for optimal long-term paths in a combinatorially explosive trajectory space; (3) Implement scalable closed-loop planning.
+5.  **Key Insight**: Inspired by the human ability to quickly infer the structure of unfamiliar environments and plan exploration, the method "imagines" unseen regions through a pre-trained occupancy network.
+6.  **Core Idea**: Convert occupancy predictions into a 3D Gaussian representation and utilize fast volume rendering to calculate coverage gains, making beam-search-based long-term planning feasible.
 
 ## Method
 
 ### Overall Architecture
 
-MAGICIAN executes a perceive–plan–act loop at each step: (1) a pretrained occupancy model predicts a probabilistic occupancy field for the current environment, including unobserved regions; (2) the occupancy field is converted into Imagined Gaussians — a collection of 3D Gaussians with occupancy probability as opacity and novelty as color; (3) fast volumetric rendering estimates coverage gain for arbitrary candidate viewpoints; (4) beam search plans long-term trajectories; (5) the first $N_f$ steps of the optimal trajectory are executed before replanning.
+The difficulty of active mapping lies in the gamble of every step: where to go next to complete the reconstruction of the unknown environment in the fewest steps. MAGICIAN decomposes this into a repetitive perception-planning-action loop. Upon reaching a position, it first uses a pre-trained occupancy model to "imagine" the probabilistic occupancy field of the current environment—not just the observed parts, but also occluded and unobserved regions. Next, it translates this occupancy field into a special set of 3D Gaussians, termed "Imagined Gaussians." Then, leveraging GPU volume rendering, it quickly calculates how much new surface (i.e., coverage gain) any candidate viewpoint can observe. With this inexpensive "scoring function," it runs a beam search to plan a long-term trajectory looking several steps ahead. Finally, it executes the first $N_f$ steps of the trajectory and returns to the first step to re-plan, forming a closed loop. The key to this process is transforming the abstract question of "is a future viewpoint worth visiting" into inexpensive rendering operations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Current Observation<br/>Reconstructed Point Cloud + History"] --> B["Pre-trained Occupancy Network<br/>Imagine Occupancy of Unobserved Regions"]
+    B --> C["Imagined Gaussians<br/>Occupancy Field → Isotropic Gaussians<br/>Opacity encodes occupancy, Color encodes novelty"]
+    C --> D["Render Coverage Gain<br/>Rasterize novelty maps for candidates, 25× Speedup"]
+    D --> E["Beam Search<br/>Keep top-Nb beams / Lookahead Nd steps<br/>Freeze geometry, flip observed Gaussian novelty"]
+    E --> F["Execute first Nf steps of optimal trajectory"]
+    F -->|Closed-loop Re-planning| A
+    F --> G["Output: High Coverage Reconstruction"]
+```
 
 ### Key Designs
 
-1. **Imagined Gaussians Representation**:
+**1. Imagined Gaussians: Turning Coverage Gain into Rendering**
 
-    - **Function**: An efficiently renderable representation of scene uncertainty that supports rapid coverage gain computation.
-    - **Mechanism**: Isotropic Gaussian spheres are placed at proxy points of the occupancy network $\hat{\sigma}(\mathbf{x}|\mathbf{C}_t)$, with opacity encoding occupancy probability and color encoding binary novelty $\hat{\gamma} \in \{0,1\}$. By exploiting the structural correspondence of the volumetric rendering equation (density ↔ occupancy, transmittance ↔ occlusion, color ↔ novelty), the coverage gain integral is reformulated as standard GPU-accelerated Gaussian rendering. For any candidate pose, a "novelty map" is rendered and summed to obtain the coverage gain.
-    - **Design Motivation**: Traditional Monte Carlo sampling requires repeated queries to two neural networks at dense 3D points, which is computationally expensive (0.05 s/viewpoint). Imagined Gaussians exploit GPU rasterization, reducing per-viewpoint cost to 0.002 s — a 25× speedup.
+Directly estimating how much new surface a candidate viewpoint can see traditionally requires repeated queries to occupancy and novelty neural networks over dense 3D sample points, followed by Monte Carlo integration. This takes 0.05s per viewpoint, making long-term planning over thousands of candidates computationally prohibitive. MAGICIAN’s breakthrough is noting a mathematical correspondence: the integral of surface coverage gain (occupancy × occlusion × novelty) and the volume rendering equation (density × transmittance × color) map to each other one-to-one. Thus, it places an isotropic Gaussian at each proxy point output by the occupancy network $\hat{\sigma}(\mathbf{x}\mid\mathbf{C}_t)$, using opacity to encode occupancy probability and the color channel to encode a binary novelty $\hat{\gamma}\in\{0,1\}$ (1 = unobserved, 0 = observed). Rendering a "novelty map" for any candidate pose and summing it yields the coverage gain. The computation collapses from dense neural queries to highly optimized Gaussian rasterization, reducing single viewpoint time to 0.002s (approx. 25x speedup). This acceleration makes the subsequent beam search feasible.
 
-2. **Beam Search Long-Term Planning**:
+**2. Beam Search: Looking Multiple Steps Ahead in Explosive Trajectory Space**
 
-    - **Function**: Efficiently searches for optimal long-term paths in the combinatorially explosive trajectory space.
-    - **Mechanism**: A beam of $N_b$ candidate trajectories is maintained, each independently tracking its own Imagined Gaussians state. At each expansion step, all reachable poses for each beam are enumerated, coverage gains are computed, and only the top-$N_b$ beams are retained. During search, Gaussian parameters are frozen; only the novelty values of observed Gaussians are updated (from 1 to 0), ensuring already-observed regions are automatically excluded in subsequent rendering. The trajectory maximizing cumulative coverage gain $\sum_{i=1}^{N_d} G(\mathbf{c}_i)$ is selected.
-    - **Design Motivation**: Greedy NBV is a degenerate case with $N_b=1, N_d=1$. Increasing beam width and lookahead steps systematically improves coverage efficiency (AUC +6.3%, coverage +9.3%).
+Greedy NBV only selects the single step with the maximum immediate gain, which often leads agents into dead ends or cycles. MAGICIAN uses beam search to simultaneously maintain $N_b$ candidate trajectories (beams), allowing them to compete based on cumulative rewards. Each beam independently maintains its own "Imagined Gaussians" state because different trajectories observe different regions. During each expansion step, all reachable next poses for every beam are enumerated, their coverage gains are calculated, and only the top-$N_b$ results are retained for the next depth. A key technique is freezing the Gaussian geometric parameters during the search and only flipping the novelty of Gaussians observed by a specific pose from 1 to 0—ensuring that surfaces already seen are not recounted in future gain calculations without needing to rebuild the map. After a lookahead of $N_d$ steps, the trajectory with the maximum cumulative coverage gain $\sum_{i=1}^{N_d} G(\mathbf{c}_i)$ is selected. Greedy NBV is a degenerate case where $N_b=1, N_d=1$; by expanding the beam width and lookahead steps, coverage efficiency improves systematically (AUC +6.3%, Coverage +9.3%).
 
-3. **Pretrained Occupancy Network as World Model**:
+**3. Pre-trained Occupancy Network: Imaging Unseen Regions First**
 
-    - **Function**: Predicts the geometric structure of unobserved regions, providing prior knowledge for planning.
-    - **Mechanism**: A multi-layer Transformer network $\hat{\sigma}(\mathbf{x}|\mathbf{C}_t)$ takes query points, the reconstructed point cloud, and historical poses as input, and outputs $[0,1]$ occupancy probabilities. Pretrained on ShapeNet and fine-tuned on 3D scenes, it encodes strong structural priors. It is also used for collision-free trajectory planning.
-    - **Design Motivation**: Long-term planning requires the ability to "imagine" the structure of unseen regions; otherwise, the future value of candidate viewpoints cannot be estimated. Ablation results show that performance is nearly unchanged even without fine-tuning on the target scene domain.
+To evaluate whether a viewpoint several steps ahead is worthwhile, one must have a prior guess regarding the geometry of unobserved regions—otherwise, lookahead is blind calculation. MAGICIAN uses a multi-layer Transformer occupancy network $\hat{\sigma}(\mathbf{x}\mid\mathbf{C}_t)$ as this "world model," taking query points, reconstructed point clouds, and historical poses as input to output occupancy probabilities in $[0,1]$. It is pre-trained on ShapeNet and fine-tuned on 3D scenes to encode strong structural priors (e.g., space likely exists behind a wall; the floor is usually below a table). The same network is also used to plan collision-free trajectories. A counter-intuitive discovery is that even skipping domain-specific fine-tuning and using the pre-trained model directly results in almost no performance drop, indicating the strong transferability of these structural priors.
+
+### Mechanism: Convergence of a Single Beam Search Step
+
+Suppose the beam width is $N_b=3$ and lookahead $N_d$ is deep. Currently, three candidate beams $\{B_1, B_2, B_3\}$ are retained, each with an independent "Imagined Gaussians" state. During expansion, assume each beam has 10 reachable next poses, generating $3 \times 10 = 30$ new candidates. A novelty map is rendered and summed for each, giving 30 coverage gain values. For example, $B_1$ turning left might see a long corridor (high gain), while $B_2$ faces a previously scanned corner (gain near 0). These 30 candidates are ranked by cumulative gain, and only the top-3 are kept for the next step, while the rest are pruned. Once a pose has "seen" certain Gaussians, their novelty is set to 0; thus, even if another beam passes the same corridor in the next step, it won't receive duplicate points. After $N_d$ steps, the trajectory with the highest cumulative gain among survivors is chosen, its first $N_f$ steps are executed, and re-planning occurs. Throughout the process, the map is never truly reconstructed; everything is deduced "in the mind" via frozen geometry and novelty flipping.
 
 ### Loss & Training
 
-The occupancy network is pretrained using a standard occupancy prediction loss. The exploration process itself involves no gradient updates — Imagined Gaussians are generated via forward inference and novelty values are updated by rule, making the closed-loop planning entirely training-free.
+The occupancy network is pre-trained using standard occupancy prediction loss and then fine-tuned on 3D scenes. The exploration process itself involves no gradient updates—Imagined Gaussians are generated by forward inference, and novelty is flipped by rule, making it a training-free closed-loop planning approach.
 
 ## Key Experimental Results
 
@@ -74,14 +78,14 @@ The occupancy network is pretrained using a standard occupancy prediction loss. 
 |--------|------|----------|----------|----------|-------|
 | Macarons++ | AUC↑ | **0.721** | 0.647 | 0.546 | 0.534 |
 | Macarons++ | Final Coverage↑ | **0.919** | 0.819 | 0.786 | 0.670 |
-| MP3D (Wheeled) | Comp.(%)↑ | **85.45** | - | - | - |
-| MP3D (Wheeled) | Comp.(cm)↓ | **4.93** | - | - | - |
-| MP3D (UAV) | Comp.(%)↑ | **96.83** | - | 90.18 (NARUTO) | - |
-| MP3D (UAV) | Comp.(cm)↓ | **2.11** | - | 3.00 (NARUTO) | - |
+| MP3D (Wheeled) | Comp. (%)↑ | **85.45** | - | - | - |
+| MP3D (Wheeled) | Comp. (cm)↓ | **4.93** | - | - | - |
+| MP3D (UAV) | Comp. (%)↑ | **96.83** | - | 90.18 (NARUTO) | - |
+| MP3D (UAV) | Comp. (cm)↓ | **2.11** | - | 3.00 (NARUTO) | - |
 
-**Rendering/Reconstruction Quality** (large-scale real scan scenes):
+**Reconstruction Quality** (Large-scale real scans):
 
-| Method | SSIM↑ | PSNR↑ | LPIPS↓ | Acc.(%)↑ |
+| Method | SSIM↑ | PSNR↑ | LPIPS↓ | Acc. (%)↑ |
 |------|-------|-------|--------|----------|
 | FisherRF | 0.55 | 13.95 | 0.38 | 79.15 |
 | MACARONS | 0.61 | 15.68 | 0.34 | 86.42 |
@@ -89,45 +93,45 @@ The occupancy network is pretrained using a standard occupancy prediction loss. 
 
 ### Ablation Study
 
-| Configuration | AUC↑ | Final Cov.↑ | Notes |
+| Configuration | AUC↑ | Final Cov.↑ | Description |
 |------|------|-------------|------|
-| $N_b=1, N_d=1$ (Greedy) | ~0.66 | ~0.83 | Degenerates to NBV; still outperforms MACARONS |
+| $N_b=1, N_d=1$ (Greedy) | ~0.66 | ~0.83 | Degenerates to NBV, still outperforms MACARONS |
 | $N_b=10, N_d=10$ (Full) | 0.721 | 0.919 | +6.3% AUC, +9.3% Coverage |
-| Pretrained occupancy model | 0.652 | 0.888 | Strong generalization |
-| Fine-tuned occupancy model | 0.646 | 0.893 | Fine-tuning yields no clear benefit |
+| Pre-trained Occupancy | 0.652 | 0.888 | Good generalization |
+| Fine-tuned Occupancy | 0.646 | 0.893 | Fine-tuning provides no significant gain |
 
 ### Key Findings
 
-- **Even when degenerated to greedy NBV, Imagined Gaussians-based rendering outperforms MACARONS's Monte Carlo approach**: AUC +5.2%, coverage +10.9%. The 25× speedup in per-viewpoint gain estimation is the key enabler.
-- **The value of long-term planning grows substantially with lookahead horizon**: Extending lookahead from 1 to 10 steps improves coverage from ~82% to ~92%, demonstrating the necessity of long-term planning.
-- **High replanning frequency is not required**: Replanning every 6 steps suffices to achieve state-of-the-art performance, indicating that planned trajectories are reasonably robust.
-- **The occupancy model transfers well across domains**: A model pretrained only on outdoor scenes can be directly applied to indoor scenes with negligible performance degradation.
+- **Even when degenerated to greedy NBV, the Imagined Gaussians rendering significantly outperforms MACARONS’ Monte Carlo method**: AUC +5.2%, Coverage +10.9%. The 25x speedup in gain estimation is critical.
+- **The value of long-term planning becomes significant with more steps**: Increasing from 1-step to 10-step lookahead raises coverage from ~82% to ~92%, proving the necessity of long-term planning.
+- **Re-planning frequency does not need to be extremely high**: Re-planning every 6 steps is sufficient to reach SOTA, indicating trajectory planning robustness.
+- **Occupancy models exhibit strong domain transferability**: Models pre-trained only on outdoor data utilized in indoor scenes show almost no performance degradation.
 
 ## Highlights & Insights
 
-- **The formal correspondence between coverage gain and volumetric rendering** is the paper's most elegant insight: the surface coverage gain integral (occupancy × occlusion × novelty) is mathematically equivalent to the volumetric rendering equation (density × transmittance × color). This allows direct reuse of the highly optimized Gaussian rendering pipeline for coverage gain computation, effectively recasting exploration planning as a "rendering problem."
-- **Each beam independently maintaining its own Gaussian state** is a clever design — different candidate trajectories have different observation histories, and independent novelty states enable correct cumulative gain computation while preserving parallelism.
-- **The framework naturally extends to other exploration criteria**: only the semantics encoded in the "color channel" need to change (e.g., uncertainty, reconstruction error); the rendering framework remains unchanged.
+- **The correspondence between coverage gain and volume rendering** is the most elegant insight: the mathematical form of the surface coverage gain integral is equivalent to the volume rendering equation. This allows the reuse of highly optimized Gaussian rendering pipelines to transform exploration planning into a "rendering problem."
+- **Independent Gaussian states per beam** in the search are cleverly designed—different candidate trajectories have different observation histories, and logical novelty flipping maintains correct cumulative gain calculation while preserving parallelism.
+- **The framework naturally extends to other exploration criteria**: By changing the semantics encoded in the "color channel" (e.g., uncertainty, reconstruction error), the same rendering framework remains applicable.
 
 ## Limitations & Future Work
 
-- A pretrained occupancy network is required, which may need retraining or fine-tuning for entirely novel domains (e.g., underwater, space).
-- Beam search still incurs computational overhead; evaluating large numbers of candidate viewpoints at $N_b=10, N_d=10$ is non-trivial.
-- Experiments assume accurate known poses; the impact of localization error on planning is not addressed.
-- **Future directions**: (1) Lighter-weight occupancy estimation (e.g., 2D feature lifting to 3D) to reduce pretraining dependency; (2) Semantically guided active mapping via LLM/VLM integration; (3) Uncertainty-aware replanning strategies.
+- Requires a pre-trained occupancy network, which may need re-training or fine-tuning for entirely new domains (e.g., underwater, space).
+- Beam search still incurs computational overhead; $N_b=10, N_d=10$ requires evaluating a large number of candidate viewpoints.
+- The experiment assumes accurate poses are known and does not consider the impact of localization errors on planning.
+- **Future Directions**: (1) Use lighter occupancy estimation (e.g., 2D feature projection to 3D) to reduce pre-training dependence; (2) Combine with LLM/VLM for semantic-guided active mapping; (3) Introduce uncertainty-aware re-planning strategies.
 
 ## Related Work & Insights
 
-- **vs. MACARONS**: MACARONS uses the same occupancy network but with greedy NBV and Monte Carlo gain estimation. MAGICIAN achieves long-term planning via Imagined Gaussians and beam search, improving coverage from 0.819 to 0.919.
-- **vs. FisherRF**: FisherRF decouples frontier-based path planning from Fisher information gain computation, causing path-level gain to be ignored. MAGICIAN's beam search optimizes cumulative gain at the trajectory level.
-- **vs. ActiveGAMER**: ActiveGAMER performs strongly on MP3D (95.32%); MAGICIAN further improves to 96.83% without relying on any traditional planner or navigation model.
+- **vs MACARONS**: MACARONS uses the same occupancy network but greedy NBV + Monte Carlo estimation. MAGICIAN improves coverage from 0.819 to 0.919 via Imagined Gaussians and beam search.
+- **vs FisherRF**: FisherRF is based on frontier selection + Fisher information gain, but path planning is decoupled from gain calculation. MAGICIAN optimizes cumulative gain at the trajectory level.
+- **vs ActiveGamer**: While ActiveGamer performs strongly on MP3D (95.32%), MAGICIAN reaches 96.83% without relying on traditional planners or navigation models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The formal correspondence between coverage gain and volumetric rendering is exceptionally elegant; this is the first method to achieve long-term planning for active mapping.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Indoor/outdoor multi-benchmark evaluation, multiple action spaces, dual assessment of rendering and reconstruction quality, and comprehensive ablations — the experimental design is thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ Mathematical derivations are clear, the logical flow from problem formulation to method design is coherent, and the paper is richly illustrated.
-- Value: ⭐⭐⭐⭐⭐ Addresses the long-standing open problem of long-term planning in active mapping with high practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ The formal correspondence between coverage gain and volume rendering is elegant, achieving long-term planning in active mapping for the first time.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive experiments across multiple benchmarks, action spaces, reconstruction metrics, and ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations and logical design flow with rich illustrations.
+- Value: ⭐⭐⭐⭐⭐ Successfully addresses the long-standing long-term planning problem in active mapping with high utility.
 
 <!-- RELATED:START -->
 
@@ -135,11 +139,11 @@ The occupancy network is pretrained using a standard occupancy prediction loss. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] LTGS: Long-Term Gaussian Scene Chronology From Sparse View Updates](ltgs_long-term_gaussian_scene_chronology_from_sparse_view_updates.md)
-- [\[CVPR 2026\] PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences](pcstracker_long-term_scene_flow_estimation_for_point_cloud_sequences.md)
-- [\[AAAI 2026\] MeshA*: Efficient Path Planning With Motion Primitives](../../AAAI2026/3d_vision/mesha_efficient_path_planning_with_motion_primitives.md)
-- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation](sgi_structured_2d_gaussians_for_efficient_and_compact_large_image_representation.md)
+- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
+- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
+- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
+- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
+- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
 
 </div>
 

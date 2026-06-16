@@ -2,121 +2,139 @@
 title: >-
   [Paper Note] LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 description: >-
-  [CVPR 2026][Medical Imaging][mammography] This paper introduces LUMINA, a multi-vendor full-field digital mammography (FFDM) dataset comprising 468 patients and 1,824 images…
+  [CVPR 2026][Medical Imaging][benchmark] The authors propose the LUMINA multi-vendor Full-Field Digital Mammography (FFDM) dataset (468 patients, 1,824 images) along with an energy harmonization preprocessing method based on foreground pixel histogram matching. They systematically evaluate CNN and Transformer models across three tasks: diagnosis, BI-RADS clas
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "mammography"
-  - "multi-vendor dataset"
-  - "energy harmonization"
-  - "histogram matching"
-  - "benchmark"
+  - CVPR 2026
+  - Medical Imaging
+  - benchmark
 date: 2026-05-08
-content_hash: 8090fb235833770f
+content_hash: 711d1690ec02af64
 ---
-
 # LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.14644](https://arxiv.org/abs/2603.14644)  
-**Code**: [Available](https://github.com/NUBagciLab/LUMINA)  
-**Area**: Medical Imaging
-**Keywords**: mammography, multi-vendor dataset, energy harmonization, histogram matching, benchmark
+**Code**: [Yes](https://github.com/NUBagciLab/LUMINA)  
+**Area**: Medical Imaging  
+**Keywords**: Mammography, Multi-vendor datasets, Energy harmonization, Histogram matching, benchmark
 
 ## TL;DR
 
-This paper introduces LUMINA, a multi-vendor full-field digital mammography (FFDM) dataset comprising 468 patients and 1,824 images, accompanied by a foreground-pixel histogram matching protocol for energy harmonization. The benchmark systematically evaluates CNN and Transformer models across three clinical tasks: diagnosis, BI-RADS classification, and breast density prediction.
+The authors propose the LUMINA multi-vendor Full-Field Digital Mammography (FFDM) dataset (468 patients, 1,824 images) along with an energy harmonization preprocessing method based on foreground pixel histogram matching. They systematically evaluate CNN and Transformer models across three tasks: diagnosis, BI-RADS classification, and density estimation.
 
 ## Background & Motivation
 
-- **Background**: Existing public mammography datasets (e.g., CBIS-DDSM, INbreast) suffer from notable deficiencies in scale, clinical annotation completeness, and vendor diversity. CBIS-DDSM is derived from legacy screen-film mammography (SFM) scans, while INbreast contains only 115 patients.
-- **Limitations of Prior Work**: Multi-vendor acquisition systems differ in energy settings (high/low energy) and vendor-specific processing pipelines, resulting in substantial domain shift in image appearance and intensity distributions. Consequently, models generalize poorly across vendors.
-- **Goal**: (1) Construct an FFDM benchmark dataset that emphasizes vendor diversity and energy metadata; (2) propose a model-agnostic foreground histogram harmonization method to eliminate vendor/energy-induced domain shift.
+**Background**: Existing public mammography datasets (e.g., CBIS-DDSM, INbreast) have significant deficiencies in scale, clinical annotation, and vendor diversity. CBIS-DDSM is based on outdated Screen-Film Mammography (SFM) scans, while INbreast includes only 115 patients.  
+**Limitations of Prior Work**: Multi-vendor acquisition systems introduce significant domain shifts in image appearance and intensity distributions due to differing energy settings (high/low energy) and proprietary processing pipelines, leading to poor model generalization in cross-vendor scenarios.  
+**Goal**: The motivations of this work are to: (1) construct an FFDM benchmark focusing on vendor diversity and energy metadata; (2) propose a model-agnostic foreground histogram harmonization method to eliminate vendor/energy shifts.
 
 ## Method
 
 ### Overall Architecture
 
-The LUMINA workflow consists of three stages: (1) **Data collection and curation** — 1,824 FFDM images from six vendors, with pathology-confirmed malignancy labels, BI-RADS scores, and breast density annotations; (2) **Foreground histogram harmonization (Energy Harmonization)** — aligning all images to a low-energy reference distribution; (3) **Multi-task benchmark evaluation** — comparing CNNs (ResNet-50, DenseNet-121, EfficientNet-B0) and a Transformer (Swin-T) across the three clinical tasks.
+LUMINA serves as both a dataset and a methodology. It addresses the gaps of "small scale, sparse annotations, and single-vendor" in current public mammography datasets while providing a preprocessing method to mitigate vendor/energy domain shifts. The workflow consists of three stages: **multi-vendor dataset construction** (1,824 FFDM images from 6 vendors with pathology-confirmed malignancy, BI-RADS scores, and density labels), **foreground energy harmonization** (aligning all images to a low-energy reference distribution), and **dual-view shared backbone evaluation** (sharing weights for CC and MLO views) to conduct benchmark assessments across diagnosis, BI-RADS classification, and density prediction tasks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Multi-Vendor Dataset Construction"]
+        direction TB
+        A["6-Vendor FFDM<br/>1,824 Images / 468 Patients<br/>High + Low Energy"] --> B["DICOM Processing<br/>MONOCHROME1→2 Conversion"]
+        B --> C["Labels: Pathology + BI-RADS + Density"]
+    end
+    DATA --> H["Foreground Energy Harmonization<br/>Foreground Mask → Foreground CDF → Match Low Energy Reference"]
+    H --> V1["CC View"]
+    H --> V2["MLO View"]
+    V1 --> SB["Dual-View Shared Backbone<br/>Shared Weight Feature Extraction"]
+    V2 --> SB
+    SB --> FC["Feature Concatenation → FC Head"]
+    FC --> T["Three-Task Evaluation<br/>Diagnosis / BI-RADS / Density"]
+```
 
 ### Key Designs
 
-1. **Multi-Vendor Dataset Construction**: Data were collected from six vendors — IMS, Metaltronica, FUJIFILM, Siemens, Carestream, and GE — covering 468 patients (250 benign, 218 malignant) in 12–14 bit DICOM format. Annotations include pathology-confirmed outcomes, BI-RADS grades 0–6, and breast density categories A–D. Images in FUJIFILM's MONOCHROME1 format are uniformly converted to MONOCHROME2.
+**1. Multi-Vendor Dataset Construction: Filling Diversity Gaps with Vendor and Energy Metadata**
 
-2. **Foreground-Only CDF Matching**: The core idea is to exclude background pixels (intensity = 0) and perform CDF matching exclusively on the foreground breast region. Specifically, a foreground mask is defined as $M_s = \{(x,y) \mid \mathbf{I}_s(x,y) > 0\}$; foreground histograms $H_s(k)$ and $H_r(k)$ are computed for the source and reference images respectively, normalized into CDFs $\bar{C}_s(p)$ and $\bar{C}_r(q)$, and intensity transformation is achieved via the mapping $\mathcal{T}(p) = \arg\min_q |\bar{C}_s(p) - \bar{C}_r(q)|$. The reference histogram is drawn from the low-energy FFDM subset using 12-bit bins to preserve fine-grained detail. **Design Motivation**: Standard histogram matching is severely distorted by large areas of black background pixels; the foreground mask effectively mitigates this problem.
+Existing benchmarks like CBIS-DDSM (outdated film) and INbreast (small sample size) are insufficient for evaluating cross-vendor generalization. LUMINA collects data from six vendors: IMS, Metaltronica, FUJIFILM, Siemens, Carestream, and GE. It comprises 468 patients (250 benign, 218 malignant) with 12-14 bit depth DICOM files. Annotations include pathology results, BI-RADS grades (0-6), and breast density (A-D). FUJIFILM’s MONOCHROME1 images are standardized to MONOCHROME2. This vendor diversity and energy metadata make LUMINA a suitable foundation for studying domain shifts.
 
-3. **Dual-View Shared-Backbone Network**: CC (craniocaudal) and MLO (mediolateral oblique) views are processed through a weight-sharing backbone independently; the resulting features are concatenated and passed to a fully connected classifier. Compared to independent backbones, weight sharing reduces parameters by 48% (4.34M vs. 8.34M) while achieving comparable or superior performance.
+**2. Foreground Histogram Harmonization: CDF Matching Restricted to Breast Regions**
+
+Standard histogram matching is often distorted by the large areas of zero-valued black background in FFDM images. The key innovation in LUMINA is matching only the foreground: a foreground mask is defined as $M_s = \{(x,y) \mid \mathbf{I}_s(x,y) > 0\}$. Foreground histograms $H_s(k), H_r(k)$ and normalized CDFs $\bar{C}_s(p), \bar{C}_r(q)$ are calculated for the source and reference images, respectively. Intensity transformation is performed via the mapping $\mathcal{T}(p) = \arg\min_q |\bar{C}_s(p) - \bar{C}_r(q)|$. The reference distribution is derived from a low-energy FFDM subset using 12-bit bins to preserve detail. This approach prevents background pixels from "diluting" the matching statistics, ensuring stable foreground alignment.
+
+**3. Dual-View Shared Backbone: Preventing Overfitting on Small Data**
+
+The CC (Craniocaudal) and MLO (Mediolateral Oblique) views provide complementary information. However, using independent weights for each view on small datasets risks overfitting and doubles the parameter count. LUMINA processes both views through a backbone with shared weights. This reduces the parameters by 48% (4.34M vs 8.34M) compared to independent backbones while achieving comparable or superior performance, making it highly efficient for a dataset of 468 patients.
 
 ### Loss & Training
 
-- Standard cross-entropy classification loss
-- AdamW optimizer: $\text{lr}=1 \times 10^{-3}$ for CNNs; $\text{lr}=1 \times 10^{-5}$ for Swin-T
-- 100 epochs with learning rate decay by 0.1 every 30 epochs; weight decay $1 \times 10^{-5}$
-- 5-fold cross-validation; best model selected by validation AUC
-- Data augmentation limited to horizontal flipping and resizing; grayscale images replicated to three channels
-- PyTorch with CUDA determinism flags for reproducibility
-- Training environment: 8 × NVIDIA A6000 GPUs
+- Standard Cross-Entropy loss for classification.
+- AdamW Optimizer: $\text{lr}=1 \times 10^{-3}$ for CNNs, $\text{lr}=1 \times 10^{-5}$ for Swin-T.
+- 100 epochs, learning rate decay of 0.1 every 30 epochs, weight decay of $1 \times 10^{-5}$.
+- 5-fold cross-validation, selecting the model with the best validation AUC.
+- Data augmentation: Horizontal flipping and resizing only; grayscale images replicated across three channels.
+- PyTorch + CUDA deterministic flags used for reproducibility.
+- Training Environment: 8 × NVIDIA A6000 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset / Task | Metric | Ours (Best) | Prev. SOTA | Notes |
-|---|---|---|---|---|
-| Diagnosis (Two-view, 512²) | AUC | **93.54%** (EfficientNet-B0) | — | Best overall: dual-view + high resolution |
-| Diagnosis (Single-view, 512²) | AUC | 92.13% (EfficientNet-B0) | — | Second best among single-view configs |
-| BI-RADS Binary (224²) | AUC | **92.80%** (EfficientNet-B0) | — | Low/high risk classification |
-| BI-RADS Ternary (224²) | AUC | 83.27% (EfficientNet-B0) | — | Low/intermediate/high risk |
-| Density Prediction (224²) | Macro-AUC | **89.43%** (Swin-T) | — | Transformer better suited for density |
+| Dataset/Task | Metric | Ours | Prev. SOTA | Notes |
+|------------|------|----------|-------------|------|
+| Diagnosis (Two-view, 512²) | AUC | **93.54%** (EfficientNet-B0) | — | Optimal with dual-view + high res |
+| Diagnosis (Single, 512²) | AUC | 92.13% (EfficientNet-B0) | — | Second best with single view |
+| BI-RADS Binary (224²) | AUC | **92.80%** (EfficientNet-B0) | — | Low vs. High risk classification |
+| BI-RADS Three-class (224²) | AUC | 83.27% (EfficientNet-B0) | — | Low/Medium/High risk |
+| Density Prediction (224²) | Macro-AUC | **89.43%** (Swin-T) | — | Transformers better for density |
 
 ### Ablation Study
 
 | Configuration | Key Metric (AUC) | Notes |
-|---|---|---|
-| Shared backbone EfficientNet-B0 (224²) | 92.99% | 4.34M parameters |
-| Independent backbone EfficientNet-B0 (224²) | 93.54% | 8.34M parameters; double the params, marginal gain |
-| Raw images (no harmonization) | Baseline | Lower AUC across all tasks |
-| Foreground histogram harmonization | +Gain | Consistent improvements in ACC/AUC/F1; Grad-CAM more focused |
+|------|---------------|------|
+| Shared Backbone EfficientNet-B0 (224²) | 92.99% | 4.34M Parameters |
+| Independent Backbone EfficientNet-B0 (224²) | 93.54% | 8.34M Parameters; performance parity with 2x params |
+| Original Images (No Harmonization) | Baseline | Lower AUC across all tasks |
+| Foreground Harmonization | +Gain | Consistent gain in ACC/AUC/F1; more focused Grad-CAM |
 
 ### Key Findings
 
-- Dual-view models consistently outperform single-view counterparts, confirming the complementary value of CC and MLO views.
-- EfficientNet-B0 achieves the best performance on diagnosis and BI-RADS tasks with only ~4M parameters; Swin-T excels at density prediction.
-- Higher input resolution (512²) generally improves performance, though 224² remains competitive with substantially lower computational cost.
-- Histogram harmonization not only improves quantitative metrics but also sharpens Grad-CAM attention, directing model focus toward lesion regions.
-- Low-energy images benefit most from harmonization, as high-energy images dominate the dataset distribution.
+- Dual-view models consistently outperform single-view models, confirming the value of CC+MLO complementary information.
+- EfficientNet-B0 is optimal for Diagnosis and BI-RADS tasks (only 4M parameters), while Swin-T performs best for Density Prediction.
+- Higher input resolution (512²) generally improves performance, though 224² remains competitive with significantly lower computational overhead.
+- Histogram harmonization not only improves metrics but also enhances Grad-CAM attention, forcing the model to focus more on lesion areas.
+- Low-energy images benefit most from harmonization (since high-energy images dominate the data distribution).
 
 ## Highlights & Insights
 
-- **Practical value of foreground masking**: A simple yet effective idea — performing histogram matching after excluding background pixels. Though seemingly straightforward, this design is critical in mammography, where FFDM images contain large areas of black background.
-- **Model-agnostic preprocessing**: The harmonization protocol can be applied as a lightweight preprocessing step to any backbone, making it straightforward to adopt in practice.
-- **Dataset systematicity**: The combination of complete annotations (pathology + BI-RADS + density) with vendor/energy metadata is unique among existing datasets.
-- **Clinical insight**: EfficientNet-B0 wins on diagnostic tasks with the fewest parameters, while Swin-T's global attention mechanism makes it better suited for density prediction — revealing a meaningful relationship between task type and model selection.
+- **Value of Foreground Masking**: A simple but effective idea—excluding background pixels before histogram matching. This design is crucial in mammography where FFDM images contain vast black regions.
+- **Model-Agnostic Preprocessing**: The harmonization method can be applied as a lightweight preprocessing step to any backbone, making it highly suitable for practical deployment.
+- **Systematic Benchmarking**: The combination of complete annotations (Pathology + BI-RADS + Density) and vendor/energy metadata is unique among existing public datasets.
+- **Clinical Insights**: EfficientNet-B0 wins the diagnosis task with minimal parameters, while Swin-T is better suited for density prediction due to global attention, revealing the relationship between task type and model selection.
 
 ## Limitations & Future Work
 
-- The dataset scale remains modest (468 patients) compared to large-scale resources such as EMBED (~500K images).
-- Data originate from a single institution in Turkey, limiting patient population diversity.
-- The reference distribution for harmonization is a representative low-energy FFDM subset; no adaptive reference selection mechanism is explored.
-- More advanced domain adaptation methods (e.g., adversarial training, frequency-domain alignment) are not investigated.
-- No direct experimental comparison with established cross-vendor harmonization methods (e.g., ComBat, HarmoFL) is provided.
-- The four-view model underperforms the dual-view model, likely due to overfitting caused by excessive parameters on a small dataset.
+- The dataset scale is still relatively small (468 patients) compared to large-scale datasets like EMBED (500k images).
+- Data is sourced from a single institution in Turkey, limiting patient population diversity.
+- The reference distribution for harmonization is a selected subset of low-energy FFDM, lacking an adaptive reference selection mechanism.
+- Advanced domain adaptation methods (e.g., adversarial training, frequency-domain alignment) were not explored.
+- Direct experimental comparisons with existing multi-vendor methods (e.g., ComBat, HarmoFL) are missing.
+- Four-view models performed worse than dual-view models, likely due to overfitting on the small dataset with increased parameters.
 
 ## Related Work & Insights
 
-- ComBat corrects batch effects via empirical Bayes in feature space rather than pixel space.
-- HarmoFL reduces cross-site variation through frequency-domain amplitude normalization in federated learning settings.
-- LUMINA complements datasets such as VinDr-Mammo (5,000 patients, single vendor, Vietnam) and RSNA (1,970 patients) — smaller in scale but offering greater vendor diversity.
-- The pixel-space approach proposed here is more interpretable and requires no training, making it complementary to feature-space methods.
-- **Insight**: For multi-center medical imaging research, lightweight pixel-space preprocessing may be more practical than complex domain adaptation pipelines.
-- Combining LUMINA with MIL-PF (also CVPR 2026) is a promising direction: applying LUMINA's harmonization as preprocessing followed by frozen encoder + MIL classification.
+- ComBat uses empirical Bayes to correct batch effects but operates in feature space rather than pixel space.
+- HarmoFL reduces cross-site variation in federated learning via frequency-domain amplitude normalization.
+- This work complements VinDr-Mammo (5,000 patients, single vendor) and RSNA (1,970 patients)—though smaller, LUMINA offers greater vendor diversity.
+- The pixel-space approach is more intuitive and requires no training, serving as a complement to feature-space methods.
+- **Insight**: For multi-center medical imaging research, lightweight pixel-space preprocessing may be more practical than complex domain adaptation methods.
+- Potential synergy exists with MIL-PF (also CVPR 2026)—using LUMINA for harmonization followed by a frozen encoder + MIL classifier.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — Solid dataset contribution, though the proposed method (foreground histogram matching) is technically straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers three tasks, multiple models, multiple resolutions, ablations, visualizations, and energy-level analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Rich tables and figures, transparent experimental setup, and a persuasive dataset comparison table.
-- **Value**: ⭐⭐⭐⭐ — The multi-vendor benchmark makes a direct contribution to the community and is publicly released on OSF, Kaggle, and GitHub.
+- **Novelty**: ⭐⭐⭐ Solid dataset contribution, but the method (foreground histogram matching) is technically straightforward.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers three tasks, multiple models, multiple resolutions, ablation studies, visualization, and energy analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Detailed tables and figures, transparent experimental settings, and persuasive dataset comparisons.
+- **Value**: ⭐⭐⭐⭐ The multi-vendor benchmark is a direct contribution to the community, made available across OSF, Kaggle, and GitHub.
 
 <!-- RELATED:START -->
 
@@ -124,11 +142,11 @@ The LUMINA workflow consists of three stages: (1) **Data collection and curation
 
 ## Related Papers
 
-- [\[CVPR 2026\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](milpf_multiple_instance_learning_on_precomputed_fe.md)
-- [\[CVPR 2026\] A protocol for evaluating robustness to H&E staining variation in computational pathology models](a_protocol_for_evaluating_robustness_to_he_stainin.md)
+- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
+- [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 - [\[CVPR 2026\] MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation](medgen-bench_contextually_entangled_benchmark_for_open-ended_multimodal_medical_.md)
+- [\[ECCV 2024\] Energy-induced Explicit Quantification for Multi-modality MRI Fusion](../../ECCV2024/medical_imaging/energy-induced_explicit_quantification_for_multi-modality_mri_fusion.md)
 - [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](../../NeurIPS2025/medical_imaging/pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
-- [\[ICCV 2025\] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users](../../ICCV2025/medical_imaging/progait_a_multi-purpose_video_dataset_and_benchmark_for_transfemoral_prosthesis_.md)
 
 </div>
 

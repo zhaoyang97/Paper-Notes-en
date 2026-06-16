@@ -2,115 +2,126 @@
 title: >-
   [Paper Note] Group Editing: Edit Multiple Images in One Go
 description: >-
-  [CVPR 2026][Image Generation][consistent multi-image editing] This paper proposes GroupEditing, which reconstructs a group of related images as pseudo-video frames and combines explicit geometric correspondences from VGG…
+  [CVPR 2026][Image Generation][Paper Note] Ours proposes GroupEditing, which reconstructs a set of related images as pseudo-video frames. By combining explicit geometric correspondences provided by VGGT with implicit temporal priors from video models through enhanced positional encodings (Ge-RoPE and Identity-RoPE), it achieves cross-view consistent group image
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "consistent multi-image editing"
-  - "video diffusion prior"
-  - "geometric correspondence"
-  - "RoPE positional encoding"
-  - "pseudo-video"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 437929ccb93d521d
+content_hash: 9d7b38b1f6b53080
 ---
-
 # Group Editing: Edit Multiple Images in One Go
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22883](https://arxiv.org/abs/2603.22883)  
 **Code**: [https://group-editing.github.io/](https://group-editing.github.io/)  
-**Area**: Diffusion Models / Image Editing
-**Keywords**: consistent multi-image editing, video diffusion prior, geometric correspondence, RoPE positional encoding, pseudo-video
+**Area**: Diffusion Models / Image Editing  
+**Keywords**: Multi-image consistent editing, video diffusion prior, geometric correspondence, RoPE, pseudo-video  
 
 ## TL;DR
-This paper proposes GroupEditing, which reconstructs a group of related images as pseudo-video frames and combines explicit geometric correspondences from VGGT with the implicit temporal prior of a video diffusion model. Two specially designed positional encodings—Ge-RoPE and Identity-RoPE—are introduced to inject correspondence information, enabling cross-view consistent group image editing that significantly outperforms existing methods in visual quality, editing consistency, and semantic alignment.
+Ours proposes GroupEditing, which reconstructs a set of related images as pseudo-video frames. By combining explicit geometric correspondences provided by VGGT with implicit temporal priors from video models through enhanced positional encodings (Ge-RoPE and Identity-RoPE), it achieves cross-view consistent group image editing, significantly outperforming existing methods in visual quality, editing consistency, and semantic alignment.
 
 ## Background & Motivation
 
-1. **Background**: Existing image editing methods (e.g., InstructPix2Pix, ControlNet) focus primarily on single-image editing. In virtual content creation, digital commerce, and similar applications, users frequently need to apply consistent modifications across multi-view images of the same subject—such as uniformly recoloring a digital character's clothing or stylizing product images from multiple angles.
-2. **Limitations of Prior Work**: Editing images one by one leads to appearance and structural inconsistencies. Optimization-based propagation methods (e.g., editing one image and then propagating the changes) suffer from poor generalization and tend to produce artifacts. Optimization-free methods (e.g., Edicho) rely on semantic correspondence and tracking tools and can only handle a small number of images.
-3. **Key Challenge**: In geometrically complex scenarios (e.g., target rotation, occlusion, deformation), semantic matching based solely on attention features is insufficiently precise. Identifying "the left eye across different viewpoints" or "tracking a logo on a T-shirt rotated by 30°" poses significant challenges for existing methods.
-4. **Goal**: To establish reliable cross-image correspondences within a geometrically diverse group of related images, enabling multi-image consistent editing from a single instruction.
-5. **Key Insight**: The authors identify two key observations: (1) *Implicit correspondence*—video models inherently possess a temporal consistency prior, which can be inherited by treating an image group as a "pseudo-video"; (2) *Explicit correspondence*—the implicit correspondences of video models alone are insufficient in geometrically complex scenarios, necessitating dense geometric matching from VGGT as a complement.
-6. **Core Idea**: The multi-image editing problem is reformulated as a pseudo-video generation problem, fusing explicit geometric correspondences (VGGT) with an implicit temporal prior (video diffusion model) by injecting correspondence information through specially designed positional encodings.
+1. **Background**: Existing image editing methods (e.g., InstructPix2Pix, ControlNet) primarily focus on single-image editing. In scenarios such as virtual content creation and digital commerce, users often need to consistently modify multi-view images of the same subject—for example, changing the color of a digital character's clothes or stylizing product images across various angles.
+2. **Limitations of Prior Work**: Per-image editing leads to appearance and structural inconsistencies. Optimization-based propagation methods (editing one and propagating to others) suffer from poor generalization and artifacts. Training-free methods (e.g., Edicho) rely on semantic correspondence and tracking tools, which can only handle a small number of images.
+3. **Key Challenge**: In geometrically complex scenes (e.g., object rotation, occlusion, deformation), semantic matching based solely on attention features is imprecise. "Identifying the left eye under different perspectives" or "tracking a logo rotated by 30° on a t-shirt" remains extremely difficult for existing methods.
+4. **Goal**: How to establish reliable cross-image correspondences in a group of geometrically diverse related images to achieve one-instruction, multi-image consistent editing?
+5. **Key Insight**: Two key observations are made: (1) Implicit correspondence: Video models inherently possess temporal consistency priors; treating image groups as "pseudo-videos" allows the inheritance of these priors. (2) Explicit correspondence: Implicit correspondence from video models alone is insufficient for complex geometry; dense geometric matching from VGGT is required as a supplement.
+6. **Core Idea**: Transform the multi-image editing problem into a pseudo-video generation task. Fuse explicit geometric correspondence (VGGT) with implicit temporal priors (video diffusion models) by injecting correspondence information through specially designed positional encodings.
 
 ## Method
 
 ### Overall Architecture
-The inputs consist of a group of related images along with their corresponding segmentation masks and a text editing instruction. Images are first encoded into latent space via a VAE encoder and arranged as a pseudo-video sequence along the temporal dimension. Within the Transformer backbone of the WAN-2.1 video diffusion model, two enhanced RoPE positional encodings are injected: Ge-RoPE for cross-view geometric alignment and Identity-RoPE for intra-image identity preservation of the target. Explicit geometric feature tokens extracted by VGGT are concatenated to the latent token sequence and participate in self-attention computation. The edited multi-view consistent images are then produced by the decoder.
+The problem to be solved is: given a group of images of the same subject from different perspectives and an editing instruction (e.g., "change the t-shirt to red"), ensure all images are edited consistently rather than independently. The core transformation of GroupEditing is treating the image group as a "pseudo-video"—since video models are naturally designed to maintain consistency across adjacent frames, arranging multiple images as a sequence in the temporal dimension allows the model to leverage these temporal consistency priors. The pipeline involves: feeding segmentation masks and text instructions, encoding each image into latent space via a VAE, and arranging them as a pseudo-video sequence for a Transformer based on the WAN-2.1 video diffusion model. Two sets of enhanced positional encodings are injected into the backbone: Ge-RoPE for cross-view geometric alignment and Identity-RoPE for subject identity preservation. Meanwhile, explicit geometric feature tokens extracted by VGGT are concatenated into the latent sequence for self-attention. Finally, the model decodes the multi-view consistent editing results. The key premise is that explicit matches from VGGT provide stability where implicit video priors struggle with rotations, occlusions, or deformations.
+
+```mermaid
+graph TD
+    subgraph DATA["GroupEditData: Training Data Construction"]
+        direction TB
+        D1["Edit Instructions → Gemini 2.5 Generates Image Groups"] --> D2["SAM + Grounding DINO Segmentation Masks"]
+        D2 --> D3["Qwen-VL Consistency/Aesthetic Filtering & Annotation"]
+    end
+    DATA -->|"Supervised Training with 7,517 Paired Groups"| T
+    A["Segmentation Masks + Text Instructions"] --> M["VAE Encoding → Pseudo-video Latent Sequence"]
+    M --> T["WAN-2.1 Video Diffusion Transformer Backbone<br/>VGGT Geometric Tokens Concatenated in Self-Attention"]
+    G["Ge-RoPE<br/>VGGT Displacement Field → Geometric Alignment RoPE"] --> T
+    I["Identity-RoPE<br/>Mask Local Coordinates → Cross-image Identity Alignment"] --> T
+    T --> O["Decoding → Multi-view Consistent Editing Results"]
+```
 
 ### Key Designs
 
-1. **Data Construction Pipeline (GroupEditData)**:
+**1. GroupEditData: Constructing Multi-image Editing Training Data from Scratch**
 
-    - **Function**: Constructs a large-scale multi-image editing training dataset.
-    - **Mechanism**: Gemini 2.5 is used to generate image groups (18,248 groups) from manually written text instructions. SAM and Grounding DINO are applied for target segmentation to obtain masks. Qwen-VL-Max is then employed for consistency and aesthetic evaluation to filter for quality, retaining 7,517 high-quality groups. Each group contains images, masks, full-image descriptions, and segmented region descriptions.
-    - **Design Motivation**: Large-scale paired multi-image editing data is currently unavailable. This pipeline provides the critical infrastructure that makes training feasible.
+Large-scale paired data for multi-image consistent editing did not previously exist, which is why the field has relied on zero-shot/propagation methods. Ours first builds this infrastructure. The pipeline is an automated four-step process: using Gemini 2.5 to generate image groups based on manual edit instructions (18,248 groups), using SAM + Grounding DINO for target segmentation masks, and using Qwen-VL-Max for simultaneous consistency and aesthetic evaluation to filter low-quality samples, resulting in 7,517 groups. Each group includes images, masks, global descriptions, and regional descriptions, sufficient for supervised training. This "text → generation → filtering → annotation" pipeline can be ported to other tasks lacking paired data.
 
-2. **Geometry-enhanced RoPE (Ge-RoPE)**:
+**2. Ge-RoPE: Injecting Explicit Geometric Correspondence into Positional Encodings**
 
-    - **Function**: Injects explicit geometric correspondence information extracted by VGGT into the positional encodings to achieve fine-grained spatial alignment across viewpoints.
-    - **Mechanism**: A pixel-level displacement field $\Delta(h,w) = (\Delta_h, \Delta_w)$ is obtained from VGGT, scaled to the latent-space resolution, and smoothed with a Gaussian kernel ($\mu=21, \sigma=11$) while prioritizing high-confidence correspondences. The smoothed displacements are added to the original spatial grid indices to construct a warped grid $\tilde{h} = h + \Delta_h^{\text{smooth}}$, and nearest-neighbor indexing into a precomputed frequency bank generates the geometry-aware RoPE encoding.
-    - **Design Motivation**: The implicit correspondences of video models are insufficiently accurate in geometrically complex scenes. Ge-RoPE uses explicit displacement fields to inform the model which position in image B corresponds to position $(h,w)$ in image A, substantially improving spatial alignment precision.
+Implicit correspondences in video models are imprecise for complex geometry—they recognize frame similarity but cannot specify which pixel in Image A corresponds to which in Image B. Ge-RoPE extracts a pixel-level displacement field $\Delta(h,w) = (\Delta_h, \Delta_w)$ from VGGT. After scaling to latent resolution and smoothing with a Gaussian kernel ($\mu=21, \sigma=11$) to prioritize high-confidence matches, the smoothed displacement is added back to original spatial grid indices to obtain a warped grid:
 
-3. **Identity-RoPE**:
+$$\tilde{h} = h + \Delta_h^{\text{smooth}}$$
 
-    - **Function**: Ensures identity consistency of the same target across different images.
-    - **Mechanism**: The minimum bounding rectangle $\mathcal{R}_t$ of the target in each image is identified via segmentation masks. Pixel coordinates within the rectangle are normalized to local coordinates relative to the rectangle's origin: $(\tilde{h}, \tilde{w}) = (h - y_1^{(t)}, w - x_1^{(t)})$. Consequently, the same target region across different images receives identical positional encodings, regardless of its absolute position within each image.
-    - **Design Motivation**: Targets may appear at different absolute positions across viewpoints, causing standard positional encodings to treat them as distinct entities. Identity-RoPE enables all instances of "the cat's face" across images to share the same positional signal through coordinate normalization, thereby preserving identity consistency.
+Nearest neighbor interpolation then indexes a pre-computed frequency bank to generate geometry-aware RoPE. Consequently, the positional encoding itself carries the information of "position $(h,w)$ in image A corresponds to location X in image B." For instance, a logo on a t-shirt rotated by 30° will be aligned to the same phases across different views. This design is clever as it injects geometry via positional encodings without modifying attention weights, offering a lightweight yet direct injection.
+
+**3. Identity-RoPE: Sharing Positional Signals Across Images for the Same Object**
+
+The same object often appears at different locations across perspectives. Standard positional encodings use absolute coordinates, treating a "cat face in the top-left" and a "cat face in the bottom-right" as unrelated, which breaks identity. Identity-RoPE uses segmentation masks to find the minimum bounding box $\mathcal{R}_t$ for the target in each image and shifts the pixel coordinates to local coordinates relative to the box origin:
+
+$$(\tilde{h}, \tilde{w}) = (h - y_1^{(t)},\ w - x_1^{(t)})$$
+
+Thus, no matter where the target moves in the frame, the "cat face" in all images receives the same set of positional encodings. The model naturally recognizes them as the same identity, maintaining appearance consistency after editing.
 
 ### Loss & Training
-Training is conducted on WAN-2.1 (a Transformer-based video diffusion model) using the AdamW optimizer (weight decay 0.01, learning rate $1 \times 10^{-4}$), at a resolution of $528 \times 528$, with batch size 8 on 8 A800 GPUs. The training objective is the standard velocity-field prediction loss.
+Ours is trained on WAN-2.1 (a Transformer-based video diffusion model) using a standard flow matching loss. The optimizer is AdamW (weight decay 0.01, learning rate $1 \times 10^{-4}$), at a resolution of $528 \times 528$, with a batch size of 8, using 8 A800 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | CLIP-Score↑ | Aesthetic↑ | DINO-Score↑ | Edit Consistency↑ | PSNR↑ |
-|--------|------------|-----------|------------|------------------|-------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Anydoor | 0.2728 | 4.72 | 0.7208 | 0.8697 | 0.6182 |
 | OminiControl | 0.2902 | 5.10 | 0.7326 | 0.8676 | 0.6457 |
 | Edicho | 0.3059 | 4.89 | 0.8080 | 0.8988 | 0.6935 |
-| **GroupEditing** | **0.3122** | **5.39** | **0.8168** | **0.9239** | **0.7624** |
+| **Ours** | **0.3122** | **5.39** | **0.8168** | **0.9239** | **0.7624** |
 
-User study results (ranked 1=best to 4=worst): GroupEditing ranks first across all four dimensions—identity consistency (1.67), aesthetics (1.46), appearance fidelity (1.50), and overall quality (1.47).
+User Study (Rank 1=Best, 4=Worst): GroupEditing ranks first across Identity Consistency (1.67), Aesthetic (1.46), Appearance Fidelity (1.50), and Overall (1.47).
 
 ### Ablation Study
 
 | Configuration | CLIP-Score↑ | Aesthetic↑ | DINO-Score↑ | Edit Consistency↑ |
-|--------------|------------|-----------|------------|------------------|
+| :--- | :--- | :--- | :--- | :--- |
 | w/o VGGT | 0.2728 | 4.72 | 0.7208 | 0.8616 |
 | w/o Ge-RoPE | 0.2902 | 4.89 | 0.7326 | 0.8697 |
 | w/o Identity-RoPE | 0.2902 | 4.89 | 0.7326 | 0.9108 |
 | Full model | **0.3122** | **5.39** | **0.8168** | **0.9239** |
 
 ### Key Findings
-- Explicit geometric features from VGGT contribute the most: removing them causes DINO-Score to drop from 0.8168 to 0.7208 and edit consistency to drop from 0.9239 to 0.8616.
-- Identity-RoPE primarily improves edit consistency (0.9108→0.9239), with a comparatively smaller contribution to visual quality.
-- Edited results can be directly applied to DreamBooth/LoRA personalization and Must3R 3D reconstruction, validating cross-view consistency.
+- VGGT explicit geometric features provide the largest contribution: removing them drops DINO-Score from 0.8168 to 0.7208 and Edit Consistency from 0.9239 to 0.8616.
+- Identity-RoPE primarily improves editing consistency (0.9108→0.9239) with smaller gains in visual quality.
+- Edited results can be directly used for DreamBooth/LoRA personalization and Must3R 3D reconstruction, verifying cross-view consistency.
 
 ## Highlights & Insights
-- **The pseudo-video reformulation is highly elegant**: Recasting multi-image editing as video editing inherits the temporal consistency prior of video models at no additional cost—a clean and effective problem transformation.
-- **The fusion of explicit and implicit correspondences**: Ge-RoPE injects geometric information via positional encodings rather than modifying attention weights, yielding a lightweight yet effective integration mechanism.
-- **Engineering value of the data construction pipeline**: The fully automated text→generation→filtering→annotation pipeline is transferable to other tasks that require paired training data.
+- **The pseudo-video reconstruction is highly ingenious**: Converting multi-image editing into a video editing problem "inherits" temporal consistency priors for free. This is an elegant problem transformation.
+- **Fusion mechanism of explicit and implicit correspondence**: Ge-RoPE injects geometric information through positional encodings rather than modifying attention weights, representing a lightweight and effective fusion strategy.
+- **Engineering value of the data construction pipeline**: The automated "text → generation → filtering → annotation" pipeline is transferable to other tasks requiring paired data.
 
 ## Limitations & Future Work
-- Training data is generated by Gemini rather than sourced from real multi-view images, which may limit generalization to real-world scenarios.
-- Editing quality depends on the accuracy of VGGT's geometric correspondences and may degrade when VGGT estimates are unreliable.
-- Resolution is fixed at $528 \times 528$; extension to high-resolution settings has not been validated.
-- Segmentation masks are required as input, which increases the barrier to practical use.
+- Training data originates from Gemini generation rather than real multi-view images, which may limit generalization in real-world scenes.
+- Dependence on VGGT's geometric correspondence quality; editing quality may degrade if VGGT estimations are inaccurate.
+- Resolution is fixed at 528×528, and scalability to high-resolution scenes has not been verified.
+- Currently requires segmentation masks as input, increasing the barrier to entry.
 
 ## Related Work & Insights
-- **vs. Edicho**: Edicho performs zero-shot consistent editing via semantic correspondence and tracking tools, but is constrained to a small number of images. GroupEditing is the first training-based framework, scaling to larger image groups through a combination of data and model design.
-- **vs. Frame2Frame/ChronoEdit**: These methods leverage video models to enhance temporal consistency in single-image editing. GroupEditing extends this paradigm by treating multiple images as a unified pseudo-video.
-- **vs. ControlNet/T2I-Adapter**: These are general single-image conditional control methods. GroupEditing focuses specifically on consistency constraints across multiple images.
+- **vs Edicho**: Edicho uses semantic correspondence + tracking for zero-shot consistent editing but is limited to fewer images; GroupEditing is the first training paradigm using both data and model scaling.
+- **vs Frame2Frame/ChronoEdit**: These utilize video models for temporal consistency enhancement in single-image editing; GroupEditing further treats multiple images as a unified pseudo-video.
+- **vs ControlNet/T2I-Adapter**: These are general single-image conditional control methods; GroupEditing focuses on consistency constraints across multiple images.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of pseudo-video reformulation and dual-RoPE injection is creative, though individual components are not entirely novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers quantitative evaluation, qualitative results, user study, ablation study, and downstream application validation—relatively comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Logically clear with rich illustrations.
-- **Value**: ⭐⭐⭐⭐ Multi-image consistent editing addresses a practical need; the first training-based framework has pioneering significance.
+- Novelty: ⭐⭐⭐⭐ The combination of pseudo-video reconstruction and dual RoPE injection is creative, though components are not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive quantitative and qualitative evaluations, user studies, ablations, and downstream application verifications.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and rich illustrations.
+- Value: ⭐⭐⭐⭐ Multi-image consistent editing is a practical requirement; the first training framework holds pioneering significance.
 
 <!-- RELATED:START -->
 
@@ -118,11 +129,11 @@ User study results (ranked 1=best to 4=worst): GroupEditing ranks first across a
 
 ## Related Papers
 
+- [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
 - [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
-- [\[CVPR 2026\] TokenLight: Precise Lighting Control in Images using Attribute Tokens](tokenlight_precise_lighting_control_in_images_using_attribute_tokens.md)
 
 </div>
 

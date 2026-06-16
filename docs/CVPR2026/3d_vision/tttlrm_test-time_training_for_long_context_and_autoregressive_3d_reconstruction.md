@@ -2,119 +2,104 @@
 title: >-
   [Paper Note] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] tttLRM is the first work to introduce Test-Time Training (TTT) into large-scale 3D reconstruction models. It leverages LaCT layers to achieve long-context and autoregressive 3D G…
+  [CVPR 2026][3D Vision][Test-Time Training] tttLRM introduces Test-Time Training (TTT) into large-scale 3D reconstruction models for the first time. By utilizing LaCT layers, it achieves long-context and autoregressive 3D Gaussian reconstruction with linear complexity. It compresses multi-view observations into TTT fast weights to form an implicit 3D representat
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Reconstruction"
-  - "Test-Time Training"
-  - "Large Reconstruction Model"
-  - "Gaussian Splatting"
-  - "Autoregressive Reconstruction"
+  - CVPR 2026
+  - 3D Vision
+  - Test-Time Training
 date: 2026-05-08
-content_hash: c2fc95046bf8f046
+content_hash: 5da719366d379c09
 ---
-
 # tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.20160](https://arxiv.org/abs/2602.20160)  
-**Area**: 3D Vision
-**Keywords**: 3D Reconstruction, Test-Time Training, Large Reconstruction Model, Gaussian Splatting, Autoregressive Reconstruction
+**Area**: 3D Vision  
+**Keywords**: 3D Reconstruction, Test-Time Training, Large Reconstruction Model, Gaussian Splatting, Autoregressive Reconstruction  
 
 ## TL;DR
 
-tttLRM is the first work to introduce Test-Time Training (TTT) into large-scale 3D reconstruction models. It leverages LaCT layers to achieve long-context and autoregressive 3D Gaussian reconstruction at linear complexity. Multi-view observations are compressed into TTT fast weights to form an implicit 3D representation, which is then decoded into explicit formats such as 3DGS, achieving state-of-the-art performance on both object-level and scene-level benchmarks.
+tttLRM introduces Test-Time Training (TTT) into large-scale 3D reconstruction models for the first time. By utilizing LaCT layers, it achieves long-context and autoregressive 3D Gaussian reconstruction with linear complexity. It compresses multi-view observations into TTT fast weights to form an implicit 3D representation, which is then decoded into explicit formats like 3DGS, achieving SOTA performance on both object-level and scene-level datasets.
 
 ## Background & Motivation
 
-Reconstructing explicit 3D representations from streaming visual input is a central goal of 3D vision, yet existing approaches exhibit clear bottlenecks:
+Reconstructing explicit 3D representations from streaming visual input is a core objective of 3D vision, yet existing methods face significant bottlenecks:
 
-**Traditional optimization methods** (NeRF, 3DGS): require per-scene optimization, taking minutes to hours.
+**Traditional Optimization Methods** (NeRF, 3DGS): Require per-scene optimization, taking minutes to hours.
 
-**Feed-forward large reconstruction models** (LRM, GS-LRM): attention-based architectures that support only a limited number of input views (typically ≤4), due to $O(N^2)$ attention complexity.
+**Feed-forward Large Reconstruction Models** (LRM, GS-LRM): Based on attention mechanisms, the number of input views is limited (typically $\le 4$) because attention complexity is $O(N^2)$.
 
-**Long-LRM**: extends to 32 views, but bidirectional attention still hinders further scaling and precludes streaming input.
+**Long-LRM**: Although extended to 32 views, bidirectional attention still hinders further scaling and cannot handle streaming inputs.
 
-**Implicit latent 3D representations** (LVSM, etc.): achieve high novel-view synthesis quality but suffer from slow rendering speed, limited controllability, and poor interpretability.
+**Implicit Latent 3D Representations** (LVSM, etc.): Produce high-quality novel view synthesis but suffer from slow rendering and lack of controllability and interpretability.
 
-The root cause lies in the need for a **linear-complexity alternative to attention for long-context modeling that simultaneously supports streaming/autoregressive inference**.
+**Key Challenge**: Long-context modeling requires schemes beyond the quadratic complexity of attention, while also supporting streaming/autoregressive inference.
 
-tttLRM is inspired by an analogy to human perception: humans observe a continuous visual stream → build an abstract internal representation → decode it on demand into an explicit 3D structure. The fast weights of the TTT framework naturally correspond to this "internal memory" mechanism.
+**Key Insight**: The inspiration for tttLRM comes from an analogy to human perception: humans observe continuous visual streams $\to$ build abstract internal representations $\to$ decode them into explicit 3D structures as needed. The fast weights in the TTT framework correspond precisely to this "internal memory" mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-tttLRM consists of three core components:
+tttLRM aims to solve the limitation where existing feed-forward reconstruction models rely on attention with $O(N^2)$ complexity, making them unable to handle many input views (GS-LRM $\le 4$, Long-LRM caps at 32 and lacks streaming support). The solution is to replace "sequence modeling" with Test-Time Training: multi-view observations are compressed into a set of "fast weights" $W$ updated online during inference. $W$ acts as an implicit 3D memory that refines as observations increase, which is then queried by virtual view tokens to linearly decode explicit 3DGS. The process consists of three steps: projecting image patches into tokens $\to$ iteratively updating fast weights $W$ with tokens via LaCT layers $\to$ querying $W$ with virtual tokens and outputting 3DGS parameters through a linear decoder.
 
-1. **Image encoding**: input images are patchified and projected into token sequences.
-2. **LaCT layers updating fast weights**: tokens iteratively update the TTT fast weights $W$, forming an implicit 3D representation.
-3. **Virtual token query and decoding**: virtual view tokens query the fast weights, and a linear decoder outputs explicit 3D representations (e.g., 3DGS parameters).
+```mermaid
+graph TD
+    A["Multi-view Images + Ray Embeddings <br/>Patchified into Observation Tokens"] --> LACT
+    subgraph LACT["TTT + LaCT Fast Weights (24 blocks stacked)"]
+        direction TB
+        B["Window Attention<br/>Captures Intra-view Local Relations"] --> C["Fast Weights W Online Gradient Update<br/>Obs. Tokens Write to Memory (Linear)"]
+    end
+    LACT -->|Incremental Update W per Batch: Autoregressive Reconstruction| LACT
+    LACT --> D["Virtual Tokens Query W<br/>Read-only, No Update (Read-Write Separation)"]
+    D --> E["Linear Decoder"]
+    E -->|Default Virtual Tokens| F["3DGS Parameters"]
+    E -->|Triplane Virtual Tokens| G["Triplane NeRF etc."]
+    A -.Sequence-dimension Sharding on Multi-GPU: Distributed Feed-forward.-> LACT
+```
 
-### TTT and LaCT Principles
+### Key Designs
 
-**TTT (Test-Time Training)** reformulates sequence modeling as an online learning problem:
+**1. TTT + LaCT Fast Weights: Replacing Attention with Linear Complexity Online Learning**
+
+The quadratic complexity of attention is the fundamental bottleneck for long contexts. TTT transforms sequence modeling into online learning—fast weights $W$ are updated via gradients based on input key-value pairs during inference, compressing the KV cache into fixed-size neural memory:
 
 $$W \leftarrow W - \eta \nabla \mathcal{L}_{\text{MSE}}(f_W(k), v)$$
 
-The fast weights $W$ are updated at inference time based on input key-value pairs, encoding the KV cache as a fixed-size neural memory.
+LaCT (Large Chunk TTT) further utilizes large chunk updates (up to 1M tokens) and intra-chunk gradient accumulation to maximize GPU utilization. Each LaCT layer contains three components: window attention (local relations), fast weight update (linear), and fast weight application (linear). This removes the quadratic constraint on input views and unlocks streaming/autoregressive inference.
 
-**LaCT (Large Chunk TTT)** performs large-chunk updates (up to 1M tokens) with intra-chunk gradient accumulation to achieve high GPU utilization. Each LaCT layer comprises:
+**2. Model Architecture and Virtual Token Decoding: Obs. in, 3D out**
 
-- A window attention module (capturing intra-view local relationships)
-- Fast weight update (linear complexity)
-- Fast weight application (linear complexity)
-
-### Model Architecture Details
-
-The model consists of **24 LaCT blocks** with hidden dimension 768 and patch size $8 \times 8$.
-
-For each input image $\mathbf{I}_i \in \mathbb{R}^{H \times W \times 3}$, it is concatenated with ray embeddings $\mathbf{R}_i \in \mathbb{R}^{H \times W \times 9}$, then patchified and tokenized. The processing pipeline is:
+The model consists of 24 stacked LaCT blocks with 768 hidden dimensions and $8 \times 8$ patches. Each input image $\mathbf{I}_i$ and ray embedding $\mathbf{R}_i \in \mathbb{R}^{H \times W \times 9}$ are concatenated and tokenized, following three steps:
 
 $$\mathbf{T}_i = \mathbf{T}_i + \text{WinAttn}(\mathbf{T}_i)$$
 $$W = \text{Update}(\{\mathbf{T}_i\}_{i=1}^N)$$
 $$\mathbf{T}_i^v = \text{Apply}(W, \mathbf{T}_i^v)$$
 
-Virtual tokens $\mathbf{T}^v$ participate only in the Apply operation without updating the fast weights. A decoder transforms them into per-patch Gaussian parameters (color, scale, rotation, opacity, depth).
+Virtual tokens $\mathbf{T}^v$ only participate in Apply and do not update $W$, ensuring "read-write separation." The decoder transforms them into per-patch Gaussian parameters (color, scale, rotation, opacity, depth). Because the output is determined by virtual tokens, the architecture is generalizable to different 3D formats (e.g., Triplane NeRF) by simply swapping the virtual token types.
 
-### Autoregressive Reconstruction
+**3. Autoregressive Reconstruction: Online Streaming Inference**
 
-The autoregressive mode converts the model into an RNN-like inference process:
+Due to linear updates, the model can run incrementally like an RNN: initialize $W \leftarrow W_0$; as each batch $b$ arrives, update $W \leftarrow \mathcal{F}(W, \mathcal{I}_{(b)})$ and immediately predict $G_{(b)} \leftarrow \mathcal{F}(W, \mathcal{I}^v_{(b)})$. This enables progressive online reconstruction.
 
-- Initialize $W \leftarrow W_0$
-- For each batch $b$: update $W \leftarrow \mathcal{F}(W, \mathcal{I}_{(b)})$, predict $G_{(b)} \leftarrow \mathcal{F}(W, \mathcal{I}^v_{(b)})$
-- Return the final Gaussians $G_{(B)}$
+**4. Distributed Feed-forward Reconstruction: Sequence Parallelism**
 
-Upon arrival of each batch (e.g., 4 images), the fast weights are incrementally updated and 3D Gaussians are immediately predicted, enabling online progressive reconstruction.
-
-### Distributed Feed-Forward Reconstruction
-
-To support large numbers of input views and high-resolution images, sequence parallelism is introduced:
-
-1. Shard the sequence dimension across multiple GPUs.
-2. After fast weight synchronization, each GPU independently predicts Gaussians for its assigned views.
-3. Gaussians are aggregated to form the complete scene.
-4. Each GPU renders a subset of novel views, computes the loss, and gradients are synchronized via All-Reduce.
+To accommodate more views and higher resolutions, tokens are sharded across GPUs along the sequence dimension. GPUs independentally predict Gaussians for their batches after syncing fast weights, and gradients are synced via All-Reduce during training.
 
 ### Loss & Training
 
 $$\mathcal{L} = \mathcal{L}_{\text{RGB}} + \lambda_{\text{depth}} \mathcal{L}_{\text{depth}} + \lambda_{\text{opacity}} \mathcal{L}_{\text{opacity}}$$
 
-- **Rendering loss**: MSE + VGG-19 perceptual loss
-- **Depth regularization**: scale-invariant depth loss using pseudo-GT from a monocular depth estimator
-- **Opacity regularization**: penalizes the number of opaque Gaussians
-
-### Multi-Format Output
-
-Beyond 3DGS, the architecture can flexibly decode into other 3D formats such as triplane NeRF — requiring only the replacement of virtual tokens with triplane tokens to query the fast weights.
+Rendering loss combines MSE and VGG-19 perceptual loss. Depth regularization uses scale-invariant depth loss against pseudo-GT from a monocular estimator. Opacity regularization reduces the number of opaque Gaussians.
 
 ## Key Experimental Results
 
-### Object-Level Reconstruction (GSO Dataset, Tab. 1)
+### Main Results
 
-| Method | Resolution | Views | Time (s) | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
-|--------|------------|-------|----------|--------|--------|---------|
+**Object-level Reconstruction (GSO Dataset, Tab. 1)**
+
+| Method | Res | Views | Time (s) | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
+|------|--------|--------|----------|--------|--------|---------|
 | GS-LRM | 256² | 8 | 0.1 | 31.55 | 0.964 | 0.028 |
 | **Ours** | 256² | 8 | 0.1 | **33.14** | **0.972** | **0.024** |
 | GS-LRM | 512² | 8 | 0.7 | 32.83 | 0.969 | 0.029 |
@@ -124,12 +109,12 @@ Beyond 3DGS, the architecture can flexibly decode into other 3D formats such as 
 | GS-LRM | 512² | 24 | 5.5 | 33.26 | 0.976 | 0.022 |
 | **Ours** | 512² | 24 | **1.1** | **34.80** | **0.979** | **0.022** |
 
-At 512² resolution, inference is 2× faster than attention-based models, with PSNR improvements of **>1 dB**.
+At $512^2$ resolution, inference is $2 \times$ faster than attention models, with a PSNR Gain of **>1 dB**.
 
-### Scene-Level Reconstruction (DL3DV-140 + Tanks&Temples, Tab. 2)
+**Scene-level Reconstruction (DL3DV-140 + Tanks&Temples, Tab. 2)**
 
 | Views | Method | Time | DL3DV PSNR ↑ | T&T PSNR ↑ |
-|-------|--------|------|-------------|------------|
+|--------|------|------|-------------|------------|
 | 16 | Long-LRM | 0.4s | 22.66 | 17.51 |
 | 16 | **Ours** | 3.6s | **23.60** | **18.15** |
 | 32 | Long-LRM | 1s | 24.10 | 18.38 |
@@ -138,50 +123,48 @@ At 512² resolution, inference is 2× faster than attention-based models, with P
 | 64 | Long-LRM | 3.7s | 24.63 | 19.11 |
 | 64 | **Ours** | 14.8s | **25.95** | **20.31** |
 
-A single model generalizes across varying numbers of input views and consistently outperforms Long-LRM with post-optimization.
-
 ### Ablation Study
 
-**Effect of Pre-training (Tab. 3)**:
+**Impact of Pre-training (Tab. 3)**:
 
-| 3D Representation | Pre-training | PSNR ↑ | LPIPS ↓ |
-|-------------------|-------------|--------|---------|
-| GS | None | 32.77 | 0.026 |
-| GS | **With pre-training** | **33.14** | **0.024** |
-| Triplane | None | 26.40 | 0.093 |
-| Triplane | **With pre-training** | **27.87** | **0.075** |
+| 3D Repr. | Pre-trained | PSNR ↑ | LPIPS ↓ |
+|---------|-----------|--------|---------|
+| GS | No | 32.77 | 0.026 |
+| GS | **Yes** | **33.14** | **0.024** |
+| Triplane | No | 26.40 | 0.093 |
+| Triplane | **Yes** | **27.87** | **0.075** |
 
-Initializing from TTT-LVSM pre-training significantly accelerates convergence and improves final quality, demonstrating effective knowledge transfer from novel-view synthesis to explicit 3D reconstruction.
+Initializing from TTT-LVSM pre-training significantly accelerates convergence and improves quality.
 
 **Autoregressive Strategy (Tab. 4)**:
 
 | Strategy | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
-|----------|--------|--------|---------|
+|------|--------|--------|---------|
 | Predict & Merge | 21.50 | 0.891 | 0.318 |
-| **Full reconstruction (Ours)** | **23.63** | **0.904** | **0.259** |
+| **Full Reconst. (Ours)** | **23.63** | **0.904** | **0.259** |
 
-While "Predict & Merge" is computationally efficient, it degrades quality due to accumulated errors (2.13 dB PSNR gap).
+"Predict & Merge" is efficient but suffers from error accumulation (2.13 dB drop in PSNR).
 
 ## Highlights & Insights
 
-1. **TTT fast weights as implicit 3D memory**: This is an elegant analogy — fast weights updated dynamically at inference time naturally correspond to an "internal 3D representation refined with increasing observations," offering greater expressivity than fixed-size KV caches.
-2. **Practical significance of linear complexity**: Beyond supporting more input views, it crucially enables **autoregressive/streaming reconstruction**, a capability fundamentally inaccessible to attention-based models.
-3. **Effectiveness of pre-training transfer**: The transfer learning strategy from NVS to explicit 3D is concise and effective, demonstrating that implicit 3D understanding can transfer across representation formats.
-4. **Unified multi-format output**: The same framework outputs either 3DGS or triplane NeRF by simply swapping virtual tokens, showcasing the generality of the architecture.
-5. **Sequence-parallel training**: Exploiting the linear structure of LaCT fast weight updates, gradients can be straightforwardly synchronized via All-Reduce, enabling linear multi-GPU scaling for both training and inference.
+1.  **TTT Fast Weights as Implicit 3D Memory**: This is an elegant analogy—fast weights update dynamically during inference, naturally representing a 3D internal state that refines with more observations.
+2.  **Significance of Linear Complexity**: Not only supports more views but also unlocks **autoregressive/streaming reconstruction**, which is impossible for standard attention models.
+3.  **Effectiveness of Pre-training Transfer**: The transfer from NVS to explicit 3D is effective, showing that implicit 3D understanding can transfer across representation formats.
+4.  **Multi-format Unification**: The same framework can output 3DGS or Triplane NeRF by simply changing virtual tokens.
+5.  **Sequence Parallelism**: Leveraging the linear nature of LaCT updates allows for near-linear multi-GPU acceleration.
 
 ## Limitations & Future Work
 
-1. **Fixed-size fast weights**: Neural memory capacity is bounded; extremely complex scenes with very large numbers of input views may exceed the encoding capacity.
-2. **Quality–speed trade-off**: Compared to pre-trained implicit LVSM models, explicit 3D output quality is slightly lower, though this is offset by real-time rendering and controllability.
-3. **Dependence on pseudo depth GT**: Scene-level training relies on a monocular depth estimator for pseudo supervision, and estimation errors propagate into the 3D reconstruction.
-4. **Non-real-time inference**: Although orders of magnitude faster than optimization-based methods, scene-level reconstruction with 64 views still requires approximately 15 seconds, falling short of real-time streaming reconstruction.
+1.  **Fixed Fast Weight Capacity**: Neural memory has finite capacity; extremely complex scenes might exceed the capacity to encode details.
+2.  **Quality-Speed Trade-off**: Compared to implicit models like LVSM, explicit 3D quality is slightly lower, though it gains real-time rendering.
+3.  **Dependency on Depth Pseudo-GT**: Scene-level training relies on monocular depth estimators; errors propagate to the final 3D reconstruction.
+4.  **Non-real-time Inference for Scenes**: While $100 \times$ faster than optimization, scene-level 64-view reconstruction takes $\sim 15$s, not yet achieving real-time streaming.
 
 ## Rating
 
 ⭐⭐⭐⭐⭐ (5/5)
 
-This is a highly forward-looking work. Introducing the TTT mechanism into 3D reconstruction is a natural yet profound innovation; linear complexity makes long-context and autoregressive modeling feasible. The experiments are comprehensive and convincing, achieving state-of-the-art performance on both object-level and scene-level benchmarks. The strategy of transferring NVS pre-training to explicit 3D reconstruction is elegant and practical. The unified architecture design and scalability lay a strong foundation for future real-time 3D perception systems.
+This is a forward-looking work. Introducing TTT to 3D reconstruction is a natural yet profound innovation. Linear complexity enables long-context and autoregressive modeling. The experiments are comprehensive, and the strategy of transferring from NVS pre-training to explicit 3D is practical. This architecture sets a foundation for future real-time 3D perception systems.
 
 <!-- RELATED:START -->
 
@@ -189,11 +172,11 @@ This is a highly forward-looking work. Introducing the TTT mechanism into 3D rec
 
 ## Related Papers
 
+- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
 - [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
 - [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
 - [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
-- [\[CVPR 2026\] Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation](ada3drift_adaptive_trainingtime_drifting_for_onest.md)
 
 </div>
 

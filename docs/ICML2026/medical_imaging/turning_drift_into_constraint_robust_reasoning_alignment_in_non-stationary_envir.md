@@ -2,133 +2,132 @@
 title: >-
   [Paper Note] Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments
 description: >-
-  [ICML 2026][Medical Imaging][Multi-source alignment] This work reinterprets the reasoning "drift" among multiple MLLMs as negative sample constraints in DPO…
+  [ICML 2026][Medical Imaging][Plackett-Luce] This paper reinterprets reasoning "drift" among multiple MLLMs as negative constraints in DPO. By employing a Plackett-Luce preference loss to simultaneously suppress divergent trajectories from $N$ source models, a 7B student model outperforms all source teachers in chest X-ray classification and report generation tas
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Multi-source alignment"
-  - "concept drift"
-  - "preference optimization"
-  - "chest X-ray diagnosis"
-  - "Plackett-Luce"
+  - ICML 2026
+  - Medical Imaging
+  - Plackett-Luce
 date: 2026-05-08
-content_hash: 2b60e8c4c7d03081
+content_hash: 649efd644f5a1b30
 ---
-
 # Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.04142](https://arxiv.org/abs/2510.04142)  
-**Code**: https://github.com/XiaoyuYoung/APO (available)  
+**Code**: https://github.com/XiaoyuYoung/APO (Available)  
 **Area**: Medical Imaging / Multimodal VLM / Alignment RLHF  
-**Keywords**: Multi-source alignment, concept drift, preference optimization, chest X-ray diagnosis, Plackett-Luce
+**Keywords**: Multi-source Alignment, Concept Drift, Preference Optimization, Chest X-ray Diagnosis, Plackett-Luce
 
 ## TL;DR
-This work reinterprets the reasoning "drift" among multiple MLLMs as negative sample constraints in DPO, using Plackett-Luce preference loss to simultaneously suppress the divergent trajectories of N source models. As a result, a 7B student model, without ground-truth reports and using only 10% of MIMIC-CXR, surpasses all source teachers in chest X-ray classification and report generation tasks.
+This paper reinterprets reasoning "drift" among multiple MLLMs as negative constraints in DPO. By employing a Plackett-Luce preference loss to simultaneously suppress divergent trajectories from $N$ source models, a 7B student model outperforms all source teachers in chest X-ray classification and report generation tasks using only 10% of MIMIC-CXR data without requiring ground-truth reports.
 
 ## Background & Motivation
 
-**Background**: Using multiple large models as reasoning teachers and distilling multiple CoT trajectories into a single student model is the standard approach in multi-source alignment and "collective intelligence." In specialized domains like medical QA, leveraging complementary teachers is almost a default recipe.
+**Background**: Distilling CoT trajectories from multiple large models as "teachers" into a single student model is a standard approach in multi-source alignment and "collective intelligence." In specialized fields like medical QA, leveraging complementary multi-teacher knowledge is often the default strategy.
 
-**Limitations of Prior Work**: The authors observe that the reasoning distributions of different source MLLMs are inherently divergent—for example, Qwen-VL-Max tends to be precise and concise, while GPT-4o favors higher recall and verbosity. Directly concatenating these heterogeneous trajectories for SFT leads the student to inherit all biases, resulting in hallucinations and semantic inconsistency.
+**Limitations of Prior Work**: The authors observe that reasoning distributions of different source MLLMs are inherently divergent—e.g., Qwen-VL-Max tends to be precise and concise, while GPT-4o favors high recall and verbosity. Directly concatenating these heterogeneous trajectories for SFT prevents the student from selectively learning strengths and instead forces the inheritance of all biases, leading to hallucinations and semantic inconsistency.
 
-**Key Challenge**: The diversity among source models is both a benefit (broader coverage) and a risk (mutual conflict). Existing work treats conflicts as noise to be averaged out, but these conflict regions actually contain the most informative "decision boundaries." Averaging erases this information.
+**Key Challenge**: Diversity among source models is both a benefit (broader coverage) and a risk (conflicts). Existing works treat conflicts as noise to be averaged out, but these conflict regions actually contain the most informative "decision boundaries." Averaging effectively erases this critical information.
 
-**Goal**: In the absence of ground-truth supervision and with continuously drifting source model reasoning trajectories, enable the student model to learn a robust reasoning manifold; further, demonstrate that such drift can be explicitly leveraged rather than merely treated as noise.
+**Goal**: To enable the student model to learn a robust reasoning manifold in environments where source reasoning trajectories continuously drift and ground-truth supervision is absent, while demonstrating that such drift can be explicitly utilized rather than merely treated as noise.
 
-**Key Insight**: Frame the evolution of multi-source reasoning within the concept drift theoretical framework—mapping the autoregressive steps of CoT to the "time axis" in drift theory, so divergence among models becomes a non-stationary multi-stream environment. From this perspective, divergent regions define "what should be avoided."
+**Key Insight**: The evolution of multi-source reasoning is mapped into the concept drift framework—mapping autoregressive CoT steps to the "time axis" of drift theory. Divergence among models thus constitutes a non-stationary multi-stream environment. From this perspective, divergent regions define "what should be avoided."
 
-**Core Idea**: Use the consensus among source models as positive samples and each source's divergent trajectory as negative samples, extending DPO to a Plackett-Luce multi-negative-sample form, turning drift from noise into an "active unlearning supervision signal."
+**Core Idea**: Use the consensus between source models as positive samples and the individual drifted trajectories of each source as negative samples. By extending DPO to a Plackett-Luce multi-negative format, drift is transformed from noise into a "supervisory signal for active unlearning."
 
 ## Method
 
 ### Overall Architecture
-The APO framework consists of two stages. The first stage, Supervised Bootstrapping with Consensus Synthesis, uses all source models' reasoning trajectories for supervised distillation, projecting the target model $\pi_\theta$ into the union of source capabilities to obtain $\hat{\pi}_{st}$. Then, $\hat{\pi}_{st}$ acts as an in-context aggregator: given N source trajectories $\mathcal{T}=\{\tau^1,\ldots,\tau^N\}$ for the same question, the model generates a coherent consensus trajectory $t^+ \sim \hat{\pi}_{st}(\cdot|v,l,\text{Context}=\mathcal{T})$. The second stage, Constraint-Aware Optimization, uses $t^+$ as the positive sample and the N original source trajectories as negative samples for Plackett-Luce preference optimization. During inference, only the final $\pi_\theta$ is used; source teachers are no longer needed.
+APO decomposes the challenge of "conflicting teachers" into a two-stage process. The first stage (Supervised Bootstrapping with Consensus Synthesis) performs supervised distillation using all source reasoning trajectories to project the target model $\pi_\theta$ into the union of source capabilities, yielding $\hat{\pi}_{st}$. This $\hat{\pi}_{st}$ then acts as an in-context aggregator to refine a self-consistent consensus trajectory $t^+$ from $N$ source trajectories $\mathcal{T}=\{\tau^1,\ldots,\tau^N\}$. The second stage (Constraint-Aware Optimization) uses $t^+$ as the sole positive sample and the $N$ original source trajectories as negative samples for Plackett-Luce preference optimization, "pushing" the student away from the teachers' divergent regions. Inference utilizes only the final $\pi_\theta$.
+
+```mermaid
+graph TD
+    A["N source MLLM CoT trajectories<br/>𝒯 = {τ¹, …, τᴺ} (No GT reports)"] --> B["Supervised Bootstrapping<br/>KL minimization across N teachers<br/>Project to capability union → π̂_st"]
+    B --> C["Consensus Synthesis<br/>π̂_st as in-context aggregator reads 𝒯<br/>Filter non-consensus segments → t⁺"]
+    C --> D["APO Preference Optimization (Plackett-Luce multi-negative)<br/>t⁺ as positive, N τᵘ as negatives, π̂_st as reference<br/>Simultaneously suppress N drift trajectories"]
+    D --> E["Aligned Student π_θ<br/>Inference uses π_θ only"]
+```
 
 ### Key Designs
 
-1. **Multi-Stream Reasoning Modeling from the Concept Drift Perspective**:
+**1. Multi-stream Reasoning Modeling via Concept Drift**
 
-    - **Function**: Formalizes the divergence in multi-teacher reasoning as a non-stationary stochastic process, providing a theoretical explanation for "why simple distillation fails."
-    - **Mechanism**: Assumes N source models independently generate CoT, factorizing the joint distribution as $P_j(\mathcal{S}_j)=\prod_{u=1}^N P(t_{<j}^u|v,l) \cdot P(z_j^u|t_{<j}^u,v,l)$, where the former is cumulative historical divergence and the latter is instantaneous drift at the current step. When $P_j(\mathcal{S}) \neq P_{j+\Delta}(\mathcal{S})$, concept drift occurs, meaning the supervision signal seen by the student is itself drifting.
-    - **Design Motivation**: Traditional distillation assumes teachers provide stable ground-truth; here, it is shown that teachers diverge non-stationarily as reasoning progresses, so naive SFT inevitably inherits all biases, necessitating a new framework.
+Directly applying SFT to concatenated CoT trajectories causes the student to inherit all teacher biases. This paper assumes $N$ source models generate CoT sequences conditionally and independently, factorizing the joint distribution of step $j$ as $P_j(\mathcal{S}_j)=\prod_{u=1}^N P(t_{<j}^u|v,l) \cdot P(z_j^u|t_{<j}^u,v,l)$, where the first term represents accumulated historical divergence and the second represents instantaneous drift at the current step. When $P_j(\mathcal{S}) \neq P_{j+\Delta}(\mathcal{S})$, concept drift occurs, meaning the supervisory signal itself shifts as the student progresses. Traditional distillation assumes stable ground-truth; this factorization proves that teachers inevitably develop non-stationary disagreements, making naive SFT problematic.
 
-2. **Consensus Synthesis via In-Context Consensus Extraction**:
+**2. Consensus Synthesis: Creating a Positive Anchor Without Ground-Truth**
 
-    - **Function**: Automatically constructs a "preferred trajectory" $t^+$ as the positive anchor for subsequent preference optimization, without ground-truth labels.
-    - **Mechanism**: The bootstrapped $\hat{\pi}_{st}$ has absorbed the union of source knowledge but still contains drift. Feeding the N source trajectories for the same sample as context to $\hat{\pi}_{st}$, it acts as a "weighted aggregator"—retaining tokens supported by multiple sources and filtering out incoherent parts lacking cross-model support. This leverages in-context learning as implicit voting.
-    - **Design Motivation**: Replaces costly manual annotation. The consensus is not a simple majority vote at the token level, but a semantically refined trajectory generated by the student itself, enabling unsupervised iteration.
+Preference optimization requires a positive sample. In medical scenarios lacking radiologist reports, positive samples must be synthesized. The bootstrapped $\hat{\pi}_{st}$, having absorbed the union of source knowledge, concatenates $N$ trajectories into its context to act as a "semantically-aware weighted aggregator." It generates $t^+ \sim \hat{\pi}_{st}(\cdot|v,l,\text{Context}=\mathcal{T})$, retaining tokens supported by the majority and filtering incoherent segments lacking cross-model support. This is essentially implicit voting at the trajectory level, entirely student-generated and thus capable of unsupervised iteration.
 
-3. **Plackett-Luce Multi-Negative-Sample APO Loss**:
+**3. APO Loss with Plackett-Luce Multi-Negatives**
 
-    - **Function**: Generalizes DPO from binary pairwise to one-positive N-negative multi-constraint form, simultaneously suppressing all source model drift patterns.
-    - **Mechanism**: Uses the bootstrapped $\hat{\pi}_{st}$ as the reference policy, defining implicit reward $r(v,l,t)=\beta \log \frac{\pi_\theta(t|v,l)}{\hat{\pi}_{st}(t|v,l)}$; preference probability is extended to $P(t^+ \succ \mathcal{T}|v,l)=\frac{\exp(r(v,l,t^+))}{\exp(r(v,l,t^+))+\sum_{u=1}^N \exp(r(v,l,\tau^u))}$; the final loss is $-\mathbb{E}[\log P(t^+ \succ \mathcal{T}|v,l)]$. The optimization pushes up the probability of $t^+$ while simultaneously pushing down each $\tau^u$.
-    - **Design Motivation**: Standard DPO only uses one positive-negative pair at a time, while source drift is inherently N-to-N multi-modal conflict; the Plackett-Luce form allows the entire set of negatives to be treated as competing hypotheses, making "actively forgetting N biases" a first-class training objective—more efficient and geometrically intuitive than pairwise DPO.
+Given one positive sample $t^+$ and $N$ negative samples $\{\tau^u\}$, the objective is to suppress all $N$ divergent trajectories. Standard DPO handles only one positive-negative pair, whereas source drift is inherently a 1:N multi-modal conflict. APO uses $\hat{\pi}_{st}$ as the reference policy to define implicit reward $r(v,l,t)=\beta \log \frac{\pi_\theta(t|v,l)}{\hat{\pi}_{st}(t|v,l)}$ and generalizes the binary DPO preference to the Plackett-Luce form:
+
+$$P(t^+ \succ \mathcal{T}|v,l)=\frac{\exp(r(v,l,t^+))}{\exp(r(v,l,t^+))+\sum_{u=1}^N \exp(r(v,l,\tau^u))}$$
+
+The final loss is $-\mathbb{E}[\log P(t^+ \succ \mathcal{T}|v,l)]$. Optimizing this pushes the probability of $t^+$ up while simultaneously suppressing each $\tau^u$. This treats the negative samples as competing hypotheses, making "active unlearning of $N$ biases" an explicit first-order objective.
 
 ### Loss & Training
-Two-stage sequential training: Stage 1 is SFT minimizing KL divergence $q^* = \arg\min_q \sum_u \mathbb{D}_{\text{KL}}(\pi_u || q)$; Stage 2 uses the above APO objective. The model is Qwen2.5-VL 7B, each stage runs for only 1 epoch, batch size = 2. The CXR-MAX dataset uses only 1/10 of MIMIC-CXR (about 170,000 multi-teacher reasoning trajectories, 14 chest disease types), without radiologist reports, emphasizing supervision purely from multi-teacher drift.
+The model uses Qwen2.5-VL 7B trained in two stages. Stage 1 is SFT via KL minimization: $q^* = \arg\min_q \sum_u \mathbb{D}_{\text{KL}}(\pi_u || q)$. Stage 2 uses the APO objective. Each stage runs for 1 epoch with batch size 2. The dataset, CXR-MAX, comprises 1/10 of MIMIC-CXR (approx. 170k trajectories across 14 pathologies) and utilizes multi-teacher drift as supervision instead of radiologist reports.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Task | Metric | Ours 7B | Prev. SOTA | Gain |
-|---------|------|--------|---------|------------|------|
-| MS-CXR-T | Multi-label classification (5-class avg) | Top-1 Acc | 0.78 | 0.69 (CoCa-CXR) | +0.09 |
+|---------|------|------|---------|-----------|------|
+| MS-CXR-T | Multi-label Class. (Avg) | Top-1 Acc | 0.78 | 0.69 (CoCa-CXR) | +0.09 |
 | MS-CXR-T | Pneumothorax | Top-1 Acc | 0.96 | 0.73 | +0.23 |
 | MS-CXR-T | Consolidation | Top-1 Acc | 0.84 | 0.70 | +0.14 |
-| MIMIC-CXR | Report generation | BLEU-1 | 0.56 | 0.43 (CPO) | +0.13 |
-| MIMIC-CXR | Report generation | ROUGE-L | – | 0.42 (CPO) | Gain |
+| MIMIC-CXR | Report Gen. | BLEU-1 | 0.56 | 0.43 (CPO) | +0.13 |
+| MIMIC-CXR | Report Gen. | ROUGE-L | – | 0.42 (CPO) | Gain |
 
-Note: This work uses only 10% of the data and no radiologist reports, while baselines use the full dataset and reports.
+Note: Ours uses 10% data + no ground-truth reports; comparison methods use full data + reports.
 
 ### Ablation Study
 
-| Configuration | Key Phenomenon | Description |
-|---------------|---------------|-------------|
-| Supervised Bootstrap only | Inherits source bias, significant hallucination | Validates "naive distillation = learning all biases" (Observation 1.2) |
-| Bootstrap + DPO (pairwise) | Partial improvement but less than multi-negative | Shows necessity of Plackett-Luce multi-negative constraints |
-| Full APO (PL multi-negative) | Avg 0.78 | Drift-as-constraint is more stable than consensus-only training |
-| Source teachers themselves | Lower than student 7B | Student surpasses teachers, proving the combined effect of ensemble + reverse constraint |
+| Configuration | Key Phenomenon | Explanation |
+|------|---------|------|
+| Supervised Bootstrap Only | Inherits source bias, high hallucination | Confirms "naive distillation = bias inheritance." |
+| Bootstrap + DPO (Pairwise) | Partial improvement | Highlights the need for multi-negative constraints. |
+| Full APO (PL Multi-negative) | Avg. 0.78 | Drift-as-constraint is more robust than consensus-only. |
+| Source Teachers | Avg. lower than Student 7B | Student outperforms teachers via ensemble + constraint. |
 
 ### Key Findings
-- **Significant lead on Pneumothorax (+0.23)**: This disease features very subtle pleural lines; individual source models are uncertain and diverge most. APO treats these uncertain regions as negative constraints, sharpening sensitivity to key visual cues.
-- **Slightly lower on Edema**: High-variance drift regions are treated by APO as "to be avoided," making the model conservative and trading off some recall for safety; the authors acknowledge this trade-off.
-- **7B student surpasses all source teachers (including GPT-4o, Qwen-VL-Max)**: Indicates that consensus plus explicit unlearning of drift is indeed stronger than any single teacher's "annotation quality."
+- **Pneumothorax Outperformance (+0.23)**: Pleural lines are subtle; source models are often uncertain and exhibit maximum drift. APO sharpens sensitivity to visual cues by suppressing these uncertain regions.
+- **Edema Performance**: High-variance drift regions are treated as "avoidance" zones, leading to conservative behavior and sacrificing some recall for safety.
+- **7B Student Surpasses All Source Teachers**: Including GPT-4o and Qwen-VL-Max, proving that the combination of consensus and active unlearning is more effective than individual label quality.
 
 ## Highlights & Insights
-- **The drift-as-constraint perspective is ingenious**: It flips the troublesome "teacher disagreement" in multi-teacher distillation from "how to reconcile" to "explicit negative constraint," simultaneously solving unsupervised and robustness challenges.
-- **DPO to Plackett-Luce is a natural progression**: DPO inherently requires positive-negative pairs, while multi-source scenarios are naturally 1:N preferences; the PL extension is an almost "should be this way" generalization, but the authors are the first to apply this theory to multi-teacher distillation.
-- **Self-supervised alignment is transferable**: Any scenario with "multiple teachers disagreeing but lacking gold labels" (e.g., multiple LLM judges, cross-model reward synthesis, multi-retriever ranking) can use this framework—consensus as positive, individual divergence as N negatives.
+- **Drift-as-constraint perspective**: Flips the "conflicting teachers" problem from a reconciliation task into a source for explicit negative constraints.
+- **Transition to Plackett-Luce**: Extending DPO to a 1:N preference framework is a natural fit for multi-source environments, and this work is the first to bridge it with multi-teacher distillation.
+- **Self-supervised alignment**: The framework is transferable to any scenario where multiple teachers disagree but ground-truth is missing (e.g., multi-LLM-as-a-judge, cross-model reward synthesis).
 
 ## Limitations & Future Work
-- **Depends on extractability of consensus**: When teachers' trajectories have almost no consensus (extremely high-variance tasks), the in-context extracted $t^+$ itself becomes unreliable, causing APO's training signal to collapse.
-- **All sources treated equally in Plackett-Luce loss**: In reality, GPT-4o and smaller models have different reliability; future work could weight negatives or adjust dynamically by confidence.
-- **Experiments focus on chest X-rays**: Whether this holds for broader multi-source reasoning tasks (math, code) remains to be validated.
-- **CXR-MAX dataset depends on current MLLM reasoning**: As MLLMs evolve, drift patterns will change, so the benchmark may require continual updates.
+- **Dependency on Consensus**: If teacher trajectories share zero consensus (extremely high-variance tasks), the extracted $t^+$ becomes unreliable.
+- **Equal Weighting**: Currently, all sources are weighted equally in the PL loss; future work could weight negative samples by source reliability.
+- **Domain Scope**: Evaluation is restricted to chest X-rays; efficacy in general reasoning (math, code) remains to be verified.
 
 ## Related Work & Insights
-- **vs DPO (Rafailov 2023)**: DPO uses static external preference annotations for pairwise comparison; APO automatically constructs preference pairs, uses PL multi-negatives, and explicitly targets active unlearning—extending DPO in three dimensions.
-- **vs WeakLM distillation / FUSE-style multi-teacher**: These either average or select the strongest teacher; APO does the opposite—specifically leveraging divergence among teachers as training signal.
-- **vs Self-Refine / self-consistency voting**: Self-consistency only does majority vote at inference, not changing model parameters; APO moves this idea to RL/preference learning and uses "minority" trajectories as constraints rather than discarding them.
+- **vs. DPO (Rafailov 2023)**: APO automatically constructs preference pairs and uses PL multi-negatives for active unlearning.
+- **vs. WeakLM / Multi-teacher Distillation**: Unlike methods that average or pick the "best" teacher, APO utilizes the divergence between teachers as a training signal.
+- **vs. Self-Refine / Self-consistency**: While self-consistency uses majority voting at inference, APO brings this logic to the RL/preference learning stage.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The drift-as-constraint perspective and DPO → Plackett-Luce extension are highly innovative
-- Experimental Thoroughness: ⭐⭐⭐⭐ Broad disease comparison on MS-CXR-T and multiple report generation metrics, though ablation could be more detailed
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical exposition and methodological transitions are seamless, with formulas and observations reinforcing each other
-- Value: ⭐⭐⭐⭐⭐ Directly inspiring for multi-teacher distillation, unsupervised alignment, and medical VQA; CXR-MAX is also a rare resource
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Robust Multi-Source Covid-19 Detection in CT Images](../../CVPR2026/medical_imaging/robust_multi-source_covid-19_detection_in_ct_images.md)
-- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
-- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
+- [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](../../CVPR2026/medical_imaging/cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
 - [\[AAAI 2026\] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities](../../AAAI2026/medical_imaging/dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational.md)
+- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
+- [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](../../CVPR2026/medical_imaging/dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
+- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
 
 </div>
 

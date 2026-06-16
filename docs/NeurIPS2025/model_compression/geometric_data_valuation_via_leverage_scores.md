@@ -177,11 +177,11 @@ As a workshop paper, no systematic ablation is included. However, the theoretica
 
 ## Related Papers
 
+- [\[ICML 2026\] Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion](../../ICML2026/model_compression/beyond_temperature_hyperfitting_as_a_late-stage_geometric_expansion.md)
 - [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](weight_weaving_parameter_pooling_for_data-free_model_merging.md)
 - [\[NeurIPS 2025\] GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection](grass_scalable_data_attribution_with_gradient_sparsification_and_sparse_projecti.md)
 - [\[NeurIPS 2025\] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data](atlas_autoformalizing_theorems_through_lifting_augmentation_and_synthesis_of_dat.md)
-- [\[ICML 2026\] Beyond Temperature: Hyperfitting as a Late-Stage Geometric Expansion](../../ICML2026/model_compression/beyond_temperature_hyperfitting_as_a_late-stage_geometric_expansion.md)
-- [\[NeurIPS 2025\] Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling](skrull_towards_efficient_long_context_fine-tuning_through_dynamic_data_schedulin.md)
+- [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](../../ICML2026/model_compression/the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
 
 </div>
 

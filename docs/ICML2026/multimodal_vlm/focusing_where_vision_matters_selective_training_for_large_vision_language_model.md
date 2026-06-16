@@ -2,130 +2,128 @@
 title: >-
   [Paper Note] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain
 description: >-
-  [ICML 2026][Multimodal VLM][Visual Information Gain] This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-likelihood ratio of perplexity between "with image vs. without image…
+  [ICML 2026][Multimodal VLM][Paper Note] This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-ratio of perplexity between "with image vs. without image (approximated by a blurred image)." It quantifies how much an image is actually utilized at both sample and token granularities. By performing selective instruction
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Visual Information Gain"
-  - "Selective Training"
-  - "Language Bias"
-  - "Token-level Loss Mask"
-  - "Data-efficient Instruction Tuning"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 0abdebd695148d63
+content_hash: efa3591a3f51b9f2
 ---
-
 # Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.17186](https://arxiv.org/abs/2602.17186)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM  
-**Keywords**: Visual Information Gain, Selective Training, Language Bias, Token-level Loss Mask, Data-efficient Instruction Tuning
+**Keywords**: Visual Information Gain, Selective Training, Language Bias, Token-level Loss Masking, Data-efficient Instruction Tuning
 
 ## TL;DR
-This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-likelihood ratio of perplexity between "with image vs. without image (proxied by a blurred image)". It quantifies whether a specific data sample or token truly utilizes visual information. Based on this, selective instruction tuning is performed: loss is calculated only on high-VIG samples and tokens. This allows LLaVA-1.5-13B to outperform vanilla training across all metrics using only 21% of active tokens while significantly mitigating language bias and hallucinations.
+This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-ratio of perplexity between "with image vs. without image (approximated by a blurred image)." It quantifies how much an image is actually utilized at both sample and token granularities. By performing selective instruction fine-tuning—calculating loss only on high-VIG samples and tokens—LLaVA-1.5-13B outperforms vanilla training across all benchmarks using only 21% of effective tokens, while significantly mitigating language bias and hallucinations.
 
 ## Background & Motivation
 
-**Background**: LVLMs (e.g., LLaVA, ShareGPT4V, Qwen-VL) solve VQA, captioning, and multimodal reasoning by jointly tuning a vision encoder, an adapter, and an LLM. The mainstream training approach feeds all instruction-tuning data with equal weight for next-token SFT.
+**Background**: LVLMs (e.g., LLaVA, ShareGPT4V, Qwen-VL) are trained by jointly tuning a vision encoder, an adapter, and an LLM for VQA, captioning, and multimodal reasoning. The mainstream training approach feeds all instruction-tuning data with equal weight for next-token SFT.
 
-**Limitations of Prior Work**: Models frequently exhibit "language bias"—even when images are provided, outputs are dominated by text priors, leading to visual ignorance and hallucinations (describing non-existent objects). Existing mitigation strategies fall into three categories: (1) contrastive decoding during inference comparing vision/no-vision outputs; (2) modifying attention mechanisms to force higher weights on image tokens; (3) using stronger models to generate higher-quality instruction data. However, none of these **quantify how much information each sample or token actually gains from the image**.
+**Limitations of Prior Work**: Models frequently exhibit "language bias"—outputs are dominated by text priors even when an image is present, leading to visual ignorance and hallucinations (describing non-existent objects). Existing mitigation strategies include: (1) contrastive decoding during inference between image/no-image outputs; (2) modifying attention mechanisms to force higher weights on image tokens; (3) using stronger models to generate higher-quality data. However, none of these **quantify how much information each sample or token actually gains from the image**.
 
-**Key Challenge**: In typical LVLM instruction data, there are samples that require the image to answer (e.g., color, spatial relations) and samples that can be answered by common sense alone. At the token level, visually grounded content words (e.g., "white", "sitting", "lying") are treated equally by cross-entropy as purely syntactic words (e.g., "a", "the", "of"). This "indiscriminate supervision" encourages the model to learn "language shortcuts," as predicting syntactic words is much easier than predicting vision-related words.
+**Key Challenge**: Typical LVLM instruction data contains both samples that require the image to answer (e.g., color, spatial relations) and samples solvable by common sense alone. At the token level, visually grounded content words (white, sitting, lying) and purely syntactic words (a, the, of) are treated equally by the same cross-entropy loss. This "indiscriminate supervision" encourages models to exploit "language shortcuts," as predicting syntactic words is much easier than predicting vision-dependent ones.
 
-**Goal**: (1) Design a metric to quantify "visual information contribution" at both sample and token granularities; (2) Perform selective training to discard low-VIG samples and mask low-VIG tokens; (3) Improve visual understanding and reduce hallucinations under reduced supervision.
+**Goal**: (1) Design a metric to quantify "visual information contribution" at both sample and token granularities; (2) Implement selective training by discarding low-VIG samples and masking low-VIG tokens; (3) Improve visual understanding and reduce hallucinations with less supervision.
 
-**Key Insight**: From an information theory perspective—if an image truly aids prediction, its presence should reduce the model's uncertainty (perplexity) regarding the answer. Conversely, if perplexity remains unchanged (or increases) with the image, the sample/token is likely not utilizing visual signals.
+**Key Insight**: From an information theory perspective, if an image is helpful for prediction, providing it should reduce the model's uncertainty (perplexity) regarding the answer. Conversely, if perplexity remains unchanged (or increases), the image was not utilized for that specific data or token.
 
-**Core Idea**: Define $\mathrm{VIG} = \log\frac{\mathrm{PPL}(A|Q)}{\mathrm{PPL}(A|Q,I)}$, where "no-vision" is approximated by a "blurred image." A shared threshold $\tau_p$ is used to select both high-relevance samples and tokens.
+**Core Idea**: Define $\mathrm{VIG} = \log\frac{\mathrm{PPL}(A|Q)}{\mathrm{PPL}(A|Q,I)}$, approximate "no vision" using a blurred image, and apply a single threshold $\tau_p$ to perform selection at both the sample and token levels.
 
 ## Method
 
 ### Overall Architecture
-The method consists of two steps: **(1) VIG Calculation**: For each multimodal instruction sample $(I, Q, A)$, two forward passes are run using a pre-trained aligned LVLM—one with the original image and one with a blurred image (acting as a "no-vision" proxy). The perplexity of the answer is obtained for both cases, and the log-ratio defines the sample-level $\mathrm{VIG}_i$, which is further decomposed into token-level $\mathrm{VIG}_{i,t}$. **(2) Selective Fine-tuning**: Samples are ranked by $\mathrm{VIG}_i$ and the top-$p\%$ are retained (default $p=70$, threshold $\tau_{70}$). Within these retained samples, loss is calculated only for tokens satisfying $\mathrm{VIG}_{i,t} \geq \tau_{70}$. Other tokens participate in the forward pass but do not contribute to gradients.
+The method consists of two steps: **(1) VIG Computation**: For each multimodal instruction sample $(I,Q,A)$, two forward passes are performed using a pre-trained aligned LVLM—one with the original image and one with a blurred image (serving as a "no vision" proxy). The perplexity ratio yields a sample-level $\mathrm{VIG}_i$, which is also decomposed into token-level $\mathrm{VIG}_{i,t}$. **(2) Selective Fine-tuning**: Samples are ranked by $\mathrm{VIG}_i$ to retain the top-$p\%$ (default $p=70$, threshold $\tau_{70}$). Within these retained samples, loss is only calculated for tokens satisfying $\mathrm{VIG}_{i,t}\geq\tau_{70}$. Other tokens participate in the forward pass but do not contribute gradients.
+
+```mermaid
+graph TD
+    A["Aligned LVLM + Instruction Sample (I,Q,A)<br/>Computed once after alignment, before SFT"]
+    A --> B["Original Image Forward<br/>Obtain PPL(A|Q,I)"]
+    A --> C["Blurred Image Forward (No-vision Proxy)<br/>Obtain PPL(A|Q)"]
+    B --> D["Visual Information Gain<br/>VIG = log perplexity ratio<br/>Token-level VIG → Averaged to Sample-level VIG"]
+    C --> D
+    D --> E["Sample-level Filtering<br/>Retain top-70% (threshold τ70)"]
+    E --> F["Token-level Filtering<br/>Select high-VIG tokens using same τ70"]
+    F --> G["Selective SFT<br/>Only selected tokens compute loss;<br/>others are forward-only with masked gradients"]
+```
 
 ### Key Designs
 
-1. **Visual Information Gain (Perplexity-based Visual Dependency Metric)**:
-    - **Function**: Quantifies how much the model's uncertainty about the answer decreases when given an image relative to not having one, serving as a proxy for visual information contribution.
-    - **Mechanism**: Defined as $\mathrm{VIG} = \log(\mathrm{PPL}(A|Q)/\mathrm{PPL}(A|Q,I)) = \mathcal{L}(A|Q) - \mathcal{L}(A|Q,I)$, representing the difference between cross-entropy without and with the image. Under one-hot supervision, this simplifies to $\mathrm{VIG} = D_{\text{KL}}(p_{A|Q}\|q_Q) - D_{\text{KL}}(p_{A|I,Q}\|q_{I,Q})$, reflecting the correction of the predicted distribution by visual input. Token-level decomposition is $\mathrm{VIG}_i = \frac{1}{T_i} \sum_t \mathrm{VIG}_{i,t}$, where $\mathrm{VIG}_{i,t} = -\log q_\theta(a_t|a_{<t},Q) + \log q_\theta(a_t|a_{<t},Q,z_v)$.
-    - **Design Motivation**: Log-ratio of PPL is chosen over KL because it naturally decomposes into the difference of token-level losses without additional definitions. Using a blurred image instead of "no image" solves the requirement for visual input in LVLM architectures while keeping the text sequence identical, isolating only the visual signal.
+**1. Visual Information Gain: Quantifying visual dependency via log-perplexity ratio**
 
-2. **Dual-Granularity Selection (Shared Threshold $\tau_p$)**:
-    - **Function**: Prunes instruction data into a subset of "what needs to be learned and seen," focusing the limited gradient budget on vision-critical segments.
-    - **Mechanism**: Samples are first sorted by sample-level $\mathrm{VIG}_i$ in descending order to select the top-$p\%$, $\mathcal{S}_p = \{i \mid \mathrm{VIG}_i \geq \tau_p\}$. Then, within each retained sample, the **same threshold** $\tau_p$ is used for token selection $\mathcal{T}_i^+ = \{t \mid \mathrm{VIG}_{i,t} \geq \tau_p\}$. Cross-entropy is computed only for tokens in $\bigcup_{i \in \mathcal{S}_p} \mathcal{T}_i^+$. Non-selected tokens are still passed through the model to maintain context, but their loss is masked.
-    - **Design Motivation**: Sharing $\tau_p$ avoids introducing new hyperparameters. The default $p=70$ is the empirical sweet spot; lower values (e.g., $p=30$) lead to underfitting, while higher values (e.g., $p=90$) degenerate toward vanilla training. This shared threshold ensures that in long answers, only visual keywords contribute to the loss. Observations show that visual content words like "white/lying/sitting" have loss differences of 3-6, while syntactic words like "of/the/a" are near 0 or negative.
+To perform selective training, a metric is needed to measure image utility. VIG originates from the information theory intuition: if an image is useful, its presence should reduce uncertainty. $\mathrm{VIG}=\log(\mathrm{PPL}(A|Q)/\mathrm{PPL}(A|Q,I))=\mathcal{L}(A|Q)-\mathcal{L}(A|Q,I)$, representing the cross-entropy reduction under the image condition. Under one-hot supervision, this simplifies to $\mathrm{VIG}=D_{\text{KL}}(p_{A|Q}\|q_Q)-D_{\text{KL}}(p_{A|I,Q}\|q_{I,Q})$, the correction of the prediction distribution bias by visual input. Unlike direct KL divergence, this metric naturally decomposes into token-level $\mathrm{VIG}_{i,t}=-\log q_\theta(a_t|a_{<t},Q)+\log q_\theta(a_t|a_{<t},Q,z_v)$, which averages back to $\mathrm{VIG}_i$.
 
-3. **Blurred Image Proxy + VIG Calculation Post-Alignment**:
-    - **Function**: Simulates the conditional distribution $q_Q$ without visual input without architecture changes, ensuring the VIG metric remains credible.
-    - **Mechanism**: The input image $I$ is replaced with a Gaussian-blurred version (following Xing et al. 2025) to obtain $\mathrm{PPL}(A|Q)$. VIG is calculated **after pre-training (adapter alignment) but before instruction tuning**. At this stage, visual features are preliminary aligned with language space, but the model has not yet overfitted to instruction data, ensuring VIG reflects visual utility rather than noise from untrained downstream tasks.
-    - **Design Motivation**: Using a blurred image rather than a black image or zero vector maintains the normal forward pipeline of the vision encoder, avoiding Out-of-Distribution (OOD) issues that could blow up perplexity. Positioning after alignment makes VIG a "prior filter" rather than an "after-the-fact diagnostic"—calculating once and reusing throughout.
+**2. Dual-granularity Selection: Focussing gradient budget with a shared threshold $\tau_p$**
+
+Instruction data contains both "vision-critical" and "common-sense" samples. At the token level, treat visually grounded words (white, sitting) and syntactic words (a, the) equally encourages language shortcuts. VIG isolates the "should-be-learned" subset: it first selects the top-$p\%$ samples $\mathcal{S}_p=\{i\mid\mathrm{VIG}_i\geq\tau_p\}$ via descending $\mathrm{VIG}_i$, then applies the **same threshold** $\tau_p$ within these samples to pick tokens $\mathcal{T}_i^+=\{t\mid\mathrm{VIG}_{i,t}\geq\tau_p\}$. Masked tokens are forward-propagated to maintain context integrity but do not update gradients. Sharing $\tau_p$ avoids new hyperparameters; $p=70$ is the empirically determined "sweet spot."
+
+**3. Blurred Image as Proxy & Post-alignment Computation**
+
+VIG requires a "no visual input" distribution $q_Q$. Since LVLM architectures require visual input, this work replaces image $I$ with its Gaussian-blurred version to obtain $\mathrm{PPL}(A|Q)$. This maintains the standard vision encoder pipeline and avoids out-of-distribution perplexity spikes while stripping visual signals. Calculation is performed after pre-training (adapter alignment) but before instruction tuning. At this stage, visual features are aligned to the language space, yet the model has not overfitted to instructions, making VIG a "prior filter" rather than a "post-hoc diagnostic."
 
 ### Loss & Training
-LLaVA-1.5 7B/13B and ShareGPT4V 7B undergo alignment with 558K (or 1.2M) image-caption pairs followed by SFT on ~665K instruction data. Open-Qwen2VL 2B is tuned on a 1M MAmmoTH-VL subset. All experiments fix $p=70$, calculating VIG only for multimodal samples and keeping text-only samples as is. All other hyperparameters remain consistent with vanilla baselines, except for the loss mask.
+LLaVA-1.5 7B/13B and ShareGPT4V 7B are aligned using 558K (or 1.2M) image-caption pairs and fine-tuned on ~665K instructions. Open-Qwen2VL 2B is tuned on 1M MAmmoTH-VL samples. $p=70$ is fixed; VIG is only applied to multimodal samples. Other hyperparameters follow vanilla baselines except for the loss mask.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison across four LVLMs and two benchmark categories (visual understanding + hallucination):
 
 | Model | # Active Tokens | LLaVA-W ↑ | MMVet ↑ | CV-Bench ↑ | POPE F1 ↑ | CHAIR $C_S$ ↓ | MMHal Hall. ↓ |
 |------|-----------------|-----------|---------|------------|-----------|---------------|----------------|
 | LLaVA-1.5 7B (vanilla) | 58.61M (100%) | 59.02 | 28.62 | 59.18 | 87.08 | 52.93 | 71.25 |
-| LLaVA-1.5 7B + VIG | 38.45M (-34%) | **61.22** | **32.71** | **62.48** | **87.47** | **47.00** | **62.78** |
+| LLaVA-1.5 7B + VIG (Ours) | 38.45M (-34%) | **61.22** | **32.71** | **62.48** | **87.47** | **47.00** | **62.78** |
 | LLaVA-1.5 13B (vanilla) | 58.61M (100%) | 72.01 | 36.19 | 60.16 | 87.05 | 51.96 | 67.09 |
-| LLaVA-1.5 13B + VIG | 12.14M (**-79%**) | **73.45** | **36.87** | **62.89** | **87.53** | **48.19** | **63.11** |
+| LLaVA-1.5 13B + VIG (Ours) | 12.14M (**-79%**) | **73.45** | **36.87** | **62.89** | **87.53** | **48.19** | **63.11** |
 
-On 13B, using only **21%** of active tokens outperformed the vanilla model on 8/8 reported metrics. On 7B, MMVet improved by 4.1 points, and the CHAIR $C_S$ hallucination rate dropped from 52.93 to 47.00.
+On 13B, Ours outperforms vanilla across 8/8 metrics using only **21%** effective tokens. For 7B, MMVet improved by 4.1 points and the CHAIR $C_S$ hallucination rate dropped from 52.93 to 47.00.
 
 ### Ablation Study
 
-| Configuration | Meaning | Key Observation |
+| Config | Meaning | Key Observation |
 |------|------|---------|
-| Full data, full token (vanilla) | No sample/token selection | Baseline |
-| Top-70% sample, full token | Sample-level selection only | Improves most metrics, but limited hallucination relief |
-| Full data, token mask | Token-level selection only | Slight gain in visual understanding, high token waste |
-| Top-70% sample + token mask (Default) | Dual granularity, shared $\tau_{70}$ | Maximum benefit for both data efficiency and hallucination relief |
-| Threshold $p$=30/50/70/90 | Selection ratio sensitivity | $p=70$ is the optimal trade-off; too low underfits, too high degenerates |
+| Full data, full token (vanilla) | No selection | Baseline |
+| Top-70% sample, full token | Sample-level only | Improves most metrics, limited hallucination relief |
+| Full data, token mask | Token-level only | Slight vision improvement, token waste |
+| Top-70% sample + token mask (Default) | Dual-granularity | Maximum gains in efficiency and hallucination reduction |
+| Threshold $p$=30/50/70/90 | Selection ratio | $p=70$ is the best trade-off; too low underfits, too high degrades to vanilla |
 
 ### Key Findings
-- **Token-level selection is the true source of hallucination suppression**: Sample selection primarily makes training efficient, but token masking removes purely syntactic tokens (loss diff near 0). This forces gradients to concentrate on visual keywords, compelling the model to "actually look at the image."
-- **VIG strongly correlates with benchmark modality dependency**: VIG distributions for COCO/CV-Bench/POPE are positive (vision-heavy), while GQA/SQA are more negative (text-heavy), suggesting VIG can serve as a "visual dependency thermometer" for benchmarks.
-- **VIG is sensitive to image content**: For fixed Q-A, a correct image yields VIG=0.923, a partially correct (wrong attribute) image yields VIG=0.409, and a contradictory image yields VIG=-0.520. VIG distinguishes not just relevance, but visual correctness.
-- **Scaling Positive Feedback**: On 13B, active tokens decreased by 79% while performance improved. This suggests larger models are more sensitive to "high-quality sparse supervision."
+- **Token-level filtering is the true source of hallucination suppression**: Sample filtering alone primarily improves efficiency. Masking syntactic tokens (loss diff $\approx 0$) forces gradients to concentrate on visual keywords, compelling the model to "actually look at the image."
+- **VIG consistency with benchmark modality dependence**: VIG distributions for COCO/CV-Bench/POPE are positive (vision-heavy), while GQA/SQA are neutral or negative (text-heavy), positioning VIG as a "visual dependency thermometer" for benchmarks.
+- **Sensitivity to image content**: Fixing Q-A and varying the image shows VIG=0.923 for correct images, VIG=0.409 for partially correct (wrong attributes), and VIG=-0.520 for contradictory images.
+- **Better Scaling**: The 13B model remains superior with only 12.14M (-79%) active tokens, suggesting larger models benefit more from "high-quality sparse supervision."
 
 ## Highlights & Insights
-- **Blurred images as "counterfactual visual input" is an efficient trick**: It bypasses the engineering hurdle of LVLMs not accepting None inputs while maintaining the forward pipeline, making VIG a "plug-and-play" metric for any LVLM without changing architecture or loss.
-- **The shared threshold $\tau_p$ is simple and elegant**: Using one threshold for both levels ensures that only high-density tokens in high-relevance samples enter the loss, effectively carving out a "high-VIG sub-region" in the sample-token grid.
-- **VIG serves as a universal "visual importance" score**: Beyond selective training, it can be used to normalize modality dependency in benchmarks, mine hallucination data, or shape rewards in multimodal RLHF.
+- **Blurred images as a counterfactual proxy is a lightweight trick**: It bypasses the "no None input" constraint of LVLM architectures while maintaining a normal pipeline, making VIG a plug-and-play metric.
+- **The shared threshold $\tau_p$ is elegant**: It ensures that only high-density visual tokens within high-utility samples contribute to the loss, effectively identifying the "upper-right" high-VIG quadrant in the (sample, token) grid.
+- **VIG as a general "visual importance" score**: Beyond selective training, it can be used for benchmark normalization, hallucination data mining, and reward shaping in multimodal RLHF.
 
 ## Limitations & Future Work
-- VIG's "no-vision" proxy relies on blurred image settings (kernel size/intensity), which weren't systematically compared. Residual low-frequency cues in blurred images might underestimate true VIG.
-- VIG is a static score calculated once post-alignment. It does not update dynamically during training; capacities developed later might change the value of certain samples.
-- The threshold $p=70$ was fixed across models. Using the same ratio for both 2B and 13B is likely suboptimal.
-- Experiments focused on the SFT stage of LLaVA/Qwen architectures. Its potential in RLHF/DPO or for other modalities (Video/3D) remains unverified.
+- VIG depends on specific blur configurations; residual low-frequency cues in blurred images might underestimate true VIG.
+- VIG is a static pre-computed score; it doesn't update dynamically. The value of a sample might change as the model learns.
+- Threshold $p=70$ was not optimized for model size or data scale (e.g., 2B vs 13B).
+- Current experiments are limited to the SFT stage; potential in RLHF/DPO/RLVR or other modalities (video/audio) remains unexplored.
 
 ## Related Work & Insights
-- **vs. Contrastive Decoding (Leng et al. 2024)**: That method compares "vision vs. no-vision" outputs during inference (running twice). Ours moves this concept to training as a one-time calculation (VIG) with zero inference overhead.
-- **vs. Selective Modeling for LLM (Lin et al. 2024)**: LLM selective training uses reference loss for token selection. Ours replaces the "reference" with a "no-vision control," extending the concept to the multimodal domain with a sample-level dimension.
-- **vs. Data Quality Filtering (e.g., LLaVA-OneVision)**: Those methods rely on stronger models for data regeneration, which is expensive. VIG is essentially free and model-specific.
+- **vs. Contrastive Decoding (Leng et al. 2024)**: That method compares "image vs. no-image" during inference (doubling cost). This work moves the logic to training, making inference cost-free.
+- **vs. Selective Modeling for LLM (Lin et al. 2024)**: While LLMs use reference loss for token selection, this work adapts the concept to multimodality using "no-vision" as the reference.
+- **vs. Data Quality Filtering**: Unlike strategies that use stronger models to rewrite data, VIG relies only on the model's own forward pass, making it cost-effective and model-independent.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Using perplexity difference as a measure of visual information and applying it to dual-granularity selection is a simple but first-of-its-kind establishment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four LVLMs across 8 benchmarks + visual/hallucination dual axes; however, lacks RLHF validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Derivations are clear; visualizations (Figs 1-4, Table 2) are highly persuasive.
-- Value: ⭐⭐⭐⭐ Provides a "plug-and-play" efficiency tool for LVLM pipelines; 4–5× speedup on 13B with performance gains is substantial.
-
-## Rating
-- Novelty: TBD
-- Experimental Thoroughness: TBD
-- Writing Quality: TBD
-- Value: TBD
+- Novelty: ⭐⭐⭐⭐ Establishing visual dependency via perplexity difference at the token level is a first.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested across 4 LVLMs and 8 benchmarks, though lacking RLHF scenarios.
+- Writing Quality: ⭐⭐⭐⭐⭐ Derivations are clean; visualizations are highly persuasive.
+- Value: ⭐⭐⭐⭐ Provides a "zero architecture change" efficiency tool, offering ~5× speedup on 13B with performance gains.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+...
+</div>
 
 ## Related Papers
 
@@ -133,7 +131,7 @@ On 13B, using only **21%** of active tokens outperformed the vanilla model on 8/
 - [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
-- [\[ICML 2026\] Uncovering Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
 
 </div>
 

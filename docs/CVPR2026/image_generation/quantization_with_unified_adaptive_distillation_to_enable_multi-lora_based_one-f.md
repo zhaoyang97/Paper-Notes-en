@@ -2,165 +2,173 @@
 title: >-
   [Paper Note] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge
 description: >-
-  [CVPR 2026][Image Generation][LoRA Quantization] This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs rather than compiling them into the model graph. Combined with a distillation fine-tuni…
+  [CVPR 2026][Image Generation][Knowledge Distillation] This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs instead of compiling them into the model graph. Combined with a distillation fine-tuning strategy that shares quantization parameters across multiple LoRAs, it enables a single compiled model to dynamically switch between multiple GenAI
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "LoRA Quantization"
-  - "Edge Deployment"
-  - "Knowledge Distillation"
-  - "Diffusion Models"
-  - "Runtime Task Switching"
+  - CVPR 2026
+  - Image Generation
+  - Knowledge Distillation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: dffe4be723b790d9
+content_hash: 79265e88c1a034ca
 ---
-
 # Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.29535](https://arxiv.org/abs/2603.29535)  
 **Code**: None  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: LoRA Quantization, Edge Deployment, Knowledge Distillation, Diffusion Models, Runtime Task Switching
 
 ## TL;DR
 
-This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs rather than compiling them into the model graph. Combined with a distillation fine-tuning strategy that shares quantization parameters across LoRAs, QUAD enables a single compiled model to dynamically switch among multiple GenAI tasks on mobile NPUs, achieving 6× memory compression and 4× latency improvement.
+This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs instead of compiling them into the model graph. Combined with a distillation fine-tuning strategy that shares quantization parameters across multiple LoRAs, it enables a single compiled model to dynamically switch between multiple GenAI tasks on mobile NPUs, achieving 6x memory compression and 4x latency improvement.
 
 ## Background & Motivation
 
-1. **Background**: GenAI capabilities on mobile devices (image editing, object removal, text-guided transformation, etc.) are increasingly prevalent, typically based on diffusion models (e.g., Stable Diffusion 1.5) with LoRA for task-specific adaptation.
+1. **Background**: GenAI features on smartphones (image editing, object removal, text-guided transformation, etc.) are increasing, typically based on diffusion models (such as Stable Diffusion 1.5) using LoRA for task-specific adaptation.
 
-2. **Limitations of Prior Work**: Current mobile deployment pipelines **compile each LoRA separately**—merging LoRA weights into the base model before quantization and compilation—resulting in an independent model binary per task. $N$ tasks = $N$ copies of the base model + $N$ compiled graphs, causing ROM usage to grow linearly.
+2. **Limitations of Prior Work**: The current mobile deployment workflow involves **compiling each LoRA individually**—merging LoRA weights into the base model before quantization and compilation. This leads to independent model binary files for each task. N tasks = N base model copies + N compiled graphs, causing linear growth in ROM usage.
 
-3. **Key Challenge**: Independently trained LoRAs exhibit different weight distributions, leading to inconsistent quantization parameters (scale and zero-point) that cannot share a single static quantized inference graph. On hardware such as NPUs that require fixed quantization parameters, each LoRA must be compiled separately, precluding runtime switching.
+3. **Key Challenge**: Different LoRAs trained independently have distinct weight distributions, leading to inconsistent quantization parameters (scale and zero-point). They cannot share a single static quantization inference graph. Consequently, on hardware like NPUs with fixed quantization parameters, each LoRA must be compiled separately, preventing runtime switching.
 
-4. **Goal**: Design a unified deployment framework that (a) shares quantization parameters across multiple LoRAs; (b) supports dynamic injection of LoRA weights at runtime without recompilation; and (c) maintains generation quality under low-precision inference.
+4. **Goal**: Design a unified deployment framework that: (a) shares quantization parameters across multiple LoRAs; (b) supports dynamic runtime injection of LoRA weights (without recompilation); (c) maintains generation quality under low-precision inference.
 
-5. **Key Insight**: Restructure the model graph construction—changing LoRA weights from compile-time embeddings to runtime input tensors, then fine-tuning via knowledge distillation to align all LoRAs with a unified quantization configuration.
+5. **Key Insight**: Change the model graph construction—shifting LoRA weights from compile-time embedding to runtime input tensors—and then use knowledge distillation fine-tuning to adapt all LoRAs to a unified quantization configuration.
 
-6. **Core Idea**: LoRA as Input + sensitivity-analysis-guided shared quantization parameters + knowledge distillation fine-tuning = single-graph multi-task edge deployment.
+6. **Core Idea**: LoRA as Input + Shared quantization parameters based on sensitivity analysis + Knowledge distillation fine-tuning = Single-graph multi-task edge deployment.
 
 ## Method
 
 ### Overall Architecture
 
-The system proceeds in three stages: (1) **Architecture modification**: each LoRA-augmented linear layer is restructured into a dynamic injection layer that accepts $A$ and $B$ matrices as inputs, and compiled into a frozen graph; (2) **QUAD**: determining shared quantization parameters across LoRAs and fine-tuning all LoRAs via knowledge distillation to achieve optimal accuracy under these parameters; (3) **Compilation and deployment**: graph optimization (scale folding, constant folding, dead code elimination) → conversion to NPU format → runtime LoRA loading and binding.
+This paper addresses the deployment challenge of running multiple GenAI tasks on a single phone without storing a separate model for each. Traditional methods merge LoRA into the base model before quantization and compilation, leading to storage expansion linear to the number of tasks. The QUAD pipeline revolves around "letting multiple LoRAs share the same compiled base model graph": first, LoRA weights are changed from compile-time embedding to runtime inputs to compile a frozen base model graph; next, a set of shared quantization parameters is determined for all LoRAs, and knowledge distillation fine-tuning is used to ensure each LoRA maintains quality under this configuration; finally, graph optimization and NPU format conversion are performed. At deployment, the system only needs to load and bind the LoRA buffer for the corresponding task at runtime for second-level switching.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Base Model + Multiple LoRA Weights"] --> B["LoRA as Input<br/>Expose low-rank matrices A and B as graph input nodes"]
+    B --> C["Compile a single frozen base model graph"]
+    C --> D["Unified Quantization Parameter Determination<br/>QSS sensitivity analysis selects the hardest LoRA as anchor"]
+    D -->|Similar sensitivity| E["Fallback: Merge all LoRAs to calculate global parameters"]
+    D --> F["Knowledge Distillation Fine-tuning<br/>Adapt non-anchor LoRAs to shared quantization config"]
+    E --> F
+    F --> G["Graph Optimization + NPU Conversion"]
+    G --> H["Runtime LoRA buffer binding<br/>Second-level task switching"]
+```
 
 ### Key Designs
 
-1. **LoRA as Input (Architecture Restructuring)**:
+**1. LoRA as Input: Transforming LoRA from "Part of the Model" to "Model Input"**
 
-    - **Function**: Transforms LoRA weights from static compile-time embeddings to dynamic runtime inputs.
-    - **Mechanism**: For each LoRA-augmented linear layer $y = Wx + \alpha A(Bx)$, the matrices $A$ and $B$ are exposed as additional input nodes in the model graph. Only a single frozen base model binary needs to be compiled; different tasks are switched at inference time by loading the corresponding LoRA weights. LoRA weights are stored as buffers in RAM and bound to model inputs via a lightweight API.
-    - **Design Motivation**: Eliminates the redundancy of maintaining one model copy per LoRA. With 10 LoRAs (120 MB each) and a 1.4 GB base model, the conventional approach requires 15 GB; this method requires only 2.6 GB (6× compression).
+The pain point is that once LoRA weights are compiled into the model graph, every task change necessitates recompilation and a new base model copy. QUAD rewrites the architecture: for every LoRA-enhanced linear layer $y = Wx + \alpha A(Bx)$, the low-rank matrices $A$ and $B$ are exposed as additional input nodes in the model graph rather than fixed weights. Thus, only one frozen base model binary is generated during compilation. During inference, different tasks place their respective LoRA weights in RAM as buffers and bind them to these input nodes via a lightweight API. The fundamental difference from traditional schemes is like switching from "static linking" to "dynamic linking"—the bulky base model is stored only once. The benefit scales with the number of tasks: for 10 LoRAs (~120MB each) and a 1.4GB base model, traditional merge+compile requires 15GB, while QUAD requires only 2.6GB, a ~6x compression.
 
-2. **QUAD — Unified Quantization Parameter Determination**:
+**2. Unified Quantization Parameter Determination: Using Sensitivity Analysis to Select a "Hardest" LoRA as Anchor**
 
-    - **Function**: Determines shareable quantization scales and zero-points across all LoRAs.
-    - **Mechanism**: A two-step strategy — (a) Compute a Quantization Sensitivity Score (QSS) for each LoRA: $QSS = E_x[D(f(x;w) \| f(x;\tilde{w}))]$, where $D$ is the JS divergence and $f(x;w)$, $f(x;\tilde{w})$ are the full-precision and quantized outputs, respectively. The LoRA with the highest QSS (most sensitive) serves as the anchor, and its quantization parameters are used as the global shared parameters. (b) If all LoRAs exhibit similar sensitivity, a Unified-LoRA fallback strategy merges all LoRA weight distributions to compute global quantization parameters.
-    - **Design Motivation**: Selecting the most sensitive LoRA as the anchor ensures that the shared parameters are favorable for the hardest-to-quantize task; other LoRAs are adapted to these parameters via subsequent distillation fine-tuning.
+While LoRA as Input solves the graph structure issue, NPUs require fixed quantization scales and zero-points. Since independently trained LoRAs have different distributions, direct sharing causes accuracy collapse for some tasks. QUAD calculates a Quantization Sensitivity Score (QSS) for each LoRA to measure the output deviation after quantization:
 
-3. **QUAD — Knowledge Distillation Fine-tuning**:
+$$QSS = \mathbb{E}_x\big[D\big(f(x;w)\,\|\,f(x;\tilde{w})\big)\big]$$
 
-    - **Function**: Adapts non-anchor LoRAs to the shared quantization parameters.
-    - **Mechanism**: A QuantSim model is constructed by encoding LoRA-2's weights using the quantization parameters of LoRA-1 (the anchor) via PTQ. The full-precision model serves as the teacher and the QuantSim model as the student. LoRA parameters are optimized to minimize the reconstruction loss between teacher and student outputs, combined with the original LVM training objective. Through iterative optimization, LoRA weights are adapted to satisfy the constraints of the shared quantization parameters.
-    - **Design Motivation**: Directly applying another LoRA's quantization parameters causes severe accuracy degradation (FID spikes from 5.53 to 599 under full INT8). Knowledge distillation enables weight distributions to be adapted to the target quantization configuration while preserving task performance.
+where $D$ is the JS divergence, and $f(x;w)$ and $f(x;\tilde{w})$ are the outputs of the full-precision and quantized models, respectively. The LoRA with the highest QSS (most sensitive) is selected as the anchor, and its quantization parameters are used as the global shared parameters. This follows a "bottleneck" logic: prioritize the hardest task, and let others adapt via distillation. If sensitivities are similar, a fallback strategy (Unified-LoRA) calculates global parameters by merging all LoRA distributions.
+
+**3. Knowledge Distillation Fine-tuning: Adapting Non-anchor LoRAs to Shared Quantization Config**
+
+Selecting shared parameters is insufficient—applying anchor parameters to other LoRAs directly causes accuracy collapse (FID jumps from 5.53 to 599 in INT8). QUAD uses knowledge distillation to "pull" these LoRAs back: a QuantSim model is constructed where the target LoRA weights are PTQ-encoded using the anchor's parameters. The full-precision model acts as the teacher and the QuantSim model as the student. The optimization goal is to minimize the reconstruction loss between their outputs, plus the original LVM training objective (e.g., DDPM denoising loss). Through iterative optimization, LoRA weights adjust their distribution to be well-represented by the shared quantization parameters while maintaining task performance. This adapts the LoRA to fixed hardware constraints.
 
 ### Loss & Training
 
-The knowledge distillation loss combines a teacher–student output reconstruction term with the original LVM training objective (e.g., DDPM denoising loss). The quantization configuration used is W8A16 (INT8 weights, INT16 activations). Experiments show that further compressing activations to INT8 causes significant accuracy degradation (FID increases from 12.2 to 599 under W8A8).
+Loss = teacher-student output reconstruction loss + original LVM training objective (e.g., DDPM denoising loss). Quantization configuration is W8A16 (Weight INT8, Activation INT16). Experiments show that further compressing activations to INT8 leads to significant quality degradation (FID increases from 12.2 to 599 under W8A8).
 
 ## Key Experimental Results
 
 ### Main Results
 
-FP32 vs. INT8 quantization accuracy comparison:
+Comparison of FP32 vs. INT8 quantization accuracy:
 
 | Use Case | Metric | Value |
-|----------|--------|-------|
-| Prompt-guided image transformation | $sim_d$ (cosine direction similarity) | 0.9428 |
-| Prompt-guided image transformation | $sim_{image}$ (semantic similarity) | 0.881 |
-| Prompt-guided image transformation | Structure loss | 0.045 |
-| Object removal (after QUAD) | FID | 5.5287 |
-| Object removal | SSIM | 0.94 |
-| Object removal | PSNR | 33.04 |
+|------|------|-----|
+| Prompt guided transform | $sim_d$ (Cosine sim. direction) | 0.9428 |
+| Prompt guided transform | $sim_{image}$ (Semantic sim.) | 0.881 |
+| Prompt guided transform | Structure loss | 0.045 |
+| Object Removal (After QUAD) | FID | 5.5287 |
+| Object Removal | SSIM | 0.94 |
+| Object Removal | PSNR | 33.04 |
 
 On-device KPIs (SD1.5 1.1B model):
 
 | Metric | Qualcomm (GS25) | LSI (GS25) | MediaTek (Tab S11) |
-|--------|-----------------|------------|-------------------|
-| End-to-end latency (8 steps) | 8826ms / 3723ms | 12456ms / 4217ms | 15682ms / 5528ms |
-| Shared model ROM | 1375MB | 1125MB | 1177MB |
+|------|-----------------|------------|-------------------|
+| E2E Latency (8 steps) | 8826ms / 3723ms | 12456ms / 4217ms | 15682ms / 5528ms |
+| Shared Model ROM | 1375MB | 1125MB | 1177MB |
 | LoRA ROM | 119MB | 134MB / 104MB | 31MB / 87MB |
 | Peak RAM | 1739MB | 1259MB | 1590MB |
 
-4-use-case deployment (SD1.5 0.7B model, GS25, OLSS 8 steps):
+4-Task Deployment (SD1.5 0.7B model, GS25, OLSS 8 steps):
 
-| Use Case | UNet Execution (ms) | End-to-End (ms) | LoRA ROM (MB) |
-|----------|---------------------|-----------------|---------------|
+| Use Case | UNet Exec (ms) | E2E (ms) | LoRA ROM (MB) |
+|------|-------------|-----------|-------------|
 | Text-to-Image | 48 | 1052 | N/A |
 | Sketch-to-Image | 48 | 1527 | 77 |
-| Sticker Generation | 48 | 1080 | 77 |
+| Sticker Gen | 48 | 1080 | 77 |
 | Portrait Studio | 51 | 1874 | 77 |
 
 ### Ablation Study
 
-Mixed-precision quantization comparison (prompt-guided image transformation):
+Mixed-precision quantization comparison (Prompt guided transform):
 
-| Configuration (W8A8:W8A16) | FID | LPIPS | PSNR | SSIM |
-|----------------------------|-----|-------|------|------|
-| 0:100 (full W8A16) | **12.23** | **0.1083** | **32.71** | **0.9808** |
+| Config (W8A8:W8A16) | FID | LPIPS | PSNR | SSIM |
+|-------------------|-----|-------|------|------|
+| 0:100 (Full W8A16) | **12.23** | **0.1083** | **32.71** | **0.9808** |
 | 40:60 | 13.05 | 0.1086 | 32.68 | 0.9806 |
 | 80:20 | 14.28 | 0.1125 | 31.41 | 0.9777 |
-| 100:0 (full W8A8) | 599.07 | 0.699 | 5.44 | 0.2324 |
+| 100:0 (Full W8A8) | 599.07 | 0.699 | 5.44 | 0.2324 |
 
 ### Key Findings
 
-- **LoRA weights are not highly sensitive to quantization precision**: INT8 quantization of LoRA itself yields only a 1.5× ROM reduction with negligible accuracy loss, indicating that the value distributions of low-rank adaptation matrices are relatively simple.
-- **Activation quantization is the critical bottleneck**: FID spikes to 599 under full W8A8, resulting in complete quality collapse. W8A16 is the optimal operating point.
-- **Memory savings scale linearly with the number of tasks**: The memory benefit is limited with two tasks, but grows from 15 GB to 2.6 GB (6× compression) with ten tasks, demonstrating that the framework's core value lies in multi-task scenarios.
-- **Runtime switching latency is negligible**: Switching LoRAs requires only loading a weight buffer (~100–200 MB), which is approximately 1.5 seconds faster than reloading the entire model (1–2 GB).
-- The approach is effective across three chip vendors (Qualcomm/LSI/MediaTek), confirming the chip-agnostic nature of the framework.
+- **LoRA weights have low quantization sensitivity**: INT8 quantization of LoRA only results in a 1.5x ROM reduction with minimal accuracy loss, indicating simple value distributions in low-rank matrices.
+- **Activation quantization is the bottleneck**: In full W8A8, FID explodes to 599. W8A16 is currently the optimal configuration point.
+- **Memory benefits scale linearly with task count**: While gains are limited for 2 tasks, 10 tasks show a reduction from 15GB to 2.6GB (6x compression).
+- **Extremely low runtime switching latency**: Switching LoRA only requires loading 100-200MB buffers, which is ~1.5s faster than reloading a whole 1-2GB model.
+- The solution is effective across Qualcomm, LSI, and MediaTek chips, demonstrating hardware agnosticism.
 
 ## Highlights & Insights
 
-- **Conceptual shift of LoRA as Input**: Reframing LoRA from "part of the model" to "input to the model" is a conceptually simple yet fundamentally paradigm-shifting idea for multi-task deployment—analogous to the transition from static to dynamic linking in software engineering.
-- **QSS-guided anchor selection**: Rather than arbitrarily selecting one LoRA's quantization parameters, the most sensitive LoRA is chosen as the shared baseline, ensuring that the hardest-to-quantize task does not suffer accuracy collapse. This "weakest-link" thinking is broadly valuable in system design.
-- **OTA scalability**: New LoRAs can be pushed to devices via OTA updates and used directly without updating the base model—consistent with the app store update paradigm and offering strong productization potential.
+- **Paradigm shift with "LoRA as Input"**: Treating LoRA as a model input instead of a weight component fundamentally changes multi-task deployment. This mirrors the transition from static to dynamic linking in software engineering.
+- **Anchor selection via QSS**: Using sensitivity analysis to select a global baseline ensures the most challenging tasks do not collapse. This "bottleneck" strategy is valuable for system design.
+- **OTA Scalability**: New LoRAs can be pushed to devices via OTA and used immediately without updating the base model, aligning with app store update logic.
 
 ## Limitations & Future Work
 
-- Validation is limited to SD 1.5 (1.1B and 0.7B); scalability to larger models (SDXL/Flux) remains unexplored.
-- The W8A8 accuracy collapse limits further optimization of latency and memory, necessitating more advanced activation quantization techniques.
-- QUAD's knowledge distillation fine-tuning must be executed independently for each non-anchor LoRA, resulting in training costs that grow linearly with the number of LoRAs.
-- Evaluation relies primarily on FID/SSIM; subjective perceptual quality assessments are absent.
-- Experiments are predominantly conducted on Samsung Research's internal use cases and chip platforms; compatibility with the open-source LoRA ecosystem (e.g., Civitai) is not validated.
+- Verified only on SD 1.5 (1.1B and 0.7B); scalability to larger models (SDXL/Flux) is unknown.
+- Accuracy collapse in W8A8 limits further latency and memory optimization; advanced activation quantization is needed.
+- Distillation fine-tuning must be performed independently for each non-anchor LoRA, leading to linear training costs as LoRA count increases.
+- Evaluations rely on FID/SSIM; lack of subjective human perception quality assessments.
+- Compatibility with open-source LoRA ecosystems (e.g., Civitai) was not verified.
 
 ## Related Work & Insights
 
-- **vs. QLoRA/QaLoRA**: These methods focus on quantization efficiency during training and do not address multi-LoRA switching at deployment. QUAD targets the inference deployment problem.
-- **vs. MobileDiffusion**: Focuses on reducing diffusion inference cost but assumes a static model graph and does not support runtime task switching.
-- **vs. conventional merge+compile**: Each LoRA is merged into the base model and compiled independently, causing linear memory growth. QUAD achieves constant storage overhead (relative to the number of tasks) through base model sharing.
+- **vs. QLoRA/QaLoRA**: These focus on efficiency during the training phase and do not address multi-LoRA switching during deployment.
+- **vs. MobileDiffusion**: Focuses on reducing diffusion inference costs but assumes a static model graph, lacking support for runtime task switching.
+- **vs. Traditional merge+compile**: Traditional methods cause linear memory growth. QUAD achieves near-constant storage overhead relative to the number of tasks by sharing the base model.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The "LoRA as Input" idea is intuitive but exhibits engineering ingenuity; the QSS sensitivity analysis constitutes a methodological contribution, though the overall emphasis is on systems engineering.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers multiple chip platforms and use cases with comprehensive KPI analysis spanning accuracy, latency, and memory; however, the number of evaluated use cases is limited (primarily 2–4).
-- **Writing Quality**: ⭐⭐⭐⭐ Framework description is clear, but the paper structure feels somewhat fragmented, with partial redundancy across figures and tables.
-- **Value**: ⭐⭐⭐⭐⭐ Directly addresses a practical industrial pain point—multi-task deployment sharing a single model on mobile devices—with immediate applicability to mobile GenAI deployment.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models](mapreduce_lora_advancing_the_pareto_front_in_multi-preference_optimization_for_g.md)
 - [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
+- [\[CVPR 2026\] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models](mapreduce_lora_advancing_the_pareto_front_in_multi-preference_optimization_for_g.md)
+- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
-- [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)
+- [\[CVPR 2026\] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets](chimeralora_multi-head_lora-guided_synthetic_datasets.md)
 
 </div>
 

@@ -2,171 +2,149 @@
 title: >-
   [Paper Note] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper reformulates the anisotropic slice reconstruction problem in volume electron microscopy (vEM) as a dynamic 3D scene rendering task based on deformable 2D Gaussian…
+  [CVPR 2026][3D Vision][Self-Supervised Learning] The problem of anisotropic slice reconstruction in volume electron microscopy (vEM) is re-modeled as a dynamic 3D scene rendering task based on deformable 2D Gaussian Splatting. High-fidelity continuous slice synthesis is achieved under sparse data conditions through a Teacher-Student pseudo-label mechanism.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "volume electron microscopy"
-  - "anisotropic reconstruction"
-  - "dynamic scene modeling"
-  - "self-supervised learning"
+  - CVPR 2026
+  - 3D Vision
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: de4b7ff0f362345c
+content_hash: 1e1000e40354cb88
 ---
-
 # EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.06684](https://arxiv.org/abs/2512.06684)  
 **Code**: None  
-**Area**: 3D Vision
-**Keywords**: 3D Gaussian Splatting, volume electron microscopy, anisotropic reconstruction, dynamic scene modeling, self-supervised learning
+**Area**: 3D Vision  
+**Keywords**: 3D Gaussian Splatting, Volume Electron Microscopy, Anisotropic Reconstruction, Dynamic Scene Modeling, Self-supervised Learning
 
 ## TL;DR
 
-This paper reformulates the anisotropic slice reconstruction problem in volume electron microscopy (vEM) as a dynamic 3D scene rendering task based on deformable 2D Gaussian splatting, achieving high-fidelity continuous slice synthesis under sparse data conditions via a Teacher-Student pseudo-label mechanism.
+The problem of anisotropic slice reconstruction in volume electron microscopy (vEM) is re-modeled as a dynamic 3D scene rendering task based on deformable 2D Gaussian Splatting. High-fidelity continuous slice synthesis is achieved under sparse data conditions through a Teacher-Student pseudo-label mechanism.
 
 ## Background & Motivation
 
-Volume electron microscopy (vEM) enables nanoscale 3D imaging of biological structures; however, directly acquiring isotropic data is prohibitively costly due to the "impossible triangle" trade-off among resolution, field of view, and acquisition time. Data acquired in practice are typically anisotropic—axial (z) resolution is far lower than in-plane (xy) resolution.
+Volume electron microscopy (vEM) enables nanoscale 3D imaging of biological structures. However, due to the "impossible trinity" trade-off between resolution, field of view, and acquisition time, directly obtaining isotropic data is costly. Actual data typically exhibits anisotropic characteristics—axial (z) resolution is far lower than in-plane (xy) resolution.
 
 Existing deep learning methods attempt to recover isotropy through two paradigms:
 
-**Video frame interpolation**: Interpolating xy slices along the z-axis
+**Video Frame Interpolation**: Interpolating xy slices along the z-axis.
 
-**Image super-resolution**: Enhancing xz/yz orthogonal views via super-resolution
+**Image Super-resolution**: Enhancing xz/yz orthogonal views via super-resolution.
 
-Both approaches implicitly assume that tissue structures are approximately isotropic in x/y/z, whereas morphological anisotropy is ubiquitous in real biological samples (e.g., nerve fibers, dendritic spines), causing systematic errors when processing highly directional structures.
+Both methods implicitly assume that the tissue structure is approximately isotropic across the x/y/z dimensions. However, morphological anisotropy is common in biological samples (e.g., nerve fibers, dendritic spines), leading to errors when these methods process highly directional structures.
 
-**Core motivation**: A reconstruction framework is needed that directly reasons in continuous 3D space without relying on the isotropic assumption.
+**Core Motivation**: There is a need for a reconstruction framework that does not depend on isotropic assumptions and performs reasoning directly in continuous 3D space.
 
 ## Method
 
 ### Overall Architecture
 
-EMGauss reformulates the anisotropic volume reconstruction problem as a **dynamic 3D scene rendering problem**:
-- The axial slice sequence is treated as a **temporal evolution** of a 2D Gaussian point cloud
-- The slice index $t \in [0,1]$ serves as a normalized spatial coordinate along the z-axis
-- A deformation MLP learns local geometric changes between adjacent slices
+EMGauss aims to address the following: the axial (z) resolution of volume data acquired by vEM is much lower than the in-plane (xy) resolution. The goal is to recover a continuous, isotropic 3D structure at any depth from sparse axial slices. Its core approach is to change the perspective—instead of treating the slice sequence as a stack of discrete images to be interpolated, it is viewed as the "evolution over time" of a single 2D Gaussian point cloud along the z-axis. The slice index is normalized to $t \in [0,1]$ as a time coordinate, and the subtle changes in tissue morphology between adjacent slices are learned by a deformation network.
 
-The fundamental building block is derived from Deformable 3D Gaussians, where each Gaussian primitive is parameterized by: opacity $o$, center $\mu$, and covariance matrix $\Sigma$ (decomposed into scaling $S$ and rotation $R$).
+Specifically, EMGauss uses Deformable 3D Gaussians as its base, where each Gaussian primitive is parameterized by opacity $o$, center $\mu$, and covariance $\Sigma$ (decomposed into scaling $S$ and rotation $R$). After initializing a set of canonical Gaussians $\mathcal{G}_c$ from observed frames, the pipeline is as follows: given a query depth $t$ → the deformation network predicts the offset of each Gaussian at that depth → the corresponding slice is rendered. During training, observed slices are used for photometric supervision. During inference, any $t$ value can be input to render continuous slices that were never actually acquired.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Anisotropic axial slice sequence<br/>Slice index normalized as time t∈[0,1]"] --> B["Canonical Gaussian set initialization<br/>Opacity o / Center μ / Covariance Σ"]
+    B --> C["Slice-to-3D Dynamic Gaussian Modeling<br/>Deformation network pushes Gaussians by depth t: In-plane only, z fixed, opacity varies along t"]
+    C --> D["Render slice for query depth t"]
+    D -->|Visible Slices| E["RGB Photometric Loss<br/>ℓ1 + D-SSIM supervision"]
+    D -->|Unseen Slices| F["Teacher-Student Pseudo-label Bootstrapping<br/>Progressive supervision from middle slices outwards"]
+    F --> G["Teacher = EMA of Student<br/>Decay rate α=0.995"]
+    G -.->|Provides pseudo-targets| D
+```
 
 ### Key Designs
 
-#### 1. Slice-to-3D Dynamic Gaussian Modeling
+**1. Slice-to-3D Dynamic Gaussian Modeling: Replacing "interpolation" with "continuous geometric reasoning" via constrained deformation**
 
-Starting from a canonical Gaussian set $\mathcal{G}_c$ initialized from observed anisotropic frames, a deformation network $\Phi_\theta$ predicts local offsets for each Gaussian:
+The reason frame interpolation and super-resolution fail on highly directional structures is their implicit assumption of isotropy. EMGauss avoids this assumption by allowing a deformation network $\Phi_\theta$ to continuously push the canonical Gaussians along depth $t$:
 
-$$\Delta\mu_i, \Delta S_i, \Delta o_i = \Phi_\theta(\mu_i, t)$$
+$$\Delta\mu_i,\ \Delta S_i,\ \Delta o_i = \Phi_\theta(\mu_i, t)$$
 
-**Key constraint design**:
-- **Position offset**: Only in-plane displacement is permitted, $\Delta\mu_i = (\Delta x_i, \Delta y_i, 0)$
-- **Scaling offset**: Only in-plane scaling is permitted, $\Delta S_i = (\Delta s_x, \Delta s_y, 0)$
-- **Opacity**: Dynamic variation along the z-axis is permitted, $\Delta o_i$
-- **z-coordinate and z-scaling**: Fixed as global constants $z_0, s_{z,0}$
-- **Rotation**: Learnable but time-invariant, i.e., $\Delta R_i = 0$
+The key lies not just in "deformability" but in "allowed dimensions of deformation." EMGauss imposes constraints fitting vEM physics: positions only allow in-plane translation ($\Delta\mu_i=(\Delta x_i,\Delta y_i,0)$), scaling only allows in-plane stretching ($\Delta S_i=(\Delta s_x,\Delta s_y,0)$), while the z-coordinate and z-direction scaling are fixed as global constants $z_0,\ s_{z,0}$. Rotation is learnable but does not vary with $t$ ($\Delta R_i=0$). The only property allowed to change freely along z is opacity $\Delta o_i$—as structures in biological volumes typically appear and disappear gradually along the depth. Consequently, the model flexibly fits morphology and appearance per slice in-plane without allowing Gaussians to drift along z, converting "discrete slice interpolation" into "geometric reasoning on a continuous 3D field."
 
-These constraints ensure axial alignment consistency while allowing in-plane deformation and per-slice appearance variation. At inference, a deformed Gaussian set is obtained by querying intermediate $t$ values and rendered accordingly.
+**2. Teacher-Student Pseudo-label Bootstrapping: Sustaining unobserved regions with only 10%–20% axial slices**
 
-#### 2. Teacher-Student Pseudo-Label Bootstrapping
-
-To address data sparsity where only 10%–20% of axial slices are available:
-
-| Component | Design | Role |
-|-----------|--------|------|
-| Teacher model | EMA of the Student, decay rate $\alpha=0.995$ | Generates stable pseudo-targets on unseen slices |
-| Student model | Actively trained model | Learns to match Teacher pseudo-labels |
-| Activation strategy | Activated after training iterations exceed a threshold | Introduces pseudo-supervision only after initial convergence |
-| Expansion strategy | Progressively expands from intermediate slices to more positions | Gradually covers unobserved regions |
-
-Pseudo-supervision iterations and real-data supervision iterations alternate to ensure balanced learning and stable convergence.
+Real vEM axial slices available for supervision often comprise only 10% to 20% of the volume. Without ground truth at unobserved depths, the model tends to collapse. EMGauss employs bootstrapped self-supervision: maintaining a Teacher that is an Exponential Moving Average (EMA) of the Student (decay rate $\alpha=0.995$). The Teacher provides stable pseudo-targets for unseen slices, and the Student is trained to match these labels. Two designs ensure stability: first, pseudo-supervision starts only after the Student has converged on real slices (exceeding an iteration threshold); second, pseudo-label coverage expands progressively from central slices to the edges rather than supervising all gaps immediately. Alternating between pseudo-supervision and real-data supervision allows the signals to stabilize convergence.
 
 ### Loss & Training
 
-**Three-stage training pipeline**:
-
-| Stage | Iterations | Operations | Purpose |
-|-------|------------|------------|---------|
-| Warm-up | 2k | Optimize canonical Gaussian set $\mathcal{G}_c$, freeze deformation MLP | Establish a stable radiance baseline |
-| Joint training | 1k | Train $\mathcal{G}_c$ and deformation MLP jointly | Capture axial transitions (overfitting risk if too long) |
-| Teacher-Student | 15k | Activate EMA Teacher for pseudo-supervision | Improve reconstruction quality on unseen slices |
-
-**Loss functions**:
-- RGB photometric supervision: $\ell_1$ loss + D-SSIM regularization
-- Pseudo-supervision loss weight increases linearly from 0.1 to 1.0 (between iterations 3k–10k)
+Training progresses through three stages to unlock deformation capabilities sequentially. The **Warm-up stage** (2k iterations) freezes the deformation MLP and optimizes only the canonical Gaussian set $\mathcal{G}_c$ to establish a stable radiance baseline. The **Joint Training stage** (1k iterations) releases the deformation MLP to train alongside $\mathcal{G}_c$ to capture axial transitions; this stage is intentionally short to avoid overfitting. The final **Teacher-Student stage** (15k iterations) activates the EMA Teacher for pseudo-supervision. Regarding signals, visible slices use RGB photometric loss ($\ell_1$ + D-SSIM regularization), while the weight of the pseudo-supervision loss linearly increases from 0.1 to 1.0 between 3k–10k iterations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Datasets**: EPFL (mouse brain, 5 nm isotropic), FIB-25 (Drosophila brain, 8 nm isotropic), FANC (Drosophila nerve cord, real anisotropy ×10)
+**Datasets**: EPFL (Mouse brain, 5nm isotropic), FIB-25 (Drosophila brain, 8nm isotropic), FANC (Drosophila nerve cord, real anisotropy ×10)
 
-**Table 2: xy slice reconstruction on synthetically anisotropic datasets**
+**Table 2: xy slice reconstruction results on synthetic anisotropic datasets**
 
 | Method | EPFL PSNR | EPFL SSIM | EPFL FSIM | FIB-25 PSNR | FIB-25 SSIM | FIB-25 FSIM |
-|--------|-----------|-----------|-----------|-------------|-------------|-------------|
+|------|-----------|-----------|-----------|-------------|-------------|-------------|
 | CycleGAN-IR | 22.05 | 0.491 | 0.856 | 22.39 | 0.554 | 0.856 |
 | EMDiffuse† | 23.34 | 0.519 | 0.899 | 24.10 | 0.514 | 0.878 |
 | IsoVEM | 23.91 | 0.597 | 0.856 | 21.51 | 0.546 | 0.846 |
-| **EMGauss** | **26.59** | **0.698** | **0.943** | **27.37** | **0.728** | **0.920** |
+| **Ours** | **26.59** | **0.698** | **0.943** | **27.37** | **0.728** | **0.920** |
 
-†EMDiffuse requires additional data for training
+†EMDiffuse requires additional training data.
 
-**Table 3: Downstream segmentation results on EPFL dataset (SAM2, IoU)**
+**Table 3: Downstream segmentation results on EPFL (SAM2, IoU)**
 
-| Method | CycleGAN-IR | EMDiffuse | EMGauss |
-|--------|-------------|-----------|---------|
+| Method | CycleGAN-IR | EMDiffuse | Ours |
+|------|-------------|-----------|---------|
 | IoU | 0.9099 | 0.9555 | **0.9687** |
 
 ### Ablation Study
 
-**Table 4: Ablation of key components (averaged over two isotropic datasets)**
+**Table 4: Key component ablation (Average of two isotropic datasets)**
 
 | Configuration | PSNR | SSIM | FSIM |
-|---------------|------|------|------|
+|------|------|------|------|
 | w/o Teacher-Student | 25.19 | 0.627 | 0.904 |
-| w/o warm-up stage | 25.76 | 0.653 | 0.908 |
-| w/o joint training | 24.35 | 0.577 | 0.851 |
-| w/o dynamic opacity $\Delta o$ | 25.44 | 0.630 | 0.894 |
-| w/ dynamic rotation $\Delta R$ | 25.07 | 0.640 | 0.906 |
-| **Full model** | **26.98** | **0.713** | **0.932** |
+| w/o Warm-up | 25.76 | 0.653 | 0.908 |
+| w/o Joint Training | 24.35 | 0.577 | 0.851 |
+| w/o Dynamic Opacity $\Delta o$ | 25.44 | 0.630 | 0.894 |
+| w/ Dynamic Rotation $\Delta R$ | 25.07 | 0.640 | 0.906 |
+| **Full Model** | **26.98** | **0.713** | **0.932** |
 
 ### Key Findings
 
-1. EMGauss outperforms the best baseline by **~3 dB** in PSNR on both EPFL and FIB-25.
-2. On xz/yz slice reconstruction, EMGauss trained only on xy outperforms baselines trained on xz/yz.
-3. On the real anisotropic FANC dataset (×10 anisotropy), EMGauss is the only method supporting **continuous generation at arbitrary timesteps**.
-4. Removing the joint training stage causes the largest performance drop (−2.6 PSNR) among the three stages.
-5. Dynamic opacity is more important than dynamic rotation—static opacity cannot model structural appearance/disappearance, while dynamic rotation introduces temporal jitter.
+1. EMGauss outperforms the best baseline by **~3dB** PSNR on EPFL and FIB-25.
+2. For xz/yz reconstruction, EMGauss outperforms baselines trained on xz/yz views, even though it is trained only on xy.
+3. On the real anisotropic FANC dataset (×10), EMGauss is the only method supporting **continuous generation at arbitrary time steps**.
+4. Removing the Joint Training stage results in the largest performance drop (-2.6 PSNR).
+5. Dynamic opacity is more critical than dynamic rotation—static opacity cannot model structure appearance/disappearance, while dynamic rotation causes temporal jitter.
 
 ## Highlights & Insights
 
-1. **Elegance of problem reformulation**: Recasting slice reconstruction as dynamic scene rendering fundamentally avoids the isotropic assumption.
-2. **Fully self-contained**: Optimized solely on the anisotropic slices of the target volume, requiring no external datasets or large-scale pretraining.
-3. **Continuous generation capability**: Interpolated slices can be synthesized at arbitrary depths, which is infeasible for discrete frame interpolation methods.
-4. **Fine-grained control over Gaussian attributes**: Careful design of which attributes vary over time and which remain fixed demonstrates a deep understanding of the problem's nature.
+1. **Ingenious Problem Transformation**: Converting slice reconstruction into dynamic scene rendering fundamentally avoids the isotropic assumption.
+2. **Fully Self-contained**: Uses only the anisotropic slices of the target volume for optimization, requiring no external datasets or large-scale pre-training.
+3. **Continuous Generation**: Synthesizes interpolated slices at any depth, a feat impossible for discrete frame interpolation methods.
+4. **Fine-grained Control of Gaussian Attributes**: Careful design of which attributes vary over time and which remain fixed reflects a deep understanding of the problem's nature.
 
 ## Limitations & Future Work
 
-1. In the presence of noisy input slices, the number of Gaussian primitives may grow substantially, leading to excessive memory consumption.
-2. A lightweight denoising module could be incorporated upstream of the reconstruction pipeline to stabilize optimization.
-3. Future work may explore adaptive Gaussian pruning or joint learning with image-space regularizers.
-4. Current experiments are validated exclusively in electron microscopy; cross-modality generalization remains to be demonstrated.
+1. On noisy input slices, the number of Gaussian primitives may grow significantly, leading to high memory consumption.
+2. A lightweight denoising module could be added before the reconstruction pipeline to stabilize optimization.
+3. Future research could explore adaptive Gaussian pruning or joint learning with image-space regularizers.
+4. Current experiments are validated only in electron microscopy; cross-modal generalization remains to be proven.
 
 ## Related Work & Insights
 
-- **Relationship to 3DGS**: The paper cleverly migrates 3DGS from multi-view 3D reconstruction to slice-to-volume reconstruction by reinterpreting the z-axis as a temporal dimension.
-- **Distinction from Deformable 3DGS**: The original method targets multi-view reconstruction of dynamic 3D scenes, whereas this work addresses continuous 3D reconstruction from 2D slices.
-- **Fundamental distinction from diffusion/GAN methods**: No reliance on cross-domain mapping (xy→xz/yz); instead, continuous 3D geometry is directly modeled.
-- **Inspiration**: This paradigm is generalizable to other planar scanning imaging modalities (e.g., CT, MRI).
+- **Relationship with 3DGS**: Ingeniously transfers 3DGS from multi-view 3D reconstruction to slice-to-volume reconstruction by reinterpreting the z-axis as a time dimension.
+- **Difference from Deformable 3DGS**: The original method is for multi-view reconstruction of dynamic 3D scenes; this paper focuses on 3D continuous reconstruction from 2D slices.
+- **Distinction from Diffusion/GAN**: Does not rely on cross-domain mappings (xy→xz/yz) but directly models continuous 3D geometry.
+- **Inspiration**: This paradigm can be generalized to other planar scanning imaging fields, such as CT and MRI.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Original problem reformulation; innovative application of 3DGS in medical imaging
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-dataset, multi-metric validation with downstream tasks and ablations, though cross-modality experiments are absent
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with well-articulated motivation
-- Value: ⭐⭐⭐⭐ — Provides a general slice-to-3D reconstruction framework with applicability beyond vEM
+- Novelty: ⭐⭐⭐⭐⭐ — Unique problem transformation; innovative application of 3DGS in medical imaging.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Validated across multiple datasets and metrics, including downstream tasks and ablations, though cross-modal experiments are missing.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure and well-articulated motivation.
+- Value: ⭐⭐⭐⭐ — Provides a general slice-to-3D reconstruction framework that transcends the vEM field.
 
 <!-- RELATED:START -->
 
@@ -174,11 +152,11 @@ Pseudo-supervision iterations and real-data supervision iterations alternate to 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy](neural_field-based_3d_surface_reconstruction_of_microstructures_from_multi-detec.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
+- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
+- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
+- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 
 </div>
 

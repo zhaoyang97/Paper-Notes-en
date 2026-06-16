@@ -2,126 +2,130 @@
 title: >-
   [Paper Note] RefTon: Reference Person Shot Assist Virtual Try-on
 description: >-
-  [CVPR 2026][Human Understanding][virtual try-on] This paper proposes RefTon, a person-to-person virtual try-on framework built on Flux-Kontext. By incorporating an additional reference image — a photo of another person w…
+  [CVPR 2026][Human Understanding][Flux-Kontext] This paper proposes RefTon, a human-to-human virtual try-on framework based on Flux-Kontext. It introduces additional reference images (photos of others wearing the target garment) to provide more accurate clothing details. Through a two-stage training strategy and a rescaled position indexing mechanism, it achieves en
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "virtual try-on"
-  - "reference image guidance"
-  - "Flux-Kontext"
-  - "mask-free try-on"
-  - "diffusion models"
+  - CVPR 2026
+  - Human Understanding
+  - Flux-Kontext
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 281f1c42a73acc8e
+content_hash: 40b31704c34a4850
 ---
-
 # RefTon: Reference Person Shot Assist Virtual Try-on
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.00956](https://arxiv.org/abs/2511.00956)  
 **Code**: [https://github.com/360CVGroup/RefTon](https://github.com/360CVGroup/RefTon)  
-**Area**: Human Understanding
-**Keywords**: virtual try-on, reference image guidance, Flux-Kontext, mask-free try-on, diffusion models
+**Area**: Human Understanding  
+**Keywords**: Virtual try-on, reference image guidance, Flux-Kontext, mask-free try-on, diffusion models
 
 ## TL;DR
-This paper proposes RefTon, a person-to-person virtual try-on framework built on Flux-Kontext. By incorporating an additional reference image — a photo of another person wearing the target garment — RefTon provides richer garment detail information. Combined with a two-stage training strategy and a rescaled position index mechanism, the framework achieves end-to-end try-on without auxiliary conditions (e.g., DensePose, segmentation masks), attaining state-of-the-art performance on VITON-HD and DressCode.
+This paper proposes RefTon, a human-to-human virtual try-on framework based on Flux-Kontext. It introduces additional reference images (photos of others wearing the target garment) to provide more accurate clothing details. Through a two-stage training strategy and a rescaled position indexing mechanism, it achieves end-to-end try-on without auxiliary conditions (e.g., DensePose, segmentation masks), reaching SOTA performance on VITON-HD and DressCode.
 
 ## Background & Motivation
-1. **Background**: Virtual try-on (ViTON) has evolved from GAN-based methods to diffusion model-based approaches, with significant improvements in garment warping and texture fidelity.
-2. **Limitations of Prior Work**: (a) Many methods rely on complex external models — pose estimators, human parsers, segmentation models — to handle diverse conditional inputs, increasing framework complexity and making final results sensitive to mask quality. (b) More critically, a flat garment image alone cannot fully convey the style, texture, and design details of clothing — for instance, it is difficult to distinguish whether a garment is made of green translucent fabric or light green opaque fabric, or to identify lace collar designs.
-3. **Key Challenge**: In real-world shopping scenarios, users are more interested in how a garment looks when worn by a model than in flat lay images. However, existing methods do not support a "reference model image" as an additional input, partly due to the lack of such paired data in public datasets.
-4. **Goal**: (a) Eliminate dependency on external models and auxiliary conditions; (b) introduce reference images to more accurately convey the appearance of garments when worn; (c) construct training data that includes reference images.
-5. **Key Insight**: Leveraging the powerful image editing capability of Flux-Kontext to automatically synthesize reference images showing the same garment worn by different people, thereby constructing a training dataset. Position encoding is also improved to support multi-condition, multi-resolution inputs.
-6. **Core Idea**: By using reference images — photos of other individuals wearing the target garment — RefTon provides more intuitive visual guidance for virtual try-on. Combined with mask-free two-stage training and rescaled position indexing, the framework achieves a clean and efficient end-to-end try-on pipeline.
+1.  **Background**: Virtual Try-On (ViTON) has evolved from GAN-based methods to diffusion-based models, which show significant progress in garment deformation and texture fidelity.
+2.  **Limitations of Prior Work**: (a) Many methods rely on complex external models—pose estimators, human parsing, and segmentation models—to handle diverse input conditions, increasing framework complexity while mask quality directly limits final results. (b) More crucially, a flat "garment-only" image cannot fully convey style, texture, and design details—for instance, one cannot distinguish if a fabric is green transparent or light green opaque, nor easily recognize lace neckline designs.
+3.  **Key Challenge**: In real shopping scenarios, users focus more on model shots than flat-lay images. However, existing methods do not support "reference model shots" as extra input because public datasets lack such paired data.
+4.  **Goal**: (a) Remove dependency on external models and auxiliary conditions. (b) Introduce reference images to accurately convey garment wearing effects. (c) Construct training data containing reference images.
+5.  **Key Insight**: Leveraging the powerful image editing capabilities of Flux-Kontext to automatically synthesize reference images of different people wearing the same garment to build the dataset. Meanwhile, improving position encoding to support multi-condition, multi-resolution inputs.
+6.  **Core Idea**: Provide more intuitive visual guidance for virtual try-on through reference images (photos of others wearing the target clothing), combined with mask-free two-stage training and rescaled position indexing to achieve a concise and efficient end-to-end try-on.
 
 ## Method
 
 ### Overall Architecture
-RefTon is built on the Flux-Kontext backbone. Inputs include the source person image (or agnostic image), the target garment image, and an optional reference image. These images are encoded into latent representations via a VAE, concatenated into a sequence, and denoised by a DiT (Diffusion Transformer) to generate the target image. Training proceeds in two stages: Stage 1 trains a mask-based try-on model using synthesized unpaired data; Stage 2 trains a mask-free person-to-person model.
+RefTon addresses "person-to-person virtual try-on": given a source person image and a target garment, it makes the source person wear the garment, while optionally allowing a "reference image of someone else wearing it" to supplement clothing details. The entire pipeline is built on the Flux-Kontext backbone—source person (or their masked version), target clothing, and optional reference images are first encoded into latents via VAE, concatenated along the sequence dimension, and fed into a DiT (Diffusion Transformer) to denoise and recover the result. The difficulty lies not in denoising itself, but in two aspects: the "unpaired triplets" required for training human-to-human models do not exist in reality, and the model needs to distinguish multiple heterogeneous condition images within a single sequence. RefTon overcomes these obstacles through a two-stage training strategy to generate data, rescaled position indexing to distinguish conditions, and a data pipeline to synthesize reference images.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph S1["Two-Stage Training Strategy (Synthesizing Unpaired Triplets)"]
+        direction TB
+        A1["Stage 1: Train Masked Try-on Model with Rich Conditions<br/>(agnostic + DensePose + warp mask)"] --> A2["Synthesize 'Same person in different clothes'<br/>to obtain unpaired training data"]
+    end
+    subgraph S4["Reference Image Data Generation Pipeline"]
+        direction TB
+        B1["Qwen2.5-VL Describes Appearance + Generates Opposite Description"] --> B2["Flux-Kontext Editing<br/>(Opposite description positive / Original description negative)"]
+        B2 --> B3["CLIP Deduplication + VLM Scoring Filter"]
+    end
+    S1 --> C["Concatenate Condition Token Sequence<br/>Person + Garment + Optional Reference"]
+    S4 -->|Reference Image Guidance| C
+    C --> D["Rescaled Position Index<br/>Condition labels + Resolution-scaled coordinates"]
+    D --> E["DiT Denoising<br/>(Flux-Kontext Backbone + LoRA Fine-tuning)"]
+    E --> F["Output: Person in Target Garment"]
+```
 
 ### Key Designs
 
-1. **Two-Stage Training Strategy**:
+**1. Two-Stage Training Strategy: Synthesizing Non-existent Unpaired Data**
 
-    - **Function**: Enables direct person-to-person try-on using only paired data.
-    - **Mechanism**: Existing datasets provide only paired samples $[\mathbf{c}_i, \mathbf{p}_{i,\mathbf{c}_i}]$ (garment + person wearing it), whereas training a person-to-person model requires unpaired triplets $[\bar{\mathbf{p}}_{i,\mathbf{c}_j}, \mathbf{c}_i, \mathbf{p}_{i,\mathbf{c}_i}]$ (person wearing a different garment + target garment + result). Stage 1 trains a mask-based try-on model with rich conditions including agnostic images, DensePose, and warp masks, then uses this model to synthesize images of each person wearing different garments. Stage 2 trains a person-to-person model on these synthesized unpaired images, randomly using either agnostic images or synthesized person images as input with 50% probability.
-    - **Design Motivation**: This strategy is similar to CatVTON but enriches the conditional inputs to improve the quality of synthesized images. The key insight is that Stage 1 must generate sufficiently high-quality unpaired data to support Stage 2 training.
+Human-to-human try-on requires unpaired triplets $[\bar{\mathbf{p}}_{i,\mathbf{c}_j}, \mathbf{c}_i, \mathbf{p}_{i,\mathbf{c}_i}]$—a person wearing different clothes $\mathbf{c}_j$, the target clothing $\mathbf{c}_i$, and the result of that person wearing the target garment. However, public datasets only provide paired samples $[\mathbf{c}_i, \mathbf{p}_{i,\mathbf{c}_i}]$ (a garment + a person wearing it). RefTon's approach is to use paired data to train a weaker but functional masked model first, then use it to synthesize the missing image: Stage 1 trains a masked try-on model with a full set of conditions (agnostic image, DensePose, warp mask), then uses it to synthesize images of each person "wearing various other clothes"; Stage 2 uses these synthetic images as unpaired inputs to train the true person-to-person model, with a 50% probability of switching between agnostic and synthetic person images to prevent the model from relying on a single source type. This logic is similar to CatVTON, but Stage 1 intentionally stacks richer conditions to ensure higher synthetic data quality, as the ceiling of Stage 2 is limited by this data.
 
-2. **Rescaled Position Index**:
+**2. Rescaled Position Index: Distinguishing Heterogeneous Condition Images in One Sequence**
 
-    - **Function**: Enables unified handling of multi-type, multi-resolution conditional inputs.
-    - **Mechanism**: The original Flux-Kontext position index has three channels — the first channel uses a binary flag to distinguish noisy from conditioning images, while the remaining two encode spatial coordinates. RefTon extends the first channel to discrete condition labels (distinguishing inputs such as person, garment, and reference). Position indices are generated independently for each condition, and spatial coordinates are rescaled by the resolution ratio between the target and conditioning images to maintain spatial alignment across resolutions.
-    - **Design Motivation**: The original binary design cannot distinguish multiple heterogeneous conditional inputs. Generating indices independently per condition is more flexible than concatenating inputs on a pixel-space canvas (as in Any2AnyTryon) and supports an arbitrary number of conditions at varying resolutions. Ablation experiments confirm that rescaled position indexing outperforms the original scheme on both FID and KID.
+After concatenating multiple images (person, garment, reference) into a single token sequence, the model must know which image each token belongs to and its local spatial position. The original Flux-Kontext position index only has three channels: the first is a binary flag (noise vs. condition), and the latter two encode spatial coordinates—which cannot distinguish more than two types of conditions. RefTon upgrades the first channel to discrete condition labels, assigning unique IDs to each input type. Simultaneously, it generates independent position indices for each condition and scales the spatial coordinates by the "target resolution / condition resolution" ratio, aligning diverse condition sizes to the target coordinate system. This "independent-calculation-then-concatenation" approach is more flexible than Any2AnyTryon's pixel-space canvas, as the number and resolution of conditions are no longer constrained by canvas size. Ablation results show lower FID and KID compared to the original index.
 
-3. **Reference Image Guidance Mechanism**:
+**3. Reference Image Guidance: Supplementing Details Missing from Flat-lay Images**
 
-    - **Function**: Transmits visual information about garment appearance through an additional reference image.
-    - **Mechanism**: During training, a reference image $\mathbf{r}_i$ (a photo of another person wearing the target garment) is provided with 25% probability as an additional condition alongside the person and garment images. The reference image is integrated via its own independent position index. At inference time, the reference image is optional.
-    - **Design Motivation**: Flat garment images cannot convey transparent fabrics, lace details, or the interaction between garment and body. Reference images bridge this information gap. Experiments show that incorporating reference images improves performance across all metrics (e.g., VITON-HD FID drops from 5.45 to 4.69).
+A flat clothing image cannot convey many aspects—whether a fabric is transparent green or opaque light green, whether the neckline is lace, or how the fabric drapes. These are precisely what online shoppers care about. RefTon admits a reference image $\mathbf{r}_i$ (someone else wearing the target garment) with 25% probability during training. During inference, this reference is optional. The effect is tangible: adding reference images improves all metrics, reducing VITON-HD paired FID from 5.45 to 4.69.
 
-4. **Reference Image Data Generation Pipeline**:
+**4. Reference Image Data Generation Pipeline: Synthetic Construction of Reference Shots**
 
-    - **Function**: Automatically constructs a training dataset containing reference images.
-    - **Mechanism**: Qwen2.5-VL is used to describe the appearance of the person in the target image and generate an "opposite description" (different skin tone, hairstyle, etc.). Flux-Kontext then edits the target image using the opposite description as a positive prompt and the original description as a negative prompt, producing a reference image that preserves the garment while altering the person's appearance. Non-target garments and poses are also randomly sampled from a description pool to increase diversity.
-    - **Design Motivation**: Three constraints ensure reference image quality — (i) faithful preservation of the target garment, (ii) a person appearance distinct from the target (to prevent the model from taking shortcuts by copying directly), and (iii) different non-target garments (to increase diversity). CLIP-based deduplication and VLM quality filtering further ensure data quality.
+The reference shot idea is effective, but public data lacks "different people wearing the same garment" pairs. RefTon first uses Qwen2.5-VL to describe the person's appearance in the target image, then generates an "opposite description" (changing skin tone, hairstyle, etc.). It then invokes Flux-Kontext to edit the target image—using the opposite description as the positive prompt and the original as the negative prompt—to force an image where the garment remains unchanged but the person is different. Three constraints ensure quality: the reference must retain the target garment, the person's appearance must differ significantly (to prevent the shortcut of just copying the reference), and non-target clothing must vary. Post-generation, CLIP deduplication and VLM quality scoring are used to filter out low-quality samples.
 
 ### Loss & Training
-Standard flow matching loss is used for training. The VAE encoder and decoder of Flux-Kontext are frozen; only the Transformer blocks are fine-tuned using LoRA (rank=64, $\alpha=128$). Single-dataset experiments: 20k steps on VITON-HD and 48k steps on DressCode, with batch size 128 on 8×H100 GPUs. Mixed-dataset (VFR) training is also conducted to improve generalization.
+Standard flow matching loss is used for training. Flux-Kontext encoders and decoders are frozen, and only Transformer blocks are fine-tuned via LoRA (rank=64, $\alpha=128$). Single-dataset experiments: VITON-HD 20k steps / DressCode 48k steps, batch=128, 8×H100 GPUs. Mixed dataset (VFR) training is used to enhance generalization.
 
 ## Key Experimental Results
 
 ### Main Results (VITON-HD + DressCode)
 
-| Method | Input Conditions | VITON-HD LPIPS↓ | SSIM↑ | FID↓ (paired) | FID↓ (unpaired) |
-|--------|-----------------|----------------|-------|--------------|----------------|
+| Method | Input Condition | VITON-HD LPIPS↓ | SSIM↑ | FID↓(paired) | FID↓(unpaired) |
+|------|---------|----------------|-------|-------------|---------------|
 | CatVTON | Mask | 0.057 | 0.870 | 5.43 | 9.02 |
-| IDM-VTON | Mask+Pose | 0.102 | 0.870 | 6.29 | — |
-| **RefTon** | **Mask** | **0.057** | 0.873 | 5.45 | 8.58 |
-| **RefTon+R** | **Mask+Ref** | **0.049** | **0.879** | **4.69** | **8.43** |
-| RefTon/MF | Mask-free | 0.061 | 0.866 | 5.98 | 8.40 |
-| RefTon+R/MF | Mask-free+Ref | 0.053 | 0.872 | 5.11 | **8.32** |
+| IDM-VTON | Mask+Pose | 0.102 | 0.870 | 6.29 | - |
+| **Ours** | **Mask** | **0.057** | 0.873 | 5.45 | 8.58 |
+| **Ours+Ref** | **Mask+Ref** | **0.049** | **0.879** | **4.69** | **8.43** |
+| Ours/MF | Mask-free | 0.061 | 0.866 | 5.98 | 8.40 |
+| Ours+Ref/MF | Mask-free+Ref | 0.053 | 0.872 | 5.11 | **8.32** |
 
 ### Ablation Study
 
-| Setting | VITON-HD FID↓ | DressCode FID↓ | Notes |
-|---------|--------------|---------------|-------|
-| w/ mask, w/o reference | 5.45 | 3.48 | Baseline |
-| w/ mask, w/ reference | **4.69** | **2.94** | Reference significantly improves results |
-| w/o mask, w/o reference | 5.98 | 3.84 | Slight drop without mask |
-| w/o mask, w/ reference | 5.11 | 3.34 | Reference compensates for missing mask |
-| Original position index (0.5×) | 5.29 | — | No rescaling |
-| Rescaled position index (0.5×) | **5.09** | — | Improved with rescaling |
+| Setting | VITON-HD FID↓ | DressCode FID↓ | Description |
+|------|-------------|---------------|------|
+| Masked, No Ref | 5.45 | 3.48 | Baseline |
+| Masked, w/ Ref | **4.69** | **2.94** | Ref image significantly improves |
+| Mask-free, No Ref | 5.98 | 3.84 | Slight drop without mask |
+| Mask-free, w/ Ref | 5.11 | 3.34 | Ref image compensates for mask absence |
+| Original Position Index (0.5×) | 5.29 | - | No scaling |
+| Rescaled Position Index (0.5×) | **5.09** | - | Improved after scaling |
 
 ### Key Findings
-- **Reference images consistently improve all metrics**: Under the masked setting, adding reference images reduces VITON-HD paired FID from 5.45 to 4.69 (↓14%) and LPIPS from 0.057 to 0.049 (↓14%). On DressCode, FID drops from 3.48 to 2.94 (↓15%).
-- **Mask-free mode remains competitive**: Even without agnostic masks, performance is on par with or superior to mask-dependent baselines (FID 8.40 vs. CatVTON 9.02), demonstrating practical deployment convenience.
-- **Cross-dataset generalization**: Models trained on the mixed VFR dataset surpass baselines such as OOTDiffusion without dedicated training on VITON-HD or DressCode.
-- **Cross-domain evaluation on StreetTryOn**: State-of-the-art FID is achieved on the StreetTryOn dataset, which was never seen during training, demonstrating strong generalization capability.
-- **Mask quality issues**: Ablation visualizations show that overly cropped masks discard items carried by the person (e.g., handbags), while conservative masks retain unwanted regions. The mask-free mode avoids both issues.
+- **Reference images consistently improve all metrics**: In masked settings, adding reference images reduced VITON-HD paired FID from 5.45 to 4.69 (↓14%) and LPIPS from 0.057 to 0.049 (↓14%).
+- **Mask-free mode remains robust**: Even without agnostic masks, performance is comparable to or better than mask-required baselines (FID 8.40 vs CatVTON 9.02), demonstrating deployment convenience.
+- **Cross-dataset generalization**: After training on the mixed VFR dataset, the model outperformed baselines like OOTDiffusion even without specific training on VITON-HD/DressCode.
+- **Mask quality concerns**: Ablation visualizations suggest over-cropped masks lose carried items (like handbags), while conservative masks retain unwanted areas. Mask-free mode avoids these trade-offs.
 
 ## Highlights & Insights
-- **Reference image design grounded in real shopping behavior**: Real users in online shopping genuinely pay more attention to how a garment looks on a model than to flat lay images. Reference images capture information that flat garments cannot convey — transparent materials, lace details, and fabric drape. This design intuition is precise and well-motivated.
-- **The reference data generation pipeline is cleverly designed**: By leveraging a VLM to automatically generate appearance descriptions and their opposites, and using Flux-Kontext for editing, the pipeline produces reference images that preserve the target garment while varying person appearance and other clothing. The three constraints (garment fidelity, distinct person, diverse garments) effectively prevent shortcut learning during training.
-- **Unified framework for multiple input modes**: A single model supports four combinations of masked/mask-free × with/without reference, elegantly handled through condition labels and probability-based sampling.
+- **Consumer-centric reference image design**: Real users focus on model shots rather than flat-lays. Reference images capture information flat images cannot—transparency, lace details, and fabric drape. This design intuition is precise.
+- **Clever reference data generation pipeline**: Using VLMs to generate appearance descriptions and their opposites, combined with Flux-Kontext editing, effectively changes the person while keeping the garment. The three constraints (garment fidelity, human variety, clothing diversity) prevent shortcut learning during training.
+- **Unified framework for multiple input modes**: A single model supports four combinations (masked/mask-free × with/without reference) elegantly via condition labels and probability sampling.
 
 ## Limitations & Future Work
-- Reference image generation relies on the editing quality of Flux-Kontext; if the editing model performs poorly on certain garment types, reference image quality will degrade accordingly.
-- Evaluation is limited to static image try-on; extension to video try-on has not been explored.
-- The expressive capacity of LoRA fine-tuning may be limited; whether full-parameter fine-tuning or higher LoRA rank could yield further improvements remains to be investigated.
-- Reference images appear with only 25% probability during training; whether a more optimal sampling strategy exists has not been thoroughly studied.
-- Fusion of multi-view reference images is not considered.
+- Reference image generation depends on Flux-Kontext editing quality; if the model performs poorly on certain clothing types, reference quality drops.
+- Only static image try-on was evaluated; extension to video try-on is pending.
+- LoRA capacity might be a bottleneck; whether full-parameter fine-tuning (or higher rank) could further improve results remains to be explored.
+- Sampling strategies for reference images (currently 25% probability) have not been fully optimized.
 
 ## Related Work & Insights
-- **vs. CatVTON**: Both employ two-stage training and mask-free designs, but CatVTON lacks a reference image mechanism. RefTon builds on this foundation and significantly improves detail fidelity through reference image guidance.
-- **vs. TryOffDiff/ViTON-GUN**: These methods adopt a "try-off then try-on" strategy, introducing error accumulation and loss of garment detail. RefTon directly leverages reference images to avoid the try-off stage.
-- **vs. Any2AnyTryon**: Also supports person-to-person try-on but generates position indices over a concatenated pixel-space canvas. RefTon generates indices independently per condition, more flexibly accommodating multi-resolution inputs.
-- **vs. OmniVTON**: Requires additional pose and text conditions; RefTon is comparatively more streamlined.
+- **vs CatVTON**: Both use two-stage training and mask-free designs, but CatVTON lacks a reference image mechanism. RefTon significantly improves detail fidelity by introducing it.
+- **vs TryOffDiff/ViTON-GUN**: These use a "take off then put on" strategy, which introduces error accumulation and lost garment details. RefTon avoids the strip-down phase by directly using reference shots.
+- **vs Any2AnyTryon**: Also supports person-to-person try-on but uses position indices on a concatenated canvas. RefTon generates indices independently for each condition, supporting multi-resolution inputs more flexibly.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The reference image-guided virtual try-on concept is novel and practically motivated; the data generation pipeline is cleverly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Multi-dataset, multi-setting (masked/mask-free × with/without reference), cross-domain evaluation, and comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clear, method descriptions are detailed, and figures and tables are informative.
-- **Value**: ⭐⭐⭐⭐ Addresses the practical problem of insufficient garment detail information in virtual try-on, with direct application value.
+- Novelty: ⭐⭐⭐⭐ The reference image guided try-on idea is fresh and practical; the data pipeline is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple datasets, multiple settings (masked/mask-free × ref/no-ref), cross-domain evaluation, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed method description, and rich visualizations.
+- Value: ⭐⭐⭐⭐ Addresses the practical issue of insufficient garment information in virtual try-on, with direct application value.
 
 <!-- RELATED:START -->
 
@@ -131,9 +135,9 @@ Standard flow matching loss is used for training. The VAE encoder and decoder of
 
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)
 - [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
-- [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
-- [\[ICLR 2026\] Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals](../../ICLR2026/human_understanding/inverse_virtual_try-on_generating_multi-category_product-style_images_from_cloth.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
+- [\[ECCV 2024\] Wear-Any-Way: Manipulable Virtual Try-on via Sparse Correspondence Alignment](../../ECCV2024/human_understanding/wear-any-way_manipulable_virtual_try-on_via_sparse_correspondence_alignment.md)
+- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
 
 </div>
 

@@ -2,121 +2,109 @@
 title: >-
   [Paper Note] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training
 description: >-
-  [ICML 2026][Reinforcement Learning][Curriculum Learning] This work provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditional autoregressive reasoning tre…
+  [ICML 2026][Reinforcement Learning][Paper Note] This paper provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditioned autoregressive reasoning trees of transformers, if the curriculum maintains the difficulty ratio of adjacent stages at the level of the $L/p$-th root of the target difficulty, the tota
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Curriculum Learning"
-  - "CoT Post-Training"
-  - "Sample Complexity"
-  - "Coverage Coefficient"
-  - "Rejection Sampling"
+  - ICML 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 407c85844424ef1c
+content_hash: d0727dfbb611386b
 ---
-
 # Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training
 
 **Conference**: ICML 2026  
 **arXiv**: [2511.07372](https://arxiv.org/abs/2511.07372)  
-**Code**: https://github.com/DakeBU/Curriculum-Post-training (available)  
+**Code**: https://github.com/DakeBU/Curriculum-Post-training (Available)  
 **Area**: LLM Reasoning / Reinforcement Learning / Learning Theory  
-**Keywords**: Curriculum Learning, CoT Post-Training, Sample Complexity, Coverage Coefficient, Rejection Sampling
+**Keywords**: Curriculum Learning, CoT Post-training, Sample Complexity, Coverage Coefficient, Rejection Sampling
 
 ## TL;DR
-This work provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditional autoregressive reasoning tree of a transformer, if the curriculum ensures that the difficulty ratio between adjacent stages is at most the $L/p$-th root of the target difficulty, then the total sample count can be reduced from the exponential $(C^\star)^L$ of direct training to the polynomial $L\cdot (C^\star)^{p_\max}$ of curriculum-based training.
+This paper provides the first rigorous sample complexity proof for "easy-to-hard" curriculum RL post-training: on the state-conditioned autoregressive reasoning trees of transformers, if the curriculum maintains the difficulty ratio of adjacent stages at the level of the $L/p$-th root of the target difficulty, the total sample complexity can be reduced from exponential $(C^\star)^L$ in direct training to polynomial $L\cdot (C^\star)^{p_\max}$ in the curriculum version.
 
 ## Background & Motivation
-**Background**: The mainstream approach for CoT reasoning post-training is "direct RL fine-tune + 0/1 outcome verifier," combined with test-time scaling (beam / best-of-N) to improve pass@K. Over the past year, extensive empirical studies (Parashar 2025, Liu 2025, Bae 2025, etc.) have shown that "easy-to-hard curriculum" significantly accelerates convergence, but only as an empirical observation, lacking provable explanations.
+**Background**: Post-training for CoT (Chain-of-Thought) reasoning currently relies on "direct RL fine-tuning + 0/1 outcome verifier," combined with test-time scaling (beam search / best-of-N) to improve pass@K. Numerous empirical studies in the past year (Parashar 2025, Liu 2025, Bae 2025, etc.) found that "easy-to-hard curricula" significantly accelerate convergence, but these lack provable explanations.
 
-**Limitations of Prior Work**: Classical curriculum learning theory is almost entirely built on "from-scratch training" scenarios (convex regression, parity, teacher-student perceptron, etc.), where "difficulty" and "performance" are task-specific and geometric, making them inapplicable to LLM post-training, which starts from a strong pretrained model and targets CoT generalization. The core feature of post-training is sparse rewards and extremely low sampling probability of correct trajectories under the base policy, a regime not addressed by previous theory.
+**Limitations of Prior Work**: Classical curriculum learning theories are almost entirely established for "training from scratch" scenarios (convex regression, parity, teacher-student perceptron, etc.), where definitions of "difficulty" and "performance" are task-specific and geometric. These cannot be transferred to LLM post-training, which starts from a strong pretrained model and aims for CoT generalization. The core characteristic of post-training is sparse rewards, where the probability of sampling correct trajectories under the base policy is extremely low—a concept with no counterpart in old theories.
 
-**Key Challenge**: The difficulty of sparse-reward RL essentially arises from the rarity of correct CoTs under the base policy, characterized by the coverage coefficient $\|\pi^\star/\pi_{\text{ref}}\|_\infty$. Direct training incurs a sampling cost polynomial (or even exponential) in this rarity, while curriculum allows decomposing this "rarity ladder" into smaller steps—but there was no clear condition for how to split these steps to achieve super-polynomial acceleration.
+**Key Challenge**: The difficulty of sparse-reward RL essentially stems from the "rarity of correct CoT under the base policy," characterized by the coverage coefficient $\|\pi^\star/\pi_{\text{ref}}\|_\infty$. Direct training pays a sampling cost polynomial (or even exponential) relative to this rarity. While curricula allow breaking this "rarity ladder" into several small steps, there were previously no clear conditions defining what kind of steps actually bring super-polynomial acceleration.
 
-**Goal**: (i) To provide necessary and/or sufficient conditions for curriculum post-training to yield exponential sample savings; (ii) To prove that these conditions naturally hold in the transformer + reasoning tree setting; (iii) To instantiate the conclusions for both RL fine-tune and test-time scaling paradigms.
+**Goal**: (i) Provide necessary/sufficient conditions for curriculum post-training to yield exponential sample savings; (ii) prove these conditions naturally hold on the specific analyzable model of transformers + reasoning trees; (iii) apply the conclusions to both RL fine-tuning and test-time scaling paradigms.
 
-**Key Insight**: The authors view post-training as redistributing probability on a "pre-trained reasoning tree," and adopt Foster 2025's spanner-sampling/coverage framework, directly linking curriculum difficulty to the number of rejection sampling attempts $\Theta(\|\pi^\star/\pi_{\text{ref}}\|_\infty \log\delta^{-1})$, thus unifying "difficulty" and "learning cost" under a single metric.
+**Key Insight**: The authors view post-training as redistributing probabilities on a "pre-trained reasoning tree" and adopt the spanner-sampling/coverage framework (Foster 2025). This links curriculum difficulty directly to the number of rejection sampling attempts $\Theta(\|\pi^\star/\pi_{\text{ref}}\|_\infty \log\delta^{-1})$, thereby unifying "difficulty" and "learning cost" on the same scale.
 
-**Core Idea**: Model the base model as a PART that approximately uniformly samples legal child nodes on a state-conditional autoregressive reasoning tree (2S-ART), and prove that under PART, both "prefix-hint curriculum" and "depth-increasing curriculum" naturally form $K$-th root difficulty steps, reducing total cost from $(C^\star)^L$ to $L\cdot(C^\star)^{p_\max}$.
+**Core Idea**: The base model is modeled as a PART (Pretrained Autoregressive Reasoning Transformer) that performs approximately uniform sampling over valid child nodes in a 2S-ART (State-conditioned Autoregressive Reasoning Tree). It is proven that "prefix-hint" and "depth-increasing" curricula naturally form a $K$-th root difficulty ladder, reducing the total cost from $(C^\star)^L$ to $L\cdot(C^\star)^{p_\max}$.
 
 ## Method
 
 ### Overall Architecture
-The paper presents a theoretical framework rather than a new algorithm, abstracting the existing curriculum post-training pipeline into a provable form: (1) Model the task as a 2S-ART reasoning tree $F_{\text{2S-ART}}(\{\Phi_\ell\},\{I_\ell\})$, where at each step a token is selected from a legal index set $I_\ell$ and the state is updated via $\Phi_\ell$ as $z_\ell=\Phi_\ell(z_{\ell-1},v_{i_\ell})$; (2) Instantiate the base model as PART, i.e., uniform sampling over legal child nodes at each depth; (3) Show that a standard sampling-attention transformer (FFN implements $\Phi_\ell$, attention selects indices) can exactly realize PART; (4) Analyze, on this model, the sample complexity of RL fine-tune (Thm 2) and the oracle-query/computational complexity of test-time scaling (Thm 3).
+The paper presents a theoretical framework rather than a new algorithm. It casts existing curriculum post-training pipelines into a provable abstraction: (1) Tasks are modeled as 2S-ART reasoning trees $F_{\text{2S-ART}}(\{\Phi_\ell\},\{I_\ell\})$, where each step selects a token from a valid index set $I_\ell$ and updates the state $z_\ell=\Phi_\ell(z_{\ell-1},v_{i_\ell})$; (2) the base model is instantiated as a PART, sampling valid child nodes uniformly at each depth; (3) a standard sampling-attention transformer (FFN implementing $\Phi_\ell$ primitives, attention for index selection) is proven to reproduce PART exactly; (4) it analyzes the sample complexity of RL fine-tuning (Thm 2) and the oracle-query/computational complexity of test-time scaling (Thm 3).
 
 ### Key Designs
 
-1. **Coverage Coefficient-Based Necessary/Sufficient Condition for Curriculum (Cor. 1)**:
+**1. Necessary/Sufficient Conditions for Curriculum Benefit based on Coverage Coefficient (Cor. 1): Converting "Is Easy-to-Hard Useful?" into an Inequality**
 
-    - **Function**: Reduces the ambiguous question of "whether curriculum truly saves samples over direct training" to a single inequality, providing a sufficient condition for exponential acceleration.
-    - **Mechanism**: Defines $\varepsilon$-accuracy sample complexity $N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})$, and via the rejection-sampling lemma $N\propto\|\pi^\star/\pi_{\text{ref}}\|_\infty$, ties it to the coverage coefficient. The necessary and sufficient condition is $\sum_{\ell}N_\varepsilon(\pi^\star_\ell\mid\pi^\star_{\ell-1})<N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})$. When there exists an $L/p$-th root curriculum, i.e., $N_\varepsilon(\pi^\star_\ell\mid\pi^\star_{\ell-1})=\Theta(\sqrt[L/p]{N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})})$, the ratio $N^{\text{direct}}/N^{\text{curr}}=\Theta((C^\star)^L/(L\cdot C^\star))$, where $C^\star=\sqrt[L/p]{N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})}>1$, i.e., exponential acceleration.
-    - **Design Motivation**: While empirical evidence for "easy-to-hard" is abundant, no one has answered "how to design the difficulty steps for real benefit." This condition not only explains the commonality of hint-decreasing (Liu 2025b), depth-increasing (Countdown/Parity), etc., but also provides a quantifiable design principle: the difficulty ratio between adjacent stages should be controlled at the $C^\star$ scale.
+While empirical evidence suggests "easy-to-hard" is effective, none defined how the "difficulty ladder" should be constructed. This paper unifies "difficulty" by defining the $\varepsilon$-accurate sample complexity $N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})$ and tying it to the coverage coefficient via the rejection-sampling lemma $N\propto\|\pi^\star/\pi_{\text{ref}}\|_\infty$. Under this scale, the sufficient and necessary condition for a curriculum to be more efficient than direct training is $\sum_{\ell}N_\varepsilon(\pi^\star_\ell\mid\pi^\star_{\ell-1})<N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})$. Furthermore, when an $L/p$-th root curriculum exists—meaning the difficulty ratio between adjacent stages is $N_\varepsilon(\pi^\star_\ell\mid\pi^\star_{\ell-1})=\Theta(\sqrt[L/p]{N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})})$—the ratio of direct to curriculum samples $N^{\text{direct}}/N^{\text{curr}}=\Theta((C^\star)^L/(L\cdot C^\star))$ (where $C^\star=\sqrt[L/p]{N_\varepsilon(\pi^\star\mid\pi_{\text{ref}})}>1$) represents exponential acceleration. This condition explains commonalities across hint-decreasing and depth-increasing curricula and provides an actionable design principle: the difficulty ratio between adjacent stages should be controlled at the $C^\star$ scale.
 
-2. **2S-ART Reasoning Tree + PART Base Model (Def. 1-2)**:
+**2. 2S-ART Reasoning Tree + PART Base Model (Def. 1-2): A Computable Abstraction for "Reasoning Tasks + Weak Base Models"**
 
-    - **Function**: Provides a sufficiently general and analyzable abstraction for "reasoning task + weak base model," ensuring that the abstract condition in Cor. 1 is automatically satisfied on transformers.
-    - **Mechanism**: Represents a length-$k$ reasoning task $f_{S_k}$ as an index path $S_k=(i_1,\dots,i_k,d{+}1)$, selecting $i_\ell$ from a legal set $I_\ell(\text{CoT}_{\ell-1})$ ($|I_\ell|=\Theta(d)$) at each step, with state update $z_\ell=\Phi_\ell(z_{\ell-1},v_{i_\ell})$. PART samples legal child nodes uniformly at each parent, yielding $\|\pi^\star_{S_{\ell+1}}/\pi^\star_{S_\ell}\|_\infty=\Theta(d)$, so $\|\pi^\star_{S_\ell}/\pi^\text{PART}\|_\infty=\Theta(d^{\ell+1})$, naturally satisfying the $L/p$-th root relation to target difficulty. Parity, Countdown, Markov-chain reasoning, and induction-head are all subclasses.
-    - **Design Motivation**: The abstraction needs to cover parity, countdown, associative recall, etc., while keeping the "child node probability ratio" of the base model controllable; uniform-PART is the simplest choice meeting both, and aligns with the "post-training = reweighting on pre-trained tree" view of Snell 2025, Yue 2025.
+To ground Cor. 1 in transformers, the paper represents reasoning tasks of length $k$ as index paths $S_k=(i_1,\dots,i_k,d{+}1)$. Valid indices $I_\ell(\text{CoT}_{\ell-1})$ ($|I_\ell|=\Theta(d)$) are selected at each step, and states are updated via $z_\ell=\Phi_\ell(z_{\ell-1},v_{i_\ell})$. The base model is a PART, sampling valid child nodes uniformly. This uniformity is critical: it yields $\|\pi^\star_{S_{\ell+1}}/\pi^\star_{S_\ell}\|_\infty=\Theta(d)$ and $\|\pi^\star_{S_\ell}/\pi^\text{PART}\|_\infty=\Theta(d^{\ell+1})$, satisfying the $L/p$-th root relationship naturally. Uniform-PART is chosen because it encompasses various tasks (parity, Countdown, Markov-chain reasoning, induction-head), ensures controllable child-node probability ratios, and aligns with the perspective of "post-training as reweighting a pre-trained tree."
 
-3. **Exponential-to-Polynomial Reduction for RL Fine-Tune and Test-Time Scaling (Thm 2-3)**:
+**3. Exponential-to-Polynomial Reduction in RL Fine-tuning and Test-time Scaling (Thm 2-3): Translating Cor. 1 into Paradigm Complexities**
 
-    - **Function**: Translates the abstract Cor. 1 into concrete sample/oracle complexity for two post-training paradigms.
-    - **Mechanism**: Using 0/1 outcome reward $R^{f_{S^\star}}_x$ and staged curriculum reward $R^{F_{S^\star}}_x(\cdot,\ell)$ (rewarding only pre-EOS token correctness at each stage), proves that RL fine-tune under curriculum has sample complexity $\widetilde O(L\cdot d^{p_\max+1})$, much lower than the direct $\widetilde O(d^{L+1})$; test-time scaling (best-of-$N$/verifier query) has a similar exponential-to-polynomial reduction in oracle complexity. The paper also provides an analogous result for inference-time computational complexity on linearly realizable MDPs via Foster 2025's spanner-sampling (Thm 4).
-    - **Design Motivation**: In practice, both RL fine-tune and test-time scaling are driven by "sampling + verification," both fundamentally controlled by coverage; unifying them explains why "training with short CoT/hint" saves samples during training and verifier queries during inference.
+Both RL fine-tuning and test-time scaling are driven by "sampling + verification" and controlled by coverage. Using 0/1 outcome rewards $R^{f_{S^\star}}_x$ and staged curriculum rewards $R^{F_{S^\star}}_x(\cdot,\ell)$ (rewarding only prefixes with correct pre-EOS tokens), the paper proves curriculum RL fine-tuning complexity drops from $\widetilde O(d^{L+1})$ to $\widetilde O(L\cdot d^{p_\max+1})$. Test-time scaling (best-of-$N$ / verifier query) complexity follows the same exponential-to-polynomial reduction. For linearly realizable MDPs, it uses the spanner-sampling framework (Foster 2025) to provide a similar result for inference-time computational complexity (Thm 4).
 
 ### Loss & Training
-As a theoretical work, there is no specific loss function. The proofs use outcome-only reward $R^{f_{S^\star}}_x\in\{0,1\}$ (checks only if pre-EOS token matches $\mu_{f_{S^\star}(x)}$); the curriculum version adds a depth parameter $R^{F_{S^\star}}_x(\cdot,\ell)$. The challenge is that outcome reward allows reward hacking (e.g., in parity, choosing the wrong index still has a 50% hit rate); the authors show in App. F-G that prefix curriculum exponentially suppresses hacking probability by pushing the reward signal to intermediate EOS.
+As a theoretical paper, there is no specific loss implementation. Proofs use outcome-only rewards $R^{f_{S^\star}}_x\in\{0,1\}$ (checking if the pre-EOS token matches $\mu_{f_{S^\star}(x)}$); the curriculum version adds a depth parameter $R^{F_{S^\star}}_x(\cdot,\ell)$. To handle reward hacking (e.g., in parity where a wrong index might still result in a 50% match), the authors use prefix curricula in App. F-G to push reward signals down to intermediate EOS tokens, exponentially suppressing hacking probabilities.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper is mainly theoretical; experiments are limited to small-scale simulations on "parity/countdown" to verify predicted sample complexity ratios.
+The paper is primarily theoretical; experiments consist of small-scale simulations on "parity / countdown" to verify the predicted sample complexity ratios.
 
 | Task | $d$ | Direct RL Convergence Steps | Curriculum RL Convergence Steps | Acceleration Ratio |
-|------|-----|----------------------------|-------------------------------|--------------------|
-| Sparse Parity | 8 | $\sim d^L$ scale, >$10^5$ | $\sim L\cdot d^{p_\max}$, about $10^3$ | $\sim 50\times$ |
-| Countdown-24 | 4 nums | Direct training barely converges | Curriculum version converges stably | Qualitative change |
+|------|-----|-----------------------------|---------------------------------|--------------------|
+| Sparse Parity | 8 | $\sim$ Scale of $d^L$, >$10^5$ | $\sim$ Scale of $L\cdot d^{p_\max}$, approx $10^3$ | $\sim 50\times$ |
+| Countdown-24 | 4 nums | Rarely converges | Stable convergence | Qualitative change |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
-|---------------|------------|-------------|
-| Full hint-decreasing curriculum | Polynomial samples suffice to learn $\pi^\star$ | Matches Thm 2 prediction |
-| Remove intermediate stages (jump directly to target) | Sample complexity explodes | Confirms necessity in Cor. 1 |
-| Overfine stages ($L$ stages split into $2L$) | Diminishing but stable gain | Matches linear $L$ factor in $L\cdot(C^\star)^{p_\max}$ |
+|------|---------|------|
+| Full hint-decreasing curriculum | $\pi^\star$ learned with polynomial samples | Consistent with Thm 2 predictions |
+| Removing intermediate stages (one-jump) | Sample complexity explosion | Confirms necessity of Cor. 1 |
+| Overly granular stages ($L$ split into $2L$) | Diminishing but stable gains | Matches linear $L$ factor in $L\cdot(C^\star)^{p_\max}$ |
 
 ### Key Findings
-- Acceleration ratio depends strongly on "difficulty ratio $C^\star$" rather than number of stages $L$: excessive $L$ amplifies the linear factor, so there is an optimal number of stages.
-- The "uniform child node" assumption of PART is critical: if the base model is highly non-uniform on some child nodes, the $K$-th root relation fails and acceleration is bottlenecked.
-- Outcome-only reward indeed leads to hacking in parity (wrong index but correct final bit); prefix curriculum alleviates this by pushing reward signals to intermediate EOS.
-- Curriculum acceleration applies equally to test-time scaling (best-of-$N$ verifier query) and RL fine-tune; their complexity orders are fully parallel under the Cor. 1 framework.
-- On countdown tasks with controllable child branching factor and arithmetic $\Phi_\ell$, theoretical polynomial sample predictions match simulated convergence steps best.
+- The acceleration ratio strongly depends on the "difficulty ratio $C^\star$" rather than the number of stages $L$: if $L$ is too large, it amplifies the linear factor, suggesting an optimal number of stages.
+- The "uniform child node" assumption of PART is critical: if the base model has highly non-uniform probabilities, the $K$-th root relationship fails, and acceleration is consumed by local bottlenecks.
+- Outcome-only rewards lead to hacking in parity; prefix curricula mitigate this by pushing signals to intermediate EOS tokens.
+- Curriculum acceleration applies simultaneously to test-time scaling (verifier queries like best-of-$N$) and RL fine-tuning, as their complexity orders are parallel under the Cor. 1 framework.
+- In tasks like Countdown (controllable branching factor, $\Phi_\ell$ as arithmetic operations), predicted polynomial sample counts closely match simulation convergence steps.
 
 ## Highlights & Insights
-- Introduces the "coverage coefficient" from offline RL theory into CoT post-training, unifying difficulty, sample count, and reasoning depth under a single metric—this is the paper's most important conceptual contribution.
-- The "$L/p$-th root condition" is a rare actionable design guideline: it tells engineers "the success rate gap between adjacent stages should not exceed the $L/p$-th root of the target task's success rate," directly guiding curriculum partitioning.
-- Places RL fine-tune and test-time scaling in a unified oracle-query framework, providing the first symmetric proof that "training sample savings = inference verifier query savings."
-- The 2S-ART abstraction covers parity, Countdown, Markov-chain, induction-head, causal graph reasoning, etc., previously analyzed separately; the abstraction itself is a valuable output.
-- Prefix-hint and depth-increasing curricula, seemingly different, are unified under the "uniform child node probability at parent" principle, providing a "micro-level sufficient condition" for curriculum design.
+- Adapts the "coverage coefficient" from offline RL theory to CoT post-training, allowing difficulty, sample size, and reasoning depth to be measured on the same scale.
+- The "$L/p$-th root condition" is a rare actionable design principle: it directs engineers to keep adjacent stage success rate gaps within the root of the target success rate.
+- Unifies RL fine-tuning and test-time scaling within a single oracle-query framework, providing the first symmetric proof that "sample savings in training = query savings in inference."
+- The 2S-ART abstraction covers multiple tasks previously analyzed separately (parity, Countdown, Markov chains, induction heads, causal reasoning).
+- Prefix-hint and depth-increasing curricula are unified under the "uniform child probability" criterion, providing "microscopic sufficient conditions" for curriculum design.
 
 ## Limitations & Future Work
-- Assumes the base model is uniform-PART, while real LLM token probabilities are far from uniform and attention is already biased toward certain paths, so there remains a theory-practice gap.
-- Only proven for outcome-only 0/1 rewards; extension to process/intermediate rewards (the main focus of OpenR/Math-Shepherd, etc.) is not covered.
-- Experiments are small-scale (toy parity, toy countdown); verifying the $L/p$-th root condition on real LLMs (e.g., DeepSeek-R1) requires more sophisticated difficulty metrics.
-- Assumes free design of prefix-hint curriculum, but in practice, determining which hint segment constitutes $1/L$ stage difficulty often requires trial and error; the paper does not provide practical methods for estimating per-stage coverage.
-- In multi-task/multilingual mixed training, different tasks have inconsistent difficulty ratios $C^\star$; the theory assumes a globally shared $L/p$ relation, and extension to heterogeneous tasks requires new tools.
+- Assumes the base model is a uniform PART; real LLM token probabilities are non-uniform, and attention often pre-aligns with specific paths.
+- Proven only under outcome-only 0/1 rewards; extensions to process rewards (PRM) are not yet covered.
+- Experimental scale is small (toy parity/countdown); verifying the root condition on real LLMs (like DeepSeek-R1) requires more complex difficulty metrics.
+- Assumes prefix-hint curricula can be designed freely; in practice, determining which hint constitutes a $1/L$ difficulty stage requires trial and error.
+- In multi-task mixed training, inconsistent $C^\star$ across tasks makes sharing a global $L/p$ relationship difficult, needing new tools for heterogeneous tasks.
 
 ## Related Work & Insights
-- **vs Parashar et al. 2025**: They propose approximate policy iteration with error accumulation curriculum; the assumption in Cor. 1 is a strict version of theirs, translating error into coverage language.
-- **vs Liu et al. 2025b (hint-decreasing)**: Liu implements easy→hard via prefix hint; this paper interprets hint length changes as prefix-prefix relations on the reasoning tree, providing a theoretical explanation for empirical effectiveness.
-- **vs Foster et al. 2025 (spanner sampling)**: This work reuses their coverage framework and generalizes from linear MDPs to transformer reasoning trees, providing an analogous result for inference-time computational complexity (Thm 4).
-- **vs Ran-Milo et al. 2026 (graph traversal)**: Their analysis of graph traversal tasks is a concrete instance of Cor. 1—assigning nonzero probability mass to short-CoT instances is equivalent to satisfying the $K$-th root condition.
+- **vs Parashar et al. 2025**: They proposed curriculum via approximate policy iteration error accumulation; Cor. 1's hypothesis is a rigorous version of this using coverage language.
+- **vs Liu et al. 2025b (hint-decreasing)**: Liu used prefix hints for easy-to-hard transitions; this paper interprets hint length as prefix-prefix relations on a reasoning tree, explaining their empirical success.
+- **vs Foster et al. 2025 (spanner sampling)**: This paper reuses their coverage framework and extends it from linear MDPs to transformer reasoning trees, providing the analogue for inference-time complexity in Thm 4.
+- **vs Ran-Milo et al. 2026 (graph traversal)**: Their graph traversal analysis can be viewed as a specific instance of Cor. 1—assigning non-zero probability to short-CoT instances is equivalent to satisfying the $K$-th root condition.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to provide a rigorous exponential-to-polynomial sample-complexity proof for curriculum post-training
-- Experimental Thoroughness: ⭐⭐ Only toy task simulations, no end-to-end validation on real LLMs
-- Writing Quality: ⭐⭐⭐⭐ Clear combination of abstract framework and concrete instances (parity/countdown), though notation is heavy
-- Value: ⭐⭐⭐⭐ Provides a quantifiable design guideline for empirically successful "easy-to-hard" curriculum, with direct implications for RLHF/R1-style training
+- Novelty: ⭐⭐⭐⭐⭐ First rigorous exponential-to-polynomial sample-complexity proof for curriculum post-training.
+- Experimental Thoroughness: ⭐⭐ Limited to toy simulations; lacks end-to-end validation on real LLMs.
+- Writing Quality: ⭐⭐⭐⭐ Clear combination of abstract framework and specific instances, though notation is somewhat heavy.
+- Value: ⭐⭐⭐⭐ Provides quantifiable design principles for empirical "easy-to-hard" curricula, directly relevant to RLHF and R1-style training.
 
 <!-- RELATED:START -->
 

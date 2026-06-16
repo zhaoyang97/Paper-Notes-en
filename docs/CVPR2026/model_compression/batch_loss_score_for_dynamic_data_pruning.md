@@ -2,96 +2,116 @@
 title: >-
   [Paper Note] Batch Loss Score for Dynamic Data Pruning
 description: >-
-  [CVPR 2026][Model Compression][dynamic data pruning] This paper proposes Batch Loss Score (BLS), a method that estimates sample importance using only the mean batch loss — which is universally available — rather than per…
+  [CVPR 2026][Model Compression][dynamic data pruning] Batch Loss Score (BLS) is proposed to estimate sample importance using only the mean batch loss instead of hard-to-acquire per-sample losses. Providing theoretical guarantees from a signal processing perspective via EMA low-pass filtering, it can be integrated into existing dynamic pruning frameworks with only 3 lines
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "dynamic data pruning"
-  - "batch loss"
-  - "EMA"
-  - "training efficiency"
-  - "sample importance"
+  - CVPR 2026
+  - Model Compression
+  - dynamic data pruning
+  - batch loss
+  - EMA
+  - training efficiency
+  - sample importance
 date: 2026-05-08
-content_hash: 38780b070d4cac49
+content_hash: bdb18c647d71fb8d
 ---
-
 # Batch Loss Score for Dynamic Data Pruning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04681](https://arxiv.org/abs/2604.04681)  
 **Code**: [https://github.com/mrazhou/BLS](https://github.com/mrazhou/BLS)  
-**Area**: Training Efficiency / Data Pruning
+**Area**: Training Efficiency / Data Pruning  
 **Keywords**: dynamic data pruning, batch loss, EMA, training efficiency, sample importance
 
 ## TL;DR
 
-This paper proposes Batch Loss Score (BLS), a method that estimates sample importance using only the mean batch loss — which is universally available — rather than per-sample loss, which is difficult to obtain in practice. Grounded in a signal-processing perspective via EMA-based low-pass filtering, BLS offers theoretical guarantees and can be integrated into existing dynamic pruning frameworks with just 3 lines of code.
+Batch Loss Score (BLS) is proposed to estimate sample importance using only the mean batch loss instead of hard-to-acquire per-sample losses. Providing theoretical guarantees from a signal processing perspective via EMA low-pass filtering, it can be integrated into existing dynamic pruning frameworks with only 3 lines of code.
 
 ## Background & Motivation
 
-Dynamic data pruning accelerates deep learning training by skipping less informative samples. Per-sample loss is the most intuitive importance measure, yet obtaining it in practice poses significant obstacles: standard training pipelines are highly optimized for computing the mean batch loss, and recovering individual losses from the aggregated scalar is non-trivial. For complex objective functions (e.g., multi-component detection losses), defining and isolating a per-sample scalar requires deep task-specific knowledge and invasive code modifications.
+Dynamic data pruning accelerates deep learning training by skipping less informative samples. Per-sample loss is the most intuitive measure of importance, but acquiring it in practice faces significant obstacles: standard training pipelines are highly optimized for computing mean batch loss, and recovering individual losses from aggregated loss is non-trivial. For complex objective functions (e.g., multi-component detection loss), defining and isolating per-sample scalars requires deep task-specific knowledge and code modification.
 
-**Core insight of BLS**: Although per-sample loss is hard to access, the mean batch loss is ubiquitous. By maintaining an EMA score for each sample — updated only when that sample appears in the current batch — sample importance can be inferred indirectly.
+The core insight of BLS: while per-sample loss is difficult to obtain, mean batch loss is ubiquitous. By maintaining an Exponential Moving Average (EMA) score for each sample (updated only when the sample appears in the current batch), sample importance can be inferred indirectly.
 
 ## Method
 
 ### Overall Architecture
 
-Each sample is associated with a score $s_i(t)$, updated via EMA whenever sample $i$ appears in batch $B_t$: $s_i(t) = \alpha \cdot s_i(t-1) + (1-\alpha) \cdot L(B_t, t)$. BLS serves as a transparent proxy, replacing per-sample loss within existing pruning frameworks.
+BLS aims to bypass the challenge of "difficult per-sample loss acquisition": standard training pipelines only calculate the mean batch loss, and extracting per-sample scalars usually requires extensive task-specific code modification. The approach maintains an EMA score for each sample, updated only when it appears in the current batch: $s_i(t) = \alpha\, s_i(t-1) + (1-\alpha)\, L(B_t, t)$. This score acts as a transparent proxy for per-sample importance, integrated back into any loss-based dynamic pruning framework. The entire process forms a **sampling → scoring → selection → retraining** loop: the mean batch loss is calculated at each training step to update the EMA scores of samples within the batch, and the framework selects the next subset based on these scores.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Train one step<br/>Calculate mean batch loss L(B_t,t)"] --> B["Conditional EMA Scoring<br/>Update s_i(t) only for samples in batch"]
+    B --> T
+    subgraph T["Signal Processing Theory: Proving s_i as a proxy"]
+        direction TB
+        T1["Signal Decomposition + Low-pass Filtering<br/>Mean loss = Scaled signal + Composition noise"]
+        T1 --> T2["Frequency Separation Hypothesis<br/>Noise varies fast, signal evolves slowly"]
+    end
+    T --> C["Seamless Proxy Integration<br/>Plug-and-play s_i into pruning frameworks (InfoBatch/SeTa)"]
+    C --> D["Select subset D'_t based on scores"]
+    D -->|Train next cycle only on D'_t| A
+```
 
 ### Key Designs
 
-1. **Signal Decomposition and Filtering**: From a single sample's perspective, the mean batch loss equals a scaled signal ($\frac{1}{B} l_i(t)$, the contribution of sample $i$) plus batch-composition noise (the loss contributions of the remaining $B-1$ samples). EMA acts as a first-order IIR low-pass filter, attenuating high-frequency batch-composition noise while preserving low-frequency persistent loss trends.
+**1. Conditional EMA Scoring: Update only when a sample appears in the current batch to accumulate a unique loss history**
 
-2. **Frequency Separation Assumption**: The high-frequency fluctuations of batch-composition noise (caused by random sampling at each step) are substantially higher than the evolution frequency of the scaled per-sample loss (driven by slow parameter updates), making low-pass filtering effective.
+This is the core algorithm of BLS. A score $s_i(t)$ is maintained for each sample $i$, initialized with the mean loss of the first batch $s_i(0)=L(\mathcal{B}_0,0)$. Subsequently, **only when the sample appears in the current batch** is the EMA updated using that batch’s mean loss: $s_i(t)=\alpha\,s_i(t-1)+(1-\alpha)\,L(\mathcal{B}_t,t)$ (if $i\in\mathcal{B}_t$), otherwise it remains unchanged. The "conditional update" allows different samples to accumulate distinct temporal histories, providing discriminative power. The mechanism uses only the mean batch loss available in standard pipelines.
 
-3. **Seamless Proxy Integration**: BLS serves as a plug-and-play replacement for per-sample loss; downstream pruning algorithms remain entirely agnostic to the source of the scores, requiring no modifications to core scheduling logic or hyperparameters. Integration requires only 3 lines of code, compared to 33+ lines of invasive modification in InfoBatch.
+**2. Signal Decomposition + Low-pass Filtering: Treating mean batch loss as "signal + noise" with EMA as a first-order IIR filter**
+
+Why can this score proxy per-sample loss? From a single sample $i$’s perspective, the mean loss of its batch can be decomposed into two parts: its own scaled signal $\frac{1}{B} l_i(t)$ and the batch composition noise $\frac{1}{B}\sum_{j\neq i} l_j(t)$ from the other $B-1$ samples. BLS views the EMA update as a first-order IIR low-pass filter $H_\alpha$. The impulse response $h[n] = (1-\alpha)\alpha^n u[n]$ and frequency response $|H(e^{j\omega})| = \frac{1-\alpha}{\sqrt{1-2\alpha\cos(\omega)+\alpha^2}}$ are maximized at $\omega=0$ and decay with frequency. Thus, it attenuates high-frequency batch composition noise while retaining low-frequency persistent loss trends.
+
+**3. Frequency Separation Hypothesis: Batch composition noise changes rapidly, while per-sample loss evolves slowly**
+
+For low-pass filtering to be effective, signals and noise must be separable in the frequency domain. This work argues that batch composition noise arises from random sampling at each step, resulting in high-frequency fluctuations. Conversely, the scaled per-sample loss is driven by slow model parameter updates, resulting in low-frequency evolution. When these frequency bands are sufficiently separated, the EMA can filter out noise without erasing the signal.
+
+**4. Seamless Proxy Integration: Plug-and-play with 3 lines of code**
+
+The difficulty of using per-sample loss often stems from engineering overhead. The $s_i$ calculated by BLS acts as a transparent proxy for existing pruning frameworks (e.g., InfoBatch, SeTa) to replace the hard-to-extract per-sample loss. Downstream algorithms are agnostic to the score source, requiring no changes to core scheduling logic or hyperparameters. Integration requires only 3 lines of code, significantly reducing migration costs compared to invasive modifications.
 
 ### Loss & Training
 
-BLS does not alter the training loss; it only affects sample selection. The EMA decay factor $\alpha$ controls the filtering characteristics: larger $\alpha$ yields stronger noise suppression at the cost of slower response.
-
-### Theoretical Guarantees
-
-From a signal decomposition perspective, the mean batch loss for a batch containing sample $i$ can be decomposed into a scaled signal $\frac{1}{B} l_i(t)$ and batch-composition noise $\frac{1}{B}\sum_{j \neq i} l_j(t)$. The frequency separation assumption states that the high-frequency fluctuations of batch-composition noise far exceed the evolution frequency of the scaled per-sample loss. EMA acts as a first-order IIR low-pass filter $H_\alpha$ with impulse response $h[n] = (1-\alpha)\alpha^n u[n]$ and frequency response $|H(e^{j\omega})| = \frac{1-\alpha}{\sqrt{1-2\alpha\cos(\omega)+\alpha^2}}$, which is maximized at $\omega = 0$, thereby filtering out high-frequency noise while retaining low-frequency trends.
+BLS does not modify the training loss itself; it only affects sample selection. It replaces the "sample scoring" component within pruning frameworks, while sample selection and gradient calculation logic are inherited from the original framework.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset / Task | Method | Pruning Ratio | Performance | Notes |
-|---|---|---|---|---|
-| ToCa (3M, zero-shot captioning) | BLS-SeTa | 32% | CIDEr 71.2 | ≈ SeTa 71.5 |
-| MJ+ST (15M, text recognition) | BLS-SeTa | 33% | IIIT5k 96.2% | ≈ Full 96.1% |
+| Dataset/Task | Method | Pruning Rate | Performance | Note |
+|------------|------|--------|------|------|
+| ToCa (3M, Zero-shot Captioning) | BLS-SeTa | 32% | CIDEr 71.2 | ≈ SeTa 71.5 |
+| MJ+ST (15M, Text Recognition) | BLS-SeTa | 33% | IIIT5k 96.2% | ≈ Full 96.1% |
 | CIFAR10 | BLS-InfoBatch | 30% | 95.5% | ≈ Full 95.6% |
 
-BLS acts as a transparent proxy within both InfoBatch and SeTa frameworks, requiring only 3 lines of code (vs. 33+ lines of invasive modification in InfoBatch). Downstream pruning algorithms remain fully agnostic to the score source, with no changes needed to core scheduling logic or hyperparameters.
+BLS serves as a transparent proxy for frameworks like InfoBatch and SeTa with only 3 lines of code (vs. 33+ lines of invasive modification for InfoBatch). Downstream pruning algorithms are completely agnostic to the source of the scores.
 
 ### Key Findings
 
-- BLS is validated across 14 datasets, 11 tasks, and 18 models, achieving lossless pruning of 20%–50% of samples.
-- When used as a proxy replacement for per-sample loss, performance is comparable to or better than the original methods.
-- BLS is particularly well-suited for complex scenarios (multi-component losses, large-scale data) where per-sample loss is difficult to obtain.
-- BLS is initialized with the mean loss of the first batch and subsequently updated only when a sample appears in the current batch.
+- BLS was validated across 14 datasets, 11 tasks, and 18 models, achieving lossless pruning of 20%-50% of samples.
+- Performance using BLS as a proxy for per-sample loss is comparable to or better than the original methods.
+- It is particularly suitable for complex scenarios (multi-component loss, large-scale data) where per-sample loss is difficult to obtain.
+- BLS is initialized with the first batch's mean loss and only updates when a sample appears in the current batch.
 
 ## Highlights & Insights
 
-- A signal-processing perspective (low-pass filtering) provides rigorous theoretical grounding for BLS.
-- The minimalist 3-line implementation substantially lowers the barrier to adoption.
-- Decoupling "sample scoring" from "sample selection" enables combination with any loss-based pruning strategy.
-- The frequency separation assumption is intuitively clear and empirically validated.
+- Provides rigorous theoretical guarantees for BLS from a signal processing (low-pass filtering) perspective.
+- A minimalist 3-line implementation lowers the barrier to entry.
+- Decouples "sample scoring" from "sample selection," allowing combination with any loss-based pruning strategy.
+- The frequency separation hypothesis is intuitively clear and experimentally verified.
 
 ## Limitations & Future Work
 
-- The EMA decay factor $\alpha$ requires task-specific tuning.
-- BLS may be less accurate in the very early stages of training, before sufficient score accumulation.
+- The EMA factor $\alpha$ may require tuning based on the specific task.
+- Performance may be less accurate in the very early stages of training before scores have sufficiently accumulated.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Using batch loss as a proxy for per-sample loss is a novel idea.
-- **Technical Depth**: ⭐⭐⭐⭐⭐ — Signal-processing theoretical analysis is rigorous.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 14 datasets, 11 tasks, 18 models.
-- **Practical Value**: ⭐⭐⭐⭐⭐ — 3 lines of code; extremely high practical utility.
+- Novelty: ⭐⭐⭐⭐ — Novel idea of using batch loss as a proxy for per-sample loss.
+- Technical Depth: ⭐⭐⭐⭐⭐ — Rigorous theoretical analysis through signal processing.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 14 datasets, 11 tasks, 18 models.
+- Value: ⭐⭐⭐⭐⭐ — 3 lines of code, extremely high practical utility.
 
 <!-- RELATED:START -->
 
@@ -99,11 +119,11 @@ BLS acts as a transparent proxy within both InfoBatch and SeTa frameworks, requi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment](beyond_loss_values_robust_dynamic_pruning_via_loss_trajectory_alignment.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
+- [\[CVPR 2026\] Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)
 - [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
-- [\[CVPR 2026\] Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation](fixed_anchors_are_not_enough_dynamic_retrieval_and_persistent_homology_for_datas.md)
-- [\[CVPR 2026\] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)
-- [\[CVPR 2026\] HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers](hiap_a_multi-granular_stochastic_auto-pruning_framework_for_vision_transformers.md)
+- [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
 
 </div>
 

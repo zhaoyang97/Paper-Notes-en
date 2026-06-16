@@ -2,20 +2,18 @@
 title: >-
   [Paper Note] Auto temperature
 description: >-
-  [ICML 2026][Reinforcement Learning][MeanFlow] MFPO utilizes MeanFlow models (which learn average velocity instead of instantaneous velocity) as RL policies to reduce diffusion policy sampling from 20+ steps to 2 steps. I…
+  [ICML 2026][Reinforcement Learning][MeanFlow] MFPO employs MeanFlow models (learning average velocity instead of instantaneous velocity) as an RL policy to reduce diffusion policy sampling steps from 20+ to 2 steps. By using an average divergence network to solve action likelihood calculation and ESS-weighted SNIS to combine Gaussian + policy proposals for soft po
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "MeanFlow"
-  - "MaxEnt RL"
-  - "soft policy iteration"
-  - "average divergence network"
-  - "importance sampling"
+  - ICML 2026
+  - Reinforcement Learning
+  - MeanFlow
+  - MaxEnt RL
+  - soft policy iteration
+  - importance sampling
 date: 2026-05-08
-content_hash: 6cfc876697613bf7
+content_hash: 6ad57fa06302471d
 ---
-
-# MFPO: Running MaxEnt RL with Few-step MeanFlow Policy at Nearly Gaussian Policy Speeds
+# MFPO: Accelerating MaxEnt RL to Gaussian Policy Speeds with Few-step MeanFlow Policy
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.14698](https://arxiv.org/abs/2604.14698)  
@@ -24,51 +22,68 @@ content_hash: 6cfc876697613bf7
 **Keywords**: MeanFlow, MaxEnt RL, soft policy iteration, average divergence network, importance sampling
 
 ## TL;DR
-MFPO utilizes MeanFlow models (which learn average velocity instead of instantaneous velocity) as RL policies to reduce diffusion policy sampling from 20+ steps to 2 steps. It introduces an average divergence network to solve action likelihood computation and uses ESS-weighted SNIS combining Gaussian and policy proposals for soft policy improvement. On MuJoCo, DMC, and HumanoidBench, it achieves performance $\geq$ diffusion baselines while reducing training time by ~50%.
+MFPO employs MeanFlow models (learning average velocity instead of instantaneous velocity) as an RL policy to reduce diffusion policy sampling steps from 20+ to 2 steps. By using an average divergence network to solve action likelihood calculation and ESS-weighted SNIS to combine Gaussian + policy proposals for soft policy improvement, it achieves performance $\geq$ diffusion baselines on MuJoCo/DMC/HumanoidBench while reducing training time by $\sim 50\%$.
 
 ## Background & Motivation
 
-**Background**: Online RL for continuous control often relies on Gaussian or deterministic policies plus noise, which are overly unimodal. When complex tasks present multi-modal reward landscapes, these models prone to local optima. Diffusion and flow matching policies (DIPO, QVPO, DACER, DIME) model multi-modal actions through iterative generation, but inference requiring 10-20 steps makes training one to two orders of magnitude slower.
+**Background**: Online RL for continuous control using Gaussian or deterministic policies is overly unimodal, making it prone to local optima when the reward landscape of complex tasks is multimodal. Diffusion and flow matching policies (e.g., DIPO, QVPO, DACER, DIME) model multimodal actions via iterative generation, but their 10–20 step inference makes training one to two orders of magnitude slower.
 
-**Limitations of Prior Work**: MaxEnt RL requires balancing exploration and exploitation via action likelihood evaluation and soft policy improvement (matching the Boltzmann distribution). Both are challenging for diffusion policies: likelihood requires integrating instantaneous velocity divergence (intractable), and soft improvement requires Boltzmann samples (unavailable). Existing methods (DIME lower bounds, MaxEntDP numerical integration, SAC-Flow GRU/Transformer) suffer from loose bounds or large ODE discretization errors in few-step regimes.
+**Limitations of Prior Work**: MaxEnt RL requires both action likelihood evaluation and soft policy improvement (matching the Boltzmann distribution) to balance exploration and exploitation. Both are challenging for diffusion policies: likelihood requires integrating instantaneous velocity divergence (which is intractable), and soft improvement requires Boltzmann samples (which are unavailable). Existing methods (DIME lower bound, MaxEntDP numerical integration, SAC-Flow with GRU/Transformer) suffer from loose bounds or large ODE discretization errors in few-step regimes.
 
-**Key Challenge**: Achieving multi-modal expressiveness requires diffusion, but training efficiency requires few steps; however, few steps destroy likelihood accuracy and policy improvement precision.
+**Key Challenge**: Multimodal expressiveness requires diffusion, while RL training efficiency requires few steps; however, few steps sacrifice likelihood precision and the accuracy of policy improvement.
 
-**Goal**: To achieve precise likelihood and soft improvement for a multi-modal policy within 2 sampling steps, bringing diffusion policy training time close to that of Gaussian policies.
+**Goal**: Achieve precise likelihood calculation and soft improvement for multimodal policies within 2 steps in a MaxEnt RL framework, making diffusion policy training time comparable to that of Gaussian policies.
 
-**Key Insight**: MeanFlow models (Geng et al. 2025) learn average velocity $\boldsymbol{u}(\boldsymbol{x}_t, r, t) = \frac{1}{t-r} \int_r^t \boldsymbol{v}(\boldsymbol{x}_\tau, \tau) d\tau$ rather than instantaneous velocity. Once learned accurately, 2-step sampling eliminates discretization error. However, applying MeanFlow to MaxEnt RL still requires solving the likelihood and soft improvement challenges.
+**Key Insight**: MeanFlow models (Geng et al. 2025) learn average velocity $\boldsymbol{u}(\boldsymbol{x}_t, r, t) = \frac{1}{t-r} \int_r^t \boldsymbol{v}(\boldsymbol{x}_\tau, \tau) d\tau$ instead of instantaneous velocity. Once learned precisely, 2-step sampling yields no discretization error. However, applying MeanFlow to MaxEnt RL still requires solving the challenges of likelihood calculation and soft improvement.
 
-**Core Idea**: (1) Construct an average divergence network $\delta_\omega$ to approximate $\frac{1}{t-r} \int_r^t \nabla \cdot \boldsymbol{v}_\theta d\tau$, reusing the sampling pipeline for likelihood calculation; (2) Use SNIS to estimate the marginal velocity of the Boltzmann distribution, adaptively combining policy and Gaussian proposals via ESS weighting; (3) Train the MeanFlow policy using soft policy iteration with a distributional critic and automatic temperature tuning.
+**Core Idea**: (1) Construct an average divergence network (ADN) $\delta_\omega$ mimicking MeanFlow to approximate $\frac{1}{t-r} \int_r^t \nabla \cdot \boldsymbol{v}_\theta d\tau$, reusing the sampling pipeline for likelihood calculation; (2) Use SNIS to estimate the marginal velocity of the Boltzmann distribution by adaptively combining policy proposals and Gaussian proposals via ESS weighting; (3) Train the MeanFlow policy using soft policy iteration with a distributional critic and automatic temperature adjustment.
 
 ## Method
 
 ### Overall Architecture
 
-The framework consists of two core networks: a critic $Q_\phi$ and a MeanFlow policy $\boldsymbol{u}_\theta$ (supplemented by an ADN $\delta_\omega$). Soft policy iteration alternates between policy evaluation and policy improvement. Inference takes 2 steps: $\boldsymbol{a}_{t_{i-1}} = \boldsymbol{a}_{t_i} - \frac{1}{T} \boldsymbol{u}_\theta(\boldsymbol{s}, \boldsymbol{a}_{t_i}, t_{i-1}, t_i)$.
+MFPO maintains two networks: a critic $Q_\phi$ and a MeanFlow policy $\boldsymbol{u}_\theta$ (augmented with the average divergence network $\delta_\omega$). It alternates between **Policy Evaluation** (updating $Q_\phi$) and **Policy Improvement** (updating $\boldsymbol{u}_\theta$) within the soft policy iteration framework. The difficulty lies in the fact that both steps rely on the action likelihood of the MeanFlow policy and the Boltzmann target distribution, which are typically unavailable for few-step generative policies. MFPO bridges this gap with three designs: ① **MeanFlow Policy + ADN** for likelihood, ② **ESS-weighted SNIS** for target velocity estimation in policy improvement, and ③ **Distributional Critic + Auto Temperature + Action Selection** for stability during training and deployment. Deployment requires only 2 sampling steps: $\boldsymbol{a}_{t_{i-1}} = \boldsymbol{a}_{t_i} - \frac{1}{T} \boldsymbol{u}_\theta(\boldsymbol{s}, \boldsymbol{a}_{t_i}, t_{i-1}, t_i)$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["State s: 2-step MeanFlow policy u_θ samples actions<br/>a_r = a_t − (t−r)·u_θ → Store in replay buffer"]
+    A --> B
+    subgraph D1["① MeanFlow Policy + ADN δ_ω"]
+        direction TB
+        B["Accumulate δ_ω along sampling trajectory to get logπ_θ<br/>(Learn time-average of divergence, overhead ~5%)"]
+    end
+    D1 --> C["Policy Evaluation: Soft Bellman regression for critic Q_φ<br/>Target includes −α·logπ_θ entropy term"]
+    C --> D2
+    subgraph D2["② ESS-weighted SNIS: Estimate Boltzmann target velocity v̂_t"]
+        direction TB
+        E["Policy proposal q¹=π_θ (Close at large t)<br/>＋ Gaussian proposal q² (Close at small t)"]
+        F["Combine v̂_t weighted by respective Effective Sample Size (ESS)"]
+        E --> F
+    end
+    D2 --> G["Policy Improvement: Regress u_θ to match Boltzmann distribution"]
+    G -->|Update u_θ, δ_ω| A
+    H["③ Distributional critic + Auto temperature + Action selection<br/>C51 reduces variance / α matches target entropy / Select highest Q action"]
+    H -.->|Stability across training and deployment| C
+```
 
 ### Key Designs
 
-1. **MeanFlow Policy + Average Divergence Network for Likelihood**:
+**1. MeanFlow Policy + Average Divergence Network (ADN): Accurate Action Likelihood for 2-step Sampling**
 
-    - **Function**: Enables precise estimation of action likelihood for a 2-step MeanFlow policy with only 5% additional computational cost.
-    - **Mechanism**: The MeanFlow policy learns average velocity, where sampling is defined as $\boldsymbol{a}_r = \boldsymbol{a}_t - (t-r) \boldsymbol{u}_\theta$. Action likelihood utilizes the change-of-variable formula $\log \pi_\theta(\boldsymbol{a}_0|\boldsymbol{s}) = \log p_1(\boldsymbol{a}_1) + \int_0^1 \nabla \cdot \boldsymbol{v}_\theta dt$. Native Jacobian computation with numerical integration is too expensive. The average divergence network $\delta_\omega(\boldsymbol{s}, \boldsymbol{a}_t, r, t) \approx \frac{1}{t-r} \int_r^t \nabla \cdot \boldsymbol{v}_\theta d\tau$ is trained using the Skilling-Hutchinson trace estimator $\widehat{\text{div}} = \frac{1}{N} \sum \boldsymbol{\epsilon}_i^\top \frac{\partial \boldsymbol{v}_\theta}{\partial \boldsymbol{a}_t} \boldsymbol{\epsilon}_i$. During inference, $\log \pi_\theta(\boldsymbol{a}_0|\boldsymbol{s}) = \log p_1(\boldsymbol{a}_1) + \frac{1}{T} \sum_i \delta_\omega(\boldsymbol{s}, \boldsymbol{a}_{t_i}, t_{i-1}, t_i)$ reuses the sampling trajectory.
-    - **Design Motivation**: MaxEnt entropy requires likelihood, but ODE divergence integration is intractable. ADN is the divergence-counterpart to the MeanFlow concept—both accurate (trained to match) and cheap (5% overhead). Skilling-Hutchinson ensures the trace does not require $d$ backward passes.
+MaxEnt RL must incorporate entropy into the objective, requiring the calculation of the log-likelihood of actions under the policy. For diffusion policies, likelihood requires integrating the divergence of the instantaneous velocity field over time, which is inherently intractable and prone to discretization errors over few steps. MFPO adopts the same "learning the average" approach: it drains an average divergence network $\delta_\omega(\boldsymbol{s}, \boldsymbol{a}_t, r, t) \approx \frac{1}{t-r} \int_r^t \nabla \cdot \boldsymbol{v}_\theta\,d\tau$. The training objective uses the Skilling-Hutchinson trace estimator $\widehat{\text{div}} = \frac{1}{N} \sum_i \boldsymbol{\epsilon}_i^\top \frac{\partial \boldsymbol{v}_\theta}{\partial \boldsymbol{a}_t} \boldsymbol{\epsilon}_i$ to avoid backpropagating through every dimension. During inference, the divergence is accumulated using points along the sampling trajectory: $\log \pi_\theta(\boldsymbol{a}_0|\boldsymbol{s}) = \log p_1(\boldsymbol{a}_1) + \frac{1}{T} \sum_i \delta_\omega(\boldsymbol{s}, \boldsymbol{a}_{t_i}, t_{i-1}, t_i)$, with an overhead of only about 5%. The ADN is effective because it is isomorphic to MeanFlow—while MeanFlow learns the time-average of velocity, ADN learns the time-average of divergence, making it both accurate (trained to match) and efficient.
 
-2. **ESS-weighted SNIS for Soft Policy Improvement**:
+**2. ESS-weighted SNIS: Soft Policy Improvement Without Boltzmann Samples**
 
-    - **Function**: Accurately estimates the marginal velocity field for policy updates despite the absence of Boltzmann samples.
-    - **Mechanism**: The Boltzmann distribution is defined as $\pi(\boldsymbol{a}_0|\boldsymbol{s}) \propto \exp(\frac{1}{\alpha} Q)$. The marginal velocity field is $\boldsymbol{v}_t(\boldsymbol{a}_t|\boldsymbol{s}) = \mathbb{E}_{\pi(\boldsymbol{a}_0|\boldsymbol{a}_t, \boldsymbol{s})}[\frac{\boldsymbol{a}_t - \boldsymbol{a}_0}{t}]$. MaxEntDP/SDAC use a Gaussian proposal $q^2(\boldsymbol{a}_0)$ for SNIS, but the Effective Sample Size (ESS) drops sharply as $t \to 1$. Ours adds a policy proposal $q^1(\boldsymbol{a}_0) = \pi_\theta(\boldsymbol{a}_0|\boldsymbol{s})$ (likelihood computed via ADN), which maintains high ESS as $t \to 1$. The final estimate $\hat{\boldsymbol{v}}_t = \sum_k \frac{\text{ESS}_k}{\sum_l \text{ESS}_l} \hat{\boldsymbol{v}}_t^k$ is an ESS-weighted combination.
-    - **Design Motivation**: Single proposals perform differently across $t$—Gaussian is effective at small $t$ (concentrated target, Gaussian match), while the Policy proposal is effective at large $t$ (target dominated by Q). ESS-adaptive weighting allows the high-effective-sample estimator to dominate, resulting in lower variance than a single proposal.
+Soft policy improvement aims to match the policy to the Boltzmann distribution $\pi(\boldsymbol{a}_0|\boldsymbol{s}) \propto \exp(\frac{1}{\alpha} Q)$. Since samples from the Boltzmann distribution are unavailable, one must estimate its marginal velocity field $\boldsymbol{v}_t(\boldsymbol{a}_t|\boldsymbol{s}) = \mathbb{E}_{\pi(\boldsymbol{a}_0|\boldsymbol{a}_t, \boldsymbol{s})}[\frac{\boldsymbol{a}_t - \boldsymbol{a}_0}{t}]$. Prior methods (MaxEntDP/SDAC) utilize a Gaussian proposal $q^2(\boldsymbol{a}_0) = \mathcal{N}(\boldsymbol{a}_0|\frac{\boldsymbol{a}_t}{1-t}, (\frac{t}{1-t})^2 I)$ for self-normalized importance sampling. However, as $t \to 1$, the target is dominated by $Q$, and the Gaussian proposal deviates significantly, causing the Effective Sample Size (ESS) to collapse. MFPO adds a policy proposal $q^1(\boldsymbol{a}_0) = \pi_\theta(\boldsymbol{a}_0|\s)$ (with likelihood provided by the ADN), which remains close at large $t$. The final estimate is a combination weighted by the ESS of each proposal: $\hat{\boldsymbol{v}}_t = \sum_k \frac{\text{ESS}_k}{\sum_l \text{ESS}_l} \hat{\boldsymbol{v}}_t^k$. This ensures the Gaussian proposal handles small $t$ while the policy proposal handles large $t$, with the weight favoring the proposal with more effective samples. This approach realizes variance reduction through ESS naturally rather than via manual tuning.
 
-3. **Distributional Critic + Auto Temperature + Action Selection**:
+**3. Distributional critic + Auto temperature + Action selection: Ensuring Stability in Training and Deployment**
 
-    - **Function**: A combination of engineering techniques to improve training stability and evaluation performance.
-    - **Mechanism**: (a) Distributional critic uses C51 to treat the Q-function as a categorical distribution, using the mean for policy updates; (b) Auto-tuned temperature ensures $\alpha$ matches the target entropy $\mathcal{H}_{\text{target}} = -\rho \cdot \dim(\mathcal{A})$, where $\rho = 0.5$ is found to be generally optimal; (c) Action selection during evaluation samples multiple candidates from the policy and selects the deterministic action with the highest Q-value.
-    - **Design Motivation**: MaxEnt random policies assist exploration during training, but deterministic selection is better for testing; distributional Q-learning has been proven effective in diffusion RL; auto temperature makes the method robust to reward scales.
+Three additional configurations stabilize the method, addressing the conflict between exploration and exploitation. The critic uses C51 to learn $Q$ as a categorical distribution, using only the mean for policy updates; this distributional Q-learning suppresses value estimation variance, as verified in diffusion RL. The temperature $\alpha$ is not fixed but is automatically adjusted to match a target entropy $\mathcal{H}_{\text{target}} = -\rho \cdot \dim(\mathcal{A})$ (with $\rho = 0.5$ being generally optimal), ensuring robustness to reward scaling. During evaluation, instead of random sampling, several candidate actions are sampled from the policy, and the one with the highest $Q$ value is selected. Randomness aids exploration during training, while determinism ensures performance during deployment.
 
-### Algorithm
+### Mechanism
 
-```python
+```text
 Initialize Q_φ, π_θ (MeanFlow), δ_ω, α
 for each step:
     # Policy evaluation
@@ -84,7 +99,7 @@ for each step:
 
 ## Key Experimental Results
 
-### Main Results: MuJoCo (5 locomotion)
+### Main Results: MuJoCo (5 Locomotion Tasks)
 
 | Algorithm | Sampling Steps | Inference Time (ms) | Avg Performance |
 |---|---|---|---|
@@ -98,59 +113,59 @@ for each step:
 | TD3 (Gaussian) | 1 | 0.14 | lower (unimodal) |
 | SAC (Gaussian) | 1 | 0.15 | lower (unimodal) |
 
-MFPO achieves 0.46ms inference time with 2-step sampling, which is 2-3.5$\times$ faster than other diffusion methods; performance is $\geq$ all diffusion baselines. Training time is reduced by ~50%.
+MFPO with 2-step sampling achieves an inference time of 0.46ms, which is 2–3.5× faster than other diffusion methods, while maintaining performance $\geq$ all diffusion baselines. Training time is reduced by $\sim 50\%$.
 
 ### Ablation Study (HalfCheetah-v3)
 
 | Ablation | Impact |
 |---|---|
-| MeanFlow $\to$ Flow Matching policy | Performance degradation; average velocity is necessary for few-steps |
-| Remove ADN | Performance degradation; likelihood estimation is necessary |
+| MeanFlow → Flow Matching policy | Performance degradation; average velocity is necessary for few-step |
+| Remove ADN | Performance degradation; highlights necessity of likelihood estimation |
 | Only Gaussian proposal | Low ESS as $t \to 1$ |
-| Only policy proposal | Failed; proposal not effective |
+| Only policy proposal | Failed; proposal was not effective enough |
 | $K_1:K_2 = 1:2$ (More Gaussian) | Optimal |
-| Fixed temperature | Worse than auto-tuning |
+| Fixed temperature | Lower performance than auto temperature |
 | $\rho = 0.5$ for target entropy | Optimal |
 
 ### Key Findings
 
-- **2-step sampling matches 20-step diffusion performance**: MFPO with MeanFlow 2-step catches up with MaxEntDP/QVPO 20-step while reducing inference time by 3-4$\times$.
-- **Training time reduced by 50%**: Compared to DACER/DIME/MaxEntDP, training time is nearly halved.
-- **ADN adds accurate likelihood with 5% overhead**: Compared to naive numerical integration (requiring $d$ backward passes per step), ADN is almost cost-free.
-- **Two-proposal SNIS is critical**: The combined variance is significantly lower, which is the key to stable policy updates.
-- **HumanoidBench performance**: MFPO also matches SOTA on high-dimensional tasks (>50 dim action), scaling to complex control.
+- **2-step sampling matches 20-step diffusion performance**: MFPO over 2 steps catches up with MaxEntDP/QVPO over 20 steps, reducing inference time by 3–4×.
+- **Training time reduced by 50%**: Compared to DACER/DIME/MaxEntDP, the total training time is nearly halved.
+- **ADN adds only 5% overhead for accurate likelihood**: Compared to naive numerical integration (requiring $d$ backward passes per step), ADN is practically free.
+- **Two-proposal SNIS is critical**: The combination significantly reduces variance, which is essential for stable policy updates.
+- **Scales to HumanoidBench**: MFPO matches SOTA on high-dimensional tasks (>50 dim actions), proving its scalability to complex control.
 
 ## Highlights & Insights
 
-- **MeanFlow + MaxEnt RL is a perfect combination**: MeanFlow solves "few-step expressiveness," while MaxEnt solves "exploration." The resulting combination is both fast and stable.
-- **ADN is an elegant methodological analogy**: Transferring the "MeanFlow learns average velocity" idea to "learning average divergence" provides methodological consistency.
-- **Engineering value of ESS-weighted SNIS**: This is not ad-hoc tuning but an automatic weighting using ESS, with theoretical variance reduction guarantees.
-- **Practical significance of 50% faster training**: This makes diffusion-based RL viable for engineering projects—where previously 20-step training took days to match SAC results from a few hours, MFPO reaches diffusion performance in just a few hours.
-- **Recycling MeanFlow**: Moving latest advances in generative modeling (average velocity) to RL is a prime example of cross-pollination between sub-fields.
+- **MeanFlow + MaxEnt RL is an ideal combination**: MeanFlow addresses few-step expressiveness, while MaxEnt addresses exploration; the result is both fast and stable.
+- **ADN is an elegant methodological analogy**: The idea of "learning the time-average of velocity" from MeanFlow is successfully transferred to "learning the time-average of divergence."
+- **Engineering value of ESS-weighted SNIS**: This is not ad-hoc tuning; the ESS provides automatic weighting with theoretical guarantees for variance reduction.
+- **Practical significance of 50% faster training**: This makes diffusion-based RL feasible in engineering projects. What previously took days for diffusion results can now be achieved in hours with SAC-like efficiency.
+- **Cross-pollination**: Transferring the latest progress in generative modeling (average velocity) to RL represents a successful example of interdisciplinary synergy.
 
 ## Limitations & Future Work
 
-- **Expressivity limits at 2 steps**: Although MeanFlow reduces discretization error, there remains a theoretical gap in multi-modality between 2 steps vs. 20 steps; the sweet spot for extremely complex tasks might be 4-8 steps.
-- **ADN training stability**: The ADN training target relies on stop-gradients and recursive structures; whether it drifts during long-term training has not been fully verified.
-- **Ratio tuning for the two proposals**: $K_1:K_2 = 1:2$ was best for HalfCheetah, but whether this requires cross-task tuning is not systematically ablated.
-- **Choice of Distributional Critic**: C51 is the default, but QR-DQN or IQN might be more stable; the impact of the distributional choice was not isolated in ablations.
-- **Missing sample efficiency comparisons**: While training time is faster, the sample efficiency (performance per environment step) vs. baselines is not explicitly contrasted.
-- **Lack of Atari / pixel-based validation**: All experiments were state-based; the effectiveness of MeanFlow policy under pixel observations remains unknown.
+- **Expression limits in 2 steps**: While MeanFlow reduces discretization error, there is still a theoretical gap in multimodality between 2 steps and 20 steps; the sweet spot for extremely complex tasks might be 4–8 steps.
+- **ADN training stability**: The ADN training objective depends on stop-gradients and a recursive structure; whether it drifts during very long training runs has not been fully verified.
+- **Proposal ratio tuning**: The $K_1:K_2 = 1:2$ ratio was optimal for HalfCheetah, but whether this requires cross-task tuning lacks a systematic ablation.
+- **Choice of distributional critic**: While C51 is the default, alternatives like QR-DQN or IQN might offer more stability; the specific impact of this choice was not separately ablated.
+- **Lack of sample efficiency comparison**: While training time is faster, the sample efficiency (performance per environment step) relative to baselines is not explicitly contrasted.
+- **No verification on pixel-based tasks**: Experiments were limited to state-based benchmarks. The effectiveness of MeanFlow policies under pixel observations remains unknown.
 
 ## Related Work & Insights
 
-- **vs. DACER / DIME / MaxEntDP / SDAC**: These use diffusion + MaxEnt but require 10-20 sampling steps; MFPO uses MeanFlow to reduce steps to 2 while retaining MaxEnt precision.
-- **vs. FPMD / QVPO / FlowRL**: These use diffusion-based RL but not the MaxEnt framework; MFPO possesses both multi-modal expressiveness and MaxEnt principled exploration.
-- **vs. SAC-Flow**: They use GRU/Transformer to stabilize diffusion policy training; MFPO does not rely on specific architectures, making its methodology more general.
-- **vs. MeanFlow (Geng et al. 2025)**: The original work on generative modeling; this paper represents the first application of MeanFlow to RL.
-- **Insights**: (1) MeanFlow can be applied to any scenario where diffusion models are difficult to deploy due to slow sampling; (2) The "learning average via consistency" idea in MeanFlow can be extended to other time-integrated quantities like divergence, Lyapunov functions, or value functions; (3) Multi-proposal SNIS is a general technique for handling intractable distributions, with ESS-weighting providing adaptivity.
+- **vs DACER / DIME / MaxEntDP / SDAC**: These methods use diffusion + MaxEnt but require 10–20 steps; MFPO uses MeanFlow to reduce steps to 2 while maintaining MaxEnt precision.
+- **vs FPMD / QVPO / FlowRL**: These utilize diffusion-based RL but lack the MaxEnt framework; MFPO combines multimodal expressiveness with principled MaxEnt exploration.
+- **vs SAC-Flow**: They use GRU/Transformers for stability; MFPO is more general as it does not rely on specific architectures.
+- **vs MeanFlow (Geng et al. 2025)**: The original generative modeling paper; this work is the first application of MeanFlow to RL.
+- **Insights**: (1) MeanFlow should be considered for any domain where diffusion models suffer from slow sampling; (2) The "learn the average via consistency" principle from MeanFlow can be extended to other quantities like Lyapunov or value functions; (3) Multi-proposal SNIS is a universal trick for intractable distributions where ESS-weighting provides necessary adaptivity.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ MeanFlow + MaxEnt RL combination + ADN analogy + ESS-weighted SNIS; a comprehensive methodological suite.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three benchmarks + 8 baselines + 4-dimensional ablation + ESS/variance visualization; complete chain of evidence.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations, intuitive ADN analogy, and effective visualization of motivation in Figure 1.
-- Value: ⭐⭐⭐⭐⭐ Brings diffusion-based RL close to Gaussian policies in terms of inference speed and training cost; a key step toward practical diffusion RL.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of MeanFlow + MaxEnt RL, the ADN analogy, and ESS-weighted SNIS is methodologically comprehensive.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers MuJoCo / DMC / HumanoidBench benchmarks, 8 baselines, 4-dimensional ablation, and ESS/variance visualization.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations, intuitive ADN analogy, and the ESS visualization in Figure 1 directly support the motivation.
+- Value: ⭐⭐⭐⭐⭐ Brings diffusion-based RL inference speed and training cost close to Gaussian policies, a critical step for practical adoption.
 
 <!-- RELATED:START -->
 

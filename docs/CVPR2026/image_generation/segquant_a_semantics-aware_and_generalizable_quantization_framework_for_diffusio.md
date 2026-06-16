@@ -2,121 +2,96 @@
 title: >-
   [Paper Note] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 description: >-
-  [CVPR2026][Image Generation][diffusion model quantization] This paper proposes SegQuant, a framework that achieves high-fidelity post-training quantization of diffusion models through two novel components: SegLinear…
+  [CVPR 2026][Image Generation][Paper Note] The SegQuant framework is proposed, which achieves high-fidelity post-training quantization for diffusion models that is generalizable across architectures and compatible with deployment pipelines. This is achieved through semantics-aware segmentation quantization (SegLinear) based on static computation graphs and hard
 tags:
-  - "CVPR2026"
-  - "Image Generation"
-  - "diffusion model quantization"
-  - "post-training quantization"
-  - "semantics-aware segmentation"
-  - "polarity preservation"
-  - "deployment-friendly"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 513e3df9d0ad6fd1
+content_hash: c98f360e56d2cb11
 ---
-
 # SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2507.14811](https://arxiv.org/abs/2507.14811)  
 **Code**: None  
-**Area**: Image Generation
-**Keywords**: diffusion model quantization, post-training quantization, semantics-aware segmentation, polarity preservation, deployment-friendly
+**Area**: Image Generation  
+**Keywords**: Diffusion Model Quantization, Post-Training Quantization, Semantics-Aware Segmentation, Polarity-Preserving, Deployment-Friendly
 
 ## TL;DR
 
-This paper proposes SegQuant, a framework that achieves high-fidelity post-training quantization of diffusion models through two novel components: SegLinear, a semantics-aware segmented quantization scheme based on static computational graph analysis, and DualScale, a hardware-native dual-scale polarity-preserving quantization scheme. The approach is cross-architecture generalizable and compatible with deployment pipelines, requiring neither handcrafted rules nor runtime dynamic information.
+The SegQuant framework is proposed, which achieves high-fidelity post-training quantization for diffusion models that is generalizable across architectures and compatible with deployment pipelines. This is achieved through semantics-aware segmentation quantization (SegLinear) based on static computation graphs and hardware-native dual-scale polarity-preserving quantization (DualScale), without relying on manual rules or runtime dynamic information.
 
 ## Background & Motivation
 
-**Deployment bottleneck of diffusion models**: Diffusion models (e.g., SD3.5, FLUX) achieve excellent image generation quality, but their multi-step denoising inference (typically 50 steps) imposes substantial computational overhead. Quantization is a key technique for reducing model size and inference latency, and post-training quantization (PTQ) has become the preferred industrial deployment approach due to its applicability to pre-trained models without retraining.
+**Diffusion Model Deployment Bottlenecks**: Diffusion models (e.g., SD3.5, FLUX) perform excellently in image generation, but multi-step denoising inference (usually 50 steps) imposes a massive computational burden. Quantization is a key technology for reducing model size and inference latency, and Post-Training Quantization (PTQ) is the preferred industrial solution as it requires no retraining and is directly applicable to pre-trained models.
 
-**Existing methods exhibit a "Compiler Gap"**: This is the central insight of the paper. Existing diffusion model PTQ methods fall into two categories, both of which are incompatible with modern AI compilers:
-   - **Architecture-specific methods** (e.g., Q-Diffusion): Use manually hardcoded rules to handle the bimodal distributions in UNet skip-connections; these do not generalize to newer architectures such as DiT.
-   - **Data-dependent methods** (e.g., PTQ4DiT): Rely on runtime dynamic information (timestep-varying activations, salient channels), which is fundamentally incompatible with compilers such as TensorRT that are based on static graph analysis, precluding automated deployment.
+**The "Compiler Gap" in Existing Methods**: This is the core insight of this paper. Existing diffusion PTQ methods can be categorized into two types, both incompatible with modern AI compilers:
+   - **Architecture-Specific Methods** (e.g., Q-Diffusion): Use manual hard-coded rules to handle the bimodal distribution of UNet skip-connections, which cannot generalize to new architectures like DiT.
+   - **Data-Dependent Methods** (e.g., PTQ4DiT): Rely on runtime dynamic information (activations varying with timesteps, salient channels), which is fundamentally incompatible with compilers based on static graph analysis like TensorRT, preventing automated deployment.
 
-**Semantic heterogeneity in linear layers is overlooked**: In DiT architectures, linear layers in modules such as AdaNorm and TimeEmbedding operate on inputs composed of multiple semantically distinct segments produced by chunk/split/concat operations. Different segments exhibit markedly different data distributions (e.g., AdaNorm weights display clear segmented patterns as shown in Figure 4). Applying uniform quantization across the entire layer causes "quantization interference"—the numerical characteristics of one segment degrade the accuracy of another.
+**Neglected Semantic Heterogeneity of Linear Layers**: In DiT architectures, linear layers in modules such as AdaNorm and TimeEmbedding actually receive multi-semantic segment inputs concatenated via chunk/split/concat operations. Different semantic segments have distinct data distributions (as shown in Figure 4, where AdaNorm weights exhibit a clear segmented pattern). Uniformly quantizing the entire layer leads to "quantization interference"—where the numerical characteristics of one segment damage the precision of another.
 
-**Quantization challenges for polarity-asymmetric activations**: Modern activation functions such as SiLU and GELU (widely used in DiT, SD3, and FLUX), unlike ReLU, preserve dense low-magnitude negative values. Their outputs are highly skewed: positive values can reach 3.5, while negative values are confined to $[-0.3, 0]$. Standard quantization uniformly distributes the finite quantization bins across the entire range, severely compressing the semantically critical negative region. Visualization experiments (Figure 7) clearly demonstrate that negative activations carry high-frequency details and texture consistency, and quantization loss in this region directly degrades image quality.
+**Quantization Dilemma of Polarity Asymmetric Activations**: Modern activation functions like SiLU/GELU (widely used in DiT, SD3, FLUX), unlike ReLU, retain dense low-magnitude negative values. Their outputs are highly skewed: positive values can reach a range of 3.5, while negative values are confined to $[-0.3, 0]$. Standard quantization distributes limited bins uniformly across the entire range, causing severe compression of the semantically critical negative region. Experimental visualization (Figure 7) clearly demonstrates that negative activations carry high-frequency details and texture consistency; quantization loss directly leads to image quality degradation.
 
-**Existing polarity-handling solutions break GPU acceleration paths**: Logarithmic quantizers and custom bit-width schemes from the ViT quantization literature redefine data representations, breaking Tensor Core fixed-width PTX instructions and CUDA epilogue fusion mechanisms, rendering them unusable for high-throughput GPU inference.
+**Existing Polarity Handling Schemes Break GPU Acceleration Paths**: Logarithmic quantizers or custom bit-widths in ViT quantization literature redefine data representation, breaking the fixed-width PTX instructions and CUDA epilogue fusion mechanisms of Tensor Cores, making them unusable in high-throughput GPU inference.
 
 ## Method
 
 ### Overall Architecture
 
-SegQuant adopts a top-down modular design (Figure 1) with four pluggable components:
+The starting point for SegQuant is a pain point termed the "Compiler Gap": existing diffusion model PTQ either relies on manual hard-coded rules (e.g., Q-Diffusion specifically handles the bimodal distribution of UNet skip-connections, which fails when moving to DiT) or relies on runtime dynamic information (e.g., PTQ4DiT uses timestep-varying activations), the latter being incompatible with static graph analysis compilers like TensorRT. SegQuant therefore adopts a purely static graph, hardware-native approach.
 
-| Component | Role | Available Implementations |
-|-----------|------|--------------------------|
-| **Optimizer** | Activation distribution preprocessing to smooth quantization difficulty | SmoothQuant, SVDQuant, DMQ, SpinQuant |
-| **Calibrator** | Quantization parameter calibration (scale/zero-point) | GPTQ (Hessian reconstruction), AMax (maximum absolute value) |
-| **SegLinear** ★ | Semantics-aware segmented quantization via computational graph analysis | Automatic graph analysis, no manual configuration |
+It is a top-down modular design consisting of four pluggable components:
+
+| Component | Role | Optional Implementation |
+|------|------|----------|
+| **Optimizer** | Activation distribution preprocessing, smoothing quantization difficulty | SmoothQuant, SVDQuant, DMQ, SpinQuant |
+| **Calibrator** | Quantization parameter calibration (scale/zero-point) | GPTQ (Hessian reconstruction), AMax (Absolute Maximum) |
+| **SegLinear** ★ | Computation graph-based semantic segmentation quantization | Automatic graph analysis, no manual configuration |
 | **DualScale** ★ | Hardware-native polarity-preserving quantization | BatchedGEMM implementation, no custom operators |
 
-The default combination is SmoothQuant + GPTQ + SegLinear + DualScale. Users may freely substitute the Optimizer and Calibrator, making the framework a general-purpose quantization platform.
+The default combination is SmoothQuant + GPTQ + SegLinear + DualScale, where the Optimizer and Calibrator can be freely replaced, making the framework a versatile quantization platform; SegLinear and DualScale marked with ★ are the two core contributions.
 
-### SegLinear: Semantics-Aware Segmented Quantization
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pre-trained Diffusion Model<br/>SD3.5 / FLUX / SDXL"] --> B["Optimizer: Activation distribution preprocessing<br/>SmoothQuant etc. (Pluggable)"]
+    B --> C["Calibrator: Quantization parameter calibration<br/>GPTQ / AMax (Pluggable)"]
+    C --> D["SegLinear: Identify semantic boundaries from static graph<br/>Segmented quantization for linear layers (Weight-side)"]
+    C --> G["DualScale: Split +/- by polarity, use one scale each<br/>BatchedGEMM preserves GPU acceleration (Activation-side)"]
+    D -->|Output followed by chunk/split| E["Output Segmentation: Weights sliced by column for independent quantization"]
+    D -->|Input from concat/reshape| F["Input Segmentation: Weights sliced by row for independent quantization"]
+    E --> H["Static-graph driven, hardware-native quantized model"]
+    F --> H
+    G --> H
+```
 
-**Core principle**: Linear layers in complex neural networks frequently operate on semantically heterogeneous inputs—different segments of the input vector encode semantically distinct information. SegLinear automatically identifies semantic boundaries by analyzing chunk/split/concat/reshape operation patterns in the static computational graph (torch.fx DAG), independently quantizes each segment, and eliminates quantization interference.
+### Key Designs
 
-**Pattern 1: Output-Segmented Quantization**
-When the output of a linear layer is followed by a chunk or split operation, the different portions of the output vector flow to semantically distinct downstream branches. The weight matrix $\mathbf{W} \in \mathbb{R}^{k \times n}$ is partitioned column-wise into $[\mathbf{W}_1, \ldots, \mathbf{W}_N]$, where $\mathbf{W}_i \in \mathbb{R}^{k \times d_i}$; each segment is quantized independently and then concatenated:
+**1. SegLinear: Automatically Identifying Semantic Boundaries from the Computation Graph for Segmented Linear Layer Quantization**
 
-$$\hat{\mathbf{Y}} = [\hat{\mathbf{X}}\hat{\mathbf{W}}_1, \hat{\mathbf{X}}\hat{\mathbf{W}}_2, \cdots, \hat{\mathbf{X}}\hat{\mathbf{W}}_N]$$
+In DiT, the inputs to linear layers in modules like AdaNorm and TimeEmbedding are actually multi-semantic segments concatenated via chunk/split/concat. Since different segments vary significantly in distribution, uniform quantization of the whole layer causes numerical characteristics of one segment to harm another—this is "quantization interference." Instead of manual specification, SegLinear analyzes patterns like chunk/split/concat/reshape in the static computation graph (torch.fx DAG) to automatically find semantic boundaries and quantizes each segment independently.
 
-Typical use case: The AdaNorm layer output in DiT is split via chunk into shift and scale parameters, whose distributional characteristics are entirely different.
+It operates in two modes. When a linear layer's output is followed by chunk/split (flowing into downstream branches with different semantics), it uses **Output Segmentation**: slicing the weights $\mathbf{W} \in \mathbb{R}^{k \times n}$ by column into $[\mathbf{W}_1, \ldots, \mathbf{W}_N]$ ($\mathbf{W}_i \in \mathbb{R}^{k \times d_i}$), quantizing each independently, then concatenating: $\hat{\mathbf{Y}} = [\hat{\mathbf{X}}\hat{\mathbf{W}}_1, \cdots, \hat{\mathbf{X}}\hat{\mathbf{W}}_N]$. A typical case is AdaNorm outputs split into shift/scale with vastly different distributions. When the input comes from concat/reshape (e.g., MHA head merging), it uses **Input Segmentation**: slicing weights by row into $[\mathbf{W}_1^T, \ldots, \mathbf{W}_N^T]^T$, quantizing independently, then summing: $\hat{\mathbf{Y}} = \sum_{i=1}^{N} \hat{\mathbf{X}}_i \hat{\mathbf{W}}_i$. This is typical for linear layers following UNet skip-connection concatenation. This upgrades the manual special cases of Q-Diffusion into an automated algorithm applicable to any AdaNorm/MHA/TimeEmbedding structure; it captures channel-wise semantic relationships defined by the computation graph, complementing channel-level quantization.
 
-**Pattern 2: Input-Segmented Quantization**
-When the input to a linear layer originates from a concat or reshape operation (e.g., multi-head merging in MHA), different segments of the input vector come from semantically distinct upstream paths. The weight matrix is partitioned row-wise into $[\mathbf{W}_1^T, \ldots, \mathbf{W}_N^T]^T$; each segment is quantized independently and the results are summed:
+**2. DualScale: Splitting Positive/Negative by Polarity with Independent Scales without Breaking GPU Acceleration**
 
-$$\hat{\mathbf{Y}} = \sum_{i=1}^{N} \hat{\mathbf{X}}_i \hat{\mathbf{W}}_i$$
-
-Typical use case: UNet skip-connections concatenate features before passing them to a linear layer, where the two sources exhibit large distributional discrepancies.
-
-**Fundamental distinction from Q-Diffusion**: Q-Diffusion uses handcrafted rules specifically targeting the bimodal distribution in UNet skip-connections—a non-generalizable special case. SegLinear is a fully automated graph analysis algorithm that requires no manual specification of which layers need segmentation and is applicable to arbitrary structural patterns including AdaNorm, MHA, and TimeEmbedding.
-
-**Complementarity with channel-wise quantization**: Channel-wise quantization processes each output channel independently, whereas SegLinear captures higher-level inter-channel semantic relationships defined by the computational graph structure. Within semantically consistent channel groups, SegLinear jointly optimizes shared hyperparameters (e.g., the migration strength $\alpha$ in SmoothQuant), providing more stable optimization and better low-bit scalability.
-
-### DualScale: Dual-Scale Polarity-Preserving Quantization
-
-**Problem quantification**: The following table shows activation polarity statistics on the COCO dataset for SD3.5-ControlNet (averaged over 30 timesteps), revealing that a large proportion of channels are consistently dominated by negative values:
-
-| Layer (Module) | Activation | Channels | Neg./Pos. Ratio |
-|----------------|------------|----------|-----------------|
-| AdaNorm (DiT) | SiLU | 1536 | 0.955 / 0.021 |
-| AdaNorm (Ctrl.) | SiLU | 1536 | 0.645 / 0.338 |
-| FFN (DiT) | GELU | 6144 | 0.744 / 0.256 |
-| FFN (Ctrl.) | GELU | 6144 | 0.589 / 0.400 |
-
-In the AdaNorm layer of DiT, 95.5% of channels are dominated by negative values, indicating that the negative region carries substantial semantic information.
-
-**Quantization scheme**: The activation matrix $\mathbf{X}$ is decomposed by polarity into positive and negative components, each quantized with an independent scale:
-
-$$\mathbf{X}_+ = \max(\mathbf{X}, 0), \quad \mathbf{X}_- = \min(\mathbf{X}, 0)$$
-
-$$s_- = \frac{|\min(x)|}{q_{\min}}, \quad s_+ = \frac{\max(x)}{q_{\max}}$$
-
-The final output is reconstructed via linear combination:
+Modern activations like SiLU/GELU differ from ReLU by retaining dense low-magnitude negative values, resulting in highly skewed outputs (positives up to 3.5, negatives squeezed into $[-0.3, 0]$). These negative values carry high-frequency details; in SD3.5 AdaNorm, 95.5% of channels are dominated by negative values. Standard quantization uniformly spreads bins across the whole range, severely compressing the critical negative zone. DualScale splits activations by polarity into $\mathbf{X}_+ = \max(\mathbf{X}, 0)$ and $\mathbf{X}_- = \min(\mathbf{X}, 0)$, quantizing each with independent scales $s_- = |\min(x)|/q_{\min}$ and $s_+ = \max(x)/q_{\max}$, then reconstructing via linear combination:
 
 $$\mathbf{Y} \approx s_+ s_w \cdot (\hat{\mathbf{X}}_+ \hat{\mathbf{W}}) + s_- s_w \cdot (\hat{\mathbf{X}}_- \hat{\mathbf{W}})$$
 
-**Hardware-native implementation**: While DualScale nominally requires two matrix multiplications, the key design insight is that $\hat{\mathbf{X}}_+ \hat{\mathbf{W}}$ and $\hat{\mathbf{X}}_- \hat{\mathbf{W}}$ are executed in parallel within a single kernel launch via CUTLASS BatchedGEMM, with the two scaled results merged in a fused epilogue. This fully preserves the standard integer GEMM path, leveraging Tensor Core parallelism and CUDA epilogue fusion **without any custom operators or additional kernel launches**. DualScale further avoids reverse zero-point correction, requiring only fixed positive/negative scales to reconstruct the output.
+While this appears to require two matrix multiplications, the key design is that $\hat{\mathbf{X}}_+ \hat{\mathbf{W}}$ and $\hat{\mathbf{X}}_- \hat{\mathbf{W}}$ are executed in parallel within a single kernel launch using CUTLASS's BatchedGEMM, with the two scaled results merged in a fused epilogue. This fully preserves the standard integer GEMM path, utilizes Tensor Cores and CUDA epilogue fusion, and **requires no custom operators**. It also avoids reverse zero-point correction by using only fixed positive/negative scales for reconstruction. This overcomes the limitations of logarithmic quantizers or custom bit-width schemes in ViT quantization that break fixed-width PTX instructions and epilogue fusion.
 
 ### Loss & Training
 
-SegQuant is a pure PTQ framework that introduces no additional training losses. Quantization quality is assessed via layer-wise Frobenius norm error $\|\Delta \epsilon_t\|_F$ (Figure 3). The calibration stage supports two options:
-- **GPTQ**: Hessian-based layer-wise reconstruction optimization; higher accuracy but requires calibration data (256 images for SD3/SDXL, 64 for FLUX 8-bit, 32 for 4-bit).
-- **AMax**: Maximum absolute value calibration; simpler and faster.
-
-All experiments use 50-step sampling with default schedulers, executed on Ada Lovelace architecture GPUs (24GB/48GB VRAM).
+Ours is a pure PTQ framework, introducing no additional training loss. Quantization quality is measured by the layer-wise Frobenius norm error $\|\Delta \epsilon_t\|_F$. The calibration phase can use GPTQ (Hessian-based layer-wise reconstruction, high precision but requires calibration data: 256 images for SD3/SDXL, 64 for FLUX 8-bit, 32 for 4-bit) or AMax (Absolute Maximum calibration, faster). All experiments use 50-step sampling with the default scheduler on Ada Lovelace architecture GPUs (24GB/48GB VRAM).
 
 ## Key Experimental Results
 
-### Main Results: Cross-Model Cross-Precision Evaluation on MJHQ-30K (Table 2)
+### Main Results: MJHQ-30K Evaluation Across Models and Precisions (Table 2)
 
 | Model | Params | W/A | Method | FID↓ | IR↑ | LPIPS↓ | PSNR↑ | SSIM↑ |
-|-------|--------|-----|--------|------|-----|--------|-------|-------|
+|------|--------|-----|------|------|-----|--------|-------|-------|
 | SD3.5-DiT | 2B | FP16 | Baseline | 23.70 | 0.952 | - | - | - |
 | SD3.5-DiT | 2B | W8A8 | PTQD | 36.84 | 0.309 | 0.520 | 10.20 | 0.417 |
 | SD3.5-DiT | 2B | W8A8 | PTQ4DiT | 25.66 | 0.752 | 0.426 | 12.18 | 0.532 |
@@ -139,16 +114,16 @@ All experiments use 50-step sampling with default schedulers, executed on Ada Lo
 ### Ablation Study (SD3.5 W8A8, MJHQ-30K, SmoothQuant+AMax, Table 4)
 
 | Configuration | FID↓ | IR↑ | LPIPS↓ | PSNR↑ | SSIM↑ |
-|---------------|------|-----|--------|-------|-------|
-| Baseline (no Seg./Dual) | 23.35 | 0.877 | 0.419 | 11.93 | 0.536 |
+|------|------|-----|--------|-------|-------|
+| Baseline (No Seg/Dual) | 23.35 | 0.877 | 0.419 | 11.93 | 0.536 |
 | +SegLinear | 23.36 | 0.899 | 0.395 | 12.03 | 0.554 |
 | +DualScale | 22.61 | 0.909 | 0.401 | 12.14 | 0.551 |
-| +Seg.+Dual. (full SegQuant) | **22.54** | **0.952** | **0.377** | **12.50** | **0.567** |
+| +Seg.+Dual. (Full SegQuant) | **22.54** | **0.952** | **0.377** | **12.50** | **0.567** |
 
-### SegLinear Layer-Wise Error Reduction (SD3.5, Table 3)
+### SegLinear Layer-wise Error Reduction (SD3.5, Table 3)
 
-| Layer | Calibration | F-norm w/o Seg. | F-norm w/ Seg. | Reduction |
-|-------|-------------|-----------------|----------------|-----------|
+| Layer Name | Calibration | W/o Seg. F-norm | W/ Seg. F-norm | Reduction |
+|------|----------|---------------|---------------|------|
 | DiT.0.norm1 | SmoothQuant | 0.7041 | 0.5381 | -23.6% |
 | DiT.0.norm1 | GPTQ | 0.8350 | 0.4441 | -46.8% |
 | DiT.0.norm1_context | GPTQ | 1.5166 | 0.7441 | -50.9% |
@@ -158,42 +133,42 @@ All experiments use 50-step sampling with default schedulers, executed on Ada Lo
 
 ### Key Findings
 
-- **Most dramatic improvement on FLUX**: Under W8A8, LPIPS drops substantially from 0.299 (Q-Diffusion) to 0.138 (a 54% reduction), and PSNR improves from 15.87 to 20.32 (+4.45 dB), demonstrating that SegLinear is particularly effective at addressing semantic heterogeneity in large models (12B).
-- **High complementarity between SegLinear and DualScale**: In the ablation study, each component individually improves Image Reward from 0.877 to 0.899/0.909; their combination yields 0.952 (exceeding the FP16 baseline), reflecting the orthogonal and complementary nature of structural segmentation and polarity preservation.
-- **SegLinear is most effective for normalization layers**: Under GPTQ calibration, the Frobenius error of DiT.0.norm1_context is reduced by half (−50.9%), confirming that semantic heterogeneity introduced by chunk operations in AdaNorm is indeed a critical source of quantization degradation.
-- **Cross-architecture generalization**: The same SegQuant achieves optimal or near-optimal performance on both DiT (SD3.5, FLUX) and UNet (SDXL) architectures without any architecture-specific modifications.
-- **Efficiency-quality trade-off**: INT8 models are approximately half the size of FP16 models (Figure 10); the additional inference overhead introduced by DualScale is modest, while the quality gains substantially outweigh the cost.
+- **Most striking improvement on FLUX**: Under W8A8, LPIPS dropped significantly from 0.299 in Q-Diffusion to 0.138 (54% reduction), and PSNR increased from 15.87 to 20.32 (+4.45dB), indicating that SegLinear is particularly effective for large models (12B) with semantic heterogeneity.
+- **High complementarity between SegLinear and DualScale**: In the ablation study, alone they Gain Image Reward from 0.877 to 0.899 and 0.909 respectively; combined, it jumps to 0.952 (surpassing the FP16 baseline), demonstrating the orthogonal complementarity of "structural segmentation + polarity preservation."
+- **SegLinear most effective on norm layers**: Under GPTQ calibration, the Frobenius error for DiT.0.norm1_context is halved (-50.9%), verifying that semantic heterogeneity introduced by chunk operations in AdaNorm is indeed a key source of quantization degradation.
+- **Cross-architecture generalization**: The same SegQuant setup is optimal or near-optimal across DiT (SD3.5, FLUX) and UNet (SDXL), without requiring any architecture-specific modifications.
+- **Efficiency for quality trade-off**: The INT8 model size is roughly half of FP16 (Figure 10). The additional inference time introduced by DualScale is manageable, and the quality improvement significantly outweighs the overhead.
 
 ## Highlights & Insights
 
-- **Precise framing of the "Compiler Gap"**: Reframing the core challenge of diffusion model quantization from "accuracy" to "deployment compatibility" represents a pragmatic and important perspective shift. Existing methods may perform well in experiments but cannot be automatically integrated into deployment pipelines; SegQuant is the first to systematically address this industrial pain point.
-- **Purely static graph-driven**: SegLinear is based entirely on structural analysis of the torch.fx computational graph, with no dependence on any runtime data (activation statistics, timestep information), making it naturally compatible with static-graph-based compilers such as TensorRT and TVM.
-- **Elegant hardware-native design of DualScale**: Polarity decomposition with dual-scale quantization is mapped to BatchedGEMM plus epilogue fusion, executing what appear to be two GEMMs in parallel within a single kernel launch at zero custom operator overhead. This approach of maximally exploiting existing hardware primitives is broadly instructive.
-- **Modular architecture**: The pluggable Optimizer and Calibrator components make SegQuant not merely a method but an extensible quantization platform into which new PTQ techniques can be directly integrated.
+- **Precise definition of the "Compiler Gap"**: Shifting the core challenge of diffusion model quantization from "precision" to "deployment compatibility" is a pragmatic and important perspective shift. Existing methods perform well in experiments but cannot be automatically integrated into deployment pipelines; SegQuant addresses this industrial pain point systematically for the first time.
+- **Purely static-graph driven**: SegLinear is based entirely on structural analysis of the torch.fx computation graph, independent of runtime data (activation statistics, timestep info), making it naturally compatible with static-graph optimization compilers like TensorRT/TVM.
+- **Ingenious hardware-native design of DualScale**: By converting polarity decomposition + dual-scale quantization into BatchedGEMM + epilogue fusion, it appears as two GEMMs but is actually executed in parallel in a single kernel launch with zero custom operator overhead. This approach of "maximizing utilization of existing hardware primitives" is noteworthy.
+- **Modular Architecture**: Pluggable Optimizer/Calibrator components make SegQuant not just a method, but an extensible quantization platform where new PTQ techniques can be directly integrated.
 
 ## Limitations & Future Work
 
-- **DualScale theoretically doubles FLOPs**: Although latency overhead is eliminated through BatchedGEMM parallelization, the computational volume remains twice that of standard quantization, which may still be impactful in latency-critical inference scenarios. An adaptive strategy—enabling DualScale only for layers with severe polarity asymmetry (e.g., AdaNorm)—could be explored.
-- **Limited gains at low bit-widths**: The advantage over SVDQuant under W4A8 is less pronounced than under W8A8, and extreme low-bit (W4A4) scenarios remain challenging. This is likely because weight quantization error itself becomes the bottleneck at 4-bit, and improvements on the activation side alone are insufficient to compensate.
-- **Limited to image generation**: Validation on video generation (e.g., ViDiT-Q, Q-VDiT with temporal token scenarios) and 3D generation tasks has not been conducted. SegLinear's graph analysis is theoretically generalizable, but experimental evidence is needed.
-- **Calibration data requirement**: The GPTQ variant still requires 32–256 calibration images; fully zero-shot PTQ is not feasible.
-- **SegLinear search space**: The current implementation only matches known graph operation patterns (chunk/split/concat/reshape); for more complex custom operator graph structures, segmentation boundaries may not be automatically discovered.
+- **DualScale Theoretical FLOPs doubled**: Although latency overhead is mitigated via BatchedGEMM parallelization, the calculation volume is still 2x standard quantization, which might affect extremely latency-sensitive scenarios. Adaptive strategies could be explored—only enabling DualScale for layers with severe polarity asymmetry (e.g., AdaNorm).
+- **Limited Gain in low-bit scenarios**: Under W4A8, the Gain over SVDQuant is not as significant as in W8A8. Ultra-low bit (W4A4) scenarios remain challenging, likely because weight quantization error becomes the bottleneck at 4-bit, and activation-side improvements alone are insufficient.
+- **Covers image generation only**: Not yet validated on video generation (ViDiT-Q, Q-VDiT temporal token scenarios) or 3D generation. SegLinear's graph analysis is theoretically generalizable but requires experimental support.
+- **Calibration data requirement**: GPTQ variants still require 32-256 calibration images, making completely zero-shot PTQ unfeasible.
+- **SegLinear search space**: Currently only matches known graph operation patterns (chunk/split/concat/reshape). It might fail to automatically discover segmentation boundaries for more complex custom operator graph structures.
 
 ## Related Work & Insights
 
-- **Q-Diffusion**: First identified the bimodal distribution problem caused by UNet skip-connections and addressed it with handcrafted segmentation—a non-generalizable special case and a direct inspiration for SegLinear. SegQuant generalizes this from manual rules to automatic graph analysis.
-- **PTQ4DiT**: Achieves strong performance on DiT by exploiting timestep-dynamic activation information, but is incompatible with static graph compilers—a canonical example of the "Compiler Gap" as defined by SegQuant.
-- **SmoothQuant / SVDQuant**: Activation distribution smoothing and low-rank decomposition methods, integrated into SegQuant as pluggable Optimizers, validating the framework's compatibility.
+- **Q-Diffusion**: First to identify the bimodal distribution caused by UNet skip-connections and solve it with manual segmentation. It is a special case and inspiration for SegLinear. SegQuant upgrades it from manual rules to automatic graph analysis.
+- **PTQ4DiT**: Achieves good results on DiT using timestep-dynamic activation information but is incompatible with static-graph compilers—a typical example of the "Compiler Gap" defined by SegQuant.
+- **SmoothQuant / SVDQuant**: Methods for activation distribution smoothing and low-rank decomposition, integrated into SegQuant as pluggable Optimizers, verifying the framework's compatibility.
 - **GPTQ**: Hessian-based layer-wise reconstruction calibration, used as the default Calibrator in SegQuant.
-- **ViDiT-Q / Q-VDiT**: Video diffusion quantization methods leveraging temporal redundancy and token-level adaptation. Complementary to SegQuant's general computational graph analysis approach and theoretically integrable as Calibrator components.
-- **TFMQ-DM / TAC-Diffusion**: Temporal feature maintenance and timestep-aware calibration methods; orthogonal techniques that could be integrated as Calibrator components within the SegQuant framework.
+- **ViDiT-Q / Q-VDiT**: Video diffusion quantization methods utilizing temporal redundancy and token-level adaptation. They are complementary to SegQuant's general graph analysis path and could theoretically be integrated as Calibrators.
+- **TFMQ-DM / TAC-Diffusion**: Temporal feature maintenance and time-aware calibration methods, which are orthogonal technologies and could be integrated as Calibrator components.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The "Compiler Gap" framing is novel and pragmatic; purely static graph-driven semantic quantization is distinctive; the hardware-native design of DualScale is particularly inventive.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Three architectures (SD3.5-DiT / FLUX-DiT / SDXL-UNet), three precision levels (W8A8 / W4A8 / W8A8fp), three datasets, five evaluation metrics, and complete ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ — Clear framework hierarchy, precise and compelling problem definition (Compiler Gap), concise mathematical derivations, and information-rich figures and tables.
-- Value: ⭐⭐⭐⭐⭐ — Directly applicable to industrial deployment; the modular design enables use as a unified quantization platform.
+- Novelty: ⭐⭐⭐⭐ — The "Compiler Gap" perspective is novel and pragmatic; purely static-graph semantics-driven quantization is unique, and the hardware-native design of DualScale is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers three architectures (SD3.5-DiT/FLUX-DiT/SDXL-UNet), three precisions (W8A8/W4A8/W8A8fp), three datasets, five evaluation metrics, and comprehensive ablation.
+- Writing Quality: ⭐⭐⭐⭐ — Clear framework hierarchy, powerful problem definition, concise derivations, and highly informative charts.
+- Value: ⭐⭐⭐⭐⭐ — Directly instructs industrial deployment; modular design allows it to serve as a unified quantization platform.
 
 <!-- RELATED:START -->
 
@@ -201,11 +176,11 @@ All experiments use 50-step sampling with default schedulers, executed on Ada Lo
 
 ## Related Papers
 
-- [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](../../ICCV2025/image_generation/dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
-- [\[CVPR 2026\] TRACE: Structure-Aware Character Encoding for Robust and Generalizable Document Watermarking](trace_structure-aware_character_encoding_for_robust_and_generalizable_document_w.md)
+- [\[ECCV 2024\] MagicEraser: Erasing Any Objects via Semantics-Aware Control](../../ECCV2024/image_generation/magiceraser_erasing_any_objects_via_semantics-aware_control.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
-- [\[CVPR 2026\] Learning by Neighbor-Aware Semantics, Deciding by Open-form Flows: Towards Robust Zero-Shot Skeleton Action Recognition](learning_by_neighbor-aware_semantics_deciding_by_open-form_flows_towards_robust_.md)
-- [\[CVPR 2026\] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](smoothing_the_score_function_for_generalization_in_diffusion_models.md)
+- [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](../../ICCV2025/image_generation/dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
+- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
+- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 
 </div>
 

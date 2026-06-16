@@ -2,94 +2,89 @@
 title: >-
   [Paper Note] WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Video-LLM] This paper diagnoses the *Time-Agnosticism* problem in current Video-LLMs and proposes WeaveTime…
+  [CVPR 2026][Multimodal VLM][Video-LLM] This work diagnoses the "Time-Agnosticism" issue in current Video-LLMs and proposes the WeaveTime framework. It endows the model with temporal awareness through a Streaming Temporal Perception Enhancement (SOPE) auxiliary task during training. At inference, it implements efficient adaptive memory retrieval via an uncer
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Video-LLM"
-  - "streaming VQA"
-  - "temporal order"
-  - "memory cache"
-  - "uncertainty-gated retrieval"
+  - CVPR 2026
+  - Multimodal VLM
+  - Video-LLM
+  - streaming VQA
+  - temporal order
+  - memory cache
+  - uncertainty-gated retrieval
 date: 2026-05-08
-content_hash: f0f02e46686f92f0
+content_hash: 5eebce70019e3305
 ---
-
 # WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22142](https://arxiv.org/abs/2602.22142)  
-**Code**: None (coming soon)  
-**Area**: Multimodal / Streaming Video Understanding
+**Code**: None (Coming soon)  
+**Area**: Multimodal / Streaming Video Understanding  
 **Keywords**: Video-LLM, streaming VQA, temporal order, memory cache, uncertainty-gated retrieval
 
 ## TL;DR
 
-This paper diagnoses the *Time-Agnosticism* problem in current Video-LLMs and proposes WeaveTime, a framework that endows models with temporal awareness via a Shuffled-Order Prediction Enhancement (SOPE) auxiliary task during training, and achieves efficient adaptive memory retrieval at inference via an uncertainty-gated coarse-to-fine memory cache (PCDF-Cache), yielding significant gains on streaming video QA benchmarks.
+This work diagnoses the "Time-Agnosticism" issue in current Video-LLMs and proposes the WeaveTime framework. It endows the model with temporal awareness through a Streaming Temporal Perception Enhancement (SOPE) auxiliary task during training. At inference, it implements efficient adaptive memory retrieval via an uncertainty-gated Past-Current Dynamic Focus Cache (PCDF-Cache), achieving significant improvements in streaming video QA.
 
 ## Background & Motivation
 
-**Background**: Modern visual understanding systems are increasingly deployed in streaming scenarios where frames arrive in real time (e.g., autonomous driving, human-computer interaction, real-time surveillance). Video-LLM-based methods such as LLaVA-Video and Qwen2-VL perform well in offline settings but face fundamental challenges in streaming scenarios.
+**Background**: Modern visual understanding systems are increasingly deployed in streaming scenarios where frame sequences arrive in real-time (e.g., autonomous driving, human-computer interaction, real-time monitoring). Video-LLM-based methods (e.g., LLaVA-Video, Qwen2-VL) perform excellently in offline settings but face fundamental challenges in streaming contexts.
 
 **Limitations of Prior Work**:
-1. Current Video-LLMs suffer from **Time-Agnosticism**: they treat videos as unordered bags of evidence rather than causally ordered sequences. Experiments show that shuffling video frame order has almost no effect on model accuracy, and performance even improves on certain temporal tasks (whereas human performance drops drastically).
-2. Existing streaming methods (e.g., StreamBridge, VideoLLM-Online) either require large dedicated streaming datasets and costly training, or rely on customized memory mechanisms with unsatisfactory results.
-3. Compressive memory (selecting/merging/discarding visual features) loses information; retrieval-based memory preserves information but suffers from unnecessary long-range reloading and loss of temporal focus.
+1. Current Video-LLMs suffer from **Time-Agnosticism**: they treat videos as unordered bags of evidence rather than causally ordered sequences. Experiments show that shuffling frame order has almost no impact on model accuracy and even improves performance on certain temporal tasks (whereas human performance drops sharply).
+2. Existing streaming methods (e.g., StreamBridge, VideoLLM-Online) either require large-scale specialized streaming datasets and high-cost training or rely on customized memory mechanisms with sub-optimal results.
+3. Compressed memory (selecting/merging/dropping visual features) leads to information loss; retrieval-based memory retains information but suffers from unnecessary long-range reloading and loss of temporal focus.
 
-**Key Challenge**: Video-LLMs lack genuine temporal understanding, and existing streaming enhancement methods cannot simultaneously achieve temporal awareness and efficient memory management.
+**Key Challenge**: Video-LLMs lack genuine temporal reasoning capabilities, and existing streaming augmentation methods fail to balance "temporal awareness" with "memory efficiency."
 
-**Goal**: Address two coupled problems caused by Time-Agnosticism — **Temporal Order Ambiguity** and **Past-Current Focus Blindness**.
+**Goal**: To address two coupled issues caused by Time-Agnosticism: **Temporal Order Ambiguity** and **Past-Current Focus Blindness**.
 
-**Key Insight**: Teach temporal order first (during training), then exploit it (during inference) — "first teach order, then use order."
+**Key Insight**: Teach temporal order first, then utilize it during inference—"first teach order, then use order."
 
-**Core Idea**: Enable the model to perceive frame order via a lightweight temporal reconstruction auxiliary task, then use uncertainty-driven coarse-to-fine retrieval for on-demand retrospection.
+**Core Idea**: Empower the model to perceive frame order through a lightweight temporal reconstruction auxiliary task, followed by demand-driven backtracking using uncertainty-driven coarse-to-fine retrieval.
 
 ## Method
 
 ### Overall Architecture
 
-WeaveTime is a plug-and-play, Video-LLM-agnostic streaming video QA framework comprising two core components:
-1. **Training stage**: Streaming-Order Perception Enhancement (SOPE) — endows the model with temporal awareness via a temporal reconstruction auxiliary task.
-2. **Inference stage**: Past-Current Dynamic Focus Cache (PCDF-Cache) — uncertainty gating + coarse-to-fine retrieval.
+WeaveTime targets the "Time-Agnosticism" of Video-LLMs—the tendency of models to treat videos as unordered bags of evidence where shuffling frames barely affects accuracy. It is a plug-and-play, model-agnostic streaming QA framework following the principle of "first teach order, then use order." During training, Streaming Temporal Perception Enhancement (SOPE) teaches the model that "frames have a sequence" via a temporal reconstruction task. During inference, the Past-Current Dynamic Focus Cache (PCDF-Cache) utilizes uncertainty gating and coarse-to-fine retrieval, allowing the model to trace back through history on demand rather than reloading excessively.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Video Frame Stream + Question"] --> B["SOPE: Streaming Temporal Perception Enhancement (Training)<br/>Timestamp tokens + Shuffled frame reconstruction"]
+    B --> C["PCDF-Cache Inference<br/>Short-term window response + Entropy H_t calculation"]
+    C --> D{"H_t < δ ?"}
+    D -->| "Yes, skip retrieval" | F["Output Answer"]
+    D -->| "No" | E["Coarse-to-fine Retrieval<br/>Frame-level screening + Late-interaction matching"]
+    E --> F
+```
 
 ### Key Designs
 
-1. **Time-Agnosticism Diagnosis**:
-    - Core experiment: test model vs. human performance after shuffling video frame order.
-    - Model accuracy is nearly unchanged after shuffling, and even improves on temporal tasks such as Temporal Perception and Action Recognition (highlighted in red).
-    - Human accuracy on shuffled videos without timestamps collapses on temporal/action tasks (from 1.0 to 0.0–0.2) but recovers when timestamps are provided.
-    - Attention heatmap analysis reveals temporal positional bias: models tend to focus on the beginning and end of short videos, and predominantly on the beginning of long videos.
-    - Conclusion: models rely on spatiotemporal shortcuts and positional biases rather than genuine causal reasoning.
+**1. Time-Agnosticism Diagnosis: Proving models neglect temporal order**
 
-2. **Streaming-Order Perception Enhancement (SOPE)**:
-    - Introduces the **Temporal Reconstruction (TR)** auxiliary task: video frames are shuffled with timestamp tokens retained, and the model is required to first restore the correct temporal order before answering the question.
-    - Concretely, for a patch-tokenized video token sequence $\mathbf{X} = [\tilde{\mathbf{v}}_{1,1}, \ldots, \tilde{\mathbf{v}}_{1,N_f}, \tilde{\mathbf{v}}_{2,1}, \ldots]$, a timestamp token $\mathbf{ts}_i$ is inserted before each frame, and then the frame content is shuffled.
-    - An instruction is prepended to the original QA prompt: "These video segments are shuffled. List each segment's true time range."
-    - The temporal prediction is formulated as a next-token prediction task, leveraging the LLM's intrinsic text reordering ability without requiring additional modules or loss functions.
-    - Only 30k offline video instruction-tuning samples (from LLaVA-Video-178K) are used; LoRA fine-tuning for 1 epoch on 8 GPUs suffices.
-    - Effect: upgrades memory from an "unordered cache" to an "ordered state chain," enabling retrieval at inference to localize *when* events occur rather than merely *what* they contain.
+This is motivated by a set of control experiments: when video frames are shuffled, model accuracy remains nearly unchanged or even improves in temporal awareness and action recognition tasks. In contrast, human performance on shuffled videos without timestamps collapses (dropping from 1.0 to 0.0–0.2) and only recovers when timestamps are provided. Heatmaps further reveal temporal position biases—focusing on the start and end of short videos and biased towards the beginning of long videos. These diagnostics indicate that Video-LLMs rely on spatio-temporal shortcuts and position biases rather than causal reasoning, justifying the need for temporal enhancement.
 
-3. **Past-Current Dynamic Focus Cache (PCDF-Cache)**:
-    - Core strategy: "Look Now, Recall if Needed."
-    - When query $q$ arrives at time $t$, the model first generates an answer $a_t^{(0)}$ using only the short temporal window $\mathcal{M}_{t-1}[-C:]$.
-    - The predictive entropy $H_t = \text{Entropy}(a_t^{(0)})$ is computed and compared against threshold $\delta$:
-        - If $H_t < \delta$: the current answer is used directly (no retrospection needed).
-        - If $H_t \geq \delta$: coarse-to-fine recall (C2F Recall) is triggered.
-    - **Coarse-to-Fine Retrieval**: frame-level cosine similarity ($\text{Sim}(f_i^v, f^q)$) is first used to select $\mathcal{M}_{\text{coarse}}$, followed by late-interaction max-sim for fine-grained matching: $\text{maxSim}(\{f_{i,k}^v\}, \{f_j^q\}) = \sum_{j=1}^{N_q} \max_{1 \leq k \leq N_i} \langle f_j^q, f_{i,k}^v \rangle$
-    - Top-$K$ frames are selected (capped at 64 frames), achieving token-level precision at only frame-level computational cost.
+**2. Streaming Temporal Perception Enhancement (SOPE): Forcing the model to order frames**
+
+To teach temporal reasoning, a Temporal Reconstruction (TR) auxiliary task is designed. Given a sequence of patched video tokens $\mathbf{X} = [\tilde{\mathbf{v}}_{1,1}, \ldots, \tilde{\mathbf{v}}_{1,N_f}, \tilde{\mathbf{v}}_{2,1}, \ldots]$, timestamp tokens $\mathbf{ts}_i$ are inserted before each frame before shuffling the content. The prompt is prepended with: "These segments are shuffled, please list the true time range for each segment." This transforms temporal prediction into a next-token prediction task, leveraging the LLM's text-reordering capabilities without adding extra modules or losses. It upgrades memory from an "unordered cache" to an "ordered state chain," enabling retrieval to locate event times rather than just content. It is efficient, using only 30k samples from LLaVA-Video-178K for 1 epoch of LoRA training on 8 GPUs.
+
+**3. Past-Current Dynamic Focus Cache (PCDF-Cache): Look Now, Recall if Needed**
+
+With temporal awareness established, PCDF-Cache addresses "when and how much to backtrack" via a "Look Now, Recall if Needed" strategy. When query $q$ arrives at time $t$, the model first predicts an answer $a_t^{(0)}$ using only the short-term window $\mathcal{M}_{t-1}[-C:]$ and calculates its prediction entropy $H_t = \text{Entropy}(a_t^{(0)})$. If $H_t < \delta$, the answer is adopted directly to save computation. If $H_t \geq \delta$, coarse-to-fine retrieval is triggered. This involves two layers: first, frame-level cosine similarity $\text{Sim}(f_i^v, f^q)$ identifies a coarse set $\mathcal{M}_{\text{coarse}}$, followed by fine matching via late-interaction max-sim: $\text{maxSim}(\{f_{i,k}^v\}, \{f_j^q\}) = \sum_{j=1}^{N_q}\max_{1\leq k\leq N_i}\langle f_j^q, f_{i,k}^v \rangle$. The top-$K$ frames (up to 64) are retrieved, achieving token-level accuracy at frame-level computational costs while avoiding OOM issues.
 
 ### Loss & Training
 
-- Standard next-token prediction language modeling loss is used during training; the TR auxiliary task and the original QA are merged into a single-turn dialogue.
-- 30k offline video IT samples are randomly drawn; LoRA fine-tuning ($\text{lr}=1 \times 10^{-5}$), 1 epoch.
-- Inference entropy threshold $\delta = 0.6$ (determined as optimal via ablation).
-- Implementation is based on the ReKV codebase; maximum recalled frames capped at 64.
+- Standard next-token prediction language modeling loss is used, with the TR auxiliary task and original QA merged into a single-turn conversation.
+- 30k samples of offline video IT data are randomly sampled for LoRA fine-tuning (lr=$1\times10^{-5}$) for 1 epoch.
+- The entropy threshold during inference is set to $\delta=0.6$ (optimal value from ablation); implemented based on ReKV with a maximum of 64 recalled frames.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Streaming multi-turn evaluation based on LLaVA-OV-7B:
+Streaming Multi-Turn Evaluation based on LLaVA-OV-7B:
 
 | Method | OVO-Bench Overall | Streaming-Bench Real-Time |
 |------|-------------------|--------------------------|
@@ -105,11 +100,11 @@ Evaluation based on Qwen2-VL-7B:
 | Qwen2-VL-7B + ReKV | 59.72 | 70.07 |
 | Qwen2-VL-7B + **WeaveTime** | **66.28** | **75.39** |
 
-Gains are particularly pronounced on temporally sensitive subtasks: ACP +7.56%, EU +9.04%, ACR +11.09%.
+Improvements in temporal-sensitive sub-tasks are particularly significant: ACP +7.56%, EU +9.04%, ACR +11.09%.
 
 ### Ablation Study
 
-| SOPE w/ TP | SOPE w/ TR | PCDF-Cache | OVO-Bench | Δ | Streaming-Bench | Δ |
+| SOPE w/ TP | SOPE w/ TR | PCDF-Cache | OVO-Bench | Gain | Streaming-Bench | Gain |
 |:---:|:---:|:---:|---:|---:|---:|---:|
 | | | | 53.56 | — | 66.15 | — |
 | ✔ | | | 49.88 | -3.68 | 65.91 | -0.54 |
@@ -127,40 +122,40 @@ Retrieval strategy comparison (LLaVA-OV-7B):
 
 ### Key Findings
 
-1. Direct fine-tuning on small-scale offline data using only timestamp prompts (without TR) degrades streaming performance (−3.68%), indicating a distribution mismatch.
-2. Adding Temporal Reconstruction yields substantial improvements (+5.82%) under the same data budget, validating the effectiveness of SOPE.
-3. The optimal entropy threshold is $\delta = 0.6$: a lower value causes frequent recalls that introduce noise, while a higher value provides insufficient temporal grounding.
-4. Using only 30k offline samples and 8 GPUs, WeaveTime matches StreamForest trained on 121k streaming samples with 32 GPUs, demonstrating exceptional data and computational efficiency.
-5. Fine-only full token-level retrieval results in OOM, confirming the necessity of the C2F strategy.
+1. Fine-tuning on small-scale offline data with only timestamp prompts (no TR) leads to a decline in streaming performance (-3.68%), indicating distribution mismatch.
+2. Adding Temporal Reconstruction (TR) significantly improves performance (+5.82%) under the same data budget, proving the effectiveness of SOPE.
+3. The optimal entropy threshold $\delta$ is 0.6: too low causes interference from frequent recalls, while too high results in insufficient temporal evidence.
+4. Using only 30k offline samples and 8 GPUs matches the performance of StreamForest, which uses 121k streaming samples and 32 GPUs, demonstrating high efficiency.
+5. Fine-only token-level retrieval causes OOM, validating the necessity of the coarse-to-fine (C2F) strategy.
 
 ## Highlights & Insights
 
-1. **The Time-Agnosticism diagnostic experiment is highly convincing** — shuffling frames has no effect on models but collapses human performance, clearly exposing a fundamental deficiency in Video-LLMs.
-2. **The two-stage philosophy of "teach order first, then use order"** is elegant: temporal awareness is injected during training and then leveraged to guide retrieval during inference.
-3. **The uncertainty-gated design is practically appealing**: low-uncertainty queries are answered from current frames, while high-uncertainty queries trigger retrospection, avoiding unnecessary computation.
-4. **Exceptional data efficiency**: no dedicated streaming data is required; randomly sampling 30k examples from general offline data suffices.
+1. **Compelling Diagnostic Experiments**: Showing that frame shuffling affects humans but not models clearly reveals the fundamental flaw of Video-LLMs.
+2. **"Teach First, Use Later" Philosophy**: The two-stage design is elegant—injecting temporal awareness during training and utilizing it to guide retrieval during inference.
+3. **Practical Uncertainty Gating**: Using current frames for low-uncertainty responses and backtracking only when uncertainty is high avoids redundant computation.
+4. **Data Efficiency**: Significant gains are achieved without specialized streaming data, using only 30k random samples from general offline datasets.
 
 ## Limitations & Future Work
 
-1. Validation is limited to 7B-scale models; the effect on larger models (e.g., 72B) has not been assessed.
-2. The entropy threshold $\delta$ is a global hyperparameter with no task-adaptive adjustment.
-3. The temporal reconstruction task assumes salient temporal cues between frames, which may be less effective for static scenes or slowly changing videos.
-4. The two-stage computation of PCDF-Cache's coarse-to-fine retrieval may become a bottleneck in extremely low-latency settings.
-5. The influence of historical QA context in multi-turn dialogues on current retrieval decisions is not discussed.
+1. Validated only on 7B-scale models; performance on larger scales (e.g., 72B) remains untested.
+2. The entropy threshold $\delta$ is a global hyperparameter and does not adapt to specific task types.
+3. Temporal reconstruction assumes clear temporal cues; effectiveness may be limited in static scenes or slow-changing videos.
+4. The coarse-to-fine retrieval in PCDF-Cache still requires two-stage computation, which might be a bottleneck for ultra-low latency scenarios.
+5. Does not discuss the impact of historical QA context in multi-turn dialogues on current retrieval decisions.
 
 ## Related Work & Insights
 
-- **StreamBridge**: enhances Video-LLMs via a streaming training pipeline, but requires large amounts of streaming data and computational resources.
-- **ReKV**: a retrieval-based KV cache method that retains all visual memories but lacks temporal awareness.
-- **StreamForest**: manages streaming memory using clustering and forest structures, requiring 121k dedicated samples and 32 GPUs.
-- **Insights**: Temporal awareness may be a foundational capability for all video understanding tasks, not merely for streaming scenarios; uncertainty-driven adaptive computation allocation is a broadly applicable design pattern.
+- **StreamBridge**: Enhances Video-LLMs through a streaming training pipeline but requires substantial streaming data and resources.
+- **ReKV**: A retrieval-based KV cache method that retains all visual memory but lacks temporal awareness.
+- **StreamForest**: Manages streaming memory using clustering and forest structures, requiring 121k specialized samples and 32 GPUs.
+- **Insight**: Temporal awareness may be a foundational capability for all video tasks, not just streaming; uncertainty-driven adaptive computation is a versatile design pattern.
 
 ## Rating
 
-| Dimension | Score |
+| Dimension | Rating |
 |------|------|
 | Novelty | ⭐⭐⭐⭐ |
-| Practicality | ⭐⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
 | Overall | ⭐⭐⭐⭐ |
@@ -171,11 +166,11 @@ Retrieval strategy comparison (LLaVA-OV-7B):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[ICLR 2026\] Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models](../../ICLR2026/multimodal_vlm/visual_symbolic_mechanisms_vlm.md)
-- [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](../../NeurIPS2025/multimodal_vlm/bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[CVPR 2026\] WeaveTime: Streaming from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_from_earlier_frames_into_emergent_memory_in_videollms.md)
+- [\[CVPR 2026\] Act2See: Emergent Active Visual Perception for Video Reasoning](act2see_emergent_active_visual_perception_for_video_reasoning.md)
+- [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
+- [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](interactive_episodic_memory_with_user_feedback.md)
+- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
 
 </div>
 

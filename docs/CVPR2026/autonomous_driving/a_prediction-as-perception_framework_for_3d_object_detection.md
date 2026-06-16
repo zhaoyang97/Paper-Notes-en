@@ -2,46 +2,42 @@
 title: >-
   [Paper Note] A Prediction-as-Perception Framework for 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][3D Perception] Inspired by the brain's predictive perception mechanism, this paper proposes the PAP framework…
+  [CVPR 2026][Autonomous Driving][Object Detection] Inspired by the "predictive perception" mechanism of the human brain, the PAP framework is proposed—injecting trajectory prediction results from historical frames as queries into the current frame's perception module, achieving a 10% gain in tracking accuracy and a 15% gain in inference speed on UniAD. ---
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "3D Perception"
-  - "Object Detection"
-  - "Prediction-as-Perception"
-  - "nuScenes"
-  - "End-to-End"
+  - CVPR 2026
+  - Autonomous Driving
+  - Object Detection
+  - nuScenes
 date: 2026-05-08
-content_hash: a095023eb82b42fe
+content_hash: 1512d93bba19ae75
 ---
-
 # A Prediction-as-Perception Framework for 3D Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12599](https://arxiv.org/abs/2603.12599)  
-**Code**: To be confirmed  
-**Area**: Autonomous Driving
-**Keywords**: 3D Perception, Object Detection, Prediction-as-Perception, Autonomous Driving, nuScenes, End-to-End
+**Code**: TBD  
+**Area**: Autonomous Driving  
+**Keywords**: 3D Perception, Object Detection, Predictive Perception, Autonomous Driving, nuScenes, End-to-End
 
 ## TL;DR
 
-Inspired by the brain's predictive perception mechanism, this paper proposes the PAP framework, which injects trajectory prediction outputs from previous frames as queries into the current frame's perception module, achieving a 10% improvement in tracking accuracy and a 15% speedup in inference on UniAD.
+Inspired by the "predictive perception" mechanism of the human brain, the PAP framework is proposed—injecting trajectory prediction results from historical frames as queries into the current frame's perception module, achieving a 10% gain in tracking accuracy and a 15% gain in inference speed on UniAD.
 
 ---
 
 ## Background & Motivation
 
-**Predictive Perception in the Brain**: Neuroscience research indicates that the brain does not passively receive sensory signals; instead, it continuously generates predictions about future inputs and iteratively refines its internal model via "prediction errors." For example, when tracking a flying bird, humans anticipate the next position before focusing their gaze.
+**Predictive Perception of the Human Brain**: Neuroscience research indicates that the human brain does not passively receive sensory signals but continuously generates predictions of future inputs, iteratively refining internal models via "prediction errors." For instance, when tracking a bird, one predicts the next position before focusing the gaze.
 
-**Absence of Predictive Priors in Existing Perception Models**: Queries in mainstream 3D detection models (Sparse4D, StreamPETR, DETR3D, etc.) are either randomly initialized each frame or propagated temporally in a straightforward manner, without leveraging explicit trajectory prediction results to guide current-frame perception.
+**Lack of Predictive Priors in Existing Perception Models**: Current mainstream 3D detection models (Sparse4D, StreamPETR, DETR3D, etc.) initialize queries randomly in each frame or perform simple temporal propagation, failing to utilize explicit trajectory prediction results to guide current frame perception.
 
-**Disconnection Between Perception and Prediction**: In the conventional detect→track→predict pipeline, each module is trained independently, causing errors to accumulate stage by stage. Even end-to-end models typically employ a unidirectional information flow (perception→prediction), lacking a feedback loop from prediction back to perception.
+**Fragmentation of Perception and Prediction**: In traditional detect→track→predict pipelines, modules are trained independently, leading to cumulative errors. Even end-to-end models often feature unidirectional information flow (perception→prediction), lacking a feedback loop from prediction to perception.
 
-**Inefficiency of Random Queries**: Attention-based detectors generate a large number of random queries per frame, the vast majority of which are far from actual object locations, resulting in slow convergence and wasted computation.
+**Inefficiency of Random Queries**: Attention-based detectors generate a large number of random queries per frame, most of which are far from the actual target positions, resulting in slow convergence and computational waste.
 
-**Loss of Temporal Cues**: Randomly initialized queries cannot carry knowledge of object motion trends from prior frames, making ID switches more likely during tracking.
+**Loss of Temporal Cues**: Randomly initialized queries cannot carry the cognition of target motion trends from preceding frames, often leading to ID switches during tracking.
 
-**Research Hypothesis**: Incorporating predicted future positions from the prediction module as part of the next frame's perception queries can simultaneously improve detection accuracy and inference efficiency.
+**Goal**: To demonstrate that using the future positions output by the prediction module as part of the perception queries for the next frame can simultaneously improve perception accuracy and inference efficiency.
 
 ---
 
@@ -49,47 +45,58 @@ Inspired by the brain's predictive perception mechanism, this paper proposes the
 
 ### Overall Architecture
 
-The PAP (Prediction-As-Perception) framework consists of a **perception module** and a **prediction module**, which exchange information via queries to form a closed-loop iterative pipeline:
+The PAP (Prediction-As-Perception) framework consists of two parts: a **perception module** and a **prediction module**. These interact through queries to form a closed-loop iteration:
 
-> Current-frame image + previous-frame prediction queries → Perception module → Detection/tracking result queries → Prediction module → Future position queries → Stored in query bank → Retrieved by next-frame perception module
+> Current Frame Image + Previous Frame Prediction Query → Perception Module → Detection/Tracking Result Query → Prediction Module → Future Position Query → Store in Query Bank → Call by Next Frame Perception Module
 
-For the first frame, where no historical predictions are available, all queries are initialized randomly.
+When no historical prediction is available for the first frame, random queries are used entirely.
 
-### Key Design 1: Injecting Prediction Queries into the Perception Module
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Current Frame Image"] --> P
+    Q["query bank<br/>Random Query + Previous Frame Prediction Query"] --> P
+    subgraph UNIAD["Integration with UniAD (Only one feedback path added)"]
+        direction TB
+        P["Prediction Query Injection into Perception Module<br/>TrackFormer + Reference Point Network"] --> D["Detection / Tracking Result Query"]
+        D --> E["Prediction Module and Query Embedding<br/>PECP → MotionFormer → Linear Embedding"]
+    end
+    E --> F["Future Position Query"]
+    F -->|Store in query bank for next frame| Q
+    P --> O["Detection / Tracking Output"]
+```
 
-- **Function**: In each frame's perception module, prediction queries output by the previous frame's prediction module replace some or all random queries.
-- **Mechanism**: Predicted coordinates are mapped via an embedding layer to match the dimension of perception queries and then concatenated directly, formulated as $q_i^T \in (q_{random}^T \cup q_{predict}^{T-1})$, after which they are fed into the reference point network $c_i^T = \varnothing^{ref}(q_i^T)$.
-- **Design Motivation**: Prediction queries naturally reside near regions where objects are likely to appear, substantially reducing futile search compared to random queries, while preserving temporal motion cues that benefit tracking continuity.
+### Key Designs
 
-### Key Design 2: Prediction Module and Query Embedding
+**1. Injecting Prediction Queries into the Perception Module: Setting the "Future Position" of the Previous Frame as the Search Starting Point**
 
-- **Function**: Detection result queries output by the perception module are passed to the prediction module, which outputs multi-step future position coordinates that are then embedded into queries usable by the next frame.
-- **Mechanism**: $c_{predict}^T = \text{PRED}(\text{PECP}(c_i^T))$, $q_{predict}^T = \phi^{embd}(c_{predict}^T)$, where $\phi^{embd}$ is a linear embedding layer.
-- **Design Motivation**: This design decouples the choice of prediction module — any module capable of outputting future coordinates can be integrated into PAP without modifying its internal structure or loss function.
+The inefficiency of random queries stems from their ignorance of target locations—most queries fall far from the actual targets, wasting attention computation. The Mechanism of PAP is to map the future coordinates output by the previous frame's prediction module through an embedding layer to the same dimension as the perception queries, and then combine them with random queries into the current frame's query set $q_i^T \in (q_{random}^T \cup q_{predict}^{T-1})$. These are collectively sent to the reference point network $c_i^T = \varnothing^{ref}(q_i^T)$ to obtain reference points. These prediction queries naturally fall in regions where the target is likely to appear next, providing the detector with a "prior landing point." This reduces invalid searches, accelerates convergence, and brings the cognition of motion trends from preceding frames into the current frame, making ID switches less likely during tracking.
 
-### Key Design 3: Integration with UniAD
+**2. Prediction Module and Query Embedding: Feeding Detection Results Back to Prediction for Next-Frame Queries**
 
-- **Function**: Prediction queries are taken from UniAD's MotionFormer output, aligned in dimension, and fed together with Track Queries into the TrackFormer.
-- **Mechanism**: Since UniAD already facilitates inter-module interaction via queries, PAP only requires adding one feedback path from MotionFormer → TrackFormer, leaving the Planning module and all other losses unchanged.
-- **Design Motivation**: By leveraging UniAD's existing end-to-end architecture with minimal intrusion, the PAP concept is validated under fair experimental conditions (all hyperparameters identical to the original model).
+To maintain the closed-loop, "perception→prediction" is required to feed back the results. The detection result queries $c_i^T$ from the perception module are processed via PECP and sent to the prediction module to obtain multi-frame future coordinates $c_{predict}^T = \text{PRED}(\text{PECP}(c_i^T))$. These are then mapped through a linear embedding layer $\phi^{embd}$ into queries $q_{predict}^T = \phi^{embd}(c_{predict}^T)$ that can be directly called by the next frame. This step explicitly defines the interface of "input detection results, output future coordinates" without altering the internal structure or loss of the prediction module. Consequently, any trajectory prediction model capable of producing future coordinates can be integrated into PAP in a plug-and-play manner.
+
+**3. Integration with UniAD: Verifying the Idea via a Minimally Invasive Feedback Path**
+
+To prove the effectiveness of the "prediction→perception" loop, the most reliable approach is to modify only this part within an existing end-to-end architecture. Since UniAD modules already interact via queries, PAP only needs to extract prediction queries from the output of MotionFormer, align their dimensions, and send them into TrackFormer alongside existing Track Queries. This adds only a single feedback path (MotionFormer → TrackFormer); the Planning module and other losses remain unchanged. This approach reuses UniAD's end-to-end capabilities while ensuring all hyperparameters remain consistent with the original model, allowing the Gain from comparison to be cleanly attributed to PAP itself.
 
 ---
 
 ## Loss & Training
 
-- The perception module's loss is kept identical to that of the original model (TrackFormer in UniAD); learning of prediction queries is driven by back-propagation through the joint perception and prediction loss.
-- All training hyperparameters are identical to those of the original UniAD, ensuring a fair comparison.
-- Training environment: 4× A100 GPUs, 64-core CPU, 256 GB RAM.
-- Training time is reduced from 91h to 78h (↓14%), as prediction queries accelerate detection convergence.
+- The perception module loss remains consistent with the original model (TrackFormer in UniAD). Learning of prediction queries is completed via backpropagation of combined perception + prediction losses.
+- All training hyperparameters are identical to the original UniAD to ensure fair comparison.
+- Training environment: 4× A100 GPU, 64-core CPU, 256 GB RAM.
+- Training time was reduced from the original 91h to 78h (↓14.3%) because prediction queries accelerated detection convergence.
 
 ---
 
 ## Key Experimental Results
 
-### Table 1: Overall Comparison of UniAD vs. UniAD+PAP on nuScenes val
+**Table 1: Overall Comparison of UniAD vs. UniAD+PAP on nuScenes val**
 
-| Metric | UniAD | UniAD+PAP | Change |
-|--------|-------|-----------|--------|
+| Metric | UniAD | UniAD+PAP | Gain |
+|------|-------|-----------|------|
 | AMOTA ↑ | 0.359 | **0.395** | +10.0% |
 | AMOTP ↓ | 1.32 | **1.22** | -7.6% |
 | Recall ↑ | 0.467 | **0.493** | +5.6% |
@@ -97,10 +104,10 @@ For the first frame, where no historical predictions are available, all queries 
 | Training Time | 91h | **78h** | -14.3% |
 | FPS ↑ | 14 | **16** | +14.3% |
 
-### Table 2: Per-Category Performance of UniAD+PAP
+**Table 2: Category-wise Performance of UniAD+PAP**
 
 | Category | AMOTA | AMOTP | Recall | IDS |
-|----------|-------|-------|--------|-----|
+|------|-------|-------|--------|-----|
 | Bicycle | 0.372 | 1.297 | 0.453 | 15 |
 | Bus | 0.465 | 1.225 | 0.535 | 8 |
 | Car | **0.613** | **0.744** | **0.667** | 405 |
@@ -109,67 +116,67 @@ For the first frame, where no historical predictions are available, all queries 
 | Trailer | 0.330 | 1.551 | 0.201 | 4 |
 | Truck | 0.411 | 1.267 | 0.611 | 28 |
 
-The Car category achieves the best metrics (AMOTA 0.613), while the Pedestrian category records the highest IDS (342), reflecting the greater randomness of pedestrian motion and the associated prediction difficulty.
+The Car category showed the best metrics (AMOTA 0.613), while the Pedestrian category had the highest IDS (342), reflecting that pedestrian movement patterns are more random and harder to predict.
 
 ---
 
 ## Highlights & Insights
 
-- **Biologically Inspired and Elegantly Simple**: Adding a single "prediction→perception" feedback path yields consistent improvements across all metrics, with a clear and intuitive rationale.
-- **Plug-and-Play**: Both the perception and prediction modules can be replaced with stronger off-the-shelf models, endowing the framework with high generality.
-- **Simultaneous Speedup**: Replacing random queries with prediction queries reduces futile attention computation, improving FPS by 14% and reducing training time by 14% — a rare outcome in model improvements that typically incur additional computational cost.
-- **No Additional Supervision**: No new annotations or auxiliary tasks are required; learning of prediction queries is entirely driven by the existing losses.
+- **Simple and Effective Bionic Design**: Adding only one "prediction→perception" feedback path improved all metrics, providing a clear conceptual framework.
+- **Plug-and-Play**: Both perception and prediction modules can be replaced with stronger off-the-shelf models, offering high framework versatility.
+- **Simultaneous Speedup**: Replacing random queries with prediction queries reduced invalid attention computation, increasing FPS by 14.3% and shortening training time by 14.3%—a rare occurrence in model improvements where computational cost typically increases.
+- **Zero Extra Supervision**: No new annotations or auxiliary tasks are required; the learning of prediction queries is entirely driven by the original losses.
 
 ---
 
 ## Limitations & Future Work
 
-1. **Validated Only on UniAD**: The perception and prediction modules of UniAD are not state-of-the-art; whether PAP maintains its gains on stronger baselines such as Sparse4Dv3 and StreamPETR remains unclear.
-2. **Lack of Ablation Studies**: The effects of key hyperparameters — such as the proportion of prediction queries, query bank size, and prediction horizon — are not analyzed.
-3. **Single Dataset**: Experiments are conducted solely on nuScenes; generalization to larger-scale datasets such as Waymo and Argoverse2 has not been verified.
-4. **First-Frame Degradation**: All queries for the first frame are initialized randomly, offering no benefit from PAP. This has limited impact in long sequences but warrants attention in short-sequence scenarios.
-5. **Prediction Error Propagation**: If the prediction module produces large deviations, the injected queries may mislead the perception module; no mechanism currently filters queries based on prediction confidence.
+1. **Validated only on UniAD**: As UniAD's modules are not the current SOTA, it remains unclear if PAP can maintain Gains on stronger baselines like Sparse4Dv3 or StreamPETR.
+2. **Lack of Ablation Study**: The impact of key hyperparameters, such as the prediction query replacement ratio, query bank size, and prediction time horizon, was not analyzed.
+3. **Single Dataset**: Testing was limited to nuScenes; generalization to larger datasets like Waymo or Argoverse2 has not been verified.
+4. **First-Frame Degradation**: The first frame uses only random queries, where PAP provides no Gain. While this has little impact on long sequences, it warrants attention in short-sequence scenarios.
+5. **Prediction Error Propagation**: If the prediction module produces significant bias, the injected queries might mislead the perception module. There is currently no filtering mechanism based on prediction confidence.
 
 ---
 
 ## Related Work & Insights
 
-- **BEV Detection (BEVDet, BEVDepth)**: These methods lift features to 3D via depth estimation, but explicit depth estimation is prone to inaccuracies; PAP follows a query-based route and is complementary to BEV approaches.
-- **Query-Based Detection (DETR3D, PETR, Sparse4D)**: The PAP framework can be directly applied to these models by replacing random queries with prediction queries.
-- **End-to-End Autonomous Driving (UniAD)**: PAP further tightens the perception–prediction–planning closed loop.
-- **Trajectory Prediction (THOMAS, AutoBot, GoHome)**: These models can serve directly as the prediction module within PAP.
-- **Broader Implications**: The approach can be extended to occupancy prediction (using historical occupancy flow predictions to initialize the current-frame occupancy decoder queries) and 4D scene flow estimation, among other tasks.
+- **BEV Detection (BEVDet, BEVDepth)**: These lift to 3D via depth estimation, but explicit depth estimation can be inaccurate; PAP follows a query-based route and is complementary to BEV methods.
+- **Query-based Detection (DETR3D, PETR, Sparse4D)**: The PAP framework can be directly grafted onto these models, substituting random queries with prediction queries.
+- **End-to-End Autonomous Driving (UniAD)**: PAP further closes the loop between perception, prediction, and planning.
+- **Trajectory Prediction (THOMAS, AutoBot, GoHome)**: These models can serve directly as the prediction module for PAP.
+- **Insights**: This approach can be extended to tasks like occupancy prediction (using historical occupancy prediction queries to initialize the current occupancy decoder) and 4D scene flow estimation.
 
 ---
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|-------|
 | Novelty | ⭐⭐⭐ |
-| Theoretical Depth | ⭐⭐ |
+| Theory Depth | ⭐⭐ |
 | Experimental Thoroughness | ⭐⭐ |
-| Engineering Practicality | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
 
 ## Related Work & Insights
 
 | Method | Perception→Prediction | Prediction→Perception | End-to-End | Temporal Query |
-|--------|-----------------------|-----------------------|------------|----------------|
+|------|----------|----------|--------|----------|
 | DETR3D | ✗ | ✗ | ✗ | ✗ |
-| StreamPETR | ✓ | ✗ | ✗ | Propagation |
-| Sparse4Dv3 | ✓ | ✗ | ✗ | Propagation |
-| UniAD | ✓ | ✗ | ✓ | Propagation |
+| StreamPETR | ✓ | ✗ | ✗ | Propagative |
+| Sparse4Dv3 | ✓ | ✗ | ✗ | Propagative |
+| UniAD | ✓ | ✗ | ✓ | Propagative |
 | **UniAD+PAP** | ✓ | **✓** | ✓ | **Predictive** |
 
-Unlike the temporal query propagation in StreamPETR and Sparse4D, PAP's queries are processed by an explicit trajectory prediction module, incorporating reasoning about future positions rather than merely continuing past features. The original UniAD design routes information unidirectionally from perception to prediction and planning; PAP closes the loop by adding a prediction→perception feedback path, making the end-to-end system more complete.
+Unlike the temporal query propagation in methods like StreamPETR and Sparse4D, PAP queries are processed by an explicit trajectory prediction module, incorporating reasoning about future positions rather than just continuing past features. While UniAD's original design features a unidirectional flow from perception to prediction and planning, PAP completes the feedback loop from prediction to perception.
 
-## Inspirations & Connections
+## Insights
 
-1. **Extension to Occupancy Prediction**: Historical occupancy flow predictions can serve as initial queries for the current-frame occupancy decoder, reducing the search space in dense prediction.
-2. **Extension to 4D Scene Flow**: In scene flow estimation, motion predictions from previous frames can initialize the matching search window for the current frame, reducing computational cost.
-3. **Integration with World Models**: Replacing PAP's prediction module with a more powerful world model (e.g., OccWorld) can provide higher-quality prediction queries.
-4. **Query Confidence Filtering**: PAP currently accepts all prediction queries unconditionally; incorporating prediction uncertainty estimation would enable filtering of low-quality queries and further improve robustness.
-5. **Multi-Modal Fusion**: The PAP framework is not limited to vision-only settings; LiDAR-camera fusion detectors (e.g., BEVFusion) can equally benefit from the prediction feedback path.
+1. **Extension to Occupancy Prediction**: Historical occupancy flow predictions can serve as initial queries for the current occupancy decoder, reducing the search space for dense predictions.
+2. **Extension to 4D Scene Flow**: In scene flow estimation, motion predictions from preceding frames can initialize the matching search window for the current frame, reducing computational load.
+3. **Integration with World Models**: Replacing the prediction module in PAP with a stronger world model (e.g., OccWorld) could provide more accurate prediction queries.
+4. **Query Confidence Filtering**: Currently, PAP trusts prediction queries unconditionally. Adding prediction uncertainty estimation could filter low-quality queries to further enhance robustness.
+5. **Multi-modal Fusion**: The PAP framework is not limited to vision; LiDAR-camera fusion detectors (e.g., BEVFusion) can also integrate the predictive feedback path.
 
 <!-- RELATED:START -->
 
@@ -177,11 +184,11 @@ Unlike the temporal query propagation in StreamPETR and Sparse4D, PAP's queries 
 
 ## Related Papers
 
-- [\[CVPR 2026\] On the Feasibility and Opportunity of Autoregressive 3D Object Detection](on_the_feasibility_and_opportunity_of_autoregressive_3d_object_detection.md)
+- [\[CVPR 2025\] PAP: A Prediction-as-Perception Framework for 3D Object Detection](../../CVPR2025/autonomous_driving/a_prediction-as-perception_framework_for_3d_object_detection.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
-- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[CVPR 2026\] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](den_tp_a_density_balanced_data_curation_and_evaluation_framework_for_trajectory.md)
-- [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
+- [\[CVPR 2026\] SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection](store3d_sparse_token_relevance_in_vits_for_efficient_multi-view_3d_object_detect.md)
+- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
 
 </div>
 

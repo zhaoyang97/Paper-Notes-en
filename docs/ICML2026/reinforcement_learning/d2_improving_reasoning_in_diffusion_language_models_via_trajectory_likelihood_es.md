@@ -2,120 +2,123 @@
 title: >-
   [Paper Note] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation
 description: >-
-  [ICML 2026][Reinforcement Learning][Masked Diffusion Language Models] This paper proposes the d2 reinforcement learning framework for masked diffusion language models (MDMs). The core consists of two "trajectory likeliho…
+  [ICML 2026][Reinforcement Learning][GRPO] This paper proposes the d2 reinforcement learning framework for masked diffusion language models (masked DLM). The core contribution is the introduction of two "trajectory likelihood estimators" (d2-AnyOrder provides precise single-forward estimates for models supporting any-order decoding, and d2-StepMerge provides ad
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Masked Diffusion Language Models"
-  - "GRPO"
-  - "Trajectory Likelihood Estimation"
-  - "any-order decoding"
-  - "Post-training"
+  - ICML 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: 3057f876d4e7712b
+content_hash: 65222be01af2ce48
 ---
-
 # d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.21474](https://arxiv.org/abs/2509.21474)  
 **Code**: https://guanghanwang.com/d2  
 **Area**: LLM Reasoning / Diffusion Language Models / Reinforcement Learning  
-**Keywords**: Masked Diffusion Language Models, GRPO, Trajectory Likelihood Estimation, any-order decoding, Post-training
+**Keywords**: Masked Diffusion Language Models, GRPO, Trajectory Likelihood Estimation, any-order decoding, post-training
 
 ## TL;DR
-This paper proposes the d2 reinforcement learning framework for masked diffusion language models (MDMs). The core consists of two "trajectory likelihood estimators": d2-AnyOrder, which provides exact single-forward estimates for models supporting any-order decoding, and d2-StepMerge, which provides adjustable-precision approximations for standard MDMs. This enables correct GRPO implementation, allowing LLaDA-8B-Instruct to achieve 91.9% / 56.6% / 85.0% / 41.6% on Sudoku/Countdown/GSM8K/MATH500, significantly outperforming diffusion RL baselines like d1 and wd1.
+This paper proposes the d2 reinforcement learning framework for masked diffusion language models (masked DLM). The core contribution is the introduction of two "trajectory likelihood estimators" (d2-AnyOrder provides precise single-forward estimates for models supporting any-order decoding, and d2-StepMerge provides adjustable-precision approximations for standard MDMs) to correctly implement GRPO. LLaDA-8B-Instruct achieves 91.9% / 56.6% / 85.0% / 41.6% on Sudoku/Countdown/GSM8K/MATH500, respectively, comprehensively outperforming diffusion RL baselines such as d1 and wd1.
 
 ## Background & Motivation
-**Background**: Diffusion Language Models (DLMs, such as LLaDA, Dream, and Eso-LM) have become strong competitors to autoregressive LLMs due to their controllable generation and parallel decoding. To equip DLMs with "reasoning" capabilities similar to R1/o1, the mainstream approach involves post-training using policy gradient methods like GRPO.
+**Background**: Diffusion Language Models (DLMs, such as LLaDA, Dream, and Eso-LM) have emerged as strong competitors to autoregressive LLMs due to their controllable generation and parallel decoding. To equip DLMs with "reasoning" capabilities similar to R1/o1, the mainstream approach involves applying policy gradient methods like GRPO for post-training.
 
-**Limitations of Prior Work**: The GRPO objective function contains an importance ratio $\rho_l = \pi_\theta(x_l|x_{<l},q) / \pi_{\text{old}}(x_l|x_{<l},q)$. In autoregressive LLMs, this can be computed in a single forward pass. However, the exact likelihood of a DLM is mathematically intractable over $T$ diffusion steps; a "naive" decomposition requires $T$ forward passes, which is computationally prohibitive. Existing works like diffu-GRPO (d1) use sparse approximations with $N=1$, resulting in severely distorted likelihood estimates.
+**Limitations of Prior Work**: The GRPO objective function involves an importance ratio $\rho_l = \pi_\theta(x_l|x_{<l},q) / \pi_{\text{old}}(x_l|x_{<l},q)$, which can be computed in a single forward pass for autoregressive LLMs. However, the exact likelihood of a DLM is mathematically intractable for $T$ diffusion steps. "Naive" decomposition according to $T$ steps requires $T$ forward passes, which is computationally prohibitive. Existing works like diffu-GRPO (d1) use sparse approximations with $N=1$, leading to severe distortion in likelihood estimation.
 
-**Key Challenge**: The success of diffusion RL essentially depends on the fidelity of the trajectory likelihood estimation, which faces a direct conflict with computational budgets—exact estimation is slow, while approximation is biased.
+**Key Challenge**: The success of diffusion RL essentially depends on the fidelity of the trajectory likelihood estimation. Fidelity and computational budget are in direct conflict—precision is slow, while approximation is biased.
 
-**Goal**: This work addresses the problem in two steps: (1) strictly deriving the GRPO objective for diffusion to explicitly expose the "likelihood estimation" component; (2) designing efficient matching likelihood estimators for different DLM architectures.
+**Goal**: Solve this in two steps: (1) Rigorously derive the diffusion version of the GRPO objective function to explicitly expose the "likelihood estimation" component; (2) Design efficient likelihood estimators tailored for different DLM architectures.
 
-**Key Insight**: The authors identify "trajectory likelihood" as the true bottleneck. They observe that a class of "any-order autoregressive DLMs" structurally allows packing the entire trajectory likelihood into a single Transformer forward pass. For standard MDMs without this property, they design a method to merge diffusion steps based on the concept of block composite likelihood.
+**Key Insight**: The authors identify "trajectory likelihood" as the true bottleneck. They observe that a class of "any-order autoregressive DLMs" structurally allows packing the likelihood of an entire trajectory into a single transformer forward pass. For standard MDMs that do not support this property, they adopt the idea of block composite likelihood to merge diffusion steps in segments.
 
-**Core Idea**: Replace "naive $T$-step forward passes" or "single-step sparse approximations" with "customized trajectory likelihood estimators for specific model categories" to correctly implement policy gradients for GRPO on masked DLMs.
+**Core Idea**: Replace "naive $T$ forward passes" or "single-step sparse approximation" with "trajectory likelihood estimators customized for specific model categories" to correctly implement policy gradients via GRPO on masked DLMs.
 
 ## Method
 
 ### Overall Architecture
-The input is a pre-trained masked DLM $\pi_{\text{ref}}$ (e.g., LLaDA-8B-Instruct or Eso-LM) and a reasoning task with a verifiable reward $r(x, q)$ (e.g., Sudoku checker or GSM8K answer matching). The framework consists of three steps: (1) Sampling $G$ complete unmasking trajectories $x_{0:T}^{1:L}$ using the old policy $\pi_{\text{old}}$ with a group size $G$; (2) Calculating the group-relative advantage $A^{(i)}$ and estimating the likelihood of $\pi_\theta / \pi_{\text{old}} / \pi_{\text{ref}}$ on the trajectory using d2-AnyOrder or d2-StepMerge; (3) performing gradient updates according to the GRPO objective derived in Corollary 3.3. The final output is the policy $\pi_\theta$ after RL post-training, achieving SOTA performance on reasoning tasks.
+The input consists of a pre-trained masked DLM $\pi_{\text{ref}}$ (e.g., LLaDA-8B-Instruct or Eso-LM) and a reasoning task with a verifiable reward $r(x, q)$ (e.g., Sudoku checker / GSM8K answer matching). The framework follows three steps: (1) Sample $G$ complete unmasking trajectories $x_{0:T}^{1:L}$ using the old policy $\pi_{\text{old}}$ with a group size $G$; (2) Calculate the group-relative advantage $A^{(i)}$ and estimate the likelihood ratios of $\pi_\theta / \pi_{\text{old}} / \pi_{\text{ref}}$ on the trajectories using d2-AnyOrder or d2-StepMerge; (3) Perform gradient updates according to the GRPO objective derived in Corollary 3.3. The final output is the RL-post-trained policy $\pi_\theta$ achieving SOTA on reasoning tasks.
 
-The paper first formalizes the policy gradient for DLMs in Theorem 3.1: at $\theta = \theta_{\text{old}}$, $\nabla_\theta J(\theta) = \nabla_\theta \mathbb{E}_{x_{0:T}^{1:L} \sim \pi_{\text{old}}}[r(x_0^{1:L}, q) \sum_{t=0}^{T-1} \sum_{l=1}^{L} \mathbf{1}_{t,l} \cdot \rho_t^l]$, where $\mathbf{1}_{t,l} = \mathbf{1}\{x_{t+1}^l = m, x_t^l \neq m\}$ indicates "decoding position $l$ at step $t$", and $\rho_t^l = \pi_\theta(x_t^l | x_{t+1}^{1:L}, q) / \pi_{\text{old}}(x_t^l | x_{t+1}^{1:L}, q)$ is the step-wise importance ratio. Adding advantage, clipping, and KL constraints yields the GRPO objective (Corollary 3.3). The remaining engineering problem is how to efficiently estimate these $\rho_t^l$.
+The text first formalizes the policy gradient on DLMs as Theorem 3.1: At $\theta = \theta_{\text{old}}$, $\nabla_\theta J(\theta) = \nabla_\theta \mathbb{E}_{x_{0:T}^{1:L} \sim \pi_{\text{old}}}[r(x_0^{1:L}, q) \sum_{t=0}^{T-1} \sum_{l=1}^{L} \mathbf{1}_{t,l} \cdot \rho_t^l]$, where $\mathbf{1}_{t,l} = \mathbf{1}\{x_{t+1}^l = m, x_t^l \neq m\}$ indicates "decoding the token at position $l$ at step $t$", and $\rho_t^l = \pi_\theta(x_t^l | x_{t+1}^{1:L}, q) / \pi_{\text{old}}(x_t^l | x_{t+1}^{1:L}, q)$ is the importance ratio amortized over diffusion steps. Adding advantage, clipping, and KL constraints yields the GRPO objective (Corollary 3.3). The remaining engineering problem is how to efficiently estimate these $\rho_t^l$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Pre-trained masked DLM π_ref<br/>+ Reasoning task with verifiable rewards"] --> B["Sample G complete unmasking trajectories using π_old"]
+    B --> C["Compute group-relative advantage A<br/>+ Estimate likelihood ratio ρ (branched by model)"]
+    C -->|AO-dLLM supporting any-order decoding| D["d2-AnyOrder<br/>2L concatenation + Modulo pos encoding + Custom mask<br/>Exact likelihood in single forward pass"]
+    C -->|Standard MDM| E["d2-StepMerge<br/>Split T steps into N segments, one forward per segment end<br/>Adjustable precision N-pass approximation"]
+    D --> F["GRPO clip objective (Corollary 3.3)<br/>min(ρA, clip(ρ)A) + β·KL gradient update"]
+    E --> F
+    F --> G["Output: RL post-trained policy π_θ (Reasoning SOTA)"]
+```
 
 ### Key Designs
 
-1.  **d2-AnyOrder: Exact Trajectory Likelihood Estimation in a Single Forward Pass**:
-    - **Function**: For DLMs that naturally support any-order decoding (AO-dLLMs, such as Eso-LM, AO-finetuned Qwen3-1.7B, or any-order causal LLaDA), it compresses the entire trajectory likelihood $\pi(x_{0:T}^{1:L}) = \prod_{l=1}^L \pi(x_0^{\sigma(l)} | x_0^{\sigma(<l)})$ into a single Transformer forward pass.
-    - **Mechanism**: Construct a concatenated sequence of length $2L$ as $x_0^{1:L} \oplus m^{L+1:2L}$, where token-mask pairs share the same position encoding $\text{pos}_l = l \bmod L$. A custom attention mask is designed: "clean token $x_0^{\sigma(l)}$ attends only to $x_0^{\sigma(\leq l)}$; mask token $m_{L+\sigma(l)}$ attends only to $x_0^{\sigma(<l)} \cup m_{L+\sigma(l)}$." This allows a single forward pass to output all $L$ conditional probabilities $\pi^{AO}(x_0^l | x_0^{1:L} \oplus m^{L+1:2L})$. The rewards are computed using $\rho_{n,l}^{AO} = \pi_\theta^{AO}(\cdot) / \pi_{\text{old}}^{AO}(\cdot)$ in the GRPO clip objective (Eq. 8).
-    - **Design Motivation**: This estimate is unbiased if and only if the sampling process satisfies "Independent Masks" (masks do not attend to each other) and "Order Causality" (decoded tokens only attend to previously decoded ones). These conditions are ensured by the any-order decoding algorithm (Algorithm 1) during sampling. Validation experiments show that applying d2-AnyOrder directly to the original LLaDA-8B-Instruct results in an average per-token log-likelihood of -3.051 versus a ground truth of -0.128 (KL divergence of 2.334), indicating standard MDMs do **not** support this property by default and require specific AO training paradigms.
+**1. d2-AnyOrder: Packing entire trajectory likelihood into one forward pass for exact estimation**
 
-2.  **d2-StepMerge: Segmented Likelihood Estimation with Adjustable Precision**:
-    - **Function**: For standard MDMs (e.g., original LLaDA-8B-Instruct) that do not support any-order decoding, it approximates the full trajectory likelihood using $N$ forward passes ($N \ll T$) with analytically controllable error.
-    - **Mechanism**: Drawing from block composite likelihood, the $T$-step trajectory is divided into $N$ segments. The output of a single forward pass at the endpoint of each segment serves as a proxy for the "likelihood of all tokens within that segment": $\pi(x_{0:T}^{1:L}) \approx \prod_{n=0}^{N-1} \prod_{l=1}^{L} \mathbf{1}_{n,l} \cdot \pi(x_{nT/N}^l | x_{(n+1)T/N}^{1:L})$. The corresponding GRPO objective (Eq. 9) defines $\rho_n^l$ as the segment endpoint ratio.
-    - **Design Motivation**: $N$ acts as a compute-bias knob—$N=1$ is diffu-GRPO (cheapest but highly distorted), while $N=T$ is the full trajectory (most expensive but exact). Experiments on LLaDA-8B-Instruct show that $D_N$ (KL relative to full decomposition) decreases monotonically with $N$ (Figure 5), with an upper bound given by Theorem 4.1: $D_N \leq L \cdot \log(T/N + 1) + L \cdot \epsilon_{\text{block}}$. Sudoku ablations show $N=16$ is the sweet spot, performing similarly to $N=32, 64$ but with significantly lower FLOPs.
+For DLMs that naturally support any-order decoding (AO-dLLM, such as Eso-LM, AO-finetuned Qwen3-1.7B, or any-order causal LLaDA), the trajectory likelihood can be written as $\pi(x_{0:T}^{1:L}) = \prod_{l=1}^L \pi(x_0^{\sigma(l)} | x_0^{\sigma(<l)})$. The challenge is calculating these $L$ conditional probabilities without $L$ forward passes. d2-AnyOrder constructs a concatenated sequence of length $2L$, $x_0^{1:L} \oplus m^{L+1:2L}$, where a token and its corresponding mask share the same position encoding $\text{pos}_l = l \bmod L$. A custom attention mask is applied: a clean token $x_0^{\sigma(l)}$ attends only to $x_0^{\sigma(\leq l)}$, while a mask token $m_{L+\sigma(l)}$ attends to $x_0^{\sigma(<l)} \cup \{m_{L+\sigma(l)}\}$. Thus, a single forward pass outputs all $L$ conditional probabilities $\pi^{AO}(x_0^l | x_0^{1:L} \oplus m^{L+1:2L})$. Substituting $\rho_{n,l}^{AO} = \pi_\theta^{AO}(\cdot) / \pi_{\text{old}}^{AO}(\cdot)$ into the GRPO clip objective (Eq. 8) yields an exact, unbiased gradient, provided the sampling satisfies "Independent Masks + Order Causality." Standard MDMs like LLaDA fail these properties (producing an average per-token log-likelihood of -3.051 vs. the true -0.128, with a KL of 2.334), requiring AO fine-tuning before using this estimator.
+
+**2. d2-StepMerge: Adjustable-precision segmented approximation with $N\ll T$ forward passes**
+
+Standard MDMs (e.g., original LLaDA-8B-Instruct) cannot use AnyOrder and cannot afford $T$ forward passes. StepMerge borrows from block composite likelihood, dividing the $T$-step trajectory into $N$ equal segments. The forward pass output at the endpoint of each segment serves as a proxy for the likelihood of all tokens within that segment: $\pi(x_{0:T}^{1:L}) \approx \prod_{n=0}^{N-1} \prod_{l=1}^{L} \mathbf{1}_{n,l} \cdot \pi(x_{nT/N}^l | x_{(n+1)T/N}^{1:L})$. Here, $N$ serves as a compute-bias knob: $N=1$ degrades to diffu-GRPO (cheapest and most distorted), while $N=T$ is exact. Theorem 4.1 provides an upper bound $D_N \leq L \cdot \log(T/N + 1) + L \cdot \epsilon_{\text{block}}$, showing error decays logarithmically with $N$. Experiments show $N=16$ matches $N=32/64$ on Sudoku while saving FLOPs, explaining why d1 ($N=1$) failed to learn.
 
 ### Loss & Training
-The two estimators correspond to separate clipped GRPO losses (Eq. 8 / Eq. 9). Both follow the PPO-style trust region format "$\min(\rho A, \text{clip}(\rho, 1-\epsilon, 1+\epsilon) A) + \beta D_{KL}(\pi_\theta \| \pi_{\text{ref}})$", normalized by $1/L$. Training uses a group size $G = 6$, batches of 16 problems, and decodes 2 tokens per step. All rewards are verifiable (numerical correctness, Sudoku checker, Countdown checker) without relying on SFT or external Chain-of-Thought data.
+Both estimators correspond to a clipped GRPO loss (Eq. 8 / Eq. 9), following the PPO-style trust region formulation: $\min(\rho A, \text{clip}(\rho, 1-\epsilon, 1+\epsilon) A) + \beta D_{KL}(\pi_\theta \| \pi_{\text{ref}})$, normalized by sequence length $1/L$. Group size $G=6$, daily batch contains 16 problems, decoding 2 tokens per step. Rewards are verifiable (numerical correctness, Sudoku checker, Countdown checker); no reliance on SFT or external chain-of-thought data.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Applying d2 to LLaDA-8B-Instruct and comparing it against existing diffusion RL frameworks across four reasoning benchmarks (without SFT):
+Applying d2 to LLaDA-8B-Instruct and comparing with existing diffusion RL frameworks (without SFT) across four reasoning benchmarks:
 
-| Dataset | Metric | d2 (Ours) | wd1 | d1 | LLaDA | Gain (vs Prev. Best) |
+| Dataset | Metric | d2 (Ours) | wd1 | d1 | LLaDA | Gain (vs Prev. SOTA) |
 |--------|------|-----------|------|-----|--------|----|
 | Sudoku | Acc | **91.9%** | 25.2% | 22.1% | 11.8% | **+66.7pp** |
 | Countdown | Acc | **56.6%** | 51.2% | 42.2% | 19.9% | +5.4pp |
 | GSM8K | Acc | **85.0%** | 82.3% | 82.1% | 75.7% | +2.7pp |
 | MATH500 | Acc | **41.6%** | 39.0% | 40.2% | 35.4% | +1.4pp |
 
-The +66.7pp gain in Sudoku represents a qualitative leap—showing that d1/wd1 struggle to learn strict symbolic logic tasks, whereas accurate trajectory likelihood estimation correctly aligns the policy gradient direction. 
-
-Additionally, on AO-finetuned Qwen3-1.7B, AO SFT + d2-AnyOrder reached 67% on GSM8K, exceeding the 63% of AO SFT + diffu-GRPO. In toxicity steering (Eso-LM, 190M), d2-AnyOrder reached -0.7 at $1.25 \times 10^{17}$ FLOPs, while DDPO only reached -8.6.
+The +66.7pp on Sudoku represents a qualitative leap, indicating that d1/wd1 failed to learn strict symbolic logic, whereas accurate trajectory likelihood estimation corrects the policy gradient direction.
 
 ### Ablation Study
 
 | Configuration | Sudoku Acc | Description |
 |------|---------|------|
-| d2-StepMerge, $N=1$ | ≈ d1 (22.1%) | Equivalent to diffu-GRPO; likelihood estimate is severely distorted. |
-| d2-StepMerge, $N=4$ | Not converged | Estimate still biased; RL signals are noisy. |
-| d2-StepMerge, $N=16$ | 91.9% | **Sweet spot**: Performance matches $N=32, 64$ with fewer FLOPs. |
-| d2-StepMerge, $N=32$ | ≈ 91.9% | Performance saturated; FLOPs increase. |
-| d2-AnyOrder vs d2-StepMerge ($N=8$, Eso-LM) | -0.7 vs -1.5 @ $1.25\times10^{17}$ FLOPs | On AO-supported models, exact estimation significantly outperforms approximation. |
-| d2-AnyOrder on LLaDA-8B (No AO training) | per-token LL -3.051 vs GT -0.128 | KL=2.334, **indicating the AO estimator requires a matching training paradigm.** |
+| d2-StepMerge, $N=1$ | ≈ d1 (22.1%) | Equivalent to diffu-GRPO; highly distorted likelihood |
+| d2-StepMerge, $N=4$ | Fails to converge | Estimate remains biased; high RL signal noise |
+| d2-StepMerge, $N=16$ | 91.9% | **Sweet spot**: Performance matches $N=32, 64$ with fewer FLOPs |
+| d2-StepMerge, $N=32$ | ≈ 91.9% | Performance saturated; FLOPs increase |
+| d2-AnyOrder vs d2-StepMerge ($N=8$, Eso-LM) | -0.7 vs -1.5 @ $1.25\times10^{17}$ FLOPs | Exact estimation significantly outperforms approximation |
+| d2-AnyOrder on LLaDA-8B (no AO train) | log-probs -3.051 vs GT -0.128 | KL=2.334; **AO estimator requires matching training paradigm** |
 
 ### Key Findings
-- **Likelihood estimation accuracy is the lifeline of diffusion RL**: d1 ($N=1$) only reaches 22.1% on Sudoku, while d2-StepMerge ($N=16$) hits 91.9%. The difference lies solely in likelihood precision within the same GRPO framework.
-- **AO estimators require synergy between sampling and training**: Applying d2-AnyOrder to stock LLaDA results in a KL of 2.334. Models must first use Eso-LM or AO-causal LLaDA training to adapt to independent masks and sequential causality.
-- **$N$ exhibits a clear performance plateau**: The logarithmic upper bound in Theorem 4.1 aligns with empirical curves—returns diminish quickly after $N=16$, providing a clear basis for hyperparameter selection.
+- **Likelihood estimation precision is the lifeline of diffusion RL**: d1 ($N=1$) only achieves 22.1% on Sudoku, while d2-StepMerge ($N=16$) reaches 91.9%. The difference lies solely in the precision of the likelihood estimate.
+- **AO estimators require "Sampling + Training" synergy**: Applying d2-AnyOrder directly to the original LLaDA result in a KL of 2.334. Models must be adapted to independent masking and order causality via AO fine-tuning first.
+- **The value of $N$ reaches a plateau**: The logarithmic upper bound in Theorem 4.1 is consistent with observations—returns diminish after $N=16$, providing a clear engineering heuristic for hyperparameter selection.
 
 ## Highlights & Insights
-- **"Position Encoding Modulo + Custom Attention Mask" enables 2L parallel likelihood**: The implementation of d2-AnyOrder is elegant—concatenating $L$ token-mask pairs with $\text{pos} = l \bmod L$ allows the Transformer to perform "$L$ AR steps in one" without architecture changes. This can be transferred to any scenario requiring "batch conditional probabilities."
-- **Reinterpreting diffu-GRPO as an $N=1$ special case**: By framing prior work as a degraded version of their framework (Remark 3.4), the authors provide both a comparison and a strong "general framework" narrative.
-- **Logarithmic Error Bound of Theorem 4.1**: The bound $D_N \leq L \log(T/N + 1) + L \epsilon_{\text{block}}$ explains the logarithmic decay of compute-bias, justifying why performance saturates at moderate $N$.
+- **Parallel likelihood via position modulo and custom masks**: d2-AnyOrder elegantly packs $L$ conditional probabilities into one pass using a $2L$ token-mask sequence and $\text{pos} = l \bmod L$. This trick allows transformers to perform "AR step unification" without structural changes.
+- **Redefining diffu-GRPO as a $N=1$ special case**: Remark 3.4 demotes previous work to a degraded case of the proposed framework, creating a clear comparison and a "unified framework" narrative.
+- **Theorem 4.1 Logarithmic Error Bound**: The bound $D_N \leq L \log(T/N + 1) + L \epsilon_{\text{block}}$ explains the logarithmic decay of compute-bias, justifying the selection of $N=16$ as a theoretical saturation point rather than purely empirical tuning.
 
 ## Limitations & Future Work
-- **AO Estimator Requires Matching Training**: d2-AnyOrder cannot be used out-of-the-box on arbitrary MDMs; it requires AO fine-tuning first. For models not supporting AO (like original Dream), one must fall back to d2-StepMerge.
-- **Reliance on Verifiable Rewards**: Experiments are based on sparse, binary rewards (answer correctness). The stability of d2 under general reward models or dense rewards remains unexplored.
-- **No Wall-clock Comparisons**: Although FLOPs are controlled, the $N$ forward passes in d2-StepMerge have higher sequential dependency than the single forward pass in d2-AnyOrder.
-- **Future Directions**: Making $N$ in StepMerge adaptive; extending AO estimators to bidirectional decoding models; or migrating these likelihood estimators to non-GRPO post-training workflows like DPO/SimPO for dLLMs.
+- **AO estimator dependency**: d2-AnyOrder cannot be used plug-and-play with any MDM; it requires prior AO fine-tuning (Eso-LM or AO-causal LLaDA recipe). For standard pre-trained models, only d2-StepMerge is applicable.
+- **Sparse verifiable rewards**: The experiments rely on binary correctness/rule-based rewards. The stability of d2 under reward models (e.g., RLHF) or dense rewards remains unexplored.
+- **Wall-clock time vs. FLOPs**: While StepMerge controls FLOPs, its reliance on sequential passes may result in higher wall-clock latencies than the fully parallel d2-AnyOrder in production.
+- **Future Directions**: Adaptive $N$ during training; extending AO estimators to bidirectional decoding models; migrating estimators to non-GRPO post-training workflows like DPO or SimPO.
 
 ## Related Work & Insights
-- **vs d1 (diffu-GRPO, Zhao et al. 2025)**: They apply GRPO to MDMs using $N=1$ sparse likelihood. This paper shows that is a degenerate case of d2-StepMerge and improves Sudoku performance from 22.1% to 91.9% by using $N=16$.
-- **vs wd1 (Tang et al. 2026)**: wd1 rewrites policy optimization as a weighted likelihood objective to avoid ratio dependency. This paper sticks to the PPO-style ratio + clip but succeeds through accurate ratio estimation.
-- **vs DDPO (Black et al. 2024)**: DDPO is PG for continuous diffusion; its performance in prompt-free text settings is weak (-8.6 vs -0.7). This paper replaces the latent-marginal approach with discrete factorization specific to MDMs.
-- **Insight**: The key to RL for diffusion models is not which AR RL algorithm to borrow, but how to estimate likelihood correctly. This lesson likely applies to video/image diffusion RL as well.
+- **vs d1 (diffu-GRPO, Zhao et al. 2025)**: They used $N=1$ sparse likelihood. This paper proves d1 is a degraded case of d2-StepMerge and significantly improves Sudoku performance by increasing $N$ to 16.
+- **vs wd1 (Tang et al. 2026)**: wd1 rewrites the objective as weighted likelihood to avoid policy ratios. This paper maintains the PPO-style ratio + clip but achieves success through accurate estimation, proving the clip framework is viable if ratios are correct.
+- **vs DDPO (Black et al. 2024)**: DDPO is for continuous diffusion. This paper replaces the latent-marginal approach with discrete factorization specific to MDMs, which is more effective for text logic.
+- **Insight**: The key to RL for diffusion models is not which AR RL algorithm to borrow, but how to estimate likelihood correctly. This lesson likely applies to video and image diffusion RL as well.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Reframing diffusion RL as a "trajectory likelihood estimation problem" is a significant conceptual and algorithmic innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ covers multiple benchmarks and architectures, though lacks wall-clock and dense reward evaluations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Logical flow from Theorem 3.1 to the estimators is excellent.
-- Value: ⭐⭐⭐⭐⭐ Setting a new SOTA for DLM reasoning and establishing a methodological baseline that likelihood must be estimated accurately.
+- Novelty: ⭐⭐⭐⭐⭐ Reframing diffusion RL as a "trajectory likelihood estimation problem" with two non-trivial algorithmic innovations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 benchmarks, 3 architectures, and toxicity steering, though lacks wall-clock and dense reward evaluations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent flow from Theorem 3.1 to two estimators; mature narrative framing.
+- Value: ⭐⭐⭐⭐⭐ Transforming LLaDA-8B on Sudoku from 11.8% to 91.9% sets a new SOTA and methodological baseline for diffusion RL.
 
 <!-- RELATED:START -->
 

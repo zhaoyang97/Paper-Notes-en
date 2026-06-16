@@ -2,71 +2,77 @@
 title: >-
   [Paper Note] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models
 description: >-
-  [ICML2026][LLM/NLP][Diffusion Language Models] Starting from the geometric perspective that "effective reasoning trajectories are stable attractors on the learned distribution…
+  [ICML 2026][LLM (Other)][Diffusion Language Model] Starting from the geometric perspective that "effective reasoning trajectories are stable attractors on the learned distribution," this paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric. By performing a "forward re-masking + backward few-step reconstruction" on the generated
 tags:
-  - "ICML2026"
-  - "LLM/NLP"
-  - "Diffusion Language Models"
-  - "Manifold Geometry"
-  - "Bidirectional Consistency"
-  - "Reasoning Self-Verification"
-  - "Reinforcement Learning Alignment"
+  - ICML 2026
+  - LLM (Other)
+  - Diffusion Language Model
 date: 2026-05-08
-content_hash: 86213aba5295a376
+content_hash: a96232ef4051aa62
 ---
-
-<!-- Generated automatically by src/gen_stubs.py -->
 # Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models
 
 **Conference**: ICML2026  
 **arXiv**: [2604.16565](https://arxiv.org/abs/2604.16565)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: LLM Reasoning / Diffusion Language Models / Self-Verification  
 **Keywords**: Diffusion Language Models, Manifold Geometry, Bidirectional Consistency, Reasoning Self-Verification, Reinforcement Learning Alignment  
 
 ## TL;DR
-Starting from the geometric perspective that "effective reasoning trajectories are stable attractors on the learned distribution," this paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric. By performing a "forward re-masking + backward few-step reconstruction" cycle on diffusion language model (dLLM) generation results, it uses reconstruction stability for scoring. BMC simultaneously supports error diagnosis, inference-time rejection sampling, and RL dense rewards, systematically outperforming baselines like Confidence, Self-Consistency, and Self-Evaluation across four reasoning benchmarks.
+Starting from the geometric perspective that "effective reasoning trajectories are stable attractors on the learned distribution," this paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric. By performing a "forward re-masking + backward few-step reconstruction" on the generated results of a diffusion Language Model (dLLM), it scores the output based on reconstruction stability. BMC simultaneously supports error diagnosis, inference-time rejection sampling, and RL dense rewards, systematically outperforming baselines such as Confidence, Self-Consistency, and Self-Evaluation across four reasoning benchmarks.
 
 ## Background & Motivation
 
-**Background**: Diffusion Large Language Models (dLLMs), represented by LLaDA and Dream, replace the strict left-to-right generation of Auto-Regressive (AR) models with all-attention and bidirectional denoising processes. They are considered more suitable for "global planning + iterative refinement" System-2 reasoning.
+**Background**: Diffusion Large Language Models (dLLMs), represented by LLaDA and Dream, replace the strict left-to-right generation of Autoregressive (AR) models with full attention and bidirectional denoising. This is considered more suitable for "global planning + iterative refinement" System-2 reasoning.
 
-**Limitations of Prior Work**: Verifying whether a generated trajectory is actually "correct" remains an open problem. Most mainstream approaches use external signals inherited from the AR era: PRMs require expensive process-level annotation; Self-Consistency requires large sample batches and often fails collectively on difficult tasks; Self-Evaluation prompts often degenerate into random guessing across domains. These methods treat the model as a black box and completely ignore the probabilistic geometric structure of the diffusion process itself.
+**Limitations of Prior Work**: Verifying whether a generated trajectory is actually "correct" remains an open problem. Most mainstream approaches transplant external signals from the AR era: PRMs require expensive process-level annotations; Self-Consistency requires massive sampling and often fails collectively on hard problems; Self-Evaluation prompts degrade almost to random guessing across different domains. These methods treat the model as a black box and completely ignore the probabilistic geometric structure of the diffusion process itself.
 
-**Key Challenge**: The denoising process of dLLMs is **reversible and bidirectional**—theoretically, the model itself possesses information about "how stable this trajectory is," but existing verification paradigms fail to extract it. In other words, external verifiers are costly because the internal "terrain" already laid out is overlooked.
+**Key Challenge**: The denoising process of a dLLM is **reversible and bidirectional**—theoretically, the model inherently possesses information about "how stable this trajectory is," but existing verification paradigms cannot extract it. In other words, external verifiers are expensive because the internal "topography" is being ignored.
 
-**Goal**: To restore "correctness" as a measurable geometric property while satisfying: (1) No ground-truth required; (2) No additional training; (3) Computational overhead significantly lower than resampling; (4) A single signal applicable across the "diagnosis → inference → alignment" pipeline.
+**Goal**: Convert "answer correctness" into a measurable geometric property that must satisfy: (1) no ground-truth required; (2) no additional training; (3) significantly lower overhead than resampling; (4) a unified signal that spans the entire pipeline of "diagnosis → inference → alignment."
 
-**Key Insight**: The authors assume that valid solutions lie on the high-density manifold of the learned distribution and act as stable attractors of the denoising operator $\mathcal{T}_\theta$, whereas incorrect solutions deviate from the manifold. Thus, "whether it can be faithfully reconstructed after perturbation" acts as a proxy for manifold distance.
+**Key Insight**: The authors hypothesize that valid solutions lie on the high-density manifold of the learned distribution and act as stable attractors of the denoising operator $\mathcal{T}_\theta$, while incorrect solutions deviate from the manifold. Thus, "the ability to be faithfully reconstructed after perturbation" serves as a proxy for manifold distance.
 
-**Core Idea**: Quantify stability through a "forward re-masking + backward few-step reconstruction" loop—if $\hat{x}_0 \approx x_0$, it indicates $x_0$ is on the manifold and the reasoning is reliable; otherwise, off-manifold drift occurred, indicating a likely error.
+**Core Idea**: Use a "forward re-masking + backward few-step reconstruction" cycle to quantify stability—if $\hat{x}_0 \approx x_0$, it indicates $x_0$ is on the manifold and the reasoning is reliable; otherwise, off-manifold drift occurs, indicating a high probability of error.
 
 ## Method
 
 ### Overall Architecture
-The input is a complete sequence $x_0$ generated by the dLLM, and the output is its geometric stability score $S_{\text{BMC}}(x_0)$. The process involves three steps: (1) **Forward perturbation**—partially re-mask $x_0$ into $\tilde{x}_t$ according to ratio $\gamma$; (2) **Backward reconstruction**—run $K$ steps ($K{=}16 \ll T{=}1024$) of truncated denoising from $\tilde{x}_t$ using the same dLLM denoiser $p_\theta$ to obtain $\hat{x}_0$; (3) **Consistency scoring**—provide $S_{\text{BMC}}$ via a weighted sum of six similarity metrics. This score then drives three downstream tasks: error diagnosis (used directly as a score), Manifold-Guided Rejection Sampling (MGRS), and serving as a dense reward for RL.
+The method translates the question of "whether this reasoning trajectory is correct" into a measurable geometric problem. For a complete sequence $x_0$ generated by a dLLM, it first applies partial re-masking with ratio $\gamma$, then performs a $K$-step truncated reconstruction using the same denoiser to obtain $\hat{x}_0$. The composite similarity between $x_0$ and $\hat{x}_0$ serves as the geometric stability score $S_{\text{BMC}}(x_0)$. Stability implies being on the manifold and reliable reasoning; drift implies error. This same score drives three tasks without modification: error diagnosis (used directly as a score), Manifold-Guided Rejection Sampling (MGRS) during inference, and dense rewards during the RL phase. Theoretically, the authors anchor it to the ELBO: when $\mathcal{D}$ is the KL divergence, BMC is equivalent to a reweighted ELBO estimate (Prop. 3.2); when using Csiszár $f$-divergence, it aligns with the marginal ELBO (Prop. 3.3). Under continuous embedding, it is relaxed to semantic proximity via Lipschitz continuity (Prop. 3.4), providing a hard guarantee that the reconstruction residual is an upper bound on manifold distance: $\|z_0 - z^*\| \le \frac{1}{1-\kappa}\|z_0 - \mathcal{T}_\theta(z_0)\|$ (Prop. 3.5).
 
-Theoretically, the authors prove that when the difference measure $\mathcal{D}$ is the KL divergence, BMC is equivalent to an estimate of the reweighted ELBO (Prop. 3.2); it remains consistent with the marginal ELBO when using Csiszár $f$-divergence (Prop. 3.3). Under continuous embedding spaces, BMC can be relaxed to semantic neighbors through Lipschitz continuity (Prop. 3.4). Geometrically, it is shown that "reconstruction residual is an upper bound on manifold distance" (Prop. 3.5): $\|z_0 - z^*\| \le \frac{1}{1-\kappa}\|z_0 - \mathcal{T}_\theta(z_0)\|$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["dLLM Generated Sequence x0"]
+    subgraph BMC["BMC Estimator (Perturbation-Recovery Cycle)"]
+        direction TB
+        F["Forward Re-masking<br/>Bernoulli mask γ=0.9 breaks sequence"]
+        B["Backward Truncated Reconstruction<br/>Same denoiser for K=16 steps gives x̂0"]
+        S["Composite Similarity of 6 Metrics<br/>S_BMC = Σ λk·sk"]
+        F --> B --> S
+    end
+    IN --> F
+    S --> D["Error Diagnosis<br/>S_BMC as Unsupervised Score"]
+    S --> M["MGRS Rejection Sampling<br/>Stop if S>τ(0.75), else resample to Nmax=10"]
+    S --> R["Gated Geometric Alignment Reward<br/>r = 𝕀(Correct)·(r_base+αt·S_BMC), SPG Gradient Estimation"]
+```
 
 ### Key Designs
 
-1. **BMC Estimator (Forward Re-masking + Truncated Backward Reconstruction + Composite Similarity)**:
-    - **Function**: Approximates $\mathcal{R}_\mathcal{D}(x_0) := -\mathbb{E}_{t, \tilde{x}_t}[\mathcal{D}(x_0, \hat{x}_0(\tilde{x}_t))]$ via a "perturbation-recovery" loop, converting abstract manifold stability into a computable scalar score.
-    - **Mechanism**: Forward Bernoulli masking is applied as $\tilde{x}_t^{(i)} = m_i x_0^{(i)} + (1-m_i)\texttt{[MASK]}$ ($\gamma{=}0.9$); backward denoising runs only $K{=}16$ steps instead of the full $T$—this is key to efficiency. The score $S_{\text{BMC}} = \sum_k \lambda_k s_k$ is weighted by six complementary metrics: Token Accuracy $s_{\text{tok}}$ (local convergence), Semantic Similarity $s_{\text{sem}}$ (allows paraphrasing), Number Retention $s_{\text{num}}$ (key nodes in math chains), Final Answer Match $s_{\text{ans}}$ (endpoint convergence), Character Similarity, and Intrinsic Confidence.
-    - **Design Motivation**: Single metrics have blind spots—pure likelihood is too strict and misjudges paraphrasing as errors, while pure answer matching ignores reasoning chain stability. The synthesis of six metrics makes BMC closely approximate ELBO while remaining robust to semantics. "Truncated $K$ steps" is the engineering key to keeping verification overhead at a fraction of generation cost, avoiding another form of resampling.
+**1. BMC Estimator: Quantifying Manifold Stability via a "Perturbation-Recovery" Cycle**
 
-2. **Manifold-Guided Rejection Sampling (MGRS) Adaptive Inference**:
-    - **Function**: Uses BMC to upgrade "fixed-budget Best-of-N" to rejection sampling that "dynamically allocates compute based on problem difficulty."
-    - **Mechanism**: Immediately after each $x_0 \sim p_\theta(\cdot|q)$, $S = S_{\text{BMC}}(x_0)$ is calculated. If $S > \tau$ ($\tau{=}0.75$), the result is returned immediately ("stable terrain, no further sampling needed"); otherwise, sampling continues up to $N_{\max}{=}10$ times. If no candidate passes the threshold, the one with the highest historical score is returned. Simple problems stop after $\sim$2–3 samples on average, while hard problems (e.g., MATH) naturally take $\sim$5–6 samples.
-    - **Design Motivation**: Self-Consistency uses majority voting regardless of difficulty, wasting compute on easy tasks and failing collectively on hard ones. Best-of-N(Confidence) ranks by token probability, but confidence is largely unrelated to reasoning correctness. BMC provides **geometric** signals rather than statistical ones, naturally coupling budget with problem difficulty.
+The quantity to be measured is $\mathcal{R}_\mathcal{D}(x_0) := -\mathbb{E}_{t, \tilde{x}_t}[\mathcal{D}(x_0, \hat{x}_0(\tilde{x}_t))]$, representing the ability to be faithfully reconstructed after perturbation. The forward pass uses Bernoulli masking $\tilde{x}_t^{(i)} = m_i x_0^{(i)} + (1-m_i)\texttt{[MASK]}$ ($\gamma{=}0.9$) to disrupt the sequence. The backward pass performs only $K{=}16$ denoising steps instead of the full $T{=}1024$ steps. This truncation is the engineering key to keeping verification costs at a fraction of generation costs, preventing it from degrading into just another resampling step. The final score $S_{\text{BMC}} = \sum_k \lambda_k s_k$ is weighted by six complementary metrics: Token Accuracy $s_{\text{tok}}$ (local convergence), Semantic Similarity $s_{\text{sem}}$ (allowing paraphrasing), Number Retention $s_{\text{num}}$ (key math nodes), Final Answer Match $s_{\text{ans}}$ (endpoint convergence), plus Character Similarity and Intrinsic Confidence. A composite is used because pure likelihood is too strict (mislabeling paraphrasing as errors), while pure answer matching ignores the stability of the reasoning chain. These six metrics make BMC both groundable to ELBO and robust to semantics.
 
-3. **Gated Geometric Alignment Reward**:
-    - **Function**: Injects BMC into RL training to let the dLLM internalize manifold stability into its policy rather than relying solely on inference-time sampling.
-    - **Mechanism**: The reward is defined as $r(x_0) = \mathbb{I}(y_{\text{pred}} = y^*) \cdot [r_{\text{base}} + \alpha_t \cdot S_{\text{BMC}}(x_0)]$. Multiplicative gating ensures that "incorrect chains always receive 0 reward," preventing reward hacking. $\alpha_t$ linearly anneals via $\alpha_t = \alpha_{\min} + (\alpha_{\max} - \alpha_{\min}) \cdot t/T$, emphasizing answers initially and geometry later. Policy optimization utilizes Sandwiched Policy Gradient (SPG), replacing biased ELBO approximations with sandwiched evidence bounds to estimate gradients.
-    - **Design Motivation**: Standard outcome RL treats all "correct answers" as equal, which might reinforce fragile "lucky" chains. BMC turns sparse outcome rewards into dense "geometric quality" rewards. Without correctness gating, the model might drift towards being "consistent but wrong"—thus, the multiplicative gate establishes a strict hierarchy: correct first, then stable.
+**2. MGRS: Rejection Sampling that Allocates Compute Based on Task Difficulty**
+
+This upgrades fixed-budget Best-of-N to dynamic compute allocation based on difficulty. Each time $x_0 \sim p_\theta(\cdot|q)$ is sampled, $S = S_{\text{BMC}}(x_0)$ is computed immediately. If $S > \tau$ ($\tau{=}0.75$), the trajectory is returned as "geometrically stable," otherwise sampling continues up to $N_{\max}{=}10$. If all samples fail the threshold, the candidate with the highest historic score is returned. This results in simple problems stopping after $\sim$2–3 samples on average, while hard problems (e.g., MATH) naturally take $\sim$5–6 samples. In contrast, Self-Consistency's majority vote wastes compute on simple tasks and "collectively errs" on hard ones; Best-of-N (Confidence) uses token probabilities which correlate poorly with reasoning correctness. BMC provides a geometric signal rather than a statistical one, naturally coupling the budget with task difficulty.
+
+**3. Gated Geometrically Aligned Reward: Internalizing Manifold Stability into Policy**
+
+To move beyond just picking samples during inference and instead train geometric stability into the weights, BMC is injected into the RL reward: $r(x_0) = \mathbb{I}(y_{\text{pred}} = y^*) \cdot [r_{\text{base}} + \alpha_t \cdot S_{\text{BMC}}(x_0)]$. The multiplicative gating is crucial—it ensures that any chain resulting in a wrong answer receives zero reward, establishing a strict hierarchy of "correct first, then stable." Otherwise, dense geometric rewards would steer the model toward "consistent but wrong" drift (a geometric form of reward hacking). The weight $\alpha_t = \alpha_{\min} + (\alpha_{\max} - \alpha_{\min}) \cdot t/T$ is linearly annealed to prioritize answers early and geometry later. For gradient estimation, since dLLM likelihood is intractable and standard ELBO approximations are biased, the authors use Sandwiched Policy Gradient (SPG) with sandwiched evidence bounds. This turns sparse outcome rewards into dense, unbiased, and optimizable geometric quality rewards.
 
 ### Loss & Training
-BMC itself is training-free and only uses the pre-trained dLLM for inference. During the RL phase, the SPG framework is used for alignment on LLaDA-8B with hyperparameters $r_{\text{base}} = 1.5$, $\alpha \in [0.5, 1.0]$, $K{=}16$, $\gamma{=}0.9$, and $N_{\text{BMC}}{=}4$ ensemble samples. All-MiniLM-L6-v2 is used for semantic similarity.
+BMC itself is training-free and only uses the pre-trained dLLM for inference. During the RL phase, alignment is performed on LLaDA-8B using the SPG framework with hyperparameters $r_{\text{base}} = 1.5$, $\alpha \in [0.5, 1.0]$, $K{=}16$, $\gamma{=}0.9$, and $N_{\text{BMC}}{=}4$ ensemble samples. Semantic similarity uses all-MiniLM-L6-v2.
 
 ## Key Experimental Results
 
@@ -81,7 +87,7 @@ BMC itself is training-free and only uses the pre-trained dLLM for inference. Du
 | Dream-7B | Self-Consistency | 0.684 | 0.675 | 0.708 | 0.527 |
 | Dream-7B | **BMC (Ours)** | **0.898** | **0.825** | **0.804** | **0.605** |
 
-On LLaDA, BMC's advantage over SC grows from +2.1% on GSM8K to +13.9% on GPQA—the harder the task, the more the "consensus assumption" of SC fails, making geometric signals more valuable. On Dream-7B, where sampling diversity is poor, SC performs similarly to confidence, while BMC maintains a stable AUROC of 0.80+, demonstrating it is less sensitive to the base model.
+On LLaDA, BMC's advantage over SC increases from +2.1% on GSM8K to +13.9% on GPQA—the harder the task, the more the "consensus assumption" of SC fails, and the more valuable geometric signals become. On Dream-7B, where sampling diversity is poor, SC performs similarly to confidence, while BMC maintains a stable 0.80+ AUROC, showing low sensitivity to the base model.
 
 ### MGRS Inference and Alignment Results
 
@@ -98,32 +104,32 @@ On LLaDA, BMC's advantage over SC grows from +2.1% on GSM8K to +13.9% on GPQA—
 | **Geometric Align (Ours)** | **85.8** | **41.6** | **85.2** | **34.4** |
 
 ### Key Findings
-- **Geometric Meaning of $K$ and $\gamma$**: AUROC saturates at $K{=}16$ ($0.840 \to 0.873$), indicating that truncated reconstruction is sufficient to detect the local contractivity of $\mathcal{T}_\theta$. The masking rate $\gamma$ shows an inverted U-shape, peaking at $\gamma{=}0.9$ (0.889); $\gamma{=}1.0$ drops sharply to 0.712—a few "geometric anchors" must be retained to measure stability, otherwise it becomes another unconditional resampling.
-- **Multiplicative Gating is Indispensable**: If $r$ is changed to an additive form, the model is misled by "consistent but wrong" chains—this geometric reward hacking serves as a negative example for outcome-only RL.
-- **Compute Adaptivity**: MGRS samples only $\sim$2.2–3.3 times on average for GSM8K, but naturally increases to $\sim$5.4–5.8 times for MATH. Geometric signals allow budget to align with difficulty, whereas Best-of-N(Conf) even shows **negative Sample Efficiency** on MATH.
+- **Geometric Meaning of $K$ and $\gamma$**: AUROC saturates at $K{=}16$ ($0.840 \to 0.873$), indicating truncated reconstruction is sufficient to detect local contractivity of $\mathcal{T}_\theta$. The masking rate follows an inverted U-shape, peaking at $\gamma{=}0.9$ (0.889); at $\gamma{=}1.0$, it plummets to 0.712, showing that some "geometric anchors" must be retained to measure stability, otherwise it degrades into unconditional resampling.
+- **Multiplicative Gating is Indispensable**: If $r$ is changed to an additive form, the model is led astray by "self-consistent but wrong" chains, exemplifying geometric reward hacking.
+- **Compute Adaptivity**: MGRS averages $\sim$2.2–3.3 samples on GSM8K and naturally increases to $\sim$5.4–5.8 on MATH. Geometric signals align the budget with difficulty, whereas Best-of-N(Conf) shows **negative sample efficiency** on MATH.
 
 ## Highlights & Insights
-- **"Reconstruction Stability = Manifold Distance" is a Clean Bridge**: Translating the verification problem into a geometric contractivity problem provides both the hard upper bound of Prop. 3.5 and a lightweight engineering cycle of $K{=}16$ steps, achieving a rare balance between theory and usability.
-- **Single Signal Across Three Tasks**: Diagnosis, inference-time sampling, and RL dense rewards all share the same BMC, avoiding a toolbox of fragmented items like "PRM for diagnosis, SC for inference, outcome for alignment." This "one-size-fits-all" is the dividend of mining the intrinsic probabilistic structure.
-- **Transferable to any Masked Denoising Model**: As long as there is a "masking-denoising" bidirectional process, BMC can be directly applied—tasks like vision or protein discrete diffusion could immediately reuse this same geometric stability criterion.
+- **"Reconstruction Stability = Manifold Distance" is a Clean Bridge**: Translating verification into a geometric contraction problem provides both a hard upper bound in Prop. 3.5 and a lightweight $K{=}16$ cycle for engineering, achieving a rare balance between theory and usability.
+- **Unified Signal Across Three Tasks**: Diagnosis, inference-time sampling, and RL dense rewards share the same BMC, avoiding the fragmentation of using PRM for diagnosis, SC for inference, and outcome rewards for alignment. This "one-signal-multiple-uses" approach leverages the model's intrinsic probabilistic structure.
+- **Transferable to Any Masked Denoising Model**: As long as there is a "masking-denoising" bidirectional process, BMC can be directly applied—tasks like vision or protein generation using discrete diffusion can reuse this same geometric stability criterion.
 
 ## Limitations & Future Work
-- BMC assumes the dLLM has already learned "Correct Answer = High-Density Manifold." For undertrained or severely misaligned base models, the attractor structure itself may not hold, leading to distorted geometric signals.
-- The six weights $\lambda_k$ of the composite score $S_{\text{BMC}}$ are mostly set manually in the paper without systematic discussion of adaptive weighting; these weights likely need adjustment when transferring across domains (e.g., code, medical).
-- Experiments were primarily on LLaDA-8B and Dream-7B; the scale has not reached the 70B level. When the base model is already nearly perfect (as on ARC-C for Dream), BMC's improvement margin narrows, and scaling behavior requires larger-scale verification.
-- Geometric stability $\neq$ factual correctness: BMC can reject "drifting trajectories" but remains powerless against "on-manifold but factually incorrect" hallucinations (e.g., common sense errors with unified narratives).
+- BMC assumes the dLLM has already learned "correct answer = high-density manifold." For under-trained or severely misaligned models, the attractor structure might not hold, causing the geometric signal to distort.
+- The six weights $\lambda_k$ for the composite score $S_{\text{BMC}}$ are mostly manually set; there is no systematic discussion of adaptive weighting, which might be necessary when migrating to other domains (e.g., code, medical).
+- Experiments are primarily on LLaDA-8B and Dream-7B; the scale has not reached the 70B level. When the base model is already nearly perfect (as with Dream on ARC-C), the gain from BMC narrows, requiring larger-scale validation of scaling behavior.
+- Geometric stability $\neq$ factual correctness: BMC can reject "drifting trajectories," but it remains powerless against hallucinations that are "on the manifold but factually wrong" (e.g., consistent common-sense errors).
 
 ## Related Work & Insights
-- **vs PRM / Generative Verifier**: These rely on external labeling or additional judging models, while BMC is a complete white-box utilization of the dLLM's own denoising operator. The advantage is zero annotation and no extra models; the disadvantage is it only applies to architectures with bidirectional processes like masked diffusion.
-- **vs Self-Consistency**: SC is statistical consensus, while BMC is geometric stability. SC "fails collectively" on hard problems; BMC is more robust in sparse correct mass scenarios since it examines the stability of single trajectories.
-- **vs RemeDi / CDLM**: RemeDi uses dual-stream re-masking of low-confidence tokens and CDLM trains specialized error-correction heads, both being "regeneration-oriented." BMC **explicitly formalizes** the same bidirectional dynamics into a verification criterion that can be used for diagnosis and alignment without changing training objectives.
-- **vs TraceRL / diffu-GRPO**: While they implicitly optimize trajectory likelihood approximations, BMC provides explicit dense geometric signals and cooperates with SPG using sandwiched bounds to solve the problem of intractable likelihood gradient estimation in dLLMs. Geometrically dense rewards and unbiased gradient estimation form a complementary pair.
+- **vs PRM / Generative Verifier**: These rely on external annotations or judge models. BMC is white-box, utilizing the dLLM's own denoising operator. The advantage is zero-annotation and zero-extra-model; the disadvantage is its restriction to bidirectional architectures like masked diffusion.
+- **vs Self-Consistency**: SC relies on statistical consensus; BMC relies on geometric stability. SC "errs collectively" on hard tasks, while BMC is more robust in sparse correct mass scenarios since it examines single-trajectory stability.
+- **vs RemeDi / CDLM**: RemeDi uses dual-stream re-masking of low-confidence tokens, and CDLM trains specialized error-correction heads—both are focused on re-generation. BMC explicitly formalizes this same bidirectional dynamics into a verification criterion that does not require changing training objectives.
+- **vs TraceRL / diffu-GRPO**: These implicitly optimize trajectory likelihood approximations. BMC provides an explicit dense geometric signal and, paired with SPG using sandwiched bounds, resolves the gradient estimation problem for dLLMs with intractable likelihoods.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to formalize dLLM bidirectional dynamics as a "manifold stability" verification criterion, bridging diagnosis, inference, and alignment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers two dLLM suites × four reasoning benchmarks × three downstream tasks, accompanied by $K$/$\gamma$ sensitivity and component ablation; lacks larger-scale and cross-domain (code/medical) verification.
-- Writing Quality: ⭐⭐⭐⭐⭐ Progresses clearly from geometric intuition to four propositions and algorithm pseudocode, with strong theoretical-methodological flow.
-- Value: ⭐⭐⭐⭐⭐ Provides a "training-free + multi-purpose" intrinsic verification baseline for the dLLM paradigm, serving as a directly usable tool for inference-time scaling and RL post-training of diffusion language models.
+- Novelty: ⭐⭐⭐⭐⭐ First to formalize dLLM bidirectional dynamics as a "manifold stability" verification criterion, bridging diagnosis/inference/alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers two dLLMs across four reasoning benchmarks and three downstream tasks, including $K$/$\gamma$ sensitivities and ablation; lacks larger-scale and cross-domain validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Progresses clearly from geometric intuition to four propositions and algorithmic pseudocode, with clear theoretical-methodological coupling.
+- Value: ⭐⭐⭐⭐⭐ Provides a "training-free + multi-use" intrinsic verification baseline for the dLLM paradigm, serving as a ready-to-use tool for inference-time scaling and RL post-training.
 
 <!-- RELATED:START -->
 
@@ -131,11 +137,11 @@ On LLaDA, BMC's advantage over SC grows from +2.1% on GSM8K to +13.9% on GPQA—
 
 ## Related Papers
 
+- [\[ACL 2025\] Self-Training Elicits Concise Reasoning in Large Language Models](../../ACL2025/llm_nlp/self-training_elicits_concise_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 - [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_nlp/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](../../ICLR2026/llm_nlp/dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
 
 </div>
 

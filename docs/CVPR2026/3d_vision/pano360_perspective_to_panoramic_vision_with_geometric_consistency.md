@@ -2,132 +2,149 @@
 title: >-
   [Paper Note] Pano360: Perspective to Panoramic Vision with Geometric Consistency
 description: >-
-  [CVPR2026][3D Vision][panorama stitching] Pano360 extends panoramic image stitching from conventional 2D pairwise matching to the 3D photogrammetric space…
+  [CVPR 2026][3D Vision][panorama stitching] Pano360 is proposed to extend panoramic stitching from traditional 2D pairwise matching to a 3D photogrammetric space. By utilizing a Transformer architecture to achieve global geometric consistency alignment across multiple views, it reaches a 97.8% success rate in challenging scenarios such as weak textures, large pa
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "panorama stitching"
-  - "3D geometric consistency"
-  - "transformer"
-  - "multi-view alignment"
-  - "seam detection"
+  - CVPR 2026
+  - 3D Vision
+  - panorama stitching
+  - 3D geometric consistency
+  - transformer
+  - multi-view alignment
+  - seam detection
 date: 2026-05-08
-content_hash: b68937ba4c594fef
+content_hash: 3e02871156a61f4a
 ---
-
 # Pano360: Perspective to Panoramic Vision with Geometric Consistency
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.12013](https://arxiv.org/abs/2603.12013)  
 **Code**: [KiMomota/Pano360](https://github.com/KiMomota/Pano360)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: panorama stitching, 3D geometric consistency, transformer, multi-view alignment, seam detection
 
 ## TL;DR
 
-Pano360 extends panoramic image stitching from conventional 2D pairwise matching to the 3D photogrammetric space, leveraging a Transformer architecture to achieve globally geometrically consistent multi-view alignment. It attains a 97.8% success rate under challenging scenarios including weak texture, large parallax, and repetitive patterns.
+Pano360 is proposed to extend panoramic stitching from traditional 2D pairwise matching to a 3D photogrammetric space. By utilizing a Transformer architecture to achieve global geometric consistency alignment across multiple views, it reaches a 97.8% success rate in challenging scenarios such as weak textures, large parallax, and repetitive patterns.
 
 ## Background & Motivation
 
-Panoramic image stitching is in high demand for downstream tasks such as autonomous driving, VR, and 3D Gaussian Splatting. Existing methods suffer from the following core issues:
+Panoramic image stitching is widely required in downstream tasks like autonomous driving, VR, and 3D Gaussian Splatting. Existing methods face several core issues:
 
-**Error accumulation in pairwise matching**: Both traditional pipelines (SIFT/ORB/LoFTR + RANSAC) and learning-based methods (UDIS/UDIS2) are confined to establishing 2D feature correspondences pairwise. When stitching multiple images, projection errors accumulate progressively, causing severe distortion.
+**Error accumulation in pairwise matching**: Both traditional methods (SIFT/ORB/LoFTR + RANSAC) and learning-based methods (UDIS/UDIS2) are limited to establishing 2D feature correspondences pair-by-pair. During multi-image stitching, projection errors accumulate progressively, leading to severe distortion.
 
-**Feature matching failure under challenging conditions**: In scenes with weak texture, large parallax, or repetitive patterns, reliable feature matches are scarce, making homography estimation prone to failure.
+**Feature matching failure in challenging scenes**: Reliable feature matches are scarce in scenes with weak textures, large parallax, or repetitive patterns, causing homography estimation to fail easily.
 
-**Neglect of 3D projection geometry**: Existing methods pursue visual seamlessness while ignoring global 3D projection consistency, leading to geometric distortion.
+**Ignoring 3D projective geometry**: Existing methods focus on visual seamlessness but ignore global 3D projective consistency, resulting in geometric distortion.
 
-**High cost of post-processing**: CNN-based methods (e.g., UDIS2) require complex post-processing to complete multi-image alignment, limiting practical utility.
+**High post-processing costs**: CNN-based methods (e.g., UDIS2) require complex post-processing to complete multi-image alignment, limiting practical utility.
 
-**Core Insight**: Multi-view geometric correspondences can be constructed directly in 3D space, yielding greater accuracy and global consistency than 2D correspondences. The authors therefore lift the 2D alignment task into the 3D photogrammetric space, fundamentally addressing error accumulation.
+**Key Insight**: Multi-view geometric correspondences can be directly constructed in 3D space, which is more accurate and globally consistent than 2D correspondences. Therefore, the authors extend the 2D alignment task to a 3D photogrammetric space to fundamentally solve the error accumulation problem.
 
 ## Method
 
 ### Overall Architecture
 
-Pano360 adopts a dual-branch Transformer architecture. Given $N$ partially overlapping input images, it jointly predicts all stitching parameters in a single forward pass:
+Pano360 adopts a dual-branch Transformer architecture. Given $N$ partially overlapping images, a single forward pass jointly predicts all parameters required for stitching:
 
 $$f(\{I_i\}_{i=1}^N) = \{P_i, W_i, M_i\}_{i=1}^N$$
 
-where $P_i$ denotes the global projection transformation, $W_i$ the local deformation field (handling parallax), and $M_i$ the seam mask. The complete pixel mapping is:
+Where $P_i$ is the global projection transformation, $W_i$ is the local deformation field (handling parallax), and $M_i$ is the seam mask. The complete pixel transformation is:
 
 $$\mathcal{W}_i(\mathbf{u}) = P_i(\mathbf{u}) + W_i(\mathbf{u})$$
 
-Pipeline: (a) project perspective images into a unified panoramic coordinate system using camera parameters → (b) extract overlapping regions → (c) seam decoder generates per-image seam masks → (d) blend aligned images using masks to produce the final panorama.
+Framework pipeline: (a) Project perspective images to a unified panoramic coordinate system using camera parameters → (b) Extract overlapping regions → (c) Seam decoder generates seam masks for each image → (d) Blend to generate the final panorama using masks and aligned images.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input N overlapping perspective images"] --> BK
+    subgraph BK["Feature Backbone"]
+        direction TB
+        B["DINO encoder patchification<br/>Concatenate learnable camera tokens"] --> C["VGGT alternating attention<br/>(global + frame, frozen weights)"]
+    end
+    BK --> D["camera token<br/>(contains 3D geometric correspondence)"]
+    BK --> E["feature token<br/>(preserves detail)"]
+    D --> F["Projection Head<br/>Decode K/R/t + adaptive projection + local mesh warp"]
+    E --> G["Seam Head<br/>Multi-feature energy minimization → seam mask M"]
+    F --> H["Align and project to unified panoramic coordinates"]
+    H --> I["Blending according to seam masks"]
+    G --> I
+    I --> J["360° Panorama"]
+```
 
 ### Key Designs
 
 **1. Feature Backbone**
 
-- Each image is first tokenized via a pretrained DINO encoder.
-- Learnable camera tokens are prepended to all image embedding sequences to capture cross-image global geometric relationships.
-- $L$ layers of alternating attention (global attention + frame attention) from pretrained VGGT process the concatenated sequence.
-- Two outputs are produced: camera tokens (encoding 3D geometric correspondences, fed to the projection head) and feature tokens (retaining local detail, fed to the seam head).
+- Each image is patchified via a pre-trained DINO encoder.
+- Learnable camera tokens are prepended to the embedding sequence of all images to learn global geometric relationships across images.
+- An $L$-layer alternating attention mechanism (global attention + frame attention) from a pre-trained VGGT is used to process the sequence.
+- Two outputs: camera tokens (sent to the projection head for 3D geometry information) and feature tokens (sent to the seam head to preserve details).
 
 **2. Projection Head**
 
-- Decodes per-image intrinsics $\mathbf{K}_i$ and extrinsics $\{\mathbf{R}_i, \mathbf{t}_i\}$ from predicted camera tokens.
-- Assumes a shared focal length across cameras with principal points at image centers; the first image is fixed as the reference frame ($\mathbf{R}_1=\mathbf{I}, \mathbf{t}_1=\mathbf{0}$).
-- Supports adaptive selection of projection format: planar, equirectangular, spherical, etc.
-- For large-parallax scenes, an additional local mesh warp $W_i$ is computed to correct residual misalignment.
+- Decodes intrinsics $\mathbf{K}_i$ and extrinsics $\{\mathbf{R}_i, \mathbf{t}_i\}$ for each image from the predicted camera tokens.
+- Assumes all cameras share the same focal length with the principal point at the image center; the first image is fixed as the reference frame ($\mathbf{R}_1=\mathbf{I}, \mathbf{t}_1=\mathbf{0}$).
+- Supports adaptive selection of projection formats: rectilinear, equirectangular, spherical, etc.
+- For large parallax scenes, an additional local mesh warp $W_i$ is calculated to correct residual misalignments.
 
-**3. Seam Head — Multi-Feature Joint Optimization**
+**3. Seam Head — Multi-feature Joint Optimization**
 
-Seam detection is formulated as an energy minimization problem:
+The core is modeling seam detection as an energy minimization problem:
 
 $$E(\mathcal{I}) = E_l(\mathcal{I}) + E_c(\mathcal{I})$$
 
-- $E_l$: label cost — hard constraint ensuring each pixel originates from a valid image region.
-- $E_c$: continuity cost — penalizes adjacent pixels with different labels, encouraging seams to be continuous and inconspicuous.
+- $E_l$: Label cost, a hard constraint ensuring pixels only come from valid image regions.
+- $E_c$: Continuity cost, penalizing different labels for adjacent pixels to encourage continuous and inconspicuous seams.
 
-The pixel-level cost function fuses three types of information:
+The pixel-level cost function integrates three types of information:
 
 $$C(p) = F_{color}(p) + F_{gradient}(p) \times F_{ratio}(p)$$
 
-| Cost Term | Definition | Role |
-|-----------|-----------|------|
+| Cost Term | Definition | Function |
+|-----------|------------|----------|
 | $F_{color}$ | Color difference between overlapping images $\|I_i(p) - I_j(p)\|$ | Guides seams away from color discontinuities |
 | $F_{gradient}$ | Gradient magnitude $|\nabla I_i(p)| + |\nabla I_j(p)|$ | Guides seams away from sharp object edges |
-| $F_{ratio}$ | Texture complexity map | Heavily penalizes visually complex regions (with parallax/depth variation), steering seams toward uniform areas |
+| $F_{ratio}$ | Texture complexity map | Penalizes visually complex areas (with parallax/depth changes) to guide seams to uniform regions |
 
-Key advantage: **all overlapping images** are considered simultaneously when computing color differences and gradients, avoiding the local optima inherent in pairwise computation. The resulting seam masks serve as pseudo-labels for supervising the seam decoder.
+Novelty: **Simultaneously considers color differences and gradients of all overlapping images**, avoiding local optima associated with pairwise calculations. The calculated seam mask serves as a pseudo-label to supervise seam decoder training.
 
 ### Loss & Training
 
-The multi-task loss comprises three terms:
+The multi-task loss consists of three components:
 
-| Loss | Formula | Description |
-|------|---------|-------------|
+| Loss Term | Formula | Description |
+|-----------|---------|-------------|
 | $\mathcal{L}_{cam}$ | $\sum_{i=1}^N \|\hat{\mathbf{g}}_i - \mathbf{g}_i\|_\epsilon$ (Huber loss) | Supervises camera parameter prediction |
 | $\mathcal{L}_{seam}$ | $\sum_{i=1}^N \|\hat{M}_i - M_i\|$ (L1 loss) | Supervises seam mask prediction |
-| $\mathcal{L}_{proj}$ | Predefined projection format loss | Adapts the network to different projection formats; enabled from the start of training to ensure gradient continuity |
+| $\mathcal{L}_{proj}$ | Predefined projection format loss | Adapts the network to different projection formats with continuous gradients |
 
 Training details:
-- VGGT alternating attention weights are initialized from pretrained checkpoints and **frozen**.
+- VGGT alternating attention module weights are initialized from pre-trained models and **frozen**.
 - Uncertainty terms are removed to accelerate convergence.
-- Data normalization: all quantities are expressed in the first-frame coordinate system, ensuring permutation invariance of inputs.
-- Data augmentation: random rotational jitter of up to 2° is applied to yaw/pitch/roll.
+- Data normalization: All quantities are represented in the first frame's coordinate system to ensure input permutation invariance.
+- Data augmentation: Random rotation jitter of up to 2° for yaw/pitch/roll.
 
-**Pano360 Dataset**: 200 real-world scenes (50% tourism, 30% extreme sports, 20% extreme lighting), each with 3 focal lengths × 24 frames = 72 images (2048×2048), totaling 14,400 frames with annotated ground-truth camera parameters and full 360° FoV coverage.
+**Pano360 Dataset**: 200 real-world scenes (50% tourism, 30% extreme sports, 20% extreme lighting), with 3 focal lengths × 24 frames = 72 images per scene (2048×2048), totaling 14,400 frames with GT camera parameters covering a full 360° FoV.
 
 ## Key Experimental Results
 
-### Main Results: Panorama Quality Comparison on Pano360 Dataset
+### Main Results: Panoramic Quality Comparison on Pano360 Dataset
 
-| Method | QA_q ↑ | QA_a ↑ | BRIS ↓ | NIQE ↓ | Notes |
-|--------|--------|--------|--------|--------|-------|
-| AutoStitch | 3.28 | 2.81 | 49.84 | 5.01 | Traditional features |
-| APAP | 3.53 | 3.66 | 45.66 | 3.77 | Traditional features |
-| GES-GSP | 3.74 | 3.72 | 44.22 | 3.95 | Traditional features |
+| Method | QA_q ↑ | QA_a ↑ | BRIS ↓ | NIQE ↓ | Remarks |
+|--------|--------|--------|--------|--------|---------|
+| AutoStitch | 3.28 | 2.81 | 49.84 | 5.01 | Trad. Features |
+| APAP | 3.53 | 3.66 | 45.66 | 3.77 | Trad. Features |
+| GES-GSP | 3.74 | 3.72 | 44.22 | 3.95 | Trad. Features |
 | UDIS2‡ | 2.87 | 2.34 | 58.62 | 4.91 | Pairwise only |
 | **Pano360 (Ours)** | **4.09** | **3.94** | **37.96** | **3.37** | — |
 
-(Results shown for Scene (c), which includes repetitive textures, abnormal lighting, and large FoV challenges.)
+(Using Scene (c) as an example, which includes challenging repetitive textures, abnormal lighting, and large FoV)
 
 ### Success Rate and Speed Comparison
 
-| Method | Requires Geometric Features | Success Rate (%) | Runtime |
-|--------|-----------------------------|-----------------|---------|
+| Method | Geometry Feature Dependent | Success Rate (%) | Runtime |
+|--------|----------------------------|------------------|---------|
 | LoFTR+RANSAC | ✓ | 63.4 | ~13s |
 | LightGlue+RANSAC | ✓ | 66.7 | ~11s |
 | ELA | ✓ | 80.1 | ~90s |
@@ -143,7 +160,7 @@ Training details:
 | DHS‡ | 25.88 | 0.845 | 45.73 | 6.18 |
 | **Pano360 (Ours)** | **25.97** | **0.852** | **42.12** | **5.78** |
 
-(Pano360 was not trained on UDIS-D; it still outperforms methods specifically fine-tuned for pairwise scenarios when generalized to that setting.)
+(Pano360 was not trained on UDIS-D; it outperforms specialized fine-tuned methods when generalizing to pairwise scenarios)
 
 ### Ablation Study
 
@@ -156,44 +173,44 @@ Training details:
 | ✓ | ✓ | ✓ | **4.09** | **37.96** | **3.37** |
 
 **Key Findings**:
-- Pose-guided alignment ($\mathcal{L}_{cam}$) contributes the most, raising QA_q from 2.76 to 3.45.
-- The projection function further eliminates non-perspective distortion, reducing BRIS by approximately 4 points.
-- The combination of all three terms is optimal; seam optimization alone without alignment yields limited benefit, as precise alignment is a prerequisite for high-quality seams.
-- In seam ablations: removing the color term causes noticeable color artifacts; removing the texture map causes ghosting (seams passing through foreground subjects); the traditional graph-cut approach produces the most severe structural distortion.
+- Pose-guided alignment ($\mathcal{L}_{cam}$) contributes the most, with QA_q increasing from 2.76 to 3.45.
+- The projection function further eliminates non-perspective distortions, reducing BRIS by ~4 points.
+- Joint optimization of all three is optimal. Seams without alignment yield limited results (precise alignment is a prerequisite for good seams).
+- Seam ablation: removing color terms leads to visible chromatic aberration; removing texture maps leads to ghosting (seams passing through people).
 
 ## Highlights & Insights
 
-1. **Paradigm shift**: Transitioning from 2D pairwise matching to 3D global alignment represents a significant advance in panoramic stitching, directly filtering unreliable matches via multi-view geometric consistency in 3D space.
-2. **Elegant architectural reuse**: The pretrained VGGT alternating attention module — inherently 3D-aware — is frozen and repurposed, achieving powerful cross-view feature aggregation at minimal training cost.
-3. **Scalability**: The method supports inputs ranging from a few to hundreds of images and is more than 10× faster than pairwise methods at large scale.
-4. **Multi-feature joint seam optimization**: Simultaneously incorporating color, gradient, and texture information from all overlapping images avoids the local optima of pairwise computation.
-5. **High-quality dataset**: 14,400 frames of real-world scenes covering extreme motion and nighttime conditions fill a significant data gap in the field.
+1. **Paradigm shift**: Moving from 2D pairwise matching to 3D global alignment is a major breakthrough in panoramic stitching, utilizing multi-view geometric consistency in 3D space to filter unreliable matches.
+2. **Clever architecture reuse**: Utilizing the alternating attention modules of pre-trained VGGT (inherently 3D-aware) with frozen weights achieves powerful cross-view feature aggregation at a low training cost.
+3. **Scalability**: Supports input from a few to hundreds of images, running over 10x faster than pairwise methods in large-scale scenes.
+4. **Multi-feature joint seam optimization**: Simultaneously considers color, gradient, and texture of all overlapping images, avoiding local optima found in pairwise calculations.
+5. **High-quality dataset**: 14,400 frames of real-world data covering challenging conditions like extreme motion and night scenes, filling a gap in the field's data availability.
 
 ## Limitations & Future Work
 
-1. **No support for distorted inputs**: The model assumes distortion-free input images, precluding direct application to fisheye lenses and other camera types.
-2. **Limitations under extreme parallax**: When the same object is captured from drastically different viewpoints, full 3D reconstruction is still required for correct stitching; image-level warping alone is insufficient.
-3. **Trade-off of freezing VGGT**: Although freezing the pretrained attention module reduces training cost, it may limit further task-specific adaptation for panoramic stitching.
-4. Promising future directions: (a) integrating depth estimation modules to handle more complex parallax; (b) extension to video panorama stitching and real-time scenarios; (c) support for heterogeneous lens configurations (mixed fisheye and perspective inputs).
+1. **Lack of distortion support**: The current model assumes input images have no inherent distortion (e.g., fisheye), limiting applicability to more camera types.
+2. **Limitations with extreme parallax**: When objects are captured from very different angles, 3D reconstruction is still required for correct stitching; image-level warps are insufficient.
+3. **VGGT frozen weights trade-off**: While freezing attention modules reduces training costs, it may limit further adaptation to the panoramic stitching task.
+4. Future directions: (a) Introduce depth estimation for complex parallax; (b) Extend to video panoramic stitching/real-time scenes; (c) Support heterogeneous lenses (mixed fisheye+perspective input).
 
 ## Related Work & Insights
 
-- **VGGT** [Wang et al.]: Provides 3D-aware Transformer features, adopted as the backbone foundation in this work.
-- **UDIS/UDIS2** [Nie et al.]: Representative CNN-based learning methods, limited to pairwise stitching.
-- **GES-GSP** [Du et al.]: A geometry-structure-preserving traditional method that still fails under repetitive textures.
-- **LoFTR/LightGlue**: Modern feature matching methods; combined with RANSAC, their success rates remain only 60–67%.
-- Key takeaway: **The strategy of lifting 2D problems into 3D space is broadly applicable to other geometric vision tasks**, such as image registration and optical flow estimation.
+- **VGGT** [Wang et al.]: Provides 3D-aware Transformer features, used as the foundation for the backbone.
+- **UDIS/UDIS2** [Nie et al.]: Representative CNN learning methods, though limited to pairwise stitching.
+- **GES-GSP** [Du et al.]: Traditional geometry-preserving method, which still fails under repetitive textures.
+- **LoFTR/LightGlue**: Modern feature matching methods used with RANSAC, but with success rates of only 60-67%.
+- Insight: **The approach of elevating 2D tasks to 3D space is worth emulating in other geometric vision tasks**, such as registration and optical flow estimation.
 
 ## Rating
 
-| Dimension | Score (1–10) | Comments |
-|-----------|:------------:|---------|
-| Novelty | 8 | The 2D→3D paradigm shift is original; the architectural reuse of VGGT is elegant |
-| Technical Depth | 8 | Projection head + seam head + multi-task loss form a complete design with clear theoretical derivation |
-| Experimental Thoroughness | 8 | Multi-dataset validation, comprehensive ablation, generalization experiments, and qualitative comparisons |
-| Practical Value | 8 | 97.8% success rate and ~5s runtime make it applicable at large scale |
-| Writing Quality | 7 | Generally clear; some formula typesetting is slightly dense |
-| **Overall** | **8.0** | Solid contribution to panoramic stitching: paradigm innovation backed by strong experiments |
+| Dimension | Score (1-10) | Description |
+|-----------|:------------:|-------------|
+| Novelty | 8 | The 2D→3D paradigm shift is novel; architecture cleverly reuses VGGT |
+| Technical Depth | 8 | Projection head, seam head, and multi-task loss designs are complete |
+| Experimental Thoroughness | 8 | Multi-dataset validation, extensive ablation, generalization, and qualitative comparison |
+| Value | 8 | 97.8% success rate and 5s runtime; suitable for large-scale scenes |
+| Writing Quality | 7 | Clear overall, though some formula layouts are slightly crowded |
+| **Total Score** | **8.0** | Solid work in panoramic stitching with paradigm innovation and strong experiments |
 
 <!-- RELATED:START -->
 
@@ -201,11 +218,11 @@ Training details:
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
-- [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[ICLR 2026\] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra](../../ICLR2026/3d_vision/giq_benchmarking_3d_geometric_reasoning_of_vision_foundation_models_with_simulat.md)
-- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
-- [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](../../ICCV2025/3d_vision/perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
+- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
+- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
+- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
+- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
+- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
 
 </div>
 

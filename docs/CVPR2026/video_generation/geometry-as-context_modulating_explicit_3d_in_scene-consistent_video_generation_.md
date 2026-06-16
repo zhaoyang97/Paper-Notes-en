@@ -2,70 +2,79 @@
 title: >-
   [Paper Note] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 description: >-
-  [CVPR 2026][Video Generation][scene-consistent video generation] This paper proposes the Geometry-as-Context (GaC) framework, which replaces the non-differentiable operators (3D reconstruction + rendering) in reconstruct…
+  [CVPR 2026][Video Generation][Paper Note] The Geometry-as-Context (GaC) framework is proposed to replace non-differentiable operators (3D reconstruction and rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometry information (depth maps) as interleaved contexts within the generative
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "scene-consistent video generation"
-  - "geometry context"
-  - "autoregressive generation"
-  - "camera control"
-  - "3D reconstruction"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 81a0d4ec9beedf8d
+content_hash: b7922165a7350aed
 ---
-
 # Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.21929](https://arxiv.org/abs/2602.21929)  
 **Code**: None  
-**Area**: Video Generation
-**Keywords**: scene-consistent video generation, geometry context, autoregressive generation, camera control, 3D reconstruction
+**Area**: Video Generation  
+**Keywords**: Scene-consistent Video Generation, Geometry Context, Autoregressive Generation, Camera Control, 3D Reconstruction
 
 ## TL;DR
 
-This paper proposes the Geometry-as-Context (GaC) framework, which replaces the non-differentiable operators (3D reconstruction + rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometric information (depth maps) as interleaved context into the generation sequence, GaC enables end-to-end training and mitigates accumulated errors.
+The Geometry-as-Context (GaC) framework is proposed to replace non-differentiable operators (3D reconstruction and rendering) in reconstruction-based scene video generation with a unified autoregressive video generation model. By embedding geometry information (depth maps) as interleaved contexts within the generative sequence, the method achieves end-to-end training and mitigates accumulated errors.
 
 ## Background & Motivation
 
-Scene-consistent video generation aims to explore 3D scenes along camera trajectories while maintaining high 3D consistency. Existing methods fall into two categories:
-- **Video-based methods** (CameraCtrl, VMem, etc.): rely solely on video models to maintain consistency; memory retrieval struggles with complex scenes and large camera motions.
-- **Reconstruction-based methods** (SceneScape, ViewCrafter, GEN3C, etc.): iteratively execute "geometry estimation → 3D reconstruction → rendering → inpainting," but suffer from two fundamental issues:
-  1. **Non-differentiable operators**: back-projection and rendering operations in inverse rendering are non-differentiable, blocking gradient propagation.
-  2. **Non-end-to-end training**: geometry prediction and image inpainting rely on separate models, so accumulated errors cannot be mitigated through learning.
+Scene-consistent video generation aims to explore 3D scenes along camera trajectories while maintaining high 3D consistency. Existing methods are categorized into two types:
+- **Video Methods** (CameraCtrl, VMem, etc.): Rely solely on video models for consistency; however, memory retrieval struggles with complex scenes and large camera movements.
+- **Reconstruction Methods** (SceneScape, ViewCrafter, GEN3C, etc.): Iteratively execute "geometry estimation → 3D reconstruction → rendering → completion," but suffer from two fundamental issues:
+  1. **Non-differentiable Operators**: Back-projection and rendering operations in inverse rendering are non-differentiable, preventing gradient propagation.
+  2. **Non-end-to-end Training**: Geometry prediction and image completion use independent models, meaning accumulated errors cannot be mitigated through learning.
 
-Unlike accumulated errors in long-range video generation that can be alleviated via autoregressive training, accumulated errors in reconstruction-based methods are difficult to eliminate due to non-differentiable operations and model separation. This constitutes the core problem addressed in this paper.
+Unlike long-range video generation where accumulated errors can be relieved through autoregressive training, the errors in reconstruction methods are difficult to eliminate due to non-differentiable operations and model separation. This is the core problem addressed in this work.
 
 ## Method
 
 ### Overall Architecture
 
-GaC "flattens" the iterative pipeline of reconstruction-based methods into a single autoregressive video generation framework: a unified DiT model handles geometry estimation, viewpoint transformation simulation, and image inpainting simultaneously. The input sequence interleaves RGB frames and geometry frames: $\{I_i, \text{<Geometry>}, G_i, \text{<Image>}, I_{i+1}, \cdots\}$, where text tokens instruct the model whether to generate geometry or RGB next.
+GaC "flattens" the iterative process of reconstruction methods into an autoregressive video generation framework: a single DiT model simultaneously handles geometry estimation, view transition simulation, and image completion. The input sequence interleaves RGB frames and geometry frames $\{I_i, \text{<Geometry>}, G_i, \text{<Image>}, I_{i+1}, \cdots\}$. Inserted text tokens instruct the model whether the next step is to output geometry or RGB. Thus, "estimating geometry," "changing perspective," and "completing images" are unified end-to-end by a single DiT on a single sequence.
+
+```mermaid
+graph TD
+    A["Context RGB frames + Target camera pose P"] --> B["Geometry as Context<br/>RGB and geometry frames interleaved into one sequence<br/>Text tokens schedule geometry or RGB output"]
+    B --> C["Unified Autoregressive DiT (Bagel-7B)"]
+    C --> D["Camera Gated Attention<br/>Pose into query residual + Gated modulation<br/>Differentiate geometry estimation vs. view synthesis"]
+    D --> E["Autoregressive Generation<br/>Estimate current frame geometry Gᵢ → Condition on Gᵢ + Pose Pᵢ₊₁ for next frame Iᵢ₊₁"]
+    E -->|Geometry Dropout| F["Degrades to Img-to-Img<br/>Sequence shortened ~2× speedup"]
+    E --> G["Scene-consistent Video<br/>(Optional geometry output during inference)"]
+    F --> G
+```
 
 ### Key Designs
 
-1. **Geometry as Context (Variant #1)**: Simplifies the original four-step iteration (geometry estimation → back-projection → rendering → inpainting) to: $\{G_i, I_{i+1}\} = \varrho(\{I_i, G_i\}, P_{i+1})$. The model first estimates the geometry $G_i$ of the current frame, then generates the next RGB frame based on $G_i$ and the target pose $P_{i+1}$. Incorporating geometry context: (a) shortens sequence length for improved efficiency; (b) endows the model with 3D awareness to enhance scene consistency; (c) the large modality gap between RGB and geometry helps the model distinguish between tasks.
+**1. Geometry as Context: Compressing the four-step "Reconstruction-Rendering" into one generation (Variant #1)**
 
-2. **Camera Gated Attention (CGA)**: Enhances the model's utilization of camera pose. The Plücker ray-encoded camera pose $r_i$ is added to the self-attention query, and a gating matrix is generated to modulate the attention output:
+The primary burden of reconstruction methods is the "geometry estimation → back-projection → rendering → completion" chain. Since back-projection and rendering are non-differentiable, gradients cannot pass through, and the separate models for geometry and completion allow errors to accumulate. GaC collapses these four steps into a single conditional generation $\{G_i, I_{i+1}\} = \varrho(\{I_i, G_i\}, P_{i+1})$: the model first estimates the current frame's geometry $G_i$, then generates the next RGB frame conditioned on $G_i$ and the target pose $P_{i+1}$. Explicitly embedding geometry as context serves three purposes: interleaved geometry frames shorten the sequence dependency, improve efficiency, provide 3D awareness to the model to strengthen consistency, and use the modality difference between RGB and geometry to help the model distinguish tasks.
 
-    - $\{Q_{res}, Gate\} = \text{Linear}_2(Q + r_i)$
-    - $O = \text{SDPA}(Q + Q_{res}, K, V)$
-    - $O = \text{Linear}_3(O * \sigma(Gate))$
+**2. Camera Gated Attention: Differentiating "Geometry Estimation" and "View Synthesis"**
 
-   This design enables the model to distinguish the different roles of camera pose in geometry prediction vs. novel view synthesis.
+The role of a camera pose differs when predicting geometry versus synthesizing new views. CGA incorporates pose $r_i$ (encoded via Plücker rays) by adding it to the self-attention query as a residual and generating an additional gate to modulate the output:
 
-3. **Geometry Dropout**: During training, geometry context in the interleaved sequence is randomly dropped at rate $r$; dropped frames degrade to pure image-to-image generation (Variant #3). Benefits: (a) reduces sequence length to improve training efficiency; (b) allows inference to produce RGB outputs without geometry prediction; (c) the model maintains scene consistency with or without geometry context. Training time is halved from 24 s/step to 11 s/step, and inference time is halved from 4.6 s/img to 2.2 s/img, with negligible performance degradation.
+$$\{Q_{res}, Gate\} = \text{Linear}_2(Q + r_i),\quad O = \text{SDPA}(Q + Q_{res}, K, V),\quad O = \text{Linear}_3(O * \sigma(Gate))$$
+
+By passing the pose into the query residual and controlling the influence via $\sigma(Gate)$, the model adaptively decides how much camera information to use for specific sub-tasks, significantly reducing translation errors.
+
+**3. Geometry Dropout: Accelerating inference and allowing flexible outputs**
+
+While geometry frames are beneficial, generating them for every frame lengthens the sequence and slows down training/inference. During training, geometry contexts are randomly dropped at a rate $r$; dropped frames degrade to pure image-to-image generation (Variant #3). This results in shorter training sequences and allows the model to output only RGB during inference without predicting geometry. Experiments show training time halved from 24 s/step to 11 s/step and inference from 4.6 s/img to 2.2 s/img with negligible performance loss.
 
 ### Loss & Training
 
-- Base model: Bagel-7B (supporting text-image interleaved modeling)
-- Training data: RealEstate10K (66,033 video clips)
-- 8-frame sequence training; the first 1–4 frames serve as context views, the remaining as target views
-- Every 4 consecutive views are tiled into a grid frame to enhance consistency (resolution $640 \times 352$)
-- Images encoded with FLUX-VAE
-- Trained on 8× H100 GPUs for 40,000 steps (~2 days)
-- Context-as-memory strategy used at inference to select context views; no classifier-free guidance
+- Base Model: Bagel-7B (supports interleaved text-image modeling).
+- Training Data: RealEstate10K (66,033 video segments).
+- 8-frame sequence training: the first 1-4 frames serve as context, followed by target views.
+- Every 4 consecutive views are concatenated into a grid frame ($640 \times 352$ resolution) to enhance consistency.
+- Images encoded using FLUX-VAE.
+- Trained on 8 H100s for 40,000 steps (~2 days).
+- Context-as-memory is used during inference for context view selection; classifier-free guidance is omitted.
 
 ## Key Experimental Results
 
@@ -73,65 +82,75 @@ GaC "flattens" the iterative pipeline of reconstruction-based methods into a sin
 
 | Dataset | Metric | GaC (Ours) | Voyager | GEN3C | ViewCrafter |
 |---------|--------|------------|---------|-------|-------------|
-| RE10K | PSNR↑ | **19.01** | 18.70 | 18.12 | 16.72 |
-| RE10K | SSIM↑ | **0.656** | 0.616 | 0.624 | 0.585 |
-| RE10K | LPIPS↓ | **0.354** | 0.395 | 0.402 | 0.417 |
-| RE10K | FID↓ | **55.76** | 65.12 | 66.20 | 80.47 |
-| RE10K | $R_{err}$↓ | **0.024** | 0.035 | 0.027 | 0.022 |
-| RE10K | $T_{err}$↓ | **0.270** | 0.596 | 0.344 | 0.327 |
-| T&T | PSNR↑ | **15.77** | 15.24 | 15.32 | 12.59 |
-| RE10K (round-trip) | PSNR↑ | **16.34** | 15.80 | 15.28 | 15.77 |
-| RE10K (round-trip) | FID↓ | **64.31** | 79.81 | 80.03 | 72.14 |
+| RE10K   | PSNR↑  | **19.01**  | 18.70   | 18.12 | 16.72       |
+| RE10K   | SSIM↑  | **0.656**  | 0.616   | 0.624 | 0.585       |
+| RE10K   | LPIPS↓ | **0.354**  | 0.395   | 0.402 | 0.417       |
+| RE10K   | FID↓   | **55.76**  | 65.12   | 66.20 | 80.47       |
+| RE10K   | $R_{err}$↓ | **0.024** | 0.035 | 0.027 | 0.022      |
+| RE10K   | $T_{err}$↓ | **0.270** | 0.596 | 0.344 | 0.327      |
+| T&T     | PSNR↑  | **15.77**  | 15.24   | 15.32 | 12.59       |
+| RE10K(Back-forth) | PSNR↑ | **16.34** | 15.80 | 15.28 | 15.77 |
+| RE10K(Back-forth) | FID↓ | **64.31** | 79.81 | 80.03 | 72.14 |
 
 ### Ablation Study
 
-| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ | $T_{err}$↓ | Note |
-|---------------|-------|-------|--------|------|-----------|------|
-| None (Variant #3) | 16.34 | 0.551 | 0.412 | 89.03 | 0.351 | No geometry context |
-| Warped img (V#2) | 18.33 | 0.671 | 0.383 | 59.12 | 0.299 | Rendered image as context |
-| Geometry (V#1) | **19.01** | 0.656 | **0.354** | **55.76** | **0.270** | Geometry as context |
-| w/o CGA | 18.57 | 0.581 | 0.461 | 68.42 | 0.469 | CGA removed |
+| Config | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ | $T_{err}$↓ | Description |
+|--------|-------|-------|--------|------|-----------|-------------|
+| None (Variant #3) | 16.34 | 0.551 | 0.412 | 89.03 | 0.351 | No Geo Context |
+| Warped img (V#2) | 18.33 | 0.671 | 0.383 | 59.12 | 0.299 | Rendered context |
+| Geometry (V#1) | **19.01** | 0.656 | **0.354** | **55.76** | **0.270** | Geometry context |
+| w/o CGA | 18.57 | 0.581 | 0.461 | 68.42 | 0.469 | Without CGA |
 | w/ CGA | **19.01** | **0.656** | **0.354** | **55.76** | **0.270** | Full method |
-| w/o Geo Dropout | 19.23 | 0.660 | 0.342 | 57.18 | 0.248 | No dropout (marginally better but 2× slower) |
-| w/ Geo Dropout | 19.01 | 0.656 | 0.354 | 55.76 | 0.270 | ~2× speedup |
+| w/o Geo Dropout | 19.23 | 0.660 | 0.342 | 57.18 | 0.248 | No drop (Slower) |
+| w/ Geo Dropout | 19.01 | 0.656 | 0.354 | 55.76 | 0.270 | ~2x Acceleration |
 
 ### Key Findings
 
-- Geometry as context vs. no context: PSNR improves by 2.67 and FID decreases by 33.27, demonstrating the critical role of explicit 3D information.
-- CGA reduces translation error $T_{err}$ from 0.469 to 0.270 (a 42% reduction), substantially improving camera control precision.
-- Geometry Dropout achieves ~2× speedup in both training and inference with negligible performance loss.
-- Depth maps vs. point maps as geometry: performance is comparable, but depth maps are slightly superior (smaller modality gap to natural images, easier for the VAE to encode).
-- In round-trip trajectory evaluation, GaC faithfully recovers objects upon return (e.g., a disappeared monitor), demonstrating long-range 3D memory capability.
+- **Geometry vs. No Context**: PSNR improved by 2.67 and FID decreased by 33.27, proving the critical role of explicit 3D information.
+- **CGA Impact**: Reduced translation error ($T_{err}$) from 0.469 to 0.270 (a 42% decrease), significantly improving camera control precision.
+- **Geometry Dropout**: Achieved ~2x speedup in both training and inference with negligible performance loss.
+- **Depth vs. Points**: Depth maps performed slightly better as they are closer to natural image modalities, making them easier for the VAE to encode.
+- **Robustness**: In back-and-forth trajectory tests, GaC faithfully recovers objects (e.g., a laptop that disappeared) upon return, demonstrating long-range 3D memory.
 
 ## Highlights & Insights
 
-- **Elegant unified framework**: Flattening the iterative reconstruction pipeline into a single autoregressive DiT model fundamentally resolves the issues of non-differentiable operations and non-end-to-end training.
-- **Geometry Dropout achieves dual benefits**: It reduces computational cost while enabling the model to flexibly choose whether to output geometry information at inference time.
-- **CGA is an elegant design**: Query modulation combined with gated output allows a single model to distinguish the role of camera pose across different sub-tasks.
-- **Round-trip trajectory robustness**: GaC demonstrates strong scene memory and consistency on forward-and-return trajectories.
+- **Elegant Unified Framework**: Flattens the four-step iterative reconstruction process into an autoregressive DiT model, fundamentally solving non-differentiability and non-end-to-end issues.
+- **Dual-purpose Geometry Dropout**: Reduces computational cost and provides flexibility in choosing whether to output geometry during inference.
+- **Sophisticated CGA Design**: Uses query modulation and gated output to enable one model to distinguish camera roles in different sub-tasks.
+- **Trajectory Robustness**: GaC exhibits superior scene memory and consistency in forward-backward trajectories.
 
 ## Limitations & Future Work
 
-- All methods exhibit significant performance degradation on round-trip trajectories; long-range context memory strategies require further improvement.
-- Training exclusively on RealEstate10K limits generalization to more diverse scenes (outdoor, in-the-wild), necessitating more varied data.
-- The resolution of $640 \times 352$ is relatively low; high-resolution scene generation remains unexplored.
-- FID on Tanks-and-Temples under round-trip trajectories is inferior to Voyager, indicating room for improvement in large-motion scenarios.
-- The base model Bagel-7B is large, and inference cost remains non-trivial (2.2 s/img).
+- Performance drops significantly across all methods on back-and-forth trajectories, indicating a need for better long-range context memory.
+- Training was limited to RealEstate10K; generalization to more diverse scenes (outdoor, wild) requires more data.
+- Low resolution ($640 \times 352$); high-resolution scene generation remains an area for exploration.
+- Inference cost remains high (2.2 s/img) due to the large Bagel-7B base model.
 
 ## Related Work & Insights
 
-- **ViewCrafter**: An iterative method combining point clouds and video diffusion; the unified framework proposed in this paper is more elegant and incurs smaller accumulated errors.
-- **GEN3C/Voyager**: Introduce point clouds/3DGS as 3D representations but remain constrained by non-differentiable rendering.
-- **ReCamMaster**: A camera control method based on frame-dimension concatenation; GaC inherits this idea while incorporating geometry context.
-- **Insights**: The paradigm of "internalizing non-differentiable operations as capabilities of the generative model" is generalizable to a broader range of 3D vision tasks; text-guided multi-task scheduling (geometry vs. RGB generation) constitutes an effective design paradigm for interleaved multimodal models.
+- **ViewCrafter**: Iterative method using point clouds and video diffusion; GaC's unified framework is more elegant and reduces error.
+- **GEN3C/Voyager**: Introduce point clouds/3DGS as 3D representations but remain limited by non-differentiable rendering.
+- **ReCamMaster**: Follows frame-dimension concatenation for camera control; GaC builds on this with geometry context.
+- **Insight**: The strategy of "internalizing non-differentiable operations into generative model capabilities" can be extended to other 3D vision tasks. Text-guided multi-task scheduling (Geometry vs. RGB) is an effective paradigm for interleaved multimodal models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Flattening the iterative reconstruction pipeline into autoregressive generation is an elegant contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks, round-trip trajectories, and thorough ablations, though training data is limited in diversity.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is thoroughly analyzed, variant analysis is clear, and algorithmic descriptions are complete.
-- Value: ⭐⭐⭐⭐ Provides a new paradigm for scene video generation; the end-to-end philosophy has broad applicability.
-- Value: TBD
+- Novelty: ⭐⭐⭐⭐ Flattening reconstruction into autoregressive generation is an elegant innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks and ablations, though training data is narrow.
+- Writing Quality: ⭐⭐⭐⭐ Thorough motivation analysis and clear algorithmic descriptions.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for scene video generation with broad end-to-end value.
+
+## Related Papers
+
+- [\[CVPR 2026\] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](stereoworld_geometry-aware_monocular-to-stereo_video_generation.md)
+- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
+- [\[ICML 2026\] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior](../../ICML2026/video_generation/camgeo_sparse_camera-conditioned_image-to-video_generation_with_3d_geometry_prio.md)
+- [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)
+- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -139,11 +158,11 @@ GaC "flattens" the iterative pipeline of reconstruction-based methods into a sin
 
 ## Related Papers
 
-- [\[ICML 2026\] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior](../../ICML2026/video_generation/camgeo_sparse_camera-conditioned_image-to-video_generation_with_3d_geometry_prio.md)
+- [\[CVPR 2026\] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](stereoworld_geometry-aware_monocular-to-stereo_video_generation.md)
 - [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
-- [\[CVPR 2026\] PoseGen: In-Context LoRA Finetuning for Pose-Controllable Long Human Video Generation](posegen_in-context_lora_finetuning_for_pose-controllable_long_human_video_genera.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
-- [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](../../ICLR2026/video_generation/geometry-aware_4d_video_generation_for_robot_manipulation.md)
+- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
+- [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
+- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 
 </div>
 

@@ -2,79 +2,84 @@
 title: >-
   [Paper Note] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 description: >-
-  [CVPR 2026][3D Vision][Test-time adaptation] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models textual and geometric modalities as Gaussian distributions and automatically bala…
+  [CVPR 2026][3D Vision][Paper Note] BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models text and geometric modalities as Gaussian distributions and automatically adjusts modality weights through Bayesian Model Averaging. It achieves robust test-time adaptation across multiple point cloud benchmarks with an averag
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Test-time adaptation"
-  - "point cloud recognition"
-  - "Bayesian inference"
-  - "multimodal distribution learning"
-  - "zero-shot generalization"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 21f57b17a5b55ac1
+content_hash: 1357349d82c6a2c2
 ---
-
 # Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22070](https://arxiv.org/abs/2603.22070)  
-**Code**: N/A  
-**Area**: 3D Vision / Point Cloud Analysis
-**Keywords**: Test-time adaptation, point cloud recognition, Bayesian inference, multimodal distribution learning, zero-shot generalization
+**Code**: None  
+**Area**: 3D Vision / Point Cloud Analysis  
+**Keywords**: Test-time adaptation, Point cloud recognition, Bayesian inference, Multimodal distribution learning, Zero-shot generalization
 
 ## TL;DR
-BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models textual and geometric modalities as Gaussian distributions and automatically balances modality weights via Bayesian model averaging, achieving robust test-time adaptation across multiple point cloud benchmarks with an average improvement exceeding 4%.
+BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models text and geometric modalities as Gaussian distributions and automatically adjusts modality weights through Bayesian Model Averaging. It achieves robust test-time adaptation across multiple point cloud benchmarks with an average gain of over 4%.
 
 ## Background & Motivation
-**Background**: Large multimodal 3D vision-language models (e.g., ULIP-2, Uni3D) achieve strong zero-shot generalization through contrastive pre-training, yet suffer notable performance degradation under distribution shift.
+**Background**: Large-scale multimodal 3D vision-language models (e.g., ULIP-2, Uni3D) achieve strong zero-shot generalization through contrastive pre-training, but their performance drops significantly under distribution shifts.
 
 **Limitations of Prior Work**:
-   - Cache-based test-time adaptation (TTA) methods maintain sample caches of limited capacity, where sample replacement leads to progressive information loss;
-   - Fusion of zero-shot and cached logits relies on empirically tuned hyperparameters ($\lambda$, $\gamma$), lacking theoretical grounding, resulting in unstable adaptation.
+   - Cache-based test-time adaptation (TTA) methods maintain a limited-capacity sample cache; sample replacement leads to progressive loss of information.
+   - Fusion of zero-shot and cache logits relies on empirical hyperparameter tuning ($\lambda$, $\gamma$), which lacks a theoretical foundation and results in unstable adaptation.
 
-**Key Challenge**: How to continuously exploit statistical information from all historical samples at test time while fusing different modalities in a principled manner?
+**Key Challenge**: How to continuously utilize the statistical information of all historical samples at test time while fusing different modalities in a principled manner?
 
-**Key Insight**: Model textual and geometric features of each class as Gaussian distributions, and automatically balance the contributions of both modalities within a Bayesian framework.
+**Key Insight**: Model the text and geometric features of each category as Gaussian distributions and automatically balance the contribution of the two modalities within a Bayesian framework.
 
-**Core Idea**: Replace discrete caches with distributions and replace heuristic fusion with Bayesian model averaging, enabling continuous, stable, training-free test-time adaptation.
+**Core Idea**: Replace discrete caches with distributions and use Bayesian Model Averaging instead of heuristic fusion to achieve continuous, stable, training-free test-time adaptation.
 
 ## Method
 
 ### Overall Architecture
-Input: streaming point cloud sequence $\{X_t\}$ + fixed text prototypes $\{T_c\}$ → frozen point cloud encoder $\Phi$ and text encoder $\Psi$ → textual distribution learning (offline) + geometric distribution learning (online update) → Bayesian weighted fusion → predicted class.
+BayesMM aims to maintain accuracy without retraining when point cloud data undergoes distribution shifts (noise, jitter, missing points) during testing. It replaces the discrete sample cache for each category with a Gaussian distribution that updates continuously with the data stream. The process is as follows: first, a text encoder compresses multiple paraphrases of each category into a text Gaussian distribution (offline, one-time computation). During testing, as each point cloud sample arrives, the geometric Gaussian distribution of the corresponding category is updated online recursively. Finally, instead of manual coefficient tuning, the text and geometric distributions share weights based on their "explanatory power" for the sample to obtain category probabilities. All encoders are frozen, and the adaptation involves only closed-form updates of Gaussian parameters.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Category Names<br/>(LLM generates M paraphrases)"] --> B["Text Distribution Learning<br/>Text Encoder → MAP estimation of category Gaussian prior"]
+    P["Test point cloud stream x_t<br/>(with noise/jitter/missing)"] --> C["Geometric Distribution Learning<br/>Geometric Encoder → Online recursive update of geometric Gaussian"]
+    B -->|"Text prototype as initial μ₀"| C
+    B --> D["Bayesian Multimodal Weighting<br/>Distribute text/geometric weights via posterior evidence"]
+    C --> D
+    D --> E["Category probability p(c|x_t)"]
+```
 
 ### Key Designs
-1. **Textual Distribution Learning**:
 
-    - **Function**: Estimate a per-class Gaussian distribution from $M$ LLM-generated semantic paraphrases.
-    - **Mechanism**: Compute the empirical mean $\bar{\mathbf{z}}^c$ and covariance $\mathbf{S}^c$, establish a prior $p(\boldsymbol{\nu}^c) = \mathcal{N}(\bar{\mathbf{z}}^c, \beta^2\mathbf{I})$, and derive the deterministic prototype $\boldsymbol{\nu}^c_{\text{MAP}}$ via MAP estimation.
-    - **Design Motivation**: A single text template cannot capture semantic diversity; Gaussian modeling over multiple paraphrases provides richer class-level semantic priors.
+**1. Text Distribution Learning: Anchoring category semantics with paraphrases instead of a single template**
 
-2. **Geometric Distribution Learning**:
+A single prompt template (e.g., "a point cloud of a {class}") provides only a single sampling point of category semantics, which is fragile for diverse real-world categories. BayesMM uses an LLM to generate $M$ semantic paraphrases for each category. After processing through a text encoder to obtain $M$ features, it estimates the empirical mean $\bar{\mathbf{z}}^c$ and covariance $\mathbf{S}^c$. It then performs MAP estimation with a Gaussian prior $p(\boldsymbol{\nu}^c) = \mathcal{N}(\bar{\mathbf{z}}^c, \beta^2\mathbf{I})$ to obtain a deterministic category prototype $\boldsymbol{\nu}^c_{\text{MAP}}$. Thus, the category prior becomes a region with variance rather than a single point, preserving semantic diversity and providing a stable starting point for geometric distribution updates.
 
-    - **Function**: Maintain an online Gaussian distribution $\{\boldsymbol{\mu}_t^c, \boldsymbol{\Sigma}_t^c\}$ per class and update it recursively as new samples arrive.
-    - **Mechanism**: Initialized from text prototypes $\boldsymbol{\mu}_0^c = \bar{\mathbf{z}}^c$, with closed-form recursive Bayesian updates:
-    $\boldsymbol{\mu}_t^c = \boldsymbol{\Sigma}_t^c((\boldsymbol{\Sigma}^c)^{-1}\mathbf{x}_t + (\boldsymbol{\Sigma}_{t-1}^c)^{-1}\boldsymbol{\mu}_{t-1}^c)$
-    $\boldsymbol{\Sigma}_t^c = ((\boldsymbol{\Sigma}_{t-1}^c)^{-1} + (\boldsymbol{\Sigma}^c)^{-1})^{-1}$
-    - **Design Motivation**: Distribution parameters continuously accumulate statistics from all historical samples, eliminating cache capacity constraints and information loss.
+**2. Geometric Distribution Learning: Consuming the entire historical stream instead of an overflowing cache**
 
-3. **Bayesian Model Averaging**:
+Cache-based TTA suffers from performance degradation because finite cache capacity forces the replacement of old samples, leading to loss of historical statistics. BayesMM maintains an online Gaussian $\{\boldsymbol{\mu}_t^c, \boldsymbol{\Sigma}_t^c\}$ for each category, starting with the text prototype $\boldsymbol{\mu}_0^c = \bar{\mathbf{z}}^c$. For each new sample $\mathbf{x}_t$, it performs a closed-form recursive update according to Bayesian rules:
 
-    - **Function**: Automatically fuse the posterior predictions of the textual and geometric modalities.
-    - **Mechanism**: $p(c|\mathbf{x}_t) = p(c|\mathbf{x}_t, \boldsymbol{\Omega}^c) p(\boldsymbol{\Omega}^c|\mathbf{x}_t) + p(c|\mathbf{x}_t, \boldsymbol{\Theta}_t^c) p(\boldsymbol{\Theta}_t^c|\mathbf{x}_t)$
-    - The weight of each modality is its posterior evidence $p(\boldsymbol{\Omega}^c|\mathbf{x}_t)$ and $p(\boldsymbol{\Theta}_t^c|\mathbf{x}_t)$, adjusted automatically.
-    - **Design Motivation**: The $\lambda$ in cache-based methods requires manual tuning; the Bayesian framework allocates weights automatically based on data evidence, yielding greater robustness.
+$$\boldsymbol{\Sigma}_t^c = \big((\boldsymbol{\Sigma}_{t-1}^c)^{-1} + (\boldsymbol{\Sigma}^c)^{-1}\big)^{-1}, \qquad \boldsymbol{\mu}_t^c = \boldsymbol{\Sigma}_t^c\big((\boldsymbol{\Sigma}^c)^{-1}\mathbf{x}_t + (\boldsymbol{\Sigma}_{t-1}^c)^{-1}\boldsymbol{\mu}_{t-1}^c\big)$$
+
+The update is a precision-weighted average of the previous distribution and the new sample likelihood. All observed samples are continuously integrated into $(\boldsymbol{\mu}_t^c, \boldsymbol{\Sigma}_t^c)$, avoiding capacity limits and information loss from replacement.
+
+**3. Bayesian Multimodal Weighting: Letting evidence decide modality weights instead of manual coefficients**
+
+Cache methods rely on empirical $\lambda$ and $\gamma$ to fuse zero-shot and cache logits, which often fail across domains. BayesMM formulates fusion as Bayesian Model Averaging:
+
+$$p(c|\mathbf{x}_t) = p(c|\mathbf{x}_t, \boldsymbol{\Omega}^c)\, p(\boldsymbol{\Omega}^c|\mathbf{x}_t) + p(c|\mathbf{x}_t, \boldsymbol{\Theta}_t^c)\, p(\boldsymbol{\Theta}_t^c|\mathbf{x}_t)$$
+
+The weights for the text and geometric modalities are their respective posterior evidence $p(\boldsymbol{\Omega}^c|\mathbf{x}_t)$ and $p(\boldsymbol{\Theta}_t^c|\mathbf{x}_t)$ for the current sample. The modality that explains the sample better automatically receives higher weight. Consequently, the text prior dominates when the geometric distribution has few samples, and weight shifts naturally to geometry as statistics stabilize, without domain-specific manual tuning.
 
 ### Loss & Training
-- **Entirely training-free**: All encoders are frozen; adaptation is performed solely via closed-form Bayesian updates of distribution parameters.
-- No additional hyperparameters require domain-specific tuning.
+- **Totally training-free**: All encoders are frozen; distribution parameters are updated online via Bayesian rules.
+- No additional hyperparameters requiring per-domain adjustment.
 
 ## Key Experimental Results
 
 ### Main Results (ModelNet-C, 7 corruption types)
 
-| Backbone | Method | Add Global | Add Local | Drop Global | Jitter | Mean |
+| Base Model | Method | Add Global | Add Local | Drop Global | Jitter | Average |
 |---------|------|-----------|-----------|-------------|--------|------|
 | ULIP | Zero-shot | 33.55 | 43.92 | 54.70 | 44.08 | 48.60 |
 | ULIP | + Hierarchical Cache | 46.15 | 47.85 | 59.16 | 49.92 | 55.02 |
@@ -83,38 +88,38 @@ Input: streaming point cloud sequence $\{X_t\}$ + fixed text prototypes $\{T_c\}
 | Uni3D | + Hierarchical Cache | 77.51 | 71.15 | 72.16 | 62.52 | 74.63 |
 | Uni3D | + **BayesMM** | **77.59** | **73.30** | **74.96** | **65.84** | **76.56** |
 
-### Ablation Study (Distribution alignment verification)
+### Ablation Study (Distribution Consistency Verification)
 
-| Configuration | KL Divergence (init→final) | MMD (init→final) | Note |
+| Configuration | KL Divergence (Initial→Final) | MMD (Initial→Final) | Description |
 |------|---------------------|-----------------|------|
-| Text modality only | High | High | Single modality insufficient |
-| Geometric modality only | Medium | Medium | Lacks semantic prior |
-| BayesMM (full) | 17.2 → 12.6 | 0.91 → 0.71 | Bayesian fusion converges continuously |
+| Text Modality Only | Higher | Higher | Single modality is insufficient |
+| Geometric Modality Only | Medium | Medium | Lacks semantic prior |
+| BayesMM (Full) | 17.2 → 12.6 | 0.91 → 0.71 | Bayesian fusion converges continuously |
 
 ### Key Findings
-- BayesMM yields consistent improvements across all four backbone models (ULIP, ULIP-2, OpenShape, Uni3D).
-- Effective under the Sim-to-Real setting, demonstrating cross-domain generalization.
-- KL divergence and MMD decrease continuously throughout adaptation, indicating progressive distribution alignment rather than overfitting.
+- BayesMM yields significant improvements across all four base models (ULIP, ULIP-2, OpenShape, Uni3D).
+- It remains effective in Sim-to-Real settings, demonstrating cross-domain generalization.
+- KL and MMD values decrease continuously during adaptation, indicating distribution alignment rather than overfitting.
 
 ## Highlights & Insights
-- **Fully training-free TTA**: No gradient updates required; adaptation is achieved entirely via closed-form Bayesian updates.
-- Introduces distribution learning into 3D multimodal TTA, offering a theoretically more principled alternative to cache-based methods.
-- Model-agnostic: plug-and-play compatible with any pre-trained 3D vision-language model.
+- **Completely training-free TTA method**: No gradient updates required; achieved solely via closed-form Bayesian updates.
+- Introduces distribution learning to 3D multimodal TTA, which is theoretically more elegant than cache-based methods.
+- Model-agnostic: Can be plugged into any pre-trained 3D vision-language model.
 
 ## Limitations & Future Work
-- The Gaussian assumption may be inappropriate for complex non-Gaussian feature distributions.
-- Maintaining per-class covariance matrices incurs non-trivial computational overhead when the number of classes is large.
-- Geometric distributions may be poorly estimated when very few test samples from a given class appear in the stream.
+- The Gaussian assumption may not suit complex non-Gaussian feature distributions.
+- Computational overhead for maintaining covariance matrices per category can be high when the number of classes is large.
+- Geometric distribution estimation may be inaccurate when specific categories have very few samples in the test stream.
 
 ## Related Work & Insights
-- Conceptually similar to DOTA (online Gaussian TTA for 2D VLMs), but extended to 3D multimodal settings.
-- The Bayesian model averaging paradigm is generalizable to other multimodal fusion scenarios.
+- Similar in concept to DOTA (Online Gaussian TTA for 2D VLMs) but extended to 3D multimodality.
+- The concept of Bayesian Model Averaging can be generalized to other multimodal fusion scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Bayesian framework replaces cache-based methods with theoretical elegance
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four backbone models × multiple benchmarks × diverse settings
-- Writing Quality: ⭐⭐⭐⭐ Derivations are clear and formulations are rigorous
-- Value: ⭐⭐⭐⭐ A practical plug-and-play TTA solution
+- Novelty: ⭐⭐⭐⭐ Bayesian framework replaces cache methods, providing theoretical elegance.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four base models across multiple benchmarks and settings.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivations and rigorous formulas.
+- Value: ⭐⭐⭐⭐ A practical, plug-and-play TTA solution.
 
 <!-- RELATED:START -->
 
@@ -124,9 +129,9 @@ Input: streaming point cloud sequence $\{X_t\}$ + fixed text prototypes $\{T_c\}
 
 - [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
-- [\[CVPR 2026\] PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation](physgs_bayesian-inferred_gaussian_splatting_for_physical_property_estimation.md)
-- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
+- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
 
 </div>
 

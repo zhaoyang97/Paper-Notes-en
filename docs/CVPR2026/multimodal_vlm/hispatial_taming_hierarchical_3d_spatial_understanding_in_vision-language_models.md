@@ -2,161 +2,171 @@
 title: >-
   [Paper Note] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][3D spatial understanding] HiSpatial decomposes 3D spatial intelligence into four cognitive levels (geometric perception → object attributes → inter-object relations → abstract reasoning)…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] HiSpatial proposes decomposing 3D spatial intelligence into four cognitive hierarchies (geometric perception → object attributes → object relations → abstract reasoning). It constructs an automated data pipeline processing ~5 million images, 45 million objects, and 2 billion QA pairs, and designs an RGB-D VLM using met
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "3D spatial understanding"
-  - "vision-language models"
-  - "hierarchical task design"
-  - "point cloud maps"
-  - "spatial reasoning"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: e6b3540b612a4101
+content_hash: d19bb2ecdce8af01
 ---
-
 # HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25411](https://arxiv.org/abs/2603.25411)  
-**Code**: N/A  
-**Area**: Multimodal VLM
-**Keywords**: 3D spatial understanding, vision-language models, hierarchical task design, point cloud maps, spatial reasoning
+**Code**: None  
+**Area**: Multimodal VLM  
+**Keywords**: 3D spatial understanding, Vision-Language Models, hierarchical task design, point cloud maps, spatial reasoning
 
 ## TL;DR
 
-HiSpatial decomposes 3D spatial intelligence into four cognitive levels (geometric perception → object attributes → inter-object relations → abstract reasoning), constructs an automated data pipeline processing ~5M images, 45M objects, and 2B QA pairs, and designs an RGB-D VLM that takes metric-scale point cloud maps as auxiliary input. With only 3B parameters, it surpasses GPT-5 and Gemini-2.5-Pro on multiple spatial reasoning benchmarks.
+HiSpatial proposes decomposing 3D spatial intelligence into four cognitive hierarchies (geometric perception → object attributes → object relations → abstract reasoning). It constructs an automated data pipeline processing ~5 million images, 45 million objects, and 2 billion QA pairs, and designs an RGB-D VLM using metric-scale point cloud maps as auxiliary input. With only 3B parameters, it surpasses GPT-5 and Gemini-2.5-Pro on multiple spatial reasoning benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: VLMs achieve strong performance on 2D tasks such as VQA and image captioning, but extending these capabilities to 3D spatial understanding remains highly challenging. Recent works introduce spatially-oriented VQA tasks for SFT or RFT, yet face two primary challenges.
+1. **Background**: VLMs perform exceptionally well in 2D tasks such as VQA and image captioning, but extending from 2D to 3D spatial understanding remains difficult. Recent works introduce spatial-oriented VQA tasks via SFT or RFT but face two primary challenges.
 
-2. **Limitations of Prior Work**: (a) The absence of a unified, systematic task hierarchy—existing tasks provide incomplete coverage, and the dependencies among spatial reasoning skills at different levels remain unclear; (b) Large-scale, diverse, 3D-annotated data is difficult to obtain—existing 3D-annotated datasets are confined to indoor scenes, while large-scale web data lacks 3D supervision.
+2. **Limitations of Prior Work**: (a) Lack of a unified and systematic task hierarchy—existing tasks lack comprehensive coverage, and dependencies between spatial reasoning skills at different levels remain unclear; (b) Difficulty in obtaining large-scale, diverse data with 3D annotations—existing 3D annotated datasets are limited to indoor scenes, while large-scale web data lacks 3D supervision.
 
-3. **Key Challenge**: Prior work addresses isolated aspects of spatial understanding (qualitative relation comparison, quantitative distance prediction, etc.), but no work has systematically investigated the hierarchical dependencies among these tasks: does training on lower-level tasks facilitate the emergence of higher-level capabilities?
+3. **Key Challenge**: Prior works focused on specific aspects of spatial understanding (e.g., qualitative relation comparison or quantitative distance prediction), but none systematically investigated the hierarchical dependencies between these tasks: whether training on low-level tasks facilitates the emergence of high-level capabilities.
 
-4. **Goal**: (a) Define a comprehensive 3D spatial understanding task taxonomy with explicit hierarchical dependencies; (b) Construct a large-scale spatial VQA dataset; (c) Empirically validate inter-level dependencies and provide guidance for training strategies.
+4. **Goal**: (a) Define a comprehensive 3D spatial understanding task system with hierarchical dependencies; (b) Construct a large-scale spatial VQA dataset; (c) Validate the dependencies between hierarchies and provide guidance for training strategies.
 
-5. **Key Insight**: 3D spatial intelligence is analogized to four progressive stages of human cognition: perceiving depth and geometry → understanding intrinsic 3D properties of objects → reasoning about inter-object spatial relations → performing abstract spatial reasoning (viewpoint transformation, spatial counting, spatial problem solving).
+5. **Key Insight**: Analogize 3D spatial intelligence to a four-level progression of human cognition: perceiving depth and geometry → understanding 3D attributes of objects → understanding spatial relations between objects → performing abstract spatial reasoning (perspective shifting, spatial counting, spatial problem solving).
 
-6. **Core Idea**: A four-level cognitive hierarchy combined with a large-scale automated data pipeline and a metric-scale point-cloud-augmented RGB-D VLM, enabling systematic construction and validation of 3D spatial intelligence in VLMs.
+6. **Core Idea**: Four cognitive hierarchies + large-scale automated data pipeline + metric-scale point cloud-enhanced RGB-D VLM to systematically build and validate 3D spatial intelligence in VLMs.
 
 ## Method
 
 ### Overall Architecture
 
-The method comprises three components: (1) defining a four-level spatial understanding task hierarchy (L0–L3); (2) constructing an automated pipeline to generate hierarchical spatial VQA pairs from large-scale images; (3) designing a VLM architecture with point cloud map auxiliary input and performing SFT on the generated data.
+HiSpatial addresses two bottlenecks in the transition of VLMs from 2D to 3D spatial understanding: "unstructured tasks" and "difficulty in 3D data acquisition." The entire method follows a single main line: first, decomposing spatial intelligence into four cognitive hierarchies from low to high; then, using an automated pipeline to batch-convert massive general images into spatial VQA pairs across levels; and finally, training an RGB-D VLM capable of directly reading 3D point cloud maps. The input consists of an RGB image (paired with an estimated point cloud map during inference). Point cloud features and visual features are fused to output answers with 3D spatial attributes. These three components are progressive—the hierarchy defines the data format, the pipeline generates the data, and the model consumes the data to verify that hierarchical dependencies indeed exist.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    H["Four Cognitive Hierarchies<br/>L0 Geometry → L1 Attribute → L2 Relation → L3 Reasoning"]
+    IMG["Web Images (RGB)"]
+    subgraph PIPE["Automated Spatial VQA Data Pipeline"]
+        direction TB
+        S1["Spatial Information Estimation<br/>MoGe-2 Point Cloud + 3D Bbox + Orientation"]
+        S2["Referral Generation & Verification<br/>VLM description → grounding check for disambiguation"]
+        S3["Hierarchical QA Synthesis<br/>Free / Choice / Boolean formats"]
+        S1 --> S2 --> S3
+    end
+    IMG --> PIPE
+    H -->|Hierarchical Taxonomy Guided Task Generation| S3
+    S3 --> DATA["~5M images / 45M objects / 2B QA pairs"]
+    DATA --> M["Point-cloud Enhanced RGB-D VLM<br/>Metric XYZ + SigLIP feature fusion"]
+    M --> OUT["Answers with 3D Spatial Attributes"]
+```
 
 ### Key Designs
 
-1. **Four-Level Cognitive Spatial Task Taxonomy**
+**1. Four Cognitive Hierarchies: Decomposing spatial intelligence into a trainable ladder of abilities**
 
-    - **Function**: Systematically covers the full spectrum of spatial understanding capabilities, from low-level perception to high-level reasoning.
-    - **Mechanism**:
-        - **Level 0 (Basic Geometric Perception)**: Pixel-level 3D point queries (outputting 3D coordinates given a 2D location) and pairwise depth ordering (judging the relative depth of two points). No semantic information required.
-        - **Level 1 (Object-Level Spatial Understanding)**: Object localization (predicting 3D position), orientation estimation (describing yaw direction in natural language), and size estimation (physical dimensions such as width and height). Requires integrating geometric perception with semantic grounding.
-        - **Level 2 (Inter-Object Relation Understanding)**: Relative direction estimation (qualitative, e.g., left/right/front/back, or precise 3D direction vectors), relative distance estimation (Euclidean distance and its components), and relational comparison (ranking multiple objects by attributes, judging directional consistency).
-        - **Level 3 (Abstract Spatial Reasoning)**: Viewpoint transformation (inferring directions/distances of other objects from a given object's perspective), spatial object counting (counting objects satisfying spatial constraints), and spatial problem solving (multi-step reasoning that maps high-level goals to spatial attributes).
-    - **Design Motivation**: Ablation experiments clearly confirm inter-level dependencies—removing L0+L1 training data causes an average 25% drop in L2 performance (EmbSpatial drops from 80.71% to 37.53%) and an average 14.51% drop in L3 performance, demonstrating that lower-level tasks provide an irreplaceable implicit spatial knowledge foundation for higher-level reasoning.
+Addressing the pain point of "incomplete task coverage and unknown skill dependencies," Ours analogizes 3D spatial understanding to human cognition, divided into four levels from perception to reasoning. Level 0 is basic geometric perception without semantics, performing pixel-level 3D point queries (outputting 3D coordinates given 2D positions) and pairwise depth ranking. Level 1 ascends to the object level, anchoring geometry and semantics to perform object localization, orientation estimation (describing yaw in language), and size estimation. Level 2 handles relations between objects, including relative directions (qualitative left/right/front/back or precise 3D direction vectors), relative distances (Euclidean distance and components), and comparison/ranking of multiple objects. Level 3 is abstract reasoning, covering perspective transformation (inferring location from an object's viewpoint), object counting under spatial constraints, and spatial problem solving that breaks high-level goals into multi-step spatial reasoning.
 
-2. **Automated Spatial VQA Data Pipeline**
+This hierarchy is not just for categorization; its value lies in revealing and quantifying dependencies between levels. Ablation shows that removing L0+L1 training data causes L2 performance to drop by 25% (EmbSpatial fell from 80.71% to 37.53%) and L3 to drop by 14.51%. Even though L2 has more data than low-level tasks, high-level reasoning loses its implicit spatial knowledge foundation without low-level geometric perception. This conclusion directly provides a training strategy: solidify low levels before layering high levels.
 
-    - **Function**: End-to-end generation of hierarchical spatial VQA pairs from large-scale image data.
-    - **Mechanism**: A three-stage pipeline—(a) *Spatial information estimation*: MoGe-2 generates pixel-level 3D point cloud maps; RAM→GroundingDINO→SAM detects objects and, combined with the point cloud, obtains 3D bounding boxes and dimensions; OrientAnythingv2 estimates orientations; Perspective Fields establishes a gravity-aligned world coordinate system. (b) *Textual reference generation*: Describe Anything/Qwen2.5-VL/Qwen3-VL generate object descriptions, which are verified via VLM grounding (references with IoU below a threshold are discarded). (c) *QA synthesis*: Three formats are generated per task level (open-ended, multiple-choice, true/false); L3 spatial problem-solving questions are generated by GPT to require multi-step reasoning.
-    - **Design Motivation**: The verification step in textual reference generation eliminates ambiguity (one description matching multiple objects), ensuring QA accuracy. Three formats provide complementary learning signals. The pipeline ultimately yields a large-scale dataset of 5M images, 45M objects, and 2B QA pairs.
+**2. Automated Spatial VQA Data Pipeline: End-to-end generation of 3D-annotated tasks from general images**
 
-3. **Point Cloud Map-Augmented RGB-D VLM**
+Large-scale 3D annotated data is scarce, and existing datasets are stuck in indoor scenes. Therefore, hierarchical data is generated by an automated three-stage pipeline. Stage 1 involves spatial information estimation: MoGe-2 generates pixel-level 3D point clouds; RAM → GroundingDINO → SAM chain detects objects and calculates 3D bounding boxes and sizes from point clouds; OrientAnythingv2 estimates orientation; and Perspective Fields establishes a gravity-aligned world coordinate system. Stage 2 generates textual references: Describe Anything / Qwen2.5-VL / Qwen3-VL write descriptions for each object, followed by a VLM grounding verification—descriptions with IoU below a threshold are discarded to resolve "one description to multiple objects" ambiguity, ensuring precise QA references. Stage 3 synthesizes QA based on the hierarchical taxonomy in three formats (free-form, multiple-choice, and boolean) to provide complementary learning signals, with L3 spatial problem solving assigned to GPT to generate multi-step reasoning tasks.
 
-    - **Function**: Enhances spatial reasoning by introducing metric-scale 3D point cloud maps as auxiliary input.
-    - **Mechanism**: Built upon PaliGemma2-3B, the model takes a point cloud map $\mathbf{X} \in \mathbb{R}^{H \times W \times 4}$ as input (first 3 channels encode 3D coordinates; the 4th channel is a validity mask). Sinusoidal positional encodings and a learnable patchify convolutional layer produce feature maps, which are concatenated with SigLIP visual features along the feature dimension and fused via a linear projector before being fed into the language model. During training, the visual encoder is frozen; the patchify layer, fusion projector, and LLM are jointly fine-tuned.
-    - **Design Motivation**: Unlike prior methods that use relative depth maps, this work employs metric-scale point cloud maps to provide richer 3D information. Ablations show that metric point clouds outperform relative depth by 6.76% on quantitative tasks (75.26% → 82.02%), as metric-scale information directly supports precise distance and size estimation. Using GT point clouds yields further gains, indicating greater potential in settings with depth sensors (e.g., embodied AI).
+For example, given an indoor photo, MoGe-2 lifts pixels to 3D coordinates; detectors circle "sofa," "table," and "lamp" to calculate 3D boxes and sizes, while OrientAnythingv2 marks the sofa's orientation. Each object is assigned a validated textual reference. Finally, tasks are generated: L1 asks "How tall is the lamp?", L2 asks "Which direction is the table relative to the sofa?", and L3 asks "From the perspective of a person sitting on the sofa, is the lamp on the left or right?". This pipeline ultimately produced ~5 million images, 45 million objects, and 2 billion QA pairs.
+
+**3. Point-cloud Enhanced RGB-D VLM: Feeding metric-scale 3D geometry directly into the model**
+
+RGB alone makes precise distance and size judgments difficult, so Ours adds a point cloud branch to PaliGemma2-3B. The point cloud map is denoted as $\mathbf{X} \in \mathbb{R}^{H \times W \times 4}$, where the first three channels are 3D coordinates and the fourth is a validity mask. It is processed through sinusoidal position encoding and a learnable patchify convolution layer into a feature map, then concatenated with SigLIP visual features along the feature dimension. A linear projector fuses them before they enter the LLM. During training, the visual encoder is frozen, while the patchify layer, fusion projector, and LLM are jointly fine-tuned.
+
+The critical difference is the use of **metric-scale** point clouds rather than conventional relative depth maps. Relative depth only indicates order, whereas metric point clouds provide actual metric coordinates, enabling accurate quantitative answers for distance and size. Ablation shows metric point clouds outperform relative depth by 6.76% (82.02% vs. 75.26%) on quantitative tasks. Furthermore, using GT point clouds yields additional gains, suggesting higher upper bounds for embodied AI scenarios with depth sensors.
 
 ### Loss & Training
 
-Standard VLM SFT cross-entropy loss. AdamW optimizer, learning rate $2 \times 10^{-5}$, batch size 256, trained for 70K steps. Spatial VQA data is mixed with LLaVA-Next general VQA data at a 1:7 sampling ratio to preserve general capabilities.
+Standard VLM SFT cross-entropy loss is employed. AdamW optimizer, learning rate $2 \times 10^{-5}$, batch size 256, trained for 70K steps. Spatial VQA data and LLaVA-Next general VQA data are mixed at a 1:7 sampling ratio to maintain general capabilities.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Quantitative spatial VQA benchmarks (L1–L2 tasks):
+Quantitative Spatial VQA Benchmarks (L1-L2 tasks):
 
 | Model | Input | SpatialRGPT Avg | QSpatial Avg |
-|-------|-------|----------------|-------------|
+|------|------|----------------|-------------|
 | GPT-5 | RGB | 40.47 | 68.45 |
 | Gemini-2.5-Pro | RGB | 26.57 | 49.92 |
 | MM-Spatial-3B | RGB-D | 68.70 | - |
 | **HiSpatial-3B** | **RGB-XYZ** | **79.28** | **85.16** |
 
-Qualitative spatial VQA benchmarks (L1–L3 tasks):
+Qualitative Spatial VQA Benchmarks (L1-L3 tasks):
 
 | Model | EmbSpatial | RoboSpatial | CV-Bench-3D | 3DSRBench |
-|-------|-----------|------------|-------------|-----------|
+|------|-----------|------------|-------------|-----------|
 | GPT-4o | 63.38 | 77.20 | 84.90 | 44.20 |
 | Gemini-2.5-Pro | 76.67 | 77.24 | 90.80 | 48.47 |
 | Qwen-3-VL-8B | 78.50 | 82.11 | 90.66 | 52.80 |
 | **HiSpatial-3B** | **80.71** | **86.18** | **97.58** | **63.81** |
 
-In-house benchmark (L1–L3):
+Self-built Benchmarks (L1-L3):
 
-| Model | Object Distance (L1) | Object Direction (L2) | Spatial Problem Solving (L3) |
-|-------|---------------------|----------------------|------------------------------|
+| Model | Object Distance (L1) | Object Direction (L2) | Spatial Prob. Solving (L3) |
+|------|-------------|-------------|-----------------|
 | GPT-5 | 47.19% | 59.27% | 33.33% |
 | **HiSpatial-3B** | **92.18%** | **67.21%** | **47.44%** |
 
 ### Ablation Study
 
-Inter-level dependency analysis:
+Analysis of hierarchical dependencies:
 
-| L0 | L1 | L2 | L3 | L2 Tasks Avg | L3 Tasks Avg | Note |
+| L0 | L1 | L2 | L3 | L2 Task Avg | L3 Task Avg | Description |
 |----|----|----|----|-----------|-----------|----|
-| ✓ | ✓ | ✓ | ✓ | **81.21** | **56.29** | Full model |
-| ✓ | ✓ | | ✓ | 79.69 (−1.52) | 48.15 (−8.14) | w/o L2, L3 drops 8% |
-| ✓ | | ✓ | | 56.21 (−25.00) | 41.78 (−14.51) | w/o L0+L1, L2 drops 25% |
+| ✓ | ✓ | ✓ | ✓ | **81.21** | **56.29** | Full Model |
+| ✓ | ✓ | | ✓ | 79.69 (-1.52) | 48.15 (-8.14) | No L0+L1, L3 drops 8% |
+| ✓ | | ✓ | | 56.21 (-25.00) | 41.78 (-14.51) | No L1+L2, L2 drops 25% |
 
-Effect of auxiliary 3D input:
+Impact of auxiliary 3D input:
 
 | Input | Qualitative | Quantitative |
-|-------|------------|-------------|
+|------|------|------|
 | RGB only | 83.70 | 74.16 |
-| RGB + relative depth | 84.29 (+0.59) | 75.26 (+0.90) |
-| RGB + XYZ point cloud | **84.79** | **82.02 (+6.76)** |
-| RGB + GT XYZ | — | 82.79 (+0.77) |
+| RGB + Relative Depth | 84.29 (+0.59) | 75.26 (+0.90) |
+| RGB + XYZ Point Cloud | **84.79** | **82.02 (+6.76)** |
+| RGB + GT XYZ | - | 82.79 (+0.77) |
 
 ### Key Findings
 
-- **Hierarchical dependencies are highly pronounced**: Even when L2 training data far exceeds L0+L1 in volume, removing the latter causes a dramatic drop in L2 performance (EmbSpatial: 80.71% → 37.53%), confirming that low-level geometric perception provides an irreplaceable implicit knowledge foundation for higher-level reasoning.
-- **Impact on L3 follows a hierarchical gradient**: Removing L1+L2 harms L3 more severely than removing L0+L1 (−14.51% vs. −8.14%), reflecting L3's direct dependence on L1/L2 skills.
-- **Metric-scale point clouds substantially outperform relative depth**: The gap reaches 6.76% on quantitative tasks, as metric information directly enables precise distance and size estimation.
-- **Spatial SFT does not degrade general capabilities**: Training on 88% spatial + 12% general data improves MMBench from 49.86% to 69.67%, indicating that spatial understanding and general VQA capabilities are mutually reinforcing.
+- **Strong Hierarchical Dependencies**: Even when L2 training data far exceeds L0+L1, removing the latter results in a sharp drop in L2 performance (EmbSpatial fell from 80.71% to 37.53%), indicating that low-level geometric perception provides indispensable implicit knowledge for high-level reasoning.
+- **Hierarchical Gradient Influence on L3**: Removing L1+L2 is more detrimental to L3 than removing L0+L1 (-14.51% vs. -8.14%), as L3 directly depends on L1/L2 skills.
+- **Metric-Scale Point Clouds Surpass Relative Depth**: A 6.76% gap exists in quantitative tasks, as metric information directly supports precise distance/size estimation.
+- **Spatial SFT Preserves General Capabilities**: After training on 88% spatial + 12% general data, MMBench increased from 49.86% to 69.67%, suggesting spatial understanding and general VQA can mutually reinforce each other.
 
 ## Highlights & Insights
 
-- The **systematic four-level cognitive hierarchy** is the paper's central contribution—it not only proposes a task set but also reveals hierarchical dependencies among tasks, providing clear guidance for future training strategies (training lower levels first is more effective).
-- The **large-scale automated data pipeline** has strong reuse value: from MoGe-2 point cloud estimation to multi-model object detection, textual reference generation and verification, and multi-format QA synthesis, the entire workflow can be directly applied to new image datasets.
-- **A 3B model surpassing GPT-5 and Gemini-2.5-Pro** demonstrates that strong spatial understanding can be achieved in small models through high-quality domain data and principled architectural design, without requiring massive model scale.
-- The finding that metric-scale point cloud maps outperform relative depth maps points toward promising directions for downstream tasks with depth sensors, such as embodied AI.
+- **Systematic design of four cognitive hierarchies** is the core contribution—not just proposing a set of tasks, but revealing hierarchical dependencies, providing clear guidance for future training strategies (training low levels before high levels is most effective).
+- **Large-scale automated data pipeline** offers high reuse value—from MoGe-2 estimation to multi-model detection, referral verification, and multi-format QA synthesis, the process is applicable to new image datasets.
+- **3B model surpasses GPT-5 and Gemini-2.5-Pro**: Demonstrates that spatial understanding can be achieved in small models via high-quality domain data and proper architecture, without requiring massive scale.
+- The discovery that metric-scale point clouds are more effective than relative depth points toward improvements in downstream tasks like embodied AI with depth sensors.
 
 ## Limitations & Future Work
 
-- The pipeline relies on MoGe-2 for point cloud estimation; quality may degrade in scenes with sparse texture or heavy occlusion.
-- The textual reference verification step has a limited pass rate, falling back to category labels and bounding boxes upon verification failure.
-- L3 spatial problem-solving questions are generated by GPT, potentially introducing bias and insufficient diversity.
-- Validation is conducted only on PaliGemma2-3B; whether the findings generalize to larger models remains unclear.
-- Evaluation is limited to static single-image scenes; 3D spatial understanding in video or multi-view settings is not addressed.
+- Reliance on MoGe-2 quality; point cloud estimation may be inaccurate in textureless or heavily occluded scenes.
+- The referral verification stage in the pipeline still faces limited pass rates (falling back to class labels + bounding boxes upon failure).
+- L3 spatial problem-solving tasks are GPT-generated, which may contain bias or lack diversity.
+- Validated only on PaliGemma2-3B; scaling effects and consistency of hierarchical dependencies on larger models are unknown.
+- Evaluation is limited to static single-image scenarios; 3D spatial understanding in video or multi-view settings is not yet addressed.
 
 ## Related Work & Insights
 
-- **vs. SpatialRGPT**: SpatialRGPT addresses only L1–L2 quantitative tasks and uses relative depth. HiSpatial covers all four levels and uses metric-scale point clouds, improving quantitative accuracy from 56.22% to 79.28%.
-- **vs. MM-Spatial**: Both use RGB-D input and a 3B model, but HiSpatial's hierarchical data is more comprehensive (2B QA pairs), improving quantitative average from 68.70% to 79.28%.
-- **vs. RoboRefer**: RoboRefer focuses on spatial referencing in embodied settings and lacks systematic hierarchical design. HiSpatial also achieves superior performance on RoboSpatial (86.18% vs. 84.55%).
+- **vs. SpatialRGPT**: SpatialRGPT only focuses on L1-L2 quantitative tasks and uses relative depth. HiSpatial covers all four levels and uses metric-scale point clouds, improving quantitative accuracy from 56.22% to 79.28%.
+- **vs. MM-Spatial**: Also uses RGB-D input and 3B models, but HiSpatial's hierarchical data is more comprehensive (2B QA pairs), improving quantitative average from 68.70% to 79.28%.
+- **vs. RoboRefer**: Focuses on spatial referral in embodied scenes but lacks systematic hierarchical design. HiSpatial achieves superior performance on RoboSpatial (86.18% vs. 84.55%).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The four-level hierarchy is conceptually intuitive but rigorously executed; the inter-level dependency analysis constitutes a genuine novel contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Seven external benchmarks, an in-house benchmark, detailed ablations, and general capability evaluations—exceptionally comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure, information-rich figures and tables, and detailed pipeline descriptions.
-- **Value**: ⭐⭐⭐⭐⭐ The data pipeline and hierarchical framework offer high reference value to the community; the 3B model surpassing GPT-5 serves as a compelling demonstration.
+- Novelty: ⭐⭐⭐⭐ The hierarchical design is intuitive but executed rigorously; dependency analysis is a genuine new contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 external benchmarks + self-built benchmarks + detailed ablation + general capability evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, information-dense charts, and detailed pipeline description.
+- Value: ⭐⭐⭐⭐⭐ Data pipeline and hierarchical framework are highly valuable to the community; the 3B model's success over GPT-5 serves as a notable benchmark.
 
 <!-- RELATED:START -->
 
@@ -164,11 +174,11 @@ Effect of auxiliary 3D input:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](../../ICCV2025/multimodal_vlm/mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
-- [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
-- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
+- [\[CVPR 2025\] RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics](../../CVPR2025/multimodal_vlm/robospatial_teaching_spatial_understanding_to_2d_and_3d_vision-language_models_f.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
 
 </div>
 

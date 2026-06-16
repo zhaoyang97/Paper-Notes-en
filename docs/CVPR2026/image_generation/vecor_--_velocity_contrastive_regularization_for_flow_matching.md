@@ -2,74 +2,61 @@
 title: >-
   [Paper Note] VeCoR — Velocity Contrastive Regularization for Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces a "negative velocity" contrastive signal into standard Flow Matching training. By simultaneou…
+  [CVPR 2026][Image Generation][Flow Matching] This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces "negative velocity" contrastive signals into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," it achieves more stable trajectory evolution and higher perceptual fidelity—obtainin
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Flow Matching"
-  - "Contrastive Learning"
-  - "Velocity Field Regularization"
-  - "Negative Sample Guidance"
+  - CVPR 2026
+  - Image Generation
+  - Flow Matching
 date: 2026-05-08
-content_hash: ea05b1737c72b5e4
+content_hash: 7012e94f8a680f29
 ---
-
 # VeCoR — Velocity Contrastive Regularization for Flow Matching
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.18942](https://arxiv.org/abs/2511.18942)  
-**Code**: Available (project page)  
-**Area**: Image Generation
+**Code**: Yes (Project Page)  
+**Area**: Image Generation  
 **Keywords**: Flow Matching, Contrastive Learning, Velocity Field Regularization, Negative Sample Guidance, Image Generation
 
 ## TL;DR
-This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces a "negative velocity" contrastive signal into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," VeCoR achieves more stable trajectory evolution and higher perceptual fidelity—yielding relative FID reductions of 22% and 35% for SiT-XL/2 and REPA-SiT-XL/2, respectively, on ImageNet-1K.
+This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces "negative velocity" contrastive signals into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," it achieves more stable trajectory evolution and higher perceptual fidelity—obtaining 22% and 35% relative FID reductions for SiT-XL/2 and REPA-SiT-XL/2 on ImageNet-1K, respectively.
 
 ## Background & Motivation
-**Background**: Flow Matching (FM) has emerged as a powerful alternative to diffusion models, learning time-dependent velocity fields to transport a prior distribution to the data distribution. FM offers both theoretical elegance and computational efficiency.
+**Background**: Flow Matching (FM) has become a powerful alternative to diffusion models, transporting a prior distribution to the data distribution by learning a time-dependent velocity field. FM offers theoretical elegance and computational efficiency.
 
-**Limitations of Prior Work**: Standard FM provides only unilateral positive supervision—training the model to move "in the right direction" while offering no feedback on "avoiding wrong directions." Under lightweight model configurations or low-step settings, minor inconsistencies in the velocity field accumulate errors, causing samples to deviate from the data manifold.
+**Limitations of Prior Work**: Standard FM only provides one-sided positive supervision—training the model to "move in the right direction"—but lacks feedback on "not moving in the wrong direction." In lightweight models or low-step configurations, small inconsistencies in the velocity field accumulate errors, causing samples to deviate from the data manifold.
 
-**Key Challenge**: FM supervision is directionally asymmetric (attractive only, no repulsive force). Under limited data or model capacity, the learned flow in certain regions lacks sufficient regularization, leading to artifacts such as color shifts, geometric distortions, blurriness, and noise.
+**Key Challenge**: The supervision of FM is directionally asymmetric (only attraction, no repulsion). When data or model capacity is limited, the learned flows in certain regions lack sufficient regularization, leading to issues like color shifts, geometric distortion, blurring, and artifacts.
 
-**Key Insight**: Inspired by contrastive learning—if positive pairs can be constructed to align representations, why not also construct "negative velocities" to repel undesirable flow directions?
+**Key Insight**: Inspired by contrastive learning—since positive samples can be constructed to align representations, why not also construct "negative velocities" to repel undesirable flow directions?
 
-**Core Idea**: Extend FM from a purely attractive objective to a two-sided "attraction–repulsion" training signal, regularizing the velocity field by constructing augmentation-based negative samples in image, latent, and velocity spaces.
+**Core Idea**: Extend the FM objective from a pure attractive target to an "attraction-repulsion" bilateral training signal, regularizing the velocity field by constructing augmented negative samples in image/latent/velocity spaces.
 
 ## Method
 
 ### Overall Architecture
-VeCoR is a plug-and-play training scheme that does not alter the core ODE formulation of FM. A contrastive regularization term is added on top of the standard FM objective: for each training sample, a positive velocity $\hat{v}_+$ (standard GT velocity) and a set of negative velocities $\hat{v}_-$ (obtained via augmentation perturbations) are constructed, and training simultaneously attracts the positive velocity while repelling the negative velocities.
+VeCoR aims to solve the problem where standard Flow Matching only has "attraction" but no "repulsion": the model is only told which direction to take at each step, but never which directions are wrong, making it prone to deviating in under-constrained regions when capacity is limited. The approach involves appending a contrastive regularization term to the standard FM objective—for each training sample, in addition to the original positive velocity $\hat{v}_+$ (GT velocity), a set of "seemingly reasonable but dynamically incorrect" negative velocities $\hat{v}_-$ is created. During training, the predicted velocity is pulled towards the positive velocity and pushed away from the negatives. This scheme does not modify the ODE formulation of FM and serves as a plug-and-play training add-on, compatible with various backbones such as SiT, REPA-SiT, and MMDiT.
 
 ### Key Designs
 
-1. **VeCoR Contrastive Loss**:
+**1. Attraction-Repulsion Contrastive Loss in Velocity Space: Completing One-Sided Supervision**
 
-    - Function: Provides two-sided velocity-space supervision for FM.
-    - Mechanism: A repulsion term is added to the standard FM MSE loss:
-    $\hat{\mathcal{L}}^{(\text{VeCoR})} = \frac{1}{N}\sum_{i=1}^N \left[\|v_\theta - \hat{v}_+^{(i)}\|_2^2 - \lambda \sum_{j=1}^K \|v_\theta - \hat{v}_-^{(ij)}\|_2^2\right]$
-      The first term attracts the predicted velocity toward the GT, while the second term repels it from negative sample directions. $\lambda \in (0,1)$ controls repulsion strength.
-    - Design Motivation: The attractive objective alone specifies "where to go"; the repulsion term specifies "where not to go"—supplying additional regularization for under-constrained regions under limited data or model capacity.
+The MSE of standard FM only contains an attraction term, telling the model "where to go" without any signal telling it "where not to go." VeCoR adds a repulsion term directly to the original loss:
 
-2. **Negative Velocity Candidate Construction**:
+$$\hat{\mathcal{L}}^{(\text{VeCoR})} = \frac{1}{N}\sum_{i=1}^N \left[\|v_\theta - \hat{v}_+^{(i)}\|_2^2 - \lambda \sum_{j=1}^K \|v_\theta - \hat{v}_-^{(ij)}\|_2^2\right]$$
 
-    - Function: Constructs negative velocity samples that are semantically consistent but dynamically inconsistent.
-    - Mechanism: Augmentation-based perturbations are applied at three levels:
-        - **Image Space (I)**: Apply random cropping, color jitter, etc. to training images → encode into perturbed latent representations → compute negative velocities.
-        - **Latent Space (II)**: Apply perturbations directly to latent representations → compute negative velocities.
-        - **Velocity Space (III)**: Apply operations such as channel shuffling or additive noise directly to positive velocities → obtain negative velocities.
-    - Design Motivation: Inspired by the SimCLR augmentation taxonomy (spatial/geometric vs. appearance transforms), adapted to velocity space. Experiments show that spatial/geometric transforms (especially channel shuffling) are more effective than appearance transforms, as structural perturbations yield more informative dynamic negative samples.
+The first term still pulls the predicted velocity $v_\theta$ towards the GT velocity, while the second term pushes it away from $K$ negative velocity directions, with $\lambda \in (0,1)$ controlling the repulsion strength. This term is significant because when data or model capacity is limited, a pure attraction target cannot regulate under-constrained regions, whereas the repulsion term provides regularization—ensuring the velocity field not only aligns with the GT but also actively avoids directions that would lead samples off the data manifold.
 
-3. **Default Configuration and Scalability**:
+**2. Three Levels of Negative Velocity Candidate Sets: Generating "Reasonable but Incorrect" Negative Samples**
 
-    - Function: Provides an efficient default setup and a CFG integration scheme.
-    - Mechanism: The default configuration uses Random Channel Shuffle (RCS) in velocity space with $K=1$ and $\lambda=0.05$. When integrating with CFG, a conflict must be resolved—the VeCoR contrastive objective can be interpreted as moving predicted velocities away from the mean of negative trajectories, which may conflict with the unconditional guidance direction of CFG; the correction strategy from ΔFM is adopted.
-    - Design Motivation: Channel shuffling disrupts the structural correspondence between feature channels, producing velocities that are structurally incorrect yet broadly plausible—making it the most effective and lowest-overhead negative sample strategy.
+For the repulsion term to be effective, negative velocities cannot be pure noise—they must be semantically consistent with the current sample but dynamically incorrect to make repelling them meaningful. Drawing from SimCLR's augmentation ideas, VeCoR generates negative velocities by applying perturbations at three levels: image space (random cropping, color jittering on training images, then encoding into perturbed latent representations to calculate velocity), latent space (directly perturbing latent representations), and velocity space (directly performing channel shuffling or adding noise to the positive velocity). Experiments found that structural spatial/geometric perturbations are far more effective than appearance perturbations—color jittering only changes shallow appearance, resulting in negative velocities too similar to the positive ones to provide informative contrast; whereas structural perturbations (especially channel shuffling) disrupt feature correspondences, producing negative velocities that are "wrong in just the right way," yielding the strongest contrastive signal.
+
+**3. Default Use of Channel Shuffle + CFG Conflict Resolution: Minimizing Overhead**
+
+Overall, the default configuration uses Random Channel Shuffle (RCS) in the velocity space, with $K=1$ and $\lambda=0.05$. Channel shuffling changes the structural correspondence between feature channels, producing velocity directions that are structurally incorrect but globally reasonable, and it requires no extra encoding or forward passes, making it the most cost-effective source of negative samples. One detail requiring separate handling is integration with CFG: the contrastive objective of VeCoR can be understood as "pushing the predicted velocity away from the mean direction of negative trajectories," which might conflict with the unconditional guidance direction of CFG. Therefore, the correction strategy from ΔFM is adopted during sampling to resolve this conflict and prevent the two types of guidance from canceling each other out.
 
 ### Loss & Training
-- Fully plug-and-play: no additional data or architectural modifications required.
-- Only one negative velocity computation is added; the overhead relative to standard FM training is minimal.
-- Compatible with arbitrary FM variants (SiT, REPA-SiT, MMDiT).
+The method is plug-and-play, requiring no extra data or architectural changes. Compared to standard FM training, it only adds one negative velocity calculation, resulting in minimal extra overhead. It can be directly applied to any FM variant such as SiT, REPA-SiT, or MMDiT.
 
 ## Key Experimental Results
 
@@ -100,31 +87,31 @@ VeCoR is a plug-and-play training scheme that does not alter the core ODE formul
 | Image Space | Random Crop | ~58 |
 
 ### Key Findings
-- The largest gains are observed on smaller models (SiT-S/2: FID 64→55, relative −14%), indicating particular effectiveness for capacity-constrained models.
-- Spatial/geometric perturbations outperform appearance perturbations—color jitter and similar operations introduce only shallow variations, insufficient to provide effective dynamic contrastive signals.
-- $K=2$ negative samples yields the optimal count; additional negatives produce diminishing returns.
-- Combined with CFG, the method achieves a state-of-the-art FID of 1.94, demonstrating that VeCoR learns a more robust velocity field.
+- Gains are largest on small models (SiT-S/2: FID 64→55, relative -14%), indicating particular effectiveness for capacity-constrained models.
+- Spatial/geometric perturbations outperform appearance perturbations—transformations like color jittering introduce only shallow changes, insufficient for effective dynamical contrast.
+- $K=2$ negative samples is the optimal number; beyond this, marginal returns diminish.
+- Combined with CFG, it achieves a SOTA FID of 1.94, proving that VeCoR learns a more robust velocity field.
 
 ## Highlights & Insights
-- **Transferring contrastive learning to velocity field space**: Rather than performing contrastive learning in representation space (as in SimCLR), VeCoR applies contrastive objectives to ODE velocity fields—resulting in learned flows that more stably and compactly adhere to the data manifold.
-- **Minimalist design**: By default, a single channel shuffling operation serves as the negative sample generator and a single hyperparameter $\lambda=0.05$ suffices, yet consistently yields substantial improvements.
-- **Complementarity with ΔFM**: ΔFM focuses on inter-condition semantic discriminability, while VeCoR focuses on the geometric stability of individual trajectories—the two approaches are complementary.
+- **Transferring Contrastive Learning to Velocity Space**: Instead of performing contrast in representation space (like SimCLR), it is performed on the ODE velocity field—resulting in learned flows that are more stable and tightly fit to the data manifold.
+- **Minimalist Design**: The default only requires one channel shuffle operation for negative samples and one hyperparameter $\lambda=0.05$ to bring significant and consistent improvements.
+- **Complementarity with ΔFM**: ΔFM focuses on semantic discriminative power between conditions, while VeCoR focuses on the geometric stability of individual trajectories—the two are complementary.
 
 ## Limitations & Future Work
-- Recall decreases slightly (0.63→0.62), suggesting that contrastive repulsion may marginally constrain generation diversity.
-- Current negative samples are entirely heuristic augmentations; learned negative sample mining warrants exploration.
-- Validation is limited to ImageNet and COCO; high-resolution (512+) and video generation experiments are absent.
-- $\lambda$ is fixed at 0.05 and may require adjustment across different datasets and model scales.
+- Recall slightly decreases (0.63→0.62), suggesting contrastive repulsion might marginally limit generative diversity.
+- Current negative samples are based on heuristic augmentations; learned negative sample mining could be explored.
+- Verification is limited to ImageNet and COCO; high-resolution (512+) and video generation experiments are missing.
+- $\lambda$ is fixed at 0.05, which may require tuning for different datasets and model scales.
 
 ## Related Work & Insights
-- **vs. ΔFM (Contrastive FM)**: ΔFM applies inter-condition contrastive objectives to enhance semantic discriminability; VeCoR applies intra-trajectory contrastive objectives to enhance geometric stability—the two are complementary.
-- **vs. REPA**: REPA accelerates convergence through representation alignment; VeCoR further improves upon REPA (FID 11.14→7.28), demonstrating that velocity field regularization and representation alignment are orthogonal.
-- **Transferability**: The VeCoR framework generalizes to any ODE/SDE-based generative model, including diffusion models and continuous normalizing flows.
+- **vs ΔFM (Contrastive FM)**: ΔFM performs contrast between conditions to enhance semantic discrimination; VeCoR performs contrast within trajectories to enhance geometric stability—a complementary relationship.
+- **vs REPA**: REPA accelerates convergence through representation alignment; VeCoR further improves upon REPA (11.14→7.28 FID), showing that velocity field regularization and representation alignment are orthogonal.
+- **Transferability**: The VeCoR framework is generalizable to any ODE/SDE-based generative model—diffusion models, continuous normalizing flows, etc.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of introducing contrastive learning into the velocity field is novel yet intuitively natural; the augmentation-based negative sample design is practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple backbones, multiple scales, detailed ablations, and T2I and CFG combination experiments are included.
-- Writing Quality: ⭐⭐⭐⭐ Motivation analysis is clear, illustrations are intuitive, and mathematical derivations are rigorous.
+- Novelty: ⭐⭐⭐⭐ The idea of introducing contrastive learning into velocity fields is novel yet intuitive, and the augmented negative sample design is practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Detailed ablations across multiple backbones, scales, and inclusion of T2I and CFG combinations.
+- Writing Quality: ⭐⭐⭐⭐ Motivation analysis is clear, illustrations are intuitive, and formula derivations are rigorous.
 - Value: ⭐⭐⭐⭐ A general plug-and-play method with broad applicability to the FM community.
 
 <!-- RELATED:START -->
@@ -134,10 +121,10 @@ VeCoR is a plug-and-play training scheme that does not alter the core ODE formul
 ## Related Papers
 
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](../../ICCV2025/image_generation/contrastive_flow_matching.md)
-- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 - [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](../../ICML2026/image_generation/stable_velocity_a_variance_perspective_on_flow_matching.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
-- [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
+- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
+- [\[CVPR 2026\] From Navigation to Refinement: Revealing the Two-Stage Nature of Flow-based Diffusion Models through Oracle Velocity](from_navigation_to_refinement_revealing_the_two-stage_nature_of_flow-based_diffu.md)
+- [\[CVPR 2026\] Few-shot Acoustic Synthesis with Multimodal Flow Matching](few-shot_acoustic_synthesis_with_multimodal_flow_matching.md)
 
 </div>
 

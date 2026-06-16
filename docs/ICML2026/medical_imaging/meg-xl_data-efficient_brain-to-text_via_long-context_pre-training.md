@@ -2,68 +2,85 @@
 title: >-
   [Paper Note] MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training
 description: >-
-  [ICML 2026][Medical Imaging][Brain-to-text] MEG-XL utilizes 2.5 minutes (191k tokens) of MEG context for mask token pre-training (5–300$\times$ longer than previous methods). When fine-tuned on a 50-word brain-to-text ta…
+  [ICML 2026][Medical Imaging][MEG] MEG-XL utilizes a 2.5-minute (191k tokens) MEG context for masked token pre-training (5–300$\times$ longer than previous methods), then fine-tunes on a 50-word Brain-to-Text task. With only 1 hour of data, it achieves the decoding accuracy of SOTA supervised methods using 50 hours of data and significantly outperforms
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Brain-to-text"
-  - "long-context pre-training"
-  - "MEG"
-  - "criss-cross attention"
-  - "masked token prediction"
+  - ICML 2026
+  - Medical Imaging
+  - MEG
+  - criss-cross attention
+  - masked token prediction
 date: 2026-05-08
-content_hash: a6e1eb31a75ef3d6
+content_hash: a78e332b8b679b99
 ---
-
 # MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.02494](https://arxiv.org/abs/2602.02494)  
-**Code**: Open source (paper claims release of code + weights)  
+**Code**: Open-sourced (paper states release of code + weights)  
 **Area**: Brain-Computer Interface / Neural Decoding / Foundation Models  
-**Keywords**: Brain-to-text, long-context pre-training, MEG, criss-cross attention, masked token prediction
+**Keywords**: Brain-to-Text, Long-Context Pre-training, MEG, criss-cross attention, masked token prediction
 
 ## TL;DR
-MEG-XL utilizes 2.5 minutes (191k tokens) of MEG context for mask token pre-training (5–300$\times$ longer than previous methods). When fine-tuned on a 50-word brain-to-text task, it achieves the decoding accuracy of SOTA supervised methods using only 1 hour of data compared to the typical 50 hours, significantly outperforming all existing brain foundation models.
+MEG-XL utilizes a 2.5-minute (191k tokens) MEG context for masked token pre-training (5–300$\times$ longer than previous methods), then fine-tunes on a 50-word Brain-to-Text task. With only 1 hour of data, it achieves the decoding accuracy of SOTA supervised methods using 50 hours of data and significantly outperforms all existing brain foundation models.
 
 ## Background & Motivation
 
-**Background**: Brain-to-text (B2T) decoding is a core direction in Brain-Computer Interface (BCI), categorized into invasive (cortical electrodes, where Moses 2021, Willett 2023, and Card 2024 have reached usable precision) and non-invasive (MEG/EEG, which have lower barriers but weaker signals). Representative non-invasive works include Défossez et al. (2022) for 1-second MEG speech decoding and d'Ascoli et al. (2025), which extended context to the sentence level (150s) for word decoding. Brain foundation models (LaBraM, BIOT, EEGPT, BrainOmni, CBraMod) typically perform mask pre-training on short windows of 5–30 seconds.
+**Background**: Brain-to-Text (B2T) decoding is a core direction in Brain-Computer Interface (BCI), categorized into invasive (cortical electrodes, achieving usable accuracy in Moses 2021, Willett 2023, Card 2024, etc.) and non-invasive (MEG/EEG, lower barrier but weaker signals). Representative non-invasive works include Défossez et al. (2022) for 1-second MEG speech decoding and d'Ascoli et al. (2025), which expanded context to the sentence level (150s) for word decoding. Brain foundation models (LaBraM, BIOT, EEGPT, BrainOmni, CBraMod) perform masked pre-training on short windows of 5–30 seconds.
 
-**Limitations of Prior Work**: (1) Supervised methods rely on approximately 50 hours of training data per subject, which is impractical for paralyzed patients who cannot provide such long recordings. (2) Existing brain foundation models pre-train almost exclusively on short windows ($\le$10 seconds), resulting in a severe mismatch with the long-term neurolinguistic structures (phrases, sentences, discourse) required downstream; recent analysis (Yang 2026) shows these FMs underperform compared to supervised methods in low-data scenarios. (3) Extending context is hindered by computational bottlenecks: standard transformer attention is $\mathcal{O}((CT')^2)$, causing memory overflow with multi-channel and long-duration signals.
+**Limitations of Prior Work**: (1) Supervised methods rely on approximately 50 hours of training data per subject, which is impractical for paralyzed patients who cannot provide long periods of training recordings. (2) Existing brain foundation models pre-train on short windows ($\leq 10$s), creating a severe mismatch with the long-term neurolinguistic structures (phrases, sentences, discourse) required downstream; recent analysis (Yang 2026) shows these FMs underperform supervised methods in low-data scenarios. (3) Context expansion is hindered by computational bottlenecks: standard transformer attention is $\mathcal{O}((CT')^2)$, causing VRAM overflow with multi-channel and long-duration sequences.
 
-**Key Challenge**: Neural activity contains language-related structures spanning tens of seconds to minutes (phrase aggregation, syntax, discourse coherence), but short-window pre-trained models can neither perceive nor learn to utilize these long-range dependencies. Furthermore, the clinical need for "fast adaptation to new subjects with minimal data" is precisely where short-context FMs fail.
+**Key Challenge**: Neural activity contains language-related structures spanning tens of seconds to minutes (phrase aggregation, syntax, discourse coherence), but short-window pre-trained models can neither perceive nor utilize these long-range dependencies. Simultaneously, "fast adaptation to new subjects with minimal data," the most critical requirement for clinical deployment, remains a blind spot for short-context FMs.
 
-**Goal**: (i) Construct a framework capable of mask pre-training on minute-level MEG context without memory overflow; (ii) verify if long-context pre-training truly outperforms SOTA supervised methods and existing FMs in low-data downstream scenarios (especially contextual word decoding); (iii) explain why long context is effective—whether it truly learns selective and hierarchical attention.
+**Goal**: (i) Construct a framework capable of masked pre-training on minute-level MEG contexts without exceeding VRAM limits; (ii) Verify whether long-context pre-training outperforms SOTA supervised methods and existing FMs in low-data downstream scenarios (especially contextual word decoding); (iii) Explain the utility of long context—specifically, whether it learns selective and hierarchical attention.
 
-**Key Insight**: Paying homage to Transformer-XL, the authors argue that "neural data = long documents" and must be pre-trained in long contexts like LMs to learn long-range statistical priors. Computational bottlenecks are resolved using criss-cross factorized attention (Wang 2025), which decouples and parallelizes attention across temporal and spatial dimensions.
+**Key Insight**: Paying homage to Transformer-XL, the authors view "neural data as long documents," suggesting that pre-training in long contexts, similar to LMs, is necessary to learn long-range statistical priors. The computational bottleneck is resolved using criss-cross factorized attention (Wang 2025), decoupling and parallelizing attention across temporal and channel dimensions.
 
-**Core Idea**: Use BioCodec to independently tokenize each channel (rank 12 temporal compression), feed them into an 8-layer criss-cross transformer, and mask 40% of 3-second blocks within a 2.5-minute MEG window for prediction. This forces the model to learn neural dependencies across minutes; fine-tuning for word decoding then yields a data-efficient B2T model.
+**Core Idea**: Each channel is independently tokenized using BioCodec (rank 12 temporal compression) and fed into an 8-layer criss-cross transformer. The model performs masked prediction on 40% of 3-second blocks within a 2.5-minute MEG window, forcing the learning of dependencies spanning minutes. Fine-tuning for word decoding then yields a data-efficient B2T model.
 
 ## Method
 
 ### Overall Architecture
-Pre-training Stage: Raw MEG $\mathbf{X}\in\mathbb{R}^{C\times T}$ (multi-channel, 50Hz downsampled) is passed through a frozen BioCodec independently per channel (RVQ 6 layers, vocabulary 256, 12$\times$ temporal downsampling) to obtain $\mathbf{Z}\in\{0,...,255\}^{C\times T'\times 6}$. Token embeddings concatenate 6 codebook vectors and project them to $d_{model}$, adding sensor positions (Fourier features), orientation, and type embeddings, followed by an 8-layer criss-cross transformer. 3-second blocks are uniformly masked until 40% of tokens are covered, and the model predicts 6 RVQ-level codes per position. Fine-tuning Stage: Adopting the d'Ascoli task settings—50 words $\times$ 3-second MEG windows are concatenated into a 150-second input; the model predicts the T5 word embedding corresponding to each word's time interval. Training uses an MLP head with SigLIP contrastive loss; at inference, words are retrieved via nearest neighbor search.
+MEG-XL treats "neural data as long documents," first performing masked pre-training on a 2.5-minute (191k tokens) MEG context to learn long-range statistical priors, then fine-tuning on a 50-word Brain-to-Text task. During pre-training, raw MEG $\mathbf{X}\in\mathbb{R}^{C\times T}$ is compressed into discrete tokens via per-channel independent frozen BioCodec. After concatenating position/orientation/type embeddings, tokens pass through an 8-layer criss-cross transformer. 40% of tokens are uniformly masked in 3-second blocks for the model to predict masked RVQ codes. During fine-tuning, following d'Ascoli's task setup, 50 words $\times$ 3s MEG windows are concatenated into a 150s input to predict T5 word embeddings for each segment. An MLP head is trained using SigLIP contrastive loss, and inference is performed via nearest-neighbor word retrieval based on cosine similarity. Both pre-training and fine-tuning share the same criss-cross transformer backbone.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph PT["Pre-training: Long-context Masked Token Prediction"]
+        direction TB
+        X["Raw MEG Signal<br/>C Channels × T Time (2.5 mins)"] --> TOK["Independent Multi-channel RVQ Tokenization (BioCodec)<br/>Time compression only → 191k tokens"]
+        TOK --> EMB["Input Embedding<br/>RVQ Codebook Concat + Sensor Pos/Ori/Type"]
+        EMB --> XF["8-layer Criss-cross Transformer<br/>Parallel Spatial/Temporal Attention (Factorization)"]
+        XF --> OBJ["Masked Token Prediction Target<br/>40% Masked in 3s Blocks (All Channels Synced) → Reconstruct RVQ codes"]
+    end
+    XF -. Pre-trained Weights Transfer .-> XF2
+    subgraph FT["Fine-tuning: 50-word Contextual Word Decoding"]
+        direction TB
+        IN["50 words × 3s MEG window → 150s input"] --> XF2["Reuse Criss-cross Transformer"]
+        XF2 --> HEAD["Feature Extraction per Word Segment → MLP Head<br/>Predict T5 Word Embeddings · SigLIP Loss"]
+        HEAD --> OUT["Inference: Cosine Similarity Nearest Neighbor Search"]
+    end
+```
 
 ### Key Designs
 
-1.  **2.5-minute Ultra-long Context Pre-training + Criss-cross Attention**:
-    - **Function**: Enables the model to perform mask prediction on sequences of 191k tokens without memory exhaustion.
-    - **Mechanism**: Standard attention's $\mathcal{O}((CT')^2)$ is unfeasible for long-duration multi-channel data. Criss-cross splits the feature dimension into halves: one half undergoes SpatialAttn (independent cross-channel attention per timestep, complexity $\mathcal{O}(T'\cdot C^2)$), and the other half undergoes TemporalAttn (independent cross-time attention per channel, complexity $\mathcal{O}(C\cdot T'^2)$). RoPE is added to TemporalAttn for positional encoding. The halves are concatenated, followed by residual connections, RMSNorm, and SELU FFN. Total complexity drops from $\mathcal{O}((CT')^2)$ to $\mathcal{O}(C\cdot T'^2+T'\cdot C^2)$, allowing 2.5 minutes $\times$ hundreds of channels $\times$ 50Hz sequences to fit on a single GPU.
-    - **Design Motivation**: Neurolinguistic structures span seconds to minutes; short-window models are structurally incapable of reaching them. The physical intuition of criss-cross is that "temporal and spatial correlations are approximately separable," which is a good approximation for brain signals with high sensor-wise temporal and cross-sensor spatial correlations.
+**1. Independent Multi-channel RVQ Tokenization (BioCodec) + Residual Codebook Embedding: Temporal compression only**
 
-2.  **Per-channel Independent RVQ Tokenization (BioCodec) + Residual Codebook Input Embeddings**:
-    - **Function**: Compresses continuous MEG signals into discrete token sequences, reducing sequence length while providing mask prediction targets.
-    - **Mechanism**: BioCodec (a neural audio codec-style tokenizer trained on EEG) performs RVQ independently for each channel: $Q=6$ residual quantization levels, each with a vocabulary $V=256$. Temporal downsampling of 12$\times$ compresses 50Hz $\times$ 150s $\times$ hundreds of channels into 191k tokens. Input embeddings are derived by looking up codebooks $\mathbf{e}^{(q)}_{z_{c,q,t}}$, then concatenated and projected: $\mathbf{h}^{(0)}_{c,t}=\mathbf{W}_{proj}[\mathbf{e}^{(1)};...;\mathbf{e}^{(Q)}]$; plus sensor position Fourier features $\gamma(\mathbf{v})=[\cos(2\pi\mathbf{Bv}),\sin(2\pi\mathbf{Bv})]$, orientation, and type embeddings.
-    - **Design Motivation**: Unlike BrainTokenizer which compresses time and space simultaneously, this work only compresses time—leading to better reconstruction quality and preventing the loss of task-relevant information during tokenization. RVQ provides higher fidelity for high-frequency time-series data compared to single VQ by capturing both slow and fast dynamics.
+To perform masked prediction on long contexts, continuous MEG signals are first compressed into discrete tokens, reducing sequence length and providing prediction targets. BioCodec (a neural audio codec-style tokenizer trained on EEG) is used for independent Residual Vector Quantization (RVQ) per channel: $Q=6$ levels of residual quantization, each with codebook $V=256$, and 12$\times$ temporal downsampling. This compresses 50Hz $\times$ 150s $\times$ hundreds of channels into 191k tokens. Input embeddings are formed by concatenating vectors from each codebook level $\mathbf{e}^{(q)}_{z_{c,q,t}}$ and projecting them: $\mathbf{h}^{(0)}_{c,t}=\mathbf{W}_{proj}[\mathbf{e}^{(1)};...;\mathbf{e}^{(Q)}]$. Fourier features $\gamma(\mathbf{v})=[\cos(2\pi\mathbf{Bv}),\sin(2\pi\mathbf{Bv})]$ for sensor positions, orientations, and type embeddings are added. Crucially, only time is compressed: compared to BrainTokenizer’s simultaneous spatial-temporal compression, temporal-only compression preserves reconstruction quality and avoids discarding task-relevant information early. RVQ captures both slow dynamics and high-frequency details more effectively than single-level VQ for high-frequency time-series data.
 
-3.  **Large Block Masking (3s) + Synchronous All-channel Masking Prediction**:
-    - **Function**: Forces the model to learn temporal dependencies across seconds rather than simple cross-channel interpolation.
-    - **Mechanism**: Random 3-second blocks are selected until 40% of tokens are masked. All channels are **synchronously masked** at the selected time steps and replaced with mask embeddings. The model predicts RVQ codes for each mask position: $p(z_{c,q,t}\mid\mathbf{X}_{\backslash\mathcal{M}})=\text{softmax}(\mathbf{W}_q\mathbf{h}^{(L)}_{c,t})$, with loss $\mathcal{L}=-\frac{1}{|\mathcal{M}|CQ}\sum_t\sum_c\sum_q\log p(z_{c,q,t}\mid\mathbf{X}_{\backslash\mathcal{M}})$. The 3-second block size is deliberately chosen to cover the typical duration of neural responses to words (Kutas & Federmeier 2011).
-    - **Design Motivation**: Due to high temporal autocorrelation in MEG, short masks allow the model to use "neighbor interpolation" as a shortcut; 3-second blocks + synchronous masking eliminate these shortcuts, forcing true long-term modeling. The 40% mask ratio is higher than BERT's 15%, falling between MAE (75%) and wav2vec 2.0 (49%), based on empirical tuning.
+**2. 2.5-minute Ultra-long Context + Criss-cross Factorized Attention: Fitting minute-level vision into a single GPU**
+
+Linguistic structures in the brain (phrase aggregation, syntax, discourse coherence) span seconds to minutes, yet existing brain foundation models pre-train on short windows ($\leq 10$s), structurally precluding long-range dependencies. Extending context directly hits a computational wall: standard attention complexity is $\mathcal{O}((CT')^2)$. This study employs criss-cross attention to decouple spatial and temporal dimensions by splitting the feature dimension in half—one half undergoes SpatialAttn (independent cross-channel attention per timestep, $\mathcal{O}(T'\cdot C^2)$), and the other half undergoes TemporalAttn (independent cross-temporal attention per channel with RoPE encoding, $\mathcal{O}(C\cdot T'^2)$). The results are concatenated along the channel dimension followed by Residual + RMSNorm + SELU FFN. Total complexity is reduced from $\mathcal{O}((CT')^2)$ to $\mathcal{O}(C\cdot T'^2+T'\cdot C^2)$, allowing the 191k token sequence to fit on a single GPU. This factorization works because brain signals naturally exhibit separability between temporal correlation (sensor-specific) and spatial correlation (simultaneous), making decoupling a strong approximation.
+
+**3. 3-second Large Block Masking + All-channel Synchronous Masking: Blocking interpolation shortcuts to force long-range modeling**
+
+MEG exhibits high temporal autocorrelation. If only short segments are masked, the model can exploit neighbor interpolation to fill gaps without learning long-range dependencies. MEG-XL randomly selects 3-second blocks until 40% of tokens are masked, and **synchronously masks all channels** at chosen timesteps using a mask embedding. The model must predict RVQ codes $p(z_{c,q,t}\mid\mathbf{X}_{\backslash\mathcal{M}})=\text{softmax}(\mathbf{W}_q\mathbf{h}^{(L)}_{c,t})$ at masked positions, with the loss defined as:
+
+$$\mathcal{L}=-\frac{1}{|\mathcal{M}|CQ}\sum_t\sum_c\sum_q\log p(z_{c,q,t}\mid\mathbf{X}_{\backslash\mathcal{M}}).$$
+
+The 3-second block size is intentionally chosen to cover typical durations of neural responses to words (Kutas & Federmeier 2011). Synchronous masking across all channels disrupts both "temporal neighbor interpolation" and "channel neighbor interpolation" shortcuts, forcing the model to model long-term structures. The 40% mask rate was empirically tuned—higher than BERT's 15%, between MAE’s 75% and wav2vec 2.0’s 49%.
 
 ### Loss & Training
-Pre-training: Approximately 300 hours of MEG data (CamCAN + MOUS + SMN4Lang), covering resting state, motor, and speech tasks across hundreds of subjects; mask token prediction cross-entropy; channel masking is used to handle padding for different MEG systems. Fine-tuning: SigLIP contrastive loss + word embedding regression head; end-to-end fine-tuning of transformer + MLP head; nearest neighbor word retrieval via cosine similarity.
+Pre-training utilizes approximately 300 hours of MEG data (CamCAN + MOUS + SMN4Lang), covering resting state, motor, and speech tasks across hundreds of subjects. The objective is masked token prediction via cross-entropy. Channel masking handles padding for varying channel counts across MEG systems. Fine-tuning uses SigLIP contrastive loss with a word embedding regression head, involving end-to-end fine-tuning of the transformer and MLP head. Inference is based on cosine similarity nearest-neighbor word retrieval.
 
 ## Key Experimental Results
 
@@ -79,48 +96,48 @@ Pre-training: Approximately 300 hours of MEG data (CamCAN + MOUS + SMN4Lang), co
 | LaBraM | 5.8M | 33.2 | 26.3 | 40.3 | 31.1 | 42.0 | 47.7 |
 | **MEG-XL (Ours)** | **20M** | **47.0** | **54.9** | **57.3** | **46.4** | **61.2** | **63.0** |
 
-In low-data (13%) scenarios, MEG-XL outperforms the next best model, LaBraM, by 13–28 points; with full data, it matches or exceeds BrainOmni. BrainOmni's failure on MEG-MASC (shallow multi-subject data) highlights the struggles of existing FMs in "low-data per subject" clinical scenarios.
+In low-data (13%) scenarios, MEG-XL outperforms the next best (LaBraM) by 13–28 points. With full data, it is comparable to or better than BrainOmni. BrainOmni's performance drops to 19.1% on MEG-MASC (shallow, multi-subject), indicating that existing FMs fail in "shallow data, multi-subject" scenarios critical for clinical use.
 
 ### Ablation Study
 
 | Configuration | Effect |
 |---|---|
-| Random init MEG-XL (No pre-training) | Performance near supervised baseline, proving gains come from pre-training, not architecture. |
-| Pre-training context 5s $\to$ 30s $\to$ 100s $\to$ 150s | Monotonic improvement in linear probe word decoding, saturating around 100s. |
-| Full-context vs Matched-context inference | Almost overlapping $\to$ providing longer context during inference is useless unless pre-trained on it. |
-| Masked prediction (Zero-shot) | Monotonic improvement from 5s to 150s, unsaturated—longer might still help. |
-| Attention analysis | Long-context models show local attention in early layers and global integration in deep layers + lower attention entropy. |
+| Random init MEG-XL (No pre-training) | Performance near supervised baseline, proving gains come from pre-training, not just architecture. |
+| PT Context 5s → 30s → 100s → 150s | Monotonic improvement in word decoding linear probe, saturating around 100s. |
+| Full-context vs Matched-context Inference | Results almost overlap → providing longer context during inference is useless unless pre-trained on it. |
+| Masked prediction (Zero-shot) | Monotonic improvement from 5s to 150s, not yet saturated—longer context might yield further gains. |
+| Attention Analysis | Long-context models show local attention in early layers, global integration in deep layers, and lower attention entropy. |
 
 ### Key Findings
-- Dramatic Gain in Data Efficiency: Accuracy achieved by MEG-XL with 1 hour of data takes SOTA supervised methods 50 hours (approx. 50$\times$ data efficiency).
-- Long context learns "when to look far / when to look near"—a selective hierarchical attention that short-context models, which attend uniformly from the first layer, fail to acquire.
-- On "deep single-subject" data like LibriBrain, supervised methods (d'Ascoli) still catch up when data is sufficient (after 2.5 hours), defining the boundary of "pre-training vs. subject-specific data."
-- MEG-XL completely dominates in low-data regimes (+25 points on MEG-MASC), the critical scenario for BCI clinical deployment.
+- **Breakthrough in Data Efficiency**: MEG-XL achieves accuracy with 1 hour of data that supervised SOTA requires 50 hours to reach (approx. 50$\times$ data efficiency).
+- Long context learns "when to look far vs. when to look near"—a selective hierarchical attention that short-context models, which use uniform attention from the first layer, never learn.
+- In "deep single-subject" data like LibriBrain, supervised methods (d'Ascoli) eventually surpass MEG-XL when data exceeds 2.5 hours, identifying the boundary where subject-specific data overtakes pre-training.
+- MEG-XL significantly outperforms supervised methods in sparse-data scenarios (e.g., +25 points on MEG-MASC), which is the most critical scenario for clinical BCI deployment.
 
 ## Highlights & Insights
-- "Long context is a learned ability, not a given capability" is the most significant insight—simply providing more context at inference is ineffective; it must be part of pre-training. This aligns with LM length generalization literature, bringing this principle to neural decoding.
-- The success of criss-cross attention on brain signals suggests that highly structured spatio-temporal data can bypass quadratic complexity via "spatio-temporal factorized attention," applicable to fMRI, ECoG, and sensor networks.
-- In clinical deployment, "cross-subject pre-training replacing within-subject training" is a paradigm shift, reducing BCI calibration for new users from 50 hours to 1–2 hours.
-- The 3-second block + synchronous masking is a clever design that disables both "temporal" and "spatial" neighbor interpolation shortcuts, forcing semantic-level modeling.
+- "Long context is a learned capability, not a given capability" is the most significant insight—providing long context only at inference is useless; it must be provided during pre-training. This echoes LM length generalization literature.
+- The success of criss-cross attention on brain signals suggests that highly structured spatial-temporal data can generally use "spatial-temporal factorized attention" to bypass quadratic complexity. This is applicable to any $C\times T$ signals like fMRI, ECoG, or sensor networks.
+- In clinical contexts, "cross-subject pre-training replacing intra-subject deep training" is a paradigm shift—reducing BCI training requirements from 50 hours of a new user's time to 1–2 hours.
+- 3s large blocks + all-channel synchronous masking is a clever design—it simultaneously disables "temporal" and "channel" shortcuts, forcing genuine semantic-level modeling.
 
 ## Limitations & Future Work
-- Only tested on perceived speech (listening to audiobooks); did not touch the more difficult "imagined speech," which is how paralyzed patients actually use BCI.
-- Retrieval vocabulary is only 50 (top-250 trends are similar), still orders of magnitude away from the thousands of words needed for open vocabulary clinical use.
-- Interpretability gains from long context (hierarchical attention) remain at a statistical description level; no clear link to specific linguistic structures (syllables/words/phrases) is established.
-- Memory remains the ceiling—150s is the GPU VRAM limit, preventing verification of whether even longer contexts continue to yield benefits.
-- Pre-training data consists of healthy research participants, potentially causing a domain shift when applied to real paralyzed patients.
+- Only perceived speech (listening to audiobooks) was tested; imagined speech, which is how paralyzed patients actually use BCI, remains untouched.
+- The retrieval vocabulary size is only 50 (top-250 trends are similar), still orders of magnitude away from the open vocabulary (thousands of words) needed for clinical use.
+- Interpretability gains from long context (hierarchical attention) are currently statistical; clear evidence mapped to specific linguistic structures (syllables/words/phrases) is needed.
+- VRAM remains a bottleneck—150s is the limit for current GPUs, preventing further verification of benefits from even longer contexts.
+- Pre-training data consists of research datasets from healthy individuals, which may have a domain shift from the MEG signals of paralyzed patients.
 
 ## Related Work & Insights
-- **vs d'Ascoli et al. (2025) (Supervised SOTA)**: They first extended MEG input to 150s sentences but relied on supervised training; MEG-XL adopts the same length but reduces data needs by 1–2 orders of magnitude via SSL.
-- **vs LaBraM / EEGPT / BIOT / BrainOmni**: These FMs use $\le$30s windows and collapse in low-data settings; MEG-XL qualitatively changes performance by expanding context to minutes.
-- **vs CBraMod / BrainOmni (Criss-cross origins)**: BrainOmni also uses criss-cross attention but keeps the 30s window; this work proves the true value of factorized attention lies in the 150s window.
-- **vs Transformer-XL (Naming tribute)**: Directly ports the LM long-context paradigm to neural data and proves the validity of similar laws.
+- **vs d'Ascoli et al. (2025) (Supervised SOTA)**: They first expanded MEG input to 150s sentence-level context but relied on supervised training; MEG-XL uses the same length but reduces data needs via self-supervised pre-training by 1–2 orders of magnitude.
+- **vs LaBraM / EEGPT / BIOT / BrainOmni**: These brain FMs pre-train on $\leq 30$s windows and collapse in low-data scenarios; MEG-XL qualitatively transforms performance by extending context to minutes.
+- **vs CBraMod / BrainOmni (Criss-cross relatives)**: BrainOmni also uses criss-cross attention but on 30s windows; this paper proves the true value of factorized attention emerges only when windows are extended to 150s.
+- **vs Transformer-XL (Naming homage)**: Directly ports the LM long-context paradigm to neural data and demonstrates that similar laws apply.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First to combine minute-level context + RVQ tokenization + criss-cross attention for B2T; clear logic and significant results.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Included 3 MEG datasets + 6 FM baselines + supervised SOTA + linear probing + zero-shot prediction + attention analysis; very complete chain of evidence.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Excellent storytelling—analogizing LM success to neural data; theoretical framework + empirical results + mechanistic analysis are seamless.
-- **Value**: ⭐⭐⭐⭐⭐ Substantial push for non-invasive BCI clinical feasibility; the "long-context as a learned ability" principle is methodologically significant for neural FMs.
+- Novelty: ⭐⭐⭐⭐ First to combine minute-level context, RVQ tokenization, and criss-cross attention for B2T with significant results.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 MEG datasets + 6 FM baselines + supervised SOTA + linear probing + zero-shot prediction + attention analysis; complete chain of evidence.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent narrative—analogizing LM long-context success to neural data; theoretical framework, empirical evidence, and mechanism analysis are well-integrated.
+- Value: ⭐⭐⭐⭐⭐ Substantial push for non-invasive BCI clinical feasibility; the "long context as a learned capability" principle is methodologically significant for neural foundation models.
 
 <!-- RELATED:START -->
 
@@ -129,10 +146,10 @@ In low-data (13%) scenarios, MEG-XL outperforms the next best model, LaBraM, by 
 ## Related Papers
 
 - [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](../../CVPR2026/medical_imaging/meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
+- [\[ECCV 2024\] TIP: Tabular-Image Pre-training for Multimodal Classification with Incomplete Data](../../ECCV2024/medical_imaging/tip_tabular-image_pre-training_for_multimodal_classification_with_incomplete_dat.md)
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](../../NeurIPS2025/medical_imaging/brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
-- [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](../../AAAI2026/medical_imaging/mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
-- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
 
 </div>
 

@@ -2,132 +2,150 @@
 title: >-
   [Paper Note] MARCO: Navigating the Unseen Space of Semantic Correspondence
 description: >-
-  [CVPR 2026][3D Vision][Semantic Correspondence] This paper proposes MARCO, a semantic correspondence model built on a single DINOv2 backbone. It progressively improves spatial precision via a coarse-to-fine Gaussian RBF…
+  [CVPR 2026][3D Vision][DINOv2] MARCO is proposed, a semantic correspondence model based on a single DINOv2 backbone. It progressively improves spatial precision through a coarse-to-fine Gaussian RBF loss and expands sparse keypoint supervision into dense pseudo-correspondence labels using a self-distillation framework. MARCO achieves SOTA performanc
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Semantic Correspondence"
-  - "DINOv2"
-  - "Self-Distillation"
-  - "Coarse-to-Fine"
-  - "Generalization"
+  - CVPR 2026
+  - 3D Vision
+  - DINOv2
+  - Generalizability
 date: 2026-05-08
-content_hash: b09be64aea9493e0
+content_hash: 014a15e3d2790d42
 ---
-
 # MARCO: Navigating the Unseen Space of Semantic Correspondence
 
 **Conference**: CVPR 2026 Oral  
 **arXiv**: [2604.18267](https://arxiv.org/abs/2604.18267)  
 **Code**: [https://visinf.github.io/MARCO](https://visinf.github.io/MARCO)  
-**Area**: 3D Vision
-**Keywords**: Semantic Correspondence, DINOv2, Self-Distillation, Coarse-to-Fine, Generalization
+**Area**: 3D Vision  
+**Keywords**: Semantic Correspondence, DINOv2, Self-distillation, Coarse-to-fine, Generalizability
 
 ## TL;DR
 
-This paper proposes MARCO, a semantic correspondence model built on a single DINOv2 backbone. It progressively improves spatial precision via a coarse-to-fine Gaussian RBF loss, and expands sparse keypoint supervision into dense pseudo-correspondence labels through a self-distillation framework. MARCO achieves state-of-the-art performance on standard benchmarks as well as on unseen keypoints and categories, while being 3× smaller and 10× faster than dual-encoder approaches.
+MARCO is proposed, a semantic correspondence model based on a single DINOv2 backbone. It progressively improves spatial precision through a coarse-to-fine Gaussian RBF loss and expands sparse keypoint supervision into dense pseudo-correspondence labels using a self-distillation framework. MARCO achieves SOTA performance on standard benchmarks and unseen keypoints/categories while being $3\times$ smaller and $10\times$ faster than dual-encoder methods.
 
 ## Background & Motivation
 
-**Background**: Semantic correspondence aims to establish pixel-level matches between semantically equivalent regions. Recent dominant methods adopt dual-encoder architectures combining DINOv2 (for robust semantic alignment) with Stable Diffusion (for rich spatial detail), such as Geo-SC and SD+DINO. These methods perform well on benchmarks but have parameter counts approaching one billion.
+**Background**: Semantic correspondence aims to establish pixel-level matches between semantically equivalent regions. Recent mainstream methods adopt dual-encoder architectures—combining DINOv2 (for robust semantic alignment) and Stable Diffusion (for rich spatial details), such as Geo-SC and SD+DINO. These methods perform well on benchmarks but have nearly 1 billion parameters.
 
-**Limitations of Prior Work**: (1) Dual-encoder designs incur substantial computational cost, requiring feature extraction from two separate encoders. (2) More critically, models trained on sparse keypoints generalize poorly to unseen keypoints and unseen categories at test time, since query points rarely coincide with annotated positions in practice. This exposes a fundamental gap between benchmark performance and real-world applicability.
+**Limitations of Prior Work**: (1) Dual-encoder schemes are computationally intensive, requiring feature extraction from two encoders; (2) More critically, models trained on sparse keypoints generalize poorly to unseen keypoints and unseen categories during testing, as query points in practical applications rarely overlap with points annotated during training. This exposes a gap between benchmark performance and real-world usability.
 
-**Key Challenge**: Sparse keypoint supervision causes models to overfit to annotated locations. Fine-tuned DINOv2 achieves higher accuracy near annotated keypoints, but the broader surface-level consistency that originally spanned the entire object is degraded—representations collapse toward keypoint neighborhoods.
+**Key Challenge**: Sparse keypoint supervision causes the model to overfit near annotated positions. While finetuned DINOv2 improves accuracy around annotated keypoints, the original part-consistency across the entire object surface is destroyed (representation collapses toward keypoints).
 
-**Goal**: (1) Improve precision on standard benchmarks, particularly at fine-grained localization thresholds. (2) Substantially enhance generalization to unseen keypoints and unseen categories. (3) Preserve the efficiency advantage of a single-backbone design.
+**Goal**: (1) Improve accuracy on standard benchmarks, especially at fine-grained localization thresholds; (2) Substantially enhance generalizability to unseen keypoints and categories; (3) Maintain the efficiency advantage of a single backbone.
 
-**Key Insight**: Although frozen DINOv2 features exhibit limited spatial consistency, they already encode sparse but reliable correspondence cues. These cues can be exploited during training to automatically discover and propagate dense correspondences, extending supervision from a handful of keypoints to the full object surface.
+**Key Insight**: Although frozen DINOv2 encoders have limited spatial consistency, their feature spaces already contain sparse but reliable correspondence clues. These clues can be utilized during training to automatically discover and propagate dense correspondence, extending supervision from a few keypoints to the entire object surface.
 
-**Core Idea**: A coarse-to-fine supervision objective improves spatial precision, while a self-distillation framework combined with flow anchoring expands sparse keypoints into dense pseudo-labels covering the entire object surface, encouraging features to remain smooth across the whole object rather than collapsing near annotated points.
+**Core Idea**: Utilize a "coarse-to-fine" supervision target to improve spatial precision, combined with "self-distillation + flow-anchoring" to expand sparse keypoints into dense pseudo-labels covering the object surface. This ensures features remain smooth across the entire object rather than contracting only around keypoints.
 
 ## Method
 
 ### Overall Architecture
 
-MARCO builds on a DINOv2 backbone with only two lightweight components: a bottleneck adapter (AdaptFormer, <5% parameter overhead) and a compact upsampling head (transposed convolution + depthwise convolution, 4× feature resolution increase). Training employs two complementary objectives: a coarse-to-fine supervision loss and a self-distillation dense correspondence loss.
+MARCO aims to achieve more accurate semantic correspondence and better robustness to unseen keypoints/categories without introducing a second encoder. It uses a **frozen DINOv2 encoder** as the semantic base and adds two lightweight components: a bottleneck adapter (AdaptFormer, parameter overhead <5%) inserted into high-level Transformer blocks, and a compact upsampling head that scales patch-level features by $4\times$. When an image is input, DINOv2 outputs $14\times14$ patch features, the adapter finetunes the semantics, and the upsampling head restores spatial resolution. Correlation between features of image pairs yields the correspondence probability map.
+
+The effectiveness is driven by two complementary training objectives. One is the **coarse-to-fine supervision loss**, responsible for tightening localization from region-level to sub-patch-level. The other is the **flow-anchored self-distillation loss**, which automatically expands the sparse keypoints available during training into dense pseudo-correspondences covering the entire object.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Image Pair"] --> ARCH
+    subgraph ARCH["Lightweight Architecture Enhancement (Frozen Base + Small Modules)"]
+        direction TB
+        B["Frozen DINOv2 Encoder<br/>Outputs 14×14 patch features"] --> C["AdaptFormer Adapter<br/>Residual bottleneck semantic finetuning"]
+        C --> D["Upsampling Head<br/>4× scale to sub-patch resolution"]
+    end
+    ARCH --> E["Feature Correlation<br/>yields correspondence map"]
+    E --> F["Coarse-to-fine Gaussian RBF Loss<br/>Bandwidth σ Cosine Annealing: Region alignment followed by precision"]
+    ARCH --> SELF
+    subgraph SELF["Flow-anchored Self-distillation"]
+        direction TB
+        G["EMA Teacher MNN + GT Keypoints<br/>Merged into seed set"] --> H["Delaunay Triangulation<br/>Interpolates dense flow field"]
+        H --> I["Displacement space k-means clustering"]
+        I --> J["GT Anchor Filtering<br/>Retain clusters containing GT pairs as pseudo-labels"]
+    end
+    F --> K["Total Loss Supervision (Precision + Generalization)"]
+    SELF --> K
+```
 
 ### Key Designs
 
-1. **Coarse-to-Fine Gaussian RBF Loss**:
+**1. Coarse-to-fine Gaussian RBF Loss: From Regional Alignment to Precise Localization**
 
-    - **Function**: Guides correspondence matching progressively from coarse region-level alignment to sub-patch-level precise localization.
-    - **Mechanism**: A cross-entropy loss supervises the predicted probability map against a Gaussian RBF kernel centered at the GT keypoint. The key innovation is cosine annealing of the bandwidth $\sigma$: $\sigma(t) = \sigma_{min} + \frac{1}{2}(\sigma_{max} - \sigma_{min})(1 + \cos(\pi t/T))$. A large $\sigma$ (wide kernel) early in training encourages region-level alignment; a small $\sigma$ (narrow kernel) later enforces precise localization.
-    - **Design Motivation**: Training directly with a small $\sigma$ yields precise matches at a few high-confidence locations but degrades overall accuracy. Training with a large $\sigma$ produces broad but coarse matches. The annealing strategy first establishes stable regional alignment before progressively tightening the target, capturing the benefits of both regimes.
+Supervising directly with a very narrow Gaussian kernel leads to high accuracy only at a few high-confidence points while overall accuracy suffers; using a very wide kernel only achieves coarse alignment. MARCO's approach is to dynamically shrink the "width" of the supervision target during training. The predicted probability map matches a Gaussian RBF kernel centered on the GT keypoint, where the kernel bandwidth $\sigma$ follows a cosine annealing schedule:
 
-2. **Dense Self-Distillation via Flow Anchoring**:
+$$\sigma(t) = \sigma_{min} + \tfrac{1}{2}(\sigma_{max} - \sigma_{min})\,(1 + \cos(\pi t/T))$$
 
-    - **Function**: Expands sparse keypoint supervision into dense pseudo-correspondence labels covering the object surface.
-    - **Mechanism**: (a) Mutual nearest-neighbor matches $\mathcal{P}_{MNN}$ are extracted from the EMA teacher network's features and merged with GT keypoints to form a seed set. (b) A Delaunay triangulation is constructed on the source endpoints of the seed set; piecewise affine transformations between triangle pairs yield a dense flow field $\mathbf{D}(\mathbf{u})$. (c) K-means clustering in displacement space identifies coherent motion regions, with $k$ automatically selected via BIC. (d) Only clusters containing GT keypoint pairs are retained as reliable pseudo-labels—i.e., regions whose flow direction is consistent with GT correspondences.
-    - **Design Motivation**: Direct dense matching using DINOv2 features introduces substantial errors (due to symmetry, occlusion, etc.). The flow anchoring strategy cleverly uses GT keypoints as anchors to validate the reliability of discovered correspondences.
+In early training, $\sigma$ is large/wide, requiring predictions only to fall within the region near the GT to establish stable region-level alignment. As $t$ increases and $\sigma$ narrows, the loss penalizes even pixel-level deviations, forcing the model toward sub-patch-level precision. This compresses "coarse-to-fine" multi-stage training into a single annealing curve, preventing early collapse while ensuring tight final localization—a direct reason for its superiority at the strict PCK@0.01 threshold.
 
-3. **Lightweight Architectural Enhancements**:
+**2. Flow-anchored Self-distillation: Anchoring Sparse Supervision to Generate Dense Pseudo-labels**
 
-    - **Function**: Improves feature quality and spatial resolution without substantially increasing parameter count.
-    - **Mechanism**: AdaptFormer inserts bottleneck adapters ($\mathbf{W}_{down} \in \mathbb{R}^{D \times d}$, $d \ll D$) into upper Transformer blocks in a residual manner. The upsampling head achieves 4× upsampling via 2× transposed convolution + GELU + 3×3 depthwise convolution, lifting 14×14 patch-level features to sub-patch resolution.
-    - **Design Motivation**: Keeping the backbone frozen and training only the adapters fully exploits DINOv2's pretrained representations while avoiding the overfitting risks associated with large-scale fine-tuning.
+Sparse keypoint supervision poses a risk: finetuning improves areas near keypoints but destroys DINOv2's original part-consistency across the object surface, causing representations to collapse around annotated points and fail on unseen ones. To address this, supervision must cover the entire surface. However, direct dense matching using DINOv2 features introduces errors due to symmetry and occlusion. MARCO's solution ensures discovered dense correspondences are consistent with known GT keypoint flows via four steps: first, mutual nearest neighbor (MNN) matches $\mathcal{P}_{MNN}$ are extracted from EMA teacher features and merged with GT keypoints into a seed set; Delaunay triangulation is performed on the source points of seeds to create piecewise affine transformations, interpolating a dense flow field $\mathbf{D}(\mathbf{u})$; k-means clustering is performed in displacement space (with $k$ determined by BIC) to group regions with consistent motion; finally, **only clusters containing GT keypoints are retained** as reliable pseudo-labels. GT keypoints act as "anchors"—a cluster's flow is accepted only if it aligns with a GT pair, ensuring pseudo-labels are both dense and clean.
+
+**3. Lightweight Architecture Enhancement: Frozen Base with Adapters and Upsampling**
+
+To capture details without massive parameter overhead, MARCO freezes the entire backbone and trains only two small modules. AdaptFormer inserts bottleneck adapters (projection matrices $\mathbf{W}_{down} \in \mathbb{R}^{D \times d}$, $d \ll D$) into high-level Transformer blocks in a residual manner, finetuning semantics with minimal parameters. The upsampling head uses a sequence of $2\times$ transposed convolutions, GELU, and $3\times3$ depthwise convolutions to achieve $4\times$ magnification, lifting $14\times14$ patch features to sub-patch resolution for sufficient spatial granularity. Freezing the base preserves DINOv2's generalizability and avoids the risk of overfitting to annotated points—complementing the loss functions where the loss defines "where to learn" and the architecture ensures "not to break the base."
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The supervised loss uses CE with Gaussian RBF annealing; the self-distillation loss uses L2 regression, which is more robust to noisy pseudo-labels. The teacher network is an EMA of the student.
+The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The supervision loss $\mathcal{L}_{sup}$ uses cross-entropy with the aforementioned Gaussian RBF annealing. The self-distillation loss $\mathcal{L}_{self}$ performs L2 regression on dense pseudo-labels (more robust to noisy pseudo-labels than CE). The teacher network is an EMA of the student, ensuring stable pseudo-label generation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Threshold | MARCO | Prev. SOTA (Geo-SC) | Gain |
+| Dataset | Threshold | MARCO | Geo-SC (Prev. SOTA) | Gain |
 |--------|------|-------|----------------|------|
-| SPair-71k | PCK@0.10 | **Best** | 2nd | +4.0 |
-| SPair-71k | PCK@0.01 | **Best** | 2nd | **+8.9** |
-| AP-10K (Intra) | PCK@0.10 | **Best** | 2nd | +2.9 |
-| PF-PASCAL | PCK@0.10 | **Best** | 2nd | Gain |
+| SPair-71k | PCK@0.10 | **Ours** | 2nd Best | +4.0 |
+| SPair-71k | PCK@0.01 | **Ours** | 2nd Best | **+8.9** |
+| AP-10K (Intra) | PCK@0.10 | **Ours** | 2nd Best | +2.9 |
+| PF-PASCAL | PCK@0.10 | **Ours** | 2nd Best | Gain |
 
-### Generalization Results
+### Generalizability Results
 
-| Setting | MARCO | Prev. SOTA (Jamais Vu) | Gain |
+| Setting | MARCO | Jamais Vu (Prev. Best) | Gain |
 |------|-------|-------------------|------|
-| SPair-U (Unseen Keypoints) | **Best** | 2nd | **+5.1** |
-| MP-100 (Unseen Categories) | **Best** | 2nd | **+5.6** |
+| SPair-U (Unseen Keypoints) | **Ours** | 2nd Best | **+5.1** |
+| MP-100 (Unseen Categories) | **Ours** | 2nd Best | **+5.6** |
 
 ### Ablation Study
 
-| Configuration | SPair PCK@0.10 | SPair-U | Notes |
+| Configuration | SPair PCK@0.10 | SPair-U | Description |
 |------|---------------|---------|------|
 | Full MARCO | Best | Best | Complete method |
-| w/o coarse-to-fine annealing | Drops | Drops | Localization precision impaired |
-| w/o self-distillation | Drops | Drops significantly | Generalization degrades sharply |
-| w/o upsampling head | Drops | — | Sub-patch precision limited |
+| w/o Coarse-to-fine | Drop | Drop | Degraded localization |
+| w/o Self-distillation | Drop | Significant Drop | Severe generalizability decay |
+| w/o Upsampling head | Drop | - | Limited sub-patch precision |
 
 ### Key Findings
 
-- MARCO's advantage at the fine-grained threshold PCK@0.01 (+8.9) substantially exceeds its advantage at PCK@0.10 (+4.0), demonstrating the effectiveness of the coarse-to-fine strategy for precise localization.
-- Self-distillation is the decisive factor for generalization—without it, fine-tuned DINOv2 performs even worse than the frozen model on unseen keypoints.
-- The single-backbone approach surpasses dual-encoder methods while being 3× smaller and 10× faster, indicating that training strategy rather than architectural scale is the critical factor.
+- MARCO's advantage at the fine-grained PCK@0.01 threshold (+8.9) is significantly larger than at PCK@0.10 (+4.0), proving the coarse-to-fine strategy's impact on precise localization.
+- Self-distillation is critical for generalizability—without it, the finetuned DINOv2 can perform worse than the frozen model on unseen keypoints.
+- The single-backbone approach outperforms dual-encoder schemes while being $3\times$ smaller and $10\times$ faster, suggesting that training strategy is more vital than architectural "scale."
 
 ## Highlights & Insights
 
-- The flow-anchoring self-distillation design is particularly elegant: mining sparse reliable matches from frozen encoder features → densification via Delaunay triangulation → displacement clustering with GT-anchor filtering. Each step has a clear purpose and the stages connect seamlessly.
-- The observation that sparse supervision causes representation collapse is incisive—fine-tuning improves performance near keypoints but degrades object-level consistency (the flow visualizations in Figure 2 are highly illustrative). Self-distillation directly addresses this pathology.
-- The paper introduces new generalization benchmarks (unseen keypoint and unseen category evaluations based on MP-100), providing more rigorous evaluation standards for the field.
+- The flow-anchored self-distillation is cleverly designed: mining sparse reliable matches $\rightarrow$ Delaunay dense interpolation $\rightarrow$ displacement clustering + GT anchor filtering. Each step serves a clear purpose and integrates seamlessly.
+- The observation that "sparse supervision leads to representation collapse" is insightful—finetuning makes keypoints better but objects as a whole worse. Self-distillation effectively remediates this.
+- The introduction of a new generalizability benchmark (unseen keypoint/category tests based on MP-100) provides a more rigorous evaluation standard for the field.
 
 ## Limitations & Future Work
 
-- Self-distillation relies on the existence of sparse, reliable correspondences already present in DINOv2's feature space; the method may be limited for object categories where the pretrained representations lack such structure.
-- Delaunay triangulation cannot generate pseudo-labels for regions outside the convex hull of the seed points.
-- While independence from 3D priors is an advantage, it also limits the method's capacity to handle severely deformed objects.
-- Future directions include incorporating video temporal consistency to provide richer dense correspondence signals.
+- Self-distillation depends on pre-existing sparse reliable correspondences in the DINOv2 feature space; if the pretrained representation lacks this structure for certain categories, the method may be limited.
+- Delaunay triangulation cannot generate pseudo-labels outside the convex hull of seed points.
+- While not relying on 3D priors is an advantage, it limits the ability to handle severe object deformations.
+- Future work: Integrate temporal consistency from video to provide more dense correspondence signals.
 
 ## Related Work & Insights
 
-- **vs. Geo-SC / dual-encoder methods**: MARCO surpasses them with a single backbone, demonstrating that a well-designed training strategy can compensate for architectural simplicity.
-- **vs. Jamais Vu**: Both target generalization to unseen keypoints, but Jamais Vu relies on 3D templates and is constrained to trained categories. MARCO's self-distillation requires no category priors or 3D information.
+- **vs Geo-SC/Dual-encoder methods**: MARCO outperforms them with a single backbone, proving that refined training strategies can overcome the "disadvantage" of architectural simplicity.
+- **vs Jamais Vu**: Both focus on unseen keypoint generalization, but Jamais Vu relies on 3D templates and is limited by training categories. MARCO's self-distillation does not depend on category priors or 3D information.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Flow-anchoring self-distillation is a highly original training paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Standard benchmarks and generalization benchmarks with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem analysis is incisive and methodological derivation is elegant.
-- Value: ⭐⭐⭐⭐⭐ Simultaneously achieves large gains in precision and generalization with high efficiency; a significant advance in correspondence estimation.
+- Novelty: ⭐⭐⭐⭐⭐ Flow-anchored self-distillation is a highly original training paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Detailed ablations across standard and generalization benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Insightful analysis and elegant methodology derivation.
+- Value: ⭐⭐⭐⭐⭐ Significant progress in both precision and generalizability while maintaining efficiency.
 
 <!-- RELATED:START -->
 
@@ -135,11 +153,11 @@ The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The su
 
 ## Related Papers
 
-- [\[ICCV 2025\] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels](../../ICCV2025/3d_vision/do_it_yourself_learning_semantic_correspondence_from_pseudo-labels.md)
+- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
 - [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
-- [\[CVPR 2026\] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation](rewis3d_reconstruction_improves_weaklysupervised_s.md)
+- [\[CVPR 2026\] Best Segmentation Buddies for Image-Shape Correspondence](best_segmentation_buddies_for_image-shape_correspondence.md)
+- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
+- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
 
 </div>
 

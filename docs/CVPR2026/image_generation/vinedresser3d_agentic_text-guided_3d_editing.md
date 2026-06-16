@@ -2,166 +2,149 @@
 title: >-
   [Paper Note] Vinedresser3D: Agentic Text-guided 3D Editing
 description: >-
-  [CVPR 2026][Image Generation][3D editing] This paper presents Vinedresser3D, a 3D editing agent centered on a multimodal large language model (MLLM) that requires no user-provided 3D masks. The system automatically inter…
+  [CVPR 2026][Image Generation][Trellis] Vinedresser3D is proposed as a 3D editing agent centered on Multimodal Large Language Models (MLLMs). It eliminates the need for user-provided 3D masks by automatically parsing editing intent, locating editing regions, and generating multimodal guidance. By executing inversion-based in-painting in the latent space of a
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "3D editing"
-  - "text-guided"
-  - "agent"
-  - "Trellis"
-  - "flow model inversion"
+  - CVPR 2026
+  - Image Generation
+  - Trellis
 date: 2026-05-08
-content_hash: 05fc707d570fa139
+content_hash: 26deb314782f5569
 ---
-
 # Vinedresser3D: Agentic Text-guided 3D Editing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19542](https://arxiv.org/abs/2602.19542)  
-**Area**: Image Generation
-**Keywords**: 3D editing, text-guided, agent, Trellis, flow model inversion
+**Area**: Image Generation  
+**Keywords**: 3D Editing, Text-guided, Agent, Trellis, Flow Model Inversion  
 
 ## TL;DR
 
-This paper presents Vinedresser3D, a 3D editing agent centered on a multimodal large language model (MLLM) that requires no user-provided 3D masks. The system automatically interprets editing intent, localizes editing regions, generates multimodal guidance, and performs inversion-based inpainting in the latent space of a native 3D generative model (Trellis), enabling high-quality text-guided 3D asset editing.
+Vinedresser3D is proposed as a 3D editing agent centered on Multimodal Large Language Models (MLLMs). It eliminates the need for user-provided 3D masks by automatically parsing editing intent, locating editing regions, and generating multimodal guidance. By executing inversion-based in-painting in the latent space of a native 3D generative model (Trellis), high-quality text-guided editing of 3D assets is achieved.
 
 ## Background & Motivation
 
-Text-guided 3D editing is a fundamental problem in 3D computer vision, with broad applications in digital content creation, VR/AR, and robotics. Despite substantial progress in 3D generation, high-quality 3D editing remains heavily dependent on professional artists and manual tools, resulting in low efficiency and a high skill barrier.
+Text-guided 3D editing is a fundamental problem in 3D computer vision with applications in digital content creation, VR/AR, and robotics. Despite advances in 3D generation, high-quality editing still relies heavily on professional artists and manual tools, leading to low efficiency and high barriers to entry.
 
-Existing 3D editing methods face three major challenges:
+Existing 3D editing methods face three primary challenges:
 
-**Insufficient semantic understanding**: Difficulty in accurately interpreting complex editing requests.
+**Key Challenge**:
+1. **Insufficient Semantic Understanding**: Difficulty accurately interpreting complex editing requests.
+2. **Automated Localization Difficulty**: Inability to automatically detect precise 3D editing regions from text alone.
+3. **Poor Editing Fidelity**: Difficulty in strictly following editing instructions while maintaining unedited regions.
 
-**Automatic localization**: Inability to automatically detect precise 3D editing regions from text alone.
+**Limitations of Prior Work**:
+- **SDS-based methods** (Score Distillation Sampling): Optimize 3D representations via 2D diffusion gradients. Computationally expensive, requires per-scene optimization, and prone to unintended global changes.
+- **"2D Edit + 3D Reconstruction" pipelines**: Edit multi-view images before reconstruction. Limited by multi-view inconsistency and information loss from occlusions.
+- **Native 3D Editing** (e.g., VoxHammer): Directly edit in 3D latent space, yet still requires manual 3D masks and fails to understand complex requests.
 
-**Poor editing fidelity**: Difficulty in following editing instructions while preserving unedited regions.
-
-Existing approaches fall into three categories, each with notable drawbacks:
-
-- **SDS-based methods** (Score Distillation Sampling): Optimize 3D representations via gradients from 2D diffusion models. Computationally expensive, require per-scene optimization, and prone to unintended global changes.
-- **"2D editing + 3D reconstruction" pipelines**: Edit multi-view images first and then reconstruct. Limited by multi-view inconsistency and information loss due to occlusion.
-- **Native 3D editing** (e.g., VoxHammer): Directly edit in 3D latent space, but still require manually provided 3D masks and cannot handle complex editing requests.
-
-The authors argue that the natural next step is to build a 3D editing agent capable of **understanding high-level text instructions, automatically localizing editing regions, and coordinating multiple tools**.
+**Goal**: To build a 3D editing agent capable of understanding high-level text instructions, automatically locating editing regions, and coordinating multiple tools.
 
 ## Method
 
 ### Overall Architecture
 
-Vinedresser3D uses an MLLM (Gemini-2.5-flash) as its core, with a four-stage pipeline:
+Vinedresser3D aims to edit 3D assets using single text instructions without manual 3D masking. An MLLM (Gemini-2.5-flash) serves as the core "brain" to coordinate tools for image editing, 3D segmentation, and 3D generation. The pipeline consists of four steps: MLLM parses intent to generate guidance, automatically locates the target region in the 3D asset, performs inversion-based in-painting in the Trellis latent space, and finally decodes the edited SLAT into 3D Gaussians or meshes.
 
-1. **Multimodal guidance generation**: The MLLM parses editing intent and generates text and image guidance.
-2. **Editing region detection**: Automatically localizes regions to be edited in the 3D asset.
-3. **Inversion-based 3D editing**: Performs inpainting-style editing in the Trellis latent space.
-4. **Output decoding**: Decodes the edited SLAT into 3D Gaussians or meshes.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: 3D Asset + Text Instruction<br/>(24 multi-view renderings)"] --> B["Multimodal Guidance Generation<br/>MLLM decomposes instructions → Structure/Appearance guidance<br/>+ Best view selection → Image editing (Nano Banana)"]
+    B --> C["Automated Edit Region Detection<br/>PartField segmentation into 3~8 parts<br/>→ MLLM selects P_edit"]
+    C -->|Add| D1["R_edit = All non-asset voxels"]
+    C -->|Delete| D2["R_edit = Target part"]
+    C -->|Modify| D3["R_edit = Part + KNN boundary voxels"]
+    D1 --> E["Interleaved Trellis Inversion-Inpainting"]
+    D2 --> E
+    D3 --> E
+    E --> F["RF-Solver Inversion<br/>(2nd-order Taylor, CFG=0)"]
+    F --> G["Interleaved Denoising<br/>Trellis-text ↔ image alternating<br/>Masked-out injection of original trajectory"]
+    G --> H["Decode SLAT<br/>→ 3D Gaussians / Mesh"]
+```
 
-### Key Design 1: MLLM-based Multimodal Guidance Generation
+### Key Designs
 
-**Text guidance** employs a multi-step prompting strategy:
-- Step 1: The MLLM analyzes multi-view renderings and the editing instruction → generates a description of the original asset, identifies the target part to edit, and classifies the edit type (add/modify/delete).
-- Step 2: Predicts a complete post-edit description (constraining the MLLM to maximally preserve descriptions of unedited regions).
-- Step 3: Extracts an independent description of the newly added or modified target part.
-- Step 4: Decomposes the description into structure-related (Stage 1 geometry) and appearance-related (Stage 2 features) components.
+**1. MLLM-based Multimodal Guidance Generation: Decomposing vague instructions**
 
-**Image guidance**: The MLLM selects the best viewpoint from 24 multi-view candidates (maximizing visibility of the editing target), which is then fed into an image editing model (Nano Banana) to generate a reference image.
+Addressing complex instructions, Vinedresser3D uses multi-step prompting: 
+- Step 1: Analyzes renderings + instructions to describe the original asset, identify target parts, and classify the edit type (Add/Modify/Delete).
+- Step 2: Predicts the full edited description while constraining the MLLM to preserve unedited region descriptions.
+- Step 3: Extracts standalone descriptions for new/modified parts.
+- Step 4: Splits descriptions into structural (Trellis Stage 1 geometry) and appearance (Stage 2 features) components. 
+For image guidance, the MLLM selects the view where the target is most visible for an image editing model (Nano Banana) to generate a reference.
 
-### Key Design 2: Automatic Editing Region Detection
+**2. Automated Edit Region Detection: Removing manual 3D masks**
 
-Requiring no user-provided 3D masks is a core advantage over prior methods.
+This replaces manual masking through a segmentation + MLLM selection workflow. PartField segments the asset into $S \in [3,8]$ semantic parts. The MLLM selects the region $P_{\text{edit}}$ based on renderings and segmented maps. The final voxel set $R_{\text{edit}}$ is defined by the edit type:
 
-1. PartField (a 3D segmentation model) decomposes the asset into $S$ semantic parts ($S \in [3,8]$).
-2. The original asset renderings, segmentation color maps, and target text are fed into the MLLM → the editing region $P_{\text{edit}}$ is selected.
-3. Editing regions are defined per edit type:
+$$R_{\text{edit}} = \begin{cases} C \backslash A & \text{Add (all non-asset voxels)} \\ P_{\text{edit}} & \text{Delete (remove target part)} \\ P_{\text{edit}} \cup (C \backslash bbox_{\text{pres}}) \cup V & \text{Modify (includes KNN boundary logic)} \end{cases}$$
 
-$$R_{\text{edit}} = \begin{cases} C \backslash A & \text{add (all non-asset voxels)} \\ P_{\text{edit}} & \text{delete (directly remove target part)} \\ P_{\text{edit}} \cup (C \backslash bbox_{\text{pres}}) \cup V & \text{modify (with KNN boundary criterion)} \end{cases}$$
+Where $V = \{v \mid v \in bbox_{\text{pres}} \backslash A, \text{PropKNN}(v) > \tau\}$. The KNN threshold helps preserve empty space belonging to the preserved region, preventing unintended artifacts above edited areas.
 
-where $V = \{v \mid v \in bbox_{\text{pres}} \backslash A, \text{PropKNN}(v) > \tau\}$
+**3. Interleaved Trellis Inversion-Inpainting: Balancing semantics and detail**
 
-For modification, a KNN proportion threshold determines the assignment of empty voxels within the preservation bounding box, preventing Trellis from inadvertently modifying voxel layers above the preserved region.
-
-### Key Design 3: Interleaved Trellis Inversion–Inpainting Editing
-
-**Inversion stage**: RF-Solver (second-order Taylor expansion for improved inversion accuracy) inverts the original 3D asset back to structured noise:
+The original asset is losslessly inverted to structured noise using an RF-Solver (2nd-order Taylor expansion) with CFG set to 0 to minimize reconstruction error:
 
 $$X_{i-1} = X_i + (t_{i-1} - t_i) v_\theta(X_i, t_i) + \frac{1}{2}(t_{i-1} - t_i)^2 v_\theta^{(1)}(X_i, t_i)$$
 
-CFG strength is set to 0 during inversion to stabilize the inversion trajectory and minimize reconstruction error.
-
-**Editing stage**: An **Interleaved Trellis editing module** is proposed, alternating between Trellis-text and Trellis-image for denoising:
-- Trellis-text: Provides broad semantic alignment and instruction-following capability.
-- Trellis-image: Provides high-fidelity detail (but is limited by single-view occlusion).
-- Stepwise alternation leverages the complementary strengths of both.
-
-At each denoising step, latent features outside the editing mask (unedited regions) are injected from the original inversion trajectory, enabling mask-guided inpainting.
-
-**Mask processing details**:
-- Stage 1 masks are downsampled from $64^3$ to $16^3$ latent space.
-- Stage 2 uses **soft masks**: boundary voxels of preserved regions are blended between denoised and inverted features via distance weighting, eliminating boundary floating artifacts.
-- Delete operations skip Stage 1 and directly remove the target part, with Stage 2 smoothing the boundary.
+The editing stage introduces an Interleaved Trellis module, alternating between Trellis-text (strong instruction following) and Trellis-image (high detail fidelity). Latent features outside the mask are injected from the original inversion trajectory at each step. Stage 1 masks are downsampled to $16^3$, while Stage 2 employs soft masks to blend boundary voxels and eliminate floating artifacts.
 
 ### Loss & Training
 
-This is an **inference-time method** with no training involved. The agent autonomously explores different positive/negative prompt combinations and selects the best result. Iterative multi-round editing is supported.
+This is a inference-only method. The agent autonomously explores combinations of positive/negative prompts and supports multi-round iterative editing.
 
 ## Key Experimental Results
 
-### Main Results: Quantitative Comparison (57 3D assets covering add/modify/delete)
+### Main Results: Quantitative Comparison (57 assets, including Add/Modify/Delete)
 
 | Method | Manual Mask | CLIP-T↑ | CD↓ | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ |
 |------|:------:|---------|-----|-------|-------|--------|------|
 | Instant3dit | ✓ | 0.227 | 0.027 | 20.86 | 0.851 | 0.153 | 80.35 |
 | VoxHammer | ✓ | 0.235 | 0.027 | 24.36 | 0.890 | 0.087 | 34.95 |
 | Trellis | ✓ | 0.247 | 0.010 | 37.35 | 0.984 | 0.017 | 31.10 |
-| **Ours (auto mask)** | **✗** | **0.252** | 0.016 | 29.45 | 0.953 | 0.045 | **29.49** |
-| **Ours + manual mask** | ✓ | **0.252** | **0.008** | **37.69** | **0.984** | **0.015** | **27.38** |
+| **Ours (Auto Mask)** | **✗** | **0.252** | 0.016 | 29.45 | 0.953 | 0.045 | **29.49** |
+| **Ours + Manual Mask** | ✓ | **0.252** | **0.008** | **37.69** | **0.984** | **0.015** | **27.38** |
 
 ### User Study (Human Preference)
 
-| Comparison | Text Alignment Win Rate | Unedited Preservation Win Rate | 3D Quality Win Rate |
+| Comparison | Text Alignment Win Rate | Background Preservation Win Rate | 3D Quality Win Rate |
 |----------|:-----------:|:-------------:|:---------:|
 | vs. Trellis | 92.5% | 82.0% | 90.8% |
 | vs. VoxHammer | 89.8% | 79.3% | 90.2% |
 
 ### Ablation Study
 
-| Method | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ |
+| Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ |
 |------|-------|-------|--------|------|
-| **Full method** | **29.45** | **0.953** | **0.045** | **29.49** |
+| **Full Method** | **29.45** | **0.953** | **0.045** | **29.49** |
 | w/o Trellis-text (image only) | 28.06 | 0.943 | 0.054 | 30.59 |
-| w/o editing region mask | 25.65 | 0.921 | 0.068 | 33.95 |
+| w/o Edit region mask | 25.65 | 0.921 | 0.068 | 33.95 |
 
 ### Key Findings
 
-- Even without manual 3D masks, Vinedresser3D achieves the best CLIP-T (text alignment 0.252) and FID (29.49) across all methods.
-- With manual masks, all metrics reach their optimum, with PSNR improving notably from 29.45 to 37.69.
-- The method achieves ~90% win rates over all baselines in the user study.
-- Both the interleaved Trellis design and the editing region detection module contribute significantly to final quality, as confirmed by ablation.
-- Using Trellis-image alone produces distorted or implausible outputs in occluded regions.
+- Even without manual masks, Vinedresser3D outperforms baselines in CLIP-T (0.252) and FID (29.49).
+- With manual masks, the method achieves optimal performance across all metrics, with PSNR improving from 29.45 to 37.69.
+- Use of the Interleaved Trellis design and automated region detection significantly contributes to final quality.
+- Using only Trellis-image results in distortions or illogical outputs in occluded areas.
 
 ## Highlights & Insights
 
-1. **Methodological innovation via the agent paradigm**: This is the first work to use an MLLM as the "brain" for 3D editing, coordinating an image editing model, a 3D segmentation model, and a 3D generative model to achieve end-to-end text-guided 3D editing. This paradigm-level contribution is more broadly instructive than improvements to individual model components.
-2. **2D MLLMs can perform 3D reasoning**: Although the MLLM is trained solely on 2D image-text data, multi-view rendering inputs enable it to implicitly understand 3D spatial semantics, such as accurately localizing editing regions and understanding spatial relationships.
-3. **Manageable gap between automatic and manual masks**: Automatic region detection already surpasses baseline methods that rely on manual masks, achieving the best performance on text alignment and overall quality.
-4. **Interleaved denoising is simple yet effective**: Trellis-text and Trellis-image each have individual weaknesses; alternating between them yields complementary benefits.
-5. **Unified framework for three edit types**: Addition, modification, and deletion are all handled within a single framework through different definitions of $R_{\text{edit}}$.
+1. **Agentic Paradigm Innovation**: First use of MLLM as a "brain" for 3D editing, coordinating specialized models for segmentation, image editing, and 3D generation.
+2. **3D Reasoning via 2D MLLM**: Despite 2D training, MLLMs implicitly understand 3D spatial semantics through multi-view renderings.
+3. **Closing the Automation Gap**: Automated detection outperforms manual-mask baselines in text alignment and overall quality.
+4. **Interleaved Denoising Strategy**: Alternating between text and image guidance effectively compensates for the weaknesses of each modality.
 
 ## Limitations & Future Work
 
-1. **MLLM does not accept native 3D input**: Reliance on multi-view renderings to convey 3D information introduces information loss.
-2. **Imperfect external tools**: PartField occasionally produces unreasonable segmentation results, affecting the accuracy of editing region detection.
-3. **High inference cost**: Multiple MLLM calls, multi-view rendering, 3D segmentation, and image editing are all required, resulting in substantial latency and overhead.
-4. **Limited dataset scale**: Evaluation is conducted on only 57 3D assets (24 generated + 33 manually created), which is relatively small.
-5. **Deep coupling with Trellis**: Migrating to other 3D generative models would require redesigning the inversion and editing modules.
-6. **Single best view may be insufficient**: For structurally complex objects, image guidance from a single viewpoint may not cover all editing details.
+1. **Non-Native 3D Input for MLLM**: Reliance on multi-view renderings leads to potential information loss compared to native 3D inputs.
+2. **Dependency on External Tools**: Imperfections in PartField segmentation can impact region accuracy.
+3. **High Inference Cost**: Multiple MLLM calls, renderings, and model executions lead to significant latency and overhead.
+4. **Coupling with Trellis**: The inversion and editing modules are deeply integrated with the Trellis architecture, making migration to other models complex.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-Employing an MLLM agent for 3D editing is a compelling direction. The method is well-designed, and experimental results demonstrate clear advantages in text alignment and user preference. Automatic mask detection eliminates the need for manual annotation, significantly improving usability. Weaknesses include the limited evaluation scale, tight coupling with Trellis, and insufficient discussion of inference cost.
+Utilizing an MLLM agent for 3D editing is a compelling direction. The design is robust, with experimental results showing clear leadership in text alignment and user preference. Automated mask detection significantly enhances usability. Limitations include the computational cost and narrow evaluation scale.
 
 <!-- RELATED:START -->
 
@@ -170,10 +153,10 @@ Employing an MLLM agent for 3D editing is a compelling direction. The method is 
 ## Related Papers
 
 - [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
+- [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_texttoimage_generation.md)
+- [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
-- [\[CVPR 2026\] \[Paper Insight\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_texttoimage_generation.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[CVPR 2026\] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing](morphany3d_unleashing_the_power_of_structured_latent_in_3d_morphing.md)
+- [\[CVPR 2026\] Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing](pico-banana-400k_a_large-scale_dataset_for_text-guided_image_editing.md)
 
 </div>
 

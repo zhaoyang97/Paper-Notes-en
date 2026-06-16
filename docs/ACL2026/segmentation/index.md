@@ -20,8 +20,8 @@ item_total: 1
 
 **💬 ACL2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (13)](../../ICML2026/segmentation/index.md) · [📷 CVPR2026 (69)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (162)](../../CVPR2026/segmentation/index.md) · [🧪 ICML2026 (13)](../../ICML2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
 
 **[AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)**
 
-:   This paper proposes AnchorSeg, which reformulates reasoning segmentation as a structured conditional generation process based on language-grounded query banks. By explicitly decoupling spatial localization and semantic reasoning via anchor queries combined with a Token-Mask Cycle Consistency training objective, the method achieves SOTA performance on ReasonSeg (67.7% gIoU, 68.1% cIoU).
+:   The authors propose AnchorSeg, which reformulates reasoning segmentation as a structured conditional generation process based on language-grounded query banks. By explicitly decoupling spatial localization and semantic reasoning via anchor queries and incorporating a Token-Mask cycle consistency training objective, AnchorSeg achieves state-of-the-art (SOTA) performance on ReasonSeg (67.7% gIoU, 68.1% cIoU).

@@ -2,88 +2,100 @@
 title: >-
   [Paper Note] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 description: >-
-  [CVPR 2026][Remote Sensing][Intrinsic image decomposition] Olbedo introduces the first large-scale real-world aerial albedo–shading decomposition dataset (5,664 UAV images, 4 terrain types…
+  [CVPR 2026][Remote Sensing][Paper Note] Olbedo proposes the first large-scale real-world aerial albedo-shading decomposition dataset (5,664 UAV images, 4 landscapes, multi-illumination across years). It generates multi-view consistent pseudo-ground truth annotations through a physical inverse rendering pipeline. The study demonstrates that synthetic pre-trai
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "Intrinsic image decomposition"
-  - "albedo"
-  - "aerial dataset"
-  - "inverse rendering"
-  - "urban digital twin"
+  - CVPR 2026
+  - Remote Sensing
 date: 2026-05-08
-content_hash: 3ed64f94efc3a17d
+content_hash: 89df327cf401abc0
 ---
-
 # Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22025](https://arxiv.org/abs/2602.22025)  
 **Code**: [Project](https://gdaosu.github.io/olbedo/)  
-**Area**: Remote Sensing
-**Keywords**: Intrinsic image decomposition, albedo, aerial dataset, inverse rendering, urban digital twin
+**Area**: Remote Sensing  
+**Keywords**: Intrinsic Image Decomposition, Albedo, Aerial Dataset, Inverse Rendering, Urban Digital Twin
 
 ## TL;DR
 
-Olbedo introduces the first large-scale real-world aerial albedo–shading decomposition dataset (5,664 UAV images, 4 terrain types, multi-year multi-illumination conditions). A physics-based inverse rendering pipeline generates multi-view-consistent pseudo-ground-truth annotations. Results demonstrate that synthetic pre-training combined with Olbedo LoRA fine-tuning substantially improves outdoor albedo prediction and supports downstream applications including relighting, material editing, and scene change analysis.
+Olbedo proposes the first large-scale real-world aerial albedo-shading decomposition dataset (5,664 UAV images, 4 landscapes, multi-illumination across years). It generates multi-view consistent pseudo-ground truth annotations through a physical inverse rendering pipeline. The study demonstrates that synthetic pre-training combined with Olbedo LoRA fine-tuning significantly improves outdoor albedo prediction and supports downstream applications such as relighting, material editing, and scene change analysis.
 
 ## Background & Motivation
 
-**Background**: Intrinsic image decomposition (IID) aims to separate an image into albedo $R$ and shading $S$ such that $I = R \cdot S$. This decomposition underpins relighting, material editing, and 3D content creation. Deep learning has significantly advanced IID, progressing from CNNs (NIID-Net) to diffusion models (Intrinsic Image Diffusion, RGB↔X, Marigold-IID); however, these advances have been almost entirely confined to **indoor or synthetic environments**.
+**Background**: Intrinsic Image Decomposition (IID) aims to separate an image into albedo $R$ and shading $S$, satisfying $I = R \cdot S$. This serves as the foundation for relighting, material editing, and 3D content creation. Deep learning has recently advanced IID from CNNs (NIID-Net) to diffusion models (Intrinsic Image Diffusion, RGB↔X, Marigold-IID), but these advances are almost entirely limited to **indoor or synthetic environments**.
 
-**Limitations of Prior Work**: The primary obstacle to real-world outdoor IID is the **absence of large-scale densely annotated ground-truth datasets**. Existing datasets fall into three categories:
-   - **Synthetic datasets** (MPI Sintel, CGIntrinsics, InteriorVerse, Hypersim): provide perfect ground truth but suffer from a sim-to-real gap, and are predominantly indoor or object-level.
-   - **Controlled real-world datasets** (MIT Intrinsics, MID, DIR): compute pseudo-ground-truth under multiple illumination conditions, but are limited to small-scale indoor scenes.
-   - **In-the-wild real datasets** (IIW): contain real images but only sparse relative judgments, without dense albedo maps.
+**Limitations of Prior Work**: The core obstacle to advancing real-world outdoor IID is the **lack of large-scale dense ground-truth datasets**. Existing datasets fall into three categories:
+   - **Synthetic Datasets** (MPI Sintel, CGIntrinsics, InteriorVerse, Hypersim): Perfect ground truth but suffer from sim-to-real gaps and are mostly indoor/object-level.
+   - **Real Controlled Datasets** (MIT Intrinsics, MID, DIR): Use multiple lighting conditions to compute pseudo-ground truth, but are limited to small-scale indoor scenes.
+   - **Real In-the-wild Datasets** (IIW): Real images with only sparse relative judgments rather than dense albedo maps.
+   
+   **Key Blank**: No large-scale, real-world, densely annotated outdoor aerial IID dataset exists.
 
-   **Critical Gap**: No large-scale, real-world, densely annotated outdoor aerial IID dataset exists.
+**Key Challenge**: Outdoor scenes are affected by dynamic and complex lighting (sun + sky), making it impossible to control lighting as in indoor settings to obtain ground truth. An alternative method is required to generate reliable outdoor albedo supervision signals.
 
-**Key Challenge**: Outdoor scenes are subject to dynamic and complex illumination (sun + sky), making it impossible to control lighting as in indoor settings to obtain ground truth. An alternative strategy is required to generate reliable outdoor albedo supervision signals.
+**Goal**: To construct the first large-scale real-world aerial albedo-shading dataset providing dense pseudo-ground truth supervision, enabling existing IID models to adapt to outdoor aerial scenarios.
 
-**Goal**: Construct the first large-scale real-world aerial albedo–shading dataset providing dense pseudo-ground-truth supervision, enabling existing IID models to adapt to outdoor aerial scenes.
+**Key Insight**: Photogrammetric reconstruction provides precise 3D geometry (normals, depth, shadow maps), combined with astronomical ephemeris to determine solar positions. A physical sun-sky lighting model can then estimate albedo from lit-shadow pixel pairs at shadow boundaries—obtaining physically consistent albedo annotations without controlled lighting.
 
-**Key Insight**: Photogrammetric reconstruction provides accurate 3D geometry (normals, depth, shadow maps); combined with astronomical ephemeris for solar position and a physics-based sun–sky illumination model, albedo is estimated from lit–shadow pixel pairs near shadow boundaries—yielding physically consistent albedo annotations without controlled illumination.
-
-**Core Idea**: A physics-based inverse rendering pipeline generates dense albedo pseudo-ground-truth from multi-view aerial RAW images, forming the first outdoor aerial IID dataset. Models pre-trained on synthetic data can then adapt to real outdoor scenes via lightweight fine-tuning.
+**Core Idea**: Use a physical inverse rendering pipeline to generate dense albedo pseudo-ground truth from multi-view aerial RAW images, building the first outdoor aerial IID dataset. This allows models pre-trained on synthetic data to adapt to real outdoor scenes via lightweight fine-tuning.
 
 ## Method
 
 ### Overall Architecture
 
-RAW-format UAV acquisition → Photogrammetric reconstruction (Bentley iTwin Capture, ~3 cm accuracy) → Normal/depth/shadow map extraction → HDR full-sky radiance capture (2025 flights, fisheye camera, 11-bracket exposure) → Inverse rendering optimization under a sun–sky illumination model → Per-image albedo/shading maps + confidence masks
+The lack of ground truth in outdoor IID stems from the inability to toggle lights to separate albedo and illumination. Olbedo's strategy replaces "controlled lighting" with "leveraging geometry + physical lighting model inversion." The data production pipeline operates as follows: multi-view aerial acquisition is performed using DJI Phantom 4 Pro in RAW (DNG) format to preserve the linear radiometric space; photogrammetric reconstruction via Bentley iTwin Capture (~3cm precision) extracts normals, depth, and shadow maps; meanwhile, HDR full-sky radiance is captured as a lighting prior using fish-eye cameras with 11-stop bracketed exposure during 2025 flights. With geometry and lighting established, a physical sun-sky inverse rendering optimization is run for each image to output albedo/shading maps and a confidence mask. This results in 5,664 aerial images with dense albedo pseudo-ground truth, covering 4 landscapes and multiple lighting conditions, used for downstream IID model LoRA fine-tuning and applications.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["RAW(DNG) Multi-view Aerial Capture<br/>Preserving Linear Radiometric Space"]
+    B["Photogrammetric Reconstruction (Bentley iTwin)<br/>Export Normals / Depth / Solar Visibility"]
+    C["HDR Sky Capture + Astro Ephemeris<br/>Sun-Sky Lighting Prior"]
+    subgraph IR["Physical Inverse Rendering Albedo Decomposition"]
+        direction TB
+        D["Shadow Boundary Lit-Shadow Pixel Pairs<br/>GMM Fitting for Sun/Sky Irradiance Ratio φ"]
+        E["Albedo Inversion<br/>R = I /(φ⊙S_sun + S_sky)"]
+        D --> E
+    end
+    F["Confidence Mask + Manual Filtering<br/>Supervision on Reliable Pixels Only"]
+    G["Olbedo Dataset<br/>5664 Images with Dense Albedo Pseudo-GT"]
+    H["LoRA Fine-tuning of IID Models<br/>0.19% Parameters for Outdoor Adaptation"]
+    I["Downstream Applications<br/>Relighting / Material Editing / Change Detection"]
+    A --> IR
+    B --> IR
+    C --> IR
+    IR --> F --> G --> H --> I
+```
 
 ### Key Designs
 
-1. **Physics-Based Inverse Rendering Albedo Decomposition**:
+**1. Physical Inverse Rendering Albedo Decomposition: Replacing Lighting Control with Shadow Boundaries**
 
-    - **Function**: Separate albedo and shading from multi-view aerial images captured at a single point in time.
-    - **Mechanism**: Image formation model $I = R \odot (\phi \odot S_{sun} + S_{sky})$, where $S_{sun} = V_{sun} \cdot \langle \mathbf{n}, \theta_{sun} \rangle^+$ is sun shading (dependent on surface normal and sun visibility), $S_{sky}$ is sky shading (hemispherical integral), and $\phi = \psi_{sun}/\psi_{sky}$ is the sun-to-sky irradiance ratio. The key assumption is that lit–shadow pixel pairs near shadow boundaries share the same albedo, from which $\phi$ is derived: $\frac{I_{lit} - I_{shadow}}{I_{shadow}} = \frac{\phi \odot S_{sun}}{S_{sky}}$. A Gaussian mixture model (two components: signal + noise) estimates the optimal $\phi$ over all lit–shadow pairs across the image; albedo is then recovered as $R = I / (\phi \odot S_{sun} + S_{sky})$.
-    - **Design Motivation**: Exploiting the physical constraints at shadow boundaries eliminates the need for multi-illumination acquisition. The Lambertian diffuse reflectance assumption, while a simplification, is sufficiently valid for aerial scenes dominated by roads, rooftops, and vegetation.
+Outdoor lighting consists of solar and sky components that change drastically over time. Olbedo formulates image formation as $I = R \odot (\phi \odot S_{sun} + S_{sky})$: where $S_{sun} = V_{sun} \cdot \langle \mathbf{n}, \theta_{sun} \rangle^+$ is solar shading determined by normals $\mathbf{n}$, solar direction $\theta_{sun}$, and visibility $V_{sun}$; $S_{sky}$ is sky shading; and $\phi = \psi_{sun}/\psi_{sky}$ is the irradiance ratio to be estimated.
 
-2. **Data Quality Assurance**:
+The solution relies on a physical observation: adjacent lit-shadow pixel pairs at shadow boundaries share the same material and thus the same albedo. Dividing the equations cancels $R$, yielding a constraint for $\phi$: $\frac{I_{lit} - I_{shadow}}{I_{shadow}} = \frac{\phi \odot S_{sun}}{S_{sky}}$. By collecting lit-shadow pairs across the image and fitting a two-component GMM, the optimal $\phi$ is found and used to back-calculate $R = I / (\phi \odot S_{sun} + S_{sky})$. This process requires only one flight at a single time, using shadow physics as a substitute for multi-illumination control.
 
-    - **Function**: Ensure reliability of training supervision signals.
-    - **Mechanism**: (1) **RAW acquisition**: DJI Phantom 4 Pro captures DNG format, preserving linear radiometric space and avoiding the tonal curve/gamma distortion introduced by JPEG compression. (2) **Confidence masks**: Binary masks are automatically generated from geometric boundaries (reconstruction holes/depth discontinuities) and shadow projection boundaries; supervision is applied only within high-confidence regions during training, preventing unreliable pseudo-ground-truth from overriding pre-trained priors. (3) **Manual filtering**: A cleaner subset of 2.49K images is retained.
-    - **Design Motivation**: Inverse rendering annotations fail at geometric holes, shadow edges, specular reflections, and glass transmittance; these regions must be explicitly excluded.
+**2. Data Quality Assurance: RAW Capture + Confidence Masks**
 
-3. **LoRA Lightweight Fine-Tuning Strategy**:
+Inverse rendering annotations are not reliable everywhere (e.g., geometry holes, shadow edges, specular reflections). Olbedo shields the training signal in three ways. First, RAW capture: DNG preserves linear radiometric space, avoiding the tone curves and gamma of JPEG that break the $I = R \cdot S$ relationship. Second, confidence masks: binary masks are automatically generated from geometric boundaries and shadow projections; supervision is only applied in high-confidence regions. Finally, manual filtering retains a cleaner subset of 2.49K images.
 
-    - **Function**: Fine-tune existing pre-trained IID models using Olbedo.
-    - **Mechanism**: LoRA is applied to the Q/K/V/O projections of the U-Net attention modules in diffusion-based models (Intrinsic Image Diffusion, Marigold-IID, RGB↔X), with only ~1.66M trainable parameters (~0.19% of the U-Net). CNN-based models (NIID-Net) are fine-tuned directly. Diffusion models are fine-tuned on the albedo channel only; the text prompt for RGB↔X is fixed to "albedo".
-    - **Design Motivation**: Given the relatively small scale of Olbedo (5,664 images), LoRA prevents overfitting while retaining the generalization capability of pre-trained models. Olbedo is positioned as a **complement to synthetic data**, not a replacement.
+**3. LoRA Lightweight Fine-tuning: Olbedo as a Supplement to Synthetic Data**
+
+Olbedo's size is relatively small compared to synthetic datasets. Full fine-tuning could lead to overfitting on pseudo-GT flaws. For diffusion models (Intrinsic Image Diffusion, Marigold-IID, RGB↔X), LoRA is applied only to the Q/K/V/O projections in the U-Net attention modules, involving only ~1.66M parameters (0.19% of the U-Net). This allows Olbedo to inject outdoor lighting diversity rather than replacing the model's learned priors, creating a complementarity where synthetic data provides the base and Olbedo adapts it to outdoor reality.
 
 ### Loss & Training
 
-Each model follows its original training pipeline with only hyperparameter adjustments. Diffusion model LoRA: 3 epochs, lr = 5e-6 (IID, Marigold) or 5e-7 (RGB↔X). Confidence masks constrain the supervised regions during training. All images are downsampled 8× to 683×455 for processing. Albedo is normalized by 98th-percentile intensity to maintain chromaticity consistency.
+Models follow their original training pipelines with hyperparameter adjustments. LoRA for diffusion models is trained for 3 epochs with learning rates of 5e-6 (IID, Marigold) or 5e-7 (RGB↔X). Confidence masks restrict the supervision during the entire process. Images are downsampled 8× to 683×455, and albedo is normalized by the 98th percentile intensity to maintain chromatic consistency.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Albedo prediction accuracy before and after fine-tuning is evaluated on the MatrixCity synthetic outdoor benchmark (520 images at 1920×1080):
+Evaluation on the MatrixCity synthetic outdoor benchmark (520 images, 1920×1080) assessing albedo prediction accuracy:
 
 | Model | PSNR↑ | SSIM↑ | LPIPS↓ |
-|-------|-------|-------|--------|
+|------|-------|-------|--------|
 | Pretrained IntrinsicAnything | 12.155 | 0.436 | 0.564 |
 | Pretrained Colorful Diffuse | 10.437 | 0.449 | 0.590 |
 | Pretrained NIID-Net | 12.782 | 0.549 | 0.793 |
@@ -97,50 +109,50 @@ Albedo prediction accuracy before and after fine-tuning is evaluated on the Matr
 
 ### Ablation Study
 
-| Model | PSNR Gain | SSIM Gain | LPIPS Gain | Notes |
-|-------|-----------|-----------|------------|-------|
-| NIID-Net | +3.37 (26.4%) | +0.045 (8.2%) | −0.024 (3.0%) | CNN direct fine-tuning |
-| Intrinsic Image Diffusion | +1.65 (10.6%) | +0.038 (7.7%) | −0.069 (12.5%) | LoRA + latent encoder |
-| Marigold-IID | **+6.97 (68.6%)** | +0.062 (12.2%) | −0.130 (22.0%) | Largest gain (pre-training biased to indoor) |
-| RGB↔X | +2.68 (17.8%) | +0.052 (9.3%) | −0.059 (12.5%) | Best overall performance |
+| Model | PSNR Gain | SSIM Gain | LPIPS Gain | Note |
+|------|----------|----------|-----------|------|
+| NIID-Net | +3.37 (26.4%) | +0.045 (8.2%) | -0.024 (3.0%) | CNN Direct Fine-tune |
+| Intrinsic Image Diffusion | +1.65 (10.6%) | +0.038 (7.7%) | -0.069 (12.5%) | LoRA + Latent Encoder |
+| Marigold-IID | **+6.97 (68.6%)** | +0.062 (12.2%) | -0.130 (22.0%) | Largest Gain |
+| RGB↔X | +2.68 (17.8%) | +0.052 (9.3%) | -0.059 (12.5%) | Best Overall |
 
 ### Key Findings
 
-- **Consistent improvement across all fine-tunable models**: Regardless of architecture (CNN vs. diffusion) or pre-training data (InteriorVerse vs. Hypersim), Olbedo fine-tuning yields significant gains, confirming that the dataset effectively bridges the indoor-to-outdoor domain gap.
-- **Marigold-IID achieves the largest gain** (PSNR +68.6%): The original pre-training is heavily biased toward indoor scenes, resulting in a low baseline; after fine-tuning, performance approaches the best-performing model. This highlights the high value of Olbedo's outdoor albedo supervision.
-- **RGB↔X achieves the best overall performance** (PSNR = 17.735, SSIM = 0.611, LPIPS = 0.413): attributed to richer synthetic pre-training data and text-conditioned modality selection.
-- **Fine-tuning only 0.19% of parameters is effective**: The parameter efficiency of LoRA demonstrates that Olbedo's role is to inject outdoor illumination diversity rather than replace pre-trained priors.
+- **Consistent Improvement Across All Models**: Regardless of architecture (CNN vs. Diffusion) or pre-training data, Olbedo fine-tuning brings significant gains, proving the dataset effectively bridges the indoor-to-outdoor domain gap.
+- **Marigold-IID Shows Maximum Gain** (PSNR +68.6%): Its original pre-training was heavily biased toward indoors, leading to a low baseline, but fine-tuning brings it near the SOTA performance.
+- **RGB↔X Achieves Best Overall Performance**: Attributed to richer synthetic pre-training data and text-conditioned modality selection.
+- **Effective 0.19% Parameter Fine-tuning**: LoRA's efficiency proves Olbedo's role is to inject outdoor lighting diversity rather than retraining the model from scratch.
 
 ## Highlights & Insights
 
-- **Filling a critical data gap**: As the first real-world aerial IID dataset, Olbedo directly addresses the fundamental bottleneck of lacking dense outdoor albedo ground truth. It is positioned as a training resource rather than an evaluation benchmark (MatrixCity serves as an external evaluation set to avoid overfitting to pseudo-ground-truth accuracy).
-- **Practicality of the physics-based inverse rendering pipeline**: The approach leverages lit–shadow pixel pairs and sun/sky decomposition without requiring multi-illumination conditions, enabling albedo extraction from a single flight. This pipeline generalizes to other outdoor remote sensing scenarios.
-- **Rich downstream application value**:
-    - **Relighting**: Replacing RGB textures with albedo textures in rendering yields more consistent shadows and shading.
-    - **Segmentation assistance**: SAM produces more stable segmentation on albedo maps than on RGB images, as shadow-induced spurious edges are eliminated.
-    - **Material editing**: Modifying albedo and recovering the original illumination via inverse Retinex ($S = I/R$) preserves lighting and texture details better than alpha blending and AI-based editing methods (FlowEdit, Nano Banana, Qwen Image Edit).
-    - **Scene change detection**: Albedo differencing is more robust to illumination variation than RGB differencing, reducing false positives caused by shadows.
+- **Filling a Critical Data Gap**: As the first real-world aerial IID dataset, it solves the fundamental bottleneck of lacking dense outdoor albedo ground truth.
+- **Utility of Physical Inverse Rendering**: The pipeline demonstrates that physical constraints can extract albedo from single-flight multi-view imagery, a path transferable to other remote sensing tasks.
+- **Rich Downstream Value**:
+    - **Relighting**: Rendering with albedo textures instead of RGB yields consistent shadows and shading.
+    - **Segmentation Assistance**: SAM segmentation on albedo maps is more stable by eliminating false edges from shadows.
+    - **Material Editing**: Modifying albedo and applying inverse Retinex ($S = I/R$) preserves authentic lighting and texture better than standard AI editing.
+    - **Change Detection**: Albedo differencing is more robust to illumination changes than RGB differencing, reducing false positives caused by shadows.
 
 ## Limitations & Future Work
 
-- **Lambertian assumption**: All surfaces are assumed to be diffuse; specular rooftops and glass produce artifacts. Incorporating BRDF models (e.g., Cook-Torrance) could further improve quality, but would require additional illumination observations.
-- **Only 4 scenes**: The four locations—Office, Arena, Residential, and Park—limit diversity analysis. Extension to more urban, rural, and industrial scenes would improve generalization.
-- **Pseudo-ground-truth is less accurate than synthetic ground truth**: Annotation quality is limited at geometric holes, shadow boundaries, and vegetation regions; although confidence masks partially mitigate this, accuracy remains below that of synthetic data.
-- **Degradation under overcast conditions**: Under heavy overcast, effective lit–shadow pairs are insufficient, $\phi$ approaches zero, and the method falls back to a sky-only model with reduced albedo estimation accuracy.
-- **Resolution constraints**: Images are downsampled 8× to 683×455 for processing, potentially losing fine-grained detail.
+- **Lambertian Assumption**: Assuming all surfaces are diffuse leads to artifacts on specular roofs and glass.
+- **Limited Scene Diversity**: Only 4 locations (Office, Arena, Residential, Park) are covered.
+- **Pseudo-GT Accuracy**: Annotation quality is limited in geometry holes and complex vegetation compared to synthetic ground truth.
+- **Overcast Degradation**: Under heavy overcast conditions, the lack of distinct lit-shadow pairs reduces albedo estimation accuracy.
+- **Resolution Constraints**: Downsampling for processing may lose fine details.
 
 ## Related Work & Insights
 
-- **vs. InteriorVerse / Hypersim**: These synthetic indoor datasets provide perfect ground truth but suffer from a sim-to-real gap and are limited to indoor scenes. Olbedo provides real outdoor supervision and is complementary to synthetic pre-training—synthetic data supplies indoor priors while Olbedo injects outdoor illumination diversity.
-- **vs. IIW**: IIW is the first large-scale real-world IID dataset but provides only sparse relative judgments (A is brighter than B), without dense albedo maps. Olbedo provides dense per-pixel albedo/shading maps, making it suitable for training rather than evaluation only.
-- **vs. RGB↔X**: RGB↔X is among the strongest current IID methods, employing text conditioning for modality selection. After fine-tuning on Olbedo, it achieves the best overall performance, indicating that its architecture is well-suited for cross-domain adaptation.
+- **vs. InteriorVerse / Hypersim**: These provide perfect ground truth for synthetic interiors. Olbedo provides the real outdoor complement.
+- **vs. IIW**: IIW offers sparse relative judgments. Olbedo provides dense pixel-wise albedo/shading suitable for training.
+- **vs. RGB↔X**: RGB↔X is the current strongest IID method; its text-conditioned architecture proves highly suitable for cross-domain adaptation using Olbedo.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The first outdoor aerial IID dataset represents a significant contribution in its own right; while the inverse rendering pipeline builds on existing methods, its systematic integration and dataset construction constitute substantive innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Six baseline models, four fine-tuned comparisons, external evaluation, and four downstream applications provide comprehensive coverage; however, the use of only 4 scenes limits diversity analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-structured, with transparent discussion of the dataset construction process and limitations; supplementary material is thorough.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses a major gap in outdoor IID datasets; the open-sourced dataset, baselines, and evaluation protocol offer substantial community value.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -150,9 +162,9 @@ Albedo prediction accuracy before and after fine-tuning is evaluated on the Matr
 
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 - [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
-- [\[NeurIPS 2025\] RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](../../NeurIPS2025/remote_sensing/rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)
-- [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
-- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)
+- [\[CVPR 2026\] Data Leakage Detection and De-duplication in Large Scale Geospatial Image Datasets](data_leakage_detection_and_de-duplication_in_large_scale_geospatial_image_datase.md)
+- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
 
 </div>
 

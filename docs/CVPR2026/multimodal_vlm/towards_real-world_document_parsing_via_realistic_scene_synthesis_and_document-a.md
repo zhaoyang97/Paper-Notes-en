@@ -2,152 +2,165 @@
 title: >-
   [Paper Note] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 description: >-
-  [CVPR 2026][Multimodal VLM][document parsing] This paper proposes DocHumming, a data-training co-design framework that constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis…
+  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes DocHumming, a data-training co-design framework. It constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis and implements a Document-Aware Training Recipe combining progressive learning with structural token weighting. DocHumming achieves an Overall score of 93.75 on OmniDocB
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "document parsing"
-  - "synthetic data"
-  - "progressive training"
-  - "structure token weighting"
-  - "real-world robustness"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 2b320693972f21b3
+content_hash: a107b68424be1c89
 ---
-
 # Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.23885](https://arxiv.org/abs/2603.23885)  
-**Code**: To be released  
-**Area**: Document Understanding / End-to-End Document Parsing
-**Keywords**: document parsing, synthetic data, progressive training, structure token weighting, real-world robustness
+**Code**: To be open-sourced  
+**Area**: Document Understanding / End-to-end Document Parsing  
+**Keywords**: Document parsing, synthetic data, progressive training, structural token weighting, real-world robustness
 
 ## TL;DR
 
-This paper proposes DocHumming, a data-training co-design framework that constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis, and introduces a Document-Aware Training Recipe (DATR) combining progressive learning and structure token weighting. On a 1B-parameter MLLM, DocHumming achieves an OmniDocBench Overall score of 93.75, surpassing Qwen3-VL-235B (89.15), with only a 6.72-point degradation under real-world capture conditions (vs. 18–20 points for pipeline-based methods).
+Ours proposes DocHumming, a data-training co-design framework. It constructs the large-scale synthetic dataset DocMix-3M via Realistic Scene Synthesis and implements a Document-Aware Training Recipe combining progressive learning with structural token weighting. DocHumming achieves an Overall score of 93.75 on OmniDocBench using only a 1B MLLM (surpassing Qwen3-VL-235B's 89.15), with a performance degradation of only 6.72 points in realistic capture scenarios (compared to 18-20 points for modular methods).
 
 ## Background & Motivation
 
-**Background**: Document parsing has evolved from traditional modular pipelines (layout analysis → OCR → element parsing) to end-to-end MLLMs that directly map images to structured outputs. Modular methods perform well on digital/scanned documents (e.g., MinerU2.5 achieves 90.67 on OmniDocBench), but end-to-end methods still face significant challenges in real-world scenarios.
+**Background**: Document parsing has evolved from traditional modular pipelines (layout analysis → OCR → element parsing) to end-to-end MLLMs that directly map images to structured outputs. While modular methods excel on digital/scanned documents (e.g., MinerU2.5 at 90.67 on OmniDocBench), end-to-end methods still face severe challenges in real-world scenarios.
 
-**Limitations of Prior Work**: (1) Modular methods rely on accurate layout analysis; under casual capture conditions, layout errors propagate downstream (18–20 point degradation). (2) End-to-end methods produce repetitive content, hallucinations, and structural inconsistencies under real-world capture. (3) Large-scale, high-quality page-level end-to-end training data is lacking (SynthDog has simple layouts; GOT's PDF-to-LaTeX lacks visual diversity).
+**Limitations of Prior Work**: (1) Modular methods rely on precise layout analysis; under causal photography conditions, layout errors propagate downstream (18-20 points degradation). (2) End-to-end methods produce repetitive content, hallucinations, and structural inconsistencies in real-world captured scenes. (3) There is a lack of large-scale, high-quality, page-level end-to-end parsing training data (SynthDog has simple layouts; GOT's PDF-to-LaTeX lacks visual diversity).
 
-**Key Challenge**: The end-to-end paradigm is inherently more robust as it requires no explicit layout segmentation, yet its potential is constrained by data scarcity and the absence of structure-aware training strategies.
+**Key Challenge**: The end-to-end paradigm is naturally more robust as it eliminates explicit layout segmentation, but its potential is constrained by data scarcity and the lack of structure-aware training strategies.
 
 **Goal**: To unlock the potential of end-to-end document parsing in real-world scenarios through data-training co-design.
 
-**Key Insight**: Simultaneously address both the data bottleneck (large-scale synthesis) and the training bottleneck (structure-aware optimization), rather than targeting either in isolation.
+**Key Insight**: Simultaneously address the data bottleneck (large-scale synthesis) and the training bottleneck (structure-aware optimization) rather than focusing on only one.
 
-**Core Idea**: Synthesize 3M page-level samples from 576K layout templates and 9M atomic elements, combined with short-to-long progressive training and structure token weighting loss, enabling a 1B model to match the performance of a 235B model.
+**Core Idea**: Synthesize 3M page-level data using 576K layout templates and 9M atomic elements, combined with short-to-long progressive training and structural token weighted loss, enabling a 1B model to match the performance of a 235B model.
 
 ## Method
 
 ### Overall Architecture
 
-Data-training co-design: at the data level, Realistic Scene Synthesis (RSS) generates large-scale, diverse end-to-end parsing data (DocMix-3M); at the training level, the Document-Aware Training Recipe (DATR: progressive learning + structure token weighting) improves structural fidelity and decoding stability. The final model, DocHumming, is trained on InternVL2-1B.
+This paper aims to enable a 1B-parameter end-to-end MLLM to stably parse structured text from casual document photographs. Existing end-to-end methods fail due to monotonous training data (repetitive PDF-to-LaTeX layouts) and training objectives that ignore structure (leading to repetitions/serialization of tables and formulas). DocHumming addresses both: on the data side, Realistic Scene Synthesis (RSS) "assembles" 3M visually diverse page-level parsing data (DocMix-3M) from atomic elements and layout templates; on the training side, the Document-Aware Training Recipe (DATR) introduces a curriculum of "element-first, whole-page-second" and a loss function that penalizes structural token errors more heavily. The entire pipeline is fine-tuned on the InternVL2-1B base. To evaluate performance, the authors also manually constructed Wild-OmniDocBench.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph RSS["Realistic Scene Synthesis (Synthetic Data)"]
+        direction TB
+        A["Atomic Element Repository ~9M<br/>Tables/Formulas/Paragraphs/Figures<br/>Qwen2.5-72B Rewrite Enhancement"]
+        B["Layout Template Library 576K<br/>With Reading Order Annotation"]
+        A --> C["Compositional Typesetting under<br/>Spatial/Structural Constraints"]
+        B --> C
+        C --> D["20% Overlaid Capture Augmentation<br/>Perspective/Bending/Lighting/Moire"]
+        D --> E["DocMix-3M<br/>3M Page-level Parsing Data"]
+    end
+    subgraph DATR["Document-Aware Training Recipe (Structure-Aware Training)"]
+        direction TB
+        F["Stage 1: Single Element Training<br/>Heterogeneous Prompts + Vocabulary Expansion"]
+        F --> G["Stage 2: Full-page E2E Training<br/>DocMix-3M + 1M Elements + 100K Human"]
+        G --> H["Structural Token Weighted Loss<br/>Structural token α=λ=4, Others α=1"]
+    end
+    E --> F
+    H --> I["DocHumming<br/>InternVL2-1B Full-parameter Fine-tuning"]
+    I --> J["Wild-OmniDocBench Evaluation<br/>OmniDocBench to Real Capture"]
+```
 
 ### Key Designs
 
-1. **Realistic Scene Synthesis (RSS)**:
+**1. Realistic Scene Synthesis: Assembling Diverse Pages from Scratch instead of PDF Conversion**
 
-    - **Function**: Synthesize large-scale page-level end-to-end parsing data from atomic elements and layout templates.
-    - **Mechanism**: (a) **Atomic Element Repository**: integrates multi-source datasets for table recognition, formula parsing, paragraph understanding, etc.; normalizes formats; rewrites and augments using Qwen2.5-72B (restructuring tables, perturbing formula symbols, creating mixed elements, generating multilingual paragraph groups); renders image–annotation pairs via a LaTeX pipeline. (b) **Layout Template Library**: sourced from public datasets, web mining, and supplementary under-represented styles, comprising 576K+ layout patterns with reading-order annotations. (c) **Compositional Synthesis**: sampled elements are placed into templates under spatial and structural constraints. (d) **Capture Augmentation**: simulates perspective/bending/wrinkling/lighting variation/camera rotation/background environments; approximately 20% of samples undergo augmentation.
-    - **Output**: DocMix-3M (~3M high-quality synthetic documents), built from ~9M atomic elements and 576K layout templates.
-    - **Design Motivation**: Bottom-up synthesis rather than PDF-to-LaTeX conversion enables fine-grained control over layout diversity and visual conditions.
+The data bottleneck stems from current synthesis routes—SynthDog's layouts are too simple, and GOT's PDF-to-LaTeX inherits fixed PDF formats, limiting visual diversity. RSS adopts "bottom-up synthesis": first, an atomic element repository is built by unifying formats from multi-source datasets (tables, formulas, paragraphs), then enhanced via Qwen2.5-72B (reorganizing tables, perturbing formula symbols, generating multilingual paragraphs). These are rendered into "image-annotation" pairs via a LaTeX pipeline, totaling ~9M elements. Simultaneously, 576K+ layout templates with reading order annotations are collected from public datasets and web mining. During synthesis, sampled elements are placed into templates under spatial constraints, and ~20% of samples receive capture augmentations: perspective, bending, creases, lighting changes, camera rotation, and environmental backgrounds. This allows active control over layout diversity and visual conditions.
 
-2. **Document-Aware Training Recipe (DATR)**:
+**2. Document-Aware Training Recipe: Elements first, then Full Pages with Structural Token Penalties**
 
-    - **Function**: A training strategy specifically designed for document parsing, addressing the challenges of large context length variation and unstable structured output.
-    - **Mechanism**: (a) **Progressive Training Paradigm** — Stage 1 trains on single-element parsing (tables/formulas/paragraphs) with heterogeneous prompts to acquire type-specific capabilities, while expanding the vocabulary with layout structure tokens; Stage 2 uses DocMix-3M as the primary corpus plus 1M Stage-1 samples and 100K human-annotated data, training end-to-end full-document parsing under a unified prompt format. (b) **Structure Token Weighting** — higher loss weights are applied to structured tokens (within `<table>`...`</table>` and similar tags).
-    - **Loss formulation**: $L = -\sum_t \alpha_t y_t \log P(x_t|x_{<t})$, where $\alpha_t = \lambda = 4$ for structure tokens and $\alpha_t = 1$ otherwise.
-    - **Design Motivation**: Progressive learning avoids convergence instability from direct long-context training; structure token weighting addresses repetition and inconsistency in structured content such as tables.
+Document parsing outputs are long and highly structured. Direct full-page training struggles with convergence and table repetitions. DATR splits training into two steps. First, a progressive learning curriculum: Stage 1 trains only on single elements (tables, formulas, etc.) using heterogeneous prompts to gain type-specific capabilities while expanding the vocabulary with structural tokens. Stage 2 uses DocMix-3M as the primary data, mixed with 1M Stage 1 samples and 100K human annotations for end-to-end full-page training. Second, structural token weighting: tokens falling within structural tags (e.g., `<table>`…`</table>`) are assigned a larger weight in the loss function. The loss is defined as:
 
-3. **Wild-OmniDocBench**:
+$$L = -\sum_t \alpha_t\, y_t \log P(x_t \mid x_{<t}),$$
 
-    - **Function**: A document parsing evaluation benchmark under real-world capture conditions.
-    - **Mechanism**: All documents in OmniDocBench are manually converted to physically captured forms. (a) Print → physical deformation (folding/bending/crumpling) → photographed under varied lighting. (b) Screen display → photographed (introducing moiré patterns, reflections, and brightness variation).
-    - **Design Motivation**: Existing benchmarks evaluate only digital/scanned documents and fail to reflect real-world challenges.
+where structural tokens take $\alpha_t = \lambda = 4$, and others $\alpha_t = 1$. This "heavier penalty" on structural positions directly reduced the repetition rate from 4.6% to 2.1%.
+
+**3. Wild-OmniDocBench: Porting Benchmarks to Realistic Capture Scenarios**
+
+Existing benchmarks primarily cover digital and scanned documents. To measure vulnerability in real-world photography, the authors manually transformed OmniDocBench into "captured" forms: one set involves physical deformation (folding, bending) of printed pages photographed under various lighting; the other involves photographing content on screens, introduced Moire patterns and reflections.
 
 ### Loss & Training
 
-Structure token-weighted cross-entropy loss. Stage 1: batch=512, lr=4e-5, 2 epochs; Stage 2: batch=256, lr=2e-5, 2 epochs. Cosine learning rate decay; maximum output length 8192 tokens. Base model: InternVL2-1B, full-parameter fine-tuning. 16× NVIDIA H20 GPUs.
+A structural token weighted cross-entropy loss is used (see equation above, $\lambda=4$). Stage 1: batch=512, lr=4e-5, 2 epochs. Stage 2: batch=256, lr=2e-5, 2 epochs. Cosine learning rate decay with a maximum output length of 8192 tokens. The model is a full-parameter fine-tuned InternVL2-1B using 16× NVIDIA H20 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results: OmniDocBench Document Parsing
 
 | Type | Method | Params | Overall↑ | TextEdit↓ | FormulaCDM↑ | TableTEDS↑ | ReadOrder↓ |
-|------|--------|--------|---------|-----------|-------------|------------|------------|
+|------|------|-------|---------|-----------|-------------|------------|------------|
 | Pipeline | PP-StructureV3 | - | 86.73 | 0.073 | 85.79 | 81.68 | 0.073 |
 | General MLLM | Qwen2.5-VL-72B | 72B | 87.02 | 0.094 | 88.27 | 82.15 | 0.102 |
 | General MLLM | Qwen3-VL-235B | 235B | 89.15 | 0.069 | 88.14 | 86.21 | 0.068 |
-| E2E Specialist | dots.ocr | 3B | 88.41 | 0.048 | 83.22 | 86.78 | 0.053 |
-| Modular Specialist | MinerU2.5 | 1.2B | 90.67 | 0.047 | 88.46 | 88.22 | 0.044 |
-| Modular Specialist | PaddleOCR-VL | 0.9B | 91.93 | 0.039 | 88.67 | 91.01 | 0.043 |
-| **E2E Specialist** | **DocHumming** | **1B** | **93.75** | **0.035** | **93.27** | **91.49** | **0.041** |
+| E2E Specialized | dots.ocr | 3B | 88.41 | 0.048 | 83.22 | 86.78 | 0.053 |
+| Modular Specialized | MinerU2.5 | 1.2B | 90.67 | 0.047 | 88.46 | 88.22 | 0.044 |
+| Modular Specialized | PaddleOCR-VL | 0.9B | 91.93 | 0.039 | 88.67 | 91.01 | 0.043 |
+| **E2E Specialized** | **Ours** | **1B** | **93.75** | **0.035** | **93.27** | **91.49** | **0.041** |
 
 ### Wild-OmniDocBench Real-World Robustness
 
-| Type | Method | Origin | Wild | Degradation↓ | Note |
-|------|--------|--------|------|-------------|------|
-| General MLLM | Qwen3-VL-235B | 89.15 | 79.69 | -9.46 | Large models also degrade |
+| Type | Method | Origin | Wild | Gain↓ | Description |
+|------|------|--------|------|-------|------|
+| General MLLM | Qwen3-VL-235B | 89.15 | 79.69 | -9.46 | Large model also degrades |
 | Modular | MonkeyOCR-3B | 88.85 | 70.00 | -18.85 | Layout error propagation |
 | Modular | MinerU2.5 | 90.67 | 70.91 | -19.76 | Worst degradation |
-| Modular | PaddleOCR-VL | 91.93 | 72.19 | -19.74 | ~20-point degradation |
-| E2E | DeepSeek-OCR | 87.01 | 74.23 | -12.78 | Smaller E2E degradation |
-| E2E | dots.ocr | 88.41 | 78.01 | -10.40 | Smaller E2E degradation |
-| **E2E** | **DocHumming** | **93.75** | **87.03** | **-6.72** | **Minimal degradation** |
+| Modular | PaddleOCR-VL | 91.93 | 72.19 | -19.74 | ~20 points drop |
+| E2E | DeepSeek-OCR | 87.01 | 74.23 | -12.78 | E2E degrades less |
+| E2E | dots.ocr | 88.41 | 78.01 | -10.40 | E2E degrades less |
+| **E2E** | **Ours** | **93.75** | **87.03** | **-6.72** | **Minimal degradation** |
 
 ### Ablation Study
 
-| # | RSS | Progressive (PTP) | Struct. Weighting (ST) | OmniDoc↑ | Repeat↓ | Wild↑ | Wild Repeat↓ |
-|---|-----|-------------------|----------------------|---------|---------|------|-------------|
-| 1 | ✗ | ✓ | ✓ | 89.96 | 4.7% | 78.82 | 8.6% |
-| 2 | ✓ | ✓ | ✗ | 88.74 | 4.6% | 84.90 | 5.4% |
-| 3 | ✓ | ✗ | ✓ | 91.24 | 4.2% | 85.39 | 4.9% |
-| 4 | ✓ | ✓ | ✓ | **93.75** | **2.1%** | **87.03** | **4.3%** |
+| # | RSS | PTP | ST | OmniDoc↑ | Repeat↓ | Wild↑ | Wild Repeat↓ |
+|---|-----|----------|------------|---------|---------|------|-------------|
+| 1 | X | Y | Y | 89.96 | 4.7% | 78.82 | 8.6% |
+| 2 | Y | Y | X | 88.74 | 4.6% | 84.90 | 5.4% |
+| 3 | Y | X | Y | 91.24 | 4.2% | 85.39 | 4.9% |
+| 4 | Y | Y | Y | **93.75** | **2.1%** | **87.03** | **4.3%** |
 
-Data scaling curve: DocMix-1M (85.41) → 2M (88.14) → 3M (89.96) → 4M (89.31, approaching saturation). The 3M synthetic dataset outperforms 100K human-annotated data (89.96 vs. 89.26).
+Data scaling curve: DocMix-1M (85.41) -> 2M (88.14) -> 3M (89.96) -> 4M (89.31, saturating). 3M synthetic data outperforms 100K human annotations (89.96 vs 89.26).
 
 ### Key Findings
 
-- End-to-end vs. modular methods diverge sharply in real-world conditions: modular methods degrade by 18–20 points vs. only 6.72 points for DocHumming.
-- 1B outperforms 235B: with the correct data and training strategy, the 1B model (93.75) surpasses Qwen3-VL-235B (89.15).
-- 3M synthetic samples outperform 100K human annotations (89.96 vs. 89.26), but performance saturates at 4M — diversity of the element repository and template pool is the bottleneck.
-- Structure token weighting is critical for reducing repetition: removing it raises the repetition rate from 2.1% to 4.6%.
-- DocHumming leads comprehensively on multilingual XFUND evaluation (German 85.15, Japanese 87.99, Spanish 84.39).
+- Significant divergence between E2E and Modular in real scenes: Modular degrades 18-20 points vs DocHumming's 6.72 points.
+- 1B exceeds 235B: With proper data and training strategies, the 1B model (93.75) outperforms Qwen3-VL-235B (89.15).
+- 3M synthetic data outperforms 100K human annotations (89.96 vs 89.26), but saturates at 4M due to constraints in element and template diversity.
+- Structural token weighting is critical for reducing repetition: its removal increases the rate from 2.1% to 4.6%.
+- Leads across all categories in XFUND multilingual tests (German 85.15, Japanese 87.99, Spanish 84.39).
 
 ## Highlights & Insights
 
-- The data-training co-design framework is a generalizable paradigm: jointly optimizing data and training yields substantially better results than addressing either alone.
-- Progressive training draws on the short-to-long context curriculum from LLM training — the element→page progression in document parsing closely mirrors the short→long context progression in LLMs.
-- The proposed repetition rate metric (consecutive structural pattern repetitions >10 times + reaching maximum output length) is a practical tool for quantifying decoding stability.
-- The saturation point (~3M) in data scaling provides practical guidance on the cost-effectiveness of synthetic data generation.
+- The data-training co-design framework is noteworthy: joint optimization provides significant gains over focusing on only one aspect.
+- Progressive training mirrors LLM short-to-long context curricula—mapping elements to pages corresponds directly to short-to-long sequence learning.
+- Defining a repetition rate metric (continuous pattern repeats > 10 times or reaching max length) provides a practical tool for quantifying decoding stability.
+- The saturation point of the data scaling effect (~3M) offers practical guidance on the ROI of synthetic data.
 
 ## Limitations & Future Work
 
-- Irregular interleaved layouts (newspapers, posters) remain challenging; reading order and structural boundaries are ambiguous when text blocks are nested or interleaved.
-- Ultra-high-resolution pages require downsampling or tiling, which can cause repetition or loss in long tables and dense formulas.
-- Data scaling effects saturate beyond 3M samples, fundamentally limited by the diversity of the element repository and template pool.
-- Inference efficiency: text-dense pages require ~3s, limiting interactive use.
-- The structure token weighting hyperparameter $\lambda=4$ is heuristic; adaptive strategies remain unexplored.
+- Irregular layouts (newspapers, posters) remain challenging; reading orders and structural boundaries are blurred in nested or interleaved blocks.
+- High-resolution pages requiring downsampling or tiling can lead to repetitions or loss of long tables and dense formulas.
+- Data scale saturation after 3M is fundamentally limited by the diversity of the element repository and template pool.
+- Inference efficiency: Text-dense pages take ~3s, limiting interactive use.
+- The $\lambda=4$ structural token weight is heuristic; adaptive strategies have not been explored.
 
 ## Related Work & Insights
 
-- **vs. GOT/SmolDocling**: These E2E methods rely on PDF-to-LaTeX data with limited layout diversity; DocHumming achieves layout diversity through bottom-up synthesis.
-- **vs. MinerU2.5/PaddleOCR-VL**: Performance is comparable on standard documents, but modular methods degrade more than 3× in wild scenarios — the modular paradigm is inherently fragile under real-world conditions.
-- **Training strategy insight**: Structure token weighting is transferable to any structured generation task (code generation, HTML/JSON generation).
-- **Data synthesis methodology**: The paradigm of atomic element repository + layout templates + compositional synthesis is transferable to other multimodal data generation settings.
+- **vs GOT/SmolDocling**: These E2E methods use PDF-to-LaTeX data with rigid layouts; DocHumming achieves diversity via bottom-up synthesis.
+- **vs MinerU2.5/PaddleOCR-VL**: Performance is similar on standard docs, but these modular methods degrade 3x more on Wild scenarios, highlighting their inherent fragility.
+- **Training Strategy Inspiration**: Structural token weighting can be generalized to any structured generation task (code, HTML/JSON generation).
+- **Data Synthesis Methodology**: The paradigm of atomic element repository + layout templates + compositional synthesis is transferable to other multi-modal data generation tasks.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-- **Novelty** ⭐⭐⭐⭐: The data-training co-design framework is systematic; structure token weighting is simple yet effective.
-- **Experimental Thoroughness** ⭐⭐⭐⭐⭐: Three benchmarks (OmniDocBench, Wild, XFUND), complete ablations (RSS/ST/PTP), and data scaling curves.
-- **Writing Quality** ⭐⭐⭐⭐: Architecture diagrams are clear; data construction pipeline is detailed; ablation design is rigorous.
-- **Value** ⭐⭐⭐⭐: The 1B-surpasses-235B result is compelling; the Wild benchmark fills a gap in evaluation practice.
+- **Novelty** ⭐⭐⭐⭐: Systematic data-training co-design; structural token weighting is simple yet effective.
+- **Experimental Thoroughness** ⭐⭐⭐⭐⭐: Triple benchmark (OmniDocBench, Wild, XFUND) with comprehensive ablations (RSS/ST/PTP) and scaling curves.
+- **Writing Quality** ⭐⭐⭐⭐: Clear framework diagrams, detailed data construction process, and rigorous ablation design.
+- **Value** ⭐⭐⭐⭐: The "1B outperforms 235B" conclusion is compelling, and the Wild benchmark fills an evaluation gap.
 
 <!-- RELATED:START -->
 
@@ -155,11 +168,11 @@ Data scaling curve: DocMix-1M (85.41) → 2M (88.14) → 3M (89.96) → 4M (89.3
 
 ## Related Papers
 
+- [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
 - [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
 - [\[CVPR 2026\] PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](paddleocr_vl_coarse_to_fine_document_parsing.md)
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](docseeker_long_document_understanding.md)
-- [\[CVPR 2026\] World-Env: Leveraging World Model as a Virtual Environment for VLA Post-Training](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
-- [\[ACL 2026\] GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance](../../ACL2026/multimodal_vlm/guidedog_a_real-world_egocentric_multimodal_dataset_for_blind_and_low-vision_acc.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
+- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 
 </div>
 

@@ -2,129 +2,114 @@
 title: >-
   [Paper Note] Position: Adopting AI in Practice Does Not Guarantee the Productivity Boost
 description: >-
-  [ICML 2026][Image Generation][AI Adoption] This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators…
+  [ICML 2026][Image Generation][Paper Note] This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators ignored by traditional economic models (personnel composition, individual baseline capability, learning curves, equitable use incentives, and g
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "AI Adoption"
-  - "Productivity Paradox"
-  - "Gries-Naudé Model"
-  - "Organizational Factors"
-  - "Learning Curves"
+  - ICML 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 0098e6cfd9d5433b
+content_hash: 5f7b81583490ab80
 ---
-
 # Position: Adopting AI in Practice Does Not Guarantee the Productivity Boost
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.24688](https://arxiv.org/abs/2605.24688)  
 **Code**: None  
-**Area**: AI Governance / Position Paper / AI Productivity Economics  
-**Keywords**: AI Adoption, Productivity Paradox, Gries-Naudé Model, Organizational Factors, Learning Curves
+**Area**: AI Governance / Position Paper / Economics of AI Productivity  
+**Keywords**: AI Adoption, Productivity Paradox, Gries-Naudé Model, Organizational Factors, Learning Curve
 
 ## TL;DR
-This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators ignored by traditional economic models (personnel composition, individual baseline capability, learning curves, equitable use incentives, and goal flexibility). By incorporating organizational effectiveness $\Omega$, capability adjustment $\phi(z,\kappa_i)$, learning curve $\lambda_i(\tau)$, and effective automation threshold $\tilde N_{IT}$ into the Gries-Naudé (2022) partial equilibrium model, the authors derive a revised production function that explains why organizations with identical AI investments see vast disparities in output.
+This position paper argues that "introducing AI into an organization does not automatically equate to productivity gains." It identifies five human and environmental moderators ignored by traditional economic models (personnel composition, individual baseline capability, learning curves, equitable use incentives, and goal flexibility). By incorporating organizational effectiveness $\Omega$, capability adjustment $\phi(z,\kappa_i)$, learning curves $\lambda_i(\tau)$, and effective automation thresholds $\tilde N_{IT}$ into the Gries-Naudé (2022) partial equilibrium model, the authors derive a revised production function that explains the massive output gap between organizations with identical AI investments.
 
 ## Background & Motivation
 
-**Background**: Following the explosion of Generative AI—ranging from GPT-3, Codex, and ChatGPT to agentic frameworks—enterprises and educational institutions are racing to deploy AI. In economics, scholars like Graetz-Michaels, Acemoglu, and Gries-Naudé have begun inserting AI directly as a "productivity factor" into aggregate output models, defaulting to the assumption that stronger AI capability leads to higher Total Factor Productivity (TFP).
+**Background**: Following the explosion of generative AI—from GPT-3 and Codex to ChatGPT and agentic frameworks—enterprises and educational institutions are rushing to deploy AI. In economics, researchers such as Graetz-Michaels, Acemoglu, and Gries-Naudé have begun treating AI directly as a "productivity factor" in aggregate output models, assuming that stronger AI capabilities naturally lead to higher Total Factor Productivity (TFP).
 
-**Limitations of Prior Work**: Empirical evidence does not support this linear extrapolation. Brynjolfsson et al. (2025) found that while AI improved novice performance by 36% in customer service, it had near-zero impact on experienced staff. Dell’Acqua et al. (2023) observed in management consulting that when tasks fall outside the "AI capability frontier," AI users' accuracy was 19 percentage points lower than non-users. Calvino-Fontanelli’s cross-country firm-level data shows that AI adoption is highly concentrated in already dominant large firms. Solow’s classic observation, "You can see the computer age everywhere but in the productivity statistics," is recurring as the "AI Productivity Paradox."
+**Limitations of Prior Work**: Empirical evidence does not support this linear extrapolation. Brynjolfsson et al. (2025) found that AI boosted novice performance by 36% while having almost zero effect on experienced workers in customer service. Dell'Acqua et al. (2023) observed in management consulting that when tasks exceeded AI's capability boundaries, users performed 19 percentage points worse than non-users. Cross-country firm-level data from Calvino-Fontanelli show that AI adoption is highly concentrated in already dominant large firms. Solow's classic observation—"You can see the computer age everywhere but in the productivity statistics"—is recurring as the "AI Productivity Paradox."
 
-**Key Challenge**: Existing economic models treat parameters like $\gamma_{IT}(z)$, $b_{IT}$, and $A_{IT}/A_L$ as purely technical exogenous variables. However, the variables that actually determine whether AI capability can be monetized—organizational structure, individual capability, learning dynamics, usage incentives, and goal flexibility—are **endogenous human and environmental variables** that have been largely overlooked.
+**Key Challenge**: Existing economic models treat parameters like $\gamma_{IT}(z)$, $b_{IT}$, and $A_{IT}/A_L$ as purely exogenous technical variables. However, the variables that actually determine whether AI capability can be monetized are **endogenous human and environmental variables**: organizational structure, individual capability, learning dynamics, usage incentives, and goal flexibility. These have been largely overlooked.
 
-**Goal**: (1) Formally identify these five moderators and their mechanisms; (2) Modify the Gries-Naudé partial equilibrium model to explicitly include them in the production function; (3) Provide "actionable checklists" for researchers, practitioners, and policymakers, emphasizing the distinction between industrial and educational domains.
+**Goal**: (1) Explicitly identify these five types of moderators and their mechanisms; (2) Modify the Gries-Naudé partial equilibrium model to explicitly incorporate them into the production function; (3) Provide a "to-do list" for researchers, practitioners, and policymakers, emphasizing the distinction between industry and education.
 
-**Key Insight**: The authors do not deny that AI capabilities are increasing. Instead, they shift the perspective from "how powerful the AI model is" to "how the organization utilizes AI." AI capability is a necessary but insufficient condition; the five organizational/individual factors serve as the "transmission ratio" that translates capability into output.
+**Key Insight**: Rather than denying the growth of AI capability, the authors shift the focus from "how strong the AI model is" to "how the organization utilizes AI." AI capability is a necessary but insufficient condition; the five organizational/individual factors serve as the "transmission ratio" that translates capability into output.
 
-**Core Idea**: In short—**True AI Productivity = Technical Capability × Organizational Effectiveness $\Omega$ × Capability-Task Fit $\phi$ × Learning Progress $\lambda$ × Goal Flexibility $F$**. Ignoring the latter four factors makes any ROI estimation for AI investment misleading.
+**Core Idea**: In summary—**True AI Productivity = Technical Capability × Organizational Effectiveness $\Omega$ × Capability-Task Fit $\phi$ × Learning Progress $\lambda$ × Goal Flexibility $F$**. Ignoring the latter four components makes any estimation of AI investment ROI misleading.
 
 ## Method
 
-As a position paper, its "method" refers to the revised framework of the Gries-Naudé model rather than an algorithmic procedure. The original model describes how each task $z$ on the interval $[N-1, N]$ is produced by standard labor or IT services (including AI), aggregated by CES into total human-service output $H$, with an automation threshold $N_{IT}$ distinguishing tasks where AI can intervene.
+As a position paper, this is not an algorithmic work; its "method" refers to the revised framework for the Gries-Naudé (2022) partial equilibrium model. To understand the revision, one must first understand the base model: tasks are arranged on a continuous interval $[N-1, N]$, where each task $z$ can be produced by either standard labor or IT services (including AI). These are aggregated into total human-service output $H$ via CES. The model defines an automation threshold $N_{IT}$ that splits the interval into "AI-accessible" and "manually reliant" segments. The flaw in the original model is that variables like $\gamma_{IT}$, $b_{IT}$, and $N_{IT}$ are treated as exogenous technical constants. This paper decomposes these three variables by layering modulators across organizational, individual, and temporal dimensions to endogenize heterogeneity.
 
 ### Overall Architecture
-The authors qualitatively identify five moderators and provide five corresponding revisions: organizational effectiveness $\Omega$, capability-adjusted productivity $\tilde\gamma_L, \tilde\gamma_{IT}$, learning curve $\lambda_i(\tau)$, and endogenous task boundary $\tilde N_{IT}$. These are synthesized into a revised human-service production function $\tilde h_i(z,\tau)$ across "individual-task-time" dimensions, which is then CES-aggregated to the sub-organizational level $\tilde H(\tau)$.
+The authors qualitatively identify five neglected moderators (personnel composition, individual baseline capability, learning curves, equitable use incentives, and goal flexibility) and compress them into four mathematical modulators: organizational effectiveness $\Omega$, capability-adjusted productivity $\tilde\gamma_L/\tilde\gamma_{IT}$, the learning curve $\lambda_i(\tau)$, and the endogenous task boundary $\tilde N_{IT}$. These components form a three-dimensional revised human-service production function $\tilde h_i(z,\tau)$ (individual-task-time), which is then aggregated to the sub-organizational level $\tilde H(\tau)$ via CES. The framework takes observable organizational and individual attributes as inputs and outputs a production function capable of explaining why identical AI investments yield vastly different outputs.
 
 ### Key Designs
 
-1.  **Organizational Effectiveness Correction $\Omega = \omega_C \cdot \omega_I$**:
-    *   **Function**: Distinguishes between "absolute number of AI experts $b_{IT}$" and "effective expert accessibility $\tilde b_{IT}$" to characterize internal friction.
-    *   **Mechanism**: Defines $\omega_C \in [0,1]$ as organizational structural alignment (flat AI-integrated teams approach 1, deep hierarchies approach 0) and $\omega_I \in [0,1]$ as incentive alignment. If only a few receive "AI transformation" rewards, motivation collapses due to asymmetric competition. The discount factor is $\tilde b_{IT}(z) = \Omega \cdot b_{IT}(z)$.
-    *   **Design Motivation**: Explains the Calvino-Fontanelli observation—"strong firms gain more from AI" is not just about having more experts, but about structural designs that allow experts to reach task executors.
+**1. Organizational Effectiveness $\Omega = \omega_C \cdot \omega_I$: Separating "Expert Availability" from "Expert Accessibility."** The original model uses a single parameter $b_{IT}$ for expert availability, assuming hiring experts automatically translates to assistance. The authors introduce two discount factors: $\omega_C \in [0,1]$ for organizational alignment (flat AI task groups approach 1, while deep hierarchies with policy-execution gaps approach 0) and $\omega_I \in [0,1]$ for incentive alignment (asymmetric competition erodes the motivation for peer-to-peer equitable AI use). Their product $\Omega$ discounts $b_{IT}$, yielding effective accessibility $\tilde b_{IT}(z) = \Omega \cdot b_{IT}(z)$. This explains Calvino-Fontanelli's observation: stronger firms benefit more not just because they have more experts, but because their structures allow experts to reach frontline executors.
 
-2.  **Capability-Task Interaction Function $\phi(z,\kappa_i)$ and Reliability Frontier $N_R$**:
-    *   **Function**: Captures Dell’Acqua’s "jagged frontier"—where the same AI tool has opposite effects on the same person across different tasks.
-    *   **Mechanism**: Introduces individual baseline capability $\kappa_i \in [0,1]$. Tasks $[N-1, N_{IT}]$ are divided into a "reliable zone" $[N-1, N_R]$ and an "unreliable zone" $(N_R, N_{IT}]$. In the reliable zone, $\partial \phi_{\text{in}}/\partial \kappa_i \leq 0$ (novices gain more); in the unreliable zone, $\partial \phi_{\text{out}}/\partial \kappa_i > 0$ (only high-ability users can identify and correct AI errors).
-    *   **Design Motivation**: A single $\gamma_{IT}/\gamma_L$ ratio cannot describe non-monotonic heterogeneity (novices surge, experts decline). A piecewise function endogenizes this relationship.
+**2. Capability-Task Interaction $\phi(z,\kappa_i)$ and the Reliable Frontier $N_R$: Opposite effects for the same tool on different tasks.** A simple $\gamma_{IT}/\gamma_L$ ratio cannot describe the non-monotonic relationship where "novices surge while experts slightly decline." The authors introduce individual baseline capability $\kappa_i \in [0,1]$ and further partition the automatable interval $[N-1, N_{IT}]$ into the "AI Reliable Zone" $[N-1, N_R]$ and the "AI Unreliable Zone" $(N_R, N_{IT}]$, formalizing Dell'Acqua's "jagged frontier." Inside the reliable zone, $\partial \phi_{\text{in}}/\partial \kappa_i \leq 0$ (weaker baselines gain more, as in Brynjolfsson 2025). In the unreliable zone, $\partial \phi_{\text{out}}/\partial \kappa_i > 0$, as only high-capability individuals can identify and correct AI errors. Raw labor productivity is also modulated as $\tilde\gamma_L(z,\kappa_i) = \gamma_L(z) \cdot g(\kappa_i)$, where $g$ increases with $\kappa_i$. This piecewise function endogenizes non-monotonic heterogeneous gains.
 
-3.  **Learning Curve $\lambda_i(\tau) = 1 - e^{-\rho_i \tau}$ and Flexible Threshold $\tilde N_{IT}$**:
-    *   **Function**: Integrates "AI gain evolution over time" and "organizational goal rigidity" into the framework.
-    *   **Mechanism**: Uses time since adoption $\tau$ as a comparative static parameter. Individual learning rate $\rho_i$ is heterogeneous (risk of Matthew effect). Effective AI task productivity becomes $\tilde\gamma_{IT}(z,\kappa_i,\tau) = \gamma_{IT}(z) \cdot \phi(z,\kappa_i) \cdot \lambda_i(\tau)$. Organizational flexibility $F \in [0,1]$ shrinks the technical threshold $N_{IT}$ to an effective threshold $\tilde N_{IT} = (1-F)(N-1) + F \cdot N_{IT}$.
-    *   **Design Motivation**: Whereas the original $N_{IT}$ was purely technical, $F$ links it to "leadership's willingness to rearrange KPIs based on AI capabilities," explaining why different organizations with the same tech stack show vastly different AI penetration.
+**3. Learning Curve $\lambda_i(\tau) = 1 - e^{-\rho_i \tau}$ and Flexible Threshold $\tilde N_{IT}$: Incorporating temporal evolution and organizational rigidity.** Using time since adoption $\tau$ as a parameter, the authors define learning progress $\lambda_i(\tau) \in [0,1)$ for individual $i$. The learning rate $\rho_i$ is heterogeneous (fast learners pull ahead, creating Matthew effect risks). Multiplying capability and learning terms yields effective AI task productivity $\tilde\gamma_{IT}(z,\kappa_i,\tau) = \gamma_{IT}(z) \cdot \phi(z,\kappa_i) \cdot \lambda_i(\tau)$. Finally, organizational goal flexibility $F \in [0,1]$ shrinks the technical threshold $N_{IT}$ into an effective threshold $\tilde N_{IT} = (1-F)(N-1) + F \cdot N_{IT}$. When $F=1$, it restores the original model; when $F<1$, rigid assessments mean the organization only delegates a fraction of technically automatable tasks to AI. This links the technically given $N_{IT}$ to leadership's willingness to rearrange KPIs, explaining massive variance in actual AI penetration under the same tech stack.
 
-Combining these components yields the core revised equation (Eq. 9):
+Combining the organizational, individual, and temporal components yields the core revised equation (Eq. 9):
 
 $$\tilde h_i(z,\tau) = \begin{cases} \tilde\gamma_L(z,\kappa_i) l_i(z) A_L + \tilde\gamma_{IT}(z,\kappa_i,\tau) \cdot \Omega \cdot b_{IT}(z) A_{IT} D, & z \in [N-1, \tilde N_{IT}] \\ \tilde\gamma_L(z,\kappa_i) l_i(z) A_L, & z \in (\tilde N_{IT}, N] \end{cases}$$
 
-The total sub-organizational output is obtained via CES aggregation: $\tilde H(\tau) = \big( \int_{N-1}^N (\sum_i \tilde h_i(z,\tau))^{(\sigma-1)/\sigma} dz \big)^{\sigma/(\sigma-1)}$.
+In the automatable segment, AI and human labor contribute in parallel, with the AI term discounted by $\Omega$, while segments beyond the effective threshold rely solely on labor. Summing over individuals and applying CES aggregation $\tilde H(\tau) = \big( \int_{N-1}^N (\sum_i \tilde h_i(z,\tau))^{(\sigma-1)/\sigma} dz \big)^{\sigma/(\sigma-1)}$ yields the total human-service output at the sub-organizational level.
 
-### Mechanism
-The argumentation strategy involves: (i) Citing empirical evidence (Brynjolfsson, Dell’Acqua, Calvino-Fontanelli, Acemoglu) as "counter-examples to the status quo"; (ii) Performing a minimal invasive revision on the Gries-Naudé mathematical skeleton; (iii) Applying the framework to industry and education cases; (iv) Directly addressing three types of counter-arguments (technological determinism, measurement issues, wage costs) in Section 4.
+**Mechanism**: This position paper does not rely on algorithms but follows a four-step argumentative strategy: first, citing empirical counterexamples (Brynjolfsson, Dell'Acqua, Calvino-Fontanelli, Acemoglu) to show linear extrapolation is untenable; second, performing a minimal-intrusion revision on the Gries-Naudé mathematical skeleton; third, applying the framework to industry and education cases; and finally, responding to three types of counter-arguments (technological determinism, measurement issues, and wage cost arguments) in Section 4 by re-interpreting their points within this framework.
 
 ## Key Experimental Results
 
-As a position paper, this section provides an "Empirical Evidence × Framework Correspondence" mapping.
+As a position paper, this contains no experiments. This section provides two tables mapping empirical evidence to framework factors.
 
-### Mapping Empirical Evidence to Framework Factors
+### Empirical Evidence → Framework Factor Mapping
 
-| Empirical Phenomenon | Source | Corresponding Term in Framework |
-| :--- | :--- | :--- |
-| Novices +36%, Experts near zero | Brynjolfsson et al. 2025 | $\phi_{\text{in}}(\kappa_i)$ decreases with $\kappa_i$ |
-| Accuracy -19pp outside capability frontier | Dell'Acqua et al. 2023 | $\phi_{\text{out}}(\kappa_i)$ increases with $\kappa_i$; $N_R < N_{IT}$ |
+| Empirical Phenomenon | Source | Corresponding Factor |
+|---|---|---|
+| Novices boost 36%, experts almost zero | Brynjolfsson et al. 2025 | $\phi_{\text{in}}(\kappa_i)$ decreasing with $\kappa_i$ |
+| Accuracy drops 19pp outside AI boundary | Dell'Acqua et al. 2023 | $\phi_{\text{out}}(\kappa_i)$ increasing with $\kappa_i$; $N_R < N_{IT}$ |
 | AI adoption concentrated in large/strong firms | Calvino-Fontanelli 2023 | High $\Omega = \omega_C \omega_I$ |
-| TFP growth far below expectations | Acemoglu 2025 | Overall $F \cdot \Omega \cdot \lambda$ is far less than 1 |
-| ChatGPT raises grades but not self-efficacy | Deng et al. 2025 | Mismatch between $F$ and $\omega_I$ in education |
+| TFP growth far below expectations | Acemoglu 2025 | Aggregate $F \cdot \Omega \cdot \lambda$ is $\ll 1$ |
+| ChatGPT raises grades but not self-efficacy | Deng et al. 2025 | Misalignment of $F$ and $\omega_I$ in education |
 
-### Original Gries-Naudé Determinants vs. Ours (Revised)
+### Gries-Naudé Original Determinants → Ours (Ref. Table 1)
 
 | Original Determinant | Our Revision |
-| :--- | :--- |
-| Automation threshold $N_{IT}$ | Effective threshold $\tilde N_{IT}$, determined by flexibility $F$ |
-| Productivity ratio $\gamma_{IT}(z)/\gamma_L(z)$ | Individual-time dependent $\tilde\gamma_{IT}/\tilde\gamma_L = \gamma_{IT}\phi\lambda / (\gamma_L g)$ |
-| Expert availability $b_{IT}$ | Effective availability $\tilde b_{IT} = \Omega \cdot b_{IT}$ |
-| Relative capability ratio $A_{IT}/A_L$ | Modulated by $\propto \phi(z,\kappa_i) \lambda_i(\tau) / g(\kappa_i)$ |
+|---|---|
+| Automation Threshold $N_{IT}$ | Effective Threshold $\tilde N_{IT}$, determined by Goal Flexibility $F$ |
+| Task Productivity Ratio $\gamma_{IT}(z)/\gamma_L(z)$ | Identity- and time-dependent $\tilde\gamma_{IT}/\tilde\gamma_L = \gamma_{IT}\phi\lambda / (\gamma_L g)$ |
+| Expert Availability $b_{IT}$ | Effective Accessibility $\tilde b_{IT} = \Omega \cdot b_{IT}$ |
+| Relative Capability Ratio $A_{IT}/A_L$ | Modulated as $\propto \phi(z,\kappa_i) \lambda_i(\tau) / g(\kappa_i)$ |
 
 ### Key Findings
-*   **Productivity Ratio Monotonicity Constraint**: The authors require $\tilde\gamma_{IT}/\tilde\gamma_L$ to be monotonic over $z$ for fixed $\kappa_i, \tau$ to ensure $N_R$ and $\tilde N_{IT}$ are uniquely defined—a hidden prerequisite for model consistency.
-*   **Aggregation Granularity**: Aggregating at the team/department level rather than the whole firm allows for manageable distributions (avoiding "10x engineer" heavy tails) while preserving individual heterogeneity.
-*   **Industry vs. Education**: In industry, high $F$ (KPI flexibility) yields large AI gains, but beneficiaries drift from employees to management. In education, the student is the beneficiary, so the "productivity for whom" tension disappears, but a mismatch between $F$ and $\omega_I$ can directly harm learning goals.
+- **Productivity Ratio Monotonicity Constraint**: The authors require $\tilde\gamma_{IT}/\tilde\gamma_L$ to be monotonic relative to $z$ given fixed $\kappa_i, \tau$ to define $N_R$ and $\tilde N_{IT}$ without ambiguity—an implicit prerequisite for model self-consistency.
+- **Aggregation Granularity**: Aggregating at the team/department level rather than the firm level is justified by the heavy-tailed distribution of firm-wide performance (the "10x engineer" effect), whereas sub-unit distributions are more manageable. This preserves individual heterogeneity via $\kappa_i, \phi, \rho_i$.
+- **Fundamental Difference between Education and Industry**: In industry, AI gains are high when $F$ (KPI flexibility) is high, but the beneficiaries shift from employees to management. In education, because the beneficiary is the student themselves, the "productivity for whom" problem vanishes, but misalignment between $F$ and $\omega_I$ can directly harm learning objectives.
 
 ## Highlights & Insights
-*   **Minimal Invasive Revision**: By only overlaying four modulation terms ($\Omega, \phi, \lambda, F$) onto the original $\gamma, b_{IT}, N_{IT}$, the authors maintain compatibility with prior qualitative conclusions. This "patch, don't rewrite" approach is highly effective for acceptance in economic communities.
-*   **Countering "Technological Determinism"**: Instead of denying AI progress, the authors argue that as AI grows stronger ($N_R$ moves up), the bottleneck merely shifts to $F$ and $\omega_I$. This incorporates the opponent's argument into a larger framework.
-*   **Political Economy Dimension**: Many AI papers ignore "productivity for whom." This paper forces a distinction between industrial efficiency and educational outcomes, highlighting the drift of benefits.
-*   **Transferable Design**: The $\Omega, \phi, \lambda, F$ modulators are applicable to any "new technology adoption" economic model, including cloud computing or remote work.
+- **Minimal Intrusion by Turning "Parameters" into "Variables"**: The authors layered four moderators ($\Omega, \phi, \lambda, F$) onto the original $\gamma, b_{IT}, N_{IT}$. This "patching rather than rewriting" approach allows new readers to adapt with zero friction while retaining the qualitative conclusions of the base model.
+- **Elegant Response to "Technological Determinism"**: Instead of denying technical progress, the authors argue that "stronger AI $\to$ higher $N_R \to$ lower importance of $\phi_{\text{out}}$, yet constraints shift to $F$ and $\omega_I$." It reinterprets opposing views rather than simply refuting them.
+- **"Productivity for whom" - A Political Economy Dimension**: Most AI economic papers ignore this. By contrasting "Industry (management benefits)" with "Education (aligned benefits)," the paper forces any "AI productivity" study to define whose productivity is being measured.
+- **Transferable Design**: The $\Omega, \phi, \lambda, F$ modulators are applicable to any "new technology adoption" economic model, including cloud computing, remote work, or low-code platforms.
 
 ## Limitations & Future Work
-*   **Limitations**: Functional forms for $\phi, g, \rho$ are kept as "general forms" to accommodate cross-domain differences, but this means the framework lacks falsifiable predictions and behaves more like a narrative tool.
-*   **Abstract Baseline Capability $\kappa_i$**: Defining "baseline capability" (coding skill? critical thinking?) is difficult to operationalize and is left for organizational behavior researchers.
-*   **Lack of Direct AI Cost Endogenization**: While license fees and compute costs are acknowledged, they are excluded from the core framework, meaning "profitability" decisions require external valuation.
-*   **Aggregation Conflicts**: Summing over $i$ before CES aggregation assumes perfect substitutability between individuals on tasks, which may conflict with the CES substitution elasticity $\sigma$ between tasks.
-*   **Future Work**: (i) Propose parametric families (e.g., sigmoid or power laws) for $\phi_{\text{in}}, \phi_{\text{out}}, g, \rho(\kappa)$ for counterfactual simulations; (ii) Perform model calibration using the Brynjolfsson 2025 dataset to compare the original vs. revised Gries-Naudé fit.
+- **Acknowledged Limitations**: The specific functional forms for $\phi, g, \rho$ are kept as "general forms" to avoid masking cross-domain differences. However, this means the framework **lacks falsifiable predictions** and functions more as a narrative tool than a fittable model.
+- **Abstraction of Baseline Capability $\kappa_i$**: It is difficult to measure uniformly in practice. The authors do not provide an operational definition for "baseline capability" across different tasks (coding skill? critical thinking? domain knowledge?), leaving it to "organizational behavior researchers" in §6.1.
+- **Lack of Endogenized Direct AI Costs**: Section 4.3 admits licensing fees and compute costs are "another variable" but excludes them from the framework, meaning full decision-making on AI investment still requires external analysis.
+- **Conflict between Individual Summation and CES Assumptions**: Summing over $i$ before CES aggregation implies individuals are perfectly substitutable across tasks, whereas the Gries-Naudé CES describes task substitution elasticity $\sigma$. The mixing of individual and task substitution requires more rigorous theoretical justification.
+- **Improvement Directions**: (i) Assume parametric families (e.g., sigmoid or power laws) for $\phi_{\text{in}}, \phi_{\text{out}}, g, \rho(\kappa)$ to run counterfactual simulations; (ii) Use Brynjolfsson et al. (2025) data for model calibration to compare the fit of the original vs. revised Gries-Naudé model.
 
 ## Related Work & Insights
-*   **vs. Gries & Naudé (2022)**: This paper extends their partial equilibrium model by endogenizing technical exogenous variables into functions of organization, individual, and time.
-*   **vs. Acemoglu (2025)**: Acemoglu attributes low TFP gain to "easy vs. hard tasks." This paper provides the micro-mechanism: it's not task difficulty, but organizational failure to delegate automatable tasks ($F < 1$).
-*   **vs. Dell’Acqua et al. (2023)**: Formalizes the empirical "jagged frontier" as $\phi(z, \kappa_i)$ and $N_R$, elevating empirical terminology to theoretical primitives.
-*   **Insight**: Any study claiming "Technology X brings Growth Y" should first answer the four questions: $\Omega$ (Can the organization land it?), $\phi$ (Can users match it?), $\lambda$ (How long to learn?), and $F$ (Do KPIs allow it?).
+- **vs. Gries & Naudé (2022)**: Directly extends their partial equilibrium CES model by endogenizing $\gamma_{IT}, b_{IT}, N_{IT}$ as functions of organization, individual, and time.
+- **vs. Acemoglu (2025)**: While Acemoglu calculates low TFP contributions by distinguishing "easy/hard to learn" tasks, this paper provides a micro-mechanism: it’s not just task difficulty, but organizational failure to delegate tasks even when they are learnable ($F<1$, $\Omega<1$).
+- **vs. Dell'Acqua et al. (2023)**: Formalizes the "jagged frontier" empirical observation into production function primitives using $\phi(z, \kappa_i) + N_R$.
+- **vs. Brynjolfsson et al. (2025)**: Extends the "novice gains most" finding via the inequality $\partial \phi_{\text{in}}/\partial \kappa_i \leq 0$, while noting the inverse $\partial \phi_{\text{out}}/\partial \kappa_i > 0$ in the unreliable zone.
+- **Insight**: This framework provides an excellent checklist for studying any technology's economic impact: Consider $\Omega$ (deployment), $\phi$ (matching), $\lambda$ (learning), and $F$ (KPI adjustment).
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ Systematically integrating organizational factors into a CES model is a clear framework-level contribution, even if individual factors are known in OB/IS literature.
-*   Experimental Thoroughness: ⭐⭐ As a position paper, it lacks internal experiments and relies on external calibration. Falsifiability is currently weak.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure and precise use of minimal math to communicate deep economic concepts.
-*   Value: ⭐⭐⭐⭐ A rare bridge between the ML community and productivity economics; provides a necessary checklist for stakeholders estimating AI ROI.
+- Novelty: ⭐⭐⭐⭐ Mapping vague "organizational factors" into four modulators for a CES model is a clear framework contribution, though individual factors have been discussed in OB/IS literature.
+- Experimental Thoroughness: ⭐⭐ As a position paper, it lacks experiments. Coverage of empirical literature is excellent, but the lack of calibration or counterfactuals makes the framework less falsifiable.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure (Background $\to$ Five Factors $\to$ Revised Model $\to$ Counter-arguments $\to$ Cases $\to$ Call to Action). Precise math with minimal intrusion.
+- Value: ⭐⭐⭐⭐ A rare bridge between the ML community and productivity economics. High value as a checklist for organizations and policymakers estimating AI ROI.
 
 <!-- RELATED:START -->
 
@@ -135,7 +120,7 @@ As a position paper, this section provides an "Empirical Evidence × Framework C
 - [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
 - [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
 - [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
-- [\[ICML 2026\] DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection](dgs-net_distillation-guided_gradient_surgery_for_clip_fine-tuning_in_ai-generate.md)
+- [\[CVPR 2026\] PositionIC: Unified Position and Identity Consistency for Image Customization](../../CVPR2026/image_generation/positionic_unified_position_and_identity_consistency_for_image_customization.md)
 - [\[AAAI 2026\] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models](../../AAAI2026/image_generation/hierarchicalprune_position-aware_compression_for_large-scale_diffusion_models.md)
 
 </div>

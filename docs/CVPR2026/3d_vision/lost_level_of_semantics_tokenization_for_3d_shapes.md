@@ -2,145 +2,151 @@
 title: >-
   [Paper Note] LoST: Level of Semantics Tokenization for 3D Shapes
 description: >-
-  [CVPR 2026][3D Vision][3D generation] This paper proposes Level-of-Semantics Tokenization (LoST), which orders 3D shape tokens by semantic saliency so that short prefixes can already decode into complete and semantically…
+  [CVPR 2026][3D Vision][3D Generation] This work proposes Level-of-Semantics Tokenization (LoST), which sorts 3D shape tokens by semantic significance. This allows short prefixes to decode into complete and semantically plausible shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, the method significantly outperfo
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D generation"
-  - "shape tokenization"
-  - "autoregressive models"
-  - "semantic hierarchy"
-  - "diffusion decoding"
+  - CVPR 2026
+  - 3D Vision
+  - 3D Generation
 date: 2026-05-08
-content_hash: 8aeac813667e846d
+content_hash: 21b0d1667e54210b
 ---
-
 # LoST: Level of Semantics Tokenization for 3D Shapes
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.17995](https://arxiv.org/abs/2603.17995)  
 **Code**: [Project Page](https://lost3d.github.io)  
-**Area**: 3D Vision
-**Keywords**: 3D generation, shape tokenization, autoregressive models, semantic hierarchy, diffusion decoding
+**Area**: 3D Vision  
+**Keywords**: 3D Generation, Shape Tokenization, Autoregressive Models, Semantic Hierarchy, Diffusion Decoding
 
 ## TL;DR
 
-This paper proposes Level-of-Semantics Tokenization (LoST), which orders 3D shape tokens by semantic saliency so that short prefixes can already decode into complete and semantically coherent shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, LoST achieves significant improvements over existing 3D AR methods that require tens of thousands of tokens, using only 128 tokens.
+This work proposes Level-of-Semantics Tokenization (LoST), which sorts 3D shape tokens by semantic significance. This allows short prefixes to decode into complete and semantically plausible shapes. Combined with the RIDA semantic alignment loss and GPT-style autoregressive generation, the method significantly outperforms existing 3D AR approaches using only 128 tokens compared to tens of thousands.
 
 ## Background & Motivation
 
-Tokenization is the foundation of autoregressive (AR) generative models and determines both generation quality and efficiency. The current state of 3D shape tokenization includes:
+Tokenization is the foundation of autoregressive (AR) generative models, determining both generation quality and efficiency. The current state of 3D shape tokenization includes:
 
-- **Flat element streams** (e.g., MeshGPT, Llama-Mesh): directly serialize vertices/faces into token streams, producing extremely long sequences (thousands to tens of thousands of tokens) with quadratic attention costs, where early prefixes cannot be decoded into meaningful shapes.
-- **Geometric LoD hierarchies** (e.g., OctGPT, VertexRegen): coarse-to-fine spatial hierarchies based on octrees or progressive meshes, originating from rendering and compression, but with two systematic issues:
-    - **Coarse-level token bloat**: even after geometric simplification, early stages still require a large number of spatial tokens to outline basic structure.
-    - **Unusable early decoding**: aggressive geometric simplification causes coarse-level shapes to be geometrically and semantically dissimilar to the final result.
+- **Flat Element Streams** (e.g., MeshGPT, Llama-Mesh): Directly serialize vertices/faces into token streams. The sequences are extremely long (thousands to tens of thousands), leading to high quadratic attention costs, and early prefixes cannot be decoded into meaningful shapes.
+- **Geometric LoD Hierarchies** (e.g., OctGPT, VertexRegen): Coarse-to-fine spatial hierarchies based on octrees or progressive meshes. While derived from rendering and compression, they suffer from two systemic issues:
+    - **Coarse Level Token Inflation**: Even with geometric simplification, early stages require many spatial tokens just to outline the basic structure.
+    - **Unusable Early Decoding**: Aggressive geometric simplification causes coarse-level shapes to be geometrically and semantically dissimilar to the final result.
 
-**Core Observation**: Geometric LoD is designed for rendering/compression, not for AR modeling. The ideal token sequence for AR models should satisfy: short prefix = complete + semantically coherent, long prefix = fine-grained detail. This corresponds to ordering by **semantic saliency** rather than spatial detail.
+**Key Insight**: Geometric LoD is designed for rendering/compression, not for AR modeling. The ideal token sequence for an AR model should follow: Short Prefix = Complete + Semantically Plausible, Long Prefix = Detailed & Precise. This requires sorting by **semantic significance** rather than spatial detail.
 
 ## Method
 
 ### Overall Architecture
 
-A three-stage training system:
-1. **RIDA Pre-training**: trains a 3D semantic extractor to align the triplane latent space with the DINO semantic space.
-2. **LoST Autoencoder**: a ViT encoder compresses the triplane into a semantically ordered token sequence + a DiT diffusion decoder reconstructs the full triplane from any prefix.
-3. **LoST-GPT**: a GPT-style Transformer performs autoregressive generation in the continuous token space.
+The system utilizes a three-stage training pipeline:
+1. **RIDA Pre-training**: Trains a 3D semantic extractor to align the triplane latent space with the DINO semantic space.
+2. **LoST Autoencoder**: A ViT encoder compresses the triplane into a hierarchy of semantic tokens with causal masking and nested dropout. A DiT diffusion decoder reconstructs the full triplane from any prefix.
+3. **LoST-GPT**: A GPT-style Transformer performs autoregressive generation in the continuous token space.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Triplane Latent"] --> B
+    subgraph AE["LoST Autoencoder"]
+        direction TB
+        B["LoST Encoder<br/>ViT + register tokens, causal mask + nested dropout"] --> C["Semantic Hierarchy Token Sequence<br/>Short prefix=complete semantics, long prefix=added details"]
+        C --> D["DiT Diffusion Decoder<br/>Reconstruct full triplane from any prefix"]
+    end
+    R["RIDA Semantic Alignment Loss<br/>Aligns relational structures across 2D-3D modalities"] -->|Provides semantic supervision| B
+    E["LoST-GPT<br/>Continuous AR, only 128 tokens"] -->|Feeds generated tokens to decoder| D
+    D --> F["Reconstructed / Generated 3D Shapes"]
+```
 
 ### Key Designs
 
-1. **LoST Encoder — Semantic Hierarchy Token Sequence**: A ViT encoder processes patchified triplanes (768 tokens) and introduces up to 512 learnable **register tokens** $\mathcal{T}_R$, which extract information from the original triplane tokens via attention. Key mechanisms:
+1. **LoST Encoder — Semantic Hierarchy Token Sequence**: Based on a ViT encoder processing a patchified triplane (768 tokens), it introduces up to 512 learnable **register tokens** $\mathcal{T}_R$ that extract information via attention. Key mechanisms include:
+    - **Causal Masking**: Causal attention is used between register tokens to force hierarchical organization from front to back.
+    - **Nested Dropout**: During training, prefixes of length $[1, 2, 4, 8, ..., k]$ are randomly kept and the rest discarded, forcing the model to prioritize critical information.
+    - The type of hierarchy (semantic vs. geometric) is determined by the loss: geometric loss leads to frequency hierarchy, while semantic loss leads to semantic hierarchy.
+    - Only register tokens (projected to 32D) are kept, creating an information bottleneck.
 
-    - **Causal masking**: causal attention among register tokens forces hierarchical organization of information from front to back.
-    - **Nested dropout**: during training, only prefixes of length $[1, 2, 4, 8, ..., k]$ are randomly retained while the rest are discarded, forcing the model to front-load the most important information.
-    - The type of hierarchy (semantic vs. geometric) is determined by the training loss: geometric loss → frequency hierarchy (low to high frequency); semantic loss → semantic hierarchy.
-    - After encoding, only register tokens (projected to 32 dimensions) are retained; original triplane tokens are discarded to form an information bottleneck.
+2. **RIDA — 3D Semantic Alignment Loss (Relational Inter-Distance Alignment)**: Unlike REPA in 2D which aligns DINO features directly, 3D shapes lack direct semantic extractors. RIDA aligns **relational structures** instead of raw features to bridge the modality gap:
+    - A "student" Transformer $f_\theta$ maps triplanes to a semantic space.
+    - **Global Relational Contrast** $\mathcal{L}_{global}$: Uses DINO feature similarity to mine positive/negative pairs for Multi-positive InfoNCE in the student space.
+    - **Inter-instance Rank Distillation** $\mathcal{L}_{rank}$: Preserves the structure of continuous pairwise distances from the DINO space (inspired by RKD).
+    - **Spatial Structure Distillation** $\mathcal{L}_{spatial}$: Aligns token-level affinity matrices.
+    - Total loss: $\mathcal{L}_{RIDA} = 1.0 \cdot \mathcal{L}_{global} + 1.0 \cdot \mathcal{L}_{rank} + 0.5 \cdot \mathcal{L}_{spatial}$.
 
-2. **RIDA — Relational Inter-Distance Alignment Loss**: The 2D REPA loss directly aligns with DINO features, but 3D shapes lack a direct semantic feature extractor. Instead of directly regressing DINO features (which suffers from large modality gap), RIDA aligns the **relational structure**:
-
-    - A "student" Transformer $f_\theta$ maps triplanes into a semantic space.
-    - **Global relational contrastive loss** $\mathcal{L}_{global}$: mines positive and negative pairs using DINO feature similarities and applies Multi-positive InfoNCE in the student space.
-    - **Inter-instance ranking distillation** $\mathcal{L}_{rank}$: preserves continuous pairwise distance structure in DINO space (inspired by RKD).
-    - **Spatial structure distillation** $\mathcal{L}_{spatial}$: aligns token-level affinity matrices.
-    - Total loss: $\mathcal{L}_{RIDA} = 1.0 \cdot \mathcal{L}_{global} + 1.0 \cdot \mathcal{L}_{rank} + 0.5 \cdot \mathcal{L}_{spatial}$
-
-3. **LoST-GPT — Continuous-Space Autoregressive Generation**: Tokens remain in continuous space (no quantization). A LlamaGen architecture (depth 24, 16 heads, dim 1024) performs autoregressive next-token prediction. A small MLP diffusion head at each position models the conditional distribution (following MAR), avoiding the information loss of VQ. Conditional generation uses OpenCLIP embeddings. High-quality generation is achieved with only 128 tokens.
+3. **LoST-GPT — Continuous Space Autoregressive Generation**: Tokens remain in continuous space (no quantization). It uses a LlamaGen architecture (depth 24, 16 heads, dim 1024) for next-token prediction. Small MLP diffusion heads model the conditional distribution at each position (following MAR), avoiding VQ information loss. Conditional generation uses OpenCLIP embeddings. High-quality generation is achieved with only 128 tokens.
 
 ### Loss & Training
 
-- LoST autoencoder: $\mathcal{L} = \mathcal{L}_{denoise} + 1.0 \cdot \mathcal{L}_{semantic}$, where $\mathcal{L}_{semantic} = 1 - \langle f_\theta(\hat{\mathbf{X}}_0), f_\theta(\mathbf{X}_0) \rangle$
-- DiT decoder: depth 24, dim 1024, 16 heads, 2×2 patchification
-- Training data: a custom 300K shape dataset (prompts generated by Gemini 2.5 Pro → images generated by Flux.1 → 3D shapes generated by Direct3D)
-- LoST trained for 250 epochs; RIDA trained for 100 epochs; both on 8×A100
+- LoST Autoencoder: $\mathcal{L} = \mathcal{L}_{denoise} + 1.0 \cdot \mathcal{L}_{semantic}$, where $\mathcal{L}_{semantic} = 1 - \langle f_\theta(\hat{\mathbf{X}}_0), f_\theta(\mathbf{X}_0) \rangle$.
+- DiT Decoder: depth 24, dim 1024, 16 heads, 2×2 patchification.
+- Training Data: 300K shapes (Gemini 2.5 Pro prompts → Flux.1 images → Direct3D 3D generation).
+- LoST trained for 250 epochs, RIDA for 100 epochs, on 8×A100 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | #Tokens | CD(×10⁻²)↓ | FID↓ | DINO↑ |
-|--------|---------|------------|------|-------|
-| OctGPT (best layer) | ~61962 | 0.533 | 100.78 | 0.619 |
-| VertexRegen (best layer) | ~7530 | 0.034 | 86.10 | 0.791 |
-| **LoST (64 tokens)** | 64 | 0.382 | 21.13 | 0.880 |
-| **LoST (512 tokens)** | 512 | 0.234 | 13.59 | 0.921 |
-| LoST (1 token) | 1 | 2.271 | 31.65 | 0.731 |
+| Method | Token Count | CD(×10⁻²)↓ | FID↓ | DINO↑ |
+|------|---------|------------|------|-------|
+| OctGPT (Best Layer) | ~61962 | 0.533 | 100.78 | 0.619 |
+| VertexRegen (Best Layer) | ~7530 | 0.034 | 86.10 | 0.791 |
+| **Ours (64 tokens)** | 64 | 0.382 | 21.13 | 0.880 |
+| **Ours (512 tokens)** | 512 | 0.234 | 13.59 | 0.921 |
+| Ours (1 token) | 1 | 2.271 | 31.65 | 0.731 |
 
 AR Generation:
 
-| Method | #Tokens | FID↓ | DINO↑ |
-|--------|---------|------|-------|
+| Method | Token Count | FID↓ | DINO↑ |
+|------|---------|------|-------|
 | OctGPT | ~50000 | 66.93 | — |
 | ShapeLLM-Omni | 1024 | 48.70 | 0.680 |
 | **LoST-GPT** | **128** | **34.25** | **0.758** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Geometry loss only (no RIDA) | High FID, low DINO | Lack of semantic guidance; poor prefix decoding semantics |
-| With RIDA semantic loss | Significant FID and DINO improvement | Semantic alignment is key to the LoS hierarchy |
-| 1-token decoding | DINO 0.731, FID 31.65 | Already outperforms OctGPT's best layer (~62K tokens) |
-| 4-token decoding | DINO 0.765, FID 29.26 | Further improvement in semantic fidelity |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Geometry Loss Only (No RIDA) | High FID, Low DINO | Lacks semantic guidance; prefix decoding is semantically poor. |
+| With RIDA Semantic Loss | Significant improvement in FID/DINO | Semantic alignment is key to LoS hierarchy. |
+| 1-token Decoding | DINO 0.731, FID 31.65 | Already outperforms OctGPT's best layer (~62K tokens). |
+| 4-token Decoding | DINO 0.765, FID 29.26 | Further improves semantic fidelity. |
 
 ### Key Findings
 
-- LoST decodes a complete, recognizable shape (e.g., basic semantics of a chair or car) from just 1 token, while LoD methods still produce unusable geometric primitives at thousands of tokens.
-- AR generation with 128 tokens comprehensively outperforms OctGPT requiring 50,000 tokens, representing approximately 400× improvement in token efficiency.
-- Semantic hierarchy (LoS) substantially outperforms geometric hierarchy (LoD) for AR modeling, as semantic prefixes can generate complete structures.
-- RIDA successfully bridges the modality gap between 2D DINO features and 3D triplane latent space by aligning relational structure rather than absolute feature values.
+- LoST can decode a complete, recognizable shape (e.g., basic structure of a car or chair) using just 1 token, whereas LoD methods still yield unusable geometric primitives at thousands of tokens.
+- AR generation with 128 tokens outperforms OctGPT (50,000 tokens), achieving a roughly 400x improvement in token efficiency.
+- Semantic hierarchy (LoS) is significantly superior to geometric hierarchy (LoD) for AR modeling because semantic prefixes generate complete structures.
+- RIDA successfully bridges the modality gap between 2D DINO features and 3D triplane latents by aligning relational topology rather than absolute values.
 
 ## Highlights & Insights
 
-- **Deep core insight**: Geometric LoD is designed for rendering; semantic LoS is what suits AR generation — this observation reframes the thinking around 3D tokenization.
-- **Elegant RIDA design**: Rather than directly regressing cross-modal features (which would fail), it aligns relational topological structure — a general approach for cross-modal knowledge transfer.
-- **Extreme token efficiency**: 1 token encodes a complete shape; 128 tokens outperform methods requiring 50,000 tokens.
-- **Semantically progressive prefix decoding**: from "generic category" to "specific instance detail," e.g., from "generic mountain" to "mountain with a face."
-- Continuous tokens with diffusion loss avoid the information loss of VQ, serving as an effective alternative paradigm for AR generation.
+- **Deep Core Insight**: Shifting from rendering-based LoD to generation-based LoS changes the paradigm of 3D tokenization.
+- **Clever RIDA Design**: Aligning relational structures instead of direct cross-modal regression (which often fails) provides a general strategy for cross-modal knowledge transfer.
+- **Extreme Token Efficiency**: Achieving "1 token = 1 complete shape" and 400x compression over prior work.
+- **Semantic Progression of Prefixes**: Decodes from "generic category" to "instance-specific details" (e.g., from a "generic mountain" to a "mountain with a face").
+- Continuous tokens + diffusion loss avoid VQ information loss, serving as an effective alternative paradigm for AR generation.
 
 ## Limitations & Future Work
 
-- The method is built on a VAE triplane latent space; future work should extend to other 3D representations (e.g., Gaussian Splats).
-- The diffusion decoder increases inference cost compared to pure AR decoding.
-- Artifacts may still appear with very few tokens (a problem shared with 2D semantic tokenizers).
-- The AR generator currently uses a fixed target length and does not support adaptive EOS stopping.
-- Training data is synthetically generated (Direct3D pipeline); real scanned data may require additional adaptation.
-- Conditional control (e.g., part-level editing) has not been explored.
+- Dependency on VAE triplane latent spaces; needs expansion to other representations like Gaussian Splats.
+- Diffusion decoders increase inference cost compared to pure AR decoders.
+- Artifacts may still appear at extremely low token counts (similar to 2D semantic tokenization).
+- The AR generator currently uses a fixed length and lacks an adaptive EOS stop.
+- Training data is synthetic; adaptation to real-world scans may be required.
+- Conditional controls (e.g., part-level editing) remain unexplored.
 
 ## Related Work & Insights
 
-- **FlexTok/Semanticist** (2D): directly inspired LoST, extending the idea of semantic hierarchy tokenization from 2D to 3D.
-- **RKD**: relational knowledge distillation inspired RIDA's relational alignment strategy.
-- **MAR**: continuous-space autoregressive modeling inspired the diffusion loss design in LoST-GPT.
-- **Direct3D**: the VAE provides the triplane latent space foundation.
-- The LoST framework can be generalized to video tokenization (temporal semantic hierarchy) or scene-level 3D tokenization.
+- **FlexTok/Semanticist** (2D): Directly inspired the extension of semantic hierarchy tokenization to 3D.
+- **RKD**: Relational Knowledge Distillation inspired RIDA's relational alignment strategy.
+- **MAR**: Continuous space AR modeling inspired the diffusion loss design in LoST-GPT.
+- **Direct3D**: Provided the foundation for the triplane latent space.
+- The LoST philosophy can be extended to video tokenization (temporal semantic levels) or scene-level 3D tokenization.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — paradigm shift from LoD to LoS, RIDA cross-modal relational alignment, and continuous AR generation — three independent contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — separate evaluation of tokenization reconstruction and AR generation, comparison with multiple SOTAs, and downstream semantic retrieval tasks.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — clear paper structure, compelling LoD vs. LoS comparison, high-quality figures.
-- **Value**: ⭐⭐⭐⭐⭐ — dramatically improves 3D AR generation efficiency (400× token compression) and defines a new direction for 3D tokenization.
-- Value: TBD
+- **Novelty**: ⭐⭐⭐⭐⭐ Paradigm shift from LoD to LoS, RIDA alignment, and continuous AR.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluated both reconstruction and AR generation against SOTAs.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure and powerful visual comparisons.
+- **Value**: ⭐⭐⭐⭐⭐ Redefines 3D tokenization with massive efficiency gains.
 
 <!-- RELATED:START -->
 
@@ -148,11 +154,11 @@ AR Generation:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians](../../ICCV2025/3d_vision/can3tok_canonical_3d_tokenization_and_latent_modeling_of_scene-level_3d_gaussian.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
-- [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
-- [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](../../ICLR2026/3d_vision/lito_surface_light_field_tokenization.md)
+- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
+- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
 
 </div>
 

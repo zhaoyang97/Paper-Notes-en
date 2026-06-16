@@ -2,137 +2,137 @@
 title: >-
   [Paper Note] PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning
 description: >-
-  [ICML 2026][Medical Imaging][Whole Slide Images] PathCTM reframes Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "continuous multi-scale reasoning from low-resolution global and high-re…
+  [ICML 2026][Medical Imaging][Paper Note] PathCTM reformulates Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "continuous multi-scale reasoning from low-magnification global to high-magnification local". Based on Continuous Thought Machines, it introduces the thinking-in-scales paradigm + attention-guided region pruning + con
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Whole Slide Images"
-  - "MIL Acceleration"
-  - "Continuous Thought Machine"
-  - "Multi-scale Reasoning"
-  - "Confidence-aware Early Stopping"
+  - ICML 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: bbb82f46e4e537b4
+content_hash: 3b20044f226b5024
 ---
-
 # PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.19491](https://arxiv.org/abs/2605.19491)  
 **Code**: https://github.com/JSGe-AI/PathCTM  
 **Area**: Medical Imaging / Pathology / WSI Analysis Efficiency  
-**Keywords**: Whole Slide Images, MIL Acceleration, Continuous Thought Machine, Multi-scale Reasoning, Confidence-aware Early Stopping
+**Keywords**: Whole Slide Image, MIL Acceleration, Continuous Thought Models, Multi-scale Inference, Confidence-Aware Early Stopping
 
 ## TL;DR
-PathCTM reframes Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "continuous multi-scale reasoning from low-resolution global and high-resolution local" views. Based on the Continuous Thought Machine, it introduces the thinking-in-scales paradigm, attention-guided regional pruning, and confidence-aware early stopping. This approach reduces the number of patches by 95.95% and inference time by 95.62% while simultaneously improving the AUC.
+PathCTM reformulates Whole Slide Image (WSI) analysis from "exhaustive high-magnification patching" to "continuous multi-scale reasoning from low-magnification global to high-magnification local". Based on Continuous Thought Machines, it introduces the thinking-in-scales paradigm + attention-guided region pruning + confidence-aware early stopping, reducing patch counts by 95.95% and inference time by 95.62% while maintaining or even improving AUC.
 
 ## Background & Motivation
 
-**Background**: Mainstream WSI analysis (gigapixel pathology images) relies on Multiple Instance Learning (MIL), involving tiling slides into tens of thousands of high-magnification patches, extracting features per patch, and performing slide-level prediction through aggregate modeling (e.g., CLAM, TransMIL, ABMIL). Integrating these with pathology foundation models (Virchow, GigaPath, Prov-GigaPath) yields high performance but remains extremely slow.
+**Background**: Mainstream WSI analysis (gigapixel pathology images) relies on Multiple Instance Learning (MIL)—tiling images into tens of thousands of high-magnification patches, extracting features per patch, and aggregating them for slide-level prediction (e.g., CLAM, TransMIL, ABMIL). Combined with pathology foundation models (Virchow, GigaPath, Prov-GigaPath), performance is high but extremely slow.
 
-**Limitations of Prior Work**: (1) Patch tiling and feature extraction dominate runtime, yet most patches contribute negligibly to final predictions. (2) Existing acceleration methods (ZoomMIL, HAG-MIL, EAGLE, hierarchical distillation) depend on fine-grained annotations or rigid cascade structures; they mimic "coarse-to-fine" formally but lack continuous memory reasoning, resulting in either accuracy degradation or marginal efficiency gains. (3) The recent Continuous Thought Machine (Darlow 2026) supports continuous reasoning but only for single-scale static images—it cannot hallucinate cellular details from low-resolution WSIs and fails to exploit the WSI pyramid structure.
+**Limitations of Prior Work**: (1) Patch tiling and feature extraction dominate runtime, yet most patches contribute negligibly to final prediction (quantified in Figure 1). (2) Existing acceleration methods (ZoomMIL, HAG-MIL, EAGLE, hierarchical distillation) depend on fine-grained annotations or rigid cascade structures; they imitate "coarse-to-fine" in form but lack continuous memory reasoning, leading to either accuracy degradation or marginal efficiency gains. (3) The recent Continuous Thought Machine (Darlow 2026) supports continuous reasoning but only for single-scale static images—it cannot hallucinate cellular details from low-resolution WSIs nor leverage the WSI pyramid structure.
 
-**Key Challenge**: Clinical pathologists perform "multi-scale continuous reasoning"—observing global tissue architecture at low power, identifying suspicious regions, zooming to high power for cellular details, and stopping once sufficient information is gathered. Existing methods are either exhaustive (MIL), rigidly cascaded (ZoomMIL), or utilize single-scale continuous reasoning (CTM), failing to integrate "multi-scale" logic with "continuous reasoning + adaptive early stopping."
+**Key Challenge**: Clinical pathologists actually perform "multi-scale continuous reasoning"—viewing global tissue architecture at low magnification $\rightarrow$ identifying suspicious areas $\rightarrow$ switching to high magnification for cellular details $\rightarrow$ stopping once information is sufficient. Existing methods either use exhaustion (MIL), rigid cascades (ZoomMIL, etc.), or single-scale continuous reasoning (CTM)—none correctly integrate "multi-scale" with "continuous reasoning + adaptive early stopping."
 
-**Goal**: Reframe WSI analysis as a dynamic sequence of information seeking—gradually reducing conditional entropy $H(Y | \bm Z_t)$ to maximize information gain within a computational budget. Specifically: (1) maintain memory across scales through continuous reasoning; (2) dynamically select high-resolution regions based on information density; (3) stop once confidence meets the diagnostic requirement.
+**Goal**: Reformulate WSI analysis as a dynamic sequential information pursuit problem—gradually reducing conditional entropy $H(Y | \bm Z_t)$ to maximize information gain within a computational budget. Specifically: (1) cross-scale continuous reasoning with persistent memory; (2) dynamic selection of high-res regions based on information density; (3) early stopping upon reaching confidence.
 
-**Key Insight**: While CTM's "thinking-in-time" is insufficient for WSIs, its concept of "internal time + persistent memory" can be adapted. This paper introduces the "thinking-in-scales" dimension—a joint continuous reasoning of internal time and spatial scale, allowing low-magnification iterations to establish global hypotheses while high-magnification iterations verify local details and enable early stopping.
+**Key Insight**: Thinking-in-time from CTM fails on WSAs, but its "internal time + continuous memory" concept can be adapted. By introducing a "thinking-in-scales" dimension—joint continuous reasoning across internal time $\times$ spatial scales—the model can establish global hypotheses at low magnification $\rightarrow$ verify local details at high magnification $\rightarrow$ stop early.
 
-**Core Idea**: A synergy of three modules: scale-space continuous reasoning, attention-guided hard pruning, and confidence-aware entropy-minimizing early stopping, mimicking the clinical diagnostic workflow.
+**Core Idea**: A synergy of scale-space continuous reasoning, attention-guided hard pruning, and confidence-aware entropy minimization early stopping, mimicking the diagnostic workflow of pathologists.
 
 ## Method
 
 ### Overall Architecture
 
-WSI input $\to$ low-magnification global features $\to$ CTM-style continuous reasoning for $n$ steps (maintaining FIFO memories $\bm H^t, \bm E^t$) $\to$ if confidence is insufficient, select regions via Top-$K$ attention and switch to the next higher magnification $\to$ cross-scale fusion (concatenating current $\bm S_{out}^{L-1,t}$ with the highest-confidence output from the previous scale $\bm S_{out}^{L,\max}$) $\to$ repeat until confidence reaches the threshold or the budget is exhausted.
+PathCTM redefines "analyzing a gigapixel WSI" as a continuous reasoning process that approaches the answer from low to high magnification. It first extracts global features at the lowest magnification, iterates for $n$ steps using CTM-style internal time reasoning, and stores memory in a FIFO queue. If the model is not yet confident, it selects the Top-$K$ most suspicious regions via attention scores, switches to a higher magnification, and concatenates the current scale's output with the output from the most confident moment of the previous scale. This cycle repeats until confidence reaches a threshold or the compute budget is exhausted. This workflow mirrors the "low-mag architecture $\rightarrow$ anchor suspicious zones $\rightarrow$ high-mag validation $\rightarrow$ stop when certain" habit of pathologists. During training, two key moments—the lowest loss $t_l^1$ and highest confidence $t_l^2$—are sampled at every scale to compute the total loss $\mathcal{L}_{all} = \frac{1}{z}\sum_l \frac{\mathcal{L}_l^{t_l^1} + \mathcal{L}_l^{t_l^2}}{2}$, ensuring the model is both accurate and "aware" of its own confidence.
 
-Training Goal: Take the lowest loss point $t_l^1$ and the highest confidence point $t_l^2$ at each scale. The loss is $\mathcal{L}_{all} = \frac{1}{z}\sum_l \frac{\mathcal{L}_l^{t_l^1} + \mathcal{L}_l^{t_l^2}}{2}$, optimizing both classification accuracy and uncertainty estimation ("self-awareness").
+```mermaid
+graph TD
+    A["Input: Gigapixel WSI"] --> B["Extract Global Features at Lowest Mag"]
+    B --> C["Scale-Space Continuous Reasoning<br/>CTM Internal Time Reasoning n steps + FIFO Memory"]
+    C --> D{"Confidence-Aware Early Stopping<br/>Normalized Entropy < δ ?"}
+    D -->|"Yes / Budget Exhausted"| OUT["Output Slide-level Prediction"]
+    D -->|"No"| E["Attention-Guided Region Pruning<br/>Select Top-K regions from most confident step"]
+    E --> F["Switch to Higher Mag + Cross-scale Fusion<br/>Resume from previous scale's confident state"]
+    F --> C
+```
 
 ### Key Designs
 
-1. **Scale-Space Continuous Reasoning (Thinking in Scales)**:
-    - **Function**: Performs continuous reasoning across scales on the WSI pyramid, with continuous temporal reasoning within each scale.
-    - **Mechanism**: Executes $n$ steps per scale $L$, with state transition $\bm h^t = f_{\theta_{syn}}(\text{concat}(\bm e^t, \bm b^t))$ ($\bm b^t$ is the attention output). FIFO history $\bm H^t \in \mathbb{R}^{D \times M}$ stores the last $M$ pre-activations, and $\bm E^t \in \mathbb{R}^{D \times N}$ stores all post-activations. FIFO updates persist across scale switches to maintain continuity. Cross-scale fusion $\hat y^t = \text{MLP}([\bm S_{out}^{L-1,t} \| \bm S_{out}^{L,\max}])$ prevents global context forgetting.
-    - **Design Motivation**: Standard CTM assumes multi-step iteration on a fixed tensor can extract deeper information, but low-magnification WSIs lack fine details. Introducing the scale dimension allows "switching to higher magnification when necessary," mirroring the magnification adjustments of a pathologist.
+**1. Scale-Space Continuous Reasoning (Thinking in Scales): Adding "Lens Switching" to CTM**
 
-2. **Attention-Guided Regional Pruning (Conditional Computation)**:
-    - **Function**: Converts cross-scale patch selection into an information gain maximization problem under budget constraints.
-    - **Mechanism**: Target $\mathcal{S}^* = \arg\max_{|\mathcal{S}| \leq K} I(Y; \mathcal{S} | \bm Z_t)$. Since direct mutual information calculation is infeasible, attention distribution is used as a first-order surrogate (Proposition 1). At the current scale, attention $\bm A^{t^*}$ from the highest-confidence time step $t^*$ is used to select Top-$K$ patches for the next scale. Complexity is reduced from $\mathcal{O}(N)$ to $\mathcal{O}(K)$, where $K \ll N$.
-    - **Design Motivation**: Traditional MIL processes all patches, most of which are redundant. Attention-guided pruning concentrates computation on information-dense regions. Using attention from the most confident time step is more accurate than an average over steps.
+Standard Continuous Thought Machines assume deeper information can be extracted by thinking longer on a fixed feature map. However, low-mag WSI images are inherently blurred and lack cellular details. PathCTM overcomes this by expanding "internal time" into a joint "internal time $\times$ spatial scale" reasoning framework. At each scale $L$, it performs $n$ steps with state transitions: $\bm h^t = f_{\theta_{syn}}(\text{concat}(\bm e^t, \bm b^t))$, where $\bm b^t$ is the current scale's attention output. Memory is maintained via two FIFO queues—$\bm H^t \in \mathbb{R}^{D \times M}$ for the last $M$ pre-activations and $\bm E^t \in \mathbb{R}^{D \times N}$ for all post-activations. Crucially, these queues persist across scale changes, allowing global hypotheses to inform high-mag analysis. To prevent losing global context, cross-scale fusion explicitly re-integrates the most confident representation from the previous scale: $\hat y^t = \text{MLP}([\bm S_{out}^{L-1,t} \| \bm S_{out}^{L,\max}])$.
 
-3. **Confidence-Aware Early Stopping**:
-    - **Function**: Dynamically determines when to stop reasoning based on current diagnostic uncertainty.
-    - **Mechanism**: Calculates posterior $P(Y | \bm Z_t)$ and entropy $H(Y | \bm Z_t)$ at each step. Reasoning stops if entropy falls below the acceptance margin $\delta$; otherwise, it continues until $n$ steps are completed at the current scale before shifting scales. Confidence $C^t = 1 - \text{normalized entropy}$.
-    - **Design Motivation**: Different cases vary in diagnostic difficulty. Adaptive early stopping allocates resources as needed, echoing the clinical practice of "reporting when certain, zooming in when not."
+**2. Attention-Guided Region Pruning (Conditional Computation): Using Attention as a Cheap Proxy for Information Gain**
+
+Traditional MIL processes tens of thousands of patches, most of which are noise. PathCTM formalizes the patch selection for the next scale as an information gain maximization problem under a budget: $\mathcal{S}^* = \arg\max_{|\mathcal{S}| \leq K} I(Y; \mathcal{S} | \bm Z_t)$. Since mutual information $I(Y;\mathcal{S}|\bm Z_t)$ is intractable, Proposition 1 in the paper proves that the attention distribution can serve as a first-order surrogate—attention approximately equals the gradient of influence for each patch on the prediction. Practically, the model uses the attention map $\bm A^{t^*}$ from the most confident step $t^*$ of the current scale to select Top-$K$ patches. Using the most confident step rather than average attention ensures selection based on the most "certain" diagnostic hypothesis, compressing complexity from $\mathcal{O}(N)$ to $\mathcal{O}(K)$ ($K \ll N$).
+
+**3. Confidence-Aware Early Stopping: Dynamic Budgeting by Case Difficulty**
+
+Diagnostic difficulty varies—typical ductal carcinoma is obvious, while complex differential diagnoses require detailed scrutiny. PathCTM calculates the posterior $P(Y | \bm Z_t)$ and its entropy $H(Y | \bm Z_t)$ at each step, defining confidence as $C^t = 1 - \text{normalized entropy}$. If entropy drops below a marginal threshold $\delta$, inference stops immediately. This aligns the framework's goal of "minimizing conditional entropy" with the clinical decision of "reporting when certain," making the reasoning trajectory naturally interpretable.
 
 ## Key Experimental Results
 
-### Main Results: Four Pathology Diagnostic Tasks
+### Main Results: Four Diagnostic Tasks
 
 | Task | Method | AUC↑ | Patch Count↓ | Inference (s)↓ | Gain |
 |------|------|------|---------|------------|------|
-| TCGA-BRCA Subtype | TransMIL | 88.6 | 12,500 | 28.4 | 1× |
-| TCGA-BRCA Subtype | EAGLE | 88.2 | 3,200 | 7.8 | 3.6× |
-| TCGA-BRCA Subtype | **Ours** | **89.3** | **506** | **1.3** | **21.8×** |
+| TCGA-BRCA Subtyping | TransMIL | 88.6 | 12,500 | 28.4 | 1× |
+| TCGA-BRCA Subtyping | EAGLE | 88.2 | 3,200 | 7.8 | 3.6× |
+| TCGA-BRCA Subtyping | **PathCTM** | **89.3** | **506** | **1.3** | **21.8×** |
 | TCGA-LUAD Grading | TransMIL | 76.5 | 10,800 | 24.7 | 1× |
-| TCGA-LUAD Grading | **Ours** | **77.4** | **427** | **1.1** | **22.5×** |
-| CAMELYON16 Metastasis| CLAM | 91.2 | 8,500 | 19.3 | 1× |
-| CAMELYON16 Metastasis| **Ours** | **91.8** | **352** | **0.84** | **23.0×** |
-| TCGA-RCC Subtype | TransMIL | 92.8 | 11,300 | 26.1 | 1× |
-| TCGA-RCC Subtype | **Ours** | **93.5** | **474** | **1.2** | **21.7×** |
+| TCGA-LUAD Grading | **PathCTM** | **77.4** | **427** | **1.1** | **22.5×** |
+| CAMELYON16 Metastasis | CLAM | 91.2 | 8,500 | 19.3 | 1× |
+| CAMELYON16 Metastasis | **PathCTM** | **91.8** | **352** | **0.84** | **23.0×** |
+| TCGA-RCC Subtyping | TransMIL | 92.8 | 11,300 | 26.1 | 1× |
+| TCGA-RCC Subtyping | **PathCTM** | **93.5** | **474** | **1.2** | **21.7×** |
 
-Average patch reduction of 95.95% and inference time reduction of 95.62%, with a mean AUC increase of +0.7.
+On average, patch count is reduced by 95.95% and inference time is reduced by 95.62%, with an average AUC increase of +0.7.
 
 ### Ablation Study (TCGA-BRCA)
 
 | Configuration | AUC | Patch Count |
 |------|------|--------|
 | Full PathCTM | 89.3 | 506 |
-| − Scale-Space Reasoning (Single-scale CTM)| 85.4 | 8,200 |
-| − Attention Pruning (No pruning, all patches)| 89.1 | 12,500 |
-| − Early Stopping (Fixed steps)| 89.0 | 950 |
+| − Scale-Space Reasoning (Single-scale CTM) | 85.4 | 8,200 |
+| − Attention Pruning (Full patches) | 89.1 | 12,500 |
+| − Early Stopping (Fixed steps) | 89.0 | 950 |
 
-Scale-Space is the most critical component; pruning mainly saves computation with minimal AUC impact; early stopping saves nearly half the patches compared to fixed budget execution.
+Scale-Space Reasoning is most critical (removing it drops AUC by 3.9 and loses all efficiency); pruning saves compute with minimal AUC impact; early stopping saves half the patches under fixed budgets.
 
-### Cross-scale Fusion vs. No Fusion
+### Cross-Scale Fusion vs. No Fusion
 
 | Configuration | AUC |
 |------|------|
 | With $\bm S^{L,\max}$ Cross-scale Fusion | 89.3 |
-| Only Current Scale $\bm S^{L-1,t}$ | 87.9 |
+| Current Scale Only $\bm S^{L-1,t}$ | 87.9 |
 
-Cross-scale fusion (maintaining global context) provides a +1.4 AUC gain, proving that "global hypotheses + local verification" must coexist.
+Fusion (retaining global context) yields +1.4 AUC, proving "global hypothesis + local verification" is essential.
 
 ### Key Findings
-- **WSI analysis is a dynamic reasoning problem**: By treating it as sequential decision-making rather than static aggregation, PathCTM achieves massive efficiency gains and AUC improvements.
-- **Fewer patches can be more accurate**: Pruning removes noisy patches, allowing the model to focus its attention more effectively.
-- **Module Synergy**: Scale switching, pruning, and early stopping manage different axes of optimization; the absence of any module significantly degrades efficiency.
-- **Foundation Model Compatibility**: PathCTM can be applied atop any backbone (Virchow, GigaPath), lowering retraining costs.
+- **WSI analysis is a dynamic reasoning problem**: While MIL treats it as static aggregation, PathCTM treats it as sequential decision-making, yielding massive efficiency gains and higher AUC.
+- **Fewer patches can be more accurate**: Pruning removes numerous noisy patches, allowing model attention to be more focused.
+- **Module Synergy**: Scale-switching, pruning, and early stopping each manage a different axis of optimization.
+- **Foundation Model Compatibility**: PathCTM can be stacked on any backbone (Virchow, GigaPath), lowering retraining costs.
 
 ## Highlights & Insights
-- **"Thinking in Scales" is a logical extension of CTM**: By adding a spatial scale dimension to temporal iterations, "zooming when unclear" becomes a learnable action.
-- **Paradigm shift from exhaustive to adaptive**: Unlike previous methods that optimize exhaustive processing (e.g., via distillation), PathCTM minimizes redundant processing entirely.
-- **Clinical Alignment**: Matches pathologist behavior ("report when certain"), providing inherent interpretability through reasoning trajectory visualization.
-- **Attention as an Information Gain Proxy**: Proposition 1 provides a first-order surrogate ($Attention \approx Influence Gradient$), giving theoretical support to attention-guided selectivity.
+- **"Thinking in Scales" is a logical extension of CTM**: The original CTM only had a time dimension; this work adds the spatial scale dimension, making "zooming in" a learnable action. This can generalize to any pyramidal data (remote sensing, spatio-temporal video pyramids).
+- **Paradigm shift from exhaustive to adaptive**: Previous accelerations were "exhaustive but faster" (feature distillation, sparse attention); PathCTM is "non-exhaustive"—extracting information only as needed.
+- **Clinical relevance of early stopping**: Aligns with the "report if sure, zoom if unsure" behavior of pathologists, providing natural interpretability (visualization of reasoning trajectories).
+- **Attention as an info-gain proxy**: Proposition 1 provides a first-order surrogate of "attention $\approx$ influence gradient," offering theoretical grounding for attention-guided pruning.
 
 ## Limitations & Future Work
-- Currently validated only on classification; transfer to segmentation, detection, or survival prediction is untested.
-- Scale switching involves discrete steps; continuous scale (NeRF-style) reasoning could be explored.
-- The early stopping threshold $\delta$ is an empirical hyperparameter; per-case adaptation might be superior.
-- Top-$K$ selection is a fixed budget; dynamic $K$ based on uncertainty could further optimize computation.
-- Training still requires processing all scales (though inference does not), leading to higher training memory overhead.
+- Validated only on classification; transfer to segmentation, detection, or survival prediction is untested.
+- Scale switching is currently discrete; continuous scale (NeRF-style) reasoning could be considered.
+- The early stopping threshold $\delta$ is a manual hyperparameter; per-case adaptation might be better.
+- Top-$K$ is a fixed budget; dynamically adjusting $K$ based on uncertainty could further save compute.
+- Training memory overhead (requires features from all scales) was not fully discussed.
 
 ## Related Work & Insights
-- **vs. CLAM / TransMIL / ABMIL (MIL Baselines)**: These methods use static aggregation on exhaustive patches; PathCTM uses dynamic reasoning on sparse patches.
-- **vs. ZoomMIL / HAG-MIL / EAGLE (Multi-scale MIL)**: These rely on rigid cascades; PathCTM uses continuous reasoning and adaptive stopping.
-- **vs. CTM (Darlow 2026)**: CTM is designed for single-scale static images; PathCTM introduces the scale dimension for WSIs.
-- **Insights**: The "thinking in X" paradigm is applicable to any hierarchical data with dynamic attention and varying sample difficulty (e.g., remote sensing, long video, ultra-long documents).
+- **vs CLAM / TransMIL / ABMIL (MIL Baselines)**: These perform static aggregation on exhaustive patches; PathCTM uses dynamic reasoning on sparse patches.
+- **vs ZoomMIL / HAG-MIL / EAGLE (Multi-scale MIL)**: These use rigid cascades; PathCTM uses continuous reasoning + adaptive early stopping.
+- **vs CTM (Darlow 2026)**: CTM is for single-scale static images; PathCTM adds the scale dimension for WSIs.
+- **Insight**: Any problem involving "hierarchical data + dynamic attention + varying sample difficulty" (large remote sensing images, long videos, long documents) can benefit from the "thinking-in-X" paradigm.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ "Thinking in Scales" is the first correct extension of CTM for WSIs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 tasks, multiple baselines, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear framing as information pursuit; clinical alignment is convincing; Proposition 1 provides solid theory.
+- Value: ⭐⭐⭐⭐⭐ Computational cost is the biggest bottleneck for Pathology AI; 20× acceleration with no accuracy loss is production-ready.
 
 <!-- RELATED:START -->
 
@@ -141,10 +141,10 @@ Cross-scale fusion (maintaining global context) provides a +1.4 AUC gain, provin
 ## Related Papers
 
 - [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](../../AAAI2026/medical_imaging/panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
-- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
+- [\[CVPR 2025\] Interactive Medical Image Analysis with Concept-based Similarity Reasoning](../../CVPR2025/medical_imaging/interactive_medical_image_analysis_with_concept-based_similarity_reasoning.md)
 - [\[ICML 2026\] DGNO: Discontinuous Galerkin Neural Operator for Pathology Defocus Deblurring](discontinuous_galerkin_neural_operator_for_pathology_defocus_deblurring.md)
-- [\[ICML 2026\] Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments](turning_drift_into_constraint_robust_reasoning_alignment_in_non-stationary_envir.md)
-- [\[CVPR 2026\] From Adaptation to Generalization: Adaptive Visual Prompting for Medical Image Segmentation](../../CVPR2026/medical_imaging/apex_adaptive_visual_prompting.md)
+- [\[CVPR 2025\] WISE: A Framework for Gigapixel Whole-Slide-Image Lossless Compression](../../CVPR2025/medical_imaging/wise_a_framework_for_gigapixel_whole-slide-image_lossless_compression.md)
+- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
 
 </div>
 

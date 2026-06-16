@@ -2,138 +2,140 @@
 title: >-
   [Paper Note] Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 description: >-
-  [CVPR 2026][Robotics][VLA] CoWVLA unifies the strengths of world-model VLAs and latent-action VLAs: a Latent Motion Extractor decomposes video into structural and motion latent variables…
+  [CVPR 2026][Robotics & Embodied AI][[VLA] CoWVLA is proposed to unify the advantages of world-model VLAs and latent-action VLAs. By utilizing a Latent Motion Extractor to decompose video into structural and motion latents, the VLA performs world-model prediction within the latent motion space instead of reconstructing redundant pixels. Combined with Co-Fine-tu
 tags:
-  - "CVPR 2026"
-  - "Robotics"
-  - "VLA"
-  - "World Model"
-  - "Latent Motion Modeling"
-  - "Video VAE"
-  - "Keyframe Prediction"
-  - "Action Quantization"
+  - CVPR 2026
+  - Robotics & Embodied AI
+  - VLA
+  - World Models
 date: 2026-05-08
-content_hash: b398b6a72e657dae
+content_hash: a0bd9fc243b6f3ea
 ---
-
 # Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.03195](https://arxiv.org/abs/2603.03195)  
 **Code**: [https://fx-hit.github.io/cowvla-io](https://fx-hit.github.io/cowvla-io)  
-**Area**: Robot Manipulation / Vision-Language-Action Models / World Models
-**Keywords**: [VLA, World Model, Latent Motion Modeling, Video VAE, Keyframe Prediction, Action Quantization]
+**Area**: Robot Manipulation / Vision-Language-Action Models / World Models  
+**Keywords**: [VLA, World Model, Latent Motion Modeling, Video VAE, Keyframe Prediction, Action Quantization]  
 
 ## TL;DR
-CoWVLA unifies the strengths of world-model VLAs and latent-action VLAs: a Latent Motion Extractor decomposes video into structural and motion latent variables, enabling the VLA to perform world-model prediction in the latent motion space rather than reconstructing redundant pixels. Combined with Co-Fine-tuning that alternately generates keyframe and action tokens, CoWVLA achieves 95.2% on LIBERO-Long (surpassing π₀ at 85.2%) and an average score of 0.560 on SimplerEnv-WidowX (surpassing π₀ at 0.425).
+CoWVLA is proposed to unify the advantages of world-model VLAs and latent-action VLAs. By utilizing a Latent Motion Extractor to decompose video into structural and motion latents, the VLA performs world-model prediction within the latent motion space instead of reconstructing redundant pixels. Combined with Co-Fine-tuning to alternately generate keyframes and action tokens, it achieves 95.2% on LIBERO-LONG, surpassing $\pi_0$ (85.2%), and an average score of 0.560 on SimplerEnv-WidowX, exceeding $\pi_0$ (0.425).
 
 ## Background & Motivation
-Integrating world models into VLAs is an important recent trend. The core idea is to enable the model to not only predict actions but also predict future states — to "imagine" how the world will change after an action is executed. However, both existing paradigms suffer from fundamental limitations:
+Integrating world models into VLAs is a significant recent trend. The core idea is to enable models to not only predict actions but also future states—"imagining" what the world will look like after an action. However, existing methods face two primary challenges:
 
-1. **World-model VLAs (e.g., GR-2, UniPi)**: These methods predict future frames directly in pixel space. The problem is that the vast majority of pixels in a scene are static background (tabletops, walls, distant objects), causing the model to waste substantial capacity reconstructing redundant information. What is truly useful for robot decision-making is motion-related information (object displacement, manipulator trajectories), which occupies only a small fraction of pixel space.
-2. **Latent-action VLAs (e.g., LAPA, latent action pretraining)**: These methods encode actions into a latent space, bypassing the need for explicit action annotations. However, they only extract latent representations of actions without modeling temporally continuous dynamics — they cannot predict "what will happen next" and do not integrate world knowledge for prospective reasoning.
+1.  **World-model VLA (e.g., GR-2, UniPi)**: These predict future frames directly in pixel space. The problem is that many pixels represent static backgrounds (tables, walls, distant objects), leading the model to waste capacity on reconstructing redundant information. Information truly useful for robot decision-making (object displacement, robot arm trajectories) occupies only a tiny fraction of the pixel space.
+2.  **Latent-action VLA (e.g., LAPA, latent action pretraining)**: These encode actions into a latent space to bypass constraints of explicit action labeling. However, these methods only extract latent representations of actions and lack modeling of temporal continuous dynamics—they cannot predict "what happens next" and do not integrate world knowledge for forward-looking reasoning.
 
-Root Cause: World models require future prediction, but pixel-level prediction is computationally wasteful; latent actions conserve capacity but lose world dynamics information.
+**Key Challenge**: World models need to predict the future, but pixel-level prediction is inefficient; latent actions save capacity but lose world dynamic information.
 
 ## Core Problem
-How can a VLA acquire world-model prediction capability without reconstructing redundant background pixels — i.e., how can world-model reasoning be performed in the latent motion space rather than in pixel space?
+How can a VLA be equipped with world-mode prediction capabilities—performing reasoning in a latent motion space rather than pixel space—without reconstructing redundant background pixels?
 
 ## Method
 
 ### Overall Architecture
-CoWVLA consists of three stages: (1) pretraining the Latent Motion Extractor, which decomposes video into structural and motion latent variables; (2) VLA pretraining, which performs world-model prediction in the latent motion space; and (3) Co-Fine-tuning, which alternately generates keyframe (visual) tokens and action tokens (via FAST quantization).
+CoWVLA aims to combine the benefits of both approaches. Its solution is to have the VLA perform world-model prediction in "latent motion space." The system consists of **two models and three training stages**: the **Latent Motion Extractor (Video VAE)** first decomposes video clips into structural latents $z_s$ and motion latents $z_m$, providing supervision signals. The **VLA Decoder** then performs unified autoregressive prediction across two stages: a pre-training stage that infers latent motion $\hat z_m$ from instructions and the first frame while reconstructing the first and last frames, and a Co-Fine-Tuning stage that aligns this dynamic reasoning with discrete actions by alternately modeling keyframe visual tokens and FAST-quantized action tokens.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Robot Video Clip"] --> LME
+    subgraph LME["1. Latent Motion Extractor (Video VAE)"]
+        direction TB
+        S["Structural Latent $z_s$<br/>Q-Former aggregates global semantics via time dimension"]
+        M["Motion Latent $z_m$<br/>Convolutional reduction + H/W spatial mean pooling"]
+    end
+    LME -->|Provides supervision signal $z_m$| PRE
+    subgraph PRE["2. Latent Motion Space Pre-training"]
+        direction TB
+        P1["Input $[T, v_q^1, Q, v_q^f]$<br/>Causal mask: $Q$ only sees $T$ and 1st frame"]
+        P2["Q position MLP predicts $\hat z_m$ + Reconstruct 1st/last frames"]
+        P1 --> P2
+    end
+    PRE -->|Dynamics-aware prior| FT
+    subgraph FT["3. Co-Fine-Tuning"]
+        direction TB
+        F1["Alternating sequence $[T, \tilde v_q^1, Q, \mathbf{A}_q^1, \tilde v_q^2, \mathbf{A}_q^2, \ldots]$<br/>Single $Q$ per window"]
+        F2["Autoregressive generation of action tokens + keyframe tokens + single $\hat z_m$"]
+        F1 --> F2
+    end
+    FT --> OUT["Multi-step Action Execution"]
+```
 
 ### Key Designs
 
-1. **Latent Motion Extractor (Sec. 3.1)**: A motion decomposition module built on a pretrained video VAE:
+**1. Latent Motion Extractor: Separating Video into Structure and Motion to Filter Redundant Background**
 
-    - **Structure latent $z_s$**: Captures the static structural information of the scene (spatial layout, object appearance). Starting from intermediate features of the video VAE, $z_s$ is extracted using a Q-Former (a set of learnable query tokens that aggregate video features via cross-attention). $z_s$ encodes "what the scene looks like."
-    - **Motion latent $z_m$**: Captures motion changes in the scene — object displacement, manipulator trajectories, and gripper state changes. The extraction approach is distinctive: spatial mean pooling is applied to the temporal difference features of the video VAE along the H and W dimensions separately, yielding two vectors that are concatenated to form $z_m$. Mean pooling along H preserves horizontal motion patterns, while mean pooling along W preserves vertical motion patterns; the concatenation fully encodes the 2D motion field. A key advantage of this design is that $z_m$ naturally filters out static background — mean pooling eliminates the contribution of invariant regions.
-    - Training objective: Reconstruct the original video frames from $z_s$ and $z_m$, ensuring that the decomposition is complete (lossless).
+**Design Motivation**: Pixel space contains vast static backgrounds; reconstructing them wastes capacity. This extractor is a pre-trained video VAE that encodes video clips into intermediate latent tensors, then decouples them into two branches: the structural branch uses a Q-Former (learnable queries aggregating via cross-attention along the time dimension) to extract structural latents $z_s$, encoding global semantics ("what the scene looks like"); the motion branch uses convolutional layers for dimension reduction followed by mean pooling along the H and W spatial axes to obtain directional motion embeddings $z_m^h$ and $z_m^w$. These are concatenated into a unified motion latent $z_m$ representing a 2D motion field. Spatial mean pooling naturally suppresses contributions from static regions, allowing $z_m$ to filter out backgrounds automatically.
 
-2. **VLA Pretraining — World Model in the Latent Motion Space (Sec. 3.2)**: The input sequence is $[\mathbf{T},\ v_q^1,\ \mathbf{Q},\ v_q^f]$, where $\mathbf{T}$ denotes language instruction tokens, $v_q^1$ denotes first-frame visual tokens (encoded by SigLIP), $\mathbf{Q}$ denotes learnable motion queries (corresponding to predicted positions of $z_m$), and $v_q^f$ denotes last-frame visual tokens.
+**2. World Model Pre-training in Latent Motion Space: Predicting Motion Instead of Copying Answers**
 
-    - **Motion prediction**: An MLP prediction head at the $\mathbf{Q}$ positions outputs $\hat{z}_m$, supervised by MSE loss against the ground-truth $z_m$.
-    - **Last-frame reconstruction**: Cross-entropy loss is applied at the $v_q^f$ positions to reconstruct the last-frame visual tokens.
-    - **Causal attention mask**: A critical design choice — $\mathbf{Q}$ tokens cannot attend to $v_q^f$ (future frames), ensuring that motion prediction is a genuine forward prediction rather than copying the answer. However, $v_q^f$ can attend to $\mathbf{Q}$, since last-frame reconstruction may leverage the predicted motion information.
-    - Total loss: $\mathcal{L}_{\text{pretrain}} = \text{MSE}(\hat{z}_m, z_m) + \text{CE}(\text{visual tokens})$
-    - This stage trains the VLA to "predict the upcoming motion patterns given the current observation and instruction" — constituting a world model in the latent motion space.
+**Mechanism**: To teach the VLA to predict motion given current observations and instructions, the pre-training sequence is $[T, v_q^1, Q, v_q^f]$, where $T$ is the language instruction, $v_q^1$ and $v_q^f$ are discretized visual tokens for the first and last frames, and $Q$ is a learnable motion query. An MLP at the $Q$ position outputs $\hat z_m$, aligned with the extracted ground truth $z_m$ via MSE. A causal attention mask ensures $Q$ can only see $\{T, v_q^1\}$, preventing it from seeing the future frame $v_q^f$. The total loss $\mathcal{L}_{pretrain} = \|\hat z_m - z_m\|_2^2 + \sum_{x\in\{1,f\}}\mathrm{CE}(\hat v_q^x, v_q^x)$ encourages coherent prediction of the "world after the action."
 
-3. **Co-Fine-tuning — Alternating Keyframe and Action Generation (Sec. 3.3)**: The input sequence during fine-tuning is $[\mathbf{T},\ \tilde{v}_q^1,\ \mathbf{Q},\ A_q^1,\ \tilde{v}_q^2,\ \mathbf{Q},\ A_q^2,\ \ldots]$, arranged in alternating fashion:
+**3. Co-Fine-Tuning: Single Query Aggregating Full-Window Dynamics Aligned to Multi-step Actions**
 
-    - $\tilde{v}_q^i$: Visual tokens of the $i$-th keyframe.
-    - $\mathbf{Q}$: Motion queries that continuously aggregate motion dynamics up to the current timestep.
-    - $A_q^i$: Action tokens at the $i$-th step.
-    - **Action quantization**: FAST (Fast Action STate quantizer) discretizes continuous actions into token sequences, which the VLA predicts autoregressively.
-    - **Keyframe quantization**: VQGAN encodes keyframe images into discrete visual tokens.
-    - **Cumulative aggregation in $\mathbf{Q}$**: At each timestep, $\mathbf{Q}$ not only predicts current motion but also aggregates information from all previous timesteps via cross-attention, forming a continuously updated dynamic representation — analogous to the hidden state in a world model.
+**Function**: Aligning prediction with control. The sequence becomes $[T, \tilde v_q^1, Q, \mathbf{A}_q^1, \tilde v_q^2, \mathbf{A}_q^2, \ldots, \mathbf{A}_q^N]$, where $\mathbf{A}_q^j$ are FAST-quantized action tokens. **Ours** uses a single $Q$ after the first keyframe as a dynamic aggregator for the entire window, producing one $\hat z_m$ to summarize the continuous dynamics. The decoder autoregressively generates action and keyframe tokens. The causal mask forces the model to rely on latent dynamic reasoning rather than "peeking" at future frames.
 
 ### Loss & Training
-- Pretraining: $\mathcal{L} = \text{MSE}(\hat{z}_m, z_m) + \text{CE}(v_q^f\ \text{reconstruction})$, trained on large-scale robot video data.
-- Co-Fine-tuning: $\mathcal{L} = \text{CE}(\text{action tokens}) + \text{CE}(\text{keyframe tokens}) + \text{MSE}(\text{motion prediction})$, fine-tuned on task-specific data.
-- The FAST quantizer and VQGAN are pretrained independently and then frozen.
-- At inference: action tokens are generated autoregressively and decoded into continuous actions; keyframe tokens are generated simultaneously for visualization/verification.
+- **Pre-training**: $L = \text{MSE}(\hat z_m, z_m) + \text{CE}(v_q^f \text{ reconstruction})$, trained on large-scale robot video data.
+- **Co-Fine-tuning**: $L = \text{CE}(\text{action tokens}) + \text{CE}(\text{keyframe tokens}) + \text{MSE}(\text{motion prediction})$, fine-tuned on task-specific data.
+- FAST quantizer and VQGAN are pre-trained independently and then frozen.
+- **Inference**: Autoregressively generate action tokens decoded into continuous actions, while keyframe tokens are used for validation/visualization.
 
 ## Key Experimental Results
 
-| Dataset | Metric | CoWVLA | π₀ | OpenVLA | HPT | Gain (vs. π₀) |
-|--------|------|--------|-----|---------|-----|-------------|
+| Dataset | Metric | CoWVLA | $\pi_0$ | OpenVLA | HPT | Gain (vs $\pi_0$) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | LIBERO-Spatial | Success Rate | **96.8%** | 92.4% | 78.8% | — | **+4.4** |
 | LIBERO-Object | Success Rate | **98.4%** | 94.0% | 88.4% | — | +4.4 |
 | LIBERO-Goal | Success Rate | **95.2%** | 87.2% | 68.4% | — | +8.0 |
 | LIBERO-Long | Success Rate | **95.2%** | 85.2% | 56.4% | — | **+10.0** |
 | LIBERO-Avg | Success Rate | **96.4%** | 89.7% | 73.0% | — | **+6.7** |
-| SimplerEnv-WidowX | Avg Score | **0.560** | 0.425 | 0.268 | 0.308 | **+0.135** |
-| SimplerEnv-Google Robot | Avg Score | **0.504** | — | 0.248 | 0.480 | — |
+| SimplerEnv-WidowX | Avg score | **0.560** | 0.425 | 0.268 | 0.308 | **+0.135** |
+| SimplerEnv-Google Robot | Avg score | **0.504** | — | 0.248 | 0.480 | — |
 
 ### Ablation Study
-- Removing motion latent pretraining: LIBERO-Avg drops from 96.4% to 92.1%, confirming that world-model pretraining in the latent motion space is the core contribution.
-- Replacing latent motion prediction with pixel-level reconstruction: performance drops to 90.8%, verifying that pixel-level reconstruction wastes capacity.
-- Removing keyframe generation from Co-Fine-tuning: performance drops to 93.7%, indicating that keyframes provide useful visual anchors.
-- Removing Q-Former aggregation (directly concatenating all video tokens): $z_s$ becomes excessively verbose, leading to training instability.
-- Comparison of $z_m$ extraction strategies: H/W directional mean pooling with concatenation > global average pooling > temporal difference convolution, demonstrating the importance of preserving directional information.
+- **Removing motion latent pre-training**: LIBERO-Avg drops from 96.4% to 92.1%, identifying world model pre-training in latent motion space as a core contribution.
+- **Replacing latent motion prediction with pixel-level reconstruction**: Performance drops to 90.8%, confirming pixel reconstruction wastes capacity.
+- **Removing keyframe generation in Co-Fine-tuning**: Drops to 93.7%, showing keyframes provide useful visual anchors.
+- **Comparison of $z_m$ extraction**: H/W axis mean concatenation > Global mean pooling > Temporal difference convolution, indicating the importance of directional info.
 
 ## Highlights & Insights
-- **Conceptual breakthrough of the latent motion space world model**: Rather than reconstructing future frames in pixel space, CoWVLA performs prediction in the compressed latent motion space — retaining the prospective reasoning capability of world models while eliminating the computational waste of redundant background reconstruction.
-- **Elegant $z_m$ extraction**: Mean pooling along H and W directions naturally filters out static backgrounds while preserving directional motion information — a minimalist yet effective design.
-- **Precise causal mask design**: $\mathbf{Q}$ cannot attend to future frames (ensuring genuine prediction), while future frames can attend to $\mathbf{Q}$ (exploiting predicted motion information) — the information flow direction is entirely correct.
-- **Alternating generation in Co-Fine-tuning**: Interleaved keyframe and action token generation, with $\mathbf{Q}$ continuously aggregating dynamics, resembles the recurrent state update of a world model.
-- **Significant lead on LIBERO-Long**: 95.2% vs. π₀'s 85.2%, a +10% gain demonstrating that world-model reasoning is crucial for long-horizon tasks.
+- **Conceptual Breakthrough**: Predicting within a compressed motion latent space instead of pixel space maintains forward-looking reasoning while eliminating computational waste on redundant backgrounds.
+- **Elegant $z_m$ Extraction**: H/W directional mean pooling naturally filters static backgrounds and retains motion direction information with a minimalist design.
+- **Sophisticated Causal Masking**: Ensuring $Q$ cannot see the future forces the model to perform genuine "prediction."
+- **Efficiency of Co-Fine-Tuning**: The single query design aggregates window-wide dynamics, efficiently bridging world-model thinking with action decision-making.
+- **Superiority in Long-Sequence Tasks**: The +10% gain in LIBERO-Long suggests world-model reasoning is critical for complex, long-horizon tasks.
 
 ## Limitations & Future Work
-- The video VAE is frozen after pretraining — if its motion-structure decomposition is insufficiently disentangled, all downstream components are affected. End-to-end joint training of the VAE could yield further improvements.
-- The H/W directional mean pooling of $z_m$ discards fine-grained spatially local motion information, which may be insufficient for tasks requiring precise spatial localization (e.g., threading a needle).
-- The keyframe selection strategy is not described in detail — whether uniform sampling or adaptive selection based on motion magnitude is used remains unclear, and the choice may significantly affect performance.
-- Improvements on SimplerEnv-Google Robot are limited (0.504), possibly due to a large distribution gap between the Google Robot tasks and the pretraining data.
-- The FAST and VQGAN quantizers introduce discretization errors that may accumulate for fine-grained actions (e.g., rotating a bottle cap).
+- The Video VAE is frozen after pre-training; end-to-end joint training might further improve decomposition.
+- Spatial mean pooling for $z_m$ may lose fine-grained local motion details required for high-precision tasks like threading a needle.
+- Strategy for keyframe selection (e.g., uniform vs. adaptive) is not explored in detail.
+- Discretization errors from FAST and VQGAN may accumulate in fine-grained manipulation.
 
 ## Related Work & Insights
-- **vs. GR-2 / UniPi (pixel-level world-model VLAs)**: These methods predict or generate future frames in pixel space, incurring high computational cost and wasting substantial capacity on static backgrounds. CoWVLA predicts in the latent motion space, focusing exclusively on motion-relevant information.
-- **vs. LAPA (latent action pretraining)**: LAPA extracts latent action representations but does not model temporally continuous dynamics. CoWVLA's latent motion prediction encompasses temporal dynamics — the model learns not only "what action to take" but also "how the world will change."
-- **vs. π₀ (flow matching VLA)**: π₀ uses flow matching for continuous action prediction without a world-model component. CoWVLA endows the π₀ framework with world-model capability through latent motion prediction, achieving +10% on LIBERO-Long.
-- **vs. AtomicVLA (skill-planning VLA)**: AtomicVLA addresses multi-step tasks through think-act switching for task planning, while CoWVLA employs prospective reasoning via a world model. The two approaches to multi-step tasks are distinct yet complementary: AtomicVLA reasons about "what to do," while CoWVLA imagines "what will happen after doing it."
-
-- **Generality of the latent motion space**: The structure + motion video decomposition paradigm is transferable to video understanding tasks — using motion latents for classification in action recognition may be more efficient than end-to-end approaches.
-- **Co-Fine-tuning paradigm**: The alternating multi-modal token generation training scheme is applicable to other multimodal tasks, such as interleaved image-text generation and joint video-audio generation.
-- **Integration with diffusion world models**: CoWVLA's latent motion could serve as a conditioning signal for diffusion world models — first predicting $z_m$ (fast, low-dimensional), then using $z_m$ to guide pixel-level diffusion for high-fidelity future frame generation.
+- **vs. GR-2 / UniPi (Pixel-level World Model VLA)**: These suffer high computational costs and capacity waste on backgrounds; CoWVLA focuses only on motion-relevant information.
+- **vs. LAPA (Latent Action Pre-training)**: LAPA extracts action latents without temporal dynamic modeling; CoWVLA predicts "how the world changes."
+- **vs. $\pi_0$ (Flow matching VLA)**: $\pi_0$ lacks a world model component; CoWVLA adds world-model thinking to the framework, significantly boosting long-horizon performance.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The latent motion space world model is an entirely new concept; both the $z_m$ extraction scheme and the Co-Fine-tuning alternating generation approach are innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Full LIBERO suite + two robots in SimplerEnv + comprehensive ablations, though real-robot experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐ The motivational contrast (pixel-level reconstruction vs. latent motion prediction) is exceptionally clear, and the method description is well-organized.
-- Value: ⭐⭐⭐⭐⭐ Points the way toward a new direction for VLA world models — from pixel space to latent motion space — with large state-of-the-art margins on LIBERO and SimplerEnv.
+- **Novelty**: ⭐⭐⭐⭐⭐ Latent motion space world model is a fresh concept; $z_m$ extraction and Co-Fine-tuning are innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Strong results across LIBERO and SimplerEnv, though lacks real-robot validation.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and systematic methodology description.
+- **Value**: ⭐⭐⭐⭐⭐ Directs VLA world models toward latent motion spaces, achieving substantial SOTA improvements.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](motus_a_unified_latent_action_world_model.md)
+- [\[CVPR 2026\] Dexterous World Models](dexterous_world_models.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
-- [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](../../ICML2026/robotics/latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](../../NeurIPS2025/robotics/learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
+- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
 
 </div>
 

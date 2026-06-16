@@ -2,17 +2,13 @@
 title: >-
   [Paper Note] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation
 description: >-
-  [ICML 2026][Video Generation][Sparse Attention] DFSAttn achieves a **2.1× end-to-end speedup** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adapti…
+  [ICML 2026][Video Generation][Paper Note] DFSAttn achieves **2.1× end-to-end acceleration** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adaptive mask caching**. It addresses the core issue of quality degradation in block-sparse attention at high sparsity ratios (>80%).
 tags:
-  - "ICML 2026"
-  - "Video Generation"
-  - "Sparse Attention"
-  - "Hilbert Curve"
-  - "Dynamic Masking"
+  - ICML 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 2ea6f81f0c88aa90
+content_hash: 5da980a81baf1e9f
 ---
-
 # DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation
 
 **Conference**: ICML 2026  
@@ -22,46 +18,50 @@ content_hash: 2ea6f81f0c88aa90
 **Keywords**: Sparse Attention, Video Generation, Hilbert Curve, Dynamic Masking
 
 ## TL;DR
-DFSAttn achieves a **2.1× end-to-end speedup** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adaptive mask caching**—addressing the core issue of quality degradation in block-sparse attention at high sparsity rates (>80%).
+DFSAttn achieves **2.1× end-to-end acceleration** with quality comparable to full attention through **3D Hilbert curve reordering** + **hierarchical block scoring** + **adaptive mask caching**. It addresses the core issue of quality degradation in block-sparse attention at high sparsity ratios (>80%).
 
 ## Background & Motivation
 
-**Background**: Video Diffusion Transformers (DiT) achieve high-fidelity video generation via 3D full attention, but its quadratic complexity creates a severe computational bottleneck—generating 129 frames of 720p video takes approximately 30 minutes on an H100 GPU for HunyuanVideo. Block-sparse attention is a common direction for complexity reduction and naturally aligns with GPU-efficient kernels like FlashAttention.
+**Background**: Video Diffusion Transformers (DiT) achieve high-fidelity video generation via 3D full attention, but quadratic complexity creates a severe computational bottleneck—HunyuanVideo requires approximately 30 minutes on an H100 GPU to generate a 129-frame 720p video. Block-sparse attention is a common direction for reducing complexity as it naturally fits GPU-efficient kernels like FlashAttention.
 
-**Limitations of Prior Work**: Current block-sparse attention methods (static like radial sparsity, dynamic like XAttention) suffer from severe quality degradation at high sparsity rates (80%), failing to maintain generation quality while providing significant acceleration. The fundamental cause is that the **coarse-grained block-level representation** used by existing methods **mismatches the dynamic, fine-grained attention sparsity patterns** inherent in DiT.
+**Limitations of Prior Work**: Current block-sparse attention methods (static such as radial sparsity, dynamic such as XAttention) suffer from severe quality degradation at high sparsity (80%), failing to maintain generation quality while providing significant acceleration. The root cause is that the **coarse-grained block-level representation** used by existing methods **does not match the dynamic, fine-grained attention sparsity patterns** present in DiT.
 
-**Key Challenge**: On one hand, GPU-efficient computation requires block-level sparsity for alignment with FlashAttention; on the other hand, DiT attention patterns exhibit dynamic and fine-grained sparse features, with numerous local important interactions scattered across the attention map. Applying coarse-grained block operations directly to these fine-grained patterns inevitably loses critical dependencies.
+**Key Challenge**: There is a conflict between the requirement for block-level sparsity for GPU efficient computation (to align with FlashAttention) and the dynamic, fine-grained sparse features of DiT attention patterns, where numerous local important interactions are scattered throughout the attention map. Applying coarse-grained block operations directly to fine-grained sparsity patterns inevitably loses critical dependencies.
 
-**Goal**: To capture and utilize the fine-grained, dynamic sparse patterns within DiT while maintaining the efficiency of GPU block-level execution.
+**Goal**: To capture and utilize the fine-grained, dynamic sparsity patterns in DiT while maintaining the efficiency of GPU block-level execution.
 
-**Key Insight**: Derived from two key observations—(1) the sparsity patterns in DiT attention maps are highly heterogeneous across layers and heads, rendering static patterns ineffective; (2) the effectiveness of block-sparse attention improves monotonically as diffusion steps evolve (early steps are noise-dominated, while late steps highlight structures), suggesting different sparsity budgets for different steps.
+**Key Insight**: Two key observations are made: (1) The sparsity patterns of attention maps in DiT exhibit strong heterogeneity across layers and heads; thus, static or fixed sparsity patterns are bound to fail. (2) The effectiveness of block-sparse attention increases monotonically as the diffusion steps evolve (noise dominates early stages, while structure emerges in later stages), suggesting that different sparsity budgets should be adopted at different steps.
 
-**Core Idea**: Through a three-layer progressive design—**Global Hilbert Reordering to amplify inter-block similarity differences** + **Hierarchical Block Scoring to refine semantic heterogeneity** + **Adaptive Mask Caching to dynamically adapt to the diffusion process**—the method preserves block-level execution efficiency while implicitly inducing fine-grained sparsity.
+**Core Idea**: Through a three-layer progressive design—**Global Hilbert Reordering to amplify inter-block similarity differences** + **Hierarchical Block Scoring to refine semantic heterogeneity** + **Adaptive Mask Caching to dynamically adapt to the diffusion process**—Ours preserves block-level execution efficiency while implicitly inducing fine-grained sparsity.
 
 ## Method
 
 ### Overall Architecture
-(1) Encode 3D latent video representations as 1D token sequences with text conditions; (2) Reorder tokens using 3D Hilbert curves to bring spatio-temporally adjacent tokens closer in the sequence; (3) Estimate block importance via hierarchical block scoring to compute sparse masks (cached and reused at fixed intervals); (4) Apply sparse masks to SparseFlashAttention and restore the original order for the output.
+DFSAttn seeks to "maintain the GPU efficiency of block-level execution while closely matching the dynamic, fine-grained sparsity patterns in DiT." After encoding the video 3D latent representation into a 1D token sequence, instead of performing block sparsity directly, it first uses a 3D Hilbert curve to reorder spatio-temporally adjacent tokens closer to each other in the sequence. Then, it utilizes hierarchical block scoring to calculate the importance of each block and obtain a sparse mask (updated at fixed intervals and reused in other steps). Finally, the mask is fed into SparseFlashAttention to compute sparse attention before reverting to the original order. The three designs are progressive: reordering amplifies inter-block differences, hierarchical scoring refines intra-block heterogeneity, and caching/budgeting adapts to the diffusion process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["3D Video Latent<br/>f×h×w flattened to 1D tokens Q/K/V"] --> B["3D Hilbert Curve Token Reordering<br/>Spatio-temporally adjacent tokens are closer in sequence (Intra-block variance ↓20%)"]
+    B --> C["Hierarchical Block Scoring Mechanism<br/>Sub-block mean pooling → Sub-block scores Â → Aggregated block scores Ŝ → TopK key block selection"]
+    C --> D["Adaptive Mask Caching + Dynamic Budget Allocation<br/>Recalculate mask ℳ every Δ steps, reuse otherwise; budget γₜ decreases with diffusion steps (relaxed early, tight late)"]
+    D --> E["SparseFlashAttention<br/>Compute only retained blocks using mask ℳ; Cross-attention remains dense"]
+    E --> F["Inverse Reordering 𝒫⁻¹ to restore token order → Output O"]
+```
 
 ### Key Designs
 
-1. **3D Hilbert Curve Token Reordering**:
+**1. 3D Hilbert Curve Token Reordering: Making Block Sparsity "Coarse in Appearance, Fine in Essence"**
 
-    - **Function**: Maps spatio-temporally adjacent tokens from the 3D video tensor to adjacent positions in a 1D sequence, amplifying similarity differences between blocks.
-    - **Mechanism**: Utilizes the locality-preserving property of Hilbert space-filling curves to project $(f, h, w)$ dimension tokens to 1D via a Hilbert mapping $\mathcal{P}$. When two tokens are close in the original 3D space, their distance remains small in the 1D sequence after reordering. tokens in the same block thus tend to come from coherent video regions, while different blocks capture distinct regions, significantly increasing block-level consistency. Experiments show reordering reduces intra-block variance for queries and keys by approximately 20%.
-    - **Design Motivation**: Standard row-major flattening destroys 3D locality. Applying block-level sparsity to reordered sequences induces fine-grained, interconnected sparse patterns in the original space. The overhead is extremely low (approx. 2% runtime for 120K tokens).
+Standard row-major flattening breaks 3D locality—spatially or temporally adjacent tokens may be far apart in a 1D sequence, filling blocks with cluttered tokens from different regions, which makes block-level representations unreliable. DFSAttn leverages the locality-preserving properties of the Hilbert space-filling curve to map $(f, h, w)$ tokens to 1D via mapping $\mathcal{P}$. Tokens near each other in the original 3D space remain close in the sequence after reordering. Consequently, tokens within the same block mostly originate from a coherent region, while different blocks correspond to different video regions, significantly improving the consistency of block-level representations (intra-block variance is reduced by about 20% in practice). Furthermore, block-level sparsity applied to the reordered sequence results in interconnected fine-grained sparsity patterns when mapped back to the original space—coarse-grained block operations implicitly induce fine-grained sparsity. The reordering overhead is minimal, accounting for only 2% of the runtime for approximately 120K tokens.
 
-2. **Hierarchical Block Scoring Mechanism**:
+**2. Hierarchical Block Scoring Mechanism: Refinement of Semantic Heterogeneity**
 
-    - **Function**: Replaces single block-level representations with multi-granularity aggregation to generate more accurate block importance estimates.
-    - **Mechanism**: Blocks are first decomposed into smaller sub-blocks (size $B_s$). A sub-block attention score matrix $\hat{A}$ is computed and aggregated into block-level scores: $\hat{S}_{uv} = \sum_{i' \in \mathcal{B}_u} \sum_{j' \in \mathcal{B}_v} \hat{A}_{i' j'}$. Through this hierarchical aggregation, each block-level score captures not just average features but contributions from multiple semantic centers. For a query block $\mathcal{B}_u$, the $\gamma M$ highest-scoring key blocks are selected ($\gamma$ being the sparsity rate) to construct the sparse mask $\mathcal{M}$.
-    - **Design Motivation**: Coarse-grained averaging assumes semantic uniformity within a block, but DiT blocks often contain multiple semantic clusters. Hierarchical scoring avoids the bottleneck of single representations; sub-block size 16 achieves optimal quality ($PSNR$ 29.378) without additional overhead.
+Coarse-grained methods average entire block features into a single score, assuming "intra-block semantic uniformity." However, DiT blocks often mix multiple semantic clusters, and averaging dilutes key information. DFSAttn further partitions blocks into smaller sub-blocks (size $B_s$), calculates an attention score matrix $\hat{A}$ at the sub-block level, and aggregates them back into block-level scores $\hat{S}_{uv} = \sum_{i' \in \mathcal{B}_u} \sum_{j' \in \mathcal{B}_v} \hat{A}_{i' j'}$. Thus, each block score reflects both average features and the contributions of multiple semantic centers within the block. Subsequently, the $\gamma M$ key blocks with the highest scores are selected for each query block $\mathcal{B}_u$ to form the mask $\mathcal{M}$. A sub-block size of 16 yields optimal quality (PSNR 29.378) without increasing computational overhead. This finer perspective for estimating block importance bypasses the bottleneck of single-block representations.
 
-3. **Adaptive Sparse Mask Caching + Dynamic Budget Allocation**:
+**3. Adaptive Sparse Mask Caching + Dynamic Budget Allocation: Adjusting Sparsity with the Diffusion Process**
 
-    - **Function**: Reuses sparse masks across diffusion steps and dynamically adjusts the sparsity rate.
-    - **Mechanism**: Observations show that block-sparse attention effectiveness rises monotonically as diffusion steps progress—early steps are noise-dominated with diffuse attention, while later steps approach the data manifold with concentrated attention. The sparsity budget is adapted accordingly: initialize $\gamma_0 = 0.3$, decreasing by 0.1 every 25% of steps, leading to an average sparsity rate of ~80% in the remaining 75% of steps. Masks are recalculated and cached at fixed intervals (every 25% of steps). Although masks are cached, sparse attention outputs are recalculated at every step to ensure dynamic evolution of token representations.
-    - **Design Motivation**: Avoids computation overhead of per-step mask calculation. Dynamic budget allocation ensures sufficient attention range in early steps. Figure 6 shows the adaptive scheme achieves 3-4 points higher PSNR than fixed schemes at the same latency.
+Recalculating masks at every step is too expensive, yet a fixed mask cannot keep up with the changes in the diffusion process. The observation in this paper is that the effectiveness of block-sparse attention increases monotonically with diffusion steps—noise dominates early with scattered attention, while late stages approach the data manifold with concentrated attention. Accordingly, the sparsity budget is made dynamic: starting at $\gamma_0 = 0.3$, it decreases by 0.1 every 25% of the steps, resulting in an average sparsity rate of about 80% during the final 75% of steps. The mask is recalculated every 25% of the steps and reused in between to save costs, while sparse attention outputs are still recalculated step-by-step to ensure token representations evolve continuously. Compared to fixed schemes, this "relax early, tighten late" budget allocation improves PSNR by 3-4 points at the same latency.
 
 ## Key Experimental Results
 
@@ -78,7 +78,7 @@ DFSAttn achieves a **2.1× end-to-end speedup** with quality comparable to full 
 | HunyuanVideo | SSIM ↑ | — | 0.750 | 0.853 | 0.864 | **0.898** |
 | HunyuanVideo | Gain ↑ | 1.00× | 1.74× | 1.92× | 2.20× | **2.10×** |
 
-Ours surpasses SVG by 29% on Wan2.1 (PSNR 22.37 vs 17.39) and SVG2 by 3% on HunyuanVideo (PSNR 29.38 vs 28.58).
+On Wan2.1, Ours outperforms SVG by 29% (PSNR 22.37 vs 17.39), and on HunyuanVideo, it outperforms SVG2 by 3% (PSNR 29.38 vs 28.58).
 
 ### Ablation Study
 
@@ -86,46 +86,47 @@ Ours surpasses SVG by 29% on Wan2.1 (PSNR 22.37 vs 17.39) and SVG2 by 3% on Huny
 |------|--------|--------|--------|------|
 | Raster Scan | 27.794 | 0.874 | 0.124 | Baseline |
 | 2D Hilbert (per frame) | 29.265 | 0.893 | 0.090 | Ignores inter-frame coherence |
-| 3D Block (Block3D) | 29.156 | 0.897 | 0.090 | Block-level recursive, destroys global locality |
+| 3D Block (Block3D) | 29.156 | 0.897 | 0.090 | Block recursion, destroys global locality |
 | **3D Hilbert (Ours)** | **29.378** | **0.901** | **0.087** | Global spatio-temporal preservation, optimal |
 
 ### Key Findings
-- Global 3D Hilbert reordering outperforms other strategies, demonstrating the necessity of preserving both spatial and temporal locality simultaneously.
-- DFSAttn significantly outperforms baselines at high sparsity rates (> 80%) in PSNR, SSIM, and LPIPS, achieving 1.79× / 2.10× acceleration while maintaining quality.
+- Global 3D Hilbert reordering surpasses other strategies, demonstrating the necessity of maintaining both spatial and temporal locality.
+- DFSAttn significantly outperforms baselines in PSNR / SSIM / LPIPS at high sparsity (> 80%), achieving 1.79× / 2.10× acceleration while maintaining quality.
 - VBench composite scores are close to full attention, indicating the overall video quality is fully preserved.
 
 ## Highlights & Insights
-- **Theory-Practice Integration**: A theoretical lower bound for block-sparse attention effectiveness (Theorem 4.4) is derived, explicitly linking block selection accuracy to inter-block similarity differences and semantic heterogeneity, guiding the design of the three core components.
-- **Clever Spatial Transformation**: Using the locality-preserving property of Hilbert curves for global reordering not only amplifies block differences and refines representations but also implicitly induces fine-grained sparsity in the original space—block-level sparsity applied to the reordered sequence manifests as interconnected fine-grained patterns in the original 2D/3D space.
-- **Dynamic Cross-step Adaptation**: Leveraging the progressive evolution of attention structures during diffusion to design an adaptive sparsity budget provides a general reference for other work using block sparsity to accelerate diffusion models.
+- **Integration of Theory and Practice**: A theoretical lower bound for the effectiveness of block-sparse attention is derived (Theorem 4.4), explicitly linking block-level selection accuracy to inter-block similarity differences and semantic heterogeneity, which guides the specific forms of the three core designs.
+- **Clever Spatial Transformation**: Utilizing the locality-preserving property of the Hilbert curve for global reordering not only amplifies inter-block differences and refines block-level representations but also implicitly induces fine-grained sparsity in the original space—block-level sparsity applied on the reordered sequence manifests as interconnected fine-grained patterns in the original 2D/3D space.
+- **Dynamic Adaptation Across Timesteps**: Observing and exploiting the gradual evolution of attention structures during the diffusion process to design an adaptive sparsity budget provides a universal reference for other works using block sparsity to accelerate diffusion models.
 
 ## Limitations & Future Work
-- Fixed block size (128) lacks adaptive adjustment for varying video resolutions or frame counts; exploring dynamic adjustments based on content or resolution is a potential direction.
-- While cross-head heterogeneity is mentioned, the mask is shared across all attention heads, potentially losing unique sparse characteristics of specific heads.
-- Synergy with other acceleration techniques (e.g., coordination ratio with AdaCache) is not detailed and warrants deeper exploration.
+- The block size is fixed (128) and does not adapt to different video resolutions or frame counts; exploration of dynamic adjustment based on content or resolution is possible.
+- Although cross-head heterogeneity is mentioned, masks are shared across all attention heads, potentially losing sparsity characteristics unique to certain heads.
+- Synergy with other acceleration techniques (such as the coordination ratio with AdaCache) is not detailed and warrants deeper exploration.
 
 ## Related Work & Insights
-- **vs Static Sparsity (RadialAttention)**: Fixed patterns struggle to adapt to dynamic attention; DFSAttn's dynamically constructed masks result in a 4.5 point higher PSNR.
-- **vs Coarse Dynamic Methods (SVG2)**: Coarse block averaging is hindered by semantic mixing within blocks; DFSAttn's hierarchical aggregation refines estimates for a 1.2 point higher PSNR, further enhanced by Hilbert reordering.
-- **vs Fine-Grained Sparse Kernels (FG-Attn)**: FG-Attn designs custom fine-grained sparse CUDA kernels; DFSAttn adopts a kernel-free approach, providing better portability and fewer dependencies.
+- **vs. Static Sparsity (RadialAttention)**: Fixed patterns struggle to adapt to dynamic attention; DFSAttn dynamically constructs masks, resulting in a 4.5 point higher PSNR.
+- **vs. Coarse-grained Dynamic Methods (SVG2)**: Coarse-grained block averaging is affected by intra-block semantic mixing; DFSAttn hierarchical aggregation refines the estimation, achieving a 1.2 point higher PSNR, further enhanced by Hilbert reordering.
+- **vs. Fine-grained Sparse Kernels (FG-Attn)**: FG-Attn designs fine-grained sparse CUDA kernels; DFSAttn employs a kernel-free approach, offering better portability and fewer dependencies.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Starting from a theoretical lower bound to guide a three-layer progressive design, the combination of Hilbert reordering and hierarchical aggregation is both innovative and practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated on two SOTA models with multi-dimensional metrics, detailed ablations, and comparisons against three strong baselines.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, tight integration of theory and methodology, and highly informative figures.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses practical bottlenecks in video generation; 2.1× acceleration while maintaining quality has immediate engineering value; the theoretical bound serves as a major reference for other diffusion acceleration research.
+- Novelty: ⭐⭐⭐⭐⭐  Derived from a theoretical lower bound to guide a three-layer progressive design; the combination of Hilbert reordering and hierarchical aggregation is both innovative and practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Two SOTA models + multi-dimensional metrics + detailed ablations + comparison with three strong baselines; the experiments are rigorous and comprehensive.
+- Writing Quality: ⭐⭐⭐⭐⭐  Clear logic, tight integration between theory and method, and highly informative figures.
+- Value: ⭐⭐⭐⭐⭐  Addresses practical bottlenecks in video generation; 2.1× acceleration while maintaining quality has direct engineering value, and the theoretical lower bound is highly relevant for other diffusion model acceleration works.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
 - [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](../../NeurIPS2025/video_generation/vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
+- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
 
 </div>
 

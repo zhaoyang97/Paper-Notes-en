@@ -2,90 +2,81 @@
 title: >-
   [Paper Note] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 description: >-
-  [CVPR 2026][Human Understanding][3D head avatars] FlexAvatar introduces learnable *bias sink* tokens to unify training across monocular and multi-view data…
+  [CVPR 2026][Human Understanding][3D Gaussian Splatting] FlexAvatar is proposed to resolve the entanglement between driving signals and target viewpoints by introducing learnable "bias sinks" tokens to unify training across monocular and multi-view data, enabling the generation of complete, high-quality, and animatable 3D head avatars from a single image.
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "3D head avatars"
-  - "single-image reconstruction"
-  - "bias sinks"
-  - "3D Gaussian Splatting"
-  - "Transformer"
+  - CVPR 2026
+  - Human Understanding
+  - 3D Gaussian Splatting
+  - Transformer
 date: 2026-05-08
-content_hash: de6ef039dc702a6c
+content_hash: eb1a088ed3971f5c
 ---
-
 # FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.15599](https://arxiv.org/abs/2512.15599)  
 **Code**: [Available](https://tobias-kirschstein.github.io/flexavatar/)  
-**Area**: Human Understanding / 3D Head Avatar Generation
-**Keywords**: 3D head avatars, single-image reconstruction, bias sinks, 3D Gaussian Splatting, Transformer
+**Area**: Human Understanding / 3D Head Avatar Generation  
+**Keywords**: 3D Head Avatar, Single-image Reconstruction, Bias Sinks, 3D Gaussian Splatting, Transformer
 
 ## TL;DR
 
-FlexAvatar introduces learnable *bias sink* tokens to unify training across monocular and multi-view data, resolving the entanglement between driving signals and target viewpoints, and enables the generation of complete, high-quality, animatable 3D head avatars from a single image.
+FlexAvatar is proposed to resolve the entanglement between driving signals and target viewpoints by introducing learnable "bias sinks" tokens to unify training across monocular and multi-view data, enabling the generation of complete, high-quality, and animatable 3D head avatars from a single image.
 
 ## Background & Motivation
 
-Creating high-quality, animatable 3D head avatars from a single image is a highly challenging problem. The difficulty stems from two aspects: (1) the large number of unobservable regions makes 3D reconstruction severely under-constrained; and (2) the model must infer plausible facial animations for expressions never seen during inference.
+Creating high-quality animatable 3D head avatars from a single image is a highly challenging problem. The challenges stem from two aspects: (1) large unobservable regions make 3D reconstruction severely under-constrained; (2) the model must infer realistic facial animations without having seen any expressions for the specific identity.
 
-**Dilemma of existing methods**:
+**Limitations of Prior Work**:
 
 - **Multi-view data** provides complete 3D supervision but is limited in scale and difficult to acquire.
-- **Monocular video data** (e.g., in-the-wild face videos) covers a wide range of identities but offers only a single viewpoint, introducing a strong frontal bias that causes trained models to reconstruct incomplete 3D heads.
-- **3DMM priors** (e.g., FLAME) provide coarse geometry and animation capability but constrain expressiveness.
+- **Monocular video data** (e.g., face videos scraped from the internet) covers a wide range of identities but offers only a single viewpoint, leading to a strong frontal bias. This causes models trained on such data to reconstruct only incomplete 3D heads.
+- **3DMM priors** (e.g., FLAME) provide coarse geometry and animation capabilities but limit expressivity.
 
-**Core finding**: The authors identify the root cause as the **entanglement between driving signals and target viewpoints** in monocular training data. Specifically, in a monocular self-reenactment setting, the expression control signal is extracted from the target image itself, allowing the model to infer the target viewpoint from the expression input—incentivizing the model to predict only a partial 3D head while still satisfying the loss. Naively mixing monocular and multi-view training data does not resolve this entanglement.
+**Key Insight**: The authors identify the root of the problem as the **entanglement between the driving signal and the target viewpoint** in monocular training data. Specifically, in a monocular self-reenactment setting, the expression control signal is extracted from the target image itself. The model can exploit the expression input to "guess" the viewpoint, which encourages the model to predict only a partial 3D head to satisfy the loss function. Simply mixing monocular and multi-view training data does not resolve this entanglement.
 
 ## Method
 
 ### Overall Architecture
 
-FlexAvatar adopts an encoder–decoder architecture:
+FlexAvatar aims to reconstruct a complete, drivable 3D head from a single image. The difficulty lies in the training data, which constitutes a mix of multi-view captures (view-complete but identity-sparse) and monocular videos (identity-rich but frontal-only). The system follows an encoder-decoder pipeline: the encoder $E$ first compresses the input image $I$ into a compact avatar code $\mathcal{A} \in \mathbb{R}^{H_l \times W_l \times D}$ (defined on a template head UV space), which is decoupled from viewpoint and expression. The decoder $D$ then injects the target expression $z_{exp}$ into this code to generate a set of animated 3D Gaussian attributes. Finally, the 3DGS differentiable rasterization renderer $\mathcal{R}$ renders the output from any viewpoint. The core mechanism is not the network architecture itself, but how monocular and multi-view data are leveraged without mutual interference—which is addressed by "bias sinks."
 
-1. **Encoder $E$**: Extracts a compact avatar code $\mathcal{A} \in \mathbb{R}^{H_l \times W_l \times D}$ (a 2D latent code in UV space) from the input image $I$.
-2. **Decoder $D$**: Fuses facial expression $z_{exp}$ into the avatar representation to produce animated 3D Gaussian attributes.
-3. **Renderer $\mathcal{R}$**: Differentiable rasterization based on 3DGS for rendering from arbitrary viewpoints.
+```mermaid
+graph TD
+    I["Input Image I"] --> ENC["Encoder<br/>DINOv2 + Shallow ViT Features → UV Query cross-attention<br/>Decoupled Avatar Code A"]
+    ENC --> BIAS["Bias Sinks<br/>Concatenate tokens based on data source"]
+    BIAS -->|Monocular| Z2D["z_2D: Absorbs frontal view leakage<br/>Allows incomplete head prediction"]
+    BIAS -->|Multi-view| Z3D["z_3D: Requires complete avatar output"]
+    EXP["Target Expression z_exp"] --> DEC
+    Z2D --> DEC["Decoder + Hybrid Upsampler<br/>Cross-attention for injection<br/>PixelShuffle + StyleGAN2 8× Upsampling"]
+    Z3D --> DEC
+    DEC --> GS["3D Gaussian Attributes<br/>Template Mesh Surface + Residual Offset"]
+    GS --> R["3DGS Differentiable Rasterization<br/>Arbitrary View Output"]
+    ENC -.->|Few-shot / Monocular Video| FIT["Avatar Latent Fitting<br/>Freeze Decoder · Optimize Code A"]
+    FIT -.-> DEC
+```
 
 ### Key Designs
 
-#### 1. Encoder: Projection onto the Avatar Manifold
+**1. Encoder: Anchoring image information to the UV manifold for decoupled avatar encoding**
 
-- Employs a pretrained DINOv2 with a shallow learnable ViT to extract image features $f_{img}$.
-- Defines queries $Q$ in the UV space of a template head mesh (via sinusoidal positional encoding).
-- Maps image features into UV space via cross-attention to obtain a viewpoint- and expression-agnostic avatar code $\mathcal{A}$.
+To ensure subsequent animations are not disturbed by the viewpoint and expression of the input moment, the first step is to compress the image into "what this person looks like" rather than "how this photo was taken." The encoder uses a pre-trained DINOv2 with a shallow learnable ViT to extract image features $f_{img}$. Queries $Q$ with sinusoidal positional encoding are then laid out in the UV space of a template head mesh. Each query retrieves information belonging to its surface area from the image features via cross-attention. Since the query points are anchored to a fixed UV manifold and share the same topology across identities, the retrieved avatar code $\mathcal{A}$ is naturally independent of specific viewpoints and expressions, providing a clean space for animation and fitting.
 
-Mechanism: Query points anchored in UV space retrieve information from image features via cross-attention.
+**2. Bias Sinks: Using two tokens to "absorb" viewpoint leakage from monocular data**
 
-#### 2. Bias Sinks — Core Contribution
-
-Problem: In monocular data, $I_{drive} = I_{target}$, so the expression code $z_{target}$ leaks information about the target viewpoint $\pi_{target}$.
-
-Solution: Two learnable tokens are introduced—$z_{2D}$ (for monocular data) and $z_{3D}$ (for multi-view data)—appended to the expression encoding sequence $s_{exp}$:
+This is the core contribution, targeting the entanglement identified in the motivation: during monocular self-reenactment, the driving image and target image are the same ($I_{drive} = I_{target}$), and the expression code $z_{target}$ secretly contains information about the target viewpoint $\pi_{target}$. The model can minimize loss by predicting only half a face based on this leaked viewpoint, lacking the incentive to complete the 3D structure. The authors' solution is minimal: prepare two learnable tokens—$z_{2D}$ for monocular samples and $z_{3D}$ for multi-view samples. During training, the corresponding token is appended to the expression sequence:
 
 $$s_{exp} \leftarrow [s_{exp}, z_{bias}]$$
 
-Design Motivation and Mechanism:
-- **During training**: monocular samples use $z_{2D}$; multi-view samples use $z_{3D}$, allowing the decoder to explicitly distinguish data sources.
-- The model learns to predict a partial 3D head via the $z_{2D}$ path and a complete avatar via the $z_{3D}$ path.
-- Crucially, knowledge is still shared across dataset types: the $z_{3D}$ path benefits from the generalization capacity brought by monocular data.
-- **During inference**: $z_{3D}$ is always used, yielding both strong **generalization** and **3D completeness**.
+This token acts as a "bias trash can," allowing the decoder to identify the data source. When following the $z_{2D}$ path, the model is permitted to predict an incomplete head and dump frontal biases into this token. When following the $z_{3D}$ path, it must produce a complete avatar. Crucially, both paths share the same backbone weights. The $z_{3D}$ path benefits from the identity generalization provided by massive monocular data, while the frontal bias of monocular data is isolated by $z_{2D}$. During inference, the system always switches to $z_{3D}$, achieving both generalization and 3D completeness.
 
-#### 3. Decoder + StyleGAN-PixelShuffle Upsampler
+**3. Decoder and Hybrid Upsampler: "Lighting up" avatars into Gaussians without 3DMM dependency**
 
-- Cross-attention between the avatar code and the serialized expression encoding enables model-free animation.
-- A hybrid upsampling architecture combining PixelShuffle and StyleGAN2 CNN blocks achieves an overall upsampling rate of 8×.
-- Per-Gaussian attributes are decoded via grid sampling and an MLP.
-- Gaussian positions are initialized on the template mesh surface with learned residual offsets.
+After obtaining the avatar code, it must be animated and upsampled. The decoder also uses cross-attention to let the avatar code interact with the serialized expression code. Animation is learned in a data-driven manner rather than being bound to a predefined expression base like FLAME, allowing for subtle expressions beyond 3DMM capabilities. To upsample the low-resolution UV encoding, the model combines PixelShuffle with StyleGAN2 CNN blocks for a total 8× upsampling. PixelShuffle handles efficient pixel placement, while StyleGAN blocks handle high-frequency texture details. Finally, a grid sampling and MLP retrieve each Gaussian's attributes. Positions are initialized on the template mesh surface with learned residual offsets, ensuring geometric stability while allowing for detail.
 
-#### 4. Avatar Latent Space Fitting
+**4. Avatar Latent Space Fitting: Supporting few-shot and monocular video creation**
 
-Training naturally yields a smooth avatar latent space that supports additional capabilities:
-- **Few-shot avatar creation**: An initial $\mathcal{A}^{init}$ is obtained by encoding a single image, followed by optimization over all available observations.
-- **Monocular video avatar creation**: The same fitting procedure applies, optimizing only $\mathcal{A}$ with the decoder frozen.
-- Unlike autodecoder methods, the encoder provides an initialization estimate, accelerating optimization.
+The training naturally produces a smooth avatar latent space. By performing optimization in this space, the model can cover more scenarios. For few-shot avatar creation, an initial $\mathcal{A}^{init}$ is encoded from one image, and the code is then optimized across all available observations. For monocular video, the same fitting process is used while freezing the decoder. Compared to Autodecoders that optimize from scratch, this approach converges much faster due to the reliable initial value from the encoder—achieving better results in 10 minutes than competitors do in 4 hours.
 
 ### Loss & Training
 
@@ -96,41 +87,43 @@ $$\mathcal{L}_{rec} = \mathcal{L}_1 + \mathcal{L}_{SSIM} + \mathcal{L}_{DINO} + 
 | Loss Term | Description |
 |-----------|-------------|
 | $\mathcal{L}_1$ | L1 pixel loss |
-| $\mathcal{L}_{SSIM}$ | Structural similarity loss |
-| $\mathcal{L}_{DINO}$ | Perceptual loss on DINOv2 intermediate feature maps |
-| $\mathcal{L}_{SAM}$ | Perceptual loss on SAM intermediate feature maps |
+| $\mathcal{L}_{SSIM}$ | Structural Similarity loss |
+| $\mathcal{L}_{DINO}$ | Perceptual loss on DINOv2 middle feature maps |
+| $\mathcal{L}_{SAM}$ | Perceptual loss on SAM middle feature maps |
 
 Training details:
 - Joint training on 5 datasets (2 monocular + 2 multi-view + 1 synthetic multi-view).
-- Adam optimizer with learning rate 1e-4.
-- Perceptual losses introduced after 400k steps to avoid early overfitting to high-frequency details.
-- Total of 1M steps, batch size 20, approximately 3 weeks on a single A100.
+- Adam optimizer, learning rate 1e-4.
+- Perceptual loss introduced after 400k steps (to avoid early overfitting to noise).
+- Total 1M steps, batch size 20, approximately 3 weeks on a single A100.
 
 ## Key Experimental Results
 
-### 3D Portrait Animation (VFHQ Dataset)
+### Main Results
+
+**3D Portrait Animation (VFHQ Dataset)**
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | CSIM↑ |
 |--------|-------|-------|--------|-------|
 | GAGAvatar | 21.83 | 0.818 | 0.122 | 0.816 |
 | LAM | 22.65 | 0.829 | 0.109 | 0.822 |
-| **FlexAvatar** | **23.47** | **0.837** | **0.099** | **0.830** |
+| **Ours** | **23.47** | **0.837** | **0.099** | **0.830** |
 
-### Single-Image Avatar Creation (Ava256 Dataset)
+**Single-image Avatar Creation (Ava256 Dataset)**
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | AKD↓ | CSIM↑ |
 |--------|-------|-------|--------|------|-------|
 | Portrait4Dv2 | 11.9 | 0.671 | 0.404 | 7.77 | 0.578 |
 | GAGAvatar | 12.7 | 0.709 | 0.371 | 7.45 | 0.555 |
 | LAM | 13.1 | 0.702 | 0.399 | 11.2 | 0.411 |
-| **FlexAvatar** | **16.9** | **0.762** | **0.265** | **5.52** | **0.695** |
+| **Ours** | **16.9** | **0.762** | **0.265** | **5.52** | **0.695** |
 
-PSNR improves by 3.8+ dB with a substantial lead in LPIPS, demonstrating markedly superior 3D completeness and quality over prior methods.
+A PSNR gain of 3.8+ dB and significant LPIPS leads indicate that the completeness and quality of generated 3D heads are significantly superior to existing methods.
 
 ### Ablation Study
 
-| Configuration | 2D | 3D | Bias Sinks | StyleGAN | PSNR↑ | CSIM↑ |
-|---------------|:---:|:---:|:---:|:---:|-------|-------|
+| Config | 2D | 3D | Bias Sinks | StyleGAN | PSNR↑ | CSIM↑ |
+|--------|:---:|:---:|:---:|:---:|-------|-------|
 | only 2D | ✓ | | | ✓ | 13.7 | 0.593 |
 | only 3D | | ✓ | | ✓ | 13.2 | 0.119 |
 | w/o bias sinks | ✓ | ✓ | | ✓ | 14.5 | 0.583 |
@@ -140,52 +133,52 @@ PSNR improves by 3.8+ dB with a substantial lead in LPIPS, demonstrating markedl
 
 ### Key Findings
 
-- **Monocular data only**: Good generalization but incomplete 3D reconstruction (due to entanglement).
-- **Multi-view data only**: Complete 3D but severely degraded generalization (CSIM only 0.119).
-- **Naive data mixing** (without bias sinks): Fails to resolve entanglement; performance is comparable to the monocular-only setting.
-- **Bias sinks are effective**: They enable the model to adopt distinct strategies for different data sources.
-- **Fitting further improves results**: Identity preservation (CSIM) and expression fidelity (AKD) improve noticeably with a fitting time of approximately 1 minute.
+- **Using only monocular data**: Good generalization but incomplete 3D (due to entanglement).
+- **Using only multi-view data**: Complete 3D but very poor generalization (CSIM only 0.119).
+- **Simple mixing without bias sinks**: Fails to resolve entanglement; performance remains close to the monocular-only baseline.
+- **Bias Sinks are effective**: They allow the model to adopt different strategies for different data sources.
+- **Fitting further improves results**: Identity preservation (CSIM) and expression fidelity (AKD) improve significantly with only ~1 minute of optimization.
 
 ## Highlights & Insights
 
-1. **Precise problem diagnosis**: The identification of the driving-signal–target-viewpoint entanglement as the core obstacle reflects deeper insight than simply accumulating more data.
-2. **Minimalist yet effective bias sink design**: Two learnable tokens suffice to decouple dataset-specific biases without complex architectural modifications.
-3. **Freedom from 3DMM constraints**: Facial animation is learned in a data-driven manner, no longer restricted to FLAME's predefined expression space.
-4. **Unified framework across multiple scenarios**: A single model handles single-image, few-shot, and monocular video avatar creation.
-5. **On the NeRSemble benchmark**: 10-minute fitting surpasses CAP4D's 4-hour fitting.
+1. **Clever Problem Diagnosis**: Identifying the "driving signal-target view entanglement" as the core obstacle is more insightful than simply adding more data.
+2. **Simple yet Effective Design**: Using only two learnable tokens to decouple dataset bias without complex architectural changes.
+3. **Independence from 3DMM**: Learning animations in a data-driven way avoids the limitations of predefined expression spaces like FLAME.
+4. **Unified Multi-scenario Framework**: A single model handles single-image, few-shot, and monocular video avatar creation.
+5. **Efficiency**: On the NeRSemble benchmark, 10-minute fitting outperforms CAP4D's 4-hour optimization.
 
 ## Limitations & Future Work
 
-- Lighting is baked in from the input image and cannot be explicitly controlled, which may produce unnatural results when the avatar is placed in different virtual environments.
-- Although the architecture is model-free, all experiments use FLAME expression codes, limiting fine details such as the tongue.
-- The approach could potentially generalize to full-body avatars or general dynamic novel-view synthesis, but has currently only been validated for the head.
-- Training requires approximately 3 weeks on a single A100, representing a considerable computational cost.
+- Illumination is "baked" from the input image, lacking explicit control—which may look unnatural in different virtual environments.
+- While the architecture is 3DMM-independent, the experiments still use FLAME expression codes, limiting fine details like the tongue.
+- Scalability to full-body or general dynamic neural radiance fields is possible but currently only validated for heads.
+- Training requires ~3 weeks on an A100, which is computationally expensive.
 
 ## Related Work & Insights
 
-- The encoder design of **LAM** (UV-space queries + cross-attention) inspired the architecture of FlexAvatar.
-- The model-free animation paradigm of **Avat3r** (cross-attention to expression encoding sequences) is adopted in this work.
-- The per-image embedding concept from **NeRF-in-the-wild** shares conceptual similarities with bias sinks, though bias sinks operate at the dataset level rather than the image level.
-- The design principle of bias sinks (learnable tokens absorbing specific biases) may have broad applicability to other multi-source mixed-data training settings.
+- **LAM's** encoder design (UV space queries + cross-attention) provided inspiration for FlexAvatar.
+- **Avat3r's** model-free animation approach (cross-attention to expression sequences) is adopted.
+- The **NeRF-in-the-wild** idea of per-image embeddings is similar to bias sinks, but bias sinks operate at the dataset level rather than the image level.
+- The design philosophy of bias sinks (learnable tokens absorbing specific biases) may have broad implications for other multi-source data training scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — Precise diagnosis of the viewpoint–expression entanglement; bias sinks are concise and original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Four tasks, three datasets, and detailed ablations validate each design choice.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear logical structure, intuitive figures, and thorough problem exposition.
-- **Value**: ⭐⭐⭐⭐⭐ — A substantial advance in single-image 3D avatar creation; the general bias sink design principle merits broader adoption.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Precise problem diagnosis (view-expression entanglement) and original bias sinks solution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Verified across 4 tasks and 3 datasets with detailed ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear logic, intuitive diagrams, and thorough explanation of the problem.
+- **Value**: ⭐⭐⭐⭐⭐ — A substantial breakthrough for single-image 3D avatar creation with a generalizable bias sink concept.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](../../NeurIPS2025/human_understanding/vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
-- [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](../../ICCV2025/human_understanding/avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
+- [\[CVPR 2025\] WildAvatar: Learning In-the-Wild 3D Avatars from the Web](../../CVPR2025/human_understanding/wildavatar_learning_in-the-wild_3d_avatars_from_the_web.md)
+- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
+- [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
 - [\[CVPR 2026\] MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision](matched_crisp_edge_detection_using_end-to-end_matching-based_supervision.md)
-- [\[CVPR 2026\] UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking](unils_end-to-end_audio-driven_avatars_for_unified_listening_and_speaking.md)
-- [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 
 </div>
 

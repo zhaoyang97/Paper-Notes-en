@@ -47,7 +47,7 @@ item_total: 13
 
 **🔬 ICLR2026** · **13** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🧪 ICML2026 (2)](../../ICML2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
 
 🔥 **Top topics:** Medical Imaging ×3 · Dialogue ×2 · Reasoning ×2 · Agents ×2
 

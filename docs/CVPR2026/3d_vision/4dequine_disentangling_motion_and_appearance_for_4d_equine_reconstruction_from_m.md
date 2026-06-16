@@ -2,94 +2,95 @@
 title: >-
   [Paper Note] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 description: >-
-  [CVPR 2026][3D Vision][4D reconstruction] This paper proposes the 4DEquine framework, which **disentangles** 4D equine reconstruction from monocular video into two subproblems — dynamic motion estimation (AniMoFormer) an…
+  [CVPR 2026][3D Vision][4D reconstruction] The 4DEquine framework is proposed to **disentangle** 4D reconstruction of equines from monocular video into two sub-problems: dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS). It achieves SOTA performance on real-world data while being trained only on synthetic data.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "4D reconstruction"
-  - "equine reconstruction"
-  - "3D Gaussian Splatting"
-  - "parametric model"
-  - "monocular video"
-  - "feed-forward"
+  - CVPR 2026
+  - 3D Vision
+  - 4D reconstruction
+  - equine reconstruction
+  - 3D Gaussian Splatting
+  - parametric model
+  - monocular video
+  - feed-forward
 date: 2026-05-08
-content_hash: e9af4e1f98f55544
+content_hash: 86b2b4dcb7b1b9dd
 ---
-
 # 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.10125](https://arxiv.org/abs/2603.10125)  
-**Code**: N/A  
-**Area**: 3D Vision
-**Keywords**: 4D reconstruction, equine reconstruction, 3D Gaussian Splatting, parametric model, monocular video, feed-forward
+**Code**: None  
+**Area**: 3D Vision  
+**Keywords**: 4D reconstruction, equine reconstruction, 3D Gaussian Splatting, parametric model, monocular video, feed-forward  
 
 ## TL;DR
 
-This paper proposes the 4DEquine framework, which **disentangles** 4D equine reconstruction from monocular video into two subproblems — dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS) — achieving SOTA on real-world data while training exclusively on synthetic data.
+The 4DEquine framework is proposed to **disentangle** 4D reconstruction of equines from monocular video into two sub-problems: dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS). It achieves SOTA performance on real-world data while being trained only on synthetic data.
 
 ## Background & Motivation
 
-4D reconstruction of equines (horses, donkeys, zebras) from monocular video has significant value in animal welfare and sports analysis, yet existing methods face two fundamental challenges:
+Monocular 4D reconstruction of equines (horses, donkeys, zebras) holds significant value in fields such as animal welfare and sports analysis. However, existing methods face two major dilemmas:
 
-**Optimization bottleneck**: Mainstream 4D animal reconstruction methods (GART, SMALR/SMALST, DogRecon, etc.) require joint optimization of motion and appearance over entire video sequences, incurring large computational costs (GART requires 15 minutes for a fixed 10k-step run), and demand near-360° surrounding captures that are extremely difficult to obtain in practice.
+**Optimization Bottleneck**: Leading 4D animal reconstruction methods (GART, SMALR/SMALST, DogRecon, etc.) require joint optimization of motion and appearance across an entire video. This entails high computational overhead (e.g., GART takes 15 minutes for 10k steps) and requires near-360° surround filming, which is extremely difficult to obtain in real-world scenarios.
 
-**Representation limitations**: Template-free methods (BANMo, RAC) lack explicit structural priors and produce poor geometric detail; SMAL-based methods extract texture directly from images and are sensitive to mesh-image alignment accuracy; feed-forward methods (MagicPony, 3D-Fauna) sacrifice shape fidelity for generalization.
+**Representation Limitations**: Template-free methods (BANMo, RAC) lack explicit structural priors and yield poor geometric details. SMAL-based methods extract textures directly from images and are sensitive to mesh-image alignment accuracy. Feed-forward methods (MagicPony, 3D-Fauna) sacrifice shape realism for generalization.
 
-The core insight is that 4D reconstruction can be **decomposed** — an animal's motion changes frame by frame, but its appearance remains nearly constant throughout a single video. There is therefore no need to jointly optimize motion and appearance. This disentanglement yields two advantages: motion estimation can focus on temporal consistency, while appearance reconstruction can be generated feed-forward from a single image, eliminating the dependency on complete multi-view observations.
+**Key Insight**: 4D reconstruction can be **decomposed**—animal motion varies frame-by-frame, whereas appearance remains nearly constant within the same video. Therefore, it is unnecessary to optimize motion and appearance in a coupled manner. This disentanglement strategy offers two advantages: motion estimation can focus on temporal consistency, while appearance reconstruction can be generated feed-forward from a single image, avoiding dependence on multi-view complete observations.
 
-The key bridge between motion and appearance is the **VAREN model** — a high-fidelity parametric equine body model learned from thousands of 3D scans of 50 real horses (13,873 vertices, 38 joints), incorporating muscle deformation modeling, far surpassing traditional SMAL.
+The key to bridging motion and appearance is the **VAREN model**—a high-precision equine parametric model (13873 vertices, 38 joints) learned from thousands of 3D scans of 50 real horses. It introduces muscle deformation modeling and far exceeds the traditional SMAL model.
 
 ## Method
 
 ### Overall Architecture
 
-4DEquine consists of two disentangled components:
+4DEquine aims to solve 4D reconstruction of equines in monocular videos—restoring frame-by-frame motion while reconstructing high-fidelity, animatable appearances. The core premise is that while motion changes per frame, appearance remains nearly invariant in the same video. Consequently, the framework is split into two independent paths: AniMoFormer recovers frame-by-frame VAREN motion parameters (pose $\theta$, shape $\beta$, global translation $\gamma$) from the video, and EquineGS generates an animatable Gaussian avatar in canonical space from a single image. The two are bridged by the VAREN parametric model—AniMoFormer provides bone poses, while EquineGS generates canonical Gaussian point clouds, which are then driven to per-frame poses using LBS (Linear Blend Skinning). During inference, a sliding window processes videos of arbitrary length.
 
-- **AniMoFormer**: Spatiotemporal Transformer with post-optimization, recovering per-frame VAREN motion parameters (pose $\theta$, shape $\beta$, global translation $\gamma$) from video.
-- **EquineGS**: A feed-forward network that reconstructs a high-fidelity animatable 3D Gaussian avatar from a single image.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Monocular Video"] --> AM
+    IN --> EG
+    subgraph AM["AniMoFormer: Temporally Consistent Motion Estimation"]
+        direction TB
+        A1["VarenPoser Synthetic Data<br/>VAREN fit PFERD → Segments → Multi-texture/trajectory rendering"] --> A2["Spatio-temporal Transformer<br/>Spatial frame features + Temporal 16-frame modeling"]
+        A2 --> A3["VAREN Decoder<br/>Regress per-frame pose θ / shape β / translation γ"]
+        A3 --> A4["Post-Optimization<br/>Differentiable rendering alignment with 2D keypoints + mask"]
+    end
+    subgraph EG["EquineGS: Single-view Feed-forward Gaussian Appearance"]
+        direction TB
+        E1["Template mesh upsampling<br/>13873 → 55486 vertices as Gaussian initial positions"] --> E2["Dual-stream features<br/>DINOv3 image stream + Point cloud positional encoding stream"]
+        E2 --> E3["DSTG Decoder<br/>Image-guided point features → Output Gaussian Δμ / r / s / c / o"]
+    end
+    AM --> VAREN["VAREN Parametric Model<br/>Bridge skeletal pose and canonical space Gaussians"]
+    EG --> VAREN
+    VAREN --> OUT["LBS driven to per-frame pose<br/>Sliding window → 4D reconstruction"]
+```
 
-The two components are bridged via the VAREN parametric model — AniMoFormer provides per-frame skeletal poses, and EquineGS generates a Gaussian point cloud in canonical space, driven into each frame's pose space via LBS (Linear Blend Skinning). A sliding window strategy is adopted at inference to handle videos of arbitrary length.
+### Key Designs
 
-### Key Designs 1: AniMoFormer (Motion Recovery)
+**1. AniMoFormer: Temporally consistent motion recovery from video, trained only on synthetic data**
 
-**VarenPoser dataset construction**: Training data poses a significant challenge — real 4D VAREN annotations do not exist. The authors fit the VAREN model to PFERD, a marker-based equine motion capture dataset, to obtain pose parameters; these are segmented into 600-frame clips with randomly assigned shape parameters for diversity. MV-Adapter is used to generate diverse textures, and three realistic camera trajectories (fix, dolly, orbit) are simulated to render videos. The final dataset contains 1,171 video clips at 512×512 resolution, 60 FPS.
+Real 4D VAREN annotations do not exist, which is the primary bottleneck for motion recovery. The authors circumvent this by creating the VarenPoser dataset: fitting the VAREN model to the PFERD optical marker-based equine motion dataset to obtain poses, cutting them into 600-frame segments, randomly varying shape parameters for diversity, and using MV-Adapter to generate diverse textures and simulate three real camera trajectories (fix/dolly/orbit). This yields 1,171 video segments at 512×512, 60 FPS. The network is a spatio-temporal Transformer: a Spatial Transformer extracts spatial features per frame, and a Temporal Transformer stacks $N=16$ frames using self-attention to model temporal dynamics. The VAREN Decoder regresses pose, shape, and camera parameters for each frame.
 
-**Spatiotemporal Transformer**:
-- **Spatial Transformer**: Extracts per-frame spatial features.
-- **Temporal Transformer**: Stacks spatial features from $N=16$ frames and models temporal relationships via self-attention.
-- **VAREN Decoder**: Regresses per-frame pose, shape, and camera parameters.
+While the Transformer output is temporally smooth, it may not align perfectly with 2D images. Thus, a Post-Optimization step is added: a differentiable renderer projects the 3D mesh back to the image to compare against pseudo-GTs (2D keypoints from ViTPose++ and masks from Samurai), fine-tuning parameters via gradients for pixel-level alignment. Ablations show a significant drop in PCK@0.05 without post-optimization, indicating its necessity for true alignment.
 
-**Post-Optimization (PO)**: While the Transformer output is temporally smooth, it may not be perfectly aligned to the 2D image. A differentiable renderer projects the 3D mesh and compares it against pseudo-GT 2D keypoints (extracted by ViTPose++) and masks (extracted by Samurai). Gradient-based optimization then fine-tunes the parameters to ensure pixel-level alignment.
+**2. EquineGS: Feed-forward animatable Gaussian appearance from a single image**
 
-### Key Designs 2: EquineGS (Appearance Reconstruction)
+The pain point of appearance reconstruction is achieving high fidelity without relying on multi-view complete observations. EquineGS upsamples the VAREN template mesh (which is too sparse at 13,873 vertices) via edge midpoint interpolation, splitting each face into four, resulting in $N_G = 55,486$ vertices as initial Gaussian positions. It then utilizes dual-stream features: an image stream using pre-trained DINOv3 (ViT-Large) to extract multi-scale features fused via 1×1 convolution into $\mathbf{F}_I \in \mathbb{R}^{784 \times 1024}$, and a point cloud stream using positional encoding on 3D coordinates processed through an MLP to obtain $\mathbf{F}_P \in \mathbb{R}^{N_G \times 1024}$.
 
-**Canonical point cloud initialization**: The VAREN template mesh with only 13,873 vertices is insufficiently dense; each edge midpoint is interpolated and each face is subdivided into 4, upsampling to $N_G = 55{,}486$ vertices as initial Gaussian positions.
-
-**Dual-stream feature extraction**:
-- Image stream: Pretrained DINOv3 (ViT-Large) extracts multi-scale feature maps, fused via 1×1 convolution into $\mathbf{F}_I \in \mathbb{R}^{784 \times 1024}$.
-- Point cloud stream: 3D point coordinates are positionally encoded and passed through an MLP to yield $\mathbf{F}_P \in \mathbb{R}^{N_G \times 1024}$.
-
-**DSTG Decoder (Dual-Stream Transformer Gaussian Decoder)**: Adapted from the MMDiT block in Qwen-Image, operating in three stages:
-1. Global context extraction: AvgPool + MLP on image features produces a global context vector.
-2. Feature fusion: Image features, point cloud features, and the global context are jointly fed into DSTG, with image information guiding the point features toward appearance alignment.
-3. Attribute prediction: An MLP outputs per-Gaussian position offset $\Delta\mu$, rotation $r$, scale $s$, color $c$, and opacity $o$.
-
-**VarenTex dataset**: The texture quality of VarenPoser is insufficient for training high-fidelity avatars, and it consists of monocular rather than multi-view data. UniTex (a multi-view diffusion model) generates reference images from VarenPoser normal maps and canonical coordinate maps (CCM) conditioned via ControlNet, synthesizing 150,000 multi-view training images at 512×512.
+Fusion is performed by the DSTG decoder (Dual-Stream Transformer Gaussian Decoder, modified from the Qwen-Image MMDiT block): first applying AvgPool + MLP to image features for a global context vector, then feeding image features, point features, and global context into the DSTG to allow image information to guide point features toward appearance representation. Finally, an MLP outputs position offset $\Delta\mu$, rotation $r$, scale $s$, color $c$, and opacity $o$ for each Gaussian. Ablations show that replacing DSTG with standard cross-attention degrades all perceptual metrics, proving that dual-stream interaction is superior for mapping image appearance to correct points. The training data, VarenTex, comprises 150,000 multi-view images synthesized via UniTex using normal maps, Canonical Coordinate Maps (CCM), and ControlNet.
 
 ### Loss & Training
 
-**AniMoFormer loss**:
+The AniMoFormer loss combines VAREN fitting, smoothness, and 2D/3D alignment:
 
 $$\mathcal{L} = \lambda_{\text{varen}}\mathcal{L}_{\text{varen}} + \lambda_{\text{smooth}}\mathcal{L}_{\text{smooth}} + \lambda_{\text{2D}}\mathcal{L}_{\text{2D}} + \lambda_{\text{3D}}\mathcal{L}_{\text{3D}}$$
 
-where $\mathcal{L}_{\text{smooth}}$ applies an L2 constraint on the difference between adjacent-frame shape and pose parameters to ensure temporal smoothness. The post-optimization stage additionally incorporates a mask L1 loss and pose regularization.
-
-**EquineGS loss**:
+Where $\mathcal{L}_{\text{smooth}}$ imposes L2 constraints on shape and pose differences between adjacent frames to ensure temporal smoothness. The post-optimization stage adds an additional mask L1 loss and pose regularization. The EquineGS loss is formulated as:
 
 $$\mathcal{L} = \lambda_{\text{image}}\mathcal{L}_{\text{image}} + \lambda_{\text{mask}}\mathcal{L}_{\text{mask}} + \lambda_{\text{reg}}\mathcal{L}_{\text{reg}}$$
 
-The image loss combines L1 and LPIPS perceptual loss to balance pixel accuracy with high-level semantic similarity; the mask loss is a silhouette L1 constraint.
+The image loss combines L1 and LPIPS perceptual loss to balance pixel accuracy with high-level semantics, while the mask loss provides contour L1 constraints.
 
 ## Key Experimental Results
 
@@ -104,7 +105,7 @@ The image loss combines L1 and LPIPS perceptual loss to balance pixel accuracy w
 | AniMer | 44.5 | 76.6 | 130.5 | 55.5 | 87.7 | 26.2 | 15.2 |
 | **AniMoFormer** | **61.8** | **83.9** | **128.6** | **84.2** | **95.3** | **21.8** | **3.4** |
 
-AniMoFormer substantially outperforms all baselines across datasets: on AiM, PCK@0.05 reaches 84.2%, surpassing the strongest baseline AniMer by 28.7 percentage points; Chamfer Distance improves from 15.2 to 3.4, a 4.5× gain.
+AniMoFormer leads by a wide margin across all datasets: reaching 84.2% PCK@0.05 on AiM, which is 28.7 percentage points higher than the strongest baseline AniMer. The Chamfer Distance (CD) dropped from 15.2 to 3.4, a 4.5x improvement.
 
 ### Main Results: Appearance Reconstruction (Table 2)
 
@@ -117,18 +118,18 @@ AniMoFormer substantially outperforms all baselines across datasets: on AiM, PCK
 | GART (full) | 16.19 | 0.7819 | 0.2308 | 15.21 | 0.6752 | 0.2287 |
 | **4DEquine** | **15.66** | **0.8364** | **0.1720** | **15.54** | **0.7828** | **0.2000** |
 
-4DEquine comprehensively outperforms all baselines — including fully optimized GART — on perceptual metrics (SSIM, LPIPS). On the zero-shot zebra generalization task, it leads across all three metrics. In terms of efficiency, 4DEquine requires only 11 seconds per frame (A100 GPU), compared to GART's fixed 15-minute optimization.
+4DEquine surpasses all baselines, including the fully optimized GART, in perceptual metrics (SSIM, LPIPS). In zero-shot zebra generalization tasks, it leads in all three metrics. Efficiency-wise, 4DEquine takes only 11 seconds per frame (A100 GPU), compared to GART's fixed 15 minutes.
 
-### Ablation Study (Tables 3 & 4)
+### Ablation Study (Table 3 & 4)
 
-| AniMoFormer Variant | APT36K PCK@0.05↑ | APT36K Accel↓ | AiM PCK@0.05↑ | AiM Accel↓ |
+| AniMoFormer Variants | APT36K PCK@0.05↑ | APT36K Accel↓ | AiM PCK@0.05↑ | AiM Accel↓ |
 |------|:-:|:-:|:-:|:-:|
 | w/o PO & Temporal | 37.1 | 134.7 | 45.1 | 30.6 |
 | w/o PO | 37.7 | 129.1 | 47.8 | 25.7 |
 | w/o Temporal | 57.9 | 143.2 | 82.9 | 24.7 |
 | **AniMoFormer (full)** | **61.8** | **128.6** | **84.2** | **21.8** |
 
-| EquineGS Variant | PSNR↑ | SSIM↑ | LPIPS↓ |
+| EquineGS Variants | PSNR↑ | SSIM↑ | LPIPS↓ |
 |------|:-:|:-:|:-:|
 | w/o PO | 13.84 | 0.8103 | 0.2170 |
 | w/o SubDiv | 15.76 | 0.8237 | 0.1871 |
@@ -137,46 +138,46 @@ AniMoFormer substantially outperforms all baselines across datasets: on AiM, PCK
 
 ### Key Findings
 
-- **Post-optimization is critical**: Removing PO drops PCK@0.05 from 61.8 → 57.9 on APT36K and appearance PSNR from 15.66 → 13.84, demonstrating the substantial impact of pixel-level alignment on final reconstruction quality.
-- **Temporal modeling improves smoothness**: Removing the Temporal Transformer causes a notable increase in acceleration error (128.6 → 143.2).
-- **Point cloud subdivision is necessary, though PSNR may be misleading**: The w/o SubDiv variant yields a marginally higher PSNR (15.76 vs. 15.66), but rendered results exhibit significant holes, as 13,873 points are insufficient to form a continuous surface.
-- **DSTG outperforms standard cross-attention**: Replacing DSTG with standard cross-attention degrades all perceptual metrics.
+- **Post-Optimization is crucial**: Removing PO dropped PCK@0.05 from 61.8 to 37.7 (APT36K) and appearance PSNR from 15.66 to 13.84, showing that pixel-level alignment significantly impacts final reconstruction quality.
+- **Temporal modeling improves smoothness**: Removing the Temporal Transformer led to a notable increase in acceleration error (from 128.6 to 143.2).
+- **Point cloud subdivision is necessary but PSNR can be misleading**: The w/o SubDiv variant had slightly higher PSNR (15.76 vs 15.66), but the rendered results were full of holes; 13,873 points are insufficient for a continuous surface.
+- **DSTG exceeds standard cross-attention**: Replacing DSTG with standard cross-attention led to a decline in all perceptual metrics.
 
 ## Highlights & Insights
 
-1. **Elegant disentanglement**: Decomposing 4D reconstruction into independent motion and appearance subproblems — using a temporal Transformer for temporal consistency and a feed-forward network for single-image appearance generation — elegantly exploits the prior that appearance remains constant within a video.
-2. **Synthetic-only training, real-world generalization**: Both modules are trained exclusively on synthetic data yet achieve SOTA on real-world benchmarks, demonstrating that high-quality synthetic data combined with strong structural priors can bridge the sim-to-real gap.
-3. **Zero-shot cross-species generalization**: Trained only on horse data, the model successfully reconstructs donkeys and zebras, indicating that the model learns generalizable image features rather than memorizing training textures.
-4. **Dramatic efficiency gains**: 11 seconds per frame vs. GART's 15 minutes represents over 80× speedup, without relying on multi-frame optimization.
-5. **Camera trajectory design in VarenPoser**: Simulating three realistic camera motions (fix/dolly/orbit) for rendering constitutes the first large-scale 4D synthetic video dataset targeting equines.
+1. **Elegant Disentanglement**: Decomposing 4D reconstruction into independent motion and appearance sub-problems—resolving motion with a spatio-temporal Transformer and appearance with a feed-forward network—effectively leverages the prior that appearance is invariant within a single video.
+2. **Pure Synthetic Training, Real Generalization**: Both modules are trained solely on synthetic data yet achieve SOTA on real data, proving that high-quality synthetic data combined with strong structural priors can bridge the sim-to-real gap.
+3. **Zero-shot Cross-species Generalization**: Trained only on horse data, the model can reconstruct donkeys and zebras, indicating it learns generalized image features rather than memorizing training textures.
+4. **Efficiency Leap**: 11 seconds per frame vs. 15 minutes for GART, representing over an 80x speedup without relying on multi-frame optimization.
+5. **VarenPoser Camera Track Design**: Simulating fix/dolly/orbit camera movements for rendering creates the first large-scale 4D synthetic video dataset for equines.
 
 ## Limitations & Future Work
 
-1. **Poor tail and mane reconstruction**: The VAREN model itself provides inadequate modeling of tails and manes; such complex physical structures require additional physics-based representations.
-2. **Static lighting assumption**: The current method cannot handle dynamic lighting changes, which are prevalent in real outdoor scenes.
-3. **Single-image appearance limitation**: EquineGS infers appearance from a single image, forcing the network to "hallucinate" textures for occluded body regions; future work could incorporate a small number of keyframes to capture distinctive markings.
-4. **Dependence on the VAREN prior**: The framework is tightly coupled to VAREN, and generalizing to non-equine quadrupeds requires corresponding parametric models.
-5. **Pseudo-GT quality bottleneck**: Post-optimization relies on the detection quality of ViTPose++ and Samurai, which may introduce noise under occlusion or complex poses.
+1. **Poor Tail and Mane Reconstruction**: The VAREN model itself lacks adequate modeling for tails and manes; these complex physical structures require additional physics-based representations.
+2. **Assumption of Invariant Ambient Lighting**: Current methods cannot handle dynamic lighting changes, which occur frequently in real outdoor scenes.
+3. **Single-image Appearance Limitation**: EquineGS infers appearance from a single image; textures for invisible body regions are "guessed" by the network. Future work could fuse information from few keyframes to capture unique markings.
+4. **Dependency on VAREN Prior**: The framework is tightly coupled with the VAREN model; generalizing to non-equine quadrupeds requires corresponding parametric models.
+5. **Pseudo-GT Quality Bottleneck**: Post-optimization relies on detection quality from ViTPose++ and Samurai, which can introduce noise under occlusion or complex poses.
 
 ## Related Work & Insights
 
-- **VAREN [61]**: High-fidelity equine parametric body model; the geometric prior backbone of this work.
-- **AniMer [22]**: Single-frame Transformer for animal pose estimation; the motion estimation baseline, extended here to a temporal version.
-- **GART [13]**: Optimization-based animal avatar using 3DGS; the primary appearance reconstruction comparison method.
+- **VAREN [61]**: High-precision equine parametric model, serving as the geometric prior base for this work.
+- **AniMer [22]**: Single-frame Transformer for animal pose estimation, serving as the motion estimation baseline and extended here to a temporal version.
+- **GART [13]**: Optimization-based animal avatar using 3DGS, the primary comparison method for appearance reconstruction.
 - **3D/4D-Fauna [17, 53]**: Template-free generalized animal reconstruction methods.
 - **UniTex [19]**: Multi-view diffusion model used to generate VarenTex training data.
-- Inspiration: The disentanglement paradigm combined with synthetic data can be extended to 4D reconstruction of other quadrupeds; a high-quality parametric model is a critical prerequisite for high-fidelity reconstruction.
+- Insight: The disentanglement approach + synthetic data can be extended to 4D reconstruction for other quadrupeds; high-quality parametric models are a critical prerequisite for high-precision reconstruction.
 
 ## Rating
 
-| Dimension | Score (1–10) | Note |
+| Dimension | Score (1-10) | Explanation |
 |------|:-:|------|
-| Novelty | 7 | The disentanglement idea is original, but individual modules (spatiotemporal Transformer, 3DGS avatar) are largely combinations of existing techniques. |
-| Technical Depth | 8 | The system is comprehensive: two datasets, two networks, and post-optimization constitute a substantial engineering contribution. |
-| Experimental Thoroughness | 8 | Three datasets, multiple baselines, thorough ablations; zero-shot generalization is a highlight. |
-| Writing Quality | 7 | Structure is clear, but dual-stream Transformer details rely on supplementary material. |
-| Value | 7 | Clear application value for equines; 11 seconds/frame efficiency is practically deployable. |
-| **Overall** | **7.5** | A systematic and complete work on equine 4D reconstruction; disentanglement and synthetic-only training are the core contributions. |
+| Novelty | 7 | The disentanglement idea is innovative, though sub-modules (Spatio-temporal Transformer, 3DGS avatar) are largely combinations of existing techniques. |
+| Technical Depth | 8 | The system is comprehensive, involving two datasets, two networks, and post-optimization with significant engineering effort. |
+| Experimental Thoroughness | 8 | Three datasets, multiple baselines, thorough ablations, and zero-shot generalization are highlights. |
+| Writing Quality | 7 | Clear structure, though dual-stream Transformer details rely on supplementary materials. |
+| Value | 7 | Clear application value for equines; efficiency of 11s/frame is practical. |
+| **Overall** | **7.5** | A comprehensive 4D equine reconstruction work; disentanglement + pure synthetic training are core contributions. |
 
 <!-- RELATED:START -->
 
@@ -186,9 +187,9 @@ AniMoFormer substantially outperforms all baselines across datasets: on AiM, PCK
 
 - [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
+- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
-- [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
 
 </div>
 

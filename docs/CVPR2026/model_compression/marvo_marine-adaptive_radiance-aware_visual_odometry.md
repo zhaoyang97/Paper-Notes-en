@@ -2,103 +2,88 @@
 title: >-
   [Paper Note] MARVO: Marine-Adaptive Radiance-aware Visual Odometry
 description: >-
-  [CVPR 2026][Model Compression][underwater visual odometry] MARVO is an underwater visual odometry framework that embeds a Physics-Aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for wavelength-…
+  [CVPR 2026][Model Compression][Paper Note] Ours proposes the MARVO underwater visual odometry framework, which embeds a Physical-aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for underwater wavelength attenuation. It combines GTSAM multi-sensor factor graph fusion with Reinforcement Learning Pose Graph Optimization (RL-PGO) to achie
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "underwater visual odometry"
-  - "physics-aware feature matching"
-  - "factor graph optimization"
-  - "reinforcement learning pose graph optimization"
-  - "multi-sensor fusion"
+  - CVPR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 3de92974fbebb23a
+content_hash: bd85c926ca78d194
 ---
-
 # MARVO: Marine-Adaptive Radiance-aware Visual Odometry
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22860](https://arxiv.org/abs/2511.22860)  
-**Code**: N/A  
-**Area**: Model Compression
-**Keywords**: underwater visual odometry, physics-aware feature matching, factor graph optimization, reinforcement learning pose graph optimization, multi-sensor fusion
+**Code**: None  
+**Area**: Model Compression  
+**Keywords**: Underwater visual odometry, physical-aware feature matching, factor graph optimization, reinforcement learning pose graph optimization, multi-sensor fusion  
 
 ## TL;DR
 
-MARVO is an underwater visual odometry framework that embeds a Physics-Aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for wavelength-dependent attenuation, integrates GTSAM multi-sensor factor graph fusion, and employs reinforcement learning-based pose graph optimization (RL-PGO), achieving robust localization in underwater scenes.
+Ours proposes the MARVO underwater visual odometry framework, which embeds a Physical-aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for underwater wavelength attenuation. It combines GTSAM multi-sensor factor graph fusion with Reinforcement Learning Pose Graph Optimization (RL-PGO) to achieve robust localization in underwater scenes.
 
 ## Background & Motivation
 
-Underwater visual localization presents unique challenges: light scattering, **wavelength-dependent attenuation**, and strong non-Gaussian noise lead to severe contrast degradation, unstable features, and long-term pose estimation inconsistency. The failure of conventional VO/SLAM underwater stems from two levels:
+Underwater visual localization faces unique challenges: light scattering, **wavelength-dependent attenuation**, and strong non-Gaussian noise lead to severe contrast loss, unstable features, and long-term pose estimation inconsistency. Traditional VO/SLAM systems fail in underwater environments for two primary reasons:
 
-**Perception level**: The physical image formation process underwater (chromatic channel attenuation, backscatter) is not corrected, causing feature descriptors to fail in turbid regions. Standard LoFTR suffers significant matching quality degradation under spectral degradation.
+**Background**: Standard systems fail to account for the physical process of underwater image formation (color channel attenuation, backscattering), causing feature descriptors to fail in turbid regions. The matching quality of standard LoFTR drops significantly in areas of spectral degradation.
 
-**Optimization level**: Standard least-squares solvers (Gauss-Newton/LM) get trapped in local optima on high-noise, visually degraded trajectories, especially when loop closure constraints are sparse.
+**Limitations of Prior Work**: Standard least-squares solvers (Gauss-Newton/LM) tend to get trapped in local optima on high-noise, visually degraded trajectories, especially when loop closure constraints are sparse.
 
-The core philosophy of MARVO is that robust underwater VO requires both (i) a perception module that explicitly compensates for radiometric distortion and (ii) a global optimizer capable of escaping local optima.
+**Key Insight**: Robust underwater VO requires both (i) a perception module that explicitly compensates for radiance distortion and (ii) a global optimizer capable of escaping local optima.
 
 ## Method
 
 ### Overall Architecture
 
-Three modules in cascade:
-1. **Front-end perception**: PARA-augmented LoFTR feature matching → physically corrected semi-dense correspondences
-2. **Back-end estimation**: GTSAM factor graph fusing visual-inertial-barometric constraints → real-time VO
-3. **Offline optimization**: RL-PGO on SE(2) via reinforcement learning → globally consistent trajectory
+To achieve robust camera pose estimation in turbid and heavily attenuated underwater scenes, MARVO adopts the logic of "perception first compensates for physical degradation, then the optimizer escapes local optima." When an image frame enters the system, it undergoes a three-stage process: the front-end uses LoFTR embedded with the Physical-aware Radiance Adapter (PARA) for feature matching, outputting physically corrected semi-dense correspondences; the back-end integrates these visual constraints along with IMU and barometer constraints into a GTSAM factor graph to solve the VO trajectory in real-time; finally, an offline Reinforcement Learning Pose Graph Optimizer (RL-PGO) performs global refinement on SE(2) for the entire trajectory to correct long-term drift. Each stage targets a specific failure point of underwater VO: the front-end ensures "features remain recognizable in turbid water," the back-end manages "multi-source constraint fusion," and the offline stage ensures "avoiding local optima under sparse loop closures."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Underwater Image Frame + IMU + Barometer"]
+    IN --> PARA["Physical-aware Radiance Adapter PARA<br/>Three-branch estimation of attenuation/backscatter/depth<br/>Inversion of imaging model → Correction mask Γ modulates LoFTR features"]
+    PARA --> MATCH["Physically corrected semi-dense matching"]
+    MATCH --> FG["Multi-sensor Factor Graph Fusion (GTSAM Fixed-lag Smoother)<br/>Visual Factor (Adaptive Covariance) + IMU Pre-integration + Barometric Depth Prior"]
+    FG --> VO["Real-time VO Trajectory"]
+    VO --> RLPGO["Reinforcement Learning Pose Graph Optimization RL-PGO (Offline)<br/>SE(3) → SE(2) Reduction → GNN Encodes Residuals<br/>Recurrent SAC selects edge retraction → SE(3) → LM Fine-tuning"]
+    RLPGO --> OUT["Globally Consistent Camera Trajectory"]
+```
 
 ### Key Designs
 
-#### 1. Physics-Aware Radiance Adapter (PARA)
+**1. Physical-aware Radiance Adapter PARA: Embedding the underwater imaging model directly into the feature pipeline instead of pre-processing.**
 
-- **Function**: A lightweight module inserted between LoFTR's CNN encoder and Transformer layers that explicitly corrects underwater optical degradation.
-- **Mechanism**: Based on a revised underwater image formation model:
+Contrast loss in underwater images stems from wavelength-dependent attenuation and backscattering, causing standard LoFTR descriptors to fail in spectrally degraded regions. PARA avoids the two-stage "enhance first, match later" approach. Instead, it inserts a lightweight module between LoFTR's CNN encoder and Transformer layers, allowing physical correction to occur in the feature space for end-to-end differentiability. It is based on the revised underwater imaging model:
 
 $$I_c(x) = J_c(x) e^{-\beta_c(x)z(x)} + B_\infty^c(x)(1 - e^{-\beta_c(x)z(x)})$$
 
-PARA employs a three-branch prediction head to estimate per-pixel attenuation coefficients $\hat{\boldsymbol{\beta}} \in \mathbb{R}^{H \times W \times 3}$, asymptotic backscatter $\hat{\mathbf{B}}_\infty \in \mathbb{R}^{H \times W \times 3}$, and a depth proxy $\hat{\mathbf{z}} \in \mathbb{R}^{H \times W \times 1}$ from shared features. Inverting the physical model yields a radiometrically corrected estimate, producing a scalar correction mask:
+where $J_c$ is the degradation-free radiance, $\beta_c$ is the attenuation coefficient, and $B_\infty^c$ is the asymptotic backscatter. PARA uses a three-branch head to estimate attenuation $\hat{\boldsymbol{\beta}} \in \mathbb{R}^{H \times W \times 3}$, backscatter $\hat{\mathbf{B}}_\infty \in \mathbb{R}^{H \times W \times 3}$, and a depth proxy $\hat{\mathbf{z}} \in \mathbb{R}^{H \times W \times 1}$ pixel-wise from shared features. By inverting the model, it obtains the corrected radiance estimate $\hat{J}_c$, which is compressed into a pixel-wise scalar correction mask:
 
 $$\Gamma(x) = \frac{1}{3}\sum_{c \in \{R,G,B\}} \frac{\hat{J}_c(x)}{I_c(x) + \epsilon}$$
 
-Applied to encoder features as: $\tilde{\mathbf{F}}(x) = \text{LN}(\Gamma(x) \odot \mathbf{F}(x))$
+This mask is element-wise multiplied back into the encoder features and processed with Layer Normalization: $\tilde{\mathbf{F}}(x) = \text{LN}(\Gamma(x) \odot \mathbf{F}(x))$. The module adds less than 5% parameters, but descriptor consistency in turbid areas improves significantly. The **Core Idea** is not just "CNN modulation," but that this modulation is supervised by physical parameters—replacing physical supervision with pure CNN modulation in ablations leads to a drop in robustness, proving the value of the physical prior.
 
-- **Design Motivation**: Rather than image pre-processing, physical correction is directly embedded into the feature pipeline. PARA adds fewer than 5% additional parameters while substantially improving descriptor consistency. Ablations confirm that physics-based supervision—not simple CNN modulation—is the key to robustness.
+**2. Multi-sensor Factor Graph Fusion: Using adaptive covariance to automatically switch between inertial and barometric reliance during vision degradation.**
 
-#### 2. Multi-Sensor Factor Graph Fusion
+Monocular underwater VO suffers from both scale ambiguity and vertical drift. MARVO utilizes a GTSAM fixed-lag smoother to jointly solve three types of constraints. IMU pre-integration factors provide scale and short-term motion. The visual factor from PARA-LoFTR estimates relative pose with a covariance inversely proportional to the number of inliers and spatial coverage. Thus, frames with high visibility dominate the optimization, while weights for degraded frames are automatically suppressed. The barometric depth prior is a unary factor that fixes the depth of each frame. This **Design Motivation** leverages the low cost of pressure sensors to eliminate the vertical drift inherent in monocular VO, while adaptive covariance allows the system to transition smoothly between visual and inertial/barometric constraints.
 
-- **Function**: A fixed-lag smoother is constructed in GTSAM to fuse three types of constraints.
-- **Mechanism**:
-    - **IMU pre-integration factor**: Provides scale constraints and short-term motion via standard GTSAM pre-integration.
-    - **MARVO visual factor**: Relative poses estimated from PARA-LoFTR semi-dense matches, with covariance inversely proportional to inlier count and spatial coverage, allowing high-visibility frames to automatically dominate optimization.
-    - **Barometric depth prior**: A unary depth factor that eliminates the vertical drift common in monocular underwater VO.
-- **Design Motivation**: Barometric sensors are extremely low-cost yet highly effective against vertical drift. Adaptive covariance allows the system to automatically down-weight degraded frames.
+**3. Reinforcement Learning Pose Graph Optimization RL-PGO: Treating PGO as sequential decision-making on SE(2) to escape local optima.**
 
-#### 3. Reinforcement Learning Pose Graph Optimization (RL-PGO)
+Visual degradation often provides poor initialization for classic PGO. Least-squares solvers like Gauss-Newton/LM fail to escape local optima, particularly with sparse loop closures. RL-PGO refines the pose graph offline using an RL policy. It first projects SE(3) onto SE(2) by utilizing AUV/ROV kinematic priors—since roll and pitch are stabilized by the vehicle and depth is fixed by the barometer, yaw is the primary rotational degree of freedom. This reduces 6-DoF to 3-DoF, narrowing the search space. A GNN encoder aggregates residuals from all edges to generate state representations. A Recurrent SAC agent then selects edges to adjust and outputs retraction actions on SE(2). After refinement, the poses are re-embedded into SE(3) for a final fast LM fine-tuning. The optimization objective is a log-weighted orientation cost:
 
-- **Function**: An offline RL policy refines the pose graph on SE(2), surpassing the local optima of classical least-squares methods.
-- **Mechanism**:
-  1. SE(3) is projected onto SE(2) (AUV/ROV roll and pitch are stable; yaw is the primary rotational degree of freedom; depth is fixed by barometry).
-  2. A GNN encoder aggregates edge residuals to generate the state representation.
-  3. A recurrent SAC agent selects edges and outputs SE(2) retraction actions.
-  4. After refinement, poses are re-embedded into SE(3), followed by a final LM pass for fine-tuning.
-- **Key Innovation — Log-Weighted Orientation Cost**:
+$$OC_{\text{log}} = \sqrt{\sum_{(i,j) \in E} w_{ij} \|R_i R_{ij} - R_j\|_F^2}, \qquad w_{ij} = 1 + \beta \log\left(\frac{\|\mathbf{t}_{ij}\|}{\bar{t}} + \epsilon\right)$$
 
-$$OC_{\text{log}} = \sqrt{\sum_{(i,j) \in E} w_{ij} \|R_i R_{ij} - R_j\|_F^2}$$
-
-$$w_{ij} = 1 + \beta \log\left(\frac{\|\mathbf{t}_{ij}\|}{\bar{t}} + \epsilon\right)$$
-
-The logarithmic sub-linear weighting emphasizes long-range constraints without allowing extremely long noisy edges to dominate. Setting $\beta=0$ reduces to uniform weighting.
-
-- **Design Motivation**: Visual degradation underwater causes classical PGO to suffer from poor initialization and convergence to local optima.
+The log-weighting for translation distance ensures that long-distance constraints are emphasized without being dominated by outlier noise edges; it reverts to uniform weighting when $\beta=0$.
 
 ### Loss & Training
 
-Joint front-end loss: $\mathcal{L} = \lambda_{\text{match}}\mathcal{L}_{\text{match}} + \lambda_{\text{photo}}\mathcal{L}_{\text{photo}} + \lambda_{\text{phys}}\mathcal{L}_{\text{phys}}$
+Front-end joint loss: $\mathcal{L} = \lambda_{\text{match}}\mathcal{L}_{\text{match}} + \lambda_{\text{photo}}\mathcal{L}_{\text{photo}} + \lambda_{\text{phys}}\mathcal{L}_{\text{phys}}$
 
-- $\mathcal{L}_{\text{match}} = \|\hat{\mathbf{P}} - \mathbf{P}^*\|_1$: geometric consistency of matched points
-- $\mathcal{L}_{\text{photo}} = 1 - \text{SSIM}(I'_A, I'_B)$: view consistency after radiometric correction
-- $\mathcal{L}_{\text{phys}} = \|\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}_{\text{gt}}\|_1 + \|\hat{\mathbf{B}}_\infty - \mathbf{B}_{\infty,\text{gt}}\|_1$: L1 supervision on physical parameters
+- $\mathcal{L}_{\text{match}} = \|\hat{\mathbf{P}} - \mathbf{P}^*\|_1$: Geometric consistency of matching points.
+- $\mathcal{L}_{\text{photo}} = 1 - \text{SSIM}(I'_A, I'_B)$: View consistency after radiance correction.
+- $\mathcal{L}_{\text{phys}} = \|\hat{\boldsymbol{\beta}} - \boldsymbol{\beta}_{\text{gt}}\|_1 + \|\hat{\mathbf{B}}_\infty - \mathbf{B}_{\infty,\text{gt}}\|_1$: L1 supervision of physical parameters.
 
-Two-stage training: pre-training on ~120k synthetic underwater pairs (ScanNet/TartanAir/Hypersim rendered via SyreaNet) → fine-tuning on ~12k real frames (10% KITTI + in-house data). Mixed-precision training on 4×A100.
+Training strategy: Pre-training on ~120k synthetic underwater pairs (ScanNet/TartanAir/Hypersim rendered via SyreaNet) → Fine-tuning on ~12k real frames (10% KITTI + internal data). Mixed precision on 4×A100.
 
 ## Key Experimental Results
 
@@ -107,7 +92,7 @@ Two-stage training: pre-training on ~120k synthetic underwater pairs (ScanNet/Ta
 Real-world underwater VO performance (Scale Aligned):
 
 | Method | ATE (m)↓ | RPE (deg/m)↓ | Drift (%)↓ |
-|--------|---------|-------------|-----------|
+|------|---------|-------------|-----------|
 | ORB-SLAM3 | 4.12 | 0.92 | 3.8 |
 | LIBVISO2 | 3.47 | 0.85 | 3.1 |
 | MAST3R-SLAM | 2.52 | 0.58 | 2.2 |
@@ -117,7 +102,7 @@ Real-world underwater VO performance (Scale Aligned):
 Synthetic underwater feature matching (Pose AUC):
 
 | Method | @5° | @10° | @20° |
-|--------|-----|------|------|
+|------|-----|------|------|
 | SP+SuperGlue | 25.4 | 42.2 | 59.7 |
 | LoFTR | 42.9 | 59.5 | 68.2 |
 | **MARVO** | **49.7** | **62.9** | **71.3** |
@@ -125,41 +110,41 @@ Synthetic underwater feature matching (Pose AUC):
 ### Ablation Study
 
 | Configuration | AUC @10°↑ | ATE (m)↓ | Drift (%)↓ |
-|---------------|----------|---------|-----------|
+|------|----------|---------|-----------|
 | Full MARVO | **0.92** | **1.73** | **1.2** |
 | w/o PARA module | 0.81 | 2.24 | 1.9 |
-| Replace w/ vanilla LoFTR | 0.76 | 2.47 | 2.3 |
-| Classical PGO instead of RL-PGO | 0.84 | 2.05 | 1.7 |
+| Replace with vanilla LoFTR | 0.76 | 2.47 | 2.3 |
+| Classic PGO instead of RL-PGO | 0.84 | 2.05 | 1.7 |
 | w/o physical radiance normalization | 0.73 | 2.68 | 2.6 |
 
 ### Key Findings
 
-1. **Physical radiance normalization is the core component**: Removing it reduces AUC to 0.73 (largest drop), confirming that physics-based supervision rather than CNN modulation is essential.
-2. ATE is reduced by 58% and drift by 68% compared to ORB-SLAM3.
-3. RL-PGO reduces ATE from 2.05m (classical PGO) to 1.73m, with particularly pronounced gains in sparse loop closure scenarios.
-4. Even compared to the recent VGGT-SLAM, ATE is reduced by 28% and drift by 43%.
+1. **Physical radiance normalization is core**: Removing it drops AUC to 0.73 (the largest decrease), proving that physical supervision, rather than simple CNN modulation, is key.
+2. Compared to ORB-SLAM3, ATE is reduced by 58% and Drift by 68%.
+3. RL-PGO reduces the ATE of classic PGO from 2.05m to 1.73m, which is particularly effective in sparse loop closure scenarios.
+4. Even compared to the latest VGGT-SLAM, ATE is reduced by 28% and Drift by 43%.
 
 ## Highlights & Insights
 
-1. **Physical model directly embedded in the deep learning pipeline**: PARA performs physical correction in feature space rather than image space, preserving end-to-end differentiability.
-2. The **barometric depth prior** is an elegant design: a low-cost unary factor that entirely eliminates vertical drift.
-3. **SE(2)-reduced RL-PGO** cleverly exploits AUV/ROV kinematic constraints, reducing 6-DoF optimization to 3-DoF.
-4. Adaptive covariance allows the system to automatically rely on inertial/barometric constraints during visual degradation.
+1. **Embedding physical models directly into DL pipelines**: PARA performs physical correction in the feature space rather than image space, maintaining end-to-end differentiability.
+2. **Barometric depth prior**: A low-cost unary factor effectively eliminates vertical drift in monocular VO.
+3. **SE(2) reduced-dimension RL-PGO**: Ours cleverly uses AUV/ROV kinematic constraints to reduce 6-DoF to 3-DoF.
+4. Adaptive covariance allows the system to rely on inertial/barometric constraints automatically during visual degradation.
 
 ## Limitations & Future Work
 
-1. **Lack of standardized underwater VO datasets**: Evaluation relies on synthetic rendering and COLMAP alignment, providing insufficient statistical significance.
-2. The sim-to-real domain gap is addressed only by fine-tuning on 10% real data, offering limited robustness guarantees.
-3. RL-PGO operates solely on SE(2); the assumption of coupled roll/pitch may not hold for certain AUV platforms.
-4. 3D mapping (TSDF/MVS) is not integrated, and real-time metrics (frame rate/latency) are absent.
-5. The experimental scale is small, with no large-scale multi-sequence long-duration evaluation.
+1. **Lack of standard underwater VO datasets**: Evaluation relies on synthetic rendering and COLMAP alignment, lacking statistical significance.
+2. The synthetic-to-real gap is bridged only by 10% real data fine-tuning, providing limited robustness guarantees.
+3. RL-PGO operates only on SE(2); the roll/pitch coupling assumption may not hold for all AUVs.
+4. 3D mapping (TSDF/MVS) is not integrated, and real-time metrics (FPS/latency) are missing.
+5. Small experimental scale without large-scale multi-sequence long-term evaluation.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Combining physical models with Transformer-based matching is a clear contribution; RL-PGO adapted for underwater scenarios is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Limited by the scarcity of underwater datasets; experiments are small-scale and lack error bars and multi-sequence statistics.
-- **Writing Quality**: ⭐⭐⭐⭐ — Method description is thorough, system design logic is clear, and mathematical derivations are complete.
-- **Value**: ⭐⭐⭐⭐ — Directly applicable to underwater robotics; the physics-aware paradigm is transferable to fog/rain/nighttime localization.
+- **Novelty**: ⭐⭐⭐⭐ — Combining physical models with Transformer matching is a clear innovation; RL-PGO adaptation for underwater is novel.
+- **Experimental Thoroughness**: ⭐⭐⭐ — Limited by the lack of underwater datasets; small scale with a lack of error bars and multi-sequence statistics.
+- **Writing Quality**: ⭐⭐⭐⭐ — Method description is detailed, system logic is clear, and derivations are complete.
+- **Value**: ⭐⭐⭐⭐ — Directly applicable to underwater robotics; physical-aware principles can be generalized to fog/rain/night localization.
 
 <!-- RELATED:START -->
 
@@ -167,11 +152,11 @@ Synthetic underwater feature matching (Pose AUC):
 
 ## Related Papers
 
+- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
 - [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](../../ICLR2026/model_compression/agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
 - [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
-- [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](../../AAAI2026/model_compression/sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
-- [\[CVPR 2026\] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)
 
 </div>
 

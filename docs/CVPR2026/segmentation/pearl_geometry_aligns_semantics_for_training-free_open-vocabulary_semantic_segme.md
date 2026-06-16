@@ -2,80 +2,83 @@
 title: >-
   [Paper Note] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] PEARL proposes a two-step inference framework based on Procrustes alignment and text-aware Laplacian propagation. Without introducing any additional traini…
+  [CVPR 2026][Segmentation][CLIP] PEARL proposes a two-step inference method based on Procrustes alignment and text-aware Laplacian propagation. Without introducing additional training or auxiliary backbones, it achieves a new SOTA in training-free open-vocabulary semantic segmentation by correcting the key-query geometric mismatch in the final self-at
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Open-vocabulary semantic segmentation"
-  - "training-free"
-  - "Procrustes alignment"
-  - "Laplacian propagation"
-  - "CLIP"
+  - CVPR 2026
+  - Segmentation
+  - CLIP
 date: 2026-05-08
-content_hash: 8bca4f2e0d149c40
+content_hash: 43ec1f21c2ecdb13
 ---
-
 # PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.21528](https://arxiv.org/abs/2603.21528)  
 **Code**: [https://github.com/PGSmall/PEARL](https://github.com/PGSmall/PEARL)  
-**Area**: Semantic Segmentation / Open-Vocabulary
-**Keywords**: Open-vocabulary semantic segmentation, training-free, Procrustes alignment, Laplacian propagation, CLIP
+**Area**: Semantic Segmentation / Open-Vocabulary  
+**Keywords**: Open-Vocabulary Semantic Segmentation, Training-free, Procrustes Alignment, Laplacian Propagation, CLIP
 
 ## TL;DR
 
-PEARL proposes a two-step inference framework based on Procrustes alignment and text-aware Laplacian propagation. Without introducing any additional training or auxiliary backbone networks, it corrects the geometric mismatch between keys and queries in the final self-attention layer of CLIP and leverages textual semantics to guide label propagation, achieving new state-of-the-art performance on training-free open-vocabulary semantic segmentation.
+PEARL proposes a two-step inference method based on Procrustes alignment and text-aware Laplacian propagation. Without introducing additional training or auxiliary backbones, it achieves a new SOTA in training-free open-vocabulary semantic segmentation by correcting the key-query geometric mismatch in the final self-attention layer of CLIP and utilizing text semantics to guide label propagation.
 
 ## Background & Motivation
 
-**Background**: Open-vocabulary semantic segmentation (OVSS) enables models to classify each pixel according to a category set specified via natural language at inference time. Mainstream approaches fall into two paradigms: training-based methods enhance CLIP's dense prediction capability by learning decoders or lightweight adapters, while training-free methods keep the backbone frozen and only modify the inference procedure.
+**Background**: Open-vocabulary semantic segmentation (OVSS) allows models to classify each pixel based on category sets specified via natural language at inference time. Current mainstream approaches are divided into training-based and training-free routes. Training-based methods learn decoders or lightweight adapters to enhance CLIP's dense prediction capability, while training-free methods keep the backbone frozen and only modify the inference process.
 
-**Limitations of Prior Work**: Training-free methods face two core challenges. First, CLIP's contrastive pre-training emphasizes global image-text alignment rather than dense prediction, causing the top-layer self-attention of the visual encoder to be dominated by a few background-driven directions. This results in a severe geometric mismatch between patch feature structure and text prototypes, leading to unstable patch-text similarity. Second, text is typically used only as a classifier and rarely governs the exchange of information between pixels—despite the fact that inter-class relationships in text space can indicate which categories should mutually reinforce or remain separated.
+**Limitations of Prior Work**: Training-free methods face two core issues. First, CLIP's contrastive pre-training emphasizes global image-text alignment rather than dense prediction, leading the self-attention in the top layers of the visual encoder to be dominated by a few background directions. This results in a severe mismatch between the geometric structure of patch features and text prototypes, making patch-text similarity unstable. Second, text is usually employed only as a classifier and rarely participates in governing information exchange between pixels—even though category relationships in the text space can indicate which classes should mutually reinforce or remain separated.
 
-**Key Challenge**: Existing methods often apply post-hoc smoothing (e.g., DenseCLIP, PAMR), but this addresses symptoms rather than root causes—when the source geometry is already incorrect, downstream smoothing can only alleviate but not eliminate the problem. Other methods introduce auxiliary visual backbones (e.g., DINOv2), increasing complexity and latency.
+**Key Challenge**: Most existing methods perform downstream smoothing (e.g., DenseCRF, PAMR), but this only "treats the symptoms rather than the cause"—when the source geometry is flawed, subsequent smoothing only mitigates symptoms instead of eliminating the root cause. Other methods introduce auxiliary visual backbones (e.g., DINOv2), increasing complexity and latency.
 
-**Goal**: (1) Correct the token geometry at the source where attention scores are formed; (2) transform text from a simple labeler into a structural prior that guides semantic propagation across pixels.
+**Goal**: (1) Correct the token geometric structure at the source of attention scores; (2) Transform text from a simple labeler into a structural prior to guide semantic propagation between pixels.
 
-**Key Insight**: The authors observe that in CLIP ViT-B/16 attention maps, vanilla CLIP produces diffuse maps biased toward backgrounds, while NACLIP improves but suffers from severe fragmentation. By applying an orthogonal Procrustes rotation to the keys in the final self-attention layer, the output features can be better aligned with the query subspace.
+**Key Insight**: It is observed that in the attention maps of CLIP ViT-B/16, vanilla CLIP is diffuse and biased towards the background, while NACLIP improves this but suffers from severe fragmentation. By performing an orthogonal Procrustes rotation on the keys in the final self-attention layer, the output features can be better aligned with the query subspace.
 
-**Core Idea**: First repair attention geometry via orthogonal Procrustes alignment, then diffuse semantic consistency across the entire image through text-aware Laplacian propagation—an *align-then-propagate* paradigm.
+**Core Idea**: Repair the attention geometry using orthogonal Procrustes alignment first, then diffuse semantic consistency across the entire image using text-aware Laplacian propagation—align-then-propagate.
 
 ## Method
 
 ### Overall Architecture
 
-PEARL inserts two modules into the frozen CLIP ViT inference pipeline. After the input image is encoded by the ViT, a Procrustes Alignment (PA) step is inserted into the final self-attention block: an orthogonal rotation is applied to the keys of each head to align them with the query subspace, yielding corrected patch features. These features are then compared with class prototypes generated by the frozen text encoder via cosine similarity to produce an initial logit field $\widetilde{Z}$. Subsequently, Text-aware Laplacian Propagation (TLP) performs confidence-weighted, text-guided graph Laplacian solving on a downsampled grid, outputting refined scores $F$, which are upsampled to full resolution and passed through argmax to obtain the final segmentation.
+The PEARL pipeline is built on a frozen CLIP ViT without training any parameters, centered on the "align-then-propagate" two-step process. It follows the established sliding window inference protocol for training-free OVSS, where high-resolution images are cropped into overlapping windows and processed sequentially. Each window is encoded by the ViT, and **Procrustes Alignment (PA)** is inserted into the **final self-attention block**: an orthogonal rotation is applied to the keys of each head to align them with the query subspace, and attention is recalculated using the corrected keys to obtain geometrically aligned patch features. These features compute cosine similarity with category prototypes from the frozen text encoder to produce the initial logit field $\widetilde{Z}$. Subsequently, **Text-aware Laplacian Propagation (TLP)** performs confidence-weighted, text-guided graph Laplacian solving on a downsampled grid to output refined scores $F$. Finally, results from each window are upsampled and fused back into the full image using overlap weights, with a pixel-wise argmax yielding the segmentation map.
+
+```mermaid
+graph TD
+    A["Input Image<br/>Cropped into overlapping windows"] --> B["Frozen CLIP ViT Encoding<br/>Extract Q / K / V from last self-attention layer"]
+    B --> C["Procrustes Alignment (PA)<br/>Orthogonal rotation on keys for each head<br/>Recalculate attention → Aligned patch features"]
+    C --> D["Patch-Text Cosine Similarity<br/>Obtain initial logit field Z̃"]
+    D --> E["Text-aware Laplacian Propagation (TLP)<br/>Confidence-weighted & text-guided solving on grid → F"]
+    E --> F["Upsampling + Overlapping window weighted fusion"]
+    F --> G["Pixel-wise argmax → Segmentation map"]
+```
 
 ### Key Designs
 
-1. **Procrustes Alignment (PA)**:
+**1. Procrustes Alignment (PA): Rotating keys back to the query subspace at the attention source**
 
-    - **Function**: Corrects the basis mismatch between keys and queries in the final self-attention layer.
-    - **Mechanism**: For each head, query-norm-weighted centroids are computed for both queries and keys, which are then mean-centered. The orthogonal Procrustes problem $R^* = \arg\min_{R \in O(d)} \|K_c R - Q_c\|_F^2$ is then solved; the closed-form solution is the orthogonal factor $UV^\top$ from the SVD of the cross-covariance matrix $K_c^\top Q_c$. Only the keys are rotated—values remain unchanged—and attention scores and outputs are recomputed within the same attention block. A Newton-Schulz iteration can also be used as an SVD-free alternative.
-    - **Design Motivation**: Weighted mean-centering suppresses the influence of high-norm background tokens and the CLS token; the orthogonal mapping preserves local magnitudes. The method repairs the directional consistency of patch features in the query subspace, stabilizing downstream cosine similarity. The additional cost per head is limited to one $d \times d$ SVD and two $N \times d$ matrix multiplications.
+The problem with the top-layer self-attention in CLIP is that while keys and queries originate from the same set of patches, they are pulled into inconsistent bases by contrastive pre-training. Furthermore, a few high-norm background tokens and the CLS token bias the directions, making the cosine similarity between patch features and text prototypes unstable. PA addresses this by modifying only the keys: for each head, query norms are used to weight each token, calculating the weighted centroids of queries and keys for decentering (suppressing the influence of high-norm background and CLS tokens). Then, an orthogonal Procrustes problem is solved:
 
-2. **Text-aware Laplacian Propagation (TLP)**:
+$$R^* = \arg\min_{R \in O(d)} \|K_c R - Q_c\|_F^2,$$
 
-    - **Function**: Performs graph-based smooth refinement of the initial logit field on a grid.
-    - **Mechanism**: The logit field is downsampled to a $H_g \times W_g$ grid and a 4-connected graph is constructed. Each node's data fidelity weight $\rho_i$ is jointly determined by the peak post-softmax probability and text-prior consistency $u_i = p_i^\top G p_i$. Edge weights $a_{ij}$ are determined by image-gradient-based edge detection $b_{ij}^{img}$ and a text-consistency gate $g_{ij} = p_i^\top G p_j$. Refined logits are obtained by minimizing the convex quadratic objective $\mathcal{L}(F_g) = \frac{1}{2}\sum_i \rho_i \|F_{g,i} - Z_{g,i}\|^2 + \frac{\tau}{2}\sum_{(i,j)} a_{ij}\|F_{g,i} - F_{g,j}\|^2$, solved efficiently on the small grid via conjugate gradient.
-    - **Design Motivation**: The inter-prototype similarity matrix $G$ encodes class co-occurrence relationships, allowing semantically related categories to mutually reinforce each other during propagation; image gradients protect boundaries. This is more targeted than category-agnostic smoothing and more compact than multi-backbone pipelines.
+The closed-form solution is the orthogonal factor $UV^\top$ from the SVD of the cross-covariance $K_c^\top Q_c$. Decentering is only used to solve for $R^*$; the **original** keys are rotated ($\widetilde{K}=KR^*$), and the attention scores and outputs are recalculated using $\widetilde{K}$ within the same block. Orthogonal mapping is chosen because it modifies only direction without changing local magnitudes, specifically correcting the directional consistency of patch features within the query subspace—which is precisely what cosine similarity measures. The cost is low, adding only one $d \times d$ SVD and two $N \times d$ matrix multiplications per head; SVD can also be bypassed using Newton-Schulz iteration to approximate the orthogonal factor.
 
-3. **Sliding Window Inference and Fusion**:
+**2. Text-aware Laplacian Propagation (TLP): Letting text category relationships govern pixel information exchange**
 
-    - **Function**: Handles high-resolution images.
-    - **Mechanism**: The image is covered by overlapping windows; each window independently executes the PA + TLP pipeline to produce upsampled logits, which are then merged into a global coordinate system via weighted fusion.
-    - **Design Motivation**: Since ViT patch size is fixed (e.g., 16×16), directly processing large images yields insufficient resolution. Sliding windows preserve patch-level detail while overlapping regions smooth the seams.
+Although the similarity field repaired by PA is geometrically aligned, predictions remain independent per patch and spatially incoherent. Conventional methods use class-agnostic downstream smoothing like DenseCRF/PAMR. TLP employs text as the "referee" for smoothing: the logit field is downsampled to a small $H_g \times W_g$ grid to build a 4-connected graph, followed by confidence-weighted, text-guided graph Laplacian solving. The influence of each node is determined by data trust $\rho_i$, which considers both the peak probability after softmax (the model's certainty) and text prior consistency $u_i = p_i^\top G p_i$. Propagation between adjacent nodes is controlled by edge weights $a_{ij}$, which multiply image gradient edge detection $b_{ij}^{img}$ (to protect object boundaries) and a text consistency gate $g_{ij} = p_i^\top G p_j$ (allowing propagation only between semantically similar classes). The final refined logit is the solution to the following convex quadratic objective:
+
+$$\mathcal{L}(F_g) = \frac{1}{2}\sum_i \rho_i \|F_{g,i} - Z_{g,i}\|^2 + \frac{\tau}{2}\sum_{(i,j)} a_{ij}\|F_{g,i} - F_{g,j}\|^2,$$
+
+The first term pulls the result toward the initial prediction $Z_g$, while the second encourages convergence between neighbors; this is solved in a few steps using Conjugate Gradient on the small grid. The key variable is the text prototype similarity matrix $G$, which encodes co-occurrence/semantic relationships between categories, allowing similar classes like "cat" and "dog" to reinforce each other while keeping unrelated classes separated.
 
 ### Loss & Training
 
-PEARL requires no training whatsoever—all hyperparameters are fixed constants (temperature $\tau_s$, grid size $H_g \times W_g$, edge detection threshold $\kappa$, etc.) and the method is plug-and-play at inference time.
+PEARL requires no training—all hyperparameters are fixed constants (temperature $\tau_s$, grid size $H_g \times W_g$, edge detection $\kappa$, etc.), providing plug-and-play capability at inference time.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison of mIoU (%) on 8 standard OVSS benchmarks; all methods use CLIP ViT-B/16 without additional backbones:
+mIoU (%) comparison on 8 standard OVSS benchmarks using CLIP ViT-B/16 without additional backbones:
 
 | Dataset | PEARL | NACLIP | SFP | SCLIP | ClearCLIP |
 |--------|-------|--------|-----|-------|-----------|
@@ -86,22 +89,22 @@ Comparison of mIoU (%) on 8 standard OVSS benchmarks; all methods use CLIP ViT-B
 | PC59 | **38.6** | 35.2 | 36.0 | 34.1 | 35.9 |
 | City | **37.6** | 35.5 | 34.1 | 32.2 | 30.0 |
 | ADE | **19.4** | 17.4 | 18.1 | 16.1 | 16.7 |
-| **Average** | **43.2** | 39.4 | 39.6 | 38.2 | 38.1 |
+| **Mean** | **43.2** | 39.4 | 39.6 | 38.2 | 38.1 |
 
-Compared to methods using auxiliary backbones: PEARL (43.2) outperforms CASS+DINOv3 (42.2) without requiring any auxiliary model.
+Comparison with methods using auxiliary backbones: PEARL (43.2) outperforms CASS+DINOv3 (42.2) without any auxiliary models.
 
 ### Ablation Study
 
-| Configuration | Avg. mIoU | V21 | PC59 | City |
+| Configuration | Mean mIoU | V21 | PC59 | City |
 |------|----------|-----|------|------|
-| Vanilla CLIP (no PA, no TLP) | 13.8 | 18.6 | 11.2 | 6.7 |
-| PA only | 40.6 | 59.2 | 35.3 | 35.0 |
-| TLP only | 29.3 | 35.4 | 25.0 | 20.5 |
-| PA + TLP (full) | **43.2** | **64.1** | **38.6** | **37.6** |
+| Vanilla CLIP (w/o PA or TLP) | 13.8 | 18.6 | 11.2 | 6.7 |
+| PA Only | 40.6 | 59.2 | 35.3 | 35.0 |
+| TLP Only | 29.3 | 35.4 | 25.0 | 20.5 |
+| PA + TLP (Full) | **43.2** | **64.1** | **38.6** | **37.6** |
 
-Effect of applying TLP as a plug-and-play module to other methods:
+Effect of TLP as a plug-and-play module for other methods:
 
-| Method | Original Avg. | +TLP Avg. | Gain |
+| Method | Original Mean | +TLP Mean | Gain |
 |------|---------|----------|------|
 | SCLIP | 38.2 | 42.2 | +4.0 |
 | NACLIP | 39.4 | 42.3 | +2.9 |
@@ -109,36 +112,48 @@ Effect of applying TLP as a plug-and-play module to other methods:
 
 ### Key Findings
 
-- PA is the largest contributor, improving average mIoU from 13.8 to 40.6 (+26.8), demonstrating that correcting the geometry at the attention source is critical.
-- TLP is complementary to PA, adding a further 2.6 points on top of PA; TLP also delivers plug-and-play gains of 2–4 points when applied to other methods.
-- Even without any auxiliary backbone, PEARL surpasses methods that rely on DINOv2/DINOv3 (e.g., CASS at 42.2).
-- On pixel accuracy (pAcc), PEARL achieves the best result among auxiliary-backbone-free methods at 67.2%, even surpassing CASS+DINOv3 (67.0%).
+- PA is the primary contributor, increasing mean mIoU from 13.8 to 40.6 (+26.8), indicating that repairing geometry at the attention source is critical.
+- TLP complements PA, providing an additional 2.6 point increase; TLP also yields 2-4 point gains for other methods as a plug-and-play module.
+- Without any auxiliary backbones, PEARL surpasses methods using DINOv2/DINOv3 (e.g., CASS 42.2).
+- In pixel accuracy (pAcc), PEARL achieves 67.2%, the best among methods without auxiliary backbones, even surpassing CASS+DINOv3 (67.0%).
 
 ## Highlights & Insights
 
-- **Procrustes Alignment** is the central contribution of the paper: it directly applies an orthogonal rotation correction at the attention computation step with negligible cost (a single $d \times d$ SVD) and substantial impact (+26.8 mIoU). This paradigm—performing closed-form orthogonal alignment in feature space rather than learning parameters—deserves broader exploration in other vision-language dense prediction tasks.
-- **Text as more than a classifier**: PEARL elegantly repurposes the inter-prototype similarity matrix as a structural constraint for graph propagation. This insight is transferable to other dense prediction tasks—for example, using text category relationships to constrain NMS or post-processing in open-vocabulary detection.
-- The entire method is completely training-free, requires no external data, and uses no auxiliary models—*only two steps with fixed constants*—making the design remarkably compact.
+- **Procrustes Alignment** is the core trick: it applies orthogonal rotation correction directly during attention calculation at minimal cost (one $d \times d$ SVD) with significant impact (+26.8 mIoU). This approach—using closed-form orthogonal alignment in feature space rather than learning parameters—is worthy of extension to other vision-language dense prediction tasks.
+- **Text is more than a classifier**: PEARL cleverly uses the similarity matrix between text prototypes as a structural constraint for graph propagation. This insight is transferable to other tasks; for instance, in open-vocabulary detection, text category relationships could constrain NMS or post-processing.
+- The entire method is completely training-free, requires no external data, and uses no auxiliary models. The design is exceptionally elegant—only two steps with fixed constants.
 
 ## Limitations & Future Work
 
-- A performance gap remains on fine-grained *stuff* categories in datasets such as ADE20K (19.4 vs. ProxyCLIP 19.7); CLIP's generic prompts have limited discriminative power for rare stuff categories.
-- When semantically similar categories such as "tree" and "mountain" share low-frequency textures, the absence of depth or shape cues can cause confusion.
-- The grid size must be manually tuned per dataset (224×224 for Cityscapes, 80×80 for others); adaptive grid scale selection could further improve performance.
-- Procrustes alignment applies a single global orthogonal mapping, which may be insufficiently fine-grained for region-specific key-query mismatches—region-adaptive alignment could be more effective.
+- Gaps remain in fine-grained stuff categories on ADE20K (19.4 vs ProxyCLIP 19.7), as CLIP's general prompts have limited discriminative power for rare stuff classes.
+- Confusion occurs when semantically similar categories like "tree" and "mountain" have similar low-frequency textures, due to a lack of depth or shape cues.
+- Grid size requires manual setting per dataset (224×224 for City, 80×80 for others); adaptive grid scale selection could be a further optimization.
+- Procrustes Alignment is a global single orthogonal mapping; it may not be refined enough for key-query mismatches in different semantic regions—region-adaptive alignment might perform better.
 
 ## Related Work & Insights
 
-- **vs. NACLIP**: NACLIP enhances locality by modifying the attention neighborhood mask, but suffers from severe fragmentation. PEARL addresses the geometric root cause directly, achieving better results without imposing artificial locality constraints.
-- **vs. CASS (CVPR'25)**: CASS employs DINOv2/DINOv3 auxiliary backbones for visual context graph construction, resulting in a complex pipeline that requires additional models. PEARL surpasses CASS+DINOv3 on average mIoU using only a single CLIP model in a far more compact design.
-- **vs. ProxyCLIP**: ProxyCLIP also relies on DINOv2 for region grouping, performing better on ADE but weaker overall compared to PEARL.
+- **vs NACLIP**: NACLIP enhances locality by modifying attention proximity masks but suffers from fragmentation. PEARL repairs the geometric alignment at the root, performing better without imposing artificial locality constraints.
+- **vs CASS (CVPR'25)**: CASS uses DINOv2/DINOv3 auxiliary backbones for visual context graph construction, which is complex and requires extra models. PEARL outperforms CASS+DINOv3 in mean mIoU using only a single CLIP model.
+- **vs ProxyCLIP**: ProxyCLIP also relies on DINOv2 for region grouping; it performs better on ADE but overall weaker than PEARL.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Applying orthogonal Procrustes alignment to correct CLIP self-attention is a genuinely novel angle; text-aware Laplacian propagation is also a meaningful contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Eight benchmarks, comprehensive ablations, plug-and-play validation across methods, and supplementary pixel accuracy reporting—extremely complete.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ A clear logical chain from observation → insight → method; mathematical derivations are rigorous and conceptually well-explained.
-- **Value**: ⭐⭐⭐⭐ Advances training-free OVSS performance beyond methods with auxiliary backbones, with high practical applicability.
+- Novelty: ⭐⭐⭐⭐ Orthogonal Procrustes alignment applied to CLIP self-attention correction is a brand-new entry point; text-aware Laplacian propagation is also innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 benchmarks, comprehensive ablations, plug-and-play validation, and supplementary pixel accuracy reports.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain from observation → insight → method, with rigorous mathematical derivation and clear conceptual explanation.
+- Value: ⭐⭐⭐⭐ Pushes training-free OVSS performance beyond methods using auxiliary backbones, offering high practical application value.
+
+## Related Papers
+
+- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
+- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -147,10 +162,10 @@ Effect of applying TLP as a plug-and-play module to other methods:
 ## Related Papers
 
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
+- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
-- [\[AAAI 2026\] Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective](../../AAAI2026/segmentation/target_refocusing_via_attention_redistribution_for_open-vocabulary_semantic_segm.md)
-- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 
 </div>
 

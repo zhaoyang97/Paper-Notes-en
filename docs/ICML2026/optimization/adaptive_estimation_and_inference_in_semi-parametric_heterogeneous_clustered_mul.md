@@ -2,80 +2,95 @@
 title: >-
   [Paper Note] Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality
 description: >-
-  [ICML 2026][Optimization][Neyman Orthogonality] This paper bridges double machine learning with clustered multitask learning by proposing an adaptive framework that combines Neyman orthogonality with a data-driven pairwi…
+  [ICML 2026][Optimization & Theory][Paper Note] This paper bridges double machine learning with clustered multi-task learning, proposing an adaptive framework that combines Neyman orthogonality with data-driven pairwise fusion penalties. In a semi-parametric setting with heterogeneous (potentially infinite-dimensional) noise, it precisely recovers the latent task cl
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Neyman Orthogonality"
-  - "Adaptive Fusion"
-  - "Latent Clustering"
-  - "Heterogeneous Noise"
-  - "Asymptotic Normality"
+  - ICML 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: ba605aaab1744f4f
+content_hash: 4b64069011daf192
 ---
-
 # Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.01907](https://arxiv.org/abs/2605.01907)  
 **Code**: None  
-**Area**: Multitask Learning / Causal Inference / Semi-parametric Statistics  
-**Keywords**: Neyman Orthogonality, Adaptive Fusion, Latent Clustering, Heterogeneous Noise, Asymptotic Normality
+**Area**: Multi-task Learning / Causal Inference / Semi-parametric Statistics  
+**Keywords**: Neyman orthogonality, adaptive fusion, latent clustering, heterogeneous noise, asymptotic normality
 
 ## TL;DR
-This paper bridges double machine learning with clustered multitask learning by proposing an adaptive framework that combines Neyman orthogonality with a data-driven pairwise fusion penalty. In semi-parametric settings with heterogeneous (potentially infinite-dimensional) noise, it accurately recovers latent task clusters, achieves oracle-level aggregate convergence rates, and establishes asymptotic normality to enable effective statistical inference.
+This paper bridges double machine learning with clustered multi-task learning, proposing an adaptive framework that combines Neyman orthogonality with data-driven pairwise fusion penalties. In a semi-parametric setting with heterogeneous (potentially infinite-dimensional) noise, it precisely recovers the latent task clusters, achieves oracle-level performance at an aggregated rate, and establishes asymptotic normality for valid statistical inference.
 
 ## Background & Motivation
 
 **Background**
-Multitask learning (MTL) improves statistical efficiency through shared structures. However, in reality, tasks are often only partially related: they may share target parameters, but auxiliary features, data distributions, and confounding factors vary significantly. Clustered multitask learning attempts to discover latent groupings among tasks. Recent advances in double machine learning (DML) have made it possible to estimate low-dimensional target parameters under high-dimensional or non-parametric noise.
+Multi-task learning (MTL) improves statistical efficiency by sharing structures, but in reality, tasks are often only partially related: they may share target parameters, while auxiliary features, data distributions, and confounders vary significantly. Clustered multi-task learning attempts to discover latent groupings among tasks. Recent advances in Double Machine Learning (DML) have made it possible to estimate low-dimensional target parameters under high-dimensional or non-parametric noise.
 
 **Limitations of Prior Work**
-1. **Existing MTL assumptions are too strong**: Most methods assume aligned feature spaces or isomorphic task structures, which are insufficient for handling heterogeneous features and distribution shifts.
-2. **DML is a single-task procedure**: DML itself does not exploit cross-task similarities; variance can be high when the sample size for an individual task is limited.
-3. **Challenge of clustered learning with infinite-dimensional noise**: Existing clustered MTL methods (fusion penalties, centroid regularization) mostly assume parametric models and cannot handle task-specific complex high-dimensional noise.
+1. **Existing MTL assumptions are too strong**: Most methods assume aligned feature spaces or isomorphic task structures, performing poorly under heterogeneous features and distribution shifts.
+2. **DML as a single-task procedure**: DML itself does not exploit cross-task similarity; variance can be high when the sample size for an individual task is limited.
+3. **The challenge of clustered learning with infinite-dimensional noise**: Existing clustered MTL methods (fusion penalties, centroid regularization) mostly assume parametric models and cannot handle task-specific complex high-dimensional noise.
 
 **Key Challenge**
-There is a need to share information across tasks to reduce variance while maintaining the flexibility of localized noise estimation to preserve inference validity—two goals that seem to conflict.
+There is a need to share cross-task information to reduce variance while retaining task-local flexibility for noise estimation to maintain inference validity—two goals that seem to conflict.
 
 **Goal**
-Design a method that simultaneously: (i) discovers and utilizes the shared structure of target parameters, (ii) remains robust to heterogeneous and potentially infinite-dimensional noise, and (iii) establishes precise inference guarantees.
+Design a method that simultaneously: (i) discovers and utilizes shared target parameter structures, (ii) remains robust to heterogeneous and potentially infinite-dimensional noise, and (iii) establishes precise inference guarantees.
 
 **Key Insight**
-Starting from a first-stage task-level initial estimate (used for similarity quantification), the second stage uses Neyman orthogonality to protect the inference. The fusion penalty acts only on the target parameters (across tasks), while the noise parameters remain task-local (avoiding cross-task contamination).
+Starting from a first-stage task-level initial estimate (used for similarity quantification), the second stage uses Neyman orthogonality to protect inference. Fusion penalties are applied only to the target parameters (cross-task), while nuisance parameters remain task-local (no cross-task contamination).
 
 **Core Idea**
-Two-stage adaptive fusion: Stage 1 uses an arbitrary (potentially non-orthogonal) initial loss to obtain coarse consistent estimates and compute distances between task pairs. Stage 2 strengthens similar tasks through an adaptive pairwise penalty $\lambda_{jj'}=\min(c_w\|\hat\theta_j^{\text{init}}-\hat\theta_{j'}^{\text{init}}\|_2^{-\gamma},\text{const})$, combined with an orthogonal loss and sample splitting. This allows the estimator to achieve Continuous Asymptotic Normality (CAN) at the $\sqrt{N_k}$ (aggregated sample size) rate even after adaptive clustering.
+Two-stage adaptive fusion: Stage 1 uses an arbitrary (potentially non-orthogonal) initial loss to obtain coarse consistent estimates and compute task-pair distances; Stage 2 strengthens similar tasks via an adaptive pairwise penalty $\lambda_{jj'}=\min(c_w\|\hat\theta_j^{\text{init}}-\hat\theta_{j'}^{\text{init}}\|_2^{-\gamma},\text{const})$. Combining the orthogonal loss with sample splitting, the method achieves $\sqrt{N_k}$ (aggregated sample size) CAN (Consistent and Asymptotically Normal) properties even after adaptive clustering.
 
 ## Method
 
 ### Overall Architecture
-Given $m$ tasks, task $j$ has a target parameter $\theta_j^*\in\Theta\subseteq\mathbb R^d$ and a nuisance (noise) parameter $\eta_j^*\in\mathcal H_j$. It is assumed that $\{\theta_j^*\}$ admits a latent clustering $\{S_k\}_{k=1}^K$ where $\theta_j^*=\beta_k^*$ for tasks within the same cluster, though $\eta_j^*$ can differ significantly in terms of dimensionality or smoothness.
+Consider $m$ tasks, where task $j$ has target parameters $\theta_j^*\in\Theta\subseteq\mathbb R^d$ and nuisance parameters $\eta_j^*\in\mathcal H_j$. It is assumed that $\{\theta_j^*\}$ admits a latent clustering $\{S_k\}_{k=1}^K$, such that $\theta_j^*=\beta_k^*$ within the same cluster, though $\eta_j^*$ may vary greatly in dimension or smoothness.
 
-**Two-stage Estimator**:
-- **Stage 1 (Structure Discovery)**: For each task $j$, an initial $\hat\theta_j^{\text{init}}$ is obtained using a potentially non-orthogonal loss $\ell_j^{\text{init}}$. These initial estimates are used only to diagnose task similarity and do not require optimal rates.
-- **Stage 2 (Clustered Fusion)**: Sample splitting is applied $\mathcal D_j=\mathcal D_{j,1}\cup\mathcal D_{j,2}$. Nuisance parameters $\hat\eta_j$ are estimated on $\mathcal D_{j,1}$. On $\mathcal D_{j,2}$, the multitask objective is solved: $\hat{\boldsymbol\theta}=\arg\min\sum_j f_j^\dagger(\theta_j,\hat\eta_j)+\sum_{j<j'}\lambda_{jj'}\|\theta_j-\theta_{j'}\|_2$, where $f_j^\dagger$ is the orthogonal loss. The penalty $\lambda_{jj'}$ takes a minimum value $\epsilon_n$ (strong fusion) if the initial distance is $<\tau$, and otherwise takes the weight $c_w\|\cdot\|^{-\gamma}$.
+**Two-Stage Estimator**:
+- **Stage 1 (Structure Discovery)**: Use a potentially non-orthogonal loss $\ell_j^{\text{init}}$ for each task $j$ to obtain an initial $\hat\theta_j^{\text{init}}$. These initial estimates are only used to diagnose task similarity and do not require optimal rates.
+- **Stage 2 (Clustering Fusion)**: Implement sample splitting $\mathcal D_j=\mathcal D_{j,1}\cup\mathcal D_{j,2}$. Estimate the noise $\hat\eta_j$ on $\mathcal D_{j,1}$, and solve the multi-task objective on $\mathcal D_{j,2}$: $\hat{\boldsymbol\theta}=\arg\min\sum_j f_j^\dagger(\theta_j, \hat\eta_j)+\sum_{j<j'}\lambda_{jj'}\|\theta_j-\theta_{j'}\|_2$, where $f_j^\dagger$ is the orthogonal loss. The penalty $\lambda_{jj'}$ takes a minimum value $\epsilon_n$ (strong fusion) if the initial distance is $<\tau$, and takes weight $c_w\|\cdot\|^{-\gamma}$ otherwise.
+
+The entire pipeline flows as follows: data from all tasks enters Stage 1 to calculate initial estimates and task-pair distances, which are fed into an adaptive fusion penalty to determine task groupings; Stage 2 performs sample splitting for each task, estimating noise in one fold and solving for target parameters using the orthogonal loss and fusion penalty in the other fold, ultimately providing both cluster recovery and valid inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["m Tasks<br/>Target θ* (Latent Clusters) + Heterogeneous Noise η*"]
+
+    subgraph S1["Stage 1: Structure Discovery (Two-Stage Decoupled Design)"]
+        direction TB
+        B["Non-orthogonal Initial Loss<br/>→ Coarse Consistent θ̂(init)"] --> C["Compute Pairwise Distances<br/>‖θ̂_j(init) − θ̂_j'(init)‖"]
+    end
+
+    A --> S1
+    C --> D["Adaptive Pairwise Fusion Penalty λ_jj'<br/>Distance < τ: Strong Fusion ε_n; Else: Weighted by c_w·dist^−γ"]
+
+    subgraph S2["Stage 2: Clustered Fusion + Inference"]
+        direction TB
+        E["Sample Splitting D_j → Two Folds"] --> F["Fold 1: Estimate Noise η̂_j"]
+        E --> G["Fold 2: Solve Neyman Orthogonal Loss f†<br/>+ Fusion Penalty Σλ_jj'‖θ_j−θ_j'‖"]
+        F --> G
+    end
+
+    A --> S2
+    D --> S2
+    S2 --> H["Precise Cluster Recovery + √N_k Asymptotic Normality (CAN)"]
+```
 
 ### Key Designs
 
-1. **Intra-task Neyman Orthogonality + Sample Splitting**:
-    - **Function**: Protects target parameter estimation from noise estimation errors, even when noise is high-dimensional or non-parametric.
-    - **Mechanism**: Designs $\ell_j^\dagger$ such that the Gâteaux derivative $D_\eta\nabla_\theta\mathbb E[\ell_j^\dagger]|_{(\theta_j^*,\eta_j^*)}[h]=0$ holds for all $h$ in the noise realization set. The impact of the first-order noise error $\|\hat\eta-\eta^*\|=O_p(1/\sqrt n)$ on the $\theta$ estimation is eliminated. Combined with sample splitting (using different folds for noise and target), this prevents overfitting.
-    - **Design Motivation**: Multitask fusion performs cross-task mixing at the target level, but noise remains task-local to avoid propagating incorrect cross-task biases.
+**1. Within-Task Neyman Orthogonality + Sample Splitting: Preventing Noise Error Contamination**
+While multi-task fusion mixes information at the target level, the noise $\eta_j$ is high-dimensional or infinite-dimensional. If its estimation error propagates through fusion to the target parameters, inference fails. The authors design the loss $\ell_j^\dagger$ to be Neyman orthogonal to the noise, meaning the Gâteaux derivative $D_\eta\nabla_\theta\mathbb{E}[\ell_j^\dagger]|_{(\theta_j^*,\eta_j^*)}[h]=0$ holds for all directions $h$. Thus, the first-order noise error $\|\hat\eta-\eta^*\|=O_p(1/\sqrt n)$ influence on the $\theta$ estimate is eliminated. Combined with sample splitting, this prevents mutual over-fitting between noise and target parameters. Crucially, fusion occurs only across tasks for targets, while noise remains task-local.
 
-2. **Adaptive Pairwise Fusion Penalty**:
-    - **Function**: Infers the probability that task pairs belong to the same cluster based on initial estimation distances and dynamically adjusts fusion strength accordingly.
-    - **Mechanism**: The weight is $w_{jj'}=c_w\|\hat\theta_j^{\text{init}}-\hat\theta_{j'}^{\text{init}}\|_2^{-\gamma}$; a larger distance leads to a smaller weight and weaker fusion. For pairs with distance $<\tau$, a minimum penalty $\epsilon_n$ (strong fusion) is applied. This two-layer structure achieves exact cluster recovery (Theorem 3.5) under a strong separation assumption.
-    - **Design Motivation**: Compared to the discreteness of ARMUL's hard clustering, adaptive weights provide a smooth transition and are more robust to hyperparameters and separation conditions; compared to fixed weights (MeTaG), adaptive weights automatically follow the task similarity landscape.
+**2. Adaptive Pairwise Fusion Penalties: Learning Cluster Probabilities from Initial Distances**
+Fixed weights (e.g., MeTaG) do not know which tasks should be joined, while hard clustering (e.g., ARMUL) requires pre-specifying $K$ and is not robust to discrete switching. This work uses first-stage initial distances to define weights $w_{jj'}=c_w\|\hat\theta_j^{\text{init}}-\hat\theta_{j'}^{\text{init}}\|_2^{-\gamma}$; as distance increases, weight decreases, weakening fusion. A threshold $\tau$ is added: pairs with distance $<\tau$ receive a minimum penalty $\epsilon_n$ (strong fusion), while others use $w_{jj'}$. This two-layer structure achieves exact cluster recovery (Theorem 3.5) under strong separation and is more robust due to soft transitions.
 
-3. **Two-stage Separation Design**:
-    - **Function**: Allows "cluster discovery" and "precise inference" to use the tools best suited for each goal.
-    - **Mechanism**: The initial stage does not require optimal rates, only consistency—allowing for the selection of more stable (lower variance) estimators even if they have slight bias in the presence of noise. This results in initial estimates that are more stable under finite samples for computing $w_{jj'}$. The second stage focuses on refined estimation and inference.
-    - **Design Motivation**: Decoupling the "discovery" and "inference" objectives allows each to use the most appropriate tool without forcing a single framework to accommodate both perfectly.
+**3. Two-Stage Decoupled Design: Using the Best Tools for Discovery vs. Inference**
+Integrating discovery and inference into a single framework often leads to compromises. The authors decouple them: Stage 1 solely calculates task similarity and requires consistency rather than optimal rates. This allows for estimation that may be biased but is more stable in finite samples, leading to more reliable distances. Stage 2 then applies orthogonal loss and sample splitting for refined estimation and inference.
 
 ### Loss & Training
-The second-stage optimization regarding $\theta$ is a convex problem, solvable via accelerated gradient or proximal methods. Orthogonality is naturally achieved through loss design on $\mathcal D_{j,2}$ using sample splitting. The paper proves that results hold across a wide range of $(c_w,\gamma,\tau,\epsilon_n)$, providing a robust guide for hyperparameter selection.
+Optimization for $\theta$ in Stage 2 is a convex problem solvable via accelerated gradient or proximal methods. Orthogonality is naturally implemented through the loss design on fold $\mathcal D_{j,2}$ after sample splitting. The paper proves that the results hold over a wide range of $(c_w,\gamma,\tau,\epsilon_n)$, providing robust hyperparameter guidelines.
 
 ## Key Experimental Results
 
@@ -90,54 +105,53 @@ The second-stage optimization regarding $\theta$ is a convex problem, solvable v
 | ATE | $\delta=2/3$ | **0.15** | **0.99** | -70% | 0% | -85% |
 | DID | $\delta=2/3$ | **0.19** | **0.98** | -68% | +1% | -83% |
 
-ARMUL performs slightly better when K is correct, but its performance drops significantly when K is incorrect; Ours maintains optimality regardless of whether K is known.
+ARMUL performs slightly better when $K$ is correct but degrades significantly when $K$ is wrong; the proposed method maintains optimality regardless of $K$.
 
 ### Ablation Study
 
 | Component | Change | RMSE Gain | ARI Drop | Description |
 |------|------|---------|---------|------|
 | Full Method | - | - | - | Baseline |
-| Remove Orthogonality | Non-orthogonal loss in Stage 2 | +45% | Unchanged | No bias but increased variance |
+| No Orthogonality | Non-orthogonal loss in Stage 2 | +45% | No change | Increased variance despite no bias |
 | Fixed Penalty | $\lambda_{jj'}=0.01$ for all pairs | +28% | +0.15 | No adaptation, under-fusion |
-| No Threshold | Single-layer $\lambda=w_{jj'}$ | +18% | +0.08 | Improper fusion strength |
-| No Sample Splitting | Shared fold for noise and target | +32% | Unchanged | Overfitting, unreliable inference |
+| Single Layer | $\lambda=w_{jj'}$ without threshold | +18% | +0.08 | Improper fusion intensity |
+| No Splitting | Shared fold for noise & target | +32% | No change | Over-fitting, unreliable inference |
 
 ### Key Findings
-- **Accurate Cluster Recovery**: Even when cluster separation is weak ($\delta=1/3$), ARI≈0.98, whereas ARMUL requires knowing the exact K to achieve this.
-- **Importance of Adaptive Weights**: Fixed weights lead to a +28% RMSE, confirming that personalized fusion strength for task pairs is crucial.
-- **Necessity of Orthogonality**: Removing orthogonality increases RMSE by 45%; although it doesn't affect clustering, the confidence interval coverage fails.
-- **Sample Splitting Protects Inference**: While it has less impact on point estimates, inference (CI coverage) fails significantly without splitting.
-- **Hyperparameter Robustness**: Experiments across multiple sets of $(\gamma,\tau)$ show results are insensitive to the parameter range, supporting the "broad conditions" theory.
+- **Precise Cluster Recovery**: High ARI $(\approx 0.98)$ even with weak separation $(\delta=1/3)$, whereas ARMUL requires an exact $K$.
+- **Criticality of Adaptive Weights**: Fixed weights increase RMSE by 28%, confirming the importance of personalized fusion intensity.
+- **Necessity of Orthogonality**: RMSE increases by 45% without it; clustering is unaffected, but confidence interval coverage fails.
+- **Sample Splitting for Inference**: While point estimation remains stable, inference (CI coverage) fails significantly without splitting.
+- **Hyperparameter Robustness**: Experiments across various $(\gamma,\tau)$ ranges show results are insensitive, supporting the "broad conditions" theory.
 
 ### Real-world Application
 In an analysis of electricity price elasticity across 50 US states + DC, the method discovered 3 clusters:
-- Cluster 0 (VA): High elasticity -1.138, cooling-intensive and highly adjustable.
+- Cluster 0 (VA): High elasticity -1.138, cooling-intensive with high adjustability.
 - Cluster 1 (KY/AL/OK/TN): Moderate elasticity -0.788, warm southern states.
 - Cluster 2 (Remaining 46 states): Low elasticity -0.221.
-
-The clusters align with climate and geography, validating the method's effectiveness in real-world heterogeneous multitask settings.
+The clusters align with climate and geography, validating effectiveness in real heterogeneous multi-task scenarios.
 
 ## Highlights & Insights
-- **Role of Neyman Orthogonality in MTL**: Combining DML with clustered fusion ensures that inference validity is maintained even with cross-task fusion.
-- **Subtlety of Adaptive Weights**: Compared to hard clustering, soft adaptive weights learn from data and are significantly more robust to hyperparameters.
-- **Design Philosophy of Two-stage Separation**: Separating "cluster discovery" from "precise inference" allows each stage to use optimal tools, avoiding the rigidity of a single framework.
-- **Integration with Economic Applications**: The discovery of regional electricity elasticity both validates the method and provides policy-relevant insights.
+- **Role of Neyman Orthogonality in MTL**: Combining DML with cluster fusion ensures inference validity even with cross-task fusion.
+- **Elegance of Adaptive Weights**: Learning soft adaptive weights from data is significantly more robust than hard clustering or fixed weights.
+- **Philosophy of Two-Stage Decoupling**: Separating discovery from inference avoids the rigidity of a single framework and allows for optimal tool selection in each stage.
+- **Integration with Economic Applications**: The discovery of regional electricity elasticity validates the method and provides policy-relevant insights.
 
 ## Limitations & Future Work
-- **Limited to Low-dimensional Target Parameters**: Extensions for high-dimensional targets (where dimension grows with sample size) have not been considered.
-- **Cluster Separation Assumption**: A minimum separation $\delta$ between clusters is still required; the method is not applicable to entirely continuous task spaces.
-- **Practical Challenges of Noise Estimation**: The theory requires a $O_p(n_j^{-1/4})$ rate, which is not easily achieved for complex models.
+- **Limited to Low-dimensional Targets**: Extension to high-dimensional targets (where dimension grows with sample size) is not considered.
+- **Cluster Separation Assumption**: Still requires a minimum separation $\delta$ between clusters; not applicable to fully continuous task spaces.
+- **Practical Challenges of Noise Estimation**: Theory requires $O_p(n_j^{-1/4})$ rates, which can be difficult to achieve for very complex models.
 
 ## Related Work & Insights
-- **vs ARMUL**: Both perform clustered MTL, but ARMUL requires prior knowledge of K; Ours recovers it automatically and is more robust to hyperparameters.
-- **vs Single-task DML**: Extends the DML framework to multitask clustering while retaining the advantages of inference validity.
-- **vs Classic Clustered Learning (Jacob et al.)**: Those methods are mostly limited to parametric models; this work handles heterogeneous semi-parametric noise, representing a significant extension.
+- **vs ARMUL**: Both perform clustered MTL, but ARMUL requires $K$ to be known; this method recovers it automatically and is more robust to hyperparameters.
+- **vs Single-task DML**: Extends the DML framework to multi-task clustering while retaining the advantages of inference validity.
+- **vs Classical Clustered Learning (Jacob et al.)**: Prior methods are mostly limited to parametric models; this work significantly extends the scope to heterogeneous semi-parametric noise.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of Neyman orthogonality and adaptive clustered fusion is novel, as is the two-stage framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three types of semi-parametric models, multiple separation levels, thorough ablation, and real-world application.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical rigor, clear theorem presentation, and intuitive main results.
-- Value: ⭐⭐⭐⭐ Directly applicable in causal inference and economics; the theoretical framework has a profound impact on the field of multitask inference.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of Neyman orthogonality with adaptive cluster fusion is novel, as is the two-stage framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three types of semi-parametric models, multiple separation levels, comprehensive ablation, and real-world application.
+- Writing Quality: ⭐⭐⭐⭐ Mathematically rigorous, clear theorem statements, and intuitive main results.
+- Value: ⭐⭐⭐⭐ Directly applicable in causal inference and economics, with a theoretical framework that impacts the multi-task inference field.
 
 <!-- RELATED:START -->
 

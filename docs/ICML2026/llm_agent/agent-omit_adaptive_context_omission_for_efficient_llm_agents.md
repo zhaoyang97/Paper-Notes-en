@@ -2,135 +2,137 @@
 title: >-
   [Paper Note] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Context Management] Quantify "which turns of thought/observation can be omitted" via Monte-Carlo rollouts, then train an 8B agent using cold-start SFT and dual-sampling omit-aware GRPO to adaptivel…
+  [ICML 2026][LLM Agent][GRPO] By quantifying which turn-level thoughts and observations are omittable via Monte-Carlo rollouts, an 8B agent is trained using cold-start SFT and dual-sampling omit-aware GRPO. This agent adaptively skips redundant thoughts and observations, significantly reducing token usage across five benchmarks while maintaining ac
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Context Management"
-  - "Thought Omission"
-  - "Observation Omission"
-  - "GRPO"
-  - "Dual Sampling"
+  - ICML 2026
+  - LLM Agent
+  - GRPO
 date: 2026-05-08
-content_hash: 505ecd1e88061445
+content_hash: 393309d7c768b913
 ---
-
 # Agent-Omit: Adaptive Context Omission for Efficient LLM Agents
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.04284](https://arxiv.org/abs/2602.04284)  
 **Code**: https://github.com/usail-hkust/Agent-Omit (Available)  
 **Area**: LLM Agent / Efficient Inference / Agentic Reinforcement Learning  
-**Keywords**: Context Management, Thought Omission, Observation Omission, GRPO, Dual Sampling  
+**Keywords**: Context Management, Thought Omission, Observation Omission, GRPO, Dual Sampling
 
 ## TL;DR
-Quantify "which turns of thought/observation can be omitted" via Monte-Carlo rollouts, then train an 8B agent using cold-start SFT and dual-sampling omit-aware GRPO to adaptively skip redundant thoughts and observations. Across five benchmarks, token usage is significantly reduced while maintaining accuracy parity with seven frontier models.
+By quantifying which turn-level thoughts and observations are omittable via Monte-Carlo rollouts, an 8B agent is trained using cold-start SFT and dual-sampling omit-aware GRPO. This agent adaptively skips redundant thoughts and observations, significantly reducing token usage across five benchmarks while maintaining accuracy comparable to seven state-of-the-art frontier models.
 
 ## Background & Motivation
 
-**Background**: LLM agents solve tasks through cycles of thought→action→observation (ReAct / agentic RL). Agents like Kimi-K2 and DeepSeek-V3.2 have demonstrated strong capabilities in deep search, web shopping, embodied decision-making, and scientific discovery. However, multi-turn interactions lead to ever-expanding context, causing token costs to skyrocket.
+**Background**: LLM agents solve tasks through multi-round thought $\rightarrow$ action $\rightarrow$ observation cycles (ReAct / agentic RL). Models like Kimi-K2 and DeepSeek-V3.2 have demonstrated strong capabilities in deep search, web shopping, embodied decision-making, and scientific discovery. However, multi-round interactions lead to increasingly long contexts and soaring token costs.
 
-**Limitations of Prior Work**: Existing efficiency methods fall into three categories: compressing only thoughts (ToolLight, DEPO), pruning only observations (Observation-Mask, DeepMiner), or summarizing both (MEM-Agent, ReSum). These methods treat the entire trajectory "indiscriminately," ignoring the vast differences in contribution across different turns.
+**Limitations of Prior Work**: Existing efficiency methods fall into three categories: compressing thoughts only (ToolLight, DEPO), pruning observations only (Observation-Mask, DeepMiner), or summarizing both (MEM-Agent, ReSum). These methods compress entire trajectories uniformly, ignoring the massive differences in contribution across different turns.
 
-**Key Challenge**: The "necessity" of thought and observation is turn-dependent. Early high-level planning often determines subsequent rounds of thinking; by the final round of summarization, most early observations are outdated. One-size-fits-all compression either deletes essential information (impacting accuracy) or retains useless tokens (impacting efficiency).
+**Key Challenge**: The necessity of thoughts and observations is turn-dependent. Early high-level planning often determines multiple subsequent rounds, while most early observations become obsolete during final summarization. One-size-fits-all compression either erroneously deletes essential information (impacting accuracy) or retains useless tokens (impacting efficiency).
 
-**Goal**: Two steps: (1) Quantitatively prove the feasibility of "selective turn-based omission" via controlled interventions; (2) Train a policy that adaptively decides "whether to write this round's thought and which previous observations to discard" during interaction.
+**Goal**: Two steps: (1) Quantitatively prove the feasibility of "turn-selective omission" through controlled intervention; (2) Train a policy capable of adaptively deciding which thoughts to skip and which historical observations to discard during interaction.
 
-**Key Insight**: Model the omission behavior itself as part of the action space—outputting an empty string for thoughts and explicitly deleting observations via special tokens like `<omit_tool_response_N>`. This allows omission to be learned naturally within SFT and RL frameworks.
+**Key Insight**: Model the omission behavior itself as part of the action space—thought outputs an empty string, and observations are explicitly deleted via special tokens like `<omit_tool_response_N>`. This allows omission to be learned naturally within SFT and RL frameworks.
 
-**Core Idea**: Enable agents to actively output "thought omission" and "observation omission" actions. Train them using an omit-aware GRPO that couples "task reward" with "token savings" (with omission rewards reset to zero upon task failure), supported by dual sampling to solve the attribution challenge where "omitted information is no longer visible."
+**Core Idea**: Enable the agent to actively output "thought omission" and "observation omission" actions. Train using an omit-aware GRPO that couples "task reward" with "token savings" (while zeroing omission rewards if the task fails), supplemented by dual sampling to solve the credit assignment problem where omitted information is no longer visible.
 
 ## Method
 
 ### Overall Architecture
-Two-stage optimization: (a) Agent Omission Behavior Synthesis (Cold-start SFT) — Identify "omittable" thought/observation turns in trajectories via Monte-Carlo rollouts. Construct single-turn and multi-turn synthetic data to teach the base model both "omission formatting" and "continued reasoning under omitted context." (b) Omit-Aware Agentic RL — Introduce dual sampling (sampling full trajectories alongside partial trajectories for each omission point) and omit-aware rewards (task reward + omit reward), optimized via GRPO. Theoretically, the deviation of the learned omission strategy from the optimal strategy is bounded by the KL divergence.
+The objective is to address the token accumulation in thought $\rightarrow$ action $\rightarrow$ observation cycles where turn-level necessity varies. Agent-Omit elevates "what to save" from external post-processing to a first-order action. The training consists of two phases: cold-start SFT to initiate the omission format using Monte-Carlo rollout labels, followed by omit-aware GRPO with dual sampling and dual rewards to enable adaptive decision-making during interaction.
+
+```mermaid
+graph TD
+    A["Multi-round Agent Trajectory<br/>thought→action→observation"] --> B["Omission as Actions<br/>Empty think + omit_tool_response_N tokens"]
+    B --> C["Cold-start Data Synthesis + SFT<br/>Rollout labeling | Single-turn format + Multi-turn continuation"]
+    subgraph RL["Omit-aware Agentic RL"]
+        direction TB
+        D["Dual Sampling<br/>Full trajectory y + Partial trajectory y′ for credit assignment"] --> E["Dual Reward<br/>R_task + μ·R_omit | R_omit=0 if task fails"]
+        E --> F["GRPO Update + KL Constraint"]
+    end
+    C --> RL
+    RL --> G["Agent-Omit-8B<br/>Adaptive Omission in Interaction"]
+```
 
 ### Key Designs
 
-1.  **Quantitative Analysis + Explicit Omission Actions**:
-    - **Function**: Provide quantitative proof that "selective omission significantly reduces tokens without performance loss," then design omission as a token pattern for SFT/RL learning.
-    - **Mechanism**: On WebShop + Qwen3-8B, "excavate" thought $\tau_t$ or observation $o_t$ at turn $t$ and let the agent complete the task, tracking tokens and Pass@1. Results: Thought accounts for 45.1%, observation 52.2%, and action only 2.7%. Middle-turn thoughts are omittable, final-round observations are not, and first-round thoughts are essential. Large "gray zones" exist where accuracy remains stable while tokens decrease. Action-wise, thought omission uses empty `<think> </think>`; observation omission uses `<omit_tool_response_N_...>` to explicitly mask historical observation sets $\Gamma \subseteq \{1,\dots,t-1\}$.
-    - **Design Motivation**: Upgrading heuristics (time-window based deletion) to a learned strategy requires verifying that the "omission space is non-empty" and providing a clear linguistic interface.
+**1. Upgrading Omission from Heuristics to Explicit Actions**
 
-2.  **Omission Behavior Synthesis (Cold-start SFT)**:
-    - **Function**: Transform a general LLM into an omission-aware agent, providing an initial policy to prevent RL exploration catastrophe.
-    - **Mechanism**: Perform forward rollouts on training trajectories to identify "omittable turns"—marked if omission reduces tokens without dropping accuracy. Construct layered data: (i) Single-turn omission, teaching the agent to output empty thoughts or omit commands via system prompts; (ii) Multi-turn omission, replacing omittable turns with omission symbols to force the agent to maintain reasoning continuity despite historical gaps. Full-parameter SFT is performed with loss: $\mathcal{L} = -\mathbb{E}_{(x,y)\sim \mathcal{D}_{single}\cup\mathcal{D}_{multi}}[\log \mathcal{P}_{\pi_\theta}(y\mid x)]$, applying a loss mask to environmental observations.
-    - **Design Motivation**: Direct RL fails if the agent cannot output omission symbols. SFT is the most cost-effective path to instilling the "omission is a valid action" concept.
+The motivation is that existing methods treat the entire trajectory uniformly, whereas necessity is turn-dependent. Controlled interventions on WebShop with Qwen3-8B—systematically removing thought $\tau_t$ or observation $o_t$ and observing completion—revealed that thoughts account for 45.1% and observations 52.2% of tokens, while actions only take 2.7%. Significant "grey areas" exist in intermediate rounds where accuracy remains stable despite token reduction. Omission is given a tokenizer-native interface: thought omission outputs empty `<think> </think>`, and observation omission utilizes `<omit_tool_response_N_...>` to mask historical observation sets $\Gamma \subseteq \{1,\dots,t-1\}$.
 
-3.  **Omit-aware Agentic RL: Dual Sampling + Dual Rewards + GRPO**:
-    - **Function**: Learn the "omission strategy" as a first-order decision goal while ensuring task accuracy is not sacrificed to reward hacking.
-    - **Mechanism**: Dual sampling—For each input, sample a full trajectory $y$ (complete episode with omission actions) and derive partial trajectories $y'$ for each omission turn (context before omission + the thought/action of that turn). Each $y$ spawns $p(y)$ partial trajectories. This allows the agent to "see context before omission" in $y'$ to learn attribution for omission decisions. For rewards: task reward $R_{task}$ is given to both full and partial trajectories; omit reward $R_{omit}=\mathrm{Tok}(\tau_{omitted})/\mathrm{Tok}(y) + \mathrm{Tok}(o_{omitted})/\mathrm{Tok}(y)$ is given only to full trajectories and is forced to zero if $R_{task}=0$. Combined reward: $r(\cdot)=(1-\mu)R_{task}+\mu R_{omit}$ ($\mu=0.2$), $r'(\cdot)=R_{task}$. Optimization via GRPO with KL constraint $-\beta \mathbb{D}_{KL}[\pi_\theta \| \pi_{ref}]$.
-    - **Design Motivation**: Credit assignment for omission requires "counterfactual non-omitted context," which standard agentic RL lacks. Dual sampling fills this gap. Task-conditioned omit rewards are more robust than simple weighted sums.
+**2. Cold-start Data Synthesis: Rollout Labeling and Multi-stage SFT**
+
+RL requires an initial ability to output omission symbols to sample positive instances. The authors perform forward rollouts on training trajectories to identify omittable turns—those where removal reduces tokens without decreasing accuracy. Two data layers are created: Single-Turn omission uses system prompts to teach the empty thought and omission commands (opening the format); Multi-Turn omission replaces all omittable segments in a trajectory with omission tokens, forcing the agent to maintain reasoning continuity despite missing context. Full-parameter SFT is conducted with loss: $\mathcal{L} = -\mathbb{E}_{(x,y)\sim \mathcal{D}_{single}\cup\mathcal{D}_{multi}}[\log \mathcal{P}_{\pi_\theta}(y\mid x)]$, with loss masking applied to environment observations.
+
+**3. Omit-aware Agentic RL: Dual Sampling and Coupled Rewards**
+
+Learning omission as a first-order decision presents a deadlock: once information is omitted, the agent cannot see it again, complicating credit assignment. Dual sampling addresses this: for each input, a full trajectory $y$ (executing omission) and several partial trajectories $y'$ (context before omission + current thought/action) are sampled. This allows the agent to observe counterfactual context to learn attribution. Rewards are split: task reward $R_{task}$ is given to both $y$ and $y'$; omit reward $R_{omit}=\mathrm{Tok}(\tau_{omitted})/\mathrm{Tok}(y) + \mathrm{Tok}(o_{omitted})/\mathrm{Tok}(y)$ is given only to the full trajectory and is forced to zero if $R_{task}=0$. This prevents "omission for the sake of omission" (collapse). The combined reward is $r(\cdot)=(1-\mu)R_{task}+\mu R_{omit}$ ($\mu=0.2$), $r'(\cdot)=R_{task}$, optimized via GRPO with KL constraint $-\beta \mathbb{D}_{KL}[\pi_\theta \| \pi_{ref}]$.
 
 ### Loss & Training
-SFT stage: Standard LM loss + environmental observation loss mask. 
-RL stage objective:
+The SFT phase uses standard LM loss with observation masking. The RL optimization objective is:
 $$\max_{\pi_\theta} \mathbb{E}_{x,\{y_i,\{y'_{i,j}\}\}}\big[\tfrac{1}{n}\sum_i \big(r(x,y_i) + \tfrac{1}{p(y_i)}\sum_j r'(x,y'_{i,j})\big)\big] - \beta \mathbb{D}_{KL}[\pi_\theta \| \pi_{ref}]$$
-Base model: Qwen3-8B. Theoretically, under the semantic Lipschitz assumption, the performance/efficiency deviation is bounded by $\delta + K' \cdot \mathrm{KL}(\pi^\ast,\pi_\theta)$, showing monotonic approximation to the optimal omission strategy as KL decreases.
+The base model is Qwen3-8B. Theoretically, under the semantic Lipschitz assumption, the bias in performance/efficiency is bounded by $\delta + K' \cdot \mathrm{KL}(\pi^\ast, \pi_\theta)$, meaning the policy can monotonically approach the optimal omission frontier as KL decreases.
 
 ## Key Experimental Results
 
 ### Main Results
-Compared against five agent environments (DeepSearch, WebShop, TextCraft, BabyAI, SciWorld), seven frontier LLMs (DeepSeek-R1-0528, DeepSeek-V3.2, o3/o4-mini, Qwen3-235B-A22B, Qwen3-Next-80B-A3B, Qwen3-32B), and seven efficient agent methods.
+Evaluated across five agent environments (DeepSearch, WebShop, TextCraft, BabyAI, SciWorld) against seven frontier LLMs (DeepSeek-R1-0528, DeepSeek-V3.2, o3/o4-mini, etc.) and seven efficient agent methods.
 
 | Comparison | Pass@1 Accuracy | Token Cost | Notes |
-| :--- | :--- | :--- | :--- |
-| Agent-Omit-8B (v.s. Qwen3-8B) | Comparable to 7 frontier LLMs | Significantly lower | 8B reaches parity using half the tokens of large models |
-| 7 Efficient Agent Methods | Varies | Varies | Agent-Omit achieves best accuracy-efficiency trade-off |
-| Qwen3-8B Native | Baseline | Baseline | Without omission: thought 45.1% + observation 52.2% |
+|------------|-----------------|------------|-------|
+| Agent-Omit-8B (Ours) | Comparable to 7 frontier LLMs | Significantly Lower | 8B model achieves parity using half or fewer tokens |
+| Efficient Agent Methods (TM/OM/TOM) | Varies | Varies | Agent-Omit achieves best trade-off |
+| Qwen3-8B (Base) | Baseline | Baseline | Baseline tokens: 45.1% thought + 52.2% observation |
 
 ### Ablation Study
 
-| Configuration | Key Observation | Interpretation |
-| :--- | :--- | :--- |
-| SFT Only (No RL) | Learned format but limited gains | RL is necessary to learn adaptive "when to omit" |
-| No dual sampling | Omission strategy fails to converge | Partial trajectories are essential bridges for credit assignment |
-| No $R_{omit}$ | Nearly identical to original agent | Lack of explicit efficiency incentive |
-| $R_{omit}$ uncoupled from $R_{task}$ | Reward hacking occurs; accuracy drops | Mandatory "zero omit reward on task failure" is necessary |
-| Single-turn omission only | Poor generalization in multi-turn | Multi-turn data forces learning "continuation without original info" |
-| Post-training behavior | Adaptive omission of 3–4 turns | Highly consistent with the "omittable gray zones" in Section 3 |
+| Configuration | Key Phenomenon | Interpretation |
+|---------------|----------------|----------------|
+| SFT Only (No RL) | Learns format but limited gain | RL is required for adaptive "when to omit" |
+| No Dual Sampling | Omission policy struggles to converge | Partial trajectories are essential for credit assignment |
+| No $R_{omit}$ | Behavior identical to vanilla agent | Lacks explicit efficiency incentive |
+| Uncoupled $R_{omit}$ and $R_{task}$ | Reward hacking, accuracy drops | Coupled constraint "No $R_{omit}$ if task fails" is vital |
+| Multi-turn Analysis | Adaptive omission of 3–4 rounds | Highest omission in intermediate turns, matching quantitative analysis |
 
 ### Key Findings
-- Fixed TM/OM/TOM methods sacrifice either accuracy or tokens by ignoring turn differences; Agent-Omit captures the optimal frontier for both.
-- The pattern "cannot omit start/end, can omit middle" is consistent across five environments, suggesting cross-domain transferability of omission strategies.
-- Theoretical KL bounds align with training curves: as GRPO progresses, the agent approaches the optimal omission frontier labeled by Monte-Carlo.
-- Learning omission as a first-order action is more effective than post-hoc processing (like summarization), as it utilizes task-aware RL feedback.
+- Uniform compression methods (TM/OM/TOM) sacrifice either accuracy or tokens by ignoring turn differences; Agent-Omit reaches the optimal Pareto frontier.
+- The "essential ends, omittable middle" pattern is consistent across all five environments, indicating cross-domain transferability of the omission policy.
+- The theoretical KL bound aligns with training curves: the agent approaches the Monte-Carlo-labeled optimal frontier as GRPO progresses.
+- Learning omission as a first-order action is more effective than post-hoc summarization because it leverages task-aware RL feedback.
 
 ## Highlights & Insights
-- Shift in paradigm: Context compression moves from static post-processing to a "first-order decision of the agent itself"—the model decides what to omit.
-- Dual sampling solves the "omission deadlock" for credit assignment, a reusable trick for any agentic RL task involving "deletion/merging" actions.
-- Explicit token interfaces (`<omit_tool_response_N>`) maintain compatibility with existing LLM tokenizers and APIs, offering a low-cost "soft retrofit" for production systems.
-- Task-conditioned omit rewards are simple yet critical reward-shaping designs to avoid the collapse patterns common in efficiency-only rewards.
+- Shifting "context compression" from a static post-processing problem to "first-order decision-making" is a paradigm shift—the model itself decides what to save.
+- Dual sampling solves the credit assignment deadlock for information deletion; this trick is reusable for any strategy learning involving "delete/merge" actions.
+- Explicit token interfaces make omission fully compatible with existing LLM tokenizers/APIs, offering a low-cost integration path for production systems.
+- Coupling task success to omission rewards is a simple yet critical reward shaping design that prevents efficiency-driven collapse.
 
 ## Limitations & Future Work
-- Experiments focused on Qwen3-8B and text-based environments; validation on larger scales, multi-modality, and long-horizon (>20 turns) tasks is needed.
-- Omission currently covers full thought removal and historical observation deletion; "fine-grained omission" (partial thoughts or summarized observations) remains unexplored.
-- Dual sampling doubles RL sampling costs, presenting a potential bottleneck for training 100B+ models.
-- Theoretical analysis relies on semantic Lipschitz assumptions; non-continuity in rewards under minor prompt changes might loosen the bounds.
+- Experiments focused on Qwen3-8B and text-based environments; scaling to 70B+ models, multimodal inputs, or ultra-long horizons (>20 turns) remains to be verified.
+- Omission currently covers full thought removal or historical observation deletion; fine-grained "partial compression" (e.g., partial thought omission) is unexplored.
+- Dual sampling significantly increases RL sampling costs, presenting a potential bottleneck for training 100B+ models.
+- Theoretical analysis depends on semantic Lipschitz continuity; discrete reward responses to minor prompt changes may loosen the upper bound.
 
 ## Related Work & Insights
-- **vs ToolLight / DEPO (Thought Compression)**: They focus on token-level compression; Ours performs turn-level decision-making, which is more precise and RL-learnable.
-- **vs Observation-Mask / DeepMiner (Heuristic Pruning)**: They use fixed rules; Ours uses a learned strategy consistent across environments.
-- **vs MEM-Agent / ReSum (LLM Summarization)**: Summarization adds LLM invocation costs and potential info distortion; omission uses direct masking with no distortion and greater token savings.
-- **vs Agentic RL Mainstream (e.g., GRPO/Verl)**: This work extends agentic RL by introducing dual sampling and omit-aware rewards, orthogonally combinable with ReAct or search agent frameworks.
+- **vs ToolLight / DEPO**: These perform token-level compression; Ours performs turn-level decision-making, which is more precise and RL-trainable.
+- **vs Observation-Mask / DeepMiner**: These use fixed heuristic rules; Ours uses a learned strategy consistent across environments.
+- **vs MEM-Agent / ReSum**: Summarization introduces LLM invocation costs and potential information distortion; omission uses direct masking, avoiding distortion and saving more tokens.
+- **vs Mainstream Agentic RL (GRPO/Verl)**: This work extends agentic RL by introducing dual sampling and omit-aware rewards, orthogonally applicable to ReAct or search agent frameworks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Redefining context compression as a first-order action with dual sampling for credit assignment is clearly innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison across five heterogeneous environments and multiple baselines is comprehensive, though missing scaling curves for model size.
-- Writing Quality: ⭐⭐⭐⭐ Flow from quantitative analysis to framework and theory is smooth; Figure 3 visualization is compelling.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for real-world agent deployment; context cost is a major barrier, and this method is plug-and-play with existing RL pipelines.
+- Novelty: ⭐⭐⭐⭐ Redefining context compression as a first-order action and solving credit assignment via dual sampling is a clear innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparison across heterogeneous environments and many LLMs, though missing a scaling curve for larger model sizes.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from quantitative analysis to framework, theory, and experiments; Figure 3 visualization is highly persuasive.
+- Value: ⭐⭐⭐⭐⭐ Directly applicable to real-world agent deployments—context cost is a major barrier, and this method provides a plug-and-play solution for RL pipelines.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
-- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](../../ACL2026/llm_agent/adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
 - [\[ICML 2026\] Learning Efficient Guardrails for Compliance](learning_efficient_guardrails_for_compliance.md)
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](../../AAAI2026/llm_agent/agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](../../ACL2026/llm_agent/adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
 
 </div>
 

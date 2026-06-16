@@ -2,88 +2,104 @@
 title: >-
   [Paper Note] EVE: A Domain-Specific LLM Framework for Earth Intelligence
 description: >-
-  [ACL 2026][LLM/NLP][Earth Observation] Ours proposes EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA Φ-lab. It includes the 24B domain-adapted EVE-Instruct (based…
+  [ACL 2026][LLM (Other)][RAG] This paper introduces EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA $\Phi$-lab. It includes EVE-Instruct, a 24B domain-adapted model (based on Mistral Small 3.2 + 10.7B synthetic tokens via interleaved IFT/CPT fine-tuning + 10-checkpoint fusion), the first huma
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Earth Observation"
-  - "Domain LLM"
-  - "RAG"
-  - "Hallucination Detection"
-  - "Mistral Small 3.2"
-  - "ESA"
+  - ACL 2026
+  - LLM (Other)
+  - RAG
+  - Mistral Small 3.2
+  - ESA
 date: 2026-05-08
-content_hash: 560c824e88d37666
+content_hash: f1d2526def2b48de
 ---
-
 # EVE: A Domain-Specific LLM Framework for Earth Intelligence
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.13071](https://arxiv.org/abs/2604.13071)  
 **Code**: <https://github.com/eve-esa> (Models at <https://huggingface.co/eve-esa>)  
-**Area**: Domain LLM / Earth Sciences / RAG  
+**Area**: Domain LLM / Earth Science / RAG  
 **Keywords**: Earth Observation, Domain LLM, RAG, Hallucination Detection, Mistral Small 3.2, ESA
 
 ## TL;DR
-Ours proposes EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA Φ-lab. It includes the 24B domain-adapted EVE-Instruct (based on Mistral Small 3.2 + interleaved IFT/CPT with 10.7B synthetic tokens + 10-checkpoint merging), the first human-annotated EO benchmark with 5,693 samples, and a RAG + hallucination detection pipeline, serving 350 users in a 6-month pilot.
+This paper introduces EVE—the first open-source end-to-end LLM framework for Earth Observation / Earth Sciences led by the ESA $\Phi$-lab. It includes EVE-Instruct, a 24B domain-adapted model (based on Mistral Small 3.2 + 10.7B synthetic tokens via interleaved IFT/CPT fine-tuning + 10-checkpoint fusion), the first human-annotated EO evaluation benchmark with 5693 samples, and a RAG + hallucination detection pipeline, which has served 350 users in a 6-month pilot.
 
 ## Background & Motivation
 
-**Background**: Earth Observation (EO) and Earth Sciences generate massive volumes of high-value knowledge daily. However, this knowledge is fragmented across heterogeneous sources (satellite imagery, scientific papers, proprietary publisher databases, and internal ESA documents), requiring deep expertise to synthesize. General LLMs lack domain specialization and rigorous evaluation, failing to meet the scientific rigor required for "Earth Action" decision-making.
+**Background**: Earth Observation (EO) and Earth Sciences generate massive volumes of high-value knowledge daily. However, this knowledge is scattered across heterogeneous sources (satellite imagery, scientific papers, proprietary databases, internal ESA documents), requiring deep expertise to synthesize. General LLMs lack domain specialization and rigorous evaluation, failing to meet the scientific rigor required for "Earth Action" decision-making.
 
-**Limitations of Prior Work**: (i) Existing domain LLM research either focuses solely on corpora and CPT (INDUS, K2, AstroLLaMA, COSMOSAGE) while lacking end-to-end deployment, or focuses on spatial reasoning tool integration (GeoLLM, GeoGPT, ChatGeoAI) without genuine domain SFT. (ii) Earth Sciences lack standardized dialogue/NLP benchmarks, preventing horizontal model comparison. (iii) The core conflict for production deployment is how "medium-sized" models like 24B can achieve domain adaptation without sacrificing general capabilities (tool calling, IF, chat quality).
+**Limitations of Prior Work**: (i) Existing domain LLM work either focuses solely on corpora + CPT (e.g., INDUS, K2, AstroLLaMA, COSMOSAGE) but lacks end-to-end deployment, or focuses on spatial reasoning tool integration (e.g., GeoLLM, GeoGPT, ChatGeoAI) without genuine domain SFT. (ii) Earth Sciences lack standardized dialogue/NLP benchmarks, making horizontal model comparison impossible. (iii) Determining how a "medium-scale" 24B model can adapt to a domain without sacrificing general capabilities (tool calling / IF / chat quality) is the key challenge for production deployment.
 
-**Key Challenge**: To build a truly usable domain assistant, one must simultaneously address data (high-quality EO corpora), training (avoiding catastrophic forgetting), evaluation (domain benchmarks), and deployment (RAG grounding and hallucination control). Prior works typically only cover one or two of these areas.
+**Key Challenge**: Developing a truly usable domain assistant requires simultaneously addressing data (high-quality EO corpora), training (avoiding catastrophic forgetting), evaluation (domain benchmarks), and deployment (RAG grounding + hallucination control). Prior works typically cover only one or two of these aspects.
 
-**Goal**: (i) Construct high-quality EO corpora totaling 5.3B tokens and 10.7B synthetic training tokens; (ii) Implement a training recipe using interleaved IFT/long-form text + replay + 10-checkpoint merging to achieve domain adaptation while retaining general abilities; (iii) Release the first EO evaluation benchmark with 5,693 samples (MCQA, open-ended QA, and hallucination detection); (iv) Integrate an end-to-end RAG + hallucination detection pipeline into production for 350 users.
+**Goal**: (i) Construct a 5.3B token high-quality EO corpus + 10.7B token synthetic training dataset; (ii) Implement domain adaptation while retaining general capabilities using a training recipe of interleaved IFT/long-form text + replay + 10-checkpoint fusion; (iii) Release the first EO evaluation benchmark with 5693 samples (MCQA + Open QA + Hallucination Detection); (iv) Integrate an end-to-end RAG + hallucination detection pipeline into production to serve 350 users.
 
-**Key Insight**: The authors found that LoRA is insufficient for a "medium-scale" corpus of 5.3B tokens, while pure CPT degrades instruction-following. Therefore, a hybrid "interleaved IFT + long-form text + replay data" training strategy is chosen, interleaving long-form and instruct data within the same run and using an active reading pipeline for self-synthetic corpus enhancement.
+**Key Insight**: The authors found that LoRA is insufficient for a "medium-scale" of 5.3B tokens, while pure CPT compromises instruction-following. Consequently, a hybrid "interleaved IFT + long-form text + replay data" training strategy was chosen, crossing long-form and instruct data within the same run and using an active reading pipeline for synthetic augmentation.
 
-**Core Idea**: A five-fold approach—small-scale high-quality corpora, large-scale synthetic data, interleaved IFT/long-form training, replay, and checkpoint merging—transforms a 24B general model into a domain expert without increasing parameters.
+**Core Idea**: A five-part suite consisting of "small-scale high-quality corpora + large-scale synthetic data + interleaved IFT/long-form text + replay + checkpoint fusion" is employed to transform a 24B general model into a domain expert without increasing parameters.
 
 ## Method
 
 ### Overall Architecture
-EVE is a production system consisting of four modules: (i) **EVE-Instruct**—the core LLM fine-tuned from Mistral Small 3.2 (24B, 128k context), responsible for answer generation, query rewriting, and summarization; (ii) **Knowledge Bases**—a multi-source KB of ~365k documents (Open Access + Wiley proprietary + ESA documents) supporting hybrid semantic and metadata retrieval; (iii) **Retrieval Pipeline**—selects relevant documents based on queries and filters, followed by reranking via Qwen3-Reranker-4B; (iv) **Chat System + Hallucination Detection**—manages conversation states, performs fact-checking, and triggers a "rewrite-answer" loop when necessary.
+EVE is an end-to-end production system integrating data, training, evaluation, and deployment. The system consists of four synergistic modules: at the core is **EVE-Instruct** (fine-tuned from Mistral Small 3.2, 24B, 128k context), responsible for answer generation, query rewriting, and summarization. This connects to a multi-source Knowledge Base (~365k documents, including open access, Wiley proprietary, and ESA internal documents, supporting hybrid semantic + metadata retrieval). The Retrieval Pipeline recalls candidates based on queries and filters, followed by re-ranking using Qwen3-Reranker-4B. The outermost Chat System + Hallucination Detection manages conversation states, performs fact-checking, and triggers a "rewrite answer" loop when necessary. A user query undergoes retrieval grounding, generation, self-assessment for hallucinations, and demand-driven revision before returning a response.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Dual-Track EO Corpora + Synthetic Data"]
+        direction TB
+        RAW["Raw Corpus 5.3B tokens<br/>Scraped from 22 publishers → Deduplicated → Anonymized"]
+        SYN["Synthetic Data<br/>Active Reading Long-form + Five types of Instruction QA"]
+        RAW --> JUDGE["LLM-as-judge filtering & curation"]
+        SYN --> JUDGE
+        JUDGE --> SET["10.7B token training set"]
+    end
+    SET --> TRAIN["Interleaved IFT/Long-form + Replay + 10-checkpoint fusion<br/>+ Online DPO Alignment"]
+    TRAIN --> EVE["EVE-Instruct (Mistral Small 3.2, 24B)"]
+    EVE -->|Zero-shot Evaluation| BENCH["First EO Benchmark (5693 samples)<br/>MCQA / Open QA / Hallucination Detection"]
+    EVE -->|Production| SERVE
+    subgraph SERVE["Hallucination-aware RAG Closed-loop"]
+        direction TB
+        Q["User Query → Rewriting"] --> RET["Retrieval: Qwen3-Embedding + Qdrant<br/>→ Qwen3-Reranker re-ranking top K"]
+        RET --> GEN["EVE-Instruct Answer Generation"]
+        GEN --> CHK{"Self-evaluate Hallucination"}
+        CHK -->|Yes| REW["Rewrite query based on justification<br/>→ Re-retrieval → Generate revised version"]
+        REW --> GEN
+        CHK -->|No| OUT["Return Original / Revised best version"]
+    end
+```
 
 ### Key Designs
 
-1.  **Dual-Track EO Corpus and Synthetic Data (5.3B raw + 10.7B synthetic)**:
-    *   **Function**: Balances the gap between "insufficient raw data for CPT" and the potential "drift" of synthetic data.
-    *   **Mechanism**: The raw portion uses a custom scraper to collect data from 172 sources across 22 trusted publishers (4.2B Open Access + 1.1B Wiley proprietary), processed via Trafilatura/Nougat OCR, SHA-256 + MinHash LSH deduplication, Presidio anonymization, and CrossRef metadata completion. The synthetic portion follows two paths: (a) long-form text is reorganized using an Active Reading pipeline (Mistral Medium 3.1 selects strategies, Mistral Small 3.2 generates); (b) instruction text is generated by 7 high-quality models (Mistral Large 3, GPT-4o Mini, Qwen3-235B, DeepSeek-R1, etc.) across five categories: ContextQA, SelfQA, LongQA, MultiHop QA, and self-referential alignment. From ~21B initial synthetic tokens, 10.7B are filtered via LLM-as-judge for the final set.
-    *   **Design Motivation**: The raw corpus of 5.3B tokens sits between "sufficient for SFT" and "sufficient for CPT"; pure CPT would damage instruction-following. Introducing large-scale synthetic data with strict quality filters provides scale while ensuring diversity and quality.
+**1. Dual-Track EO Corpora + Synthetic Data: Balancing raw sparsity and synthetic drift**
+High-quality raw EO corpora totaled only 5.3B tokens, falling into the gap of "enough for SFT but insufficient for CPT." Pure CPT risks damaging instruction-following, so the authors used real corpora as a foundation and synthetic data for volume. Raw data was harvested using a custom scraper from 22 trusted publishers and 172 sources (4.2B open + 1.1B Wiley proprietary), processed with Trafilatura/Nougat OCR, SHA-256/MinHash LSH deduplication, and Presidio anonymization. Synthetic data followed two paths: long-form text used an Active Reading pipeline (Mistral Medium 3.1 for strategy, Mistral Small 3.2 for generation) to restructure key content, while instruction text was produced by 7 high-quality models (Mistral Large 3, GPT-4o Mini, Qwen3-235B, DeepSeek-R1, etc.) across five sample categories. The final 10.7B token set, curated via LLM-as-judge, ensures both scale and quality.
 
-2.  **Interleaved IFT/Long-form Training + Replay + 10-Checkpoint Merging**:
-    *   **Function**: Enables the 24B model to adapt to the domain without losing general capabilities.
-    *   **Mechanism**: Instruction-formatted text and long-form text are injected alternately within the same training run. Within each category, general-domain replay data is mixed at 50/50 or 60/40 ratios. The learning rate is set at an intermediate value between IFT and CPT to balance "factual integration" and "alignment stability." Finally, 10 training runs with different mixing ratios are conducted, and uniform parameter interpolation (merging) is used to average the "domain-strong/general-weak" and "general-strong/domain-weak" checkpoints into a single trade-off optimized model. The process concludes with Online DPO for alignment.
-    *   **Design Motivation**: Experiments showed that a single mixing ratio always results in a static trade-off between domain and general performance. Checkpoint merging serves as a low-cost ensemble alternative—improving robustness without needing multi-model inference. It proves more stable than LoRA or regularization-based anti-forgetting methods.
+**2. Interleaved IFT/Long-form Training + Replay + 10-checkpoint Fusion: Domain adaptation without losing general capabilities**
+When adapting a medium-scale 24B model, the primary risk is catastrophic forgetting of general tasks like tool calling. The authors interleaved instruction-formatted text and long-form text within the same training run, with 50/50 or 60/40 general-domain replay mixed in. A learning rate between typical IFT and CPT was used to balance "fact integration" and "alignment stability." The critical engineering innovation was checkpoint fusion: after 10 training runs with different mixing ratios—producing models varying in domain vs. general strength—uniform parameter interpolation was used to average them into a single optimal trade-off model. This provides a low-cost ensemble alternative that improves robustness at training time without additional inference overhead, finalized with Online DPO.
 
-3.  **First EO Benchmark + Hallucination-aware RAG Closed-Loop**:
-    *   **Function**: Quantifies the effectiveness of the domain LLM and allows production hallucinations to be automatically captured and corrected.
-    *   **Mechanism**: The benchmark includes 5 task types (1,261 Single-choice MCQA, 431 Multi-choice MCQA, 1,257 Open-ended without context, 418 Open-ended with context, and 2,326 Hallucination detection), annotated by 25 EO experts via LLM/Human dual-source generation and independent auditing. The RAG side uses ~512-word chunks + Qwen3-Embedding-4B + Qdrant binary quantization. Retrieval involves query rewriting, taking top 2K candidates per KB, and reranking to top K via Qwen3-Reranker-4B. The hallucination detection workflow involves: EVE-Instruct self-evaluation → if hallucination is flagged → rewrite query with justification → re-retrieval → generate revised version → self-evaluation → selection of the best version.
-    *   **Design Motivation**: General hallucination benchmarks (FEVER, TruthfulQA, HaluEval) do not cover EO domain knowledge. Production systems require a lightweight "detect-then-repair" loop for controllable latency. Integrating detection into the LLM itself (using EVE-Instruct as a judge) reduces deployment costs compared to an independent verifier.
+**3. First EO Benchmark + Hallucination-aware RAG Closed-loop: Quantifying performance and self-repairing hallucinations**
+General hallucination benchmarks fail to cover EO domain knowledge. The authors built a 5693-sample benchmark across 5 tasks (MCQA Single-choice 1261 / Multi-choice 431 / Open-ended without context 1257 / with context 418 / Hallucination Detection 2326), annotated by 25 EO experts. The RAG pipeline utilizes ~512-word chunks with Qwen3-Embedding-4B and Qdrant binary quantization. Hallucination control uses a lightweight self-repair loop: EVE-Instruct evaluates its own output $\rightarrow$ if hallucinations are flagged, it rewrites the query with justification $\rightarrow$ re-retrieves $\rightarrow$ generates a revision $\rightarrow$ re-evaluates. Consolidating detection, revision, and selection within EVE-Instruct itself avoids deploying a separate verifier and maintains acceptable production latency.
 
 ### Loss & Training
-The base model is Mistral Small 3.2 (24B, 128k context). Training mixes 30% long-form + 70% instruction data, with 50/50 or 60/40 replay data added internally (see Table 3). The learning rate is between typical IFT and CPT values. 10 checkpoints from varying mix ratios are merged. Alignment uses Online DPO (following the Liu et al. 2026 recipe). Training costs are estimated at approximately 38 tons of $CO_2eq$.
+The base model is Mistral Small 3.2 (24B, 128k context). Training was mixed at a ratio of 30% long-form + 70% instruction, with 50/50 or 60/40 replay data added internally. The learning rate was set between standard IFT and CPT values. Finally, 10 checkpoints with different mix proportions were fused, and alignment was performed using Online DPO. Training costs are estimated at approximately 38 tons of $CO_2eq$.
 
 ## Key Experimental Results
 
 ### Main Results (EO benchmark zero-shot)
 
-| Model | Size | MCQA Multi-choice IoU | MCQA Single-choice Acc | Hallucination F1 | Open QA Judge | Avg. Rank ↓ |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Llama4 Scout | 109-B | 80.32 | 71.23 | 66.08 | 87.37 | 3.67 |
-| Qwen3 | 30-B | 78.40 | 66.36 | 81.30 | 94.92 | 2.67 |
+| Model | Parameters | MCQA Multi IoU | MCQA Single Acc | Hallucination F1 | Open QA Judge | Average Rank ↓ |
+|------|-------|---------------|----------------|------------------|----------------|-------------|
+| Llama4 Scout | 109-A17 | 80.32 | 71.23 | 66.08 | 87.37 | 3.67 |
+| Qwen3 | 30-A3 | 78.40 | 66.36 | 81.30 | 94.92 | 2.67 |
 | Gemma3 | 27 | 73.60 | 57.54 | 75.07 | 94.41 | 3.83 |
 | Mistral Small 3.2 (parent) | 24 | 80.19 | 70.30 | 82.19 | 91.78 | 3.50 |
 | **EVE-Instruct** | **24** | **86.12** | **77.73** | **84.70** | **96.40** | **1.33** |
 
-EVE-Instruct ranked first in 4 out of 5 tasks, with an average rank of 1.33. The Multi-choice MCQA IoU is 86.12 (6 points higher than the parent Mistral Small 3.2). The Hallucination F1 of 84.70 significantly outperforms Llama4 Scout's 66.08, demonstrating the discriminative capability gained through domain adaptation.
+EVE-Instruct ranked first in 4 out of 5 tasks with an average rank of 1.33. Its MCQA Multi-choice IoU of 86.12 is 6 points higher than the parent model. The Hallucination F1 of 84.70 significantly outperforms Llama4 Scout (66.08), demonstrating the discriminatory gains from domain adaptation.
 
 ### Ablation Study (Impact on General Capabilities)
 
-| Category | Small 3.2 | EVE-Instruct | Δ |
-| :--- | :--- | :--- | :--- |
+| Category | Small 3.2 | EVE-Instruct | Gain |
+|----------|-----------|--------------|---|
 | Math & Reasoning | 50.8 | 54.9 | +4.1 |
 | Coding | 55.6 | 56.5 | +0.9 |
 | Knowledge | 67.7 | 69.0 | +1.3 |
@@ -92,39 +108,38 @@ EVE-Instruct ranked first in 4 out of 5 tasks, with an average rank of 1.33. The
 | Chat Quality | 90.8 | 91.7 | +0.9 |
 | **Overall** | **72.2** | **74.0** | **+1.8** |
 
-All general capability sub-items showed improvement, proving that the interleaved IFT/long-form + replay + 10-checkpoint merging recipe successfully resolves the "domain vs. general" trade-off.
+All general capability sub-items showed improvements, proving that the training recipe of interleaved IFT/long-form + replay + 10-checkpoint fusion successfully avoids the "domain vs. general" trade-off.
 
 ### Key Findings
-- **24B can outperform 109B**: EVE-Instruct consistently beats Llama4 Scout (109B MoE) on EO tasks, showing that refined data and training strategies in vertical domains outweigh mere parameter scaling.
-- **Domain adaptation does not require sacrificing generality**: All Δ values are positive, debunking the traditional belief that domain LLMs inevitably lose performance on general tasks.
-- **Judge bias verified**: Replacing LLM-judge with Claude Sonnet 4.6 and Gemini 2.5 Flash resulted in rank shifts of only ±0.25, confirming evaluation robustness.
-- **Production viability**: A 6-month pilot with 350 users using RunPod serverless + Qdrant binary quantization + AWS backend proves that a 24B domain assistant is economically feasible.
-- **Open-Ended QA with Context**: While Qwen3 scored slightly higher on judge scores, EVE achieved the best Win Rate, indicating comparable quality in RAG-enhanced scenarios.
+- **24B can outperform 109B**: EVE-Instruct consistently beats Llama4 Scout (109B MoE) on EO tasks, indicating that refined domain data and training strategies are more critical than scale alone for vertical domains.
+- **Domain adaptation without degradation**: All general task gains were positive, debunking the assumption that domain LLMs must degrade on general tasks.
+- **Judge bias verification**: Swapping the LLM-judge for Claude Sonnet 4.6 or Gemini 2.5 Flash resulted in a maximum rank shift of only $\pm 0.25$, validating the robustness of the evaluation.
+- **Production feasibility**: The 6-month pilot for 350 users using RunPod serverless + Qdrant binary quantization proves that a 24B domain assistant is economically viable.
+- **Open-Ended QA with Context**: Qwen3 scored slightly higher in judge scores, but EVE achieved the best Win Rate, suggesting comparable quality in RAG-enhanced scenarios.
 
 ## Highlights & Insights
-- **"10-checkpoint Merging" as a Low-Cost Ensemble**: Using uniform parameter interpolation instead of inference-time ensembling addresses the "domain vs. general" trade-off during post-training. This is a valuable engineering trick for other domain LLM projects—increasing training compute while keeping deployment costs constant.
-- **Active Reading Pipeline for Synthetic Long-form Text**: Unlike traditional paraphrasing, Active Reading allows the LLM to reorganize "important content + key terminology," which is particularly effective for domain adaptation by reinforcing schema and jargon over syntax.
-- **First EO Benchmark + 25-Expert Annotation**: This open release provides the Earth Sciences NLP community with standardized evaluation, representing a community-level contribution.
-- **Hallucination Self-Evaluation + Self-Repair Loop**: Consolidating detection, revision, and selection into a single model (single RT) rather than a multi-model pipeline is latency-friendly and represents a successful engineering of RARR/SelfCheckGPT methods for production.
+- **"10-checkpoint fusion" as a low-cost ensemble**: Using uniform parameter interpolation instead of inference-time ensembles solves the "domain vs. general" trade-off post-training—a valuable engineering trick for other domain projects.
+- **Active Reading pipeline for synthetic long-form text**: Unlike simple paraphrasing, Active Reading encourages the LLM to restructure "important content + key terminology," which is more effective for domain adaptation by reinforcing schemas and terms.
+- **First EO benchmark + 25-expert annotation**: This public release provides the Earth Sciences NLP community with a standardized evaluation framework, a community-level contribution.
+- **Hallucination self-assessment + self-repair loop**: Consolidating detection and revision within a single model makes it production-friendly by limiting latency, representing a successful engineering realization of RARR/SelfCheckGPT concepts.
 
 ## Limitations & Future Work
-- Due to Wiley agreements, 1.1B tokens (~21% of the corpus) cannot be released, affecting external reproducibility.
-- Evaluation still relies heavily on LLM-as-judge; human evaluation coverage is limited due to the scarcity of EO experts.
-- EVE is currently text-only and cannot process satellite imagery or structured geospatial data directly. The authors plan to develop a multimodal agentic platform integrating Geospatial Foundation Models.
-- RAG timeliness depends on manual KB refreshes, leaving the engineering of automated knowledge updates unresolved.
-- The training cost of 38 tons of $CO_2eq$ remains high for academic institutions; the open-source strategy prioritizes reuse over replication.
+- Licensing restrictions with Wiley prevent the release of 1.1B tokens (~21% of the corpus), affecting full external reproducibility.
+- Evaluation relies heavily on LLM-as-judge due to the scarcity of EO domain experts, which remains a structural bottleneck.
+- EVE is currently text-only and cannot process satellite imagery or structured geospatial data directly; future work aims for a multimodal agentic platform.
+- RAG timeliness depends on manual KB refreshes; a process for automated, frequent knowledge updates has not yet been engineered.
 
 ## Related Work & Insights
-- **vs. INDUS / K2 / AstroLLaMA / COSMOSAGE**: Those works primarily focused on corpora and CPT; EVE upgrades to a full end-to-end system (data, training, eval, RAG, deployment) and provides the first domain benchmark.
-- **vs. GeoGPT / GeoLLM / ChatGeoAI**: Those models utilize LLM + GIS tool calling for spatial reasoning. EVE focuses on text understanding, scientific QA, and hallucination control, making them complementary.
-- **vs. SelfCheckGPT / RARR**: The hallucination self-evaluation and rewrite loop borrows from RARR but consolidates it into a single model for production.
-- **vs. LoRA / Selective Parameter Freezing**: The authors abandoned LoRA after experiments, proving that for "medium-scale" corpora (5.3B tokens), full-parameter interleaved fine-tuning + checkpoint merging offers a superior trade-off.
+- **vs. INDUS / K2 / AstroLLaMA / COSMOSAGE**: While those projects focus on corpora and CPT, EVE provides a full end-to-end system (data + training + evaluation + RAG + deployment) and the first domain benchmark.
+- **vs. GeoGPT / GeoLLM / ChatGeoAI**: Those tools focus on spatial reasoning via tool calling, whereas EVE focuses on text understanding, scientific QA, and hallucination control, making them complementary.
+- **vs. SelfCheckGPT / RARR**: EVE's self-repair loop adapts RARR's ideas into a single-model deployment suitable for production.
+- **vs. LoRA / Selective Parameter Freezing**: Abandoning LoRA in favor of full-parameter interleaved fine-tuning + checkpoint fusion proved superior for corpora of this size (5.3B tokens).
 
 ## Rating
-- Novelty: ⭐⭐⭐ Individual components are not new, but the first end-to-end EO system + public benchmark is a milestone.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-judge, cross-family evaluation, general capability comparisons, and 6-month deployment are rare in the field.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with comprehensive methodology, evaluation, and deployment details.
-- Value: ⭐⭐⭐⭐⭐ Open-source models, corpora, benchmarks, and code provide infrastructure-level contributions to the EO NLP community.
+- Novelty: ⭐⭐⭐ Components (IFT/CPT mix, fusion, RAG loop) are known, but the complete end-to-end EO system + public benchmark is a first.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Use of multiple judges, cross-family evaluation, general capability checks, and 6-month pilot deployment is exceptional.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with comprehensive coverage of methods, evaluation, and deployment engineering.
+- Value: ⭐⭐⭐⭐⭐ The open-sourcing of models, corpora, benchmarks, and code is an infrastructure-level contribution to the EO NLP community.
 
 <!-- RELATED:START -->
 
@@ -132,11 +147,11 @@ All general capability sub-items showed improvement, proving that the interleave
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](../../NeurIPS2025/llm_nlp/synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
+- [\[ACL 2025\] TrimLLM: Progressive Layer Dropping for Domain-Specific LLMs](../../ACL2025/llm_nlp/trimllm_layer_dropping.md)
+- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
+- [\[ACL 2026\] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](../../ICLR2026/llm_nlp/bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[ACL 2026\] When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables](when_tableqa_meets_noise_a_dual_denoising_framework_for_complex_questions_and_la.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
 
 </div>
 

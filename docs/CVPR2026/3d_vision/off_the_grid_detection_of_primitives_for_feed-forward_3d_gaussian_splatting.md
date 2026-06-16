@@ -2,137 +2,139 @@
 title: >-
   [Paper Note] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes a feed-forward 3DGS decoder based on keypoint detection, liberating Gaussian primitives from the pixel grid by placing them adaptively at sub-pixel precis…
+  [CVPR 2026][3D Vision][Paper Note] This paper proposes a feed-forward 3DGS decoder based on keypoint detection concepts, liberating Gaussian primitives from the pixel grid. By adaptively placing primitives at sub-pixel levels and combining an adaptive density mechanism with confidence pruning, it outperforms SOTA feed-forward methods in novel view synth
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "feed-forward reconstruction"
-  - "keypoint detection"
-  - "adaptive density"
-  - "pose-free reconstruction"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: d8ee4a9a2065cf69
+content_hash: b016b502901884cb
 ---
-
 # Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.15508](https://arxiv.org/abs/2512.15508)  
 **Code**: [Project Page](https://arthurmoreau.github.io/OffTheGrid/)  
-**Area**: 3D Vision / 3D Gaussian Splatting
-**Keywords**: 3D Gaussian Splatting, feed-forward reconstruction, keypoint detection, adaptive density, pose-free reconstruction
+**Area**: 3D Vision / 3D Gaussian Splatting  
+**Keywords**: 3D Gaussian Splatting, Feed-forward Reconstruction, Keypoint Detection, Adaptive Density, Pose-free Reconstruction
 
 ## TL;DR
 
-This paper proposes a feed-forward 3DGS decoder based on keypoint detection, liberating Gaussian primitives from the pixel grid by placing them adaptively at sub-pixel precision. Combined with an adaptive density mechanism and confidence-based pruning, the method surpasses state-of-the-art feed-forward approaches in novel view synthesis using only 1/7 of the primitives required by pixel-aligned methods.
+This paper proposes a feed-forward 3DGS decoder based on keypoint detection concepts, liberating Gaussian primitives from the pixel grid. By adaptively placing primitives at sub-pixel levels and combining an adaptive density mechanism with confidence pruning, it outperforms SOTA feed-forward methods in novel view synthesis using only 1/7th of the primitives compared to the number of input pixels.
 
 ## Background & Motivation
 
-**Background**: 3D Gaussian Splatting (3DGS) has become the dominant method for efficient 3D scene representation. Classical 3DGS requires SfM initialization followed by per-scene optimization (taking tens of minutes to hours), whereas recent feed-forward methods (e.g., PixelSplat, AnySplat) directly predict Gaussian primitives in a single forward pass, reducing reconstruction time to seconds.
+**Background**: 3D Gaussian Splatting (3DGS) has become a mainstream method for efficient 3D scene representation. Traditional 3DGS requires SfM initialization and per-scene optimization (taking minutes to hours). Recently, feed-forward methods (e.g., PixelSplat, AnySplat) directly predict Gaussian primitives through a single neural network forward pass, reducing reconstruction time to seconds.
 
-**Limitations of Prior Work**: Existing feed-forward methods almost universally adopt pixel-aligned or voxel-aligned primitive placement strategies, where each input pixel corresponds to one Gaussian primitive and primitive positions are rigidly locked to a regular grid. This introduces two problems: (1) the number of primitives equals the number of input pixels, restricting these methods to low resolutions (typically 256×256); and (2) regular grids cannot adaptively allocate more primitives to high-frequency detail regions or reduce redundancy in flat regions, resulting in simultaneous losses in quality and efficiency.
+**Limitations of Prior Work**: Existing feed-forward methods almost exclusively adopt "pixel-aligned" or "voxel-aligned" primitive placement strategies—where each input pixel corresponds to one Gaussian primitive, rigidly locking positions to a regular grid. This introduces two issues: (1) The number of primitives equals the number of input pixels, restricting the method to low resolutions (typically 256×256); (2) The regular grid cannot adaptively allocate more primitives to high-frequency detail areas or reduce redundancy in flat areas, resulting in a loss of both quality and efficiency.
 
-**Key Challenge**: Optimization-based 3DGS dynamically adjusts primitive distributions through densification and pruning, but feed-forward methods lack this capability. The pixel-aligned design inherently limits the model's expressive power over primitive placement, as it cannot learn an "optimal placement" strategy.
+**Key Challenge**: While optimization-based 3DGS dynamically adjusts primitive distribution via densification/pruning, feed-forward methods lack this capability. The pixel-aligned design essentially limits the model's expressive power, as it cannot learn "optimal placement."
 
-**Goal**: How to achieve adaptive, off-grid primitive placement in feed-forward 3DGS while remaining end-to-end trainable.
+**Goal**: How to achieve adaptive, grid-independent primitive placement in feed-forward 3DGS while maintaining end-to-end trainability.
 
-**Key Insight**: Inspired by keypoint detection, the authors recast Gaussian primitive placement as a 2D detection problem—extracting continuous coordinates from image patches via convolutional heatmaps, enabling primitives to be localized at sub-pixel precision.
+**Key Insight**: Inspired by keypoint detection, the authors treat the placement of Gaussian primitives as a 2D detection problem—extracting continuous coordinates via convolutional heatmaps on image patches, allowing primitives to be localized with sub-pixel precision.
 
-**Core Idea**: Replace pixel-grid alignment with the DSNT soft-argmax formulation from keypoint detection, allowing feed-forward 3DGS models to learn adaptive placement of Gaussian primitives at sub-pixel accuracy.
+**Core Idea**: Replace pixel-grid alignment with DSNT soft-argmax (similar to keypoint detection), enabling the feed-forward 3DGS model to learn adaptive placement of Gaussian primitives with sub-pixel accuracy.
 
 ## Method
 
 ### Overall Architecture
 
-The pipeline comprises three components: (1) VGGT as the 3D reconstruction backbone, predicting depth maps and camera parameters from $N$ uncalibrated images; (2) the proposed 3D Gaussian decoder, which detects and describes Gaussian primitives from VGGT features and predicted geometry; and (3) end-to-end training via photometric loss computed by rendering the input images, requiring no 3D annotations.
+This paper addresses a chronic issue in feed-forward 3DGS: existing methods pin each Gaussian primitive to an input pixel, making the number of primitives equal to the pixel count, which prevents high-resolution processing and efficient allocation. The authors' breakthrough is re-interpreting "primitive placement" as a 2D keypoint detection problem—since Gaussian primitives do not have fixed coordinates on the image, the network should "detect" them with sub-pixel precision.
 
-$N$ input images → VGGT feature extraction + depth/camera prediction → U-Net decoder for detection/description features → heatmap-based 2D primitive localization → bilinear interpolation of depth/color/descriptors → back-projection to 3D Gaussian centers → MLP prediction of remaining parameters → multi-view aggregation + rendering.
+The pipeline is as follows: $N$ uncalibrated images are fed into the VGGT 3D reconstruction backbone to predict depth maps and camera parameters. Subsequently, a U-Net decoder branches into detection and description features. The former locates continuous 2D coordinates of primitives on image patches via heatmaps, while the latter samples depth, color, and descriptors for each primitive using bilinear interpolation. With 2D coordinates and depth, 3D Gaussian centers are back-projected, and an MLP completes the remaining parameters like covariance and opacity. Finally, primitives predicted from multiple views are aggregated for rendering. The entire process is trained end-to-end using photometric loss on input images, without requiring 3D supervision.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["N Uncalibrated Images"] --> B["VGGT Backbone<br/>Predict Depth + Camera Params"]
+    B --> C["U-Net Decoder<br/>Detection / Description Features"]
+    C -->|Detection| D["Sub-pixel Primitive Detection<br/>Heatmap + DSNT Soft-argmax → Continuous 2D Coords"]
+    C -->|Description| E["Bilinear Sampling of Features<br/>Get Depth / Color / Descriptors"]
+    F["Adaptive Density<br/>3 Tiers based on Patch Entropy (16/32/64)"] -->|Per-patch Budget| D
+    D --> G["Back-projection to 3D Centers<br/>MLP for Covariance / Opacity"]
+    E --> G
+    G --> H["Confidence-based Multi-view Aggregation<br/>α·c Weighting, Pruning αc<0.1 at Test"]
+    H --> I["Novel View Synthesis Rendering"]
+```
 
 ### Key Designs
 
-1. **Sub-pixel Primitive Detection (DSNT)**:
+**1. Sub-pixel Primitive Detection: Liberating Primitives from the Integer Pixel Grid**
 
-    - **Function**: Precisely localize Gaussian primitive centers in continuous 2D space, transcending the pixel grid constraint.
-    - **Mechanism**: The detection features from the U-Net decoder are reshaped into $14\times14$ patches, each with $P$ channels (where $P$ is the number of primitives per patch). A spatial softmax is applied to each channel to produce a heatmap, and the soft-argmax (DSNT) computes the expected coordinate $x = \sum_{i,j} c_x(i,j)\, h(i,j)$, yielding continuous floating-point coordinates. This allows primitive centers to lie between pixels, accurately representing geometric structures that span pixel boundaries.
-    - **Design Motivation**: Pixel-aligned strategies anchor primitives to integer coordinates, precluding optimal scene representation. DSNT is differentiable and supports end-to-end training; its effectiveness has already been demonstrated in human pose estimation.
+Pixel-alignment strategies anchor primitives to integer coordinates, which fails to accurately represent structures like edges or thin lines that cross pixels. This paper borrows from keypoint detection to break this limit: the U-Net decoder's detection features are reshaped into $14 \times 14$ patches, each containing $P$ channels (where $P$ is the primitive budget for that patch). A spatial softmax is applied to each channel to generate a heatmap, followed by a DSNT soft-argmax to calculate expected coordinates $x = \sum_{i,j} c_x(i,j) h(i,j)$, transforming discrete heatmaps into continuous floating-point coordinates. This allows primitive centers to fall between pixels, capturing finer geometric details. Crucially, DSNT is fully differentiable and supports end-to-end training.
 
-2. **Adaptive Density Mechanism (Shannon Entropy)**:
+**2. Adaptive Density: Allocating More Primitives to Complex Areas**
 
-    - **Function**: Dynamically allocate different numbers of primitives to image patches based on content complexity.
-    - **Mechanism**: The Shannon entropy $H = -\sum_k p_k \log_2(p_k + \epsilon)$ of the grayscale histogram is computed for each $14\times14$ patch. Patches are ranked by entropy: the lowest 55% are assigned 16 primitives (low density), the middle 35% receive 32 (medium density), and the top 15% receive 64 (high density). Independent detection and description convolutional heads are learned for each density level.
-    - **Design Motivation**: High-detail regions (high entropy) require more primitives for accurate representation, while uniform regions (low entropy) need only a few. Even the 64 primitives assigned to high-density patches are far fewer than the 196 pixels per patch, maintaining efficiency throughout.
+Another flaw of regular grids is their inability to adapt to local complexity. This paper uses a non-learnable signal to determine density: Shannon entropy of the luminance histogram $H = -\sum_k p_k \log_2(p_k + \epsilon)$ is calculated for each $14 \times 14$ patch. Higher entropy indicates richer texture. Patches are sorted by entropy and divided into three tiers: the lowest 55% get 16 primitives per patch, the middle 35% get 32, and the top 15% get 64. Each tier uses independent detection/description convolutional heads. Even at the highest density (64 primitives), the count is far lower than the 196 pixels in a patch, maintaining a high compression ratio while concentrating the budget where it is needed most.
 
-3. **Confidence-Based Multi-View Aggregation**:
+**3. Confidence-based Multi-view Aggregation: Automatic Removal of Redundant Primitives**
 
-    - **Function**: Intelligently select among primitives predicted from multiple views to avoid redundancy-induced blurring.
-    - **Mechanism**: A confidence value $c \in [0,1]$ is predicted for each Gaussian, and the final opacity is set to $\alpha \cdot c$. The model implicitly learns to reduce a primitive's confidence when the corresponding region is better observed from another viewpoint. At test time, primitives with $\alpha c < 0.1$ are pruned, further improving efficiency.
-    - **Design Motivation**: Naively aggregating primitives from all views causes the same content to be represented multiple times, producing blurring. Through confidence learning, the model acquires an implicit deduplication capability.
+Naively stacking primitives from every view leads to redundant representations of the same content, causing blurriness. This paper predicts an additional confidence score $c \in [0,1]$ for each Gaussian, using $\alpha \cdot c$ as the final opacity. When a region is seen more clearly from another view, the model implicitly learns to lower the confidence of primitives from the current view, effectively performing "deduplication." At test time, primitives with $\alpha c < 0.1$ are pruned to save computation.
 
 ### Loss & Training
 
-Training employs four complementary loss terms: (1) **Photometric loss**: L1 + SSIM + LPIPS, rendering only the input views (no held-out target views required); (2) **Geometric consistency loss**: L1 loss between predicted and rendered depth + normal consistency loss, ensuring Gaussian orientations align with local surface geometry; (3) **Teacher geometry loss**: constrains fine-tuned depth and camera parameters to remain close to original VGGT predictions, preventing training collapse; (4) **Regularization loss**: opacity regularization $L_{op} = \sum \sin(\alpha \cdot c)$, encouraging opacities toward 0 or 1 to avoid semi-transparency artifacts.
+Training involves four types of losses: (1) **Photometric Loss**: L1 + SSIM + LPIPS, rendering only the input images (no held-out target views required); (2) **Geometric Consistency Loss**: L1 loss between predicted and rendered depth + normal consistency loss to align Gaussian orientations with local surface geometry; (3) **Teacher Geometry Loss**: Constraints to ensure fine-tuned depth and camera parameters do not deviate too far from original VGGT predictions, preventing training collapse; (4) **Regularization Loss**: Opacity regularization $L_{op} = \sum \sin(\alpha \cdot c)$ to encourage opacity towards 0 or 1, avoiding semi-transparency issues.
 
-Training uses a single GPU (140 GB VRAM), processing up to 24 images per iteration, with no 3D annotations required.
+Training is performed on a single GPU (140GB VRAM), processing up to 24 images per iteration without 3D labels.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | Off The Grid | AnySplat | DA3-Giant |
-|---------|--------|-------------|----------|-----------|
+|--------|------|-------------|----------|-----------|
 | Average (6 datasets) | PSNR↑ | **21.21** | 17.71 | 18.83 |
 | Average | SSIM↑ | **0.647** | 0.508 | 0.543 |
 | Average | LPIPS↓ | **0.353** | 0.394 | 0.383 |
 | DL3DV | PSNR↑ | **20.48** | 17.31 | 18.46 |
-| Tanks & Temples | PSNR↑ | **19.37** | 16.28 | 16.94 |
+| Tanks&Temples | PSNR↑ | **19.37** | 16.28 | 16.94 |
 
-Compression ratio: the proposed method uses only **0.143 primitives/pixel** (1/7 of the input pixels), compared to 1.0 for pixel-aligned methods and 0.814 for AnySplat.
+Compression Ratio: **Ours** uses only **0.143 primitives/pixel** (1/7th of input pixels), whereas pixel-aligned methods use 1.0, and AnySplat uses 0.814.
 
 ### Ablation Study
 
 | Configuration | PSNR↑ | SSIM↑ | LPIPS↓ |
-|---------------|-------|-------|--------|
-| Ours (Off-The-Grid detection) | **19.22** | **0.604** | **0.333** |
-| Pixel-aligned baseline | 18.90 | 0.590 | 0.382 |
-| SplatterImage-style 3D offset | 18.87 | 0.586 | 0.389 |
+|------|-------|-------|--------|
+| Ours (Off-The-Grid Detection) | **19.22** | **0.604** | **0.333** |
+| Pixel-aligned Baseline | 18.90 | 0.590 | 0.382 |
+| SplatterImage-style 3D Offset | 18.87 | 0.586 | 0.389 |
 
-Geometry evaluation (average):
+Geometric Evaluation (Mean):
 
-| Model | AbsRel↓ | AUC@30↑ | FoV error↓ |
-|-------|---------|---------|------------|
+| Model | AbsRel↓ | AUC@30↑ | FOV Error↓ |
+|------|---------|---------|-----------|
 | Off The Grid | 0.143 | 0.928 | **0.96** |
 | DA3-Giant | **0.134** | **0.934** | 3.66 |
 | AnySplat | 0.159 | 0.833 | 3.225 |
 
 ### Key Findings
-- Off-The-Grid improves PSNR by +0.3 dB and reduces LPIPS by 13% over pixel-aligned placement, yielding sharper renderings with fewer artifacts.
-- SplatterImage-style 3D offset prediction not only fails to improve results but introduces isolated point artifacts, demonstrating that accurate primitive placement requires more sophisticated techniques.
-- The adaptive density mechanism achieves an 86% compression ratio, with the model outperforming baselines while using 7× fewer primitives.
-- Fine-tuned VGGT achieves the best intrinsic parameter estimation, which is critical for accurate back-projection.
+- Compared to pixel-alignment, Off-The-Grid improves PSNR by +0.3dB and reduces LPIPS by 13%, resulting in sharper renderings with fewer artifacts.
+- SplatterImage-style 3D offset prediction does not improve results and introduces floaters, indicating that accurate primitive placement requires more sophisticated techniques.
+- The adaptive density mechanism achieves an 86% compression ratio, outperforming models while using 7x fewer primitives.
+- Fine-tuned VGGT performs best in intrinsic estimation, which is critical for accurate back-projection.
 
 ## Highlights & Insights
-- **Transfer of keypoint detection thinking to 3DGS**: Treating Gaussian primitives—which have no physical existence—as "detectable keypoints" and elegantly achieving sub-pixel precision localization via heatmaps and softmax is a clever analogical transfer.
-- **Shannon entropy for adaptive density**: Patch complexity can be assessed without any learning, representing a simple yet effective engineering design choice.
-- **Multi-view reasoning through confidence learning**: The model automatically learns to reason "this region is better observed from another viewpoint, so I reduce the confidence from this view"—an elegant solution that requires no explicit multi-view aggregation.
-- Photometric supervision renders only input images rather than held-out views; teacher geometry loss prevents geometric collapse, simplifying the training pipeline.
+- **Transferring Keypoint Detection Concepts to 3DGS**: Treating physically non-existent Gaussian primitives as "detectable keypoints" and using heatmaps + softmax for sub-pixel localization is an elegant conceptual transfer.
+- **Adaptive Density via Shannon Entropy**: Determining patch complexity without learning is a simple but effective engineering design.
+- **Multi-view Inference via Confidence Learning**: The model automatically learns "this region is clearer in another view, so I will lower the confidence in this view"—an elegant solution without explicit multi-view aggregation.
+- Photometric supervision on input images only, prevented from geometric collapse by teacher geometry losses, simplifies the training pipeline.
 
 ## Limitations & Future Work
-- Geometry of extremely fine structures may be lost due to limited expressiveness when the number of primitives is reduced.
-- Alternative multi-view aggregation strategies have not been explored; the current confidence-based pruning is relatively simple.
-- The hyperparameters for adaptive density (the 55%/35%/15% partition ratios) are set manually and could potentially be learned as an optimal allocation strategy.
-- Training requires a single GPU with 140 GB VRAM, imposing high hardware demands.
+- Geometry of extremely thin structures may vanish (due to limited representational capacity with fewer primitives).
+- Combination with more sophisticated multi-view aggregation methods remains unexplored; current confidence pruning is relatively simple.
+- Hyperparameters for adaptive density (55%/35%/15% splits) are manually set; a learned optimal allocation strategy could be explored.
+- Training requires 140GB VRAM on a single GPU, posing high hardware requirements.
 
 ## Related Work & Insights
-- **vs. AnySplat**: Both fine-tune VGGT, but AnySplat uses voxel-aligned Gaussians while this work uses detection-based sub-pixel Gaussians. The proposed method significantly outperforms AnySplat across all datasets while using fewer primitives.
-- **vs. PixelSplat**: The pioneering pixel-aligned work, limited to 256×256 low resolution. This paper fundamentally addresses the limitations of pixel alignment.
-- **vs. DA3-Giant**: DA3 achieves stronger depth and pose estimation but suffers from inaccurate intrinsic estimation that leads to blurry renderings. This work improves intrinsic estimation through photometric fine-tuning.
+- **vs AnySplat**: Both are based on fine-tuning VGGT, but AnySplat uses voxel-aligned Gaussians while **Ours** uses detection-based sub-pixel Gaussians. **Ours** significantly outperforms AnySplat across all datasets with fewer primitives.
+- **vs PixelSplat**: A pioneering work in pixel-alignment restricted to 256×256 low resolution. **Ours** fundamentally solves the limitations of pixel-alignment.
+- **vs DA3-Giant**: DA3 is stronger in depth and pose estimation, but inaccurate intrinsic estimation leads to blurry renderings. **Ours** improves intrinsic estimation through photometric supervised fine-tuning.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Applying keypoint detection concepts to 3DGS primitive placement is a novel and natural idea.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Six evaluation datasets, multiple view-count settings, geometry evaluation, and ablation studies provide comprehensive coverage.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clear, method descriptions are detailed, and figures are well designed.
-- **Value**: ⭐⭐⭐⭐ Represents an important paradigm shift for feed-forward 3DGS, from grid alignment to adaptive detection.
+- Novelty: ⭐⭐⭐⭐ Using keypoint detection for 3DGS primitive placement is a novel and natural idea.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across 6 datasets, multiple view settings, geometric evaluations, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed method description, and well-designed visuals.
+- Value: ⭐⭐⭐⭐ Provides a significant paradigm shift for feed-forward 3DGS, moving from grid-alignment to adaptive detection.
 
 <!-- RELATED:START -->
 
@@ -140,10 +142,10 @@ Geometry evaluation (average):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
-- [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
-- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
 - [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
 
 </div>

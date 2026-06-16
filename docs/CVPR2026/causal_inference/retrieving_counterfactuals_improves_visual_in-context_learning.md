@@ -2,46 +2,45 @@
 title: >-
   [Paper Note] Retrieving Counterfactuals Improves Visual In-Context Learning
 description: >-
-  [CVPR 2026][Causal Inference][visual in-context learning] This paper proposes CIRCLES, a framework that retrieves counterfactual demonstrations via attribute-guided composed image retrieval…
+  [CVPR 2026][Causal Inference][visual in-context learning] The CIRCLES framework is proposed to retrieve counterfactual examples through attribute-guided composed image retrieval, constructing a dual-channel in-context demonstration of "causality + correlation" to significantly enhance the fine-grained visual reasoning capabilities of VLMs. ---
 tags:
-  - "CVPR 2026"
-  - "Causal Inference"
-  - "visual in-context learning"
-  - "counterfactual reasoning"
-  - "composed image retrieval"
-  - "vision-language models"
-  - "demonstration selection"
+  - CVPR 2026
+  - Causal Inference
+  - visual in-context learning
+  - counterfactual reasoning
+  - composed image retrieval
+  - vision-language models
+  - demonstration selection
 date: 2026-05-08
-content_hash: 3cff3c09cbb2ed1b
+content_hash: d65781d93c506ebf
 ---
-
 # Retrieving Counterfactuals Improves Visual In-Context Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.16737](https://arxiv.org/abs/2603.16737)  
 **Code**: [github.com/gzxiong/CIRCLES](https://github.com/gzxiong/CIRCLES)  
-**Area**: Causal Inference
+**Area**: Causal Inference  
 **Keywords**: visual in-context learning, counterfactual reasoning, composed image retrieval, vision-language models, demonstration selection
 
 ## TL;DR
 
-This paper proposes CIRCLES, a framework that retrieves counterfactual demonstrations via attribute-guided composed image retrieval, constructing dual-channel in-context demonstrations combining causality and correlation to substantially improve fine-grained visual reasoning in VLMs.
+The CIRCLES framework is proposed to retrieve counterfactual examples through attribute-guided composed image retrieval, constructing a dual-channel in-context demonstration of "causality + correlation" to significantly enhance the fine-grained visual reasoning capabilities of VLMs.
 
 ---
 
 ## Background & Motivation
 
-**Limitations of VLMs in fine-grained reasoning**: Vision-language models (VLMs) perform well on VQA and image captioning tasks, yet struggle in scenarios requiring discrimination of subtle visual attributes (e.g., plumage color differences in bird classification), often relying on spurious correlations rather than accurate reasoning.
+**Shortcomings of VLMs in Fine-grained Reasoning**: Vision-Language Models (VLMs) perform well on tasks like VQA and image captioning but often rely on spurious correlations in scenarios requiring differentiation of subtle visual attributes (e.g., feather color differences in bird classification), making accurate reasoning difficult.
 
-**Key bottleneck in in-context learning**: ICL enables VLMs to rapidly adapt to new tasks via a small number of demonstrations, but its effectiveness is highly sensitive to the demonstration selection strategy — demonstration quality directly determines reasoning quality.
+**Key Bottlenecks of In-Context Learning**: ICL allows VLMs to quickly adapt to new tasks through a few examples, but its effectiveness is highly dependent on the selection strategy of those examples—the quality of demonstrations directly determines the reasoning quality.
 
-**Systematic deficiency of existing retrieval methods**: Similarity-based retrieval methods such as RICES tend to select visually similar examples that share irrelevant confounding attributes, causing models to learn surface-level correlations rather than genuine causal relationships.
+**Systemic Flaws in Existing Retrieval Methods**: Similarity-based retrieval methods like RICES tend to select examples that are visually similar but share irrelevant confounding attributes, leading the model to learn surface correlations rather than true causal relationships.
 
-**Fundamental distinction between correlation and causality**: Similarity-based retrieval finds images that "look alike," but cannot inform the model "which attribute change causes a label change" — which is precisely the core of causal reasoning.
+**Essential Difference Between Correlation and Causality**: Similarity retrieval finds images that "look alike," but it cannot inform the model "which attribute change will change the answer"—which is the core of causal reasoning.
 
-**Fragility under data-scarce settings**: When relevant samples in the training set are limited, pure similarity-based retrieval suffers sharp performance degradation, lacking robustness.
+**Fragility in Information-Scarce Scenarios**: When relevant samples in the training set are limited, the performance of pure similarity retrieval drops sharply, lacking robustness.
 
-**New opportunity for CIR techniques**: Composed Image Retrieval (CIR) was originally developed for retrieval tasks themselves; this paper is the first to employ it as a causal intervention tool to construct counterfactual demonstrations for ICL.
+**New Application Opportunities for CIR Technology**: Composed Image Retrieval was originally used for retrieval tasks themselves. This paper is the first to utilize it as a causal intervention tool to construct counterfactual examples for ICL.
 
 ---
 
@@ -49,25 +48,38 @@ This paper proposes CIRCLES, a framework that retrieves counterfactual demonstra
 
 ### Overall Architecture
 
-CIRCLES (Composed Image Retrieval for Causal Learning Example Selection) comprises three modules: (1) a causal understanding channel based on attribute-guided CIR; (2) a correlation understanding channel based on standard image similarity; and (3) retrieval-augmented inference via dual-channel fusion. Given a query image and question, the two channels retrieve $k_{\text{causal}}$ and $k_{\text{corr}}$ demonstrations respectively, which are merged and provided as the ICL context for VLM inference.
+CIRCLES (Composed Image Retrieval for Causal Learning Example Selection) consists of three modules: (1) a causal understanding channel based on attribute-guided CIR; (2) a correlation understanding channel based on standard image similarity; and (3) retrieval-augmented inference combined from the dual channels. Given a query image and a question, the two channels retrieve $k_{\text{causal}}$ and $k_{\text{corr}}$ examples respectively, which are merged and used as the ICL context for VLM reasoning.
 
-### Key Design 1: Attribute-Guided Counterfactual Demonstration Retrieval
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Query Image + Question"] --> B
+    A --> F
+    subgraph CAUSAL["Attribute-guided Counterfactual Retrieval (Causal Channel)"]
+        direction TB
+        B["VLM extracts decisive<br/>attribute-value pairs A"] --> C["Perform do() intervention<br/>to generate counterfactual descriptions"]
+        C --> D["CIR engine with question similarity enhancement<br/>OSrCIR image-text similarity + question similarity constraints"]
+    end
+    F["Correlation Retrieval Channel<br/>CLIP image-image top-k_corr"]
+    D -->|"top-k_causal"| G["Merge dual-channel examples<br/>to form ICL context"]
+    F -->|"top-k_corr"| G
+    G --> H["VLM in-context inference"]
+    H --> I["Output Answer"]
+```
 
-- **Function**: Performs "counterfactual intervention" on key attributes of the query image one at a time — holding all other attributes fixed while altering the target attribute value — and retrieves real images matching the counterfactual description as demonstrations.
-- **Mechanism**: A VLM first extracts the decisive attribute-value pairs $\mathcal{A} = \{a_1, \dots, a_m\}$ from the query image. For each attribute $a_i$, an alternative value $v_i'$ is sampled, and the VLM generates a counterfactual description $c^{\text{do}(a_i=v_i')}$. CLIP then computes the image-text similarity $s_j^{\text{img}}$ between candidate images and this description. A question-to-question semantic similarity $s_j^{\text{txt}}$ is additionally incorporated as a constraint, and top-k candidates are selected via joint ranking.
-- **Design Motivation**: The $\text{do}(\cdot)$ intervention isolates the causal effect of individual attributes, exposing the model to contrastive pairs of the form "changing attribute $X$ → label changes," thereby preventing spurious co-occurrence from misleading the model. The question similarity term ensures that retrieved results remain semantically consistent with the original task.
+### Key Designs
 
-### Key Design 2: Correlation Retrieval Channel
+**1. Attribute-guided counterfactual example retrieval: Showing the model that "changing one attribute changes the answer"**
 
-- **Function**: Uses standard CLIP image-to-image cosine similarity to retrieve the $k_{\text{corr}}$ most similar examples to the query, providing global visual context.
-- **Mechanism**: $s_j^{\text{corr}} = \mathbf{z}_q^{I\top} \mathbf{z}_j^I$, selecting top-k most similar samples directly.
-- **Design Motivation**: Counterfactual demonstrations focus on attribute differences and may lack holistic visual pattern information; the correlation channel compensates by supplying contextual support for recognition and localization. The two channels are thus complementary.
+The failure of VLMs on fine-grained tasks stems from their inability to distinguish "which attribute truly determines the label," leading them to take shortcuts using co-occurring irrelevant attributes. This channel addresses this pain point through counterfactual intervention: the VLM first extracts a set of decisive attribute-value pairs $\mathcal{A} = \{a_1, \dots, a_m\}$ from the query image (e.g., for a bird image, extracting "beak shape=pointed", "feather color=red", "size=small"). Then, for each attribute $a_i$, an alternative value $v_i'$ is sampled, and the VLM generates a counterfactual description $c^{\text{do}(a_i=v_i')}$ where "everything else remains the same, but $a_i$ is changed to $v_i'$" (e.g., "change feather color to blue"). During retrieval, CLIP calculates the image-text similarity $s_j^{\text{img}}$ between candidate images and this description, overlaid with a question-question semantic similarity constraint to rank and select the top-$k$. This step is essentially a $\text{do}(\cdot)$ intervention: isolating the causal effect of a single attribute from co-occurrence noise. The model directly observes paired contrasts of "change this attribute → label changes" in the context, rather than being fed another image that "looks similar but misses the point."
 
-### Key Design 3: CIR Implementation and Question Similarity Augmentation
+**2. Correlation retrieval channel: Recovering the global visual context lost in counterfactual examples**
 
-- **Function**: OSrCIR (a training-free CIR method) is adopted as the counterfactual image retrieval engine, and a question-to-question text similarity term is added to the original CIR scoring.
-- **Mechanism**: OSrCIR directly generates descriptions conditioned on the query image and modification text, yielding finer-grained results than CIReVL (which first describes and then edits). The term $s_j^{\text{txt}} = \mathbf{z}_q^{Q\top} \mathbf{z}_j^Q$ is incorporated to ensure that retrieved results remain relevant at the inference-task level.
-- **Design Motivation**: CIR quality directly determines counterfactual demonstration quality. OSrCIR achieves approximately 5.4% higher accuracy than CIReVL on CUB. The question similarity term yields up to 14.3% EM improvement on datasets with diverse questions such as OK-VQA.
+Counterfactual examples focus on attribute differences, but the trade-off is that they often highlight only one local change, lacking coverage of overall visual patterns. Therefore, CIRCLES runs a standard correlation channel in parallel, using CLIP image-image cosine similarity $s_j^{\text{corr}} = \mathbf{z}_q^{I\top} \mathbf{z}_j^I$ to select the $k_{\text{corr}}$ most similar examples, providing the global context needed for identification and localization. The two channels form a division of labor: the causal channel handles "which attributes are important," while the correlation channel handles "what the overall appearance is." The merged results from both channels are fed as the ICL context to the VLM.
+
+**3. CIR engine and question similarity enhancement: Ensuring counterfactual images are both realistic and relevant**
+
+The quality of counterfactual examples depends on the underlying composed image retrieval engine. CIRCLES utilizes the training-free OSrCIR: it generates target descriptions conditioned directly on "query image + modified text," which is more precise than the two-stage "description then edit" approach like CIReVL, yielding a ~5.4% accuracy improvement on CUB. However, pure image-text retrieval might find images that are visually correct but irrelevant to the reasoning task. Thus, an additional question-question text similarity term $s_j^{\text{txt}} = \mathbf{z}_q^{Q\top} \mathbf{z}_j^Q$ is added to lock retrieval onto samples from the same task origin—this term alone contributes up to a 14.3% EM improvement on datasets with high question diversity like OK-VQA.
 
 ---
 
@@ -75,20 +87,20 @@ CIRCLES (Composed Image Retrieval for Causal Learning Example Selection) compris
 
 CIRCLES is a **training-free** framework:
 
-- No fine-tuning or gradient updates are applied to the VLM.
-- The CLIP encoder is frozen and used solely for pre-computing embeddings.
-- The CIR module (OSrCIR) likewise requires no training.
-- All computation is performed at inference time: attribute extraction → counterfactual description generation → retrieval → ICL inference.
-- CLIP embeddings of training set samples can be pre-computed and stored; inference overhead primarily stems from VLM calls for attribute extraction and description generation.
+- No fine-tuning or gradient updates are performed on the VLM.
+- The CLIP encoder is frozen and used only for pre-calculating embeddings.
+- The CIR module (OSrCIR) also requires no training.
+- All computations are performed at inference time: attribute extraction → counterfactual description generation → retrieval → ICL inference.
+- CLIP embeddings for training set samples can be pre-calculated and stored; inference overhead primarily comes from VLM calls for attribute extraction and description generation.
 
 ---
 
 ## Key Experimental Results
 
-### Table 1: Main Results (4 Datasets × 4 Models)
+**Table 1: Main Results (4 datasets × 4 models)**
 
-| Model | Method | CUB Acc | Flowers Acc | OK-VQA EM | VizWiz EM | Avg. EM |
-|-------|--------|---------|-------------|-----------|-----------|---------|
+| Model | Method | CUB Acc | Flowers Acc | OK-VQA EM | VizWiz EM | Avg EM |
+|------|------|---------|-------------|-----------|-----------|---------|
 | Gemma3-4B | RICES | 65.40 | 86.70 | 26.65 | 56.08 | 58.71 |
 | Gemma3-4B | **CIRCLES** | **71.97** | **93.32** | **31.27** | **57.61** | **63.54** |
 | Gemma3-12B | RICES | 76.37 | 96.44 | 36.86 | 73.98 | 70.91 |
@@ -98,59 +110,59 @@ CIRCLES is a **training-free** framework:
 | Qwen2.5-VL-7B | RICES | 82.15 | 98.83 | 43.66 | 73.79 | 74.61 |
 | Qwen2.5-VL-7B | **CIRCLES** | **82.17** | **98.99** | **43.54** | **77.63** | **75.58** |
 
-### Table 2: Ablation on the Question Similarity Term (OK-VQA EM)
+**Table 2: Ablation of Question Similarity Term (OK-VQA EM)**
 
 | Model | w/o Q-Q Similarity | w/ Q-Q Similarity | Relative Gain |
-|-------|--------------------|-------------------|---------------|
+|------|--------------|--------------|----------|
 | Gemma3-4B | 27.72 | 31.27 | +12.8% |
 | Gemma3-12B | 33.02 | 37.75 | +14.3% |
 | Qwen2.5-VL-3B | 41.12 | 43.24 | +5.2% |
 | Qwen2.5-VL-7B | 40.80 | 43.54 | +6.7% |
 
-**Other Key Findings**:
+**Key Findings**:
 
-- Data-scarce experiment: When 75% of training samples are removed, the advantage of CIRCLES over RICES on Gemma3-4B grows from 10.05% to 16.28%.
-- CIR method comparison: OSrCIR vs. CIReVL yields a relative accuracy improvement of 5.39%–5.56%.
-- Budget allocation: With a total budget of 32 demonstrations, CIR 16 + IR 16 is the optimal configuration; under low budgets, spreading across more attributes is preferable, while under high budgets, focusing on fewer attributes is more effective.
+- Information Scarcity Experiment: When 75% of the training set is removed, the advantage of CIRCLES over RICES on Gemma3-4B expands from 10.05% to 16.28%.
+- CIR Method Comparison: OSrCIR vs. CIReVL provides a relative accuracy improvement of 5.39%-5.56%.
+- Budget Allocation: With a total budget of 32 examples, a configuration of CIR 16 + IR 16 is optimal; with a small budget, broad attribute coverage is better, whereas large budgets benefit from focusing on a few specific attributes.
 
 ---
 
 ## Highlights & Insights
 
-- **Causal perspective introduced into ICL**: This is the first work to systematically integrate causal intervention into VLM in-context demonstration selection, elevating the paradigm from "find similar" to "find contrastive."
-- **Training-free**: The entire framework is training-free and plug-and-play with any VLM, making it highly practical.
-- **Substantial gains for smaller models**: Improvements are most pronounced for models with limited internal knowledge (Gemma3-4B, Qwen2.5-VL-3B), with average EM gains of ~8%, indicating that counterfactual demonstrations effectively compensate for limited model capacity.
-- **Robustness under data scarcity**: The relative advantage of CIRCLES grows as available data decreases — a highly valuable property for real-world deployments.
-- **Enhanced interpretability**: Counterfactual demonstrations intuitively illustrate "what changes → how the outcome changes," making the ICL process more transparent.
+- **Introduction of Causal Perspective to ICL**: Systematically integrates causal intervention into VLM in-context example selection for the first time, upgrading from "finding similarities" to "finding contrasts."
+- **Training-Free**: The entire framework is training-free and can be used out-of-the-box with any VLM, offering high practical utility.
+- **Significant Gains for Small Models**: Improvement is particularly prominent for smaller models with limited internal knowledge (Gemma3-4B, Qwen2.5-VL-3B), with average EM gains of ~8%, indicating that counterfactual examples effectively compensate for model capacity deficiencies.
+- **Robustness Under Information Scarcity**: The fewer the data, the greater the relative advantage of CIRCLES—this is highly valuable in practical applications.
+- **Enhanced Explainability**: Counterfactual examples intuitively demonstrate "what to change → how the result changes," making the ICL process more transparent.
 
 ---
 
-## Limitations & Future Work
+## Limitations
 
-- **Increased inference overhead**: Each query requires VLM calls for attribute extraction and counterfactual description generation, adding inference time and API call costs.
-- **Dependence on VLM attribute extraction quality**: If the VLM itself cannot accurately identify key attributes, the causal reasoning foundation of the entire framework becomes unreliable.
-- **Not rigorous causal identification**: The paper explicitly acknowledges that CIRCLES does not perform formal causal identification but rather approximate intervention — which may fail when complex interactions exist among attributes.
-- **Diminishing returns on larger models**: Gains on Qwen2.5-VL-7B are already relatively modest, suggesting that stronger models have already internalized a degree of causal reasoning capacity.
-- **Evaluation limited to classification and VQA**: Validation on more complex generative tasks (e.g., image captioning, visual grounding) is absent.
+- **Increased Inference Overhead**: Each query requires VLM calls to extract attributes and generate counterfactual descriptions, increasing inference time and API costs.
+- **Attribute Extraction Quality Depends on VLM**: If the VLM itself cannot accurately identify key attributes, the foundation of the framework's causal reasoning becomes unreliable.
+- **Non-strict Causal Inference**: The paper acknowledges that CIRCLES is an approximate intervention rather than formal causal identification; it may fail when complex interactions exist between attributes.
+- **Diminishing Returns on Large Models**: The improvement on Qwen2.5-VL-7B is relatively limited, suggesting that powerful models already possess certain internal causal reasoning capabilities.
+- **Evaluated Only on Classification and VQA**: Lacks verification on more complex generative tasks (e.g., image captioning, visual grounding).
 
 ---
 
 ## Related Work & Insights
 
-- **RICES / MUIER / MMICES** are the primary baselines, all based on similarity retrieval without considering causal structure — CIRCLES differentiates itself by introducing a counterfactual dimension.
-- **Composed Image Retrieval (CIR)** methods including CIReVL and OSrCIR are innovatively repurposed from "retrieval tasks themselves" to "causal intervention tools" — this paradigm of applying existing techniques in novel contexts is a noteworthy methodological contribution.
-- **Inspiration**: This paradigm can be generalized to other ICL scenarios (e.g., few-shot NLP, tool-use agents); the core idea is to replace pure similarity-based demonstrations with contrastive/counterfactual ones, enabling models to learn "change → effect" rather than "looks similar → answer is similar."
+- **RICES / MUIER / MMICES** are primary baselines, all based on similarity retrieval without considering causal structures—CIRCLES differentiates itself by introducing a counterfactual dimension.
+- **Composed Image Retrieval (CIR)** techniques like CIReVL and OSrCIR are innovatively repurposed from "retrieval tasks" to "causal intervention tools"—this "new use for old technology" approach is worth learning from.
+- **Insights**: This paradigm can be extended to other scenarios requiring ICL (e.g., few-shot NLP, tool-use agents). The core idea is to replace pure similarity examples with contrastive/counterfactual examples, allowing the model to learn "change → impact" instead of "looks similar → answer is the same."
 
 ---
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Novelty | ⭐⭐⭐⭐ |
 | Technical Depth | ⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐ |
-| Value | ⭐⭐⭐⭐ |
+| Practical Value | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
 
@@ -161,8 +173,8 @@ CIRCLES is a **training-free** framework:
 - [\[CVPR 2026\] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations](maskdime_adaptive_masked_diffusion_for_precise_and_efficient_visual_counterfactu.md)
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](../../NeurIPS2025/causal_inference/do-pfn_in-context_learning_for_causal_effect_estimation.md)
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](../../NeurIPS2025/causal_inference/cyclic_counterfactuals_under_shift-scale_interventions.md)
+- [\[ICML 2025\] RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals](../../ICML2025/causal_inference/rate_causal_explainability_of_reward_models_with_imperfect_counterfactuals.md)
 - [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
 
 </div>
 

@@ -2,72 +2,86 @@
 title: >-
   [Paper Note] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling
 description: >-
-  [ICML 2026][AI Safety][Panoramic Watermarking] TRIAD treats 360° panoramas as spherical signals and utilizes the tensor product of third-order Spherical Harmonic (SH) coefficients projected onto a trivial representation…
+  [ICML 2026][AI Safety][Paper Note] TRIAD treats 360° panoramas as spherical signals, using the tensor product of third-order Spherical Harmonic (SH) coefficients projected onto a trivial representation to obtain a **provably SO(3)-invariant** bispectral scalar. This allows watermarks to be hidden in high-order SH coefficients and extracted from this inv
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Panoramic Watermarking"
-  - "SO(3) Equivariance"
-  - "Spherical Harmonics"
-  - "Bispectral Invariants"
-  - "Tensor Product Coupling"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 9338399589adfc88
+content_hash: 38e63df9c3292d1a
 ---
-
 # Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.26702](https://arxiv.org/abs/2605.26702)  
-**Code**: The paper states "Code is available here," arXiv page pending confirmation  
+**Code**: Noted in the paper as "Code is available here", arXiv page pending confirmation  
 **Area**: AI Security / Digital Watermarking / Spherical Signal Processing  
-**Keywords**: Panoramic Watermarking, SO(3) Equivariance, Spherical Harmonics, Bispectral Invariants, Tensor Product Coupling
+**Keywords**: Panoramic Watermarking, SO(3) Equivariant, Spherical Harmonics, Bispectral Invariants, Tensor Product Coupling
 
 ## TL;DR
-TRIAD treats 360° panoramas as spherical signals and utilizes the tensor product of third-order Spherical Harmonic (SH) coefficients projected onto a trivial representation to obtain a **provably SO(3)-invariant** bispectral scalar. This allows the watermark to be embedded in high-order SH coefficients and retrieved from this invariant, maintaining near 100% bit accuracy under arbitrary 3D rotations without relying on data augmentation.
+TRIAD treats 360° panoramas as spherical signals, using the tensor product of third-order Spherical Harmonic (SH) coefficients projected onto a trivial representation to obtain a **provably SO(3)-invariant** bispectral scalar. This allows watermarks to be hidden in high-order SH coefficients and extracted from this invariant, maintaining nearly 100% bit accuracy under any 3D rotation without relying on data augmentation.
 
 ## Background & Motivation
 
-**Background**: AIGC has made 360° panoramas (VR / Metaverse / World Model training data) highly accessible, creating an urgent need for digital watermarking for copyright tracking. Existing deep watermarking methods (StegaStamp / TrustMark / VINE / Robust-Wide, etc.) are almost entirely built on the translation equivariance assumption of CNNs, relying on data augmentation to resist geometric attacks.
+**Background**: AIGC has made 360° panoramas (VR / Metaverse / World Model training data) easily accessible, creating an urgent need for digital watermarking for copyright tracking. Existing deep watermarking methods (StegaStamp / TrustMark / VINE / Robust-Wide, etc.) are almost entirely built on the translation equivariance assumption of CNNs, relying on data augmentation to resist geometric attacks.
 
-**Limitations of Prior Work**: Panoramas are inherently signals defined on the sphere $\mathbb{S}^2$; when a user views them through an HMD, head rotation applies an SO(3) rotation to the signal. When panoramas are represented in Equirectangular Projection (ERP), a 3D rotation on the sphere becomes a highly non-linear pixel displacement with severe latitude-dependent distortion (polar stretching + large-scale texture shifts), which planar CNNs cannot align.
+**Limitations of Prior Work**: Panoramas are inherently signals defined on the sphere $\mathbb{S}^2$. A user rotating their head in an HMD applies an SO(3) rotation. When a panorama is represented as an Equirectangular Projection (ERP), a 3D rotation on the sphere becomes a highly non-linear, latitude-dependent pixel shift (polar stretching + large-scale texture displacement), which planar CNNs cannot align.
 
-**Key Challenge**: SO(3) is a continuous infinite group with infinitely many rotations, which finite augmentation samples cannot fully cover. Robustness gained through "memorization" lacks theoretical guarantees, incurs high training costs, and collapses to random guessing when encountering unseen rotation angles. Furthermore, using the naturally rotation-invariant zero-order $c_0$ (DC component) of SH coefficients as a carrier would directly alter global brightness or color temperature, making the watermark immediately visible.
+**Key Challenge**: SO(3) is a continuous infinite group with infinite possible rotations; any finite set of augmented samples is insufficient. Robustness obtained via "memorization" lacks theoretical guarantees and incurs high training costs, failing instantly when encountering rotation angles unseen during training. Furthermore, using the naturally rotation-invariant zero-order coefficient $c_0$ (DC component) in SH as a carrier directly alters global brightness/color temperature, making it visually obvious.
 
-**Goal**: To construct a **provably SO(3)-invariant** watermarking framework for spherical signals—embedding the watermark in high-order SH subspaces (large capacity, visually hidden) while being able to retrieve it from a scalar that is **strictly invariant** to rotation.
+**Goal**: To construct a **provably SO(3)-invariant** watermarking framework on spherical signals—hiding the watermark in high-order SH subspaces (large capacity, visual imperceptibility) while being able to retrieve it from a scalar that is **strictly invariant** to rotation.
 
-**Key Insight**: Leveraging SO(3) representation theory. SH coefficients $c_l$ transform block-wise under rotation via Wigner-D matrices $c_l' = D^l(R) c_l$, without mixing different $l$. While the second-order power spectrum is invariant, it is "phase-blind" and loses directional information. Only the **third-order** tensor product $\mathcal{V}_{l_1} \otimes \mathcal{V}_{l_2} \otimes \mathcal{V}_{l_3}$ projected onto the trivial representation $\mathcal{V}_0$ is both strictly invariant and phase-retaining (i.e., the classical bispectrum).
+**Key Insight**: Leveraging SO(3) representation theory. SH coefficients $c_l$ transform block-wise under rotation via Wigner-D matrices $c_l' = D^l(R) c_l$, where different $l$ do not mix. While the second-order power spectrum is invariant, it is "phase-blind," losing directional information. Only the **third-order** tensor product $\mathcal{V}_{l_1} \otimes \mathcal{V}_{l_2} \otimes \mathcal{V}_{l_3}$ projected to the trivial representation $\mathcal{V}_0$ is both strictly invariant and phase-retaining (i.e., the classic bispectrum).
 
-**Core Idea**: Utilizing an asymmetric structure of "high-order SH embedding + third-order bispectrum extraction" to mathematically decouple "information capacity" from "rotation invariance"—embedding in the equivariant high-order subspace and extracting from the invariant zero-order scalar.
+**Core Idea**: An asymmetric structure of "high-order SH writing + third-order bispectrum reading" is used to mathematically decouple "information capacity" from "rotation invariance"—writing in the equivariant high-order subspace and reading from the invariant zero-order scalar.
 
 ## Method
 
 ### Overall Architecture
-TRIAD is an end-to-end encoder-decoder framework. The input is an $H \times 2H$ ERP panorama $x$ and a $k=32$ bit watermark $w \in \{0,1\}^k$; the output is a visually imperceptible watermarked image $\tilde{x}$. The decoder requires no alignment and recovers $\hat{w}$ by extracting bispectral invariant scalars directly in the SH domain.
+TRIAD shifts panoramic watermarking from a planar CNN problem to the spherical SH domain. Given an $H \times 2H$ ERP panorama $x$ and a 32-bit watermark $w \in \{0,1\}^{32}$, the encoder first performs a Spherical Harmonic Transform (SHT) to obtain SH coefficients $c=\{c_l\}_{l=0}^{l_{\max}}$ (default $l_{\max}=16$). The watermark is injected into selected high-order SH subspaces, and the result is transformed back to the spatial domain as $\tilde{x}$. The decoder **performs no alignment or inverse rotation**; after a second SHT, it extracts $\hat{w}$ directly from a third-order scalar that is strictly invariant to SO(3) rotation. The core of this design is an asymmetric structure—writing information in rotation-sensitive, high-order equivariant subspaces (large capacity, imperceptible) and reading from a rotation-invariant trivial zero-order scalar (numerical value remains unchanged under any rotation), thus decoupling capacity and rotation invariance.
 
-The pipeline consists of four steps: (1) **Spherical Harmonic Transform (SHT)**: Lifting $x$ to SH coefficients $c = \{c_l\}_{l=0}^{l_{\max}}$, with a default $l_{\max}=16$; (2) **Equivariant Embedding**: Using an e3nn-based SO(3)-equivariant backbone $\Phi_{eq}$ to map $c$ to selected high-order subspaces $\mathcal{V}_{embed} = \mathcal{V}_6 \oplus \mathcal{V}_8 \oplus \mathcal{V}_{14}$, then integrating the watermark into these equivariant features through a parameterized tensor product $\text{TP}_{\vartheta_1}(u, w)$. The result is transformed back to the spatial domain via inverse SHT to obtain the residual $\Delta x$, which is modulated by a perceptual mask $M_{perc}$ and a geometric mask $M_{geo}$ before being added to the original: $\tilde{x} = x + M_{perc}(x) \odot M_{geo} \odot \Delta x$; (3) **Decoder SHT** and projection to the same $\mathcal{V}_{embed}$ to obtain $\hat{u}$; (4) **Third-order Invariant Projection**: Calculating learnable bispectrum scalars using a two-step tensor product $h = \text{TP}_{\vartheta_2}(\hat{u}, \hat{u})$ and $z = \text{TP}_{\vartheta_3}(h, \hat{u})|_{\mathcal{V}_0}$, followed by a lightweight MLP to decode $\hat{w}$.
+```mermaid
+graph TD
+    A["Input: ERP Panorama x + 32-bit Watermark w<br/>SHT → SH Coefficients c (l_max=16)"] --> B["High-order SH Subspace Writing<br/>Equivariant backbone Φ_eq + Tensor Product Injection V_embed={6,8,14}"]
+    B --> C["Inverse SHT + Perceptual Mask + ERP Geometric Mask<br/>→ Watermarked Panorama x̃"]
+    C -->|"Arbitrary SO(3) Rotation / JPEG·Resize etc."| D["Second SHT → Watermarked Coefficients ĉ (Zero Alignment, Zero Inverse Rotation)"]
+    D --> E["Double Equivariant Tensor Product Chain<br/>TP→TP projected to trivial representation V_0"]
+    E --> F["Bispectral Invariant I (Third-order Tensor Product)<br/>SO(3) Strictly Invariant Scalar"]
+    F --> G["Lightweight MLP → Decoded Watermark ŵ"]
+```
 
 ### Key Designs
 
-1. **Provably Invariant Spherical Bispectral Invariant via Third-order SH Tensor Product**:
-    - **Function**: Extracts watermark information hidden in high-order (rotation-sensitive) SH coefficients into a scalar signal that is **strictly invariant** to any SO(3) rotation.
-    - **Mechanism**: Decomposing the tensor product of three SH irreducible representations $\mathcal{V}_{l_1} \otimes \mathcal{V}_{l_2} \otimes \mathcal{V}_{l_3} = \bigoplus_l \mathcal{V}_l$ and selecting the $l=0$ trivial component yields $I = \sum_{l_i, m_i} C^{0,0}_{l_1 m_1\, l_2 m_2\, l_3 m_3}\, c_{l_1}^{m_1} c_{l_2}^{m_2} c_{l_3}^{m_3}$, where $C^{0,0}_{\dots}$ are Clebsch-Gordan coefficients derived from Wigner 3-j symbols. Theorem 4.1 proves that this scalar satisfies $I(R \cdot f) = I(f)$ and yields non-zero responses to perturbations in high-order coefficients (allowing information recovery), with the proof in Appendix A.1.
-    - **Design Motivation**: While the zero-order $c_0$ is naturally invariant, it represents the global DC component; altering it causes visible shifts in brightness. The second-order power spectrum is invariant but is a phase-blind many-to-one mapping with very low capacity. Third-order coupling is the lowest-order construction that **simultaneously** preserves phase, maintains strict invariance, and avoids the DC component, effectively decoupling "high capacity" from "provable invariance."
+**1. Third-order SH Tensor Product for Provable Invariant Bispectral Scalars: Solving the conflict between "High Capacity" and "Strict Rotation Invariance"**
 
-2. **Higher-Order Spectral Embedding via Equivariant Backbone**:
-    - **Function**: Embeds the watermark in high-frequency harmonic subspaces that are perceptually less noticeable yet provide sufficient energy for third-order coupling, ensuring visual fidelity.
-    - **Mechanism**: Operations are restricted to $\mathcal{V}_{embed} = \bigoplus_{l \in \mathcal{L}_{embed}} \mathcal{V}_l$ ($l > 0$), where $\mathcal{L}_{embed} = \{6, 8, 14\}$ by default. Structured spectral features $u = \Phi_{eq}(c)$ are extracted using a 2-layer Gated Block equivariant backbone. The 32-bit watermark (as $\mathcal{V}_0$ scalar features) is injected into the irreducible subspaces of $u$ via an SO(3)-equivariant tensor product $\Delta u = \text{TP}_{\vartheta_1}(u, w)|_{\mathcal{V}_{embed}}$, relying on SH basis orthogonality to prevent leakage into other bands. Finally, it is written back to the spatial domain through inverse SHT and the masks $\tilde{x} = x + M_{perc}(x) \odot M_{geo} \odot \Delta x$.
-    - **Design Motivation**: Lower $l$ orders (e.g., $\mathcal{V}_4$) provide high robustness but create visible artifacts; high $l$ orders (e.g., $\mathcal{V}_{16}$) are stealthy but susceptible to compression or aliasing. Experiments identify the middle-frequency set $\{6, 8, 14\}$ as the fidelity-robustness "sweet spot"—providing sufficient phase diversity for third-order coupling while avoiding ultra-high bands prone to attack attenuation. The ERP geometric mask $M_{geo}$ specifically suppresses modification amplitudes in polar regions.
+The watermark is hidden in high-order SH coefficients, but these coefficients transform via Wigner-D matrices $c_l' = D^l(R)c_l$ under rotation. A method to recombine them into rotation invariants is required. Simple choices fail: the zero-order $c_0$ is naturally invariant but represents the global DC component, causing visible shifts in brightness if modified. The second-order power spectrum is invariant but is a phase-blind many-to-one mapping, severely limiting capacity. TRIAD uses the **third-order** tensor product—decomposing the product of three SH irreducible representations $\mathcal{V}_{l_1} \otimes \mathcal{V}_{l_2} \otimes \mathcal{V}_{l_3} = \bigoplus_l \mathcal{V}_l$ and selecting only the $l=0$ trivial component, yielding the bispectral scalar:
 
-3. **Decoupled Embed-Extract via Equivariant Tensor Product Chain**:
-    - **Function**: The decoder does not require alignment, inverse rotation, or prior angle estimation; it extracts invariant scalars numerically identical to those at training time from any rotated panorama.
-    - **Mechanism**: The decoder approximates the third-order bispectrum using a two-step chain: $h = \text{TP}_{\vartheta_2}(\hat{u}, \hat{u})|_{\mathcal{V}_{embed}}$ performs second-order coupling in the equivariant subspace, and $z = \text{TP}_{\vartheta_3}(h, \hat{u})|_{\mathcal{V}_0}$ completes the coupling and forces projection to the trivial representation. This is equivalent to a parameterized $\text{TP}(\hat{u}, \hat{u}, \hat{u}) \to \mathcal{V}_0$, where $\vartheta_2, \vartheta_3$ learn to select the CG channels most sensitive to the watermark. The resulting invariant vector is decoded by an MLP. The system is trained end-to-end with $\mathcal{L}_{total} = \lambda_m \mathcal{L}_{MSE}(x, \tilde{x}) + \lambda_{bce} \mathcal{L}_{BCE}(w, \hat{w})$, where $\lambda_{bce}=10$ and $\lambda_m$ linearly increases from 1 to 20.
-    - **Design Motivation**: Unlike traditional methods that place "robustness" on the data/training side (augmentation), this work places it on the **architecture and representation side**. By strictly projecting to $\mathcal{V}_0$ at the decoder's final step, the output is strictly invariant to SO(3) regardless of network complexity. This is the fundamental reason for near-perfect resistance to arbitrary rotation with "zero augmentation."
+$$I = \sum_{l_i, m_i} C^{0,0}_{l_1 m_1\, l_2 m_2\, l_3 m_3}\, c_{l_1}^{m_1} c_{l_2}^{m_2} c_{l_3}^{m_3},$$
+
+where $C^{0,0}_{\dots}$ are Clebsch-Gordan coefficients derived from Wigner 3-j symbols. Theorem 4.1 (proof in Appendix A.1) guarantees $I(R\cdot f)=I(f)$ for any rotation $R$, while maintaining non-zero response to perturbations in high-order coefficients—meaning watermark changes can be retrieved from $I$. Third-order coupling is thus the **lowest-order** construction that preserves phase, maintains strict invariance, and avoids altering the DC component.
+
+**2. High-order SH Subspace Writing + Equivariant Backbone Injection: Deciding where to embed for imperceptibility and robustness**
+
+The writing process operates only on the high-order subspace $\mathcal{V}_{embed} = \bigoplus_{l \in \mathcal{L}_{embed}} \mathcal{V}_l$ ($l>0$, default $\mathcal{L}_{embed}=\{6,8,14\}$). A 2-layer Gated Block SO(3)-equivariant backbone extracts structured spectral features $u = \Phi_{eq}(c)$, then the 32-bit watermark (treated as $\mathcal{V}_0$ scalar features) is injected via a parameterized equivariant tensor product $\Delta u = \text{TP}_{\vartheta_1}(u, w)|_{\mathcal{V}_{embed}}$. Using the orthogonality of SH bases ensures only selected frequency bands are modified. After inverse SHT, the result is modulated by a perceptual mask $M_{perc}$ and an ERP geometric mask $M_{geo}$:
+
+$$\tilde{x} = x + M_{perc}(x) \odot M_{geo} \odot \Delta x.$$
+
+The mid-frequency combination $\{6,8,14\}$ is selected because low-order $l$ (e.g., $\mathcal{V}_4$) provides high robustness but visible artifacts, while high-order $l$ (e.g., $\mathcal{V}_{16}$) is imperceptible but easily removed by JPEG/anti-aliasing. Mid-frequencies are the fidelity-robustness sweet spot.
+
+**3. Decoupled Asymmetric Codec + Double Equiv. Tensor Product Chain: Enabling decoding under arbitrary rotation without alignment**
+
+The decoder aims to extract identical invariant scalars without inverse rotation or angle estimation. TRIAD uses a two-step chained equivariant tensor product to approximate the third-order bispectrum: first, a second-order coupling in the equivariant subspace $h = \text{TP}_{\vartheta_2}(\hat{u}, \hat{u})|_{\mathcal{V}_{embed}}$, followed by another coupling **strictly projected to the trivial representation** $z = \text{TP}_{\vartheta_3}(h, \hat{u})|_{\mathcal{V}_0}$. This is mathematically equivalent to a parameterized $\text{TP}(\hat{u},\hat{u},\hat{u})\to\mathcal{V}_0$, where learnable parameters $\vartheta_2,\vartheta_3$ select CG channels most sensitive to the watermark. The resulting invariant vector is processed by a lightweight MLP to decode $\hat{w}$. Because the final step is a strict projection to $\mathcal{V}_0$, the output is mathematically invariant to SO(3) regardless of network complexity.
+
+### Loss & Training
+The codec is trained end-to-end with a weighted sum of visual fidelity and watermark recovery losses:
+
+$$\mathcal{L}_{total} = \lambda_m \mathcal{L}_{MSE}(x, \tilde{x}) + \lambda_{bce} \mathcal{L}_{BCE}(w, \hat{w}),$$
+
+where $\lambda_{bce}=10$ is fixed, and $\lambda_m$ linearly increases from 1 to 20 to prioritize watermark embedding initially before tightening fidelity constraints.
 
 ## Key Experimental Results
 
 ### Main Results: General Distortion and Rotation Robustness
-Trained on 10,000 panoContext + SUN360 panoramas, tested on 2,000 images at $512 \times 1024$ resolution with a 32-bit watermark. Comparison with 6 SOTA baselines:
+Trained on 10k panoContext + SUN360 panoramas at 512×1024 resolution with a 32-bit watermark. Comparison with 6 SOTA baselines:
 
 | Method | Capacity (bit) | PSNR ↑ | SSIM ↑ | JPEG | Resize | Gauss Noise | Median | Mixed |
 |------|-----------|--------|--------|------|--------|-------------|--------|-------|
@@ -77,50 +91,44 @@ Trained on 10,000 panoContext + SUN360 panoramas, tested on 2,000 images at $512
 | VINE | 100 | 36.33 | 0.9865 | **1.000** | 1.000 | **1.000** | 0.965 | 0.986 |
 | **TRIAD (Ours)** | 32 | 39.22 | 0.9946 | 0.978 | **1.000** | 0.975 | **1.000** | 0.984 |
 
-Rotation robustness (sampling axes uniformly from 0°–180° geodesic distance): All baselines without rotation augmentation collapsed to near 50% bit accuracy (random guess). Even with heavy augmentation, performance fluctuated wildly across angles. **TRIAD, with zero augmentation, maintained near 100% bit accuracy across the entire rotation range.**
+**Rotation Robustness**: Baselines without rotation augmentation fail (bit acc ≈ 50%). With heavy augmentation, performance still fluctuates wildly across angles. **TRIAD, with zero augmentation, maintains nearly 100% bit accuracy across all rotation angles.**
 
 ### Ablation Study
 
 | Configuration | PSNR / Bit Acc | Key Findings |
 |------|---------------|----------|
-| $\mathcal{V}_{embed} = \mathcal{V}_4$ (Single LF) | High Acc / Poor Visuals | Noticeable low-freq artifacts, significant PSNR drop |
-| $\mathcal{V}_{embed} = \mathcal{V}_{16}$ (Single HF) | High PSNR / Low Acc | HF susceptible to compression/aliasing, retrieval degraded |
-| $\mathcal{V}_{embed} = \mathcal{V}_6 \oplus \mathcal{V}_8 \oplus \mathcal{V}_{14}$ (Ours) | 39.22 / ≈100% | Multi-scale mid-freq direct sum balances robustness and stealth |
+| $\mathcal{V}_{embed} = \mathcal{V}_4$ (Single Low-freq) | High acc / Poor visual | Visible artifacts, significant PSNR drop |
+| $\mathcal{V}_{embed} = \mathcal{V}_{16}$ (Single High-freq) | High PSNR / Low acc | High-freq attenuated by compression/aliasing |
+| $\mathcal{V}_{embed} = \mathcal{V}_6 \oplus \mathcal{V}_8 \oplus \mathcal{V}_{14}$ (Ours) | 39.22 / ≈100% | Balanced fidelity and robustness |
 | $l_{\max}=16$, $\{6,8,14\}$ | 39.22 / 1.000 | Default config, rotation bit acc=100% |
-| $l_{\max}=24$, $\{6,8,14, 16, 20\}$ | 38.46 / 1.000 | Capacity expansion; slight PSNR drop but invariance holds |
-| $l_{\max}=28$, $\{6,8,14, 16, 20, 22\}$ | 37.19 / 1.000 | Excessively wide band hurts fidelity; $l_{\max}=16$ is the sweet spot |
-| Power Spec, 2nd-order, 16 bit | — / 92.4% | Power spectrum is phase-blind and many-to-one |
-| Power Spec, 2nd-order, 32 bit | — / 61.3% | Fails to converge beyond 16-bit capacity |
-| **Bispectrum, 3rd-order, 64 bit** | — / **100%** | Phase retention is key to high-capacity invariant watermarking |
+| $l_{\max}=28$, $\{6,8,14,16,20,22\}$ | 37.19 / 1.000 | Excessively wide bands hurt fidelity |
+| **Bispectrum, 3rd order, 64 bit** | — / **100%** | Phase preservation is key to high capacity |
 
 ### Key Findings
-- The advantage of the third-order bispectrum over the second-order power spectrum is **structural**: the power spectrum is a "phase-blind" many-to-one mapping that fails training for capacities $\ge 16$ bits. The bispectrum maintains 100% recovery even at 64 bits due to phase preservation.
-- Rotation robustness is **architecturally guaranteed**, not learned through training. Forcing the decoder to project to $\mathcal{V}_0$ mathematically eliminates "unseen rotation angles."
-- Robustness to untrained non-rotational distortions (JPEG / Resize / Noise / Blur / Median Filter) is unexpectedly strong. The authors provide an algebraic explanation: low-pass attenuation only smoothly scales frequency bands, while bispectral values are products of multiple coefficients, providing intrinsic robustness.
+- The advantage of the third-order bispectrum over second-order power spectrum is **structural**: the power spectrum is a many-to-one "phase-blind" mapping that fails to converge beyond 16 bits; the bispectrum succeeds even at 64 bits.
+- Rotation robustness is **architectural**, not learned—projecting to $\mathcal{V}_0$ eliminates dependence on rotation angles.
+- Robustness to non-rotational distortions (JPEG, Noise, etc.) is unexpectedly high, explained algebraically by how bispectral products handle frequency attenuation.
 
 ## Highlights & Insights
-- **Shifting Robustness from Data to Representation**: Augmentation is empirical and finite. Through an asymmetric design of "embedding in the equivariant subspace, extracting in the invariant subspace," provable invariance to the continuous infinite group SO(3) is achieved. This approach is directly transferable to point cloud watermarking, 3D Gaussian Splatting, mesh watermarking, or any geometric signal with SO(3) symmetry.
-- **Hardcore Argument for Third-order > Second-order**: While the power spectrum has long been the default for rotation-invariant geometric descriptors, this paper challenges it by highlighting "phase blindness leading to low capacity limits," introducing the bispectrum from molecular dynamics/physics modeling into the information hiding domain.
-- **Provable Theory + e3nn Implementation**: The method is not a theoretical toy. The entire equivariant tensor product chain is implemented using e3nn, with learnable CG coefficients, making it highly practical for engineering.
+- **Moving Robustness from Data to Architecture**: Augmentation is empirical and finite. Using "equivariant embedding and invariant extraction" provides provable invariance to the continuous SO(3) group.
+- **Bispectrum Advantage**: While the power spectrum is the default for invariant descriptors, this paper argues its "phase blindness" limits capacity, introducing the bispectrum to the information hiding domain.
+- **Provable Theory + e3nn Implementation**: The method uses e3nn for equivariant tensor products, making the CG coefficients learnable and the theory practically applicable.
 
 ## Limitations & Future Work
-- **Capacity Constraints**: To maintain stability, only the mid-frequency bands $\{6, 8, 14\}$ are used, capping the payload at 64 bits. Incorporating higher bands to expand to hundreds of bits is a challenge due to their fragility.
-- **Global SO(3) Only**: The method does not yet handle **local** cropping or partial spherical signals. Once part of the sphere is removed, the third-order coupling coefficients $I$ are corrupted. The authors propose using local equivariant subgroups in the future.
-- **Vulnerability to AI Editing**: The experiments focus on traditional distortions and rotations, lacking evaluation against AIGC editing attacks like Diffusion-based inpainting or regeneration.
-- Computational costs for training and GPU memory usage of SHT at $l_{\max}=16$ (alongside e3nn tensor products) were not disclosed, and deployment costs remain researchers' concerns.
+- **Capacity Limits**: Currently uses mid-frequency bands, capping payload at 64 bits; expanding requires incorporating fragile high-frequency bands.
+- **Global SO(3) Invariance Only**: Failing under **local** cropping as it disrupts the bispectral coefficient $I$.
+- **No AI Editing Attack Testing**: High-level edit attacks (inpainting, diffusion-based redrawing) were not evaluated.
 
 ## Related Work & Insights
-- **vs. Planar CNN Watermarking (StegaStamp / TrustMark / VINE)**: These rely on CNNs + data augmentation on ERP planes. TRIAD operates in the spherical SH domain, using SO(3) equivariance to guarantee rotation invariance with zero augmentation.
-- **vs. 360° VR Watermarking (Liu et al. 2021, Spherical Wavelets)**: While recognizing the need for the spherical domain, earlier works relied on empirical synchronization rather than theoretical invariance.
-- **vs. 3D Data Watermarking (GuardSplat, etc.)**: Others use geometric invariants but often rely on heuristics like salient points or SVD. TRIAD provides a unified framework based on SO(3) representation theory.
-- **vs. Classical Power Spectrum SH Descriptors (Kazhdan 2003)**: Widely used for 3D shape retrieval, but their phase blindness limits watermarking capacity. This paper is the first to systematically argue that "watermarking tasks require the third-order bispectrum."
-- **Insight**: The asymmetric pattern of "embedding in equivariant subspaces and extracting in trivial subspaces" can be extended to E(3)-equivariant molecular design, point cloud steganography, or graph signal watermarking for any scenario with compact group symmetries.
+- **vs. Planar CNN Watermarking**: TRIAD uses SO(3) equivariance to guarantee rotation invariance instead of relying on CNN + augmentation.
+- **vs. 3D Data Watermarking**: While existing methods use heuristics like SVD or salient points, TRIAD provides a unified framework based on SO(3) representation theory.
+- **Inspiration**: The asymmetric "embedding in equivariant, extraction in trivial" pattern can be extended to point clouds, graph signals, and molecular designs.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Introducing the bispectrum from representation theory to digital watermarking is a significant first, particularly the asymmetric "equivariant-to-trivial" architecture.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive comparison with 6 SOTA methods across all rotation angles, 8 distortion types, and 3 ablation categories; lacks AI editing and training cost data.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear narrative on theory and methodology; Theorem 4.1 provides a rigorous proof. Method sections are precise in algebraic language.
-- **Value**: ⭐⭐⭐⭐⭐ Provides the first "provably invariant" framework for SO(3)-symmetric geometric signals, with direct value for content provenance in VR, World Models, and Embodied AI.
+- Novelty: ⭐⭐⭐⭐⭐ First to introduce bispectral coupling for provable invariant watermarking.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison across rotations and distortions; lacks AI edit attack data.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivation and precise algebraic language.
+- Value: ⭐⭐⭐⭐⭐ Significant for VR/World Model data provenance; methodology is transferable to various equivariant signal types.
 
 <!-- RELATED:START -->
 
@@ -131,8 +139,8 @@ Rotation robustness (sampling axes uniformly from 0°–180° geodesic distance)
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
 - [\[CVPR 2026\] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](../../CVPR2026/ai_safety/tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)
 - [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
-- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
+- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 
 </div>
 

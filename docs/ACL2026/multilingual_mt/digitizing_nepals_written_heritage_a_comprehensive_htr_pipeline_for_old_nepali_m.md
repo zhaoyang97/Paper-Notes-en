@@ -2,149 +2,148 @@
 title: >-
   [Paper Note] Digitizing Nepal's Written Heritage: A Comprehensive HTR Pipeline for Old Nepali Manuscripts
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][HTR] The first end-to-end **Old Nepali Handwritten Text Recognition (HTR)** pipeline: Using a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" 3-stage transf…
+  [ACL 2026][Multilingual & Translation][HTR] This is the first end-to-end **Handwritten Text Recognition (HTR)** pipeline for Old Nepali. By employing a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" three-stage transfer learning curriculum, $8\times$ data augmentation with 20 techniques, byte-level BPE, and a script-aware decoder, the CER is re
 tags:
-  - "ACL 2026"
-  - "Multilingual & Machine Translation"
-  - "HTR"
-  - "Devanagari"
-  - "Low-resource"
-  - "TrOCR"
-  - "3-stage Transfer Learning"
-  - "Data Augmentation"
+  - ACL 2026
+  - Multilingual & Translation
+  - HTR
+  - Devanagari
+  - TrOCR
 date: 2026-05-08
-content_hash: fea9ac5d8e85ecbd
+content_hash: dea67e7f8025e14c
 ---
-
 # Digitizing Nepal's Written Heritage: A Comprehensive HTR Pipeline for Old Nepali Manuscripts
 
 **Conference**: ACL 2026  
 **arXiv**: [2512.17111](https://arxiv.org/abs/2512.17111)  
 **Code**: https://github.com/anjalisarawgi/nepOCR/ (Available)  
-**Area**: Multilingual / OCR / Low-resource Document Recognition  
-**Keywords**: HTR, Devanagari, Low-resource, TrOCR, 3-stage Transfer Learning, Data Augmentation
+**Area**: Multilingual / OCR / Low-Resource Document Recognition  
+**Keywords**: HTR, Devanagari, Low-resource, TrOCR, Three-stage Transfer Learning, Data Augmentation
 
 ## TL;DR
-The first end-to-end **Old Nepali Handwritten Text Recognition (HTR)** pipeline: Using a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" 3-stage transfer learning curriculum + 20 types of data augmentation + byte-level BPE + script-aware decoder, the CER was reduced from the fine-tuned TrOCR baseline of 9.6% to **4.9%**. Code, models, and a Streamlit web application are open-sourced.
+This is the first end-to-end **Handwritten Text Recognition (HTR)** pipeline for Old Nepali. By employing a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" three-stage transfer learning curriculum, $8\times$ data augmentation with 20 techniques, byte-level BPE, and a script-aware decoder, the CER is reduced from a fine-tuned TrOCR baseline of $9.6\%$ to **$4.9\%$**. The code, models, and a Streamlit web application are open-sourced.
 
 ## Background & Motivation
-**Background**: Modern HTR has evolved from CNN+CTC to the transformer paradigm (TrOCR), performing well on English/Latin manuscripts. However, **low-resource + historical scripts** (e.g., Old Nepali Devanagari) remain challenging for OCR due to diverse handwriting styles, severe document degradation, complex conjuncts, and a nearly complete lack of annotated data.
+**Background**: Modern HTR has transitioned from CNN+CTC models to the Transformer paradigm (TrOCR), which performs well on English/Latin manuscripts. However, **low-resource historical scripts** (e.g., Old Nepali Devanagari) remain challenging due to diverse handwriting styles, severe document degradation, complex conjuncts, and almost no annotated data.
 
-**Limitations of Prior Work**: (1) Tesseract / Google Cloud Vision fail on historical Devanagari manuscripts (unable to capture conjuncts, diacritics, and punctuation); (2) TrOCR was not pre-trained on Devanagari, outputting non-Devanagari text out-of-the-box; (3) Only 155 manuscript pages (3100 lines) are available, which is insufficient to train a transformer from scratch; (4) Historical documents feature scriptio continua (no word spaces), inconsistent punctuation, character evolution (U+0310 vs U+0901 synonymy), and inconsistent spelling, leading to noisy labels.
+**Limitations of Prior Work**: (1) Tesseract and Google Cloud Vision fail on historical Devanagari manuscripts (missing conjuncts, diacritics, and punctuation). (2) TrOCR is not pre-trained on Devanagari and outputs non-Devanagari characters out of the box. (3) The availability of only 155 manuscript pages (3100 lines) is insufficient for training Transformers from scratch. (4) Issues include scriptio continua (no word spaces), irregular punctuation, character evolution (U+0310 vs. U+0901 synonyms), and inconsistent spelling, creating noisy labels.
 
-**Key Challenge**: Transformer-based HTR requires large-scale data, but Old Nepali manuscripts are naturally low-resource. Direct fine-tuning of TrOCR yields poor results because the tokenizer does not understand Devanagari.
+**Key Challenge**: Transformer-based HTR requires large-scale data, yet Old Nepali manuscripts are inherently low-resource. Directly fine-tuning TrOCR is ineffective as the tokenizer does not understand Devanagari.
 
-**Goal**: Construct a pipeline that can (1) achieve a stable CER of < 5% on ~3000 lines of training data; (2) automatically handle line segmentation → recognition → post-processing; (3) provide an ablation study to allow other low-resource script researchers to reuse the methodology.
+**Goal**: To construct a pipeline that (1) achieves a stable CER under $5\%$ with only $\sim 3000$ lines of training data; (2) automates line segmentation → recognition → post-processing; and (3) provides an ablation study for researchers of other low-resource scripts.
 
-**Key Insight**: (a) 3-stage curriculum learning—using 11 fonts to synthesize 100K lines of Devanagari to learn general glyphs, then transfer learning on 5K lines of printed Nagari to learn real noise, and finally fine-tuning on 3100 lines of manuscripts; (b) Script-aware decoder—training a custom byte-BPE / char-BPE tokenizer + BERT or GPT-2 decoder to replace TrOCR's English wordpiece vocabulary; (c) Data-centric optimization (label normalization + 20 types of augmentation × 8x expansion) outweighs architectural differences.
+**Key Insight**: (a) Three-stage curriculum learning—synthetic data for basic fonts $\to$ printed scanned data for real noise $\to$ manuscript data for handwriting styles. (b) Script-aware decoder—training custom byte-BPE/char-BPE tokenizers and BERT/GPT-2 decoders to replace English wordpieces. (c) Data-centric optimization (label normalization and $8\times$ augmentation) yields more gains than architectural tuning.
 
-**Core Idea**: The ceiling for low-resource historical script OCR lies not in model capacity, but in data quality and curriculum. Once the "Synthetic Pre-training + Printed Bridge + Manuscript Fine-tuning" stages are perfected, architectural choices like BERT vs. GPT-2 or char-BPE vs. byte-BPE have minimal impact.
+**Core Idea**: The performance ceiling for low-resource historical HTR is determined by data quality and curriculum rather than model capacity. Once the "Synthetic → Printed → Manuscript" stages are implemented, architectural choices like BERT vs. GPT-2 or char-BPE vs. byte-BPE have minimal impact.
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of five steps: ① **Line segmentation**—using Kraken polygon-based methods to segment 155 manuscripts (averaging 1593×133 px, 1198 characters, 20 lines) into 3100 line images; ② **Stage 1 Synthetic Pre-training**—extracting text from 21 historical Nepali textbooks (Internet Archive), rendering 100K training lines with 11 Devanagari fonts + 10 noise deformations (perspective, blur, salt-and-pepper, JPEG compression, etc.); ③ **Stage 2 Printed Transfer**—fine-tuning on 5139 lines segmented from printed Nagari scans on heiDATA; ④ **Stage 3 Manuscript Fine-tuning**—final fine-tuning on 3100 manuscript lines (80/10/10 split); ⑤ **Decoding + Post-processing**—comparing multiple decoding strategies and flagging post-correction based on token uncertainty. All stages use AdamW, $lr=3e-5$, $bs=8$, $warmup=500$, for 6/10/20 epochs respectively.
+The pipeline consists of five steps: ① **Line segmentation** using Kraken (polygon-based) to cut 155 manuscripts into 3100 line images. ② **Stage 1: Synthetic Pre-training** using 11 Devanagari fonts and 10 noise types to render 100K training lines. ③ **Stage 2: Printed Transfer** using 5139 lines from printed Nagari scans. ④ **Stage 3: Manuscript Fine-tuning** on 3100 real manuscript lines. ⑤ **Decoding & Post-processing** comparing various strategies and flagging errors via token uncertainty. All stages use AdamW, $lr=3e-5$, $bs=8$, and 500 warmup steps over 6/10/20 epochs.
+
+```mermaid
+graph TD
+    A["155 Old Nepali Manuscripts"] --> B["Line Segmentation<br/>Kraken polygon → 3100 line images"]
+    B --> C["Data-centric Optimization<br/>Label Normalization (57% lines) + 20 Augmentations x 8"]
+    C --> CURR
+    subgraph CURR["Three-stage Transfer Learning Curriculum"]
+        direction TB
+        D["Stage 1: Synthetic Pre-training<br/>100K lines from 11 fonts (CER 0.71)"] --> E["Stage 2: Printed Transfer<br/>5K lines of printed Nagari (CER 0.51)"]
+        E --> F["Stage 3: Manuscript Fine-tuning<br/>3100 real lines (CER 0.056)"]
+    end
+    CURR --> G["Script-aware Decoder + byte-BPE<br/>ViT Encoder + BERT Decoder + Vocab 500"]
+    G --> H["Decoding + Post-processing<br/>Token uncertainty flags 27% errors"]
+```
 
 ### Key Designs
 
-1.  **3-stage Transfer Learning Curriculum**:
-    - **Function**: Transitions the transformer through 3 curriculum stages to learn Devanagari handwriting with only 3100 lines of ground truth.
-    - **Mechanism**: Stage 1 (100K synthetic) allows the decoder to learn visual priors and language distributions of Devanagari characters; Stage 2 (5K printed Nagari) bridges the gap between synthetic and real scan noise; Stage 3 (3K manuscripts) adapts to handwriting styles, orthographic variations, and paper degradation. Each stage uses the same seed and 80/10/10 split. CER was 0.71 after Stage 1, 0.51 after Stage 2, and 0.049 (large encoder) after Stage 3.
-    - **Design Motivation**: Direct fine-tuning on 3100 lines leads to severe overfitting; single-stage synthetic pre-training fails to bridge the distribution gap between synthetic and real noise. The 3-stage curriculum is an effective intermediary validated by ablation studies (Table 18).
+**1. Three-stage Transfer Learning Curriculum**: Using synthetic and printed data to learn Old Nepali handwriting with only 3100 real annotations.  
+Directly fine-tuning Transformers on 3100 lines leads to overfitting, whereas synthetic data alone does not bridge the noise gap. Stage 1 (Synthetic) allows the decoder to learn Devanagari visual priors. Stage 2 (Printed) bridges the gap between synthetic fonts and real scan noise. Stage 3 (Manuscript) adapts to specific handwriting styles and paper degradation. Ablations confirm that CER drops from $0.71$ (Stage 1) to $0.51$ (Stage 2) and finally to $0.056$ (Stage 3).
 
-2.  **Script-aware decoder + byte-BPE tokenizer**:
-    - **Function**: Replaces TrOCR's default English wordpiece tokenizer and decoder with a custom BPE tokenizer and a lightweight BERT/GPT-2 for Devanagari text generation.
-    - **Mechanism**: (a) Trains two types of BPE using HuggingFace tokenizers—CharBPETokenizer and ByteLevelBPETokenizer with a vocabulary size of 500 (standard best practice for coverage and frequency balance in low-resource settings); (b) Uses standard BERT/GPT-2 configurations (12 layers, 768 hidden, 12 heads, 114M parameters) trained from scratch; (c) Combines these with TrOCR ViT encoders (base/large-handwritten) for 12 experimental combinations.
-    - **Design Motivation**: TrOCR's default vocabulary is robertaBPE, which lacks Devanagari conjuncts, forcing the model to guess on OOV tokens. A custom byte-BPE covers Devanagari characters and conjuncts perfectly. Findings shows that architectural differences are minimal (<0.005 CER) in low-resource settings, confirming data quality dominates.
+**2. Script-aware decoder + byte-BPE tokenizer**: Replacing TrOCR's English wordpiece vocabulary with BPE trained specifically for Devanagari.  
+TrOCR's default vocabulary lacks Devanagari conjuncts. Ours redevelops the decoding path: training ByteLevelBPETokenizers with a vocabulary size of 500 (balancing coverage and frequency) and training decoders (BERT/GPT-2) from scratch with matching vocab sizes. Byte-level BPE perfectly covers Devanagari characters and conjuncts.
 
-3.  **Data-centric optimization (label normalization + 20 augmentations × 8x)**:
-    - **Function**: Increases dataset diversity and quality without additional labels; this was the single largest contributor to reducing CER from 0.089 to 0.056.
-    - **Mechanism**: (a) **Label normalization**: Standardizes homoglyphs like chandrabindu (U+0310 vs U+0901), removes extra spaces, normalizes bullets to danda, and converts ASCII digits to Devanagari digits (affecting 57% of lines); (b) **20 types of augmentation**: Shape deformations (rotation ±3°, shift, perspective, shear), quality degradation (Gaussian blur/noise, motion blur, JPEG compression), and character-level distortions (blurred patches, sine wave, elastic warp); (c) Comparison of expansion factors (2×/4×/8×/12×/16×) found 8× (22,320 samples) to be the plateau.
-    - **Design Motivation**: 3100 lines cannot cover the full distribution of handwriting styles and document degradation. Normalization addresses systematic label noise, providing stable gains (Table 3 shows normalization alone gives -0.005, and 8× augmentation gives -0.028).
+**3. Data-centric Optimization**: Label normalization and $8\times$ augmentation to increase data diversity.  
+Normalization handles systematic noise (e.g., unifying U+0310 vs. U+0901) for $57\%$ of lines. Augmentations include shape deformations (rotation, shear), quality degradation (Gaussian noise, JPEG compression), and character-level perturbations (blurred patches, elastic warp). The $8\times$ augmentation (22,320 samples) was identified as the inflection point for cost-effectiveness, contributing more to CER reduction than upgrading the model encoder.
 
-### Loss & Training
-Standard cross-entropy NLL is used throughout. CER (normalized Levenshtein distance) is the main metric for model selection, with weighted CER and exact match accuracy as auxiliary metrics. Unicode zero-width characters (U+200B/200C/200D) are removed during evaluation. Five decoding methods (beam search, contrastive search, temperature sampling, top-k, top-p) were compared; **decoding strategy had almost no impact on the results** (weighted CER ≈ 0.0483-0.0490).
+## Loss & Training
+Standard cross-entropy NLL is used. CER (normalized Levenshtein distance) is the primary metric, with weighted CER and exact match accuracy as secondary metrics. Five decoding methods (beam search, contrastive search, temperature sampling, etc.) were compared, showing that **decoding strategies have almost no impact on results** ($\text{CER} \approx 0.0483-0.0490$).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Final model vs. existing OCR baselines (CER↓):
+Ours vs. Existing Baselines:
 
-| System | CER | CER(w) | ACC | Notes |
-|------|-----|--------|-----|------|
-| Google Cloud Vision OCR | failure | - | - | Fails on conjuncts, diacritics |
-| Fine-tuned TrOCR (Default decoder) | 0.096 | - | - | Baseline direct fine-tuning |
-| Ours (base-handwritten + BERT+byteBPE + 8× aug) | **0.056** | 0.057 | 29.4% | base encoder |
-| **Ours (large-handwritten + BERT+byteBPE + 8× aug)** | **0.049** | **0.048** | **33.5%** | Final model |
+| System | CER | CER(w) | ACC | Note |
+| :--- | :--- | :--- | :--- | :--- |
+| Google Cloud Vision OCR | Failure | - | - | Fails on conjuncts/diacritics |
+| Fine-tuned TrOCR (Default decoder) | 0.096 | - | - | Direct baseline fine-tuning |
+| Ours base-handwritten + BERT+byteBPE + 8× aug | **0.056** | 0.057 | 29.4% | base encoder |
+| **Ours large-handwritten + BERT+byteBPE + 8× aug** | **0.049** | **0.048** | **33.5%** | Final Model |
 
-→ CER reduced from baseline 0.096 to final 0.049, an **absolute drop of 4.7pp and a relative drop of 49%**.
-
-Model architecture combinations (Stage 3 results):
-
-| Encoder | Decoder | Tokenizer | Stage 3 CER | ACC |
-|---------|---------|-----------|--------------|------|
-| trocr-base-hw | BERT | byteBPE | **0.082** | 24.8% |
-| trocr-base-hw | BERT | charBPE | 0.087 | 25.5% |
-| trocr-base-hw | GPT-2 | byteBPE | 0.084 | 26.1% |
-| trocr-base-hw | GPT-2 | charBPE | 0.084 | 28.7% |
-| swin-base | BERT | byteBPE | 0.174 | 21.9% |
-
-→ TrOCR ViT encoder is 3× better than Swin; BERT is slightly better than GPT-2 but difference is <0.005.
+$\to$ CER reduced from 0.096 to 0.049, a **relative reduction of 49%**.
 
 ### Ablation Study
 
-Cumulative effect of data-centric interventions (base encoder):
+Impact of data-centric interventions (base encoder):
 
 | Step | Samples | CER | CER(w) | ACC |
-|------|---------|-----|--------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | Original | 2,480 | 0.089 | 0.090 | 22.9% |
 | + Normalization | 2,480 | 0.084 (-0.005) | 0.084 | 21.6% |
 | + Aug 2× | 7,440 | 0.067 (-0.017) | 0.068 | 26.7% |
-| + Aug 4× | 12,400 | 0.060 (-0.007) | 0.061 | 27.1% |
 | **+ Aug 8×** | **22,320** | **0.056 (-0.004)** | **0.057** | **29.4%** |
 
-→ 8× is the most cost-effective ratio. Normalization + 8× augmentation = -0.033 (37% relative drop).
+Cumulative gain from the three-stage curriculum:
 
-Cumulative gain of 3-stage curriculum (Table 18):
-
-| Training stage | Pretraining | CER on final test | ACC |
-|---------------|-------------|-------------------|------|
+| Training Stage | Pre-training | CER | ACC |
+| :--- | :--- | :--- | :--- |
 | Only Stage 1 | - | 0.71 | 0.0% |
 | Only Stage 2 | + Stage 1 | 0.51 | 2.58% |
-| Stage 3 | + Stage 1 + Stage 2 | **0.056** | **29.58%** |
+| **Stage 3** | + Stage 1 + Stage 2 | **0.056** | **29.58%** |
 
 ### Key Findings
-- **Data-centric interventions > Architecture tuning**: Normalization + 8× augmentation contributed -0.033 CER, which is higher than encoder upgrades (-0.007) and decoder variants combined.
-- **Decoding strategy has minimal impact**: Difference between beam search and sampling was <0.001 CER.
-- **Errors are highly structured**: Top 10 characters contribute 55.9% of errors, with virama (12.92%) and space (11.41%) being the primary culprits. Systematic confusion exists between visually similar pairs (y vs p, t vs n).
-- **Failure on long lines**: CER spikes when line length > 120 characters. Splitting long lines into halves significantly reduced error counts (e.g., 23 → 4).
-- **27% of errors flaggable via uncertainty**: Using probability ratios of top-1/top-2 tokens, 27% of errors can be flagged, over half of which are recoverable from the top-3 candidates.
+- **Data-centric > Architecture**: Normalization and $8\times$ augmentation contributed $-0.033$ CER, nearly 5 times the impact of upgrading the encoder ($-0.007$).
+- **Decoding strategies are negligible**: The difference between beam search and sampling is $\leq 0.001$ CER.
+- **Errors are structured**: Top 10 characters contribute $55.9\%$ of errors, primarily "virama" and "space."
+- **Failure on long lines**: Performance drops on lines $>120$ characters, suggesting Transformer length generalization issues.
+- **Uncertainty as a proxy**: $27\%$ of errors can be flagged via token uncertainty, providing a path for human-in-the-loop post-correction.
 
 ## Highlights & Insights
-- **Data > Model**: The conclusion that data quality and normalization are more impactful than model architecture (BERT vs. GPT-2) is empirically validated for low-resource HTR.
-- **3-stage Curriculum + Custom BPE**: This combination provides a replicable "recipe" for any low-resource historical document OCR task.
-- **Structured error analysis**: The structured nature of errors indicates the model is learning meaningful patterns; the token uncertainty flag provides a baseline for future human-in-the-loop post-correction.
-- **Long-line split trick**: A simple heuristic of splitting lines >120 characters addresses the length OOD generalization problem inherent in transformer encoders.
+- **Data > Model** is empirically verified: Architectures (BERT/GPT-2) matter less than data quality in low-resource HTR.
+- The combination of **Three-stage curriculum + custom BPE** provides a portable recipe for other low-resource scripts (e.g., Tibetan, Uyghur).
+- Structural error analysis demonstrates that the model learns meaningful patterns rather than hallucinations.
+- Splitting long lines significantly improves accuracy, highlighting encoder OOD limitations.
 
 ## Limitations & Future Work
-- **Closed Data**: While code and models are public, the ground truth dataset cannot be released due to copyright, hindering exact reproduction.
-- **Dependency on Kraken**: Sequential errors occur if the polygon-based line segmentation fails on irregular layouts.
-- **Long-line Performance**: The model generalizes poorly on sequences >120 characters due to sparse training samples at that length.
-- **Lack of LM-based Post-correction**: Structured errors were not fed into a Devanagari language model for rescoring.
-- **CER 4.9% remains high for scholarship**: A 5% error rate still requires intensive human proofreading for archival purposes.
+- **Dataset Closure**: Ground truth data is not public due to copyright, hindering exact reproduction.
+- **Segmentation Dependency**: Still relies on external Kraken polygons; error propagation occurs if segmentation fails.
+- **Long-line Generalization**: Poor performance on sequences $>120$ characters due to data scarcity.
+- **Post-correction**: No LM-based rescoring was implemented.
+- **Usability**: A $4.9\%$ CER is still too high for automated scholarly transcription without expert review.
 
 ## Related Work & Insights
-- **vs Nakarmi et al. 2024**: While previous work used CRNN+CTC, this study proves that "low-resource + transformer" can succeed via 3-stage curriculum learning.
-- **vs Garces Arias et al. 2023**: Extends the methodology from Old Occitan HTR to Devanagari, proving the framework's cross-script transferability.
-- **vs Commercial Baselines**: Customizing the pipeline for the specific script remains indispensable, as GCV and standard TrOCR fail significantly on historical features like conjuncts.
-- **Insight**: Researchers should prioritize data normalization and diverse augmentations over model tweaking. From-scratch lightweight decoders with script-specific BPE are superior to fine-tuning large generic decoders.
+- Compared to older CRNN+CTC models (Nakarmi et al. 2024), this Transformer-based approach with a curriculum effectively scales in low-resource settings.
+- Proves that custom-script tokenizers are essential: commercial OCR and default TrOCR fail because they do not model the specific linguistic structure (conjuncts/diacritics) of historical Devanagari.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Existing components are combined for a novel application with thorough validation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 36 runs across architecture combinations and extensive data-centric ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and comprehensive appendices.
-- Value: ⭐⭐⭐⭐ Strong baseline and open-source tools for the Nepali historical community; methodology is highly transferable.
+- Novelty: ⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
+
+## Related Papers
+
+- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[ACL 2025\] Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral](../../ACL2025/multilingual_mt/are_rules_meant_to_be_broken_understanding_multilingual_moral_reasoning_as_a_com.md)
+- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
+- [\[ACL 2026\] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources](bhashasutra_a_task-centric_unified_survey_of_indian_nlp_datasets_corpora_and_res.md)
+- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -154,9 +153,9 @@ Cumulative gain of 3-stage curriculum (Table 18):
 
 - [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
 - [\[ACL 2026\] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media](cross-cultural_transfer_of_emoji_semantics_and_sentiment_in_financial_social_med.md)
-- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
-- [\[ACL 2026\] Just Use XML: Revisiting Joint Translation and Label Projection](just_use_xml_revisiting_joint_translation_and_label_projection.md)
 - [\[ACL 2026\] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources](bhashasutra_a_task-centric_unified_survey_of_indian_nlp_datasets_corpora_and_res.md)
+- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
+- [\[ACL 2026\] Multilingual Language Models Encode Script Over Linguistic Structure](multilingual_language_models_encode_script_over_linguistic_structure.md)
 
 </div>
 

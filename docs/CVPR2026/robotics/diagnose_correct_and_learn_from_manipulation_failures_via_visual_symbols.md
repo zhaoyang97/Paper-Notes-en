@@ -2,130 +2,142 @@
 title: >-
   [Paper Note] Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 description: >-
-  [CVPR 2026][Robotics][robotic manipulation failure] This paper proposes ViFailback, a framework that leverages visual symbols (arrows, crosshairs, labels…
+  [CVPR 2026][Robotics & Embodied AI][Paper Note] The ViFailback framework is proposed to efficiently annotate real-world robot manipulation failures using visual symbols (arrows, crosshairs, labels, etc.), constructing a dataset of 58,128 VQA pairs. ViFailback-8B VLM is trained to achieve failure diagnosis and visual+textual correction guidance, which, when integrate
 tags:
-  - "CVPR 2026"
-  - "Robotics"
-  - "robotic manipulation failure"
-  - "visual symbols"
-  - "VLM failure diagnosis"
-  - "VLA recovery"
-  - "real-world dataset"
+  - CVPR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 22c2c39620f71459
+content_hash: 77c372b468fabd79
 ---
-
 # Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.02787](https://arxiv.org/abs/2512.02787)  
 **Code**: [Project Page](https://vifailback.github.io/)  
-**Area**: Robotics
-**Keywords**: robotic manipulation failure, visual symbols, VLM failure diagnosis, VLA recovery, real-world dataset
+**Area**: Robotics  
+**Keywords**: Robot Manipulation Failure, Visual Symbols, VLM Failure Diagnosis, VLA Recovery, Real-world Dataset
 
 ## TL;DR
-This paper proposes ViFailback, a framework that leverages visual symbols (arrows, crosshairs, labels, etc.) to efficiently annotate real-world robotic manipulation failures. The framework constructs a dataset of 58,128 VQA pairs and trains ViFailback-8B, a VLM capable of failure diagnosis and both visual and textual corrective guidance. When integrated with a VLA, it achieves a 22.2% improvement in task success rate.
+The ViFailback framework is proposed to efficiently annotate real-world robot manipulation failures using visual symbols (arrows, crosshairs, labels, etc.), constructing a dataset of 58,128 VQA pairs. ViFailback-8B VLM is trained to achieve failure diagnosis and visual+textual correction guidance, which, when integrated with VLA, achieves a 22.2% improvement in task success rate.
 
 ## Background & Motivation
-**Background**: VLA models perform well in robotic manipulation but inevitably fail in out-of-distribution (OOD) scenarios. VLMs have been applied to task planning and reasoning, yet their capabilities in **failure diagnosis and correction** remain limited.
+**Background**: VLA models perform excellently in robot manipulation but inevitably fail in OOD (Out-of-Distribution) scenarios. While VLMs are used for task planning and reasoning, they lack capability in **failure diagnosis and correction**.
 
-**Limitations of Prior Work**: (1) Existing failure datasets are primarily generated in simulation via perturbation injection, constrained by the sim-to-real gap; (2) Annotating real-world failure data is extremely time-consuming, particularly for abstract categories (task planning errors, failure causes) that require extensive textual descriptions.
+**Limitations of Prior Work**: (1) Existing failure datasets are primarily generated in simulation by injecting perturbations, limited by the sim-to-real gap; (2) Annotating real-world failure data is extremely time-consuming, especially for abstract categories (task planning errors, failure causes) that require extensive textual descriptions.
 
-**Key Challenge**: Real-world failure data is valuable but costly to annotate; simulation data is cheap but insufficiently realistic. The central question is how to efficiently leverage real-world failure data.
+**Key Challenge**: Real-world failure data is precious but expensive to annotate; simulation data is cheap but unrealistic. How can real failure data be utilized efficiently?
 
-**Goal**: To establish a low-cost framework for real-world robotic failure diagnosis and correction, encompassing an efficient annotation methodology, a dataset, and a trained VLM.
+**Goal**: Establish a low-cost framework for real-world robot failure diagnosis and correction, including efficient annotation methods, a dataset, and trained VLMs.
 
-**Key Insight**: Visual symbols (e.g., color-coded arrows for motion direction, crosshairs for target positions) are drawn directly on video frames, combined with VLM-generated textual descriptions, substantially reducing annotation cost.
+**Key Insight**: Use visual symbols (e.g., colored arrows for movement direction, crosshairs for target position) to annotate directly on video frames, combined with VLM-automated text generation to significantly reduce annotation costs.
 
-**Core Idea**: Visual symbols serve as an intermediate representation that enables rapid human annotation (via mouse drag) while providing structured corrective guidance signals for VLMs.
+**Core Idea**: Visual symbols serve as an intermediate representation that is both easy for humans to annotate quickly (mouse drag-and-drop) and provides structured correction guidance signals for VLMs.
 
 ## Method
 
 ### Overall Architecture
-Three stages: (1) **Data Collection** — teleoperation and VLA rollouts to collect 5,202 real-world trajectories; (2) **ViFailback Annotation** — visual symbol drawing combined with VLM-assisted text generation, yielding 58,128 VQA pairs; (3) **Training ViFailback-8B** (fine-tuned from Qwen3-VL-8B) — deployed as an external supervisor for VLA systems.
+The paper addresses the challenge of scarce and hard-to-annotate "real-world robot manipulation failure" data. VLA inevitably fails in OOD scenarios, but training a VLM to "diagnose what went wrong and how to fix it" requires massive annotated real-world data. ViFailback connects the entire pipeline: first, 5,202 real trajectories are collected via teleoperation and VLA rollouts; then, a "visual symbol + VLM-assisted text" pipeline annotates these into 58,128 VQA pairs. Subsequently, Qwen3-VL-8B is fine-tuned on this data to obtain ViFailback-8B. This model acts as an external runtime supervisor for VLA, providing both textual and visual symbol correction guidance to lead the robot to recovery. The key is the "visual symbol" intermediate representation, which enables both rapid human annotation and structured action instructions for the robot.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Real Trajectory Collection<br/>Teleop + VLA rollout (5,202)"] --> ANNO
+    subgraph ANNO["Visual Symbol-Driven Annotation Pipeline"]
+        direction TB
+        B["① UI for Basic Failure Info"] --> C["② Draw 7 Visual Symbols + Select Correction"]
+        C --> D["③ VLM Text Generation + Human Verification"]
+    end
+    ANNO --> E["58,128 VQA Pair Dataset<br/>Covering 11 Fine-grained Tasks"]
+    E --> F["LoRA Fine-tuning Qwen3-VL-8B<br/>→ ViFailback-8B"]
+    F --> G["Runtime Supervision of VLA Execution"]
+    G -->|Failure Detected| H["Output Text + Visual Symbol Guidance"]
+    H -->|Guide Recovery| G
+    G -->|Success| I["Task Completed (Success Rate +22.2%)"]
+```
 
 ### Key Designs
-1. **Seven-Category Visual Symbol System**:
 
-    - **Motion symbols**: color-coded straight arrows (red = forward/backward, green = left/right, blue = up/down), semicircular arrows (rotation)
-    - **Spatial relation symbols**: dual crosshairs with dashed line (alignment), single crosshair (target region)
-    - **State symbols**: ON/OFF labels (gripper open/close), prohibition icon (stop), rewind icon (retreat)
+**1. Seven Visual Symbol Systems: Compressing 3D Corrections into 2D Frames**
 
-   **Design Motivation**: Color-encoding 3D direction via straight arrows is the key innovation for representing 3D motion through 2D annotation; the seven categories cover all fundamental action primitives required for manipulation correction.
+The most expensive part of real failure annotation is describing "which direction to move" in text. ViFailback breaks this by drawing symbols directly on video frames. The symbols are categorized into three groups: motion symbols use colored linear arrows to encode translation (Red = X-axis, Green = Y-axis, Blue = Z-axis) and semicircular arrows for rotation; spatial relation symbols use dual crosshairs with dashed lines for alignment and single crosshairs for target areas; state symbols use ON/OFF labels for gripper state, a "Prohibited" icon for stop, and a "Rewind" icon for backoff. The use of color to encode 3D directions on 2D frames is particularly clever, as it compensates for the missing dimension in 2D space. Collectively, these seven symbols cover all basic action primitives needed for manipulation correction.
 
-2. **Fine-Grained Task Definitions**: Failure diagnosis encompasses five subtasks (detection, keyframe localization, sub-task localization, type identification, and cause analysis); corrective guidance encompasses three subtasks (low-level textual, high-level textual, and visual symbol guidance), yielding 11 VQA task categories in total. **Design Motivation**: Fine-grained decomposition enables precise identification of which capability dimension a VLM underperforms on.
+**2. Visual Symbol-Driven Annotation Pipeline: Reducing Real-World Data Costs**
 
-3. **ViFailback-Bench**: Divided into Lite (closed-ended questions testing diagnosis and low-level correction) and Hard (open-ended questions testing failure reasoning and high-level strategy), covering 500 trajectories × 22 tasks. **Design Motivation**: Closed-ended questions assess foundational capabilities, open-ended questions probe reasoning depth, and CoT-format tests evaluate end-to-end diagnosis and correction.
+To handle the high cost of annotating abstract failure causes, ViFailback splits the pipeline into three steps: ① Using UI controls for basic info like failure detection, keyframes, and types; ② Dragging and dropping the seven visual symbols and selecting correction actions; ③ Automating text description completion via VLM (Qwen2.5-Max for sub-task decomposition, Qwen3-VL-235B for high-level descriptions), followed by human verification. This replaces the expensive text writing process with "drawing symbols + VLM padding," resulting in 58,128 VQA pairs at low cost.
+
+**3. Fine-grained Task Definition and ViFailback-Bench**
+
+Ability is decomposed into 11 VQA tasks: failure diagnosis (detection, keyframe localization, sub-task localization, type identification, cause analysis) and correction guidance (low-level text, high-level text, visual symbolic guidance). The ViFailback-Bench (500 trajectories × 22 tasks, including 5 fully OOD tasks) categorizes tests into Lite (multiple-choice/judgment) and Hard (open-ended CoT format). This allows for precise identification of model shortfalls—whether the model merely recognizes a failure or truly "understands" why it happened.
+
+**4. Closed-Loop Failure Correction: ViFailback-8B as a Runtime Supervisor**
+
+ViFailback-8B is integrated into the VLA execution loop. While the VLA performs the task, ViFailback-8B monitors the progress. Upon detecting a failure, it outputs simultaneous textual and visual symbol guidance, leading the VLA to adjust its actions and recover. Unlike methods that only overlay 2D trajectories (e.g., TracVLA), visual symbolic correction provides real-time instructions that the robot can consume directly. Real-world experiments show a 22.2% success rate increase.
 
 ### Loss & Training
-- LoRA (rank=32, α=64) fine-tuning of Qwen3-VL-8B, 1 epoch, lr=1e-5
-- LLM backbone and adapter parameters unfrozen
-- DeepSpeed ZeRO Stage 2, 4× NVIDIA Hopper GPUs
-- Temperature=0, maximum generation length of 2048 tokens
+- Fine-tuning Qwen3-VL-8B using LoRA (rank=32, $\alpha=64$), 1 epoch, $lr=1e-5$.
+- Unfrozen LLM backbone and adapter parameters.
+- DeepSpeed ZeRO Stage 2, 4 × NVIDIA Hopper GPUs.
+- Temperature = 0, Max generation length 2048 tokens.
 
 ## Key Experimental Results
 
 ### Main Results (ViFailback-Bench Overall Accuracy %)
 
 | Model | Lite↑ | Hard↑ | Average↑ |
-|------|-------|-------|---------|
+| :--- | :--- | :--- | :--- |
 | Qwen3-VL-8B (base) | 38.33 | 33.04 | 35.92 |
 | GPT-4o | 48.21 | 40.00 | 44.47 |
 | Gemini-2.5-Pro | 54.64 | 32.45 | 44.54 |
 | RoboBrain2.0-32B | 49.92 | 29.22 | 40.50 |
-| **ViFailback-8B (Ours)** | **Outperforms all** | **Outperforms all** | **Significant gain** |
+| **ViFailback-8B (Ours)** | **Outperforms all** | **Outperforms all** | **Significant improvement** |
 
-### Ablation Study (Real-World Robot Experiments)
+### Ablation Study (Real-world Robot Experiments)
 
-| Configuration | Success Rate Gain | Notes |
-|------|----------|------|
-| VLA alone | baseline | No external supervisor |
-| **VLA + ViFailback-8B** | **+22.2%** | External supervisor intervenes to recover from failures |
+| Configuration | Success Rate Gain | Description |
+| :--- | :--- | :--- |
+| VLA alone | baseline | No external supervision |
+| **VLA + ViFailback-8B** | **+22.2%** | External supervisor intervenes for failure recovery |
 
 ### Key Findings
-- ViFailback-8B substantially outperforms the base Qwen3-VL-8B across all 11 VQA tasks, validating dataset training effectiveness.
-- Even top-tier closed-source models such as GPT-4o and Gemini-2.5-Pro perform poorly on robotic failure analysis, underscoring the necessity of domain-specific data and training.
-- Visual symbol outputs serve not only as intuitive human-readable representations but also directly guide VLA action adjustment.
-- Among the four failure types, gripper 6D-pose errors are most prevalent, with task planning errors also accounting for a significant proportion.
+- ViFailback-8B significantly outperforms the base Qwen3-VL-8B on all 11 VQA tasks, validating the dataset's efficacy.
+- Even top-tier closed-source models like GPT-4o and Gemini-2.5-Pro perform poorly in robot failure analysis, highlighting the necessity of specialized data and training.
+- Visual symbol output serves as both an intuitive human-readable representation and a direct guidance signal for VLA action adjustment.
+- Among failure types, gripper 6d-pose errors are most common, with task planning errors also being significant.
 
 ## Highlights & Insights
-- **Visual symbols as intermediate representation** constitute the core innovation: annotation cost is reduced while structured action guidance is provided to the robot. The color-encoded 3D directional arrow design is particularly elegant.
-- **Real-world data outperforms simulation data**: 5,202 real-world trajectories provide substantially greater value than large-scale simulation data.
-- **Closed-loop from diagnosis to recovery**: The framework not only analyzes failures but also guides VLA recovery via visual symbols; the 22.2% success rate improvement demonstrates practical value.
-- **ViFailback-Bench** fills the gap in robotic VLM evaluation along the "failure reasoning" dimension.
+- **Visual symbols as intermediate representation** is the core innovation: it reduces annotation cost while providing structured action guidance for robots. The color-coded 3D arrow design is ingenious.
+- **Real-world Data > Simulation Data**: The 5,202 real trajectories hold value far exceeding large-scale simulation data.
+- **Diagnosis-to-Recovery Closed Loop**: Ours does not just analyze failures; it guides VLA to recover via visual symbols, with a 22.2% success rate gain proving practical utility.
+- **ViFailback-Bench** fills a gap in robot VLM evaluation regarding "failure reasoning."
 
 ## Limitations & Future Work
-- Data collection currently uses the ALOHA bimanual platform; generalization to other robotic platforms requires further validation.
-- The 100 tasks, while diverse, may not sufficiently cover all manipulation skills.
-- VLA instruction-following capability remains a bottleneck — even with correct corrective guidance, the VLA may fail to execute it precisely.
-- Visual symbol drawing still requires human involvement, albeit significantly faster than pure textual annotation.
-- Online learning — real-time policy updates from failures — remains unexplored.
-- The coverage adequacy of the seven-category visual symbol system requires further validation.
-- Real-time failure detection latency (video processing delay) is not sufficiently discussed.
+- Currently collected using the ALOHA dual-arm platform; generalization to other robot platforms needs verification.
+- 100 tasks, while diverse, may still be insufficient to cover all manipulation skills.
+- The instruction-following capability of the VLA is a bottleneck—even with correct guidance, the VLA might fail to execute precisely.
+- Drawing visual symbols still requires human involvement (though significantly faster than text).
+- Online learning—real-time policy updates from failures—has not been explored.
+- Real-time performance of failure detection (latencies in video processing) is not fully discussed.
 
 ## Related Work & Insights
-- **Compared to YAY** (human-in-the-loop correction): ViFailback reduces the complexity of human involvement via visual symbols.
-- **Compared to simulation failure datasets (AHA, RACER)**: Real-world data eliminates the sim-to-real gap.
-- **Compared to Robo2VLM and ManipBench**: The latter evaluate "what to do / how to do it," whereas ViFailback evaluates "where it went wrong / why it went wrong."
-- The visual symbol paradigm is generalizable to other human-robot interaction scenarios (e.g., teleoperation guidance).
-- Trajectory-conditioned models such as TracVLA overlay 2D trajectories but cannot revise them; ViFailback enables real-time correction.
+- Compared to YAY (human-in-the-loop): ViFailback reduces the complexity of human involvement via visual symbols.
+- Compared to simulation datasets (AHA, RACER): Ours avoids the sim-to-real gap.
+- Difference from Robo2VLM, ManipBench: The latter categories evaluate "what/how to do," whereas ViFailback evaluates "where/why it went wrong."
+- The visual symbol concept can be extended to other human-robot interaction scenarios (e.g., remote operation guidance).
+- TracVLA and similar models overlay 2D trajectories but cannot revise them; ViFailback provides real-time revision.
 
 ## Technical Details
-- **Data**: 4,995 teleoperation + 207 $\pi_{0.5}$ rollout trajectories; 657 successes + 4,545 failures
-- **Four failure types**: task planning / gripper 6D-pose / gripper state / human intervention
-- **Annotation stages**: 1. Fill basic information via UI → 2. Select correction options and draw symbols → 3. VLM generates text + human verification
-- **VLM assistance**: Qwen2.5-Max for sub-task decomposition; Qwen3-VL-235B for high-level description generation
-- **Platform**: ALOHA bimanual robot, 100 tasks
-- **Bench**: 500 trajectories × 22 tasks, 5 fully OOD
-- **Evaluation**: Closed-ended accuracy + open-ended GPT-4o scoring across three dimensions (semantic correctness / completeness / equivalence)
-- **LoRA training**: rank=32, α=64, 1 epoch, lr=1e-5, DeepSpeed ZeRO Stage 2
-- **Color encoding**: red = forward/backward (X-axis), green = left/right (Y-axis), blue = up/down (Z-axis); 2D arrows encode 3D motion
+- **Data**: 4,995 teleop + 207 $\pi_{0.5}$ rollouts, 657 success + 4,545 failure.
+- **4 Failure Types**: Task Planning / Gripper 6D-pose / Gripper State / Human Intervention.
+- **Annotation Stages**: 1. UI for basic info → 2. Symbolic drawing + correction choice → 3. VLM text augmentation + human check.
+- **VLM Support**: Qwen2.5-Max for task decomposition, Qwen3-VL-235B for high-level description.
+- **Bench**: 500 trajectories × 22 tasks, 5 fully OOD.
+- **Evaluation**: Lite (Accuracy) + Hard (GPT-4o scoring on Semantic/Completeness/Equivalence).
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Visual symbol annotation framework + real-world failure dataset + diagnosis-correction closed loop; comprehensive contributions
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 16-model benchmark + real-robot recovery experiments
-- **Writing Quality**: ⭐⭐⭐⭐ Architecture diagrams are clear; task definitions are comprehensive
-- **Value**: ⭐⭐⭐⭐⭐ Provides a practical solution to the critical problem of learning from robotic failures
+- Novelty: ⭐⭐⭐⭐⭐ Visual symbolic annotation framework + Real-world failure dataset + Diagnosis-correction loop.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16 model benchmarks + real-world robot recovery.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework and task definitions.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical solution to the critical problem of robots learning from failure.
 
 <!-- RELATED:START -->
 
@@ -133,11 +145,11 @@ Three stages: (1) **Data Collection** — teleoperation and VLA rollouts to coll
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
-- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
-- [\[CVPR 2026\] Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition](pixel-level_scene_understanding_in_one_token_visual_states_need_what-is-where_co.md)
-- [\[ICLR 2026\] Visual Planning: Let's Think Only with Images](../../ICLR2026/robotics/visual_planning_lets_think_only_with_images.md)
+- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
+- [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
+- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
+- [\[CVPR 2026\] Visual-RRT: Finding Paths toward Visual-Goals via Differentiable Rendering](visual-rrt_finding_paths_toward_visual-goals_via_differentiable_rendering.md)
+- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
 
 </div>
 

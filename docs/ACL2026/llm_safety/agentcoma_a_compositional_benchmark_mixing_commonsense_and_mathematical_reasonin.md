@@ -2,146 +2,124 @@
 title: >-
   [Paper Note] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios
 description: >-
-  [ACL2026][LLM Safety][Mixed-type compositional reasoning] AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluation of 61 LLMs reveals tha…
+  [ACL 2026][LLM Safety][Paper Note] AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluations across 61 LLMs reveal that while models typically solve both sub-problems independently (80%), the average accuracy drops to 51% when combined, exposing significant vulnerabilitie
 tags:
-  - "ACL2026"
-  - "LLM Safety"
-  - "Mixed-type compositional reasoning"
-  - "Commonsense reasoning"
-  - "Mathematical reasoning"
-  - "Agent evaluation"
-  - "Model vulnerability"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 3d72624e8470d041
+content_hash: acb41b0145440bfd
 ---
-
 # AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios
 
 **Conference**: ACL2026  
 **arXiv**: [2508.19988](https://arxiv.org/abs/2508.19988)  
 **Code**: https://agentcoma.github.io  
 **Area**: LLM Safety / LLM Reasoning Evaluation  
-**Keywords**: Mixed-type compositional reasoning, Commonsense reasoning, Mathematical reasoning, Agent evaluation, Model vulnerability  
+**Keywords**: Mixed-type Compositional Reasoning, Commonsense Reasoning, Mathematical Reasoning, Agent Evaluation, Model Vulnerability  
 
 ## TL;DR
-AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluation of 61 LLMs reveals that while models typically solve both sub-problems independently, the average accuracy drops from 80% (when both sub-steps are solvable independently) to 51% after composition, exposing significant vulnerability in mixed-type compositional reasoning.
+AgentCoMa constructs an agentic benchmark that forcibly combines commonsense selection with single-step mathematical operations. Evaluations across 61 LLMs reveal that while models typically solve both sub-problems independently (80%), the average accuracy drops to 51% when combined, exposing significant vulnerabilities in mixed-type compositional reasoning.
 
 ## Background & Motivation
-**Background**: Current LLMs satisfy various benchmarks for commonsense reasoning (spatial, temporal, social, and causal knowledge) and mathematical reasoning (from K-12 word problems to competitive math). Agentic benchmarks often introduce complexity via tool calls, long task chains, and dynamic environments to measure the comprehensive capabilities of LLM agents.
+**Background**: Current LLMs have numerous benchmarks for both commonsense and mathematical reasoning. Commonsense benchmarks focus on spatial, temporal, social, and causal knowledge in daily scenarios, while mathematical benchmarks cover difficulties from elementary word problems to competition math. Additionally, agentic benchmarks often incorporate complex factors like tool calls, long task chains, and dynamic environments to measure the overall capabilities of LLM agents.
 
-**Limitations of Prior Work**: While these evaluations are valuable, they struggle to isolate a specific question: when a task requires both commonsense judgment and mathematical calculation, does the model fail due to "composition failure" or is it simply hindered by extra factors like long context, tool overhead, or environmental changes? Excessive noise in benchmarks prevents precise error attribution.
+**Limitations of Prior Work**: While these evaluations are valuable, they struggle to answer a specific question: when a task requires both commonsense judgment and mathematical computation, is the model failing at "composition" itself, or is it merely burdened by extra factors like long contexts, tool calls, or environmental changes? If a benchmark contains too many distractors, it cannot precisely locate the source of error.
 
-**Key Challenge**: Real-world agent tasks frequently require switching between different reasoning types, such as using commonsense to identify items for room-temperature storage before calculating total prices. However, existing compositional benchmarks mostly combine steps of the same type (e.g., two knowledge retrieval steps or two math steps). High performance in a single reasoning type does not guarantee a model can stably link different types of reasoning.
+**Key Challenge**: Real-world agent tasks frequently require switching across reasoning types—for instance, using commonsense to identify items that can be stored at room temperature before calculating their total price. However, most existing compositional benchmarks combine steps of the same reasoning type, such as two knowledge retrieval steps or two math steps. High performance on a single reasoning type does not guarantee that a model can stably link different types of reasoning.
 
-**Goal**: The authors aim to construct a controlled evaluation environment where each sample can be decomposed into a commonsense sub-problem and a math sub-problem, neither of which is difficult for humans or strong models. If a model fails the combined problem, it can be more clearly attributed to the "cross-type composition" itself rather than step-wise difficulty.
+**Goal**: The authors aim to construct a controlled evaluation environment where every sample can be decomposed into a commonsense sub-problem and a math sub-problem, both of which are easy for humans and strong models. In this way, if a model fails the composite task, the failure can be clearly attributed to the "cross-type composition" itself rather than the difficulty of individual steps.
 
-**Key Insight**: The paper selects commonsense and math as complementary reasoning types: the former aligns with fast, intuitive "System 1," while the latter resembles slow, explicit "System 2." Placing both in a realistic agent scenario tests whether a model can effectively mobilize different capabilities within the same reasoning chain.
+**Key Insight**: The paper selects commonsense and math as two complementary reasoning types: the former resembles fast, intuitive System 1 thinking, while the latter resembles slow, explicit System 2 calculation. Placing both into the same realistic agent scenario tests whether the model can truly mobilize different capabilities within a single reasoning chain.
 
-**Core Idea**: Use "commonsense selection + single-step arithmetic" as an artificially constructed task to isolate mixed-type compositional reasoning in agent scenarios. LLM compositional vulnerability is then located through sub-problem controls, human experiments, and interpretability analysis.
+**Core Idea**: By using manually constructed tasks of "commonsense selection + single-step arithmetic," the authors isolate mixed-type compositional reasoning in agent scenarios from other complexities. They then locate LLM compositional vulnerabilities through sub-problem controls, human experiments, and interpretability analysis.
 
 ## Method
-This paper proposes a benchmark and a diagnostic protocol rather than a new model. The key lies in each sample maintaining the "compositional problem" alongside "two independently evaluable sub-problems," allowing comparison across three input formats: commonsense only, math only, and the two-step composition.
 
 ### Overall Architecture
-AgentCoMa takes real-world agent task descriptions as input and typically expects a numerical answer. A sample contains four core objects: the compositional problem, the commonsense sub-problem, the math sub-problem, and their respective ground truths.
 
-The compositional problem requires the model to make a choice based on commonsense and then perform an arithmetic operation on the selected objects. For example, in a garage tool organization sample, the model must identify electrical appliances (power drill, extension cords, leaf blower) and calculate their total count. The commonsense sub-problem only asks "which items belong in the waterproof cabinet," while the math sub-problem explicitly states the identified items and only requires addition. This distinguishes "knowledge selection failure" from "composition failure."
+Rather than proposing a new model, this paper introduces a benchmark and a diagnostic protocol to answer the core question: when a task involves both commonsense and math, does the model fail due to "compositional failure" or other overheads? Each problem includes a "composite problem" and "two independently evaluable sub-problems," allowing experiments to compare model performance across three input forms: commonsense only, math only, and the combined two-step task.
 
-The dataset covers 5 agentic scenarios: house working, web shopping, science experiments, smart assistant, and travel agent. The math steps consist only of basic arithmetic. The total scale is 260 samples (80 dev, 180 test). It serves as an evaluation set for pre-trained or instruction-tuned models.
+In AgentCoMa, the input is a realistic task description for an LLM agent, and the output is typically a numerical answer. A sample contains four core objects: the composite problem, the commonsense sub-problem, the math sub-problem, and their respective ground truths. The composite problem first requires the model to make a commonsense selection from multiple options, then perform an arithmetic operation on the selected objects. For example, in a garage tool organization task, the model must first identify that a power drill, extension cords, and leaf blower are electrical appliances, then sum their quantities. The commonsense sub-problem only asks "which items belong in the waterproof cabinet," while the math sub-problem explicitly states the selection results and only requires addition. This separates "knowledge selection failure" from "composition failure." The dataset covers five agentic scenarios: house working, web shopping, science experiments, smart assistant, and travel agent. The math step involves only one basic arithmetic operation, and scenarios/operation types are balanced across development and test sets. The final scale is 260 samples (80 dev + 180 test), with no training set as it targets pre-trained or instruction-tuned models.
 
 ### Key Designs
-1. **Decomposable Hybrid Reasoning Samples**:
-	- **Function**: Explicitly splits each compositional problem into commonsense and math sub-problems for 3-way assessment.
-	- **Mechanism**: The commonsense step determines the targets for calculation; the math step performs a single small-value operation. Sub-problems remove the burden of the opposite reasoning type. If a model solves sub-problems but fails the composition, failure is attributed to compositional overhead.
-	- **Design Motivation**: This is more diagnostic than final accuracy. Traditional benchmarks only show *that* a model failed; AgentCoMa determines if it failed at commonsense, arithmetic, or the link between them.
 
-2. **Manual Construction and Multi-round Expert Verification**:
-	- **Function**: Ensures realistic scenarios, authentic commonsense requirements, single-step arithmetic, and unambiguous answers.
-	- **Mechanism**: Samples are manually written by experts (not LLM-generated) and undergo binary checks, independent solving, answer comparison, and feedback. Any failure leads to rewriting and re-verification. Validation is performed by experts other than the sample authors to minimize bias.
-	- **Design Motivation**: The core conclusion relies on "easy steps but hard composition." Ambiguity or hidden multi-step math would break this contrast.
+**1. Decomposable Mixed-Reasoning Samples: Explicitly splitting composite problems into commonsense and math sub-problems for a three-way comparative evaluation.**
 
-3. **Diagnostic Chain from Behavior to Mechanism**:
-	- **Function**: Reports more than just accuracy; explains where the compositionality gap originates.
-	- **Mechanism**: Authors compare gaps across AgentCoMa, Bamboogle, and MultiArith. They use Min-K%++ to estimate pattern similarity to training distributions, lookback attention ratio to analyze context utilization, and QRNCA to compare neural activation overlap.
-	- **Design Motivation**: Prevents attributing performance drops solely to context length or poor prompting. Diagnosis suggests mixed-type tasks are rare in training distributions, causing models to favor math circuits over commonsense circuits during reasoning.
+Traditional benchmarks only report failure without specifying if the model lacks commonsense, arithmetic skills, or the ability to link them. AgentCoMa ensures that the commonsense step determines the operands for calculation, and the math step remains a simple numerical operation. Sub-problems remove the burden of the opposite reasoning type. If a model solves both sub-problems but fails the composite one, the failure is clearly rooted in cross-type composition rather than single-step incapacity—offering greater diagnostic power than final accuracy alone.
+
+**2. Manual Curation and Multi-round Expert Verification: Ensuring the "simple sub-problems vs. difficult composition" relationship holds.**
+
+The core findings rely entirely on the premise that sub-problems are easy. If samples are ambiguous or contain implicit multi-step math, the comparison fails. Thus, quality control is part of the methodology. All samples are handcrafted by experts rather than generated by LLMs, followed by binary checks, independent solving, answer comparison, and ambiguity feedback. Any failure in these checks requires rewriting and re-verification. To mitigate author bias, all verifications (except for one evaluation step) were performed by experts other than the sample authors.
+
+**3. Behavioral-to-Mechanical Diagnostic Chain: Probing the source of the compositional gap beyond accuracy reporting.**
+
+Accuracy drops could be hastily attributed to context length or poor prompting. The authors compare the AgentCoMa gap with Bamboogle and MultiArith and check if extra context explains the performance drop. They then use Min-K%++ to estimate the similarity of mixed-type problems to the training distribution, utilize lookback attention ratio to analyze context utilization, and use QRNCA to compare overlapping activated neurons between composite and sub-problems. This multi-layered evidence supports a stronger explanation: mixed-type tasks are rarer in training distributions, and during reasoning, models tend to activate math-related circuits without simultaneously mobilizing commonsense-related circuits.
 
 ### Loss & Training
-No new model is trained; therefore, no model loss function exists. All LLMs use two-shot chain-of-thought (CoT) prompting and greedy decoding. Numerical answers are extracted via regex and exact-matched. Commonsense sub-problem answers are evaluated by LLM-as-a-judge. 
+No new models were trained; thus, no model loss function is defined. The experiment employs a unified reasoning and evaluation strategy: all LLMs use two-shot chain-of-thought (CoT) prompts and greedy decoding. Numerical answers are extracted from CoT outputs using regex for exact matching with ground truths. Non-numerical answers for commonsense sub-problems are judged by an LLM-as-a-judge against standard answers. The authors also tested self-ask decomposition prompting, finding that the average composition gap remains similar to the CoT setting, suggesting simple decomposition prompts do not eliminate the issues exposed by AgentCoMa.
 
-Human control experiments involved 45 non-expert crowdworkers with high school education and English fluency, solving problems without calculators. Sub-problems and compositional problems from the same sample were given to different individuals to prevent leakage.
+Human control experiments involved 45 non-expert crowdworkers with high school education and English fluency, performing calculations manually without tools. Each annotator answered 12 questions; the composite problem and sub-problems of the same sample were never assigned to the same person to prevent answer leakage.
 
 ## Key Experimental Results
 
 ### Main Results
-61 LLMs were evaluated, with 16 representative models shown in detail (covering instruction-tuned, SFT reasoning, and RL-reasoning strategies). On average, models solve both sub-steps independently in 80% of cases, but compositional accuracy is only 51%, revealing a 29% average compositionality gap.
+The paper evaluates 61 LLMs, highlighting 16 recent models covering instruction-tuned, SFT reasoning, and RL reasoning strategies, with sizes ranging from 3B to 141B. The core finding is that while models can solve both independent sub-steps for 80% of samples on average, the average accuracy for composite problems is only 51%, resulting in a 29% average compositionality gap.
 
-| Target / Benchmark | Both Sub-steps Correct | Comp. Acc. | Comp. Gap / Note |
-|-------------|----------------|------------|-----------------|
-| AgentCoMa (16 Rep. LLMs Avg) | 80% | 51% | 29% average gap; issue is composition, not single-step performance |
-| AgentCoMa (Human) | 78.9% | 82.8% | Humans show no composition collapse |
-| Bamboogle (LLM Avg) | 53% | 52% | Homogeneous (knowledge+knowledge); negligible gap |
-| MultiArith (LLM Avg) | Near perfect | Near perfect | Homogeneous (math+math); gap < 1% |
+| Target / Benchmark | Both Sub-steps Correct Individually | Composite Accuracy | Composition Gap / Description |
+|--------------------|-------------------------------------|-------------------|-------------------------------|
+| Avg. 16 Representative LLMs on AgentCoMa | 80% | 51% | 29% average gap; main issue is composition, not single-step ability |
+| Non-expert Humans on AgentCoMa | 78.9% | 82.8% | No significant collapse; composite accuracy even slightly higher |
+| Avg. LLMs on Bamboogle | 53% | 52% | Homogeneous knowledge reasoning; negligible gap |
+| Avg. LLMs on MultiArith | Near perfect | Near perfect | Homogeneous math reasoning; gap < 1% |
 
-Strong models are not immune. Llama-3.3-70B-Instruct shows 90.0% sub-step joint success vs 73.3% compositional accuracy. Qwen2.5-14B-Instruct shows 88.9% vs 60.6%. Smaller models collapse more severely (e.g., SimpleRL-8B at 56.7% vs 25.0%).
+Even strong models are not immune. For example, Llama3.3 70B IT shows a 90.0% individual sub-step success rate vs. 73.3% composite accuracy; Qwen2 14B shows 88.9% vs. 60.6%; SimpleRL 32B shows 93.9% vs. 66.7%. The collapse is more pronounced in smaller or weaker models; SimpleRL 8B solves sub-steps individually 56.7% of the time but achieves only 25.0% composite accuracy.
 
 ### Ablation Study
-Ablations function as diagnostic experiments to rule out context length, prompting flaws, or same-type complexity.
+The "ablations" in this paper function as diagnostic experiments, systematically ruling out context length, prompt decomposition, and homogeneous composition difficulty while observing attention and neuron patterns.
 
-| Analysis | Key Result | Note |
-|--------|----------|------|
-| Failure Breakdown | ~0.74 of failures occur in samples where both sub-steps were solvable independently | Failure is specifically due to unreliable combination of reasoning types |
-| Self-Ask Prompting | ~27% gap (vs 29% for CoT) | Explicit decomposition prompting only slightly mitigates the issue |
-| Lookback Attention | CS: 71.49, Math: 72.20, Comp: 70.75 | Models show lower lookback attention in composition, leading to context hallucinations |
-| Neuron Overlap: Llama-3.1-8B | Comp-Math: 39%, Comp-CS: 3% | Composition tasks primarily activate math circuits, not commonsense circuits |
-| Neuron Overlap: GeneralReasoner-4B | Comp-Math: 54%, Comp-CS: 10% | Reasoning models show similar bias to instruction-tuned models |
+| Analysis Item | Key Result | Description |
+|---------------|------------|-------------|
+| Failure Source Decomposition | ~0.74 of AgentCoMa failures come from samples where both sub-steps were solved individually | Failure is not due to lack of single-step skills, but the inability to reliably combine different types of reasoning |
+| Self-Ask Prompting | Avg. gap ~27% (vs. 29% in CoT) | Explicit decomposition prompts provide only minor relief, not a solution |
+| Lookback Attention | Commonsense: 71.49, Math: 72.20, Composition: 70.75 | Models show lower lookback attention to context in composite problems, leading to more context hallucinations |
+| Neuron Overlap: Llama 3.1 8B | Comp-Math: 39%, Comp-Commonsense: 3% | Composite problems tend to activate mathematical circuits rather than simultaneously activating commonsense circuits |
+| Neuron Overlap: GeneralReasoner 4B | Comp-Math: 54%, Comp-Commonsense: 10% | Reasoning models show a similar bias, indicating the problem persists beyond standard instruction-tuned models |
 
 ### Key Findings
-- AgentCoMa’s gap is significantly larger than same-type benchmarks. MultiArith (math+math) and Bamboogle (knowledge+knowledge) show compositional accuracy close to joint sub-step accuracy, whereas AgentCoMa shows a clear divergence.
-- Reasoning optimization (RL or SFT) does not solve this. Reasoning models exhibit the same large gaps as instruction-tuned models, proving that long-chain reasoning capability $\neq$ cross-type compositional capability.
-- Training distribution similarity analysis suggests mixed-type problems are rare. Min-K%++ scores indicate compositional problems are less similar to typical training patterns than individual components.
-- Mechanism analysis reveals that when faced with composition, models follow math-related neural patterns; commonsense neurons are under-activated, leading to fluent but factually incorrect (contextually disjointed) reasoning.
+- The gap in AgentCoMa is significantly larger than in homogeneous reasoning benchmarks. MultiArith (math + math) and Bamboogle (knowledge + knowledge) show composite accuracies close to their joint sub-step probabilities, whereas AgentCoMa shows a clear disconnect.
+- Reasoning optimization via RL or SFT does not eliminate the problem. The paper notes that reasoning models exhibit large compositional gaps similar to instruction-tuned models, suggesting that "long-chain reasoning" does not equate to "cross-type composition."
+- Training distribution similarity analysis supports the explanation that mixed commonsense and math tasks are relatively rare. Min-K%++ scores suggest composite problems are less similar to typical training patterns than standalone commonsense or math problems.
+- Mechanism analysis provides a concrete failure picture: when facing composite problems, models often follow math-related neuron patterns while commonsense-related neurons are not sufficiently activated, leading to formally fluent but contextually incorrect reasoning.
 
 ## Highlights & Insights
-- The most valuable design is the triplet structure ("Composition + 2 Sub-problems"). It converts ambiguous failure diagnosis into quantifiable comparisons, proving models aren't "bad at addition" or "bad at shopping," but bad at linking "what to buy" with "how much it costs."
-- The difficulty of AgentCoMa is the switch between reasoning types, not absolute complexity. This is vital for agent evaluation; real-world failures often stem from miscombining simple skills in the correct order rather than a lack of high-level planning.
-- The paper connects behavioral gaps to training distributions and neural activation. While not causal proof, it makes the "mixed-type tasks are under-learned" hypothesis highly plausible.
-- Insights for safety: If models cannot stably combine commonsense and arithmetic in short, tool-free contexts, deploying them as autonomous decision-makers in complex agent scenarios requires rigorous step-wise verification.
+- The most valuable design is the triplet structure: "Composite Problem + Two Sub-problems." It transforms ambiguous error diagnosis into a quantifiable comparison: models do not fail because they don't know how to shop or how to add, but because they fail to link "what to buy" with "how much to pay."
+- The difficulty of AgentCoMa lies in switching reasoning types rather than absolute task difficulty. This is crucial for agent evaluation, as real-world failures often stem from failing to combine simple capabilities in the correct order rather than a lack of advanced math or planning.
+- The paper goes beyond leaderboards by connecting behavioral gaps to training distributions, attention, and neuron overlap. While these analyses are not causal proofs, they make the conclusion that "mixed-type tasks are under-learned patterns" highly credible.
+- It provides insights for safety and reliability: if a model cannot stably combine commonsense and arithmetic in a controlled, low-risk, short-context setting, additional step-by-step verification and intermediate state checks are needed when deploying models as automated decision-makers in real agent scenarios.
 
 ## Limitations & Future Work
-- AgentCoMa is an intentionally simplified control experiment. Each problem only combines two types and one math operation. It does not cover the long chains, multi-constraints, or multi-turn interactions of real agent tasks.
-- The data scale is relatively small (180 test samples, 260 total). While comparable to benchmarks like Bamboogle, larger datasets are needed to subdivide by scenario or arithmetic type.
-- Only preliminary exploration of reasoning order was conducted. Reversing the order (Math then CS) requires significant expert annotation to ensure validity.
-- Automated evaluation of commonsense sub-problems relies on LLM-as-a-judge. Evaluator bias remains a potential factor in open-ended answer spaces.
-- Future work could extend to other hybrid types (e.g., Commonsense + Constrained Planning, Spatial + Arithmetic) and integrate the benchmark into real agent traces.
+- AgentCoMa is a deliberately simplified controlled experiment. Each problem only combines two reasoning types, and math is limited to basic operations. While useful for pinpointing issues, it does not cover long task chains, multiple constraints, multi-turn interactions, or tool calls in real agent tasks.
+- The data scale is relatively small, with 180 test samples and 260 total. This is comparable to classic benchmarks like Bamboogle and MultiArith, but larger datasets are needed to systematically analyze scenarios, arithmetic types, reasoning orders, and linguistic variants.
+- The paper only briefly explores the impact of reasoning order. The authors mention that constructing a full reversed-order dataset requires extensive expert annotation, so the difference between "Math then Commonsense" and "Commonsense then Math" remains to be systematically answered.
+- Automatic evaluation of commonsense sub-problems relies on LLM-as-a-judge. Although validated against human assessments, judge bias might still affect fine-grained conclusions in more open-ended response spaces.
+- Future work could extend to more mixed types, such as commonsense + constrained planning, spatial reasoning + arithmetic, or social commonsense + resource allocation, and integrate the benchmark into actual agent traces to see if controlled gaps predict real-world failures.
 
 ## Related Work & Insights
-- **vs Commonsense Benchmarks**: Traditional benchmarks test if a model *knows* facts; this tests if it can *use* them as a link in a reasoning chain.
-- **vs Math Benchmarks**: GSM-style tasks focus on multi-step calculation; AgentCoMa asks if the model can correctly select the targets for calculation using commonsense.
-- **vs Compositional Benchmarks**: Most combine the same reasoning type. AgentCoMa identifies vulnerabilities specific to cross-type transitions.
-- **vs Agentic Benchmarks**: Sacrifices real-world noise (tools, dynamic environments) for a cleaner diagnostic window into reasoning failures.
+- **vs. Commonsense Benchmarks**: Where traditional benchmarks test if models possess daily knowledge, this work treats commonsense as one link in a chain to see if it can synergize with explicit computation.
+- **vs. Math Benchmarks**: MultiArith and GSM-style tasks examine math skills or word problem solving. In AgentCoMa, the math itself is easy; the true test is whether the model uses commonsense to select the correct operands first.
+- **vs. Bamboogle / MultiArith Compositional Reasoning**: These benchmarks also have multi-step structures but usually combine the same type of reasoning. The key difference here is cross-type composition, which reveals vulnerabilities invisible in homogeneous tasks.
+- **vs. Agentic Benchmarks**: Many agent benchmarks include tool calls, long horizons, and dynamic environments. They are closer to real deployment but harder for attribution. AgentCoMa sacrifices some realism for a clearer causal diagnostic window.
+- **Insights for Future Research**: Training and inference methods should not only reward final answers or long CoTs but should explicitly supervise intermediate type-switching. For instance, training models to first label the required reasoning type or output selected objects before calculating, or using verifiers to ensure commonsense selections are correctly passed to math steps.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Mixed-type composition is a distinct and well-defined problem.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers 61 LLMs and includes mechanistic analysis; however, data scale is modest.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure with well-aligned evidence and conclusions.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for agent reliability, highlighting that individual skills of different types do not guarantee successful composition.
+- Novelty: ⭐⭐⭐⭐☆ Selects "Commonsense + Math" mixed-type composition as a controlled benchmark; the problem definition is clear and distinct.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid evaluation across 61 LLMs, human controls, benchmarking against similar tasks, and various interpretability analyses, though scale and reversed-order analysis could be expanded.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, logically progressing from data construction to behavioral results to mechanical analysis. Main conclusions are well-supported by evidence.
+- Value: ⭐⭐⭐⭐⭐ High value for LLM agent reliability assessment, reminding us not to mistake individual reasoning skills for stable compositional ability in real scenarios.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](../../ICLR2026/llm_safety/measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
-- [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](../../ICLR2026/llm_safety/moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
-- [\[NeurIPS 2025\] SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications](../../NeurIPS2025/llm_safety/swe-sql_illuminating_llm_pathways_to_solve_user_sql_issues_in_real-world_applica.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge](curate_continual_unlearning_in_real_time_with_ensured_preservation_of_llm_knowle.md)
-
-</div>
-
-<!-- RELATED:END -->
-</div>
 
 ## Related Papers
 

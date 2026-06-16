@@ -2,120 +2,130 @@
 title: >-
   [Paper Note] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation
 description: >-
-  [ICML 2026][Video Generation][KV Cache Quantization] This paper discovers that KV cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("Quantized Keys St…
+  [ICML 2026][Video Generation][Diffusion Model] This paper discovers that KV-cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("quantized keys steal attention"). By deriving a per-score correction term based on Jensen's Inequality, it restores video quality close to BF16 (VBench 78.02 vs 78.27) un
 tags:
-  - "ICML 2026"
-  - "Video Generation"
-  - "KV Cache Quantization"
-  - "Attention Bias"
-  - "Diffusion Models"
-  - "Jensen's Inequality"
+  - ICML 2026
+  - Video Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: a93a2c8933b9cfaa
+content_hash: fbc84e86b61f3bb0
 ---
-
 # Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.26266](https://arxiv.org/abs/2605.26266)  
 **Code**: To be confirmed  
 **Area**: Video Generation / Model Compression  
-**Keywords**: KV Cache Quantization, Attention Bias, Diffusion Models, Jensen's Inequality
+**Keywords**: KV-Cache Quantization, Attention Bias, Diffusion Models, Jensen's Inequality
 
 ## TL;DR
-This paper discovers that KV cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("Quantized Keys Steal Attention"). By deriving a per-score correction term based on Jensen's Inequality, it restores near-BF16 video quality under aggressive INT2 quantization (VBench 78.02 vs. 78.27) while saving 50% memory.
+This paper discovers that KV-cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("quantized keys steal attention"). By deriving a per-score correction term based on Jensen's Inequality, it restores video quality close to BF16 (VBench 78.02 vs 78.27) under aggressive INT2 quantization while saving 50% memory.
 
 ## Background & Motivation
 
-**Background**: Chunked autoregressive video diffusion models (e.g., MAGI-1, SkyReels-V2) avoid redundant computation by maintaining a KV cache for previously generated video chunks. To save memory, industry practices employ quantization techniques to compress cache keys and values to low bit-widths (INT2, INT4).
+**Background**: Chunked autoregressive video diffusion models (e.g., MAGI-1, SkyReels-V2) avoid redundant computation by maintaining a KV cache for previously generated video chunks. To save memory, industry practices employ quantization to compress cache keys and values to low bit-widths (INT2, INT4).
 
-**Limitations of Prior Work**: Aggressive KV cache quantization (especially INT2) severely degrades video quality, leading to the destruction of subject and scene structures. Existing quantization methods (QuaRot, RTN, etc.) focus on reducing the quantization noise itself but fail to fully resolve deeper issues introduced by quantization.
+**Limitations of Prior Work**: Aggressive KV-cache quantization (especially INT2) severely degrades video quality, leading to the destruction of subjects and scene structures. Existing quantization methods (QuaRot, RTN, etc.) focus on how to reduce quantization noise itself but fail to fully address deeper issues introduced by quantization.
 
-**Key Challenge**: Integer quantization introduces **zero-mean noise** at the attention score level, which theoretically should not alter the expected behavior of attention. However, the **convexity** of the exponential function in softmax breaks this symmetry—positive deviations are amplified more than negative deviations are suppressed. This leads to a systematic overestimation of the quantized cache keys' contribution to the partition sum.
+**Key Challenge**: Integer quantization introduces **zero-mean noise** at the attention score level, which theoretically should not change the expected behavior of attention. However, the **convexity** of the exponential function in softmax breaks this symmetry—positive deviations are amplified more significantly than negative deviations are suppressed. Consequently, the contribution of quantized cache keys to the partition sum is systematically overestimated.
 
 **Goal**:
 - Identify and quantify the impact of this systematic bias (Jensen bias) on attention weight distribution.
-- Derive theoretically sound correction terms to recover the original attention distribution without requiring retraining.
-- Implement a correction scheme with extremely low overhead.
+- Derive a theoretically sound correction term to restore the original attention distribution without retraining.
+- Implement a correction scheme with minimal overhead.
 
-**Key Insight**: Starting from Jensen's Inequality in probability theory—in softmax, $\mathbb{E}[e^{s_i + \delta_i}] = e^{s_i} \cdot \mathbb{E}[e^{\delta_i}] > e^{s_i}$ (when $\delta_i$ is zero-mean quantization noise), which causes the contribution of cache keys to be systematically inflated.
+**Key Insight**: Starting from Jensen's Inequality in probability theory—in softmax $\mathbb{E}[e^{s_i + \delta_i}] = e^{s_i} \cdot \mathbb{E}[e^{\delta_i}] > e^{s_i}$ (when $\delta_i$ is zero-mean quantization noise), the contribution of cache keys is systematically inflated.
 
-**Core Idea**: Offset the Jensen bias by subtracting a correction term $b_i = \log \mathbb{E}[e^{\delta_i}]$ from the cached attention scores, ensuring the expected contribution of the corrected score matches the unquantized case.
+**Core Idea**: Offset Jensen bias by subtracting a correction term $b_i = \log \mathbb{E}[e^{\delta_i}]$ from the cached attention scores, ensuring the corrected expected score contribution matches the unquantized case.
 
 ## Method
 
 ### Overall Architecture
-In chunked autoregressive video diffusion, the current block's query attends to two sets of keys: the current block's keys (high-precision BF16) and the preceding blocks' keys (low-bit quantized cache). Standard softmax attention calculates partition sums for these two sets separately and then normalizes them. Quantization causes the partition sum on the cache key side to be systematically exaggerated, thereby "stealing" attention mass that should have been allocated to the current block. This paper derives a **per-token correction term** to be subtracted from cache key scores before the softmax operation to restore the original attention balance.
+In chunked autoregressive video diffusion, the query of the current chunk attends to two sets of keys: the high-precision BF16 keys of the current chunk and the low-bit quantized cache keys of preceding chunks. Standard softmax computes the partition sum for both sets separately before normalization. This work finds that quantization causes the partition sum on the cache key side to be systematically inflated, allowing cache keys to "steal" attention quality that should belong to the current chunk. The methodology follows a logical chain: first, explaining the inevitability of this bias via Jensen's Inequality; then, analytically deriving a per-token correction term $b_i$ to be subtracted from cache key scores before softmax; and finally, proving it adds negligible inference overhead without requiring retraining.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Current Chunk Query q"]
+    KR["Current Chunk Keys<br/>Unquantized BF16"]
+    KS["Previous Chunk Cache Keys<br/>Quantized to INT2 / INT4"]
+    Q --> SR["Current Chunk Score s_i<br/>Remains Unchanged"]
+    KR --> SR
+    Q --> SS["Cache Key Score = s_i + Quantization Noise δ_i<br/>Jensen Bias: δ_i amplified by exp, cache keys steal attention"]
+    KS --> SS
+    SS --> B["Correction Term b_i ≈ (1 / 24d) Σ q_c² Δ_c²<br/>Analytically derived from query norm and quantization step"]
+    B --> CS["Cache Key Score minus b_i<br/>Offsets bias, stops attention theft"]
+    SR --> SM["Softmax Normalization + Weighted Value Aggregation"]
+    CS --> SM
+    SM --> OUT["Output: Attention quality returns to BF16 distribution"]
+```
 
 ### Key Designs
 
-1.  **Theoretical Derivation of Jensen Bias**:
-    - **Function**: Accurately describes how quantization disrupts the attention weight balance through the convexity of softmax.
-    - **Mechanism**: Let the quantized score of cache key $i$ be $\hat{s}_i = s_i + \delta_i$, where $\delta_i = \frac{q^\top \epsilon_i}{\sqrt{d}}$ is the quantization noise projection, and $\epsilon_i \sim \mathcal{U}(-\Delta_i/2, +\Delta_i/2)$. At the expected level, the cache-side partition sum is $\mathbb{E}[\hat{Z}_\mathcal{S}] = \sum_{i \in \mathcal{S}} e^{s_i} \cdot \mathbb{E}[e^{\delta_i}]$. By Jensen's Inequality, $\mathbb{E}[e^{\delta_i}] \geq e^{1 \cdot \mathbb{E}[\delta_i]} = 1$ (since $\delta_i$ is zero-mean), thus $\mathbb{E}[\hat{Z}_\mathcal{S}] \geq Z_\mathcal{S}$. The gap in this inequality is the Jensen bias—leading to cache keys stealing attention mass.
-    - **Design Motivation**: This is the fundamental cause of quantization-induced degradation; rather than improving the quantization scheme, it is better to directly correct the resulting bias.
+**1. Theoretical Derivation of Jensen Bias: Why zero-mean noise leads to systematic drift**
 
-2.  **Derivation of Per-Score Correction Terms**:
-    - **Function**: Computes a correction value $b_i$ for each cache token to restore the expectation of the corrected contribution to its original value.
-    - **Mechanism**: Requiring $e^{s_i - b_i} \cdot \mathbb{E}[e^{\delta_i}] = e^{s_i}$ yields $b_i = \log \mathbb{E}[e^{\delta_i}]$. As quantization noise components are independent across channels, the expectation decomposes. For uniform quantization noise, the exact form is $b_i = \sum_{c=1}^d \log\left(\frac{\sinh(q_c \Delta_{i, c} / (2 \sqrt{d}))}{q_c \Delta_{i, c} / (2 \sqrt{d})}\right)$. Using a second-order Taylor expansion $\log(\sinh(\alpha) / \alpha) \approx \alpha^2 / 6$ yields a concise approximation: $b_i \approx \frac{1}{24 d} \sum_{c=1}^d q_c^2 \Delta_{i, c}^2$.
-    - **Design Motivation**: Theoretically derived from unbiasedness, with Taylor approximation used in practice to greatly simplify computation; this approximation can also be extended to other formats (FP, MXFP, etc.).
+Intuitively, integer quantization introduces zero-mean noise to attention scores, which should not alter attention behavior in expectation. However, since the exponential function in softmax is convex, the symmetry is broken. Let the quantized score for cache key $i$ be $\hat{s}_i = s_i + \delta_i$, where $\delta_i = \frac{q^\top \epsilon_i}{\sqrt{d}}$ is the projection of quantization noise $\epsilon_i \sim \mathcal{U}(-\Delta_i/2, +\Delta_i/2)$. The expectation of the cache-side partition sum is $\mathbb{E}[\hat{Z}_\mathcal{S}] = \sum_{i \in \mathcal{S}} e^{s_i} \cdot \mathbb{E}[e^{\delta_i}]$. By Jensen's Inequality, $\mathbb{E}[e^{\delta_i}] \geq e^{\mathbb{E}[\delta_i]} = 1$, hence $\mathbb{E}[\hat{Z}_\mathcal{S}] \geq Z_\mathcal{S}$. The magnitude of positive deviations amplified by the exponential is greater than that of suppressed negative deviations. This gap in the inequality is the Jensen bias—the mechanism through which cache keys steal attention. Recognizing this shifts the strategy from "minimizing quantization noise" to "correcting the consequences of noise."
 
-3.  **Inference-time Application + Complexity Control**:
-    - **Function**: Applies the correction during inference with minimal overhead.
-    - **Mechanism**: The correction term depends only on existing quantization parameters (step size $\Delta_{i, c}$) and the query norm $\|q\|$, requiring no additional storage. For grouped quantization (group size $g = 32$), the extra computational complexity is $O(QK \cdot d / g)$, which is only a $1/g$ overhead compared to the $O(QK \cdot d)$ of standard $QK^\top$.
-    - **Design Motivation**: Ensures the correction is a practical solution; its implementation in FlexAttention adds only about 5% end-to-end latency.
+**2. Derivation of Per-score Correction Term: Restoring expected contribution**
+
+Since the contribution of cache keys is inflated by a factor of $\mathbb{E}[e^{\delta_i}]$, a correction term $b_i$ is subtracted from each cache token to cancel it out. The constraint is straightforward: $e^{s_i - b_i} \cdot \mathbb{E}[e^{\delta_i}] = e^{s_i}$, yielding $b_i = \log \mathbb{E}[e^{\delta_i}]$. Because quantization noise is independent across channels, this expectation can be decomposed per channel. For uniform quantization noise, the exact form is $b_i = \sum_{c=1}^d \log\left(\frac{\sinh(q_c \Delta_{i, c} / (2 \sqrt{d}))}{q_c \Delta_{i, c} / (2 \sqrt{d})}\right)$. In practice, using a second-order Taylor expansion $\log(\sinh(\alpha)/\alpha) \approx \alpha^2/6$ simplifies this to a clean approximation: $b_i \approx \frac{1}{24 d} \sum_{c=1}^d q_c^2 \Delta_{i, c}^2$. This term depends only on the query and the quantization step size $\Delta$, making it theoretically unbiased, practically concise, and generalizable to other formats like FP or MXFP.
+
+**3. Inference Application + Complexity Control: Nearly free correction**
+
+The correction term $b_i$ utilizes existing quantization parameters (step size $\Delta_{i, c}$) and query norms $\|q\|$, requiring no additional storage. For grouped quantization (group size $g = 32$), the extra computation is $O(QK \cdot d / g)$. Compared to the standard $QK^\top$ complexity of $O(QK \cdot d)$, this adds only a factor of $1/g$. When implemented with FlexAttention, end-to-end latency increases by only about 5%. This near-zero cost transforms a theoretical conclusion into a plug-and-play correction applicable to any quantization scheme.
 
 ### Loss & Training
-This method is a **training-free inference-stage correction**. The original model parameters and training objectives remain unchanged; only score calibration is applied before the softmax.
+The proposed method is an **inference-stage correction requiring no training**: original model parameters and training objectives remain unchanged, with calibration performed solely on cache key scores before the softmax operation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Quantization Scheme | Precision | PSNR ↑ | SSIM ↑ | LPIPS ↓ | VBench ↑ | Description |
-|-------|---------------------|-----------|--------|--------|---------|----------|-------------|
+| Model | Quantization | Precision | PSNR ↑ | SSIM ↑ | LPIPS ↓ | VBench ↑ | Description |
+|------|--------|------|--------|--------|---------|---------|------|
 | MAGI-1 | None | BF16 | — | — | — | 78.27 | Baseline |
-| MAGI-1 | QuaRot+RTN | INT2 ✗ | 17.10 | 0.630 | 0.453 | 70.24 | W/o correction |
-| MAGI-1 | QuaRot+RTN | INT2 ✓ | 22.97 | 0.801 | 0.165 | **78.02** | W/ correction |
-| MAGI-1 | QVG+Correction | INT2 | 25.29 | 0.856 | 0.107 | 78.23 | Optimal combination |
-| SkyReels-V2 | QuaRot+RTN | INT2 ✗ | 19.20 | 0.708 | 0.319 | 71.44 | W/o correction |
-| SkyReels-V2 | QuaRot+RTN | INT2 ✓ | 20.42 | 0.784 | 0.202 | **78.58** | W/ correction |
+| MAGI-1 | QuaRot+RTN | INT2 ✗ | 17.10 | 0.630 | 0.453 | 70.24 | No Correction |
+| MAGI-1 | QuaRot+RTN | INT2 ✓ | 22.97 | 0.801 | 0.165 | **78.02** | Corrected |
+| MAGI-1 | QVG+Correction | INT2 | 25.29 | 0.856 | 0.107 | 78.23 | Best Combo |
+| SkyReels-V2 | QuaRot+RTN | INT2 ✗ | 19.20 | 0.708 | 0.319 | 71.44 | No Correction |
+| SkyReels-V2 | QuaRot+RTN | INT2 ✓ | 20.42 | 0.784 | 0.202 | **78.58** | Corrected |
 
-After correction, INT2 almost entirely recovers BF16 quality; the correction is orthogonal and combinable with upstream compression methods like QVG; it achieves 50% memory savings at the same quality level.
+After correction, INT2 almost fully recovers BF16 quality; the correction is orthogonal and combinable with upstream compression methods like QVG; memory savings of 50% are achieved at the same quality level.
 
 ### Ablation Study
 
 | Configuration | Attention Mass Shift $\Delta P_\mathcal{S}$ | Median | Description |
-|---------------|------------------------------------------|--------|-------------|
+|------|-------------------------------|------|------|
 | BF16 Baseline | — | 0 | No shift |
-| INT2 W/o correction | Significant positive shift | +0.15 | Cache keys steal attention |
-| INT2 W/ correction | Near zero after correction | ~0 | Bias offset |
+| INT2 No Correction | Significant Positive Shift | +0.15 | Cache keys steal attention |
+| INT2 Corrected | Near zero after calibration | ~0 | Bias neutralized |
 
 ### Key Findings
-- Attention mass shift directly corresponds to the degree of video quality degradation.
-- Correction improves PSNR across all group sizes, preserving the memory-quality tradeoff curve but shifting it toward higher quality.
-- Performs best under aggressive quantization (INT2 is superior to INT4).
-- Cross-domain applicability: Preliminary LLM experiments show the same bias mechanism appears in chunked prefill scenarios.
+- Attention mass shift directly correlates with the degree of video quality degradation.
+- Correction improves PSNR across all group sizes, shifting the memory-quality trade-off curve toward higher quality.
+- Performance gains are most pronounced under aggressive quantization (INT2 superior to INT4).
+- Cross-domain applicability: Preliminary LLM experiments show the same bias mechanism in chunked prefill scenarios.
 
 ## Highlights & Insights
-- **Theoretical Simplicity**: Distills complex quantization issues into a single root cause (Jensen bias). The correction formula requires only query norms and step sizes, without needing complex statistics or retraining—an elegant information-theoretic perspective.
-- **Cross-domain Applicability**: Although the paper focuses on video diffusion, the same bias mechanism exists in LLM chunked prefill, indicating the discovery's universality.
-- **Plug-and-play**: The method is orthogonal to any upstream quantization schemes (QuaRot, RTN, QVG, etc.) and can be seamlessly combined, providing high engineering value.
+- **Theoretical Simplicity**: Distills complex quantization issues into a single root cause (Jensen bias). The correction formula requiring only query norms and step sizes, without complex statistics or retraining, offers an elegant information-theoretic perspective.
+- **Cross-domain Applicability**: While the focus is on video diffusion, the same bias mechanism exists in LLM chunked prefill, indicating widespread relevance.
+- **Plug-and-play nature**: The method is orthogonal to upstream quantization schemes (QuaRot, RTN, QVG, etc.), allowing seamless integration and high engineering value.
 
 ## Limitations & Future Work
-- Noise model assumptions: The derivation is based on uniform zero-mean noise from integer quantization; it may fail for non-uniform or biased noise. Floating-point formats like FP and MXFP require re-derivation.
-- Validity at the expectation level: Correction is unbiased in the expected sense, but when attention is highly concentrated on a few cache tokens, noise from a single sample might dominate the effect, reducing the gains from correction.
-- Limitations in single-token decoding: The method performs optimally in multi-token current block scenarios. In standard LLM single-token decoding, where one query attends to multiple cache tokens, competition between cache tokens is weaker, limiting the room for correction.
+- **Noise Model Assumptions**: The derivation assumes uniform zero-mean noise from integer quantization; it may fail for non-uniform or biased noise. Floating-point formats like FP and MXFP require re-derivation.
+- **Expected Effectiveness**: The correction is unbiased in expectation, but when attention is highly concentrated on a few cache tokens, single-sample noise may dominate, reducing correction benefits.
+- **Single-token Decoding Limitations**: The method performs best in multi-token current chunk scenarios. In standard LLM single-token decoding, competition between cache tokens is weaker, limiting the room for correction.
 
 ## Related Work & Insights
-- **vs KIVI / KVQuant / QuaRot / QuantVideoGen**: These methods reduce noise during the quantization phase by redistributing step sizes or using rotations; this work complementarily removes residual bias during the decoding phase through bias correction. The two can be combined.
-- **vs KVLinC**: KVLinC uses trained linear adapters to correct quantization errors; this work's correction is analytically derived and training-free, offering better generalization.
-- **vs General studies on diffusion model quantization**: Previous research focused on the quantization of the softmax calculation itself; this paper uniquely identifies structural bias introduced by KV cache quantization through the convexity of softmax.
+- **vs KIVI / KVQuant / QuaRot / QuantVideoGen**: These methods reduce noise during the quantization stage via step size reallocation or rotation; the proposed method complementarily removes residual bias during decoding, and the two approaches can be combined.
+- **vs KVLinC**: KVLinC uses trained linear adapters to correct quantization errors; the proposed correction is analytically derived, requires no training, and possesses stronger generalization capabilities.
+- **vs General Diffusion Quantization Research**: Previous work focused on the quantization of the softmax calculation itself; this work uniquely identifies structural bias introduced by KV-cache quantization through softmax convexity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐  Reveals the fundamental problem of KV quantization from the perspective of Jensen's Inequality; the theoretical view is completely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Three video models $\times$ two quantization schemes + detailed ablations (attention shift, storage-quality tradeoff, cross-domain LLM).
-- Writing Quality: ⭐⭐⭐⭐⭐  Clear logical chain, interlocking from phenomenon $\to$ root cause $\to$ solution $\to$ verification.
-- Value: ⭐⭐⭐⭐⭐  A plug-and-play solution with strong industrial usability; directly benefits all models using KV cache quantization.
+- Novelty: ⭐⭐⭐⭐⭐ Reveals the fundamental issue of KV quantization from the perspective of Jensen's Inequality, providing a completely novel theoretical view.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers three video models × two quantization schemes + detailed ablations (attention shift, memory-quality trade-off, cross-domain LLM).
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain, connecting phenomena → root cause → solution → verification.
+- Value: ⭐⭐⭐⭐⭐ A plug-and-play solution with high industrial usability; directly benefits any model utilizing KV-cache quantization.
 
 <!-- RELATED:START -->
 
@@ -124,10 +134,10 @@ After correction, INT2 almost entirely recovers BF16 quality; the correction is 
 ## Related Papers
 
 - [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
+- [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](../../CVPR2026/video_generation/accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2026/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 - [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
-- [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 
 </div>
 

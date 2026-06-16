@@ -2,103 +2,93 @@
 title: >-
   [Paper Note] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling
 description: >-
-  [CVPR 2026][Autonomous Driving][Federated Learning] This paper proposes F3DGS, the first method to apply a federated learning framework to 3DGS…
+  [CVPR 2026][Autonomous Driving][3D Gaussian Splatting] F3DGS is proposed as the first method to apply the federated learning framework to 3DGS, achieving multi-agent distributed 3D reconstruction through frozen geometry and visibility-aware aggregation without raw data sharing.
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Federated Learning"
-  - "3D Gaussian Splatting"
-  - "Multi-Agent"
-  - "Distributed Reconstruction"
-  - "Visibility-Weighted Aggregation"
+  - CVPR 2026
+  - Autonomous Driving
+  - 3D Gaussian Splatting
+  - Multi-Agent
 date: 2026-05-08
-content_hash: 69712a22147fd28d
+content_hash: 497f0a728695d220
 ---
-
 # F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.01605](https://arxiv.org/abs/2604.01605)  
-**Code**: Coming soon (including dataset and development toolkit)  
-**Area**: Autonomous Driving / Multi-Agent 3D Reconstruction
-**Keywords**: Federated Learning, 3D Gaussian Splatting, Multi-Agent, Distributed Reconstruction, Visibility-Weighted Aggregation
+**Code**: Coming soon (includes dataset and development kit)  
+**Area**: Autonomous Driving / Multi-agent 3D Reconstruction  
+**Keywords**: Federated Learning, 3D Gaussian Splatting, Multi-agent, Distributed Reconstruction, Visibility-weighted Aggregation
 
 ## TL;DR
 
-This paper proposes F3DGS, the first method to apply a federated learning framework to 3DGS, enabling decentralized multi-agent 3D reconstruction through frozen geometry and visibility-aware aggregation without sharing raw data.
+F3DGS is proposed as the first method to apply the federated learning framework to 3DGS, achieving multi-agent distributed 3D reconstruction through frozen geometry and visibility-aware aggregation without raw data sharing.
 
 ## Background & Motivation
 
-**Background**: 3DGS has achieved state-of-the-art performance in novel view synthesis and is widely applied in robotics, autonomous driving, and embodied AI.
+**Background**: 3DGS has achieved SOTA in novel view synthesis and is widely used in robotics, autonomous driving, and embodied AI.
 
-**Limitations of Prior Work**: All existing 3DGS methods assume centralized data access—all observations must be jointly optimized on a single machine. This poses three constraints in multi-agent distributed scenarios:
+**Limitations of Prior Work**: All existing 3DGS methods assume centralized data access—all observations must be jointly optimized on a single machine. This faces three constraints in multi-agent distributed scenarios:
    - **Communication Overhead**: Bandwidth and storage for aggregating high-resolution images scale linearly with the number of agents.
-   - **Data Privacy**: In multi-operator or multi-organization settings, raw sensor data is private and cannot be shared directly.
-   - **Scalability**: The computational demands of joint optimization are tied to the total inference size, creating a centralized bottleneck.
+   - **Data Privacy**: In multi-operator/multi-organization settings, raw sensor data is private and cannot be shared directly.
+   - **Scalability**: Computational demands for joint optimization are tied to the total inference size, creating a centralized bottleneck.
 
-**Key Challenge**: Federated learning can address the above issues by sharing only model updates, but directly applying FedAvg to 3DGS introduces two domain-specific challenges—**geometry drift** (inconsistencies caused by independently optimized positional parameters) and **partial observability** (each client observes only a subset of Gaussians).
+**Key Challenge**: Federated Learning (FL) can solve these issues by sharing only model updates, but applying FedAvg directly to 3DGS leads to two domain-specific problems: **geometric drift** (inconsistent position parameters optimized independently) and **partial observability** (each client observes only a subset of Gaussians).
 
-**Goal**: Achieve unified multi-agent collaborative 3DGS reconstruction under federated constraints (zero raw image exchange).
+**Goal**: Achieve unified 3DGS reconstruction through multi-agent collaboration under federated constraints (zero raw image exchange).
 
-**Key Insight**: Exploit the explicit separability of 3DGS parameters (position, covariance, and color are independent tensors) to decouple geometry from appearance.
+**Key Insight**: Utilize the explicit separability of 3DGS parameters (position, covariance, and color are independent tensors) to decouple geometry and appearance.
 
-**Core Idea**: Freeze the shared geometric skeleton (fixed positions) and federally optimize only appearance attributes, resolving partial observability via visibility-weighted aggregation.
+**Core Idea**: Freeze a shared geometric skeleton (fixed positions) and perform federated optimization only on appearance attributes, using visibility-weighted aggregation to handle partial observability.
 
 ## Method
 
 ### Overall Architecture
 
-F3DGS operates in three stages:
-1. **Shared Geometric Skeleton Construction**: Initialize a global Gaussian model by fusing LiDAR point clouds from all clients.
-2. **Federated Optimization**: Fix positions; each client optimizes only appearance attributes.
-3. **Visibility-Aware Aggregation**: Aggregate client updates weighted by visibility frequency.
+F3DGS addresses the challenge of collaborative reconstruction into a unified 3DGS world model when multiple agents observe only parts of a scene and cannot exchange raw images. The breakthrough lies in leveraging the naturally separable parameters of 3DGS. By aligning client trajectories to a unified coordinate system and fusing LiDAR point clouds from all clients into a **shared global geometric skeleton** which remains fixed, clients then perform federated optimization only on appearance attributes. Updates are weighted back to the global model based on visibility frequency ("more observations equals higher weight"). The federated training iterates for multiple rounds with zero raw image exchange.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Local LiDAR + RGB<br/>(Raw data stays local)"] --> B["Metric-scale Pose Construction<br/>Umeyama Sim(3) Alignment + SE(3) Smoothing"]
+    B --> C["Global Geometric Skeleton<br/>Fused LiDAR point clouds, positions fixed"]
+    C --> D
+    subgraph LOOP["Federated Training Loop (R rounds × T local steps)"]
+        direction TB
+        D["Frozen Geometry Federated Optimization<br/>Only appearance gradients + visibility counts"] --> E["Visibility-aware Aggregation<br/>Weighted by observation frequency"]
+        E -->|Next Round| D
+    end
+    E --> F["Unified 3DGS World Model"]
+```
 
 ### Key Designs
 
-1. **Metric-Scale Pose Construction**
+**1. Metric-scale Pose Construction: Aligning multi-agent trajectories to a global anchor**
 
-   **Function**: Align each client's camera trajectory to a global LiDAR anchor.
+Individual pose estimations in multi-agent systems often use different methods, leading to inconsistent scales and coordinate systems. Using a global LiDAR anchor as a reference, the scale $s_k$, rotation $R_k$, and translation $\mathbf{t}_k$ for each client are estimated via Umeyama $\mathcal{S}im(3)$:
 
-   **Mechanism**: Apply Umeyama $\mathcal{S}im(3)$ estimation to compute scale $s_k$, rotation $R_k$, and translation $\mathbf{t}_k$:
+$$s_k, R_k, \mathbf{t}_k = \arg\min_{s,R,\mathbf{t}} \sum_j \|\mathbf{p}_j^{\text{anchor}} - (sR\mathbf{p}_j^{\text{client}} + \mathbf{t})\|^2$$
 
-   $s_k, R_k, \mathbf{t}_k = \arg\min_{s,R,\mathbf{t}} \sum_j \|\mathbf{p}_j^{\text{anchor}} - (sR\mathbf{p}_j^{\text{client}} + \mathbf{t})\|^2$
+To prevent jumps at alignment boundaries, an exponentially decaying SE(3) smoothing correction is applied: $T_t^{\text{smooth}} = \text{Exp}(\beta(t) \cdot \text{Log}(\Delta T)) \cdot T_t^{\text{aligned}}$, ensuring continuous transitions.
 
-   To prevent boundary discontinuities, exponentially decaying SE(3) corrections are applied for smoothing: $T_t^{\text{smooth}} = \text{Exp}(\beta(t) \cdot \text{Log}(\Delta T)) \cdot T_t^{\text{aligned}}$
+**2. Frozen Geometry Federated Optimization: Fixing positions while updating appearance**
 
-   **Design Motivation**: Pose estimates from individual agents in a multi-agent system may employ different methods, leading to inconsistent scales and coordinate frames. A global LiDAR anchor provides a unified reference, while boundary smoothing eliminates stitching artifacts.
+Directly applying FedAvg to 3DGS causes issues: Gaussian positions encode explicit 3D coordinates in a smooth parameter space; independent optimization followed by averaging leads to **geometric drift** and incoherent reconstruction. F3DGS freezes positions entirely, $\mu_i^{(k)} = \mu_i \;\; \forall k, \forall \text{steps}$, allowing only appearance parameters $\theta_{\text{app}} = \{s_i, q_i, \alpha_i, \mathbf{c_i}\}$ (scale, rotation, opacity, spherical harmonics) to receive gradients. A visibility counter $v_{k,i}$ tracks how many times Gaussian $i$ was rasterized during client $k$'s training for later aggregation weighting. Freezing positions eliminates the root cause of drift.
 
-2. **Federated Optimization with Frozen Geometry**
+**3. Visibility-aware Aggregation: Weighting by observation frequency to prevent dilution**
 
-   **Function**: Update only appearance parameters during local training while keeping positions fixed.
+Since clients observe partial scenes, uniform averaging would dilute well-observed appearance estimates with unobserved parameters (still at random initialization). F3DGS sets aggregation weights proportional to visibility:
 
-   **Mechanism**:
-   $\mu_i^{(k)} = \mu_i \quad \forall k, \forall \text{steps}$
+$$\alpha_{k,i} = \frac{v_{k,i}}{\sum_{j=1}^K v_{j,i} + \epsilon}, \qquad a_i = \sum_{k=1}^K \alpha_{k,i} a_{k,i}$$
 
-   Only appearance parameters $\theta_{\text{app}} = \{s_i, q_i, \alpha_i, \mathbf{c_i}\}_{i=1}^M$ (scale, rotation, opacity, and spherical harmonic coefficients) receive gradient updates. A visibility counter $v_{k,i}$ tracks how many times Gaussian $i$ is rasterized during training on client $k$.
-
-   **Design Motivation**: Unlike neural network weights, Gaussian positions explicitly encode 3D coordinates in a smooth parameter space. Independently optimizing positions leads to geometry drift—averaging drifted positions produces incoherent reconstructions. Freezing positions eliminates this problem fundamentally.
-
-3. **Visibility-Aware Federated Aggregation**
-
-   **Function**: Aggregate updates from each client weighted by their observation frequency for each Gaussian.
-
-   **Mechanism**: Aggregation weights are proportional to visibility:
-
-   $\alpha_{k,i} = \frac{v_{k,i}}{\sum_{j=1}^K v_{j,i} + \epsilon}$
-
-   The global attribute is the weighted combination: $a_i = \sum_{k=1}^K \alpha_{k,i} a_{k,i}$
-
-   Quaternion parameters require special treatment (sign alignment followed by averaging and normalization). Gaussians with zero total visibility retain the previous round's global values.
-
-   **Design Motivation**: Uniform averaging blends well-observed appearance estimates with random values from clients that never observed the corresponding Gaussian, diluting information quality. Visibility weighting ensures that clients with more observations contribute more to the aggregated result.
+Quaternions are handled separately (averaged after sign alignment and then normalized). Gaussians with zero total visibility retain their global values from the previous round. This ensures that the global appearance is determined by the agents that observed those specific regions.
 
 ### Loss & Training
 
-Each federated round consists of $T=1000$ local optimization steps over $R=7$ rounds. The rendering loss combines L1 and SSIM:
+Federated training consists of $R=7$ rounds, with each round involving $T=1000$ local optimization steps. The rendering loss combines L1 and SSIM:
 
 $$\mathcal{L}_k = \sum_{t \in \mathcal{I}_k} [(1-\lambda)\|I_t - \hat{I}_t\|_1 + \lambda(1 - \text{SSIM}(I_t, \hat{I}_t))]$$
 
-where $\lambda = 0.2$. Adaptive density control and any form of post-aggregation alignment are disabled.
+where $\lambda = 0.2$. Adaptive density control and any post-aggregation alignment are disabled.
 
 ## Key Experimental Results
 
@@ -115,46 +105,46 @@ where $\lambda = 0.2$. Adaptive density control and any form of post-aggregation
 
 | Sequence | Rounds R | Local Steps T | Local PSNR | Global PSNR | Trend |
 |----------|----------|---------------|------------|-------------|-------|
-| 07 | 1 | 7000 | 23.90 | 21.95 | Highest local but lowest global |
-| 07 | 7 | 1000 | 23.64 | 22.74 | Balanced |
+| 07 | 1 | 7000 | 23.90 | 21.95 | Highest local, lowest global |
+| 07 | 7 | 1000 | 23.64 | 22.74 | Balanced point |
 | 07 | 14 | 500 | 23.57 | **22.84** | Highest global |
 | 08 | 7 | 1000 | 24.52 | 23.94 | Good balance |
 
 ### Key Findings
 
-- The PSNR gap between the global and local models remains within 2 dB for most sequences.
-- Increasing the number of communication rounds slightly reduces local performance but improves global consistency.
-- Sequence 03 exhibits the largest global performance drop (18.82 dB), indicating that aggregation is sensitive to inconsistencies introduced by temporal segmentation.
-- More federated aggregation rounds contribute to improved cross-client consistency.
+- The PSNR gap between global and local models remains within 2 dB for most sequences.
+- Increasing communication rounds slightly reduces local performance but improves global consistency.
+- Sequence 03 showed the largest drop in global performance (18.82 dB), indicating sensitivity to inconsistencies introduced by temporal partitioning during aggregation.
+- More federated aggregation rounds help improve cross-client consistency.
 
 ## Highlights & Insights
 
-- **Clear Problem Formulation**: This work is the first to formally define the 3DGS training problem under federated constraints, filling an important gap.
-- **Clever Exploitation of Geometry–Appearance Decoupling**: The explicit representation of 3DGS (separable position, color, etc.) enables the "freeze geometry, federate appearance" strategy, which is infeasible in implicit NeRF representations.
-- **Practical Application Orientation**: Zero raw data exchange satisfies privacy requirements; communication involves only model parameter updates.
-- **Custom Dataset**: The MeanGreen multimodal dataset (RGB + LiDAR + IMU) serves as the evaluation platform.
+- **Well-defined Problem**: First to explicitly define the 3DGS training problem under federated constraints, filling an important gap.
+- **Clever Use of Decoupling**: The explicit representation of 3DGS (separable positions, colors, etc.) enables the "frozen geometry, federated appearance" strategy, which is not feasible in implicit NeRFs.
+- **Application Oriented**: Zero raw data exchange meets privacy requirements; communication involves only model parameter updates.
+- **New Dataset**: The MeanGreen multimodal dataset (RGB+LiDAR+IMU) serves as an evaluation platform.
 
 ## Limitations & Future Work
 
-- The global model suffers significant performance degradation on complex sequences (e.g., sequence 03); the aggregation strategy is sensitive to data distribution.
-- The current formulation assumes a fixed number of Gaussian primitives ($6\times10^5$) and does not support adaptive density control.
-- Validation is limited to indoor corridor environments; outdoor and large-scale scene testing is absent.
-- Pose construction relies on LiDAR, restricting applicability to scenarios where all agents are equipped with LiDAR.
-- Overall PSNR values are relatively low (18–25 dB), potentially due to limited viewpoint diversity from forward-facing cameras.
+- Significant performance drop in the global model for complex sequences (e.g., 03), showing sensitivity to data distribution in aggregation.
+- Currently assumes a fixed number of Gaussian primitives ($6 \times 10^5$) and lacks support for adaptive density control.
+- Validated only in indoor corridor environments; lacks testing in outdoor or large-scale scenes.
+- Pose construction relies on LiDAR, limiting scenarios where not all agents are LiDAR-equipped.
+- Overall PSNR is relatively low (18-25 dB), possibly due to limited viewpoint diversity in forward-facing cameras.
 
 ## Related Work & Insights
 
-- **FedNeRF**: Applies federated learning to NeRF, but geometry and appearance are entangled in the shared MLP parameters of NeRF's implicit representation, precluding selective freezing.
-- **Fed3DGS**: Updates the server model via distillation but cannot prevent cross-client geometry drift.
-- **CoSurfGS**: Distributed Gaussian reconstruction using a device–edge–cloud hierarchy, but assumes cooperative model sharing.
-- **Insight**: The "separability" of 3DGS's explicit representation is a unique advantage for distributed scenarios.
+- **FedNeRF**: Applies federated learning to NeRF, but the implicit representation entangles geometry and appearance in shared MLP parameters, preventing selective freezing.
+- **Fed3DGS**: Uses distillation to update the server model but does not prevent cross-client geometric drift.
+- **CoSurfGS**: Distributed Gaussian reconstruction with a device-edge-cloud hierarchy, but assumes collaborative model sharing.
+- **Insight**: The "separability" of the explicit 3DGS representation is a unique advantage in distributed scenarios.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Federated 3DGS is a new direction; the geometry-freezing strategy is elegant and effective.
-- Experimental Thoroughness: ⭐⭐⭐ Validation is limited to a custom dataset; centralized training baselines are absent.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation and method description are clear.
-- Value: ⭐⭐⭐⭐ Addresses practical needs for multi-agent collaboration with broad application potential.
+- Novelty: ⭐⭐⭐⭐ Federated 3DGS is a new direction; the geometry freezing strategy is simple yet effective.
+- Experimental Thoroughness: ⭐⭐⭐ Validated only on a custom dataset; lacks comparative baselines against centralized training.
+- Writing Quality: ⭐⭐⭐⭐ Problem definition and methodology are clearly described.
+- Value: ⭐⭐⭐⭐ Addresses real-world multi-agent collaboration needs with broad application prospects.
 
 <!-- RELATED:START -->
 
@@ -162,11 +152,11 @@ where $\lambda = 0.2$. Adaptive density control and any form of post-aggregation
 
 ## Related Papers
 
+- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
-- [\[CVPR 2026\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
-- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
-- [\[NeurIPS 2025\] Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems](../../NeurIPS2025/autonomous_driving/regret_lower_bounds_for_decentralized_multi-agent_stochastic_shortest_path_probl.md)
-- [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
+- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
+- [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 
 </div>
 

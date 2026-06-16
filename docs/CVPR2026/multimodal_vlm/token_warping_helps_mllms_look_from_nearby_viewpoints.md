@@ -2,82 +2,88 @@
 title: >-
   [Paper Note] Token Warping Helps MLLMs Look from Nearby Viewpoints
 description: >-
-  [CVPR 2026][Multimodal VLM][viewpoint transformation] This paper proposes performing spatial warping on ViT image tokens within MLLMs—rather than conventional pixel-level warping—to simulate viewpoint changes. It is foun…
+  [CVPR 2026][Multimodal VLM][token warping] This paper proposes performing spatial warping on ViT image tokens of MLLMs (rather than traditional pixel-level warping) to simulate viewpoint changes. Backward token warping is found to maintain semantic consistency while remaining robust to depth estimation noise, significantly outperforming pixel-level warping, spe
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "viewpoint transformation"
-  - "token warping"
-  - "spatial reasoning"
-  - "mental imagery"
-  - "MLLM"
+  - CVPR 2026
+  - Multimodal VLM
+  - token warping
+  - MLLM
 date: 2026-05-08
-content_hash: e52ae9f5c985d144
+content_hash: 633a1557b1d3751d
 ---
-
 # Token Warping Helps MLLMs Look from Nearby Viewpoints
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.02870](https://arxiv.org/abs/2604.02870)  
-**Code**: [https://token-warping-mllm.github.io/](https://token-warping-mllm.github.io/) (project page)  
-**Area**: Multimodal VLM
-**Keywords**: viewpoint transformation, token warping, spatial reasoning, mental imagery, MLLM
+**Code**: [https://token-warping-mllm.github.io/](https://token-warping-mllm.github.io/) (Project Page)  
+**Area**: Multimodal VLM  
+**Keywords**: Viewpoint transformation, token warping, spatial reasoning, mental imagery, MLLM
 
 ## TL;DR
-This paper proposes performing spatial warping on ViT image tokens within MLLMs—rather than conventional pixel-level warping—to simulate viewpoint changes. It is found that backward token warping maintains semantic consistency while remaining robust to depth estimation noise. The proposed method substantially outperforms pixel-level warping, specialized spatial-reasoning MLLMs, and generative warping approaches on the newly constructed ViewBench benchmark.
+This paper proposes performing spatial warping on ViT image tokens of MLLMs (rather than traditional pixel-level warping) to simulate viewpoint changes. Backward token warping is found to maintain semantic consistency while remaining robust to depth estimation noise, significantly outperforming pixel-level warping, specialized spatial reasoning MLLMs, and generative warping methods on the self-constructed ViewBench.
 
 ## Background & Motivation
 
-**Background**: Multimodal large language models demonstrate strong visual reasoning capabilities, yet remain highly vulnerable to viewpoint changes. Even with near-perfect depth estimation, integrating predicted depth into MLLMs fails to yield genuine 3D understanding. MLLMs fine-tuned specifically for spatial reasoning (e.g., SpatialReasoner) show only marginal improvements on viewpoint transformation tasks.
+**Background**: Multimodal Large Language Models (MLLMs) exhibit excellent performance in visual reasoning but are fragile when facing viewpoint changes. Even with near-perfect depth estimation, integrating predicted depth into MLLMs does not necessarily provide true 3D understanding. MLLMs specifically fine-tuned for spatial reasoning (e.g., SpatialReasoner) show limited improvement in viewpoint transformation tasks.
 
-**Limitations of Prior Work**: The conventional approach transforms source images to target viewpoints via pixel-level warping; however, pixel-level operations are extremely sensitive to minor errors in depth maps—even small inaccuracies cause pronounced geometric distortions and semantic degradation (e.g., deformed books, blurred objects) after warping. Generative novel-view synthesis methods (e.g., GenWarp) can synthesize complete images but may hallucinate non-existent objects or omit existing ones.
+**Limitations of Prior Work**: Traditional approaches use pixel-level warping to transform source images to target viewpoints, but pixel-level operations are extremely sensitive to minor errors in depth maps—even small inaccuracies lead to significant geometric distortion and semantic degradation (e.g., deformed books, blurred objects). Generative new-view synthesis methods (e.g., GenWarp) can synthesize complete images but may hallucinate non-existent objects or lose existing ones.
 
-**Key Challenge**: Viewpoint transformation requires some form of internal representational transformation of the scene, yet there exists a fundamental tension in choosing the granularity of that transformation—object-level representations are too coarse and lose spatial detail, while pixel-level representations are too fine-grained and overly sensitive to noise. An intermediate-granularity representation is needed.
+**Key Challenge**: Viewpoint transformation requires an internal representation transformation of the scene, but there is a fundamental contradiction in the choice of granularity—object-level representations are too coarse and lose spatial details, while pixel-level representations are too fine and overly sensitive to noise. An intermediate-level representation is needed.
 
-**Goal**: (1) Identify a viewpoint transformation representation robust to depth errors; (2) explore optimal warping strategies (forward/backward, nearest/adaptive); (3) construct a standardized benchmark for evaluating MLLMs' viewpoint reasoning capabilities.
+**Goal**: (1) Identify a viewpoint transformation representation robust to depth errors; (2) Explore optimal warping strategies (forward/backward, nearest/adaptive); (3) Construct a standard benchmark to evaluate MLLM viewpoint reasoning capabilities.
 
-**Key Insight**: Inspired by the "mental imagery" theory in cognitive science—Shepard, Minsky, Pylyshyn, Hinton, and others proposed that mental images rely on "part-based structural descriptions" rather than holistic representations. Image tokens in ViT operate at exactly the intermediate granularity between pixels and objects, making them natural "part-level" representational units.
+**Key Insight**: Inspired by the "mental imagery" theory in cognitive science—Shepard, Minsky, Pylyshyn, and Hinton proposed that mental images rely on "part-level structural descriptions" rather than holistic representations. Image tokens in ViT happen to reside at the intermediate granularity between pixels and objects, naturally serving as "part-level" representation units.
 
-**Core Idea**: Elevate the viewpoint transformation operation from the pixel level to the token level, leveraging image tokens as robust semantic units for viewpoint transformation to enable nearby-viewpoint reasoning in MLLMs.
+**Core Idea**: Elevate the viewpoint transformation operation from the pixel level to the token level, utilizing image tokens as robust semantic units for viewpoint transformation to achieve near-viewpoint reasoning in MLLMs.
 
 ## Method
 
 ### Overall Architecture
-The input consists of a source-view image, its depth map, and source and target camera poses; the goal is to enable the MLLM to answer questions about the scene from the target viewpoint. The core of the method is performing geometric warping on image tokens at the ViT level within the MLLM, rather than operating at the pixel level. The entire pipeline requires no additional training and introduces only minimal warping computation at inference time.
+The core problem addressed is enabling MLLMs to answer "what the scene looks like from a target viewpoint" given a source image, its depth map, and the source/target camera poses. Traditional pixel-level warping causes geometric and semantic degradation when depth errors occur. This paper shifts the warping operation upward by one level—moving ViT image tokens instead of pixels. The process involves validating token robustness to positional perturbations, reordering source tokens onto a regular target grid using backward projection, and feeding the rearranged tokens directly to the MLLM. This operation occurs at inference time without any training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Source Image + Depth Map<br/>Source/Target Camera Poses"] --> B["ViT Encoding Source Image<br/>→ Image Token Grid"]
+    P["Token Position Robustness Validation<br/>Tokens insensitive to sampling jitter<br/>→ Selecting tokens as warping granularity"] -. Support .-> C
+    B --> C["Backward Token Warping<br/>Densely regular target grid, backward token fetching"]
+    C --> D["Backward Projection f(T→S) + Proxy Mesh Ray Casting<br/>Mapping target grid points to source coordinates"]
+    D -->|Nearest token / Patch re-encoding| E["Nearest vs Adaptive Fetching<br/>Fetching source tokens for target grid"]
+    E --> F["Dense and Regular Target Viewpoint Token Grid"]
+    F --> G["MLLM Inference<br/>Answering near-viewpoint spatial questions"]
+```
 
 ### Key Designs
 
-1. **Robustness of Tokens to Positional Perturbation**:
+**1. Token Position Robustness Validation: Proving tokens as the appropriate warping granularity**
 
-    - Function: Demonstrate that image tokens constitute an appropriate representational granularity for viewpoint transformation.
-    - Mechanism: A "positional noise sensitivity test" is designed—Gaussian displacement perturbations (ranging from 0 to 20 pixels) are applied to the grid center coordinates of each token, and these perturbed positions are then used to fetch patches as ViT inputs. Experiments show that the accuracy of Qwen2.5-VL on CV-Bench-2D remains nearly unchanged even when perturbations approach the patch size. By contrast, applying the same perturbations to pixel-level representations leads to a noticeable performance drop.
-    - Design Motivation: This provides theoretical grounding for subsequent token warping—since tokens are insensitive to positional information, positional offsets introduced by depth errors during warping will not seriously impair MLLM understanding.
+Viewpoint transformation requires selecting a granularity to transport information. This paper argues that ViT image tokens sit perfectly in the middle. To verify this, the authors designed a "positional noise sensitivity test": applying Gaussian displacement perturbations (from 0 up to 20 pixels, nearly the length of a patch side) to current token grid coordinates, then fetching patches and feeding them into the ViT. Results showed that Qwen2.5-VL's accuracy on CV-Bench-2D remained nearly unchanged, whereas similar perturbations at the pixel level significantly degraded performance. Since tokens are insensitive to "where" they are sampled from, the positional shifts caused by depth errors during warping do not severely harm MLLM understanding.
 
-2. **Backward Token Warping (Core Method)**:
+**2. Backward Token Warping: Ensuring dense and regular grids**
 
-    - Function: Rearrange tokens from the source viewpoint onto a regular grid defined in the target viewpoint.
-    - Mechanism: A dense regular grid is defined from the target viewpoint's perspective. Each target grid point is mapped back to the source image plane via the inverse projection function $f_{T \to S}$, locating the corresponding patch/token in the source image. Concretely, a lightweight 3D proxy mesh is constructed from the source image depth map, and ray casting is performed from each grid position in the target viewpoint toward the source image to determine the corresponding source coordinates. Compared to forward warping, backward warping guarantees that tokens at the target viewpoint are densely and regularly arranged—which is critical for MLLMs trained on regular grids.
-    - Design Motivation: Forward warping (projecting source tokens onto the target plane) produces sparse, irregular token distributions with numerous holes, causing the MLLM to receive out-of-distribution inputs and suffer severe performance degradation. Backward warping, by starting from the target viewpoint's regular grid, naturally ensures density and regularity.
+Once token granularity is chosen, the warping direction is critical. Forward warping (projecting source tokens to the target plane) results in sparse, irregular distributions with holes, which are Out-of-Distribution (OOD) inputs for MLLMs trained on regular grids. This paper uses backward warping: a dense regular grid is established for the target viewpoint, and each target grid point is mapped back to the source image plane using the back-projection function $f_{T \to S}$ to find the corresponding token.
 
-3. **Nearest vs. Adaptive Fetching**:
+$$p_S = f_{T \to S}(p_T)$$
 
-    - Function: Determine how to fetch the token corresponding to a target grid point from the source image.
-    - Mechanism: Nearest fetching directly selects the existing token in the source image whose grid center is closest (in Euclidean distance) to the mapped coordinate; adaptive fetching re-crops the source image centered at the mapped coordinate and encodes it as a new token. Experiments show that the two approaches achieve comparable performance—nearest fetching is simple and efficient yet loses nothing to adaptive, further validating token robustness to positional offsets.
-    - Design Motivation: Nearest fetching avoids the overhead of re-encoding, while adaptive fetching is theoretically more precise but computationally more expensive. The comparable performance of the two provides practical guidance for deployment.
+A lightweight 3D proxy mesh is built from the source depth map, and ray casting is performed from each target grid position to find source coordinates. Because the grid is defined from the target side, every point receives a token, resulting in a dense, regular output that matches the expected MLLM input format.
+
+**3. Nearest vs Adaptive Fetching: Two ways to fetch tokens**
+
+Back-projected source coordinates usually fall between existing token grid points. Nearest fetching picks the closest existing token, avoiding extra computation. Adaptive fetching re-crops and re-encodes a patch centered at the mapped coordinates. Experiments show both perform similarly; nearest is faster without sacrificing performance, confirming that precise sub-patch alignment is unnecessary due to token robustness.
 
 ### Loss & Training
-This method requires no training and operates purely at inference time—only a single warping transformation of image tokens is applied prior to MLLM inference, with negligible computational overhead.
+This method involves no training and is a pure inference-time operation. Warping the image tokens before the MLLM reads them incurs minimal computational cost, primarily from proxy mesh ray casting.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Experiments are conducted on the newly constructed ViewBench benchmark, which is based on ScanNet real indoor scenes and evaluates three task categories: Text (spatially-tagged relationships), Shape (geometric shape relationships), and Object (target-view object description).
+Experiments were conducted on the self-built ViewBench based on ScanNet real indoor scenes, evaluating three tasks: Text (spatial relations with text labels), Shape (spatial relations of geometric shapes), and Object (target viewpoint object description).
 
-| Method | ViewBench-Text (5–15%) | ViewBench-Shape (5–15%) | ViewBench-Object (5–15%) |
-|--------|----------------------|------------------------|-------------------------|
-| SpatialReasoner | 46.73 | 33.72 | — |
-| VLM-3R | 63.82 | 49.22 | — |
+| Method | ViewBench-Text (5-15%) | ViewBench-Shape (5-15%) | ViewBench-Object (5-15%) |
+|------|----------------------|------------------------|-------------------------|
+| SpatialReasoner | 46.73 | 33.72 | - |
+| VLM-3R | 63.82 | 49.22 | - |
 | GenWarp | 69.35 | 53.10 | 4.32 |
 | Pixel Backward | 71.86 | 62.40 | 4.53 |
 | Token Backward-Nearest | 74.87 | 67.44 | 4.80 |
@@ -86,43 +92,43 @@ Experiments are conducted on the newly constructed ViewBench benchmark, which is
 
 ### Ablation Study
 
-| Configuration | ViewBench-Text (5–15%) | ViewBench-Shape (5–15%) | Notes |
-|---------------|----------------------|------------------------|-------|
-| Token Forward | 60.30 | 55.04 | Forward warping produces irregular tokens |
-| Token Backward-Nearest | 74.87 | 67.44 | Backward + nearest; strong performance |
-| Token Backward-Adaptive | 77.89 | 67.44 | Backward + adaptive; higher cost, marginal gain |
+| Configuration | ViewBench-Text (5-15%) | ViewBench-Shape (5-15%) | Note |
+|------|----------------------|------------------------|------|
+| Token Forward | 60.30 | 55.04 | Forward warping leads to irregular tokens |
+| Token Backward-Nearest | 74.87 | 67.44 | Backward + Nearest, excellent performance |
+| Token Backward-Adaptive | 77.89 | 67.44 | Backward + Adaptive, more expensive but limited gain |
 | Pixel Forward | 70.85 | 56.20 | Pixel-level forward |
 | Pixel Backward | 71.86 | 62.40 | Pixel-level backward |
 
 ### Key Findings
-- **Backward > Forward** is the most critical design choice: backward token warping outperforms forward warping by 14.57% on Text (5–15%), as MLLMs require a dense, regular token grid.
-- **Token-level > Pixel-level**: Backward token warping surpasses backward pixel warping by ~6% on Text and ~5% on Shape, owing to tokens' greater robustness to depth noise.
-- Nearest fetching and adaptive fetching achieve comparable performance, indicating that the robustness of token representations makes precise alignment unnecessary.
-- The performance gap between predicted depth and GT depth is minimal, further validating the method's robustness to depth errors.
-- All specialized spatial-reasoning MLLMs (SpatialReasoner, VLM-3R, ViLaSR) underperform token warping, demonstrating that spatial fine-tuning cannot substitute for explicit viewpoint transformation.
+- **Backward > Forward** is the most critical design choice: backward token warping improves performance by 14.57% over forward warping in Text (5-15%) because MLLMs require dense, regular token grids.
+- **Token-level > Pixel-level**: Backward token warping outperforms backward pixel warping by 6% on Text and 5% on Shape due to its robustness to depth noise.
+- Nearest vs Adaptive fetching show similar performance, indicating that token representation robustness makes precise alignment non-essential.
+- The gap between using predicted depth and GT depth is small, further validating the method's robustness to depth errors.
+- All specialized spatial reasoning MLLMs (SpatialReasoner, VLM-3R, ViLaSR) are inferior to token warping, suggesting that spatial fine-tuning cannot substitute for explicit viewpoint transformation.
 
 ## Highlights & Insights
-- **Elegant integration of cognitive science and engineering design**: The notion of "part-based representations" is drawn from mental imagery theory and mapped to ViT patch tokens, achieving a clean translation from cognitive theory to engineering methodology. This analogy is not merely explanatory—it directly guides the method design.
-- **Training-free inference-time augmentation**: The entire method requires no additional training; a single token warping operation at inference time yields substantial improvements in viewpoint reasoning—a "free lunch" approach with high practical value.
-- **Importance of regular dense token grids**: The finding that MLLMs are highly sensitive to the spatial distribution pattern of tokens—sparse, irregular tokens (produced by forward warping) constitute severely out-of-distribution inputs—is transferable to other tasks that require manipulating token layouts.
+- **Integration of Cognitive Science and Engineering**: Mapping the "part-level representation" from mental imagery theory to ViT patch tokens provides an elegant link between theory and method.
+- **Zero-training Inference-time Enhancement**: The method requires no additional training and significantly improves viewpoint reasoning through a simple token-level transformation.
+- **Importance of Regular Token Grids**: The discovery that MLLMs are highly sensitive to the spatial distribution of tokens (treating irregular grids as OOD) is a movable insight for other token manipulation tasks.
 
 ## Limitations & Future Work
-- The method handles only **nearby viewpoint transformations** (viewpoints with overlapping coverage); large-angle viewpoint changes cause warping to fail due to extensive occlusions and hole regions.
-- A depth map (GT or predicted) is required; while the method is robust to depth noise, the dependency on depth input restricts applicable scenarios.
-- ViewBench is based on indoor scenes (ScanNet); generalization to outdoor or dynamic scenes has not been validated.
-- Experiments are conducted solely on Qwen2.5-VL; the robustness to token perturbations may vary across MLLM architectures.
-- Combination with spatial-reasoning fine-tuning methods remains unexplored—whether token warping combined with SpatialReasoner fine-tuning could yield further improvements is an open question.
+- Restricted to **near-viewpoint transformation** (overlapping views); warping fails during large angular changes due to occlusion and large holes.
+- Dependency on depth maps (GT or predicted) limits application scenarios compared to purely visual methods.
+- Generalization to outdoor or dynamic scenes remains unverified as ViewBench focused on indoor ScanNet scenes.
+- Experiments were focused on Qwen2.5-VL; robustness to token perturbation might vary across different MLLM architectures.
+- The combination with spatial fine-tuning (e.g., token warping + SpatialReasoner) has not yet been explored.
 
 ## Related Work & Insights
-- **vs. SpatialReasoner / VLM-3R**: These methods acquire spatial reasoning capabilities by fine-tuning MLLMs on spatial data, yet the paper finds that fine-tuning cannot replace explicit viewpoint transformation. Token warping substantially outperforms them without any additional training.
-- **vs. GenWarp (generative warping)**: Generative methods synthesize target-view images using diffusion models but are prone to hallucinating non-existent objects. Token warping does not generate new pixels but merely rearranges existing tokens, thereby avoiding hallucination.
-- **vs. Pixel warping**: A classical 3D vision approach, but sensitive to depth noise. Token warping exploits the coarse granularity of ViT patches to naturally tolerate positional errors.
+- **vs SpatialReasoner / VLM-3R**: These methods fine-tune MLLMs on spatial data, but this paper finds fine-tuning doesn't replace explicit warping. Token warping outperforms them without training.
+- **vs GenWarp (Generative Warping)**: Generative methods use diffusion to synthesize target views but suffer from hallucinations. Token warping rearranges existing tokens, avoiding this issue.
+- **vs Pixel Warping**: Classic 3D vision methods are sensitive to depth noise; token warping leverages the coarse granularity of ViT patches to tolerate positional errors.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The token warping idea grounded in cognitive science is highly creative, though the technical implementation is relatively straightforward.
-- Experimental Thoroughness: ⭐⭐⭐⭐ ViewBench is well-designed with comprehensive ablations, but evaluation is limited to indoor scenes and a single MLLM.
-- Writing Quality: ⭐⭐⭐⭐⭐ The exposition is clear, the logical chain from theory to experiments is complete, and the figures are intuitive.
-- Value: ⭐⭐⭐⭐ Training-free inference-time augmentation carries strong practical value, though applicability is constrained to nearby viewpoint transformations.
+- Novelty: ⭐⭐⭐⭐ Creative use of part-level representation from cognitive science for token warping.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Reasonable benchmark design and comprehensive ablation, though limited to indoor scenes and one MLLM.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear arguments with a complete logical chain from theory to experiment.
+- Value: ⭐⭐⭐⭐ High practical value as a training-free enhancement, though limited to near-view transforms.
 
 <!-- RELATED:START -->
 

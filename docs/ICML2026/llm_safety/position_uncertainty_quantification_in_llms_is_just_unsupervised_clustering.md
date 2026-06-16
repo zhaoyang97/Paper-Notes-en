@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering
 description: >-
-  [ICML 2026][LLM Safety][Position Paper] This position paper presents a central thesis: mainstream methods for LLM Uncertainty Quantification (UQ)—such as Semantic Entropy, spectral methods…
+  [ICML 2026][LLM Safety][Position Paper] This position paper asserts a core thesis: current mainstream Uncertainty Quantification (UQ) methods for LLMs (such as Semantic Entropy, graph-based methods, and P(true)) are mechanistically isomorphic to unsupervised clustering. They measure "internal consistency of model generations" rather than "external correctnes
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Position Paper"
-  - "Uncertainty Quantification"
-  - "Confident Hallucination"
-  - "Clustering Paradigm"
-  - "External Ground Truth"
+  - ICML 2026
+  - LLM Safety
+  - Position Paper
+  - Uncertainty Quantification
 date: 2026-05-08
-content_hash: 348c5889d1c39bf4
+content_hash: 913e2fadaf41f0ac
 ---
-
 # Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering
 
 **Conference**: ICML 2026  
@@ -24,108 +20,94 @@ content_hash: 348c5889d1c39bf4
 **Keywords**: Position Paper, Uncertainty Quantification, Confident Hallucination, Clustering Paradigm, External Ground Truth
 
 ## TL;DR
-This position paper presents a central thesis: mainstream methods for LLM Uncertainty Quantification (UQ)—such as Semantic Entropy, spectral methods, and P(true)—are mechanistically isomorphic to unsupervised clustering. They measure "internal consistency of model generations" rather than "external correctness," inherently failing in the face of "confident hallucinations." The authors diagnose three major pathologies: parameter sensitivity, internal evaluation loops, and a lack of ground truth, proposing a roadmap toward "supervised guarantees" based on three pillars: evaluation, mechanism, and grounding.
+This position paper asserts a core thesis: current mainstream Uncertainty Quantification (UQ) methods for LLMs (such as Semantic Entropy, graph-based methods, and P(true)) are mechanistically isomorphic to unsupervised clustering. They measure "internal consistency of model generations" rather than "external correctness," making them inherently prone to failure in the face of "confident hallucinations." The authors diagnose three major pathologies—parameter sensitivity, internal evaluation loops, and lack of ground truth—and propose a roadmap towards "supervised assurance" built on three pillars: evaluation, mechanism, and grounding.
 
 ## Background & Motivation
 
-**Background**: The primary obstacle to deploying LLMs in high-risk domains (medical, legal) is hallucination. The industry's primary safety net is UQ: assigning an uncertainty score to every query-answer pair and rejecting answers that trigger a threshold. Technical approaches fall into three main categories: entropy-based (Semantic Entropy and variants like SAE/SEN/KLE/SNNE/SDLG), graph-based (SGC/GU/SGD/SeSE/GENUINE/U-EigV), and verbalized self-evaluation (P(true)/CIn/SelfCheckGPT/UaIT).
+**Background**: The primary obstacle to deploying LLMs in high-risk domains (e.g., medical, legal) is hallucination. The industry's main safety net is UQ: assigning an uncertainty score to each query+answer pair and triggering a refusal threshold. Current technical routes roughly fall into three categories: entropy-based (Semantic Entropy and variants like SAE/SEN/KLE/SNNE/SDLG), graph-based (SGC/GU/SGD/SeSE/GENUINE/U-EigV), and verbalized self-assessment (P(true)/CIn/SelfCheckGPT/UaIT).
 
-**Limitations of Prior Work**: Despite the proliferation of UQ papers, models continue to "confidently talk nonsense." Metrics like AUROC appear favorable, yet models fail to catch critical errors in real-world scenarios, creating a false sense of security for users.
+**Limitations of Prior Work**: Despite the increasing volume of UQ research, models continue to "confidently spout nonsense." While metrics like AUROC appear promising, systems still leak critical errors in real-world scenarios, fostering a false sense of security for users.
 
-**Key Challenge**: The authors diagnose this as a **category error**—all mainstream UQ methods measure "how stable model generations are relative to each other" rather than "how close the answer is to external facts." When a model is highly consistent about an incorrect answer (confident hallucination), these methods yield "high confidence," contradicting their safety objectives.
+**Key Challenge**: The authors diagnose this as a **category error**. All mainstream UQ methods measure "how stable the model's generations are relative to each other" rather than "how close the answer is to external facts." When a model is highly consistent in generating an incorrect answer (confident hallucination), these methods yield "high confidence," completely defeating the safety objective.
 
-**Goal**: (i) Prove that mainstream UQ methods are mechanistically isomorphic to unsupervised clustering; (ii) Reveal three pathologies caused by this isomorphism—parameter sensitivity, internal evaluation loops, and lack of ground truth; (iii) Provide a roadmap across evaluation, mechanism, and grounding pillars to move UQ from "unsupervised heuristics" toward "supervised guarantees."
+**Goal**: (i) To prove that mainstream UQ methods are mechanistically isomorphic to unsupervised clustering; (ii) To reveal three pathologies arising from this isomorphism: parameter sensitivity, internal evaluation loops, and lack of ground truth; (iii) To provide a roadmap based on three pillars—evaluation, mechanism, and grounding—to shift UQ from "unsupervised heuristics" to "supervised assurance."
 
-**Key Insight**: By using the unified perspective of "Is it clustering?", the authors deconstruct the mathematical structures of SE, spectral, and P(true) methods. Drawing on the classic lesson from clustering research—that internal validity indices cannot guarantee semantic correctness—the paper exposes the fundamental flaws of UQ within a single framework.
+**Key Insight**: The paper deconstructs the mathematical structures of SE, graph-based, and P(true) methods through the lens of "Is it clustering?" By drawing on classical lessons from clustering research—where internal validity indices cannot guarantee semantic correctness—the fundamental flaws of UQ are exposed within a unified framework.
 
-**Core Idea**: UQ $\neq$ measuring "truth or falsehood"; rather, UQ = measuring the "geometric/semantic separation between model generations." This is unsupervised clustering and lacks external anchors. The only way forward is to introduce external ground truth and supervised mechanisms.
+**Core Idea**: UQ $\neq$ measuring "truth/falsehood"; UQ = measuring the "geometric/semantic separation among model generations." This is unsupervised clustering, which lacks external anchors. The only way forward is to introduce external ground truth and supervised mechanisms.
 
 ## Method
 
 ### Overall Architecture
-As a position paper, the "Method" consists of an argumentative chain of "diagnosis + prescription":
+This position paper argues that all mainstream UQ methods are merely rebranded unsupervised clustering. They measure "how separated model generations are from each other" rather than "how close the answer is to external facts," leading to inevitable failure against confident hallucinations. Rather than proposing a new method, the paper constructs a "diagnosis $\to$ prescription" chain: first reducing SE, graph-based, and P(true) methods to the same clustering operation mathematically; then deriving three pathologies—parameter sensitivity, internal evaluation loops, and lack of ground truth—from this isomorphism; and finally providing a three-pillar transformation blueprint for evaluation, mechanism, and grounding to move UQ toward supervised assurance.
 
-1.  **Unified Abstraction**: Reducing the three categories of UQ methods (SE, spectral, P(true)) into the same clustering operation.
-2.  **Three Pathologies**: Parameter sensitivity crisis, internal evaluation traps, and lack of ground truth.
-3.  **Five Counter-arguments**: Rebutting common beliefs such as "parameter sensitivity is a feature," "UQ measures belief, not truth," and "scaling solves everything."
-4.  **Three-Pillar Roadmap**: Shifting evaluation to "worst-case robustness," mechanisms to "native uncertainty / Conformal Prediction," and grounding to "verifiable unit tests + atomic fact-checking."
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Mainstream UQ Methods<br/>Semantic Entropy / Graph / P(true)"] --> B["Isomorphism to Clustering<br/>Explicit Clustering · Spectral Clustering · Latent Confidence Clustering"]
+    B --> C["Three Pathological Diagnoses<br/>Parameter Sensitivity · Internal Evaluation Trap · Lack of Ground Truth"]
+    C --> D["Three-Pillar Roadmap<br/>Evaluation · Mechanism · Grounding"]
+    D --> E["From Unsupervised Heuristics<br/>→ Supervised Assurance"]
+```
 
 ### Key Designs
 
-1.  **Unified Clustering Mechanism Proof**:
+**1. Isomorphism of Mainstream UQ Methods to Clustering: One Proof to Refute All**
 
-    - **Function**: Reveal the mechanistic equivalence of the three mainstream UQ approaches, providing unified evidence against their role as proxies for "truth."
-    - **Mechanism**:
-        - **Semantic Entropy is Explicit Clustering**: Using an NLI model to partition $\mathcal{S}=\{s_1,\dots,s_m\}$ into semantic classes $C_1,\dots,C_M$, then calculating $U_{\text{SE}}(C\mid x)=-\sum_{i=1}^M p(C_i\mid x)\log p(C_i\mid x)$. The NLI model acts as the "clustering criterion," and entropy represents "cluster purity."
-        - **Spectral Methods are Implicit Spectral Clustering**: Constructing a graph with pairwise similarity $W=(w_{j_1,j_2}),\ w_{j_1,j_2}=(a_{j_1,j_2}+a_{j_2,j_1})/2$ and a normalized Laplacian $L=I-D^{-1/2}WD^{-1/2}$, then using $U_{\text{EigV}}=\sum_{k=1}^m\max(0,1-\lambda_k)$ to count "effective semantic degrees of freedom." This is spectral clustering without explicit label assignment, equivalent to an "internal validity index."
-        - **P(true) is Latent Confidence Clustering**: Viewing $U_{\text{P(true)}}(x,\hat{y})=1-P(\text{``True''}\mid x,\hat{y})$ as a membership test for the model's internal "high-confidence region." PCA visualization of Qwen2.5-32B on QASC (Fig. 2) shows geometric separation between high-P(true) and low-P(true) samples in hidden space, geometrically identical to a soft cluster assignment.
-    - **Design Motivation**: Once established as essentially the same, one only needs to argue why "unsupervised clustering cannot guarantee semantic correctness" once. The paper notes that token-level perplexity, Deep Ensembles, and supervised classifiers (Azaria & Mitchell 2023) fall outside this framework—the former two due to poor performance, and the latter as the recommended direction.
+This is the foundation of the argument: once SE, graph-based methods, and P(true) are confirmed to be essentially the same, there is no need to dismantle them individually. **Semantic Entropy is explicit clustering**: it uses an NLI model to partition the sampled response set $\mathcal{S}=\{s_1,\dots,s_m\}$ into semantic equivalence classes $C_1,\dots,C_M$, and calculates the entropy of the class distribution $U_{\text{SE}}(C\mid x)=-\sum_{i=1}^M p(C_i\mid x)\log p(C_i\mid x)$, where the NLI model acts as the "clustering criterion" and entropy as "cluster purity." **Graph methods are implicit spectral clustering**: they construct a weighted graph $W$ using pairwise similarity $w_{j_1,j_2}=(a_{j_1,j_2}+a_{j_2,j_1})/2$, compute the normalized Laplacian $L=I-D^{-1/2}WD^{-1/2}$, and use $U_{\text{EigV}}=\sum_{k=1}^m\max(0,1-\lambda_k)$ to count "effective semantic modes." This is spectral clustering without explicit label assignment, equivalent to an "internal validity index." **P(true) is latent confidence clustering**: treating $U_{\text{P(true)}}(x,\hat{y})=1-P(\text{``True''}\mid x,\hat{y})$ as a membership test for the model's internal "high-confidence region." PCA visualizations using Qwen2.5-32B on QASC (Fig. 2) demonstrate that high-P(true) and low-P(true) samples are geometrically separated into two clusters in the hidden space, which is effectively a soft cluster assignment. The paper explicitly excludes token-level perplexity, Deep Ensembles, and supervised classifiers (Azaria & Mitchell 2023) from this framework—the first two due to poor performance, and the latter being the "supervised" direction the authors advocate.
 
-2.  **Diagnosis of Three Pathologies**:
+**2. Three Pathological Diagnoses: Translating "Clustering Isomorphism" into Safety Risks**
 
-    - **Function**: Translate "clustering isomorphism" into actual safety hazards in deployment.
-    - **Mechanism**:
-        - **Parameter Sensitivity Crisis**: UQ scores are drastically affected by hyperparameters like temperature, NLI thresholds, sample size $n$, and prompts. Tab. 1 shows Jaccard similarity—on QASC with Qwen2.5-32B, the overlap of Top-10% high-uncertainty samples between SE vs EigV is only 0.134, and SE vs P(true) is only 0.080, meaning different methods cannot agree on "what is uncertain."
-        - **Internal Evaluation Trap**: Evaluation metrics (AUROC) assume "internal stability = factual correctness," but confident hallucinations break this—stable incorrect answers receive high scores. This mirrors the Silhouette coefficient in clustering: internal compactness $\neq$ external meaningfulness.
-        - **Lack of Ground Truth ("Judge Problem")**: UQ is evaluated via AUROC correlation with correctness, but correctness in open tasks often relies on RougeL > 0.3 or another LLM judge, which is noisy and biased. Fig. 3 shows that as the correctness threshold $\tau$ shifts, method rankings fluctuate, indicating the evaluation pipeline is built on unstable ground.
-    - **Design Motivation**: Grounding abstract "clustering isomorphism" into observable engineering consequences forces UQ researchers to confront the fact that "beautiful AUROC $\neq$ safety."
+The paper translates abstract isomorphism into three observable engineering consequences. First is the **parameter sensitivity crisis**: UQ scores are drastically affected by hyperparameters like temperature, NLI threshold, sample size $n$, and prompts. Tab. 1 shows that on QASC with Qwen2.5-32B, the Jaccard overlap between the Top-10% most uncertain samples for SE and EigV is only 0.134, and only 0.080 for SE and P(true). Second is the **internal evaluation trap**: AUROC defaults to assuming "internal stability = external truth," but confident hallucinations break this. The more stable an incorrect answer is, the higher its confidence score—a direct parallel to the "tight internal cohesion $\neq$ external meaning" problem in clustering's Silhouette coefficients. Third is the **lack of ground truth (judge problem)**: UQ relies on the correlation between AUROC and correctness. Correctness in open-ended tasks often depends on RougeL > 0.3 or another LLM judge, which are themselves noisy and biased. Fig. 3 shows that method rankings fluctuate as the correctness threshold $\tau$ shifts.
 
-3.  **Three-Pillar Roadmap: evaluation → mechanism → grounding**:
+**3. Three-Pillar Roadmap: Evaluation $\to$ Mechanism $\to$ Grounding**
 
-    - **Function**: Provide the community with an actionable blueprint for "de-clustering" reconstruction.
-    - **Mechanism**:
-        - **Evaluation Pillar**: (a) Treat UQ as a binary alarm system (accept/reject), adopting the MIA evaluation paradigm (Carlini et al. 2022)—measuring TPR at fixed FPR < 0.1% to capture critical "high-confidence hallucinations"; (b) Propose **AUSC (Area Under the Stability Curve)**: sweeping AUROC across hyperparameters (e.g., $T\in[0,1]$) to require stability across reasonable ranges rather than cherry-picked points.
-        - **Mechanism Pillar**: (a) Use **Conformal Prediction** as a downstream framework—at a fixed coverage rate (e.g., 90%), compare the set sizes produced by UQ methods used as nonconformity scores; confident hallucinations will be exposed through "set explosion"; (b) Perform **Uncertainty Alignment** during RLHF, rewarding explicit granular confidence markers (e.g., "I am confident that..." vs "It is possible that..."), turning uncertainty from an implicit geometric feature into an explicit linguistic signal.
-        - **Grounding Pillar**: (a) **Mandatory Unit Testing**—UQ methods must first demonstrate AUROC and TPR@low-FPR in programmatically verifiable domains like code (HumanEval) or math (constant final answers); (b) **Atomic Fact Verification**—decomposing open generation into atomic claims and verifying each against search engines, KBs, formal provers (Lean4), or multi-hop search agents to break the "LLM judging LLM" loop.
-    - **Design Motivation**: These pillars address "how to evaluate, how to build, and what truth to use," excising the reliance on internal consistency across all stages of the engineering pipeline.
-
-### Loss & Training
-The position paper does not involve specific training losses but recommends two quantitative designs: (a) Metrics: **TPR@FPR<0.1%** and **AUSC**; (b) Set size at fixed coverage in Conformal Prediction as a "truth-aware" proxy.
+**Evaluation pillar**: Reframe UQ as a binary alert system (accept/reject), borrowing the MIA paradigm from Carlini et al. 2022—measuring TPR at a fixed FPR < 0.1% to target high-confidence hallucinations. It also proposes **AUSC (Area Under the Stability Curve)**, which sweeps AUROC across hyperparameters (e.g., temperature $T \in [0, 1]$), requiring stability across the entire parameter range rather than cherry-picked points. **Mechanism pillar**: Reposition **Conformal Prediction** as a downstream evaluation framework—comparing set sizes under fixed coverage (e.g., 90%); confident hallucinations are exposed via "set explosion." Additionally, perform **Uncertainty Alignment** during post-training (RLHF), rewarding models for explicitly outputting granular confidence markers like "I am confident that..." vs. "It is possible that...", turning uncertainty from an implicit geometric feature into an explicit linguistic signal. **Grounding pillar**: Mandate **Unit Testing** in programmatically verifiable scenarios (code like HumanEval or math with constant answers) before discussing open-ended tasks. This is supplemented by **Atomic Fact Verification**: decomposing generated text into atomic statements and verifying them via non-LLM judges such as search engines, KBs, formal solvers (Lean4), or multi-hop search agents to break the "LLM judging LLM" loop.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper does not test a new method but uses supporting data to "falsify" the reliability of the mainstream UQ paradigm.
+The paper does not propose a new method but uses empirical data to "falsify" the reliability of mainstream UQ paradigms.
 
-| Evaluation Experiment | Data / Model | Key Result | Conclusion |
+| Evaluation Experiment | Data / Model | Key Results | Conclusion |
 |----------|-------------|----------|------|
-| Jaccard Overlap (Tab. 1) | QASC, Qwen2.5-32B | SE vs EigV Top-10% = 0.134; SE vs P(true) Top-10% = 0.080; EigV vs P(true) = 0.224 | Methods disagree on "who is uncertain." |
-| P(true) Hidden Space (Fig. 2) | QASC, Qwen2.5-32B | High-P(true) and low-P(true) samples geometrically separate into two clusters in PCA | P(true) is a latent space cluster membership test. |
-| Correctness Threshold Sensitivity (Fig. 3) | Adapted from Liu et al. 2025b | UQ method rankings flip repeatedly as $\tau$ changes | "Unstable judges" render AUROC evaluation invalid. |
+| Jaccard Overlap (Tab. 1) | QASC, Qwen2.5-32B | SE vs EigV Top-10% = 0.134; SE vs P(true) Top-10% = 0.080; EigV vs P(true) = 0.224 | Different methods disagree significantly on "what is uncertain." |
+| P(true) Latent Visualization (Fig. 2) | QASC, Qwen2.5-32B | High-P(true) and low-P(true) samples geometrically separate into two clusters in PCA. | P(true) is essentially a membership test for latent space clustering. |
+| Correctness Threshold Sensitivity (Fig. 3) | Adapted from Liu et al. 2025b | UQ method rankings invert repeatedly as $\tau$ changes. | "Judge instability" invalidates AUROC evaluation. |
 
 ### Ablation Study
 
-| Argument | Supporting Evidence | Pathology → Prescription |
+| Argument | Supporting Evidence | Pathology $\to$ Prescription |
 |------|----------|------------|
-| Confident hallucination breaks consistency proxy | Simhi et al. 2025; Kalavasis et al. 2025 | Internal consistency → Use worst-case TPR |
-| Parameter sensitivity vs Robustness | Cecere et al. 2025 ($T$), Kuhn 2023 ($n$), Farquhar 2024 (NLI threshold) | Single-point reporting → Use AUSC |
-| RLHF causing "anti-calibration" | Kadavath 2022, Achiam 2023 | Expecting scaling to solve → Use Uncertainty Alignment + CP |
-| Open generation requires verifiable truth | Yao 2022 (code), Hendrycks (math) | LLM-as-judge loop → Use Lean4 / Atomic Facts |
+| Confident hallucination breaks consistency proxy | Simhi et al. 2025; Kalavasis et al. 2025 | Internal consistency $\to$ adoption of worst-case TPR. |
+| Parameter sensitivity vs. robustness | Cecere et al. 2025 (Temp), Kuhn 2023 ($n$), Farquhar 2024 (NLI threshold) | Single-point reporting $\to$ adoption of AUSC. |
+| RLHF induces "miscalibration" | Kadavath 2022, Achiam 2023 | Scaling does not solve it $\to$ Uncertainty Alignment + CP. |
+| Open generation requires verifiable truth | Yao 2022 (code), Hendrycks (math) | Breaking the LLM-as-judge loop $\to$ Lean4 / Atomic Facts. |
 
 ### Key Findings
-- **Methods cannot agree on "who is uncertain"**: Jaccard similarity is only 0.08–0.22, showing methods measure different dimensions; using any single method as a "safety net" lacks an external baseline for arbitration.
-- **Geometric separation $\neq$ Factual reliability**: PCA visualization of P(true) proves it performs cluster membership testing rather than factual discrimination—it checks if an output falls within a "confidence cluster."
-- **AUROC is diluted by easy samples**: Frequent easy cases push AUROC higher, but the only dangerous samples in deployment are the "high-confidence but incorrect" minority, which MIA-style TPR@low-FPR specifically targets.
-- **RLHF exacerbates the problem**: Alignment with human preference makes models sound more authoritative; scaling does not automatically solve calibration—it only makes hallucinations look "more professional," magnifying clustering pathologies.
+- **Methods cannot agree on uncertainty**: Low Jaccard overlap (0.08–0.22) suggests different methods measure different dimensions, lacking an external baseline for arbitration.
+- **Geometric separation $\neq$ Factuality**: PCA of P(true) proves it measures "whether an output falls in the confidence cluster," which is unrelated to truth.
+- **AUROC is diluted by easy samples**: High numbers of easy cases inflate AUROC, but only "high-confidence but incorrect" samples are dangerous; this necessitates MIA-style TPR@low-FPR.
+- **RLHF exacerbates the issue**: Aligning with human preferences makes models more authoritative. Scaling does not fix calibration; it only makes hallucinations appear "more professional," magnifying clustering pathologies.
 
 ## Highlights & Insights
-- **The "Category Error" label is sharp**: Categorizing an entire line of UQ research as "unsupervised clustering" provides a clear binary axis (supervised calibration vs. not) for future work, a hallmark of effective position papers.
-- **MIA analogy is a high-quality migration**: Directly moving the worst-case evaluation paradigm from Carlini et al. 2022 to UQ implies that the principle of "evaluating high-risk systems at the tail via TPR@low-FPR" is unifying across ML safety sub-fields.
-- **CP as an evaluator is a clever reuse**: Comparing set sizes at fixed coverage forces methods to externalize hallucinations as an observable cost, a logic applicable to any scoring-based safety mechanism.
-- **AUSC is a practical tool against p-hacking**: Requiring stability across hyperparameters could become a mandatory benchmark item, closing the "tuning for SOTA" loophole.
+- **The "Category Error" label is sharp**: By categorizing UQ research as "unsupervised clustering," the paper provides a clear axis for future work (supervised vs. unsupervised calibration).
+- **MIA analogy is high-quality migration**: Applying Carlini et al. 2022’s worst-case evaluation to UQ aligns with the general principle that high-risk systems should be evaluated using TPR at low FPR.
+- **CP as an evaluator**: Using set size under fixed coverage is a clever way to force methods to externalize hallucinations as observable costs.
+- **AUSC as a tool against p-hacking**: Requiring stability across hyperparameters could become a mandatory benchmark reporting standard.
 
 ## Limitations & Future Work
-- **Lack of a complete new method or benchmark**: While the roadmap is clear, TPR@low-FPR, AUSC, and Atomic Fact systems are currently suggestions without an end-to-end empirical demo showing revised rankings.
-- **Reliance on secondary empirical evidence**: Fig. 3 is adapted from Liu et al. 2025b, and Tab. 1's Jaccard is only measured on one model/data pair (QASC + Qwen2.5-32B); cross-model reproducibility remains for future work.
-- **Difficulty in implementing formal verification**: Lean4 and atomic fact-checking are costly in domains like medicine or law that are factual but non-formal; the paper does not discuss scalability bottlenecks.
-- **Gap in "inevitably subjective open generation"**: The authors acknowledge legitimate diversity in creative writing but only offer "atomic fact decomposition" as a remedy, failing to propose alternatives for stylistic or preference-based uncertainty.
+- **Lack of a complete new method or benchmark**: The roadmap is clear, but components like TPR@low-FPR and AUSC lack an end-to-end empirical demo showing how they change existing rankings.
+- **Reliance on secondary evidence**: Some arguments (e.g., Fig. 3) are adapted from previous work, and Jaccard results are limited to one model/dataset pair.
+- **Grounding difficulty**: Formal verification (Lean4/Atomic Facts) is costly in non-formal domains like medicine or law; scalability was not discussed.
+- **Open-ended creative generation gap**: The paper acknowledges creativity but only offers atomic fact decomposition as a remedy, missing solutions for style-based uncertainty.
 
 ## Related Work & Insights
-- **vs Semantic Entropy (Kuhn et al. 2023)**: This paper does not deny SE's effectiveness on benchmarks but notes it is an NLI-driven explicit clustering that fails during confident hallucinations. Insight: Any entropy metric must first answer whether the stable objects are anchored to external truth.
-- **vs Spectral Methods (Lin et al. 2023, etc.)**: Proven to be implicit clustering via the equivalence of Laplacian spectra and spectral clustering. Insight: Graph/spectral analysis in unlabeled contexts remains a structural index rather than a truth proxy.
-- **vs P(true) / SelfCheckGPT**: Reframed as "latent confidence cluster membership tests." Insight: Model self-evaluation is a geometric distance query, not factual discrimination.
-- **vs Conformal Prediction (Quach 2023, Su 2024)**: Repurposes CP from "generating prediction sets" to "a truth-aware yardstick for evaluating UQ methods."
-- **vs MIA Evaluation (Carlini et al. 2022)**: A cross-domain analogy inspiring the standard that "high-risk systems should be judged by the tail, not the average" in ML safety.
+- **vs. Semantic Entropy (Kuhn et al. 2023)**: Ours does not deny SE's effectiveness on benchmarks but notes its failure against confident hallucinations; Insight: Stability metrics must first anchor to external truth.
+- **vs. Graph Methods (Lin et al. 2023 etc.)**: Ours uses Laplacian spectrum equivalence to prove it is implicit clustering; Insight: Graph analysis in unsupervised contexts can only serve as a structural indicator.
+- **vs. P(true) / SelfCheckGPT**: Refuted as "latent confidence cluster membership tests"; Insight: Self-evaluation is geometric distance querying, not fact checking.
+- **vs. Conformal Prediction (Quach 2023, Su 2024)**: This paper repurposes CP from "set generation" to "a truth-aware ruler for evaluating UQ."
+- **vs. MIA Evaluation (Carlini et al. 2022)**: A cross-domain analogy suggesting "looking at the tail, not the average" as a general norm for ML safety.
 
 <!-- RELATED:START -->
 
@@ -134,10 +116,10 @@ The paper does not test a new method but uses supporting data to "falsify" the r
 ## Related Papers
 
 - [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](../../ACL2026/llm_safety/agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
-- [\[ACL 2026\] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](../../ACL2026/llm_safety/from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
-- [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
 - [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
+- [\[ACL 2026\] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](../../ACL2026/llm_safety/from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)
+- [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
 
 </div>
 

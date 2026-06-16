@@ -2,76 +2,79 @@
 title: >-
   [Paper Note] FlowNar: Scalable Streaming Narration for Long-Form Videos
 description: >-
-  [ICML 2026][Multimodal VLM][Streaming Video Narration] FlowNar employs a combination of "clearing visual KV caches at the end of segments + compressing historical visual information into fixed-length memory tokens via ga…
+  [ICML 2026][Multimodal VLM][Paper Note] FlowNar employs a combination of "clearing visual KV cache at segment ends + compressing historical visual information into fixed-length memory tokens via gated linear attention." This allows the streaming video narration model to maintain constant memory and computational overhead, processing $10\times$ longer videos
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Streaming Video Narration"
-  - "KV Cache Pruning"
-  - "Linear Attention"
-  - "Long-form Video Understanding"
-  - "Self-conditioned Evaluation"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 198a00ee9f94a26a
+content_hash: 5f70bb6dd5690d8b
 ---
-
 # FlowNar: Scalable Streaming Narration for Long-Form Videos
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00620](https://arxiv.org/abs/2606.00620)  
 **Code**: https://github.com/zeyun-zhong/FlowNar (Available)  
 **Area**: Video Understanding / Multimodal VLM / Streaming Video  
-**Keywords**: Streaming Video Narration, KV Cache Pruning, Linear Attention, Long-form Video Understanding, Self-conditioned Evaluation
+**Keywords**: Streaming Video Narration, KV Cache Pruning, Linear Attention, Long-Form Video Understanding, Self-conditioned Evaluation  
 
 ## TL;DR
-FlowNar employs a combination of "clearing visual KV caches at the end of segments + compressing historical visual information into fixed-length memory tokens via gated linear attention." This allows the streaming video narration model to maintain constant GPU memory and computational overhead, handling $10\times$ longer videos with $3\times$ the throughput. Simultaneously, the introduction of a self-conditioned evaluation protocol reveals that baseline methods are significantly overestimated in real-world deployment scenarios.
+FlowNar employs a combination of "clearing visual KV cache at segment ends + compressing historical visual information into fixed-length memory tokens via gated linear attention." This allows the streaming video narration model to maintain constant memory and computational overhead, processing $10\times$ longer videos and achieving $3\times$ throughput. Simultaneously, it introduces a self-conditioned evaluation protocol revealing that baseline methods are significantly overestimated in real-world deployment scenarios.
 
 ## Background & Motivation
 
-**Background**: Online streaming narration requires Large Multimodal Models (LMMs) to continuously receive frame streams, autonomously determine when to output a narration, and generate the content. Representative works like Videollm-online and Videollm-mod are already capable of frame-aligned narration.
+**Background**: Online streaming narration requires LMMs to continuously receive a frame stream, autonomously determine when to output a narration, and generate the content. Representative works like Videollm-online and Videollm-mod can perform frame-aligned narration.
 
-**Limitations of Prior Work**: These methods continuously feed the KV pairs of all historical visual frames into the LLM context. Consequently, both GPU memory and computational costs grow at least linearly with video length, leading to OOM (Out of Memory) on 24GB GPUs and a significant drop in FPS over time. Moreover, existing evaluations use *teacher-forcing* where Ground Truth (GT) narrations are used as history, masking the error accumulation in real deployment where "one mistake leads to another."
+**Limitations of Prior Work**: These methods continuously store the KV pairs of all historical visual frames in the LLM context. Consequently, memory and computation grow at least linearly with video length—leading to OOM on 24GB GPUs and a significant drop in FPS over time. Furthermore, existing evaluations use *teacher-forcing* mode with Ground Truth (GT) narrations as history, masking the error accumulation of "previous mistakes propagating through subsequent generations" in real-world deployment.
 
-**Key Challenge**: The dilemma of long context—retaining all visual history provides information but leads to complexity explosion and amplifies noise/errors; pruning history saves memory but causes the loss of long-term visual information and narrative incoherence.
+**Key Challenge**: The dilemma of long context—retaining full visual history provides information but leads to complexity explosion and amplifies noise or erroneous history; pruning history saves memory but results in the loss of long-range visual information and narrative incoherence.
 
-**Goal**: (1) To keep the GPU memory and per-step computational complexity constant relative to video length $T$; (2) To retain long-term visual summaries to prevent performance collapse; (3) To provide evaluation protocols that reflect real-world deployment.
+**Goal**: (1) Ensure visual memory and per-step computational complexity remain constant relative to video length $T$; (2) Retain long-term visual summaries to prevent performance collapse; (3) Provide an evaluation protocol closer to real deployment.
 
-**Key Insight**: It is observed that what is truly needed between segments is not "all raw KV pairs," but a "visual summary sufficient for narrative coherence." Detailed KV pairs can be aggressively pruned after each narration segment, passing forward only a fixed-size memory token block.
+**Key Insight**: It is observed that what is truly needed between segments is not "all raw KV pairs," but rather a "visual summary sufficient for narrative continuity." Detailed KVs can be aggressively pruned after each narrative segment, passing forward only a fixed-size memory token block along the timeline.
 
-**Core Idea**: Combining "Dynamic Context Management (DCM) + Cross-segment Linear Attention Memory (CLAM)" to compress the complexity of visual history from $O(T)$ to $O(1)$, while "realizing" the evaluation through a self-conditioned protocol.
+**Core Idea**: A combination of "Dynamic Context Management (DCM) + Cross-Linear Attention Memory (CLAM)" is used to compress the complexity of visual history from $O(T)$ to $O(1)$, while the evaluation is "realized" using a self-conditioned protocol.
 
 ## Method
 
 ### Overall Architecture
-The input is a continuous frame stream $\mathbf{V}=\{\mathbf{v}_t\}_{t=1}^{T}$, and the output is a narration sequence with timestamps $\Psi=\{(t_n, y_n)\}_{n=1}^{N}$. The pipeline performs the following at each frame $t$: (1) SigLIP encoding + MLP projection into language space to obtain $\mathbf{E}_t$; (2) CLAM incrementally updates a $D\times D$ recurrent state $\mathbf{S}_t$ using current frame tokens, and reads out fixed-length memory $\mathbf{M}_t \in \mathbb{R}^{M\times D}$ using $M$ learnable queries; (3) The LLM calculates the `[SKIP]` probability based on the visual cache $\mathcal{C}_t^{\text{vid}}$ and previous narration cache $\mathcal{C}_{n-1}^{\text{nar}}$ to decide whether to trigger narration; (4) Upon triggering, it auto-regressively generates $y_n$, then clears all detailed visual KV pairs of the current segment, prepending the segment-end memory $\mathbf{M}_{t_n}$ to the next segment as a long-term summary. The FlowNar-C variant further retains only the text KV pairs of the most recent $k$ narrations to achieve constant complexity across all dimensions.
+The input is a continuous frame stream $\mathbf{V}=\{\mathbf{v}_t\}_{t=1}^{T}$, and the output is a narration sequence with timestamps $\Psi=\{(t_n, y_n)\}_{n=1}^{N}$. At each frame $t$, the pipeline performs: (1) SigLIP encoding + MLP projection to language space to obtain $\mathbf{E}_t$; (2) CLAM incrementally updates a $D\times D$ recurrent state $\mathbf{S}_t$ with current frame tokens, then reads out a fixed-length memory $\mathbf{M}_t \in \mathbb{R}^{M\times D}$ using $M$ learnable queries; (3) The LLM calculates the `[SKIP]` probability based on the visual cache $\mathcal{C}_t^{\text{vid}}$ and previous narration cache $\mathcal{C}_{n-1}^{\text{nar}}$ to decide whether to trigger narration; (4) Upon triggering, it auto-regressively generates $y_n$, then clears all detailed visual KVs for the current segment, prefixing the final memory $\mathbf{M}_{t_n}$ to the start of the next segment as a long-term summary. The FlowNar-C variant additionally retains only the last $k$ narration textual KVs to achieve constant complexity across all dimensions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Frame stream arrives frame-by-frame v_t"] --> B["SigLIP Encoding + MLP Projection<br/>to get frame features E_t (prefixed with memory M)"]
+    B --> C["CLAM Cross-Linear Attention Memory<br/>Incremental state update S_t, read out memory M_t"]
+    C --> D["LLM calculates [SKIP] probability<br/>Dual-threshold trigger decision"]
+    D -->|"p([SKIP]) > θ: No narration"| A
+    D -->|"p([SKIP]) ≤ θ: Trigger"| E["Auto-regressive narration generation y_n"]
+    E --> F["DCM Dynamic Context Management<br/>Clear current visual KV,<br/>Prefix memory M to next segment"]
+    F --> A
+```
 
 ### Key Designs
 
-1.  **Dynamic Context Management (DCM) + Dual-threshold Triggering**:
-    - **Function**: Ensures the visual context does not grow with $T$ while controlling the narration pace to avoid bursts or long silences.
-    - **Mechanism**: After generating each narration, the current segment's visual KV is **explicitly cleared** $\mathcal{C}_t^{\text{vid}} \leftarrow \emptyset$, and the previous $\mathbf{M}_{t_{n-1}}$ is discarded, forcing the model to rely only on the newly computed $\mathbf{M}_{t_n}$ as history. The triggering logic uses two thresholds: a primary threshold $\theta$ to check $p(\text{[SKIP]} \mid \mathbf{E}_t, \mathcal{C}_{t-1}^{\text{vid}}, \mathcal{C}_{n-1}^{\text{nar}}) \le \theta$. Once triggered, it switches briefly to a lower $\theta_{\text{low}}=0.5$ to suppress immediate re-triggering and avoid explosive bursts.
-    - **Design Motivation**: In self-conditioned deployment, long context not only consumes memory but also feeds "errors from the previous sentence" back into the LLM, creating a snowball effect. Aggressive pruning is more robust than retaining the full history.
+**1. Dynamic Context Management (DCM) + Dual-threshold Trigger: Clearing visual KV after each segment to prevent error snowballing**
 
-2.  **CLAM: Cross-segment Linear Attention Memory**:
-    - **Function**: Compresses visual history into $M$ memory tokens with constant memory and per-step computation.
-    - **Mechanism**: Maintains a recurrent state $\mathbf{S}_t \in \mathbb{R}^{D\times D}$. For each intra-frame token $\mathbf{x}_{t,j}$, it computes key/value pairs and a gating matrix $\mathbf{G}_{t,j}$ (range $(0,1)$), updated via $\mathbf{S}_{t,j} = \mathbf{G}_{t,j} \odot \mathbf{S}_{t,j-1} + \mathbf{k}_{t,j}^\top \mathbf{v}_{t,j}$. $M$ learnable queries $\mathbf{Z}\in\mathbb{R}^{M\times D}$ are used via linear projection to get $\mathbf{Q}$, finally reading out $\mathbf{M}_t = \mathbf{Q}\mathbf{S}_t$. The state can store approximately $O(D)$ independent key-value pairs, sufficient for long segments.
-    - **Design Motivation**: Naive KV caches expand linearly. The recurrent perspective of linear attention naturally provides constant memory, constant per-step computation, and parallelizable training. It decouples "compression" (token-by-token within frames) from "reading" (via fixed queries), avoiding the pitfalls of MovieChat-style aggregation or simple sliding windows that lose long-range information.
+In self-conditioned deployment, long context not only consumes memory but also repeatedly feeds back "previous generation errors" into the LLM. DCM takes an aggressive approach: after each narration, it explicitly clears the visual KV $\mathcal{C}_t^{\text{vid}} \leftarrow \emptyset$, discarding even the prefixed $\mathbf{M}_{t_{n-1}}$, forcing the model to rely only on the newly computed $\mathbf{M}_{t_n}$ as history. Pacing is controlled by two thresholds: the primary threshold $\theta$ determines if $p(\text{[SKIP]} \mid \mathbf{E}_t, \mathcal{C}_{t-1}^{\text{vid}}, \mathcal{C}_{n-1}^{\text{nar}}) \le \theta$; immediately after a trigger, it switches to a lower $\theta_{\text{low}}=0.5$ for a short duration to suppress consecutive bursts. Ablations show that "retaining all history" actually performs worst (CIDEr 28.04 vs. CLAM 35.64), confirming that aggressive pruning is more stable than full history in self-conditioned settings.
 
-3.  **Self-conditioned Evaluation Protocol + Alignment-then-Scoring**:
-    - **Function**: Evaluates the narration model under real deployment conditions to avoid teacher-forcing overestimation.
-    - **Mechanism**: During evaluation, each $y_n$ is based only on the model's own previously generated $\{y_j^{\text{pred}}\}$ without GT history. Since predicted and GT segments may differ in count and boundaries, segment-level matching is first performed using IoU $\tau=0.5$ to calculate Precision/Recall/F1 (temporal alignment). Then, Generalized IoU is used to retrieve the best-matched predicted segment for each GT segment to calculate CIDEr/METEOR/ROUGE-L (narration quality).
-    - **Design Motivation**: Teacher-forcing hides error propagation, making "barely usable" models appear superior. Self-conditioning + post-alignment retains temporal evaluation capability while exposing the error accumulation inherent in real deployment.
+**2. CLAM Cross-Linear Attention Memory: Compressing visual history into fixed-length tokens via gated linear attention**
+
+Naive KV caches expand linearly, but between segments, only a "visual summary sufficient for continuity" is required. CLAM maintains a $D\times D$ recurrent state $\mathbf{S}_t$. Each frame token $\mathbf{x}_{t,j}$ computes key/value pairs and a gating matrix $\mathbf{G}_{t,j}\in(0,1)$, following the recurrence $\mathbf{S}_{t,j} = \mathbf{G}_{t,j} \odot \mathbf{S}_{t,j-1} + \mathbf{k}_{t,j}^\top \mathbf{v}_{t,j}$. Then, $M$ learnable queries $\mathbf{Z}$ are linearly projected to $\mathbf{Q}$ to read the fixed-length memory $\mathbf{M}_t = \mathbf{Q}\mathbf{S}_t$. The recurrent perspective of linear attention provides "constant memory, constant per-step computation, and parallelizable training." It decouples "compression" (token-by-token recurrence) and "reading" (fixed queries), avoiding the issues of similarity-based merging (like MovieChat) or long-range information loss in sliding windows.
+
+**3. Self-conditioned Evaluation Protocol + Alignment before Scoring: Exposing error propagation masked by teacher-forcing**
+
+Previous evaluations used teacher-forcing with GT narrations as history, hiding error accumulation where "the first mistake leads to constant failure," making mediocre models appear performant. The self-conditioned protocol requires each $y_n$ to be based only on the model's own previous $\{y_j^{\text{pred}}\}$. Since predicted and GT segments may not align in number or boundaries, the protocol first performs segment-level matching using IoU $\tau=0.5$ to calculate Precision/Recall/F1 for temporal alignment. It then uses Generalized IoU to retrieve the best-matching predicted segment for each GT segment and calculates CIDEr/METEOR/ROUGE-L on these pairs. This "alignment-first" protocol maintains temporal evaluation capability while exposing objective performance—in teacher-forcing, the gap between FlowNar and baselines narrows significantly, proving that prior SOTA numbers partially stem from "cheating" with GT history.
 
 ### Loss & Training
-The model end-to-end minimizes standard next-token cross-entropy, with joint supervision on narration tokens $y_n$ and `[SKIP]` trigger tokens. During training, a segment-level attention mask is used (which, in addition to the standard causal mask, blocks attention from the current segment to "raw frame tokens of distant segments" and "memory tokens of distant segments"). This forces the model to rely only on "$\mathbf{M}_{t_{n-1}}$ from the end of the previous segment + current segment frames + generated narration," consistent with the cache-clearing behavior at inference. To bridge the positional encoding discrepancy between training (continuous sequences) and inference (cache clearing), an independent position counter is used during inference to simulate training-style position IDs. Cost: Training FlowNar-1B on 4×H100 takes 67 GPU-hours, approximately $1.9\times$ that of Videollm-online (one-time overhead).
+The model end-to-end minimizes standard next-token cross-entropy, with joint supervision on narration tokens $y_n$ and `[SKIP]` trigger tokens. During training, a segment-level attention mask is used: besides the causal mask, attention from the current segment to "original frame tokens of distant segments" and "memory tokens of distant segments" is blocked. This forces the model to depend solely on "previous end-segment $\mathbf{M}_{t_{n-1}}$ + current frames + generated narration," aligning training with the test-time KV clearing behavior. To bridge the disparity in positional encoding between training (continuous sequences) and inference (clearing cache), a persistent position counter is used during inference. Training FlowNar-1B on 4×H100 takes 67 GPU-hours, approximately $1.9\times$ that of Videollm-online.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison with Videollm-online and Videollm-mod (using Llama-3-1B backbone) under the self-conditioned protocol on three long-form egocentric datasets:
+Comparison with Videollm-online and Videollm-mod under the self-conditioned protocol on Ego4D / EgoExo4D / EpicKitchens100 long-form egocentric datasets (Llama-3-1B backbone):
 
 | Dataset | Method | F1↑ | CIDEr↑ | Cache (M)↓ |
-|---------|--------|-----|--------|-----------|
+|--------|------|-----|--------|-----------|
 | Ego4D | Videollm-online | 16.29 | 28.04 | 737.6 |
 | Ego4D | FlowNar-C | 17.90 | 34.48 | **20.2** |
 | Ego4D | **FlowNar** | **24.85** | **35.64** | 59.2 |
@@ -81,58 +84,56 @@ Comparison with Videollm-online and Videollm-mod (using Llama-3-1B backbone) und
 | EK100 | FlowNar-C | 25.20 | 37.28 | **22.7** |
 | EK100 | **FlowNar** | **29.12** | **46.63** | 65.3 |
 
-FlowNar-C reduces the cache on EK100 from 1096M to 22.7M (approx. $48\times$ reduction) while increasing CIDEr from 29.00 to 37.28.
+FlowNar-C reduces cache on EK100 from 1096M to 22.7M (approx. $48\times$ reduction) while CIDEr increases from 29.00 to 37.28.
 
 ### Ablation Study
-Ablation of visual history strategies under Ego4D self-conditioned protocol:
+Ablation of visual history strategies under self-conditioned Ego4D:
 
 | Visual History Strategy | DCM | CIDEr↑ | METEOR↑ | ROUGE↑ |
-|-------------------------|-----|--------|---------|--------|
-| No History Frames | ✓ | 30.40 | 11.36 | 30.54 |
-| Only Recent Frames | ✓ | 30.16 | 11.42 | 30.59 |
-| Retain All Frames | ✗ | 28.04 | 11.33 | 29.86 |
+|------|-----|--------|---------|--------|
+| No visual history | ✓ | 30.40 | 11.36 | 30.54 |
+| Recent frames only | ✓ | 30.16 | 11.42 | 30.59 |
+| Retain full history | ✗ | 28.04 | 11.33 | 29.86 |
 | **CLAM** | ✓ | **35.64** | **12.14** | **31.64** |
 
 ### Key Findings
-- **Retaining all history is actually the worst** (CIDEr 28.04)—confirming the judgment that "long context = long error chain" under self-conditioning; DCM is a necessity, not an option.
-- **CLAM significantly outperforms alternatives** such as last-$k$, K-Means, MovieChat-style token merging, TokenMLP, and restructured RetNet (Table 5). This suggests that gated linear attention is better suited for streaming narration than similarity-based merging or fixed windows.
-- Dual-threshold triggering improves F1 from a static 16.78 to 24.85 (Table 4), indicating that pacing control is as vital as context management.
-- Under the teacher-forcing protocol (Table 2), the gap between FlowNar and baselines narrows, proving that previous SOTA figures partially relied on "cheating with GT history."
+- **Full history is the worst performing** (CIDEr 28.04)—verifying that in self-conditioned settings, "long context = long error chains"; DCM is a necessity.
+- **CLAM significantly outperforms alternatives** like last-$k$, K-Means, MovieChat-style token merging, TokenMLP, and RetNet (Table 5). This indicates that parametric compression via gated linear attention is more suitable for streaming than similarity-based or fixed-window methods.
+- Dual-threshold triggering improves F1 from 16.78 to 24.85 (Table 4), showing that pacing control is as vital as context management.
+- Under the teacher-forcing protocol (Table 2), the gap between FlowNar and baselines narrows significantly, suggesting that previous SOTA results benefited from the "cheating" nature of GT history.
 
 ## Highlights & Insights
-- **"Less is More" empirically proven in long video**: Under self-conditioning, aggressive pruning is more accurate than retaining full history because the cost of error propagation outweighs the cost of information loss. This mirrors NLP observations that "garbage context drags down generation" and serves as a highly transferable design principle for streaming generation.
-- **The recurrent view of Linear Attention fits streaming compression naturally**: Interpreting $\mathbf{S}_t$ as "content-addressable associative memory" and using learnable queries to read fixed-length summaries effectively turns the Transformer-RNN hybrid into a "compressor + reader," avoiding the fragility of similarity heuristics in token merging. This architecture can be transferred to any continuous generation task requiring constant memory, such as streaming audio narration or real-time driving scene understanding.
-- **The evaluation protocol is a core contribution**: Replacing teacher-forcing with self-conditioning + post-alignment reshapes the standards of the "long video narration" track, representing a methodology-level correction.
+- **"Less is More" empirically proven in long video**: In self-conditioned settings, aggressive pruning is more accurate than full history because the cost of error propagation outweighs the cost of information loss. This mirrors observations in NLP where "garbage context" drags down generation.
+- **Recurrent view of Linear Attention fits streaming compression**: Interpreting $\mathbf{S}_t$ as "content-addressable associative memory" and reading a fixed summary with learnable queries effectively converts the Transformer-RNN into a "compressor + reader," avoiding the fragility of similarity heuristics.
+- **Evaluation protocol is a core contribution**: Replacing teacher-forcing with self-conditioning + "alignment before scoring" resets the benchmarks for the long-video narration track, representing a methodology-level correction.
 
 ## Limitations & Future Work
-- The training cost is approximately $1.9\times$ that of Videollm-online, primarily due to unoptimized attention kernels under segment-level masks and the additional memory tokens.
-- Memory capacity arguments are based on the theoretical $D\times D$ state storing $O(D)$ key-value pairs; whether this holds for extremely long (hour-plus) videos remains to be seen beyond egocentric datasets.
-- Hyperparameters like $\theta_{\text{low}}$ and refresh periods depend on the average segment duration of each dataset, requiring recalibration for different video sources.
-- Current evaluations are limited to English; error propagation patterns in multilingual streaming generation might differ.
+- Training cost is roughly $1.9\times$ Videollm-online, primarily due to unoptimized attention kernels under segment-level masking and additional memory tokens.
+- Memory capacity arguments are based on the theoretical result that $D\times D$ states can store $O(D)$ key-value pairs; whether this holds for ultra-long (multi-hour) videos remains to be tested beyond egocentric datasets.
+- Pacing hyperparameters like $\theta_{\text{low}}$ and refresh periods depend on average segment durations of the dataset and may require recalibration for different video sources.
+- Current evaluations are limited to English; error propagation patterns in multi-lingual streaming generation may differ.
 
 ## Related Work & Insights
-- **vs Videollm-online**: Both perform frame-aligned narration, but this work explicitly prunes visual KV and adds linear attention summaries, reducing visual context complexity from $O(T)$ to $O(1)$ and improving self-conditioned F1 on Ego4D from 16.29 to 24.85.
-- **vs Videollm-mod**: Videollm-mod uses routing to reduce intermediate visual computation, but the cache still grows linearly. This work excels in both cache size and narration quality, while routing is proven more fragile to error history under self-conditioning.
-- **vs MovieChat / Online K-Means**: Those methods rely on similarity-based merging and manual heuristics, with memory still growing over time. CLAM uses learnable gating for parametric compression that is fixed-length and end-to-end trainable.
-- **vs Streaming QA (e.g., StreamForest)**: Those works trigger answers based on external queries; this work autonomously decides when to narrate. The tasks differ, but memory management strategies are mutually beneficial.
+- **vs. Videollm-online**: Both perform frame-aligned narration, but this work explicitly prunes visual KV and adds linear attention summaries, reducing complexity from $O(T)$ to $O(1)$.
+- **vs. Videollm-mod**: Videollm-mod uses routing to reduce computation, but cache still grows linearly; FlowNar excels in both cache reduction and narration quality.
+- **vs. MovieChat / Online K-Means**: Those methods merge tokens based on similarity, which is heuristic-driven and still allows memory to grow; CLAM uses learnable gating for parametric, fixed-length compression.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of DCM + Linear Attention compression + Self-conditioned evaluation is effective and comprehensive.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Conducted on three datasets with two protocols and multi-dimensional ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear pseudocode, motivation, and diagrams.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses engineering bottlenecks in long-video streaming and provides a transformative evaluation protocol.
+- Novelty: ⭐⭐⭐⭐ The triad of DCM + Linear Attention compression + Self-conditioned evaluation is a robust complete solution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing across three datasets, two protocols, and multi-dimensional ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear algorithms and motivation, though some LaTeX rendering issues appear in formulas.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses engineering bottlenecks in streaming narration and reshapes the evaluation standards of the field.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
-- [\[ACL 2026\] AdaTooler-V: Adaptive Tool-Use for Images and Videos](../../ACL2026/multimodal_vlm/adatooler-v_adaptive_tool-use_for_images_and_videos.md)
-- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](../../AAAI2026/multimodal_vlm/towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
-- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](../../CVPR2026/multimodal_vlm/vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/multimodal_vlm/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](../../CVPR2026/multimodal_vlm/vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
+- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](../../CVPR2026/multimodal_vlm/axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
 
 </div>
 

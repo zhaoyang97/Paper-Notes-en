@@ -2,128 +2,126 @@
 title: >-
   [Paper Note] A Systematic Investigation of RL-Jailbreaking in LLMs
 description: >-
-  [ICML 2026][Image Generation][LLM Security] This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length…
+  [ICML 2026][Image Generation][Reinforcement Learning] This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length, and the number of training questions—determine automated red teaming success rates more significantly than the choice of RL algorithm.
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "LLM Security"
-  - "Automated Red Teaming"
-  - "Reinforcement Learning"
-  - "Jailbreak Evaluation"
-  - "Reward Design"
+  - ICML 2026
+  - Image Generation
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 30ea7a5327073786
+content_hash: 98d06b7474534f21
 ---
-
 # A Systematic Investigation of RL-Jailbreaking in LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.07032](https://arxiv.org/abs/2605.07032)  
 **Code**: No public code / unconfirmed  
 **Area**: LLM Security  
-**Keywords**: LLM Security, Automated Red Teaming, Reinforcement Learning, Jailbreak Evaluation, Reward Design  
+**Keywords**: LLM Security, Automated Red Teaming, Reinforcement Learning, Jailbreaking Evaluation, Reward Design  
 
 ## TL;DR
-This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length, and the number of training questions—determine automated red teaming success rates to a greater extent than the choice of RL algorithm itself.
+This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length, and the number of training questions—determine automated red teaming success rates more significantly than the choice of RL algorithm.
 
 ## Background & Motivation
-**Background**: LLMs are increasingly utilized as agents capable of tool use, multi-step task planning, and handling high-risk scenarios. Security evaluations are evolving from manual prompts and static jailbreak templates toward automated red teaming and multi-round interactive attacks.
+**Background**: LLMs are increasingly utilized as agents capable of calling tools, planning multi-step tasks, and processing high-risk scenarios. Security assessments have evolved from manual prompts and static jailbreak templates toward automated red teaming and multi-turn interactive attacks.
 
-**Limitations of Prior Work**: Existing RL jailbreaking research often treats the RL agent as a black-box attacker, reporting whether it can bypass target models or safeguards without explaining the source of success. Components like rewards, action space, episode length, training data scale, and RL algorithms are conflated, making it difficult for defenders to identify which stage needs reinforcement.
+**Limitations of Prior Work**: Existing RL jailbreaking research often treats RL agents as black-box attackers, focusing on whether they can bypass target models or safeguards without explaining the source of success. Components like rewards, action spaces, episode lengths, training data scale, and RL algorithms are often entangled, making it difficult for defenders to determine which link requires strengthening.
 
-**Key Challenge**: The advantage of RL lies in sequential decision-making and exploration. However, the LLM safety environment is characterized by sparse feedback, actions consisting of natural language template transformations, and observable states altered by both target models and safeguards. Without a component-level analysis, attack success rates are difficult to reproduce and translate into defensive insights.
+**Key Challenge**: The advantage of RL lies in sequential decision-making and exploration. However, the feedback in LLM safety environments is typically sparse, actions involve natural language template transformations, and target models combined with safeguards alter observable states. Without component-level analysis, attack success rates are neither replicable nor easily translated into defensive insights.
 
-**Goal**: Rather than proposing a stronger jailbreak method, this paper systematically deconstructs existing RL-jailbreaker frameworks to quantify the impact of environment formalization and algorithmic design on adversarial success.
+**Goal**: Rather than proposing a theoretically stronger jailbreak method, this paper systematically decomposes existing RL-jailbreaker frameworks to quantify the impact of environment formalization and algorithmic design on adversarial success.
 
-**Key Insight**: The authors adopt an RL-centric perspective, modeling the target LLM, helper LLM, prompt/response safeguards, and harmful question sets as an environment where the adversary acts as an agent learning template transformation policies.
+**Key Insight**: The authors adopt an RL-centric perspective, conceptualizing the target LLM, helper LLM, prompt/reponse safeguards, and harmful question sets as an environment. The adversary is viewed as an agent learning template transformation policies within this environment.
 
-**Core Idea**: RL jailbreaking is decomposed into controllable axes—reward, action, episode, data volume, and algorithm—for granular ablation, using aggregate metrics to understand why automated red teaming is effective.
+**Core Idea**: By decomposing RL jailbreaking into controllable axes—reward, action, episode length, data volume, and algorithm—and performing ablation studies on each, the authors use aggregate metrics to understand the effectiveness of automated red teaming.
 
 ## Method
-The core of the paper is an experimental decomposition framework. Following existing RL-jailbreaker settings, the agent does not generate complete harmful content directly but selects template transformation actions. A helper model rewrites the template based on the action; the rewritten prompt is sent to the target model or safeguard; and the environment provides feedback based on the semantic similarity between the output and a reference answer. The paper focuses on reporting statistical metrics and component impacts rather than specific successful prompts.
+The core of the paper is an experimental decomposition framework. The authors follow existing RL-jailbreaker setups: the agent does not directly generate harmful content but selects template transformation actions; a helper model rewrites the template based on these actions; the modified prompt is sent to the target model or safeguard; and the environment provides feedback based on the similarity between the output and reference semantics. The paper focuses on statistical indicators and component impacts rather than specific successful prompts.
 
 ### Overall Architecture
-The environment is formalized as a POMDP. The hidden state includes the internal configurations of the target LLM, safeguard, and current prompt template. The agent observes a vector encoded from the current textual response, step count, termination flag, and the previous action ID. The action space is a limited set of discrete template transformations. Each episode starts with a subset of harmful questions and initial templates; the agent interacts for up to $T$ steps. At each step, a transformation is selected, executed by the helper LLM, and the target model or safeguard returns a response.
+The environment is formalized as a POMDP. Hidden states include the internal configurations of the target LLM, safeguards, and current prompt templates. The agent observes a vector encoded from the current text response, step count, termination flag, and the previous action ID. The action space is a fixed, discrete set of template transformations. Each episode begins with a harmful question subset and an initial template queue, where the agent interacts for a maximum of $T$ steps. For each step, a transformation is selected, rewritten by the helper LLM, and the target model or safeguard returns a response.
 
-Target models include Llama-3.2-1B/3B-Instruct, Qwen3-4B-Instruct-2507, and Tiny-aya-global. Defensive environments incorporate Llama-Guard or ShieldGemma for prompt/response filtering. Training data is derived from an AdvBench subset, including harmful questions and reference answers from an unaligned Vicuna. The paper uses 55 random seeds and reports bootstrap 95% confidence intervals.
+Target models include Llama-3.2-1B/3B-Instruct, Qwen3-4B-Instruct-2507, and Tiny-aya-global. Defensive environments include Llama-Guard or ShieldGemma filtering on both prompt and response sides. Training data is derived from an AdvBench subset containing harmful questions and reference answers from an unaligned Vicuna. The study uses 55 random seeds and reports bootstrap 95% confidence intervals.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Harmful question subset + initial template queue"] --> B
+    subgraph ENV["POMDP-based jailbreak environment"]
+        direction TB
+        B["Agent selects transformation action<br/>Observation = response embedding + steps + last action"] --> C["Helper LLM rewrites prompt"]
+        C --> D["Target model / safeguard returns response"]
+        D --> E["Dual reward evaluation<br/>dense cosine similarity / sparse threshold"]
+        E -->|Step < T| B
+    end
+    E -->|Episode ends| F["Aggregate metrics<br/>ASR(emb) · Avg similarity"]
+    G["Structured ablation axes<br/>reward · action space · episode length · PPO/DDQN · safeguard"] -.Control.-> ENV
+```
 
 ### Key Designs
-1. **POMDP-based Jailbreak Environment**:
+**1. POMDP-based jailbreak environment: Converting red teaming interactions into a standard RL problem for ablation.** Previous RL-jailbreakers often treated the agent as a black box. By formalizing multi-turn red teaming as a POMDP—where the hidden state comprises the target LLM and safeguards, and the agent observes only encoded responses and metadata—components like rewards, actions, and episodes can be isolated and ablated. This allows success rates to be attributed to specific components rather than generalized model fragility.
 
-	- **Function**: Converts multi-round red teaming interactions into a standard RL problem, allowing reward, action, and episode factors to be modified independently.
-	- **Mechanism**: The observation vector concatenates embeddings of the current template/response, time step, termination signal, and previous action. Actions are selected from a fixed set of transformations. The environment returns the target model or safeguard response and the reward.
-	- **Design Motivation**: Without clear environment boundaries, it is difficult to determine if success stems from prompt engineering, reward shaping, or the inherent vulnerability of the model.
+**2. Dual reward evaluation: Comparing dense vs. sparse signals to determine how feedback shapes learning.** Dense rewards are calculated using the average cosine similarity between model outputs and reference answers. Sparse rewards provide positive feedback only when similarity exceeds a threshold and the output contains no obvious refusal keywords. This contrast reveals that dense rewards provide continuous guidance necessary for credit assignment when facing strong refusal models, showing that environment definition is often more critical than algorithm choice.
 
-2. **Dual Reward Evaluation**:
-
-	- **Function**: Compares the impact of dense vs. sparse signals on RL agent learning.
-	- **Mechanism**: Dense reward uses the average cosine similarity between the model output and a reference answer embedding. Sparse reward provides positive feedback only when similarity exceeds a threshold and no obvious refusal keywords are present.
-	- **Design Motivation**: Strong refusal models can cause sparse rewards to remain zero for long periods, leading to credit assignment difficulties. Dense rewards provide continuous signals but may deviate from true success criteria.
-
-3. **Structured Ablation Axes**:
-
-	- **Function**: Breaks down the success factors of RL jailbreaking into reproducible experimental dimensions.
-	- **Mechanism**: Independently varies action space size, episode length, reward shaping bonus, number of training questions, PPO vs. DDQN, and safeguard combinations.
-	- **Design Motivation**: A single aggregate ASR only shows that a model "can be breached"; it does not indicate whether defense should prioritize interaction length, reward proxies, data coverage, or algorithm selection.
+**3. Structured ablation axes: Breaking down success factors into reproducible dimensions to guide defense.** Instead of reporting a single ASR, the authors vary action space size, episode length, reward shaping bonuses, training question volume, PPO vs. DDQN, and safeguard combinations independently. This allows the identification of specific vulnerabilities, such as finding that 20 training questions are superior to 5 or 520, or that expanding the action space under a limited interaction budget can actually make attacks more difficult.
 
 ### Loss & Training
-Both PPO and DDQN are implemented using two-layer feed-forward networks for the policy or Q-function. PPO serves as the primary algorithm for existing RL-jailbreakers, while DDQN is used to test whether value-based methods are suitable for red teaming. All major results use 55 seeds. Metrics include average cosine similarity and embedding-based ASR ($ASR(emb)$), where the latter requires semantic similarity to meet a threshold without containing common refusal words. The paper explicitly avoids LLM-as-a-judge due to its degraded reliability in adversarial scenarios.
+Both PPO and DDQN are implemented using a two-layer feed-forward network for policy or Q-functions. PPO serves as the primary algorithm for existing RL-jailbreakers, while DDQN is used to test if value-based methods are suitable for red teaming. Results are reported using metrics like average cosine similarity and embedding-based ASR (requiring semantic similarity above a threshold plus absence of refusal phrases). The study explicitly avoids LLM-as-a-judge due to its vulnerability to degradation in adversarial scenarios.
 
 ## Key Experimental Results
 
 ### Main Results
-The main table compares original harmful prompt baselines, sparse reward RL, and dense reward RL. Key $ASR(emb)$ and average similarity trends are preserved below.
+The main table compares the original harmful prompt baseline with sparse reward RL and dense reward RL. ASR(emb) and average similarity are reported.
 
-| Target Model | Configuration | $ASR(emb)$ | Avg. Cosine Sim. | Conclusion |
-|--------|------|----------|------------------|------|
+| Target Model | Configuration | ASR(emb) | Avg. Cosine Sim. | Conclusion |
+|:---|:---|:---|:---|:---|
 | Llama-3.2-1B | Baseline | 13.75% | 0.58 | Static inputs are mostly refused |
 | Llama-3.2-1B | Sparse Reward | 32.4% | 0.61 | RL significantly improves success |
 | Llama-3.2-1B | Dense Reward | 36.8% | 0.63 | Dense signals perform best |
-| Llama-3.2-3B | Baseline | 25.0% | 0.54 | Safety alignment gap remains |
-| Llama-3.2-3B | Dense Reward | 35.2% | 0.61 | Dense reward yields stable gains |
-| Qwen3-4B | Baseline | 16.3% | 0.41 | Lowest baseline |
-| Qwen3-4B | Sparse Reward | 63.1% | 0.65 | Sparse strongest on this model |
+| Llama-3.2-3B | Baseline | 25.0% | 0.54 | Safety alignment remains insufficient |
+| Llama-3.2-3B | Dense Reward | 35.2% | 0.61 | Dense reward provides stable gains |
+| Qwen3-4B | Baseline | 16.3% | 0.41 | Lowest baseline performance |
+| Qwen3-4B | Sparse Reward | 63.1% | 0.65 | Sparse reward is most effective on this model |
 | Tiny-aya-global | Baseline | 38.8% | 0.64 | High initial vulnerability |
-| Tiny-aya-global | Sparse Reward | 59.2% | 0.68 | Short-path exploits captured by sparse |
+| Tiny-aya-global | Sparse Reward | 59.2% | 0.68 | Short-path vulnerabilities are easily caught by sparse signals |
 
 ### Ablation Study
-| Configuration | Key Metrics | Explanation |
-|------|---------|------|
-| Dense reward + safeguard | Most target-safeguard combinations favor dense | Multi-layer defense increases sparsity; dense reward provides stable signals |
-| Expanded action space | Both PPO / DDQN perform worse than original | More transformations increase exploration and credit assignment difficulty |
-| Episode length | Llama benefits from 20/50 steps; Qwen prefers 5 | Optimal interaction length depends on the target's safety mechanism |
-| Reward bonus | No significant gain from bonus=10/20 | Original dense reward is sufficient; high discrete rewards may disrupt optimization |
-| Training question count | 20 questions outperform 5 and 520 | Too few leads to overfitting; too many dilutes patterns; moderate coverage is best |
-| DDQN vs PPO | DDQN performance close to PPO | Value-based RL is a viable but under-explored red teaming direction |
+| Configuration | Key Metric | Description |
+|:---|:---|:---|
+| Dense reward + safeguard | Most target-safeguard combinations favor dense over sparse | Multi-layer defense makes feedback sparser; dense rewards provide more stable signals |
+| Expanded action space | Both PPO / DDQN performance dropped | More transformations increase exploration and credit assignment difficulty |
+| Episode length | Llama benefits from 20/50 steps; Qwen prefers 5 | Optimal interaction length depends on the target's security mechanism |
+| Reward bonus | No significant gain with bonus=10/20 | Original dense reward is sufficient; high discrete rewards may disrupt optimization |
+| Training question volume | 20 questions outperformed 5 and 520 | Too few leads to overfitting; too many dilutes patterns |
+| DDQN vs PPO | DDQN performance comparable to PPO | Value-based RL is a viable but under-explored red teaming direction |
 
 ### Key Findings
-- Environment formalization is the dominant factor: reward density and episode horizon often impact success rates more than the specific algorithm choice.
-- Larger action spaces are not always beneficial; under limited interaction budgets, expanded actions amplify exploration difficulty.
-- Vulnerability patterns vary by model: some require long interactions to bypass, while others exhibit failure modes in short interactions.
-- Safeguards are not a uniform barrier; interception capabilities vary significantly, with ShieldGemma generally being harder to bypass in these experiments.
+- Environment formalization is the dominant factor: Reward density and episode horizons affect success more than the RL algorithm.
+- Larger action spaces are not always beneficial, especially under finite interaction budgets, as they amplify exploration difficulty.
+- Vulnerability patterns vary across target models: Some require long-term interaction for gradual bypass, while others exhibit failure modes in short interactions.
+- Safeguards are not monolithic; intercept capabilities vary significantly, with ShieldGemma generally being harder to bypass in these experiments.
 
 ## Highlights & Insights
-- The paper shifts attack research toward "mechanism auditing," which provides higher defensive value than merely pursuing higher ASR, as it identifies which environment designs amplify automated attack capabilities.
-- Avoiding LLM-as-a-judge is a robust choice. Adversarial text is specifically designed to deceive judges; using embeddings and refusal rules, while imperfect, is more controllable and reproducible.
-- The finding that "20 training questions are optimal" is insightful: red team training does not necessarily improve with more data, as excessively broad distributions may dilute transferable attack strategies.
+- The transition from attack research to "mechanism auditing" provides greater defensive value than simply pursuing higher ASR, as it identifies which environment designs amplify automated attack capabilities.
+- Avoiding LLM-as-a-judge is a robust choice, as adversarial text is designed to deceive judges. Using embeddings and refusal rules is more controllable and reproducible.
+- The finding that "20 training questions is optimal" suggests that red team training does not benefit from infinite data; excessively broad data distributions may dilute transferable attack strategies.
 
 ## Limitations & Future Work
-- Evaluation is limited to small-scale open-weight LLMs and does not validate closed-source, ultra-large, or multimodal models; conclusions may not directly extrapolate to production systems.
-- $ASR(emb)$ remains a proxy metric that may conflate semantically similar but hazards-distinct outputs or miss subtle violations.
-- The paper primarily focuses on independent component ablation and has not fully explored the interaction effects between rewards, episode length, and safeguard types.
-- From a defensive perspective, these findings could be applied to co-evolutionary self-play, where attack and mitigation agents are trained together, provided dual-use risks are strictly controlled.
+- The evaluation covers only small-scale open-weight LLMs, without validating closed-source, large-scale, or multimodal models.
+- ASR(embedding) remains a proxy metric that may conflate semantically similar but harm-distinct outputs or miss subtle violations.
+- The study focuses on independent ablations and has not fully explored interaction effects between reward, episode length, and safeguard types.
+- From a defensive perspective, these findings could be applied to co-evolutionary self-play, though dual-use risks must be strictly controlled.
 
 ## Related Work & Insights
-- **vs. Manual jailbreak / Prompt engineering**: Traditional methods rely on human expertise; this work focuses on automated sequential decision-making, offering systemic search at the cost of lowered barriers to misuse.
-- **vs. RLHF / Attacker LLM fine-tuning**: While many works fine-tune attack models via PPO, this work acts as a mechanism audit for template-search agents, with clearer computational and interpretability boundaries.
-- **vs. Safeguard evaluation**: Standard safeguard benchmarks use static inputs; this work demonstrates that multi-round optimization exposes new robustness gaps, suggesting that deployment evaluations should include sequential adversaries.
-- **Insight**: LLM safety evaluations should not only ask "does the model refuse a single prompt," but also "can an automated agent gradually approach a failure state given an interaction budget and reward proxy."
+- **vs Manual jailbreak / prompt engineering**: Traditional methods rely on human expertise; this study focuses on automated sequential decision-making for systematic search.
+- **vs RLHF / attacker LLM fine-tuning**: While many works fine-tune attack models via PPO, this work acts as a mechanism audit for template-search agents with clearer interpretation boundaries.
+- **vs Safeguard evaluation**: Typical benchmarks use static inputs; this work demonstrates that multi-turn optimization exposes new robustness gaps, suggesting that evaluations should include sequential adversaries.
+- **Insight**: When conducting LLM safety evaluations, one should ask not only if a model refuses a single prompt, but whether an automated agent can move the model toward a failure state given an interaction budget and reward proxy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The value lies in the systematic deconstruction of RL-jailbreaking rather than just new methods.
+- Novelty: ⭐⭐⭐⭐☆ The focus is not a new method but a valuable systematic deconstruction of RL-jailbreaking.
 - Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive ablation dimensions and seeds; limited by model scale and real-world deployment coverage.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear structure with documented safety boundaries; some charts require context for full comprehension.
-- Value: ⭐⭐⭐⭐☆ Provides direct insights for red teaming and safeguard design, though dual-use risks must be carefully managed.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure and safety boundary definitions; some chart results require textual context.
+- Value: ⭐⭐⭐⭐☆ Provides direct insights for red teaming and safeguard design, though dual-use risks require careful management.
 
 <!-- RELATED:START -->
 

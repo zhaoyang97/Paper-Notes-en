@@ -2,81 +2,83 @@
 title: >-
   [Paper Note] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Sentiment Analysis] This paper proposes EBMC, a two-stage framework that first improves the representation quality of weak modalities via semantic disentanglement and cross-modal en…
+  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes the EBMC two-stage framework, which improves the representation quality of weak modalities through semantic disentanglement and cross-modal enhancement, followed by energy-guided modality coordination and instance-aware trust distillation to achieve balanced multimodal sentiment analysis with strong robus
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Multimodal Sentiment Analysis"
-  - "Modality Imbalance"
-  - "Energy-Based Model"
-  - "Modality Trust Distillation"
-  - "Robustness"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 6ac4e4634dedc629
+content_hash: a645e22bd4e483e0
 ---
-
 # EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.12518](https://arxiv.org/abs/2604.12518)  
 **Code**: [https://github.com/kangverse/EBMC](https://github.com/kangverse/EBMC)  
-**Area**: Multimodal Learning / Sentiment Analysis
-**Keywords**: Multimodal Sentiment Analysis, Modality Imbalance, Energy-Based Model, Modality Trust Distillation, Robustness
+**Area**: Multimodal Learning / Sentiment Analysis  
+**Keywords**: Multimodal Sentiment Analysis, Modality Imbalance, Energy-based Model, Modality Trust Distillation, Robustness
 
 ## TL;DR
 
-This paper proposes EBMC, a two-stage framework that first improves the representation quality of weak modalities via semantic disentanglement and cross-modal enhancement, then achieves balanced multimodal sentiment analysis through energy-guided modality coordination and instance-aware trust distillation, maintaining strong robustness under missing-modality scenarios.
+Ours proposes the EBMC two-stage framework, which improves the representation quality of weak modalities through semantic disentanglement and cross-modal enhancement, followed by energy-guided modality coordination and instance-aware trust distillation to achieve balanced multimodal sentiment analysis with strong robustness under missing modality scenarios.
 
 ## Background & Motivation
 
-**Background**: Multimodal Sentiment Analysis (MSA) infers sentiment by fusing textual, acoustic, and visual signals, and a large body of work has explored representation learning and multimodal fusion strategies.
+**Background**: Multimodal Sentiment Analysis (MSA) integrates text, audio, and visual signals to infer sentiment. Extensive work has explored representation learning and multimodal fusion strategies.
 
-**Limitations of Prior Work**: The textual modality consistently dominates prediction, while acoustic and visual signals are underweighted due to weaker or noisier sentiment cues. The dominant modality accumulates larger gradients and reinforces its own representations, leaving weak modalities insufficiently updated — a "Matthew effect" in multimodal learning.
+**Limitations of Prior Work**: The textual modality consistently dominates predictions, while audio and visual signals are undervalued due to weaker or noisier sentiment cues. Dominant modalities accumulate larger gradients and strengthen their own representations, leaving weak modalities insufficiently updated, creating a "Matthew Effect."
 
-**Key Challenge**: Modality competition progressively marginalizes weaker modalities, especially under noisy or real-world conditions. Existing methods implicitly assume all modalities are equally reliable.
+**Key Challenge**: Modality competition leads to the marginalization of weak modalities, especially under noise or realistic conditions. Existing methods implicitly assume all modalities are equally reliable.
 
-**Goal**: (1) Enhance the representation quality of weak modalities; (2) balance modality contributions to prevent competitive suppression; (3) maintain robustness under missing-modality scenarios.
+**Goal**: (1) Enhance the representation quality of weak modalities; (2) Balance modality contributions to avoid competition; (3) Maintain robustness in missing modality scenarios.
 
-**Key Insight**: An enhance-then-balance two-stage paradigm — first strengthen weak modalities, then ensure that strong modalities do not suppress weaker ones.
+**Key Insight**: A two-stage "Enhance-then-Balance" approach—first making weak modalities stronger, then ensuring strong modalities do not suppress them.
 
-**Core Idea**: Stage I enhances weak modalities through disentanglement and compensation; Stage II employs an energy-based model to coordinate gradients and instance-aware trust distillation to dynamically adjust fusion weights.
+**Core Idea**: Stage I enhances weak modalities through disentanglement and compensation; Stage II coordinates gradients using an energy-based model (EMC) and dynamically adjusts fusion weights via instance-aware trust distillation (IMTD).
 
 ## Method
 
 ### Overall Architecture
 
-Stage I (Enhancement): Modality Semantic Disentanglement (MSD) separates shared and modality-specific semantics; Cross-modal Complementary Enhancement (CCE) strengthens weak modalities. Stage II (Balance): Energy-guided Modality Coordination (EMC) aligns optimization dynamics; Instance-aware Modality Trust Distillation (IMTD) adaptively adjusts fusion weights.
+EBMC aims to break the "Matthew Effect" in MSA: once text dominates, it continues to accumulate larger gradients and strengthens itself, pushing audio and visual modalities to the periphery. Instead of directly suppressing the text modality, EBMC adopts a two-stage strategy: **Enhance then Balance**. The first stage (Stage I) targets representation quality: it decomposes each modality into shared and Modality-Specific Disentanglement (MSD) features, then uses cues from strong modalities to "strengthen" weak modalities via Cross-modal Compensation (CCE), ensuring audio and visual representations are competitive. The second stage (Stage II) targets optimization dynamics: an Energy-guided Modality Coordination (EMC) aligns gradient contributions during training, while Instance-aware Modality Trust Distillation (IMTD) dynamically adjusts fusion weights by assessing per-sample reliability. The modules MSD, CCE, EMC, and IMTD form a pipeline: "Trimodal input $\rightarrow$ Disentanglement + Complementary Enhancement $\rightarrow$ Energy-guided Gradient Coordination $\rightarrow$ Instance-level Weighted Fusion $\rightarrow$ Sentiment Prediction."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Text/Audio/Visual Trimodal Features"]
+    subgraph S1["Stage I: Enhance Weak Modalities (MSD + CCE)"]
+        direction TB
+        B["MSD Semantic Disentanglement<br/>Split into Shared + Modality-specific Semantics"] --> C["CCE Cross-modal Compensation<br/>Signals from strong modalities strengthen Audio/Visual"]
+    end
+    A --> S1
+    S1 --> D["EMC Energy-guided Coordination<br/>Energy potential implicitly rebalances gradients"]
+    D --> E["IMTD Instance-aware Trust Distillation<br/>Dynamic fusion weights based on reliability"]
+    E --> F["Sentiment Prediction Output"]
+```
 
 ### Key Designs
 
-1. **Energy-guided Modality Coordination (EMC)**:
+**1. Modality Semantic Disentanglement + Cross-modal Compensation (MSD + CCE): Strengthening weak modalities before balancing.**
 
-    - Function: Rebalances modality optimization via energy potentials and gradient flow dynamics.
-    - Mechanism: Introduces energy-based models (EBMs) into modality coordination for the first time. The learning state of each modality is mapped to an energy potential, and energy differentials across modalities drive implicit gradient rebalancing. A differentiable balancing objective equalizes gradient contributions across modalities.
-    - Design Motivation: Existing methods adjust learning rates or gradients heuristically; EMC provides a principled, physically-intuitive alternative.
+If weak modality representations are inherently poor, "fair" gradient allocation cannot save them; enhancement must precede balancing. MSD decomposes each modality into cross-modal shared semantics and unique modality-specific semantics to prevent discarding discriminative information during enhancement. Subsequently, CCE allows the strong modality (typically text) to pass complementary cues to audio and visual branches via cross-modal attention—using explicit sentiment information from text to fill gaps in noisy weak modalities. This step provides a fair starting point for gradient balancing.
 
-2. **Instance-aware Modality Trust Distillation (IMTD)**:
+**2. Energy-guided Modality Coordination (EMC): Rebalancing gradient contributions via energy potentials.**
 
-    - Function: Estimates modality reliability at the sample level to adaptively adjust fusion weights.
-    - Mechanism: Estimates per-modality reliability for each sample from probabilistic teacher signals, and dynamically modulates fusion weights accordingly. Unreliable modalities receive reduced weights on noisy or missing samples.
-    - Design Motivation: Modality reliability varies across samples (e.g., clear visual but noisy audio), necessitating instance-level adaptation rather than static weighting.
+After representations are aligned, the gradient flow during optimization determines dominance. Unlike previous heuristic methods that scale learning rates, EMC introduces Energy-Based Models (EBM) to modality coordination. It maps the learning state of each modality to an energy potential; the energy gap serves as a signal to drive implicit gradient rebalancing. Modalities that learn too fast (lower energy) are suppressed, while lagging modalities are boosted. This differentiable balancing objective ensures equilibrium without manual coefficient tuning.
 
-3. **Modality Semantic Disentanglement + Cross-modal Complementary Enhancement (MSD + CCE)**:
+**3. Instance-aware Modality Trust Distillation (IMTD): Dynamic fusion weights based on per-sample reliability.**
 
-    - Function: Separates and enhances modality-specific and shared semantics.
-    - Mechanism: MSD decomposes each modality into shared and modality-specific semantic components. CCE leverages complementary cues from strong modalities (typically text) to enhance weak modalities (audio, visual) via cross-modal attention, transferring discriminative information.
-    - Design Motivation: Weak modalities must attain sufficient representational capacity before the balancing stage can be effective.
+While EMC addresses global training dynamics, fusion often ignores that modality reliability varies across samples (e.g., clear video but noisy audio). IMTD estimates the reliability of each modality for every sample using probabilistic teacher signals and modulates fusion weights accordingly. In noisy or missing modality scenarios, weights for unreliable branches are automatically reduced, minimizing performance degradation compared to fixed-weight baselines.
 
 ### Loss & Training
 
-Multi-task loss: sentiment prediction loss + disentanglement orthogonality constraint + energy balancing objective + trust distillation KL divergence. The two stages are trained alternately.
+The total objective is a multi-task loss: sentiment prediction loss + MSD orthogonality constraints (forcing independence between shared/specific semantics) + EMC energy balancing objective + IMTD trust distillation KL divergence. Training is conducted in two alternating stages—optimizing enhancement modules first, followed by balancing objectives to avoid goal conflicts.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | MOSI Acc7↑ | MOSI MAE↓ | MOSEI Acc7↑ | IEMOCAP Acc↑ |
-|--------|-----------|----------|------------|-------------|
+|------|-----------|----------|------------|-------------|
 | MISA | 42.3 | 0.783 | 52.1 | 68.5 |
 | Self-MM | 43.5 | 0.768 | 53.2 | 69.7 |
 | UniMSE | 44.1 | 0.752 | 54.3 | 70.8 |
@@ -84,8 +86,8 @@ Multi-task loss: sentiment prediction loss + disentanglement orthogonality const
 
 ### Ablation Study
 
-| Configuration | MOSI Acc7 | Note |
-|---------------|----------|------|
+| Configuration | MOSI Acc7 | Description |
+|------|----------|------|
 | Full EBMC | 45.8 | All components |
 | w/o EMC | 43.9 | No energy coordination |
 | w/o IMTD | 44.2 | No trust distillation |
@@ -94,34 +96,34 @@ Multi-task loss: sentiment prediction loss + disentanglement orthogonality const
 
 ### Key Findings
 
-- EMC contributes the most (1.9% drop upon removal), confirming that modality coordination is the central challenge.
-- EBMC degrades significantly less than baselines under missing-modality conditions, demonstrating robustness.
-- Consistent improvements are observed when transferring to the Emotion Recognition in Conversation (ERC) task.
+- EMC provides the largest Gain (1.9% drop if removed), indicating modality coordination is the Core Problem.
+- Performance degradation in missing modality scenarios is significantly lower than baselines, proving robustness.
+- Consistent improvements are observed when transferred to the Emotion Recognition in Conversation (ERC) task.
 
 ## Highlights & Insights
 
-- Introducing EBMs into modality coordination is a physically-intuitive innovation: energy potentials naturally encode the learning state of each modality.
-- The enhance-then-balance two-stage paradigm is generalizable and transferable to other multimodal learning settings.
-- Instance-aware trust distillation addresses the inherent limitations of static fusion weights.
+- Introducing EBM to modality coordination is a novel contribution with physical intuition: energy potentials naturally encode learning states.
+- The two-stage "Enhance-then-Balance" logic is generalizable and can be transferred to other multimodal learning scenarios.
+- Instance-aware trust distillation overcomes the inherent limitations of static fusion weights.
 
 ## Limitations & Future Work
 
-- Performance gains on small datasets such as IEMOCAP are limited.
-- Hyperparameter tuning of the energy-based model may affect training stability.
-- Scenarios involving more than four modalities remain unexplored.
-- EMC could be applied to modality balancing in vision-language pre-training.
+- Limited improvement on small datasets like IEMOCAP.
+- Hyperparameter tuning for energy models may affect stability.
+- Scenarios with more than four modalities remain unexplored.
+- Potential to apply EMC to modality balancing in vision-language pre-training.
 
 ## Related Work & Insights
 
-- **vs. MISA**: MISA performs modality disentanglement but does not address modality imbalance; EBMC extends disentanglement with energy-guided coordination.
-- **vs. OGM-GE**: OGM-GE balances modalities via gradient manipulation; EBMC's EBM-based approach is more principled.
+- **vs MISA**: MISA performs disentanglement but lacks imbalance handling; EBMC adds energy-guided coordination on top of disentanglement.
+- **vs OGM-GE**: OGM-GE balances modalities through gradient manipulation; EBMC’s energy-based approach is more principled.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ EBM-based modality coordination is a novel contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets + missing-modality evaluation + ERC transfer.
-- Writing Quality: ⭐⭐⭐⭐ The two-stage structure is clearly articulated.
-- Value: ⭐⭐⭐⭐ Provides meaningful reference for robust multimodal learning.
+- Novelty: ⭐⭐⭐⭐ EBM for modality coordination is a new contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets + missing modalities + ERC transfer.
+- Writing Quality: ⭐⭐⭐⭐ Clear two-stage structure.
+- Value: ⭐⭐⭐⭐ Reference value for robust multimodal learning.
 
 <!-- RELATED:START -->
 
@@ -129,11 +131,11 @@ Multi-task loss: sentiment prediction loss + disentanglement orthogonality const
 
 ## Related Papers
 
-- [\[CVPR 2026\] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher](purify-then-align_towards_robust_human_sensing_under_modality_missing_with_knowl.md)
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
-- [\[CVPR 2026\] Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement](disentangle-then-align_non-iterative_hybrid_multimodal_image_registration_via_cr.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
+- [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
+- [\[CVPR 2026\] Factorize, Reconstruct, Enhance: A Unified Framework for Multimodal Sentiment Analysis](factorize_reconstruct_enhance_a_unified_framework_for_multimodal_sentiment_analy.md)
+- [\[CVPR 2026\] CICA: Coupling Confidence-Aware Pretraining with Confidence-Informed Attention for Robust Multimodal Sentiment Analysis](cica_coupling_confidence-aware_pretraining_with_confidence-informed_attention_fo.md)
+- [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
 
 </div>
 

@@ -2,151 +2,160 @@
 title: >-
   [Paper Note] Fixed Aggregation Features Can Rival GNNs
 description: >-
-  [ICML2026][Graph Learning][Fixed aggregation] This paper proposes Fixed Aggregation Features (FAF): compressing multi-hop neighborhoods into tabular features using **non-trainable** aggregation operators (such as mean…
+  [ICML 2026][Graph Learning][Kolmogorov-Arnold] The paper proposes Fixed Aggregation Features (FAF): multi-hop neighborhoods are compressed into tabular features using **non-trainable** aggregation operators like mean/sum/max/min/std and fed into an MLP. On 12 out of 14 node classification benchmarks, it matches or outperforms fine-tuned GCN/GAT/GraphSAGE and even G
 tags:
-  - "ICML2026"
-  - "Graph Learning"
-  - "Fixed aggregation"
-  - "Multi-hop feature concatenation"
-  - "Kolmogorov-Arnold"
-  - "MLP baseline"
-  - "Node classification"
+  - ICML 2026
+  - Graph Learning
+  - Kolmogorov-Arnold
+  - MLP baseline
 date: 2026-05-08
-content_hash: c7f5e342e822bed2
+content_hash: 3a7032d05c1e7e27
 ---
-
 # Fixed Aggregation Features Can Rival GNNs
 
 **Conference**: ICML2026  
 **arXiv**: [2601.19449](https://arxiv.org/abs/2601.19449)  
-**Code**: Undisclosed  
+**Code**: Not disclosed  
 **Area**: Graph Learning / GNN / Tabular Learning  
-**Keywords**: Fixed aggregation, Multi-hop feature concatenation, Kolmogorov-Arnold, MLP baseline, Node classification
+**Keywords**: Fixed Aggregation, Multi-hop Feature Concatenation, Kolmogorov-Arnold, MLP baseline, Node Classification
 
 ## TL;DR
-This paper proposes Fixed Aggregation Features (FAF): compressing multi-hop neighborhoods into tabular features using **non-trainable** aggregation operators (such as mean, sum, max, min, and std) and feeding them into an MLP. In 12 out of 14 node classification benchmarks, FAF matches or surpasses fine-tuned GCN, GAT, GraphSAGE, and even Graph Transformers, thereby systematically questioning the necessity of trainable neighborhood aggregation in GNNs.
+The paper proposes Fixed Aggregation Features (FAF): multi-hop neighborhoods are compressed into tabular features using **non-trainable** aggregation operators like mean/sum/max/min/std and fed into an MLP. On 12 out of 14 node classification benchmarks, it matches or outperforms fine-tuned GCN/GAT/GraphSAGE and even Graph Transformers, systematically questioning the necessity of trainable neighborhood aggregation in GNNs.
 
 ## Background & Motivation
 
-**Background**: Node classification is predominantly occupied by message-passing GNNs. From GCN/GAT/GraphSAGE to Graph Transformers and heterophily-specific models, the mainstream narrative posits that "each layer must learn neighborhood aggregation and a linear transformation." The resulting high complexity is tacitly accepted as a necessary cost for expressive power.
+**Background**: Node classification is dominated by message-passing GNNs. From GCN/GAT/GraphSAGE to Graph Transformers and heterophily-specific models, the mainstream narrative posits that "learning neighborhood aggregation + linear transformation at each layer" is essential, with high complexity accepted as the cost for expressiveness.
 
-**Limitations of Prior Work**: (1) Luo et al. 2024 observed that with hyperparameter fine-tuning, classic GNNs nearly match SOTA Graph Transformers, suggesting that the added complexity of newer models does not yield substantial gains; (2) Attention mechanisms suffer from known learnability issues (vanishing gradients, inability to "silence" neighbors); (3) GNNs generally overfit quickly on training sets, with validation optima often appearing before the aggregation is fully learned.
+**Limitations of Prior Work**: (1) Luo et al. (2024) discovered that classical GNNs match SOTA Graph Transformers given rigorous hyperparameter tuning, suggesting the complexity of new models yields diminishing returns. (2) Attention mechanisms suffer from known learnability issues (vanishing gradients, inability to "silence" neighbors). (3) GNNs often overfit training sets quickly; validation optima frequently occur before aggregation is fully learned.
 
-**Key Challenge**: Expressiveness and learnability have long been conflated. Theoretically, GNNs can learn info-preserving aggregations, but does actual optimization achieve this? Or is a **fixed, or even non-info-preserving aggregation** already sufficient?
+**Key Challenge**: Expressiveness and learnability have long been conflated. While GNNs can theoretically learn information-preserving aggregations, does actual optimization achieve this? Or is it that **fixed, or even non-information-preserving aggregations**, are sufficient?
 
-**Goal**: Use a minimalist, baseline-like approach to probe two sub-questions: (a) How well can models perform without learning aggregation? (b) Do existing benchmarks truly "require" learned aggregation?
+**Goal**: To answer two sub-questions using a minimalist baseline: (a) How well can one perform without learning aggregation? (b) Do existing benchmarks truly "require learned aggregation" to be solved?
 
-**Key Insight**: Starting from the Kolmogorov-Arnold representation theorem, the authors prove that there exists a **fixed, univariate, lossless** neighborhood aggregation $\Phi$ such that any multiset function can be written as $f = g \circ \Phi^{-1}$, reducing the task from "learning aggregation + learning classifier" to just learning $g$. However, $\Phi$ is discontinuous and numerically brittle, producing "rough" embeddings difficult for MLPs to process. Thus, they step back to simple reducers (mean/sum/max/min/std)—which, while not invertible, are empirically easier to optimize.
+**Key Insight**: Drawing from the Kolmogorov-Arnold representation theorem, the authors prove the existence of a **fixed, univariate, information-lossless** neighborhood aggregation $\Phi$, such that any multiset function can be written as $f = g \circ \Phi^{-1}$. This reduces "learning aggregation + classifier" to learning only $g$. However, $\Phi$ is discontinuous and numerically fragile; thus, the authors reconsider simple reducers (mean/sum/max/min/std), which, despite being non-invertible, are empirically easier to optimize.
 
-**Core Idea**: Replace the "trainable multi-layer aggregation" of GNNs with a "multi-hop fixed aggregation + concatenation + tabular MLP" in the preprocessing stage. This reduces the graph learning problem to a tabular learning problem, gaining benefits in interpretability, tuneability, and efficiency.
+**Core Idea**: Replace "trainable multi-layer aggregation" in GNNs with "multi-hop fixed aggregation + concatenation + tabular MLP" in a pre-processing stage. This reduces graph learning to tabular learning, gaining benefits in interpretability, tunability, and efficiency.
 
 ## Method
 
 ### Overall Architecture
 
-The FAF pipeline is extremely simple and consists of two steps:
+FAF addresses whether learning neighborhood aggregation at every layer is necessary by moving all aggregation to a non-trainable pre-processing stage. The process consists of two steps: first, multi-hop neighborhood features for each node are compressed into a single tabular row using fixed reducers (mean/sum/max/min/std) offline; then, this feature row is fed into a fine-tuned MLP for classification. There are no message-passing layers, no attention, and no trainable propagation matrices; all graph structure is "baked" into the feature vectors.
 
-1.  **Offline Preprocessing (Parameter-free)**: Given a graph $G=(V,E)$ and node features $x_v$, for each node $v$, each reducer $r \in \mathcal{R} \subset \{\text{mean}, \text{sum}, \text{max}, \text{min}, \text{std}, \ldots\}$, and each hop $k \in \{1, \ldots, K\}$, recursively compute $h_v^{(0,r)} = x_v$ and $h_v^{(k,r)} = r(\{h_u^{(k-1,r)} : u \in N(v)\})$. Finally, concatenate the results from all hops and all reducers with the original features: $z_v = x_v \oplus \bigoplus_{r \in \mathcal{R}} \bigoplus_{k=1}^{K} h_v^{(k,r)}$, resulting in tabular features of dimension $|x_v| \cdot (1 + |\mathcal{R}| \cdot K)$.
-
-2.  **Online Training (MLP only)**: Treat $z_v$ as a standard tabular row and feed it into a **fine-tuned MLP** for node classification. There are **no learnable aggregation parameters** in the entire process; all "graph structure information" is baked into the feature vectors during preprocessing.
-
-The input consists of the graph and node features, and the output is the node category; there are no message-passing layers, no attention, and no trainable propagation matrices.
+```mermaid
+graph TD
+    A["Input: Node Features x_v + Graph Structure"] --> AGG
+    subgraph AGG["Multi-hop × Multi-reducer Concatenation (Non-trainable)"]
+        direction TB
+        B["Recursive Multi-hop h_v^(k,r)<br/>k = 1..K hops"] --> C["Parallel Fixed Reducers<br/>mean / sum / max / min / std"]
+        C --> D["Concatenation ⊕ all hops + all reducers + raw features<br/>→ Tabular Features z_v"]
+    end
+    AGG --> E["Tabularization: z_v as a tabular sample<br/>Enables SHAP / Feature Selection"]
+    E --> F["Downstream MLP Classifier (Trainable)"]
+    F --> G["Node Labels"]
+    KA["Fixed KA Aggregation Φ: Theoretical Bound<br/>Strong Expressiveness but fragile"] -.Theoretical Comparison.-> AGG
+```
 
 ### Key Designs
 
-1.  **Multi-hop × Multi-reducer Concatenation (Instead of Replacement)**:
-    - **Function**: **Concatenates all** reducer outputs from hops $0, 1, \ldots, K$ for the MLP, allowing the classifier to select the combination of hops and operators.
-    - **Mechanism**: The authors prove (Thm 4.1) that when node features are orthogonal, 1-hop sum aggregation is **injective** and can losslessly represent any multiset function; mean is equivalent to sum when node degrees are known. However, after $k \geq 2$, orthogonality no longer holds, and a single reducer inevitably loses information. Different reducers capture different aspects of the distribution (sum counts, mean weights by degree, max/min focus on tails). Concatenation allows the MLP to act as a "soft feature selection" mechanism. Ablations (Tab 10/11) show that using only the last hop or a single linear layer significantly degrades performance, proving that concatenation + MLP are both essential.
-    - **Design Motivation**: Directly addresses the "info loss in non-injective aggregation" problem—since a single reducer is not invertible, multiple complementary reducers are used to achieve "approximate injectivity" in the tabular space.
+**1. Multi-hop × Multi-reducer Concatenation: Approximating Injectivity in Tabular Space**
 
-2.  **Theoretical Upper Bound via Kolmogorov-Arnold Construction**:
-    - **Function**: Provides a **theoretically lossless** fixed aggregation $\Phi(x_1, \ldots, x_d) = 3 \sum_{p=1}^{d} 3^{-p} \phi(x_p)$ (based on ternary expansion of the Cantor set, following Schmidt-Hieber 2021) to define the upper bound of the FAF framework's expressive power.
-    - **Mechanism**: $\Phi$ is an injection $[0,1]^d \to \mathbb{R}$, shifting the entire burden of "learning aggregation" to a learnable univariate $g$; any continuous $f$ can be written as $g \circ \Phi^{-1}$ and inherits the approximation rate of $f$. However, $\Phi$ is discontinuous and maps close inputs to distant values, making it hard for downstream MLPs to learn. On Roman-Empire, the KA version of FAF achieved a top score of $80.33$, but KA proved difficult to train on other datasets.
-    - **Design Motivation**: Decouples "expressive power" from "actual learnability"—theoretical guarantees show FAF is not inferior to GNNs, while empirical results show simple reducers win because they are "easier to optimize" rather than "more expressive."
+The core challenge for FAF is the inherent information loss in single fixed aggregators. The authors provide theoretical support (Thm 4.1): when node features are orthogonal, 1-hop sum aggregation is **injective**, perfectly representing any multiset function. However, injectivity fails for $k \geq 2$. Different reducers capture different distribution facets (sum counts, mean weights by degree, max/min focus on tails). By using multiple complementary operators, FAF "approximates injectivity" in tabular space.
 
-3.  **Triple Dividends from the Tabular Perspective**:
-    - **Function**: Converting graph problems into tabular problems allows for the **direct application of the entire tabular learning toolbox**, including SHAP interpretability, feature importance, feature selection, handling class imbalance, and noise robustness.
-    - **Mechanism**: Running SHAP on Minesweeper revealed the most important signal to be "hop-1 mean of feature 1" (i.e., the proportion of neighbors with a local bomb count of 0), perfectly matching the game's actual logic; similar interpretable attributions were found for Pubmed/Amazon-Ratings. Additionally, extra aggregations after graph rewiring (e.g., edge deletion based on cosine similarity) can be concatenated at the tabular level as comparative diagnostics.
-    - **Design Motivation**: The end-to-end structure of GNNs makes it nearly impossible to attribute what each layer has learned. FAF decouples "features," "hops," and "reducer selection," allowing the graph dataset itself to be scrutinized independently—identifying which hops provide signals, which reducers are complementary, and which are redundant.
+For each node $v$, reducer $r \in \mathcal{R}$, and hop $k \in \{1,\ldots,K\}$, the features are computed as $h_v^{(0,r)} = x_v$, $h_v^{(k,r)} = r(\{h_u^{(k-1,r)} : u \in N(v)\})$, then concatenated:
+
+$$z_v = x_v \oplus \bigoplus_{r \in \mathcal{R}} \bigoplus_{k=1}^{K} h_v^{(k,r)}$$
+
+This results in a tabular vector of dimension $|x_v| \cdot (1 + |\mathcal{R}| \cdot K)$. Concatenation is critical: instead of selecting a reducer manually, the MLP acts as a "soft feature selector." Ablations (Tab 10/11) show that using only the last hop or replacing the MLP with a linear layer significantly degrades performance.
+
+**2. Kolmogorov-Arnold Construction: Decoupling Expressiveness from Learnability**
+
+To define the upper bound of the FAF framework, the authors introduce a theoretically **lossless** fixed aggregation $\Phi(x_1,\ldots,x_d) = 3\sum_{p=1}^{d} 3^{-p}\phi(x_p)$ (based on the ternary expansion of Cantor sets). As $\Phi$ is an injective mapping from $[0,1]^d \to \mathbb{R}$, any continuous $f$ can be represented as $g \circ \Phi^{-1}$, inheriting the approximation rates of $f$.
+
+However, the discontinuity of $\Phi$ produces "rough" embeddings that are difficult for MLPs to learn. This confirms the authors' point: simple reducers succeed in practice due to **learnability (optimization ease)** rather than superior expressiveness. Evidence shows that on the Roman-Empire dataset, where simple reducers fail, KA aggregation achieves a high score of $80.33$, indicating the bottleneck was information loss, not the lack of trainable aggregation.
+
+**3. Total Tabularization: Accessing the Tabular Toolbox**
+
+By converting graph problems into tabular ones, feature/hop/reducer selection is decoupled. Standard tabular tools—SHAP, feature importance, and noise-robust methods—can be directly applied. This transparency is rarely possible in G-NNs. Using SHAP on the Minesweeper dataset, the authors found the most critical signal was "hop-1 mean of feature 1" (ratio of neighbors with zero bomb counts), perfectly matching the game mechanics.
 
 ### Loss & Training
-The downstream MLP uses standard CrossEntropy + dropout + LayerNorm. The hyperparameter grid follows Luo et al. 2024 to ensure direct comparability with Graph Transformers. Notably, FAF prefers **larger learning rates** (leading to faster convergence and implicit sparse regularization), while dropout levels are comparable to GNNs—suggesting that dropout gains stem from the dataset itself rather than graph convolution characteristics.
+
+The downstream MLP uses standard Cross-Entropy + Dropout + LayerNorm. Hyperparameters follow the grid from Luo et al. (2024) for direct comparison with Graph Transformers. FAF prefers a **higher learning rate** (faster convergence and implicit sparse regularization), while dropout gains are found to stem from dataset characteristics rather than graph convolution properties.
 
 ## Key Experimental Results
 
 ### Main Results
 
-On 14 standard node classification benchmarks, FAF's best variant vs. classic GNNs (Selected from Table 1):
+Comparison of FAF against classical GNNs across 14 benchmarks (Selected from Table 1):
 
 | Dataset | GCN | GAT | SAGE | FAF$_\text{bestval}$ | Conclusion |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Amazon-Computer | 93.58 | 93.91 | 93.31 | **94.01** | FAF slightly leads |
-| Amazon-Photo | 95.77 | 96.45 | 96.17 | **96.54** | FAF slightly leads |
-| Amazon-Ratings | 53.86 | 55.51 | 55.26 | 55.09 | Equal |
-| Pubmed | 80.00 | 79.80 | 77.42 | **80.96** | FAF slightly leads |
-| Questions | 78.44 | 77.72 | 76.75 | **78.69** | FAF slightly leads |
-| WikiCS | 80.06 | 81.01 | 80.57 | 80.25 | Equal |
-| Coauthor-CS | 95.73 | 96.14 | 96.21 | 95.37 | Slightly lower (~1%) |
-| Cora | 84.38 | 83.02 | 83.18 | 82.84 | Slightly lower (~1.5%) |
-| **Minesweeper** | 97.48 | 97.00 | 97.72 | **90.00** | **Trailing significantly** |
-| **Roman-Empire** | 91.05 | 90.38 | 90.41 | **78.11** | **Trailing significantly** |
+|--------|------|------|------|------|------|
+| Amazon-Computer | 93.58 | 93.91 | 93.31 | **94.01** | FAF wins slightly |
+| Amazon-Photo | 95.77 | 96.45 | 96.17 | **96.54** | FAF wins slightly |
+| Amazon-Ratings | 53.86 | 55.51 | 55.26 | 55.09 | Comparable |
+| Pubmed | 80.00 | 79.80 | 77.42 | **80.96** | FAF wins slightly |
+| Questions | 78.44 | 77.72 | 76.75 | **78.69** | FAF wins slightly |
+| WikiCS | 80.06 | 81.01 | 80.57 | 80.25 | Comparable |
+| Coauthor-CS | 95.73 | 96.14 | 96.21 | 95.37 | 1% Lower |
+| Cora | 84.38 | 83.02 | 83.18 | 82.84 | 1.5% Lower |
+| **Minesweeper** | 97.48 | 97.00 | 97.72 | **90.00** | **Significant Gap** |
+| **Roman-Empire** | 91.05 | 90.38 | 90.41 | **78.11** | **Significant Gap** |
 
-Overall performance: Surpassed GNNs on 5 datasets, matched on 5 (gap $\leq 1\%$), and trailed on 4, with Minesweeper/Roman-Empire showing the largest gaps.
+Overall: FAF outperforms GNNs on 5 datasets, matches on 5 (gap $\leq 1\%$), and lags on 4.
 
 ### Ablation Study
 
-| Configuration | Key Phenomenon | Explanation |
-| :--- | :--- | :--- |
-| FAF4 (mean+sum+max+min) | Best across most datasets | Default configuration |
-| Single reducer (Tab 7) | mean wins most often | Citeseer prefers sum; Amazon-Ratings prefers max |
-| Last hop only (Tab 11) | Significant drop | Confirms necessity of concatenating all hops |
-| Linear classifier (Tab 10) | Significantly lower than MLP | Confirms MLP non-linearity is critical |
-| KA Aggregation (Tab 12) | Hits peak 80.33 on Roman-Empire | Confirms trailing datasets suffer from info loss, not "must learn aggregation" |
-| Increased hops (Tab 8) | Peaks at $k=2$ for most | Signals are concentrated in first two hops |
+| Configuration | Key Observation | Description |
+|------|---------|------|
+| FAF4 (mean+sum+max+min) | Best on most datasets | Default configuration |
+| Single Reducer (Tab 7) | Mean usually wins | Citeseer favors sum; Amazon-Ratings favors max |
+| Last-hop only (Tab 11) | Significant drop | Confirms necessity of all-hop concatenation |
+| Linear Classifier (Tab 10) | Much lower than MLP | Confirms MLP non-linearity is crucial |
+| KA Aggregation (Tab 12) | Hits 80.33 on Roman-Empire | Proves gap is info loss, not fixed aggregation |
 
 ### Key Findings
-- **The best FAF versions generally require only 2-4 hops**, whereas GNNs on Minesweeper/Roman-Empire require 10-15 layers. These specific datasets rely on the linear residual connections of GNNs (Luo et al. 2024); the gap between FAF and GNN matches the gap caused by adding residuals.
-- **Mean alone frequently enters the top tier**, suggesting that neighborhood distribution information constitutes the bulk of the task signal, and degree information (implicit in the ratio of mean to sum) is sufficient to distinguish neighbor contributions.
-- **Common GNN phenomena like over-smoothing, deep degradation, and dropout sensitivity** also appear in this purely tabular FAF setting—implying these "ailments" are not necessarily faults of message-passing itself but likely stem from dataset characteristics.
-- KA aggregation outperformed all simple reducers on Roman-Empire, proving the gap there is due to reducer info loss rather than a "requirement for trainable aggregation."
+
+- **Best FAF typically uses only 2-4 hops**, whereas Minesweeper/Roman-Empire require 10-15 layers for GNNs. The gap matches the impact of residual connections reported in Luo et al. (2024).
+- **Mean alone is often highly competitive**, suggesting that neighborhood distribution is the primary signal, and degree information (ratio of sum to mean) is sufficient.
+- **Over-smoothing and deep degradation** also appear in the purely tabular FAF setting, indicating these issues may stem from dataset traits rather than message-passing per se.
+- KA aggregation's success on Roman-Empire proves that failures of simple reducers are due to information loss, not the "fixity" of the aggregation.
 
 ## Highlights & Insights
 
-- **Strong Counter-example of "SOTA without Trainable Aggregation"**: Challenges the implicit belief that "GNNs must learn aggregation" via a blunt baseline. The method is too simple to be considered a product of overfitting to benchmarks, making it highly persuasive.
-- **Synthesized Theoretical and Experimental Evidence**: The Kolmogorov-Arnold construction shows that "theoretically FAF is enough," while simple reducers beating KA aggregation show that "actual learnability is more important than expressiveness."
-- **Interpretability as a Free Lunch**: Using SHAP to see features used in Minesweeper decisions provides a granularity of attribution almost impossible in GNNs, offering a reusable tool to diagnose whether graph benchmarks truly contain structural signals.
-- **Interrogating Domain-wide Benchmarking**: The authors explicitly call for future work to use "fine-tuned FAF" as a standard baseline. If a new model claiming to utilize complex graph structures cannot beat FAF, then "what it is winning is not the graph structure." This paradigm pressure is the paper's most enduring contribution.
+- **Strong Counter-example**: Challenges the belief that GNNs "need" to learn aggregation using a baseline so simple it cannot be attributed to over-engineering.
+- **Theory-Experiment Synergy**: The KA construction theoretically validates FAF, while the superiority of simple reducers highlights that learnability is more critical than raw expressiveness in practice.
+- **Interpretability as a Free Lunch**: SHAP allows for granular attribution (e.g., identifying specific hops/features), providing a reusable tool for diagnosing whether benchmarks contain actual structural signals.
+- **Critique of Benchmarking**: The authors call for FAF to be a standard baseline. If a complex graph model cannot beat FAF, it likely isn't leveraging complex graph structures effectively.
 
 ## Limitations & Future Work
 
-- The authors acknowledge that FAF lags on Minesweeper/Roman-Empire due to long-range dependencies and reducer info loss; these are among the few scenarios where GNNs are truly "irreplaceable."
-- **Limitations**: When the number of reducers, hops, and original feature dimensions are all large, the concatenated input dimension explodes, increasing the MLP's first-layer parameters and training costs; feature selection is required. A systematic dimensionality reduction scheme was not provided.
-- Experiments focused on node classification, without touching link prediction, graph classification, or dynamic graphs; FAF's universality remains unverified for these tasks.
-- **Future Directions**: (a) Design aggregations that are both injective and "smooth" (intermediate between mean and $\Phi$); (b) Hybridize FAF with partially learnable aggregations, letting the model decide which hops/reducers to learn; (c) Apply this tabular diagnostic method to design new benchmarks that truly "require learned aggregation."
+- FAF fails on Minesweeper/Roman-Empire due to long-range dependencies and reducer information loss; these remain scenarios where GNNs are indispensable.
+- **Dimensionality**: Concatenating many hops and reducers leads to feature explosion, increasing MLP parameter counts and training costs.
+- **Scope**: Experiments are limited to node classification. Generalization to link prediction or graph classification is unverified.
+- **Future Directions**: Designing "smooth" injective aggregators; hybrid FAF/learned models; and creating new benchmarks that truly require learned aggregation logic.
 
 ## Related Work & Insights
 
-- **vs. SGC (Wu et al. 2019)**: SGC also removes non-linearity and fixes propagation but uses only a linear readout and linear diffusion. FAF introduces **non-linear** reducers (max/min/std) and uses an MLP, providing broader coverage and stronger expression.
-- **vs. SIGN/GAMLP/HOGA**: These also precompute multi-hop features but still learn complex attention/gating for hop weights, targeting "scalability optimization." FAF treats the MLP as a soft feature selector and learns no propagation parameters, serving as a **baseline and diagnostic tool**.
-- **vs. G2T-FM / TabPFN-GN / Hayler et al. 2025**: Parallel "Tabularization + Tabular Foundation Model" routes aimed at adapting Transformers to graphs. FAF's goal is the opposite—using minimalist tabular learning to detect if graph tasks actually need to learn aggregation.
-- **vs. PNA (Corso et al. 2020)**: PNA also emphasizes multi-reducer combinations and degree scalers to enhance expressiveness but remains an end-to-end trainable GNN. FAF pushes the "multi-reducer" idea to the extreme—completely freezing the aggregation layers.
+- **vs SGC (Wu et al. 2019)**: SGC removes non-linearity and uses only linear readout/diffusion. FAF uses **non-linear** reducers (max/min/std) and an MLP, providing significantly higher expressiveness.
+- **vs SIGN/GAMLP**: These also pre-compute features but employ complex attention/gating. FAF learns nothing on the propagation side, serving as a diagnostic baseline.
+- **vs PNA (Corso et al. 2020)**: PNA uses multiple reducers but in an end-to-end GNN. FAF takes this to the limit by freezing the aggregation entirely.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The method itself is minimalist, but the perspective (KA explanation + tabular diagnosis) and systematic counter-example value are high.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 14 standard benchmarks + multiple ablations + SHAP interpretability + KA comparison, covering all bases.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation, theory and experiments support each other, and limitations are frankly admitted.
-- Value: ⭐⭐⭐⭐⭐ Will exert long-term pressure on the GNN evaluation paradigm and will be widely cited as a standard baseline and benchmark design reference.
+- Novelty: ⭐⭐⭐⭐ Simple method, but the KA-based perspective and diagnostic value are high.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 14 benchmarks and multiple ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical arguments and clear empirical-theoretical links.
+- Value: ⭐⭐⭐⭐⭐ Will likely act as a standard baseline and a catalyst for better benchmark design.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Logical Characterizations of GNNs with Mean Aggregation](../../AAAI2026/graph_learning/logical_characterizations_of_gnns_with_mean_aggregation.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](../../AAAI2026/graph_learning/enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ICML 2026\] Identifying and Correcting Label Noise for Robust GNNs via Influence Contradiction](identifying_and_correcting_label_noise_for_robust_gnns_via_influence_contradicti.md)
+- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ICLR 2026\] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning](../../ICLR2026/graph_learning/graph_homophily_booster_reimagining_the_role_of_discrete_features_in_heterophili.md)
 
 </div>

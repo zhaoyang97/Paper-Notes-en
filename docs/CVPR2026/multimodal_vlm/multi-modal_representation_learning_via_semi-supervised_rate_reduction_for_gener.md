@@ -2,72 +2,78 @@
 title: >-
   [Paper Note] Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 description: >-
-  [CVPR2026][Multimodal VLM][Generalized Category Discovery] This paper proposes SSR²-GCD, a framework that learns structured representations with uniformly compressed intra-modal distributions via a Semi-Supervised Rate R…
+  [CVPR 2026][Multimodal VLM][CLIP] Ours proposes the SSR²-GCD framework, which learns structured representations with balanced intra-modal compression via a Semi-Supervised Rate Reduction loss. Combined with a Retrieval-based Text Aggregation strategy to enhance cross-modal knowledge transfer, it outperforms existing multi-modal GCD methods across 8 dat
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Generalized Category Discovery"
-  - "Multi-Modal Representation Learning"
-  - "Semi-Supervised Rate Reduction"
-  - "Intra-Modal Alignment"
-  - "CLIP"
+  - CVPR 2026
+  - Multimodal VLM
+  - CLIP
 date: 2026-05-08
-content_hash: f81ceb990db05a2c
+content_hash: 71b453bd39d6f6b9
 ---
-
 # Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.19910](https://arxiv.org/abs/2602.19910)  
 **Code**: To be confirmed  
-**Area**: Multimodal VLM
-**Keywords**: Generalized Category Discovery, Multi-Modal Representation Learning, Semi-Supervised Rate Reduction, Intra-Modal Alignment, CLIP
+**Area**: Multi-modal VLM  
+**Keywords**: Generalized Category Discovery, Multi-modal Representation Learning, Semi-Supervised Rate Reduction, Intra-modal Alignment, CLIP
 
 ## TL;DR
 
-This paper proposes SSR²-GCD, a framework that learns structured representations with uniformly compressed intra-modal distributions via a Semi-Supervised Rate Reduction (SSR²) loss, and introduces a Retrieval-based Text Aggregation (RTA) strategy to enhance cross-modal knowledge transfer. The method surpasses existing multi-modal GCD approaches on 8 benchmarks.
+Ours proposes the SSR²-GCD framework, which learns structured representations with balanced intra-modal compression via a Semi-Supervised Rate Reduction loss. Combined with a Retrieval-based Text Aggregation strategy to enhance cross-modal knowledge transfer, it outperforms existing multi-modal GCD methods across 8 datasets.
 
 ## Background & Motivation
 
-1. **Practical demand for Generalized Category Discovery (GCD)**: Real-world data contains both known and novel categories. GCD leverages knowledge from known categories to discover novel ones, serving as a natural extension of open-set recognition.
-2. **Rise of multi-modal methods**: Recent methods such as CLIP-GCD, TextGCD, and GET incorporate textual information into visual GCD tasks, improving performance through cross-modal alignment.
-3. **Limitations of inter-modal alignment**: Existing multi-modal GCD methods focus primarily on inter-modal alignment while neglecting structural issues in the intra-modal representation distribution.
-4. **Imbalanced compression problem**: The conventional contrastive loss $\mathcal{L}_{\text{con}}$ comprises an unsupervised term (pulling all augmented pairs together) and a supervised term (pulling together only labeled known-category samples), causing over-compression of known categories and under-compression of novel ones, resulting in blurred cluster boundaries.
-5. **CLIP's limitations with long text**: CLIP encodes prompts exceeding 20 tokens poorly, making the conventional concatenation-based prompt construction suboptimal.
-6. **Potential harm of inter-modal alignment**: Naively adding inter-modal alignment loss on top of intra-modal losses may in fact degrade intra-modal representation learning.
+1.  **Practical Demands of Generalized Category Discovery (GCD)**: Real-world data contains both known and unknown categories. GCD aims to leverage knowledge from known categories to discover unknown ones, serving as a natural extension of open-set recognition.
+2.  **Rise of Multi-modal Methods**: Recently, methods like CLIP-GCD, TextGCD, and GET have introduced textual information into visual GCD tasks, improving performance through cross-modal alignment.
+3.  **Limitations of Inter-modal Alignment**: Existing multi-modal GCD methods focus primarily on inter-modal alignment while neglecting the structural issues within intra-modal representation distributions.
+4.  **Imbalanced Compression Issue**: Traditional contrastive learning loss $\mathcal{L}_{\text{con}}$, composed of an unsupervised term (pulling all augmented pairs) and a supervised term (pulling only labeled data of known categories), leads to over-compression of known categories and under-compression of unknown categories, resulting in blurred cluster boundaries.
+5.  **CLIP Long Text Limitations**: CLIP performs poorly when encoding long text prompts exceeding 20 tokens; traditional concatenated prompt construction is sub-optimal.
+6.  **Inter-modal Alignment May Be Harmful**: Simply stacking inter-modal alignment loss with intra-modal loss may inadvertently disrupt the learning of intra-modal representations.
 
 ## Method
 
-### Overall Architecture: SSR²-GCD
+### Overall Architecture
+SSR²-GCD addresses the "over-compression of seen classes and under-compression of unseen classes" representation imbalance in multi-modal GCD. The pipeline starts with Retrieval-based Text Aggregation (RTA) to generate a robust textual representation for each image. Image and text representations are then processed via a Semi-Supervised Rate Reduction (SSR²) loss for representation learning. Finally, a dual-branch classifier learns pseudo-labels from both modalities with mutual supervision.
 
-The framework consists of three modules: (a) Retrieval-based Text Aggregation (RTA) for generating text representations; (b) the Semi-Supervised Rate Reduction (SSR²) module for representation learning; and (c) a dual-branch classifier for learning pseudo-labels from each modality.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Query Image"]
+    IMG --> IE["Image Encoder<br/>→ Image Repr."]
+    subgraph RTA["Retrieval-based Text Aggregation (RTA)"]
+        direction TB
+        R1["Retrieve top-c label + attribute candidates"] --> R2["Encode candidates via CLIP text encoder"]
+        R2 --> R3["Weighted aggregation by similarity<br/>→ Text Repr."]
+    end
+    IMG --> RTA
+    IE --> SSR["Semi-Supervised Rate Reduction (SSR²)<br/>Global Expansion + Intra-class Uniform Compression"]
+    RTA --> SSR
+    SSR --> DUAL["Dual-branch Clustering<br/>co-teaching mutual pseudo-label supervision"]
+    DUAL -->|"Sum outputs and take argmax"| OUT["Category Prediction"]
+```
 
-### Retrieval-based Text Aggregation (RTA)
+### Key Designs
 
-- Following TextGCD, the method maintains a label dictionary and an attribute dictionary, retrieving the top-$c$ most similar label and attribute candidates for each query image.
-- **Key improvement**: Rather than concatenating candidates into a long string for CLIP, each candidate is encoded independently and then aggregated with learned weights:
+**1. Retrieval-based Text Aggregation (RTA): Bypassing CLIP long-text bottlenecks via weighted aggregation in embedding space**
+
+CLIP encodes long prompts (over 20 tokens) poorly, making concatenated prompts sub-optimal. RTA adopts the label and attribute dictionaries from TextGCD to retrieve the $c$ most similar label and attribute candidates for each query image. Instead of concatenating them into a single string, they are encoded separately and then aggregated via weighting:
 
 $$\boldsymbol{z}^{\text{T}} = \sum_{i=1}^{c} \sigma_i \mathcal{F}^{\text{T}}(\mathcal{T}(a_i)) + \sum_{i=1}^{c} \sigma_i \mathcal{F}^{\text{T}}(\mathcal{T}(b_i))$$
 
-- Weight assignment: the most similar candidate receives weight $1-\alpha$; the remaining candidates each receive $\frac{\alpha}{c-1}$ ($\alpha=0.5, c=4$), effectively integrating richer candidate information.
+Weights are assigned as $1-\alpha$ for the most similar candidate and $\frac{\alpha}{c-1}$ for others ($\alpha=0.5, c=4$). This avoids long-text degradation while integrating more candidate information.
 
-### Semi-Supervised Rate Reduction Loss (SSR²)
+**2. Semi-Supervised Rate Reduction (SSR²): Enforcing balanced compression via information-theoretic principles**
 
-The core loss is grounded in the Maximal Coding Rate Reduction principle:
+Traditional contrastive loss $\mathcal{L}_{\text{con}}$ over-compresses seen classes and under-compresses unseen classes. SSR² re-designs the loss based on the Maximal Coding Rate Reduction principle:
 
 $$\mathcal{L}_{\text{SSR}^2} = -R(\mathbf{Z}) + R_c^{\text{s}}(\mathbf{Z}_{\text{s}}, \mathbf{Y}^*) + R_c^{\text{u}}(\mathbf{Z}_{\text{u}}, \mathbf{Y})$$
 
-- **$R(\mathbf{Z})$**: Global coding rate; maximized to spread all representations across the full feature space.
-- **$R_c^{\text{s}}$**: Class-conditional coding rate for labeled samples; compresses each known class using ground-truth labels $\mathbf{Y}^*$.
-- **$R_c^{\text{u}}$**: Class-conditional coding rate for unlabeled samples; compresses novel categories using classifier-predicted pseudo-labels $\mathbf{Y}$.
-- Applied separately to the image and text encoders: $\mathcal{L}_{\text{SSR}^2}^{\text{I}}$ and $\mathcal{L}_{\text{SSR}^2}^{\text{T}}$.
-- **Effect**: Global expansion combined with uniform within-class compression yields balanced low-dimensional subspace representations for both known and novel categories.
+Where $R(\mathbf{Z})$ is the overall coding rate, maximized to expand all representations in the global space; $R_c^{\text{s}}$ compresses seen classes using ground-truth labels $\mathbf{Y}^*$; $R_c^{\text{u}}$ compresses unseen classes using pseudo-labels $\mathbf{Y}$ predicted by the classifier. Applied to both encoders ($\mathcal{L}_{\text{SSR}^2}^{\text{I}}$ and $\mathcal{L}_{\text{SSR}^2}^{\text{T}}$), this "global expansion + intra-class uniform compression" ensures balanced low-dimensional subspace representations for both seen and unseen classes.
 
-### Dual-Branch Clustering and Training Strategy
+**3. Dual-branch Clustering: Mutual pseudo-label supervision via co-teaching**
 
-- **Warm-up phase**: $\mathcal{L}_{\text{warm}} = \mathcal{L}_{\text{SSR}^2}^{\text{I}} + \mathcal{L}_{\text{SSR}^2}^{\text{T}} + \mathcal{L}_{\text{cls}}^{\text{I}} + \mathcal{L}_{\text{cls}}^{\text{T}}$
-- **Alignment phase**: A co-teaching loss $\mathcal{L}_{\text{co-teach}}$ is introduced, enabling mutual supervision using high-confidence samples.
-- **Final prediction**: $\arg\max(\boldsymbol{y}_i^{\text{I}} + \boldsymbol{y}_i^{\text{T}})$
+Pseudo-labels from different modalities vary in quality. Training occurs in two stages: a warm-up phase using $\mathcal{L}_{\text{warm}} = \mathcal{L}_{\text{SSR}^2}^{\text{I}} + \mathcal{L}_{\text{SSR}^2}^{\text{T}} + \mathcal{L}_{\text{cls}}^{\text{I}} + \mathcal{L}_{\text{cls}}^{\text{T}}$ to initialize representations and classifiers, followed by an alignment phase adding a co-teaching loss $\mathcal{L}_{\text{co-teach}}$ for mutual supervision of high-confidence samples. Final predictions are obtained by $\arg\max(\boldsymbol{y}_i^{\text{I}} + \boldsymbol{y}_i^{\text{T}})$.
 
 ## Key Experimental Results
 
@@ -84,18 +90,18 @@ $$\mathcal{L}_{\text{SSR}^2} = -R(\mathbf{Z}) + R_c^{\text{s}}(\mathbf{Z}_{\text
 | Oxford Pets | 93.7 | 91.1 | **95.7** | +2.0 |
 | Flowers102 | 87.2 | 85.5 | **93.5** | +6.3 |
 
-Improvements are especially pronounced on Stanford Cars and Flowers102 (+3.1% and +6.3%, respectively).
+Gains are particularly significant on Stanford Cars (+3.1%) and Flowers102 (+6.3%).
 
-### Comparison of Representation Learning Objectives (All ACC %)
+### Comparison of Representation Learning Methods (All ACC %)
 
-| Loss Configuration | CIFAR-10 | Stanford Cars | Flowers102 |
+| Loss Config | CIFAR-10 | Stanford Cars | Flowers102 |
 |---|---|---|---|
-| $\mathcal{L}_{\text{CLIP}}$ (inter-modal only) | 98.3 | 87.0 | 89.7 |
-| $\mathcal{L}_{\text{con}}$ (intra-modal only) | 98.4 | 87.9 | 91.8 |
-| $\mathcal{L}_{\text{SSR}^2}$ (intra-modal only) | **98.5** | **89.2** | **93.5** |
+| $\mathcal{L}_{\text{CLIP}}$ (Inter-modal only) | 98.3 | 87.0 | 89.7 |
+| $\mathcal{L}_{\text{con}}$ (Intra-modal only) | 98.4 | 87.9 | 91.8 |
+| $\mathcal{L}_{\text{SSR}^2}$ (Intra-modal only) | **98.5** | **89.2** | **93.5** |
 | $\mathcal{L}_{\text{CLIP}} + \mathcal{L}_{\text{SSR}^2}$ | 98.3 | 88.1 | 92.9 |
 
-Key finding: adding inter-modal alignment loss on top of SSR² consistently degrades performance.
+Key Finding: Stacking inter-modal alignment loss actually decreases performance.
 
 ### Ablation Study (Stanford Cars / Flowers102, All ACC %)
 
@@ -107,38 +113,38 @@ Key finding: adding inter-modal alignment loss on top of SSR² consistently degr
 | ✓ | ✗ | ✓ | 85.5 | 89.1 |
 | ✓ | ✓ | ✓ | **89.2** | **93.5** |
 
-Each component contributes independently, and their combination yields optimal performance.
+Each of the three components contributes independently, with their combination yielding the best results.
 
 ## Highlights & Insights
 
-- **Novel theoretical perspective**: This is the first work to apply the Maximal Coding Rate Reduction principle to multi-modal GCD, replacing conventional contrastive learning with an information-theoretic framework that provides balanced compression guarantees.
-- **Counterintuitive yet compelling finding**: Inter-modal alignment can be harmful in multi-modal GCD; intra-modal alignment alone appears sufficient to implicitly achieve cross-modal alignment.
-- **Thorough empirical analysis**: The core claims are validated through multiple lenses, including similarity distribution plots, effective rank curves, $R_e$ consistency metrics, and t-SNE visualizations.
-- **Elegant RTA design**: By performing weighted aggregation in the embedding space rather than concatenating long prompts, the approach circumvents CLIP's long-text limitations while incorporating richer candidate information.
+- **Novel Theoretical Perspective**: First to introduce the Maximal Coding Rate Reduction principle to multi-modal GCD, replacing traditional contrastive learning with an information-theoretic framework to provide balanced compression guarantees.
+- **Counter-intuitive but Convincing Finding**: Inter-modal alignment can be harmful in multi-modal GCD; intra-modal alignment alone can implicitly achieve inter-modal alignment.
+- **In-depth Experimental Analysis**: Validates core arguments through multiple perspectives including similarity distribution maps, effective rank curves, $R_e$ consistency metrics, and t-SNE visualizations.
+- **Clever RTA Design**: Circumvents CLIP long-text constraints by performing weighted aggregation in the embedding space, allowing the integration of more candidate information.
 
 ## Limitations & Future Work
 
-- Computational and memory costs scale linearly with the number of candidates $c$, as each requires a separate pass through the CLIP text encoder.
-- Image and text modalities are treated symmetrically, with no adaptive mechanism for modality importance weighting.
-- The number of categories $K$ must be known or estimated in advance; robustness to incorrect estimates of the number of novel categories is not discussed.
-- Experiments are conducted solely on the CLIP-B/16 backbone; performance on larger models (ViT-L/H) remains unexplored.
-- The unlabeled term of the SSR² loss relies on pseudo-label quality, and noisy pseudo-labels in early training may impair convergence.
+- Computational and memory overhead increases linearly as candidate count $c$ grows (requires multiple passes through the CLIP text encoder).
+- Image and text modalities are treated equally, lacking an adaptive modality importance weighting mechanism.
+- Category count $K$ must be known or estimated; robustness to incorrect estimation of the number of unknown categories is not discussed.
+- Validated only on CLIP-B/16 backbone; performance of larger models (ViT-L/H) remains unexplored.
+- The unlabeled portion of semi-supervised rate reduction depends on pseudo-label quality; noise in early pseudo-labels might affect convergence.
 
 ## Related Work & Insights
 
-| Method | Text Generation | Representation Learning | Clustering Strategy | Characteristics |
+| Method | Text Generation | Representation Learning | Clustering Strategy | Features |
 |---|---|---|---|---|
-| TextGCD | Concatenate top-3 labels + top-2 attributes | $\mathcal{L}_{\text{CLIP}}$ (inter-modal) | Dual-branch + co-teaching | First multi-modal GCD; neglects intra-modal alignment |
-| GET | Text inversion network generates prompts | $\mathcal{L}_{\text{CLIP}}+\mathcal{L}_{\text{con}}$ | Single-branch MLP | Uses both inter- and intra-modal losses but combines them naively |
-| CLIP-GCD | Knowledge base retrieves similar texts | $\mathcal{L}_{\text{CLIP}}$ | SimGCD clustering | Relies solely on inter-modal alignment |
-| **SSR²-GCD** | RTA: weighted aggregation of multiple candidates | $\mathcal{L}_{\text{SSR}^2}$ (intra-modal only) | Dual-branch + co-teaching | First to address imbalanced compression; eliminates inter-modal alignment |
+| TextGCD | Concat top-3 labels + top-2 attrs | $\mathcal{L}_{\text{CLIP}}$ (Inter) | Dual-branch + co-teaching | First multi-modal GCD, but ignores intra-modal alignment |
+| GET | Prompt via text inversion network | $\mathcal{L}_{\text{CLIP}}+\mathcal{L}_{\text{con}}$ | Single-branch MLP | Uses both inter and intra, but simple stacking |
+| CLIP-GCD | Knowledge base retrieval | $\mathcal{L}_{\text{CLIP}}$ | SimGCD clustering | Only utilizes inter-modal alignment |
+| **SSR²-GCD** | RTA weighted aggregation | $\mathcal{L}_{\text{SSR}^2}$ (Intra only) | Dual-branch + co-teaching | First to solve imbalanced compression without inter-modal alignment |
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introducing coding rate reduction into multi-modal GCD offers a distinctive perspective; the finding that inter-modal alignment may be harmful is thought-provoking.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across 8 datasets, comparison of 6 representation learning configurations, and multi-dimensional analysis (rank, consistency, distribution, visualization).
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured with rigorous mathematical derivations, though notation is occasionally dense.
-- **Value**: ⭐⭐⭐⭐ — Provides a new direction for representation learning in multi-modal GCD, with substantial improvements on fine-grained datasets.
+- Novelty: ⭐⭐⭐⭐ — Unique perspective by introducing rate reduction to multi-modal GCD; discovery of "harmful inter-modal alignment" is insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation on 8 datasets, comparison of 6 representation learning configurations, and multi-dimensional analysis (rank, consistency, distribution, visualization).
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure and rigorous mathematical derivation, though some notation is dense.
+- Value: ⭐⭐⭐⭐ — Provides a new direction for representation learning in multi-modal GCD, with significant improvements on fine-grained datasets.
 
 <!-- RELATED:START -->
 
@@ -150,7 +156,7 @@ Each component contributes independently, and their combination yields optimal p
 - [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
 - [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
 - [\[CVPR 2026\] BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment](brima_bridged_modality_adaptation_for_multi-modal_continual_action_quality_asses.md)
-- [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
+- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
 
 </div>
 

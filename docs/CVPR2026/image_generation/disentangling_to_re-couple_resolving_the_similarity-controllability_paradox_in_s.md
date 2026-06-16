@@ -2,61 +2,82 @@
 title: >-
   [Paper Note] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Subject-Driven T2I] This paper proposes the DisCo framework, which resolves the similarity-controllability paradox in subject-driven image generation by first decoupling textual and visual i…
+  [CVPR 2026][Image Generation][Subject-Driven T2I] The DisCo framework is proposed to resolve the "similarity-controllability" paradox in subject-driven image generation. It first decouples text and visual information by replacing entity words with pronouns to eliminate textual interference on the subject, and then re-couples them using GRPO with a dedicated reward mod
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Subject-Driven T2I"
-  - "Diffusion Transformer"
-  - "GRPO"
-  - "reward model"
-  - "Textual-Visual Decoupling"
+  - CVPR 2026
+  - Image Generation
+  - Subject-Driven T2I
+  - Diffusion Transformer
+  - GRPO
+  - reward model
+  - Textual-Visual Decoupling
 date: 2026-05-08
-content_hash: d611b8d2573233e2
+content_hash: 90e2d3dcacb7b2d5
 ---
-
 # Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.00849](https://arxiv.org/abs/2604.00849)  
-**Code**: Unavailable (planned open-source)  
-**Area**: Image Generation
+**Code**: None (planned open source)  
+**Area**: Image Generation  
 **Keywords**: Subject-Driven T2I, Diffusion Transformer, GRPO, reward model, Textual-Visual Decoupling
 
 ## TL;DR
 
-This paper proposes the DisCo framework, which resolves the similarity-controllability paradox in subject-driven image generation by first decoupling textual and visual information (replacing entity words with pronouns to eliminate textual interference on the subject) and then re-coupling them via GRPO with a dedicated reward model.
+The DisCo framework is proposed to resolve the "similarity-controllability" paradox in subject-driven image generation. It first decouples text and visual information by replacing entity words with pronouns to eliminate textual interference on the subject, and then re-couples them using GRPO with a dedicated reward model.
 
 ## Background & Motivation
 
-The core tension in subject-driven T2I generation lies in the **dual-optimality paradox**: preserving high subject fidelity while accurately following textual editing instructions. Existing methods such as IP-Adapter, OminiControl, and DreamO adopt techniques like encoder injection or unified sequence modeling, yet none fundamentally resolves this conflict.
+The **Key Challenge** in subject-driven T2I generation lies in the "dual-optimal paradox" between maintaining high subject fidelity and accurately executing text editing instructions. Existing methods (e.g., IP-Adapter, OminiControl, DreamO) employ techniques like encoder injection or unified sequences but fail to fundamentally resolve this conflict.
 
-The paper's core insight is that **the root cause lies in the role overload of the text prompt**. Conventional prompts simultaneously describe the subject and the editing instruction (e.g., "a duck toy in the jungle"), where "duck toy" activates the model's prior knowledge and conflicts with the actual details of the reference image. Experiments (Fig. 1) demonstrate that replacing "a duck toy" with "this item" significantly improves subject fidelity—indicating that the problem is not insufficient model capacity, but rather that entity descriptors in the prompt introduce contradictory signals.
+The **Key Insight** of this paper is that the root of the contradiction lies in the "role overload" of the text prompt. Traditional prompts simultaneously describe the subject and the editing instructions (e.g., "a duck toy in the jungle"), where "duck toy" activates the model's prior knowledge, conflicting with the actual details of the reference image. Experiments (Fig.1) demonstrate that when "a duck toy" is replaced with "this item," the subject fidelity of the generated image significantly improves—the issue is not a lack of model capability, but rather the contradictory signals introduced by entity description words in the prompt.
 
 ## Method
 
 ### Overall Architecture
 
-DisCo is a two-stage "disentangle-then-recouple" framework built upon the FLUX DiT model:
-1. **Textual-Visual Decoupling (TVD) Module**: Completely separates subject identity information from textual control instructions.
-2. **GRPO Re-Coupling Stage**: Uses reinforcement learning to naturally reintegrate the decoupled visual subject with the textual context.
+The **Mechanism** of DisCo is "Disentangle then Re-couple," constructed in two stages based on the FLUX DiT. The first stage is Textual-Visual Decoupling (TVD), which thoroughly separates subject identity information from text control instructions to cut off the interference of text priors. The second stage is GRPO Re-Coupling, which uses reinforcement learning to naturally re-integrate the decoupled visual subject and text context, achieving both high fidelity and strong controllability.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Reference image + Original prompt (with entity words)"] --> S1
+    subgraph S1["Stage 1 · Textual-Visual Decoupling (TVD)"]
+        direction TB
+        B["Prompt Simplification<br/>Qwen2.5-VL replaces entity words with pronouns 'this item'"] --> C["Visual Grounding<br/>GroundingDINO anchors pronouns to reference objects"]
+    end
+    S1 --> S2
+    subgraph S2["Stage 2 · GRPO Re-Coupling"]
+        direction TB
+        D["Dedicated Reward Model<br/>Qwen3-VL scores similarity + composition naturalness"] --> E["GRPO Re-Coupling<br/>Sample G=12 images for strategy optimization"]
+    end
+    S2 --> F["Generated Image: High Fidelity + Strong Controllability"]
+```
 
 ### Key Designs
 
-1. **Prompt Simplification Strategy**: Qwen2.5-VL 72B is used to analyze the prompt, identify the "entity words" corresponding to the subject (e.g., "a duck toy"), and replace them with generic pronouns ("this item" / "it"). This forces the model to obtain subject identity from the visual modality, eliminating interference from textual priors.
+**1. Prompt Simplification: Replacing entity words with pronouns to cut off text priors**
 
-2. **Visual Grounding Localization**: After prompt simplification, the model cannot determine which object in the reference image "this item" refers to. GroundingDINO is applied with the original entity words to precisely localize the subject in the reference image, bridging the generic pronoun to specific visual features. Attention map visualizations (Fig. 2) confirm that after decoupling, attention to entity words is suppressed, while attention to the reference subject precisely focuses on the corresponding region in the generated image.
+The root of the conflict is that entity words in the prompt (e.g., "a duck toy") activate model priors that fight with the reference image details. DisCo uses Qwen2.5-VL 72B to analyze prompts, identify entity words corresponding to the subject, and replace them with generic pronouns ("this item" / "it"). This forces the model to retrieve subject identity only from the visual modality, directly removing interference from text priors.
 
-3. **Dedicated Reward Model Training**: Existing rewards (ImageReward, CLIP-T, HPS) evaluate only overall quality or text alignment and cannot capture subject fidelity or compositional coherence. The paper employs a VLM to automatically generate editing instructions and synthesize negative samples (by modifying subject identity features or subject-context interactions), constructing preference pairs to train a reward model based on Qwen3-VL-30B capable of jointly evaluating subject similarity and compositional naturalness.
+**2. Visual Grounding: Re-anchoring pronouns to reference image objects**
 
-4. **GRPO Reinforcement Learning**: For each prompt-image pair, $G=12$ images are sampled; the reward model performs pairwise preference selection, and aggregated log-probabilities serve as rewards. Advantage values $\hat{A}_t^i$ are computed via group-level normalization, and the policy model is optimized using a clipped objective with KL regularization.
+Pronoun replacement introduces a new problem—the model does not know which object "this item" refers to in the reference image. DisCo uses GroundingDINO with the original entity words to precisely locate the subject in the reference image, bridging generic pronouns with specific visual features. Attention map visualizations (Fig.2) confirm that after decoupling, attention on entity words is suppressed, while the subject attention from the reference image accurately falls on the corresponding region of the generated image.
+
+**3. Dedicated Reward Model: Simultaneously scoring subject similarity and composition naturalness**
+
+Off-the-shelf rewards (ImageReward, CLIP-T, HPS) focus on overall quality or text alignment but fail to capture subject fidelity and compositional harmony. The authors use a VLM to automatically generate editing instructions and synthesize negative samples (altering subject ID features or subject-context interactions) to construct preference pairs. This is used to train a dedicated reward model based on Qwen3-VL-30B that evaluates both "resemblance" and "coordination."
+
+**4. GRPO Re-Coupling: Re-fusing decoupled vision and text via preferences**
+
+Pure decoupling can lead to unnatural compositions (e.g., a candle floating in a city background), requiring RL to restore interactions. For each prompt-image pair, $G=12$ images are sampled. The reward model makes preference choices for each pair, aggregating log-probability as the reward. After group-level normalization to calculate the advantage $\hat{A}_t^i$, the policy model is optimized using a clipped objective + KL regularization to re-couple the visual subject and text background into a cohesive whole.
 
 ### Loss & Training
 
-- Base model: FLUX; Dataset: Subjects200K
+- Base Model: FLUX, Dataset: Subjects200K
 - Optimizer: AdamW, learning rate 1e-5, 8×H20 GPUs
-- GRPO settings: sampling timestep=16, 12 images generated per prompt, noise level ε=0.3
-- Reward model: Qwen3-VL-30B, trained on 25k preference pairs
+- GRPO Settings: sampling timestep=16, 12 images per prompt, noise level ε=0.3
+- Reward Model: Qwen3-VL-30B, trained on 25k preference pairs
 
 ## Key Experimental Results
 
@@ -65,7 +86,7 @@ DisCo is a two-stage "disentangle-then-recouple" framework built upon the FLUX D
 Evaluated on DreamBench (30 subjects × 25 prompts = 750 cases):
 
 | Metric | DisCo | FLUX Kontext | DreamO | UNO | Gain |
-|--------|-------|-------------|--------|-----|------|
+|------|-------|-------------|--------|-----|------|
 | CLIP-B-I↑ | **0.928** | 0.910 | 0.899 | 0.899 | +1.8% |
 | CLIP-L-I↑ | **0.937** | 0.911 | 0.901 | 0.907 | +2.6% |
 | DINO-I↑ | **0.903** | 0.839 | 0.813 | 0.827 | +7.6% |
@@ -73,52 +94,52 @@ Evaluated on DreamBench (30 subjects × 25 prompts = 750 cases):
 | CLIP-L-T↑ | **0.273** | 0.268 | 0.267 | 0.255 | +1.9% |
 | ImageReward↑ | **1.339** | 1.276 | 1.186 | 0.854 | +4.9% |
 
-DisCo achieves state-of-the-art performance **simultaneously** on both subject similarity and text controllability, breaking the trade-off that plagued prior methods.
+DisCo reaches SOTA in **both** subject similarity and text controllability, breaking the trade-off dilemma seen in previous methods.
 
 ### Ablation Study
 
 | Configuration | CLIP-I↑ | CLIP-T↑ | IR↑ | Note |
-|---------------|---------|---------|-----|------|
-| w/o TVD | 0.915 | 0.319 | 1.237 | No decoupling; subject fidelity degrades |
-| w/o GRPO | 0.922 | 0.319 | 1.189 | No RL; compositional quality drops substantially |
-| use CLIP (r) | 0.898 | 0.319 | 1.163 | CLIP cannot assess fine-grained quality |
+|------|---------|---------|-----|------|
+| w/o TVD | 0.915 | 0.319 | 1.237 | No decoupling, subject fidelity drops |
+| w/o GRPO | 0.922 | 0.319 | 1.189 | No RL, composition quality drops significantly |
+| use CLIP (r) | 0.898 | 0.319 | 1.163 | CLIP cannot evaluate fine-grained quality |
 | use IR (r) | 0.914 | 0.326 | 1.404 | IR improves quality but harms subject similarity |
-| use pretrained (r) | 0.918 | 0.321 | 1.189 | General VLM fails to calibrate complex preferences |
-| **DisCo (Ours)** | **0.928** | **0.329** | **1.339** | All components synergize optimally |
+| use pretrained (r) | 0.918 | 0.321 | 1.189 | General VLM struggles to calibrate complex preferences |
+| **DisCo (Ours)** | **0.928** | **0.329** | **1.339** | Best synergy of all components |
 
 ### Key Findings
 
-- The TVD module addresses subject fidelity, but strict decoupling can cause unnatural compositions (e.g., a candle floating in an urban background).
-- GRPO is critical for bridging the compositional gap, raising IR from 1.189 to 1.339.
-- The dedicated reward model substantially outperforms CLIP, ImageReward, and general-purpose VLMs as reward signals.
-- User study (100 cases): DisCo achieves win rates of 80% over UNO, 82% over DreamO, and 51% over FLUX Kontext.
+- The TVD module solves subject fidelity issues, but strict decoupling leads to unnatural compositions (e.g., a candle suspended in the air over a city background).
+- GRPO is the key to bridging the composition gap, with IR increasing from 1.189 to 1.339.
+- The dedicated reward model is far superior to CLIP/ImageReward/General VLMs as a reward source.
+- User study (100 cases): DisCo win rates are 80% against UNO, 82% against DreamO, and 51% against FLUX Kontext.
 
 ## Highlights & Insights
 
-1. **Precise problem diagnosis**: The motivating experiment in Fig. 1 intuitively exposes the conflict between textual priors and visual references—an insight that is both concise and profound.
-2. **Disentangle-then-recouple design philosophy**: Eliminating conflicts via information isolation before restoring interaction through RL proves more effective than optimizing directly in an entangled space.
-3. **Synthetic negative samples for reward model training**: Preference pairs are automatically constructed using VLM-generated editing instructions, eliminating manual annotation while targeting failure modes specific to subject-driven generation.
-4. **Attention map visualization** provides direct empirical evidence for the effectiveness of decoupling.
+1. **Precise Problem Identification**: The conflict between text priors and visual references is intuitively revealed through the experiment in Fig.1; this insight is simple yet profound.
+2. **Decouple → Re-couple Philosophy**: Eliminating conflicts via information isolation and then restoring interaction via RL is more effective than direct optimization in entangled spaces.
+3. **Reward Model Training via Synthetic Negatives**: Using VLMs to automatically generate editing instructions for preference pair construction avoids manual labeling and targets specific failure modes of subject-driven tasks.
+4. **Attention Map Visualization** provides direct evidence of the effectiveness of decoupling.
 
 ## Limitations & Future Work
 
-- Inference requires Qwen2.5-VL 72B for prompt analysis and GroundingDINO for localization, introducing additional computational complexity.
-- The reward model is trained on only 25k preference pairs, which may limit generalization to edge cases.
-- Evaluation is conducted solely on DreamBench, leaving broader benchmark coverage unexplored.
-- Multi-subject scenarios are not discussed.
+- Reliance on Qwen2.5-VL 72B for prompt analysis and GroundingDINO for localization introduces additional complexity during inference.
+- The reward model is trained on 25k preference pairs, a relatively limited scale that may not generalize well to edge cases.
+- Evaluation is limited to DreamBench, lacking more diverse benchmarks.
+- Handling of multi-subject scenarios is not discussed.
 
 ## Related Work & Insights
 
-- The trend of migrating GRPO from LLMs (DeepSeek-R1) to diffusion models (Flow-GRPO, DanceGRPO) warrants continued attention.
-- The pipeline of synthetic negative samples → reward model training → RL is transferable to other generation tasks requiring multi-dimensional evaluation.
-- The principle of "information source decoupling" holds general value for multi-condition generation tasks.
+- The migration trend of GRPO from LLMs (DeepSeek-R1) to diffusion models (Flow-GRPO, DanceGRPO) is noteworthy.
+- The pipeline of "Synthetic Negatives → Reward Model Training → RL" is transferable to other generation tasks requiring multi-dimensional evaluation.
+- The "information source decoupling" concept holds universal value for multi-condition generation tasks.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The core insight (prompt role overload) is precise; the disentangle-then-recouple framework is well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Quantitative, qualitative, user study, and ablation analyses are all comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The motivating example in Fig. 1 is highly convincing; the paper is clearly written throughout.
-- **Value**: ⭐⭐⭐⭐ — Provides a systematic solution to subject-driven T2I generation.
+- Novelty: ⭐⭐⭐⭐ — Precise core insight (prompt role overload), well-designed decouple+couple framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Complete quantitative + qualitative + user study + ablation.
+- Writing Quality: ⭐⭐⭐⭐⭐ — The motivating example in Fig.1 is highly persuasive, with clear exposition.
+- Value: ⭐⭐⭐⭐ — Provides a systematic solution for subject-driven T2I.
 
 <!-- RELATED:START -->
 
@@ -127,10 +148,10 @@ DisCo achieves state-of-the-art performance **simultaneously** on both subject s
 ## Related Papers
 
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
-- [\[ACL 2026\] ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis](../../ACL2026/image_generation/anchor_llm-driven_subject_conditioning_for_text-to-image_synthesis.md)
-- [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
-- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
-- [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
+- [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
+- [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
+- [\[CVPR 2026\] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling](scone_bridging_composition_and_distinction_in_subject-driven_image_generation_vi.md)
+- [\[CVPR 2026\] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing](re-align_structured_reasoning-guided_alignment_for_in-context_image_generation_a.md)
 
 </div>
 

@@ -2,190 +2,174 @@
 title: >-
   [Paper Note] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation via a sparse coeff…
+  [CVPR 2026][3D Vision][Paper Note] EmbodiedSplat is proposed as the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation through a sparse coefficient field and a CLIP global codebook. Combined with 3D geometry-aware features, it enables full-scene open-vocabulary 3D understanding at 5-6 FPS
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "open-vocabulary scene understanding"
-  - "online reconstruction"
-  - "feed-forward 3DGS"
-  - "semantic embedding"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 19df85714fcfd3d8
+content_hash: 2d425a6c5040c835
 ---
-
 # EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.04254](https://arxiv.org/abs/2603.04254)  
-**Code**: Available (project page: EmbodiedSplat.io)  
-**Area**: 3D Vision
-**Keywords**: 3D Gaussian Splatting, open-vocabulary scene understanding, online reconstruction, feed-forward 3DGS, semantic embedding
+**Code**: Available (Project page EmbodiedSplat.io)  
+**Area**: 3D Vision  
+**Keywords**: 3D Gaussian Splatting, Open-vocabulary scene understanding, Online reconstruction, Feed-forward 3DGS, Semantic embedding
 
 ## TL;DR
 
-This paper proposes EmbodiedSplat, the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation via a sparse coefficient field and a CLIP global codebook, and integrates 3D geometry-aware features to enable full-scene open-vocabulary 3D understanding at 5–6 FPS over 300+ streaming frames.
+EmbodiedSplat is proposed as the first online feed-forward semantic 3DGS framework. It achieves memory-efficient per-Gaussian semantic representation through a sparse coefficient field and a CLIP global codebook. Combined with 3D geometry-aware features, it enables full-scene open-vocabulary 3D understanding at 5-6 FPS under streaming inputs of 300+ frames.
 
 ## Background & Motivation
 
-### 1. State of the Field
+### 1. Background
 
-Embodied AI tasks such as robotic manipulation and navigation require agents to understand 3D scenes in real time during exploration. 3D Gaussian Splatting (3DGS), owing to its explicit structure and real-time rendering capability, has become a dominant scene representation paradigm. A large body of recent work distills semantic knowledge from 2D foundation models such as CLIP into 3DGS to enable open-vocabulary 3D scene understanding.
+Embodied AI tasks, such as robot manipulation and navigation, require agents to understand 3D scenes in real-time during exploration. 3D Gaussian Splatting (3DGS) has become a mainstream solution for 3D scene representation due to its explicit structure and real-time rendering capabilities. Recently, numerous works have distilled semantic knowledge from 2D foundation models like CLIP into 3DGS to achieve open-vocabulary 3D scene understanding.
 
 ### 2. Limitations of Prior Work
 
-Existing semantic 3DGS methods suffer from two fundamental limitations:
+Existing semantic 3DGS methods face two fundamental limitations:
 
-- **Per-scene optimization**: Methods such as LangSplat, LEGaussians, OpenGaussian, and Dr. Splat all require hours of per-scene optimization (2–6 hours) and cannot generalize to unseen scenes.
-- **Offline setting**: These methods require a complete set of images collected in advance and cannot handle streaming input, making them unsuitable for online exploration.
-- The few online methods (e.g., Online-LangSplat) support streaming input but still rely on heavy per-scene SLAM optimization, achieving only 1.12 FPS.
-- Feed-forward methods (e.g., LSM, SIU3R) generalize across scenes but support only 2–3 input views, preventing full-scene reconstruction.
+- **Per-scene optimization**: Methods such as LangSplat, LEGaussians, OpenGaussian, and Dr. Splat require individual optimization for each scene for several hours (2-6 hours), failing to generalize to new environments.
+- **Offline setting**: They require a pre-collected complete set of images and cannot handle streaming inputs, making them unsuitable for online exploration.
+- While some online methods (e.g., Online-LangSplat) support streaming input, they still rely on heavy per-scene SLAM optimization, achieving only 1.12 FPS.
+- Feed-forward methods (e.g., LSM, SIU3R) are generalizable but only support 2-3 view inputs, which is insufficient for full-scene reconstruction.
 
-### 3. Root Cause
+### 3. Key Challenge
 
-Embodied scene understanding demands that a 3D perception model simultaneously satisfy five requirements: **online**, **real-time**, **high generalizability**, **full-scene understanding**, and **open-vocabulary understanding**. Existing methods satisfy at most 2–3 of these. In particular, storing full CLIP features for every Gaussian (often exceeding 1 million) incurs enormous memory overhead, while existing compression approaches (autoencoders, product quantization) require pretraining and introduce information loss.
+Embodied scenarios impose five simultaneous requirements on 3D perception models: **online**, **real-time**, **high generalizability**, **full-scene understanding**, and **open-vocabulary understanding**. Existing methods satisfy at most 2-3 of these. Specifically, binding complete CLIP features to each Gaussian (often >1 million) leads to massive memory overhead, while existing compression methods (autoencoders, PQ quantization) require pre-training and result in information loss.
 
-### 4. Paper Goals
+### 4. Goal
 
-To design an online feed-forward semantic 3DGS framework that reconstructs open-vocabulary semantic 3D Gaussian fields at near-real-time speed from 300+ streaming frames, while maintaining memory efficiency and preserving the full semantic capacity of CLIP.
+The goal is to design an online feed-forward semantic 3DGS framework capable of reconstructing a full-scene open-vocabulary semantic 3D Gaussian field from 300+ streaming images at near real-time speeds, while maintaining memory efficiency and the full semantic power of CLIP.
 
-### 5. Starting Point
+### 5. Key Insight
 
-Rather than following the conventional "3D rendering to 2D" distillation pipeline, the paper adopts a direct "2D to 3D" lifting approach: pixel-level CLIP features are back-projected into 3D space, dense per-Gaussian CLIP vector storage is replaced by a **sparse coefficient field with a global codebook**, and a 3D U-Net injects geometric priors as a complement.
+Instead of following the traditional "3D-rendering-to-2D" distillation route, the authors adopt a direct "2D-to-3D" lifting approach. Pixel-level CLIP features are back-projected directly into 3D space. A **sparse coefficient field and global codebook** replace per-Gaussian dense CLIP vector storage, complemented by a 3D U-Net to inject geometric priors.
 
 ### 6. Core Idea
 
-The number of semantically distinct entities in a scene is far smaller than the number of Gaussians. Consequently, instance-level CLIP features can be used to construct a global codebook, and each Gaussian need only store a small number of codebook indices and sparse weights to reconstruct its full semantic representation.
+Independent semantic entities in a scene are far fewer than the number of Gaussians. Therefore, instance-level CLIP features can be used to construct a global codebook. Each Gaussian only needs to store a few codebook indices and sparse weights to reconstruct the full semantics.
 
 ## Method
 
 ### Overall Architecture
 
-EmbodiedSplat is built on the pretrained FreeSplat++ (a feed-forward 3DGS model), with its inference pipeline adapted for online operation. At each time step, the framework receives the current frame and $N$ reference frames, encodes them via a CNN encoder into per-pixel Gaussian triplets (position, confidence, latent), and integrates the new Gaussians into the global Gaussian set via an online fusion strategy. The core contribution lies in binding two types of CLIP features to each Gaussian:
+EmbodiedSplat addresses a multi-objective challenge: as an agent explores a room, it must incrementally reconstruct 300+ RGB(-D) frames into a complete 3D Gaussian scene while assigning open-vocabulary semantics to each Gaussian—all in near real-time without exhausting memory. It is built upon the pre-trained feed-forward 3DGS model FreeSplat++, transforming its offline inference into a frame-by-frame online pipeline.
 
-- **2D semantic features**: stored using a sparse coefficient field with a CLIP global codebook, preserving the full open-vocabulary capability of CLIP.
-- **3D geometry-aware features**: aggregated from point cloud features via a 3D sparse U-Net, injecting 3D geometric priors.
+For each incoming frame, the system feeds it along with $N$ reference frames into a CNN encoder to produce pixel-level Gaussian triplets (position, confidence, latent variables). An online fusion strategy then merges these new Gaussians into the global set. The core innovation lies in binding two complementary CLIP features to each Gaussian: **2D semantic features**, compressed via a "global codebook + sparse coefficient field" to preserve original CLIP capabilities; and **3D geometry-aware features**, which encode spatial structures using a 3D sparse U-Net. During inference, text-matching probabilities are calculated for both sets of features and combined using a geometric mean for final classification.
 
-During inference, the two feature types are integrated via a geometric mean to yield the final classification probabilities.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Streaming RGB(-D) frames + N reference frames"] --> B["CNN Encoder (FreeSplat++)<br/>Outputs pixel-level Gaussian triplets"]
+    B --> C["Online Fusion<br/>Incremental merge into global set"]
+    subgraph SEM["2D Semantic Path"]
+        direction TB
+        D["FastSAM instance segmentation + Pixel CLIP feature pooling"] --> E1["CLIP Global Codebook<br/>Instance-level features stacked"]
+        E1 --> E2["Online Sparse Coefficient Field<br/>10 numbers per Gaussian"]
+        E2 --> G["Codebook-based Cosine Similarity<br/>Pre-computation + Weighted Sum"]
+    end
+    C --> D
+    C --> F["3D Geometry-aware Features<br/>3D Sparse U-Net + GRU"]
+    G --> H["2D matching probability"]
+    F --> I["3D matching probability"]
+    H --> J["Geometric Mean Ensemble"]
+    I --> J
+    J --> K["Open-vocabulary 3D Classification"]
+```
 
 ### Key Designs
 
-#### Module 1: CLIP Global Codebook
+**1. CLIP Global Codebook: Replacing dense vectors with semantic basis functions**
 
-- **Function**: Accumulates instance-level CLIP features from all frames into a global codebook that serves as a set of semantic basis functions.
-- **Mechanism**: FastSAM is applied to each frame to extract instance masks; pixel-level CLIP features within each instance are average-pooled to obtain instance-level features, which are appended to the codebook across time steps. The number of codebook entries $K$ is far smaller than the number of Gaussians $M$ (in experiments, $K \approx 8.7\text{K}$ vs. $M \approx 3.2\text{M}$).
-- **Design Motivation**: The number of semantically distinct entities in a scene is limited, so storing 512/768-dimensional CLIP vectors for each Gaussian is unnecessary. Unlike per-scene optimized codebooks, this codebook requires no pretraining and uses raw CLIP features directly, with zero information loss.
+To solve the memory bottleneck where millions of Gaussians with 512/768D CLIP vectors would require >2 GB, the authors observe that semantic entities (tables, chairs, walls) are sparse. They replace "one vector per Gaussian" with a "scene-wide codebook." For each frame, FastSAM segments instances, and pixel-level CLIP features are pooled to create instance-level features, which are appended to the global codebook. The number of codebook entries $K$ is much smaller than the number of Gaussians $M$ ($K \approx 8.7\text{K}$ vs $M \approx 3.2\text{M}$). This codebook uses raw CLIP features, requiring no pre-training and ensuring zero information loss.
 
-#### Module 2: Online Sparse Coefficient Field
+**2. Online Sparse Coefficient Field: Storing 10 numbers per Gaussian**
 
-- **Function**: Maintains an index cache and a weight cache of length $L$ for each Gaussian, replacing dense CLIP vectors.
-- **Mechanism**: Each Gaussian stores $L-1$ codebook indices and corresponding weights ($L=6$); its semantic feature is reconstructed via sparse linear combination: $\mathbf{s}_g^T(i) = \sum_{j=1}^{L-1} \Omega_g^T(i,j) \cdot \mathbf{C}^T(\mathbf{I}_g^T(i,j))$
-- **Online update strategy** (Algorithm 1): During fusion, local Gaussian codebook indices are appended to the global cache, weights are updated via confidence-weighted averaging, and only the top $L-1$ entries by weight are retained at each step. This removes low-confidence noisy indices while keeping cache size fixed (only 10 scalars per Gaussian).
-- **Design Motivation**: Each Gaussian requires only $2(L-1)=10$ numbers rather than 512/768 dimensions, reducing memory from 2295 MB to 148 MB while supporting incremental online updates.
+Gaussians store only the indices and weights of relevant codebook entries. Each Gaussian maintains an index buffer and weight buffer of length $L$ (where $L=6$, providing $L-1=5$ active entries). Semantic features are reconstructed via sparse linear combination:
 
-#### Module 3: Geometry-Aware 3D Semantic Features
+$$\mathbf{s}_g^T(i) = \sum_{j=1}^{L-1} \Omega_g^T(i,j) \cdot \mathbf{C}^T(\mathbf{I}_g^T(i,j))$$
 
-- **Function**: Constructs CLIP features enriched with 3D geometric priors to compensate for the limited spatial awareness of 2D features.
-- **Mechanism**: Gaussian latents are summed with projected CLIP features and passed through a 3D sparse U-Net with a memory-based adapter, producing compact 64-dimensional 3D features. A GRU network aggregates temporal information during fusion.
-- **Design Motivation**: While 2D CLIP features are semantically rich, they lack explicit 3D priors (as they originate from 2D images), whereas 3D features encode the geometric structure of the point cloud. Their complementarity improves overall performance (Table 3 shows consistent gains across all metrics when combined).
+where $\mathbf{I}_g^T$ are indices, $\Omega_g^T$ are weights, and $\mathbf{C}^T$ is the codebook at time $T$. The online update strategy (Algorithm 1) appends local indices to the global buffer and refreshes weights using confidence-weighted averaging, retaining only the top $L-1$ entries. This top-k truncation removes noise and fixes the buffer size. Memory usage drops from 2295 MB to 148 MB while supporting incremental updates.
 
-#### Module 4: Codebook-Based Cosine Similarity
+**3. 3D Geometry-aware Features: Adding spatial priors to 2D features**
 
-- **Function**: Accelerates text-to-Gaussian matching during inference.
-- **Mechanism**: Exploiting the linearity of sparse linear combinations and inner products, cosine similarities between the text query and all $K$ codebook entries are precomputed in $O(KD)$, after which each Gaussian requires only $L-1$ weighted additions. Total complexity is reduced from $O(MD)$ to $O(KD + M(L-1))$.
-- **Design Motivation**: Per-Gaussian cosine similarity computation over millions of Gaussians takes 14.35 ms; the codebook-based approach requires only 1.18 ms, yielding approximately a **14× speedup**.
+While 2D CLIP features are semantically rich, they lack 3D spatial context. A geometric path adds Gaussian latent variables to projected CLIP features, processed by a 3D sparse U-Net with a memory-based adapter to output 64D 3D features. Temporal information is aggregated via a GRU. This path encodes point cloud geometry, complementing the 2D path.
+
+**4. Codebook-based Cosine Similarity: Accelerating matching via pre-computation**
+
+Calculating cosine similarity between a text query and millions of Gaussians is $O(MD)$ (14.35 ms). By exploiting the linear nature of the sparse reconstruction, the inner product is decomposed: text-to-codebook similarity is pre-computed ($O(KD)$), and for each Gaussian, only $L-1$ weighted sums are performed to get the final score. This reduces complexity to $O(KD + M(L-1))$, accelerating the process by ~14x (to 1.18 ms) with identical results.
 
 ### Loss & Training
 
-- **Loss function**: Only a 2D–3D cosine similarity loss is used: $\mathcal{L}_{cos} = 1 - \cos(\mathbf{s}_g^T, \mathcal{D}^{sem}(\hat{\mathbf{g}}_g^T))$, without any label supervision.
-- **Training strategy**: Two-stage training — (1) *Warm-up*: single-view perception model trained for 100K iterations without the memory adapter; (2) *Fine-tuning*: streaming multi-frame input (8–10 randomly sampled consecutive frames) with the memory adapter, trained for 300K iterations.
+- **Loss**: Only utilizes a 2D-3D cosine similarity loss $\mathcal{L}_{cos} = 1 - \cos(\mathbf{s}_g^T, \mathcal{D}^{sem}(\hat{\mathbf{g}}_g^T))$, requiring no label supervision.
+- **Training Strategy**: Two-stage training: (1) Warm-up: Single-view perception model for 100K iterations without the memory adapter. (2) Fine-tuning: Streaming multi-frame input (random 8-10 consecutive frames) with the memory adapter for 300K iterations.
 - FreeSplat++ parameters are frozen; only the 3D U-Net and memory adapter are optimized.
-- During inference, 2D and 3D features are integrated via a geometric mean: $\mathbf{P} = \max(\mathbf{P}^{2D}, \mathbf{P}^{3D})^\tau \cdot \min(\mathbf{P}^{2D}, \mathbf{P}^{3D})^{1-\tau}$
+- Inference ensemble: $\mathbf{P} = \max(\mathbf{P}^{2D}, \mathbf{P}^{3D})^\tau \cdot \min(\mathbf{P}^{2D}, \mathbf{P}^{3D})^{1-\tau}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: 3D Semantic Segmentation Performance Comparison** (ScanNet / ScanNet200 / ScanNet++)
+**Table 1: 3D Semantic Segmentation Performance** (ScanNet / ScanNet200 / ScanNet++)
 
 | Method | Type | ScanNet-10 mIoU | ScanNet-19 mIoU | ScanNet200-70 mIoU | ScanNet++ mIoU | Recon. Time | Setting |
-|--------|------|---------|---------|----------|---------|----------|------|
-| LangSplat | 2D | 6.52 | 1.34 | 0.72 | 2.21 | ~6 hr | Per-scene / Offline |
-| Online-LangSplat | 2D | 7.13 | 3.45 | 2.45 | 4.51 | 5.4 min | Per-scene / Online |
-| OpenGaussian | 3D | 29.50 | 22.52 | 15.15 | 25.65 | ~2.5 hr | Per-scene / Offline |
-| Dr. Splat | 3D | 39.21 | 28.38 | 19.29 | 39.85 | ~2 hr | Per-scene / Offline |
-| Occam's LGS | 3D | 42.14 | 30.49 | 20.32 | 34.08 | ~2 hr | Per-scene / Offline |
-| **EmbodiedSplat (RGB)** | 3D | **49.81** | **46.22** | **31.16** | 41.93 | **8 min** | Generalizable / Online |
-| **EmbodiedSplat-fast** | 3D | 47.86 | 41.03 | 30.46 | 45.53 | **1 min 10 s** | Generalizable / Online |
-| EmbodiedSplat (RGB-D) | 3D | 57.41 | 52.12 | 34.75 | 44.03 | 8 min | Generalizable / Online |
-
-**Table 2: Cross-Domain 3D Semantic Segmentation**
-
-| Method | ScanNet++ → ScanNet (19-cls) mIoU | ScanNet → ScanNet++ (20-cls) mIoU | ScanNet → Replica (48-cls) mIoU |
-|--------|---------|---------|---------|
-| Dr. Splat | 28.38 | 39.85 | 14.47 |
-| Occam's LGS | 30.49 | 34.08 | 16.19 |
-| EmbodiedSplat (RGB) | **45.32** | 30.65 | 9.88 |
-| EmbodiedSplat (RGB-D) | **50.80** | **44.14** | 11.42 |
+|------|------|---------|---------|----------|---------|----------|------|
+| LangSplat | 2D | 6.52 | 1.34 | 0.72 | 2.21 | ~6hr | Per-scene/Offline |
+| Online-LangSplat | 2D | 7.13 | 3.45 | 2.45 | 4.51 | 5.4min | Per-scene/Online |
+| OpenGaussian | 3D | 29.50 | 22.52 | 15.15 | 25.65 | ~2.5hr | Per-scene/Offline |
+| Dr. Splat | 3D | 39.21 | 28.38 | 19.29 | 39.85 | ~2hr | Per-scene/Offline |
+| Occam's LGS | 3D | 42.14 | 30.49 | 20.32 | 34.08 | ~2hr | Per-scene/Offline |
+| **EmbodiedSplat (RGB)** | 3D | **49.81** | **46.22** | **31.16** | 41.93 | **8min** | Generalizable/Online |
+| **EmbodiedSplat-fast** | 3D | 47.86 | 41.03 | 30.46 | 45.53 | **1min10s** | Generalizable/Online |
+| EmbodiedSplat (RGB-D) | 3D | 57.41 | 52.12 | 34.75 | 44.03 | 8min | Generalizable/Online |
 
 ### Ablation Study
 
-**2D–3D feature complementarity** (Table 3):
-
+**2D-3D Feature Complementarity** (Tab. 3):
 - 2D features only: ScanNet-19 mIoU 45.09
 - 3D features only: ScanNet-19 mIoU 45.39
-- 2D + 3D combined: ScanNet-19 mIoU **46.22** (+1.13 gain)
+- 2D+3D Ensemble: ScanNet-19 mIoU **46.22** (+1.13 Gain)
 
-**Codebook cosine similarity speedup** (Table 4):
-
-- Per-Gaussian computation: 14.35 ms
-- Codebook-accelerated: 1.18 ms (**14× speedup**)
-
-**Memory efficiency comparison** (Table 5):
-
-- Occam's LGS (raw 512-dim): 2295 MB, no information loss
-- Dr. Splat (PQ quantization): 173 MB, information loss, requires pretraining
-- LangSplat (autoencoder compressed to 3-dim): 30 MB, severe information loss
-- **EmbodiedSplat** (sparse coefficient field): **148 MB, no information loss, no pretraining required**
-
-**Effect of cache size $L$** (Table 6): $L=2$→44.38, $L=4$→45.01, $L=6$→45.09, $L=11$→45.08; $L=6$ provides the optimal trade-off.
+**Memory Efficiency** (Tab. 5):
+- Occam's LGS (Raw 512D): 2295 MB
+- Dr. Splat (PQ Quantization): 173 MB (info loss, needs pre-training)
+- **EmbodiedSplat (Sparse Coeffs)**: **148 MB** (no info loss, no pre-training)
 
 ### Key Findings
 
-1. 2D-based methods (e.g., LangSplat) perform poorly under direct 3D query evaluation, because linear interpolation during rendering severely degrades the transfer of CLIP semantics to individual Gaussians.
-2. The feed-forward design reduces reconstruction time from hours to minutes (8 min vs. 2–6 hr); the fast variant further achieves 1 min 10 s (5.18 FPS).
-3. Cross-domain experiments reveal the critical role of depth estimation: ScanNet→ScanNet++ drops by 11.28 mIoU due to difficult regions such as ceilings, and this is largely recovered with a depth sensor (44.14 vs. 44.03).
-4. A large domain gap exists in the real-to-synthetic transfer (ScanNet→Replica), where the feed-forward approach underperforms per-scene optimization methods.
+1. 2D-based methods perform poorly in direct 3D query evaluations because linear interpolation during rendering weakens the transfer of CLIP semantics to individual Gaussians.
+2. The feed-forward design reduces reconstruction time from hours to minutes (8min vs 2-6hr), with the fast version reaching 1min 10s (5.18 FPS).
+3. Sparse coefficient fields maintain accuracy while reducing memory by 15x.
+4. Cross-domain experiments show that depth estimation is a critical bottleneck for RGB-only generalizable models.
 
 ## Highlights & Insights
 
-1. **Elegant sparse coefficient field design**: Each Gaussian requires only 10 numbers (5 indices + 5 weights) in place of a 512-dimensional CLIP vector, achieving a 15× memory reduction while being mathematically equivalent to a sparse reconstruction of the original feature — with no pretraining and no information loss.
-2. **Elegant derivation of codebook acceleration**: Exploiting the linearity of sparse combinations and inner products, per-Gaussian search is transformed into per-codebook precomputation plus lightweight weighted summation, yielding a 14× speedup at virtually no cost.
-3. **Instructive 2D–3D complementarity**: 2D features are semantically rich while 3D features carry geometric priors. Combining cosine similarity distillation with geometric mean integration is both simple and effective.
-4. **Well-designed online fusion algorithm**: Confidence-weighted updates combined with top-$k$ pruning ensure semantic accuracy while maintaining a fixed cache size, making the approach well-suited for streaming scenarios.
+1. **Elegant Sparse Coefficient Field**: Storing only 10 numbers per Gaussian is a highly efficient way to represent high-dimensional CLIP features without the degradation typical of autoencoder-based compression.
+2. **Mathematically Sound Acceleration**: Using the linearity of inner products to move computation to the codebook level provides a significant speedup with no loss in precision.
+3. **Robust Online Fusion**: The combination of confidence-weighted updates and top-k pruning effectively manages noise and memory growth in streaming scenarios.
 
 ## Limitations & Future Work
 
-1. **Limited cross-domain generalization**: Performance drops substantially in real-to-synthetic transfer (ScanNet→Replica), indicating that the feed-forward model is sensitive to domain shift.
-2. **Depth estimation as a bottleneck**: In RGB mode, cross-dataset depth estimation discrepancies cause significant performance degradation (−11 mIoU for ScanNet→ScanNet++), suggesting practical deployments may depend on depth sensors.
-3. **Continuously growing codebook**: The global codebook grows by appending entries at each time step; in long-horizon exploration (well beyond 300 frames), codebook compression or deduplication strategies may be necessary.
-4. **Validation limited to indoor scenes**: Experiments are confined to indoor datasets such as ScanNet and Replica; performance in large-scale outdoor settings remains unknown.
-5. **Accuracy trade-off in the fast variant**: Removing the 3D U-Net achieves 5–6 FPS but incurs a 2–4 mIoU drop on some metrics.
+1. **Cross-domain generalization**: Performance drops significantly when moving from real to synthetic scenes (ScanNet → Replica).
+2. **Depth sensor dependency**: RGB-only mode suffers when depth estimation fails in novel domains.
+3. **Codebook growth**: The codebook grows over time; longer sequences might require periodic consolidation or removal of redundant entries.
+4. **Indoor focus**: The evaluation is limited to indoor datasets; performance in large-scale outdoor environments remains untested.
 
 ## Related Work & Insights
 
-- **FreeSplat++**: The backbone feed-forward 3DGS model; its online fusion design (GRU + confidence-weighted updates) is generalizable to other 3DGS enhancement tasks.
-- **Dr. Splat / Occam's LGS**: Representative methods following the direct feature lifting paradigm, consistent with the 2D→3D back-projection approach in this paper, but constrained to per-scene optimization.
-- **OpenScene / PLA**: Point cloud + foundation model distillation methods; the 3D U-Net module in this paper draws on their 3D backbone designs.
-- **Inspiration for future work**: Codebook + sparse coefficients can be extended to efficient storage of other high-dimensional features (e.g., DINOv2, SAM features).
+- **FreeSplat++**: Provided the base for feed-forward 3DGS and online fusion mechanisms.
+- **Dr. Splat / Occam's LGS**: Shared the 2D-to-3D feature lifting strategy but lacked generalization and online capabilities.
+- **OpenScene / PLA**: Influenced the 3D backbone design for point cloud distillation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The sparse coefficient field + global codebook compression scheme is elegant, though the overall framework leans toward integrative innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three major datasets, cross-domain evaluation, and comprehensive memory/speed/ablation analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Motivation is clearly articulated; the online update algorithm is described rigorously.
-- Value: ⭐⭐⭐⭐ — The practical positioning of online feed-forward semantic 3DGS is well-defined, with direct implications for embodied scene understanding.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -193,11 +177,11 @@ During inference, the two feature types are integrated via a geometric mean to y
 
 ## Related Papers
 
-- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
-- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
 - [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
+- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
 
 </div>
 

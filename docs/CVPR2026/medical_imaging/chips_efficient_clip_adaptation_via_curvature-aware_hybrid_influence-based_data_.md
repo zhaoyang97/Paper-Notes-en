@@ -2,121 +2,111 @@
 title: >-
   [Paper Note] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection
 description: >-
-  [CVPR 2026][Medical Imaging][CLIP adaptation] This paper proposes CHIPS, a curvature-aware hybrid influence-based data selection method that computes Newton-style alignment scores in the CLIP endpoint subspace and combin…
+  [CVPR 2026][Medical Imaging][Paper Note] Ours proposes CHIPS, a data selection method based on curvature-aware hybrid influence. It calculates Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain relevance weights. With only 30% of the data, it matches the effect of continued pre-training (CPT) on the full
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "CLIP adaptation"
-  - "data selection"
-  - "curvature-aware"
-  - "continual pre-training"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: b25c1bdb2dfa72c7
+content_hash: d6709006a097d700
 ---
-
 # CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.18519](https://arxiv.org/abs/2511.18519)  
 **Code**: [Available](https://github.com/mihara-bot/CHIPS)  
-**Area**: Medical Imaging
-**Keywords**: CLIP adaptation, data selection, curvature-aware, continual pre-training, medical imaging
+**Area**: Medical Imaging  
+**Keywords**: CLIP Adaptation, Data Selection, Curvature-aware, Continued Pre-training, Medical Imaging  
 
 ## TL;DR
 
-This paper proposes CHIPS, a curvature-aware hybrid influence-based data selection method that computes Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain-relevance weights. Using only 30% of the data, CHIPS matches full-dataset continual pre-training (CPT) performance and achieves state-of-the-art results across 17 medical benchmarks.
+Ours proposes CHIPS, a data selection method based on curvature-aware hybrid influence. It calculates Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain relevance weights. With only 30% of the data, it matches the effect of continued pre-training (CPT) on the full dataset, achieving SOTA across 17 medical benchmarks.
 
 ## Background & Motivation
 
-### 1. State of the Field
+### 1. Background
 
-Vision-language models such as CLIP demonstrate strong zero-shot recognition capabilities in general domains, but suffer significant performance degradation in specialized domains (e.g., medical imaging, biology), where vocabulary, acquisition protocols, and label taxonomies shift substantially. Two main paradigms exist for adapting CLIP to specialized domains: **model-centric** methods (probabilistic fine-tuning, PEFT variants, etc., which modify training or parameterization strategies) and **data-centric** methods (continual pre-training on large-scale domain data, ranging from millions to hundreds of millions of samples).
+Vision-language models like CLIP exhibit strong zero-shot recognition capabilities in general domains but suffer sharp performance drops in vertical domains (e.g., medical imaging, biology) where vocabularies, acquisition protocols, and label systems shift significantly. Currently, adapting CLIP to vertical domains follows two paradigms: **model-centric** methods (modifying training/parameterization strategies like probabilistic fine-tuning or PEFT variants) and **data-centric** methods (CPT on large-scale domain data ranging from millions to hundreds of millions of samples).
 
 ### 2. Limitations of Prior Work
 
-Data-centric methods face severe **data efficiency** problems: collecting, annotating, and processing large-scale domain datasets is extremely costly, and indiscriminately scaling data volume may introduce redundant, uninformative samples that harm learning outcomes.
+Data-centric methods face severe **data efficiency** issues: collecting, labeling, and processing large-scale domain datasets is extremely costly. Furthermore, indiscriminately increasing data volume may introduce redundant or inefficient samples, harming learning outcomes.
 
-### 3. Root Cause
+### 3. Key Challenge
 
-The tension between scale and efficiency—does effective CPT truly require extreme data scale? Existing data attribution methods (e.g., TracIn, TRAK) are designed for supervised classification on single-tower models and exhibit three fundamental mismatches when directly applied to CLIP:
+The contradiction between scale and efficiency—is extreme data scale truly necessary for effective CPT? Existing data attribution methods (e.g., TracIn, TRAK) are designed for supervised classification on single-tower models. Applying them directly to CLIP faces three fundamental mismatches:
 
-- **(A) Cross-modal curvature in dual encoders**: CLIP's dual-encoder architecture produces non-block-diagonal second-order curvature; block-diagonal approximations ignore this coupling and lead to incorrect sample ranking.
-- **(B) Non-local gradients under InfoNCE**: Each sample's gradient depends on the softmax normalizer over the entire negative set, making influence batch/globally dependent rather than per-sample additive.
-- **(C) Dominance of endpoint projection heads**: Projection heads and temperature parameters drive early shifts in the similarity distribution, rendering full-parameter influence computation unnecessary for CLIP.
+- **(A) Cross-modal curvature of dual encoders**: CLIP's dual encoders produce non-block-diagonal second-order curvature. Block-diagonal proxies ignore this coupling, leading to incorrect sample ranking.
+- **(B) Non-local gradients under InfoNCE**: The gradient of each sample depends on the softmax normalizer of the entire negative sample set, making influence batch/global dependent rather than sample-wise additive.
+- **(C) Dominance of endpoint projection heads**: Projection heads and temperature parameters drive the early shifts in similarity distribution. Full-parameter influence calculation is unnecessary for CLIP.
 
-### 4. Paper Goals
+### 4. Goal
 
-Design a CLIP-specific data selector that achieves domain adaptation comparable to or better than full-scale CPT with a small data budget, while preserving general-domain capabilities.
+Design a CLIP-specific data selector to achieve domain adaptation effects comparable to or better than full-scale CPT using a small data volume, while preserving general domain capabilities.
 
-### 5. Starting Point
+### 5. Key Insight
 
-The problem is framed from a **data attribution** perspective: select samples whose one-step update maximally reduces the evaluation loss on the target domain. The key insight is that this alignment score need only be computed in CLIP's endpoint subspace (projection heads + temperature).
+Starting from the perspective of **data attribution**, data selection is modeled as selecting samples that maximize the reduction in target domain evaluation loss after a single update step. The key insight is that computing this alignment score in the CLIP endpoint subspace (projection heads + temperature) is sufficient.
 
 ### 6. Core Idea
 
-The paper proposes CHIPS (Curvature-aware Hybrid Influence in Projection Subspace), which computes curvature-aware Newton-style alignment scores in CLIP's endpoint geometric space, combines them with an InfoNCE-aware curvature estimator (accelerated via JL sketching) and selection-aware domain-relevance weights, and derives a final per-sample utility score as their product.
+Ours proposes CHIPS (Curvature-aware Hybrid Influence in Projection Subspace). It calculates a curvature-aware Newton-style alignment score in the CLIP endpoint geometric space, combining an InfoNCE-aware curvature estimator (accelerated by JL sketching) and selection-aware domain relevance weights. The final selection utility score for each sample is the product of these components.
 
 ## Method
 
 ### Overall Architecture
 
-CHIPS computes a composite utility score for each training sample: $\mathcal{I}_{\text{CHIPS}}(z) = \hat{A}_\alpha(z) \cdot w_L(z) \cdot w_R(z)$, consisting of three tightly coupled components:
+CHIPS addresses a practical question: is it necessary to stack tens of millions of samples to adapt CLIP to the medical domain via CPT? Its solution is to calculate a "selection utility score" for each candidate sample and pick only the highest-scoring batch for training. The utility score is defined as the product of three weights: $\mathcal{I}_{\text{CHIPS}}(z) = \hat{A}_\alpha(z) \cdot w_L(z) \cdot w_R(z)$. The first term $\hat{A}_\alpha(z)$ measures "whether a gradient step on this sample pushes the model toward lower evaluation loss"; the second term $w_L(z)$ assesses "whether the sample is not yet learned and worth learning"; the third term $w_R(z)$ evaluates "whether it resembles target domain data." High scores require all three conditions to be met. All scores are computed only on CLIP's "endpoint" parameters (projection heads + temperature), allowing them to be cached and reused across different architectures or pre-training scales.
 
-1. **Curvature-aware proxy alignment score** $\hat{A}_\alpha(z)$: measures the Newton-direction alignment between a sample's gradient and the evaluation gradient in the endpoint subspace.
-2. **Learnability weight** $w_L(z)$: favors samples near the decision boundary, discounting samples already solved by the model.
-3. **Target domain relevance weight** $w_R(z)$: a soft constraint ensuring the selected distribution does not deviate from the target domain.
-
-The top-$n$ samples by utility score are selected for CPT.
+```mermaid
+flowchart TD
+    A["Candidate Pair z<br/>(BIOMEDICA 24M Pool)"] --> B["Endpoint Subspace ϑ = {W_v, W_t, τ}<br/>Gradients on Projection Heads + Temp"]
+    subgraph ALIGN["Curvature-aware Alignment Score Â_α(z)"]
+        direction TB
+        C["InfoNCE-aware Curvature + JL sketching<br/>M = (1−α)Φ_pos + αΦ_neg + λI, compressed to k-dim"] --> D["Curvature-aware Alignment in Subspace<br/>Â_α = g(z)ᵀ M⁻¹ u: Direction to reduce eval loss"]
+    end
+    B --> ALIGN
+    B --> E["Learnability & Relevance Weights<br/>w_L · w_R: Worth learning × Domain match"]
+    ALIGN --> F["Selection Utility I_CHIPS(z) = Â_α · w_L · w_R"]
+    E --> F
+    F --> G["Select top-n subset → CPT (Symmetric InfoNCE)"]
+    G --> H["Domain-adapted CLIP"]
+```
 
 ### Key Designs
 
-#### Design 1: Endpoint Subspace Curvature-Aware Alignment (Sec. 2.2)
+**1. Curvature-aware Alignment in Endpoint Subspace: Newton direction on projection heads to avoid full-parameter second-order costs**
 
-**Function**: Computes a proxy alignment score over CLIP's endpoint parameters $\vartheta = \{W_v, W_t, \tau\}$ (visual/text projection heads + temperature).
+Modeling data selection as data attribution, the cleanest criterion is the Newton-style alignment score $A(z) = g_\vartheta(z)^\top M^{-1} u_\vartheta$. A larger inner product between the sample gradient $g_\vartheta(z)$ (corrected by curvature matrix $M$) and the evaluation loss gradient $u_\vartheta$ indicates that this update step pushes the model toward lower loss on the evaluation set. Since computing $M$ as a Hessian proxy for full parameters in CLIP is infeasible, CHIPS observes that early shifts in similarity distribution are driven by endpoint parameters $\vartheta = \{W_v, W_t, \tau\}$. Theorem 1 provides a lower bound for the Pearson correlation between endpoint and full-parameter alignment scores. Experiments confirm a Spearman correlation of 0.83, showing that the endpoint ranking preserves the order of full-parameter ranking while significantly reducing dimensionality and computation.
 
-**Mechanism**: The ideal update direction is the Newton step $H_\vartheta^{-1} u_\vartheta$; the alignment score is defined as $A(z) = g_\vartheta(z)^\top M^{-1} u_\vartheta$, where $M$ is a computable curvature proxy. A higher score indicates that the sample's one-step update moves the model further along the descent direction of the evaluation loss.
+**2. InfoNCE-aware Curvature Estimation + JL sketching: Reincorporating negative sample coupling into curvature**
 
-**Design Motivation**: Local linearization analysis (Theorem 1) establishes a lower bound on the Pearson correlation between endpoint-subspace alignment scores and full-parameter alignment scores. Empirically, the Spearman correlation reaches 0.83, confirming that endpoint-level ranking well preserves full-parameter ranking. The endpoint subspace is far smaller in dimension, substantially reducing computational cost.
-
-#### Design 2: InfoNCE-Aware Curvature Estimation with JL Sketching (Sec. 2.3)
-
-**Function**: Constructs a curvature matrix $M$ that encodes coupling information from both positive and negative pairs.
-
-**Mechanism**: Computes self-curvature (outer product of positive-pair gradients) $\Phi_{\text{pos}}$ and cross-curvature (outer product of negative-pair gradients) $\Phi_{\text{neg}}$, combined with mixing weight $\alpha$:
+Standard InfoNCE softmax normalizers couple each positive pair with a whole batch of negative samples, creating significant off-diagonal mass in the true curvature. Methods like TracIn ignore this by using only the diagonal outer product of positive gradients. CHIPS decomposes curvature into positive-pair self-curvature $\Phi_{\text{pos}}$ and negative-pair cross-curvature $\Phi_{\text{neg}}$, reincorporating the latter via a mixing coefficient $\alpha$:
 
 $$M = (1-\alpha)\Phi_{\text{pos}} + \alpha\Phi_{\text{neg}} + \lambda I$$
 
-JL random projection then compresses the dimension to $k$, yielding the sketched score $\hat{A}_\alpha(z)$.
+Johnson–Lindenstrauss (JL) random projection then compresses the dimensionality to $k$ for a fast-computable sketched score $\hat{A}_\alpha(z)$. Theorem 2 decomposes the estimation error into projection variance (shrinking with $O(1/k)$) and curvature bias—where $\alpha > 0$ compensates for off-diagonal mass, reducing bias. Experiments identify the optimal range at $\alpha \in [0.6, 0.8]$.
 
-**Design Motivation**: Symmetric InfoNCE couples each positive pair with multiple negatives through the softmax normalizer, producing cross-sample curvature. Diagonal-only proxies based solely on positive pairs (e.g., TracIn) miss this coupling and introduce ranking bias. Theorem 2 shows the error decomposes into an $O(1/k)$ projection variance term and a curvature bias term—$\alpha > 0$ recovers the off-diagonal mass from negative pairs, reducing curvature bias, while increasing $k$ reduces projection variance. The recommended range is $\alpha \in [0.6, 0.8]$.
+**3. Learnability and Domain Relevance Weights: Assessing utility beyond directional alignment**
 
-#### Design 3: Learnability and Target Domain Relevance Weights (Sec. 2.4)
-
-**Function**: Attaches two multiplicative weights to each sample to modulate the alignment score.
-
-**Learnability $w_L(z)$**: Uses the average correct-pair probability $p_{\text{corr}}(z)$ under CLIP and the margin $m(z)$ of the hardest negative: $w_L(z) = (1 - p_{\text{corr}}(z))(1 + \sigma(-m(z)))$. High-confidence, correctly classified samples are down-weighted; samples near or below the decision boundary (small or negative margin) are up-weighted, as these are the most learnable in a single update step.
-
-**Target Domain Relevance $w_R(z)$**: Computes mean embeddings $\mu_x, \mu_y$ of the evaluation set across both modalities, then $w_R(z) = \sigma((1-\beta)\cos(\hat{x}, \mu_x) + \beta\cos(\hat{y}, \mu_y))$. The sigmoid confines values to $[0.27, 0.73]$, implementing soft reweighting rather than hard filtering so that no sample's weight is zeroed out. Performance is maximized at $\beta = 0.5$.
-
-**Design Motivation**: The alignment score measures gradient direction utility but does not distinguish between "solved" and "boundary" samples, nor does it compensate for distribution mismatch between the training pool and the evaluation set. Learnability focuses selection on the most informative samples; domain relevance prevents the selected distribution from drifting away from the target domain, thereby mitigating catastrophic forgetting.
+Alignment scores alone cannot distinguish between samples the model has already mastered and those representing distribution gaps. CHIPS adds two multiplicative weights. Learnability $w_L(z) = (1 - p_{\text{corr}}(z))(1 + \sigma(-m(z)))$ uses the average correct probability $p_{\text{corr}}(z)$ and the margin $m(z)$ of the hardest negative sample. Samples with high confidence ($p_{\text{corr}} \approx 1$) are suppressed, while boundary samples with low or negative margins are emphasized. Domain relevance $w_R(z) = \sigma((1-\beta)\cos(\hat{x}, \mu_x) + \beta\cos(\hat{y}, \mu_y))$ compares sample embeddings with the evaluation set's mean embeddings $\mu_x, \mu_y$. The sigmoid scales this to $[0.27, 0.73]$ for soft re-weighting rather than hard filtering, avoiding excessive deviation from the target distribution to mitigate catastrophic forgetting ($\beta=0.5$ yields maximum gain).
 
 ### Loss & Training
 
-CHIPS is a data selection method, not a training method. The selected subset is used for CPT with the standard symmetric InfoNCE loss:
+CHIPS is a data selection method rather than a training method. The selected subset is used for CPT with standard symmetric InfoNCE loss:
 
 - Optimizer: AdamW ($\beta_1=0.9, \beta_2=0.98, \epsilon=10^{-6}$)
-- Learning rate schedule: cosine annealing (initial $10^{-6}$)
-- Batch size: 32,768
-- Training duration: fixed 5 epochs
-- Hardware: 8× NVIDIA H200 (141 GB)
+- LR Schedule: Cosine annealing (initial $10^{-6}$)
+- Batch Size: 32,768
+- Epochs: 5
+- Hardware: 8×NVIDIA H200 (141GB)
 
-CHIPS scores are computed once and can be cached for reuse across different architectures and pre-training scales.
+Calculated scores can be cached and reused for different models.
 
 ## Key Experimental Results
 
 ### Main Results
 
-CPT on BIOMEDICA (24M samples) with MetaCLIP-B16-400M; average medical task performance at various retention ratios:
+CPT results on BIOMEDICA (24M samples) using MetaCLIP-B16-400M across medical tasks:
 
 | Method | r=10% Medical Avg | r=20% Medical Avg | r=30% Medical Avg | r=10% General CLS |
 |------|:---:|:---:|:---:|:---:|
@@ -127,9 +117,9 @@ CPT on BIOMEDICA (24M samples) with MetaCLIP-B16-400M; average medical task perf
 | TRAK | 25.19 | 24.54 | 23.54 | 48.24 |
 | **CHIPS** | **27.03** | **28.20** | **29.96** | 47.88 |
 
-Key results: CHIPS at 10% (27.03) outperforms Random at 50% (26.26); CHIPS at 30% (29.96) achieves 95.1% of full-dataset CPT performance; at r=30%, CHIPS marginally surpasses the dedicated medical model BMCLIP (29.96 vs. 29.86).
+Key data: CHIPS at 10% (27.03) outperforms 50% Random (26.26); CHIPS at 30% (29.96) reaches 95.1% of full CPT performance and slightly exceeds the specialized medical model BMCLIP (29.86).
 
-Cross-architecture generalization (10% retention, CHIPS scores reused):
+Cross-architecture generalization (10% retention, reused CHIPS scores):
 
 | Model | Medical CLS | General CLS | General RET |
 |------|:---:|:---:|:---:|
@@ -140,11 +130,11 @@ Cross-architecture generalization (10% retention, CHIPS scores reused):
 | H14-CC Random | 35.23 | 61.36 | 32.82 |
 | H14-CC CHIPS | **35.48** | 58.24 | 32.09 |
 
-CHIPS achieves the best medical performance across all 7 architecture/pre-training scale configurations, outperforming TracIn by 0.20–2.65 points.
+CHIPS achieved the best medical performance across all 7 architecture/pre-training settings, exceeding TracIn by 0.20-2.65 points.
 
 ### Ablation Study
 
-Incremental component addition on MetaCLIP-B16-400M:
+Incremental component testing on MetaCLIP-B16-400M:
 
 | Variant | r=10% Med | r=20% Med | r=30% Med | r=10% Gen CLS |
 |------|:---:|:---:|:---:|:---:|
@@ -152,41 +142,41 @@ Incremental component addition on MetaCLIP-B16-400M:
 | Alignment+Margin | 25.95 | 27.92 | 28.50 | 48.41 |
 | **CHIPS (full)** | **27.03** | **28.20** | **29.96** | 47.88 |
 
-The three-component product is optimal across all budgets; at r=30%, it exceeds Alignment+Margin by +1.46 points, indicating that domain relevance is especially critical at larger budgets. The general-domain CLS gap is ≤0.53; the RET gap narrows as $r$ increases (0.99→0.37), suggesting controlled specialization rather than catastrophic forgetting.
+The three-component product was optimal under all budgets. At r=30%, it outperformed Alignment+Margin by +1.46 points, highlighting the importance of domain relevance at larger budgets. General CLS gap was ≤0.53, and RET gap narrowed as r increased, indicating controlled specialization rather than catastrophic forgetting.
 
 ### Key Findings
 
-1. **High data efficiency**: 10% data outperforms 50% random sampling; 30% data achieves 95% of full-dataset performance.
-2. **Reliable endpoint subspace proxy**: Spearman correlation of 0.83; the text projection head is most important (Text-only retains 99.7%), with the visual projection head being complementary (98.7%).
-3. **Optimal curvature mixing range**: $\alpha \in [0.6, 0.8]$ is optimal, validating the importance of negative-pair coupling information for InfoNCE curvature.
-4. **Score transferability**: Scores computed once on B16-400M can be directly reused for B32, L14, H14, and different pre-training scales.
-5. **Computational cost on par with TRAK** (50.95 vs. 50.95 ×10¹⁵ FLOPs), 3.1% lower than TracIn.
+1. **Extreme Data Efficiency**: 10% of data outperforms 50% random samples; 30% data achieves 95% of full dataset performance.
+2. **Reliable Endpoint Subspace Proxy**: Spearman correlation of 0.83; the text projection head is most critical (Text-only maintains 99.7%), while the vision head is complementary (98.7%).
+3. **Sweet Spot for $\alpha$**: $\alpha \in [0.6, 0.8]$ is optimal, validating the importance of negative coupling in InfoNCE curvature.
+4. **Transferable Scores**: Scores computed on B16-400M are directly reusable for B32/L14/H14 architectures.
+5. **Computational Cost**: Comparable to TRAK (50.95 vs 50.95 ×10^15 FLOPs) and 3.1% lower than TracIn.
 
 ## Highlights & Insights
 
-- **Data-centric perspective on CLIP adaptation**: The first systematic introduction of data selection into CLIP CPT, demonstrating that "curated few" can substitute for "massive accumulation."
-- **Solid theoretical foundation**: Theorem 1 establishes a lower bound on the correlation between the endpoint proxy and full-parameter alignment; Theorem 2 provides a bias-variance decomposition for curvature mixing combined with JL projection.
-- **Engineering-friendly**: Scores are computed once and reusable across architectures, substantially reducing iteration costs in practical deployment.
-- **Elegant three-factor product design**: Alignment (directional utility) × Learnability (boundary samples) × Relevance (domain match) are orthogonal and mutually complementary.
+- **Data-centric Perspective on CLIP Adaptation**: First systematic introduction of data selection for CLIP CPT, proving that "curating few" can replace "stacking many."
+- **Solid Theoretical Support**: Theorem 1 proves the correlation lower bound for endpoint proxies; Theorem 2 provides error decomposition for curvature mixing and JL projection.
+- **Engineer-friendly**: One-time score calculation is cross-architecture reusable, significantly reducing iteration costs in deployment.
+- **Elegant Three-factor Design**: The product of Alignment (Directional Utility) × Learnability (Boundary Samples) × Relevance (Domain Match) ensures orthogonal components complement each other.
 
 ## Limitations & Future Work
 
-1. **Dependence on a labeled target validation set**: A labeled $\mathcal{D}_{\text{eval}}$ is required to compute the evaluation gradient $u_\vartheta$, which is restrictive in annotation-scarce scenarios.
-2. **Validation limited to CLIP architecture**: The method has not been extended to other vision-language models such as SigLIP or EVA-CLIP.
-3. **Primarily validated in the medical domain**: Although general-domain retention is evaluated, the method has not been tested in other specialized domains (e.g., remote sensing, industrial inspection).
-4. **Hyperparameter tuning for α and β**: Although default values are recommended, different domains may require re-tuning.
-5. **Label-free target signals unexplored**: The authors themselves suggest exploring label-free or distribution-shift-robust target signals as future work.
+1. **Dependency on Target Validation Distribution**: Requires a labeled $\mathcal{D}_{\text{eval}}$ for evaluation gradients, which is restrictive in label-scarce scenarios.
+2. **Architecture Focus**: Only validated on CLIP; not yet extended to SigLIP, EVA-CLIP, etc.
+3. **Domain Focus**: Primarily tested in medicine; validation in other vertical domains (remote sensing, industrial inspection) is needed.
+4. **Hyperparameter Tuning**: $\alpha, \beta$ were tuned; different domains might require searches.
+5. **Unlabeled Target Signals**: Potential exploration of unlabeled or distribution-shift robust target signals.
 
 ## Related Work & Insights
 
-- **TracIn / TRAK**: Data attribution methods for single-tower models; CHIPS builds on these by introducing CLIP-specific curvature estimation and endpoint subspace optimization.
-- **BIOMEDICA / MedTrinity**: Large-scale medical multimodal datasets on which CHIPS validates data efficiency.
-- **Johnson-Lindenstrauss Lemma**: A classical dimensionality reduction tool used to reduce curvature computation from $O(d^2)$ to near-linear complexity.
-- **Insight**: Data selection methods can be combined with model-centric approaches (e.g., PEFT) to form a dual-efficiency strategy of "curated data + efficient fine-tuning."
+- **TracIn / TRAK**: Standard data attribution on single-tower models; CHIPS optimizes this for CLIP with curvature estimation and endpoint subspaces.
+- **BIOMEDICA / MedTrinity**: Large-scale medical multimodal datasets; CHIPS validates data efficiency on these.
+- **Johnson-Lindenstrauss Lemma**: Classical dimensionality reduction tool used to lower $O(d^2)$ complexity to near-linear.
+- **Inspiration**: Data selection can be combined with model-centric methods (e.g., PEFT) to form a "curated data + efficient tuning" dual-efficiency strategy.
 
 ## Rating
 
-⭐⭐⭐⭐ A theoretically rigorous and experimentally comprehensive data-centric CLIP adaptation work. The three-component design is clear and elegant, and the result that 30% of data matches full-dataset CPT is impressive. The method offers strong practical value for adapting models to specialized domains with scarce data.
+⭐⭐⭐⭐ A data-centric CLIP adaptation work with solid theory and comprehensive experiments. The three-component design is clear and elegant. The result of matching full CPT with 30% data is impressive and offers high practical value for domain adaptation in data-scarce scenarios.
 
 <!-- RELATED:START -->
 
@@ -196,9 +186,9 @@ The three-component product is optimal across all budgets; at r=30%, it exceeds 
 
 - [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 - [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
-- [\[CVPR 2026\] Decoding Matters: Efficient Mamba-Based Decoder with Distribution-Aware Deep Supervision for Medical Image Segmentation](decoding_matters_efficient_mamba-based_decoder_with_distribution-aware_deep_supe.md)
-- [\[CVPR 2026\] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation](rdface_a_benchmark_dataset_for_rare_disease_facial_image_analysis_under_extreme_.md)
-- [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
+- [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+- [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
 
 </div>
 

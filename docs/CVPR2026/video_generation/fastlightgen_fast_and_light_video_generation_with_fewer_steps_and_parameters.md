@@ -2,77 +2,75 @@
 title: >-
   [Paper Note] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 description: >-
-  [CVPR 2026][Video Generation][Video generation acceleration] FastLightGen proposes a three-stage distillation algorithm that, for the first time…
+  [CVPR 2026][Video Generation][Paper Note] FastLightGen proposes a three-stage distillation algorithm that achieves joint distillation of sampling steps and model size for the first time. By identifying redundant layers, employing dynamic probabilistic pruning, and using well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Video generation acceleration"
-  - "step distillation"
-  - "model pruning"
-  - "distribution matching"
-  - "DiT compression"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 957ddc659b938408
+content_hash: 194359f06c76027b
 ---
-
 # FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.01685](https://arxiv.org/abs/2603.01685)  
 **Code**: None  
-**Area**: Video Generation
-**Keywords**: Video generation acceleration, step distillation, model pruning, distribution matching, DiT compression
+**Area**: Video Generation  
+**Keywords**: Video generation acceleration, Step distillation, Model pruning, Distribution matching, DiT compression
 
 ## TL;DR
 
-FastLightGen proposes a three-stage distillation algorithm that, for the first time, achieves joint distillation of sampling steps and model size. By identifying redundant layers, applying dynamic probabilistic pruning, and performing well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a lightweight generator with 4 sampling steps and 30% parameter pruning, achieving approximately 35× speedup while surpassing the teacher model in performance.
+FastLightGen proposes a three-stage distillation algorithm that achieves joint distillation of sampling steps and model size for the first time. By identifying redundant layers, employing dynamic probabilistic pruning, and using well-guided teacher guidance distribution matching, it compresses HunyuanVideo/WanX into a lightweight generator with 4 steps and 30% parameter pruning, achieving approximately 35x speedup while outperforming the teacher model.
 
 ## Background & Motivation
 
-**Background**: Large-scale video generation models (HunyuanVideo, WanX) are based on DiT with 13B+ parameters and multi-step denoising. Generating a 5-second video on an H100 takes approximately 20 minutes.
+**Background**: Large-scale video generation models (e.g., HunyuanVideo, WanX) are based on DiT, containing 13B+ parameters and requiring multi-step denoising. Generating a 5-second video takes approximately 20 minutes on an H100.
 
-**Core Problem**:
-   - Existing acceleration methods either reduce steps (LCM/DMD) or reduce parameters (F3-Pruning/ICMD), with no joint optimization
-   - Extreme step distillation (1–2 steps) leads to drastic performance degradation
-   - Joint distillation achieves greater speedup at the same performance level (4 steps + 50% parameters = 50× vs. step-only 3 steps = 33.3×)
+**Core Problem**: 
+   - Existing acceleration methods focus either on reducing steps (LCM/DMD) or parameters (F3-Pruning/ICMD), lacking joint optimization.
+   - Extreme step distillation (1-2 steps) leads to a sharp decline in performance.
+   - Joint distillation can provide greater acceleration under identical performance (4 steps with 50% parameters = 50x vs. pure step reduction to 3 steps = 33.3x).
 
-**Goal**: A three-stage pipeline — identifying redundant layers, dynamic probabilistic pruning, and well-guided teacher guidance distribution matching.
+**Ours**: A three-stage pipeline involving redundant layer identification, dynamic probabilistic pruning, and well-guided teacher guidance distribution matching.
 
 ## Method
 
 ### Overall Architecture
 
-A three-stage distillation pipeline: Stage I identifies unimportant blocks, Stage II applies dynamic probabilistic pruning training, and Stage III performs fine-grained distribution matching.
+FastLightGen seeks to simultaneously reduce sampling steps and model parameters, compressing a 13B parameter, multi-step video DiT into a 4-step generator with only 70% of the parameters without compromising quality. Instead of treating "step reduction" and "parameter reduction" as separate sequential tasks, it designs a three-stage distillation pipeline for joint convergence. Stage I identifies redundant DiT blocks. Stage II employs "probabilistic layer skipping" to train the model into a robust form capable of functioning at various depths. Stage III uses distribution matching to align this pruned, few-step student with the teacher's output distribution. The input across all stages remains the same pre-trained teacher (HunyuanVideo / WanX), resulting in a fast and compact few-step generator.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pre-trained Teacher DiT<br/>HunyuanVideo / WanX"] --> B["Stage I: ELBO-based Redundant Layer Detection<br/>Layer-wise skipping + Tweedie ELBO estimation → U-shaped importance map"]
+    B --> C["Stage II: Dynamic Probabilistic Pruning<br/>Bernoulli p=0.5 random skipping of redundant layers<br/>Pruned aligns with unpruned (stop gradient)"]
+    C --> D["Stage III: well-guided teacher guidance Distribution Matching<br/>DMD2 Framework + inter CFG (β₁) / intra CFG (β₂)"]
+    D --> E["4 Steps · 70% Parameters<br/>Lightweight Generator (≈35× Speedup)"]
+```
 
 ### Key Designs
 
-#### 1. Stage I: Identifying Unimportant Model Blocks
+**1. Stage I — Detecting Redundant Layers via ELBO: Finding blocks to prune instead of blind clipping.**
 
-Each DiT block is skipped individually, and importance is evaluated via ELBO estimation using the Tweedie formula. A **U-shaped pattern** is discovered: the initial and final layers are most critical, while the middle layers are redundant. In HunyuanVideo, double blocks are more critical than single blocks.
+For joint parameter pruning, the first step is identifying which parts can be removed with minimal impact. FastLightGen temporarily skips each DiT block individually and uses the Tweedie formula to derive an ELBO estimate from single-step denoising results. This measures how much generation quality drops without that specific block. A lower drop indicates higher redundancy. This process generates an importance map showing a distinct **U-shaped pattern**: initial layers (near input) and final layers (near output) are critical, while middle layers are mostly redundant. For hybrid structures like HunyuanVideo, double blocks are more essential than single blocks. This layer-wise probing quantifies safety for pruning rather than relying on empirical ratios.
 
-#### 2. Stage II: Dynamic Probabilistic Pruning Training
+**2. Stage II — Dynamic Probabilistic Pruning: Training a single model robust to depth.**
 
-Unimportant layers are randomly skipped following a Bernoulli distribution ($p = 0.5$), constructing parameter-sharing unpruned/pruned models:
+After identifying layers, the challenge is maintaining model functionality after removal. Direct pruning followed by fine-tuning yields a model valid only for one specific configuration. FastLightGen utilizes randomized training: layers marked as unimportant in Stage I are skipped at each step based on a Bernoulli distribution ($p=0.5$). Consequently, shared weights generate both "unpruned" and "pruned" outputs in a single forward pass. The training objective aligns pruned outputs with unpruned outputs using a stop-gradient on the latter, treating the full model as an internal teacher that improves alongside the student.
 
-- Distillation loss: pruned outputs are aligned to unpruned outputs (stop gradient)
-- Key finding: $\alpha = 1$ (completely removing GT supervision, using distillation only) yields the best results; "soft" supervision outperforms "hard" GT
-- The output is a robust model that performs well across different depth configurations
+$$\mathcal{L}_{\text{II}} = \alpha \cdot \|f_{\text{pruned}} - \text{sg}(f_{\text{unpruned}})\|^2 + (1-\alpha)\cdot \mathcal{L}_{\text{GT}}$$
 
-#### 3. Stage III: Fine-Grained Distribution Matching
+The parameter $\alpha$ balances distillation and original ground truth (GT) supervision. Experiments show that $\alpha=1$ (using only distillation) performs best, as "soft" targets from the full model are more conducive to learning for pruned models than "hard" GT supervision. This creates a model robust to depth that functions stably across various retention ratios during deployment.
 
-Based on the DMD2 framework, well-guided teacher guidance is introduced:
+**3. Stage III — well-guided teacher guidance: Distribution matching with appropriate teacher intensity.**
 
-- The real DiT simultaneously uses pruned and unpruned outputs
-- $\beta_1$ (inter CFG) controls text guidance strength; $\beta_2$ (intra CFG) controls unpruned-to-pruned guidance
-- CFG is sampled from a uniform distribution to enhance robustness
-- Two failure modes are avoided: an overly weak teacher (ineffective) and an overly strong teacher (student unable to follow)
+Final alignment of the few-step pruned student with the teacher utilizes a modified DMD2 distribution matching framework. FastLightGen introduces well-guided teacher guidance: the DiT acting as the real distribution reference considers both pruned and unpruned outputs, decoupling two orthogonal guidance strengths—$\beta_1$ (inter CFG) for standard text-conditional guidance and $\beta_2$ (intra CFG) for the influence of the unpruned output over the pruned output. These coefficients are randomly sampled during training to ensure the student adapts to varying intensities. This avoids two failure modes: if guidance is too weak, the teacher provides insufficient gradients; if too strong, the student cannot converge to the distant teacher distribution. By optimizing $\beta_2$ for unpruned $\to$ pruned guidance, the student captures details from the full model without overextending.
 
 ### Loss & Training
 
-- Stage II: 16× H100, lr = 1e-5, 4000 iterations, ~64 GPU days
-- Stage III: lr = 5e-7, 1000 iterations, ~16 GPU days
-- Optimal configuration: $(\alpha, \beta_1, \beta_2) = (1, 3.5, 0.25)$ for WanX
-- Overly long training is inadvisable (excessive motion / oversaturated color)
+- Stage II: 16x H100, lr=1e-5, 4000 iter, ~64 GPU days.
+- Stage III: lr=5e-7, 1000 iter, ~16 GPU days.
+- Optimal configuration: $(\alpha, \beta_1, \beta_2) = (1, 3.5, 0.25)$ for WanX.
+- Excessively long training should be avoided to prevent exaggerated motion or oversaturation.
 
 ## Key Experimental Results
 
@@ -88,7 +86,7 @@ Based on the DMD2 framework, well-guided teacher guidance is introduced:
 | MagicDistillation | 0.980 | 0.561 | 0.634 | 0.701 | 0.798 | 35.4s |
 | **FastLightGen** | **0.983** | 0.500 | **0.656** | **0.717** | 0.794 | **28.3s** |
 
-**Comparison with Open-Source VDMs (Table 1)**:
+**Comparison with Open Source VDMs (Table 1)**:
 
 | Method | average |
 |------|---------|
@@ -108,53 +106,53 @@ Based on the DMD2 framework, well-guided teacher guidance is introduced:
 | 0.7 | 0.788 |
 | **1.0** | **0.791** |
 
-**Intra CFG Ablation (Table 5, $\beta_1 = 3.5$)**:
+**Intra CFG Ablation (Table 5, beta_1=3.5)**:
 
 | beta_2 | dynamic deg | average |
 |--------|------------|---------|
 | 0.00 | 0.459 | 0.812 |
 | **0.25** | 0.500 | **0.820** |
-| 0.75 | 1.000 | 0.848 (with jitter) |
+| 0.75 | 1.000 | 0.848 (jitter present) |
 
 ### Key Findings
 
-- 4 steps + 30% pruning (retaining 70% of parameters) offers the optimal cost-effectiveness, achieving approximately 35.71× speedup
-- Joint distillation achieves higher speedup at equivalent performance compared to single-dimension distillation (50× vs. 33.3×)
-- $\alpha = 1$ pure distillation is optimal for Stage II
-- Aesthetic quality and imaging quality surpass the teacher model
+- The 4-step + 30% pruning (70% parameter retention) configuration offers the best cost-performance ratio, yielding ~35.71x acceleration.
+- Joint distillation achieves higher speedup than single-dimension distillation at equivalent performance levels (50x vs. 33.3x).
+- Pure distillation ($\alpha=1$) is optimal for Stage II.
+- Aesthetic and imaging quality exceed those of the teacher model.
 
 ## Highlights & Insights
 
-1. **Joint distillation paradigm**: First demonstration that joint step + size distillation outperforms single-dimension approaches
-2. **Well-guided teacher**: Inter/intra CFG independently controls two orthogonal dimensions
-3. **Dynamic probabilistic pruning**: A single model adapts to different depth configurations
-4. **U-shaped importance**: A general finding that the initial and final layers of VDMs are most critical
+1. **Joint Distillation Paradigm**: First to prove that joint step and size distillation outperforms single-dimension optimization.
+2. **Well-guided Teacher**: Inter/intra CFG independently control two orthogonal dimensions.
+3. **Dynamic Probabilistic Pruning**: A single model adapts to different depths.
+4. **U-shaped Importance**: A universal finding that the first and last layers of VDMs are most critical.
 
 ## Limitations & Future Work
 
-1. Validated only on the TI2V task
-2. High training cost (~80 GPU days)
-3. Motion artifacts appear when $\beta_2$ is large
-4. Pruning operates only at the block level
-5. Sensitivity to data quality
+1. Validation limited to TI2V tasks.
+2. High training cost (~80 GPU days).
+3. Large values of $\beta_2$ result in motion anomalies.
+4. Pruning restricted to block-level granularity.
+5. Sensitivity to data quality.
 
 ## Related Work & Insights
 
-- **DMD2**: Foundation for distribution matching distillation
-- **MagicDistillation**: Strong step distillation baseline
-- **ICMD**: Pioneer in video size distillation
-- **Insight**: "An overly strong teacher can be harmful" warrants further validation
+- **DMD2**: Foundation for distribution matching distillation.
+- **MagicDistillation**: Strong baseline for step distillation.
+- **ICMD**: Pioneer in video model size distillation.
+- **Insight**: The concept that an "overly strong teacher can be harmful" warrants further investigation.
 
 ## Rating
 
-| Dimension | Score (1–5) | Notes |
+| Dimension | Score (1-5) | Description |
 |------|-----------|------|
-| Novelty | 4 | Joint distillation + well-guided teacher |
-| Technical Depth | 4 | Fine-grained three-stage design |
-| Experimental Thoroughness | 4.5 | Multi-model, multi-metric, thorough ablation |
-| Writing Quality | 4 | Clear figures and tables |
-| Value | 4.5 | 35× speedup is highly significant |
-| Overall | 4.2 | |
+| Novelty | 4 | Joint distillation + well-guided teacher. |
+| Technical Depth | 4 | Sophisticated three-stage design. |
+| Experimental Thoroughness | 4.5 | Extensive ablation across models and metrics. |
+| Writing Quality | 4 | Clear diagrams and tables. |
+| Value | 4.5 | 35x speedup is highly significant. |
+| Total Score | 4.2 | |
 
 <!-- RELATED:START -->
 
@@ -162,11 +160,11 @@ Based on the DMD2 framework, well-guided teacher guidance is introduced:
 
 ## Related Papers
 
+- [\[CVPR 2026\] SURF: Signature-Retained Fast Video Generation](surf_signature-retained_fast_video_generation.md)
 - [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](lightmover_generative_light_movement_with_color_and_intensity_controls.md)
-- [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
+- [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
 - [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](../../ICCV2025/video_generation/generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
 
 </div>
 

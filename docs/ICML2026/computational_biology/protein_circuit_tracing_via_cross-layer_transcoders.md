@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] Protein Circuit Tracing via Cross-layer Transcoders
 description: >-
-  [ICML 2026][Computational Biology][pLM] The authors adapt cross-layer transcoders from NLP to the protein language model ESM2, proposing the ProtoMech framework. It identifies sparse latent circuits (< 1% of latents) tha…
+  [ICML 2026][Computational Biology][pLM] The authors adapt cross-layer transcoders from NLP to the protein language model ESM2, proposing the ProtoMech framework. It recovers 79% of downstream performance using a sparse latent circuit of < 1% and enables steering along the circuit to design high-fitness protein variants, outperforming baselines in over 70% of
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "pLM"
-  - "ESM2"
-  - "cross-layer transcoder"
-  - "circuit tracing"
-  - "steering"
+  - ICML 2026
+  - Computational Biology
+  - pLM
+  - ESM2
+  - cross-layer transcoder
+  - steering
 date: 2026-05-08
-content_hash: 590a3a7f9abf4981
+content_hash: b0652e2c46fe8e8c
 ---
-
 # Protein Circuit Tracing via Cross-layer Transcoders
 
 **Conference**: ICML 2026  
@@ -24,57 +22,55 @@ content_hash: 590a3a7f9abf4981
 **Keywords**: pLM, ESM2, cross-layer transcoder, circuit tracing, steering
 
 ## TL;DR
-The authors adapt cross-layer transcoders from NLP to the protein language model ESM2, proposing the ProtoMech framework. It identifies sparse latent circuits (< 1% of latents) that recover 79% of downstream performance and enables steering along these circuits to design high-fitness protein variants, outperforming baselines in over 70% of cases.
+The authors adapt cross-layer transcoders from NLP to the protein language model ESM2, proposing the ProtoMech framework. It recovers 79% of downstream performance using a sparse latent circuit of < 1% and enables steering along the circuit to design high-fitness protein variants, outperforming baselines in over 70% of cases.
 
 ## Background & Motivation
 
-**Background**: Protein language models (pLMs) such as ESM2, ESMFold, and Boltz have achieved strong baselines in structure prediction, function prediction, and sequence design, serving as "biological foundation models." Recently, sparse autoencoders (SAEs) have been used to decompose pLM hidden states into interpretable features, such as identifying binding sites or conserved motifs.
+**Background**: Protein language models (pLMs) such as ESM2, ESMFold, and Boltz have achieved strong baseline performance in structure prediction, function prediction, and sequence design, serving as "foundation models for biology." Recently, sparse autoencoders (SAE) have been used to decompose pLM hidden states into interpretable features, such as identifying binding sites and conserved motifs.
 
-**Limitations of Prior Work**: SAEs perform sparse factorization of *single-layer representations* only, failing to capture the computational process of passing information between layers. Per-layer transcoders (PLTs) attempt to approximate the input-output mapping of each MLP layer but are trained independently, leading to error accumulation and the neglect of cross-layer dependencies, resulting in poor reconstruction quality and untrustworthy circuits.
+**Limitations of Prior Work**: SAEs only provide a sparse factorization of *single-layer representations* and cannot express the computational process of passing information from one layer to the next. Per-layer transcoders (PLTs) attempt to approximate the input-output mapping of each MLP layer, but they are trained independently, leading to accumulated errors and a complete neglect of cross-layer dependencies, resulting in poor reconstruction quality and unreliable circuits.
 
-**Key Challenge**: To identify the "computational circuits" of a pLM, a *replacement model* is required to replace the original MLP blocks while explicitly modeling information transfer between layers. SAEs do not provide "transfer," and PLTs do not provide "cross-layer" modeling.
+**Key Challenge**: To identify the "computational circuits" of a pLM, a *replacement model* is required that can globally replace the MLP blocks of the original model while explicitly modeling information transfer between layers. SAEs lacks "transfer," and PLTs lack "cross-layer" modeling.
 
-**Goal**: (1) Construct a cross-layer model for pLMs that can replace the MLP components of ESM2; (2) identify sparse circuits within the latent space (<1% latents) that recover most performance; (3) verify that these circuits correspond to interpretable biological motifs and use them for steering the design of high-fitness sequences.
+**Goal**: (1) Construct a cross-layer model for pLMs that can globally replace the MLP components of ESM2; (2) Identify sparse circuits in this model's latent space using < 1% of latents to recover most of the performance; (3) Verify that these circuits correspond to interpretable biological motifs and can be used to steer the design of high-fitness sequences.
 
-**Key Insight**: Drawing inspiration from Anthropic's Cross-Layer Transcoder (CLT), where the output of each MLP layer is reconstructed by the sum of sparse latents from all *previous* layers, thereby explicitly modeling cumulative computation in the depth direction.
+**Key Insight**: Drawing inspiration from Anthropic’s Cross-Layer Transcoder (CLT), where the output of each MLP layer is reconstructed by the cumulative sum of sparse latents decoded from all *previous* layers, thereby explicitly modeling cumulative computation along the depth dimension.
 
-**Core Idea**: Replace each MLP layer in ESM2 with a CLT, then use a greedy search based on gradient attribution to find the subset of latents most critical to each downstream task. These represent the "protein circuits," which, when visualized, map to known biological structures such as the HRD catalytic motif, the Rossmann fold, and the GB1 hydrophobic core.
+**Core Idea**: Replace each MLP layer of ESM2 with a CLT, then use a greedy search based on gradient attribution to identify the subset of latents most critical for each downstream task. This subset defines the "protein circuit." Once visualized, these circuits can be mapped to known biological structures such as the HRD catalytic motif, Rossmann fold, and the GB1 hydrophobic core.
 
 ## Method
 
 ### Overall Architecture
-ProtoMech consists of four components: (i) the CLT replacement model—comprising a sparse TopK encoder and cross-layer decoder for each ESM2 MLP layer; (ii) circuit discovery—using gradient attribution and incremental greedy search until the circuit recovers ≥70% of the original performance; (iii) steering—performing activation clamping on specific latents in the CLT to push wildtype sequences toward high-fitness regions (within 5 mutations); (iv) visualizer—selecting the top-5 activated nodes per layer, calculating edge weights via activation $\times$ gradient to generate readable circuit diagrams for manual cross-referencing with Swiss-Prot.
+ProtoMech strings together "circuit discovery + circuit application" into a pipeline consisting of four components: (i) CLT replacement model—writing a sparse TopK encoder and cross-layer decoder for each ESM2 MLP layer to create a replacement model that faithfully reproduces the original MLP computation in a sparse, readable way; (ii) Sparse circuit discovery—using gradient attribution and incremental greedy search within the replacement model to select the minimum subset of latents that recovers ≥70% of the original performance; (iii) steering—performing activation clamping on specific latents within the circuit on the CLT to push wildtype sequences toward high-fitness regions (within 5 mutations); (iv) Visualization—taking top-5 activated nodes per layer and calculating edge weights via activation × gradient to render the circuit as a readable graph for manual cross-referencing with Swiss-Prot. The first three steps represent the core methodology (three key designs below), while the fourth is a visualization tool for human interpretation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["ESM2 Protein Language Model<br/>(One MLP block per layer)"] --> B["Cross-Layer Transcoder (CLT)<br/>Layer output = Decoded accumulation of all prior sparse latents"]
+    B --> C["Attribution-based Sparse Circuit Discovery<br/>Supervised Probes + Gradient Attribution Greedy Search"]
+    C --> D["Sparse Circuit<br/>&lt;1% Latents, recovers ~79% performance"]
+    D --> E["Activation Clamping Steering along the Circuit<br/>Clamping latents → High-fitness variants (≤5 mutations)"]
+    D --> F["Circuit Visualization<br/>Top-5 nodes/layer + Act×Grad edge weights → Bio-motifs"]
+```
 
 ### Key Designs
 
-1.  **Cross-layer transcoder (CLT) as ESM2 replacement**:
+**1. Replacing ESM2 MLPs with Cross-Layer Transcoders (CLT)**: SAEs only perform sparse decomposition of single-layer representations, and PLTs approximate layers independently (accumulating error and losing cross-layer dependencies); neither captures the "layer-to-layer" computational process. CLT addresses this: for the $\ell$-th layer residual stream $\mathbf x^\ell$, it encodes sparse latents $\mathbf a^\ell=\text{TopK}(\mathbf W_{\text{enc}}^\ell(\mathbf x^\ell-\mathbf b_{\text{pre}}^\ell)+\mathbf b_{\text{enc}}^\ell)$. The $\ell$-th layer MLP output is reconstructed by decoding and summing latents from **all previous layers**: $\hat{\mathbf y}^\ell=\sum_{\ell'=1}^{\ell}\mathbf W_{\text{dec}}^{\ell'\to\ell}\mathbf{a}^{\ell'}+\mathbf b_{\text{pre}}^\ell$. The training objective includes the reconstruction MSE $\mathcal L_{\text{MSE}}=\sum_\ell \|\mathbf y^\ell-\hat{\mathbf y}^\ell\|_2^2$ and an auxiliary loss $\mathcal L_{\text{aux}}$ to mitigate dead latents. This upgrades signals from "intra-layer reconstruction" to "cross-layer composition," faithfully reproducing ESM2's actual computational paths and naturally allowing subsequent latents to be interpreted as functional compositions of prior latents.
 
-    - **Function**: Reconstructs the output of each MLP layer using sparse latents from all preceding layers, preserving interpretability while explicitly expressing cross-layer computation.
-    - **Mechanism**: The residual stream $\mathbf x^\ell$ at layer $\ell$ is encoded as $\mathbf a^\ell=\text{TopK}(\mathbf W_{\text{enc}}^\ell(\mathbf x^\ell-\mathbf b_{\text{pre}}^\ell)+\mathbf b_{\text{enc}}^\ell)$, and then $\hat{\mathbf y}^\ell=\sum_{\ell'=1}^{\ell}\mathbf W_{\text{dec}}^{\ell'\to\ell}\mathbf a^{\ell'}+\mathbf b_{\text{pre}}^\ell$. The training objective is $\mathcal L_{\text{MSE}}=\sum_\ell \|\mathbf y^\ell-\hat{\mathbf y}^\ell\|_2^2$ plus an auxiliary reconstruction residual loss $\mathcal L_{\text{aux}}$ to mitigate dead latents.
-    - **Design Motivation**: Upgrading signals from "intra-layer reconstruction" to "cross-layer composition" faithfully reproduces the actual computational paths of ESM2 and provides compositionality for circuit discovery (where deeper latents interpret functional combinations of earlier ones).
+**2. Attribution-based Sparse Circuit Discovery**: With the replacement model established, the next step is to select the tiny subset of latents critical for a specific task from tens of thousands. The authors first train supervised probes (logistic regression for family, CNN for function) on the original ESM2 final MLP output $\mathbf y^L$ to anchor performance. During inference, hybrid replacement is used—MLPs are run via CLT while attention modules retain original ESM2 values. Latents are ranked by gradient attribution to the probe output and added to the candidate set in small batches until the circuit recovers ≥70% of original performance or reaches full latent performance (evaluated by F1 for family and Spearman $\rho$ for function). Greedy search with attribution avoids $2^{d_{\text{latent}}}$ brute-force search. Fixed attention prevents "error accumulation from attention reconstruction" (ablations show performance collapses if attention also uses CLT), ensuring the circuit specifically explains the MLP computational path, consistent with Anthropic's approach in LLMs.
 
-2.  **Attribution-based sparse circuit discovery algorithm**:
-
-    - **Function**: Identifies the minimal subset of latents in the CLT to recover target task performance.
-    - **Mechanism**: Supervised probes are first trained on the final MLP output $\mathbf y^L$ of the original ESM2 (logistic regression for family, CNN for function). Hybrid replacement is then performed in ProtoMech (MLP replaced by CLT, attention fixed). Latents are ranked by gradient attribution to the probe output and incrementally added until performance recovers to ≥70% or full-set performance. F1 is used for family tasks, and Spearman $\rho$ for function tasks.
-    - **Design Motivation**: Greedy search with attribution avoids a brute-force $2^{d_{\text{latent}}}$ search. Fixing attention isolates the computation path to the MLP, preventing error accumulation from attention reconstruction, consistent with Anthropic's LLM designs.
-
-3.  **Activation clamping steering along circuits**:
-
-    - **Function**: Transitions the circuit from an "explanatory tool" to a "generative tool" for designing high-fitness protein variants.
-    - **Mechanism**: During the wildtype forward pass, activation values of latents in the target function circuit are "clamped"—setting the node's activation to its maximum observed magnitude across the sequence multiplied by a scalar. Reconstructed $\hat{\mathbf y}^L$ at $\ell=L$ is decoded to ESM2 logits to select mutations. Variants are limited to 5 mutations from the wildtype to ensure downstream CNN evaluator reliability.
-    - **Design Motivation**: Applying attribution results ("which latents are important for function") back to generation represents mechanistic-guided protein design. Unlike CAA, which uses a global concept vector, this method targets specific sub-circuits, resulting in cleaner signals and less interference.
+**3. Activation Clamping Steering along the Circuit**: Circuits are not just explanatory tools but can also serve as generative tools for designing high-fitness variants. During the forward pass of a wildtype sequence, specific latents in the target function circuit are "clamped"—setting the activation to the maximum observed amplitude for that node across the sequence, multiplied by a scalar multiplier. Then, using Eq. (2) to reconstruct $\hat{\mathbf y}^L$ at $\ell=L$, the result is decoded to ESM2 logits to select mutations based on maximum probability. Variants are restricted to ≤5 mutations from the wildtype to ensure reliability of downstream CNN evaluators. Compared to CAA, which injects a global concept vector into the residual stream, this approach only modifies sub-circuits "attributed to function," resulting in less interference and cleaner signals. This essentially uses mechanistic attribution to drive protein design (mechanism-guided protein design).
 
 ### Loss & Training
-The CLT uses $\mathcal L_{\text{CLT}}=\mathcal L_{\text{MSE}}+\alpha\mathcal L_{\text{aux}}$, pre-trained on 5M sequences (≤1022 aa) from UniRef50. The CLT for ESM2-8M contains 28M parameters (3.5× original). To mitigate the $\mathcal O(L^2)$ scaling bottleneck of the decoding matrix, a "windowed CLT" is proposed—each layer only attends to the previous 4 layers. For ESM2-35M, this reduces parameters from 207M to 125M and speeds up training by 1.75×, with family recovery dropping only slightly from 85% to 82%.
+CLT uses $\mathcal L_{\text{CLT}}=\mathcal L_{\text{MSE}}+\alpha\mathcal L_{\text{aux}}$, pre-trained on 5M sequences (≤1022 aa) sampled from UniRef50. The CLT for ESM2-8M has 28M parameters, 3.5× the original model. To mitigate scaling bottlenecks from the $\mathcal O(L^2)$ decoding matrix, the authors propose a "windowed CLT" where each layer only looks at the previous 4 layers. On ESM2-35M, this reduces parameters from 207M to 125M and accelerates training by 1.75×, with family recovery only dropping from 85% to 82%.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Recovery performance of circuits on ESM2-8M for two downstream tasks:
+Circuit recovery performance on two downstream tasks in ESM2-8M:
 
-| Task | Full Latents (PLT / ProtoMech) | Circuit (PLT / ProtoMech) | Latent Fraction in Circuit |
+| Task | Full Latent (PLT / ProtoMech) | Circuit (PLT / ProtoMech) | Circuit Latent % |
 |---|---|---|---|
 | Protein family F1 | 0.50 ± 0.34 / **0.82 ± 0.19** | 0.49 ± 0.33 / **0.73 ± 0.19** | ~0.8% |
 | Function Spearman $\rho$ | 0.38 ± 0.18 / **0.41 ± 0.19** | 0.35 ± 0.19 / **0.38 ± 0.18** | ~0.9% |
@@ -91,37 +87,37 @@ Steering Mean scores across seven DMS assays (selected):
 
 ### Ablation Study
 
-| Configuration | Observation | Implication |
+| Configuration | Phenomenon | Meaning |
 |---|---|---|
-| Recursive replacement (attn also via CLT) | Significant performance collapse | Cross-layer error accumulation; attention must be fixed |
-| Windowed CLT (window=4) on ESM2-35M | family 82% vs vanilla 85% | Viable trade-off for larger models |
-| Comparison at same sparsity as PLT | PLT family F1 only 0.50 | Cross-layer connections, not sparsity tuning, drive performance |
+| Recursive replacement (attn via CLT) | Significant performance collapse | Cross-layer error accumulation; attention must remain fixed. |
+| Windowed CLT (window=4) on ESM2-35M | Family 82% vs vanilla 85% | Viable trade-off strategy for larger models. |
+| Comparison with PLT at same sparsity | PLT family F1 only 0.50 | Cross-layer connections, not sparsity tuning, drive performance. |
 
 ### Key Findings
-- On families where the original ESM2 performs poorly (F1<0.5), ProtoMech circuits achieve a higher average F1 (0.43 vs 0.39). This represents a "sparse denoising regularization" effect—the circuit filters out task-irrelevant noise, making it more reliable than the original model and a potential mechanistic filter for protein screening.
-- The circuit maintains 74% performance on GFP variants with mutation depth ≥5, suggesting ProtoMech captures *global* functional motifs rather than overfitting local statistics.
-- Visualization confirmed: In the Kinase circuit, L1 identifies arginine (R) → L3 identifies the HRD catalytic loop → L5 splits into the ATP binding site and G-loop; in the NADP+ circuit, L4 identification of the Rossmann fold → L5 narrows to the NADP+/FAD pocket. Deep layers reactivate early residues, consistent with the "token reiteration" phenomenon in NLP.
+- On protein families where original ESM2 performs poorly (F1 < 0.5), ProtoMech circuits achieved a higher average F1 than the original model (0.43 vs 0.39). This suggests a "sparse denoising regularization" effect—the circuit filters out task-irrelevant noise, potentially serving as a mechanistic filter for protein screening.
+- For GFP variants with mutation depth ≥5, the circuit still recovers 74% performance, indicating that ProtoMech captures *global* functional motifs rather than over-fitting local statistics.
+- Visualization confirmed: In the Kinase circuit, L1 identifies Arginine R → L3 identifies the HRD catalytic loop → L5 splits into the ATP binding site and G-loop. In the NADP+ circuit, L4 identifies the Rossmann fold → L5 narrows to the NADP+/FAD pocket. Deep layers reactivate early residues, consistent with the token reiteration phenomenon in NLP.
 
 ## Highlights & Insights
-- This work is the first to adapt Anthropic's CLT concepts to biological foundation models, completing the circuit tracing and steering pipeline and verifying that "mechanistic interpretability" is a universal paradigm rather than an LLM-specific phenomenon.
-- It introduces "mechanistic-guided protein design": mutations are driven by "which latents are responsible for high fitness" rather than global concept vectors or time-consuming evolutionary algorithms, offering high efficiency and strong explainability.
-- The denoising phenomenon, where the "circuit is more accurate than the original model," suggests that sparse latent space inherently acts as a learnable regularizer, valuable for small-sample or noisy protein prediction tasks.
+- This is the first work to adapt Anthropic’s CLT concepts to biological foundation models, completing a full pipeline of circuit discovery and steering. It validates that "mechanistic interpretability" is a cross-domain paradigm rather than specific to LLMs.
+- It introduces "mechanism-guided protein design": instead of relying on global concept vectors or time-consuming evolutionary algorithms, mutation selection is directly driven by "which latents are responsible for high fitness," offering high efficiency and interpretability.
+- The denoising phenomenon where "circuits are more accurate than the original model" suggests that sparse latent space acts as a learnable regularizer, which is highly valuable for protein prediction tasks with small samples or high noise.
 
 ## Limitations & Future Work
-- Circuit interpretation still relies on manual Swiss-Prot cross-referencing, which lacks scalability; an automated motif annotation pipeline is urgently needed.
-- Only validated on masked LMs (ESM2); whether CLT applies to autoregressive pLMs (ProGen) or diffusion pLMs (DPLM) remains an open challenge.
-- The $\mathcal O(L^2)$ parameter scaling bottleneck, though partially mitigated by windowed CLT, may remain prohibitive for models like ESM2-650M and larger.
+- Circuit interpretation still relies on manual cross-referencing with Swiss-Prot, which has poor scalability; automated motif annotation pipelines are urgently needed.
+- Validation was limited to masked LMs (ESM2). Whether autoregressive pLMs (ProGen) or diffusion pLMs (DPLM) can utilize CLT remains unknown and is an open challenge.
+- The $\mathcal O(L^2)$ parameter scaling bottleneck, though partially mitigated by windowed CLT, may still be prohibitive for models like ESM2-650M or larger.
 
 ## Related Work & Insights
-- **vs Adams 2025 (SAE on pLM)**: While they use SAEs to explain single-layer representations, this work focuses on CLT to explain cross-layer computation, upgrading from "features" to "circuits."
-- **vs Ameisen 2025 (CLT on LLM)**: This work represents the first application of Anthropic's LLM circuit tracing to the biological domain, verifying cross-domain portability.
-- **vs CAA (Huang 2025) protein steering**: CAA relies on extensive fitness labels and local mutations, prone to overfitting; ProtoMech enables sparse intervention through circuits, offering better data efficiency and extrapolation.
+- **vs Adams 2025 (SAE on pLM)**: They used SAEs for single-layer representation interpretation, while this work shifts to CLTs for cross-layer computation—moving from "features" to "circuits."
+- **vs Ameisen 2025 (CLT on LLM)**: While Anthropic performed LLM circuit tracing on Claude, this work is the first application in biology, verifying the cross-domain transferability of the method.
+- **vs CAA (Huang 2025) for protein steering**: CAA relies on extensive fitness annotations and local mutations, making it prone to overfitting. ProtoMech achieves sparse intervention via circuits, demonstrating stronger data efficiency and extrapolation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First application of cross-layer transcoders for pLM circuit tracing and introduction of a new protein steering paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers family, function, and steering tasks across two model scales, with quantitative and biological case studies.
+- Novelty: ⭐⭐⭐⭐ First use of cross-layer transcoders for pLM circuit tracing and introduction of a new protein steering paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers family, function, and steering tasks across two model sizes, with complementary quantitative and biological case studies.
 - Writing Quality: ⭐⭐⭐⭐ Clear framework with intuitive layer-by-layer interpretation of biological cases (Kinase/NADP+/GB1).
-- Value: ⭐⭐⭐⭐ Provides a cross-domain case for the mech-interp community and a low-cost mechanism-driven method for protein design.
+- Value: ⭐⭐⭐⭐ Provides the mech-interp community with a cross-domain case and offers a low-cost, mechanism-driven method for protein design.
 
 <!-- RELATED:START -->
 
@@ -132,8 +128,8 @@ Steering Mean scores across seven DMS assays (selected):
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
 - [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
-- [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
 - [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
+- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](../../NeurIPS2025/computational_biology/inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
 
 </div>
 

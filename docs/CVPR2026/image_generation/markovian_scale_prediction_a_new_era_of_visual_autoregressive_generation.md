@@ -2,93 +2,94 @@
 title: >-
   [Paper Note] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 description: >-
-  [CVPR 2026][Image Generation][Visual autoregressive generation] This work reformulates the visual autoregressive model (VAR) from a full-context-dependent next-scale prediction paradigm into a Markovian scale prediction…
+  [CVPR 2026][Image Generation][Paper Note] Refactors the Visual Autoregressive (VAR) model from full-context dependency next-scale prediction to Markovian scale prediction based on a Markov process. Through a sliding window history compensation mechanism, it achieves non-full-context modeling, reducing FID by 10.5% and peak memory by 83.8% on ImageNet.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Visual autoregressive generation"
-  - "Markov process"
-  - "multi-scale prediction"
-  - "memory efficiency"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: c1bee5e0115ec0bc
+content_hash: b9a4d3d0912b10dd
 ---
-
 # Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.23334](https://arxiv.org/abs/2511.23334)  
 **Code**: [Available](https://luokairo.github.io/markov-var-page/)  
-**Area**: Model Compression
-**Keywords**: Visual autoregressive generation, Markov process, multi-scale prediction, memory efficiency, image generation
+**Area**: Image Generation  
+**Keywords**: Visual autoregressive generation, Markov process, multi-scale prediction, memory efficiency, image generation  
 
 ## TL;DR
 
-This work reformulates the visual autoregressive model (VAR) from a full-context-dependent next-scale prediction paradigm into a Markovian scale prediction process. By introducing a sliding-window history compensation mechanism for non-full-context modeling, the method achieves a 10.5% FID reduction and 83.8% peak memory reduction on ImageNet.
+Refactors the Visual Autoregressive (VAR) model from full-context dependency next-scale prediction to Markovian scale prediction based on a Markov process. Through a sliding window history compensation mechanism, it achieves non-full-context modeling, reducing FID by 10.5% and peak memory by 83.8% on ImageNet.
 
 ## Background & Motivation
 
-Visual autoregressive modeling (VAR) replaces next-token prediction with next-scale prediction, generating images in a coarse-to-fine manner and achieving breakthroughs in visual generation. However, VAR's **full-context dependency**—where predicting the current scale requires attending to all previous scales—introduces three major problems:
+Visual autoregressive modeling (VAR) achieves breakthroughs in visual generation by replacing next-token prediction with next-scale prediction, generating images in a coarse-to-fine manner. However, the **full-context dependency** of VAR (where predicting the current scale requires attending to all previous scales) leads to three major issues:
 
-**Prohibitive computational cost**: Token counts grow quadratically with scale, and cross-scale cumulative modeling causes super-linear computation growth. At 1024×1024 resolution, a depth-24 VAR model reaches a peak memory of 117.9 GB.
+**Enormous Computational Overhead**: The number of tokens grows quadratically with scale, and cumulative cross-scale modeling causes computational costs to increase super-linearly. At 1024×1024 resolution, the peak memory of a depth-24 VAR reaches 117.9GB.
 
-**Persistent error accumulation**: The unidirectional causal chain of autoregressive generation cannot correct early prediction errors. Experiments show that perturbations injected at early scales have far greater impact on FID than those at later scales (perturbation at the first scale causes the largest FID degradation), and full-context dependency repeatedly exploits erroneous information, exacerbating accumulation.
+**Continuous Error Accumulation**: The unidirectional causal chain of autoregression cannot correct early prediction errors. Experiments show that perturbations injected early have a much greater impact on FID than those injected later (perturbations in the first scale lead to the largest FID drop), and full-context dependency exacerbates accumulation by repeatedly utilizing erroneous information.
 
-**Cross-scale interference**: Full-context attention causes gradients from different scales to compete and conflict in the shared feature space. The authors compute RFA (Residual-Feature Alignment) scores—cosine similarities between the residual features of the current scale output and the input features of each prior scale—finding that **early scales generally exert a negative influence on current-scale representation learning**.
+**Cross-scale Interference**: Full-context attention causes gradients from different scales to compete and conflict in the shared feature space. The authors calculate the RFA (Residual-Feature Alignment) score—the cosine similarity between the current scale's output residual features and input features from each previous scale—finding that **early scales usually have a negative impact on current representation learning**.
 
-The core motivation derives from the information-theoretic concept of **sufficient statistics**: in a sequential chain, each node inherently maintains representative historical information, so effective prediction can be achieved through appropriate distillation without requiring the full history.
+The core motivation stems from the concept of **sufficient statistics** in information theory: in a continuous chain of propagation, each node maintains representative historical information, and effective prediction can be achieved through proper distillation without requiring the entire history.
 
 ## Method
 
 ### Overall Architecture
 
-Markov-VAR reformulates VAR as a non-full-context Markovian process:
+Markov-VAR refines VAR into a non-full-context Markov process:
 
-- **Original VAR modeling**: $p(R_1, \ldots, R_T) = \prod_{t=1}^{T} p(R_t | \langle\text{sos}\rangle, R_{<t})$, where each scale depends on all previous scales.
-- **Markov-VAR modeling**: $p(R_1, \ldots, R_T) = \prod_{t=1}^{T} p(R_t | M_{t-1})$, where each scale depends only on the current Markov state.
+- **Original VAR Modeling**: $p(R_1, \ldots, R_T) = \prod_{t=1}^{T} p(R_t | \langle\text{sos}\rangle, R_{<t})$, where each scale depends on all previous scales.
+- **Markov-VAR Modeling**: $p(R_1, \ldots, R_T) = \prod_{t=1}^{T} p(R_t | M_{t-1})$, where each scale depends only on the current Markovian state.
 
-Here $M_t = f_\phi(R_t, M_{t-1})$ is a representative dynamic state, with $M_0 = \langle\text{sos}\rangle$.
+Here $M_t = f_\phi(R_t, M_{t-1})$ is the representative dynamic state, and $M_0 = \langle\text{sos}\rangle$.
+
+```mermaid
+graph TD
+    A["Previous scale token E_(t−1)"] --> W["Sliding window history compensation<br/>Take latest N=3 scales<br/>Cross-attn into history vector h_(t−1)"]
+    A --> M["Markovian state M_(t−1)<br/>Concat(E_(t−1), H_(t−1))"]
+    W --> M
+    M --> ATT["Markovian Attention<br/>Visibility restricted to M_(t−1)"]
+    ATT --> R["Predict current scale R_t"]
+    R -->|t ← t+1 rolling generation| A
+    R --> OUT["Concatenate scales → Generate image"]
+```
 
 ### Key Designs
 
-#### 1. Markov State Definition
+**1. Markovian State Definition: Letting the current scale act as a "condensed history"**
 
-- **Function**: Treats the features of each scale directly as the Markov state.
-- **Mechanism**: Information theory establishes that the mutual information between the full history $c_{<t}$ and the current timestep $c_t$ is highly redundant; a sufficient statistic $c_{t-1}$ exists such that $I(c_{t-1}; c_t) = I(c_{<t}; c_t)$.
-- **Design Motivation**: The sequential unidirectional autoregressive structure causes each scale to already encode representative historical information, making it a natural Markov state. This assumption eliminates full-context dependency and fundamentally avoids KV cache computation.
+The bottleneck of VAR lies in looking back at all $R_{<t}$ when predicting the $t$-th scale, which is both expensive and amplifies early errors. The authors address this using the concept of sufficient statistics from information theory: the mutual information between the complete history $c_{<t}$ and the current time $c_t$ is highly redundant. There exists a sufficient statistic $c_{t-1}$ such that $I(c_{t-1}; c_t) = I(c_{<t}; c_t)$. This means that if $c_{t-1}$ already encodes the "history useful for predicting $c_t$," looking further back is redundant. Chain-like unidirectional autoregression satisfies this condition: each scale absorbs representative historical information during generation and can be used directly as a Markovian state. This reduces modeling from $p(R_t | R_{<t})$ to $p(R_t | M_{t-1})$, fundamentally eliminating full-context dependency and removing the need for a KV cache.
 
-#### 2. Sliding-Window History Compensation Mechanism
+**2. Sliding Window History Compensation: Recovering "recent" info lost by looking only at the last scale**
 
-- **Function**: Compresses recent scale information via a sliding window to compensate for information loss caused by non-full-context modeling.
-- **Mechanism**: Given a sliding window of size $N$, $\mathcal{W}_t = \{E_{t-1}, E_{t-2}, \ldots, E_{t-N}\}$, the token sequences within the window are concatenated into $\hat{X}_t$, and aggregated into a fixed-dimensional history vector via cross-attention:
+Using only $E_{t-1}$ as the state is aggressive, as a single scale may not be a perfect sufficient statistic. The authors use a sliding window of size $N$, $\mathcal{W}_t = \{E_{t-1}, E_{t-2}, \ldots, E_{t-N}\}$, to concatenate recent tokens into $\hat{X}_t$. A learnable global state query $q$ compresses this via cross-attention into a fixed-dimensional history vector:
 
 $$h_{t-1} = \text{Attn}(q, \hat{X}_t, \hat{X}_t)$$
 
-where $q$ is a learnable global state query. The history vector is broadcast and concatenated with the current scale features to form the representative dynamic state:
+This history vector is broadcast and concatenated with current scale features to obtain the representative dynamic state for the next step:
 
 $$M_{t-1} = \text{Concat}(E_{t-1}, H_{t-1})$$
 
-- **Design Motivation**: Window size $N=3$ is verified as optimal through ablation, consistent with RFA analysis—the most recent 3 scales contribute positively to current-scale learning, while earlier scales introduce interference.
+The key is that the window "slides" rather than "accumulates": when generating the 4th scale, it only sees scales 1–3; at the 5th scale, the window moves forward, dropping scale 1 to see 2–4. The history remains a fixed-size segment of neighbors rather than a growing sequence. A window size of $N=3$ was found optimal through ablation, aligning with RFA analysis—recent 3 scales contribute positively to the current representation, while earlier scales introduce interference.
 
-#### 3. Markovian Attention
+**3. Markovian Attention: Locking attention within the dynamic state to cut cross-scale interference**
 
-- **Function**: Redesigns the attention mask to restrict each scale to attend only to its current dynamic state $M_{t-1}$.
-- **Mechanism**: Unlike VAR's full causal attention, Markovian attention strictly confines the attention scope of each scale to within its dynamic state.
-- **Design Motivation**: Eliminating cross-scale interference allows each scale to learn distinctive representations; removing the need for KV cache fundamentally reduces computational cost.
+Changing the modeling formula is insufficient; the attention mask must also be modified. VAR uses full causal attention, allowing each scale to see all preceding scales, which causes cross-scale gradient competition. Markovian attention strictly limits the visibility of each scale to its own dynamic state $M_{t-1}$. Scales do not peer into each other, allowing each to focus on learning its specific layer representation. Combined with the previous points, the chain eliminates the need to store historical KVs and removes interference, benefiting both quality and efficiency.
 
 ### Loss & Training
 
-- **Loss function**: Cross-entropy $\mathcal{L} = \sum_{t=1}^{T} CE(\hat{R}_t, R_t)$
-- **Training scheme**: Teacher-forcing with Markovian attention mask
+- **Loss**: Cross-entropy $\mathcal{L} = \sum_{t=1}^{T} CE(\hat{R}_t, R_t)$
+- **Training Strategy**: Teacher-forcing + Markovian attention mask
 - **Optimizer**: AdamW, lr=$8 \times 10^{-5}$, $\beta_1=0.9$, $\beta_2=0.95$
-- **Scale**: Batch size 768–1536, epochs 200–400, 8×H200 GPUs
-- **Tokenizer**: Multi-scale VQ-VAE tokenizer pretrained by VAR
-- **Positional encoding**: Rotary Positional Embedding (RoPE)
-- **Network architecture**: LLaMA-style attention and MLP blocks, width $w=64d$, attention heads $h=d$
+- **Scale**: batch 768-1536, epochs 200-400, 8×H200 GPU
+- **Encoder**: Uses multi-scale VQ-VAE tokenizer pre-trained by VAR
+- **Positional Encoding**: Rotary Positional Embedding (RoPE)
+- **Architecture**: LLaMA-style attention and MLP blocks, width $w=64d$, attention heads $h=d$
 
 ## Key Experimental Results
 
-### Main Results (ImageNet 256×256 Class-Conditional)
+### Main Results (ImageNet 256×256 class-conditional)
 
 | Model | Params | FID↓ | IS↑ | Precision↑ | Recall↑ |
 |-------|--------|------|-----|------------|---------|
@@ -100,10 +101,10 @@ $$M_{t-1} = \text{Concat}(E_{t-1}, H_{t-1})$$
 | **Markov-VAR-d24** | 1.02B | **2.15** | **310.9** | 0.83 | 0.59 |
 | DiT-XL/2 (Diffusion) | 675M | 2.27 | 278.2 | 0.83 | 0.57 |
 
-Efficiency comparison (batch=25, single H200):
+Efficiency Comparison (batch=25, single H200):
 
-| Model | Resolution | Inference Time (s)↓ | Peak Memory (GB)↓ | Memory Reduction |
-|-------|------------|---------------------|-------------------|-----------------|
+| Model | Res. | Inference Time (s)↓ | Peak Memory (GB)↓ | Memory Reduction |
+|-------|------|-------------------|-------------------|------------------|
 | VAR-d24 | 256 | 0.711 | 12.4 | — |
 | Markov-VAR-d24 | 256 | 0.608 | 4.7 | **-62.1%** |
 | VAR-d24 | 512 | 1.335 | 31.4 | — |
@@ -118,13 +119,13 @@ History compensation mechanism (depth-16):
 | Method | Params | FID↓ | IS↑ |
 |--------|--------|------|-----|
 | No history compensation | 300M | 3.64 | 247.7 |
-| Global history (full-context compensation) | 324M | 3.41 | 245.2 |
+| Global history (Full-context) | 324M | 3.41 | 245.2 |
 | Mixed history | 359M | 3.45 | 257.4 |
 | **Sliding window (Ours)** | 329M | **3.23** | **256.2** |
 
 Sliding window size:
 
-| Window Size | FID(d16)↓ | IS(d16)↑ | FID(d20)↓ | IS(d20)↑ |
+| Window Size | FID (d16)↓ | IS (d16)↑ | FID (d20)↓ | IS (d20)↑ |
 |-------------|-----------|----------|-----------|----------|
 | 1 | 3.53 | 237.8 | 2.50 | 267.9 |
 | 2 | 3.39 | 248.6 | 2.47 | 281.4 |
@@ -133,32 +134,32 @@ Sliding window size:
 
 ### Key Findings
 
-1. The d16 model achieves FID improvement from 3.61→3.23 (10.5% gain) and IS improvement from 225.6→256.2 (13.6% gain).
-2. At 1024 resolution, peak memory is reduced from 117.9 GB to 19.1 GB (83.8% reduction) without any KV cache.
-3. Window size $N=3$ is optimal across all model depths, showing strong consistency between theoretical analysis and empirical results.
-4. Favorable scaling laws: both loss and error rate follow power-law decay as model size increases, with $R^2 > 0.99$.
-5. Markov-VAR-d20 achieves competitive performance using only ~70% of the parameters of M-VAR-d20.
+1. d16 model FID improved from 3.61→3.23 (10.5% gain), IS from 225.6→256.2 (13.6% gain).
+2. 1024 resolution peak memory reduced from 117.9GB→19.1GB (83.8% reduction), with no KV cache required.
+3. Window size $N=3$ is optimal across all depths, with theoretical analysis highly consistent with experiments.
+4. Scaling laws are robust: loss and error rate decrease as power laws with model size ($R^2 > 0.99$).
+5. Markov-VAR-d20 achieves competitive performance using only about 70% of the parameters of M-VAR-d20.
 
 ## Highlights & Insights
 
-1. **Elegant unification of theory and experiment**: The Markov assumption is motivated from the information-theoretic concept of sufficient statistics, with direct empirical support from RFA analysis and perturbation experiments.
-2. **Deep validation of "less is more"**: Reducing context dependency actually improves generation quality, as full-context modeling introduces cross-scale interference.
-3. **Architecture-level efficiency gains**: The elimination of KV cache is a fundamental advantage whose benefit continues to grow with increasing resolution.
-4. **Minimalist design**: The history compensation mechanism requires only a single cross-attention module and one learnable query, adding minimal parameters while yielding significant gains.
+1. **Elegant Unity of Theory and Experiment**: The Markov assumption is argued from information-theoretic sufficient statistics, with RFA analysis and perturbation experiments providing direct empirical evidence.
+2. **Deep Validation of "Less is More"**: Reducing context dependency actually improves quality because full context introduces cross-scale interference.
+3. **Architectural Efficiency Gain**: The lack of a required KV cache is a fundamental advantage that scales further with increased resolution.
+4. **Minimalist Design**: History compensation via only one cross-attention and one learnable query adds minimal parameters but yields significant effects.
 
 ## Limitations & Future Work
 
-1. Validation is limited to ImageNet class-conditional generation; performance on more complex tasks such as text-to-image generation remains to be explored.
-2. The method relies on the VQ-VAE tokenizer pretrained by VAR; a stronger tokenizer may yield further improvements.
-3. A single learnable query may limit the expressiveness of historical information; multi-query or adaptive query designs are worth exploring.
-4. Integration with acceleration techniques such as quantization and distillation has not been investigated.
+1. Validated only on ImageNet class-conditional generation; effectiveness on complex tasks like text-to-image remains to be verified.
+2. Dependent on the pre-trained VQ-VAE tokenizer from VAR; stronger tokenizers may yield further improvements.
+3. A single learnable query may limit history expression; multiple or adaptive queries could be explored.
+4. Combination with acceleration techniques like quantization and distillation is not yet explored.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The Markov assumption challenges full-context dependency with a theoretically counterintuitive yet compelling motivation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive coverage of performance, efficiency, ablation, and scaling laws, with multi-resolution validation and publicly released full model weights.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Motivation analysis is rigorous (RFA and perturbation experiments), figures are well-crafted, and the narrative is logically coherent.
-- **Value**: ⭐⭐⭐⭐⭐ — Simultaneously improves both quality and efficiency; the 83.8% memory reduction is of substantial practical significance for high-resolution generation deployment.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The Markovian assumption challenges full-context dependency with counter-intuitive but powerful theoretical motivation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers performance, efficiency, ablation, and scaling laws; validated across resolutions with full model weights released.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Deep motivation analysis (RFA/perturbation), excellent visualizations, and smooth logic.
+- **Value**: ⭐⭐⭐⭐⭐ — Simultaneously improves performance and efficiency; 83.8% memory saving is significant for high-resolution generation.
 
 <!-- RELATED:START -->
 
@@ -167,10 +168,10 @@ Sliding window size:
 ## Related Papers
 
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](../../ICLR2026/image_generation/mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
-- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
-- [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)
+- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
+- [\[CVPR 2026\] Mirai: Autoregressive Visual Generation Needs Foresight](mirai_autoregressive_visual_generation_needs_foresight.md)
+- [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
 - [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](../../ICLR2026/image_generation/ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
-- [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 
 </div>
 

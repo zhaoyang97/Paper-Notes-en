@@ -2,133 +2,138 @@
 title: >-
   [Paper Note] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 description: >-
-  [ACL 2026][AIGC Detection][AI-generated text detection] This paper proposes MASH (Multi-stage Alignment for Style Humanization), a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time r…
+  [ACL 2026][AIGC Detection][Paper Note] This paper proposes MASH (Multi-Stage Style Humanization Alignment), which utilizes a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors with an average attack success rate of 92% in black-box
 tags:
-  - "ACL 2026"
-  - "AIGC Detection"
-  - "AI-generated text detection"
-  - "Black-box adversarial attacks"
-  - "Style transfer"
-  - "Text humanization"
-  - "DPO alignment"
+  - ACL 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: 9de5093fcdb7d39e
+content_hash: 5a1b126ad6d7cac9
 ---
-
 # MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2601.08564](https://arxiv.org/abs/2601.08564)  
 **Code**: [https://github.com/githigher/MASH](https://github.com/githigher/MASH)  
-**Area**: Text Generation / Adversarial Text Detection  
-**Keywords**: AI-generated text detection, Black-box adversarial attacks, Style transfer, Text humanization, DPO alignment
+**Area**: Image Generation/Text Detection Adversarial  
+**Keywords**: AI-generated text detection, black-box adversarial attack, style transfer, text humanization, DPO alignment
 
 ## TL;DR
 
-This paper proposes MASH (Multi-stage Alignment for Style Humanization), a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors in a black-box setting with an average attack success rate of 92% while maintaining excellent linguistic quality.
+This paper proposes MASH (Multi-Stage Style Humanization Alignment), which utilizes a three-stage pipeline consisting of style-injection SFT → DPO alignment → inference-time refinement. By training a rewriter with only 0.1B parameters, it evades AI text detectors with an average attack success rate of 92% in black-box settings while maintaining excellent linguistic quality.
 
 ## Background & Motivation
 
-**Background**: The misuse of AI-generated text (AIGT) has led to the development of numerous detection methods, including training-based detectors (e.g., RoBERTa fine-tuned classifiers) and zero-shot detectors (e.g., Binoculars, Fast-DetectGPT). These detectors have achieved high accuracy on standard benchmarks, and commercial APIs (Writer, Scribbr) are already widely deployed.
+**Background**: The misuse of AI-generated text (AIGT) has spurred the development of numerous detection methods, including training-based detectors (e.g., RoBERTa fine-tuned classifiers) and zero-shot detectors (e.g., Binoculars, Fast-DetectGPT). These detectors have achieved high accuracy on standard benchmarks, and commercial APIs (Writer, Scribbr) are already widely deployed.
 
-**Limitations of Prior Work**: Existing adversarial evasion strategies face significant practical hurdles: (1) perturbation-based methods (e.g., TextFooler, Charmer) have limited attack success rates in black-box settings; (2) prompt-based methods (e.g., PromptAttack) rely on the instruction-following consistency of models, leading to unstable performance; (3) rewriting-based methods (e.g., DIPPER, DPO-Evader) typically require white-box access to either the source generator or the target detector's internal information.
+**Limitations of Prior Work**: Existing adversarial evasion strategies face significant practical hurdles—(1) perturbation-based methods (e.g., TextFooler, Charmer) have limited attack success rates in black-box settings; (2) prompt-based methods (e.g., PromptAttack) rely on the consistency of model instruction-following, leading to unstable performance; (3) rewriting-based methods (e.g., DIPPER, DPO-Evader) typically require white-box access to either the source generator or the target detector's internal information.
 
-**Key Challenge**: Detectors identify AI text by capturing differences in semantic and statistical feature distributions between AI-generated and human-written text. To evade detection effectively, the style distribution of AI text must be fundamentally altered to approximate the human distribution. This necessitates a "machine style → human style" transfer while preserving semantics—a task made difficult by the scarcity of parallel training data (AI text → corresponding human text).
+**Key Challenge**: Detectors identify AI text by capturing differences in semantic and statistical feature distributions between AI and human text. To evade detection effectively, the style distribution of AI text must be fundamentally altered to approximate human distributions. This requires completing a "machine style → human style" transfer while maintaining semantic invariance—yet obtaining parallel training data (AI text → corresponding human text) is extremely difficult.
 
-**Goal**: Design a pure black-box style transfer framework that humanizes text generated by any LLM to evade detection without requiring internal access to the source generator or target detector.
+**Goal**: Design a pure black-box style transfer framework that can humanize text generated by any LLM to evade detection without accessing the internal information of source generators or target detectors.
 
-**Key Insight**: Inverse data construction—while parallel "AI → Human" data is difficult to obtain, the inverse "Human → AI" direction is easily accessible (by using an LLM to rewrite human text). This inverse construction can be leveraged to obtain a parallel corpus, which is then used for style-injection SFT to learn human style patterns.
+**Key Insight**: Construct training data in reverse—while "AI → human" parallel data is difficult to obtain, the "human → AI" direction is straightforward (using an LLM to rewrite human text). This reverse construction yields parallel corpora used for style-injection SFT to learn human style patterns.
 
-**Core Idea**: Redefine detector evasion as a specialized "machine style → human style" text style transfer task, implemented via a three-stage pipeline: SFT to learn human styles + DPO to learn to cross detection boundaries + inference-time refinement to ensure quality.
+**Core Idea**: Redefine detector evasion as a specialized "machine style → human style" text style transfer task. This is implemented through a three-stage pipeline: SFT to learn human styles + DPO to learn crossing detection boundaries + inference-time refinement to ensure quality.
 
 ## Method
 
 ### Overall Architecture
 
-MASH consists of four stages: (1) Inverse data construction—starting from open-source human text, an LLM generates corresponding AI-style text to form a parallel corpus; (2) Style-injection SFT—a BART-based encoder-decoder architecture initializes controllable style transfer via learnable style embeddings; (3) DPO alignment—detector confidence serves as an implicit reward signal to optimize the rewriter to cross detection boundaries; (4) Inference-time adversarial refinement—sentences are refined based on perplexity ranking to improve linguistic quality while maintaining evasion.
+MASH reformulates "detector evasion" as a "machine style → human style" text style transfer problem, training a rewriter with only 0.1B parameters using a four-stage pipeline. It first constructs parallel corpora in reverse—generating AI-style text from existing human text to solve the scarcity of "AI → human" data. Then, style-injection SFT teaches the rewriter "what human style looks like," followed by DPO to push it to "know how to cross detection boundaries." Finally, it performs sentence-level refinement during inference to fix fluency. The entire process is black-box and requires no internal information from the source generator or target detector.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Inverse Data Construction"]
+        direction TB
+        A["Human Text<br/>Detector filters high-confidence human samples"] --> B["LLM Rewrites to AI Style<br/>Detector filters high-confidence AI samples"]
+        B --> C["Parallel Corpora D_pair"]
+    end
+    C --> D["Style-Injection SFT<br/>BART + Learnable style embeddings, decouples content and style"]
+    subgraph ALIGN["DPO Alignment + Inference-Time Refinement"]
+        direction TB
+        E["DPO Alignment<br/>Hard negatives (still detected) = rejected, Human text = chosen, cross detection boundary"] --> F["Inference-Time Refinement<br/>Sentence-level polishing by perplexity, keeps substitutions only if judged human"]
+    end
+    D --> E
+    F --> G["Humanized Text (Evading black-box detectors)"]
+```
 
 ### Key Designs
 
-1.  **Inverse Data Construction**:
-    *   **Function**: Solves the scarcity of "AI → Human" parallel data.
-    *   **Mechanism**: Original texts are collected from open-source datasets and filtered by a detector to identify high-confidence human text $\mathbf{x}_{human}$ ($D(\mathbf{x}_{human}) < \tau$). An LLM then rewrites each human text into semantically equivalent AI text $\mathbf{x}_{ai}$, which is again filtered for high-confidence AI text ($D(\mathbf{x}_{ai}) > \tau$). This yields $N$ pairs of parallel data $\mathcal{D}_{pair} = \{(\mathbf{x}_{ai}^{(i)}, \mathbf{x}_{human}^{(i)})\}$.
-    *   **Design Motivation**: Exploits the asymmetry where the "Human → AI" direction is easy to automate, allowing for the construction of training data without manual labeling or alignment efforts.
+**1. Inverse Data Construction: Utilizing the "Human → AI" directional asymmetry to create parallel corpora with zero annotation.**
 
-2.  **Style-injection Supervised Fine-Tuning (SFT)**:
-    *   **Function**: Initializes the rewriter with controllable human style transfer capabilities.
-    *   **Mechanism**: Based on a pre-trained BART, two learnable style embeddings $\mathbf{s}_{ai}, \mathbf{s}_{human} \in \mathbb{R}^d$ are introduced. The encoder produces content representations $\mathbf{H}_{content}$, and a fusion layer injects the selected style via linear projection: $\mathbf{H}_{fused}^{(t)} = \mathbf{W}_p \cdot [\mathbf{h}_{content}^{(t)}; \mathbf{s}_{style}] + \mathbf{b}_p$. Training utilizes a multi-task objective: reconstruction loss $\mathcal{L}_{recon}$ (reconstructing the original AI text after injecting AI style to maintain semantics) + transfer loss $\mathcal{L}_{trans}$ (generating human text after injecting human style to learn style patterns). Total loss: $\mathcal{L}_{SFT} = \lambda\mathcal{L}_{recon} + (1-\lambda)\mathcal{L}_{trans}$.
-    *   **Design Motivation**: Standard fine-tuning often leads to overfitting and semantic loss. Style embeddings decouple content and style; the reconstruction task constrains semantic preservation while the transfer task learns style conversion.
+To learn "AI → human" style transfer, the most direct way is training on paired AI text and corresponding human text, but such data is hard to get. MASH exploits an asymmetry: making an LLM rewrite human text into AI style is very easy. Specifically, raw text is collected from open-source datasets, and a detector filters for high-confidence human text $\mathbf{x}_{human}$ ($D(\mathbf{x}_{human})<\tau$). An LLM then rewrites each into semantically equivalent AI text, filtered for high-confidence AI text ($D(\mathbf{x}_{ai})>\tau$), resulting in $N$ pairs of parallel data $\mathcal{D}_{pair}=\{(\mathbf{x}_{ai}^{(i)},\mathbf{x}_{human}^{(i)})\}$. This process requires no manual annotation or alignment.
 
-3.  **DPO Alignment + Inference-time Refinement**:
-    *   **Function**: Advances the rewriter from "knowing what human style looks like" to "knowing how to cross detection boundaries," while guaranteeing final output quality.
-    *   **Mechanism**: Reward is defined as the negative scaled detector confidence $r(x,y) = -C \cdot D(y)$, maximizing this reward to converge to the region where $D(y) \to 0$. Hard negative mining is used—SFT outputs that fail to evade detection serve as rejected responses, while ground-truth human texts serve as chosen responses for DPO. During inference, sentences are sorted by perplexity; an LLM polisher refines low-fluency sentences, accepting the replacement only if it remains classified as human by the detector.
-    *   **Design Motivation**: SFT learns "what the target style is" while DPO learns "how far the detection boundary is and how to cross it." Inference refinement fixes potential fluency issues without sacrificing attack effectiveness.
+**2. Style-Injection SFT: Decoupling content and style via learnable style embeddings to give the rewriter a starting point that preserves semantics.**
+
+Directly fine-tuning on parallel data risks overfitting and semantic loss. MASH introduces two learnable style embeddings $\mathbf{s}_{ai}, \mathbf{s}_{human} \in \mathbb{R}^d$ on a pre-trained BART. The encoder produces content representations $\mathbf{H}_{content}$, and the fusion layer linearly injects the selected style: $\mathbf{H}_{fused}^{(t)}=\mathbf{W}_p\cdot[\mathbf{h}_{content}^{(t)};\mathbf{s}_{style}]+\mathbf{b}_p$. Training uses a multi-task objective $\mathcal{L}_{SFT}=\lambda\mathcal{L}_{recon}+(1-\lambda)\mathcal{L}_{trans}$—where $\mathcal{L}_{recon}$ (reconstructing original AI text after injecting AI style) constrains semantic maintenance, and $\mathcal{L}_{trans}$ (generating human text after injecting human style) learns style patterns.
+
+**3. DPO Alignment + Inference-Time Refinement: Pushing the rewriter across detection boundaries, then restoring fluency without sacrificing evasion.**
+
+SFT helps the model identify the "target style" but not "how far the detection boundary is." MASH treats the negative scaled detector confidence as an implicit reward $r(x,y)=-C\cdot D(y)$, which convergent policies optimize toward the $D(y)\to 0$ region. Training pairs utilize hard negative mining—samples from SFT that are still detected serve as rejected responses, while original human texts serve as chosen responses. During inference, the system refines sentences in descending order of perplexity: LLMs rewrite low-fluency sentences, and substitutions are accepted only if the detector still judges them as human.
 
 ### Loss & Training
 
-*   SFT Stage: Multi-task loss $\mathcal{L}_{SFT} = \lambda\mathcal{L}_{recon} + (1-\lambda)\mathcal{L}_{trans}$, initialized with BART-base.
-*   DPO Stage: $\mathcal{L}_{DPO} = -\mathbb{E}[\log\sigma(h_\theta(\mathbf{y}_w|\mathbf{x}) - h_\theta(\mathbf{y}_l|\mathbf{x}))]$, where $h_\theta(\mathbf{y}|\mathbf{x}) = \beta\log\frac{\pi_\theta(\mathbf{y}|\mathbf{x})}{\pi_{ref}(\mathbf{y}|\mathbf{x})}$.
-*   Hard negative filtering condition: $D(\mathbf{y}_l) > \tau$, ensuring a maximized probability gap between preference pairs.
-*   Optimized using AdamW, trained on a single NVIDIA RTX 3090 GPU.
+- SFT Stage: Multi-task loss $\mathcal{L}_{SFT} = \lambda\mathcal{L}_{recon} + (1-\lambda)\mathcal{L}_{trans}$, initialized with BART-base.
+- DPO Stage: $\mathcal{L}_{DPO} = -\mathbb{E}[\log\sigma(h_\theta(\mathbf{y}_w|\mathbf{x}) - h_\theta(\mathbf{y}_l|\mathbf{x}))]$, where $h_\theta(\mathbf{y}|\mathbf{x}) = \beta\log\frac{\pi_\theta(\mathbf{y}|\mathbf{x})}{\pi_{ref}(\mathbf{y}|\mathbf{x})}$.
+- Hard negative selection criteria: $D(\mathbf{y}_l) > \tau$, ensuring a maximized probability gap between preference pairs.
+- Optimizer: AdamW on a single NVIDIA RTX 3090 GPU.
 
 ## Key Experimental Results
 
-### Main Results (Against RoBERTa Detectors, ASR↑)
+### Main Results (Against RoBERTa Detector, ASR↑)
 
 | Method | Essay | Reuters | WP | Humanity | Social | STEM | Average |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-------|---------|-----|----------|--------|------|------|
 | DeepWordBug | 0.13 | 0.02 | 0.51 | 0.07 | 0.11 | 0.07 | 0.15 |
 | TextFooler | 0.38 | 0.29 | 0.59 | 0.11 | 0.10 | 0.07 | 0.26 |
 | Charmer | 0.45 | 0.05 | 0.62 | 0.73 | 0.84 | 0.29 | 0.50 |
 | GradEscape | 0.22 | 0.02 | 0.00 | 0.37 | 0.52 | 0.38 | 0.25 |
 | CoPA | 0.01 | 0.00 | 0.17 | 0.20 | 0.19 | 0.16 | 0.12 |
-| **MASH (Ours)** | **0.95** | **0.73** | **0.90** | **0.87** | **0.98** | **1.00** | **0.92** |
+| **Ours (MASH)** | **0.95** | **0.73** | **0.90** | **0.87** | **0.98** | **1.00** | **0.92** |
 
 ### Ablation Study (Against Binoculars Detector)
 
 | Configuration | Essay ASR | Reuters ASR | WP ASR | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| MASH Full | 0.94 | 0.95 | 0.85 | Full method |
-| w/o DPO | ~0.23* | ~0.16* | ~0.33* | Significant drop in ASR without DPO |
-| w/o Style-SFT | ~0.03* | ~0.03* | ~0.02* | Nearly ineffective without SFT |
-
-*Ablation values estimated based on DPO-Evader baseline (which uses DPO without Style-SFT).
+|------|-----------|-------------|--------|------|
+| MASH Full | 0.94 | 0.95 | 0.85 | Complete method |
+| w/o DPO | ~0.23 | ~0.16 | ~0.33 | Significant drop in ASR without DPO |
+| w/o Style-SFT | ~0.03 | ~0.03 | ~0.02 | Nearly ineffective without SFT |
 
 ### Key Findings
 
-*   **0.1B model outperforms LLMs**: MASH, based on BART-base (0.14B), significantly outperforms PromptAttack and DIPPER which use large LLMs. This proves that fine-grained style alignment is more critical than model scale.
-*   **Excellent quality preservation**: MASH achieves GRUEN (fluency) scores comparable to or better than the best baselines, with BERTScore (semantic preservation) maintained in the 0.89-0.90 range and PPL controlled at reasonable levels.
-*   **Strong cross-detector generalization**: Performs exceptionally well against RoBERTa (training-based), Binoculars (zero-shot), SCRN (denoising-based), and commercial APIs (Writer, Scribbr).
-*   **Progressive contributions per stage**: Style-SFT provides basic style transfer, DPO significantly boosts the ability to cross detection boundaries, and inference refinement further ensures quality. All three stages are indispensable.
+- **0.1B model outperforms large models**: MASH based on BART-base (0.14B) outperforms methods using large LLMs like PromptAttack and DIPPER, proving style alignment is more critical than scale.
+- **Superior quality preservation**: MASH matches or exceeds best baselines in GRUEN (fluency) and maintains BERTScore (semantic preservation) between 0.89-0.90.
+- **Strong cross-detector generalization**: Performs remarkably against RoBERTa (trained), Binoculars (zero-shot), SCRN (denoising), and commercial APIs.
+- **Incremental contributions**: Style-SFT provides foundational style transfer, DPO enhances boundary-crossing, and refinement ensures output quality.
 
 ## Highlights & Insights
 
-*   **Ingenuity of Inverse Data Construction**: By leveraging the asymmetry where LLMs rewrite human text easily but humans rewrite AI text slowly, the method obtains high-quality parallel corpora at zero cost.
-*   **Redefining Evasion as Style Transfer**: Reframing the adversarial goal from "deceiving a detector" to "making text read like human writing" represents a methodological breakthrough.
-*   **Implicit Adversarial Training with DPO**: Embedding detector confidence as an implicit reward in the DPO framework avoids explicit reward model definition, elegantly unifying preference learning and adversarial optimization.
-*   **Extremely Low Computational Overhead**: Trainable on a single 3090 GPU; BART-base has only 0.14B parameters and requires no detector queries during inference (only limited interaction during training), making it highly practical for deployment.
+- **Novelty of Inverse Data Construction**: Leveraging the asymmetry between "AI rewriting human text" and vice versa provides high-quality parallel corpora at zero cost.
+- **Redefining Evasion as Style Transfer**: Changing the objective from "tricking the detector" to "writing like a human" provides a methodological breakthrough.
+- **Implicit Adversarial Training via DPO**: Embedding detector confidence as an implicit reward in DPO avoids the need for an explicit reward model.
+- **Value of Efficiency**: Trainable on a single 3090 GPU with low parameter counts, requiring no detector queries during inference after training.
 
 ## Limitations & Future Work
 
-*   Only ChatGPT-generated text was tested as the source; the transfer effect on other LLMs (e.g., Claude, Llama) requires verification.
-*   The DPO stage requires limited interaction with the detector; alternative strategies are needed when the detector is completely inaccessible.
-*   Only English text was evaluated; style differences and evasion in multilingual scenarios remain unexplored.
-*   The paper focuses on the attacker's perspective; building detectors robust against MASH was not discussed in depth.
-*   The inference-time refinement stage relies on an external LLM polisher, increasing inference costs.
+- Currently only tested with ChatGPT-generated text; effects on other LLM sources (Claude, Llama) remain unverified.
+- DPO requires limited interaction with the detector; alternative solutions are needed for completely inaccessible detectors.
+- Restricted to English text; style differences in multilingual scenarios require exploration.
+- Lacks discussion on building detectors robust against MASH from a defender's perspective.
+- Inference-time refinement relies on an external LLM polisher, increasing inference costs.
 
 ## Related Work & Insights
 
-*   **vs. DIPPER (Krishna et al., 2023)**: DIPPER uses a T5-XXL (11B) rewriter but achieves very low ASR in black-box settings (0.07 on Essay). MASH reaches 0.95 with a 0.14B model.
-*   **vs. DPO-Evader (Nicks et al., 2023)**: DPO-Evader optimizes directly with DPO but lacks Style-SFT initialization, resulting in zero ASR on some datasets. This proves style priors from SFT are essential for DPO.
-*   **vs. CoPA (Fang et al., 2025)**: CoPA relies on computationally expensive contrastive learning, with black-box ASR only ranging 0.01-0.20. MASH surpasses it via a more efficient SFT+DPO pipeline.
-*   **vs. GradEscape (Meng et al., 2025)**: GradEscape requires detector gradient information; its performance drops sharply in strict black-box settings. MASH maintains high ASR under pure black-box constraints.
+- **vs DIPPER (Krishna et al., 2023)**: DIPPER uses T5-XXL (11B) but has very low ASR under black-box settings. MASH achieves 0.95 ASR with a 0.14B model.
+- **vs DPO-Evader (Nicks et al., 2023)**: DPO-Evader lacks the Style-SFT initialization, resulting in near-zero ASR on some datasets.
+- **vs CoPA (Fang et al., 2025)**: CoPA relies on high-compute contrastive learning; MASH outperforms it via the SFT+DPO pipeline.
 
 ## Rating
 
-*   **Novelty**: ⭐⭐⭐⭐ Redefining evasion as style transfer is a novel perspective; inverse data construction is clever.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive comparisons across 6 domains, 5 detectors, and 11 baselines.
-*   **Writing Quality**: ⭐⭐⭐⭐ Clear methodological description and well-articulated motivations.
-*   **Value**: ⭐⭐⭐⭐ Highlights the vulnerability of current AIGT detectors and provides significant insights for detector robustness research.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -138,9 +143,9 @@ MASH consists of four stages: (1) Inverse data construction—starting from open
 
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](../../ICML2026/aigc_detection/black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
-- [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
 - [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
-- [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
+- [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)
+- [\[ACL 2026\] REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control](reflex_self-refining_explainable_fact-checking_via_verdict-anchored_style_contro.md)
 
 </div>
 

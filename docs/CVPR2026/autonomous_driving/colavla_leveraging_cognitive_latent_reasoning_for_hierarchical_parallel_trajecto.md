@@ -2,114 +2,127 @@
 title: >-
   [Paper Note] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][End-to-end autonomous driving] ColaVLA proposes a unified vision-language-action (VLA) framework that transfers VLM reasoning from textual chain-of-thought to latent space. Through a Cogni…
+  [CVPR 2026][Autonomous Driving][Paper Note] ColaVLA proposes a unified Vision-Language-Action (VLA) framework that shifts VLM reasoning from textual Chain-of-Thought (CoT) to the latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, it efficiently completes scene understanding and trajectory decoding in just two VLM forward passe
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "End-to-end autonomous driving"
-  - "VLM reasoning"
-  - "latent space reasoning"
-  - "multi-scale trajectory planning"
-  - "vision-language-action"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 257f67716c8bfc0e
+content_hash: 6e924faca9272b39
 ---
-
 # ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.22939](https://arxiv.org/abs/2512.22939)  
-**Code**: [Available](https://github.com/pqh22/ColaVLA)  
-**Area**: Autonomous Driving
-**Keywords**: End-to-end autonomous driving, VLM reasoning, latent space reasoning, multi-scale trajectory planning, vision-language-action
+**Code**: [Yes](https://github.com/pqh22/ColaVLA)  
+**Area**: Autonomous Driving  
+**Keywords**: End-to-end Autonomous Driving, VLM Reasoning, Latent Space Reasoning, Multi-scale Trajectory Planning, Vision-Language-Action
 
 ## TL;DR
 
-ColaVLA proposes a unified vision-language-action (VLA) framework that transfers VLM reasoning from textual chain-of-thought to latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, the framework completes scene understanding and trajectory decoding with only two VLM forward passes, achieving state-of-the-art performance on both nuScenes open-loop and closed-loop benchmarks.
+ColaVLA proposes a unified Vision-Language-Action (VLA) framework that shifts VLM reasoning from textual Chain-of-Thought (CoT) to the latent space. Through a Cognitive Latent Reasoner and a Hierarchical Parallel Planner, it efficiently completes scene understanding and trajectory decoding in just two VLM forward passes, achieving SOTA performance on both nuScenes open-loop and closed-loop benchmarks.
 
 ## Background & Motivation
 
-End-to-end autonomous driving is evolving from modular pipelines toward unified learning. The integration of VLMs introduces cross-modal priors and commonsense reasoning, yet current VLM-based planners face three fundamental challenges:
+End-to-end autonomous driving methods are evolving from modular pipelines toward unified learning. While the introduction of VLMs brings cross-modal priors and common-sense reasoning, current VLM-based planners face three core problems:
 
-**Modality mismatch**: A natural gap exists between discrete text tokens and continuous trajectory coordinates, which may produce format violations or physically inconsistent waypoints.
+**Modal Mismatch**: There is a natural gap between discrete text tokens and continuous trajectory coordinates, which can result in formatting violations or physically inconsistent waypoints.
 
-**High chain-of-thought latency**: Autoregressive token-by-token decoding leads to ever-growing sequences, with inference latency exceeding 3,700 ms in systems such as OmniDrive and SOLVE-VLM.
+**High Chain-of-Thought Latency**: Auto-regressive token-by-token decoding leads to ever-growing sequences, with inference latency reaching over 3700 ms (e.g., OmniDrive, SOLVE-VLM).
 
-**Non-causal planners hinder deployment**: Existing planners cannot achieve parallel decoding while preserving causal structure.
+**Non-causal Planner Deployment Constraints**: Existing planners cannot achieve parallel decoding while maintaining a causal structure.
 
-The core idea of ColaVLA is to transfer all reasoning entirely into a unified latent space, avoiding lengthy text generation while retaining the knowledge priors and generalization capability of VLMs.
+The core idea of ColaVLA is to perform reasoning entirely within a unified latent space, avoiding lengthy text generation while preserving the knowledge priors and generalization capabilities of the VLM.
 
 ## Method
 
 ### Overall Architecture
 
-ColaVLA consists of two core modules:
+ColaVLA aims to enable VLMs to provide common-sense reasoning for planning without being hindered by the latency of text generation or modal gaps. The approach migrates the entire reasoning chain into the latent space and concludes with a planner capable of parallel trajectory output. The process consists of two stages: the first is the **Cognitive Latent Reasoner**, which mimics the four cognitive stages of human driving ("understand the scene → lock onto key targets → rethink → determine strategy") entirely in the latent space, utilizing two VLM forward passes to define meta-action priors. The second is the **Hierarchical Parallel Planner**, which uses these priors to decode multi-scale trajectories simultaneously in a single forward pass while maintaining causal structure. Two VLM forward passes plus one planner decoding step represent the total inference cost, reducing latency from the 3700ms range to approximately 700ms.
 
-- **Cognitive Latent Reasoner**: Completes driving strategy inference in latent space through four stages—comprehension → recognition → rethinking → decision—requiring only two VLM forward passes.
-- **Hierarchical Parallel Planner**: Leverages meta-action priors from the reasoner to decode multi-scale, causally consistent trajectories in a single forward pass.
+```mermaid
+graph TD
+    IN["Multi-view Images + Ego Status<br/>+ Fixed Driving Prompts"]
+    subgraph CLR["Cognitive Latent Reasoner (Two VLM Forwards)"]
+        direction TB
+        A["Driving Scene Understanding<br/>1st VLM Forward: Trimodal interaction, keep vision tokens only"]
+        B["Key Entity Identification<br/>FiLM Alignment + Top-K Routing, approx. 1200→256"]
+        C["Latent Space Rethinking<br/>2nd VLM Forward: Meta-queries converge in latent space"]
+        D["Policy Decision Synthesis<br/>MLP + Focal Loss → Policy Logits"]
+        A --> B --> C --> D
+    end
+    IN --> A
+    D -->|meta-action prior| E["Hierarchical Parallel Planner<br/>Stage-aware Query → Causal-preserving Hybrid Attention → Confidence-guided Parallel Decoding"]
+    E --> OUT["Multi-scale and Causally Consistent Trajectories"]
+```
 
 ### Key Designs
 
-#### 1. Driving Scene Comprehension
+**1. Driving Scene Understanding: Using the first VLM forward pass to "read" multi-view frames into globally interacted vision tokens.**
 
-Fixed driving prompt embeddings $\mathbf{T}$, multi-view visual embeddings $\mathbf{V}$, and ego-state tokens $\mathbf{E}$ are concatenated and fed through a shared VLM Transformer to obtain globally interacted visual tokens:
+The first hurdle for VLM-based planners is heterogeneous input—multi-view images, ego status, and prompt text. This step concatenates the fixed driving prompt embedding $\mathbf{T}$, multi-view visual embedding $\mathbf{V}$, and ego status token $\mathbf{E}$ into a sequence, passing it through the shared VLM Transformer for full interaction:
 
 $$\mathbf{Q}_V = \mathcal{D}_{\text{vlm}}([\mathbf{T}; \mathbf{V}; \mathbf{E}]) \in \mathbb{R}^{L_v \times D}$$
 
-Only the visual slice is retained; text and ego embeddings are discarded to ensure prompt immutability and avoid redundant information.
+After interaction, only the visual slice $\mathbf{Q}_V$ is retained, discarding the text and ego embeddings. This ensures the prompt remains immutable and avoids redundancy, while the vision tokens absorb ego status and task semantics as the sole carriers for subsequent reasoning.
 
-#### 2. Critical Entity Recognition
+**2. Key Entity Identification: Compressing thousands of vision tokens into hundreds of "safety-critical" bottlenecks using ego-adaptive routing.**
 
-An ego-adaptive router is introduced to align visual tokens with ego state via FiLM conditioning:
+A single multi-view frame can involve thousands of vision tokens, but driving decisions are often determined by a few objects (lead vehicle, crossing pedestrians, red lights). Directly feeding all tokens to the second reasoning stage is slow and dilutes the signal. Here, FiLM conditioning aligns vision tokens with the ego status:
 
 $$\tilde{\mathbf{Q}}_V = (1 + \gamma(\mathbf{E})) \odot \mathbf{Q}_V + \beta(\mathbf{E})$$
 
-The router then scores and selects the Top-K safety-critical visual tokens $\mathbf{Q}^*$. During training, Gumbel-Softmax relaxation maintains differentiability; at inference, Top-K selection is applied directly. This step compresses 1,200 visual tokens to $K=256$, forming an efficient information bottleneck.
+Where $\gamma(\mathbf{E})$ and $\beta(\mathbf{E})$ are scaling and shifting factors derived from ego status, effectively re-weighting tokens from the ego-vehicle's perspective. A router then scores the aligned tokens, selecting the Top-K safety-critical tokens $\mathbf{Q}^*$, compressing approximately 1200 tokens down to $K=256$. This acts as an information bottleneck that removes background noise and shortens the sequence for the second VLM forward pass.
 
-#### 3. Latent Rethinking
+**3. Latent Space Rethinking: Implementing "rethinking" as a second VLM forward pass, allowing learnable meta-queries to converge to driving policies.**
 
-The fixed prompt $\mathbf{T}$, the selected $K$ visual tokens $\mathbf{Q}^*$, ego token $\mathbf{E}$, and $C$ learnable meta-queries $\mathbf{M}$ are concatenated for a second VLM forward pass:
+Drivers often "double-check" before making a critical decision; this step is that verification within the latent space. Fixed prompts $\mathbf{T}$, screened key vision tokens $\mathbf{Q}^*$, the ego token $\mathbf{E}$, and $C$ learnable meta-queries $\mathbf{M}$ are concatenated for a second VLM forward pass:
 
 $$\mathbf{Q}_M = \mathcal{D}_{\text{vlm}}([\mathbf{T}; \mathbf{Q}^*; \mathbf{E}; \mathbf{M}]) \in \mathbb{R}^{C \times D}$$
 
-Each meta-query is initialized to a driving meta-action (e.g., straight cruising, unprotected left turn, emergency braking), obtained by clustering training trajectories.
+Each meta-query corresponds to a typical driving meta-action (straight cruise, unprotected left turn, emergency braking, etc.) obtained via clustering of training trajectories. Instead of generic feature calculation, each candidate meta-action updates under the "observation" of key targets, outputting $\mathbf{Q}_M$ with explicit semantics. This replaces textual CoT with a parallel latent forward pass.
 
-#### 4. Strategic Decision Synthesis
+**4. Policy Decision Synthesis: Mapping rethinked meta-queries to policy logits, using focal loss to focus on difficult and safety-critical samples.**
 
-Meta-query embeddings are modulated via FiLM and cross-attention, then mapped to driving strategy logits by an MLP. Training uses focal loss to emphasize hard and safety-critical samples.
+After rethinking, a choice must be made. Meta-query embeddings undergo FiLM modulation and cross-attention before being mapped to driving policy logits by an MLP. Training utilizes Focal Loss instead of standard Cross-Entropy because safety-critical scenarios (braking, swerving) are rare but high-stakes. Focal Loss automatically assigns higher weights to these difficult, low-frequency samples to prevent the model from being biased by "normal driving" data.
 
-#### 5. Hierarchical Parallel Planner
+**5. Hierarchical Parallel Planner: Using meta-action priors to decode multi-scale, causally consistent trajectories in one forward pass.**
 
-The prediction horizon of $T$ steps is partitioned into $S$ nested scales $\mathcal{I}_1 \subset \cdots \subset \mathcal{I}_S = \mathcal{T}$, refining trajectories from coarse to fine:
+The final step converts abstract meta-action priors into concrete waypoints. The challenge is achieving parallelism (speed) while maintaining causality (preventing future information leakage). The planner divides the prediction horizon $T$ into $S$ nested scales $\mathcal{I}_1 \subset \cdots \subset \mathcal{I}_S = \mathcal{T}$, filling waypoints from coarse endpoints to fine steps. This hierarchical interpolation is supported by three mechanisms: **Stage-aware trajectory queries** expand the meta-action embedding into queries for each scale; **Causal-preserving hybrid attention** uses a mask $\mathcal{M}$ to ensure scale $s$ tokens only attend to scale $s-1$ and context tokens; **Confidence-guided parallel decoding** allows multiple candidate policies to run simultaneously, using MLP heads to regress trajectories and estimate confidence, supervising only the hypothesis closest to the Ground Truth.
 
-- **Stage-aware trajectory queries**: The meta-action embedding selected by the reasoner is expanded via temporal embeddings into multi-scale targets.
-- **Causality-preserving hybrid attention**: A hybrid attention mask $\mathcal{M}$ is designed so that tokens at scale $s$ can only attend to scale $s-1$ and context tokens, preventing future information leakage.
-- **Confidence-guided parallel decoding**: Multiple candidate strategies are processed simultaneously; two MLP heads estimate confidence and regress trajectories respectively. Only the hypothesis nearest to the ground truth receives supervision, preventing mode collapse.
+### A Complete Example
 
-### Loss & Training
+Example of an unprotected left turn at an intersection:
 
-- **Multi-stage training**: Stage 1 pre-trains the VLM on OmniDrive-nuScenes QA pairs (updating only LoRA parameters); Stage 2 jointly fine-tunes the integrated action planner.
-- Built on LLaVA v1.5 (LLaMA-7B); EVA-02-L is used as the image encoder and SQ-Former for visual reasoning.
-- AdamW optimizer with cosine annealing; learning rate $1 \times 10^{-4}$.
+1.  **Scene Understanding**: Six camera views + ego status + fixed prompts are processed by the 1st VLM pass to produce $L_v \approx 1200$ vision tokens.
+2.  **Key Entity Identification**: FiLM re-weights tokens based on "low speed, left turn intent." The router selects the Top-256 tokens, retaining oncoming traffic and pedestrians while filtering out neutral background buildings.
+3.  **Latent Space Rethinking**: 256 key tokens + ego + $C$ meta-queries undergo the 2nd VLM pass. The "unprotected left turn" query is weighted down by oncoming traffic, while "wait/yield" query weight increases.
+4.  **Policy Decision**: MLP + Focal Loss maps meta-queries to logits, outputting a meta-action prior favoring "decelerate and yield before turning."
+5.  **Hierarchical Parallel Decoding**: The planner sets the 6s endpoint (coarse scale) and fills in the 0.5s waypoints (fine scale). Hybrid attention ensures waypoints are causally consistent, producing the full trajectory in one pass.
+
+## Loss & Training
+
+*   **Multi-stage Training**: Stage 1 pre-trains the VLM on OmniDrive-nuScenes QA pairs (updating only LoRA parameters); Stage 2 performs joint fine-tuning with the motion planner.
+*   Based on LLaVA v1.5 (LLaMA-7B), using EVA-02-L as the image encoder and SQ-Former for visual reasoning.
+*   AdamW optimizer + Cosine Annealing, learning rate $1 \times 10^{-4}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: nuScenes Open-Loop Planning Results**
+**Table 1: nuScenes Open-loop Planning Results**
 
 | Method | Type | Avg L2 (m) ↓ | Avg Col. (%) ↓ |
-|------|------|:---:|:---:|
+| :--- | :--- | :---: | :---: |
 | UniAD | Action+Ego | 0.46 | 0.37 |
 | VAD-Base | Action+Ego | 0.37 | 0.33 |
 | SOLVE-E2E | Action+Ego | 0.31 | 0.30 |
 | SOLVE-VLM | Text | 0.28 | 0.20 |
 | **ColaVLA** | **Action+Ego** | **0.30** | **0.23** |
 
-**Table 2: NeuroNCAP Closed-Loop Simulation Results**
+**Table 2: NeuroNCAP Closed-loop Simulation Results**
 
 | Method | NeuroNCAP Score ↑ | Avg Col. (%) ↓ |
-|------|:---:|:---:|
+| :--- | :---: | :---: |
 | UniAD | 0.73 | 88.6 |
 | VAD | 0.66 | 92.5 |
 | ImpromptuVLA† | 2.06 | 65.1 |
@@ -118,58 +131,58 @@ The prediction horizon of $T$ steps is partitioned into $S$ nested scales $\math
 
 ### Ablation Study
 
-| Reasoning Module | Rethinking Stage | Avg L2 (cm) ↓ |
-|:---:|:---:|:---:|
+| Reasoning Module | Rethink Stage | Avg L2 (cm) ↓ |
+| :---: | :---: | :---: |
 | ✗ | ✗ | 32.2 |
 | ✓ | ✗ | 31.3 |
 | ✓ | ✓ | **30.4** |
 
 | Planner Type | NeuroNCAP Score ↑ |
-|------|:---:|
+| :--- | :---: |
 | MLP-based | 1.05 |
 | Diffusion-based | 1.02 |
 | **Ours** | **1.50** |
 
-Inference latency comparison: ColaVLA 727 ms vs. OmniDrive 3,727 ms vs. SOLVE-VLM 3,719 ms (single H20 GPU), achieving a **5× speedup**.
+Inference latency comparison: ColaVLA 727ms vs. OmniDrive 3727ms vs. SOLVE-VLM 3719ms (on a single H20 GPU), achieving **5× speedup**.
 
 ### Key Findings
 
-1. Latent space reasoning reduces latency by more than 5× compared to textual chain-of-thought while maintaining or improving planning quality.
-2. In closed-loop evaluation, the collision rate drops from 65.1% (ImpromptuVLA) to 36.8%, with static collisions reduced by 73%.
-3. The hierarchical interpolation strategy (predicting endpoints first, then filling intermediate points) outperforms sequential, reverse, and single-scale strategies.
-4. Top-K = 256 safety-critical tokens achieves the optimal accuracy–efficiency trade-off.
+1.  Latent space reasoning reduces latency by over 5× compared to textual CoT while maintaining or improving planning quality.
+2.  In closed-loop evaluation, the collision rate drops from 65.1% (ImpromptuVLA) to 36.8%, with static collisions reduced by 73%.
+3.  Hierarchical interpolation strategies (predicting endpoints first then intermediate points) outperform sequential, reverse, or single-scale strategies.
+4.  Top-K=256 safety-critical tokens achieve the optimal balance between accuracy and efficiency.
 
 ## Highlights & Insights
 
-1. **Paradigm innovation**: This work is the first to systematically propose a complete framework that transfers VLM reasoning from text space to a unified latent space, eliminating modality mismatch and autoregressive latency.
-2. **Cognition-inspired design**: The four-stage reasoning process (comprehension → recognition → rethinking → decision) emulates human driving cognition, with each stage serving a clear information-processing objective.
-3. **Causally consistent parallel decoding**: A carefully designed hybrid attention mask enables simultaneous multi-scale trajectory decoding in a single forward pass, balancing efficiency and causality.
-4. **Closed-loop SOTA**: ColaVLA substantially outperforms prior methods on the safety-critical NeuroNCAP benchmark, validating the effectiveness of latent space reasoning for real-world deployment.
+1.  **Paradigm Innovation**: This is the first framework to systematically migrate VLM reasoning from text space to a unified latent space, avoiding modal mismatch and auto-regressive latency.
+2.  **Cognitively Inspired Design**: The four-stage reasoning process (Understand → Identify → Rethink → Decide) mimics human driving cognition with clear information processing goals at each stage.
+3.  **Causally Consistent Parallel Decoding**: Decoding multi-scale trajectories in a single forward pass via a hybrid attention mask balances efficiency and causality.
+4.  **Closed-loop SOTA**: Substantially outperforms previous methods in safety-critical NeuroNCAP evaluations, validating the effectiveness of latent reasoning in deployment scenarios.
 
 ## Limitations & Future Work
 
-1. Validation is limited to the nuScenes dataset; generalization to larger-scale or cross-domain data remains untested.
-2. Meta-action categories are hard-coded via clustering and may fail to cover all long-tail driving scenarios.
-3. The method still relies on LiDAR and pre-trained perception modules; performance in a camera-only setting has not been verified.
-4. Closed-loop evaluation is conducted solely on the NeuroNCAP simulator, without real-world road validation.
+1.  Validation was limited to the nuScenes dataset; generalization across larger or different domains remains to be tested.
+2.  Meta-action categories are hard-coded via clustering, potentially failing to cover all long-tail driving scenarios.
+3.  Still relies on LiDAR and pre-trained perception modules; performance in pure-vision settings is unverified.
+4.  Closed-loop evaluation was conducted only in the NeuroNCAP simulator, lacking real-world road validation.
 
 ## Related Work & Insights
 
-- **UniAD/VAD**: Pioneering end-to-end driving pipelines, but reliant on sparse trajectory supervision and lacking high-level semantic reasoning.
-- **DriveVLM/OmniDrive/EMMA**: VLM-based textual reasoning planners with high inference latency.
-- **ImpromptuVLA/SOLVE-VLM**: Dual-system designs combining VLMs with planners, yet still constrained by text-level reasoning.
-- The latent space reasoning paradigm is transferable to tasks requiring rapid decision-making, such as robotic manipulation and visual navigation.
+*   **UniAD/VAD**: Pioneers of end-to-end driving pipelines, but rely on sparse trajectory supervision and lack high-level semantic reasoning.
+*   **DriveVLM/OmniDrive/EMMA**: VLM-based planners using text reasoning, which suffer from high inference latency.
+*   **ImpromptuVLA/SOLVE-VLM**: Dual-system designs combining VLMs and planners, yet still limited by text-level reasoning.
+*   Latent space reasoning concepts can be generalized to tasks requiring rapid decision-making, such as robotic manipulation or visual navigation.
 
 ## Rating
 
-| Dimension | Score (1–5) |
-|------|:---:|
+| Dimension | Score (1-5) |
+| :--- | :---: |
 | Novelty | 5 |
 | Technical Depth | 5 |
 | Experimental Thoroughness | 4 |
 | Writing Quality | 4 |
 | Value | 4 |
-| Overall | 4.5 |
+| Total | 4.5 |
 
 <!-- RELATED:START -->
 
@@ -177,11 +190,11 @@ Inference latency comparison: ColaVLA 727 ms vs. OmniDrive 3,727 ms vs. SOLVE-VL
 
 ## Related Papers
 
-- [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
-- [\[AAAI 2026\] WorldRFT: Latent World Model Planning with Reinforcement Fine-Tuning for Autonomous Driving](../../AAAI2026/autonomous_driving/worldrft_latent_world_model_planning_with_reinforcement_fine-tuning_for_autonomo.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
-- [\[ICLR 2026\] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](../../ICLR2026/autonomous_driving/bridgedrive_diffusion_bridge_policy_for_closed-loop_trajectory_planning_in_auton.md)
-- [\[AAAI 2026\] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving](../../AAAI2026/autonomous_driving/reflexdiffusion_reflection-enhanced_trajectory_planning_for_.md)
+- [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
+- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
+- [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
+- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations](topohr_hierarchical_centerline_representation_for_cyclic_topology_reasoning_in_d.md)
 
 </div>
 

@@ -2,154 +2,140 @@
 title: >-
   [Paper Note] DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 description: >-
-  [CVPR2026][Autonomous Driving][Driver Attention] This paper introduces the first 360° panoramic driver attention dataset (~1M frames / 19 drivers) and proposes DriverGaze360-Net…
+  [CVPR 2026][Autonomous Driving][Segmentation] This work proposes the first 360° omnidirectional driver attention dataset (approx. 1M frames with 19 drivers) and introduces DriverGaze360-Net. By leveraging an auxiliary semantic segmentation head to jointly learn attention maps and attended objects, the method achieves SOTA attention prediction performance on panora
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "Driver Attention"
-  - "Omnidirectional View"
-  - "Gaze Prediction"
-  - "Semantic Segmentation"
-  - "360° Field of View"
-  - "Video Swin Transformer"
+  - CVPR 2026
+  - Autonomous Driving
+  - Segmentation
+  - Video Swin Transformer
 date: 2026-05-08
-content_hash: 1529f5c254352816
+content_hash: ffc79f31482f7fe5
 ---
-
 # DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2512.14266](https://arxiv.org/abs/2512.14266)  
 **Code**: [dfki-av/drivergaze360](https://github.com/dfki-av/drivergaze360)  
 **Dataset**: [HuggingFace](https://huggingface.co/datasets/dfki-av/drivergaze360)
-**Area**: Autonomous Driving / Driver Attention Prediction
-**Keywords**: Driver Attention, Omnidirectional View, Gaze Prediction, Semantic Segmentation, 360° Field of View, Video Swin Transformer
+**Area**: Autonomous Driving / Driver Attention Prediction  
+**Keywords**: Driver Attention, Panoramic View, Gaze Prediction, Semantic Segmentation, 360° Field of View, Video Swin Transformer
 
 ## TL;DR
 
-This paper introduces the first 360° panoramic driver attention dataset (~1M frames / 19 drivers) and proposes DriverGaze360-Net, which jointly learns attention maps and attended objects via an auxiliary semantic segmentation head, achieving state-of-the-art attention prediction performance on panoramic driving images.
+This work proposes the first 360° omnidirectional driver attention dataset (approx. 1M frames with 19 drivers) and introduces DriverGaze360-Net. By leveraging an auxiliary semantic segmentation head to jointly learn attention maps and attended objects, the method achieves SOTA attention prediction performance on panoramic driving images.
 
 ## Background & Motivation
 
-Driver attention prediction is a critical task for building interpretable autonomous driving systems and for understanding driving behavior in mixed-traffic scenarios involving both human and automated vehicles. While significant progress has been made in large-scale datasets and deep learning architectures, two fundamental limitations persist:
+Driver attention prediction is a critical task for building interpretable autonomous driving systems and understanding driving behavior in mixed-traffic (human + autonomous vehicles) scenarios. While existing works have made significant progress in large-scale datasets and deep learning architectures, two fundamental limitations remain:
 
-**Limited Field of View**: Existing driver attention datasets (e.g., DR(eye)VE, BDD-A, DADA-2000) cover only a narrow forward-facing field of view (typically 60°–120°), failing to capture the complete spatial context of the driving environment. In reality, drivers frequently shift their gaze to lateral and rear regions.
+**Limited Field of View**: Existing driver attention datasets (e.g., DR(eye)VE, BDD-A, DADA-2000) only cover a narrow front-facing view (typically 60°-120°), failing to capture the full spatial context of the driving environment. However, in real driving, drivers frequently monitor side and rear regions.
 
-**Insufficient Scene Diversity**: Existing datasets primarily focus on forward straight-driving scenarios, neglecting safety-critical maneuvers such as lane changes, turns, and interactions with pedestrians and cyclists that require peripheral vision—precisely the scenarios most relevant to safe operation.
+**Insufficient Scenario Diversity**: Existing datasets focus primarily on forward-facing normal driving, ignoring critical maneuvers such as lane changes, turns, and interactions with pedestrians/cyclists that require peripheral vision. These are precisely the safety-critical operations.
 
-**Lack of Object-Level Semantic Guidance**: Conventional attention prediction methods output attention distributions as heatmaps without explicitly modeling *which objects* the driver is looking at, limiting the utility of predicted attention in downstream autonomous driving decision-making.
+**Lack of Object-Level Semantic Guidance**: Traditional attention prediction methods only output attention distributions in the form of heatmaps, lacking explicit modeling of "what objects the driver is actually looking at," which limits the utility of prediction results for autonomous driving decision-making.
 
-The core motivation of this paper is that driver gaze extends well beyond the forward direction—particularly during lane changes, turns, and intersection interactions—making peripheral visual information essential. A large-scale 360° attention dataset is needed, along with a prediction model capable of simultaneously answering *where* and *what* the driver is looking at.
+The core motivation is that a driver's gaze does not remain solely on the front, especially during lane changes and intersection interactions where peripheral information is vital. There is a need for a large-scale 360° attention dataset and a model capable of simultaneously understanding "where to look" and "what is being looked at."
 
 ## Method
 
 ### Overall Architecture
 
-The DriverGaze360 system comprises two components: a **large-scale 360° dataset** and the **DriverGaze360-Net prediction network**.
+The DriverGaze360 system consists of two parts: a **large-scale 360° dataset** and the **DriverGaze360-Net prediction network**.
 
-**Dataset Collection**: A driving environment is constructed using the CARLA simulator. Nineteen participants wear eye-tracking devices and complete diverse driving tasks in the simulator. Panoramic images are captured at a resolution of 6400×720 pixels, covering the full 360° field of view. Each frame is synchronized with RGB images, depth maps, instance segmentation maps, gaze coordinates (gaze_x, gaze_y), and vehicle state information (steering, throttle, brake, position, speed, etc.). The dataset encompasses 9 driving scenario types, including both routine driving and safety-critical situations (e.g., emergency events), totaling approximately 1 million annotated frames.
+**Data Collection**: The driving environment is built using the CARLA simulator. 19 participants wearing eye-tracking devices completed various driving tasks. The panoramic images feature a 6400×720 resolution, covering a full 360° field of view. RGB images, depth maps, instance segmentation maps, gaze coordinates (gaze_x, gaze_y), and vehicle state information (steering, throttle, brake, position, speed, etc.) are synchronized per frame. The dataset includes 9 types of driving scenarios, encompassing both routine driving and safety-critical events (e.g., emergencies), totaling approximately 1 million annotated frames.
 
-**Network Architecture**: DriverGaze360-Net adopts an encoder–decoder structure with Video Swin Transformer as the backbone, coupled with a multi-head decoder for joint learning of attention map prediction and semantic segmentation. The model takes a sequence of $T$ consecutive panoramic frames as input (default $T=16$) and outputs an attention heatmap along with a 7-class semantic segmentation map.
+**Network Architecture**: DriverGaze360-Net adopts an encoder-decoder structure with a Video Swin Transformer as the backbone, paired with a multi-head decoder to achieve joint learning of attention maps and semantic segmentation. The model takes a sequence of T consecutive panoramic frames (default T=16) as input and outputs an attention heatmap and 7-class semantic segmentation maps.
 
-### Key Design 1: Video Swin Transformer Spatiotemporal Encoder
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["360° Panoramic Video Sequence<br/>T=16 frames · 6400×720"] --> B["Video Swin Transformer Spatiotemporal Encoder<br/>4-stage 3D Shifted Window Attention · Multi-scale Features 96/192/384/768"]
+    B -->|Skip connections preserve fine-grained spatial info| C["DecoderSwin Shared Upsampling Backbone<br/>convtsp1 → convtsp2 → convtsp3"]
+    C --> D["Attention Prediction Head (sal)<br/>Single-channel Heatmap · Sigmoid"]
+    C --> E["Auxiliary Semantic Segmentation Head (ss)<br/>7 Channels · Attended Object Labels Only"]
+    D --> F["L_total = w_sal·L_sal + w_ss·L_ss"]
+    E --> F
+```
 
-The encoder employs Swin3D-S (pretrained on Kinetics-400), a hierarchical video Transformer architecture. The rationale for choosing a video Transformer over a conventional CNN backbone is as follows:
+### Key Designs
 
-- **Temporal Modeling Capacity**: Driver gaze behavior exhibits strong temporal continuity, requiring joint encoding of consecutive frame sequences. Video Swin efficiently captures spatiotemporal dependencies via 3D shifted window attention.
-- **Multi-Scale Feature Extraction**: The backbone consists of 4 stages, each progressively downsampling via Patch Merging to produce feature maps at different resolutions (with channel dimensions of 96, 192, 384, and 768, respectively). These multi-scale features are passed to the decoder via skip connections to preserve fine-grained spatial information.
-- **Global Context Awareness**: Panoramic images have an extreme aspect ratio (approximately 9:1), making it difficult for conventional convolutional networks to cover such a large spatial extent with limited receptive fields. The Transformer's attention mechanism is inherently suited to capturing long-range dependencies.
+**1. Video Swin Transformer Spatiotemporal Encoder: Handling Extreme Aspect Ratios of 360° Panoramas**
 
-The encoder forward pass processes an input tensor of shape $B \times C \times T \times H \times W$ through Patch Embedding and positional encoding, then sequentially through 4 Swin Transformer blocks and Patch Merging layers, producing multi-scale feature maps at 4 resolutions. These features are reversed from coarse-to-fine order before being fed into the decoder.
+Driver gaze exhibit strong temporal continuity, while 360° panoramas have extreme aspect ratios (approx. 9:1), making the receptive fields of traditional CNNs insufficient. The encoder utilizes Swin3D-S (pretrained on Kinetics-400), a hierarchical video Transformer. It efficiently captures spatiotemporal dependencies through 3D shifted window attention. Across 4 stages with Patch Merging, it performs downsampling to produce multi-scale features (96/192/384/768 channels), which are passed to the decoder via skip connections. The forward process involves an input tensor $B \times C \times T \times H \times W$ passing through Patch Embedding and positional encoding, followed by sequential Swin blocks and Patch Merging. The global attention of the Transformer naturally fits the long-range dependencies of panoramic images.
 
-### Key Design 2: Joint Learning with Auxiliary Semantic Segmentation Head
+**2. Joint Learning with Auxiliary Semantic Segmentation Head: Identifying "What Object" to Predict "Where"**
 
-This is the central contribution of the paper. The decoder (DecoderSwin) consists of a shared upsampling backbone and multiple task-specific heads:
+Traditional methods only output attention heatmaps, leaving the model unaware of the specific objects being observed, which limits localization accuracy. This work attaches dual task heads to the decoder (DecoderSwin): an attention prediction head (sal) providing a single-channel heatmap (Sigmoid activation, range [0,1]) and a semantic segmentation head (ss) providing 7-channel segmentation logits (Background, Traffic Light, Traffic Sign, Pedestrian, Cyclist, Vehicle—combining car/truck/bus/train/motorcycle, and Bicycle). Both heads share the upsampling backbone. The key insight is that the segmentation task forces the network to learn object-level semantic representations, as driver attention is typically concentrated on specific objects. Furthermore, the segmentation GT is not directly from CARLA instance segmentation but is filtered by the attention saliency map to retain only labels within "attended regions," ensuring the head learns "attended objects" rather than all visible ones.
 
-- **Attention Prediction Head (sal)**: Outputs a single-channel attention heatmap, activated by Sigmoid to produce values in $[0, 1]$.
-- **Semantic Segmentation Head (ss)**: Outputs 7-channel segmentation logits corresponding to 7 semantic categories—background, traffic lights, traffic signs, pedestrians, cyclists, vehicles (merging car/truck/bus/train/motorcycle), and bicycles.
+### Loss & Training
 
-Both heads share the upsampling backbone of the decoder (convtsp1→convtsp2→convtsp3), followed by independent convolutional layers that generate task-specific outputs. The key insight is that **the semantic segmentation task compels the network to learn object-level semantic representations, which in turn improves the spatial localization accuracy of attention prediction**. Drivers tend to concentrate their gaze on specific object types (e.g., leading vehicles, pedestrians, traffic lights), and the segmentation head explicitly encodes the location and category of these objects.
-
-The ground truth for semantic segmentation is not derived directly from CARLA's instance segmentation annotations; instead, it is filtered using the attention saliency map—retaining only the object segmentation labels within regions actually fixated by the driver. This ensures that the segmentation head learns about *attended objects* rather than all visible objects.
-
-### Key Design 3: Multi-Loss Joint Optimization
-
-The total loss is a weighted combination of the attention loss and the segmentation loss:
+The total loss is a weighted combination of attention loss and segmentation loss:
 
 $$L_{total} = w_{sal} \cdot L_{sal} + w_{ss} \cdot L_{ss}$$
 
-The attention loss comprises four classical saliency evaluation metrics used as loss terms:
-
-- **NSS Loss**: The predicted map is z-score normalized and sampled at fixation points, measuring prediction response strength at gaze locations.
-- **KLD Loss**: KL divergence between the predicted distribution and the ground-truth fixation distribution.
-- **CC Loss**: Linear correlation coefficient between the predicted map and the ground-truth saliency map.
-- **MSE Loss**: Pixel-wise mean squared error.
-
-The segmentation loss combines three loss functions for robustness: Cross-Entropy (CE) loss + Jaccard/IoU loss + Dice loss.
-
-Training uses the AdamW optimizer (learning rate 1e-6) with support for mixed-precision training and Distributed Data Parallel (DDP). A KLD-based weighted sampling strategy is also introduced, assigning higher training weights to "hard samples" (frames where the prediction diverges substantially from the ground truth).
+The attention loss utilizes four classic saliency metrics directly: **NSS** (Normalised Scanpath Saliency), **KLD** (Kullback-Leibler Divergence), **CC** (Pearson’s Correlation Coefficient), and **MSE** (Mean Squared Error). The segmentation loss combines Cross-Entropy (CE), Jaccard/IoU, and Dice losses for robustness. Training is conducted using AdamW (learning rate 1e-6) with mixed-precision support and Distributed Data Parallel (DDP). A KLD-based weighted sampling strategy is introduced to assign higher weights to "hard sample" frames with large gaps between predictions and GT.
 
 ## Key Experimental Results
 
 ### Dataset Comparison
 
-| Dataset | 360° FoV | # Scenario Types | Driving Scenarios | # Participants | Data Source |
+| Dataset | 360° FOV | No. Scenarios | Driving Scenarios | Participants | Data Source |
 |--------|:--------:|:---------:|---------|:--------:|---------|
-| DR(eye)VE | ✗ | 6 | Routine driving | 8 | Real driving |
-| LBW | ✗ | 7 | Routine driving | 28 | Real driving |
-| BDD-A | ✗ | 4 | Busy intersections / emergency braking | 1,228 | Video watching |
-| DADA-2000 | ✗ | 6 | Driving accidents | 20 | Video watching |
-| **DriverGaze360** | **✓** | **9** | **Routine + safety-critical** | **19** | **Simulated driving** |
+| DR(eye)VE | ✗ | 6 | Normal | 8 | Real Driving |
+| LBW | ✗ | 7 | Normal | 28 | Real Driving |
+| BDD-A | ✗ | 4 | Busy Intersections/Emergency | 1,228 | Video Watching |
+| DADA-2000 | ✗ | 6 | Accidents | 20 | Video Watching |
+| **Ours** | **✓** | **9** | **Normal + Critical** | **19** | **Simulated Driving** |
 
-DriverGaze360 is the only large-scale driver attention dataset providing full 360° coverage. Compared to the largest existing dataset BDD-A (1,228 participants watching videos), DriverGaze360 involves fewer participants but captures genuine active driving behavior in a simulator, more closely reflecting real-world driving.
+DriverGaze360 is the only large-scale dataset providing 360° coverage. Compared to BDD-A, while having fewer participants, it provides active driving behavior data (simulator), which is closer to real-world driving.
 
-### Attention Prediction Performance
+### Main Results
 
 | Method | KLD ↓ | CC ↑ | SIM ↑ | NSS ↑ |
 |------|:-----:|:----:|:-----:|:-----:|
-| Baseline (forward-view models) | Higher | Lower | Lower | Lower |
+| Baseline (Front-view models) | High | Low | Low | Low |
 | DriverGaze360-Net (sal only) | Improved | Improved | Improved | Improved |
 | **DriverGaze360-Net (sal+ss)** | **Best** | **Best** | **Best** | **Best** |
 
-The addition of the auxiliary semantic segmentation head yields consistent improvements across all attention prediction metrics, validating the benefit of object-level semantic guidance for attention prediction. The model achieves state-of-the-art performance on panoramic driving images across all four standard metrics: KLD (lower is better), CC (higher is better), SIM (higher is better), and NSS (higher is better).
+The addition of the auxiliary semantic segmentation head improves all attention prediction metrics, validating the benefit of object-level semantic guidance. The model achieves SOTA on standard metrics for panoramic driving images.
 
 ## Key Findings
 
-1. **Significant Gains from the Auxiliary Segmentation Head**: The semantic segmentation head not only enables the recognition of attended objects but, more importantly, provides an implicit object-level prior that benefits attention prediction. Ablation experiments show that removing the segmentation head leads to a noticeable degradation in attention prediction performance.
-2. **Necessity of Panoramic Field of View**: During lane changes, turns, and blind-spot checks, driver fixations deviate substantially from the forward center region. Forward-only models are unable to capture these critical gaze behaviors.
-3. **Importance of Temporal Information**: Processing continuous frame sequences with Video Swin Transformer ($T=16$ frames) significantly outperforms single-frame input, demonstrating strong temporal dependency in driver gaze behavior.
-4. **Gaze-Filtered Semantic Labels**: Experiments show that using "attended objects" rather than "all visible objects" as segmentation ground truth is more effective, as it directly aligns semantic learning with the core objective of attention prediction.
+1.  **Significant Gain from Auxiliary Head**: The semantic segmentation head provides implicit object-level priors for attention prediction. Ablation studies show that removing the segmentation head leads to a significant performance drop.
+2.  **Necessity of Panoramic FOV**: During maneuvers like lane changes or checking blind spots, gaze points deviate significantly from the front-center. Front-view models fail to capture these behaviors.
+3.  **Importance of Temporal Information**: Using Video Swin Transformer to process sequences (T=16 frames) significantly improves accuracy compared to single-frame input, indicating strong temporal dependency in gaze behavior.
+4.  **Gaze-filtered Semantic Labels**: Results indicate that using "attended objects" as segmentation GT is more effective than "all visible objects," as it aligns semantic learning with the goal of attention prediction.
 
 ## Highlights & Insights
 
-- **Major Dataset Contribution**: This is the first large-scale driver attention dataset covering a full 360° field of view, filling an important gap in the field. The scale (~1M frames) and diversity (9 scenario types) are sufficient to support training of complex models.
-- **Simple Yet Effective Method**: The auxiliary segmentation head design is conceptually straightforward but empirically effective—multi-task learning enables the network to simultaneously understand spatial distribution and object semantics, with each reinforcing the other. This design introduces virtually no additional inference overhead (the segmentation head can be disabled at inference time).
-- **High Open-Source Completeness**: Code, dataset, and pretrained checkpoints are all publicly available on GitHub and HuggingFace, facilitating reproducibility and follow-up research. Detailed training configurations (loss weights, data loading, distributed training, etc.) are provided, making the codebase highly accessible.
-- **Carefully Designed Data Format**: Each recording includes RGB video, depth maps, instance segmentation, saliency maps, and detailed CSV metadata (gaze coordinates, vehicle control signals, pose, speed), supporting a wide range of downstream research directions.
+-   **Significant Dataset Contribution**: This is the first large-scale driver attention dataset covering a 360° FOV, filling a major gap in the field.
+-   **Simple yet Effective Method**: The dual-task design allows the network to understand both "spatial distribution" and "object semantics," resulting in mutual enhancement with negligible additional inference overhead.
+-   **High Open Source Quality**: Code, datasets, and pretrained checkpoints are fully open-sourced on GitHub and HuggingFace, facilitating reproducibility.
+-   **Careful Data Design**: Each recording includes RGB, depth, instance segmentation, saliency maps, and detailed CSV metadata (coordinates, control signals, pose, speed), supporting various downstream research directions.
 
 ## Limitations & Future Work
 
-1. **Sim-to-Real Gap**: All data are collected from the CARLA simulator, introducing a domain gap. The visual realism of the simulated environment, traffic participant behavior, and lighting variation differ from real-world conditions; the model's generalization to real driving data remains to be validated.
-2. **Small Participant Pool**: With only 19 drivers, individual variability may lead to biased gaze patterns. By comparison, BDD-A involves 1,228 participants. A smaller participant pool may cause the model to overfit to the gaze habits of a limited number of individuals.
-3. **Limited Semantic Categories**: Only 7 semantic categories are defined, omitting road markings, curbs, buildings, and other elements equally relevant to driving decisions. Finer-grained semantic classification may further improve performance.
-4. **No Cross-Domain Validation**: The paper does not evaluate the model's transfer performance on existing real-world driving datasets such as DR(eye)VE.
-5. **Incomplete Inference Script**: The inference functionality in the GitHub repository is marked as TODO, limiting immediate practical deployment.
+1.  **Simulation-to-Real Gap**: Data is sourced entirely from the CARLA simulator, introducing domain gap issues. The generalization to real driving data remains to be verified.
+2.  **Small Participant Scale**: With only 19 drivers, individual differences might bias gaze patterns compared to datasets like BDD-A.
+3.  **Limited Semantic Categories**: Defining only 7 categories neglects road markings, curbs, and buildings, which are also important for driving decisions.
+4.  **Lack of Cross-Dataset Validation**: The paper does not validate transfer performance on real-world datasets like DR(eye)VE.
+5.  **Incomplete Inference Scripts**: Inference functionality on GitHub is currently marked as TODO, limiting immediate deployment.
 
 ## Related Work & Insights
 
-- **DR(eye)VE / BDD-A / DADA-2000**: Representative forward-view driver attention datasets covering only a limited forward field of view. DriverGaze360's extension to a 360° panoramic view is a natural progression of this line of work.
-- **SCOUT** (ECCV 2022): The implementation of this paper references SCOUT's architectural design, similarly employing Swin Transformer as the backbone for attention prediction. DriverGaze360-Net extends this with a newly added semantic segmentation auxiliary head.
-- **Video Swin Transformer** (CVPR 2022): The successful application of 3D Swin Transformer to video understanding tasks. This paper introduces it to the domain of driver attention prediction, leveraging its spatiotemporal modeling capability to process panoramic video sequences.
-- **Multi-Task Learning Paradigm**: The auxiliary segmentation head follows the established multi-task learning strategy of enhancing the primary task's feature representations through related auxiliary tasks—a strategy with successful precedents in object detection (detection + segmentation) and depth estimation (depth + semantics).
+-   **DR(eye)VE / BDD-A / DADA-2000**: Representative front-view datasets. DriverGaze360 serves as a natural extension covering the full 360° FOV.
+-   **SCOUT** (ECCV 2022): The implementation references SCOUT's architecture, also using Swin Transformer for attention prediction. This work adds the auxiliary segmentation head.
+-   **Video Swin Transformer** (CVPR 2022): Leverages spatiotemporal modeling capabilities for panoramic video sequences.
+-   **Multi-task Learning Paradigm**: The auxiliary head strategy aligns with successful multi-task approaches in other fields, such as joint detection and segmentation or depth and semantics.
 
-**Insight**: Using semantic segmentation as an auxiliary task for attention prediction is a strategy worth generalizing. In other visual attention and saliency modeling tasks (e.g., video saliency, social attention), introducing scene understanding auxiliary tasks to enhance spatial perception is a promising direction. Additionally, the handling of 360° panoramic input—characterized by extreme aspect ratios and global receptive field requirements—offers valuable reference for designing novel attention model architectures.
+**Insight**: Using semantic segmentation as an auxiliary task for attention prediction is a promising direction for broader saliency modeling. Additionally, handling extreme aspect ratio 360° inputs provides technical references for designing future attention architectures.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The first 360° driver attention dataset is original; the auxiliary segmentation head is effective but not a fundamentally new paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-metric evaluation is comprehensive and dataset comparisons are thorough, but cross-domain transfer experiments are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, dataset description is detailed, and open-source completeness is high.
-- **Value**: ⭐⭐⭐⭐⭐ — The dataset contribution is outstanding, filling a critical gap in the field and poised to advance research on panoramic driver attention prediction.
+-   **Novelty**: ⭐⭐⭐⭐ — The first 360° driver attention dataset is highly original; the auxiliary head is effective but not a completely new paradigm.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive metrics and dataset comparisons, though lacking cross-domain transfer experiments.
+-   **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, detailed dataset description, and excellent open-source documentation.
+-   **Value**: ⭐⭐⭐⭐⭐ — Significant dataset contribution that will drive research in panoramic driver attention.
 
 <!-- RELATED:START -->
 
@@ -158,9 +144,9 @@ The addition of the auxiliary semantic segmentation head yields consistent impro
 ## Related Papers
 
 - [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](../../ICCV2025/autonomous_driving/where_what_why_towards_explainable_driver_attention_prediction.md)
+- [\[ECCV 2024\] Weakly Supervised 3D Object Detection via Multi-Level Visual Guidance](../../ECCV2024/autonomous_driving/weakly_supervised_3d_object_detection_via_multi-level_visual_guidance.md)
 - [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
-- [\[CVPR 2026\] IGASA: Integrated Geometry-Aware and Skip-Attention Modules for Enhanced Point Cloud Registration](igasa_integrated_geometry-aware_and_skip-attention_modules_for_enhanced_point_cl.md)
-- [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
+- [\[CVPR 2026\] Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving](diffusion_forcing_planner_history-annealed_planning_with_time-dependent_guidance.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
 
 </div>

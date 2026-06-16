@@ -1,156 +1,143 @@
 ---
 title: >-
-  [Paper Note] Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans (HouseMind)
+  [Paper Note] HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal large language models] This paper presents HouseMind, which discretizes architectural floor plans into room-level spatial tokens via a hierarchical VQ-VAE…
+  [CVPR 2026][Multimodal VLM][VQ-VAE] The paper proposes HouseMind, which discretizes architectural floor plan outlines and room instances into spatial tokens using a hierarchical VQ-VAE. These are unified with text tokens in a single vocabulary, enabling a small-scale LLM (0.6B) to achieve three major tasks—understanding, generation, and editing—within a
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Multimodal large language models"
-  - "VQ-VAE"
-  - "spatial tokenization"
-  - "floor plan generation"
-  - "floor plan editing"
-  - "instruction tuning"
+  - CVPR 2026
+  - Multimodal VLM
+  - VQ-VAE
 date: 2026-05-08
-content_hash: 01fa30a58f8124c2
+content_hash: f450e2a19c913fbc
 ---
+# HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans
 
-# Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans (HouseMind)
-
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.11640](https://arxiv.org/abs/2603.11640)  
-**Code**: [housemind.github.io](https://housemind.github.io/)  
-**Area**: Multimodal VLM / Architectural Floor Plan Design
-**Keywords**: Multimodal large language models, VQ-VAE, spatial tokenization, floor plan generation, floor plan editing, instruction tuning
+**Code**: [https://housemind.github.io/](https://housemind.github.io/)  
+**Area**: Multimodal VLM  
+**Keywords**: Architectural Floor Plans, VQ-VAE, Multimodal LLM, Spatial Reasoning, Hierarchical Tokens
 
 ## TL;DR
-
-This paper presents HouseMind, which discretizes architectural floor plans into room-level spatial tokens via a hierarchical VQ-VAE, enabling floor plan understanding, generation, and editing within a unified MLLM framework. The approach comprehensively outperforms diffusion model and general-purpose VLM baselines in geometric validity and controllability.
+The paper proposes HouseMind, which discretizes architectural floor plan outlines and room instances into spatial tokens using a hierarchical VQ-VAE. These are unified with text tokens in a single vocabulary, enabling a small-scale LLM (0.6B) to achieve three major tasks—understanding, generation, and editing—within a single autoregressive framework. It significantly outperforms methods based on diffusion models and large-scale VLMs.
 
 ## Background & Motivation
 
-**High cognitive complexity of architectural floor plan design**: Floor plan design requires simultaneous reasoning over geometric, semantic, and spatial hierarchical relationships. Patterns are not sequential but embedded in complex relational structures, posing a significant challenge for AI.
+**Background**: Architectural floor plan design requires joint reasoning over geometry, semantics, and spatial hierarchy, making it one of the most cognitively challenging tasks in the AI design field. Existing methods include GAN-based (e.g., HouseGAN), Graph-based (e.g., Graph2Plan), and Diffusion-based (e.g., ChatHouseDiffusion) approaches.
 
-**Lack of global spatial consistency in existing methods**: Diffusion models and autoregressive models have achieved improvements in visual fidelity but treat layout synthesis as a purely visual process, lacking explicit room-instance-level reasoning. This leads to locally plausible but globally spatially incoherent results (e.g., inconsistent adjacency and circulation relationships).
+**Limitations of Prior Work**: (1) Most methods treat layout generation as a purely visual process, lacking explicit reasoning at the room-instance level, which leads to local plausibility but global inconsistency; (2) Large-scale VLM methods act as black-box generators with poor spatial controllability; (3) Existing frameworks struggle to unify understanding, generation, and editing within a single architecture; (4) High computational costs make local deployment difficult.
 
-**Insufficient interpretability and controllability**: Large-scale vision-language models commonly function as black-box generators, with limited spatial controllability and interpretability.
+**Key Challenge**: A fundamental representation gap exists between continuous geometric layouts and the discrete token sequence modeling of LLMs—specifically, how to effectively encode spatial geometric information into discrete symbols understood by LLMs.
 
-**Inability to unify understanding, generation, and editing**: Existing frameworks struggle to simultaneously handle understanding, generation, and editing tasks within a single architecture, particularly given the geometric and semantic complexity of architectural layouts.
+**Goal**: To build an efficient, locally deployable, and unified multimodal model that achieves joint reasoning for floor plan understanding, generation, and editing within a single framework.
 
-**High computational overhead and difficulty of local deployment**: Most AI systems demand substantial computational resources, making integration into practical design workflows difficult.
+**Key Insight**: Discretize geometric information into tokens using a hierarchical VQ-VAE, allowing the LLM to process spatial and linguistic information using the same sequence modeling mechanism.
 
-**Existing LLM-driven design approaches remain modular**: Methods such as Tell2Design, ChatHouseDiffusion, and FloorPlanLLaMA improve interpretability but operate as independent modules, lacking unified multi-task reasoning.
+**Core Idea**: Bridge continuous geometric layouts and discrete language modeling through room-level tokenization to achieve unified spatial reasoning.
 
 ## Method
 
 ### Overall Architecture
+The challenge of floor plans lies in the fact that they are essentially continuous geometric objects, while LLMs process discrete token sequences. HouseMind bridges this representation gap by first using VQ-VAE to decompose the floor plan into an outline and individual rooms, discretizing them into spatial tokens. These spatial tokens and text tokens are then placed into a unified vocabulary, allowing a small LLM to process both geometry and language through pure autoregressive modeling. The entire pipeline results in an interleaved sequence $Z = [\boldsymbol{z}_o, \ell_{r_1}, \boldsymbol{z}_{r_1}, \ldots, \ell_{r_N}, \boldsymbol{z}_{r_N}]$, where the sequence begins with outline tokens, followed by room pairs consisting of a "semantic label token $\ell_{r_i}$ + geometric token $\boldsymbol{z}_{r_i}$". Once the floor plan is converted into such a sequence, understanding, generation, and editing are all reduced to the same core mechanism of reading and writing tokens.
 
-HouseMind consists of two core components: **Room-Instance Tokenization** and **Multimodal Alignment & Instruction Tuning**.
+The framework consists of three parts: hierarchical tokenization to obtain a unified vocabulary and interleaved sequences, three-step multimodal alignment training to pull spatial and text tokens into the same representation space, and finally, unified execution of tasks on the aligned autoregressive LLM.
 
-A floor plan is decomposed into an outline $x_o$ and $N$ room instances $\{x_{r_i}\}_{i=1}^N$, which are encoded into discrete token sequences via two separate VQ-VAEs and then interleaved into a unified sequence:
-
-$$Z = [\boldsymbol{z}_o, \ell_{r_1}, \boldsymbol{z}_{r_1}, \dots, \ell_{r_N}, \boldsymbol{z}_{r_N}]$$
-
-where $\ell_{r_i}$ denotes the semantic label token of room $i$, and $\boldsymbol{z}_o$ and $\boldsymbol{z}_{r_i}$ are the discrete tokens for the outline and each room, respectively.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Floor Plan (Outline x_o + N Rooms) + Text Instruction"]
+    subgraph TOK["Hierarchical Room-Instance Tokenization"]
+        direction TB
+        S["Decompose into Outline + N Room Instances"]
+        S --> EO["Outline VQ-VAE<br/>z_o = E_o(x_o)"]
+        S --> ER["Conditional Room VQ-VAE<br/>z_ri = E_r(x_ri, x_o) with context"]
+        EO --> VOC["Unified Vocabulary<br/>Interleaved sequence Z = [z_o, ℓ_r1, z_r1, …]"]
+        ER --> VOC
+    end
+    subgraph TRAIN["Three-stage Multimodal Alignment"]
+        direction TB
+        T1["Stage 1: Embedding Initialization<br/>Merge codewords into LLM vocab"]
+        T1 --> T2["Stage 2: Multimodal Pre-training<br/>Text-Spatial Autoregressive Alignment"]
+        T2 --> T3["Stage 3: Instruct SFT<br/>Understand/Generate/Edit Instruct Data"]
+    end
+    LLM["Aligned Small LLM (Qwen3-0.6B, Autoregressive)"]
+    UNI["Unified Task Modeling<br/>Understand / Generate / Edit = One mechanism"]
+    OUT["VQ-VAE Decoder restores pixel layout"]
+    IN --> TOK
+    TOK --> TRAIN
+    TRAIN --> LLM
+    LLM --> UNI
+    UNI --> OUT
+```
 
 ### Key Designs
 
-1. **Outline Discretization**: A CNN encoder $E_o$ extracts features from the binary outline mask, which are vector-quantized into discrete tokens via the outline codebook $\mathcal{Z}_o$; a decoder reconstructs the outline.
-2. **Conditional Room Discretization**: The room encoder $E_r$ jointly encodes each room mask conditioned on the outline, and quantizes it via the room codebook $\mathcal{Z}_r$. Conditional encoding enables room representations to be globally context-aware, capturing geometric and spatial adjacency relationships.
-3. **Three-stage Multimodal Training**:
+**1. Hierarchical Room-Instance Tokenization: Decomposing the full image into room-level discretization**
 
-    - **Stage 1 – Embedding Initialization**: Spatial codes from the VQ-VAE codebook are mapped to trainable token embeddings in the LLM vocabulary, establishing a one-to-one correspondence between discrete spatial codes and text tokens.
-    - **Stage 2 – Multimodal Pre-training**: The model is trained on large-scale paired data consisting of text descriptions, outline tokens, and room tokens using an autoregressive language modeling objective, achieving bidirectional alignment between language and geometry.
-    - **Stage 3 – Instruction Tuning (SFT)**: Supervised fine-tuning is performed on instruction data covering understanding, generation, and editing tasks, endowing the model with task awareness and spatial reasoning capability.
-4. **Unified Task Modeling**: Understanding (inferring room functions and topology from $Z$), generation (autoregressively generating a layout given text $s$ and outline $\boldsymbol{z}_o$), and editing (generating a modified layout $Z^{tgt}$ given a source layout $Z^{src}$ and instruction $s$) are all formulated as a unified sequence modeling problem.
+While traditional methods encode the entire floor plan as a single image, HouseMind uses hierarchical decomposition. It splits the floor plan into an outline $x_o$ and $N$ room instances $\{x_{r_i}\}_{i=1}^N$, then discretizes them via two VQ-VAEs. The outline VQ-VAE encodes the binary mask into $\boldsymbol{z}_o = E_o(x_o)$. Crucially, the room VQ-VAE is **conditional**—it encodes each room while being fed the outline: $\boldsymbol{z}_{r_i} = E_r(x_{r_i}, x_o)$. Both are mapped to codebooks $\mathcal{Z}_o$ and $\mathcal{Z}_r$ via nearest-neighbor quantization. This conditional term ensures that rooms are not encoded in isolation but with spatial context (position within the house and adjacency), providing the foundation for global consistency.
 
-### Backbone & Efficiency
+**2. Three-stage Multimodal Alignment Training: Aligning spatial and language tokens**
 
-HouseMind is built upon Qwen3-0.6B as the language model backbone. Its small parameter count supports real-time inference and local deployment on a single RTX 3090 GPU.
+Because spatial and language tokens have vastly different distributions, HouseMind uses a three-step progression for alignment. Stage 1 (Embedding Initialization) assigns trainable token embeddings to each codeword in the VQ-VAE codebook and incorporates them into the LLM's vocabulary. Stage 2 (Multimodal Pre-training) performs autoregressive modeling on large-scale paired "text + spatial token" data to learn bidirectional correspondences. Stage 3 (Instruction Fine-Tuning/SFT) finalizes the model on understanding, generation, and editing instructions. This progressive strategy ensures stable optimization by aligning the vocabulary first and then teaching high-level tasks.
 
-## Experiments
+**3. Unified Task Modeling: Understanding, generation, and editing as the same conditional generation**
 
-### Dataset & Benchmark
+With a unified token sequence, the three tasks share the same autoregressive framework. The understanding task takes sequence $Z$ and a prompt to output descriptions or bubble diagrams. The generation task takes outline $\boldsymbol{z}_o$ and text $s$ to generate the layout token-by-token:
 
-A unified benchmark for evaluating floor plan understanding, generation, and editing is constructed based on the RPLAN dataset, comprising 80,738 samples: 76,122 for training, 2,308 for validation, and 2,308 for testing. Each floor plan includes a JSON representation and both simple and detailed text descriptions (generated by Qwen3-30B-A3B).
+$$p(Z \mid \boldsymbol{z}_o, s) = \prod_t p(Z_t \mid Z_{<t}, \boldsymbol{z}_o, s)$$
 
-### Understanding Task Results
+The editing task takes the source layout $Z^{\mathrm{src}}$ and an instruction $s$ to generate the target layout $Z^{\mathrm{tgt}}$. All tasks share weights and mechanisms, reducing redundancy and allowing capabilities to mutually reinforce one another.
 
-| Method | RMR | LocAcc | AreaDiff↓ | AdjAcc | RelAcc | Time (s) |
-|--------|-----|--------|-----------|--------|--------|----------|
-| LLaVA-v1.6-Mistral-7B | 0.616 | 0.225 | 3.649 | 0.134 | 0.056 | ~6 |
-| Qwen3-VL-8B | 0.698 | 0.347 | 5.837 | 0.382 | 0.128 | ~8 |
-| InternVL3.5-8B | 0.847 | 0.546 | 12.234 | 0.469 | 0.157 | ~13 |
-| MiniCPM-V 4.5 | 0.904 | 0.492 | 13.765 | 0.597 | 0.208 | ~14 |
-| **HouseMind-U** | **0.998** | **0.969** | **0.549** | **0.990** | **0.808** | **~3** |
+### Loss & Training
+The VQ-VAE is trained using standard reconstruction loss + commitment loss + codebook loss. The LLM stage utilizes autoregressive cross-entropy loss. The system is built on Qwen3-0.6B and can perform inference on a single RTX 3090.
 
-HouseMind improves room localization accuracy and adjacency accuracy by more than 40 absolute percentage points, reducing area error from several square meters to below 0.6 m².
+## Key Experimental Results
 
-### Generation Task Results
+### Main Results (Generation Task)
 
-| Method | Micro IoU | Macro IoU | FID↓ | GED↓ | Node F1 | Edge Ovl. | Time (s) |
-|--------|-----------|-----------|------|------|---------|-----------|----------|
-| Tell2Design | 0.390 | 0.307 | 30.5 | 6.94 | 0.808 | 0.197 | ~15 |
-| ChatHouseDiffusion | 0.589 | 0.521 | 11.3 | 2.36 | 0.985 | 0.710 | ~30 |
-| FloorPlanLLaMA | 0.607 | 0.511 | 49.3 | 2.68 | 0.922 | 0.574 | ~1 |
-| **HouseMind-G** | **0.709** | **0.653** | **1.91** | **1.01** | **0.994** | **0.880** | **~2** |
+| Method | Micro IoU | FID ↓ | Node F1 | Edge Overlap | Time (s) |
+|------|-----------|-------|---------|-------------|---------|
+| Tell2Design | 0.390 | 30.5 | 0.808 | 0.197 | ~15 |
+| ChatHouseDiffusion | 0.589 | 11.3 | 0.985 | 0.710 | ~30 |
+| FloorPlanLLaMA | 0.607 | 49.3 | 0.922 | 0.574 | ~1 |
+| **Ours (HouseMind-G)** | **0.709** | **1.91** | **0.994** | **0.880** | **~2** |
 
-IoU improves by more than 10% over ChatHouseDiffusion, and FID drops from 11.3 to 1.9.
+### Ablation Study (Understanding Task)
 
-### Editing Task Results
-
-| Method | ΔIoU | ΔMSE↓ | Node F1 | Edge Ovl. |
-|--------|------|-------|---------|-----------|
-| FLUX.1-Kontext-dev | 0.053 | 0.0162 | 0.765 | 0.222 |
-| Qwen-Image-Edit | 0.088 | 0.0074 | 0.915 | 0.426 |
-| **HouseMind-E** | **0.608** | **0.0019** | **0.998** | **0.934** |
-
-### Ablation Study
-
-| Configuration | Train Loss↓ | Eval Loss↓ |
-|---------------|-------------|------------|
-| w/o Stage 1&2 | 0.0729 | 0.0836 |
-| w/o Stage 1 | 0.0659 | 0.0840 |
-| w/o Stage 2 | 0.0712 | 0.0831 |
-| **Full** | **0.0644** | **0.0830** |
+| Method | RMR | LocAcc | AreaDiff↓ | AdjAcc | RelAcc |
+|------|-----|--------|-----------|--------|--------|
+| LLaVA-v1.6-7B | 0.616 | 0.225 | 3.649 | 0.134 | 0.056 |
+| Qwen3-VL-8B | 0.698 | 0.347 | 5.837 | 0.382 | 0.128 |
+| InternVL3.5-8B | 0.847 | 0.546 | 12.234 | 0.469 | 0.157 |
+| **Ours (HouseMind-U)** | **0.998** | **0.969** | **0.549** | **0.990** | **0.808** |
 
 ### Key Findings
-
-- Removing Stage 1 (embedding initialization) leads to unstable optimization, preventing spatial tokens from settling into a stable embedding space.
-- Removing Stage 2 (multimodal pre-training) deprives the model of high-level text–layout correspondences.
-- The unified variant HouseMind-O achieves performance close to or on par with task-specific models trained independently on each task.
-- In qualitative comparisons with GPT-5 and Gemini 2.5 Pro, HouseMind demonstrates superior spatial consistency and controllability.
+- HouseMind outperforms existing methods across all three tasks with high inference speed (2-3s per sample).
+- FID dropped from 11.3-49.3 in competing methods to 1.91, indicating generation quality close to the real distribution.
+- In the understanding task, AdjAcc improved from 0.469 to 0.990, and area error dropped to 0.549 $m^2$.
+- Ablations show that every stage of the three-stage training contributes significantly; removing Stage 1 leads to instability, while removing Stage 2 leads to a lack of semantic correspondence.
 
 ## Highlights & Insights
-
-- **Room-level discrete tokenization** is the core innovation: it bridges continuous geometric layouts to discrete sequence modeling, enabling LLMs to perform interpretable spatial reasoning directly in token space.
-- **Unified three-task modeling**: a single model simultaneously handles understanding, generation, and editing without modular composition.
-- **Extremely lightweight and deployable**: built on Qwen3 with 0.6B parameters, inference runs on a single RTX 3090, requiring only 2–3 seconds per sample.
-- **Conditional room encoding**: room encoding is conditioned on the outline, naturally capturing global context and adjacency relationships.
-- **First unified benchmark**: a standardized evaluation protocol covering all three tasks is established.
+- Room-level tokenization is the core innovation—instead of treating the floor plan as a monolithic image, decomposing it into instances allows the LLM to perform structured reasoning. This paradigm can be transferred to other structured design tasks like circuit design or UI layouts.
+- The fact that a 0.6B parameter model outperforms 7-8B VLMs suggests that correct representation is more critical than model scale for specialized design tasks.
+- In editing tasks, Node F1 reached 0.998, demonstrating that the model can precisely modify specific rooms without affecting other areas, achieving true local controllability.
 
 ## Limitations & Future Work
-
-- The editing functionality supports only simple addition and deletion operations, without handling complex topological transformations such as global reorganization.
-- Functional components such as doors, windows, and furniture are not modeled, limiting applicability to detailed interior design.
-- Generated results are not aligned with human design preferences and aesthetic constraints, leaving a gap relative to professional design standards.
-- The dataset is based on RPLAN (predominantly Chinese residential buildings); generalizability to other architectural typologies and cultural styles remains to be verified.
+- Editing capabilities are limited to simple room additions/deletions and do not yet support complex topological changes.
+- Details such as windows, doors, and furniture are not modeled, limiting application in detailed interior design.
+- The model is not yet aligned with human design preferences or aesthetic constraints, so results may not always meet professional functional standards.
+- Validation was only performed on the RPLAN dataset; more diverse styles (e.g., irregular shapes, multi-story buildings) remain to be explored.
 
 ## Related Work & Insights
-
-- **GAN-based**: Graph-constrained GANs and similar approaches improve realism but overfit to local geometry.
-- **Graph/GNN-based**: Methods such as Graph2Plan model room connectivity, but discrete graph representations limit geometric fidelity.
-- **Diffusion-based**: GSDiff, FloorPlan Diffusion, and related methods are stable but computationally expensive and limited to single tasks.
-- **LLM-driven**: Tell2Design establishes a text-to-floor-plan benchmark; ChatHouseDiffusion and FloorPlanLLaMA introduce language control but remain modular architectures.
-- **Positioning of this work**: HouseMind is the first unified multi-task multimodal framework to jointly learn geometric, semantic, and topological representations.
+- **vs MaskPLAN**: MaskPLAN also uses VQ-VAE for geometric attributes but relies on masked transformer autoencoding; this work introduces LLMs for unified multi-task reasoning.
+- **vs ChatHouseDiffusion**: Diffusion models perform well on simple layouts but struggle with complex configurations; HouseMind maintains global consistency through discrete reasoning.
+- **vs Tell2Design**: While Tell2Design established a text-to-floorplan benchmark, its generalization is limited; HouseMind's tokenization paradigm is more scalable.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ — The combination of room-level VQ-VAE tokenization with a unified three-task LLM framework is novel, recasting spatial design as token sequence modeling.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive evaluation across three tasks with multiple baselines (including GPT-5/Gemini) and ablation studies validating the training strategy.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, formalized problem definitions, and rich figures and tables.
-- Value: ⭐⭐⭐⭐ — Establishes a unified paradigm in architectural design AI; the lightweight deployable design has practical application potential.
+- Novelty: ⭐⭐⭐⭐ Room-level tokenization + unified LLM modeling is highly innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across three tasks with sufficient comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Method is described clearly, though the problem formulation is quite formal.
+- Value: ⭐⭐⭐⭐ Provides a practical, unified solution for AI-assisted architectural design.
 
 <!-- RELATED:START -->
 
@@ -158,11 +145,11 @@ IoU improves by more than 10% over ChatHouseDiffusion, and FID drops from 11.3 t
 
 ## Related Papers
 
-- [\[CVPR 2026\] See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models](see_hear_and_understand_benchmarking_audiovisual_human_speech_understanding_in_mul.md)
-- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
-- [\[ACL 2026\] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?](../../ACL2026/multimodal_vlm/i_see_what_you_did_there_can_large_vision-language_models_understand_multimodal_.md)
+- [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)
+- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
+- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
+- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
 
 </div>
 

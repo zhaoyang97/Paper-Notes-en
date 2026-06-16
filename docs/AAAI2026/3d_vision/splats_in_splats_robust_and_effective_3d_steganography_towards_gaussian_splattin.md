@@ -231,8 +231,8 @@ $$W_p^* = \arg\min_{\mathcal{E}, \mathcal{D}} \ell_{mse}(\mathcal{D}(\mathcal{E}
 - [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](../../ICCV2025/3d_vision/a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
 - [\[AAAI 2026\] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?](can_protective_watermarking_safeguard_the_copyright_of_3d_gaussian_splatting.md)
 - [\[AAAI 2026\] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](gaussian_blending_rethinking_alpha_blending_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] Using Gaussian Splats to Create High-Fidelity Facial Geometry and Texture](../../CVPR2026/3d_vision/using_gaussian_splats_to_create_high-fidelity_facial_geometry_and_texture.md)
 - [\[ICCV 2025\] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization](../../ICCV2025/3d_vision/cl-splats_continual_learning_of_gaussian_splatting_with_local_optimization.md)
+- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
 
 </div>
 

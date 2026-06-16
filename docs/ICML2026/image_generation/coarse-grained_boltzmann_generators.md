@@ -2,77 +2,81 @@
 title: >-
   [Paper Note] Coarse-Grained Boltzmann Generators
 description: >-
-  [ICML 2026][Image Generation][Boltzmann Generator] The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with a learned Potential of Mean Force (PMF) in a coar…
+  [ICML 2026][Image Generation][Boltzmann Generator] The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with learned Potential of Mean Force (PMF) in coarse-grained coordinate space for importance sampling. This achieves asymptotically correct equilibrium sampling at a significantly lower computational cost
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "Boltzmann Generator"
-  - "Coarse-Grained Modeling"
-  - "Importance Sampling"
-  - "Potential of Mean Force"
-  - "Normalizing Flows"
+  - ICML 2026
+  - Image Generation
+  - Boltzmann Generator
 date: 2026-05-08
-content_hash: f21e2178da4da5c4
+content_hash: 2c4098619386fcfa
 ---
-
 # Coarse-Grained Boltzmann Generators
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.10637](https://arxiv.org/abs/2602.10637)  
 **Code**: https://github.com/tummfm/cg-bg  
 **Area**: Scientific Computing / Molecular Simulation  
-**Keywords**: Boltzmann Generator, Coarse-Grained Modeling, Importance Sampling, Potential of Mean Force, Normalizing Flows  
+**Keywords**: Boltzmann Generator, Coarse-grained modeling, Importance sampling, Potential of Mean Force (PMF), Normalizing Flows  
 
 ## TL;DR
-The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with a learned Potential of Mean Force (PMF) in a coarse-grained coordinate space for importance sampling. This achieves asymptotically correct equilibrium sampling of molecules at a significantly lower computational cost than atomistic BGs.
+The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with learned Potential of Mean Force (PMF) in coarse-grained coordinate space for importance sampling. This achieves asymptotically correct equilibrium sampling at a significantly lower computational cost compared to all-atom BGs.
 
 ## Background & Motivation
 
-**Background**: Sampling equilibrium molecular configurations from the Boltzmann distribution is a central challenge in statistical physics. Boltzmann Generators (BGs) address this by combining exact-likelihood generative models with importance sampling, generating proposal samples and reweighting them to obtain unbiased estimates. Meanwhile, coarse-grained (CG) methods handle larger molecular systems by reducing degrees of freedom.
+**Background**: Sampling equilibrium molecular configurations from a Boltzmann distribution is a fundamental challenge in statistical physics. Boltzmann Generators (BGs) address this by combining exact-likelihood generative models with importance sampling, generating proposal samples that are reweighted for unbiased estimation. Coarse-grained (CG) methods handle larger systems by reducing degrees of freedom.
 
-**Limitations of Prior Work**: Atomistic BGs face two major bottlenecks as dimensionality increases: (1) the drop in overlap between the generative and target distributions leads to variance explosion in importance weights, causing reweighting to fail; (2) Jacobian determinant computation grows sharply with dimensionality. Conversely, while Boltzmann Emulators improve scalability through CG dimensionality reduction, they omit the reweighting step, failing to correct distribution bias, and rely on hard-to-obtain long-term unbiased simulation data for training.
+**Limitations of Prior Work**: All-atom BGs face two bottlenecks as dimensionality increases: (1) the overlap between the generated and target distributions decreases, causing importance weight variance to explode and reweighting to fail; (2) the computational cost of the Jacobian determinant scales poorly with dimension. Conversely, Boltzmann Emulators improve scalability via CG dimensionality reduction but omit reweighting, failing to correct distribution bias, and rely on hard-to-obtain long unbiased simulation data for training.
 
-**Key Challenge**: BGs possess a reweighting mechanism but are difficult to scale to large systems; CG Emulators are scalable but lack a correction mechanism—the strengths of both remain unintegrated.
+**Key Challenge**: BGs possess a reweighting mechanism but lack scalability; CG Emulators are scalable but lack a correction mechanism—the strengths of both are complementary but have not been integrated.
 
-**Goal**: To implement generative modeling with importance sampling in the coarse-grained coordinate space while learning the target energy function from fast-converging enhanced sampling data.
+**Goal**: Implement generative modeling with importance sampling in coarse-grained coordinate space, while learning the target energy function from rapidly converging enhanced sampling data.
 
-**Key Insight**: The marginal distribution in coarse-grained coordinates $p(\mathbf{R})$ can likewise be written in Boltzmann form $p(\mathbf{R}) \propto e^{-\beta U(\mathbf{R})}$, where $U(\mathbf{R})$ is the Potential of Mean Force (PMF). If the PMF can be learned, the BG importance sampling framework can be reused within the low-dimensional CG space.
+**Key Insight**: The marginal distribution $p(\mathbf{R})$ in coarse-grained coordinates can also be expressed in Boltzmann form $p(\mathbf{R}) \propto e^{-\beta U(\mathbf{R})}$, where $U(\mathbf{R})$ is the Potential of Mean Force (PMF). If the PMF can be learned, the BG importance sampling framework can be repurposed in the low-dimensional CG space.
 
-**Core Idea**: Use Enhanced Sampling Force Matching (ESFM) to learn the PMF from fast-converging biased trajectories, use normalizing flows to generate proposal distributions in CG space, and use the learned PMF for importance reweighting, forming a complete CG-BG framework.
+**Core Idea**: Use Enhanced Sampling Force Matching (ESFM) to learn the PMF from rapidly converging biased trajectories, use normalizing flows to generate proposal distributions in CG space, and use the learned PMF for importance reweighting to form the complete CG-BG framework.
 
 ## Method
 
 ### Overall Architecture
-The input consists of atomistic molecular dynamics simulation trajectories (which can be biased enhanced sampling data), projected onto low-dimensional CG coordinates through a coarse-graining mapping $\mathbf{R} = \Xi(\mathbf{r})$. The framework comprises two components trained in parallel: (1) a proposal distribution $q_\theta(\mathbf{R})$ based on Continuous Normalizing Flows (CNF); (2) a neural network-based PMF $U_\eta(\mathbf{R})$. During inference, the flow model generates CG configurations, the PMF calculates importance weights $w(\mathbf{R}) \propto e^{-\beta U_\eta(\mathbf{R})} / q_\theta(\mathbf{R})$, and unbiased equilibrium observables are obtained via self-normalized importance sampling estimators.
+CG-BG resolves the conflict between reweighting and scalability by operating the entire BG framework in a low-dimensional coarse-grained coordinate space. Atomic trajectories (including biased enhanced sampling data) are first mapped to CG coordinates via $\mathbf{R} = \Xi(\mathbf{r})$. Two components are then trained in parallel: a Continuous Normalizing Flow $q_\theta(\mathbf{R})$ responsible for generating proposal configurations, and a neural network PMF $U_\eta(\mathbf{R})$ providing the target energy. During inference, the flow model samples configurations, the PMF calculates importance weights $w(\mathbf{R}) \propto e^{-\beta U_\eta(\mathbf{R})} / q_\theta(\mathbf{R})$, and self-normalized importance sampling converts biased proposals into asymptotically correct equilibrium estimates.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Atomic Trajectories<br/>(inc. biased enhanced sampling)"] --> B["CG Mapping R = Ξ(r)"]
+    B --> C["Enhanced Sampling Force Matching (ESFM)<br/>Learn PMF U_η(R)"]
+    B --> D["CG Continuous Normalizing Flow<br/>Learn Proposal q_θ(R)"]
+    D --> E["Flow Sampling R_i ~ q_θ"]
+    C --> F["PMF-Guided Reweighting<br/>w ∝ e^(−βU_η) / q_θ"]
+    E --> F
+    F --> G["Self-normalized Importance Sampling<br/>→ Correct Equilibrium Estimates"]
+```
 
 ### Key Designs
 
-1.  **Learning PMF via Enhanced Sampling Force Matching (ESFM)**:
-    *   **Function**: Learn the coarse-grained PMF from fast-converging biased simulation data without relying on expensive unbiased equilibrium trajectories.
-    *   **Mechanism**: Leverages fiber distribution invariance—when a bias potential $V(\mathbf{R})$ is applied to CG coordinates, the atomistic conditional distribution given $\mathbf{R}$ remains unchanged, i.e., $p_V(\mathbf{r}|\mathbf{R}) = p(\mathbf{r}|\mathbf{R})$. Thus, the conditional mean of projected forces (the mean force) is invariant under biased sampling, and the force matching regression target is unaffected by bias. The training loss is $\mathcal{L}_{\mathrm{ESFM}}(\eta) = \mathbb{E}_{\mathbf{r} \sim \mathcal{D}_{\mathrm{bias}}}[\|\nabla_{\mathbf{R}} U_\eta(\Xi(\mathbf{r})) + \mathcal{F}_{\mathrm{proj}}(\mathbf{r})\|^2]$, where forces are recalculated from the unbiased atomistic potential.
-    *   **Design Motivation**: Standard force matching requires converged unbiased data, whereas enhanced sampling (e.g., well-tempered metadynamics) can quickly cover transition regions between metastable states. ESFM shares the same global optimum as standard force matching, with its KL divergence bounded by the squared force error.
+**1. Enhanced Sampling Force Matching (ESFM): Learning PMF from Biased Data**
 
-2.  **Proposal Generation via Continuous Normalizing Flows (CNF) in CG Space**:
-    *   **Function**: Learn a proposal density $q_\theta(\mathbf{R})$ in the low-dimensional CG coordinate space to approximate the target marginal distribution.
-    *   **Mechanism**: Uses Flow Matching to train a neural vector field $v_\theta(t, \mathbf{x})$, regressing the target vector field via a linear interpolation path $\mathbf{x}_t = (1-t)\mathbf{x}_0 + t\mathbf{x}_1$. The flow model operates in a CG space with dimensions much smaller than atomistic ones (e.g., Alanine hexapeptide reduced from 72 atoms to a few beads via Core Beta mapping), significantly improving Jacobian computation and distribution overlap.
-    *   **Design Motivation**: In low-dimensional space, the generative model better overlaps with the target distribution, resulting in lower importance weight variance and higher ESS, while inference Jacobian costs are drastically reduced.
+Standard force matching requires converged unbiased equilibrium trajectories, which transition slowly between metastable states and are expensive to collect. ESFM bypasses this using fiber distribution invariance: applying an arbitrary bias potential $V(\mathbf{R})$ in CG coordinates does not change the atomic conditional distribution given $\mathbf{R}$, i.e., $p_V(\mathbf{r}|\mathbf{R}) = p(\mathbf{r}|\mathbf{R})$. Since the conditional distribution remains unchanged, the conditional mean of projected forces (the mean force) is invariant under biased sampling. The training loss is $\mathcal{L}_{\mathrm{ESFM}}(\eta) = \mathbb{E}_{\mathbf{r} \sim \mathcal{D}_{\mathrm{bias}}}[\|\nabla_{\mathbf{R}} U_\eta(\Xi(\mathbf{r})) + \mathcal{F}_{\mathrm{proj}}(\mathbf{r})\|^2]$, where projected forces are recalculated from the unbiased atomic potential. This allows training PMFs using data from fast-converging methods like well-tempered metadynamics.
 
-3.  **PMF-Guided Importance Reweighting**:
-    *   **Function**: Correct biased proposal samples from the flow model into asymptotically correct equilibrium distributions.
-    *   **Mechanism**: Importance weights $w(\mathbf{R}_i) \propto e^{-\beta U_\eta(\mathbf{R}_i)} / q_\theta(\mathbf{R}_i)$ are calculated for samples $\mathbf{R}_i \sim q_\theta$ generated by the flow model, and observables are computed using self-normalized estimators. Reweighting quality is assessed via the normalized Effective Sample Size $\mathrm{ESS} = (\sum w_i)^2 / (B \sum w_i^2)$. A weight truncation strategy is adopted to enhance robustness against MLP extrapolation anomalies and generation artifacts.
-    *   **Design Motivation**: Boltzmann Emulators cannot correct bias when directly using $q_\theta$ for estimation. Introducing the learned PMF as the target energy function restores the reweighting capability of BGs, while the PMF captures solvent-mediated effects that implicit solvent models cannot express.
+**2. CG Space Continuous Normalizing Flow: Low-Dimensional Proposal Generation**
+
+The proposal distribution must closely match the target marginal distribution to prevent weight variance explosion. CG-BG uses Flow Matching to train a neural vector field $v_\theta(t, \mathbf{x})$ along a linear interpolation path $\mathbf{x}_t = (1-t)\mathbf{x}_0 + t\mathbf{x}_1$ to learn $q_\theta(\mathbf{R})$. Operating in CG space significantly reduces dimensionality—for example, alanine hexapeptide is reduced from 72 atoms to a few beads. This reduction improves overlap between generated and target distributions, resulting in higher Effective Sample Size (ESS) and lower computational costs for Jacobian calculations.
+
+**3. PMF-Guided Importance Reweighting: Correcting Proposals**
+
+Unlike Boltzmann Emulators that estimate observables directly from $q_\theta$, CG-BG treats the learned PMF as the target energy. For each sample $\mathbf{R}_i \sim q_\theta$, it calculates importance weights $w(\mathbf{R}_i) \propto e^{-\beta U_\eta(\mathbf{R}_i)} / q_\theta(\mathbf{R}_i)$. Observables are then calculated using self-normalized estimators. Quality is measured by normalized Effective Sample Size $\mathrm{ESS} = (\sum w_i)^2 / (B \sum w_i^2)$. Since the PMF is learned from explicit solvent data, it captures solvent-mediated effects that implicit solvent models cannot, allowing CG-BG to exceed the accuracy limits of typical all-atom BGs.
 
 ### Loss & Training
-The framework is trained in two independent stages: (1) The PMF network is trained using the ESFM loss on biased or unbiased atomistic trajectory data; (2) The normalizing flow is trained via the Conditional Flow Matching loss on CG coordinate data. Both can be trained in parallel and combined during inference.
+The two components are trained independently: the PMF network via ESFM loss on biased or unbiased atomic trajectories, and the normalizing flow via Conditional Flow Matching on CG coordinate data. These processes can be executed in parallel.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on Alanine dipeptide (22 atoms), tripeptide (42 atoms), and hexapeptide (72 atoms), with explicit solvent MD simulations as the reference standard.
+Evaluations were performed on alanine dipeptide (22 atoms), tripeptide (42 atoms), and hexapeptide (72 atoms), using explicit solvent MD as reference.
 
 | Model | JS Divergence (↓) | PMF Error (↓) | ESS (↑) |
-| :--- | :--- | :--- | :--- |
+|------|------------|-------------|---------|
 | CG-BG Heavy Atom | 0.0048 | 0.2005 | 0.5112 |
 | CG-BG Heavy Atom (Biased) | 0.0063 | 0.2277 | 0.4115 |
 | CG-BG Core Beta | 0.0052 | 0.2210 | 0.5528 |
@@ -80,56 +84,57 @@ Evaluated on Alanine dipeptide (22 atoms), tripeptide (42 atoms), and hexapeptid
 | Implicit Solvent GB (OBC1) | 0.0157 | 0.3709 | — |
 | Implicit Solvent GB (OBC2) | 0.0182 | 0.4028 | — |
 
-### Computational Efficiency Comparison (Alanine dipeptide, $10^4$ samples)
+### Efficiency Comparison (Alanine Dipeptide, $10^4$ samples)
 
 | CG Mapping | Training Time | Inference Time | Total Time |
-| :--- | :--- | :--- | :--- |
+|---------|---------|---------|--------|
 | Core Beta | 0.45h | 0.95min | 0.47h |
 | Heavy Atom | 0.80h | 3.78min | 0.86h |
 | All Atom (Solute only) | 2.55h | 14.91min | 2.80h |
 
-### Validation on Larger Systems (Tripeptide & Hexapeptide)
+### Larger System Validation (Tripeptide & Hexapeptide)
 
 | Model | Tripeptide JS (↓) | Tripeptide PMF (↓) | Tripeptide ESS (↑) | Hexapeptide JS (↓) | Hexapeptide PMF (↓) | Hexapeptide ESS (↑) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------------|-------------|-------------|------------|-------------|-------------|
 | CG-BG Core Beta | 0.0060 | 0.2112 | 0.4212 | 0.0100 | 0.3646 | 0.1231 |
 | CG-BG Heavy Atom | 0.0056 | 0.1957 | 0.3201 | — | — | — |
 | Implicit Solvent GB (OBC2) | 0.0932 | 1.0274 | — | 0.1652 | 1.8401 | — |
 
 ### Key Findings
-*   After reweighting, CG-BG significantly outperforms implicit solvent baselines across all metrics, with the performance **Gain** widening in larger systems like tripeptide and hexapeptide (Hexapeptide JS divergence 0.0100 vs. 0.1652).
-*   A precision-efficiency trade-off exists in CG resolution: Core Beta mapping offers higher ESS (better distribution overlap) but slightly lower accuracy after reweighting compared to Heavy Atom mapping.
-*   **Ours** trained on 10ns of biased data achieves accuracy close to the version trained on 500ns of unbiased data, proving the data efficiency improvement of ESFM.
-*   Atomistic BGs are capped at the accuracy of implicit solvent models, whereas CG-BG breaks this limit by learning PMF from explicit solvent data.
+- Reweighted CG-BG significantly outperforms implicit solvent baselines, with the gap widening in larger systems (e.g., hexapeptide JS divergence 0.0100 vs 0.1652).
+- There is a precision-efficiency trade-off in CG resolution: Core Beta mapping offers higher ESS (better overlap) but slightly lower accuracy after reweighting than Heavy Atom mapping.
+- CG-BG trained on 10ns biased data achieves accuracy comparable to models trained on 500ns unbiased data, proving ESFM's data efficiency.
+- CG-BG breaks the implicit solvent accuracy ceiling that limits traditional all-atom BGs.
 
 ## Highlights & Insights
-*   **Clever Use of Fiber Distribution Invariance**: CG bias potentials do not alter the atomistic conditional distribution given the CG coordinates. This theoretical guarantee allows expensive unbiased trajectories to be replaced with fast-converging data from enhanced sampling.
-*   **Simulation-Free PMF Evaluation**: Once a proposal distribution is learned, multiple candidate CG force fields can be evaluated simultaneously by switching importance weights for different PMFs, without running separate MD for each model—a significant acceleration of the CG force field development workflow.
-*   **Complementary Design of Coarse-Graining + Reweighting**: Coarse-graining addresses dimensionality to keep ESS controllable, while reweighting addresses distribution bias to ensure asymptotic correctness. This orthogonal decomposition of dimensionality reduction and bias correction is transferable to other high-dimensional sampling problems.
+- **Clever Use of Fiber Distribution Invariance**: The equivalence of force matching targets under biased sampling allows the replacement of expensive unbiased trajectories with rapidly converging enhanced sampling data.
+- **Simulation-free PMF Evaluation**: Once a proposal distribution is learned, multiple candidate CG force fields can be evaluated by simply switching the target PMF for reweighting, significantly accelerating CG force field development.
+- **Complementary CG + Reweighting Design**: Coarse-graining addresses dimensionality to keep ESS manageable, while reweighting corrects distribution bias to ensure asymptotic correctness.
 
 ## Limitations & Future Work
-*   Relies on predefined collective variables (CV selection for CG mapping and enhanced sampling); appropriate CVs may be difficult to determine for complex systems.
-*   Current experiments are validated only on alanine short peptides ($\le 72$ atoms); effectiveness on larger protein systems remains to be verified.
-*   The ESS for the hexapeptide has dropped to 0.1231, suggesting importance sampling efficiency may further decrease as the system size grows.
-*   Future directions include integrating automatic CV discovery methods, introducing transferable generative architectures, and exploring energy-based training as an alternative to Flow Matching.
+- Dependency on pre-defined collective variables (CG mapping and enhanced sampling CVs); selection may be difficult for complex systems.
+- Experimental validation is limited to small peptides (≤72 atoms); performance on large protein systems remains to be tested.
+- ESS for hexapeptide drops to 0.1231, suggesting efficiency may decrease further with system size.
+- Future directions include automated CV discovery, transferrable generative architectures, and exploring energy-based training as an alternative to Flow Matching.
 
 ## Related Work & Insights
-*   **Boltzmann Generator** (Noé et al., 2019): The atomistic BG framework using normalizing flows + importance sampling, limited by dimensionality.
-*   **Boltzmann Emulator** (Lewis et al., 2025): A CG space generative model but lacks reweighting and relies on converged data.
-*   **ESFM** (Chen et al., 2026): Theoretical foundation for enhanced sampling force matching, proving force matching equivalence under CG bias.
-*   **TarFlow / ECNF++** (Tan et al., 2025b): Improved atomistic BG architectures still limited by implicit solvent accuracy.
+- **Boltzmann Generator** (Noé et al., 2019): Original all-atom framework using flows and reweighting, limited by dimension.
+- **Boltzmann Emulator** (Lewis et al., 2025): CG generative model lacking reweighting, dependent on converged data.
+- **ESFM** (Chen et al., 2026): Theoretical foundation for force matching equivalence under bias.
+- **TarFlow / ECNF++** (Tan et al., 2025b): Advanced all-atom BG architectures still limited by implicit solvent accuracy.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](../../NeurIPS2025/image_generation/flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
 - [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](../../NeurIPS2025/image_generation/boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
-- [\[ICCV 2025\] CharaConsist: Fine-Grained Consistent Character Generation](../../ICCV2025/image_generation/characonsist_fine-grained_consistent_character_generation.md)
+- [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](../../NeurIPS2025/image_generation/flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](../../NeurIPS2025/image_generation/progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
-- [\[AAAI 2026\] Talk, Snap, Complain: Validation-Aware Multimodal Expert Framework for Fine-Grained Customer Grievances](../../AAAI2026/image_generation/talk_snap_complain_validation-aware_multimodal_expert_framework_for_fine-grained.md)
+- [\[CVPR 2025\] Community Forensics: Using Thousands of Generators to Train Fake Image Detectors](../../CVPR2025/image_generation/community_forensics_using_thousands_of_generators_to_train_fake_image_detectors.md)
+- [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](../../CVPR2026/image_generation/slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
 
 </div>
 

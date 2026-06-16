@@ -2,78 +2,88 @@
 title: >-
   [Paper Note] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 description: >-
-  [CVPR 2026][3D Vision][3D pose stylization] PoseMaster proposes a 3D native framework that unifies pose stylization and 3D generation in an end-to-end pipeline. It directly uses 3D skeletons as pose control signals (rath…
+  [CVPR 2026][3D Vision][Paper Note] PoseMaster proposes a 3D native approach that unifies pose stylization and 3D generation into an end-to-end framework. It directly utilizes 3D skeletons as pose control signals (instead of 2D skeleton maps), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topolo
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D pose stylization"
-  - "skeleton encoder"
-  - "3D native generation"
-  - "data engine"
-  - "end-to-end"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: cdb110303719b565
+content_hash: b480292005b96b7f
 ---
-
 # PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2506.21076](https://arxiv.org/abs/2506.21076)  
-**Code**: None (not yet open-sourced)  
-**Area**: 3D Vision / Image Generation
-**Keywords**: 3D pose stylization, skeleton encoder, 3D native generation, data engine, end-to-end
+**Code**: None (Not yet open-sourced)  
+**Area**: 3D Vision / Image Generation  
+**Keywords**: 3D Pose Stylization, Skeleton Encoder, 3D Native Generation, Data Engine, End-to-End
 
 ## TL;DR
-PoseMaster proposes a 3D native framework that unifies pose stylization and 3D generation in an end-to-end pipeline. It directly uses 3D skeletons as pose control signals (rather than 2D skeleton images), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topology features, and trains on large-scale Image-Skeleton-Mesh triplet data, achieving state-of-the-art performance on both pose canonicalization and arbitrary pose stylization.
+PoseMaster proposes a 3D native approach that unifies pose stylization and 3D generation into an end-to-end framework. It directly utilizes 3D skeletons as pose control signals (instead of 2D skeleton maps), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topological features. Trained through a large-scale "Image-Skeleton-Mesh" triplet data engine, it achieves SOTA results in pose normalization and arbitrary pose stylization.
 
 ## Background & Motivation
 
-**Background**: 3D pose stylization aims to generate 3D assets that strictly follow a target pose while preserving character identity. Mainstream approaches adopt a cascade pipeline: a 2D foundation model (e.g., ControlNet) generates a pose-stylized image from a 2D skeleton map, which is then lifted into a 3D asset by a reconstruction model (e.g., LRM). Representative methods include CharacterGen, StdGen, and SKDream.
+**Background**: The goal of 3D pose stylization is to generate 3D assets that maintain character identity while strictly following a target pose. Current mainstream methods adopt a cascade pipeline: first using a 2D base model (e.g., ControlNet) to generate pose-stylized images based on 2D skeleton maps, and then using a 3D reconstruction model (e.g., LRM) to lift the images into 3D assets. Representative methods include CharacterGen, StdGen, and SKDream.
 
-**Limitations of Prior Work**: (1) **Unavoidable error propagation**: artifacts, occlusions, and inconsistencies introduced in the 2D generation stage are directly amplified during 3D reconstruction, causing geometric distortion. (2) **Inherent ambiguity in 2D skeleton maps**: 2D projection discards critical depth information and spatial relationships, making it impossible to resolve self-occlusions or complex topological structures, which severely limits the accuracy of the final 3D pose — a single 2D pose can correspond to infinitely many 3D configurations.
+**Limitations of Prior Work**: (1) **Inevitable error propagation**: Artifacts, occlusions, and inconsistencies introduced during the 2D generation stage are directly amplified during the 3D reconstruction stage, leading to geometric distortions; (2) **Inherent ambiguity in 2D skeleton maps**: 2D projections lose critical depth information and spatial relationships, failing to resolve self-occlusions or complex topological structures. This severely limits the precision of the final 3D pose—a single 2D pose can correspond to infinite 3D poses.
 
-**Key Challenge**: Existing methods fundamentally operate by "manipulating pose in 2D space and then attempting to recover 3D," but 2D manipulation inherently discards 3D information that cannot be recovered during the lifting stage. What is needed is direct pose control in 3D space.
+**Key Challenge**: Existing methods essentially manipulate poses in 2D space before attempting 3D recovery, but 2D manipulation inherently loses 3D information that cannot be compensated for during the lifting stage. Direct pose control in 3D space is required.
 
-**Goal**: (1) Eliminate error accumulation caused by 2D-to-3D cascades; (2) Provide unambiguous 3D spatial pose control; (3) Address the scarcity of large-scale Image-Skeleton-Mesh training data.
+**Goal**: (1) Eliminate error accumulation caused by the 2D-to-3D cascade; (2) Provide unambiguous 3D spatial pose control; (3) Address the scarcity of large-scale Image-Skeleton-Mesh training data.
 
-**Key Insight**: Inject 3D skeletons directly as conditioning signals into a 3D native generation pipeline, using a single unified end-to-end model to simultaneously perform pose stylization and 3D geometry generation.
+**Key Insight**: Inject 3D skeletons directly into the 3D native generation workflow as conditional signals for the diffusion model, using a unified end-to-end model to simultaneously complete pose stylization and 3D geometric generation.
 
-**Core Idea**: Replace 2D skeletons with 3D skeletons as pose conditions, and achieve end-to-end pose stylization within a 3D native generation framework, eliminating cascade errors.
+**Core Idea**: Replace 2D skeletons with 3D skeletons as pose conditions to implement end-to-end pose stylization within a 3D native generation framework, eliminating cascade errors.
 
 ## Method
 
 ### Overall Architecture
-PoseMaster is built on the Hunyuan3D 2.1 architecture, consisting of two main components: a 3D VAE (encoding meshes into VecSet latent representations) and a 3D Diffusion Transformer (DiT). The inputs are a single reference image and a target 3D skeleton. Image features $c_i$ are extracted via DINOv2, and pose features $c_p$ are extracted via a dedicated skeleton encoder. Both conditions are concatenated at the token level and injected into the DiT, generating a 3D mesh that strictly aligns with the skeleton pose while preserving the identity of the reference image.
+PoseMaster addresses a direct task: given a character reference image and a target 3D skeleton, it generates a 3D mesh that preserves character identity and strictly adheres to the target pose in a single step, bypassing the traditional "2D-pose-then-3D-lift" route. The pipeline is built on Hunyuan3D 2.1, featuring a 3D VAE (encoding mesh into VecSet latent representations) and a 3D Diffusion Transformer (DiT). The reference image is encoded by DINOv2 into image conditions $c_i$, and the target skeleton is encoded by a specialized skeleton encoder into pose conditions $c_p$. Both sets of tokens are concatenated and fed into the DiT for denoising. Crucially, pose control occurs in 3D space from start to finish—3D skeletons, 3D native generation, without any lossy 2D projection steps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Reference Image"] --> B["DINOv2 Encoding<br/>Image Condition c_i"]
+    C["Target 3D Skeleton"] --> D["3D Skeleton Densification<br/>Equidistant Sampling + Direction → 256 pts × 6"]
+    D --> E["Point Transformer Skeleton Encoder<br/>Pose Condition c_p"]
+    B --> F["3D DiT Denoising<br/>Concat c_i + c_p (Based on Hunyuan3D 2.1)"]
+    E --> F
+    F --> G["3D VAE Decoding<br/>VecSet Latent Representation"]
+    G --> H["Stylized 3D Mesh<br/>Aligned with skeleton, skinning ready"]
+    subgraph DATA["Scalable Data Engine (Training Triplets)"]
+        direction TB
+        I["Action Pairs<br/>Cross-frame pairing to disentangle appearance and pose"]
+        J["View Pairs<br/>Auto-rigging static assets for data augmentation"]
+    end
+    DATA -. Training .-> F
+```
 
 ### Key Designs
 
-1. **Dense Skeleton Representation**:
+**1. 3D Skeleton Densification: Providing topological orientation for sparse joints to eliminate ambiguity**
 
-    - Function: Converts sparse joint points into a dense point cloud rich in topological information.
-    - Mechanism: Standard 3D skeletons consist of joint coordinates at the start and end of each bone segment, but sparse joints lack topological connectivity information and cannot express complex articulations. PoseMaster performs distance-weighted interpolation along each bone segment — points are sampled at uniform intervals (e.g., 0.005) from the start to the end joint, with the number of points determined by bone length to ensure uniform distribution. To encode topological information, the direction vector of each bone segment (from start to end joint) is assigned to all sampled points along that segment. The final representation is $P \in \mathbb{R}^{N \times 6}$, where each point contains a 3D coordinate and a 3D direction, and is then downsampled to a fixed 256 points via FPS.
-    - Design Motivation: Sparse joint representations suffice for conveying simple poses (A-pose/T-pose), but introduce severe ambiguity for complex articulations (e.g., crossed fingers, intertwined legs). The inclusion of direction vectors enables the network to explicitly identify which bone segment a given point belongs to and the orientation of that segment.
+Standard 3D skeletons are merely sequences of joint coordinates, sufficient for simple poses like A-pose or T-pose, but insufficient for complex joints like crossed fingers or entwined legs where isolated points cannot clarify depth ordering. PoseMaster "paints" every bone segment: interpolating equidistant points (approx. 0.005 spacing) along the segment. The number of samples correlates with bone length to maintain density, and the direction vector (start point to end point) is assigned to all sample animation points on that segment. Thus, each point carries 3D coordinates and 3D orientation, transforming the skeleton into $P \in \mathbb{R}^{N \times 6}$, which is finally downsampled via FPS to 256 points. Specifically, a femur bone originally defined by hip and knee endpoints becomes dozens of points labeled with a "downward" direction, allowing the network to explicitly read the bone's flow and affiliation rather than guessing from isolated coordinates.
 
-2. **Point Transformer Skeleton Encoder**:
+**2. Point Transformer Skeleton Encoder: Modeling point relationships in 3D space for unambiguous geometric priors**
 
-    - Function: Extracts fine-grained spatial structure and topological features from the dense skeleton point cloud.
-    - Mechanism: Positional encoding PE is applied to the 3D coordinates $P_c$, which are then concatenated with the direction features $P_f$ and projected to 1024 dimensions via linear projection. This is followed by 2 stacked Point Transformer Blocks to obtain the final skeleton condition $c_p = \phi_2(\phi_1(\mathcal{T}([PE(P_c), P_f])))$. The self-attention mechanism of the Point Transformer is inherently well-suited for capturing spatial relationships between points.
-    - Design Motivation: 2D pose methods use rendered Openpose skeleton images as conditions, which represent projected 2D information. The Point Transformer for 3D skeletons directly models spatial relationships in 3D space, providing an unambiguous geometric prior.
+With the dense point cloud, an encoder is needed to compress it into conditions for the DiT. PoseMaster applies positional encoding (PE) to the coordinate part $P_c$, concatenates it with direction features $P_f$, projects them to 1024 dimensions, and passes them through two stacked Point Transformer Blocks to obtain the pose condition:
 
-3. **Scalable Data Engine**:
+$$c_p = \phi_2(\phi_1(\mathcal{T}([PE(P_c), P_f])))$$
 
-    - Function: Constructs large-scale Image-Skeleton-Mesh triplet training data.
-    - Mechanism: Data is collected through two routes. **Dynamic Route (Action Pairs)**: Animation sequences are applied to characters from animatable datasets such as ReadyPlayerMe, VRoid, and Playbox to render multiple frames, which are then cross-paired — the image from frame A is paired with the skeleton and mesh from frame B, achieving pose disentanglement. **Static Route (View Pairs)**: Multi-view images are rendered from static datasets such as Objaverse, Objaverse-XL, and HumanRig; skeletons are directly extracted for rigged assets, while an automatic rigging model is used for inference on un-rigged assets; a view image is then paired with the complete 3D skeleton and mesh. All meshes undergo watertight processing, and normalization parameters are tracked and synchronously applied to skeletons to ensure spatial alignment. The final dataset contains 500K+ unique humanoid objects.
-    - Design Motivation: Existing animatable 3D assets (e.g., ReadyPlayerMe) are scarce and stylistically homogeneous. By incorporating large volumes of static assets and extending coverage via automatic rigging, this approach overcomes the data bottleneck.
+Point Transformer is selected over standard MLPs for its inherent ability to capture spatial relationships between points via self-attention. This contrasts sharply with 2D pose methods that render skeletons into 2D Openpose maps for ControlNet; PoseMaster models entirely within the 3D coordinate system, preserving depth and topology to provide the DiT with unambiguous geometric priors.
+
+**3. Scalable Data Engine: Resolving pose-disentangled training data scarcity with static assets and auto-rigging**
+
+End-to-end training requires numerous "same character, different pose" Image-Skeleton-Mesh triplets. Existing animatable 3D assets (like ReadyPlayerMe) are scarce and stylistically limited. PoseMaster uses two complementary routes. The dynamic route (Action Pairs) starts with datasets like ReadyPlayerMe, VRoid, and Playbox, rendering multiple frames of action sequences and cross-pairing them—pairing the image from Frame A with the skeleton and mesh from Frame B. This forces the model to disentangle "appearance" from "pose." The static route (View Pairs) utilizes massive static datasets like Objaverse, Objaverse-XL, and HumanRig, rendering multi-view images. Skeletons are extracted if available or generated via auto-rigging models. A single-view image is then paired with the full 3D skeleton and mesh. All meshes are processed into watertight versions, and normalization parameters are synchronized with the skeletons to ensure spatial alignment. Together, these routes aggregate over 500K unique humanoid objects.
 
 ### Loss & Training
-A conditional Flow Matching objective is used: $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|v_\theta(x,t,c_i,c_p) - (x_1-x_0)\|_2^2$. During training, the image encoder and VAE are frozen, while the DiT and skeleton encoder are jointly optimized with a learning rate of $1 \times 10^{-5}$. Data augmentation includes random image rotation (±30°, 15% probability) and random translation/scaling/rotation of 3D skeletons (applied synchronously to mesh surface points to maintain alignment). In the CFG formulation, the skeleton condition is always retained; dropout is applied only to the image condition.
+The model is trained using a Conditional Flow Matching objective $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|v_\theta(x,t,c_i,c_p) - (x_1-x_0)\|_2^2$. The image encoder and VAE are frozen, while the DiT and skeleton encoder are jointly optimized with a learning rate of $1 \times 10^{-5}$. Data augmentation includes 15% probability random rotation ($\pm 30^{\circ}$) for images and random translation/scaling/rotation for 3D skeletons and meshes. Notably, for Classifier-Free Guidance (CFG), the pose condition $c_p$ is always retained during dropout, while the image condition $c_i$ is dropped, effectively forcing the skeleton to unconditionally dictate the pose while the image controls the appearance.
 
 ## Key Experimental Results
 
-### Main Results (Pose Canonicalization — VRoid Test Set)
+### Main Results (Pose Normalization - VRoid Test Set)
 
 | Method | MAE↓ | SIM↑ | Uni3D-I↑ | ULIP-I↑ |
-|--------|------|------|----------|---------|
+|------|------|------|----------|---------|
 | CharacterGen | 6.38 | 0.905 | 0.343 | 0.146 |
 | StdGen | 4.97 | 0.930 | 0.398 | 0.160 |
 | Trellis* | 5.39 | 0.926 | 0.398 | 0.157 |
@@ -82,42 +92,42 @@ A conditional Flow Matching objective is used: $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|
 
 ### Ablation Study (Arbitrary Pose Stylization + Skeleton Guidance Effect)
 
-| Method | MAE↓ | SIM↑ | Uni3D-I↑ | Note |
-|--------|------|------|----------|------|
-| Trellis (given target pose image) | 7.20 | 0.904 | 0.306 | Baseline has informational advantage via target pose image |
-| Hunyuan3D 2.1 (given target pose image) | 6.75 | 0.911 | 0.285 | Same as above |
-| **PoseMaster (source pose image + 3D skeleton)** | **5.28** | **0.935** | **0.313** | Outperforms baselines despite their informational advantage |
-| Hunyuan3D 2.1 (without skeleton guidance) | 6.56 | 0.916 | 0.301 | Baseline for skeleton guidance effect |
-| **PoseMaster (with skeleton guidance)** | **4.82** | **0.946** | **0.315** | Skeleton significantly improves geometric accuracy |
+| Method | MAE↓ | SIM↑ | Uni3D-I↑ | Description |
+|------|------|------|----------|------|
+| Trellis (w/ target pose image) | 7.20 | 0.904 | 0.306 | Baseline has target image advantage |
+| Hunyuan3D 2.1 (w/ target pose image) | 6.75 | 0.911 | 0.285 | Same as above |
+| **PoseMaster (w/ source image + 3D skeleton)** | **5.28** | **0.935** | **0.313** | Outperforms even with less info |
+| Hunyuan3D 2.1 (No skeleton guidance) | 6.56 | 0.916 | 0.301 | Baseline for skeleton effect |
+| **PoseMaster (With skeleton guidance)** | **4.82** | **0.946** | **0.315** | Skeleton significantly improves geometry |
 
 ### Key Findings
-- **PoseMaster comprehensively outperforms cascade methods on pose canonicalization**: MAE is reduced from StdGen's 4.97 to 4.59. The key advantage is avoiding structural distortion in the 2D canonicalization stage — StdGen-generated A-pose images frequently exhibit severe body structure errors.
-- **The arbitrary pose stylization comparison is highly compelling**: Baseline methods are given direct access to the target pose image (a significant informational advantage), while PoseMaster receives only the source pose image and a 3D skeleton, yet still substantially outperforms baselines (MAE 5.28 vs. 6.75–7.20), demonstrating that pure image input cannot resolve topological ambiguity caused by self-occlusion.
-- **Dense skeleton representation vs. sparse joint points**: Qualitative results show that sparse joints fail to convey complex articulations, leading to incorrect topological structures in the output; dense point clouds with direction vectors significantly improve control accuracy for complex poses.
-- **Skeleton guidance also benefits standard image-to-3D tasks**: Even for same-pose reconstruction (not pose transfer), adding skeleton guidance reduces MAE from 6.56 to 4.82, indicating that the skeleton serves as a geometric anchor that mitigates depth ambiguity in monocular 3D reconstruction.
+- **PoseMaster comprehensively outperforms cascade methods in pose normalization**: MAE drops from 4.97 (StdGen) to 4.59. The key advantage is avoiding structural distortions during the 2D normalization stage.
+- **Arbitrary pose stylization results are highly persuasive**: Even when baselines are given target pose images (a massive information advantage), PoseMaster (given only source images and 3D skeletons) remains significantly superior (MAE 5.28 vs 6.75-7.20), proving that pure image input cannot resolve topological ambiguity from self-occlusion.
+- **Dense representation vs. sparse joints**: Qualitative results show sparse joints fail to convey complex movements, leading to incorrect topologies; dense point clouds with direction vectors significantly improve control precision.
+- **Skeleton guidance benefits standard image-to-3D tasks**: Even in same-pose reconstruction, adding skeletons reduces MAE from 6.56 to 4.82, indicating skeletons act as geometric anchors to mitigate depth ambiguity in monocular reconstruction.
 
 ## Highlights & Insights
-- **Designating the skeleton condition as a "mandatory" condition in CFG (no dropout)** is an elegant design: $\hat{v}_\theta = v_\theta(x_t,t,c_p,\emptyset) + \lambda(v_\theta(x_t,t,c_p,c_i) - v_\theta(x_t,t,c_p,\emptyset))$. This ensures the skeleton always exerts control over the generation process, while the image condition influences only appearance. It guarantees that pose accuracy is never diluted by the identity preservation objective.
-- **The generated meshes are natively animation-ready**: Because meshes are strictly spatially aligned with the skeleton, they can be directly fed into a skinning model (e.g., UniRig) for automatic rigging, eliminating the cumbersome skeleton retargeting steps in traditional pipelines. This makes PoseMaster simultaneously a generative model and a controllable rigging model.
-- **The data engine's Action Pairs + View Pairs combined strategy** resolves the core bottleneck of animatable asset scarcity: static assets vastly outnumber animatable ones, and incorporating them into training via automatic rigging greatly expands data scale and stylistic diversity.
+- **CFG Design**: Setting the skeleton condition as "required" (0% dropout) ensure $\hat{v}_\theta = v_\theta(x_t,t,c_p,\emptyset) + \lambda(v_\theta(x_t,t,c_p,c_i) - v_\theta(x_t,t,c_p,\emptyset))$. This ensures the skeleton maintains control over the generation process while the image only affects appearance, preventing pose accuracy from being diluted by identity preservation.
+- **Animation-Ready Meshes**: Since the generated mesh is strictly aligned with the skeleton in 3D space, it can be directly integrated into skinning models (e.g., UniRig) for automatic rigging, bypassing tedious retargeting steps.
+- **Data Strategy**: The combination of Action Pairs and View Pairs addresses the bottleneck of animatable asset scarcity. By "activating" static assets through auto-rigging, the model significantly raises the ceiling for data scale and stylistic diversity.
 
 ## Limitations & Future Work
-- **Limited to humanoid characters**: Both the data engine and the skeleton encoder are designed around humanoid skeletons and do not support pose stylization for animals or non-humanoid characters.
-- **Dependent on Hunyuan3D 2.1 pretrained weights**: The generalization capability of the framework may be bounded by the capacity of the underlying 3D generative model.
-- **Insufficient fine-grained control at the finger level**: The skeleton densification strategy is effective for large bone segments, but extremely short segments such as finger bones yield too few sampled points for adequate granularity.
-- **No texture quality evaluation**: The reported metrics (MAE, SIM, Uni3D-I) primarily assess geometric quality; texture fidelity and lighting consistency are not quantified.
+- **Humanoid Only**: The data engine and skeleton encoder are tailored for humanoid skeletons and do not support animals or non-humanoid characters.
+- **Dependency on Hunyuan3D 2.1**: Generalization capabilities may be limited by the performance ceiling of the underlying 3D generation model.
+- **Lack of Fine-grained Control**: While effective for large bone segments, the densification strategy provides too few sampling points for extremely short segments like fingers, limiting dexterity.
+- **Texture Evaluation**: Metrics focus on geometric quality; texture fidelity and lighting consistency remain unquantified.
 
 ## Related Work & Insights
-- **vs. CharacterGen/StdGen**: Both are cascade methods (2D pose transfer → 3D reconstruction). PoseMaster's end-to-end paradigm fundamentally eliminates error propagation from intermediate steps.
-- **vs. SKDream**: SKDream also employs 2D ControlNet-style skeleton conditioning but remains constrained by 2D projection ambiguity. PoseMaster's 3D skeleton provides explicit depth and topological information.
-- **vs. CraftsMan/Trellis**: These 3D native generative models lack pose control capability. PoseMaster endows them with precise pose controllability via the skeleton encoder.
-- **Insights**: The approach of using 3D skeletons as conditioning signals can be generalized to other 3D controllable generation tasks, such as gesture generation conditioned on hand skeletons or 4D human body generation conditioned on full-body motion sequences.
+- **vs. CharacterGen/StdGen**: These are cascade methods (2D pose transfer → 3D reconstruction). PoseMaster’s end-to-end paradigm fundamentally eliminates error propagation between steps.
+- **vs. SKDream**: SKDream uses 2D ControlNet-style control but remains limited by 2D projection ambiguity. PoseMaster’s 3D skeleton provides explicit depth and topology.
+- **vs. CraftsMan/Trellis**: These 3D native models lack pose control; PoseMaster introduces precise pose controllability via its skeleton encoder.
+- **Insight**: The concept of using 3D skeletons as conditional signals can be extended to other controllable 3D tasks, such as hand gesture generation or 4D human generation based on motion sequences.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Direct 3D skeleton conditioning combined with end-to-end pose stylization represents a highly pioneering paradigm; the skeleton densification design is concise and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comparisons are fairly designed (baselines are given informational advantages yet are still outperformed); ablation analysis is thorough; however, user studies are absent.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, method descriptions are detailed, and figures and tables are of high quality.
-- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for 3D pose stylization; the application value of animation-ready mesh generation is substantial.
+- Novelty: ⭐⭐⭐⭐⭐ 3D skeleton conditioning + end-to-end paradigm is pioneering; densification is simple yet effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Fair comparison (outperforming baselines with information advantages); solid ablation, though lacks user study.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed method description, and high-quality figures.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for 3D pose stylization; high utility for animation-ready mesh generation.
 
 <!-- RELATED:START -->
 
@@ -125,11 +135,11 @@ A conditional Flow Matching objective is used: $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|
 
 ## Related Papers
 
-- [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
-- [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
-- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
-- [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
-- [\[AAAI 2026\] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting](../../AAAI2026/3d_vision/fantasystyle_controllable_stylized_distillation_for_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
+- [\[CVPR 2026\] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices](seele_a_unified_acceleration_framework_for_real-time_gaussian_splatting_on_mobil.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] PointCNN++: Performant Convolution on Native Points](pointcnn_performant_convolution_on_native_points.md)
+- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
 
 </div>
 

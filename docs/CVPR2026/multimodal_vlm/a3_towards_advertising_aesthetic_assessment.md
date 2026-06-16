@@ -2,78 +2,91 @@
 title: >-
   [Paper Note] A3: Towards Advertising Aesthetic Assessment
 description: >-
-  [CVPR 2026][Multimodal VLM][Advertising Aesthetic Assessment] This paper proposes the A3 framework, comprising a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptual Attention → Formal I…
+  [CVPR 2026][Multimodal VLM][Chain-of-Thought] The authors propose the A3 framework, which includes a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptive Attention → Formal Interest → Desire Impact), a dataset of 120,000 annotated samples (A3-Dataset), a model aligned via SFT and GRPO (A3-Align), and an evaluation benchmark (A3-Be
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Advertising Aesthetic Assessment"
-  - "Multimodal Large Language Models"
-  - "AIDA Model"
-  - "Chain-of-Thought"
-  - "GRPO"
+  - CVPR 2026
+  - Multimodal VLM
+  - Chain-of-Thought
+  - GRPO
 date: 2026-05-08
-content_hash: ed32e61c4b1c0676
+content_hash: 56233c3c2d7bc3e0
 ---
-
 # A3: Towards Advertising Aesthetic Assessment
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24037](https://arxiv.org/abs/2603.24037)  
 **Code**: [https://github.com/euleryuan/A3-Align](https://github.com/euleryuan/A3-Align)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Advertising Aesthetic Assessment, Multimodal Large Language Models, AIDA Model, Chain-of-Thought, GRPO
 
 ## TL;DR
-This paper proposes the A3 framework, comprising a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptual Attention → Formal Interest → Desire Impact), a 120K-annotation dataset A3-Dataset, an SFT+GRPO aligned model A3-Align, and the evaluation benchmark A3-Bench. A3-Align surpasses existing MLLMs on automated advertising aesthetic assessment.
+The authors propose the A3 framework, which includes a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptive Attention → Formal Interest → Desire Impact), a dataset of 120,000 annotated samples (A3-Dataset), a model aligned via SFT and GRPO (A3-Align), and an evaluation benchmark (A3-Bench). It outperforms existing MLLMs in automated advertising aesthetic assessment.
 
 ## Background & Motivation
 
-**Background**: Advertising images are critical to commercial conversion rates, yet current evaluation methods rely primarily on subjective human scoring, lacking scalability, standardized criteria, and interpretability. Automated systems mostly employ simple threshold-based filtering and cannot provide diagnostic feedback.
+**Background**: Advertising images are critical for commercial conversion rates, but current assessment methods rely heavily on subjective human scoring, lacking scalability, standardized criteria, and interpretability. Automated systems are mostly restricted to simple threshold filtering and fail to provide diagnostic feedback.
 
-**Limitations of Prior Work**: Although MLLMs possess strong vision-language understanding capabilities, they exhibit three shortcomings in advertising aesthetic assessment: (1) they produce only a single holistic score, ignoring the progressive nature of human cognition; (2) their outputs are unstable and sensitive to prompt phrasing; and (3) their reasoning processes frequently contradict their final judgments.
+**Limitations of Prior Work**: Although MLLMs possess strong vision-language understanding capabilities, they face three challenges in advertising aesthetic assessment: (1) performing only a single-step holistic scoring while ignoring the progressive human cognitive process; (2) unstable outputs and sensitivity to prompts; (3) frequent inconsistency between reasoning processes and final judgments.
 
-**Key Challenge**: Advertising aesthetic assessment requires multi-level judgment spanning from low-level perception (image quality) to high-level cognition (emotional arousal and persuasiveness), yet existing methods lack a methodology for translating abstract theory into an executable evaluation framework.
+**Key Challenge**: Advertising aesthetic assessment involves multi-level judgments ranging from low-level perception (image quality) to high-level cognition (emotional arousal and persuasiveness). Existing methods lack a methodology to translate abstract theories into executable assessment frameworks.
 
-**Key Insight**: The classical AIDA marketing model (Attention → Interest → Desire → Action) is leveraged to construct a staged advertising aesthetic assessment framework.
+**Key Insight**: By drawing on the classic AIDA marketing model (Attention → Interest → Desire → Action), a multi-stage advertising aesthetic assessment framework can be constructed.
 
-**Core Idea**: Advertising aesthetic assessment is decomposed into three hierarchical levels (Perceptual Attention → Formal Interest → Desire Impact), each with explicit theoretical grounding and actionable evaluation rules, complemented by CoT-guided dataset construction and GRPO alignment training.
+**Core Idea**: The advertising aesthetic assessment is decomposed into three levels (Perceptive Attention → Formal Interest → Desire Impact). Each level has a clear theoretical basis and operable assessment rules, supported by a CoT-guided dataset and GRPO alignment training.
 
 ## Method
 
 ### Overall Architecture
-A3 consists of four components: (1) A3-Law, a theoretical paradigm defining three-stage evaluation rules; (2) A3-Dataset, containing 30K advertising images and 120K instruction-response pairs; (3) A3-Align, a model trained via SFT+GRPO alignment; and (4) A3-Bench, an evaluation benchmark.
+A3 is centered around the A3-Law theoretical paradigm, forming a pipeline of "Paradigm → Data → Model → Evaluation." A3-Law decomposes advertising aesthetics into three progressive stages: Perceptive Attention → Formal Interest → Desire Impact, with scoring rules assigned to each layer. A3-Dataset follows these rules through a two-stage annotation process: first, 30K advertising images are manually annotated as a foundation; then, MLLMs generate CoT reasoning chains to expand the dataset to 120K instruction-response pairs. A3-Align is trained on this data using SFT and GRPO to align with A3-Law. A3-Bench serves as a benchmark for evaluating MLLMs and supporting downstream applications. A suite of lightweight tool calls (Hue Analysis, Color Harmony, OCR) is integrated into data construction and GRPO training to anchor subjective judgments in objective measurements.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    L["A3-Law Paradigm<br/>3-Stage Rules: Attention → Interest → Desire"]
+    L --> D
+    subgraph D["A3-Dataset Annotation"]
+        direction TB
+        D1["Human Stage<br/>30K Rule-based Annotation + QC"] --> D2["Augmentation Stage<br/>MLLM CoT Generation → Expert Vote (120K)"]
+    end
+    D --> A
+    subgraph A["A3-Align Training"]
+        direction TB
+        A1["SFT<br/>Learning Rules/Formats/CoT/Tools"] --> A2["GRPO<br/>Multi-signal Reward Calibration"]
+    end
+    T["Tool Calling<br/>Hue Analysis + Hasler Harmony + DeepSeek-OCR"]
+    T -.Auxiliary Evidence.-> D2
+    T -.Tool Reward.-> A2
+    A --> B["A3-Bench Evaluation<br/>+ Ad Selection/Diagnostic Criticism"]
+```
 
 ### Key Designs
 
-1. **A3-Law: Three-Stage Hierarchical Paradigm**:
+**1. A3-Law: Decomposing AIDA Marketing Theory into Executable Assessment Stages**
 
-    - **Perceptual Attention**: Assesses whether image signals can capture viewer attention. Grounded in signal detection theory, it encompasses three rules: image fidelity (clarity and freedom from distortion), integration realism (consistency of lighting, shadows, and perspective), and professional refinement (absence of artifacts and clarity of details). Theoretical basis: information must cross a physiological threshold before entering higher-level cognition.
-    - **Formal Interest**: Evaluates whether color and spatial layout can arouse interest. Covers color construction (hue adaptability and color harmonization, quantified via the Hasler metric) and spatial construction (layout adaptability, hierarchy, focal points, and safe zones). Theoretical basis: perceptual grouping mechanisms from Gestalt psychology.
-    - **Desire Impact**: Assesses the semantic and emotional value of the image. Encompasses copywriting tone, promotional icon recognition (via object detection), aesthetic attributes (intuitive visual pleasure), and advertising attributes (brand emotional connection and persuasiveness). Theoretical basis: semiotics and affective appraisal theory.
+Existing MLLMs typically provide a holistic score in one step, conflating distinct levels such as image clarity, color quality, and emotional impact. A3-Law leverages AIDA to split the assessment into three hierarchical layers, each tied to psychological principles and scoring rules. **Perceptive Attention** relates to Signal Detection Theory, where information must cross physiological thresholds before higher cognition occurs. This layer focuses on image signals: image fidelity (clarity/distortion), integration realism (consistency in lighting/shadow/perspective), and professional fineness (absence of artifacts). **Formal Interest** relates to Gestalt perceptual grouping, examining whether color and layout evoke interest. This is split into Color Construction (hue adaptability and color harmony quantified by Hasler metrics) and Spatial Construction (layout adaptability regarding hierarchy, focal points, and safe areas). **Desire Impact** relates to semiotics and emotional evaluation, assessing semantic and emotional value: copywriting tone, promotional icon identification (object detection), aesthetic attributes (intuitive pleasure), and advertising attributes (brand emotional connection and persuasiveness).
 
-2. **A3-Dataset Construction**:
+**2. A3-Dataset: Two-stage Annotation with Human Foundation and Model Scaling**
 
-    - **Function**: Generates 120K instruction-response pairs from 30K advertising images.
-    - **Mechanism**: A two-stage pipeline — a human annotation stage (image collection, A3-Law rule annotation, and quality review, with objective metric accuracy >0.93, IoU >0.92, and subjective SRCC >0.85) followed by a model-augmentation stage (MLLM-generated CoT reasoning chains, validated by majority vote from a five-expert panel, with an overall acceptance rate >85% after iterative refinement).
-    - **Design Motivation**: Combines the reliability of human annotation with the scalability of LLM-generated CoT.
+To enable models to learn these hierarchical rules, reliable and large-scale data with reasoning chains is required. A3-Dataset splits the process into two parts. In the human stage, 30K advertising images are collected and annotated according to A3-Law rules with quality control (objective accuracy >0.93, IoU >0.92, subjective SRCC >0.85). In the model augmentation stage, MLLMs generate CoT reasoning chains based on these annotations, expanding the 30K images into 120K instruction-response pairs as verified by a 5-expert panel with an 85% pass rate.
 
-3. **A3-Align Training**:
+**3. A3-Align: Two-stage Training with SFT for Structure and GRPO for Behavior Calibration**
 
-    - **Function**: Enables MLLMs to learn A3-Law rules and produce structured outputs.
-    - **Mechanism**: The **SFT stage** acquires rules, formats, tool usage, and CoT capabilities; the **GRPO stage** optimizes via multi-signal rewards — generic rewards (format reward $R_{format}$, non-repetition reward $R_{nonrep}$) and rule-specific rewards (accuracy $R_{acc}$, tool usage $R_{tool}$, IoU reward $R_{IoU}$, continuous score reward $R_{score} = \exp(-\frac{(s-\hat{s})^2}{2\sigma^2})$).
-    - **Design Motivation**: SFT provides structural foundations, while GRPO further calibrates behavioral format, task accuracy, evidential grounding, and subjective value alignment.
+A3-Align uses a two-stage training approach to address format instability and reasoning-judgment inconsistency. The SFT stage focuses on learning A3-Law rules, output formats, and tool calling. The GRPO stage uses multi-signal rewards for fine calibration. Rewards include general rewards ($R_{format}$, $R_{nonrep}$) and rule-specific rewards ($R_{acc}$, $R_{tool}$, $R_{IoU}$). To align continuous scoring with human ratings, a Gaussian reward is used:
 
-4. **Tool-Calling Mechanism**:
+$$R_{score} = \exp\!\left(-\frac{(s-\hat{s})^2}{2\sigma^2}\right)$$
 
-    - Three lightweight analysis tools: a hue analysis tool (for hue adaptability judgment), a color harmonization quantifier (Hasler index), and DeepSeek-OCR (for copywriting tone assessment).
-    - Tool outputs are integrated into the reasoning chain as auxiliary evidence; decisions are not mechanistically determined by tool outputs alone.
+where $s$ is the predicted score and $\hat{s}$ is the human score. SFT ensures the model knows "how to write," while GRPO ensures "accuracy, evidence, and value alignment."
+
+**4. Tool Calling: Anchoring Subjective Judgments in Objective Measurements**
+
+Judgments on color harmony or copywriting tone can be subjective and sensitive to prompts. A3-Align incorporates three lightweight analytical tools: Hue Analysis, Color Harmony quantification (Hasler index), and DeepSeek-OCR. The model is trained to call these tools within the reasoning chain. Crucially, tool outputs serve as auxiliary evidence; the model retains the ability to make a synthesized judgment based on hierarchical rules rather than being mechanically overruled by a tool.
 
 ### Loss & Training
-The total reward is computed as a normalized weighted sum: $R_{total} = \frac{\sum_{i \in \mathcal{A}} \alpha_i R_i}{\sum_{i \in \mathcal{A}} \alpha_i}$, where different reward subsets are activated based on the type of the current sample.
+Normalized weighted total reward: $R_{total} = \frac{\sum_{i \in \mathcal{A}} \alpha_i R_i}{\sum_{i \in \mathcal{A}} \alpha_i}$, where subsets of rewards are activated based on the sample type.
 
 ## Key Experimental Results
 
-### Main Results (Per-Rule Accuracy on A3-Bench)
+### Main Results (Accuracy across A3-Bench Rules)
 
 | Model | Image Fidelity | Integration Realism | Color Harmonization | Layout Adaptability | Aesthetic SRCC |
 |------|:---:|:---:|:---:|:---:|:---:|
@@ -82,43 +95,43 @@ The total reward is computed as a normalized weighted sum: $R_{total} = \frac{\s
 | GPT-4o | - | - | - | - | - |
 | **A3-Align** | **Best** | **Best** | **Best** | **Best** | **Best** |
 
-(Across the full 10-dimension evaluation, A3-Align significantly outperforms both open-source and closed-source MLLMs on nearly all rules.)
+(In the full 10-dimensional evaluation, A3-Align significantly outperforms open-source and closed-source MLLMs across nearly all rules.)
 
 ### Ablation Study (Training Strategy)
 
 | Configuration | Binary Rules Avg Acc | Aesthetic SRCC | Advertising SRCC |
 |------|------|------|------|
-| SFT only | Baseline | Baseline | Baseline |
-| SFT + GRPO (w/o tools) | +Gain | +Gain | +Gain |
-| SFT + GRPO (full) | **Best** | **Best** | **Best** |
+| SFT Only | Baseline | Baseline | Baseline |
+| SFT + GRPO (No Tools) | +Gain | +Gain | +Gain |
+| SFT + GRPO (Full) | **Best** | **Best** | **Best** |
 
 ### Key Findings
-- Even the strongest closed-source models (e.g., GPT-4o-thinking) perform poorly on A3-Law's hierarchical evaluation, demonstrating the necessity of domain alignment.
-- The multi-signal rewards in the GRPO stage yield significant performance improvements over SFT alone across all dimensions.
-- The tool-calling mechanism provides measurable benefits for color and copywriting evaluation.
-- A3-Align demonstrates strong practical utility on two downstream tasks: advertising selection and diagnostic critique generation.
+- Even the strongest closed-source models (e.g., GPT-4o-thinking) perform poorly on A3-Law's hierarchical assessment, proving the necessity of domain alignment.
+- Multi-signal rewards in the GRPO stage significantly improve performance across dimensions compared to SFT alone.
+- Tool-calling mechanisms provide clear benefits for color and copywriting assessment.
+- A3-Align demonstrates high practical value in downstream tasks like advertising selection and diagnostic criticism.
 
 ## Highlights & Insights
-- **Theory-Driven Evaluation Framework**: Translating AIDA marketing theory into an executable three-stage computational assessment paradigm is an exemplary instance of engineering cognitive-psychological theory into practice. The complete methodology of "theory → paradigm → data → model → benchmark" is transferable to other subjective evaluation tasks.
-- **CoT + GRPO Alignment Strategy**: Using SFT to first learn structure and rules, then applying GRPO's multi-signal rewards for fine-grained calibration, offers a generalizable paradigm for aligning LLMs to domain-specific evaluation standards.
-- **Tool-Augmented Reasoning**: Integrating quantitative tools (color analysis, OCR) into the reasoning chain grounds subjective judgments in objective measurements.
+- **Theory-driven Assessment Framework**: Translating AIDA marketing theory into an executable three-stage computational paradigm is an excellent example of engineering cognitive psychology.
+- **CoT + GRPO Alignment Strategy**: Using SFT for structure and GRPO for fine-grained calibration is a valuable reference for any scenario requiring LLM alignment with domain-specific standards.
+- **Tool-augmented Reasoning**: Allowing models to invoke quantitative tools within reasoning chains anchors subjective judgments in objective measurements.
 
 ## Limitations & Future Work
-- The Desire Impact stage of A3-Law is positioned as a culturally universal framework; however, advertising aesthetics are highly culture-dependent, and cross-cultural adaptation remains unexplored.
-- The current work addresses only static advertising images; evaluation of video and interactive advertisements is not covered.
-- The 30K-image dataset may still be limited in diversity within the advertising domain, and more fine-grained rules may be required for specific verticals (e.g., luxury goods, fast-moving consumer goods).
-- The choice of $\sigma$ in the Gaussian reward function for continuous scores affects training stability and precision, warranting further analysis.
+- The Desire Impact stage of A3-Law is currently treated as a culturally universal framework, but advertising aesthetics are highly dependent on cultural contexts.
+- Currently, only static images are handled; video and interactive advertising assessment remain unexplored.
+- The diversity of the 30K images may be limited in specific vertical categories (e.g., luxury goods, FMCG) which might require finer rules.
+- The choice of $\sigma$ in the Gaussian reward function impacts training stability and precision.
 
 ## Related Work & Insights
-- **vs. AVA/AADB**: Traditional aesthetic datasets provide only single-dimensional scores, whereas A3-Dataset offers multi-level, multi-dimensional annotations with CoT reasoning chains.
-- **vs. General MLLMs (e.g., GPT-4o)**: General-purpose models lack rule awareness for advertising aesthetics; A3-Align achieves substantial domain alignment through domain-specific data and GRPO training.
-- **Application Insights**: The three-stage framework of A3-Law can inspire the design of other tasks requiring hierarchical evaluation, such as UI design assessment and interior design evaluation.
+- **vs. AVA/AADB**: Traditional aesthetic datasets provide only single-dimension scores; A3-Dataset provides multi-level, multi-dimensional annotations with CoT.
+- **vs. General MLLMs**: General models lack rule-consciousness in advertising aesthetics; A3-Align achieves domain alignment through specialized data and GRPO.
+- **Application Inspiration**: The three-stage framework of A3-Law can inspire hierarchical assessment designs for other tasks, such as UI design or interior design evaluation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic advertising aesthetic assessment framework, fully connecting theory → data → model → benchmark.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model comparisons and downstream task validation; ablation studies could be more detailed.
-- Writing Quality: ⭐⭐⭐⭐ Framework description is clear, though the density of content means some details require consulting the appendix.
-- Value: ⭐⭐⭐⭐ Practically applicable to the advertising industry, though the domain is relatively niche.
+- Novelty: ⭐⭐⭐⭐ First systematic framework for ad aesthetic assessment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparisons, though ablation could be more detailed.
+- Writing Quality: ⭐⭐⭐⭐ Clear descriptions, though some details are moved to appendices.
+- Value: ⭐⭐⭐⭐ High practical value for the advertising industry.
 
 <!-- RELATED:START -->
 
@@ -128,9 +141,9 @@ The total reward is computed as a normalized weighted sum: $R_{total} = \frac{\s
 
 - [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
 - [\[CVPR 2026\] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy](fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md)
-- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
-- [\[CVPR 2026\] BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment](brima_bridged_modality_adaptation_for_multi-modal_continual_action_quality_asses.md)
-- [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
+- [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
+- [\[CVPR 2026\] VITAL: Vision-Encoder-centered Pre-training for LMMs in Visual Quality Assessment](vital_vision-encoder-centered_pre-training_for_lmms_in_visual_quality_assessment.md)
 
 </div>
 

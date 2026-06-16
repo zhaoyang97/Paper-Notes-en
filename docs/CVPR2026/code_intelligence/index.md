@@ -30,8 +30,8 @@ item_total: 2
 
 **[GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)**
 
-:   GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset, trains a code generation model capable of accurately reconstructing geometric figures, and serves as a plug-and-play module to enhance the geometric reasoning capabilities of arbitrary MLLMs/LLMs.
+:   GeoTikzBridge constructs the largest 2.5M image-TikZ code dataset and the first auxiliary line instruction dataset. It trains a code generation model capable of precise geometric reconstruction, which serves as a plug-and-play module to enhance the geometric reasoning capabilities of any MLLM/LLM.
 
 **[MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)**
 
-:   This paper proposes MM-ReCoder, the first multimodal LLM with genuine self-correction capability for chart-to-code generation. Through a two-stage multi-turn GRPO reinforcement learning framework—first optimizing correction ability via shared-first-turn training, then optimizing coding ability via full-trajectory training—MM-ReCoder achieves 86.5% low-level score on ChartMimic with only 7B parameters, rivaling Qwen3-VL-235B.
+:   Ours proposes MM-ReCoder, the first Multi-modal LLM (MLLM) for chart-to-code generation with self-correction capabilities. Through a two-stage multi-turn GRPO reinforcement learning framework (Shared-First-Turn optimization of correction followed by Full-Trajectory optimization of coding), it achieves an 86.5% low-level score on ChartMimic with only 7B parameters, comparable to Qwen3-VL-235B.

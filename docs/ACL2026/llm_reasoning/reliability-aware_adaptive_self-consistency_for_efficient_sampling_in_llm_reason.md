@@ -2,77 +2,79 @@
 title: >-
   [Paper Note] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning
 description: >-
-  [ACL2026][LLM Reasoning][Self-Consistency] ReASC transforms adaptive self-consistency from "counting answer votes" into "judging whether reliable evidence is sufficient" by using response-level confidence to weight Beta…
+  [ACL 2026][LLM Reasoning][Paper Note] ReASC transforms adaptive self-consistency from "counting answer votes" into "determining if sufficient reliable evidence exists." By utilizing response-confidence-weighted Beta accumulation, it significantly reduces multi-sample reasoning costs on GSM8K, MATH500, Omni-Math, and GPQA-Diamond while maintaining near-orig
 tags:
-  - "ACL2026"
-  - "LLM Reasoning"
-  - "Self-Consistency"
-  - "Reasoning Sampling"
-  - "Confidence Estimation"
-  - "Adaptive Stopping"
-  - "Inference Efficiency"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: d3a6dfa4668cc875
+content_hash: c307c52eea3bef4c
 ---
-
 # Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning
 
 **Conference**: ACL2026  
 **arXiv**: [2601.02970](https://arxiv.org/abs/2601.02970)  
-**Code**: Not yet public  
-**Area**: llm_reasoning  
-**Keywords**: Self-Consistency, Reasoning Sampling, Confidence Estimation, Adaptive Stopping, Inference Efficiency
+**Code**: Not disclosed  
+**Area**: LLM Reasoning  
+**Keywords**: Self-consistency, Reasoning sampling, Confidence estimation, Adaptive stopping, Inference efficiency
 
 ## TL;DR
-ReASC transforms adaptive self-consistency from "counting answer votes" into "judging whether reliable evidence is sufficient" by using response-level confidence to weight Beta accumulation. It significantly reduces multi-sample inference costs on GSM8K, MATH500, Omni-Math, and GPQA-Diamond while maintaining near-original accuracy.
+ReASC transforms adaptive self-consistency from "counting answer votes" into "determining if sufficient reliable evidence exists." By utilizing response-confidence-weighted Beta accumulation, it significantly reduces multi-sample reasoning costs on GSM8K, MATH500, Omni-Math, and GPQA-Diamond while maintaining near-original accuracy.
 
 ## Background & Motivation
-**Background**: Self-consistency (SC) significantly improves the reliability of LLMs in mathematical and complex reasoning tasks by sampling multiple reasoning paths and performing majority voting. However, it typically uses a fixed sampling budget of $k$ outputs, spending the same budget on both simple and difficult problems.
+**Background**: Self-consistency significantly enhances the reliability of LLMs in mathematical and complex reasoning tasks by sampling multiple reasoning paths and performing majority voting. However, it typically uses a fixed sampling budget of $k$ outputs, spending the same resources on both simple and difficult problems.
 
-**Limitations of Prior Work**: Existing methods like Adaptive Consistency and Early-Stopping Self-Consistency dynamically stop based on observed answers, but their core evidence remains answer counts or consistency within a window. This assumes every response contains the same amount of information, ignoring that some reasoning trajectories are inherently more reliable while others are low-confidence noise.
+**Limitations of Prior Work**: Methods like Adaptive Consistency and Early-Stopping Self-Consistency dynamically stop based on observed answers, but their core logic remains rooted in answer counts or consistency within a window. This assumes every response carries equal information, ignoring that some reasoning trajectories are inherently more reliable while others are low-confidence noise.
 
-**Key Challenge**: The fundamental decision during inference should be "whether the current evidence is sufficient to support a reliable answer," rather than "how many times an answer appeared." If early high-confidence responses already provide strong evidence, continued sampling wastes computation; if low-confidence answers appear frequently, pure counting might lead to premature or incorrect aggregation.
+**Key Challenge**: The fundamental requirement during inference is to determine if "current evidence is sufficient to support a reliable answer," rather than "how many times an answer has appeared." If an early high-confidence response already provides strong evidence, further sampling wastes computation; if low-confidence responses appear frequently, pure counting might lead to premature or incorrect aggregation.
 
-**Goal**: The authors aim to design a training-free framework that works solely during inference. It uses the model's own confidence signals to determine if a single sample is sufficient and allows high-confidence responses to contribute more evidence when multiple samples are needed.
+**Goal**: The authors aim to design a training-free framework that operates solely during inference, using the model's own confidence signals to decide if a single sample is sufficient and letting high-confidence responses contribute more evidence when multiple samples are required.
 
-**Key Insight**: The paper interprets response-level confidence as "evidence strength" and adopts Bottom 10% Group Confidence to capture the most unstable, low-confidence segments within a reasoning chain. this signal distinguishes between correct and incorrect answers more effectively than average self-certainty.
+**Key Insight**: This paper interprets response-level confidence as evidence strength and adopts Bottom 10% Group Confidence to capture the most unstable, low-confidence segments in a reasoning chain. This signal distinguishes correct and incorrect responses more effectively than average self-certainty.
 
-**Core Idea**: A confidence gating mechanism first handles samples where the "single response is already reliable enough." For remaining samples, confidence-weighted Beta posterior updates are performed to achieve a decision reliability close to standard self-consistency with fewer samples.
+**Core Idea**: A confidence gating mechanism first handles samples where a "single response is sufficiently reliable." For the remaining samples, a confidence-weighted Beta posterior update is performed to achieve decision reliability comparable to self-consistency with fewer samples.
 
 ## Method
-ReASC is a pure inference-stage method that does not modify model parameters. It splits the reasoning process for each question into two stages: the first stage uses single-response confidence for early stopping, and the second stage continues sampling for questions that fail the gate, treating each response's confidence as a soft count in a Beta update. Unlike ASC/ESC, ReASC's stopping criterion considers not only answer frequency but also response reliability.
+ReASC is a pure inference-stage method that does not modify model parameters. It decomposes the reasoning process for each question into two stages: the first stage uses single-response confidence for early stopping, and the second stage continues sampling for remaining questions, converting the confidence of each response into soft counts for Beta updates. Compared to ASC/ESC, ReASC's stopping criterion considers both answer frequency and response reliability.
 
 ### Overall Architecture
-Given a problem, the model first generates one reasoning response and calculates the Bottom 10% Group Confidence from the token probability distribution. If this confidence exceeds a calibrated threshold, ReASC accepts the answer directly. Otherwise, it enters Stage 2 to sample additional responses. Each response is categorized by its answer, and its confidence adds weighted evidence to that category. The system continuously calculates the Beta posterior probability of the leading answer maintaining its advantage over the runner-up until it exceeds a stopping threshold or reaches the maximum budget.
+Given a question, the model first generates a single reasoning response and calculates the Bottom 10% Group Confidence from the token probability distribution. If this confidence exceeds a calibrated threshold, ReASC accepts the answer directly. Otherwise, it enters Stage 2, continuing to sample multiple responses. Each response is categorized by its answer, and weighted evidence is added to that answer based on its confidence. The system continuously calculates the Beta posterior probability of the leading answer maintaining its advantage over the runner-up until it exceeds a stopping threshold or reaches the maximum sampling budget.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Question"] --> B["Generate First Response<br/>Calculate Bottom 10% Group Confidence"]
+    B --> C{"Single-Sample Gating<br/>S(y) ≥ τ_gate ?"}
+    C -->|Yes · Sufficient Evidence| D["Adopt Answer"]
+    C -->|No · More Evidence Needed| E["Stage 2 Multi-Sample Sampling<br/>Confidence-Weighted Beta Evidence Accumulation"]
+    E --> F{"Leading Answer Posterior > 0.95<br/>or Max Budget Reached ?"}
+    F -->|No| E
+    F -->|Yes| D
+    D --> G["Output Final Answer"]
+```
 
 ### Key Designs
-1. **Bottom 10% Group Confidence as a Reliability Signal**:
 
-    - **Function**: Estimates whether a reasoning trajectory is reliable during generation.
-    - **Mechanism**: The token sequence is partitioned into sliding windows (groups). Token-level self-certainty is calculated for each group, and the average of the lowest 10% of groups is used as the response-level confidence. Compared to a global average, it focuses on the weakest, most error-prone local segments of the reasoning chain.
-    - **Design Motivation**: Erroneous reasoning is often not low-confidence throughout but contains local uncertainties at critical steps. Aggregating tail low-confidence scores exposes this risk better than mean values.
+**1. Bottom 10% Group Confidence: Judging reliability using the weakest parts of the reasoning chain rather than the global average.**
 
-2. **Single-sample Gating Decision**:
+Global average confidence has a blind spot: incorrect reasoning often isn't "hesitant" from start to finish but is locally uncertain during a few critical steps. The average value can be diluted by large segments of high confidence. ReASC segments the token sequence of a response into sliding window groups, calculates group-level self-certainty, and takes the average of only the lowest 10% of groups as the response-level confidence. By focusing on the "tail" fragments most likely to contain errors, this approach aligns better with failure modes in chain-of-thought reasoning. In experiments, its AUROC (0.860) outperformed the average group confidence (0.823).
 
-    - **Function**: Avoids redundant sampling for simple cases that are already reliable.
-    - **Mechanism**: After the first response, the confidence $S(y)$ is calculated. If $S(y) \geq \tau_{gate}$, the answer is accepted. In the offline setting, a labeled calibration set estimates the mean of correct samples and the threshold for the target accuracy. in the online setting without labels, a two-component GMM fits the confidence distribution, approximating the high-confidence component as the distribution of correct answers.
-    - **Design Motivation**: Many problems are reliable at pass@1; multi-sample voting is wasteful for these cases. Gating turns "the need for self-consistency" into an instance-level judgment.
+**2. Single-sample Gating: Many problems are sufficiently reliable at pass@1, making voting unnecessary.**
 
-3. **Confidence-weighted Beta Evidence Accumulation**:
+Fixed sampling at $k$ is wasteful for simple problems. Gating turns "whether this problem needs self-consistency" into an instance-level decision. After the first response, its confidence $S(y)$ is calculated. If $S(y) \geq \tau_{gate}$, the answer is accepted. The threshold $\tau_{gate}$ can be set offline using a small labeled calibration set to estimate the mean confidence of correct samples and the threshold required for a target accuracy. In unlabeled online settings, a two-component GMM fits the confidence distribution, treating the high-confidence component as the distribution of correct answers to determine the threshold. Experiments show that on GSM8K, this stage filters 49%–61% of questions, with accepted samples typically exceeding 90% accuracy.
 
-    - **Function**: Allows reliable answers to drive stopping faster when multiple samples are required.
-    - **Mechanism**: In ASC, counts of the top and runner-up answers form a $Beta(v_1+1, v_2+1)$. ReASC normalizes each response's confidence to $z(y)$ and uses $\max(1, \exp(\lambda z(y)))$ as a soft count increment. It then calculates $1-I_{1/2}(\alpha, \beta)$, stopping when the probability of the leading answer maintaining its advantage exceeds $C_{threshold}=0.95$.
-    - **Design Motivation**: Frequency represents quantity of evidence, while confidence reflects quality. Weighted updates allow high-confidence consistent answers to reach posterior certainty faster while retaining the robust Beta framework of ASC.
+**3. Confidence-Weighted Beta Evidence Accumulation: Accelerating the stopping condition for high-confidence consistent answers in the multi-sample phase.**
+
+For questions failing the gate, ASC traditionally counts votes: the top two answer counts form a $Beta(v_1+1, v_2+1)$ distribution to check the probability of the leader maintaining its lead. However, frequency only reflects "how much evidence," not "how strong the evidence is." Two highly reliable answers should not weigh the same as two low-confidence noisy ones. ReASC normalizes each response confidence to $z(y)$ and uses $\max(1, \exp(\lambda z(y)))$ as the soft count increment for Beta updates. Sampling stops when the posterior probability $1 - I_{1/2}(\alpha, \beta)$ exceeds $C_{threshold}=0.95$. This allows consistent high-confidence answers to reach the confidence threshold faster, while remaining within the ASC Beta framework.
 
 ### Loss & Training
-ReASC does not involve model training; it only requires inference-time confidence calculation and threshold calibration. Experiments use LLaMA-3.2-3B, Qwen-2.5-3B/7B, and Gemma-3-4B/27B. Offline calibration uses 128 held-out samples with a target accuracy $p_{target}=0.9$. Online calibration fits a GMM from the confidence distribution of the first responses in the test set. Stage 2 uses $C_{threshold}=0.95$, $\lambda=0.7$, and aligns maximum budgets with SC $k=16$.
+ReASC does not train the model; it only requires inference-time confidence calculation and threshold calibration. Experiments use LLaMA-3.2-3B, Qwen-2.5-3B/7B, and Gemma-3-4B/27B. Offline calibration uses 128 held-out samples with a target accuracy $p_{target}=0.9$. Online calibration uses GMM fitting on the confidence distribution of the first responses from the test set. Stage 2 uses $C_{threshold}=0.95$ and $\lambda=0.7$, with a max budget aligned to SC ($k=16$).
 
 ## Key Experimental Results
 
 ### Main Results
-The main results demonstrate that ReASC generally maintains accuracy close to SC/ASC across various models and datasets while significantly reducing TFLOPs.
+ReASC generally maintains accuracy close to SC/ASC while significantly reducing TFLOPs. Representative results are shown below:
 
-| Model / Dataset | Method | Acc ↑ | TFLOPs ↓ | Acc/TF ↑ | Relative cost vs SC |
+| Model / Dataset | Method | Acc ↑ | TFLOPs ↓ | Acc/TF ↑ | Rel. SC Cost Change |
 |-------------|------|-------|----------|----------|-----------------|
 | Gemma-3-4B / GSM8K | SC | 92.12 | 32.67 | 2.82 | - |
 | Gemma-3-4B / GSM8K | ASC | 92.12 | 12.26 | 7.52 | -62.5% |
@@ -84,9 +86,9 @@ The main results demonstrate that ReASC generally maintains accuracy close to SC
 | Gemma-3-27B / GSM8K | ReASC offline | 96.89 | 29.36 | 3.30 | -82.4% |
 
 ### Ablation Study
-Stage 1 analysis shows that a large number of problems can be reliably solved by a single sample, with accepted samples typically exceeding 90% accuracy.
+Stage 1 analysis indicates many problems can be reliably solved with a single sample, with accepted sample accuracy typically exceeding 90%.
 
-| Model | Dataset | Calibration | Stage 1 Accept % | Accepted Acc |
+| Model | Dataset | Calibration | Stage 1 Acceptance % | Accepted Acc |
 |------|--------|----------|------------------|----------------|
 | LLaMA-3.2-3B | GSM8K | Offline | 48.98 | 91.33 |
 | Gemma-3-4B | GSM8K | Offline | 51.18 | 97.78 |
@@ -95,46 +97,46 @@ Stage 1 analysis shows that a large number of problems can be reliably solved by
 | Qwen-2.5-7B | MATH500 | Online | 31.8 | 93.08 |
 | Gemma-3-27B | MATH500 | Online | 36.2 | 97.31 |
 
-Stage 2 ablation indicates that cost savings are not solely from Phase 1; even excluding accepted Stage 1 samples, Stage 2 is more efficient than count-based ASC.
+Comparing Stage 2 and full ReASC demonstrates that confidence weighting is not the only source of savings; even excluding Stage 1 samples, Stage 2 is more efficient than count-based ASC.
 
-| Model / Dataset | Method | Acc ↑ | TFLOPs ↓ | Note |
+| Model / Dataset | Method | Acc ↑ | TFLOPs ↓ | Description |
 |-------------|------|-------|----------|------|
 | LLaMA-3.2-3B / GSM8K | ASC | 83.85 | 6.27 | Count-based stopping |
 | LLaMA-3.2-3B / GSM8K | ReASC Stage2 only | 84.38 | 5.33 | Weighted Beta reduces sampling |
 | LLaMA-3.2-3B / GSM8K | ReASC | 83.85 | 4.38 | Stage 1 further reduces cost |
 | Qwen2.5-7B / MATH500 | ASC | 80.80 | 37.25 | Count-based stopping |
-| Qwen2.5-7B / MATH500 | ReASC Stage2 only | 81.20 | 34.05 | Weighted accumulation is more efficient |
-| Qwen2.5-7B / MATH500 | ReASC | 81.20 | 29.26 | Twond stages are complementary |
+| Qwen2.5-7B / MATH500 | ReASC Stage2 only | 81.20 | 34.05 | Weighted accumulation efficiency |
+| Qwen2.5-7B / MATH500 | ReASC | 81.20 | 29.26 | Optimal two-stage synergy |
 
 ### Key Findings
-- ReASC's advantages hold across different model scales (3B to 27B); stronger models tend to have higher Stage 1 acceptance rates.
-- Online calibration works effectively without labels, providing a better accuracy-cost trade-off than SC/ASC on Omni-Math and GPQA-Diamond.
-- Bottom 10% Group Confidence yields an AUROC of 0.860, surpassing the 0.823 of average group confidence, confirming that low-confidence local segments are better at distinguishing reasoning quality.
-- Accuracy in Qwen2.5-7B monotonically increases from 20.00% (lowest 20% confidence bin) to 93.27% (highest 20%), supporting the "high confidence is more reliable" hypothesis.
-- ReASC online also achieves the highest Acc/TF on StrategyQA, Last Letter Concatenation, and NQ-Open, suggesting it generalizes beyond math tasks.
+- ReASC's advantages hold across scales (3B to 27B), improving Acc/TF; stronger models typically show higher Stage 1 acceptance rates.
+- Online calibration works without labels, achieving better accuracy-cost trade-offs than SC/ASC on Omni-Math and GPQA-Diamond.
+- Bottom 10% Group Confidence (AUROC 0.860) outperforms average group confidence (0.823), confirming that low-confidence local segments better distinguish reasoning failures.
+- In Qwen2.5-7B, accuracy increases monotonically from 20.00% in the lowest confidence bin to 93.27% in the highest, supporting the "high confidence implies reliability" hypothesis.
+- ReASC online also achieves the highest Acc/TF on StrategyQA, Last Letter Concatenation, and NQ-Open, showing generalizability beyond math.
 
 ## Highlights & Insights
-- The paper interprets self-consistency sampling as evidence accumulation. This perspective naturally explains why counting votes is insufficient: two high-reliability responses should carry more weight than two low-reliability ones.
-- Stage 1 is a highly practical design. In many deployment scenarios, simple requests dominate; determining if pass@1 is reliable can avoid massive amounts of redundant sampling.
-- Using Bottom 10% Group Confidence is an intuitive choice because reasoning errors are often triggered by a few vulnerable steps. Focusing on low-confidence segments matches the failure modes of chain-of-thought reasoning better than global averages.
-- The method requires no new training and no external verifiers, making it easy to integrate into existing self-consistency services. If the server provides token logprobs, the overhead is negligible.
+- Interpreting self-consistency sampling as evidence accumulation is a natural and effective perspective. It explains why simple vote counting is insufficient: high-reliability and low-reliability responses should not be weighted equally.
+- Stage 1 is a highly practical design. In many deployment scenarios, simple requests dominate; determining if pass@1 is reliable avoids significant unnecessary sampling.
+- Using Bottom 10% Group Confidence is clever, as reasoning errors are often triggered by a few vulnerable steps. Focusing on these segments aligns with the failure modes of chain-of-thought.
+- The method requires no new model training and no external verifiers, making it easy to integrate into existing self-consistency inference services. If token logprobs are already available, the overhead is minimal.
 
 ## Limitations & Future Work
-- ReASC relies on the assumption that a model's self-confidence correlates with correctness. While experiments support this trend, confidence might be distorted by systematic overconfidence, strong hallucinations, or OOD tasks.
-- Bottom 10% Group Confidence requires access to token-level probability distributions, which some closed-source APIs or high-throughput frameworks might not provide consistently.
-- Online calibration uses GMM fitting on test set confidence; threshold estimation may become unstable if the distribution is not clearly bimodal.
-- The paper focus on computation and latency but does not deeply explore the synergy with verifiers, process reward models (PRMs), or tree-search reasoning.
+- ReASC relies on the assumption that model confidence correlates with correctness. While experiments support this, confidence can be distorted by systematic overconfidence, strong hallucinations, or OOD tasks.
+- Bottom 10% Group Confidence requires access to token probability distributions, which may not be consistently available via closed-source APIs or certain high-throughput frameworks.
+- Online calibration depends on GMM fitting of test set distributions; if the confidence distribution is not clearly bimodal, threshold estimation may become unstable.
+- The paper focuses on computation and latency and does not deeply explore complementarity with verifiers, Process Reward Models (PRMs), or tree-search reasoning.
 
 ## Related Work & Insights
-- **vs Self-Consistency**: SC uses fixed sampling ($k=16$), whereas ReASC stops dynamically based on evidence sufficiency, leading to much lower costs at similar accuracy levels.
-- **vs ASC / ESC**: While ASC and ESC rely on counts or window consistency, ReASC incorporates confidence as a soft count weighting within the same Beta framework to model evidence quality.
-- **vs verifier / reranker**: Verifiers usually require additional models or training data. ReASC leverages endogenous model confidence, making it lighter to deploy but more sensitive to the quality of confidence calibration.
+- **vs Self-Consistency**: SC uses a fixed $k=16$ budget; ReASC stops dynamically based on evidence sufficiency, resulting in much lower costs at similar accuracy levels.
+- **vs ASC / ESC**: While ASC/ESC rely on counts or window consistency, ReASC introduces confidence-based soft counts into the same Beta stopping framework to model evidence quality.
+- **vs verifier / reranker**: Verifiers usually require additional models or training data. ReASC leverages endogenous confidence for lighter deployment, though it is more sensitive to the quality of confidence calibration.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Using confidence as evidence weight for adaptive self-consistency is clear and effective; the statistical framework builds solidly on ASC.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple models, datasets, calibration modes, and extended tasks with sufficient evidence.
-- Writing Quality: ⭐⭐⭐⭐☆ The method is clearly described, and formulas support the empirical claims.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for LLM services needing multi-sample reasoning with cost constraints.
+- Novelty: ⭐⭐⭐⭐☆ Using confidence as evidence weight for adaptive self-consistency is clear and effective; the framework builds soundly on ASC.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple models, datasets, calibration modes, and tasks with strong supporting evidence.
+- Writing Quality: ⭐⭐⭐⭐☆ Method description is smooth, and experimental analysis supports the claims.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for LLM services needing multi-sample reasoning with budget constraints.
 
 <!-- RELATED:START -->
 
@@ -143,10 +145,10 @@ Stage 2 ablation indicates that cost savings are not solely from Phase 1; even e
 ## Related Papers
 
 - [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
-- [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
-- [\[NeurIPS 2025\] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](../../NeurIPS2025/llm_reasoning/a_theoretical_study_on_bridging_internal_probability_and_sel.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
 - [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](../../NeurIPS2025/llm_reasoning/sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
+- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
+- [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_reasoning/self-consistency_preference_optimization.md)
+- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
 
 </div>
 

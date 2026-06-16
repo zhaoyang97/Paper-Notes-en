@@ -2,76 +2,88 @@
 title: >-
   [Paper Note] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 description: >-
-  [ACL 2026][LLM Evaluation][Shopping Intent] This paper proposes SessionIntentBench, a multi-task benchmark evaluating L(V)LM's ability to understand inter-step intention shifts in e-commerce shopping sessions. It compris…
+  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the capability of L(V)LMs to understand cross-step intention drift in e-commerce shopping sessions. It comprises four progressive sub-tasks (intention purchase likelihood estimation, attribute regularization, intention verification contrast,
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Shopping Intent"
-  - "Session Modeling"
-  - "E-commerce Recommendation"
-  - "Intent Drift"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 08d33462dd3028f1
+content_hash: 8437bacf80f35d9d
 ---
-
 # SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2507.20185](https://arxiv.org/abs/2507.20185)  
 **Code**: None  
 **Area**: LLM Evaluation  
-**Keywords**: Shopping Intent, Session Modeling, E-commerce Recommendation, Intent Drift, LLM Evaluation
+**Keywords**: Shopping Intention, Session Modeling, E-commerce Recommendation, Intention Drift, Large Language Model Evaluation
 
 ## TL;DR
 
-This paper proposes SessionIntentBench, a multi-task benchmark evaluating L(V)LM's ability to understand inter-step intention shifts in e-commerce shopping sessions. It comprises four progressive sub-tasks (Intent Purchase Likelihood Estimation, Attribute Regularization, Intent Validation Comparison, and Intent Evolution Modeling), with 1.9 million intent entries and 1.13 million intent trajectories. Experiments show that over 20 current L(V)LMs underperform in capturing complex session intentions.
+This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the capability of L(V)LMs to understand cross-step intention drift in e-commerce shopping sessions. It comprises four progressive sub-tasks (intention purchase likelihood estimation, attribute regularization, intention verification contrast, and intention evolution modeling), featuring 1.9 million intention items and 1.13 million intention trajectories. Experiments indicate that over 20 current L(V)LMs perform poorly in capturing complex session intentions.
 
 ## Background & Motivation
 
-**Background**: User intent modeling is crucial in e-commerce. Existing methods either analyze user profiles and purchase history or perform single-purchase intent inference using surface information like product titles and prices. Shopping sessions record user interactions across a series of browsing activities.
+**Background**: User intention modeling is crucial in e-commerce scenarios. Existing methods either analyze user profiles and purchase records or utilize surface-level information such as product titles and prices for single-purchase intention inference. Shopping sessions record user interaction behaviors across a series of browsing activities.
 
-**Limitations of Prior Work**: (1) Existing works cover only single dimensions of sessions or intentions, failing to model them jointly; (2) Relying solely on product titles and images as reasoning clues neglects rich product metadata; (3) There is a lack of automated intent data construction pipelines and systematic evaluation benchmarks.
+**Limitations of Prior Work**: (1) Existing works cover only single dimensions—either sessions or intentions—failing to model them jointly; (2) They rely solely on product titles and images as reasoning clues, missing rich product metadata; (3) There is a lack of automated intention data construction pipelines and systematic evaluation benchmarks.
 
-**Key Challenge**: In complex multi-step shopping sessions, user intent changes dynamically (e.g., from red sneakers → white casual shoes → low-priced shoes), but LLMs cannot effectively connect scattered information within the session to track such intent drifts.
+**Key Challenge**: In complex multi-step shopping sessions, user intentions change dynamically (e.g., from red sneakers $\rightarrow$ white casual shoes $\rightarrow$ low-priced shoes), yet LLMs cannot effectively link scattered information across sessions to track this intention drift.
 
-**Goal**: (1) Design the concept of an intent tree and an automated data construction pipeline; (2) Build a multi-task benchmark to evaluate L(V)LM's cross-session intent understanding; (3) Verify the performance gains for LLMs when explicit intent information is injected.
+**Goal**: (1) Design the concept of intention trees and automated data construction pipelines; (2) Construct a multi-task benchmark to evaluate the cross-session intention understanding capabilities of L(V)LMs; (3) Verify the performance improvement of LLMs through explicit intention information injection.
 
-**Key Insight**: Intent modeling is decomposed into four progressive sub-tasks—ranging from validating intent-product alignment and checking key attributes to comparing adjacent products and predicting future exploration directions.
+**Key Insight**: Intention modeling is decomposed into four progressive sub-tasks: from verifying intention-product alignment, to checking key attributes, to contrasting adjacent products, and finally to predicting future exploration directions.
 
-**Core Idea**: An "intention tree" is used to structuredly represent the branching and evolution of intentions within a session. Intent metadata is automatically generated via multi-step L(V)LM prompting to build a scalable intent modeling benchmark.
+**Core Idea**: An intention tree is used to structurally represent the branches and evolution of intentions within a session. Intention metadata is automatically generated via multi-step L(V)LM prompting to construct a scalable intention modeling benchmark.
 
 ## Method
 
+SessionIntentBench examines a task where LLMs often fail: tracking intention drift across multi-step shopping sessions (e.g., "red sneakers" $\rightarrow$ "white casual shoes" $\rightarrow$ "low-priced shoes") by connecting scattered clues. To achieve this, the authors utilize an automated pipeline to infer intentions from raw sessions, structure them into intention trees, and decompose intention understanding into four progressive evaluation tasks. Intention injection experiments are also conducted to locate the actual bottlenecks of the models.
+
 ### Overall Architecture
 
-The SessionIntentBench construction pipeline consists of four stages: (1) Multimodal Attribute Extraction—using GPT-4o-mini to extract standardized attributes from product text and images; (2) Intent Generation—gradually inferring user intent lists along the session timeline to form an intention tree (5 branches for each of the first 5 steps, then 1 branch per step); (3) Intent Drift Metadata Analysis—extracting key attributes and comparisons between adjacent products; (4) Manual Annotation—quality verification of sampled subsets by AMT workers.
+The construction pipeline consists of four stages. The multimodal attribute extraction stage uses GPT-4o-mini to extract standardized attributes from product text and images, supplementing metadata missing from titles and images alone. The intention generation stage infer a list of user intentions chronologically and organizes them into an intention tree. The intention drift metadata analysis stage extracts key attributes for each step and contrasts adjacent products. Finally, the human annotation stage involves AMT workers for quality verification on a sampled subset. The pipeline yields 1.9 million intention items and 1.13 million intention trajectories for the four-task evaluation, complemented by intention injection experiments to distinguish between extraction and reasoning bottlenecks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw Shopping Session<br/>Product Sequence P1…PT + Text/Image"] --> B["Multimodal Attribute Extraction<br/>GPT-4o-mini supplements product metadata"]
+    B --> C["Intention Tree Construction<br/>Multiple intentions per step: 5 branches each for first 5 steps, then single branch"]
+    C --> D["Intention Drift Metadata Analysis<br/>Extract key attributes + neighboring product contrast"]
+    D --> E["Human Annotation (AMT) Quality Verification"]
+    E --> F["Bank: 1.9M Intention Items / 1.13M Intention Trajectories"]
+    F --> G
+    subgraph G["Four-task Evaluation System (Scores 0–3)"]
+        direction TB
+        T1["Task1 Intent-Product Alignment"] --> T2["Task2 Attribute Regularization"]
+        T2 --> T3["Task3 Contrastive Verification"]
+        T3 --> T4["Task4 Evolution Prediction"]
+    end
+    G --> H["Intention Injection Experiment<br/>Explicitly inject intention to locate bottleneck in extraction vs. reasoning"]
+```
 
 ### Key Designs
 
-1.  **Intention Tree Construction**:
-    - **Function**: Structuredly represents the branching and evolution of user intentions within a session.
-    - **Mechanism**: Using the product sequence $P_1, P_2, ..., P_T$ in the session as the backbone, the LLM infers 5 possible intentions at each time step to form a tree structure. After the 5th step, only 1 intention is inferred to control exponential growth. This results in 1.13 million intent trajectories (paths from root to leaf).
-    - **Design Motivation**: Real-world user purchase intent is diverse; the intention tree represents "multiple reasonable intent hypotheses that may exist under the same interaction history."
+**1. Intention Tree Construction: Structuring Implicit Psychological States into Computable Trees**
 
-2.  **Four-Task Evaluation System**:
-    - **Function**: Evaluates LLM intent understanding from four complementary perspectives.
-    - **Mechanism**: Task 1 tests matching between inferred intent and new products; Task 2 checks if key attributes are reflected in new products; Task 3 evaluates if adjacent product comparisons reasonably explain intent shifts; Task 4 predicts whether to continue recommending similar products, products with different features in the same category, or cross-category exploration. All four tasks output scores from 0-3.
-    - **Design Motivation**: A single task cannot comprehensively evaluate intent understanding; integrated assessment across alignment, regularization, comparison, and prediction is necessary.
+The purchase intentions of real users under the same interaction history are often pluralistic; a single intention sequence cannot represent such branching. The intention tree uses the product sequence $P_1, P_2, \dots, P_T$ as the skeleton. At each time step, the LLM infers multiple possible intentions, forming a tree structure from root to leaf. Each path represents a "plausible intention hypothesis" given the interaction history. To control exponential growth, only the first 5 steps allow 5 branches each, with subsequent steps inferring only 1 intention. This maintains early-stage diversity while keeping the scale manageable, resulting in 1.13 million trajectories.
 
-3.  **Intent Injection Experiments**:
-    - **Function**: Verifies the performance boost of explicit intent information on LLM decision-making.
-    - **Mechanism**: Inferred intent information (e.g., "The user may be looking for low-priced white sneakers") is added to the prompt to compare model performance with and without intent information.
-    - **Design Motivation**: If intent information improves performance, it indicates that LLMs currently lack the ability to autonomously extract intent from raw sessions.
+**2. Four-Task Evaluation System: Assessing Intention Understanding from Complementary Angles**
+
+A single task cannot comprehensively evaluate intention understanding. Thus, it is decomposed into four progressive sub-tasks, each outputting a 0–3 score. Task 1 checks if inferred intentions match new products (Intent-Product Alignment); Task 2 verifies if key attributes are reflected in the new product (Attribute Regularization); Task 3 assesses if the contrast between adjacent products reasonably explains intention shifts (Contrastive Verification). Task 4 requires predicting the next direction—whether to keep recommending similar products, products of the same category with different features, or cross-category exploration (Evolution Prediction).
+
+**3. Intention Injection Experiment: Locating Bottlenecks in "Extraction" vs. "Reasoning"**
+
+Poor model performance may stem from an inability to understand intentions or a failure to extract them. The intention injection experiment separates these possibilities by explicitly adding inferred intention information (e.g., "The user may be looking for low-priced white sneakers") to the prompt. If performance improves significantly after injection, it indicates the model is capable of reasoning but lacks the ability to autonomously extract intentions from raw sessions, identifying the extraction step as the bottleneck.
 
 ### Loss & Training
 
-The benchmark evaluation mainly utilizes zero-shot and few-shot prompting without specialized training. Fine-tuning experiments use SFT to fine-tune Llama-3.1-8B and Llama-3.2-3B on the training set. Manual annotation uses Amazon Mechanical Turk with multi-round screening to ensure quality.
+The benchmark primarily utilizes zero-shot and few-shot prompting without specific training. Fine-tuning experiments were conducted using SFT on the training set for Llama-3.1-8B and Llama-3.2-3B. Human annotations were screened through multiple rounds on Amazon Mechanical Turk to ensure quality.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Zero-shot L(V)LM Performance (Accuracy %)**
+**Zero-Shot L(V)LM Performance (Accuracy %)**
 
 | Model | Task 1 Acc | Task 2 Acc | Task 3 Acc | Task 4 Acc |
 | :--- | :--- | :--- | :--- | :--- |
@@ -86,43 +98,43 @@ The benchmark evaluation mainly utilizes zero-shot and few-shot prompting withou
 | Configuration | Effect | Description |
 | :--- | :--- | :--- |
 | Zero-shot | Baseline level | Most models perform near or below the majority baseline. |
-| Few-shot | Minor gain | However, performance on some tasks actually decreases. |
-| Fine-tuning (SFT) | Mixed results | Improvements on some tasks, but no comprehensive gain. |
-| + Intent Injection | Significant gain | Demonstrates the value of explicit intent information. |
+| Few-shot | Minor gain | Some tasks actually show a decrease in performance. |
+| Fine-tuning (SFT) | Mixed results | Improvements in some tasks but lacks comprehensive enhancement. |
+| + Intention Injection | Significant gain | Demonstrates the value of explicit intention information. |
 
 ### Key Findings
 
-- Performance of 20+ L(V)LMs across the four tasks is generally near or below the majority baseline, indicating that current models cannot effectively understand session intentions.
+- Over 20 L(V)LMs generally perform near or below the majority baseline across all four tasks, indicating current models cannot effectively understand session intentions.
 - Task 2 (Attribute Regularization) is the most subjective and has the lowest inter-annotator agreement.
-- Multimodal models (LVLM) do not perform better than text-only LLMs, indicating product image information is not effectively utilized.
-- Intent injection experiments prove that LLM performance improves significantly when intent is explicitly provided, suggesting the bottleneck lies in intent extraction rather than reasoning.
-- Inconsistent fine-tuning results suggest that session intent understanding requires deeper reasoning rather than pattern memorization.
+- Multimodal models (LVLM) do not consistently outperform text-only LLMs; product image information is not effectively utilized.
+- Intention injection experiments prove that when provided with explicit intention information, LLM performance improves significantly, suggesting the bottleneck lies in intention extraction rather than reasoning.
+- Fine-tuning yields inconsistent effects, likely because session intention understanding requires deeper reasoning rather than pattern memorization.
 
 ## Highlights & Insights
 
-- The intention tree concept formalizes implicit user mental states into a computable tree structure, providing a new representation paradigm for intent modeling.
-- The four-task evaluation system is cleverly designed, forming a progressive assessment from alignment → validation → comparison → prediction.
-- The data scale is massive (1.9 million intent entries), yet construction costs are controlled through LLM automation and manual sample validation.
+- The intention tree concept structures implicit mental states into computable tree structures, providing a new representation paradigm for intention modeling.
+- The four-task evaluation system is cleverly designed, forming a progressive assessment from alignment $\rightarrow$ verification $\rightarrow$ contrast $\rightarrow$ prediction.
+- The data scale is massive (1.9M intention items), yet the construction cost remains controlled through LLM automation and human sampling verification.
 
 ## Limitations & Future Work
 
-- Intent generation depends on LLMs (GPT-4o-mini), limiting quality to the LLM's capabilities.
-- Manual annotation only covers a sampled subset; the full data quality has not been comprehensively verified.
-- The 0-3 scoring criteria for the four tasks are somewhat subjective, particularly for Task 2.
-- Future work could explore integrating intent modeling into end-to-end recommendation system training.
+- Intention generation relies on LLMs (GPT-4o-mini), whose quality is limited by the LLM's own capabilities.
+- Human annotation only covers a sampled subset; the full dataset quality has not been comprehensively verified.
+- The 0-3 scoring standard for the four tasks is subjective, particularly for Task 2.
+- Future work could explore integrating intention modeling into the end-to-end training of recommendation systems.
 
 ## Related Work & Insights
 
-- **vs Amazon-M2 (Jin et al., 2023)**: Amazon-M2 provides raw session data; SessionIntentBench adds intent metadata and evaluation tasks on top of it.
-- **vs Sun et al. (2024)**: They optimize recommendations using intent ranking prompts; this work focuses on evaluating LLM intent understanding capabilities.
-- **vs Xu et al. (2024)**: They model intentions in co-purchase behaviors but only cover single interactions; this work models intent evolution across sessions.
+- **vs. Amazon-M2 (Jin et al., 2023)**: Amazon-M2 provides raw session data; SessionIntentBench adds intention metadata and evaluation tasks on top.
+- **vs. Sun et al. (2024)**: They optimize recommendation via intention ranking prompts; this work focuses on evaluating the intention understanding capabilities of the LLMs.
+- **vs. Xu et al. (2024)**: They model intentions for co-purchase behaviors but only cover single interactions; this work models intention evolution across sessions.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The intention tree and four-task evaluation system are meaningful new contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 20+ models, multiple evaluation settings, and manual annotation validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Task definitions are clear, though notation is heavy.
-- **Value**: ⭐⭐⭐⭐ Provides the first systematic benchmark for e-commerce intent modeling.
+- Novelty: ⭐⭐⭐⭐ The intention tree and four-task system are meaningful new contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 20+ models, multiple evaluation settings, and human verification.
+- Writing Quality: ⭐⭐⭐⭐ Tasks are clearly defined, although symbols are numerous.
+- Value: ⭐⭐⭐⭐ Provides the first systematic benchmark for e-commerce intention modeling.
 
 <!-- RELATED:START -->
 
@@ -130,11 +142,11 @@ The benchmark evaluation mainly utilizes zero-shot and few-shot prompting withou
 
 ## Related Papers
 
+- [\[ACL 2025\] EcomScriptBench: A Multi-task Benchmark for E-commerce Script Planning via Step-wise Intention-Driven Product Association](../../ACL2025/llm_evaluation/ecomscriptbench.md)
+- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
-- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
-- [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
-- [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
+- [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
 
 </div>
 

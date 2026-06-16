@@ -2,139 +2,144 @@
 title: >-
   [Paper Note] SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras
 description: >-
-  [CVPR2026][Object Detection][RGB-to-RAW] This paper proposes SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to accommodate varying reconstruction diff…
+  [CVPR 2026][Object Detection][RGB-to-RAW] The authors propose SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to adapt to reconstruction difficulties across different pixel intensity regions and introduces the CamLoRA module to achieve lightweight cross-camera adaptation within a single model
 tags:
-  - "CVPR2026"
-  - "Object Detection"
-  - "RGB-to-RAW"
-  - "diffusion model"
-  - "signal-dependent noise"
-  - "LoRA"
-  - "cross-camera adaptation"
+  - CVPR 2026
+  - Object Detection
+  - RGB-to-RAW
+  - Diffusion Model
+  - LoRA
 date: 2026-05-08
-content_hash: edf28b77d6d415e3
+content_hash: 80b6eb57f553eda8
 ---
-
 # SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.14885](https://arxiv.org/abs/2603.14885)  
 **Code**: [Chuancy-TJU/SpiralDiff](https://github.com/Chuancy-TJU/SpiralDiff)  
 **Area**: Object Detection / Image Signal Processing  
-**Keywords**: RGB-to-RAW, diffusion model, signal-dependent noise, LoRA, cross-camera adaptation, object detection
+**Keywords**: RGB-to-RAW, Diffusion models, Signal-dependent noise, LoRA, Cross-camera adaptation, Object detection
 
 ## TL;DR
 
-This paper proposes SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to accommodate varying reconstruction difficulty across pixel intensity regions, and introduces a CamLoRA module for lightweight cross-camera adaptation within a single unified model.
+The authors propose SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to adapt to reconstruction difficulties across different pixel intensity regions and introduces the CamLoRA module to achieve lightweight cross-camera adaptation within a single model.
 
 ## Background & Motivation
 
-1. **RAW images carry richer information**: RAW preserves linear radiometric response and high dynamic range, making it more suitable for downstream tasks such as denoising, low-light enhancement, and object detection; however, RAW datasets are far smaller and less diverse than RGB datasets.
-2. **Demand for RGB-to-RAW conversion**: Synthesizing RAW from abundant RGB data avoids costly sensor-level data collection, yet existing methods perform poorly in high-intensity regions (overexposure / nonlinear tone mapping).
-3. **Reconstruction difficulty varies with pixel intensity**: In low-intensity regions, the RGB–RAW residual is small and stable, enabling high-fidelity recovery; in high-intensity or overexposed regions, residuals are large and highly variable due to multiplicative digital gain and value clipping, making a uniform strategy inadequate.
-4. **Large ISP discrepancies across cameras**: Different camera ISP pipelines (demosaicing, white balance, tone mapping, etc.) vary significantly; naïve mixed training leads to performance degradation.
-5. **Limitations of metadata-based methods**: Methods that rely on ISP parameters or sampled RAW pixels are typically inapplicable in real-world scenarios where metadata is unavailable.
-6. **Shortcomings of existing metadata-free methods**: CycleISP, InvISP, and ReRAW adopt globally uniform reconstruction strategies without adapting to signal-dependent characteristics, and lack cross-camera adaptation capability.
+1.  **RAW images provide richer information**: RAW data preserves linear radiometric response and high dynamic range. Performing tasks like denoising, low-light enhancement, and object detection directly in the RAW domain yields superior results. However, the scale and diversity of RAW datasets are far inferior to RGB datasets.
+2.  **Demand for RGB-to-RAW conversion**: Synthesizing RAW data from massive RGB datasets avoids expensive sensor data acquisition. Current methods, however, perform poorly in high-intensity regions (overexposed or non-linear tone mapping).
+3.  **Reconstruction difficulty varies with pixel intensity**: In low-brightness regions, the RGB-RAW residual is small and stable, allowing for high-fidelity recovery. In high-brightness or overexposed regions, residuals are large with high variance (due to multiplicative digital gain and value clipping), making it difficult for a uniform strategy to manage both.
+4.  **Significant differences in multi-camera ISPs**: ISP pipelines (demosaicing, white balance, tone mapping, etc.) differ significantly across cameras. Naive mixed training leads to performance degradation.
+5.  **Limitations of metadata-based methods**: Methods relying on ISP parameters or sampled RAW pixels often lack access to metadata in real-world scenarios.
+6.  **Deficiencies of existing metadata-free methods**: Methods such as CycleISP, InvISP, and ReRAW adopt global uniform reconstruction strategies without adaptive processing for signal-dependent characteristics and lack cross-camera adaptation capabilities.
 
 ## Method
 
 ### Overall Architecture
 
-SpiralDiff is built upon ResShift, an efficient residual-shift diffusion framework, and requires only **4 sampling steps** for inference. Given an RGB image and a camera label, a U-Net (with Swin Transformer layers) iteratively denoises a noisy RAW estimate to produce the target RAW output. The model operates directly in **pixel space** (the VQGAN latent compression used in ResShift is removed, as it was trained on RGB and is unsuitable for RAW).
+SpiralDiff addresses two persistent issues in RGB-to-RAW conversion: the difficulty caused by large residuals and high variance in high-brightness/overexposed regions due to multiplicative gain and clipping, and the performance degradation caused by ISP differences across cameras. It is built upon ResShift (an efficient residual shift diffusion model) and requires only 4 sampling steps. Taking an RGB image and a camera label as input, a U-Net with Swin Transformer layers iteratively denoises and refines the target RAW from noisy RAW estimates. The entire process operates directly in pixel space (removing VQGAN latent space compression as it is trained on RGB and unsuitable for RAW) and employs two designs: signal-dependent noise weighting and CamLoRA to handle intensity adaptation and cross-camera adaptation, respectively.
 
-### Spiral Diffusion — Signal-Dependent Noise Weighting
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: RGB image y₀ + Camera label"] --> LOOP
+    subgraph LOOP["4-step Iterative Denoising (Based on ResShift · Pixel Space, VQGAN removed)"]
+        direction TB
+        B["Spiral Diffusion Signal-Dependent Noise Weighting<br/>Time-varying weight map wₜ modulates noise variance pixel-wise"] --> C["CamLoRA Camera-Aware Low-Rank Adaptation<br/>Camera label selects specific LoRA branch to modulate U-Net weights"]
+        C -->|"Denoising refinement xₜ → xₜ₋₁, repeat 4 steps until t=0"| B
+    end
+    LOOP --> D["Output: RAW image x₀"]
+```
 
-- **Core observation**: RGB pixel intensity is positively correlated with the RGB–RAW residual; high-intensity regions exhibit large residuals with high uncertainty, while low-intensity regions exhibit small, stable residuals.
-- **Time-varying weight map** $\mathbf{w}_t = \mathbf{x}_0 + \eta_t \mathbf{e}_0$: evolves with diffusion step $t$, approaching RGB $\mathbf{y}_0$ at $t=T$ and RAW $\mathbf{x}_0$ at $t=0$, enabling a smooth transition from RGB to RAW.
-- **Forward process**: Building on the isotropic Gaussian noise of ResShift, the noise variance is modulated pixel-wise by $\mathbf{w}_t^2$ — low noise in dark regions to preserve fidelity, high noise in bright regions to grant the model greater generative freedom.
-- **Reverse process**: The mean $\boldsymbol{\mu}_{t-1}$ remains a convex combination of the denoised and clean terms, but the mixing coefficient $\boldsymbol{\gamma}_t$ depends on the spatial weight map, enabling **pixel-adaptive fusion**. Setting $\mathbf{w}_t \equiv 1$ recovers standard ResShift.
+### Key Designs
 
-### CamLoRA — Camera-Aware Low-Rank Adaptation
+**1. Spiral Diffusion Signal-Dependent Noise Weighting: Allocating Reconstruction Difficulty by Pixel Intensity**
 
-- Camera-specific low-rank updates $\Delta \mathbf{W}_i = \mathbf{B}_i \mathbf{A}_i$ (rank $r=8$) are appended to the $\mathbf{W}_q, \mathbf{W}_k, \mathbf{W}_v, \mathbf{W}_o$ matrices of the Swin Transformer layers in the U-Net.
-- During training, the shared backbone weights are updated with all data, while only the LoRA branch corresponding to the current camera label participates in gradient computation.
-- Additional parameters account for only **2.7%** (1.05M), with one set of LoRA adapters per camera across four cameras.
-- **Few-shot extension**: After pretraining the unified model, only one LoRA branch needs to be fine-tuned for a new camera; 1-shot adaptation achieves 42.85 dB PSNR, compared to only 39.83 dB when training from scratch.
+RGB pixel intensity is positively correlated with RGB-RAW residuals—dark regions have small, stable residuals for high-fidelity recovery, while bright regions have large residuals and uncertainty. SpiralDiff introduces a time-varying weight map $\mathbf{w}_t = \mathbf{x}_0 + \eta_t \mathbf{e}_0$ (approaching RGB $\mathbf{y}_0$ at $t=T$ and RAW $\mathbf{x}_0$ at $t=0$, enabling a smooth transition). In the forward process, $\mathbf{w}_t^2$ is used to modulate the noise variance of ResShift's isotropic Gaussian noise pixel-wise: low noise in dark areas ensures fidelity, while high noise in bright areas grants the model greater generative freedom. In the reverse process, the mean $\boldsymbol{\mu}_{t-1}$ remains a convex combination of denoising and clean terms, but the mixing coefficient $\boldsymbol{\gamma}_t$ depends on the spatial weight map, achieving pixel-adaptive fusion. When $\mathbf{w}_t \equiv 1$, it reduces to standard ResShift. Ablations show that static RGB weighting is even worse than the uniform baseline, proving that the "time-varying" aspect is critical.
+
+**2. CamLoRA Camera-Aware Low-Rank Adaptation: Lightweight Adaptation for Multiple Cameras**
+
+ISP pipelines vary significantly across cameras, and mixed training can cause mutual interference. CamLoRA adds camera-specific low-rank updates $\Delta \mathbf{W}_i = \mathbf{B}_i \mathbf{A}_i$ (rank $r=8$) to the $\mathbf{W}_q, \mathbf{W}_k, \mathbf{W}_v, \mathbf{W}_o$ layers of the Swin Transformer within the U-Net. During training, the shared backbone is updated using all data, while only the LoRA branch corresponding to the current camera label receives gradients. Extra parameters account for only 2.7% (1.05M), with one set of adapters per camera. It natively supports few-shot expansion—after pre-training a unified model, only one LoRA branch needs fine-tuning for a new camera. It reaches 42.85 dB PSNR with 1-shot learning, whereas training from scratch only achieves 39.83 dB.
 
 ### Loss & Training
 
-The training objective follows ResShift: the network $f_\theta(\mathbf{x}_t, \mathbf{y}_0, t)$ is trained to predict $\mathbf{x}_0$, optimized jointly with the diffusion loss.
+Following the objective of ResShift: the network $f_\theta(\mathbf{x}_t, \mathbf{y}_0, t)$ is trained to predict $\mathbf{x}_0$, optimized via diffusion loss.
 
 ## Key Experimental Results
 
-### Main Results — Quantitative Comparison on Four Datasets
+### Main Results — Quantitative Comparison Across Four Datasets
 
 | Method | FiveK Canon | FiveK Nikon | NOD Nikon | NOD Sony |
-|--------|------------|------------|-----------|----------|
+|------|------------|------------|-----------|----------|
 | CycleISP | 37.93 / 0.9913 | 40.18 / 0.9920 | 50.11 / 0.9985 | 46.57 / 0.9975 |
 | InvISP | 36.81 / 0.9814 | 34.30 / 0.9163 | 48.29 / 0.9954 | 44.76 / 0.9922 |
 | RAW-Diffusion | 39.96 / 0.9890 | 39.68 / 0.9866 | 50.52 / 0.9954 | 47.31 / 0.9908 |
 | **SpiralDiff** | **42.82 / 0.9936** | **41.72 / 0.9925** | **53.64 / 0.9990** | **50.46 / 0.9980** |
-| +CamLoRA (merged) | 42.46 / 0.9934 | 43.82 / 0.9950 | 52.62 / 0.9988 | 50.08 / 0.9977 |
+| +CamLoRA (Merged) | 42.46 / 0.9934 | 43.82 / 0.9950 | 52.62 / 0.9988 | 50.08 / 0.9977 |
 
-> SpiralDiff comprehensively surpasses the state of the art under the independent training setting, improving PSNR over RAW-Diffusion by **+2.86 dB** (FiveK Canon) and **+3.12 dB** (NOD Nikon).
+> SpiralDiff outperforms SOTA across the board in independent training settings, with PSNR gains of **+2.86 dB** (FiveK Canon) and **+3.12 dB** (NOD Nikon) over RAW-Diffusion.
 
-### Overexposure Test Set Comparison
+### Overexposed Test Set Comparison
 
 | Method | FiveK Canon PSNR | NOD Nikon PSNR |
-|--------|-----------------|----------------|
+|------|-----------------|----------------|
 | RAW-Diffusion | 30.60 | 40.05 |
 | **SpiralDiff** | **31.10** | **40.79** |
 
 ### Ablation Study
 
 | Noise Weighting Strategy | FiveK Canon PSNR | NOD Nikon PSNR |
-|--------------------------|-----------------|----------------|
-| Baseline (uniform noise) | 41.40 | 53.48 |
-| Static $\mathbf{y}_0$ weighting | 40.06 | 53.42 |
-| **Time-varying $\mathbf{w}_t$ weighting** | **42.82** | **53.64** |
+|-------------|-----------------|----------------|
+| Baseline (Uniform Noise) | 41.40 | 53.48 |
+| Static $\mathbf{y}_0$ Weighting | 40.06 | 53.42 |
+| **Time-varying $\mathbf{w}_t$ Weighting** | **42.82** | **53.64** |
 
-- Static RGB weighting even underperforms the baseline, validating the necessity of the time-varying weight map.
-- CamLoRA vs. direct camera embedding: the embedding approach falls below the unconditional baseline, whereas CamLoRA yields an effective gain of approximately +0.5 dB.
-- Plug-in experiment: replacing DDPM in RAW-Diffusion with SpiralDiff improves PSNR by +1.57 dB (FiveK Canon).
+- Static RGB weighting performs worse than the baseline, verifying the necessity of time-varying weight maps.
+- CamLoRA vs. Direct Camera Embedding: The embedding approach performs worse than the unconditional baseline, while CamLoRA effectively improves performance by approx. +0.5 dB.
+- Plugin Experiment: Replacing the DDPM in RAW-Diffusion with SpiralDiff results in a PSNR improvement of +1.57 dB (FiveK Canon).
 
 ### Downstream Object Detection
 
 | Training Data | NOD Nikon AP | NOD Sony AP |
-|--------------|-------------|-------------|
+|---------|-------------|-------------|
 | RGB-only | 19.1 | 19.7 |
-| RAW-only (100 images) | 18.4 | 17.6 |
-| RAW + BDD-RAW (synthetic) | **26.7** | **29.0** |
+| RAW-only (100 samples) | 18.4 | 17.6 |
+| RAW + BDD-RAW (Synthetic) | **26.7** | **29.0** |
 
-> Synthesized RAW data significantly improves object detection performance in low-data regimes (AP gain: +8.3 / +11.4).
+> Synthetic RAW data significantly enhances object detection performance in low-data scenarios (+8.3/+11.4 AP gain).
 
 ## Highlights & Insights
 
-1. The **signal-dependent noise scheduling** concept is novel and physically intuitive — less noise in dark regions preserves detail, while more noise in bright regions increases generative flexibility, aligning closely with sensor physics.
-2. **CamLoRA** achieves a unified cross-camera model with only 2.7% additional parameters and supports few-shot rapid adaptation to new cameras.
-3. **4-step sampling** offers high inference efficiency and strong practical applicability.
-4. Experiments are comprehensive: 4 datasets + overexposure testing + real ISP + downstream detection + thorough ablations + plug-in experiments.
-5. The plug-in replacement on RAW-Diffusion yields substantial gains, demonstrating the generalizability of SpiralDiff.
+1.  The **signal-dependent noise scheduling** concept is novel and intuitive—less noise in dark areas preserves details, while more noise in bright areas increases flexibility, aligning perfectly with physical characteristics.
+2.  **CamLoRA** achieves a unified cross-camera model with only 2.7% parameter overhead and supports rapid few-shot adaptation to new cameras.
+3.  **4-step sampling** provides high inference efficiency and practical utility.
+4.  Comprehensive experiments: 4 datasets + overexposure testing + real ISP + downstream detection + thorough ablation.
+5.  Significant improvements when used as a plugin for RAW-Diffusion demonstrate the versatility of SpiralDiff.
 
 ## Limitations & Future Work
 
-1. The weight map $\mathbf{w}_t$ is defined using ground-truth $\mathbf{x}_0$; at inference time a network prediction must substitute, potentially introducing cumulative error.
-2. CamLoRA is validated on only 4 cameras; scalability to larger camera pools (tens of sensor types) remains unexplored.
-3. Pixel-space diffusion incurs high computational cost at high resolution; latent-space acceleration is not investigated.
-4. The downstream detection experiments use a simple setup of 100 real RAW images with synthetic augmentation; effectiveness at larger scale requires further validation.
-5. Noise weighting considers only pixel intensity, without incorporating structural information such as spatial texture complexity.
+1.  The design of the weight map $\mathbf{w}_t$ depends on the ground-truth $\mathbf{x}_0$, requiring network prediction during inference, which may introduce error accumulation.
+2.  CamLoRA was validated on only 4 cameras; scalability to much larger camera pools (dozens of sensors) remains to be investigated.
+3.  Pixel-space diffusion involves high computational overhead for high-resolution images; latent space acceleration has not yet been explored.
+4.  Downstream detection experiments used a simple setup of 100 real RAW images + synthetic augmentation; effectiveness in larger-scale scenarios needs further validation.
+5.  Noise weighting only considers pixel intensity and excludes structural information like spatial texture complexity.
 
 ## Related Work & Insights
 
 | Dimension | CycleISP / InvISP | RAW-Diffusion | SpiralDiff |
-|-----------|-------------------|---------------|------------|
-| Noise type | No diffusion | DDPM isotropic | Signal-dependent time-varying weighting |
-| Cross-camera support | None | None | CamLoRA |
-| Sampling steps | — | ~1000 | 4 |
-| Overexposure handling | Poor | Moderate | Good (adaptive noise) |
+|------|-------------------|---------------|------------|
+| Noise Type | Non-diffusion | DDPM Isotropic | Signal-dependent time-varying |
+| Cross-camera Support | No | No | CamLoRA |
+| Sampling Steps | — | ~1000 | 4 |
+| Overexposure Handling | Poor | Average | Good (Adaptive noise) |
 | Few-shot | Not supported | Not supported | Supported (LoRA fine-tuning) |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Novel combination of signal-dependent noise, time-varying weight maps, and CamLoRA
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 4 datasets + overexposure / real ISP / downstream detection / ablations / plug-in experiments
-- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, complete mathematical derivations, intuitive illustrations
-- Value: ⭐⭐⭐⭐ — Practical significance for RAW-domain data augmentation and cross-camera adaptation
+- Novelty: ⭐⭐⭐⭐ — Novel combination of signal-dependent noise, time-varying weight maps, and CamLoRA.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 4 datasets + overexposure / real ISP / downstream detection / ablation / plugin experiments.
+- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, complete formula derivation, and intuitive illustrations.
+- Value: ⭐⭐⭐⭐ — Practical application value for RAW domain data augmentation and cross-camera adaptation.
 
 <!-- RELATED:START -->
 
@@ -142,11 +147,11 @@ The training objective follows ResShift: the network $f_\theta(\mathbf{x}_t, \ma
 
 ## Related Papers
 
-- [\[AAAI 2026\] SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements](../../AAAI2026/object_detection/simrod_a_simple_baseline_for_raw_object_detection_with_global_and_local_enhancem.md)
-- [\[CVPR 2026\] ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection](abra_teleporting_fine-tuned_knowledge_across_domains_for_open-vocabulary_object_.md)
+- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
+- [\[CVPR 2025\] Towards RAW Object Detection in Diverse Conditions](../../CVPR2025/object_detection/towards_raw_object_detection_in_diverse_conditions.md)
 - [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](../../ICCV2025/object_detection/diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
-- [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
+- [\[CVPR 2025\] Generalized Diffusion Detector: Mining Robust Features from Diffusion Models for Domain-Generalized Detection](../../CVPR2025/object_detection/generalized_diffusion_detector_mining_robust_features_from_diffusion_models_for_.md)
 
 </div>
 

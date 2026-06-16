@@ -2,190 +2,180 @@
 title: >-
   [Paper Note] OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 description: >-
-  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes OneOcc, a vision-only panoramic semantic occupancy prediction framework for legged/humanoid robots. Through dual-projection fusion…
+  [CVPR 2026][Autonomous Driving][Paper Note] OneOcc is a vision-only panoramic semantic occupancy prediction framework designed for legged/humanoid robots. By integrating dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, it achieves 360° semantic scene completion using only a single pano
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Semantic Scene Completion"
-  - "Panoramic Camera"
-  - "Legged Robots"
-  - "Voxel Occupancy Prediction"
-  - "Gait Compensation"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 367460aa065f69a5
+content_hash: 0f6129b2c5cbd09b
 ---
-
 # OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.03571](https://arxiv.org/abs/2511.03571)  
 **Code**: Available  
-**Area**: Autonomous Driving
-**Keywords**: Semantic Scene Completion, Panoramic Camera, Legged Robots, Voxel Occupancy Prediction, Gait Compensation
+**Area**: Autonomous Driving  
+**Keywords**: Semantic Scene Completion, Panoramic Camera, Legged Robots, Voxel Occupancy Prediction, Gait Compensation  
 
 ## TL;DR
 
-This paper proposes OneOcc, a vision-only panoramic semantic occupancy prediction framework for legged/humanoid robots. Through dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, OneOcc achieves 360° semantic scene completion using only a single panoramic camera, surpassing LiDAR baselines on both real quadruped and simulated humanoid datasets.
+OneOcc is a vision-only panoramic semantic occupancy prediction framework designed for legged/humanoid robots. By integrating dual-projection fusion, dual-grid voxelization, gait displacement compensation, and a hierarchical mixture-of-experts decoder, it achieves 360° semantic scene completion using only a single panoramic camera, outperforming LiDAR baselines on real-world quadruped and simulated humanoid datasets.
 
 ## Background & Motivation
 
-### 1. State of the Field
+### 1. Background
 
-Semantic Scene Completion (SSC) aims to predict complete 3D voxel semantics from partial observations and has become a core task in autonomous driving. From LiDAR-based methods (SSCNet → LMSCNet → SCPNet) to vision-based methods (MonoScene → VoxFormer → OccFormer), SSC has made substantial progress on **wheeled platforms**. However, all mainstream SSC methods assume forward-facing pinhole/fisheye sensors paired with stable wheeled-chassis motion, making them difficult to transfer to legged robot scenarios.
+Semantic Scene Completion (SSC) aims to predict complete 3D voxel semantics from partial observations and has become a core task in autonomous driving. From LiDAR-based methods (SSCNet → LMSCNet → SCPNet) to vision-based approaches (MonoScene → VoxFormer → OccFormer), SSC has made significant progress on **wheeled platforms**. However, most mainstream SSC methods assume forward-facing pinhole/fisheye sensors and stable wheeled chassis motion, which are difficult to transfer to legged robot scenarios.
 
 ### 2. Limitations of Prior Work
 
-Legged/humanoid robots face three major challenges: **(1)** Gait jitter — impulsive foot strikes and minor roll/pitch perturbations during agile locomotion corrupt the feature-to-voxel mapping and temporal consistency; **(2)** 360° omnidirectional perception — situational awareness across all directions is required on complex terrain, not merely a forward field of view; **(3)** Payload and power constraints — legged platforms operate under much tighter sensor and computational budgets than autonomous vehicles.
+Legged/humanoid robots face three major challenges: **(1)** Gait jitter—impactful foot contacts and micro roll/pitch movements caused by agile gaits disrupt feature-to-voxel mapping and temporal consistency; **(2)** 360° omnidirectional perception requirements—navigating rugged and complex terrain requires all-around situational awareness rather than just a forward field of view; **(3)** Payload/power constraints—the budget for sensors and computational resources on legged platforms is much lower than that of autonomous vehicles.
 
-### 3. Root Cause
+### 3. Key Challenge
 
-Existing SSC systems are designed for wheeled platforms and rely on forward-facing pinhole sensors and stable motion assumptions. Legged platforms instead require a **single-sensor panoramic** solution that must simultaneously handle **annular distortion and seam artifacts** inherent to panoramic imagery, as well as **feature-to-voxel mapping phase errors** induced by gait motion.
+Existing SSC systems are designed for wheeled platforms, relying on forward-facing pinhole sensors and stable motion assumptions. Legged platforms require a **single-sensor panoramic** solution and must address **annular distortion and seam artifacts** inherent to panoramic images, as well as **feature-voxel mapping phase errors** caused by gait motion.
 
-### 4. Paper Goals
+### 4. Goal
 
-Design a lightweight, vision-only, gait-jitter-robust 360° semantic occupancy prediction framework for legged/humanoid robots, and establish an evaluation benchmark for this setting.
+Design a lightweight, vision-only, gait-jitter-resistant 360° semantic occupancy prediction framework for legged/humanoid robots, while establishing an evaluation benchmark for this scenario.
 
-### 5. Starting Point
+### 5. Key Insight
 
-The work exploits the **dual-projection properties** of panoramic cameras (raw annular image vs. equirectangular unrolled image) and **dual-coordinate voxelization** (Cartesian vs. cylindrical), leveraging their complementarity to address panoramic distortion and near/far-field imbalance. A learnable displacement compensation module eliminates gait-induced errors prior to feature lifting.
+Leverage the **dual-projection characteristics** of panoramic cameras (raw annulus vs. equirectangular) and **dual-coordinate voxelization** (Cartesian vs. cylindrical). Utilize their complementarity to resolve panoramic distortion and near-far field imbalances, and eliminate gait errors through learnable displacement compensation before feature lifting.
 
 ### 6. Core Idea
 
-Four plug-and-play modules operate synergistically: DP-ER (dual-projection encoder fusion) preserves annular continuity and grid alignment; BGV (dual-grid voxelization) balances near-field precision and far-field azimuthal continuity; GDC (gait displacement compensation) corrects phase errors before feature lifting; AMoE-3D (hierarchical attentive mixture-of-experts) performs scale-adaptive anisotropic 3D fusion.
+Four plug-and-play modules work in synergy: DP-ER (Dual-Projection Encoder Fusion) preserves annular continuity and grid alignment; BGV (Dual-Grid Voxelization) balances near-field precision and far-field azimuthal continuity; GDC (Gait Displacement Compensation) corrects phase errors before feature lifting; and AMoE-3D (Hierarchical Attention Mixture-of-Experts) achieves scale-adaptive anisotropic 3D fusion.
 
 ## Method
 
 ### Overall Architecture
 
-The OneOcc pipeline proceeds as follows:
+OneOcc enables a legged/humanoid robot with a single panoramic camera to complete the 360° world into semantic 3D voxels despite severe gait jitter. The pipeline operates in a single forward pass: First, the raw annulus image captured by the camera is unfolded into an equirectangular image using a Taylor polynomial calibration model, maintaining both "original geometry" and "azimuthal expansion" representations. Next, the DP-ER (Dual-Projection Encoder) uses two 2D backbones to process these images, outputting features at three scales {1/4, 1/8, 1/16}. Before lifting 2D features to 3D, GDC regresses a 2D displacement to suppress gait phase errors. Then, BGV performs bilinear sampling and cross-injection across Cartesian and cylindrical voxel grids to obtain 3D voxel features that balance near and far fields. Finally, a three-layer depthwise-separable AMoE-3D UNet aggregates multi-scale evidence using attention-MoE, and a 1×1×1 convolution outputs per-voxel semantic logits with multi-resolution depth supervision. The four modules (DP-ER / GDC / BGV / AMoE-3D) are plug-and-play, specifically targeting "distortion, jitter, near-far imbalance, and anisotropy" in legged panoramic scenarios.
 
-1. **Calibrated Unrolling**: The raw panoramic annular image is unrolled into an equirectangular (ER) image via the Taylor polynomial camera model.
-2. **Dual-Projection Encoder DP-ER**: Two parallel 2D encoders process the raw annular image and the ER image respectively, producing multi-scale features at strides {1/4, 1/8, 1/16}.
-3. **Gait Displacement Compensation GDC** (optional): A 2D displacement $\Delta_s = (dx, dy)$ is regressed at each scale and projection branch to correct sampling coordinates before feature lifting.
-4. **Dual-Grid Voxelization BGV**: Features are bilinearly sampled and lifted into 3D in both Cartesian and cylindrical voxel spaces; a precomputed Po2Ca cross-grid index injects polar-coordinate context into the Cartesian grid.
-5. **Hierarchical AMoE-3D Decoder**: A three-level depthwise-separable 3D UNet in which each level employs an attentive-MoE fusion module to aggregate multi-scale evidence.
-6. **Segmentation Head**: A $1{\times}1{\times}1$ convolution outputs per-voxel semantic logits with deep supervision.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Single Panoramic Camera Raw Annulus Image"]
+    A -->|Taylor Polynomial Calibration| EQ["Equirectangular Image"]
+    subgraph DPER["DP-ER Dual-Projection Fusion"]
+        direction TB
+        B["Annulus Encoder<br/>Preserves Native Geometry/Texture"]
+        C["Equirectangular Encoder<br/>Preserves Azimuthal Continuity"]
+    end
+    A --> B
+    EQ --> C
+    B --> D
+    C --> D
+    D["GDC Gait Displacement Compensation<br/>Regresses 2D Offset Before Lifting"]
+    subgraph BGVG["BGV Dual-Grid Voxelization"]
+        direction TB
+        E["Cartesian Grid: Near-field Contact"]
+        F["Cylindrical Grid: Far-field Azimuthal Continuity"]
+        E -->|Po2Ca Cross-Injection| F
+    end
+    D -->|Multi-scale Bilinear Sampling| BGVG
+    BGVG --> G["AMoE-3D Hierarchical Attention MoE<br/>Gradient Energy Gating"]
+    G --> H["1×1×1 Conv Output Semantic Logits<br/>Multi-resolution Depth Supervision"]
+```
 
 ### Key Designs
 
-#### DP-ER Dual-Projection Fusion
+**1. DP-ER Dual-Projection Fusion: Resolving the panoramic dilemma of "geometry loss vs. convolution difficulty"**
 
-- **Function**: Processes the raw annular image and the unrolled ER image in parallel.
-- **Mechanism**: The ER image preserves azimuthal continuity and is amenable to convolution; the raw annular image retains native geometry and fine-grained texture. The two branches provide complementary coverage of the equatorial–polar resolution/receptive-field trade-off.
-- **Design Motivation**: The equatorial region of a panoramic camera dominates motion priors, whereas the polar region suffers from severe distortion. Taylor-based unrolling respects PAL optics, preserving annular continuity in ER space and local texture in the raw space, thereby providing more stable cues for subsequent voxel lifting.
+Panoramic images contain conflicting signals: high resolution at the equator but severe distortion at the poles. Using only equirectangular images preserves azimuthal continuity but distorts native geometry. Using only raw annulus images preserves texture but makes standard convolutions difficult to align. DP-ER processes both—one 2D encoder handles the raw annulus for local texture, while the other handles the equirectangular image for azimuthal continuity, balancing resolution and receptive field trade-offs across scales.
 
-#### BGV Dual-Grid Voxelization
+**2. GDC Gait Displacement Compensation: Suppressing phase errors before voxel quantization**
 
-- **Function**: Voxel centroids are defined simultaneously in a Cartesian grid $(x, y, z)$ and a cylindrical grid $(r, \varphi, z)$; dual-projection features are bilinearly sampled and lifted to 3D in each grid independently.
-- **Mechanism**: Cartesian voxels accurately represent near-field contact geometry (foot placement, obstacles), while the azimuth angle $\varphi$ of cylindrical voxels aligns linearly with the horizontal axis of the panoramic image, preserving annular continuity and reducing far-field aliasing. Polar-coordinate features are resampled onto the Cartesian grid via precomputed cross-grid indices and concatenated.
-- **Design Motivation**: Safety-critical decisions for legged robots simultaneously require near-field precision (safe footing) and far-field context (loop closure/scene layout); fusing dual grids balances near and far evidence.
+The impact of legged gaits and micro tilts causes phase errors in feature-to-voxel mapping. Correcting this after voxelization is difficult as errors are already "fixed" by quantization. GDC regresses a 2D displacement $\Delta_s = (dx, dy)$ using a zero-initialized linear layer on each projection path, directly adjusting 2D sampling coordinates before lifting. This avoids quantization loss and reduces computational overhead. Zero-initialization (inspired by ControlNet) ensures $\Delta_s \approx 0$ at the start of training, maintaining baseline performance in the absence of jitter.
 
-#### GDC Gait Displacement Compensation
+**3. BGV Dual-Grid Voxelization: Cartesian for foot placement, Cylindrical for surroundings**
 
-- **Function**: At each scale and projection branch, a 2D displacement $\Delta_s = (dx, dy)$ is regressed via global average pooling followed by a zero-initialized linear layer, correcting sampling coordinates before voxel lifting.
-- **Mechanism**: Phase errors caused by gait impacts, if corrected after voxel lifting, are already contaminated by voxel quantization. Compensation in 2D sampling coordinates prior to lifting avoids quantization loss at lower computational cost.
-- **Design Motivation**: Zero initialization ensures the module is equivalent to an identity transformation at the start of training (i.e., $\Delta_s \approx 0$ when no jitter is present), leaving baseline performance unaffected. Integer indexing is also upgraded to bilinear sampling, reducing projection aliasing.
+Legged robot decisions are split between near-field contact geometry (foot placement) and far-field scene layout (navigation). Cartesian grids $(x, y, z)$ are precise for near-field contacts but suffer from angular resolution decay in the far-field. Cylindrical grids $(r, \varphi, z)$ naturally align their azimuthal angle $\varphi$ with the horizontal axis of panoramic images, preserving far-field continuity. BGV samples features into both grids and uses pre-computed indices to re-sample cylindrical context into the Cartesian grid (Po2Ca cross-mapping), fusing near-field precision with far-field continuity.
 
-#### AMoE-3D Hierarchical Attentive Mixture of Experts
+**4. AMoE-3D Hierarchical Attention Mixture-of-Experts: Scale-adaptive anisotropic 3D fusion**
 
-- **Function**: At each of the three levels of the 3D UNet, dual-path volumetric saliency (channel attention + spatial attention) combined with gradient-energy-gated mixture of experts achieves scale-aware anisotropic fusion.
-- **Mechanism**: Channel gate $A_c$ and spatial gate $A_s$ perform channel-wise and spatial-wise selection respectively. GradEnergy3D then computes the energy of 3D gradients along each axis; a softmax gate selects $K$ Conv-GELU-Conv experts (with $1{\times}1{\times}1$ kernels) for weighted aggregation.
-- **Design Motivation**: Panoramic scenes are highly anisotropic (strong azimuthal variation vs. weak vertical structure, large near/far scale disparity). Gradient-energy gating amplifies high-contrast structures (vehicles, poles) at class boundaries while suppressing overfitting on large homogeneous regions (road surface), improving the stability of foot-placement decisions.
+Panoramic scenes are highly anisotropic, with rapid azimuthal changes and sparse vertical structures. AMoE-3D employs dual-path volumetric saliency (channel gate $A_c$ and spatial gate $A_s$) followed by GradEnergy3D, which calculates 3D gradient energy to gate $K$ experts (1×1×1 Conv-GELU-Conv). High-gradient areas (object boundaries) activate "fine experts," while low-gradient areas (flat ground) use "simple experts," sharpening boundaries and stabilizing foot placement regions.
 
 ### Loss & Training
 
-The total loss follows the MonoScene framework:
+The total loss follows the MonoScene framework: $\mathcal{L}_{total} = \mathcal{L}_{CE} + \mathcal{L}_{SCAL}^{sem} + \mathcal{L}_{SCAL}^{geo} + \mathcal{L}_{FP}$
 
-$$\mathcal{L}_{total} = \mathcal{L}_{CE} + \mathcal{L}_{SCAL}^{sem} + \mathcal{L}_{SCAL}^{geo} + \mathcal{L}_{FP}$$
-
-- **Cross-entropy $\mathcal{L}_{CE}$**: Computed over valid voxels with class re-weighting.
-- **Scene-Class Affinity Loss (SCAL)**: Applied in both semantic and geometric variants to constrain scene-level statistics.
-- **Frustum Proportion Loss $\mathcal{L}_{FP}$**: Constrains per-frustum class proportions.
-- The **relation loss is intentionally omitted**, as its co-occurrence priors over-smooth azimuthal boundaries and suppress small near-field classes in the panoramic legged setting.
-- Deep supervision is applied at three resolution strides: {1, 2, 4}.
+- **Cross-Entropy $\mathcal{L}_{CE}$**: Calculated on valid voxels with class re-weighting.
+- **Scene-Class Affinity Loss (SCAL)**: Semantic and geometric versions for scene-level statistics.
+- **Frustum Proportion Loss $\mathcal{L}_{FP}$**: Constrains class proportions within different frustums.
+- **No Relation Loss**: Relation losses are intentionally omitted as co-occurrence priors in legged panoramic settings tend to over-smooth azimuthal boundaries and suppress small near-field classes.
+- **Multi-resolution Depth Supervision**: Applied at strides {1, 2, 4}.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: Semantic Scene Completion on the QuadOcc Validation Set** (real quadruped robot campus scenes, 6 semantic classes, $64{\times}64{\times}8$ grid)
+**Table 1: Semantic Scene Completion on QuadOcc Validation Set** (Real-world quadruped, 6 classes, 64×64×8 grid)
 
 | Method | Input | vehicle | pedestrian | road | building | vegetation | terrain | mIoU |
-|--------|-------|---------|-----------|------|----------|-----------|---------|------|
+|------|------|---------|-----------|------|----------|-----------|---------|------|
 | SSCNet | LiDAR | 0.00 | 0.04 | 44.34 | 16.06 | 22.41 | 4.77 | 14.60 |
 | LMSCNet | LiDAR | 0.88 | 0.20 | 57.02 | 16.45 | 24.39 | 11.70 | **18.44** |
-| OccFormer | Panoramic | 0.29 | 0.37 | 49.46 | 10.36 | 15.00 | 2.64 | 13.02 |
-| MonoScene | Panoramic | 8.15 | 1.59 | 55.66 | 12.88 | 26.10 | 10.78 | 19.19 |
-| SGN† | Panoramic+LiDAR | 11.62 | 2.47 | 53.06 | 15.60 | 25.67 | 9.91 | 19.72 |
-| **OneOcc** | **Panoramic** | **12.16** | **2.86** | **54.41** | **16.03** | **24.91** | **13.01** | **20.56** |
+| OccFormer | Vision | 0.29 | 0.37 | 49.46 | 10.36 | 15.00 | 2.64 | 13.02 |
+| MonoScene | Vision | 8.15 | 1.59 | 55.66 | 12.88 | 26.10 | 10.78 | 19.19 |
+| SGN† | Vision+LiDAR | 11.62 | 2.47 | 53.06 | 15.60 | 25.67 | 9.91 | 19.72 |
+| **Ours** | **Vision** | **12.16** | **2.86** | **54.41** | **16.03** | **24.91** | **13.01** | **20.56** |
 
-**Table 2: Semantic Scene Completion on Human360Occ (H3O)** (CARLA-simulated humanoid 360°, 10 semantic classes)
+**Table 2: Semantic Scene Completion on Human360Occ (H3O)** (CARLA simulated humanoid, 10 classes)
 
 | Method | Input | In-domain mIoU | Cross-domain mIoU |
-|--------|-------|----------------|-------------------|
-| VoxFormer-S | Panoramic + predicted depth | 11.09 | 10.63 |
-| VoxFormer-S | Panoramic + GT depth | 15.44 | 14.82 |
-| SGN-T | Panoramic + predicted depth | 28.64 | 20.02 |
-| OccFormer | Panoramic | 24.88 | 20.87 |
-| MonoScene | Panoramic | 33.46 | 24.15 |
-| **OneOcc** | **Panoramic** | **37.29 (+3.83)** | **32.23 (+8.08)** |
+|------|------|-----------|-----------|
+| VoxFormer-S | Vision+Depth Pred | 11.09 | 10.63 |
+| SGN-T | Vision+Depth Pred | 28.64 | 20.02 |
+| OccFormer | Vision | 24.88 | 20.87 |
+| MonoScene | Vision | 33.46 | 24.15 |
+| **Ours** | **Vision** | **37.29 (+3.83)** | **32.23 (+8.08)** |
 
 ### Ablation Study
 
-**Table 3: Per-Module Ablation on QuadOcc**
+**Table 3: Module Ablation on QuadOcc**
 
 | Variant | GDC | DP-ER | BGV | AMoE-3D | mIoU | Gain |
-|---------|-----|-------|-----|---------|------|------|
+|------|-----|-------|-----|---------|------|------|
 | Q0 baseline | ✗ | ✗ | ✗ | ✗ | 19.19 | — |
 | Q1 +GDC | ✓ | ✗ | ✗ | ✗ | 19.58 | +0.39 |
 | Q2 +DP-ER | ✓ | ✓ | ✗ | ✗ | 19.89 | +0.31 |
 | Q3 +BGV | ✓ | ✓ | ✓ | ✗ | 20.30 | +0.41 |
-| Q4 +AMoE-3D (full) | ✓ | ✓ | ✓ | ✓ | **20.56** | +0.26 |
-
-The gains from all four modules are additive: GDC stabilizes sampling → DP-ER supplies complementary cues → BGV reduces discretization bias → AMoE-3D sharpens boundaries and contact regions.
-
-**Illumination Robustness** (QuadOcc day/dusk/night mIoU):
-
-| Method | Day | Dusk | Night |
-|--------|-----|------|-------|
-| LMSCNet (LiDAR) | 17.33 | 18.91 | 13.40 |
-| MonoScene (Vision) | 18.58 | 15.14 | 14.20 |
-| **OneOcc** | **21.15** | **19.86** | 13.50 |
+| Q4 (Full) | ✓ | ✓ | ✓ | ✓ | **20.56** | +0.26 |
 
 ### Key Findings
 
-1. **Vision-only surpasses LiDAR**: OneOcc with a single panoramic camera (20.56 mIoU) outperforms the best LiDAR method LMSCNet (18.44) by +11.5%, demonstrating that task-aligned panoramic fusion design can bridge the modality gap.
-2. **Strong cross-domain generalization**: Under the H3O cross-city setting, OneOcc (32.23) substantially outperforms MonoScene (24.15) by +8.08 mIoU (+33.5% relative), indicating that the distortion-aware priors in DP-ER and AMoE-3D effectively mitigate distribution shift.
-3. **Significant gains on rare classes**: On QuadOcc, vehicle IoU improves from 8.15 to 12.16 and pedestrian IoU from 1.59 to 2.86, reflecting the benefits of BGV's near/far-field balance and AMoE-3D's boundary sharpening.
-4. **Moderate efficiency suitable for deployment**: 101.76M parameters; FP32 inference latency of 69.93 ms (14.3 FPS) on an RTX 4090; 52.84 ms (18.9 FPS) in mixed precision; peak GPU memory of 1.49 GB.
+1. **Vision Outperforms LiDAR**: Ours effectively bridges the modality gap, outperforming the best LiDAR method LMSCNet by +11.5% using only a single panoramic camera.
+2. **Strong Generalization**: In H3O cross-city settings, Ours (32.23) leads MonoScene (24.15) by +8.08 mIoU, indicating that DP-ER and AMoE-3D alleviate distribution shifts.
+3. **improvement in Rare Classes**: Significant gains in `vehicle` and `pedestrian` classes reflect the effectiveness of BGV and AMoE-3D in sharpening boundary details.
+4. **Deployable Efficiency**: 14.3 FPS (FP32) and 18.9 FPS (mixed precision) on RTX4090 with a peak memory of 1.49GB.
 
 ## Highlights & Insights
 
-1. **Precise problem formulation**: The paper is the first to systematically define "panoramic semantic occupancy prediction for legged robots," clearly articulating the three mismatches in transferring from wheeled to legged platforms (motion pattern, field-of-view coverage, payload constraints).
-2. **Zero-initialization design in GDC**: Borrowing ControlNet's zero-conv strategy, the module degrades to an identity mapping in the absence of jitter, ensuring training stability without degrading baseline performance.
-3. **Gradient-energy-gated MoE**: Using 3D gradient energy as the expert routing signal is physically interpretable — high-gradient regions (class boundaries) activate fine-grained experts, while low-gradient regions (flat ground) follow simpler pathways.
-4. **Complementary dual-coordinate systems**: The azimuth angle of cylindrical coordinates is naturally aligned with the horizontal axis of a panoramic image; this geometric insight means BGV genuinely exploits the intrinsic structure of panoramic imaging rather than merely substituting one grid for another.
-5. **Comprehensive data contribution**: The simultaneous release of a real-world (QuadOcc) and a simulated (H3O) benchmark supports both in-domain and cross-domain evaluation.
+1. **Precise Problem Definition**: Systematically defines "panoramic semantic occupancy for legged robots," addressing the mismatch in motion patterns and field of view.
+2. **Zero-initialized GDC**: Ensures the module is a harmless identity mapping at the start of training, stabilizing the learning process.
+3. **Gradient Energy Gating**: Provides an intuitive physical signal for MoE routing—using fine experts at boundaries and simpler paths for flat areas.
+4. **Grid Complementarity**: The insight that cylindrical grids align with panoramic axes allows BGV to exploit the inherent structure of the sensor.
+5. **Comprehensive Benchmarks**: Releases both real (QuadOcc) and simulated (H3O) datasets to support in-domain and cross-domain evaluation.
 
 ## Limitations & Future Work
 
-1. **Calibration dependency**: OneOcc assumes accurate calibration with bounded drift; in long-duration deployment, accumulated calibration drift may introduce errors. The authors suggest incorporating online extrinsic self-calibration.
-2. **Degraded nighttime performance**: Night-scene mIoU (13.50) falls below MonoScene (14.20), as vision-only panoramic methods are limited by the sensor's dynamic range under extremely low illumination.
-3. **Simplified GDC formulation**: Only a global 2D translation is regressed; rotational or spatially varying distortions are not modeled, which may be insufficient for complex multi-DOF gaits.
-4. **Temporal information not exploited**: The current method is single-frame; inter-frame temporal consistency and the periodic regularity of gait cycles are not utilized.
-5. **Sim-to-real transfer**: H3O is built on CARLA simulation; the domain gap has not been systematically evaluated.
+1. **Calibration Dependency**: Assumes precise calibration; long-term drift might accumulate errors. Online extrinsic self-calibration is suggested.
+2. **Nighttime Performance**: Performance drops significantly in low-light environments (mIoU 13.50) due to sensor dynamic range limits.
+3. **GDC Simplicity**: Only regresses global 2D translation; does not yet model rotation or spatially varying distortions.
+4. **Temporal Information**: Currently a single-frame method; periodic legged gait patterns could be utilized for temporal consistency.
 
 ## Related Work & Insights
 
-- **MonoScene** serves as the direct baseline (Q0); OneOcc incrementally adds four modules atop it, achieving a +1.37 mIoU improvement.
-- The cylindrical discretization in **Cylinder3D** is inherited and extended by BGV into a dual-grid fusion scheme.
-- The zero-initialization strategy from **ControlNet** is adopted in GDC to ensure harmless initialization of the plug-in module.
-- **MoE for 3D perception** (e.g., Point-MoE) inspires AMoE-3D, but gradient energy replaces conventional routing.
-- The work meaningfully complements panoramic occupancy perception research (Humanoid Occupancy, OmniHD-Scenes) and advances this emerging direction.
+- **MonoScene** serves as the direct baseline (Q0).
+- **Cylinder3D** inspired the cylindrical discretization in BGV, extended here for dual-grid fusion.
+- **ControlNet**'s zero-initialization strategy ensures stable integration of the GDC module.
+- **MoE in 3D Perception** (e.g., Point-MoE) inspired AMoE-3D, replacing learned routers with gradient energy.
 
 ## Rating
 
-⭐⭐⭐⭐ A systematic contribution that precisely defines a new problem, presents a complete method, and contributes dual datasets. The design motivation behind each of the four modules is clear and their gains are additive. However, the individual gain per module is modest (0.26–0.41 mIoU), and nighttime performance remains a weakness.
+⭐⭐⭐⭐ A systematic work that defines a new problem and provides a complete method with dual-dataset contributions. The design of the four modules is clear, though individual gains are relatively small (0.26-0.41).
 
 <!-- RELATED:START -->
 
@@ -195,9 +185,9 @@ The gains from all four modules are additive: GDC stabilizes sampling → DP-ER 
 
 - [\[CVPR 2026\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](panoramic_multimodal_semantic_occupancy_prediction.md)
 - [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
-- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
+- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
+- [\[CVPR 2026\] EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models](editssc_toward_editable_semantic_occupancy_scenes_with_unconditional_diffusion_m.md)
 
 </div>
 

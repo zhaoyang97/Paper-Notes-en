@@ -2,90 +2,89 @@
 title: >-
   [Paper Note] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes an open-vocabulary semantic segmentation method that bypasses the logits optimization process entirely. Based on the assumption that ho…
+  [CVPR 2026][Segmentation][Paper Note] A training-free open-vocabulary semantic segmentation method is proposed that bypasses the logits optimization process. Based on the hypothesis that "distribution discrepancies from logits to a degenerate distribution are consistent for homogeneous regions," segmentation maps are directly constructed via analytical sol
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Open-vocabulary semantic segmentation"
-  - "training-free"
-  - "distributional discrepancy"
-  - "optimal transport"
-  - "Markov process"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 484f1a9cf8335ab5
+content_hash: f36fd9e24917f24a
 ---
-
 # Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.07723](https://arxiv.org/abs/2604.07723)  
 **Code**: [GitHub](https://github.com/liblacklucy/DSLO)  
-**Area**: Image Segmentation
-**Keywords**: Open-vocabulary semantic segmentation, training-free, distributional discrepancy, optimal transport, Markov process
+**Area**: Image Segmentation  
+**Keywords**: Open-vocabulary semantic segmentation, Training-free, Distribution discrepancy, Optimal transport, Markov process
 
 ## TL;DR
 
-This paper proposes an open-vocabulary semantic segmentation method that bypasses the logits optimization process entirely. Based on the assumption that homogeneous regions exhibit consistent distributional discrepancies from their logits to a degenerate distribution, the method directly constructs segmentation maps via either the optimal transport path or the analytical solution of maximum transport velocity. The approach achieves state-of-the-art performance on 8 benchmarks without requiring training or model-specific modulation.
+A training-free open-vocabulary semantic segmentation method is proposed that bypasses the logits optimization process. Based on the hypothesis that "distribution discrepancies from logits to a degenerate distribution are consistent for homogeneous regions," segmentation maps are directly constructed via analytical solutions of optimal transport paths or maximum transport velocities. It achieves SOTA performance on 8 benchmarks without training or model-specific modulations.
 
 ## Background & Motivation
 
-Open-vocabulary semantic segmentation (OVSS) requires pixel-level vision-language alignment. The dominant paradigm in existing methods can be characterized as **logits optimization**: computing cosine similarity (logits) between visual and linguistic features, minimizing the discrepancy between the logits distribution and the ground-truth (GT) distribution to obtain optimal logits, and then applying argmax to produce the segmentation map. This paradigm is realized in two ways:
+Open-vocabulary semantic segmentation (OVSS) requires pixel-level vision-language alignment. The core paradigm of existing methods can be summarized as **logits optimization**—calculating cosine similarity (logits) between vision and language features, minimizing the discrepancy between the logits distribution and the GT distribution to obtain optimal logits, and then applying argmax to get the segmentation map. This paradigm has two implementations:
 
-**Iterative training paradigm**: Requires GT annotations and time-consuming training.
+**Iterative Training Paradigm**: Requires GT annotations and time-consuming training processes.
 
-**Attention modulation paradigm** (training-free): Calibrates self-attention computation to correct fine-grained alignment, but the denoising operation is **data-agnostic yet model-specific** (e.g., CLIP-specific attention substitution), limiting generalizability.
+**Attention Modulation Paradigm** (Training-free): Calibrates self-attention computation to correct fine-grained alignment, but its denoising operations are **data-independent but model-specific** (e.g., CLIP-specific attention replacement), leading to poor generalization.
 
-Both approaches **first derive optimal logits and then construct the segmentation map**. The authors' core insight is: can we **entirely bypass logits optimization** and directly obtain segmentation maps from distributional discrepancies themselves?
+Both approaches **prioritize deriving optimal logits and then constructing segmentation maps**. The core insight of the authors is: can the **logits optimization be skipped entirely**, and segmentation maps be obtained directly from the distribution discrepancy itself?
 
-Key assumption: **Homogeneous regions exhibit consistent distributional discrepancies, while heterogeneous regions exhibit distinct ones.** If this holds, distributional discrepancies inherently encode semantic information, rendering explicit logits optimization unnecessary.
+Key Insight: **Homogeneous regions present consistent distribution discrepancies, while heterogeneous regions present different distribution discrepancies**. If this hypothesis holds, the distribution discrepancy itself encodes semantic information, eliminating the need to optimize for optimal logits first.
 
 ## Method
 
 ### Overall Architecture
 
-1. Compute cosine similarity between visual and linguistic features using CLIP to obtain logits.
-2. Apply non-maximum suppression (NMS) and normalization to the logits.
-3. Compute the distributional discrepancy from the normalized logits to a degenerate distribution (uniform distribution $\frac{1}{N}\mathbf{1}_N$).
-4. Restore the original resolution via joint bilateral upsampling (JBU).
-5. Apply argmax to produce the final segmentation map.
+This paper addresses training-free open-vocabulary semantic segmentation: given an image and a set of text categories, it outputs pixel-level segmentation without training or model-specific attention modifications. The critical shift in the pipeline is that it **no longer optimizes logits**. The traditional paradigm first calculates vision-language similarity logits via CLIP, pulls the logits distribution toward the GT distribution ($\mathcal{Q}^* = \arg\min_\mathcal{Q} \mathbf{D}(\mathcal{P}\|\mathcal{Q})$), and finally takes the argmax for categories. This work flips it into an analytical solution $\mathbf{M} = \arg\max_{N_c} \mathbf{D}(\mathcal{S}\|\mathcal{Q})$, using the "discrepancy from logits to the degenerate distribution $\mathcal{S}$" directly as the basis for segmentation.
 
-The optimization formulation $\mathcal{Q}^* = \arg\min_\mathcal{Q} \mathbf{D}(\mathcal{P}\|\mathcal{Q})$ is reformulated as an analytical solution $\mathbf{M} = \arg\max_{N_c} \mathbf{D}(\mathcal{S}\|\mathcal{Q})$, where $\mathcal{S}$ is a degenerate distribution substituting the GT distribution.
+Specifically: after calculating logits via CLIP, non-maximum suppression (NMS) and normalization are applied to suppress noise. Then, the discrepancy from normalized logits to the degenerate distribution (uniform distribution $\frac{1}{N}\mathbf{1}_N$) is calculated. This step offers two equivalent routes: the optimal transport path or the maximum transport velocity, both depending on a self-attention tensor characterizing inter-patch relationships. Finally, Joint Bilateral Upsampling (JBU) restores the low-resolution results to the original size, and argmax yields the segmentation map. There are no parameter updates throughout the process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image + Text Categories"] --> B["CLIP Encoding<br/>Cosine Similarity for Logits"]
+    B --> C["NMS + Normalization<br/>Suppress Low-confidence Patches"]
+    C --> D["Degenerate Distribution Replaces GT<br/>Measure Discrepancy from Logits to Uniform Distribution S"]
+    SD["Self-Attention Tensor Source<br/>SD2 Single-step Denoising up0+up1 blocks"] -.->|Cost / Transition Matrix| E
+    SD -.->|Cost / Transition Matrix| F
+    D --> E["Optimal Transport Path<br/>Sinkhorn Analytical Solution"]
+    D --> F["Maximum Transport Velocity<br/>Reciprocal of Markov Convergence Steps"]
+    E --> G["JBU Upsampling for Discrepancy Map"]
+    F --> G
+    G --> H["argmax → Segmentation Map"]
+```
 
 ### Key Designs
 
-1. **Degenerate Distribution as GT Substitute (§3.3)**:
+**1. Degenerate Distribution Replaces GT: Replacing the unavailable GT endpoint with a universally known uniform distribution**
 
-    - At inference time, the GT distribution is unavailable and must be approximated. The authors propose using a degenerate (uniform) distribution as a substitute.
-    - Experimental validation demonstrates that KL divergence from logits to GT ($\mathbf{D}(\mathcal{P}\|\mathcal{Q})$) and from logits to the degenerate distribution ($\mathbf{D}(\mathcal{S}\|\mathcal{Q})$) yield highly consistent performance across 5 datasets.
-    - Visualizations show that $\mathcal{S}$ and $\mathcal{P}$ occupy antipodal positions in feature space — logits optimization moves toward the GT endpoint, while the proposed method computes discrepancies to the degenerate endpoint.
-    - **Design Motivation**: The degenerate distribution is the only distribution determinable at inference time without additional information.
+The validity of the entire method hinges on this replacement. Optimization paradigms rely on training because they need the GT distribution as a target, which is unavailable during inference. This work uses the degenerate distribution (uniform distribution) as a proxy: the authors found that in feature space, the degenerate distribution $\mathcal{S}$ and the GT distribution $\mathcal{P}$ occupy antipodal positions. Since logits optimization moves toward the GT endpoint, measuring "how far logits are from the degenerate endpoint" can similarly distinguish categories. Experimentally, the KL divergence from logits to GT ($\mathbf{D}(\mathcal{P}\|\mathcal{Q})$) and from logits to the degenerate distribution ($\mathbf{D}(\mathcal{S}\|\mathcal{Q})$) showed highly consistent performance across 5 datasets. The uniform distribution is chosen because it is the only distribution that can be defined during inference without any additional information.
 
-2. **Optimal Transport Path (§3.4)**:
+**2. Optimal Transport Path: Quantifying "discrepancy" as transport cost based on path consistency in homogeneous regions**
 
-    - Intuition: Homogeneous regions should share consistent degeneration paths; thus, the path itself quantifies discrepancy.
-    - The problem is formulated as Sinkhorn optimal transport:
-    $$\boldsymbol{\pi}^* = \min_{\boldsymbol{\pi}} \sum_{i,j} \mathbf{C}_{i,j}\boldsymbol{\pi}_{i,j} - \epsilon\sum_{i,j}\boldsymbol{\pi}_{i,j}(\ln\boldsymbol{\pi}_{i,j} - 1)$$
-    - The cost matrix $\mathbf{C}$ uses hierarchically averaged self-attention tensors from Stable Diffusion v2.
-    - Via Lagrange multipliers, the analytical solution is: $\boldsymbol{\pi}^* = \text{diag}(\boldsymbol{\mu})\mathbf{K}\text{diag}(\boldsymbol{\nu})$, where the Gibbs kernel $\mathbf{K} = \exp(-\mathbf{C}/\epsilon)$.
-    - $\boldsymbol{\mu}$ and $\boldsymbol{\nu}$ are updated via Sinkhorn iterations (50 iterations, $\epsilon=0.1$).
+The first metric measures "how far each patch's logits are from the degenerate distribution." The core hypothesis is that paths toward degradation should be consistent for homogeneous regions, meaning the path itself encodes semantic discrepancy. This is formulated as Sinkhorn optimal transport with entropic regularization:
 
-3. **Maximum Transport Velocity (§3.5)**:
+$$\boldsymbol{\pi}^* = \min_{\boldsymbol{\pi}} \sum_{i,j} \mathbf{C}_{i,j}\boldsymbol{\pi}_{i,j} - \epsilon\sum_{i,j}\boldsymbol{\pi}_{i,j}(\ln\boldsymbol{\pi}_{i,j} - 1)$$
 
-    - Intuition: Transport velocity also quantifies discrepancy — given the same path, slower velocity implies greater discrepancy.
-    - The convergence of logits to a stationary distribution is modeled as a Markov process: $\mathbf{f}^{c(l)} = \mathbf{f}^{c(0)} \cdot \mathbf{T}^l$
-    - The transition matrix $\mathbf{T}$ is obtained by transforming the self-attention tensor into a doubly stochastic matrix via iterative proportional fitting (IPF, 15 iterations).
-    - The maximum transport velocity for each patch is defined as the reciprocal of the number of steps to convergence: $\mathbf{v}_i^c = \max\{1/l : |\mathbf{f}_i^{c(l)} - \mathbf{f}_i^{c(l-1)}| \leq \tau\}$
-    - $\tau=0.3$ is the convergence threshold.
+The cost matrix $\mathbf{C}$ is derived from the averaged hierarchical self-attention tensors of Stable Diffusion v2. Using the Lagrange multiplier method yields the analytical solution $\boldsymbol{\pi}^* = \text{diag}(\boldsymbol{\mu})\mathbf{K}\text{diag}(\boldsymbol{\nu})$, where the Gibbs kernel $\mathbf{K} = \exp(-\mathbf{C}/\epsilon)$. Convergence is reached via Sinkhorn iterations (50 iterations, $\epsilon=0.1$). This route is more sensitive to high-frequency textures.
 
-4. **Source of Self-Attention Tensors**:
+**3. Maximum Transport Velocity: When paths are identical, slower degradation indicates greater discrepancy**
 
-    - Self-attention from Stable Diffusion v2 is used rather than from CLIP.
-    - Noise-free latent features are directly encoded; self-attention is extracted via single-step unconditional denoising.
-    - Combining tensors from the $\text{up}_0$ and $\text{up}_1$ blocks yields the best results.
+The second metric measures how fast the degradation occurs. The process of logits converging to a stationary distribution is modeled as a Markov chain $\mathbf{f}^{c(l)} = \mathbf{f}^{c(0)} \cdot \mathbf{T}^l$, where the transition matrix $\mathbf{T}$ is obtained by transforming the self-attention tensor into a doubly stochastic matrix via Iterative Proportional Fitting (IPF, 15 iterations). A patch that is pushed toward the uniform state faster is closer to the degenerate endpoint, showing less discrepancy with that category. The maximum transport velocity for each patch is defined as the reciprocal of convergence steps:
+
+$$\mathbf{v}_i^c = \max\{1/l : |\mathbf{f}_i^{c(l)} - \mathbf{f}_i^{c(l-1)}| \leq \tau\}$$
+
+where $\tau=0.3$ is the convergence threshold. This route is more sensitive to inter-class boundaries and complements the optimal path.
+
+**4. Self-Attention Tensor Source: Using SD2 instead of CLIP self-attention as the patch relationship graph**
+
+Both metrics rely on a tensor characterizing inter-patch relationships (cost matrix / transition matrix). The authors use Stable Diffusion v2 self-attention instead of CLIP's. Tensors are extracted by encoding noise-free latent features followed by single-step unconditional denoising to ensure feature determinism. The combination of $\text{up}_0$ and $\text{up}_1$ upsampling blocks yields the best results. This makes the method model-agnostic as it is not bound to specific CLIP architectures.
 
 ### Loss & Training
 
-The method is entirely **training-free**. No training or fine-tuning is involved. Off-the-shelf CLIP (ViT-B/16 or ViT-L/14) and Stable Diffusion v2 weights are used. Inference is performed in 16-bit floating point precision on whole images without sliding windows.
+Completely **training-free** method. It involves no training or fine-tuning. Off-the-shelf weights for CLIP (ViT-B/16 or ViT-L/14) and Stable Diffusion v2 are used. Inference is performed with 16-bit floating-point precision, and full-image inference requires no sliding windows.
 
 ## Key Experimental Results
 
@@ -94,7 +93,7 @@ The method is entirely **training-free**. No training or fine-tuning is involved
 **CLIP ViT-B/16 Backbone:**
 
 | Method | Paradigm | VOC21 | Context60 | COCO-Stuff | Cityscapes | ADE20K | Avg |
-|--------|----------|-------|-----------|------------|------------|--------|-----|
+|------|------|-------|-----------|------------|------------|--------|-----|
 | SCLIP | M.M. | 59.1 | 30.4 | 22.4 | 32.2 | 16.1 | 38.2 |
 | NACLIP | M.M. | 58.9 | 32.2 | 23.3 | 35.5 | 17.4 | 39.4 |
 | CASS | M.M. | 65.8 | 36.7 | 26.7 | 39.4 | 20.4 | 44.4 |
@@ -104,63 +103,63 @@ The method is entirely **training-free**. No training or fine-tuning is involved
 **CLIP ViT-L/14 Backbone:**
 
 | Method | VOC21 | Context60 | COCO-Stuff | Cityscapes | ADE20K | Avg |
-|--------|-------|-----------|------------|------------|--------|-----|
+|------|-------|-----------|------------|------------|--------|-----|
 | SC-CLIP | 65.0 | 36.9 | 26.9 | 41.3 | 21.7 | 45.2 |
 | **Ours (M.V.)** | **68.9** | **38.7** | **29.2** | **43.9** | **23.4** | **47.8** |
 
 ### Ablation Study
 
 | Configuration | VOC21 | COCO-Stuff | Cityscapes | ADE20K | Avg |
-|---------------|-------|------------|------------|--------|-----|
+|------|-------|------------|------------|--------|-----|
 | (I) Baseline (raw logits) | 18.6 | 7.2 | 6.7 | 3.2 | 8.9 |
-| (II) +KL Divergence | 44.2 | 12.1 | 8.6 | 6.4 | 17.8 |
-| (III) +NMS | 45.9 | 13.0 | 9.6 | 7.7 | 19.1 |
-| (IV) +JBU | 46.3 | 13.3 | 10.1 | 8.8 | 19.6 |
-| (V) +Optimal Transport Path | 66.9 | 28.6 | 41.7 | 22.8 | 40.0 |
-| (VI) +Maximum Transport Velocity | **67.8** | **28.9** | **43.3** | **23.0** | **40.8** |
-| (VII) Fusion of (V)+(VI) | 64.9 | 26.8 | 41.4 | 20.5 | 38.4 |
+| (II) + KL Divergence | 44.2 | 12.1 | 8.6 | 6.4 | 17.8 |
+| (III) + NMS | 45.9 | 13.0 | 9.6 | 7.7 | 19.1 |
+| (IV) + JBU | 46.3 | 13.3 | 10.1 | 8.8 | 19.6 |
+| (V) + Optimal Transport Path | 66.9 | 28.6 | 41.7 | 22.8 | 40.0 |
+| (VI) + Max Transport Velocity | **67.8** | **28.9** | **43.3** | **23.0** | **40.8** |
+| (VII) Fusion (V)+(VI) | 64.9 | 26.8 | 41.4 | 20.5 | 38.4 |
 
 ### Key Findings
 
-1. **Distributional discrepancy can replace logits optimization**: Simple KL divergence alone yields a +8.9% mIoU gain; optimal transport/Markov process further contributes +22%.
-2. **Maximum velocity slightly outperforms optimal path**: +0.7% average on B/16 and +0.6% on L/14.
-3. **Fusing both modes degrades performance**: The two discrepancy measures capture different aspects (high-frequency textures vs. inter-class boundaries); naive fusion introduces interference.
-4. **SD2 self-attention outperforms ViT-based models**: SD2 self-attention tensors are more effective for constructing transition matrices.
-5. **Fewer denoising steps are preferable**: Encoding without noise injection ensures deterministic feature extraction.
-6. **$\tau=0.3$ is the optimal threshold**: Higher thresholds cause premature degeneration before the logits distribution reaches the optimal degenerate state.
+1. **Distribution discrepancy can replace logits optimization**: Simple KL divergence brings a +8.9% mIoU Gain, while optimal transport/Markov processes add another +22%.
+2. **Maximum velocity mode slightly outperforms optimal path**: An average Gain of +0.7% for B/16 and +0.6% for L/14.
+3. **Fusing two modes decreases performance**: The two metrics focus on different aspects (high-frequency texture vs. inter-class boundaries), and simple fusion introduces interference.
+4. **SD2 self-attention is superior to ViT foundational models**: SD2 attention tensors are more effective for constructing transition matrices.
+5. **Fewer denoising steps are better**: The encoding process avoids noise injection to ensure deterministic feature extraction.
+6. **$\tau=0.3$ is the optimal threshold**: Higher thresholds lead to premature degradation before logits reach the optimal state.
 
 ## Highlights & Insights
 
-- **Paradigm shift**: Moving from "optimize logits then construct segmentation map" to "directly obtain segmentation map from distributional discrepancies," eliminating the need for training and model-specific modulation.
-- **Theoretical elegance**: Connecting the segmentation problem to optimal transport and Markov processes provides dual geometric and probabilistic interpretations.
-- **Degenerate distribution as GT substitute**: The antipodal relationship between GT and degenerate distributions in feature space is cleverly exploited, obviating the need for GT at inference time.
-- **Triple freedom**: No GT annotations, no time-consuming training, and no model-specific modulation are required.
-- **Complementarity of optimal path vs. maximum velocity**: The former is sensitive to high-frequency textures; the latter to inter-class boundaries.
-- **Stable Diffusion as a feature extractor**: SD2 self-attention tensors are better suited for constructing inter-patch transition probabilities than those from CLIP or DINO.
+- **Paradigm Shift**: Moves from "optimizing logits then constructing maps" to "obtaining maps directly from distribution discrepancy," eliminating training and model-specific modulations.
+- **Theoretical Elegance**: Links segmentation to optimal transport and Markov processes, providing both geometric and probabilistic interpretations.
+- **Degenerate Distribution Proxy**: Leverages the antipodal relationship between GT and degenerate distributions in feature space, removing the need for GT during inference.
+- **Triple Freedom**: No GT annotations required, no time-consuming training, and no model-specific modulation needed.
+- **Complementarity of Routes**: Optimal path is sensitive to high-frequency textures, while maximum velocity is sensitive to inter-class boundaries.
+- **Stable Diffusion as Feature Extractor**: SD2 self-attention tensors are more suitable for building inter-patch transition probabilities than CLIP/DINO attention.
 
 ## Limitations & Future Work
 
-1. **Dependency on Stable Diffusion**: Loading the SD2 model for self-attention extraction adds memory and computational overhead at inference time.
-2. **Computational cost of Sinkhorn iterations**: 50 iterations of optimal transport computation may be slow for high-resolution images.
-3. **Manual tuning of $\tau$ and $\epsilon$**: Although experiments suggest relative robustness to these hyperparameters, empirical selection is still required.
-4. **Fusing the two modes fails to accumulate gains**: While this is an interesting finding, it also implies a missed potential performance ceiling.
-5. **Validation limited to semantic segmentation**: Applicability to more complex tasks such as panoptic and instance segmentation remains unexplored.
-6. **Limited theoretical guarantees for the degenerate distribution substitute**: Feasibility is empirically validated, but rigorous theoretical analysis is absent.
+1. **Dependence on Stable Diffusion**: Requires loading the SD2 model for self-attention extraction, increasing memory and computational overhead during inference.
+2. **Computational Cost of Sinkhorn Iterations**: 50 iterations of optimal transport may be slow for high-resolution images.
+3. **Manual Tuning for $\tau$ and $\epsilon$**: While relatively robust, these hyperparameters still require empirical setting.
+4. **Failure of Fusion**: Simple fusion of the two modes did not yield additive gains, representing a missed opportunity for higher performance.
+5. **Limited to Semantic Segmentation**: Applicability to more complex tasks like panoptic or instance segmentation is unexplored.
+6. **Theoretical Guarantees**: While experimentally verified, a rigorous theoretical analysis of the degenerate distribution proxy is lacking.
 
 ## Related Work & Insights
 
-- Contrasted with attention substitution methods such as ClearCLIP, SCLIP, and NACLIP — these remain within the logits optimization paradigm.
-- VFM proxy methods such as ProxyCLIP and CASS incorporate DINO features; this work innovatively introduces SD2 self-attention.
-- The application of optimal transport (Sinkhorn algorithm) to segmentation provides a geometric perspective on distributional discrepancy measurement.
-- Using Markov process convergence speed as a semantic measure is a novel contribution.
-- The model-agnostic nature of the method (not bound to a specific CLIP architecture) gives it potential to generalize to future vision-language models.
+- Contrasts with ClearCLIP, SCLIP, and NACLIP—which remain within the "logits optimization" paradigm.
+- Introduces SD2 self-attention, whereas ProxyCLIP and CASS introduce DINO features.
+- Application of Optimal Transport (Sinkhorn algorithm) provides a geometric perspective for measuring distribution discrepancy.
+- Using Markov chain convergence speed as a semantic metric is a novel approach.
+- The model-agnostic nature allows for potential generalization to future vision-language models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — The paradigm of bypassing logits optimization is original and convincing.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 8 benchmarks, two CLIP scales, detailed ablations and analyses.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical derivations are clear, though some notation is dense.
-- Value: ⭐⭐⭐⭐⭐ — New SOTA for training-free OVSS with a concise and generalizable methodology.
+- Novelty: ⭐⭐⭐⭐⭐ — The paradigm shift skipping logits optimization is unique and convincing.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 8 benchmarks, two CLIP scales, detailed ablation and analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear mathematical derivation, though symbols are dense in parts.
+- Value: ⭐⭐⭐⭐⭐ — New SOTA for training-free OVSS with a clean and generalizable logic.
 
 <!-- RELATED:START -->
 
@@ -168,11 +167,11 @@ The method is entirely **training-free**. No training or fine-tuning is involved
 
 ## Related Papers
 
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
-- [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 
 </div>
 

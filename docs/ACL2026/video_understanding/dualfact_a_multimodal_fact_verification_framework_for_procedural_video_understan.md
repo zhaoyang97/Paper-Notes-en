@@ -2,82 +2,80 @@
 title: >-
   [Paper Note] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding
 description: >-
-  [ACL 2026][Video Understanding][Procedural Video Captioning] The authors decompose the factual evaluation of procedural video captions (e.g., cooking…
+  [ACL 2026][Video Understanding][Hallucination/Saliency/Omission] Authors decompose the factual evaluation of procedural video captions (e.g., "cooking," "furniture assembly") into **dual-layer facts**: conceptual facts (abstract roles such as Action/Ingredient/Tool/Location) + contextual facts (observable predicate–argument relations in video, e.g., stir(soup, pot)). They construct
 tags:
-  - "ACL 2026"
-  - "Video Understanding"
-  - "Procedural Video Captioning"
-  - "Dual-Layer Facts"
-  - "Implicit Argument Completion"
-  - "Multimodal NLI"
-  - "Hallucination/Saliency/Omission"
+  - ACL 2026
+  - Video Understanding
+  - Hallucination/Saliency/Omission
 date: 2026-05-08
-content_hash: a1fd3b12d45f22cb
+content_hash: fb39b34157efbd8a
 ---
-
 # DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.25584](https://arxiv.org/abs/2604.25584)  
 **Code**: https://github.com/OguzCennet/DualFact (Available)  
 **Area**: Video Understanding / Fact Verification / Evaluation  
-**Keywords**: Procedural Video Captioning, Dual-Layer Facts, Implicit Argument Completion, Multimodal NLI, Hallucination/Saliency/Omission
+**Keywords**: Procedural Video Captioning, Dual-layer Facts, Implicit Argument Completion, Multimodal NLI, Hallucination/Saliency/Omission
 
 ## TL;DR
-The authors decompose the factual evaluation of procedural video captions (e.g., cooking, furniture making) into **dual-layer facts**: conceptual facts (abstract roles like Action/Ingredient/Tool/Location) and contextual facts (observable predicate–argument relations in video, e.g., stir(soup, pot)). They construct two benchmarks, YouCook3-Fact and CraftBench-Fact, which annotate Video-Implicit Arguments (VIA) and contrastive facts. They propose MultiFactScore, which uses multimodal/textual NLI to verify facts at the role level, further subdividing errors into Hallucination, Saliency, and Omission. Experiments reveal that SOTA MLLM captions are "fluent but factually incomplete"; evaluating captions in isolation overestimates Hallucinations by approximately half, and only video-grounded evaluation can distinguish between saliency and true hallucination.
+Authors decompose the factual evaluation of procedural video captions (e.g., "cooking," "furniture assembly") into **dual-layer facts**: conceptual facts (abstract roles such as Action/Ingredient/Tool/Location) + contextual facts (observable predicate–argument relations in video, e.g., stir(soup, pot)). They construct two benchmarks, YouCook3-Fact and CraftBench-Fact, which annotate Video Implicit Argument (VIA) completion and contrastive facts. The proposed MultiFactScore utilizes multimodal/textual NLI to verify facts at the role level, further categorizing errors into Hallucination / Saliency / Omission. Experiments reveal that SOTA MLLM captions are "fluent but factually incomplete"; evaluating captions in isolation overestimates Hallucination by approximately half, while only video-grounded evaluation can effectively distinguish saliency from true hallucination.
 
 ## Background & Motivation
 
-**Background**: Evaluation of procedural video captioning (cooking, woodworking, furniture assembly) primarily relies on two types of metrics: **lexical** (BLEU / ROUGE / METEOR / SPICE) and **vision–language** (CLIPScore / EMScore / PACScore / UniEval). A few fact-based evaluations (FaithScore / CapMAS / FactVC / FIFA) perform "atomic proposition extraction + verification."
+**Background**: Evaluation of procedural video captioning (cooking, woodworking, furniture assembly) primarily relies on two types of metrics: **lexical** (BLEU / ROUGE / METEOR / SPICE) and **vision–language** (CLIPScore / EMScore / PACScore / UniEval). A few fact-based metrics (FaithScore / CapMAS / FactVC / FIFA) utilize "atomic proposition extraction + verification."
 
-**Limitations of Prior Work**: (i) Lexical metrics only measure surface overlap—"add salt to bowl" vs. "add salt to pot" yields a high BLEU but incorrect roles; (ii) embedding metrics look at global similarity and fail to capture predicate–argument structures; (iii) existing fact-based evaluations flatten facts into untyped propositions, failing to distinguish "missing ingredient" vs. "missing tool" vs. "swapped action roles," and cannot handle "implicit arguments" (e.g., the "it" in "stir it" is visible but unstated) unique to procedural videos.
+**Limitations of Prior Work**: (i) Lexical metrics only measure surface overlap; e.g., "add salt to bowl" vs. "add salt to pot" yields high BLEU despite role errors. (ii) Embedding metrics compute global similarity and fail to capture predicate–argument structures. (iii) Existing fact-based evaluations flatten facts into untyped propositions, failing to distinguish between "missing ingredient" vs. "missing tool" vs. "role swap," and cannot handle "implicit arguments" (e.g., "it" in "stir it" is visually grounded but linguistically unstated) unique to procedural videos.
 
-**Key Challenge**: The "facts" of procedural videos are inherently **dual-layered**: one layer involves abstract task semantics (what step is being done, what roles are needed), and the other involves grounded predicate–argument structures (what is actually executed in the video). Mixing them in evaluation makes it impossible to locate the source of error or distinguish "fluent but missing key entities" from "complete hallucination."
+**Key Challenge**: Facts in procedural videos are essentially **dual-layered**: abstract task semantics (what is being done, what roles are needed) and grounded predicate–argument structures (how it is actually executed in the video). Conflating these prevents precise error localization and the differentiation between "fluent but missing key entities" and "complete hallucinations."
 
-**Goal**: (i) Define a role-aware, interpretable factual evaluation framework for procedural video captions; (ii) explicitly model implicit arguments; (iii) decompose errors into Hallucination, Saliency, and Omission, using video grounding to distinguish "visible but task-irrelevant (saliency)" from "completely absent (hallucination)."
+**Goal**: (i) Define a role-aware, interpretable factual evaluation framework for procedural video captioning. (ii) Explicitly model implicit arguments. (iii) Decompose errors into Hallucination / Saliency / Omission, distinguishing "visually present but task-irrelevant (saliency)" from "completely absent (hallucination)" via video grounding.
 
-**Key Insight**: Borrowing the conceptual–contextual dichotomy from semantics—the former standardizes paraphrases like "cut / slice / chop"; the latter preserves the actual predicate–arguments observed in the video. By decoupling the two layers, error types can be refined to the role level.
+**Key Insight**: Drawing from semantics, the authors propose a conceptual–contextual dichotomy: the former standardizes paraphrases like "cut / slice / chop"; the latter preserves the actual predicate–argument relations seen in the video. Separating these layers allows for fine-grained error analysis at the role level.
 
-**Core Idea**: Dual-layer fact representation + Video-Implicit Argument (VIA) completion + contrastive negative facts + multimodal NLI verification + three-tier error decomposition.
+**Core Idea**: Dual-layer fact representation + Video Implicit Argument (VIA) completion + contrastive negative facts + multimodal NLI verification + three-way error decomposition.
 
 ## Method
 
 ### Overall Architecture
-The MultiFactScore pipeline of DualFact consists of four stages:
+DualFact addresses how to objectively judge the factual accuracy of procedural video captions. The MultiFactScore evaluation pipeline consists of four sequential steps: First, dataset construction (re-segmenting YouCook2 into atomic clauses, completing implicit arguments, annotating dual-layer facts, and generating contrastive negatives; plus creating CraftBench for woodworking/metalworking). Second, using LLaMA-3.3-70B-Instruct to extract predicted facts $\mathcal{F}_p = \text{LLM}_{\text{extract}}(\hat{C}; \Phi)$ from the test caption $\hat{C}$. Third, an NLI verifier determines SUPPORTED/REFUTED status per role. Finally, PaliGemma2-10B determines visual grounding $G(f_i)$ for each fact; based on the grounding $\times$ verifier labels, errors are categorized into Hallucination/Saliency/Omission, forming the caption-level $\text{MultiFactScore} = |\{f_i \in F : \hat{y}_i = \text{SUPPORTED}\}| / |F|$. The core design utilizes dual-layer facts and visual grounding to distinguish error sources.
 
-1.  **Dataset Construction**: Re-segment YouCook2 into atomic clauses, complete implicit arguments (VIA: completing "stir it" to "stir the soup with a spoon in the pot"), manually annotate conceptual facts $\mathcal{F}^{con}$ and contextual facts $\mathcal{F}^{ctx}$, and automatically generate contrastive negative facts $\mathcal{F}_g^-$ (replacing tool/object while maintaining syntax). Simultaneously, CraftBench is built to cover furniture, woodworking, and metalworking.
-2.  **Fact Generation**: Use LLaMA-3.3-70B-Instruct to extract predicted facts $\mathcal{F}_p = \text{LLM}_{\text{extract}}(\hat{C}; \Phi)$ from the model-generated caption $\hat{C}$, and use the same LLM to transform $\mathcal{F}_g^+$ into $\mathcal{F}_g^-$ (few-shot prompting to preserve structure while changing values).
-3.  **NLI Verification**: Train a multimodal NLI model $\mathcal{M}_{nli}(V, f_i) \to \{\text{SUPPORTED}, \text{REFUTED}\}$, where positive labels are supported and negative labels are refuted; textual NLI is not trained but prompted using a pre-trained LLM.
-4.  **Error Decomposition + Caption-level Scoring**: Use PaliGemma2-10B to judge if a fact is visually grounded $G(f_i)$, then categorize errors into Hallucination, Saliency, or Omission based on a grounding × verifier label matrix; the caption-level score is $\text{MultiFactScore} = |\{f_i \in F : \hat{y}_i = \text{SUPPORTED}\}| / |F|$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Dual-Layer Fact Representation<br/>conceptual roles + contextual predicate-argument"] --> B["Implicit Argument Completion (VIA)<br/>+ Contrastive Negatives → Gold Facts"]
+    Cap["Predicted Caption Ĉ"] --> EX["LLaMA-3.3-70B Extraction<br/>Predicted Facts"]
+    B --> NLI["Multimodal / Textual NLI Verification<br/>Per-role SUPPORTED / REFUTED"]
+    EX --> NLI
+    NLI --> ERR["3-way Error Decomposition + Visual Grounding<br/>Hallucination / Saliency / Omission"]
+    ERR --> MFS["MultiFactScore<br/>Proportion of Supported Facts → Caption Score"]
+```
 
 ### Key Designs
 
-1.  **Dual-Layer Fact Representation (conceptual + contextual)**:
-    -   **Function**: Splits the facts of each instructional step into two independently verifiable sets.
-    -   **Mechanism**: **Conceptual facts** $\mathcal{F}^{con}$ are abstract role–value assignments (e.g., Action=cut / Ingredient=tomato / Tool=knife / Location=board), ignoring literal paraphrases (standardizing "cut/slice/chop" as Action=cut). **Contextual facts** $\mathcal{F}^{ctx}$ are predicate–argument relationships, such as cut(tomato, board) or stir(mixture, bowl), requiring entities to appear in the correct semantic roles. A caption may be conceptually correct but contextually wrong (e.g., "pour water into flour" vs. "pour flour into water" have correct conceptual roles but inverted contextual arguments).
-    -   **Design Motivation**: Procedural captions have high surface variation (cut/slice) but stable underlying structures. De-coupling the layers allows precise diagnosis of whether an error is in "role type," "role content," or "argument order," providing finer signals than flat facts.
+**1. Dual-Layer Fact Representation: Separating "Semantics" and "Execution"**
 
-2.  **Implicit Argument Completion (VIA) + Contrastive Negative Fact Construction**:
-    -   **Function**: Completes omitted parameters like "stir it" to "stir the soup with a spoon in the pot" and generates semantically opposite but syntactically aligned negative variants for each positive fact.
-    -   **Mechanism**: VIA involves annotators filling in missing parameters (patient/tool/location) based on the video, producing YouCook3-VIA / CraftBench-VIA variants (over 7K implicit arguments annotated). Negative facts are created via few-shot LLMs by replacing tool/object/location with plausible alternatives (e.g., "add salt to bowl" → "add pepper to bowl") to challenge the NLI model.
-    -   **Design Motivation**: Many procedural instructions contain implicit arguments; without completion, evaluation confuses "omission" with "hallucination." Negative samples must be "plausible but wrong" to truly test the NLI model rather than providing trivial counter-examples.
+Existing fact-based evaluations treat facts as flat propositions, unable to distinguish between a "missing ingredient" and a "mismatched tool." DualFact splits instruction facts into two layers: **Conceptual facts** $\mathcal{F}^{con}$ are abstract role–value assignments (e.g., Action=cut / Ingredient=tomato / Tool=knife) that ignore surface paraphrasing. **Contextual facts** $\mathcal{F}^{ctx}$ preserve predicate–argument relationships (e.g., cut(tomato, board)), requiring entities to appear in the correct semantic roles. This allows for cases where conceptual roles are correct but contextual relationships are wrong (e.g., "pour water into flour" vs. "pour flour into water"), providing diagnostic signals for role types, content, and argument order.
 
-3.  **Hallucination / Saliency / Omission Error Decomposition + Multi-source Grounding**:
-    -   **Function**: Refines "caption error" into three categories and uses visual grounding to distinguish between "caption-only misjudgment" and "actual error."
-    -   **Mechanism**: Defines $G(f_i) \in \{0,1\}$ to indicate if a fact is visually grounded (judged by PaliGemma2). **Hallucination** = $\neg G(f_i) \land f_i \in \mathcal{F}^R$ (absent from video + refuted by verifier); **Saliency** = $G(f_i) \land f_i \in \mathcal{F}^R$ (present in video but not part of gold facts); **Omission** = $e_i \in \mathcal{F}_g^+ \land e_i \notin \mathcal{F}_p$ (required by gold but missing from caption). Three eval modes are introduced: cap-only, text-grounded, and mm-grounded.
-    -   **Design Motivation**: Evaluating captions in isolation classifies selecting an irrelevant object from the video as hallucination (when it is actually saliency); grounding is necessary to distinguish these, which is essential for MLLM failure analysis.
+**2. VIA Completion + Contrastive Negative Fact Construction: Distinguishing Omission from Hallucination**
+
+Procedural instructions are rife with implicit arguments; if not completed, evaluations might misclassify "omitted" info as "hallucinated." VIA labels (Video Implicit Arguments) fill in missing parameters based on visual evidence (e.g., "stir it" → "stir the soup with a spoon in the pot"), yielding YouCook3-VIA and CraftBench-VIA variants with 7K+ annotated arguments. Negative samples are generated by substitution (e.g., "add salt" → "add pepper") using few-shot LLMs while maintaining syntax, ensuring that NLI verifiers are tested on plausible but incorrect facts rather than trivial ones.
+
+**3. Three-way Error Decomposition + Visual Grounding: Resolving "True Errors" vs. "Other Visuals"**
+
+Caption-only evaluation often mislabels task-irrelevant visual entities as hallucinations. DualFact introduces $G(f_i) \in \{0,1\}$ representing whether a fact is visually grounded in the video (via PaliGemma2), leading to three error categories: **Hallucination** $= \neg G(f_i) \land f_i \in \mathcal{F}^R$ (absent from video and refuted by verifier); **Saliency** $= G(f_i) \land f_i \in \mathcal{F}^R$ (present in video but not in gold facts); and **Omission** $= e_i \in \mathcal{F}_g^+ \land e_i \notin \mathcal{F}_p$ (required by gold but missing from caption). Three eval modes (cap-only, text-grounded, mm-grounded) incrementally add visual information. Data shows that for ingredients, Hallucination drops from 34.57% (cap-only) to 16.89% once grounding is introduced, proving that isolation evaluations systematically overestimate hallucination.
 
 ### Loss & Training
--   **NLI Training**: Multimodal NLI is trained on $(V, f_i)$ pairs (SUPPORTED / REFUTED); textual NLI uses zero-shot/few-shot prompts.
--   **Fact Extractor**: LLaMA-3.3-70B-Instruct (Unsloth interface) with few-shot prompts.
--   **Grounding**: PaliGemma2-10B-PT-448 for visual grounding judgment.
--   **Per-Video Accuracy**: $$\text{Acc}(v) = \frac{1}{|T(v)|}\sum_{t \in T(v)}(\frac{1}{|t|}\sum_{i \in t} \mathbb{I}[\hat{y}_i = y_i])$$, averaging within and then across roles.
--   **MultiFactScore**: At the caption level, $$\text{MultiFactScore} = |\{f_i \in F : \hat{y}_i = \text{SUPPORTED}\}| / |F|$$.
+- **NLI Training**: Multimodal NLI is trained on $(V, f_i)$ pairs (SUPPORTED vs. REFUTED); textual NLI uses zero/few-shot prompts with pretrained LLMs.
+- **Fact Extractor**: LLaMA-3.3-70B-Instruct (Unsloth interface) with few-shot prompts.
+- **Grounding**: PaliGemma2-10B-PT-448 for visual grounding judgment.
+- **Per-Video Accuracy**: $\text{Acc}(v) = \frac{1}{|T(v)|}\sum_{t \in T(v)}(\frac{1}{|t|}\sum_{i \in t} \mathbb{I}[\hat{y}_i = y_i])$, averaged within and across roles.
+- **MultiFactScore**: Caption-level score defined as $\text{MultiFactScore} = |\{f_i \in F : \hat{y}_i = \text{SUPPORTED}\}| / |F|$.
 
 ## Key Experimental Results
 
 ### Main Results
-NLI verification accuracy on Qwen2.5-VL captions for YouCook3-Fact:
+NLI verification accuracy on Qwen2.5-VL captions for YouCook3-Fact (Tab.6):
 
 | Mode | Input | Action | Object | Location | Tool | Avg (Concept) |
 |------|------|--------|--------|----------|------|----------------|
@@ -91,74 +89,55 @@ NLI verification accuracy on Qwen2.5-VL captions for YouCook3-Fact:
 | Multimodal | $\mathcal{F}_g, V$ | 78.68 | 83.43 | 80.35 | 82.67 | 77.80 | 79.89 |
 | Textual | $\mathcal{F}_p, C$ | 16.72 | 20.52 | 19.76 | 29.21 | 21.92 | **21.23** |
 
-> Qwen2.5-VL captions retain only **39.47%** conceptual accuracy and **21.23%** contextual accuracy relative to gold facts, indicating MLLM captions frequently miss key roles.
+> Qwen2.5-VL captions achieve only **39.47%** conceptual accuracy and **21.23%** contextual accuracy relative to gold facts, indicating that MLLM captions frequently miss critical roles.
 
 ### Ablation Study
-Error Decomposition:
+Error Decomposition (Tab.7 YouCook3-Fact):
 
 | Fact Type | Eval Mode | Omission | Hallucination | Saliency |
 |-----------|-----------|----------|---------------|----------|
 | Ingredient | cap-only | 65.43 | 34.57 | – |
 | Ingredient | cap-grounded | 65.43 | **16.89 (−17.68)** | 17.68 |
+| Ingredient | mm-grounded | – | 100.0 | 0.0 |
 | Tool | cap-only | 49.80 | 50.20 | – |
+| Tool | text-grounded | 53.83 | 37.85 | 8.31 |
 | Location | cap-only | 40.03 | 59.97 | – |
+| Location | text-grounded | 44.72 | 54.17 | 1.11 |
 
-> "Cap-only" modes treat any gold inconsistency as hallucination; incorporating visual grounding nearly halves ingredient hallucinations (17% shifts to saliency). However, action errors remain 100% hallucinations even under mm-grounded evaluation, indicating deeper semantic failures.
+> "Cap-only" modes categorize any gold inconsistency as hallucination; introducing visual grounding halves ingredient hallucinations. However, action errors remain 100% hallucinations under mm-grounded evaluation, indicating deeper failures in action semantics.
 
 ### Key Findings
--   **MLLM captions are "fluent but factually incomplete"**: Contextual fact accuracy (~21%) is far lower than verifier performance on gold facts (~94%), proving the issue lies in the captions, not the verifier.
--   **Cap-only evaluation overestimates hallucinations by ~half**: Only grounding allows distinguishing between "hallucination" vs. "incorrectly selecting another visible object."
--   **Different failure modes for Conceptual and Contextual errors**: Conceptual errors are usually "missing entities," while contextual errors are often "argument swaps." Action errors are the hardest, remaining true hallucinations under mm-grounding.
--   **Model–model consistency bias**: Verifying model-generated facts results in higher accuracy than verifying gold facts (88.07 → 93.41), warning of systematic biases in LLM-as-judge setups.
--   **Caption-based conceptual facts correlate highest with human judgment**: Spearman ρ = 0.429 (vs. CIDEr 0.140), validating the dual-layer design.
+- **MLLM captions are "fluent but factually incomplete"**: Qwen2.5-VL accuracy on contextual facts is only ~21%, significantly lower than its verifier performance on gold facts (~94%), suggesting the captioner is the bottleneck.
+- **Cap-only evaluation overestimates hallucination**: Distinguishing "hallucination" from "saliency" is impossible without grounding. Human evaluation confirms that caption-based metrics incorrectly penalize 78% of contextual facts, whereas video-based evaluation drops this to 21%.
+- **Different failure modes for Conceptual and Contextual facts**: Conceptual errors involve missing entities or type errors; contextual errors involve argument swaps or role mismatches.
+- **Model–model consistency bias**: Verifiers are 5–10% more accurate when checking captions derived from the same or similar models compared to gold facts, warning against biases in LLM-as-judge frameworks.
+- **Highest human correlation with caption-based conceptual facts**: Tab.11 shows Spearman $\rho=0.429$ (vs. CIDEr 0.140), proving the dual-layer design reflects human judgment.
+- **Ceiling effect in video verification**: Video-based automated scores show high absolute values but low variance, leading to lower rank correlation compared to caption-based metrics.
 
 ## Highlights & Insights
--   The **Conceptual vs. Contextual dichotomy** is the primary conceptual contribution, applicable to any procedural task evaluation.
--   **VIA (Implicit Argument Completion)** serves as a systematic labeling resource for 7K+ implicit arguments, reusable by the community.
--   The **Hallucination / Saliency / Omission decomposition** serves as a best practice for fact-based metrics.
--   Empirical warning of **model–model consistency bias**, showing inflated accuracy when the verifier and captioner are from the same family.
+- **Conceptual vs. Contextual Dichotomy**: This is a major conceptual contribution applicable to all procedural task evaluations (cooking, crafting, surgery), providing a universal perspective on task semantics vs. execution.
+- **VIA as an Independent Resource**: Systematic treatment of implicit parameters is missing in previous datasets; the 7K+ annotated arguments provide a reusable asset.
+- **Fine-grained Error Decomposition**: Any fact-based metric should ideally report Hallucination, Saliency, and Omission separately rather than as a single aggregate score.
+- **Empirical Warning on Consistency Bias**: When the verifier and captioner are related, accuracy metrics are inflated, a critical insight for current LLM-as-judge research.
 
 ## Limitations & Future Work
--   **Domain coverage**: limited to cooking and furniture crafting; lacks verification in surgical or industrial assembly scenes.
--   **Pipeline dependency**: Relies on fact extraction accuracy (LLaMA-3.3-70B), which may introduce systematic bias.
--   **Missing attributes**: Size, color, and spatial relationships (critical for "quality" such as cut thickness) are not modeled.
--   **Grounding degradation**: PaliGemma2 grounding accuracy drops under occlusion or fine-grained spatial relations.
+- **Domain Coverage**: Limited to cooking and furniture crafting; generalizability to surgery, scientific labs, or industrial assembly remains untested.
+- **Pipeline Dependency**: Reliability depends on the fact extraction accuracy of LLaMA-3.3-70B.
+- **Attribute Modeling**: Currently ignores size, color, or spatial attributes, which are critical "quality" facts in procedural tasks (e.g., thickness of a slice).
+- **Grounding Decay**: PaliGemma2 performance degrades in complex scenes with occlusions or fine-grained spatial relations.
+- **Future Directions**: Extending the dual-layer model to attributes; mitigating the ceiling effect through hard-negative mining; and utilizing stronger spatial grounding models like Florence-2.
 
 ## Related Work & Insights
--   **vs. FaithScore / CapMAS / FactVC / FIFA**: These use flat untyped propositions; DualFact's dual-layer role-aware tags allow locating specific errors (e.g., tool mismatch).
--   **vs. CLIPScore / EMScore / PACScore / UniEval**: Embedding-based metrics are insensitive to role swaps ("water into flour" vs. "flour into water"), which DualFact handles via predicate–argument structures.
--   **Insight**: Dual-layer fact representation can be transferred to any role-based narrative evaluation, such as medical summaries (symptom/treatment) or legal fact summaries.
+- **vs. FaithScore / CapMAS / FactVC / FIFA**: Unlike these flat untyped proposition metrics, DualFact uses role-aware labels to locate specific errors like "tool mismatch."
+- **vs. CLIPScore / EMScore / PACScore / UniEval**: These global similarity metrics fail on role swaps (e.g., "water into flour" vs. "flour into water"), which DualFact handles explicitly.
+- **vs. Lexical Metrics**: CIDEr correlation with human judgment is low ($\rho=0.14$) compared to DualFact-Caption-Con ($\rho=0.43$).
+- **Insight**: The dual-layer fact representation is transferable to any role-based narrative evaluation, such as medical summaries (symptom/treatment), legal facts (party/action), or scientific protocols (reagent/instrument).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of dual-layer facts, VIA, and three-tier error decomposition is a clear innovation in evaluation methodology.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage across two datasets, NLI modes, human evaluation, and baseline correlations.
-- Writing Quality: ⭐⭐⭐⭐ The error taxonomy and organization are clear and intuitive.
-- Value: ⭐⭐⭐⭐ Provides a role-aware, interpretable framework and high-quality datasets for procedural video evaluation.
-
-```mermaid
-graph TD
-    A[Video Caption] --> B{Fact Extraction}
-    B --> C[Conceptual Facts]
-    B --> D[Contextual Facts]
-    C --> E[Multimodal NLI Verifier]
-    D --> E
-    E --> F{Visual Grounding}
-    F --> G[Hallucination]
-    F --> H[Saliency]
-    B -.-> I[Omission]
-```
-
-## Related Papers
-
-- [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
-- [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
-- [\[AAAI 2026\] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](../../AAAI2026/video_understanding/emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)
-- [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](../../AAAI2026/video_understanding/beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
-- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](../../AAAI2026/video_understanding/state-space_hierarchical_compression_with_gated_attention_an.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐ The "Conceptual + Contextual dual-layer + VIA + 3-way error decomposition" is a clean and innovative combination, especially the explicit modeling of saliency.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across two datasets, multimodal vs. textual NLI comparison, and human correlation; however, testing on more captioning models would be beneficial.
+- Writing Quality: ⭐⭐⭐⭐ Error taxonomy and formulas are organized logically and clearly.
+- Value: ⭐⭐⭐⭐ Provides an interpretable, role-aware framework and high-quality datasets for the procedural video community.
 
 <!-- RELATED:START -->
 
@@ -167,10 +146,10 @@ graph TD
 ## Related Papers
 
 - [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
+- [\[CVPR 2026\] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](../../CVPR2026/video_understanding/darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)
+- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](../../CVPR2026/video_understanding/videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
 - [\[AAAI 2026\] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](../../AAAI2026/video_understanding/emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)
-- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](../../AAAI2026/video_understanding/state-space_hierarchical_compression_with_gated_attention_an.md)
-- [\[ACL 2026\] CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering](craft_critic-refined_adaptive_key-frame_targeting_for_multimodal_video_question_.md)
 
 </div>
 

@@ -2,72 +2,86 @@
 title: >-
   [Paper Note] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 description: >-
-  [CVPR 2026][Video Understanding][mistake attribution] This paper introduces the Mistake Attribution (MATT) task, which attributes action mistakes in egocentric videos along three dimensions: semantic (which component of…
+  [CVPR 2026][Video Understanding][Paper Note] This paper proposes the Mistake Attribution (MATT) task, which attributes execution errors in egocentric videos to three dimensions: semantic (which instruction component was violated), temporal (which frame contains the Point of No Return, PNR), and spatial (where the error region is in the PNR frame). Through the Mis
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "mistake attribution"
-  - "egocentric video"
-  - "semantic role labeling"
-  - "spatiotemporal localization"
-  - "instruction alignment"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 7f05b6051f613461
+content_hash: 4cf8bd44cfe2911c
 ---
-
 # Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.20525](https://arxiv.org/abs/2511.20525)  
 **Code**: [https://yayuanli.github.io/MATT](https://yayuanli.github.io/MATT)  
-**Area**: Video Understanding
-**Keywords**: mistake attribution, egocentric video, semantic role labeling, spatiotemporal localization, instruction alignment
+**Area**: Video Understanding  
+**Keywords**: Mistake Attribution, Egocentric Video, Semantic Role Labeling, Spatio-Temporal Localization, Instruction Alignment
 
 ## TL;DR
 
-This paper introduces the Mistake Attribution (MATT) task, which attributes action mistakes in egocentric videos along three dimensions: semantic (which component of the instruction was violated), temporal (at which frame the point of no return, PNR, occurs), and spatial (which region in the PNR frame contains the error). A data engine called MisEngine automatically constructs large-scale mistake samples from existing action datasets, and a unified Transformer model, MisFormer, simultaneously addresses all three attribution sub-tasks, surpassing task-specific SOTA methods across multiple benchmarks.
+This paper proposes the Mistake Attribution (MATT) task, which attributes execution errors in egocentric videos to three dimensions: semantic (which instruction component was violated), temporal (which frame contains the Point of No Return, PNR), and spatial (where the error region is in the PNR frame). Through the MisEngine data engine, large-scale mistake samples are automatically constructed from existing action datasets. A unified Transformer model, MisFormer, is designed to simultaneously complete three attribution sub-tasks, outperforming specialized SOTA methods across multiple benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: AI-assisted systems in physical environments (e.g., cooking guidance, assembly instruction) need to understand mistakes made by humans during instruction execution. Existing methods focus primarily on mistake detection—determining whether a step is erroneous—or provide coarse-grained error categories such as "missing step" or "action deviation."
-2. **Limitations of Prior Work**: Coarse-grained detection fails to inform users *which part of the instruction was not correctly executed* (semantic dimension), *when the mistake became irreversible* (temporal dimension), and *which spatial region in the PNR frame contains the error* (spatial dimension). For instance, if the instruction is "pick up the hammer" but the user picks up a bolt, existing methods can only report "an error occurred," without identifying that the *object* role is wrong, the error manifests at frame 17, or the erroneous region is the bolt within a bounding box.
-3. **Key Challenge**: Constructing fine-grained mistake datasets is extremely difficult—genuine mistakes become increasingly rare as annotators gain experience, while artificially injected mistakes introduce visual bias. Existing mistake datasets (EgoPER: 599 samples; Assembly101: 707 samples) are two orders of magnitude smaller than general action recognition datasets.
-4. **Goal**: (a) How to automatically construct large-scale mistake datasets with semantic–temporal–spatial triplet annotations; (b) how to address all three attribution tasks within a single unified model.
-5. **Key Insight**: Semantic Role Labeling (SRL) is applied to parse action descriptions into structured role groups, followed by cross-matching across samples in existing action recognition datasets. An instruction text such as "pick up the sieve" is paired with a video of "pick up the pan," automatically generating semantic attribution labels while inheriting PNR timestamps and hand/object spatial annotations from the original datasets.
-6. **Core Idea**: Automatically construct mistake samples from large-scale action corpora via semantic role cross-matching, and perform joint semantic–temporal–spatial attribution with a unified Transformer.
+1. **Background**: AI-assisted systems in physical environments (e.g., cooking or assembly guidance) must understand human errors during instruction execution. Existing methods primarily focus on error detection—judging if a step is wrong—or provide coarse-grained error categories (e.g., "step omitted" or "action deviation").
+2. **Limitations of Prior Work**: Coarse-grained detection fails to inform the user "which part of the instruction was not correctly executed" (semantic), "when the error became irreversible" (temporal), and "specifically where the error appears in the PNR frame" (spatial). For example, if the instruction is "pick up the hammer" but the user picks up a bolt, existing methods only report an "error" without identifying the "object" role failure, identifying frame 17, or highlighting the bolt in the PNR frame.
+3. **Key Challenge**: Constructing fine-grained error datasets is extremely difficult. Real-world errors become rare as collectors gain experience, while manually injected errors introduce visual biases. Existing error datasets (e.g., EgoPER with 599 samples, Assembly101 with 707 samples) are two orders of magnitude smaller than general action datasets.
+4. **Goal**: (a) How to automatically construct large-scale error datasets with semantic-temporal-spatial triplet annotations; (b) How to use a unified model to perform three attribution tasks simultaneously.
+5. **Key Insight**: Leverage Semantic Role Labeling (SRL) to structure action descriptions and perform cross-matching within existing action recognition datasets. By pairing the instruction text "pick up the sieve" with a video of "pick up the pan," semantic attribution labels are automatically generated while inheriting the original PNR timestamps and hand/object spatial annotations.
+6. **Core Idea**: Automatically construct error samples from large-scale action corpora via semantic role cross-matching, and utilize a unified Transformer for simultaneous 3D attribution across semantic, temporal, and spatial dimensions.
 
 ## Method
 
 ### Overall Architecture
 
-The input consists of an instruction text $T$ (e.g., "cut the apple") and a user execution video $V$. The output is a triplet: (1) error labels $\{y_r\}$ for each semantic role, (2) PNR frame timestamp $t_{PNR}$, and (3) an error region bounding box $B_{t_{PNR}}$ in the PNR frame. The system comprises two main components: the MisEngine data engine for automatic training data construction, and the MisFormer model for attribution inference.
+The objective is to refine the vague judgment of "did the user follow the instruction correctly" into three interpretable questions: Which component of the instruction failed (semantic), from which frame did the error become irreversible (temporal), and where exactly did the error occur in that frame (spatial). Given an instruction text $T$ (e.g., "cut the apple") and a execution video $V$, the model outputs three components: binary labels for each semantic role $\{y_r\}$, the Point of No Return (PNR) frame timestamp $t_{PNR}$, and the bounding box of the error region $B_{t_{PNR}}$.
+
+The system consists of two parts. The first is the MisEngine data engine, which bypasses the difficulty of collecting fine-grained error data by synthesizing error samples from existing action recognition data. The second is the MisFormer model, which processes this data using a unified Transformer to solve the three attribution sub-tasks on a shared set of multi-modal features.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph ENG["MisEngine Data Engine (Synthesizing Mistakes from Correct Samples)"]
+        direction TB
+        A["Action Description + Video<br/>Original PNR Frame / Hand-Obj Box"] --> B["SRL Role Parsing<br/>Predicate + Object"]
+        B --> C["Cross-matching per Role<br/>Enumerate Mismatch Categories"]
+        C --> D["Sample Mismatched Samples<br/>Inherit Semantic/Temporal/Spatial Labels"]
+    end
+    D --> E["Instruction Text T + Execution Video V"]
+    subgraph FORM["MisFormer Model"]
+        direction TB
+        E --> F["Feature Extraction & Projection<br/>Per-role Text Encoding + Video Encoding → Projection Block P"]
+        F --> G["Semantic Head<br/>Binary Classification per Role"]
+        G -->|At least one role error · Semantic Gating| H["Temporal Head<br/>Per-frame distribution argmax for PNR"]
+        G -->|At least one role error · Semantic Gating| I["Spatial Head<br/>PNR Attention → Saliency Map → Regress Bbox"]
+    end
+    H --> J["3D Attribution Output<br/>Semantic Role / PNR Frame / Error Region Box"]
+    I --> J
+```
 
 ### Key Designs
 
-1. **MisEngine Data Engine**:
+**1. MisEngine: Synthesizing Mistakes instead of Collecting Them**
 
-    - **Function**: Automatically constructs training samples with three-dimensional attribution annotations from existing action recognition datasets.
-    - **Mechanism**: A three-step pipeline — (1) AllenNLP SRL parses each action description into semantic role groups (e.g., predicate "Pick up," object "the sieve"); (2) cross-sample comparison identifies role-level mismatches between pairs of action descriptions, yielding $C=|\mathcal{R}|^2$ mismatch categories (wrong predicate, wrong object, both wrong, both correct); (3) action descriptions and their corresponding videos are sampled from each mismatch category as erroneous attempts. Semantic labels are derived directly from cross-matching; temporal labels inherit PNR frame annotations; spatial labels inherit hand/object bounding boxes from the original datasets. This process yields 257K samples from Ego4D and 221K from EPIC-KITCHENS, surpassing the largest existing mistake dataset by two orders of magnitude.
-    - **Design Motivation**: Circumvents the scarcity of genuine mistakes and the visual bias introduced by injected errors by reformulating mistake construction as a combinatorial problem over existing data.
+Real mistakes are naturally scarce—experts make fewer mistakes, and manually injecting errors introduces visual bias. MisEngine transforms "mistake creation" into a combinatorial problem. Since correct action descriptions already include videos, PNR frames, and hand-object boxes, deliberately mismatching an "instruction text" with a "video of a different action" naturally yields an error sample with complete ground truth.
 
-2. **MisFormer Feature Extraction and Projection**:
+The process involves three steps. First, AllenNLP's SRL parses each action description into roles, such as splitting "Pick up the sieve" into the predicate "Pick up" and the object "the sieve". Second, roles are compared between pairs of samples to enumerate $C=|\mathcal{R}|^2$ mismatch categories (wrong predicate, wrong object, both wrong, both correct). Third, mismatched instruction-video pairs are sampled as "erroneous attempts." Semantic labels are provided by cross-matching (which role was mismatched), while temporal and spatial labels are inherited from the original video's PNR and bounding box metadata. This yielded 257K and 221K samples from Ego4D and EPIC-KITCHENS respectively.
 
-    - **Function**: Extracts shared multimodal features from video and text.
-    - **Mechanism**: InternVideo2's text encoder separately encodes each semantic role substring to obtain $F_R^T \in \mathbb{R}^{|\mathcal{R}| \times d}$, while the video encoder extracts $F^V \in \mathbb{R}^{L \times K \times d}$. A projection block $\mathcal{P}$ (2-layer Transformer decoder, no causal masking) first applies self-attention over role text features to exchange inter-role information, then cross-attention over video features to inject visual context, producing projected features $F_R^{T'} \in \mathbb{R}^{|\mathcal{R}| \times d}$.
-    - **Design Motivation**: InternVideo2 pretraining aligns text and video features in a shared embedding space; the projection block further adapts these representations for the mistake understanding task.
+**2. MisFormer Feature Extraction & Projection: Context-Aware Role Embeddings**
 
-3. **Three Attribution Heads (Semantic / Temporal / Spatial)**:
+Semantic attribution requires role-level granularity rather than a single sentence-level vector. MisFormer uses the InternVideo2 text encoder to encode each semantic role substring separately, yielding $F_R^T \in \mathbb{R}^{|\mathcal{R}| \times d}$; the video side uses the corresponding video encoder to extract $F^V \in \mathbb{R}^{L \times K \times d}$.
 
-    - **Function**: Respectively output semantic role error labels, PNR frame localization, and error region bounding boxes.
-    - **Mechanism**:
-        - **Semantic head**: Each role's projected feature $F_r^{T'}$ is passed through an FFN + sigmoid for binary classification of whether the role is erroneous; trained with BCE loss.
-        - **Temporal head**: Frame-level video features $F^V$ are aggregated via 2-layer self-attention into $F^{V'} \in \mathbb{R}^{L \times d}$; a 2-layer Transformer decoder (with $F^{V'}$ as query and $F_R^{T'}$ as key/value) generates per-frame probability distributions; the argmax identifies the PNR frame; trained with cross-entropy loss.
-        - **Spatial head**: Cross-attention weights from the final layer of the projection block corresponding to the PNR frame are extracted and concatenated with projected text features; two self-attention layers generate a spatial saliency map, which is upsampled and concatenated with the PNR frame RGB to form a 4-channel input; a lightweight CNN regresses bounding box coordinates; trained with Huber loss.
-    - **Design Motivation**: At inference time, the temporal and spatial heads are activated via a gating mechanism only when the semantic head detects at least one erroneous role, reducing unnecessary computation.
+The Projection block $\mathcal{P}$ (a 2-layer Transformer decoder without causal masks) adapts features for mistake understanding. It performs self-attention on role features to exchange information (e.g., checking the "object" relative to the "predicate") and cross-attention with video features to inject visual context into each role, resulting in $F_R^{T'} \in \mathbb{R}^{|\mathcal{R}| \times d}$. This ensures role representations have "seen" the video to capture subtle instruction-execution deviations.
+
+**3. Multi-Head Architecture with Semantic Gating**
+
+Three lightweight heads share the projection features. The **Semantic Head** uses an FFN with sigmoid for binary classification on each role's feature $F_r^{T'}$, trained with BCE loss. The **Temporal Head** downsamples video features $F^V$ to $F^{V'} \in \mathbb{R}^{L \times d}$ via 2-layer self-attention, then uses a 2-layer Transformer decoder (with $F^{V'}$ as query and $F_R^{T'}$ as key/value) to compute a per-frame distribution. The argmax yields the PNR frame, trained with cross-entropy loss. The **Spatial Head** reuses cross-attention weights from the PNR frame in the projection block, generates a saliency map via self-attention, and regresses coordinates using a lightweight CNN and Huber loss.
+
+Notably, **Semantic Gating** is applied: the temporal and spatial heads are only triggered if the semantic head detects at least one error. This mirrors the logic that "where and when" only matter if an error actually occurred, significantly reducing computation.
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_T + \mathcal{L}_{spatial}$, where $\mathcal{L}_S$ is binary cross-entropy (semantic), $\mathcal{L}_T$ is cross-entropy (temporal, computed only on erroneous samples), and $\mathcal{L}_{spatial}$ is Huber loss (spatial).
+The total loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_T + \mathcal{L}_{spatial}$: $\mathcal{L}_S$ is binary cross-entropy for semantics, $\mathcal{L}_T$ is cross-entropy for temporal (calculated only for mistake samples), and $\mathcal{L}_{spatial}$ is the Huber loss for bounding box regression.
 
 ## Key Experimental Results
 
@@ -77,59 +91,58 @@ The total loss is $\mathcal{L} = \mathcal{L}_S + \mathcal{L}_T + \mathcal{L}_{sp
 |--------|------|------|-----------|----------|------|
 | EPIC-KITCHENS-M | Semantic Attribution | F1@0.5 | **83.89** | 77.23 (ChatGPT-4o) | +6.66% |
 | Ego4D-M | Semantic Attribution | F1@0.5 | **56.24** | 50.95 (ChatGPT-4o) | +5.29% |
-| Ego4D-M | Temporal Attribution | MAE(s) | **0.638** | 0.816 (EgoT2) | −21.81% |
+| Ego4D-M | Temporal Attribution | MAE(s) | **0.438** | 0.816 (EgoT2) | -21.81% |
 | Ego4D-M | Spatial Attribution | mIoU | **59.21** | 49.88 (MediaPipe-U) | +18.70% |
-| Ego4D-M | Mistake Detection | F1@0.5 | **57.55** | 15.62 (EgoPED) | +41.93% |
+| Ego4D-M | Error Detection | F1@0.5 | **57.55** | 15.62 (EgoPED) | +41.93% |
 
 ### Ablation Study
 
 | Configuration | Semantic F1 | Temporal MAE(s) | Spatial mIoU | Detection F1 |
 |------|---------|-------------|-----------|---------|
-| MisFormer (full) | 56.24 | 0.438 | 59.21 | 57.55 |
-| Replace with LaViLa backbone | 49.16 | 0.561 | 51.37 | 46.05 |
-| Remove projection block $\mathcal{P}$ | 51.34 | 0.457 | 55.43 | 52.75 |
-| Remove temporal attribution training | 51.29 | 0.623 | 57.78 | 57.46 |
-| Replace attention map with GradCAM | 55.52 | 0.482 | 55.03 | 57.51 |
+| MisFormer (Full) | 56.24 | 0.438 | 59.21 | 57.55 |
+| LaViLa Backbone | 49.16 | 0.561 | 51.37 | 46.05 |
+| w/o Projection $\mathcal{P}$ | 51.34 | 0.457 | 55.43 | 52.75 |
+| w/o Temporal Training | 51.29 | 0.623 | 57.78 | 57.46 |
+| GradCAM vs Attn Map | 55.52 | 0.482 | 55.03 | 57.51 |
 
 ### Key Findings
-- The InternVideo2 backbone (multimodal pretraining) is critical for MATT; replacing it with LaViLa causes consistent degradation across all sub-tasks.
-- The projection block $\mathcal{P}$ is indispensable—raw text embeddings are insufficient to capture subtle discrepancies between instructions and video.
-- Attribution of the *object* role is consistently easier than the *predicate* role, indicating that fine-grained action understanding remains a core challenge in egocentric video.
-- Training from scratch on the small-scale EgoPER dataset yields poor results, but pretraining on EPIC-KITCHENS-M followed by fine-tuning achieves competitive performance.
+- The InternVideo2 backbone is critical due to its multi-modal pre-training; replacing it with LaViLa significantly degrades performance.
+- The Projection block $\mathcal{P}$ is indispensable, as raw text embeddings cannot capture fine-grained instruction-video deviations.
+- Attribute-level attribution for "Object" roles is consistently easier than for "Predicate" roles, highlighting the difficulty of fine-grained action understanding.
+- Pre-training on large-scale synthesized data (EPIC-KITCHENS-M) is essential for succeeding on small real-world datasets like EgoPER.
 
 ## Highlights & Insights
-- **MisEngine's "zero-cost annotation" design** is particularly elegant: by applying semantic role cross-matching, existing action recognition data is transformed into mistake understanding data, with all three-dimensional annotations inherited at no additional labeling cost. This paradigm of "simulating mistakes by combining correct samples rather than collecting genuine errors" is broadly transferable to other tasks requiring scarce negative samples.
-- **Unified model vs. ensemble of specialists**: MisFormer achieves superior or competitive performance relative to task-specific SOTA methods across all four sub-tasks within a single unified model, with only 41M+ projection head parameters and high runtime efficiency (spatial head at 68.9 FPS).
-- Formalizing mistake understanding as a three-dimensional attribution framework over instruction–execution discrepancies provides AI assistants with interpretable and actionable feedback.
+- **Zero-cost logic**: MisEngine's design is clever—it turns an action recognition dataset into a mistake understanding dataset via role-based cross-matching, inheriting all 3D labels.
+- **Unified vs. Ensemble**: MisFormer outperforms specialized SOTAs across four tasks with a unified architecture and only 41M+ projection parameters, achieving high efficiency (68.9 FPS for the spatial head).
+- **Interpretability**: Formalizing mistake understanding as "instruction-execution deviation" provides actionable feedback for AI assistants.
 
 ## Limitations & Future Work
-- The current framework supports only short instructions (predicate + object); real-world long-form and multi-step instructions require richer role sets.
-- Spatial attribution underperforms dedicated hand–object interaction detectors (SSDA: mIoU 64.54 vs. 59.21); integrating task-specific object detection priors could improve results.
-- The data engine assumes mistakes arise solely from role cross-matching, and cannot capture continuous deviations such as "degree errors" (e.g., slicing too thick).
-- Current pretraining relies on general video–language alignment objectives; designing pretraining objectives specifically targeting mistake understanding may yield further gains.
+- Currently supports only short instructions (predicate + object); multi-step instructions require richer role sets.
+- Spatial attribution is slightly weaker than specialized hand-object detectors (SSDA); integrating object detection priors might help.
+- The engine assumes mistakes originate from role mismatches, missing "degree errors" (e.g., cutting too thick).
+- Future work could design pre-training objectives specifically tailored for mistake understanding.
 
 ## Related Work & Insights
-- **vs. EgoPED / AMNAR**: These methods treat mistake detection as an out-of-distribution detection problem, do not leverage mistake supervision signals, and fail in large-scale multi-activity scenarios. MisFormer scales through large-scale supervised learning enabled by MisEngine.
-- **vs. MistScene**: MistScene generates natural language explanations without structured attribution and lacks instruction alignment. MATT provides structured semantic–temporal–spatial triplets.
-- **vs. ChatGPT-4o**: MisFormer surpasses this closed-source commercial model by 6.66% on semantic attribution, demonstrating the advantage of task-specific design over general-purpose large models.
+- **vs EgoPED / AMNAR**: These view error detection as OOD detection without error signals, failing in large-scale multi-activity scenarios. MisFormer succeeds via large-scale supervised synthesis.
+- **vs MistScene**: MistScene provides natural language explanations but lacks structured attribution and instruction alignment.
+- **vs ChatGPT-4o**: MisFormer's task-specific design outperforms closed-source general LLMs by 6.66% in semantic attribution.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Proposes a new task definition, data engine, and unified model, with complete three-dimensional contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers four sub-tasks with human validation and ablations; spatial attribution comparisons could be further deepened.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Problem formulation is clear, figures are excellent, and the logical progression is smooth.
-- Value: ⭐⭐⭐⭐ — Provides a complete methodology for mistake feedback in egocentric AI assistants; the data engine paradigm is broadly reusable.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](../../ICCV2025/video_understanding/fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
-- [\[CVPR 2026\] StreamGaze: Gaze-Guided Temporal Reasoning and Proactive Understanding in Streaming Videos](streamgaze_gaze-guided_temporal_reasoning_and_proactive_understanding_in_streami.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
+- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
 - [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
-- [\[CVPR 2026\] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](frame2freq_spectral_adapters_for_fine-grained_video_understanding.md)
 
 </div>
 

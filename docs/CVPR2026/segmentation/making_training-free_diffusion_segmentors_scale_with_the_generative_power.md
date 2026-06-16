@@ -2,83 +2,92 @@
 title: >-
   [Paper Note] Making Training-Free Diffusion Segmentors Scale with the Generative Power
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Models] This paper identifies the fundamental reasons why existing training-free diffusion segmentation methods fail to scale with the generative power of stronger models — namely…
+  [CVPR 2026][Segmentation][Diffusion Model] This work reveals the fundamental reason why existing training-free diffusion segmentation methods fail to scale with the increasing power of generative models: the existence of two gaps (the aggregation gap and the score imbalance gap) between cross-attention maps and semantic correlation. The authors propose the GoCA
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Diffusion Models"
-  - "Training-Free Segmentation"
-  - "Cross-Attention"
-  - "Auto Aggregation"
-  - "Per-Pixel Rescaling"
-  - "Generative Scaling"
+  - CVPR 2026
+  - Segmentation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 7920c8a654e9bcff
+content_hash: 6ce2ac586bdb3d5c
 ---
-
 # Making Training-Free Diffusion Segmentors Scale with the Generative Power
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.06178](https://arxiv.org/abs/2603.06178)  
 **Code**: [Available](https://github.com/MengBenyuan/GoCA)  
-**Area**: Semantic Segmentation
-**Keywords**: Diffusion Models, Training-Free Segmentation, Cross-Attention, Auto Aggregation, Per-Pixel Rescaling, Generative Scaling
+**Area**: Semantic Segmentation  
+**Keywords**: Diffusion Models, Training-Free Segmentation, Cross-Attention, Auto Aggregation, Per-pixel Rescaling, Generative Scaling
 
 ## TL;DR
 
-This paper identifies the fundamental reasons why existing training-free diffusion segmentation methods fail to scale with the generative power of stronger models — namely, two gaps between cross-attention maps and semantic relevance (an aggregation gap and a score imbalance gap). It proposes two techniques, auto aggregation and per-pixel rescaling, forming the GoCA framework, which for the first time enables stronger diffusion models (SDXL, PixArt-Sigma, Flux) to significantly outperform weaker ones in training-free semantic segmentation.
+This work reveals the fundamental reason why existing training-free diffusion segmentation methods fail to scale with the increasing power of generative models: the existence of two gaps (the aggregation gap and the score imbalance gap) between cross-attention maps and semantic correlation. The authors propose the GoCA framework, consisting of auto aggregation and per-pixel rescaling, enabling stronger diffusion models (SDXL, PixArt-Sigma, Flux) to significantly outperform older models in training-free semantic segmentation for the first time.
 
 ## Background & Motivation
 
-**Background**: Text-to-image diffusion models (Stable Diffusion, Flux, etc.) have been explored for discriminative tasks given their powerful image generation capabilities. One line of research focuses on "training-free diffusion segmentation" — directly leveraging cross-attention maps from pretrained diffusion models for semantic segmentation without additional training.
+**Background**: Text-to-image diffusion models (Stable Diffusion, Flux, etc.) have been explored for discriminative tasks due to their powerful image generation capabilities. One research line focuses on "training-free diffusion segmentation"—directly utilizing cross-attention maps from pre-trained diffusion models for semantic segmentation without additional training.
 
-**Core Premise and Expectation**: Training-free diffusion segmentation methods are grounded in the generative power of diffusion models. Intuitively, stronger generative models should yield better segmentation results — i.e., segmentation performance should scale with generative capability.
+**Goal**: Training-free diffusion segmentation methods are based on the generative capabilities of diffusion models. Theoretically, stronger generative models should produce better segmentation results—meaning segmentation performance should "scale" with generative power.
 
-**Counter-Intuitive Observation**: The authors find that existing methods (DiffSegmentor, FTTM, etc.) are almost exclusively validated on Stable Diffusion v1.5/v2.1. When switched to stronger models such as SDXL, PixArt-Sigma, or Flux, segmentation performance does not improve and may even degrade — a finding that fundamentally contradicts the intuition that stronger generation implies better segmentation.
+**Key Challenge**: The authors observed a counter-intuitive phenomenon: existing methods (DiffSegmentor, FTTM, etc.) are almost exclusively validated on Stable Diffusion v1.5/v2.1. When switching to more powerful models like SDXL, PixArt-Sigma, or Flux, segmentation performance fails to improve or even declines. This contradicts the intuition that "stronger generation $\leftrightarrow$ better segmentation."
 
-**Gap I — Aggregation Gap**: Diffusion models contain multi-head, multi-layer cross-attention, with each head/layer producing independent attention maps. Prior methods aggregate these maps using manually specified weights, a process that becomes infeasible for more complex architectures (UNet → DiT → MMDiT).
+**Gap I—Aggregation Gap**: Diffusion models contain multi-head and multi-layer cross-attention, where each head/layer produces an independent attention map. Previous methods relied on manually set weights for aggregation, but the increased complexity of newer architectures (UNet $\rightarrow$ DiT $\rightarrow$ MMDiT) makes manual parameter tuning infeasible.
 
-**Gap II — Score Imbalance Gap**: Even with a globally aggregated attention map, raw scores do not directly reflect semantic relevance. Two forms of imbalance exist: (a) foreground token scores (e.g., "cat") are substantially higher than background token scores (e.g., "grass"), making direct comparison unreliable; (b) semantic special tokens (e.g., `<sos>`) exhibit inconsistent score magnitudes across pixels, corrupting per-token normalization.
+**Gap II—Score Imbalance Gap**: Even with a global attention map, scores do not directly equate to semantic correlation. Two types of imbalance exist: (a) foreground tokens (e.g., "cat") have much higher scores than background tokens (e.g., "grass"), making direct comparison unreliable; (b) semantically special tokens (e.g., "$<sos>$") have inconsistent score scales, interfering with per-token normalization.
 
-**Core Idea**: Replace manual weight tuning with an automated aggregation scheme based on inter-activation correlations within the model, and eliminate interference from semantic special tokens via per-pixel rescaling — bridging both gaps so that training-free segmentation genuinely scales with generative capability.
+**Core Idea**: Design an automated aggregation weight scheme (based on correlations between model activations) to replace manual tuning, and eliminate interference from semantically special tokens through per-pixel rescaling. This bridges the two gaps and allows training-free segmentation capability to truly scale with generative power.
 
 ## Method
 
-### Overall Architecture: GoCA (Generative scaling of Cross-Attention)
+### Overall Architecture
 
-The framework consists of two modules: (1) **Auto Aggregation**, which addresses Gap I by automatically assigning aggregation weights across heads and layers; and (2) **Per-Pixel Rescaling**, which addresses Gap II by eliminating the interference of semantic special tokens on attention scores. These are followed by standard self-attention refinement and argmax-based segmentation.
+GoCA (Generative scaling of Cross-Attention) addresses the counter-intuitive failure where training-free diffusion segmentation fails to improve with models like SDXL, PixArt-Sigma, and Flux. The methodology focuses on translating "raw cross-attention maps" into "reliable semantic correlation maps." It first uses **auto aggregation** to synthesize independent multi-head and multi-layer attention maps into a global map (bridging the aggregation gap). Then, **per-pixel rescaling** is applied to remove score imbalances caused by semantically special tokens (bridging the score imbalance gap). Finally, standard self-attention refinement and argmax are used to obtain segmentation results. The entire pipeline introduces no learnable parameters, maintaining the purity of the training-free paradigm.
 
-### Auto Aggregation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Raw Cross-Attention Maps<br/>(Multi-head, Multi-layer, Independent)"]
+    subgraph AGG["Auto Aggregation (Bridging the aggregation gap)"]
+        direction TB
+        H["Head-wise Aggregation<br/>Compute per-pixel head weights using each head's output vector"]
+        L["Layer-wise Aggregation<br/>Score each layer using a pseudo self-attention map as ground truth"]
+        H --> L
+    end
+    A --> AGG
+    AGG --> G["Global Attention Map A"]
+    subgraph RES["Per-Pixel Rescaling (Bridging the score imbalance gap)"]
+        direction TB
+        R1["Exclude non-content tokens<br/>(Remove &lt;sos&gt; and stop words)"]
+        R2["Per-pixel normalization to 1<br/>Eliminate scale differences of special tokens"]
+        R3["Per-token cross-pixel min-max to [0,1]<br/>Enable reliable cross-token comparison"]
+        R1 --> R2 --> R3
+    end
+    G --> RES
+    RES --> S["Self-attention refinement + argmax"]
+    S --> O["Output: Semantic segmentation results"]
+```
 
-#### Head-wise Aggregation
+### Key Designs
 
-- **Mechanism**: Multi-head attention can be rewritten as a sum of per-head output vectors: $Output = \sum_n A_n V_n W_n^O$. The contribution of each head can be measured by the dot-product similarity between that head's output vector and the total output.
-- **Formulation**: For head $n$ in layer $m$, the weight is $w_{mn} = (A_n V_n W_n^O)_m^\top \cdot Output_m$, normalized to obtain per-pixel head weights $w_{mn}'$.
-- **Design Motivation**: Per-pixel weights, rather than a single global weight, more finely capture the contribution of different heads at different spatial locations.
+**1. Head-wise Aggregation: Measuring weight by each head's own output**
 
-#### Layer-wise Aggregation
+Previous multi-head attention methods relied on manual weights to aggregate heads, but this fails as head/layer counts explode in new architectures (UNet $\rightarrow$ DiT $\rightarrow$ MMDiT). GoCA rewrites multi-head output as a vector sum $Output = \sum_n A_n V_n W_n^O$. Thus, the contribution of each head can be naturally quantified by the alignment between "the output vector of that head" and the "total output": for head $n$ in layer $m$, the weight is $w_{mn} = (A_n V_n W_n^O)_m^\top \cdot Output_m$. After normalization, per-pixel head weights $w_{mn}'$ are obtained. Crucially, this weight is **per-pixel** rather than a single scalar for the whole image—the contribution of the same head varies across spatial locations. Per-pixel weighting extracts attention from each head in its "expert" spatial regions, providing higher precision than a single global weight.
 
-- **Mechanism**: A pseudo self-attention map $A_p$ is computed from dense diffusion features as a proxy for global attention; the weight of each layer is then determined by the similarity between that layer's actual self-attention map and this proxy.
-- **Key Assumption**: The contribution pattern of cross-attention layers mirrors that of self-attention layers — self-attention similarity is used as a proxy for cross-attention contribution.
-- **Formulation**: $w_m = (A_p')^\top (A_{self}^m)'$, normalized and used to weight-sum across layers. The final global attention map is $A = \sum_m w_m' A_m$.
+**2. Layer-wise Aggregation: Scoring layers using dense diffusion features as "ground truth"**
 
-### Per-Pixel Rescaling
+Weights must also be determined across layers, but cross-attention layers lack a built-in reliable reference. GoCA employs a proxy: it uses dense diffusion features to calculate a pseudo self-attention map $A_p$ as the "ground truth" for global attention. It then evaluates how similar each layer's actual self-attention map $A_{self}^m$ is to this proxy, assigning higher credibility to more similar layers. Formally, $w_m = (A_p')^\top (A_{self}^m)'$, and after normalization, the layers are aggregated as $A = \sum_m w_m' A_m$. This step rests on the assumption that the contribution patterns of cross-attention layers are similar to those of self-attention layers.
 
-- **Problem**: Two imbalances exist in the global attention map: (a) large magnitude differences between foreground and background token scores; (b) semantic special tokens (`<sos>`) dominate scores with inconsistent scales across pixels, causing per-token normalization to fail.
-- **Solution**:
-  1. **Exclude non-content tokens**: Retain only content word tokens (e.g., "cat", "grass"), discarding semantic special tokens and stopword tokens.
-  2. **Per-pixel normalization to unity**: For each pixel $i$, normalize content token scores: $A'(i,q) = \frac{A(i,q)}{\sum_j A(i,q(j))}$, eliminating scale interference from semantic special tokens.
-  3. **Per-token re-normalization**: Apply min-max normalization to $[0,1]$ across all pixels for each token, enabling reliable cross-token comparison.
-- **Intuition**: Semantic special token scores are higher in background regions (since foreground regions are already dominated by content token information); removing this interference substantially improves background attention map quality.
+**3. Per-Pixel Rescaling: Removing interference of semantically special tokens from scores**
+
+Even with a synthesized global map, scores do not equal semantic correlation due to two imbalances: foreground tokens ("cat") have much higher scales than background tokens ("grass"), and semantically special tokens (e.g., $<sos>$) dominate scores with varying scales across pixels. GoCA corrects this in three steps: first, it **excludes non-content tokens**, keeping only content words and discarding special/stopword tokens. Second, it **normalizes content word scores to 1** for each pixel $i$, $A'(i,q) = \frac{A(i,q)}{\sum_j A(i,q(j))}$, to eliminate scale differences from special tokens. Finally, it performs **min-max normalization to $[0,1]$** for each token across all pixels, ensuring cross-token comparisons are reliable. Background classes benefit most because special tokens naturally have higher scores in background regions (where foreground is already dominated by content tokens); removing this adversarial interference significantly improves the quality of attention maps for classes like "grass" and "wall."
 
 ## Key Experimental Results
 
 ### Main Results
 
-**mIoU comparison on five standard semantic segmentation benchmarks**:
+**mIoU comparison across five standard semantic segmentation benchmarks**:
 
 | Method | Model | VOC | Context | COCO-Obj | Cityscapes | ADE20K |
-|--------|-------|-----|---------|----------|------------|--------|
+|------|------|-----|---------|----------|------------|--------|
 | DiffSegmentor | SD v1.5 | 60.1 | 27.5 | 37.9 | - | - |
 | FTTM | SD v1.5 | 48.9 | 30.0 | 34.6 | 12.3 | 20.3 |
 | Vanilla | SD v1.5 | 44.3 | 32.3 | 32.3 | 11.8 | 18.0 |
@@ -88,14 +97,14 @@ The framework consists of two modules: (1) **Auto Aggregation**, which addresses
 | **GoCA** | PixArt-Σ | 63.6 | 43.2 | 39.8 | 22.6 | 23.8 |
 | **GoCA** | **Flux** | **70.7** | **51.1** | **48.1** | **27.1** | **29.3** |
 
-GoCA + Flux achieves 70.7% mIoU on Pascal VOC, outperforming Vanilla SD v1.5 by 26.4 points and the strongest prior SOTA (DiffSegmentor) by 10.6 points.
+GoCA+Flux achieves 70.7% mIoU on Pascal VOC, which is 26.4 points higher than Vanilla SD v1.5 and 10.6 points higher than the strong SOTA DiffSegmentor.
 
 ### Ablation Study
 
-**Component contributions on Pascal VOC 2012** (mIoU):
+**Contribution of components on Pascal VOC 2012 (mIoU)**:
 
 | Head Agg. | Layer Agg. | Rescaling | SD v1.5 | SD XL |
-|-----------|------------|-----------|---------|-------|
+|--------|--------|--------|---------|-------|
 | Vanilla | Vanilla | Vanilla | 44.3 | 51.1 |
 | Vanilla | Manual | Vanilla | 51.1 | - |
 | Ours | Vanilla | Vanilla | 44.8 | 56.1 |
@@ -103,55 +112,55 @@ GoCA + Flux achieves 70.7% mIoU on Pascal VOC, outperforming Vanilla SD v1.5 by 
 | Vanilla | Vanilla | Ours | 52.6 | 51.4 |
 | **Ours** | **Ours** | **Ours** | **60.7** | **65.6** |
 
-Each component contributes approximately 5–8 points individually; their combination yields substantially larger gains (SD v1.5: +16.4, SD XL: +14.5).
+Each of the three components contributes approximately 5-8 points, and their combination yields even greater improvements (SD v1.5: +16.4, SD XL: +14.5).
 
-### Generative Integration Experiment
+### Generation Integration Results
 
-**S-CFG integration (COCO-30k, CFG=5.0)**:
+**S-CFG Integration (COCO-30k, CFG=5.0)**:
 
 | Method | FID↓ | CLIP↑ |
-|--------|------|-------|
+|------|------|-------|
 | CFG | 19.27 | 31.34 |
 | S-CFG | 19.15 | 31.35 |
-| **GoCA + S-CFG** | **18.82** | **31.42** |
+| **GoCA+S-CFG** | **18.82** | **31.42** |
 
-Replacing the internal segmentor of S-CFG with GoCA consistently improves generation quality, validating the practical utility of training-free segmentation in generative pipelines.
+Replacing the internal segmentor of S-CFG with GoCA consistently improves generation quality, validating the practical value of training-free segmentation in generative pipelines.
 
 ### Key Findings
 
-1. **First successful positive scaling from generative to segmentation capability**: Manually tuned baselines on SD v1.5 sometimes outperform Vanilla methods on SD XL/PixArt-Sigma; GoCA eliminates this counter-intuitive phenomenon.
-2. **Especially pronounced improvement in background regions**: Per-pixel rescaling substantially improves attention map quality for background categories such as "grass" and "wall" by removing the adversarial influence of semantic special tokens.
-3. **Strong architectural generalizability**: GoCA is effective across UNet-based (SD v1.5/XL), DiT-based (PixArt-Sigma), and MMDiT-based (Flux) architectures, whereas manual tuning methods cannot generalize.
-4. **Auto layer aggregation matches manual tuning**: The proposed layer aggregation (52.1) matches or exceeds manual aggregation (51.1) without any human intervention.
-5. **Clear value in generative integration**: As an internal component of S-CFG, GoCA yields consistent improvements in both FID and CLIP scores.
+1.  **First realization of generation $\rightarrow$ segmentation scaling**: Manual baselines using SD v1.5 sometimes outperformed Vanilla versions of SD XL/PixArt-Sigma; GoCA eliminates this counter-intuitive phenomenon.
+2.  **Significant improvement in background regions**: Per-pixel rescaling removes adversarial effects of semantically special tokens, significantly enhancing attention map quality for background classes like "grass" and "wall."
+3.  **Strong architectural generalization**: GoCA is effective across UNet-based (SD v1.5/XL), DiT-based (PixArt-Sigma), and MMDiT-based (Flux) architectures, whereas manual tuning methods fail to generalize.
+4.  **Auto layer aggregation matches manual tuning**: The proposed auto layer aggregation (52.1) performs comparably to or better than manual tuning (51.1) without human intervention.
+5.  **Clear value for generative integration**: As an internal component of S-CFG, GoCA brings consistent improvements in FID and CLIP scores.
 
 ## Highlights & Insights
 
-- **Novel and important problem formulation**: This is the first work to systematically identify and validate the failure of training-free diffusion segmentation to scale with generative capability, providing a clear direction for the field.
-- **Precise gap analysis**: The problem is decomposed into an aggregation gap and a score imbalance gap, each with a rigorous formalization and a targeted solution.
-- **Fully training-free**: The method introduces no learnable parameters and relies solely on the intrinsic structure of model activations, preserving the purity of the training-free paradigm.
-- **Insightful observation on semantic special tokens**: The finding that `<sos>` scores are higher in background regions (since foreground regions are dominated by content token information) offers theoretical value for understanding the internal mechanisms of diffusion models.
-- **Strong practical utility**: GoCA can be directly integrated into generative techniques such as S-CFG to improve text-to-image generation quality.
+-   **Novel and Important Problem Definition**: The work is the first to systematically identify and address the "scaling failure of training-free diffusion segmentation," providing a clear direction for the field.
+-   **Precise Analysis of the Two Gaps**: Decomposing the problem into an aggregation gap and a score imbalance gap allows for targeted and formal solutions.
+-   **Completely Training-Free**: The method involves no learnable parameters and relies solely on the intrinsic structural information of model activations.
+-   **Insightful Observation on Special Tokens**: The finding that $<sos>$ scores are higher in background regions (because foreground is dominated by content tokens) provides theoretical value for understanding diffusion internals.
+-   **High Practicality**: GoCA can be directly integrated into generative techniques like S-CFG to improve text-to-image quality.
 
 ## Limitations & Future Work
 
-1. **Limited to semantic segmentation**: The method relies on the assumption of semantic relevance in cross-attention maps and has not yet been extended to instance segmentation, panoptic segmentation, depth estimation, or other discriminative tasks.
-2. **Dependence on external object detectors**: GPT-4o is required to construct prompts covering all categories, introducing a dependency on external modules.
-3. **Sensitivity to prompt design**: Different prompt strategies significantly affect results, and cross-method comparisons are confounded by differences in prompt design.
-4. **Directions for future work**: Extending GoCA to instance and panoptic segmentation; exploring automatic prompt generation without external detectors; investigating temporal extension to video diffusion models.
+1.  **Limited to Semantic Segmentation**: The method relies on the semantic correlation hypothesis of cross-attention maps and has not yet been extended to instance segmentation, panoptic segmentation, or depth estimation.
+2.  **Dependency on External Object Detectors**: Constructing prompts containing all categories requires GPT-4o, introducing dependency on external modules.
+3.  **Impact of Prompt Design**: Different prompt strategies significantly affect results, and fair cross-method comparisons are hindered by prompt variations.
+4.  **Future Directions**: Extending GoCA to instance segmentation and depth estimation; exploring automatic prompt generation without external detectors; and studying temporal extensions for video diffusion models.
 
 ## Related Work & Insights
 
-- **vs. DiffSegmentor / FTTM**: These methods manually assign aggregation weights for SD v1.5 and cannot generalize to SD XL/Flux or other new architectures. GoCA resolves architectural dependency through auto aggregation and also surpasses DiffSegmentor on SD v1.5 (60.7 vs. 60.1).
-- **vs. DiffCut**: DiffCut applies Normalized Cut to dense diffusion features for segmentation; GoCA likewise leverages dense features but uses them to compute a proxy self-attention map for layer-wise aggregation weights — the two approaches are complementary in their use of dense features.
-- **vs. training-based diffusion discriminators** (ODISE, VPD, etc.): Training-based methods achieve higher performance by fine-tuning for segmentation tasks but require additional training data and computation. GoCA demonstrates that training-free methods, when correctly scaled, can substantially close this gap.
+-   **vs. DiffSegmentor / FTTM**: These methods manually tune aggregation weights on SD v1.5 and fail to generalize to new architectures like SD XL or Flux. GoCA solves the architecture dependency via auto aggregation and outperforms DiffSegmentor even on SD v1.5 (60.7 vs. 60.1).
+-   **vs. DiffCut**: DiffCut uses dense diffusion features for Normalized Cut segmentation. GoCA also utilizes dense features but as a proxy for calculating layer-wise aggregation weights—complementary ways of using dense features.
+-   **vs. Trained Diffusion Discriminators** (ODISE, VPD, etc.): Trained methods achieve higher performance via fine-tuning but require extra data and computation. GoCA proves that training-free methods can significantly close the gap when correctly scaled.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First to systematically identify and address the scaling failure of training-free diffusion segmentation
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four diffusion models, five benchmarks, ablation studies, generative integration, and qualitative analysis
-- Writing Quality: ⭐⭐⭐⭐ Clear problem motivation, well-structured progressive gap analysis, and intuitive figures
-- Value: ⭐⭐⭐⭐ Opens the door to scaling in training-free diffusion segmentation with both practical utility and theoretical significance
+-   Novelty: ⭐⭐⭐⭐ First to systematically solve the scaling failure in training-free diffusion segmentation.
+-   Experimental Thoroughness: ⭐⭐⭐⭐ Four diffusion models across five benchmarks + ablations + generation integration + qualitative analysis.
+-   Writing Quality: ⭐⭐⭐⭐ Clear motivation, logical progression in gap analysis, and intuitive illustrations.
+-   Value: ⭐⭐⭐⭐ Opens the door for scaling in the training-free diffusion segmentation field with both practical and theoretical merits.
 
 <!-- RELATED:START -->
 
@@ -159,11 +168,11 @@ Replacing the internal segmentor of S-CFG with GoCA consistently improves genera
 
 ## Related Papers
 
-- [\[CVPR 2026\] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training](data_warmup_complexity-aware_curricula_for_efficient_diffusion_training.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
+- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
 - [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
+- [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
+- [\[CVPR 2026\] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)
 
 </div>
 

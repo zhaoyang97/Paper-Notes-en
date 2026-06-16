@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Zero-shot classification] The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the unit sphere…
+  [ICML 2026][Multimodal VLM][Paper Note] The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the hypersphere, where spurious samples cluster near the mean. They propose DAT: using a reference set for each (class, spurious attribute) group to estimate a local density $D_{y,a}(z)$, then rescaling the original cosine simil
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Zero-shot classification"
-  - "spurious correlations"
-  - "CLIP anisotropy"
-  - "local density"
-  - "group robustness"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: d08f94ad313c4fe6
+content_hash: 9d2ad3119460376a
 ---
-
 # Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs
 
 **Conference**: ICML 2026  
@@ -24,51 +18,78 @@ content_hash: d08f94ad313c4fe6
 **Keywords**: Zero-shot classification, spurious correlations, CLIP anisotropy, local density, group robustness  
 
 ## TL;DR
-The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the unit sphere, where spurious samples cluster near the mean. They propose DAT: estimating a local density $D_{y,a}(z)$ using a reference set for each (class, spurious attribute) group and rescaling the original cosine similarity as $\tilde s_{y,a}(x)=s_{y,a}(x)/(D_{y,a}(z)+\varepsilon)^{\lambda}$ based on whether a sample resides at the group core. This significantly improves worst-group accuracy without fine-tuning, text-side modifications, or requiring test-time spurious labels.
+The authors observe that CLIP embeddings exhibit an anisotropic ellipsoidal distribution on the hypersphere, where spurious samples cluster near the mean. They propose DAT: using a reference set for each (class, spurious attribute) group to estimate a local density $D_{y,a}(z)$, then rescaling the original cosine similarity as $\tilde s_{y,a}(x)=s_{y,a}(x)/(D_{y,a}(z)+\varepsilon)^{\lambda}$ based on whether a sample resides in the core of that group. This significantly improves worst-group accuracy without fine-tuning, text-side modifications, or requiring spurious attribute labels at test time.
 
 ## Background & Motivation
 
-**Background**: Zero-shot classification with VLMs like CLIP/ALIGN has become a multimodal baseline, yet they remain highly sensitive to spurious correlations (predicting based on common but semantically irrelevant contextual clues). A classic example is the Waterbirds dataset, where "waterbird + water background" is a frequent combination, causing the model to use "water" as a criterion and fail on "waterbird + land background." Existing mitigation methods fall into three categories: (i) fine-tuning/adapters (requires labels, breaks zero-shot nature), (ii) text-side prompt editing or projection (depends on domain experts or LLMs, prone to cross-modal alignment drift), and (iii) multimodal embedding adjustments (e.g., TIE shifts image embeddings along text directions, but requires training data to calibrate scale).
+**Background**: Zero-shot classification using VLMs like CLIP/ALIGN has become a multimodal baseline, but these models are highly sensitive to spurious correlations (relying on common but irrelevant contextual cues). A classic example is the Waterbirds dataset, where "waterbird + water background" is a frequent combination, causing the model to use "water" as a predictor for "waterbird" and fail on "waterbird + land background." Existing mitigation strategies fall into three categories: (i) fine-tuning/adapters (requires labels, breaks zero-shot nature), (ii) text-side prompt editing or projection (depends on domain experts or LLMs, prone to cross-modal alignment drift), and (iii) multimodal embedding adjustments (e.g., TIE shifts image embeddings along the text direction but requires training data to calibrate the scale).
 
-**Limitations of Prior Work**: Existing methods either sacrifice the zero-shot nature (i), rely on unstable prompt engineering or LLM inference (ii), or require dataset-dependent calibration (iii). More importantly, none directly address the geometric root cause of why CLIP is deceived by spurious correlations.
+**Limitations of Prior Work**: Existing methods either sacrifice the zero-shot property (i), rely on unstable prompt engineering/LLM inference (ii), or require dataset-specific calibration (iii). More importantly, none directly address the geometric root of why CLIP is deceived by spurious correlations.
 
-**Key Challenge**: CLIP embeddings are not isotropically distributed on the unit sphere. Works such as Levi & Gilboa (2025) show that frequent concepts converge toward the modality mean with higher conformity, while rare but semantically critical concepts are pushed to the sparse periphery. Consequently, when using pure cosine similarity, a "correct class but rare" sample may score lower than an "incorrect class but frequent" sample—the score itself is contaminated by geometric bias.
+**Key Challenge**: CLIP embeddings are not isotropically distributed on the unit sphere. Works like Levi & Gilboa (2025) show that frequent concepts converge toward the modality mean with higher conformity, while rare but semantically crucial concepts are pushed to the sparse periphery. This means when using pure cosine similarity, a sample that is "correctly classed but rare" may score lower than one that is "incorrectly classed but common"—the scores themselves are contaminated by geometric bias.
 
-**Goal**: (i) Provide a correction for similarity scores that perceives "local geometric density" under strict zero-shot constraints (frozen encoder, no parameter tuning, no test-time spurious labels); (ii) provide a theoretical explanation for why this aligns with Bayes optimal rules.
+**Goal**: (i) Under the strict constraint of zero-shot (frozen encoder, no parameter tuning, no spurious labels at test time), introduce an adjustment to similarity scores that is aware of "local geometric density"; (ii) provide a theoretical explanation of how this aligns with the Bayes optimal rule.
 
-**Key Insight**: Instead of modifying the model or the text, the "scoring function itself" should be modified. If the embedding space is ellipsoidal, similarity should be adjusted according to how "typical" a sample is within its group—preserving scores for typical samples while suppressing scores for sparse outliers.
+**Key Insight**: Instead of modifying the model or the text, modify the "scoring function itself." If the embedding space is ellipsoidal, similarity should be adjusted based on how "typical" a sample is within its group—typical samples retain their scores, while scores of sparse outliers are suppressed.
 
-**Core Idea**: Estimate local density using a compact reference set for each group and divide each group's cosine similarity by $(D_{y,a}(z)+\varepsilon)^\lambda$. This is equivalent to subtracting $\lambda \log D$ in logit space, which effectively recovers the quadratic terms missed by cosine similarity in the log-likelihood of a Kent anisotropic distribution.
+**Core Idea**: Use a small reference set for each group to estimate local density and divide each group’s cosine similarity by $(D_{y,a}(z)+\varepsilon)^\lambda$. In the logit space, this is equivalent to subtracting $\lambda \log D$, which supplements the quadratic terms missing from the cosine similarity in the log-likelihood of a Kent anisotropic distribution.
 
 ## Method
 
 ### Overall Architecture
-The DAT pipeline is built entirely on top of frozen VLMs: first, a compact reference set $R_{y,a}$ is constructed for each $(y,a)$ group using training/validation data; at inference, the local density $D_{y,a}(z)$ of a test image $z=\phi_I(x)$ relative to each group's reference set is calculated. The original cosine similarity is rescaled by this density and aggregated for the final prediction. When the spurious attribute $a$ is unavailable, DAT$^*$ first infers $\hat a=\arg\max_a \langle \phi_I(x), \phi_T(t_a)\rangle$, keeping the rest of the pipeline unchanged.
+The DAT pipeline is built entirely on frozen VLMs: first, a compact reference set $R_{y,a}$ is constructed for each $(y,a)$ group using the training/validation set; during inference, for a test image $z=\phi_I(x)$, its local density $D_{y,a}(z)$ relative to each group’s reference set is computed. The original cosine similarity is rescaled by this density and aggregated for final prediction. When the spurious attribute $a$ is unavailable, DAT$^*$ infers it via $\hat a=\arg\max_a \langle \phi_I(x), \phi_T(t_a)\rangle$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph REF["Herding-based Group Reference Set Construction"]
+        direction TB
+        TR["Train/Val Set<br/>Pool per (y,a) group"] --> HERD["Herding greedy selection<br/>to approach group mean"]
+        HERD --> RSET["Compact Reference Set R_y,a<br/>(n = 40~128)"]
+    end
+    X["Test Image x"] --> ENC["Frozen Image Encoder<br/>z = φ_I(x)"]
+    ENC -->|"Spurious Attribute a Unknown (DAT*)"| AHAT["Group Attribution Inference<br/>â = argmax_a ⟨z, φ_T(t_a)⟩"]
+    ENC --> SIM["Original Similarity<br/>s_y,a = ⟨z, φ_T(t_y,a)⟩"]
+    ENC --> SLOF["SLOF Local Density D_y,a(z)<br/>Quantifies isolation relative to group"]
+    RSET --> SLOF
+    AHAT --> SLOF
+    SLOF --> DT["Density Translation Rescaling<br/>s̃ = s / (D+ε)^λ: suppresses sparse overconfidence"]
+    SIM --> DT
+    DT --> AGG["Combinatorial Aggregation + Max-of-Max Decision<br/>ŷ = argmax_y max{max_a s̃_y,a, s̃_y,Avg}"]
+    AGG --> OUT["Predicted Class ŷ"]
+```
 
 ### Key Designs
 
-1.  **Herding-based Group Reference Set Construction**:
-    - **Function**: Select $n$ exemplars for each group $(y,a)$ that represent the group's central geometry, forming the basis for local density estimation.
-    - **Mechanism**: Starting from the sample pool $\{x_{y,a}^{(h)}\}_{h=1}^{N_{y,a}}$ of each group, deterministic feature-space herding in the style of iCaRL (Rebuffi et al., 2017) is applied: embeddings are greedily selected such that the mean of the selected set continuously approaches the group mean. The resulting $R_{y,a}=\{z_{y,a}^{(h)}\}_{h=1}^{n}$ covers the "typical appearance" of the group and is far more stable than random sampling. $n$ is very small: 56 for Waterbirds, 128 for CelebA, 40 for COVID-19, and 50 for FMoW.
-    - **Design Motivation**: Since frequent/spurious samples naturally reside near the group mean (Levi & Gilboa, 2025), herding naturally captures them to provide a reference for "common pattern clusters." Meanwhile, this set is only used for non-parametric geometric estimation without modifying model parameters, preserving the zero-shot property.
+**1. Herding-based group reference set construction: Selecting exemplars representing the central geometry**
 
-2.  **SLOF Local Density and Density Translation Rescaling**:
-    - **Function**: Quantify how sparse a test sample is relative to a group center and use this scalar to compress overconfident similarities in sparse regions.
-    - **Mechanism**: Simplified LOF (SLOF, Schubert et al., 2014) is used as the default density proxy: $D_{y,a}(z)=\frac{1}{k}\sum_{z_o\in \text{NN}_k(z)} \frac{k\text{-dist}(z)}{k\text{-dist}(z_o)}$, where larger $D_{y,a}(z)$ indicates higher isolation for $z$. The similarity after density translation is defined as $\tilde s_{y,a}(x)=\frac{s_{y,a}(x)}{(D_{y,a}(z)+\varepsilon)^\lambda}$, where $\lambda>0$ controls the correction strength. $k$ is set to 10 (30 for FMoW), and $\lambda$ is set once per dataset (e.g., 10 for Waterbirds, 1 for CelebA).
-    - **Design Motivation**: In pure cosine evaluation, a "misaligned but frequent" sample (spurious) and a "correctly aligned but rare" sample may yield similar scores. SLOF distinguishes these cases: spurious samples are usually in the dense region of their own group but in the sparse periphery of misaligned groups. Thus, after dividing by $D$, scores in misaligned directions are significantly suppressed, while scores in the correct direction are relatively elevated. The paper visualizes this using Tangent-space Mahalanobis Distance on Waterbirds.
+To estimate how sparse a test sample is relative to its group, a local neighborhood representing the group core is needed. For each $(y,a)$ group, DAT uses deterministic feature-space herding (Rebuffi et al., 2017) to greedily select points from the pool $\{x_{y,a}^{(h)}\}_{h=1}^{N_{y,a}}$ such that the mean of the selected set approaches the group mean. This results in compact reference sets $R_{y,a}=\{z_{y,a}^{(h)}\}_{h=1}^{n}$ (e.g., $n=56$ for Waterbirds, $n=128$ for CelebA). Herding is preferred over random sampling because frequent/spurious samples naturally cluster near the group mean; thus, herding captures "common patterns," providing a baseline for density estimation while maintaining zero-shot integrity.
 
-3.  **Aggregation + Theoretical Alignment under Kent Distribution**:
-    - **Function**: Consolidate all group scores $\tilde s_{y,a}$ into a single class prediction and prove that DAT is equivalent to recovering the anisotropy term missed by cosine similarity.
-    - **Mechanism**: Besides group-specific scores, a class-marginal score $\tilde s_{y,\text{Avg}}(x)=\frac{1}{M+1}(\sum_a \tilde s_{y,a}(x)+s_y(x))$ is defined. The final prediction is $\hat y=\arg\max_y \max\{\max_a \tilde s_{y,a}(x), \tilde s_{y,\text{Avg}}(x)\}$. This max-of-max approach balances group-level scoring with fallback to the average when spurious attributes are unknown. Theoretically, group density is modeled with a Kent (Fisher-Bingham) distribution, whose log-density is $\log p(z)=\kappa\gamma_1^\top z + \beta[(\gamma_2^\top z)^2-(\gamma_3^\top z)^2]-\log c_d(\kappa,\beta)$. Pure cosine similarity only captures the linear terminal $\kappa\gamma_1^\top z$, missing the quadratic anisotropy term. The paper proves that the DAT margin $m_{y,a}(z)=\tau w_{y,a}^\top z + \alpha\lambda \log p_{y,a}(z)+r_{y,a}(z)$ ($|r|\le B_0$) aligns $\arg\max$ with Bayes optimality under equal priors.
-    - **Design Motivation**: Simply introducing SLOF might be viewed as a heuristic trick; by interpreting $-\log D$ as a log-density proxy (Assumption 3.2), DAT is elevated to "approximating Bayes optimal ranking under ellipsoidal embeddings," answering why cosine fails: it simply cannot "see" the $\beta$ term.
+**2. SLOF local density and Density Translation rescaling: Suppressing overconfidence in sparse regions**
+
+Pure cosine scoring has a blind spot: a spurious sample that matches the wrong text but is "common" may score higher than a "rare" sample with the correct text. DAT quantifies isolation using simplified LOF (SLOF, Schubert et al., 2014):
+
+$$D_{y,a}(z)=\frac{1}{k}\sum_{z_o\in \text{NN}_k(z)} \frac{k\text{-dist}(z)}{k\text{-dist}(z_o)}$$
+
+Larger $D$ indicates greater isolation. The original similarity is rescaled: $\tilde s_{y,a}(x)=s_{y,a}(x)/(D_{y,a}(z)+\varepsilon)^\lambda$, where $\lambda>0$ controls the correction strength. Since spurious samples typically fall in the dense region of their own group but the sparse periphery of mismatched groups, dividing by $D$ significantly lowers scores in mismatched directions.
+
+**3. Combinatorial aggregation + Theoretical alignment under Kent distribution**
+
+When integrating group scores, DAT defines a class-marginal $\tilde s_{y,\text{Avg}}(x)=\frac{1}{M+1}(\sum_a \tilde s_{y,a}(x)+s_y(x))$ and uses a max-of-max decision: $\hat y=\arg\max_y \max\{\max_a \tilde s_{y,a}(x), \tilde s_{y,\text{Avg}}(x)\}$. 
+
+Theoretically, modeling group density using the Kent (Fisher-Bingham) distribution shows its log-density is:
+
+$$\log p(z)=\kappa\gamma_1^\top z + \beta[(\gamma_2^\top z)^2-(\gamma_3^\top z)^2]-\log c_d(\kappa,\beta)$$
+
+Cosine similarity only corresponds to the linear axial term $\kappa\gamma_1^\top z$, ignoring the quadratic anisotropy term $\beta[\cdot]$. By treating $-\log D$ as a proxy for log-density (Assumption 3.2), DAT's margin $m_{y,a}(z)$ approximates the Bayes optimal ranking under ellipsoidal embeddings.
 
 ### Loss & Training
-The entire process is zero-shot, featuring no training steps or modifications to VLM parameters. The only "parameters" are the reference set size $n$, neighborhood size $k$, and scaling $\lambda$, all of which are set once per dataset.
+The entire process is zero-shot, with no training steps or modification of VLM parameters. The only "parameters" are reference set size $n$, neighborhood size $k$, and scaling $\lambda$, which are set once per dataset.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation on four spurious correlation benchmarks (Waterbirds, CelebA, COVID-19, FMoW) across multiple VLMs (CLIP ViT-B/32, ViT-L/14, ResNet-50, ALIGN, AltCLIP, BiomedCLIP). Metrics: worst-group accuracy (WG), average accuracy (Avg), and Gap = Avg − WG. Selection of results on Waterbirds:
+Evaluation on four benchmarks (Waterbirds, CelebA, COVID-19, FMoW) across multiple VLMs (CLIP ViT-B/32, ViT-L/14, ResNet-50, etc.). Metrics: Worst-group accuracy (WG), Average accuracy (Avg), and Gap (Avg − WG).
 
 | Backbone | Method | WG↑ | Avg↑ | Gap↓ |
 |----------|------|-----|------|------|
@@ -83,51 +104,36 @@ Evaluation on four spurious correlation benchmarks (Waterbirds, CelebA, COVID-19
 | ResNet-50 | TIE | 52.96 | 83.62 | 30.66 |
 | ResNet-50 | **DAT** | **75.08** | 83.83 | **8.75** |
 
-On CelebA, DAT achieves WG=84.94 using ViT-L/14 (vs. TIE 84.60) and WG=80.79 on ResNet-50 (5.47 higher than TIE's 75.32).
-
 ### Ablation Study
-The paper systematically ablates DAT* vs. DAT, the key hyperparameter $\lambda$, $k$, and reference set sources (train vs. valid):
-
-| Configuration | Key Observation | Interpretation |
-|------|---------|------|
-| DAT* (no spurious labels) | WG=79.75 on Waterbirds ViT-L/14, still exceeding TIE | Group assignment inferred via $\hat a$ is sufficient |
-| $\lambda$ too small (≈0) | Degenerates to ZS, spurious correlations return | Density correction is necessary for effectiveness |
-| $\lambda$ too large | Over-suppresses sparse classes | $\lambda$ controls bias-variance; needs per-dataset tuning |
-| Different density estimators | SLOF is most stable | Defaulting to SLOF due to simplicity and robustness |
-| CelebA using validation set | Better than training set | Training set itself has higher distribution skew |
+- **DAT* (No spurious labels)**: On Waterbirds (ViT-L/14), WG=79.75, still outperforming TIE using inferred group attribution.
+- **$\lambda$ Sensitivity**: $\lambda \approx 0$ degrades to ZS; excessive $\lambda$ over-suppresses sparse classes.
+- **Reference Set Source**: Using the validation set for CelebA yielded better results than the training set due to lower distribution skew.
 
 ### Key Findings
-- DAT consistently improves worst-group accuracy across all datasets and backbones, most significantly on backbones like ResNet-50 where embeddings are "flatter" (WG +39.72 relative to ZS on Waterbirds).
-- Both Avg and WG accuracy improve simultaneously—many debiasing methods sacrifice Avg for WG. DAT avoids this trade-off through geometric rescaling.
-- DAT is more efficient than TIE: it does not require training data for scale calibration, and reference sets of 50–128 samples are sufficient.
+- DAT provides stable WG gains across all datasets and backbones, most notably on ResNet-50 where embeddings are "flatter" (WG +39.72 over ZS on Waterbirds).
+- Unlike many debiasing methods that sacrifice Avg for WG, DAT often improves both via geometric rescaling.
+- DAT is more efficient than TIE, requiring no training data to calibrate scales and only 50–128 samples for the reference set.
 
 ## Highlights & Insights
-- **Diagnostic → Correction Loop**: The paper first visualizes "geometric misalignment caused by spurious correlations" using Tangent-space Mahalanobis Distance, then provides a symmetric correction signal using SLOF. Analysis and method correspond strictly.
-- **Upgrading Cosine to Log-likelihood Proxy**: $\tilde s = s/D^\lambda$ becomes subtraction in the logit domain. Combined with the Kent model, this proves to recover the anisotropy term missed by cosine, providing a general template for "geometry-aware similarity correction" applicable to any anisotropic embedding space (e.g., sentence vectors, recommendation embeddings).
-- **Strict Zero-Shot Constraints**: No spurious labels required at test time, no LLM required, and no modification of model parameters, making it friendly for practical deployment. Reference sets are used for geometric estimation rather than gradient updates, adhering to "frozen embedding" evaluation semantics.
+- **Diagnostic $\to$ Correction Loop**: The method identifies "geometric mismatch caused by spurious correlations" via Tangent-space Mahalanobis Distance and provides a symmetric correction signal via SLOF.
+- **Upgrading Cosine to Log-likelihood Proxy**: $\tilde s = s/D^\lambda$ effectively compensates for the missing anisotropic terms in cosine similarity, providing a template for any anisotropic embedding space.
+- **Strict Zero-Shot Constraint**: No test-time spurious labels, no LLMs, and no parameter updates make it ideal for deployment (e.g., API-based models).
 
 ## Limitations & Future Work
-- DAT requires a small but representative reference set for each group; if a group is extremely rare (real-world long-tail), herding may fail.
-- $\lambda$ and $k$ remain dataset-level hyperparameters. The paper tunes them per dataset without providing a "zero-prior" automatic setting strategy; a small sweep is still needed for unseen domains.
-- Theoretical results are based on the Kent distribution assumption and log-SLOF fidelity. Large-scale verification of whether general VLM embeddings strictly follow this distribution is not performed; Bayes alignment may only hold locally if the distribution deviates significantly.
+- DAT requires representative reference sets; herding may fail if specific groups are extremely scarce (e.g., long-tail data).
+- Hyperparameters $\lambda$ and $k$ currently require dataset-level tuning; an automated "zero-prior" setting strategy is missing.
+- Theoretical guarantees rely on Kent distribution assumptions which may not hold globally across all VLM embedding distributions.
 
 ## Related Work & Insights
-- **vs. TIE / TIE\* (Lu et al., 2025)**: TIE shifts image embeddings along text directions; this work keeps embeddings fixed and modifies scoring, offering a Bayes alignment explanation. DAT outperforms TIE on most backbones, especially ResNet-50.
-- **vs. Orth-Cali / Ideal Words / Perception CLIP**: These methods use projection or prompt expansion on the text side, relying on linguistic priors. DAT performs geometric correction on the image side and is orthogonal to text-side methods.
-- **vs. ROBOSHOT**: ROBOSHOT uses LLMs to extract spurious directions for linear projection; DAT does not rely on LLMs, offering better deployment stability.
-- **vs. Fine-tuning approaches (Zhang & Ré, 2022)**: Fine-tuning is stronger but breaks the zero-shot nature; DAT is suitable for "weights fixed" deployment (APIs, medical compliance).
+- **vs TIE / TIE\* (Lu et al., 2025)**: While TIE shifts embeddings, DAT modifies the scoring function and provides a Bayes alignment explanation. DAT significantly outperforms TIE on ResNet-50 backbones.
+- **vs Text-side Methods (Orth-Cali, Perception CLIP)**: These rely on linguistic priors; DAT is orthogonal and focuses on image-side geometric correction.
+- **vs ROBOSHOT**: ROBOSHOT relies on LLMs to extract spurious directions; DAT is more stable as it avoids LLM inference quality dependencies.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Using local density to correct cosine scores" is a concise idea, and the theoretical alignment with Kent distribution is a prominent contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 datasets × 6 VLM variants, covering natural images, faces, medical, and remote sensing.
-- Writing Quality: ⭐⭐⭐⭐ Tight integration from geometric motivation to theory and experiment; consistent notation.
-- Value: ⭐⭐⭐⭐ Zero-shot, training-free, and deployment-friendly; the community can instantly apply this to any frozen VLM.
-
-## Rating
-- Novelty: TBD
-- Experimental Thoroughness: TBD
-- Writing Quality: TBD
-- Value: TBD
+- Novelty: ⭐⭐⭐⭐ Rescaling cosine scores using local density with Kent distribution alignment is a distinct contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested across 4 datasets and 6 VLM variants.
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from geometric motivation to theory and experiments.
+- Value: ⭐⭐⭐⭐ Practical, zero-shot, and training-free approach for frozen VLMs.
 
 <!-- RELATED:START -->
 
@@ -135,11 +141,11 @@ The paper systematically ablates DAT* vs. DAT, the key hyperparameter $\lambda$,
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
+- [\[ICML 2025\] The Devil Is in the Details: Tackling Unimodal Spurious Correlations for Generalizable Multimodal Reward Models](../../ICML2025/multimodal_vlm/the_devil_is_in_the_details_tackling_unimodal_spurious_correlations_for_generali.md)
+- [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
+- [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](../../CVPR2026/multimodal_vlm/sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](../../CVPR2026/multimodal_vlm/beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](../../ICLR2026/multimodal_vlm/zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
+- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 
 </div>
 

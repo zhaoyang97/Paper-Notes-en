@@ -1,20 +1,15 @@
 ---
 title: >-
-  [Paper Note] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention
+  [Paper Note] 阈值差分注意力：无 Sink、超稀疏且非分散的长上下文注意力
 description: >-
-  [ACL 2026][LLM Efficiency][Attention Mechanism] TDA achieves sink-free, 99% precise sparse, and competitively performing long-context Transformer attention by combining length-adaptive thresholds with differential inhibi…
+  [ACL 2026][LLM Efficiency][Attention] TDA achieves sink-free, 99% precise sparsity, and competitive performance in long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
 tags:
-  - "ACL 2026"
-  - "LLM Efficiency"
-  - "Attention Mechanism"
-  - "Long Context"
-  - "Sparse Attention"
-  - "Differential Attention"
-  - "Extreme Value Theory"
+  - ACL 2026
+  - LLM Efficiency
+  - Attention
 date: 2026-05-08
-content_hash: 30e8013efb6d5ba5
+content_hash: 3f3a0932d46e888a
 ---
-
 # Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention
 
 **Conference**: ACL 2026  
@@ -24,55 +19,69 @@ content_hash: 30e8013efb6d5ba5
 **Keywords**: Attention Mechanism, Long Context, Sparse Attention, Differential Attention, Extreme Value Theory
 
 ## TL;DR
-TDA achieves sink-free, 99% precise sparse, and competitively performing long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
+TDA achieves sink-free, 99% precise sparsity, and competitive performance in long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
 
 ## Background & Motivation
 
-**Background**: Self-attention has become the core of Transformers due to its differentiability and efficient vectorized implementation. However, Softmax attention faces fundamental structural limitations when processing long sequences, primarily manifested as two pathological phenomena.
+**Background**: Self-attention has become the core of Transformers due to its differentiability and efficient vectorized implementation. However, Softmax attention faces fundamental structural limitations when processing long sequences, primarily manifesting as two types of pathological phenomena.
 
-**Limitations of Prior Work**: The sum-to-one constraint of Softmax forces the model to allocate non-zero probability mass to irrelevant tokens to satisfy normalization requirements, resulting in the attention sink phenomenon. Simultaneously, as sequence length increases, probability mass dilutes, leading to decreased focus on salient tokens. While projection-based sparse methods (e.g., Entmax) produce exact zeros, they are computationally expensive. Conversely, non-normalized rectified activations (e.g., ReLA) are efficient but suffer from performance degradation under long contexts due to noise accumulation.
+**Limitations of Prior Work**: The sum-to-one constraint of Softmax forces the model to allocate non-zero probability mass to irrelevant tokens to satisfy normalization requirements, resulting in the attention sink phenomenon. Simultaneously, as sequence length increases, the probability mass is gradually diluted, leading to a decline in the model's focus on salient tokens. Although projection-based sparse methods (such as Entmax) can produce exact zeros, they are computationally expensive. Conversely, non-normalized rectified activations (such as ReLA) are efficient but suffer from performance degradation under long-context scenarios due to noise accumulation.
 
-**Key Challenge**: Existing methods cannot simultaneously achieve three objectives: (1) exact sparsity and computational efficiency, (2) sink-free attention, and (3) long-context robustness. Sparse methods typically still enforce the sum-to-one constraint, thus failing to fundamentally solve the sink problem. Rectified methods solve the sink problem but cannot control noise growth in long sequences with fixed thresholds.
+**Key Challenge**: Existing methods cannot simultaneously achieve three goals: (1) exact sparsity and computational efficiency, (2) sink-free attention, and (3) long-context robustness. Sparse methods typically still enforce the sum-to-one constraint and thus cannot fundamentally solve the sink problem, while rectified methods solve the sink issue but fail to control noise growth in long sequences with fixed thresholds.
 
-**Goal**: Design a drop-in replacement for Softmax attention that satisfies sink-free, ultra-sparse, and long-context robustness requirements without exceeding the computational overhead of standard methods.
+**Goal**: Design a drop-in replacement for Softmax attention that satisfies the three requirements of being sink-free, ultra-sparse, and long-context robust, without exceeding the computational overhead of standard methods.
 
-**Key Insight**: Starting from extreme value theory, it is observed that in high dimensions, the maximum value of dot products between irrelevant query-key pairs grows with sequence length (extreme value effect). Thus, an adaptive threshold related to context length can be employed to suppress these spurious matches. Furthermore, drawing on the idea of Differential Transformers, common-mode noise can be eliminated by calculating the difference between an inhibitory view and an excitatory view.
+**Key Insight**: Starting from Extreme Value Theory (EVT), it is observed that in high dimensions, the maximum dot product of irrelevant query-key pairs grows with sequence length (extreme value effect). Therefore, a length-adaptive threshold can be used to suppress these spurious matches. Additionally, drawing from the concept of Differential Transformers, common-mode noise is further eliminated by calculating the difference between an inhibitory view and an excitatory view.
 
-**Core Idea**: Filter extreme value noise with length-adaptive thresholds and cancel spurious matches with differential views to obtain sink-free sparse attention.
+**Core Idea**: Use a length-adaptive threshold to filter extreme value noise, and then use differential views to cancel out spurious matches, thereby obtaining sink-free sparse attention.
 
 ## Method
 
 ### Overall Architecture
 
-TDA is constructed at two levels: first, starting from rectified attention, a length-aware threshold mechanism (TRA) is introduced; then, a differential structure is added, using the difference between two independent views to further suppress noise (TDA). The process consists of three stages: (1) Projection and normalization: normalize query and key vectors using the L2 norm; (2) Similarity calculation and threshold filtering: calculate the dot product of row-wise queries and all keys, subtract the length-adaptive threshold, retain components exceeding the threshold, and apply a non-linear transformation; (3) Value aggregation: accumulate selected value vectors and perform final normalization via RMSNorm.
+TDA is a drop-in replacement for the Softmax attention operator, aiming to make each row of attention both sparse and sink-free without relying on sum-to-one normalization. It is constructed in two layers: the bottom layer starts from rectified attention and replaces fixed thresholds with adaptive thresholds that grow with context length (referred to as TRA), suppressing the phenomenon where longer sequences lead to larger spurious dot product extremes. The upper layer adds a differential construction, subtracting two independent views to eliminate common-mode noise (resulting in the full TDA). After a query vector enters, it undergoes L2-normalized projection, calculates dot products with all historical keys, subtracts the length threshold for rectified truncation, and finally performs a weighted sum of the selected value vectors, which is output via RMSNorm. No step in this operation pipeline forces the weights to sum to 1.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Query/Key Vectors<br/>L2 Normalized Projections (Two independent sets)"] --> B1["View 1 Similarity s⁽¹⁾"]
+    A --> B2["View 2 (Inhibitory View) Similarity s⁽²⁾"]
+    subgraph TH["Length-Adaptive Threshold τᵢ ∝ √(log i / d)"]
+        direction TB
+        B1 --> C1["Rectified Truncation (s⁽¹⁾−τᵢ)₊ᵖ"]
+        B2 --> C2["Rectified Truncation (s⁽²⁾−τᵢ)₊ᵖ"]
+    end
+    C1 --> D["Differential View Subtraction<br/>Δa = a⁽¹⁾ − λ·a⁽²⁾"]
+    C2 --> D
+    D --> E["RMSNorm Value Aggregation<br/>oᵢ = Norm(Σ Δaᵢⱼ·vⱼ)"]
+    E --> F["Output (No sum-to-one, 99% Exact Zero)"]
+```
 
 ### Key Designs
 
-1.  **Length-adaptive Threshold**:
+**1. Length-Adaptive Threshold: Increasing truncation barriers with $\log i$**
 
-    - **Function**: Dynamically adjust the threshold based on context length to prevent extreme value noise from growing with the sequence.
-    - **Mechanism**: Based on the sub-Gaussian assumption, the maximum value of spurious dot products theoretically satisfies $\tau_i \sim \sqrt{2\log(i/\kappa)/d}$. The authors define the row-level threshold as $\tau_i := \beta\sqrt{2\log((i+1)/\kappa)/d}$, where $i$ is the query position, $\beta>0$ is a learnable scalar, and $\kappa>0$ controls the expected number of spurious survivors. The resulting attention weights are $\mathbf{a}_{ij} = (\mathbf{s}_{ij} - \tau_i)_+^p$, where $(x)_+ = \max(x,0)$ and $p \geq 1$ is the power.
-    - **Design Motivation**: Vershynin's extreme value theory shows that under sub-Gaussian noise, the probability decay of the maximum value is positively correlated with $\sqrt{\log i / d}$. Fixed thresholds fail in long sequences, whereas this threshold growing with $\log i$ keeps noise control stable as sequence length increases. It theoretically guarantees the expected number of spurious survivors per row is $O(1)$.
+Fixed thresholds inevitably fail over long sequences because the maximum dot product of irrelevant query-key pairs in high dimensions rises with the number of candidates (extreme value effect). A constant barrier that filters noise in short sequences will allow more spurious matches in long sequences. TDA uses Extreme Value Theory to define a parameterized form for the threshold: under the sub-Gaussian assumption, the maximum of spurious dot products should satisfy $\tau_i \sim \sqrt{2\log(i/\kappa)/d}$. Thus, the authors define the row-level threshold as $\tau_i := \beta\sqrt{2\log((i+1)/\kappa)/d}$, where $i$ is the query position, $\beta > 0$ is a learnable scaling scalar, and $\kappa > 0$ controls the expected number of spurious survivors allowed per row. The truncated weight is $\mathbf{a}_{ij} = (\mathbf{s}_{ij} - \tau_i)_+^p$, where $(x)_+ = \max(x,0)$ and $p \geq 1$ is the power.
 
-2.  **Differential View Construction**:
+This barrier, which grows slowly with $\log i$, exactly offsets the rise of extreme values with length, making noise control stable relative to sequence length. Theorem 4.3 in the paper proves that this ensures the expected number of spurious survivors per row is $O(1)$, independent of sequence length. This addresses the root cause of degradation in fixed-threshold rectified methods like ReLA and is the source of TDA's "non-dispersive" property.
 
-    - **Function**: Further suppress spurious matches appearing in both views by subtracting two independent thresholded views.
-    - **Mechanism**: Maintain two independent sets of projection parameters $\{(\mathbf{q}^{(t)}, \mathbf{k}^{(t)})\}_{t \in \{1,2\}}$. Calculate similarity and apply length-adaptive thresholds for each view separately to get $\mathbf{a}_{ij}^{(t)} = (\mathbf{s}_{ij}^{(t)} - \tau_i)_+^p$. The final weights are $\Delta\mathbf{a}_{ij} = \mathbf{a}_{ij}^{(1)} - \lambda\mathbf{a}_{ij}^{(2)}$, where $\lambda \in (0,1)$ is a learnable suppression intensity parameter.
-    - **Design Motivation**: Even if a single view controls spurious survivors to $O(1)$ via thresholds, occasional high-magnitude noise may occur. The differential construction is based on the observation that a large similarity value might be spuriously generated due to shared non-informative structures; the inhibitory view is trained to capture such non-selective excitations. The probability of exceeding thresholds in two independent views simultaneously drops to $O(1/(i+1))$ under the independence assumption, vanishing asymptotically. This endows TDA with signed attention weights, enhancing expressivity.
+**2. Differential View Construction: Canceling occasional high-amplitude noise with two independent views**
 
-3.  **RMSNorm Value Aggregation**:
+Even if a single view reduces the expected spurious survivors to $O(1)$, individual high-amplitude noise can still occasionally cross the threshold. TDA adopts an idea from Differential Transformers as a second layer of protection: it maintains two sets of independent projection parameters $\{(\mathbf{q}^{(t)}, \mathbf{k}^{(t)})\}_{t \in \{1,2\}}$, calculates similarities for each, and applies the same length threshold to get $\mathbf{a}_{ij}^{(t)} = (\mathbf{s}_{ij}^{(t)} - \tau_i)_+^p$. The final weight is the difference between the two views: $\Delta\mathbf{a}_{ij} = \mathbf{a}_{ij}^{(1)} - \lambda\mathbf{a}_{ij}^{(2)}$, where $\lambda \in (0,1)$ is a learnable inhibition intensity.
 
-    - **Function**: Stabilize the value aggregation process for extremely sparse attention weights.
-    - **Mechanism**: Calculate $\mathbf{o}_i := \mathrm{Norm}(\sum_{j=1}^{i}\Delta\mathbf{a}_{ij}\mathbf{v}_j)$, where Norm is RMSNorm, normalizing by the root mean square of activations. This replaces the row-stochastic normalization in standard Softmax.
-    - **Design Motivation**: In extreme sparsity scenarios where 99% of weights are exactly zero, standard mean-variance normalization might be unstable due to small denominators. RMSNorm is more robust to changes in weight distribution by relying only on magnitude rather than mean and variance.
+The key observation is that a falsely high similarity often stems from non-informative structures shared by both views, and the second (inhibitory) view is trained specifically to capture such non-selective activations. Subtraction cancels out these common-mode components. Under independence assumptions, the probability that the same pair of tokens crosses the threshold in both views simultaneously decays from $O(1)$ to $O(1/(i+1))$ (Theorem 4.6), asymptotically vanishing with length. This step also makes the attention weights signed, providing more expressive power than purely positive weights.
+
+**3. RMSNorm Value Aggregation: Stabilizing output under 99% sparsity**
+
+Value aggregation is written as $\mathbf{o}_i := \mathrm{mathrm{Norm}}(\sum_{j=1}^{i}\Delta\mathbf{a}_{ij}\mathbf{v}_j)$, where Norm represents RMSNorm (normalization by the root mean square of activations), replacing the role of row-stochastic normalization in Softmax. Standard mean-variance normalization is avoided because 99% of TDA weights are exact zeros; if active weights are very few, the denominator of mean-variance normalization becomes too small, leading to numerical instability. RMSNorm only considers activation magnitude and does not depend on the mean or variance, making it more robust to such extreme sparse weight distributions and filling the gap of scale stabilization left after discarding sum-to-one.
 
 ### Loss & Training
 
-The paper pretrains a GPT-2-162M model from scratch on the FineWebEdu-10B dataset. Core hyperparameter settings: $\kappa=1$ (spurious survivor control), $\beta=1$ (threshold scaling), $p=2$ (power). A linear warmup + cosine decay learning rate schedule is used, with a max learning rate of $10^{-3}$, min $10^{-4}$, and weight decay of 0.1. NTK-aware RoPE scaling is used for long-context extension, along with an additional 500 steps of fine-tuning.
+The paper pre-trains GPT-2-162M from scratch on FineWebEdu-10B. Core hyperparameters are $\kappa=1$ (spurious survivor control), $\beta=1$ (threshold scaling), and $p=2$ (power). The learning rate uses linear warmup + cosine decay, with a maximum of $10^{-3}$ and a minimum of $10^{-4}$, and a weight decay of 0.1. For expansion to long contexts, NTK-aware RoPE scaling is used with an additional 500 steps of fine-tuning.
 
 ## Key Experimental Results
 
-### Main Results
+### Standard Language Modeling
 
 | Method | Val Loss | HellaSwag | ARC-Easy | ARC-Challenge | OpenBookQA | PIQA | Winogrande | Sparsity |
 |------|---------|----------|----------|---------------|-----------|------|-----------|--------|
@@ -82,54 +91,54 @@ The paper pretrains a GPT-2-162M model from scratch on the FineWebEdu-10B datase
 | ReLA | 3.1657 | 0.329 | 0.512 | 0.226 | 0.194 | 0.634 | 0.509 | 94% |
 | Diff Softmax | 3.1941 | 0.336 | 0.509 | 0.225 | 0.178 | 0.648 | 0.514 | 0% |
 | Dex | 3.1349 | 0.339 | 0.492 | 0.215 | 0.172 | 0.640 | 0.519 | 0% |
-| **Ours** | **3.1190** | 0.337 | 0.524 | 0.220 | 0.216 | 0.628 | 0.489 | **99%** |
+| **TDA** | **3.1190** | 0.337 | 0.524 | 0.220 | 0.216 | 0.628 | 0.489 | **99%** |
 
-Ours achieves the lowest validation loss (3.1190) while achieving 99% exact zero-weight sparsity, far exceeding other methods. Performance is comparable to or better than the Softmax baseline.
+TDA achieves the lowest validation loss (3.1190) while realizing 99% exact zero-weight sparsity, far exceeding other methods. Its performance is comparable to or better than the Softmax baseline.
 
-**Long-context SCROLLS Evaluation**
+### Long-Context SCROLLS Evaluation
 
 | Method | QMSum | SummScreenFD | GovReport | Qasper |
 |------|-------|--------------|-----------|--------|
 | Softmax | 10.29 | 7.25 | 3.78 | 8.82 |
 | Entmax | 11.52 | 10.16 | 4.24 | 11.54 |
 | ReLA | 11.20 | 9.14 | 4.42 | 10.77 |
-| **Ours** | 11.46 | 9.13 | 5.24 | 11.41 |
+| **TDA** | 11.46 | 9.13 | 5.24 | 11.41 |
 
-Ours is competitive on the long-context SCROLLS benchmark, matching Entmax but avoiding the computational overhead of projection methods.
+TDA demonstrates strong competitive performance on the long-context SCROLLS benchmark, matching Entmax while avoiding the computational overhead of projection methods.
 
 ### Key Findings
 
-- **Attention Sink Elimination**: The sink ratio of the first token $\mathrm{gSinkRatio}(1)$ remains at the uniform distribution baseline as sequence length grows, whereas Softmax rises sharply. The inhibitory behavior of the differential view broadly suppresses high-frequency functional words like "the" while preserving query-relevant selectivity for content words like "quick" or "brown".
-- **Depth-dependent Sparsity Distribution**: Early and late layers are highly sparse (zero-weight rate near 100%), while middle layers maintain about 50% activity. This aligns with the understanding that middle layers generate stronger query-key alignment.
-- **Hyperparameter Robustness**: $p=2$ is optimal; $p=1$ drops significantly due to the removal of non-linearity, and $p \geq 3$ increases gradient variance. $\beta=1.0$ yields optimal performance, remaining stable within the 0.5-1.0 range.
-- **Passkey Retrieval**: At 4,000 tokens, TDA achieves 15% accuracy, surpassing Softmax's 6%. The advantage is more pronounced in multi-needle retrieval (2 and 4 needles).
+- **Attention Sink Elimination**: The sink ratio of the first token $\mathrm{gSinkRatio}(1)$ remains at the level of a uniform distribution baseline as sequence length grows, whereas Softmax rises sharply. The inhibitory behavior of the differential view suppresses frequent stop words like "the" while retaining query-related selectivity for content words like "quick" or "brown".
+- **Depth-Dependent Sparsity Distribution**: Early and late layers are highly sparse (zero-weight rate near 100%), while middle layers maintain approximately 50% activity. This aligns with the understanding that middle layers produce stronger query-key alignment.
+- **Hyperparameter Robustness**: $p=2$ is optimal; $p=1$ results in a significant drop due to the removal of non-linearity, while $p \geq 3$ increases gradient variance. $\beta=1.0$ yields optimal performance and remains stable within the 0.5-1.0 range.
+- **Passkey Retrieval**: At a 4000-token length, TDA's accuracy of 15% exceeds Softmax's 6%, with a more pronounced advantage in multi-needle retrieval (2 and 4 needles).
 
 ## Highlights & Insights
 
-- **Elegant combination of theory and practice**: The $\sqrt{\log i / d}$ threshold scaling derived from sub-Gaussian extreme value theory has a solid mathematical foundation and shows significant empirical effects. Theorem 4.3 guarantees the expected spurious survivors per row is $O(1)$ independent of sequence length, and Theorem 4.6 proves consensus spurious survivors decay to $O(1/(i+1))$.
-- **Ingenious application of differential strategy**: Unlike other rectified methods, TDA cleverly reuses the idea from Differential Transformer but applies it to two independent thresholded views rather than Softmax views, avoiding the cost of dense Softmax while gaining the expressive advantage of signed weights.
-- **Creative leap from extreme value theory to attention design**: Using standard techniques from extreme value statistics (logarithmic growth of maximums in high dimensions) to directly guide attention threshold parameterization is a cross-disciplinary insight rarely seen in attention design.
+- **Elegant Combination of Theory and Practice**: The $\sqrt{\log i / d}$ threshold scaling derived from sub-Gaussian Extreme Value Theory not only has a solid mathematical foundation but also shows significant effects in experiments. Theorem 4.3 guarantees that the expected number of spurious survivors per row is $O(1)$ independent of length, and Theorem 4.6 further proves that consensus spurious survivors decay to $O(1/(i+1))$.
+- **Ingenious Application of Differential Strategy**: Unlike other rectified methods, TDA cleverly reuses the idea of Differential Transformers but avoids the computational cost of dense Softmax by differencing two separate thresholded views, while gaining the expressive advantage of signed weights.
+- **Creative Leap from Extreme Value Theory to Attention Design**: The use of standard techniques from extreme value statistics (logarithmic growth of maxima in high dimensions) to directly guide attention threshold parameterization is a cross-disciplinary insight rarely seen in attention design.
 
 ## Limitations & Future Work
 
-**Limitations of Prior Work (as acknowledged by authors)**: Experiments were primarily conducted on small models (GPT-2-162M); performance at the multi-billion parameter scale remains to be verified. Extremely aggressive thresholds might lead to "dead heads," where a head has no survivors at all positions.
+**Limitations acknowledged by the authors**: Experiments were primarily conducted on small-scale models (GPT-2-162M), and performance at the multi-billion parameter scale remains to be verified. Extremely aggressive thresholds might lead to "dead heads," where an attention head has no survivors across any positions.
 
-**Self-identified limitations**: (1) The sub-Gaussian assumption is empirically validated, but its tightness for highly non-linear Transformer latent states is not fully clear; (2) The independence assumption between views might be partially compromised during training (cross-view correlation rose from 0.0752 to 0.1231), with unknown long-term effects; (3) 15% absolute accuracy on 4,000-token Passkey retrieval still has room for improvement.
+**Self-identified limitations**: (1) While the sub-Gaussian assumption in the theoretical analysis is empirically validated, the tightness of this approximation for highly non-linear Transformer hidden state distributions is not fully clear; (2) The independence assumption between the two views may be partially compromised during training (cross-view correlation rose from 0.0752 to 0.1231), and the long-term impact is unknown; (3) An absolute accuracy of 15% on 4000-token Passkey retrieval still leaves room for improvement.
 
-**Future Work**: (1) Explore layer-wise or head-wise adaptive threshold scheduling; (2) Validate TDA scalability on larger (billion-parameter) models; (3) Combine with other long-context methods (e.g., block-wise attention, memory mechanisms).
+**Specific improvement ideas**: (1) Explore layer-wise or head-wise adaptive threshold scheduling; (2) Validate the scalability of TDA on larger (billion-parameter scale) models; (3) Combine with other long-context methods such as chunked attention or memory mechanisms.
 
 ## Related Work & Insights
 
-- **vs Rectified Attention (ReLA)**: ReLA naturally eliminates sinks by removing the sum-to-one constraint but suffers from noise accumulation due to a lack of length awareness; TDA retains the sparsity advantages of rectification but actively controls noise via $\sqrt{\log i / d}$ thresholds and differential views.
-- **vs Projection Sparsity (Entmax)**: Entmax achieves sparsity via iterative projection but is computationally expensive (sorting cost) and still imposes the sum-to-one constraint; TDA achieves $O(1)$ spurious survivors via threshold truncation without normalization constraints.
-- **vs Length-adaptive Softmax (SSMax)**: SSMax adapts to length by scaling dot products but still uses Softmax; TDA re-architects the attention mechanism structurally, fundamentally changing the nature of weight distribution.
+- **vs. Rectified Attention (ReLA)**: ReLA naturally eliminates sinks by removing the sum-to-one constraint but suffers from noise accumulation due to a lack of length awareness; TDA retains the sparsity advantages of rectified activation while actively controlling noise through $\sqrt{\log i / d}$ thresholds and differential views.
+- **vs. Projection Sparsity Methods (Entmax)**: Entmax achieves sparsity through iterative projection but is computationally expensive (sorting overhead) and still imposes the sum-to-one constraint; TDA achieves $O(1)$ spurious survivors via threshold truncation without normalization constraints.
+- **vs. Length-Adaptive Softmax (SSMax)**: SSMax adapts to length by scaling dot products but still uses Softmax; TDA rebuilds the attention mechanism at a structural level, fundamentally changing the nature of weight distribution.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First combination of extreme value theory and attention design; length-adaptive threshold concept is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers standard LM, long context, Passkey, hyperparameter sensitivity, and efficiency; however, small models limit representativeness.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic, smooth flow from problem statement to theory and experiments.
-- Value: ⭐⭐⭐⭐⭐ Directly addresses fundamental bottlenecks of long-context Transformers; 99% sparsity brings actual efficiency gains; open-source Triton kernel facilitates adoption.
+- Novelty: ⭐⭐⭐⭐⭐ First-time combination of Extreme Value Theory and attention design; the length-adaptive threshold concept is highly novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers standard LM, long context, Passkey, hyperparameter sensitivity, and efficiency analysis; experimental design is complete, though small-scale models limit the persuasiveness.
+- Writing Quality: ⭐⭐⭐⭐ The paper is logically clear, with a smooth flow from problem statement to theoretical derivation and experimental validation.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses fundamental bottlenecks of Transformer long contexts; 99% sparsity brings practical efficiency gains; open-source Triton kernels facilitate adoption.
 
 <!-- RELATED:START -->
 
@@ -137,11 +146,11 @@ Ours is competitive on the long-context SCROLLS benchmark, matching Entmax but a
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](../../NeurIPS2025/llm_efficiency/long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](../../ICML2026/llm_efficiency/stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
 - [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
+- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
+- [\[ACL 2026\] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length](understanding_llm_performance_degradation_in_multi-instance_processing_the_roles.md)
+- [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)
 
 </div>
 

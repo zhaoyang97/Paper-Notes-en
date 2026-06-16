@@ -2,77 +2,88 @@
 title: >-
   [Paper Note] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 description: >-
-  [CVPR 2026][LLM Safety][Image Anonymization] This paper proposes Unsafe2Safe, a fully automatic privacy-preserving pipeline that realizes controllable image anonymization through a four-stage approach—VLM privacy inspect…
+  [CVPR 2026][LLM Safety][Paper Note] This paper proposes Unsafe2Safe, a fully automated privacy protection pipeline utilizing a four-stage scheme: VLM privacy inspection → dual caption generation (private/public) → LLM editing instructions → text-guided diffusion editing. The approach achieves significant improvements in the VLMScore privacy metric while
 tags:
-  - "CVPR 2026"
-  - "LLM Safety"
-  - "Image Anonymization"
-  - "Privacy Protection"
-  - "Diffusion Editing"
-  - "VLM Inspection"
-  - "Downstream Task Preservation"
+  - CVPR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 0f7f20d724da6181
+content_hash: 246c5a71c79f95bb
 ---
-
 # Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.28605](https://arxiv.org/abs/2603.28605)  
 **Code**: [https://see-ai-lab.github.io/unsafe2safe/](https://see-ai-lab.github.io/unsafe2safe/)  
-**Area**: AI Safety
-**Keywords**: Image Anonymization, Privacy Protection, Diffusion Editing, VLM Inspection, Downstream Task Preservation
+**Area**: AI Safety  
+**Keywords**: Image Anonymization, Privacy Protection, Diffusion Editing, VLM Inspection, Downstream Task Maintenance
 
 ## TL;DR
 
-This paper proposes Unsafe2Safe, a fully automatic privacy-preserving pipeline that realizes controllable image anonymization through a four-stage approach—VLM privacy inspection → dual captioning (private/public) → LLM editing instructions → text-guided diffusion editing. The method achieves substantial improvements on the VLMScore privacy metric while surpassing the original images in downstream accuracy on Caltech-101 classification and OK-VQA.
+This paper proposes Unsafe2Safe, a fully automated privacy protection pipeline utilizing a four-stage scheme: VLM privacy inspection → dual caption generation (private/public) → LLM editing instructions → text-guided diffusion editing. The approach achieves significant improvements in the VLMScore privacy metric while improving accuracy on Caltech-101 classification and OK-VQA compared to original images.
 
 ## Background & Motivation
 
-1. **Background**: As large-scale visual datasets (e.g., LAION) become widely used, personal privacy concerns in images—faces, license plates, health information, etc.—have attracted increasing attention. Existing anonymization methods focus primarily on facial anonymization (e.g., DeepPrivacy2, blurring/mosaicking), covering only a narrow range of privacy elements.
-2. **Limitations of Prior Work**: (1) Traditional facial anonymization addresses only faces, ignoring license plates, health identifiers, personal opinions, and other privacy elements; (2) anonymized images often compromise scene semantic integrity, causing significant performance degradation on downstream tasks (classification, VQA); (3) anonymization may introduce new demographic biases (e.g., consistently replacing faces with those of a single ethnicity).
-3. **Key Challenge**: Effective anonymization requires substantial modification of privacy regions, yet such modifications disrupt the semantic information needed for downstream tasks—a fundamental tension between privacy and utility.
-4. **Goal**: Design a fully automatic and controllable anonymization pipeline that maximizes privacy protection while minimizing downstream task performance loss and balancing demographic distribution.
-5. **Key Insight**: Leveraging the multimodal understanding capabilities of VLMs for privacy inspection and scene description, LLMs for generating plausible replacement instructions, and diffusion editors for semantics-preserving local modification.
-6. **Core Idea**: Four sequential stages—VLM inspection → dual captioning → LLM instructions → diffusion editing—each addressing a specific sub-problem. A Safe Cross-Attention module performs dual-condition attention to simultaneously preserve semantics and execute edits.
+1.  **Background**: With the widespread use of large-scale visual datasets (e.g., LAION), personal privacy issues in images (faces, license plates, health information, etc.) have gained increasing attention. Current anonymization methods primarily focus on face anonymization (e.g., DeepPrivacy2, blurring/pixelation), which has a narrow scope.
+2.  **Limitations of Prior Work**: (1) Traditional face anonymization only handles faces, ignoring other privacy elements like license plates, health identifiers, or personal opinions; (2) Anonymized images often destroy the semantic integrity of the scene, leading to severe performance degradation in downstream tasks (classification, VQA); (3) Anonymization may introduce new demographic biases (e.g., consistently generating white faces for replacement).
+3.  **Key Challenge**: Effective anonymization requires substantial modification of private regions, but such modifications often destroy the semantic information required for downstream tasks—there is a fundamental tension between privacy and utility.
+4.  **Goal**: Design a fully automated and controllable anonymization pipeline that maximizes privacy protection while minimizing downstream task performance loss and balancing demographic distribution.
+5.  **Key Insight**: Leverage the multimodal understanding capabilities of VLMs for privacy inspection and scene description, use LLMs to generate reasonable replacement instructions, and utilize diffusion editors for semantic-preserving local modifications.
+6.  **Core Idea**: A four-stage serial pipeline—VLM inspection → Dual Captions → LLM instructions → Diffusion editing, where each stage solves a specific sub-problem. The Safe Cross-Attention module maintains semantics and executes edits simultaneously via dual-condition attention.
 
 ## Method
 
 ### Overall Architecture
 
-Input image → Stage 1: InternVL2.5 inspects privacy risk (binary labeling) → generate private caption $c^{\text{priv}}$ and public caption $c^{\text{pub}}$ for unsafe images → Qwen3-4B analyzes the public caption to produce pseudo-private attributes and editing instruction $c^{\text{edit}}$ → Stage 2: diffusion editor (FlowEdit/InstructPix2Pix) executes the edit → Safe Cross-Attention balances semantic preservation and privacy editing → output anonymized image.
+The core tension Unsafe2Safe aims to resolve is that concealing privacy requires significant image modification, yet such modification can ruin the semantics relied upon by downstream tasks (Classification, VQA). Ours decomposes "privacy identification — scene description — replacement decision — precise editing" into a fully automated pipeline, ensuring each step only modifies the necessary parts. The paper organizes this into two phases: **Phase 1 (Inspection)** uses a VLM for privacy determination and dual caption generation, followed by an LLM to produce editing instructions; **Phase 2 (Safe Generation)** executes the editing via a diffusion editor. Specifically, an input image is first inspected by InternVL2.5 for privacy; safe images are retained, while unsafe ones enter the rewriting process. For unsafe images, the VLM writes two versions of captions—a private caption $c^{\text{priv}}$ that retains details (for record-keeping only) and a public caption $c^{\text{pub}}$ that strips privacy (acting as a safe semantic representation); Qwen3-4B then infers reasonable replacement attributes from $c^{\text{pub}}$ to produce an editing instruction $c^{\text{edit}}$; finally, a diffusion editor (FlowEdit or fine-tuned InstructPix2Pix) performs local rewriting under the dual conditions of $c^{\text{pub}}$ and $c^{\text{edit}}$ to output an anonymized image for downstream use.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input Image"] --> CHK
+    subgraph S1["VLM Privacy Inspection + Dual Captions"]
+        direction TB
+        CHK["InternVL2.5 inspects per VISPR criteria<br/>97.5% recall, prioritizing safety over false positives"]
+        CHK -->|Safe| KEEP["Retain original image"]
+        CHK -->|Unsafe| CAP["Dual Captions: Private c_priv (records)<br/>Public c_pub (safe semantic representation)"]
+    end
+    CAP --> GEN["LLM generates replacement attributes and instructions<br/>Qwen3-4B infers pseudo-private attributes from c_pub → c_edit"]
+    GEN --> DIFF["Safe Cross-Attention<br/>FlowEdit / InstructPix2Pix dual-condition c_pub + c_edit"]
+    DIFF --> OUT["Anonymized Image → Downstream Tasks (Classification / VQA)"]
+```
 
 ### Key Designs
 
-1. **VLM Privacy Inspection and Dual Captioning**
+**1. VLM Privacy Inspection + Dual Captions: Clarifying "Where is privacy" and "What semantics to keep" simultaneously**
 
-    - **Function**: Automatically identifies privacy risks and generates two versions of scene descriptions—one preserving and one removing privacy information.
-    - **Mechanism**: InternVL2.5 inspects each image against predefined privacy criteria (faces, health identifiers, vehicles, personal opinions, sensitive documents), achieving a recall of 97.5% (a deliberately high Type I error rate to minimize privacy leakage). For unsafe images, the model generates $c^{\text{priv}}$ containing privacy details and $c^{\text{pub}}$ with privacy removed.
-    - **Design Motivation**: The two captions serve as modality-aligned privacy-safe representations—$c^{\text{pub}}$ retains scene semantics without privacy content, while $c^{\text{edit}}$ guides modifications to privacy regions.
+Traditional face anonymization ignores license plates, health markers, sensitive documents, and personal opinions. Ours utilizes InternVL2.5 to inspect images against a predefined set of criteria (faces / health markers / vehicles / personal opinions / sensitive documents), with a conservative threshold achieving 97.5% recall to prevent privacy leaks. For unsafe images, the VLM generates $c^{\text{priv}}$ (keeping details) and $c^{\text{pub}}$ (stripping privacy while preserving scene semantics). $c^{\text{pub}}$ is critical as it serves as a "modality-aligned safe representation"—informing subsequent modules of the semantics to preserve without including privacy content.
 
-2. **LLM Editing Instruction Generation**
+**2. LLM Instruction Generation: Letting the machine decide "what to replace with"**
 
-    - **Function**: Generates plausible replacement attributes and editing instructions based on the public caption.
-    - **Mechanism**: Qwen3-4B-Instruct analyzes $c^{\text{pub}}$, generates pseudo-private attributes (e.g., replacing a specific face with "a middle-aged male"), and produces structured editing prompts $c^{\text{edit}}$. The final editing condition concatenates $c^{\text{edit}}$ and $c^{\text{pub}}$ as the textual prior for the diffusion editor.
-    - **Design Motivation**: Delegating replacement strategy to the LLM rather than humans enables full automation; the LLM also generates diverse replacement attributes, mitigating demographic bias.
+After identifying what to change, one must decide the replacement content to remain reasonable and unbiased. Ours uses Qwen3-4B-Instruct to read $c^{\text{pub}}$ and infer **pseudo-private attributes** for private regions—abstracting "a specific person" into "a middle-aged male" to create a structured editing prompt $c^{\text{edit}}$. This step is automated and diverse: because replacement attributes are sampled by the LLM based on the scene rather than fixed templates, demographic biases (e.g., always replacing with white faces) are naturally avoided. The final text prior sent to the diffusion editor is the combination of $c^{\text{edit}}$ and $c^{\text{pub}}$—one defining "how to change" and the other defining "what not to change."
 
-3. **Safe Cross-Attention Module**
+**3. Safe Cross-Attention: Dual-condition attention for balancing modification and preservation**
 
-    - **Function**: Prevents the diffusion editor from over-modifying non-private regions.
-    - **Mechanism**: Embeddings of $c^{\text{pub}}$ and $c^{\text{edit}}$ are concatenated into a unified token sequence, upon which dual-condition cross-attention is performed during denoising. $c^{\text{pub}}$ provides a semantic preservation signal while $c^{\text{edit}}$ provides the target transformation signal; the two act jointly within the attention layers.
-    - **Design Motivation**: Standard diffusion editors conditioned on a single instruction tend to over-edit or under-edit. Dual-condition attention allows the model to simultaneously "know what not to change" and "know what to change."
+Standard diffusion editors using a single instruction often either over-edit (changing backgrounds) or fail to edit (leaving privacy visible). Ours concatenates the text embeddings of $c^{\text{pub}}$ and $c^{\text{edit}}$ into a unified token sequence and performs dual-condition cross-attention at each denoising step:
+
+$$\text{Attn}(Q, [K_{\text{pub}}; K_{\text{edit}}], [V_{\text{pub}}; V_{\text{edit}}])$$
+
+The $c^{\text{pub}}$ branch provides "semantic preservation" signals, while the $c^{\text{edit}}$ branch provides "target transformation" signals. These collaborate within the same attention layer: the model responds to $c^{\text{edit}}$ to rewrite private regions while being anchored by $c^{\text{pub}}$ in other regions. In ablations, this module increased Race Entropy from 0.800 to 0.831, demonstrating the diversity benefits of balanced editing.
+
+### Mechanism Example
+
+Consider a street view photo with a real face: In Stage 1, InternVL2.5 marks it "unsafe" (face + possible license plate) and generates $c^{\text{priv}}$="A bearded Asian man standing next to a red sedan with license plate ABC123" and $c^{\text{pub}}$="A person standing next to a red sedan in a street scene." Qwen3-4B generates $c^{\text{edit}}$="Replace the person with a middle-aged male and the license plate with a generic plate." Finally, the diffusion editor modifies the image under $\{c^{\text{pub}}, c^{\text{edit}}\}$: Safe Cross-Attention ensures the face and plate are rewritten to non-identifying versions, while the "red sedan + street scene" composition is preserved by $c^{\text{pub}}$. The output FaceSim drops to 0.366 (face changed), but Caltech-101 classification remains correct—privacy is concealed without losing utility.
 
 ### Loss & Training
 
-The core pipeline requires no training. Optional fine-tuning: InstructPix2Pix is fine-tuned on MS-COCO using automatically generated triplets (private caption, public caption, editing instruction). Fine-tuning employs self-attention replacement (probability 0.4) to construct training pairs.
+The core pipeline requires no training and can be run by serializing off-the-shelf VLMs/LLMs/Diffusion editors. An optional fine-tuning phase involves training InstructPix2Pix on MS-COCO using automatically generated triplets (private caption, public caption, editing instruction) with a 0.4 probability of self-attention replacement to construct training pairs, further improving editing quality.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Caltech-101 Acc | VLMScore↑ | FaceSim↓ | TextSim↓ | Race Entropy↑ |
-|---|---|---|---|---|---|
-| Original Images | 94.28 | 7.70 | 1.000 | 1.000 | 0.438 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Original Image | 94.28 | 7.70 | 1.000 | 1.000 | 0.438 |
 | DeepPrivacy2 | 94.60 | 11.05 | 0.392 | 0.957 | 0.732 |
 | FaceAnon | 94.85 | 8.76 | 0.459 | 0.936 | 0.609 |
 | **U2S (FlowEdit)** | 94.79 | **13.97** | **0.366** | **0.524** | **0.765** |
@@ -80,46 +91,46 @@ The core pipeline requires no training. Optional fine-tuning: InstructPix2Pix is
 
 ### Ablation Study
 
-| Component | Caltech-101 Acc | FaceSim↓ | Race Entropy↑ | Notes |
-|---|---|---|---|---|
-| Non-finetuned (edit) | 94.32 | 0.516 | 0.683 | Baseline |
+| Component | Caltech-101 Acc | FaceSim↓ | Race Entropy↑ | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| Non-finetuned (edit) | 94.32 | 0.516 | 0.683 | Base version |
 | Finetuned (edit) | **95.12** | 0.591 | 0.800 | Fine-tuning improves quality |
-| Finetuned + SafeAttn | 94.89 | 0.547 | **0.831** | Safe attention improves diversity |
+| Finetuned + SafeAttn | 94.89 | 0.547 | **0.831** | SafeAttn increases diversity |
 
 ### Key Findings
 
-- **VQA accuracy increases after anonymization**: U2S (FlowEdit) achieves a VQA accuracy of 0.709 vs. 0.606 for original images (+10.3%), possibly because anonymization removes distracting privacy-related information.
-- Demographic balance is substantially improved: the proportion of white individuals decreases from 80.28% to 37.90% (LLM variant), and Race Entropy rises from 0.438 to 0.875.
-- U2S provides more comprehensive privacy protection than facial anonymization (TextSim reduced from 0.957 to 0.488), covering faces, text, vehicles, and other privacy elements.
-- The high recall (97.5%) of the VLM privacy inspection ensures minimal privacy leakage.
+*   **Accuracy improvement on OK-VQA after anonymization**: U2S (FlowEdit) achieved a VQA accuracy of 0.709 vs 0.606 (+10.3%) for original images, likely because anonymization removed distracting private information.
+*   **Demographic balance significantly improved**: The proportion of white faces decreased from 80.28% to 37.90% (LLM variant), and Race Entropy increased from 0.438 to 0.875.
+*   **Comprehensive protection**: U2S provides more comprehensive protection than face anonymization (TextSim dropped from 0.957 to 0.488), covering faces, text, vehicles, and other elements.
+*   **High recall (97.5%)** in VLM privacy inspection ensures minimal privacy leakage.
 
 ## Highlights & Insights
 
-- **Modular four-stage pipeline design**: Each stage can be replaced independently (e.g., with a stronger VLM or a newer diffusion editor), making the system upgradable with minimal effort.
-- **Counter-intuitive VQA accuracy gain**: Anonymization may indirectly benefit downstream tasks by eliminating privacy-related visual noise—suggesting that privacy information in current datasets constitutes a form of interference.
-- **Demographic balance as a by-product**: LLM-generated diverse replacement attributes naturally yield demographic balance without requiring additional fairness constraints.
-- **Generalizability of Safe Cross-Attention**: The dual-condition attention mechanism is reusable in other editing tasks requiring a "preserve + modify" balance, such as local style transfer.
+*   **Modular design of the four-stage pipeline**: Each stage can be independently replaced (e.g., using better VLMs or newer diffusion editors), making the system easy to upgrade.
+*   **Counter-intuitive VQA accuracy gain**: Anonymization might indirectly assist downstream tasks by eliminating privacy-related interference—suggesting the presence of "visual noise" caused by private information in current datasets.
+*   **By-product of demographic balance**: Diverse replacement attributes generated by the LLM naturally produce demographic balance without additional fairness constraints.
+*   **Generality of Safe Cross-Attention**: Dual-condition attention can be reused in other editing tasks requiring a balance between "preservation and modification" (e.g., local style transfer).
 
 ## Limitations & Future Work
 
-- Unsafe2Safe is a dataset construction tool, not a privacy decision-maker—the responsibility for defining "what constitutes private information" rests with the user.
-- The pipeline depends on the quality of the underlying VLM/LLM; model hallucinations may cause misjudgments (missed detections or over-detection).
-- Scene classification accuracy on MIT Indoor67 decreases (80.75 vs. 83.88), indicating that global modifications negatively affect scene understanding.
-- Diffusion editor artifacts may be visible at region boundaries.
-- Scalability of privacy definitions—how to automatically adapt to privacy standards across different countries and cultures remains an open question.
+*   Unsafe2Safe is a dataset construction tool, not a privacy policy-maker—the responsibility for defining "what is private" lies with the user.
+*   Dependence on the quality of underlying VLMs/LLMs; model hallucinations may lead to misjudgments (missed or over-detections).
+*   Accuracy drop in MIT Indoor67 scene classification (80.75 vs 83.88) indicates that global modifications may negatively impact scene understanding.
+*   Artifacts from the diffusion editor might be visible in boundary regions.
+*   Scalability of privacy definitions—exploring how to automatically adapt to different national/cultural privacy standards remains for future work.
 
 ## Related Work & Insights
 
-- **vs. DeepPrivacy2**: Performs facial anonymization only, without addressing license plates, text, etc. U2S provides comprehensive coverage of multiple privacy elements while achieving comparable classification performance.
-- **vs. FaceAnon**: A similar face-level method; its FaceSim of 0.459 is substantially worse than U2S's 0.366, demonstrating that U2S achieves more thorough anonymization.
-- **vs. Traditional Blurring/Mosaicking**: These methods completely destroy semantic information, rendering downstream tasks unusable. U2S preserves semantic integrity through diffusion editing.
+*   **vs DeepPrivacy2**: Only performs face anonymization, ignoring plates, text, etc. U2S comprehensively covers multiple privacy elements with comparable or better classification performance.
+*   **vs FaceAnon**: Similar face-level method; its FaceSim of 0.459 is significantly higher than U2S's 0.366—indicating that U2S achieves more thorough anonymization.
+*   **vs Traditional Mosaic/Blurring**: These completely destroy semantic information, making images unusable for downstream tasks. U2S maintains semantic integrity through diffusion editing.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The four-stage pipeline design is novel; Safe Cross-Attention is a notable contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across five dimensions: classification, captioning, VQA, privacy, and demographics.
-- **Writing Quality**: ⭐⭐⭐⭐ — Pipeline description is clear; evaluation framework is rigorously designed.
-- **Value**: ⭐⭐⭐⭐⭐ — Data privacy is a core pain point in industry; a fully automatic anonymization tool has direct application value.
+*   Novelty: ⭐⭐⭐⭐ The system design of the four-stage serial pipeline is novel; Safe Cross-Attention is a highlight.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across five dimensions: classification, captioning, VQA, privacy, and demographics.
+*   Writing Quality: ⭐⭐⭐⭐ Clear description of the pipeline and a rigorous evaluation framework.
+*   Value: ⭐⭐⭐⭐⭐ Data privacy is a core pain point in the industry; a fully automated anonymization tool has direct application value.
 
 <!-- RELATED:START -->
 
@@ -131,7 +142,7 @@ The core pipeline requires no training. Optional fine-tuning: InstructPix2Pix is
 - [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
 - [\[CVPR 2026\] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)
 - [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](../../ACL2026/llm_safety/cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
-- [\[ACL 2026\] Understanding and Mitigating Bias Inheritance in LLM-based Data Augmentation on Downstream Tasks](../../ACL2026/llm_safety/understanding_and_mitigating_bias_inheritance_in_llm-based_data_augmentation_on_.md)
+- [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
 
 </div>
 

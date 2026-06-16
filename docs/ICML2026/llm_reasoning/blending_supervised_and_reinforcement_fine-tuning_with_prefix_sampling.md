@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling
 description: >-
-  [ICML 2026][LLM Reasoning][Post-training] This paper proposes Prefix-RFT, which constructs hybrid trajectories by sampling prefixes from expert demonstrations and concatenating model-generated continuations. This approac…
+  [ICML 2026][LLM Reasoning][Paper Note] This paper proposes Prefix-RFT, which constructs mixed trajectories by sampling prefixes from expert demonstrations and concatenating model continuations. This approach injects knowledge guidance from SFT while maintaining the objective-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and
 tags:
-  - "ICML 2026"
-  - "LLM Reasoning"
-  - "Post-training"
-  - "Supervised Fine-Tuning"
-  - "Reinforcement Fine-Tuning"
-  - "Prefix Sampling"
-  - "Mathematical Reasoning"
+  - ICML 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 6ed3322ed6a603fb
+content_hash: 1197ca42c84e46db
 ---
-
 # Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling
 
 **Conference**: ICML 2026  
@@ -24,52 +18,59 @@ content_hash: 6ed3322ed6a603fb
 **Keywords**: Post-training, Supervised Fine-Tuning, Reinforcement Fine-Tuning, Prefix Sampling, Mathematical Reasoning  
 
 ## TL;DR
-This paper proposes Prefix-RFT, which constructs hybrid trajectories by sampling prefixes from expert demonstrations and concatenating model-generated continuations. This approach injects knowledge guidance from SFT while maintaining the goal-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and existing hybrid methods on mathematical reasoning tasks.
+This paper proposes Prefix-RFT, which constructs mixed trajectories by sampling prefixes from expert demonstrations and concatenating model continuations. This approach injects knowledge guidance from SFT while maintaining the objective-oriented optimization of RFT, significantly outperforming independent SFT, RFT, and existing hybrid methods on mathematical reasoning tasks.
 
 ## Background & Motivation
 
-**Background**: LLM post-training primarily follows two paradigms: Supervised Fine-Tuning (SFT), which injects knowledge by mimicking expert demonstrations, and Reinforcement Fine-Tuning (RFT), which enhances task performance through trial-and-error exploration and reward signals. In practice, a two-stage pipeline of SFT followed by RFT is commonly adopted.
+**Background**: LLM post-training primarily follows two paradigms: Supervised Fine-Tuning (SFT) injects knowledge by imitating expert demonstrations, while Reinforcement Fine-Tuning (RFT) improves task performance through trial-and-error exploration and reward signals. In practice, a two-stage pipeline—SFT followed by RFT—is typically adopted.
 
-**Limitations of Prior Work**: SFT is essentially behavior cloning; while it teaches correct problem-solving patterns, it suffers from issues in generalization and robustness. RFT directly optimizes task performance, but its learning signals are sparse, it can lead to unexpected behaviors like language mixing, and its performance is highly dependent on the capability ceiling of the initial policy—recent studies have questioned whether RL can truly surpass the inherent capability ceiling of a model.
+**Limitations of Prior Work**: SFT is essentially behavior cloning; while it teaches correct problem-solving patterns, it suffers from generalization and robustness issues. RFT directly optimizes task performance but faces sparse learning signals, potential unexpected behaviors like language mixing, and a performance ceiling heavily dependent on the initial policy's capability—recent research even questions if RL can truly break a model's intrinsic capability ceiling.
 
-**Key Challenge**: SFT provides dense supervision but over-constrains the solution space, while RFT encourages exploration but is limited by the current policy's capability. Simple joint training of "RL + SFT Loss" can backfire as demonstration gradients dominate RFT gradients. Conversely, the sequential two-stage approach (SFT→RFT) cannot dynamically balance the two learning signals during training.
+**Key Challenge**: SFT provides dense supervision but over-constrains the solution space, while RFT encourages exploration but is limited by the current policy's capability. Simple joint training using "RL + SFT Loss" can be counterproductive because demonstration gradients tend to dominate RFT gradients; meanwhile, the two-stage serial pipeline (SFT→RFT) fails to dynamically balance both learning signals during the training process.
 
-**Goal**: Design a unified framework that organically integrates SFT's process supervision with RFT's goal-oriented optimization during the RFT training process, achieving a dynamic balance between knowledge injection and capability enhancement.
+**Goal**: Design a unified framework to organically integrate SFT's process supervision with RFT's objective-oriented optimization during the training process, achieving a dynamic balance between knowledge injection and capability enhancement.
 
-**Key Insight**: The authors first establish a unified perspective on SFT and RFT—both gradient updates apply weighted gradients to token log-probabilities, differing only in the weight assignment. Based on this unified framework, the two paradigms can be naturally fused by designing appropriate weight allocations.
+**Key Insight**: The authors first establish a unified perspective for SFT and RFT—the gradient updates for both are essentially weighted gradients applied to token log-probabilities, differing only in how weights are assigned. Based on this unified framework, integrating both paradigms naturally requires only designing an appropriate weight distribution.
 
-**Core Idea**: Sample prefixes from expert demonstrations, allow the model to continue generation from the prefix position, and concatenate these into hybrid trajectories. These, along with standard rollouts, are used for PPO updates, utilizing trajectory-level advantage to automatically regulate the learning intensity of demonstration data.
+**Core Idea**: Sample prefixes from expert demonstrations and have the model generate continuations from the prefix positions. These mixed trajectories are combined with standard rollouts for PPO updates, utilizing trajectory-level advantage to automatically regulate the learning intensity of the demonstration data.
 
 ## Method
 
 ### Overall Architecture
-Given a prompt $x$ and an expert demonstration $y^*$, Prefix-RFT first generates $N-1$ standard rollouts using the current policy $\pi_{\theta_{\text{old}}}$. For the $N$-th trajectory, a prefix $y^*_{<L}$ is intercepted from $y^*$, and the model generates a continuation $y_{\geq L}$ to form a hybrid trajectory $y^{(N)}$. All $N$ trajectories are used to estimate advantages and perform PPO updates, where prefix tokens and continuation tokens use the same PPO weights $\mathcal{W}_{i,t}^{\text{PPO}} = \mathbb{I}_{\text{clip}}(r_t, \hat{A}_t) \hat{A}_t r_t$. This avoids additional rollout overhead by simply replacing one standard rollout with a hybrid trajectory.
+Prefix-RFT aims to leverage both SFT's knowledge guidance and RFT's exploration benefits within a single RFT training session by "embedding" expert demonstrations into rollouts. Given a prompt $x$ and a demonstration $y^*$, the current policy $\pi_{\theta_{\text{old}}}$ generates $N-1$ standard rollouts. The $N$-th trajectory is not generated freely from the start; instead, a prefix $y^*_{<L}$ is taken from the demonstration, and the model continues generating $y_{\geq L}$ from the $L$-th position to form a mixed trajectory $y^{(N)}$, which combines an "expert-provided first half" and a "model-generated second half." These $N$ trajectories are used together for advantage estimation and PPO updates, where prefix tokens and continuation tokens share the same PPO weight $\mathcal{W}_{i,t}^{\text{PPO}} = \mathbb{I}_{\text{clip}}(r_t, \hat{A}_t)\,\hat{A}_t\, r_t$. This process replaces one standard rollout with a mixed trajectory without increasing sampling overhead.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: prompt x + expert demonstration y*"] --> B["Current policy generates<br/>N−1 standard rollouts"]
+    A --> C["Prefix sampling and mixed trajectory construction<br/>Demo prefix + model continuation"]
+    SCHED["Cosine-decayer prefix length scheduler<br/>Determines prefix length (long in early stages → near zero later)"] --> C
+    B --> D["Estimate advantage Â for N trajectories"]
+    C --> D
+    D --> E["Entropy-based pruning<br/>Retain only top-20% high-entropy tokens for prefix"]
+    E --> F["PPO Update<br/>Prefix and continuation share advantage weights"]
+    F -->|Reduce prefix length for next round| SCHED
+```
 
 ### Key Designs
 
-1. **Prefix Sampling and Hybrid Trajectory Construction**:
+**1. Prefix Sampling and Mixed Trajectory Construction: Demonstrations as "Starting Hints" rather than "Standard Answers"**
 
-    - **Function**: Organically embeds offline demonstration data into the online RFT training process.
-    - **Mechanism**: Extracts the first $L$ tokens of an expert demonstration as a prefix, and the model continues writing from the $L$-th position. Although the prefix originates from an offline policy, its gradient weight is determined by the advantage of the entire hybrid trajectory: if the prefixed trajectory receives a higher reward, the prefix is naturally reinforced; otherwise, it is suppressed. Compared to SFT's forced imitation of the entire sequence, prefix sampling grants the model "constrained autonomy"—starting in the direction guided by the expert while still exploring superior continuation paths.
-    - **Design Motivation**: Addresses the low exploration efficiency of pure RFT and its inability to break the policy's capability ceiling, while avoiding SFT's over-constraint of the solution space.
+The pain point of pure RFT is low exploration efficiency and an inability to break the initial policy's ceiling, while SFT fixes the entire sequence and over-constrains the solution space. Prefix sampling finds a middle ground: it截取 only the first $L$ tokens of a demonstration as a prefix, and the model continues autonomously. Crucially, the prefix is not supervised by a separate SFT loss but is determined by the advantage of the entire mixed trajectory. If a trajectory with a prefix receives a higher reward, the prefix is positively reinforced; otherwise, it is suppressed. This gives the model "constrained autonomy"—starting in the direction of expert guidance but still allowed to explore continuation paths superior to the demonstration, bypassing SFT rote memorization while providing RFT with a high-quality starting point.
 
-2. **Entropy-based Clipping**:
+**2. Entropy-based Pruning: Learning only the 20% tokens the model is most uncertain about**
 
-    - **Function**: Prevents gradients from offline demonstrations from dominating the optimization process.
-    - **Mechanism**: Only the top-$k$% (default 20%) highest-entropy tokens in the prefix are retained for gradient updates, while the advantages of other tokens are set to zero. Low-entropy tokens either already match the current policy (small learning signal) or represent high-confidence deviations (which would lead to drastic overwriting updates); high-entropy tokens correspond to positions where the model is most uncertain and possess the highest learning value.
-    - **Design Motivation**: When the gap between the offline policy $\pi_{\text{off}}$ and the current policy is large, the probability of prefix tokens can be extremely low, making the gradient magnitude much larger than the RFT gradient. Without constraints, this degrades into simple SFT.
+When the offline policy $\pi_{\text{off}}$ differs significantly from the current policy, the probability of prefix tokens under the current model is extremely low, and their gradient magnitude can overwhelm RFT gradients. Without constraints, the training degenerates into simple SFT. The solution is to filter by token entropy: only the top-$k$% (default $k=20$) highest entropy tokens in the prefix participate in updates, while the advantage for other tokens is zeroed out. The rationale is that low-entropy tokens are either already matched by the current policy (little to learn) or high-confidence deviations (forcing weight changes triggers severe overwriting), whereas high-entropy tokens represent the model's highest uncertainty and greatest learning value. Concentrating the gradient budget on these 20% high-entropy tokens prevents demonstration gradients from drowning out RFT signals while precisely absorbing the most useful parts of the demonstration.
 
-3. **Cosine Decay Scheduler**:
+**3. Cosine-decayer Prefix Length Scheduler: Smooth transition from "SFT-like long prefixes" to "RFT-like short prefixes"**
 
-    - **Function**: Controls the dynamic change of prefix length to achieve a curriculum-style transition from SFT to RFT.
-    - **Mechanism**: The prefix length is determined by $L = \lfloor l \cdot |y^*| \rfloor$, where $l \sim U(\text{low}, \text{high})$. Early in training, low is close to high (long prefixes, close to SFT); as training progresses, low follows a cosine decay toward zero (short prefixes, close to RFT). This mitigates the position bias caused by uniform sampling (where concluding segments have low sampling probability) and naturally implements curriculum learning.
-    - **Design Motivation**: In uniform sampling, the model is naturally exposed more to skills at the beginning of demonstrations rather than the end (e.g., summarization, reasoning closure). Furthermore, as the model grows stronger in later stages, dependence on demonstrations should be reduced.
+The prefix length is determined by $L = \lfloor l \cdot |y^*| \rfloor$, where the ratio $l \sim U(\text{low}, \text{high})$ is sampled. Two issues are addressed: first, uniform sampling would cause the model to systematically encounter demonstration beginnings more often, missing out on concluding/reasoning skills at the end (position bias); second, the model becomes stronger in later training stages and should rely less on demonstrations. The scheduler keeps $low$ close to $high$ in early training (longer prefixes, closer to SFT) and decays it toward zero following a cosine curve (shorter prefixes, closer to RFT). This constructs a curriculum moving from "heavy demonstration dependence" to "autonomous exploration." Observations show prefix advantages gradually shrinking across epochs, validating this curriculum-based transition.
 
 ## Key Experimental Results
 
 ### Main Results (Qwen2.5-Math-7B)
 
-| Method | AIME24 | AIME25 | AMC | MATH-500 | Minerva | Olympiad | Math Avg. |
+| Method | AIME24 | AIME25 | AMC | MATH-500 | Minerva | Olympiad | Math Avg |
 |------|--------|--------|-----|----------|---------|----------|----------|
 | Base | 11.5 | 4.9 | 31.3 | 43.6 | 7.4 | 15.6 | 19.0 |
 | SFT | 22.2 | 22.3 | 52.8 | 82.6 | 40.8 | 43.7 | 44.1 |
@@ -82,39 +83,39 @@ Given a prompt $x$ and an expert demonstration $y^*$, Prefix-RFT first generates
 
 ### Ablation Study (Qwen2.5-Math-1.5B)
 
-| Configuration | AIME24 | AIME25 | AMC | MATH-500 | Avg. | Description |
+| Configuration | AIME24 | AIME25 | AMC | MATH-500 | Avg | Description |
 |------|--------|--------|-----|----------|------|------|
 | SFT | 11.7 | 13.2 | 37.8 | 70.6 | 31.9 | Pure SFT baseline |
 | RFT | 11.8 | 7.7 | 40.2 | 61.8 | 30.0 | Pure RFT baseline |
 | Prefix-RFT (full) | 17.7 | 17.1 | 50.5 | 81.4 | 41.1 | Complete method |
-| Data Volume 10% (4.5k) | 17.8 | 15.9 | 49.7 | 79.0 | 40.8 | Only 0.3 drop |
-| Data Volume 1% (0.45k) | 15.2 | 11.8 | 46.3 | 76.0 | 37.6 | Exceeds baseline with 99% less data |
-| 1.5B Generator | 15.9 | 12.6 | 47.7 | 79.0 | 39.8 | Effective with weak generator |
-| 32B Generator | 18.1 | 15.3 | 50.9 | 81.2 | 40.6 | Quality has minor impact |
+| 10% Data (4.5k) | 17.8 | 15.9 | 49.7 | 79.0 | 40.8 | Gain -0.3 only |
+| 1% Data (0.45k) | 15.2 | 11.8 | 46.3 | 76.0 | 37.6 | Beats baseline w/ 1% data |
+| 1.5B Generator | 15.9 | 12.6 | 47.7 | 79.0 | 39.8 | Weak generator remains effective |
+| 32B Generator | 18.1 | 15.3 | 50.9 | 81.2 | 40.6 | Minimal impact from quality |
 
 ### Key Findings
-- Prefix-RFT consistently outperforms all baselines across 6 mathematical reasoning and 3 general reasoning benchmarks, with a math average of 51.8 vs. LUFFY 50.1 and RFT 45.5.
-- Pass@2048 experiments indicate that Prefix-RFT is the only method that truly raises the model's reasoning capability ceiling, improving by 6.67 percentage points over the base model on AIME24 and AIME25.
-- Top-20% entropy clipping significantly outperforms top-50%/80%/random-20%/bottom-20%, validating the necessity of high-entropy token selection.
-- The cosine decay scheduler is superior to uniform sampling; training dynamics show prefix advantages gradually shrinking—the model automatically transitions from demonstration dependence to autonomous exploration.
-- The method is robust to both demonstration volume and quality: reducing data by 99% only leads to a 3.5-point drop, and demonstrations generated by a small 1.5B model achieve performance close to that of DeepSeek-R1.
+- Prefix-RFT comprehensively outperforms all baselines across 6 mathematical reasoning and 3 general reasoning benchmarks, with a math average of 51.8 vs. LUFFY 50.1 and RFT 45.5.
+- Pass@2048 experiments indicate that Prefix-RFT is the only method that truly elevates the model's reasoning capability ceiling, showing a 6.67 percentage point increase over the base model on AIME24 and AIME25.
+- Top-20% entropy pruning significantly outperforms top-50%/80%, random-20%, or bottom-20%, verifying the necessity of high-entropy token selection.
+- The cosine-decayer scheduler outperforms uniform sampling, with training dynamics showing prefix advantages gradually narrowing—demonstrating the model's automatic transition from demo-dependence to autonomous exploration.
+- The method is robust to demonstration data quantity and quality: reducing data by 99% only results in a 3.5-point drop, and using demonstrations from a small 1.5B model achieves performance close to using DeepSeek-R1.
 
 ## Highlights & Insights
-- **Simple but Profound Unified Perspective**: The structural consistency of SFT and RFT gradients (weighted log-prob gradients), differing only in weight settings, provides a theoretical foundation for hybrid methods. From this view, the design of Prefix-RFT becomes natural and elegant—obviating the need for extra loss functions or complex multi-stage scheduling.
-- **Advantage-Driven Adaptive Learning**: The learning intensity of the prefix is automatically regulated by trajectory-level advantage. For difficult problems, prefix advantage is high, allowing the model to learn more from demonstrations; for easy problems, advantage is low, and the model relies on its own exploration. This instance-level dynamic balance requires no manual weight settings.
-- **High-Entropy Token Filtering**: Using information-theoretic metrics to filter the gradient contributions of offline data is a general technique for off-policy training stability, transferable to other mixed online/offline learning scenarios.
+- **Profoundly Simple Unified Perspective**: The structural identity of SFT and RFT gradients (weighted log-prob gradients) provides a solid theoretical foundation. From this viewpoint, the design of Prefix-RFT is natural and elegant—avoiding extra loss functions or complex multi-stage scheduling.
+- **Advantage-Driven Adaptive Learning**: The learning intensity for prefixes is automatically regulated by trajectory-level advantages—high advantages for hard problems lead to more learning from demos, while low advantages for easy problems shift focus to self-exploration. This instance-level dynamic balance requires no manual weight tuning.
+- **High-Entropy Token Selection**: Using information-theoretic metrics to filter the gradient contribution of offline data is a universal technique for off-policy training stability, transferable to other mixed online/offline learning scenarios.
 
 ## Limitations & Future Work
-- Experiments focused mainly on verifiable reasoning tasks (math, code); performance in open-ended generation and noisy reward scenarios remains unverified.
-- When multiple candidate demonstrations are available for each prompt, a simple random selection may not be optimal; systematic demonstration selection strategies are left for the future.
-- Optimal values for the entropy clipping ratio (20%) and scheduler parameters may vary by task/model; a unified hyperparameter search strategy has not yet been explored.
-- Code generation experiments were only a preliminary validation (Qwen3-1.7B); generalization across larger scales and more domains requires further confirmation.
+- Experiments primarily focus on verifiable reasoning tasks (Math, Code); performance in open-ended generation and noisy reward scenarios remains unverified.
+- When multiple candidate demonstrations are available for each prompt, simple random selection may not be optimal; systematic demonstration selection strategies are left for future work.
+- Optimal values for the entropy pruning ratio (20%) and scheduler parameters might vary by task or model; unified hyperparameter search strategies haven't been explored.
+- Code generation experiments are preliminary (Qwen3-1.7B); generalization at larger scales and across more domains needs further confirmation.
 
 ## Related Work & Insights
-- **LUFFY** (Yan et al., 2025): Mixes complete offline demonstrations into rollouts for RFT without prefix truncation.
-- **UFT** (Liu et al., 2025b): Also samples prefixes but uses SFT loss for prefixes and RFT loss for continuations, employing a static small weight.
-- **ReLIFT** (Ma et al., 2025): Alternates SFT and RFT stages, with SFT focusing on difficult problems RFT cannot solve.
-- The advantages of Ours lie in: replacing multiple loss function designs with unified weights (PPO advantage), replacing static weights with entropy clipping, and replacing manual stages with cosine decay—making it simpler and easier to integrate into existing RFT workflows.
+- **LUFFY** (Yan et al., 2025): Mixes full offline demonstrations into rollouts for RFT without prefix truncation.
+- **UFT** (Liu et al., 2025b): Also samples prefixes but applies SFT loss to prefixes and RFT loss to continuations using static small weights.
+- **ReLIFT** (Ma et al., 2025): Alternates between SFT and RFT across multiple stages, with SFT focusing on problems RFT fails to solve.
+- Ours possesses advantages in simplicity and effectiveness: unified weights (PPO advantage) replace multi-loss designs, entropy pruning replaces static weights, and cosine decay replaces manual staging—making it more concise and easier to integrate into existing RFT pipelines.
 
 <!-- RELATED:START -->
 
@@ -124,9 +125,9 @@ Given a prompt $x$ and an expert demonstration $y^*$, Prefix-RFT first generates
 
 - [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](../../AAAI2026/llm_reasoning/well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
 - [\[NeurIPS 2025\] VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning](../../NeurIPS2025/llm_reasoning/videorft_incentivizing_video_reasoning_capability_in_mllms_via_reinforced_fine-t.md)
+- [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
+- [\[ACL 2025\] TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/tract_regression_cot.md)
 - [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
-- [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
 
 </div>
 

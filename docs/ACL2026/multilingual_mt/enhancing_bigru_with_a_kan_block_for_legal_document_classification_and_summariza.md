@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization
 description: >-
-  [ACL2026][Multilingual & Machine Translation][BiGRU] This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. It achi…
+  [ACL 2026][Multilingual & Translation][BiGRU] This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. It achieves a classification accuracy of 67.96% and ROUGE-1/2/L scores of 0.38/0.23/0.31, improving BiGRU accuracy from 57.34% to 67.96% in ablation studies.
 tags:
-  - "ACL2026"
-  - "Multilingual & Machine Translation"
-  - "BiGRU"
-  - "Kolmogorov-Arnold Network"
-  - "legal NLP"
-  - "document classification"
-  - "legal summarization"
+  - ACL 2026
+  - Multilingual & Translation
+  - BiGRU
+  - Kolmogorov-Arnold Network
+  - legal NLP
+  - document classification
+  - legal summarization
 date: 2026-05-08
-content_hash: 44416a6a789824d7
+content_hash: 216fb6371fdc5238
 ---
-
 # Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization
 
 **Conference**: ACL2026  
@@ -24,50 +23,65 @@ content_hash: 44416a6a789824d7
 **Keywords**: BiGRU, Kolmogorov-Arnold Network, legal NLP, document classification, legal summarization
 
 ## TL;DR
-This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. It achieves a classification accuracy of 67.96% and ROUGE-1/2/L scores of 0.38/0.23/0.31, specifically improving the BiGRU accuracy from 57.34% to 67.96% in ablation studies.
+This paper integrates a KAN block into a BiGRU classifier and an attention-based GRU summarization model for low-resource multilingual Bengali legal documents. It achieves a classification accuracy of 67.96% and ROUGE-1/2/L scores of 0.38/0.23/0.31, improving BiGRU accuracy from 57.34% to 67.96% in ablation studies.
 
 ## Background & Motivation
-**Background**: Common tasks in legal NLP include judgment/disposition classification, case summarization, and legal document retrieval. Traditional methods rely on manual feature models like SVM and Logistic Regression, while deep learning approaches often employ BiGRU, BiLSTM, encoder-decoder attention, or pointer-generator networks.
+**Background**: Common tasks in legal NLP include judgment/disposition classification, case summarization, and legal document retrieval. Traditional methods rely on manual feature models like SVM and Logistic Regression, while deep learning approaches often utilize BiGRU, BiLSTM, encoder-decoder attention, or pointer-generators.
 
-**Limitations of Prior Work**: Legal documents are typically long, structurally complex, and filled with specialized terminology, often containing procedural facts and subtle legal nuances. Bengali legal data presents additional challenges as it includes a mix of Bengali, English, and transliterated Bengali, creating a low-resource, multilingual, and class-imbalanced problem.
+**Limitations of Prior Work**: Legal documents are long, structurally complex, contain specialized terminology, and often involve procedural facts and subtle legal nuances. Bengali legal data presents an additional challenge as a low-resource, multilingual mix of Bengali, English, and transliterated Bengali with significant class imbalance.
 
-**Key Challenge**: While pre-trained language models (PLMs) are theoretically powerful, they may be insufficiently tuned in settings with low-resource legal corpora and limited computational power. Conversely, traditional recurrent models are cost-effective but may lack expressive capacity. The core issue is whether the non-linear representation of recurrent models can be enhanced without introducing heavy backbones.
+**Key Challenge**: While Pre-trained Language Models (PLMs) are theoretically powerful, they may underperform when fine-tuned on low-resource legal corpora under limited computing constraints. Traditional recurrent models are cost-effective but may lack sufficient representational capacity. The core problem is whether recurrent models can be enhanced with non-linear representations without introducing heavy backbones.
 
-**Goal**: The authors aim to verify if the KAN block can serve as a lightweight enhancement module to improve the performance of BiGRU/GRU in legal document classification and summarization, rather than proposing a brand-new legal large language model.
+**Goal**: The authors aim to verify whether a KAN block can serve as a lightweight enhancement module to improve BiGRU/GRU performance in legal document classification and summarization, rather than proposing a new large-scale legal model.
 
-**Key Insight**: Kolmogorov-Arnold Networks (KAN) replace fixed activation functions in traditional MLPs with learnable spline-like edge functions, which can theoretically model more complex non-linear relationships. The authors attach it after the representation generated by a recurrent backbone, allowing the KAN to refine document representations or the generation head.
+**Key Insight**: KAN replaces fixed activation functions in traditional MLPs with learnable spline-like edge functions, theoretically allowing for the modeling of more complex non-linear relationships. By appending it to the representations of a recurrent backbone, KAN can refine document representations or the generation head.
 
-**Core Idea**: In low-resource legal scenarios, the combination of "BiGRU/AttnGRU for sequence modeling + KAN for non-linear representation enhancement" serves as a more controllable compromise compared to heavy PLMs.
+**Core Idea**: In low-resource legal scenarios, using a "BiGRU/AttnGRU for sequence modeling + KAN for non-linear representation enhancement" serves as a more controllable compromise than heavy PLMs.
 
 ## Method
-The paper covers two tasks: legal document disposition classification and legal document summarization. Both share a fundamental approach: using a recurrent architecture to encode long texts, followed by a KAN as an enhancement head or transformation block. The classification task focuses on fixed-length document representations, while the summarization task focuses on encoder-decoder attention outputs.
+The paper covers two tasks: legal document disposition classification and legal document summarization. Both share a fundamental approach: encoding long text with a recurrent architecture first, then using KAN as an enhancement head or transformation block. The classification task focuses on fixed-length document representations, while the summarization task focuses on encoder-decoder attention outputs.
 
 ### Overall Architecture
-The data is sourced from Manupatra, containing 2,937 Bengali legal document samples with mixed Bengali, English, and romanized Bengali text. The authors split the data into 2,349 training samples and 588 held-out evaluation samples. Preprocessing includes standardization of missing values and placeholders, text normalization, removal of duplicate/corrupted items, length analysis, and tokenization. For classification, a BiGRU encodes case notes, generates document representations via mean and max pooling, and feeds them into a KAN block for disposition prediction. For summarization, an attention-based GRU encoder-decoder is used, with a KAN added to the output head to enhance token prediction.
+The data sourced from Manupatra contains 2,937 Bengali legal document samples with mixed Bengali, English, and romanized Bengali. The dataset is split into 2,349 training and 588 evaluation samples. Preprocessing includes handling missing values, placeholder standardization, text normalization, duplicate removal, length analysis, and tokenization. For classification, a BiGRU encodes case notes, followed by mean and max pooling to obtain document representations, which are passed to a KAN block for disposition prediction. For summarization, an attention-based GRU encoder-decoder is used, with a KAN block added to the output head to enhance token prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Bengali Legal Documents<br/>(Bengali / English / romanized)"] --> B["Preprocessing<br/>Normalization + Tokenization"]
+    B --> SAMP["Class Imbalance Handling<br/>WeightedRandomSampler for Minority Classes"]
+    subgraph CLS["BiGRU + KAN Classification Model"]
+        direction TB
+        C["BiGRU encodes case notes"] --> D["Mean + Max Pooling<br/>Fixed-length document representation"]
+        D --> E["KAN block<br/>Spline edge functions refine decision boundaries"]
+    end
+    subgraph SUM["Attention GRU + KAN Summarization Model"]
+        direction TB
+        F["Attention GRU encoder-decoder<br/>Context vector selects key segments"] --> G["KAN head<br/>Enhances non-linear generation head"]
+    end
+    SAMP --> C
+    B --> F
+    E --> H["Disposition Classification Output"]
+    G --> I["Legal Summary"]
+```
 
 ### Key Designs
-1.  **BiGRU + KAN Classification Model**:
-    - **Function**: Predicts disposition categories for legal documents, handling long text, domain terminology, and multilingual writing.
-    - **Mechanism**: The input token sequence $X=(x_1,x_2,\ldots,x_T)$ passes through an embedding layer and a BiGRU. The forward and backward hidden states are concatenated at each timestep: $h_t=[\overrightarrow{h_t};\overleftarrow{h_t}]$. Document representation $h_{doc}=[h_{mean};h_{max}]$ is formed by applying both mean and max pooling, which is then passed to the KAN block to output classification logits.
-    - **Design Motivation**: Mean pooling preserves overall semantics, while max pooling captures strong trigger words or key legal phrases; the KAN head provides more complex non-linear separation capabilities for the fixed document representation.
 
-2.  **Attention GRU + KAN Summarization Model**:
-    - **Function**: Generates concise summaries for legal documents, retaining core legal issues and important statutes.
-    - **Mechanism**: The encoder encodes the input document into $H=(h_1,h_2,\dots,h_T)$. At each timestep, the decoder generates a context vector $c_t$ via attention and predicts the next token alongside the decoder hidden state. A KAN head is placed atop the attention-based recurrent summarization model to enhance output representations.
-    - **Design Motivation**: Legal summarization requires focusing on key facts and clauses within long texts; attention handles segment selection, while KAN enhances the expressive power of the generation head.
+**1. BiGRU + KAN Classification Model: Sequence encoding by BiGRU, non-linear decision boundaries by KAN**
+Legal documents are long and technical, often mixing languages. The representation power of a single recurrent backbone may be insufficient. In this model, the token sequence $X=(x_1,x_2,\ldots,x_T)$ passes through embedding and BiGRU layers. At each timestep, forward and backward hidden states are concatenated $h_t=[\overrightarrow{h_t};\overleftarrow{h_t}]$. Document representations $h_{doc}=[h_{mean};h_{max}]$ are formed via simultaneous mean and max pooling before being sent to the KAN block. Mean pooling preserves global semantics while max pooling captures strong trigger words. The KAN head, utilizing learnable spline-like edge functions, refines the decision boundary without requiring a heavy backbone.
 
-3.  **Handling Class Imbalance**:
-    - **Function**: Reduces the dominance of majority disposition classes during training.
-    - **Mechanism**: A `WeightedRandomSampler` is used during classification training to ensure minority classes appear more frequently in mini-batches. Standard batch formation is used for summarization, as the objective depends on the full text and target summary of each sample.
-    - **Design Motivation**: Legal disposition labels are highly imbalanced; weighted sampling is a low-cost mitigation strategy compatible with recurrent/KAN architectures.
+**2. Attention GRU + KAN Summarization Model: Attention for selection, KAN for head enhancement**
+Legal summarization must focus on core legal issues from long texts. The model uses an attention-based GRU encoder-decoder. The encoder maps input to $H=(h_1,h_2,\dots,h_T)$, and the decoder calculates a context vector $c_t$ via attention at each step. Similar to the classification task, a KAN head is attached to the generation head to enhance the non-linear expression of output representations, ensuring summaries better retain important facts and clauses.
+
+**3. Class Imbalance Handling: Boosting minority classes via WeightedRandomSampler**
+Legal disposition labels are highly imbalanced. The classification training uses a WeightedRandomSampler, weighting by the inverse of class frequency to ensure minority classes appear more frequently in mini-batches. This is a low-cost mitigation strategy compatible with recurrent/KAN architectures. Summarization tasks use standard batch formation as they rely on complete source-target pairs.
 
 ### Loss & Training
-The classification task uses standard cross-entropy loss, while the summarization task uses sequence-to-sequence target token loss. Training hyperparameters include 200 epochs, a learning rate of $2\times10^{-5}$, a batch size of 8, the Adam optimizer, and a dropout of 0.2. Classification metrics include accuracy, macro-F1, and weighted-F1; summarization uses ROUGE-1, ROUGE-2, and ROUGE-L F1 scores. The paper also reports stability across three classification runs: 0.6765, 0.6699, and 0.6771.
+The classification task uses standard cross entropy, while the summarization task uses sequence-to-sequence target token loss. Hyperparameters include 200 epochs, a learning rate of $2\times10^{-5}$, batch size 8, Adam optimizer, and dropout of 0.2. Metrics include accuracy, macro-F1, and weighted-F1 for classification, and ROUGE-1/2/L F1 for summarization. The paper reports classification stability across three runs: 0.6765, 0.6699, and 0.6771.
 
 ## Key Experimental Results
 
 ### Main Results
-In classification, BiGRU + KAN achieved the highest accuracy among all compared methods. The paper reports a macro-F1 of 0.53 and a weighted-F1 of 0.65 for this model.
+In classification, BiGRU + KAN achieved the highest accuracy among all compared models, with a macro-F1 of 0.53 and a weighted-F1 of 0.65.
 
 | Category | Model | Accuracy |
 |------|------|---------:|
@@ -85,7 +99,7 @@ In classification, BiGRU + KAN achieved the highest accuracy among all compared 
 | Recurrent | BiGRU w/o KAN | 0.5734 |
 | Recurrent | BiGRU + KAN | 0.6796 |
 
-In summarization, AttnGRU + KAN outperformed both BiLSTM and Pointer-Generator models.
+In summarization, AttnGRU + KAN outperformed both BiLSTM and Pointer-Generator.
 
 | Model | ROUGE-1 F1 | ROUGE-2 F1 | ROUGE-L F1 |
 |------|-----------:|-----------:|-----------:|
@@ -98,42 +112,42 @@ In summarization, AttnGRU + KAN outperformed both BiLSTM and Pointer-Generator m
 |------|---------:|------|
 | BiLSTM without KAN | 0.5188 | Recurrent baseline |
 | BiGRU without KAN | 0.5734 | Stronger recurrent baseline |
-| BiGRU + KAN | 0.6796 | 10.62 percentage point gain with KAN |
+| BiGRU + KAN | 0.6796 | Gain of 10.62 percentage points with KAN |
 
-The accuracy of the three main classification experiments was 0.6765, 0.6699, and 0.6771, respectively, with a reported mean of 0.6796. While the mean does not strictly match the arithmetic average of these three values, the note records the figures as provided in the original text.
+The three main classification experiments yielded accuracies of 0.6765, 0.6699, and 0.6771, with the paper reporting a mean of 0.6796. While the arithmetic mean of these three values slightly differs, the note follows the values provided in the original text.
 
 ### Key Findings
-- The improvement KAN brings to BiGRU is significant: classification accuracy rose from 0.5734 to 0.6796, a margin of 10.62 percentage points.
-- In traditional ML, Random Forest and SVM reached 0.62, outperforming the PLM baselines in this specific experiment. This suggests that PLMs may not necessarily dominate on low-resource legal data if the tuning budget is insufficient.
-- For summarization, AttnGRU + KAN ROUGE-1/2/L scores were 0.38/0.23/0.31, indicating that KAN enhancement heads also benefit generative tasks.
-- Error analysis shows the model still confuses similar disposition classes (e.g., *Appeal Dismissed* vs. *Petition Dismissed*) and sometimes omits procedural legal facts in summaries.
+- KAN significantly improves BiGRU performance: classification accuracy rose from 0.5734 to 0.6796, a gain of 10.62 points.
+- Traditional ML models like Random Forest and SVM reached 0.62, outperforming the PLM baselines in this specific setting, suggesting PLMs may not excel on low-resource legal data without sufficient tuning.
+- On the summarization side, AttnGRU + KAN reached ROUGE-1/2/L of 0.38/0.23/0.31, proving the effectiveness of KAN enhancement heads for generation.
+- Error analysis shows continued confusion between similar disposition classes (e.g., Appeal Dismissed vs. Petition Dismissed) and occasional omissions of procedural legal facts in summaries.
 
 ## Highlights & Insights
-- The goal is highly engineering-oriented: rather than seeking a larger model, it validates a lightweight structural enhancement on real-world low-resource, multilingual, and imbalanced legal data.
-- Positioning KAN as a head rather than a backbone replacement is reasonable. It allows the recurrent model to maintain its sequence modeling advantages while delegating non-linear classification boundaries to the KAN.
-- The results are counter-intuitive but insightful: under restricted resources, BERT/Legal-BERT/Longformer all performed worse than classical ML and BiGRU + KAN, emphasizing the need for caution regarding tuning budgets in small-data legal NLP experiments.
-- Summarization examples show the model captures core legal actions and clauses but reveals issues with summaries being too short or omitting procedural info.
+- The goal is engineering-oriented: validating a lightweight structural enhancement on actual low-resource, mixed-language legal data rather than chasing model size.
+- Positioning KAN as a head rather than a backbone replacement is strategic, allowing the recurrent model to handle sequences while KAN handles non-linear decision boundaries.
+- The observation that PLMs underperformed traditional ML and BiGRU+KAN under restricted conditions serves as a reminder to carefully compare tuning budgets in small-data legal NLP.
+- Summarization examples show the model identifies core legal actions but tends to generate short summaries that may omit procedural context.
 
 ## Limitations & Future Work
-- The authors explicitly state that class imbalance remains severe; `WeightedRandomSampler` only partially mitigates this, and minority classes remain difficult to predict.
-- Multilingual mixing (Bengali, English, and romanized Bengali) increases the difficulty of tokenization, representation learning, and terminology alignment.
-- The summarization model sometimes skips important procedural information, which is risky in legal contexts where procedural facts can influence outcomes.
-- PLM comparisons were conducted under limited compute and specific tuning budgets; thus, it cannot be definitively concluded that recurrent + KAN is always superior to a fully tuned Legal-BERT or Longformer.
-- The data scale is only 2,937 entries from specific Bengali legal sources; generalization across countries, legal systems, or larger corpora remains unverified.
-- Future directions include stronger backbones, better class imbalance methods, higher-fidelity summary generation, and transparency/explainability analysis of the KAN block.
+- Class imbalance remains severe; WeightedRandomSampler provides only partial relief for minority class prediction.
+- Multilingual text (Bengali, English, and romanized) complicates tokenization, representation learning, and terminology alignment.
+- Summarization models occasionally skip procedural information, posing risks in legal contexts where facts influence conclusions.
+- PLM comparisons were conducted under specific resource and tuning constraints, so recurrent+KAN is not necessarily superior to a fully optimized Longformer or larger models.
+- The dataset scale is limited (2,937 samples) and sourced from a specific Bengali corpus; generalization across other jurisdictions remains unverified.
+- Future directions include stronger backbones, better imbalance handling, more faithful summarization, and transparency analysis of KAN blocks.
 
 ## Related Work & Insights
-- **vs classical ML**: SVM and Random Forest perform well but rely on shallow text features; BiGRU + KAN better models context and non-linear class boundaries.
-- **vs pretrained language models**: BERT, Legal-BERT, RoBERTa, T5, and Longformer showed weaker performance in this restricted setting, reminding us that model size does not equate to actual gain in low-resource legal tasks.
-- **vs BiGRU/BiLSTM**: Pure recurrent backbones lack expressive capacity; the KAN head provides stronger non-linear transformations, as directly supported by ablation gains.
-- **vs pointer-generator summarization**: While pointer-generators are suited for copying in legal summaries, AttnGRU + KAN achieved higher ROUGE scores; future work could consider combining KAN with copy mechanisms.
-- **Insight**: For low-resource specialized NLP, lightweight structural modifications combined with explicit data imbalance handling may be more robust and reproducible than simply applying large-scale models.
+- **vs Classical ML**: SVM and Random Forest perform well but rely on shallow text features; BiGRU + KAN better models context and non-linear boundaries.
+- **vs PLMs**: BERT, Legal-BERT, and others underperformed in this constrained setting, showing that model scale does not equal gains in low-resource legal tasks.
+- **vs BiGRU/BiLSTM**: Pure recurrent backbones lack representational depth; the KAN head provides stronger non-linear transformations as supported by ablation results.
+- **vs Pointer-Generator**: While Pointer-Generator is suited for legal copy tasks, AttnGRU + KAN achieved higher ROUGE scores; combining KAN with copy mechanisms is a future possibility.
+- **Insight**: For low-resource specialized NLP, lightweight structural modifications combined with explicit data handling (like imbalance mitigation) can be more robust than simply applying large models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆☆ The idea of KAN as a recurrent head has some novelty, but the overall method is an engineering ensemble.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆☆ Includes classification, summarization, ablation, and stability results, but data scale is small and PLM comparisons lack a level playing field/statistical significance.
-- Writing Quality: ⭐⭐⭐⭐☆☆ The main narrative is clear and figures are complete, though some citations and mean calculations are slightly unrefined.
-- Value: ⭐⭐⭐⭐⭐☆ Offers practical reference for low-resource multilingual legal NLP, demonstrating that lightweight models are still worth optimizing under resource constraints.
+- Novelty: ⭐⭐⭐⭐☆☆ Using KAN as a recurrent head is somewhat novel, though the overall approach is an engineering combination.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆☆ Includes classification, summarization, ablation, and stability tests, but small data size and PLM comparison constraints limit statistical significance.
+- Writing Quality: ⭐⭐⭐⭐☆☆ Clear narrative and complete figures, though some reporting of averages could be more precise.
+- Value: ⭐⭐⭐⭐⭐☆ Highly practical for low-resource multilingual legal NLP, demonstrating that lightweight models are worth optimizing under resource constraints.
 
 <!-- RELATED:START -->
 
@@ -141,11 +155,11 @@ The accuracy of the three main classification experiments was 0.6765, 0.6699, an
 
 ## Related Papers
 
-- [\[ACL 2026\] SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics](steereval_inference-time_interventions_strengthen_multilingual_generalization_in.md)
 - [\[ACL 2026\] Mitigating Extrinsic Gender Bias for Bangla Classification Tasks](mitigating_extrinsic_gender_bias_for_bangla_classification_tasks.md)
+- [\[ACL 2026\] SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics](steereval_inference-time_interventions_strengthen_multilingual_generalization_in.md)
 - [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
 - [\[CVPR 2026\] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](../../CVPR2026/multilingual_mt/sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)
-- [\[ICCV 2025\] SignRep: Enhancing Self-Supervised Sign Representations](../../ICCV2025/multilingual_mt/signrep_enhancing_self-supervised_sign_representations.md)
+- [\[ACL 2025\] mOSCAR: A Large-scale Multilingual and Multimodal Document-level Corpus](../../ACL2025/multilingual_mt/moscar_a_large-scale_multilingual_and_multimodal_document-level_corpus.md)
 
 </div>
 

@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Multiple Choice Learning of Low-Rank Adapters for Language Modeling
 description: >-
-  [ICML 2026][Audio & Speech][LoRA] This paper proposes LoRA-MCL, which introduces the "Winner-Takes-All" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ sets of low-rank adapters as $K…
+  [ICML 2026][Audio & Speech][LoRA] This paper introduces LoRA-MCL, which integrates the "winner-takes-all" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ groups of low-rank adapters as $K$ competing hypotheses and updating only the most suitable adapter for each training sample, the method enables a single base mode
 tags:
-  - "ICML 2026"
-  - "Audio & Speech"
-  - "LoRA"
-  - "Multiple Choice Learning"
-  - "Winner-Takes-All"
-  - "Diverse Generation"
-  - "Mixture Distributions"
+  - ICML 2026
+  - Audio & Speech
+  - LoRA
+  - Multiple Choice Learning
+  - Winner-Takes-All
 date: 2026-05-08
-content_hash: 9c024bed9bfd56f1
+content_hash: 516ed56b2b00e3fb
 ---
-
 # Multiple Choice Learning of Low-Rank Adapters for Language Modeling
 
 **Conference**: ICML 2026  
@@ -24,69 +21,74 @@ content_hash: 9c024bed9bfd56f1
 **Keywords**: LoRA, Multiple Choice Learning, Winner-Takes-All, Diverse Generation, Mixture Distributions
 
 ## TL;DR
-This paper proposes LoRA-MCL, which introduces the "Winner-Takes-All" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ sets of low-rank adapters as $K$ competing hypotheses and updating only the most suitable adapter for each training sample, a single base model can generate multiple diverse and plausible texts covering different modes of the conditional distribution in a single forward pass. It refreshes the quality-diversity Pareto frontier in audio/image captioning and machine translation.
+This paper introduces LoRA-MCL, which integrates the "winner-takes-all" training paradigm of Multiple Choice Learning into LoRA fine-tuning. By treating $K$ groups of low-rank adapters as $K$ competing hypotheses and updating only the most suitable adapter for each training sample, the method enables a single base model to generate multiple diverse and reasonable text outputs covering different modes of the conditional distribution in a single forward pass. It refreshes the quality–diversity Pareto front across audio/image captioning and machine translation tasks.
 
 ## Background & Motivation
 
-**Background**: In "one-to-many" tasks such as audio/image captioning and machine translation, the target distribution $p(x\mid c)$ for a given context $c$ is typically multimodal (e.g., the same image can have descriptions in English or French; the same audio clip can have different event labels). Current large models almost exclusively use Maximum Likelihood Estimation (MLE / teacher forcing) for next-token training, relying on decoding strategies like Beam Search, Diverse Beam Search (DBS), or nucleus sampling to "artificially" create diversity during inference.
+**Background**: In "one-to-many" tasks such as audio/image captioning and machine translation, the target distribution $p(x\mid c)$ for a given context $c$ is typically multimodal (e.g., an image can be described in both English and French; an audio clip can have different event labels). Current large models almost exclusively use Maximum Likelihood Estimation (MLE/teacher forcing) for next-token training, relying on inference-side strategies like Beam Search, Diverse Beam Search (DBS), and nucleus sampling to "artificially" foster diversity.
 
-**Limitations of Prior Work**: Minimizing MLE for a mixture distribution $p(x)=\sum_k p(z_k)p(x\mid z_k)$ collapses to a weighted average rather than recovering individual modes. Inference-side DBS requires manual tuning of the diversity penalty $\lambda$ and often forces a trade-off between diversity and quality. Techniques like TTA or temperature sampling are either unstable or compromise readability.
+**Limitations of Prior Work**: MLE minimization on a mixture distribution $p(x)=\sum_k p(z_k)p(x\mid z_k)$ collapses to a weighted average rather than recovering individual modes. Inference-side DBS requires manual tuning of the diversity penalty $\lambda$ and often forces a trade-off between diversity and quality. Techniques like TTA or temperature sampling are either unstable or degrade readability.
 
-**Key Challenge**: The training objective itself lacks the concept of "modes," meaning all diversity patches are post-hoc remedies at inference time, addressing symptoms rather than the root cause. To enable models to "naturally" output multiple reasonable candidates, diversity must be embedded into the training objective.
+**Key Challenge**: The training objective itself lacks a concept of "modes." All diversity patches are posterior remedies at inference, treating symptoms rather than the root cause. To enable models to "naturally" output multiple valid candidates, diversity must be embedded within the training objective.
 
-**Goal**: (1) Adapt the Multiple Choice Learning (MCL) multi-hypothesis training paradigm to next-token language modeling; (2) Solve two major bottlenecks of MCL in LLMs: parameter explosion from multiple heads and training collapse into a single hypothesis; (3) Theoretically prove that this training recovers modes of mixture distributions instead of collapsing to an average; (4) Validate the quality-diversity trade-off on real large-scale models.
+**Goal**: (1) Adapt the Multiple Choice Learning (MCL) multi-hypothesis training paradigm to next-token language modeling; (2) Resolve two critical bottlenecks of MCL on large models—parameter explosion of multiple heads and training collapse to a single hypothesis; (3) Theoretically prove that this training recovers modes of mixture distributions instead of collapsing to an average; (4) Validate the quality–diversity trade-off on real large-scale models.
 
-**Key Insight**: The authors observe that while the classical MCL approach involves a "shared backbone + multiple output heads," copying the LLM's `lm_head` (e.g., ~640M parameters for Qwen2-Audio) $K$ times is impractical. LoRA, however, provides the capability to "cheaply replicate a model" by simply adding a set of rank $r$ adapters $A_k, B_k$ per layer, with all hypotheses sharing the frozen base.
+**Key Insight**: The authors observe that while classic MCL uses "shared backbone + multiple output heads," duplicating an LLM's `lm_head` (e.g., ~640M parameters for Qwen2-Audio) $K$ times is infeasible. LoRA provides the ability to "cheaply replicate a model"—one only needs to add a set of rank-$r$ adapters $A_k, B_k$ per layer, while all hypotheses share the frozen base.
 
-**Core Idea**: Replace $K$ output heads with $K$ sets of LoRA adapters, combined with a relaxed Winner-Takes-All loss, allowing each set of adapters to automatically specialize in one mode of the target distribution.
+**Core Idea**: Use $K$ groups of LoRA adapters instead of $K$ output heads, paired with a relaxed Winner-Takes-All loss, allowing each adapter group to automatically specialize in one mode of the target distribution.
 
 ## Method
 
 ### Overall Architecture
-The formalization of LoRA-MCL is remarkably clean: at each LoRA-enabled layer $\ell$, $K$ sets of adapters $\{(A_\ell^k, B_\ell^k)\}_{k=1}^K$ are prepared, while base parameters $\theta$ are frozen. The parameter set for the $k$-th "hypothesis model" is $\theta_k = \theta \cup \{(A_\ell^k, B_\ell^k)\}_\ell$. Given context $c$ and target sequence $x$, the likelihood $p(x\mid c;\theta_k)$ is calculated in parallel for all $K$ hypotheses, and the Winner-Takes-All (WTA) loss backpropagates only to the best hypothesis. During inference, WTA is not used; instead, each hypothesis independently decodes a candidate, producing $K$ different descriptions in a single forward pass. The training logic resembles a hard-EM algorithm: the E-step selects the winner $k^\star=\arg\max_k p(x\mid c;\theta_k)$, and the M-step updates only $\theta_{k^\star}$.
+The core problem LoRA-MCL addresses is how to separate the multiple modes of the target distribution during the training phase of a single LLM. It grafts the "multi-hypothesis competition" idea of Multiple Choice Learning onto LoRA. For each LoRA-enabled layer $\ell$, $K$ sets of adapters $\{(A_\ell^k, B_\ell^k)\}_{k=1}^K$ are prepared. With frozen base parameters $\theta$, the $k$-th "hypothesis model" is defined as $\theta_k = \theta \cup \{(A_\ell^k, B_\ell^k)\}_\ell$. During training, likelihoods $p(x\mid c;\theta_k)$ are calculated in parallel for all $K$ hypotheses, and a Winner-Takes-All (WTA) loss is used to backpropagate gradients only to the most suitable hypothesis. This process is equivalent to a conditional hard-EM: the E-step selects the winner $k^\star=\arg\max_k p(x\mid c;\theta_k)$, and the M-step updates only $\theta_{k^\star}$. During inference, the WTA is discarded, and each hypothesis independently decodes a candidate, producing $K$ texts covering different modes in one forward pass.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Context c + Target x"] --> B["K groups of LoRA adapters instantiate MCL hypotheses<br/>Frozen base + independent (A_k, B_k) forms K hypotheses θ_k"]
+    B --> C["Parallel calculation of K likelihoods p(x∣c;θ_k)"]
+    P["Grouped Conv1d Parallelism<br/>K adapters stacked as grouped Conv1d for single batched forward pass"] -.Implementation.-> C
+    C --> D["Relaxed WTA<br/>Weighted by q_k, winner receives primary gradient (Conditional hard-EM)"]
+    D -->|Training: Update winner only| E["Specialization: Each adapter group locks onto a mode"]
+    C -->|Inference: Discard WTA| F["Each hypothesis decodes independently → K diverse texts"]
+```
 
 ### Key Designs
 
-1. **LoRA-MCL: Instantiating MCL Hypotheses with K Sets of LoRA Adapters**:
+**1. Instantiating MCL Hypotheses with K LoRA Adapters: Circumventing Head Replication**
 
-    - **Function**: Enables a single LLM to carry $K$ competing "hypothesis models" simultaneously without replicating the base or replacing the `lm_head`. The additional parameters for each hypothesis are merely a pair of rank $r$ matrices $(A_\ell^k, B_\ell^k)$, which is negligible compared to the base $|\theta|$.
-    - **Mechanism**: The MCL WTA loss $\mathcal{L}^{\mathrm{WTA}} = -\mathbb{E}_{c,x}[\max_{k}\log p(x\mid c;\theta_k)]$ is applied directly to next-token modeling, where $\log p(x\mid c;\theta_k)=\sum_t \log p(x_t\mid x_{<t},c;\theta_k)$. Theoretically (Prop. 1), the authors prove that when data originates from a finite mixture and the model is sufficiently expressive, LoRA-MCL is equivalent to conditional hard-EM. The optimal loss is $\mathcal{H}(x\mid c,z)$ (conditional entropy given the latent topic $z$), which is strictly no greater than the MLE optimum. They also provide a lower bound $\min \mathcal{L}(\theta) - \log K \le \min \mathcal{L}^{\mathrm{WTA}}(\theta)$, characterizing the precise range of information gain from multiple hypotheses.
-    - **Design Motivation**: Classical MCL implementations either replicate the entire head (infeasible for LMs) or train new heads from scratch (destroying pre-trained knowledge). LoRA’s low-rank residual form is naturally suited for "lightweight cloning"—preserving base semantics while adapters provide directions for modal specialization, keeping both parameter and computational overhead controllable.
+Classic MCL uses a "shared backbone + $K$ output heads," but replicating the LLM `lm_head` is unaffordable, and training new heads from scratch destroys pre-trained knowledge. The key observation is that LoRA's low-rank residual channels are "cheap model clones." By adding rank-$r$ matrices $(A_\ell^k, B_\ell^k)$ at each layer, base semantics are preserved while adapters provide directions for modal specialization. The extra parameters for $K$ hypotheses (approx. $K \times L \times 2dr$) are negligible compared to the base $|\theta|$. The training objective applies the MCL WTA loss to next-token modeling: $\mathcal{L}^{\mathrm{WTA}} = -\mathbb{E}_{c,x}[\max_{k}\log p(x\mid c;\theta_k)]$. Theoretical proof (Prop. 1) shows that when data comes from a finite mixture and the model is sufficiently expressive, LoRA-MCL is equivalent to conditional hard-EM, converging to the conditional entropy $\mathcal{H}(x\mid c,z)$, which is strictly lower than MLE. The lower bound $\min \mathcal{L}(\theta) - \log K \le \min \mathcal{L}^{\mathrm{WTA}}(\theta)$ characterizes the information gain from multiple hypotheses.
 
-2. **Relaxed WTA Loss: Solving Collapse with Relaxed-WTA and Annealed-MCL**:
+**2. Relaxed WTA: Solving Training Collapse with Relaxed-WTA and Annealed-MCL**
 
-    - **Function**: The biggest engineering pitfall of MCL is "initial random bias toward one hypothesis, where the winner keeps winning and others never receive gradients." This design prevents collapse by softening the WTA, leaving a residual gradient for all hypotheses to maintain competitiveness.
-    - **Mechanism**: The $\max$ operator is replaced with a weighted sum $\mathcal{L}^{\mathrm{WTA}} = -\mathbb{E}_{c,x}[\sum_k q_k \log p(x\mid c;\theta_k)]$, where $\{q_k\}$ are normalized coefficients. Two instantiations are proposed: (i) **Relaxed-WTA**: the winner receives $q_{k^\star}=1-\varepsilon$, and others receive $\varepsilon/(K-1)$, where $\varepsilon$ is a small constant (typically 0.05–0.1 in experiments); (ii) **Annealed-MCL**: $q_k(x,c;\uptau)=p(x\mid c;\theta_k)^{1/\uptau}/Z$, with the temperature $\uptau(t)=\uptau(0)\rho^t$ ($\rho<1$) annealing from high to low. High temperatures allow nearly uniform updates to avoid collapse, while low temperatures smoothly converge to hard WTA.
-    - **Design Motivation**: Relaxed-WTA is simple and stable, but an excessively large $\varepsilon$ might force hypotheses to converge (losing diversity). Annealed-MCL automatically transitions from "exploration" to "exploitation," theoretically achieving purer specialization, though it introduces a temperature schedule hyperparameter. Both schemes show advantages depending on the task/$K$.
+Hard WTA suffers from "the rich get richer" effect: if one hypothesis is slightly better early on, it wins consistently, and others never receive gradients, leading to a single collapsed model. This is solved by softening WTA: $\mathcal{L}^{\mathrm{WTA}} = -\mathbb{E}_{c,x}[\sum_k q_k \log p(x\mid c;\theta_k)]$. Two methods for $\{q_k\}$ are proposed. **Relaxed-WTA** gives the winner $q_{k^\star}=1-\varepsilon$ and distributes $\varepsilon/(K-1)$ to others. It is stable, though too large an $\varepsilon$ reduces diversity. **Annealed-MCL** uses softmax weights $q_k(x,c;\uptau)=p(x\mid c;\theta_k)^{1/\uptau}/Z$ with temperature annealing $\uptau(t)=\uptau(0)\rho^t$. High temperatures prevent early collapse, while low temperatures allow convergence to hard WTA for pure specialization.
 
-3. **Grouped Convolutional Parallelism: Compressing K Forward Passes into a Single Batched Pass**:
+**3. Grouped Convolution Parallelism: Folding K Forwards into One**
 
-    - **Function**: A naive implementation would sequentially run $K$ hypotheses, linearly increasing training time. This design leverages PyTorch’s grouped 1D convolutions to fuse all LoRA computations into a single batched operation, allowing $K$ hypotheses to run in parallel almost "for free."
-    - **Mechanism**: The input is replicated $K$ times along the batch dimension, with each replica using its own set of LoRA weights for the residual. Specifically, stacking $K$ sets of $(A_\ell^k, B_\ell^k)$ into one tensor is equivalent to running a `nn.Conv1d` grouped variant (groups=$K$) on the LoRA path, ensuring each group only multiplies with its corresponding input. The frozen base forward pass is naturally shared. Since $r \ll d$, the extra memory is primarily due to activations doubling $K$ times, while the parameter increase is minimal.
-    - **Design Motivation**: Aligning the training cost of LoRA-MCL with LoRA-MLE rather than $K \times$ LoRA-MLE is the critical engineering foundation for scaling this paradigm to 7B–8B models; a $K$-fold slowdown would render the theory impractical.
+A naive implementation requires $K$ sequential forward passes, scaling training time linearly with $K$. This work leverages PyTorch's grouped convolutions to fold multi-hypothesis LoRA into a single batched operation. The input is replicated $K$ times along the batch dimension, and $K$ sets of $(A_\ell^k, B_\ell^k)$ are stacked. This is equivalent to a grouped `nn.Conv1d` (groups=$K$) in the LoRA path, while the frozen base forward is naturally shared. Since $r \ll d$, the parameter overhead is minimal, and the extra cost is primarily the $K$-fold increase in activations. This engineering foundation allows LoRA-MCL training costs to align with standard LoRA rather than $K \times$ LoRA, enabling experiments on 7B–8B models.
 
 ### Loss & Training
-The final training objective is Relaxed WTA: $\mathcal{L}^{\mathrm{WTA}}(\theta_1,\dots,\theta_K)=-\mathbb{E}_{c,x}\big[\sum_{k=1}^{K} q_k \log p(x\mid c;\theta_k)\big]$. For LoRA configuration, adapters are injected into $Q, K, V$, and FFN up/down-projection matrices across all Transformer layers, with rank $r=8$, scaling $\alpha=8$ (vision version $\alpha=32$), and $K \in \{3, 5, 7\}$. Training spans 1 epoch (AudioCaps) or 10 epochs (Clotho) on Qwen2-Audio, and 1 epoch on LLaVA-1.6. During inference, WTA is absent; each hypothesis decodes independently. For MAP decoding (greedy/Beam Search/DBS), to ensure computational fairness, LoRA-MCL uses a beam size of $B/K$ for each hypothesis when LoRA-MLE uses $B$.
+The final training objective is relaxed WTA: $\mathcal{L}^{\mathrm{WTA}}(\theta_1,\dots,\theta_K)=-\mathbb{E}_{c,x}\big[\sum_{k=1}^{K} q_k \log p(x\mid c;\theta_k)\big]$. For LoRA configuration, adapters are injected into $Q, K, V$ and FFN matrices across all Transformer layers, with rank $r=8$, scaling $\alpha=8$ (32 for vision), and $K\in\{3,5,7\}$. Models are trained for 1 epoch (AudioCaps) or 10 epochs (Clotho) on Qwen2-Audio, and 1 epoch on LLaVA-1.6. During MAP decoding (greedy/Beam Search/DBS), to ensure computational fairness, if LoRA-MLE uses beam size $B$, each LoRA-MCL hypothesis uses $B/K$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | LoRA-MLE Best | LoRA-MoE Best | LoRA-MCL ($K=3$, BS=1) | Gain |
-|---------|--------|---------------|---------------|------------------------|------|
-| TextCaps (Image Captioning) | SPIDEr ↑ | 0.915 (DBS λ=1.0) | 0.926 (DBS λ=1.0) | **0.955** | +0.029 |
-| TextCaps | mBLEU-4 ↓ | 0.416 | 0.421 | 0.520 | Higher (Worse) than DBS |
-| AudioCaps (Audio Captioning) | Test loss ↓ | 2.181 ($r=8{\times}5$) | – | **1.999** ($K=5$) | −0.18 |
-| Clotho | Test loss ↓ | 2.812 ($r=8$) | – | **2.612** ($K=7$) | −0.20 |
-| Synthetic Bilingual Captioning (FR) | SPIDEr ↑ | 0.411 | – | **0.464** | +0.053 |
-| Synthetic Bilingual Captioning (FR) | mBLEU-4 ↓ | 0.138 | – | **0.027** | −0.111 |
+| Dataset | Metric | Best LoRA-MLE | Best LoRA-MoE | LoRA-MCL ($K=3$, BS=1) | Gain |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TextCaps (Image) | SPIDEr ↑ | 0.915 (DBS λ=1.0) | 0.926 (DBS λ=1.0) | **0.955** | +0.029 |
+| TextCaps | mBLEU-4 ↓ | 0.416 | 0.421 | 0.520 | Lower (worse) than DBS |
+| AudioCaps (Audio) | Test Loss ↓ | 2.181 ($r=8{\times}5$) | – | **1.999** ($K=5$) | −0.18 |
+| Clotho | Test Loss ↓ | 2.812 ($r=8$) | – | **2.612** ($K=7$) | −0.20 |
+| Syn. Bilingual (FR) | SPIDEr ↑ | 0.411 | – | **0.464** | +0.053 |
+| Syn. Bilingual (FR) | mBLEU-4 ↓ | 0.138 | – | **0.027** | −0.111 |
 
-Note: In image captioning, LoRA-MCL exhibits slightly lower diversity (higher mBLEU-4) than DBS, but offers a significant advantage in SPIDEr/CIDEr. The authors note that DBS can be stacked with LoRA-MCL for combined benefits.
+Note: In image captioning, LoRA-MCL shows slightly lower diversity (higher mBLEU-4) than DBS but significantly stronger SPIDEr/CIDEr scores. The authors note that DBS can be combined with LoRA-MCL to get both benefits.
 
-### Ablation Study (K-Scanning)
+### Ablation Study
 
-| $K$ (LoRA-MCL, $\varepsilon=0.05$) | AudioCaps Test loss ↓ | Clotho Test loss ↓ |
-|---|---|---|
+| $K$ (LoRA-MCL, $\varepsilon=0.05$) | AudioCaps Test Loss ↓ | Clotho Test Loss ↓ |
+| :--- | :--- | :--- |
 | LoRA-MLE Single ($r=8$) | 2.203 | 2.812 |
 | LoRA-MLE ($r=8\times3$, equal params) | 2.195 | 2.868 |
 | LoRA-MLE ($r=8\times7$, equal params) | 2.182 | 2.935 |
@@ -95,46 +97,45 @@ Note: In image captioning, LoRA-MCL exhibits slightly lower diversity (higher mB
 | LoRA-MCL, $K=7$ | **1.932** | **2.612** |
 
 ### Key Findings
-- **Gains are not from parameter count**: Expanding the rank of LoRA-MLE to $r=8K$ yields minimal changes in AudioCaps test loss (2.18→2.18), whereas LoRA-MCL significantly reduces it by over 0.2 with the same parameters, proving the gain stems from "multi-hypothesis specialization" rather than model capacity.
-- **Monotonic loss decrease with larger $K$**: Prop. 1 establishes a lower bound of $\min\mathcal{L}-\log K$. Experimentally, the loss decreases monotonically up to $K=7$ without saturating, consistent with the theory.
-- **Strong specialization in bilingual experiments**: In a bilingual setup (50% French) with $K=2$, the winner for French samples falls on head 1 ~89% of the time, and for English on head 2 ~97% of the time. Conversely, MLE collapses to a weighted "average strategy," even entering repetitive loops for French. This visualizes the theoretical recovery of mixture modes from Prop. 1.
-- **Toy Markov chain experiment**: Under a mixture of two Markov chains, MLE converges to a weighted average transition matrix $\bar P$, while LoRA-MCL’s two hypotheses recover the original transition matrices, validating the collapse formula in equation (9).
+- **Gains are not from parameter count**: Increasing the rank of LoRA-MLE to $r=8K$ yields minimal improvements (2.18→2.18 on AudioCaps), while LoRA-MCL with the same total parameters reduces loss by over 0.2, proving the gain stems from multi-hypothesis specialization.
+- **Monotonic loss decrease with $K$**: In line with Prop. 1 and the lower bound $\min\mathcal{L}-\log K$, loss decreases as $K$ increases and does not saturate up to $K=7$.
+- **Strong specialization in bilingual experiments**: In a $K=2$ LoRA-MCL setup with French-translated samples, the winner for French samples falls on head 1 ~89% of the time, and on head 2 ~97% of the time for English. MLE collapses to an average strategy, often entering loops in French.
+- **Toy Markov chain validation**: Under a mixture of two Markov chains, MLE converges to a weighted average transition matrix $\bar P$, while LoRA-MCL hypotheses recover the two original matrices, validating the collapse formula in the theory.
 
 ## Highlights & Insights
-- **Repurposing LoRA as a "cheap MCL head" is an elegant paradigm shift**: MCL has struggled with head explosion for a decade. LoRA’s low-rank residual channels provide a natural way to create "lightweight clones," bypassing the `lm_head` bottleneck while retaining pre-trained knowledge.
-- **Strong coupling between theory and experiments**: Prop. 1 is rigorous, providing a conditional entropy lower bound and equivalence to hard-EM. The transition from toy Markov chains (quantifying MLE collapse) to bilingual captioning in LLMs provides a standard "theory-to-reality" validation.
-- **Grouped convolutional parallelism is key for deployment**: By addressing the $K \times$ training speed issue using grouped Conv1d, the authors ensure LoRA-MCL is as efficient as standard LoRA, making it viable for 7B–8B models.
-- **High transferability**: This "K LoRA + Relaxed WTA" paradigm can be applied to any PEFT-friendly base model for language specialization in translation, preference learning in alignment, or style specialization in code generation.
+- **LoRA as a "cheap MCL head" is a brilliant paradigm shift**: MCL has suffered from parameter explosion for a decade. Using LoRA's low-rank residual channels as lightweight clones bypasses the impossibility of duplicating the `lm_head` while preserving pre-trained knowledge.
+- **Robust Coupling of Theory and Experiment**: Prop. 1 provides a conditional entropy lower bound and hard-EM equivalence. The toy Markov chain quantitatively visualizes the "MLE collapse" and "MCL mode recovery," which is then mirrored in real LLM experiments on bilingual data.
+- **Grouped Convolution Parallelism is key for deployment**: By resolving the $K\times$ training speed bottleneck, the authors make LoRA-MCL practically viable for 7B–8B scale models.
+- **High Generalizability**: This training paradigm (K LoRA + relaxed WTA) can be applied to any PEFT-friendly base model for language specialization, diverse implementational styles in code generation, or varying reward preferences in alignment.
 
 ## Limitations & Future Work
-- Hyperparameters like $\varepsilon$ in Relaxed-WTA and the Annealed-MCL schedule are currently fixed; future work could adapt them based on data distribution.
-- LoRA-MCL’s diversity (mBLEU-4) in image captioning still lags behind DBS+LoRA-MLE, suggesting training-side diversity hasn't fully "exhausted" the potential.
-- The number of hypotheses $K$ is pre-defined. A data-driven mechanism to select $K$ is needed to avoid redundant or insufficient heads.
-- Experiments are restricted to fine-tuning. Scaling to pre-training could potentially address fundamental collapse modes in current LLMs.
-- Combinability with other LoRA variants (e.g., LoRA+, DoRA, AdaLoRA) remains an open question for future systematic investigation.
+- Hyperparameters for Relaxed-WTA ($\varepsilon$) and Annealed-MCL schedules are fixed; adaptive adjustments based on data distribution could be explored.
+- In image captioning, LoRA-MCL diversity (mBLEU-4) still trails DBS+LoRA-MLE, suggesting training-side diversity hasn't fully captured the potential; combining both is suggested.
+- The number of hypotheses $K$ is a given prior; a data-driven mechanism to select $K$ to match the "true number of modes" is currently missing.
+- Experiments are limited to the fine-tuning stage; extending this to pre-training could mitigate the single-failure mode of current LLMs.
 
 ## Related Work & Insights
-- **vs. Classical MCL**: Traditional MCL uses shared backbones + multiple heads + hard WTA. This work adapts it to LLMs using shared base + multiple LoRA + relaxed WTA, solving both the head replication and training time issues.
-- **vs. LoRA-MoE**: LoRA-MoE uses multiple adapters but remains under the MLE objective, focusing on computational sparsity via routing. Experts often exhibit redundancy and low diversity. LoRA-MCL explicitly encourages modal specialization through the WTA objective, outperforming LoRA-MoE in experiments (SPIDEr 0.955 vs 0.926).
-- **vs. Diverse Beam Search / TTA**: These are inference-side "patches" decoupled from training. LoRA-MCL shifts the source of diversity to the multi-modal distribution of the training data, resulting in a superior quality-diversity Pareto frontier.
-- **Insight for PEFT**: Beyond "parameter-efficient adaptation," this work highlights LoRA’s utility for "parameter-efficient multi-hypothesis representation," applicable to multi-task, multi-style, and multi-reward scenarios.
+- **vs. Classic MCL (Lee 2016 / Rupprecht 2017)**: Classic MCL uses shared backbones with multiple heads and hard WTA. This work adapts the paradigm to LLMs by using multiple LoRA sets and relaxed WTA, solving both parameter and training efficiency issues.
+- **vs. LoRA-MoE (Wu 2024 / Li 2024)**: MoE also uses multiple LoRAs but remains anchored to the MLE objective, focusing on computational sparsity via gating. Experts are often redundant with weak diversity. LoRA-MCL explicitly encourages specialization through WTA, outperforming LoRA-MoE in experiments (SPIDEr 0.955 vs 0.926).
+- **vs. Diverse Beam Search / TTA**: These are inference-side diversity patches decoupled from the training objective. LoRA-MCL moves the source of diversity into the training objective's modal priors, yielding a superior quality–diversity Pareto front.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Marrying MCL with LoRA is intuitive but previously unexplored; the combination is simple yet effective, and the theoretical equivalence is solid.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers toy models, audio/image captioning, machine translation, and synthetic data across multiple $K$ and relaxation strategies. Lacks combination with recent LoRA variants like DoRA.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, strong alignment between Prop. 1 and toy experiments, and reproducible engineering details.
-- **Value**: ⭐⭐⭐⭐ Provides a "diversity-by-training" paradigm for LLM fine-tuning, which is more fundamental than inference-side tricks. Highly applicable to any task requiring multi-candidate outputs.
+- Novelty: ⭐⭐⭐⭐ Mapping MCL to LoRA is an intuitive but previously unexplored combination that elegantly solves head replication issues.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers toy models, audio/image captioning, and translation across $K\in\{1,3,5,7\}$. Lacks combinations with recent LoRA variants like DoRA/AdaLoRA.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivation of motivation; strong alignment between Prop. 1 and toy experiments; reproducible engineering details.
+- Value: ⭐⭐⭐⭐ Provides a fundamental "diverse by training" paradigm for LLM fine-tuning, applicable to any task requiring multiple candidate outputs.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
 - [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](../../ICLR2026/audio_speech/taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
-- [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
+- [\[ICML 2025\] FLAM: Frame-Wise Language-Audio Modeling](../../ICML2025/audio_speech/flam_frame-wise_language-audio_modeling.md)
 - [\[NeurIPS 2025\] A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings](../../NeurIPS2025/audio_speech/a_multitask_benchmark_for_abusive_language_detection_in_lowr.md)
 
 </div>

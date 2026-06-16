@@ -2,67 +2,56 @@
 title: >-
   [Paper Note] Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs
 description: >-
-  [ICML 2026][Causal Inference][do-calculus] By introducing derivation graphs to explicitly represent all equivalent transformations of do-calculus rules…
+  [ICML 2026][Causal Inference][Paper Note] Explicitly representing all equivalent transformations of do-calculus rules through derivation graphs—revealing the structure of the causal expression space and proving that any equivalent expression is reachable within at most 4 rule applications.
 tags:
-  - "ICML 2026"
-  - "Causal Inference"
-  - "do-calculus"
-  - "equivalence"
-  - "derivation graphs"
-  - "identifiability"
+  - ICML 2026
+  - Causal Inference
 date: 2026-05-08
-content_hash: 630b572a986330a1
+content_hash: d72db6bff6229594
 ---
-
 # Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.03719](https://arxiv.org/abs/2606.03719)  
 **Code**: https://gricad-gitlab.univ-grenoble-alpes.fr/yvernesc/do-calculus-derivation-graphs  
 **Area**: Causal Inference  
-**Keywords**: Causal Inference, do-calculus, equivalence, derivation graphs, identifiability
+**Keywords**: Causal Inference, Do-calculus, Equivalence, Derivation Graphs, Identifiability
 
 ## TL;DR
-By introducing derivation graphs to explicitly represent all equivalent transformations of do-calculus rules, this work reveals the structure of the causal expression space and proves that any equivalent expression can be reached in at most 4 rule applications.
+Explicitly representing all equivalent transformations of do-calculus rules through derivation graphs—revealing the structure of the causal expression space and proving that any equivalent expression is reachable within at most 4 rule applications.
 
 ## Background & Motivation
 
-**Background**: Pearl's do-calculus enables recursive transformations of observational and interventional probabilities through three graphical rewriting rules (R1, R2, R3), and is widely applied to identifiability problems in causal inference.
+**Background**: Pearl's do-calculus enables the recursive transformation of observational and interventional probabilities through three graphical rewriting rules (R1, R2, R3), and is widely applied to identifiability problems in causal inference.
 
-**Limitations of Prior Work**: Although do-calculus is theoretically complete, the path space from a starting expression to another equivalent expression is extremely complex. The same causal effect may have an exponential number of equivalent expressions with significantly different statistical properties, yet theoretical guidance on how to systematically explore and select the optimal expression is lacking.
+**Limitations of Prior Work**: Although do-calculus is theoretically complete, the path space from a starting expression to another equivalent expression is extremely complex. A single causal effect may have exponentially many equivalent expressions with significantly different statistical properties, yet theoretical guidance for systematically exploring and selecting the optimal expression is lacking.
 
-**Key Challenge**: While do-calculus is complete, the compositional relationships between rules, the full characterization of equivalent expressions, and the systematic derivation of multiple valid estimators have not been sufficiently characterized.
+**Key Challenge**: While do-calculus is complete, the compositional relationships between rules, the full characterization of equivalent expressions, and the systematic derivation of multiple valid estimators have not been fully characterized.
 
-**Goal**: (1) Explicitly characterize all equivalent transformations in do-calculus; (2) reveal the commutativity between rules; (3) provide principled methods for experimental design and statistical efficiency optimization.
+**Goal**: (1) Explicitly characterize all equivalent transformations of do-calculus; (2) reveal the commutativity between rules; (3) provide principled methods for experimental design and statistical efficiency optimization.
 
-**Key Insight**: Treat the step-by-step application of do-calculus as node transitions in graph theory. Constructing derivation graphs makes all equivalent expressions and their relationships transparent.
+**Key Insight**: Treat the step-by-step application of do-calculus as node transitions in graph theory, constructing derivation graphs to make all equivalent expressions and their relationships clear at a glance.
 
-**Core Idea**: Structure the sequences of do-calculus rule applications using directed graphs to reveal rule commutativity and the exponential growth patterns of equivalent expressions through topological properties.
+**Core Idea**: Structurally organize the sequences of do-calculus rule applications using a directed graph structure, revealing rule commutativity and the exponential growth of equivalent expressions through the topological properties of the graph.
 
 ## Method
 
 ### Overall Architecture
-A derivation graph is an undirected graph $D[G] = (V_D, E_D)$, where vertices represent all causal expressions of the form $P(y | \text{do}(x), w)$, and edges denote a single valid application of a do-calculus rule. The workflow includes: (1) defining derivation graph vertices and edges; (2) analyzing rule commutativity; (3) proving the minimum number of rule applications; (4) deriving multiple valid estimators from equivalent expressions.
+The three rewriting rules of do-calculus (R1/R2/R3) were originally dispersed local transformations; manually deriving an equivalent expression from a causal expression provides neither a global view nor termination guarantees. This paper moves the entire derivation process into a single graph: each causal expression is treated as a vertex, and each valid rule application is an edge. Consequently, finding equivalent expressions, the minimum steps to reach them, and available estimators becomes an enumerable problem on the graph.
 
 ### Key Designs
 
-1. **Graph-theoretic Representation of Derivation Graphs**:
+**1. Derivation Graph Representation: Turning Rule Applications into Edges**
 
-    - **Function**: Systematize the causal expression space and do-calculus rule applications into graph-theoretic objects to enable explicit enumeration and querying of all equivalent transformations.
-    - **Mechanism**: Vertices are defined as all expressions of the form $P(y | \text{do}(x), w)$, where $(Y, X, W)$ are disjoint subsets of $V_G$ and $Y \neq \emptyset$. Edges are defined as single-step valid do-calculus rules between two expressions. Connected components in the graph correspond to equivalence classes in the causal graph.
-    - **Design Motivation**: The three do-calculus rules are essentially local transformations; using a graph makes the global equivalence structure explicit, avoiding manual step-by-step derivations.
+The pain point of do-calculus is that the rules are local and the expression space is implicit, making it impossible to see the global equivalence structure at once. This paper constructs an undirected derivation graph $D[G] = (V_D, E_D)$ to make it explicit: vertices are all expressions of the form $P(y \mid \text{do}(x), w)$, where $(Y, X, W)$ are pairwise disjoint subsets of the causal graph vertex set $V_G$ and $Y \neq \emptyset$; an edge is connected between two expressions if a single valid do-calculus rule application exists between them. Thus, expressions equivalent to each other in the causal graph fall into the same connected component of the derivation graph. Equivalence relations that previously required manual verification are transformed into graph queries regarding "membership in the same connected component," allowing all equivalent transformations to be explicitly enumerated.
 
-2. **Rule Commutativity and Minimal Operational Calculus**:
+**2. Rule Commutativity and 4-Step Reachability: Constraining Path Length**
 
-    - **Function**: Prove that any two equivalent expressions can be reached via at most 2 applications of R2 and 2 applications of R3 (total $\le 4$ steps), without requiring arbitrarily long sequences.
-    - **Mechanism**: Analyze commutativity relationships between R1 (observation insertion/deletion), R2 (action/observation exchange), and R3 (action insertion/deletion) through graph theory. Key discovery: R1 commutes with other rules, while specific order dependencies exist between R2 and R3. Graphical criteria are introduced to determine equivalence: for $Q_1$ and $Q_2$, check the corresponding d-separation conditions.
-    - **Design Motivation**: The complexity of rule ordering hinders practical application. Proving a minimal 4-step bound significantly simplifies equivalence verification and path searching.
+If rules could be combined arbitrarily, the cost of equivalence determination and path searching would be uncontrollable. This paper provides a hard upper bound by analyzing the commutativity of the three rules: R1 (insertion/deletion of observations) commutes with other rules, while specific sequential dependencies exist between R2 (exchange of action and observation) and R3 (insertion/deletion of action). Based on these commutativity properties, the authors prove that any two equivalent expressions can always reach each other through at most 2 applications of R2 and 2 of R3 (totaling $\le 4$ steps), rendering longer sequences unnecessary. Correspondingly, a graphical criterion is introduced to directly determine equivalence—by checking d-separation conditions for the queries $Q_1$ and $Q_2$—eliminating the need for actual path searching. This compresses equivalence verification from an open-ended search problem into one decidable within constant steps.
 
-3. **Multi-estimator Derivation and Experimental Design Optimization**:
+**3. Multi-Estimator Derivation: Expanding One Identification Formula into a Family**
 
-    - **Function**: Start from a single identification formula output by the ID algorithm and find multiple distinct valid estimators with different statistical properties by traversing the set of equivalent expressions.
-    - **Mechanism**: Perform graph traversal (BFS/DFS) on the derivation graph to expand from the ID algorithm's output to other expressions in the equivalence class. Each expression corresponds to a different estimator whose variance and computational complexity vary based on the conditioning variables and summation dimensions. For example, a back-door formula $P(y|z)$ might involve summing over one variable, while a front-door formula could involve exponential variables, leading to vast differences in variance and complexity.
-    - **Design Motivation**: In scenarios with limited data or infeasible partial interventions (e.g., biological or medical experiments), multiple valid estimators provide different cost-precision trade-offs.
+The ID algorithm returns only a single identification formula, but different equivalent forms of the same causal effect vary greatly in statistical properties. Starting from the expression output by the ID algorithm, this paper performs BFS/DFS traversal on the derivation graph to expand all other expressions in its equivalence class. Each equivalent expression corresponds to a valid but distinct estimator. The variance and computational complexity of these estimators depend on the specific conditional variables and summation dimensions: the backdoor formula $P(y \mid z)$ requires summation over only one variable, while the front-door formula may require summation over an exponential number of variables, leading to vast differences in variance and overhead. Thus, in scenarios where data is limited or certain interventions are impractical (e.g., biological or medical experiments), this family of estimators provides different cost-precision trade-offs that can be selected as needed.
 
 ## Key Experimental Results
 
@@ -70,38 +59,38 @@ A derivation graph is an undirected graph $D[G] = (V_D, E_D)$, where vertices re
 
 | Causal Graph Scale | Variable Count | Derivation Graph Vertices | Equivalent Expressions | Max Rule Applications |
 |-----------|--------|-------------|------------|-------------|
-| Empty Graph (No edges) | 3 | 27 | 27 | 2 |
-| Chain Graph A→B→C | 3 | 9 | 9 | ≤4 |
-| Fork Graph A←B→C | 3 | 6 | 6 | ≤4 |
-| Collider Graph A→B←C | 3 | 18 | 18 | ≤4 |
+| Empty Graph (No Edges) | 3 | 27 | 27 | 2 |
+| Chain A→B→C | 3 | 9 | 9 | ≤4 |
+| Fork A←B→C | 3 | 6 | 6 | ≤4 |
+| Collider A→B←C | 3 | 18 | 18 | ≤4 |
 
-### Number of Equivalent Expressions
+### Equivalent Expression Counts
 
-| Expression Type | Initial Expression | Equivalence Count | Max Rules Required | Count (Excl. R1) |
+| Expression Type | Starting Expression | Equivalent Count | Max Rule Apps Required | Count (Excluding R1) |
 |-----------|-----------|-------------|---------------|--------------|
 | Interventional Query | $P(a\|\text{do}(b,c))$ | 12 | 4 | 4 |
 | Mixed Expression | $P(b\|\text{do}(a),c)$ | 8 | 3 | 3 |
 | Observational Query | $P(a\|b,c)$ | 3 | 2 | 2 |
 
 ## Highlights & Insights
-- **Commutativity Discovery**: Proved that $\text{R1} \circ \text{R2} = \text{R2} \circ \text{R1}$ and that $\text{R2} \circ \text{R3}$ is commutative under specific graphical conditions, providing a new algebraic structure for do-calculus.
-- **Minimal 4-step Bound**: Rule combinations originally thought to require arbitrary steps are strictly bounded within 4 steps, reducing the computational complexity of equivalence testing.
-- **New Perspective on Experimental Design**: Different equivalent expressions correspond to estimators with different variances, offering principled selection methods for cost-constrained scenarios like biological experiments or medical interventions.
+- **Commutativity Discovery**: Proved that $\text{R1} \circ \text{R2} = \text{R2} \circ \text{R1}$ and that $\text{R2} \circ \text{R3}$ is exchangeable under specific graphical conditions, providing a new algebraic structure for do-calculus.
+- **Minimal 4-Step Bound**: Rule combinations originally thought to require an arbitrary number of steps are strictly limited to 4, simplifying the computational complexity of equivalence determination.
+- **New Perspective on Experimental Design**: Different equivalent expressions correspond to estimators with different variances; provides a principled selection method for cost-constrained scenarios like biological or medical interventions.
 
 ## Limitations & Future Work
-- Computational complexity: The number of vertices in a derivation graph grows exponentially with the number of variables, making full enumeration difficult for large-scale causal graphs.
-- Incomplete variance analysis: The paper demonstrates differences in estimator forms but does not provide closed-form analytical solutions for variance.
-- Expansion of identifiability: Current methods are restricted to identified causal effects; characterization of derivation graphs for partial identification is missing.
+- Computational Complexity: The number of vertices in the derivation graph grows exponentially with the number of variables, making full enumeration difficult for large-scale causal graphs.
+- Incomplete Variance Analysis: The paper demonstrates differences in estimator forms but does not provide a closed-form analytical solution for variance.
+- Expansion of Identifiability: Current methods are limited to identified causal effects, lacking characterization of derivation graphs for partial identification.
 
 ## Related Work & Insights
-- **vs ID Algorithm**: The ID algorithm returns a single identification formula; this work reveals all expressions within an equivalence class via derivation graphs, offering a structured alternative.
-- **vs Adjustment Formula Theory**: Back-door adjustment and front-door formulas are special cases of the equivalence classes explored here; derivation graphs unify these separate methods.
+- **vs. ID Algorithm**: The ID algorithm returns a single identification formula; this paper reveals all expressions within an equivalence class via derivation graphs, providing a structured alternative.
+- **vs. Adjustment Formula Theory**: Backdoor adjustment theory and the front-door formula are special cases within the equivalence classes of this paper; derivation graphs unify these methods.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ First systematic characterization of commutativity between do-calculus rules and the complete graph-theoretic structure of equivalent expressions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Provides graph-theoretic characterization and Jupyter notebook replication; examples are clear but sample size is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ Logic is clear, definitions are rigorous, and notation is consistent.
-- Value: ⭐⭐⭐⭐⭐ Deepens the theory of causal inference and provides practical guidance for experimental design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Provides graph-theoretic characterization and Jupyter notebook reproduction; experimental examples are clear but sample size is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, rigorous definitions, and consistent notation.
+- Value: ⭐⭐⭐⭐⭐ Deepens causal inference theory and provides practical guidance for experimental design.
 
 <!-- RELATED:START -->
 
@@ -111,9 +100,9 @@ A derivation graph is an undirected graph $D[G] = (V_D, E_D)$, where vertices re
 
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](../../NeurIPS2025/causal_inference/practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](../../NeurIPS2025/causal_inference/do-pfn_in-context_learning_for_causal_effect_estimation.md)
-- [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](../../ICLR2026/causal_inference/rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
+- [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](../../NeurIPS2025/causal_inference/characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
 - [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
+- [\[ACL 2025\] CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation](../../ACL2025/causal_inference/causalrag_integrating_causal_graphs_into_retrieval-augmented_generation.md)
 
 </div>
 

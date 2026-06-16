@@ -2,71 +2,87 @@
 title: >-
   [Paper Note] Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 description: >-
-  [ACL 2026][Hallucination Detection][Visual Hallucination Mitigation] This paper proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies key visual regions based on multi-layer attention a…
+  [ACL 2026][Hallucination Detection][Vision-Language Model] Ours proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies and adaptively magnifies key visual regions based on multi-layer attention at each autoregressive decoding step. This approach mitigates VLM hallucinations by increasing the effective resolution of critical areas while maintai
 tags:
-  - "ACL 2026"
-  - "Hallucination Detection"
-  - "Visual Hallucination Mitigation"
-  - "Perception Magnification"
-  - "Attention-Guided Decoding"
-  - "Iterative Refinement"
-  - "Vision-Language Models"
+  - ACL 2026
+  - Hallucination Detection
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 4ebdb638246a9959
+content_hash: 4ff16ed6f9510b9c
 ---
-
 # Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 
 **Conference**: ACL 2026  
 **arXiv**: [2503.10183](https://arxiv.org/abs/2503.10183)  
 **Code**: [GitHub](https://github.com/ShunqiM/PM)  
 **Area**: Hallucination Detection  
-**Keywords**: Visual Hallucination Mitigation, Perception Magnification, Attention-Guided Decoding, Iterative Refinement, Vision-Language Models
+**Keywords**: Visual hallucination mitigation, perception magnification, attention-guided decoding, iterative refinement, Vision-Language Models
 
 ## TL;DR
 
-This paper proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies key visual regions based on multi-layer attention at each auto-regressive decoding step and adaptively magnifies them. By increasing the effective resolution of key regions while maintaining spatial structural integrity and reasoning capabilities, PM mitigates visual hallucinations in VLMs.
+Ours proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies and adaptively magnifies key visual regions based on multi-layer attention at each autoregressive decoding step. This approach mitigates VLM hallucinations by increasing the effective resolution of critical areas while maintaining spatial structural integrity and reasoning capabilities.
 
 ## Background & Motivation
 
-**Background**: Hallucination mitigation methods for VLMs are primarily categorized into training-time methods (debiased datasets, increasing visual resolution) and inference-time methods (contrastive decoding, visual token re-weighting). Decoding-side methods have gained attention for being training-free, aimed at reducing hallucinations by suppressing biased logits or enhancing visual embedding weights.
+**Background**: Methods for mitigating VLM hallucinations are primarily divided into training-time methods (e.g., debiased datasets, increasing visual resolution) and inference-time methods (e.g., contrastive decoding, visual token weight boosting). Decoding-side methods have gained attention for being training-free, typically reducing hallucinations by suppressing biased logits or enhancing visual embedding weights.
 
-**Limitations of Prior Work**: (1) Contrastive decoding (VCD, M3ID) reduces hallucinations by suppressing biased outputs, but when visual information itself is insufficient for differentiation, correct information is absent from both sets of logits, and bias suppression cannot recover missing details; (2) Embedding weighting (PAI, IBD) enhances the influence of visual tokens but remains ineffective when target regions are too small or dispersed within ViT features; (3) Cropping methods (ViCrop) enhance details by cropping and magnifying key regions but destroy spatial structure (losing context) and introduce confusion via dual-image inputs.
+**Limitations of Prior Work**: (1) Contrastive decoding (VCD, M3ID) reduces hallucinations by suppressing biased outputs, but when the visual information itself is insufficient for distinction, correct information is absent from both sets of logits, and suppressing bias cannot recover missing details; (2) Embedding weighting (PAI, IBD) enhances the influence of visual tokens but remains ineffective when target regions are too small or dispersed within ViT features; (3) Cropping methods (ViCrop) enhance details by cropping and magnifying key regions but destroy spatial structure (losing context) and introduce confusion through dual-image inputs.
 
-**Key Challenge**: Existing methods either fail to enhance visual details (contrastive/weighting) or enhance details at the cost of destroying spatial structure (cropping)—a balance is needed between detail enhancement and structure preservation.
+**Key Challenge**: Existing methods either fail to enhance visual details (contrastive/weighting) or enhance details at the cost of destroying spatial structure (cropping)—a balance must be found between detail enhancement and structural preservation.
 
-**Goal**: Adaptively enhance the effective resolution of key visual regions without destroying spatial structure.
+**Goal**: To adaptively enhance the effective resolution of key visual regions without compromising the spatial structure.
 
-**Key Insight**: Visual enhancement is modeled as a "magnifying glass" effect—where key regions are magnified (occupying more pixels/patches) and non-key regions are compressed (rather than discarded), while the overall image structure remains intact.
+**Key Insight**: Model visual enhancement as a "magnifying glass" effect—where key regions are magnified (occupying more pixels/patches) while non-key regions are compressed (rather than discarded), keeping the overall image structure intact.
 
-**Core Idea**: A perception map is constructed based on attention heatmaps and treated as a probability mass function. Structure-preserving adaptive re-sampling of the original image is performed via inverse transform sampling—high-attention regions are magnified, and low-attention regions are compressed.
+**Core Idea**: Construct a perception map based on attention heatmaps, treat it as a probability mass function, and perform structure-preserving adaptive resampling of the original image via inverse transform sampling—high-attention areas are magnified, and low-attention areas are compressed.
 
 ## Method
 
 ### Overall Architecture
 
-At each decoding step, PM performs: (1) token-level heatmap extraction from middle to deep layer attention of the VLM; (2) coverage expansion through iterative refinement; (3) post-processing into a pixel-level perception map; (4) structure-preserving magnification of the original image based on the perception map; (5) replacement of the original visual input with the magnified image to generate the next token.
+The pain point PM addresses is specific: VLM hallucinations often occur not because the model looks at the wrong place, but because key objects are too small in ViT features, lacking sufficient effective resolution to be accurately identified. PM resolves this by implementing a "magnifying glass": at each autoregressive decoding step, it first identifies the most relevant regions from the VLM's attention, iteratively expands the coverage to form a pixel-level perception map, and then performs structure-preserving resampling. Magnified regions occupy more pixels, non-key regions are compressed but retained, and the overall structure remains unchanged. The magnified image replaces the original visual input to generate the next token.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Each Autoregressive Decoding Step<br/>Current Visual Input + Generated Tokens"] --> REFINE
+    subgraph REFINE["Iterative Refinement"]
+        direction TB
+        B["Perception Map Construction<br/>Max-pooled attention from mid-layers → Heatmap H"] --> C["2-means clustering selects high-attention tokens"]
+        C --> D["Mask these tokens and re-forward"]
+        D -->|"Total Attention ≥ β"| B
+    end
+    REFINE -->|"Total Attention < β or Max Iteration"| E["Aggregate Heatmaps + Post-processing<br/>Variance Magnification / Smoothing / Upsampling → Perception Map P"]
+    E --> F["Attention-Guided Magnification<br/>Inverse Transform Sampling for Structure-Preserving Resampling"]
+    F --> G["Magnified Image replaces Visual Input → Generate next token"]
+    G --> A
+```
 
 ### Key Designs
 
-1.  **Perception Map Construction**:
-    - **Function**: Localizes visual regions most relevant to the current decoding step.
-    - **Mechanism**: Attention matrices from middle to deep layers ($l \geq \mathcal{L}$) are aggregated by taking the maximum across all heads for each layer and summing across layers to obtain a token-level heatmap: $\mathcal{H} = \sum_{l=\mathcal{L}}^{N_l} \max_{h \in 1,...,N_h} \text{Attn}_{l,h}$. Post-processing involves normalization, variance magnification (coefficient $\alpha$) + sigmoid compression, and uniform smoothing (kernel size $k$), followed by bilinear upsampling to a pixel-level perception map $\mathcal{P}$.
-    - **Design Motivation**: Middle-layer attention localizes target objects more accurately than the final layer; max pooling preserves signals from visually important regions better than mean pooling; variance magnification ensures small but critical regions are not ignored.
+**1. Perception Map Construction: Aggregating Multi-layer Attention into a "Where to Look" Heatmap**
 
-2.  **Iterative Refinement**:
-    - **Function**: Discovers important regions obscured by information registers.
-    - **Mechanism**: Deep visual models compress fine-grained features into a few tokens, causing single-pass attention extraction to miss spatially dispersed but semantically relevant regions. In each round, iterative refinement: extracts the heatmap $\rightarrow$ identifies high-attention tokens via 2-means clustering $\rightarrow$ masks these tokens in the attention mask $\rightarrow$ re-performs the forward pass. This continues until total attention falls below threshold $\beta$ or maximum iterations are reached. All heatmaps are finally aggregated.
-    - **Design Motivation**: Analogous to the human eye noticing the most salient regions first and then discovering secondary regions after the primary ones are obscured—progressively discovering all relevant visual cues.
+To magnify the correct regions, the model must locate the most relevant visual areas for the current decoding step. PM aggregates self-attention from middle to deep layers ($l \geq \mathcal{L}$): it takes the maximum across all heads for each layer, then sums across layers to obtain a token-level heatmap:
 
-3.  **Attention-Based Magnification**:
-    - **Function**: Magnifies key regions while maintaining spatial structure.
-    - **Mechanism**: The perception map $\mathcal{P}$ is treated as a probability mass function, decomposed into marginal distributions along horizontal and vertical directions to compute cumulative distributions $\mathcal{F}_x(n)$ and $\mathcal{F}_y(n)$. Pixel coordinates are remapped via inverse transform sampling: $\hat{I}_{i,j} = \text{Interp}(I, \mathcal{F}_x^{-1}(i), \mathcal{F}_y^{-1}(j))$. Regions with high attention have slowly growing CDFs (more output pixels map to that region $\rightarrow$ magnification), while low-attention regions have fast-growing CDFs (fewer pixels $\rightarrow$ compression).
-    - **Design Motivation**: Unlike cropping, this re-sampling preserves complete spatial structure—all regions remain present, only their relative resolutions differ. This avoids positional judgment and counting errors caused by context loss.
+$$\mathcal{H} = \sum_{l=\mathcal{L}}^{N_l} \max_{h \in 1,\dots,N_h} \text{Attn}_{l,h}$$
+
+Middle layers are used because their attention locates target objects more accurately than final layers, and max-pooling preserves peak signals of visual importance better than mean-pooling. Post-processing is then applied to $\mathcal{H}$: normalization, variance magnification (coefficient $\alpha$) with sigmoid compression, uniform smoothing (kernel size $k$), and finally bilinear upsampling to a pixel-level perception map $\mathcal{P}$. Variance magnification ensures "small but important" areas are not suppressed.
+
+**2. Iterative Refinement: Revealing Sub-salient Regions Hidden by Information Registers**
+
+Single-pass attention extraction has a blind spot: deep vision models compress fine-grained features into a few tokens (information registers), causing spatially dispersed but semantically related regions to be missed. Iterative Refinement mimics human visual processing—noticing the most salient region, "masking" it, then looking for the next. In each round, it extracts the heatmap, selects high-attention tokens using 2-means clustering, masks them in the attention mask, and re-forwards until the total attention falls below threshold $\beta$ or max iterations are reached. Finally, it aggregates all heatmaps.
+
+**3. Attention-Based Magnification: Structure-Preserving Resampling via Inverse Transform Sampling**
+
+With the perception map, PM treats $\mathcal{P}$ as a probability mass function, decomposes it into marginal distributions along horizontal and vertical axes, and calculates cumulative distributions $\mathcal{F}_x(n)$ and $\mathcal{F}_y(n)$. It then remaps pixel coordinates using inverse transform sampling:
+
+$$\hat{I}_{i,j} = \text{Interp}(I, \mathcal{F}_x^{-1}(i), \mathcal{F}_y^{-1}(j))$$
+
+Intuition: Regions with high attention have slower CDF growth, meaning more output pixels map to these areas (magnification); regions with low attention have faster CDF growth and fewer pixels (compression). Unlike cropping, all regions are preserved, maintaining the complete spatial structure and avoiding errors in position and counting.
 
 ### Loss & Training
 
-PM operates entirely at inference time with no training required. The base model is LLaVA-1.5 7B. Hyperparameters: starting layer $\mathcal{L}=12$, scaling factor $\alpha=10$, smoothing kernel $k=3$, iteration threshold $\beta=0.3$.
+PM operates entirely at inference time and requires no training. The base model is LLaVA-1.5 7B. Key hyperparameters: starting layer $\mathcal{L}=12$, scaling coefficient $\alpha=10$, smoothing kernel $k=3$, and iteration threshold $\beta=0.3$.
 
 ## Key Experimental Results
 
@@ -75,29 +91,29 @@ PM operates entirely at inference time with no training required. The base model
 **MME Perception Hallucination Scores**
 
 | Method | Existence | Count | Position | Color | Total* |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-----------|-------|----------|-------|--------|
 | Greedy | 195.00 | 143.33 | 128.33 | 163.33 | 630.00 |
 | VCD | 190.00 | 143.33 | 120.00 | 155.00 | 608.33 |
 | M3ID | 190.00 | 150.00 | 133.33 | 166.67 | 640.00 |
 | IBD | 190.00 | 160.00 | 133.33 | 170.00 | 653.33 |
 | ViCrop-R | 190.00 | 163.33 | 105.00 | 175.00 | 633.33 |
-| **Ours (PM)**| **195.00** | **175.00** | **138.33** | **175.00** | **683.33** |
+| **Ours** | **195.00** | **175.00** | **138.33** | **175.00** | **683.33** |
 
 **POPE Accuracy (%)**
 
 | Method | COCO | AVG |
-| :--- | :--- | :--- |
+|------|------|-----|
 | Greedy | 85.29 | 84.59 |
 | VDD | 86.71 | 86.32 |
 | API-C | 87.31 | 86.41 |
-| **Ours (PM)** | **87.68** | **86.70** |
+| **Ours** | **87.68** | **86.70** |
 
 ### Ablation Study
 
 **MME Perception Ablation**
 
 | Configuration | Total |
-| :--- | :--- |
+|------|-------|
 | Greedy | 630.00 |
 | PM w/o IR & MLA | 640.00 |
 | PM w/o MLA | 645.00 |
@@ -107,7 +123,7 @@ PM operates entirely at inference time with no training required. The base model
 **Comparison of Magnification Methods**
 
 | Method | MME Perception Total |
-| :--- | :--- |
+|------|---------------------|
 | Blurring | 630.00 |
 | Bounding Box | 640.00 |
 | Masking | 648.33 |
@@ -116,38 +132,37 @@ PM operates entirely at inference time with no training required. The base model
 
 ### Key Findings
 
-- PM significantly outperforms all baselines on MME Perception with a score of 683.33 (Prev. SOTA IBD 653.33), with the largest gains in Count and Color dimensions.
-- ViCrop performs poorly in the Position dimension (105.00 vs PM 138.33), confirming that structure destruction from cropping is harmful to spatial judgment.
-- All contrastive decoding baselines show performance degradation on the MME Cognition subset, whereas PM does not—magnifying visual input does not impair reasoning ability.
-- Iterative refinement and multi-layer aggregation each contribute significantly; Full PM is 18.33 points higher than the version without refinement.
-- Qualitative analysis shows PM can magnify small objects (e.g., chairs) to a recognizable resolution.
+- Purs outperforms all baselines on MME Perception with a score of 683.33 (next best is IBD at 653.33), with the largest gains in Count and Color dimensions.
+- ViCrop performs poorly in the Position dimension (105.00 vs Ours 138.33), confirming that destroying spatial structure via cropping is detrimental to spatial judgment.
+- Contrastive decoding baselines show performance drops on the MME Cognition subset, whereas Ours does not—magnifying visual input does not impair reasoning capabilities.
+- Iterative refinement and multi-layer aggregation contribute significantly; the full PM is 18.33 points higher than the version without refinement.
 
 ## Highlights & Insights
 
-- "Accurate attention does not equate to correct recognition"—VLMs can attend to the correct region yet still misidentify it at low resolution, indicating that resolution enhancement is necessary.
-- The design choice of structure-preserving magnification vs. cropping is critical—cropping results in a 33-point loss in Position, while magnification yields a 10-point gain.
-- The inverse transform sampling approach elegantly unifies "magnifying key regions" and "preserving global structure."
+- "Accurate attention does not equate to correct recognition"—VLMs may attend to the correct region but still misidentify it at low resolution, making resolution enhancement necessary.
+- The design choice of structure-preserving magnification vs. cropping is critical—cropping loses 33 points on Position, while magnification gains 10 points.
+- The use of inverse transform sampling elegantly unifies "magnifying key regions" and "preserving global structure."
 
 ## Limitations & Future Work
 
-- Magnification causes local shape distortion, which may be harmful for tasks requiring geometric precision.
-- It disrupts efficient KV cache decoding—magnified images must be re-encoded at each step.
-- Additional attention alignment mechanisms are needed for VLMs with complex token-image mapping (non-interleaved architectures).
-- Validated only on LLaVA-1.5 7B; not yet tested on more recent VLMs.
+- Magnification causes local shape distortion, which may be harmful to tasks requiring high geometric precision.
+- It disrupts efficient decoding via KV cache, as each step requires re-encoding the magnified image.
+- It requires additional attention alignment mechanisms for VLMs with complex token-image mappings (non-interleaved architectures).
+- Currently only validated on LLaVA-1.5 7B; testing on newer VLMs is needed.
 
 ## Related Work & Insights
 
-- **vs. VCD/M3ID (Contrastive Decoding)**: These suppress biased logits without enhancing visual details; PM directly improves visual resolution.
-- **vs. IBD/PAI (Embedding Weighting)**: These enhance visual token weights without changing visual content; PM alters the visual input itself.
-- **vs. ViCrop (Cropping)**: Cropping loses context and introduces confusion via dual-image inputs; PM's structure-preserving magnification avoids these issues.
-- **vs. API (Regional Prompting)**: API emphasizes regions via masks without increasing effective resolution; PM actually increases the pixel count of key regions.
+- **vs VCD/M3ID (Contrastive Decoding)**: Suppresses biased logits but lacks visual detail enhancement; Ours directly increases visual resolution.
+- **vs IBD/PAI (Embedding Weighting)**: Enhances visual token weights without changing visual content; Ours modifies the visual input itself.
+- **vs ViCrop (Cropping)**: Cropping loses context and dual inputs introduce confusion; Ours’ structure-preserving magnification avoids these issues.
+- **vs API (Regional Prompting)**: API emphasizes regions via masking but does not increase effective resolution; Ours actually increases the pixel count of key areas.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The idea of using inverse transform sampling for structure-preserving magnification is novel; iterative refinement is effective but relatively straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Includes 4 benchmarks, 12 baselines, and detailed ablations (map construction × magnification × iterative refinement × multi-layer aggregation) + GPT-4o assisted evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐ Methodological descriptions are clear and qualitative analysis is intuitive.
-- **Value**: ⭐⭐⭐⭐ The approach of alleviating hallucinations through "visual resolution enhancement" is insightful, and the structure-preserving design is practical.
+- Novelty: ⭐⭐⭐⭐ The use of inverse transform sampling for structure-preserving magnification is novel; iterative refinement is effective but straightforward.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 benchmarks + 12 baselines + detailed ablations + GPT-4o evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological presentation and intuitive qualitative analysis.
+- Value: ⭐⭐⭐⭐ Mitigating hallucinations through "visual resolution enhancement" is an insightful and practical structure-preserving design.
 
 <!-- RELATED:START -->
 
@@ -155,11 +170,11 @@ PM operates entirely at inference time with no training required. The base model
 
 ## Related Papers
 
-- [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
+- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](../../CVPR2026/hallucination/3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/hallucination/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](../../ICLR2026/hallucination/enhancing_hallucination_detection_through_noise_injection.md)
-- [\[ICLR 2026\] Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding](../../ICLR2026/hallucination/token-guard_towards_token-level_hallucination_control_via_self-checking_decoding.md)
-- [\[ICML 2026\] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](../../ICML2026/hallucination/capturing_gaze_shifts_for_guidance_cross-modal_fusion_enhancement_for_vlm_halluc.md)
 
 </div>
 

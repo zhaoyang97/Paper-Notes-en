@@ -2,94 +2,92 @@
 title: >-
   [Paper Note] Measuring the (Un)Faithfulness of Concept-Based Explanations
 description: >-
-  [CVPR 2026][Interpretability][Concept explanations] This paper demonstrates that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is systematically overestimated — due to the use of o…
+  [CVPR 2026][Interpretability][Paper Note] This paper reveals that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is overestimated due to overly complex surrogate models and flawed deletion-based evaluations. The authors propose SURF (Surrogate Faithfulness), a framework consisting of a simple linear surrogate and dual-spa
 tags:
-  - "CVPR 2026"
-  - "Interpretability"
-  - "Concept explanations"
-  - "faithfulness measurement"
-  - "unsupervised concept methods"
-  - "surrogate models"
-  - "interpretability evaluation"
+  - CVPR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 3eab3a430ad09b1f
+content_hash: 9f79959949c22b4a
 ---
-
 # Measuring the (Un)Faithfulness of Concept-Based Explanations
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2504.10833](https://arxiv.org/abs/2504.10833)  
-**Code**: Available (released per paper statement)  
-**Area**: Explainable AI / Model Interpretability
-**Keywords**: Concept explanations, faithfulness measurement, unsupervised concept methods, surrogate models, interpretability evaluation
+**Code**: Yes (The paper states that the code has been released)  
+**Area**: Explainable AI / Model Interpretability  
+**Keywords**: Concept explanations, faithfulness metrics, unsupervised concept methods, surrogate models, interpretability evaluation
 
 ## TL;DR
 
-This paper demonstrates that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is systematically overestimated — due to the use of overly complex surrogate models and flawed deletion-based evaluation. The authors propose SURF (Surrogate Faithfulness), a simple linear surrogate with a dual-space metric framework, validated through a sanity check that "random concepts should be less faithful," and provide the first systematic benchmark revealing that multiple SOTA U-CBEMs are in fact not faithful.
+This paper reveals that the faithfulness of existing unsupervised concept-based explanation methods (U-CBEMs) is overestimated due to overly complex surrogate models and flawed deletion-based evaluations. The authors propose SURF (Surrogate Faithfulness), a framework consisting of a simple linear surrogate and dual-space metrics. Validated by a sanity check ("random concepts should be less faithful"), this framework demonstrates its correctness and reveals for the first time that several state-of-the-art (SOTA) U-CBEMs are actually unfaithful.
 
 ## Background & Motivation
 
-1. **Background**: Deep visual models are difficult to interpret. Concept-based explanation methods (CBEMs) improve interpretability by decomposing intermediate model representations into human-understandable semantic concepts (e.g., edges, colors, object parts). Unsupervised CBEMs (U-CBEMs) automatically discover concept activation vectors (CAVs) and their importance scores, eliminating the need for manual concept annotation.
+1. **Background**: Deep vision models are difficult to interpret. Concept-based explanation methods (CBEMs) improve interpretability by decomposing intermediate representations into human-understandable semantic concepts (e.g., edges, colors, object parts). Unsupervised CBEMs (U-CBEMs) automatically discover concept activation vectors (CAVs) and their importance scores, avoiding the need for manual concept labeling.
 
-2. **Limitations of Prior Work**: The central evaluation criterion for U-CBEMs is *faithfulness* — whether an explanation truly reflects the model's internal computation. However, existing evaluations suffer from two systematic problems: (a) **Overly complex surrogates** — ICE-Eval first reconstructs embeddings via NMF before passing them through the original model, while C-SHAP-Eval trains an additional MLP; these complex surrogates make U-CBEMs *appear* faithful without the explanations clearly leading to model outputs; (b) **Unreliable deletion-based evaluation** — inferring faithfulness indirectly by observing performance drops after concept removal, but post-deletion inputs may fall off the data manifold, making model behavior in such regions unpredictable.
+2. **Limitations of Prior Work**: The core evaluation metric for U-CBEMs is "faithfulness"—whether the explanation truly reflects the model's internal computation. However, existing evaluations suffer from two systemic issues: (a) **Overly complex surrogate models**—ICE-Eval reconstructs embeddings via NMF before passing them through the original model, while C-SHAP-Eval trains an additional MLP. These complex surrogates make U-CBEMs "appear" faithful, even if the explanations themselves do not clearly lead to the model output; (b) **Unreliable deletion-based evaluation**—faithfulness is indirectly inferred by removing concepts and observing performance drops. However, inputs after deletion may deviate from the data manifold, leading to unpredictable model behavior.
 
-3. **Key Challenge**: There is an inherent tension between interpretability and faithfulness — making explanations simple and comprehensible necessarily entails information loss and reduced faithfulness. Prior evaluation methods artificially allowed U-CBEMs to simultaneously exhibit high interpretability and high faithfulness by permitting complex surrogates and single-class metrics, even though the explanations do not clearly lead to the model's predictions.
+3. **Key Challenge**: There is an inherent contradiction between interpretability and faithfulness—making an explanation simple and understandable (interpretable) inevitably loses information (reducing faithfulness). Past evaluation methods, by allowing complex surrogates and single-class metrics, artificially allowed U-CBEMs to "show" both high interpretability and high faithfulness, whereas the explanations could not actually derive the model output clearly.
 
-4. **Goal**: (a) Unify the fragmented landscape of faithfulness evaluation frameworks; (b) Design a faithfulness metric satisfying three criteria (simple surrogate, inclusion of concept importance, full-output measurement); (c) Conduct the first fair faithfulness benchmark of existing U-CBEMs.
+4. **Goal**: (a) Unify the fragmented faithfulness evaluation frameworks; (b) Design a faithfulness metric that satisfies three criteria (simple surrogate, inclusion of concept importance, and full-output measurement); (c) Conduct the first fair faithfulness benchmarking of existing U-CBEMs.
 
-5. **Key Insight**: The authors propose an extremely concise sanity check — replacing concepts with random vectors should decrease faithfulness. Remarkably, both ICE-Eval and C-SHAP-Eval fail this check.
+5. **Key Insight**: The authors propose an extremely concise sanity check—if concepts are replaced with random vectors, the faithfulness score should decrease. Shockingly, both existing ICE-Eval and C-SHAP-Eval fail this check.
 
-6. **Core Idea**: Using the model's own final linear layer structure as a surrogate template, the authors propose SURF — a zero-parameter linear surrogate — paired with dual metrics in logit space (MAE) and probability space (EMD), enabling accurate and reliable faithfulness evaluation of U-CBEMs.
+6. **Core Idea**: Use the model's own final linear layer structure as a surrogate template and propose the zero-parameter linear surrogate SURF. Combined with dual metrics in logit space (MAE) and probability space (EMD), it achieves accurate and reliable evaluation of U-CBEM faithfulness.
 
 ## Method
 
 ### Overall Architecture
 
-SURF evaluation pipeline: for any explanation generated by a U-CBEM (comprising CAVs $V_i$ and concept importances $A_i$), SURF uses a linear surrogate to map concept representations to the model's output space, then measures the discrepancy between the surrogate output and the true model output in both logit and probability spaces. The entire process introduces no trainable parameters and incurs negligible computation (200 FLOPs vs. 205M FLOPs for C-SHAP-Eval).
+SURF is a metric framework for evaluating the faithfulness of U-CBEM explanations rather than a new concept discovery method. Given an explanation produced by any U-CBEM (a set of CAVs $V_i$ and corresponding importance scores $A_i$), SURF addresses a core question: How accurately can a naive linear combination of these concepts and importance scores reconstruct the model's true output? The workflow uses a zero-parameter linear surrogate to map concept representations directly back to the model's output space, then measures the deviation between the surrogate output and the true model output in both logit and probability spaces. The process introduces no trainable parameters and avoids embedding reconstruction, resulting in extremely low computational cost (200 FLOPs vs. 205M FLOPs for C-SHAP-Eval), ensuring that "surrogate complexity" does not pollute the faithfulness assessment.
 
 ### Key Designs
 
-1. **Unified Faithfulness Framework**:
+**1. Unified Faithfulness Framework: Enabling Horizontal Comparison**
 
-    - Function: Subsumes all existing U-CBEM faithfulness evaluation methods under a single perspective.
-    - Mechanism: Any faithfulness metric consists of three components — a metric $d$ (how output discrepancy is compared), a surrogate $s$ (how outputs are derived from explanations), and a concept projection $\mathcal{P}$ (how embeddings are mapped to concept space). Deletion-based methods assess faithfulness by removing concepts in a "deletion space" (pixels/weights/concepts) and observing model degradation; surrogate-based methods directly approximate the faithfulness integral in Eq. 3 via a surrogate.
-    - Design Motivation: Each U-CBEM paper proposes its own faithfulness metric, precluding cross-method comparison. The unified framework exposes systematic differences across methods.
+Previously, each U-CBEM paper utilized its own faithfulness metric, making results incomparable. SURF points out that any faithfulness metric essentially consists of three components: a metric $d$ (how to compare outputs), a surrogate $s$ (how to derive output from the explanation), and a concept projection $\mathcal{P}$ (how to map embeddings into the concept space). In this view, deletion-based methods remove concepts in a "deletion space" (pixels/weights/concepts) and observe performance degradation; surrogate-based methods directly approximate faithfulness integrals (Eq. 3). By fitting all methods into the same $(d, s, \mathcal{P})$ template, systemic differences (e.g., surrogate complexity, use of importance scores) become clear, enabling fair evaluation.
 
-2. **SURF Surrogate Design**:
+**2. Zero-Parameter Linear Surrogate: Using the Final Linear Layer as a "Perfect Explanation" Template**
 
-    - Function: Predict model outputs from U-CBEM explanations in the simplest possible manner.
-    - Mechanism: Observing that the model's final linear layer computes $y_i = \sum_j \mathbf{h}_j^T \mathbf{f}_{i,j}$, which can be decomposed as $y_i = \sum_j \mathbf{h}_j^T \mathbf{v}_{i,j} \alpha_{i,j}$, where $\mathbf{v}_{i,j}$ is a normalized direction (i.e., a CAV) and $\alpha_{i,j}$ is its norm (i.e., importance). The SURF surrogate directly mimics this structure: $\hat{y}_i = \sum_j \sum_k \alpha_{i,k} \mathcal{P}(\mathbf{h}_j; V_i)_k$, replacing the final-layer weights with CAVs and importances discovered by the U-CBEM.
-    - Design Motivation: This surrogate is zero-parameter and non-reconstructive — it does not require first reconstructing the embedding and then passing it through the original model. It directly tests whether "the concepts and importances in an explanation can predict model outputs via linear combination," which is precisely the mental operation a human interpreter must perform.
+The problem with complex surrogates is that they hide the complexity of the explanation—humans still do not know how concepts lead to a prediction after viewing the explanation. SURF's starting point is the observation that the computation of the final linear layer $y_i = \sum_j \mathbf{h}_j^T \mathbf{f}_{i,j}$ can be decomposed as $y_i = \sum_j \mathbf{h}_j^T \mathbf{v}_{i,j}\,\alpha_{i,j}$, where $\mathbf{v}_{i,j}$ is the normalized direction (the CAV) and $\alpha_{i,j}$ is its norm (the importance). Thus, the final linear layer defines an "ideal explanation" form. SURF's surrogate mimics this structure, replacing weights with U-CBEM discovered CAVs and importance:
 
-3. **Three Desiderata**:
+$$\hat{y}_i = \sum_j \sum_k \alpha_{i,k}\,\mathcal{P}(\mathbf{h}_j; V_i)_k$$
 
-    - Function: Define the conditions a good faithfulness metric must satisfy.
-    - Mechanism: (1) **Surrogate should be as simple as possible** — a complex surrogate merely pushes the complexity of the explanation downstream; human interpreters still cannot understand how the explanation leads to the prediction. (2) **Use all components of the explanation** — particularly concept importances $A_i$; if the surrogate does not use $A_i$, incorrect importances will not affect the faithfulness score. (3) **Measure error across all output classes** — evaluating only the predicted or ground-truth class ignores large deviations on other classes.
-    - Design Motivation: Both ICE-Eval and C-SHAP-Eval violate all three desiderata — the former relies on reconstruction and ignores $A_i$, the latter introduces a trainable MLP and also ignores $A_i$, and both measure only a single class.
+This surrogate is zero-parameter and non-reconstructive, testing the mental step a human interpreter would perform: "Can I get the model output by linearly stacking these concepts by their importance?" If not, the concepts/importance in the explanation are not aligned with the model's actual computation.
 
-4. **SURF Dual Metrics**:
+**3. Three Desiderata: Hard Constraints for a Good Faithfulness Metric**
 
-    - Function: Comprehensively evaluate faithfulness in two complementary spaces — logit and probability.
-    - Mechanism: $\text{SURF}_{\text{MAE}} = \frac{1}{|\mathcal{V}|C} \sum_{\mathbf{x}} \sum_i |y_i - \hat{y}_i|$ measures absolute error in logit space; $\text{SURF}_{\text{EMD}} = \frac{1}{2|\mathcal{V}|} \sum_{\mathbf{x}} \sum_i |p_i - \hat{p}_i|$ measures distributional distance in probability space.
-    - Design Motivation: Logit space is unaffected by normalization but has an unbounded range; probability space is normalized but softmax amplifies the predicted class while suppressing others. The two metrics are complementary: low $\text{SURF}_{\text{MAE}}$ ensures logit accuracy, while low $\text{SURF}_{\text{EMD}}$ ensures accurate probability distributions.
+SURF uses these criteria to judge legacy metrics: (1) **The surrogate should be as simple as possible**—complex surrogates mask explanation complexity and make faithfulness scores untrustworthy; (2) **All components of the explanation must be used**, especially concept importance $A_i$—if a surrogate ignores $A_i$, shuffling importance would not affect the score, making the metric blind to importance correctness; (3) **Measure error across all output classes**, rather than just the predicted or ground-truth class—single-class metrics miss significant deviations in other classes. SURF satisfies all three, while existing metrics violate at least one: ICE-Eval is reconstruction-based and ignores $A_i$, and C-SHAP-Eval introduces a trainable MLP and ignores $A_i$.
+
+**4. SURF Dual Metrics: Complementary Logit and Probability Spaces**
+
+Instead of a single scalar, SURF provides metrics in two complementary spaces. Logit space uses Mean Absolute Error (MAE) to measure raw output precision:
+
+$$\text{SURF}_{\text{MAE}} = \frac{1}{|\mathcal{V}|\,C} \sum_{\mathbf{x}} \sum_i \left| y_i - \hat{y}_i \right|$$
+
+Probability space uses an EMD-like distance to measure distribution deviation after softmax:
+
+$$\text{SURF}_{\text{EMD}} = \frac{1}{2|\mathcal{V}|} \sum_{\mathbf{x}} \sum_i \left| p_i - \hat{p}_i \right|$$
+
+Logits are unaffected by normalization but have uncontrollable ranges, while probabilities are normalized but have the predicted class amplified by softmax. Used together, low $\text{SURF}_{\text{MAE}}$ ensures logit-level precision, and low $\text{SURF}_{\text{EMD}}$ ensures the entire distribution matches, avoiding the overestimation of faithfulness common in Top-1 Accuracy.
 
 ### Loss & Training
 
-SURF requires no training and serves purely as an evaluation metric. U-CBEMs in experiments are run according to their respective paper settings, discovering 5 concepts per output class.
+SURF is a pure evaluation metric and requires no training. The evaluated U-CBEMs are run according to their original papers, typically discovering 5 concepts per output class.
 
 ## Key Experimental Results
 
 ### Measure-over-Measure Comparison (Sanity Check)
 
 | Setting | SURF_MAE ↓ | SURF_EMD ↓ | Top-1 ↑ | C-SHAP Top-1 ↑ | ICE Top-1 ↑ |
-|---------|------------|------------|---------|-----------------|-------------|
+|------|------------|------------|---------|-----------------|-------------|
 | Perfect | 0.00 | 0.000 | 100% | 9.02% | 100% |
 | Rand Imp | 2.70 | 0.862 | 97.5% | 9.02% | 100% |
 | Full Rand | 3.17 | 0.883 | 1.3% | **97.6%** | 3.3% |
 
-Key finding: **C-SHAP-Eval reports 97.6% accuracy under fully random explanations (Full Rand)** — even higher than under the Perfect setting. ICE-Eval still reports 100% faithfulness under random importances (Rand Imp). Only SURF behaves correctly across all three settings — perfect under Perfect, degraded under Rand Imp, worst under Full Rand.
+Key Findings: **C-SHAP-Eval unexpectedly reports 97.6% accuracy for a completely random explanation (Full Rand)**, higher than the Perfect setting. ICE-Eval still reports 100% faithfulness under random importance (Rand Imp). Only SURF behaves correctly across all settings.
 
-### U-CBEM Benchmark (Object Classification, ResNet-50)
+### U-CBEM Benchmarking (Object Classification, ResNet-50)
 
 | U-CBEM | SURF_MAE ↓ | SURF_EMD ↓ | Top-1 ↑ | Rank Corr ↑ |
 |--------|------------|------------|---------|-------------|
@@ -103,37 +101,37 @@ Key finding: **C-SHAP-Eval reports 97.6% accuracy under fully random explanation
 
 ### Key Findings
 
-- **No existing U-CBEM is truly faithful** — even the best-performing SAE achieves a $\text{SURF}_{\text{EMD}}$ of 0.195, indicating significant probability distribution deviation. Most methods score between 0.4–0.93 in $\text{SURF}_{\text{EMD}}$, nearly as poor as random.
-- **Top-1 Accuracy is a misleading metric** — ICE and MCD achieve Top-1 of 98–99%, yet SURF_EMD and Rank Corr reveal their large errors on non-predicted classes. Relying solely on Top-1 severely overestimates faithfulness.
-- **SAE is the most faithful method across all tasks** — whether for classification, multi-attribute prediction, or age regression, SAE consistently ranks first, likely due to its advantage in completeness criteria.
-- **Increasing the number of concepts does not necessarily improve faithfulness** — CDISCO, CRAFT, C-SHAP, and ICE show little or no improvement, and sometimes decline, as concept count increases. Only MCD/HU-MCD improve monotonically with more concepts, exhibiting a natural saturation point.
+- **No existing U-CBEM is truly faithful**—Even for the best-performing SAE, the $\text{SURF}_{\text{EMD}}$ reaches 0.195, indicating significant probability distribution deviation. Most methods have $\text{SURF}_{\text{EMD}}$ between 0.4 and 0.93, nearly as poor as random.
+- **Top-1 Accuracy is a misleading metric**—While ICE and MCD achieve Top-1 scores of 98-99%, SURF_EMD and Rank Corr reveal massive errors in non-predicted classes. Relying only on Top-1 severely overestimates faithfulness.
+- **SAE is the most faithful across all tasks**—Whether in classification, multi-attribute prediction, or age regression, SAE performs best, likely due to its advantages in the completeness criterion.
+- **Increasing the number of concepts does not necessarily improve faithfulness**—For CDISCO, CRAFT, C-SHAP, and ICE, faithfulness remains stagnant or decreases as concept counts increase. Only MCD/HU-MCD show monotonic improvement with a natural saturation point.
 
 ## Highlights & Insights
 
-- **The sanity check "random concepts should be less faithful" is elegantly simple and powerful** — it exploits an intuition that anyone can understand to expose a fundamental flaw in all prior metrics. Such simple yet decisive tests are highly valuable in the XAI field (analogous to Adebayo et al.'s sanity checks for saliency maps).
-- **SURF's zero-parameter design is the key innovation** — by observing that the final linear layer itself defines the form of a "perfect explanation," the method avoids any additional parameters or reconstruction operations. The gap of 200 FLOPs vs. 205M FLOPs is not merely an efficiency matter, but a fundamental question of whether surrogate complexity contaminates faithfulness evaluation.
-- **The dual-metric design fills the blind spots of any single metric** — Top-1 attends only to the largest class, Norm L1 only to the GT class, SURF_MAE does not weight classes by importance, and SURF_EMD complements evaluation in the probability domain.
+- **The sanity check "random concepts should be less faithful" is simple yet powerful**—This intuitive test strikes at the core flaws of previous metrics. Such simple, definitive tests are highly valuable in the XAI field.
+- **SURF's zero-parameter design is a key innovation**—By utilizing the structure of the final linear layer, it avoids additional parameters or reconstruction. The 200 FLOPs vs. 205M FLOPs gap is not just about efficiency but addresses the fundamental issue of surrogate complexity polluting faithfulness evaluation.
+- **The dual-metric design covers blind spots**—Top-1 only considers the maximum class, Norm L1 focuses on the ground truth, and SURF_MAE ignores relative class importance. SURF_EMD complements these by evaluating the entire probability domain.
 
 ## Limitations & Future Work
 
-- **SURF currently applies only to the final linear layer** — explanations of intermediate layers cannot be evaluated, as the mapping from intermediate layers to outputs is nonlinear. Extending SURF to intermediate layers is a critical direction for future work.
-- **Only faithfulness is evaluated, without joint assessment of interpretability** — a method with low faithfulness but high interpretability may still have practical value. An ideal framework should simultaneously quantify the faithfulness–interpretability trade-off.
-- **U-CBEMs in experiments discover only 5 concepts per class** — this setting may be unfair to certain methods. Although Fig. 2 shows trends over varying concept counts, this analysis is performed on only one task.
-- **Classification tasks predominate** — only one regression task (age estimation) is included; generalization to other task types (e.g., segmentation, generation) remains unverified.
+- **SURF currently only applies to the final linear layer**—Explanations of intermediate layers cannot be evaluated because the mapping from intermediate layers to output is non-linear. Extending SURF to intermediate layers is a critical area for future work.
+- **Faithfulness is evaluated without joint interpretability assessment**—A method with low faithfulness but high interpretability may still have practical value. An ideal framework should quantify the faithfulness-interpretability trade-off.
+- **U-CBEMs found only 5 concepts per class**—This setting might be disadvantageous for certain methods. While the paper shows trends with varying concept counts, it was only extensively tested on a single task.
+- **Predominantly focused on classification tasks**—Only one regression task (age estimation) was included; generalization to other tasks (e.g., segmentation, generation) has not been verified.
 
 ## Related Work & Insights
 
-- **vs. ICE / ICE-Eval**: ICE discovers concepts via NMF and evaluates faithfulness by reconstructing embeddings. SURF reveals that ICE-Eval does not use concept importances, so random and perfect importances yield identical scores — a fundamental flaw.
-- **vs. C-SHAP / C-SHAP-Eval**: C-SHAP computes concept importances via Shapley values and introduces an MLP surrogate. SURF reveals that the MLP surrogate sometimes performs better on random concepts — possibly because the MLP learns a concept-independent mapping from embeddings to outputs.
-- **vs. CRAFT**: CRAFT recursively decomposes sub-concepts via NMF and uses concept-space deletion for evaluation. SURF's surrogate-based approach avoids the off-manifold problem inherent in deletion operations.
-- **vs. SAE (Sparse Autoencoders)**: SAE achieves the best performance under SURF and may represent a promising future direction for visual model interpretation.
+- **vs. ICE / ICE-Eval**: ICE uses NMF to find concepts and reconstructs embeddings for evaluation. SURF reveals that ICE-Eval ignores concept importance, yielding identical scores for random and perfect importance—a fundamental flaw.
+- **vs. C-SHAP / C-SHAP-Eval**: C-SHAP uses Shapley values for importance and an MLP surrogate. SURF reveals the MLP sometimes performs better on random concepts, likely because it learns a concept-independent mapping from embeddings to output.
+- **vs. CRAFT**: CRAFT uses NMF for recursive decomposition and concept-space deletion for evaluation. SURF's surrogate approach avoids the out-of-distribution issues of deletion.
+- **vs. SAE (Sparse Autoencoders)**: SAE performs best under SURF, suggesting it may become the mainstream direction for explaining vision models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic exposure of faithfulness evaluation flaws in U-CBEMs; SURF is elegantly and powerfully designed
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three tasks, seven U-CBEMs, and a comprehensive measure-over-measure comparison; evaluation of intermediate layers is absent
-- Writing Quality: ⭐⭐⭐⭐⭐ Exceptionally rigorous logical structure, flowing seamlessly from unified framework to desiderata to sanity check to benchmark
-- Value: ⭐⭐⭐⭐⭐ Significant impact on the XAI community; likely to reshape evaluation standards in the U-CBEM field
+- Novelty: ⭐⭐⭐⭐⭐ First systematic revelation of flaws in U-CBEM faithfulness evaluation; SURF design is elegant and powerful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three tasks, seven U-CBEMs, and comprehensive measure-over-measure comparison, though intermediate layer evaluation is missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Highly rigorous logic, from framework unification to desiderata, sanity checks, and benchmarking.
+- Value: ⭐⭐⭐⭐⭐ Significant impact on the XAI community; likely to change evaluation standards in the U-CBEM field.
 
 <!-- RELATED:START -->
 
@@ -141,11 +139,11 @@ Key finding: **C-SHAP-Eval reports 97.6% accuracy under fully random explanation
 
 ## Related Papers
 
-- [\[CVPR 2026\] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](../../NeurIPS2025/interpretability/an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
+- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ICML 2025\] What Makes an Ensemble (Un)interpretable?](../../ICML2025/interpretability/what_makes_an_ensemble_un_interpretable.md)
+- [\[CVPR 2026\] MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations](medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
-- [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
 
 </div>
 

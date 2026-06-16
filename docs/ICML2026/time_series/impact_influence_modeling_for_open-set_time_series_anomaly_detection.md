@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection
 description: >-
-  [ICML 2026][Time Series][Influence Functions] IMPACT treats the "influence function" as both a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence scor…
+  [ICML 2026][Time Series][Paper Note] IMPACT utilizes the "Influence Function" as both a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence score of each training sample on the validation risk. Under theoretical guarantees of risk reduction, it flips high-influence contaminated unlabeled
 tags:
-  - "ICML 2026"
-  - "Time Series"
-  - "Influence Functions"
-  - "Pseudo-Anomaly Generation"
-  - "Label Flipping"
-  - "Contamination Correction"
-  - "Open-Set Time Series Detection"
+  - ICML 2026
+  - Time Series
 date: 2026-05-08
-content_hash: 86d216976a15148a
+content_hash: d69f3ecee77c48e1
 ---
-
 # IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection
 
 **Conference**: ICML 2026  
@@ -24,103 +18,123 @@ content_hash: 86d216976a15148a
 **Keywords**: Influence Functions, Pseudo-Anomaly Generation, Label Flipping, Contamination Correction, Open-Set Time Series Detection  
 
 ## TL;DR
-IMPACT treats the "influence function" as both a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence score of each training sample on the validation risk. Under theoretical guarantees of risk reduction, it flips high-influence contaminated unlabeled samples into labeled anomalies and perturbs "boundary normal samples" with minimal risk contribution along the gradient direction to create "unseen pseudo-anomalies." Finally, a dual-head network learns both seen and unseen anomalies, consistently outperforming over ten unsupervised and open-set baselines across 8 real-world time series benchmarks.
+IMPACT utilizes the "Influence Function" as both a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence score of each training sample on the validation risk. Under theoretical guarantees of risk reduction, it flips high-influence contaminated unlabeled samples into labeled anomalies and perturbs "boundary normal samples" (those with minimal risk contribution) along the gradient direction to create "unseen pseudo-anomalies." Finally, a dual-head network learns both seen and unseen anomaly classes, consistently surpassing over ten unsupervised and open-set baselines across eight real-world time-series benchmarks.
 
 ## Background & Motivation
 
-**Background**: Time Series Anomaly Detection (TSAD) has long been dominated by unsupervised methods—such as reconstruction, one-class SVM, self-supervised prediction, and diffusion models—assuming a pure normal training set. Recently, Open-Set Anomaly Detection (OSAD) has gained traction, allowing for a small number of labeled seen anomaly classes to identify both "seen + unseen" anomalies. Representative methods include DRA, AHL, DPDL, MOSAD, and InvAD.
+**Background**: Time Series Anomaly Detection (TSAD) has long been dominated by unsupervised methods—reconstruction, one-class SVM, self-supervised prediction, and diffusion models—assuming a pure normal training set. Recently, Open-Set Anomaly Detection (OSAD) has gained popularity, allowing for a small number of labeled seen anomaly classes with the expectation of identifying both "seen + unseen" anomalies. Representative methods include DRA, AHL, DPDL, MOSAD, and InvAD.
 
-**Limitations of Prior Work**: While OSAD works reasonably well for images, it faces hurdles in time series. First is contamination: unknown anomalies are almost certainly mixed into the unlabeled training subset, and existing methods treat them as normal, leading to contaminated supervision signals. Second is pseudo-anomaly generation: common image augmentations like rotation, Cutout, CutPaste, and Mixup break temporal sequentiality—horizontally flipping an ECG segment violates cardiac physiology, and moving averages on short windows fail to eliminate long-term seasonality. Consequently, decision boundaries are biased by both types of noise.
+**Limitations of Prior Work**: While OSAD works reasonably well in images, it faces two major obstacles in time series. First is **contamination**: the unlabeled training subset almost certainly contains unknown anomalies, which existing methods treat as normal samples, thus polluting the supervision signal. Second is **pseudo-anomaly generation**: common image augmentations like rotation, Cutout, CutPaste, and Mixup break temporal sequentiality—horizontally flipping an ECG fragment violates cardiac physiology, and short-window moving averages fail to eliminate long-period seasonality. Consequently, the decision boundary is skewed by both types of noise.
 
-**Key Challenge**: To simultaneously "clean the training set" and "generate representative pseudo-anomalies" without knowing which unlabeled samples are contaminants or what unseen anomalies look like, while provably ensuring both steps reduce test risk rather than introducing new biases.
+**Key Challenge**: The challenge is to simultaneously perform "training set cleaning" and "representative pseudo-anomaly generation" without knowing which unlabeled samples are noise or what unseen anomalies look like, while provably ensuring that both steps reduce test risk rather than introducing new biases.
 
-**Goal**: Decomposition into three sub-problems: (i) designing a loss suitable for multi-channel time series that integrates with influence functions; (ii) automatically identifying contaminated samples and "boundary normal samples with lowest risk contribution" via influence scores; (iii) proving that both "label flipping" and "feature perturbation along influence directions" operations reduce test risk.
+**Goal**: The problem is decomposed into three sub-problems: (i) designing a loss suitable for multi-channel time series that integrates with influence functions; (ii) automatically identifying contaminated samples and "boundary normal samples with lowest risk contribution" using influence scores; (iii) proving that both "label flipping" and "feature perturbation along influence directions" reduce test risk.
 
-**Key Insight**: The authors revisit the influence function of Koh & Liang $\mathcal{I}_L(\bm z_i,\bm z_t)=-\nabla_\theta L(\bm z_t,\hat\theta)^\top H_{\hat\theta}^{-1}\nabla_\theta L(\bm z_i,\hat\theta)$. It not only indicates the marginal contribution of a sample to a prediction but also serves as a "steering wheel" for two modification operations: risk changes for label flipping ($\bm z_i\mapsto\bm z_{i\mathbf 1}$) and feature perturbation ($\bm w_i\mapsto\bm w_i+\zeta_i$) can be expressed in closed form using its second-order derivatives.
+**Key Insight**: The authors revisit the influence function of Koh & Liang, $\mathcal{I}_L(\bm z_i,\bm z_t)=-\nabla_\theta L(\bm z_t,\hat\theta)^\top H_{\hat\theta}^{-1}\nabla_\theta L(\bm z_i,\hat\theta)$. It not only indicates a sample's marginal contribution to predictions but also acts as a steering wheel for two operations: the risk changes for label flipping ($\bm z_i\mapsto\bm z_{i\mathbf 1}$) and feature perturbation ($\bm w_i\mapsto\bm w_i+\zeta_i$) can both be expressed in closed form using its second-order derivatives.
 
-**Core Idea**: Use the influence function to drive both "contamination correction" and "pseudo-anomaly generation." Samples with $\mathcal{I}_L(\bm z_i)>0$ are flipped to the anomaly class, while boundary samples with the smallest absolute values in $\mathcal{I}_L(\bm z_i)<0$ are perturbed along the $\nabla_\varphi\nabla_{\theta_h}L$ direction to generate unseen anomalies, unified within a risk reduction framework.
+**Core Idea**: Use influence functions to drive both "contamination correction" and "pseudo-anomaly generation." The former flips samples with $\mathcal{I}_L(\bm z_i)>0$ into anomalies, while the latter perturbs boundary samples with the smallest absolute values in $\mathcal{I}_L(\bm z_i)<0$ along the $\nabla_\varphi\nabla_{\theta_h}L$ direction to generate unseen anomalies, unified within a risk-reduction framework.
 
 ## Method
 
-The IMPACT pipeline involves three stages: Stage I trains an initial model with multi-channel deviation loss and calculates influence scores for each training sample to delineate the contaminated set $\mathcal{D}_{con}$, reference normal set $\mathcal{D}_{ref}$, and remaining clean set $\mathcal{D}_{clean}$. Stage II performs "label flipping + feature perturbation" guided by influence scores to construct the flipped set $\mathcal{D}_{con}'$ and perturbed feature set $\mathcal{W}_{per}'$. Stage III adds an unseen anomaly learning head and performs joint training with $L_{seen}+\lambda L_{unseen}$. Inference uses the maximum cross-channel anomaly score plus the feature deviation from the reference normal centroid.
+The IMPACT pipeline consists of three stages: Stage I (Influence Scoring Module, TIS) trains an initial model using multi-channel deviation loss and computes influence scores to partition the data into a contaminated set $\mathcal{D}_{con}$, a reference normal set $\mathcal{D}_{ref}$, and a remaining clean set $\mathcal{D}_{clean}$. Stage II (Rectification-Augmentation Module, RADG) performs "label flipping + feature perturbation" guided by influence scores to construct the flipped set $\mathcal{D}_{con}'$ and perturbed feature set $\mathcal{W}_{per}'$. Stage III adds an unseen anomaly learning head for joint training with $L_{seen}+\lambda L_{unseen}$. During inference, the final score is the maximum cross-channel anomaly score plus the feature deviation from the reference normal centroid.
 
 ### Overall Architecture
-Input is a time series set $\mathcal{D}=\mathcal{D}_n\cup\mathcal{D}_a$, where each sample $\bm x_i\in\mathbb{R}^{D\times L}$ ($D$ channels, $L$ length). The model consists of two parts: a feature extractor $\bm\varphi_i=\phi(\bm x_i,\theta_\phi)$ (multivariate time series encoder) + an anomaly score head $h(\bm\varphi_i,\theta_h)\in\mathbb{R}^r$ (outputting $r$-channel anomaly scores). The training objective starts with multi-channel deviation loss, followed by influence-based secondary sampling, and ends with an added unseen anomaly head $h'(\cdot,\theta_{h'})$.
+The input is a time-series set $\mathcal{D}=\mathcal{D}_n\cup\mathcal{D}_a$, where each sample $\bm x_i\in\mathbb{R}^D\times L$ ($D$ channels, $L$ steps). The model consists of two parts: a feature extractor $\bm\varphi_i=\phi(\bm x_i, \theta_\phi)$ (multivariate time-series encoder) and an anomaly scoring head $h(\bm\varphi_i, \theta_h)\in\mathbb{R}^r$ (outputting $r$-channel anomaly scores). The training uses multi-channel deviation loss followed by influence-function-based resampling, and finally appends an unseen anomaly head $h'(\cdot, \theta_{h'})$.
+
+```mermaid
+graph TD
+    IN["Input Set D<br/>(Contaminated Unlabeled D_n + Limited Seen D_a)"]
+    subgraph TIS["Phase I: Influence Scoring (TIS)"]
+        direction TB
+        L["Multi-channel Deviation Loss<br/>Train initial model & stabilize Hessian"]
+        SP["Compute Influence Score I_L and partition subsets<br/>Contamination D_con · Reference D_ref · Clean D_clean"]
+        L --> SP
+    end
+    subgraph RADG["Phase II: Influence-Driven Operations (RADG)"]
+        direction TB
+        FL["Label Flipping: Contaminated samples (I_L > 0)<br/>→ Labeled Anomalies D_con'"]
+        PT["Feature Perturbation: Boundary clean samples along risk increment<br/>→ Pseudo Unseen Anomalies"]
+    end
+    subgraph TRN["Phase III: Dual-Head Training & Inference"]
+        direction TB
+        TR["L_seen for seen + λ·L_unseen for pseudo-anomalies"]
+        INF["Inference Score s = s_m (Max cross-channel) + s_f (Centroid deviation)"]
+        TR --> INF
+    end
+    IN --> L
+    SP --> FL
+    SP --> PT
+    FL --> TR
+    PT --> TR
+    INF --> OUT["Output: Detection of Seen + Unseen Anomalies"]
+```
 
 ### Key Designs
 
-1. **Multi-channel Deviation Loss (Training Pillar of TIS)**:
-    - **Function**: Forces the model to push $r$-channel anomaly scores of normal samples toward the mean $\bm\mu_r$ of an isotropic Gaussian prior $\mathcal{N}(\bm\mu,\bm\Sigma)$, while pushing anomaly samples away by at least $a$, measured via Mahalanobis distance $\mathit{dev}(\bm x_i)=\sqrt{(f(\bm x_i,\theta)-\bm\mu_r)^\top\bm\Sigma_r^{-1}(f(\bm x_i,\theta)-\bm\mu_r)}$.
-    - **Mechanism**: The loss is defined as $L(\bm z_i,\theta)=\tfrac{1}{r}\sum_{j=1}^r[(1-y_i)\mathit{dev}(\bm x_i)_j+y_i\max(0,a-\mathit{dev}(\bm x_i)_j)]$. Multi-channeling allows "evaluating anomalies from multiple angles"—all angles should align with the Gaussian prior for normal samples, while any single angle deviating beyond $a$ marks an anomaly. Theorem 1 proves this is equivalent to minimizing the entropy of the latent distribution $\mathcal{H}(S)=\tfrac{r}{2}(1+\log(2\pi\sigma^2))\propto\log\sigma^2$.
-    - **Design Motivation**: Influence functions require the loss to be twice-differentiable with a reversible Hessian. Traditional deviation loss is single-channel and loses variance information; the multi-channel version expands expressiveness and provides a more stable gradient structure for $H_{\hat\theta}^{-1}\nabla_\theta L$ calculations. The entropy minimization interpretation provides an information-theoretic basis for "compressing normals + pushing anomalies."
+**1. Multi-channel Deviation Loss: Expanding Representational Power and Stabilizing Gradient Structure**
 
-2. **Influence-Driven Dual Operations (Core of RADG)**:
-    - **Function**: Uses the same influence scores $\mathcal{I}_L(\bm z_i)=\sum_{\bm z_t\in\mathcal{V}}\mathcal{I}_L(\bm z_i,\bm z_t)$ for both contamination correction and unseen anomaly generation.
-    - **Mechanism**: (a) Label Flipping—For samples in $\mathcal{D}_{con}=\{\bm z_i\in\mathcal{D}_n\mid\mathcal{I}_L(\bm z_i)>0\}$, it is proven that $\nabla_\theta L(\bm z_{i\mathbf 1},\theta)-\nabla_\theta L(\bm z_i,\theta)=-2\nabla_\theta L(\bm z_i,\theta)$, thus the influence of label flipping is $\mathcal{I}_{L\mathbf 1}(\bm z_i,\bm z_t)=-2\mathcal{I}_L(\bm z_i,\bm z_t)$. Theorem 2 shows the test risk change $\approx -\tfrac{2}{N\cdot|\mathcal{D}_{con}|}\sum_{\bm z_i\in\mathcal{D}_{con}}\mathcal{I}_L(\bm z_i)<0$, implying flipping necessarily reduces risk. (b) Feature Perturbation—For the top-$k$ boundary samples in $\mathcal{D}_{per}=\{\bm z_i\in(\mathcal{D}_n\cap\mathcal{D}_{clean})\mid\mathcal{I}_L(\bm z_i)<0\}$ with the smallest absolute values, perturbation $\bm\varphi_{i\zeta_i}=\bm\varphi_i+\alpha\mathcal{I}_{per}(\bm w_i)^\top$ is performed along direction $\mathcal{I}_{per}(\bm w_i)=-\nabla_{\theta_h}L(\mathcal{V},\hat\theta_h)^\top H_{\hat\theta_h}^{-1}[\nabla_\varphi\nabla_{\theta_h}L(\bm w_i,\hat\theta_h)]$. Theorem 3 proves the perturbed features follow a new distribution with a positive lower-bound distance from the original, and Theorem 4 gives the risk change $\approx -\tfrac{\alpha}{N\cdot|\mathcal{W}_{per}|}\sum\|\mathcal{I}_{per}(\bm w_i)\|_2^2<0$.
-    - **Design Motivation**: Traditional contamination correction only deletes samples (e.g., GammaGMM, ExCeeD), wasting signals. Label flipping converts "harmful samples" into "valuable labeled anomalies," yielding double gains. For generation, instead of image-style heuristics, IMPACT moves in the feature space along the "risk maximization" direction, ensuring new samples deviate from known patterns (unseen-ness) while directing toward risk reduction (usefulness)—transforming data augmentation from manual heuristics into provable optimization.
+Influence functions require the loss to be twice differentiable with respect to parameters and the Hessian to be invertible. Traditional deviation loss is single-channel and loses variance information, making $H_{\hat\theta}^{-1}\nabla_\theta L$ unstable. IMPACT implements it as multi-channel—aligning $r$-channel anomaly scores of normal samples with the mean $\bm\mu_r$ of an isotropic Gaussian prior $\mathcal{N}(\bm\mu, \bm\Sigma)$, while pushing anomalies away by at least $a$. The deviation is measured by the Mahalanobis distance $\mathit{dev}(\bm x_i) = \sqrt{(f(\bm x_i, \theta)-\bm\mu_r)^\top\bm\Sigma_r^{-1}(f(\bm x_i, \theta)-\bm\mu_r)}$. The loss is defined as $L(\bm z_i, \theta) = \tfrac{1}{r}\sum_{j=1}^r[(1-y_i)\mathit{dev}(\bm x_i)_j + y_i\max(0, a-\mathit{dev}(\bm x_i)_j)]$. Theorem 1 proves this is equivalent to minimizing the entropy of the latent variable distribution $\mathcal{H}(S) \propto \log\sigma^2$, providing an information-theoretic basis for the "compact normal + pushed anomalies" intuition.
 
-3. **Dual-Head Training + Dual-Component Inference**:
-    - **Function**: Separately learns seen and unseen anomaly classes, fusing the maximum cross-channel anomaly score and feature deviation during inference.
-    - **Mechanism**: The training loss is $L_{re}=L_{seen}+\lambda L_{unseen}$, where $L_{seen}=\sum_{\bm z_i\in\mathcal{D}_s}L(\bm z_i,\theta)$, with $\mathcal{D}_s=\mathcal{D}_{con}'\cup\mathcal{D}_{ref}\cup\mathcal{D}_{clean}$ covering original labels + flipped anomalies + clean normals. $L_{unseen}=\sum_{\bm z_i\in\mathcal{D}_h}L(\bm z_i,\theta)+\sum_{\bm w_{i\zeta_i\mathbf 1}\in\mathcal{W}_{per}'}L(\bm w_{i\zeta_i\mathbf 1},\theta_{h'})$, where $\mathcal{D}_h$ contains the most helpful normal samples, and perturbed features are fed to the independent unseen head $h'$. Inference score $s=s_m+s_f$, where $s_m=\max_{l<r}(h(\bm\varphi_i,\theta_h)+h'(\bm\varphi_i,\theta_{h'}))_l$ and $s_f=\|\bm\varphi_i-\tfrac{1}{|\mathcal{D}_{ref}|}\sum_{\bm x_j\in\mathcal{D}_{ref}}\bm\varphi_j\|^2$ captures subtle deviations.
-    - **Design Motivation**: The independent unseen head $h'$ prevents pseudo-anomaly gradients from contaminating the backbone representation. The max cross-channel score $s_m$ aligns with "multi-angle evaluation"—an anomaly is flagged if any channel lights up. The feature deviation $s_f$ serves as a safety net to detect subtle distribution shifts that $h$ or $h'$ might miss.
+**2. Influence-Driven Dual Operations: Rectifying Contamination and Generating Unseen Anomalies**
+
+IMPACT treats Koh & Liang's influence function $\mathcal{I}_L(\bm z_i,\bm z_t)$ as a steering wheel for two modifications. First is **Label Flipping**: for the contaminated set $\mathcal{D}_{con} = \{\bm z_i\in\mathcal{D}_n\mid\mathcal{I}_L(\bm z_i)>0\}$, it is proven that flipping labels necessarily reduces risk (Theorem 2). Second is **Feature Perturbation**: for boundary samples in the clean set $\mathcal{D}_{per} = \{\bm z_i\in(\mathcal{D}_n\cap\mathcal{D}_{clean})\mid\mathcal{I}_L(\bm z_i)<0\}$, features are perturbed along the direction $\mathcal{I}_{per}(\bm w_i) = -\nabla_{\theta_h}L(\mathcal{V},\hat\theta_h)^\top H_{\hat\theta_h}^{-1}[\nabla_\varphi\nabla_{\theta_h}L(\bm w_i,\hat\theta_h)]$. This generates pseudo-anomalies that are provably outside the known distribution but still useful for learning (Theorem 3/4).
+
+**3. Dual-Head Training and Inference: Decoupling Unseen Learning**
+
+To prevent pseudo-anomaly gradients from hurting the backbone representation of seen classes, IMPACT uses $L_{re} = L_{seen} + \lambda L_{unseen}$. $L_{seen}$ covers original labels, flipped anomalies, and clean normal samples, while $L_{unseen}$ feeds perturbed features to an independent unseen head $h'$. During inference, scores are fused: $s = s_m + s_f$, where $s_m$ is the maximum cross-channel score and $s_f$ is the feature deviation from the reference normal centroid.
 
 ### Loss & Training
-Two-stage training: first training an initial model $\hat\theta$ with the full set $\mathcal{D}$, then approximating the Hessian inverse using LiSSA-like methods to calculate $\mathcal{I}_L(\bm z_i)$ for set partitioning, and finally retraining with $L_{re}$. Parameters $\alpha$ controls perturbation strength, $\lambda$ balances losses, and $k$ controls the number of flipped and generated samples. All theorems require the loss to be twice-differentiable and the Hessian to be invertible in the vicinity of $\hat\theta$, which the standard multi-channel deviation loss satisfies.
+The training follows two phases: Stage I trains the initial model $\hat\theta$ on the full set $\mathcal{D}$, approximates the Hessian inverse using LiSSA, and computes $\mathcal{I}_L$ to partition sets. Stage II retrains with $L_{re}$. Hyperparameters $\alpha$ and $\lambda$ control perturbation intensity and loss balance, respectively.
 
 ## Key Experimental Results
 
 ### Main Results
-Compared against 7 unsupervised methods (TCN-AE, THOC, TranAD, DCdetector, GPT4TS, COUTA, DADA) and multiple open-set methods (DevNet, DRA, AHL, DPDL, MOSAD, InvAD, WSAD-DT) on 8 real-world time series benchmarks (UCR, ASD, PSM, SMD, CT, SAD, PTBXL, TUSZ). Metrics: AUC (%) ± standard deviation.
+IMPACT was evaluated against 7 unsupervised methods (e.g., TranAD, GPT4TS, DCdetector) and multiple open-set methods (e.g., DRA, AHL, DPDL, InvAD) across 8 benchmarks (UCR, ASD, PSM, SMD, CT, SAD, PTBXL, TUSZ).
 
 | Setting / Dataset | Ours (IMPACT) | Prev. SOTA | Gain Trend |
 |--------|------|----------|------|
-| Open-set Avg AUC (8 datasets) | Significantly Highest | DRA / AHL / DPDL etc. | Consistently superior, optimal on most datasets |
-| Unsupervised Contrast (UCR / TUSZ) | — | GPT4TS 54.60 / 66.31 | Higher OSAD performance justifies its necessity |
-| Contamination Rate (0%–10%) | Most Robust | Most baselines drop sharply | IMPACT remains nearly flat |
-| Ratio of Seen Anomaly Classes | Most Robust | Baselines sensitive to seen ratio | Validates unseen anomaly head effectiveness |
-
-> Note: In Table 1 of the original paper, the best results are bolded and second-best underlined. IMPACT achieved bold or underlined results in most columns.
+| Open-Set Avg AUC (8 datasets) | **Highest** | DRA / AHL / DPDL | Consistently surpasses baselines |
+| Unsupervised Comparison (UCR / TUSZ) | — | GPT4TS 54.60 / 66.31 | High-margin improvement over unsupervised |
+| Contamination Rates (0%–10%) | Most Robust | Baselines drop sharply | IMPACT remains stable |
+| Seen Anomaly Ratio | Most Robust | Baselines sensitive to ratio | Validates unseen head effectiveness |
 
 ### Ablation Study
-| Configuration | Key Metric Change | Description |
+| Configuration | Key Metric Change | Explanation |
 |------|---------|------|
 | Full IMPACT | Baseline AUC | TIS + RADG + Dual-head |
-| w/o Label Flipping (Retain contamination) | Decrease, worse with higher contamination | Validates correction gains from Theorem 2 |
-| w/o Feature Perturbation (No unseen samples) | Significant decrease on unseen classes | Validates generation gains from Theorem 4 |
-| Using CutAddPaste / COE (manual) instead of perturbation | Decrease | Heuristic augmentation is inferior to influence-guided perturbation |
-| Single-channel Deviation Loss ($r=1$) | Decrease, unstable Hessian values | Multi-channel is a prerequisite for influence function stability |
-| w/o Unseen Head $h'$ (shared $h$) | Decrease, seen classes slightly harmed | Decoupled heads avoid pseudo-sample backbone contamination |
-| w/o Feature Deviation $s_f$ (only $s_m$) | Decrease on subtle anomaly datasets | Necessity of the safety net term |
+| w/o Label Flipping | Decrease (more at high noise) | Validates correction gain (Theorem 2) |
+| w/o Feature Perturbation | Decrease on unseen classes | Validates generation gain (Theorem 4) |
+| Manual Augmentation (CutPaste) | Decrease | Influence-guided exceeds heuristics |
+| Single-channel loss ($r=1$) | Decrease & Unstable Hessian | Multi-channel is essential for stability |
+| w/o Unseen Head $h'$ | Decrease | Decoupled heads prevent backbone pollution |
 
 ### Key Findings
-- Label flipping + feature perturbation yields a true "1+1>2" effect—each alone outperforms baselines, but the combination reaches the final performance, confirming the components address orthogonal issues (label contamination vs. insufficient expressiveness).
-- In robustness tests from 0% to 10% contamination, almost all baselines (including strong OSAD methods) show monotonic AUC decline, while IMPACT remains nearly flat—directly reflecting the realization of Theorem 2.
-- As the ratio of seen anomaly classes drops from 25% to 0% (approaching purely unseen), IMPACT shows the smallest decline, indicating that the unseen head effectively learns boundaries orthogonal to seen classes.
-- Sensitivity analysis for feature perturbation strength $\alpha$ shows an inverted U-shaped curve; too small is ineffective, while too large pushes pseudo-samples out of the manifold.
+- **Label Flipping + Feature Perturbation** yield a "1+1>2" effect, addressing orthogonal problems (supervision contamination vs. representational limits).
+- IMPACT exhibits exceptional robustness; as contamination increases from 0% to 10%, most baselines' AUC drops monotonically while IMPACT remains horizontal.
+- As the ratio of seen anomalies decreases towards 0% (approaching fully unseen), IMPACT shows the smallest decline, proving the unseen head learns a boundary orthogonal to seen classes.
 
 ## Highlights & Insights
-- Upgrading "influence functions" from a "post-hoc diagnostic tool" to a "training steering wheel"—the same $\mathcal{I}_L$ drives both label flipping and feature perturbation. Utilizing second-order information in this dual manner is a rare application in self-supervised/weakly-supervised scenarios.
-- Label flipping = converting negative signals into supervisory signals. It essentially replaces active learning queries with statistical influence, an idea extensible to any weakly supervised task where an unlabeled set contains target class samples (e.g., OOD, PU learning).
-- Perturbation along $\mathcal{I}_{per}(\bm w_i)$ reverses adversarial perturbation logic: adversarial samples move toward "misclassification," while IMPACT moves toward "risk increment" to simulate unknown distributions—moving provably outside the known distribution without detaching completely from the manifold.
-- The triple equivalence of multi-channel deviation loss, isotropic Gaussian priors, and entropy minimization is elegant, unifying geometric (pushing to center), statistical (minimum entropy), and information-theoretic (lowest uncertainty) perspectives.
+- Elevates the **Influence Function** from a diagnostic tool to a "training-time steering wheel," driving both label flipping and feature perturbation.
+- **Label Flipping** replaces manual queries in active learning with statistical influence, which is applicable to any weak-supervision task where the unlabeled set contains target classes.
+- **Feature Perturbation** along $\mathcal{I}_{per}(\bm w_i)$ reverses the logic of adversarial perturbations; while adversarial attacks move toward misclassification, IMPACT moves toward "risk increment" to simulate unknown distributions provably.
+- The triple equivalence of **Multi-channel Deviation Loss**, isotropic Gaussian priors, and entropy minimization provides an elegant unification of geometric, statistical, and information-theoretic perspectives.
 
 ## Limitations & Future Work
-- Calculating Hessian inverses and LiSSA approximations remains heavy for large-scale time series; the paper does not provide runtime for million-scale sequences. Memory-saving second-order approximations like K-FAC or Arnoldi could be explored.
-- Inherent convexity assumptions of influence functions near $\hat\theta$ might have large errors on deep Transformer backbones; the impact of these estimation errors on label flipping decisions was not discussed.
-- The threshold $\mathcal{I}_L(\bm z_i)>0$ for "contamination" is a hard decision; soft label flipping (weighting by $|\mathcal{I}_L|$) could be introduced for boundary samples.
-- Validation is limited to time series classification/segment-level anomalies; reference set $\mathcal{V}$ update strategies need re-designing for long-term point-level or streaming scenarios.
+- Computing the Hessian inverse and LiSSA approximations remains computationally heavy for massive time-series sets; more memory-efficient second-order approximations like K-FAC could be explored.
+- The convexity assumption of influence functions may be violated in deep Transformer backbones, leading to estimation errors.
+- The hard threshold $\mathcal{I}_L(\bm z_i)>0$ for flipping could be replaced with a soft weight based on the absolute influence value.
+- Performance on long-term point-level anomalies or streaming scenarios requires further design for the reference set $\mathcal{V}$ update strategy.
 
 ## Related Work & Insights
-- **vs. DRA / AHL / DPDL (OSAD)**: These also use limited labels + pseudo-anomalies, but their pseudo-anomalies rely on manual augmentation. IMPACT upgrades this to provable influence-guided generation and adds contamination correction.
-- **vs. CutAddPaste / DADA / COE (TS Augmentation)**: These use various temporal transforms that remain heuristic. IMPACT perturbs in the feature space along the risk direction, bypassing the difficulty of preserving semantics in raw time series.
-- **vs. GammaGMM / ExCeeD (Contamination Estimation)**: These estimate contamination or calibrate scores only at inference. IMPACT flips labels during training, removing the source of contamination directly.
-- **vs. Koh & Liang 2017 (Influence Function Origin)**: The original work uses influence for data valuation/interpretation. IMPACT uses it for closed-form training operations with risk reduction proofs—transforming a tool into a learning objective.
+- **vs. DRA / AHL / DPDL (OSAD)**: These use limited labels but rely on heuristic augmentations; IMPACT upgrades this to provable influence-guided generation and adds contamination correction.
+- **vs. CutAddPaste / COE (TS Augmentation)**: These use heuristic temporal transforms; IMPACT bypasses the difficulty of preserving temporal semantics by perturbing directly in the feature space.
+- **vs. GammaGMM / ExCeeD (Contamination Estimation)**: These estimate contamination at inference; IMPACT rectifies it during training to remove the noise at its source.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The first OSAD framework to use influence functions for both contamination correction and pseudo-anomaly generation, with four theorems formalizing all training actions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 8 real datasets + multiple baselines + ablations on contamination/seen ratios/hyperparameters. Lacks a runtime comparison for truly massive long sequences.
-- Writing Quality: ⭐⭐⭐⭐ Strong closed-loop of Motivation-Theory-Algorithm-Experiment; each theorem is validated experimentally. Formulas are dense but consistent.
-- Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded and reproducible (open-sourced) new baseline for open-set TS detection. The influence function + risk reduction paradigm is generalizable to PU/weakly-supervised tasks.
+- Novelty: ⭐⭐⭐⭐⭐ First OSAD framework to use influence functions for dual correction/generation with theoretical risk reduction proofs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 8 real-world datasets and extensive sensitivity analysis; lacks a runtime comparison for very large-scale sequences.
+- Writing Quality: ⭐⭐⭐⭐ Complete loop from motivation to theory and experiment.
+- Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded and open-sourced new benchmark for open-set detection.
 
 <!-- RELATED:START -->
 

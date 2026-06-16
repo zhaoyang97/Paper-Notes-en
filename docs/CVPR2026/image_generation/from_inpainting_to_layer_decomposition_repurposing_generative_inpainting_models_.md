@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition
 description: >-
-  [CVPR 2026][Image Generation][Layer Decomposition] This paper identifies an intrinsic connection between image layer decomposition and inpainting/outpainting, and proposes the Outpaint-and-Remove framework…
+  [CVPR 2026][Image Generation][Diffusion Model] This paper observes the intrinsic link between image layer decomposition and image inpainting/outpainting tasks. It proposes the Outpaint-and-Remove method, which efficiently adapts a pre-trained inpainting DiT model (FLUX.1-Fill-dev) into a layer decomposition model via lightweight LoRA fine-tuning. By introducing a m
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Layer Decomposition"
-  - "Image Inpainting"
-  - "Diffusion Models"
-  - "Foreground Extraction"
-  - "Parameter-Efficient Fine-Tuning"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 0a0c4a0f76ee7e6c
+content_hash: e2e7c834c4f0ffdb
 ---
-
 # From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition
 
 **Conference**: CVPR 2026  
@@ -24,104 +19,111 @@ content_hash: 0a0c4a0f76ee7e6c
 **Keywords**: Layer Decomposition, Image Inpainting, Diffusion Models, Foreground Extraction, Parameter-Efficient Fine-Tuning
 
 ## TL;DR
-This paper identifies an intrinsic connection between image layer decomposition and inpainting/outpainting, and proposes the Outpaint-and-Remove framework, which efficiently adapts a pretrained inpainting DiT model (FLUX.1-Fill-dev) for layer decomposition via lightweight LoRA fine-tuning. A multi-modal context fusion module is introduced to preserve fine details. The method achieves state-of-the-art performance using only 100K synthetic training samples.
+This paper observes the intrinsic link between image layer decomposition and image inpainting/outpainting tasks. It proposes the Outpaint-and-Remove method, which efficiently adapts a pre-trained inpainting DiT model (FLUX.1-Fill-dev) into a layer decomposition model via lightweight LoRA fine-tuning. By introducing a multimodal context fusion module to preserve details and using only 100,000 synthetic training samples, it achieves SOTA performance.
 
 ## Background & Motivation
 
-1. **Background**: An image can be viewed as a layered composition of foreground and background. Layer decomposition requires simultaneously extracting the foreground (with occlusion recovery) and completing the background (object removal) from a single image. Existing methods such as LAYERDECOMP require full fine-tuning of closed-source large models, incurring substantial computational and data costs.
+1. **Background**: Images can be viewed as a layered combination of foreground and background. Layer decomposition tasks require simultaneously extracting the foreground (including restoring occluded parts) and completing the background (object removal). Existing methods like LAYERDECOMP require full fine-tuning of closed-source large models, which involves extremely high computational and data costs.
 
-2. **Limitations of Prior Work**: (1) High-quality annotated layer data is extremely scarce, with MULAN being the only publicly available benchmark dataset; (2) training from scratch or full fine-tuning of generative models demands extensive computational resources and commercial datasets, making reproduction inaccessible to most researchers; (3) existing inpainting models only perform background filling and cannot simultaneously extract the foreground.
+2. **Limitations of Prior Work**: (1) High-quality layer annotation data is extremely scarce, with MULAN being the only standard open-source dataset; (2) Training from scratch or full fine-tuning of generative models requires significant computational resources and commercial datasets, making it difficult for independent researchers to reproduce; (3) Existing inpainting models only perform background filling and lack the capability to simultaneously extract foregrounds.
 
-3. **Key Challenge**: Layer decomposition is conceptually analogous to inpainting (background layer = filling the masked region; foreground layer = outpainting beyond the mask), yet existing inpainting models lack foreground extraction capability, while dedicated layer decomposition methods require training from scratch.
+3. **Key Challenge**: Layer decomposition is conceptually highly similar to inpainting (background layer = filling masked areas, foreground layer = outpainting outside the mask), but existing inpainting models lack foreground extraction capabilities, while specialized layer decomposition methods require training from scratch.
 
-4. **Goal**: Can existing powerful inpainting models be adapted for high-quality layer decomposition with minimal modifications and data?
+4. **Goal**: Can high-quality layer decomposition be achieved with minimal modifications and data by leveraging existing powerful inpainting models?
 
-5. **Key Insight**: Unify layer decomposition as a combination of inpainting (background) and outpainting (foreground), leveraging the region-filling capability already present in inpainting models.
+5. **Key Insight**: Unify layer decomposition as a combined task of inpainting (background) + outpainting (foreground), utilizing the inherent region-filling capabilities of inpainting models.
 
-6. **Core Idea**: Layer decomposition is bidirectional inpainting — the background undergoes region filling while the foreground undergoes region outpainting — and a single inpainting model with lightweight adaptation can handle both simultaneously.
+6. **Core Idea**: Layer decomposition is essentially bi-directional inpainting—background for region filling and foreground for region expansion. An inpainting model with lightweight adaptation can handle both simultaneously.
 
 ## Method
 
 ### Overall Architecture
-Outpaint-and-Remove builds upon the pretrained FLUX.1-Fill-dev (a DiT-based inpainting diffusion model). Given an input image and a binary mask, the model outputs a background layer (RGB, clean background after object removal) and a foreground layer (RGBA, extracted foreground with alpha channel and recovered occluded regions). Key modifications include: (1) a multi-modal context tokenization module that fuses auxiliary cues such as edges, segmentation maps, and depth; (2) a bidirectional image-mask context design to guide foreground extraction and background generation respectively; (3) a dedicated RGBA codec for handling the transparency channel of the foreground. The overall model is fine-tuned using LoRA for parameter efficiency.
+Outpaint-and-Remove is based on the pre-trained FLUX.1-Fill-dev (a DiT-based inpainting diffusion model). The input consists of the original image and a binary mask, and the output includes the background layer (RGB, clean background with objects removed) and the foreground layer (RGBA, extracted foreground with alpha channel and restored occluded parts). Key modifications include: (1) A multimodal context fusion module that compresses auxiliary information such as edges, segmentation, and depth into fixed-length tokens; (2) A bi-directional image-mask context design using background and foreground paths to guide background generation and foreground extraction respectively; (3) Freezing the base model and using LoRA + an independent RGBA encoder/decoder to learn new capabilities.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Original Image + Binary Mask"] --> C
+    AUX["Auxiliary Cues: Edges / Segmentation / Depth Maps"] --> B
+    B["Multimodal Context Fusion<br/>N latent query tokens compressed into fixed-length representation"]
+    C["Bi-directional Image-Mask Context<br/>Background context + Foreground context managing generation vs. preservation"]
+    B --> D["DiT Backbone (FLUX.1-Fill-dev)<br/>Frozen weight + LoRA (rank=256) tuning"]
+    C --> D
+    D -->|Background Path| E["Original VAE Decoding → Background Layer (RGB, object removed)"]
+    D -->|Foreground Path| F["RGBA Decoder → Foreground Layer (RGBA, occlusions restored)"]
+```
 
 ### Key Designs
 
-1. **Multi-Modal Context Tokenization Module**
+**1. Multimodal Context Fusion Module: Compressing edges/segmentation/depth into fixed-length tokens to avoid attention explosion**
 
-    - **Function**: Fuses multi-modal cues — edge maps, segmentation maps, and depth maps — into a compact representation as generation conditions.
-    - **Mechanism**: Each modality image is first encoded into tokens using the pretrained DiT's VAE encoder. However, naively concatenating all tokens would cause the standard attention complexity to explode as $O(K^2)$. Inspired by linear attention, a small fixed number $N \ll K$ of latent query tokens are introduced; cross-attention compresses all modality tokens into an $N$-dimensional representation, reducing complexity to $O(KN)$, approximately linear.
-    - **Design Motivation**: Retaining as much detail as possible in the latent space; multi-modal cues provide rich spatial and semantic priors that help the model understand the semantic structure of regions to be filled.
+Relying solely on the original image makes it difficult for the model to determine the semantics for filling masked regions; this work feeds auxiliary cues like edge maps, segmentation maps, and depth maps as conditions. The straightforward approach of using the pre-trained DiT's VAE encoder to convert every modality into tokens and concatenating them results in an $O(K^2)$ complexity for standard attention, which explodes as the token count $K$ increases. The authors introduce a small number of fixed $N \ll K$ latent query tokens that "collect" information from all modality tokens via cross-attention, compressing these cues into an $N$-dimensional compact representation. This reduces complexity from $O(K^2)$ to nearly linear $O(KN)$, preserving details in latent space while providing spatial and semantic priors to assist the model in understanding the structure of the filled regions.
 
-2. **Bidirectional Image-Mask Context Design**
+**2. Bi-directional Image-Mask Context: Using two context paths to manage "what to generate" and "what to preserve"**
 
-    - **Function**: Distinguishes the distinct requirements of foreground extraction and background generation, controlling the model's balance between "generating new content" and "preserving existing content."
-    - **Mechanism**: Standard inpainting uses only the background context $c_{I-M}^b$ (the region inside the mask to be filled). This paper additionally introduces a foreground context $c_{I-M}^f$ (the region outside the mask to be outpainted). The foreground context informs the model that the content inside the mask should be preserved rather than replaced, while the background context indicates that the masked region requires filling. Both contexts are concatenated with their corresponding noisy tokens along the channel dimension, forming two parallel inputs to the DiT.
-    - **Design Motivation**: Without the foreground context, the model tends to hallucinate or alter content in the foreground region. The bidirectional context design explicitly informs the model which regions to preserve and which to generate.
+Standard inpainting provides only a background context $c_{I-M}^b$, indicating which region inside the mask should be filled. Without additional signals, the model cannot distinguish whether the foreground area should be preserved or rewritten, often leading to hallucinations or content flickering on the foreground. This paper adds a foreground context $c_{I-M}^f$ pointing to the area outside the mask (to be outpainted), explicitly instructing the model that "the content within the mask must be preserved and not replaced." These two contexts are concatenated with corresponding noise tokens along the channel dimension as parallel inputs to the DiT—one guiding background filling and the other guiding foreground extraction—effectively decoupling the requirements for "generating new content" and "preserving existing content."
 
-3. **Parameter-Efficient Fine-Tuning Strategy (PEFT + RGBA Decoding)**
+**3. Parameter-Efficient Fine-Tuning + RGBA Decoding: Freezing the base model and using LoRA to learn new capabilities**
 
-    - **Function**: Adapts the inpainting model to learn layer decomposition with minimal additional parameters.
-    - **Mechanism**: The base inpainting DiT weights are frozen; only the input projection layers are fine-tuned, and LoRA (rank=256) is inserted into every attention and FFN layer. The background uses the RGB format and directly reuses the original VAE, while the foreground uses the RGBA format with a separately fine-tuned RGBA codec. The choice of LoRA rank is critical: rank=128 is insufficient to learn the new task, while rank=1024 excessively overrides the pretrained prior and causes hallucinations.
-    - **Design Motivation**: Leveraging the strong generative prior of the inpainting model, the new capability of foreground extraction can be learned with only a small number of additional parameters, substantially reducing training cost.
+To avoid disturbing the strong generative priors of the pre-trained inpainting model, the authors freeze all base DiT weights and only fine-tune the input projection layers and insert LoRA (rank=256) into each attention and FFN layer. The background layer is in RGB format and reuses the existing VAE; the foreground layer includes an alpha channel (RGBA), so a separate RGBA encoder-decoder is fine-tuned to handle transparency. The LoRA rank is a critical "knob": rank=128 is too small to learn the layer decomposition task, while rank=1024 is too large and overrides the pre-trained priors, leading to hallucinations—256 proves to be the sweet spot (see ablation table). With this lightweight adaptation, the model learns foreground extraction with minimal trainable parameters, significantly reducing training costs.
 
 ### Loss & Training
-- Standard flow matching loss is adopted.
-- Training data is constructed entirely from public resources: MULAN (real foregrounds with complete texture but incomplete shapes) + LayerDiffuse (synthetic foregrounds with complete shapes but texture artifacts) + OpenImages (backgrounds); the mixed strategy captures complementary advantages of both foreground types.
-- Batch size 8, learning rate 5e-5, trained for 7,200 iterations.
-- Input resolution: 1024×1024.
-- Imperfect masks are used during training so that the model learns to infer accurate object boundaries.
+- Uses standard flow matching loss.
+- Training data is constructed entirely from public resources: MULAN (real foregrounds but incomplete shapes) + LayerDiffuse (synthetic foregrounds with complete shapes but flawed textures) + OpenImages (backgrounds). This hybrid strategy leverages the advantages of both foreground types.
+- Batch size 8, learning rate 5e-5, trained for 7200 iterations.
+- Input resolution 1024×1024.
+- Imperfect masks are used during training to enable the model to infer accurate object boundaries.
 
 ## Key Experimental Results
 
-### Main Results — Background Removal (MULAN Test Set)
+### Main Results—Background Removal (MULAN Test Set)
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | FID↓ |
 |------|-------|-------|--------|------|
-| FLUX.1-Fill-dev (baseline) | 25.59 | 0.92 | 0.09 | 35.96 |
+| FLUX.1-Fill-dev (Baseline) | 25.59 | 0.92 | 0.09 | 35.96 |
 | PowerPaint | 23.46 | 0.76 | 0.17 | 41.67 |
 | OmniEraser | 21.45 | 0.72 | 0.31 | 55.80 |
 | Qwen-Image-Edit | 19.07 | 0.64 | 0.24 | 63.49 |
 | **Ours** | **27.30** | **0.93** | **0.08** | **25.97** |
 
-Compared to the baseline FLUX.1-Fill-dev, the proposed method achieves a gain of 1.71 dB in PSNR and a reduction of 9.99 in FID.
+Ours achieves a 1.71dB PSNR improvement and a 9.99 reduction in FID compared to the FLUX.1-Fill-dev baseline.
 
 ### Ablation Study
 
-| Configuration | PSNR | FID | Note |
+| Configuration | PSNR | FID | Description |
 |------|------|-----|------|
 | Ours (full, rank=256) | **27.30** | **25.97** | Full model |
-| rank=128 | 26.34 | 33.92 | Insufficient rank |
-| rank=1024 | 27.15 | 27.32 | Rank too large, overrides prior |
-| w/o foreground context $c_{I-M}^f$ | 27.04 | 27.49 | Foreground hallucination |
-| w/o multi-modal context $c_{MM}$ | 27.16 | 28.02 | Degraded semantic understanding |
+| rank=128 | 26.34 | 33.92 | Insufficient rank for learning |
+| rank=1024 | 27.15 | 27.32 | Rank too large, overrides priors |
+| w/o foreground context $c_{I-M}^f$ | 27.04 | 27.49 | Foreground prone to hallucinations |
+| w/o multimodal context $c_{MM}$ | 27.16 | 28.02 | Decreased semantic understanding |
 | w/o synthetic foreground | 27.18 | 27.11 | Incomplete foreground shapes |
-| Kontext baseline | 26.22 | 36.14 | Weaker inpainting foundation |
+| Kontext baseline | 26.22 | 36.14 | Inpainting base is superior |
 
 ### Key Findings
-- An inpainting model (FLUX.1-Fill-dev) serves as a stronger foundation for layer decomposition than a general image-to-image model (FLUX-Kontext), validating the intrinsic connection between inpainting and layer decomposition.
-- The presence or absence of the foreground context has a substantial impact on foreground extraction quality (evident in qualitative comparisons); without it, the model hallucinate in the foreground region.
-- There exists a sweet spot for LoRA rank (256): too small and the model cannot acquire the new capability; too large and the pretrained prior is disrupted.
-- In the user study, the proposed method achieves a preference rate of 59.51%, substantially outperforming matting-based approaches.
+- Inpainting models (FLUX.1-Fill-dev) are more suitable as a foundation for layer decomposition than general I2I models (FLUX-Kontext), validating the intrinsic link between inpainting and layer decomposition.
+- The presence of foreground context has a massive impact on the quality of foreground extraction; without it, the model tends to hallucinate in foreground regions.
+- There is a "sweet spot" for LoRA rank (256); too low fails to learn the new task, while too high damages pre-trained generative priors.
+- In user studies, this method achieved a 59.51% preference rate, significantly outperforming matting-based methods.
 
 ## Highlights & Insights
-- **A Unified Perspective Grounded in Task Essence**: Decomposing layer decomposition into inpainting + outpainting is an elegant and insightful observation that reduces a complex task to a recombination of existing capabilities.
-- **Public Data Only + Lightweight Adaptation**: No commercial datasets or full fine-tuning are required; 100K synthetic samples with LoRA suffice to achieve SOTA. This "democratized" design philosophy is broadly transferable.
-- **Mixed Foreground Data Strategy**: Real foregrounds provide fine-grained texture but incomplete shapes, while synthetic foregrounds offer complete shapes but lower texture fidelity. The complementary data design is applicable to other domain-gap problems.
+- **Unified Perspective from Task Essence**: Decomposing layer decomposition into a combination of inpainting + outpainting is a concise yet profound observation that turns a complex task into a refocusing of existing capabilities.
+- **Pure Public Data + Lightweight Adaptation**: No commercial datasets or full fine-tuning are required. Only 100k synthetic samples plus LoRA achieve SOTA performance. This "democratized" approach is highly valuable for the research community.
+- **Hybrid Foreground Data Strategy**: Real foregrounds provide detail but lack complete shapes, while synthetic foregrounds offer complete shapes but poor textures. This complementary data design can be transferred to other domain-gap challenges.
 
 ## Limitations & Future Work
-- The method still fails on complex scenes involving cluttered objects, large occluded regions, or hands holding objects.
-- Training data is synthetically constructed, introducing a distributional gap from the layered structure of real images.
-- The alpha matting precision of foreground extraction may not match that of dedicated matting methods.
-- The evaluation benchmark is limited (MULAN is the only publicly available layer dataset), potentially introducing evaluation bias.
+- Still fails in highly complex scenes (cluttered objects, large-area occlusions, or hands holding objects).
+- Training data is synthetically constructed, leading to distribution gaps compared to the layered structure of real images.
+- Alpha matting precision for foreground extraction may not match that of specialized matting methods.
+- The evaluation benchmark is limited (MULAN is the only public layer dataset), which may introduce evaluation bias.
 
 ## Related Work & Insights
-- **vs. LAYERDECOMP**: The latter requires full fine-tuning of a closed-source model on large-scale high-quality data; the proposed method achieves SOTA using only LoRA and public data, offering a more practical solution.
-- **vs. MattingAnything / DiffMatte**: Matting methods extract only the visible foreground contour without recovering occluded regions; the proposed method recovers the complete foreground shape via outpainting.
-- **vs. LayerDiffuse**: LayerDiffuse is a model for generating RGBA layers and is used here as a training data source rather than a competing method.
+- **vs LAYERDECOMP**: The latter requires full fine-tuning of closed-source models and large-scale high-quality data. Ours achieves SOTA with only LoRA and public data, making it more practical.
+- **vs MattingAnything / DiffMatte**: Matting methods only extract visible foreground contours without restoring occlusions; this work recovers the full foreground shape (outpainting capability).
+- **vs LayerDiffuse**: The latter is a model for generating RGBA layers; this work uses it as a source of training data rather than a direct competitor.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The unified perspective reinterpreting inpainting as layer decomposition is original.
+- Novelty: ⭐⭐⭐⭐ Re-interpreting inpainting as a unified view for layer decomposition is novel.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive ablations, though evaluation benchmarks are limited.
 - Writing Quality: ⭐⭐⭐⭐ Clear figures and intuitive motivating examples.
 - Value: ⭐⭐⭐⭐ A lightweight, practical, and reproducible solution for layer decomposition.
@@ -132,11 +134,11 @@ Compared to the baseline FLUX.1-Fill-dev, the proposed method achieves a gain of
 
 ## Related Papers
 
+- [\[CVPR 2026\] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)
 - [\[ICLR 2026\] Referring Layer Decomposition](../../ICLR2026/image_generation/referring_layer_decomposition.md)
+- [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
-- [\[CVPR 2026\] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)
-- [\[CVPR 2026\] Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](pluggable_pruning_with_contiguous_layer_distillation_for_diffusion_transformers.md)
-- [\[AAAI 2026\] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](../../AAAI2026/image_generation/freeinpaint_tuning-free_prompt_alignment_and_visual_rationality_enhancement_in_i.md)
+- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
 
 </div>
 

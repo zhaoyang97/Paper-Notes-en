@@ -2,114 +2,98 @@
 title: >-
   [Paper Note] HoneyBee: Data Recipes for Vision-Language Reasoners
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM reasoning] This work systematically investigates the principles underlying the construction of vision-language reasoning datasets—covering context source strategies…
+  [CVPR 2026][Multimodal VLM][VLM reasoning] This work systematically investigates construction principles for vision-language (VL) reasoning datasets—covering context source strategies, data interventions (image description auxiliary signals + text-only reasoning), and multi-dimensional data scaling. Based on these findings, the authors construct the HoneyBee Co
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "VLM reasoning"
-  - "data curation"
-  - "chain-of-thought"
-  - "test-time scaling"
-  - "data recipes"
+  - CVPR 2026
+  - Multimodal VLM
+  - VLM reasoning
+  - data curation
+  - chain-of-thought
+  - test-time scaling
+  - data recipes
 date: 2026-05-08
-content_hash: 623fbde619369fc9
+content_hash: deba9228c5433e82
 ---
-
 # HoneyBee: Data Recipes for Vision-Language Reasoners
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.12225](https://arxiv.org/abs/2510.12225)  
 **Authors**: Hritik Bansal, Devendra Singh Sachan, Kai-Wei Chang, Aditya Grover, Gargi Ghosh, Wen-tau Yih, Ramakanth Pasunuru (Meta AI, UCLA)
 **Code**: [facebookresearch/HoneyBee_VLM](https://github.com/facebookresearch/HoneyBee_VLM)  
 **Data**: [facebook/HoneyBee](https://huggingface.co/datasets/facebook/HoneyBee)
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: VLM reasoning, data curation, chain-of-thought, test-time scaling, data recipes
 
 ## TL;DR
 
-This work systematically investigates the principles underlying the construction of vision-language reasoning datasets—covering context source strategies, data interventions (image caption auxiliary signals and text-only reasoning), and multi-dimensional data scaling—and uses these insights to build HoneyBee, a 2.5M-sample CoT reasoning dataset. A 3B VLM trained on HoneyBee surpasses the prior SOTA by 7.8% on MathVerse, while a proposed test-time scaling strategy reduces decoding cost by 73%.
+This work systematically investigates construction principles for vision-language (VL) reasoning datasets—covering context source strategies, data interventions (image description auxiliary signals + text-only reasoning), and multi-dimensional data scaling. Based on these findings, the authors construct the HoneyBee CoT reasoning dataset with 2.5 million samples. The trained 3B VLM outperforms SOTA by 7.8% on MathVerse, while a proposed test-time scaling strategy reduces decoding costs by 73%.
 
 ## Background & Motivation
 
-Recent advances have rapidly improved VLM reasoning capabilities, yet the core principles for constructing high-quality vision-language reasoning training datasets remain poorly understood. Existing work has focused primarily on model architectures and training strategies, with systematic data-level investigation severely lacking.
+Reasoning capabilities in VLMs have improved rapidly, yet the core principles for constructing high-quality vision-language reasoning training sets remain unclear. Existing research focuses primarily on model architectures and training strategies, leaving a significant gap in systematic studies of the data layer.
 
-**Existing Problems**:
-- **Lack of principled data construction**: The effect of different context sources (i.e., how image–question pairs are composed) on VLM reasoning has not been systematically studied.
-- **Unclear impact of data interventions**: Whether auxiliary signals such as image captions and text-only reasoning data are effective, and how to integrate them, remains unquantified.
-- **Ambiguous scaling dimensions**: The marginal benefit of increasing the number of images, questions per image, and CoT trajectories per question is not well understood.
-- **High inference cost**: The decoding cost introduced by long CoT generation is a pressing practical challenge.
+**Limitations of Prior Work**:
+- **Lack of theoretical guidance for data construction**: The impact of different context sources (combinations of images and questions) on VLM reasoning has not been systematically explored.
+- **Unclear effects of data interventions**: There is a lack of quantitative analysis on whether and how auxiliary signals, such as image descriptions and text-only reasoning data, should be integrated.
+- **Ambiguous scaling dimensions**: The marginal gains from increasing the number of images, questions per image, and CoTs per question are not well-defined.
+- **High inference costs**: Long CoT generation poses significant challenges for decoding efficiency that require urgent solutions.
 
-**Core Goal**: Through controlled experiments, uncover the key principles of VL reasoning data construction and use these findings to build a high-quality, large-scale dataset.
+**Goal**: To reveal key principles for VL reasoning data construction through controlled experiments and to build a high-quality, large-scale dataset accordingly.
 
 ## Method
 
-### Research Framework: Systematic Analysis across Three Dimensions
+### Overall Architecture
 
-The authors design rigorous controlled experiments to analyze data construction strategies along three dimensions.
+HoneyBee does not propose a new model architecture but systematically answers how training data for VL reasoning should be created. The authors decompose data construction into a sequential "data recipe" pipeline. Each step is determined via rigorous controlled experiments (fixed training settings, evaluated on both PLM-3B/8B scales across five benchmarks): first **comparing candidate datasets to select and mix the best context sources**, then **testing data interventions on the best data and retaining only the most effective ones**, followed by **simultaneous scaling across three dimensions** to produce large-scale data. The final product, the HoneyBee dataset, contains 2.5 million $(image, question, CoT)$ samples covering 350,000 unique questions. CoTs are generated by Llama-4 Scout using a "caption + reasoning process + `\boxed{}` final answer" format. A PLM-3B model SFT-tuned on this data surpasses its same-tier SOTA by 7.8% on MathVerse. For the **test-time**, a "shared image description" scaling strategy is proposed, saving 73% of decoding during multi-sample long CoT generation.
 
-### Dimension 1: Context Source
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Candidate VL Reasoning Datasets<br/>ViRL / Math-LLaVA / R1-OneVision / …"] --> B["Context Sourcing and Mixing<br/>Rank by benchmark performance + Mix top sources"]
+    B --> C["Data Intervention<br/>Test enhancement strategies; only caption-and-solve<br/>+ text-only reasoning succeed"]
+    C --> D["Multi-dimensional Scaling<br/>Scaling images × questions per image × CoTs per question"]
+    D --> E["HoneyBee Dataset<br/>2.5M (image, question, CoT)"]
+    E --> F["SFT Training PLM-1B/3B/8B (GRPO RL compatible)"]
+    F --> G["Inference: Shared Image Caption Decoding<br/>Reuse first caption, save 73% decoding"]
+```
 
-This dimension examines how different image–question pair sources affect VLM reasoning performance. Three context sources are integrated:
+### Key Designs
 
-1. **OpenThoughts3 (OT3)**: An existing collection of text-based reasoning problems, extended to visual reasoning by matching relevant images (`q_source='OpenThoughts3'`).
-2. **ViRL**: Image–question pairs drawn directly from the ViRL39K dataset, providing naturally grounded visual reasoning contexts (`q_source='ViRL'`).
-3. **Self-Generated (Ours)**: New questions generated by Llama-4 Scout using ViRL images (`q_source='Ours'`).
+**1. Context Sourcing and Mixing: Where image-question pairs come from determines reasoning quality**
 
-**Key Finding**: The mixing ratio across sources significantly affects final performance; ViRL images paired with LLM-generated questions yield the best results.
+Under identical training processes, different (image, question) sources lead to vastly different reasoning outcomes. The authors treat this as a quantifiable "ingredient selection" process. Contexts are drawn from existing VL reasoning datasets (ViRL, Math-LLaVA, R1-OneVision, ThinkLite-VL-Hard, LLaVA-CoT, MMK12). CoTs are generated using the same generator (Llama-4 Scout), and PLM-3B/8B models are SFT-tuned and ranked by average accuracy across five downstream benchmarks. Results indicate that source selection can lead to a gap of ~4% in average accuracy, with **ViRL ranking highest**. Furthermore, the authors verify **mixing** strategies (e.g., mixing top-2, top-4, or all sources while controlling total volume), confirming that mixing can outperform the single best source. This step forms the foundation for all subsequent interventions and scaling.
 
-### Dimension 2: Data Interventions
+**2. Data Intervention: Testing enhancement strategies—only two are truly effective**
 
-Two auxiliary signals are introduced into the CoT solutions:
+Once the best sources are identified, can they be further improved? The authors designed a suite of "perception" and "problem-solving" interventions, performing substitution, augmentation, and filtering experiments. Perception-side interventions include visual perturbations, rich-text images, perceptual redundancy filtering, shallow perception filtering, and **caption-and-solve**. Problem-solving interventions include **mixing text-only reasoning**, adding distractors, length filtering, and difficulty balancing. A key counter-intuitive finding is that **most seemingly logical interventions underperform the baseline**; only two are consistently effective: ① **caption-and-solve**—using the generator to produce an image description $I^{cap}_j$ and prepending it to the CoT ($C'_j=[I^{cap}_j; C_j]$), acting as a "visual anchor" for reasoning; ② **text-only reasoning mix-in**—integrating high-quality text-only CoT data (OpenThoughts3, relabeled by the same generator), which improves visual reasoning via cross-modal transfer and makes the model a more general reasoner (e.g., improving MATH500 from 39.2% to 59.7%).
 
-1. **Image Caption Augmentation**: Image captions are embedded in the CoT reasoning chain (wrapped with `<caption>` and `</caption>` tags), enabling the model to first "understand" the image before reasoning. Captions are generated by Llama-4 Scout and prepended to the CoT.
-2. **Text-Only Reasoning Mixture**: Text-only reasoning samples without images are mixed into the training data to strengthen general reasoning capabilities.
+**3. Multi-dimensional Scaling: Simultaneous scaling in three directions**
 
-**Key Finding**: Both interventions yield significant gains. Image captions act as a "visual anchor," helping the CoT better ground its reasoning in the image content.
+After determining the "what" and "how," where should the volume increase? The authors systematically measure marginal gains on the ViRL source across three axes: unique images, questions per image, and CoTs per $(image, question)$ pair. All three continuously improve performance without obvious saturation. Thus, HoneyBee scales all three: generating 16 CoTs per real pair and filtering by answer correctness (~400K samples); synthesizing 14 new questions per image (totaling 15 per image). Since new questions lack labels, 4 CoTs are generated for each, and majority voting (agreement $\ge 3$) is used as a proxy answer before filtering (~1M samples). Finally, following the caption-and-solve strategy, these are combined into 1.5M VL samples and merged with 1M text-only reasoning samples to form the 2.5M HoneyBee dataset.
 
-### Dimension 3: Scaling Dimensions
+**4. Test-time Scaling: Shared image caption decoding saves 73% cost**
 
-Three scaling dimensions are systematically explored for their marginal benefit:
-
-1. **Number of unique images**: Increasing the diversity of images in training.
-2. **Questions per image**: Generating more distinct questions for the same image.
-3. **CoT trajectories per question**: Generating multiple distinct CoT reasoning paths for the same image–question pair.
-
-**Key Finding**: Scaling along all three dimensions consistently improves reasoning performance, and the gains are additive.
-
-### HoneyBee Dataset Construction
-
-Based on the above experimental insights, the HoneyBee dataset is constructed as follows:
-- **Scale**: 2.5M CoT reasoning samples covering 350K unique image–question pairs.
-- **CoT Generator**: Llama-4 Scout.
-- **Data Composition**: OT3 questions, ViRL image–question pairs, and self-generated questions.
-- **Format**: Each sample contains an image, a question, and a CoT chain (comprising a caption, reasoning process, and a final answer in `\boxed{}`).
-
-### Test-Time Scaling Strategy
-
-A cost-efficient test-time scaling strategy is proposed:
-- Multiple candidate CoT trajectories are generated and the final answer is selected by majority voting.
-- An early-stopping mechanism halts generation once a sufficient number of candidates reach consensus.
-- This reduces decoding cost by **73%** with no loss in accuracy.
+Multi-sample generation for long CoT is expensive during inference. The authors noted that HoneyBee-trained CoTs naturally split into two segments: the image description ($I^{cap}$, understanding part) and the solver ($S$, reasoning part), where $C=[I^{cap}; S]$. Standard test-time scaling (e.g., self-consistency) samples $N > 1$ CoTs and performs majority voting, which naively regenerates the entire CoT (including the caption) each time. **Shared image caption decoding** generates the full $(I^{cap}_1, S_1)$ only once, then reuses $I^{cap}_1$ as fixed context and only resamples the solver $S_k$—logic dictates that the description of the same image need not be recomputed $N$ times. On MathVista with $N=64$, the naive approach generates 42.6K tokens, whereas shared decoding requires only 24.5K tokens with equivalent accuracy, reducing **tokens and FLOPs by 73%**.
 
 ## Key Experimental Results
 
 ### Evaluation Setup
-- **Base Model**: Perception-LM (PLM), at scales of 1B, 3B, and 8B.
-- **Benchmarks**: 10 VL reasoning datasets, including MathVerse, MathVista, OlympiadBench, GeoQA, and MMMU.
-- **Baselines**: ViRL-tuned PLM (base), OpenThoughts3-tuned models, and same-scale SOTA models.
+- **Base Models**: Perception-LM (PLM), ranging from 1B / 3B / 8B parameters.
+- **Benchmarks**: 10 VL reasoning datasets, including MathVerse, MathVista, OlympiadBench, GeoQA, MMMU, etc.
+- **Baselines**: ViRL-tuned PLM (base), OpenThoughts3-tuned models, and same-sized SOTA models.
 
-### Table 1: Data Intervention Ablation Study (PLM-3B, Accuracy %)
+### Table 1: Data Intervention Ablation (PLM-3B, Accuracy %)
 
 | Data Configuration | MathVerse | MathVista | OlympiadBench | Average |
 |---|---|---|---|---|
 | Base (ViRL only) | 41.2 | 52.3 | 18.7 | 37.4 |
-| + OT3 question mixture | 48.6 | 56.1 | 22.4 | 42.4 |
-| + Image Caption Augmentation | 54.3 | 59.8 | 25.1 | 46.4 |
-| + Text-Only reasoning mixture | 57.1 | 61.5 | 27.3 | 48.6 |
-| + Multi-CoT scaling | 60.8 | 63.2 | 29.6 | 51.2 |
-| HoneyBee (all strategies) | **66.0** | **65.7** | **32.4** | **54.7** |
+| + OT3 Question Mix-in | 48.6 | 56.1 | 22.4 | 42.4 |
+| + Image Caption Auxiliary | 54.3 | 59.8 | 25.1 | 46.4 |
+| + Text-Only Reasoning Mix-in | 57.1 | 61.5 | 27.3 | 48.6 |
+| + Multi-CoT Scaling | 60.8 | 63.2 | 29.6 | 51.2 |
+| HoneyBee (All Strategies) | **66.0** | **65.7** | **32.4** | **54.7** |
 
-Each intervention contributes incremental gains; combining all strategies yields an absolute improvement of **24.8%** on MathVerse.
+Each intervention adds gain, with the full combination improving MathVerse by **24.8%** (absolute).
 
 ### Table 2: Comparison with SOTA Models (Accuracy %)
 
@@ -125,38 +109,38 @@ Each intervention contributes incremental gains; combining all strategies yields
 | PLM-3B + HoneyBee | 3B | **66.0** | **65.7** | **49.2** | **71.4** | **63.1** |
 | PLM-8B + HoneyBee | 8B | **72.1** | **70.3** | **54.7** | **76.2** | **68.3** |
 
-PLM-3B + HoneyBee surpasses the same-scale SOTA by **7.8%** on MathVerse; PLM-1B + HoneyBee even outperforms the larger InternVL2-2B and Qwen2-VL-2B models.
+PLM-3B + HoneyBee outperforms its same-parameter SOTA on MathVerse by **7.8%**, and PLM-1B + HoneyBee even surpasses larger models like InternVL2-2B and Qwen2-VL-2B.
 
 ## Highlights & Insights
 
-- **Data engineering > model engineering**: A 3B model trained with HoneyBee's data recipes outperforms 7–8B SOTA models, demonstrating that data quality and construction strategy matter more than parameter count.
-- **Image captions as a "cognitive bridge"**: Prepending captions to CoT chains enables the model to establish visual understanding before reasoning. This simple intervention yields consistent and significant gains, underscoring the critical role of visual grounding in multimodal reasoning.
-- **Orthogonal and complementary scaling dimensions**: Gains from scaling images, questions per image, and CoT trajectories per question are additive with no evident diminishing returns, providing clear guidance for large-scale dataset construction.
-- **Efficient test-time scaling**: The early-stopping majority voting strategy maintains accuracy while reducing decoding cost by 73%, offering strong practical value.
-- **Cross-modal transfer of reasoning ability**: Mixing text-only reasoning data improves visual reasoning performance, suggesting that reasoning capabilities are partially modality-agnostic.
+- **Data Engineering > Model Engineering**: A 3B model outperforms 7-8B SOTAs via data strategies, proving that data quality and construction strategies are more critical than parameter count.
+- **Image Description as a "Cognitive Bridge"**: Prepending captions to CoT forces the model to establish visual understanding before reasoning. This simple intervention provides significant consistent gains, highlighting the role of visual grounding in reasoning.
+- **Orthogonal Multi-dimensional Scaling**: Gains from scaling images, questions, and CoTs are additive, with no clear diminishing returns, providing a clear path for building large-scale datasets.
+- **Efficient Test-time Scaling**: Shared image caption decoding (reusing the first generated caption for subsequent samples) reduces decoding costs by 73% while maintaining accuracy, offering high practical utility.
+- **Cross-modal Transfer from Text-Only Reasoning**: The inclusion of non-visual text reasoning data improves visual reasoning, suggesting that reasoning capability is largely modality-agnostic.
 
 ## Limitations & Future Work
 
-- **Dataset licensing constraints**: HoneyBee is released under CC-BY-NC and the Llama 4 License, restricting commercial use; derived models must include "Llama" in their names.
-- **Dependence on a strong LLM for CoT generation**: CoT chains are generated by Llama-4 Scout, so quality is upper-bounded by the teacher model's capability and may inherit its reasoning errors.
-- **Evaluation bias toward mathematics**: The 10 benchmarks are predominantly math- and science-focused, with insufficient coverage of commonsense or spatial reasoning.
-- **Limited to the PLM model family**: Experiments are primarily conducted on Perception-LM; generalizability to other architectures requires further validation.
-- **High scaling cost**: Generating 2.5M CoT samples requires substantial Llama-4 Scout inference compute, making reproduction expensive.
-- **No model checkpoints released**: Only the dataset and evaluation code are open-sourced; trained VLM checkpoints are not publicly available.
+- **Dataset License Restrictions**: HoneyBee uses CC-BY-NC and the Llama 4 License, restricting commercial use and requiring the "Llama" prefix in model naming.
+- **Reliance on Strong LLMs for CoT**: CoTs are generated by Llama-4 Scout; quality is capped by the teacher model, potentially inheriting reasoning errors.
+- **Benchmark Coverage Bias**: The 10 benchmarks are skewed towards math and science, with less coverage for common sense or spatial reasoning.
+- **Model Specificity**: Experiments were primarily validated on the Perception-LM series; generalizability to other architectures requires further confirmation.
+- **Scaling Costs**: Generating 2.5 million CoTs requires substantial compute for Llama-4 Scout inference, making reproduction expensive.
+- **Trained Model Checkpoints**: Only the dataset and evaluation code are released; the trained VLM checkpoints are not.
 
 ## Related Work & Insights
 
-- **VL reasoning datasets**: ViRL (39K visual reasoning samples), OpenThoughts3 (text reasoning data), ShareGPT4V (image caption data) → HoneyBee integrates and extends these sources, representing the first systematic study of mixing strategies.
-- **CoT distillation**: Using strong models (GPT-4, Llama-4) to generate CoT for training weaker models, as adopted in NovaStar, Vision-G1, and related work → HoneyBee further investigates CoT diversity and the effect of caption augmentation.
-- **Test-Time Scaling (TTS)**: Best-of-N sampling, majority voting, process reward models, etc. → HoneyBee proposes an early-stopping strategy to reduce cost.
-- **Data recipe research**: Scaling Data-Constrained LLMs (text domain), DataComp (multimodal pretraining) → HoneyBee extends data recipe research to the VL reasoning fine-tuning stage.
+- **VL Reasoning Datasets**: ViRL (39K visual reasoning), OpenThoughts3 (text reasoning), ShareGPT4V (caption data) $\rightarrow$ HoneyBee integrates and expands these, being the first to systematically study mixing.
+- **CoT Distillation**: Using strong models (GPT-4, Llama-4) to train weaker ones, a technique used in NovaStar and Vision-G1 $\rightarrow$ HoneyBee further explores CoT diversity and caption-auxiliary effects.
+- **Test-time Scaling (TTS)**: Best-of-N, majority voting, Process Reward Models (PRMs) $\rightarrow$ HoneyBee introduces early-exit strategies to reduce TTS costs.
+- **Data Recipe Research**: Scaling Data-Constrained LLMs (text domain), DataComp (multimodal pre-training) $\rightarrow$ HoneyBee extends data recipe research to the VL reasoning SFT stage.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First systematic study of VL reasoning data construction principles; the three-dimensional analysis framework is clear and the experimental design is rigorous.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 10 benchmarks, three model scales, extensive ablation studies, and well-controlled variable design.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-distilled insights, and substantive 32-page content.
-- **Value**: ⭐⭐⭐⭐⭐ — Strong methodological contribution to data construction; the 2.5M open-source dataset offers high practical utility and directly informs VLM reasoning research.
+- Novelty: ⭐⭐⭐⭐ — First systematic study of VL reasoning data principles with a clear three-dimensional analysis framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Coverage of 10 benchmarks, 3 model sizes, and extensive controlled ablations.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, insightful synthesis, and 32 pages of detailed content.
+- Value: ⭐⭐⭐⭐⭐ — Significant contributions to data methodology and a highly practical 2.5M open-source dataset.
 
 <!-- RELATED:START -->
 
@@ -164,11 +148,11 @@ PLM-3B + HoneyBee surpasses the same-scale SOTA by **7.8%** on MathVerse; PLM-1B
 
 ## Related Papers
 
-- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/multimodal_vlm/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
-- [\[ICML 2026\] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](../../ICML2026/multimodal_vlm/left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)
-- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
-- [\[CVPR 2026\] Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models](beyond_static_artifacts_a_forensic_benchmark_for_video_deepfake_reasoning_in_vis.md)
+- [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
+- [\[CVPR 2026\] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding](molmo2_open_weights_and_data_for_vision-language_models_with_video_understanding.md)
+- [\[CVPR 2026\] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning](decouple_to_generalize_context-first_self-evolving_learning_for_data-scarce_visi.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
 
 </div>
 

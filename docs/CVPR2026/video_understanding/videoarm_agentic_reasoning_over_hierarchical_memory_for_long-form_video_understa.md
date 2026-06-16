@@ -2,72 +2,96 @@
 title: >-
   [Paper Note] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Long-form video understanding] VideoARM proposes an agentic reasoning paradigm built upon a Hierarchical Multimodal Memory (HM3) structure. Through an adaptive observe–think–act–memorize…
+  [CVPR 2026][Video Understanding][Paper Note] VideoARM proposes an agentic reasoning paradigm based on Hierarchical Multimodal Memory (HM3). Through an adaptive cycle of "observe-think-act-memorize" and a coarse-to-fine tool-use strategy, it surpasses SOTA on long-video understanding benchmarks while reducing token consumption to 1/34 of DVD.
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Long-form video understanding"
-  - "agentic reasoning"
-  - "hierarchical memory"
-  - "coarse-to-fine reasoning"
-  - "token efficiency"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 716bea15557b3b86
+content_hash: ddd894650773858a
 ---
-
 # VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.12360](https://arxiv.org/abs/2512.12360)  
 **Code**: [https://milvlg.github.io/videoarm/](https://milvlg.github.io/videoarm/)  
-**Area**: Video Understanding / LLM Agent
-**Keywords**: Long-form video understanding, agentic reasoning, hierarchical memory, coarse-to-fine reasoning, token efficiency
+**Area**: Video Understanding / LLM Agent  
+**Keywords**: Long-form Video Understanding, Agentic Reasoning, Hierarchical Memory, Coarse-to-Fine Reasoning, Token Efficiency
 
 ## TL;DR
-VideoARM proposes an agentic reasoning paradigm built upon a Hierarchical Multimodal Memory (HM3) structure. Through an adaptive observe–think–act–memorize loop and a coarse-to-fine tool-calling strategy, it surpasses state-of-the-art methods on long-form video understanding benchmarks while reducing token consumption to 1/34 of DVD.
+VideoARM proposes an agentic reasoning paradigm based on Hierarchical Multimodal Memory (HM3). Through an adaptive cycle of "observe-think-act-memorize" and a coarse-to-fine tool-use strategy, it surpasses SOTA on long-video understanding benchmarks while reducing token consumption to 1/34 of DVD.
 
 ## Background & Motivation
 
-1. **Background**: Long-form video understanding requires capturing fine-grained spatiotemporal details and reasoning over long-range dependencies across videos spanning tens of minutes to hours. Recent advances in long-context MLLMs and cross-modal alignment have provided a foundation for this task. Existing LLM-driven approaches fall into two categories: hand-crafted reasoning pipelines (e.g., LLoVi, VideoTree) and autonomous agentic reasoning (e.g., DVD).
+1. **Background**: Long-form video understanding requires capturing fine-grained spatiotemporal details and reasoning over long-range dependencies across videos ranging from tens of minutes to hours. The long-context capabilities and cross-modal alignment of MLLMs provide a foundation for this. Existing LLM-driven methods fall into two categories: hand-crafted reasoning pipelines (e.g., LLoVi, VideoTree) and autonomous agentic reasoning (e.g., DVD).
 
-2. **Limitations of Prior Work**: (a) Hand-crafted methods (e.g., VideoTree) follow a fixed pipeline of segmentation → clustering → scoring → tree construction → reasoning, which constrains autonomy and fails to fully leverage the reasoning capacity of stronger backbone models. (b) Agentic methods (e.g., DVD) perform exhaustive preprocessing on all 10-second clips to build a static database, incurring prohibitive token costs (~4M tokens for a 30-minute video); the database cannot be updated during inference.
+2. **Limitations of Prior Work**: (a) Hand-crafted methods (VideoTree) follow a fixed pipeline of segmenting $\rightarrow$ clustering $\rightarrow$ scoring $\rightarrow$ tree-building $\rightarrow$ reasoning, which limits autonomy and fails to fully exploit the reasoning capabilities of stronger base models. (b) Agentic methods (DVD) perform exhaustive preprocessing on all 10-second segments to build a database, resulting in extremely high token consumption (~4 million tokens for a 30-minute video), and the database remains static during reasoning.
 
-3. **Key Challenge**: Exhaustive preprocessing wastes tokens and introduces query-irrelevant redundancy, while hand-crafted pipelines suppress the model's autonomous reasoning potential. The core tension is: how to maintain reasoning quality while dramatically reducing token consumption?
+3. **Key Challenge**: Exhaustive preprocessing is both token-wasteful and introduces query-irrelevant redundancy; meanwhile, hand-crafted pipelines restrict the potential for autonomous reasoning. How can reasoning quality be maintained while significantly reducing token consumption?
 
-4. **Goal**: To design an adaptive, on-demand agentic reasoning paradigm that replaces static exhaustive preprocessing, enabling efficient and flexible long-form video understanding.
+4. **Goal**: To design an adaptive, on-demand agentic reasoning paradigm that replaces static exhaustive preprocessing to achieve efficient and flexible long-video understanding.
 
-5. **Key Insight**: Replace the prebuilt database with a hierarchical memory (sensory → result → working) that the agent constructs dynamically on demand; replace the retrieval paradigm with a coarse-to-fine toolset that allows the agent to progressively narrow the search space through temporal focusing and local analysis.
+5. **Key Insight**: Use hierarchical memory (sensory $\rightarrow$ result $\rightarrow$ working) to replace pre-built databases, allowing the agent to dynamically construct memory on demand. Use a coarse-to-fine toolset to replace the retrieval paradigm, enabling the agent to narrow the search scope through temporal focusing and local analysis.
 
-6. **Core Idea**: Replace the static database with a dynamically constructed three-level memory (HM3), enabling the MLLM agent to explore video content on demand within an observe–think–act–memorize loop, achieving token-efficient long-form video reasoning.
+6. **Core Idea**: Replace the static database with dynamically constructed Hierarchical Multimodal Memory (HM3), allowing the MLLM agent to explore the video on demand within an "observe-think-act-memorize" loop for token-efficient long-video reasoning.
 
 ## Method
 
 ### Overall Architecture
-VideoARM consists of two core components: (1) **Hierarchical Multimodal Memory (HM3)**—a three-level structure (sensory memory, result memory, working memory) that dynamically records the agent's observations and reasoning states; and (2) **a coarse-to-fine video reasoning agent**—driven by a Controller (OpenAI o3), equipped with temporal scoping tools and multimodal understanding tools, performing autonomous reasoning within the observe–think–act–memorize loop. The maximum number of reasoning steps is $N=10$.
+VideoARM addresses the fact that query-relevant information in long videos occupies only a small fraction of the total duration. Unlike DVD-style agents that pre-process every 10-second clip, VideoARM functions without exhaustive preprocessing, allowing an MLLM agent to retrieve information on demand during reasoning.
+
+The system operates across two layers. One is the **Hierarchical Multimodal Memory (HM3)**, a three-layer structure (Sensory / Result / Working) that dynamically records observations, actions, and thoughts. The other is the **Coarse-to-Fine Reasoning Agent**, driven by a Controller (OpenAI o3). Equipped with temporal focusing and multimodal understanding toolsets, it determines the next segment to observe and the tool to use within an observe-think-act-memorize loop, terminating after a maximum of $N=10$ steps. The process mimics a "locate then zoom" strategy, focusing token expenditure only on query-relevant regions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Long Video + Query"] --> OBS["Observe: Read Global-Local Context from HM3"]
+    subgraph LOOP["Controller Autonomous Reasoning Loop (OpenAI o3)"]
+        direction TB
+        OBS --> THINK["Think: Generate Reasoning Plan R_t"]
+        THINK --> ACT["Act: Call Tool + Execute Parameters"]
+        ACT --> FOCUS
+        ACT --> UNDER
+    end
+    subgraph FOCUS["Temporal Focusing Toolset (Coarse-to-Fine)"]
+        direction TB
+        IL["Interval Localizer<br/>Coarse T_long, Adaptive 30–150 frames"]
+        CE["Clip Explorer<br/>Local T_local analysis, discard after use"]
+    end
+    subgraph UNDER["Multimodal Understanding Toolset (Evidence Extraction)"]
+        direction TB
+        SS["Scene Snapper: Scene Summary V_C"]
+        AT["Audio Transcriber: Audio-to-Text"]
+        CA["Clip Analyzer<br/>Sub-query Q_sub → Ans A_sub + Conf S_sub"]
+    end
+    FOCUS --> HM3
+    UNDER --> HM3
+    subgraph HM3["Hierarchical Multimodal Memory (HM3)"]
+        direction TB
+        PS["Sensory Memory: Long-term P_l / Short-term P_s"]
+        RM["Result Memory: Temporal Evidence Chain"]
+        WM["Working Memory: External Reasoning Trajectory"]
+    end
+    HM3 -.Read back context.-> OBS
+    HM3 -->|Steps = N=10 or Answer selected| OUT["Final Answer"]
+```
 
 ### Key Designs
 
-1. **Hierarchical Multimodal Memory (HM3)**
+**1. Hierarchical Multimodal Memory (HM3): Dynamic Memory over Static Databases**
 
-    - **Function**: Serves as the agent's contextual knowledge base, constructed dynamically and continuously updated throughout execution.
-    - **Mechanism**: Three-level design—**Sensory Memory** comprises a long-term sensory pool $P_l$ (frames from the currently attended time interval, compressed into 3×2 grids) and a short-term sensory pool $P_s$ (frames and audio from local exploration, cleared after analysis); **Result Memory** records each tool's output and its corresponding time interval, forming a chronologically ordered evidence history; **Working Memory** records the Controller's reasoning trajectory and intent prior to each tool call, externalizing the chain of thought to relieve context pressure.
-    - **Design Motivation**: Sensory memory provides the current visual context; result memory allows the agent to reflect on history and avoid redundant actions; working memory addresses context overflow. The three levels abstract from perception → semantics → cognition, forming a complete reasoning scaffold.
+HM3 decomposes the agent's context into three layers constructed incrementally. **Sensory Memory** stores visual materials, divided into a long-term sensory pool $P_l$ (frames from the current time interval, compressed via 3×2 grid mosaics to save tokens) and a short-term sensory pool $P_s$ (frames/audio from local probes, discarded immediately after analysis). **Result Memory** records tool outputs and corresponding intervals chronologically, forming an ordered evidence chain to prevent redundant exploration. **Working Memory** records reasoning trajectories and intentions before each tool call, externalizing the chain of thought. This design abstracts information from perception to semantics to cognition, reducing the context length pressure on the LLM.
 
-2. **Temporal Scoping Tools**
+**2. Temporal Focusing Toolset: Narrowing the Search Space**
 
-    - **Function**: Adaptively narrow the agent's focus to query-relevant regions of the video.
-    - **Mechanism**: **Interval Localizer** uses contextual signals in HM3 to identify the frame interval $T_{long}$ most relevant to the query, adaptively determines the number of sampled frames $N_1$ (30–150), composes frames into compact 3×2 grid images, and updates the long-term sensory pool. **Clip Explorer** performs short-duration fine-grained probing within a local interval $T_{local}$ of the long-term focus (without altering the global focus), samples a fixed number of frames $N_2$ into the short-term sensory pool, and stores the corresponding audio clip.
-    - **Design Motivation**: Interval Localizer implements coarse-grained temporal funneling to narrow the focus region; Clip Explorer implements fine-grained hypothesis verification by rapidly collecting local evidence. Together, they realize a coarse-to-fine exploration strategy.
+To avoid exhaustive frame analysis, the "temporal funnel" tools are employed. **Interval Localizer** identifies the interval $T_{long}$ most relevant to the query based on HM3 signals and adaptively decides the number of frames $N_1$ to sample (30–150 frames). These are synthesized into a compact 3×2 grid to refresh the long-term sensory pool. **Clip Explorer** performs fine-grained probing in a local interval $T_{local}$ within the global focus, sampling $N_2$ frames for the short-term pool and capturing audio for hypothesis verification without altering the global focus.
 
-3. **Multimodal Understanding Tools**
+**3. Multimodal Understanding Toolset: Multidimensional Evidence Extraction**
 
-    - **Function**: Extract and verify query-relevant evidence from complementary perspectives.
-    - **Mechanism**: Three complementary tools—**Scene Snapper** summarizes frames in the long-term sensory pool to produce a scene description $V_C$, providing global semantic abstraction (implemented via GPT-4.1/4o). **Audio Transcriber** transcribes audio in the short-term sensory pool using whisper-1, supplying semantic information when visual cues are insufficient. **Clip Analyzer** analyzes frames in the short-term sensory pool with respect to a sub-question $Q_{sub}$, returning an answer $A_{sub}$ and confidence score $S_{sub}$, providing fine-grained local semantic evidence. After use, results are written to result memory and the short-term sensory pool is cleared.
-    - **Design Motivation**: The three tools cover global overview, auditory supplementation, and local detail respectively, allowing the agent to flexibly combine them as needed to balance breadth and depth.
+Three complementary tools transform pixels into semantic reasoning components. **Scene Snapper** provides a global semantic overview $V_C$ from the frames in the long-term pool. **Audio Transcriber** uses whisper-1 to provide auditory semantics when visual cues are insufficient. **Clip Analyzer** analyzes frames in the short-term pool to resolve a specific sub-query $Q_{sub}$, returning an answer $A_{sub}$ and confidence $S_{sub}$. The Controller combines these tools to balance breadth (overview) and depth (fine-grained details).
 
-### Controller and Reasoning Loop
+**4. Controller Reasoning Loop: Autonomous Decision Making**
 
-The Controller is implemented using OpenAI o3 and follows a streamlined observe–think–act–memorize loop (similar to ReAct but supported by HM3). No rigid workflow or tool-usage rules are predefined, maximizing the exploitation of the MLLM's intrinsic reasoning capacity. In each iteration: observe the global–local context in HM3 → think and generate a reasoning plan $R_t$ → select a tool and execute with specified parameters → write results to HM3. Execution terminates when the step budget $N$ is reached or the Answer action is selected, at which point the final answer is generated.
+Unlike fixed pipelines, VideoARM's Controller (OpenAI o3) follows a lean observe-think-act-memorize loop without predefined workflows. In each iteration, it observes HM3 context, generates a plan $R_t$, executes a tool, and updates HM3. This "blank slate" design allows the Controller to manage tool orchestration autonomously, making the system highly sensitive to the base model's reasoning strength.
 
 ## Key Experimental Results
 
@@ -76,15 +100,15 @@ The Controller is implemented using OpenAI o3 and follows a streamlined observe�
 | Method | Video-MME Overall | Video-MME Long | LongVideoBench | EgoSchema |
 |------|-------------------|----------------|----------------|-----------|
 | GPT-4o | 71.9 | 65.3 | 66.7 | 72.2 |
-| OpenAI o3 | — | 63.2 | 67.5 | 63.2 |
-| DVD | — | 67.3 | 71.6 | 76.6 |
-| VideoLucy | 72.5 | 66.8 | — | — |
+| OpenAI o3 | - | 63.2 | 67.5 | 63.2 |
+| DVD | - | 67.3 | 71.6 | 76.6 |
+| VideoLucy | 72.5 | 66.8 | - | - |
 | **VideoARM (o3+GPT-4.1)** | **80.1** | **75.3** | **73.7** | **78.2** |
 | **VideoARM (o3+GPT-4o)** | **82.8** | **81.2** | **78.0** | 76.2 |
 
-### Token Efficiency Comparison
+### Token Efficiency
 
-| Method | Theoretical Estimate (30 min / 1 query) | Measured (10 videos / 30 queries) |
+| Method | Theoretical (30min/1query) | Empirical (10 videos/30 queries) |
 |------|------------------------|---------------------------|
 | DVD | 3.98M tokens | 64.21M tokens |
 | **VideoARM** | **0.08M (1/50 of DVD)** | **1.89M (1/34 of DVD)** |
@@ -94,44 +118,40 @@ The Controller is implemented using OpenAI o3 and follows a streamlined observe�
 | Configuration | Video-MME Long |
 |------|----------------|
 | Full (o3 + GPT-4.1) | 76.5 |
-| w/o short-term sensory pool | 72.5 (−4.0) |
-| w/o long-term sensory pool | 67.0 (−9.5) |
-| w/o result memory | Invalid (repetitive loops) |
-| w/o working memory | 75.5 (−1.0) |
-| Controller context only | 74.5 (−2.0) |
+| w/o Short-term sensory pool | 72.5 (-4.0) |
+| w/o Long-term sensory pool | 67.0 (-9.5) |
+| w/o Result memory | Failure (Infinite loop) |
+| w/o Working memory | 75.5 (-1.0) |
 | Controller: GPT-4o | 40.5 |
 | Controller: Qwen3-VL | 54.9 |
 
 ### Key Findings
-- VideoARM achieves 81.2% on Video-MME Long, substantially surpassing DVD's 67.3% (+13.9 pp) while consuming only 1/34 of the tokens.
-- The long-term sensory pool is the most critical component; its removal causes a 9.5% drop, indicating that temporal focusing substantially reduces the search space.
-- The Controller's reasoning capability is paramount—replacing o3 with GPT-4o as the Controller yields only 40.5%, demonstrating that complex multi-step reasoning requires a strong reasoning model (o3/GPT-5).
-- The adaptive frame sampling strategy outperforms fixed sampling (76.5 vs. 74.0), using an average of only 49.8 frames.
-- A step budget of $N=10$ is optimal for long videos; short videos do not require as many steps.
+- VideoARM achieves 81.2% on Video-MME Long, significantly surpassing DVD's 67.3% (+13.9pp) while consuming only 1/34 of the tokens.
+- Long-term sensory memory is critical (-9.5% when removed), showing that temporal focusing effectively reduces the search space.
+- Reasoning capability is paramount; swapping o3 for GPT-4o as the Controller dropped performance to 40.5%.
+- Adaptive frame sampling (avg. 49.8 frames) outperforms fixed sampling (76.5 vs 74.0).
 
 ## Highlights & Insights
-- **Dynamic memory vs. static database is the core innovation**: DVD spends a large number of tokens prebuilding a database and then retrieves from it; VideoARM constructs memory on demand, processing only query-relevant content. This is analogous to lazy evaluation vs. eager evaluation in database systems.
-- **The three-level memory design has a cognitive science basis**: The hierarchy of sensory → working → long-term memory mirrors the human cognitive model; the externalization of working memory elegantly addresses LLM context length limitations.
-- **The Controller's "degrees of freedom" design philosophy is instructive**: Rather than prescribing a fixed tool-calling order, the system delegates autonomous decision-making to a strong reasoning model, fully unleashing the reasoning potential of o3.
+- **Dynamic Memory vs. Static Database**: Instead of costly pre-processing, on-demand construction mimics lazy evaluation in computer science, focusing resources on query-relevant content.
+- **Cognitive Architecture**: The sensory-working-result hierarchy aligns with human cognitive models. Externalizing Working Memory effectively sidesteps LLM context window limits.
+- **Controller Autonomy**: Entrusting tool orchestration to a strong reasoning model (o3) rather than hard-coded logic maximizes the potential of frontier models.
 
 ## Limitations & Future Work
-- The system relies entirely on API calls (o3 + GPT-4.1/4o + whisper-1), incurring non-negligible costs and introducing dependency on API availability.
-- A 10-step reasoning budget may be insufficient for very long videos (>1 hour), yet increasing the budget raises API costs.
-- Frame sampling and grid stitching strategies may discard spatial detail.
-- Deployment with open-source models is not considered; the poor performance of Qwen3-VL as the Controller indicates that the approach places high demands on model capability.
-- Real-time streaming video is not supported.
+- Heavy reliance on expensive APIs (o3, GPT-4o, whisper-1) limits local deployment.
+- A 10-step reasoning budget may be insufficient for ultra-long videos (>1h).
+- Frame sampling and mosaic strategies may lead to loss of fine-grained spatial details.
+- Significant performance drop when using open-source models as Controllers suggests high dependency on closed-source model reasoning.
 
 ## Related Work & Insights
-- **vs. DVD**: VideoARM essentially replaces "exhaustive preprocessing + retrieval" with "on-demand reasoning + memory," achieving a 34× improvement in token efficiency and +13.9 pp in performance.
-- **vs. VideoTree**: VideoTree uses fixed hierarchical clustering, whereas VideoARM employs adaptive tool invocation, affording greater flexibility unconstrained by predefined strategies.
-- **vs. VideoLucy**: VideoLucy relies on fixed textual summarization and backtracking mechanisms, while VideoARM maintains a hierarchical multimodal evidence buffer, providing richer information granularity.
-- The underlying approach is generalizable to long-document understanding, multimodal RAG, and other scenarios requiring efficient exploration of large-scale information.
+- **vs. DVD**: VideoARM replaces "exhaustive preprocessing + retrieval" with "on-demand reasoning + memory," achieving a 34x token efficiency gain and +13.9pp accuracy improvement.
+- **vs. VideoTree**: VideoARM uses adaptive tool-calling rather than fixed hierarchical clustering, offering greater flexibility.
+- **Insight**: The paradigm of dynamic hierarchical memory is applicable to other domains requiring exploration of large-scale information, such as long-document analysis and multimodal RAG.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — HM3 hierarchical memory and the on-demand reasoning paradigm exhibit solid innovation, though the observe–think–act loop itself is not novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers five benchmarks (Video-MME / LongVideoBench / EgoSchema / MLVU / LVBench) with highly detailed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured with thorough tool design descriptions, though some sections are slightly redundant.
-- **Value**: ⭐⭐⭐⭐ — The substantial improvement in token efficiency has practical application value, though reliance on high-end APIs limits deployability.
+- Novelty: ⭐⭐⭐⭐ (HM3 and on-demand reasoning are innovative, though the cycle itself is known).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Tested on 5 benchmarks with extensive ablations).
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure and detailed tool descriptions).
+- Value: ⭐⭐⭐⭐ (Significant token efficiency gains for practical long-form video applications).
 
 <!-- RELATED:START -->
 
@@ -139,10 +159,10 @@ The Controller is implemented using OpenAI o3 and follows a streamlined observe�
 
 ## Related Papers
 
+- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
 - [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
-- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/video_understanding/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
-- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
 
 </div>

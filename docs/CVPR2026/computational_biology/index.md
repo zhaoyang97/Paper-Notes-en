@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Computational Biology Papers · 10 Notes
+  CVPR2026 Computational Biology Papers · 21 Notes
 description: >-
-  10 CVPR2026 papers in the Computational Biology area, covering Biomolecules, Medical Imaging, Self-Supervised Learning, Compression, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  21 CVPR2026 papers in the Computational Biology area, covering Biomolecules, Medical Imaging, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Computational Biology"
@@ -10,78 +10,142 @@ tags:
   - "paper summaries"
   - "Biomolecules"
   - "Medical Imaging"
-  - "Self-Supervised Learning"
-  - "Compression"
   - "Multimodal/VLM"
 item_list:
   - u: "adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g/"
     t: "HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images"
+  - u: "advancing_cancer_prognosis_with_hierarchical_fusion_of_genomic_proteomic_and_pat/"
+    t: "Advancing Cancer Prognosis with Hierarchical Fusion of Genomic, Proteomic and Pathology Imaging Data from a Systems Biology Perspective"
+  - u: "bigmint_biologically-guided_hierarchical_multimodal_integration_for_modeling_mul/"
+    t: "BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery"
+  - u: "bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v/"
+    t: "Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics"
   - u: "care_a_molecular-guided_foundation_model_with_adaptive_region_modeling_for_whole/"
     t: "CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis"
   - u: "cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_/"
     t: "Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images"
+  - u: "coordinate_denoising_for_non-equilibrium_molecular_representation_learning/"
+    t: "Coordinate Denoising for Non-Equilibrium Molecular Representation Learning"
   - u: "cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra/"
     t: "Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference"
   - u: "cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp/"
     t: "CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks"
+  - u: "cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo/"
+    t: "CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction"
   - u: "cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and/"
     t: "cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold"
+  - u: "deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle/"
+    t: "Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning"
+  - u: "feast_fully_connected_expressive_attention_for_spatial_transcriptomics/"
+    t: "FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics"
+  - u: "from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima/"
+    t: "From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images"
   - u: "hyperbolic_busemann_neural_networks/"
     t: "Hyperbolic Busemann Neural Networks"
+  - u: "hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction/"
+    t: "HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction"
+  - u: "mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_/"
+    t: "MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation"
   - u: "multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_/"
     t: "Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation"
+  - u: "predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce/"
+    t: "Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling"
   - u: "sampling-aware_3d_spatial_analysis_in_multiplexed_imaging/"
     t: "Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging"
   - u: "stronger_normalization-free_transformers/"
     t: "Stronger Normalization-Free Transformers"
-item_total: 10
+item_total: 21
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧬 Computational Biology
 
-**📷 CVPR2026** · **10** paper notes
+**📷 CVPR2026** · **21** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (36)](../../ICML2026/computational_biology/index.md) · [💬 ACL2026 (5)](../../ACL2026/computational_biology/index.md) · [🔬 ICLR2026 (38)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
 
-🔥 **Top topics:** Biomolecules ×3
+🔥 **Top topics:** Biomolecules ×6 · Medical Imaging ×2 · Multimodal/VLM ×2
 
 **[HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)**
 
-:   HINGE is a framework that, for the first time, repurposes a pre-trained expression-space single-cell foundation model (sc-FM, CellFM) as a histology-image-conditioned spatial gene expression generator. It achieves state-of-the-art performance on three ST datasets while maintaining superior gene co-expression consistency, through three core mechanisms: identity-initialized SoftAdaLN for lightweight visual context injection, an expression-space masked diffusion process that aligns with the pre-training objective, and a warm-start curriculum to stabilize training.
+:   The HINGE framework is proposed to adapt a pre-trained expression-space single-cell foundation model (sc-FM, CellFM) into a histology image-conditioned spatial gene expression generator. This is achieved by lightweight injection of visual context via identity-initialized SoftAdaLN modulation, alignment with pre-training objectives through an expression-space masked diffusion process, and training stabilization via a warm-start curriculum. It achieves SOTA results across three ST datasets while maintaining superior gene co-expression consistency.
+
+**[Advancing Cancer Prognosis with Hierarchical Fusion of Genomic, Proteomic and Pathology Imaging Data from a Systems Biology Perspective](advancing_cancer_prognosis_with_hierarchical_fusion_of_genomic_proteomic_and_pat.md)**
+
+:   HFGPI explicitly models the "gene → protein → tissue morphology" systems biology cascade as a hierarchical fusion pipeline. It utilizes graph-aware cross-attention to characterize gene-to-protein regulation and hypergraphs to link proteins to pathology patches. On 5 TCGA cohorts, it achieves an average C-index of 0.753 for survival prediction, outperforming all Prev. SOTA.
+
+**[BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery](bigmint_biologically-guided_hierarchical_multimodal_integration_for_modeling_mul.md)**
+
+:   BiGMINT utilizes a three-stage hierarchical fusion—"chemoproteomics-guided high-content imaging (HCI) feature aggregation + outer product cross-modal fusion + protein-protein interaction (PPI) prior-based task-level information sharing"—to unify molecular mechanism signals and cellular phenotypic signals for compound activity prediction. On two large private datasets (~99K / ~40K compound-image pairs), it improves average AUCROC over state-of-the-art single-modal/multimodal baselines by up to 10.0% / 4.2%, with the coverage of high-performance tasks nearly doubling.
+
+**[Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)**
+
+:   BRGMAR utilizes a dynamic multi-relational graph to characterize spatial proximity and gene similarity between spots in spatial transcriptomics (ST). It transfers diagnostic information from patient-level bulk RNA-seq to ST through "gene module alignment" based on optimal transport. Combined with cross-attention fusion of pathological images, it significantly advances AUC/F1 scores for tumor anomalous region detection across BRCA, HCC, and ccRCC datasets.
 
 **[CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis](care_a_molecular-guided_foundation_model_with_adaptive_region_modeling_for_whole.md)**
 
-:   This paper proposes CARE, a slide-level pathology foundation model that employs an Adaptive Region Generator (ARG) to partition WSIs into morphologically coherent irregular regions (analogous to word-level tokens in NLP), combined with two-stage pretraining via cross-modal alignment with RNA/protein expression profiles. Using approximately 1/10 the data of mainstream models, CARE achieves state-of-the-art average performance across 33 downstream tasks.
+:   CARE is proposed as a pathology slide-level foundation model that partitions WSIs into morphologically relevant irregular regions via an Adaptive Region Generator (ARG)—analogous to word-level tokens in NLP. By combining cross-modal alignment with RNA/protein expression profiles in a two-stage pre-training paradigm, CARE achieves optimal average performance across 33 downstream tasks while using only approximately 1/10 of the data required by mainstream models.
 
 **[Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)**
 
-:   This paper proposes CPNN, which constructs cell-type prototypes from publicly available single-cell RNA-seq data and models slide/patch-level gene expression as a weighted combination of these prototypes, achieving state-of-the-art performance on gene expression estimation while providing interpretability.
+:   Ours proposes CPNN, which leverages public single-cell RNA-seq data to construct cell-type prototypes. It models slide/patch-level gene expression as a weighted combination of these prototypes, achieving Prev. SOTA performance in gene expression estimation while providing interpretability.
+
+**[Coordinate Denoising for Non-Equilibrium Molecular Representation Learning](coordinate_denoising_for_non-equilibrium_molecular_representation_learning.md)**
+
+:   Addressing the flaw that the conclusion "coordinate denoising is equivalent to force field learning" only holds in equilibrium, this paper derives a denoising target NDeM valid for any conformation using second-order finite differences of the potential energy surface. This is implemented as a plug-and-play auxiliary task without pre-training, consistently improving force prediction accuracy for various equivariant GNNs on MD17, QM9, and OC20.
 
 **[Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)**
 
-:   This paper proposes SpaHGC, a multimodal heterogeneous graph framework that constructs three types of subgraphs—intra-target-slice (TS), cross-slice (CS), and intra-reference-slice (RS)—and integrates masked graph contrastive learning with a cross-node dual attention mechanism to predict spatial gene expression from H&E histopathology images, achieving PCC improvements of 7.3%–27.1% across seven datasets.
+:   SpaHGC is proposed, a multi-modal heterogeneous graph-based framework that integrates intra-target slice, cross-slice, and intra-reference slice subgraphs. Combined with masked graph contrastive learning and a cross-node dual attention mechanism, it predicts spatial gene expression from H&E pathology images, achieving a PCC improvement of 7.3%-27.1% across seven datasets.
 
 **[CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks](cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp.md)**
 
-:   This paper proposes CryoHype, a Transformer-based hypernetwork approach for cryo-EM reconstruction that dynamically modulates the weights of implicit neural representations (INRs) to reduce parameter sharing, achieving for the first time the simultaneous reconstruction of 1,000 distinct protein structures from unlabeled cryo-EM images.
+:   Ours proposes CryoHype, a Cryo-EM reconstruction method based on a Transformer hypernetwork, which reduces parameter sharing by dynamically adjusting the weights of Implicit Neural Representations (INR), achieving simultaneous reconstruction of 1000 different protein structures from unlabeled Cryo-EM images for the first time.
+
+**[CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)**
+
+:   CryoKRAQEN utilizes an **encoder-free (decoder-only) tri-plane Fourier codebook** for cryo-EM heterogeneous reconstruction. By measuring the similarity between particle images and codebook prototypes using an Epanechnikov kernel, gradually tightening soft assignments to near-hard clustering via temperature annealing, and stabilizing the codebook with triplet regularization, the method accurately assigns noisy 2D projections to different 3D conformations/components without relying on encoders or Gaussian priors. It performs on par with SOTA on CryoBench and demonstrates significantly better performance on data with strong compositional heterogeneity.
 
 **[cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)**
 
-:   This paper proposes cryoSENSE, the first computational framework for compressed cryo-EM imaging, demonstrating that protein cryo-EM images can be faithfully reconstructed from undersampled measurements under both sparse priors (DCT/Wavelet/TV) and generative priors (diffusion models), achieving up to 2.5× throughput gain while preserving 3D reconstruction resolution.
+:   Ours proposes cryoSENSE, the first computational framework for compressive imaging in cryo-EM. It demonstrates that protein cryo-EM images can be reconstructed with high fidelity from undersampled measurements using both sparse priors (DCT/Wavelet/TV) and generative priors (Diffusion Models), achieving up to 2.5× throughput gain while maintaining 3D reconstruction resolution.
+
+**[Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)**
+
+:   KERNEL treats high-content cellular morphological imaging as "relational evidence" rather than node features. By using morphological similarity to dynamically augment "pseudo-edges" with learnable confidence on biological knowledge graphs, it performs Gene Regulatory Network (GRN) inference, Drug-Target Interaction (DTI) prediction, and disease subtype subnetwork discovery, achieving a Gain of up to 38.1% in AUPR for GRNs.
+
+**[FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics](feast_fully_connected_expressive_attention_for_spatial_transcriptomics.md)**
+
+:   FEAST transforms the task of "predicting spatial gene expression from large H&E pathology images" from a GNN paradigm relying on predefined sparse graphs into a fully connected attention framework. It utilizes self-attention to naturally model pairwise interactions between all spots, supplemented by negative attention to express "inhibitory relationships" and off-grid sampling to complete information in grid gaps. It achieves SOTA on 7 out of 9 metrics across three public ST datasets.
+
+**[From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)**
+
+:   This paper reframes the task of "predicting spatial gene expression from pathology slides" from a spot-wise regression task to a dense prediction task. It proposes PixNet: first, a pathology foundation model extracts pyramid features; then, a U-Net-style decoder progressively generates a full-image dense gene expression map; finally, expression values for spots of any position or radius are obtained through circular region aggregation. This approach outperforms existing SOTA methods across multiple spatial scales (from 2µm single-cell level to 100µm).
 
 **[Hyperbolic Busemann Neural Networks](hyperbolic_busemann_neural_networks.md)**
 
-:   This paper intrinsically lifts multinomial logistic regression (MLR) and fully connected (FC) layers to hyperbolic space via Busemann functions, proposing two unified components—BMLR and BFC—applicable to both the Poincaré ball and the Lorentz model. The proposed components outperform existing hyperbolic layers across four task categories: image classification, genomic sequence classification, node classification, and link prediction.
+:   This work utilizes Busemann functions to intrinsically lift Multinomial Logistic Regression (MLR) and Fully Connected (FC) layers into hyperbolic space. It introduces two unified components, BMLR and BFC, which are applicable to both the Poincaré ball and Lorentz models. These components outperform existing hyperbolic layers across four task categories: image classification, genomic sequences, node classification, and link prediction.
+
+**[HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)**
+
+:   When predicting gene expression in Spatial Transcriptomics (ST) directly from H&E pathology images, existing methods typically perform only spot-level image-to-gene matching and ignore the inherent hierarchical structure of ST data. This paper proposes HyperST, which employs a multi-hierarchical representation extractor to capture both spot-level and niche-level image/gene features. These features are aligned in **hyperbolic space** using Hierarchical Contrastive Alignment (HCA) and Hierarchical Entailment Alignment (HEA). By injecting molecular semantics into image representations, HyperST achieves new SOTA performance across four tissue datasets.
+
+**[MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)**
+
+:   Building upon the discrete diffusion protein language model DPLM, MMCP-GEN designs a composable conditional mechanism featuring a "Modality-Indicator Head + Learnable Query fusion." This mechanism unifies heterogeneous biological conditions—such as structure, ligands, functional annotations, and free text—into a shared condition space. It allows for the addition of new modalities without retraining the backbone. Combined with a joint sequence-structure scoring objective, it sets new SOTAs across functional generation, inverse folding, and multi-objective design tasks (with sequence recovery rates improved by up to ~5%).
 
 **[Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation](multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_.md)**
 
-:   This paper proposes **ERBA (Enzyme-Reaction Bridging Adapter)**, which reformulates enzyme kinetic parameter prediction as a **staged multimodal conditional generation problem** — first injecting substrate information via MRCA to capture substrate recognition specificity, then integrating active-site 3D geometry via G-MoE to capture conformational adaptation, with ESDA distribution alignment to preserve PLM semantic priors.
+:   The authors propose **ERBA (Enzyme-Reaction Bridging Adapter)**, which reframes enzyme kinetic parameter prediction as a **staged multimodal conditional generation problem**. The model injects substrate information via MRCA to capture substrate recognition specificity, integrates active site 3D structures through G-MoE to capture conformational adaptation, and utilizes ESDA distribution alignment to maintain the biochemical semantic priors of the PLM.
+
+**[Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)**
+
+:   Addressing the limitation that existing methods for predicting spatial gene expression from H&E images only model single spots or pairwise neighbors—failing to capture many-to-many synergistic/antagonistic effects among multiple cells—MCToGene proposes **many-body attention** to explicitly model high-order cross-cell interactions. By utilizing a **hierarchical coupling module** to link pairwise and many-body attention, it controls combinatorial explosion, achieving an approximately 7.85% improvement over the strongest baselines on HEST-1k and STImage-1K4M.
 
 **[Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging](sampling-aware_3d_spatial_analysis_in_multiplexed_imaging.md)**
 
-:   This paper systematically investigates how sampling geometry (2D single sections vs. 3D serial sections) affects the accuracy of recovering spatial statistics in multiplexed imaging, and proposes a geometry-aware sparse 3D reconstruction module that enables reliable depth-informed spatial analysis under limited imaging budgets.
+:   This work systematically investigates the impact of sampling geometry (2D slices vs. 3D sequential slices) on the recovery accuracy of spatial statistics in multiplexed imaging. It proposes a geometry-aware sparse 3D reconstruction module to enable reliable depth-aware spatial analysis under limited imaging budgets.
 
 **[Stronger Normalization-Free Transformers](stronger_normalization-free_transformers.md)**
 
-:   By systematically analyzing four key properties required for pointwise functions to replace normalization layers (zero-centeredness, boundedness, center-sensitivity, and monotonicity), this work identifies $\text{Derf}(x) = \text{erf}(\alpha x + s)$ as the optimal normalization-layer substitute through large-scale search. Derf consistently outperforms LayerNorm and DyT across vision recognition, image generation, speech representation, and DNA sequence modeling, with performance gains primarily attributable to stronger generalization rather than fitting capacity.
+:   Through a systematic analysis of four critical attributes (zero-centeredness, boundedness, center sensitivity, and monotonicity) required for pointwise functions to replace normalization layers, an exhaustive search identifies $\text{Derf}(x) = \text{erf}(\alpha x + s)$ as the optimal replacement. It consistently outperforms LayerNorm and DyT across multiple domains, including visual recognition, image generation, speech representation, and DNA sequence modeling, with performance gains primarily stemming from enhanced generalization rather than fitting capacity.

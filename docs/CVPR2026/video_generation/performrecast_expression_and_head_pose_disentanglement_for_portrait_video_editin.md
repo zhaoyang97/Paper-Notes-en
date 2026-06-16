@@ -2,133 +2,142 @@
 title: >-
   [Paper Note] PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Portrait video editing] PerformRecast presents a GAN-based portrait video editing method built upon a corrected 3DMM keypoint transformation formulation. By applying expression deformation b…
+  [CVPR 2026][Video Generation][3DMM] PerformRecast proposes a GAN-based portrait video editing method utilizing an improved 3DMM keypoint transformation formula. By applying expression deformation before head rotation (consistent with the FLAME model), precise disentanglement of expression and head pose is achieved. A Boundary Alignment Module is introduc
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Portrait video editing"
-  - "expression disentanglement"
-  - "3DMM"
-  - "keypoint transformation"
-  - "GAN"
+  - CVPR 2026
+  - Video Generation
+  - 3DMM
+  - GAN
 date: 2026-05-08
-content_hash: 48bad9b79a333db7
+content_hash: 4b3600d9289a0281
 ---
-
 # PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.19731](https://arxiv.org/abs/2603.19731)  
 **Code**: [https://youku-aigc.github.io/PerformRecast](https://youku-aigc.github.io/PerformRecast)  
-**Area**: Video Generation
-**Keywords**: Portrait video editing, expression disentanglement, 3DMM, keypoint transformation, GAN
+**Area**: Video Generation  
+**Keywords**: Portrait Video Editing, Expression Disentanglement, 3DMM, Keypoint Transformation, GAN
 
 ## TL;DR
 
-PerformRecast presents a GAN-based portrait video editing method built upon a corrected 3DMM keypoint transformation formulation. By applying expression deformation before head rotation — consistent with the FLAME model — the method achieves precise disentanglement of expression and head pose. A Boundary Alignment Module (BAM) is further introduced to address stitching misalignment between facial and non-facial regions. The approach substantially outperforms existing methods under both expression replacement and expression enhancement modes.
+PerformRecast proposes a GAN-based portrait video editing method utilizing an improved 3DMM keypoint transformation formula. By applying expression deformation before head rotation (consistent with the FLAME model), precise disentanglement of expression and head pose is achieved. A Boundary Alignment Module is introduced to resolve stitching misalignments between facial and non-facial regions. The method significantly outperforms existing approaches in both expression replacement and enhancement modes.
 
 ## Background & Motivation
 
-**Background**: The portrait animation field has seen extensive development, encompassing GAN-based warping methods (LivePortrait, Face Vid2Vid, etc.) and diffusion-based methods (SkyReels, Hunyuan-Portrait, Wan-Animate, etc.). These methods typically generate animations from static portrait images guided by a driving video.
+**Background**: Significant progress has been made in the field of portrait animation, including GAN-based warping methods (LivePortrait, Face Vid2Vid, etc.) and Diffusion-based methods (SkyReels, Hunyuan-Portrait, Wan-Animate, etc.). These methods typically generate animations from a static portrait image controlled by a driving video.
 
-**Limitations of Prior Work**: The central challenge lies in **expression and head pose disentanglement**. Portrait video expression editing requires modifying only facial expressions while strictly preserving the subject's facial identity, head pose, camera motion, and background — any unintended change is considered a failure. Existing methods suffer from: (1) diffusion-based methods are inherently ill-suited for disentangling expression from head rotation, exhibit slow inference, and suffer from temporal inconsistency; (2) GAN-based warping methods (e.g., LivePortrait) offer better controllability but rely on implicit keypoints that lack explicit physical meaning and direct supervision, resulting in incomplete disentanglement.
+**Limitations of Prior Work**: The core challenge in existing methods lies in the **disentanglement of expression and head pose**. The task of "expression editing" in portrait videos requires modifying only the facial expressions while strictly maintaining the original identity (ID), head pose, camera movement, and background—any changes beyond expression are considered failures. However, current methods face several issues: (1) Diffusion-based methods naturally struggle to decouple expression from head rotation, suffer from slow inference speeds, and exhibit poor temporal consistency; (2) GAN-based warping methods (such as LivePortrait), while more controllable, utilize implicit keypoints that lack explicit physical meaning and direct supervision, leading to incomplete disentanglement.
 
-**Key Challenge**: LivePortrait's keypoint transformation formula is $x = s \cdot (x_c R + \delta) + t$, which applies head rotation $R$ to the canonical keypoints before adding expression deformation $\delta$. This ordering is inconsistent with the 3DMM forward process — in FLAME, expression blendshapes are added to the template mesh before joint rotation is applied. This incorrect ordering forces the learned $\delta$ to absorb residual head pose information, preventing true disentanglement.
+**Key Challenge**: The keypoint transformation formula in LivePortrait is $x = s \cdot (x_c R + \delta) + t$, where canonical keypoints are first multiplied by the head rotation $R$ and then added to the expression deformation $\delta$. This sequence is inconsistent with the forward process of 3DMMs—models like FLAME apply expression deformation before head rotation. The order in LivePortrait causes residual head pose information to leak into the learned $\delta$, preventing true disentanglement.
 
-**Goal**: (1) Correct the keypoint transformation formula to align with the FLAME forward process; (2) directly supervise the motion extractor using explicit 3D keypoints; (3) resolve boundary misalignment between facial and non-facial regions during expression editing.
+**Goal**: (1) Correct the keypoint transformation formula to align with the FLAME forward process; (2) Use explicit 3D keypoints for direct supervision of the motion extractor; (3) Solve boundary misalignment between facial and non-facial regions during expression editing.
 
-**Key Insight**: 3DMMs inherently represent identity, expression, and head pose with independent parameters. The authors leverage the physically grounded ordering of the FLAME forward process — expression first, then rotation — to improve upon LivePortrait.
+**Key Insight**: 3DMMs inherently represent identity, expression, and head pose with independent parameters. The authors leverage the forward process of FLAME—applying expression before rotation—as a physically correct sequence to improve upon LivePortrait.
 
-**Core Idea**: Revise the keypoint transformation to apply expression deformation before rotation, matching the FLAME forward process, and directly supervise the motion extractor with explicit keypoints derived from 3D face tracking.
+**Core Idea**: Modify the keypoint transformation order to "expression first, then rotation" to match FLAME, and utilize explicit 3D keypoints from 3D face tracking for direct supervision of the motion extractor.
 
 ## Method
 
 ### Overall Architecture
 
-PerformRecast is built on LivePortrait's warping architecture. Given a source frame and a driving frame, an appearance feature extractor $\mathcal{F}$ (DINOv2-based) extracts a 3D feature volume, and a motion extractor $\mathcal{M}$ (ConvNext-V2-Tiny) predicts canonical keypoints $x_c$, head rotation $R$, expression deformation $\delta$, scale $s$, and translation $t$. A corrected keypoint transformation formula produces source and driving keypoints; a warping module generates optical flow to deform the feature volume; and a SPADE decoder synthesizes the output image. Training incorporates FLAME-based supervision via Pixel3DMM 3D face tracking.
+PerformRecast is built upon the warping architecture of LivePortrait. Given source and driving frames, an appearance feature extractor $\mathcal{F}$ (based on DINOv2) extracts a 3D feature volume, while a motion extractor $\mathcal{M}$ (ConvNext-V2-Tiny) predicts canonical keypoints $x_c$, head rotation $R$, expression deformation $\delta$, scale $s$, and translation $t$. Source and driving keypoints are generated via the improved FLAME transformation formula. A warping module generates optical flow to deform the feature volume, which is then decoded into the target image by a SPADE decoder. Training is overseen by explicit FLAME loss in conjunction with Pixel3DMM 3D face tracking. A Boundary Alignment Module (BAM) utilizes teacher-student partitioned supervision to suppress boundary artifacts. Two inference modes—replacement and enhancement—are provided.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Source + Driving Frames"] --> APP["Appearance Extractor F (DINOv2)<br/>→ 3D Feature Volume"]
+    IN --> MOT["Motion Extractor M (ConvNeXt-V2)<br/>→ Keypoints x_c · Rotation R · Expression δ · Scale s · Trans t"]
+    MOT --> KT["FLAME Keypoint Mapping<br/>x = s·((x_c+δ)R)+t: Exp first, then Rot"]
+    KT -->|"Training: 49 Explicit 3D Keypoints Wing loss"| FL["FLAME Loss (Pixel3DMM Tracking)"]
+    APP --> WARP["Warping Module + SPADE Decoder<br/>Flow-guided Feature Deformation → Target"]
+    KT --> WARP
+    WARP --> BAM["Boundary Alignment Module (BAM)<br/>Teacher learns Exp · Student partitions Face/Non-face"]
+    BAM --> INF["Dual Inference Modes<br/>Replacement δ · Enhancement ∆δ"]
+```
 
 ### Key Designs
 
-1. **FLAME-Based Keypoint Transformation (Core Contribution)**
+**1. FLAME Keypoint Transformation: Returning Deformation to Physical Correctness**
 
-    - **Function**: Achieve complete disentanglement of expression and head pose.
-    - **Mechanism**: Replace LivePortrait's formula $x = s \cdot (x_c R + \delta) + t$ with $x = s \cdot ((x_c + \delta) R) + t$, i.e., **expression deformation is applied before head rotation**. This aligns with the FLAME forward process, in which expression blendshapes are added to the template mesh prior to joint rotation. Explicit 3D supervision is provided by selecting 49 keypoints from FLAME face mesh vertices, organized into three groups: canonical keypoints $V_c$ (identity only), expression keypoints $V_{exp}$ (expression plus eye/jaw rotations, excluding head rotation), and full keypoints $V_{kp}$ (all parameters). Wing loss is used to compute the FLAME loss.
-    - **Design Motivation**: Under the original ordering, $\delta$ is forced to compensate for residual head rotation, causing incomplete disentanglement. The corrected ordering ensures $\delta$ is added to canonical keypoints prior to rotation, physically aligned with the 3DMM process and eliminating head pose leakage from the expression representation. With strong FLAME supervision, auxiliary constraints used in LivePortrait — such as keypoint equivariance loss and keypoint prior loss — can be removed.
+This is the cornerstone of the work. LivePortrait's transformation is $x = s \cdot (x_c R + \delta) + t$. Here, canonical keypoints are rotated by $R$ before adding $\delta$. Consequently, $\delta$ must compensate for differences in a "rotated coordinate system," forcing it to fit residual head pose information, which contaminates the expression with pose data. PerformRecast shifts the parentheses:
 
-2. **Boundary Alignment Module (BAM)**
+$$x = s \cdot \big((x_c + \delta)\, R\big) + t$$
 
-    - **Function**: Mitigate stitching misalignment between facial and non-facial regions.
-    - **Mechanism**: A teacher-student two-stage training scheme is adopted. In stage one, a teacher model $M_t$ is trained with a global animation loss, producing accurate facial expressions but with boundary artifacts. In stage two, a student model $M_s$ learns two objectives simultaneously: (a) for the facial region, supervision is provided by the teacher's intermediate output $\hat{I}_s^t$ (with only $\delta$ replaced); (b) for the non-facial region, supervision is provided by the original source frame $I_s$. This enables the student to learn precise expression from the teacher while preserving the non-facial region.
-    - **Design Motivation**: The 3D keypoint warping field inevitably affects non-facial regions, causing misalignment at hairlines, ears, and the neck. Applying separate supervision for facial and non-facial regions provides an intuitive and effective solution. The design also eliminates the need for LivePortrait's stitching and retargeting modules, simplifying overall training.
+This ensures **expression deformation occurs in the canonical coordinate system before global rotation**. This aligns with the FLAME forward process—where the template mesh is adjusted by expression blendshapes before joint rotation—allowing $\delta$ to focus solely on "how the expression deforms" while $R$ handles rotation.
 
-3. **Dual Inference Modes (Replacement + Enhancement)**
+To anchor $\delta$ physically, the authors use Pixel3DMM for 3D face tracking to extract 49 explicit 3D keypoints from the FLAME mesh. These are supervised in three groups: canonical $V_c$ (identity only), expression $V_{exp}$ (expression plus jaw/eyeball rotation, excluding head rotation), and full $V_{kp}$ (all parameters), using Wing loss. This explicit 3D supervision renders the implicit constraints used in LivePortrait (e.g., equivariance loss, prior loss) redundant.
 
-    - **Function**: Provide flexible editing modes for practical production scenarios.
-    - **Mechanism**: In **Replacement** mode, the driving frame's $\delta_d$ directly replaces the source frame's $\delta_s$, while all other source parameters are preserved. In **Enhancement** mode, the expression delta from the driving sequence $\delta_{d,i} - \delta_{d,0}$ is added to the source expression, achieving expression amplification rather than full replacement.
-    - **Design Motivation**: These modes address distinct needs in film production — Replacement suits cases where overall performance is satisfactory but expressions require substitution, while Enhancement suits cases where only the magnitude of existing expressions needs to be amplified.
+**2. Boundary Alignment Module (BAM): Separating "Edit Expression" from "Keep Others Static"**
+
+Since warping fields are global, shifting 3D keypoints inevitably affects non-facial regions (hairline, ears, neck), leading to misalignment. BAM addresses this using a two-stage teacher-student approach. In stage one, a teacher $M_t$ is trained with global animation losses to produce accurate facial expressions, albeit with messy boundaries. In stage two, the student $M_s$ learns two tasks: the facial region is supervised by the teacher's intermediate output $\hat{I}_s^t$ (where only $\delta$ is replaced), while the non-facial region is supervised directly by the original source frame $I_s$. This forces the model to follow the teacher for precision while adhering to the original for stability, eliminating the need for separate stitching or retargeting modules.
+
+**3. Dual Inference Modes: Replacement and Enhancement**
+
+The model supports two practical editing workflows. The **Replacement mode** replaces the source $\delta_s$ with the driving $\delta_d$ while keeping other parameters constant—ideal for changing a performance's expression. The **Enhancement mode** adds the driving expression delta $\delta_{d,i} - \delta_{d,0}$ to the source expression, effectively amplifying existing expressions. Both modes operate exclusively on the $\delta$ term, demonstrating the utility of clean disentanglement.
 
 ### Loss & Training
 
-The overall training loss is $\mathcal{L}_{animate} = \mathcal{L}_{FLAME} + \mathcal{L}_{P,cascade} + \mathcal{L}_{1,cascade} + \mathcal{L}_{G,cascade} + \mathcal{L}_{faceid}$, where the FLAME loss applies Wing loss supervision over three keypoint groups; cascade losses are cascaded perceptual, L1, and GAN losses; and the face identity loss maintains identity consistency. The BAM stage additionally introduces separate supervision losses for facial and non-facial regions. Training data includes public datasets (VFHQ, MEAD, Nersemble) as well as high-quality internet animation and film video clips, totaling approximately 600K video clips.
+The total loss is $\mathcal{L}_{animate} = \mathcal{L}_{FLAME} + \mathcal{L}_{P,cascade} + \mathcal{L}_{1,cascade} + \mathcal{L}_{G,cascade} + \mathcal{L}_{faceid}$, where the FLAME loss provides Wing loss supervision for three sets of keypoints, and cascade losses refer to multi-scale versions of Perceptual/L1/GAN losses. The BAM phase adds a partitioned supervision loss for face and non-face regions. Training utilized approximately 600,000 video segments from datasets including VFHQ, MEAD, Nersemble, and high-definition web videos.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation is conducted on an expression editing benchmark constructed using MetaHuman digital humans (20 subjects, 18 expressions), under Replacement mode:
+Evaluated on a MetaHuman digital human benchmark (20 characters, 18 expressions) in Replacement mode:
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | AED↓ | APD↓ | FVD↓ |
-|---|---|---|---|---|---|---|
+|------|-------|-------|--------|------|------|------|
 | LivePortrait | 27.73 | 0.899 | 0.059 | 0.610 | 0.016 | 165.1 |
 | SkyReels-A1 | 24.91 | 0.859 | 0.162 | 0.716 | 0.016 | 1249.7 |
 | Hunyuan-Portrait | 22.43 | 0.792 | 0.169 | 0.661 | 0.035 | 1925.1 |
 | Wan-Animate | 22.82 | 0.802 | 0.132 | 0.700 | 0.024 | 849.2 |
-| **PerformRecast** | **29.27** | **0.914** | **0.047** | **0.499** | **0.012** | **103.0** |
+| **Ours** | **29.27** | **0.914** | **0.047** | **0.499** | **0.012** | **103.0** |
 
-Under Enhancement mode, PerformRecast similarly leads across all metrics (PSNR 30.27, FVD 90.2).
+In Enhancement mode, PerformRecast remains superior (PSNR 30.27, FVD 90.2).
 
 ### Ablation Study
 
-| Configuration | PSNR↑ | AED↓ | FVD↓ | Notes |
-|---|---|---|---|---|
-| Ours (Full) | 29.27 | 0.499 | 103.0 | Complete model |
-| Ours (KT of LP) | 27.06 | 0.573 | 288.8 | Original LivePortrait keypoint transformation |
-| Ours (w/o FLAME loss) | 24.99 | 0.663 | 188.1 | FLAME loss removed |
-| Ours (w/o T-S) | 27.73 | 0.575 | 136.4 | Teacher-student (BAM) removed |
+| Configuration | PSNR↑ | AED↓ | FVD↓ | Description |
+|------|-------|------|------|------|
+| Ours (Full) | 29.27 | 0.499 | 103.0 | Full model |
+| Ours (KT of LP) | 27.06 | 0.573 | 288.8 | Using LivePortrait's original KT formula |
+| Ours (w/o FLAME loss) | 24.99 | 0.663 | 188.1 | Removing FLAME loss |
+| Ours (w/o T-S) | 27.73 | 0.575 | 136.4 | Removing teacher-student (BAM) |
 
 ### Key Findings
 
-- **The corrected keypoint transformation is the most critical design**: reverting to the original LivePortrait formula drops PSNR from 29.27 to 27.06 and raises FVD from 103.0 to 288.8, confirming that transformation ordering is essential for disentanglement.
-- Explicit FLAME supervision reduces AED from 0.663 to 0.499, demonstrating that explicit 3D keypoint constraints are more effective than implicit learning.
-- BAM primarily improves boundary region quality (FVD from 136.4 to 103.0), with notable gains in non-facial region fidelity.
-- On standard portrait animation benchmarks, PerformRecast also outperforms LivePortrait across both self-driven and cross-identity settings.
+- **Improving keypoint transformation order** is the most critical design: shifting from LP's formula dropped PSNR from 29.27 to 27.06 and increased FVD from 103.0 to 288.8, proving the order is vital for disentanglement.
+- Explicit supervision from the **FLAME loss** reduced AED from 0.663 to 0.499, indicating that defined 3D keypoint constraints are more effective than implicit learning.
+- **BAM** primarily improves boundary quality (FVD dropped from 136.4 to 103.0), significantly enhancing non-facial fidelity.
+- PerformRecast also outperforms LivePortrait on standard portrait animation tasks (e.g., self-driven PSNR 22.88 → higher, cross-ID CSIM higher).
 
 ## Highlights & Insights
 
-- **The keypoint transformation reordering appears minor but has substantial impact** — simply changing $x_c R + \delta$ to $(x_c + \delta) R$ yields a PSNR gain exceeding 2.2 and a near 3× reduction in FVD. This demonstrates that aligning model architecture with the underlying physical model constitutes a powerful inductive bias in warping-based animation.
-- **The region-separated teacher-student supervision** elegantly resolves the conflict between global optimization and local fidelity: the teacher focuses on accurate facial expression, while the student learns facial behavior from the teacher and non-facial behavior from the ground truth. This region-separated supervision paradigm is transferable to any generation task requiring local editing with global consistency.
-- The substantial advantage over diffusion-based methods (FVD reduced by 10×+) suggests that for fine-grained controllable editing tasks, GAN-based warping methods remain the superior choice.
+- **The slight change in keypoint order has a massive impact.** Changing $x_c R + \delta$ to $(x_c + \delta) R$ led to a +2.2 PSNR gain and nearly 3x lower FVD. This suggests that in warping-based animation, aligning the model architecture with the underlying physical model is a powerful inductive bias.
+- **Teacher-Student partitioned supervision** elegantly resolves the conflict between global optimization and local fidelity. The teacher focuses on facial expression accuracy, while the student learns the face from the teacher and the non-face from the ground truth. This approach could be applied to any local editing task requiring global consistency.
+- The significant advantage over diffusion-based methods (FVD 10x+ lower) indicates that for tasks requiring fine-grained controllability, GAN-based warping remains the superior choice.
 
 ## Limitations & Future Work
 
-- Input resolution is fixed at 512×512, which may be insufficient for cinematic high-resolution applications.
-- Facial and non-facial region separation still relies on 2D face segmentation, which may be insufficiently robust under heavy occlusion or extreme head angles.
-- Enhancement mode achieves expression amplification via simple deformation accumulation, lacking fine-grained control over expression intensity.
-- The accuracy of 3D face tracking (Pixel3DMM) imposes an upper-bound constraint — tracking failures introduce erroneous FLAME supervision.
-- Performance under large-angle profile views or extreme lighting conditions has not been evaluated.
+- Input resolution is fixed at 512×512, which may be insufficient for high-definition cinematic applications.
+- The method still relies on 2D face segmentation to define regions, which may lack robustness under heavy occlusion or extreme angles.
+- Enhancement mode uses simple deformation addition, lacking fine-grained control over expression intensity.
+- Accuracy is capped by the performance of the 3D face tracker (Pixel3DMM)—tracking failures result in erroneous supervision.
+- Performance under extreme lighting or profile views has not been fully evaluated.
 
 ## Related Work & Insights
 
-- **vs. LivePortrait**: PerformRecast builds directly on LivePortrait and improves upon it. The key differences are the corrected keypoint transformation ordering and explicit FLAME supervision. LivePortrait requires additional stitching and retargeting modules, which PerformRecast eliminates by virtue of superior disentanglement.
-- **vs. Diffusion-based methods (SkyReels-A1, Hunyuan-Portrait, Wan-Animate)**: Diffusion-based methods perform poorly on expression editing (PSNR 4–7 points lower, FVD 8–19× higher), as their motion representations cannot precisely disentangle expression from pose.
-- **vs. Act-Two (Runway commercial product)**: Act-Two fails to accurately preserve the source video's head pose and loses fine-grained expression detail (PSNR 20.83 vs. 29.27).
+- **vs LivePortrait**: This work is directly built upon and improves LivePortrait. Key differences are the transformation order and explicit FLAME supervision. Unlike LP, PerformRecast does not require additional stitching/retargeting modules due to superior disentanglement.
+- **vs Diffusion-based methods**: Diffusion methods perform poorly on expression editing tasks (PSNR 4-7 points lower, FVD 8-19x higher) because their motion representations cannot accurately decouple expression from pose.
+- **vs Act-Two (Runway)**: Act-Two fails to maintain the source video's head pose accurately and loses fine-grained expression detail (PSNR 20.83 vs Ours 29.27).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The keypoint transformation reordering appears straightforward but carries deep insight; the region-separated BAM supervision is also a meaningful contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Includes a self-constructed MetaHuman benchmark, comparisons against diverse baselines, comprehensive ablation studies, and multi-task evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure with well-articulated motivation; some formula notation could be further streamlined.
-- **Value**: ⭐⭐⭐⭐ — Direct practical value for film and post-production; disentangled expression editing addresses a genuine industry need.
+- Novelty: ⭐⭐⭐⭐ The transformation order insight is simple but profound; BAM's partitioned supervision is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Custom MetaHuman benchmark, multi-method comparisons, thorough ablation, and multi-task evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and motivation, though some mathematical notations could be more concise.
+- Value: ⭐⭐⭐⭐ Direct utility for post-production in film/video; decoupled expression editing is a high-demand feature.
 
 <!-- RELATED:START -->
 
@@ -136,11 +145,11 @@ Under Enhancement mode, PerformRecast similarly leads across all metrics (PSNR 3
 
 ## Related Papers
 
+- [\[CVPR 2026\] THEval: Evaluation Framework for Talking Head Video Generation](theval_evaluation_framework_for_talking_head_video_generation.md)
+- [\[CVPR 2026\] HarmoVid: Relightful Video Portrait Harmonization](harmovid_relightful_video_portrait_harmonization.md)
+- [\[CVPR 2026\] EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head](emodifftalk_emotion-aware_diffusion_for_editable_3d_gaussian_talking_head.md)
+- [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
 - [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
-- [\[CVPR 2026\] PoseGen: In-Context LoRA Finetuning for Pose-Controllable Long Human Video Generation](posegen_in-context_lora_finetuning_for_pose-controllable_long_human_video_genera.md)
-- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
 
 </div>
 

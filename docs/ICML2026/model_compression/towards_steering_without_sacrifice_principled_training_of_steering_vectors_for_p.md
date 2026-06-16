@@ -2,91 +2,82 @@
 title: >-
   [Paper Note] Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions
 description: >-
-  [ICML 2026][Model Compression][Steering Vector] The authors leverage infinite-width neural network scaling theory to derive that joint training of the steering vector’s factor/direction should satisfy the scaling constra…
+  [ICML 2026][Model Compression][Paper Note] The authors derive a scaling constraint for the joint training of steering vector factors and directions, $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, using infinite-width neural network scaling theory, thereby eliminating manual $\alpha$ selection during inference. Simultaneously inspired by ReFT, they implement additi
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Steering Vector"
-  - "Joint Training"
-  - "Scaling Theory"
-  - "Prompt-only Intervention"
-  - "Concept Steering"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: c71ef6c2db8fe2c5
+content_hash: a7aec8e0d5fd08fd
 ---
-
 # Towards Steering without Sacrifice: Principled Training of Steering Vectors for Prompt-only Interventions
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.05983](https://arxiv.org/abs/2605.05983)  
-**Code**: Not provided in the paper (none)  
+**Code**: Not provided in the paper (None)  
 **Area**: LLM Control / Representation Engineering / Model Compression  
-**Keywords**: Steering Vector, Joint Training, Scaling Theory, Prompt-only Intervention, Concept Steering
+**Keywords**: Steering Vectors, Joint Training, Scaling Theory, Prompt-only Intervention, Concept Guidance
 
 ## TL;DR
-The authors leverage infinite-width neural network scaling theory to derive that joint training of the steering vector’s factor/direction should satisfy the scaling constraint $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, thereby eliminating the need for manual selection of $\alpha$ during inference. Inspired by ReFT, they apply additive intervention only to the first 4 prompt tokens (PrOSV). On AxBench, this approach maintains model utility and consistently outperforms full-sequence FSSV across three Gemma2/Qwen2.5 model scales.
+The authors derive a scaling constraint for the joint training of steering vector factors and directions, $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, using infinite-width neural network scaling theory, thereby eliminating manual $\alpha$ selection during inference. Simultaneously inspired by ReFT, they implement additive interventions only on the first 4 prompt tokens (PrOSV). This approach maintains model utility while consistently outperforming full-sequence FSSV across three scales of Gemma2 and Qwen2.5 models on AxBench.
 
 ## Background & Motivation
 
-**Background**: In controlling large model behavior, prompting is flexible but fragile, while fine-tuning is powerful but costly and lacks interpretability. Steering vectors (SV)—adding a fixed vector $\mathbf{v}$ to a certain residual stream layer—have rapidly gained traction as a lightweight intervention. Fine-tuned SVs outperform non-optimized approaches like DiffMean/SAE.
+**Background**: When controlling Large Language Model (LLM) behavior, prompting is flexible but fragile, while fine-tuning is powerful but expensive and uninterpretable. Steering vectors (SV), a lightweight intervention method that adds a fixed vector $\mathbf{v}$ to a residual stream at a certain layer, have risen rapidly. Among these, fine-tuned SVs obtained through optimization perform better than optimization-free schemes like DiffMean or SAE.
 
-**Limitations of Prior Work**: Current fine-tuned SV systems face two engineering bottlenecks. First, treating the steering factor $\alpha$ as an external constant during training necessitates grid search for each new SV at inference, requiring hundreds of intervention responses to find the optimal $\alpha$, making cross-concept scaling laborious. Second, mainstream SVs are "full-sequence SVs" (FSSV), intervening on all tokens during both prompt and decode phases, which significantly degrades model utility—a strong trade-off between steering and utility that cannot be avoided even with careful $\alpha$ selection.
+**Limitations of Prior Work**: Current fine-tuned SV frameworks suffer from two engineering bottlenecks. First, the steering factor $\alpha$ is treated as an external constant during training, necessitating a grid search for each new SV during inference. This requires sampling hundreds of responses to find the optimal $\alpha$, making cross-concept scaling extremely laborious. Second, mainstream SVs are "Full-Sequence SVs" (FSSV), intervening on all tokens during both prompt and decode phases, which significantly damages the model's general capabilities—a trade-off between steering and utility that even a carefully selected $\alpha$ cannot evade.
 
-**Key Challenge**: Treating $\alpha$ as an external constant leads to a disconnect between training and inference, high SV sensitivity, and mandatory post-hoc selection. Direct end-to-end learning of $\alpha$ and direction seems intuitively better but lacks theoretical guidance on learning rates/initialization, often resulting in unstable or divergent joint training. Meanwhile, FSSV’s intervention across the full sequence disrupts attention patterns and downstream accuracy, but restricting intervention to the prompt raises concerns about insufficient steering strength.
+**Key Challenge**: Treating $\alpha$ as an external constant leads to a disconnect between training and inference, high SV sensitivity, and the need for post-hoc selection. Learning $\alpha$ end-to-end alongside the direction seems intuitively superior but lacks theoretical guidance for learning rates and initialization; joint training often exhibits instability or divergence. Meanwhile, FSSV interferes with the entire sequence, disrupting attention patterns and harming downstream accuracy, yet there are concerns that intervening only on the prompt might lack steering strength.
 
-**Goal**: (a) Provide a scaling-theory-based principle for selecting $\eta_{\alpha}, \eta_{\mathbf{v}}, \alpha_0, \mathbf{v}_0$ in SV joint training; (b) Design an SV variant that intervenes only during the prompt phase, minimally affecting decode, yet still achieves concept injection; (c) Validate whether both effectiveness and utility can be improved on the AxBench concept steering benchmark.
+**Goal**: (a) Formulate a principled protocol for SV joint training based on scaling theory for selecting $\eta_{\alpha}, \eta_{\mathbf{v}}, \alpha_0, \mathbf{v}_0$; (b) design an SV variant that intervenes only during the prompt phase with minimal impact on decoding while still achieving concept implantation; (c) verify if these contributions simultaneously improve effectiveness and utility on the AxBench concept steering benchmark.
 
-**Key Insight**: Treat SV training as learning a low-rank single-layer adapter on a frozen pretrained network, borrowing the infinite-width analysis framework from LoRA scaling theory (Hayou 2024 series). Inspired by ReFT—if low-rank prompt-only interventions suffice for task adaptation, they may also suffice for concept-level steering.
+**Key Insight**: SV training is viewed as learning a low-rank single-layer adapter on top of a frozen pre-trained network, utilizing the infinite-width analysis framework from LoRA scaling theory (Hayou 2024 series). Inspired by ReFT—since low-rank prompt-only intervention suffices for task adaptation—it may also be sufficient for concept-level steering.
 
-**Core Idea**: Use scaling laws to eliminate inference-time hyperparameters, convert SV to prompt-only intervention—"joint training + local intervention" together upgrade SV from a heuristic experimental tool to an engineering component with theoretical guarantees.
+**Core Idea**: Scaling laws are used to eliminate inference-time hyperparameters, and SV is modified for prompt-only intervention. By combining "joint training + local intervention," SV is upgraded from a heuristic experimental tool to an engineering component with theoretical guarantees.
 
 ## Method
 
 ### Overall Architecture
-The method consists of two independent improvements, ultimately combined. First, the SV training framework is upgraded: at a fixed residual stream layer $l$, both direction $\mathbf{v}\in\mathbb{R}^n$ and factor $\alpha\in\mathbb{R}$ are learnable parameters, updated via Adam with learning rates $\eta_{\mathbf{v}}, \eta_{\alpha}$; the intervention is additive: $\Phi^{\text{Add}}(\mathbf{h}; \alpha, \mathbf{v}) = \mathbf{h} + \alpha\mathbf{v}$. Second, the intervention position is modified: traditional FSSV adds $\alpha\mathbf{v}$ to all prompt and decode tokens, while PrOSV adds it only to the first $p$ and last $s$ prompt tokens, with intervention set $\mathcal{I} = \{1,\dots,p\}\cup\{m-s+1,\dots,m\}$, described as $p2{+}s2$ etc. Training objectives can be Language modeling (Lang.) or SimPO preference optimization; at inference, the trained $\alpha_T, \mathbf{v}_T$ are used directly, with no further factor selection.
+The authors address two engineering issues of fine-tuned steering vectors (SV): the need for manual factor $\alpha$ selection and the destruction of utility by full-sequence intervention. Two improvements are implemented in parallel: on the training side, the direction $\mathbf{v}\in\mathbb{R}^n$ and the factor $\alpha\in\mathbb{R}$ are learned end-to-end; on the intervention side, only a few prompt tokens are modified. Specifically, an additive intervention $\Phi^{\text{Add}}(\mathbf{h}; \alpha, \mathbf{v}) = \mathbf{h} + \alpha\mathbf{v}$ is applied to the residual stream at a fixed layer $l$, with $\alpha$ and $\mathbf{v}$ updated via Adam with learning rates $\eta_{\alpha}$ and $\eta_{\mathbf{v}}$. Training is constrained to a set of tokens $\mathcal{I} = \{1,\dots,p\}\cup\{m-s+1,\dots,m\}$ (denoted as $p2{+}s2$, etc.), shrinking the intervention set from all tokens in FSSV to only the first $p$ and last $s$ prompt tokens. Training objectives include Language Modeling or SimPO. Once $\alpha_T$ and $\mathbf{v}_T$ are obtained, they are used directly during inference.
 
 ### Key Designs
 
-1. **SV Joint Training Based on Infinite-Width Scaling Theory**:
+**1. Joint Training of SV based on Infinite-Width Scaling Theory: Learning $\alpha$ and $\mathbf{v}$ without Divergence**
 
-    - **Function**: Enables effective updates of both $\alpha$ and $\mathbf{v}$ without destabilizing representations, providing actionable scales for $\eta_{\alpha}, \eta_{\mathbf{v}}, \alpha_0, \mathbf{v}_0$.
-    - **Mechanism**: Let SV feature $\mathbf{z} = \alpha\mathbf{v}$; "stability" requires $\mathbf{z}_t = \Theta(1)$, "efficiency" requires each incremental component $(\Delta\alpha)\mathbf{v}_{t-1}$, $\alpha_{t-1}(\Delta\mathbf{v})$, $(\Delta\alpha)(\Delta\mathbf{v})$ to be $\Theta(1)$. Using the $\gamma$-operator, these constraints are formulated as polynomial inequalities, yielding $\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1)$, with $\gamma[\mathbf{v}_0]\le\gamma[\eta_{\mathbf{v}}]$, $\gamma[\alpha_0]\le\gamma[\eta_{\alpha}]$. In practice, Kaiming initialization is used with $\sigma_{\mathbf{v}}^{2}=\lambda n^{-1}$, $\alpha_0 = \beta n^{1/2}$, and $\eta_{\mathbf{v}}=\Theta(n^{-1/2}), \eta_{\alpha}=\Theta(n^{1/2})$, where $\beta, \lambda$ are tuned once via grid search and reused across concepts.
-    - **Design Motivation**: Traditional SV treats $\alpha$ as an external constant, requiring grid search for each new SV; naive joint training often leads to SV feature explosion or vanishing due to mismatched learning rates. Infinite-width scaling analysis ensures all scales are self-consistent, so "tune once, use forever" in practice.
+Traditional SV treats $\alpha$ as an external constant, requiring a grid search for every new SV. Attempting to learn $\alpha$ and the direction end-to-end often leads to the SV feature exploding or vanishing due to mismatched learning rates. The authors treat this as learning a low-rank single-layer adapter on a frozen network and apply LoRA scaling theory to provide actionable benchmarks. To ensure the SV feature $\mathbf{z} = \alpha\mathbf{v}$ is "stable" ($\mathbf{z}_t = \Theta(1)$) and "efficient" (each incremental component is $\Theta(1)$), they use a $\gamma$-operator to solve polynomial inequality constraints, yielding the core scaling:
 
-2. **Prompt-Only Steering Vector (PrOSV)**:
+$$\eta_{\mathbf{v}}\eta_{\alpha}=\Theta(1),\quad \gamma[\mathbf{v}_0]\le\gamma[\eta_{\mathbf{v}}],\quad \gamma[\alpha_0]\le\gamma[\eta_{\alpha}].$$
 
-    - **Function**: Adds $\alpha\mathbf{v}$ only to the first $p$ and last $s$ prompt tokens, leaving decode untouched; concept injection is achieved via implicit KV cache editing, without ongoing interference during generation.
-    - **Mechanism**: Transfers ReFT’s prompt-only intervention philosophy to steering, combined with the above joint training protocol; typical configurations are $p4{+}s4$ for Gemma2-2B/9B and $p2{+}s2$ for Qwen2.5-32B. Since the number of intervened tokens is constant rather than growing with generation length, compared to FSSV, this saves $37\times$ compute on 8K context in practice.
-    - **Design Motivation**: FSSV, even with optimal $\alpha$, continuously disrupts attention patterns and degrades utility; intervening only at a few prompt positions minimally impacts attention. FSSV cannot simply be "truncated to prompt"—its optimal direction differs from PrOSV and relies on factor selection to function.
+In practice, Kaiming initialization $\sigma_{\mathbf{v}}^{2}=\lambda n^{-1}$ is used alongside $\alpha_0 = \beta n^{1/2}$, with learning rates $\eta_{\mathbf{v}}=\Theta(n^{-1/2})$ and $\eta_{\alpha}=\Theta(n^{1/2})$—meaning the factor requires large initialization and a high learning rate, while the direction requires smaller values. These self-consistent scales allow $\beta$ and $\lambda$ to be tuned once and reused across concepts, achieving a "tune once, use forever" workflow.
 
-3. **Training Objectives and Inference without Post-hoc Factor Selection**:
+**2. Prompt-Only Steering Vector (PrOSV): Modifying Only a Few Prompt Tokens**
 
-    - **Function**: Integrates training objectives and engineering protocols, making "train-and-use" the default workflow, supporting both Lang. and SimPO losses.
-    - **Mechanism**: During training, joint updates are performed as in Algorithm 1; at inference, $\alpha_T$ is used directly, with no grid search. For SimPO preference optimization, GPT-4o-mini is used to generate concept-neutral responses $\mathbf{y}_i$ for each prompt as controls, forming contrastive pairs $\mathcal{D}^{c+} = \{(\mathbf{x}_i, \mathbf{y}_i, \mathbf{y}_i^c)\}$ with concept responses $\mathbf{y}_i^c$.
-    - **Design Motivation**: The strongest prior baseline, RePS, still requires inference-time factor selection, essentially offloading "untrainable" responsibility to inference. This work shows that with the right training protocol, inference requires no further $\alpha$ selection, greatly simplifying engineering.
+Even with a carefully selected $\alpha$, FSSV continually disrupts attention patterns by adding $\alpha\mathbf{v}$ throughout the prompt and decode phases, compromising utility. PrOSV, inspired by ReFT, injects $\alpha\mathbf{v}$ only into the prefix $p$ and suffix $s$ prompt tokens, implicitly editing the KV cache to seed the concept while leaving the decode phase untouched. This minimizes the footprint on attention. This method necessitates the joint training protocol mentioned above (typical configurations include $p4{+}s4$ for Gemma2-2B/9B and $p2{+}s2$ for Qwen2.5-32B). Notably, FSSVs cannot simply be truncated to the prompt; their optimal direction differs from PrOSV and inherently depends on factor selection. Because the intervention token count is constant rather than growing with sequence length, PrOSV is approximately $37\times$ more computationally efficient than FSSV on 8K contexts.
+
+**3. Training Objective and Post-hoc Inference Flow: Ready-to-Use After Training**
+
+The previous SOTA baseline, RePS, attributed the failure to train good SVs to the inference phase, still requiring factor selection. This paper proves that with a proper training protocol, $\alpha_T$ can be used directly without any grid search. Training follows Algorithm 1 for joint updates, supporting both Language Modeling and SimPO losses. Preference optimization like SimPO requires negative samples; the authors use gpt-4o-mini to generate concept-neutral responses $\mathbf{y}_i$ as a baseline for concept responses $\mathbf{y}_i^c$, forming contrastive triplets $\mathcal{D}^{c+} = \{(\mathbf{x}_i, \mathbf{y}_i, \mathbf{y}_i^c)\}$.
 
 ### Loss & Training
-
-Two alternative objectives: (i) Language modeling computes NLL only on $\mathbf{y}_i^c$, simple and stable but usually outperformed by SimPO; (ii) SimPO (Meng 2024) as a preference optimization objective, trains on $(\mathbf{y}_i, \mathbf{y}_i^c)$ pairs. Both objectives use Algorithm 1’s joint training loop: $\mathbf{v}_0 \sim \mathcal{N}(\mathbf{0}, \lambda n^{-1}\mathbf{I}_n)$, $\alpha_0 \leftarrow \beta n^{1/2}$, with each Adam step updating $\mathbf{v}_{t+1} \leftarrow \mathbf{v}_t - \eta_{\mathbf{v}} g^{\mathbf{v}}_t$, $\alpha_{t+1} \leftarrow \alpha_t - \eta_{\alpha} g^{\alpha}_t$. Hyperparameters $\beta \in \{1, 2, 4, 8\}$, $\lambda \in \{1, 8\}$, $\eta_{\alpha}$ are grid-searched across 4 log scales, but tuned only once on 3 dev concepts.
+Two objectives are available: (i) Language Modeling, which calculates NLL only on $\mathbf{y}_i^c$, simple and stable but usually outperformed by SimPO; (ii) SimPO (Meng 2024) as a preference optimization objective. Both are integrated into the Algorithm 1 joint training loop: $\mathbf{v}_0 \sim \mathcal{N}(\mathbf{0}, \lambda n^{-1}\mathbf{I}_n)$, $\alpha_0 \leftarrow \beta n^{1/2}$. After Adam updates, $\mathbf{v}_{t+1} \leftarrow \mathbf{v}_t - \eta_{\mathbf{v}} g^{\mathbf{v}}_t$ and $\alpha_{t+1} \leftarrow \alpha_t - \eta_{\alpha} g^{\alpha}_t$. Hyperparameters $\beta \in \{1, 2, 4, 8\}$, $\lambda \in \{1, 8\}$, and $\eta_{\alpha}$ are scanned once on a dev set of 3 concepts.
 
 ## Key Experimental Results
 
 ### Main Results
-AxBench overall steering score (0–2, higher is better), covering Gemma2-2B-L10, Gemma2-9B-L20, Qwen2.5-32B-L32; compares prompt, LoReFT, DiffMean, SAE, FSSV (Lang./SimPO), and this work.
+Overall steering scores on AxBench (0–2, higher is better) for Gemma2-2B-L10, Gemma2-9B-L20, and Qwen2.5-32B-L32.
 
-| Method | G2B-L10 | G9B-L20 | Q32B-L32 | Note |
+| Method | G2B-L10 | G9B-L20 | Q32B-L32 | Notes |
 |---|---|---|---|---|
-| Prompting | 0.698 | 1.075 | 1.060 | Prompt gain saturates on large models |
-| FSSV (Lang.) | 0.663 | 0.788 | 0.798 | Requires post-hoc factor selection |
-| FSSV + Joint Training | 0.736 | 0.821 | 0.919 | Training improvement only—already surpasses baseline |
-| PrOSV (Lang.) | 0.758 | 0.859 | 1.049 | Intervention set reduced to a few tokens |
-| FSSV (SimPO, RePS) | 0.756 | 0.892 | 0.947 | Previous SOTA |
+| Prompting | 0.698 | 1.075 | 1.060 | Gain saturates on large models |
+| FSSV (Lang.) | 0.663 | 0.788 | 0.798 | Requires post-hoc selection |
+| FSSV + Joint Training | 0.736 | 0.821 | 0.919 | Training improvement alone |
+| PrOSV (Lang.) | 0.758 | 0.859 | 1.049 | Minimal intervention set |
+| FSSV (SimPO, RePS) | 0.756 | 0.892 | 0.947 | Prev. SOTA |
 | **PrOSV (SimPO)** | **0.803** | **0.905** | **1.102** | SOTA across all scales |
 
 ### Ablation Study
-Intervention position and budget (best overall O / concept C scores, 0–2):
+Intervention location and budget (optimal overall O / concept C score, 0–2):
 
-| Intervention Position | G2B O/C | G9B O/C | Q32B O/C |
+| Intervention Location | G2B O/C | G9B O/C | Q32B O/C |
 |---|---|---|---|
 | FSSV (full) | 0.65 / 0.97 | 0.86 / 1.17 | 0.93 / 1.27 |
 | Full prompt | 0.54 / 1.12 | 0.71 / 1.41 | 0.88 / 1.58 |
@@ -95,33 +86,33 @@ Intervention position and budget (best overall O / concept C scores, 0–2):
 | $p1{+}s1$ | 0.67 / 0.79 | 0.91 / 1.12 | 1.10 / 1.24 |
 
 ### Key Findings
-- Steering vectors are extremely sensitive to hyperparameters, but $\beta>1$, $\eta_{\alpha}>\eta_{\mathbf{v}}$ are common features of nearly all optimal solutions—precisely confirming the theory that the factor requires large initialization and learning rate.
-- Full-prompt intervention achieves the highest concept score but the lowest overall score, indicating that "hard concept injection" comes at the expense of utility; moderate prefix+suffix ($p2{+}s2$) offers the best trade-off between intervention strength and generation quality.
-- On tinyGSM8K arithmetic reasoning, PrOSV’s accuracy degradation (18–29%) is much less than FSSV’s (68–90%), indicating that local attention intervention truly preserves utility.
-- Under concept suppression adversarial attacks, FSSV cannot escape the robustness-utility trade-off even when reducing the factor from 100% to 50%, while PrOSV lies on a better Pareto frontier.
-- On Qwen2.5-32B, PrOSV remains robust for contexts up to ~1K tokens, not failing despite intervening on only 4 tokens, suggesting that as model scale increases, "less intervention" can better amplify SV capability.
+- Steering vectors are extremely sensitive to hyperparameters, but $\beta>1$ and $\eta_{\alpha}>\eta_{\mathbf{v}}$ are common features of almost all optimal solutions—validating the theory that the factor needs large initialization and a high learning rate.
+- Full-prompt intervention yields the highest concept score but the lowest overall score, indicating that "forcing concepts" comes at the cost of utility. A moderate prefix+suffix ($p2{+}s2$) is the best trade-off between intervention strength and generation quality.
+- PrOSV's damage to model accuracy on tinyGSM8K arithmetic reasoning (18–29%) is significantly less than that of FSSV (68–90%), showing that local intervention on attention provides genuine utility protection.
+- Under concept suppression adversarial attacks, FSSV cannot escape the strong robustness-utility trade-off even when reducing factors, whereas PrOSV lands on a better Pareto frontier.
+- On Qwen2.5-32B, PrOSV remains robust for long contexts (~1K tokens), indicating that as model scale increases, "less intervention" better amplifies SV capabilities.
 
 ## Highlights & Insights
-- LoRA scaling theory is transferred to SV training at almost "zero cost," immediately addressing the question of "why are my trained SVs so unstable." SV design is an engineering problem solved with representation learning theory, with strong transferability.
-- The intuition that "more intervention is better" is overturned: for concept-level steering, intervening on just a few prompt tokens yields better overall results. This aligns with ReFT’s experience that low-rank interventions suffice for task adaptation, now extended to the concept domain.
-- One-time hyperparameter selection and no inference-time tuning mean SVs can be distributed "train-and-use" like fine-tuned weights—a qualitative leap for open-source and engineering deployment.
+- Migrating LoRA scaling theory to SV training with "zero cost" solves the problem of unstable SV training through rigorous derivation. Designing SV is an engineering problem solved with representation learning theoretical tools.
+- The intuition that "more intervention is better" is challenged: in concept-level steering, shrinking the intervention set to a few prompt tokens yields better overall results. This aligns with ReFT's experience that low-rank intervention suffices for task adaptation and extends it to the concept domain.
+- One-time hyperparameter selection and no inference-time tuning mean SVs can be distributed as "ready-to-use" weights, a qualitative change for open-source ecosystems and engineering deployment.
 
 ## Limitations & Future Work
-- Only fine-tuned SVs are studied; no principled factor recommendations are given for optimization-free SVs like DiffMean. Future work may treat such SVs as pretrained SVs with additional scaling analysis.
-- Intervention positions are limited to simple prefix/suffix templates; more general attention-aware position selection is unexplored—there may be better token subsets.
-- Only Lang. and SimPO training objectives are tried; results show the objective impacts performance even more than the training protocol, leaving ample design space for future work.
-- The "utility vs adversarial robustness" trade-off, though improved in PrOSV over FSSV, is not eliminated, indicating that stricter safety control with SVs requires deeper objective design.
+- Only fine-tuned SVs were studied; no principled factor recommendations are provided for optimization-free SVs like DiffMean. Future work could view these as pre-trained SVs and apply scaling analysis.
+- Intervention locations were limited to simple prefix/suffix templates; more general attention-aware location selection was not explored.
+- Only Lang. and SimPO objectives were tested; the results show the objective's impact is potentially greater than the training protocol itself, leaving significant design space.
+- The utility vs. adversarial robustness trade-off is improved in PrOSV but not eliminated, indicating that strict safety control via SV requires more sophisticated objective designs.
 
 ## Related Work & Insights
-- **vs ReFT (Wu 2024b)**: ReFT is prompt-only fine-tuning for task adaptation; this work transfers its intervention position strategy to concept steering SVs, adding scaling theory.
-- **vs RePS (Wu 2025b)**: Also modifies SV training protocol, but RePS still requires post-hoc factor selection; this work + SimPO advances RePS by 0.01–0.16 overall score across all scales.
-- **vs SAE / DiffMean**: SAE relies on selecting relevant directions from massive features, DiffMean is a simple mean difference; both require post-processing for direction selection or lack effectiveness. PrOSV offers a more engineering-oriented fine-tuned SV route.
+- **vs ReFT (Wu 2024b)**: ReFT is prompt-only fine-tuning for task adaptation. Ours migrates its intervention location strategy to concept steering SV and adds scaling theory.
+- **vs RePS (Wu 2025b)**: Also modifies the SV training protocol, but RePS still requires post-hoc factor selection. Ours + SimPO outperforms RePS by 0.01–0.16 overall score across all scales.
+- **vs SAE / DiffMean**: The former relies on picking relevant directions from massive features; the latter is a simple mean difference. Both either require post-processing to select directions or lack effectiveness. PrOSV provides a more engineered fine-tuned SV route.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Cleanly transfers LoRA scaling theory to SVs + combines with ReFT ideas—a clearly original combination, though not entirely new tools individually.
-- Experimental Thoroughness: ⭐⭐⭐⭐ AxBench Concept500, tinyMMLU/GSM8K, adversarial attacks, long context, and multiple model families (2B/9B/32B) are comprehensively covered.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivation and engineering implementation (Algorithm 1) are seamlessly integrated, with clear pseudocode and scaling parameter correspondence.
-- Value: ⭐⭐⭐⭐ Directly eliminates the biggest engineering burden in SV inference, providing a ready-to-use contribution for teams deploying representation steering.
+- Novelty: ⭐⭐⭐⭐ Cleanly porting LoRA scaling theory to SV and combining it with ReFT ideas is a clear combination innovation, though the individual tools are not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Excellent coverage across AxBench Concept500, tinyMMLU/GSM8K, adversarial attacks, long context, and multiple model families (2B/9B/32B).
+- Writing Quality: ⭐⭐⭐⭐ Theoretical derivation and implementation (Algorithm 1) are coherent, with clear pseudo-code and scaling parameter comparisons.
+- Value: ⭐⭐⭐⭐ Directly eliminates the largest engineering burden of the SV inference phase, a ready-to-use contribution for teams deploying representation steering.
 
 <!-- RELATED:START -->
 
@@ -132,8 +123,8 @@ Intervention position and budget (best overall O / concept C scores, 0–2):
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/model_compression/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
+- [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
 - [\[ICML 2026\] Multi-Adapter Representation Interventions via Energy Calibration](multi-adapter_representation_interventions_via_energy_calibration.md)
-- [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](../../ACL2026/model_compression/why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
 
 </div>
 

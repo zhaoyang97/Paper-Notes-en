@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 description: >-
-  [ACL 2026][Robotics][Vision-and-Language Navigation] This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable env…
+  [ACL 2026][Robotics & Embodied AI][NOT-FOUND] This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It further introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework, where ROAM achieves 6.1 REV-SPL, representing a 4
 tags:
-  - "ACL 2026"
-  - "Robotics"
-  - "Vision-and-Language Navigation"
-  - "False Premise"
-  - "NOT-FOUND"
-  - "Embodied Exploration"
-  - "Feasibility Awareness"
+  - ACL 2026
+  - Robotics & Embodied AI
+  - NOT-FOUND
 date: 2026-05-08
-content_hash: 47ec2af3b52e785c
+content_hash: b71a92e14ffc1716
 ---
-
 # VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 
 **Conference**: ACL 2026  
@@ -25,51 +20,64 @@ content_hash: 47ec2af3b52e785c
 
 ## TL;DR
 
-This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework. ROAM achieves a 6.1 REV-SPL, representing a 45% improvement over supervised baselines.
+This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It further introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework, where ROAM achieves 6.1 REV-SPL, representing a 45% improvement over supervised baselines.
 
 ## Background & Motivation
 
-**Background**: Vision-and-Language Navigation (VLN) studies how embodied agents navigate in 3D environments based on natural language instructions. Existing benchmarks (R2R, REVERIE, etc.) assume instructions are always feasible and the target object exists in the environment.
+**Background**: Vision-and-Language Navigation (VLN) investigates how embodied agents navigate in 3D environments based on natural language instructions. Existing benchmarks (e.g., R2R, REVERIE) assume that instructions are always feasible and that target objects definitely exist within the environment.
 
-**Limitations of Prior Work**: In real-world deployment, human instructions are often incorrect—cognitive science research indicates humans make mistakes in approximately one out of every seven object-location recalls. For example, a user might say "get the plate on the kitchen table," but the plate is actually in the living room. Existing VLN agents cannot handle such situations, either hallucinating similar objects or searching indefinitely.
+**Limitations of Prior Work**: ใน In real-world deployments, human instructions are frequently erroneous—cognitive science research indicates that humans make mistakes in approximately one out of every seven object-location recalls. For instance, a user might say "get the plate on the kitchen table," while the plate is actually in the living room. Existing VLN agents cannot handle such scenarios, leading to either hallucinations of similar objects or infinite searching.
 
-**Key Challenge**: In partially observable 3D environments, the fact that a target does not exist cannot be confirmed from a single viewpoint; it requires sufficient exploration and evidence collection before a NOT-FOUND judgment can be made. However, existing VLN systems lack this evidence-driven verification capability, and simply adding a NOT-FOUND action leads to premature abandonment.
+**Key Challenge**: In partially observable 3D environments, the fact that a target does not exist cannot be confirmed from a single viewpoint. It requires sufficient exploration to gather evidence before reaching a NOT-FOUND conclusion. However, current VLN systems lack this evidence-driven verification capability, and simply adding a NOT-FOUND action often leads to premature abandonment.
 
-**Goal**: (1) Construct the VLN-NF benchmark dataset containing false-premise instructions; (2) design the REV-SPL evaluation metric to jointly assess navigation, exploration, and decision-making; (3) propose the ROAM framework for evidence-driven NOT-FOUND judgment.
+**Goal**: (1) Construct the VLN-NF benchmark dataset containing false-premise instructions; (2) Design the evaluation metric REV-SPL to jointly assess navigation, exploration, and decision-making; (3) Propose the ROAM framework for evidence-driven NOT-FOUND judgment.
 
-**Key Insight**: Decompose the problem into room-level navigation (amenable to supervised learning) and intra-room exploration/verification (driven by LLM/VLM), avoiding issues caused by exploration behavior uncertainty in end-to-end training.
+**Key Insight**: The problem is decomposed into room-level navigation (suitable for supervised learning) and intra-room exploration-verification (driven by LLM/VLM), avoiding the issues caused by exploration uncertainty in end-to-end training.
 
-**Core Idea**: Automatically construct a false-premise dataset through a scalable pipeline of LLM rewriting + VLM verification, and solve the new task with a two-stage hybrid framework (supervised navigation + LLM/VLM exploration/verification).
+**Core Idea**: Automatically construct a false-premise dataset through a scalable pipeline of LLM rewriting and VLM verification, and address the new task using a two-stage hybrid framework (supervised navigation + LLM/VLM exploration-verification).
 
 ## Method
 
 ### Overall Architecture
 
-VLN-NF includes three contributions: (1) Dataset construction pipeline—using LLMs to rewrite feasible instructions into false-premise ones and VLMs to verify the target truly does not exist; (2) REV-SPL evaluation metric—jointly assessing reaching the target room, exploration coverage, and correctness of FOUND/NOT-FOUND decisions; (3) ROAM two-stage method—the first stage uses a supervised model to locate the target room, and the second stage uses LLM/VLM to explore within the room and make a judgment.
+VLN-NF comprises three main contributions: (1) A dataset construction pipeline—using an LLM to rewrite feasible instructions into false-premise ones and a VLM to verify target absence; (2) The REV-SPL metric—jointly evaluating target room arrival, exploration coverage, and FOUND/NOT-FOUND decision accuracy; (3) The ROAM two-stage method—a first stage using a supervised model to localize the target room and a second stage using LLM/VLM for intra-room exploration and judgment. These components form a complete pipeline: first automatically generating false-premise data, then running ROAM for navigation and verification on this data, and finally using REV-SPL to score whether exploration was sufficient and the judgment was correct.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Dataset Construction (Rewrite + Verify)"]
+        direction TB
+        A["Original Feasible Instruction + Target Object o"] --> B["LLM Rewrite: Select substitute o′<br/>Generate semantically fluent but factually incorrect instruction"]
+        B --> C["VLM Verification: Open-vocabulary detection<br/>Confirm o′ does not exist in target room"]
+        C -->|"Detected o′, Resample"| B
+    end
+    C -->|"Not detected, Accept"| D["VLN-NF Benchmark Dataset"]
+    subgraph ROAM["ROAM Two-Stage Hybrid Framework"]
+        direction TB
+        E["Stage 1: DUET Supervised Navigation<br/>Weakly supervised target room localization"] --> F["Stage 2: LLM/VLM Intra-room Exploration<br/>Guided by free-space clearance prior"]
+        F --> G{"FOUND / NOT-FOUND Decision"}
+    end
+    D --> E
+    G --> H["REV-SPL Metric<br/>Jointly measures Navigation, Exploration, Decision"]
+```
 
 ### Key Designs
 
-1.  **Dataset construction pipeline (Rewrite + Verify)**:
+**1. Dataset Construction Pipeline (Rewrite + Verify): Automatically converting feasible VLN instructions into false-premise ones**
 
-    - **Function**: Automatically convert existing feasible VLN instructions into false-premise instructions.
-    - **Mechanism**: Given the original instruction and target object $o$, an LLM Rewriter selects a plausible substitute $o'$ from outside the target room's object list (e.g., "water the plant under the window" → "wipe the sofa under the window"), generating a semantically fluent but factually incorrect new instruction. A VLM Verifier runs open-vocabulary detection on all panoramas of the target room to confirm $o'$ is indeed absent. If detected, it resamples; otherwise, it accepts. Human review of 5% of samples showed an error rate <2%.
-    - **Design Motivation**: Manually labeling exploration behavior is extremely costly and uncertain; an automated pipeline achieves low-cost, high-quality dataset construction.
+Manual annotation of exploration behavior is extremely costly and highly uncertain. Thus, this paper utilizes an automated "LLM Rewrite + VLM Verify" pipeline to generate data at low cost. Given an original instruction and target object $o$, the LLM Rewriter selects a plausible substitute $o'$ from outside the list of objects in the target room (e.g., changing "water the plant under the window" to "wipe the sofa under the window"), generating a semantically fluent but factually incorrect instruction. The VLM Verifier then runs open-vocabulary detection on all panoramas of the target room to confirm that $o'$ indeed does not exist—resampling if detected and accepting only if not. A manual audit of 5% of samples showed an error rate of <2%, proving the process to be both affordable and scalable.
 
-2.  **REV-SPL Evaluation Metric**:
+**2. REV-SPL Evaluation Metric: Jointly measuring navigation efficiency, exploration sufficiency, and decision correctness**
 
-    - **Function**: Jointly evaluate navigation efficiency, exploration sufficiency, and decision correctness.
-    - **Mechanism**: Defines a reference exploration path—when instructions contain landmark clues, the reference path covers visible viewpoints of the original target object (using TSP to solve for the shortest covering path); without landmarks, a greedy coverage strategy traverses the room until covering 85%+ of objects. REV-SPL penalizes premature stopping (insufficient coverage) and incorrect decisions (judging FOUND as NOT-FOUND or vice versa) while rewarding exploration efficiency.
-    - **Design Motivation**: Standard SPL only evaluates shortest path arrival and cannot measure the sufficiency of evidence collection. Simply reusing SPL would encourage degenerate behavior (outputting NOT-FOUND without exploring).
+Standard SPL only considers whether the shortest path to the target is followed and cannot measure whether "evidence collection is sufficient." Direct application of SPL would reward degenerate behavior—outputting NOT-FOUND without exploration could still yield a score. REV-SPL therefore redefines the reference exploration path: if the instruction contains landmark clues, the reference path covers viewpoints where the original target was visible (using TSP for the shortest covering path); without landmarks, a greedy coverage strategy is used to traverse the room until 85%+ of objects are covered. Based on this, REV-SPL penalizes premature stopping (insufficient coverage) and incorrect decisions (misclassifying FOUND as NOT-FOUND or vice versa), while rewarding exploration efficiency, thereby incorporating "sufficiency of exploration" and "correctness of judgment" into a single score.
 
-3.  **ROAM Two-Stage Hybrid Framework**:
+**3. ROAM Two-Stage Hybrid Framework: Evidence-driven judgment via supervised navigation + LLM/VLM exploration**
 
-    - **Function**: Realize evidence-driven exploration and judgment in the VLN-NF task.
-    - **Mechanism**: The first stage uses the DUET supervised model to navigate to the target room (weakly supervised, requiring only room-level labels); the second stage uses an LLM to plan exploration strategies, while a VLM performs open-vocabulary detection, combined with a free-space clearance prior to guide exploration towards uncovered areas. Decides FOUND or NOT-FOUND based on detection results after exploration.
-    - **Design Motivation**: Pure supervised methods suffer from premature termination due to covariate shift in imitation learning; pure LLM methods perform poorly in inter-room navigation in partially observable environments. The hybrid framework leverages the strengths of both.
+Purely supervised methods suffer from early termination due to covariate shift in imitation learning, while pure LLM methods are weak at navigating between rooms in partially observable environments. ROAM allows each to perform its strength. The first stage uses the DUET supervised model to navigate to the target room (weakly supervised, requiring only room-level labels). The second stage hands over to an LLM for planning exploration strategies and a VLM for open-vocabulary detection, combined with a free-space clearance prior to guide exploration towards uncovered areas. Finally, the FOUND or NOT-FOUND decision is made based on detection results. This way, the supervised model handles stable cross-room navigation, while the large models handle flexible intra-room exploration and verification, bypassing the uncertainty of exploration behavior in end-to-end training.
 
 ### Loss & Training
 
-The first-stage DUET model uses standard VLN training (cross-entropy loss + navigation reward); the second-stage LLM/VLM exploration module requires no training, directly utilizing the zero-shot reasoning capabilities of pre-trained models.
+The first-stage DUET model utilizes standard VLN training (cross-entropy loss + navigation reward). The second-stage LLM/VLM exploration module requires no training, directly leveraging the zero-shot reasoning capabilities of pre-trained models.
 
 ## Key Experimental Results
 
@@ -80,49 +88,49 @@ The first-stage DUET model uses standard VLN training (cross-entropy loss + navi
 | DUET + VLN-NF | Supervised | 4.2 |
 | NaviLLM | LLM-based | 1.0 |
 | Gemini 1.5 Pro | LLM-based | 1.5 |
-| ROAM | Mixed | 6.1 |
+| ROAM | Hybrid | 6.1 |
 
-ROAM improves by 45% over the strongest supervised baseline and by 4-6 times over LLM baselines.
+ROAM outperforms the strongest supervised baseline by 45% and the LLM baselines by 4-6 times.
 
 ### Ablation Study
 
-| Configuration | Key Index | Description |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| ROAM Full | REV-SPL 6.1 | Supervised navigation + LLM/VLM exploration |
-| w/o Free-space Prior | REV-SPL decreased | Exploration coverage dropped |
-| DUET directly with NF | REV-SPL 4.2 | Prematurely outputted NOT-FOUND |
+| Full ROAM | 6.1 REV-SPL | Supervised Nav + LLM/VLM Exploration |
+| w/o Free-space Prior | Lower REV-SPL | Decreased exploration coverage |
+| DUET + Direct NF | 4.2 REV-SPL | Premature NOT-FOUND output |
 
 ### Key Findings
 
-- **Existing VLN agents cannot handle false premises**: All baselines have very low REV-SPL on VLN-NF, primarily because they make judgments without sufficient exploration.
-- **Premature abandonment is the core problem**: Simply adding a NOT-FOUND action to supervised VLN models actually causes them to learn to "give up early," as covariate shift in imitation learning is particularly severe in exploration tasks.
-- **LLMs are good at intra-room planning but poor at inter-room navigation**: Pure LLM methods (NaviLLM, Gemini) perform poorly without step-level navigation guidance, but ROAM achieves good results by using LLMs for intra-room exploration planning.
-- **High dataset quality**: The LLM rewrite + VLM verification pipeline has a human audit error rate of <2%, with low construction costs and high scalability.
+- **Existing VLN agents cannot handle false premises**: All baselines achieved very low REV-SPL on VLN-NF, primarily because decisions were made without sufficient exploration.
+- **Premature abandonment is the core problem**: Simply adding a NOT-FOUND action to supervised VLN led the model to learn to "give up early," as covariate shift in imitation learning is particularly severe for exploration tasks.
+- **LLMs excel at intra-room planning but fail at inter-room navigation**: Pure LLM methods (NaviLLM, Gemini) performed poorly without step-level navigation guidance, but ROAM successfully utilized LLMs for intra-room exploration planning.
+- **High dataset quality**: The LLM Rewrite + VLM Verify pipeline achieved a manual audit error rate of <2%, making it cost-effective and scalable.
 
 ## Highlights & Insights
 
-- **Fills the gap in VLN reliability**: Systematically studies false-premise navigation in 3D partially observable environments for the first time, filling an important gap in the VLN community regarding instruction unreliability.
-- **Ingenious REV-SPL metric design**: Extends from SPL to evidence-driven verification scenarios; the dual-mode design of reference exploration paths (landmark-guided vs. coverage scan) balances the evaluation needs of different scenarios well.
-- **Transferable two-stage decomposition strategy**: The idea of decoupling navigation and verification can be transferred to other embodied tasks requiring decision-making under uncertainty.
+- **Filling the VLN reliability gap**: This is the first systematic study of false-premise navigation in 3D partially observable environments, addressing a significant gap in the VLN community regarding instruction unreliability.
+- **Ingenious REV-SPL design**: Extending SPL to evidence-driven verification scenarios, the dual-mode design for reference exploration paths (landmark-guided vs. coverage scanning) well balances evaluation needs across different scenarios.
+- **Transferable two-stage decomposition**: The approach of decoupling navigation and verification can be transferred to other embodied tasks requiring decision-making under uncertainty.
 
 ## Limitations & Future Work
 
-- Currently only focuses on object-level false premises (object non-existence), excluding broader unreliable instruction types like attribute errors or ambiguous instructions.
-- Terminates immediately after judging NOT-FOUND, lacking recovery strategies (e.g., requesting clarification, trying alternative paths).
-- Absolute REV-SPL values remain low (max 6.1), indicating the task is still very challenging with significant room for improvement.
-- Only built on top of REVERIE, without extending to other VLN benchmarks like R2R.
+- It currently focuses only on target-level false premises (object non-existence) and does not cover broader types of unreliable instructions like attribute errors or ambiguous instructions.
+- Termination occurs immediately after a NOT-FOUND judgment, lacking recovery strategies (e.g., requesting clarification or trying alternative paths).
+- The absolute REV-SPL values remain low (max 6.1), indicating that the task itself is highly challenging and offers significant room for improvement.
+- The work is constructed only on REVERIE and has not been extended to other VLN benchmarks like R2R.
 
 ## Related Work & Insights
 
-- **vs MoTIF**: MoTIF studies infeasible instructions in 2D mobile apps, but agents have full observability of the screen. VLN-NF is more difficult as it requires confirming target absence through autonomous exploration in 3D partially observable environments.
-- **vs R2R-UNO**: R2R-UNO studies instruction-environment mismatches caused by physical obstacles, focusing on changes in navigability. VLN-NF focuses on semantic-level false premises, where the target itself does not exist.
+- **vs MoTIF**: MoTIF studies infeasible instructions in 2D mobile apps, but agents have full observability of the screen. VLN-NF is more difficult as it requires autonomous exploration in 3D partially observable environments to confirm target absence.
+- **vs R2R-UNO**: R2R-UNO investigates instruction-environment mismatches caused by physical obstacles, focusing on navigability changes. VLN-NF focuses on semantic-level false premises where the target itself does not exist.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First false-premise benchmark for 3D partially observable VLN; problem definition is novel and practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison with various baselines, though low absolute performance limits the depth of analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous logic in method and evaluation design.
-- Value: ⭐⭐⭐⭐ Opens a new direction for VLN reliability research.
+- Novelty: ⭐⭐⭐⭐⭐ The first 3D partially observable VLN false-premise benchmark; problem definition is novel and practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comparisons with multiple baselines are thorough, though absolute performance limits the depth of analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ The motivation is clear, and the design of the method and evaluation is logically rigorous.
+- Value: ⭐⭐⭐⭐ Opens a new direction for research into the reliability of VLN.
 
 <!-- RELATED:START -->
 
@@ -130,10 +138,10 @@ ROAM improves by 45% over the strongest supervised baseline and by 4-6 times ove
 
 ## Related Papers
 
+- [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](../../CVPR2026/robotics/ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](../../CVPR2026/robotics/towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
-- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
 - [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
-- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](../../CVPR2026/robotics/decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
 
 </div>

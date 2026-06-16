@@ -2,98 +2,123 @@
 title: >-
   [Paper Note] Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 description: >-
-  [CVPR 2026][Human Understanding][Virtual Try-On] The first fully offline, on-device diffusion-based virtual try-on framework. Built upon a TeacherNet-GarmentNet-TryonNet (TGT) architecture…
+  [CVPR 2026][Human Understanding][Knowledge Distillation] The first fully offline mobile-side diffusion-based virtual try-on framework, based on the TeacherNet-GarmentNet-TryonNet (TGT) architecture. Through Feature-Guided Adversarial Distillation (FGA), the capabilities of SD3.5 Large are transferred to a lightweight student network with 415M parameters. It matches or even e
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Virtual Try-On"
-  - "Mobile Deployment"
-  - "Knowledge Distillation"
-  - "Diffusion Models"
-  - "Privacy Preservation"
+  - CVPR 2026
+  - Human Understanding
+  - Knowledge Distillation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 65fe52499a51afa0
+content_hash: 5ffce3cb509b4189
 ---
-
 # Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 
-**Conference**: CVPR 2026
-**arXiv**: [2603.00947]([https://arxiv.org/abs/2603.00947](https://arxiv.org/abs/2603.00947))  
+**Conference**: CVPR 2026  
+**arXiv**: [2603.00947](https://arxiv.org/abs/2603.00947)  
 **Code**: Available ([https://zhenchenwan.github.io/Mobile-VTON/](https://zhenchenwan.github.io/Mobile-VTON/))  
-**Area**: Human Understanding
-**Keywords**: Virtual Try-On, Mobile Deployment, Knowledge Distillation, Diffusion Models, Privacy Preservation
+**Area**: Human Understanding  
+**Keywords**: Virtual Try-On, Mobile Deployment, Knowledge Distillation, Diffusion Models, Privacy Protection  
 
 ## TL;DR
-The first fully offline, on-device diffusion-based virtual try-on framework. Built upon a TeacherNet-GarmentNet-TryonNet (TGT) architecture, it transfers the capabilities of SD3.5 Large to a 415M-parameter lightweight student network via Feature-Guided Adversarial (FGA) distillation. The method matches or surpasses server-side baselines at 1024×768 resolution on VITON-HD and DressCode, with an end-to-end inference time of approximately 80 seconds on a Xiaomi 17 Pro Max.
+The first fully offline mobile-side diffusion-based virtual try-on framework, based on the TeacherNet-GarmentNet-TryonNet (TGT) architecture. Through Feature-Guided Adversarial Distillation (FGA), the capabilities of SD3.5 Large are transferred to a lightweight student network with 415M parameters. It matches or even exceeds server-side baselines on VITON-HD and DressCode at 1024×768 resolution, with an end-to-end inference time of approximately 80 seconds (Xiaomi 17 Pro Max).
 
 ## Background & Motivation
-Virtual try-on (VTON) is highly practical for fashion e-commerce, yet existing high-quality methods almost universally rely on cloud-side GPUs: users must upload personal photos to remote servers for inference, incurring latency and energy overhead while posing serious privacy risks—particularly under stringent data protection regulations. Deploying diffusion-based VTON on mobile devices presents three core challenges: (1) large model parameter counts, memory footprints, and latency far exceed the capacity of mobile NPUs/GPUs; (2) garment representations undergo semantic drift across diffusion timesteps, leading to texture distortion and detail loss; (3) existing methods depend heavily on large-scale pretraining (e.g., ImageNet or large-scale text-to-image), and lightweight architectures cannot directly acquire sufficient generative capability from task-specific data alone.
+Virtual Try-On (VTON) technology is highly practical in the fashion e-commerce field. However, existing high-quality methods almost entirely rely on cloud-side GPUs: users must upload personal photos to servers for inference, which not only causes latency and energy issues but also poses significant privacy risks (especially under strict data protection regulations). Deploying diffusion-based VTON to mobile devices faces three major challenges: (1) massive parameter counts, memory usage, and latency that far exceed mobile NPU/GPU capabilities; (2) semantic drift of garment representations across diffusion timesteps, leading to texture distortion and detail loss; (3) heavy reliance of existing methods on large-scale pre-training (e.g., ImageNet or large-scale text-to-image), whereas lightweight architectures cannot directly learn sufficient generation capabilities from task-specific data.
 
 ## Core Problem
-How can high-fidelity virtual try-on be achieved on a commodity smartphone—without uploading user data, using only a person image and a garment image as input? The central tension is that the model must be small enough to run on mobile hardware while achieving generation quality comparable to server-side methods with 5–17× more parameters.
+How to achieve high-fidelity virtual try-on on a standard smartphone using only a portrait and a garment image as input, without uploading user data? The Key Challenge is the core contradiction: the model must be small enough to run on-device, while its generation quality must rival server-side methods that possess 5-17 times more parameters.
 
 ## Method
 
 ### Overall Architecture
-Mobile-VTON adopts a modular TGT architecture: TeacherNet (frozen SD 3.5 Large, serving as the knowledge source) + GarmentNet (lightweight student for extracting consistent garment features) + TryonNet (lightweight student for fusing human body and garment information to synthesize try-on images). A Light-Adapter replaces the large CLIP visual encoder with DINOv2-base, injecting garment semantics via an IP-Adapter mechanism. The entire system is trained directly on task data without reliance on external pretraining.
+
+Mobile-VTON addresses whether a diffusion-based try-on model with over 2B parameters, originally designed for the cloud, can be compressed into a smartphone without quality degradation. The solution is a modular TGT architecture—a frozen TeacherNet (SD 3.5 Large) acting as the knowledge source, and two lightweight student networks, GarmentNet and TryonNet, responsible for "extracting consistent garment features" and "fusing the human body with the garment into a try-on image," respectively. With only a portrait and a garment image as input, GarmentNet first encodes the garment into features that are stable across timesteps, which are then fed into TryonNet for iterative denoising to generate 1024×768 try-on results. Garment visual semantics are injected via a Light-Adapter that replaces CLIP with DINOv2-base. The entire system is trained directly from task data without relying on external large-scale pre-training, relying instead on TeacherNet's FGA distillation to compensate for capacity.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Portrait + Garment Image"] --> G["TCG GarmentNet<br/>Cross-timestep Reconstruction Constraint → Stable Garment Features"]
+    A --> LA["Light-Adapter<br/>DINOv2 replaces CLIP, Extracts Garment Visual K-V"]
+    G --> T["Garment-Aware TryonNet<br/>Latent Concatenation (LC) + Multi-scale Feature Fusion, Iterative Denoising"]
+    LA --> T
+    T --> O["Output: 1024×768 Try-on Image"]
+    TE["TeacherNet (SD 3.5 Large, Frozen)"] -->|"FGA Distillation: Score Alignment + Adversarial"| G
+    TE -->|"FGA Distillation"| T
+```
 
 ### Key Designs
-1. **FGA Distillation (Feature-Guided Adversarial Distillation)**: The student network is trained with two complementary objectives. (i) Feature-level distillation: the score functions of TeacherNet and the student network are aligned at each diffusion timestep via $\mathcal{L}_\text{feature} = \mathbb{E}_t[\|s_\text{true} - s_\text{fake}\|^2]$, employing DMD2-style score matching rather than pixel-wise regression, enabling the student to learn the distributional behavior of the teacher. (ii) Adversarial augmentation: a lightweight discriminator $D$ is introduced to distinguish real images from TryonNet-generated images, enhancing realism and detail sharpness through a standard GAN loss $\mathcal{L}_\text{GAN}$.
-2. **TCG (Trajectory-Consistent GarmentNet)**: Addresses semantic drift of garment features across diffusion timesteps. A reconstruction constraint is directly applied to GarmentNet at each timestep $t$: $\mathcal{L}_\text{cons} = \mathbb{E}_t[\|\hat{X}_g(t) - X_g\|^2]$, requiring the network to consistently reconstruct the original garment image throughout the diffusion trajectory. This temporal regularization stabilizes garment colors, textures, and logos across timesteps.
-3. **Garment-Aware TryonNet**: (i) Latent Concatenation (LC): the person image and garment image are concatenated along the height dimension before encoding into latent space, with a reference conditional input (concatenated encoding of the target person and garment) that enables TryonNet to learn garment–body alignment without pretraining. (ii) Feature fusion: multi-scale features from corresponding GarmentNet layers are concatenated into each self-attention layer of TryonNet; cross-attention simultaneously receives textual tokens and visual K-V pairs from the Light-Adapter, enabling multi-level garment semantic injection.
-4. **Light-Adapter**: Replaces the large CLIP visual encoder with DINOv2-base, projecting garment image features into K and V tensors and injecting them into TryonNet via decoupled cross-attention, balancing semantic richness with mobile-side efficiency.
+
+**1. FGA Distillation: Allowing a 415M Student to Catch Up with a 2B+ Teacher**
+
+The greatest difficulty for lightweight students is insufficient capacity; training from scratch often fails to converge (removing distillation causes FID to jump from 10.2 to 113.6 in ablations, a total collapse). Feature-Guided Adversarial Distillation (FGA) transfers teacher capabilities using two complementary objectives: first, feature-level distillation aligns the score functions of the TeacherNet and student at each diffusion timestep, $\mathcal{L}_{feature} = \mathbb{E}_t[\|s_{true} - s_{fake}\|^2]$. This follows a DMD2-style score matching rather than pixel-wise regression, allowing the student to learn the teacher's distribution behavior rather than specific image pixels. Second, adversarial enhancement adds a lightweight discriminator $D$ to distinguish real images from TryonNet-generated images, using a standard GAN loss $\mathcal{L}_{GAN}$ to push realism and detail clarity. Distribution alignment ensures "resemblance," while adversarial loss ensures "clarity"; together, they allow the small model to approach teacher-level quality.
+
+**2. TCG: Suppressing Garment Semantic Drift with Cross-Timestep Reconstruction Constraints**
+
+Diffusion models' understanding of the same garment shifts across different timesteps, causing colors, textures, and logos to distort during denoising. The Trajectory-Consistent GarmentNet (TCG) approach is straightforward: at each timestep $t$, it requires GarmentNet to be able to reconstruct the original garment image, $\mathcal{L}_{cons} = \mathbb{E}_t[\|\hat{X}_g(t) - X_g\|^2]$. This temporal regularization pins garment features along the entire diffusion trajectory to maintain consistency. This simple yet effective structure reduced LPIPS from 0.119 to 0.111 in ablations, making logos and stripes noticeably clearer and color localization more accurate.
+
+**3. Garment-Aware TryonNet: Learning Garment-Body Alignment Without Pre-training**
+
+Without large-scale pre-training as a foundation, it is difficult for TryonNet to learn how garments should fit the body from scratch. This is compensated for by two methods: first, Latent Concatenation (LC) encodes the portrait and garment image together into the latent space after concatenating them along the height dimension, while also introducing "target portrait + garment" as additional reference condition inputs to provide the model with explicit geometric and appearance cues (LC further reduced LPIPS from 0.111 to 0.088 on top of TCG). Second, multi-scale feature fusion concatenates features from corresponding layers of GarmentNet into each self-attention layer of TryonNet, while cross-attention consumes both text and visual K-V from the Light-Adapter, injecting garment semantics at multiple levels.
+
+**4. Light-Adapter: Swapping CLIP for DINOv2 for Efficiency**
+
+Large CLIP visual encoders are too heavy for mobile devices. Light-Adapter replaces them with DINOv2-base, projecting garment image features into K and V tensors, which are injected into TryonNet via decoupled cross-attention. This represents a trade-off between efficiency and quality: DINOv2 provides sufficiently rich semantics while the encoder is lighter, fitting the computational budget of smartphones.
 
 ### Loss & Training
-- GarmentNet total loss: $\mathcal{L}_\text{GarmentNet} = \lambda_1 \cdot \mathcal{L}_\text{featureG} + \lambda_2 \cdot \mathcal{L}_\text{cons}$
-- TryonNet total loss: $\mathcal{L}_\text{TryonNet} = \mathcal{L}_\text{Diff} + \lambda_1 \cdot \mathcal{L}_\text{featureT} + \lambda_3 \cdot \mathcal{L}_\text{GAN}$ (where $\mathcal{L}_\text{Diff}$ is a garment-aware reconstruction loss)
-- Hyperparameters: $\lambda_1 = 1\text{e-}2$, $\lambda_2 = 0.5$, $\lambda_3 = 5\text{e-}3$
-- Two-stage training: Stage 1 trains for 140 epochs on a combined DressCode + VITON-HD dataset (lr = 1e-4); Stage 2 fine-tunes for 100 epochs on DressCode (lr = 5e-5)
-- Hardware: 8× A100 80GB, batch size = 256, AdamW optimizer
+- GarmentNet Total Loss: $\mathcal{L}_{GarmentNet} = \lambda_1 \cdot \mathcal{L}_{featureG} + \lambda_2 \cdot \mathcal{L}_{cons}$
+- TryonNet Total Loss: $\mathcal{L}_{TryonNet} = \mathcal{L}_{Diff} + \lambda_1 \cdot \mathcal{L}_{featureT} + \lambda_3 \cdot \mathcal{L}_{GAN}$ (where $\mathcal{L}_{Diff}$ is the garment-aware reconstruction loss)
+- Hyperparameters: $\lambda_1=1e-2, \lambda_2=0.5, \lambda_3=5e-3$
+- Two-stage Training: Stage 1 trains on a merged DressCode+VITON-HD set for 140 epochs (lr=1e-4); Stage 2 fine-tunes on DressCode for 100 epochs (lr=5e-5).
+- Hardware: 8×A100 80GB, batch size=256, AdamW optimizer.
 
 ## Key Experimental Results
 
-| Dataset | Metric | Ours (Mobile-VTON) | Prev. SOTA | Notes |
+| Dataset | Metric | Ours (Mobile-VTON) | Prev. SOTA | Comparison Notes |
 |--------|------|------|----------|------|
-| VITON-HD | LPIPS↓ | 0.088 | 0.102 (IDM-VTON) | Surpasses best server-side method (mask-based) |
+| VITON-HD | LPIPS↓ | 0.088 | 0.102 (IDM-VTON) | Surpasses best server-side (mask-based) |
 | VITON-HD | SSIM↑ | 0.893 | 0.890 (SD-VITON) | Best |
-| DressCode | LPIPS↓ | 0.053 | 0.0513 (BooW-VTON) | Near best |
+| DressCode | LPIPS↓ | 0.053 | 0.0513 (BooW-VTON) | Near optimal |
 | DressCode | SSIM↑ | 0.935 | 0.928 (BooW-VTON) | Best |
 | VITON-HD In-Wild | LPIPS↓ | 0.133 | 0.137 (IDM-VTON) | Best |
-| Memory | GPU Memory | 2.84 GB | 5.80–18.47 GB | 51%–85% reduction |
-| Deployment | Mobile | ✓ (Xiaomi 17 Pro Max, ~80s) | All ✗ | Only method deployable on mobile |
+| Memory Usage | GPU Memory | 2.84 GB | 5.80-18.47 GB | 51%-85% reduction |
+| Deployment | Mobile | ✓ (Xiaomi 17 Pro Max, ~80s) | All ✗ | Only method runnable on mobile |
 
 ### Ablation Study
-- **Contribution of TCG**: Adding TCG reduces LPIPS from 0.119 to 0.111, improves SSIM from 0.874 to 0.879, and CLIP-I from 0.798 to 0.805. Visually, logos and stripes become sharper and color localization more accurate.
-- **Contribution of LC**: Building on TCG, adding LC further reduces LPIPS from 0.111 to 0.088, raises SSIM to 0.893, and CLIP-I to 0.833. LC provides explicit garment geometry and appearance cues, compensating for the absence of pretraining.
-- **Criticality of distillation**: Removing distillation causes FID to surge from 10.2 to 113.6—a complete collapse—demonstrating that lightweight models trained from scratch without teacher guidance entirely fail to converge.
-- **Effect of dataset quality**: Fine-tuning on DressCode outperforms fine-tuning on VITON-HD, indicating that lightweight models are more sensitive to data quality; DressCode offers more uniform resolution and clearer visual content.
+- **TCG Contribution**: Adding TCG reduced LPIPS from 0.119 to 0.111, increased SSIM from 0.874 to 0.879, and increased CLIP-I from 0.798 to 0.805. Visually, logos and stripes are clearer, and color localization is more accurate.
+- **LC Contribution**: Adding LC on top of TCG further reduced LPIPS from 0.111 to 0.088, increased SSIM to 0.893, and increased CLIP-I to 0.833. LC provides explicit garment geometry and appearance cues, compensating for the lack of pre-training.
+- **Criticality of Distillation**: Removing distillation caused FID to skyrocket from 10.2 to 113.6, resulting in total collapse—demonstrating that lightweight models cannot converge training from scratch without teacher guidance.
+- **Impact of Dataset Quality**: Fine-tuning on DressCode outperformed VITON-HD (lightweight models are more sensitive to data quality; DressCode has more uniform resolution and clearer visuals).
 
 ## Highlights & Insights
-- The most significant technical contribution is FGA distillation: the combination of score-based distillation and GAN training enables a 415M-parameter student network to achieve generation quality comparable to a 2B+ parameter teacher.
-- TCG is remarkably simple yet effective—merely a cross-timestep reconstruction consistency constraint—yet it directly resolves the core problem of garment semantic drift in diffusion models.
-- The entire system is trained directly from task data without large-scale pretraining, offering a valuable reference for resource-constrained deployment scenarios.
-- The choice of DINOv2-base over CLIP as the visual encoder deserves attention—it represents a favorable efficiency–quality trade-off for mobile deployment.
-- The complete pipeline is validated on a real smartphone with reported inference times (80s), constituting a practical rather than theoretical deployment demonstration.
+- The technical peak is FGA distillation: the combination of score-based distillation + GAN allows a 415M parameter student network to achieve generation quality comparable to a 2B+ parameter teacher.
+- The TCG design is extremely simple and efficient—just a cross-timestep reconstruction consistency constraint, yet it effectively solves the core problem of garment semantic drift in diffusion models.
+- The entire system is trained directly from task data without relying on large-scale pre-training, providing a valuable reference for resource-constrained scenarios.
+- The choice of DINOv2-base over CLIP for the visual encoder is noteworthy—it represents a superior efficiency-quality trade-off for mobile scenarios.
+- The complete pipeline was executed on an actual smartphone with recorded inference times (80s), proving its practical feasibility.
 
 ## Limitations & Future Work
-- An end-to-end inference time of 80 seconds remains too long for a smooth user experience; no step-count reduction, pruning, or system-level acceleration has been applied.
-- The method struggles to accurately reproduce text-bearing garments (logos, brand names, slogans) due to the lack of text-aware pretraining and limited text-garment examples in training data.
-- Only upper-body try-on is supported; full-body, dress, and other garment categories are not covered.
-- As a mask-free method that must synthesize the entire image (including background and body), the approach is inherently disadvantaged compared to mask-based methods on FID/KID metrics.
-- INT8 quantization is executed on Android NPUs, but quantization-induced accuracy degradation is not quantitatively reported.
+- The 80-second end-to-end inference time remains long for the user experience; techniques like step reduction, pruning, or system-level acceleration were not used.
+- Inaccurate generation of garments with text (logos, brand names, slogans) due to a lack of text-aware pre-training and limited text-heavy samples in the training data.
+- Only supports upper-body try-ons; not yet extended to full-body or categories like dresses.
+- As a mask-free method, it must synthesize the entire image (including background and body), which naturally makes FID/KID comparisons less favorable compared to mask-based methods.
+- INT8 quantization was performed on Android NPU, but specific precision loss data due to quantization was not reported.
 
 ## Related Work & Insights
-- **vs. IDM-VTON (18.47 GB)**: IDM-VTON is the strongest server-side mask-based baseline, achieving CLIP-I of 0.875 on VITON-HD. Mobile-VTON surpasses it on LPIPS and SSIM, with slightly lower CLIP-I (0.833 vs. 0.875), while requiring only 2.84 GB memory and supporting mobile deployment—the two methods operate in fundamentally different regimes.
-- **vs. CatVTON**: Both are mask-free methods employing latent concatenation. Mobile-VTON comprehensively outperforms CatVTON on LPIPS/SSIM (0.088 vs. 0.161; 0.893 vs. 0.872), demonstrating that the TGT architecture combined with FGA distillation is substantially superior to naively applying CatVTON's concatenation strategy.
-- **vs. BooW-VTON**: BooW-VTON is the strongest server-side mask-free baseline, leading on FID/KID. Mobile-VTON surpasses it on SSIM on DressCode (0.935 vs. 0.928) and achieves comparable LPIPS (0.053 vs. 0.051), while requiring only 2.84 GB vs. 18.47 GB memory.
+- **vs IDM-VTON (18.47GB)**: IDM-VTON is the strongest server-side mask-based baseline, reaching 0.875 CLIP-I on VITON-HD. Mobile-VTON surpasses it in LPIPS and SSIM. While CLIP-I is lower (0.833 vs 0.875), it only requires 2.84GB memory and runs on-device—essentially a different class of method.
+- **vs CatVTON**: Both are mask-free and use latent concatenation. Mobile-VTON comprehensively outperforms CatVTON in LPIPS/SSIM (0.088 vs 0.161, 0.893 vs 0.872), showing that the TGT architecture + FGA distillation combination is far superior to simple concatenation.
+- **vs BooW-VTON**: BooW-VTON is the leading mask-free server baseline for FID/KID. Mobile-VTON surpasses its SSIM on DressCode (0.935 vs 0.928) and matches LPIPS closely (0.053 vs 0.051), but with 2.84GB vs 18.47GB memory usage.
 
-The FGA distillation strategy (score-based + adversarial) is transferable to other diffusion model tasks requiring edge deployment. The temporal consistency constraint in TCG can be adapted to video generation, 3D-consistent generation, and other temporal or multi-view tasks. The finding that data quality matters more for lightweight models than for large models warrants verification in other distillation research. Related idea: `20260316_convnet_dit_hybrid_distill.md` (diffusion model distillation).
+## Related Papers
+- FGA distillation strategies (score-based + adversarial) are transferable to other diffusion tasks requiring edge deployment.
+- The TCG temporal consistency idea can be applied to video generation, 3D consistent generation, and other multi-view tasks.
+- The finding that "data quality is more important for lightweight models than for large models" warrants verification in other distillation research.
+- Related idea: `20260316_convnet_dit_hybrid_distill.md` (Diffusion model distillation).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ [The TGT architecture and FGA distillation strategy constitute systematic innovation; being the first mobile-deployable diffusion VTON carries practical engineering value]
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ [Three datasets, multiple baselines, detailed ablations, real-device deployment, and dataset quality analysis—comprehensive coverage]
-- Writing Quality: ⭐⭐⭐⭐ [Clear structure, rich figures and tables, thorough method description]
-- Value: ⭐⭐⭐⭐ [On-device deployment of diffusion models is an important engineering direction; the FGA distillation strategy demonstrates good generalizability]
+- Novelty: ⭐⭐⭐⭐ [TGT architecture and FGA distillation strategies are systematically innovative; first mobile diffusion VTON has high practical value]
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ [Three datasets, multiple baselines, detailed ablations, real mobile deployment, and data quality analysis—very comprehensive]
+- Writing Quality: ⭐⭐⭐⭐ [Clear structure, rich diagrams, and detailed method descriptions]
+- Value: ⭐⭐⭐⭐ [Mobile deployment of diffusion models is a critical engineering direction; FGA distillation is highly versatile]
 
 <!-- RELATED:START -->
 
@@ -102,10 +127,10 @@ The FGA distillation strategy (score-based + adversarial) is transferable to oth
 ## Related Papers
 
 - [\[CVPR 2026\] RefTon: Reference Person Shot Assist Virtual Try-on](refton_reference_person_shot_assist_virtual_try-on.md)
+- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
 - [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
 - [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
-- [\[ICLR 2026\] Inverse Virtual Try-On: Generating Multi-Category Product-Style Images from Clothed Individuals](../../ICLR2026/human_understanding/inverse_virtual_try-on_generating_multi-category_product-style_images_from_cloth.md)
-- [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
 
 </div>
 

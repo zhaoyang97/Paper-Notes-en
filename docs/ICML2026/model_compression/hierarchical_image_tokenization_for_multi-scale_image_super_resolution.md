@@ -2,74 +2,73 @@
 title: >-
   [Paper Note] Hierarchical Image Tokenization for Multi-Scale Image Super Resolution
 description: >-
-  [ICML 2026][Model Compression][VAR] H-VAR re-slices the "residual quantization for multi-scale generation" VAR paradigm into hierarchical image tokenization (HIT)…
+  [ICML 2026][Model Compression][VAR] H-VAR reslices the VAR paradigm of "residual quantization for multi-scale generation" into Hierarchical Image Tokenization (HIT). This allows a small 310M model to output meaningful intermediate resolutions (128 / 256 / 512) in a single forward pass. Combined with a DPO regularization term that biases output toward HR
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "VAR"
-  - "Residual Quantization"
-  - "Multi-Scale Super-Resolution"
-  - "Hierarchical Tokenization"
-  - "DPO Regularization"
+  - ICML 2026
+  - Model Compression
+  - VAR
 date: 2026-05-08
-content_hash: 307e8d11b22f9cf7
+content_hash: 684097432678e1e8
 ---
-
 # Hierarchical Image Tokenization for Multi-Scale Image Super Resolution
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.14891](https://arxiv.org/abs/2605.14891)  
 **Code**: None  
 **Area**: Model Compression / Image Super-Resolution / Visual Autoregression  
-**Keywords**: VAR, Residual Quantization, Multi-Scale Super-Resolution, Hierarchical Tokenization, DPO Regularization
+**Keywords**: VAR, Residual Quantization, Multi-scale Super-Resolution, Hierarchical Tokenization, DPO Regularization
 
 ## TL;DR
-H-VAR re-slices the "residual quantization for multi-scale generation" VAR paradigm into hierarchical image tokenization (HIT), enabling a 310M small model to output three meaningful intermediate resolutions (128 / 256 / 512) in a single forward pass. A DPO regularization term, which does not require an external reward model, is added to bias outputs toward HR. On standard ISR datasets, it competes with the 1B-parameter VARSR.
+H-VAR reslices the VAR paradigm of "residual quantization for multi-scale generation" into Hierarchical Image Tokenization (HIT). This allows a small 310M model to output meaningful intermediate resolutions (128 / 256 / 512) in a single forward pass. Combined with a DPO regularization term that biases output toward HR without an external reward model, it competes with the 1B-parameter VARSR on standard ISR datasets.
 
 ## Background & Motivation
 
-**Background**: Strong baselines for image super-resolution have long been dominated by GANs (Real-ESRGAN) and diffusion models (StableSR, SeeSR, ResShift). Recently, next-scale prediction VAR, which naturally unfolds residuals by scale, has been adopted by VARSR, PURE, and VARestorer for ISR—offering better alignment between pretraining and downstream tasks than diffusion.
+**Background**: Strong baselines for image super-resolution have long been dominated by GANs (Real-ESRGAN) and Diffusion Models (StableSR, SeeSR, ResShift). Recently, next-scale prediction VAR models have been adapted for ISR (e.g., VARSR, PURE, VARestorer) because their natural residual expansion across scales offers better alignment between pretraining and downstream tasks than diffusion models.
 
-**Limitations of Prior Work**: Existing AR-based super-resolution faces two main drawbacks. First, the original RQ-VAE divides images into $L$ increasingly fine residuals, but the early-stage residuals lack "low-resolution semantics" and only randomly allocate high-frequency details, making intermediate stages unable to decode meaningful low-res images. For $\times 4$ upscaling, the entire token sequence must be processed, preventing simultaneous $\times 2$ outputs. Second, to match SOTA, VARSR requires a 1B large model, classifier-free guidance, and massive labeled data; PURE directly uses a 7B Lumina-mGPT.
+**Limitations of Prior Work**: Existing AR-based super-resolution models face two major drawbacks. First, the original RQ-VAE decomposes an image into $L$ progressively refined residuals, but the initial residual levels lack "low-resolution semantics" and instead represent a random allocation of high-frequency details; thus, intermediate stages cannot be decoded into meaningful low-res images. To perform $\times 4$ SR, the entire token sequence must be run, preventing the simultaneous generation of $\times 2$ results. Second, to match SOTA performance, VARSR requires a 1B model, classifier-free guidance, and massive labeled datasets, while PURE directly utilizes the 7B Lumina-mGPT.
 
-**Key Challenge**: The VAR token sequence is a "generic residual stack"—maximizing compression efficiency but lacking the strong constraint of "scale semantics." To achieve meaningful multi-scale outputs, "scale-resolvable" constraints must be enforced in tokenization, but this degrades single-scale reconstruction, presenting an explicit trade-off.
+**Key Challenge**: The token sequence of VAR is a "generic residual stack"—which is efficient for compression but lacks the strong constraint of "scale semantics." To make multi-scale outputs meaningful, "scale-decodability" must be embedded into the tokenization process, which typically degrades single-scale reconstruction, creating an explicit trade-off.
 
-**Goal**: (a) Design a tokenization such that the first $k$ tokens can deterministically decode a valid image at that scale, with tokens shared across scales; (b) Encode a preference for "VAR outputs HR rather than LR" into the training objective without data augmentation or VLMs.
+**Goal**: (a) Design a tokenization method where the first $k$ tokens deterministically decode into a valid image at that specific scale, with shared tokens across scales. (b) Encode the preference for "VAR outputting HR instead of LR" into the training objective without additional data or VLMs.
 
-**Key Insight**: The authors observe that next-scale prediction compresses redundancy because the next scale's prediction depends on all tokens from the previous scale. By making "downsampling—quantization—upsampling" a closed loop at each target scale and enforcing token reuse, both multi-scale resolvability and VAR's sequential prediction format can be preserved.
+**Key Insight**: The authors observe that next-scale prediction reduces redundancy because the prediction of the next scale depends on all tokens from the previous scale. If "downsampling-quantization-upsampling" is made into an independent closed loop at each target scale with forced token reuse, one can maintain both multi-scale decodability and the VAR sequence prediction format.
 
-**Core Idea**: HIT (Hierarchical Image Tokenization) slices RQ-VAE residuals by target scale and reuses tokens, combined with a DPO regularization term based on the ratio $p(z_{HR})/p(z_{LR})$, to build a 310M multi-scale H-VAR.
+**Core Idea**: Utilize HIT (Hierarchical Image Tokenization) to slice RQ-VAE residuals by target scale for token reuse, combined with a DPO regularization term based on the $p(z_{HR})/p(z_{LR})$ ratio, to create a 310M multi-scale H-VAR.
 
 ## Method
 
 ### Overall Architecture
-End-to-end, two main components: (1) Hierarchical RQ-VAE: Finetune the vocabulary and decoder on top of Switti pretrained RQ-VAE, slicing the token sequence into $N$ nested segments $\{s_1, s_2, \dots, s_N\}$, each $s_i$ independently decodable at its scale; (2) Hierarchical VAR: A 16-layer GPT-2 style transformer (310M), conditioned on LR features encoded by RQ-VAE encoder, jointly trained with cross-entropy and DPO, predicting the full token sequence via next-scale prediction. At inference, a single forward pass yields $\times 1 / \times 2 / \times 4$ resolutions, reusing the KV-cache.
+H-VAR aims to enable a small VAR model to achieve multi-scale decodability and match SOTA performance without massive data. The pipeline consists of two parts: First, a Hierarchical RQ-VAE is trained by finetuning the vocabulary and decoder of a pretrained Switti RQ-VAE. The residual token sequence is sliced into $N$ nested segments $\{s_1,\dots,s_N\}$, allowing each segment to be independently decoded into an image of the corresponding scale. Second, a 310M 16-layer GPT-2 style transformer (Hierarchical VAR) is trained. Taking LR features encoded by the RQ-VAE encoder as a condition, it predicts the token sequence via next-scale prediction, using a joint objective of cross-entropy and DPO regularization. During inference, a single forward pass with KV-cache reuse simultaneously produces $\times 1 / \times 2 / \times 4$ resolutions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    HR["HR Training Image"] --> HIT["1. Hierarchical Tokenization (HIT)<br/>Quantize residuals scale-by-scale at 0.25/0.5/1<br/>Low-scale tokens reused as high-scale starting points<br/>→ Nested sequences, first k tokens decode to ×k image"]
+    LR["LR Input Image"] --> COND["2. Condition Injection & Multi-scale PE<br/>Upsample LR to 512, pass through encoder → 1024 conditioning tokens<br/>Over-parameterized Positional Embeddings downsampled for reuse"]
+    HIT --> VAR["3. 310M H-VAR Transformer<br/>Next-scale prediction of the token sequence"]
+    COND --> VAR
+    VAR -->|Training| LOSS["4. Cross-Entropy + DPO Regularization<br/>LR image via HIT as negative sample<br/>L = −logσ(β · log p(z_HR)/p(z_LR))"]
+    VAR -->|Inference: Single Forward + KV-cache| OUT["Simultaneous output of ×1/×2/×4<br/>128 / 256 / 512"]
+```
 
 ### Key Designs
 
-1. **Hierarchical Image Tokenization (HIT)**:
+**1. Hierarchical Image Tokenization (HIT): Making the first $k$ tokens correspond to a "valid $\times k$ image"**
 
-    - **Function**: Segments residual quantization by target scale, ensuring the first $k$ tokens correspond to the "valid image after $\times k$ upsampling."
-    - **Mechanism**: Define target scales $s_1 < s_2 < \dots < s_N$ (set as $(0.25, 0.5, 1)$ for $\times 1/\times 2/\times 4$). For each scale $n$, downsample the input to $s_n \rho_L$, encode as $\mathbf{Z}_n$, and quantize residuals at that scale. The quantized tokens are recorded in the $s_n$ subsequence and reused as "starting tokens" for the next scale. Switch to scale $s_{n+1}$, upsample previous tokens to the current residual space, subtract, and quantize new residuals. The image is thus sliced into a nested structure $z = \{\{\{z_1,\dots\}_{s_1},\dots\}_{s_2}, \dots\}_{s_N}$. Simultaneously, finetune the RQ-VAE vocabulary and decoder: keep the decoder frozen, update the vocabulary using the $\ell_2$ distance gradient between encoder features and token embeddings.
-    - **Design Motivation**: Original RQ-VAE's early residuals lack "low-resolution correspondence," which is why VAR cannot produce intermediate scales. HIT enforces "the first $k$ tokens must reconstruct scale $k$" as a hard training constraint, injecting a strong inductive bias into the representation space. The authors find this bias is highly effective—it allows reducing the transformer from 1B to 310M while maintaining SOTA, as the "path search space" of the token sequence is greatly compressed.
+The original RQ-VAE flattens an image into $L$ refinement levels, but the early tokens lack low-resolution semantic constraints. HIT embeds this constraint into tokenization: given target scales $s_1 < s_2 < \dots < s_N$ (e.g., $0.25, 0.5, 1$ for $\times 1/\times 2/\times 4$), for each scale $n$, the input is downsampled to $s_n \rho_L$ and encoded into $\mathbf{Z}_n$ to quantize residuals. The resulting tokens are both recorded in the $s_n$ subsequence and reused as the "starting tokens" for the next scale. Then, shifting to $s_{n+1}$, the previous scale's tokens are upsampled to the current residual space and subtracted before quantizing the new residuals. This creates a nested structure $z = \{\{\{z_1,\dots\}_{s_1},\dots\}_{s_2}, \dots\}_{s_N}$. Finetuning the vocabulary follows the HART approach: keeping the decoder frozen and updating the vocabulary using the gradient of the $\ell_2$ distance between encoder features and token embeddings. This injects a strong inductive bias that forces the representation space to follow the scale hierarchy, significantly compressing the search space for the transformer.
 
-2. **DPO Regularization for HR Preference**:
+**2. Condition Injection and Multi-scale Positional Encoding: A single downsampled table for all scales**
 
-    - **Function**: Prevents VAR from lazily predicting tokens highly overlapping with LR, forcing HR sequence output.
-    - **Mechanism**: HR and LR tokens overlap significantly at low scales, so the model tends to repeat LR. The authors upsample LR to 512, run HIT to obtain $z_{LR}$, and define $\mathcal{L}_{DPO} = -\log\sigma\left(\beta \log \frac{p(z_{HR})}{p(z_{LR})}\right)$, added equally with standard cross-entropy. $\beta = 0.2$; too small renders the loss ineffective, too large destabilizes training. No "reference policy" or "external reward model" is needed, as LR naturally serves as the "negative sample."
-    - **Design Motivation**: Traditional DPO requires pair-wise preference and a reference policy, often needing an external reward model for generative ISR. Here, LR/HR naturally form a preference pair, and AR models can compute log-likelihoods for both sequences (unlike diffusion). Thus, DPO becomes an "unsupervised regularizer"—almost zero cost yet significantly sharpens results.
+The transformer processes $\sum_l \rho_l^2 = 3452$ tokens across different scales. The authors use "over-parameterized learnable positional embeddings"—a large table defined for the maximum scale, which is downsampled for each resolution $\rho_l$. This allows the model to share positional inductive biases across scales. For conditioning, rather than using a separate ControlNet, the LR image is bilinearly upsampled to 512 and passed through the RQ-VAE encoder to obtain 1024 conditioning tokens, simplifying the architecture and avoiding scale mismatch issues.
 
-3. **Multi-Scale Positional Encoding and Conditioning**:
+**3. DPO Regularization for HR Preference: Using LR as a negative sample**
 
-    - **Function**: Enables a single transformer to handle $\sum_l \rho_l^2 = 3452$ tokens at different scales, conditioned on LR.
-    - **Mechanism**: Uses an "over-parameterized learnable positional embedding"—a large table declared at the maximum scale, downsampled to each target resolution $\rho_l$ as needed. Unlike VARSR, which uses ControlNet to encode LR, the authors directly bilinearly upsample LR to 512, pass it through the RQ-VAE encoder to obtain 1024 conditioning tokens, saving an independent branch.
-    - **Design Motivation**: Positional embedding is prone to bugs in multi-scale training; a unified, downsampled table avoids maintaining multiple weights and allows sharing inductive bias across scales. Using encoder features as condition also eliminates mismatches between ControlNet and main branch scales.
+Since HR and LR tokens overlap significantly at lower scales, VAR models often "cheat" by copying the LR input. By treating the LR image (upsampled and tokenized via HIT as $z_{LR}$) as a negative sample and utilizing the AR property to calculate log-likelihoods, the authors define $\mathcal{L}_{DPO} = -\log\sigma\left(\beta \log \frac{p(z_{HR})}{p(z_{LR})}\right)$. Combined with standard cross-entropy ($\beta = 0.2$), this acts as an unsupervised regularization term. Since ISR naturally provides pairs of HR/LR samples, this eliminates the need for an external reward model or pair-wise preferences required in traditional DPO, significantly sharpening results at nearly zero extra cost.
 
 ### Loss & Training
-
-- RQ-VAE finetuning: $\mathcal{L}_{RQVAE} = \ell_2 + 5\, \mathcal{L}_{LPIPS}$, AdamW, batch 384, lr 0.00025, 25K steps, 24 A100 GPUs, ~24 hours; following HART, with 50% probability, bypass quantization and feed directly to decoder to prevent vocabulary overfitting.
-- H-VAR training: cross-entropy + $\mathcal{L}_{DPO}$ with equal weights; initialized from VAR d-16 official checkpoint, 24 A100 GPUs, 200 epochs, batch 384, lr 1e-3, AdamW betas $(0.9, 0.95)$, ~13 hours total.
-- Training data is fully standard: DIV2K + DIV8K + Flickr2K + OST + 10K FFHQ, with LR-HR pairs synthesized using Real-ESRGAN degradation, no proprietary datasets used.
+- **RQ-VAE Finetuning**: $\mathcal{L}_{RQVAE} = \ell_2 + 5\, \mathcal{L}_{LPIPS}$, AdamW, batch size 384, lr 0.00025, 25K steps on 24 A100 GPUs (~24 hours). Quantization is bypassed with 50% probability during training to prevent vocabulary overfitting.
+- **H-VAR Training**: Cross-entropy + $\mathcal{L}_{DPO}$ with equal weights. Initialized from official VAR d-16 checkpoint, 200 epochs on 24 A100s, batch size 384, lr 1e-3, AdamW with betas $(0.9, 0.95)$ (~13 hours).
+- **Training Data**: Standard sets (DIV2K, DIV8K, Flickr2K, OST, 10K FFHQ) using Real-ESRGAN degradations. No proprietary datasets used.
 
 ## Key Experimental Results
 
@@ -106,34 +105,34 @@ End-to-end, two main components: (1) Hierarchical RQ-VAE: Finetune the vocabular
 | H-VAR (HIT) | **0.199** | **0.236** | **0.256** |
 
 ### Key Findings
-- At intermediate scales 128 / 256, the baseline without HIT is nearly unusable (LPIPS > 0.4), while HIT reduces scores to the 0.2 range, confirming it truly produces readable images at intermediate scales, not just as a gimmick.
-- HIT acts as a strong inductive bias: reducing the transformer from 1B to 310M and replacing VARSR's proprietary data with standard public datasets, FID/LPIPS still matches or surpasses VARSR. This suggests many issues seemingly solvable only by "scaling data/parameters" are fundamentally due to misaligned token representations.
-- DPO regularization consistently improves results across all datasets and scales, requiring no external reward model—a "free lunch" with almost zero cost.
-- Side effect: Since early residuals are forcibly allocated to low resolutions, final 512-resolution reconstruction slightly degrades; increasing $L=10 \to 11$ can recover this but inference cost rises by 24%. The authors candidly acknowledge this trade-off.
+- At intermediate scales (128 / 256), the baseline without HIT is nearly unusable (LPIPS > 0.4); HIT improves these scores to the 0.2 range, proving it generates meaningful multi-scale images.
+- HIT acts as a powerful inductive bias: by reducing the transformer from 1B to 310M and using only public data, H-VAR still matches or outperforms VARSR. This suggests that some "data/parameter scaling" issues are actually token alignment problems.
+- DPO regularization improves scores across all datasets and scales without an external reward model, acting as a "free lunch."
+- **Side Effect**: Because early residuals are forced into low-resolution constraints, the final 512 reconstruction suffers a slight degradation; increasing from $L=10$ to $11$ fixes this but increases inference cost by 24%—an explicit trade-off.
 
 ## Highlights & Insights
-- "Encoding multi-scale resolvability into tokenization" is the most memorable technique here—not by modifying the transformer architecture or adding losses, but by constraining the vocabulary upstream; once the upstream is correct, downstream models can be an order of magnitude smaller.
-- Using LR itself as the DPO negative sample is a clever "self-supervised preference learning" approach, eliminating the need for a reward model; this trick can be directly transferred to any generative task with a natural degradation pair (deblurring, denoising, style weakening).
-- The paper openly discusses trade-offs: HIT slightly sacrifices reconstruction quality at the highest resolution, which must be compensated by more token steps—such transparent discussion of pros and cons is highly commendable.
-- Producing three resolutions in a single forward pass is highly practical for real-world applications (mobile, thumbnail preview), offering genuine engineering advantages beyond paper metrics.
+- "Embedding multi-scale decodability into tokenization" is the most significant takeaway. It modifies the upstream vocabulary instead of the transformer architecture or downstream loss, allowing the model to be an order of magnitude smaller.
+- Using LR as a negative sample for DPO is a clever "self-supervised preference learning" trick that saves the cost of a reward model. This could be applied to any task with natural degradation pairs (deblurring, denoising, etc.).
+- The paper transparently discusses the trade-offs: HIT slightly reduces reconstruction quality at high resolutions, which must be compensated by more token steps.
+- Providing three resolutions in one forward pass is highly practical for real-world products (e.g., mobile previews), offering engineering value beyond academic metrics.
 
 ## Limitations & Future Work
-- Multi-scale is discretely divided into 3 scales; achieving arbitrary upscaling factors ($\times 1.5, \times 3$) requires redesigning $\rho_l$ allocation—this is an inherent discreteness of the tokenization paradigm.
-- DPO uses LR as the negative sample, assuming LR is a "bad answer," but when the input is already close-to-HR with mild degradation, this preference may push the model to over-sharpen.
-- All experiments are under the standard $\times 4$ setting; it remains unverified whether HIT maintains efficiency at $\times 8 / \times 16$. Higher magnifications introduce more intermediate scales, and whether the token sequence can still fit in a small model needs further validation.
-- Comparisons with strong diffusion baselines (e.g., PASD, SUPIR) are missing; the main competitor remains VARSR. To solidify SOTA claims, these comparisons are recommended.
+- Multi-scale support is limited to discrete levels (e.g., 3 scales). Arbitrary upscaling ($\times 1.5, \times 3$) would require re-designing $\rho_l$ allocation, a limitation inherent to discrete tokenization.
+- DPO assumes LR is the "wrong answer," but if the input is only lightly degraded, the preference might push the model toward over-sharpening.
+- Experiments focused on $\times 4$; the efficiency of HIT at higher ratios ($\times 8, \times 16$) where more intermediate scales are involved remains to be verified.
+- Comparisons against diffusion-based SOTAs (e.g., PASD, SUPIR) are limited; while it beats VARSR, wider comparison is needed to claim absolute SOTA.
 
 ## Related Work & Insights
-- **vs VARSR**: Both apply VAR to ISR, but VARSR uses original RQ-VAE, lacks meaningful intermediate scales, and requires a 1B model with large proprietary data; H-VAR uses HIT to solve both issues at once, without needing extra branches like ControlNet.
-- **vs PURE**: PURE uses a 7B Lumina-mGPT, embedding both images and degradation descriptions into the vocabulary; H-VAR takes the opposite approach—relying on "upstream token design + simple DPO," demonstrating that ISR does not necessarily require large multimodal models.
-- **vs diffusion-based ISR (StableSR / ResShift)**: Diffusion models are slow at inference and cannot compute sequence likelihoods, so native DPO is infeasible; H-VAR's AR form brings both advantages, which is why VAR is chosen over diffusion.
-- **Insights**: "Injecting task structure as inductive bias into tokenization" is an underrated direction; next steps could include video AR (token slicing by temporal scale) and medical image AR (token slicing by anatomical hierarchy).
+- **vs. VARSR**: Both use VAR for ISR, but VARSR uses original RQ-VAE (meaningless intermediate scales) and require 1B models and private data. H-VAR solves these via HIT and doesn't require a ControlNet branch.
+- **vs. PURE**: PURE uses a 7B Lumina-mGPT with multi-modal prompts. H-VAR demonstrates that ISR doesn't strictly require massive multi-modal models if the token design and DPO are optimized.
+- **vs. Diffusion (StableSR/ResShift)**: Diffusion models are slower and lack sequence likelihoods, making native DPO impossible. H-VAR's AR format provides both speed and DPO compatibility.
+- **Inspiration**: "Injecting task structure as inductive bias into tokenization" is an undervalued direction. Potential applications include Video AR (temporal scale slicing) or Medical AR (anatomical hierarchy slicing).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ HIT is the first VAR ISR solution supporting multi-scale; using LR as DPO negative sample is also novel, though the underlying paradigm remains RQ-VAE+VAR.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three baselines, multiple datasets, $L/\rho_l$ sensitivity, and complexity all covered; lacks comparison with diffusion SOTA (PASD/SUPIR).
-- Writing Quality: ⭐⭐⭐⭐⭐ Algorithm pseudocode, illustrations, ablations, and limitations are all clearly presented.
-- Value: ⭐⭐⭐⭐ Matches 1B performance with 310M, and outputs 3 resolutions per forward pass, offering direct value for industrial deployment.
+- **Novelty**: ⭐⭐⭐⭐ HIT is the first multi-scale solution for VAR ISR. DPO with LR negative samples is innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers baselines, multiple datasets, sensitivity analysis, and complexity. Missing some diffusion SOTA comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear pseudocode, diagrams, and honest discussion of trade-offs.
+- **Value**: ⭐⭐⭐⭐ Leveling the field between 310M and 1B models while offering 3-in-1 resolution output is highly valuable for deployment.
 
 <!-- RELATED:START -->
 
@@ -145,7 +144,7 @@ End-to-end, two main components: (1) Hierarchical RQ-VAE: Finetune the vocabular
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](efficient_learned_image_compression_without_entropy_coding.md)
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
 - [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
-- [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](../../CVPR2026/model_compression/towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
+- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
 
 </div>
 

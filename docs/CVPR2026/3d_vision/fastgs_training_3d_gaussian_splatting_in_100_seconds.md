@@ -2,90 +2,87 @@
 title: >-
   [Paper Note] FastGS: Training 3D Gaussian Splatting in 100 Seconds
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] FastGS is a multi-view consistency-based acceleration framework for 3DGS that precisely controls Gaussian count via View-Consistent Densification (VCD) and View-Consistent Pru…
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] FastGS is proposed as a 3DGS acceleration framework based on multi-view consistency. By employing Multi-view Consistency Densification (VCD) and Multi-view Consistency Pruning (VCP) to precisely control the number of Gaussians, it achieves scene training in approximately 100 seconds on datasets like Mip-NeRF 360—a 15×
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "training acceleration"
-  - "multi-view consistency"
-  - "Gaussian density control"
-  - "pruning strategy"
+  - CVPR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: 88f14530e404b106
+content_hash: 3f2e52f0d29e75a6
 ---
-
 # FastGS: Training 3D Gaussian Splatting in 100 Seconds
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2511.04283](https://arxiv.org/abs/2511.04283)  
 **Code**: [fastgs.github.io](https://fastgs.github.io)  
-**Area**: 3D Vision
-**Keywords**: 3D Gaussian Splatting, training acceleration, multi-view consistency, Gaussian density control, pruning strategy
+**Area**: 3D Vision  
+**Keywords**: 3D Gaussian Splatting, Training Acceleration, Multi-view Consistency, Gaussian Density Control, Pruning Strategy
 
 ## TL;DR
 
-FastGS is a multi-view consistency-based acceleration framework for 3DGS that precisely controls Gaussian count via View-Consistent Densification (VCD) and View-Consistent Pruning (VCP). It achieves scene training in approximately 100 seconds on datasets such as Mip-NeRF 360, delivering over 15× speedup over vanilla 3DGS with comparable rendering quality.
+FastGS is proposed as a 3DGS acceleration framework based on multi-view consistency. By employing Multi-view Consistency Densification (VCD) and Multi-view Consistency Pruning (VCP) to precisely control the number of Gaussians, it achieves scene training in approximately 100 seconds on datasets like Mip-NeRF 360—a 15× speedup over vanilla 3DGS with comparable rendering quality.
 
 ## Background & Motivation
 
-1. **Training time bottleneck in 3DGS**: Vanilla 3DGS typically requires tens of minutes to train a single scene. Its Adaptive Density Control (ADC) generates a large number of redundant Gaussians, resulting in persistently high computational overhead and limiting practical deployment experience.
+1.  **3DGS Training Time Bottleneck**: Vanilla 3DGS typically requires tens of minutes to train a single scene. Its Adaptive Density Control (ADC) generates a large number of redundant Gaussians, leading to persistent high computational overhead and limiting the user experience in practical deployments.
 
-2. **Insufficient densification strategies**: Although Taming-3DGS incorporates multi-view information, its scoring approach based on Gaussian-associated attributes (opacity, scale, gradient) fails to strictly enforce multi-view consistency, still producing millions of redundant Gaussians.
+2.  **Limitations of Prior Densification Strategies**: While Taming-3DGS considers multi-view information, its scoring method based on Gaussian intrinsic attributes (opacity, scale, gradient) fails to strictly constrain multi-view consistency, still resulting in millions of redundant Gaussians.
 
-3. **Limited effectiveness of existing pruning strategies**: Speedy-Splat performs pruning via Hessian approximation accumulation, which only indirectly leverages multi-view information and leads to significant degradation in rendering quality. Other methods relying on simple opacity- or scale-based thresholds are similarly ineffective at eliminating redundancy.
+3.  **Limitations of Prior Pruning Strategies**: Speedy-Splat performs pruning through Hessian approximation accumulation, which indirectly utilizes multi-view information and leads to significant drops in rendering quality. Other methods using simple thresholds for opacity or scale also fail to effectively eliminate redundancy.
 
-4. **Lack of strict multi-view consistency constraints**: A large number of Gaussians contribute to rendering quality in only a few views while being nearly useless in others—that is, they do not satisfy a bundle-adjustment-style multi-view consistency constraint.
+4.  **Key Challenge: Lack of Strict Multi-view Consistency Constraints**: Many Gaussians contribute to rendering quality in only a few views while remaining useless in others, meaning they do not satisfy "bundle adjustment" style multi-view consistency constraints.
 
-5. **Limitations of budget mechanisms**: Methods such as DashGaussian limit Gaussian count via budget mechanisms, yet scenes still require millions of Gaussians to maintain quality, leaving practical speedup limited.
+5.  **Limitations of Budget Mechanisms**: Methods like DashGaussian limit the number of Gaussians through budget mechanisms, but scenes still require millions of Gaussians to maintain quality, resulting in limited practical speedup.
 
-6. **Remaining inefficiency in the rasterization stage**: The 3-sigma rule in vanilla 3DGS generates numerous redundant Gaussian–tile pairs. Even the precise tile-intersection strategy of Speedy-Splat does not fully resolve invalid coverage caused by marginal Gaussians.
+6.  **Optimization Space in Rasterization**: The 3-sigma rule in vanilla 3DGS generates many redundant Gaussian-tile pairs. Even the precise tile intersection strategy in Speedy-Splat does not fully resolve the issue of invalid coverage by marginal Gaussians.
 
 ## Method
 
-### View-Consistent Densification (VCD)
+### Overall Architecture
 
-The core idea is to evaluate whether each Gaussian requires densification from the perspective of multi-view reconstruction quality. The procedure is as follows:
+FastGS aims to solve the slow training and Gaussian redundancy of vanilla 3DGS. The Core Idea is to treat "multi-view consistency" as a unified metric throughout the process—retaining only Gaussians that truly contribute to multi-view rendering during both densification and pruning, and then using tighter rasterization bounding boxes to trim invalid marginal coverage. The entire framework is built upon 3DGS-accel. During training, it periodically uses VCD to decide which Gaussians to split and VCP to decide which to remove, with CB finally tightening the effective support range of each 2D Gaussian.
 
-1. Randomly sample $K$ training views, render images, and compute per-pixel L1 error maps.
-2. Apply min-max normalization to the error maps and mark high-error pixels using threshold $\tau$.
-3. Project each Gaussian into 2D image space to obtain its footprint region $\Omega_i$.
-4. Compute the mean number of high-error pixels within the footprint as the importance score $s_d^i$.
-5. A Gaussian is permitted to densify only when $s_d^i$ exceeds threshold $\tau_d$ (set to 5 in experiments).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Multi-view Training Images + Initial Point Cloud"] --> B["3DGS-accel Base<br/>per-splat Backprop + SH Acceleration"]
+    B --> C["Render Sampled Views<br/>Compute Pixel-wise L1 Error Map"]
+    C -->|"Pixel counts s_d > τ_d in high-error area"| D["Multi-view Consistency Densification (VCD)<br/>Split only at common multi-view under-reconstruction"]
+    C -->|"Photometric loss weighted score s_p > τ_p"| E["Multi-view Consistency Pruning (VCP)<br/>Delete Gaussians with lowest multi-view contribution"]
+    D --> F["Compact Bounding Box (CB)<br/>Tighten 2D support via Mahalanobis, trim marginal pairs"]
+    E --> F
+    F --> G["Rasterization Training (30K iterations)"]
+    G -->|"Periodically return to Densification/Pruning"| C
+    G --> H["Output: 3DGS trained in ~100 seconds"]
+```
 
-This approach ensures that newly added Gaussians genuinely serve under-reconstructed regions across multiple views, preventing redundant growth that benefits only a small subset of views, without requiring a budget mechanism.
+### Key Designs
 
-### View-Consistent Pruning (VCP)
+**1. Multi-view Consistency Densification (VCD): Adding Gaussians only where multiple views are under-reconstructed**
 
-Adopting a scoring strategy analogous to VCD, VCP additionally incorporates the overall photometric loss to assess each Gaussian's contribution to rendering quality degradation:
+Addressing the pain point where ADC or Taming-style indirect scoring (based on opacity/scale/gradient) still yields millions of redundancies, VCD judges densification directly from "multi-view reconstruction quality." It randomly samples $K$ training views to render images and compute pixel-wise L1 error maps. After min-max normalization, high-error pixels are identified using a threshold $\tau$. Each Gaussian is projected to 2D to obtain its footprint $\Omega_i$, and the average number of high-error pixels within this footprint is calculated as the importance score $s_d^i$. Densification is permitted only if $s_d^i$ exceeds the threshold $\tau_d$ (experimentally set to 5). Consequently, new Gaussians serve areas under-reconstructed across multiple views rather than specific individual views, reducing the count significantly without a budget mechanism—ablation shows it reduces Gaussians from 2.64M to 0.53M alone.
 
-1. Compute the overall photometric loss $E_{\text{photo}}$ (a combination of L1 and SSIM) for each sampled view.
-2. The pruning score $s_p^i$ is a normalized weighted product of the high-error pixel count and photometric loss across views.
-3. A Gaussian is removed when $s_p^i$ exceeds threshold $\tau_p$ (set to 0.9).
+**2. Multi-view Consistency Pruning (VCP): Deleting Gaussians with the lowest contribution to multi-view quality**
 
-This strategy more directly and effectively identifies Gaussians with the lowest contribution to multi-view rendering quality compared to Hessian approximation-based methods.
+Speedy-Splat uses Hessian approximation to indirectly leverage multi-view information for pruning, which results in a clear decline in rendering quality. VCP adopts the scoring logic of VCD but measures "how much quality degrades if deleted" using the overall photometric loss. For each sampled view, the photometric loss $E_\text{photo}$ (a combination of L1+SSIM) is computed. The pruning score $s_p^i$ is the normalized value of the weighted product of high-error pixel counts and photometric loss across views. Gaussians are pruned if $s_p^i$ exceeds $\tau_p$ (set to 0.9). Compared to indirect Hessian criteria, this direct quality-based scoring is more precise and enables significant thinning while preserving quality.
 
-### Compact Bounding Box (CB)
+**3. Compact Bounding Box (CB): Tightening 2D Gaussian support to trim invalid marginal pairs**
 
-Building upon the precise tile-intersection approach of Speedy-Splat, CB further tightens the bounding region:
+The 3-sigma rule in vanilla 3DGS generates many redundant Gaussian-tile pairs. CB builds on the precise tile intersection of Speedy-Splat by using Mahalanobis distance to set stricter effective area thresholds and a scaling factor $\beta$ to control the effective support range of 2D Gaussians. A smaller $\beta$ results in tighter ellipses and fewer invalid marginal pairs, further compressing rasterization overhead.
 
-- A stricter effective-region threshold is set based on Mahalanobis distance.
-- A scaling factor $\beta$ controls the effective support range of each 2D Gaussian.
-- Smaller $\beta$ produces more compact ellipses, reducing invalid Gaussian–tile pairs at the margins.
+### Loss & Training
 
-### Training Pipeline
-
-- Built upon 3DGS-accel (vanilla 3DGS + per-splat backpropagation from Taming + SH optimization acceleration).
-- Densification is performed every 500 iterations and stops at 15K iterations.
-- Pruning is applied every 500 iterations before 15K and every 3,000 iterations thereafter.
-- Total training runs for 30K iterations using the Adam optimizer.
+- Base is 3DGS-accel (vanilla 3DGS + per-splat backprop from Taming + SH optimization acceleration).
+- Densification is performed every 500 iterations, stopping at 15K.
+- Pruning is performed every 500 iterations before 15K, and every 3000 iterations after 15K.
+- Total training is 30K iterations using the Adam optimizer.
 
 ## Key Experimental Results
 
 ### Table 1: Training Speed and Quality Comparison on Static Scenes (RTX 4090)
 
 | Method | Mip-NeRF 360 Time (min) | PSNR↑ | SSIM↑ | #Gaussian↓ | FPS↑ |
-|---|---|---|---|---|---|
+|------|------------------------|-------|-------|------------|------|
 | 3DGS | 20.93 | 27.53 | 0.812 | 2.63M | 146 |
 | Taming-3DGS | 5.36 | 27.48 | 0.794 | 0.68M | 221 |
 | DashGaussian | 6.35 | 27.73 | 0.817 | 2.40M | 155 |
@@ -96,46 +93,44 @@ Building upon the precise tile-intersection approach of Speedy-Splat, CB further
 ### Table 2: Ablation Study (Mip-NeRF 360)
 
 | Method | Time (min)↓ | PSNR↑ | #Gaussian↓ | FPS↑ |
-|---|---|---|---|---|
+|------|------------|-------|------------|------|
 | 3DGS-accel (baseline) | 7.10 | 27.46 | 2.64M | 182 |
 | +VCD | 3.53 | 27.69 | 0.53M | 222 |
 | +VCP | 5.32 | 27.70 | 1.96M | 285 |
 | +CB | 6.13 | 27.44 | 2.78M | 303 |
 | Full (VCD+VCP+CB) | **1.93** | 27.56 | **0.40M** | **579** |
 
-VCD is the largest single contributor, reducing Gaussian count from 2.64M to 0.53M (an 80% reduction) and providing over 2× training speedup.
+VCD is the primary contributor, reducing the Gaussian count from 2.64M to 0.53M (an 80% reduction) and accelerating training by over 2×.
 
-## Highlights & Insights
+## Highlights
 
-1. **Extreme training speed**: Scene training completes in as little as 77 seconds (Tanks & Temples), averaging approximately 100 seconds—far exceeding existing state-of-the-art methods.
-2. **Simplicity and generality**: VCD and VCP require no budget mechanism and can be directly applied to dynamic reconstruction, surface reconstruction, sparse-view reconstruction, large-scale reconstruction, and SLAM, achieving 2–6× speedup across all tasks.
-3. **Principled multi-view consistency**: Analogous to bundle adjustment, the framework requires each Gaussian to make a positive contribution to multi-view rendering, rather than serving only individual views.
-4. **Compatibility with multiple backbones**: FastGS achieves 8.8× speedup on Mip-Splatting and 3.6× on Scaffold-GS while maintaining rendering quality.
-5. **FastGS-Big surpasses DashGaussian**: The larger variant achieves 0.2 dB higher PSNR, reduces training time by 43.6%, and uses half the number of Gaussians.
+1.  **Extreme Training Speed**: Completes scene training in as fast as 77 seconds (Tanks & Temples), averaging ~100 seconds, far exceeding existing SOTA.
+2.  **Simple and General**: VCD/VCP requires no budget mechanism and can be directly applied to various tasks such as dynamic reconstruction, surface reconstruction, sparse-view reconstruction, large-scale reconstruction, and SLAM, achieving 2-6× speedup across the board.
+3.  **Core Insight on Multi-view Consistency**: Analogous to bundle adjustment, it requires each Gaussian to have a positive contribution to multi-view rendering rather than serving individual views.
+4.  **Backbone Compatibility**: Accelerates Mip-Splatting by 8.8× and Scaffold-GS by 3.6× while maintaining rendering quality.
+5.  **FastGS-Big Variant Surpasses DashGaussian**: Higher PSNR by 0.2dB, 43.6% reduction in training time, and half the Gaussian count.
 
 ## Limitations & Future Work
 
-1. **Incompatibility with post-training of feed-forward 3DGS**: Such methods output extremely dense Gaussians, making it difficult for VCP to effectively prune large numbers of points within a few thousand iterations; even 3K-iteration post-training still requires approximately 20 seconds.
-2. **Rendering quality not optimal**: The default FastGS configuration achieves slightly inferior LPIPS scores compared to DashGaussian and vanilla 3DGS under maximum speedup settings.
-3. **Hyperparameter sensitivity**: Hyperparameters such as $\tau_d$, $\tau_p$, and $\beta$ require per-scene tuning, and the paper does not thoroughly discuss their robustness.
-4. **Evaluation limited to RTX 4090**: The transferability of speedup gains to other GPU hardware is not demonstrated.
-5. **Persistent quality–speed trade-off**: FastGS-Big achieves higher quality at the cost of roughly halved speed, indicating that the Pareto frontier between the two remains open for further exploration.
+1.  **Not applicable to feed-forward 3DGS post-training**: Gaussians output by these methods are extremely dense; VCP struggles to effectively prune such massive numbers within a few thousand iterations. Post-training still takes ~20s even for 3K iterations.
+2.  **Rendering Quality Not Optimal**: Under extreme acceleration, the default FastGS configuration has slightly lower LPIPS metrics than DashGaussian and vanilla 3DGS.
+3.  **Hyperparameter Sensitivity**: Parameters like $\tau_d, \tau_p, \beta$ need adjustment for different scenes; the paper lacks extensive discussion on their robustness.
+4.  **Hardware Testing**: Only tested on RTX 4090; acceleration transferability across different GPU hardware is not shown.
+5.  **Speed-Quality Trade-off**: FastGS-Big offers better quality but half the speed, suggesting the Pareto frontier between the two still has room for exploration.
 
 ## Related Work & Insights
 
-- **vs. Taming-3DGS**: Both leverage multi-view information, but Taming indirectly scores Gaussians via their attributes (opacity/scale/gradient), imposing insufficient constraints and still requiring 0.68M Gaussians. FastGS directly evaluates contribution to reconstruction quality and achieves comparable quality with only 0.40M Gaussians.
-- **vs. Speedy-Splat**: Its pruning relies on Hessian approximation gradients, which only indirectly exploit multi-view consistency and lead to severe quality degradation (PSNR 26.91 vs. FastGS 27.56). FastGS's VCP is more precise while preserving quality.
-- **vs. DashGaussian**: The current state of the art uses resolution scheduling to maintain quality but still requires 2.40M Gaussians. FastGS-Big surpasses its quality with half the Gaussian count.
-- **vs. Mini-Splatting**: Uses an intersection-preserving simplification strategy; although Gaussian count is low (0.53M), training time (17.69 min) is far slower than FastGS.
-
-The multi-view consistency scoring concept can be generalized to any 3D representation learning task requiring control over point cloud or primitive count. The error-map-based scoring of VCD/VCP is compatible with importance sampling for NeRF acceleration. The Mahalanobis distance-based pruning in CB is transferable to other tile-based rasterization methods.
+- **vs Taming-3DGS**: Both consider multi-view information, but Taming relies on indirect assessments (opacity/scale/gradient), which are insufficiently strict and result in 680K Gaussians. FastGS directly evaluates contributions to reconstruction quality, achieving similar quality with only 400K Gaussians.
+- **vs Speedy-Splat**: Its pruning is based on Hessian gradients, and this indirect use of multi-view consistency leads to severe quality degradation (PSNR 26.91 vs FastGS 27.56). FastGS's VCP is more precise while preserving quality.
+- **vs DashGaussian**: Current SOTA, maintaining quality through resolution scheduling but still requiring 2.4M Gaussians. FastGS-Big surpasses its quality with half the Gaussian count.
+- **vs Mini-Splatting**: A simplification strategy based on intersection preservation; although Gaussian count is low (530K), training speed (17.69 min) is far slower than FastGS.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The VCD/VCP designs are concise and effective; individual components are not complex, but their combination yields strong results.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Six task categories, multiple backbones, multiple datasets, and comprehensive ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, visual comparisons are intuitive, and supplementary materials are thorough.
-- **Value**: ⭐⭐⭐⭐⭐ — Training 3DGS in 100 seconds has significant practical value and strong generalizability.
+- Novelty: ⭐⭐⭐⭐ — The idea of multi-view consistency densification/pruning is concise and effective. While individual components aren't complex, the combined effect is strong.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Very comprehensive across 6 task types, multiple backbones, multiple datasets, and detailed ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ — Clear motivation analysis, intuitive visual comparisons, and detailed supplementary materials.
+- Value: ⭐⭐⭐⭐⭐ — Training 3DGS in 100 seconds holds significant practical value and high generality.
 
 <!-- RELATED:START -->
 
@@ -143,11 +138,11 @@ The multi-view consistency scoring concept can be generalized to any 3D represen
 
 ## Related Papers
 
-- [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](../../ICCV2025/3d_vision/faster_and_better_3d_splatting_via_group_training.md)
+- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 - [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
-- [\[CVPR 2026\] ReLaGS: Relational Language Gaussian Splatting](relags_relational_language_gaussian_splatting.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 
 </div>
 

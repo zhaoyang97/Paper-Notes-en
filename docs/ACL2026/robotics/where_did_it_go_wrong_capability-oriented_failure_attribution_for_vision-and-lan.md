@@ -1,154 +1,167 @@
 ---
 title: >-
-  [Paper Note] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents
+  [Paper Note] 视觉语言导航代理的能力导向失败归因
 description: >-
-  [ACL 2026][Robotics][Vision-Language Navigation] Addressing multi-level capability failures in embodied agents (specifically vision-language navigation VLN agents)…
+  [ACL 2026][Robotics & Embodied AI][Paper Note] This paper addresses multi-level ability failures in embodied agents (specifically Vision-Language Navigation VLN agents) by proposing the CanTest framework. Through ability-oriented test oracles and failure attribution mechanisms, it precisely localizes specific ability defects (Perception/Memory/Planning/Decision-mak
 tags:
-  - "ACL 2026"
-  - "Robotics"
-  - "Vision-Language Navigation"
-  - "Capability Failure Diagnosis"
-  - "Testing Framework"
-  - "Embodied Agents"
-  - "Fuzz Testing"
+  - ACL 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 94f259280ec10456
+content_hash: b115f68838abb094
 ---
-
-# Capability-Oriented Failure Attribution for Vision-Language Navigation Agents
+# Ability-Oriented Failure Attribution for Vision-Language Navigation Agents
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.25161](https://arxiv.org/abs/2604.25161)  
 **Code**: https://github.com/JMChen121/CanTest/  
 **Area**: Robotics / Embodied AI / Navigation  
-**Keywords**: Vision-Language Navigation, Capability Failure Diagnosis, Testing Framework, Embodied Agents, Fuzz Testing
+**Keywords**: Vision-Language Navigation, Ability Failure Diagnosis, Testing Framework, Embodied Agents, Fuzz Testing
 
 ## TL;DR
 
-Addressing multi-level capability failures in embodied agents (specifically vision-language navigation VLN agents), this paper proposes the CanTest framework. Through capability-oriented test oracles and failure attribution mechanisms, it precisely locates specific capability defects (perception/memory/planning/decision) causing task failure, discovering 23–34% more failure cases than existing methods.
+This paper addresses multi-level ability failures in embodied agents (specifically Vision-Language Navigation VLN agents) by proposing the CanTest framework. Through ability-oriented test oracles and failure attribution mechanisms, it precisely localizes specific ability defects (Perception/Memory/Planning/Decision-making) leading to task failure, discovering 23–34% more failure cases than existing methods.
 
 ## Background & Motivation
 
-**Background**: Reliability assessment of embodied agents in safety-critical applications (e.g., vision-language navigation, household robots) primarily relies on task-level metrics (path length, execution time, etc.), lacking in-depth testing of the agents' internal capability structures.
+**Background**: The reliability assessment of embodied agents in safety-critical applications (e.g., Vision-Language Navigation, household robots) primarily relies on task-level metrics (path length, execution time, etc.), lacking in-depth testing of the agent's internal ability structure.
 
 **Limitations of Prior Work**:
 
-- VLN agents integrate four capabilities—perception, memory, planning, and decision—which are tightly coupled and interdependent.
-- During failure, upstream capability errors propagate to downstream stages (e.g., perception errors leads to memory confusion, which in turn leads to planning errors).
-- It is difficult to trace the initial source of failure across long trajectories.
-- Developers cannot precisely locate weak links for targeted improvements.
+- VLN agents integrate four abilities—Perception, Memory, Planning, and Decision-making—which are tightly coupled and interdependent.
+- During failure, upstream ability errors propagate to downstream ones in a cascade (e.g., perception errors lead to memory confusion, which then leads to planning errors).
+- It is difficult to trace the initial source of failure over long trajectories.
+- Developers cannot precisely locate weak points for targeted improvements.
 
-**Key Challenge**: There exists a significant gap between system-level failure detection ("the task failed") and capability-level failure diagnosis ("which capability caused it"). For long-sequence embodied tasks, knowing a failure occurred without knowing its root cause provides almost no guidance for improvement.
+**Key Challenge**: There is a significant gap between system-level failure detection ("task failed") and ability-level failure diagnosis ("which ability caused it"). For long-sequence embodied tasks, knowing only that a failure occurred without knowing its root cause provides almost no guidance for improvement.
 
-**Goal**: Develop a **capability-oriented testing method** that can: (1) automatically generate test cases likely to expose specific capability defects; (2) construct independent evaluation criteria (oracles) for each capability; (3) accurately attribute failures from long trajectories to a specific capability and its first moment of error.
+**Goal**: Develop an **ability-oriented testing method** that can: (1) automatically generate test cases likely to expose specific ability defects; (2) construct independent evaluation standards (oracles) for each ability; (3) accurately attribute failures to a specific ability and its first moment of error within long trajectories.
 
-**Key Insight**: Transform the problem of failure attribution in long trajectories into counterfactual reasoning: for each detected capability error, attempt to replace it with the oracle's correct output and observe if the trajectory becomes successful. If it does, the error is a "failure-inducing error." Identifying the earliest among multiple inducing errors reveals the root cause of failure.
+**Key Insight**: The long-trajectory failure attribution problem is transformed into counterfactual reasoning: for each detected ability error, an attempt is made to replace it with the correct output from the oracle to see if the trajectory becomes successful. If it does, this error is a "failure-inducing error." Among multiple inducing errors, the one that appears earliest is the source of the failure.
 
-**Core Idea**: Combine fuzz testing (fuzzing) with capability-level oracles and counterfactual causal reasoning, designing an adaptive feedback scoring mechanism.
+**Core Idea**: Combine fuzzing with ability-level oracles and counterfactual causal reasoning to design an adaptive feedback scoring mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-CanTest consists of three modules:
+The goal of CanTest is to not only report "failure" when a VLN agent fails a task over a long trajectory but also point out "which ability (Perception/Memory/Planning/Decision-making) failed first and at which step." It drives this process via a fuzzing loop—maintaining a seed bank with feedback scores. Each round, it selects a seed instruction and performs strong or weak mutations to generate new instructions for the agent. After execution, four ability oracles compare the agent's output with expert GT step-by-step to identify the earliest error that truly induced the failure. This diagnosis is converted into a feedback score and fed back into the seed bank, guiding the next round to generate instructions more likely to expose weak abilities. These three stages—generation, scoring, and attribution—are connected end-to-end for increasing precision.
 
-1.  **Adaptive Test Case Generation**: Based on fuzzing principles, it maintains a seed pool with feedback scores. Each iteration selects a seed and performs mutations at two intensities (mild/aggressive) to generate new natural language instructions.
-2.  **Capability Oracle Construction**: Builds an oracle for each of the four capabilities (perception, memory, planning, decision) to automatically extract expected outputs and define independent error metrics.
-3.  **Capability-Oriented and Failure-Oriented Feedback**: After each test case execution, capability outputs are checked using the oracles. "Failure-inducing errors" are identified via counterfactual intervention to attribute failures to specific capabilities and calculate mixed feedback scores to guide the next round of generation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SEED["Seed Bank (Instructions with Feedback Scores)"]
+    SEED --> GEN
+    subgraph GEN["Adaptive Test Case Generation"]
+        direction TB
+        SEL["Select Seed by Score<br/>High: Often / Low: Rare"]
+        MUT["Determine Mutation Intensity<br/>High Score: Mild Adjustment / Low Score: Aggressive Rewrite"]
+        SEL --> MUT
+    end
+    GEN --> EXEC["VLN Agent Execution<br/>Generates Trajectory"]
+    EXEC --> ORACLE
+    subgraph ORACLE["Ability Oracles (Auto-GT from Expert Models)"]
+        direction TB
+        O["Compare 4 Ability Outputs vs GT Stepwise<br/>Perception / Memory / Planning / Decision"]
+    end
+    ORACLE --> ATTR
+    subgraph ATTR["Failure Attribution & Mixed Feedback"]
+        direction TB
+        CF["Counterfactual Step-Replacement<br/>Re-simulate by replacing error with GT"]
+        ROOT["Identify Earliest Failure-Inducing Error<br/>= Failure Source"]
+        FB["Calculate Mixed Feedback Score<br/>Task-level + Ability-level"]
+        CF --> ROOT --> FB
+    end
+    ATTR -->|Feedback Score| SEED
+```
 
 ### Key Designs
 
-1.  **Adaptive Test Case Generation**:
-    *   **Function**: Generates natural language navigation instructions that can expose capability defects.
-    *   **Mechanism**: (1) Initialize the seed pool; (2) In each round, select seeds with probability $p_{cs_i} = \max(F_{cs_i}, 0) / \sum_{i=1}^{N} F_{cs_i}$ based on feedback scores; (3) Calculate mutation intensity $p_m = (F_{cs} - \min(\mathbf{F})) / (\max(\mathbf{F}) - \min(\mathbf{F}))$ based on the seed's feedback score. Mild mutations are used for high-score seeds, while aggressive mutations are used for low-score seeds.
-    *   **Design Motivation**: High-score seeds are proven likely to fail, so mild mutations refine them while preserving failure patterns. Low-score seeds require expansion of the search space, so aggressive mutations force the agent through different routes to expose other defects.
+**1. Adaptive Test Case Generation: Following "How Easily a Seed Fails"**
 
-2.  **Capability Oracle Construction**:
-    *   **Function**: Defines independent error criteria for each of the four capabilities, comparing the agent's actual output with the expected output.
-    *   **Mechanism**: Utilize expert models provided by the simulation environment to obtain ground truth (GT): a navigation expert provides the optimal path via greedy planning, an image tagging model (RAM) provides perception GT, and historical visual annotations are recorded as memory GT. Independent distance metrics are then defined for the four capabilities. For example, the perception oracle $\epsilon_t^p = \frac{1}{N}\sum_n (\|VA_{t,n} - VA_{t,n}^{gt}\|_{\mathbb{L}} - |P_{t,n} \cap P_{t,n}^{gt}| / |P_{t,n} \cup P_{t,n}^{gt}|)$, which fuses LLM similarity and IoU; the planning oracle $\epsilon_t^{pl} = 1 - \text{nDTW}(\tau_t^{pl}, \tau_{t,\ldots,n}^{gt})$; and the decision oracle $\epsilon_t^d = 1 - \|D_t - D_t^{pl}\|$.
-    *   **Design Motivation**: Different capabilities have different output formats and require customized metrics. Relying on expert models automates oracle construction.
+Failures in VLN agents are sparse events; blind random mutation of instructions rarely hits defects efficiently. CanTest uses the historical feedback score of each seed as a signal for resource allocation: when selecting seeds, it normalizes scores into probabilities $p_{cs_i} = \max(F_{cs_i}, 0) / \sum_{i=1}^{N} F_{cs_i}$, so high-score seeds are chosen more frequently. During mutation, it determines intensity via $p_m = (F_{cs} - \min(\mathbf{F})) / (\max(\mathbf{F}) - \min(\mathbf{F}))$. High-score seeds (already proven to induce failure) use mild mutations for fine-tuning to preserve and refine the failure mode; low-score seeds use aggressive mutations to push the agent onto entirely different routes to detect other unexplored defects. This allows for both "deep diving" into known weaknesses and "broad searching" for unknown blind spots.
 
-3.  **Failure Attribution and Mixed Feedback**:
-    *   **Function**: Identifies which error of which capability caused the failure, determines if the failure can be reversed under counterfactual intervention, and guides test generation.
-    *   **Mechanism**: (1) Use capability oracles to check if any of the four capabilities at all moments $t$ are erroneous, yielding the error set $C^{errors}$; (2) For each error $(C_x, t)$, replace the agent's output at that moment with the oracle's output and re-simulate the remaining trajectory. It is a "failure-inducing error" if the task changes from failure to success; (3) Among multiple inducing errors, select the earliest: $(C_x^*, t^*) = \arg\min_{(C_x', t') \in \mathbb{C}(\tau)} t$; (4) Compute the mixed feedback score $F_{cs} = F^f + \lambda^{C_x} F^c$, where $F^f \in \{0, 1\}$ indicates task success/failure, $F^c = \text{Norm}(\epsilon_{t^*}^x)$ is the normalized error value of the source capability at the source moment, and weight $\lambda^{C_x} = \overline{N^{C_y}} / N^{C_x}$ adaptively balances exploration across capabilities.
-    *   **Design Motivation**: Counterfactual reasoning accurately determines whether an error truly caused a failure. The earliest error rule corresponds to tracing the root cause. Mixed feedback focuses on both task-level failure and capability-level errors.
+**2. Ability Oracle Construction: Custom Measurement for Four Heterogeneous Abilities**
 
-### Experimental Design Details
+To attribute failure to a specific ability, one must independently judge if each ability's output is correct. However, the output formats of Perception, Memory, Planning, and Decision-making differ significantly. CanTest leverages expert models in simulated environments to automatically obtain ground truth (GT)—a navigation expert for optimal paths, an image tagging model (RAM) for perception GT, and archived visual annotations for memory GT—then customizes a distance metric for each. The Perception oracle fuses LLM semantic similarity with Bounding Box IoU: $\epsilon_t^p = \frac{1}{N}\sum_n (\|VA_{t,n} - VA_{t,n}^{gt}\|_{\mathbb{L}} - |P_{t,n} \cap P_{t,n}^{gt}| / |P_{t,n} \cup P_{t,n}^{gt}|)$; the Planning oracle uses normalized Dynamic Time Warping to measure path deviation $\epsilon_t^{pl} = 1 - \text{nDTW}(\tau_t^{pl}, \tau_{t,\ldots,n}^{gt})$; and the Decision oracle compares actual actions with planned actions $\epsilon_t^d = 1 - \|D_t - D_t^{pl}\|$. Since GT is automatically produced by expert models, the entire suite of oracles can operate at scale without manual annotation.
 
-The study uses the Habitat 3 VLN simulation environment. The HM3D dataset provides 216 large-scale indoor 3D scenes with semantic annotations. Three advanced VLN models (ApexNav, MGDM, Mem2Ego) are tested and compared against three baselines: Random, BehAVExplor, and VLATest.
+**3. Failure Attribution & Mixed Feedback: Finding the Root Cause via Counterfactual "Step Replacement"**
+
+Because the four abilities are tightly coupled, upstream errors cascade downstream; looking only at the final failure makes it impossible to identify the culprit. CanTest first uses oracles to scan all timesteps $t$, collecting the set of all ability errors $C^{errors}$. It then performs counterfactual intervention for each error $(C_x, t)$—replacing the agent's output at that step with the oracle's correct output and re-simulating the remaining trajectory. If the trajectory flips from failure to success, the error is identified as a "failure-inducing error." Among all such errors, the earliest one is chosen as the root cause $(C_x^*, t^*) = \arg\min_{(C_x', t') \in \mathbb{C}(\tau)} t$, representing the "first falling domino." Finally, the diagnosis is converted into a mixed feedback score $F_{cs} = F^f + \lambda^{C_x} F^c$: $F^f \in \{0, 1\}$ is the task-level success/failure signal, $F^c = \text{Norm}(\epsilon_{t^*}^x)$ is the normalized error intensity of the root ability at the root time, and the adaptive weight $\lambda^{C_x} = \overline{N^{C_y}} / N^{C_x}$ dynamically lowers the weight of fully explored abilities and raises it for under-explored ones to avoid getting stuck in a local loop of a single ability.
 
 ## Key Experimental Results
 
+Using the Habitat 3 VLN simulation environment, the HM3D dataset provides 216 large-scale indoor 3D scenes with semantic annotations. Three advanced VLN models (ApexNav, MGDM, Mem2Ego) were tested against three baselines: Random, BehAVExplor, and VLATest.
+
 ### Main Results: Comparison of Discovered Failure Cases
 
-| Method | ApexNav | MGDM | Mem2Ego | Average Improvement |
-| :--- | :--- | :--- | :--- | :--- |
-| Random | ~20–25 | ~23–28 | ~18–22 | Baseline |
-| BehAVExplor + OA | ~41–49 | ~42–51 | ~37–46 | Baseline |
-| VLATest + OA | ~52–58 | ~56–63 | ~50–58 | Baseline |
+| Method | ApexNav | MGDM | Mem2Ego | Avg. Gain |
+|------|---------|------|---------|---------|
+| Random | ~20–25 | ~23–28 | ~18–22 | Base |
+| BehAVExplor + OA | ~41–49 | ~42–51 | ~37–46 | Base |
+| VLATest + OA | ~52–58 | ~56–63 | ~50–58 | Base |
 | **CanTest (Ours)** | **72–75** | **74–76** | **61–65** | **+23–34%** |
 
-Note: OA indicates integrating CanTest's oracle and attribution mechanism as plugins into the baseline. CanTest consistently outperforms all baselines across all models.
+Note: OA indicates integrating CanTest's oracles and attribution mechanism as a plugin into the baseline. CanTest consistently outperforms all baselines across all models.
 
-### Breakdown of Capability-Level Failures
+### Breakdown of Ability-Level Failure Cases
 
-| Capability | ApexNav | MGDM | Mem2Ego | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Perception Failure | 72.2 | 74.7 | 61.4 | CanTest is strongest in finding perception failures |
-| Memory Failure | 66.3 | 56.1 | 42.8 | Significant variance in memory capability across models |
+| Ability | ApexNav | MGDM | Mem2Ego | Description |
+|------|---------|------|---------|------|
+| Perception Failure | 72.2 | 74.7 | 61.4 | CanTest is strongest at finding perception failures |
+| Memory Failure | 66.3 | 56.1 | 42.8 | Memory capacity varies significantly across models |
 | Planning Failure | 52.5 | 49.3 | 66.1 | Fewer planning failures overall |
-| Decision Failure | 59.5 | 64.7 | 63.4 | Decision failures are relatively stable |
+| Decision Failure | 59.5 | 64.7 | 63.4 | Decision-making failures are relatively stable |
 
-### Repair Experiment: Fixing Failure Cases with Oracle Correct Outputs
+### Repair Experiment: Fixing Failure Cases with Oracle GT
 
-| Capability | ApexNav Repair Rate | MGDM Repair Rate | Mem2Ego Repair Rate |
-| :--- | :--- | :--- | :--- |
+| Ability | ApexNav Repair Rate | MGDM Repair Rate | Mem2Ego Repair Rate |
+|------|---------|---------|---------|
 | Perception | 84.35% | 83.53% | 85.83% |
 | Memory | 81.30% | 82.35% | 83.64% |
 | Planning | 87.05% | 86.41% | 89.71% |
 | Decision | 95.13% | 94.90% | 96.69% |
 
-Repair rates > 81% indicate high oracle credibility. Repair rates for upstream capabilities (perception, memory) are slightly lower because upstream errors propagating downstream can trigger multi-stage errors.
+Repair rates > 81% indicate high oracle credibility. Upstream abilities (Perception, Memory) have slightly lower repair rates because errors propagating downstream can trigger multi-stage issues.
 
 ### Key Findings
 
-- **High Fidelity Oracles**: Repair rates > 81% show that automatically constructed oracles capture real capability errors.
-- **Upstream Errors are More Damaging**: Perception/memory repair rates are lower than planning/decision because upstream errors cascade across the trajectory.
-- **High Diversity**: Manual analysis of 100 failure cases revealed 8 fine-grained failure types, whereas baselines only covered 6.
-- **Ablation Study**: Removing failure-oriented feedback, capability-oriented feedback, or both resulted in success counts of 62–68, 62–70, and 45–55 respectively, proving both signals contribute to failure discovery.
+- **High Oracle Fidelity**: Repair rates > 81% show that auto-constructed oracles capture real ability errors.
+- **Upstream Errors are More Damaging**: Perception/Memory repair rates are lower than Planning/Decision because upstream errors cascade across the trajectory.
+- **High Diversity**: Manual analysis of 100 failure cases covered 8 fine-grained failure types, compared to only 6 for the baseline.
+- **Ablation**: Removing failure-oriented feedback, ability-oriented feedback, or both resulted in failure discovery counts of 62–68, 62–70, and 45–55, respectively, proving both signals contribute to failure discovery.
 
 ## Highlights & Insights
 
-- **Clever Application of Counterfactual Reasoning in Embodied Testing**: Identifying failure causes by replacing erroneous capability outputs with GT allows for elegant and explainable root cause analysis in long trajectories.
-- **Automated Framework for Capability Oracles**: Instead of manually designing evaluation criteria for each capability, it uses expert models to automatically obtain GT. This is highly practical for scenarios lacking human annotation.
-- **Adaptive Feedback Weights Balance Exploration**: By dynamically adjusting $\lambda^{C_x}$, the framework avoids local loops in test generation by lowering weights for fully explored capabilities and increasing them for under-explored ones.
-- **Detailed Failure Diversity Analysis**: Beyond reporting total failures per capability, the manual annotation of 8 fine-grained failure types provides a more precise diagnostic view than simple "perception/memory/planning/decision" categorization.
+- **Clever Application of Counterfactual Reasoning**: By replacing erroneous ability outputs with GT to determine if it causes failure, the method elegantly and explainably identifies the root cause in long trajectories.
+- **Automatic Ability Oracle Framework**: Instead of manually designing evaluation criteria for every ability, it utilizes expert models to auto-acquire GT. This is highly practical for scenarios lacking human annotation.
+- **Adaptive Feedback Weights for Balanced Exploration**: Using $\lambda^{C_x}$ to dynamically adjust weights prevents test generation from falling into local loops of a single ability.
+- **Detailed Failure Diversity Analysis**: Beyond reporting ability-level counts, the manual labeling of 8 fine-grained failure types provides a much sharper diagnostic view than just "Perception/Memory/Planning/Decision."
 
 ## Limitations & Future Work
 
-**Limitations acknowledged by the authors**:
+**Limitations acknowledged by authors**:
 
-1.  **Reliance on Expert Models**: Constructing oracles requires GT, such as optimal path planning and perception labels. Obtaining such privileged information in real-world environments is difficult.
-2.  **Sim-to-Real Gap**: Current evaluations are conducted in the Habitat simulation environment. Real-world noise and dynamism may cause oracle designs to fail.
+1. **Reliance on Expert Models**: Constructing oracles requires GT, such as optimal path planning and perception labels. Obtaining this privileged information in real-world environments is difficult.
+2. **Sim-to-Real Gap**: Current evaluations are performed in the Habitat simulation environment; noise and dynamism in the real world might invalidate existing oracle designs.
 
-**Extension directions from an independent perspective**:
+**Perspective on future directions**:
 
-1.  Oracles currently rely on expert model GT; future work could explore weakly supervised oracles (using signals distilled from demonstrations, corrective feedback, or safety monitors).
-2.  Capability definitions and oracle designs for embodied tasks beyond VLN (e.g., robotic arm manipulation, multi-agent collaboration) may differ and require a generalized framework.
-3.  Current attribution only handles the single earliest failure source on a long trajectory; future models could consider attribution for multiple concurrent failure sources.
+1. Oracles are currently based on expert model GT; future work could explore weakly supervised oracles (using signals from demonstrations, correction feedback, or safety monitors).
+2. Embodied tasks beyond VLN (e.g., robotic arm manipulation, multi-agent collaboration) might require different ability definitions and oracle designs, needing a more generalized framework.
+3. Currently, it handles only the earliest failure source; future attribution models could consider multiple concurrent failure sources.
 
 ## Related Work & Insights
 
-- **vs BehAVExplor**: BehAVExplor uses behavior-guided fuzzing to generate diverse test cases, but its feedback signals come only from system-level task success/failure, making it unable to distinguish failure root causes. CanTest's capability-level feedback enables more precise exploration and a 23% increase in failure discovery.
-- **vs VLATest**: VLATest is a SOTA testing framework for robotic manipulation. CanTest customizes capability oracles and counterfactual attribution for VLN, providing stronger diagnostic power for multimodal embodied agents than general operator-based methods.
-- **vs Traditional Software Testing**: CanTest borrows ideas from counterfactual causal reasoning, using backward induction to locate sources—an innovative application of causal reasoning in embodied AI testing.
+- **vs BehAVExplor**: BehAVExplor uses behavior-guided fuzzing to generate diverse test cases, but feedback signals come only from system-level success/failure, making it unable to distinguish the root cause. CanTest's ability-level feedback results in +23% failure discovery.
+- **vs VLATest**: VLATest is a SOTA framework for robot manipulation; CanTest customizes ability oracles and counterfactual attribution for VLN, providing stronger diagnostic power for multimodal embodied agents compared to generic operator methods.
+- **vs Traditional Software Testing**: CanTest borrows the idea of counterfactual causal reasoning to use reverse simulation for root cause localization, representing an innovative application of causal reasoning in embodied AI testing.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First to systematically combine capability-level testing, automated oracle construction, and counterfactual failure attribution for embodied agents.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation using three VLN models, three baseline comparisons, ablation studies, repair rate validation, and manual diversity analysis; lacks real-world validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, thorough methodological explanation, and explicit experimental conclusions.
-- **Value**: ⭐⭐⭐⭐⭐ Provides significant inspiration for testing and diagnosing embodied AI; the oracle framework is transferable to other multi-capability systems.
+- **Novelty**: ⭐⭐⭐⭐⭐ First to systematically combine ability-level testing, automatic oracle construction, and counterfactual failure attribution in embodied agent testing.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive across three VLN models, three baselines, ablation studies, repair rate verification, and manual diversity analysis; lacks real-world validation.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, thorough explanation of methods, and explicit experimental conclusions.
+- **Value**: ⭐⭐⭐⭐⭐ Significant inspiration for testing and diagnosis in embodied AI; the oracle framework is transferable to other multi-ability systems.
 
 <!-- RELATED:START -->
 
@@ -156,11 +169,11 @@ Repair rates > 81% indicate high oracle credibility. Repair rates for upstream c
 
 ## Related Papers
 
-- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
 - [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
-- [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](../../NeurIPS2025/robotics/safe_multitask_failure_detection_for_vision-language-action_models.md)
-- [\[ICLR 2026\] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](../../ICLR2026/robotics/janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)
+- [\[ACL 2026\] Limited Linguistic Diversity in Embodied AI Datasets](limited_linguistic_diversity_in_embodied_ai_datasets.md)
+- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
 - [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
+- [\[ACL 2026\] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](libra-vla_achieving_learning_equilibrium_via_asynchronous_coarse-to-fine_dual-sy.md)
 
 </div>
 

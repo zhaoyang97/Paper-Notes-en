@@ -51,7 +51,7 @@ item_total: 16
 
 **🔬 ICLR2026** · **16** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [📷 CVPR2026 (80)](../../CVPR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (160)](../../CVPR2026/autonomous_driving/index.md) · [🧪 ICML2026 (6)](../../ICML2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×2 · Agents ×2 · Autonomous Driving ×2
 

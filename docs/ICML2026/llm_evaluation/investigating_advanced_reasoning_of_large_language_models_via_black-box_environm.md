@@ -2,76 +2,90 @@
 title: >-
   [Paper Note] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction
 description: >-
-  [ICML 2026][LLM Evaluation][Reasoning Evaluation] This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). The authors construct t…
+  [ICML 2026][LLM Evaluation][Paper Note] This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). By constructing the ORACLE benchmark with 96 environments across 6 task categories and evaluating 19 LLMs, it is discovered that even the strongest model, o3, only achieves
 tags:
-  - "ICML 2026"
-  - "LLM Evaluation"
-  - "Reasoning Evaluation"
-  - "Black-Box Interaction"
-  - "Exploration Strategy"
-  - "Deduction-Induction-Abduction"
-  - "ORACLE Benchmark"
+  - ICML 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: e42cba2a618edd73
+content_hash: c5b9875043b75873
 ---
-
 # Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction
 
 **Conference**: ICML 2026  
 **arXiv**: [2508.19035](https://arxiv.org/abs/2508.19035)  
 **Code**: https://github.com/lemonsis/Oracle_Benchmark (Available)  
 **Area**: LLM Evaluation / Reasoning Benchmarks  
-**Keywords**: Reasoning Evaluation, Black-Box Interaction, Exploration Strategy, Deduction-Induction-Abduction, ORACLE Benchmark
+**Keywords**: Reasoning Evaluation, Black-Box Interaction, Exploration Strategies, Deduction-Induction-Abduction, ORACLE Benchmark
 
 ## TL;DR
-This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). The authors construct the ORACLE benchmark containing 6 task categories and 96 environments. Benchmarking 19 LLMs reveals that even the strongest model, o3, achieves only 70% accuracy in simple environments and drops to 40% in difficult ones. Furthermore, all LLMs lack high-level planning capabilities to adaptively optimize exploration strategies based on feedback.
+This paper proposes "Black-Box Environment Interaction" as a new paradigm for evaluating integrated reasoning (deduction + induction + abduction). By constructing the ORACLE benchmark with 96 environments across 6 task categories and evaluating 19 LLMs, it is discovered that even the strongest model, o3, only achieves ~70% accuracy in simple environments and drops to ~40% in difficult ones. Furthermore, all LLMs lack high-level planning capabilities for "adaptive optimization of exploration strategies based on feedback."
 
 ## Background & Motivation
 
-**Background**: LLM scores on reasoning benchmarks like GSM8k and MATH are soaring. Long CoT and test-time scaling make models appear to possess strong reasoning capabilities.
+**Background**: LLM scores on reasoning benchmarks like GSM8k and MATH have soared; long CoT and test-time scaling make models appear capable of advanced reasoning.
 
-**Limitations of Prior Work**: (1) Existing datasets often test deduction, induction, and abduction in isolation rather than as a unified process. (2) Using games (e.g., Minecraft / 24-point) to simulate interactive environments involves extraneous abilities like spatial understanding or long context, and training data may already be contaminated. (3) Static datasets are susceptible to memorization, leading to benchmark saturation.
+**Limitations of Prior Work**: (1) Existing datasets mostly isolate deduction, induction, and abduction rather than treating them as a unified process; (2) Using games (e.g., Minecraft, Game of 24) to simulate interactive environments involves confounding variables like spatial understanding and long context, and training data may already be contaminated; (3) Static datasets are easily memorized, leading to benchmark saturation.
 
-**Key Challenge**: The human process of discovering unknown environments follows a dynamic closed-loop (Peirce's framework): "Abduction (forming hypotheses from observations) $\to$ Deduction (predicting new observations) $\to$ Induction (refining hypotheses with new observations)." Current LLM evaluation focuses almost exclusively on single-step deduction or static CoT, failing to measure the complete "hypothesis-verification-refinement" reasoning cycle.
+**Key Challenge**: The human process of discovering unknown environments is a dynamic closed loop of "abduction (guessing hypotheses from observations) → deduction (deriving new observations) → induction (refining hypotheses based on new observations)" (the Peirce framework). Current LLM evaluations almost exclusively test single-step deduction or single-path static CoT, failing to measure the overall "hypothesis-verification-refinement" reasoning cycle.
 
-**Goal**: (1) Design an interactive paradigm that forces LLMs through the full reasoning cycle. (2) Ensure the paradigm is pure—evaluating reasoning without confounding variables. (3) Make the paradigm contamination-resistant and scalable to arbitrary difficulty.
+**Goal**: (1) Design an interaction paradigm that forces LLMs to execute the full reasoning cycle; (2) Ensure the paradigm is pure—evaluating reasoning without confounding factors; (3) Ensure the paradigm is contamination-resistant and scalable to arbitrary difficulty.
 
-**Key Insight**: An "unknown environment" is abstracted as a black box of an implicit function $f:X\to Y$. An LLM reveals $f$ by querying inputs and observing outputs within $T$ exploration rounds, then predicts outputs for new inputs in a test set. This paradigm naturally necessitates hypothesis generation (abduction), query generation (deduction), and refinement based on feedback (induction).
+**Key Insight**: Abstract the "unknown environment" as a black box of an implicit function $f:X\to Y$. LLMs must reveal $f$ through $T$ turns of exploration by querying inputs and observing outputs, then predict outputs for new inputs in a test set. This paradigm naturally necessitates hypothesis generation (abduction), query generation (deduction), and refinement based on feedback (induction).
 
-**Core Idea**: Use "Black-Box Environment Interaction" as an evaluation paradigm to force LLMs to execute deduction + induction + abductions as an indecomposable, holistic reasoning cycle.
+**Core Idea**: Use "Black-Box Environment Interaction" as an evaluation paradigm to force LLMs to execute deduction + induction + abduction as an inseparable, holistic reasoning cycle.
 
 ## Method
 
 ### Overall Architecture
-Each evaluation instance consists of two phases: (1) Exploration phase ($T$ rounds), where the model $M$ adaptively generates a query $x_t=M(H_{t-1})$ based on history $H_{t-1}=(x_1,y_1,\ldots,x_{t-1},y_{t-1})$ at round $t$, and the black box returns $y_t=f(x_t)$. (2) Evaluation phase ($K$ rounds), where the model predicts $\hat{y}^k$ for each input in a test set $X_{\rm test}$ (disjoint from exploration queries). The black box returns binary correctness $c^k=\mathbb{1}(\hat{y}^k=f(x^k_{\rm test}))$, and the model can continue to refine subsequent predictions using the correctness signal. Two metrics are used: accuracy $=\sum c^k / K$ and turn@shot (e.g., 20@2 represents 20 exploration rounds + 2 attempts per test sample).
+ORACLE abstracts an "unknown environment" into a black-box implicit function $f:X\to Y$, requiring the LLM to reveal it within a limited number of interactions. Each evaluation instance consists of two phases: an exploration phase of $T$ turns, where the model $M$ at turn $t$ adaptively generates a query $x_t=M(H_{t-1})$ based on history $H_{t-1}=(x_1,y_1,\ldots,x_{t-1},y_{t-1})$ and receives $y_t=f(x_t)$ from the black box; and an evaluation phase of $K$ rounds, where the model predicts $\hat{y}^k$ for a test set $X_{\rm test}$ disjoint from exploration queries. The black box returns binary correctness $c^k=\mathbb{1}(\hat{y}^k=f(x^k_{\rm test}))$, allowing the model to refine subsequent predictions. Performance is measured by accuracy $=\sum c^k / K$, controlled by the turn@shot notation (e.g., 20@2 indicates 20 exploration turns and 2 attempts per test sample). This two-phase closed loop forces the model through the complete reasoning cycle. The black boxes are not manually written but are automatically generated by a three-module LLM pipeline (Coding → Test → Refinement).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph GEN["Three-Module Framework Automatically Generates Black Boxes"]
+        direction TB
+        D1["Coding LLM<br/>Generates platform code based on natural language descriptions + interaction rules"]
+        D2["Test LLM<br/>Simulates exploration/evaluation interactions to produce interaction logs"]
+        D3["Refinement LLM<br/>Diagnoses execution errors/misalignments/correctness via logs and iterates"]
+        D1 --> D2 --> D3
+        D3 -->|Failure Loop| D1
+    end
+    GEN -->|Pass| BB["Black-Box Implicit Function f : X→Y<br/>6 Task Categories × 96 Environments"]
+    subgraph PARA["Black-Box Environment Interaction Paradigm"]
+        direction TB
+        EXP["Exploration Phase (T turns)<br/>xt = M(Ht−1) generates query → Black box returns yt → Update history"]
+        EVAL["Evaluation Phase (K rounds)<br/>Predict ŷ → Binary correctness c → Adaptive refinement based on feedback"]
+        ACC["accuracy = Σc / K (turn@shot controls exploration budget)"]
+        EXP --> EVAL --> ACC
+    end
+    BB --> EXP
+    EXP -.Analyze Exploration Trajectory.-> TIER["Query Information-Theoretic Lower Bound + Three-Tier Exploration Hierarchy<br/>Tier 1: Random / Tier 2: Fixed Strategy / Tier 3: Adaptive"]
+```
 
 ### Key Designs
 
-1.  **Black-Box Environment Interaction Paradigm + 6 Task Categories**:
-    - **Function**: Unifies implicit functions from different domains into "Input Space $X \to$ Output Space $Y$" black boxes, designing 6 semantically distinct tasks to cover broad reasoning.
-    - **Mechanism**: The six tasks include CII (Code Intent Inference: black box is an algorithm code, querying variable values at specific checkpoints), CRI (Circuit Rule Inference: black box is a Boolean circuit, querying input wire $\to$ gate outputs), PSI (Physics System Inference: black box is a classical mechanics system, querying time $\to$ object coordinates), ERI (Encryption Rule Inference: black box is an encryption mapping, querying plaintext $\to$ ciphertext), IPI (Interactive Puzzle Inference: interactive games like number guessing), and GSI (Game Strategy Inference: black box is an opponent's fixed strategy; the goal is to win). Each contains easy and hard environments, totaling 96.
-    - **Design Motivation**: Synthetic black boxes circumvent data contamination—even if an LLM has seen similar tasks, specific rules are unique. The function space is kept pure by excluding vision, long context, or commonsense knowledge to isolate reasoning.
+**1. Black-Box Interaction Paradigm + 6 Task Categories: Unifying Heterogeneous Reasoning Tasks into a Contamination-Resistant Black Box**
 
-2.  **Three-Module LLM Agentic Framework for Automated Black-Box Generation**:
-    - **Function**: Automatically generates black-box code and interactive interfaces from natural language descriptions, allowing the benchmark to scale.
-    - **Mechanism**: Three modules collaborate: (a) **Coding LLM** receives task descriptions and rules to generate platform code; (b) **Test LLM** interacts with the black box as a player to produce interaction logs; (c) **Refinement LLM** diagnoses errors (execution, functional misalignment, or correctness) using logs and rules to iterate. This closed-loop process aligns with engineering principles of "debugging via runtime feedback," proving more robust than static analysis.
-    - **Design Motivation**: Manual creation is expensive and hard to scale. Using LLMs as generators avoids bias because the evaluated models only see the interactive interface, not the underlying code.
+Existing datasets either isolate logic components or introduce confounding variables via game environments. ORACLE reduces all tasks to an implicit function $f: X \to Y$ and designs 6 tasks: CII (Code Intent Inference), CRI (Circuit Rule Inference), PSI (Physics System Inference), ERI (Encryption Rule Inference), IPI (Interactive Puzzle Inference), and GSI (Game Strategy Inference). Each category includes easy and hard levels, totaling 96 environments. Using synthetic black boxes prevents data contamination—even if the LLM was trained on similar tasks, the specific rules of each box are novel. The functional space also isolates pure reasoning from visual, long-context, or commonsense knowledge.
 
-3.  **Theoretical Query Lower Bound + Adaptive Exploration Tiers**:
-    - **Function**: Provides info-theoretic bounds on the minimum queries needed to identify a function and categorizes LLM exploration capabilities.
-    - **Mechanism**: From the perspective of exact identification from membership queries, identifying a hypothesis space $\mathcal{H}$ requires $T_{\rm info}\geq \lceil\log_2|\mathcal{H}|/\log_2|Y|\rceil$ queries. The authors categorize exploration into three tiers: Tier 1 (Random exploration), Tier 2 (Fixed strategy without feedback-based optimization), and Tier 3 (Adaptive strategy adjustment based on instant feedback). Tier 3 represents human-level performance.
-    - **Design Motivation**: Provides an absolute reference line (info-theoretic bound) rather than just relative baselines. Categorization allows structured analysis to pinpoint where LLMs fail.
+**2. Three-Module LLM Agentic Framework for Automatic Generation: Scalable Benchmarking Without Human Bias**
+
+To achieve scale, the authors use an LLM pipeline to generate black-box code and interfaces from natural language descriptions. Three modules collaborate: the Coding LLM generates platform code; the Test LLM simulates interactions to produce logs; and the Refinement LLM diagnoses errors as "execution error," "functional misalignment," or "correct." This "execution-feedback-debug" cycle is more robust than static analysis, allowing for stable batch generation of environments. Crucially, using an LLM as a generator does not leak solutions, as the evaluated model only sees the interface, not the code.
+
+**3. Theoretical Query Lower Bound + Adaptive Exploration Hierarchy: An Absolute Scale for Evaluation**
+
+To measure "how hard the black box is," the authors provide an information-theoretic lower bound for exact identification: $T_{\rm info}\geq \lceil\log_2|\mathcal{H}|/\log_2|Y|\rceil$ queries. LLM exploration capability is then classified into three tiers: Tier 1 (random), Tier 2 (fixed strategy regardless of feedback), and Tier 3 (adaptive strategy based on instant feedback). Tier 3 represents human-level efficiency, which no current LLM achieves.
 
 ### Loss & Training
-This work focuses on evaluation and benchmarking; no training is involved. All models were tested using default API parameters (temperature=0), reasoning effort=medium (GPT series), and thinking budget=20,000 tokens (Claude/Qwen series).
+This is an evaluation paradigm and benchmark; no training is involved. Models were tested using default API parameters (temperature=0), reasoning effort=medium (GPT series), and thinking budget=20,000 tokens (Claude/Qwen series).
 
 ## Key Experimental Results
 
 ### Main Results
-19 qualified LLMs (including o1/o3/o3-mini/o4-mini, Claude-3.5/3.7/4-sonnet, Gemini-2.5-flash/pro, DeepSeek-v3/r1, Qwen3 series, etc.) were evaluated under 10@1 and 20@2 settings. Table below shows SOTA performance for 6 tasks under 10@1 (o3 leads in 5/6):
+19 qualified LLMs (including o1, o3, o3-mini, o4-mini, Claude-3.5/3.7, Gemini-2.5-flash/pro, DeepSeek-v3/r1, Qwen3) were evaluated. The following table shows SOTA performance under 10@1:
 
 | Task | 1st Place | 2nd Place | Easy Acc (SOTA) | Hard Acc (SOTA) |
-| :--- | :--- | :--- | :--- | :--- |
+|--------|------|------|------|------|
 | CII | o3 | o4-mini | ~85% | ~50% |
 | CRI | o3 | gemini-2.5-pro | ~80% | ~40% |
 | PSI | o3 | gemini-2.5-pro | ~75% | ~35% |
@@ -80,10 +94,10 @@ This work focuses on evaluation and benchmarking; no training is involved. All m
 | GSI | o3 | gemini-2.5-pro | ~70% | ~40% |
 
 ### Ablation Study
-The core ablation compares Setting (i) "No feedback during exploration, reveal all query answers at the final round" vs. Setting (ii) "Instant feedback provided every round," tested on CRI and ERI using gemini-2.5-pro / o3-mini / o4-mini:
+The core ablation compares Setting (i) "No feedback during exploration, all answers revealed at the last turn" vs. Setting (ii) "Instant feedback at each turn":
 
-| Model | Task | Setting (i) Acc | Setting (ii) Acc | Delta |
-| :--- | :--- | :--- | :--- | :--- |
+| Model | Task | Setting (i) Acc | Setting (ii) Acc | Difference |
+|------|------|------|------|------|
 | gemini-2.5-pro | CRI | ≈ | ≈ | ~0 |
 | o3-mini | CRI | ≈ | ≈ | ~0 |
 | o4-mini | CRI | ≈ | ≈ | ~0 |
@@ -91,53 +105,51 @@ The core ablation compares Setting (i) "No feedback during exploration, reveal a
 | o3-mini | ERI | ≈ | ≈ | ~0 |
 | o4-mini | ERI | ≈ | ≈ | ~0 |
 
-Performance is nearly identical across both settings—providing direct evidence that LLMs do not utilize instant feedback to optimize exploration strategies.
+Performance was nearly identical across settings, providing direct evidence that LLMs fail to optimize strategies based on instant feedback.
 
 ### Key Findings
-- **Reasoning Models > Chat Models**: claude-4-sonnet_thinking consistently outperforms the non-thinking version; newer models outperform older ones (gemini-2.5-flash > 2.0-flash).
-- **Exploration Budget**: Doubling the budget (10 $\to$ 20 rounds, 1 $\to$ 2 attempts) improves performance by >10% in CII/CRI/IPI but yields almost no gain in PSI (numerical bottleneck) or ERI/GSI (strategy design bottleneck).
-- **Equivalence of Setting (i) vs (ii)**: SOTA models perform identically with or without instant feedback, implying they do not alter exploration behavior based on results. Case studies show o4-mini uses rigid one-hot input exhaustion in CRI regardless of feedback.
-- **Exploration Tiers**: Best models occasionally reach Tier 2; none reach Tier 3. Tier 3 remains a human-only domain.
-- **Difficulty Gradient**: Accuracy drops significantly from Easy (70-85%) to Hard (30-50%), indicating a robust difficulty ladder.
+- **Reasoning models > Chat models**: Claude-4-sonnet_thinking consistently outperformed the non-thinking version; newer models > older models.
+- **Budget effects**: Doubling the exploration budget (10→20 turns) improves accuracy by >10% for CII/CRI/IPI but has almost no effect on PSI (bottlenecked by numerical calculation) or ERI/GSI (bottlenecked by exploration strategy).
+- **Setting (i) vs (ii) Equivalence**: SOTA models perform the same with or without instant feedback, meaning they do not dynamically adjust exploration. For example, o4-mini continues brute-forcing one-hot inputs in CRI regardless of feedback.
+- **Exploration Hierarchy**: Most strong models only occasionally reach Tier 2; none reach Tier 3.
+- **Difficulty Gap**: A significant performance drop (from 70-85% to 30-50%) exists between easy and hard levels, confirming a reasonable difficulty gradient.
 
 ## Highlights & Insights
-- Explicitly formalizes Peirce's "abduction-deduction-induction" framework into a benchmark philosophy, providing the community with a tool to measure the complete reasoning cycle.
-- The "LLM-generated black box, hidden from the evaluated LLM" structure inherently prevents data contamination while allowing for infinite scalability.
-- The equivalent performance between Setting (i) and (ii) is a counter-intuitive yet highly diagnostic result—it falsifies the common assumption that LLMs "learn" from interaction feedback in real-time.
-- The Tier 1/2/3 exploration tiers suggest that RL post-training should reward the dynamic quality of strategy optimization rather than just final correctness.
-- The info-theoretic lower bound provides an absolute scale for difficulty, allowing researchers to calculate exactly how far o3 is from optimal query efficiency.
+- Explicitly formalizes Peirce's "abduction-deduction-induction" framework as a design philosophy for benchmarks.
+- The "LLM-generated black box" structure effectively prevents data contamination while allowing for arbitrary scaling.
+- The Setting (i)/(ii) equivalence experiment provides a counter-intuitive but highly diagnostic result—falsifying the assumption that LLMs "learn" from feedback during exploration.
+- The Tier 1/2/3 hierarchy can guide RL post-training design: rewarding the dynamic quality of strategy optimization rather than just final correctness.
+- The information-theoretic lower bound provides an absolute scale to measure exactly how far o3 is from optimal query efficiency.
 
 ## Limitations & Future Work
-- The number of environments (96) is still small, and rules in some categories (e.g., GSI) could be meta-learned by models over time, reducing the challenge.
-- Black-box tasks are somewhat "toy-like" and far from real-world scientific discovery. The "lack of adaptive exploration" finding is strong but its correlation with real tasks (like code debugging) requires more empirical evidence.
-- Evaluation relies on commercial APIs, making replication expensive ($19 \text{ models} \times 96 \text{ envs} \times \text{multiple turn@shot settings}$).
-- Performance in some tasks (PSI) is limited by poor numerical calculation rather than pure reasoning.
-- No training-time methods were proposed to teach LLMs adaptive exploration; the benchmark identifies the problem for future work to solve.
+- The quantity of environments (96) is still small, and some categories (e.g., GSI) have fixed rules that models might eventually learn as meta-patterns.
+- Black-box tasks remain somewhat toy-like compared to real scientific discovery.
+- High evaluation costs due to reliance on commercial APIs for 19 SOTA models.
+- Confounding variables: specifically, poor numerical calculation in PSI tasks creates a bottleneck independent of reasoning quality.
+- The benchmark identifies the lack of adaptive exploration but does not yet provide training-time methodology to solve it.
 
 ## Related Work & Insights
-- **vs WebArena / GameBench / GameArena**: These use real web or game environments which introduce noise from spatial reasoning and long context; ORACLE uses pure functional black boxes to isolate reasoning.
-- **vs InductionBench / DEER / Mirage**: These only measure inductive reasoning; ORACLE evaluates deduction, induction, and abduction simultaneously via interaction.
-- **vs LiveBench / LiveCodeBench**: These rely on timestamps to prevent contamination; ORACLE uses synthetic generation for a more fundamental solution.
-- **vs DyVal / DARG**: While these generate dynamic problems, ORACLE introduces an interactive closed loop.
-- **vs PlanBench (Valmeekam et al. 2023)**: PlanBench tests planning in static tasks with known rules; ORACLE emphasizes exploratory planning in unknown environments.
+- **vs WebArena / GameBench / GameArena**: These use real web or game environments which introduce spatial understanding and common sense; ORACLE isolates reasoning via pure functional black boxes.
+- **vs InductionBench / DEER**: These focus only on inductive reasoning; ORACLE tests the full cycle.
+- **vs LiveBench / LiveCodeBench**: These rely on timestamps for contamination resistance; ORACLE uses synthetic generation for a more fundamental solution.
+- **vs PlanBench**: PlanBench measures planning in static environments with known rules; ORACLE emphasizes exploratory planning in unknown environments.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Precise mapping of Peirce's reasoning framework to interactive black boxes; Setting (i)/(ii) equivalence is a truly original diagnostic.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive testing across 19 SOTA LLMs with deep behavioral analysis and baseline tests.
-- **Writing Quality**: ⭐⭐⭐⭐ Intuitive case studies, though theoretical analysis of bounds is relegated to the appendix.
-- **Value**: ⭐⭐⭐⭐⭐ Contamination-resistant, scalable, and directly identifies current bottlenecks in LLM reasoning.
+- **Novelty**: ⭐⭐⭐⭐⭐ (Mapping Peirce's framework to a black-box interaction paradigm is highly original)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (Broad evaluation across 19 SOTA LLMs and deep behavioral analysis)
+- **Writing Quality**: ⭐⭐⭐⭐ (Case studies are intuitive, though some theoretical analysis is relegated to the appendix)
+- **Value**: ⭐⭐⭐⭐⭐ (Contamination-resistant, scalable, and reveals a fundamental bottleneck in LLM reasoning)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Enabling Fine-Grained Operating Points for Black-Box LLMs](../../ICLR2026/llm_evaluation/enabling_fine-grained_operating_points_for_black-box_llms.md)
+- [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
 - [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
 - [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](../../NeurIPS2025/llm_evaluation/predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
 - [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](../../ACL2026/llm_evaluation/challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
-- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
 
 </div>
 

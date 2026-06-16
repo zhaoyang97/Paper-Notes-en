@@ -2,94 +2,87 @@
 title: >-
   [Paper Note] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 description: >-
-  [CVPR 2026][Image Generation][virtual try-on] This paper introduces Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories…
+  [CVPR 2026][Image Generation][Paper Note] Ours proposes Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each group contains 3-12 reference garment images, a model outfit image, and detailed text annotations, revealing significant deficiencies of existing methods in multi-layer
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "virtual try-on"
-  - "multi-reference images"
-  - "outfit-level"
-  - "dataset construction"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: f7f1d1d389b3d668
+content_hash: 937f91901a670699
 ---
-
 # Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.14153](https://arxiv.org/abs/2603.14153)  
 **Code**: [GitHub](https://github.com/ArtmeScienceLab/Garments2Look)  
-**Area**: Virtual Try-On / Dataset
-**Keywords**: virtual try-on, multi-reference images, outfit-level, dataset construction, image generation
+**Area**: Virtual Try-On / Dataset  
+**Keywords**: Virtual Try-On, Multi-reference Images, Outfit, Dataset Construction, Image Generation
 
 ## TL;DR
 
-This paper introduces Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each sample contains 3–12 reference garment images, a model outfit image, and detailed textual annotations. The dataset exposes significant shortcomings of existing methods in multi-layer outfit composition and accessory consistency.
+Ours proposes Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each group contains 3-12 reference garment images, a model outfit image, and detailed text annotations, revealing significant deficiencies of existing methods in multi-layer styling and accessory consistency.
 
 ## Background & Motivation
 
-Virtual try-on (VTON) has achieved notable progress in single-garment visualization, yet real-world fashion scenarios demand much more — users expect full **outfit** previews involving multiple garments, accessories, fine-grained categories, layered wearing styles, and diverse styling techniques.
+Virtual Try-On (VTON) has made significant progress in single garment visualization, but real-world fashion scenarios go far beyond this—users need previews of a complete **outfit**, involving multiple garments, accessories, fine-grained categories, layering sequences, and diverse styling.
 
-**Structural deficiencies of existing datasets**:
-- VITON-HD and DressCode support only single-garment try-on with limited categories (1–3)
-- M&M VTO and BootComp support multi-reference inputs but lack category diversity
-- No existing dataset simultaneously provides layering order, styling technique annotations, and multi-accessory support
+**Limitations of Prior Work in dataset structure**:
+- VITON-HD and DressCode only support single-item try-on with limited categories (1-3 types).
+- M&M VTO and BootComp support multi-reference inputs but lack category diversity.
+- No existing dataset provides annotations for layering order, styling techniques, and multi-piece accessories simultaneously.
 
-**New challenges posed by outfit-level VTON**:
-- Complex layering and occlusion relationships among garments (e.g., a knit cardigan can be worn as an outer layer or tucked inside)
-- Diverse styling techniques (regular wear, draped over shoulders, tied at the waist, rolled-up sleeves, etc.)
-- Reference counts ranging from 3 to 12, imposing high demands on multi-reference consistency
+**Key Challenges for outfit-level VTON**:
+- Complex layering and occlusion relationships between garments (e.g., a cardigan can be worn as an outer layer or an inner layer).
+- Diverse styling techniques (normal wear, draped over shoulders, tied at the waist, rolled sleeves, etc.).
+- The number of reference items varies from 3 to 12, putting extreme demands on the model's multi-reference consistency.
 
 ## Method
 
 ### Overall Architecture
 
-The dataset construction follows a four-stage pipeline: Data Collection → Data Synthesis → Data Filtering → Data Evaluation. The core mechanism combines real data (Gold Standard) with synthetic data, ensuring quality through rigorous filtering and expert review.
+The goal of this paper is to address the lack of training data for "outfit-level" virtual try-on—prior datasets only cover single garments, and none provide annotations for layering order, styling techniques, and multiple accessories. The authors build the data using a four-stage pipeline: first, collecting garment images and model outfit images from multiple sources (Data Collection); then, for samples lacking outfit images, completing them with outfit synthesis and look image synthesis (Data Synthesis); followed by three-layer rule-based and manual filtering (Data Filtering); and finally, conducting quantitative and VLM evaluations (Data Evaluation). The core idea is to combine real paired data (Gold Standard) with synthetic data, ensuring quality through strict filtering and manual review.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Multi-source Data Collection<br/>Garments / Model Looks / Text"] --> B["Data Sourcing Strategy by Completeness"]
+    B -->|"Gold Standard 50.2% (Full Images)"| F["Three-layer Data Filtering<br/>Item → Outfit → Pairwise Verification"]
+    B -->|"Outfit Ready, Missing Look 24.0%"| D["OOTD Grid Look Image Synthesis<br/>Items merged into grid for Nano Banana"]
+    B -->|"Garments Only 25.8%"| C["RAG-based Outfit Synthesis<br/>Fashion Knowledge Base + Anti-frequency Sampling"]
+    C --> D
+    D --> F
+    F --> G["Data Evaluation (Quantitative + VLM) → 80K Pair Dataset"]
+```
 
 ### Key Designs
 
-1. **Data Sources and Classification Strategy**
+**1. Data Sourcing Strategy by Completeness: Balancing Real Pairs and Synthetic Data**
 
-   Samples are divided into four categories based on data completeness:
-   - Gold Standard (50.2%): complete garment image + model outfit image pairs
-   - Outfit plan available but no look image (24.0%): look image must be synthesized
-   - Garment images only, no outfit plan (25.8%): both outfit plan and look image must be synthesized
+Collected data varies in completeness—full re-synthesis would lose high-fidelity information from real pairs, while relying solely on real data lacks scale. The authors divide data into three tiers: Gold Standard (50.2%) consisting of complete "garment + model look" pairs; cases with outfit plans but no look images (24.0%) requiring look image synthesis; and garment-only data (25.8%) requiring both outfit plan and look image synthesis. Sources cover outfit compatibility datasets (PolyVore), open-source fashion datasets, compliant web images, and synthetic data, maintaining a high ratio of real samples while scaling to 80K pairs.
 
-   Sources include: outfit compatibility learning datasets (PolyVore), open-source fashion datasets, publicly available web images (strictly compliant), and synthetic data.
+**2. RAG-based Outfit Synthesis: Using Fashion Knowledge Bases for Constrained Generation and Anti-frequency Sampling**
 
-2. **Outfit Synthesis Pipeline**
+Pure LLM-based random generation of outfit lists often produces illogical results and over-recommends popular items, leading to data skew. The outfit synthesis pipeline acts as a heuristic RAG: first, a knowledge base of 65 fashion styles (35 female / 30 male) is constructed, generated by LLMs and reviewed by fashion experts. During runtime, a style is selected, and the LLM generates a persona and scenario (including occasion, color palette, theme, category). Under style constraints, it produces 3–9 item outfit lists ordered from "top-to-bottom, inner-to-outer, garments-to-accessories." Finally, it retrieves top-128 candidates per item and uses anti-frequency weighted sampling to ensure niche items are represented.
 
-   A RAG-inspired heuristic outfit construction process:
-   - **Step 1**: Construct a knowledge base of 65 fashion styles (35 female / 30 male), each generated by an LLM and reviewed by fashion experts
-   - **Step 2**: Randomly select a style → LLM generates a user profile and wearing scenario (including occasion, color palette, theme, and garment categories)
-   - **Step 3**: LLM generates a 3–9 item outfit list under style-knowledge constraints, ordered "top-to-bottom, inner-to-outer, garments-to-accessories"
-   - **Step 4**: Retrieve the top-128 candidates per item → **inverse-frequency weighted sampling** to prevent overrepresentation of popular items
+**3. OOTD Grid Look Image Synthesis: Merging Dispersed Items into a Single Input for Generative Models**
 
-3. **Look Image Synthesis**
+If each item in an outfit is treated as a separate dispersed input for a generative model, the styling relationships between items are lost, and mutual consistency suffers. The authors arrange all items in the outfit list into a single OOTD grid image as a unified input for Nano Banana (Gemini-2.5-Flash-Image), allowing the reference image to implicitly carry the styling context. Simultaneously, prompt engineering is used to inject layering order and styling techniques (e.g., "tuck top into pants," "roll up sleeves," covering 5 categories), ensuring the synthesized look image represents more than just simple layering.
 
-   All items in the outfit list are arranged into an OOTD grid image, which serves as the unified input to Nano Banana (Gemini-2.5-Flash-Image). Compared to multiple separate inputs, the grid image better preserves inter-item consistency. Prompt engineering is used to inject layering order and styling techniques (e.g., "tuck the top into the trousers," "roll up the sleeves") across 5 defined technique categories.
+**4. Three-layer Data Filtering: Step-by-step Quality Control from Items to Pairs**
 
-4. **Three-Level Data Filtering**
-
-    - **Item level**: A standardized taxonomy of 40 major categories and 300+ fine-grained subcategories
-    - **Outfit level**: Rule-based rationality validation grounded in fashion domain knowledge (e.g., no outfit should contain two dresses simultaneously)
-    - **Pair level**: Automatic screening by Gemini-2.5-Flash + DWPose-based pose classification + **manual review by 10 fashion students and 3 domain experts**
-    - Only approximately 40% of synthesized look images pass the final review
+Synthetic data quality is uneven, and single-layer validation cannot simultaneously cover category correctness, outfit rationality, and image quality. Filtering is thus three-layered: the Item Layer uses a standard classification system of 40 main categories and 300 subcategories; the Outfit Layer uses rule-based rationality verification based on professional fashion knowledge (e.g., avoiding wearing two dresses simultaneously); the Pair Layer is auto-screened by Gemini-2.5-Flash and pose-classified by DWPose, followed by manual audit by 10 fashion students and 3 experts. The strictness is reflected in the fact that only ~40% of synthesized look images passed the audit.
 
 ### Loss & Training
 
-This paper is a dataset contribution and does not involve model training. The evaluation protocol includes:
-- Standard VTON metrics: FID, KID, SSIM, LPIPS
-- VLM-based evaluation metrics (Gemini-3-Flash): garment consistency, layering accuracy, styling technique accuracy
+This paper is a dataset contribution and does not involve specific model training. The evaluation protocol includes two categories of metrics: classical VTON metrics (FID, KID, SSIM, LPIPS) and VLM evaluation metrics (Gemini-3-Flash, evaluating garment consistency, layering accuracy, and styling accuracy).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Method comparison on the Garments2Look test set**:
+**Comparison of methods on the Garments2Look test set**:
 
 | Method Type | Model | FID↓ | SSIM↑ | Garment↑ | Layering↑ | Styling↑ |
-|-------------|-------|------|-------|----------|-----------|----------|
+|---------|------|------|-------|----------|-----------|----------|
 | VTON | FastFit | 3.59 | 0.855 | 0.624 | 0.131 | 0.340 |
 | VTON | OmniTry | 6.56 | 0.724 | 0.461 | 0.167 | 0.261 |
 | Editing | GPT-4o (2 Ref) | 2.15 | 0.758 | 0.892 | 0.849 | 0.694 |
@@ -98,49 +91,49 @@ This paper is a dataset contribution and does not involve model training. The ev
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| N Ref (individual items) vs. 2 Ref (OOTD grid) | 2 Ref generally superior | Grid image preserves richer outfit context |
-| ≤4 references vs. >4 references | Consistency degrades for all methods when >4 | Particularly severe for VTON models |
-| VTON models vs. general editing models | Editing models consistently outperform VTON | VTON lacks flexible multi-garment handling |
-| Synthetic vs. real data quality | Expert scores 4.35–4.74/5 | Synthetic data quality is manageable after rigorous filtering |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| N Ref (Multiple Items) vs. 2 Ref (OOTD grid) | 2 Ref usually better | Grid images maintain better outfit context |
+| Reference count ≤4 vs. >4 | Consistency drops when >4 | VTON models are particularly affected |
+| VTON models vs. General Editing models | Editing models outperform VTON | VTON lacks flexible multi-item processing |
+| Synthetic vs. Real data quality | Expert rating 4.35-4.74/5 | Synthetic data quality is controlled via strict filtering |
 
 ### Key Findings
 
-- **VTON models fail comprehensively on outfit-level tasks**: layering accuracy is only 13–17%, and styling technique accuracy is only 26–34%
-- General-purpose editing models (GPT-4o, Nano Banana) substantially outperform dedicated VTON models on outfit-level VTON
-- As the number of reference items increases, consistency degrades significantly across all methods — shape distortion, texture alteration, color deviation, and item merging are the primary failure modes
-- OOTD grid input (2 Ref strategy) generally outperforms multiple separate inputs (N Ref), as the holistic reference implicitly encodes outfit relationships
-- Even state-of-the-art editing models cannot precisely control non-standard styling techniques (e.g., half-buttoned outerwear, untucked mid-layers)
+- **VTON models fail comprehensively on outfit-level tasks**: Layering accuracy is only 13-17%, and styling accuracy is 26-34%.
+- General editing models (GPT-4o, Nano Banana) far outperform specialized VTON models on outfit-level VTON tasks.
+- As the number of reference items increases, consistency drops significantly for all methods—shape distortion, texture alteration, color shifts, and item merging are primary failure modes.
+- OOTD grid inputs (2 Ref strategy) are generally superior to multiple dispersed inputs (N Ref) because the holistic reference carries implicit outfit relationships.
+- Even state-of-the-art editing models cannot precisely control non-standard styling techniques (e.g., half-buttoned jackets, untucked middle layers).
 
 ## Highlights & Insights
 
-- **First truly outfit-level VTON dataset**: 40 major categories, 300+ subcategories, with layering and styling technique annotations — filling a critical gap in the field
-- The data synthesis pipeline's **fashion knowledge base + RAG-style retrieval + inverse-frequency sampling** is elegantly designed to ensure diversity while mitigating popularity bias
-- Experiments are thorough and purposeful: four progressively structured research questions (reference count limits, consistency, overall quality, value of structured annotations) systematically expose performance bottlenecks
-- In-depth analysis of commercial editing models (Nano Banana vs. GPT-4o vs. Seedream) provides valuable industrial perspective
+- **The first true outfit-level VTON dataset**: Supporting 40 main categories, 300+ subcategories, with layering and styling annotations, filling a critical gap.
+- The synthesis pipeline's design—**Fashion Knowledge Base + RAG-style Retrieval + Anti-frequency Sampling**—is ingenious, ensuring diversity while avoiding popularity bias.
+- Experiments are deep and targeted: Four progressive questions (item limits, consistency, overall effect, value of structured annotations) systematically reveal bottlenecks.
+- In-depth analysis of commercial editing models (Nano Banana vs. GPT-4o vs. Seedream) provides valuable industrial perspectives.
 
 ## Limitations & Future Work
 
-- Synthesized look images rely on Nano Banana, whose pose control and inpainting capabilities are limited, introducing unavoidable synthesis artifacts
-- Only approximately 40% of synthesized images pass review, resulting in relatively low data construction efficiency
-- Layering and styling annotations are generated automatically by VLMs, limiting annotation precision
-- A video try-on dimension is absent (dynamic outfit effects better reflect real-world needs)
-- Evaluation still relies on VLM-based scoring; no outfit-level automated metrics have been established
+- Synthesis of look images relies on Nano Banana, whose pose control and inpainting capabilities are limited, leading to unavoidable synthesis bias.
+- Only about 40% of synthesized images passed the audit, indicating relatively low data construction efficiency.
+- Layering and styling annotations depend on VLM auto-generation, which has restricted precision.
+- Missing video try-on dimensions (dynamic outfit effects are more aligned with actual needs).
+- Evaluation metrics still rely on VLM review; specialized automated metrics for outfit-level VTON are yet to be developed.
 
 ## Related Work & Insights
 
-- **VITON-HD / DressCode** established the foundation for high-resolution VTON datasets but are limited to single garments
-- **BootComp** first proposed a try-off synthesis pipeline and data filtering strategy; this work substantially extends that approach
-- The inverse-frequency sampling mechanism is generalizable to other retrieval-augmented generation scenarios requiring bias mitigation
-- The finding that general editing models outperform dedicated VTON models suggests the field may need to shift from "specialized pipelines" toward a new paradigm of "general editing with domain constraints"
+- **VITON-HD/DressCode** laid the foundation for high-resolution VTON datasets but are limited to single items.
+- **BootComp** first proposed a try-on synthesis pipeline and data filtering strategy; ours significantly extends this.
+- The anti-frequency sampling mechanism can be generalized to other retrieval-augmented generation scenarios where data bias must be prevented.
+- The finding that commercial editing models outperform specialized VTON models suggests that the VTON field may need to shift from "specialized pipelines" to a new paradigm of "general editing + domain constraints."
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First large-scale outfit-level VTON dataset; both the task definition and annotation schema are novel
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 7 model baselines (VTON + general editing), 4 progressively structured analysis questions, quantitative + qualitative + human evaluation
-- **Writing Quality**: ⭐⭐⭐⭐ Data construction process is described in thorough detail; problem-driven experimental analysis is logically structured
-- **Value**: ⭐⭐⭐⭐⭐ Dataset and code are open-sourced, filling an important gap and providing sustained impetus for the VTON research direction
+- **Novelty**: ⭐⭐⭐⭐ First large-scale outfit-level VTON dataset; task definitions and annotation systems are entirely new.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ 7 model baselines (VTON + General Editing), 4 progressive analytical questions, quantitative + qualitative + manual evaluation.
+- **Writing Quality**: ⭐⭐⭐⭐ Detailed description of data construction; logical, problem-driven experimental analysis.
+- **Value**: ⭐⭐⭐⭐⭐ Open-sourcing data and code, filling an important gap with a lasting impact on the VTON direction.
 
 <!-- RELATED:START -->
 
@@ -149,10 +142,10 @@ This paper is a dataset contribution and does not involve model training. The ev
 ## Related Papers
 
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
+- [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
+- [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
-- [\[CVPR 2026\] CognitionCapturerPro: Towards High-Fidelity Visual Decoding from EEG/MEG via Multi-modal Information and Asymmetric Alignment](cognitioncapturerpro_towards_highfidelity_visual_d.md)
-- [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
-- [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
+- [\[CVPR 2026\] FEAT: Fashion Editing and Try-On from Any Design](feat_fashion_editing_and_try-on_from_any_design.md)
 
 </div>
 

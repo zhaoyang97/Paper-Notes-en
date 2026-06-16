@@ -2,74 +2,82 @@
 title: >-
   [Paper Note] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-turn reasoning] MTR-Bench constructs an automated multi-turn reasoning evaluation framework featuring 4 categories, 40 tasks, and 3,600 instances…
+  [ACL 2026][LLM Reasoning][Paper Note] MTR-Bench constructs an automated multi-turn reasoning evaluation framework comprising 4 categories, 40 tasks, and 3600 instances, revealing that current frontier reasoning models remain far from reliable in interactive, dynamic feedback environments.
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Multi-turn reasoning"
-  - "automatic evaluation"
-  - "interactive environment"
-  - "difficulty layering"
-  - "reasoning pattern analysis"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 536f3bf2a15e64bc
+content_hash: 2a1d0876d108d503
 ---
-
 # MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.17123](https://arxiv.org/abs/2505.17123)  
 **Code**: https://github.com/LittleCirc1e/mtr_bench  
-**Area**: LLM Reasoning / Multi-turn Interaction Evaluation  
-**Keywords**: Multi-turn reasoning, automatic evaluation, interactive environment, difficulty layering, reasoning pattern analysis  
+**Area**: LLM Reasoning / Multi-turn Interactive Evaluation  
+**Keywords**: Multi-turn reasoning, Automated evaluation, Interactive environments, Difficulty stratification, Reasoning pattern analysis  
 
 ## TL;DR
-MTR-Bench constructs an automated multi-turn reasoning evaluation framework featuring 4 categories, 40 tasks, and 3,600 instances, revealing that current frontier reasoning models remain far from reliable in interactive and dynamic feedback environments.
+MTR-Bench constructs an automated multi-turn reasoning evaluation framework comprising 4 categories, 40 tasks, and 3600 instances, revealing that current frontier reasoning models remain far from reliable in interactive, dynamic feedback environments.
 
 ## Background & Motivation
-**Background**: Reasoning-enhanced LLMs such as o1, DeepSeek-R1, and QwQ have shown outstanding performance in mathematics, coding, and logic problems. However, most mainstream evaluations are single-turn, where models read a problem and output an answer once. These evaluations fail to reflect interaction, feedback utilization, and long-term state maintenance required in real-world problem-solving.
+**Background**: Reasoning-enhanced LLMs such as o1, DeepSeek-R1, and QwQ excel in mathematics, coding, and logic puzzles. However, mainstream benchmarks are predominantly single-turn, where models read the problem and output the answer in one shot. Such evaluations struggle to reflect interaction, feedback utilization, and long-term state maintenance in real-world problem-solving.
 
-**Limitations of Prior Work**: Existing multi-turn benchmarks like MT-Bench focus more on conversational coherence and contextual understanding rather than specialized reasoning. While GameArena addresses reasoning, it offers limited scenarios and relies on human interaction, making large-scale, controlled evaluation difficult. Human involvement also complicates difficulty control and automated experimental replication.
+**Limitations of Prior Work**: Existing multi-turn benchmarks like MT-Bench focus more on conversational coherence and context understanding rather than specialized reasoning. While GameArena addresses reasoning, it offers limited scenarios and relies on human interaction, making large-scale, controlled evaluation difficult. Human involvement also complicates difficulty control and automated experimental replication.
 
-**Key Challenge**: A true reasoning system must actively probe the environment, parse feedback, revise plans, and gradually approach a goal across multiple turns. If the evaluation environment cannot be automated, it is difficult to scale or increase difficulty as models progress.
+**Key Challenge**: A true reasoning system needs to actively probe the environment, parse feedback, revise plans, and gradually approach the goal across multiple turns. However, if the evaluation environment is not automated, it becomes difficult to scale continuously or increase difficulty as models progress.
 
-**Goal**: To construct a multi-turn reasoning benchmark capable of automatic problem generation, automatic environmental feedback simulation, and automatic scoring, covering capabilities such as induction, abduction, deduction, and planning while controlling complexity via difficulty parameters.
+**Goal**: To build a multi-turn reasoning benchmark capable of automated problem generation, simulated environmental feedback, and automated scoring. It aims to cover induction, abduction, deduction, and planning while controlling problem complexity via difficulty parameters.
 
-**Key Insight**: The authors decompose evaluation tasks into three components: Generator, Monitor, and Evaluator. The Generator produces problems of varying difficulty levels; the Monitor acts as a rule-based environment that processes model queries, returns feedback, and determines termination; the Evaluator calculates accuracy, efficiency, invalid operation rates, and reasoning patterns based on the full interaction history.
+**Key Insight**: The authors decouple the evaluation task into three components: Generator, Monitor, and Evaluator. The Generator produces problems of varying difficulty; the Monitor acts as a rule-based environment to handle model queries, return feedback, and determine termination; the Evaluator calculates accuracy, efficiency, invalid operation rates, and reasoning patterns based on the full interaction history.
 
-**Core Idea**: Isolate "pure reasoning capability" using closed, deterministic, rule-defined interactive environments to avoid interference from tool use, open-world noise, or manual labeling costs.
+**Core Idea**: Use closed, deterministic, rule-defined interactive environments to isolate "pure reasoning ability," avoiding interference from tool use, open-world noise, or manual annotation costs.
 
 ## Method
-The methodology of MTR-Bench focuses on benchmark construction and evaluation protocol. Instead of providing a static prompt, the model acts repeatedly within an environment controlled by a rule-based monitor. Each turn, the model must output a valid query or answer; the monitor returns feedback based on task rules. Interaction ends when the model reaches the target state or exceeds the maximum number of turns. This allows for analysis of feedback utilization, planning, and invalid operations beyond just the final answer.
+
+The core of MTR-Bench lies not in the model, but in "how to automate multi-turn reasoning evaluation." Instead of providing a static prompt, the model is placed in an environment controlled by a rule-based Monitor for iterative action. In each turn, the model must output a valid query or answer. The Monitor returns feedback and determines termination according to task rules. The model either reaches the target state or hits the maximum turn limit. Consequently, evaluation focuses not only on the final answer but also on whether the model effectively utilizes feedback, plans, or produces invalid operations.
 
 ### Overall Architecture
-The process begins with task seed collection. Tasks with high reasoning intensity are collected from public websites, categorized by GPT-4o, and manually verified into four categories: Information Probing, Dynamic Adaptation, State Operation, and Strategic Gaming. Ten tasks are selected per category for a total of 40 tasks. Each task includes easy, medium, and hard difficulty levels, with 30 problems generated per level, totaling 3,600 evaluation instances.
 
-During evaluation, the Generator outputs a specific problem $p$ and a reasoning goal $s$. The model generates a query, and the Monitor checks for valid formatting, returns feedback according to rules, and judges if the goal is met. Finally, the Evaluator calculates metrics based on the full dialogue history. The maximum turn limit for all models is 15.
+The pipeline begins with task seed collection. Tasks with high reasoning intensity are collected from public websites, categorized into four classes—Information Probing, Dynamic Adaptation, State Operation, and Strategic Gaming—via GPT-4o with human verification. Each of the 40 tasks (10 per category) is set with three difficulty levels (easy/medium/hard), with 30 problems per level, totaling $4 \times 10 \times 3 \times 30 = 3600$ evaluation instances.
+
+During evaluation, three components work in sequence: the Generator outputs specific problems $p$ and goals $s$ based on difficulty parameters; the model generates a query each turn; the Monitor serves as a deterministic environment to check format validity, return feedback, and judge termination; once interaction ends (target reached or 15-turn limit exceeded), the Evaluator computes metrics from the complete dialogue history.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Task Seeds<br/>Codeforces + NYT Logic Puzzles"] --> B["GPT-4o Auto-classification + Human Verification"]
+    B --> C["Four Task Categories (40 Tasks)<br/>Induction / Abduction / Deduction / Planning"]
+    C --> D["Three Difficulty Levels × 30<br/>3600 Instances Total"]
+    subgraph LOOP["Generator-Monitor-Evaluator (GME) Loop"]
+        direction TB
+        E["Generator: Generates problem p and target s<br/>based on difficulty parameters"] --> F["Model outputs query / answer per turn"]
+        F --> G["Monitor: Format validation + Rule feedback<br/>+ Termination logic"]
+        G -->|"Not reached & < 15 turns"| F
+        G -->|"Reached or 15 turns"| I["Evaluator: Scoring based on interaction trajectories"]
+    end
+    D --> E
+    I --> H["Process Metrics<br/>Accuracy / Efficiency / Invalid Rate / Pattern Analysis"]
+```
 
 ### Key Designs
-1. **Four task categories covering diverse reasoning mechanisms**:
-	- Function: Tests reasoning capabilities in interactive environments from multiple perspectives.
-	- Mechanism: Information Probing tests gradual induction from fixed hidden information; Dynamic Adaptation tests abduction where answers change following failed attempts; State Operation tests deductive execution by inferring hidden mechanisms from feedback; Strategic Gaming tests multi-step planning within systems involving opponents or dynamic variables.
-	- Design Motivation: Using a single game or problem type would lead to benchmark overfitting; these four categories isolate different reasoning deficiencies.
 
-2. **Generator-Monitor-Evaluator automated closed-loop**:
-	- Function: Enables multi-turn evaluation without requiring real-time human participation.
-	- Mechanism: The Generator creates problems using templates and difficulty parameters; the Monitor serves as a deterministic environment for query format validation, feedback generation, and termination; the Evaluator computes Accuracy (Acc), Efficiency (Eff), Invalid Rate (IR), and Pattern Analysis (PA).
-	- Design Motivation: Interaction and scoring are the highest costs in multi-turn evaluation; this three-component split allows for scalability.
+**1. Four Task Categories to Dissect Reasoning Mechanisms**
+Relying on a single game or problem type allows models to overfit specific patterns. MTR-Bench targets different reasoning weaknesses through four categories: Information Probing tests gradual induction from hidden information; Dynamic Adaptation tests abduction in environments where "answers change with incorrect attempts"; State Operation tests deduction by inferring hidden mechanisms from feedback; Strategic Gaming tests multi-step planning against opponents or dynamic systems. By isolating these abilities, it becomes clear where a model fails.
 
-3. **Process metrics rather than final answers only**:
-	- Function: Analyzes why models fail and whether high accuracy is accompanied by high efficiency.
-	- Mechanism: Accuracy measures task completion; Efficiency compares the number of turns taken for correctly answered problems; Invalid Rate measures format and operational validity; Pattern Analysis tracks reasoning modes across four categories: Associate, Verify, Plan, and Feedback.
-	- Design Motivation: In multi-turn reasoning, a model might reach the correct answer inefficiently or fail due to invalid formatting; looking only at final accuracy loses critical diagnostic information.
+**2. Generator-Monitor-Evaluator (GME) Loop for Human-free Evaluation**
+The most expensive components of multi-turn evaluation—real-time interaction and turn-by-turn scoring—previously relied on humans, hindering scalability and reproducibility. This framework replaces humans with three deterministic components: the Generator uses templates and parameters for batch generation; the Monitor is a hard-coded environment for validation and feedback; and the Evaluator calculates scores from final states and trajectories. This allows the benchmark to be repeatable, scalable, and adaptable to stronger models by adjusting difficulty parameters.
 
-### Loss & Training
-As this work presents an evaluation benchmark, no models were trained. Difficulty calibration was performed through iterative testing: for example, if generating 10 problems with parameters $n=6,7,8$ failed to create a reasonable performance gradient, parameters were adjusted to $n=6,9,12$ before large-scale evaluation.
+**3. Process Metrics Beyond Final Correctness**
+Reporting only final accuracy discards diagnostic information—a model might reach the answer through inefficient paths or fail due to invalid formatting rather than faulty reasoning. MTR-Bench records four metrics: Accuracy (completion), Efficiency (turns taken for correct answers), Invalid Rate (format/operation legality), and Pattern Analysis (frequency of Associate, Verify, Plan, and Feedback behaviors). This differentiates between "correct but inefficient," "feedback-responsive," and "failed to understand feedback."
+
+### Difficulty Calibration Strategy
+As an evaluation benchmark, this work does not train models. The only "tuning" involves difficulty calibration via iterative trials. For example, parameters $n=6,7,8$ are initially used to generate 10 problems per level. If no reasonable performance gradient appears between levels, parameters are adjusted (e.g., $n=6,9,12$) and retested until a valid gradient is confirmed across the full evaluation set.
 
 ## Key Experimental Results
 
 ### Main Results
-The experiments cover reasoning-enhanced models and non-reasoning instruction models. The table lists the average accuracy for each model across three difficulty levels, derived from the AVG column of the paper's main table.
+The experiments cover reasoning-enhanced models and non-reasoning instruction models. The table lists the average accuracy across three difficulty levels.
 
 | Model | Type | Easy AVG | Medium AVG | Hard AVG |
 |------|------|----------|------------|----------|
@@ -82,44 +90,44 @@ The experiments cover reasoning-enhanced models and non-reasoning instruction mo
 | Qwen2.5-72B-IT | Non-reasoning | 29.43 | 19.06 | 12.94 |
 
 ### Ablation Study
-| Analysis Item | Numbers / Phenomena | Description |
+| Analysis Item | Data / Phenomenon | Description |
 |--------|-------------|------|
-| Data Scale | 4 categories, 40 tasks, 3,600 instances | 3 difficulties per task, 30 instances per level |
-| Max Interaction Turns | 15 turns | Controls evaluation budget for all models |
-| Seed Sources | 32 Codeforces tasks, 8 NYT logic puzzles | Appendix shows an average Codeforces rating of 2453.13 |
-| Difficulty Trend | Accuracy drops for all models from Easy to Hard | Demonstrates effective difficulty layering |
+| Data Scale | 4 categories, 40 tasks, 3600 instances | 3 difficulty levels per task, 30 instances per level |
+| Max Turns | 15 turns | Controls evaluation budget for all models |
+| Seed Source | 32 Codeforces tasks, 8 NYT logic puzzles | Appendix shows average Codeforces rating is 2453.13 |
+| Difficulty Trend | Accuracy drops from easy to hard for all models | Demonstrates effective difficulty stratification |
 | Efficiency Analysis | o3-mini has highest performance but lowest efficiency; R1 is more efficient | High accuracy does not equate to fewer interaction turns |
-| Small Model Performance | Models < 7B have almost no meaningful scores | The benchmark is highly challenging for small models |
+| Small Model Performance | Models < 7B show almost no meaningful scores | The benchmark is highly challenging for small models |
 
 ### Key Findings
-- Reasoning models are significantly stronger than non-reasoning models; QwQ-32B even outperforms the stronger non-reasoning model in the same series, Qwen-Max.
-- The advantages of the R1-Distill series in mathematics and coding do not translate well to these OOD multi-turn tasks, suggesting that SFT distillation is insufficient for generalizing interactive reasoning.
-- o3-mini shows a prominent advantage in IP and SG, but is closer to QwQ-32B and R1 in DA and SO, indicating that parsing complex environmental feedback remains a bottleneck.
-- Pattern Analysis reveals that QwQ-32B and R1 are notably stronger than R1-Distill-Qwen-32B in Associate, Verify, and Feedback patterns, suggesting that feedback utilization and self-checking are core multi-turn reasoning capabilities.
+- Reasoning models significantly outperform non-reasoning models; QwQ-32B even surpasses the more powerful non-reasoning Qwen-Max.
+- The advantages of the R1-Distill series in math and code do not migrate well to these OOD multi-turn tasks, suggesting that SFT distillation is insufficient for generalized interactive reasoning.
+- o3-mini shows a prominent edge in Information Probing (IP) and Strategic Gaming (SG), but is closer to QwQ-32B and R1 in Dynamic Adaptation (DA) and State Operation (SO), indicating that parsing complex environmental feedback remains a bottleneck.
+- Pattern Analysis reveals that QwQ-32B and R1 are significantly stronger than R1-Distill-Qwen-32B in Associate, Verify, and Feedback patterns, suggesting feedback utilization and self-checking are critical for multi-turn reasoning.
 
 ## Highlights & Insights
-- The primary strength of this paper is transforming "multi-turn reasoning" into an automatically executable environment rather than a manual conversational evaluation. This makes the benchmark repeatable, scalable, and adjustable.
-- The Monitor design offers high diagnostic value. Models fail not only due to reasoning errors but also due to invalid query formats, out-of-bounds operations, or failure to understand feedback.
-- The paper notes that o3-mini's strength is not just faster reasoning, but superior long-term planning and utilization of historical feedback. This provides insights for training agents: multi-turn capability is not a simple extension of single-step CoT.
-- Using closed, rule-based environments sacrifices natural language realism but allows for cleaner measurement of abstract reasoning, making it suitable for capability diagnostics.
+- The primary strength of this paper is transforming "multi-turn reasoning" into an automatically executable environment rather than a manual dialogue evaluation. This makes the benchmark reproducible, scalable, and difficulty-adjustable.
+- The Monitor design offers high diagnostic value. Models fail not only due to reasoning errors but also because of invalid query formats, out-of-bounds operations, or failure to correctly interpret feedback.
+- The paper notes that o3-mini's strength stems from superior long-term planning and historical feedback utilization, rather than just faster reasoning. This provides insights for agent training: multi-turn capability is not just an extension of single-step CoT.
+- While closed-rule environments sacrifice natural language realism, they provide a cleaner measure of abstract reasoning, making them suitable as capability diagnostic benchmarks.
 
 ## Limitations & Future Work
 - Strategic Gaming currently uses random system strategies; the authors acknowledge the need for stronger adversarial strategies in the future.
-- The current interaction format is structured rather than natural language chat, meaning it cannot evaluate a model's ability to reason or clarify within natural dialogue.
-- While tasks are adapted from public sources, they remain puzzle/competition-style, which differs from open-ended real-world agent tasks.
-- These interactive environments are naturally suited for reinforcement learning; MTR-Bench could be expanded from an evaluation tool to a platform for training and curriculum learning.
+- The current interaction format is structured rather than natural language chat, thus it cannot evaluate reasoning and clarification capabilities within natural dialogues.
+- Although tasks are derived and modified from public sources, they remain puzzle/competition-oriented and are still distant from open-ended real-world agent tasks.
+- These interactive environments are naturally suited for reinforcement learning (RL). Future work could expand MTR-Bench from a pure evaluation tool into a platform for training and curriculum learning.
 
 ## Related Work & Insights
-- **vs MT-Bench**: MT-Bench focuses on multi-turn dialogue quality and context understanding, whereas MTR-Bench specifically measures multi-turn reasoning and feedback utilization.
-- **vs GameArena**: GameArena is closer to game evaluation but has fewer scenarios and relies on humans; MTR-Bench provides 40 tasks and supports automatic scoring.
-- **vs AgentBench / AgentBoard**: These benchmarks include open environments like tools, web pages, and OS; MTR-Bench deliberately uses closed rule-based environments to isolate core logical reasoning.
-- **Insight**: When training reasoning agents, feedback parsing, state tracking, valid action generation, and long-term planning should be optimized independently, rather than focusing solely on single-turn final answer accuracy.
+- **vs MT-Bench**: MT-Bench focuses on multi-turn dialogue quality and context understanding, whereas MTR-Bench specifically tests multi-turn reasoning and environment feedback utilization.
+- **vs GameArena**: GameArena is closer to game evaluation but has fewer scenarios and relies on humans; MTR-Bench includes 40 tasks with fully automated scoring.
+- **vs AgentBench / AgentBoard**: These benchmarks involve tools, web browsers, and OS environments; MTR-Bench deliberately uses closed-rule environments to isolate core logical reasoning.
+- **Insight**: When training reasoning agents, feedback parsing, state tracking, legal action generation, and long-term planning should be optimized independently, rather than only focusing on single-turn final answer accuracy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Automated multi-turn reasoning environment design is comprehensive; task taxonomy is clear.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers many models and metrics; process analysis is more valuable than reporting accuracy alone.
-- Writing Quality: ⭐⭐⭐⭐☆ Clearly structured, though tables are large and some appendix information is crucial for understanding task origins.
-- Value: ⭐⭐⭐⭐☆ Directly relevant for evaluating reasoning models and training interactive agents.
+- Novelty: ⭐⭐⭐⭐☆ Complete design of automated multi-turn reasoning environments with clear task taxonomy.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive model coverage and metrics; the process analysis is more valuable than simple accuracy reporting.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure, though tables are large; some appendix information is crucial for understanding task origins.
+- Value: ⭐⭐⭐⭐☆ Directly relevant for both evaluating reasoning models and training interactive agents.
 
 <!-- RELATED:START -->
 
@@ -131,7 +139,7 @@ The experiments cover reasoning-enhanced models and non-reasoning instruction mo
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
 - [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
-- [\[NeurIPS 2025\] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](../../NeurIPS2025/llm_reasoning/time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)
+- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
 
 </div>
 

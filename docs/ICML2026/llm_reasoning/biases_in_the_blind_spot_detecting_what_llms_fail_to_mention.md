@@ -2,113 +2,116 @@
 title: >-
   [Paper Note] Biases in the Blind Spot: Detecting What LLMs Fail to Mention
 description: >-
-  [ICML2026][LLM Reasoning][Bias Detection] This paper proposes a fully automated black-box pipeline to detect "unverbalized biases" in LLMs—hidden factors that systematically influence model decisions but are never mentio…
+  [ICML 2026][LLM Reasoning][Paper Note] The paper proposes a fully automated black-box pipeline to detect "unverbalized biases"—implicit factors that systematically influence model decisions but are never mentioned in Chain-of-Thought (CoT) reasoning. Through automated LLM-generated concept hypotheses, counterfactual input variants, and multistage statistica
 tags:
-  - "ICML2026"
-  - "LLM Reasoning"
-  - "Bias Detection"
-  - "Chain-of-Thought Faithfulness"
-  - "Counterfactual Testing"
-  - "Black-box Auditing"
-  - "LLM Fairness"
+  - ICML 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: a560cfeecb1f5392
+content_hash: 7289a55074c4d5d5
 ---
-
 # Biases in the Blind Spot: Detecting What LLMs Fail to Mention
 
 **Conference**: ICML2026  
 **arXiv**: [2602.10117](https://arxiv.org/abs/2602.10117)  
 **Code**: https://github.com/FlyingPumba/biases-in-the-blind-spot/  
 **Area**: AI Safety  
-**Keywords**: Bias Detection, Chain-of-Thought Faithfulness, Counterfactual Testing, Black-box Auditing, LLM Fairness  
+**Keywords**: Bias detection, chain-of-thought faithfulness, counterfactual testing, black-box auditing, LLM fairness  
 
 ## TL;DR
-This paper proposes a fully automated black-box pipeline to detect "unverbalized biases" in LLMs—hidden factors that systematically influence model decisions but are never mentioned in CoT reasoning. By automatically generating concept hypotheses, counterfactual input variants, and staged statistical tests via LLMs, the pipeline discovered known biases (gender, race) and novel ones (Spanish fluency, English proficiency, writing formality) across three decision-making tasks.
+The paper proposes a fully automated black-box pipeline to detect "unverbalized biases"—implicit factors that systematically influence model decisions but are never mentioned in Chain-of-Thought (CoT) reasoning. Through automated LLM-generated concept hypotheses, counterfactual input variants, and multistage statistical testing, the authors discovered known biases such as gender and race, as well as novel biases like Spanish fluency, English proficiency, and writing formality across three decision-making tasks.
 
 ## Background & Motivation
 
-**Background**: Chain-of-Thought (CoT) is widely used to monitor LLM decision processes—researchers often trust the reasons the model states. However, increasing evidence suggests that CoT may not faithfully reflect actual decision drivers: models may be influenced by hidden factors without ever mentioning them in the reasoning chain.
+**Background**: Chain-of-Thought (CoT) is widely utilized to monitor LLM decision-making—conventional wisdom suggests that the reasons provided by the model are the reasons it follows. However, growing evidence suggests that CoT is not necessarily faithful to the model's actual decision logic; models may be influenced by implicit factors while omitting them from the reasoning chain.
 
-**Limitations of Prior Work**: Existing bias evaluation methods typically rely on pre-defined categories (e.g., gender, race) and manually constructed datasets, resulting in limited coverage and high costs. Biases not pre-convisaged by researchers remain undetected. Furthermore, monitoring CoT alone misses factors that affect decisions but remain unverbalized.
+**Limitations of Prior Work**: Existing bias evaluation methods typically rely on predefined categories (e.g., gender, race) and manually constructed datasets, resulting in limited coverage and high costs. If a researcher does not pre-specify a certain bias, it remains undetected. Furthermore, CoT monitoring alone misses factors that influence decisions without being verbalized.
 
-**Key Challenge**: There is a systematic disconnect between what LLMs "say" and "do"—models may utilize information not mentioned in CoT (e.g., race implied by a name), yet external auditors cannot identify these hidden factors by reading CoT alone.
+**Key Challenge**: There is a systematic disconnect between what an LLM "says" and what it "does." Models may utilize information not mentioned in the CoT (e.g., race inferred from an applicant's name), making it impossible for external monitors to detect these implicit influences by merely reading the CoT.
 
-**Goal**: Design a fully automated, hypothesis-free pipeline that, given any decision task dataset, automatically discovers which input attributes systematically influence model decisions without being mentioned in CoT.
+**Goal**: Design a fully automated, hypothesis-free pipeline that, given any decision task dataset, automatically identifies which input attributes systematically influence model decisions without being mentioned in the CoT.
 
-**Key Insight**: The authors formalize the problem as counterfactual testing—constructing "positive" and "negative" variants of the same input to observe model decision flips. If a concept causes significant decision flipping but is not cited in the CoT, it is identified as an unverbalized bias.
+**Key Insight**: The problem is formalized as counterfactual testing—constructing "positive" and "negative" variants for the same input to observe if the model's decision flips. If a concept causes a significant decision flip but is not cited in the CoT, it is classified as an unverbalized bias.
 
-**Core Idea**: Use LLMs to automatically generate candidate bias concepts + counterfactual input variants + McNemar paired tests + staged statistical early stopping to discover hidden LLM biases under black-box conditions.
+**Core Idea**: Utilize an LLM to automatically generate candidate bias concepts and counterfactual input variants, followed by McNemar paired tests and multistage statistical early stopping to automatically discover implicit LLM biases under black-box conditions.
 
 ## Method
 
 ### Overall Architecture
-Input consists of a decision task dataset $\mathcal{D}$ (e.g., resume screening) and a target model $M$. The pipeline proceeds in five steps: (1) Perform k-means clustering on inputs and sample representative cases; (2) Use an LLM to automatically generate candidate bias concepts $\mathcal{C}$; (3) Baseline verbalization filtering—collect CoT on original inputs and remove concepts already frequently mentioned; (4) Generate positive/negative counterfactual variants for each concept, expanding sample size in stages with statistical testing; (5) Check verbalization rates on inconsistent pairs, finally outputting concepts that pass significance tests with verbalization rates below threshold $\tau$.
+Given a decision task dataset $\mathcal{D}$ and a target model $M$, the pipeline identifies which input attributes systematically flip $M$'s decisions but are never mentioned as reasons in its CoT. The process involves five steps: performing k-means clustering on inputs to sample representative instances, using an LLM to hypothesize candidate bias concepts $\mathcal{C}$, filtering out concepts already frequently verbalized in baseline CoTs, constructing positive/negative counterfactual variants for remaining concepts, and executing multistage statistical tests. Finally, verbalization rates are re-checked only on samples where decisions flipped; concepts with "significant flips + verbalization rate below threshold $\tau$" are output as unverbalized biases.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Decision Dataset D + Target Model M"] --> B["Concept Hypothesis Generation (Design 1)<br/>k-means sampling → LLM hypothesizes C based on input alone<br/>→ Judge filters ~42% confounders"]
+    B --> C["Dual-layer Verbalization Filter: Baseline (Design 3)<br/>Original CoT citation rate &gt; τ → Filter out transparent concepts"]
+    C --> D["Construct positive/negative variants for remaining concepts"]
+    D --> E["Multistage Statistical Testing (Design 2)<br/>McNemar + Bonferroni + O'Brien-Fleming alpha spending"]
+    E -->|Significant, efficacy early-exit| F["Dual-layer Verbalization Filter: Variant (Design 3)<br/>Decision-flip samples only, cite rate ≤ τ to retain"]
+    E -->|Power &lt; γ, futility early-exit| G["Discard"]
+    F --> H["Output: unverbalized biases"]
+```
 
 ### Key Designs
 
-1.  **LLM-driven concept hypothesis generation**:
-    - **Function**: Automatically discover candidate concepts from task data without manual pre-definition.
-    - **Mechanism**: Performs k-means ($k=10$) on input embeddings, samples 3 representative inputs per cluster, and tasks an LLM to hypothesize concepts that might affect decisions based solely on input content (without seeing model answers). For each concept, it generates a verbalization check guide, a positive "add" action, and a negative "remove" action. An LLM judge filters variants that introduce confounding variables (filtering out 42% of candidates).
-    - **Design Motivation**: Traditional methods are limited by researcher imagination; automated generation discovers unforeseen biases (e.g., writing formality).
+**1. LLM-driven Concept Hypothesis Generation: Identifying Potential Blind Spots**
 
-2.  **Staged statistical testing and early stopping**:
-    - **Function**: Substantially reduces computational overhead while controlling the Family-Wise Error Rate (FWER).
-    - **Mechanism**: Uses McNemar's test to compare the proportion of inconsistent pairs, with Bonferroni correction setting the per-concept threshold to $\alpha' = \alpha / |\mathcal{C}|$. Sample sizes double each stage, with thresholds allocated via the O'Brien-Fleming alpha spending function $\alpha_s = 2(1 - \Phi(z_{\alpha'/2} / \sqrt{t_s}))$ (strict early on, relaxed later). Includes efficacy early stopping (flag if significant) and futility early stopping (discard if conditional power $<\gamma=0.01$). Saves approximately 1/3 of API calls.
-    - **Design Motivation**: Exhaustive testing of all concepts across all inputs is infeasible; the staged design maintains statistical rigor while efficiently screening.
+The bottleneck of traditional bias auditing is the reliance on researcher intuition for pre-defining bias categories. This work delegates "hypothesis generation" to an LLM. By performing k-means clustering ($k=10$) on input embeddings and sampling 3 representative inputs per cluster, a generator LLM—restricted from seeing the target model $M$'s responses to avoid bias from $M$'s phrasing—guesses which concepts might influence decisions. It simultaneously generates verbalization check guidelines and instructions for positive "addition" and negative "removal" actions. An LLM judge is then used to filter out confounders (achieving 80% agreement with human labels), resulting in the discovery of previously unaudited biases like writing formality and Spanish fluency.
 
-3.  **Two-layer verbalization filter**:
-    - **Function**: Distinguishes "factors affecting decisions" from "factors affecting decisions *without* being mentioned in CoT."
-    - **Mechanism**: **Baseline filtering**—collect CoT on original inputs; if a concept is cited as a reason in $>\tau$ ($\tau=0.3$) of cases, it is filtered. **Variant filtering**—checks verbalization rates specifically on inconsistent pairs (where the decision flipped); a concept is retained only if the verbalization rate in flipped samples is $\leq\tau$. Note: Simply repeating the concept from the input does not count as verbalization; it must be cited as a decision rationale.
-    - **Design Motivation**: Inconsistent pairs provide direct evidence of bias; the goal is to confirm the model does not admit to the basis of the flip. LLM judge validation shows Cohen's $\kappa > 0.67$ with human labels.
+**2. Multistage Statistical Testing and Early Stopping: Ensuring Rigorous FWER Control with Efficiency**
+
+Testing dozens of concepts across large counterfactual sets is computationally expensive and increases false discovery risks. The paper utilizes the McNemar paired test to compare the proportion of "discordant pairs" to determine if a concept flips decisions. Bonferroni correction is applied to tighten the threshold to $\alpha' = \alpha / |\mathcal{C}|$ to control the family-wise error rate. A multistage design is implemented where sample sizes double each stage, and the O'Brien-Fleming alpha spending function distributes the significance threshold based on information progress $t_s$ as $\alpha_s = 2\,(1 - \Phi(z_{\alpha'/2} / \sqrt{t_s}))$. This allows for "efficacy early-exit" for significant biases and "futility early-exit" when conditional power is below $\gamma=0.01$, reducing API calls by approximately 1/3.
+
+**3. Dual-layer Verbalization Filter: Distinguishing Influence from Transparency**
+
+The goal is to find factors that "influence decisions yet remain unmentioned." The baseline layer collects CoTs on original inputs; if a concept is explicitly cited in more than $\tau = 0.3$ of responses, the model is deemed "transparent" regarding that concept, which is then filtered. The variant layer focuses only on "discordant pairs" (where the decision flipped). For these critical samples, a concept is only labeled as an unverbalized bias if it is cited in the CoT at a rate $\leq \tau$. An LLM judge (reaching human agreement $\kappa > 0.67$) determines if a concept was used as a "reason" rather than merely repeated in the text.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Tested 7 LLMs across three decision tasks: Resume Screening (1,336 inputs), Loan Approval (2,500 inputs), and University Admissions (1,500 inputs).
+Tests conducted on seven LLMs across three tasks: Resume Screening (1,336 inputs), Loan Approval (2,500 inputs), and University Admission (1,500 inputs).
 
-| Bias Category | Models Detected (/7) | Effect Size Range | Direction |
+| Bias Category | Detected Models (/7) | Effect Size Range | Direction |
 | :--- | :--- | :--- | :--- |
-| Gender Bias (pro-female) | 5-6 | 0.017–0.060 | 22 pro-female vs 0 pro-male |
-| Race/Ethnicity Bias (pro-minority) | 5 | 0.026–0.060 | 21 pro-minority vs 0 pro-majority |
-| English Proficiency Bias | 2-3 | 0.021–0.048 | Pro-fluent English |
-| Writing Formality Bias | 2 | 0.033–0.044 | Pro-formal style |
-| Spanish Ability Bias | 1 (QwQ-32B) | 0.040 | Pro-Spanish ability |
-| Religious Bias | 1 (Claude Sonnet 4) | 0.037 | Pro-mainstream religion |
+| Gender Bias (Pro-female) | 5-6 | 0.017–0.060 | 22 pro-female vs 0 pro-male |
+| Racial/Ethnic Bias (Pro-minority) | 5 | 0.026–0.060 | 21 pro-minority vs 0 pro-majority |
+| English Proficiency Bias | 2-3 | 0.021–0.048 | Favors fluent speakers |
+| Writing Formality Bias | 2 | 0.033–0.044 | Favors formal styles |
+| Spanish Proficiency Bias | 1 (QwQ-32B) | 0.040 | Favors Spanish capability |
+| Religious Bias | 1 (Claude Sonnet 4) | 0.037 | Favors mainstream religions |
 
 ### Ablation Study
 
-| Validation Dimension | Results | Description |
+| Validation Metric | Result | Description |
 | :--- | :--- | :--- |
-| Injected Bias Detection (80 test cases) | 92.5% Accuracy | 85% of secret biases detected, 100% of public biases filtered |
-| Verbalization Detection Reliability (100 samples) | $\kappa = 0.79$ (best) | GPT-4o-mini and o1 approach human levels |
-| Random Seed Consistency (5 runs) | Semantically similar concepts | No contradictory directions detected |
-| Early Stopping Savings | ~1/3 API calls | Combined effect of O'Brien-Fleming + Futility stopping |
-| Concept Quality Filtering | 42% filtered | 80% agreement between LLM judge and human labels |
+| Injected Bias Detection (80 cases) | 92.5% Accuracy | 85% of secret biases detected; 100% of public biases filtered |
+| Verbalization Detection Reliability | $\kappa = 0.79$ (best) | GPT-4o-mini and GPT-4o approach human levels |
+| Random Seed Consistency (5 runs) | Semantically consistent | No contradictory bias directions detected |
+| Early Stopping Savings | ~1/3 API calls | Combined effect of O'Brien-Fleming + futility exit |
+| Concept Quality Filtering | 42% filtered | LLM judge achieves 80% agreement with humans |
 
 ### Key Findings
-- **Cross-task Consistency**: Gender bias (pro-female) and racial bias (pro-minority) consistently appeared across all three tasks, suggesting these reflect intrinsic model behaviors rather than task-specific artifacts.
-- **Grok 4.1 Fast is Most Transparent**: Out of 30 concepts labeled as unverbalized by other models, 27 were filtered for Grok—it actively mentions and discusses demographic factors in CoT (e.g., "Demographics: Shanice (likely underrepresented minority based on name)"), even if not explicitly citing them as a rationale.
-- **RLVR vs SFT Comparison**: QwQ-32B (RLVR) and Qwen2.5-32B-Instruct (SFT) showed nearly identical verbalization filter rates (97.0% vs 97.2%) in the loan task; reasoning training changed which biases appeared rather than improving overall faithfulness.
-- **Novel Biases Identified**: Biases regarding Spanish fluency, English proficiency, and writing formality—previously overlooked in manual analyses—were automatically discovered by the pipeline.
+- **Cross-task Consistency**: Gender (pro-female) and racial (pro-minority) biases appeared consistently across all three tasks, suggesting these reflect inherent model behaviors rather than task-specific artifacts.
+- **Grok 1.5 Fast Transparency**: Of 30 concepts labeled as unverbalized by other models, 27 were filtered by Grok as it proactively discusses demographics in CoT (e.g., "likely underrepresented minority based on name"), though not necessarily as a decision basis.
+- **RLVR vs SFT Comparison**: QwQ-32B (RLVR) and Qwen2.5-32B-Instruct (SFT) showed nearly identical verbalization filter rates (97.0% vs 97.2%), indicating that reasoning-focused training changes which biases appear rather than improving reasoning faithfulness.
+- **Novel Discoveries**: Biases regarding Spanish fluency, English proficiency, and writing formality—previously overlooked by manual audits—were automatically identified.
 
 ## Highlights & Insights
-- **Hypothesis-free Automated Discovery**: A core differentiation from prior work (e.g., Karvonen & Marks 2025) is that LLMs automatically generate and verify hypotheses, discovering biases in researcher "blind spots." This paradigm is transferable to any decision-making scenario requiring systematic auditing.
-- **Quantitative "Say vs Do" Metrics**: Converts the nebulous problem of CoT faithfulness into actionable quantitative indicators—Verbalization Rate + McNemar Effect Size—providing a replicable protocol for LLM deployment audits.
-- **Balancing Statistical Rigor and Efficiency**: The combination of O'Brien-Fleming alpha spending and futility early stopping is highly practical for industrial-scale auditing, ensuring FWER control while reducing costs by 1/3.
+- **Automated Discovery without Predefined Categories**: The core differentiator from prior work (e.g., Karvonen & Marks 2025) is the automated hypothesis generation, allowing for the detection of biases in the "blind spots" of human researchers.
+- **Quantifying "Saying vs Doing"**: Transforms the CoT faithfulness problem into actionable quantitative metrics—verbalization rate + McNemar effect size—providing a reproducible protocol for LLM auditing.
+- **Efficiency-Rigorous Balance**: The combination of O'Brien-Fleming alpha spending and futility early-exit is highly practical for industrial-scale auditing, maintaining FWER control while reducing costs by 1/3.
 
 ## Limitations & Future Work
-- **Variant Quality and Confounders**: Counterfactual variants generated by LLMs may introduce changes beyond the target concept (e.g., female names associated with gender-stereotypical occupations). While 42% of low-quality concepts were filtered, confounders cannot be entirely eliminated.
-- **Single Occupation Focus**: The resume screening task was fixed to software engineering; whether gender bias interacts with different occupational stereotypes was not explored.
-- **Conservative Design and False Negatives**: Bonferroni correction plus conservative early stopping may miss real biases with small effect sizes. Seed consistency experiments also show that not every run detects all possible biases.
-- **Generalization to Open-ended Tasks**: Current tasks are binary decisions. Extending this to open-ended generation tasks requires substituting the decision metric.
+- **Variant Quality and Confounders**: Counterfactual variants may introduce unintended changes (e.g., female names correlating with stereotyped professions). While 42% of low-quality concepts are filtered, confounding cannot be entirely eliminated.
+- **Single Occupation Constraint**: The resume task was fixed to software engineering; potential interactions between gender bias and occupational stereotypes were not explored.
+- **Conservatism and False Negatives**: Bonferroni correction and conservative early stopping may miss real biases with small effect sizes.
+- **Generalization to Open-ended Tasks**: Current tasks involve binary decisions; extending the framework to open-ended generation requires new decision metrics.
 
 ## Related Work & Insights
-- Karvonen & Marks (2025): Identifies gender/racial bias in resume screening manually; this work automates, replicates, and expands those findings.
-- Arcuschin et al. (2025): Reveals "implicit post-hoc rationalization" in CoT, which serves as a direct motivation for this study.
-- Atanasova et al. (2023): Framework for counterfactual faithfulness testing; this work extends it to LLM-driven concept variant generation.
-- Lai et al. (2026): Concurrent work using seed bias expansion to discover LLM-as-Judge biases, which is complementary to this pipeline.
+- Karvonen & Marks (2025): Manually identified gender/race bias in resumes; this work automates and extends those findings.
+- Arcuschin et al. (2025): Revealed "implicit post-hoc rationalization" in CoT, serving as a primary motivation for this study.
+- Atanasova et al. (2023): Framework for counterfactual faithfulness testing, extended here to LLM-driven variant generation.
+- Lai et al. (2026): Concurrent work using seed biases to discover LLM-as-Judge biases, complementary to this approach.
 
 <!-- RELATED:START -->
 

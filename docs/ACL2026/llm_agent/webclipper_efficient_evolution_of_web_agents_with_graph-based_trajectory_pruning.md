@@ -2,74 +2,78 @@
 title: >-
   [Paper Note] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning
 description: >-
-  [ACL2026][LLM Agent][Web Agent] WebClipper models long tool-call trajectories of Web Agents as "Action-Information" state graphs and extracts the Minimum Necessary DAG to prune cyclic searches and invalid branches. This…
+  [ACL 2026][LLM Agent][Web Agent] WebClipper models long tool-call trajectories of Web Agents as "Action Node-Information Node" state graphs and mines the minimum necessary DAG to prune cyclic searches and invalid branches. This reduces the average tool rounds by approximately 21% and tokens by 19.4% for Deep Research agents while maintaining or even i
 tags:
-  - "ACL2026"
-  - "LLM Agent"
-  - "Web Agent"
-  - "Trajectory Pruning"
-  - "State Graph"
-  - "Tool-call Efficiency"
-  - "Agent Training"
+  - ACL 2026
+  - LLM Agent
+  - Web Agent
 date: 2026-05-08
-content_hash: 8c6b29e35b09dc74
+content_hash: f93c4a86c036cb88
 ---
-
 # WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning
 
 **Conference**: ACL2026  
 **arXiv**: [2602.12852](https://arxiv.org/abs/2602.12852)  
 **Code**: https://github.com/AQ-MedAI/AntAFu-DeepResearch  
-**Area**: llm_agent  
-**Keywords**: Web Agent, Trajectory Pruning, State Graph, Tool-call Efficiency, Agent Training
+**Area**: LLM Agent  
+**Keywords**: Web Agent, Trajectory Pruning, State Graph, Tool Call Efficiency, Agent Training
 
 ## TL;DR
-WebClipper models long tool-call trajectories of Web Agents as "Action-Information" state graphs and extracts the Minimum Necessary DAG to prune cyclic searches and invalid branches. This allows Deep Research agents to reduce tool rounds by approximately 21% and tokens by 19.4% on average while maintaining or even improving accuracy.
+WebClipper models long tool-call trajectories of Web Agents as "Action Node-Information Node" state graphs and mines the minimum necessary DAG to prune cyclic searches and invalid branches. This reduces the average tool rounds by approximately 21% and tokens by 19.4% for Deep Research agents while maintaining or even improving accuracy.
 
 ## Background & Motivation
-**Background**: Deep Research Web Agents can process complex information retrieval tasks by repeatedly searching, visiting pages, running code, and generating answers. Existing open-source agents primarily pursue final accuracy, increasing coverage through longer contexts, deeper searches, and more tool calls.
+**Background**: Deep Research-style Web Agents are capable of handling complex information retrieval tasks. Typical systems repeatedly search, visit webpages, run code, and finally generate answers. Existing open-source agents primarily pursue final accuracy by increasing coverage through longer contexts, deeper searches, and more tool calls.
 
-**Limitations of Prior Work**: This "more searching is always better" strategy is costly in real-world deployments. Tongyi-DeepResearch allows up to 100 tool calls, and MiroThinker allows up to 600. Using commercial search, web parsing, or code execution tools significantly increases latency and cost. Furthermore, long trajectories do not guarantee higher accuracy, as many errors stem from repetitive verification, deviating from the main problem, or following noisy branches.
+**Limitations of Prior Work**: The "more searching is always better" strategy is costly in real-world deployment. Tongyi-DeepResearch allows up to 100 tool calls, and MiroThinker allows up to 600. If the backend uses commercial search, web parsing, or code execution tools, latency and costs rise rapidly. Furthermore, long trajectories do not necessarily lead to higher accuracy; many errors stem from repetitive verification, straying from the main problem, or following noisy branches.
 
-**Key Challenge**: Effective information in Web Agent trajectories is often sparsely distributed. The final answer depends only on a few key actions and observations, yet training data preserves all circuitous steps. Directly shortening trajectories risks breaking the ReAct structure, causing remaining thoughts to refer to deleted observations and producing incoherent training signals.
+**Key Challenge**: Effective information in Web Agent trajectories is often sparsely distributed. The final answer depends on only a few key actions and observations, yet training data retains all detour steps. Directly shortening trajectories easily breaks the ReAct structure, causing remaining thoughts to refer to deleted observations, which generates incoherent training signals.
 
-**Goal**: Instead of training a new agent from scratch, the authors aim to evolve existing high-performance but low-efficiency Web Agents into versions that require fewer tool calls. The specific goal is to remove redundant searches, cyclic verifications, and invalid branches without sacrificing accuracy, using a unified metric to balance accuracy and efficiency.
+**Goal**: Instead of training a new agent from scratch, the authors aim to evolve existing high-performance but low-efficiency Web Agents into versions that save on tool calls. The specific goal is to remove redundant searches, cyclic verifications, and invalid branches without sacrificing accuracy, using a unified metric to balance accuracy and efficiency.
 
-**Key Insight**: A key observation is that agent trajectories can be abstracted into state graphs: actions produce information, and subsequent actions depend on existing information. Consequently, determining "which steps are truly necessary for the final answer" becomes a problem of mining the minimum necessary subgraph rather than relying on another LLM for coarse pruning.
+**Key Insight**: The critical observation is that agent trajectories can be abstracted as state graphs where actions generate information and subsequent actions depend on existing information. Consequently, determining "which steps are truly necessary for the final answer" becomes a problem of mining the minimum necessary subgraph rather than relying on another LLM to subjectively judge each step.
 
-**Core Idea**: Use graph structures to explicitly represent information dependencies in tool-call trajectories. Mine the Minimum Necessary DAG from the initial question to the final answer. After coherence-aware rewriting and continued training, the agent learns shorter, more focused search paths.
+**Core Idea**: Use graph structures to explicitly represent information dependencies in tool-call trajectories, mine the minimum necessary DAG from the initial query to the final answer, and then perform coherence-aware rewriting and continued training to teach the agent shorter, more focused search paths.
 
 ## Method
-WebClipper is not an inference-time pruning method but a training data processing and agent evolution framework. it distills raw trajectories from a strong agent, converts them into state graphs to identify necessary action sets, removes redundant steps, rewrites broken thoughts, and fine-tunes the original agent using these refined trajectories.
+WebClipper is not an inference-time pruning method but a training data processing and agent evolution framework. It first distills raw trajectories from a strong agent, converts them into state graphs to identify the necessary action set, deletes redundant steps, rewrites broken thoughts, and finally uses these refined trajectories to fine-tune the original agent.
 
 ### Overall Architecture
-The input consists of queries and ReAct trajectories generated by a raw Web Agent, each containing initial observations, thoughts, actions, and new observations for each round. The output is a set of shorter trajectories that still support the correct answer, along with an evolved agent trained on these trajectories.
+The input consists of a batch of queries and ReAct trajectories generated by the original Web Agent, including initial observations, thoughts, actions, and new observations for each round. The output is a collection of shorter trajectories that still support the correct answer, along with an evolved agent trained on these trajectories.
 
-The process involves four stages. First, initial trajectories are collected and filtered, keeping samples that challenge the original agent but are not impossible. Second, trajectories are converted into directed bipartite graphs consisting of Action nodes and Information nodes. Third, an approximate Minimum Necessary DAG is found to identify the set of essential actions. Fourth, coherence-aware thought rewriting is applied to pruned trajectories, followed by agent training using efficiency-oriented or hybrid strategies.
+The process is divided into four stages. First, initial trajectories are collected and filtered, keeping only samples that are challenging for the original agent but not impossible. Second, trajectories are converted into directed bipartite graphs consisting of Action nodes and Information nodes. Third, an approximate Minimum Necessary DAG (MNDAG) is discovered on the graph to identify the set of necessary actions. Fourth, coherence-aware thought rewriting is performed on the pruned trajectories, followed by efficiency-guided or hybrid training strategies to evolve the agent.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Query + Original ReAct Trajectories<br/>(Distilled from strong agent)"] --> B["Trajectory Collection & Filtering<br/>Keep challenging but solvable samples"]
+    B --> C["Trajectory-to-State-Graph Conversion<br/>LLM extracts Action/Information bipartite graph"]
+    C --> D["MNDAG Pruning & Majority Voting<br/>Query as source, Answer as sink<br/>Shortest path + Reverse necessary closure"]
+    D -->|"Repeat pruning 3 times, accept if consistency ≥ 2"| E["Necessary Action Set"]
+    E --> F["Coherence-aware Rewriting & Hybrid Evolution Training<br/>PPL selects rewriting candidates + Eff/Hybrid Fine-tuning"]
+    F --> G["Shorter Trajectories + Evolved Web Agent"]
+```
 
 ### Key Designs
-1.  **Trajectory-to-State-Graph**:
-    - **Function**: Converts linear tool calls into a graph structure for dependency analysis.
-    - **Mechanism**: Action nodes $A_t$ represent the thought and action of round $t$; Information nodes $I_t$ represent atomic information returned by the environment. If an action is based on information, an edge $I \rightarrow A$ is added; if an action produces information, $A \rightarrow I$ is added. The graph is constructed by an LLM extractor that decomposes observations into atomic information and identifies dependencies.
-    - **Design Motivation**: Redundancy in long trajectories involves useless loops and branches in the information dependency chain. The graph structure makes these dependencies explicit, providing a finer basis for pruning than single-round LLM judgments.
 
-2.  **MNDAG Pruning & Majority Voting**:
-    - **Function**: Identifies the minimum set of necessary actions to support the final answer.
-    - **Mechanism**: The initial query node is the source, and the final answer action is the sink. Action nodes have a cost of 1, and information nodes have a cost of 0. A Dijkstra-style search finds the low-cost path, and a backward closure identifies necessary precursors. To handle LLM instability, the process is repeated three times, accepting the set only if at least two results match.
-    - **Design Motivation**: Deleting turns based on semantic similarity or subjective judgment risk removing critical evidence. MNDAG clarifies the pruning goal: preserving necessary information pathways from problem to answer.
+**1. Trajectory-to-State-Graph Conversion: Restoring linear tool calls to information dependency graphs to track redundancy.**
 
-3.  **Coherence-aware Rewriting & Hybrid Evolutionary Training**:
-    - **Function**: Converts pruned trajectories into natural ReAct data for SFT while balancing efficiency and accuracy.
-    - **Mechanism**: If two preserved actions were not adjacent in the original trajectory, the latter thought might refer to a deleted observation. WebClipper rewrites the thought using the full context and generates candidates, selecting the version that best fits the base model's style via perplexity. Training uses two strategies: **Eff** (pruned trajectories only) and **Hybrid** (mixing pruned and unpruned hard trajectories).
-    - **Design Motivation**: Pursuing only brevity can harm complex task capabilities. **Eff** is suitable for cost-sensitive deployment, while **Hybrid** preserves long-chain capabilities for complex searches.
+Redundancy in long trajectories is not simply "long text" but useless loops and branches in the information dependency chain. It is difficult to judge whether a search contributed to the answer by looking at text alone. WebClipper abstracts the trajectory as a directed bipartite graph: Action node $A_t$ represents the thought and action of round $t$, and Information node $I_t$ represents the atomic information returned by the environment. If an action depends on information, an edge $I \rightarrow A$ is drawn; if it generates information, $A \rightarrow I$ is drawn. This graph is constructed by an LLM extractor that extracts action types and targets, splits observations into atomic information, and determines which information subsequent actions relied on.
+
+**2. MNDAG Pruning & Majority Voting: Mining the minimum necessary DAG to retain only critical paths supporting the answer.**
+
+Deleting turns based on semantic similarity or subjective LLM scores often accidentally removes key evidence. WebClipper defines pruning as a graph problem: the initial query node is the source, and the final answer action is the sink. Action nodes have a cost of 1, while Information nodes have a cost of 0, reflecting that tool calls are expensive whereas information itself is just evidence. It uses Dijkstra-style shortest path search to find low-cost paths and then performs a backward closure from the final answer to include all critical dependencies. To handle LLM instability, each trajectory is processed three times, and the pruned set is only accepted if the same result is reached at least twice.
+
+**3. Coherence-aware Rewriting & Hybrid Evolution Training: Sewing pruned trajectories into natural ReAct data with a balance between efficiency and accuracy.**
+
+Pruning makes two retained actions non-adjacent, and a subsequent thought might still refer to a deleted observation. Direct SFT would teach the model to "hallucinate" references to non-existent observations. WebClipper performs coherence-aware rewriting at the pruning points: generating multiple candidates based on full context and deleted steps, then selecting the version that best matches the base model's language style using perplexity (PPL). Two training strategies are offered: **Eff** uses only pruned trajectories for cost-sensitive deployment, while **Hybrid** mixes pruned trajectories with unpruned difficult trajectories from different queries to retain deep search capabilities when necessary.
 
 ### Loss & Training
-The objective is to maximize the likelihood of trajectories. Efficiency-oriented training optimizes $L_{eff}=-\sum_{\tilde{\tau}}\log P_M(\tilde{\tau})$ on pruned trajectories. Hybrid training optimizes $L_{hybrid}=-\sum_{\tau^*}\log P_M(\tau^*)$ on a mix. The evaluation uses the F-AE Score, a harmonic mean of accuracy and efficiency $E=1-Rounds/Max\_Rounds$: $F\text{-}AE=2\times Acc\times E/(Acc+E)$, with $Max\_Rounds=100$.
+The training objective is standard likelihood maximization. Efficiency-guided training optimizes $L_{eff}=-\sum_{\tilde{\tau}}\log P_M(\tilde{\tau})$ on the pruned set. Hybrid training optimizes $L_{hybrid}=-\sum_{\tau^*}\log P_M(\tau^*)$ on the union of pruned and unpruned hard trajectories. The evaluation uses the F-AE Score, a harmonic mean of accuracy and efficiency $E=1-Rounds/Max\_Rounds$: $F\text{-}AE=2\times Acc\times E/(Acc+E)$, where $Max\_Rounds=100$.
 
 ## Key Experimental Results
 
 ### Main Results
-Using Tongyi-DeepResearch as the base agent, evaluation was conducted on xbench-deepsearch, Browsecomp, GAIA, and HLE.
+The authors used Tongyi-DeepResearch as the base agent, evaluating on xbench-deepsearch, Browsecomp, GAIA, and HLE. WebClipper(Eff) prioritizes tool-call savings, while WebClipper(Hybrid) prioritizes overall accuracy.
 
 | Method | xbench Acc / F-AE / Rounds | Browsecomp Acc / F-AE / Rounds | GAIA Acc / F-AE / Rounds | HLE Acc / F-AE / Rounds |
 |------|----------------------------|--------------------------------|--------------------------|-------------------------|
@@ -77,53 +81,52 @@ Using Tongyi-DeepResearch as the base agent, evaluation was conducted on xbench-
 | WebClipper (Eff) | 0.713 / 0.792 / 10.81 | 0.427 / 0.431 / 56.50 | 0.684 / 0.760 / 14.44 | 0.353 / 0.492 / 18.60 |
 | WebClipper (Hybrid) | 0.733 / 0.797 / 12.57 | 0.467 / 0.428 / 60.42 | 0.695 / 0.744 / 19.92 | 0.361 / 0.495 / 21.07 |
 
-Compared to the original model, the **Eff** version reduces tool calls by ~21% and tokens by 19.4% while maintaining or improving accuracy. The **Hybrid** version increases average accuracy by ~4.8% and still reduces rounds by ~7%.
+Compared to the original Tongyi-DeepResearch, the Eff version reduces tool rounds by ~21% and tokens by 19.4% on average while maintaining or increasing accuracy. The Hybrid version improves average accuracy by ~4.8% while still reducing rounds by ~7%.
 
 | Pruning/Training Method | xbench Acc / Rounds / Token | Browsecomp Acc / Rounds / Token | Main Conclusion |
 |---------------|-----------------------------|----------------------------------|----------|
-| Prompt Control | 0.676 / 12.50 / 6321 | 0.373 / 62.80 / 12222 | Constraints via prompts reduce rounds minimally and hurt accuracy |
-| Coarse Prune | 0.603 / 8.85 / 4774 | 0.220 / 37.10 / 8365 | Coarse pruning shortens trajectories but severely damages accuracy |
+| Prompt Control | 0.676 / 12.50 / 6321 | 0.373 / 62.80 / 12222 | Round constraints via prompt reduce little and drop accuracy |
+| Coarse Prune | 0.603 / 8.85 / 4774 | 0.220 / 37.10 / 8365 | Coarse pruning shortens trajectories but severely harms accuracy |
 | WebClipper (Eff) | 0.713 / 10.81 / 5931 | 0.427 / 56.50 / 10599 | Maintains accuracy while significantly reducing calls |
 | WebClipper (Hybrid) | 0.733 / 12.57 / 6205 | 0.467 / 60.42 / 11507 | Highest accuracy, efficiency still better than original |
 
 ### Ablation Study
-Ablations verified the graph pruning, PPL-based rewrite selection, and context-aware selective rewriting. Removing any component led to degradation, with context-aware rewriting being critical to avoid contradictory training signals.
+Ablations verified three designs: Graph Pruning (GP), PPL-based rewrite selection (PPL-S), and Context-aware Selective Rewriting (CSR). Removing any component leads to degradation, with the removal of selective rewriting being most severe due to contradictory training signals.
 
-| Ablation | Modification | Observed Impact | Reason |
+| Ablation Config | Change | Observed Impact | Explanation |
 |----------|------|--------------|----------|
-| w/o GP | Replace graph pruning with coarse pruning | Performance drop | Single LLM judgment struggles with long-range dependencies |
-| w/o PPL-S | No PPL-based candidate selection | Performance drop | Rewritten style mismatches base model, causing distribution shift |
-| w/o CSR | Rewriting all thoughts without history | Most severe degradation | Rewriting breaks logic and introduces inconsistent references |
-| Unpruned-Distill | SFT with unpruned hard trajectories | Acc may rise, but rounds increase | Amplifies base agent capabilities but reinforces inefficiency |
+| w/o GP | Use coarse-grained pruning | Performance drops | Single LLM judgments struggle with long-range dependencies |
+| w/o PPL-S | No PPL selection | Performance drops | Rewritten thoughts mismatch base model style, shifting distribution |
+| w/o CSR | Unconditional rewrite, no historical context | Severest degradation | Rewriting breaks logic and introduces inconsistent references |
+| Unpruned-Distill | SFT with unpruned hard trajectories | Accuracy may rise, rounds lengthen | It amplifies capability but also reinforces inefficient behavior |
 
 ### Key Findings
-- WebClipper (Eff) is particularly effective on GAIA, reducing rounds from 20.56 to 14.44 (~30%). Pruning prevents over-reliance on external tools for logic-based tasks.
-- The F-AE Score does not reward short trajectories in isolation; Kimi models have low rounds but low accuracy, resulting in low F-AE scores.
-- Case studies show baselines often get distracted by secondary details, while WebClipper learns to stay on the critical path.
+- WebClipper(Eff) is particularly effective on GAIA, reducing rounds from ~20.56 to 14.44 (~30% reduction). GAIA contains many logic riddles not requiring long tool chains; pruning training inhibits over-reliance on external tools.
+- The value of F-AE lies in not rewarding short trajectories alone. Models like Kimi have few rounds but low accuracy, resulting in low F-AE.
+- Case studies show the baseline often shifts attention to trivial details (e.g., digging into minor materials after finding the paper). WebClipper learns to advance along the critical path.
 
 ## Highlights & Insights
-- Shifting trajectory compression from "text deletion" to "preserving dependency paths" is more suitable for tool-call scenarios than standard CoT compression.
-- The MNDAG cost design (Action=1, Information=0) is intuitive: tool calls are expensive, whereas information serves as evidentiary support.
-- Majority voting is a pragmatic engineering detail to handle LLM extractor instability and ensure high-confidence pruning.
-- Coherence-aware rewriting prevents models from learning "hallucinating references" from broken logic chains.
+- Trajectory compression is transformed from "shortening text" to "retaining information dependency paths," which is more suitable for tool-call scenarios than general CoT compression.
+- The MNDAG design (Info cost 0, Action cost 1) is intuitive: tool calls are the expensive operations.
+- Majority voting is a pragmatic engineering detail to handle the instability of LLM extractors.
+- Coherence rewriting is a critical but often overlooked step to prevent "hallucinated references" in training data.
 
 ## Limitations & Future Work
-- WebClipper is bounded by the base agent's capacity; it removes redundancy but does not discover new strategies for failed tasks.
-- Evaluation focuses on search, web access, and code. Applicability to multimodal tools or enterprise APIs requires further validation.
-- Offline processing is heavy; constructing trajectories with Qwen3-235B on 8×H800 took about one day.
-- F-AE depends on the $Max\_Rounds$ setting. Real systems may need to consider token pricing and latency explicitly.
+- WebClipper inherits the capability boundaries of the base agent.
+- Evaluation focuses on search, web access, and code execution; applicability to multi-modal tools or enterprise APIs needs verification.
+- Graph construction and rewriting rely on heavy offline processing (e.g., Qwen3-235B on 8×H800).
+- F-AE depends on the $Max\_Rounds$ setting. Real systems might need to consider token costs, latency, and API pricing simultaneously.
 
 ## Related Work & Insights
-- **vs Deep Research / WebExplorer**: Those focus on search depth and data synthesis; WebClipper focuses on efficiency evolution.
-- **vs Prompt Control**: Prompts provide weak constraints; training data modifications lead to more stable search patterns.
-- **vs CoT Compression**: CoT methods compress reasoning chains, while WebClipper handles ReAct trajectories requiring environment consistency.
-- **Future Insights**: State graphs could be extended to online memory graphs to prune branches during inference or used for RL-based rewards to penalize invalid calls.
+- **vs Deep Research / WebExplorer**: These emphasize search capability; WebClipper focuses on efficiency evolution, aiming for "fewer detours" rather than just "more search."
+- **vs Prompt Control**: Prompt constraints are weak; WebClipper changes the search pattern through training data for more stable effects.
+- **vs CoT Compression**: General compression handles text reasoning, while WebClipper handles ReAct trajectories with environment feedback, requiring action-observation consistency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ (Clear formalization of trajectory pruning via state graphs and MNDAG).
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ (Covers 4 benchmarks and multiple baselines).
-- Writing Quality: ⭐⭐⭐⭐☆ (Complete methodology and good index explanation).
-- Value: ⭐⭐⭐⭐⭐ (Very practical for reducing costs in long-range Web Agent deployments).
+- Novelty: ⭐⭐⭐⭐☆ 
+- Experimental Thoroughness: ⭐⭐⭐⭐☆
+- Writing Quality: ⭐⭐⭐⭐☆
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -132,10 +135,10 @@ Ablations verified the graph pruning, PPL-based rewrite selection, and context-a
 ## Related Papers
 
 - [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
-- [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
+- [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
-- [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](expseek_self-triggered_experience_seeking_for_web_agents.md)
+- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
+- [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
 
 </div>
 

@@ -2,73 +2,84 @@
 title: >-
   [Paper Note] mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection
 description: >-
-  [ACL 2026 (SemEval-2026 Task 9 system paper)][Social Computing][Polarization Detection] The mdok system, originally designed for multilingual machine-generated text detection (QLoRA fine-tuned Qwen3-32B / Gemma-3-27B)…
+  [ACL 2026][Social Computing][QLoRA] This paper transfers the mdok system (originally designed for multilingual machine-generated text detection, utilizing QLoRA finetuned Qwen3-32B / Gemma-3-27B) to SemEval-2026 Task 9 for multilingual polarization detection. By incorporating four types of "dual" data augmentation (anonymization, casing, and homoglyphs),
 tags:
-  - "ACL 2026 (SemEval-2026 Task 9 system paper)"
-  - "Social Computing"
-  - "Polarization Detection"
-  - "Multilingual"
-  - "QLoRA"
-  - "Data Augmentation"
-  - "Homoglyph Attack"
+  - ACL 2026
+  - Social Computing
+  - QLoRA
 date: 2026-05-08
-content_hash: 1d55f1bf72684bb3
+content_hash: 10eb8f85ca8b5471
 ---
-
 # mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection
 
 **Conference**: ACL 2026 (SemEval-2026 Task 9 system paper)  
 **arXiv**: [2605.02695](https://arxiv.org/abs/2605.02695)  
 **Code**: https://github.com/kinit-sk/mdok-style-polar2026  
 **Area**: Multilingual NLP / Text Classification / SemEval System Paper  
-**Keywords**: Polarization Detection, Multilingual, QLoRA, Data Augmentation, Homoglyph Attack
+**Keywords**: Polarization Detection, Multilingual, QLoRA, Data Augmentation, Homoglyph Attack  
 
 ## TL;DR
-The mdok system, originally designed for multilingual machine-generated text detection (QLoRA fine-tuned Qwen3-32B / Gemma-3-27B), is transferred to the SemEval-2026 Task 9 multilingual polarization detection task. By stacking four types of data augmentation—anonymization, case variation, and homoglyphs—the system achieves a Macro-F1 across 22 languages that is 3–4% higher on average than the official baseline.
+This paper transfers the mdok system (originally designed for multilingual machine-generated text detection, utilizing QLoRA finetuned Qwen3-32B / Gemma-3-27B) to SemEval-2026 Task 9 for multilingual polarization detection. By incorporating four types of "dual" data augmentation (anonymization, casing, and homoglyphs), the system achieves an average Macro-F1 score 3–4% higher than the official baseline across 22 languages.
 
 ## Background & Motivation
-**Background**: Online polarization is a precursor to hate speech and social fragmentation; automated detection is key to mitigation. SemEval-2026 Task 9 (POLAR) divides this into three subtasks: subtask 1 (binary classification: polarized or not), subtask 2 (polarization type: political / racial / religious / gender / other), and subtask 3 (manifestation: stereotype / vilification / dehumanization / extreme language / lack of empathy / invalidation), covering 22 languages including many low-resource ones such as Amharic, Hausa, and Odia.
+**Background**: Online polarization is a precursor to hate speech and social fragmentation; automated detection is critical for mitigation. SemEval-2026 Task 9 (POLAR) decomposes this into three subtasks: subtask 1 (binary classification: polarized or not), subtask 2 (polarization type: Political / Racial / Religious / Gender / Other), and subtask 3 (manifestation: Stereotyping / Vilification / Dehumanization / Extreme Language / Lack of Empathy / Invalidation), covering 22 languages (including low-resource languages like Amharic, Hausa, and Odia).
 
-**Limitations of Prior Work**: Many of the 22 languages suffer from scarce training data and class imbalance. Small BERT-like models struggle with both low-resource scenarios and cross-lingual transfer. Furthermore, social media text is rife with noise like inconsistent casing, emojis, @mentions, and contact info. Malicious actors also use **homoglyph attacks** (replacing ASCII with visually similar characters from different Unicode blocks) to break tokenizers and bypass classifiers.
+**Limitations of Prior Work**: Many of the 22 languages are low-resource with sparse and imbalanced training data. Small BERT-like models struggle with both low-resource scenarios and cross-lingual transfer. Furthermore, social media text is rife with noise (irregular casing, emojis, @mentions, etc.) and adversarial **homoglyph attacks** (replacing ASCII with visually similar characters from different Unicode blocks), which break tokenizers and invalidate classifiers.
 
-**Key Challenge**: (1) The need for a unified model to cover 22 languages and share signals for low-resource languages, requiring a model large enough for multilingual capacity; (2) The need for robustness against visual obfuscation despite a lack of such samples in the training data.
+**Key Challenge**: (1) The need for a unified model to cover 22 languages and share signals from low-resource data requires sufficient model capacity; (2) Achieving robustness against visual obfuscation when such samples are nearly absent in training data.
 
-**Goal**: Port the mdok pipeline (which achieved two 1st places in machine-generated text detection at PAN@CLEF 2025), consisting of QLoRA fine-tuned medium-sized multilingual LLMs and robustness enhancements, to polarization detection to verify the hypothesis that "robust detectors are task-agnostic toolboxes."
+**Goal**: To transfer the mdok pipeline—which achieved double 1st place finishes in machine-generated text detection at PAN@CLEF 2025 (QLoRA finetuned medium-sized multilingual LLMs + robustness enhancement)—directly to polarization detection to test the hypothesis that "robust detectors are task-agnostic toolboxes."
 
-**Key Insight**: Although polarization detection and machine-generated text detection differ on the surface, they both fundamentally involve "robust sequence classification for short texts." Robustness techniques, particularly homoglyph defense, should be transferable.
+**Key Insight**: While polarization detection and machine-generated text detection appear different, both are fundamentally "robust sequence classification tasks for short texts." Robustness techniques, particularly homoglyph defense, should be transferable.
 
-**Core Idea**: The mdok paradigm = QLoRA 4-bit fine-tuning of 27–32B multilingual LLMs + four "dual-style" text augmentations (original + augmented versions each making up half the training set), merging data from all 22 languages for training to enhance cross-lingual transfer.
+**Core Idea**: The mdok paradigm = 4-bit QLoRA finetuning of 27–32B multilingual LLMs + four "dual" text augmentations (original + augmented versions each occupying half of the training set), merging data from 22 languages to enhance cross-lingual transfer.
 
 ## Method
 
 ### Overall Architecture
-The system takes social media text in any language as input and outputs binary logits for subtask 1, or multi-labels for subtask 2 and 3. The pipeline follows four steps: (1) merging and deduplicating the train+dev sets across 22 languages; (2) applying four types of data augmentation (anonymization, lowercase, uppercase, and homoglyphs) to each text, expanding the training set by ~20%; (3) performing single-epoch fine-tuning on the merged multilingual data using QLoRA; (4) selecting the best checkpoint based on validation AUC (subtask 1) or Macro-F1 (subtask 2/3). Qwen3-32B was chosen as the backbone for subtask 1 (supporting 100+ languages), while Gemma-3-27B-pt (supporting 140+ languages) was used for subtask 2/3 due to Qwen3's instability during multi-label head training.
+The system takes social media text in any language as input and outputs logits for subtask 1, or multi-labels for subtasks 2 and 3. The pipeline consists of four steps: (1) Deduplicating and merging train+dev sets across 22 languages; (2) Applying four types of data augmentation (anonymization, decapitalization, capitalization, and homoglyphization), expanding the training set by ~20%; (3) Single-epoch finetuning using QLoRA on the merged data; (4) Selecting the best checkpoint based on validation AUC (subtask 1) or Macro-F1 (subtasks 2/3). Qwen3-32B was chosen as the backbone for subtask 1, while Gemma-3-27B-pt was used for subtasks 2/3 due to Qwen3's instability during multi-label head training. An explainable appraisal pathway was also explored.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["22 Languages Social Text<br/>Deduplicated train+dev Merge"] --> AUG
+    subgraph AUG["Dual Data Augmentation (Original + Augmented pairs)"]
+        direction TB
+        A1["Anonymization<br/>[EMAIL]/[USER]/[PHONE]"]
+        A2["Lowercase / Uppercase"]
+        A3["Homoglyphization<br/>ASCII → Visually similar Unicode chars"]
+    end
+    AUG --> FT["22-Language Merge + Single QLoRA Model<br/>4-bit, Single Epoch Finetuning"]
+    FT -->|"subtask 1"| CKPT1["Best checkpoint via dev AUC<br/>Qwen3-32B"]
+    FT -->|"subtask 2/3"| CKPT2["Best checkpoint via dev Macro-F1<br/>Gemma-3-27B + Sigmoid Multi-label Head"]
+    CKPT1 --> OUT["Polarization Detection Output<br/>Binary / Type / Manifestation"]
+    CKPT2 --> OUT
+    IN -. Exploratory Path .-> APP["Appraisal Explainable Path<br/>XLM-R Encoder → Cognitive Dimension Regression → LR Classification"]
+    APP -.-> OUT
+```
 
 ### Key Designs
 
-1.  **Dual Data Augmentation**:
-    - **Function**: To enable the model to learn "semantic invariance" without external data—meaning the same text should yield the same polarization label after surface perturbations.
-    - **Mechanism**: For each original training sample $x$, an augmented copy $T(x)$ is generated. Both $(x, y)$ and $(T(x), y)$ are fed to the model, with global deduplication used to remove copies identical to the original. The four $T$ transformations include: (a) **Anonymization**—replacing identified PII with `[EMAIL]/[USER]/[PHONE]` to reduce overfitting to specific usernames; (b) **Lowercase**; (c) **Uppercase**; (d) **Homoglyphs**—replacing some ASCII characters with visually identical characters from different Unicode blocks (e.g., Greek small 'a' for Latin 'a'). In subtask 1, each of the four augmentations adds 5%, expanding the training set by 20% in total.
-    - **Design Motivation**: Homoglyph attacks were the most disruptive adversarial strategy in the authors' previous work on machine-generated text detection (as they cause BPE/SentencePiece tokenizers to segment words into entirely different subword sequences). Treating them as training-time regularization rather than test-time defense improves both robustness and surface stability simultaneously.
+**1. Dual Data Augmentation: Adversarial Perturbations as Regularization**
 
-2.  **22-Language Merged + QLoRA Single Model**:
-    - **Function**: To process 22 languages with a single 32B model instead of training a classifier head for each language, maximizing knowledge sharing for low-resource languages.
-    - **Mechanism**: Training data from all languages are mixed line-by-line. The base LLM is fine-tuned using 4-bit QLoRA with a constant learning rate of $2 \times 10^{-5}$, a warmup ratio of 0.03, paged AdamW, and batch size 1. Validation is performed every 500 steps on a balanced sample of 4400 dev sets, completing within a single epoch. For subtasks 2/3 (multi-label), the LM head is replaced with a sigmoid multi-output head using BCE loss.
-    - **Design Motivation**: Monolingual samples for low-resource languages (e.g., Hausa, Khmer) are insufficient for fine-tuning a 32B model. Pooling all languages exposes the model to more polarized samples and forces it to learn "task-based rather than language-based" representations. Qwen3-32B and Gemma-3-27B were selected for their native support for 100+ languages, eliminating the need for additional cross-lingual transfer methods.
+Social media text contains significant noise, but the most challenging are homoglyph attacks. These cause BPE/SentencePiece tokenizers to segment the same word into entirely different subword sequences. Instead of using Unicode normalization during inference (which discards visual adversarial signals), the authors generate an augmented copy $T(x)$ for each original sample $x$. Both $(x, y)$ and $(T(x), y)$ are used for training. The four transforms $T$ are: (a) **Anonymization** (replacing PII with tokens like `[USER]`); (b) **Lowercase**; (c) **Uppercase**; (d) **Homoglyphization** (replacing ASCII with visually identical characters from other Unicode blocks). This forces the model to learn that "a word with replaced characters is still the same word," providing robustness with zero extra inference overhead.
 
-3.  **Appraisal Annotation as Interpretable Alternative Path (Exploratory)**:
-    - **Function**: To explore a lightweight path using "cognitive appraisal dimensions of emotion" (pleasantness, predictability, controllability, consequences for self/others, value alignment, etc.) as features, external to the main system.
-    - **Mechanism**: Text is encoded with XLM-Roberta. A multi-task regression head predicts 5 binary appraisal dimensions + 4 event description dimensions simultaneously, with a weighted loss of MSE + BCE (architecture adapted from AppraisePLM). LogisticRegression (default hyperparameters, random state 42, 80/20 split) is then used for polarization classification based on appraisal features, with one model trained per language.
-    - **Design Motivation**: Appraisal dimensions provide interpretable cognitive signals explaining "why this text is polarized." Although their standalone Macro-F1 is near random, the AUC for each label (threshold-independent) shows sufficient discriminative power, suggesting future potential for integrating appraisal signals into the main model as additional features.
+**2. 22-Language Merge + Single QLoRA Model: Model Capacity for Cross-lingual Transfer**
+
+Monolingual data for low-resource languages (e.g., Hausa, Khmer) is insufficient to finetune a 32B model. This system mixes all training data into a single pool to share stabilization signals across languages. Using 4-bit QLoRA, the model is trained with a constant learning rate of $2 \times 10^{-5}$ and a single epoch to prevent overfitting to surface cues. Merging data forces the model to learn "task representations rather than language representations." The choice of Qwen3-32B and Gemma-3-27B-pt (supporting 140+ languages) ensures that cross-lingual alignment is already built into the backbone.
+
+**3. Appraisal Labels as Interpretability Path (Exploratory)**
+
+The authors explored an explainable bypass using cognitive appraisal dimensions (e.g., pleasantness, predictability, control). An XLM-Roberta model was used to encode text, followed by a multi-task regression head to predict 5 binary appraisal dimensions and 4 event descriptors. Finally, a Logistic Regression classifier was trained on these appraisal features. While its Macro-F1 was near random, the threshold-independent AUC for each label was generally >0.65, suggesting that appraisal dimensions capture discriminative cognitive signals relevant to polarization.
 
 ### Loss & Training
-Subtask 1 uses standard cross-entropy; subtasks 2/3 use BCE-with-logits for multi-label classification. QLoRA 4-bit quantization loads the base model weights via `bitsandbytes`, with LoRA adapters on all attention and MLP projections. Training is restricted to a single epoch to prevent overfitting to surface cues. Checkpoint selection: subtask 1 uses dev AUC; subtasks 2/3 use dev Macro-F1.
+Subtask 1 uses standard cross-entropy; subtasks 2/3 use BCE-with-logits for multi-label classification. QLoRA 4-bit quantization was implemented via `bitsandbytes`, with LoRA adapters applied to all attention and MLP projections. Training was strictly limited to one epoch.
 
 ## Key Experimental Results
 
-### Main Results (Submitted system's Macro-F1 across 22 languages and delta vs. official baseline)
+### Main Results (Macro-F1 of the submitted system across 22 languages and Gain vs. Official Baseline)
 
-| Language (subset) | Subtask 1 | Subtask 2 | Subtask 3 | Delta vs. baseline (S1/S2/S3) |
+| Language (subset) | Subtask 1 | Subtask 2 | Subtask 3 | Gain vs Baseline (S1/S2/S3) |
 |---|---|---|---|---|
 | zho (Chinese) | 0.9237 | 0.8199 | 0.4912 | +0.055 / +0.150 / +0.491 |
 | nep (Nepali) | 0.8915 | 0.8026 | 0.5669 | +0.012 / +0.081 / +0.436 |
@@ -79,51 +90,50 @@ Subtask 1 uses standard cross-entropy; subtasks 2/3 use BCE-with-logits for mult
 | hau (Hausa) | 0.7401 | 0.1689 | 0.0000 | -0.035 / -0.035 / -0.746 |
 | khm (Khmer) | 0.6293 | 0.6323 | 0.2482 | -0.030 / +0.005 / -0.361 |
 | amh (Amharic) | 0.6619 | 0.5116 | 0.4310 | -0.053 / +0.140 / -0.012 |
-| **22 Lang Avg vs baseline** | **+0.033** | **+0.043** | **−0.001** | — |
+| **22-Lang Avg vs Baseline** | **+0.033** | **+0.043** | **−0.001** | — |
 
-Overall, performance in subtasks 1 and 2 exceeded the baseline by 3–4% on average, while subtask 3 remained on par (severely dragged down by a 0.0 in Hausa). In terms of rank percentile, 14 out of the 62 (22×3) subtasks reached the top 20%, and 28 reached the top 50%. The system ranked 1st overall in Italian subtask 1, 3rd in Nepali subtask 2, and 4th in Urdu subtask 3.
+The system outperformed the baseline by 3–4% in subtasks 1 and 2, remaining on par in subtask 3. Notable achievements include 1st place in Italian subtask 1 and 3rd place in Nepali subtask 2.
 
-### Ablation Study / Analysis (Fine-grained performance by label, selected)
+### Ablation Study (Fine-grained performance by label)
 
-| Subtask / Class | Chinese (zho) | English (eng) | Hindi (hin) | Avg. Hardest Class |
+| Subtask / Category | Chinese (zho) | English (eng) | Hindi (hin) | Hardest Category (Avg) |
 |---|---|---|---|---|
-| S2 Political | 0.8571 | 0.8014 | 0.8019 | Political reaches 0.74+ overall |
-| S2 Religious | 0.9651 | 0.7535 | 0.9214 | Religious is easiest to distinguish |
-| S2 "Other" | 0.8294 | 0.5194 | 0.6536 | **Hardest** (avg ~0.58) |
+| S2 Political | 0.8571 | 0.8014 | 0.8019 | 0.74+ |
+| S2 Religious | 0.9651 | 0.7535 | 0.9214 | Easiest to distinguish |
+| S2 "Other" | 0.8294 | 0.5194 | 0.6536 | **Hardest** (~0.58) |
 | S3 Vilification | 0.8696 | 0.7821 | 0.7407 | — |
-| S3 Dehumanization | 0.7958 | 0.5391 | 0.7130 | **One of the hardest** |
-| S3 Lack of empathy | 0.5491 | 0.5742 | 0.6554 | **Hardest** (lowest mean) |
+| S3 Dehumanization | 0.7958 | 0.5391 | 0.7130 | **Very Hard** |
+| S3 Lack of empathy | 0.5491 | 0.5742 | 0.6554 | **Hardest** |
 | S3 Invalidation | 0.5937 | 0.4894 | 0.7480 | Second hardest |
 
 ### Key Findings
-- **Subtask difficulty varies greatly**: Average performance for subtask 1 is ~0.79, subtask 2 is ~0.53, and subtask 3 is ~0.36. Multi-label classification remains the primary bottleneck; the original mdok was tuned for binary classification, and a simple head change was insufficient.
-- **The "Other" category is the Achilles' heel of subtask 2** (avg. low of ~0.58) because it acts as a "garbage bin" class (anything not political/racial/religious/gender), making it semantically inconsistent. Similarly, subtask 3's "dehumanization / lack of empathy / invalidation" categories are significantly more difficult than vilification or extreme language, which often have explicit lexical markers.
-- **Significant language disparities**: Chinese, Nepali, and Burmese performed best overall (>0.85 in S1); Amharic, Hausa, and Khmer performed worst (<0.67). The authors note that the 0.0 in Hausa subtask 3 resulted from the merged training causing the model to treat Hausa as an outlier.
-- **Although the appraisal path's Macro-F1 is near random, per-label AUC is consistently >0.65** (e.g., Chinese vilification 0.7896, English invalidation 0.6667), indicating that appraisal signals do capture cognitive cues related to polarization. Fusing these into the main model holds potential.
+- **Task Difficulty Gradient**: Subtask 1 avg ~0.79, Subtask 2 ~0.53, Subtask 3 ~0.36; multi-label classification remains the primary bottleneck.
+- **"Other" is the Weak Point**: In Subtask 2, the "Other" category performs worst as it acts as a semantic "catch-all" with inconsistent features.
+- **Language Disparity**: Performance is strong in Chinese and Nepali but drops significantly in Hausa and Amharic. The 0.0 score in Hausa subtask 3 suggests the model treated it as an outlier during merged training.
+- **Appraisal Potential**: Despite low Macro-F1, the high per-label AUC for the appraisal path indicates it captures valid cognitive cues that could be fused into the main model.
 
 ## Highlights & Insights
-- **Homoglyph attacks as training augmentation** is an undervalued trick: instead of deploying Unicode normalization at test time (which loses visual signals used by adversaries), it is better to train the model to recognize that "replaced characters" represent the same word. One training pass grants both **robustness and surface invariance** with zero extra inference overhead.
-- **The "task-language trade-off" is absorbed by 27–32B model scales**: When a model is sufficiently large and natively supports 100+ languages, data from 22 languages can be merged for training without special cross-lingual losses or adapters. This suggests that for low-resource tasks, "scaling the backbone" may offer a higher ROI than "adding tricks."
-- **Zero-effort migration from text detection to polarization detection** is the most educational aspect of this system paper: it treats mdok as a "tool" rather than a "model," proving that a robust sequence classification pipeline is intrinsically task-agnostic.
+- **Homoglyph attacks as training regularization** is a potent trick: Instead of post-processing, teaching the model semantic invariance to character substitution provides robustness with zero cost at inference.
+- **Scale absorbs transfer complexity**: Large models (27B+) allow for simple data merging, suggesting that increasing backbone size might be more effective than complex cross-lingual adapters for low-resource tasks.
+- **Zero-effort migration**: The success of the mdok pipeline demonstrates that robust sequence classification frameworks can be task-agnostic "toolboxes" applicable across different NLP domains.
 
 ## Limitations & Future Work
-- The authors admit only a few base models were tested; there may be better choices for certain low-resource languages. Additionally, training only used official train+dev sets without external multilingual polarization data.
-- Noted limitations: (1) Merging 22 languages negatively impacts extremely low-resource languages (Hausa / Khmer); fine-tuning per language family might be a better future direction. (2) The multi-label head for subtask 3 lacked specialized design; adding label-correlation modeling (e.g., Asymmetric Loss / Tail-aware sampling) is recommended. (3) The appraisal path remains parallel to rather than integrated with the main system.
-- Future improvements: Joint multi-task training of the appraisal head as an auxiliary head; expanding homoglyph augmentation to other social media noise types like emojis or character repetition; utilizing self-training with unlabelled multilingual social media text.
+- Merging all 22 languages caused negative transfer for extreme low-resource languages (e.g., Hausa); future work should consider finetuning by language family.
+- Subtask 3 multi-label performance could be improved with label-correlation modeling (e.g., Asymmetric Loss).
+- The appraisal pathway is currently parallel; future versions should integrate appraisal labels as auxiliary tasks during joint training.
 
 ## Related Work & Insights
-- **vs. traditional BERT/XLM-R fine-tuning**: The authors previously verified that 7B LLMs outperformed small BERT-like models in SemEval-2024 Task 8; this work pushes that to 27–32B, emphasizing that "PEFT (QLoRA) makes the cost manageable" for mid-sized laboratories.
-- **vs. monolingual independent classifiers**: Traditional multilingual competitions often train one model per language. This paper proves a unified model is feasible in the LLM era, yielding better results for medium-resource languages like Chinese and Hindi, though at the expense of very low-resource languages.
-- **vs. Data Augmentation**: Compared to EDA or back-translation, dual-style augmentation (original + augmented + global deduplication) is more lightweight, and using homoglyph attacks on the training side is a rare but effective technique in the text robustness community.
+- **vs. BERT/XLM-R**: Confirms that medium-sized LLMs with QLoRA outperform traditional encoder-only models in polarization detection.
+- **vs. Monolingual Classifiers**: A unified model is more efficient for medium-resource languages but requires better balancing for low-resource outliers.
+- **vs. Data Augmentation**: Dual augmentation (original + augmented pairs) is more lightweight than back-translation and specifically addresses social media noise.
 
 ## Rating
-- Novelty: ⭐⭐⭐☆☆☆ The main contribution is transferring the existing mdok pipeline to a new task; technical innovation is limited, but homoglyph training augmentation and 22-language merging are practical tricks.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆☆ Full runs across 22 languages and 3 subtasks were completed with fine-grained per-label analysis, though ablation studies for individual contributions (homoglyphs vs. anonymization) are missing.
-- Writing Quality: ⭐⭐⭐⭐☆☆ Standard system paper style; the method is clear, but some key details are missing (e.g., LoRA rank, target modules).
-- Value: ⭐⭐⭐⭐☆☆ Directly reusable for engineering teams in SemEval or those performing multilingual text classification; academic contribution is moderate.
+- Novelty: ⭐⭐⭐☆☆
+- Experimental Thoroughness: ⭐⭐⭐⭐☆☆
+- Writing Quality: ⭐⭐⭐⭐☆☆
+- Value: ⭐⭐⭐⭐☆☆
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers

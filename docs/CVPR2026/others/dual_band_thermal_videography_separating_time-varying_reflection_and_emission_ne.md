@@ -2,180 +2,180 @@
 title: >-
   [Paper Note] Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions
 description: >-
-  [CVPR 2026][thermal imaging] This paper proposes a dual-band long-wave infrared (LWIR) video analysis framework that jointly leverages spectral cues (constant emissivity ratio across dual bands) and temporal cues (smooth…
+  [CVPR 2026][Others][Paper Note] A dual-band Long-Wave Infrared (LWIR) video analysis framework is proposed. By jointly utilizing spectral cues (constant dual-band emissivity ratio) and temporal cues (smooth object radiation vs. abrupt background radiation changes), the method achieves pixel-wise separation of reflection and emission components in dyn
 tags:
-  - "CVPR 2026"
-  - "thermal imaging"
-  - "dual-band"
-  - "reflection-emission separation"
-  - "thermal radiation"
-  - "emissivity estimation"
+  - CVPR 2026
+  - Others
 date: 2026-05-08
-content_hash: a5f137ecbb80765e
+content_hash: 0e1ea8ec0ca88dd2
 ---
-
 # Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions
 
 **Conference**: CVPR 2026  
 **arXiv**: [2509.11334](https://arxiv.org/abs/2509.11334)  
 **Code**: [dual-band-thermal.github.io](https://dual-band-thermal.github.io)  
 **Area**: Others (Computational Imaging)  
-**Keywords**: thermal imaging, dual-band, reflection-emission separation, thermal radiation, emissivity estimation
+**Keywords**: Thermal imaging, Dual-band, Reflection-emission separation, Thermal radiation, Emissivity estimation
 
 ## TL;DR
 
-This paper proposes a dual-band long-wave infrared (LWIR) video analysis framework that jointly leverages spectral cues (constant emissivity ratio across dual bands) and temporal cues (smooth object radiance variation vs. abrupt background radiance changes) to achieve, for the first time, pixel-wise separation of reflected and emitted components in dynamic scenes near ambient temperature, along with recovery of per-pixel emissivity and temperature fields.
+A dual-band Long-Wave Infrared (LWIR) video analysis framework is proposed. By jointly utilizing spectral cues (constant dual-band emissivity ratio) and temporal cues (smooth object radiation vs. abrupt background radiation changes), the method achieves pixel-wise separation of reflection and emission components in dynamic scenes near ambient temperature for the first time, while recovering object emissivity and temperature fields.
 
 ## Background & Motivation
 
-Thermal cameras capture LWIR (8–14 µm) radiation comprising two components:
+Long-Wave Infrared (LWIR, 8-14 µm) radiation captured by thermal cameras consists of two components:
 
-**Emitted component**: thermal radiation determined by the object's own temperature and emissivity
+**Emission component**: Thermal radiation determined by the object's own temperature and emissivity.
 
-**Reflected component**: reflection of background radiation from the surrounding environment
+**Reflection component**: Reflection of background radiation from the surrounding environment.
 
-Separating these two components is a long-standing challenge in thermal imaging. The core difficulties are:
+Separating these two components is a long-standing challenge in thermal imaging, with the core difficulties being:
 
-- **Under-constrained problem**: even with multi-band measurements, the problem remains indeterminate without emissivity priors
-- **Near-ambient conditions**: when object temperature is close to ambient, emission and reflection signals are of comparable magnitude, making separation more difficult
-- **Overly strong prior assumptions**: industrial settings assume negligible background (objects far above ambient temperature); controlled environments assume spatiotemporally uniform background; the graybody assumption (constant emissivity across LWIR) is often violated
+- **Under-constrained problem**: Even with multiband data, the problem remains ill-posed without prior knowledge of emissivity.
+- **Near-ambient conditions**: When the object temperature is close to the ambient temperature, the emission and reflection signals are comparable in magnitude, making separation extremely difficult.
+- **Strong existing assumptions**: Industrial scenarios assume background radiation is negligible (object is much hotter than environment); controlled environments assume spatio-temporally uniform backgrounds; or the gray-body assumption (emissivity is constant within the LWIR band) is used.
 
-Two key insights in this paper break these limitations:
+Two key insights from this paper break these limitations:
 
-**Spectral cue**: Object emissivity may vary with wavelength within LWIR sub-bands (violating the graybody assumption), but the emissivity ratio between two bands $k_1 = \epsilon_2/\epsilon_1$ remains a fixed constant.
+**Spectral cues**: While an object's emissivity may vary with wavelength in LWIR sub-bands (violating the gray-body assumption), the emissivity ratio $k_1 = \epsilon_2/\epsilon_1$ between two bands remains a fixed constant.
 
-**Temporal cue**: Object temperature evolves smoothly under thermal conduction, whereas background reflections can change abruptly due to human or object motion.
+**Temporal cues**: Object temperature is governed by heat conduction and changes smoothly, whereas background reflections can change abruptly due to the movement of people or objects.
 
 ## Method
 
 ### Overall Architecture
 
-Given dual-band thermal video sequences $\{I_m^1, \ldots, I_m^N\}$ ($m \in \{1,2\}$), the method estimates three quantities:
-- Per-band emissivity $\epsilon_m$
-- Time-varying object temperature $T_o(t)$
-- Time-varying effective background temperature $T_b(t)$
+This paper addresses a long-standing under-constrained problem in thermal imaging—LWIR radiation contains both the object's own emission and environmental reflections, which are comparable and difficult to separate near ambient temperature. Given two spectral band thermal videos $\{I_m^1, \ldots, I_m^N\}$ ($m \in \{1,2\}$), the goal is to output three quantities: per-band emissivity $\epsilon_m$, time-varying object temperature $T_o(t)$, and time-varying effective background temperature $T_b(t)$. The method solves this using two physical insights: a constant dual-band emissivity ratio (spectral cue) and smooth object radiation versus potentially abrupt background radiation (temporal cue). The pipeline first uses a **thermal imaging model** to express pixel radiation as a linear mixture of emission and reflection. It then bifurcates based on the availability of temperature priors: the **calibrated case** allows for a direct closed-form solution, while the **uncalibrated case** supplements constraints using the spectral ratio $k_1$ and temporal decomposition $k_2$ to analytically recover emissivity, followed by an **optimization framework** for stable joint estimation from noisy signals.
 
-Two operating modes are considered: **calibrated** and **uncalibrated**.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Dual-band thermal video<br/>I₁(t), I₂(t)"] --> B["Thermal imaging model<br/>I_m = ε_m·U_m(T_o) + (1−ε_m)·U_m(T_b)"]
+    B -->|Calibrated| C["Calibrated case<br/>Solve ε_m from known T_o/T_b; closed-form T_o, T_b for new scenes"]
+    B -->|Uncalibrated·Under-determined| D
+    subgraph D["Uncalibrated case (Spectral ratio + Temporal decomposition)"]
+        direction TB
+        D1["Static background constraint<br/>Dual-band temporal derivative ratio → k₁ = ε₂/ε₁"]
+        D2["Dynamic background constraint<br/>Smooth/Residual decomposition; residual ratio → k₂ = (1−ε₂)/(1−ε₁)"]
+        D1 --> D3["Analytically recover emissivity ε₁, ε₂"]
+        D2 --> D3
+    end
+    D --> E["Optimization framework<br/>Jointly estimate smooth signal, ε_m, and noise"]
+    C --> F["Output: ε_m, T_o(t), T_b(t)"]
+    E --> F
+```
 
 ### Key Designs
 
-1. **Thermal imaging model**:
+**1. Thermal Imaging Model: Linear mixture of emission and reflection**
 
-    - Per-pixel radiance is governed by Kirchhoff's law: $\epsilon(\lambda) + \tau(\lambda) + r(\lambda) = 1$
-    - After gain/offset correction, pixel intensity is expressed as: $I_m(t) = \epsilon_m U_m(T_o(t)) + (1-\epsilon_m) U_m(T_b(t))$
-    - where $U_m(T)$ follows the Sakuma–Hattori model, which can be linearly approximated near ambient temperature as $U_m(T) = a_m T + b_m$
+To separate the two components, an imaging equation must explicitly represent them. Each pixel's radiation is constrained by Kirchhoff's Law $\epsilon(\lambda) + \tau(\lambda) + r(\lambda) = 1$. After gain/offset correction, pixel intensity is expressed as $I_m(t) = \epsilon_m U_m(T_o(t)) + (1-\epsilon_m) U_m(T_b(t))$, where $U_m(T)$ is the Sakuma-Hattori model. Near ambient temperature, this can be linearly approximated as $U_m(T) = a_m T + b_m$. This formulation reduces the problem to a linear mixture, facilitating further constraints.
 
-2. **Calibrated mode**:
+**2. Calibrated Case: Direct closed-form solution with known temperatures**
 
-    - Thermocouple measurements of surface temperature and a blackbody reference background with known temperature are used
-    - Emissivity is computed analytically from known quantities: $\epsilon_m = \frac{I_m - U_m(T_b)}{U_m(T_o) - U_m(T_b)}$
-    - In new scenes, $T_o$ and $T_b$ are recovered in closed form via a dual-band linear system
+If temperatures can be pre-measured, the under-determined problem can be avoided. Using thermocouples for surface temperature and a blackbody at a known temperature as the background, emissivity is calculated analytically as $\epsilon_m = \frac{I_m - U_m(T_b)}{U_m(T_o) - U_m(T_b)}$. In new scenes, $T_o$ and $T_b$ are solved via a dual-band system of linear equations.
 
-3. **Uncalibrated mode (core contribution)**:
+**3. Uncalibrated Case: Supplemental constraints via spectral ratio + temporal decomposition (Core Contribution)**
 
-    - **Problem analysis**: In the dual-band system $\mathbf{I} = \mathbf{E}\mathbf{T}$, the matrix $\mathbf{E}$ is 2×2 but nearly degenerate (Sakuma–Hattori functions are approximately linear near ambient temperature), requiring additional constraints
-    - **Static background constraint**: At pixels with constant background radiance, the ratio of dual-band temporal derivatives yields the constant $k_1 = \epsilon_2/\epsilon_1$
-    - **Dynamic background constraint**: The signal is decomposed into a smooth component $\tilde{I}_m(t)$ (emission-dominated) and a residual (reflection). The ratio of dual-band residuals yields the constant $k_2 = (1-\epsilon_2)/(1-\epsilon_1)$
-    - **Joint recovery**: Emissivity is analytically recovered from $k_1$ and $k_2$: $\epsilon_1 = \frac{k_2-1}{k_2-k_1}$, $\epsilon_2 = k_1 \cdot \frac{k_2-1}{k_2-k_1}$
+Without calibration, the system $\mathbf{I} = \mathbf{E}\mathbf{T}$ is nearly degenerate near ambient temperature (as Sakuma-Hattori functions are near-linear), requiring additional constraints. The paper provides two: **static background constraint**—at pixels with constant background radiation, the ratio of dual-band temporal derivatives yields the constant $k_1 = \epsilon_2/\epsilon_1$; and **dynamic background constraint**—signals are decomposed into a smooth component $\tilde{I}_m(t)$ (emission-dominated) and a residual (reflection), where the ratio of residuals yields the constant $k_2 = (1-\epsilon_2)/(1-\epsilon_1)$. With $k_1$ and $k_2$, emissivity is recovered as $\epsilon_1 = \frac{k_2-1}{k_2-k_1}$ and $\epsilon_2 = k_1 \cdot \frac{k_2-1}{k_2-k_1}$.
 
-4. **Optimization framework**: Four variable groups are jointly optimized: $\tilde{I}_1(t)$ (smooth signal), $\tilde{I}_2(0)$ (offset), $\epsilon_m$ (emissivity), $I_m^\varepsilon(t)$ (noise model)
+**4. Optimization Framework: Joint estimation of smooth signals, emissivity, and noise**
 
-    - **Smooth signal estimation**: Using the $k_1$ constraint, $\tilde{I}_2(t)$ is constructed recursively as $\tilde{I}_2(t) = \tilde{I}_2(t-1) + k_1 \frac{a_2}{a_1}(\tilde{I}_1(t) - \tilde{I}_1(t-1))$
-    - **Reconstruction constraint**: Using $k_2$, the reconstructed signal is $\hat{I}_2(t) = \tilde{I}_1(t) + k_2 \frac{a_2}{a_1}(\ddot{I}_1(t) - \tilde{I}_1(t))$
+Real signals are noisy, requiring a stable implementation of the above constraints. The framework jointly optimizes four sets of variables: $\tilde{I}_1(t)$ (smooth signal), $\tilde{I}_2(0)$ (offset), $\epsilon_m$ (emissivity), and $I_m^\epsilon(t)$ (noise model). The $k_1$ constraint is used to recursively construct the smooth signal $\tilde{I}_2(t) = \tilde{I}_2(t-1) + k_1 \frac{a_2}{a_1}(\tilde{I}_1(t) - \tilde{I}_1(t-1))$, while $k_2$ is used for the reconstructed signal $\hat{I}_2(t) = \tilde{I}_1(t) + k_2 \frac{a_2}{a_1}(\ddot{I}_1(t) - \tilde{I}_1(t))$.
 
 ### Loss & Training
 
-This is a non-learning method based on classical optimization (no neural networks):
+This is a non-learning method using traditional optimization (not a neural network):
 
 $$\arg\min \; \gamma_1 \mathcal{L}_{smooth} + \gamma_2 \mathcal{L}_{Huber} + \gamma_3 \mathcal{L}_{MSE} + \gamma_4 \mathcal{L}_{noise}^{L2} + \gamma_5 \mathcal{L}_{noise}^{M}$$
 
-- $\mathcal{L}_{smooth}$: second-order temporal smoothness prior $\|\tilde{I}_m(t-1) - 2\tilde{I}_m(t) + \tilde{I}_m(t+1)\|^2$
-- $\mathcal{L}_{Huber}$: normalized Huber loss (robust to abrupt background changes)
-- $\mathcal{L}_{MSE}$: MSE between reconstruction and observation
-- $\mathcal{L}_{noise}$: noise model regularization (L2 + zero-mean constraint)
+- $\mathcal{L}_{smooth}$: Second-order smoothness prior $\|\tilde{I}_m(t-1) - 2\tilde{I}_m(t) + \tilde{I}_m(t+1)\|^2$.
+- $\mathcal{L}_{Huber}$: Normalized Huber loss (robust to background transients).
+- $\mathcal{L}_{MSE}$: Mean Squared Error between reconstruction and observation.
+- $\mathcal{L}_{noise}$: Noise model regularization (L2 + zero-mean constraint).
 
-**Hardware setup**:
-- Two FLIR Boson thermal cameras (≤40 mK / ≤20 mK NETD), 640×512 resolution
-- Spectral filters: 8.5/9.5/10.6/12.1 µm, mounted on FW103H/M motorized filter wheels
-- Ground truth: TC-08 data logger + Type-T thermocouples
+**Hardware Setup**:
+- Two FLIR Boson thermal cameras (≤40 mK / ≤20 mK NETD), 640×512 resolution.
+- Spectral filters: 8.5/9.5/10.6/12.1 µm, mounted on FW103H/M motorized filter wheels.
+- Ground truth: TC-08 data logger + Type-T thermocouples.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Simulation experiments (temperature recovery error)**:
+**Simulation (Temperature Recovery Error)**:
 
 | Method | Description | Temperature Error |
-|--------|-------------|------------------|
+|------|------|---------|
 | BCP | Blackbody Channel Prior | Large (fails for cold objects) |
-| Two-wavelength pyrometry | Ignores background radiation | Degrades under high noise |
+| Dual-wavelength pyrometry | Ignores background radiation | Degrades at high noise |
 | Naive LS | Least squares (best of 5 random initializations) | Unstable |
-| **Ours** | Dual-band + temporal constraints | **Significantly outperforms all baselines under moderate noise** |
+| **Ours** | Dual-band + Temporal constraints | **Significantly outperforms all baselines at moderate noise** |
 
-**Real-world temperature estimation**:
+**Real Scene Temperature Estimation**:
 
-| Scene | Ours (uncalib) | Ours (calib) | BCP | Naive | Notes |
-|-------|---------------|-------------|-----|-------|-------|
+| Scene | Ours (uncalib) | Ours (calib) | BCP | Naive | Description |
+|------|-------------|------------|-----|-------|------|
 | Wineglass | **1.72%** | 5.04% | 14.6% | 31.68% | Peak 63.6°C |
 | Coffee Pot | 5.34% | **0.36%** | 6.62% | 45.5% | Peak 63.1°C |
 
-**Emissivity calibration comparison**:
+**Emissivity Calibration Comparison**:
 
-| Material | Reference | Mirror method | Ours |
-|----------|-----------|--------------|------|
+| Material | Reference | Reflector Plate Method | Ours |
+|------|-------|---------|---------|
 | Chrome Ball | 0.10 | 0.43 | **0.12** |
 | Al. Cup | 0.05 | 0.16 | **0.10** |
 | Blue Paint | 0.87 | 0.88 | **0.88** |
 | Glass Jar | 0.95 | 0.93 | **0.93** |
 | Wineglass | 0.95 | 0.97 | **0.96** |
 
-The proposed method substantially outperforms the FLIR-recommended reflector method for low-emissivity materials.
+Ours significantly outperforms the FLIR-recommended reflector plate method for low-emissivity materials.
 
 ### Ablation Study
 
-| Loss term | Temperature error increase upon removal | Notes |
-|-----------|----------------------------------------|-------|
-| Reconstruction term $\mathcal{L}_{MSE}$ | 90.10% | Most critical |
-| Smoothness term $\mathcal{L}_{smooth}$ | 56.73% | Temporal prior is important |
-| Huber loss | 11.31% | Robustness to abrupt changes |
-| Noise term | 11.64% | More useful under high noise |
+| Loss Term | Increase in Temp Error when Removed | Description |
+|-----------|-------------------------------------|-------------|
+| Reconstruction $\mathcal{L}_{MSE}$ | 90.10% | Most critical |
+| Smoothness $\mathcal{L}_{smooth}$ | 56.73% | Importance of temporal prior |
+| Huber Loss | 11.31% | Robustness to transients |
+| Noise Term | 11.64% | Useful at high noise levels |
 
 ### Key Findings
 
-1. **The uncalibrated method achieves only 1.72% temperature error on the wineglass scene**, approaching practical utility
-2. **Low-emissivity materials** (e.g., chrome ball, aluminum cup) show the largest advantage — existing methods fail substantially
-3. **Spectral filter selection**: the 9.5 µm filter yields the highest condition number and is best suited for pairing with the full band
-4. **Visually invisible thermal signals successfully separated**: e.g., fingerprint heat dissipation on glass vs. finger reflections, slow coffee pot cooling vs. moving human body reflections
+1. **Uncalibrated method achieves only 1.72% error in the wineglass scene**, nearing practical utility.
+2. **Superior performance on low-emissivity materials** (e.g., chrome balls, aluminum cups) where existing methods fail severely.
+3. **Spectral filter selection**: The 9.5 µm filter provides the highest condition number, making it most suitable for pairing with the full band.
+4. **Separation of visually invisible thermal signals**: E.g., thermal dissipation of fingerprints on glass vs. finger reflections; coffee pot cooling vs. moving person reflections.
 
 ## Highlights & Insights
 
-1. **Elegant physics-driven modeling**: rather than relying on neural networks, the method derives constraints from thermal radiation physics, leveraging dual-band and temporal priors to regularize the under-constrained problem
-2. **Dual calibrated/uncalibrated modes**: the calibrated mode achieves higher accuracy at the cost of setup overhead; the uncalibrated mode is fully automatic with slightly lower accuracy, covering diverse use cases
-3. **First separation in dynamic near-ambient scenes**: no prior method could operate under conditions where reflected and emitted signals are of comparable magnitude
-4. **Reveals rich information in thermal imagery**: scene information is uncovered in dimensions entirely imperceptible to the human eye and visible-light cameras
-5. **Explicit noise modeling**: spectral filtering reduces SNR; per-pixel per-frame noise modeling improves robustness
+1. **Elegant physical modeling**: Does not rely on neural networks; instead, it utilizes thermal radiation physics to constrain an under-determined problem using dual-band and temporal priors.
+2. **Dual-mode framework**: Offers high accuracy in calibrated mode and full automation in uncalibrated mode, covering diverse use cases.
+3. **First-time separation in dynamic near-ambient scenes**: No previous method worked effectively when reflection and emission intensities were comparable.
+4. **Reveals rich information in thermal imaging**: Uncovers scene data in dimensions completely imperceptible to the human eye or visible light cameras.
+5. **Explicit noise modeling**: Compensates for the SNR reduction caused by spectral filtering, improving robustness through per-pixel/per-frame noise models.
 
 ## Limitations & Future Work
 
-1. **Assumption of uncorrelated background and object temperature variations**: the assumption breaks down when the entire room heats uniformly
-2. **Sensitivity limitations of low-cost microbolometers with filters**: small temperature differences on low-emissivity objects are difficult to detect
-3. **Requires two cameras**: a beamsplitter was not used (due to SNR loss), but dual cameras introduce parallax
-4. **LWIR only**: extension to MWIR or additional bands may further improve accuracy
-5. **Non-real-time**: computational efficiency of the optimization framework is not discussed
+1. **Assumption of uncorrelated background/object temperature**: Fails if the entire room heats up uniformly.
+2. **Sensitivity limits of low-cost microbolometers + filters**: Small temperature differences on low-emissivity objects are hard to detect.
+3. **Hardware complexity**: Requires two cameras; does not use beam splitters (to avoid SNR loss), introducing parallax issues.
+4. **Restricted to LWIR**: Extension to MWIR or multispectral bands could further improve accuracy.
+5. **Not real-time**: Computational efficiency of the optimization framework was not addressed.
 
 ## Related Work & Insights
 
-- **BCP (Blackbody Channel Prior)**: a recent reflection removal method from the CV community, but assumes the locally brightest pixel approximates a blackbody — fails for cold objects
-- **Two-wavelength pyrometry**: a classical industrial method assuming graybody objects and neglecting background radiation
-- **Shape from Heat Conduction (ECCV 2024)**: recovers shape from thermal conduction; this paper complements it by handling the reflected component
-- Inspiration: reflection/emission separation in thermal imaging is analogous to diffuse/specular separation in visible-light imaging, but additionally involves thermal conduction — a cross-domain problem at the intersection of light transport and heat transfer
+- **BCP (Blackbody Channel Prior)**: Recent CV reflection removal method, but assumes local brightest pixels are near-blackbody, failing on cold objects.
+- **Dual-wavelength Pyrometry**: Traditional industrial method assuming gray-body and ignoring background.
+- **Shape from Heat Conduction (ECCV 2024)**: Recovers shape from heat conduction; this work complements it by handling reflections.
+- Insight: Reflection/emission separation in thermal imaging is analogous to diffuse/specular separation in visible light, but adds heat conduction—a cross-disciplinary junction of light and heat transport.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — The combination of dual-band and temporal constraints is a fundamentally new approach that elegantly resolves a long-standing under-constrained problem
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Simulation + real experiments + calibrated/uncalibrated comparisons + ablation; real-world scenes are somewhat limited
-- Writing Quality: ⭐⭐⭐⭐⭐ — Physical derivations are rigorous and clear, flowing seamlessly from imaging model to constraint derivation to optimization
-- Value: ⭐⭐⭐⭐ — Opens new analytical dimensions in thermal imaging with implications for computational thermal imaging, non-contact thermometry, and thermal NLOS sensing
+- Novelty: ⭐⭐⭐⭐⭐ — The combination of dual-band and temporal constraints is a fresh approach that elegantly solves a legacy under-constrained problem.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive simulations, real experiments, and comparisons; however, the variety of real-world scenes is somewhat limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Rigorous physical derivation; logic flows seamlessly from imaging models to constraints and optimization.
+- Value: ⭐⭐⭐⭐ — Opens a new analytical dimension for thermal imaging, informing fields like computational thermography, non-contact sensing, and thermal NLOS.
 
 <!-- RELATED:START -->
 
@@ -183,11 +183,11 @@ The proposed method substantially outperforms the FLIR-recommended reflector met
 
 ## Related Papers
 
+- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[ACL 2025\] Learning to Reason Over Time: Timeline Self-Reflection for Temporal Reasoning](../../ACL2025/others/tiser_timeline_self_reflection_temporal.md)
+- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](vit3_unlocking_test_time_training_in_vision.md)
-- [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/others/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
-- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
-- [\[NeurIPS 2025\] Neural Network for Simulating Radio Emission from Extensive Air Showers](../../NeurIPS2025/others/neural_network_for_simulating_radio_emission_from_extensive_air_showers.md)
+- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
 
 </div>
 

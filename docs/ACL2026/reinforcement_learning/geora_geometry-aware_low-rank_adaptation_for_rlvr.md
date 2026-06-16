@@ -2,71 +2,81 @@
 title: >-
   [Paper Note] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 description: >-
-  [ACL 2026][Reinforcement Learning][Low-Rank Adaptation] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning with Verifiable Rewards (RLVR). By constructing a geometric…
+  [ACL 2026][Reinforcement Learning][RLVR] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). By constructing a geometric constraint matrix (fusing spectral and Euclidean priors) to extract the principal directions of the RL update subspace for SVD initialization and freezing
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "Low-Rank Adaptation"
-  - "RLVR"
-  - "Geometry-Aware"
-  - "SVD Initialization"
-  - "PEFT"
+  - ACL 2026
+  - Reinforcement Learning
+  - RLVR
 date: 2026-05-08
-content_hash: e3125a6e75ddf702
+content_hash: 0a227e52f0630e46
 ---
-
 # GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 
 **Conference**: ACL 2026  
 **arXiv**: [2601.09361](https://arxiv.org/abs/2601.09361)  
 **Code**: None  
-**Area**: Parameter-Efficient Fine-Tuning / Reinforcement Learning with Verifiable Rewards  
+**Area**: Parameter-Efficient Fine-Tuning / RL Reasoning  
 **Keywords**: Low-Rank Adaptation, RLVR, Geometry-Aware, SVD Initialization, PEFT
 
 ## TL;DR
 
-This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning with Verifiable Rewards (RLVR). By constructing a geometrically constrained matrix (fusing spectral and Euclidean priors) to extract the principal directions of the RL update subspace for SVD initialization, and freezing the residual matrix as a structural anchor, GeoRA consistently outperforms baselines like LoRA, PiSSA, and MiLoRA on 1.5B-32B Qwen/Llama models across mathematical, medical, and code RLVR tasks. It demonstrates stronger out-of-distribution (OOD) generalization and reduced catastrophic forgetting.
+This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). By constructing a geometric constraint matrix (fusing spectral and Euclidean priors) to extract the principal directions of the RL update subspace for SVD initialization and freezing the residual matrix as a structural anchor, GeoRA consistently outperforms baselines like LoRA, PiSSA, and MiLoRA on 1.5B-32B Qwen/Llama models across mathematical, medical, and code RLVR tasks, demonstrating stronger out-of-distribution generalization and reduced catastrophic forgetting.
 
 ## Background & Motivation
 
-**Background**: RLVR has emerged as a core paradigm for enhancing the reasoning capabilities of large language models (e.g., OpenAI-o1, DeepSeek-R1). Unlike SFT, RLVR is essentially a constrained optimization process that amplifies latent reasoning behaviors through reward-induced sampling bias rather than injecting new knowledge. Consequently, RLVR is highly sensitive to update stability and the preservation of pre-trained representation geometry.
+**Background**: RLVR has become a core paradigm for enhancing the reasoning capabilities of large language models (e.g., OpenAI-o1, DeepSeek-R1). Unlike SFT, RLVR is essentially a constrained optimization process that amplifies latent reasoning behaviors through reward-induced sampling bias rather than injecting new knowledge. Consequently, RLVR is extremely sensitive to update stability and the preservation of pre-trained representation geometry.
 
-**Limitations of Prior Work**: (1) **Geometric mismatch between SFT-oriented low-rank methods and RLVR**: PiSSA allocates trainable parameters to the principal components of the weight matrix. While effective in SFT, this conflicts with the preferred update subspace of RLVR, which tends toward low-energy directions (orthogonal to pre-trained principal features). PiSSA's forced updates on principal directions lead to instability. (2) **Efficiency bottlenecks of sparse fine-tuning**: Although sparse methods (e.g., SparseFT) better align with RLVR update patterns, modern hardware support for unstructured sparsity is limited. Theoretically high parameter efficiency does not translate into actual speed gains, often introducing extra overhead (10.8% slower than FullFT).
+**Limitations of Prior Work**: (1) **Geometric mismatch between SFT-oriented low-rank methods and RLVR**: PiSSA allocates trainable parameters to the principal components of the weight matrix, which is effective in SFT but conflicts with the preferred update subspace of RLVR—RLVR updates bias toward low-energy directions (orthogonal to pre-trained principal features), whereas PiSSA forces updates on principal directions, leading to instability. (2) **Efficiency bottlenecks of sparse fine-tuning**: Although some sparse methods (e.g., SparseFT) better align with RLVR update patterns, modern hardware support for unstructured sparsity is limited, preventing theoretical parameter efficiency from translating into actual speed increases and even introducing extra overhead (10.8% slower than FullFT).
 
-**Key Challenge**: The effective update subspace of RLVR is anisotropic and compressible (concentrated in a few principal directions), but these do not align with the principal components of pre-trained weights. Existing low-rank methods either target the wrong subspace (PiSSA) or are computationally inefficient despite correct alignment (SparseFT).
+**Key Challenge**: The effective update subspace of RLVR is anisotropic and compressible (concentrated in a few principal directions) but does not align with the principal component directions of pre-trained weights. Existing low-rank methods either target the wrong subspace (PiSSA) or are computationally inefficient despite correct orientation (SparseFT).
 
-**Goal**: Design a PEFT method that satisfies three conditions: (1) alignment with RLVR-specific update geometry, (2) maintenance of hardware efficiency through dense matrix computation, and (3) prevention of pre-trained representation disruption via structural anchors.
+**Goal**: Design a PEFT method that simultaneously satisfies three conditions: (1) alignment with RLVR-specific update geometry, (2) maintenance of hardware efficiency through dense matrix computation, and (3) prevention of pre-trained representation destruction via structural anchors.
 
-**Key Insight**: Analysis of actual RLVR update patterns reveals that the effective update subspace, while sparse, possesses a compressible low-rank structure. This subspace can be extracted via a geometric constraint mask and compressed into low-rank adapter initializations using SVD.
+**Key Insight**: Analysis of actual RLVR update patterns reveals that the effective update subspace, while sparse, possesses a compressible low-rank structure. This subspace can be extracted via a geometric constraint mask and then compressed into a low-rank adapter initialization using SVD.
 
-**Core Idea**: Instead of performing low-rank decomposition on the original weight $W$ (as in LoRA/PiSSA), SVD is performed on a geometrically constrained view $W_{Geo} = W \odot (M_{Spec} \cup M_{Euc})$. This view retains only parameters with low curvature (spectral prior) and high plasticity (Euclidean prior), which correspond to the preferred update regions for RLVR.
+**Core Idea**: Instead of performing low-rank decomposition on the original weight $W$ (as in LoRA/PiSSA), SVD is performed on a geometric constraint view $W_{Geo} = W \odot (M_{Spec} \cup M_{Euc})$. This view retains only parameters with low curvature (spectral prior) and high plasticity (Euclidean prior), which precisely correspond to the preferred update regions of RLVR.
 
 ## Method
 
 ### Overall Architecture
 
-GeoRA proceeds in two steps: (1) **Offline Preprocessing**: Construct the geometric constraint matrix $W_{Geo}$, perform SVD to extract the top-$r$ components for initializing adapters $A_{Geo}$ and $B_{Geo}$, and calculate the frozen residual matrix $W_{res}$. (2) **Online Training**: During forward passes, $h = W_{res} x + \frac{\alpha}{r} B_{Geo} A_{Geo} x$, where $W_{res}$ is frozen and only $A_{Geo}$ and $B_{Geo}$ are trained. The initialization ensures function preservation: $W_{res} + \frac{\alpha}{r} B_{Geo} A_{Geo} = W$.
+GeoRA consists of two steps: (1) **Offline Preprocessing**—Construct the geometric constraint matrix $W_{Geo}$, perform SVD to extract top-$r$ components for initializing adapters $A_{Geo}, B_{Geo}$, and calculate the frozen residual matrix $W_{res}$. (2) **Online Training**—During forward propagation, $h = W_{res} x + \frac{\alpha}{r} B_{Geo} A_{Geo} x$, where $W_{res}$ is frozen and only $A_{Geo}, B_{Geo}$ are trained. The initialization ensures function invariance: $W_{res} + \frac{\alpha}{r} B_{Geo} A_{Geo} = W$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    W["Pre-trained Weight W"]
+    subgraph GEO["Geometric Constraint Matrix Construction"]
+        direction TB
+        S["Spectral Prior M_Spec<br/>Suppress high-energy/high-curvature components"]
+        E["Euclidean Prior M_Euc<br/>Retain near-zero high-plasticity parameters"]
+        S --> U["Union → Geometric View W_Geo"]
+        E --> U
+    end
+    W --> GEO
+    GEO --> SVD["Geometry-Aware SVD Initialization<br/>Top-r components of W_Geo → A_Geo, B_Geo"]
+    SVD --> RES["Frozen Residual Matrix W_res<br/>= W − (α/r)·B_Geo·A_Geo"]
+    RES --> FWD["Online Training (GRPO)<br/>h = W_res·x + (α/r)·B_Geo·A_Geo·x, W_res frozen"]
+    FWD --> OUT["RLVR Adapted Model"]
+```
 
 ### Key Designs
 
-1.  **Geometric Prior Construction**:
-    - **Function**: Extracts parameter subspaces from pre-trained weights suitable for RLVR updates.
-    - **Mechanism**: Combines two complementary geometric priors. **Spectral Prior** $M_{Spec}$: Selects the $\rho$ quantile of parameters with the smallest absolute values in the rank-$r$ approximation $\hat{W}_r$, i.e., $(M_{Spec})_{i,j} = \mathbb{I}(|(\hat{W}_r)_{i,j}| \leq \tau_{Spec}(\rho))$, suppressing high-energy/high-curvature components to ensure spectral stability. **Euclidean Prior** $M_{Euc}$: Selects the $\rho$ quantile of the smallest absolute values in the original weights $(M_{Euc})_{i,j} = \mathbb{I}(|W_{i,j}| \leq \tau_{Euc}(\rho))$, capturing high-plasticity, near-zero parameters. Their union is taken: $W_{Geo} = W \odot (M_{Spec} \cup M_{Euc})$.
-    - **Design Motivation**: Experiments show the intersection of these masks is only 4.55% (Jaccard 0.128), indicating they capture highly complementary parameter subsets. The spectral prior ensures stability of principal components, while the Euclidean prior maintains adaptation flexibility. Together, they define a stable yet expressive manifold for RLVR updates.
+**1. Geometric Constraint Matrix Construction: Filtering the parameter subspace truly suitable for RLVR updates**
 
-2.  **Geometry-Aware SVD Initialization**:
-    - **Function**: Compresses the geometrically constrained subspace into efficient low-rank adapters.
-    - **Mechanism**: Perform SVD on $W_{Geo}$: $W_{Geo} = U_{Geo} \Sigma_{Geo} V_{Geo}^\top$. Use the top-$r$ components to initialize the adapters: $A_{Geo} = \Sigma_{Geo[:r,:r]}^{1/2} V_{Geo[:,:r]}^\top$ and $B_{Geo} = U_{Geo[:,:r]} \Sigma_{Geo[:r,:r]}^{1/2}$, such that the initial $B_{Geo} A_{Geo}$ is the optimal rank-$r$ approximation of $W_{Geo}$. The residual matrix $W_{res} = W - \frac{\alpha}{r} B_{Geo} A_{Geo}$ is frozen during training.
-    - **Design Motivation**: A critical difference from PiSSA (which takes principal components of the original $W$) is that GeoRA takes principal components of the constrained $W_{Geo}$, ensuring trainable directions align with RLVR update subspaces rather than pre-trained knowledge encoding directions.
+LoRA/PiSSA perform low-rank decomposition directly on the original weights, but RLVR's preferred update directions do not reside in the weight's principal components. GeoRA extracts the "appropriate region" using two complementary geometric priors: The **Spectral Prior** $M_{Spec}$ identifies the $\rho$-quantile of the smallest absolute values in the rank-$r$ approximation $\hat{W}_r$, $(M_{Spec})_{i,j} = \mathbb{I}(|(\hat{W}_r)_{i,j}| \leq \tau_{Spec}(\rho))$, to suppress high-energy/high-curvature components for spectral stability. The **Euclidean Prior** $M_{Euc}$ selects the $\rho$-quantile of the smallest absolute values in the original weights $(M_{Euc})_{i,j} = \mathbb{I}(|W_{i,j}| \leq \tau_{Euc}(\rho))$ to capture near-zero, highly plastic parameters. The union $W_{Geo} = W \odot (M_{Spec} \cup M_{Euc})$ is then formed. Experiments show only a 4.55% intersection (Jaccard 0.128) between the masks, indicating that spectral stability and parameter plasticity are complementary dimensions that together define a "stable yet expressive" RLVR update manifold.
 
-3.  **Frozen Residual Matrix (Structural Anchor)**:
-    - **Function**: Prevents the erosion of pre-trained principal components during training.
-    - **Mechanism**: $W_{res}$ contains the original weight minus the geometric constraint subspace, preserving the core knowledge encoding of the pre-trained model. Since $W_{res}$ is frozen, the optimizer can only move along the geometrically aligned manifold parameterized by $A_{Geo}$ and $B_{Geo}$.
-    - **Design Motivation**: Aggressive updates in RLVR can lead to behavioral collapse or capacity degradation (the "Reasoning Boundary Paradox"). Freezing the residual matrix provides a hard structural constraint equivalent to strategic updates within a geometrically aligned trust region.
+**2. Geometry-Aware SVD Initialization: Compressing the geometric subspace into an efficient low-rank adapter**
+
+After extracting $W_{Geo}$, SVD is applied to it (rather than the original $W$): $W_{Geo} = U_{Geo} \Sigma_{Geo} V_{Geo}^\top$. The top-$r$ components are used to initialize adapters $A_{Geo} = \Sigma_{Geo[:r,:r]}^{1/2} V_{Geo[:,:r]}^\top$ and $B_{Geo} = U_{Geo[:,:r]} \Sigma_{Geo[:r,:r]}^{1/2}$, such that the initial $B_{Geo} A_{Geo}$ is the optimal rank-$r$ approximation of $W_{Geo}$. The residual is $W_{res} = W - \frac{\alpha}{r} B_{Geo} A_{Geo}$. The fundamental difference from PiSSA is the target of the principal component analysis: PiSSA targets pre-trained knowledge encoding, while GeoRA targets the actual RLVR update subspace.
+
+**3. Frozen Residual Matrix: Using a structural anchor to prevent destruction of pre-trained capabilities**
+
+Aggressive updates in RLVR can lead to behavioral collapse or capability degradation ("Reasoning Boundary Paradox"). GeoRA completely freezes the residual $W_{res}$ during training. Forward propagation follows $h = W_{res} x + \frac{\alpha}{r} B_{Geo} A_{Geo} x$, forcing the optimizer to move only within the geometry-aligned manifold parameterized by $A_{Geo}, B_{Geo}$. Since $W_{res}$ retains the core knowledge encoding minus the geometric subspace, freezing it acts as a rigid structural constraint for policy updates, equivalent to updating within a geometry-aligned trust region. This elevates LoRA's "additive residual" to a "structural anchor."
 
 ### Loss & Training
 
-RLVR training is conducted using the GRPO algorithm. A fixed rank $r=16$ and sparsity rate $\rho=0.2$ are used. Main experiments are trained on the DeepMath-103K dataset. SVD initialization is a one-time preprocessing overhead, negligible compared to RLVR training time.
+The GRPO algorithm is used for RLVR training. The rank is fixed at $r=16$ with a sparsity rate $\rho=0.2$. Main experiments are conducted on the DeepMath-103K dataset. SVD initialization is a one-time preprocessing cost, negligible compared to RLVR training.
 
 ## Key Experimental Results
 
@@ -79,7 +89,7 @@ RLVR training is conducted using the GRPO algorithm. A fixed rank $r=16$ and spa
 | LoRA | 19.58 | 19.58 | 75.60 | 10.75 | 81.10 | 75.65 | 52.13 |
 | PiSSA | 22.50 | 20.42 | 74.40 | 11.75 | 71.95 | 73.89 | 48.74 |
 | MiLoRA | 20.42 | 19.58 | 76.20 | 11.50 | 78.66 | 74.51 | 51.85 |
-| **GeoRA** | **23.75** | **21.67** | **78.00** | **12.75** | **82.93** | **75.96** | **53.73** |
+| **Ours** | **23.75** | **21.67** | **78.00** | **12.75** | **82.93** | **75.96** | **53.73** |
 
 ### Ablation Study (Qwen3-4B)
 
@@ -93,51 +103,48 @@ RLVR training is conducted using the GRPO algorithm. A fixed rank $r=16$ and spa
 
 ### Key Findings
 
-- GeoRA matches or exceeds FullFT on ID tasks while leading comprehensively on OOD tasks—HumanEval 82.93 (FullFT 76.83), MMLU 75.96 (FullFT 71.94). This indicates that geometrically aligned updates reduce interference with pre-trained capabilities.
-- PiSSA performs worst on OOD tasks (IFEval 48.74), confirming that SFT-oriented principal component initialization is detrimental to RLVR.
-- Spectral analysis confirms GeoRA's updates barely touch the principal component subspace ($\mathcal{S}_{Head} \leq 0.02$), unlike PiSSA which overlaps significantly ($\approx 0.98$).
-- Significant efficiency advantages: with only 0.04B trainable parameters (0.5% of FullFT), training is 19.9% faster than FullFT and saves 28.5% VRAM.
-- Strong hyperparameter robustness: GeoRA maintains high rewards across a wide range of learning rates, whereas PiSSA/MiLoRA performance drops sharply at high learning rates.
-- Equally effective in medicine and code RLVR: GeoRA achieves 76.12 on MedQA (LoRA 74.23) and 81.60 on MBPP (LoRA 81.00).
+- GeoRA matches or exceeds FullFT on ID tasks while leading significantly on OOD tasks—HumanEval 82.93 (FullFT 76.83), MMLU 75.96 (FullFT 71.94), suggesting geometry-aligned updates minimize interference with pre-trained capabilities.
+- PiSSA performs worst on OOD tasks (IFEval 48.74), validating that SFT-oriented principal component initialization is harmful to RLVR.
+- Spectral analysis confirms GeoRA's updates barely touch the principal component subspace ($\mathcal{S}_{Head} \leq 0.02$), whereas PiSSA overlaps significantly ($\approx 0.98$).
+- Efficiency gains are notable: Only 0.04B trainable parameters (0.5% of FullFT), 19.9% faster training than FullFT, and 28.5% VRAM savings.
+- Robust to hyperparameters: GeoRA maintains high rewards across a wide range of learning rates, while PiSSA/MiLoRA performance drops sharply at high learning rates.
 
 ## Highlights & Insights
 
-- **Deep Core Insight**: The effective update subspace of RLVR is not isotropic random noise but possesses a compressible heavy-tailed spectral structure. This provides a theoretical foundation for applying low-rank methods to RLVR, contingent on identifying the correct subspace.
-- **Complementarity of Geometric Priors**: The mere 4.55% parameter overlap (Jaccard 0.128) demonstrates that spectral stability and parameter plasticity indeed capture distinct informational dimensions.
-- **Structural Anchor Paradigms**: The frozen residual matrix shifts the "additive residual" paradigm of LoRA to a "structural anchor" paradigm—not only maintaining initialization invariance but also enforcing optimization trajectories, which is critical for policy stability in RLVR.
+- Deep Core Insight: The effective RLVR update subspace is not isotropic random noise but possesses a compressible heavy-tailed spectral structure. This provides the theoretical foundation for applying low-rank methods to RLVR.
+- Complementarity of Geometric Priors: The small overlap (Jaccard 0.128) confirms that spectral stability and parameter plasticity capture distinct informational dimensions.
+- The "Structural Anchor" Paradigm: Freezing the residual matrix ensures that optimization occurs within a geometry-aligned manifold, which is critical for policy stability in RLVR.
 
 ## Limitations & Future Work
 
-- SVD initialization, though a one-time cost, adds a preprocessing step that may be inconvenient for rapid iteration scenarios.
-- Experiments focused primarily on reasoning-based RLVR tasks (math, medicine, code); efficacy in open-ended RL scenarios (e.g., dialogue preference optimization) remains unverified.
-- Choice of sparsity rate $\rho=0.2$ and rank $r=16$ did not involve extensive search; optimal configurations may exist.
-- Geometric prior construction relies on statistical properties of pre-trained weights; whether these hold after extensive post-training remains to be validated.
-- Comparison with more LoRA variants (e.g., DoRA, AdaLoRA) was not conducted.
+- SVD initialization adds a one-time preprocessing step, which may be inconvenient for rapid iterations.
+- Experiments focus primarily on reasoning-based RLVR (math, medicine, code); effectiveness in open-ended RL scenarios (e.g., dialogue preference optimization) is unverified.
+- Optimal configuration for sparsity rate $\rho$ and rank $r$ has not been extensively searched.
+- Dependence on pre-trained weight statistics: It remains to be seen if these geometric properties hold for models that have undergone extensive post-training.
 
 ## Related Work & Insights
 
-- **vs PiSSA**: PiSSA initializes adapters on pre-trained principal components, which suits SFT but harms RLVR. Its NSS is 0.395 (high structural disruption) and $\mathcal{S}_{Head} \approx 0.98$ (updates on principal components). GeoRA's NSS is only 0.092 and $\mathcal{S}_{Head} \leq 0.02$, precisely targeting the tail subspace.
-- **vs MiLoRA**: MiLoRA selects minor components for initialization, moving closer to RLVR directions but without explicit geometric priors. GeoRA's dual-mask manifold definition consistently outperforms MiLoRA across all benchmarks.
-- **vs SparseFT**: SparseFT aligns with RLVR update patterns but suffers from poor computational efficiency (10.8% slower than FullFT). GeoRA compresses the sparse subspace into dense low-rank operations, becoming 19.9% faster than FullFT.
+- **vs PiSSA**: PiSSA initializes adapters on principal components, aiding SFT but harming RLVR (NSS of 0.395, $\mathcal{S}_{Head} \approx 0.98$). GeoRA maintains an NSS of 0.092 and $\mathcal{S}_{Head} \leq 0.02$, precisely targeting the tail subspace.
+- **vs MiLoRA**: MiLoRA uses minor components for initialization but lacks explicit geometric priors. GeoRA consistently outperforms MiLoRA by precisely defining the manifold via dual masks.
+- **vs SparseFT**: SparseFT aligns update patterns with RLVR but is computationally inefficient (10.8% slower than FullFT). GeoRA compresses the sparse subspace into dense low-rank operations, achieving a 19.9% speedup over FullFT.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First geometry-aware low-rank adaptation method specifically designed for RLVR, with tight integration of theory and design.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Multi-scale models (1.5B-32B) × three domains (math/med/code) × comprehensive ablation and mechanistic analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and convincing spectral analysis, though heavy notation poses a slight entry barrier.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a new paradigm for parameter-efficient training in the RLVR era; geometry-aware concepts are generalizable to other RL fine-tuning scenarios.
+- Novelty: ⭐⭐⭐⭐⭐ First geometry-aware low-rank adaptation method specifically for RLVR, tightly integrating theoretical analysis and design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 1.5B-32B models × 3 domains × comprehensive mechanism analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and convincing spectral analysis, though notation density might be high for some.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for parameter-efficient training in the RLVR era; geometric insights are generalizable to other RL settings.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits](../../ICLR2026/reinforcement_learning/online_minimization_of_polarization_and_disagreement_via_low-rank_matrix_bandits.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
 - [\[NeurIPS 2025\] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/shift_before_you_learn_enabling_low-rank_representations_in_reinforcement_learni.md)
-- [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](../../ICLR2026/reinforcement_learning/controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
+- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] The Path Not Taken: RLVR Provably Learns Off the Principals](../../NeurIPS2025/reinforcement_learning/the_path_not_taken_rlvr_provably_learns_off_the_principals.md)
 
 </div>
 

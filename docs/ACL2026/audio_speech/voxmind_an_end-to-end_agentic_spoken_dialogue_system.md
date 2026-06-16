@@ -2,81 +2,98 @@
 title: >-
   [Paper Note] VoxMind: An End-to-End Agentic Spoken Dialogue System
 description: >-
-  [ACL 2026][Audio & Speech][end-to-end spoken dialogue] VoxMind is proposed as a unified framework that endows end-to-end spoken dialogue models with agentic capabilities. Through a "Think-before-Speak" mechanism for expl…
+  [ACL 2026][Audio & Speech][Paper Note] VoxMind is proposed as a unified framework that endows end-to-end speech dialogue models with agentic capabilities. By implementing a "Think-before-Speak" mechanism for explicit reasoning and a multi-agent dynamic tool management architecture to decouple inference latency from tool scale, the task completion rate is im
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "end-to-end spoken dialogue"
-  - "tool calling"
-  - "think-before-speak mechanism"
-  - "multi-agent dynamic tool management"
-  - "speech agent"
+  - ACL 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 05ed186665478f55
+content_hash: 562c4d33a848bc40
 ---
-
 # VoxMind: An End-to-End Agentic Spoken Dialogue System
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.15710](https://arxiv.org/abs/2604.15710)  
 **Code**: [GitHub](https://github.com/MM-Speech/VoxMind)  
-**Area**: Dialogue System / Agent  
-**Keywords**: end-to-end spoken dialogue, tool calling, think-before-speak mechanism, multi-agent dynamic tool management, speech agent
+**Area**: Dialogue Systems / Agent  
+**Keywords**: End-to-end spoken dialogue, Tool calling, Think-before-Speak mechanism, Multi-agent dynamic tool management, Speech Agent
 
 ## TL;DR
 
-VoxMind is proposed as a unified framework that endows end-to-end spoken dialogue models with agentic capabilities. Through a "Think-before-Speak" mechanism for explicit reasoning and a multi-agent dynamic tool management architecture to decouple inference latency from tool library scale, it improves task completion rates from a baseline of 34.88% to 74.57%, surpassing Gemini-2.5-Pro.
+VoxMind is proposed as a unified framework that endows end-to-end speech dialogue models with agentic capabilities. By implementing a "Think-before-Speak" mechanism for explicit reasoning and a multi-agent dynamic tool management architecture to decouple inference latency from tool scale, the task completion rate is improved from a 34.88% baseline to 74.57%, surpassing Gemini-2.5-Pro.
 
 ## Background & Motivation
 
-**Background**: End-to-end spoken dialogue models (e.g., Kimi-Audio, Qwen2.5-Omni, StepAudio2) have developed rapidly, directly modeling paralinguistic information and generating expressive speech responses while avoiding information loss and latency inherent in traditional cascaded ASR-LLM-TTS pipelines.
+**Background**: End-to-end speech dialogue models (e.g., Kimi-Audio, Qwen2.5-Omni, StepAudio2) have developed rapidly, enabling the direct modeling of paralinguistic information and generation of expressive speech responses while avoiding information loss and latency inherent in traditional cascaded ASR-LLM-TTS pipelines.
 
-**Limitations of Prior Work**: (1) Existing end-to-end speech models primarily optimize for reactive dialogue, lacking reasoning, planning, and external knowledge acquisition capabilities; (2) The field lacks a unified definition and evaluation standard for "end-to-end speech agents"; (3) Speech input requires more tokens than text, leading to significant computational overhead when combined with large-scale tool descriptions; (4) There is a lack of speech data annotated with agentic behaviors (reasoning trajectories, tool interactions).
+**Limitations of Prior Work**: (1) Existing end-to-end speech models primarily optimize for reactive dialogue, lacking reasoning, planning, and external knowledge acquisition capabilities; (2) The field lacks a unified definition and evaluation standard for "End-to-End Speech Agents"; (3) Speech inputs require more tokens than text, which, when combined with large-scale tool descriptions, creates significant computational overhead; (4) There is a shortage of speech data annotated with agent behaviors (reasoning trajectories, tool interactions).
 
-**Key Challenge**: A trade-off exists between the agentic capabilities of speech models (tool calling + reasoning/planning) and inference efficiency—integrating more tools increases capability but adds latency, whereas speech interaction is sensitive to response time.
+**Key Challenge**: A trade-off exists between the agentic capabilities (tool calling and reasoning planning) of speech models and their inference efficiency—integrating more tools enhances capability but increases latency, while speech interaction is highly sensitive to response time.
 
 **Goal**: (1) Define end-to-end speech agents; (2) Empower speech models with reasoning and tool-calling capabilities; (3) Decouple inference latency from the scale of the tool library.
 
-**Key Insight**: Successes from text-based agents (ReAct, tool calling) can be adapted, but special requirements for speech—low latency, paralinguistic preservation, and data scarcity—must be addressed.
+**Key Insight**: Leverage successful experiences from text agents (ReAct, tool calling) while adapting to the specific requirements of speech scenarios—low latency, paralinguistic preservation, and speech data scarcity.
 
-**Core Idea**: A "Think-before-Speak" mechanism allows the speech model to generate text reasoning trajectories before generating speech responses. An asynchronous auxiliary model is used to maintain a dynamic local tool space by selecting candidate tools from a global library.
+**Core Idea**: Utilize a "Think-before-Speak" mechanism to let the speech model generate text reasoning trajectories before generating speech responses, combined with an asynchronous auxiliary model to maintain a dynamic local tool space by selecting candidates from a global tool library.
 
 ## Method
 
 ### Overall Architecture
 
-VoxMind receives speech input, and the primary model first generates a reasoning trajectory (CoT). Subsequently, two processes are executed in parallel: (1) The primary model selects an action within a local tool space based on the reasoning result; (2) An auxiliary LLM proposes candidate tools from the global library based on the same reasoning result. If the primary model determines the current tools are insufficient, a tool space expansion is triggered; otherwise, execution proceeds directly to generate a speech response.
+The core problem VoxMind addresses is enabling end-to-end speech models to reason, plan, and call tools like text agents without allowing large-scale tool libraries to degrade the strict latency requirements of speech interaction. Upon receiving speech input, the main model first produces a text reasoning trajectory (CoT) to clarify intent and task planning, subsequently selecting actions within a "local tool space" based on this reasoning. Simultaneously, an auxiliary LLM shares the same reasoning trajectory and asynchronously retrieves candidate tools from the global tool library. Only when the main model determines its current tools are insufficient does it incorporate candidates into the local space to trigger expansion; otherwise, it executes the action directly and synthesizes an expressive speech response. The "Think-before-Speak" process handles capability, while "On-demand tool expansion" ensures efficiency, with both lines progressing in parallel. The training corpus supporting these capabilities is provided by the offline-constructed AgentChat dataset.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["AgentChat Dataset (Built Offline)"]
+        direction TB
+        D1["Tool Interaction + General Dialogue Corpus"] --> D2["Inverse Conditional Generation of Reasoning Trajectories<br/>Iterative Filtering/Polishing + TTS Speech Synthesis"]
+    end
+    DATA --> M["Main Model<br/>Fine-tuned on StepAudio2"]
+    O["Speech Input"] --> M
+    M --> T["Think-before-Speak<br/>Generate Text Reasoning Trajectory (CoT) first"]
+    subgraph TOOL["Multi-agent Dynamic Tool Management"]
+        direction TB
+        A["Main model selects action in local tool space"]
+        AUX["Auxiliary LLM asynchronous candidate retrieval<br/>Shares reasoning trajectory, proposes from global library"]
+        MERGE["Merge candidates, expand local tool space"]
+        A -->|"Output a_retrieve: Insufficient tools"| MERGE
+        AUX --> MERGE
+        MERGE --> A
+    end
+    T --> A
+    T --> AUX
+    A -->|"Sufficient tools"| E["Execute tool, synthesize expressive speech response"]
+    E --> Y["Speech Response"]
+```
 
 ### Key Designs
 
-1.  **Think-before-Speak Mechanism**:
+**1. Think-before-Speak: Generating text reasoning before speaking**
 
-    - **Function**: Introduces explicit reasoning capabilities to the speech model.
-    - **Mechanism**: Before generating a speech response, the model generates a text reasoning trajectory $\mathbf{c}_t \sim \pi_\theta^{\text{think}}(\mathbf{c} | \mathbf{o}_t, \mathcal{H}_{t-1}, \mathcal{T}_t^{local})$ to capture intent understanding, context analysis, and task planning. It then selects an action $\mathbf{a}_t \sim \pi_\theta^{\text{act}}(\mathbf{a} | \mathbf{c}_t, \mathbf{o}_t, \mathcal{H}_{t-1})$ based on this trajectory.
-    - **Design Motivation**: Direct $x \to y$ mapping in end-to-end speech models is insufficient for complex planning; intermediate reasoning steps $x \to z \to y$ are required. Training data for reasoning trajectories is constructed via reverse conditional generation.
+End-to-end speech models typically perform direct $x \to y$ mapping, which struggles with complex tasks requiring multi-step planning. VoxMind transforms this into $x \to z \to y$: prior to responding with speech, the model samples a text reasoning trajectory $\mathbf{c}_t \sim \pi_\theta^{\text{think}}(\mathbf{c} \mid \mathbf{o}_t, \mathcal{H}_{t-1}, \mathcal{T}_t^{local})$. Intent understanding, context analysis, and task planning are completed within this trajectory, which then serves as a condition for selecting the action $\mathbf{a}_t \sim \pi_\theta^{\text{act}}(\mathbf{a} \mid \mathbf{c}_t, \mathbf{o}_t, \mathcal{H}_{t-1})$. This explicit "thinking" layer provides the planning stage missing in reactive dialogue models. Training data is constructed at scale via inverse conditional generation (generating reasoning processes for existing Q&A pairs), bypassing the scarcity of reasoning annotations in the speech domain.
 
-2.  **Multi-agent Dynamic Tool Management**:
+**2. Multi-agent Dynamic Tool Management: Decoupling latency from tool library scale**
 
-    - **Function**: Decouples inference latency from the tool library scale.
-    - **Mechanism**: A local tool space $\mathcal{T}_t^{local} \subset \mathcal{T}^{all}$ is maintained. The primary model and auxiliary LLM execute in parallel: the primary model selects actions in the local space while the auxiliary LLM proposes candidates from the global library. When the primary model outputs $a_{\text{retrieve}}$ (determining current tools are insufficient), candidates are merged into the local space $\mathcal{T}_{t+1}^{local} = \mathcal{T}_t^{local} \cup \mathcal{T}_t^{cand}$.
-    - **Design Motivation**: Processing all tool descriptions linearly increases tokens with the number of tools. Asynchronous parallelization and on-demand expansion ensure that latency does not increase significantly as the tool library grows.
+Inserting all tool descriptions into the context in every turn causes tokens to expand linearly with the number of tools. Given that speech tokens are more numerous than text, this leads to unacceptable latency. VoxMind instead maintains a local tool space $\mathcal{T}_t^{local} \subset \mathcal{T}^{all}$ that is significantly smaller than the full library. The main model only selects actions from this small space, while an auxiliary LLM shares the reasoning trajectory to asynchronously propose candidates from the global library. Only when the main model explicitly outputs $a_{\text{retrieve}}$, acknowledging insufficient tools, is the merge $\mathcal{T}_{t+1}^{local} = \mathcal{T}_t^{local} \cup \mathcal{T}_t^{cand}$ executed to expand the local space. Retrieval and reasoning operate in parallel, and expansion is triggered on-demand, ensuring that even if the global library expands to 40 tools, latency only increases by approximately 20%.
 
-3.  **AgentChat Dataset Construction**:
+**3. AgentChat Dataset: Completing training corpora with reasoning annotations for Speech Agents**
 
-    - **Function**: Provides data with reasoning annotations for speech agent training.
-    - **Mechanism**: Contains tool interaction corpora (14,805 entries from ToolACE, APIGen-MT, and self-constructed data) and general dialogue corpora (31,481 entries), totaling 470 hours. Reasoning trajectories are generated via $R \sim p_{\text{LM}}(R | Q, A)$, followed by iterative filtering (quality threshold 7/10, max 3 retries) and text refinement.
-    - **Design Motivation**: The speech domain lacks agentic behavior annotations, necessitating construction and speech synthesis based on text data.
+The speech domain lacks data annotated with agent behaviors (reasoning trajectories, tool interactions). The authors constructed AgentChat: 14,805 tool interaction samples (from ToolACE, APIGen-MT, and custom data) and 31,481 general dialogue samples, totaling approximately 470 hours. Reasoning trajectories for each sample were synthesized using inverse conditional generation $R \sim p_{\text{LM}}(R \mid Q, A)$, controlled for quality via iterative filtering (quality threshold 7/10, maximum 3 retries) and text polishing. Finally, TTS was used for speech synthesis, migrating mature agent data from the text domain to speech scenarios.
+
+### A Complete Example
+
+Example: "Help me check high-speed trains from Beijing to Shanghai next week and book a ticket." Upon receiving the speech input, the main model first decomposes the plan into "search trains $\to$ select train $\to$ place order" in the reasoning trajectory. If the current local space only contains general Q&A tools, the main model outputs $a_{\text{retrieve}}$. Meanwhile, the asynchronous auxiliary LLM has already retrieved candidates like `train_search` and `ticket_booking` from the global library and merged them into the local space. In the next turn, the main model calls `train_search` in the expanded space to get train details, then calls `ticket_booking` to complete the order, finally broadcasting the result to the user using natural speech. Throughout this process, retrieval remains parallel to reasoning, ensuring perceived latency does not rise as the backend tool library grows.
 
 ### Loss & Training
 
-Ours is fine-tuned based on StepAudio2 using the AdamW optimizer with a learning rate of 1e-5, DeepSpeed ZeRO-3, bfloat16 precision, and gradient checkpointing. Training was conducted on 2 H20-NVLink GPUs.
+Based on StepAudio2 fine-tuning, using the AdamW optimizer, a learning rate of 1e-5, DeepSpeed ZeRO-3, bfloat16 precision, and gradient checkpointing. Training was conducted on 2 H20-NVLink GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Single-task TS/PF | Task Deco. TS/PF | Parallel TS/PF | Active TU | Overall |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Single Task TS/PF | Task Decomposition TS/PF | Parallel Processing TS/PF | Proactive Seek TU | Overall |
+|------|------------|-------------|-------------|-----------|---------|
 | StepAudio2 | 78.70/48.87 | 60.32/26.98 | 53.33/33.33 | 3.12 | 34.88 |
 | Kimi-Audio | 78.45/56.89 | 48.15/22.75 | 79.05/55.24 | 13.64 | 54.94 |
 | Gemini-2.5-pro | 90.98/75.19 | 82.54/52.38 | 88.57/69.52 | 26.87 | 71.51 |
@@ -85,44 +102,44 @@ Ours is fine-tuned based on StepAudio2 using the AdamW optimizer with a learning
 ### Ablation Study
 
 | Configuration | Overall | Description |
-| :--- | :--- | :--- |
-| w/o think, 1:1 | 68.83 | No reasoning, tools/dialogue 1:1 |
+|------|---------|------|
+| w/o think, 1:1 | 68.83 | No reasoning, Tool/Dialogue 1:1 |
 | w/o think, 1:0.5 | 70.97 | No reasoning, less dialogue data |
 | w/ think, 1:1 | 71.97 | With reasoning |
-| w/ think, 1:0.5 | **74.57** | Reasoning + higher tool data ratio |
+| w/ think, 1:0.5 | **74.57** | Reasoning + higher proportion of tool data |
 
 ### Key Findings
 
-- The "Think-before-Speak" mechanism provides an average improvement of approximately 3-6%, with the largest gain in "Active Tool Seeking" (from 31.34% to 68.66%).
-- A tool/dialogue data ratio of 1:0.5 outperforms 1:1, indicating that a higher proportion of agentic data benefits tool capabilities.
-- Dynamic tool management ensures that latency does not grow significantly with the number of tools; with 40 tools, latency increased by only about 20%.
-- VoxMind maintains general dialogue quality on VoiceBench, showing no degradation due to agentic training.
+- The Think-before-Speak mechanism provides an average improvement of 3-6%, with the largest gain in "Proactive tool seeking" (from 31.34% to 68.66%).
+- A tool/dialogue data ratio of 1:0.5 outperformed 1:1, indicating that a higher proportion of Agent data benefits tool-calling capabilities.
+- Dynamic tool management ensures that latency does not increase significantly with the number of tools; latency increased by only ~20% with 40 tools.
+- VoxMind maintained general dialogue quality on VoiceBench without degradation from Agent training.
 
 ## Highlights & Insights
 
-- **Formal definition of end-to-end speech agents**: Fills a gap in the field by providing a four-dimensional framework (Profile, Memory, Planning, Action) for future research.
-- **Asynchronous parallel dynamic tool management**: The design is ingenious; the auxiliary model and primary model share reasoning trajectories but perform independent retrieval, decoupling capability from efficiency.
-- **Reverse conditional generation for reasoning trajectories**: This data construction method is practical, generating reasoning processes from existing Q&A pairs, which is more efficient than manual annotation.
+- **Formal definition of End-to-End Speech Agents** fills a gap in the field—the four-dimensional framework (Profile, Memory, Planning, Action) provides a standard for subsequent research.
+- **Asynchronous parallel dynamic tool management** is an elegant design—the auxiliary model and main model share reasoning trajectories while retrieving independently, achieving a decoupling of capability and efficiency.
+- **Inverse conditional generation of reasoning trajectories** is a practical data construction method—generating reasoning processes from existing Q&A pairs is more efficient than manual annotation.
 
 ## Limitations & Future Work
 
-- AgentChat data consists mainly of TTS synthesis, which may lack the richness of natural speech.
-- Evaluation was primarily conducted on a self-constructed test set, lacking a community-recognized speech agent benchmark.
-- The impact of the choice and scale of the auxiliary LLM on overall performance has not been fully ablated.
+- AgentChat data is primarily synthesized via TTS, which may lack the richness of natural speech.
+- Evaluation is mainly performed on custom test sets, lacking a community-recognized speech agent benchmark.
+- The impact of the auxiliary LLM's selection and scale on overall performance has not been fully ablated.
 - Streaming reasoning scenarios (starting reasoning while the user is still speaking) have not been explored.
 
 ## Related Work & Insights
 
-- **vs. Cascaded Systems (Qwen3 + Whisper)**: Cascaded systems utilize the agentic capabilities of text LLMs but lose paralinguistic information and increase latency; VoxMind maintains end-to-end advantages.
-- **vs. WavRAG/Stream RAG**: These support only single agentic functions like retrieval augmentation; VoxMind supports full tool calling and reasoning/planning.
-- **vs. Gemini-2.5-pro**: While the closed-source model has advantages in individual capabilities, VoxMind surpasses it in overall agentic tasks and is open-source and deployable.
+- **vs Cascaded Systems (Qwen3+Whisper)**: Cascaded systems utilize the agent capabilities of text LLMs but lose paralinguistic information and increase latency; VoxMind maintains end-to-end advantages.
+- **vs WavRAG/Stream RAG**: These only support single agent functions like retrieval augmentation; VoxMind supports full tool calling and reasoning planning.
+- **vs Gemini-2.5-pro**: While the closed-source model has advantages in individual capabilities, VoxMind surpasses it in overall agent tasks and is open-source and deployable.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic end-to-end speech agent framework, complete with definition, data, and methodology.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparisons, though lacking standardized community benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Clear formal definitions and intuitive architectural diagrams.
-- Value: ⭐⭐⭐⭐⭐ The open-source framework and dataset provide a significant push for the speech agent field.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic end-to-end speech agent framework; complete definition, data, and method.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparisons but lacks community standard benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear formal definitions and intuitive architecture diagrams.
+- Value: ⭐⭐⭐⭐⭐ Open-source framework and dataset significantly advance the speech agent field.
 
 <!-- RELATED:START -->
 
@@ -132,9 +149,9 @@ Ours is fine-tuned based on StepAudio2 using the AdamW optimizer with a learning
 
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 - [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
-- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
+- [\[ACL 2025\] DNCASR: End-to-End Training for Speaker-Attributed ASR](../../ACL2025/audio_speech/dncasr_end-to-end_training_for_speaker-attributed_asr.md)
 - [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
-- [\[ACL 2026\] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness](sdiareward_modeling_and_benchmarking_spoken_dialogue_rewards_with_modality_and_c.md)
+- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
 
 </div>
 

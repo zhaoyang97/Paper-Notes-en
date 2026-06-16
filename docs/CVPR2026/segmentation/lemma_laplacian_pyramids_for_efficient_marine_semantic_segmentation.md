@@ -2,124 +2,127 @@
 title: >-
   [Paper Note] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Lightweight semantic segmentation] This paper proposes LEMMA, a lightweight marine semantic segmentation model based on Laplacian pyramids…
+  [CVPR 2026][Segmentation][Paper Note] LEMMA is proposed as a lightweight marine semantic segmentation model based on Laplacian pyramids. By extracting edge information through pyramid decomposition to replace deep feature calculations, it achieves SOTA-level segmentation accuracy (98.97% mIoU on MaSTr1325) while reducing the parameter count by 71x.
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Lightweight semantic segmentation"
-  - "Laplacian pyramid"
-  - "marine semantic segmentation"
-  - "edge detection"
-  - "unmanned surface vehicle"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 49b8805dab701395
+content_hash: 7578f6672bfb2667
 ---
-
 # LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25689](https://arxiv.org/abs/2603.25689)  
-**Code**: Unavailable  
-**Area**: Semantic Segmentation
-**Keywords**: Lightweight semantic segmentation, Laplacian pyramid, marine semantic segmentation, edge detection, unmanned surface vehicle
+**Code**: None  
+**Area**: Semantic Segmentation  
+**Keywords**: Lightweight Semantic Segmentation, Laplacian Pyramid, Marine Semantic Segmentation, Edge Detection, Unmanned Surface Vehicle (USV)
 
 ## TL;DR
 
-This paper proposes LEMMA, a lightweight marine semantic segmentation model based on Laplacian pyramids, which replaces deep feature computation with pyramid-decomposed edge information. LEMMA achieves SOTA-level segmentation accuracy (98.97% mIoU on MaSTr1325) with a 71× reduction in parameter count.
+LEMMA is proposed as a lightweight marine semantic segmentation model based on Laplacian pyramids. By extracting edge information through pyramid decomposition to replace deep feature calculations, it achieves SOTA-level segmentation accuracy (98.97% mIoU on MaSTr1325) while reducing the parameter count by 71x.
 
 ## Background & Motivation
 
-Semantic segmentation of marine scenes is critical for autonomous navigation of unmanned surface vehicles (USVs) and coastal earth observation tasks such as oil spill detection. However, existing segmentation methods (e.g., WaSR-T, DeepLabv3) typically rely on deep CNN or Transformer architectures with tens to hundreds of millions of parameters and prohibitive computational costs, making real-time deployment on resource-constrained edge devices such as UAVs and USVs infeasible.
+Semantic segmentation in marine environments is crucial for the autonomous navigation of Unmanned Surface Vehicles (USVs) and coastal Earth observation (e.g., oil spill detection). However, existing methods (such as WaSR-T, DeepLabv3, etc.) typically rely on deep CNN or Transformer architectures, which entail tens or hundreds of millions of parameters and high computational overhead, making them difficult to run in real-time on resource-constrained edge devices like UAVs and USVs.
 
-- **Key Challenge**: Marine scenes demand high-precision segmentation (e.g., low-contrast regions such as water surface reflections and thin oil films), yet deployment platforms (UAVs/USVs) offer extremely limited computational resources. Existing methods fail to reconcile accuracy and efficiency—WaSR-T achieves 99.80% mIoU but requires 71.4M parameters and 133.8 GFLOPs.
+The **Key Challenge** lies in the fact that marine scenarios require high-precision segmentation (for low-contrast areas like water surface reflections and thin oil films), yet the deployment platforms (UAVs/USVs) have extremely limited computing power. Existing methods fail to balance accuracy and efficiency—while WaSR-T achieves 99.80% mIoU, it requires 71.4M parameters and 133.8 GFLOPs.
 
-- **Key Insight**: The paper exploits the edge information naturally provided by Laplacian pyramid decomposition. Each pyramid level encodes edge details at a specific resolution, which can be injected at early stages of feature extraction, thereby avoiding expensive feature map computation in deep layers. **Core Idea**: Replace deep feature extraction with edge priors from the Laplacian pyramid to simultaneously achieve lightweight design and high accuracy.
+The **Key Insight** of this work is to utilize the edge information naturally provided by Laplacian pyramid decomposition. Layers of the pyramid contain edge details at different resolutions, which can be injected at the early stages of feature extraction. this avoids expensive feature map calculations in deep networks. **Core Idea**: Replace deep feature extraction with Laplacian pyramid edge priors to achieve both lightweight design and high precision.
 
 ## Method
 
 ### Overall Architecture
 
-LEMMA decomposes the input image into a depth-3 Laplacian pyramid ($L_1$, $L_2$, $L_3$) and processes multi-scale features through three branches: the Low-level Feature Branch (LFB) processes $L_3$ at the lowest resolution; the Middle-level Feature Branch (MFB) fuses $L_2$ with LFB outputs; and the High-level Feature Branch (HFB) integrates $L_1$ with features from the preceding branches to produce the final segmentation mask. Within each branch, residual block chains and convolutional layers perform feature extraction, while concatenation and transposed convolutions enable cross-scale information fusion.
+The goal of LEMMA is to handle marine segmentation challenges, where low-contrast edges like water reflections and oil spills must be identified on power-constrained UAV/USV platforms. The **Mechanism** involves moving "edge extraction" from the depths of the network to the input stage—first decomposing the image into high-frequency details at various resolutions using a Laplacian pyramid, and then letting the network focus on refining and fusing these existing edges rather than learning them from scratch.
+
+Specifically, the input image is decomposed into a Laplacian pyramid of depth 3: $L_1, L_2, L_3$ (where $L_3$ has the lowest resolution and $L_1$ the highest). Three branches process these in a relay fashion: the Low-level Feature Branch (LFB) first takes the coarsest $L_3$; the Middle-level Feature Branch (MFB) concatenates $L_2$ with the output of LFB for further refinement; the High-level Feature Branch (HFB) merges $L_1$ with features from the previous two branches to generate the segmentation mask at the highest resolution. Branches use concatenation to align coarse-scale semantics with fine-scale edges, and transposed convolutions to upsample low-resolution features. The entire network lacks a deep backbone, compressing the parameter count to the 1M range.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input Image"] --> LP["Laplacian Pyramid Decomposition (Depth 3)<br/>L₃ coarsest / L₂ / L₁ finest<br/>Layers = Edge priors at each scale"]
+    LP -->|L₃| LFB["Three-branch relay from coarse to fine: LFB Low-level Branch<br/>64 channels · Configurable residual blocks ×NRBL"]
+    LFB -->|Upsampling via Transposed Conv + concat L₂| MFB["MFB Middle-level Branch<br/>Configurable residual blocks ×NRBM"]
+    MFB -->|Upsampling + concat L₁| HFB["HFB High-level Branch (Highest resolution)<br/>Only 16 channels · Configurable residual blocks ×NRBH"]
+    HFB --> OUT["Segmentation Mask"]
+```
 
 ### Key Designs
 
-1. **Laplacian Pyramid Decomposition**:
-    - **Function**: Decomposes the image into multi-resolution edge representations.
-    - **Mechanism**: Each pyramid level naturally encodes high-frequency edge details at the corresponding resolution, yielding multi-scale edge representations in a single decomposition step.
-    - **Design Motivation**: Edge information is a critical cue for distinguishing water surfaces, obstacles, and oil spills in marine scenes; the pyramid avoids the high cost of progressively learning edge features in deep networks.
+**1. Laplacian Pyramid Decomposition: Injecting edge priors directly to eliminate deep learning overhead**
 
-2. **Three-Branch Residual Architecture (LFB/MFB/HFB)**:
-    - **Function**: Refines and fuses pyramid-level features at varying depths.
-    - **Mechanism**: LFB processes the lowest-resolution features (64 channels); MFB fuses low- and mid-level information; HFB reconstructs the mask at the highest resolution using only 16 channels.
-    - **Design Motivation**: Using 16 instead of 64 channels in HFB substantially reduces GFLOPs on high-resolution feature maps; concatenation preserves original information from each level, avoiding information loss.
+In marine scenes, distinguishing water, obstacles, and oil spills depends almost entirely on edges and high-frequency textures. Conventional approaches stack backbones with tens of millions of parameters to slowly learn these edges in deep layers, incurring massive computational costs. Conversely, LEMMA uses Laplacian pyramids to extract multi-scale edges at the input stage. Each layer is a residual of "the original image minus the upsampled Gaussian blur," naturally storing high-frequency details. This acts as a free edge prior. The network receives multi-scale edge maps instead of raw RGB, removing the need for depth to achieve edge representation, which is why it maintains accuracy at 1M parameters. An additional benefit is that the pyramid extracts high frequencies, implicitly suppressing low-frequency illumination drifts like sun glint and water reflections.
 
-3. **Configurable Residual Block Chains**:
-    - **Function**: Controls the feature extraction depth within each branch.
-    - **Mechanism**: Each branch embeds a configurable number of residual blocks (NRBL/NRBM/NRBH), each consisting of conv–LeakyReLU–conv with a residual connection.
-    - **Design Motivation**: Ablation studies identify the optimal configuration per dataset (MaSTr1325: 7/7/1; Oil Spill: 6/7/4), achieving the best parameter–accuracy trade-off.
+**2. Coarse-to-Fine Three-branch Relay (LFB/MFB/HFB): Optimizing the channel budget**
+
+Pyramids alone are insufficient; the challenge is fusing three edge layers into a clean mask without exploding the computation at high resolutions. LEMMA lets branches relay from low to high resolution: LFB uses a wider 64-channel setup on the coarsest $L_3$ (where computation is cheap due to low resolution), MFB handles the intermediate scale, and for HFB—the most computationally expensive stage—channels are slashed to 16. Since GFLOPs correlate with channel counts on high-resolution maps, keeping width for small images and using narrow channels for large images avoids the costliest overhead. Experiments confirm 16 channels are sufficient for mask reconstruction at the highest resolution. Concatenation is used instead of addition to preserve edge information without dilution.
+
+**3. Configurable Residual Block Chains: Adjusting the accuracy/parameter balance per dataset**
+
+Different marine perspectives (ground-level USV vs. aerial UAV) present different challenges. LEMMA uses a configurable number of residual blocks ($NRBL / NRBM / NRBH$) in each branch rather than a fixed depth. Each block follows a standard conv–LeakyReLU–conv structure with a residual connection. Optimal configurations are tuned per dataset via ablation: 7/7/1 for MaSTr1325 and 6/7/4 for Oil Spill. Notably, using only 1 block for HFB on MaSTr1325 suggests that "light processing" is sufficient at high resolutions; depth gains are primarily realized in low-to-medium resolution branches.
 
 ### Loss & Training
 
-- Focal Loss is adopted as the training objective and outperforms Dice Loss and CE+Dice combinations on both datasets.
-- Adam optimizer is used with a batch size of 8 for 300 epochs.
-- Training is conducted on an NVIDIA TESLA P100; inference is evaluated on an NVIDIA 2080 GPU and an Intel 4-core XEON CPU.
+- Focal Loss is used as the loss function, outperforming Dice Loss and CE+Dice combinations on both datasets.
+- Adam optimizer is employed with a batch size of 8 for 300 epochs.
+- Training was conducted on an NVIDIA TESLA P100; inference was tested on an NVIDIA 2080 and an Intel 4-core XEON CPU.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | Ours (LEMMA) | Prev. SOTA | Gain |
-|---------|--------|--------------|------------|------|
-| MaSTr1325 | mIoU | 98.97% | 99.91% (BEMRF-Net) | −0.94% (but 71× fewer params) |
-| MaSTr1325 | Parameters | 1.07M | 71.4M (WaSR-T) | 66.7× reduction |
-| MaSTr1325 | GFLOPs | 17.83 | 156.0 (BEMRF-Net) | 88.5% reduction |
-| MaSTr1325 | Inference time | 7.3 ms | 47.55 ms (DeepLabv3) | 84.65% reduction |
+|--------|------|------|----------|------|
+| MaSTr1325 | mIoU | 98.97% | 99.91% (BEMRF-Net) | -0.94% (but 71x fewer params) |
+| MaSTr1325 | Parameters | 1.07M | 71.4M (WaSR-T) | 66.7x Reduction |
+| MaSTr1325 | GFLOPs | 17.83 | 156.0 (BEMRF-Net) | 88.5% Reduction |
+| MaSTr1325 | Inference Time | 7.3ms | 47.55ms (DeepLabv3) | 84.65% Reduction |
 | Oil Spill | mIoU | 93.42% | 92.66% (R-GSSNet) | +0.76% |
-| Oil Spill | Parameters | 1.01M | 62.6M (R-Segformer) | 62× reduction |
+| Oil Spill | Parameters | 1.01M | 62.6M (R-Segformer) | 62x Reduction |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| Residual blocks 7/7/1 (MaSTr1325) | mIoU 98.96% | Optimal; adding more HFB blocks degrades performance |
-| Residual blocks 6/7/4 (Oil Spill) | mIoU 93.42% | Optimal configuration |
-| Focal Loss vs. Dice Loss | 98.97% vs. 98.72% | Focal Loss is superior on both datasets |
-| Focal Loss vs. CE+Dice | 98.97% vs. 98.86% | Confirms the advantage of Focal Loss |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Residual blocks 7/7/1 (MaSTr1325) | mIoU 98.96% | Optimal config; increasing HFB blocks reduces performance |
+| Residual blocks 6/7/4 (Oil Spill) | mIoU 93.42% | Optimal config |
+| Focal Loss vs Dice Loss | 98.97% vs 98.72% | Focal Loss performed best on both datasets |
+| Focal Loss vs CE+Dice | 98.97% vs 98.86% | Verified the advantage of Focal Loss |
 
 ### Key Findings
 
-- With approximately 1M parameters, LEMMA achieves performance competitive with models possessing tens of millions of parameters (e.g., WaSR-T at 71.4M).
-- The model performs well across two substantially different viewpoints—USV ground-level perspective (MaSTr1325) and UAV aerial perspective (Oil Spill)—demonstrating cross-platform robustness.
-- Using only 16 channels in HFB is sufficient for high-resolution mask reconstruction, which is the key design choice for reducing computational cost.
-- The Laplacian pyramid implicitly suppresses low-frequency illumination artifacts such as sun glare and water surface reflections.
+- LEMMA performs comparably to models with tens of millions of parameters (e.g., WaSR-T's 71.4M) while using only ~1M parameters.
+- The model excels across distinct viewpoints: ground-level USV (MaSTr1325) and aerial UAV (Oil Spill), demonstrating cross-platform robustness.
+- 16 channels in the HFB are sufficient for high-resolution mask reconstruction, a key design for minimizing computation.
+- Laplacian pyramids implicitly suppress low-frequency illumination drifts like sun glint and water surface reflections.
 
 ## Highlights & Insights
 
-- The paper effectively combines a classical image processing technique (Laplacian pyramid) with deep residual networks, leveraging physical priors to reduce the learning burden.
-- Extreme lightweight design: approximately 1M parameters suffice to achieve near-SOTA accuracy, enabling real-time deployment on resource-constrained edge devices such as UAVs and USVs.
-- Strong cross-platform generality: the same architecture applies to both ground-level USV obstacle detection and aerial oil spill segmentation.
-- No ImageNet pretraining is required; high performance is achieved by training from scratch.
+- Combines traditional image processing (Laplacian pyramids) with deep residual networks, using physical priors to reduce the learning burden.
+- Extreme lightweighting: 1M parameters achieve near-SOTA accuracy, suitable for real-time deployment on resource-constrained UAV/USV devices.
+- High versatility: A single architecture is applicable to both USV obstacle detection and aerial oil spill segmentation.
+- No ImageNet pre-training required; high performance is achieved training from scratch.
 
 ## Limitations & Future Work
 
-- Environmental factors such as reflections, waves, and glare degrade the quality of the Laplacian pyramid and cause failures (failure cases due to reflections are shown in the paper).
-- The current design uses a fixed pyramid depth and static residual block configurations; adaptive pyramid depth allocation warrants future investigation.
-- Dataset scales are limited (MaSTr1325: 1,325 images; Oil Spill: 847 images), making it difficult to verify generalization to large-scale scenarios.
-- An accuracy gap of approximately 1% remains relative to the strongest models such as WaSR-T.
+- Environmental factors like reflections, waves, and glare can degrade the quality of the Laplacian pyramid, leading to failures (the paper includes cases of reflection-induced failure).
+- Current implementation uses a fixed number of pyramid levels and static residual block configurations; future work could explore adaptive pyramid depth allocation.
+- Dataset scales are limited (MaSTr1325 has 1325 images, Oil Spill has 847), making it difficult to verify generalization in large-scale scenarios.
+- A ~1% accuracy gap remains compared to the most powerful models like WaSR-T.
 
 ## Related Work & Insights
 
-- **vs. WaSR-T**: WaSR-T achieves 99.80% mIoU with Transformer-based design but requires 71.4M parameters; LEMMA achieves 98.97% with 1.07M parameters, offering orders-of-magnitude improvement in efficiency.
-- **vs. DeepLabv3**: DeepLabv3 achieves 97.67% mIoU with 48M parameters and 123 GFLOPs; LEMMA surpasses it with 1/45 of the parameters.
-- **vs. LETNet**: Another lightweight model, LETNet achieves 83.18% mIoU; LEMMA improves performance by nearly 16 percentage points with a comparable parameter count (1.07M vs. 0.94M).
-- **Insight**: Integrating classical CV techniques (pyramids, edge detection) with deep learning can achieve extreme lightweight design in domain-specific applications.
+- **vs WaSR-T**: WaSR-T uses Transformers to reach 99.80% mIoU but needs 71.4M parameters; LEMMA reaches 98.97% with 1.07M, increasing efficiency by orders of magnitude.
+- **vs DeepLabv3**: DeepLabv3 requires 48M parameters and 123 GFLOPs for 97.67% mIoU; LEMMA outperforms it with 1/45th of the parameters.
+- **vs LETNet**: As a fellow lightweight model, LETNet achieves 83.18% mIoU; LEMMA improves this by nearly 16 percentage points with similar parameter counts (1.07M vs. 0.94M).
+- **Insight**: Integrating traditional CV techniques (pyramids, edge detection) with deep learning can achieve extreme lightweighting in specific domains.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — Laplacian pyramids for segmentation are not entirely new, but the three-branch design and its application to marine scenes are noteworthy.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Two datasets, extensive baseline comparisons, and detailed ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-motivated design, and thorough experimental analysis.
-- **Value**: ⭐⭐⭐⭐ — Directly applicable to marine segmentation on edge devices.
+- Novelty: ⭐⭐⭐ While Laplacian pyramids for segmentation are not entirely new, the application to marine scenes and the three-branch design are innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covering two datasets, numerous baselines, and detailed ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-defined motivation, and robust experimental analysis.
+- Value: ⭐⭐⭐⭐ High practical value for marine segmentation deployment on edge devices.
 
 <!-- RELATED:START -->
 
@@ -127,11 +130,11 @@ LEMMA decomposes the input image into a depth-3 Laplacian pyramid ($L_1$, $L_2$,
 
 ## Related Papers
 
-- [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
-- [\[CVPR 2026\] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training](data_warmup_complexity-aware_curricula_for_efficient_diffusion_training.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
+- [\[CVPR 2026\] Differentiable Laplacian Matrix Guided Superpixel Segmentation](differentiable_laplacian_matrix_guided_superpixel_segmentation.md)
+- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
+- [\[CVPR 2025\] HFP-SAM: Hierarchical Frequency Prompted SAM for Efficient Marine Animal Segmentation](../../CVPR2025/segmentation/hfp-sam_hierarchical_frequency_prompted_sam_for_efficient_marine_animal_segmenta.md)
+- [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
+- [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
 
 </div>
 

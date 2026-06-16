@@ -2,141 +2,137 @@
 title: >-
   [Paper Note] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs
 description: >-
-  [CVPR 2026][3D Vision][image-to-point-cloud registration] Hg-I2P introduces a Heterogeneous Graph to jointly model relationships between 2D image regions and 3D point cloud regions. Through multi-path adjacency mining fo…
+  [CVPR 2026][3D Vision][Paper Note] Hg-I2P introduces Heterogeneous Graphs (HG) to unify the modeling of relationships between 2D image regions and 3D point cloud regions. By leveraging multi-path adjacency relation mining for cross-modal edge learning, heterogeneous edge-based feature adaptation, and graph-based projection consistency pruning, it achiev
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "image-to-point-cloud registration"
-  - "heterogeneous graph"
-  - "cross-modal feature adaptation"
-  - "correspondence pruning"
-  - "cross-domain generalization"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 72d5ed3abdd93143
+content_hash: 80e41dc6df0c46a0
 ---
-
 # Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27969](https://arxiv.org/abs/2603.27969)  
 **Code**: [https://github.com/anpei96/hg-i2p-demo](https://github.com/anpei96/hg-i2p-demo)  
-**Area**: 3D Vision
-**Keywords**: image-to-point-cloud registration, heterogeneous graph, cross-modal feature adaptation, correspondence pruning, cross-domain generalization
+**Area**: 3D Vision  
+**Keywords**: Image-to-Point-Cloud Registration, Heterogeneous Graphs, Cross-modal Feature Adaptation, Correspondence Pruning, Cross-domain Generalization
 
 ## TL;DR
 
-Hg-I2P introduces a Heterogeneous Graph to jointly model relationships between 2D image regions and 3D point cloud regions. Through multi-path adjacency mining for learning cross-modal edges, heterogeneous-edge-guided feature adaptation, and graph-based projection consistency pruning, it achieves state-of-the-art generalization and accuracy across six indoor and outdoor cross-domain benchmarks.
+Hg-I2P introduces Heterogeneous Graphs (HG) to unify the modeling of relationships between 2D image regions and 3D point cloud regions. By leveraging multi-path adjacency relation mining for cross-modal edge learning, heterogeneous edge-based feature adaptation, and graph-based projection consistency pruning, it achieves state-of-the-art generalization and precision across six indoor and outdoor cross-domain benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: Image-to-point-cloud (I2P) registration aims to establish correspondences between 2D pixels and 3D points, serving as a cornerstone for visual localization, navigation, and 3D reconstruction. Recent learning-based methods have advanced the field by improving backbone networks, matching strategies, and loss functions; for example, MATR adopts coarse-to-fine matching, while CoFiI2P introduces patch-level matching.
+1. **Background**: Image-to-point-cloud (I2P) registration aims to establish correspondences between 2D pixels and 3D points, serving as a cornerstone for visual localization, navigation, and 3D reconstruction. Recently, learning-based methods have progressed by improving backbones, matching strategies, and loss functions, such as MATR using coarse-to-fine matching and CoFiI2P introducing patch-level matching.
 
-2. **Limitations of Prior Work**: Existing methods perform well within their training domain but suffer significant performance degradation in unseen scenes. The fundamental reason is the large distributional gap between 2D image features (appearance-based) and 3D point cloud features (geometry-based)—even correct correspondences may exhibit low feature similarity, making it difficult for neural networks to discriminate valid matches.
+2. **Limitations of Prior Work**: Existing methods perform well within the training domain but suffer significant performance degradation in unseen scenes. The core reason is the massive distribution gap between 2D image features (appearance-based) and 3D point cloud features (geometry-based)—even for correct correspondences, feature similarity might be low, making it difficult for neural networks to distinguish correct matches.
 
-3. **Key Challenge**: Existing improvements either focus solely on feature refinement (lacking explicit cross-modal reasoning) or solely on correspondence pruning (relying on depth prediction or hand-crafted heuristics). Handling these two aspects in isolation fails to systematically address the generalization problem. Although visual foundation models (SAM, DepthAnything, etc.) can help bridge the modality gap, a unified framework that simultaneously exploits feature refinement and correspondence pruning has been lacking.
+3. **Key Challenge**: Existing improvements either focus solely on feature refinement (lacking explicit cross-modal reasoning) or solely on correspondence pruning (relying on depth prediction or manual heuristics). Addressing these tasks in isolation fails to solve the generalization problem systematically. While Vision Foundation Models (SAM, DepthAnything, etc.) can help bridge the modal gap, a unified framework to simultaneously leverage feature refinement and correspondence pruning is missing.
 
-4. **Goal**: (1) How to construct a unified structure that supports both cross-modal feature refinement and correspondence pruning? (2) How to effectively learn the cross-modal mapping between 2D and 3D regions? (3) How to exploit consistency information within the graph structure to filter erroneous matches?
+4. **Goal**: (1) How to construct a unified structure that supports both cross-modal feature refinement and correspondence pruning? (2) How to effectively learn the cross-modal mapping between 2D and 3D regions? (3) How to utilize consistency information within the graph structure to filter erroneous matches?
 
-5. **Key Insight**: 2D/3D SAM is used to segment images and point clouds into regions, and a heterogeneous graph is constructed to model inter-region relationships. The heterogeneous edges (I2P edges) define a 2D–3D region mapping that can guide both feature refinement (cross-modal message passing along edges) and correspondence pruning (projection consistency checking within the graph).
+5. **Key Insight**: Use 2D/3D SAM to segment images and point clouds into regions and construct a heterogeneous graph to model region-to-region relationships. The heterogeneous edges (I2P edges) of the graph define a 2D-3D region mapping that can both guide feature refinement (via cross-modal message passing along edges) and support correspondence pruning (via projection consistency checks within the graph).
 
-6. **Core Idea**: A heterogeneous graph is used to jointly model 2D–3D region relationships, enabling cross-modal feature adaptation and correspondence pruning simultaneously within the same graph structure, thereby achieving robust and generalizable I2P registration.
+6. **Core Idea**: Unify 2D-3D region relationship modeling using heterogeneous graphs, performing both cross-modal feature adaptation and correspondence pruning on the same graph structure to achieve robust generalization in I2P registration.
 
 ## Method
 
 ### Overall Architecture
 
-Given an RGB image and a colored point cloud, 2D/3D SAM is first applied to segment them into $M$ 2D regions and $N$ 3D regions, forming a heterogeneous graph $\mathcal{G}_H = (\mathcal{V}_H, \mathcal{E}_H)$. Three core modules are then applied: (1) **MP-mining** to learn heterogeneous edges $\mathcal{E}_{I2P}$; (2) **HE-adapting** to perform cross-modal feature message passing along heterogeneous edges for feature refinement; and (3) **HC-pruning** to filter erroneous correspondences via graph-based projection consistency. Finally, refined features are used for feature-level matching to obtain 2D–3D correspondences, and pose is estimated via RANSAC-PnP.
+Hg-I2P addresses the generalization problem where I2P registration "collapses in new scenes," rooted in the vast difference between 2D appearance and 3D geometric features. The solution involves partitioning both images and point clouds into regions and linking them through a graph for unified reasoning. Specifically, given an RGB image and a colored point cloud, 2D/3D SAM segments them into $M$ 2D regions and $N$ 3D regions. Each region serves as a vertex in the heterogeneous graph $\mathcal{G}_H = (\mathcal{V}_H, \mathcal{E}_H)$. Once the graph is established, features and correspondences flow through the same structure: MP-mining infers missing cross-modal edges during inference; HE-adapting performs cross-modal message passing along these edges to align features; and HC-pruning utilizes graph-based projection consistency to filter false matches after region/point-level matching. All three modules share the same set of edges, ensuring feature refinement and correspondence pruning are no longer decoupled.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: RGB Image + Colored Point Cloud<br/>2D/3D SAM segments into M 2D regions + N 3D regions"] --> B
+    B["Heterogeneous Graph Definition<br/>Regions as vertices; I2I / P2P edges computed; I2P edges unknown"] --> C
+    C["MP-mining<br/>Multi-paths + attention to learn I2P cross-modal edges"] --> D
+    D["HE-adapting<br/>Message passing along I2P edges; 2D/3D feature adaptation"] --> E
+    E["Feature-level Matching<br/>Producing 2D-3D correspondences"] --> F
+    F["HC-pruning<br/>RANSAC-PnP initial pose + local/global consistency outlier filtering"] -->|Clean Inliers| G
+    G["RANSAC-PnP<br/>Output final pose"]
+```
 
 ### Key Designs
 
-1. **Heterogeneous Graph Definition and Construction**:
+**1. Heterogeneous Graph Definition: Integrating modalities to serve both refinement and pruning**
 
-    - **Function**: Establishes a unified relational structure representing both 2D image and 3D point cloud regions.
-    - **Mechanism**: Vertices $\mathcal{V}_H = \mathcal{V}_I \cup \mathcal{V}_P$ correspond to $M$ 2D regions and $N$ 3D regions respectively, each represented by a $c$-dimensional feature vector (average pooling of features within the region). Edges are categorized into three types: (a) homogeneous 2D–2D edges $\mathbf{E}_{I2I}$, defined by 2D region feature distance $e^{-\alpha\|\mathbf{v}_i^I - \mathbf{v}_j^I\|_2^2}$; (b) homogeneous 3D–3D edges $\mathbf{E}_{P2P}$, defined by 3D region feature distance; (c) heterogeneous 2D–3D edges $\mathbf{E}_{I2P}$, which theoretically should be defined by the IoU of 3D regions projected onto 2D under the GT pose, but since the GT pose is unavailable at inference time, these edges must be learned.
-    - **Design Motivation**: Unlike prior methods that process 2D and 3D features in isolation, the heterogeneous graph provides a unified framework for jointly modeling intra-modal and inter-modal relationships, enabling both feature refinement and correspondence pruning to be performed within the same structure.
+Previous methods handled feature refinement and correspondence pruning independently. The HG approach provides a common carrier. The vertex set $\mathcal{V}_H = \mathcal{V}_I \cup \mathcal{V}_P$ combines $M$ 2D regions and $N$ 3D regions, where each vertex carries a $c$-dimensional feature (mean-pooled from region features). Edges are categorized into three types: homogeneous 2D-2D edges $\mathbf{E}_{I2I}$ (based on 2D feature distance, $\mathbf{E}_{I2I}^{(i,j)} = e^{-\alpha\|\mathbf{v}_i^I - \mathbf{v}_j^I\|_2^2}$), homogeneous 3D-3D edges $\mathbf{E}_{P2P}$, and the critical heterogeneous 2D-3D edges $\mathbf{E}_{I2P}$. While $\mathbf{E}_{I2P}$ should ideally be defined by the IoU of projected 3D regions and 2D regions under the ground truth (GT) pose, the GT pose is unavailable at inference. Thus, these edges must be learned.
 
-2. **MP-mining (Multi-Path Adjacency Mining)**:
+**2. MP-mining: Bypassing unknown I2P edges via intra-modal neighbors**
 
-    - **Function**: Learns heterogeneous edges $\mathcal{E}_{I2P}$ at inference time (without GT pose).
-    - **Mechanism**: Leverages the known homogeneous edges $\mathbf{E}_{I2I}$ and $\mathbf{E}_{P2P}$ to mine 2D–3D adjacency relationships through three paths: $\mathbf{E}_{I2P}^1 = \mathbf{E}_{I2I}\tilde{\mathbf{E}}_{I2P}$ (relayed through 2D neighbors), $\mathbf{E}_{I2P}^2 = \tilde{\mathbf{E}}_{I2P}\mathbf{E}_{P2P}$ (relayed through 3D neighbors), and $\mathbf{E}_{I2P}^3 = \mathbf{E}_{I2I}\tilde{\mathbf{E}}_{I2P}\mathbf{E}_{P2P}$ (relayed through two hops). The three matrices are concatenated and passed through an attention layer to predict the final $\hat{\mathbf{E}}_{I2P}$.
-    - **Design Motivation**: From a Bayesian inference perspective, multi-path adjacency relationships capture indirect causal connections between 2D and 3D regions—even when the initial direct matching $\tilde{\mathbf{E}}_{I2P}$ is inaccurate, propagation through homogeneous region neighbors can correct the estimate.
+Since $\mathbf{E}_{I2P}$ is unknown and initial matching $\tilde{\mathbf{E}}_{I2P}$ is often inaccurate, MP-mining uses known homogeneous edges as bridges to approximate 2D-3D relationships through three paths:
 
-3. **HE-adapting (Heterogeneous-Edge-Guided Feature Adaptation)**:
+$$\mathbf{E}_{I2P}^1 = \mathbf{E}_{I2I}\tilde{\mathbf{E}}_{I2P}, \quad \mathbf{E}_{I2P}^2 = \tilde{\mathbf{E}}_{I2P}\mathbf{E}_{P2P}, \quad \mathbf{E}_{I2P}^3 = \mathbf{E}_{I2I}\tilde{\mathbf{E}}_{I2P}\mathbf{E}_{P2P}$$
 
-    - **Function**: Performs cross-modal message passing along learned heterogeneous edges to refine 2D and 3D features, enhancing cross-modal matching capability.
-    - **Mechanism**: Proceeds in two steps: (a) **Message generation**: for each 2D region $\mathcal{I}_i$, cross-modal messages $\bar{\mathbf{m}}_i^I$ are obtained by weighted aggregation of features from connected 3D region neighbors via $\mathcal{E}_{I2P}$; cross-attention is used to learn the correlation between 2D region features and cross-modal messages. (b) **Message interaction**: original region features and message features are concatenated channel-wise, fused via self-attention, and combined with original features using a blending ratio $\beta$ to produce adapted features. The same operation is applied symmetrically on the 3D side.
-    - **Design Motivation**: HE-adapting enables graph-structured cross-modal information flow—2D features are informed by matched 3D geometric information, and 3D features are informed by matched 2D appearance information—thereby narrowing the modality gap and improving cross-domain generalization.
+The first path transfers through 2D neighbors before crossing modalities, the second crosses modalities then diffuses through 3D neighbors, and the third uses both. These matrices are concatenated and fed into an attention layer to predict $\hat{\mathbf{E}}_{I2P}$. From a Bayesian perspective, these paths marginalize indirect causal relationships: even if direct matching $\tilde{\mathbf{E}}_{I2P}$ is noisy, similar regions propagate neighbor evidence to correct the estimation.
 
-4. **HC-pruning (Graph-Based Projection Consistency Pruning)**:
+**3. HE-adapting: Cross-modal feature alignment through learned edges**
 
-    - **Function**: Filters erroneous correspondences produced by feature matching.
-    - **Mechanism**: An initial pose $\tilde{\mathbf{T}}$ is first estimated via RANSAC-PnP from the refined feature matches. Two complementary pruning criteria are then applied: (a) based on $\mathcal{E}_{I2P}$ adjacency and reprojection distance $\delta_{\text{rej}}$; (b) based on the cosine similarity of relative position vectors derived from graph projections. Correspondences satisfying at least one criterion are retained as inliers.
-    - **Design Motivation**: The dual-criterion design effectively handles false matches caused by noisy pose estimation or imperfect edge learning—the two criteria are complementary, one enforcing local distance constraints and the other enforcing global directional consistency.
+HE-adapting uses the learned heterogeneous edges as conduits for features to absorb cross-modal information. For a 2D region $\mathcal{I}_i$, features are aggregated from its 3D region neighbors via $\mathcal{E}_{I2P}$ to form a cross-modal message $\bar{\mathbf{m}}_i^I$. Cross-attention determines the relevance between this message and the 2D region's own feature. Finally, the original and message features are concatenated and fused via self-attention, then combined with the original feature using a ratio $\beta$. This injects geometric cues into 2D features and appearance cues into 3D features, bridging the modal gap and increasing correct match similarity.
+
+**4. HC-pruning: Filtering outliers via dual projection consistency**
+
+HC-pruning runs an initial RANSAC-PnP on matching results to obtain an initial pose $\tilde{\mathbf{T}}$, then verifies each correspondence using two criteria: (1) Local constraint: checking if the correspondence falls within the $\mathcal{E}_{I2P}$ adjacency and has a reprojection distance smaller than $\delta_{\text{rej}}$; (2) Global constraint: comparing cosine similarity of relative position vectors derived from graph projections. Correspondences meeting either criterion are retained as inliers, which are then used for a final refined PnP estimation.
 
 ### Loss & Training
 
 $$L_{\text{Hg-I2P}} = L_{\text{corr}} + \lambda_1 \|\hat{\mathbf{E}}_{I2P}[\text{mask}] - \mathbf{E}_{I2P}[\text{mask}]\|_2^2$$
 
-where $L_{\text{corr}}$ is the standard circle loss for correspondence supervision, and the second term supervises heterogeneous edge learning (computed only at valid non-zero positions).
+Where $L_{\text{corr}}$ is the standard circle loss for correspondences, and the second term supervises the learning of heterogeneous edges (calculated only on valid non-zero mask positions).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Cross-scene I2P registration on the 7-Scenes dataset (trained on one scene, tested on others):
+I2P registration performance on the 7-Scenes dataset (trained on one scene, tested on others):
 
 | Method | IR (C→) AVG | RR (C→) AVG | IR (K→) AVG | RR (K→) AVG |
-|--------|------------|------------|------------|------------|
+|------|------------|------------|------------|------------|
 | MATR | 0.387 | 0.478 | 0.537 | 0.706 |
 | Top-I2P | 0.433 | 0.628 | 0.596 | 0.785 |
 | MinCD | 0.445 | 0.592 | 0.568 | 0.814 |
 | Hg-I2P† (w/o HC-pruning) | 0.472 | 0.642 | 0.618 | 0.802 |
 | **Hg-I2P (Ours)** | **0.581** | **0.667** | **0.688** | **0.853** |
 
-Significant improvements are also observed under cross-dataset settings on RGBD-V2, ScanNet, and others.
-
 ### Ablation Study
 
-| Configuration | IR AVG | RR AVG | Note |
-|---------------|--------|--------|------|
-| Hg-I2P (full) | 0.581 | 0.667 | Full model |
-| Hg-I2P† (w/o HC-pruning) | 0.472 | 0.642 | Removing HC-pruning drops IR by 18.8% |
+| Configuration | IR AVG | RR AVG | Description |
+|------|--------|--------|------|
+| Hg-I2P (Full) | 0.581 | 0.667 | Full model |
+| Hg-I2P† (w/o HC-pruning) | 0.472 | 0.642 | Removed HC-pruning, IR drops by 18.8% |
 | Baseline MATR | 0.387 | 0.478 | Baseline method |
-
-The inclusion of HC-pruning yields approximately 23% improvement in IR and 4% in RR, demonstrating that graph-based correspondence pruning is critical for accurate registration.
 
 ### Key Findings
 
-- The unified heterogeneous graph framework significantly outperforms methods that only perform feature refinement or only perform correspondence pruning.
-- The advantage is more pronounced under cross-domain settings (training and testing on different datasets), validating the generalization capability of the proposed approach.
-- The heterogeneous edges learned by MP-mining are critical for both HE-adapting and HC-pruning—accurate 2D–3D region mapping forms the foundation of the entire system.
-- Compared to prior work that also uses SAM (e.g., An et al.), Hg-I2P more systematically leverages edge information and projection constraints through the graph structure.
+- The unified HG framework significantly outperforms methods that only perform feature refinement or only correspondence pruning.
+- The advantage is more pronounced in cross-domain settings, validating the method's generalization capability.
+- Heterogeneous edges learned via MP-mining are crucial for the effectiveness of both HE-adapting and HC-pruning.
 
 ## Highlights & Insights
 
-- **Heterogeneous graph as a unified framework**: Feature refinement and correspondence pruning, traditionally treated as separate problems, are unified within a single graph structure, elegantly avoiding the pitfalls of fragmented processing. Graph edges simultaneously serve feature propagation (HE-adapting) and geometric verification (HC-pruning), achieving dual objectives within a single structure.
-- **Bayesian interpretation of multi-path adjacency mining**: Treating homogeneous edges as conditional probabilities, the multi-path product corresponds to marginalization in Bayesian inference, providing an elegant theoretical grounding for relational learning on graphs.
-- **Coarse-to-fine cross-modal message passing**: Messages are first aggregated at the region level (coarse) and then interacted with original features at the pixel/point level (fine), balancing efficiency and accuracy.
+- **HG as a Unified Framework**: Unifying feature refinement and correspondence pruning into a single graph structure avoids the pitfalls of fragmented processing.
+- **Bayesian Interpretation of MP-mining**: Viewing homogeneous edges as conditional probabilities and multi-path products as marginalization provides an elegant theoretical basis for relationship learning.
+- **Coarse-to-Fine Messaging**: Messages aggregated at the region level (coarse) and refined at the pixel/point level (fine) balance efficiency and accuracy.
 
 ## Limitations & Future Work
 
-- The method depends on the segmentation quality of 2D/3D SAM—poor segmentation in certain scenes (e.g., texture-less regions) may degrade the quality of the heterogeneous graph construction.
-- HC-pruning requires an initial pose estimate from RANSAC-PnP; if the initial match quality is too low, the resulting erroneous pose may adversely affect subsequent pruning.
-- The number of graph vertices ($M + N$) depends on the segmentation granularity of SAM and may need to be adjusted for different scenes.
-- Runtime is not reported; whether the combined overhead of SAM, graph construction, and message passing is suitable for real-time applications remains an open question.
+- **SAM Dependency**: Performance relies on 2D/3D SAM segmentation quality.
+- **RANSAC Initialization**: HC-pruning requires an initial RANSAC-PnP pose; poor initial matching may lead to failed pruning.
+- **Computational Overhead**: The runtime for SAM, graph construction, and message passing needs to be optimized for real-time applications.
 
 ## Related Work & Insights
 
-- **vs. MinCD (Bie et al.)**: MinCD converts I2P registration into 3D–3D registration using DepthAnything, but predicted depth lacks real scale and requires additional alignment. Hg-I2P operates directly in the 2D–3D space, avoiding inaccuracies due to depth scale ambiguity.
-- **vs. An et al. (2024)**: Also uses SAM, but only for aligning object pairs to extract correspondences. Hg-I2P goes further by defining a heterogeneous graph structure that systematically exploits edge information for feature adaptation and pruning.
-- **vs. MATR**: MATR employs coarse-to-fine matching but lacks cross-modal reasoning; Hg-I2P explicitly introduces cross-modal information flow through graph message passing.
+- **vs MinCD (Bie et al.)**: MinCD converts I2P to 3D-3D registration, but predicted depth lacks scale. Hg-I2P operates directly in 2D-3D space.
+- **vs An et al. (2024)**: While both use SAM, Hg-I2P utilizes the graph structure more systematically for feature adaptation and pruning.
+- **vs MATR**: MATR lacks explicit cross-modal reasoning, which Hg-I2P provides via graph-based message passing.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Heterogeneous graphs for I2P registration offer a novel perspective; MP-mining and HE-adapting are elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Cross-domain experiments across six datasets provide comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ — Figures and tables are clear and derivations are detailed, though the paper is somewhat lengthy.
-- Value: ⭐⭐⭐⭐ — Provides a systematic solution to the generalization problem in I2P registration.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -145,10 +141,10 @@ The inclusion of HC-pruning yields approximately 23% improvement in IR and 4% in
 ## Related Papers
 
 - [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
-- [\[ICML 2026\] SplAttN: Bridging 2D and 3D with Gaussian Soft Splatting and Attention for Point Cloud Completion](../../ICML2026/3d_vision/splattn_bridging_2d_and_3d_with_gaussian_soft_splatting_and_attention_for_point_.md)
-- [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](../../ICCV2025/3d_vision/turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition](apc_adversarial_point_counterattack.md)
+- [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
+- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
+- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
 
 </div>
 

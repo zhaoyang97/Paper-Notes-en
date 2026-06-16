@@ -2,139 +2,163 @@
 title: >-
   [Paper Note] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 description: >-
-  [CVPR 2026][Audio & Speech][Video-to-Audio Generation] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework…
+  [CVPR 2026][Audio & Speech][Diffusion Model] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework. Utilizing a TriAttn-DiT architecture with tri-way cross-attention and a MoE gating mechanism, it achieves the unified synthesis of on-screen/off-screen ambient sounds and human speech for the first time, significant
 tags:
-  - "CVPR 2026"
-  - "Audio & Speech"
-  - "Video-to-Audio Generation"
-  - "Holistic Audio"
-  - "Diffusion Models"
-  - "Speech Synthesis"
-  - "Mixture of Experts"
+  - CVPR 2026
+  - Audio & Speech
+  - Diffusion Model
 date: 2026-05-08
-content_hash: fb18aa1ad9821017
+content_hash: e9d06bf5aef94c49
 ---
-
 # OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04348](https://arxiv.org/abs/2604.04348)  
 **Code**: [https://weiguopian.github.io/OmniSonic_webpage/](https://weiguopian.github.io/OmniSonic_webpage/)  
-**Area**: Audio Generation / Multimodal
-**Keywords**: Video-to-Audio Generation, Holistic Audio, Diffusion Models, Speech Synthesis, Mixture of Experts
+**Area**: Audio Generation / Multimodal  
+**Keywords**: Video-to-Audio Generation, Holistic Audio, Diffusion Models, Speech Synthesis, Mixture-of-Experts
 
 ## TL;DR
 
-This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework, which employs a TriAttn-DiT architecture with triple cross-attention and MoE gating to simultaneously generate on-screen environmental sound, off-screen environmental sound, and human speech within a unified audio synthesis pipeline, achieving comprehensive state-of-the-art performance on the newly constructed UniHAGen-Bench.
+This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework. Utilizing a TriAttn-DiT architecture with tri-way cross-attention and a MoE gating mechanism, it achieves the unified synthesis of on-screen/off-screen ambient sounds and human speech for the first time, significantly outperforming SOTA models on the newly constructed UniHAGen-Bench.
 
 ## Background & Motivation
 
-1. **Background**: Diffusion models have achieved notable progress in audio generation. V2A (Video-to-Audio) methods such as Diff-Foley and MMAudio have continuously improved audio quality and semantic alignment. Joint text-video-to-audio (VT2A) methods such as VinTAGe have begun to consider both on-screen and off-screen sounds simultaneously.
+1.  **Background**: Diffusion models have made significant progress in audio generation. V2A (Video-to-Audio) methods like Diff-Foley and MMAudio have continuously improved in quality and semantic alignment. Joint text-video-to-audio (VT2A) methods like VinTAGe have begun to consider both on-screen and off-screen sounds.
 
-2. **Limitations of Prior Work**: (1) V2A models can only generate sounds corresponding to visible events in the video frame, neglecting off-screen auditory events; (2) VT2A models, while considering both on-screen and off-screen sounds, are limited to environmental sounds and cannot generate human speech; (3) ambient speech generation models (e.g., VoiceLDM) rely solely on text input and lack visual grounding.
+2.  **Limitations of Prior Work**: (1) V2A models only generate sounds corresponding to visible events, ignoring off-screen auditory events; (2) VT2A models, while considering off-screen sounds, are limited to ambient audio and cannot generate human speech; (3) Environmental speech generation models (e.g., VoiceLDM) rely solely on text input and lack visual grounding.
 
-3. **Key Challenge**: Real-world auditory scenes are complex—a speaking person in the foreground may be accompanied by birdsong or machinery in the background. No existing model can handle the full combinatorial space of "environmental sound + speech + on/off-screen" within a unified framework.
+3.  **Key Challenge**: Real-world auditory scenes are complex—a person speaking might have birds chirping in front of them or machine noise in the background. Existing models cannot handle all permutations of "Ambient + Speech + On/Off-screen" within a unified framework.
 
-4. **Goal**: Define a new task, UniHAGen, requiring a model to simultaneously generate a mixture of three sound sources: on-screen environmental sound, off-screen environmental sound, and human speech.
+4.  **Goal**: Define a new task, UniHAGen, which requires the model to simultaneously generate integrated audio from three sources: on-screen ambient sound, off-screen ambient sound, and human speech.
 
-5. **Key Insight**: Decompose the problem into three conditioning streams (on-screen environmental description, off-screen environmental description, and speech transcription), design dedicated triple cross-attention mechanisms to process each independently, and dynamically fuse them via MoE gating.
+5.  **Key Insight**: Decompose the problem into three conditional paths (on-screen ambient description, off-screen ambient description, speech transcript). Design a specialized tri-way cross-attention mechanism to process them separately, followed by dynamic fusion via MoE gating.
 
-6. **Core Idea**: Employ TriAttn-DiT triple cross-attention to process on-screen environmental sound, off-screen environmental sound, and speech conditions separately, and use MoE gating to adaptively balance the contribution of each stream, enabling holistic audio generation.
+6.  **Core Idea**: Use TriAttn-DiT tri-way cross-attention to handle on-screen ambient, off-screen ambient, and speech conditions respectively. Adaptively balance the contributions of the three paths through MoE gating to achieve holistic audio generation.
 
 ## Method
 
 ### Overall Architecture
 
-OmniSonic operates within a Flow Matching diffusion framework, performing denoising in the latent space of an audio VAE. The input conditions consist of four components: video frames (CLIP visual encoder), on-screen environmental sound description (FLAN-T5), off-screen environmental sound description (FLAN-T5), and speech transcription (SpeechT5 + Durator). The core module is TriAttn-DiT, which stacks multiple blocks to predict the velocity field in the audio latent space. During inference, an ODE solver generates the audio latent representation from noise, which is then decoded by the VAE decoder and HiFi-GAN vocoder to recover the waveform.
+OmniSonic aims to generate three types of sounds existing simultaneously in real auditory scenes—ambient sounds from visible on-screen events, invisible off-screen ambient sounds, and speech from people in the frame—within a single model. It is based on a Flow Matching diffusion framework, denoising in the latent space of an audio VAE. There are four conditional signals: video frames via a CLIP visual encoder, on-screen and off-screen ambient descriptions via FLAN-T5, and speech transcripts via SpeechT5 with a Durator encoder. These four paths are fed into the core TriAttn-DiT, which stacks multiple blocks to predict the velocity field in the latent space. During inference, an ODE solver integrates the audio latent representation from noise, which is then restored to a waveform by the VAE decoder and HiFi-GAN vocoder. The key methodological innovations are concentrated within the TriAttn-DiT: processing three acoustically distinct conditions separately, fusing them dynamically according to the scene, and aligning them frame-by-frame to the visuals.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    V["Video Frames → CLIP Visual Encoder"]
+    ON["On-screen Ambient → FLAN-T5"]
+    OFF["Off-screen Ambient → FLAN-T5"]
+    SP["Speech Transcript → SpeechT5 + Durator"]
+    X["Noisy Audio Latent<br/>(VAE Latent Space)"]
+
+    subgraph TRI["TriAttn-DiT Tri-way Cross-Attention"]
+        direction TB
+        CON["On-screen Ambient Path CA_env"]
+        COFF["Off-screen Ambient Path CA_env"]
+        CSP["Speech Path CA_speech"]
+    end
+
+    X --> TRI
+    ON --> CON
+    OFF --> COFF
+    SP --> CSP
+    V -->|"On-screen desc non-empty → Bind to Ambient Path"| CON
+    V -->|"On-screen desc empty → Bind to Speech Path"| CSP
+
+    CON --> MOE
+    COFF --> MOE
+    CSP --> MOE
+    MOE["MoE Gating Fusion<br/>Condition tokens → Softmax Weights → Weighted Velocity"]
+    MOE --> ADA["Frame-Aligned adaLN<br/>Visual upsampling to audio rate, frame-wise scale/shift"]
+    ADA --> ODE["ODE Solver → VAE Decoder → HiFi-GAN"]
+    ODE --> OUT["Mixed: On/Off-screen Ambient + Speech"]
+```
 
 ### Key Designs
 
-1. **TriAttn-DiT Triple Cross-Attention**:
+**1. TriAttn-DiT Tri-way Cross-Attention: Preventing Interference between Ambient and Speech**
 
-    - Function: Processes the interaction between each of the three conditioning signals (on-screen environment, off-screen environment, speech) and the audio latent representation independently.
-    - Mechanism: Visual features $\mathbf{c}_v$ are selectively concatenated with the corresponding condition depending on whether the on-screen environmental description is empty—if non-empty, visual features are concatenated with the on-screen condition; otherwise, they are concatenated with the speech condition. Three independent cross-attention operations are performed: $\mathbf{x}_t^{on} = \text{CA}_{env}(\text{RoPE}(\mathbf{x}_t), \text{RoPE}(\mathbf{c}^{on}_{txt,v}[L_{on}:,:]), \mathbf{c}^{on}_{txt,v})$, with analogous treatment for off-screen and speech streams. RoPE is applied only to visual tokens to encode temporal positional information.
-    - Design Motivation: Environmental sounds and speech exhibit vastly different acoustic characteristics; sharing attention layers leads to mutual interference. Separate processing allows each stream to focus on its own semantic alignment.
+Merging ambient sound and speech into the same attention layer leads to mutual contamination—their acoustic statistics differ significantly, and shared Q/K/V projections cannot learn alignments optimized for both. OmniSonic separates cross-attention into three paths: ambient (on-screen / off-screen) and speech follow independent routes, performing cross-attention only with their respective conditions ($\text{CA}_{env}$ or $\text{CA}_{speech}$). For example, the on-screen path is $\mathbf{x}_t^{on} = \text{CA}_{env}(\text{RoPE}(\mathbf{x}_t), \text{RoPE}(\mathbf{c}^{on}_{txt,v}[L_{on}:,:]), \mathbf{c}^{on}_{txt,v})$, with similar logic for off-screen and speech.
 
-2. **MoE Gating Fusion Mechanism**:
+A simple but crucial visual binding rule is applied: visual features $\mathbf{c}_v$ are not concatenated to all paths simultaneously. Instead, if the on-screen ambient description is non-empty (sound events in the frame), visuals are bound to the on-screen ambient path. If empty (the frame shows a speaking person), visuals are bound to the speech path. This allows the model to explicitly determine whether the subject in the frame is a sound source or a speaker, routing visual grounding to the correct condition. RoPE is only added to the visual token portion to encode temporal positions, ensuring subsequent alignment with audio frames.
 
-    - Function: Adaptively balances the contribution weights of the three cross-attention outputs.
-    - Mechanism: A representative token is obtained by averaging along the sequence dimension for each of the three conditioning embeddings; these are concatenated and passed through an MLP + Softmax to produce three normalized weights $[\omega^{sp}, \omega^{on}, \omega^{off}]$. The final velocity prediction is obtained by weighted summation: $\mathbf{v}_t = \omega^{sp}\mathbf{x}_t^{sp} + \omega^{on}\mathbf{x}_t^{on} + \omega^{off}\mathbf{x}_t^{off}$
-    - Design Motivation: The relative importance of the three sound sources varies across scenarios (e.g., purely environmental scenes vs. speech-dominant scenes), and static weights cannot accommodate this variability.
+**2. MoE Gating Fusion: Dynamically Determining Path Priority**
 
-3. **Frame-Aligned Adaptive Layer Normalization**:
+After calculating the three paths separately, they must be synthesized into a single velocity prediction. However, the importance of these three sources varies across scenes—in purely ambient clips, the speech path should be silent, whereas in a speech-dominant interview, ambient sound is merely background. Fixed-weight summation cannot adapt to these transitions, so a lightweight MoE gate generates dynamic weights: representative tokens are obtained by averaging condition embeddings along the sequence dimension, concatenated, and passed through an MLP with Softmax to obtain normalized $[\omega^{sp}, \omega^{on}, \omega^{off}]$. The final velocity is the weighted sum:
 
-    - Function: Enhances temporal alignment between generated audio and video frames.
-    - Mechanism: Visual condition $\mathbf{c}_v$ is projected into the same space as the timestep embedding and added to it to form $\mathbf{c}_{vt}$, which is then upsampled via nearest-neighbor interpolation to the audio temporal resolution, producing per-frame adaLN parameters $[\alpha_1, \beta_1, \gamma_1, \alpha_2, \beta_2, \gamma_2]$.
-    - Design Motivation: Per-frame modulation ensures precise alignment between audio features and their corresponding video frames, improving temporal synchronization.
+$$\mathbf{v}_t = \omega^{sp}\mathbf{x}_t^{sp} + \omega^{on}\mathbf{x}_t^{on} + \omega^{off}\mathbf{x}_t^{off}$$
+
+Driven by the conditions themselves, this gating allows the model to adaptively transition between "amplifying the speech path when speech is needed" and "suppressing it for silence."
+
+**3. Frame-Aligned Adaptive Layer Normalization: Pinning Audio to Video Frame-by-Frame**
+
+Video and audio have different temporal resolutions. Using a single global visual vector to modulate the entire audio segment often leads to synchronization errors. Here, the visual condition $\mathbf{c}_v$ is projected into the same space as the timestep embedding and added to form $\mathbf{c}_{vt}$. This is then upsampled to the audio temporal resolution using nearest-neighbor interpolation, generating frame-wise adaLN parameters $[\alpha_1, \beta_1, \gamma_1, \alpha_2, \beta_2, \gamma_2]$. Each frame of audio features is modulated by the scale/shift generates from the corresponding video frame, refining synchronization from "global alignment" to "frame-level alignment."
 
 ### Loss & Training
 
-The Flow Matching objective is used: $\mathcal{L}_{FM} = \mathbb{E}_{t, \mathbf{x}_0, \mathbf{x}_1}[\|\mathcal{V}_\theta(\mathbf{x}_t, t) - (\mathbf{x}_1 - \mathbf{x}_0)\|_2^2]$
-
-Training data are synthesized from VGGSound (~195K environmental sound clips), LRS3 (~33K speech videos), and CommonVoice (~1.67M speech recordings), mixed at random SNR levels. FLAN-T5 and the CLIP visual encoder are frozen; SpeechT5 and Durator are trainable.
+The model uses a Flow Matching objective $\mathcal{L}_{FM} = \mathbb{E}_{t, \mathbf{x}_0, \mathbf{x}_1}[\|\mathcal{V}_\theta(\mathbf{x}_t, t) - (\mathbf{x}_1 - \mathbf{x}_0)\|_2^2]$, where the network regresses the velocity field from noise $\mathbf{x}_0$ to data $\mathbf{x}_1$. Training data is synthesized by mixing VGGSound (~195K ambient), LRS3 (~33K speech video), and CommonVoice (~1.67M speech) at random SNR levels to mimic the distribution of overlapping speech and ambient sounds in real scenes. During training, FLAN-T5 and the CLIP visual encoder are frozen, while SpeechT5 and the Durator are fine-tuned.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Objective evaluation on UniHAGen-Bench (1,003 samples, 3 scenario types):
+Objective evaluation on UniHAGen-Bench (1003 samples, 3 scenes):
 
 | Method | FAD↓ | MKL↓ | Mean(AT+AV)↑ | WER↓ | DeSync↓ |
 |------|------|------|-------------|------|---------|
 | VoiceLDM | 3.58 | 5.74 | 14.03 | 0.15 | 1.25 |
 | MMAudio | 5.82 | 5.60 | 17.25 | 1.50 | **0.51** |
 | HunyuanVideo-Foley | 6.00 | 5.88 | 16.95 | 1.36 | 0.38 |
-| **OmniSonic** | **3.07** | **2.79** | **18.54** | **0.14** | 0.72 |
+| **Ours** | **3.07** | **2.79** | **18.54** | **0.14** | 0.72 |
 
-Subjective MOS evaluation:
+Subjective MOS Evaluation:
 
 | Method | MOS-Q↑ | MOS-EF↑ | MOS-SF↑ | MOS-T↑ |
 |------|--------|---------|---------|--------|
 | VoiceLDM | 3.13 | 3.40 | 4.05 | 2.54 |
 | MMAudio | 3.74 | 3.24 | 1.15 | 3.71 |
-| **OmniSonic** | **4.35** | **4.42** | **4.74** | **4.29** |
+| **Ours** | **4.35** | **4.42** | **4.74** | **4.29** |
 
 ### Ablation Study
 
 | Configuration | FAD↓ | Mean↑ | WER↓ | DeSync↓ |
 |------|------|-------|------|---------|
-| OmniSonic (full) | 3.07 | 18.54 | 0.14 | 0.72 |
+| Ours (Full) | 3.07 | 18.54 | 0.14 | 0.72 |
 | w/o MoE Gating | 6.12 | 15.94 | 0.56 | 1.23 |
 
 ### Key Findings
 
-- Removing MoE gating doubles FAD from 3.07 to 6.12 and increases WER from 0.14 to 0.56 (4×), demonstrating that the gating mechanism is critical for multi-source balance.
-- OmniSonic lags behind MMAudio and HunyuanVideo-Foley on DeSync, as the latter two utilize temporally fine-grained visual features from Synchformer, whereas OmniSonic relies solely on CLIP features.
-- MMAudio and HunyuanVideo-Foley achieve MOS-SF (speech fidelity) scores of only 1.15 and 1.17, respectively, indicating an almost complete inability to generate speech; VoiceLDM produces good speech but poor environmental sound (MOS-EF 3.40).
-- Qualitative analysis with manual suppression of individual MoE branches shows that suppressing the speech branch eliminates speech generation and suppressing the environmental branch removes background sound, validating the functional specialization of each branch.
+- Removing MoE gating doubles the FAD from 3.07 to 6.12 and increases WER fourfold from 0.14 to 0.56, proving the gearing mechanism's necessity for multi-source balance.
+- OmniSonic is slightly inferior to MMAudio and HunyuanVideo-Foley in DeSync, as the latter use Synchformer for fine-grained temporal features, while OmniSonic uses only CLIP features.
+- MMAudio and HunyuanVideo-Foley have extremely low MOS-SF (1.15/1.17), failing to generate speech; VoiceLDM generates good speech but poor ambient sound (MOS-EF 3.40).
+- Visualizing MoE branches shows that manually suppressing the speech branch results in no speech output, while suppressing the ambient branch loses background sounds, verifying the functional specialization of each path.
 
 ## Highlights & Insights
 
-- **Forward-looking task definition**: UniHAGen defines three scenario types spanning "on/off-screen × environmental sound/speech," becoming the first framework to incorporate speech into holistic audio generation and filling an important gap in the field.
-- **Elegant TriAttn-DiT design**: The architecture of three independent attention streams combined with a shared MoE gating mechanism ensures both independent processing of each sound source condition and dynamic fusion, avoiding inter-condition interference.
-- **Dynamic visual-condition binding**: The decision to bind visual features with environmental descriptions or speech transcription based on whether the on-screen description is empty is a concise and effective design that distinguishes "sound-event-producing objects" from "speaking persons" in the scene.
-- The paradigm of multi-stream attention combined with MoE gating is transferable to other generative tasks requiring the handling of multiple heterogeneous conditions.
+- **Forward-looking Task Definition**: UniHAGen defines three "On/Off-screen × Ambient/Speech" scenarios, incorporating speech into holistic audio generation for the first time.
+- **Elegant TriAttn-DiT Design**: The architecture of three independent attention paths + shared MoE gating ensures specialized processing of diverse conditions while enabling dynamic fusion without interference.
+- **Dynamic Visual-Condition Binding**: Determining whether visual features bind to ambient or speech descriptions based on whether the on-screen description is empty effectively distinguishes between "sound events" and "speakers" in the frame.
+- This multi-path attention + MoE gating paradigm can be transferred to other generation tasks requiring the processing of heterogeneous conditions.
 
 ## Limitations & Future Work
 
-- Temporal synchronization (DeSync) is inferior to methods using Synchformer; introducing finer-grained temporal visual features may improve this.
-- Training data consist of synthetic mixtures; the spatial distribution and reverberation characteristics of sound sources in real-world scenes are not modeled.
-- Only 10-second audio generation is supported; coherence over longer durations has not been validated.
-- Speech quality is strong but has not been rigorously compared against dedicated TTS systems.
-- UniHAGen-Bench contains only 1,003 samples, limiting the scale of evaluation.
+- Temporal synchronization (DeSync) is lower than methods using Synchformer; introducing finer-grained temporal visual features could improve this.
+- Training data consists of synthetic mixtures; spatial distribution and reverberation in real scenes are not explicitly modeled.
+- Currently supports only 10-second generation; consistency for longer audio remains unverified.
+- Speech quality is high but lacks detailed comparison against specialized SOTA TTS systems.
 
 ## Related Work & Insights
 
-- **vs. MMAudio**: MMAudio employs a multimodal DiT to jointly model video and text but targets environmental sounds only; OmniSonic extends this to the speech domain via triple cross-attention while also achieving superior environmental sound quality.
-- **vs. VoiceLDM**: VoiceLDM is a purely text-conditioned speech generation system lacking visual grounding; OmniSonic incorporates video conditioning to distinguish between on-screen and off-screen sound sources.
-- **vs. VinTAGe**: VinTAGe introduced the concept of "holistic" audio generation but is limited to environmental sounds; OmniSonic achieves true holistic coverage by encompassing both environmental sounds and speech.
+- **vs MMAudio**: MMAudio uses a multimodal DiT for joint video-text modeling but only for ambient sound; OmniSonic expands to speech via tri-way attention and provides better ambient quality.
+- **vs VoiceLDM**: VoiceLDM is purely text-conditioned speech generation lacking visual grounding; OmniSonic uses video to distinguish between on-screen and off-screen sources.
+- **vs VinTAGe**: VinTAGe introduced "panoramic" audio generation but limited it to ambient sound; OmniSonic achieves true holistic coverage by including both ambient and speech.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The UniHAGen task definition and TriAttn-DiT architecture are both highly novel; the MoE gating mechanism further enhances the contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive objective and subjective evaluation with ablations validating core components, though the benchmark scale is relatively small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem definition is clear, method descriptions are detailed, and qualitative analysis is thorough.
-- Value: ⭐⭐⭐⭐ Fills the gap of unified "environmental sound + speech" generation in the audio generation field, with direct applicability to film and television post-production.
+- Novelty: ⭐⭐⭐⭐ UniHAGen task and TriAttn-DiT are novel; MoE gating is a significant addition.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Objective and subjective evaluations are comprehensive; core components are validated via ablation, though benchmarks are somewhat small.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, detailed methodology, and rich qualitative analysis.
+- Value: ⭐⭐⭐⭐ Fills a significant gap in unified "Ambient + Speech" generation with direct applications in film post-production.
 
 <!-- RELATED:START -->
 
@@ -142,11 +166,11 @@ Subjective MOS evaluation:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2025\] VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](../../CVPR2025/audio_speech/vintage_joint_video_and_text_conditioning_for_holistic_audio_generation.md)
+- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
 - [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](../../NeurIPS2025/audio_speech/node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
-- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
-- [\[ACL 2026\] ControlAudio: Tackling Text-Guided, Timing-Indicated and Intelligible Audio Generation via Progressive Diffusion Modeling](../../ACL2026/audio_speech/controlaudio_tackling_text-guided_timing-indicated_and_intelligible_audio_genera.md)
+- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
 
 </div>
 

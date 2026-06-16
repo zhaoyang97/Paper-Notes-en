@@ -2,82 +2,106 @@
 title: >-
   [Paper Note] Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 description: >-
-  [ACL 2026][Model Compression][Learned Data Compression] This paper proposes the FADE framework, which separates microscopic syntax and macroscopic semantic features into parallel shallow streams for processing (replacing…
+  [ACL 2026][Model Compression][Paper Note] This paper proposes the FADE framework, which separates micro-syntax and macro-semantic features into parallel shallow streams using a Dual-stream Multi-scale Decoupler (replacing deep serial stacking). Combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, it achieves SOTA performance in
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "Learned Data Compression"
-  - "Dual-Stream Feature Decoupling"
-  - "Probability Modeling"
-  - "Parallel Pipeline"
-  - "Lossless Compression"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: b8d62ef27e09fe8a
+content_hash: 0bf892ecb1963ef7
 ---
-
 # Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.07239](https://arxiv.org/abs/2604.07239)  
 **Code**: [https://github.com/huidong-ma/FADE](https://github.com/huidong-ma/FADE)  
 **Area**: Model Compression / Data Compression  
-**Keywords**: Learned Data Compression, Dual-Stream Feature Decoupling, Probability Modeling, Parallel Pipeline, Lossless Compression
+**Keywords**: Learned Data Compression, Dual-Stream Feature Decoupling, Probabilistic Modeling, Concurrent Pipeline, Lossless Compression
 
 ## TL;DR
-This paper proposes the FADE framework, which separates microscopic syntax and macroscopic semantic features into parallel shallow streams for processing (replacing deep serial stacks) via a Dual-stream Multi-scale Decoupler. Combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, it achieves SOTA performance in both compression ratio and throughput.
+This paper proposes the FADE framework, which separates micro-syntax and macro-semantic features into parallel shallow streams using a Dual-stream Multi-scale Decoupler (replacing deep serial stacking). Combined with a Hierarchical Gated Refiner and a Concurrent Stream Parallel Pipeline, it achieves SOTA performance in both compression ratio and throughput.
 
 ## Background & Motivation
 
-**Background**: Learned Data Compression (LDC) leverages deep learning for probability prediction, significantly outperforming traditional methods (Gzip, zstd, etc.) in compression ratios. Mainstream methods utilize autoregressive frameworks—predicting the conditional probability distribution $P(x_t|x_{<t})$ at each step, followed by entropy coding.
+**Background**: Learned Data Compression (LDC) leverages deep learning for probability estimation and has significantly surpassed traditional methods (e.g., Gzip, zstd) in compression ratios. Mainstream methods utilize autoregressive frameworks—predicting the conditional probability distribution $P(x_t|x_{<t})$ at each step, followed by entropy coding.
 
-**Limitations of Prior Work**: Two structural constraints exist: (1) Single-stream architectures struggle to simultaneously capture microscopic syntax (local N-gram patterns) and macroscopic semantics (long-range dependencies), forcing the use of deep MLP stacks to approximate complex distributions, which exacerbates autoregressive decoding latency; (2) Speed mismatch between GPU probability generation and CPU arithmetic coding in heterogeneous systems causes pipeline stalls, while serial autoregressive decoding is strictly limited by Amdahl’s law, preventing parallel acceleration.
+**Limitations of Prior Work**: Two structural limitations exist: (1) Single-stream architectures struggle to simultaneously capture micro-syntax (local N-gram patterns) and macro-semantics (long-range dependencies), forcing the use of deep MLP stacks to approximate complex distributions, which exacerbates autoregressive decoding latency; (2) The speed mismatch between GPU probability generation and CPU arithmetic coding in heterogeneous systems leads to pipeline stalls, while autoregressive serial decoding is strictly constrained by Amdahl's Law, preventing parallel acceleration.
 
-**Key Challenge**: Precise probability modeling (high compression ratio) requires deep networks, but deep serial execution leads to high latency. Analysis of mutual information decay curves reveals that data sequences indeed exhibit two distinct dependency patterns: "microscopic syntax" (sharp initial decay) and "macroscopic semantics" (sustained non-zero tail). Single-stream MLPs use shared parameters to fit these heterogeneous features, leading to significant distribution dispersion.
+**Key Challenge**: Accurate probabilistic modeling (high compression ratio) requires deep networks, yet deep serial execution leads to high latency. Analysis of mutual information decay curves reveals that data sequences indeed exhibit two distinct dependency patterns: "micro-syntax" (sharp initial decay) and "macro-semantics" (persistent non-zero tail). Single-stream MLPs use shared parameters to fit these heterogeneous features, leading to significant distribution dispersion.
 
-**Goal**: Substantially reduce latency and increase throughput while maintaining or improving the compression ratio.
+**Goal**: Significantly reduce latency and improve throughput while maintaining or enhancing compression ratios.
 
-**Key Insight**: An information-theoretic analysis of the dual dependency patterns justifies the design of explicit feature decoupling—replacing deep serial layers with shallow parallel streams to address both model and system-level bottlenecks.
+**Key Insight**: Data's dual dependency patterns are analyzed from an information-theoretic perspective to design explicit feature decoupling—replacing deep serial structures with shallow parallel ones to resolve bottlenecks at both the model and system levels.
 
-**Core Idea**: Use a CNN branch to capture microscopic local patterns and an MLP branch to capture macroscopic global dependencies. These are fused dynamically via a content-adaptive router, followed by instance-adaptive refinement using a Hierarchical Gated Refiner.
+**Core Idea**: Use a CNN branch to capture micro-local patterns and an MLP branch to capture macro-global dependencies, dynamically fusing them via a content-adaptive router, followed by instance-adaptive refinement using a Hierarchical Gated Refiner.
 
 ## Method
 
 ### Overall Architecture
-FADE consists of three core innovations: (1) Dual-stream Multi-scale Decoupler (DMD) separates features into a local CNN stream and a global MLP stream for parallel processing; (2) Hierarchical Gated Refiner (HGR) achieves instance-adaptive probability modeling through coarse-to-fine refinement; (3) Concurrent Stream Parallel Pipeline (CSPP) integrates data and temporal parallelism for zero-wait processing.
+FADE comprises three core innovations: (1) Dual-stream Multi-scale Decoupler (DMD) separates features into local CNN and global MLP streams for parallel processing; (2) Hierarchical Gated Refiner (HGR) implements instance-adaptive probabilistic modeling through coarse-to-fine refinement; (3) Concurrent Stream Parallel Pipeline (CSPP) integrates data and temporal parallelism to achieve zero-wait processing. The first two innovations replace "deep serial" structures with "shallow parallel + instance-adaptive refinement" at the model level to improve compression and expressiveness, while the third resolves the pipeline bottleneck between GPU probability generation and CPU arithmetic coding and bypasses autoregressive causal dependencies to boost throughput.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Data Sequence<br/>Text / Audio / Genome etc."] --> DMD
+    subgraph DMD["Dual-stream Multi-scale Decoupler (DMD)"]
+        direction TB
+        G["Global Stream<br/>GeGLU Rolling Cache for Long-range"]
+        L["Local Stream<br/>1D CNN for N-grams"]
+        G --> R["Content-adaptive Router<br/>Sigmoid Gated Dimension-wise Fusion"]
+        L --> R
+    end
+    DMD -->|Fused Feature H_mix| HGR
+    subgraph HGR["Hierarchical Gated Refiner (HGR)"]
+        direction TB
+        C["Coarse Refinement<br/>BMM + Persistent Memory, Stream-specific Weights"]
+        F["Fine Refinement<br/>GeGLU Projection Nonlinear Refinement"]
+        C --> F
+    end
+    HGR --> P["Step-wise Conditional Probability Distribution"]
+    P --> CSPP
+    subgraph CSPP["Concurrent Stream Parallel Pipeline (CSPP)"]
+        direction TB
+        GPU["GPU Producer<br/>Async Ping-pong Buffering"]
+        GPU -->|Zero-copy Pointer Swapping| CPU["CPU Consumer<br/>Arithmetic Coding"]
+    end
+    CSPP --> OUT["Compressed Stream<br/>Splitting into N Sub-streams, Decoding matches Encoding"]
+```
 
 ### Key Designs
 
-1. **Dual-stream Multi-scale Decoupler (DMD)**:
+**1. Dual-stream Multi-scale Decoupler (DMD): Separating micro-syntax and macro-semantics into two non-interfering parallel shallow streams.**
 
-    - **Function**: Separates microscopic syntax and macroscopic semantic features into parallel streams with different inductive biases, replacing deep serial stacking.
-    - **Mechanism**: The global stream uses a GeGLU-based Rolling Cache to capture long-range dependencies, maintained via a rolling cache $\bm{M}$ updated as $\bm{M}_t = \text{Roll}(\bm{M}_{t-1}, \text{GeGLU}(\bm{X}_t))$. The local stream applies 1D convolutions to enforce strong local inductive biases for N-gram patterns. A content-adaptive router generates dimension-wise mixing weights via a Sigmoid gate: $\bm{H}_{\text{mix}} = \bm{\alpha} \odot \bm{H}_{\text{global}} + (1-\bm{\alpha}) \odot \bm{H}_{\text{local}}$.
-    - **Design Motivation**: Mutual information decay analysis and feature saliency heatmaps confirm that single-stream MLP saliency is dispersed, failing to capture sharp microscopic fluctuations. Two parallel shallow streams replace one deep serial stream, resolving both feature interference and latency issues.
+The fundamental issue with single-stream MLPs is that mutual information decay analysis and feature saliency heatmaps confirm data sequences possess two heterogeneous patterns: "micro-syntax" (local N-grams, corresponding to the sharp initial segment of the decay curve) and "macro-semantics" (long-range dependencies, corresponding to the persistent non-zero tail). When shared-parameter MLPs fit both, saliency distribution disperses, failing to capture sharp syntactic fluctuations and requiring deep stacking for approximation, which slows down autoregressive decoding. DMD assigns two shallow streams with different inductive biases: the global stream uses a GeGLU-based Rolling Cache to capture long-range dependencies, maintaining a rolling cache $\bm{M}$ updated at each step as $\bm{M}_t = \text{Roll}(\bm{M}_{t-1}, \text{GeGLU}(\bm{X}_t))$; the local stream uses 1D convolutions to impose strong local inductive biases for precise N-gram locking. The outputs are fused dimension-wise via a content-adaptive router with Sigmoid gating:
 
-2. **Hierarchical Gated Refiner (HGR)**:
+$$\bm{H}_{\text{mix}} = \bm{\alpha} \odot \bm{H}_{\text{global}} + (1-\bm{\alpha}) \odot \bm{H}_{\text{local}}$$
 
-    - **Function**: Performs coarse-to-fine instance-adaptive refinement on the fused DMD features to improve probability estimation accuracy.
-    - **Mechanism**: A two-stage cascade: (a) Coarse-grained channel interaction: uses Batch Matrix Multiplication (BMM) with persistent memory $\bm{W}_U \in \mathbb{R}^{B \times d_h \times d_h}$, where each batch index corresponds to a fixed data stream to capture stream-specific patterns through backpropagation; then utilizes content-aware self-gating $\bm{H}_{\text{coarse}} = (\bm{H}_a \odot \sigma(\bm{H}_{\text{mix}} \bm{W}_c)) + \lambda_c \cdot \bm{H}_{\text{mix}}$ to suppress noise. (b) Fine-grained non-linear refinement: further refined through GeGLU and projections.
-    - **Design Motivation**: Globally shared DMD parameters struggle with non-stationary feature distributions in online compression. Persistent memory allows "each stream to remember its own patterns," while gating selectively enhances useful features.
+The key lies in "replacing one deep serial stream with two parallel shallow streams"—eliminating feature interference and trading depth for width, which significantly reduces latency without loss of expressiveness.
 
-3. **Concurrent Stream Parallel Pipeline (CSPP)**:
+**2. Hierarchical Gated Refiner (HGR): Coarse-to-fine instance-adaptive refinement to memorize the characteristics of each data stream.**
 
-    - **Function**: Overcomes serial autoregressive constraints to achieve full-pipeline parallelism for compression and decompression.
-    - **Mechanism**: Two dimensions of parallelism: (a) Temporal parallelism: asynchronous ping-pong buffers decouple GPU and CPU producer-consumer threads, with zero-copy pointer exchanges eliminating memory contention; (b) Data parallelism: the input stream is split into $N$ independent sub-streams, each maintaining internal causality, where $N$ workers execute concurrently via a double-barrier protocol, reducing complexity from $O(B)$ to $O(B/N)$.
-    - **Design Motivation**: Existing methods utilize temporal parallelism during compression but revert to serial execution during decompression due to autoregressive causality. CSPP bypasses global causal dependencies through sub-stream partitioning, matching decompression speed with compression speed.
+DMD uses globally shared parameters, but in online compression, feature distributions are non-stationary; statistical properties vary greatly across data streams (text, audio, genomes). HGR bridges this gap using a two-stage cascade. The coarse-grained stage handles channel interaction: using Batch Matrix Multiplication (BMM) with persistent memory $\bm{W}_U \in \mathbb{R}^{B \times d_h \times d_h}$, each batch index is bound to a fixed data stream, allowing stream-specific patterns to evolve through backpropagation. Noise is suppressed via content-aware self-gating:
+
+$$\bm{H}_{\text{coarse}} = \big(\bm{H}_a \odot \sigma(\bm{H}_{\text{mix}} \bm{W}_c)\big) + \lambda_c \cdot \bm{H}_{\text{mix}}$$
+
+The fine-grained stage performs nonlinear refinement via GeGLU and projection. This combination of "one learnable weight per stream + gated selective enhancement" functions as an adaptive layer atop the shared backbone, providing more accurate estimation than global parameters.
+
+**3. Concurrent Stream Parallel Pipeline (CSPP): Bypassing autoregressive causal dependencies to align decompression with compression speeds.**
+
+The system-level challenge is that compression benefits from temporal parallelism, but decompression reverts to serial execution due to autoregressive causality (Amdahl's Law), compounded by the speed mismatch between GPU probability generation and CPU arithmetic coding. CSPP introduces parallelism in two dimensions. In the temporal dimension, async ping-pong buffers decouple GPU producer threads from CPU consumer threads, using zero-copy pointer swapping to eliminate memory contention. In the data dimension, the input stream is split into $N$ independent sub-streams maintaining internal causality; $N$ workers execute concurrently via a double-barrier protocol, reducing complexity from $O(B)$ to $O(B/N)$. During compression, both parallelisms are active; during decompression, since sub-stream splitting bypasses global causal dependencies, data parallelism alone suffices to match compression speed—resolving the long-standing asymmetry.
 
 ### Loss & Training
-The cross-entropy loss is used to optimize probability prediction accuracy. Persistent memory in the HGR is adapted to stream-specific patterns through online backpropagation during compression/decompression.
+The model optimizes probability prediction accuracy using cross-entropy loss. Persistent memory in the HGR is adapted to specific patterns of various data streams through online backpropagation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Avg Compression Ratio↑ | Throughput | Latency | GPU Memory |
+| Method | Avg. Compression Ratio↑ | Throughput | Latency | GPU Memory |
 |------|-----------|--------|------|--------|
 | Traditional (Gzip/zstd) | Low | High | Low | — |
-| PAC | Med-High | Med | Med | Med |
-| SEP | High | Med-High | Med | Med-High |
-| EDPC | High | High | Med-Low | Med-Low |
+| PAC | Mid-High | Mid | Mid | Mid |
+| SEP | High | Mid-High | Mid | Mid-High |
+| EDPC | High | High | Mid-Low | Mid-Low |
 | FADE | **Highest** | **Highest** | **Lowest** | **Lowest** |
 
 ### Ablation Study
@@ -87,36 +111,36 @@ The cross-entropy loss is used to optimize probability prediction accuracy. Pers
 | Full FADE | Optimal | Optimal | Complete model |
 | w/o Local Stream | Decrease | Slight Increase | Loss of micro-syntax capture |
 | w/o HGR | Decrease | Slight Increase | Loss of instance adaptivity |
-| w/o CSPP | Same | Significant Drop | Importance of system parallelism |
+| w/o CSPP | Equal | Significant Decrease | Implies importance of system parallelism |
 
 ### Key Findings
-- FADE achieves SOTA in both compression ratio and throughput, breaking the conventional trade-off between the two.
-- Dual-stream decoupling replaces deep serial layers with shallow parallel ones, significantly reducing latency while enhancing representational capacity.
-- Persistent memory enables HGR to achieve stream-specific adaptation during online compression, making it more accurate than globally shared parameters.
-- The CSPP data parallelism strategy makes decompression speed nearly equal to compression speed, solving the long-standing asymmetry problem.
-- Excellent performance across heterogeneous data including text, audio, images, video, floating-point, and genomic sequences.
+- FADE achieves SOTA in both compression ratio and throughput, breaking the previous trade-off.
+- Dual-stream decoupling replaces deep serial processing with shallow parallel processing, significantly reducing latency while enhancing expressiveness.
+- Persistent memory allows HGR to achieve stream-specific adaptation in online compression, proving more accurate than global shared parameters.
+- The data parallelism strategy of CSPP makes decompression speed approach compression speed, solving the long-standing asymmetry problem.
+- Excellent performance is observed across heterogeneous data including text, audio, images, video, floating-point numbers, and genomes.
 
 ## Highlights & Insights
-- **Complete Chain from Information Theory to Architecture**: The existence of dual dependency patterns is verified via mutual information decay and self-similarity matrices before designing the decoupled architecture. This "analysis-driven design" is more rigorous than intuition.
-- **Shallow Parallelism over Deep Serialism**: Reducing latency without sacrificing expressiveness. The core insight is that "separation + specialization" is superior to "unification + stacking."
-- **Innovative Use of Persistent Memory**: Each batch index in BMM corresponds to a learnable weight matrix that evolves via backpropagation during online compression, effectively "memorizing the unique patterns of each data stream."
+- **Complete Chain from Information Theory to Architecture**: The existence of dual dependency patterns is verified via mutual information decay and self-similarity matrices before designing the decoupled architecture. This "analysis-driven design" is more persuasive than intuition-driven approaches.
+- **Shallow Parallelism over Deep Serialism**: Reducing latency without sacrificing expressiveness relies on the insight that "separation + specialization" is superior to "unification + stacking."
+- **Innovative Use of Persistent Memory**: Each batch index in BMM corresponds to a learnable weight matrix that evolves via backpropagation during online compression, successfully "memorizing the unique patterns of each data stream."
 
 ## Limitations & Future Work
-- Data parallelism requires splitting input into independent sub-streams, which ignores cross-stream dependencies.
-- Persistent memory size scales linearly with batch size, potentially leading to significant memory overhead in large-scale parallelism.
-- There is still a gap in compression ratio compared to LLM-based methods (e.g., LLMZip), though the efficiency advantage is massive.
-- The weight assignment strategy of the adaptive router is relatively simple; more complex MoE-style routing could be explored.
+- Data parallelism requires segmenting the input into independent sub-streams, which ignores cross-stream dependencies.
+- The size of persistent memory scales linearly with batch size, potentially leading to significant memory overhead in large-scale parallelism.
+- There remains a compression ratio gap compared to LLM-based methods (e.g., LLMZip), though FADE maintains a huge efficiency advantage.
+- The weight allocation strategy of the adaptive router is relatively simple; more complex MoE-style routing could be explored.
 
 ## Related Work & Insights
-- **vs PAC/OREO**: Lightweight MLP-based methods using masking and caching. FADE further improves efficiency and expressiveness through dual-stream decoupling.
-- **vs SEP**: SEP introduces semantic enhancement modules and multi-stream pipelines. FADE's CSPP achieves more comprehensive parallelization.
-- **vs EDPC**: EDPC proposes a dual-path framework and latent transformation engine. FADE's DMD specifically targets decoupling at the micro/macro pattern level.
+- **vs PAC/OREO**: Lightweight MLP-based methods using masking and caching for acceleration. FADE further improves efficiency and expression through dual-stream decoupling.
+- **vs SEP**: SEP introduces semantic enhancement modules and multi-stream pipelines. FADE's CSPP implements more complete parallelization.
+- **vs EDPC**: EDPC proposes a dual-path framework and latent transformation engine. FADE's DMD more explicitly targets the decoupling of micro/macro patterns.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The dual-stream decoupling design has clear theoretical support and experimental validation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 7 datasets (text, audio, image, video, float, genome, heterogeneous).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 7 datasets (text, audio, image, video, floating-point, genome, heterogeneous).
 - Writing Quality: ⭐⭐⭐⭐ Clear structure, progressing logically from analysis to design to system implementation.
-- Value: ⭐⭐⭐⭐ High engineering practicality, simultaneously addressing both model and system bottlenecks.
+- Value: ⭐⭐⭐⭐ High engineering practicality by resolving bottlenecks at both model and system levels.
 
 <!-- RELATED:START -->
 
@@ -125,10 +149,10 @@ The cross-entropy loss is used to optimize probability prediction accuracy. Pers
 ## Related Papers
 
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
-- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](../../ICML2026/model_compression/efficient_learned_image_compression_without_entropy_coding.md)
+- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](../../AAAI2026/model_compression/infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
-- [\[ACL 2026\] CBRS: Cognitive Blood Request System with Bilingual Dataset and Dual-Layer Filtering](cbrs_cognitive_blood_request_system_with_bilingual_dataset_and_dual-layer_filter.md)
+- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](../../CVPR2026/model_compression/block-based_learned_image_compression_without_blocking_artifacts.md)
 
 </div>
 

@@ -2,133 +2,141 @@
 title: >-
   [Paper Note] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 description: >-
-  [CVPR 2026][Video Generation][Motion Transfer] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. It introduces a Motion Decoupling Mask Attention (MDMA) mechani…
+  [CVPR 2026][Video Generation][Paper Note] This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. By utilizing a Motion Decoupled Masked Attention (MDMA) mechanism to constrain motion/text tokens to affect only corresponding target regions and a Differentiated Mask Extraction Mechanism (DMEM) to derive targ
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Motion Transfer"
-  - "Multi-Object Multi-Motion"
-  - "Attention Mask"
-  - "Video Diffusion Model"
-  - "I2V Generation"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: fdd98919fcd1cfa5
+content_hash: df97e2d96bc37807
 ---
-
 # Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.01000](https://arxiv.org/abs/2603.01000)  
 **Code**: [Project Page](https://ethan-li123.github.io/FlexiMMT_page/)  
-**Area**: Video Generation
-**Keywords**: Motion Transfer, Multi-Object Multi-Motion, Attention Mask, Video Diffusion Model, I2V Generation
+**Area**: Video Generation  
+**Keywords**: Motion Transfer, Multi-Object Multi-Motion, Masked Attention, Video Diffusion Models, I2V Generation
 
 ## TL;DR
 
-This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. It introduces a Motion Decoupling Mask Attention (MDMA) mechanism to constrain motion/text tokens to interact only with their corresponding object regions, and a Differential Mask Extraction Mechanism (DMEM) to derive object masks from diffusion attention maps with progressive propagation, enabling precise compositional multi-object motion transfer.
+This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-object multi-motion transfer. By utilizing a Motion Decoupled Masked Attention (MDMA) mechanism to constrain motion/text tokens to affect only corresponding target regions and a Differentiated Mask Extraction Mechanism (DMEM) to derive target masks from diffusion attention for progressive propagation, it achieves precise compositional multi-object motion transfer.
 
 ## Background & Motivation
 
-1. **Background**: Motion transfer is an important direction in controllable video generation, aiming to capture motion dynamics from reference videos and apply them to target subjects. Existing methods fall into two categories: explicit (pose/optical flow/trajectory) and implicit (encoding motion embeddings from reference videos). Implicit methods learn motion representations from reference videos via trainable motion tokens.
+1. **Background**: Motion transfer is a significant direction in controllable video generation, aiming to capture motion dynamics from a reference video and apply them to a target subject. Existing methods are categorized into explicit (pose/optical flow/trajectory) and implicit (encoding motion embeddings from reference videos) approaches. Implicit methods learn motion representations via trainable motion tokens from reference videos.
 
-2. **Limitations of Prior Work**: Nearly all existing implicit motion transfer methods handle only single-object single-motion scenarios. When multiple objects with different motion patterns are present in a scene, existing methods cannot independently assign different motions to different objects.
+2. **Limitations of Prior Work**: Almost all existing implicit motion transfer methods can only handle single-object single-motion scenarios. When multiple objects exist in a scene and require different motion patterns, existing methods cannot independently assign different motions to different objects.
 
-3. **Key Challenge**: When multiple sets of motion tokens are directly injected into 3D full-attention layers, all token interactions are globally entangled — motion tokens of one object interfere with video tokens of other objects, causing motion confusion and erroneous transfer.
+3. **Key Challenge**: Directly injecting multiple sets of motion tokens into 3D full attention layers results in global entanglement of interactions—the motion tokens of one object affect the video tokens of others, leading to motion confusion and erroneous transfer.
 
-4. **Goal**: To achieve independent multi-object motion transfer in I2V generation, allowing each object to move according to its designated reference video.
+4. **Goal**: To achieve independent multi-object motion transfer in I2V generation, allowing each object to move according to its specified reference video.
 
-5. **Key Insight**: Performing motion decoupling at the attention level — constraining motion and text tokens to interact only with video tokens of their corresponding objects via object-specific masks.
+5. **Key Insight**: Perform motion decoupling at the attention level—using object-specific masks to constrain motion and text tokens so they only interact with video tokens of the corresponding target.
 
-6. **Core Idea**: Employ masked attention to achieve motion decoupling, ensuring each object "sees" only its own motion signal and textual description.
+6. **Core Idea**: Implement motion decoupling via masked attention, ensuring each object only "sees" its own motion signals and text descriptions.
 
 ## Method
 
 ### Overall Architecture
 
-FlexiMMT is built upon the CogVideoX-5B-I2V diffusion model. During training, given a single reference video, trainable motion tokens are learned to encode motion representations, with object masks applied in attention layers to constrain motion-video interactions. During inference, for an input image containing multiple objects and multiple reference videos, the respectively pre-trained motion tokens are concatenated with text and video tokens; MDMA masks ensure each set of motion tokens influences only its corresponding object region, while RMPM dynamically propagates object masks to subsequent frames.
+FlexiMMT addresses a specific task: given an image with multiple objects, each object should move according to a different reference video. Existing implicit motion transfer methods only serve single-object scenarios, and multiple motion signals tend to crosstalk. Based on CogVideoX-5B-I2V, the pipeline is divided into training and inference stages. During training, only single-object reference videos are used to learn trainable motion tokens. Meanwhile, the Differentiated Mask Extraction Mechanism (DMEM) extracts target masks from attention maps to enforce motion decoupling via MDMA. During inference, pre-trained motion tokens for multiple objects are concatenated into the text and video token sequences. DMEM uses Grounded SAM to extract masks for the first frame, followed by Regressive Mask Propagation (RMPM) to propagate masks frame-by-frame. Finally, Motion Decoupled Masked Attention (MDMA) locks each motion signal to its target region to prevent crosstalk.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Training: Single-object reference video<br/>→ Learn trainable motion tokens"]
+    B["Inference: Multi-object pre-trained motion tokens<br/>+ First frame image"]
+    A --> C
+    B --> C
+    C["Differentiated Mask Extraction DMEM<br/>Training uses attention map mean thresholding · Inference uses Grounded SAM for first frame"]
+    C --> D["Regressive Mask Propagation RMPM<br/>First frame mask propagates via feature correlation<br/>Lock and reuse if change < 5%"]
+    D --> E["Motion Decoupled Masked Attention MDMA<br/>M2X + T2X masks hard-cut cross-object motion crosstalk"]
+    E --> F["Multi-object Multi-motion Video"]
+```
 
 ### Key Designs
 
-1. **Motion Decoupling Mask Attention (MDMA)**:
-    - **Function**: Explicitly decouples motion signals of different objects at the attention level.
-    - **Mechanism**: Constructs a mask matrix $\mathcal{M}$ comprising two categories of sub-masks: Motion-to-X (M2X) and Text-to-X (T2X). M2X ensures motion tokens interact only with video tokens of their corresponding object ($\mathcal{M}_{m \to v}$), and different motion tokens do not interfere with each other ($\mathcal{M}_{m \to m} = \mathbf{0}$). T2X ensures text tokens describing a motion attend only to their corresponding object.
-    - **Design Motivation**: Global token interaction in the original MM-DiT leads to motion entanglement; the masking mechanism achieves precise motion isolation with minimal architectural modification.
+**1. Motion Decoupled Masked Attention (MDMA): Hard-cutting cross-object crosstalk in attention**
 
-2. **Differential Mask Extraction Mechanism (DMEM)**:
-    - **Function**: Provides object masks for the training and inference stages respectively.
-    - **Mechanism**: During training (single object), the attention map between text query $Q_y^k$ and video key $K_v$ is used to automatically extract the object region, binarized with a mean threshold. During inference (multiple objects), a semantic segmentation model extracts the first-frame mask, which is then propagated to subsequent frames via RMPM.
-    - **Design Motivation**: During training, this avoids the computational overhead of external segmentation models and training-inference inconsistency. During inference, simple attention-based methods cannot distinguish multiple objects due to feature entanglement, necessitating the segmentation-plus-propagation approach.
+The limitation lies in the 3D full attention of the original MM-DiT, where all tokens interact globally. MDMA adds a mask matrix $\mathcal{M}$ to the attention logits to block unintended interactions:
 
-3. **Regression-based Mask Propagation Module (RMPM)**:
-    - **Function**: Accurately propagates the first-frame object mask to all frames of the video.
-    - **Mechanism**: Maintains a sliding-window anchor set (first frame + neighboring frames) and propagates anchor masks to the current frame via a feature correlation matrix $\mathcal{C}_l^k$. Dynamic RMPM further optimizes this: propagation stops when the mask change across consecutive steps falls below threshold $\alpha=5\%$, reusing the stable mask thereafter.
-    - **Design Motivation**: Motion transfer in diffusion models is primarily accomplished during early denoising steps, after which mask changes are negligible. Dynamic termination substantially improves inference efficiency.
+$$ \text{Attn}(Q,K,V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d}} + \mathcal{M}\right)V $$
+
+$\mathcal{M}$ is divided into Motion-to-X (M2X) and Text-to-X (T2X) sub-masks. M2X ensures each set of motion tokens only interacts with corresponding video tokens ($\mathcal{M}_{m \to v}$ passes, others set to $-\infty$), and sets $\mathcal{M}_{m \to m} = \mathbf{0}$ to cut crosstalk between different motion tokens. T2X ensures text tokens describing specific object motions only attend to their respective regions. This hard isolation is more reliable than soft constraints via loss functions.
+
+**2. Differentiated Mask Extraction Mechanism (DMEM): Dual strategies for mask acquisition**
+
+Training involves single-object scenarios where masks are extracted by binarizing the attention maps between text queries $Q_y^k$ and video keys $K_v$ using a mean threshold. This avoids external segmentation overhead and ensures consistency between training and inference signals. During multi-object inference, attention maps become entangled, so Grounded SAM is used for the first frame, followed by RMPM for subsequent frames.
+
+**3. Regressive Mask Propagation (RMPM): Accurately propagating masks across frames**
+
+RMPM maintains an anchor set within a sliding window (first frame plus adjacent frames, window $W=2$) and propagates masks to the current frame via a feature correlation matrix $\mathcal{C}_l^k$. A dynamic version stops updates when the mask change between denoising steps falls below a threshold $\alpha = 5\%$, as motion transfer primarily occurs in early denoising steps.
+
+### A Complete Example
+
+Assume an input image with a cat and a dog. The goal is for the cat to follow reference video A (jumping) and the dog to follow video B (wagging tail). Pre-trained motion tokens $m_{\text{cat}}$ and $m_{\text{dog}}$ are loaded. Grounded SAM extracts separate masks for the cat and dog in the first frame. In MDMA, $m_{\text{cat}}$ only calculates attention with video tokens in the cat's region, while $m_{\text{dog}}$ does the same for the dog. The two sets are isolated by $\mathcal{M}_{m \to m} = \mathbf{0}$. As denoising progresses, RMPM propagates the masks, and the process eventually locks once the mask stabilizes.
 
 ### Loss & Training
 
-- Adopts the standard noise prediction loss from CogVideoX-5B-I2V.
-- Motion tokens are trained for 2,000 steps using the AdamW optimizer, with a learning rate of 3e-3 and batch size of 1.
-- Video resolution: $720 \times 480$, 49 frames per clip.
-- RMPM sliding window size: $W=2$.
-- Experiments conducted on 6 NVIDIA A800 GPUs.
+Training follows the standard noise prediction loss of CogVideoX-5B-I2V, optimizing only the new motion tokens. Each set of tokens is trained for 2000 steps using the AdamW optimizer with a learning rate of 3e-3 and a batch size of 1. Videos are $720 \times 480$ resolution with 49 frames. Experiments were conducted on 6 NVIDIA A800 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | Ours (FlexiMMT) | Prev. SOTA | Gain |
-|---------|--------|-----------------|------------|------|
-| 200 pairs | Trajectory Fidelity (TF) | 0.577 | 0.488 (Go-with-Flow) | +0.089 |
-| 200 pairs | Flow Fidelity (FF) | 0.723 | 0.648 (Go-with-Flow) | +0.075 |
-| 200 pairs | Appearance Consistency | 0.904 | 0.939 (FlexiAct) | Slightly lower, but motion more accurate |
-| 200 pairs | Human Eval – Motion Fidelity | 89.475% | 6.500% (FlexiAct) | Overwhelming lead |
-| 200 pairs | Human Eval – Temporal Consistency | 83.875% | 11.550% (FlexiAct) | Overwhelming lead |
+|--------|------|------|----------|------|
+| 200 Pairs | Trajectory Fidelity (TF) | 0.577 | 0.488 (Go-with-Flow) | +0.089 |
+| 200 Pairs | Flow Fidelity (FF) | 0.723 | 0.648 (Go-with-Flow) | +0.075 |
+| 200 Pairs | Appearance Consistency | 0.904 | 0.939 (FlexiAct) | Slightly lower |
+| 200 Pairs | Human Eval - Motion Fidelity | 89.475% | 6.500% (FlexiAct) | Dominant lead |
+| 200 Pairs | Human Eval - Temporal Consistency | 83.875% | 11.550% (FlexiAct) | Dominant lead |
 
 ### Ablation Study
 
-| Configuration | TF↑ | FF↑ | Notes |
-|---------------|-----|-----|-------|
+| Configuration | TF↑ | FF↑ | Description |
+|------|---------|---------|------|
 | Full FlexiMMT | 0.577 | 0.723 | Baseline |
-| w/o M2X mask | 0.381 | 0.618 | TF drops 34%; M2X is core to motion decoupling |
-| w/o T2X mask | 0.461 | 0.665 | TF drops 20%; T2X also important |
-| w/o training-stage mask | 0.440 | 0.656 | Cannot accurately learn reference motion |
-| w/o inference-stage mask (DMEM) | 0.373 | 0.602 | Multi-motion completely entangled |
-| w/o RMPM | 0.377 | 0.607 | Similar to w/o inference mask |
+| w/o M2X Mask | 0.381 | 0.618 | TF drops 34%, M2X is core to decoupling |
+| w/o T2X Mask | 0.461 | 0.665 | TF drops 20%, T2X is also important |
+| w/o Training Mask | 0.440 | 0.656 | Unable to accurately learn reference motion |
+| w/o Inference Mask (DMEM) | 0.373 | 0.602 | Motions fully entangled |
+| w/o RMPM | 0.377 | 0.607 | Results similar to w/o inference mask |
 
 ### Key Findings
 
-- In human evaluation, FlexiMMT receives 89.475% of votes for motion fidelity, far exceeding all baselines (second-place FlexiAct: only 6.5%).
-- CLIP-based metrics such as AC and TC are biased toward static or weakly-moving videos — methods that fail at motion may paradoxically achieve high AC/TC scores.
-- The proposed Flow Fidelity (FF) metric captures motion similarity more comprehensively than Trajectory Fidelity.
-- Dynamic RMPM significantly reduces inference time compared to full RMPM with no performance degradation.
+- In human evaluation, FlexiMMT received 89.475% of votes for motion fidelity, far exceeding all baselines.
+- CLIP-based metrics (AC and TC) tend to favor static or weak-motion videos; failed motion methods might yield higher scores.
+- The proposed Flow Fidelity (FF) metric provides a more comprehensive measure of motion similarity than Trajectory Fidelity.
+- Dynamic RMPM significantly reduces inference time without performance loss.
 
 ## Highlights & Insights
 
-- The first framework to address implicit multi-object multi-motion transfer, filling an important gap in the field.
-- The MDMA mechanism is conceptually simple yet effective: hard-cutting cross-object signals at the attention level via mask matrices is more reliable than soft constraints.
-- Using different mask extraction strategies for the training and inference stages is a pragmatic engineering choice — lightweight attention-based extraction during training, and segmentation-plus-propagation during inference.
-- Motion tokens can be freely recombined and exchanged, enabling truly compositional motion transfer.
+- First framework to solve the implicit multi-object multi-motion transfer problem.
+- The MDMA mechanism is simple yet effective: hard isolation at the attention level is more reliable than soft loss constraints.
+- Utilizing different mask extraction strategies for training and inference is a pragmatic engineering choice.
+- Motion tokens can be arbitrarily recombined, achieving true compositional motion transfer.
 
 ## Limitations & Future Work
 
-- Training requires each video to contain only a single object, demanding a large collection of single-object reference videos.
-- First-frame segmentation relies on an external semantic segmentation model (Grounded SAM), introducing additional dependencies.
-- RMPM propagates masks via feature correlation and may fail under occlusion or rapid motion causing significant appearance changes.
-- Relatively lower AC and TC scores suggest that the generated motion may introduce a certain degree of appearance drift.
+- Training relies on single-object videos, requiring curated datasets.
+- Inference depends on external semantic segmentation models (Grounded SAM).
+- RMPM may fail during occlusions or rapid motion that causes drastic appearance changes.
+- Lower AC and TC scores may indicate that generated motions introduce some degree of appearance drift.
 
 ## Related Work & Insights
 
-- **vs. FlexiAct**: FlexiAct extracts motion through spatiotemporal attention features, but motion signals become severely entangled in multi-object scenarios; FlexiMMT explicitly isolates them at the attention level via MDMA.
-- **vs. Go-with-the-Flow**: Uses explicit optical flow for motion control, requiring a flow estimator and imposing geometric constraints on objects; FlexiMMT is an implicit method and thus more flexible.
-- **vs. MotionDirector**: A LoRA-based motion decoupling approach for T2V that cannot handle the appearance-preservation requirements of I2V.
-- **Insights**: Structured constraints at the attention level (rather than purely loss-based constraints) constitute an effective paradigm for achieving disentangled control.
+- **vs FlexiAct**: FlexiAct extracts motion via spatio-temporal attention features but suffers from signal entanglement in multi-object scenes; FlexiMMT provides explicit isolation via MDMA.
+- **vs Go-with-the-Flow**: Uses explicit optical flow, requiring flow estimators and geometric constraints; FlexiMMT is an implicit method and more flexible.
+- **vs MotionDirector**: LoRA-based decoupling for T2V; cannot handle I2V appearance preservation requirements.
+- **Insight**: Implementing structural constraints at the attention level (rather than pure loss constraints) is an effective paradigm for decoupled control.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First implicit multi-object multi-motion I2V framework; both problem formulation and solution are innovative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 200-pair evaluation, automatic and human metrics, detailed ablation study; dataset scale is somewhat limited.
-- **Writing Quality**: ⭐⭐⭐⭐ Rigorous formal notation and clear overall structure.
-- **Value**: ⭐⭐⭐⭐ Significant advancement for controllable video generation; opens a new direction for multi-motion transfer.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -137,10 +145,10 @@ FlexiMMT is built upon the CogVideoX-5B-I2V diffusion model. During training, gi
 ## Related Papers
 
 - [\[CVPR 2026\] Anti-I2V: Safeguarding your photos from malicious image-to-video generation](anti-i2v_safeguarding_your_photos_from_malicious_image-to-video_generation.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
-- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
+- [\[CVPR 2026\] VideoWeaver: Multimodal Multi-View Video-to-Video Transfer for Embodied Agents](videoweaver_multimodal_multi-view_video-to-video_transfer_for_embodied_agents.md)
+- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 
 </div>
 

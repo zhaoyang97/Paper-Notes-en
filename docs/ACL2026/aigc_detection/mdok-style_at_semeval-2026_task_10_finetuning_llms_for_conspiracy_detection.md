@@ -2,72 +2,79 @@
 title: >-
   [Paper Note] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection
 description: >-
-  [ACL 2026 (SemEval-2026 Task 10)][AIGC Detection][PsyCoMark] The authors adapt the finetuning paradigm of "mdok" (a machine-generated text detector that won PAN@CLEF2025) to conspiracy detection: the training set is expa…
+  [ACL 2026][AIGC Detection][PsyCoMark] The authors port the finetuning paradigm of their PAN@CLEF2025-winning machine-generated text (MGT) detector, mdok, to conspiracy detection: four types of data augmentation (anonymization, case variation, homoglyphs, and deduplication) are used to expand the training set, followed by a round of self-training (retaining
 tags:
-  - "ACL 2026 (SemEval-2026 Task 10)"
-  - "AIGC Detection"
-  - "PsyCoMark"
-  - "QLoRA"
-  - "Self-training"
-  - "Data Augmentation"
-  - "Qwen3-32B"
+  - ACL 2026
+  - AIGC Detection
+  - PsyCoMark
+  - QLoRA
+  - Qwen3-32B
 date: 2026-05-08
-content_hash: 897c6eae97afaed2
+content_hash: 899988f6a94c527f
 ---
-
 # mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection
 
 **Conference**: ACL 2026 (SemEval-2026 Task 10)  
 **arXiv**: [2605.02712](https://arxiv.org/abs/2605.02712)  
 **Code**: https://github.com/kinit-sk/mdok-style-psycomark2026 (Available)  
-**Area**: Conspiracy Detection / SemEval / LLM Finetuning  
+**Area**: Conspiracy Theory Detection / SemEval / LLM Finetuning  
 **Keywords**: PsyCoMark, QLoRA, Self-training, Data Augmentation, Qwen3-32B
 
 ## TL;DR
-The authors adapt the finetuning paradigm of "mdok" (a machine-generated text detector that won PAN@CLEF2025) to conspiracy detection: the training set is expanded using four types of data augmentation (anonymization / casing / homoglyphs / de-duplication), followed by a round of self-training (retaining only high-confidence pseudo-labels with $p \ge 0.99$ or $p \le 0.01$). By finetuning Qwen3-32B via QLoRA 4-bit PEFT, the system achieved a Macro F1 of 0.78 in SemEval-2026 Task 10 subtask 2, ranking 8/52 (85th percentile).
+The authors port the finetuning paradigm of their PAN@CLEF2025-winning machine-generated text (MGT) detector, mdok, to conspiracy detection: four types of data augmentation (anonymization, case variation, homoglyphs, and deduplication) are used to expand the training set, followed by a round of self-training (retaining only high-confidence pseudo-labels where $p \ge 0.99$ or $p \le 0.01$). Qwen3-32B is then finetuned using QLoRA 4-bit PEFT, ultimately achieving a Macro F1 = 0.78 and ranking 8/52 (85th percentile) in SemEval-2026 Task 10 subtask 2.
 
 ## Background & Motivation
 
-**Background**: SemEval-2026 Task 10 (PsyCoMark) bridges psychology and NLP, requiring systems to determine whether a Reddit comment expresses conspiracy beliefs. Subtask 2 is a binary English classification (Yes/No). The provided training data is small—1715 positive and 2263 negative examples, with text lengths limited to 160–1000 characters. Early works employed SVM with lexical/stylistic features; subsequent additions of psycholinguistic features (certainty, emotional intensity, distrust framing) yielded improvements. Recently, LLMs have joined the field but struggle with hallucinations and precision issues; emotion-aware finetuned LLMs (e.g., ConspEmoLLM) have pushed performance beyond vanilla LLMs.
+**Background**: SemEval-2026 Task 10 (PsyCoMark) bridges psychology and NLP, requiring systems to determine if a Reddit comment expresses conspiracy beliefs. Subtask 2 is a binary Yes/No classification for English. The provided training data is relatively small, consisting of 1715 positive and 2263 negative samples, with text lengths restricted to 160–1000 characters. Early works utilized SVMs with lexical or stylistic features; subsequent improvements incorporated psycholinguistic features (e.g., certainty, emotional intensity, distrust framing). While recent LLMs have joined the field, they often suffer from hallucination and precision issues; emotion-aware finetuned LLMs like ConspEmoLLM represent the current state of the art over vanilla LLMs.
 
-**Limitations of Prior Work**: ① The training set is too small for 32B-scale LLMs, leading to overfitting during direct finetuning. ② Conspiracy texts on social media are saturated with noise like URLs, handles, emails, phones, and homoglyphs, which interfere with model tokenizers. ③ Inconsistent casing is common on social media, yet traditional classifiers are often misled by case. ④ Organizers did not release ground truth for the dev/test sets, preventing supervised hyperparameter iteration and requiring "blind" submissions to Codabench.
+**Limitations of Prior Work**: ① The training set is too small for 32B-scale LLMs, leading to overfitting during direct finetuning; ② Social media conspiracy texts are heavily noise-laden with URLs, @mentions, emails, phone numbers, and homoglyphs, which easily interfere with LLM tokenizers; ③ Inconsistent casing is common in social media, yet traditional classifiers are often misled by case variation; ④ Organizers did not release ground truth for the dev/test sets, preventing supervised iteration for hyperparameter tuning and forcing "blind" submissions to Codabench.
 
-**Key Challenge**: Achieving SOTA performance via LLM finetuning requires sufficient scale and diversity in training data; however, PsyCoMark is both small and narrow. Furthermore, using large models requires controlling computational costs (given that DeBERTa <0.5B can already achieve 0.75, the gain from 32B might be limited).
+**Key Challenge**: Achieving SOTA performance on a new task with an LLM requires sufficient scale and diversity in training data; however, the PsyCoMark dataset is both small and narrow. Furthermore, when using larger models, computational costs must be controlled, especially as DeBERTa (<0.5B parameters) can already achieve a score of 0.75, leaving uncertain headroom for a 32B model.
 
-**Goal**: To port the successful "mdok" recipe to conspiracy detection with minimal engineering and verify whether an LLM finetuning pipeline used for MGT detection as a source task possesses cross-task transferability.
+**Goal**: To port the successful "mdok recipe" to conspiracy detection with minimal engineering changes, thereby validating the cross-task transferability of an LLM finetuning pipeline originally designed for MGT detection.
 
-**Key Insight**: Treat "conspiracy detection" as a robust binary classification task. Borrow three "weapons" from mdok (the 1st place winner at PAN@CLEF2025): anonymization-as-augmentation, homoglyph-aware training, and QLoRA efficient finetuning, then overlay a round of self-training to utilize the unlabeled dev/test sets.
+**Key Insight**: The authors treat conspiracy detection as a robust binary classification task. They borrow three major techniques from the PAN@CLEF2025 champion detector mdok: anonymization-as-augmentation, homoglyph-aware training, and QLoRA efficient finetuning, while adding a round of self-training to utilize unlabeled dev/test data.
 
-**Core Idea**: mdok-style data augmentation + high-confidence threshold self-training + Qwen3-32B QLoRA = a robust solution ranking in the top 20% of SemEval.
+**Core Idea**: Combining mdok-style data augmentation with high-confidence threshold self-training and Qwen3-32B QLoRA yields a robust solution capable of ranking in the top 20% of SemEval.
 
 ## Method
 
 ### Overall Architecture
 
-The pipeline consists of three steps: (1) **Data Augmentation**: The original training set is replicated four times, applying anonymization, lower-casing, upper-casing, and homoglyphication respectively. Only 10% of each type is added to the training pool followed by de-duplication to prevent augmented data from overwhelming the original, resulting in 2126 negative and 1517 positive samples. (2) **Round 1 Training**: Qwen3-32B is finetuned as a binary classification head using QLoRA 4-bit. Hyperparameters include paged AdamW, cosine LR=2e-5, warmup 0.03, batch size 1, and a single epoch. Checkpoints are selected by Macro F1 on a 100×2 holdout validation set. (3) **Self-training**: The Round 1 model performs inference on the unlabeled dev + test sets. Only samples with $p \ge 0.99$ (positive) or $p \le 0.01$ (negative) are retained as silver labels. The model is then retrained from scratch on the merged pool (2575 negative + 1881 positive). During inference, the positive threshold is shifted from 0.5 to 0.7 (_th0.7) to improve precision.
+The core mechanism of this system paper is to verify task transferability by applying the exact finetuning recipe of mdok to conspiracy detection. The pipeline consists of three stages: first, four types of data augmentation expand the ~4000 original samples to remove surface noise interference; second, Qwen3-32B is finetuned into a binary classifier using QLoRA 4-bit; finally, this model generates high-confidence pseudo-labels for unlabeled data to be used in a second round of training. During inference, the positive class threshold is adjusted from 0.5 to 0.7 to improve precision.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Original Training Set<br/>~4000 samples (1715 Pos + 2263 Neg)"] --> B
+    subgraph AUG["Four Types of Augmentation (10% sampling each)"]
+        direction TB
+        B["Anonymization<br/>email / @user / phone → placeholders"] --> C["Case Replication<br/>Full Lower + Full Upper"]
+        C --> D["Homoglyph Replacement<br/>Latin a → Cyrillic а, etc."]
+    end
+    AUG --> E["QLoRA 4-bit Finetuning<br/>Qwen3-32B Classifier"]
+    E --> F["Conservative Self-Training<br/>p≥0.99 Pos / p≤0.01 Neg"]
+    F --> G["Retraining with High-Conf Pseudo-labels<br/>3643 → 4456 (+22%)"]
+    G --> H["Threshold Post-processing<br/>Threshold 0.5 → 0.7"]
+    H --> I["Output: Macro F1 0.78<br/>Rank 8/52"]
+```
 
 ### Key Designs
 
-1.  **mdok-style Data Augmentation**:
-    - **Function**: Artificially introduces diversity into small datasets (~4000 samples) to make the model insensitive to surface deformations.
-    - **Mechanism**: (i) **Anonymization**: Uses regex to replace emails, @users, and phone numbers with `[EMAIL]`, `[USER]`, and `[PHONE]` (URLs were already replaced by organizers with `[URL]`), flattening identifying tokens. (ii) **Lower-casing & Upper-casing**: Explicitly injects the inductive bias that conspiracy judgment is case-insensitive. (iii) **Homoglyphication**: Replaces characters with look-alikes (e.g., Latin `a` to Cyrillic `а`) to simulate obfuscation tactics and improve robustness to tokenizer-level perturbations. (iv) 10% sampling followed by de-duplication.
-    - **Design Motivation**: Similar to MGT detection, conspiracy detection involves numerous spurious surface cues (heavy URL usage, ALL CAPS shouting, intentional character manipulation). If the model learns these as shortcuts, generalization fails. Augmentation converts these into known noise types during training, forcing the model to learn semantics.
+**1. mdok-style Data Augmentation: Injecting diversity into small-scale data to force semantic learning**
+Conspiracy texts, similar to MGT, are filled with spurious surface cues like URLs, mentions, all-caps shouting, and intentional character substitutions. To prevent the model from learning these as shortcuts, four augmentations are used: (i) **Anonymization** uses regex to replace identifying tokens like emails and phone numbers with generic placeholders; (ii) **Case variation** creates full lower-case and full upper-case duplicates to inject the prior that conspiracy detection is case-invariant; (iii) **Homoglyphication** replaces characters with visually similar ones from different scripts (e.g., Latin `a` to Cyrillic `а`) to make the classifier robust against tokenizer-level noise. Only 10% of each augmentation is sampled to avoid overwhelming the original data.
 
-2.  **Conservative Self-training**:
-    - **Function**: Leverages unlabeled dev/test sets to expand training samples while avoiding error propagation.
-    - **Mechanism**: Following the self-training paradigm, a teacher model trained on golden labels generates silver labels on unlabeled sets. This work uses an extremely strict threshold—only samples with $p \ge 0.99$ or $p \le 0.01$ are added. This minimizes the error rate of silver labels. The training set was expanded from 3643 to 4456 samples (+22%).
-    - **Design Motivation**: The primary risk of self-training is the compounding of label errors. By using ultra-strict thresholds, this risk is minimized in the first round. This "high precision, low recall" strategy is effective for competitions where hyperparameter tuning is limited.
+**2. Conservative Self-Training: Leveraging unlabeled dev/test data while minimizing noise**
+While the organizers did not release ground truth for the dev/test sets, these samples are utilized through self-training. To mitigate the risk of error propagation common in silver labeling, the authors apply extremely strict thresholds: only samples with $p \ge 0.99$ are labeled positive, and $p \le 0.01$ as negative. This high-precision, low-recall approach expanded the training set from 3643 to 4456 samples (+22%). This strategy is particularly effective for competition settings where hyperparameter tuning is restricted.
 
-3.  **QLoRA Finetuning + Threshold Post-processing**:
-    - **Function**: Finetunes a 32B model into a functional classifier within ~100 GPU·h (single A100) and balances precision/recall via threshold shifting.
-    - **Mechanism**: QLoRA (4-bit quantization + Low-Rank Adapters) updates a small fraction of parameters, allowing a 32B model to run on a single A100 64GB with a `transformers` sequence classification head. Shifting the threshold to 0.7 increased F1 by 1 point (0.77 → 0.78), as the task is more sensitive to precision (the cost of misclassifying a harmless comment as a conspiracy is higher).
-    - **Design Motivation**: Full finetuning of 32B models is unrealistic for most academic labs. QLoRA lowers the hardware barrier. Threshold post-processing provides performance gains without retraining.
+**3. QLoRA Efficient Finetuning + Threshold Post-processing: Taming 32B on limited hardware**
+Full finetuning of a 32B model is computationally prohibitive for many labs. Using QLoRA (4-bit quantization + low-rank adapters), the authors updated only a fraction of the parameters, allowing Qwen3-32B to be trained on a single A100 64GB (~100 GPU hours). During inference, moving the threshold from 0.5 to 0.7 provided a further 0.01 F1 gain (0.77 to 0.78), as the task is more sensitive to precision—misclassifying a harmless comment is costlier than missing a conspiracy.
 
 ### Loss & Training
-- Binary cross-entropy (default for `transformers` seq-cls) without class weighting.
-- Checkpoint selection via Macro F1 on a 100×2 holdout set (since dev labels are unavailable).
-- Single-round self-training to prevent cumulative error.
-- Base model comparison included Qwen3 (4B / 14B / 32B) and Gemma-3 (1B PT / 12B PT); Qwen3-32B performed best in the dev phase.
+- Binary cross-entropy (default in transformers `seq-cls`) with no class weighting.
+- A holdout set of 100x2 samples was used for validation (due to unlabeled dev sets), with checkpoints selected by Macro F1.
+- Self-training was restricted to a single round to control error accumulation.
+- Model selection compared Qwen3 (4B, 14B, 32B) and Gemma-3 (1B, 12B), with Qwen3-32B performing best in the dev phase.
 
 ## Key Experimental Results
 
@@ -88,62 +95,59 @@ The pipeline consists of three steps: (1) **Data Augmentation**: The original tr
 | Qwen3-4B-Base_ST | 0.72 |
 | Random baseline | 0.50 |
 
-**Selected Codabench Unofficial Ranking**:
+**Selected Unofficial Codabench Ranking**:
 
 | Rank | Team | Macro F1 |
 |---|---|---|
 | 1 | NJUST_KMG | 0.89 |
 | 2 | AGAI | 0.87 |
 | 3 | jia57 | 0.86 |
-| 4 | baishanxiaoqi | 0.80 |
-| 5 | CSECU-DSG | 0.80 |
-| 6 | joccerrillo | 0.79 |
-| 7 | qinchihongye | 0.79 |
+| ... | ... | ... |
 | **8** | **mdok-style** | **0.78** |
+| ... | ... | ... |
 
-The system ranked 8/52 (85th percentile), 11 points behind the winner (0.89), but outperformed 80%+ of teams.
+The system ranked 8th out of 52 (85th percentile), outperforming over 80% of teams.
 
-### Ablation Study (Combined effects of ST and Threshold)
+### Ablation Study
 
-| Configuration | Macro F1 | $\Delta$ vs base |
+| Configuration | Macro F1 | $\Delta$ vs Base |
 |---|---|---|
-| Qwen3-32B (Vanilla) | 0.76 | – |
+| Qwen3-32B (Base) | 0.76 | – |
 | + Self-Training | 0.77 | +0.01 |
 | + threshold=0.7 | 0.77 | +0.01 |
 | + Self-Training + threshold=0.7 | **0.78** | +0.02 |
 
-Self-training on Qwen3-4B led to a performance drop (0.75→0.72), suggesting that self-training requires high model capacity—small models suffer from noise in silver labels due to underfitting, whereas large models can effectively exchange data for performance.
+Interestingly, self-training decreased performance on Qwen3-4B (0.75 $\to$ 0.72), suggesting that self-training requires high model capacity; smaller models suffer from noise in pseudo-labels.
 
 ### Key Findings
-- The 32B model with all tricks is only 0.03 higher than DeBERTa-Large (0.5B). **Cost-efficiency Warning**: On small-data binary classification tasks, the marginal utility of large models is limited; DeBERTa remains a suitable first choice.
-- Self-training and threshold shifting each contributed ~1 F1 point. The choice of base model was the largest factor (0.73→0.76).
-- Even with strict thresholds, self-training provided negative gains for small models (Qwen3-4B, Gemma-3-1B), indicating that silver label reliability is highly correlated with the base model's prediction accuracy.
-- Cross-task transfer (MGT → conspiracy) reached the 85th percentile, validating the "finetuning + augmentation + self-training" pipeline as a universal skeleton for binary text classification.
+- **Diminishing Returns**: The 32B model with full techniques only outperformed DeBERTa-Large (0.5B) by 0.03. For small-data binary classification, DeBERTa remains a highly cost-effective choice.
+- **Combined Gains**: Self-training and threshold post-processing each contributed ~1 F1 point. The largest jump (0.73 $\to$ 0.76) came from the initial base model selection.
+- **Capacity Requirement**: The failure of self-training on smaller models indicates that the reliability of silver labels is highly correlated with the base model's intrinsic predictive capability.
+- **Transferability**: Porting the pipeline from MGT detection to conspiracy detection achieved the 85th percentile, validating it as a general-purpose framework for binary text classification.
 
 ## Highlights & Insights
-- Porting anonymization + homoglyphication + casing to conspiracy detection proves that "augmentation against spurious surface cues" is universal for social media text classification (e.g., hate speech, scams).
-- The ultra-strict $\ge 0.99 / \le 0.01$ self-training strategy is ideal for competition scenarios without ground truth labels.
-- Threshold shifting (0.5→0.7) is a "free lunch" when the task is sensitive to false positives (misjudging conspiracies can be seen as censorship).
-- The honest admission that "DeBERTa 0.5B at 0.75 offers better value than 32B at 0.78" is valuable for reproducibility.
+- Porting anonymization, homoglyphication, and case-variant augmentations proves that handling spurious surface cues is universally beneficial for social media text classification.
+- The ultra-strict threshold ($\ge 0.99 / \le 0.01$) for self-training is a "safe" strategy when ground truth for validation sets is unavailable.
+- Threshold moving (0.5 $\to$ 0.7) is a "free lunch" for tasks where false positives are more costly than false negatives.
+- The transparent comparison showing the high cost-benefit ratio of DeBERTa vs. 32B models is valuable for community reproducibility.
 
 ## Limitations & Future Work
-- Only tested on English PsyCoMark; cross-lingual (Spanish, French, German) effects are unknown.
-- Evaluated only Qwen3 and Gemma-3 families; LLoMA-3 / Mistral / DeepSeek were not tested.
-- No external datasets (other conspiracy/misinfo corpora) were introduced.
-- Only one round of self-training was performed; multi-round iteration with dynamic thresholds was not explored.
-- Lack of error analysis (due to hidden ground truth) makes it unclear which linguistic patterns the 32B model struggles with.
+- Evaluated only on the English PsyCoMark dataset; cross-lingual performance remains unknown.
+- Model selection was limited to Qwen3 and Gemma-3, excluding LLaMA-3, Mistral, or DeepSeek.
+- No external datasets (e.g., other conspiracy or misinformation corpora) were used.
+- Self-training was limited to one round; multi-round iteration was not explored.
+- Error analysis is missing as the ground truth was not released by organizers.
 
 ## Related Work & Insights
-- **vs mdok (Macko 2025)**: The source system won both subtasks in MGT detection; this work proves the pipeline's task-agnostic nature.
-- **vs ConspEmoLLM (Liu 2024)**: While they explicitly integrate emotional signals, this work uses prompt-agnostic finetuning with augmentation and self-training to flatten surface variations.
-- **vs DeBERTa baseline**: DeBERTa-Large at 0.75 vs Qwen3-32B at 0.78, with the latter costing over 50x in compute—a classic case of diminishing marginal returns for LLMs on small-data tasks.
-- **vs SemEval-2024 Task 8 (spiegel-macko-2024-kinit)**: They previously showed 7B LLMs outperfored BERT-like models; this work validates that larger scales (32B) still provide gains, though at a decreasing rate.
+- **vs mdok (Macko 2025)**: The source system won the PAN@CLEF2025 task; this work demonstrates its cross-task applicability.
+- **vs ConspEmoLLM (Liu 2024)**: While others use explicit emotional signals, this work uses data augmentation to handle surface noise.
+- **vs DeBERTa baseline**: Highlights that for small data, 32B models are over 50x more computationally expensive than DeBERTa for marginal gains.
 
 ## Rating
-- Novelty: ⭐⭐⭐ (Mainly cross-task reuse of the mdok recipe)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (11 system comparisons + ablation, but lacks multi-round ST and deep error analysis)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear motivation and complete reproduction details in standard system paper style)
-- Value: ⭐⭐⭐⭐ (Solid report for SemEval; engineering experience with augmentation and strict self-training is practical for competition participants)
+- Novelty: ⭐⭐⭐ (Cross-task application of an existing recipe)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive system comparisons and ablations)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Concise and clear reproduction instructions)
+- Value: ⭐⭐⭐⭐ (Practical engineering insights for NLP competitions)
 
 <!-- RELATED:START -->
 

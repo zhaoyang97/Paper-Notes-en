@@ -2,65 +2,86 @@
 title: >-
   [Paper Note] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 description: >-
-  [CVPR 2026][Video Understanding][open-vocabulary temporal action detection] This paper proposes the Phase-wise Decomposition and Alignment (PDA) framework…
+  [CVPR 2026][Video Understanding][Paper Note] The Phase-wise Decomposition and Alignment (PDA) framework is proposed, utilizing the Chain-of-Thought (CoT) reasoning capabilities of LLMs to decompose action labels into "start-middle-end" phase descriptions. Through text-guided foreground filtering and adaptive phase alignment, it achieves fine-grained action patter
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "open-vocabulary temporal action detection"
-  - "chain-of-thought prompting"
-  - "action phase decomposition"
-  - "cross-modal alignment"
-  - "knowledge transfer"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: b6f8289f22012787
+content_hash: 16f2941413b365c1
 ---
-
 # Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24030](https://arxiv.org/abs/2603.24030)  
-**Code**: N/A  
-**Area**: Video Understanding
-**Keywords**: open-vocabulary temporal action detection, chain-of-thought prompting, action phase decomposition, cross-modal alignment, knowledge transfer
+**Code**: None  
+**Area**: Video Understanding  
+**Keywords**: Open-Vocabulary Temporal Action Detection, Chain-of-Thought Prompting, Action Phase Decomposition, Cross-modal Alignment, Knowledge Transfer
 
 ## TL;DR
-This paper proposes the Phase-wise Decomposition and Alignment (PDA) framework, which leverages the CoT reasoning capability of LLMs to decompose action labels into start–middle–end phase descriptions. Through text-guided foreground filtering and adaptive phase-wise alignment, PDA achieves fine-grained action pattern transfer, attaining an Avg mAP of 46.9 on THUMOS14 OV-TAD, surpassing the previous SOTA Ti-FAD (41.2).
+The Phase-wise Decomposition and Alignment (PDA) framework is proposed, utilizing the Chain-of-Thought (CoT) reasoning capabilities of LLMs to decompose action labels into "start-middle-end" phase descriptions. Through text-guided foreground filtering and adaptive phase alignment, it achieves fine-grained action pattern transfer. On THUMOS14 OV-TAD, it reaches an Avg mAP of 46.9 (surpassing the Prev. SOTA Ti-FAD's 41.2).
 
 ## Background & Motivation
-**Background**: Open-vocabulary temporal action detection (OV-TAD) requires localizing and classifying unseen action categories, with knowledge transfer from seen categories as the central challenge.
+**Background**: Open-Vocabulary Temporal Action Detection (OV-TAD) requires locating and classifying unseen action categories, where the core challenge is transferring knowledge from seen categories.
 
-**Limitations of Prior Work**: Existing methods perform only label-level global text–visual alignment, making it difficult to capture fine-grained temporal patterns shared across different actions. For instance, "LongJump" and "PoleVault" exhibit low label-level similarity, yet their run-up and take-off phases are visually highly similar.
+**Limitations of Prior Work**: Existing methods typically perform global text-visual alignment at the label level, making it difficult to capture fine-grained temporal patterns shared between different actions. For example, the labels "LongJump" and "PoleVault" have low semantic similarity, but their run-up and takeoff phases are visually highly similar.
 
-**Key Challenge**: Label-level semantic alignment fails to discover transferable visual patterns across categories, limiting generalization to unseen classes.
+**Key Challenge**: Label-level semantic alignment cannot discover transferable visual patterns across categories, leading to limited generalization capabilities for unseen classes.
 
-**Goal**: To extract and transfer shared phase-level visual priors across different actions for improved open-vocabulary generalization.
+**Goal**: Extract and transfer shared phase-level visual priors across different actions to achieve better open-vocabulary generalization.
 
-**Key Insight**: Simulating human cognition—understanding an action as a sequential unfolding (initiation → execution → completion)—by exploiting the CoT capability of LLMs to automatically decompose actions into multiple phases.
+**Key Insight**: Simulating human cognition—understanding that an action unfolds progressively (start → execution → completion)—and utilizing the CoT capability of LLMs to automatically decompose actions into multiple phases.
 
-**Core Idea**: Decompose action labels into phase descriptions → perform text–visual alignment independently for each phase → adaptively aggregate the alignment results across phases.
+**Core Idea**: Decompose action labels into phase descriptions → Perform text-visual alignment for each phase independently → Adaptively aggregate the alignment results from each phase.
 
 ## Method
 
 ### Overall Architecture
-Three core modules: CSD (CoT-Prompted Semantic Decomposition) → TIF (Text-Infused Foreground Filtering) → APA (Adaptive Phase-wise Alignment). Input videos are processed by a visual encoder for feature extraction; action labels are decomposed by GPT-4o into four phase descriptions—start, middle, end, and global—with each phase undergoing independent visual–text matching followed by adaptive aggregation.
+PDA aims to address the limitation of label-level alignment in OV-TAD where transferring knowledge between dissimilar labels (e.g., "LongJump" to "PoleVault") is difficult. The approach explicitly models actions as unfolding processes. An input video first has its features extracted via a visual encoder. Action labels are processed by GPT-4o using CoT reasoning to be decomposed into {start, middle, end, global} phase descriptions. Each phase then undergoes "text-guided foreground segment selection → cross-modal alignment → classification scoring," followed by an adaptive weighting mechanism to aggregate results. The pipeline consists of CSD (Decomposition), TIF (Segment Selection), and APA (Alignment & Aggregation).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Input Video"] --> VE["Visual Encoder<br/>Temporal Features F_v"]
+    L["Action Label"] --> CSD["CoT Semantic Decomposition (CSD)<br/>GPT-4o splits into start/middle/end/global descriptions"]
+    CSD --> TE["CLIP Text Encoder<br/>Phase Embeddings t_c^p"]
+    VE --> TIF["Text-guided Foreground Filtering (TIF)<br/>Select relevant segments F_v^p by phase semantics"]
+    TE --> TIF
+    TIF --> APA["Adaptive Phase Alignment (APA)<br/>Cross-attention alignment for phase scores C_cls^p"]
+    TE --> APA
+    APA -->|"Weighted by discriminative weights ω_p"| OUT["Classification Score + Localization Output"]
+```
 
 ### Key Designs
-1. **CoT-Prompting Semantic Decomposition (CSD)**: GPT-4o's CoT reasoning is employed to decompose each action label into four phase descriptions: {start, middle, end, global}. For example, "LongJump" yields: start = "accelerating along the runway," mid = "planting and taking off," end = "landing in the sandpit." The CLIP text encoder extracts phase embeddings $t_c^p = \Phi_{txt}(s_c^p)$. **Design Motivation**: Label-level semantics cannot express phase patterns shared across categories, whereas phase decomposition naturally exposes these transferable knowledge structures.
 
-2. **Text-Infused Foreground Filtering (TIF)**: For each phase $p$, the cosine similarity between the phase text embedding and video features is computed; a max-then-Softmax operation produces a phase-level foreground confidence score $S_{fg}^p$, which is binarized to filter phase-relevant video segments: $F_v^p = \hat{S}_{fg}^p \cdot F_v$. **Design Motivation**: Naively partitioning video into uniform segments cannot handle real-world scenarios with multiple actions and variable durations; semantic phase-aware segment selection is required.
+**1. CoT Semantic Decomposition (CSD): Decomposing labels into "start-middle-end" to reveal cross-category shared patterns**
 
-3. **Adaptive Phase-wise Alignment (APA)**: Cross-attention fusion is performed independently for each phase, $\bar{F}_v^p = \text{CrossAttn}(F_v^p, F_t^p)$, followed by classification score computation $C_{cls}^p = \bar{F}_v^p \cdot F_t^{p\top}$. **Adaptive aggregation** uses a Sigmoid network to predict per-phase weights $\omega_p$, yielding the final classification $C_{cls} = \sum_{p} \omega_p \cdot C_{cls}^p$. **Design Motivation**: The discriminability of each phase varies across actions—some actions are identifiable from the beginning while others require the ending—making adaptive weighting preferable to simple averaging.
+The bottleneck of label-level alignment is that "LongJump" and "PoleVault" are semantically distant as wholes, yet their run-up acceleration and takeoff phases are visually almost identical. These transferable priors are obscured when compressed into a single label. CSD uses GPT-4o with CoT to decompose each action into four descriptions following natural temporal order. For example, "LongJump" is split into start="runway acceleration", mid="ground takeoff", and end="landing in sandpit". These are encoded into phase embeddings $t_c^p = \Phi_{txt}(s_c^p)$ via a CLIP text encoder. Once decomposed, shared phases become explicit independent alignment units, allowing unseen categories to borrow discriminative priors from seen categories with matching phases.
+
+**2. Text-guided Foreground Filtering (TIF): Selecting relevant segments based on phase semantics instead of fixed temporal splitting**
+
+Uniformly splitting a video into three segments is problematic because a video may contain multiple actions or varying action durations. TIF uses text to select segments: for each phase $p$, the similarity between the phase text embedding and temporal video features is calculated. Phase-level foreground confidence $S_{fg}^p$ is obtained via max-pooling over the category dimension followed by Softmax. Using the mean similarity as a threshold for binarization, the model filters segments that semantically match the phase: $F_v^p = \hat{S}_{fg}^p \cdot F_v$. This ensures each phase receives semantically relevant video content rather than a fixed mechanical window.
+
+**3. Adaptive Phase Alignment (APA): Weighted aggregation based on discriminativeness**
+
+Informational value varies across phases—some actions are recognizable at the start (unique takeoff posture), while others require the landing to be certain. APA first performs independent cross-attention fusion $\bar{F}_v^p = \text{CrossAttn}(F_v^p, F_t^p)$ to obtain phase classification scores $C_{cls}^p = \bar{F}_v^p \cdot F_t^{p\top}$. A Sigmoid network then predicts weights from visual features $\omega_p = \text{Sigmoid}(W_p(F_v^p))$, and the final classification is aggregated:
+
+$$C_{cls} = \sum_{p} \omega_p \cdot C_{cls}^p$$
+
+Learning weights from data allows the model to decide which phases to prioritize for a specific action, providing more flexibility than simple averaging.
+
+### A Complete Example: Cross-category Transfer from LongJump to PoleVault
+Assume PoleVault is an unseen category at test time. CSD decomposes it into start="runway acceleration with pole", mid="planting pole and takeoff", and end="clearing bar and landing". During the start phase, TIF uses the "runway acceleration" text to filter the initial approach segments $F_v^{start}$. Since the seen category LongJump also contains "runway acceleration" and "takeoff" phases in its training, these segments for PoleVault align with the pre-learned shared priors in the embedding space. Even though the "PoleVault" label as a whole is new, the start and middle phases yield high scores. APA assigns higher weights to the more discriminative start/mid phases, correctly classifying the sample as PoleVault.
 
 ### Loss & Training
-- Total loss: $\mathcal{L} = \mathcal{L}_{cls} + \mathcal{L}_{fg} + \mathcal{L}_{loc}$, comprising classification (cross-entropy), foreground awareness, and DIoU localization losses.
-- At inference, the same LLM-based phase decomposition is applied to test categories, and SoftNMS is used for redundancy suppression.
+- Total Loss $\mathcal{L} = \mathcal{L}_{cls} + \mathcal{L}_{fg} + \mathcal{L}_{loc}$: Includes classification (Cross-Entropy), foreground perception, and DIoU localization loss.
+- During inference, test categories are similarly decomposed using the LLM, followed by SoftNMS for redundancy removal.
 
 ## Key Experimental Results
 
 ### Main Results (THUMOS14, 50% Seen / 50% Unseen)
 
 | Method | 0.3 | 0.5 | 0.7 | Avg mAP |
-|--------|-----|-----|-----|---------|
+|------|-----|-----|-----|---------|
 | Ti-FAD (NeurIPS'24) | 57.0 | 43.3 | 21.2 | 41.2 |
 | STOV (WACV'25) | 56.3 | 34.4 | 11.3 | 34.0 |
 | **PDA (Ours)** | **65.4** | **49.7** | **24.3** | **46.9** |
@@ -68,64 +89,57 @@ Three core modules: CSD (CoT-Prompted Semantic Decomposition) → TIF (Text-Infu
 **ActivityNet v1.3**
 
 | Method | 0.5 | 0.75 | Avg mAP |
-|--------|-----|------|---------|
+|------|-----|------|---------|
 | Ti-FAD | 50.6 | 32.2 | 32.0 |
 | **PDA (Ours)** | **53.1** | **35.3** | **34.6** |
 
 ### Ablation Study
 
-| Configuration | Avg mAP | Notes |
-|---------------|---------|-------|
-| Global alignment baseline | ~41.2 | Label-level alignment only |
-| + CSD | Improved | Phase decomposition exposes transferable patterns |
-| + CSD + TIF | Further improved | Adaptive foreground filtering vs. static temporal partitioning |
-| + CSD + TIF + APA | **46.9** | Adaptive weighting outperforms average aggregation |
+| Configuration | Avg mAP | Description |
+|------|---------|------|
+| Global Alignment Baseline | ~41.2 | Label-level alignment only |
+| + CSD | Gain | Decomposition exposes transferable patterns |
+| + CSD + TIF | Further Gain | Adaptive filtering replaces static splitting |
+| + CSD + TIF + APA | **46.9** | Adaptive weights outperform average aggregation |
 
 ### Key Findings
-- On the THUMOS14 50/50 split, PDA achieves a 5.7-point improvement in Avg mAP over the strongest baseline, Ti-FAD.
-- In the cross-category transfer case of LongJump → PoleVault, phase decomposition enables the model to identify shared "run-up acceleration" and "take-off" patterns, substantially improving detection performance on unseen categories.
-- Adaptive aggregation demonstrates greater flexibility compared to simple averaging.
+- Under the THUMOS14 50/50 split, Avg mAP improves by 5.7 points compared to the strong baseline Ti-FAD.
+- In the LongJump→PoleVault case, phase decomposition allows the model to recognize shared "runway acceleration" and "takeoff" patterns, significantly boosting unseen category performance.
+- Adaptive aggregation demonstrates greater flexibility compared to simple mean pooling.
 
 ## Highlights & Insights
-- CoT reasoning is extended from NLP to action understanding: rather than mere text augmentation, this constitutes structured temporal decomposition that directly corresponds to the cognitive process of action understanding.
-- Phase decomposition naturally exposes transferable cross-category knowledge that label-level methods cannot access.
-- TIF's text-guided foreground filtering outperforms static temporal partitioning and handles multi-action and variable-duration scenarios.
-- In the LongJump → PoleVault transfer case, phase decomposition enables the model to recognize shared "run-up acceleration" and "take-off" patterns.
-- Evaluation under the 75/25 split confirms the method's robustness across different seen/unseen ratios.
-- On THUMOS14, mAP at IoU@0.5 improves from 43.3 to 49.7 (+6.4%), indicating that fine-grained alignment also enhances localization precision.
+- Extends CoT reasoning from NLP to action understanding: This is not just text augmentation, but structured temporal decomposition aligned with the human cognitive process.
+- Phase decomposition naturally exposes cross-category transferable knowledge, which is impossible for label-level methods.
+- Text-guided foreground filtering in TIF is superior to static temporal segmentation, handling multi-action and variable-duration scenarios effectively.
+- On THUMOS14, mAP at IoU@0.5 improved from 43.3 to 49.7 (+6.4%), indicating that fine-grained alignment also enhances localization precision.
+- Robustness verified across different seen/unseen ratios (e.g., 75/25 split).
 
 ## Limitations & Future Work
-- The method relies on GPT-4o for phase decomposition, incurring high cost, and decomposition quality is bounded by the LLM's action knowledge.
-- The fixed three-phase decomposition (start/middle/end) may lack flexibility for certain action types (e.g., cyclic actions).
+- Dependency on GPT-4o for decomposition is costly, and quality is limited by the LLM's internal action knowledge.
+- Fixed three-phase decomposition (start/mid/end) might be inflexible for certain actions (e.g., periodic actions).
 - Adaptive determination of the number of phases remains unexplored.
-- The quality of phase description encoding by the CLIP text encoder may become a bottleneck.
-- Validation on larger-scale video datasets (e.g., Kinetics) has not been conducted.
-- CoT decomposition quality may vary considerably across different LLMs.
+- The quality of phase descriptions from the CLIP text encoder might be a bottleneck.
+- Has not yet been validated on larger-scale video datasets like Kinetics.
 
 ## Related Work & Insights
-- **Distinction from DeTAL and Ti-FAD**: These methods employ global alignment or simple text augmentation, whereas the proposed framework achieves fine-grained knowledge transfer through structured phase decomposition.
-- The application of CoT prompting to visual tasks is an emerging direction; this work demonstrates its potential for temporal understanding.
-- The design of adaptive phase weights is generalizable to other tasks requiring multi-granularity alignment.
-- Under the 75/25 split, Avg mAP improves from 42.9 (Ti-FAD) to 47.3, demonstrating generalization across different ratios.
+- Comparison with DeTAL and Ti-FAD: While they use global alignment or simple text augmentation, this work achieves fine-grained transfer via structured phase decomposition.
+- The application of CoT prompting in vision tasks is an emerging direction; this work demonstrates its potential in temporal understanding.
+- The adaptive phase weight design can be generalized to other multi-granularity alignment tasks.
 
 ## Technical Details
 - **GPT-4o Prompt**: "Decompose the action of ⟨Action⟩ into coherent three phases based on the natural temporal progression"
-- **Phase text template**: 'a video of people's motion that [Description]'
-- **Cross-attention fusion**: $\bar{F}_v^p = \text{Softmax}(\frac{Q(F_v^p)K(F_t^p)^\top}{\sqrt{D}})V(F_t^p)$
-- **Adaptive weights**: $\omega_p = \text{Sigmoid}(W_p(F_v^p))$, allowing different phases to carry different importance across actions
-- **Localization branch**: Concatenation of all phase visual features → MLP projection → foreground-aware head + regression head
-- **Inference**: Test categories are similarly decomposed into phases by LLM; SoftNMS is applied for redundancy removal
-- **75/25 split results**: THUMOS14 Avg mAP 47.3 (vs. Ti-FAD 42.9); ActivityNet Avg mAP 36.6 (vs. DeTAL 25.5)
-- **Training objective**: $\mathcal{L} = \mathcal{L}_{cls} + \mathcal{L}_{fg} + \mathcal{L}_{loc}$, combining classification, foreground awareness, and DIoU localization
-- **Phase set**: $\mathcal{P} = \{start, middle, end, glob\}$, comprising 4 phases
-- **Foreground binarization threshold**: The mean similarity across all temporal positions serves as the binarization threshold
-- **Compatible visual encoders**: Compatible with standard visual encoders such as CLIP ViT-B/16
+- **Text Template**: 'a video of people's motion that [Description]'
+- **Cross-Attention Fusion**: $\bar{F}_v^p = \text{Softmax}(\frac{Q(F_v^p)K(F_t^p)^\top}{\sqrt{D}})V(F_t^p)$
+- **Adaptive Weights**: $\omega_p = \text{Sigmoid}(W_p(F_v^p))$, allowing different importance for different phases per action.
+- **Localization Branch**: Concatenates visual features from all phases → MLP projection → Foreground head + Regression head.
+- **Phase Set**: $\mathcal{P} = \{start, middle, end, glob\}$, totaling 4 phases.
+- **75/25 Split Results**: THUMOS14 Avg mAP 47.3 (vs Ti-FAD 42.9), ActivityNet Avg mAP 36.6 (vs DeTAL 25.5).
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of CoT prompting and phase decomposition is novel and cognitively well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluated on two benchmarks (THUMOS14 and ActivityNet) under multiple split settings.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation figures are intuitive, though the paper is notation-heavy.
-- **Value**: ⭐⭐⭐⭐ Achieves significant gains on OV-TAD, though the task's application scope is relatively narrow.
+- Novelty: ⭐⭐⭐⭐ CoT + Phase decomposition is a novel and cognitively sound approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks on THUMOS14 and ActivityNet with various splits.
+- Writing Quality: ⭐⭐⭐⭐ Intuitive motivation and diagrams, though formula-heavy.
+- Value: ⭐⭐⭐⭐ Significant improvement for OV-TAD, though the task scope is relatively specialized.
 
 <!-- RELATED:START -->
 
@@ -133,11 +147,11 @@ Three core modules: CSD (CoT-Prompted Semantic Decomposition) → TIF (Text-Infu
 
 ## Related Papers
 
-- [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](../../ICCV2025/video_understanding/learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
-- [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](savax_egotoexo_imitation_error_detection_via_scene.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
-- [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](../../ICCV2025/video_understanding/attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
+- [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
+- [\[CVPR 2026\] TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection](tf-cade_foreground-concentrated_text-video_alignment_for_zero-shot_temporal_acti.md)
+- [\[CVPR 2026\] Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection](alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v.md)
+- [\[CVPR 2026\] DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning](detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen.md)
+- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
 
 </div>
 

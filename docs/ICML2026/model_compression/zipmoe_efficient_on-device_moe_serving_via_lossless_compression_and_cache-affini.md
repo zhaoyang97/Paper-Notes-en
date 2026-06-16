@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling
 description: >-
-  [ICML2026][Model Compression][MoE Inference] ZipMoE targets MoE large model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits.…
+  [ICML 2026][Model Compression][Paper Note] ZipMoE targets Large MoE model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits. Through lossless compression, hierarchical caching, and cache-affinity scheduling, it transforms the expert loading process—previously bottleneck
 tags:
-  - "ICML2026"
-  - "Model Compression"
-  - "MoE Inference"
-  - "Lossless Compression"
-  - "Edge Deployment"
-  - "Cache Scheduling"
-  - "Unified Memory Architecture"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 3e5dd89c53dfd313
+content_hash: ddb246fc775ff021
 ---
-
 # ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling
 
 **Conference**: ICML2026  
@@ -24,103 +18,117 @@ content_hash: 3e5dd89c53dfd313
 **Keywords**: MoE Inference, Lossless Compression, Edge Deployment, Cache Scheduling, Unified Memory Architecture  
 
 ## TL;DR
-ZipMoE targets MoE large model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits. Through lossless compression, hierarchical caching, and cache-affinity scheduling, the system transforms expert loading—previously bottlenecked by SSD I/O—into a process of decompression and recombination parallelized across multi-core CPUs. This reduces latency and improves throughput without altering model semantics.
+ZipMoE targets Large MoE model inference on mobile and edge devices. It decomposes BF16 expert parameters into compressible exponent bits and high-entropy sign-mantissa bits. Through lossless compression, hierarchical caching, and cache-affinity scheduling, it transforms the expert loading process—previously bottlenecked by SSD I/O—into a parallelized decompression and reconstruction pipeline hidden by multi-core CPUs. This reduces latency and enhances throughput without altering model semantics.
 
 ## Background & Motivation
-**Background**: MoE language models scale capacity via sparse computation where only a few experts are activated per token. Cloud deployments rely on CPU memory/SSD offloading, expert caching, and pipelining to move experts to GPUs. Edge devices aim to keep models local for privacy, low network dependency, and interactive responsiveness.
+**Background**: MoE language models scale capacity through sparse computation where only a few experts are activated per token. However, deployment still requires storing vast amounts of expert parameters. Cloud or server environments typically rely on CPU memory/SSD offloading, expert caching, prefetching, and pipelining to move experts from lower storage layers to GPUs. On edge devices, the goal is to keep models local for privacy, low network dependency, and interactive responsiveness.
 
-**Limitations of Prior Work**: Edge platform constraints differ significantly from servers. Devices like Jetson and Apple Silicon utilize Unified Memory Architectures (UMA) with limited DRAM, requiring expert retrieval from NVMe SSDs. Interactive applications often run at batch size 1, making it difficult to amortize I/O costs through large batches. Measurements show that I/O stalls in MoE decoding layers can rise from 38.5% on servers to 80.1% on edge devices, leaving computing resources idle.
+**Limitations of Prior Work**: Constraints on edge platforms differ significantly from servers. Devices like Jetson, mobile SoCs, and Apple Silicon often use Unified Memory Architectures (UMA) where CPU and GPU share physical memory. DRAM capacity is limited, forcing experts to be read from NVMe SSDs frequently. Interactive applications mostly use batch size 1, making it difficult to amortize I/O through large batches or long pipelines. Measurements indicate that moving from a server to an edge environment increases I/O stalls in MoE decoding layers from 38.5% to 80.1%, leaving computing resources largely idle.
 
-**Key Challenge**: While model compression reduces memory footprint, common quantization and pruning techniques alter model behavior. For safety-sensitive or unsupervised edge deployments, metrics like perplexity or zero-shot accuracy are insufficient to guarantee reliability. Conversely, maintaining original parameters leads to severe I/O bottlenecks. The core conflict is achieving algorithmic consistency while preventing I/O from stalling edge MoE serving.
+**Key Challenge**: While model compression can reduce memory footprints, common quantization and pruning techniques alter model behavior. For security-sensitive or unsupervised edge deployments, proving "similarity" through perplexity or zero-shot accuracy is insufficient. Conversely, leaving parameters unchanged results in severe I/O bottlenecks during expert loading. The core challenge is addressing the system contradiction: maintaining perfect algorithmic consistency while preventing I/O from stalling edge MoE performance.
 
-**Goal**: The problem is decomposed into three components: identifying a lossless compressible structure in MoE parameters, hiding decompression costs behind I/O on UMA/multi-core CPUs, and managing the caching and scheduling of experts (as full tensors, compressed blocks, or bit-fields) under tight memory budgets.
+**Goal**: The authors decompose the problem into three sub-problems: identifying a lossless compressible structure within MoE parameters, hiding decompression costs behind I/O on unified memory/multi-core CPUs, and managing the caching of full tensors, compressed chunks, or specific bit-fields under limited memory budgets.
 
-**Key Insight**: An observation of BF16 bit-field distributions reveals that while sign and mantissa bits are nearly random, exponent bits show a highly skewed distribution with a Shannon entropy of approximately 2.55-2.65 bits. Compressed models can be reduced to 68%-74% of their original size. This statistical redundancy in MoE parameters can be exploited losslessly.
+**Key Insight**: A critical observation is the bit-field distribution of BF16 parameters. While sign and mantissa bits are nearly random with limited compression gain, the distribution of exponent bits is highly skewed, with a Shannon entropy of approximately 2.55-2.65 bits. Actual compression can reduce model size to 68%-74%. This indicates statistical redundancy in MoE expert parameters that can be exploited losslessly.
 
-**Core Idea**: Utilizing bit-field lossless compression and cache-scheduling co-design to shift expert access from "waiting for full tensor disk reads" to "reading partial data, parallel decompression, and rapid BF16 tensor recovery."
+**Core Idea**: By employing bit-field level lossless compression and co-designing cache scheduling, expert access is transformed from "waiting for full tensor disk reads" to "reading partial data, parallel decompression, and fast BF16 tensor reconstruction."
 
 ## Method
-ZipMoE is an edge MoE serving system rather than a new model architecture. Its design focuses on decomposing, compressing, and serializing expert parameters offline, while constructing fine-grained task DAGs based on gated experts during online inference to interleave SSD I/O, CPU decompression, and GPU tensor recovery.
+ZipMoE is an edge MoE serving system rather than a new MoE model. It focuses on decomposing, compressing, and serializing expert parameters offline, then constructing fine-grained task DAGs based on gate-selected experts during online inference, interleaving SSD I/O, CPU decompression, and GPU tensor recovery.
 
 ### Overall Architecture
-The system consists of offline initialization and real-time inference.
+The system operates in two phases: offline initialization and real-time inference.
 
-During offline initialization, ZipMoE performs bit-field decomposition on each BF16 expert tensor. Exponent bits are partitioned into shards and compressed into E-chunks using lossless compressors (e.g., LZ4, ZSTD). Sign and mantissa bits are packed into byte-aligned SM-chunks. All chunks and metadata are stored as binary files on NVMe SSDs. As this is lossless, the recovered BF16 tensors are identical to the original parameters.
+During offline initialization, ZipMoE performs bit-field decomposition on each BF16 expert tensor: exponent bits are partitioned into shards and compressed into E-chunks using lossless compressors (e.g., LZ4, LZ4HC, ZSTD). Sign and mantissa bits are packed into byte-aligned SM-chunks. These chunks and metadata are written as binary files to the NVMe SSD. Since the process is lossless, the recovered BF16 tensors are identical to the original parameters.
 
-During real-time inference, the model gate identifies the required experts for the current sparse MoE layer. The cache manager determines capacity for different compression states, and the scheduler constructs a DAG for each expert tensor. This DAG involves reading SM-chunks, reading compressed E-chunks, CPU decompression of E-chunks, and a GPU kernel to recombine them into BF16 tensors. Execution involves an I/O thread, a pool of CPU worker threads, and a CUDA stream to minimize GPU wait time.
+During real-time inference, the model gate identifies the experts to be accessed for the current sparse MoE layer. ZipMoE's cache manager determines cache capacities for different compression states, and the scheduler constructs a DAG for each expert tensor. This may involve reading SM-chunks, reading compressed E-chunks, CPU decompression of E-chunks, and using GPU kernels to merge parts back into BF16 tensors. Execution utilizes an I/O thread, a set of CPU worker threads, and CUDA streams to minimize GPU wait time by hiding I/O and decompression within the sparse layer execution.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph OFF["Offline: BF16 Bit-field Lossless Compression"]
+        direction TB
+        A["BF16 Expert Tensor<br/>Bit-field Decomposition"]
+        A -->|Exponent: Low Entropy| C["Lossless Compression → E-chunks"]
+        A -->|Sign+Mantissa: High Entropy| D["Byte-aligned Packing → SM-chunks"]
+    end
+    OFF --> E["Serialized Write to NVMe SSD"]
+    E --> F["Inference: Gate Selects Active Experts"]
+    F --> G["Compression-aware Hierarchical Cache Management<br/>Four Cache Pools + DP-based Capacity Allocation"]
+    G --> H["Cache-affinity Scheduling<br/>DAG Construction per Compression State"]
+    H --> I["I/O Read Chunk → CPU Parallel Decompression (E-chunk)<br/>→ GPU Merge for BF16 Tensor Recovery"]
+    I --> J["Sparse MoE Computation Output"]
+```
 
 ### Key Designs
-1. **BF16 Bit-field Lossless Compression**:
-    - **Function**: Reduces the bytes read from SSD without altering numerical values.
-    - **Mechanism**: Processes sign, exponent, and mantissa separately. Exponents exhibit low entropy and are compressed, while high-entropy sign-mantissa bits are stored directly. Inference involves decompressing E-chunks and merging them with SM-chunks to restore BF16 values.
-    - **Design Motivation**: Quantization saves memory but changes behavior, whereas full offloading is I/O bound. Bit-field compression exploits BF16 representation redundancy rather than model approximation, making it ideal for safety-critical edge scenarios.
 
-2. **Compression State and Cache-affinity Scheduling**:
-    - **Function**: Selects execution DAGs based on cached components and interleaves I/O with decompression.
-    - **Mechanism**: Experts are categorized into states such as E-expert, SM-expert, compressed-expert, or full tensor. The scheduler classifies tasks into Type-I (requiring SM-chunk loading) and Type-II (SM already cached). Type-I SM reads occupy the I/O thread while Type-II decompression tasks fill CPU worker idle time. The makespan adheres to $ALG \le (3 - 1/L) \cdot OPT$, where $L$ is the number of decompression threads.
-    - **Design Motivation**: Edge bottlenecks arise from the lack of simultaneous I/O, CPU, and GPU utilization. Explicitly modeling cache states as DAGs allows the system to determine which tasks can be hidden behind others.
+**1. BF16 Bit-field Lossless Compression: Saving I/O via Representation Redundancy**
 
-3. **Compression-aware Hierarchical Cache Management**:
-    - **Function**: Allocates fixed memory budgets between full tensors, compressed tensors, SM-chunks, and E-chunks.
-    - **Mechanism**: ZipMoE maintains four cache pools. It uses historical activation frequencies to construct a rank-based activation distribution. A Poisson-binomial dynamic programming approach estimates hit combination probabilities to find the optimal pool partitions via grid search.
-    - **Design Motivation**: MoE expert access is skewed, but popular experts change with prompts. Modeling by rank rather than fixed expert IDs allows the system to exploit long-tail distributions without being overfitted to specific workloads.
+Quantization saves memory but changes model behavior, which is unacceptable for unsupervised edge security scenarios. Standard offloading is limited by SSD read speeds. ZipMoE exploits the inherent redundancy in BF16 representation. By separating the sign, exponent, and mantissa segments, it is observed that exponent bits are highly skewed with a Shannon entropy of ~2.55-2.65 bits. These are split into shards and compressed via lossless compressors like LZ4 into E-chunks. Sign and mantissa bits are high-entropy and direct packing into SM-chunks is preferred. During inference, E-chunks are decompressed and bit-merged with SM-chunks to restore identical BF16 values, reducing model size to 68%-74% with zero behavioral drift.
 
-### Loss & Training
-Ours does not involve training new models or additional loss functions. The optimization objective is system-level sparse layer makespan and end-to-end inference latency. Offline work is restricted to lossless parameter re-encoding. Models used in experiments are directly from Hugging Face with unmodified weights.
+**2. Compression-aware Hierarchical Cache Management: Optimal Granularity under Fixed Budgets**
+
+An expert can reside in memory at multiple granularities: full tensor, compressed tensor, SM-chunk only, or E-chunk only. The granularity level dictates the remaining I/O and decompression overhead. ZipMoE maintains four cache pools (Full Tensor, Compressed Tensor, SM-dedicated, E-dedicated). It uses historical activation frequencies to construct a rank-based activation distribution—modeling popularity by rank rather than fixed expert IDs. Poisson-binomial dynamic programming estimates joint hit probabilities, followed by a grid search to find the capacity configuration that minimizes the expected sparse-layer makespan. This approach captures the distribution skew while remaining robust to prompt-driven drifting of specific expert popularity.
+
+**3. Compression State and Cache-affinity Scheduling: Co-utilizing I/O, CPU, and GPU**
+
+The true bottleneck on edge devices is the lack of simultaneous utilization of I/O threads, multi-core CPUs, and the GPU. ZipMoE abstracts the "currently cached expert components" into compression states (E-expert, SM-expert, compressed-expert, full tensor, etc.) and generates customized DAGs. The scheduler categorizes tasks into Type-I (requiring SM-chunk reads) and Type-II (SM already hit), sorting them into blocks based on estimated time. It prioritizes Type-I reads to saturate the I/O thread while inserting Type-II decompression tasks to fill CPU workers, effectively hiding exponent decompression behind disk reads. The paper proves the makespan satisfies $ALG \le (3 - 1/L) \cdot OPT$ (where $L$ is the number of decompression threads). This DAG-based approach shifts expert loading from I/O-bound to compute-parallel.
+
+### Loss/Training
+No new models are trained, and no additional loss functions are introduced. The "optimization goal" exists at the system level: sparse layer makespan and end-to-end inference latency. Offline phases only involve parameter re-encoding, while online phases minimize execution time via cache planning and scheduling. Models are sourced directly from Hugging Face with no weight modifications.
 
 ## Key Experimental Results
 
 ### Main Results
-Experiments were conducted on DeepSeekV2-Lite, Qwen1.5-MoE, and SwitchTransformers-Large-128 using Jetson AGX Orin (64GB/32GB). Baselines include MoE-Infinity, DeepSpeed ZeRO-3 offloading, and Accelerate.
+Experiments covered DeepSeekV2-Lite, Qwen1.5-MoE, and SwitchTransformers-Large-128 on Jetson AGX Orin (64GB/32GB). Baselines included MoE-Infinity, DeepSpeed ZeRO-3 offloading, and Accelerate. ZipMoE consistently outperformed others under edge memory constraints requiring offloading.
 
-| Scenario | Metric | Results of ZipMoE relative to baseline | Baseline | Description |
+| Scenario | Metric | ZipMoE vs. Baseline | Comparison | Note |
 |------|------|-----------------------------|----------|------|
-| Decoder-only MoE Inference | TPOT | Reduced by 62.65%-97.97% | MoE-Infinity / DeepSpeed / Accelerate | Real-time response during token generation is significantly improved |
-| Decoder-only MoE Inference | TTFT | Reduced by 53.25%-87.90% | Same as above | Wait time for the first token is significantly shortened |
-| Encoder-decoder MoE | TPOT | Reduced by 4.99%-81.24% | Same as above | Gains exist despite higher activation skew |
-| Batch inference | Throughput | Decoder-only: 1.79x-42.49x Gain; Encoder-decoder: 1.31x-5.82x Gain | Same as above | Larger batches increase parallel scheduling efficiency |
-| End-to-end generation | Latency | Decoder-only: 3.03x-42.49x speedup; Encoder-decoder: 1.11x-5.64x speedup | Same as above | Advantages sustained across varied output lengths |
+| Decoder-only MoE Interactive Inference | TPOT | 62.65%-97.97% Lower | MoE-Infinity / DeepSpeed / Accelerate | Significant improvement in real-time response during token output |
+| Decoder-only MoE Interactive Inference | TTFT | 53.25%-87.90% Lower | Same as above | Reduced wait time for first token |
+| Encoder-decoder MoE | TPOT | 4.99%-81.24% Lower | Same as above | Lower gains due to more skewed activations but still effective |
+| Batch Inference | Throughput | 1.79x-42.49x (Decoder), 1.31x-5.82x (Enc-Dec) | Same as above | Parallelism improves as more experts are activated per layer |
+| End-to-end Generation | Latency | 3.03x-42.49x Acceleration | Same as above | Consistent advantage across output lengths |
 
 ### Ablation Study
-The study evaluates the contributions of basic eviction, heterogeneous cache pools, and cache planning (Table 1).
+The study decomposed caching strategies, comparing base eviction, heterogeneous cache pools, and cache planning. Table 1 excerpts:
 
-| Model | Configuration | Throughput (tokens/s) | E2E (s) | Description |
+| Model | Config | Throughput (tokens/s) | E2E (s) | Note |
 |------|------|------------------------|---------|------|
 | DeepSeekV2-Lite 16B | Baseline | 1.60 | 585.96 | Offloading baseline |
-| DeepSeekV2-Lite 16B | ZipMoE avg. basic | 4.43 | 204.05 | Major gains from basic caching |
-| DeepSeekV2-Lite 16B | ZipMoE +C | 5.18 | 176.68 | Gains from heterogeneous pools |
-| DeepSeekV2-Lite 16B | ZipMoE +C+P | 5.30 | 173.23 | Optimal Pareto point with planning |
+| DeepSeekV2-Lite 16B | ZipMoE avg. basic | 4.43 | 204.05 | Major gains from basic strategy |
+| DeepSeekV2-Lite 16B | ZipMoE +C | 5.18 | 176.68 | Improvement with heterogeneous pools |
+| DeepSeekV2-Lite 16B | ZipMoE +C+P | 5.30 | 173.23 | Best Pareto point with cache planning |
 | Qwen1.5-MoE 14B | Baseline | 1.99 | 515.12 | Offloading baseline |
 | Qwen1.5-MoE 14B | ZipMoE avg. basic | 6.39 | 160.33 | Decompression & scheduling contribute most |
-| Qwen1.5-MoE 14B | ZipMoE +C | 7.64 | 134.10 | Hierarchical caching boosts throughput |
-| Qwen1.5-MoE 14B | ZipMoE +C+P | 7.79 | - | Planning provides incremental gains |
+| Qwen1.5-MoE 14B | ZipMoE +C | 7.64 | 134.10 | Layered cache significantly boosts throughput |
 
 ### Key Findings
-- Benefits stem from a paradigm shift: using lossless compression to reduce disk reads and multi-core CPU parallelism to transition expert loading from I/O-bound to compute-parallel. The core system contributes ~76% of throughput gains, while cache management adds ~24%.
-- OS page cache is a secondary benefit. Even with 32GB RAM artificially occupied, ZipMoE still achieves 56.64% lower TTFT and 53.32% lower TPOT compared to baselines.
-- Encoder-decoder MoE gains are lower than decoder-only versions due to more skewed activations and lower I/O intensity, suggesting ZipMoE is most effective in I/O-dominant scenarios.
+- Primary gains stem from the paradigm shift: using lossless compression to reduce disk reads and parallel CPU decompression to move from I/O-bound to compute-parallel execution. The system core contributes ~76% of throughput gains, with cache management contributing ~24%.
+- OS page cache acts as an added benefit rather than the sole source of performance. Even when 32GB RAM is occupied to limit page cache, ZipMoE still reduces TTFT by 56.64% and TPOT by 53.32% compared to baselines.
+- Gains for Encoder-decoder MoE are lower than Decoder-only due to more skewed expert activations and lower I/O intensity, suggesting ZipMoE is most beneficial for "many experts, insufficient memory, I/O dominant" scenarios.
 
 ## Highlights & Insights
-- The system cleverly avoids the "compression equals quantization" trap by finding lossless redundancy within the BF16 format.
-- The abstraction of "compression state" is highly practical, allowing the scheduler to distinguish between full hits, partial hits, and misses to generate optimal DAGs.
-- The design exploits an edge SoC counter-intuition: while the CPU is often idle during I/O stalls, its multi-core decompression capability is sufficient to hide the cost of bit-field recovery. This is applicable to other sparse models or retrieval-based parameter banks.
+- The ingenious approach avoids treating "compression" as quantization and instead finds lossless redundancy in the BF16 format. This reduces edge I/O while avoiding security or behavior drift issues associated with low-bit approximations.
+- The "compression state" abstraction is practical: it promotes the partial caching of parameters from an implementation detail to a scheduling object, allowing the system to distinguish between full hits, partial hits, and misses.
+- The paper exploits a counter-intuitive opportunity in edge SoCs: CPUs usually sit idle during I/O stalls, but their multi-core decompression capacity is sufficient to hide the cost of exponent recovery.
 
 ## Limitations & Future Work
-- Evaluation is primarily on NVIDIA Jetson AGX Orin. While applicable to other shared-memory platforms, performance on mobile NPUs or Apple Neural Engine requires further validation.
-- The method depends on the low-entropy exponent distribution of BF16. Gains might diminish if models use different numerical formats or if training processes change parameter distributions.
-- Current focus is on expert parameter access. Prefill KV cache pressure, multi-app concurrency, and energy consumption remain for future study.
-- Cache planning relies on historical activation statistics; rapid adaptation in non-stationary personal assistant scenarios remains an open question.
+- Evaluation is primarily on NVIDIA Jetson AGX Orin. While applicable to shared-memory platforms, performance on mobile NPUs, Apple Neural Engines, or discrete CPU/GPU architectures requires further validation.
+- The methodology depends on the low-entropy exponent distribution of the BF16 format. If models shift to different formats or training alters parameter distributions, compression rates may decrease.
+- ZipMoE currently focuses on expert parameter access. Prefill phases, KV cache pressure, multi-app concurrency, and power consumption metrics are not discussed in depth.
+- Cache planning requires historical statistics. Adapting to highly non-stationary or rapidly switching task environments remains an open question.
 
 ## Related Work & Insights
-- **vs. Quantized/Pruned MoE Systems**: These use approximations to reduce size. ZipMoE maintains original BF16 semantics, ensuring behavioral consistency at the cost of a lower compression ceiling.
-- **vs. MoE-Infinity / MoELightning / Klotski**: These focus on offloading, prefetching, and pipelining. ZipMoE specifically addresses edge UMA + SSD environments by decomposing experts into parallelizable chunks.
-- **vs. DFloat11 / HuffLLM / nvCOMP**: While these show lossless compression works for LLMs, they are not optimized for conditional MoE activation or edge AArch64 CPUs. ZipMoE integrates compression, partial caching, and scheduling into a unified system.
+- **vs. Quantized/Pruned MoE**: Quantization reduces models via approximation; ZipMoE maintains original BF16 semantics by changing the storage and execution path. ZipMoE offers better consistency, though its compression ceiling is lower.
+- **vs. MoE-Infinity / MoELightning / Klotski**: These focus on server-grade offloading and prefetching. ZipMoE targets edge UMA + SSD scenarios, decomposing parameters into parallel-recoverable blocks to avoid forcing server assumptions onto mobile devices.
+- **vs. Lossless Compression (nvCOMP, etc.)**: While these show lossless compression aids LLMs, they often do not target the conditional activation of MoE or AArch64 edge CPUs. ZipMoE integrates compressors, partial caching, and expert scheduling into a cohesive system.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Combines BF16 bit-field compression with cache-affinity scheduling in a comprehensive system.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple models and hardware budgets; however, lacks extensive mobile SoC/phone and power consumption metrics.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and thorough theoretical grounding.
-- Value: ⭐⭐⭐⭐⭐ High practical value for edge MoE serving, especially for security-sensitive applications requiring lossless parameters.
+- Novelty: ⭐⭐⭐⭐☆ Integrating BF16 bit-field lossless compression with MoE cache-affinity scheduling is a comprehensive and fresh system perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple models and hardware budgets; however, mobile SoC/phone platforms and power metrics would strengthen the work.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and theoretical guarantees, though some tables require cross-referencing with figures for full clarity.
+- Value: ⭐⭐⭐⭐⭐ High utility for edge MoE serving, particularly for security-sensitive cases where lossy quantization is undesirable.
 
 <!-- RELATED:START -->
 

@@ -2,123 +2,115 @@
 title: >-
   [Paper Note] Hyperparameter Transfer with Mixture-of-Experts Layers
 description: >-
-  [ICML 2026][LLM Efficiency][μP] This paper extends the maximal update parametrization (mUP/CompleteP) to sparse MoE Transformers. It introduces initialization and learning rate (LR) scaling rules for the router…
+  [ICML 2026][LLM Efficiency][μP] This paper extends the maximal update parametrization (μP/CompleteP) to sparse MoE Transformers. It defines initialization and learning rate (LR) scaling rules for routers, expert up/down projections, and expert biases when model width, depth, number of experts, and expert width are simultaneously scaled. Using a three
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "μP"
-  - "CompleteP"
-  - "MoE scaling"
-  - "DMFT"
-  - "Zero-shot HP Transfer"
+  - ICML 2026
+  - LLM Efficiency
+  - μP
+  - CompleteP
+  - MoE scaling
+  - DMFT
 date: 2026-05-08
-content_hash: 4f8504dd568866dd
+content_hash: 9dff41cb0ec073b0
 ---
-
 # Hyperparameter Transfer with Mixture-of-Experts Layers
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.20205](https://arxiv.org/abs/2601.20205)  
 **Code**: None  
 **Area**: LLM Efficiency / MoE / Hyperparameter Transfer  
-**Keywords**: μP, CompleteP, MoE scaling, DMFT, Zero-shot HP Transfer
+**Keywords**: μP, CompleteP, MoE scaling, DMFT, Zero-shot hyperparameter transfer
 
 ## TL;DR
-This paper extends the maximal update parametrization (mUP/CompleteP) to sparse MoE Transformers. It introduces initialization and learning rate (LR) scaling rules for the router, expert up/down projections, and expert biases when width, depth, number of experts, and expert width are simultaneously scaled. Using a triple-layer mean-field Dynamical Mean-Field Theory (DMFT), the authors prove that this parametrization possesses a scale-invariant limit as $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L \to \infty$ (under fixed active sparsity $\kappa$). Optimal LR and initialization can be directly reused from a 38M active parameter base model up to a 2B total parameter MoE. Zero-shot HP-tuned MoEs match or outperform dense GPT2 speedrun results at equivalent active parameter counts.
+This paper extends the maximal update parametrization (μP/CompleteP) to sparse MoE Transformers. It defines initialization and learning rate (LR) scaling rules for routers, expert up/down projections, and expert biases when model width, depth, number of experts, and expert width are simultaneously scaled. Using a three-level Mean-Field Dynamical Mean Field Theory (DMFT), the authors prove that this parametrization possesses a scale-invariant limit as $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L \to \infty$ (at fixed activation sparsity $\kappa$). Optimal LRs and initializations can be directly reused from 38M active parameter base models to 2B parameter MoEs. MoEs trained with zero-shot hyperparameters achieve performance comparable to or better than dense GPT2 speedrun models at equivalent active parameter counts.
 
 ## Background & Motivation
-**Background**: Parametrizations like μP and subsequent CompleteP/depth-μP allow for the direct transfer of critical HPs (LR, initialization) from small to large dense Transformers as width and depth scale. MoE is currently the mainstream method for parameter expansion, but most HP transfer research remains focused on dense models.
+**Background**: μP and subsequent parametrizations such as CompleteP and depth-μP allow for the direct transfer of critical hyperparameters (HP) like LR and initialization from small to large dense Transformers as width and depth scale. MoE is currently the dominant method for expanding parameter counts, but HP transfer research has largely remained focused on dense models.
 
-**Limitations of Prior Work**: Directly applying dense μP to MoE is problematic for two reasons. First, MoE introduces new parameter groups like router weights and expert biases, and it is not obvious how their optimal LR/initialization should scale with $n_{\text{embd}}$. Second, MoE introduces two new scaling axes: the number of experts $n_{\text{exp}}$ and the expert width $\alpha_{\text{ffn}}n_{\text{embd}}$. There has been no systematic verification of whether HPs need retuning along these axes. Heuristic μP approaches for dense models (judging $\Theta(1)$ updates by counting dimensions) fail to address stability across $n_{\text{exp}}$ or explain why changes in $\alpha_{\text{ffn}}$ should not affect optimal HPs.
+**Limitations of Prior Work**: Directly applying dense μP to MoE is problematic for two reasons. First, MoE introduces new parameter groups such as router weights and expert biases, and it is non-obvious how their optimal LR/init should scale with $n_{\text{embd}}$. Second, MoE introduces two new scaling axes: the number of experts $n_{\text{exp}}$ and expert width $\alpha_{\text{ffn}}n_{\text{embd}}$. Whether hyperparameters require systematic retuning along these axes has not been verified. Heuristic μP approaches (counting dimensions to ensure $\Theta(1)$ updates) cannot guarantee stability across $n_{\text{exp}}$, nor can they explain why changes in $\alpha_{\text{ffn}}$ should not impact optimal HPs.
 
-**Key Challenge**: There is a coupling between the MoE router, sparse top-$k$ routing, and the internal expert MLPs. Heuristically applying μP per parameter group cannot guarantee that these couplings converge to well-defined training dynamics in the infinite limit. In other words: to achieve HP transfer, one must first prove the existence of a mean-field limit that is independent of specific scale variables.
+**Key Challenge**: There is complex coupling between the router, sparse top-$k$ routing, and internal expert MLPs. Using μP heuristics on a per-parameter-group basis cannot ensure that these couplings converge to well-defined training dynamics at the limit. In other words, to achieve HP transfer, one must first prove the existence of a mean-field limit that is independent of specific scale variables.
 
-**Goal**: Address three sub-problems: (1) determine the $n_{\text{embd}}, \alpha_{\text{ffn}}$ exponents for MoE parameter initialization and LR; (2) determine whether to fix $n_{\text{act}}$ or $\kappa = n_{\text{act}}/n_{\text{exp}}$ as $n_{\text{exp}} \to \infty$; and (3) verify if these rules correspond to a convergent training limit.
+**Goal**: The authors address three sub-problems: (1) determining the $n_{\text{embd}}$ and $\alpha_{\text{ffn}}$ scaling indices for MoE initialization and LR; (2) deciding whether to fix $n_{\text{act}}$ or $\kappa = n_{\text{act}}/n_{\text{exp}}$ as $n_{\text{exp}} \to \infty$; and (3) verifying whether these rules correspond to a convergent training limit.
 
-**Key Insight**: The authors maintain the CompleteP rules for width and depth while focusing on the MoE module. They propose a scaling perspective of fixing sparsity $\kappa$ while expanding $n_{\text{exp}}$. This ensures that the proportion of tokens seen by each expert ($\kappa B$) remains constant, which corresponds to a constant probability event in the mean-field measure, making it natural for both theory and hardware deployment.
+**Key Insight**: The authors adopt CompleteP rules for width and depth and focus on the MoE module. They propose scaling $n_{\text{exp}}$ while fixing sparsity $\kappa$, ensuring that the proportion of tokens seen by each expert ($\kappa B$) remains constant. This corresponds to a constant probability event in the mean-field measure, which is natural for both theory and hardware deployment.
 
-**Core Idea**: An "enhanced μP" is derived by requiring each component (router, expert, bias) to *individually* satisfy the maximal update condition $\Delta W \, \partial z / \partial W = \Theta(1)$ (Table 1). A triple-layer mean-field DMFT is used to rigorously prove that training dynamics have a well-defined limit as $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L$ diverge simultaneously.
+**Core Idea**: A "strengthened μP" condition is proposed where each component (router, expert, and bias) individually satisfies the maximal update condition $\Delta W \, \partial z/\partial W = \Theta(1)$, resulting in the parametrization in Table 1. Training dynamics are rigorously proven to have a well-defined limit via three-level mean-field DMFT as $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L$ diverge simultaneously.
 
 ## Method
 
 ### Overall Architecture
-The model is a pre-LayerNorm decoder-only Transformer with FFNs replaced by MoE modules: each layer is $f_{\text{MoE}}(h) = \frac{1}{n_{\text{act}}} \sum_{i \in A(h)} g_i(h) E_i(h)$, where $g_i(h) = \sigma(W_{\text{router}}^{(i)\top}h)$ is the sigmoid routing weight, $A(h)$ is the set of top-$n_{\text{act}}$ hard-routed experts with trainable biases $b_i$, and $E_i(h) = W_{\text{down}}^{(i)} \phi(W_{\text{up}}^{(i)\top}h)$ represents single-hidden-layer MLP experts. Residual blocks include a $1/L$ multiplier (CompleteP style) for depth transfer. Load balancing is auxiliary-loss-free: only the bias is updated as $b_i \leftarrow b_i - \eta_{\text{bias}}(\text{Load}_i - \kappa)$, leaving other parameters untouched.
-
-The scaling axes are defined as: $L$ (depth), $n_{\text{embd}}$ (residual stream width), $\alpha_{\text{ffn}}$ (expert hidden width multiplier), and $n_{\text{exp}}$ (number of experts), while keeping $\kappa = n_{\text{act}}/n_{\text{exp}}$ constant. Given optimal HPs for a base model, the parametrization automatically extrapolates the LR and initialization for the router, experts, and bias to larger models using rules dependent only on the scale axes.
+The model is a pre-LayerNorm decoder-only Transformer where all FFNs are replaced by MoE modules: $f_{\text{MoE}}(h) = \frac{1}{n_{\text{act}}} \sum_{i \in A(h)} g_i(h) E_i(h)$, where $g_i(h) = \sigma(W_{\text{router}}^{(i)\top}h)$ represents sigmoid routing weights. The set $A(h)$ consists of top-$n_{\text{act}}$ experts determined via routing with trainable biases $b_i$. Experts are single-hidden-layer MLPs: $E_i(h) = W_{\text{down}}^{(i)} \phi(W_{\text{up}}^{(i)\top}h)$. Residual blocks include a $1/L$ multiplier (CompleteP style) to ensure depth transfer. Load balancing is handled without auxiliary losses by updating biases as $b_i \leftarrow b_i - \eta_{\text{bias}}(\text{Load}_i - \kappa)$. The scaling axes are $L$ (depth), $n_{\text{embd}}$ (residual width), $\alpha_{\text{ffn}}$ (expert hidden width multiplier), and $n_{\text{exp}}$ (number of experts), while $\kappa = n_{\text{act}}/n_{\text{exp}}$ remains constant.
 
 ### Key Designs
 
-1.  **MoE Parametrization (Table 1: Scaling Rules for Router/Expert/Bias Init and LR)**:
-    *   **Function**: Refines the "entry-wise update $\Theta(1)$" principle of μP for each MoE parameter group, specifying how the initialization std and Adam LR for router matrices, expert up/down projections, and expert biases scale with $n_{\text{embd}}$ and $\alpha_{\text{ffn}}$.
-    *   **Mechanism**: The authors require that the mixing coefficient $g_i$, expert output $E_i$, and hidden activation $h_{\text{up}}$ *each* satisfy $\eta_W \overline{\nabla W} \partial z / \partial W = \Theta(1)$. This is a stricter per-component condition than dense μP. Approximating Adam via SignGD ($\Delta w \approx \eta \, \text{sgn}(\partial \mathcal{L} / \partial w)$) and assuming LLN alignment $\cos(v, w) \in \Theta(1)$ for $h$ and $\Delta W$, the groups follow: router $\eta \in \Theta(1/n_{\text{embd}})$, init $\Theta(n_{\text{embd}}^{-\gamma})$ (used $\gamma=1$); expert up $\sigma_{\text{init}} = n_{\text{embd}}^{-1/2}, \eta = n_{\text{embd}}^{-1}$. Since expert down handles the secondary scaling from $h_{\text{up}}$ to $E$, it includes an extra $\alpha_{\text{ffn}}^{-1}$, specifically $\sigma_{\text{init}} = \alpha_{\text{ffn}}^{-1} n_{\text{embd}}^{-1/2}, \eta = \alpha_{\text{ffn}}^{-1} n_{\text{embd}}^{-1}$. Expert bias uses $\Theta(1)$ LR and zero initialization to satisfy both the $\Theta(n_{\text{act}})$ per-step change in the activation set and step-0 load balancing.
-    *   **Design Motivation**: Standard fan-in initialization causes a mismatch in the dependence of $W_{\text{down}}$ on $\alpha_{\text{ffn}}$, leading the optimal LR to drift as $\alpha_{\text{ffn}}$ changes. Treating $W_{\text{down}}$ as the "intermediate width" layer of a mean-field two-layer MLP for initialization allows $\alpha_{\text{ffn}}$ to effectively disappear from the optimal HP tuning (explaining the zero-transfer phenomenon in Figure 2, column 4). Suppressing the router LR to $1/n_{\text{embd}}$ rather than $\Theta(1)$ accounts for the $h^\top \Delta W_{\text{router}}^{(i)}$ term naturally carrying a $\sqrt{n_{\text{embd}}} \cdot \sqrt{n_{\text{embd}}}$ factor under LLN alignment.
+**1. MoE Parametrization (Table 1): Scaling Rules for Router, Expert Projections, and Bias**
 
-2.  **Triple-Layer Mean-Field DMFT Limit (Theoretical Foundation)**:
-    *   **Function**: Generalizes the DMFT framework of Bordelon & Pehlevan to deep residual networks with sparse MoE, providing closed training dynamic equations for $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L \to \infty$ (while fixing $\kappa$ and keeping $n_{\text{embd}} / (n_{\text{exp}} n_{\text{hid}} L)$ bounded).
-    *   **Mechanism**: The analysis focuses on residual networks composed of MoE modules $h^{(\ell+1)} = h^{(\ell)} + L^{-1} f_{\text{MoE}}^{\ell}(h^{(\ell)})$. Dynamics unfold in three nested mean-field layers: outer (between residual stream neurons), middle (between experts in a layer), and inner (between neurons within an expert). Hard routing appears via a quantile threshold $q_\star(\kappa)$ (satisfying $\mathbb{E}[\mathbf{1}_{q \ge q_\star}] = \kappa$), necessitating fixed $\kappa$. The equations show that limit dynamics are *independent* of $\alpha_{\text{ffn}}$ (consistent with dense results, explaining $\alpha_{\text{ffn}}$ transfer). When $n_{\text{embd}}, n_{\text{exp}}$ diverge, as long as $\alpha_\star = \lim n_{\text{embd}} / (n_{\text{hid}} n_{\text{exp}} L) = 0$, all joint scalings yield the same limit. The depth limit degrades to a neural ODE if $\alpha_\star = 0$ and a neural SDE if $\alpha_\star > 0$.
-    *   **Design Motivation**: While μP heuristics suggest $\Theta(1)$ behavior, they cannot confirm if $n_{\text{exp}}$ can be infinite or if $n_{\text{hid}}$ can remain non-divergent. DMFT *proves* these parametrizations correspond to a deterministic set of evolution equations, elevating HP transfer from empirical observation to theoretical guarantee.
+Standard dense μP heuristics do not specify how new MoE parameter groups should scale. The authors refine the "entry-wise update $\Theta(1)$" principle into a stronger component-wise condition: the mixing coefficient $g_i$, expert output $E_i$, and hidden activation $h_{\text{up}}$ must each satisfy $\eta_W \overline{\nabla W} \, \partial z/\partial W = \Theta(1)$. Using SignGD as an approximation for Adam ($\Delta w \approx \eta \, \text{sgn}(\partial\mathcal{L}/\partial w)$) and Law of Large Numbers (LLN) alignment assumptions, the rules are derived as follows: router uses $\eta \in \Theta(1/n_{\text{embd}})$ and init $\Theta(n_{\text{embd}}^{-\gamma})$; expert up uses $\sigma_{\text{init}} = n_{\text{embd}}^{-1/2}$ and $\eta = n_{\text{embd}}^{-1}$; expert down includes an additional $\alpha_{\text{ffn}}^{-1}$ factor to account for the scaling from $h_{\text{up}}$ to $E$, resulting in $\sigma_{\text{init}} = \alpha_{\text{ffn}}^{-1}n_{\text{embd}}^{-1/2}$ and $\eta = \alpha_{\text{ffn}}^{-1}n_{\text{embd}}^{-1}$. Expert bias uses $\Theta(1)$ LR and zero initialization.
 
-3.  **Scaling Strategy: Fixing Sparsity $\kappa$ over $n_{\text{act}}$**:
-    *   **Function**: Scales $n_{\text{act}}$ proportionally with $n_{\text{exp}}$ to keep the token proportion $\kappa$ seen by each expert constant, contrasting with the Switch Transformer view (fixed $n_{\text{act}}=1, \kappa \to 0$).
-    *   **Mechanism**: Under perfect balance, each expert sees $\kappa B$ tokens while the self-attention/router see $B$ tokens. If $\kappa$ varied with scale, the data efficiency of experts would mismatch other modules, preventing HP transfer. Fixed $\kappa$ also corresponds to a constant probability slice in mean-field measure, which is required for the existence and stability of $q_\star(\kappa)$ in DMFT.
-    *   **Design Motivation**: This is both an engineering consideration (communication bandwidth limits $n_{\text{act}}$) and a theoretical necessity (preventing mean-field measure degradation).
+The most counter-intuitive rule is the $\alpha_{\text{ffn}}^{-1}$ factor for $W_{\text{down}}$, which differs from standard fan-in initialization. Treating $W_{\text{down}}$ as an intermediate width layer in a mean-field MLP ensures that $\alpha_{\text{ffn}}$ does not shift the optimal HP. Similarly, the router LR is suppressed to $1/n_{\text{embd}}$ to cancel out the $\sqrt{n_{\text{embd}}} \cdot \sqrt{n_{\text{embd}}}$ factor arising from LLN alignment in $h^\top \Delta W_{\text{router}}^{(i)}$.
+
+**2. Three-Level Mean-Field DMFT Limit: Theoretical Validation**
+
+While μP heuristics suggest $\Theta(1)$ behavior, they do not guarantee stability as $n_{\text{exp}} \to \infty$. The authors extend the DMFT framework to residual networks containing MoE modules, proving that training dynamics follow closed equations under the limit $n_{\text{embd}}, n_{\text{exp}}, n_{\text{hid}}, L \to \infty$ (at fixed $\kappa$). The expansion follows three nested levels: mean-field across neurons in the residual stream, mean-field across experts within a layer, and mean-field across hidden neurons within an expert. Hard routing is incorporated via a quantile threshold $q_\star(\kappa)$. This proof elevates HP transfer from an empirical observation to a consequence of a deterministic evolution equation.
+
+**3. Fixed Sparsity $\kappa$ vs. Fixed $n_{\text{act}}$ Expansion Strategy**
+
+There are two ways to scale $n_{\text{exp}}$: keeping $n_{\text{act}}$ constant (e.g., Switch Transformer), where $\kappa \to 0$, or keeping $\kappa$ constant, where $n_{\text{act}}$ scales with $n_{\text{exp}}$. The authors choose the latter to maintain the effective "data efficiency" of experts relative to other modules. Maintaining a constant $\kappa$ is also a theoretical requirement for a stable DMFT limit, as it represents a constant probability slice in the mean-field measure.
 
 ### Loss & Training
-The framework uses Adam/AdamW. The router utilizes sigmoid + auxiliary-loss-free bias updates $b_i \leftarrow b_i - \eta_{\text{bias}}(\text{Load}_i - \kappa)$. For fixed token budget experiments, a linear warmup (1000 steps) + constant LR (1000 steps) schedule is used (2000 steps / 1B tokens / batch 500K / seq 1024). For longer horizons, a cosine decay to zero is applied. In addition to exponential scaling of $n_{\text{embd}}, \alpha_{\text{ffn}}$, each parameter group requires a *separate* $\Theta(1)$ constant multiplier tuning (Appendix D.1: without this, training dynamics like load-balancing loss become unstable near optimal HP). Sparsity configurations: $\kappa=1/4$ (FineWeb) and $\kappa=1/12$ (C4).
+The foundation is standard Adam and AdamW. The router uses sigmoid routing with auxiliary-loss-free bias updates. The LR scheduler consists of 1000 linear warmup steps followed by a constant LR for 1B tokens. For longer horizons, cosine decay is used. In addition to exponential scaling with $n_{\text{embd}}$ and $\alpha_{\text{ffn}}$, each parameter group requires an individually tuned $\Theta(1)$ constant multiplier to ensure stable load balancing and training dynamics. Experiments use $\kappa=1/4$ on FineWeb and $\kappa=1/12$ on C4.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Experimental Setup | Key Observation | Explanation |
-| :--- | :--- | :--- |
-| FineWeb, $\kappa=1/4$, 1B tokens, 38M→1.8B swept along width/depth/$n_{\text{exp}}$/$\alpha_{\text{ffn}}$ | Optimal LR and init std curves for 4 scaling axes are almost co-located across sizes | Verifies zero-shot HP transfer (Figure 2). |
-| C4, $\kappa=1/12$, 1B tokens, 4 scaling axes | Consistent with FineWeb findings | Covers sparser routing and different corpora (Figure 4). |
-| GPT2-small (124M) active config, FineWeb, 10B tokens, zero-shot HP (migrated from 38M base) | Val loss comparable/better than dense GPT2 speedrun (AdamW/Muon) with more total params | Figure 1 |
-| GPT2-medium (355M) active, 7.5B tokens | Stable training with zero-shot HP | Figure 16 |
-| Early loss curve collapse | When using zero-shot optimal HP, loss curves for different scales overlap exactly for initial steps | Matches DMFT scale-invariance predictions (Figure 3). |
+| Experimental Setup | Key Observation | Description |
+|:---|:---|:---|
+| FineWeb, $\kappa=1/4$, 1B tokens, 38M→1.8B scaling width, depth, $n_{\text{exp}}$, and $\alpha_{\text{ffn}}$ | Optimal LR and init std curves coincide across different sizes | Validates zero-shot HP transfer (Figure 2). |
+| C4, $\kappa=1/12$, 1B tokens, 4 scale axes | Consistent with FineWeb results | Covers sparser routing and different corpora (Figure 4). |
+| GPT2-small (124M) active parameters, FineWeb, 10B tokens | Val loss matches or exceeds dense GPT2 speedrun | Zero-shot HP transferred from 38M base model (Figure 1). |
+| Early loss curve collapse | Loss curves perfectly overlap for the first several steps as scale increases | Matches DMFT scale-invariance predictions (Figure 3). |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Explanation |
-| :--- | :--- | :--- |
-| Full Parametrization + Constant Multiplier Tuning | Optimal loss, stable load-balancing | Main pipeline |
-| No constant multiplier tuning | Unstable load-balancing loss near optimal HP | Appendix D.1; MoE is more sensitive to constants than dense models. |
-| $W_{\text{down}}$ with standard fan-in init (no $\alpha_{\text{ffn}}^{-1}$) | Optimal LR drifts with $\alpha_{\text{ffn}}$ | Highlights the necessity of the $\alpha_{\text{ffn}}^{-1}$ factor (Figure 11). |
-| Mixing coefficient (sigmoid vs softmax) | Similar performance across scales | Figure 18 |
-| Scaling $n_{\text{act}}$ vs expert size (inverse) | More, smaller experts are monotonically better at both 1B and 5B horizons | Replicates Krajewski et al. but *without* HP retuning (Figure 5/D.3). |
+| Configuration | Key Metric | Description |
+|:---|:---|:---|
+| Full parametrization + tuned constant multipliers | Optimal loss and stable load balancing | Main method. |
+| No tuning of constant multipliers | Instability in load-balancing loss near optimal HP | MoE is more sensitive to these constants than dense models (Appendix D.1). |
+| Standard fan-in init for $W_{\text{down}}$ (no $\alpha_{\text{ffn}}^{-1}$) | Optimal LR drifts with $\alpha_{\text{ffn}}$ | Justifies the $\alpha_{\text{ffn}}^{-1}$ factor (Figure 11). |
+| More small experts vs. fewer large experts | More small experts are monotonically better | Confirms previous findings without needing to retune HP (Figure 5). |
 
 ### Key Findings
-- Under constant $\kappa$, LR and initialization transfer directly across width, depth, number of experts, and expert width. The *transfer across $\alpha_{\text{ffn}}$* is a unique prediction of DMFT that cannot be derived from μP heuristics, and it is validated experimentally.
-- MoE stability is significantly more sensitive to $\Theta(1)$ constant multipliers than dense models. Constants from dense models cannot be blindly reused; they must be tuned per parameter group.
-- Using this parametrization naturally results in uniform expert load (Figure 17) without explicit auxiliary losses, due to the synergy of sigmoid routing, bias updates, and LR scaling.
-- For 5B–10B token horizons, while stable LRs converge, adding cosine decay to zero significantly further reduces validation loss.
-- The phenomenon "more, smaller experts are better" is confirmed without the artifact of HP tuning, proving it is a fundamental property.
+- LR and init transfer successfully across all four axes (width, depth, $n_{\text{exp}}$, $\alpha_{\text{ffn}}$) provided $\kappa$ is fixed. Transfer across $\alpha_{\text{ffn}}$ is a unique prediction of DMFT that is confirmed by experiment.
+- MoE stability is significantly more sensitive to $\Theta(1)$ constant multipliers than dense models, requiring these to be tuned once per parameter group.
+- Uniform expert load emerges naturally with the proposed parametrization, eliminating the need for auxiliary losses.
+- The advantage of using "more but smaller experts" is verified to be independent of hyperparameter tuning artifacts.
 
 ## Highlights & Insights
-- Defining components of each expert to satisfy $\Delta z = \Theta(1)$ is the critical step in incorporating sparse routing into the μP framework. It decouples the LR derivation for the router, expert, and bias into mechanical rules.
-- The triple-layer mean-field nesting (residual neurons / experts / intra-expert neurons) generalizes the multi-head self-attention analysis of "measure-within-measure" to MoE, providing a paradigm for other sparse architectures.
-- The $\alpha_{\text{ffn}}^{-1}$ factor in $W_{\text{down}}$ initialization is counter-intuitive (relative to fan-in) but essential for zero-shot $\alpha_{\text{ffn}}$ transfer. This "mean-field intermediate width" perspective is a trick applicable to other modules with hidden multipliers.
-- By fixing $\kappa$, the authors provide a formal justification for MoE scaling laws, establishing that $\kappa \to 0$ and $\kappa = \text{const}$ are fundamentally different limits.
+- Decoupling the derivation of LRs for the router, expert, and bias using component-wise conditions is the key step in bringing sparse routing into the μP framework.
+- The three-level mean-field nesting provides a clear paradigm for analyzing other sparse architectures like MoA or shared-expert models.
+- The use of the $\alpha_{\text{ffn}}^{-1}$ factor for $W_{\text{down}}$ init is a critical insight derived from mean-field theory that enables zero-shot transfer across expert widths.
+- By fixing $\kappa$, the authors establish that $\kappa \to 0$ and $\kappa = \text{const}$ are fundamentally different scaling limits, providing a formal basis for MoE scaling law research.
 
 ## Limitations & Future Work
-- Self-attention modules were not fully integrated into the DMFT proof. No technical barriers are expected, but the complete version is missing.
-- Zero-shot HP only transfers base LR and init std; constant multipliers for weight decay, router temperature, and bias LR still need tuning per scale.
-- The scale is limited to 2B total parameters and 10B tokens; whether corrections are needed for trillion-parameter models or trillion-token horizons remains an open question.
-- Only $\kappa = 1/4$ and $1/12$ were verified; the relationship between HPs across different $\kappa$ values remains empirical.
-- Primarily focused on sigmoid + bias routing; it does not explicitly cover softmax-top-$k$ or expert-choice routing variants.
+- The DMFT analysis does not fully integrate the self-attention module; while the authors believe there are no technical barriers, the coupling effects have not been fully verified.
+- Only base LR and init std are transferred; other constant multipliers (weight decay, router temperature) still require manual tuning.
+- Experimental scale is limited to 2B total parameters and 10B tokens, leaving open questions about long-horizon behavior at industrial scales.
+- Only two levels of sparsity ($\kappa=1/4, 1/12$) were tested; the relationship between HPs across different $\kappa$ remains an empirical unknown.
+- The study uses sigmoid routing and does not cover other variants such as softmax-top-$k$ or expert-choice routing.
 
 ## Related Work & Insights
-- **vs. μP (Yang & Hu 2022) / CompleteP (Dey et al. 2025)**: These address width/depth transfer for dense models. This work maintains those rules but adds specific rules for MoE modules across $n_{\text{exp}}$ and $\alpha_{\text{ffn}}$.
-- **vs. Bordelon & Pehlevan DMFT**: Extends their work on dense components to a three-layer nested mean-field for sparse experts.
-- **vs. Malasnicki et al. 2025**: A concurrent work that only studies LR transfer across MoE width. This paper covers both LR and initialization across four axes with rigorous DMFT proof.
-- **vs. Krajewski et al. 2024 / Boix-Adsera & Rigollet 2025**: Confirms their "more smaller experts" findings without the confounder of HP tuning bias.
+- **vs μP (Yang & Hu 2022) / CompleteP (Dey et al. 2025)**: These works handle dense Transformers; this paper supplements them with rules for the MoE module and adds $n_{\text{exp}}$ and $\alpha_{\text{ffn}}$ axes.
+- **vs Bordelon & Pehlevan DMFT**: This paper extends their mean-field approach for attention heads to the hierarchical structure of sparse experts.
+- **vs Malasnicki et al. 2025**: A concurrent work focusing mainly on LR transfer across width; this paper covers both LR and init across four axes with a rigorous DMFT proof.
+- **vs Krajewski et al. 2024**: This paper confirms their "more small experts are better" conclusion using zero-shot hyperparameters, proving it is not an artifact of HP tuning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Extending μP+DMFT to MoE is natural, but the details of $\alpha_{\text{ffn}}$/$n_{\text{exp}}$ axes and the triple-layer proof are significant new contributions).
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Covers 38M to 2B scales, multiple corporate data, and long horizons, though lacks industrial-scale verification).
-- Writing Quality: ⭐⭐⭐⭐ (Clearly distinguishes heuristic limitations from DMFT necessity; well-structured appendix).
-- Value: ⭐⭐⭐⭐ (Provides a direct lookup table in Table 1 for scaling MoE and formalizes the theoretical basis for constant sparsity scaling).
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -130,7 +122,7 @@ The framework uses Adam/AdamW. The router utilizes sigmoid + auxiliary-loss-free
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
 - [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
+- [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 
 </div>
 

@@ -2,87 +2,78 @@
 title: >-
   [Paper Note] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
 description: >-
-  [CVPR2026][Model Compression][On-the-Fly Category Discovery] This paper proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By combining semantics-aware prototype updating…
+  [CVPR 2026][Model Compression][On-the-Fly Category Discovery] Ours proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By utilizing semantic-aware prototype updates, stable encoder adaptation, and margin-aware logit calibration, it abandons hash encoding to model directly in continuous feature space, significantly mitigating category ex
 tags:
-  - "CVPR2026"
-  - "Model Compression"
-  - "On-the-Fly Category Discovery"
-  - "Test-Time Adaptation"
-  - "Prototype Learning"
-  - "Category Explosion"
-  - "Semantic Shift"
+  - CVPR 2026
+  - Model Compression
+  - On-the-Fly Category Discovery
 date: 2026-05-08
-content_hash: 97883c186feee3a0
+content_hash: 2005e45b2d5cf2b4
 ---
-
 # TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.08075](https://arxiv.org/abs/2603.08075)  
 **Code**: [ynanwu/TALON](https://github.com/ynanwu/TALON)  
-**Area**: Model Compression / Open-World Learning
-**Keywords**: On-the-Fly Category Discovery, Test-Time Adaptation, Prototype Learning, Category Explosion, Semantic Shift
+**Area**: Model Compression / Open-World Learning  
+**Keywords**: On-the-Fly Category Discovery, Test-time Adaptation, Prototypical Learning, Category Explosion, Semantic Shift
 
 ## TL;DR
 
-This paper proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By combining semantics-aware prototype updating, stable encoder adaptation, and margin-aware logit calibration, TALON operates directly in continuous feature space without hash encoding, substantially alleviating category explosion and significantly improving novel category discovery accuracy.
+Ours proposes TALON, the first test-time adaptive framework for On-the-Fly Category Discovery (OCD). By utilizing semantic-aware prototype updates, stable encoder adaptation, and margin-aware logit calibration, it abandons hash encoding to model directly in continuous feature space, significantly mitigating category explosion and substantially improving new category discovery accuracy.
 
 ## Background & Motivation
 
-1. **Closed-world assumption limitations**: Traditional visual recognition systems assume all categories are predefined, making them incapable of discovering new concepts or generalizing beyond the training set.
-2. **OCD task definition**: On-the-Fly Category Discovery represents the most realistic open-world setting—only labeled data from known categories is available during offline training, while unlabeled data streams are processed instance-by-instance online, requiring simultaneous recognition of known categories and discovery of novel ones.
-3. **Deficiencies of hash encoding**: Existing OCD methods (SMILE, PHE) freeze the feature extractor and quantize features into binary hash codes as class prototypes. Quantization causes information loss, reduced representational capacity, and amplified intra-class variance, which readily leads to **category explosion** (a single true category fragmented into multiple pseudo-categories).
-4. **Static inference is unreasonable**: Fixing both the encoder and prototypes during the online phase entirely ignores the learning potential of newly arriving data—a stance at odds with the principle of "learning through discovery."
-5. **Generative methods remain limited**: Although DiffGRE synthesizes novel-class samples via diffusion models, it projects features into a lower-dimensional space and remains fundamentally insufficient.
-6. **Conventional TTA is ill-suited**: Existing TTA methods (TENT, MEMO, etc.) are designed for domain shift rather than semantic/label-space shift, and perform poorly or even degrade in OCD scenarios.
+1.  **Limitations of Closed-World Assumption**: Traditional visual recognition systems assume all categories are predefined, failing to discover new concepts or generalize beyond the training set.
+2.  **OCD Task Definition**: On-the-Fly Category Discovery is an open-world setting closest to real-world scenarios—offline training uses only labeled data from known classes, while the online phase processes unlabeled data streams instance-by-instance, requiring simultaneous recognition of known classes and discovery of new ones.
+3.  **Limitations of Prior Work (Hash Encoding)**: Existing OCD methods (SMILE, PHE) freeze the feature extractor and quantize features into binary hash codes as class prototypes. Quantization leads to information loss, degraded representation power, and magnified intra-class variance, resulting in **category explosion** (a single real class fragmented into multiple pseudo-classes).
+4.  **Key Challenge (Static Inference)**: Both the encoder and prototypes remain fixed during the online phase, completely ignoring the learning potential from incoming data—this contradicts the "learning from discovery" philosophy.
+5.  **Limitations of Prior Work (Generative Methods)**: Although DiffGRE uses diffusion models to synthesize new class samples, it projects features into lower dimensions, which remains fundamentally ineffective.
+6.  **Key Challenge (Traditional TTA)**: Existing TTA methods (TENT, MEMO, etc.) target domain shift rather than semantic/label space shift, performing poorly or even degrading in OCD scenarios.
 
 ## Method
 
 ### Overall Architecture
 
-TALON consists of two stages—**offline training** and **online adaptive inference**—built on a ViT-B-16 backbone (supporting DINO/CLIP pretraining), with only the last transformer block fine-tuned.
+TALON aims to correct two flaws in existing OCD methods: first, the quantization of features into binary hash codes for prototypes, which causes "category explosion"; second, the freezing of both the encoder and prototypes during the online phase, wasting the learning potential from new data. The proposed solution operates entirely in the continuous feature space (hash-free) and introduces Test-time Adaptation (TTA) to OCD. The pipeline consists of three steps: **Offline**, a ViT-B/16 (DINO/CLIP pre-trained, fine-tuning only the last transformer block) learns representations, while "Margin-aware Logit Calibration (MLC)" shapes the embedding space into a "tight intra-class, sparse inter-class" structure to reserve space for future new classes. **Online Inference** maintains a prototype memory bank $\mathcal{P}$, where known class prototypes are initialized with the mean features of labeled samples; each test instance is compared with all prototypes via cosine similarity—assigned to a prototype if the maximum similarity $\ge \tau$, or used to create a new prototype otherwise. **Online Adaptation** periodically recovers a small batch of processed samples to perform "Semantic-aware Prototype Updates (TTA-P)" by moving prototypes toward the mean of high-confidence samples to suppress outliers, followed by "Stable Encoder Adaptation (TTA-M)" for lightweight encoder updates. The updated prototype bank and encoder are fed back into the inference loop, forming a closed loop of "learning while discovering."
 
-### Offline Stage: Representation Learning + Margin-aware Logit Calibration (MLC)
-
-- **Supervised contrastive loss** $\mathcal{L}^{\text{sup}}$: pulls same-class features together and pushes apart different-class features.
-- **Cross-entropy loss** $\mathcal{L}^{\text{ce}}$: a linear projection head produces logits to enhance class-level discrimination.
-- **MLC module**: introduces an angular margin $m$ on the cosine similarity between normalized features and class weights:
-    - Applies $s \cos(\theta_{i,y_i} + m)$ to the ground-truth class logit, while keeping $s \cos\theta_{i,c}$ for all other classes.
-    - Enlarges inter-class angular distance (27.98° → 74.15°) and compresses intra-class angular distance (64.55° → 35.83°).
-    - Reserves embedding space for future novel category discovery.
-- Final training loss: $\mathcal{L}_{\text{labeled}} = \mathcal{L}^{\text{sup}} + \lambda \mathcal{L}^{\text{ce-m}}$
-
-### Online Stage: Adaptive Inference
-
-**① Online inference and novel category detection**
-
-- A prototype memory bank $\mathcal{P}$ is maintained, with each known category initialized using the mean feature of its labeled samples.
-- For each test sample, the maximum cosine similarity to all prototypes is computed; if it exceeds threshold $\tau$, the sample is assigned to a known category, otherwise a new prototype is created.
-
-**② Semantics-aware prototype updating (TTA-P)**
-
-- The mean feature $\bar{\mathbf{z}}_j$ and confidence $\text{conf}_j$ of samples assigned to prototype $j$ within each batch are computed.
-- Adaptive step-size EMA update: $\alpha_j = \eta \cdot \text{conf}_j \cdot \frac{n_j}{n_j + \kappa}$
-- High-confidence, sample-rich assignments trigger large updates; low-confidence or sample-scarce cases produce minimal updates—effectively suppressing persistent pseudo-categories caused by outliers.
-
-**③ Stable encoder adaptation (TTA-M)**
-
-- Small batches of test samples are collected periodically to update encoder parameters via lightweight gradient steps.
-- Three losses are jointly optimized:
-    - **Entropy minimization** $\mathcal{L}_{\text{ent}}$: encourages high-confidence predictions.
-    - **Alignment loss** $\mathcal{L}_{\text{align}}$: keeps feature means consistent with stored prototypes.
-    - **Separation loss** $\mathcal{L}_{\text{sep}}$: prevents collapse of features from different categories.
-- $\mathcal{L}_{\text{TTA}} = \mathcal{L}_{\text{ent}} + \beta_1 \mathcal{L}_{\text{align}} + \beta_2 \mathcal{L}_{\text{sep}}$, with gradients propagated only through the encoder.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Labeled data of known classes (Offline)"] --> B["ViT-B/16 fine-tune last block<br/>to learn representations"]
+    B --> C["Margin-aware Logit Calibration (MLC)<br/>Add angular margin m, tight intra-class/sparse inter-class"]
+    C --> D["Prototype Memory Bank 𝒫 Initialization<br/>Mean features of labeled samples for each known class"]
+    E["Unlabeled test stream (Instance-by-instance)"] --> F["Calculate cosine similarity with all prototypes"]
+    D --> F
+    F -->|"max sim ≥ τ"| G["Assign to known/discovered prototype"]
+    F -->|"max sim < τ"| H["Create new prototype (Discover new class)"]
+    G --> I["Periodically collect a batch of processed samples"]
+    H --> I
+    subgraph ADAPT["Online Adaptation (Learning while discovering)"]
+        direction TB
+        I --> J["Semantic-aware Prototype Update (TTA-P)<br/>EMA gated by confidence × sample count"]
+        J --> K["Stable Encoder Adaptation (TTA-M)<br/>Entropy min + alignment + separation, update encoder only"]
+    end
+    K -.->|"Feedback of updated prototype bank + encoder"| F
+```
 
 ### Key Designs
 
-- **Hash-free**: operates directly in continuous feature space, avoiding quantization information loss.
-- **Immediate feedback + periodic update**: each instance is predicted in real time, while the model and prototypes are updated periodically, balancing responsiveness and stability.
-- Known and novel categories use different update rates and smoothing constants ($\eta$=0.06/0.3, $\kappa$=32/8).
+**1. Margin-aware Logit Calibration (MLC): Reserving space for future new classes offline**
+
+If offline training crowds known classes too tightly without sufficient inter-class distance, online new classes will lack space in the embedding space and easily confuse with known classes. MLC adds an angular margin $m$ to the cosine similarity between normalized features and class weights: $s \cos(\theta_{i,y_i} + m)$ is used for the ground truth logit, while others remain $s \cos\theta_{i,c}$. This increases inter-class angular distance from 27.98° to 74.15° and compresses intra-class distance from 64.55° to 35.83°. The offline loss is $\mathcal{L}_{\text{labeled}} = \mathcal{L}^{\text{sup}} + \lambda \mathcal{L}^{\text{ce-m}}$, where supervised contrastive learning pulls similar samples together and the calibrated cross-entropy enhances class-level discrimination. This effectively clears space in the embedding space in advance for subsequent new class discovery.
+
+**2. Semantic-aware Prototype Update (TTA-P): Moving prototypes with high-confidence samples to suppress outliers**
+
+If online-created prototypes are biased by outliers, pseudo-classes will persist. TTA-P calculates the average feature $\bar{\mathbf{z}}_j$ and confidence $\text{conf}_j$ for each batch of samples assigned to prototype $j$, updating via EMA with an adaptive step size: $\alpha_j = \eta \cdot \text{conf}_j \cdot \frac{n_j}{n_j + \kappa}$. This dual-gating mechanism ensures substantial updates only when confidence is high and samples are sufficient, whereas low-confidence or sparse samples cause minimal changes, preventing outliers from solidifying pseudo-classes. Known and new classes utilize different update rates and smoothing constants ($\eta$=0.06/0.3, $\kappa$=32/8).
+
+**3. Stable Encoder Adaptation (TTA-M): Lightweight encoder updates without feature collapse**
+
+Updating prototypes alone is insufficient; the encoder should also learn from the test stream, but improper updates cause feature collapse. TTA-M periodically collects small batches of test samples for lightweight gradient updates, combining three losses: entropy minimization $\mathcal{L}_{\text{ent}}$ for high-confidence predictions, alignment loss $\mathcal{L}_{\text{align}}$ to maintain consistency between feature means and stored prototypes, and separation loss $\mathcal{L}_{\text{sep}}$ to prevent different classes from collapsing. The total loss $\mathcal{L}_{\text{TTA}} = \mathcal{L}_{\text{ent}} + \beta_1 \mathcal{L}_{\text{align}} + \beta_2 \mathcal{L}_{\text{sep}}$ is backpropagated to the encoder only. The combination of immediate prediction and periodic updates allows the model to maintain real-time performance while continuously learning from discovery.
 
 ## Key Experimental Results
 
-### Main Results (7 benchmarks, Strict-Hungarian protocol)
+### Main Results (7 Benchmarks, Strict-Hungarian Protocol)
 
 | Dataset | Method | All | Old | New |
 |--------|------|-----|-----|-----|
@@ -97,17 +88,17 @@ TALON consists of two stages—**offline training** and **online adaptive infere
 | Stanford Cars | DiffGRE+P | 32.1 | 63.3 | 16.9 |
 | Stanford Cars | **TALON-CLIP** | **53.5** | **74.2** | **43.6** |
 
-On ImageNet-100, overall accuracy jumps from 39.2% to 82.6% (+43.4 pp), representing an exceptionally large gain.
+On ImageNet-100, "All" accuracy surged from 39.2% to 82.6% (+43.4pp), indicating a highly significant improvement.
 
-### Category Explosion Mitigation (CUB-200 & Stanford Cars)
+### Mitigation of Category Explosion (CUB-200 & Stanford Cars)
 
-| Method | CUB #Cls (true: 200) | SCars #Cls (true: 196) |
+| Method | CUB #Cls (True 200) | SCars #Cls (True 196) |
 |------|---------------------|----------------------|
 | SMILE-64bit | 2910 | 4788 |
 | PHE-64bit | 493 | 917 |
 | **TALON** | **153** | **299** |
 
-TALON's estimated category count is closest to the ground truth, effectively mitigating category explosion.
+TALON provides the closest estimation of category counts to the ground truth, effectively mitigating category explosion.
 
 ### Ablation Study (CLIP backbone, Strict-Hungarian)
 
@@ -117,11 +108,11 @@ TALON's estimated category count is closest to the ground truth, effectively mit
 | +MLC | 45.7 | 49.0 |
 | +MLC+TTA-P | 46.7 | 52.7 |
 | +MLC+TTA-M | 46.7 | 52.1 |
-| **TALON (full)** | **45.5** | **53.5** |
+| **TALON (Full)** | **45.5** | **53.5** |
 
-Each module contributes incremental gains; MLC provides better initialization, while TTA-P and TTA-M offer complementary improvements.
+Each module contributes gains; MLC provides better initialization, while TTA-P and TTA-M provide complementary improvements.
 
-### Comparison with Existing TTA Methods (Stanford Cars)
+### Comparison with Traditional TTA Methods (Stanford Cars)
 
 | Method | All | New |
 |------|-----|-----|
@@ -129,40 +120,40 @@ Each module contributes incremental gains; MLC provides better initialization, w
 | Baseline+MLC+OSTTA | 47.2 | 39.9 |
 | **TALON** | **53.5** | **43.6** |
 
-Conventional TTA methods are nearly ineffective or even degrade under semantic shift scenarios.
+Traditional TTA methods are almost ineffective or even degrade performance in semantic shift scenarios.
 
 ## Highlights & Insights
 
-- **First application of TTA to OCD**: breaks the "frozen inference" paradigm and realizes "learning through discovery."
-- **Hash-free framework**: operating directly in continuous feature space preserves full representational capacity and entirely avoids quantization-induced category explosion.
-- **Confidence-gated adaptive prototype updating**: the dual-gating mechanism $\text{conf} \times \frac{n}{n+\kappa}$ elegantly balances update magnitude and stability.
-- **Prospective embedding space shaping via MLC**: the offline stage proactively reserves space for future novel categories, with angular visualization confirming the effect (inter-class angular distance expands from 28° to 74°).
-- **Hyperparameter sharing**: nearly identical configurations are used across all datasets, demonstrating strong generalizability.
+- **First to introduce TTA to the OCD task**: Breaks the "frozen inference" paradigm to achieve "learning from discovery."
+- **Hash-free framework**: Operates directly in the continuous feature space to preserve full representation power, completely avoiding category explosion caused by quantization.
+- **Confidence-controlled adaptive prototype updates**: Balances update magnitude and stability through the $\text{conf} \times \frac{n}{n+\kappa}$ dual-gating mechanism.
+- **Proactive shaping of the embedding space via MLC**: Reserves space for future new classes during the offline phase, validated by angular visualization (inter-class angular distance expanded from 28° to 74°).
+- **Hyperparameter sharing**: Uses the same configuration across almost all datasets, demonstrating strong generalization.
 
 ## Limitations & Future Work
 
-1. **Sensitivity to threshold $\tau$**: novel category detection relies entirely on a cosine similarity threshold that requires per-dataset tuning (0.7 for DINO, 0.75 for CLIP).
-2. **Full TALON slightly underperforms +MLC+TTA-P on CUB ablation (All metric)**: suggesting that encoder adaptation (TTA-M) may introduce marginal noise on fine-grained datasets.
-3. **Category count estimation remains biased**: CUB (true: 200) is underestimated at 153; SCars (true: 196) is overestimated at 299.
-4. **Efficiency of instance-level online processing**: maintaining a growing prototype memory bank and periodically updating the encoder incur non-trivial computational and memory costs in long-horizon streaming scenarios.
-5. **No prototype merging mechanism**: there is no explicit strategy for merging or pruning prematurely created spurious prototype entries.
+1.  **Sensitivity to threshold $\tau$**: New class discovery relies entirely on a cosine similarity threshold, which requires dataset-specific tuning (0.7 for DINO, 0.75 for CLIP).
+2.  **Performance in CUB Ablation**: The full TALON configuration is slightly lower than +MLC+TTA-P on CUB, suggesting that model adaptation (TTA-M) may introduce slight noise in fine-grained datasets.
+3.  **Residual bias in category count estimation**: Estimated 153 classes for CUB (True 200) and 299 for SCars (True 196), indicating both underestimation and overestimation.
+4.  **Efficiency of instance-level online processing**: Maintaining a growing prototype memory bank and periodically updating the encoder involves computational overhead and memory growth that warrant attention in long-term streaming scenarios.
+5.  **Lack of category merging mechanism**: No explicit strategy to merge or clean pseudo-class prototypes created erroneously in early stages.
 
 ## Related Work & Insights
 
-| Dimension | SMILE/PHE (hash-based) | DiffGRE (generative) | **TALON** |
+| Dimension | SMILE/PHE (Hash methods) | DiffGRE (Generative methods) | **TALON** |
 |------|---------------------|-------------------|-----------|
-| Feature space | Binary hash codes | Low-dim projection | Continuous feature space |
-| Online learning | ✗ Frozen | ✗ Frozen | ✓ Dual update: encoder + prototypes |
-| Category explosion | Severe ($2^L$-scale inflation) | Moderate | Effectively mitigated |
-| Novel class accuracy | Low | Moderate | Significantly improved |
-| Additional training cost | None | Diffusion model training | Lightweight TTA |
+| Feature Space | Binary hash codes | Low-dimensional projection | Continuous feature space |
+| Online Learning | ✗ Frozen | ✗ Frozen | ✓ Dual update (Encoder+Prototype) |
+| Category Explosion | Severe (2^L expansion) | Moderate | Effectively mitigated |
+| New Class Accuracy | Low | Moderate | Significantly improved |
+| Extra Training Cost | None | Diffusion model training | Lightweight TTA |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First introduction of TTA into OCD; hash-free + dual-layer adaptive design is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 7 datasets, 2 backbones, 2 evaluation protocols, extensive ablations and visualizations.
-- Writing Quality: ⭐⭐⭐⭐ — Motivation is clear, formulations are complete, and pseudocode is well-structured.
-- Value: ⭐⭐⭐⭐ — Offers substantive advances for the OCD task; the category explosion mitigation strategy is practically useful.
+- Novelty: ⭐⭐⭐⭐ — First introduction of TTA to OCD; hash-free + dual-layer adaptation design is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — 7 datasets, 2 backbones, 2 evaluation protocols, extensive ablations, and visualizations.
+- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, complete formulas, standard pseudocode.
+- Value: ⭐⭐⭐⭐ — Substantial advancement for the OCD task; practical solution for mitigating category explosion.
 
 <!-- RELATED:START -->
 
@@ -171,10 +162,10 @@ Conventional TTA methods are nearly ineffective or even degrade under semantic s
 ## Related Papers
 
 - [\[CVPR 2026\] Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery](learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover.md)
-- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
-- [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
-- [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
+- [\[ECCV 2024\] Category Adaptation Meets Projected Distillation in Generalized Continual Category Discovery](../../ECCV2024/model_compression/category_adaptation_meets_projected_distillation_in_generalized_continual_catego.md)
 
 </div>
 

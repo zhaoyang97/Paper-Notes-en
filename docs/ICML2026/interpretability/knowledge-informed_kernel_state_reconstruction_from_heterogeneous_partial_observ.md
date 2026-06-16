@@ -1,82 +1,82 @@
 ---
 title: >-
-  [Paper Note] MAAT: Knowledge-Guided Kernel Regression for Heterogeneous Partially Observed State Reconstruction
+  [Paper Note] MAAT: 基于知识引导核回归的异构部分观测状态重建
 description: >-
-  [ICML 2026][Interpretability][Kernel state reconstruction] MAAT reformulates the task of "recovering a physically consistent latent state trajectory from sparse, heterogeneous…
+  [ICML 2026][Interpretability][RKHS] MAAT reformulates the problem of "recovering a physically consistent latent state trajectory from sparse, heterogeneous, and noisy observations" as a constrained kernel ridge regression problem in Reproducing Kernel Hilbert Space (RKHS). It integrates observation operators, smoothness, and physical priors (e.g., non-ne
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Kernel state reconstruction"
-  - "RKHS"
-  - "Heterogeneous observation operators"
-  - "Symbolic regression"
-  - "Physical priors"
+  - ICML 2026
+  - Interpretability
+  - RKHS
 date: 2026-05-08
-content_hash: 469952d543d6683f
+content_hash: 79d9e926f4b16352
 ---
-
-# MAAT: Knowledge-Guided Kernel Regression for Heterogeneous Partially Observed State Reconstruction
+# MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.22328](https://arxiv.org/abs/2601.22328)  
-**Code**: Not disclosed  
-**Area**: Scientific Computing / Dynamical Systems Modeling / Symbolic Regression  
-**Keywords**: Kernel state reconstruction, RKHS, Heterogeneous observation operators, Symbolic regression, Physical priors
+**Code**: Not released  
+**Area**: Scientific Computing / Dynamical System Modeling / Symbolic Regression  
+**Keywords**: Kernel State Reconstruction, RKHS, Heterogeneous Observation Operators, Symbolic Regression, Physical Priors
 
 ## TL;DR
-MAAT reformulates the task of "recovering a physically consistent latent state trajectory from sparse, heterogeneous, and noisy observations" as a constrained kernel ridge regression problem in Reproducing Kernel Hilbert Space (RKHS). By integrating observation operators, smoothness, and physical priors (non-negativity, conservation, monotonicity) into a single objective function, it provides high-quality trajectories with analytical time derivatives for downstream symbolic regression (SINDy / PySR). It reduces reconstruction MSE by 1–3 orders of magnitude across 9 synthetic benchmarks and real-world COVID-19 data.
+MAAT reformulates the problem of "recovering a physically consistent latent state trajectory from sparse, heterogeneous, and noisy observations" as a constrained kernel ridge regression problem in Reproducing Kernel Hilbert Space (RKHS). It integrates observation operators, smoothness, and physical priors (e.g., non-negativity, conservation, monotonicity) into a unified objective function. This provides high-quality trajectories with analytical time derivatives for downstream symbolic regression (SINDy / PySR), reducing reconstruction MSE by 1–3 orders of magnitude across 9 synthetic benchmarks and real COVID-19 data.
 
 ## Background & Motivation
 
-**Background**: In fields such as medicine, ecology, and physics, latent dynamical states $x(t)\in\mathbb{R}^d$ are governed by ODEs $\dot{x}=f(x)$, but direct and regular observation of the full state is rare. Practice involves using classical smoothing (splines, RBF, Savitzky–Golay) for continuous trajectories, state-space models (Kalman, GP) for sensor fusion, or deep methods like Neural ODE / UDE to learn latent dynamics.
+**Background**: In fields like medicine, ecology, and physics, latent dynamical states $x(t)\in\mathbb{R}^d$ are governed by ODEs $\dot{x}=f(x)$, but full states are rarely observed directly or regularly. Practice usually involves classic smoothing (splines, RBF, Savitzky–Golay), state-space models (Kalman, GP) for sensor fusion, or deep methods (Neural ODE / UDE) to learn latent dynamics.
 
-**Limitations of Prior Work**: Existing methods have significant flaws—classical smoothing ignores observation operators and domain constraints, handling only single-channel regular sampling; GPs provide analytical derivatives but struggle with hard constraints like "mass conservation" or "non-negativity"; Kalman filters require prior transition dynamics; Neural ODEs act as black boxes, making recovered trajectories difficult to feed directly into "mechanism discovery" pipelines (e.g., symbolic regression). The most fatal issue is derivative estimation: finite differences are sensitive to noise, with an irreducible error lower bound of $\Omega(\sigma^2/\Delta t^2)$, while symbolic regression is extremely sensitive to derivative accuracy.
+**Limitations of Prior Work**: Existing methods have significant drawbacks. Classic smoothing ignores observation operators and domain constraints, handling only single-channel regular sampling. GPs provide analytical derivatives but struggle with hard constraints like "mass conservation" or "non-negativity." Kalman filters require prior transition dynamics. Neural ODEs are black boxes whose recovered trajectories are often unsuitable for "mechanism discovery" pipelines like symbolic regression. The most critical issue is derivative estimation: finite difference is sensitive to noise, with a non-vanishing error lower bound $\Omega(\sigma^2/\Delta t^2)$, whereas symbolic regression is extremely sensitive to derivative accuracy.
 
-**Key Challenge**: Measurements are **heterogeneous**—sparse direct measurements (e.g., gene expression snapshots) and high-frequency aggregate signals (e.g., blood biomarkers) map to the state space through different linear operators $\mathcal{H}_i$, accompanied by measurement noise. Processing these heterogeneous observations within a unified framework, injecting physical priors, and producing **analytically differentiable** trajectories is a critical bottleneck in the "measurement-to-mechanism discovery" pipeline.
+**Key Challenge**: Measurements are often **heterogeneous**—sparse direct measurements (e.g., gene expression snapshots) and high-frequency aggregate signals (e.g., blood biomarkers) map to the state space through different linear operators $\mathcal{H}_i$ and are accompanied by noise. Simultaneously handling these heterogeneous observations, injecting physical priors, and producing **analytically differentiable** trajectories is a major bottleneck in bridging "measurement to mechanism discovery."
 
-**Goal**: To upgrade state reconstruction from a "numerical preprocessing step" to a "knowledge-guided inference problem in function space," ensuring reconstruction results naturally possess analytical derivatives and can encode mechanistic constraints such as conservation, non-negativity, and monotonicity.
+**Goal**: To upgrade state reconstruction from a "numerical preprocessing step" to a "knowledge-guided inference problem in function space," ensuring reconstruction results possess inherent analytical derivatives and can encode mechanistic constraints like conservation and monotonicity.
 
-**Key Insight**: The authors note that the RKHS framework simultaneously provides three advantages—the Representer Theorem guarantees the optimal solution is a finite linear combination of kernels; common kernels (like the Gaussian kernel) are $C^{\infty}$ with analytical derivatives; and constraints can be seamlessly injected as regularization terms. This is naturally suited for scientific scenarios characterized by "sparse data + heterogeneity + derivative requirements + prior knowledge."
+**Key Insight**: The authors note that the RKHS framework offers three advantages: the Representer Theorem ensures the optimal solution is a finite linear combination of kernels; common kernels (e.g., Gaussian) are $C^{\infty}$ with analytical derivatives; and constraints can be seamlessly injected as regularization terms. This is naturally suited for scientific scenarios with sparse/heterogeneous data requiring derivatives and priors.
 
-**Core Idea**: Construct a composite loss in RKHS that integrates "snapshot fidelity + heterogeneous linear observation fidelity + dynamical priors + norm regularization." By solving for the coefficient matrix $U$ through closed-form kernel operations, a **physically consistent trajectory with analytical derivatives** is obtained, serving as a "clean interface" for symbolic regression.
+**Core Idea**: Construct a composite loss in RKHS incorporating "snapshot fidelity + heterogeneous linear observation fidelity + dynamical priors + norm regularization." By solving for the coefficient matrix $U$ via closed-form kernel operations, one obtains a **physically consistent trajectory with analytical derivatives**, serving as a "clean interface" for symbolic regression.
 
 ## Method
 
 ### Overall Architecture
 
-Input: $N$ observations $\mathcal{D}=\{(t_i, y_i, \mathcal{H}_i)\}$ collected at irregular timestamps $\{t_i\}_{i=1}^N$, where each observation relates to the latent state $x(t_i)$ via a linear operator $\mathcal{H}_i$ with Gaussian noise; optional set of physical constraints $\mathcal{C}$ (non-negativity, conservation, monotonicity); optional dynamical prior $F(\cdot)$.
+MAAT aims to recover a physically consistent latent state trajectory with analytical derivatives from irregular, heterogeneous, and noisy sparse observations. It operates in RKHS: using a Gaussian kernel $\kappa(t,t')$, each state component is expressed as a finite linear combination $\widehat{x}_j(t)=\sum_{\ell=1}^N u_{\ell j}\,\kappa(t,t_\ell)$, where the coefficient matrix $U\in\mathbb{R}^{N\times d}$ is the only learnable parameter. It then formulates a convex loss combining "snapshot fitting + heterogeneous aggregate signal fitting + dynamical prior adherence + smoothness + physical constraints" and solves for $U$ via closed-form or first-order methods. Inputs include observations $\mathcal{D}=\{(t_i,y_i,\mathcal{H}_i)\}$ at irregular timestamps $\{t_i\}_{i=1}^N$ (mapped via linear operators $\mathcal{H}_i$ to the state with Gaussian noise), optional physical constraints $\mathcal{C}$, and dynamical priors $F$. The output is the continuous trajectory $\widehat{x}(t)$ and its analytical time derivative $\partial_t\widehat{x}(t)=U\,\partial_t\kappa(t,\boldsymbol{t})$, which can be directly fed into SINDy / PySR for equation discovery.
 
-Mechanism: Uses a Gaussian kernel $\kappa(t,t')$ to construct an RKHS $\mathcal{H}_K$. Each state component is parameterized as $\widehat{x}_j(t)=\sum_{\ell=1}^N u_{\ell j}\,\kappa(t,t_\ell)$, where the coefficient matrix $U\in\mathbb{R}^{N\times d}$ is the sole learnable quantity. The optimization goal is a scalar convex loss (weighted sum of data fidelity, smoothness, and physical priors), solved via closed-form or convex optimization to find $U$.
-
-Output: Continuous trajectories $\widehat{x}(t)$ and their analytical time derivatives $\partial_t \widehat{x}(t)=U\,\partial_t\kappa(t,\boldsymbol{t})$, which can be directly fed into symbolic regression engines like SINDy or PySR for equation discovery.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Heterogeneous Observations: Sparse snapshots + High-frequency aggregate signals<br/>Mapped via linear operators H_i with noise"]
+    P["Physical Prior Regularization<br/>Non-negativity / Conservation / Monotonicity"]
+    A --> K["RKHS Composite Loss (KSR)<br/>Kernel expansion x̂ = U·κ, closed-form solution for U"]
+    P -->|Differentiable squared penalty| K
+    K --> Dv["Reconstructed Trajectory x̂(t) + Analytical Derivative ∂x̂ = U·∂κ<br/>Avoids noise amplification lower bound of finite difference"]
+    Dv --> S["Downstream Symbolic Regression SINDy / PySR<br/>ODE Discovery ẋ = f(x)"]
+```
 
 ### Key Designs
 
-1.  **RKHS Composite Loss (Kernel State Reconstruction, KSR)**:
-    - **Function**: Simultaneously fits sparse direct snapshots $\mathbf{X}^{\mathrm{obs}}$, heterogeneous linear aggregate signals $\mathbf{Y}$, and dynamical priors within one objective function, avoiding cascaded errors found in traditional "smooth-then-differentiate-then-discover" pipelines.
-    - **Mechanism**: The learning of coefficient matrix $U$ is formulated as $\min_U \tfrac{w_s}{N_{\text{obs}}}\|\mathbf{K}^{\mathrm{obs}}U-\mathbf{X}^{\mathrm{obs}}\|_F^2 + \sum_i \tfrac{w_i}{N}\|\mathbf{K}U\mathbf{H}_i^\top-\mathbf{Y}\|_F^2 + \gamma\|\dot{\mathbf{K}}U-F(\mathbf{K}U)\|_F^2 + \lambda\|U\|_F^2$. The second term explicitly applies each heterogeneous operator $\mathbf{H}_i$ to the reconstruction to perform "observation matching," while the third term aligns the time derivative $\dot{\mathbf{K}}U$ with a dynamical prior $F$. Lemma 1 proves this composite loss is a calibrated surrogate for the true $L^2$ error.
-    - **Design Motivation**: Heterogeneous observations, physical priors, and smoothness have historically been scattered across different frameworks (GP / State Space / PINN). This unifies them in an RKHS closed-form problem while retaining the critical "analytical derivative" property.
+**1. RKHS Composite Loss (KSR): Collapsing Cascaded Pipelines into a Convex Objective**
 
-2.  **Analytical Derivative Estimation & Noise Robustness**:
-    - **Function**: Directly computes the time derivative of the kernel function to obtain $\partial_t \widehat{x}(t)$, avoiding numerical differentiation of noisy trajectories.
-    - **Mechanism**: Because the model is linear with respect to $U$, the differentiation operator only applies to the kernel: $\partial_t \widehat{x}(t)=U\,\partial_t\kappa(t,\boldsymbol{t})$. Proposition 1 provides a theoretical guarantee: while finite difference derivative error is $\mathcal{O}(\Delta t^4)+\Omega(\sigma^2/\Delta t^2)$ (having an **irreducible noise amplification lower bound**), KSR derivative error is $\mathcal{O}(\lambda)+\mathcal{O}(\sigma^2/n)$, representing a standard bias–variance trade-off that decreases with sample size without high-frequency noise amplification issues.
-    - **Design Motivation**: Downstream symbolic regression (e.g., SINDy) is extremely sensitive to derivative accuracy. Analytical derivatives without a noise lower bound are why MAAT is fundamentally more suitable as a "mechanism discovery interface" than numerical differentiation methods.
+Traditional "smooth-then-differentiate-then-discover" cascades accumulate errors at each step. MAAT combines these into one convex objective: $\min_U \tfrac{w_s}{N_{\text{obs}}}\|\mathbf{K}^{\mathrm{obs}}U-\mathbf{X}^{\mathrm{obs}}\|_F^2 + \sum_i \tfrac{w_i}{N}\|\mathbf{K}U\mathbf{H}_i^\top-\mathbf{Y}\|_F^2 + \gamma\|\dot{\mathbf{K}}U-F(\mathbf{K}U)\|_F^2 + \lambda\|U\|_F^2$. The first term aligns reconstruction with sparse snapshots $\mathbf{X}^{\mathrm{obs}}$; the second explicitly applies heterogeneous operators $\mathbf{H}_i$ to match high-frequency aggregate signals $\mathbf{Y}$; the third encourages time derivatives $\dot{\mathbf{K}}U$ to adhere to dynamical priors $F$ (disabled if $\gamma=0$); the fourth is RKHS norm regularization. KSR unifies heterogeneous observations, physical priors, and smoothness—previously scattered across GP, state-space models, and PINNs—into a closed-form solvable problem while preserving analytical differentiability. Lemma 1 proves this composite loss is a calibrated surrogate for true $L^2$ reconstruction error.
 
-3.  **Physical Priors as Additional Regularization** ($\mathcal{R}_{\text{phys}}(x,\mathcal{C})$):
-    - **Function**: Injects domain knowledge (non-negativity $x_j(t)\ge 0$, mass conservation $\sum_j x_j(t)=\text{const}$, monotonicity $R'(t)\ge 0$) as differentiable penalty terms into the RKHS optimization.
-    - **Mechanism**: For compartmental models like SEIR, $\mathcal{R}_{\text{phys}}$ is written as a squared penalty on constraint violations (e.g., $\sum_t (\max(0,-x_j(t)))^2$). The overall problem remains solvable via convex optimization. Constraints are checked on a sampling grid rather than everywhere.
-    - **Design Motivation**: Traditional GP/Kalman cannot easily ingest hard constraints; deep methods are often unstable. RKHS representation allows constraints to appear naturally as quadratic penalties, preserving convexity while using domain semantics to prune physically impossible trajectories. Table 2 shows that adding priors consistently reduces MSE by 10–15% across various noise types.
+**2. Analytical Derivative Estimation: Bypassing the Noise Amplification Lower Bound**
+
+Symbolic regression is highly sensitive to derivative accuracy. MAAT exploits the model's linearity in $U$, such that the differentiation operator applies only to the kernel: $\partial_t\widehat{x}(t)=U\,\partial_t\kappa(t,\boldsymbol{t})$. Since $C^{\infty}$ kernels like the Gaussian kernel have closed-form derivatives, the derivative is obtained analytically from the reconstruction without touching the noisy trajectory. Proposition 1 quantifies the advantage: finite difference error is $\mathcal{O}(\Delta t^4)+\Omega(\sigma^2/\Delta t^2)$, where the latter term is a structural noise amplification lower bound—smaller $\Delta t$ exacerbates noise. Conversely, KSR derivative error is $\mathcal{O}(\lambda)+\mathcal{O}(\sigma^2/n)$, following standard bias-variance trade-off that decreases with sample size $n$. This "lack of noise lower bound" makes MAAT inherently superior as a mechanism discovery interface.
+
+**3. Physical Priors as Differentiable Regularization: Suture Domain Knowledge into Convex Optimization**
+
+Classic tools like GP or Kalman struggle with hard constraints like "non-negativity." Deep methods can add constraints but suffer from unstable training. MAAT expresses these as differentiable penalties within the objective. It applies squared penalties to violations—non-negativity as $\sum_t(\max(0,-x_j(t)))^2$, mass conservation as $\sum_t(\sum_j x_j(t)-C)^2$, and monotonicity as penalties for violations of $R'(t)\ge 0$ or $S'(t)\le 0$. These are aggregated as $\mathcal{R}_{\text{phys}}(x,\mathcal{C})$ and added to the KSR loss with weight $\lambda_2$. Constraints are checked on a sampling grid rather than everywhere, maintaining convexity and allowing unreasonable trajectories to be pruned without sacrificing closed-form solvability. This refinement reduces MSE by 10–15% across various noise types (Table 2).
 
 ### Loss & Training
-Total Loss = Snapshot fidelity term $\tfrac{w_s}{N_{\text{obs}}}\|\mathbf{K}^{\mathrm{obs}}U-\mathbf{X}^{\mathrm{obs}}\|_F^2$ + Heterogeneous fidelity term $\sum_i \tfrac{w_i}{N}\|\mathbf{K}U\mathbf{H}_i^\top-\mathbf{Y}\|_F^2$ + Dynamical prior term $\gamma\|\dot{\mathbf{K}}U-F(\mathbf{K}U)\|_F^2$ + RKHS regularization $\lambda\|U\|_F^2$ + Physical prior term $\lambda_2\mathcal{R}_{\text{phys}}(x,\mathcal{C})$. When $F$ is linear and $\mathcal{R}_{\text{phys}}$ is quadratic, the problem has a closed-form solution; otherwise, first-order convex optimization is used. Gaussian kernels are selected, with hyperparameters $\lambda, \gamma, \lambda_2$ tuned via grid search.
+
+The total loss combines five terms: snapshot fidelity $\tfrac{w_s}{N_{\text{obs}}}\|\mathbf{K}^{\mathrm{obs}}U-\mathbf{X}^{\mathrm{obs}}\|_F^2$, heterogeneous observation fidelity $\sum_i \tfrac{w_i}{N}\|\mathbf{K}U\mathbf{H}_i^\top-\mathbf{Y}\|_F^2$, dynamical prior $\gamma\|\dot{\mathbf{K}}U-F(\mathbf{K}U)\|_F^2$, RKHS regularization $\lambda\|U\|_F^2$, and physical priors $\lambda_2\mathcal{R}_{\text{phys}}(x,\mathcal{C})$. If $F$ is linear and $\mathcal{R}_{\text{phys}}$ is quadratic, the problem is closed-form solvable; otherwise, it is solved via first-order convex optimization. The Gaussian kernel is used, with bandwidth and coefficients $\lambda,\gamma,\lambda_2$ determined by grid search on a validation set.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison of state reconstruction MSE across nine synthetic dynamical benchmarks for two symbolic regression backends (PySR / SINDy) (Selected from Table 1):
+State reconstruction MSE across nine synthetic dynamical benchmarks using two symbolic regression backends (PySR / SINDy) (Selected from Table 1):
 
-| Dataset | Backend | Prev. Best Baseline | Prev. SOTA MSE | MAAT MSE | Gain |
+| Dataset | Backend | Prev. SOTA | Best Prev. MSE | MAAT MSE | Gain |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | CRC | SINDy | Kalman | $1.1\times 10^{-2}$ | $\mathbf{1.5\times 10^{-3}}$ | ~7× |
 | Neutralization | SINDy | Kalman | $2.5\times 10^{-3}$ | $\mathbf{4.3\times 10^{-4}}$ | ~6× |
@@ -87,7 +87,7 @@ Comparison of state reconstruction MSE across nine synthetic dynamical benchmark
 | TDI | SINDy | Kalman | $4.7\times 10^{1}$ | $\mathbf{1.8\times 10^{0}}$ | ~26× |
 | Viral | SINDy | Kalman | $8.1\times 10^{-4}$ | $\mathbf{1.3\times 10^{-4}}$ | ~6× |
 
-COVID-19 Real-world Data (Table 3, SINDy backend, mean ± 95% CI):
+Real-world COVID-19 data (Table 3, SINDy backend, mean ± 95% CI):
 
 | Method | Test MSE | 95% CI |
 | :--- | :--- | :--- |
@@ -101,59 +101,61 @@ MAAT reduces reconstruction error by another order of magnitude on real epidemic
 
 ### Ablation Study
 
-Ablation of physical priors (Table 2, SEIR / SEIRH across 3 noise types):
+Physical prior ablation (Table 2, SEIR / SEIRH across 3 noise types):
 
-| Configuration | SEIR (Gauss, PySR) | SEIRH (Gauss, PySR) | Description |
+| Configuration | SEIR (Gauss, PySR) | SEIRH (Gauss, PySR) | Notes |
 | :--- | :--- | :--- | :--- |
-| Plain | $2.58\times 10^{-5}$ | $1.71\times 10^{-5}$ | Only KSR + heterogeneous obs, no conservation/non-negativity |
-| + priors | $\mathbf{2.19\times 10^{-5}}$ | $\mathbf{1.48\times 10^{-5}}$ | Adds conservation + non-negativity + $R'\ge 0$, $S'\le 0$ |
-| Plain (Student-t) | $7.69\times 10^{-5}$ | $4.12\times 10^{-5}$ | Heavy-tailed noise |
-| + priors (Student-t) | $\mathbf{7.38\times 10^{-5}}$ | $\mathbf{3.68\times 10^{-5}}$ | Priors still yield 5–10% improvement under heavy tails |
+| Plain | $2.58\times 10^{-5}$ | $1.71\times 10^{-5}$ | KSR + Heterogeneous obs, no physical priors |
+| + priors | $\mathbf{2.19\times 10^{-5}}$ | $\mathbf{1.48\times 10^{-5}}$ | Added conservation + non-negativity + monotonicity |
+| Plain (Student-t, SINDy) | $7.69\times 10^{-5}$ | $4.12\times 10^{-5}$ | Heavy-tailed noise |
+| + priors (Student-t, SINDy) | $\mathbf{7.38\times 10^{-5}}$ | $\mathbf{3.68\times 10^{-5}}$ | Priors still yield 5–10% improvement |
 
 ### Key Findings
 
-- **Key Modules**: Even without the dynamical prior $F$, KSR + heterogeneous observation operators already outperform all baselines by 1–2 orders of magnitude. Adding structural priors (conservation/non-negativity) provides a further 10–20% improvement, indicating that "heterogeneous observation modeling" is the primary driver of the performance leap, while physical priors refine robustness.
-- **Failures of Deep Methods**: Neural ODEs consistently show MSEs 4–10 orders of magnitude higher than MAAT, and even explode to $10^{10}$ on some datasets (Conservation, Tumor), proving pure black-box deep methods are unusable in low-data, high-noise scientific scenarios.
-- **Noise Robustness**: MAAT's MSE remains nearly constant under Student-t and correlated Gaussian noise, whereas classical smoothing methods (RBF, Cubic) show 5–10x MSE increases, consistent with Proposition 1 regarding the lack of a noise amplification lower bound for KSR.
-- **Downstream Quality**: Trajectories reconstructed by MAAT lead to discovered equations that are much closer to the ground truth across all 9 datasets, proving that high-quality analytical derivatives are indeed the bottleneck for symbolic regression.
+- **Primary Driver**: Even without dynamical priors $F$, KSR + heterogeneous observation operators outperform all baselines by 1–2 orders of magnitude. Structural priors (conservation, etc.) provide a further 10–20% gain, indicating that modeling heterogeneous observation operators is the dominant factor in performance jumps.
+- **Failures of Deep Learning**: Neural ODEs had MSEs 4–10 orders of magnitude higher than MAAT on most benchmarks, even exploding to $10^{10}$ on some datasets, proving that black-box deep methods are unsuitable for scientific low-data/high-noise scenarios.
+- **Noise Robustness**: MAAT's MSE remains stable under Student-t and correlated Gaussian noise, while classic smoothing methods (RBF, Cubic) see MSE increases of 5–10x, consistent with the "no noise amplification lower bound" in Proposition 1.
+- **Symbolic Regression Quality**: Trajectories reconstructed by MAAT led to discovered equations significantly closer to ground truth across all 9 datasets, confirming that high-quality analytical derivatives are indeed the bottleneck for symbolic regression.
 
 ## Highlights & Insights
 
-- **Redefining "Reconstruction" as "Inference in Function Space"**: Instead of treating state reconstruction as a mere preprocessing step, this paper elevates it to an RKHS inference problem that systematically incorporates observation operators, physical priors, and smoothness. This is a shift in research perspective, not just a new method.
-- **Diagnostic Power of Proposition 1**: A simple bias–variance analysis reveals why finite differences are structurally unsuitable for symbolic regression—the $\Omega(\sigma^2/\Delta t^2)$ noise lower bound means denser sampling can actually worsen results. This insight is transferable to any task requiring derivative estimation from noisy sequences (signal processing, RL advantage estimation).
-- **Unified Expression of Heterogeneous Linear Operators**: Using the product $\mathbf{K}U\mathbf{H}_i^\top$ to combine high-frequency aggregate signals and sparse snapshots achieves multimodal fusion in a few lines of formulas. This expression can be transferred to any multi-sensor time-series fusion task.
-- **Double Benefits of Convexity + Analytical Derivatives**: In an era dominated by deep learning, this work demonstrates a case of "classical mathematical tools meeting modern problem formulations," where RKHS convex optimization outperforms black-box methods in scientific scenarios requiring interpretability and stability.
+- **Redefining Reconstruction as Function Space Inference**: Traditionally a numerical preprocessing step, state reconstruction is elevated to an RKHS inference problem that systematically integrates observation operators, physical priors, and smoothness.
+- **Diagnostic Power of Proposition 1**: A simple bias-variance analysis reveals why finite difference is fundamentally unsuitable for symbolic regression—the $\Omega(\sigma^2/\Delta t^2)$ noise lower bound is structural. This insight applies to any task requiring derivative estimation from noisy sequences.
+- **Unified Modeling of Heterogeneous Operators**: Expressing both aggregate signals $y_i = H_i x(t_i) + \epsilon$ and sparse snapshots via the same kernel-observation product $\mathbf{K}U\mathbf{H}_i^\top$ provides a simple yet powerful framework for multimodal fusion.
+- **Duality of Convexity and Analytical Derivatives**: In an era dominated by deep learning, this paper demonstrates how classic mathematical tools paired with modern problem formulations can outperform black-box methods in data-scarce, high-noise scientific scenarios.
 
 ## Limitations & Future Work
 
-- **Acknowledged Limitations**: The current framework only supports **linear** observation operators $\mathcal{H}_i$; non-linear sensing models require linearization. The dynamical prior $F$ is assumed known or partially known, which has limited utility for high-dimensional systems where the physics is entirely unknown.
-- **Observed Potential Limitations**: Fixed kernels (Gaussian) require grid searching for bandwidth, which might be problematic for multi-scale systems with varying time scales. $O(N^2)$ complexity makes the method unsuitable for very long sequences ($N>10^4$) without approximations like Nyström methods. Physical priors require manual specification.
-- **Future Directions**: Extending $\mathcal{H}_i$ to non-linear operators via kernel mapping; introducing learnable kernels (e.g., DKL) for scale adaptation; and partnering with LLMs to automatically extract candidate physical constraints from literature.
+- **Limitations acknowledged by authors**: The framework currently only supports **linear** observation operators $\mathcal{H}_i$; non-linear sensing models require linearization. Dynamical priors $F$ are assumed to be known or partially known, which is limited for high-dimensional unknown systems.
+- **Self-identified limitations**: The kernel is fixed to the Gaussian kernel with bandwidth selected via grid search, which may struggle with multi-scale systems; $O(N^2)$ complexity makes it unsuitable for $N>10^4$ without Nyström approximations; physical priors require manual specification.
+- **Future directions**: Generalizing $\mathcal{H}_i$ to non-linear operators via kernel mappings; introducing learnable kernels (DKL / spectral mixture) for scale adaptation; and using LLMs to automatically extract physical constraints from literature.
 
 ## Related Work & Insights
 
-- **vs Gaussian Process**: GPs provide analytical derivatives and uncertainty but struggle with hard constraints and don't naturally support heterogeneous operators. MAAT generalizes the kernel representation to a composite loss, outperforming GP by 1–2 orders of magnitude on compartmental models.
-- **vs Kalman Filter**: Kalman filters excel at sensor fusion but require prior transition dynamics. When transitions are unknown, they degrade to simple smoothing. MAAT makes dynamical priors optional and uses physical constraints as an alternative.
-- **vs Neural ODE / UDE**: Deep methods are flexible but collapse in low-data regimes (with MSEs often exceeding $10^{10}$). MAAT is fully convex and closed-form solvable, showing superior stability at scientific data scales.
-- **vs Physics-Informed Kernel Learning (PIKL)**: PIKL solves forward/hybrid problems (solving PDEs with known operators), whereas MAAT focuses on the inverse/reconstruction problem. They are complementary for "reconstruct then solve PDE" workflows.
+- **vs Gaussian Process (Rasmussen & Williams 2005)**: GPs provide derivatives and uncertainty but struggle with hard constraints and don't natively support heterogeneous operators. MAAT generalizes the kernel representation to a constrained heterogeneous loss, outperforming GPs by 1–2 orders of magnitude on compartmental models.
+- **vs Kalman Filter (Kalman 1960)**: Kalman is excellent for sensor fusion but requires prior transition dynamics. MAAT allows dynamics to be optional and uses physical constraints as a substitute.
+- **vs Neural ODE / UDE (Chen et al. 2018; Rackauckas et al. 2020)**: Deep methods are flexible but collapse under low-data/high-noise regimes. MAAT is convex and closed-form solvable, making it more stable for typical scientific data scales.
+- **vs Physics-Informed Kernel Learning (Doumèche et al. 2025)**: PIKL solves forward/hybrid problems (PDE solving). MAAT focuses on the inverse problem of reconstruction; they are complementary.
+- **vs Classic Smoothing (Splines, RBF, etc.)**: These ignore operators and constraints, and their derivative estimates collapse under high noise. MAAT's order-of-magnitude improvement on COVID-19 data highlights the value of modeling the observation process and physics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐ Unifies heterogeneous operators, physical priors, and analytical derivatives in an RKHS framework with theoretical support.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage across 9 benchmarks, multiple noise types, real-world data, and multiple backends.
+- Writing Quality: ⭐⭐⭐⭐ Clear definitions and concise formulas; Method section is dense but well-structured.
+- Value: ⭐⭐⭐⭐ Crucial for "measurement-to-discovery" pipelines, providing a high-quality "interface layer" for automated scientific discovery.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
-- [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
-- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
-- [\[ICML 2026\] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions](bridging_the_knowledge-prediction_gap_in_llms_on_multiple-choice_questions.md)
-- [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
+- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
+- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
+- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
+- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 
 </div>
 

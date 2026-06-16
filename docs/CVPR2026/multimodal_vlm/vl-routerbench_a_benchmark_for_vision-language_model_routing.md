@@ -2,75 +2,89 @@
 title: >-
   [Paper Note] VL-RouterBench: A Benchmark for Vision-Language Model Routing
 description: >-
-  [CVPR 2026][Multimodal VLM][model routing] This paper introduces VL-RouterBench, the first systematic routing benchmark for vision-language models, encompassing 14 datasets, 17 candidate models, and 519…
+  [CVPR 2026][Multimodal VLM][VLM] This paper introduces VL-RouterBench, the first systematic routing benchmark for Vision-Language Models (VLMs), covering 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant performance gap between the current optimal routers and the ideal Oracle.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "model routing"
-  - "VLM"
-  - "benchmark"
-  - "efficiency-quality tradeoff"
-  - "multi-model selection"
+  - CVPR 2026
+  - Multimodal VLM
+  - VLM
+  - benchmark
 date: 2026-05-08
-content_hash: ae5fb5785b686d75
+content_hash: e817f23b92698eb8
 ---
-
 # VL-RouterBench: A Benchmark for Vision-Language Model Routing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.23562](https://arxiv.org/abs/2512.23562)  
 **Code**: [https://github.com/VL-RouterBench](https://github.com/VL-RouterBench)  
-**Area**: Multimodal VLM
-**Keywords**: model routing, VLM, benchmark, efficiency-quality tradeoff, multi-model selection
+**Area**: Multimodal VLM  
+**Keywords**: Model routing, VLM, benchmark, efficiency-quality tradeoff, multi-model selection
 
 ## TL;DR
-This paper introduces VL-RouterBench, the first systematic routing benchmark for vision-language models, encompassing 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant gap between the current best router and the ideal Oracle.
+This paper introduces VL-RouterBench, the first systematic routing benchmark for Vision-Language Models (VLMs), covering 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant performance gap between the current optimal routers and the ideal Oracle.
 
 ## Background & Motivation
-**Background**: Multi-model routing has evolved from an engineering optimization into a critical infrastructure component. Different VLMs vary substantially in inference cost and capability, and no single model can simultaneously ensure performance and efficiency across all query types. Routing research in the LLM domain has matured (RouterBench, RouterEval, RouterArena, etc.), yet a systematic benchmark for VLM routing remains absent.
+**Background**: Multi-model routing has evolved from engineering optimization to critical infrastructure. Different VLMs exhibit significant differences in inference cost and capabilities; no single model can simultaneously guarantee performance and efficiency across all request types. While routing research in the LLM domain is mature (RouterBench, RouterEval, RouterArena, etc.), the VLM domain lacks systematic benchmarks.
 
-**Limitations of Prior Work**: VLM routing faces several unique challenges: (a) highly diverse task types (VQA, visual reasoning, chart OCR, etc.), each emphasizing different capabilities; (b) multimodal fusion mechanisms remain an open problem, with large variation across VLMs in modality interaction and semantic representation; (c) vision-modality-specific issues such as visual semantic density and cross-modal alignment.
+**Limitations of Prior Work**: VLM routing faces multiple unique challenges: (a) highly diverse task types (VQA, visual reasoning, chart OCR, etc.) emphasizing different abilities; (b) multimodal fusion mechanisms remain an open problem with significant variance in modal interaction and semantic representation; (c) visual-specific issues such as semantic density and cross-modal alignment.
 
-**Key Challenge**: Existing LLM routing benchmarks focus on text-only routing and cannot be directly adapted to VLM scenarios — defining "what constitutes an optimal routing decision" for VLMs within a unified framework is substantially harder.
+**Key Challenge**: Existing LLM routing benchmarks focus on text and cannot directly adapt to VLM scenarios—defining "the optimal routing decision" for VLMs is more difficult within a unified framework.
 
-**Goal**: Construct a VLM-dedicated routing benchmark that provides a unified pipeline for data preparation, training, and evaluation, thereby promoting reproducibility and comparability in VLM routing research.
+**Goal**: Construct a specialized VLM routing benchmark providing a unified data preparation, training, and evaluation pipeline to promote reproducibility and comparability in VLM routing research.
 
-**Key Insight**: Build quality-cost matrices from raw VLM inference and scoring logs, and design an accuracy-cost-aware soft-label training strategy.
+**Key Insight**: Build a quality-cost matrix starting from raw inference and scoring logs of VLMs, and design an accuracy-cost-aware soft-label training strategy.
 
-**Core Idea**: Establish the first VLM routing benchmark covering 30,540 samples × 17 models, providing a complete pipeline from data preparation through training to evaluation.
+**Core Idea**: Establish the first VLM routing benchmark covering 30,540 samples × 17 models, providing a complete pipeline from data to evaluation.
 
 ## Method
 
 ### Overall Architecture
-The VL-RouterBench pipeline consists of three stages: (1) **Routing data preparation** — collecting inference logs from VLMEvalKit to construct quality matrix $Y$ and cost matrix $C$; (2) **Router training** — employing an accuracy-cost-aware soft-label strategy with support for both feature-level and end-to-end architectures; (3) **Routing evaluation** — multi-dimensional assessment using average accuracy, average cost, throughput, and a composite Rank Score.
+VL-RouterBench addresses the problem of determining which VLM should handle a given "image + question" request to achieve the best balance between accuracy and inference cost. The benchmark decomposes this into a reproducible pipeline: first, collect real inference logs from 17 candidate models across 14 datasets to build an offline quality-cost matrix; second, use this matrix to train routers using soft labels with a temperature parameter to continuously adjust between "accuracy-centric" and "cost-centric" preferences; finally, compare 10 routing methods using unified metrics (Average Accuracy, Average Cost, Throughput, and Rank Score). Evaluated routers span two paradigms: **Feature-level** (extracting embeddings from frozen text/vision encoders followed by lightweight classifiers like KNN/MLP/Linear) and **End-to-end** (e.g., RouterDC, VLC, which predict directly from multimodal inputs).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Quality-Cost Matrix (Data Preparation)"]
+        direction TB
+        A["17 Models × 14 Datasets<br/>Real Inference/Scoring Logs"] --> B["Rule-based Correctness → Quality Matrix Y<br/>Token × Price Table → Cost Matrix C"]
+    end
+    DATA --> C["Accuracy-Cost Aware Soft Labels<br/>Temperature Parameter λ for Tradeoff Calibration"]
+    C --> D{Router Paradigms}
+    D -->|Feature-level| E["Frozen Encoders for Embeddings<br/>+ KNN/MLP/Linear Classifiers"]
+    D -->|End-to-end| F["Direct Prediction from Multimodal Input<br/>RouterDC / VLC"]
+    E --> G
+    F --> G
+    subgraph EVAL["Rank Score Evaluation"]
+        direction TB
+        G["Avg. Accuracy / Avg. Cost / Throughput"] --> H["Log-normalized Cost + Accuracy<br/>Harmonic Mean → Rank Score"]
+    end
+    EVAL --> I["Routing Leaderboard<br/>+ Diagnostic Gap vs. Oracle"]
+```
 
 ### Key Designs
 
-1. **Quality-Cost Matrix Construction**:
+**1. Quality-Cost Matrix: Offline Encoding of Correctness and Cost**
 
-    - Function: Establishes correctness labels and inference costs for each sample-model pair.
-    - Mechanism: Employs rule-based evaluation (multiple-choice/answer matching) to ensure consistency. The cost formula is $C_{i,j} = n_{i,j}^{in} \cdot c_j^{in} + n_{i,j}^{out} \cdot c_j^{out}$, derived from token statistics in actual inference logs and public pricing tables.
-    - Design Motivation: Avoids bias introduced by subjective judgments and ensures fair, reproducible evaluation.
+Training and evaluation require knowing if a model is correct and how much it costs for every sample. Correctness is determined via rule-based evaluation (option matching for multiple-choice or string matching for open-ended questions) to obtain the 0/1 quality matrix $Y$. Cost is calculated using input/output token counts from logs multiplied by public pricing: $C_{i,j} = n_{i,j}^{in} \cdot c_j^{in} + n_{i,j}^{out} \cdot c_j^{out}$, forming the cost matrix $C$. This ensures consistency across different experimental runs.
 
-2. **Accuracy-Cost-Aware Soft-Label Strategy**:
+**2. Accuracy-Cost Aware Soft Labels: Continuous Tradeoff via $\lambda$**
 
-    - Function: Explicitly controls the accuracy-cost tradeoff during training via a tunable parameter $\lambda$.
-    - Mechanism: Models router training as a multi-objective optimization and derives analytic soft labels: $t_i^{(\lambda)}(j) = \frac{\mathbf{1}\{Y_{i,j}=1\} \cdot \exp(-\lambda \cdot C_{i,j})}{\sum_{j:Y_{i,j}=1} \exp(-\lambda \cdot C_{i,j})}$. When $\lambda=0$, only accuracy is considered; as $\lambda \to \infty$, strong preference is placed on low-cost models.
-    - Design Motivation: More flexible than hard labels, allowing probability mass to be distributed among correct models according to cost.
+Hard labels (assigning a single optimal model) fail to capture the continuous tradeoff between accuracy and cost. Routing training is formulated as a multi-objective optimization problem, yielding analytical soft labels through Lagrangian multipliers:
 
-3. **Rank Score Composite Evaluation**:
+$$t_i^{(\lambda)}(j) = \frac{\mathbf{1}\{Y_{i,j}=1\} \cdot \exp(-\lambda \cdot C_{i,j})}{\sum_{j:Y_{i,j}=1} \exp(-\lambda \cdot C_{i,j})}$$
 
-    - Function: Unifies accuracy and cost into a single comparable score.
-    - Mechanism: Cost is log-normalized to $[0, 100]$, then combined with accuracy via harmonic mean: $S(\beta) = \frac{(1+\beta)\cdot\bar{A}\cdot C_{norm}}{\beta\cdot\bar{A}+C_{norm}}$.
-    - Design Motivation: Accuracy and cost operate on different scales; normalization is required before cross-configuration comparison.
+Probability is distributed only among models that answer correctly ($Y_{i,j}=1$), weighted exponentially by cost. When $\lambda=0$, it distributes probability equally among correct models (accuracy-only); as $\lambda \to \infty$, probability concentrates on the cheapest correct model.
 
-### Router Architectures
-- **Feature-level routers**: Frozen text/visual encoders extract embeddings fed into lightweight classifiers (KNN/MLP/Linear, etc.).
-- **End-to-end routers**: Methods such as RouterDC and VLC directly predict model selection from multimodal inputs.
+**3. Rank Score: Unifying Accuracy and Cost into a Single Metric**
+
+Since accuracy (percentage) and cost (USD) have different scales, they cannot be directly compared. Cost is log-normalized to a $[0,100]$ interval ($C_{norm}$) and combined with average accuracy $\bar{A}$ using a weighted harmonic mean:
+
+$$S(\beta) = \frac{(1+\beta)\cdot\bar{A}\cdot C_{norm}}{\beta\cdot\bar{A}+C_{norm}}$$
+
+The harmonic mean ensures that poor performance in either metric significantly penalizes the total score, with $\beta$ determining the relative importance of accuracy.
 
 ## Key Experimental Results
 
-### Main Results — Routing Method Comparison
+### Main Results——Comparison of Routing Methods
 
 | Router | Avg. Acc.↑ | Avg. Cost↓ | Rank Score↑ | Rank |
 |--------|-----------|-----------|------------|------|
@@ -80,54 +94,55 @@ The VL-RouterBench pipeline consists of three stages: (1) **Routing data prepara
 | VLC (2nd) | - | - | - | 2 |
 | MLP (3rd) | - | - | - | 3 |
 
-### Ablation Study — Modality Fusion
+### Ablation Study——Modality Fusion
 
-| Fusion Strategy | Description |
-|----------------|-------------|
-| Text features only | Sub-optimal; lacks visual discriminative signals |
-| Visual features only | Weakest; lacks task instruction information |
-| Normalized concatenation | Best; simple and effective |
+| Fusion Method | Description |
+|---------|------|
+| Text Features Only | Suboptimal; lacks visual discriminative signals |
+| Visual Features Only | Weakest; lacks task instruction information |
+| Normalized Concatenation | Optimal; simple and effective |
 
 ### Key Findings
-- **Significant routing gains**: Learned routing systems consistently achieve more stable accuracy than any single model, often at comparable or lower cost.
-- **Multimodal features are effective**: Simple normalized concatenation of text and visual embeddings is sufficient to support highly competitive routers, consistently outperforming unimodal counterparts.
-- **Gap from Oracle**: Even the best router exhibits a notable gap from the Oracle, indicating substantial room for improvement in exploiting visual cues and modeling textual structure.
-- **Model coverage**: 17 candidate models ranging from 1B to 78B parameters, spanning two orders of magnitude.
+- **Significant Routing Gains**: Learned routing systems generally provide more stable accuracy than any single model at comparable or lower costs.
+- **Multimodal Feature Effectiveness**: Simple normalized concatenation of text and visual embeddings supports highly competitive routers, consistently outperforming unimodal approaches.
+- **Gap with Oracle**: A clear gap remains between the best routers and the Oracle, suggesting room for improvement in utilizing visual cues and modeling textual structures.
+- **Model Coverage**: Includes 17 candidate models (1B to 78B parameters), spanning two orders of magnitude in scale.
 
 ## Highlights & Insights
-- **First VLM routing benchmark**: Fills the gap in unified routing evaluation for VLMs; the pipeline is complete (data → training → evaluation) and highly extensible.
-- **Mathematical elegance of the soft-label strategy**: Analytic soft labels are derived via Lagrangian optimization, offering theoretical guarantees and allowing continuous control of the accuracy-cost tradeoff through a single parameter $\lambda$.
-- **Diagnostic value of the Oracle gap**: Clearly identifies improvement directions in finer visual cue exploitation and textual structure modeling.
+- **First VLM Routing Benchmark**: Fills a gap in systematic routing evaluation for VLMs with a complete pipeline (data $\to$ training $\to$ evaluation).
+- **Mathematical Elegance of Soft Labels**: Analytical soft labels derived from Lagrangian optimization allow for continuous control of the accuracy-cost tradeoff via a single $\lambda$ parameter.
+- **Diagnostic Value of the Oracle Gap**: Clearly identifies that future improvements should focus on finer visual cues and structural text modeling.
 
 ## Limitations & Future Work
-- Only single-image inputs are considered; multi-image and video VLM scenarios are not covered.
-- Correctness evaluation relies solely on rule-based matching (multiple-choice/answer matching), excluding open-ended generation tasks.
-- Cost estimation is based on token count × pricing table, without accounting for actual latency or throughput variation.
-- The router introduces additional feature extraction and classification overhead at inference time, which may not be worthwhile for models with already low inference costs.
-- Robustness of routers on out-of-distribution data is not explored.
+- Considers only single-image inputs; does not cover multi-image or video VLM scenarios.
+- Correctness evaluation is limited to rule-based matching, excluding open-ended generation tasks.
+- Cost estimation is based on token counts and pricing tables, ignoring actual latency and throughput variations.
+- Routers introduce additional overhead for feature extraction and classification, which may be inefficient for low-cost models.
+- Does not explore the robustness of routers on out-of-distribution (OOD) data.
 
 ## Related Work & Insights
-- **vs. RouterBench/RouterEval**: These target LLM text routing; VL-RouterBench is the first benchmark for VLMs, adding evaluation of visual modality and cross-modal fusion.
-- **vs. RouterArena**: RouterArena covers multi-dimensional metrics and automated leaderboards; VL-RouterBench adopts its Rank Score design and extends it to the multimodal setting.
-- **GPT-5 built-in routing**: The industry has already incorporated routing as a unified interface feature, underscoring the practical value of routing research.
+- **vs. RouterBench/RouterEval**: These focus on LLM text routing; VL-RouterBench is the first for VLMs, adding multimodal fusion evaluation.
+- **vs. RouterArena**: Borrowing the Rank Score design, VL-RouterBench extends it to multimodal contexts.
+- **GPT-5 Integrated Routing**: Industry trends suggest routing as a unified interface feature, highlighting the practical value of this research.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First VLM routing benchmark, filling a research gap
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 14 datasets × 17 models × 10 routing methods, comprehensive ablations
-- Writing Quality: ⭐⭐⭐⭐ Well-structured, clear derivations
-- Value: ⭐⭐⭐⭐ Direct practical value for efficient VLM deployment
+- Novelty: ⭐⭐⭐⭐ First VLM routing benchmark.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across datasets, models, and methods.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with clear derivations.
+- Value: ⭐⭐⭐⭐ Directly applicable to efficient VLM deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
 - [\[CVPR 2026\] Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions](can_vision-language_models_count_a_synthetic_benchmark_and_analysis_of_attention.md)
-- [\[CVPR 2026\] AVR: Adaptive VLM Routing for Computer Use Agents](adaptive_vision-language_model_routing_for_computer_use_agents.md)
-- [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
+- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
 - [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
 
 </div>
 

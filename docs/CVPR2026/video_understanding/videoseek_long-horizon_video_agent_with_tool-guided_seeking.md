@@ -2,125 +2,133 @@
 title: >-
   [Paper Note] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 description: >-
-  [CVPR 2026][Video Understanding][Video Agent] VideoSeek proposes a long-horizon video agent that actively *seeks* critical evidence via video logical flow rather than exhaustively parsing all frames. Through a think-act-…
+  [CVPR 2026][Video Understanding][think-act-observe] VideoSeek proposes a long-horizon video agent that utilizes video logical flow to actively "seek" key evidence rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base GPT-5 model on LVBench wh
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video Agent"
-  - "Long Video Understanding"
-  - "Tool Invocation"
-  - "Logical Flow"
-  - "Think-Act-Observe"
+  - CVPR 2026
+  - Video Understanding
+  - think-act-observe
 date: 2026-05-08
-content_hash: 8098a1b355152e32
+content_hash: 1afaedab7b3e336d
 ---
-
 # VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20185](https://arxiv.org/abs/2603.20185)  
 **Code**: [https://github.com/jylins/videoseek](https://github.com/jylins/videoseek)  
-**Area**: Video Understanding / Agent
-**Keywords**: Video Agent, Long Video Understanding, Tool Invocation, Logical Flow, Think-Act-Observe
+**Area**: Video Understanding / Agent  
+**Keywords**: Video Agent, Long Video Understanding, Tool-use, Logical Flow, think-act-observe
 
 ## TL;DR
-VideoSeek proposes a long-horizon video agent that actively *seeks* critical evidence via video logical flow rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base model GPT-5 on LVBench while reducing frame usage by 93%.
+VideoSeek proposes a long-horizon video agent that utilizes video logical flow to actively "seek" key evidence rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base GPT-5 model on LVBench while reducing frame usage by 93%.
 
 ## Background & Motivation
-1. **Background**: Video-language understanding has advanced rapidly alongside progress in large multimodal models (LMMs). However, mainstream approaches—including Qwen2.5-VL and GPT-4o—still adopt a single-pass inference paradigm that generates answers from a fixed number of input frames, struggling on long videos and complex reasoning tasks. Video agent methods such as DrVideo and DVD introduce iterative reasoning but rely heavily on dense video preprocessing.
-2. **Limitations of Prior Work**: Existing video agents densely sample frames at 0.2–2 FPS and generate detailed textual descriptions or structured memory for each frame, incurring computational costs that grow linearly with video length. For instance, DVD processes 8,074 frames on LVBench, as does MR.Video. Yet over 80% of questions on LVBench can be answered by examining fewer than 5% of video frames—making exhaustive parsing extremely wasteful.
-3. **Key Challenge**: Thorough video preprocessing can improve accuracy but is prohibitively expensive and does not scale. The central challenge is achieving performance comparable to or better than dense parsing under an extremely sparse visual budget.
-4. **Goal**: To design an efficient video agent that answers video questions by actively locating critical evidence rather than resorting to brute-force enumeration.
-5. **Key Insight**: Humans do not watch videos frame by frame to answer questions—they exploit temporal and causal structure to infer where useful evidence is likely to appear, quickly establish a coarse storyline, inspect promising time intervals, and attend carefully only when fine-grained details are needed.
-6. **Core Idea**: Employ a ReAct-style think-act-observe loop together with a three-level granularity toolkit (global overview → coarse skim → fine focus) to actively navigate to answer-critical frames guided by video logical flow.
+1. **Background**: Video-language understanding has advanced rapidly due to progress in LMMs. However, mainstream methods (including Qwen2.5-VL, GPT-4o, etc.) still employ a single-inference paradigm—generating answers directly after inputting a fixed number of frames—which struggles in long video and complex reasoning scenarios. Video agent methods (e.g., DrVideo, DVD) introduce iterative reasoning but rely heavily on dense video preprocessing.
+2. **Limitations of Prior Work**: Existing video agents sample densely at 0.2-2 FPS and generate detailed textual descriptions or structured memories for every frame, leading to computational costs that scale linearly with video length. For example, DVD and MR.Video both process 8074 frames on LVBench. However, over 80% of questions in LVBench can be answered by viewing less than 5% of the video; exhaustive parsing is extremely wasteful.
+3. **Key Challenge**: Detailed video preprocessing improves accuracy but is costly and unscalable. The challenge is to achieve or exceed the performance of dense parsing under an extremely sparse visual budget.
+4. **Goal**: To design an efficient video agent that answers video questions by actively seeking key evidence instead of brute-force exhaustive search.
+5. **Key Insight**: Humans do not watch videos frame-by-frame to answer questions—they leverage temporal and causal structures to infer where useful evidence might appear, quickly establishing a rough storyline, checking promising segments, and only watching carefully when details are needed.
+6. **Core Idea**: Employ a ReAct-style think-act-observe loop with three granularities of tools (global overview → rough skimming → fine focusing) to actively navigate to answer-critical frames based on video logical flow.
 
 ## Method
 
 ### Overall Architecture
-VideoSeek formulates video-language tasks as long-horizon problems rather than single-step inference. Given a query $\mathbf{Q}$ and video $\mathbf{X}$, the agent produces a think-act-observe triplet $\langle z_t, a_t, o_t \rangle$ at each reasoning step $t$, forming a trajectory $\tau$. The final answer is generated by $p(\mathbf{Y}|\mathbf{X}, \mathbf{Q}, \tau)$. The key mechanism is that the trajectory exploration process $p(\tau|\mathbf{X}, \mathbf{Q})$ focuses on a small number of highly informative observations rather than exhaustive coverage. The agent uses GPT-5 as the default thinking LLM with a maximum of $N=20$ reasoning rounds.
+VideoSeek reformulates "answering a long video question" from a single-step inference into a long-range exploration problem. Instead of forcing the model to process a fixed number of frames at once, an agent is allowed to scan for a storyline, skip to suspicious segments, and finally focus on key moments. Given query $\mathbf{Q}$ and video $\mathbf{X}$, the agent produces a think-act-observe triplet $\langle z_t, a_t, o_t \rangle$ at each reasoning step $t$: thinking ($z_t$), calling a tool to observe ($a_t$), and obtaining a new observation ($o_t$). These triplets form a trajectory $\tau$, and the final answer is generated by $p(\mathbf{Y}\mid\mathbf{X}, \mathbf{Q}, \tau)$. The framework aims to concentrate the exploration process $p(\tau\mid\mathbf{X}, \mathbf{Q})$ on a few high-information observations. The agent uses GPT-5 as the thinking LLM with a maximum of $N=20$ reasoning turns, requiring no additional training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Query Q + Long Video X"] --> B["Think<br/>Read full trajectory τ, infer evidence location via logical flow"]
+    B --> C{"Act: Choose Granularity"}
+    C -->|Establish global storyline/logic| D["overview<br/>Sample 16α frames globally, mark candidates"]
+    C -->|Narrow search range| E["skim<br/>Locate in candidate long segments with 4α frames"]
+    C -->|Detailed evidence| F["focus<br/>Dense inspection of short segment at 1 FPS"]
+    C -->|Sufficient evidence| G["answer: Generate answer Y"]
+    D --> H["Observe o_t<br/>Append to trajectory τ"]
+    E --> H
+    F --> H
+    H --> B
+```
 
 ### Key Designs
 
-1. **Multi-Granularity Toolkit**:
-    - **Function**: Emulates the human video-watching behavior of "overview first, then skim, then focus."
-    - **Mechanism**: Three tools operate at different temporal granularities—
-        - `<overview>`: Uniformly samples $16\alpha$ frames from the entire video (for LVBench, $\alpha=4$, i.e., 64 frames) to produce a coarse storyline and annotate key intervals. Used primarily at the beginning to build a global cognitive map.
-        - `<skim>`: Uniformly samples $4\alpha$ frames from a candidate long segment (minimum $4\alpha$ seconds) to rapidly locate query-relevant moments. Can be invoked multiple times on different segments to progressively narrow the search space.
-        - `<focus>`: Densely inspects a short segment at 1 FPS (maximum $4\alpha$ seconds) to capture fine-grained details such as text reading, face recognition, and object counting. Serves as the final "close-up" step to ensure answer accuracy.
-    - **Design Motivation**: Different levels of information require different observational granularities. Global overview reveals narrative structure and logical flow; skimming localizes relevant intervals; focusing retrieves decisive evidence. The three tools are complementary and mutually indispensable.
+**1. Multi-granularity Toolkit: Decomposing "Watching" into Three Coarse-to-Fine Actions**
 
-2. **Think-Act-Observe Loop**:
-    - **Function**: Enables adaptive long-horizon reasoning and evidence accumulation.
-    - **Mechanism**: Adopts the ReAct architecture—at each step, the thinking LLM reads the full trajectory (including all prior thoughts, actions, and observations), outputs a reasoning chain $z_t$ and a tool-invocation plan $\alpha_t$. If $\alpha_t$ is `<answer>`, the answer is parsed and the loop terminates; otherwise the tool is executed to obtain a new observation $o_t$, which is appended to the trajectory for the next round. The key innovation is that the agent dynamically adjusts its tool-invocation strategy based on continuously accumulated observations, rather than following a predefined coarse-to-fine rule.
-    - **Design Motivation**: Compared to pre-building video databases (DrVideo/DVD) or maintaining fixed memory buffers (VCA), reasoning directly over the full conversation history is more flexible—the agent can revisit prior observations, revise judgments, and redirect the search.
+The primary waste in video agents stems from indiscriminate dense sampling. VideoSeek instead provides three tools operating at different temporal granularities, allowing the agent to decide the appropriate "view" for each step. `<overview>` samples $16\alpha$ frames uniformly from the entire video (e.g., 64 frames for $\alpha=4$ in LVBench) to generate a rough storyline and identify interesting intervals. This is usually called once at the start to provide a cognitive map. `<skim>` samples $4\alpha$ frames from a candidate long segment to determine where query-related moments might reside, allowing iterative narrowing of the search range. `<focus>` performs dense inspection at 1 FPS on a short segment (max $4\alpha$ seconds) for details like reading text, counting objects, or identifying faces. These tools are complementary; removing `<overview>` leads to a 13.3-point drop in performance.
 
-3. **Exploitation of Video Logical Flow**:
-    - **Function**: Enables the agent to infer evidence locations from the temporal-causal structure of video.
-    - **Mechanism**: Videos possess an inherent logical flow (scene causality, temporal ordering, character relationships, etc.). When subtitles are available, the logical flow is directly exposed through a textual storyline, allowing the agent to localize key segments more efficiently. Without subtitles, `<overview>` constructs a coarse logical flow via visual summarization. The agent leverages logical flow to infer where the answer is likely to appear rather than searching blindly.
-    - **Design Motivation**: LVBench experiments show that adding subtitles reduces frame usage from 92.3 to 27.2 while raising accuracy from 68.4 to 76.7, demonstrating that exposing logical flow substantially improves navigation precision and efficiency.
+**2. Think-Act-Observe Loop: Dynamic Decision-Making on Full Trajectories**
+
+VideoSeek implements adaptive behavior using the ReAct architecture. At each step, the thinking LLM reads the complete trajectory (all historical thoughts, actions, and observations) to output a new reasoning $z_t$ and a tool call $a_t$. If $a_t$ is `<answer>`, the agent generates the result and stops; otherwise, it executes the tool and appends the new observation $o_t$ to the trajectory. The focus is on the agent deciding where to look and at what granularity based on accumulated observations, rather than following a predefined "coarse-to-fine" script. Unlike prior works that pre-build databases or maintain fixed memory buffers (like DrVideo or DVD), reasoning on the dialogue history allows the agent to backtrack and correct earlier misjudgments.
+
+**3. Utilizing Video Logical Flow: Inferring Evidence via Temporal-Causal Structure**
+
+Videos possess an inherent logical flow consisting of scene causality, temporal order, and character relationships. VideoSeek leverages this to infer where answers might appear. When subtitles are available, this logical flow is explicitly exposed as a textual storyline, allowing the agent to jump directly to relevant segments. In the absence of subtitles, a rough logic flow is constructed via `<overview>` visual summaries. The explicit exposure of logical flow significantly impacts navigation efficiency—on LVBench, adding subtitles reduces frame usage from 92.3 to 27.2 while increasing accuracy from 68.4 to 76.7.
+
+### A Complete Example
+
+Consider answering "To whom did the protagonist hand the trophy at the award ceremony at the end?" in a one-hour video. The agent first calls `<overview>` to establish a storyline and identifies candidate intervals: opening, middle conflict, and end ceremony. Reasoning that an "award ceremony" should be in the later part, the agent calls `<skim>` on the last quarter to confirm the ceremony's location and narrow it down to the "protagonist on stage" segment. Finally, it calls `<focus>` on these few seconds to watch at 1 FPS, identifying the recipient's name from their badge. The agent then outputs `<answer>`. The entire process takes approximately 4 turns and 92.3 frames on average, compared to the thousands of frames required by exhaustive methods.
 
 ### Loss & Training
-VideoSeek is a training-free, model-agnostic agent framework that directly leverages GPT-5's reasoning and tool-use capabilities. Visual content returned by tool calls is interpreted by GPT-5.
+VideoSeek is a training-free (model-agnostic) agent framework. It leverages the off-the-shelf reasoning and tool-use capabilities of GPT-5. Visual observations returned by tools are also interpreted by GPT-5, with no parameter updates required.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Type | LVBench (w/o sub.) | Frames | LVBench (w/ sub.) | Frames |
-|---|---|---|---|---|---|
+| Method | Type | LVBench (No Subtitles) | Frames | LVBench (With Subtitles) | Frames |
+|------|------|-----------------|------|-----------------|------|
 | GPT-5 (Base) | LMM | 60.1 | 384 | 66.5 | 384 |
-| Gemini 1.5 Pro | LMM | 33.1 | 3600 | — | — |
+| Gemini 1.5 Pro | LMM | 33.1 | 3600 | - | - |
 | DVD | Agent | 74.2 | 8074 | 76.0 | 8074 |
-| MR. Video | Agent | 60.8 | 8074 | — | — |
+| MR. Video | Agent | 60.8 | 8074 | - | - |
 | **VideoSeek** | **Agent** | **68.4** | **92.3** | **76.7** | **27.2** |
 
-VideoMME Long (w/ subtitles): VideoSeek 81.2% / 15.9 frames vs. GPT-5 78.1% / 384 frames.
-LongVideoBench Long: VideoSeek 73.5% / 29.6 frames vs. GPT-5 64.5% / 384 frames.
+VideoMME Long (With Subtitles): VideoSeek 81.2% / 15.9 frames vs GPT-5 78.1% / 384 frames.
+LongVideoBench Long: VideoSeek 73.5% / 29.6 frames vs GPT-5 64.5% / 384 frames.
 
 ### Ablation Study
 
-| Configuration | LVBench (w/o sub.) | Notes |
-|---|---|---|
+| Configuration | LVBench (No Subtitles) | Description |
+|------|-----------------|------|
 | Full toolkit | **68.4** | Full model |
-| w/o overview | 55.1 (−13.3) | Loss of global perspective |
-| w/o skim | 62.4 (−6.0) | Loss of intermediate-granularity browsing |
-| w/o focus | 63.7 (−4.7) | Loss of fine-grained inspection |
+| w/o overview | 55.1 (-13.3) | Loss of global perspective |
+| w/o skim | 62.4 (-6.0) | Loss of intermediate granularity |
+| w/o focus | 63.7 (-4.7) | Loss of fine inspection |
 
-| Thinking LLM | Frames | Rounds | LVBench |
-|---|---|---|---|
+| Thinking LLM | Frames | Turns | LVBench |
+|--------------|------|------|---------|
 | GPT-5 | 92.3 | 4.42 | **68.4** |
-| o4-mini | 112.6 | 5.08 | 58.5 (−9.9) |
-| GPT-4.1 | 74.2 | 2.99 | 53.0 (−15.4) |
+| o4-mini | 112.6 | 5.08 | 58.5 (-9.9) |
+| GPT-4.1 | 74.2 | 2.99 | 53.0 (-15.4) |
 
 ### Key Findings
-- **Overview is the most critical tool** (removing it causes a 13.3-point drop) because it provides the global storyline and logical flow that serve as the foundation for all subsequent navigation.
-- **Reasoning capability determines the upper bound**: GPT-4.1 (a non-thinking model) tends to halt reasoning prematurely with overconfidence (only 2.99 rounds on average), leaving insufficient evidence; o4-mini explores more but with lower reasoning quality, so the additional computation does not translate into better performance.
-- **Subtitles = explicit logical flow**: Adding subtitles reduces frame usage by 70% (92.3→27.2) while raising accuracy by 8.3 points, confirming that a textual storyline greatly simplifies evidence search.
-- **vs. DVD**: VideoSeek with subtitles surpasses DVD (76.7 vs. 76.0) using only 0.3% of the frames (27.2 vs. 8,074).
-- On the complex reasoning benchmark Video-Holmes, VideoSeek achieves 47.3%, surpassing Gemini 2.5 Pro's 45.0% with only one-quarter of the frames.
+- **overview is the most critical tool** (13.3-point drop if removed) as it provides the global storyline and logical flow necessary for subsequent navigation.
+- **Reasoning capability determines the ceiling**: GPT-4.1 (a non-thinking model) tends to stop reasoning prematurely (2.99 turns) with insufficient evidence; o4-mini explores more but with lower reasoning quality.
+- **Subtitles = Explicit Logical Flow**: Adding subtitles reduces frame usage by 70% while improving accuracy by 8.3 points, proving that textual storylines greatly simplify evidence search.
+- **Comparison vs DVD**: VideoSeek outperforms DVD when subtitles are present (76.7 vs 76.0) using only 0.3% of the frames (27.2 vs 8074).
+- On the Video-Holmes complex reasoning benchmark, VideoSeek (47.3%) outperforms Gemini 2.5 Pro (45.0%) using 1/4 of the frames.
 
 ## Highlights & Insights
-- **"Active seeking" vs. "exhaustive parsing"—a paradigm shift**: This is the paper's most profound contribution. VideoSeek demonstrates that intelligent navigation is far more effective than brute-force dense sampling for long video understanding—achieving or exceeding dense methods with only 1% of the frames. This aligns with the principle of cognitive economy in human perception.
-- **Aesthetic elegance of the tiered toolkit design**: The overview/skim/focus hierarchy maps precisely onto human "glance → browse → scrutinize" behavior—intuitive yet highly effective. In particular, the global overview contributes far more than expected (13.3 points).
-- **Thinking models are the core engine**: Non-thinking models cannot effectively leverage this framework—genuine reasoning capability is required to judge "whether evidence is sufficient" and "where to look next." This highlights video agent systems' strong dependence on the underlying reasoning model.
+- **Paradigm shift from "Exhaustive Parsing" to "Active Seeking"**: This is the core contribution. VideoSeek proves that in long video understanding, intelligent navigation is more effective than brute-force dense sampling, achieving comparable results with 1% of the frames.
+- **Hierarchical Tool Design**: The overview/skim/focus hierarchy mirrors human "scan → flip → scrutinize" behavior, which is simple yet effective. The value of the global overview exceeds expectations.
+- **Thinking models as the core engine**: Non-thinking models cannot effectively utilize this framework; true reasoning is required to judge evidence sufficiency and determine the next search location.
 
 ## Limitations & Future Work
-- Full reliance on the closed-source model GPT-5 precludes open-source reproducibility and deployment in cost-sensitive scenarios.
-- The approach may underperform on abrupt or highly localized critical moments (e.g., anomaly detection), where logical-flow-guided navigation cannot anticipate unexpected events.
-- Each tool call requires LMM interpretation of visual content, potentially incurring high API costs.
-- Distilling this agent framework into smaller open-source models remains unexplored.
-- Hyperparameters of the toolkit ($\alpha$, maximum frame counts, etc.) require tuning for different benchmarks.
+- Heavy reliance on closed-source models (GPT-5) limits open-source reproducibility and deployment in cost-sensitive scenarios.
+- Performance may decline for sudden or highly localized critical moments (e.g., anomaly detection) where logical flow does not predict the event.
+- High API call costs since every tool call requires visual interpretation by the LMM.
+- Future work could explore distilling this agent framework into smaller open-source models.
+- Tool hyperparameters (e.g., $\alpha$) require adjustment for different benchmarks.
 
 ## Related Work & Insights
-- **vs. DVD Agent**: DVD constructs a multi-granularity video database for retrieval, requiring 8,074 frames of preprocessing. VideoSeek explores on demand, reducing frame count by two orders of magnitude while achieving comparable (without subtitles) or superior (with subtitles) performance.
-- **vs. DrVideo**: DrVideo converts video into long documents at 0.2 FPS—an exhaustive paradigm. VideoSeek demonstrates that exhaustive enumeration is unnecessary.
-- **vs. single-pass inference LMMs**: GPT-5 in single-pass mode with 384 frames achieves 60.1%; VideoSeek using the same model within an agent framework improves this to 68.4%/76.7%, demonstrating that the agent paradigm can unlock the latent potential of the base model.
+- **vs DVD Agent**: DVD builds a multi-granularity database requiring 8074 frames of preprocessing. VideoSeek explores on-demand, reducing frames by two orders of magnitude with similar or better performance.
+- **vs DrVideo**: DrVideo converts videos to long documents at 0.2 FPS, following the exhaustive paradigm. VideoSeek proves exhaustive sampling is unnecessary.
+- **vs Single-inference LMMs**: GPT-5 achieves 60.1% with 384 frames; VideoSeek elevates the same model to 68.4%/76.7%, demonstrating how the agent paradigm unlocks the potential of base models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The concept of "active seeking over exhaustive parsing" is valuable, though the ReAct + tool-calling framework itself is not entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four benchmarks, with/without subtitle comparisons, thinking LLM ablations, and toolkit ablations—analysis is exceptionally thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ Narrative is fluent; Figure 1's efficiency-performance trade-off visualization is immediately clear; case studies are well-presented.
-- Value: ⭐⭐⭐⭐ Provides important insights for video agent efficiency optimization, though closed-source dependency limits broader community impact.
+- Novelty: ⭐⭐⭐⭐ (Valuable "seeking vs exhaustive" concept, though ReAct core is established)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Deep analysis across four benchmarks with varied ablation)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Fluid narrative, clear Figure 1, and illustrative case studies)
+- Value: ⭐⭐⭐⭐ (Important for efficiency in video agents, though limited by closed-source dependency)
 
 <!-- RELATED:START -->
 
@@ -129,10 +137,10 @@ LongVideoBench Long: VideoSeek 73.5% / 29.6 frames vs. GPT-5 64.5% / 384 frames.
 ## Related Papers
 
 - [\[CVPR 2026\] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration](svagent_storyline_guided_long_video_understanding_via_cross_modal_multi_agent_collaboration.md)
-- [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
+- [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
+- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
 - [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
-- [\[CVPR 2026\] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](virtuebench_evaluating_trustworthiness_under_uncertainty_in_long_video_understan.md)
-- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
+- [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
 
 </div>
 

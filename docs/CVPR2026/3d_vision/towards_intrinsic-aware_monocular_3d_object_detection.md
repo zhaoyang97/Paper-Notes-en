@@ -2,86 +2,101 @@
 title: >-
   [Paper Note] Towards Intrinsic-Aware Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Monocular 3D Detection] MonoIA proposes converting numerical camera intrinsics into language-guided semantic representations (via LLM-generated intrinsic descriptions encoded by CLIP)…
+  [CVPR 2026][3D Vision][Paper Note] MonoIA proposes transforming numerical camera intrinsics into language-guided semantic representations (generated via LLM descriptions + CLIP encoding). These are integrated into the detection network through a hierarchical adaptation module, achieving zero-shot generalization to unseen focal lengths and unified cross-
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Monocular 3D Detection"
-  - "Camera Intrinsics"
-  - "Language-Guided Representation"
-  - "Cross-Dataset Training"
-  - "Focal Length Generalization"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 63d269e81d980ece
+content_hash: cb39b64cb84204c4
 ---
-
 # Towards Intrinsic-Aware Monocular 3D Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27059](https://arxiv.org/abs/2603.27059)  
 **Code**: [https://github.com/alanzhangcs/MonoIA](https://github.com/alanzhangcs/MonoIA)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Monocular 3D Detection, Camera Intrinsics, Language-Guided Representation, Cross-Dataset Training, Focal Length Generalization
 
 ## TL;DR
 
-MonoIA proposes converting numerical camera intrinsics into language-guided semantic representations (via LLM-generated intrinsic descriptions encoded by CLIP), and injects them into the detection network through a hierarchical adaptation module. This enables zero-shot generalization to unseen focal lengths and unified cross-dataset training, achieving new state-of-the-art results on KITTI, Waymo, and nuScenes.
+MonoIA proposes transforming numerical camera intrinsics into language-guided semantic representations (generated via LLM descriptions + CLIP encoding). These are integrated into the detection network through a hierarchical adaptation module, achieving zero-shot generalization to unseen focal lengths and unified cross-dataset training, reaching new SOTA on KITTI, Waymo, and nuScenes.
 
 ## Background & Motivation
 
-**Background**: Monocular 3D object detection (Mono3D) infers 3D object positions and dimensions from a single RGB image, and is a critical task in autonomous driving and robotics. Transformer-based methods (MonoDETR, MonoDGP, MonoCoP) have achieved significant progress in recent years, but all assume identical camera intrinsics at training and test time.
+**Background**: Monocular 3D object detection (Mono3D) infers 3D object positions and dimensions from a single RGB image, a critical task for autonomous driving and robotics. Recent Transformer-based methods (MonoDETR, MonoDGP, MonoCoP) have made significant progress but assume identical camera intrinsics for training and testing.
 
-**Limitations of Prior Work**: Existing state-of-the-art methods are highly sensitive to camera intrinsics. Performance degrades sharply when test images are captured with cameras of different focal lengths — for instance, MonoCoP performs well under its training focal length but suffers substantial accuracy drops under unseen focal lengths. In practice, camera intrinsics vary widely across vehicles and sensors, and the lack of cross-camera generalization severely limits real-world deployment.
+**Limitations of Prior Work**: Existing SOTA methods are highly sensitive to camera intrinsics. Performance drops sharply when testing on images from cameras with different focal lengths—for instance, MonoCoP performs excellently at training focal lengths but suffers severe accuracy decay at unseen ones. In practical deployment, intrinsics vary significantly across different vehicles and sensors, and the lack of cross-camera generalization limits real-world application.
 
-**Key Challenge**: Changes in intrinsics represent not merely numerical differences but a form of *perceptual transformation* — variations in focal length alter the apparent size of objects, perspective relationships, and spatial geometry. However, existing methods feed intrinsics as raw scalars, making it difficult for networks to infer perceptual effects from limited supervision signals; models either ignore intrinsic cues or overfit to a small set of training values.
+**Key Challenge**: Changes in intrinsics represent more than just numerical differences; they constitute a "perceptual transformation." Changes in focal length alter apparent object size, perspective relationships, and spatial geometry. However, current methods treat intrinsics as raw numerical inputs. Networks struggle to infer the perceptual effects of intrinsic changes from limited supervision, leading them to either ignore intrinsic cues or overfit to specific training values.
 
-**Goal**: To design a unified intrinsic-aware framework that enables detectors to (1) understand the perceptual implications of intrinsic variations, (2) generalize zero-shot to unseen focal lengths, and (3) support joint training across multiple datasets.
+**Goal**: Design a unified intrinsic-aware framework that enables the detector to (1) understand the perceptual meaning of intrinsic changes, (2) generalize zero-shot to unseen focal lengths, and (3) support joint multi-dataset training.
 
-**Key Insight**: The key insight is that intrinsic variation is fundamentally a perceptual transformation rather than a numerical difference. Short focal lengths produce wide fields of view that emphasize global context, while long focal lengths compress perspective and magnify distant objects. Such perceptual effects can be precisely articulated in natural language.
+**Key Insight**: The fundamental nature of intrinsic variation is perceptual transformation rather than numerical variance. Short focal lengths create wide fields of view (FoV) emphasizing global context, while long focal lengths compress perspective and magnify distant objects. This "perceptual effect" can be precisely described in natural language.
 
-**Core Idea**: An LLM generates textual descriptions of the visual effects associated with each focal length, which are then encoded into semantic embeddings via CLIP. This reframes intrinsic modeling from numerical conditioning to semantic representation, enabling a deeper understanding of intrinsic variation.
+**Core Idea**: Use an LLM to generate text describing the visual effects for each focal length, then encode these into semantic embeddings via CLIP. This shifts intrinsic modeling from numerical conditioning to semantic representation, enabling a deeper understanding of intrinsic variations.
 
 ## Method
 
 ### Overall Architecture
 
-MonoIA comprises three core components: (1) an **Intrinsic Simulation Module** that simulates multi-focal-length images via FoV transformation to enrich training data; (2) an **Intrinsic Encoder** that leverages an LLM and CLIP to convert numerical intrinsics into semantic embeddings; and (3) an **Intrinsic Adaptation Module** that injects intrinsic embeddings into the detection network via a lightweight connector and hierarchical fusion. The base detector is built upon MonoCoP/MonoDGP.
+MonoIA addresses a specific deployment pain point: the accuracy collapse of monocular detectors when camera focal lengths change. It transforms the "focal length value" from a raw number into a semantic signal understandable by the network through a three-step pipeline. During training, the **Intrinsic Simulation Module** applies FoV transformations to original images to create various focal lengths, ensuring the network sees a broad intrinsic distribution. Simultaneously, the **Intrinsic Encoder** translates each focal length into text and encodes it into an embedding vector, forming a "focal length-to-semantics" lookup table. Finally, the **Intrinsic Adaptation Module** bridges these embeddings into the detection network, injecting intrinsic information at both the feature map and object query levels. The detection backbone (e.g., MonoCoP/MonoDGP) is reused, with all three modules serving as plug-and-play components.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image + Original Intrinsics K"] --> B["Intrinsic Simulation Module<br/>Sample focal length f∈[700,1300], transform image by FoV"]
+    A --> C["Intrinsic Encoder<br/>LLM generates 24 focal length descriptions → Average CLIP text encodings"]
+    C --> D["Focal length → Semantic embedding lookup table (frozen encoder)"]
+    B --> E["Detection Backbone (MonoCoP / MonoDGP)"]
+    subgraph ADAPT["Intrinsic Adaptation Module"]
+        direction TB
+        G["Connector: 2-layer MLP+GELU projection to visual alignment space"] --> H["Feature-level Fusion<br/>Added to each spatial position of multi-scale feature maps"]
+        G --> I["Query-level Fusion<br/>Added to each object query"]
+    end
+    D --> G
+    E --> H
+    E --> I
+    H --> J["3D Detection Output"]
+    I --> J
+```
 
 ### Key Designs
 
-1. **Intrinsic Simulation Module**:
+**1. Intrinsic Simulation Module: Augmenting the training distribution with "unseen focal lengths"**
 
-    - *Function*: Generates multi-focal-length training images to increase the diversity of training intrinsics.
-    - *Mechanism*: Given the original image and intrinsics $\mathbf{K}_{\text{orig}}$, a target focal length $f_i \in [700, 1300]$ is randomly sampled; the corresponding field of view $\theta = 2\arctan(\frac{w}{2f_i})$ is computed, and the image is rescaled according to the new FoV. Short focal lengths produce a zoom-out effect while long focal lengths produce a zoom-in effect.
-    - *Design Motivation*: Naively increasing data diversity is insufficient (experiments show that directly training MonoCoP with simulated data degrades performance by 1.93%); however, this module provides the necessary training distribution for subsequent intrinsic-aware learning.
+The first barrier to cross-focal length generalization is the lack of focal length diversity in training data, preventing the network from learning the relationship between focal length and imaging. The simulation module fills this gap via geometric transformations: given an original image and intrinsics $\mathbf{K}_{\text{orig}}$, a target focal length $f_i \in [700, 1300]$ is randomly sampled, and the image is rescaled according to the FoV formula $\theta = 2\arctan(\frac{w}{2f_i})$. Short focal lengths correspond to wide FoV where objects appear smaller (zoom-out), while long focal lengths compress perspective and magnify distant objects (zoom-in). Notably, the authors observe that this step alone is insufficient: training MonoCoP solely with simulated images actually reduces $AP_{3D}$ by 1.93%. Simply "seeing more focal lengths" does not solve the problem; it merely provides a diverse distribution for subsequent semantic learning.
 
-2. **Intrinsic Encoder**:
+**2. Intrinsic Encoder: Attaching semantic representations of geometric structures to numerical focal lengths**
 
-    - *Function*: Converts numerical focal lengths into semantically rich embedding vectors.
-    - *Mechanism*: Accomplished in two steps — (a) **LLM Description Generation**: for each focal length $f_i$, the simulated image and numerical value are provided to ChatGPT-4o, which generates $N=24$ textual descriptions of the visual effects at that focal length (e.g., "a short focal length yields a wide field of view, objects appear smaller, and global context is emphasized"); (b) **CLIP Encoding**: all descriptions are encoded using the CLIP ViT-H/14 text encoder and averaged to obtain the intrinsic embedding $\mathbf{t}_{\text{avg}} = \frac{1}{N}\sum_{i=1}^{N}\text{CLIP}_{\text{text}}(p_i)$. In the resulting semantic space, numerically similar focal lengths map to geometrically adjacent positions, forming a perceptually continuous and geometrically ordered representation space.
-    - *Design Motivation*: Pure numerical encoding (e.g., treating focal length as a scalar or applying a simple linear mapping) lacks geometric structure — cosine similarity analysis reveals that numerically encoded embeddings are uniformly distributed and fail to discriminate different focal lengths. By contrast, language-guided CLIP embeddings exhibit an orderly similarity pattern, confirming successful modeling of focal length variation.
+This is the central hypothesis: because intrinsic changes are perceptual transformations, language describing perception should characterize them. Encoding involves two steps: first, each focal length $f_i$ (and its simulated image) is fed to ChatGPT-4o to generate $N=24$ descriptions of its visual effects (e.g., "A short focal length provides a wide field of view, making objects appear small and emphasizing global context"). Then, the CLIP ViT-H/14 text encoder encodes and averages these descriptions to obtain the intrinsic embedding:
 
-3. **Intrinsic Adaptation Module**:
+$$\mathbf{t}_{\text{avg}} = \frac{1}{N}\sum_{i=1}^{N}\text{CLIP}_{\text{text}}(p_i)$$
 
-    - *Function*: Bridges the frozen intrinsic embeddings to the visual feature space of the detection network.
-    - *Mechanism*: Consists of two layers of design — (a) **Connector**: a two-layer MLP with GELU activation projects the frozen semantic embeddings into a trainable, visually aligned space, preserving semantic priors while allowing task-specific adaptation; (b) **Hierarchical Fusion**: at the feature level, intrinsic embeddings are added to every spatial position of the multi-scale backbone feature maps as $\tilde{\mathbf{F}}_i(x,y) = \mathbf{F}'_i(x,y) + \mathbf{t}_{\text{intr}}$; at the query level, intrinsic embeddings are added to each object query as $\tilde{\mathbf{q}}_j = \mathbf{q}_j + \mathbf{t}_{\text{intr}}$, allowing the decoder to correctly interpret visual evidence under varying focal length configurations.
-    - *Design Motivation*: Semantic encoding alone is insufficient; the detection network must also assimilate this information. Feature-level fusion ensures low-level geometric consistency, while query-level fusion propagates intrinsic context to object-level predictions. Ablation studies confirm that both fusion levels are indispensable.
+For example, similar focal lengths like 800 and 850 generate nearly identical descriptions and reside closely in semantic space. Conversely, 800 and 1300 generate distinct descriptions and distant embeddings. This captures geometric structure that numerical encoding misses; cosine similarity analysis reveals that linear mapping of scalar focal lengths results in a near-uniform distribution, whereas language-guided embeddings show monotonic similarity patterns. This confirms the model successfully encodes the geometry of focal length variations, providing the basis for zero-shot generalization.
+
+**3. Intrinsic Adaptation Module: Integrating frozen semantic embeddings into the detection network**
+
+To utilize the semantic lookup table, the **Connector** (a 2-layer MLP + GELU) projects frozen intrinsic embeddings into a trainable visual alignment space. Keeping the encoder frozen and training only the projection head is crucial; ablation shows that updating the embeddings with task gradients destroys the established semantic structure (dropping performance by 2.55%). Post-projection, **dual-level fusion** is performed. At the feature level, the intrinsic embedding is added to every spatial position of the multi-scale backbone feature maps:
+
+$$\tilde{\mathbf{F}}_i(x,y) = \mathbf{F}'_i(x,y) + \mathbf{t}_{\text{intr}}$$
+
+This ensures low-level geometric consistency. At the query level, it is added to each object query $\tilde{\mathbf{q}}_j = \mathbf{q}_j + \mathbf{t}_{\text{intr}}$, enabling the decoder to interpret visual evidence under specific focal length configurations. Ablation proves both levels are essential: removing feature-level fusion drops results to 23.43%, and removing query-level fusion drops them to 23.99%. The former handles pixel-level geometry, while the latter handles object-level reasoning.
 
 ### Loss & Training
 
-During training, the Intrinsic Encoder is kept frozen; only the Intrinsic Adaptation Module and the detector are trained. DETR-style Hungarian matching is adopted, and the overall loss is:
+During training, the Intrinsic Encoder remains frozen, while only the Intrinsic Adaptation Module and the detector are trained. Using DETR-style Hungarian matching, the total loss is:
 
 $$\mathcal{L}_{\text{overall}} = \frac{1}{N_{gt}} \sum_{n=1}^{N_{gt}} (\mathcal{L}_{2D} + \mathcal{L}_{3D} + \mathcal{L}_{\text{dmap}})$$
 
 where $\mathcal{L}_{2D}$ is the 2D bounding box loss, $\mathcal{L}_{3D}$ supervises 3D attributes, and $\mathcal{L}_{\text{dmap}}$ is the object-level depth map prediction loss.
 
-At inference, a **Hybrid Interpolation Strategy** is employed: for a given test intrinsic, the two nearest training focal lengths and their embeddings are identified. If the focal length difference is $\leq 32$ px, the nearest embedding is reused directly; otherwise, linear interpolation synthesizes the target embedding. The 32 px threshold corresponds to the backbone's $32\times$ spatial downsampling, below which differences are indistinguishable in feature space.
+For inference, a **Hybrid Interpolation Strategy** is used: for a test intrinsic, the nearest two training focal lengths and their embeddings are identified. If the difference is $\le 32px$, the nearest embedding is reused; otherwise, the target embedding is synthesized via linear interpolation. The $32px$ threshold corresponds to the $32\times$ spatial downsampling of the backbone, as finer differences are indistinguishable in feature space.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | MonoIA | Prev. SOTA (MonoCoP) | Gain |
+| Dataset | Metric | MonoIA | MonoCoP (Prev. SOTA) | Gain |
 |--------|------|--------|------------------|------|
 | KITTI Test (Mod.) | AP₃D | 21.57% | 20.39% | +1.18% |
 | KITTI Val (Mod.) | AP₃D | 24.40% | 23.98% | +0.42% |
@@ -93,53 +108,53 @@ At inference, a **Hybrid Interpolation Strategy** is employed: for a given test 
 
 ### Ablation Study
 
-| Configuration | AP₃D (Mod.) | Notes |
+| Configuration | AP₃D (Mod.) | Description |
 |------|-------------|------|
-| Single-focal baseline (MonoCoP) | 23.64% | No intrinsic awareness |
-| + Multi-focal simulated images | 21.71% | Data augmentation alone hurts |
-| + Linear intrinsic encoding (replacing LLM+CLIP) | 22.16% | Numerical encoding lacks geometric structure |
-| + Trainable embeddings (unfrozen) | 21.85% | Training destroys semantic structure |
-| + No Connector | 22.85% | Missing bridging to visual space |
-| + No feature-level fusion | 23.43% | Loss of low-level geometric consistency |
-| + No query-level fusion | 23.99% | Impairs object-level reasoning |
-| **MonoIA (full model)** | **24.40%** | All components in synergy |
+| Single focal baseline (MonoCoP) | 23.64% | No intrinsic awareness |
+| + Multi-focal simulated images | 21.71% | Mere data augmentation decreases performance |
+| + Linear intrinsic encoding | 22.16% | Numerical encoding lacks geometric structure |
+| + Trainable embeddings (not frozen) | 21.85% | Training destroys semantic structure |
+| + Without Connector | 22.85% | Lacks spatial bridging |
+| + Without Feature-level fusion | 23.43% | Loss of low-level geometric consistency |
+| + Without Query-level fusion | 23.99% | Affects object-level reasoning |
+| **MonoIA Full Version** | **24.40%** | All components working synergistically |
 
 ### Key Findings
 
-- Training with additional multi-focal-length data alone is harmful (−1.93%), demonstrating that *understanding* intrinsics is more important than *seeing* more intrinsic values.
-- Freezing the CLIP encoder is critical: unfreezing it leads to a −2.55% performance drop, as training gradients disrupt the structure of the semantic space.
-- MonoIA exhibits the smallest performance degradation under intrinsic mismatch (focal length perturbation of ±15 px): 18.98% vs. the baseline's 15.42%, indicating substantially improved robustness.
-- Multi-dataset joint training yields large gains: MonoIA improves from 24.40% (single dataset) to 28.91% (three datasets), whereas MonoCoP degrades from 23.98% to 17.26%.
-- The method introduces negligible overhead: only 0.13M additional parameters with no change in GFLOPs.
+- Simply increasing multi-focal length data during training is counterproductive (-1.93%), proving that "understanding intrinsics" is more important than "seeing more intrinsics."
+- Freezing the CLIP encoder is critical: failing to do so leads to a 2.55% performance drop as task gradients erode the semantic space structure.
+- MonoIA shows minimal performance drop under intrinsic mismatch tests (focal perturbation ±15px), significantly improving robustness (18.98% vs baseline 15.42%).
+- Multi-dataset joint training provides a massive advantage: MonoIA improves from 24.40% (single dataset) to 28.91% (triple dataset), while MonoCoP drops from 23.98% to 17.26%.
+- Minimal overhead: Only 0.13M additional parameters are added, with no change in GFLOPs.
 
 ## Highlights & Insights
 
-- **Paradigm Shift in Intrinsic Modeling**: Transitioning from "numerical conditioning" to "semantic representation" for intrinsic modeling offers broad inspiration — any physical parameter (e.g., illumination, weather, sensor type) may benefit from language-based representations.
-- **LLM as a Source of Prior Knowledge**: The work cleverly leverages the world knowledge embedded in LLMs to describe the visual effects of focal length variation, rather than relying on hand-crafted rules.
-- **Comprehensive Experimental Design**: Evaluation spans zero-shot generalization, intrinsic mismatch, multi-dataset training, multiple backbone architectures, and multiple baseline methods.
-- **Plug-and-Play Design**: The Intrinsic Awareness module can be integrated into different detectors (MonoDGP, MonoCoP) with consistent improvements across all.
+- **Paradigm Shift**: Shifting intrinsic modeling from "numerical conditioning" to "semantic representation" is an inspiring approach—physical parameters (lighting, weather, sensor models) can likely benefit from language-described representations.
+- **LLM as Prior Knowledge Source**: Cleverly utilizes LLM world knowledge to describe perceptual effects of focal length instead of relying on manually defined rules.
+- **Comprehensive Experimental Design**: Covers zero-shot generalization, intrinsic mismatch, multi-dataset training, multiple backbones, and multiple baseline methods.
+- **Plug-and-play Design**: The Intrinsic Awareness module can be integrated into different detectors like MonoDGP and MonoCoP with consistent improvements.
 
 ## Limitations & Future Work
 
-- MonoIA requires LLM descriptions and CLIP embeddings to be precomputed for each focal length; new focal lengths rely on interpolation rather than true generalization.
-- The current work focuses primarily on focal length variation; the effects of other intrinsic parameters such as principal point offset receive limited analysis (the authors note in the appendix that focal length is the dominant factor).
-- The architecture is not intrinsic-invariant by design but relies on explicit embedding learning.
-- Future directions include designing architectures that are natively invariant to intrinsics, and extending language-guided representation to other physical parameters such as extrinsics and weather conditions.
-- Deep integration of multimodal foundation models with 3D perception remains an important open problem.
+- MonoIA requires pre-generating LLM descriptions and CLIP embeddings for each focal length; new focal lengths rely on interpolation rather than true emergent generalization.
+- Currently focuses primarily on focal length; the impact of other intrinsics like principal point offsets is less explored (though authors note focal length is the dominant factor).
+- It is not an intrinsic-invariant architecture but relies on explicit embedding learning.
+- Future directions: Designing naturally intrinsic-invariant networks; extending language-guided representations to extrinsic parameters, weather, etc.
+- Deep integration of multi-modal foundation models with 3D perception remains an open challenge.
 
 ## Related Work & Insights
 
-- **MonoDETR/MonoDGP/MonoCoP**: MonoIA builds upon MonoCoP, forming a continuous improvement chain in monocular 3D detection.
-- **CLIP in 3D Tasks**: Works such as OpenScene and ULIP use CLIP to bridge 2D and 3D representations; MonoIA is the first to apply CLIP to camera intrinsic encoding.
+- **MonoDETR/MonoDGP/MonoCoP Series**: MonoIA builds upon MonoCoP, continuing the chain of improvements in monocular 3D detection.
+- **CLIP in 3D Tasks**: While projects like OpenScene and ULIP bridge 2D and 3D via CLIP, MonoIA is the first to use CLIP for encoding camera intrinsics.
 - **Omni3D**: Uses virtual depth normalization for cross-dataset training; MonoIA provides a superior semantic-level solution.
-- Inspiration: In other calibration-sensitive tasks (e.g., depth estimation, BEV perception), could language-guided parameter representation similarly be introduced?
+- **Insight**: In other sensor-calibration sensitive tasks (e.g., depth estimation, BEV perception), can language-guided parameter representation be introduced similarly?
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Introducing LLM+CLIP for camera intrinsic modeling is a highly original idea)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (KITTI/Waymo/nuScenes + multi-focal + multi-dataset + ablation + efficiency analysis)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logical flow, rich figures and tables, detailed appendix)
-- Value: ⭐⭐⭐⭐⭐ (Addresses a real deployment pain point; the approach is broadly inspirational for the 3D perception community)
+- Novelty: ⭐⭐⭐⭐⭐ (Strong originality in introducing LLM+CLIP for intrinsic modeling)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (KITTI/Waymo/nuScenes + multi-focal + multi-dataset + ablation + efficiency)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logical chain, rich visualization, detailed appendix)
+- Value: ⭐⭐⭐⭐⭐ (Addresses real deployment pains; methodology is inspiring for 3D perception)
 
 <!-- RELATED:START -->
 
@@ -147,11 +162,11 @@ At inference, a **Hybrid Interpolation Strategy** is employed: for a given test 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/3d_vision/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
-- [\[CVPR 2026\] VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection](virpro_visual-referred_probabilistic_prompt_learning_for_weakly-supervised_monoc.md)
 
 </div>
 

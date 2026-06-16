@@ -2,115 +2,115 @@
 title: >-
   [Paper Note] Rethink the Role of Neural Decoders in Quantum Error Correction
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Surface code] This paper systematically re-evaluates five categories of neural decoders (MLP/3D-CNN/TCN/Transformer/GNN) on surface codes with $d \le 9$. By integrating "quanti…
+  [ICML 2026][Physics & Scientific Computing][FPGA] This paper systematically re-evaluates five types of neural decoders (MLP, 3D-CNN, TCN, Transformer, and GNN) on surface codes with $d\le9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, the study concludes that contemporary decoding performance is
 tags:
-  - "ICML 2026"
-  - "Physics & Scientific Computing"
-  - "Surface code"
-  - "neural decoders"
-  - "FPGA"
-  - "INT4 quantization"
-  - "inductive bias"
+  - ICML 2026
+  - Physics & Scientific Computing
+  - FPGA
 date: 2026-05-08
-content_hash: c32f2660e6a95b09
+content_hash: 8213f8ecc9c7e6dc
 ---
-
 # Rethink the Role of Neural Decoders in Quantum Error Correction
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.12046](https://arxiv.org/abs/2605.12046)  
-**Code**: Not yet disclosed  
+**Code**: Not yet public  
 **Area**: Quantum Error Correction / Neural Compression & Hardware Deployment  
-**Keywords**: Surface code, neural decoders, FPGA, INT4 quantization, inductive bias
+**Keywords**: Surface Code, Neural Decoder, FPGA, INT4 Quantization, Inductive Bias
 
 ## TL;DR
-This paper systematically re-evaluates five categories of neural decoders (MLP/3D-CNN/TCN/Transformer/GNN) on surface codes with $d \le 9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, it concludes that near-term decoding performance is dominated by data volume rather than architectural complexity, and INT4 + QAT is a prerequisite for microsecond-level real-time decoding.
+This paper systematically re-evaluates five types of neural decoders (MLP, 3D-CNN, TCN, Transformer, and GNN) on surface codes with $d\le9$. By integrating "quantization + pruning + FPGA resource modeling" as first-class citizens into the training pipeline, the study concludes that contemporary decoding performance is dominated by data volume rather than architectural complexity, and that INT4 + QAT is a necessary prerequisite for achieving microsecond-level real-time decoding.
 
 ## Background & Motivation
-**Background**: In Quantum Error Correction (QEC), surface codes combined with real-time decoding are considered essential algorithmic primitives for fault-tolerant quantum computing. Traditional methods like MWPM and BP occupy the extremes of accuracy and speed, respectively, while recent neural decoders (AlphaQubit, TCN, GNN-BP, etc.) are frequently published with "high precision" as a primary selling point.
+**Background**: In Quantum Error Correction (QEC), surface codes combined with real-time decoding are considered essential algorithmic primitives toward fault-tolerant quantum computing. Traditional methods like MWPM and BP represent extremes in accuracy and speed, respectively. Recently, neural decoders (e.g., AlphaQubit, TCN, GNN-BP) have been frequently published, highlighting "high accuracy" as a primary selling point.
 
-**Limitations of Prior Work**: Existing neural decoders generally compare only logical error rates, rarely discussing real-world deployment constraints such as microsecond-level latency, FPGA resource utilization, or low-bitwidth quantization. Furthermore, it remains unclear whether reported improvements stem from architectural innovation or larger training sets, as systematic controlled comparisons have been lacking.
+**Limitations of Prior Work**: Existing neural decoders generally compare only logical error rates, rarely discussing real-world deployment constraints such as microsecond-level latency, FPGA resource consumption, or low-bit-width quantization. Furthermore, it has never been systematically verified whether reported improvements stem from architectural innovation or simply larger training sets through controlled variable experiments.
 
-**Key Challenge**: QEC decoding must physically satisfy two contradictory requirements: high precision to "exponentially suppress" logical errors, and completion within $\sim 1\mu s$ to keep pace with the coherence window of superconducting qubits. Previous works often optimize for only one side, resulting in SOTA models that cannot realistically run on hardware.
+**Key Challenge**: QEC decoding must physically satisfy two contradictory requirements: accuracy must be high enough to "exponentially suppress" logical errors, while inference must be completed within $\sim 1\mu s$ to keep pace with the coherence time windows of superconducting qubits. Previous works often optimized only one side, resulting in SOTA models in literature that are undeployable on hardware.
 
-**Goal**: To treat precision and latency as two sides of the same objective, answering two specific questions—Q1: Does performance gain come from architecture or data? Q2: How can neural decoders be made to meet inference deadlines on FPGAs?
+**Goal**: To treat accuracy and latency as two sides of the same objective, answering two specific questions: Q1: Does the performance gain come from the architecture or the data? Q2: How can neural decoders be made to truly complete inference on time on FPGAs?
 
-**Key Insight**: Using "surface code + Z-memory experiments + binary classification objective" as a unified benchmark, the authors de-engineer and re-implement five representative architectures. Combined with an end-to-end pruning + PTQ/QAT compression pipeline and FPGA resource modeling, all methods are subjected to a dual scrutiny of "precision + latency."
+**Key Insight**: Using "surface code + Z-memory experiments + binary classification objective" as a unified benchmark, the authors re-implement five representative architectures. By coupling these with an end-to-end pruning + PTQ/QAT compression pipeline and FPGA resource modeling, all methods are forced to undergo simultaneous scrutiny for both accuracy and latency.
 
-**Core Idea**: By replacing "complex architectures + post-processing compression" with "data-priority + moderate inductive bias + INT4 QAT," the authors prove that small models with $\sim 10^5$ parameters can approach performance saturation on $d \le 9$ while meeting FPGA real-time constraints.
+**Core Idea**: Replace "architecture stacking + post-processing compression" with "data-priority + moderate inductive bias + INT4 QAT." The study proves that small models with $\sim 10^5$ parameters can approach performance saturation for $d\le9$ while satisfying real-time FPGA constraints.
 
 ## Method
 
 ### Overall Architecture
-Unified Input: A spatiotemporal syndrome volume $s$ of size $r \times (d^2-1)$ generated from surface code Z-memory experiments. Unified Goal: Binary classification $f(s; \theta) \in [0, 1]$ to predict whether a logical flip occurred. The pipeline consists of three steps: 1) Training five architectures (MLP/dilated 3D-CNN/TCN/Transformer/GNN) on large-scale Stim simulation datasets, followed by fine-tuning on public Sycamore data; 2) End-to-end compression: initial PTQ for feasibility testing, followed by QAT to INT4, combined with unstructured magnitude pruning and sparse fine-tuning; 3) FPGA resource estimation: decomposing the network into INT4 MACs and mapping them to LUT/DSP/BRAM resources to determine single-chip feasibility and timing compliance.
+The work centers on a unified binary classification task: feeding a spatiotemporal syndrome volume $s$ of size $r\times(d^2-1)$ generated from surface code Z-memory experiments into a network $f(s;\theta)\in[0,1]$ to predict whether a logical bit flip occurred. Under this fixed interface, the paper performs three steps. First, it re-trains five architectures with different inductive biases (MLP / dilated 3D-CNN / TCN / Transformer / GNN) on a large-scale Stim-simulated dataset and fine-tunes them with Sycamore hardware data to answer if gains come from architecture or data. Second, it compresses each network down to INT4 + high sparsity to check accuracy retention. Finally, it translates the compressed networks into FPGA resource usage and latency to determine if they can run within the $1\mu s$ window.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Surface code Z-memory experiment<br/>Spatiotemporal syndrome volume s (r×(d²−1))"] --> B
+    B["Unified Comparison of Five Architectures<br/>MLP / 3D-CNN / TCN / Transformer / GNN<br/>Stim 10⁷ Simulation Training + Sycamore Hardware Fine-tuning"] --> C
+    C["PTQ → QAT → Pruning<br/>Symmetric uniform quantization to INT4 + High Sparsity<br/>STE for rounding + Sparsity-aware fine-tuning"] --> D
+    D["FPGA Resource Estimation<br/>INT4 MAC translated to LUT/BRAM/DSP<br/>Comparison against ~1μs budget for d rounds"]
+    D -->|Deployable & On-time| E["Real-time Decoder f(s)→[0,1]<br/>Predicts logical bit flip"]
+    D -->|Too large / Timeout| B
+```
 
 ### Key Designs
 
-1. **Unified Comparison of Inductive Biases in Five Architectures**:
-    - **Function**: Assigns "locality, temporality, and topology" required for surface code decoding to five networks with different inductive biases to quantify the relationship between "bias vs. performance."
-    - **Mechanism**: MLP flattens $s$ as a zero-bias baseline; 3D-CNN uses $3 \times 3 \times 3$ dilated convolutions to preserve spatiotemporal resolution and avoid pooling-induced localization loss; TCN handles space via 2D conv and time via 1D conv to avoid RNN saturation at low bitwidths; Transformer uses a convolutional tokenizer + positional encoding instead of direct binary linear projection to mitigate sparse syndrome embedding degradation; GNN performs learnable message passing on Tanner graphs as a "neural BP" to alleviate BP oscillations caused by short cycles in surface codes.
-    - **Design Motivation**: To enable a fair comparison of five representative biases under the same dataset, batching, and ground truth, thereby decoupling "architecture vs. data" factors to answer Q1.
+**1. Unified Comparison of Five Architectures: Decoupling Bias vs. Data**
+Previous improvements were often not clearly attributed to architectural intelligence or training set size. This paper evaluates five representative inductive biases under identical datasets and ground truths: MLP flattens $s$ as a zero-bias baseline; 3D-CNN uses $3\times3\times3$ dilated convolutions to preserve resolution without pooling; TCN assigns space to 2D convs and time to 1D convs to avoid RNN saturation at low bit widths; Transformer uses a convolutional tokenizer with positional encoding to alleviate embedding degradation of sparse inputs; GNN performs learnable message passing on the Tanner graph (a "neural BP") to mitigate oscillations caused by short cycles in surface codes.
 
-2. **Three-stage Compression: PTQ → QAT → Pruning**:
-    - **Function**: Compresses the network to INT4 + high sparsity without sacrificing decoding precision, allowing MAC operations to be implemented using FPGA LUTs instead of scarce DSPs.
-    - **Mechanism**: Employs symmetric uniform quantization $x_{int} = \mathrm{clamp}(\lfloor x/\eta\rceil, -2^{b-1}, 2^{b-1}-1)\cdot\eta$, with per-channel weights and per-tensor activations. PTQ is used as a feasibility probe; when INT4 causes performance "cliffs," the pipeline switches to QAT using a straight-through estimator to let FP32 latent weights learn minima robust to quantization noise. Finally, unstructured magnitude pruning (binary masks based on threshold $\tau_k$) and sparsity-aware fine-tuning are applied to the quantized network.
-    - **Design Motivation**: FPGAs have few DSPs but many LUTs. INT4 allows multiplication to be offloaded to LUTs, and static zero weights can be trimmed by synthesis tools. This "hardware-friendly + training-phase-aware" combination is key to fitting neural decoders into the microsecond window.
+**2. PTQ → QAT → Pruning: Shifting Networks into FPGA LUTs instead of scarce DSPs**
+Compression is treated as a design component rather than an afterthought. Symmetric uniform quantization $x_{int} = \mathrm{clamp}(\lfloor x/\eta\rceil,\, -2^{b-1},\, 2^{b-1}-1)\cdot\eta$ is applied with per-channel weights and per-tensor activations. PTQ initially serves as a feasibility probe, though it causes accuracy to collapse at INT4. Thus, the pipeline switches to QAT, using a straight-through estimator (STE) for backpropagation. Finally, unstructured pruning is applied via a binary mask with threshold $\tau_k$. Focusing on INT4 + sparsity allows multiplications to be implemented via LUTs, while static zero weights are trimmed by synthesis tools, fitting the network into the timing budget.
 
-3. **Inference Constraint via FPGA Resource Estimation**:
-    - **Function**: Uses the capability of a model to complete inference on a target FPGA as a computable metric to guide the selection of architecture, bitwidth, and sparsity.
-    - **Mechanism**: Decomposes the network into the total number of INT4 MACs, calculates LUT consumption per PE based on a LUT-bound deployment strategy, and adds BRAM (weight caching) and minimal DSP (high-precision activations) for alignment with target chip resources. The wall-clock latency is estimated based on clock frequency and compared against the 1-microsecond budget for $d$ rounds.
-    - **Design Motivation**: Traditional "compress after training" often discovers resource deficits too late. This work incorporates resource estimation into the training feedback loop, eliminating "unfittable" solutions during the model selection phase.
+**3. FPGA Resource Estimation: Rejecting Infeasible Designs Early**
+The paper turns "inference completion on target FPGA" into a calculable metric to constrain architecture and bit-width choices. Networks are decomposed into total INT4 MAC counts and translated into LUT consumption per Processing Element (PE), alongside BRAM and DSP requirements. Wall-clock latency is estimated based on clock frequency and compared against the $\sim 1\mu s$ physical budget for $d$ rounds. Resource estimation thus acts as a feedback loop during training.
 
 ### Loss & Training
-Binary Cross-Entropy $\mathcal{L} = -\mathbb{E}_{(s,y)}[y\log f(s) + (1-y)\log(1-f(s))]$. Large-scale datasets (up to $10^7$ samples) are used for Stim training; fine-tuning for $d=3, 5$ is performed on real Sycamore data. INT4 QAT is implemented via Brevitas, initialized with FP32 weights to accelerate convergence.
+The objective is standard Binary Cross Entropy: $\mathcal{L} = -\mathbb{E}_{(s,y)}[y\log f(s) + (1-y)\log(1-f(s))]$. Stim simulations provide a large-scale training set of $10^7$ samples, while Sycamore hardware data is used for fine-tuning at $d=3,5$. INT4 QAT is implemented via Brevitas, initialized with pre-trained FP32 parameters to accelerate convergence.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setting | Architecture / Configuration | Key Results |
+| Setting | Architecture / Config | Key Findings |
 |------|------------|----------|
-| $d=9$ surface code, Stim $10^7$ samples | Simple CNN/TCN | Decoding precision nears saturation, significantly outperforming complex architectures trained on standard datasets |
-| MLP | Any scale | Fails to scale even with increased parameters, proving zero inductive bias is infeasible |
-| GNN-BP | $d \le 9$ | Significantly affected by short cycles, generally lags behind CNN/TCN |
-| INT4 PTQ | Most models | Experience "cliffs" with a dramatic surge in logical error rates |
-| INT4 QAT | Same as above | Largely restores FP32 performance; essential for reaching 1μs latency |
+| $d=9$ surface code, Stim $10^7$ samples | Simple CNN/TCN | Decoding accuracy approaches saturation, significantly outperforming complex architectures trained on standard datasets |
+| MLP | Any scale | Fails to scale even with increased parameters, proving zero inductive bias is non-viable |
+| GNN-BP | $d\le9$ | Significantly affected by short cycles, overall lagging behind CNN/TCN |
+| INT4 PTQ | Most models | Accuracy "cliff" observed; logical error rate increases dramatically |
+| INT4 QAT | Most models | Successfully restores performance to FP32 levels; essential for 1μs latency |
 
 ### Ablation Study
 
 | Configuration | Effect |
 |------|------|
-| Big Data + Simple CNN | Superior to "Small Data + Complex Architecture" |
+| Large Data + Simple CNN | Superior to "Small Data + Complex Architecture" |
 | Local Conv + Temporal Aggregation (CNN+TCN) | Most robust across all scales |
-| Transformer w/o Conv Tokenizer | Embedding degradation leads to significant precision loss |
+| Transformer w/o Conv Tokenizer | Significant accuracy drop due to embedding degradation |
 | GNN (Neural BP) | Resolves BP oscillation but remains limited by graph topology |
-| Pruning only (no quantization) | Fails to push inference into the LUT-bound region; latency target not met |
+| Pruning only (No Quantization) | Fails to reach LUT-bound region; latency budget not met |
 
 ### Key Findings
-- "Increasing data" provides greater decoding gains for $d \le 9$ surface codes than "changing architecture." This conclusion, previously not systematically quantified, suggests that industrial QEC efforts should prioritize simulation/hardware data generation over model innovation.
-- Inductive bias is indispensable: pure MLP does not scale, and GNN-BP suffers from short cycles. Only "local + temporal" combinations like CNN/TCN consistently excel.
-- INT4 is a hard constraint rather than a performance optimization: only QAT can sustain INT4 performance; PTQ almost always fails. Microsecond real-time decoding requires hardware awareness during the training phase.
+- "Increasing data" provides higher decoding gains for $d\le9$ surface codes than "changing architecture." This implies industrial QEC investment should prioritize simulation/hardware data generation over model innovation.
+- Inductive bias is indispensable: Pure MLP does not scale, and GNN-BP suffers from short cycles. Only "local + temporal" combinations like CNN/TCN are consistently superior.
+- INT4 is a hard constraint, not just a performance optimization: Only QAT can sustain INT4; PTQ almost always fails. Microsecond-level real-time decoding requires hardware awareness during the training phase.
 
 ## Highlights & Insights
-- Including "FPGA resources" as a hard constraint in the pipeline allows "nominally SOTA" complex decoders to be rejected immediately at the engineering level. This "co-design" approach is applicable to other latency-critical fields (e.g., autonomous driving perception, network packet processing NNs).
-- The unified re-implementation provides a design checklist for future QEC neural decoders: biases must include locality and temporality, parameter counts around $10^5$ are sufficient, and INT4 is the baseline requirement.
-- The data-driven finding (Simple Net + Big Data > Complex Net + Standard Data) serves as a strong reminder against "over-engineering tendencies" in ML4Science.
+- Treating "FPGA resources" as a hard constraint within the pipeline allows complex but "seemingly SOTA" decoders to be immediately rejected at the engineering level. This co-design approach is applicable to other latency-critical fields like autonomous driving and network packet processing.
+- The unified re-implementation provides a design checklist for future QEC neural decoders: biases must include local + temporal elements, parameter counts of $\sim 10^5$ are sufficient, and INT4 is the baseline requirement.
+- The data-driven discovery (Simple Net + Big Data > Complex Net + Standard Data) serves as a reminder against the tendency toward "over-engineering" in ML4Science.
 
 ## Limitations & Future Work
-- Evaluation is limited to $d=9$ (161 physical qubits); inductive bias selection and latency feasibility for higher code distances remain uncharacterized.
-- FPGA resource estimation is based on linear MAC decomposition and does not account for real power consumption post-routing/placement, leaving a gap before production deployment.
-- No theoretical lower bound is provided for the precision gap between INT4 and FP32 training, leaving the question of "why INT4 is sufficient" open.
+- Evaluations are limited to $d=9$ (161 physical qubits); inductive bias choices and latency feasibility for higher code distances remain uncharacterized.
+- FPGA resource estimation is based on linear MAC decomposition and does not account for real power consumption post-routing/placement.
+- There is no theoretical lower bound provided for the accuracy gap of INT4 training relative to FP32, leaving "why INT4 is sufficient" as an open question.
 
 ## Related Work & Insights
-- **vs AlphaQubit Series**: This work acts as a deployable "stress test" for such series, comparing transformer blocks under INT4 LUT-bound settings.
-- **vs MWPM/BP**: While traditional decoders remain "general and heuristic," this work shows that neural decoders can consistently outperform them with sufficient data, provided they are compressed for real-time feasibility.
-- **vs General Model Compression (Gholami et al.)**: Rather than proposing new compression algorithms, this work strictly combines existing PTQ/QAT/pruning under hardware constraints and validates their boundaries in QEC scenarios, providing a template for compression + hardware co-design.
+- **vs. AlphaQubit Series**: This work serves as an engineered, deployable "stress test" version, evaluating transformer blocks under INT4 LUT-bound settings.
+- **vs. MWPM/BP**: While traditional decoders remain "general + heuristic," this paper shows neural decoders can consistently surpass them with sufficient data, provided they are compressed for real-time feasibility.
+- **vs. General Model Compression (e.g., Gholami et al.)**: This work does not propose a new compression algorithm but rather strictly combines existing PTQ/QAT/pruning under hardware constraints to validate boundaries in the QEC context.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Main contribution is systematic comparison and hardware-aware pipeline, not a brand-new algorithm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five architectures × multiple $d$ × simulation + real hardware + full FPGA resource modeling; representing a massive workload.
-- Writing Quality: ⭐⭐⭐⭐ Two core questions (Q1/Q2) run through the text with clear argumentation.
-- Value: ⭐⭐⭐⭐ Provides a rare measured baseline for "AI for QEC" implementation, directly usable for hardware team selection.
+- Novelty: ⭐⭐⭐ (Main contribution is the systematic comparison and hardware-aware pipeline)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (5 architectures × multiple $d$ × simulation + hardware + full FPGA modeling)
+- Writing Quality: ⭐⭐⭐⭐ (Clearly argued through the core Q1/Q2 questions)
+- Value: ⭐⭐⭐⭐ (Provides a rare empirical baseline for "AI for QEC" deployment, directly usable for hardware team selection)
 
 <!-- RELATED:START -->
 
@@ -118,10 +118,10 @@ Binary Cross-Entropy $\mathcal{L} = -\mathbb{E}_{(s,y)}[y\log f(s) + (1-y)\log(1
 
 ## Related Papers
 
+- [\[ICML 2025\] Rethink the Role of Deep Learning towards Large-scale Quantum Systems](../../ICML2025/physics/rethink_the_role_of_deep_learning_towards_large-scale_quantum_systems.md)
 - [\[ICML 2026\] Score-Based Error Correcting Code Decoder](score_based_error_correcting_code_decoder.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
-- [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
 - [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
+- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](antic_adaptive_neural_temporal_in-situ_compressor.md)
 
 </div>

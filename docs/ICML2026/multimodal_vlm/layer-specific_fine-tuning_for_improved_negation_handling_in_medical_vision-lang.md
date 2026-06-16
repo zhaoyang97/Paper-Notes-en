@@ -2,138 +2,152 @@
 title: >-
   [Paper Note] Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Medical CLIP] NAST utilizes causal tracing to calculate the Causal Tracing Effect (CTE) of each layer in the CLIP text encoder toward negation understanding. These CTE scores are then used for…
+  [ICML 2026][Multimodal VLM][LoRA] NAST utilizes causal tracing to calculate the Causal Trace Effect (CTE) of each layer in a CLIP text encoder for negation understanding. These CTE values are then used for hierarchical gradient-scaled LoRA fine-tuning. This significantly enhances the semantic sensitivity of medical VLMs in distinguishing "presence vs.
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Medical CLIP"
-  - "Negation Understanding"
-  - "Causal Tracing"
-  - "Layer-wise Fine-tuning"
-  - "LoRA"
+  - ICML 2026
+  - Multimodal VLM
+  - LoRA
 date: 2026-05-08
-content_hash: 8f068ab12c139917
+content_hash: 63da28bd4f8964bc
 ---
-
 # Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.12498](https://arxiv.org/abs/2602.12498)  
 **Code**: https://github.com/healthylaife/NAST  
-**Area**: Multi-modal VLM / Medical Imaging / Interpretability-guided Training  
-**Keywords**: Medical CLIP, Negation Understanding, Causal Tracing, Layer-wise Fine-tuning, LoRA
+**Area**: Multimodal VLM / Medical Imaging / Interpretability-Guided Training  
+**Keywords**: Medical CLIP, Negation Understanding, Causal Tracing, Hierarchical Fine-Tuning, LoRA
 
 ## TL;DR
-NAST utilizes causal tracing to calculate the Causal Tracing Effect (CTE) of each layer in the CLIP text encoder toward negation understanding. These CTE scores are then used for layer-wise gradient-scaled LoRA fine-tuning, significantly enhancing the semantic sensitivity of medical VLMs in distinguishing "presence vs. absence" of symptoms and narrowing the affirmative-negation accuracy gap from 21.6% to 4.2%.
+NAST utilizes causal tracing to calculate the Causal Trace Effect (CTE) of each layer in a CLIP text encoder for negation understanding. These CTE values are then used for hierarchical gradient-scaled LoRA fine-tuning. This significantly enhances the semantic sensitivity of medical VLMs in distinguishing "presence vs. absence of symptoms," reducing the affirmative-negation accuracy gap from 21.6% to 4.2%.
 
 ## Background & Motivation
-**Background**: Medical VLMs such as MedCLIP, BioMedCLIP, and BioViL-T have shown significant performance in image-report alignment and zero-shot diagnosis, and have been explored for automated report generation, retrieval, and decision support.
+**Background**: Medical VLMs such as MedCLIP, BioMedCLIP, and BioViL-T have shown significant effectiveness in image-report alignment and zero-shot diagnosis, and have been explored for automated report generation, retrieval, and decision support.
 
-**Limitations of Prior Work**: Negation is ubiquitous in radiology reports—"no pneumothorax," "no pleural effusion seen," "no consolidation in the right lower lobe." Negation is not just "absence of an object" but often operates on attributes ("no large effusion," "not right lower lobe consolidation"). However, medical VLMs, predominantly trained on affirmative descriptions during contrastive pre-training, treat negation as a blind spot. Using controlled "affirmative vs. negated semantically equivalent pairs" (e.g., "normal heart size" vs. "no cardiomegaly"), this study found that all mainstream medical VLMs systematically prefer affirmative sentences and exhibit significantly worse negation understanding.
+**Limitations of Prior Work**: Negation is ubiquitous in radiology reports—"no pneumothorax," "no pleural effusion seen," "no consolidation in the right lower lobe." Negation is not just about the "absence of an object"; it often operates on attributes ("no massive effusion," "no consolidation in the right lower lobe"). However, medical VLMs primarily encounter affirmative descriptions during contrastive pre-training, making negation a blind spot. By using controlled "affirmative vs. negative semantically equivalent sentences" (e.g., "normal heart size" vs. "no cardiomegaly"), this study found that all mainstream medical VLMs systematically favor affirmative sentences, with significantly poorer negation understanding.
 
-**Key Challenge**: Simply adding negated samples for fine-tuning (the approach taken by NegCLIP, ConCLIP, and NegBench) provides only marginal relief. This is because negation signals are not uniformly distributed across model layers; they are likely concentrated in specific layers of the text encoder. Tuning parameters uniformly across all layers is inefficient and may degrade other capabilities.
+**Key Challenge**: Simply adding negative samples for fine-tuning (following the route of NegCLIP, ConCLIP, or NegBench) only provides marginal relief because negation signals are not uniformly distributed across model layers. They likely concentrate in specific layers of the text encoder; tuning all layers uniformly is inefficient and may degrade other capabilities.
 
-**Goal**: (i) Provide a **polarity-controlled** diagnostic benchmark to disentangle poor negation understanding from poor adjective understanding; (ii) provide a fine-tuning dataset to inject "negation knowledge" into medical VLMs at the **attribute level** (existence/location/severity); (iii) use mechanistic interpretability tools to identify "which layers handle negation" and perform selective fine-tuning to improve negation capability while preserving non-negation performance.
+**Goal**: (i) Provide a **polarity-controlled** diagnostic benchmark to isolate "poor negation understanding" from "poor adjective understanding"; (ii) Provide a fine-tuning dataset to inject "negation knowledge" into medical VLMs at the **attribute level** (existence, location, severity); (iii) Use mechanistic interpretability tools to identify "which layers handle negation" and perform selective fine-tuning to improve negation handling while preserving non-negation capabilities.
 
-**Key Insight**: Mechanistic interpretability tools (causal tracing, Meng et al.) are transferred from LLMs to the CLIP text encoder. The question of "which layer and which token is sensitive to negation" is transformed into a computable CTE score, which is then directly fed into the optimizer for layer-wise gradient scaling.
+**Key Insight**: Transfer mechanistic interpretability tools (causal tracing, Meng et al.) from LLMs to the CLIP text encoder. This converts "which layer and which token is sensitive to negation" into computable CTE scores, which are then directly utilized by the optimizer for hierarchical gradient scaling.
 
-**Core Idea**: Calculate CTE via causal tracing → Normalize to layer weights $\alpha_\ell$ → Scale gradients for each layer by $\alpha_\ell^\beta$ during LoRA fine-tuning, concentrating training resources on the layers truly responsible for negation.
+**Core Idea**: Calculate CTE via causal tracing → Normalize to layer weights $\alpha_\ell$ → Scale each layer's LoRA gradient by $\alpha_\ell^\beta$ during fine-tuning to concentrate training resources on the layers truly responsible for negation.
 
 ## Method
 
 ### Overall Architecture
-NAST consists of three components: (i) MedNega-CXR diagnostic benchmark—composed of affirmative-negate MCQ pairs generated by LLMs based on MIMIC-CXR and reviewed by two radiologists; (ii) Contextual negation fine-tuning dataset—based on CAD annotations, each structured fact $(\text{condition}, \text{existence}, \text{location}, \text{severity})$ undergoes counterfactual perturbation affecting only one attribute, resulting in approximately one million image-text pairs; (iii) NAST algorithm—CTE is first calculated for each layer and position of the text encoder via causal tracing, followed by LoRA fine-tuning using layer-wise weighted gradient updates, targeting the weighted sum of contrastive loss and claim-ranking loss.
+NAST consists of three components: (i) MedNega-CXR diagnostic benchmark—affirmative-negative MCQ pairs generated via LLMs based on MIMIC-CXR and reviewed by two radiologists; (ii) Contextual negation fine-tuning dataset—based on CAD annotations, structured facts $(\text{condition}, \text{existence}, \text{location}, \text{severity})$ undergo "single-attribute" counterfactual perturbations, resulting in ~1M image-text pairs; (iii) CTE-weighted hierarchical LoRA fine-tuning—using causal tracing to calculate CTE for each layer and position, normalizing them into layer weights $\alpha_\ell$, and scaling LoRA gradients accordingly. The pipeline below illustrates the "data preparation → causal localization → hierarchical fine-tuning" workflow.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["MIMIC-CXR (+CAD / CheXpert labels)"] --> B["MedNega-CXR Benchmark<br/>MCQ pairs with polarity diff only"]
+    A --> C["Contextual Negation Fine-tuning Dataset<br/>Single-attribute counterfactuals → ~1M pairs"]
+    A --> E
+    subgraph NAST["CTE-Weighted Hierarchical LoRA Fine-tuning"]
+        direction TB
+        E["Causal Probing Pairs (severe X vs no X)<br/>Causal tracing for CTE(ℓ,p)"] --> G["Aggregation + Min-Max Normalization<br/>→ Layer weight α_ℓ"]
+        G --> H["Scale layer LoRA gradient g_ℓ by α_ℓ^β"]
+    end
+    C --> I["LoRA Fine-tuning (Backbone frozen)<br/>L = λ·L_CLIP + (1−λ)·L_claim"]
+    H --> I
+    I --> J["Negation-Aware Medical VLM"]
+    J -.Evaluation.-> B
+```
 
 ### Key Designs
 
-1.  **MedNega-CXR Diagnostic Benchmark (polarity-controlled MCQ pairs)**:
-    - **Function**: Directly compares description pairs that are "semantically equivalent but differ in polarity," isolating negation understanding from other confounding abilities.
-    - **Mechanism**: Studies with $\ge 2$ positive and $\ge 3$ negative findings are selected from MIMIC-CXR/CheXpert. Affirmative equivalent descriptions are identified for each negative condition (e.g., "no cardiomegaly" $\leftrightarrow$ "normal heart size"). The workflow involves: constructing contrastive label permutations (hard negatives) → LLM-generated explicit negation MCQs → LLM-based replacement of negation phrases with affirmative equivalents to maintain structure. This yields 6,965 MCQ pairs differing only in polarity.
-    - **Design Motivation**: The medical domain offers a unique advantage—"no pneumonia" can be equivalently expressed as "lungs are well-aerated," allowing for clean contrastive pairs; in general domains, "no car" has no single affirmative equivalent. This controlled contrast ensures the evaluation focuses on negation understanding rather than adjective comprehension or visual perception.
+**1. MedNega-CXR Diagnostic Benchmark: Isolating negation via "polarity-only" description pairs**
 
-2.  **CAD-based Attribute-level Negation Fine-tuning Dataset**:
-    - **Function**: Ensures fine-tuning supervision covers realistic clinical negation forms across existence, location, and severity counterfactuals.
-    - **Mechanism**: For each ground-truth fact $(c, e, l, s)$, a counterfactual is generated by altering one attribute (e.g., present $\leftrightarrow$ absent, left $\leftrightarrow$ right, small $\leftrightarrow$ large), translated into natural language via radiology-style templates. Two supervision formats are used: (a) claim-based contrast sets with one correct claim and multiple hard negatives; (b) single negated captions for auxiliary contrastive training.
-    - **Design Motivation**: Existing negation datasets (CC-Neg, NegBench) focus on object presence, lacking critical attribute-level negation for medicine. This study utilizes structured annotations and controlled perturbations to generate 1M pairs, providing sufficient scale and specificity.
+To diagnose "poor negation understanding," the first challenge is to avoid confounding it with "poor adjective understanding" or "poor visual perception." MedNega-CXR constructs contrastive pairs that are semantically equivalent but differ only in polarity—e.g., "no cardiomegaly" versus "normal heart size." Both sentences refer to the same clinical fact, with the only difference being the use of negation vs. affirmation. The benchmark leverages a unique convenience in the medical domain: clinical states like "no pneumonia" can be equivalently expressed as "lungs are well-aerated," whereas general domains (e.g., "no car") lack single affirmative equivalents. This ensures that only polarity varies in the contrastive pairs, making it a true test of negation understanding.
 
-3.  **CTE-weighted Layer-wise LoRA Fine-tuning**:
-    - **Function**: Directly converts the interpretability-derived "layers handling negation" into "layers receiving more updates."
-    - **Mechanism**: (i) Causal tracing is used as a causal probe on the CLIP text encoder. For length-matched pairs (correct caption, foil caption), the hidden states of the foil forward pass are recorded. During the correct caption forward pass, the $p$-th token of the $\ell$-th layer is replaced by the foil's hidden state to obtain $S^{\ell,p}$. $\text{CTE}(\ell, p) = (S^{\text{corr}} - S^{\ell,p}) / (S^{\text{corr}} - S^{\text{foil}})$. Results show negation signals concentrate in layers 1-4, peaking at layer 2. (ii) Token-level CTE is aggregated per layer to get $\mathrm{CTE}_\ell$, then min-max normalized to $\alpha_\ell \in [0,1]$. (iii) During LoRA fine-tuning, gradients are scaled as $\tilde{g}_\ell = \alpha_\ell^\beta \cdot g_\ell$, where $\beta$ controls concentration. Total loss: $\mathcal{L}_{\text{total}} = \lambda \mathcal{L}_{\text{CLIP}} + (1-\lambda) \mathcal{L}_{\text{claim}}$.
-    - **Design Motivation**: Uniform LoRA fine-tuning modifies all layers, which consumes pre-trained capabilities and dilutes negation learning. Concentrating updates on "layers truly responsible for negation" is a more efficient and safer injection method. Using $\alpha_\ell^\beta$ instead of a direct learning rate multiplier preserves a global learning rate to avoid training instability.
+**2. Attribute-Level Negation Fine-Tuning Dataset: Extending negation beyond existence to location and severity**
+
+Evaluation is not enough; fine-tuning supervision must also cover realistic negation forms. Existing negation datasets (CC-Neg, NegBench) focus on object existence. However, in radiology reports, negation often acts on attributes—"no massive effusion" negates severity, and "not consolidation in the right lower lobe" negates location. This work applies counterfactual perturbations to single attributes of structured facts $(\text{condition}, \text{existence}, \text{location}, \text{severity})$ (e.g., present↔absent, left↔right, small↔large) and converts them into natural language using radiology-style templates.
+
+**3. CTE-Weighted Hierarchical LoRA Fine-Tuning: Identifying and prioritizing layers responsible for negation**
+
+This is the core mechanism of NAST. Addressing the fact that negation signals are not uniform, the authors utilize causal tracing to quantify each layer's contribution. For a pair of (correct caption, foil caption) of equal length, the hidden states of the foil are recorded. During the forward pass of the correct caption, the hidden state of the $p$-th token at layer $\ell$ is replaced with the corresponding state from the foil. The causal contribution is defined as:
+
+$$\mathrm{CTE}(\ell, p) = \frac{S^{\text{corr}} - S^{\ell,p}}{S^{\text{corr}} - S^{\text{foil}}}$$
+
+This measures the proportion of the model's drop from a correct to a foil judgment after the intervention. Results indicate negation signals are concentrated in layers 1-4, peaking at layer 2. After normalizing aggregate token-level CTE into layer weights $\alpha_\ell \in [0,1]$, LoRA gradients are scaled as $\tilde{g}_\ell = \alpha_\ell^\beta \cdot g_\ell$. This concentrates update resources on layers truly responsible for negation, avoiding the dilution of negation learning and preserving general alignment in other layers.
 
 ### Loss & Training
-$\mathcal{L}_{\text{CLIP}}$ is the standard CLIP symmetric contrastive loss applied to batches containing single captions with explicit negation. $\mathcal{L}_{\text{claim}} = \frac{1}{M}\sum_i \log \frac{\exp(\ell_{i, c_i})}{\sum_j \exp(\ell_{i, j})}$ is the claim-ranking loss, ensuring the correct claim has higher similarity than hard negatives. The optimizer is AdamW with a fixed learning rate, trained on a single RTX 4070. $\lambda$ and $\beta$ are key hyperparameters.
+$\mathcal{L}_{\text{CLIP}}$ is the standard symmetric contrastive loss (applied to batches containing single captions with explicit negation); $\mathcal{L}_{\text{claim}} = \frac{1}{M}\sum_i \log \frac{\exp(\ell_{i, c_i})}{\sum_j \exp(\ell_{i, j})}$ is the claim-ranking loss (ensuring correct claims have higher similarity than hard negatives). The optimizer is AdamW with a fixed learning rate on a single RTX 4070.
 
 ## Key Experimental Results
 
 ### Main Results
-Contextual negation task (Table 1, in %):
+Contextual negation task (Table 1, units in %):
 
 | Model | R@1↑ | R@5↑ | Claim Acc.↑ |
-| :--- | :--- | :--- | :--- |
+|------|------|------|-------------|
 | CLIP | 23.5 | 34.7 | 24.6 |
 | NegCLIP | 36.2 | 52.4 | 41.3 |
 | ConCLIP | 39.7 | 55.8 | 44.9 |
 | NegBench | 43.1 | 59.2 | 48.7 |
 | **NAST (Ours)** | **49.5** | **65.7** | **55.6** |
 
-While negation-specialized baselines improve over time, NAST gains an additional 6.9 percentage points in claim accuracy over the strongest baseline.
+NAST outperforms the strongest negation-focused baseline by 6.9 points in claim accuracy.
 
 ### Ablation Study
-Affirmative-Negation gap (Table 3, lower is better) + Update distribution (Table 4):
+Affirmative-Negation Gap (Table 3, lower is better) + Update Distribution (Table 4):
 
 | Model | Affirm – Negation Gap (Claim Acc., %) |
-| :--- | :--- |
+|------|--------------------------------------|
 | CLIP | 21.6 |
 | NegCLIP | 12.8 |
 | ConCLIP | 10.7 |
 | NegBench | 10.2 |
 | **NAST** | **4.2** |
 
-| Method | Top-3 Update Share | Top-5 Update Share |
-| :--- | :--- | :--- |
+| Method | Top-3 Layer Update % | Top-5 Layer Update % |
+|------|------|------|
 | Uniform FT | 28.4% | 41.7% |
 | **NAST (CTE-weighted)** | **52.6%** | **69.3%** |
 
-CTE weighting successfully concentrates updates in the top negation-sensitive layers, corresponding to the gains in claim accuracy.
+CTE weighting successfully concentrates updates on the top negation-sensitive layers, corresponding to the gains in claim accuracy.
 
 ### Key Findings
-- **Layer-wise Localization of Negation**: CTE is concentrated in layers 1-4, peaking at layer 2. This aligns with LLM literature where early layers process syntactic function words and deeper layers handle semantics.
-- **Source of Improvement**: NAST’s gains primarily stem from increased negation accuracy rather than decreased affirmative accuracy—affirmative performance actually slightly improves (Table 2), indicating that CTE guidance does not compromise general alignment capabilities.
-- **Sparse Adaptation**: The finding that "few layers handle specific functions" suggests that general full-layer LoRA fine-tuning is wasteful. Interpretability-guided sparse fine-tuning could represent the next generation of parameter-efficient adaptation.
+- **Layer-wise localization of negation**: CTE is concentrated in layers 1-4, with a peak at layer 2. This aligns with LLM literature where early layers handle syntactic function words.
+- **Selective improvement**: NAST's gains primarily come from improved negation accuracy rather than a decrease in affirmative accuracy; affirmative performance slightly improved, showing no degradation of general alignment.
+- **Sparse fine-tuning**: The discovery that "a few layers handle specific functions" suggests that interpretability-guided sparse fine-tuning could be a more efficient paradigm for adaptation.
 
 ## Highlights & Insights
-- The "Trace $\rightarrow$ Prescribe" framework (calculating CTE scores to feed the optimizer as layer weights) serves as a template for advancing mechanistic interpretability from **diagnosis** to **prescription**. This paradigm can be adopted by future medical and general VLMs.
-- MedNega-CXR fully leverages the clinical convenience of "affirmative equivalence." While it is difficult to create clean polarity controls in general domains, the medical domain provides a unique testbed for interpretability research.
-- By keeping the backbone frozen and only adding weights to LoRA, NAST successfully narrows the gap from 21.6 to 4.2. This suggests that medical VLMs are very close to handling negation correctly (requiring only a few key layers), rather than needing full retraining.
+- The transition from "calculating scores via causal tracing" to "feeding scores to the optimizer as layer weights" is a prime example of moving mechanistic interpretability from **diagnosis** to **prescription**.
+- MedNega-CXR exploits the specific "affirmative equivalence" of medical language, providing a unique experimental bed for interpretability research that is difficult to replicate in general domains.
+- Enhancing only the LoRA weights without touching the backbone is sufficient to close the gap from 21.6 to 4.2, suggesting that negation handling in medical VLMs is localized to just a few key layers.
 
 ## Limitations & Future Work
-- CTE is calculated based on a synthetic contrast set (e.g., "severe edema vs. no edema"); its transferability to other clinical scenarios (rare diseases, ambiguous expressions) remains unverified.
-- Both causal tracing and LoRA are applied only to the text encoder, leaving the vision encoder and cross-modal projections untouched. If the vision side also contains polarity-sensitive bias, this solution will not address it.
-- Evaluation is limited to MIMIC-CXR style reports and the CheXpert ontology. Testing on other modalities (CT, MRI, pathology) and non-English clinical text would require re-calculating CTE and re-verification.
+- CTE is calculated on a synthetic contrast set ("severe edema vs no edema"); transferability to rare diseases or ambiguous clinical expressions remains unverified.
+- The approach is limited to the text encoder; potential polarity-sensitive biases in the visual encoder or cross-modal projection are not addressed.
+- Evaluation is restricted to MIMIC-CXR and CheXpert ontology; verification on other modalities (CT, MRI) and non-English clinical text is needed.
 
 ## Related Work & Insights
-- **vs. NegCLIP / ConCLIP / NegBench**: While these rely on "adding negated samples + contrastive loss," this work adds "layer-targeted optimization" to further improve performance.
-- **vs. Causal Tracing for LLM (Meng et al.)**: Transfers ROME-style causal tracing from LLM knowledge localization to negation processing in CLIP text encoders, and for the first time, uses tracing results as optimizer inputs.
-- **vs. Layer-wise Adaptive LR (LARS, LAMB)**: Unlike those methods which adjust learning rates based on gradient norms, NAST adjusts based on causal contribution, representing a "semantic-aware" version of adaptive learning.
+- **vs. NegCLIP / ConCLIP / NegBench**: While previous works focus on negative samples and contrastive losses, NAST adds layer-targeted optimization.
+- **vs. Causal Tracing for LLM (Meng et al.)**: Transfers ROME-style causal tracing for knowledge localization to negation handling in CLIP, using the results as optimizer inputs.
+- **vs. Layer-wise Adaptive LR (LARS, LAMB)**: Unlike methods that adjust LR based on gradient norms, this is a "semantic-aware" adjustment based on causal contribution.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Clear path in converting causal tracing into layer-wise training rules.)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Multiple baselines, diverse tasks, and update distribution ablations.)
-- Writing Quality: ⭐⭐⭐⭐ (Tight pacing from diagnosis to data, method, and evaluation.)
-- Value: ⭐⭐⭐⭐ (Negation understanding in medical safety is a real pain point; CTE weighting is highly reusable.)
+- Novelty: ⭐⭐⭐⭐ (First to convert causal tracing into hierarchical training rules)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive baselines and ablation on update distribution)
+- Writing Quality: ⭐⭐⭐⭐ (Logical flow from diagnosis to solution)
+- Value: ⭐⭐⭐⭐ (Addresses a critical pain point in medical AI safety)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
+- [\[CVPR 2025\] Vision-Language Models Do Not Understand Negation](../../CVPR2025/multimodal_vlm/vision-language_models_do_not_understand_negation.md)
+- [\[ACL 2025\] NegVQA: Can Vision Language Models Understand Negation?](../../ACL2025/multimodal_vlm/negvqa_can_vision_language_models_understand_negation.md)
 - [\[AAAI 2026\] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models](../../AAAI2026/multimodal_vlm/difference_vector_equalization_for_robust_fine-tuning_of_vis.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](../../CVPR2026/multimodal_vlm/trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
 - [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](../../ACL2026/multimodal_vlm/topology-aware_layer_pruning_for_large_vision-language_models.md)
-- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
-- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](../../CVPR2026/multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
 
 </div>
 

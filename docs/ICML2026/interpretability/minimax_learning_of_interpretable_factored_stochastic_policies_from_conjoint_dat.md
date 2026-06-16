@@ -2,131 +2,135 @@
 title: >-
   [Paper Note] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification
 description: >-
-  [ICML 2026][Interpretability][conjoint analysis] This paper reformulates traditional conjoint analysis from "estimating AMCE marginal effects" to "learning interpretable product-form Categorical stochastic policies over…
+  [ICML 2026][Interpretability][conjoint analysis] This paper reframes traditional conjoint analysis from "estimating AMCE marginal effects" as "learning interpretable product-form Categorical stochastic policies over an exponential factor action space." It provides a closed-form solution with $L_2$ trust regions under a second-order interaction model, a differentiable
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "conjoint analysis"
-  - "factored stochastic policy"
-  - "minimax"
-  - "Delta method"
-  - "AMCE"
+  - ICML 2026
+  - Interpretability
+  - conjoint analysis
+  - factored stochastic policy
+  - minimax
+  - Delta method
+  - AMCE
 date: 2026-05-08
-content_hash: d4de05a37fab334e
+content_hash: d5cd4a540cae6dec
 ---
-
 # MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification
 
 **Conference**: ICML 2026  
 **arXiv**: [2504.19043](https://arxiv.org/abs/2504.19043)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Interpretability / Offline Policy Learning / Conjoint Analysis / Minimax Games  
 **Keywords**: conjoint analysis, factored stochastic policy, minimax, Delta method, AMCE
 
 ## TL;DR
-This paper reformulates traditional conjoint analysis from "estimating AMCE marginal effects" to "learning interpretable product-form Categorical stochastic policies over an exponential factored action space." It provides a closed-form solution with an $L_2$ trust region under a second-order interaction model, a differentiable general solution, and a two-player minimax extension incorporating primary election systems. By propagating uncertainty through the Delta method to policy probabilities and values, it successfully brings the adversarial equilibrium "vote share" back into historical ranges in the 2016 US presidential conjoint experiment for the first time.
+This paper reframes traditional conjoint analysis from "estimating AMCE marginal effects" as "learning interpretable product-form Categorical stochastic policies over an exponential factor action space." It provides a closed-form solution with $L_2$ trust regions under a second-order interaction model, a differentiable general solution, and a two-player minimax expansion incorporating primary election systems. Using the Delta method, it propagates outcome model uncertainty to policy probabilities and values, successfully aligning the adversarial equilibrium's "vote share" with historical ranges in the 2016 US presidential conjoint experiment for the first time.
 
 ## Background & Motivation
 
-**Background**: Conjoint analysis is a mainstay in social sciences for studying multi-attribute preferences. Respondents are typically presented with two multi-attribute profiles (e.g., candidate characteristics) and forced to choose one. Analysis usually summarizes marginal effects as AMCE (Average Marginal Component Effect): fixing one attribute level and averaging over others according to some distribution. AMCE is the de facto standard in journals like *Political Analysis*.
+**Background**: Conjoint analysis is a primary tool in social sciences for studying "multi-attribute preferences." Respondents are typically presented with two multi-attribute profiles (e.g., candidate characteristics, product features) and forced to choose one. The analytical standard is the AMCE (Average Marginal Component Effect), which aggregates marginal effects by fixing one attribute and averaging others over a specific distribution.
 
-**Limitations of Prior Work**: AMCE assumes other attributes are drawn independently from a distribution (usually uniform). However, real-world candidate pools are neither uniform nor selected in a "strategic vacuum"—Democratic and Republican profiles emerge through mutual strategic competition. Consequently, "optimal profile combinations" suggested by AMCE often diverge from historical results. Moreover, AMCE identifies single-attribute effects but fails to answer the decision problem: "What kind of candidate should be fielded?"
+**Limitations of Prior Work**: AMCE assumes that other attributes are drawn independently (usually uniformly). However, real candidate pools are neither uniform nor selected in a "strategic vacuum"—Democratic and Republican profiles are the result of mutual strategic play. This causes AMCE's "optimal attribute combinations" to frequently contradict historical election outcomes. Furthermore, AMCE only measures "single-attribute effects" and fails to address the actual decision problem: "What kind of candidate should be deployed?"
 
-**Key Challenge**: The decision object is a joint distribution over $D$ attributes, where the action space size $|\mathcal{T}|=\prod_d L_d$ explodes exponentially. Since the sample size $n$ is much smaller than $|\mathcal{T}|$, learning a policy for every profile is neither feasible nor interpretable. Researchers often sacrifice expressiveness (only looking at margins), interpretability (black-box models), or strategic realism (ignoring opponents).
+**Key Challenge**: The decision object is a joint distribution across $D$ attributes, where the action space $|\mathcal{T}|=\prod_d L_d$ explodes exponentially. Given that the sample size $n$ is far smaller than $|\mathcal{T}|$, **learning policies per-profile** is neither feasible nor interpretable. One must currently sacrifice either expressiveness (marginal effects only), interpretability (black-box neural networks), or strategic realism (ignoring opponents).
 
-**Goal**: (1) Reformulate the estimation problem as offline policy optimization; (2) Identify a policy class that spans exponential action spaces while remaining interpretable to political scientists; (3) Model the "opponent" as a strategic agent undergoing simultaneous optimization; (4) Provide confidence intervals for journal-quality reporting.
+**Goal**: (1) Reformulate the estimation problem as an offline policy optimization problem; (2) Identify a policy class that spans exponential action spaces while remaining interpretable to political scientists; (3) Model "opponents" as strategic agents rather than static distributions; (4) Provide confidence intervals to satisfy academic publication standards.
 
-**Key Insight**: Conjoint random assignment naturally provides a logging policy, enabling the use of the offline contextual bandit framework. The authors observe that "product-of-Categoricals" distributions serve as a natural restricted family under a mean-field variational approximation of the Gibbs optimal policy. It allows "attribute weights" to be read directly, building interpretability into the inductive bias of the policy class.
+**Key Insight**: The authors observe that randomization in conjoint experiments naturally provides a logging policy, allowing for the application of an offline contextual bandit framework. They further note that "product-of-Categoricals" distributions serve as a natural restricted family under mean-field variational approximation of Gibbs optimal policies, while allowing researchers to read "how much weight the model assigns to an issue" attribute by attribute.
 
-**Core Idea**: Replace AMCE with a family of "product-form Categorical stochastic policies." Derive closed-form optimal solutions under linear probability approximations and propagate regression uncertainty to policies and values via the Delta method. Extend this to a restricted minimax objective incorporating primary systems, solved via adversarial ascent–descent to find restricted equilibria.
+**Core Idea**: The AMCE is replaced with a family of "product-form Categorical stochastic policies." Optimal solutions are derived under linear probability approximations, and the Delta method is used to propagate uncertainty from regression parameters to policies and values. This is further extended to a restricted minimax objective incorporating primary election systems, solved via synchronous ascent–descent.
 
 ## Method
 
 ### Overall Architecture
-Input consists of conjoint data $(C_i, \mathbf{T}_i^a, \mathbf{T}_i^b)_{i=1}^n$ with forced-choice labels ($\mathbf{T}^c \in \mathcal{T}=\{1,\dots,L\}^D$ is a $D$-dimensional profile; $C_i\in\{0,1\}$ indicates if $a$ was chosen). The pipeline is: (1) Fit an outcome model $\sigma(\eta_i)$ with interaction terms, expressing logits as differences in main effects $\beta_{dl}$ and second-order interactions $\gamma_{dl,d'l'}$; (2) Optimize the policy $\Pr_{\bm{\pi}^c}(\mathbf{T}^c=\mathbf{t})=\prod_d \pi^c_{d,t_d}$ subject to an $L_2$ trust region constraint $\|\bm{\pi}^c-\mathbf{p}\|_2^2 \le \epsilon_n$; (3) Use closed-form solutions for average cases and logit reparameterization with synchronous ascent–descent for adversarial cases; (4) Propagate the outcome model's variance–covariance matrix $\hat{\Sigma}$ to policy and value standard errors via the Jacobian $\mathbf{J}=\nabla_{\hat\beta,\hat\gamma}\{\hat Q,\hat{\bm\pi}^*\}$ and the Delta method.
+This paper addresses the offline decision problem of "candidate profile selection." The input consists of conjoint data with forced-choice labels $(C_i, \mathbf{T}_i^a, \mathbf{T}_i^b)_{i=1}^n$, and the output is an interpretable stochastic intervention policy with confidence intervals. The method is split into two steps: first, fitting an outcome model with second-order interactions where the logit is expressed as differences in main effects $\beta_{dl}$ and interaction effects $\gamma_{dl,d'l'}$; second, solving for the optimal policy within the product-form Categorical class $\Pr_{\bm{\pi}^c}(\mathbf{T}^c=\mathbf{t})=\prod_d \pi^c_{d,t_d}$, subject to an $L_2$ trust region constraint $\|\bm{\pi}^c-\mathbf{p}\|_2^2 \le \epsilon_n$. Finally, the Delta method propagates the variance-covariance matrix $\hat{\Sigma}$ of the outcome model through the Jacobian $\mathbf{J}=\nabla_{\hat\beta,\hat\gamma}\{\hat Q,\hat{\bm\pi}^*\}$ to the standard errors of policy probabilities and values.
+
+```mermaid
+flowchart TD
+    A["Conjoint Data<br/>Forced Choice (C, T^a, T^b)"] --> B["Outcome Model<br/>Main Effects β + Second-order Interactions γ"]
+    B --> C["Product-form Categorical Policy Class<br/>L2 Trust Region Constraints π close to p"]
+    C -->|Average Case| D["Closed-form Average Optimal Solution<br/>Linear System Cπ = B"]
+    C -->|Adversarial Case| E["Restricted Minimax with Primaries<br/>System Pushforward + Sync Ascent-Descent"]
+    D --> F["Delta Method UQ<br/>Jacobian propagates uncertainty"]
+    E --> F
+    F --> G["Interpretable Stochastic Policy + Confidence Intervals"]
+```
 
 ### Key Designs
 
-1.  **Product-of-Categoricals Policy Class + $L_2$ Trust Region**:
-    *   **Function**: Defines a family of "interpretable and estimable" stochastic interventions over exponential action spaces, relaxing the fragile "optimal single profile" goal to an "optimal distribution."
-    *   **Mechanism**: Restricts policies to $\Pr_{\bm\pi}(\mathbf{t})=\prod_d \pi_{d,t_d}$ (independent Categoricals across attributes). Target: $\max_{\bm\pi} Q(\bm\pi)-\lambda_n\|\bm\pi-\mathbf{p}\|_2^2$, where $Q(\bm\pi)=\sum_{\mathbf{t}}\mathbb{E}[Y_i(\mathbf{t})]\Pr_{\bm\pi}(\mathbf{t})$ and $\mathbf{p}$ is the logging policy. The authors prove that while the full simplex optimal solution is Gibbs-form $\sigma^\star(\mathbf{t})\propto p(\mathbf{t})\exp\{u(\mathbf{t})/\lambda\}$, the product-form constraint is equivalent to a classical mean-field variational approximation (Wainwright & Jordan, 2008).
-    *   **Design Motivation**: (i) Factored forms make policies "attribute-readable"—e.g., "the model assigns 0.7 probability to outsiders"—meeting political science standards for interpretability. (ii) $L_2/KL$ trust regions control off-policy variance. (iii) Stochastic policies aggregate a family of high-performing profiles rather than picking a single optimal point that is statistically unstable in high dimensions.
+**1. Product-form Categorical Policy Class + L2 Trust Region: Replacing Fragile "Optimal Profiles" with Interpretable Distributions**
 
-2.  **Closed-form Average-case Optimal Solution + Delta Method UQ**:
-    *   **Function**: Provides analytical expressions for optimal $\bm{\pi}^{a*}$ under linear probability approximations of second-order interactions, automatically propagating regression uncertainty.
-    *   **Mechanism**: Setting the derivative of the objective w.r.t. $\pi_{dl}$ to zero yields a linear system $\mathbf{C}\bm{\pi}^{a*}=\mathbf{B}$, where $B_{r(dl),1}=-\bar\beta_{dl}-4\lambda_n p_{dl}-2\lambda_n\sum_{l'\ne l}p_{dl'}$, $C_{r(dl),r(dl)}=-4\lambda_n$, and $C_{r(dl),r(d'l')}=\bar\gamma_{dl,d'l'}$ (Proposition 3.1). For large $\lambda_n$, this is the unique global optimum. Since $\bm{\pi}^{a*}=\mathbf{C}^{-1}\mathbf{B}$ is a differentiable function of $(\hat\beta,\hat\gamma)$, Var-Cov$(\hat Q, \hat{\bm\pi}^{a*})=\mathbf{J}\hat\Sigma\mathbf{J}'$ via the Delta method. For iterative solvers, the paper supports implicit differentiation $\partial\bm\alpha^*/\partial\theta=-H^{-1}\nabla_\theta F$ at convergence to avoid long-range backpropagation.
-    *   **Design Motivation**: Standard errors are mandatory in social science. Analytical solutions provide "analysis-friendliness," allowing reviewers to verify optimality. Implicit differentiation generalizes the UQ framework to GLM/BNN/Minimax models.
+The action space $|\mathcal{T}|=\prod_d L_d$ explodes exponentially, making per-profile policies impossible to estimate or interpret. The "optimal single profile" $\bm\pi^*(\mathbf{t})=\mathbb{I}(\mathbf{t}=\mathbf{t}^*)$ is often statistically unstable in high dimensions. Consequently, the policy is restricted to a product distribution $\Pr_{\bm\pi}(\mathbf{t})=\prod_d \pi_{d,t_d}$, optimizing $\max_{\bm\pi} Q(\bm\pi)-\lambda_n\|\bm\pi-\mathbf{p}\|_2^2$, where $\mathbf{p}$ is the experimental randomization distribution. This restriction is supported by variational theory: the authors prove that while the unconstrained optimal solution is Gibbsian $\sigma^\star(\mathbf{t})\propto p(\mathbf{t})\exp\{u(\mathbf{t})/\lambda\}$, restricting it to a product family is equivalent to a classical mean-field variational approximation (Wainwright & Jordan, 2008). This ensures attributes are readable separately (e.g., "0.7 probability for outsider"), satisfies interpretability requirements, and stabilizes the off-policy variance.
 
-3.  **Adversarial Minimax Extension for Primary Systems**:
-    *   **Function**: Upgrades the "opponent" from a static distribution to a simultaneous agent and encodes "Primary-then-General" election structures into the objective.
-    *   **Mechanism**: Defines a zero-sum payoff $Q(\bm\pi^A,\bm\pi^B)$. Institutional parameters $\beth$ (primary sets $\mathcal{I}^A,\mathcal{I}^B$ and general voters $\mathcal{E}$) are injected via "nomination pushforward" operators $\bar{\bm\pi}^A(\bm\pi^A,\bm\pi^{A'},\beth)$. Algorithm 1 performs synchronous ascent–descent on logit parameters $\bm\alpha^A,\bm\alpha^B$: $\bm\alpha^{A,(s)}\leftarrow\bm\alpha^{A,(s-1)}+\gamma\nabla_{\bm\alpha^A}\Phi$, $\bm\alpha^{B,(s)}\leftarrow\bm\alpha^{B,(s-1)}-\gamma\nabla_{\bm\alpha^B}\Phi$. A **Policy Divergence Factor** $\mathcal{D}_\varepsilon(\mathbf{t})=|\log\frac{\Pr_{\bm\pi^A}(\mathbf{t})+\varepsilon}{\Pr_{\bm\pi^B}(\mathbf{t})+\varepsilon}|$ was introduced to measure strategic distance.
-    *   **Design Motivation**: AMCE fails to account for opponents strategically optimizing their candidates. Encoding institutional structures via pushforward operators prevents "optimal profiles" that could never win a primary from being selected.
+**2. Closed-form Average Case Optimal Solution + Delta Method UQ: Propagating Regression Uncertainty to Policy Standard Errors**
+
+Political science requires confidence intervals. In a second-order interaction linear probability approximation, setting the gradient of the objective with respect to $\pi_{dl}$ to zero yields a linear system $\mathbf{C}\bm{\pi}^{a*}=\mathbf{B}$ (Proposition 3.1). Since $\bm{\pi}^{a*}=\mathbf{C}^{-1}\mathbf{B}$ is a differentiable function of $(\hat\beta, \hat\gamma)$, UQ is computed via $\text{Var-Cov}(\hat Q, \hat{\bm\pi}^{a*})=\mathbf{J}\hat\Sigma\mathbf{J}'$. For general GLMs/BNNs requiring iterative solvers, the authors support both unrolling $S$ steps for automatic differentiation and using implicit differentiation $\partial\bm\alpha^*/\partial\theta=-H^{-1}\nabla_\theta F$ at the convergence point, avoiding long backpropagation paths.
+
+**3. Minimax Extension with Primary Systems: Upgrading Opponents to Strategic Agents**
+
+AMCE assumes the opponent is a fixed distribution, but real parties co-evolve strategically. This work defines a zero-sum payoff $Q(\bm\pi^A, \bm\pi^B)$ and incorporates institutional parameters $\beth$ (e.g., primary set $\mathcal{I}$, election set $\mathcal{E}$) through a "nomination distribution pushforward" $\bar{\bm\pi}^A(\bm\pi^A, \bm\pi^{A'}, \beth)$. Algorithm 1 performs synchronous ascent–descent on logit parameters $\bm\alpha^A, \bm\alpha^B$: $\bm\alpha^{A,(s)}\leftarrow\bm\alpha^{A,(s-1)}+\gamma\nabla_{\bm\alpha^A}\Phi$. This embeds institutional rules directly into the optimization objective. The authors also define a **Strategy Divergence Factor** $\mathcal{D}_\varepsilon(\mathbf{t})=|\log\frac{\Pr_{\bm\pi^A}(\mathbf{t})+\varepsilon}{\Pr_{\bm\pi^B}(\mathbf{t})+\varepsilon}|$ to quantify how much a real candidate deviates from the party's optimal strategy.
 
 ### Loss & Training
-Average case: $O(\bm\pi)=Q(\bm\pi)-\lambda\|\mathbf{p}-\bm\pi\|^2$ solved via closed-form or projected gradient. Adversarial: $\Phi(\pi^A,\pi^B)=Q_{\text{inst}}-\lambda R(\pi^A\|\mathbf{p})+\lambda R(\pi^B\|\mathbf{p})$ using logit reparameterization + synchronous ascent–descent. Jacobians for inference are computed via $S$-step unrolling or implicit differentiation, with standard errors clustered at the respondent level.
+The average case optimizes $O(\bm\pi)=Q(\bm\pi)-\lambda\|\mathbf{p}-\bm\pi\|^2$ via closed-form or projected gradient. The adversarial case optimizes $\Phi(\pi^A,\pi^B)=Q_{\text{inst}}-\lambda R(\pi^A\|\mathbf{p})+\lambda R(\pi^B\|\mathbf{p})$ using logit reparameterization and synchronous ascent–descent over $S$ steps. Standard errors are clustered at the respondent level during the inference phase.
 
 ## Key Experimental Results
 
 ### Main Results
-Two types: Synthetic data and the 2016 US Presidential conjoint (Ono & Burden 2019). Synthetic grids spanned $n\in\{500,\dots,10000\}$ and $K\in\{5,10,20\}$.
+Experiments involve synthetic data ($n \in \{500, \dots, 10000\}$, $K \in \{5, 10, 20\}$) and the 2016 US Presidential conjoint experiment (Ono & Burden 2019).
 
-| Scenario | Samples / Dim | Metric | Ours (Closed-form + Delta) | AMCE Baseline | Note |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Avg Case Sync ($R^2{=}0.7$) | $n{=}3500, K{=}10$ | RMSE($\hat{\bm\pi}^*$) | Rapid decay / Negligible bias | — | Fig 3–4 |
-| Avg Case Sync | Above | Expected Win Rate $Q$ | Significantly higher than AMCE argmax | Baseline | Fig 4 |
-| Avg Case Sync | Above | 95% CI Coverage | Close to 0.95 | — | §B.4 |
-| Adv Case Sync | $n{=}10000$ | RMSE($\hat{\bm\pi}^R$) | Primarily $n$-driven, weak $p_R$ dependence | — | Fig 1 |
-| 2016 US Conjoint | Neural Outcome | Avg Case Latent Vote Share | **Outside historical 1976–2020 range** | — | Fig 2 |
-| 2016 US Conjoint | Neural Outcome | Adv Minimax Vote Share | **Falls back to historical range** | — | Key selling point |
+| Scenario | Sample / Dim | Metric | Ours (Closed + Delta) | AMCE Baseline | Note |
+|------|------------|------|---------------------|-----------|------|
+| Avg Synthetic ($R^2{=}0.7$) | $n{=}3500, K{=}10$ | RMSE($\hat{\bm\pi}^*$) | Rapidly decreasing / Minimal bias | — | Fig 3–4 |
+| Avg Synthetic | Same | Expected win rate $Q$ | Significantly higher than AMCE argmax | Baseline | Fig 4 |
+| Avg Synthetic | Same | 95% CI Coverage | Close to 0.95 | — | §B.4 |
+| Adv Synthetic | $n{=}10000$ | RMSE($\hat{\bm\pi}^R$) | Primarily determined by $n$ | — | Fig 1 |
+| 2016 US Presidential | Neural Model | Avg Optimal Vote Share | **Outside historical 1976–2020 range** | — | Fig 2 |
+| 2016 US Presidential | Neural Model | Adv Equilibrium Vote Share| **Within historical range, close to 2016** | — | Fig 2: Key selling point |
 
 ### Ablation Study
 | Configuration | Key Observation |
-| :--- | :--- |
-| GLM vs. Transformer | GLM is more efficient/calibrated for near-linear data; Transformer has better RMSE but poor CI coverage under mismatch. |
-| No-Adv vs. Minimax | Average policies yield unrealistic vote shares; adversarial policies align with historical reality. |
-| Closed-form vs. Implicit Diff | Solutions match; implicit differentiation is memory-efficient but can be unstable if $H$ is ill-conditioned. |
-| Data-driven Clustering | Clustered versions endogenously recover Democrat-Independent-Republican preference structures. |
+|------------|---------|
+| GLM vs Bayesian Transformer | GLM is most efficient/calibrated when linear; Transformer has better RMSE but lower CI coverage. |
+| Avg (Static Opponent) vs Adv Minimax | Average strategies yield unrealistic vote shares; adversarial strategies align with history. |
+| Closed-form vs Implicit Diff | Solutions match; implicit differentiation is faster for large models but $H$ can be ill-conditioned. |
 
 ### Key Findings
-*   **Empirical Realism**: The average-case optimal profile results in vote shares outside historical bounds (unbelievable). The adversarial restricted-equilibrium results align with historical ranges since 1976 and the 2016 actual result—providing a **falsifiable** criterion.
-*   **AMCE Failure**: In cases where main effects are positive but interactions are negative (e.g., outsider and moderate as substitutes), AMCE argmax selects (outsider, moderate), while Ours spreads probability to valid strategic alternatives, achieving higher win rates.
-*   **Sample Sensitivity**: In adversarial settings, RMSE is dominated by $n$ rather than $p_R$, suggesting the bottleneck is utility estimation, not game complexity.
+- **Historical Alignment**: Average optimal profiles suggest vote shares outside historical bounds (unrealistic), whereas the adversarial restricted-equilibrium falls within the 1976–2020 range and matches 2016 results. This provides a **falsifiable** criterion for model validity.
+- **AMCE Limitations**: In cases where main effects are positive but interactions are negative (e.g., outsider and moderate as substitutes), AMCE's marginal approach picks sub-optimal combinations, while this method correctly spreads probability mass across compatible attributes.
+- **Sample Sensitivity**: In adversarial settings, RMSE is more sensitive to $n$ than to the opponent mix $p_R$, suggesting utility estimation is the primary bottleneck.
 
 ## Highlights & Insights
-*   **Reformulating social science estimation as policy learning**: Shifting from AMCE to factored stochastic policies connects conjoint analysis to the offline contextual bandit/MARL toolbox (Delta method, implicit differentiation, Mirror-Prox).
-*   **Theoretical Mean-Field Link**: Grounding the policy family as a variational approximation of the Gibbs solution provides the first theoretical gap bound for restricted policy classes in conjoint.
-*   **Institutional Structure as Pushforward**: Modeling primary rules as a nomination pushforward operator $\bar{\bm\pi}^c$ allows for a unified framework across different political systems.
-*   **Policy Divergence Factor**: A simple log-ratio diagnosis $\mathcal{D}_\varepsilon$ quantifies how far real candidates deviate from partisan optimality.
+- **Translation of Social Science Standard to Policy Learning**: Reframing AMCE as a factored stochastic policy allows the use of offline contextual bandit and multi-agent RL tools (Delta method, implicit differentiation).
+- **Variational Justification**: Identifying that "Product-form Categorical = Mean-field Variational Approximation" provides a theoretical foundation for interpretability-driven policy constraints.
+- **Closed-form UQ**: The ability to propagate uncertainty via a single linear system makes this "two-step" UQ approach applicable to any problem fitting outcome models before optimization.
+- **Strategic Pushforward**: Embedding institutional rules (primaries, turnouts) as operators directly in the optimization objective avoids ad-hoc post-processing.
 
 ## Limitations & Future Work
-*   **Two-step Approach**: The outcome model and policy optimization are decoupled; misspecification in the first step contaminates the CI.
-*   **Optimality Gap**: Product-form Categoricals are not unconstrained optimal; the gap under complex interactions is not fully quantified.
-*   **Institutional Priors**: Parameters $\beth$ (e.g., primary turnout) must be known a priori; errors here bias the minimax solution.
-*   **Global Convergence**: Due to non-convexity in factored policy spaces, only steady points (diagnosed by exploitability) are guaranteed, not global optima.
+- **Two-step Risk**: The method relies on the outcome model being correctly specified; first-step errors propagate to policy and CI.
+- **Approximation Gap**: Product-form policies may not reach the global unconstrained optimum; the "interpretability vs optimality" gap is not fully quantified for complex interactions.
+- **Institutional Priors**: Institutional parameters $\beth$ must be known a priori; incorrect institutional assumptions will bias the minimax equilibrium.
 
 ## Related Work & Insights
-*   **vs. AMCE/AMIE**: Moves beyond uniform marginal assumptions to strategic optimization and game equilibria.
-*   **vs. Offline Policy Learning (Athey & Wager)**: Transitions from deterministic rules for binary treatments to stochastic policies for multi-dimensional factored action spaces.
-*   **vs. Minimax RL (Kallus & Zhou)**: Uses minimax for strategic competition rather than worst-case unobserved confounding.
-*   **vs. PSRO/Markov Games**: Tailors multi-agent RL to the constraints of offline experimental data common in social sciences.
+- **vs AMCE**: Moves beyond the "marginal effect" bottleneck and the "uniformity assumption," addressing strategic co-evolution.
+- **vs Policy Learning**: Extends deterministic treatment rules (Athey & Wager) to stochastic policies on factored, high-dimensional action spaces.
+- **vs Markov Games**: Adapts minimax games to setting where payoffs are estimated from offline randomized data with restricted policy classes.
 
 ## Rating
-*   **Novelty**: ⭐⭐⭐⭐⭐ Systematically bridges conjoint analysis with minimax policy learning.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid synthetic grids and historical validation; needs more global convergence analysis.
-*   **Writing Quality**: ⭐⭐⭐⭐ Rigorous but high barrier to entry for cross-disciplinary readers.
-*   **Value**: ⭐⭐⭐⭐⭐ High potential to replace AMCE as the gold standard in political science.
+- Novelty: ⭐⭐⭐⭐⭐ (Reframes conjoint analysis as strategic policy learning).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Synthetic grids + historical real-world validation).
+- Writing Quality: ⭐⭐⭐⭐ (Rigorous, high barrier to entry for cross-disciplinary readers).
+- Value: ⭐⭐⭐⭐⭐ (Potentially a new standard for conjoint analysis).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](../../CVPR2026/interpretability/hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
 - [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
 - [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
-- [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](../../ICLR2026/interpretability/behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
 - [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
+- [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](../../ICLR2026/interpretability/behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
 
 </div>
 

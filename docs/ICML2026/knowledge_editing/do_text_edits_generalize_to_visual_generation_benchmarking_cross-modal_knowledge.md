@@ -2,71 +2,63 @@
 title: >-
   [Paper Note] Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs
 description: >-
-  [ICML 2026][Knowledge Editing][Cross-Modal Transfer] This paper introduces UniKE—the first "Cross-Modal Knowledge Editing" benchmark for Unified Multimodal Models (UMMs), comprising 2,971 edited subjects and 5…
+  [ICML 2026][Knowledge Editing][Paper Note] This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs), comprising 2,971 edited subjects and 5,535 VQA-verifiable instances. It systematically reveals a "modality gap" where the text-side editing success rate is $\sim 92\%$ while image generation VQA is only $
 tags:
-  - "ICML 2026"
-  - "Knowledge Editing"
-  - "Cross-Modal Transfer"
-  - "Unified Multimodal Models"
-  - "Reasoning Augmentation"
-  - "Conditioning Path"
+  - ICML 2026
+  - Knowledge Editing
 date: 2026-05-08
-content_hash: ea50742627f13ab0
+content_hash: 3bb350415e3c32ca
 ---
-
 # Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00477](https://arxiv.org/abs/2606.00477)  
-**Code**: https://github.com/gxx27/UniKE (Yes)  
+**Code**: https://github.com/gxx27/UniKE (Available)  
 **Area**: Knowledge Editing / Cross-Modal / Unified Multimodal Models (UMM)  
-**Keywords**: Knowledge Editing, Cross-Modal Transfer, Unified Multimodal Models, Reasoning Augmentation, Conditioning Path
+**Keywords**: Knowledge editing, cross-modal transfer, unified multimodal models, reasoning augmentation, conditioning pathway
 
 ## TL;DR
-This paper introduces UniKE—the first "Cross-Modal Knowledge Editing" benchmark for Unified Multimodal Models (UMMs), comprising 2,971 edited subjects and 5,535 VQA-verifiable instances. It systematically reveals a significant modality gap, where the "text-side edit success rate is ~92% but image generation VQA accuracy is only ~18.5%." By employing a "Reasoning-augmented Parameter Editing" protocol, the authors improve VQA accuracy by up to 18.6 percentage points. Furthermore, they localize the root cause to the LLM-to-DiT projection bottleneck using a cosine drift metric along the conditioning path.
+This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs), comprising 2,971 edited subjects and 5,535 VQA-verifiable instances. It systematically reveals a "modality gap" where the text-side editing success rate is $\sim 92\%$ while image generation VQA is only $\sim 18.5\%$. Through a "reasoning-augmented parameter editing" protocol, VQA accuracy is increased by up to 18.6 percentage points. Furthermore, the root cause is localized to the LLM-to-DiT projection bottleneck using a cosine drift metric along the conditioning pathway.
 
 ## Background & Motivation
-**Background**: Unified Multimodal Models (UMM) integrate image understanding and generation into a single transformer backbone, relying on shared parameters for end-to-end synergy between text and images (e.g., Ovis-U1, BLIP3o-4B, OmniGen2). Concurrently, pure-text Knowledge Editing (KE) methods—such as ROME, MEMIT, PMET, and AlphaEdit—have matured, allowing precise rewriting of MLP weights (e.g., changing "Apple's founder is Jobs" to "Tim Cook") without retraining.
+**Background**: Unified Multimodal Models (UMM) integrate image understanding and generation into a single transformer backbone, relying on shared parameters for end-to-end synergy between text and images. Representative works include Ovis-U1, BLIP3o-4B, and OmniGen2. Meanwhile, pure-text Knowledge Editing (KE) methods—such as ROME, MEMIT, PMET, and AlphaEdit—have matured, allowing precise rewriting of specific MLP layer weights (e.g., changing "Apple's founder is Jobs" to "Tim Cook") without retraining.
 
-**Limitations of Prior Work**: Despite UMMs sharing a backbone, the question of whether "editing a fact on the text side automatically transfers to image generation" has not been systematically studied. Existing multimodal KE benchmarks (like TMKE) only measure image-conditioned text answering (I2T), omitting the critical text-to-image (T2I) propagation path.
+**Limitations of Prior Work**: Since UMMs share a backbone, the question of whether "editing a fact on the text side via KE automatically translates to image generation" has not been systematically studied. Existing multimodal KE benchmarks (e.g., TMKE) only evaluate image-conditioned text answering (I2T), lacking the most critical text $\rightarrow$ image (T2I) propagation path.
 
-**Key Challenge**: Text-side editing only requires shifting the "next token distribution," a relatively low bar. Conversely, to influence image generation, perturbations must traverse the entire "LLM → Projection Layer → DiT" conditioning path without being attenuated or filtered. The required signal strength and directionality for the latter are orders of magnitude higher.
+**Key Challenge**: Text-side editing only requires flipping the "next token distribution," which has a low threshold. However, to influence image generation, the perturbation must traverse the entire conditioning pathway (LLM $\rightarrow$ projection layer $\rightarrow$ DiT) without being attenuated or filtered. The required signal strength and directionality for the latter are on a completely different scale.
 
-**Goal**: (1) Construct a cross-modal KE benchmark that is visually verifiable; (2) Quantify the information loss between "text-side editing" and "image generation"; (3) Identify a weight-free method to improve transfer; (4) Provide a mechanistic analysis of why the gap exists.
+**Goal**: (1) Construct a cross-modal KE benchmark that can be visually verified; (2) Quantify the performance drop between text-side editing and image generation; (3) Identify a method to improve transfer without modifying weights; (4) Answer "why it drops" through mechanistic analysis.
 
-**Key Insight**: The authors hypothesize that the knowledge is indeed modified within the parameters but remains "latent," only propagating to the visual generation path when activated by explicit textual context.
+**Key Insight**: The authors hypothesize that the edit is actually modified in the parameters but remains "latent" within the weights, only being transmitted to the visual generation pathway when activated by explicit textual context.
 
-**Core Idea**: The model is first prompted to "verbalize" the edited fact in text, transforming latent parameter changes into explicit textual conditions. These conditions are then superimposed onto the image prompt for the generator—a method termed Reasoning-augmented Parameter Editing.
+**Core Idea**: First, let the model "speak out" the edited fact in text to convert latent parameter changes into explicit textual conditions. Then, superimpose this textual condition onto the image prompt and feed it into the generator—this is referred to as Reasoning-augmented Parameter Editing.
 
 ## Method
 
 ### Overall Architecture
-The work consists of three components: the UniKE benchmark, two evaluation protocols (Direct / Reasoning-Augmented), and a conditioning path mechanistic analysis. Each evaluation instance is formalized as $\mathcal{I}=(q, y, y', p_{img}, t_{vis}, q_{vqa})$, representing the edit prompt, original answer, target answer, image generation prompt, visual target description, and VQA verification question. Images are evaluated using Qwen3-VL-235B as an LLM-as-judge for 0/1 binary classification. The evaluation matrix covers three UMMs (Ovis-U1 / BLIP3o-4B / OmniGen2) × three editors (MEMIT / PMET / AlphaEdit) × two protocols.
+This work addresses whether editing a fact on the text side causes corresponding changes in image generation. Instead of training new models, the problem is decomposed into three reproducible tasks: first, using the UniKE benchmark to turn "whether the edited fact exists in the image" into a binary verifiable metric; second, comparing Direct vs. Reasoning-Augmented protocols to measure the gap between "direct drawing" and "drawing after speaking"; and finally, using cosine drift analysis along the conditioning pathway to locate where the signal is attenuated. Each evaluation instance is formalized as $\mathcal{I}=(q, y, y', p_{img}, t_{vis}, q_{vqa})$ (edit prompt, original answer, target answer, image generation prompt, visual target description, and VQA verification question). Generated images are judged $0/1$ by Qwen3-VL-235B as an LLM-as-judge. The overall structure forms a $9 \times 2$ evaluation matrix (3 UMMs: Ovis-U1 / BLIP3o-4B / OmniGen2 $\times$ 3 editors: MEMIT / PMET / AlphaEdit $\times$ 2 protocols).
 
 ### Key Designs
 
-1.  **UniKE Benchmark — A Visually Verifiable Cross-Modal KE Dataset**:
-    *   **Function**: Provides 2,971 subjects and 5,535 instances covering two main edit categories: attribute (color/material/shape/size/pattern) and relation (membership/creator/location/occupation). Every instance is automatically verifiable via VQA.
-    *   **Mechanism**: For attribute edits, the authors use a Gemini-3.0-Flash self-instruction pipeline to generate $(q, y, y')$ triplets across four progressive difficulty stages: Stage 1 (atomic objects), Stage 2 (real-world scenarios), Stage 3 (complex multi-entity compositions), and Stage 4 (derived products/uses). Relation edits are extracted from CounterFact/MQuAKE and filtered for visualizability. Image prompts follow an "answer-neutral" principle, ensuring the prompt does not leak the target value, thus forcing the model to rely on its internal edited knowledge.
-    *   **Design Motivation**: Previous T2T benchmarks cannot test images, and I2T benchmarks omit the T2I direction. UniKE enables the quantification of how text edits affect image generation via answer-neutral prompts and VQA judges.
+**1. UniKE Benchmark: Quantifying Text-to-Image Edit Propagation**
 
-2.  **Reasoning-augmented Parameter Editing — Activating Latent Edits via Textual Reasoning**:
-    *   **Function**: A two-stage "think-then-draw" protocol that improves VQA accuracy across all model-editor pairs (up to +18.6 pp) without modifying any weights.
-    *   **Mechanism**: While the Direct protocol feeds $p_{img}$ directly into the generator, the Reasoning-Augmented protocol uses a category-conditioned template $p_{rea}$ to trigger the model to generate a text rationale $r$ (produced by the edited model itself). This $r$ is then prepended to $p_{img}$. The rationale explicitly converts latent MLP edits into token-level constraints, providing a stronger, aligned semantic condition for the DiT.
-    *   **Design Motivation**: Observations showed relatively high text-side efficacy (55%–90%) but very low VQA accuracy. Reasoning augmentation compensates for signal attenuation in the conditioning path by using aligned condition vectors.
+Previous benchmarks could not measure this path: pure-text benchmarks (ZsRE / CounterFact / MQuAKE) ignore images, while multimodal benchmarks like TMKE only test I2T. UniKE fills this gap using "answer-neutral" image prompts combined with VQA-as-judge. Attribute edits are generated via a Gemini-3.0-Flash self-instruction pipeline into four stages of increasing difficulty (Stage 1: atomic object inquiry; Stage 2: real-world scene embedding; Stage 3: multi-entity complex composition; Stage 4: derived product/use transfer). Relation edits are sampled from CounterFact / MQuAKE, with non-visualizable categories (e.g., nationality) filtered out. The key constraint is the "answer-neutral" principle: prompts must not leak the original or target values, ensuring any correct expression in the image stems from internal edited knowledge. The benchmark covers 2,971 subjects and 5,535 instances across attributes (color, material, shape, size, pattern) and relations (affiliation, creator, location, profession).
 
-3.  **Conditioning Path Drift Analysis — Localizing LLM-to-DiT Bottlenecks via Cosine Distance**:
-    *   **Function**: Analyzes 100 cases using PMET to measure "implicit drift in LLM output" versus "actual drift in DiT input vectors," localizing the gap to the projection layer/path alignment.
-    *   **Mechanism**: Uses a cosine drift operator $\Delta_{cos}(a,b)=1-a^\top b/(\|a\|\|b\|)$, per-token average $d_{cos}^{tok}$, and relative Frobenius drift $r_F=\|\delta\|_F/\|C_{fresh}^{LLM}\|_F$ to quantify perturbations at the LLM output. It then compares this with $d_{cos}^{dir}$ and $d_{cos}^{rea}$ at the DiT input. Results show that Ovis-U1, with its frozen dimensionality-reduction projection, acts as an "architectural filter" with $r_F$ of only 0.078, whereas BLIP3o-4B reaches 0.527.
-    *   **Design Motivation**: This allows distinguishing whether the edit failed to change the LLM or if the change failed to propagate. It reveals that the alignment of the conditioning path is more critical than the editor's raw drift magnitude.
+**2. Reasoning-augmented Parameter Editing: Activating Latent Edits via Textual Reasoning**
+
+The authors found that while text-side editing success (Eff.) is high ($55\%–90\%$), image VQA is extremely low, suggesting the fact is updated in the LLM but fails to reach the generation pathway. The Reasoning-Augmented protocol addresses this: instead of feeding $p_{img}$ directly to the generator (Direct protocol), it uses a category-conditioned template $p_{rea}$ to trigger the edited model to generate a textual rationale $r$ (produced by the model itself, not an oracle). This $r$ is prepended to $p_{img}$ as an extra condition. The rationale "explicitizes" the latent edit in the MLP weights into token-level text constraints, acting as a longer, better-aligned conditioning vector to compensate for signal attenuation. It is weight-free and orthogonal to any editor, improving VQA across all 9 model-editor pairs with a maximum gain of $+18.6$ pp.
+
+**3. Conditioning Pathway Drift Analysis: Localizing Bottlenecks to LLM-to-DiT Projection**
+
+To distinguish between "edit failed to modify the LLM" and "edit modified the LLM but failed to propagate," the authors sampled 100 cases using PMET to quantify signals along the pathway. They defined a cosine offset operator $\Delta_{cos}(a, b) = 1 - a^\top b / (\|a\| \|b\|)$. At the LLM output, they measured the per-token average $d_{cos}^{tok}$ and relative Frobenius drift $r_F = \|\delta\|_F / \|C_{fresh}^{LLM}\|_F$ to gauge the perturbation caused by parameter editing. At the DiT input, they used $d_{cos}^{dir}$ and $d_{cos}^{rea}$ on mean-pooled conditioning vectors to measure the actual offset received by the DiT. Results showed that Ovis-U1, which uses a frozen dimensionality-reduction projection, had an $r_F$ of only 0.078, whereas BLIP3o-4B reached 0.527. The former's projection acts as an "architectural filter" that blocks wide-distribution edit perturbations. However, Ovis-U1 benefited most from reasoning augmentation ($d_{cos}^{rea} = 0.154$ vs. $d_{cos}^{dir} = 0.018$, an $8\times$ amplification), because the rationale injects perturbations into directions preserved by the projection.
 
 ### Loss & Training
-No new models were trained. Editors follow their original objective functions (closed-form updates for MEMIT/PMET, null-space projection for AlphaEdit). For UMMs, editing is focused on intermediate MLP layers (layers 4–8 for Ovis-U1; layers 6–10 for BLIP3o-4B and OmniGen2). For AlphaEdit on BLIP3o-4B/OmniGen2, a softened version (indicated with an asterisk *) is used with $\alpha=0.7/0.6$ to prevent excessive parameter space contraction. All edits utilize sequential editing settings.
+This work does not train new models; all editors follow their original objective functions (closed-form weight updates for MEMIT/PMET, null-space projection for AlphaEdit). Only middle MLP layers are edited: layers 4–8 for Ovis-U1 and layers 6–10 for BLIP3o-4B and OmniGen2. For AlphaEdit on BLIP3o-4B / OmniGen2, the authors used $\alpha=0.7/0.6$ to interpolate the null-space projector with the identity matrix to obtain a "softened" version (marked with an asterisk in the paper), preventing over-constrained parameter updates from damaging generation quality. All edits were performed in a sequential editing setting.
 
 ## Key Experimental Results
 
 ### Main Results
-Summary of overall metrics for 3 UMMs × 3 Editors (Eff. = Text-side editing accuracy, VQA = Image VQA accuracy, in %):
+Summary of Overall metrics (Eff. = Text-side editing accuracy, VQA = Image VQA accuracy, in %):
 
 | Model | Editor | Eff. (Direct) | VQA (Direct) | VQA (+Reasoning) | Gain (pp) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -77,10 +69,10 @@ Summary of overall metrics for 3 UMMs × 3 Editors (Eff. = Text-side editing acc
 | OmniGen2 | PMET | 76.20 | 11.43 | 16.01 | +4.6 |
 | OmniGen2 | AlphaEdit* | 76.37 | 11.50 | 17.90 | +6.4 |
 
-The most striking finding is the modality gap: VQA accuracy is only 1/8 to 1/4 of the text efficacy under the Direct protocol. Reasoning-Augmented improves VQA across all 9 pairs, though the gain is architecture-dependent.
+The most striking discovery is the modality gap: under the Direct protocol, VQA is only $1/8$ to $1/4$ of Eff. Reasoning-Augmentation improved VQA across all 9 pairs, though the gain is highly architecturally dependent (Ovis-U1 benefited most).
 
 ### Ablation Study
-Conditioning path drift analysis for PMET on 100 sampled cases (Source: Paper Table 4):
+Conditioning pathway drift analysis for PMET on 100 sampled cases (Source: Table 4):
 
 | Model | LLM Output $d_{cos}^{tok}$ | LLM Output $r_F$ | DiT Input $d_{cos}^{dir}$ | DiT Input $d_{cos}^{rea}$ |
 | :--- | :--- | :--- | :--- | :--- |
@@ -88,56 +80,47 @@ Conditioning path drift analysis for PMET on 100 sampled cases (Source: Paper Ta
 | BLIP3o-4B | 0.139 | 0.527 | 0.031 | 0.064 |
 | OmniGen2 | 0.038 | 0.262 | 0.018 | 0.092 |
 
-Ovis-U1 shows the weakest LLM drift (filtered by frozen projection) but its DiT drift is amplified 8x by reasoning augmentation. BLIP3o-4B has high LLM drift but fails to propagate it, showing that "high drift $\neq$ good alignment."
+Ovis-U1 has the weakest implicit drift (filtered by the frozen projection), but reasoning augmentation amplifies DiT-side drift by $8\times$. BLIP3o-4B has the largest implicit drift but fails to propagate it, reflecting that "large drift $\neq$ good alignment."
 
 ### Key Findings
-*   Text-side Eff. and image VQA accuracy are almost uncorrelated. This refutes the intuitive assumption that a unified backbone leads to automatic cross-modal knowledge propagation.
-*   Category difficulty varies significantly: In attributes, "size" is easiest (relative comparisons), while "shape" is hardest (precise geometric control). In relations, "occupation" is easiest (visual proxies like uniforms), while "creator" is hardest (non-visual identity).
-*   Textual Eff. drops by ~70% from Stage 1 to Stage 2, but reasoning accuracy only drops by ~10%. This proves edited facts are "in the weights" but are sensitive to templates; rationales serve as more robust retrieval interfaces.
-*   Conditioning attenuation primarily occurs before the DiT (Appendix D.3), suggesting that future editors should be co-designed with projection layers.
+- Text-side Eff. is almost uncorrelated with image VQA accuracy: high Eff. does not guarantee that the edited fact is visible in the image, debunking the intuitive assumption that "unified backbone $\implies$ automatic cross-modal knowledge propagation."
+- Significant difficulty variance by category: In attributes, "size" is easiest (VQA handles relative comparisons well), while "shape" is hardest (precise geometric control is difficult). In relations, "occupation" is easiest (due to local visual proxies like uniforms), while "creator" is hardest (authorship is non-visual).
+- From Stage 1 to Stage 2, text Eff. drops by $70\%$ on average, but reasoning accuracy only drops $\sim 10\%$. This indicates the edited fact is "in the weights" but sensitive to the edit template; reasoning acts as a robust retrieval interface.
+- Conditioning decay occurs primarily before the DiT (Appendix D.3), not inside it—meaning future research should focus on the synergistic design of editors and projection layers.
 
 ## Highlights & Insights
-*   **Establishment of a Quantitative Cross-Modal KE Benchmark**: The combination of answer-neutral prompts and VQA-as-judge transforms "is the fact present in the image" from a subjective question into a reproducible binary evaluation.
-*   **Plug-in Training-free Baseline**: The Reasoning-Augmented protocol is editor-agnostic and significantly improves performance by externalizing "latent" changes, offering insights for future multimodal CoT editing.
-*   **Signal Decay Diagnosis**: Treating the UMM as a signal attenuation system and measuring drift along the LLM-DiT path provides a brilliant diagnostic framework for localized failure analysis in complex architectures.
+- **First quantifiable benchmark for cross-modal KE**: The combination of answer-neutral image prompts and VQA-as-judge transforms "whether the fact is in the image" from a subjective question into a reproducible binary judgment, applicable to cross-modal unlearning and alignment.
+- **Training-free Reasoning-Augmented protocol is a strong plug-in baseline**: By converting "latent parameter changes" into "textual constraints," this paradigm offers insights for future multimodal CoT editing and test-time intervention.
+- **Treating the UMM as a "signal attenuation system" via cosine drift analysis**: Decomposing signals along the LLM-DiT pathway allows for precise diagnosis of black-box UMM failures, a technique generalizable to any "backbone + projection + head" architecture.
 
 ## Limitations & Future Work
-*   **Limitations**: The study is restricted to three UMMs and three editors. The reasoning protocol provides limited gains for BLIP3o/OmniGen2, and the rationale itself can introduce new errors.
-*   **Future Work**: (1) Design modality-aware editors that constrain updates to subspaces preserved by projection; (2) Jointly optimize rationale generation with the editing process; (3) Explore editing cross-attention layers to directly influence visual conditioning.
+- **Limitations**: Only three UMMs and three editors were tested; reasoning gains are limited for BLIP3o/OmniGen2, suggesting textual activation is not a universal solution; rationales themselves can introduce new errors.
+- **Additional Insights**: All evaluations used sequential single-edit settings, leaving lifelong/batch editing unexplored; the Qwen3-VL judge might favor its own family of models; the failure in Stage 4 (derived products) could be due to UMM reasoning deficiencies rather than editing failure.
+- **Future Directions**: (1) Design modality-aware editors that constrain weight updates to subspaces preserved by projections; (2) Jointly optimize rationale generation with the editing process; (3) Explore editing cross-attention layers rather than MLP layers to more directly influence the visual pathway.
 
 ## Related Work & Insights
-*   **Vs. MEMIT / PMET / AlphaEdit**: These methods show high text Eff. but low VQA accuracy on UniKE. Success in pure-text KE is revealed to be modality-limited.
-*   **Vs. TMKE**: TMKE focuses on I2T (answering based on images); UniKE targets T2I (editing text to change images), providing a complementary perspective.
-*   **Vs. T2I Editing (TIME/ReFACT)**: These edit modular text encoders. This paper demonstrates that monolithic UMMs require entirely new editing paradigms.
+- **vs. MEMIT / PMET / AlphaEdit (Pure-text KE)**: These methods achieve high Eff. on UniKE but very low VQA, proving their "success" is limited by modality and highlighting the need for cross-modal evaluation.
+- **vs. TMKE (Multimodal KE Benchmark)**: TMKE focuses on I2T (answering based on images), while UniKE focuses on T2I (generating images based on edited text). The former verifies the "understanding side," whereas the latter verifies the "generation side."
+- **vs. T2I Editing (TIME / ReFACT / DiffQuickFix)**: These target modular diffusion models (text encoder/cross-attention) and are not directly applicable to monolithic UMMs. This paper suggests UMMs require a new editing paradigm.
 
 ## Rating
-*   **Novelty**: ⭐⭐⭐⭐⭐ First systematic study of cross-modal KE in UMMs and the first to quantify signal decay along the conditioning path.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid coverage across models, editors, and diagnostic analysis, though limited to single-edit settings.
-*   **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and execution, although the mechanistic analysis contains dense notation.
-*   **Value**: ⭐⭐⭐⭐⭐ Establishes a benchmark for the new field of UMM editing while providing a strong, training-free baseline.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of cross-modal KE in UMMs and first to measure signal attenuation along the conditioning pathway.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 models $\times$ 3 editors $\times$ 2 protocols, including stage/category/mechanistic analysis. However, UMM count is low and lifelong editing is missing.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is very clear, but the mechanistic analysis involves heavy notation that may be challenging to read.
+- Value: ⭐⭐⭐⭐⭐ Establishes a benchmark for the new UMM editing track and provides a training-free strong baseline and clear research directions.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[CVPR 2026\] MoKus: Leveraging Cross-Modal Knowledge Transfer for Knowledge-Aware Concept Customization](../../CVPR2026/knowledge_editing/mokus_leveraging_crossmodal_knowledge_transfer_for.md)
-- [\[ICML 2026\] AnyEdit++: Adaptive Long-Form Knowledge Editing via Bayesian Surprise](anyedit_adaptive_long-form_knowledge_editing_via_bayesian_surprise.md)
-- [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
-- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
-
 </div>
 
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MoKus: Leveraging Cross-Modal Knowledge Transfer for Knowledge-Aware Concept Customization](../../CVPR2026/knowledge_editing/mokus_leveraging_crossmodal_knowledge_transfer_for.md)
 - [\[ICML 2026\] AnyEdit++: Adaptive Long-Form Knowledge Editing via Bayesian Surprise](anyedit_adaptive_long-form_knowledge_editing_via_bayesian_surprise.md)
 - [\[ACL 2025\] BMIKE-53: Investigating Cross-Lingual Knowledge Editing with In-Context Learning](../../ACL2025/knowledge_editing/bmike-53_investigating_cross-lingual_knowledge_editing_with_in-context_learning.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
+- [\[ACL 2025\] REP: Keys to Robust Edits — From Theoretical Insights to Practical Advances](../../ACL2025/knowledge_editing/rep_robust_knowledge_editing.md)
 
 </div>
 

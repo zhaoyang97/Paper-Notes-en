@@ -2,77 +2,85 @@
 title: >-
   [Paper Note] Spherical Steering: Geometry-Aware Activation Rotation for Language Models
 description: >-
-  [ICML 2026][LLM Evaluation][Activation Steering] This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimate…
+  [ICML 2026][LLM Evaluation][Paper Note] This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimated from contrastive samples. Unlike traditional additive activation steering, this approach maintains activation magnitudes (norms) while significantl
 tags:
-  - "ICML 2026"
-  - "LLM Evaluation"
-  - "Activation Steering"
-  - "Hyperspherical Geometry"
-  - "Slerp Geodesic"
-  - "vMF Confidence Gating"
-  - "Norm Preservation"
+  - ICML 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 3fd6a5b2e741c2f1
+content_hash: c7f50f7be552da34
 ---
-
 # Spherical Steering: Geometry-Aware Activation Rotation for Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.08169](https://arxiv.org/abs/2602.08169)  
 **Code**: https://github.com/chili-lab/Spherical-Steering (Available)  
 **Area**: Interpretability / Activation Editing / Inference-time Intervention / LLM Alignment  
-**Keywords**: Activation Steering, Hyperspherical Geometry, Slerp Geodesic, vMF Confidence Gating, Norm Preservation
+**Keywords**: Activation Steering, Hyperspherical Geometry, Slerp Geodesics, vMF Confidence Gating, Norm Preservation
 
 ## TL;DR
-This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimated from contrastive samples. Unlike traditional additive activation steering, this method preserves activation norms while significantly improving multiple-choice accuracy on benchmarks like TruthfulQA, COPA, and StoryCloze (+10% range) without degrading the quality of open-ended generation.
+This paper proposes Spherical Steering: rotating activation vectors along geodesics on the unit hypersphere of LLM hidden states toward a "truthfulness direction" estimated from contrastive samples. Unlike traditional additive activation steering, this approach maintains activation magnitudes (norms) while significantly improving multiple-choice accuracy on benchmarks such as TruthfulQA, COPA, and StoryCloze (+10% range) without degrading open-ended generation quality.
 
 ## Background & Motivation
 
-**Background**: To control LLM behavior without retraining, the mainstream approach is *activation steering*—estimating a "steering vector" $\mu$ from a batch of (positive, negative) contrastive samples and adding it directly to token activations at certain layers: $h' = h + \lambda \mu$. Representative methods include CAA and ITI.
+**Background**: To control LLM behavior without retraining, the mainstream approach is *activation steering*—estimating a "steering vector" $\mu$ from a batch of (positive, negative) contrastive samples and adding it directly to token activations at specific layers: $h' = h + \lambda \mu$. Representative methods include CAA and ITI.
 
-**Limitations of Prior Work**: This additive operation suffers from severe *scale sensitivity*. If $\lambda$ is too small, there is no effect; if $\lambda$ is large, the hidden state norm $\|h\|$ is significantly distorted—the equation $\|h'\|^2 = \|h\|^2 + 2\lambda\mu^\top h + \lambda^2$ shows that norm changes depend on both $\lambda$ and the alignment between $\mu$ and $h$, making them uncontrollable. Consequently, while multiple-choice accuracy may increase, open-ended generation quality (TRUE×INFO) often drops, leading to "over-conservatism" or even representation collapse.
+**Limitations of Prior Work**: This additive operation suffers from severe *scale sensitivity*. If $\lambda$ is too small, there is no effect; if $\lambda$ is large, the hidden state norm $\|h\|$ is significantly distorted. The equation $\|h'\|^2 = \|h\|^2 + 2\lambda\mu^\top h + \lambda^2$ indicates that norm changes depend on both $\lambda$ and the alignment between $\mu$ and $h$, making it uncontrollable. Consequently, while multiple-choice accuracy increases, open-ended generation quality (TRUE×INFO) often collapses, making models "over-conservative" or causing representation collapse.
 
-**Key Challenge**: Modern LLMs commonly normalize activation magnitudes using RMSNorm/LayerNorm, implying that *direction is the primary degree of freedom carrying semantics*. Additive steering perturbs magnitudes freely, conflicting with the geometric priors of the architecture.
+**Key Challenge**: Modern LLMs generally use RMSNorm or LayerNorm to standardize activation magnitudes, implying that *direction is the primary degree of freedom for semantic information*. Additive steering perturbs magnitudes freely, conflicting with the geometric priors of the model architecture.
 
-**Goal**: Design a *geometry-consistent* inference-time intervention primitive that is training-free like addition but strictly preserves $\|h\|$, avoiding damage to the geometric priors of normalization layers.
+**Goal**: Design a *geometrically consistent* inference-time intervention primitive that remains training-free like addition but strictly preserves $\|h\|$ to avoid disrupting the geometric priors of normalization layers.
 
-**Key Insight**: The authors made a critical empirical observation (Fig. 3)—on TruthfulQA, the $\ell_2$ norm curves of last-token activations for "correct" and "incorrect" answers almost overlap across all 32 layers (difference <1%), but their *directions* differ significantly. This indicates that truthfulness signals are encoded in direction rather than magnitude.
+**Key Insight**: The authors made a key empirical observation (Figure 3): on TruthfulQA, the $\ell_2$ norm curves of last-token activations for "correct" and "incorrect" answers almost coincide across all 32 layers (difference <1%), but their *directions* differ significantly. This directly demonstrates that truthfulness signals are encoded in the direction, not the magnitude.
 
-**Core Idea**: Normalize activations to the unit hypersphere $\mathbb{S}^{d-1}$, rotate them toward a target direction $\mu_T$ along a geodesic (great circle) using Slerp, and finally scale back to the original norm. This norm-preserving rotational intervention essentially replaces "addition in $\mathbb{R}^d$" with "rotation on $\mathbb{S}^{d-1}$".
+**Core Idea**: Project activations onto a unit hypersphere $\mathbb{S}^{d-1}$, rotate them toward a target direction $\mu_T$ along a geodesic (great circle) via Slerp, and finally scale back to the original norm. This norm-preserving rotation replaces "addition in $\mathbb{R}^d$" with "rotation on $\mathbb{S}^{d-1}$".
 
 ## Method
 
 ### Overall Architecture
-The method consists of three training-free steps:
-1. **Offline Prototype Construction**: Run the model on a contrastive dataset $\mathcal{D}=\{(x_i, y_i^+, y_i^-)\}$, extract last-token activations from layer $l$, compute the mean difference, and normalize it to obtain the "truthfulness axis" $\mu_T^{(l)}$ for that layer.
-2. **Inference-time Rotation**: For each intervened layer $l$ and each decoded token $j$, normalize the current activation $h_j^{(l)}$ to the sphere, rotate it toward $\mu_T^{(l)}$ via Slerp with a gating-determined step size $t_j^{(l)} \in [0,1]$, and restore the original norm.
-3. **vMF Confidence Gating**: Use the exponential form of the von Mises–Fisher distribution to perform a two-class softmax on the similarity between the current direction and $(\mu_T, \mu_H = -\mu_T)$, obtaining a "hallucination bias" confidence $\delta$. This is mapped to the intervention strength $t$ via threshold $\beta$ and scaling $\alpha$—applying strong rotation only when the model "appears to hallucinate."
+This work addresses the issue where traditional additive activation steering uncontrollably distorts hidden state norms while enhancing truthfulness, thereby damaging generation quality. Spherical Steering provides a completely training-free pipeline consisting of two stages: An offline stage uses a set of (positive, negative) contrastive samples to run the model and estimate a unit-length "truthfulness axis" $\mu_T^{(l)}$ for each intervention layer; an inference stage normalizes the activation of each decoded token to a unit hypersphere, calculates the rotation step size using a vMF confidence gate, rotates it toward $\mu_T^{(l)}$ along a geodesic, and scales it back to the original magnitude. The core mechanism replaces "addition $h+\lambda\mu$ in $\mathbb{R}^d$" with "rotation on $\mathbb{S}^{d-1}$" to strictly preserve $\|h\|$.
+
+```mermaid
+graph TD
+    subgraph OFF["Offline Phase: Hyperspherical Prototype"]
+        direction TB
+        A["Contrastive Samples (Pos / Neg)"] --> B["Extract l-th layer last-token representations<br/>Calculate mean difference Δ"]
+        B --> C["Normalize to get truthfulness axis μ_T<br/>(Hallucination axis μ_H = −μ_T)"]
+    end
+    C --> D["Inference: Decode token activation h at layer l<br/>Normalize to unit direction ĥ"]
+    D --> E["vMF Confidence Gating<br/>Calculate δ = p_H − p_T, determine step size t"]
+    E -->|"δ ≤ β: Direction already truthful"| F["t = 0, Pass activation unchanged"]
+    E -->|"δ > β: Suspected hallucination"| G["Geodesic Rotation<br/>Slerp(ĥ, μ_T, t) then scale by ‖h‖"]
+    F --> H["Update activation → Next layer / Continue decode"]
+    G --> H
+```
 
 ### Key Designs
 
-1. **Hyperspherical Prototype and Contrastive Mean Direction**:
-    - **Function**: Extract the "truthfulness direction unit vector" $\mu^{(l)}$ for a layer from contrastive samples at once.
-    - **Mechanism**: Feed concatenated sequences $x_i \| y_i^\pm$ for each $(x_i, y_i^+, y_i^-)$ into the model and take the last-token representation $z_i^{(l)\pm}$ of layer $l$. Compute the difference between positive and negative means $\Delta^{(l)} = m_+^{(l)} - m_-^{(l)}$ and normalize it: $\mu^{(l)} = \Delta^{(l)}/\|\Delta^{(l)}\|$. This step is offline, keeps model weights frozen, and is performed only once.
-    - **Design Motivation**: The mean difference automatically suppresses shared context between positive and negative samples, highlighting the discriminative component of "truth vs. falsehood." Normalization is required because subsequent operations occur on $\mathbb{S}^{d-1}$, necessitating a pure "direction" rather than a scaled offset. This is lighter than ITI's per-head probes and more geometrically consistent than CAA's additive approach.
+**1. Hyperspherical Prototype: Extracting the "Truthfulness Direction" from Contrastive Samples**
 
-2. **Geodesic Rotation = Slerp + Norm Restoration**:
-    - **Function**: Rotate $h^{(l)}$ along the shortest spherical path toward $\mu_T$ by a ratio $t$, then restore the original magnitude.
-    - **Mechanism**: Compute the angle $\theta = \arccos(\mu_T^\top \hat h^{(l)})$, then apply Shoemake’s (1985) spherical linear interpolation: $\hat h^{(l)\prime} = \frac{\sin((1-t)\theta)}{\sin\theta}\hat h^{(l)} + \frac{\sin(t\theta)}{\sin\theta}\mu_T$. Finally, set $h^{(l)\prime} = \|h^{(l)}\|\hat h^{(l)\prime}$. When $t=0$, there is no change; when $t=1$, it aligns perfectly with $\mu_T$. Degenerate cases ($\theta=0/\pi$) are handled separately.
-    - **Design Motivation**: Slerp provides the path of minimal angular change for a given step $t$, meaning "maximum semantic alignment with minimal directional perturbation." Meanwhile, $\|h^{(l)\prime}\| \equiv \|h^{(l)}\|$ holds strictly, bypassing the issue of uncontrolled $\|h\|$ in additive steering and conforming to the architectural prior that direction carries information after RMSNorm. Unlike Angular Steering which rotates in a fixed 2D plane, this method performs hyperspherical rotation in the original $d$-dimensional space without relying on PCA projections.
+Steering vectors in additive methods often carry scale and context noise, which can pollute activations. Here, only the "direction" is used: for each $(x_i, y_i^+, y_i^-)$, the concatenated sequences $x_i \| y_i^\pm$ are fed into the model. The last-token representations $z_i^{(l)\pm}$ at layer $l$ are extracted to calculate the mean difference $\Delta^{(l)} = m_+^{(l)} - m_-^{(l)}$, which is then normalized to $\mu^{(l)} = \Delta^{(l)}/\|\Delta^{(l)}\|$. The mean difference automatically cancels out context shared by positive and negative samples, leaving only the "truth versus hallucination" discriminative component. Normalization is required because all subsequent operations occur on $\mathbb{S}^{d-1}$, requiring pure direction rather than scaled offsets. This process is offline, keeps weights frozen, and is calculated only once per layer—making it lighter than ITI's per-head probes and more geometrically consistent than CAA's direct addition.
 
-3. **Input-Adaptive Step Size via vMF Confidence Gating**:
-    - **Function**: Vary $t$ based on the token—no intervention if the model is already in the "truthful" hemisphere, and stronger intervention as it leans toward the "hallucination" hemisphere.
-    - **Mechanism**: Use the exponential term of the vMF density $f(u;m,\kappa)\propto\exp(\kappa m^\top u)$ as a prototype score. Perform a two-class softmax over $(\mu_T, \mu_H)$ to get $p_T, p_H$, and define $\delta = p_H - p_T \in [-1,1]$. Apply threshold $\beta$ and scaling $\alpha$: $t = \mathrm{clip}(\alpha \cdot \frac{\delta-\beta}{1-\beta}, 0, 1)$, where $t=0$ if $\delta \le \beta$.
-    - **Design Motivation**: Compared to a uniform $t$ for all tokens, gating provides two benefits (Ablation Fig. 5): higher MC accuracy peaks with wider intervals, and stable TRUE×INFO even at high intensities (stable at $\alpha=1.0$), whereas ungated performance collapses at $\alpha > 0.6$. $\kappa$ controls the steepness of the confidence curve. This design follows the principle of "applying intervention only where a hallucination is likely."
+**2. Geodesic Rotation: Rotating Activations via Slerp and Restoring Magnitude**
 
-### Inference Flow
-For each decoding step and each selected layer $l$ in $\mathcal{L}=\{l_1,\dots,l_K\}$: Extract $h_j^{(l)}$ → Normalize → Compute $s_T, s_H$ → vMF gate computes $t_j^{(l)}$ → If $t>0$, perform Slerp rotation and restore norm; otherwise, pass through. The complexity involves a few dot products and sin/cos operations, which are negligible compared to the forward pass.
+Rotation naturally avoids norm distortion. Specifically, the activation is normalized to $\hat h^{(l)}$, and the angle between it and the target is calculated as $\theta = \arccos(\mu_T^\top \hat h^{(l)})$. Spherical linear interpolation (Slerp, Shoemake 1985) is used to interpolate along the great circle:
+
+$$\hat h^{(l)\prime} = \frac{\sin((1-t)\theta)}{\sin\theta}\hat h^{(l)} + \frac{\sin(t\theta)}{\sin\theta}\mu_T,\qquad h^{(l)\prime} = \|h^{(l)}\|\,\hat h^{(l)\prime}$$
+
+where $t=0$ represents no change and $t=1$ represents full rotation to $\mu_T$. Slerp provides the path with the minimal angular change for a fixed step size $t$, effectively "minimizing directional perturbation for maximal semantic alignment." Scaling back to $\|h^{(l)}\|$ ensures $\|h^{(l)\prime}\| \equiv \|h^{(l)}\|$ strictly holds, fitting the architectural prior where norms are standardized and direction carries information. Unlike Angular Steering which projects to a fixed 2D plane, this method performs geodesics directly on the original $d$-dimensional sphere without PCA approximations.
+
+**3. vMF Confidence Gating: Applying Intensive Rotation Only Near Hallucinations**
+
+Applying a uniform step size $t$ to all tokens is either insufficient or risks corrupting correct answers. Gating makes $t$ token-adaptive. It uses the exponential term of the von Mises–Fisher density $f(u;m,\kappa)\propto\exp(\kappa m^\top u)$ as a prototype score. A two-class softmax over $(\mu_T, \mu_H=-\mu_T)$ yields $p_T, p_H$. The "hallucination bias" confidence is defined as $\delta = p_H - p_T \in [-1,1]$, which is then truncated by threshold $\beta$ and scaled by $\alpha$:
+
+$$t = \mathrm{clip}\!\left(\alpha \cdot \frac{\delta-\beta}{1-\beta},\,0,\,1\right),\qquad \delta \le \beta \Rightarrow t=0$$
+
+Here, $\kappa$ is the vMF concentration parameter controlling the steepness of the confidence curve. Gated intervention provides two empirical benefits over ungated versions (Figure 5): higher peaks in MC accuracy and wider usable intervals; furthermore, generation quality (TRUE×INFO) remains stable even at high intensities ($\alpha=1.0$), whereas ungated performance collapses when $\alpha>0.6$. This essentially "applies water only where there is fire, sparing the good answers."
 
 ## Key Experimental Results
 
 ### Main Results
 
-On TruthfulQA (LLaMA-3.1-8B-Instruct), Spherical Steering achieves the best performance across multiple-choice metrics (MC1/MC2/MC3) and open-ended generation (TRUE×INFO) simultaneously—whereas additive baselines like ITI/CAA improve MC at the cost of TRUE×INFO, showing a typical trade-off.
+On TruthfulQA (LLaMA-3.1-8B-Instruct), Spherical Steering achieves the best performance across three multiple-choice metrics (MC1/MC2/MC3) and open-ended generation (TRUE×INFO) simultaneously—whereas additive baselines like ITI and CAA exhibit a trade-off where MC gains lead to TRUE×INFO drops.
 
 | Model | Method | MC1 | MC2 | MC3 | TRUE×INFO |
 |------|------|-----|-----|-----|-----------|
@@ -95,67 +103,70 @@ Zero-shot evaluation across 6 multi-choice benchmarks (LLaMA-3.1-8B-Instruct):
 | SADI-HEAD | 38.53 | 84.00 | 75.72 | 60.66 | 51.85 | 80.20 | 65.16 |
 | **Spherical (Ours)** | **49.95** | **95.00** | **89.08** | **62.05** | **52.72** | **82.94** | **71.96** |
 
-Average absolute Gain of +6.28%, with > +10% on COPA/StoryCloze.
+Average absolute gain of +6.28%, with +10% or more on COPA and StoryCloze.
 
 ### Ablation Study
 
 | Configuration | MC1 (TruthfulQA, LLaMA) | TRUE×INFO | Description |
 |------|--------------------------|-----------|------|
-| K=1 layer | 45.41 | 52.16 | Single layer rotation: MC already near peak |
-| K=2 layers | 47.62 | 73.93 | Additional layers mainly recover generation quality (INFO 62.9→90.3) |
-| K=3 layers | 47.13 | **74.43** | Best overall balanced point |
+| K=1 layer | 45.41 | 52.16 | Single-layer rotation: MC already near peak |
+| K=2 layers | 47.62 | 73.93 | Additional layers mainly improve generation (INFO 62.9→90.3) |
+| K=3 layers | 47.13 | **74.43** | Optimal balance point |
 | K=4 layers | 41.37 | 70.62 | Excessive intervention hurts MC |
-| K=5 layers | 41.37 | 70.09 | Same as above |
-| Ungated rotation (α=1.0) | — | Sharp decrease | Generation quality collapses at high α |
-| **vMF gated (α=1.0)** | — | Remains stable | Gating significantly extends the usable range of α |
+| K=5 layers | 41.37 | 70.09 | As above |
+| Ungated rotation (α=1.0) | — | Sharp Drop | Generation quality collapses at high α |
+| **vMF gated (α=1.0)** | — | Still Stable | Gating significantly expands usable α range |
 
 ### Key Findings
-- **Geometric Insight**: Fig. 3 shows that the activation norms for truthful vs. hallucinated instances overlap almost perfectly across all layers (<1% difference), proving that truthfulness signals reside in direction rather than magnitude, empirically validating the norm-preserving design.
-- **Collapse-Efficiency Advantage**: Fig. 4 shows that for the same decrease in effective rank (Δrank≈50), rotation gains 8–10% more MC accuracy than addition. While addition sees TRUE×INFO collapse after a slight rank decrease, rotation sustains quality gains across a wide range of rank drops.
-- **Asymmetric Effects of Multi-layer Intervention**: Moving from K=1 to K=3 keeps MC almost constant (+2.2%) but jumps INFO from 62.9% to 92.7%. The authors suggest middle layers govern semantic discrimination (MC signal), while later layers govern token-level generation dynamics (INFO signal).
-- **Orthogonality to 5-shot ICL**: When combined with ICL, ITI drops TRUE×INFO from 38.9 to 37.3, while Spherical simultaneously pushes MC1 to 52.4% and TRUE×INFO to 42.8%, indicating that geometric intervention and prompt engineering operate via independent mechanisms.
-- **High Sample Efficiency**: Using only 25 contrastive samples increases MC1 on LLaMA from 36.3% to 51.5% (±2.2), with variance shrinking rapidly as samples increase.
+- **Geometric Insight**: Figure 3 shows activation norms for truthful vs. hallucinated samples are nearly identical (<1% difference), proving truthfulness is encoded in direction, empirically validating the norm-preserving design.
+- **Collapse-efficiency Advantage**: Figure 4 shows that for the same effective rank reduction (Δrank≈50), rotation gains 8–10% more MC accuracy than addition; addition-based TRUE×INFO collapses after slight rank drops, while rotation maintains gains across a wide range.
+- **Asymmetric Multi-layer Effects**: Increasing layers from K=1 to 3 keeps MC stable (+2.2%) but causes INFO to jump from 62.9% to 92.7%. The authors suggest middle layers govern semantic discrimination (MC signal), while later layers govern token-level generation dynamics (INFO signal).
+- **Orthogonality with 5-shot ICL**: When combined with ICL, ITI reduces TRUE×INFO from 38.9 to 37.3; Spherical simultaneously increases MC1 to 52.4% and TRUE×INFO to 42.8%, showing geometric intervention operates on a mechanism independent of prompt engineering.
+- **High Sample Efficiency**: Only 25 contrastive samples are needed to increase MC1 from 36.3% to 51.5% (±2.2) on LLaMA; variance shrinks rapidly as samples increase.
 
 ## Highlights & Insights
-- **Reframing "Addition in $\mathbb{R}^d$" as "Rotation on $\mathbb{S}^{d-1}$" is a natural yet overlooked perspective**: Since architectures like RMSNorm already stabilize norms, the remaining degrees of freedom for free perturbation are purely directional. This work fully implements this observation as an intervention primitive.
-- **Slerp appears in LLM steering for the first time in a closed-form, training-free manner**: Unlike methods like HPR that learn a Householder reflection, Spherical achieves both "geometric consistency" and "zero training."
-- **vMF Gating is a lightweight plugin transferable to any steering method**: It essentially uses the interpretable confidence of direction to dynamically adjust intensity, potentially applicable to CAA, ITI, or SAE-based interventions to decouple norm and direction control.
-- **Strong "Pareto Improvement" arguments**: Fig. 1(a) plots MC accuracy against TRUE×INFO, showing all baselines stuck on a trade-off curve while the proposed method jumps to the upper-right—a compelling demonstration of breaking the trade-off.
-- **The concept of collapse-efficiency is methodologically valuable**: Instead of just end-point metrics, the introduction of "performance gain per unit of rank decrease" provides a comparative geometric efficiency metric for future intervention research.
+- **Reinterpreting "Addition in $\mathbb{R}^d$" as "Rotation on $\mathbb{S}^{d-1}$" is a natural yet overlooked perspective**: Since architectures use RMSNorm to stabilize magnitudes, the remaining degrees of freedom for semantics are directional. This work thoroughly implements this observation as an intervention primitive.
+- **First closed-form, training-free Slerp application in LLM steering**: Unlike HPR which learns a Householder reflection, Spherical does not require an angle predictor, achieving both geometric consistency and zero training.
+- **vMF gate is a lightweight plugin transferable to any steering method**: It uses directional confidence to dynamically adjust intensity, which could theoretically be applied to CAA, ITI, or SAE-based interventions to decouple norm and direction control.
+- **Robust "Pareto improvement" visualization**: Figure 1(a) plots MC accuracy against TRUE×INFO; while baselines are stuck on a trade-off curve, the proposed method moves toward the top-right, effectively breaking the trade-off.
+- **Introduction of "Collapse-efficiency"**: Instead of just end-point metrics, this work introduces "performance gain per unit of rank reduction" as a geometric efficiency metric, providing a valuable methodological tool for future intervention studies.
 
 ## Limitations & Future Work
-- **Prototypes rely on binary contrastive data**: Currently supports binary concepts (truthful/hallucinated, safe/unsafe). Extending this to "multi-class fine-grained concepts" (e.g., multiple emotions or styles) would require multi-prototype or multi-axis geometry, which is not discussed.
-- **Strong assumption of uni-axial $\mu_T$ and its antipode $\mu_H = -\mu_T$**: In reality, "truth" may not be perfectly antipodal to "hallucination," potentially causing failure in tasks with mixed correct/incorrect answers.
-- **Layer selection still relies on grid search**: While the method selects layers $\mathcal{L}=\{l_1,\dots,l_K\}$, the optimal combination is determined empirically (e.g., layer 24 for LLaMA), lacking a principled selection criterion.
-- **Validated only on 7–8B Instruct models**: Robustness of the hyperspherical assumption on base models, larger scales (30B+), or MoE architectures is unknown.
-- **Gating hyper-parameters**: $\kappa, \alpha, \beta$ collectively determine the gating shape, representing a non-trivial tuning space. Automatically estimating $\kappa$ from contrastive samples (vMF MLE) would be more efficient.
-- **Improvement Directions**: (i) Expanding the single axis $\mu_T$ into low-rank multi-axial geometry for composite concept steering; (ii) Using SAE features as prototype directions; (iii) Replacing "geodesics" with Riemannian gradient flow for multi-step iterative rotation.
+- **Reliance on binary contrastive data**: Currently supports only (positive, negative) dichotomies (truthful/hallucinated, safe/unsafe). Extending to fine-grained multi-class concepts would require multi-axis geometry.
+- **Antipodal Assumption**: The assumption that "truth" and "hallucination" are exactly antipodal ($\mu_H = -\mu_T$) might fail in tasks where correct and incorrect answers are more complexly distributed.
+- **Heuristic Layer Selection**: Choosing layers $\mathcal{L}=\{l_1,\dots,l_K\}$ currently relies on empirical grid search (e.g., layer 24 for LLaMA), lacking a principled selection criterion.
+- **Scalability limits**: Evaluation was restricted to 7–8B Instruct models; robustness on base models, larger scales (30B+), or MoE architectures remains unverified.
+- **Hyperparameter Tuning**: vMF parameters $\kappa, \alpha, \beta$ define the gate shape; estimating $\kappa$ directly from samples via MLE could automate this.
+- **Future Directions**: (i) Expanding $\mu_T$ to low-rank multi-axis geometry for composite concept steering; (ii) Using SAE features as prototype directions; (iii) Replacing Slerp with iterative Riemannian gradient flow for multi-step rotation.
 
 ## Related Work & Insights
-- **vs. CAA (Rimsky et al., 2024)**: CAA uses layer-wise addition $h + \lambda\mu$. This work replaces it with Slerp rotation to preserve the norm. On LLaMA, CAA achieves MC1=35.99 / TRUE×INFO=49.66, while this work achieves 49.95 / 54.63.
-- **vs. ITI (Li et al., 2023)**: ITI selects "truthful heads" via per-head linear probes and applies small additions. This work uses whole-layer directional rotation. While ITI's TRUE×INFO drops to 40.31 on LLaMA, this work increases it to 54.63.
-- **vs. Angular Steering (Vu & Nguyen, 2025)**: Also an angular intervention, but it projects activations into a fixed 2D plane first, relying on low-dimensional kernels. This work operates directly on the raw $d$-dimensional spherical geodesic without PCA.
-- **vs. HPR (Pham & Nguyen, 2024)**: HPR uses Householder reflections and a trained angle prediction network. This work is closed-form and training-free, sacrificing per-input angle learning flexibility for lightweight vMF-based adaptation.
-- **vs. ReFT / LoFiT (Wu et al., 2024; Yin et al., 2024)**: These involve representation fine-tuning with lightweight modules. This work takes the "structured intervention" idea to a training-free extreme using pure geometric priors.
-- **Insight**: This "Sphere + Geodesic + Confidence Gate" combination can be transferred to *any* scenario where semantics are directionally encoded—image tokens in VLMs, noise embeddings in diffusion models, or graph representations. Any layer following LayerNorm/RMSNorm where editing is required should consider "Addition vs. Rotation" for geometric consistency.
+- **vs CAA (Rimsky et al., 2024)**: CAA uses additive $h + \lambda\mu$. This work replaces it with Slerp rotation to preserve norms; while CAA gets MC1=35.99 / TRUE×INFO=49.66 on LLaMA, this work achieves 49.95 / 54.63, proving geometric consistency pays off.
+- **vs ITI (Li et al., 2023)**: ITI uses per-head linear probes to select "truthful heads" for small additions. This work uses full-layer rotation; ITI's TRUE×INFO drops to 40.31, whereas ours rises to 54.63, showing rotation is more self-consistent than selective addition.
+- **vs Angular Steering (Vu & Nguyen, 2025)**: Angular Steering projects to a 2D plane first, depending on low-dimensional approximations. This work performs geodesics in the original $d$-dimensional space without PCA.
+- **vs HPR (Pham & Nguyen, 2024)**: HPR requires training a network for Householder reflections. This work is closed-form and training-free, utilizing the vMF gate for adaptive flexibility instead.
+- **vs ReFT / LoFiT (Wu et al., 2024; Yin et al., 2024)**: These involve representation fine-tuning with lightweight modules. This work pushes the "structural intervention" idea to a training-free extreme using pure geometric priors.
+- **Key Insight**: The "Sphere + Geodesic + Confidence Gate" combination can be transferred to any scenario where semantics are direction-encoded—such as VLM image tokens or diffusion noise embeddings—wherever editing is required after Layer/RMSNorm.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Replacing addition with rotation is a single-point idea, but the complete combination of hyperspherical geometry, Slerp, and vMF gating with rigorous geometric proof makes it a clean and effective innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 6 MC benchmarks, open-ended generation, collapse-efficiency, and ablations for layers/gating/ICL/sample size. Lacks validation on larger models.
-- **Writing Quality**: ⭐⭐⭐⭐ The logical chain from motivation to geometric insight to method to validation is very smooth. Fig. 1 effectively illustrates "breaking the trade-off."
-- **Value**: ⭐⭐⭐⭐ Provides a plug-and-play, training-free, norm-preserving steering primitive. The collapse-efficiency metric is of methodological significance for future intervention studies.
+- Novelty: ⭐⭐⭐⭐ The single idea (swapping addition for rotation) is not revolutionary, but the complete synthesis of hyperspherical geometry, Slerp, and vMF gating with rigorous geometric proof is a "correct" and elegant innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 6 MC benchmarks, open-ended generation, collapse-efficiency, and ablations for layers/gating/ICL. Needs broader model scale validation.
+- Writing Quality: ⭐⭐⭐⭐ The logical chain from geometric insight to method and validation is very smooth. Figure 1 clearly demonstrates the break in trade-offs.
+- Value: ⭐⭐⭐⭐ Provides a plug-and-play, zero-training, norm-preserving steering primitive, and the "collapse-efficiency" metric is methodologically significant for future intervention research.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
 - [\[ICML 2026\] Top-W: Geometry-Aware Decoding with Wasserstein-Regularized Truncation and Mass Penalties for LLMs](geometry-aware_decoding_with_wasserstein-regularized_truncation_and_mass_penalti.md)
-- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
-- [\[ICML 2026\] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction](investigating_advanced_reasoning_of_large_language_models_via_black-box_environm.md)
+- [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
 - [\[ICML 2026\] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning](agzo_activation-guided_zeroth-order_optimization_for_llm_fine-tuning.md)
+- [\[ICML 2026\] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction](investigating_advanced_reasoning_of_large_language_models_via_black-box_environm.md)
+- [\[ICML 2026\] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay](politicsbench_benchmarking_political_values_in_large_language_models_with_multi-.md)
 
 </div>
 

@@ -2,72 +2,80 @@
 title: >-
   [Paper Note] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 description: >-
-  [CVPR 2026][Image Generation][Tensor Ring Decomposition] This paper proposes RepTRFD, which reparameterizes Tensor Ring factors into the form of "learnable latent tensor × fixed basis" to address the spectral bias proble…
+  [CVPR 2026][Image Generation][Paper Note] Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Tensor Ring Decomposition"
-  - "Implicit Neural Representation"
-  - "Reparameterization"
-  - "Image Inpainting"
-  - "Point Cloud Recovery"
-  - "Frequency Analysis"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: b0da0af01aeab336
+content_hash: f813f4a88f9be3c7
 ---
-
 # Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.01034](https://arxiv.org/abs/2603.01034)  
 **Code**: [YangyangXu2002/RepTRFD](https://github.com/YangyangXu2002/RepTRFD)  
-**Area**: 3D Vision / Low-Level Vision / Tensor Decomposition
+**Area**: 3D Vision / Low-level Vision / Tensor Decomposition  
 **Keywords**: Tensor Ring Decomposition, Implicit Neural Representation, Reparameterization, Image Inpainting, Point Cloud Recovery, Frequency Analysis
 
 ## TL;DR
 
-This paper proposes RepTRFD, which reparameterizes Tensor Ring factors into the form of "learnable latent tensor × fixed basis" to address the spectral bias problem inherent in INR-parameterized TR factors, achieving state-of-the-art performance across image inpainting, denoising, super-resolution, and point cloud recovery tasks.
+Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
 
 ## Background & Motivation
 
-**Low-rank tensor decompositions are widely applicable**: CP, Tucker, TT, and TR decompositions provide compact representations for multi-dimensional data such as images, videos, remote sensing imagery, and medical imaging. Among these, TR decomposition is particularly efficient for high-order tensor modeling due to its ring-structured topology.
+**Background**: Low-rank tensor decompositions such as CP, Tucker, TT, and TR provide compact representations for multi-dimensional data (images, video, remote sensing, medical imaging). TR decomposition is particularly efficient for high-order tensor modeling due to its ring structure.
 
-**Discrete TR is limited to fixed grids**: Conventional TR decomposition is inherently discrete, defined only on fixed meshgrids, and cannot handle continuous signals or resolution-agnostic modeling scenarios (e.g., sparse point clouds).
+**Limitations of Prior Work**: Traditional TR decomposition is inherently discrete, defined only on fixed grids, making it unable to handle continuous signals or resolution-independent modeling (e.g., sparse point clouds).
 
-**INR enables functional tensor decomposition**: Prior work has extended Tucker/CP/TT decompositions to the continuous domain (e.g., LRTFR, DRO-TFF), but the continuous generalization of TR decomposition remains unexplored.
+**Goal**: While existing works extend Tucker, CP, and TT decompositions to the continuous domain (e.g., LRTFR, DRO-TFF), a continuous extension for TR decomposition remains missing.
 
-**Directly applying INR to TR factors is ineffective**: When INR is directly used to parameterize TR factors, reconstructions are dominated by low-frequency components, with severe loss of high-frequency detail.
+**Key Challenge**: Directly using INR to parameterize TR factors leads to poor reconstruction as results are dominated by low-frequency components, causing a severe loss of high-frequency details.
 
-**Frequency-domain analysis reveals the root cause**: The authors theoretically demonstrate that the spectral characteristics of TR factors are directly propagated to the reconstructed tensor — if a factor lacks high-frequency components, the reconstruction will correspondingly lack high frequencies along that dimension.
+**Key Insight**: Frequency analysis reveals that the spectral characteristics of TR factors are directly transmitted to the reconstructed tensor. If the factors lack high-frequency components, the reconstruction will also lack high-frequency details in the corresponding dimensions.
 
-**Spectral bias of INR is the bottleneck**: Standard INRs (e.g., SIREN) tend to learn low-frequency components and struggle to capture the high-frequency content required in TR factors, necessitating a new strategy to overcome this limitation.
+**Secondary Limitation**: Standard INRs (e.g., SIREN) possess an inherent spectral bias toward learning low-frequency components, making it difficult to capture the high-frequency content required in TR factors.
 
 ## Method
 
 ### Overall Architecture
 
-RepTRFD consists of three core components:
+The core problem is that traditional TR decomposition is limited to discrete grids, while direct INR parameterization of TR factors suffers from low-frequency dominance. RepTRFD uses INR to "generate" TR factors but inserts a reparameterization layer between the network and the factors. The network outputs a learnable latent tensor, which is then multiplied by a fixed basis to form the actual factors used for TR contraction.
 
-1. **Shared frequency embedding layer**: For each dimensional coordinate $v_k$, a single sinusoidal layer produces an embedding $\mathbf{z}_k = \sin(\omega_0(\mathbf{w}v_k + \mathbf{b}))$, with parameters shared across all modes to enhance cross-mode consistency.
-2. **Branch MLP networks**: Each mode has a dedicated MLP $f_{\theta_k}$ that maps the embedding to a latent tensor slice $\mathcal{C}^{(k)}_{:v_k:} \in \mathbb{R}^{r_k \times R_{k+1}}$, where $R_{k+1} = \beta r_{k+1}$ ($\beta \geq 1$ is an expansion factor).
-3. **Reparameterization and TR contraction**: The TR factor is obtained via $\mathcal{G}^{(k)} = \mathcal{C}^{(k)} \times_3 \mathbf{B}^{(k)}$ (where $\mathbf{B}^{(k)}$ is a fixed basis), and the target tensor entry is reconstructed through the trace operation of TR contraction $\Phi(\cdot)$.
+The pipeline operates as follows: coordinates $v_k$ pass through a shared sinusoidal frequency embedding layer $\mathbf{z}_k = \sin(\omega_0(\mathbf{w}v_k + \mathbf{b}))$. Each mode has a branch MLP $f_{\theta_k}$ that maps the embedding to latent tensor slices $\mathcal{C}^{(k)}_{:v_k:} \in \mathbb{R}^{r_k \times R_{k+1}}$ (where $R_{k+1} = \beta r_{k+1}$ and $\beta \geq 1$ is the expansion factor). The latent tensor is contracted with a fixed basis $\mathbf{B}^{(k)}$ via $\mathcal{G}^{(k)} = \mathcal{C}^{(k)} \times_3 \mathbf{B}^{(k)}$ to produce the actual TR factors. Finally, the target tensor elements are reconstructed using the trace operation of the TR contraction operator $\Phi(\cdot)$.
 
-### Key Designs: Reparameterization Strategy
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Coordinates v_k"] --> S1
+    subgraph S1["Shared Frequency Embedding + Branch MLP"]
+        direction TB
+        B["Shared sinusoidal frequency embedding<br/>z_k = sin(ω₀(w·v_k + b))"] --> C["Mode branch MLP f_θk<br/>Outputs latent tensor slices C⁽ᵏ⁾"]
+    end
+    S1 --> D["Factor Reparameterization<br/>G⁽ᵏ⁾ = C⁽ᵏ⁾ ×₃ B⁽ᵏ⁾ (Fixed Basis)"]
+    D --> E["TR Contraction Φ(·) Trace Operation<br/>Reconstructs target tensor elements"]
+```
 
-- **Core Idea**: Each TR factor is decomposed into a structured combination of a learnable latent tensor $\mathcal{C}^{(k)}$ (generated by INR) and a fixed basis $\mathbf{B}^{(k)}$.
-- **Theoretical Motivation (Theorem 2)**: It is proved that there exists a specific basis $\mathbf{B}$ such that the gradient response ratio for high-frequency components after reparameterization is no less than that in the original parameter space, making optimization more sensitive to high-frequency details and effectively improving training dynamics.
-- **Initialization Scheme (Theorem 3)**: A Xavier-style initialization is adopted, $\mathbf{B}^{(k)}_{ij} \sim \mathcal{U}(-\sqrt{6/(r_{k+1}+R_{k+1})}, \sqrt{6/(r_{k+1}+R_{k+1})})$, ensuring consistent variance in both forward and backward passes.
-- **Lipschitz Continuity (Theorem 4)**: The entire RepTRFD mapping is proved to be globally Lipschitz continuous, ensuring that the model is not overly sensitive to input perturbations.
+### Key Designs
+
+**1. Shared Frequency Embedding + Branch MLP: Unified coordinate encoding for all modes**
+
+Using independent INRs for each mode can lead to inconsistent frequency responses and overfitting. RepTRFD uses a shared sinusoidal embedding layer $\mathbf{z}_k = \sin(\omega_0(\mathbf{w}v_k + \mathbf{b}))$ across all modes, with individual branch MLPs $f_{\theta_k}$ generating mode-specific latent tensor slices. This shared embedding imposes cross-mode consistency at the parameter level, resulting in more stable training.
+
+**2. Factor Reparameterization: Shifting high-frequency learning to sensitive optimization spaces**
+
+This is the core contribution. RepTRFD decomposes each TR factor into a structure of "learnable latent tensor $\mathcal{C}^{(k)}$ (generated by INR) $\times$ fixed basis $\mathbf{B}^{(k)}$". Theorem 2 proves that there exists a specific basis $\mathbf{B}$ such that the gradient response ratio for high-frequency components in the reparameterized space is higher than in the original parameter space, making the optimization more sensitive to high-frequency details.
+
+The fixed basis values are carefully set. Theorem 3 provides a Xavier-style initialization $\mathbf{B}^{(k)}_{ij} \sim \mathcal{U}(-\sqrt{6/(r_{k+1}+R_{k+1})}, \sqrt{6/(r_{k+1}+R_{k+1})})$ to ensure variance consistency in forward and backward propagation. Theorem 4 proves the global Lipschitz continuity of the RepTRFD mapping, ensuring robustness against input perturbations. Since $\mathbf{B}^{(k)}$ is frozen after initialization, the computational overhead is negligible (~1s).
 
 ### Loss & Training
 
-A general framework of a data fidelity term $\mathsf{L}_{\text{data}}$ plus an optional regularization term $\mathsf{L}_{\text{reg}}$ is adopted: $\min_\phi \mathsf{L}_{\text{data}}(g_\phi; \mathcal{O}) + \mathsf{L}_{\text{reg}}(g_\phi)$. Different data terms and regularizers are selected according to the specific task (inpainting / denoising / super-resolution / point cloud recovery).
+A general framework combining data fidelity and optional regularization is used: $$\min_\phi \mathsf{L}_{\text{data}}(g_\phi; \mathcal{O}) + \mathsf{L}_{\text{reg}}(g_\phi)$$, where data terms and regularization are selected based on the specific task (inpainting, denoising, super-resolution, or point cloud recovery).
 
-## Key Experimental Results
+## Experimental Results
 
 ### Main Results
 
-**Image/Video Inpainting**: RepTRFD consistently outperforms TRLRF, FCTN, HLRTF, LRTFR, DRO-TFF, and NeurTV on color images, multispectral images (MSI), hyperspectral images (HSI), and video data.
+**Image/Video Inpainting**: Ours outperforms TRLRF, FCTN, HLRTF, LRTFR, DRO-TFF, and NeurTV across color images, multispectral images (MSI), hyperspectral images (HSI), and video.
 
 | Dataset | Method | SR=0.1 PSNR | SR=0.2 PSNR | SR=0.3 PSNR |
 |--------|------|-------------|-------------|-------------|
@@ -87,59 +95,58 @@ A general framework of a data fidelity term $\mathsf{L}_{\text{data}}$ plus an o
 
 ### Ablation Study
 
-1. **Effect of reparameterization**: At SR=0.2, removing reparameterization degrades PSNR from 30.45→27.41 (−3.04 dB) on color images and from 48.67→29.41 (−19.26 dB) on MSI, while the additional computation overhead is only approximately 1 second.
-2. **Effect of expansion factor β**: Increasing β from 1 to 10 consistently improves PSNR and accelerates convergence, with diminishing returns at larger values.
-3. **Sensitivity of basis initialization**: On HSI Botswana, varying the initialization scale $a$ from 0.01 to 1 shows that the theoretically derived value $a \approx 0.165$ achieves the best PSNR (45.27), with significant degradation when $a$ is either too small or too large.
-4. **Shared frequency embedding**: Compared to independent embeddings, the shared embedding yields more stable training and stronger resistance to overfitting.
-5. **Model complexity comparison**: Under matched parameter counts and FLOPs, RepTRFD consistently outperforms LRTFR.
+1.  **Effect of Reparameterization**: Without vs. with reparameterization at SR=0.2, color image PSNR improved from 27.41 to 30.45 (+3.04 dB), and MSI from 29.41 to 48.67 (+19.26 dB).
+2.  **Impact of Expansion Factor $\beta$**: As $\beta$ increased from 1 to 10, PSNR improved with faster convergence, though gains eventually diminished.
+3.  **Sensitivity to Basis Initialization**: For HSI Botswana, the optimal PSNR (45.27) was achieved at the theoretically derived scale $a \approx 0.165$.
+4.  **Shared Frequency Embedding**: Compared to independent embeddings, shared embeddings provided more stable training and better anti-overfitting properties.
+5.  **Complexity**: Under matched parameter counts and FLOPs, RepTRFD consistently outperformed LRTFR.
 
 ### Key Findings
 
-- The gains from reparameterization are particularly pronounced on higher-order data (HSI, video), with improvements reaching **19 dB** on MSI inpainting.
-- Computational overhead is minimal (~1s), primarily because the fixed basis $\mathbf{B}$ does not participate in gradient updates.
-- On super-resolution tasks, RepTRFD runs 10–30× faster than pure INR methods (SIREN/WIRE/FINER) while achieving approximately 1 dB higher PSNR.
+*   Gains from reparameterization are particularly significant for high-order data (HSI, Video), where MSI inpainting saw a **19 dB** improvement.
+*   Computational overhead is minimal (~1s), as the fixed basis $\mathbf{B}$ requires no gradient updates.
+*   In super-resolution tasks, it is 10-30x faster than pure INR methods (SIREN/WIRE/FINER) with ~1 dB higher PSNR.
 
 ## Highlights & Insights
 
-1. **First extension of TR decomposition to the continuous domain**, filling the gap in tensor functional representation for the TR format.
-2. **Novel frequency-domain analysis perspective**: The paper theoretically establishes the mechanism by which the spectrum of TR factors propagates to that of the reconstructed tensor, providing a theoretical foundation for understanding frequency bottlenecks in tensor functional representations.
-3. **Simple yet effective reparameterization strategy**: Introducing a single fixed basis matrix — without modifying the network architecture or training procedure — significantly improves the model's ability to learn high-frequency components.
-4. **Comprehensive theoretical guarantees**: Covering gradient dynamics (Theorem 2), initialization (Theorem 3), and Lipschitz continuity (Theorem 4), the theoretical analysis is both rigorous and practically informative.
-5. **Unified framework across four tasks**: Inpainting, denoising, super-resolution, and point cloud recovery all share the same architecture, demonstrating strong generality.
+1.  **First to extend TR decomposition to the continuous domain**, filling the gap for TR formats in tensor functional representation.
+2.  **Novel frequency analysis perspective**: Theoretically reveals the transmission mechanism from TR factor spectra to reconstructed tensor spectra.
+3.  **Simple and effective reparameterization**: Introduces a single fixed basis matrix without changing network architecture, significantly boosting high-frequency learning.
+4.  **Rigorous theoretical guarantees**: Covers gradient dynamics (Theorem 2), initialization (Theorem 3), and Lipschitz continuity (Theorem 4).
+5.  **Unified framework across four tasks**: High versatility across inpainting, denoising, super-resolution, and point cloud recovery.
 
 ## Limitations & Future Work
 
-1. **Manual hyperparameter tuning is still required**: TR ranks $r_k$, expansion factor $\beta$, and frequency $\omega_0$ must be tuned per task; an adaptive rank selection mechanism is absent.
-2. **Validation limited to 3rd- and 4th-order tensors**: Although theoretically extendable to arbitrary orders, experiments only cover 3rd-order (image/MSI/HSI) and 4th-order (video) data; higher-order scenarios (e.g., light fields, spatio-spectral data) are not evaluated.
-3. **No comparison with end-to-end deep learning methods**: All baselines are traditional optimization or INR-based methods; supervised approaches such as U-Net or Transformer architectures are not considered.
-4. **Point cloud recovery tested only on small-scale models**: The SHOT dataset is limited in scale; scalability on large-scale scenes (e.g., ShapeNet, real-world LiDAR point clouds) is not verified.
-5. **Fixed basis is not learned**: $\mathbf{B}^{(k)}$ is frozen after initialization, which may cap expressive capacity; learnable or adaptive bases could be explored in future work.
+1.  **Manual hyperparameter tuning**: Parameters like TR rank $r_k$, expansion factor $\beta$, and frequency $\omega_0$ require per-task tuning.
+2.  **Limited to 3rd-4th order tensors**: While theoretically scalable, experiments did not cover higher-order data like light fields or spatio-spectral-temporal data.
+3.  **Lack of comparison with end-to-end deep learning**: Baselines are confined to traditional optimization or INR methods, excluding supervised methods like U-Net or Transformers.
+4.  **Scalability in point clouds**: Testing was limited to small-scale SHOT datasets, leaving large-scale LiDAR or ShapeNet scenes unverified.
+5.  **Passive fixed basis**: Since $\mathbf{B}^{(k)}$ is frozen, exploring learnable or adaptive bases might further increase expressivity.
 
 ## Related Work & Insights
 
-- **INR methods**: SIREN (sinusoidal activations), WIRE (wavelets), FINER (variable frequencies) — the proposed method is complementary from a tensor decomposition perspective, offering faster speed with higher accuracy.
-- **Tensor functional representations**: LRTFR (continuous Tucker) and DRO-TFF (deep rank-one decomposition) — this paper is the first to introduce the TR format into this framework, and addresses spectral bias through reparameterization.
-- **Reparameterization techniques**: Weight Normalization, RepVGG structural reparameterization, and Shi et al.'s INR weight decomposition — this paper elevates reparameterization from the network weight level to the tensor factor level.
-- **Tensor completion**: TRLRF, FCTN, HLRTF — these discrete methods cannot handle non-grid data, whereas the proposed method achieves superior performance on both data types.
+*   **INR series**: SIREN, WIRE, FINER — Ours is complementary via tensor decomposition, offering higher precision and speed.
+*   **Tensor Functional Representation**: LRTFR (Tucker), DRO-TFF (Rank-1) — Ours introduces the TR format and solves spectral bias via reparameterization.
+*   **Reparameterization**: Weight Normalization, RepVGG, and INR weight decomposition — Ours applies reparameterization at the tensor factor level rather than network weights.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — TR functionalization + frequency-domain analysis + factor reparameterization constitute three progressive and complementary contributions
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Four tasks, multiple data types, and thorough ablations; the absence of comparisons with deep learning methods is a minor limitation
-- Writing Quality: ⭐⭐⭐⭐⭐ — Rigorous theoretical derivations, clear figures and tables, and a coherent narrative from problem identification → analysis → solution → validation
-- Value: ⭐⭐⭐⭐ — Introduces a new TR format and reparameterization paradigm for tensor functional representations, with considerable room for future extensions
+*   Novelty: ⭐⭐⭐⭐ — TR functionalization + frequency analysis + factor reparameterization are well-integrated.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive across tasks and data types, though missing deep learning baselines.
+*   Writing Quality: ⭐⭐⭐⭐⭐ — Rigorous derivations and clear logic from problem analysis to solution.
+*   Value: ⭐⭐⭐⭐ — Provides a new TR format and reparameterization paradigm for tensor functional representation.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
-- [\[AAAI 2026\] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition](../../AAAI2026/image_generation/conditional_diffusion_model_for_multi-agent_dynamic_task_dec.md)
-- [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](../../ICML2026/image_generation/offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
+- [\[CVPR 2026\] Functional Mean Flow in Hilbert Space](functional_mean_flow_in_hilbert_space.md)
+- [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
+- [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](../../ICCV2025/image_generation/transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
 
 </div>
 

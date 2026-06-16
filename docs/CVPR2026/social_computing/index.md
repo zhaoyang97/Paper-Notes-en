@@ -33,16 +33,16 @@ item_total: 4
 
 **[Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)**
 
-:   This paper proposes the MaLSF framework, which employs mask-label pairs as semantic anchors and introduces a Bidirectional Cross-modal Verification (BCV) module and a Hierarchical Semantic Aggregation (HSA) module to enable active local semantic conflict detection, achieving state-of-the-art performance on the DGM4 benchmark and fake news detection tasks.
+:   The MaLSF framework is proposed, utilizing mask-label pairs as semantic anchors to achieve active local semantic conflict detection through Bidirectional Cross-modal Verification (BCV) and Hierarchical Semantic Aggregation (HSA) modules, achieving SOTA on DGM4 and fake news detection tasks.
 
 **[Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)**
 
-:   This paper proposes leveraging provenance information—automatically obtained during the synthetic data generation process—as auxiliary supervision signals. By applying input gradient guidance (suppressing input gradients in non-target regions), the method directly encourages models to learn discriminative representations focused on target regions. Effectiveness is validated across multiple tasks and modalities, including weakly supervised localization, spatio-temporal action detection, and image classification.
+:   This paper proposes utilizing "provenance" automatically obtained during the synthetic data generation process as an auxiliary supervision signal. By employing input gradient guidance—specifically inhibiting input gradients in non-target regions—the method directly encourages models to learn discriminative representations focused on target areas. Its effectiveness is validated across multiple tasks and modalities, including weakly supervised localization, spatio-temporal action detection, and image classification.
 
 **[Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)**
 
-:   This paper reformulates Multimodal Misinformation Detection (MMD) as a structured probabilistic reasoning problem over concept graphs. The proposed PCGR framework employs MLLMs to automatically discover and validate human-interpretable concept nodes, constructs a hierarchical probabilistic concept graph, and achieves interpretable misinformation detection, outperforming 13 baselines across three benchmarks.
+:   This paper reformulates multimodal misinformation detection (MMD) as a structured probabilistic reasoning problem based on a concept graph. It proposes the PCGR framework, which utilizes MLLMs to automatically discover and verify human-understandable concept nodes, constructing a hierarchical probabilistic concept graph. This achieves interpretable misinformation detection and comprehensively outperforms 13 baselines across three benchmarks.
 
 **[Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning](revisiting_unknowns_towards_effective_and_efficient_open-set_active_learning.md)**
 
-:   This paper proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures among unknown classes via label-guided clustering, jointly models known and unknown categories through a Dirichlet calibration auxiliary head, and introduces a two-stage adaptive querying strategy. E2OAL simultaneously achieves high accuracy, high query purity, and high training efficiency across multiple benchmarks.
+:   Ours proposes E2OAL, a detector-free open-set active learning framework that discovers latent structures of unknown classes via label-guided clustering, jointly models known and unknown categories using a Dirichlet-calibrated auxiliary head, and designs a two-stage adaptive querying strategy to simultaneously achieve high accuracy, high query purity, and high training efficiency across multiple benchmarks.

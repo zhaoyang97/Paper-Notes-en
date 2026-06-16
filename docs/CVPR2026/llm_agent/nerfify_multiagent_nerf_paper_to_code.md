@@ -2,131 +2,131 @@
 title: >-
   [Paper Note] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 description: >-
-  [CVPR 2026][LLM Agent][NeRF] Nerfify is proposed, a domain-aware multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar (CFG) constraints…
+  [CVPR 2026][LLM Agent][NeRF] Ours proposes Nerfify, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plug-in code through context-free grammar constraints, Graph of Thoughts code synthesis, and compositional citation recovery. It achieves a 100% execution rate on a 30-paper benchmark, with visual quality di
 tags:
-  - "CVPR 2026"
-  - "LLM Agent"
-  - "NeRF"
-  - "paper-to-code"
-  - "multi-agent"
-  - "code synthesis"
-  - "Nerfstudio"
+  - CVPR 2026
+  - LLM Agent
+  - NeRF
+  - paper-to-code
+  - multi-agent
+  - code synthesis
+  - context-free grammar
 date: 2026-05-08
-content_hash: d11f3b844cf1000c
+content_hash: e4a0bbca1ba00760
 ---
-
 # Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)  
-**Code**: To be open-sourced  
-**Area**: LLM Agent
-**Keywords**: NeRF, paper-to-code, multi-agent, code synthesis, Nerfstudio
+**Code**: Coming Soon  
+**Area**: 3D Vision / Code Generation  
+**Keywords**: NeRF, paper-to-code, multi-agent, code synthesis, context-free grammar
 
 ## TL;DR
-Nerfify is proposed, a domain-aware multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar (CFG) constraints, Graph-of-Thought (GoT) code synthesis, and compositional reference dependency recovery, achieving 100% executability with visual quality within ±0.5 dB PSNR of expert implementations.
+Ours proposes Nerfify, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plug-in code through context-free grammar constraints, Graph of Thoughts code synthesis, and compositional citation recovery. It achieves a 100% execution rate on a 30-paper benchmark, with visual quality differing from expert implementations by only $\pm 0.5$ dB PSNR.
 
 ## Background & Motivation
-**Background**: Since its publication in 2020, NeRF has generated over 1,000 follow-up works, yet most papers lack public code or standardized implementations, requiring weeks of effort to re-implement prior methods for each subsequent work.
+**Background**: The NeRF field has seen over 1000 follow-up papers since 2020. However, most lack public code or standardized implementations, requiring significant manual effort to re-implement existing methods for subsequent research.
 
-**Limitations of Prior Work**: General-purpose paper-to-code systems (Paper2Code, AutoP2C) fail almost entirely on NeRF—producing trainable code in only 5% of cases. GPT-5 in single-pass generation mode achieves only 26.6% accuracy on complex papers. NeRF implementations span the intersection of volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray-sphere intersection can cause NaN gradients or degenerate solutions.
+**Limitations of Prior Work**: General paper-to-code systems (e.g., Paper2Code, AutoP2C) fail significantly in the NeRF domain—the current best system, O1, achieves only 26.6% accuracy on complex papers and generally fails to produce trainable NeRF code. Frontiers like GPT-5 only generate syntactically correct code that lacks convergence.
 
-**Key Challenge**: General-purpose methods lack domain knowledge and cannot handle NeRF's implicit dependency chains (e.g., "we adopt the distillation loss from [3]" requires traversing references, locating the correct equation, translating it to code, and implementing stop-gradient), nor can they satisfy the modular composition constraints of the Nerfstudio framework.
+**Key Challenge**: NeRF implementation requires expertise across volume rendering, computer vision, and neural optimization. A single incorrect activation function or improper ray-sphere intersection can lead to failures ranging from NaN gradients to degenerate solutions. Compounding this is the deep citation dependency in modern NeRF papers—for instance, "we adopt the distortion loss from [3]" requires tracing multiple papers to extract the correct implementation.
 
-**Goal**: To automatically convert NeRF papers into trainable, convergent, high-quality standardized Nerfstudio code, reducing the turnaround time from weeks to minutes.
+**Goal**: How to automatically transform NeRF research papers into standardized code that is trainable, convergent, and matches the visual quality of expert implementations.
 
-**Key Insight**: Formalizing the Nerfstudio architecture as a context-free grammar (CFG), using domain constraints to guide LLM code synthesis, and employing multi-agent collaboration to resolve dependency chains and iterate via visual feedback.
+**Key Insight**: Replace general paper-to-code methods with a domain-specific multi-agent framework, formalizing the Nerfstudio architecture as a context-free grammar to constrain code generation.
 
-**Core Idea**: Domain awareness through CFG constraints, reference dependency recovery, GoT synthesis, and visual feedback transforms NeRF paper-to-code from infeasible to high-quality automation.
+**Core Idea**: By encoding the Nerfstudio architecture into CFG-constrained LLM synthesis, employing Graph of Thoughts for topologically ordered multi-file repository generation, and using compositional citation recovery to automatically trace dependency papers, Ours achieves reliable conversion from NeRF papers to trainable code.
 
 ## Method
 
 ### Overall Architecture
-Nerfify employs a four-stage pipeline: (1) CFG formalization and in-context learning—parsing the paper PDF into structured markdown and constructing a domain knowledge base $\mathcal{K}$; (2) compositional dependency resolution—traversing the citation graph to recursively retrieve key components from cited papers; (3) grammar-guided repository code generation—GoT multi-agent synthesis of multi-file code in topological order; (4) visually-driven feedback—rendering images after training, then iteratively repairing code via PSNR analysis and VLM diagnosis.
+Nerfify converts NeRF papers to code via four stages: (1) CFG-constrained synthesis, formalizing the Nerfstudio architecture as a Context-Free Grammar (CFG) and constructing a knowledge base $\mathcal{K}$; (2) Compositional citation recovery, traversing the citation graph to perform multi-hop retrieval of hidden dependency components; (3) Graph of Thoughts (GoT) code synthesis, coordinating multi-file repository generation in topological order; (4) Vision-driven feedback, iteratively improving implementation quality using visual analysis from training runs. These four stages correspond to the four key designs below.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["NeRF Paper PDF"] --> B["CFG-Constrained Synthesis<br/>Formalize Nerfstudio architecture as CFG + Build Knowledge Base K"]
+    B --> C["Compositional Citation Recovery<br/>Traverse citation graph for multi-hop retrieval of hidden dependencies"]
+    C --> D["Graph of Thoughts (GoT) Synthesis<br/>DAG Construction → Interface Freezing → File implementation → Integration Test"]
+    D --> E["Vision-Driven Feedback<br/>Three-branch consultation on rendering artifacts after 3k steps"]
+    E -->|"Artifacts remain / PSNR target not met"| D
+    E -->|"No further feedback / Target met"| F["Trainable Nerfstudio Plugin"]
+```
 
 ### Key Designs
 
-1. **Context-Free Grammar (CFG)-Constrained Synthesis**:
+**1. Context-Free Grammar (CFG) Constrained Synthesis: Ensuring Compilation Correctness by Construction**
 
-    - Function: Ensures generated code satisfies Nerfstudio's architectural invariants and interface contracts.
-    - Mechanism: The modular composition patterns of Nerfstudio are formalized as a CFG; LLM code generation is hard-constrained by grammar rules, guaranteeing architectural correctness. MinerU is used to convert paper PDFs to markdown; after cleaning, equations, pseudocode, architecture diagrams, and citation relations are retained and paired with corresponding Nerfstudio implementations to populate the knowledge base $\mathcal{K}$ and in-context example library $\mathcal{X}$.
-    - Design Motivation: General-purpose code generation treats all frameworks uniformly and does not understand the config→datamanager→field→model→pipeline coupling chain in NeRF. CFG encodes framework priors and eliminates architectural-level errors at the source.
+Code generated by general LLMs is often syntactically correct but suffers from incorrect module wiring or flawed mathematical implementations due to a lack of domain knowledge. Nerfify formalizes Nerfstudio's module compositions and interface specifications as a CFG—specifically, a repository $\mathcal{C} = (F, G)$ where $F = \{f_1, f_2, \ldots, f_n\}$ is the set of files and $G = \text{BuildRepoDAG}(F)$ is the directed acyclic dependency graph. LLM synthesis is constrained by this CFG to ensure compilation correctness by construction.
 
-2. **Compositional Reference Dependency Recovery**:
+**2. Compositional Citation Recovery: Automatically Tracing Hidden Dependencies**
 
-    - Function: Automatically retrieves and integrates implicit components (samplers, encoders, loss functions, etc.) from a paper's citation chain.
-    - Mechanism: A reference dependency graph $G' = (V', E')$ is constructed, and multi-hop retrieval is executed iteratively in four steps: (a) dependency discovery—parsing the target paper to extract citation lists and borrowed components; (b) recursive resolution—$\text{Dependencies}(c_i) = \{c_i\} \cup \bigcup_{d \in \text{cited}(c_i)} \text{Dependencies}(d)$; (c) component extraction—extracting architectural modules, loss functions, and training protocols; (d) termination—all interface contracts are satisfied. For example, K-Planes requires extracting components from 7 direct references and 12 transitive dependencies.
-    - Design Motivation: NeRF papers are inherently compositional. Descriptions such as "we adopt the proposal network from [3]" require the system to automatically trace multi-level citations and extract precise implementations.
+NeRF papers are inherently compositional; a single paper may implicitly depend on technical components from dozens of others. Nerfify constructs a citation dependency graph $G' = (V', E')$ and performs iterative multi-hop retrieval on the target paper through: dependency discovery $\rightarrow$ recursive parsing $\rightarrow$ component extraction $\rightarrow$ termination judgment. For example, K-Planes requires extracting components like proposal networks, hash encoders, and VM decomposition from 7 direct citations and 12 transitive dependencies.
 
-3. **Graph-of-Thought (GoT) Multi-Agent Code Synthesis**:
+**3. Graph of Thoughts (GoT) Code Synthesis: Coordinating Multi-file Generation via Topological Order**
 
-    - Function: Generates multi-file repositories in topological dependency order, verifying type signatures, tensor shapes, and circular dependencies.
-    - Mechanism: The primary synthesis agent maps the paper to a Nerfstudio component dependency DAG and executes synthesis in four phases: DAG construction → interface freezing (establishing minimal shared APIs in topological order) → implementation (each node synthesizes and verifies code) → integration testing (end-to-end smoke test with automatic repair). The repository is defined as $\mathcal{C} = (F, G)$, where $G = \text{BuildRepoDAG}(F)$ is a directed acyclic graph and $(f_i, f_j) \in E(G)$ implies no path exists from $f_j$ to $f_i$.
-    - Design Motivation: Monolithic code generation cannot handle the coupling between files in a multi-file repository. Graph-of-Thought is better suited than CoT/ToT for dependency-aware generation at the repository level.
+In a NeRF pipeline, files for configuration, data management, fields, models, and training are tightly coupled. Monolithic generation often leads to interface inconsistencies. Nerfify utilizes a primary synthesis agent to coordinate multiple specialized file agents through four stages: DAG construction maps the paper to Nerfstudio components; Interface freezing establishes API specifications in topological order; Implementation generates code for each node verified by type signatures and tensor shapes; Integration testing performs smoke tests and automated bug fixes.
 
-### Visually-Driven Feedback
-In Stage 4, the generated code undergoes 3k-iteration smoke training; rendered images from multiple viewpoints are passed to a critic agent. The critic agent operates through three branches: (1) metric branch—computing local-window PSNR/SSIM maps and using morphological operations to localize maximum-error regions; (2) geometry branch—cross-view artifact consensus detection to identify floaters and ghosting; (3) semantic branch—leveraging the Qwen3 VLM to analyze artifact triplets and produce structured diagnoses and code patches. The feedback loop continues until no new feedback is produced, the maximum number of iterations is reached, or the paper-reported PSNR target is achieved.
+**4. Vision-Driven Feedback: Analyzing Artifacts via Three-Branch Consultation**
+
+Trainable code does not guarantee correct rendering. The fourth stage executes actual training for 3k iterations, followed by a three-branch analysis of results: the Metric branch calculates local window PSNR/SSIM maps to locate high-error regions; the Geometry branch implements Cross-View Artifact Consensus to flag floater and ghosting artifacts; the Semantic branch utilizes a Qwen3 VLM to analyze artifact triplets and output structured diagnostics and patches. Iterative refinement continues until no further feedback is generated, the maximum iterations are reached, or the target PSNR reported in the paper is achieved.
+
+**Mechanism**: **Example: Turning K-Planes into a Trainable Plugin**
+Taking K-Planes as an example: First, the paper is formalized via CFG, identifying missing components such as the proposal network, hash encoder, and VM decomposition. Next, the citation graph is traversed from 7 direct citations to 12 transitive dependencies to complete these component implementations. These are then mapped to a component DAG, where interfaces are frozen. Files are synthesized and verified by tensor shapes in topological order, followed by smoke tests. Finally, after 3k training steps, the three-branch consultation identifies low PSNR regions and floaters, prompting the VLM to generate patches until the paper's original metrics are matched. This produces a trainable Nerfstudio plugin identical to the official implementation.
 
 ## Key Experimental Results
 
 ### Main Results
-Nerfify-Bench, 30 papers; Set 1 (papers without public code, compared against expert human implementations):
 
-| Paper | Paper PSNR/SSIM | Expert PSNR/SSIM | Nerfify PSNR/SSIM |
-|-------|-----------------|------------------|-------------------|
-| KeyNeRF | 25.65/0.89 | 25.70/0.89 | 26.12/0.90 |
-| mi-MLP NeRF | 24.70/0.89 | 22.64/0.87 | 22.85/0.87 |
-| ERS | 27.85/0.94 | 26.87/0.90 | 27.02/0.90 |
-| TVNeRF | 27.44/0.93 | 26.81/0.92 | 27.30/0.92 |
+| Paper | Dataset | Expert PSNR↑ | Nerfify PSNR↑ | Expert SSIM↑ | Nerfify SSIM↑ |
+|------|--------|-----------|--------------|-----------|-------------|
+| KeyNeRF | Blender | 25.70 | 26.12 | 0.89 | 0.90 |
+| mi-MLP NeRF | Blender | 22.64 | 22.85 | 0.87 | 0.87 |
+| ERS | DTU | 26.87 | 27.02 | 0.90 | 0.90 |
+| TVNeRF | Blender | 26.81 | 27.30 | 0.92 | 0.92 |
 
-Executability comparison (all baselines fail to produce trainable code):
+All baselines (Paper2Code, AutoP2C, GPT-5, R1) **failed to generate trainable code**.
 
-| Metric | Paper2Code | AutoP2C | GPT-5 | R1 | Nerfify |
-|--------|-----------|---------|-------|-----|---------|
-| Compilable / Trainable | ✗ | ✗ | ✗ | ✗ | ✓ |
-| Training Stability | ✗ | ✗ | ✗ | ✗ | ✓ |
-| Converges to Paper Results | ✗ | ✗ | ✗ | ✗ | ✓ |
+### Ablation Study
 
-### Ablation Study (Novelty Preservation, Set 4, Score↑)
-
-| Paper | Nerfify | GPT-5 | Paper2Code | AutoP2C |
-|-------|---------|-------|-----------|---------|
-| Mip-NeRF | 1.00 | 0.58 | 0.85 | 0.20 |
-| BioNeRF | 1.00 | 0.82 | 0.35 | 0.15 |
-| TensoRF | 0.98 | 0.72 | 0.12 | 0.28 |
-| Tetra-NeRF | 1.00 | 0.58 | 0.22 | 0.08 |
-| E-NeRF | 1.00 | 0.60 | 0.48 | 0.05 |
+| Configuration | Executability | Key Findings |
+|------|---------|---------|
+| Nerfify (Full) | 100% | Gap with expert implementation $\pm 0.5$ dB PSNR |
+| Paper2Code | 5% | Compilable but not trainable |
+| AutoP2C | 0% | Unresolved imports |
+| GPT-5 | 0% | Compilable but training does not converge |
+| No Citation Recovery | Partial | Missing critical dependency components |
+| No Vision Feedback | 100% | Larger performance gap |
 
 ### Key Findings
-- General-purpose paper-to-code systems fail to produce trainable code for 95% of NeRF papers; Nerfify achieves 100% executability.
-- Visual quality on average falls within ±0.5 dB PSNR and ±0.02 SSIM of expert implementations.
-- For papers already integrated into Nerfstudio (NeRF, Nerfacto), Nerfify generates code identical to the official implementation.
-- Nerfify substantially outperforms all baselines in novelty preservation (correctly implementing a paper's core contributions).
+- Nerfify achieves visual quality comparable to expert implementations even on papers never previously implemented (Set 1).
+- For papers with existing Nerfstudio implementations, Nerfify generates code identical to the official repositories.
+- The citation dependency graph for K-Planes involved 7 direct dependencies and a total of 12 transitive dependencies.
 
 ## Highlights & Insights
-- Formalizing the framework as a CFG fundamentally transforms "understanding the framework" into "following a grammar," reducing the difficulty of LLM generation.
-- Compositional reference dependency recovery addresses the long-standing challenge of critical implementation details being buried in citation chains within academic papers.
-- The visual feedback loop is the first to incorporate a VLM into automated NeRF code debugging; the three-branch design covers pixel-level, geometry-level, and semantic-level diagnosis.
-- The experimental design is rigorous: Set 1 uses papers without public code, eliminating the possibility of LLM training data leakage.
+- First demonstration that a domain-aware multi-agent framework can reliably transform complex vision papers into trainable code.
+- CFG constraints are critical—encoding framework architecture into formal grammars ensures code correctness by construction.
+- Compositional citation recovery addresses the pervasive hidden dependency problem in NeRF research.
+- Implementation time is reduced from weeks to minutes, democratizing reproducibility in NeRF research.
 
 ## Limitations & Future Work
-- Only the Nerfstudio framework is supported; emerging paradigms such as 3DGS and gsplat are not covered.
-- The CFG must be constructed manually; extending support to new frameworks requires additional engineering effort.
-- Visual feedback requires 3k iterations of training, incurring non-negligible computational cost.
-- Although the paper claims "minute-level" turnaround, the end-to-end time including smoke training may be considerably longer.
+- Currently specialized for the Nerfstudio framework; expanding to others requires redefining the CFG.
+- Reliance on high-quality PDF parsing (e.g., MinerU); parsing errors in math or diagrams may propagate.
+- Vision-driven feedback requires 3k training iterations, incurring non-zero computational overhead.
+- For entirely original NeRF methods not based on existing components, citation recovery is less effective.
 
 ## Related Work & Insights
-- Paper2Code and AutoP2C demonstrate the ceiling of general-purpose approaches on complex visual systems, underscoring the necessity of domain awareness.
-- Graph-of-Thought provides a more flexible DAG structure than chain-based or tree-based reasoning, well-suited for repository-level code generation.
-- The proposed paradigm is transferable to paper-to-code in other domains (robotics, NLP, medical imaging); the key is designing a corresponding domain-specific CFG.
+- **Paper2Code/AutoP2C**: General systems lacking domain-specific constraints.
+- **Scene Language**: Similarly uses CFG constraints for vision program synthesis.
+- **Graph of Thoughts**: Generalizes reasoning into directed graphs; Nerfify applies this to code generation.
+- Insight: Any domain with standardized frameworks (e.g., MMDetection, HuggingFace Transformers) could utilize similar methods to build paper-to-code systems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — First domain-specific paper-to-code system to combine CFG constraints, GoT synthesis, and reference dependency recovery.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — A comprehensive benchmark of 30 papers with a well-designed four-set grouping scheme.
-- Writing Quality: ⭐⭐⭐⭐ — Clear logic and strong problem motivation, though the paper is lengthy.
-- Value: ⭐⭐⭐⭐⭐ — Significant impact for the NeRF community and reproducible research more broadly.
-
----
+- Novelty: ⭐⭐⭐⭐⭐ First automatic NeRF paper-to-code conversion; unique combination of CFG, GoT, and citation recovery.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 30-paper benchmark including unseen papers with comprehensive comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and rigorous four-stage logic.
+- Value: ⭐⭐⭐⭐⭐ Highly practical; expected to accelerate reproducibility in the NeRF community.
 
 <!-- RELATED:START -->
 
@@ -136,9 +136,9 @@ Executability comparison (all baselines fail to produce trainable code):
 
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 - [\[CVPR 2026\] CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare](carepilot_a_multi-agent_framework_for_long-horizon_computer_task_automation_in_h.md)
-- [\[CVPR 2026\] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting](realm_mllm_agent_3d_reasoning_gaussian.md)
-- [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](../../NeurIPS2025/llm_agent/agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
-- [\[CVPR 2026\] ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search](argos_agentic_multi_camera_person_search.md)
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
+- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
+- [\[ACL 2025\] MAM: Modular Multi-Agent Framework for Multi-Modal Medical Diagnosis via Role-Specialized Collaboration](../../ACL2025/llm_agent/mam_modular_multi-agent_framework_for_multi-modal_medical_diagnosis_via_role-spe.md)
 
 </div>
 

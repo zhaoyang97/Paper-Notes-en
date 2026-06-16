@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] DiP: Taming Diffusion Models in Pixel Space
 description: >-
-  [CVPR 2026][Image Generation][Pixel-space Diffusion] The paper proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures on large patches combined with a lightweig…
+  [CVPR 2026][Image Generation][Patch Detailer Head] Ours proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures with large patches and a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Pixel-space Diffusion"
-  - "Patch Detailer Head"
-  - "Global-Local Decoupling"
-  - "End-to-End Generation"
-  - "Efficient Inference"
+  - CVPR 2026
+  - Image Generation
+  - Patch Detailer Head
 date: 2026-05-08
-content_hash: fdab0fecfcb41e1f
+content_hash: 58a7e24505fe7b4a
 ---
-
 # DiP: Taming Diffusion Models in Pixel Space
 
 **Conference**: CVPR 2026  
@@ -24,50 +19,57 @@ content_hash: fdab0fecfcb41e1f
 **Keywords**: Pixel-space Diffusion, Patch Detailer Head, Global-Local Decoupling, End-to-End Generation, Efficient Inference
 
 ## TL;DR
-The paper proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures on large patches combined with a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×256.
+Ours proposes DiP, an efficient pixel-space diffusion framework. By utilizing a DiT backbone to model global structures with large patches and a lightweight Patch Detailer Head to recover local details, it achieves computational efficiency comparable to LDMs without requiring a VAE, reaching a 1.79 FID on ImageNet 256×256.
 
 ## Background & Motivation
 
-**Background**: Latent Diffusion Models (LDMs) compressed into latent space via VAE have become the de facto standard, but VAEs introduce information loss and preclude end-to-end training. Pixel-space diffusion models preserve the full signal but suffer from high computational costs.
+**Background**: Latent Diffusion Models (LDMs) have become the de facto standard by compressing images into latent space via VAEs. However, VAEs introduce information loss and are not trained end-to-end. Pixel-space diffusion models preserve full signals but suffer from high computational costs.
 
-**Limitations of Prior Work**: (a) The VAE in LDMs acts as an information bottleneck, introducing reconstruction artifacts and limiting the upper bound of image fidelity; (b) Existing pixel-space models (e.g., PixelFlow, SiD) use small patches (2×2 or 4×4), where sequence length grows quadratically with resolution, making training and inference infeasible.
+**Limitations of Prior Work**: (a) The VAE in LDMs acts as an information bottleneck, introducing reconstruction artifacts and limiting the upper bound of image fidelity; (b) Existing pixel-space models (e.g., PixelFlow, SiD) use small patches ($2 \times 2$ or $4 \times 4$), causing sequence lengths to grow quadratically with resolution, making training and inference computationally expensive.
 
-**Key Challenge**: Pixel-space models face a quality-efficiency dilemma: small patches retain detail but cause sequence explosion; large patches are efficient but lose high-frequency information, as the self-attention mechanism of DiT compresses rich spatial information within a patch into a single token.
+**Key Challenge**: Pixel-space models face a quality-efficiency dilemma: small patches preserve details but lead to excessive sequence lengths; large patches are efficient but lose high-frequency information as the self-attention mechanism in DiT compresses rich intra-patch spatial information into a single token.
 
 **Goal**: To achieve efficiency comparable to LDMs in pixel space while avoiding VAE information loss and retaining the advantages of end-to-end training.
 
-**Key Insight**: Decoupling global structure modeling from local detail recovery—using DiT with large patches (16×16) for efficient global modeling and a lightweight CNN head for local detail restoration.
+**Key Insight**: Decoupling global structure modeling from local detail recovery—DiT uses large patches ($16 \times 16$) for efficient global modeling, while a lightweight CNN head recovers local details.
 
-**Core Idea**: A DiT backbone operates on large patches to maintain efficiency, while a co-trained convolutional U-Net Patch Detailer Head injects local inductive biases, adding only 0.3% more parameters.
+**Core Idea**: A DiT backbone operates on large patches to maintain efficiency, combined with a co-trained convolutional U-Net Patch Detailer Head that injects local inductive biases, adding only 0.3% more parameters.
 
 ## Method
 
 ### Overall Architecture
-Given a noisy image $x_t \in \mathbb{R}^{H \times W \times 3}$, it is divided into $N = (H \times W)/P^2$ large patches ($P=16$). The DiT backbone processes the patch sequence to output global features $S_{\text{global}} \in \mathbb{R}^{N \times D}$. The Patch Detailer Head processes each patch independently and in parallel: it receives the corresponding global feature $s_i$ and the original noisy pixel patch $p_i$ to predict the noise component $\epsilon_i$.
+
+DiP aims to achieve LDM-level speed in pixel space without relying on VAEs by separating the modeling of "global structure" and "local details." Given a noisy image $x_t \in \mathbb{R}^{H \times W \times 3}$, it is first divided into $N = (H \times W)/P^2$ large patches ($P=16$). The DiT backbone models global features $S_{\text{global}} \in \mathbb{R}^{N \times D}$ on this short sequence via self-attention. A lightweight Patch Detailer Head then processes each patch in parallel—taking the corresponding global feature $s_i$ and the original noisy pixel patch $p_i$ to reconstruct the noise component $\epsilon_i$ for that patch.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Noisy Image x_t (H×W×3)"] --> B["DiT Large Patch Global Modeling<br/>16×16 Patches (N=256 tokens)<br/>Self-Attention → Global Features S_global"]
+    B -->|"Refinement: Connected after the final DiT layer<br/>Black-box usage, reuses pretrained weights"| C["Patch Detailer Head<br/>Per-patch Convolutional U-Net for High-freq Details"]
+    C --> D["Per-patch Noise Component Output ε_i"]
+    D --> E["Reconstructed Image"]
+```
 
 ### Key Designs
 
-1. **Global Structure Modeling (DiT Backbone)**:
-    - **Function**: Uses large patches with $P=16$ to model the global layout and semantic content of the image.
-    - **Mechanism**: Divides a 256×256 image into 256 tokens (aligned with the sequence length of LDMs in latent space), capturing long-range dependencies through DiT block self-attention to output context-aware features.
-    - **Design Motivation**: Large patches dramatically reduce sequence length, aligning computational complexity with LDMs. Single-image overfitting experiments (Fig.3) verify: DiT-only can successfully capture global layout and tones but fails to render fine textures and sharp edges—an inherent limitation of lacking local inductive bias.
+**1. DiT Global Modeling with Large Patches: Matching Sequence Lengths with LDMs**
 
-2. **Patch Detailer Head (Lightweight U-Net)**:
-    - **Function**: Recovers high-frequency details for each large patch.
-    - **Mechanism**: A shallow convolutional U-Net (4 downsampling + 4 upsampling stages), where each block contains Conv+SiLU+Pooling. The global feature $s_i \in \mathbb{R}^{D \times 1 \times 1}$ is concatenated with the downsampled output channels at the bottleneck layer to guide local refinement.
-    - **Design Motivation**: The natural inductive bias of convolutions (locality, translation equivariance) is highly suitable for denoising local textures and edges. Experiments comparing four architectures—Standard MLP (no spatial bias), Coord-based MLP (NeRF-like), Intra-Patch Attention, and Convolutional U-Net—showed the U-Net is optimal with the fewest parameters (only 0.3% increase in total parameters).
+The primary bottleneck for pixel-space methods is sequence length: small patches ($2 \times 2$ or $4 \times 4$) preserve details but the token count explodes with resolution. DiP directly uses $P=16$ patches, cutting a $256 \times 256$ image into 256 tokens—aligning the sequence length and computational complexity with LDMs in latent space. The trade-off is that DiT alone cannot render fine textures: single-image overfitting experiments (Fig. 3) show that DiT-only captures global layout and tone but fails to render sharp edges and high-frequency textures, highlighting an inherent weakness in local inductive bias.
 
-3. **Post-hoc Refinement**:
-    - **Function**: The Head is placed after the final layer of the DiT.
-    - **Mechanism**: Three placement strategies—post-hoc, intermediate injection, and hybrid—were all effective, but post-hoc performed best.
-    - **Design Motivation**: Treating DiT as a black-box backbone avoids modifying internal structures, maximizing simplicity and allowing the use of pre-trained DiT weights.
+**2. Patch Detailer Head for High-frequency Recovery: Reclaiming Details with 0.3% Parameters**
+
+To compensate for high frequencies lost by DiT, each large patch passes through a shallow convolutional U-Net (4 downsamplings + 4 upsamplings, each block comprising Conv+SiLU+Pooling). The global feature $s_i \in \mathbb{R}^{D \times 1 \times 1}$ is concatenated channel-wise at the bottleneck with the downsampled output to guide local refinement. Convolution is chosen for its native locality and translation equivariance, which are ideal for texture and edge denoising. The authors compared standard MLP, coordinate-based MLP, intra-patch attention, and convolutional U-Net; the U-Net performed best with the fewest parameters, increasing total parameters by only 0.3%.
+
+**3. Posterior Refinement: Treating DiT as a Black-box Backbone**
+
+Ablations were conducted on the head insertion point—posterior, intermediate injection, and hybrid. Placing the head after the final DiT layer proved optimal. This allows DiT to be treated as a complete black-box backbone, maximizing simplicity and allowing the direct reuse of pretrained DiT weights.
 
 ### Loss & Training
 - Supports DDPM noise prediction and Flow Matching frameworks.
-- Uses DDT (a DiT variant) as the backbone with the AdamW optimizer.
+- Uses DDT (DiT variant) as the backbone with the AdamW optimizer.
 - EMA decay of 0.9999, batch size 256.
-- Patch Detailer Head uses kernel=3, padding=1 for intermediate layers, and kernel=1 for the final layer.
-- Uses an Euler-100 sampler.
+- Patch Detailer Head: intermediate layers kernel=3, padding=1; final layer kernel=1.
+- Uses Euler-100 sampler.
 
 ## Key Experimental Results
 
@@ -91,45 +93,37 @@ Given a noisy image $x_t \in \mathbb{R}^{H \times W \times 3}$, it is divided in
 | + Intra-Patch Attn | 2.98 | 5.16 | 275.0 | 96×8 GPU h | 0.94s |
 | **+ Conv U-Net (Ours)** | **2.16** | **4.79** | 276.8 | 87×8 GPU h | **0.92s** |
 
-| Expand DiT-only vs Add Head | FID↓ | Params | Training Cost | Latency |
+| Scaled DiT-only vs. Plus Head | FID↓ | Params | Training Cost | Latency |
 |--------------------------|------|--------|----------|------|
 | DiT-only 1536 hidden dim | 2.83 | 1.1B | 149×8 h | 1.49s |
 | **DiT-XL + Conv U-Net** | **2.16** | **631M** | **87×8 h** | **0.92s** |
 
 ### Key Findings
-- **More efficient than scaling**: Adding a Head with 0.3% parameters is more effective than scaling DiT to 1.1B (2.16 vs 2.83 FID) and is 38% faster.
-- **Comparison with PixelFlow**: Among pixel-space methods, DiP's inference latency is only 0.92s vs 7.50s (8× faster), with better FID.
-- **Value of Local Inductive Bias**: MLP was completely ineffective (FID actually worsened), indicating that simple intra-patch transformations are insufficient and spatial priors from convolution are necessary.
-- **t-SNE Validation**: After adding the Head, intra-class aggregation in the feature space is tighter, and inter-class separation is clearer.
+- **More Efficient than Scaling**: Adding a 0.3% parameter Head is more effective than scaling DiT to 1.1B (2.16 vs 2.83 FID) and is 38% faster.
+- **Comparison with PixelFlow**: Among pixel-space methods, DiP's latency is 0.92s vs 7.50s (8× faster) with superior FID.
+- **Value of Local Inductive Bias**: Standard MLP was ineffective (FID worsened), indicating that simple intra-patch transformations are insufficient and convolutional spatial priors are necessary.
+- **t-SNE Verification**: Adding the Head leads to tighter intra-class clustering and clearer inter-class separation in the feature space.
 
 ## Highlights & Insights
-- **Elegant Design Philosophy**: The global-local decoupling principle is simple yet effective; adding just 0.3% parameters solves the core bottleneck of pixel-space diffusion models.
-- **Efficiency-Quality Pareto Optimality**: Reaches a new Pareto frontier in the FID-latency space (Fig.2).
-- **End-to-End Advantages**: No VAE pre-training required, avoiding information bottlenecks and the defects of non-end-to-end training.
+- **Exquisite Design Philosophy**: The Global-Local Decoupling principle is simple yet effective, solving the core bottleneck of pixel-space diffusion models with only a 0.3% parameter increase.
+- **Efficiency-Quality Pareto Optimality**: Reaches a new Pareto frontier in the FID-Latency space (Fig. 2).
+- **End-to-End Advantage**: No VAE pretraining required, avoiding information bottlenecks and the flaws of non-end-to-end training.
 
 ## Limitations & Future Work
-- Currently only validated on ImageNet 256×256; higher resolutions (512+) and text-guided generation remain for exploration.
-- The Patch Detailer Head processes each patch independently, which might pose risks to boundary consistency across patches.
-- Comparison with the latest LDM methods (e.g., FLUX) on text-to-image tasks is not yet sufficient.
+- Currently only validated on ImageNet 256×256; higher resolutions (512+) and text-guided generation remain to be explored.
+- The Patch Detailer Head processes each patch independently, which might pose risks for cross-patch boundary consistency.
+- Comparison with recent LDM methods (e.g., FLUX) on text-to-image tasks is not yet comprehensive.
 
 ## Related Work & Insights
-- Difference from PixelNerd: PixelNerd is tightly coupled with NeRF rendering mechanisms, limiting architectural exploration; DiP proposes a more general design principle.
-- Difference from JiT: JiT models high-dimensional pixel data by predicting clean images; DiP maintains efficiency via global-local decoupling.
-- Insight: The logic of large patches + local refinement may be applicable to other tasks requiring efficient processing of high-resolution inputs.
+- Difference from PixelNerd: PixelNerd is tightly coupled with NeRF rendering mechanisms, limiting architectural exploration; DiP proposes more general design principles.
+- Difference from JiT: JiT models high-dimensional pixel data by predicting clean images; DiP maintains efficiency through global-local decoupling.
+- Insight: The large patch + local refinement approach may be applicable to other tasks requiring efficient processing of high-resolution inputs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Global-local decoupling is simple and effective, though not conceptually complex.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely systematic, including architecture comparisons (4 heads), placement strategies (3 types), scale-up comparisons, and multiple training budgets.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is well-validated (single-image overfitting experiment is very persuasive), with clear charts.
-- Value: ⭐⭐⭐⭐⭐ Provides a practical and efficient solution for pixel-space diffusion, potentially driving the development of VAE-free generation.
-
-## Related Papers
-
-- [[CVPR 2026] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [[CVPR 2026] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [[CVPR 2026] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
-- [[CVPR 2026] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
-- [[CVPR 2026] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
+- Novelty: ⭐⭐⭐⭐ Global-local decoupling is simple and effective, though the concept is not highly complex.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely systematic with architectural comparisons (4 types of heads), placement strategies (3 types), scale-up comparisons, and multiple training budgets.
+- Writing Quality: ⭐⭐⭐⭐ Strong motivation verification (single-image overfitting experiment is convincing), clear charts.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical, high-efficiency solution for pixel-space diffusion, potentially driving the development of VAE-free generation.
 
 <!-- RELATED:START -->
 
@@ -138,10 +132,10 @@ Given a noisy image $x_t \in \mathbb{R}^{H \times W \times 3}$, it is divided in
 ## Related Papers
 
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
 - [\[CVPR 2026\] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
+- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](scale_space_diffusion.md)
+- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
 
 </div>
 

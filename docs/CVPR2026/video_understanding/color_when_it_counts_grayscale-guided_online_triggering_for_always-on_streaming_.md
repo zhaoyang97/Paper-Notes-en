@@ -2,149 +2,147 @@
 title: >-
   [Paper Note] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 description: >-
-  [CVPR 2026][Video Understanding][Streaming Video Understanding] This paper proposes a novel "grayscale always-on, color on demand" paradigm. ColorTrigger detects color redundancy online via lightweight quadratic programm…
+  [CVPR 2026][Video Understanding][Paper Note] Ours proposes a new paradigm of "Grayscale Always-on, RGB On-demand." Through ColorTrigger, color redundancy is detected online using lightweight quadratic programming on the grayscale stream. By using only 8.1% of RGB frames, it maintains 91.6% of the full-color baseline performance, enabling always-on video perceptio
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Streaming Video Understanding"
-  - "Edge Devices"
-  - "Grayscale-Guided Triggering"
-  - "Energy-Efficient Sensing"
-  - "Dynamic Token Routing"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: bb17cfa0b23dcb8e
+content_hash: ff5604c45873b237
 ---
-
 # Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22466](https://arxiv.org/abs/2603.22466)  
 **Code**: [lvgd.github.io/ColorTrigger](https://lvgd.github.io/ColorTrigger/)  
-**Area**: Video Understanding
-**Keywords**: Streaming Video Understanding, Edge Devices, Grayscale-Guided Triggering, Energy-Efficient Sensing, Dynamic Token Routing
+**Area**: Video Understanding  
+**Keywords**: Streaming Video Understanding, Edge Devices, Grayscale-Guided Triggering, Energy-Aware, Dynamic Token Routing
 
 ## TL;DR
 
-This paper proposes a novel "grayscale always-on, color on demand" paradigm. ColorTrigger detects color redundancy online via lightweight quadratic programming on the grayscale stream, achieving 91.6% of the full-color baseline performance using only 8.1% RGB frames, enabling always-on video sensing on resource-constrained devices.
+Ours proposes a new paradigm of "Grayscale Always-on, RGB On-demand." Through ColorTrigger, color redundancy is detected online using lightweight quadratic programming on the grayscale stream. By using only 8.1% of RGB frames, it maintains 91.6% of the full-color baseline performance, enabling always-on video perception for resource-constrained devices.
 
 ## Background & Motivation
 
-Always-on sensing is a core requirement for next-generation wearable and edge AI systems, yet continuous high-fidelity RGB video capture imposes prohibitive costs on resource-constrained platforms.
+Always-on perception is a core requirement for next-generation wearable/edge AI systems, but continuous high-fidelity RGB video capture is extremely costly on resource-constrained platforms:
 
-**Energy bottleneck**: Devices such as smart glasses can sustain continuous RGB recording for only approximately 30–60 minutes, far short of the all-day assistant use case. Even when inference is offloaded to the cloud, end-to-end energy consumption remains dominated by continuous camera exposure and wireless transmission.
+**Energy Bottleneck**: Devices like smart glasses can only sustain continuous RGB recording for approximately 30-60 minutes, falling far short of the requirements for all-day assistants. Even if inference is offloaded to the cloud, the end-to-end energy bottleneck remains dominated by continuous camera exposure and wireless transmission.
 
-**Limitations of Prior Work**: Methods such as EgoTrigger trigger the RGB camera via audio cues, but trigger failures result in extended periods of complete visual information loss, making critical context unrecoverable.
+**Limitations of Prior Work**: Methods such as EgoTrigger use audio cues to trigger the RGB camera, but a failure to trigger results in a complete loss of visual information for extended periods, making critical contexts unrecoverable.
 
-**Key finding — color is not always necessary**: Pilot experiments on Qwen2.5-VL-7B show that replacing most frames with grayscale while retaining only a small fraction of RGB frames (preserving temporal structure) causes only marginal degradation in video understanding performance. This reveals pervasive **color redundancy** in natural video: semantic tasks such as action recognition, layout reasoning, and counting largely do not depend on color, requiring chromatic detail only at a small number of critical moments.
+**Key Insight — Color is Not Always Necessary**: Through pilot experiments on Qwen2.5-VL-7B, the authors found that replacing most frames with grayscale while keeping few RGB frames (maintaining temporal structure) only slightly degrades video understanding performance. This indicates significant **color redundancy** in natural videos—semantic tasks like action recognition, layout reasoning, and counting mostly do not rely on color, requiring color details only at a few critical moments.
 
-Based on this insight, ColorTrigger proposes to maintain temporal continuity via a continuously running grayscale stream and trigger RGB capture only when necessary, fundamentally reducing sensing cost.
+Based on this insight, ColorTrigger proposes: the grayscale stream runs continuously to maintain temporal continuity, while RGB capture is triggered only when necessary, fundamentally reducing perception costs.
 
 ## Method
 
 ### Overall Architecture
 
-ColorTrigger comprises two core components:
+The goal of ColorTrigger is to enable "Grayscale Always-on, RGB On-demand": the grayscale stream runs continuously to preserve temporal continuity, and expensive RGB capture is triggered only at critical moments. It consists of two components: a causal online trigger that detects whether "this frame brings new information and the budget allows it" within a sliding window of grayscale features, and a dynamic token router that allocates computational power based on frame type. Grayscale frames follow a high-compression path with fewer tokens, while RGB frames follow a high-capacity path with more tokens. These are concatenated temporally and fed into a frozen MLLM decoder. The entire pipeline is training-free, strictly causal, and does not modify any MLLM parameters.
 
-1. **Causal Online Trigger**: Analyzes the affinity matrix of grayscale features within a sliding window to detect redundancy or novelty, and determines whether to trigger RGB capture via lightweight QP solving combined with a credit budget controller.
-2. **Dynamic Token Router**: Grayscale frames are processed through a high-compression path (fewer tokens) while RGB frames are processed through a high-capacity path (more tokens); the token sequences are assembled temporally and fed into a frozen MLLM decoder.
-
-The entire pipeline is **training-free**, strictly causal, and integrates seamlessly with frozen MLLMs.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Grayscale Stream (Always-on)<br/>Frozen CLIP ViT CLS Features"] --> B
+    subgraph TRIG["Causal Online Trigger (Sliding window W, strictly causal)"]
+        direction TB
+        B["Sliding Window Affinity Matrix<br/>Quantify redundancy / New info"] --> C["Diversity-driven QP<br/>Current frame novelty score s_t"]
+        C --> D["Online Credit Budget Controller<br/>RGB usage hard upper bound b_t"]
+    end
+    D --> E{"Trigger decision u_t<br/>s_t≥θ AND b_t≥1"}
+    subgraph ROUTE["Dynamic Token Routing"]
+        direction TB
+        F["Grayscale Frame → Compressed Path<br/>T_g tokens"]
+        G["RGB Frame → High-capacity Path<br/>T_c tokens (T_c > T_g)"]
+    end
+    E -->|"u_t=0 No Trigger"| F
+    E -->|"u_t=1 Trigger RGB"| G
+    F --> H["Temporal Assembly<br/>→ Frozen MLLM decoder"]
+    G --> H
+```
 
 ### Key Designs
 
-1. **Sliding-Window Grayscale Affinity Matrix**: At each time step $t$, a causal sliding window $\mathcal{W}_t$ of size $W$ is maintained. The $\ell_2$-normalized CLS token features $\mathbf{f}_i$ are extracted from each frame using a frozen CLIP visual encoder, and the affinity matrix is constructed as:
+**1. Sliding Window Grayscale Affinity Matrix: Determining New Information via Similarity**
 
-    $\tilde{\mathbf{A}}_t = \frac{1}{2}(\mathbf{F}_t \mathbf{F}_t^\top + \mathbf{I}_{n_t}) \in [0,1]^{n_t \times n_t}$
+To decide whether to trigger RGB without seeing color, inter-frame redundancy must be quantified. At each time step $t$, ColorTrigger maintains a causal sliding window $\mathcal{W}_t$ of size $W$. Using a frozen CLIP visual encoder, it extracts $\ell_2$-normalized features $\mathbf{f}_i$ from the CLS tokens to construct an affinity matrix $\tilde{\mathbf{A}}_t = \frac{1}{2}(\mathbf{F}_t \mathbf{F}_t^\top + \mathbf{I}_{n_t}) \in [0,1]^{n_t \times n_t}$. High values of $\tilde{A}_{ij}$ indicate redundancy (similarity) between frames $i$ and $j$, while low values indicate new changes. The matrix is symmetric and positive semi-definite. Using only frames within the current window ensures strict causality, a hard constraint for always-on online scenarios.
 
-   A high $\tilde{A}_{ij}$ indicates that frames $i$ and $j$ are redundant (similar), while a low value indicates novelty or change. The matrix is symmetric, positive semi-definite, and strictly causal (computed only from frames in the current window).
+**2. Diversity-Driven Quadratic Programming: Formulation Frame Selection as Optimization**
 
-2. **Diversity-Driven Quadratic Programming (QP)**: Frame selection is formulated as a continuous QP problem that assigns weights $\mathbf{w}_t \in [0,1]^{n_t}$ to each frame in the window:
+Similarity scores alone are insufficient; they must be converted into a score for the current frame. ColorTrigger reformulates frame selection as a continuous QP: $\mathbf{w}_t = \arg\min_{\mathbf{w}} \lambda \mathbf{w}^\top \tilde{\mathbf{A}}_t \mathbf{w}$, subject to $\mathbf{1}^\top \mathbf{w} = m_t$, assigning weights $\mathbf{w}_t \in [0,1]^{n_t}$ to frames in the window. The quadratic term $\mathbf{w}^\top \tilde{\mathbf{A}}_t \mathbf{w}$ penalizes assigning high weights to mutually similar frames, naturally spreading the budget across temporally diverse frames. A higher weight $s_t = (\mathbf{w}_t)_{n_t}$ for the current frame indicates it contributes new information not covered by recent history, making it a candidate for RGB triggering.
 
-    $\mathbf{w}_t = \arg\min_{\mathbf{w}} \lambda \mathbf{w}^\top \tilde{\mathbf{A}}_t \mathbf{w} \quad \text{s.t.} \quad \mathbf{1}^\top \mathbf{w} = m_t$
+**3. Online Credit Budget Controller: Hard Upper Bound on Long-term RGB Usage**
 
-   The quadratic term $\mathbf{w}^\top \tilde{\mathbf{A}}_t \mathbf{w}$ penalizes concentrating weight on similar frames, naturally encouraging the budget to be distributed across temporally diverse frames. A higher weight $s_t = (\mathbf{w}_t)_{n_t}$ for the current frame indicates that it contributes novel information not covered by recent history, warranting RGB triggering.
+Only considering geometric novelty would lead to excessive triggering during rapid scene changes, defeating the purpose of power saving. The controller maintains a scalar credit balance $b_t \in [0, C]$, accumulating at a target rate $r$ per frame and consuming one unit per trigger: $b_{t+1} = \text{clip}(b_t - u_t + r,\; 0, C)$. The final trigger must satisfy both the geometric threshold $s_t \geq \theta$ and the budget constraint $b_t \geq 1$: $u_t = \mathbb{I}[s_t \geq \theta \wedge b_t \geq 1]$. This fixes the long-term RGB usage at $\sum_{t=1}^T u_t \leq rT + C$, preventing over-budgeting regardless of scene dynamics.
 
-3. **Credit-Budgeted Online Controller**: A scalar credit balance $b_t \in [0, C]$ is maintained, accruing at target rate $r$ per frame and consuming one unit per RGB trigger:
+**4. Dynamic Token Routing: Allocating Computation Based on Information Density**
 
-    $b_{t+1} = \text{clip}(b_t - u_t + r,\; 0, C)$
-
-   A trigger decision requires both a geometric criterion ($s_t \geq \theta$) and a budget criterion ($b_t \geq 1$) to be satisfied:
-
-    $u_t = \mathbb{I}[s_t \geq \theta \wedge b_t \geq 1]$
-
-   Long-term RGB usage is bounded as $\sum_{t=1}^T u_t \leq rT + C$, guaranteeing budget compliance.
-
-4. **Dynamic Token Routing**: Grayscale frames are input at low resolution to produce $T_g$ tokens, while RGB frames are input at high resolution to produce $T_c > T_g$ tokens:
-
-    $\mathbf{Z}_t = (1 - u_t)\psi_g(g_t) \oplus u_t \psi_c(c_t)$
-
-   The total computation cost $\sum_t [(1-u_t)T_g + u_t T_c]$ is substantially lower than the full-color cost $T \cdot T_c$ when RGB frames are sparse, concentrating computational resources on the most informative moments.
+The trigger decision determines which frames are RGB, and the router then allocates token budgets. Grayscale frames use low-resolution input to produce $T_g$ tokens, while RGB frames use high-resolution to produce $T_c > T_g$ tokens, assembled according to the trigger bit: $\mathbf{Z}_t = (1 - u_t)\psi_g(g_t) \oplus u_t \psi_c(c_t)$. When RGB is sparse, the total cost $\sum_t [(1-u_t)T_g + u_t T_c]$ is significantly lower than the full-color cost $T \cdot T_c$, concentrating computation on the few moments with high information density.
 
 ### Loss & Training
 
-The proposed method is entirely **training-free** and requires no additional supervision or fine-tuning. All triggering and routing decisions are derived solely from the geometric relationships within the grayscale stream and integrate directly with frozen MLLMs.
+This method is entirely training-free and requires no additional supervision or fine-tuning. All triggering and routing decisions are derived from the geometric relationships in the grayscale stream, allowing direct deployment with frozen MLLMs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Performance on StreamingBench real-time visual understanding tasks:
+Performance on the StreamingBench real-time visual understanding task:
 
-| Method | #Frames | RGB(%) | All (Acc) | Notes |
-|--------|---------|--------|-----------|-------|
-| Qwen2.5-VL-7B (full color) | 1fps | 100% | 73.68 | Full-color baseline |
-| Human | - | - | 91.46 | Human performance |
+| Method | #Frames | RGB(%) | All (Acc) | Description |
+|------|---------|--------|-----------|------|
+| Qwen2.5-VL-7B (Full Color) | 1fps | 100% | 73.68 | Full-color Baseline |
+| Human | - | - | 91.46 | Human Performance |
 | TimeChat-Online-7B | 1fps | 100% | 75.36 | Streaming MLLM SOTA |
-| InternVL-3.5-8B | 128 | 100% | - | Strong open-source model |
+| InternVL-3.5-8B | 128 | 100% | - | Strong Open-source Model |
 | **ColorTrigger** | 1fps | **8.1%** | **67.49** | Only 8.1% RGB frames |
 
-ColorTrigger achieves 91.6% of the full-color baseline performance (67.49/73.68) using only 8.1% RGB frames, with balanced performance across sub-tasks including object perception, causal reasoning, and action recognition.
+ColorTrigger achieves 91.6% of the full-color baseline performance (67.49/73.68) using only 8.1% RGB frames, showing balanced performance across sub-tasks (object perception, causal reasoning, action perception, etc.).
 
 ### Ablation Study
 
-| Configuration | RGB(%) | All (Acc) | Notes |
-|---------------|--------|-----------|-------|
-| All grayscale | 0% | ~60 | Pure grayscale; significant degradation |
-| Uniform sampling 5% RGB | 5% | ~63 | Random sparse RGB insertion |
-| Uniform sampling 10% RGB | 10% | ~66 | Uniform sampling |
-| ColorTrigger 8.1% | 8.1% | 67.49 | Intelligent triggering outperforms uniform sampling |
-| ColorTrigger + Token Routing | 8.1% | 67.49 | Token routing further reduces inference cost |
-| Full color 100% RGB | 100% | 73.68 | Upper bound |
+| Configuration | RGB(%) | All (Acc) | Description |
+|------|--------|-----------|------|
+| Full Grayscale | 0% | ~60 | Grayscale only, significant degradation |
+| Uniform Sample 5% RGB | 5% | ~63 | Randomly inserted low-rate RGB |
+| Uniform Sample 10% RGB | 10% | ~66 | Uniform sampling |
+| ColorTrigger 8.1% | 8.1% | 67.49 | Intelligent trigger outperforms uniform |
+| ColorTrigger + Token Route | 8.1% | 67.49 | Token routing further reduces inference cost |
+| Full Color 100% RGB | 100% | 73.68 | Upper bound |
 
 ### Key Findings
 
-- Natural video contains substantial color redundancy: retaining only 5–10% RGB frames recovers most performance.
-- Intelligent triggering outperforms uniform sampling at equivalent RGB ratios.
-- Dynamic token routing further reduces inference cost without sacrificing performance.
-- The paradigm can be directly applied to existing frozen MLLMs without any training.
+- There is significant color redundancy in natural videos: 5-10% RGB frames are sufficient to recover most performance.
+- Intelligent triggering is superior to uniform sampling: at the same RGB ratio, ColorTrigger achieves higher accuracy.
+- Dynamic Token Routing further reduces inference cost without sacrificing performance.
+- This paradigm can be directly applied to existing frozen MLLMs without any training.
 
 ## Highlights & Insights
 
-- **"Color is not always necessary" is a profound observation**: it fundamentally challenges the implicit assumption that more RGB equates to better performance.
-- **The grayscale always-on, color on-demand paradigm** carries significant practical implications for edge AI deployment — it can substantially extend battery life in smart glasses, surveillance cameras, and similar applications.
-- **The QP + credit budget design** elegantly balances local triggering flexibility with global budget constraints.
+- **"Color is not always necessary" is a profound observation**: It fundamentally challenges the implicit assumption that "more RGB = better performance."
+- **The "Grayscale Always-on + RGB On-demand" paradigm** is highly significant for real-world edge AI deployment—extending battery life for smart glasses and security cameras.
+- **The QP + Credit Budget design** elegantly balances local triggering flexibility with global budget constraints.
 - Fully training-free and plug-and-play, compatible with any frozen MLLM.
 
 ## Limitations & Future Work
 
-- Grayscale cameras typically have lower resolution and image quality than RGB cameras; handling hardware heterogeneity in real deployment remains to be validated.
-- The current approach uses only the CLIP CLS token for affinity analysis, which may overlook local detail changes.
-- Although lightweight, QP solving still incurs computational overhead; real-time feasibility on ultra-low-power chips requires further evaluation.
-- Validation is limited to streaming video understanding benchmarks; power consumption and latency measurements on actual edge devices are lacking.
-- Tasks that are highly color-dependent (e.g., color recognition) may be more substantially affected.
+- Grayscale cameras often have lower resolution and quality than RGB cameras; handling hardware heterogeneity in real-world deployments remains to be verified.
+- The current use of CLIP CLS tokens for affinity analysis might miss local detailed changes.
+- Although QP solving is lightweight, it still incurs computational overhead; real-time performance on ultra-low-power chips requires further evaluation.
+- Validated only on streaming video understanding benchmarks; lacks power consumption and latency evaluations on actual edge devices.
+- Tasks highly dependent on color (e.g., color recognition) may be significantly affected.
 
 ## Related Work & Insights
 
-- Conceptually analogous to event cameras (activity-driven sampling), but requires no specialized hardware.
-- Complementary to EgoTrigger (audio-triggered RGB): ColorTrigger maintains continuous grayscale visual context, avoiding complete visual information blackouts.
-- Token pruning and merging methods (e.g., ToMe, ATP-LLaVA) perform compression after capture; ColorTrigger reduces cost **before capture**.
+- Similar to event camera priors (activity-driven sampling) but without requiring specialized hardware.
+- Complementary to EgoTrigger (audio-triggered RGB): ColorTrigger maintains grayscale visual continuity, avoiding complete visual information gaps.
+- While Token Pruning/Merging (ToMe, ATP-LLaVA) compresses post-capture, ColorTrigger reduces costs **pre-capture**.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The grayscale always-on, color on-demand paradigm is entirely novel with far-reaching practical implications.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Thorough validation on StreamingBench, but lacks real hardware power consumption evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The narrative arc from pilot study to insight to method to experiments is highly coherent.
-- **Value**: ⭐⭐⭐⭐⭐ Directly applicable engineering value for always-on sensing in edge AI, with strong inspirational merit.
+- **Novelty**: ⭐⭐⭐⭐⭐ The "Grayscale Always-on + RGB On-demand" is a brand new paradigm with profound practical significance.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Thoroughly validated on StreamingBench, though lacks hardware-level power evaluation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ The narrative from pilot study to insight to method is very fluid.
+- **Value**: ⭐⭐⭐⭐⭐ Direct engineering value for always-on perception in edge AI with strong heuristic potential.
 
 <!-- RELATED:START -->
 
@@ -153,10 +151,10 @@ ColorTrigger achieves 91.6% of the full-color baseline performance (67.49/73.68)
 ## Related Papers
 
 - [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
-- [\[CVPR 2026\] StreamGaze: Gaze-Guided Temporal Reasoning and Proactive Understanding in Streaming Videos](streamgaze_gaze-guided_temporal_reasoning_and_proactive_understanding_in_streami.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
 - [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
-- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
 
 </div>
 

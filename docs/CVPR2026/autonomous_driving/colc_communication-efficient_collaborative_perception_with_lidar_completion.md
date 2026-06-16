@@ -2,107 +2,106 @@
 title: >-
   [Paper Note] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Collaborative Perception] CoLC proposes a communication-efficient early fusion framework for collaborative perception. It reduces transmission volume via Foreground-Aware Point Sampling (F…
+  [CVPR 2026][Autonomous Driving][Paper Note] CoLC proposes a communication-efficient early collaborative perception framework. It reduces transmission volume through Foreground-Aware Point Sampling (FAPS), restores dense pillar representations on the ego side using VQ-based LiDAR Completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided D
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Collaborative Perception"
-  - "Communication Efficiency"
-  - "Point Cloud Completion"
-  - "Early Fusion"
-  - "Vector Quantization"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 6dc2d289926b61e0
+content_hash: 2d44c18601772ebf
 ---
-
 # CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00682](https://arxiv.org/abs/2603.00682)  
-**Code**: Unavailable  
-**Area**: Autonomous Driving
-**Keywords**: Collaborative Perception, Communication Efficiency, Point Cloud Completion, Early Fusion, Vector Quantization
+**Code**: None  
+**Area**: Autonomous Driving  
+**Keywords**: Collaborative Perception, Communication Efficiency, LiDAR Completion, Early Fusion, Vector Quantization
 
 ## TL;DR
 
-CoLC proposes a communication-efficient early fusion framework for collaborative perception. It reduces transmission volume via Foreground-Aware Point Sampling (FAPS), reconstructs dense pillar representations on the ego side through VQ-based LiDAR completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided Dual Alignment (DGDA). The framework achieves detection performance on par with or superior to full early fusion while significantly reducing communication bandwidth.
+CoLC proposes a communication-efficient early collaborative perception framework. It reduces transmission volume through Foreground-Aware Point Sampling (FAPS), restores dense pillar representations on the ego side using VQ-based LiDAR Completion (CEEF), and ensures semantic and geometric consistency via Dense-Guided Double Alignment (DGDA). This maintains or even exceeds early fusion detection performance while significantly lowering communication bandwidth.
 
 ## Background & Motivation
 
-Collaborative perception enables multiple agents to share complementary information, overcoming perception blind spots and occlusion issues inherent to single-agent systems. Existing fusion strategies fall into three categories:
+Collaborative perception allows multi-agent information sharing to overcome perception blind spots and occlusion issues of single agents. Existing fusion strategies are categorized into three types:
 
-- **Early Fusion**: Transmits raw point clouds, offering the highest information fidelity and natural robustness to heterogeneous models, but at prohibitive communication cost.
-- **Intermediate Fusion**: Transmits BEV features with moderate communication overhead, but requires model consistency across agents.
-- **Late Fusion**: Transmits detection results with minimal communication, but suffers the greatest information loss.
+- **Early Fusion**: Direct transmission of raw point clouds. It offers the highest information fidelity and is naturally robust to heterogeneous models, but incurs massive communication overhead.
+- **Intermediate Fusion**: Transmission of BEV features. It has moderate overhead but relies on model consistency.
+- **Late Fusion**: Transmission of detection results. It minimizes communication but suffers the most information loss.
 
-The authors identify a key observation: in early fusion, transmitting only foreground points leads to a substantial performance drop—worse, in fact, than transmitting only background points. This is because foreground points are responsible for completing object shapes, while background points provide contextual anchors for spatial alignment. Both are indispensable. This insight motivates CoLC's design: sampling both foreground and background points, then recovering missing information via completion on the ego side.
+A key phenomenon was identified: in early fusion, transmitting only foreground points leads to a significant performance drop, even performing worse than transmitting only background points. This is because foreground points complete object shapes, while background points provide contextual anchors for spatial alignment. Both are indispensable, inspiring the design of CoLC—sampling both foreground and background points and then restoring missing information via completion at the ego side.
 
 ## Method
 
 ### Overall Architecture
 
-CoLC consists of three complementary modules:
+CoLC aims to achieve the information fidelity of early fusion alongside the low bandwidth of intermediate fusion. The core mechanism involves decomposing "transmitting complete point clouds" into "transmitting few key points + reconstruction at the receiver." The pipeline is distributed across two sides: neighbor agents use FAPS to filter raw point clouds into a small set of foreground and background points; the ego side receives these sparse points and uses the LiDAR completion module within CEEF to reconstruct sparse pillars into dense ones for detection. DGDA participates only during training, using dense full point clouds as a teacher to force the completed pillars to align with the ground truth semantically and geometrically. During inference, complete point clouds are not required, saving bandwidth while recovering detection accuracy through completion and alignment.
 
-1. **FAPS (Foreground-Aware Point Sampling)**: Performs spatially-aware point cloud sampling on the neighbor side.
-2. **CEEF (Completion-Enhanced Early Fusion)**: Reconstructs dense pillars from sparse input on the ego side and performs adaptive fusion.
-3. **DGDA (Dense-Guided Dual Alignment)**: Provides semantic–geometric dual alignment supervision during training.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Neighbor Raw Point Cloud X_j"] --> S1
+    subgraph S1["Foreground-Aware Point Sampling FAPS (Neighbor Side)"]
+        direction TB
+        B["Point Selector Estimates Saliency<br/>τ_s=0.5 splits FG/BG"] --> C["FG-FPS (Ratio R_fg)<br/>BG-RPS (Ratio R_bg)"]
+    end
+    S1 -->|"Transmit sparse FG+BG points"| D["Concatenation with Ego Point Cloud<br/>Initial Sparse Pillars"]
+    D --> S2
+    subgraph S2["Completion-Enhanced Early Fusion CEEF (Ego Side)"]
+        direction TB
+        E["Per-neighbor VQ Completion<br/>Swin Enc → Codebook Quant → Dec"] --> F["Adaptive Complementary Fusion<br/>Correlation Map Weighting, Fill Empty Pillars Only"]
+    end
+    S2 --> G["Dense Pillars"]
+    G --> H["PointPillars Detection Head → Bounding Boxes"]
+    J["Dense Full Point Cloud Pillars (Teacher)"] -.->|"Training Only"| I["Dense-Guided Double Alignment DGDA<br/>Semantic KL + Geometric Cosine Alignment"]
+    G -.-> I
+```
 
 ### Key Designs
 
-#### 1. Foreground-Aware Point Sampling (FAPS)
+**1. Foreground-Aware Point Sampling (FAPS): Reducing transmission without losing alignment anchors**
 
-Given a neighbor agent's raw point cloud $\mathcal{X}_j \in \mathbb{R}^{M \times 4}$:
+Against intuition, transmitting only foreground points in early fusion results in worse performance than transmitting only background points. Foreground points complete object shapes, while background points provide context for spatial alignment. FAPS performs differentiated sampling on neighbor point clouds $\mathcal{X}_j \in \mathbb{R}^{M \times 4}$: a lightweight pre-trained MLP point selector estimates a saliency map $\mathcal{S}_j \in [0,1]^M$, split by $\tau_s = 0.5$ into a foreground set $\mathcal{X}_j^{fg}$ and a background set $\mathcal{X}_j^{bg}$. Foreground points are few but structurally vital; Farthest Point Sampling (FG-FPS) with ratio $R^{fg}$ preserves object contours. Background points are massive; Random Point Sampling (BG-RPS) with ratio $R^{bg}$ efficiently extracts sparse anchors. Empirically, ~20% foreground points with sufficient background context are effective.
 
-- **Foreground/Background Separation**: A pretrained lightweight MLP point selector estimates a saliency map $\mathcal{S}_j \in [0,1]^M$; points are split into foreground set $\mathcal{X}_j^{fg}$ and background set $\mathcal{X}_j^{bg}$ using threshold $\tau_s = 0.5$.
-- **Foreground Farthest Point Sampling (FG-FPS)**: FPS is applied to foreground points at rate $R^{fg}$ to preserve object structural integrity. Since foreground points are relatively few, the FPS overhead is negligible.
-- **Background Random Sampling (BG-RPS)**: Given the large volume of background points, random sampling at rate $R^{bg}$ efficiently yields a sparse subset.
+**2. Completion-Enhanced Early Fusion (CEEF): Reconstructing dense point clouds at the ego side**
 
-The transmitted output is a sparse point cloud containing sampled foreground and background points. A key insight is that as little as 20% foreground points combined with a sufficient number of background points effectively supports detection; an excessive foreground ratio can actually be outperformed by richer background context.
-
-#### 2. Completion-Enhanced Early Fusion (CEEF)
-
-The core component is a VQ-based pillar-level LiDAR completion module that reconstructs dense pillars from sparse inputs:
-
-**VQ-based LiDAR Completion Pipeline**:
-
-(a) **Sparse Encoder**: A Swin Transformer (depth $L=6$, embedding dimension $D=128$) encodes sparse pillars $\mathcal{P}^s$ into a global-context BEV representation, projected into quantization space $\mathbf{z}^s \in \mathbb{R}^{P \times D_c}$.
-
-(b) **Vector Quantization**: A learnable codebook $E = \{\mathbf{e}_k\}_{k=0}^{K-1}$ ($K=128$, $D_c=128$) maps continuous latent vectors to the nearest codebook entry:
+CEEF uses a VQ-based pillar-level LiDAR completion module to recover lost information. It follows three steps: Encoding, Quantization, and Decoding. A sparse encoder uses a Swin Transformer (depth $L=6$, embedding $D=128$) to encode sparse pillars $\mathcal{P}^s$ into BEV representations with global context, projected into quantization space $\mathbf{z}^s \in \mathbb{R}^{P \times D_c}$. Vector Quantization utilizes a learnable codebook $E = \{\mathbf{e}_k\}_{k=0}^{K-1}$ ($K=128$, $D_c=128$), replacing continuous latent vectors with the nearest codebook entry:
 
 $$\mathbf{z}_i^q = \mathbf{e}_k, \quad k = \arg\min_j \|\mathbf{z}_i^s - \mathbf{e}_j\|_2$$
 
-(c) **Dense Decoder**: Maps quantized embeddings back to pillar space, outputting reconstructed dense pillars $\hat{\mathcal{P}}^d$ and an occupancy mask $\hat{\mathcal{O}}^d$.
+A dense decoder maps quantized embeddings back to pillar space, outputting reconstructed dense pillars $\hat{\mathcal{P}}^d$ and occupancy masks $\hat{\mathcal{O}}^d$. Discrete codebooks are preferred over continuous reconstruction as they provide more discriminative priors for downstream detection.
 
-**Progressive Fusion Strategy** (three stages):
-
-1. **Initial Sparse Early Fusion**: The ego point cloud and received sparse neighbor point clouds are concatenated and pillarized into $\mathcal{P}_i^{se}$.
-2. **Parallel Pillar Completion**: Each neighbor's sparse pillars are completed independently; pillars with occupancy probability above $\tau_o$ are retained, with original sparse pillar values substituted at corresponding positions to preserve fidelity.
-3. **Adaptive Complementary Fusion**: A spatial correlation map $\mathcal{W}_{j \to i}$ is computed (via concatenation, 1×1 convolution, and softmax) to weight the completed pillars; only empty positions in the initial fusion are updated:
+CEEF employs a three-stage progressive fusion:
+1. Concatenate ego point clouds and sparse neighbor point clouds into initial sparse fusion $\mathcal{P}_i^{se}$.
+2. Perform independent parallel completion on each neighbor's sparse pillars, keeping pillars with occupancy probability $> \tau_o$ and overwriting them with original sparse pillar values to maintain fidelity.
+3. Adaptive complementary fusion calculates spatial correlation maps $\mathcal{W}_{j \to i}$ to weight neighbor completion pillars, filling only the empty pillars of the initial fusion:
 
 $$\hat{\mathcal{P}}_i^{de} = \mathcal{M}_i^{se} \odot \mathcal{P}_i^{se} + (1 - \mathcal{M}_i^{se}) \odot \hat{\mathcal{P}}_i^f$$
 
-#### 3. Dense-Guided Dual Alignment (DGDA)
+The mask $\mathcal{M}_i^{se}$ ensures real points are not contaminated by completion results, increasing density while preserving fidelity.
 
-During training, the enhanced early fusion pillars are aligned with dense full-point-cloud pillars in two spaces:
+**3. Dense-Guided Double Alignment (DGDA): Aligning completed pillars with ground truth during training**
 
-- **Semantic Distribution Alignment**: KL divergence along the channel dimension:
+DGDA uses dense full point cloud pillars $\mathcal{P}_i^{de}$ as supervision to align the enhanced early fusion pillars $\hat{\mathcal{P}}_i^{de}$. Semantic distribution alignment uses KL divergence:
 
 $$\mathcal{L}_{sda} = D_{KL}(\sigma(\hat{\mathcal{P}}_i^{de}) \| \sigma(\mathcal{P}_i^{de}))$$
 
-- **Geometric Direction Alignment**: Cosine similarity loss:
+Geometric alignment uses cosine similarity loss to constrain feature direction consistency:
 
 $$\mathcal{L}_{gda} = \mathbb{E}_i\left[1 - \frac{\hat{\mathcal{P}}_i^{de} \cdot \mathcal{P}_i^{de}}{\|\hat{\mathcal{P}}_i^{de}\| \|\mathcal{P}_i^{de}\|}\right]$$
 
+These alignments act as regularizers during training only, suppressing errors introduced by completion without adding inference overhead.
+
 ### Loss & Training
 
-**Two-Stage Training**:
-1. The LiDAR completion module is pretrained to convergence (AdamW, lr=8e-4), with the loss:
+**Two-stage Training**:
+1. Pre-train the LiDAR completion module until convergence (AdamW, lr=8e-4), Loss:
 
 $$\mathcal{L}_\Psi = \lambda \cdot \mathcal{L}_{rec} + \mathcal{L}_{vq}$$
 
-where $\mathcal{L}_{rec}$ comprises occupancy BCE and occupied-region MSE, and $\mathcal{L}_{vq}$ includes codebook loss and commitment loss.
+Where $\mathcal{L}_{rec}$ includes occupancy BCE and MSE, and $\mathcal{L}_{vq}$ includes codebook and commitment losses.
 
-2. The completion module is frozen, and the full pipeline is trained end-to-end (Adam, lr=2e-3), with the total loss:
+2. Freeze the completion module and train the full pipeline end-to-end (Adam, lr=2e-3), Total Loss:
 
 $$\mathcal{L}_\Phi = \mathcal{L}_{det} + \gamma_1 \cdot \mathcal{L}_{sda} + \gamma_2 \cdot \mathcal{L}_{gda}$$
 
@@ -123,9 +122,9 @@ Hyperparameters: $\beta=0.25$, $\lambda=10$, $\gamma_1=1000$, $\gamma_2=10$.
 | **CoLC (100%)** | **95.14/87.89** | **96.88/92.93** | **95.97/89.81** | 76.71/62.17 |
 | **CoLC* (50%)** | 93.47/85.28 | 96.46/91.95 | 95.05/87.72 | 76.03/62.09 |
 
-CoLC achieves state-of-the-art AP@0.7 across all benchmarks when transmitting the full point cloud, **marginally surpassing the early fusion baseline** — attributable to the regularization effect of completion and alignment during training. CoLC* transmits only 50% of the original communication volume while approaching or exceeding early fusion performance.
+CoLC achieves optimal AP@0.7 when transmitting full point clouds, slightly exceeding the early fusion baseline due to regularization from completion and alignment. CoLC* at 50% communication volume still approaches or exceeds early fusion performance.
 
-**Inference Latency**: CoLC runs at 75.86 ms, comparable to Where2comm (69.7 ms) and CoBEVT (84.5 ms), and significantly faster than ERMVP (100.5 ms) and V2X-ViT (197.7 ms).
+**Inference Latency**: CoLC 75.86ms, comparable to Where2comm (69.7ms) and CoBEVT (84.5ms), significantly faster than ERMVP (100.5ms) and V2X-ViT (197.7ms).
 
 ### Ablation Study
 
@@ -133,51 +132,48 @@ CoLC achieves state-of-the-art AP@0.7 across all benchmarks when transmitting th
 
 | FAPS | CEEF | DGDA | AP@0.7 Change |
 |:---:|:---:|:---:|------|
-| ✓ | ✗ | ✗ | Performance drops (information loss) |
-| ✓ | ✓ | ✗ | Significant recovery (completion compensates) |
-| ✓ | ✓ | ✓ | Further improvement (alignment-guided) |
+| ✓ | ✗ | ✗ | Significant drop (info loss) |
+| ✓ | ✓ | ✗ | Significant recovery (completion) |
+| ✓ | ✓ | ✓ | Further improvement (alignment) |
 
-**VQ vs. MAE Completion**
+**VQ vs MAE Completion**
 
 | Method | IoU ↑ | MSE ↓ | AP@0.5/0.7 ↑ |
 |------|:---:|:---:|:---:|
 | MAE-based | 0.633 | 0.057 | 88.17/77.55 |
 | VQ-based | 0.626 | **0.043** | **88.89/79.28** |
 
-Although the VQ-based approach yields a marginally lower occupancy IoU, it achieves lower MSE and higher reconstruction fidelity, translating to superior detection accuracy.
+VQ-based completion has lower MSE and higher reconstruction fidelity, leading to superior detection accuracy.
 
 ### Key Findings
 
-1. Transmitting only foreground points yields worse performance than transmitting only background points — background context is critical for early fusion.
-2. CoLC is inherently robust to heterogeneous model scenarios: intermediate fusion methods may degrade below the no-fusion baseline under model heterogeneity, whereas CoLC remains consistently effective.
-3. Detection performance saturates once completion quality exceeds a threshold (IoU ≥ 0.585, MSE ≤ 0.052), indicating that "good enough" completion suffices.
-4. Under low bandwidth, the PC+ACF combination outperforms SEF+ACF, as completion effectively compensates for severe sparsity; under high bandwidth, the full three-stage combination performs best.
+1. Transmitting only foreground points is less effective than transmitting only background points; background context is vital for early fusion.
+2. CoLC is naturally robust to heterogeneous model scenarios, unlike intermediate fusion which may degrade below "No Fusion" levels.
+3. Detection performance saturates once completion quality reaches a threshold (IoU $\ge$ 0.585, MSE $\le$ 0.052), suggesting "sufficient" completion is enough.
 
 ## Highlights & Insights
 
-1. **Precise Problem Formulation**: The paper clearly identifies the information advantage and communication bottleneck of early fusion, elegantly decoupling the two via sampling and completion.
-2. **Thorough Analysis of Foreground/Background Roles**: The experimental intuition in Figure 1 is compelling — foreground information is insufficient alone; background context is indispensable — and directly informs the FAPS design.
-3. **Well-Motivated Choice of VQ-based Completion**: Compared to MAE-based alternatives, VQ-based completion is better suited for detection downstream tasks, as discrete priors yield more discriminative pillar features.
-4. **Heterogeneous Robustness as a Key Deployment Advantage**: When vehicles from different manufacturers use different perception models, only early fusion-based approaches are naturally compatible.
+1. **Precise Problem Definition**: Identifies early fusion's information advantage and communication bottleneck, decoupling them via sampling and completion.
+2. **Foreground/Background Role Analysis**: Clear intuition that foreground needs completion while background provides essential context.
+3. **Reasonable VQ-based Choice**: Better suited for detection tasks than MAE-based methods due to discrete priors providing discriminative pillar features.
+4. **Heterogeneous Robustness**: Early fusion schemes are naturally compatible when vehicles use different perception models, a key advantage for real-world deployment.
 
 ## Limitations & Future Work
 
-1. The foreground selector in FAPS requires separate pretraining, increasing deployment complexity; unsupervised or self-supervised alternatives merit exploration.
-2. The completion module is frozen during end-to-end training, precluding joint optimization and potentially limiting the performance ceiling.
-3. Evaluation is limited to LiDAR 3D detection; effectiveness on downstream tasks such as semantic segmentation and tracking remains unverified.
-4. ICP-based alignment introduces additional computational cost that may become a bottleneck in large-scale multi-agent scenarios.
-5. Security under adversarial attacks or malicious agent scenarios is not considered.
+1. FAPS foreground selector requires additional pre-training; unsupervised or self-supervised alternatives could be explored.
+2. The completion module is frozen during the second stage; joint optimization might improve the performance ceiling.
+3. Only LiDAR 3D detection was evaluated; effects on semantic segmentation or tracking are not yet verified.
+4. ICP alignment introduces additional computational costs, potentially becoming a bottleneck in large-scale multi-agent scenarios.
 
 ## Related Work & Insights
 
-- **Where2comm/CoBEVT**: Representative intermediate fusion methods focusing on "what features to transmit" and "how to compress them," but constrained by model heterogeneity.
-- **STAR**: Applies MAE to reconstruct masked features in intermediate fusion, but is not directly applicable to early fusion.
-- **PointPillars**: Serves as CoLC's detection backbone; the pillar representation is naturally amenable to VQ-based completion.
-- The approach could be extended to visual collaborative perception (transmitting and completing image patches) and multimodal fusion.
+- **Where2comm/CoBEVT**: Representative intermediate fusion methods focusing on feature compression, but limited by model heterogeneity.
+- **STAR**: Uses MAE in intermediate fusion for masked feature reconstruction, but not applicable to early fusion.
+- **PointPillars**: Serves as the backbone; pillar representations naturally suit VQ completion.
 
 ## Rating
 
-| Dimension | Score (1–5) |
+| Dimension | Score (1-5) |
 |------|:---:|
 | Novelty | 4 |
 | Technical Depth | 4 |
@@ -192,11 +188,11 @@ Although the VQ-based approach yields a marginally lower occupancy IoU, it achie
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
+- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
 - [\[AAAI 2026\] LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures](../../AAAI2026/autonomous_driving/linext_revisiting_lidar_completion_with_efficient_non-diffusion_architectures.md)
 - [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
-- [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
-- [\[ICCV 2025\] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion](../../ICCV2025/autonomous_driving/distilling_diffusion_models_to_efficient_3d_lidar_scene_completion.md)
-- [\[CVPR 2026\] Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals](rascene_high-fidelity_3d_scene_imaging_with_mmwave_communication_signals.md)
+- [\[CVPR 2026\] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion](probabilistic_discrepancy_learning_for_roadside_lidar_scene_completion.md)
 
 </div>
 

@@ -2,134 +2,150 @@
 title: >-
   [Paper Note] To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing
 description: >-
-  [ACL2026][Code Intelligence][Code Editing] This paper treats the "output format" of LLM code editing itself as a training objective, proposing BlockDiff, FuncDiff, and an adaptive format selection strategy…
+  [ACL 2026][Code Intelligence][AdaEdit] This paper treats the "output format" of LLM code editing as a training objective. It proposes BlockDiff, FuncDiff, and an adaptive format selection strategy, AdaEdit. The approach achieves accuracy close to full-code generation while reducing latency and output token costs by over 30% in long-code editing scenarios.
 tags:
-  - "ACL2026"
-  - "Code Intelligence"
-  - "Code Editing"
-  - "Structured diff"
-  - "AdaEdit"
-  - "AST"
-  - "Low-latency generation"
+  - ACL 2026
+  - Code Intelligence
+  - AdaEdit
+  - AST
 date: 2026-05-08
-content_hash: 7dec83cf6771a1db
+content_hash: 10c8eb9026f4c3bd
 ---
-
 # To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2604.27296](https://arxiv.org/abs/2604.27296)  
 **Code**: https://github.com/nju-websoft/AdaEdit  
-**Area**: Code Intelligence / LLM Code Editing / Editing Format Learning  
-**Keywords**: Code Editing, Structured diff, AdaEdit, AST, Low-latency generation
+**Area**: Code Intelligence / LLM Code Editing / Edit Format Learning  
+**Keywords**: Code editing, structural diff, AdaEdit, AST, low-latency generation
 
 ## TL;DR
-This paper treats the "output format" of LLM code editing itself as a training objective, proposing BlockDiff, FuncDiff, and an adaptive format selection strategy, AdaEdit. It achieves accuracy close to full-code generation while reducing latency and output token costs by over 30% in long-code editing scenarios.
+This paper treats the "output format" of LLM code editing as a training objective. It proposes BlockDiff, FuncDiff, and an adaptive format selection strategy, AdaEdit. The approach achieves accuracy close to full-code generation while reducing latency and output token costs by over 30% in long-code editing scenarios.
 
 ## Background & Motivation
-**Background**: LLM-based code editing has become a foundational capability in IDEs, code assistants, and automated repair systems. Mainstream training and evaluation typically require models to either output the full modified code directly based on editing intent or generate patch formats like unified diff or search-replace within strong model prompts.
+**Background**: LLM code editing has become a fundamental capability in IDEs, code assistants, and automated repair systems. Mainstream training and evaluation typically require models to output the full modified code based on editing intent or generate patch formats like unified diff / search-replace via strong model prompting.
 
-**Limitations of Prior Work**: Generating the full code is the most natural for models because pre-training corpora consist largely of complete files, but it is highly inefficient. Even for a single-line change, the entire file must be re-output, leading to high latency, API costs, and risks of unintended modifications. Traditional diffs appear to save tokens but are unnatural for LLMs: line-numbered formats require precise offsets, and content-addressed diffs shatter code into fragmented hunks, breaking syntactic structures.
+**Limitations of Prior Work**: Full-code generation is natural for models since pre-training data consists mostly of full code, but it is inefficient: even for a single-line change, the entire file must be re-output, leading to latency, API costs, and risks of unintended changes. Traditional diffs save tokens but are unnatural for LLMs: formats with line numbers require precise offsets, while content-addressed diffs fragment code into hunks that break syntactic structures.
 
-**Key Challenge**: Code editing must satisfy two simultaneous goals: the output should be as short as possible for low latency and cost, yet sufficiently natural and patchable to ensure functional correctness. Full-code is natural but redundant, while line-level diff is efficient but fragile; a single fixed format rarely covers all editing scales.
+**Key Challenge**: Code editing must satisfy two goals simultaneously: outputs should be as short as possible for low latency and cost, yet sufficiently natural and patchable to ensure functional correctness. Full-code is natural but redundant; line-level diff is efficient but fragile. A single format struggle to cover all editing scales.
 
-**Goal**: The authors aim to answer a fundamental question: What output representation should LLM-based code editing use? If a diff format is to be learned by the model, which code structures should it preserve? If a diff is actually longer than the full-code in certain scenarios, can the model automatically switch formats?
+**Goal**: The authors aim to answer a fundamental question: What output representation should LLM-based code editing use? If diff formats are to be learned by models, what code structures should they preserve? Can models automatically switch formats if a diff becomes longer than the full code?
 
-**Key Insight**: The paper first systematically compares conventional diffs, proving that line-number offsets and fragmented hunks are primary sources of failure. It then extends text diffs to syntactically complete blocks or functions using AST. Finally, it allows the model to learn to select the representation with fewer tokens between diff and full-code through SFT.
+**Key Insight**: The paper systematically compares conventional diffs and proves that line-number offsets and fragmented hunks are major sources of failure. It uses AST to extend text diffs to syntactically complete blocks or functions. Finally, it allows the model to learn to choose the representation with fewer tokens between diff and full-code via SFT.
 
-**Core Idea**: Elevate local text modifications to syntax-block-level rewrites and use AdaEdit to let the model select between "structured diff or full-code" on a per-sample basis, rather than fixing a single editing format.
+**Core Idea**: Elevate local text modifications to syntax-block-level rewrites and use AdaEdit to let the model choose "structural diff or full-code" per sample, rather than fixing a single editing format.
 
 ## Method
-The methodology consists of two layers. The first layer defines structure-aware diff formats: BlockDiff and FuncDiff. These remain text-based search/replace patches, but the hunk anchors and rewrite content are no longer arbitrary line fragments; they are syntax blocks within the AST. The second layer is AdaEdit, which does not invent new patch syntax but modifies training labels: for each sample, it compares the token length of the full target code and its diff representation, using the shorter one as the training target to internalize format selection logic.
+The method consists of two layers. The first is structure-aware diff formats: BlockDiff and FuncDiff. These remain text search/replace patches, but the hunk anchors and rewrite content are no longer arbitrary line fragments but syntactic blocks in the AST. The second layer is AdaEdit, which modifies the training labels rather than inventing new patch syntax: for each sample, it compares the token lengths of the full target code and its diff representation, using the shorter one as the training target to internalize format selection logic.
 
 ### Overall Architecture
-Given source code, editing intent, and target code, the system first calculates the minimal text difference, MinUniDiff, to ensure all text changes are covered. It then uses tree-sitter to construct an AST block tree and maps each diff hunk to the smallest syntax node or set of contiguous nodes. Subsequently, anchor expansion ensures the segment to be replaced is uniquely locatable in the source code. Overlapping hunks or multiple modifications within the same fine-grained node are handled via bottom-up merging. During training, the model receives editing intent and source code as input, producing output in full-code, BlockDiff, FuncDiff, or a hybrid format selected by AdaEdit.
+Given the source code, editing intent, and target code, the system first computes the minimal text difference, MinUniDiff, to ensure all text changes are covered. It then constructs an AST block tree using tree-sitter to map each diff hunk to the smallest syntactic node or set of continuous nodes. Subsequently, anchor expansion ensures the segment to be replaced is uniquely locatable in the source code. Overlapping hunks or multiple modifications within the same fine-grained node are processed via bottom-up merging. During training, the model receives the intent and source code as input, and the output can be full-code, BlockDiff, FuncDiff, or a mixed format selected by AdaEdit.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Source Code + Editing Intent + Target Code"] --> B["MinUniDiff<br/>Compute minimal text difference, covering all changes"]
+    subgraph S1["BlockDiff / FuncDiff Structure-Aware Hunks"]
+        direction TB
+        C["Tree-sitter constructs AST block tree"] --> D["Map each hunk to minimal syntactic nodes<br/>BlockDiff: branches/loops, FuncDiff: full functions"]
+    end
+    B --> S1
+    subgraph S2["Unique Anchor Expansion and Text Patching"]
+        direction TB
+        E["Expand to sibling/parent nodes if anchor is not unique"] --> F["Bottom-up merging of overlapping or same-node hunks"]
+    end
+    S1 --> S2
+    S2 --> G["AdaEdit Adaptive Format Selection<br/>Compare full-code vs. diff tokens, select the shorter"]
+    G --> H["Output Patch: full-code / BlockDiff / FuncDiff"]
+```
 
 ### Key Designs
-1. **Structure-Aware Hunks in BlockDiff / FuncDiff**:
-	- **Function**: Ensures the diff representation preserves the syntactic integrity of the code, preventing the model from generating arbitrary fragmented lines.
-	- **Mechanism**: BlockDiff allows editing at fine-grained AST nodes (including branches, loops, context blocks, and functions); FuncDiff ignores control structures, favoring function-level rewrites. Both represent changes as "locating a unique anchor and replacing its structured content."
-	- **Design Motivation**: LLMs are more proficient at generating complete, syntactically coherent code blocks rather than diff hunks with missing headers or footers. Structured hunks sacrifice some local minimality for a more natural generation distribution and higher patch usability.
 
-2. **Unique Anchor Expansion and Text Patching**:
-	- **Function**: Guarantees that the structured diff output by the model can be automatically and unambiguously applied back to the source code.
-	- **Mechanism**: After an initial mapping to the smallest AST node, if the text content is not unique in the source, neighboring sibling nodes are gradually added. Expansion continues to parent nodes if necessary, using the entire file as an anchor in extreme cases. The patching phase does not rely on the AST; it performs text search/replace with fault tolerance for whitespace and blank lines.
-	- **Design Motivation**: If a structured diff cannot be stably patched, it cannot enter real IDE workflows. Using AST only for format generation while keeping the final patch text-level allows coverage of comments, spaces, and syntactically incorrect fragments that AST tools might ignore.
+**1. BlockDiff / FuncDiff Structure-Aware Hunks: Making code blocks the unit of diff rather than arbitrary fragments**
 
-3. **AdaEdit Adaptive Format Selection**:
-	- **Function**: Allows the model to automatically choose the most token-efficient output format based on editing scale and code length.
-	- **Mechanism**: For each training sample with source code $C_j$ and target code $C'_j$, the token counts for the full-code representation and the diff representation are calculated. The objective $E_j = argmin(|C'_j|, |Diff(C_j,C'_j)|)$ is then used for supervision. This allows the model to output the shorter format during inference without an explicit classifier.
-	- **Design Motivation**: Diffs are not always more efficient. When changes are scattered or extensive, the overhead of anchors and multiple hunks may exceed that of the full code. AdaEdit avoids "diffing for the sake of diffing" by delegating efficiency choices to the token cost signals in the training data.
+Traditional content diffs slice code into arbitrary line fragments, forcing models to generate hunks that lack proper headers or footers. However, LLMs excel at generating complete, syntactically coherent code blocks—the most common pattern in pre-training. Structural formats eliminate this mismatch: BlockDiff allows editing at fine-grained AST nodes (branches, loops, context blocks, functions), while FuncDiff focuses on function-level rewrites, ignoring internal control structures. Both follow a "locate a unique anchor, then replace structural content" format. Compared to line-level diffs, structural hunks sacrifice some minimality for outputs that better fit LLM generation distributions and offer higher patch usability.
+
+**2. Unique Anchor Expansion and Text Patching: Ensuring structural diffs can be unambiguously applied**
+
+No matter how elegant a structural diff is, it fails if the anchor is not unique in the source code during patching. The authors use a bottom-up expansion strategy to guarantee uniqueness: each hunk is first mapped to the smallest AST node. If the node's text is not unique in the source, it merges with adjacent sibling nodes. If still not unique, it probes the parent node, eventually defaulting to the whole file as the anchor. Modifications falling into the same node or overlapping are resolved via bottom-up merging. AST is only used during format generation; patching remains text-based search/replace with fault tolerance for whitespace, allowing it to handle comments and code with syntax errors.
+
+**3. AdaEdit Adaptive Format Selection: Let the model automatically pick the most token-efficient representation**
+
+Diffs are not always shorter. Scattered or extensive changes can make multiple anchors and hunks more expensive than full-code. AdaEdit changes the supervision target of the training data. For each training sample with source code $C_j$ and target code $C'_j$, it calculates the tokens for full-code and diff representations, selecting the minimum as the label:
+
+$$E_j = \arg\min\big(|C'_j|,\ |\mathrm{Diff}(C_j, C'_j)|\big)$$
+
+This allows the model to internalize format decisions into the generation distribution without needing extra classification heads or specific format-selection prefixes. AdaEdit effectively pushes the routing logic into the data labels.
 
 ### Loss & Training
-The training objective is standard token-level cross-entropy. Main experiments use OCEData for Python editing training, evaluating on EditEval, CanItEdit, HumanEvalFix, Aider-1, and Aider-2. Models include DeepSeek-Coder-6.7B, Qwen2.5-Coder-7B, and Qwen2.5-Coder-14B. All models undergo full-parameter SFT from their base versions to isolate the impact of "output format" on results. Evaluation spans two dimensions: effectiveness (pass@1, patch-apply success rate, and linter checks) and efficiency (first-rendered tokens, total output tokens, and latency).
+The training objective is standard token-level cross-entropy. Main experiments utilize OCEData for Python editing training, evaluated on EditEval, CanItEdit, HumanEvalFix, Aider-1, and Aider-2. Models include DeepSeek-Coder-6.7B, Qwen2.5-Coder-7B, and Qwen2.5-Coder-14B. All models undergo full-parameter SFT from base versions to isolate the effect of "output format." Performance is evaluated via pass@1, patch-apply success rates, and linter checks; efficiency is measured by time-to-first-render, total output tokens, and latency.
 
 ## Key Experimental Results
 
 ### Main Results
-The main table compares full-code, traditional ContentDiff, structured BlockDiff/FuncDiff, and versions with AdaEdit based on average pass@1.
+The main table compares full-code, traditional ContentDiff, structural BlockDiff/FuncDiff, and versions with AdaEdit.
 
 | Base Model | FullCode | ContentDiff | BlockDiff | BlockDiff + AdaEdit | FuncDiff | FuncDiff + AdaEdit | Main Conclusion |
 |----------|----------|-------------|-----------|---------------------|----------|--------------------|----------|
 | DeepSeek-Coder-6.7B | 52.21 | 48.92 | 50.64 | 52.16 | 50.79 | 52.55 | AdaEdit reaches or exceeds FullCode |
-| Qwen2.5-Coder-7B | 57.07 | 54.43 | 55.98 | 57.61 | 57.32 | 57.95 | FuncDiff + AdaEdit performs best |
-| Qwen2.5-Coder-14B | 63.89 | 62.16 | 64.11 | 63.92 | 64.89 | 64.68 | Stronger models better utilize structured diffs |
+| Qwen2.5-Coder-7B | 57.07 | 54.43 | 55.98 | 57.61 | 57.32 | 57.95 | FuncDiff + AdaEdit is best |
+| Qwen2.5-Coder-14B | 63.89 | 62.16 | 64.11 | 63.92 | 64.89 | 64.68 | Stronger models utilize structural diff better |
 
-Issues with traditional diffs were evident: on Qwen2.5-Coder-7B, MinUniDiff achieved only 14.07 average pass@1, UniDiff 33.15, and even with line-number assistance, it reached only 31.13 / 37.66. ContentDiff improved to 54.43 but remained lower than FullCode's 57.07. This indicates that "removing line numbers" is only the first step; preserving syntactic structure is key.
+The problem with traditional diff is evident: On Qwen2.5-Coder-7B, MinUniDiff yields only a 14.07 average pass@1; even with line numbers, it reaches only 37.66. ContentDiff improves to 54.43 but remains below FullCode at 57.07. This indicates that "removing line numbers" is only the first step; preserving syntactic structure is key.
 
 ### Ablation Study
-The paper analyzes AdaEdit through long-code efficiency, format selection accuracy, and cross-language generalization.
+AdaEdit is analyzed based on long-code efficiency, format selection accuracy, and cross-lingual generalization.
 
-| Setting | Pass@1 | Output Cost (tokens) | Description |
+| Setting | Pass@1 | Output Cost (Tokens) | Description |
 |------|--------|-----------------|------|
 | FullCode, CanItEdit >300 tokens | 39.75 | 648.30 | Accurate but redundant |
-| ContentDiff | 33.75 | 612.85 | Minimal savings and low accuracy |
-| ContentDiff + AdaEdit | 33.00 | 432.73 | Cost reduced but accuracy remains weak |
+| ContentDiff | 33.75 | 612.85 | Low savings, low accuracy |
+| ContentDiff + AdaEdit | 33.00 | 432.73 | Cost reduced, accuracy remains low |
 | BlockDiff | 38.69 | 570.26 | Closer to FullCode |
-| BlockDiff + AdaEdit | 37.94 | 466.04 | Cost significantly reduced |
+| BlockDiff + AdaEdit | 37.94 | 466.04 | Significant cost reduction |
 | FuncDiff | 40.75 | 546.77 | Accuracy exceeds FullCode |
 | FuncDiff + AdaEdit | 40.69 | 481.63 | Accuracy maintained, cost reduced ~25.7% |
 
-JavaScript cross-language experiments also support the generalization ability of structured formats.
+JavaScript cross-lingual experiments support the generalization of structural formats.
 
 | Format | HumanEvalFix-JavaScript pass@1 | Conclusion |
 |------|---------------------------------|------|
-| Base model | 63.48 | Not fine-tuned for editing formats |
+| Base model | 63.48 | Not fine-tuned for editing |
 | FullCode | 66.13 | Strong baseline |
 | ContentDiff | 56.55 | Traditional diff degrades significantly |
-| ContentDiff + AdaEdit | 64.97 | AdaEdit mitigates but is insufficient |
+| ContentDiff + AdaEdit | 64.97 | AdaEdit alleviates, but not enough |
 | BlockDiff + AdaEdit | 65.70 | Close to FullCode |
 | FuncDiff + AdaEdit | 67.74 | Exceeds FullCode |
 
 ### Key Findings
-- The advantage of structured diff becomes more pronounced as model capability increases. On Qwen2.5-Coder-14B, FuncDiff reached 64.89, exceeding FullCode's 63.89, suggesting stronger models better understand structured editing formats.
-- AdaEdit's format selection accuracy exceeds 90%, and if a 20% token deviation is allowed, average accuracy exceeds 95%. Few-shot strong models do not naturally possess this cost-benefit judgment, making training necessary.
-- For long code, FullCode output tokens grow approximately linearly with code length. FuncDiff involves anchor overhead for short code but becomes more efficient as code length increases. AdaEdit automatically selects the lower-cost format across different scales.
-- Usability analysis shows ContentDiff is more prone to patch failures due to non-unique anchors generated by the model. While line-numbered formats appear to have higher patch success rates, linter checks reveal more code breakage.
+- The advantage of structural diff becomes more pronounced as model capability increases. On Qwen2.5-Coder-14B, FuncDiff (64.89) exceeds FullCode (63.89), suggesting stronger models better understand structural formats.
+- AdaEdit's format selection accuracy exceeds 90%; if allowed a 20% token margin, accuracy exceeds 95%. Few-shot prompting of strong models does not naturally grant this cost-benefit judgment; training is necessary.
+- For long code, FullCode output tokens grow linearly with file length. FuncDiff has anchor overhead for short code but becomes efficient for longer files; AdaEdit automatically selects the lower-cost format across scales.
+- Usability analysis shows ContentDiff is prone to patch failures due to non-unique anchors. While formats with line numbers seem to have higher patch success, linter checks reveal they cause more structural breakage.
 
 ## Highlights & Insights
-- The core value of this paper is not just another code edit benchmark, but the elevation of "output format" to a component of model training design. Many code intelligence works treat full-code or diff as engineering details; this proves that format directly impacts accuracy, latency, and cost.
-- The trade-off between BlockDiff and FuncDiff is clear: BlockDiff is finer and potentially saves more tokens; FuncDiff is coarser, more natural, and more stable. In experiments, FuncDiff often showed higher accuracy, suggesting that for LLMs, "writing a slightly larger complete structure" might be more cost-effective than extreme localization.
-- AdaEdit resembles encoding inference-time routing into data labels. It requires no additional classification head or pre-output format decisions; instead, it makes format selection part of the generation distribution via the supervision target.
-- Insights for IDE products: User experience is typically determined by latency, patch success rate, and unintended changes, not just pass@1. Structured diff provides a midpoint that is more controllable than full-code and more natural than traditional diffs.
+- The core value of this paper is not just another benchmark, but elevating "output format" to a first-class design component in model training. Many works treat full-code or diff as implementation details; this work proves format directly impacts accuracy, latency, and cost.
+- The trade-off between BlockDiff and FuncDiff is clear: BlockDiff is finer and potentially more saving, while FuncDiff is coarser, more natural, and more stable. In experiments, FuncDiff often shows higher accuracy, suggesting "writing a bit more context" is more efficient for LLMs than extreme localization.
+- AdaEdit internalizes inference-time routing into data labels. It requires no classification heads or prefix headers, as format selection becomes part of the generative distribution.
+- Insights for IDE products: User experience is determined by latency, patch success rate, and unintended modifications. Structural diff provides a middle ground that is more controllable than full-code and more natural than traditional diff.
 
 ## Limitations & Future Work
-- The effectiveness of structured diff depends on the base model's strength. Weaker models might not surpass FullCode when they lack understanding of the new formats; the paper explicitly notes that performance gains scale with model size.
-- Training data is primarily Python-based. Although JavaScript experiments were added, repository-level editing, cross-file changes, build system modifications, and large-scale refactorings are not yet fully covered.
-- Any diff-based method carries risks of patch failure or accidental code damage. The paper mitigates this with unique anchors and linter checks, but a real IDE still requires test runs, type checking, and rollback mechanisms.
-- AdaEdit currently uses SFT to learn format selection from token length labels. Future work could integrate functional correctness, test results, and token costs into a single verifiable reward, using RL to explore more flexible editing formats.
+- Structural diff performance depends on the base model's capability. Weaker models might not exceed FullCode accuracy when using BlockDiff/FuncDiff.
+- Training data is primarily Python-based. While JavaScript experiments were added, repository-level editing, cross-file changes, and large-scale refactors are not yet fully covered.
+- Any diff-based method carries risks of patch failure. While unique anchors and linter checks alleviate this, a real IDE still requires test runners and rollback mechanisms.
+- AdaEdit currently uses SFT to learn from token length labels. Future work could combine functional correctness, test results, and token costs into a verifiable reward for RL exploration.
 
 ## Related Work & Insights
-- **vs FullCode generation**: FullCode aligns best with the pre-training distribution and has high accuracy but significant redundancy. This paper's structured diff attempts to maintain sufficiently complete syntactic structures while avoiding full-file rewrites.
-- **vs UniDiff / MinUniDiff**: Traditional unified diffs rely on line numbers and offsets, which LLMs struggle to generate stably. Experimental results show that even with line numbers in the source code, accuracy remains far below full-code.
-- **vs ContentDiff / search-replace**: Content-addressed diffs remove line-number fragility, but hunks remain arbitrary line fragments, leading to unnatural generation or non-unique anchors. BlockDiff/FuncDiff use AST nodes to resolve these issues.
-- **vs AST edit scripts**: Tools like GumTree are suitable for program analysis, but their output is a sequence of operations or DSLs poorly suited for token-by-token LLM generation, often ignoring whitespace and comments. This paper retains text patching and is thus better for precise refactoring of code text.
+- **vs. FullCode generation**: FullCode is most consistent with the pre-training distribution and is accurate but highly redundant. This work's structural diff maintains enough syntax while avoiding full-file rewrites.
+- **vs. UniDiff / MinUniDiff**: Traditional unified diff depends on line numbers and offsets, which LLMs struggle to generate stably. Experimental results show that even with line numbers in the source, accuracy is lower than full-code.
+- **vs. ContentDiff / search-replace**: Content-addressed diff removes line-number fragility, but hunks remain arbitrary fragments. BlockDiff/FuncDiff use AST nodes to solve the unnaturalness and non-unique anchor issues.
+- **vs. AST edit scripts**: Tools like GumTree are suitable for program analysis but output operation sequences or DSLs that are not ideal for token-by-token generation and often ignore whitespace/comments. This work maintains text patching, making it better for precise text-level reconstruction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Systematizes code editing formats as a trainable design and proposes structured diff + adaptive selection; the problem approach is highly practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple models, benchmarks, long code, usability, and JavaScript generalization; repository-level editing needs further validation.
-- Writing Quality: ⭐⭐⭐⭐☆ Logical and clear, diagnosing conventional diffs before proposing methods, with experimental tables directly supporting the claims.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for engineering code assistants, IDE editing, and low-latency patch generation; serves as a reference for training code editing models.
+- Novelty: ⭐⭐⭐⭐⭐ Systematizes code editing format as a trainable design; practical proposal of structural diff + adaptive selection.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple models, benchmarks, long code, usability, and JavaScript; needs more on repository-level editing.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear logic, diagnostic approach to conventional diffs followed by proposed solutions, data-backed arguments.
+- Value: ⭐⭐⭐⭐⭐ High engineering value for code assistants and low-latency IDE patch generation; serves as a reference for training code editing models.
 
 <!-- RELATED:START -->
 
@@ -138,10 +154,10 @@ JavaScript cross-language experiments also support the generalization ability of
 ## Related Papers
 
 - [\[ACL 2026\] Learning Adaptive Parallel Execution for Efficient Code Localization](learning_adaptive_parallel_execution_for_efficient_code_localization.md)
-- [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](pat_planning-after-trial_for_efficient_test-time_code_generation.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
 - [\[ACL 2026\] The Path Not Taken: Duality in Reasoning about Program Execution](the_path_not_taken_duality_in_reasoning_about_program_execution.md)
-- [\[ACL 2026\] Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding](static_program_slicing_using_language_models_with_dataflow-aware_pretraining_and.md)
+- [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](pat_planning-after-trial_for_efficient_test-time_code_generation.md)
+- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 
 </div>
 

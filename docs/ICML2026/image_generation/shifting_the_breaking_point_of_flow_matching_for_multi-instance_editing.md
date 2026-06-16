@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing
 description: >-
-  [ICML2026][Image Generation][Flow Matching] Aiming at the chronic problem of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based Rectified Flow Matching models (such as FLUX.1 Kontext)…
+  [ICML 2026][Image Generation][Flow Matching] To address the persistent issue of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based models (e.g., FLUX.1 Kontext) utilizing Rectified Flow Matching, this paper proposes Instance-Disentangled Attention (IDAttn). By applying structured masks to joint attention, each editing instruction is bou
 tags:
-  - "ICML2026"
-  - "Image Generation"
-  - "Flow Matching"
-  - "MMDiT"
-  - "Multi-Instance Editing"
-  - "Attention Disentanglement"
-  - "Infographic Text Editing"
+  - ICML 2026
+  - Image Generation
+  - Flow Matching
+  - MMDiT
 date: 2026-05-08
-content_hash: 8b4b8b057d3dbff1
+content_hash: f5b3e21fe9968b06
 ---
-
 # Shifting the Breaking Point of Flow Matching for Multi-Instance Editing
 
 **Conference**: ICML2026  
@@ -24,128 +20,133 @@ content_hash: 8b4b8b057d3dbff1
 **Keywords**: Flow Matching, MMDiT, Multi-Instance Editing, Attention Disentanglement, Infographic Text Editing
 
 ## TL;DR
-Aiming at the chronic problem of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based Rectified Flow Matching models (such as FLUX.1 Kontext), this paper proposes Instance-Disentangled Attention (IDAttn). By applying structured masks to joint attention, each editing instruction is bound to its corresponding bounding box. Together with a hierarchical disentanglement/harmonization scheduling strategy and efficient independent multi-prompt encoding, the model can complete $N$ non-interfering edits in a single forward pass. It significantly outperforms multi-turn and concatenation baselines on its proposed Infographic text editing benchmark.
+To address the persistent issue of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based models (e.g., FLUX.1 Kontext) utilizing Rectified Flow Matching, this paper proposes Instance-Disentangled Attention (IDAttn). By applying structured masks to joint attention, each editing instruction is bound to its corresponding bounding box. Combined with a hierarchical disentanglement/harmonization schedule and efficient independent multi-prompt encoding, the method enables $N$ non-interfering edits in a single forward pass. It significantly outperforms multi-turn and concatenation baselines on the newly proposed Infographic text editing benchmark.
 
 ## Background & Motivation
 
-**Background**: Text-driven image editing has long been dominated by U-Net diffusion models. Recently, the community is migrating toward MMDiT + Rectified Flow Matching (e.g., Stable Diffusion 3, FLUX.1 Kontext), where the ODE formulation offers higher visual quality and faster inference. Editing typically involves concatenating reference image tokens with noise latents and feeding them into the same joint attention.
+**Background**: Text-driven image editing has long been dominated by U-Net diffusion models. Recently, the community has pivoted toward MMDiT + Rectified Flow Matching (e.g., Stable Diffusion 3, FLUX.1 Kontext), where the ODE formulation offers higher visual quality and faster inference. Editing typically involves concatenating reference image tokens with noise latents within a single joint attention mechanism.
 
-**Limitations of Prior Work**: Existing FM editors almost exclusively support "one-sentence-edits-whole-image" or a small number of edits. In multi-instance scenarios (e.g., dozens of text boxes in a single infographic), they either fail to edit large areas or suffer from attribute leakage, where semantics from box A seep into box B. Although multi-turn inference mitigates this, it incurs an explosive $N$-step inference cost and repeatedly damages background consistency.
+**Limitations of Prior Work**: Existing FM editors primarily support "whole-image editing" or a minimal number of concurrent edits. In multi-instance scenarios (e.g., dozens of text boxes in an infographic), they suffer from either massive missed edits or "attribute leakage," where semantics from box A seep into box B. While multi-turn inference mitigates this, the cost for $N$ steps is prohibitive and repeatedly degrades background consistency.
 
-**Key Challenge**: Flow matching learns a **global** velocity field $v_\theta(x, t \mid c)$, where condition $c$ is also injected globally. Joint attention allows prompt, latent, and context tokens to attend to each other freely. This leads to interference between query/key pairs of different instances in the shared vector field; instance-level isolation is not architecturally enforced.
+**Key Challenge**: Flow matching learns a **global** velocity field $v_\theta(x, t \mid c)$ where the condition $c$ is injected globally. Joint attention allows prompt, latent, and context tokens to attend to each other freely. This design causes query/key interference between different instances within the shared vector field, as instance-level isolation is not architecturally enforced.
 
-**Goal**: Without modifying backbone weights or disrupting the global FM training objective, given $N$ local instructions and bboxes $\{(s_n, b_n)\}_{n=1}^N$, achieve (i) editing disentanglement (instructions do not interfere), (ii) locality (non-edited areas remain unchanged), (iii) global coherence (the final image remains harmonious), and (iv) single-forward-pass completion to maintain sub-linear inference costs.
+**Goal**: Given $N$ local instructions with bounding boxes $\{(s_n, b_n)\}_{n=1}^N$, the objective is to achieve (i) editing disentanglement (no interference between instructions), (ii) locality (preserving non-edited areas), and (iii) global coherence (maintaining a harmonious overall image), all while (iv) completing all edits in a single forward pass to maintain sub-linear inference costs without modifying backbone weights or the global FM training objective.
 
-**Key Insight**: The authors observe that the root cause of attribute leakage is **structural**—any two unrelated tokens are allowed to communicate in joint attention. Rather than iteratively optimizing attention maps during inference (as in P2P-like methods), it is better to directly modify the attention **connectivity graph** and map specific connectivity strategies to different depths of the MMDiT.
+**Key Insight**: The authors observe that the root cause of attribute leakage is **structural**—any two unrelated tokens are permitted to communicate in joint attention. Rather than iteratively optimizing attention maps during inference (as seen in P2P-based methods), it is more effective to modify the attention **connectivity graph** directly and apply different connectivity strategies across the depth of the MMDiT.
 
-**Core Idea**: Use an additive $\{0, -\infty\}$ mask to partition joint attention into "per-instance" subgraphs. Middle layers employ strict disentanglement to keep each instance's prompt/latent/context self-contained, while early and late layers employ harmonization to let global tokens reassemble the fragments into a coherent image.
+**Core Idea**: Use a $\{0, -\infty\}$ additive mask to partition joint attention into instance-wise subgraphs. Intermediate layers execute strict disentanglement to self-contain prompt/latent/context for each instance, while early and late layers perform harmonization to integrate fragments into a coherent global image.
 
 ## Method
 
 ### Overall Architecture
-Input: Reference image $I^{\mathrm{ref}}$, $N$ bboxes $b_n$, $N$ text instructions $s_n$, and a global/empty prompt $s_g$. The backbone is FLUX.1 Kontext (MMDiT + Rectified Flow Matching), kept frozen. The workflow is as follows:
+The method solves multi-instance interference by converting the process into a single forward ODE integration on a frozen FLUX.1 Kontext backbone. A structured additive mask, partitioned by instance, is applied to joint attention. First, the global/null prompt $s_g$ and individual instructions $s_n$ are independently encoded and concatenated into text tokens. Joint tokens are partitioned—by modality and instance ownership—into $Z = Z^{\text{text}} \| Z^{\text{latent}} \| Z^{\text{context}}$, comprising global prompts $\mathbb{T}_g$, instance prompts $\mathbb{T}_n$, background/instance latents $\mathbb{L}_u/\mathbb{L}_n$, and background/instance contexts $\mathbb{C}_u/\mathbb{C}_n$. Different MMDiT depths use varied mask constraints to integrate the velocity field from $t=0$ to $t=1$.
 
-1.  **Independent Multi-Prompt Encoding**: $s_g$ and each $s_n$ are separately fed into text encoders to obtain variable-length embeddings, which are concatenated into the final text token sequence $Z^{\text{text}}$. This prevents conceptual crosstalk during the encoding phase.
-2.  **Token Space Partitioning**: Based on "modality $\times$ instance attribution", the joint token sequence $Z = Z^{\text{text}} \| Z^{\text{latent}} \| Z^{\text{context}}$ is partitioned into global prompt $\mathbb{T}_g$, instance prompts $\mathbb{T}_n$, background latent $\mathbb{L}_u$, instance latents $\mathbb{L}_n$, background context $\mathbb{C}_u$, and instance contexts $\mathbb{C}_n$ (a token can belong to multiple $n$ if bboxes overlap).
-3.  **Hierarchical Attention Mask Scheduling**: Early layers $L_{\text{early}}$ and late layers $L_{\text{late}}$ of the MMDiT use the harmonious mask $M^{\mathrm{har}}$, while middle layers $L_{\text{mid}}$ use the disentangled mask $M^{\mathrm{dis}}$. The resulting velocity field satisfies both instance isolation and global coherence.
-4.  **Single ODE Integration**: Using the constrained $v_\theta$ described above, the ODE is integrated once from $t=0$ to $t=1$ to obtain $I^{\text{edit}}$, completing $N$ edits simultaneously.
-5.  **Optional LoRA Fine-tuning**: A LoRA adapter ($r=32$) is applied to MMDiT on the Crello Edit training subset. Using the same masking strategy, $\mathcal{L}_{\mathrm{FM}}$ is minimized to alleviate the "reluctance to edit" problem for small regions or short instructions in the original model.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Ref Image + Global Prompt s_g + N BBox Instructions {(s_n, b_n)}"]
+    IN --> ENC["Efficient Multi-prompt Independent Encoding<br/>Each s_n passes text encoder for variable-length embeddings → concat to Z_text"]
+    ENC --> PART["Partition by Modality × Instance Ownership<br/>Z = Z_text ‖ Z_latent ‖ Z_context → T_g / T_n / L_u·L_n / C_u·C_n"]
+    subgraph MM["Hierarchical Mask Scheduling (Frozen FLUX.1 Kontext / MMDiT Layers)"]
+        direction TB
+        E["Early Layers: Harmonization Mask M^har (Initial Layout)"]
+        E --> D["Mid Layers: IDAttn Disentanglement Mask M^dis<br/>Block cross-instance prompt↔prompt / prompt↔latent paths with −∞"]
+        D --> L["Late Layers: Harmonization Mask M^har (Final Global Integration)"]
+    end
+    PART --> E
+    L --> OUT["Rectified Flow Single ODE Integration t=0→1<br/>→ Result with N non-interfering edits"]
+```
 
 ### Key Designs
 
-1.  **Instance-Disentangled Attention (IDAttn) Core Operator**:
-    - **Function**: Rewrites standard joint attention $\mathrm{Attn}(Q,K,V) = \mathrm{softmax}(QK^\top/\sqrt{d})V$ as $\mathrm{IDAttn}(Q,K,V,M) = \mathrm{softmax}(QK^\top/\sqrt{d} + M)V$, using an additive $\{0, -\infty\}$ mask to cut off token pairs that should not connect.
-    - **Mechanism**: Defines two complementary masks. **$M^{\mathrm{dis}}$ (Disentangled)** allows only three types of connectivity: internal communication within an instance $\mathbb{T}_n \cup \mathbb{L}_n \cup \mathbb{C}_n$, global prompt $\mathbb{T}_g$ unidirectionally attending to all latent/context, and background latent/context attending only to global and non-instance prompt tokens. Any cross-instance $\mathbb{T}_n \leftrightarrow \mathbb{T}_m$ ($n \neq m$) is blocked by $-\infty$. **$M^{\mathrm{har}}$ (Harmonious)** relaxes this to allow instance latents/contexts to attend to each other and all image tokens, maintaining isolation only between prompts.
-    - **Design Motivation**: Move attribute leakage prevention from the loss/optimization level to the architectural level, strictly prohibiting cross-instance prompt-prompt and prompt-latent coupling. Retaining the unidirectional prompt→latent global channel ensures global style tokens can still influence all regions without fragmenting the background.
+**1. Instance-Disentangled Attention (IDAttn): Architecturally Severing Cross-Instance Paths**
 
-2.  **Hierarchical Mask Scheduling (early/mid/late layer scheduling)**:
-    - **Function**: Determines whether each MMDiT layer uses $M^{\mathrm{har}}$ or $M^{\mathrm{dis}}$, balancing "instance separation" and "global coherence."
-    - **Mechanism**: Based on observations that Transformers extract coarse features in early layers, perform semantic binding in middle layers, and provide global coordination in late layers, the authors set the schedule as $(L_{\text{early}}, L_{\text{mid}}, L_{\text{late}}) = (M^{\mathrm{har}}, M^{\mathrm{dis}}, M^{\mathrm{har}})$. Ablations of 8 combinations in Table 1 show this three-stage approach is simultaneously optimal across Tgt CLIP / Bg LPIPS / Loc CLIP / AR. Using $M^{\mathrm{dis}}$ throughout sacrifices background consistency, while $M^{\mathrm{har}}$ throughout drops performance to vanilla FLUX levels (AR only 80%).
-    - **Design Motivation**: Pure disentanglement fragments the background into patches, while pure harmonization muddles multi-instance semantics. Disentanglement is placed in the sensitive semantic-binding middle section, with harmonious layers used for "layout initialization" and "final merging."
+The authors diagnose attribute leakage as a structural failure of unconstrained joint attention. IDAttn modifies the standard operator $\mathrm{Attn}(Q,K,V) = \mathrm{softmax}(QK^\top/\sqrt{d})V$ to $\mathrm{IDAttn}(Q,K,V,M) = \mathrm{softmax}(QK^\top/\sqrt{d} + M)V$, using an additive mask $M \in \{0, -\infty\}$ to prune incorrect token connections. Two complementary masks are defined: the disentanglement mask $M^{\mathrm{dis}}$ only permits connectivity within an instance $(\mathbb{T}_n \cup \mathbb{L}_n \cup \mathbb{C}_n)$, unidirectional attention from global prompts $\mathbb{T}_g$ to all latents/contexts, and background latent/context attention to global/non-instance prompts. Cross-instance $\mathbb{T}_n \leftrightarrow \mathbb{T}_m$ ($n \neq m$) paths are strictly blocked. The harmonization mask $M^{\mathrm{har}}$ relaxes these constraints to allow latents/contexts to attend to all image tokens while maintaining prompt isolation. Retaining the global prompt $\rightarrow$ latent path during disentanglement ensures global style remains consistent across regions.
 
-3.  **Efficient Independent Multi-Prompt Encoding**:
-    - **Function**: Compresses the total text token length to be linearly related to the actual semantic volume rather than $N \times L_{\text{pad}}$, ensuring instance text representations do not pollute each other.
-    - **Mechanism**: Original instructions are split into $s_g$ (empty prompt in practice) and $\{s_n\}_{n=1}^N$. Each is **individually** passed through the text encoder to obtain variable-length embeddings before being concatenated into the final $Z^{\text{text}}$. Compared to (i) single-prompt backend masking (where semantics are already polluted during encoding) and (ii) multi-prompt padding to equal length (where computation explodes linearly with $N$), this design achieves both isolation by construction and cost-efficiency.
-    - **Design Motivation**: In extreme scenarios like InfoEdit where $N$ can reach 285, padding to 77 tokens $\times$ 285 would cause attention $O((NL)^2)$ to exceed memory limits. Inference time curves in Figure 3 confirm that this strategy makes wall-clock time grow almost linearly rather than quadratically with $N$.
+**2. Hierarchical Mask Scheduling: Targeted Decoupling in Semantic-Binding Layers**
+
+The application of masks is depth-dependent. Following the observation that Transformers extract coarse features in early layers, bind semantics in middle layers, and coordinate globally in late layers, the authors utilize a schedule of $(L_{\text{early}}, L_{\text{mid}}, L_{\text{late}}) = (M^{\mathrm{har}}, M^{\mathrm{dis}}, M^{\mathrm{har}})$. Disentanglement is prioritized in the middle layers where attribute leakage is most prevalent. Ablation studies across 8 combinations demonstrate that this three-stage approach is optimal for Tgt CLIP, Bg LPIPS, Loc CLIP, and Action Rate (AR). Using $M^{\mathrm{dis}}$ throughout compromises background consistency, while using $M^{\mathrm{har}}$ throughout results in performance similar to vanilla FLUX (AR fixed at ~80%).
+
+**3. Efficient Multi-prompt Independent Encoding: Scaling with Semantic Volume**
+
+In extreme scenarios like InfoEdit, where $N$ can reach 285 per image, text encoding efficiency is critical. Standard approaches such as single-prompt masking or fixed-length padding suffer from either semantic contamination or $O((NL)^2)$ memory explosion. This method encodes $s_g$ and each $\{s_n\}_{n=1}^N$ **separately** into variable-length embeddings before concatenation into $Z^{\text{text}}$. This provides "isolation by design" and ensures that the attention cost scales with the actual total semantic content rather than $N \times L_{\text{pad}}$.
 
 ### Loss & Training
-No additional training is required for the inference phase. Optional domain-specific fine-tuning reuses the conditional rectified flow matching loss $\mathcal{L}_{\mathrm{FM}} = \mathbb{E}_{t, x_1, x_0}[\|v_\theta(x_t, t \mid c) - (x_1 - x_0)\|^2]$, where $x_t = (1-t)x_0 + t x_1$. After integrating IDAttn and multi-prompt encoding, LoRA ($r=32$) is applied to all MMDiT layers and fine-tuned on 1,512 samples from the Crello Edit training set to specifically address underfitting in small regions and short instructions.
+The inference process is training-free as IDAttn and the hierarchical schedule are plug-and-play. For domain-specific refinement, the standard conditional rectified flow matching loss is used: $\mathcal{L}_{\mathrm{FM}} = \mathbb{E}_{t, x_1, x_0}[\|v_\theta(x_t, t \mid c) - (x_1 - x_0)\|^2]$, where $x_t = (1-t)x_0 + t x_1$. After integrating IDAttn and multi-prompt encoding, LoRA ($r=32$) is applied to all MMDiT layers and fine-tuned on 1,512 samples from the Crello Edit training set to specifically improve performance on small regions and short instructions.
 
 ## Key Experimental Results
 
 ### Main Results
-On the natural image multi-instance editing benchmark **LoMOE-Bench** (80 images, 2-7 edits per image):
+On **LoMOE-Bench** (80 images, 2-7 edits per image):
 
 | Method | Tgt CLIP↑ | LPIPS$_\text{B}$↓ | SSIM$_\text{B}$↑ | Loc CLIP↑ | HPS↑ | AR%↑ |
 |------|-----------|-------------------|------------------|-----------|------|------|
 | LoMOE | 26.00 | 0.090 | 0.834 | 29.40 | 0.546 | 98.96 |
 | LayerEdit | 25.61 | 0.147 | 0.864 | 29.07 | 0.186 | 100.00 |
-| FLUX (Vanilla) | 24.71 | 0.206 | 0.830 | 27.58 | -0.059 | 94.79 |
+| FLUX (Single) | 24.71 | 0.206 | 0.830 | 27.58 | -0.059 | 94.79 |
 | FLUX μT (Multi-turn) | 25.71 | 0.150 | 0.873 | 28.27 | 0.550 | 94.27 |
 | FLUX w/ v.c. | 24.49 | 0.170 | 0.893 | 27.60 | 0.265 | 92.71 |
 | **Ours** | **25.60** | **0.099** | **0.919** | **29.08** | **0.574** | 89.06 |
 
-Ours achieves the best results in background consistency (LPIPS / SSIM) and human preference (HPS), nearly matching LoMOE in Tgt/Loc CLIP. However, LoMOE relies on multi-diffusion stitching, which has high inference costs and cannot scale to large $N$.
+The proposed method achieves superior results in background consistency (LPIPS/SSIM) and human preference (HPS). It matches LoMOE in Tgt/Loc CLIP without the high inference costs associated with multi-diffusion concatenation.
 
-On the **Infographic Editing Benchmark** (Crello Edit + InfoEdit, Table 4 summary):
+On the **Infographic Editing Benchmark**:
 
 | Method | Crello FID↓ | Crello CER↓ | Crello AR%↑ | InfoEdit FID↓ | InfoEdit CER↓ | InfoEdit AR%↑ |
 |------|-------------|-------------|-------------|---------------|---------------|---------------|
-| FLUX (Vanilla) | 10.06 | 0.65 | 68.72 | 4.36 | 0.77 | 39.94 |
+| FLUX (Single) | 10.06 | 0.65 | 68.72 | 4.36 | 0.77 | 39.94 |
 | FLUX μT | 12.10 | 0.63 | 90.44 | 65.73 | 0.90 | 99.81 |
-| FLUX st. (Stitch) | 15.69 | 0.59 | 73.49 | 10.48 | 0.66 | 63.25 |
+| FLUX st. (Concat) | 15.69 | 0.59 | 73.49 | 10.48 | 0.66 | 63.25 |
 | Calligrapher μT | 10.15 | 0.73 | 51.21 | 113.23 | 0.92 | 99.98 |
 | **Ours** | 9.45 | 0.61 | 52.00 | **2.41** | 0.64 | 52.61 |
 | **Ours + ft** | 10.85 | **0.52** | **92.16** | 2.80 | **0.56** | 80.90 |
 
-On InfoEdit (up to 285 instructions per image), FID dropped significantly from 4.36 to 2.41/2.80, with CER decreasing to 0.56. The fine-tuned (ft) version maintained low FID while improving AR to 80.9%, proving that LoRA adaptation effectively compensates for the model's reluctance to edit small areas with short instructions.
+On InfoEdit, FID significantly drop from 4.36 to 2.41/2.80, and the Character Error Rate (CER) improves to 0.56. The fine-tuned version maintains low FID while boosting AR to 80.9%, confirming that LoRA helps address under-fitting for small instructions.
 
 ### Ablation Study
 
 | Config | Tgt CLIP↑ | LPIPS$_\text{B}$↓ | Loc CLIP↑ | AR%↑ |
 |------|-----------|-------------------|-----------|------|
-| Full $M^{\mathrm{dis}}$ | 25.51 | 0.108 | 29.14 | 94.27 |
-| Full $M^{\mathrm{har}}$ | 25.05 | 0.103 | 28.54 | 80.21 |
+| All $M^{\mathrm{dis}}$ | 25.51 | 0.108 | 29.14 | 94.27 |
+| All $M^{\mathrm{har}}$ | 25.05 | 0.103 | 28.54 | 80.21 |
 | $(\mathrm{dis}, \mathrm{har}, \mathrm{har})$ | 25.01 | 0.099 | 28.53 | 82.29 |
 | $(\mathrm{dis}, \mathrm{dis}, \mathrm{har})$ | 25.63 | 0.100 | 29.21 | 91.15 |
 | $(\mathrm{har}, \mathrm{dis}, \mathrm{dis})$ | 25.59 | 0.103 | 29.23 | 93.23 |
 | **$(\mathrm{har}, \mathrm{dis}, \mathrm{har})$ (Final)** | **25.67** | **0.091** | **29.26** | 92.19 |
 
-Another set of results (Table 2) showed that enabling efficient prompt encoding alone without IDAttn yields performance similar to the vanilla baseline. However, adding IDAttn alone drives Tgt CLIP to 25.67 and reduces LPIPS to 0.091—**IDAttn is the source of quality, while efficient prompt encoding is the source of efficiency**; they are orthogonal.
+Efficient prompt encoding without IDAttn performs similarly to the vanilla baseline. However, combining it with IDAttn pushes Tgt CLIP to 25.67 and reduces LPIPS to 0.091—**IDAttn is the source of quality, while efficient encoding is the source of efficiency.**
 
-User studies and Gemini 3 Flash LLM-as-Judge (Table 5) Elo ratings show the proposed method leading significantly in both LoMOE and Infographics categories (User: 1589 vs FLUX: 1331 / FLUX μT: 680).
+User studies and Gemini 3 Flash LLM-as-Judge ELO ratings show the proposed method significantly leads in both natural and infographic categories.
 
 ### Key Findings
-- **Layer placement for disentanglement/harmonization is critical**: Placing $M^{\mathrm{dis}}$ in the middle and $M^{\mathrm{har}}$ at the early/late stages is Pareto optimal. $M^{\mathrm{dis}}$ in early layers severely degrades multi-instance editing (AR drops to the 80% range), indicating that hard-cutting token communication is detrimental during coarse feature extraction.
-- **IDAttn is robust to imprecise bboxes**: Excessively loose boxes (e.g., cotton balls in Fig 5a) are handled well as the backbone retains internal localization capabilities. For nested or overlapping boxes (e.g., giraffes in Fig 5b), the softmax distribution becomes sharper on smaller boxes, "automatically favoring small-box instructions" and resolving conflicts robustly.
-- **Larger N highlights the method's advantage**: CER and AR curves vs. $N$ show that FLUX baselines effectively "give up" on most instructions when $N \geq 10$, whereas the proposed method remains stable in the tens-of-edits range.
-- **Dependency on external bboxes is the primary limitation**: The method does not perform localization itself and relies on OCR/detectors for $b_n$. Entirely incorrect bboxes lead to editing failure; the authors leave end-to-end localize+edit for agentic future work.
+- **Layer Positioning of Masking**: Placing $M^{\mathrm{dis}}$ in the middle layers while wrapping it with $M^{\mathrm{har}}$ is Pareto optimal. Applying $M^{\mathrm{dis}}$ to early layers degrades performance (AR drops to ~80%), suggesting that token communication is essential during initial coarse feature extraction.
+- **Robustness to Imprecise BBoxes**: Broad bounding boxes do not severely impact quality due to the backbone's internal localization capabilities. Overlapping boxes are handled gracefully as softmax becomes sharper on smaller boxes, automatically prioritizing specific instructions.
+- **Scalability with $N$**: As $N$ increases, vanilla FLUX baselines begin to ignore instructions, while the proposed method remains stable even with dozens of concurrent edits.
+- **Dependency on BBoxes**: The method relies on external OCR or detectors for $b_n$. Erroneous bounding boxes lead to failure; end-to-end localization remains a future work.
 
 ## Highlights & Insights
-- **Attribute leakage redefined as an "architectural problem" rather than a "loss problem"**: Unlike inference-time optimization routes like P2P or Attend-and-Excite, IDAttn uses a mask to cut off cross-instance token paths. It requires no iterative optimization, has near-zero deployment cost, and is plug-and-play for any MMDiT.
-- **The "early/late harmonization + mid disentanglement" pattern is highly transferable**: This aligns with recent research on ViT hierarchical representations (early=texture, mid=semantics, late=global). This logic could naturally extend to scenarios like multi-signal ControlNet, multi-subject generation, or multi-trajectory video editing.
-- **Infographic text editing established as a new benchmark category**: Unlike natural image multi-instance editing (often $N \le 7$), infographics reach $N$ in the hundreds with box areas as small as 0.6%. This provides a real pressure test for "high-density small regions + strict layout," offering significant reference value for future text-rendering work.
-- **Variable-length independent encoding is an underrated engineering trick**: When instance counts explode, switching padding to "semantic-based billing" ensures isolation while controlling costs. This could theoretically be integrated into any multi-condition generation model with cross-attention.
+- **Defining Attribute Leakage as Architectural**: Unlike P2P or Attend-and-Excite, which optimize maps during inference, IDAttn uses masks to sever paths at the architecture level. This requires no per-sample iteration and is easily integrated into any MMDiT.
+- **Transferability of Mask Scheduling**: The "early/late harmonization + mid disentanglement" pattern aligns with ViT research on hierarchical representation (textures, semantics, global coordination). This pattern could theoretically apply to multi-control signal generation or video trajectory editing.
+- **Novel Infographic Benchmark**: Unlike natural image benchmarks where $N \leq 7$, infographics involve hundreds of small regions (0.6% of image area), providing a rigorous test for high-density, layout-constrained editing.
+- **Underestimated Multi-Prompt Trick**: Switching from padding to variable-length concatenation for multi-prompts preserves isolation while controlling costs, a technique applicable to any cross-attention-based conditional model.
 
 ## Limitations & Future Work
-- **Dependency on external localization**: $b_n$ must be provided by OCR, LayoutParser, or humans; incorrect boxes are fatal. End-to-end localize-and-edit is a clear gap left for future agentic pipelines.
-- **Fine-tuning limited to Crello distributions**: Generalization across complex hand-drawn posters, tables, or comic panels has not been systematically evaluated.
-- **Binary $\{0, -\infty\}$ masks**: There remains a risk of unnatural transitions at adjacent instance boundaries; soft masks (learned continuous attention bias) or integration with attention rollout methods could be considered.
-- **Validation limited to FLUX.1 Kontext**: While mask logic should apply to any MMDiT-based FM model, actual gains on SD3, OmniGen, or Lumina remain to be verified.
-- **Metrics biased toward OCR/CLIP**: CER is not sensitive to font style preservation. Finer metrics (e.g., glyph similarity, layout IoU) are needed for scenarios like "translating language while preserving font."
+- **BBox Dependency**: Relies on external inputs; end-to-end localize-and-edit is a potential agentic pipeline.
+- **Distribution Focus**: Fine-tuning was predominantly on Crello styles; generalization to complex hand-drawn posters or comics is not yet systematically evaluated.
+- **Binary Hard Mask**: Potential for unnatural transitions at boundaries; soft masks or integration with attention rollout methods could be explored.
+- **Backbone Verification**: While claimed to be general for MMDiT-based FM models, empirical gains on SD3, OmniGen, or Lumina are yet to be documented.
 
 ## Related Work & Insights
-- **vs. P2P / Attend-and-Excite (Hertz 2023, Chefer 2023)**: These perform inference-time attention map optimization on U-Net diffusion + cross-attention. Ours uses architecture-level hard masks on MMDiT + joint attention, eliminating per-sample optimization and remaining naturally compatible with Rectified FM.
-- **vs. LoMOE (Chakrabarty 2024) / LayerEdit (Fu 2026)**: They handle multi-instance editing via multi-diffusion stitching or layer-wise learning during discrete denoising steps. Ours completes all edits in a single forward pass and pushes benchmarks from a few boxes to the hundreds found in InfoEdit.
-- **vs. FLUX.1 Kontext (Labs 2025) Native Editing**: FLUX drops instructions when $N > 5$, and multi-turn μT suffers image degradation when $N > 20$. Ours acts as a "multi-instruction parallel" plugin for FLUX, positioning itself similarly to how ControlNet relates to SD.
-- **vs. Calligrapher (Ma 2025)**: Calligrapher is fine-tuned for text editing but handles only one box at a time; multi-turn use ruins the background. Ours proves that "architectural disentanglement" is faster and more accurate for text rendering than "specialized fine-tuning + serial processing."
-- **vs. Multi-prompt Encoding (Zhou 2025)**: Zhou et al. split instructions for independent encoding but use equal-length padding, causing costs to explode linearly with $N$. Ours uses variable-length concatenation, preserving isolation while linking attention costs to actual semantic volume.
+- **vs P2P / Attend-and-Excite**: Previous works optimize cross-attention in U-Net diffusion. This work applies architectural masks to joint attention in MMDiT, compatible with Rectified FM.
+- **vs LoMOE / LayerEdit**: These use multi-diffusion or layer-wise learning in discrete steps. Our method completes all edits in a single forward pass and scales to hundreds of boxes.
+- **vs FLUX.1 Kontext (Native)**: Helps FLUX manage "instruction dropout" for $N > 5$ and avoids visual degradation seen in multi-turn approaches for $N > 20$.
+- **vs Calligrapher**: Calligrapher handles one box at a time, leading to background "budgeting" issues over multiple rounds; this work demonstrates that architectural disentanglement is faster and more accurate for text rendering.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Redefining attribute leakage from "optimization level" to "attention connectivity level" is a clean perspective shift; the hierarchical mask scheduling is concrete and non-trivial.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage with natural image + infographic benchmarks, 8-way mask schedule ablation, user study + LLM-as-Judge, and scalability curves; only slight drawback is testing on only one backbone (FLUX).
-- Writing Quality: ⭐⭐⭐⭐ Formula definitions, token partitioning, and mask matrices are clear. The mask visualization in Figure 1 is a key anchor for understanding.
-- Value: ⭐⭐⭐⭐ Infographic editing + multi-instruction parallelism are real industrial needs (e.g., localizing infographics). The open-sourced dataset will likely become a standard benchmark for text-aware editing; IDAttn itself is plug-and-play with a low barrier for community reuse.
+- Novelty: ⭐⭐⭐⭐ Redefining attribute leakage from an optimization problem to a connectivity problem is a clean perspective shift.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across natural images and infographics, plus thorough ablation of schedules.
+- Writing Quality: ⭐⭐⭐⭐ Mathematical definitions and token partitioning are clear; Figure 1 is a crucial anchor for understanding.
+- Value: ⭐⭐⭐⭐ Infographic localization is a real industrial use case. IDAttn is plug-and-play with low barriers for community adoption.
 
 <!-- RELATED:START -->
 
@@ -155,9 +156,9 @@ User studies and Gemini 3 Flash LLM-as-Judge (Table 5) Elo ratings show the prop
 
 - [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](../../NeurIPS2025/image_generation/equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](../../ICLR2026/image_generation/laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
-- [\[ICML 2026\] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction](hb-arfm_history-bootstrapped_flow_matching_for_inverse_boiling_reconstruction.md)
+- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](../../ICLR2026/image_generation/laplacian_multi-scale_flow_matching_for_generative_modeling.md)
+- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
 
 </div>
 

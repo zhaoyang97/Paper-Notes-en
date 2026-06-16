@@ -2,83 +2,81 @@
 title: >-
   [Paper Note] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 description: >-
-  [CVPR 2026][Robotics][Bimanual collaborative manipulation] This paper proposes BiPreManip, a framework for bimanual preparatory manipulation based on visual affordance representations. The system first anticipates the pr…
+  [CVPR 2026][Robotics & Embodied AI][Paper Note] The BiPreManip framework is proposed to achieve bimanual preparatory manipulation based on visual affordance representations. It first imagines the target interaction region for the lead hand and then guides the helper hand to perform preparatory actions (e.g., flipping a bottle so the cap faces the lead hand), signifi
 tags:
-  - "CVPR 2026"
-  - "Robotics"
-  - "Bimanual collaborative manipulation"
-  - "visual affordance"
-  - "preparatory manipulation"
-  - "anticipatory reasoning"
-  - "point cloud"
+  - CVPR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 6b0ab7e9c5207802
+content_hash: 1521971805248ce2
 ---
-
 # BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.21679](https://arxiv.org/abs/2603.21679)  
 **Code**: [Project Page](https://sites.google.com/view/bipremanip)  
-**Area**: Robotic Manipulation / Human Understanding
-**Keywords**: Bimanual collaborative manipulation, visual affordance, preparatory manipulation, anticipatory reasoning, point cloud
+**Area**: Robotic Manipulation / Human Understanding  
+**Keywords**: Bimanual Collaborative Manipulation, Visual Affordance, Preparatory Manipulation, Anticipatory Reasoning, Point Clouds
 
 ## TL;DR
-This paper proposes BiPreManip, a framework for bimanual preparatory manipulation based on visual affordance representations. The system first anticipates the primary hand's target interaction region, then guides the assistive hand to perform preparatory actions (e.g., flipping a bottle so its cap faces the primary hand), achieving substantial improvements over baselines in both simulated and real-world environments.
+The BiPreManip framework is proposed to achieve bimanual preparatory manipulation based on visual affordance representations. It first imagines the target interaction region for the lead hand and then guides the helper hand to perform preparatory actions (e.g., flipping a bottle so the cap faces the lead hand), significantly outperforming baselines in both simulation and real-world environments.
 
 ## Background & Motivation
-**Background**: Bimanual manipulation research has advanced considerably in recent years (ACT, RDT-1B, 3D FlowMatch Actor, etc.), covering symmetric, sequentially independent, and complementary-role collaboration paradigms.
+**Background**: Research in bimanual manipulation has made significant progress recently (ACT, RDT-1B, 3D FlowMatch Actor, etc.), covering various collaboration modes such as symmetric, sequentially independent, and complementary roles.
 
-**Limitations of Prior Work**: Existing methods assume both hands can directly interact with an object, yet many everyday scenarios require one hand to first *change the object's state* before the other hand can operate—e.g., pushing a tablet to the table edge before grasping it, or standing a pen upright before uncapping it.
+**Limitations of Prior Work**: Existing methods assume both hands can directly interact with the object. however, many daily scenarios require one hand to first "change the state of the object" before the other hand can operate—for example, pushing a tablet to the edge of a table to pick it up, or standing a pen upright to remove its cap.
 
-**Key Challenge**: Preparatory manipulation demands asymmetric anticipatory coordination and long-horizon interdependent planning—the assistive hand must understand the primary hand's future intent while avoiding interference with its anticipated interaction region.
+**Key Challenge**: Preparatory manipulation requires asymmetric anticipatory coordination and long-horizon interdependent planning—the helper hand must understand the future intention of the lead hand while avoiding interference with the lead hand's anticipated interaction region.
 
-**Goal**: Define and address a novel problem category of "collaborative preparatory manipulation," enabling robots to learn bimanual coordinated behavior of prepare-then-operate.
+**Goal**: To define and solve the new problem category of "collaborative preparatory manipulation," enabling robots to learn bimanual coordination behaviors that prepare before operating.
 
-**Key Insight**: Affordance-driven reasoning—first use an affordance map to anticipate the final goal action, then inversely derive the assistive hand's preparatory behavior.
+**Key Insight**: Affordance-driven—first use an affordance map to imagine the final goal action, then reverse-derive the preparatory behavior of the helper hand.
 
-**Core Idea**: Cross-arm reasoning is achieved via an anticipatory affordance map, such that every action of the assistive hand serves the primary hand's ultimate goal.
+**Core Idea**: Achieve cross-arm reasoning through an anticipatory affordance map, ensuring that every action of the helper hand serves the final goal of the lead hand.
 
 ## Method
 
 ### Overall Architecture
-Input: object point cloud + language instruction → Goal Affordance Network predicts anticipatory affordance → Pre-Affordance Network reasons about the assistive hand's preparatory action → Anticipatory Object Pose Predictor estimates the target object pose → Reorient Actor executes reorientation → Goal Affordance Network is invoked again to execute the final goal action.
+BiPreManip targets collaborative preparatory manipulation where "one hand must first change the object state before the other can operate"—for instance, flipping a bottle so the cap faces the lead hand for unscrewing. The key is to think in reverse: the Goal Affordance Network first imagines where and how the lead hand will ultimately interact, then the Pre-Affordance Network derives the helper hand's preparatory action. Subsequently, the Anticipatory Object Pose Predictor estimates the ideal object pose, the Reorient Actor executes reorientation, and finally, the Goal Affordance Network is called again to complete the lead hand's target operation. The input consists only of the object point cloud and language instructions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Object Point Cloud + Language Instructions"] --> B["Goal Affordance Network<br/>Imagine lead hand goal interaction feasible after preparation"]
+    B --> C["Pre-Affordance Network<br/>Derive helper hand prep action, aligning with lead hand's intent"]
+    C --> D1
+    subgraph D["Object Reorientation: Object Pose Predictor + Reorient Actor"]
+        direction TB
+        D1["Object Pose Predictor<br/>Estimate ideal object pose, transform point cloud"] --> D2["Reorient Actor<br/>Predict 6D reorientation motion to position the object"]
+    end
+    D2 --> E["Recall Goal Affordance Network<br/>Output final affordance in updated scene (parameter sharing)"]
+    E --> F["Output: Lead hand completes goal operation (e.g., unscrewing cap)"]
+```
 
 ### Key Designs
 
-1. **Goal Affordance Network**:
+**1. Goal Affordance Network: Imagining target interactions feasible only "after preparation"**
 
-    - PointNet++ encodes point cloud features $f_p$; CLIP encodes language instructions as $f_l$
-    - An MLP fuses both to predict per-point affordance scores $s$ (likelihood of each point serving as a contact region)
-    - A cVAE predicts the target gripper orientation $d_{\text{goal}} \in SO(3)$; combined with the contact point, this yields a 6D action $a_{\text{goal}} \in SE(3)$
-    - **Key distinction**: The prediction is *anticipatory* rather than reactive—it imagines interactions that only become feasible after preparatory manipulation is complete
-    - **Design Motivation**: Affordance representations naturally encode "where and how to interact," offering greater generalizability than directly learning action sequences
+If a reactive strategy is used looking only at the current state, it would output infeasible grasps when the object is not yet positioned. This network first uses PointNet++ to encode point cloud features $f_p$ and CLIP to encode language instructions as $f_l$. After MLP fusion, it predicts an affordance score $s$ for each point (probability of the point being a contact region) and uses a cVAE to predict the target gripper orientation $d_{\text{goal}} \in SO(3)$, combined into a 6D goal action $a_{\text{goal}} \in SE(3)$. Critically, it predicts "anticipation" rather than "reaction"—imagining interactions possible only after preparation, which offers better generalization by expressing "where and how to grasp" through affordance rather than direct action sequences.
 
-2. **Pre-Affordance Network**:
+**2. Pre-Affordance Network: Aligning helper hand prep actions with lead hand future intent**
 
-    - Conditioned on the anticipatory goal affordance, reasons about how the assistive hand should act
-    - Fuses $(f_p, f_l, f_{p_{\text{goal}}}, f_{d_{\text{goal}}})$ to predict a pre-affordance map
-    - A cVAE samples the assistive gripper orientation $d_{\text{pre}}$, yielding preparatory action $a_{\text{pre}} \in SE(3)$
-    - **Design Motivation**: The assistive hand's preparatory behavior must align with the primary hand's future interaction space, precluding naive blind grasping
+The helper hand cannot grasp blindly; every action must serve the lead hand's final goal. This network is conditioned on the anticipated goal affordance from the previous step, fusing $(f_p, f_l, f_{p_{\text{goal}}}, f_{d_{\text{goal}}})$ to predict a preparatory affordance map. A cVAE then samples the helper gripper orientation $d_{\text{pre}}$ to obtain the preparatory action $a_{\text{pre}} \in SE(3)$. Since the input includes features of the lead hand’s target position and orientation, the helper hand's behavior naturally aligns with the lead hand's future interaction space without occupying or interfering with that region.
 
-3. **Anticipatory Object Pose Predictor + Reorient Actor**:
+**3. Anticipatory Object Pose Predictor + Reorient Actor: Explicitly modeling object reorientation**
 
-    - Estimates the ideal object pose $T^{\text{obj}} = (t^{\text{obj}}, r^{\text{obj}}) \in SE(3)$ that enables collision-free contact at the target region for the primary hand
-    - Transforms the point cloud: $O' = T^{\text{obj}} \cdot O$
-    - The Reorient Actor receives the transformed point cloud and current grasp scene, predicting a 6D reorientation motion
-    - **Design Motivation**: Many preparatory tasks require adjusting object orientation (e.g., rotating a bottle so its cap faces the primary hand); explicit modeling of this step is more controllable than end-to-end learning
+The essence of many preparatory tasks is rotating the object to a suitable orientation. Learning this step end-to-end is both uncontrollable and difficult. Here, the ideal object pose $T^{\text{obj}} = (t^{\text{obj}}, r^{\text{obj}}) \in SE(3)$ that allows the lead hand collision-free contact with the target region is first estimated. The point cloud is transformed as $O' = T^{\text{obj}} \cdot O$. The Reorient Actor then receives the transformed point cloud and the current grasping scene to predict 6D reorientation motion. Separately predicting the target pose provides a clear target for reorientation, making it more controllable than direct end-to-end action output.
 
 ### Loss & Training
-- Affordance scores: supervised with $\ell_1$ loss; positive and negative samples are derived from demonstrations
-- Gripper orientation: geodesic distance loss $\mathcal{L}_{\text{ori}} = \arccos\frac{\text{Tr}(d^\top d^*) - 1}{2}$ + KL regularization
-- The anticipatory stage lacks direct annotations; supervision is constructed via pose transformations from the execution stage: $R_{\text{grp,ant}} = R_{\text{obj,init}} \cdot R_{\text{obj,fin}}^\top \cdot R_{\text{grp,fin}}$
-- Both the pose predictor and reorientation actor are cVAEs trained with a combination of geodesic loss + $\ell_1$ + KL
+- Affordance Score: Supervised by $\ell_1$ loss, with positive and negative samples derived from demonstrations.
+- Gripper Orientation: Geodesic distance loss $\mathcal{L}_{\text{ori}} = \arccos\frac{\text{Tr}(d^\top d^*) - 1}{2}$ + KL regularization.
+- The anticipation stage lacks direct labels and is supervised through pose transformations constructed from the execution stage: $R_{\text{grp,ant}} = R_{\text{obj,init}} \cdot R_{\text{obj,fin}}^\top \cdot R_{\text{grp,fin}}$.
+- Both the pose predictor and reorient actor are cVAEs, optimized with a combination of geodesic loss + $\ell_1$ + KL.
 
 ## Key Experimental Results
 
-### Main Results (Success Rate %, Trained / Unseen Objects)
+### Main Results (Success Rate %, Seen/Unseen Objects)
 
-| Category | BiPreManip | ACT | 3DFA | Heuristic | W2A |
+| Category | Ours | ACT | 3DFA | Heuristic | W2A |
 |------|-----------|-----|------|-----------|-----|
 | Bowl (Edge-Push) | **49/52** | 32/27 | 3/0 | 15/21 | 0/0 |
 | Cap | **71/74** | 22/36 | 5/14 | 31/37 | 2/4 |
@@ -88,40 +86,40 @@ Input: object point cloud + language instruction → Goal Affordance Network pre
 
 ### Ablation Study
 
-| Configuration | Bottle | Pen-button | Pen-cap | Notes |
+| Configuration | Bottle | Pen-button | Pen-cap | Description |
 |------|--------|-----------|---------|------|
-| Full model | **30/26** | **67/72** | **26/32** | Best |
-| w/o Ant-Aff | 27/13 | 48/58 | 23/10 | Removing anticipatory affordance causes notable degradation |
-| w/o ObjPosePred | 24/15 | 51/50 | 21/8 | Removing pose prediction leads to reorientation failures |
+| Full Model | **30/26** | **67/72** | **26/32** | Best performance |
+| w/o Ant-Aff | 27/13 | 48/58 | 23/10 | Removing anticipatory affordance leads to significant drop |
+| w/o ObjPosePred | 24/15 | 51/50 | 21/8 | Removing pose prediction leads to reorientation failure |
 
 ### Key Findings
-- Across 18 object categories, BiPreManip significantly outperforms all baselines on the majority of tasks
-- The method generalizes well to unseen objects; on some categories, success rates on unseen objects even exceed those on training objects
-- Both the anticipatory affordance and the object pose predictor are critical components
-- Real-world human-to-robot handover experiments further validate the practical utility of the approach
+- Across 18 object categories, BiPreManip significantly outperforms all baselines on most tasks.
+- Strong generalization to unseen objects, with success rates for unseen objects in some categories even exceeding those of seen objects.
+- Both anticipatory affordance and object pose prediction are critical components.
+- Real-world human-to-robot hand-over experiments also validate the practicality of the method.
 
 ## Highlights & Insights
-- The paper defines a novel problem category of "collaborative preparatory manipulation," filling an important gap in bimanual manipulation research
-- Affordance-driven anticipatory reasoning is highly elegant—the "think before act" paradigm closely mirrors human behavior
-- Parameter sharing ensures semantic consistency between the anticipatory and execution stages, guaranteeing coherence between "imagination" and "execution"
-- The benchmark comprising 18 object categories and 882 instances is systematic and comprehensive
+- Defines a completely new problem category of "collaborative preparatory manipulation," filling an important gap in bimanual manipulation research.
+- Affordance-driven anticipatory reasoning is elegant—the "think before doing" approach is highly consistent with human behavior.
+- Parameter sharing ensures semantic consistency between the anticipation and execution phases, guaranteeing coherence between "imagination" and "execution."
+- Systematic benchmarking on 18 object categories and 882 instances.
 
 ## Limitations & Future Work
-- The cVAE's multimodal modeling capacity is limited; more complex manipulations may require diffusion-based models
-- The method relies on complete point cloud observations and may degrade under heavy occlusion
-- Only two-step preparation (grasp + reorientation) is currently supported; longer-horizon preparatory sequences remain unexplored
-- Integration with language models could enable more complex task decomposition
+- The multi-modal modeling capability of cVAE is limited; more complex operations might require diffusion models.
+- Reliance on full point cloud observations may lead to failure under heavy occlusion.
+- Currently only supports two-step preparation (grasp + reorient); longer sequence preparatory manipulation remains unexplored.
+- Can be combined with language models for more complex task decomposition.
 
 ## Related Work & Insights
-- Single-arm affordance methods such as Where2Act provide the foundation but do not support coordinated reasoning
-- The Transformer architecture of ACT suits general bimanual prediction but lacks anticipatory reasoning capability
-- Key insight: for manipulation tasks requiring sequential coordination, explicitly modeling "intent" is more effective than end-to-end learning
+- Single-arm affordance methods like Where2Act provide the foundation but lack support for coordinated reasoning.
+- The Transformer architecture of ACT is suitable for general bimanual prediction but lacks anticipatory reasoning capabilities.
+- Insight: For manipulation tasks requiring sequential coordination, explicitly modeling "intent" is more effective than end-to-end learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Novel problem definition + anticipatory affordance-driven bimanual coordination framework
-- Experimental Thoroughness: ⭐⭐⭐⭐ Simulation + real world, 18 categories, multiple baselines and ablations
-- Writing Quality: ⭐⭐⭐⭐ Clear logic, intuitive illustrations
-- Value: ⭐⭐⭐⭐⭐ Advances bimanual manipulation toward more practical scenarios
+- Novelty: ⭐⭐⭐⭐⭐ New problem definition + bimanual coordination framework driven by anticipatory affordances.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Simulation + real world, 18 categories, multiple baselines and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and intuitive illustrations.
+- Value: ⭐⭐⭐⭐⭐ Drives the development of bimanual manipulation toward more practical scenarios.
 
 <!-- RELATED:START -->
 
@@ -129,11 +127,11 @@ Input: object point cloud + language instruction → Goal Affordance Network pre
 
 ## Related Papers
 
+- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
 - [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[CVPR 2026\] PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments](panoaffordancenet_towards_holistic_affordance_grounding_in_360_indoor_environmen.md)
-- [\[ICCV 2025\] AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation](../../ICCV2025/robotics/anybimanual_transferring_unimanual_policy_for_general_bimanual_manipulation.md)
-- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
-- [\[AAAI 2026\] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](../../AAAI2026/robotics/affordance-guided_coarse-to-fine_exploration_for_base_placem.md)
+- [\[ICML 2025\] BiAssemble: Learning Collaborative Affordance for Bimanual Geometric Assembly](../../ICML2025/robotics/biassemble_learning_collaborative_affordance_for_bimanual_geometric_assembly.md)
+- [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
+- [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
 
 </div>
 

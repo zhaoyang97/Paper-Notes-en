@@ -2,67 +2,59 @@
 title: >-
   [Paper Note] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] This paper reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: while final accuracy is determined by CoT content (99% vari…
+  [ACL 2026][LLM Reasoning][Chain-of-Thought] This study reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: the final accuracy is determined by CoT content (99% variance contribution), while the distribution ranking is dominated by the model's intrinsic priors (>80%). This indicates that long CoT is a strong d
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Chain-of-Thought"
-  - "Human Label Variation"
-  - "Distribution Alignment"
-  - "Reasoning Decoupling"
-  - "Model Prior"
+  - ACL 2026
+  - LLM Reasoning
+  - Chain-of-Thought
 date: 2026-05-08
-content_hash: 0fc334cef909eb7e
+content_hash: 9ee33893c2d0f06c
 ---
-
 # Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2601.03154](https://arxiv.org/abs/2601.03154)  
 **Code**: None  
 **Area**: LLM Reasoning  
-**Keywords**: Chain-of-Thought, Human Label Variation, Distribution Alignment, Reasoning Decoupling, Model Prior
+**Keywords**: Chain-of-Thought, Human Label Variation, Distribution Alignment, Reasoning Decoupling, Model Priors
 
 ## TL;DR
 
-This paper reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: while final accuracy is determined by CoT content (99% variance contribution), the distribution ranking is dominated by the model's intrinsic prior (>80%), indicating that long CoT is a powerful decision-maker but a weak distribution calibrator.
+This study reveals the "decoupling mechanism" of CoT reasoning through Cross-CoT experiments and step-wise analysis: the final accuracy is determined by CoT content (99% variance contribution), while the distribution ranking is dominated by the model's intrinsic priors (>80%). This indicates that long CoT is a strong decision-maker but a weak distribution calibrator.
 
 ## Background & Motivation
 
-**Background**: Reasoning-enhanced LLMs (e.g., DeepSeek-R1, Qwen3) excel in single-answer tasks through long CoT. However, many real-world tasks are inherently ambiguous, featuring reasonable Human Label Variation (HLV), which requires models to predict probability distributions rather than a single answer.
+**Background**: Reasoning-enhanced LLMs (e.g., DeepSeek-R1, Qwen3) excel in single-answer tasks through long CoT. However, many real-world tasks are inherently ambiguous, involving reasonable Human Label Variation (HLV) among annotators, which requires models to predict probability distributions rather than a single answer.
 
-**Limitations of Prior Work**: (1) Does CoT reasoning help better approximate human label distributions? (2) If so, is it the CoT content itself or the model's intrinsic parametric knowledge at work? (3) CoT might unconsciously suppress valid alternative explanations, biasing towards top-1 choices.
+**Limitations of Prior Work**: (1) Does CoT reasoning help in better approximating human label distributions? (2) If helpful, is it the CoT content itself or the model's intrinsic parametric knowledge that functions? (3) CoT may unconsciously suppress valid alternative interpretations, biasing results toward top-1 choices.
 
-**Key Challenge**: The design goal of CoT reasoning—reducing uncertainty step-by-step to produce high-confidence conclusions—naturally conflicts with the requirement of HLV tasks to preserve probability ambiguity.
+**Key Challenge**: The design goal of CoT reasoning—to gradually narrow down uncertainty through intermediate steps to produce high-confidence conclusions—naturally conflicts with the requirement of HLV tasks to preserve probabilistic ambiguity.
 
-**Goal**: Systematically decouple the different effects of "content effect" and "model prior effect" in CoT reasoning on output distribution.
+**Goal**: Systematically decouple the different impacts of "content effect" and "model prior effect" in CoT reasoning on output distributions.
 
 **Key Insight**: Cross-CoT experiments—injecting one model's CoT into another to test reasoning transferability; step-wise analysis—truncating CoT to observe how effects evolve across reasoning steps.
 
-**Core Idea**: CoT concentrates probability mass on the most probable answer (locking the top-1), but it cannot finely adjust the probability distribution of non-top-1 options—the latter is determined by model priors.
+**Core Idea**: CoT concentrates probability mass on the most likely answer (locking the top-1 choice) but fails to finely regulate the probability allocation for non-top-1 options—the latter being determined by model priors.
 
 ## Method
 
 ### Overall Architecture
 
-The study evaluates reasoning LLMs on the ChaosNLI benchmark (collective opinion distribution of 100 annotators). It uses three complementary metrics: Accuracy (top-1 correctness), JSD (distribution alignment), and Spearman $\rho$ (ranking alignment). The mechanism of CoT is revealed through two decoupling experiments.
+The study evaluates reasoning LLMs on the ChaosNLI benchmark (collective opinion distribution of 100 annotators). Three complementary metrics are used: accuracy (top-1 correctness), JSD (distribution alignment), and Spearman $\rho$ (ranking alignment). Two decoupling experiments reveal the mechanism of CoT.
 
 ### Key Designs
 
-1.  **Cross-CoT Experiment**:
-    - **Function**: Separates CoT content effects from model prior effects.
-    - **Mechanism**: Injecting the CoT generated by Model A into Model B to observe whether Model B's output distribution is influenced more by the CoT content or its own priors. ANOVA is used for variance contribution analysis: if CoT content decisively influences a metric, the variance of that metric should be primarily explained by the CoT source.
-    - **Design Motivation**: If CoT is a universal reasoner, injecting any high-quality CoT should improve performance; if model priors dominate, the source of the CoT should be secondary.
+**1. Cross-CoT Experiment: Separating "CoT Content" and "Model Priors"**
 
-2.  **Step-wise Analysis**:
-    - **Function**: Tracks how the influence of CoT on different metrics evolves during the reasoning process.
-    - **Mechanism**: Measuring the output distribution at different truncation points (25%, 50%, 75%, 100%) of the CoT to observe trends in accuracy and distribution metrics.
-    - **Design Motivation**: Different temporal dynamics for accuracy versus distribution effects would indicate they are driven by distinct mechanisms.
+When CoT improves distribution alignment, is it the reasoning chain itself or the model's own parametric knowledge? These are entangled in standard settings. Cross-CoT separates them: injecting the CoT generated by Model A into Model B, allowing B to produce a distribution based on someone else's reasoning chain, then using ANOVA to decompose variance sources. If the variance of a metric is mainly explained by the CoT source, the metric is content-driven; if by the model identity, it is prior-driven. Results show that ~99% of accuracy variance comes from CoT content, while JSD and Spearman $\rho$ have >80% variance from model priors.
 
-3.  **Multi-metric Complementary Evaluation**:
-    - **Function**: Comprehensively assesses the impact of CoT on output distribution.
-    - **Mechanism**: Accuracy only evaluates the top-1 choice, JSD assesses overall distribution alignment, and Spearman $\rho$ assesses ranking alignment while being robust to monotonic transformations.
-    - **Design Motivation**: Accuracy alone cannot reveal the impact (or lack thereof) of CoT on the underlying distribution structure.
+**2. Step-wise Analysis: Observing the Evolution of CoT Impact**
+
+If accuracy and distribution structure were driven by the same mechanism, they should change synchronously. Step-wise analysis measures the output distribution at 25%, 50%, 75%, and 100% truncation points of the CoT. Accuracy climbs monotonically with reasoning steps—the reasoning chain gradually pushes probability mass toward the top-1 choice. Conversely, the distribution structure is locked by priors very early, with subsequent steps barely reshaping the probability allocation among non-top-1 options.
+
+**3. Multi-metric Complementary Evaluation: Capturing the Full Picture of CoT Impact**
+
+Using only accuracy misses the impact of CoT on distribution structure (or its inability to affect it), as accuracy only considers the top-1 choice. This study employs three metrics: accuracy for top-1 correctness, JSD for global alignment between predicted and human collective distributions, and Spearman $\rho$ for ranking alignment without being affected by monotonic transformations. Together, they expose a critical contrast—CoT can correct the top-1 choice (dominating accuracy) but cannot alter the probability landscape beyond it (JSD/$\rho$ dominated by priors).
 
 ### Loss & Training
 
@@ -74,7 +66,7 @@ This is an analytical study and does not involve model training. Seven SOTA reas
 
 **Impact of CoT Reasoning on Distribution Metrics (MNLI)**
 
-| Model | ACC (No CoT) | ACC (With CoT) | JSD (No CoT) | JSD (With CoT) |
+| Model | ACC (w/o CoT) | ACC (w/ CoT) | JSD (w/o CoT) | JSD (w/ CoT) |
 | :--- | :--- | :--- | :--- | :--- |
 | Qwen3 | 0.688 | 0.644 | 0.093 | 0.080↓ |
 | R1-Llama | 0.666 | 0.689 | 0.082 | 0.077↓ |
@@ -87,42 +79,42 @@ This is an analytical study and does not involve model training. Seven SOTA reas
 | Metric | CoT Content Contribution | Model Prior Contribution |
 | :--- | :--- | :--- |
 | Accuracy | **~99%** | ~1% |
-| JSD (Distribution Alignment) | ~20% | **>80%** |
-| Spearman $\rho$ (Ranking Alignment) | ~15% | **>80%** |
+| JSD (Distribution) | ~20% | **>80%** |
+| Spearman $\rho$ (Ranking) | ~15% | **>80%** |
 
 ### Key Findings
 
-- CoT reasoning generally improves distribution alignment (lowers JSD), but this improvement is uneven across different metrics.
-- Accuracy is almost entirely determined by CoT content (99%)—CoT acts as a powerful top-1 decision-maker.
-- Distribution ranking and probability allocation are dominated by model priors (>80%)—CoT fails to reshape the probability landscape for non-top-1 options.
-- Step-wise analysis shows that accuracy grows monotonically with CoT steps, whereas the distribution structure is fixed by the prior at an early stage.
+- CoT reasoning generally improves distribution alignment (lower JSD), but this improvement is uneven across different metrics.
+- Accuracy is almost entirely determined by CoT content (99%)—CoT is a powerful top-1 decision-maker.
+- Distribution ranking and probability allocation are dominated by model priors (>80%)—CoT cannot reshape the non-top-1 probability landscape.
+- Step-wise analysis shows accuracy increases monotonically with CoT steps, but distribution structure is determined by priors early on.
 - CoT tends to progressively concentrate probability mass to lock in the most likely answer but fails to finely calibrate alternative options.
 
 ## Highlights & Insights
 
-- The discovery of CoT as a "strong decision-maker but weak distribution calibrator" profoundly reveals its structural limitations.
-- The Cross-CoT experimental design is elegant—it effectively separates content and prior effects by injecting external CoT.
-- Analysis of HLV tasks has broad implications—in ambiguous domains like medicine or law, CoT may oversimplify underlying uncertainty.
+- The "strong decision-maker, weak distribution calibrator" finding reveals structural limitations of CoT.
+- The Cross-CoT experimental design elegantly separates the effects of content and priors by injecting external CoT.
+- The analysis of HLV tasks has broad significance—CoT might oversimplify uncertainty in ambiguous tasks like medical or legal domains.
 
 ## Limitations & Future Work
 
-- Validated only on NLI tasks (3-way classification); more complex distributional tasks remain to be explored.
-- The use of first-token probability to approximate the output distribution may not fully represent the model's true uncertainty.
-- The study does not explore how to design "distribution-aware" reasoning mechanisms to improve the calibration capability of CoT.
+- Validated only on NLI tasks (3-way classification); more complex distribution tasks remain to be explored.
+- The use of first-token probability to approximate output distribution might not fully represent model uncertainty.
+- Does not explore how to design "distribution-aware" reasoning mechanisms to improve CoT calibration.
 - Injecting external CoT in Cross-CoT experiments may introduce out-of-distribution effects.
 
 ## Related Work & Insights
 
-- **vs Standard CoT Evaluation**: While standard evaluation focuses solely on accuracy, this study reveals distribution structure information beyond accuracy.
-- **vs Confidence Calibration Research**: Calibration research focuses on the accuracy of confidence levels, whereas this work examines the impact of CoT on the structural distribution.
-- **vs ChaosNLI**: While ChaosNLI provides human collective opinion distributions, this work is the first to use it specifically to evaluate reasoning LLMs.
+- **vs Standard CoT Eval**: Standard evaluations only use accuracy; this work reveals distribution structure information beyond accuracy.
+- **vs Confidence Calibration**: While calibration studies focus on whether model confidence is accurate, this work focuses on the impact of CoT on the distribution structure.
+- **vs ChaosNLI**: ChaosNLI provides human collective opinion distributions; this work is the first to use it to evaluate reasoning LLMs.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Cross-CoT decoupling experiments and the "strong decision-maker/weak calibrator" finding are highly insightful.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes 7 models, 3 datasets, and ANOVA analysis, though task types are limited.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Deep analysis, clear logic, and precise presentation of findings.
-- **Value**: ⭐⭐⭐⭐⭐ Significant contribution to understanding CoT reasoning mechanisms and LLM uncertainty modeling.
+- Novelty: ⭐⭐⭐⭐⭐ Cross-CoT decoupling experiments and the "strong decision-maker/weak calibrator" discovery are highly insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 7 models, 3 datasets, ANOVA analysis, though task types are limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ In-depth analysis, clear logic, and precise presentation of findings.
+- Value: ⭐⭐⭐⭐⭐ Significant contribution to understanding CoT reasoning mechanisms and LLM uncertainty modeling.
 
 <!-- RELATED:START -->
 
@@ -131,10 +123,10 @@ This is an analytical study and does not involve model training. Seven SOTA reas
 ## Related Papers
 
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
-- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
 - [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](../../NeurIPS2025/llm_reasoning/visual_thoughts_a_unified_perspective_of_understanding_multi.md)
+- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
+- [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
 
 </div>
 

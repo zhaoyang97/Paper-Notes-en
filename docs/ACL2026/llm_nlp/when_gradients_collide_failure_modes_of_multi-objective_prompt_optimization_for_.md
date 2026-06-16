@@ -1,90 +1,85 @@
 ---
 title: >-
-  [Paper Note] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges
+  [Paper Note] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式
 description: >-
-  [ACL 2026][LLM/NLP][Multi-objective Optimization] This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifie…
+  [ACL 2026][LLM (Other)][Paper Note] This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifies gradient dilution and instruction interference as two key bottlenecks that prevent multi-objective optimization from significantly improving upon in
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "Multi-objective Optimization"
-  - "Textual Gradients"
-  - "LLM-as-a-Judge"
-  - "Prompt Engineering"
-  - "Gradient Dilution"
+  - ACL 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: a2851dc0a459434d
+content_hash: 850e9dea60f27f9b
 ---
-
 # When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges
 
 **Conference**: ACL 2026  
 **arXiv**: [2605.26046](https://arxiv.org/abs/2605.26046)  
 **Code**: None  
 **Area**: LLM / Prompt Optimization  
-**Keywords**: Multi-objective Optimization, Textual Gradients, LLM-as-a-Judge, Prompt Engineering, Gradient Dilution
+**Keywords**: Multi-objective optimization, Textual gradients, LLM Judge, Prompt engineering, Gradient dilution
 
 ## TL;DR
 
-This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifies two key bottlenecks—gradient dilution and instruction interference—that prevent multi-objective optimization from improving upon initial prompts.
+This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifies gradient dilution and instruction interference as two key bottlenecks that prevent multi-objective optimization from significantly improving upon initial prompts.
 
 ## Background & Motivation
 
-**Background**: As LLMs become mainstream evaluation tools, benchmarks like SummEval and MT-Bench require LLMs to assess text quality across multiple dimensions simultaneously. Textual gradient methods such as TextGrad and OPRO can automate prompt optimization, but they are designed for single-objective scenarios.
+**Background**: As LLMs become mainstream evaluation tools, benchmarks such as SummEval and MT-Bench require LLMs to evaluate text quality across multiple dimensions simultaneously. Textual gradient methods like TextGrad and OPRO can automatically optimize prompts, but they are primarily designed for single-objective scenarios.
 
-**Limitations of Prior Work**: Existing single-objective methods do not directly scale when a prompt must satisfy multiple evaluation criteria. Conflict resolution tools in numerical multi-task learning (e.g., PCGrad, MGDA) rely on vector space structures, whereas textual gradients are natural language strings lacking the basis for vector operations like inner products or projections.
+**Limitations of Prior Work**: When a single prompt needs to satisfy multiple evaluation criteria, existing single-objective methods cannot be directly extended. Conflict resolution tools in numerical multi-task learning (e.g., PCGrad, MGDA) rely on vector space structures. However, textual gradients are natural language strings and lack the foundations for vector operations such as inner products or projections.
 
-**Key Challenge**: Textual gradient methods are inherently incompatible with numerical gradients—instructions such as "make the coherence criterion more specific" cannot be processed via projection or constrained optimization like numerical vectors.
+**Key Challenge**: Textual gradient methods are inherently incompatible with numerical gradients—instructions like "make the coherence criterion more specific" cannot be handled through projection or constrained optimization as numerical vectors can.
 
-**Goal**: (1) Systematically test all decomposition modes of textual gradient optimization in multi-objective settings; (2) diagnose why multi-objective optimization fails; and (3) identify different failure mechanisms during optimization versus inference.
+**Goal**: (1) Systematically test all decomposition modes of textual gradient optimization in multi-objective settings; (2) Diagnose why multi-objective optimization fails; (3) Identify distinct failure mechanisms during optimization and inference.
 
-**Key Insight**: By parameterizing whether the loss, gradient, and optimizer stages process tasks independently (decomposition codes SSS/SSC/SCC/CCC), the study covers the design space from fully independent to fully coupled. This is combined with two diagnostic metrics: gradient specificity and feedback adherence.
+**Key Insight**: By parameterizing three stages—loss, gradient, and optimizer—based on whether tasks are processed independently (decomposition codes SSS/SSC/SCC/CCC), the authors cover the design space from fully independent to fully coupled. They combine two diagnostic metrics, gradient specificity and feedback adherence, to locate the root cause of failures.
 
-**Core Idea**: The failure of multi-objective textual gradient optimization stems from two independent bottlenecks: the dilution of gradient signals during optimization (specificity dropped from 9.0 to 3.7, a 59% decrease) and the mutual interference of optimized instructions during inference.
+**Core Idea**: The failure of multi-objective textual gradient optimization stems from two independent bottlenecks: the dilution of gradient signals during optimization (specificity dropped from 9.0 to 3.7, a 59% decline) and mutual interference between optimized instructions during inference.
 
 ## Method
 
 ### Overall Architecture
 
-The study utilizes the TextGrad framework to test multi-objective prompt optimization on the SummEval dataset (comprising 4 evaluation dimensions: fluency, relevance, coherence, and consistency). The core pipeline consists of four stages:
+The core question addressed is: why do textual gradient methods fail to improve initial prompts when "one prompt optimizes multiple evaluation criteria"? To answer this, the authors built a controlled diagnostic pipeline using the TextGrad framework on the SummEval dataset (comprising four dimensions: fluency, relevance, coherence, and consistency). In an optimization iteration, the task model (Qwen3-8B) predicts scores for each dimension using the current prompt; the loss LLM (Qwen3-235B) compares predictions with ground truth to generate natural language critiques; the gradient LLM (also 235B) aggregates losses into structured suggestions for "how to change the instructions"; finally, the optimizer LLM (also 235B) rewrites the instructions for each task. Throughout this process, only the instructions for the 4 tasks are updated, while the prompt backbone (role, output format, few-shots) remains frozen. The true ingenuity lies in identifying exactly where the multi-objective process fails.
 
-1.  **Task Model** (Qwen3-8B): Predicts dimensional scores using the current prompt.
-2.  **Loss LLM** (Qwen3-235B): Compares predictions with ground truth labels to generate natural language critiques.
-3.  **Gradient LLM** (Qwen3-235B): Aggregates per-example losses into structured instruction edit suggestions.
-4.  **Optimizer LLM** (Qwen3-235B): Rewrites task-specific instructions in the prompt based on gradients.
-
-Key Constraint: The prompt skeleton (persona, output format, few-shot examples) remains frozen; only the instruction text for the 4 tasks is updated.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["SummEval Four Dimensions<br/>Initial Generic Prompt"] --> B["Task Model Qwen3-8B<br/>Predicts Scores for Each Dimension"]
+    subgraph DECOMP["Decomposition Mode Parameterization: S/C Spectrum (SSS→SSC→SCC→CCC)"]
+        direction TB
+        C["Loss LLM<br/>Generates Critiques vs. Ground Truth"] --> D["Gradient LLM<br/>Aggregates Loss → Instruction Revision Suggestions"]
+        D --> E["Optimizer LLM<br/>Rewrites 4 Task Instructions"]
+    end
+    B --> C
+    D -.->|Scoring| F["Gradient Specificity Diagnosis<br/>Claude 1–10 Task Focus"]
+    E -.->|Scoring| G["Feedback Adherence Diagnosis<br/>Claude 1–10 Edit Following"]
+    E -->|12 Iterations, Backbone Frozen| B
+```
 
 ### Key Designs
 
-1.  **Parameterization of Decomposition Modes (5 Types)**:
-    - **Function**: Systematically covers the design space of multi-objective interactions by combining decomposition choices (Separate/Combined) across three stages.
-    - **Mechanism**: Decomposition codes use S (Separate) and C (Combined). For example, SSC indicates that loss and gradient process tasks independently, but the optimizer receives all gradients. The 5 modes are: Single-Task (fully independent), SSS (fully independent), SSC (independent until gradient), SCC (independent only at loss), and CCC (fully combined).
-    - **Design Motivation**: Gradually increasing task coupling allows for observing when gradient information begins to degrade and identifying bottlenecks at different stages. This design precisely locates the gradient dilution mechanism at the Gradient LLM stage.
+**1. Decomposition Mode Parameterization: Forcing bottlenecks via a spectrum from "Fully Independent" to "Fully Joint"**
 
-2.  **Gradient Specificity Diagnosis**:
-    - **Function**: Quantifies the task focus of each textual gradient, i.e., the degree to which a suggestion targets a single task.
-    - **Mechanism**: A Claude Sonnet 4.6 evaluator scores each gradient on a 1-10 scale (10 = fully specific to one task, 1 = too generic for any task). All gradients are evaluated across all decomposition modes, 3 random seeds, and 12 optimization steps.
-    - **Design Motivation**: Since textual gradients lack a concept of magnitude in vector space, they require interpretable semantic metrics. Specificity directly reflects the task-relevant information content; high specificity ensures the optimizer receives targeted improvement directions.
+Multi-objective failure can occur at the loss, gradient, or optimizer stages. To locate the specific point of failure beyond aggregate performance, this paper labels each stage as either "Separate (S)" or "Combined (C)". Various combinations are tested along a spectrum of increasing coupling: Single-Task (fully independent), SSS (all three stages independent), SSC (independent until the optimizer stage), SCC (only loss is independent), and CCC (fully joint). By observing where performance collapses along this spectrum, the authors pinpoint "gradient dilution" precisely at the gradient LLM stage: specificity remains at 9.0 when handled independently but drops to 3.7 once the gradient LLM faces all 4 tasks simultaneously.
 
-3.  **Feedback Adherence Diagnosis**:
-    - **Function**: Measures whether the Optimizer LLM actually follows the gradient suggestions (to exclude optimizer non-compliance as a failure reason).
-    - **Mechanism**: Claude Sonnet 4.6 evaluates whether the optimizer's instruction edits follow the gradient suggestions (1-10 scale).
-    - **Design Motivation**: If adherence is low, the problem lies with the optimizer; if adherence is high but performance is poor, the problem lies with the gradient quality. Experiments showed high adherence across all modes (7.8-8.8), proving the bottleneck is indeed gradient specificity.
+**2. Gradient Specificity Diagnosis: A semantic ruler for "non-vectorizable" textual gradients**
 
-### Verification Strategy
+Numerical gradients have magnitudes for comparison, whereas a textual gradient is a natural language sentence. Phrases like "make the coherence criterion more specific" lack a norm or direction, making it difficult to judge the amount of effective information provided. This paper replaces the vector norm with an interpretable semantic metric: Claude Sonnet 4.6 is used to score the "task focus" of each gradient on a scale of 1–10 (10 = fully specific to one task, 1 = generic enough for any task). This is evaluated across all decomposition modes and steps. High specificity indicates the optimizer receives focused improvement directions, while a sudden drop suggests gradient signals have been diluted into vague platitudes—this provides a quantitative grasp of the "gradient dilution" mechanism.
 
-Two validation settings were tested:
-- **val=mae**: A new prompt is accepted only if the validation set MAE does not increase (monotonic filtering to prevent overfitting).
-- **val=none**: All candidates are accepted unconditionally to observe the full optimization trajectory.
+**3. Feedback Adherence Diagnosis: Ruling out "disobedient optimizers" to isolate gradient issues**
 
-Each configuration (decomposition mode $\times$ verification strategy) was run for 3 independent trials over 12 optimization steps.
+Poor performance due to low specificity assumes the optimizer actually follows the gradient. If the optimizer ignores instructions, the conclusion is invalid. To address this, Claude Sonnet 4.6 is also used to evaluate on a scale of 1–10 how closely the optimizer’s instruction edits follow the gradient suggestions. In experiments, adherence remained high across all modes (7.8–8.8), indicating the optimizer was effectively following the signals. Since the optimizer remains faithful but performance fails to improve, the bottleneck is clearly attributed to the quality of the gradients themselves. These two metrics create a binary criterion: if adherence is low, blame the optimizer; if adherence is high but performance is poor, blame the gradients.
+
+### Training Strategy
+
+Two validation settings are tested: `val=mae`, where a new prompt is only accepted if the validation set MAE does not increase (monotonic filtering to prevent overfitting), and `val=none`, which accepts all candidates to observe the full optimization trajectory. Each decomposition mode × validation strategy combination is run 3 times for 12 optimization steps each.
 
 ## Key Experimental Results
 
 ### Main Results: Comparison of Decomposition Modes
 
-| Mode | Val Method | Initial $\rho$ | Best $\rho$ | Best Step | Gain $\Delta$ | Hypervolume |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Mode | Validation | Initial ρ | Best ρ | Best Step | Gain Δ | Hypervolume |
+|------|-----------|-----------|--------|-----------|--------|-------------|
 | Single-Task | MAE | 0.274 | 0.305 | 2 | +0.031 | — |
 | SSS | MAE | 0.284 | 0.284 | 0 | +0.000 | 2.749 |
 | SSC | MAE | 0.289 | 0.289 | 0 | +0.000 | 2.832 |
@@ -96,86 +91,85 @@ Each configuration (decomposition mode $\times$ verification strategy) was run f
 | SCC | None | 0.282 | 0.282 | 0 | +0.000 | 2.779 |
 | CCC | None | 0.287 | 0.287 | 0 | +0.000 | 2.983 |
 
-**Key Findings**: **In 6 out of 10 configurations, the initial generic prompt was never surpassed.** Only Single-Task optimization under MAE validation achieved significant improvement (+0.031 Spearman). Performance progressively worsened along the spectrum of Single >> SSS >> SSC >> SCC >> CCC.
+**Key Findings**: In 6 out of 10 configurations, the initial generic prompt was never surpassed. Only Single-Task under MAE validation achieved a significant improvement (+0.031 Spearman). Performance progressively worsened along the spectrum: Single >> SSS >> SSC >> SCC >> CCC.
 
 ### Diagnosis of Gradient Dilution
 
-| Decomposition Mode | Fluency | Relevance | Coherence | Consistency | Avg Specificity |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Mode | Fluency | Relevance | Coherence | Consistency | Avg Specificity |
+|---------|-------|-------|-------|-------|----------|
 | Single | 8.9 | 8.9 | 9.1 | 9.0 | 9.0 |
 | SSS | 9.0 | 9.0 | 9.1 | 9.0 | 9.0 |
 | SSC | 9.0 | 9.1 | 9.1 | 9.0 | 9.0 |
 | SCC | 3.0 | 4.3 | 4.8 | 2.6 | 3.7 |
 | CCC | 3.2 | 4.3 | 5.1 | 2.4 | 3.7 |
 
-A steep cliff: Task-independent modes (Single/SSS/SSC) maintain a high specificity of 9.0, while all task-combined modes (SCC/CCC) plummet to 3.7, a **59% decrease with no overlap between the two groups**. The Gradient LLM suffers a structural loss of task focus when processing 4 tasks simultaneously.
+**Steep Cliff**: Task-independent modes (Single/SSS/SSC) maintain a high specificity of 9.0, while modes where tasks are joint (SCC/CCC) drop sharply to 3.7—a **59% decrease with no overlap between groups**. This indicates a structural collapse in the gradient LLM’s ability to maintain task focus when handling multiple criteria.
 
-### Oracle Experiment: Instruction Interference at Inference
+### Oracle Experiment: Inference-time Instruction Interference
 
 | Method | Fluency | Relevance | Coherence | Consistency | Average |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-------|-------|-------|-------|-----|
 | Initial Generic | .366 | .208 | .308 | .256 | .285 |
 | Oracle Combo (OB1) | .322 | .186 | .225 | .195 | .232 |
 | Oracle Combo (Spearman) | .303 | .257 | .215 | .105 | .220 |
 
-The Oracle experiment selects the best instructions for each dimension from 4 single-task optimizations and evaluates their combination on the full test set. Results: **Even when instructions are independently optimized, their combination results in a -0.053 Spearman drop compared to the initial generic prompt.** This proves that inference-time interference exists as an independent failure mode.
+The Oracle experiment selects the best instructions for each dimension from separate single-task optimizations and combines them for evaluation on the full test set. Results: **Even when instructions are individually optimized, the combination results in a -0.053 Spearman drop, performing worse than the initial generic prompt**. This proves that inference-time interference exists as an independent failure mode.
 
 ### Key Findings
 
-- **Steepness of Gradient Dilution**: When the Gradient LLM switches from single-task to multi-tasking, specificity does not decrease gradually but jumps from 9.0 to 3.7, indicating a structural collapse in Gradient LLM capability.
-- **Task Agnosticism**: Diagnoses for both modes were validated through model swaps to ensure robustness, suggesting the issue lies in the methodology rather than specific LLM architectures.
-- **The Hypervolume Paradox**: Although average Spearman $\rho$ stagnated for CCC, the hypervolume metric grew by 6.9%, suggesting the optimizer found a new Pareto frontier and diversified the population at the cost of significantly reducing single-objective performance.
-- **Instruction Length Asymmetry**: Fluency instructions expanded to ~800 words after optimization, while relevance instructions remained at ~4 words. This disparity causes disproportionate attention weights for verbose instructions during inference.
+- **Steepness of Gradient Dilution**: The drop in specificity when switching from single-task to multi-task is not gradual but a sudden leap from 9.0 to 3.7, suggesting a structural collapse of LLM capabilities.
+- **Task Agnosticism**: Diagnostics were validated via model swap and found to be robust, indicating the problem lies in the methodology rather than a specific LLM architecture.
+- **The Hypervolume Paradox**: While CCC's average Spearman stalled, its hypervolume indicator increased by 6.9%. This suggests the optimizer finds new Pareto fronts and diversifies the population at the cost of single-objective performance.
+- **Instruction Length Asymmetry**: Fluency instructions expanded to ~800 words after optimization, while Relevance was only ~4 words. This length disparity causes disproportionate attention weight during inference.
 
 ## Highlights & Insights
 
-- **Sophistication of the Two-Layer Diagnosis**: By isolating failure points at optimization time (gradient specificity) and inference time (instruction interference), the authors demonstrate that merely improving gradient quality or optimizing single instructions is insufficient.
-- **Quantification of Gradient Specificity**: Measuring task focus with an LLM evaluator instead of numerical features elegantly bypasses the inability to vectorize textual gradients.
-- **Subversive Significance of the Oracle Experiment**: Constructing a "theoretically optimal" combination that still fails strongly argues that this is not an optimization algorithm flaw but a structural limitation of the problem itself.
-- **Analogy to Multi-Task Learning Theory**: Extends the "rule dilution" found by Chu et al. in educational scoring to cross-task gradient aggregation scenarios.
+- **Elegance of the Diagnostic Framework**: By separating optimization-time (gradient specificity) and inference-time (instruction interference) failure points, the authors prove that neither improving gradient quality nor optimizing individual instructions alone is sufficient.
+- **Quantification of Textual Gradients**: Measuring task focus through LLM evaluators rather than numerical features elegantly bypasses the challenge of non-vectorizable textual gradients.
+- **Significance of the Oracle Experiment**: Constructing a "theoretically optimal" but failing combination highlights that the issue is a structural limitation of the problem rather than an algorithmic flaw.
+- **Analogy to Multi-Task Learning**: Extends the "rule dilution" found by Chu et al. in educational scoring to the scenario of cross-task gradient aggregation.
 
 ## Limitations & Future Work
 
 **Limitations acknowledged by the authors**:
-- Evaluation was limited to SummEval (4 dimensions); generalization requires testing on more benchmarks.
-- Other prompt optimization paradigms (OPRO, GEPA, evolutionary algorithms) might behave differently.
+- Evaluation was limited to SummEval (4 dimensions); generalizability requires further benchmarks.
+- Performance might vary with other paradigms (OPRO, GEPA, evolutionary algorithms).
 - Small sample size (N=3) limits statistical power.
 
 **Self-identified limitations**:
-- Gradient specificity and feedback adherence are scored by LLM evaluators, introducing potential evaluator bias.
-- Experiments are restricted to text evaluation and ordinal scales; performance on discrete classification tasks remains unknown.
+- Potential bias from using LLMs as evaluators for specificity and adherence.
+- Experiments were restricted to text evaluation and ordinal scales; consistency with discrete classification tasks is unknown.
 
-**Future Research Directions**:
-1. Automatically fallback to single-task Gradient LLMs when gradient specificity falls below a threshold.
-2. Impose constraints on instruction length during optimization.
-3. Instead of fixing evaluation criteria, generate semantic sets of diverse and complementary criteria.
-4. Investigate whether solutions from numerical multi-task learning can be introduced to textual gradients through token-level gradient intersection or conflict projection.
+**Future Work**:
+1. Automatically fall back to single-task gradient LLMs when specificity drops below a threshold.
+2. Incorporate constraints on instruction length during optimization.
+3. Generate semantically diverse and complementary criteria rather than fixed ones.
+4. Investigate solutions similar to numerical multi-task learning through token-level gradient intersections or conflict projections.
 
 ## Related Work & Insights
 
-- **vs. TextGrad/OPRO/GEPA**: These methods optimize for a single objective; this paper is the first to systematically study multi-criteria settings.
-- **vs. MOPO/ParetoPrompt**: These multi-objective methods operate at the population level, whereas this study focuses on per-task feedback interaction within a single gradient trajectory.
-- **vs. Chu et al. Rule Dilution**: Chu's findings target heterogeneous error pattern aggregation within a single scorer; this paper extends it to cross-task gradient aggregation.
-- **vs. RRD/MPO**: This paper suggests that even when each part is optimized, compositional interference remains a challenge, pointing to a deeper structural issue.
+- **vs. TextGrad/OPRO/GEPA**: These optimize single targets; this work is the first to systematically study multi-criteria settings.
+- **vs. MOPO/ParetoPrompt**: These operate at the population level; this work focuses on per-task feedback interaction within a single gradient trajectory.
+- **vs. Chu et al. Rule Dilution**: Chu's findings concern internal error patterns in a single scorer; this paper extends this to cross-task gradient aggregation.
+- **vs. RRD/MPO**: This paper identifies that even when each part is optimized, combined interference remains a deeper issue.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic study of failure modes in multi-objective textual gradient optimization, identifying gradient dilution and instruction interference as distinct bottlenecks.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of five decomposition modes, two sets of diagnostic metrics, Oracle experiment validation, and model swap robustness checks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic progressing from phenomena to root causes, sophisticated experimental design, and comprehensive data presentation.
-- Value: ⭐⭐⭐⭐⭐ Directly warns practitioners building multi-criteria LLM judge systems; the diagnostic framework and decomposition paradigm are generalizable to other multi-stage LLM systems.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of failure modes in multi-objective textual gradient optimization, identifying gradient dilution and instruction interference as independent bottlenecks.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage of five decomposition modes, dual diagnostic metrics, Oracle experiments, and model swap robustness checks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical progression from phenomena to root causes, sophisticated experimental design, and detailed data.
+- Value: ⭐⭐⭐⭐⭐ Provides critical warnings for developers of multi-criteria LLM evaluation systems; the diagnostic framework is generalizable to other multi-stage LLM systems.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](../../ICLR2026/llm_nlp/when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
-- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
-- [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](../../ICLR2026/llm_nlp/llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
+- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
+- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
+- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](../../ICML2026/llm_nlp/universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[ICML 2026\] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化](../../ICML2026/llm_nlp/model-preserving_adaptive_rounding.md)
+- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
 
 </div>
 

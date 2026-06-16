@@ -2,70 +2,80 @@
 title: >-
   [Paper Note] CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal
 description: >-
-  [ICML 2026][Image Generation][Video subtitle removal] This paper proposes CLEAR for video subtitle removal: a two-stage training pipeline (Stage I uses a dual encoder + orthogonal decoupling to self-supervise a subtitle…
+  [ICML 2026][Image Generation][Diffusion Model] This paper proposes CLEAR for video subtitle removal: a two-stage training approach (Stage I learns self-supervised subtitle prior masks using a dual encoder with orthogonal decoupling; Stage II adds LoRA and an occlusion head to the Wan2.1 video diffusion model for adaptive weighting). The inference requires no masks
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "Video subtitle removal"
-  - "diffusion model"
-  - "LoRA"
-  - "self-supervised prior"
-  - "mask-free inference"
+  - ICML 2026
+  - Image Generation
+  - Diffusion Model
+  - LoRA
 date: 2026-05-08
-content_hash: d935371951785052
+content_hash: 0801e7a341763092
 ---
-
 # CLEAR: Context-Aware Learning with End-to-End Mask-Free Inference for Adaptive Video Subtitle Removal
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2603.21901](https://arxiv.org/abs/2603.21901)  
-**Code**: https://github.com/silent-commit/CLEAR (available)  
+**Code**: https://github.com/silent-commit/CLEAR (Available)  
 **Area**: Video Generation / Video Inpainting / Subtitle Removal  
-**Keywords**: Video subtitle removal, diffusion model, LoRA, self-supervised prior, mask-free inference
+**Keywords**: Video Subtitle Removal, Diffusion Models, LoRA, Self-Supervised Prior, Mask-Free Inference
 
 ## TL;DR
-This paper proposes CLEAR for video subtitle removal: a two-stage training pipeline (Stage I uses a dual encoder + orthogonal decoupling to self-supervise a subtitle prior mask; Stage II adds LoRA + an occlusion head to the Wan2.1 video diffusion model for adaptive weighting). Inference requires no mask or text detector at all; with only 0.77% trainable parameters, PSNR reaches 26.80 dB on a Chinese test set (+6.77 dB over the strongest baseline), and zero-shot generalizes to six languages.
+This paper proposes CLEAR for video subtitle removal: a two-stage training approach (Stage I learns self-supervised subtitle prior masks using a dual encoder with orthogonal decoupling; Stage II adds LoRA and an occlusion head to the Wan2.1 video diffusion model for adaptive weighting). The inference requires no masks or text detectors. By training only 0.77% of parameters, it achieves a PSNR of 26.80 dB on a Chinese test set (+6.77 dB over the strongest baseline) and demonstrates zero-shot generalization to six languages.
 
 ## Background & Motivation
-**Background**: Current video subtitle removal mainly relies on mask-guided video diffusion inpainting (DiffuEraser, EraserDiT, MiniMax-Remover), requiring external text detection/segmentation to provide precise binary masks for every frame.
+**Background**: Current video subtitle removal mainly relies on mask-guided video diffusion inpainting (DiffuEraser, EraserDiT, MiniMax-Remover), which depends on external text detectors or segmentors to provide precise binary masks for every frame.
 
-**Limitations of Prior Work**: (L1) Low training efficiency—full-parameter training and per-frame mask annotation, which itself depends on manual labeling or dedicated segmentation models throughout long videos; (L2) Fragile inference—text detection/tracking must run continuously after deployment, and any detection failure leads to flicker, ghosting, or drift; (L3) Static prior usage—auxiliary priors (heatmap, optical flow) are used with uniform weighting, ignoring reliability differences of subtitles across frames and regions.
+**Limitations of Prior Work**: (L1) Low training efficiency—full parameter fine-tuning plus frame-by-frame mask annotation, which requires heavy manual labor or specialized segmentation models; (L2) Fragile inference—reliance on continuous text detection/tracking, where failure leads to flickering, artifacts, or drifting; (L3) Static prior utilization—auxiliary priors (heatmaps, optical flow) are weighted uniformly, ignoring the reliability variance of subtitles across different frames and regions.
 
-**Key Challenge**: Video subtitles exhibit temporal continuity, diverse positions/fonts, and complex coupling with camera/object motion, requiring (K1) parameter efficiency + no mask annotation, (K2) fully mask-free end-to-end inference, and (K3) adaptive prior quality weighting; none of which are achieved by existing methods.
+**Key Challenge**: Video subtitles exhibit temporal continuity, diverse positions/fonts, and complex coupling with camera or object motion. This requires (K1) parameter efficiency without mask annotations, (K2) fully mask-free end-to-end inference, and (K3) adaptive balancing of prior quality. Existing methods fail on all three counts.
 
-**Goal**: Construct a framework that can self-supervise subtitle priors from paired subtitle/clean videos during training, is fully mask-free during inference, and dynamically adapts weighting for subtitle regions.
+**Goal**: Construct a framework that can learn subtitle priors in a **self-supervised** manner from subtitle/clean video pairs during training, perform **mask-free** inference, and dynamically weight subtitle regions.
 
-**Key Insight**: Use the pixel difference between "subtitle frame - clean frame" as a weakly supervised pseudo-label (noisy but cheap), and employ a dual encoder + orthogonal constraint to isolate subtitle information; then let the diffusion model use an occlusion head to correct the prior during generation.
+**Key Insight**: Utilize the pixel difference between "subtitled frames - clean frames" as a weak-supervision pseudo-label (noisy but cheap). Isolate subtitle information via dual encoders and orthogonal constraints, then allow the diffusion model to calibrate this prior on-the-fly using an occlusion head.
 
-**Core Idea**: Explicitly distill the "subtitle mask recognition" capability into the LoRA-tuned DiT intermediate layers during training, so that inference only requires the subtitle video as input—the model internally generates $\mathcal{M}^{pred}$, with no external mask needed.
+**Core Idea**: Explicitly distill the "subtitle mask identification" capability into the intermediate layers of a LoRA-tuned DiT during training. This enables inference by simply feeding the subtitled video—implicitly generating $\mathcal{M}^{pred}$ internally while remaining completely mask-free externally.
 
 ## Method
 
 ### Overall Architecture
-A two-stage pipeline. Stage I (self-supervised prior): Use pixel-difference pseudo-labels to train dual ResNet-50 encoders ($E_{\text{sub}},E_{\text{content}}$) + a 4-layer UNet decoder to obtain the prior mask $\mathcal{M}^{prior}$, with ImageNet pretraining and orthogonal loss + adversarial discriminator to decouple subtitle and content features. Stage II (adaptive weighting): Freeze Wan2.1-Fun-V1.1-1.3B DiT, inject rank=64 LoRA into all attention + FFN, and add a 2.1M parameter occlusion head $\mathcal{H}$ to compute $\mathcal{M}^{pred}$ from DiT intermediate layers. The spatial emphasis × focal difficulty weight $w_{i,j,t}$ modulates the diffusion loss, with three losses (distillation + context-aware adaptation + sparsity) jointly optimized. Inference: single input video → DiT + LoRA + internal $\mathcal{M}^{pred}$ → DDIM 5 steps → VAE decodes clean video, with no external modules.
+CLEAR addresses the dependency on external masks by internalizing "subtitle localization" into a video diffusion model during training. The process is divided into two stages: Stage I generates a self-supervised subtitle prior mask $\mathcal{M}^{prior}$ using pixel differences as weak supervision. Stage II freezes the Wan2.1-Fun-V1.1-1.3B video DiT, adds LoRA and a lightweight occlusion head to implicitly predict $\mathcal{M}^{pred}$ from intermediate layers, and adaptively weights the diffusion loss. The final model performs subtitle removal in a single forward pass without any external detectors.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Subtitle / Clean Video Pair"] --> B
+    subgraph S1["Stage I: Self-Supervised Subtitle Prior"]
+        direction TB
+        B["Pixel Difference Pseudo-label<br/>Δ = ‖X_sub − X_clean‖₂"] --> C["Dual Encoder with<br/>Orthogonal + Adversarial Decoupling"]
+        C --> D["Subtitle Prior Mask M_prior"]
+    end
+    D --> E
+    subgraph S2["Stage II: Context-Aware Occlusion Head"]
+        direction TB
+        E["Frozen Wan2.1 DiT + LoRA"] --> F["Occlusion Head<br/>Predicts M_pred from Intermediate Layers"]
+        F --> G["Adaptive Weighted Diffusion Loss w"]
+    end
+    G --> H["Joint Triple-Loss Optimization<br/>distill + gen + sparse"]
+    H --> I["Mask-free Inference<br/>Single Forward -> Clean Video"]
+```
 
 ### Key Designs
 
-1. **Stage I Self-Supervised Subtitle Prior (dual encoder + orthogonal decoupling + adversarial discriminator)**:
+**1. Stage I Self-Supervised Subtitle Prior: Replacing Manual Masks with Pixel Differences and Orthogonal Decoupling**
 
-    - **Function**: Learns a binary mask $\mathcal{M}^{prior}$ predicting subtitle regions from 500 video pairs without manual masks.
-    - **Mechanism**: (a) Use pixel difference $\Delta_t=\|\mathbf{X}^{sub}_t-\mathbf{X}^{clean}_t\|_2$ and per-frame mean+std thresholding to generate pseudo-labels; (b) dual encoder extracts $F^{sub}, F^{content}$ at 1/8 resolution; (c) orthogonal loss $\mathcal{L}_{\text{ortho}}=\frac{1}{T H' W'}\sum\langle F^{sub}, F^{content}\rangle^2$ enforces independence; (d) adversarial loss $\mathcal{L}_{\text{adv}}$ prevents leakage; (e) decoder outputs $\mathcal{M}^{prior}$ from $F^{sub}$ only, and $F^{content}$ alone must reconstruct the clean frame.
-    - **Design Motivation**: Pixel-difference pseudo-labels are noisy (lighting, semi-transparent subtitles, motion blur), and BCE alone cannot learn good masks; orthogonal + adversarial + reconstruction constraints force subtitle features to exclusively carry all difference information, enabling the mask head to generalize to unseen fonts/languages rather than memorizing specific token shapes.
+To avoid expensive frame-by-frame annotations, CLEAR uses pixel difference $\Delta_t=\|\mathbf{X}^{sub}_t-\mathbf{X}^{clean}_t\|_2$ with per-frame mean+std thresholds as cheap pseudo-labels. To combat noise from lighting, transparency, and motion blur, CLEAR employs dual ResNet-50 encoders ($E_{\text{sub}},E_{\text{content}}$) to extract features $F^{sub}$ and $F^{content}$. An orthogonal loss $\mathcal{L}_{\text{ortho}}=\frac{1}{T H' W'}\sum\langle F^{sub}, F^{content}\rangle^2$ ensures the two branches are uncorrelated, while an adversarial loss $\mathcal{L}_{\text{adv}}$ prevents leakage. By requiring $F^{sub}$ to generate $\mathcal{M}^{prior}$ and $F^{content}$ to reconstruct the clean frame, the model learns abstract "occlusion patterns" rather than specific fonts, enabling zero-shot generalization across languages.
 
-2. **Stage II Context-Aware Occlusion Head + Adaptive Weighting $w_{i,j,t}$**:
+**2. Stage II Context-Aware Occlusion Head: Adaptive Weighting and Self-Calibration**
 
-    - **Function**: Dynamically computes subtitle probability for each patch in DiT intermediate layers, adjusting its weight in the diffusion loss to "explicitly attend to subtitles during training, implicitly erase during generation."
-    - **Mechanism**: Occlusion head $\mathcal{H}(\mathbf{h}_{enc})=\mathrm{Conv}^1_{1\times 1}(\mathrm{SiLU}(\mathrm{Conv}^{64}_{3\times 3}(\mathbf{h}_{enc})))$ computes $\mathcal{M}^{pred}=\sigma(\mathcal{H}(\mathbf{h}_{enc}))$ from DiT encoder activations; final weight $w_{i,j,t}=(1+\alpha(k)\cdot\mathcal{M}^{pred}_{i,j,t})\cdot(\epsilon^{gen}_{i,j,t}+\delta)^\gamma$, where the first term is spatial emphasis (upweighting predicted subtitle regions), and the second is focal-style difficulty weighting (upweighting high reconstruction error regions); $\alpha(k)$ oscillates between $\alpha_{\min}=5,\alpha_{\max}=15$ with triangular scheduling to avoid local minima.
-    - **Design Motivation**: Naively using the prior as a mask condition is noisy; letting the head see latent noise, DiT high-level semantics, and diffusion timestep $t$ turns "prior calibration" into "difficulty-aware generation." Focal weighting (from RetinaNet) ensures simple background regions contribute less gradient, while hard subtitle regions contribute more. Crucially, $\mathcal{M}^{pred}$ is not detached, so gradients from $\mathcal{L}_{\text{gen}}$ flow back, forming a self-correcting loop.
+Instead of using the Stage I prior as a hard condition, CLEAR attaches a 2.1M parameter occlusion head $\mathcal{H}(\mathbf{h}_{enc})=\mathrm{Conv}^1_{1\times 1}(\mathrm{SiLU}(\mathrm{Conv}^{64}_{3\times 3}(\mathbf{h}_{enc})))$ to the DiT encoder's intermediate layers. It calculates $\mathcal{M}^{pred}=\sigma(\mathcal{H}(\mathbf{h}_{enc}))$ using latent noise, DiT semantics, and time steps to calibrate the prior. This prediction modulates the diffusion loss weights $w_{i,j,t}=(1+\alpha(k)\cdot\mathcal{M}^{pred}_{i,j,t})\cdot(\epsilon^{gen}_{i,j,t}+\delta)^\gamma$. The first part emphasizes spatial subtitle areas, while the second part (inspired by Focal Loss in RetinaNet) weights high-error regions. Crucially, the gradient of $\mathcal{L}_{\text{gen}}$ flows back through $\mathcal{M}^{pred}$, creating a self-correcting loop without GT masks.
 
-3. **Joint Three-Loss Optimization + Internalized Mask-Free Inference**:
+**3. Joint Triple-Loss Optimization: Embedding Knowledge into LoRA for Mask-Free Inference**
 
-    - **Function**: Uses distillation (from Stage I prior) + generation feedback (quality) + sparsity/KL (anti-degeneration) to jointly optimize LoRA and the occlusion head, so that $\mathcal{M}^{pred}$ retains prior structure while correcting local errors, and is absorbed into LoRA-augmented attention—no external mask needed at inference.
-    - **Mechanism**: $\mathcal{L}_{stage2}=\mathcal{L}_{distill}+\mathcal{L}_{gen}+0.1\cdot\mathcal{L}_{sparse}$; $\mathcal{L}_{distill}$ uses SmoothL1 to enforce $\mathcal{M}^{pred}\approx\mathcal{M}^{prior}$ within 1 unit deviation; $\mathcal{L}_{gen}$ is standard diffusion $\epsilon$ loss weighted by $w$; $\mathcal{L}_{sparse}$ combines L1 sparsity + $D_{KL}(\mathcal{M}^{pred}\|\mathcal{M}^{prior})$, the former prevents uniform degeneration, the latter prevents drifting from the prior distribution.
-    - **Design Motivation**: Pure distillation amplifies Stage I noise; pure generation feedback leads to trivial head outputs (all 0 or uniform). The three losses each serve a role: distill for structure, gen for quality, sparse for controllability. After training, LoRA + head absorb "which regions to erase" into attention patterns; at inference (Alg.1), $\mathcal{M}^{pred}$ is internal, never output, and a single forward pass yields the clean video.
+To prevent inheriting Stage I noise or collapsing to trivial solutions, Stage II uses: $\mathcal{L}_{stage2}=\mathcal{L}_{distill}+\mathcal{L}_{gen}+0.1\cdot\mathcal{L}_{sparse}$. $\mathcal{L}_{distill}$ uses SmoothL1 to align $\mathcal{M}^{pred}\approx\mathcal{M}^{prior}$ with a tolerance margin. $\mathcal{L}_{gen}$ handles generation quality via $w$-weighting. $\mathcal{L}_{sparse}$ combines L1 sparsity with $D_{KL}(\mathcal{M}^{pred}\|\mathcal{M}^{prior})$ to prevent the mask from becoming uniform or drifting. This process bakes the subtitle removal logic into the LoRA-augmented attention (rank=64). During inference (Alg.1), the model directly outputs a clean video from a subtitled input without any external modules, eliminating cascading errors.
 
 ### Loss & Training
-Stage I: $\mathcal{L}_{stage1}=\mathcal{L}_{ortho}+0.5\mathcal{L}_{adv}+\mathcal{L}_{region}+0.1\mathcal{L}_{recon}$, AdamW lr=$2\times 10^{-5}$, 1 epoch (~70 min). Stage II: above $\mathcal{L}_{stage2}$, AdamW lr=$1\times 10^{-4}$, gradient clipping=1.0, 1 epoch ≈ 1 day (8×A800). LoRA rank=64, applied to q,k,v,o and ffn.0/2; $\gamma=0.8,\delta=10^{-6}$; Stage II data: 500 videos × 81 consecutive frames.
+Stage I: $\mathcal{L}_{stage1}=\mathcal{L}_{ortho}+0.5\mathcal{L}_{adv}+\mathcal{L}_{region}+0.1\mathcal{L}_{recon}$, using AdamW (lr=$2\times 10^{-5}$) for 1 epoch (~70 min).  
+Stage II: Optimized via $\mathcal{L}_{stage2}$ using AdamW (lr=$1\times 10^{-4}$, gradient clipping=1.0) for 1 epoch (~1 day on 8×A800). LoRA rank=64 is applied to q, k, v, o and ffn.0/2; $\gamma=0.8, \delta=10^{-6}$. Stage II data consists of 500 videos × 81 consecutive frames.
 
 ## Key Experimental Results
 
@@ -78,7 +88,7 @@ Stage I: $\mathcal{L}_{stage1}=\mathcal{L}_{ortho}+0.5\mathcal{L}_{adv}+\mathcal
 | DiffuEraser | 17.85 | 0.672 | 0.458 | 72.51 | 1.523 | 0.630 | 3.47 |
 | **CLEAR (mask-free)** | **26.80** | **0.894** | **0.101** | **20.37** | **1.227** | **0.029** | 4.86 |
 
-PSNR +6.77 dB, VFID -74.7%, Flow Variance -93.0%; all baselines require external masks, while CLEAR only takes the subtitle video as input.
+Ours achieves PSNR +6.77 dB, VFID -74.7%, and Flow Variance -93.0% compared to Prev. SOTA. Notably, all baselines require external masks, while CLEAR is input-only.
 
 ### Ablation Study
 
@@ -99,33 +109,31 @@ PSNR +6.77 dB, VFID -74.7%, Flow Variance -93.0%; all baselines require external
 | lora_scale=1.5 | 27.94 | 42.16 | 4.86 |
 
 ### Key Findings
-- The cumulative 5.18 dB PSNR gain comes from the four modules in combination; consistency regularization (M4) alone provides the largest VFID drop (-35.5%), indicating that "preventing $\mathcal{M}^{pred}$ degeneration" is critical for perceptual quality.
-- steps=10 yields higher PSNR but worse VFID (35.70 vs 20.37), suggesting more denoising steps introduce artifacts; 5 steps is optimal by default.
-- LoRA scale 0.5 leads to severe under-removal (LPIPS +82%), 1.5 to over-smoothing—1.0 is the sweet spot; CFG=1.0 balances fidelity and perceptual quality.
-- Zero-shot cross-lingual: trained only on Chinese subtitles, the model cleanly removes English/Korean/French/Japanese/Russian/German subtitles—demonstrating that it learns abstract occlusion patterns rather than character features.
+- A cumulative 5.18 dB PSNR gain is attributed to the combination of the four modules. Consistency regularization (M4) alone provides the largest VFID reduction (-35.5%), proving that preventing $\mathcal{M}^{pred}$ degradation is vital for perceptual quality.
+- While steps=10 improves PSNR, VFID worsens (35.70 vs 20.37), suggesting more denoising steps introduce artifacts; 5 steps is the optimal default.
+- Zero-shot performance: Although trained only on Chinese subtitles, the model successfully removes subtitles in English, Korean, French, Japanese, Russian, and German, validating the learning of abstract occlusion patterns.
 
 ## Highlights & Insights
-- **Pixel-difference pseudo-labels + orthogonal decoupling**: Replaces expensive mask annotation with pixel differences from subtitle/clean video pairs, and uses orthogonal + adversarial constraints to force subtitle information into a single encoder. This self-supervised process enables learning a subtitle prior that generalizes to six languages from just 500 video pairs, exemplifying data efficiency.
-- **Gradient flow through $\mathcal{M}^{pred}$ enables self-correction**: Many attention/mask weighting methods detach the mask to avoid interfering with the main task; this work does the opposite—deliberately allowing diffusion loss gradients to flow back to the head, so "high reconstruction error regions" receive positive gradients to raise $\mathcal{M}^{pred}$, and "low error regions" receive negative gradients to lower the weight, forming a feedback loop without GT masks.
-- **Mask-free inference has high engineering value**: Eliminating text detection/segmentation removes an entire fragile sub-pipeline (no more OCR misdetection or tracking drift), and 0.77% trainable parameters + single-epoch training is deployment-friendly; end-to-end sub→clean mapping in one inference avoids cascading errors.
+- **Pixel Difference + Orthogonal Decoupling**: Replacing expensive mask annotations with pixel differences and using orthogonal/adversarial constraints to isolate subtitle information is an efficient data strategy.
+- **Gradient Flow through $\mathcal{M}^{pred}$**: Unlike methods that detach masks, CLEAR allows gradients from the diffusion loss to flow back to the head. This creates a feedback loop where high-error regions naturally increase $\mathcal{M}^{pred}$ weights.
+- **Engineering Value of Mask-Free Inference**: Eliminating dependencies on text detection/segmentation removes fragile sub-pipelines (OCR failures, tracking drift). Combined with 0.77% parameter efficiency, this is highly suitable for production deployment.
 
 ## Limitations & Future Work
-- Main experiments are only on Chinese subtitle training data (160K training pairs, 400 test), with other languages shown only qualitatively; quantitative generalization is unmeasured.
-- 5-step DDIM takes 4.86 s/frame at 1280×720 resolution, still short of real-time; authors mention "real-time inference optimization" but provide no solution.
-- Relies on Wan2.1-Fun-V1.1-1.3B as backbone; transferability to other video diffusion models (HunyuanVideo, Sora series) is unverified.
-- Whether the self-supervised prior remains effective for "animated subtitles, artistic fonts, extreme semi-transparency" needs more stress testing; M1 only contributes +1.49 dB but VFID increases (38.21), suggesting the prior itself is still noisy and the three-loss system is necessary for robustness.
+- Quantitative generalization to other languages has not been fully quantified, only visualized.
+- Inference speed of 4.86 s/frame (1280×720) is still far from real-time. Real-time optimization remains a future direction.
+- Portability to other backbones like HunyuanVideo or Sora-based models is yet to be verified.
+- The robustness of self-supervised priors against stylized, animated, or extremely translucent subtitles requires further stress testing.
 
 ## Related Work & Insights
-- **vs DiffuEraser / EraserDiT / MiniMax-Remover**: All require external masks + full-parameter training; this work achieves mask-free inference with 0.77% parameters and +6.77 dB PSNR, decoupling "training annotation, inference dependency, and parameter efficiency."
-- **vs ProPainter**: Traditional optical flow propagation method, PSNR 17.24 lags far behind; shows that modern video diffusion priors are essential for "high-frequency local occlusion" like subtitles.
-- **vs Image-based STR (EraseNet/ViTEraser)**: Image methods lack temporal consistency constraints; CLEAR's Flow Variance 0.029 (33× lower than ProPainter's 0.885) demonstrates the temporal stability advantage of end-to-end video diffusion + LoRA.
-- **Transferable idea**: The dual encoder + orthogonal decoupling + pixel-difference pseudo-label self-supervised prior can be directly applied to other "local occlusion removal" tasks (watermark removal, logo erasure, video censor repair); focal-weighted diffusion loss is also worth reusing in general inpainting scenarios.
+- **Comparison with DiffuEraser / MiniMax-Remover**: CLEAR removes the need for external masks and full parameter tuning, achieving significantly higher PSNR (+6.77 dB) with only 0.77% parameters.
+- **Comparison with ProPainter**: ProPainter's flow-based approach (PSNR 17.24) is significantly outperformed, indicating that modern video diffusion priors are essential for high-frequency local occlusions like subtitles.
+- **Transferability**: The dual encoder + orthogonal decoupling pipeline could be extended to other localized occlusion removal tasks such as watermark or logo removal.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of self-supervised orthogonal decoupling + gradient-flow occlusion head + fully mask-free inference is new for video subtitle removal, though individual techniques (LoRA, self-supervised prior) are relatively mature.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive multi-metric (PSNR/VFID/temporal/flow) comparison, four-module ablation, and inference hyperparameter analysis; cross-lingual part lacks quantitative results.
-- Writing Quality: ⭐⭐⭐⭐ Three limitations (L1-L3) correspond to three capabilities (K1-K3); method diagrams, algorithm boxes, and tables are clearly organized.
-- Value: ⭐⭐⭐⭐ Truly solves the "must have mask" pain point in video subtitle removal deployment; 0.77% parameters + mask-free inference is highly valuable for product-level applications.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -135,9 +143,9 @@ PSNR +6.77 dB, VFID -74.7%, Flow Variance -93.0%; all baselines require external
 
 - [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 - [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
+- [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](../../ICCV2025/image_generation/end-to-end_multi-modal_diffusion_mamba.md)
 - [\[NeurIPS 2025\] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss](../../NeurIPS2025/image_generation/lineas_end-to-end_learning_of_activation_steering_with_a_distributional_loss.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](../../CVPR2026/image_generation/deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](../../ICCV2025/image_generation/end-to-end_multi-modal_diffusion_mamba.md)
 
 </div>
 

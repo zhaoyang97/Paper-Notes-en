@@ -2,68 +2,75 @@
 title: >-
   [Paper Note] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games
 description: >-
-  [ICML2026][Reinforcement Learning][Bilevel optimization] The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation base…
+  [ICML 2026][Reinforcement Learning][Paper Note] The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation based on the Nikaido-Isoda function and utilizing purely first-order policy gradient methods, it achieves an iteration complexity of $\tilde{O}(\epsilon^{-1})$ a
 tags:
-  - "ICML2026"
-  - "Reinforcement Learning"
-  - "Bilevel optimization"
-  - "zero-sum Markov games"
-  - "policy gradient"
-  - "Nikaido-Isoda function"
-  - "saddle-point equilibrium"
+  - ICML 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: cad9281b8c88a5e7
+content_hash: 66826b51e8444f21
 ---
-
 # Bilevel Optimization over Saddle Points of Zero-Sum Markov Games
 
 **Conference**: ICML2026  
 **arXiv**: [2605.26654](https://arxiv.org/abs/2605.26654)  
 **Code**: None  
 **Area**: Reinforcement Learning  
-**Keywords**: Bilevel optimization, zero-sum Markov games, policy gradient, Nikaido-Isoda function, saddle-point equilibrium
+**Keywords**: Bilevel Optimization, Zero-Sum Markov Games, Policy Gradient, Nikaido-Isoda Function, Saddle Point Equilibrium
 
 ## TL;DR
-The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation based on the Nikaido-Isoda function and a pure first-order policy gradient method, the approach achieves an iteration complexity of $\tilde{O}(\epsilon^{-1})$ and a sample complexity of $\tilde{O}(\epsilon^{-3})$, matching the best-known rates for single-policy lower-level BRL.
+The PANDA algorithm is proposed to solve bilevel RL problems where the lower level is a regularized zero-sum Markov game. By employing a penalty reformulation based on the Nikaido-Isoda function and utilizing purely first-order policy gradient methods, it achieves an iteration complexity of $\tilde{O}(\epsilon^{-1})$ and a sample complexity of $\tilde{O}(\epsilon^{-3})$, matching the best-known rates for single-policy lower-level BRL.
 
 ## Background & Motivation
 
-**Background**: Bilevel Reinforcement Learning (BRL) is a powerful paradigm for modeling hierarchical decision-making. The upper-level (UL) learner optimizes high-level variables (e.g., incentive parameters, reward design), while the lower-level (LL) solves an RL problem influenced by those variables. Recently, algorithms such as PARL, HPGD, SoBiRL, and First-Order BRL have been proposed with theoretical convergence guarantees.
+**Background**: Bilevel Reinforcement Learning (BRL) is a powerful paradigm for modeling hierarchical decision-making: the upper-level (UL) learner optimizes high-level variables (e.g., incentive parameters, reward design), while the lower-level (LL) solves an RL problem under the influence of these variables. Recently, algorithms such as PARL, HPGD, SoBiRL, and First-Order BRL have been proposed with theoretical convergence guarantees.
 
-**Limitations of Prior Work**: Existing BRL methods almost exclusively assume the lower level is a **single-policy** MDP (with only one agent performing max or min), making them unable to handle multi-agent adversarial structures. However, in scenarios like incentive design and RLHF preference learning, the lower level naturally involves the coupled gaming of two adversarial policies. Directly migrating single-policy BRL methods to min-max game settings fails; for instance, the hypergradient derivations in HPGD/SoBiRL rely on the closed-form optimal policy characteristics of single-policy MDPs, which do not hold under coupled dual-policy optimization.
+**Limitations of Prior Work**: Existing BRL methods almost exclusively assume the lower level is a **single-policy** MDP (with only one agent performing max or min), failing to handle multi-agent adversarial structures. However, in scenarios such as incentive design and RLHF preference learning, the lower level naturally involves a coupled game between two adversarial policies. Directly transferring single-policy BRL methods to min-max game settings fails—for instance, the hypergradient derivations in HPGD/SoBiRL rely on the closed-form optimal policy characteristics of single-policy MDPs, which do not hold under coupled dual-policy optimization.
 
-**Key Challenge**: The strategic coupling of two adversarial policies in zero-sum Markov games makes algorithm design inherently more difficult. Existing methods for this setting are either heuristics without convergence guarantees (Meta-Gradient), rely on computationally expensive second-order information like Hessian inverses (DA), or can only converge to stationary points of a penalty proxy problem rather than the original problem (PBRL).
+**Key Challenge**: The strategic coupling of two adversarial policies in zero-sum Markov games makes algorithm design inherently more difficult. Existing approaches for this setting are either heuristic without convergence guarantees (Meta-Gradient), rely on computationally expensive second-order information such as the Hessian inverse (DA), or only converge to stationary points of a penalty surrogate problem rather than the original problem (PBRL).
 
-**Goal**: To design a stochastic first-order method to solve bilevel optimization problems over saddle points (BOSMG) where the lower level is a regularized min-max zero-sum Markov game (MMZSMG), while achieving provably efficient iteration and sample complexity.
+**Goal**: To design a stochastic first-order method for solving bilevel optimization problems where the lower level is a regularized min-max zero-sum Markov game (MMZSMG), termed BOSMG, while achieving provably efficient iteration and sample complexity.
 
-**Key Insight**: The Nikaido-Isoda (NI) function is utilized to characterize the degree of deviation of lower-level policies from equilibrium—the NI function is non-negative and zero if and only if the policy pair is a Nash equilibrium. By adding the NI function as a penalty term to the upper-level objective, the bilevel constrained problem is transformed into an unconstrained penalty optimization, thereby avoiding hypergradient computation. Furthermore, the inherent structure of regularized MMZSMG (unique equilibrium, non-uniform PŁ property of the NI function) is leveraged to ensure convergence to an approximate stationary point of the original problem.
+**Key Insight**: Utilize the Nikaido-Isoda (NI) function to characterize the degree of policy deviation from equilibrium—the NI function is non-negative and zero if and only if the policy pair is a Nash equilibrium. By adding the NI function as a penalty term to the upper-level objective, the bilevel constrained problem is transformed into an unconstrained penalty optimization, thereby avoiding hypergradient computation. Furthermore, the inherent structure of regularized MMZSMG (unique equilibrium and the non-uniform PŁ property of the NI function) is leveraged to ensure convergence to approximate stationary points of the original problem.
 
-**Core Idea**: Combining NI function penalty reformulation with descent-ascent policy gradients enables a pure first-order solution for BOSMG, bypassing hypergradients and second-order information.
+**Core Idea**: Employs NI function penalty reformulation combined with descent-ascent policy gradients to bypass hypergradients and second-order information, realizing a purely first-order solution for BOSMG.
 
 ## Method
 
 ### Overall Architecture
-PANDA solves problems of the form: $\min_{x,\phi,\psi} f(x,\phi,\psi)$ s.t. $(\phi,\psi) \in \arg\min_{\phi'}\max_{\psi'} J(x,\phi',\psi')$, where $x$ represents the upper-level variables, and $(\phi,\psi)$ parameterize the policies of the min-player and max-player, respectively, with $J$ as the regularized value function. The algorithm reformulates this into a penalty form using the NI function: $\min_{x,\phi,\psi} f(x,\phi,\psi) + \lambda \cdot g(x,\phi,\psi)$. It updates $x$ in an outer loop while the inner loop alternately approximates best responses and solves the penalty subproblem, requiring only first-order information.
+PANDA solves problems of the form: $\min_{x,\phi,\psi} f(x,\phi,\psi)$ s.t. $(\phi,\psi) \in \arg\min_{\phi'}\max_{\psi'} J(x,\phi',\psi')$, where $x$ is the upper-level variable, and $(\phi,\psi)$ parameterize the policies of the min-player and max-player, respectively, with $J$ being the regularized value function. The algorithm first reformulates this bilevel constraint into a penalty form $\min_{x,\phi,\psi} f(x,\phi,\psi) + \lambda \cdot g(x,\phi,\psi)$ using the NI function. Subsequently, in the outer loop, each iteration first runs a descent-ascent inner loop to approximate the lower-level equilibrium, followed by a hypergradient update step for the upper-level $x$ using the converged policies. The entire process utilizes only first-order policy gradient information.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["BOSMG Bilevel Problem<br/>min f(x,φ,ψ), LL is Nash of regularized zero-sum game"] --> B["Nikaido-Isoda Penalty Reformulation<br/>L_λ = f + λ·g, constraint becomes unconstrained penalty optimization"]
+    B --> C["Outer Loop t: Run inner loop to approximate LL equilibrium, then update x"]
+    subgraph ALG["Descent-Ascent Inner Loop (k=0..K−1, two alternating steps)"]
+        direction TB
+        D["① Best Response Approximation<br/>Policy gradient descent/ascent for auxiliary policies φ̃,ψ̃"]
+        E["② Penalty Subproblem Update<br/>Update target policies (φ,ψ) using approximate NI function g̃"]
+        D --> E
+    end
+    C --> ALG
+    ALG --> F["③ Hypergradient Step<br/>Estimate ∇_x L_λ with converged (φ,ψ), update upper-level x"]
+    F -->|"ε-stationary point not reached, enter next round t"| C
+    F -->|"Converged"| G["Output: ε-approximate stationary point of original objective F(x)"]
+```
+
+(The diagram illustrates the two primary design components contributing to the algorithmic flow: penalty reformulation and descent-ascent iterations. The non-uniform PŁ property is a theoretical tool for convergence analysis and is not explicitly in the data flow.)
 
 ### Key Designs
 
-1. **Nikaido-Isoda Penalty Reformulation**:
+**1. Nikaido-Isoda Penalty Reformulation: Using a non-negative gap to transform bilevel constraints into first-order solvable single-level penalty optimization**
 
-    - Function: Transforms the bilevel constrained problem into a single-level penalty optimization solvable by first-order methods.
-    - Mechanism: Defines the NI function as $g(x,\phi,\psi) = \max_{\psi'} J(x,\phi,\psi') - \min_{\phi'} J(x,\phi',\psi)$, which precisely measures the current policies' deviation from the Nash equilibrium. Adding this as a penalty term yields $L_\lambda(x,\phi,\psi) = f(x,\phi,\psi) + \lambda \cdot g(x,\phi,\psi)$. When $\lambda$ is sufficiently large, the gradient deviation between the stationary points of $L_\lambda^*(x)$ and the original hyper-objective $F(x)$ is $O(\lambda^{-1})$.
-    - Design Motivation: Avoids the high computational cost of traditional bilevel RL, which requires computing hypergradients via the chain rule (involving Hessian inverses). The NI function naturally fits the saddle-point structure of min-max games and is more accurate than simple value function gaps.
+Traditional bilevel RL requires the chain rule and Hessian inverses for hypergradient computation, which is computationally expensive. Moreover, single-policy BRL hypergradient derivations rely on closed-form optimal policies of single MDPs, which are invalid in coupled min-max games. This work uses the NI function $g(x,\phi,\psi) = \max_{\psi'} J(x,\phi,\psi') - \min_{\phi'} J(x,\phi',\psi)$ to precisely measure policy deviation from the Nash equilibrium. It is non-negative and zero only at equilibrium, naturally fitting the saddle-point structure of min-max games. Incorporating it as a penalty term yields $L_\lambda(x,\phi,\psi) = f(x,\phi,\psi) + \lambda \cdot g(x,\phi,\psi)$. Theoretically, when $\lambda$ is sufficiently large, the gradient bias between the stationary points of $L_\lambda^*(x)$ and the original $F(x)$ is $O(\lambda^{-1})$, bypassing hypergradients and second-order data completely.
 
-2. **Three-step Inner Loop (Best Response + Penalty Subproblem + Hypergradient Update)**:
+**2. Descent-Ascent Three-Step Iteration (Best Response + Penalty Subproblem + Hypergradient Update): Approximating LL equilibrium and updating UL using only first-order information**
 
-    - Function: Alternately completes lower-level equilibrium approximation and upper-level parameter updates within each outer loop iteration.
-    - Mechanism: **Step 1** — Perform $K$ steps of policy gradient descent/ascent on $\tilde{\phi}$ and $\tilde{\psi}$ to solve the two best-response problems in the NI function; **Step 2** — Use the approximated NI function $\tilde{g}(x,\phi,\psi,\tilde{\phi},\tilde{\psi}) = J(x,\phi,\tilde{\psi}) - J(x,\tilde{\phi},\psi)$ to construct the penalty subproblem gradient and update $(\phi,\psi)$; **Step 3** — Estimate the hypergradient $\nabla_x \tilde{L}_\lambda$ using the updated policies and update the upper-level variable $x$ via stochastic gradient descent.
-    - Design Motivation: The three-step decomposition exploits the nested structure—an inner loop of $K = O(\log\lambda)$ steps ensures $(\phi,\psi)$ are close enough to the penalty subproblem optimum for effective outer-loop hypergradient estimation.
+The NI function contains two best-response problems (one max, one min) that lack closed-form solutions. The algorithm splits each outer iteration into an inner loop and a hypergradient step. The inner loop runs $K$ steps, alternating between: ① **Best Response Approximation**—performing one policy gradient descent/ascent step on auxiliary variables $\tilde{\phi},\tilde{\psi}$ to approximate the best responses; ② **Penalty Subproblem Update**—constructing an approximate NI function $\tilde{g}(x,\phi,\psi,\tilde{\phi},\tilde{\psi}) = J(x,\phi,\tilde{\psi}) - J(x,\tilde{\phi},\psi)$ as a surrogate for $g$, and updating the target policies $(\phi,\psi)$ via stochastic gradients. After $K$ steps, $(\phi,\psi)$ are sufficiently close to the penalty subproblem optima $(\phi^*_\lambda,\psi^*_\lambda)$. ③ **Hypergradient Step**—the upper-level $x$ is updated via stochastic gradient descent using the estimated hypergradient $\nabla_x \tilde{L}_\lambda$. The entire process uses only first-order policy gradients estimated via Monte Carlo roll-outs. Crucially, the inner loop only requires $K=O(\log\lambda)$ steps, ensuring logarithmic growth in computational overhead.
 
-3. **Non-uniform PŁ Property of the NI Function**:
+**3. Non-uniform PŁ Property of NI Function: Providing gradient dominance without strong convexity assumptions**
 
-    - Function: Provides gradient dominance conditions for the NI function in the policy space to support convergence analysis.
-    - Mechanism: Proves that for any $x$ and $(\phi,\psi)$, the NI function satisfies $\frac{1}{2}\|\nabla_{(\phi,\psi)}g\|^2 \geq \mu(\phi,\psi) \cdot g(x,\phi,\psi)$, where $\mu(\phi,\psi)$ depends on the minimum probability of policies and the regularization coefficient. This generalizes the non-uniform PŁ results for single-agent soft value functions by Mei et al. (2020) to two-agent zero-sum games.
-    - Design Motivation: This property is a critical structural tool for proving that PANDA converges without requiring strong convexity assumptions on the upper or lower-level objectives.
+To prove convergence without assuming strong convexity, a structural tool for the NI function's optimization landscape is required. The authors prove that for any $x$ and $(\phi,\psi)$, the NI function satisfies $\frac{1}{2}\|\nabla_{(\phi,\psi)}g\|^2 \geq \mu(\phi,\psi)\cdot g(x,\phi,\psi)$, where $\mu(\phi,\psi)$ depends on the minimum policy probability and regularization coefficients. This generalizes the non-uniform PŁ results of Mei et al. (2020) for single-agent soft value functions to two-agent zero-sum games. It indicates that under softmax parameterization, the NI function of regularized zero-sum games possesses favorable gradient dominance properties, which is central to the convergence proof and holds independent value for other NI-based game-theoretic analyses.
 
 ## Key Experimental Results
 
@@ -71,20 +78,20 @@ PANDA solves problems of the form: $\min_{x,\phi,\psi} f(x,\phi,\psi)$ s.t. $(\p
 
 | Environment | Method | UL Objective | NE Gap | Note |
 |------|------|---------|--------|------|
-| Synthetic (Incentive Design) | **PANDA** | **Highest** (≈2.55) | **≈0** | Close to Oracle upper bound |
-| Synthetic | META | ≈2.2 | ≈0 | Heuristic, insufficient UL optimization |
-| Synthetic | DA | ≈2.3 | ≈0 | Requires second-order info |
+| Synthetic (Incentive Design) | **PANDA** | **Highest** (≈2.55) | **≈0** | Approaches Oracle upper bound |
+| Synthetic | META | ≈2.2 | ≈0 | Heuristic; insufficient UL optimization |
+| Synthetic | DA | ≈2.3 | ≈0 | Requires second-order information |
 | Synthetic | PBRL | ≈2.35 | ≈0 | Suboptimal UL |
-| Sentinel-Intruder 5×5 | **PANDA** | **Lowest UL loss** | — | Effectively avoids forbidden zones |
-| Sentinel-Intruder 20×20 | **PANDA** | **Lowest UL loss** | — | Superior at large scale |
+| Sentinel-Intruder 5×5 | **PANDA** | **Lowest UL loss** | — | Effectively avoids restricted zones |
+| Sentinel-Intruder 20×20 | **PANDA** | **Lowest UL loss** | — | Superior at larger scales |
 
-### Ablation Study (Effect of Penalty Parameter $\lambda$)
+### Ablation Study (Influence of Penalty Parameter $\lambda$)
 
 | $\lambda$ | UL Reward | NE Gap | Note |
-|-----------|---------|--------|------|
+|-----------|-----------|--------|------|
 | 1 | High | **Large** | Weak lower-level equilibrium constraint |
-| 4 | High | ≈0 | Good balance between equilibrium and UL goal |
-| 10 | Slightly lower | ≈0 | Strong penalty slightly sacrifices UL goal |
+| 4 | High | ≈0 | Good balance between equilibrium and UL |
+| 10 | Slightly Lower | ≈0 | Strong penalty slightly sacrifices UL goal |
 
 ### Complexity Comparison
 
@@ -97,26 +104,26 @@ PANDA solves problems of the form: $\min_{x,\phi,\psi} f(x,\phi,\psi)$ s.t. $(\p
 | META | Min-Max | Stochastic | N/A | N/A | First-order |
 
 ### Key Findings
-- PANDA is the **first** first-order method to provide convergence guarantees for BOSMG in a stochastic setting, with iteration and sample complexities matching the optimal rates of single-policy BRL.
-- $\lambda$ controls the trade-off between lower-level equilibrium accuracy and upper-level objective optimization: a $\lambda$ that is too small relaxes the equilibrium constraint, while a $\lambda$ that is too large results in excessive penalization.
-- PANDA remains effective and outperforms baselines in 20×20 large grid environments, demonstrating its scalability to larger dimensions.
+- PANDA is the **first** first-order method to provide convergence guarantees for BOSMG in a stochastic setting, with iteration and sample complexities matching the best rates for single-policy BRL.
+- $\lambda$ controls the trade-off between lower-level equilibrium accuracy and upper-level objective optimization: small $\lambda$ relaxes the equilibrium constraint, while large $\lambda$ leads to over-penalization.
+- PANDA remains effective and outperforms baselines in 20×20 grid environments, demonstrating scalability for larger problems.
 
 ## Highlights & Insights
-- **The combination of NI function + penalty method** is an elegant solution for min-max bilevel problems. The NI function naturally measures saddle-point deviation, and the penalty reformulation integrates it into the objective, avoiding hypergradient computation. This framework is transferable to other hierarchical optimization scenarios with adversarial lower-level structures.
-- **Generalizing the non-uniform PŁ property to zero-sum games** is a significant theoretical contribution in its own right. It indicates that the NI function of regularized zero-sum games under softmax parameterization possesses a favorable optimization landscape, which can be applied to analyze other game-theoretic algorithms based on the NI function.
-- **Requiring only $O(\log\lambda)$ inner loop steps** is a practical design improvement—logarithmic inner loops mean that the overall computational burden grows slowly.
+- **Combination of NI Function + Penalty Method**: An elegant approach to min-max bilevel problems. The NI function naturally measures saddle-point deviation, and the penalty reformulation integrates it into the objective, avoiding hypergradients. This framework is transferable to other hierarchical scenarios with adversarial lower levels.
+- **Generalization of Non-uniform PŁ Property**: A significant theoretical contribution showing that the NI function of regularized zero-sum games under softmax parameterization has a favorable optimization landscape.
+- **Logarithmic Inner Loop Steps**: The $O(\log\lambda)$ requirement is a practical design, ensuring that the total computational burden grows slowly.
 
 ## Limitations & Future Work
-- Currently, Ours only handles **regularized** zero-sum Markov games (relying on the strong convexity-concavity of the regularizer to ensure equilibrium uniqueness); extending this to unregularized or general-sum games remains an open problem.
-- Uses **tabular softmax parameterization**, and performance under function approximation (e.g., neural network policies) has not yet been verified.
-- The scale of experimental environments is limited (max 20×20 grid), and scalability in real-world large-scale multi-agent scenarios needs further validation.
-- The logarithmic factors and constants hidden in the sample complexity might be large, potentially creating a gap between actual efficiency and theoretical rates.
+- Currently limited to **regularized** zero-sum Markov games (relying on strong concavity-convexity for equilibrium uniqueness); extension to non-regularized or general-sum games remains open.
+- Uses **tabular softmax parameterization**; performance under function approximation (e.g., neural network policies) has not been verified.
+- Experimental scales are limited (max 20×20 grid); scalability in real-world large-scale multi-agent scenarios requires further validation.
+- The logarithmic factors and constants hidden in the sample complexity may be significant, potentially creating a gap between theoretical rates and practical efficiency.
 
 ## Related Work & Insights
-- **Bilevel RL**: PARL (Chakraborty+, ICLR'24), HPGD (Thoma+, '24), and SoBiRL (Yang+, '25) handle single-policy lower levels; First-Order BRL (Gaur+, NeurIPS'25) and SLAC (Zeng+, '25) are representative penalty methods.
-- **Zero-Sum Markov Games**: Cen+ (JMLR'24) provided linear convergence algorithms for Nash equilibria in regularized zero-sum games; Munos+ ('24) applied the zero-sum game framework to RLHF.
-- **Bilevel Optimization Theory**: Kwon+ ('24) and Chen+ ('25) established convergence theories for penalty methods in non-convex lower-level bilevel optimization.
-- Insight: The NI function penalty approach could be applied to preference alignment in RLHF—when the preference model involves adversarial training, a similar framework may prove effective.
+- **Bilevel RL**: PARL (Chakraborty et al., ICLR'24), HPGD (Thoma et al., '24), and SoBiRL (Yang et al., '25) handle single-policy lower levels; First-Order BRL (Gaur et al., NeurIPS'25) and SLAC (Zeng et al., '25) are representative penalty methods.
+- **Zero-Sum Markov Games**: Cen et al. (JMLR'24) provided linear convergence algorithms for regularized Nash equilibria; Munos et al. ('24) applied zero-sum frameworks to RLHF.
+- **Bilevel Optimization Theory**: Kwon et al. ('24) and Chen et al. ('25) established convergence theories for penalty methods in non-convex lower-level bilevel optimization.
+- Insight: The NI function penalty approach could be applied to preference alignment in RLHF—where preference models involve adversarial training, a similar framework may be effective.
 
 <!-- RELATED:START -->
 
@@ -124,11 +131,11 @@ PANDA solves problems of the form: $\min_{x,\phi,\psi} f(x,\phi,\psi)$ s.t. $(\p
 
 ## Related Papers
 
-- [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](../../AAAI2026/reinforcement_learning/perturbing_best_responses_in_zero-sum_games.md)
+- [\[ICML 2025\] Solving Zero-Sum Convex Markov Games](../../ICML2025/reinforcement_learning/solving_zero-sum_convex_markov_games.md)
 - [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
+- [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](../../AAAI2026/reinforcement_learning/perturbing_best_responses_in_zero-sum_games.md)
 - [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
-- [\[ICML 2026\] MindZero: Learning Online Mental Reasoning with Zero Annotations](mindzero_learning_online_mental_reasoning_with_zero_annotations.md)
+- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 
 </div>
 

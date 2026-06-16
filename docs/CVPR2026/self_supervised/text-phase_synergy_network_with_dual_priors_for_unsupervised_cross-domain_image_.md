@@ -2,79 +2,102 @@
 title: >-
   [Paper Note] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 description: >-
-  [CVPR 2026][Self-Supervised Learning][UCDIR] This paper proposes TPSNet, which leverages CLIP-learned domain prompts as text priors to provide fine-grained semantic supervision…
+  [CVPR 2026][Self-Supervised Learning][UCDIR] Ours proposes TPSNet, which utilizes domain prompts learned by CLIP as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and maintain semantic integrity. The synergy of text-phase dual priors achieves significant improv
 tags:
-  - "CVPR 2026"
-  - "Self-Supervised Learning"
-  - "UCDIR"
-  - "domain prompt"
-  - "phase spectrum"
-  - "text-phase dual priors"
-  - "cross-domain alignment"
+  - CVPR 2026
+  - Self-Supervised Learning
+  - UCDIR
+  - domain prompt
+  - phase spectrum
+  - text-phase dual priors
+  - cross-domain alignment
 date: 2026-05-08
-content_hash: d705ffcaf1b8bb87
+content_hash: 0e8a77a7018c95b2
 ---
-
 # Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12711](https://arxiv.org/abs/2603.12711)  
-**Code**: N/A  
-**Area**: Cross-Domain Retrieval / Self-Supervised Learning
-**Keywords**: UCDIR, domain prompt, phase spectrum, text-phase dual priors, cross-domain alignment
+**Code**: None  
+**Area**: Cross-domain Retrieval / Self-supervised Learning  
+**Keywords**: UCDIR, domain prompt, phase spectrum, text-phase dual priors, cross-domain alignment  
 
 ## TL;DR
 
-This paper proposes TPSNet, which leverages CLIP-learned domain prompts as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and preserve semantic integrity. Significant improvements in unsupervised cross-domain image retrieval (UCDIR) are achieved through the synergistic combination of text-phase dual priors.
+Ours proposes TPSNet, which utilizes domain prompts learned by CLIP as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and maintain semantic integrity. The synergy of text-phase dual priors achieves significant improvements in unsupervised cross-domain image retrieval.
 
 ## Background & Motivation
 
-### Limitations of Prior Work
+**Background**: Unsupervised Cross-Domain Image Retrieval (UCDIR) aims to retrieve semantically identical images across heterogeneous image domains (e.g., real images and sketches) without annotated data. The core difficulty lies in the dual challenge of lacking labels and significant domain distribution gaps.
 
-**Background**: **Unsupervised Cross-Domain Image Retrieval (UCDIR)** aims to retrieve semantically equivalent images across heterogeneous image domains (e.g., real photos and sketches) without annotated data. The core challenge lies in the compounded difficulty of lacking labels and substantial domain distribution gaps.
+**Limitations of Prior Work**: (1) Pseudo-label noise—pseudo-labels generated via K-means clustering serve as supervision signals, but discrete pseudo-labels are often inaccurate, causing noise interference in both intra-domain representation learning and cross-domain alignment, and leading to unreliable class prototypes; (2) Semantic degradation during cross-domain alignment—strategies like adversarial training or statistical distribution alignment inevitably damage semantic information while eliminating domain differences because domain-specific and semantic features are entangled.
 
-**Two key limitations of existing methods**: (1) **Pseudo-label noise** — prior methods generate pseudo-labels via K-means clustering as supervision signals, but such discrete labels are frequently inaccurate, introducing noise into both intra-domain representation learning and cross-domain alignment, while also yielding unreliable class prototypes; (2) **Semantic degradation from cross-domain alignment** — strategies such as adversarial training and statistical distribution alignment inevitably compromise semantic information when suppressing domain discrepancies, as domain-specific and semantic features are entangled.
-
-**Two solution paths in TPSNet**: (1) CLIP-learned domain prompts serve as text priors, offering richer and more precise semantic supervision than discrete pseudo-labels; (2) Phase spectra extracted via Fourier transform serve as phase priors — the phase spectrum encodes structural and semantic information while being robust to domain shift — bridging domain gaps while preserving semantic integrity. The two paths operate synergistically.
+**Core Idea**: (1) Use domain prompts learned by CLIP as text priors, providing richer and more accurate semantic supervision than discrete pseudo-labels; (2) Use the phase spectrum isolated by Fourier Transform as a phase prior—the phase spectrum encodes structural and semantic information and is robust to domain shifts—bridging domain gaps while maintaining semantic integrity. The two paths work in synergy.
 
 ## Method
 
 ### Overall Architecture
 
-TPSNet consists of two modules: **Domain Prompt Generation (DPG)** uses CLIP contrastive learning to optimize $C$ class-specific prompts per domain; **Text-Phase Dual Priors Network (TPDP)** uses the learned domain prompts as text priors to guide semantic feature extraction, while phase spectrum features serve as phase priors to bridge domain gaps. A cross-attention mechanism fuses the dual priors to yield the final domain-invariant semantic representation.
+The dilemma of UCDIR is that without ground truth labels, only discrete pseudo-labels from K-means are available for supervision, which are noisy and lack semantics. Meanwhile, traditional adversarial or statistical alignment tends to erase semantics during domain alignment. The concept of TPSNet is to replace these two tasks with more reliable "priors" and let them collaborate. The network operates in two stages: first, Domain Prompt Generation (DPG) learns a set of category prompts for each domain, upgrading cluster pseudo-labels into continuous semantic signals in the CLIP text space; then, the Text-Phase Dual Priors Network (TPDP) uses these prompts as **text priors** to guide semantic features, while using the image phase spectrum as a **phase prior** to cross the domain gap. Finally, cross-attention fuses the dual priors into domain-invariant semantic representations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Unlabeled images from two domains<br/>(Real / Sketch, etc.)"] --> KM["K-means clustering<br/>generates discrete pseudo-labels"]
+    subgraph DPG["Domain Prompt Generation (DPG)"]
+        direction TB
+        KM --> PT["Initialize C sets of learnable<br/>prompts per domain by pseudo-labels"]
+        PT --> CL["Freeze CLIP, train only [X] tokens<br/>Re-pair and correct errors via similarity"]
+    end
+    CL --> TP["Domain Prompt = Text Prior T′"]
+    IN --> RGB["Image Encoder → RGB feature I_rgb"]
+    IN --> GRAY["Grayscale FFT"]
+    subgraph PHASE["Phase Prior Feature Extraction"]
+        direction TB
+        GRAY --> DROP["Drop amplitude, fill constant R<br/>Keep phase → IFFT reconstruction"]
+        DROP --> CNN["Lightweight CNN → Phase feature I_phase"]
+    end
+    RGB --> FUSE["LayerNorm + Self-attention fusion<br/>→ Visual feature I_f"]
+    CNN --> FUSE
+    TP --> CA["Text-Phase Synergy<br/>cross-attention (T′ as Q, I_f as K/V)"]
+    FUSE --> CA
+    CA --> OUT["Domain-invariant representation I′<br/>Prototype CE + Image-Text Contrastive training"]
+```
 
 ### Key Designs
 
-1. **Domain Prompt Generation**:
+**1. Domain Prompt Generation: Replacing noisy pseudo-labels with CLIP text priors**
 
-    - **Function**: Learns $C$ class-specific learnable text prompts per domain, serving as semantic supervision signals for subsequent stages.
-    - **Mechanism**: After generating pseudo-labels via K-means clustering, $C$ learnable prompt templates ("An image of a [X]¹...[X]^M") are initialized. A frozen CLIP model is used for image-text contrastive learning: $\mathcal{L}_{prompt} = \mathcal{L}_{i2t} + \mathcal{L}_{t2i}$, optimizing only the [X] tokens. Image-text pairs are re-matched based on cosine similarity during contrastive learning, partially correcting inaccurate pseudo-labels.
-    - **Design Motivation**: CLIP's textual representations provide richer semantic priors than discrete pseudo-labels; after contrastive optimization, the domain prompts encode precise class-level semantic information.
+Using K-means pseudo-labels directly for supervision allows misaligned samples to pollute intra-domain representations and class prototypes. DPG treats pseudo-labels not as the endpoint, but as an initialization scaffold: it prepares $C$ learnable prompt templates ("An image of a $[X]^1\ldots[X]^M$") for each domain, then freezes CLIP and trains only the $[X]$ tokens using contrastive loss $\mathcal{L}_{prompt}=\mathcal{L}_{i2t}+\mathcal{L}_{t2i}$. Critically, re-pairing occurs based on image-text cosine similarity during contrast, meaning the optimization process itself corrects a portion of misassigned pseudo-labels. After training, each prompt becomes a text segment encoding precise category semantics, carrying far more information than a discrete integer label.
 
-2. **Phase-Prior Domain-Invariant Feature Extraction**:
+**2. Phase-Prior Feature Extraction: Bridging domain gaps with phase spectrum invariance**
 
-    - **Function**: Exploits the domain-invariant property of the phase spectrum to bridge domain gaps.
-    - **Mechanism**: FFT is applied to the grayscale image to obtain $F(u,v)=|A(u,v)|e^{j\phi(u,v)}$. The phase is retained while the amplitude is replaced by a constant $R$: $F'(u,v) = Re^{j\phi(u,v)}$. The phase image is reconstructed via IFFT. A lightweight CNN extracts phase features $I^{phase}$, which are fused with RGB features via LayerNorm + Self-Attention to produce $I^f$.
-    - **Design Motivation**: The phase spectrum encodes structural and edge information and is more robust to domain shift than the amplitude spectrum. Discarding the amplitude naturally eliminates certain domain-specific factors (e.g., style, color distribution).
+To eliminate domain gaps without damaging semantics, a signal that is "inherently consistent across domains" must be identified. In Fourier analysis, the amplitude spectrum mainly carries domain-specific low-level statistics like style and color, while the phase spectrum encodes structure and edges—the semantic skeleton shared across domains. TPSNet performs FFT on grayscale images to obtain $F(u,v)=|A(u,v)|e^{j\phi(u,v)}$, then discards the amplitude and substitutes it with a constant $R$:
 
-3. **Text-Phase Dual-Prior Synergistic Fusion**:
+$$F'(u,v) = R\,e^{j\phi(u,v)}$$
 
-    - **Function**: Employs cross-attention to enable text and phase priors to jointly guide domain-invariant representation learning.
-    - **Mechanism**: Domain prompt text features $T'$ serve as Query; fused visual features $I^f$ serve as Key/Value: $I' = \text{CrossAttention}(T'; I^f)$. Joint training is performed using prototype cross-entropy loss $\mathcal{L}_{pce}$ and image-text contrastive loss $\mathcal{L}_{i2tce}$ (with label smoothing). Prototypes are updated via momentum: $\mathcal{P} \leftarrow m\mathcal{P} + (1-m)I'$.
-    - **Design Motivation**: The text prior provides semantic guidance, the phase prior eliminates domain shift, and cross-attention enables their complementary enhancement in feature space.
+Then, IFFT reconstructs an image retaining only phase information. This step strips most domain-specific factors at the input. The reconstructed image passes through a lightweight CNN to obtain phase features $I^{phase}$, which are fused with RGB features via LayerNorm + Self-Attention to form $I^f$, allowing the semantic skeleton and original appearance to complement each other.
+
+**3. Text-Phase Dual Priors Synergy: Mutual guidance through attention**
+
+The text prior knows "what the category should be," and the phase prior knows "which features are stable across domains," but they reside in semantic and frequency spaces, respectively. TPSNet uses cross-attention to align them: using domain prompt text features $T'$ as Query and fused visual features $I^f$ as Key/Value,
+
+$$I' = \text{CrossAttention}(T';\,I^f)$$
+
+Thus, the text prior provides the "direction toward the category" from the semantic dimension, while the phase prior ensures "no deviation by domain shift" from the feature dimension. The two complement and enhance each other within the attention weights. The resulting $I'$ is trained jointly using prototype cross-entropy $\mathcal{L}_{pce}$ and image-text contrastive loss with label smoothing $\mathcal{L}_{i2tce}$. Class prototypes are updated via momentum $\mathcal{P} \leftarrow m\mathcal{P} + (1-m)I'$ for stability.
 
 ### Loss & Training
 
-$\mathcal{L} = \alpha \mathcal{L}_{pce} + \beta \mathcal{L}_{i2tce}$, where $\mathcal{L}_{i2tce}$ applies label smoothing $\sigma_j = (1-\epsilon)y_i + \epsilon/C$ to mitigate pseudo-label noise. Stage 1 optimizes only the prompt tokens; Stage 2 trains all components of TPDP.
+The total loss is $\mathcal{L} = \alpha\mathcal{L}_{pce} + \beta\mathcal{L}_{i2tce}$, where $\mathcal{L}_{i2tce}$ uses label smoothing $\sigma_j=(1-\epsilon)y_i+\epsilon/C$ to further dilute pseudo-label noise. Training is conducted in two stages: Stage 1 optimizes only the prompt tokens (DPG), and Stage 2 trains all TPDP modules.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Office-Home (65 classes, 4 domains, 12 cross-domain scenarios) and DomainNet (7 classes, 6 domains)**:
+**Office-Home (65 classes, 4 domains, 12 scenarios) and DomainNet (7 classes, 6 domains)**:
 
-| Method | Office-Home Avg. P@1 | Office-Home Avg. P@15 |
-|--------|---------------------|-----------------------|
+| Method | Office-Home Mean P@1 | Office-Home Mean P@15 |
+|------|-------------------|---------------------|
 | DD | ~45 | ~35 |
 | ProtoOT | ~50 | ~47 |
 | ShieldIR | ~53 | ~50 |
@@ -82,41 +105,41 @@ $\mathcal{L} = \alpha \mathcal{L}_{pce} + \beta \mathcal{L}_{i2tce}$, where $\ma
 
 ### Ablation Study
 
-| Configuration | Performance | Note |
-|---------------|-------------|------|
-| Pseudo-labels only (no domain prompt) | Baseline | High noise |
-| + Text prior (domain prompt) | Significant ↑ | More precise semantic supervision |
-| + Phase prior | Further ↑ | Domain-invariant features are beneficial |
-| **Dual-prior synergy** | **Best** | Complementary enhancement is optimal |
+| Configuration | Effect | Description |
+|------|------|------|
+| Pseudo-label only (No Domain Prompt) | Baseline | Large noise |
+| + Text Prior (Domain Prompt) | Significant ↑ | More precise semantic supervision |
+| + Phase Prior | Further ↑ | Domain-invariant features are helpful |
+| **Dual Prior Synergy** | **Optimal** | Best effect via complementary enhancement |
 
 ### Key Findings
 
-- The text prior alone yields significant gains — indicating that CLIP's semantic signals are substantially richer than clustering-based pseudo-labels.
-- The phase prior yields larger improvements in scenarios with larger domain gaps (e.g., Art↔Clipart) — validating the domain-invariance hypothesis of the phase spectrum.
+- The text prior alone provides a significant boost—indicating CLIP's semantic signals are much richer than cluster pseudo-labels.
+- The phase prior shows more pronounced improvements in scenarios with large domain gaps (e.g., Art↔Clipart), validating the phase spectrum invariance hypothesis.
 - Label smoothing is effective in alleviating pseudo-label noise.
 
 ## Highlights & Insights
 
-- The dual-path design of text priors and phase priors is highly instructive — the former provides complementary domain-invariant signals from semantic space, the latter from frequency space. This "multi-view domain invariance" is more robust than single-alignment strategies.
-- The operation of reconstructing images using a constant amplitude with the original phase is simple yet effective — confirming that the phase spectrum does encode structurally consistent semantic information across domains.
+- The dual-path design of text prior + phase prior is highly insightful—the former provides domain-invariant signals from the semantic space and the latter from the frequency space. This "multi-view domain invariance" is more robust than single alignment strategies.
+- Reconstructing images using constant amplitude and original phase is simple yet effective—phase indeed encodes structural semantic information consistent across domains.
 
 ## Limitations & Future Work
 
-- The method relies on K-means clustering to initialize domain prompts; clustering quality has a substantial impact on all subsequent steps.
-- Phase spectra are extracted only from grayscale images, discarding potentially domain-invariant components contained in color information.
-- The domain gaps in the evaluated datasets are relatively moderate; effectiveness under more extreme domain shifts remains to be verified.
+- Dependency on K-means clustering for domain prompt initialization; clustering quality impacts all subsequent steps.
+- The phase spectrum is extracted only from grayscale images, losing potential domain-invariant components in color information.
+- Domain gaps in current datasets are relatively limited; performance under more extreme domain shifts remains to be verified.
 
 ## Related Work & Insights
 
-- **vs. DD/CODA**: These methods directly use pseudo-labels for intra-domain contrastive learning and cross-domain alignment; TPSNet replaces pseudo-labels with domain prompts for superior semantic supervision.
-- **vs. FDA/FUDA**: These methods perform domain adaptation by replacing low-frequency components in the frequency domain; TPSNet goes further by separating amplitude and phase, exploiting the natural domain-invariance of the phase.
+- **vs DD/CODA**: These use pseudo-labels directly for intra-domain contrast and cross-domain alignment; TPSNet replaces pseudo-labels with domain prompts for superior semantic supervision.
+- **vs FDA/FUDA**: These replace low frequencies in the frequency domain for domain adaptation; TPSNet further separates amplitude/phase, leveraging the inherent domain invariance of phase.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The dual-path combination of text priors and phase priors is a novel contribution to UCDIR.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Two benchmarks, 12 cross-domain scenarios, and comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐ The structure is clear, though some figures and tables are complex.
-- **Value**: ⭐⭐⭐ UCDIR is a meaningful problem, and the reported improvements are substantial.
+- Novelty: ⭐⭐⭐⭐ The dual-path design of text + phase priors is a novel combination in UCDIR.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two benchmarks, 12 cross-domain scenarios, and comprehensive ablation.
+- Writing Quality: ⭐⭐⭐ Clear structure, though diagrams and tables are complex.
+- Value: ⭐⭐⭐ UCDIR is a meaningful problem with significant improvements shown.
 
 <!-- RELATED:START -->
 
@@ -125,10 +148,10 @@ $\mathcal{L} = \alpha \mathcal{L}_{pce} + \beta \mathcal{L}_{i2tce}$, where $\ma
 ## Related Papers
 
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
-- [\[NeurIPS 2025\] Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization](../../NeurIPS2025/self_supervised/minimal_semantic_sufficiency_meets_unsupervised_domain_generalization.md)
-- [\[CVPR 2026\] CraterBench-R: Instance-Level Crater Retrieval for Planetary Scale](craterbench-r_instance-level_crater_retrieval_for_planetary_scale.md)
-- [\[CVPR 2026\] MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration](mine-jepa_in-domain_self-supervised_learning_for_mine-like_object_classification.md)
-- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
+- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
+- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
 
 </div>
 

@@ -2,68 +2,72 @@
 title: >-
   [Paper Note] I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 description: >-
-  [CVPR 2026][Video Generation][Video Diffusion Models] This paper proposes IMAP (Interpretable Motion-Attentive Maps), a training-free framework that extracts spatio-temporal saliency maps for motion concepts from Video D…
+  [CVPR 2026][Video Generation][Interpretability] IMAP (Interpretable Motion-Attentive Maps) is proposed as a training-free framework consisting of two modules: GramCol for spatial localization and Motion Head Selection for temporal localization. It extracts spatio-temporal saliency maps of motion concepts from Video DiTs, outperforming existing methods in motion loca
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Video Diffusion Models"
-  - "Interpretability"
-  - "Motion Localization"
-  - "Attention Analysis"
-  - "Saliency Maps"
+  - CVPR 2026
+  - Video Generation
+  - Interpretability
 date: 2026-05-08
-content_hash: 45d67b7cd3ea6f51
+content_hash: f9e84569c451ba35
 ---
-
 # I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.02919](https://arxiv.org/abs/2603.02919)  
 **Code**: [https://github.com/youngjun-jun/IMAP](https://github.com/youngjun-jun/IMAP)  
-**Area**: Video Generation
+**Area**: Video Generation  
 **Keywords**: Video Diffusion Models, Interpretability, Motion Localization, Attention Analysis, Saliency Maps
 
 ## TL;DR
-This paper proposes IMAP (Interpretable Motion-Attentive Maps), a training-free framework that extracts spatio-temporal saliency maps for motion concepts from Video DiTs via two modules: GramCol for spatial localization and motion head selection for temporal localization. IMAP surpasses existing methods on motion localization and zero-shot video semantic segmentation benchmarks.
+IMAP (Interpretable Motion-Attentive Maps) is proposed as a training-free framework consisting of two modules: GramCol for spatial localization and Motion Head Selection for temporal localization. It extracts spatio-temporal saliency maps of motion concepts from Video DiTs, outperforming existing methods in motion localization and zero-shot video semantic segmentation.
 
 ## Background & Motivation
-1. **Background**: Video Diffusion Transformers (e.g., CogVideoX/HunyuanVideo) are capable of generating high-quality videos, yet their internal mechanisms remain poorly understood. Existing interpretability work is predominantly focused on image DiTs.
-2. **Limitations of Prior Work**: ConceptAttention provides only spatial disentanglement and does not address motion or temporal information; DiTFlow/DiffTrack focus on inter-frame visual token correspondence but do not analyze how text is translated into motion. A core question remains unanswered: do Video DiTs genuinely understand and create motion?
-3. **Key Challenge**: The defining characteristic of video over image is temporal motion information, yet existing saliency map methods perform only spatial localization and cannot answer the critical question of "when and which object is moving."
-4. **Goal**: To construct spatio-temporally localized interpretable saliency maps for motion concepts within Video DiTs.
-5. **Key Insight**: Analysis of multi-head attention in Video DiTs reveals that QK matching exhibits strong spatial localization capability, and the degree of inter-frame embedding separation correlates with motion localizability. Different attention heads assume distinct roles—certain heads specialize in temporal motion features.
-6. **Core Idea**: GramCol is employed for spatial localization (text proxy tokens + Gram matrix), while frame separation scoring selects motion heads for temporal localization.
+1. **Background**: Video Diffusion Transformers (e.g., CogVideoX, HunyuanVideo) generate high-quality videos, but their internal mechanisms remain poorly understood. Current interpretability work focuses primarily on image DiTs.
+2. **Limitations of Prior Work**: Existing methods like ConceptAttention only provide spatial separation without handling motion or timing; DiTFlow and DiffTrack focus on dynamic correspondence of visual tokens between frames but do not analyze how text translates into motion. The **Core Problem** remains: Does a Video DiT truly understand and create motion?
+3. **Key Challenge**: The primary difference between video and images is temporal motion information. Existing saliency map methods only perform spatial localization, failing to answer the critical question of "when and which object is moving."
+4. **Goal**: Construct spatio-temporally localized saliency maps for motion concepts within Video DiTs.
+5. **Key Insight**: Analysis of multi-head attention in Video DiT reveals that QK matching possesses strong spatial localization capabilities, and frame embedding separability correlates with motion localizability. Different attention heads play distinct roles—some specialize in temporal motion features.
+6. **Core Idea**: Use GramCol for spatial localization (text proxy tokens + Gram matrix) and select motion heads based on frame separability scores for temporal localization.
 
 ## Method
 
 ### Overall Architecture
-The pipeline operates on the MM-Attn modules of a Video DiT. Given a concept word: (1) the most relevant visual token is identified as a text proxy via QK matching; (2) GramCol computes a Gram-matrix-based spatial saliency map; (3) for motion concepts, an additional motion head selection step is applied—the Calinski-Harabasz index (CHI) quantifies inter-frame feature separation, and only the top-$k$ motion heads are retained for IMAP computation. The entire process requires neither gradient computation nor parameter updates.
+This paper addresses a question bypassed by previous work: "When and where" does a Video DiT process a motion concept? The proposed pipeline reads directly from the model's existing multi-head attention modules without training or gradients. The pipeline operates on the MM-Attn modules of the Video DiT through a three-step process: defining the scope, determining space, and then determining timing. The first step delimits where to read: since $L$ layers $\times$ $T$ timesteps form a massive search space, the authors exclude early timesteps (near pure noise) and use the second largest eigenvalue $\lambda_2$ to select the most semantically rich layers. The second step performs spatial localization: given a concept word (e.g., "running"), QK matching identifies the visual token most representative of the text concept in each frame, converting cross-modal localization into a uni-modal similarity problem. GramCol then extracts the corresponding column of the visual Gram matrix to obtain frame-wise spatial saliency maps. The third step applies motion head selection for "motion" concepts, retaining only heads with maximum inter-frame variance to filter spatial noise and produce the final IMAP.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Concept c + Video → Video DiT (MM-Attn Multi-head Attention)"]
+    A --> B["Layer and Timestep Selection<br/>Exclude noise steps + use λ₂ to filter informative layers"]
+    B --> C["GramCol Spatial Localization<br/>QK matching for proxy token → Column of visual Gram matrix → Per-frame spatial maps"]
+    C -->|Motion Concepts| D["Motion Head Selection<br/>Select top-5 heads per layer based on CHI frame separability"]
+    C -->|Non-motion Concepts| E["GramCol Spatial Saliency Map"]
+    D --> F["IMAP: Spatio-temporal Motion Saliency Map"]
+```
 
 ### Key Designs
-1. **GramCol Spatial Localization**:
-    - Function: Generates per-frame spatial saliency maps for arbitrary text concepts.
-    - Mechanism: For each frame $f_i$, the visual token most aligned with concept $c$ is identified as a text proxy via QK matching: $s_{f_i}^c = \arg\max_p \text{row}_p(q_{f_i})k_c^\top$. GramCol is defined as the $s_{f_i}^c$-th column of the visual Gram matrix $G = h_x h_x^\top \in \mathbb{R}^{P \times P}$, i.e., the similarity vector between all visual tokens and the proxy token. The final map is averaged over selected timesteps, layers, and heads.
-    - Design Motivation: Compared to ConceptAttention (which multiplies cross-modal features), GramCol computes similarity within the same modality space, naturally ensuring interpretable "positive highlighting"—regions similar to the proxy token receive large positive values. It also does not require softmax over a concept list and operates on a single concept.
 
-2. **Motion Head Selection**:
-    - Function: Identifies attention heads that specialize in motion processing within Video DiTs, enabling temporal localization.
-    - Mechanism: For each attention head, visual tokens are partitioned into $F$ clusters by frame, and the CHI is computed to measure inter-frame feature separation. A higher CHI indicates greater inter-frame variation in that head, implying richer temporal motion information. The top-5 highest-CHI heads per layer are selected, and GramCol is computed exclusively from their features to produce IMAP. A Pearson correlation of $r = 0.60$ validates the positive association between CHI and motion localization score.
-    - Design Motivation: Motion is inherently inter-frame variation; heads encoding strong motion information naturally exhibit greater inter-frame feature divergence. Compared to aggregating all heads, motion head selection removes the interference of spatial heads, yielding sharper motion localization.
+**1. Layer and Timestep Selection: Automatic bounding of informative ranges using $\lambda_2$**
 
-3. **Layer and Timestep Selection**:
-    - Function: Narrows the analysis scope to feature-rich layers and timesteps.
-    - Mechanism: Early timesteps (close to pure noise, semantically uninterpretable, and prone to memorization-related artifacts such as watermarks) are excluded. Layer selection is based on the second-largest eigenvalue $\lambda_2$ of the attention matrix—under the DTMC framework, a larger $\lambda_2$ indicates a more informative transition matrix. Layers with $\lambda_2 > 0.7$ are selected for CogVideoX and $\lambda_2 > 0.75$ for HunyuanVideo.
-    - Design Motivation: The $L \times T$ space of layers and timesteps is large; aggregating all of them dilutes the signal. Automatic selection based on $\lambda_2$ avoids manual hyperparameter tuning.
+**Design Motivation**: To prevent signal dilution from averaging $L$ layers and $T$ timesteps. For timesteps, early steps containing mostly noise or memory artifacts (like watermarks) are excluded. For layer selection, the authors adopt the DTMC perspective of TokenRank, treating the attention matrix as a transition matrix. The second largest eigenvalue $\lambda_2$ measures how informative a layer is; larger $\lambda_2$ indicates higher value. Thresholds are fixed by backbone: $\lambda_2 > 0.7$ for CogVideoX and $> 0.75$ for HunyuanVideo.
+
+**2. GramCol Spatial Localization: Replacing cross-modal multiplication with uni-modal Gram matrices**
+
+**Mechanism**: Within the selected range, spatial localization is performed frame-by-frame. Unlike previous methods that multiply text and visual features directly—which suffer from inconsistent behavior across heads—GramCol bypasses cross-modal instability. For each frame $f_i$, a "proxy" visual token is selected via QK matching: $s_{f_i}^c = \arg\max_p \text{row}_p(q_{f_i})k_c^\top$. The spatial map is then derived from the $s_{f_i}^c$-th column of the visual Gram matrix $G = h_x h_x^\top \in \mathbb{R}^{P\times P}$. Since it relies on uni-modal similarity, regions similar to the proxy token naturally receive high positive values.
+
+**3. Motion Head Selection: Identifying "motion-aware" heads via frame separability**
+
+**Key Insight**: Motion is defined by changes between frames. Attention heads processing motion should show high separability when visual tokens are clustered by frame. The authors use the Calinski-Harabasz Index (CHI) to quantify this: higher CHI indicates larger inter-frame variance relative to intra-frame variance. By recalculating GramCol using only the top-5 heads with the highest CHI per layer, spatial-only heads are filtered out, resulting in cleaner motion localization.
 
 ### Loss & Training
-IMAP is entirely training-free and gradient-free, requiring no additional training or parameter updates. For real videos, features are extracted via a noise-adding and denoising process. GramCol requires only a single column of the Gram matrix—the computational cost is an $O(Pd)$ matrix multiplication followed by an $O(P)$ indexing operation. CHI computation is similarly lightweight (ratio of inter-frame to intra-frame variance). The overall additional overhead relative to Video DiT inference is negligible. In practice, the full analysis of a 49-frame video completes within seconds. Implementation details: layers with $\lambda_2 > 0.7$ are used for CogVideoX and $\lambda_2 > 0.75$ for HunyuanVideo; motion head selection is fixed at top-5; only dual-stream MM-DiT blocks are used (single-stream blocks in HunyuanVideo are excluded).
+The method is entirely training-free and gradient-free. For real videos, features are extracted via an inversion process (noise-denoise). Computationally, GramCol requires $O(Pd)$ matrix multiplications and $O(P)$ indexing, making the overhead negligible relative to DiT inference.
 
 ## Key Experimental Results
 
 ### Main Results (Motion Localization)
 
 | Method | Backbone | SL | TL | PR | SS | OBJ | Avg |
-|--------|----------|-----|-----|-----|-----|-----|------|
+|------|----------|-----|-----|-----|-----|-----|------|
 | ViCLIP | ViT-H | 0.33 | 0.17 | 0.35 | 0.29 | 0.28 | 0.28 |
 | DAAM | VideoCrafter2 | 0.36 | 0.17 | 0.38 | 0.32 | 0.35 | 0.32 |
 | ConceptAttn | CogVideoX-5B | 0.50 | 0.32 | 0.51 | 0.47 | 0.47 | 0.45 |
@@ -73,50 +77,40 @@ IMAP is entirely training-free and gradient-free, requiring no additional traini
 
 ### Ablation Study
 
-| Configuration | Avg Score | Note |
-|---------------|-----------|------|
+| Configuration | Avg Score | Description |
+|------|-----------|------|
 | Cross-Attention Map | 0.34 | Baseline attention map |
-| GramCol (all heads) | ~0.45 | Spatial localization effective but temporal imprecise |
-| GramCol + Layer Selection | ~0.50 | Improvement after excluding low-information layers |
-| IMAP (GramCol + Motion Heads) | 0.54–0.60 | Motion head selection yields temporal localization breakthrough |
+| GramCol (All heads) | ~0.45 | Spatial localization works, but temporal is imprecise |
+| GramCol + Layer Selection | ~0.50 | Gain from excluding low-info layers |
+| IMAP (GramCol + Motion Head) | 0.54-0.60 | Breakthrough in temporal localization via motion heads |
 
 ### Key Findings
-- Temporal localization (TL) is IMAP's greatest advantage: on CogVideoX-2B, TL improves from 0.56 (Cross-Attn) to 0.62; on HunyuanVideo, from 0.26 to 0.41.
-- GramCol is more stable than ConceptAttention: heterogeneous cross-head behavior in ConceptAttention leads to instability, whereas GramCol's same-modality similarity avoids this issue.
-- The effectiveness of motion head selection is validated by the positive correlation between CHI and MLS ($r = 0.60$); random head selection leads to significant performance degradation.
-- IMAP also demonstrates strong performance on zero-shot video semantic segmentation.
+- Temporal Localization (TL) is the primary advantage of IMAP, increasing from 0.56 to 0.62 on CogVideoX-2B and from 0.26 to 0.41 on HunyuanVideo.
+- GramCol is more stable than ConceptAttention due to the use of uni-modal similarity, avoiding the heterogeneous behavior of cross-modal attention.
+- The validity of motion head selection is confirmed by a Pearson correlation of $r=0.60$ between CHI and motion localization scores.
 
 ## Highlights & Insights
-- **Elegant design of the text proxy token**: Rather than directly computing cross-modal similarity with text tokens, QK matching is used to identify visual tokens that best represent the textual concept, effectively converting a cross-modal problem into a same-modal one. This paradigm generalizes to any scenario requiring cross-modal localization.
-- **Simple assumption: motion equals inter-frame difference**: Cluster separation is used to quantify motion information content with minimal computational overhead (CHI is a lightweight operation), yet proves highly effective. This demonstrates that simple statistical metrics can outperform complex learned methods for feature selection.
-- **Insights into Video DiT internal mechanisms**: The paper reveals that distinct attention heads exhibit clear specialization (spatial vs. motion), and layers with larger $\lambda_2$ are more semantically informative—findings that provide guidance for future Video DiT design and optimization.
+- **Ingenious Text Proxy Token**: Instead of direct cross-modal multiplication, finding a visual token that "represents" the text concept converts a cross-modal problem into a more stable uni-modal one.
+- **Simplicity of Motion Hypothesis**: Using clustering separability (CHI) to measure motion content is computationally efficient yet highly effective, outperforming complex learning-based approaches.
+- **Insights into DiT Internals**: The discovery that attention heads have clear division of labor (spatial vs. motion) and that high $\lambda_2$ layers are more semantic provides guidance for future Video DiT architectures.
 
 ## Limitations & Future Work
-- **Evaluation relies on LLM scoring**: OpenAI o3-pro is used for MLS evaluation with detailed rubrics, but reproducibility and consistency of LLM-based evaluation remain a concern. Human evaluation baselines are absent.
-- The localization capability for highly **subtle motion** (e.g., micro-expression changes, slow gradual transitions) is unverified—CHI separation may fail to capture such fine-grained inter-frame differences.
-- Validation is currently limited to CogVideoX (2B/5B) and HunyuanVideo; applicability to other architectures (single-stream DiT, cross-attention architectures) requires further experimentation.
-- The top-$k = 5$ setting for motion head selection is globally fixed; different videos or motion types may warrant different numbers of heads. Adaptive $k$ selection is a natural improvement direction.
-- The $\lambda_2$ layer selection thresholds (0.7 for CogVideoX, 0.75 for HunyuanVideo) are manually specified, lacking an automated selection strategy.
-- IMAP is an analysis tool rather than a generation control tool; leveraging discovered motion heads for motion generation and editing control is a promising but unexplored direction.
-- The current benchmark (504 videos, 150 motion types) is limited in scale; large-scale evaluation remains to be constructed.
-- The ability to disentangle motions of multiple simultaneously moving objects (e.g., two interacting persons) warrants further investigation.
+- **Reliance on LLM Evaluation**: MLS evaluation depends on OpenAI o3-pro, which raises concerns about reproducibility and consistency despite detailed rubrics.
+- **Subtle Motion**: Localization of very subtle movements (e.g., micro-expressions) has not been verified, as CHI might not capture fine-grained inter-frame differences.
+- **Generalization**: Experiments were limited to CogVideoX and HunyuanVideo; applicability to single-stream DiTs or cross-attention architectures requires further study.
+- **Static Hyperparameters**: The $top-k=5$ for motion heads and $\lambda_2$ thresholds are manually set. Adaptive selection strategies are a potential future direction.
 
 ## Related Work & Insights
-- **vs. ConceptAttention**: ConceptAttention addresses only spatial disentanglement, and the cross-modal similarity $h_x h_c^\top$ exhibits heterogeneous behavior across heads; GramCol resolves these issues via same-modality Gram matrices and extends the framework to temporal localization. ConceptAttention's softmax operation introduces multi-concept competition, which GramCol avoids entirely.
-- **vs. DAAM**: DAAM uses cross-attention maps from U-Net architectures, making it unsuitable for joint-attention DiT architectures; IMAP is designed specifically for DiTs, leveraging MM-Attn QK matching and head-level analysis.
-- **vs. DiTFlow/DiffTrack**: These methods focus on inter-frame visual token correspondence (optical flow/tracking), whereas IMAP addresses which visual regions correspond to a specific motion concept described in text. The two approaches are complementary and potentially combinable.
-- **Connection to attention head pruning research**: The discovery of motion vs. spatial heads corroborates inference acceleration research on Video DiTs (sparse head pruning), suggesting that more intelligent pruning strategies can be developed without sacrificing motion information.
-- **Connection to TokenRank**: This paper adopts the DTMC perspective and $\lambda_2$ importance metric from TokenRank, but extends its application from per-state weighting to per-layer selection—a novel use of the framework.
-- **Implications for video editing and control**: The motion heads discovered by IMAP can potentially be leveraged inversely for motion editing—manipulating motion head features to control motion in generated videos without affecting spatial appearance.
-- **Insights for video understanding**: This paper is the first to demonstrate that Video DiTs internally contain attention heads specialized for motion processing, which has important implications for understanding the internal mechanisms of video generative models.
-- **Potential for zero-shot video semantic segmentation**: GramCol's strong performance on zero-shot video semantic segmentation suggests that internal representations of Video DiTs are valuable for perception tasks, offering a lightweight video understanding tool.
-- **504-video/150-motion-type benchmark**: The motion localization evaluation benchmark constructed in this paper is itself a contribution, filling an evaluation gap in the field. Videos are annotated using Qwen3-VL and filtered to exclude non-motion clips, ensuring evaluation quality.
+- **vs ConceptAttention**: ConceptAttention is limited to spatial separation; GramCol uses uni-modal Gram matrices to avoid head heterogeneity and extends to temporal localization without requiring a concept list for softmax competition.
+- **vs DAAM**: DAAM is tailored for U-Net architectures and cannot be directly applied to joint-attention DiTs. IMAP leverages the specific QK matching of DiT MM-Attn.
+- **Video Editing Potential**: The identification of motion heads suggests they could be manipulated to control motion during generation without affecting spatial appearance.
+- **Zero-shot Video Segmentation**: GramCol's high performance in zero-shot segmentation indicates that internal representations of Video DiTs are valuable for perception tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ GramCol and motion head selection constitute an elegant and novel design; this is the first systematic study of motion interpretability in Video DiTs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three Video DiT models are evaluated with ablations and zero-shot segmentation; benchmark construction is rigorous.
-- Writing Quality: ⭐⭐⭐⭐⭐ Analysis is structured hierarchically—progressively narrowing from timestep → layer → head—with theoretical justification and experimental validation at each step.
-- Value: ⭐⭐⭐⭐ Opens the motion dimension for Video DiT interpretability research; both GramCol and IMAP have practical utility.
+- Novelty: ⭐⭐⭐⭐ Elegant design of GramCol and motion head selection; first systematic study of motion interpretability in Video DiTs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple DiTs with ablation and zero-shot tasks; standardized benchmark construction.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear hierarchy of analysis from timesteps to layers to heads, with sound theoretical and empirical grounding.
+- Value: ⭐⭐⭐⭐ Opens the motion dimension for interpretability; GramCol and IMAP have significant practical utility.
 
 <!-- RELATED:START -->
 
@@ -124,11 +118,11 @@ IMAP is entirely training-free and gradient-free, requiring no additional traini
 
 ## Related Papers
 
-- [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](disca_accelerating_video_diffusion_transformers_wi.md)
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
+- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 - [\[CVPR 2026\] Composing Concepts from Images and Videos via Concept-prompt Binding](composing_concepts_from_images_and_videos_via_concept-prompt_binding.md)
-- [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](../../ICCV2025/video_generation/decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
-- [\[CVPR 2026\] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video](cubecomposer_spatio-temporal_autoregressive_4k_360_video_generation_from_perspec.md)
+- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
 
 </div>
 

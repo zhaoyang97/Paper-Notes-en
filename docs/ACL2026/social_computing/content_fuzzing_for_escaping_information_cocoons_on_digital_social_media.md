@@ -2,71 +2,77 @@
 title: >-
   [Paper Note] Content Fuzzing for Escaping Information Cocoons on Social Media
 description: >-
-  [ACL 2026][Social Computing][Information Cocoons] The study proposes ContentFuzz, a confidence-guided fuzzing framework from the perspective of content creators. It utilizes LLMs to rewrite posts to modify machine-inferr…
+  [ACL 2026][Social Computing][Paper Note] The authors propose ContentFuzz, a confidence-guided fuzzing framework from a content creator's perspective. It leverages LLMs to rewrite posts such that they flip machine-inferred stance labels while maintaining the same meaning for human readers, thereby breaking through social media information cocoons.
 tags:
-  - "ACL 2026"
-  - "Social Computing"
-  - "Information Cocoons"
-  - "Stance Detection"
-  - "Fuzzing"
-  - "Content Rewriting"
-  - "Recommender Systems"
+  - ACL 2026
+  - Social Computing
 date: 2026-05-08
-content_hash: 2b91d5d19df4ab4e
+content_hash: 77e9138c3a30f43e
 ---
-
 # Content Fuzzing for Escaping Information Cocoons on Social Media
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05461](https://arxiv.org/abs/2604.05461)  
 **Code**: None  
 **Area**: Social Computing / Adversarial Learning  
-**Keywords**: Information Cocoons, Stance Detection, Fuzzing, Content Rewriting, Recommender Systems
+**Keywords**: Information Cocoon, Stance Detection, Fuzzing, Content Rewriting, Recommender Systems
 
 ## TL;DR
-The study proposes ContentFuzz, a confidence-guided fuzzing framework from the perspective of content creators. It utilizes LLMs to rewrite posts to modify machine-inferred stance labels while maintaining the human-interpreted meaning, thereby breaking through social media information cocoons.
+The authors propose ContentFuzz, a confidence-guided fuzzing framework from a content creator's perspective. It leverages LLMs to rewrite posts such that they flip machine-inferred stance labels while maintaining the same meaning for human readers, thereby breaking through social media information cocoons.
 
 ## Background & Motivation
 
-**Background**: Social media platforms employ stance detection as a critical signal in recommendation and ranking pipelines. Posts are primarily routed to audiences with identical viewpoints, which reduces cross-stance exposure, limits the dissemination of diverse opinions, and hinders constructive discussion.
+**Background**: Social media platforms use stance detection as a primary signal in recommendation and ranking pipelines, routing posts mainly to audiences with the same viewpoints and reducing cross-stance exposure. This limits the reach of dissenting opinions and hinders constructive discussion.
 
-**Limitations of Prior Work**: Existing methods for breaking information cocoons are primarily platform-side algorithmic interventions (e.g., diversity re-ranking). However, these are controlled by platforms; individual users and creators cannot modify recommendation algorithms nor observe how posts are filtered, ranked, and distributed. Creators lack proactive tools to expand their content reach.
+**Limitations of Prior Work**: Existing methods to break information cocoons are primarily platform-side algorithmic interventions (e.g., diversity re-ranking). However, these methods are controlled by platforms; individual users and content creators cannot modify recommendation algorithms nor observe how posts are filtered, ranked, and distributed. Creators lack tools to proactively expand their content's reach.
 
-**Key Challenge**: While users and creators need to increase cross-group exposure, they lack actionable technical means—the only element they control is the content itself.
+**Key Challenge**: There is a fundamental conflict between the need for creators/users to increase cross-group exposure and the lack of actionable technical means—the only element under their control is the content itself.
 
-**Goal**: From the creator’s perspective, the study explores how to break information cocoons through content rewriting—specifically identifying semantic-preserving rewrites that maintain human-interpreted stances while altering machine-classified stances.
+**Goal**: From the creator's perspective, this work explores how to break information cocoons through content rewriting—identifying semantic-preserving rewrites that maintain human-interpreted stances but alter machine-classified stances.
 
-**Key Insight**: Borrowing methodology from software fuzzing, the stance detection model is treated as a "System Under Test" (SUT). Input variants are iteratively discovered to flip the classification results.
+**Key Insight**: Borrowing methodology from software testing, the stance detection model is treated as a "System Under Test" (SUT), iteratively discovering input variants that cause classification flips.
 
-**Core Idea**: Confidence feedback from the stance detection model guides the LLM to generate semantic-preserving rewrites. A decrease in confidence indicates that the rewrite is exploring areas near the classifier's decision boundary. High-iteration continues until the label flips or the budget is exhausted.
+**Core Idea**: The framework uses confidence feedback from the stance detection model to guide LLMs in generating semantic-preserving rewrites. A drop in confidence indicates that the rewrite is exploring the vicinity of the classifier's decision boundary. Iteration continues until the label flips or the budget is exhausted.
 
 ## Method
 
 ### Overall Architecture
-Starting from an original post, ContentFuzz iteratively executes: seed selection $\rightarrow$ LLM-based mutation to generate candidate rewrites $\rightarrow$ execution of the stance detector to obtain confidence $\rightarrow$ retention of candidates that reduce confidence as future seeds $\rightarrow$ termination when a candidate changes the predicted stance or iterations are exhausted.
+ContentFuzz treats the stance detector as a "System Under Test" and performs iterative fuzzing starting from the original post. In each round, **Seed Scheduling** uses a min-heap to select the seed with the lowest current confidence (closest to flipping). Then, **Temperature Scheduling** samples a rewrite temperature based on historical success rates. An LLM performs **Semantic-Preserving Mutation** to generate 5 candidates that maintain human-interpreted meaning. These candidates are fed into the stance detector to obtain predicted stances and confidence scores (**Confidence-Guided Feedback**). If a candidate's stance label flips, the process succeeds immediately. Candidates that lower the confidence but haven't flipped yet are returned to the seed pool for future iterations, and the energy of each temperature is updated based on success rates. This loop continues until a label flip occurs or the iteration budget is exhausted.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Original Post<br/>(Conf=1.0 into Seed Pool)"] --> B["Seed Scheduling<br/>Min-heap picks lowest confidence seed"]
+    B --> C["Temperature Scheduling<br/>Sample temperature via energy distribution"]
+    C --> D["Semantic-Preserving Mutation<br/>LLM generates 5 candidates (Human stance unchanged)"]
+    D --> E["Confidence-Guided Feedback<br/>Stance detector provides: Stance + Confidence c"]
+    E -->|"Stance label flips"| F["Output: Post successfully escaped cocoon"]
+    E -->|"c lower than seed but label unflipped"| G["Candidate returned to Seed Pool"]
+    G --> H["Update temperature energy based on success rate"]
+    H -->|"Budget not exhausted"| B
+    H -->|"Budget exhausted"| I["Output: Not found (Failure)"]
+```
 
 ### Key Designs
 
-1. **Confidence-guided Feedback**:
+**1. Confidence-Guided Feedback: Using the classifier's "hesitation" as a search compass**
 
-    - **Function**: Guides the LLM to generate rewrites that evolve in the "correct" direction (approaching the decision boundary).
-    - **Mechanism**: After each mutation, a stance analyzer is run to obtain the predicted stance and confidence. If the new candidate’s confidence is lower than the seed's, it indicates the candidate is pushing the model away from its current decision; it is then added to the seed pool. If the stance label flips, success is returned immediately.
-    - **Design Motivation**: Blind rewriting is inefficient. Confidence feedback provides a "temperature" signal—lower confidence denotes proximity to the decision boundary.
+Blindly rewriting posts to flip labels is highly inefficient because there is no signal indicating which rewrite "approaches" the classifier's decision boundary. ContentFuzz feeds candidates into the stance detector after each mutation to obtain the predicted stance and confidence $c$. If a new candidate’s $c$ is lower than its seed, it signifies the model is being pushed away from its current judgment and toward the boundary; such candidates are added to the seed pool. Once a label flips, success is returned. Lower confidence translates to higher proximity to the boundary, transforming the search from a random walk into a directional descent, significantly improving efficiency.
 
-2. **Seed Scheduling Strategy**:
+**2. Seed Scheduling: Prioritizing the seeds closest to the boundary via Min-Heap**
 
-    - **Function**: Prioritizes the most promising seeds for the next round of mutation.
-    - **Mechanism**: A seed pool is maintained and sorted by confidence. Seeds with lower confidence are closer to the decision boundary and deserve prioritized mutation. The strategy also considers the number of times a seed has been mutated to avoid over-exploiting a single seed.
-    - **Design Motivation**: When computational resources are limited, focusing on the most promising search directions is critical.
+With limited computational budget for fuzzing, wasting mutations on seeds far from the boundary is inefficient. ContentFuzz organizes all candidates into a min-heap based on confidence. Each round, it selects the seed with the global minimum confidence for mutation—lower confidence indicates a higher probability of flipping with minimal changes. Concentrating the budget on the most promising directions is crucial for ContentFuzz to converge within a small number of iterations.
 
-3. **Semantic-preserving Mutation**:
+**3. Semantic-Preserving Mutation: Escaping cocoons, not deceiving classifiers**
 
-    - **Function**: Generates rewrites that preserve the original meaning but potentially alter machine judgment.
-    - **Mechanism**: LLMs (e.g., GPT-4) generate rewrites using carefully designed prompts that mandate the preservation of core viewpoints and attitudes while allowing modifications to phrasing, sentence structure, and rhetorical devices. Multiple candidates are generated to increase coverage.
-    - **Design Motivation**: Unlike adversarial attacks, ContentFuzz requires that rewrites remain semantically identical to human readers—this is "escaping cocoons" rather than "deceiving classifiers."
+This is the essential distinction between ContentFuzz and adversarial attacks. While adversarial attacks allow perturbations that might be illegible to humans, ContentFuzz requires that the rewrite's meaning remains entirely unchanged for human readers. ContentFuzz employs a single strict rewrite operator (using Gemini-2.5-Flash-Lite) with specialized prompts to preserve core viewpoints and attitudes while altering only surface features like phrasing. To accelerate exploration and prevent pool stagnation, the operator generates 5 candidates simultaneously. Because the constraint is "human-interpreted stance remains, machine-judged stance flips," the output consists of natural posts that allow creators to reach across groups, rather than distorted adversarial samples.
+
+**4. Temperature Scheduling: Adaptive regulation of "creativity" via energy feedback**
+
+Fixed generation temperatures are suboptimal as different platforms and topics require varying degrees of divergence. If a strict operator uses a fixed temperature, it fails to balance exploration and exploitation. ContentFuzz discretizes temperature as $\mathcal{T}=\{0.0, 0.1, \dots, 2.0\}$ and assigns an energy value $E_t$ (initially 1) to each. Each round samples a temperature via $P(t)=E_t / \sum_{t'} E_{t'}$. After the round, energy is updated as $E_t \leftarrow E_t + s/N$, where $s/N$ is the ratio of candidates that successfully reduced confidence. Consequently, temperatures that historically produce effective variants are sampled more frequently, allowing the framework to adapt across platforms and topics without manual tuning (corresponding to `UpdateEnergy` in the algorithm).
 
 ### Loss & Training
-ContentFuzz is an inference-time framework and does not require training. The optimization objective is to minimize the stance detector's confidence in the original label until a label flip occurs.
+ContentFuzz is an inference-time framework and requires no training. The optimization objective is to minimize the stance detector's confidence in the original label until the label flips.
 
 ## Key Experimental Results
 
@@ -81,11 +87,11 @@ ContentFuzz is an inference-time framework and does not require training. The op
 
 ### Ablation Study
 
-| Configuration | Performance | Description |
+| Configuration | Effect | Description |
 |------|------|------|
-| W/o Confidence Feedback (Random) | Low Success Rate | Directionless exploration is highly inefficient |
-| W/o Seed Scheduling (Uniform) | Decreased | Wastes resources on low-potential seeds |
-| Full ContentFuzz | **Optimal** | Synergistic effect of feedback and scheduling |
+| No Confidence Feedback (Random) | Low Success Rate | Directionless exploration is highly inefficient |
+| No Seed Scheduling (Uniform) | Decreased | Resources wasted on low-potential seeds |
+| Full ContentFuzz | **Optimal** | Synergy between feedback and scheduling |
 
 ### Key Findings
 - ContentFuzz is effective across 3 datasets, 2 languages, and 4 stance detection models.
@@ -93,24 +99,24 @@ ContentFuzz is an inference-time framework and does not require training. The op
 - Minor phrasing changes significantly impact stance detector outputs, revealing the vulnerability of these models.
 
 ## Highlights & Insights
-- The **perspective shift** is the primary highlight: moving from "how platforms break cocoons" to "how creators break out" is an overlooked yet actionable direction.
-- The **cross-domain transfer of fuzzing methodology** is ingenious—seamlessly applying core software testing concepts (iterative mutation, feedback guidance, seed scheduling) to NLP.
-- It **reveals the vulnerability of stance detection models**—rewrites with unchanged semantics can flip predictions, questioning the reliability of recommendation systems.
+- **Perspective Shift** is the primary highlight: Moving from "how platforms break cocoons" to "how creators break out" is an overlooked but practically actionable direction.
+- **Cross-domain Transfer of Fuzzing Methodology**: The seamless application of software testing concepts (iterative mutation, feedback guidance, seed scheduling) to NLP is ingenious.
+- **Reveals Stance Model Vulnerability**: The fact that semantic-preserving rewrites can flip predictions raises serious concerns regarding the reliability of recommendation systems.
 
 ## Limitations & Future Work
-- Dependency on black-box/gray-box access to stance detection models—fully black-box recommendation systems may not provide confidence scores.
-- Whether successful rewrites truly alter distribution decisions in recommendation algorithms has not been verified on real-world platforms.
-- Potential misuse for public opinion manipulation requires the consideration of ethical boundaries.
+- Dependency on black-box/gray-box access to stance models—completely black-box recommendation systems might not provide confidence scores.
+- Whether successful rewrites truly alter distribution decisions in real-world recommendation algorithms remains unverified on actual platforms.
+- Potential for misuse in public opinion manipulation—ethical boundaries must be considered.
 
 ## Related Work & Insights
 - **vs. Adversarial Attacks**: Adversarial attacks seek minimal perturbations to flip labels; ContentFuzz seeks natural, semantic-preserving rewrites.
 - **vs. Platform-side Intervention**: These are complementary—platforms control algorithms, while creators control content.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First framework for breaking information cocoons from the content side; unique perspective.
+- Novelty: ⭐⭐⭐⭐⭐ First content-side framework for breaking information cocoons with a unique perspective.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive validation across multiple languages and models.
 - Writing Quality: ⭐⭐⭐⭐ Clear motivation and appropriate methodological analogies.
-- Value: ⭐⭐⭐⭐ Dual value for information diversity and recommender system robustness.
+- Value: ⭐⭐⭐⭐ Dual value for both information diversity and recommendation system robustness.
 
 <!-- RELATED:START -->
 
@@ -119,9 +125,9 @@ ContentFuzz is an inference-time framework and does not require training. The op
 ## Related Papers
 
 - [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
+- [\[ACL 2026\] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects](dia-harm_dialectal_disparities_in_harmful_content_detection_across_50_english_di.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](bayesian_social_deduction_with_graph-informed_language_models.md)
 - [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
-- [\[ACL 2026\] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects](dia-harm_dialectal_disparities_in_harmful_content_detection_across_50_english_di.md)
 - [\[NeurIPS 2025\] Precise Information Control in Long-Form Text Generation](../../NeurIPS2025/social_computing/precise_information_control_in_long-form_text_generation.md)
 
 </div>

@@ -2,75 +2,68 @@
 title: >-
   [Paper Note] Recovering Hidden Reward in Diffusion-Based Policies
 description: >-
-  [ICML 2026][Image Generation][diffusion policy] EnergyFlow explicitly parameterizes the score field of diffusion policy as the negative gradient of a scalar energy function…
+  [ICML 2026][Image Generation][diffusion policy] EnergyFlow explicitly parameterizes the score field of a diffusion policy as the negative gradient of a scalar energy function. It proves that under maximum-entropy optimality, the score equals the gradient of the soft Q-function, thereby providing a "free" scalar signal for downstream RL reward shaping without adversa
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "diffusion policy"
-  - "IRL"
-  - "energy-based model"
-  - "conservative field"
-  - "inverse RL shaping"
+  - ICML 2026
+  - Image Generation
+  - diffusion policy
+  - IRL
+  - energy-based model
 date: 2026-05-08
-content_hash: 6f6d4594340b6bef
+content_hash: 8191e436536051b5
 ---
-
 # Recovering Hidden Reward in Diffusion-Based Policies
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00623](https://arxiv.org/abs/2605.00623)  
 **Code**: https://github.com/sotaagi/EnergyFlow  
-**Area**: Diffusion Policy / Inverse Reinforcement Learning / Energy-Based Model / Robotic Manipulation  
+**Area**: Diffusion Policy / Inverse Reinforcement Learning / Energy-Based Models / Robot Manipulation  
 **Keywords**: diffusion policy, IRL, energy-based model, conservative field, inverse RL shaping
 
 ## TL;DR
-EnergyFlow explicitly parameterizes the score field of diffusion policy as the negative gradient of a scalar energy function, and proves that under maximum-entropy optimality, the score equals the gradient of the soft Q-function. This provides a scalar signal usable as a downstream RL shaping reward "for free" without adversarial optimization, while the conservative field constraint improves OOD generalization.
+EnergyFlow explicitly parameterizes the score field of a diffusion policy as the negative gradient of a scalar energy function. It proves that under maximum-entropy optimality, the score equals the gradient of the soft Q-function, thereby providing a "free" scalar signal for downstream RL reward shaping without adversarial optimization, while the conservative field constraint improves OOD generalization.
 
 ## Background & Motivation
 
-**Background**: Diffusion policy (Chi 2023, Flow Policy) has become a mainstream approach for robotic manipulation—capable of modeling multi-modal expert action distributions and achieving strong BC performance on RoboMimic / Meta-World. However, it is essentially just behavior cloning, where the model only learns "what the expert did" without explicitly learning "why".
+**Background**: Diffusion policies (Chi 2023, Flow Policy) have become the mainstream for robot manipulation due to their ability to model multimodal expert action distributions and their strong BC performance on RoboMimic/Meta-World. However, they are essentially imitation learning; the models learn "what the expert did" without explicitly learning "why they did it."
 
-**Limitations of Prior Work**: Behavior cloning faces two cascading issues. First, poor OOD robustness—when test scenarios deviate from the demo distribution, action likelihood alone cannot reliably rank actions. Second, it cannot directly generate reward signals for downstream RL refinement. Existing IRL methods (max-ent IRL, GAIL, AIRL) can recover rewards from demos, but require either expensive MCMC (EBM), unstable adversarial training (GAIL/AIRL), or repeated inner-loop policy optimization.
+**Limitations of Prior Work**: Behavioral cloning faces two related issues. First, poor OOD robustness—once the test scenario deviates from the demo distribution, action likelihood alone cannot reliably rank actions. Second, it cannot directly generate reward signals to refine downstream RL. Existing IRL methods (max-ent IRL, GAIL, AIRL) can recover rewards from demos but require either expensive MCMC (EBM), unstable adversarial training (GAIL/AIRL), or repeated inner-loop policy optimization.
 
-**Key Challenge**: Diffusion policy already "knows" the expert's preferences in the latent space (the score is $\nabla \log p$), but prior work treats it as a sampler and discards the embedded reward signal; meanwhile, IRL methods know they need a reward but train a new EBM or adversarial discriminator from scratch.
+**Key Challenge**: Diffusion policies already "know" expert preferences in their latent space (the score is $\nabla \log p$), but authors typically treat them only as samplers, discarding the inherent reward signal. Conversely, IRL methods aim for rewards but often retrain an EBM or adversarial discriminator from scratch.
 
-**Goal**: Enable a single network to simultaneously (i) serve as a generative policy for action generation, (ii) expose a scalar energy usable as reward, and (iii) retain the strong BC performance of diffusion policy without extra training cost.
+**Goal**: To enable a single network to simultaneously (i) act as a generative policy for action production, (ii) expose a scalar energy usable as a reward, and (iii) maintain the BC strength of diffusion policies without introducing extra training costs.
 
-**Key Insight**: It is observed that the score function $\nabla_a \log \pi_E(a|s)$ is linearly related in log-space to the soft Q-function of a max-ent expert; if the score field is constrained to be the negative gradient of a scalar potential ("conservative field"), three benefits are obtained—valid energy, elimination of cyclic preference, and a tighter Rademacher complexity bound, thus improving OOD generalization.
+**Key Insight**: It is observed that the score function $\nabla_a \log \pi_E(a|s)$ and the soft Q-function of a max-entropy expert are linearly related in log space. By restricting the score field to be the negative gradient of a scalar potential (i.e., a "conservative field"), three things are achieved simultaneously: a valid energy, elimination of cyclic preferences, and tightened Rademacher complexity for improved OOD generalization.
 
-**Core Idea**: Parameterize a scalar $E_\phi(s, a)$, obtain the score $\mathcal{S}_\phi = -\nabla_a E_\phi$ via autodiff, and train with denoising score matching. Thus, $E_\phi$ serves as both the generative potential for diffusion policy and the reward function for max-ent IRL.
+**Core Idea**: Parameterize a scalar $E_\phi(s, a)$ and obtain the score $\mathcal{S}_\phi = -\nabla_a E_\phi$ via autodiff, trained using denoising score matching. Thus, $E_\phi$ serves as both the generative potential of the diffusion policy and the reward function for max-ent IRL.
 
 ## Method
 
 ### Overall Architecture
 
-Input: expert demos $\mathcal{D} = \{(s_i, a_i)\}$.  
-Training: Scalar network $E_\phi: \mathcal{A} \times \mathcal{S} \times [0, T] \to \mathbb{R}$, add variance-exploding noise $\sigma(t) = \sigma_{\min}^{1-t/T} \sigma_{\max}^{t/T}$ to actions, DSM objective $\mathcal{L}(\phi) = \mathbb{E}[\sigma^2(t) \| -\nabla_{a_t} E_\phi(a_t, s, t) + \varepsilon/\sigma(t) \|^2]$.  
-Dual-purpose inference: (generation) start from $a_T \sim \mathcal{N}(0, \sigma^2(T) I)$ and run probability-flow ODE $da/dt = -\frac{1}{2} \frac{d[\sigma^2(t)]}{dt} \nabla_a E_\phi$; (reward) at time $\gamma = 10^{-3}$, take $E_\phi(a, s, \gamma)$ minus a state-dependent baseline as the shaping reward for SAC.
+EnergyFlow addresses the issue where diffusion policies discard inherent reward signals while being used as pure samplers. The architecture is straightforward: instead of directing the network to output a vector score, it outputs a scalar energy $E_\phi(s, a)$, defining the score as its negative gradient with respect to the action: $\mathcal{S}_\phi = -\nabla_a E_\phi$. This allows the same network to generate actions via a probability-flow ODE and extract $E_\phi$ at a low-noise timestep as a reward for downstream SAC, all while training with a single denoising score matching loss.
 
 ### Key Designs
 
-1. **Score = Reward Gradient Equivalence (Theorem 3.3)**:
+**1. Score = Reward Gradient Equivalence: Reinterpreting Diffusion Score as Soft Q Gradient**
 
-    - Function: Mathematically proves that score matching trained $E_\phi$ automatically recovers the expert's soft Q-function (up to a state-dependent constant).
-    - Mechanism: Under max-ent optimality, $\pi_E(a|s) = \exp(Q^*(s,a)/\alpha) / Z(s)$. Taking the gradient w.r.t. action cancels the partition function $Z(s)$: $\nabla_a \log \pi_E = \nabla_a Q^* / \alpha$. Thus, if $-\nabla_a E_\phi \approx \nabla_a \log \pi_E$, then $E_\phi(a, s) = -Q^*(s,a)/\alpha + c(s)$. Corollary 3.4 further notes that $E_\phi$ actually recovers the soft advantage $A^{\text{soft}}(s,a) = Q^*(s,a) - V^*(s)$ (again, up to a state-only constant).
-    - Design Motivation: This is the theoretical anchor of the framework—it shows that neither GAIL/AIRL's adversarial discriminator nor EBM's MCMC are needed; simply training a diffusion policy "for free" yields a reward signal. Unlike treating diffusion as a sampler (Diffusion Policy), here the same network is reinterpreted as energy.
+This serves as the theoretical anchor, addressing why training a diffusion policy yields a reward signal. Under the max-entropy optimality hypothesis, the expert policy follows a Boltzmann distribution $\pi_E(a|s) = \exp(Q^*(s,a)/\alpha) / Z(s)$. The key observation is that when taking the gradient with respect to the action, the partition function $Z(s)$ is independent of $a$ and cancels out: $\nabla_a \log \pi_E = \nabla_a Q^* / \alpha$. Consequently, if score matching achieves $-\nabla_a E_\phi \approx \nabla_a \log \pi_E$, then $E_\phi(a, s) = -Q^*(s,a)/\alpha + c(s)$ (Theorem 3.3). This means $E_\phi$ automatically recovers the expert's soft Q-function up to a state-only constant. Corollary 3.4 further notes that what is effectively recovered is the soft advantage $A^{\text{soft}}(s,a) = Q^*(s,a) - V^*(s)$. This connects diffusion policies and max-ent IRL without requiring adversarial discriminators or MCMC.
 
-2. **Conservative Field Constraint (Scalar Parameterization + Autodiff Score)**:
+**2. Conservative Field Constraint: Scalar Parameterization and Generalization Bounds**
 
-    - Function: Hardly ensures the score field is the gradient of some scalar potential ($\nabla \times \mathcal{S}_\phi = 0$), eliminates cyclic preference, and tightens the generalization bound.
-    - Mechanism: Instead of directly regressing a vector score $\mathcal{S}_\phi: \mathbb{R}^{|s|+|a|} \to \mathbb{R}^{|a|}$, the network outputs a scalar $E_\phi$, and $\mathcal{S}_\phi = -\nabla_a E_\phi$ is obtained via autodiff. Theorem 3.6 gives the Rademacher complexity comparison: $\hat{\mathfrak{R}}_S(\mathcal{F}_{\text{unc}}) \leq \Lambda B \sqrt{d}/\sqrt{n}$ (unconstrained) vs $\hat{\mathfrak{R}}_S(\mathcal{F}_{\text{cons}}) \leq \Lambda L/\sqrt{n}$ (conservative), with the conservative version strictly tighter in high-dimensional action spaces. Lemma 3.8 further provides an OOD bound: the conservative version's complexity term is $\mathcal{O}(M \Lambda L / \sqrt{n})$ instead of $\mathcal{O}(M \Lambda B \sqrt{d}/\sqrt{n})$.
-    - Design Motivation: Standard diffusion policy outputs a vector score without guaranteeing conservativeness, meaning the learned implicit "energy" may form cyclic preferences (e.g., $a_1 \to a_2 \to a_3 \to a_1$), violating the transitivity axiom of rational decision (Jiang 2011), making rewards ill-defined. The conservative constraint ensures both mathematical correctness (legitimizing reward extraction) and provides a useful inductive bias (significantly reducing complexity in high-dimensional action spaces). Remark 3.7 also notes that deep networks can satisfy the Lipschitz constraint via spectral normalization, making $L$ controllable.
+Standard diffusion policies regress a vector score $\mathcal{S}_\phi: \mathbb{R}^{|s|+|a|} \to \mathbb{R}^{|a|}$ directly, which does not guarantee a conservative field. The learned implicit energy might form cyclic preferences (e.g., $a_1 \succ a_2 \succ a_3 \succ a_1$), violating the transitivity axiom of rational decision-making (Jiang 2011), making rewards ill-defined. EnergyFlow sets the network output to a scalar $E_\phi$ and uses autodiff to find $\mathcal{S}_\phi = -\nabla_a E_\phi$, ensuring $\nabla \times \mathcal{S}_\phi = 0$ by construction. This constraint provides a useful inductive bias in high-dimensional action spaces: Theorem 3.6 shows the Rademacher complexity $\hat{\mathfrak{R}}_S(\mathcal{F}_{\text{unc}}) \le \Lambda B \sqrt{d}/\sqrt{n}$ for the unconstrained version vs. $\hat{\mathfrak{R}}_S(\mathcal{F}_{\text{cons}}) \le \Lambda L/\sqrt{n}$ for the conservative version. Lemma 3.8 extends this to OOD bounds, reducing the complexity term from $\mathcal{O}(M \Lambda B \sqrt{d}/\sqrt{n})$ to $\mathcal{O}(M \Lambda L / \sqrt{n})$.
 
-3. **Centered Shaping Reward (Removing State-Dependent Bias)**:
+**3. Centered Shaping Reward: Removing the Likelihood vs. Progress Trap**
 
-    - Function: Using raw $E_\phi$ as reward introduces a state-dependent bias $c(s)$, leading to high variance; define $\tilde{r}_\phi(a, s) = -(E_\phi(a, s, \gamma) - \mathbb{E}_{a' \sim \mathcal{N}(0, I)}[E_\phi(a', s, \gamma)])$ to cancel the bias.
-    - Mechanism: Proposition 3.9 proves that raw $E_\phi$ guarantees correct within-state action ranking ($\arg\min_a E_\phi = \arg\max_a Q^*$) but is unreliable for cross-state comparison. Remark 3.10 points out that the state-only bias does not satisfy the potential-based reward shaping (PBRS, Ng 1999) form and may alter the sequential optimal policy; however, it does not affect within-state action selection. Thus, subtracting a state-dependent baseline (Monte Carlo average over $M = 16$ samples $a' \sim \mathcal{N}(0, I)$) removes the bias.
-    - Design Motivation: Figure 4 directly verifies—using raw $E_\phi$ as SAC reward causes the agent to get stuck in common states (since high likelihood = low energy = high reward, but high likelihood does not equal progress), leading to early plateau; the centered version makes the reward reflect "which action to choose in the current state" rather than "which state is frequently visited", and the training curve matches the oracle dense reward. The combination of Centered Energy + Sparse is optimal—dense shaping guides early exploration, sparse ensures final task alignment.
+Using raw $E_\phi$ as a reward is problematic due to the state-only bias $c(s)$, where high likelihood (low energy) does not necessarily imply task progress. Proposition 3.9 proves that raw $E_\phi$ only guarantees correct within-state action ranking ($\arg\min_a E_\phi = \arg\max_a Q^*$) but is unreliable for cross-state comparisons. Remark 3.10 notes this bias does not fit the potential-based reward shaping (PBRS, Ng 1999) format and may alter the optimal policy in sequential MDPs. The solution is the centered reward $\tilde{r}_\phi(a, s) = -(E_\phi(a, s, \gamma) - \mathbb{E}_{a' \sim \mathcal{N}(0, I)}[E_\phi(a', s, \gamma)])$, where the state-dependent mean is estimated via Monte Carlo sampling. This transforms the signal from "how common is this state" to "which action is better in this state."
 
 ### Loss & Training
 
-DSM loss $\mathcal{L}(\phi) = \mathbb{E}_{t, a_0, \varepsilon}[\sigma^2(t) \| -\nabla_{a_t} E_\phi(a_t, s, t) + \varepsilon/\sigma(t) \|^2]$, where $a_t = a_0 + \sigma(t) \varepsilon$, $\varepsilon \sim \mathcal{N}(0, I)$, $t \sim \mathcal{U}[0, T]$, $\sigma_{\min} = 0.01$, $\sigma_{\max} = 10$, $T = 1$. $\lambda(t) = \sigma^2(t)$ ensures balanced contribution across noise scales. Theorem 3.11 provides a bound on the propagation of score error $\eta$ to action preference: $|\Delta E_\phi(a, a') - \Delta E^*(a, a')| \leq \eta \cdot \|a - a'\|_2$, i.e., linear graceful degradation. Downstream RL uses SAC + centered shaping reward, optionally combined with sparse task signals.
+Training utilizes a single denoising score matching loss:
+$$\mathcal{L}(\phi) = \mathbb{E}_{t, a_0, \varepsilon}[\sigma^2(t) \| -\nabla_{a_t} E_\phi(a_t, s, t) + \varepsilon/\sigma(t) \|^2]$$
+where $a_t = a_0 + \sigma(t) \varepsilon$, $\varepsilon \sim \mathcal{N}(0, I)$, and $t \sim \mathcal{U}[0, T]$. A variance-exploding schedule is used for noise: $\sigma(t) = \sigma_{\min}^{1-t/T} \sigma_{\max}^{t/T}$. Generation starts from $a_T \sim \mathcal{N}(0, \sigma^2(T) I)$ following the probability-flow ODE:
+$$da/dt = -\frac{1}{2} \frac{d[\sigma^2(t)]}{dt} \nabla_a E_\phi$$
+Reward extraction occurs at a small noise timestep $\gamma = 10^{-3}$. Downstream RL utilizes SAC with the centered shaping reward, optionally augmented with a sparse task signal.
 
 ## Key Experimental Results
 
@@ -79,79 +72,71 @@ DSM loss $\mathcal{L}(\phi) = \mathbb{E}_{t, a_0, \varepsilon}[\sigma^2(t) \| -\
 RoboMimic (ph, 5 tasks, 3 seeds):
 
 | Method | Lift | Square | Transport | ToolHang | Avg |
-|--------|------|--------|-----------|----------|-----|
+|:---|:---:|:---:|:---:|:---:|:---:|
 | LSTM-GMM | 97.8 | 64.3 | 65.6 | 46.0 | 69.0 |
 | Diffusion Policy | 100.0 | 93.5 | 85.9 | 77.2 | 91.2 |
 | Flow Policy | 99.6 | 91.8 | 83.6 | 74.8 | 89.6 |
 | EBT-Policy | 96.2 | 78.4 | 72.4 | 58.6 | 78.8 |
 | EBIL / NEAR / IQ-Learn | 92-95 | 58-68 | 48-58 | 32-44 | 61-70 |
 | Implicit BC | 70.9 | 10.2 | 0.0 | 0.0 | 22.4 |
-| **EnergyFlow** | **100.0** | **95.3** | **89.4** | **84.2** | **93.8** |
+| **Ours (EnergyFlow)** | **100.0** | **95.3** | **89.4** | **84.2** | **93.8** |
 
-Meta-World (5 tasks): EnergyFlow 92.5% vs Diffusion Policy 90.7%, with gains concentrated on harder tasks (Assembly +6.2, ToolHang +7.0 on RoboMimic).  
-Real robot (AGIBOT G1): 100% success rate on Bottle / Drawer tasks (3 initial positions × 20 rollouts).
+EnergyFlow outperformed Diffusion Policy by 1.8% on average, with significant Gains in difficult tasks (e.g., ToolHang +7.0). Real robot deployment (AGIBOT G1) achieved 100% success rates on Bottle and Drawer tasks.
 
 ### Ablation Study
 
-Comparison of downstream SAC reward sources (RoboMimic Square / Transport):
+Comparison of SAC reward sources (RoboMimic Square / Transport):
 
-| Reward Source | Converged Success | Notes |
-|---------------|-------------------|-------|
-| Sparse only | Slow and noisy | Signal only on task success |
-| Raw $E_\phi$ | Early plateau | Likelihood ≠ progress, biased by state density |
-| Centered $E_\phi$ | Near oracle dense | After baseline subtraction, reflects within-state action preference |
-| Centered + Sparse | Best | Dense shaping + sparse anchors task |
-
-OOD perturbation (initial position perturbation level 0/S/M/L): EnergyFlow significantly outperforms Diffusion Policy and Flow Policy at M/L perturbation levels, validating the geometric regularization effect of the conservative constraint.  
-$\gamma$ sensitivity (reward extraction time): Performance stable for $\gamma \in [10^{-4}, 10^{-2}]$ (94-95%), drops for $\gamma \geq 0.1$ (data distribution corrupted by noise, score approximation fails).  
-Latency (RoboMimic Square, A100): EnergyFlow $K=20$ 11.4ms (95.3%) vs Diffusion Policy 100 DDPM 32.4ms (93.5%) vs Implicit BC 50 Langevin 52.4ms (10.2%)—the conservative EBM outperforms baselines without sacrificing speed.
+| Reward Source | Convergence Success | Description |
+|:---|:---:|:---|
+| Sparse only | Slow/Noisy | Signal only upon task completion |
+| Raw $E_\phi$ | Early plateau | Likelihood $\neq$ progress; biased toward state density |
+| Centered $E_\phi$ | Near oracle dense | Reflects within-state action preference |
+| Centered + Sparse | Best | Dense shaping + sparse task anchoring |
 
 ### Key Findings
-- Conservative constraint contributes most on hard tasks (ToolHang +7 vs Diffusion Policy), confirming Lemma 3.8—the harder the task and the more complex the action space, the greater the benefit.
-- Centered shaping is key for reward extraction—training RL with raw $E_\phi$ stalls, while centered version matches oracle performance.
-- Explicit EBM (Implicit BC) almost completely fails on RoboMimic (Transport / ToolHang 0%), but EnergyFlow achieves SOTA, indicating the issue is not with the EBM paradigm itself but with the training objective—score matching + conservative parameterization is much more robust than traditional contrastive divergence.
-- Inference latency is on par with Flow Policy, showing the overhead of autodiff for the conservative constraint is negligible.
-- Real robot transfer works directly (100% on AGIBOT G1), indicating the geometric regularization from the conservative constraint is genuinely beneficial.
+- The conservative constraint provides the most Benefit in difficult tasks, supporting the theory that higher action dimensions $d$ gain more from reduced complexity.
+- Centered shaping is critical; raw $E_\phi$ often causes RL training to stall, while centering allows it to match oracle dense rewards.
+- Explicit EBMs (Implicit BC) failed on RoboMimic (0% on Transport), but EnergyFlow reached SOTA, suggesting that the issue lies not in the EBM paradigm but in the training objective (DSM is superior to contrastive divergence).
+- Inference latency is comparable to Flow Policy, proving the autodiff overhead is negligible.
+- OOD robustness is significantly higher than baseline diffusion models under large perturbations.
 
 ## Highlights & Insights
-- The reinterpretation that **"score matching = max-ent IRL, reward for free"** is exceptionally clean—previously, diffusion policy and IRL were treated as separate streams, but this work connects them with a single observation: "taking the gradient w.r.t. $a$ cancels $Z(s)$". Such reinterpretation papers are highly valuable.
-- **Scalar parameterization + autodiff score** adds almost zero engineering cost (just change the network's final head to 1-d and add a $\nabla_a$ in forward), yet simultaneously yields (i) valid energy, (ii) conservative field, and (iii) tighter generalization bound.
-- The **centered shaping** baseline trick solves the classic problem "high likelihood ≠ task progress"—using $\log \pi_E$ directly as reward causes the agent to be attracted to high-density regions, while the centered version turns the signal into "relative within-state preference", an idea transferable to any likelihood-based reward shaping.
-- The **OOD benefits of the conservative constraint** are supported both theoretically (Lemma 3.8 + Rademacher complexity) and empirically (significant outperformance at perturbation level L), providing strong evidence.
-- Inference latency matches Flow Policy, rehabilitating EBM from "too expensive to use" back to a mainstream candidate.
+- The reinterpretation that "score matching = max-ent IRL" is elegant, connecting two previously independent research streams via the simple observation that the partition function $Z(s)$ cancels during gradient calculation.
+- Scalar parameterization with autodiff provides a "free lunch": it ensures a valid potential and a tighter generalization bound with almost zero engineering cost.
+- Centered shaping solves the "high likelihood $\neq$ task progress" trap; this logic is transferable to any likelihood-based reward shaping method.
+- Real-robot transfer worked immediately, likely due to the geometric regularization provided by the conservative constraint.
 
 ## Limitations & Future Work
-- The max-ent optimality assumption requires the expert to truly act according to a Boltzmann distribution, which may fail for noisy demos or multi-expert datasets.
-- What is recovered is the soft advantage $A^{\text{soft}}$ (up to a state-only bias), making cross-state comparison unreliable; in sequential MDPs, the state-only bias may alter the optimal policy, which the authors acknowledge but do not provide an alternative for.
-- The tightness of the conservative field theoretical bound (Theorem 3.6), i.e., $L \ll B \sqrt{d}$, relies on spectral normalization in deep networks, but whether this is satisfied in practice is not quantitatively checked.
-- Real robot experiments only cover 2 tasks and 3 initial positions, limiting statistical significance.
-- Validation is only on manipulation; transferability to other embodied tasks such as locomotion or continuous control is unknown.
-- The baseline uses 16 MC samples for estimation; the impact of estimation variance on RL training stability is not systematically ablated.
+- The max-ent optimality assumption requires experts to act according to a Boltzmann distribution; it may fail with noisy demos or mixed-expert datasets.
+- The recovered signal is the soft advantage $A^{\text{soft}}$, making cross-state comparisons unreliable; state-only biases might still affect optimal policies in certain sequential MDPs.
+- Theoretical bounds depend on Lipschitz constants, which require spectral normalization—something not always quantified in practice.
+- Real-robot experiments were limited in scale (2 tasks, 3 positions).
 
 ## Related Work & Insights
-- **vs Diffusion Policy (Chi 2023)**: This work is a strict superset—backbone, training objective, and generation latency are similar, but it additionally outputs a reward scalar and achieves stronger BC performance; this "more compact hypothesis class + more outputs" win-win design is worth emulating.
-- **vs Implicit BC (Florence 2021) / EBT-Policy (Davies 2025)**: Both are EBM-based policies, but the former uses contrastive divergence and is unstable (almost complete failure on RoboMimic), EBT uses a transformer but still treats energy only as a decision score; EnergyFlow uses score matching and treats energy as reward.
-- **vs EBIL (Liu 2021) / NEAR (Diwan 2025)**: Both use EBM for IRL in a two-stage pipeline (learn energy, then RL), but EBIL/NEAR lack the conservative constraint, have poor performance, and do not use energy as a generative policy; EnergyFlow unifies both.
-- **vs Adversarial IRL (GAIL, AIRL, AIRL)**: Completely avoids adversarial training, using only score matching loss for stable training.
-- **vs Wang & Du 2025 / Balcerak 2025**: Also observe the connection between diffusion and EBM, but EnergyFlow further leverages this connection for IRL reward extraction.
+- **vs. Diffusion Policy (Chi 2023)**: Ours is a strict superset, adding a reward output and stronger BC performance with similar latency.
+- **vs. Implicit BC (Florence 2021)**: While both are EBMs, Implicit BC is unstable due to contrastive divergence, whereas EnergyFlow uses stable score matching.
+- **vs. Adversarial IRL**: EnergyFlow avoids unstable adversarial training entirely.
+- **vs. EBIL / NEAR**: These use two-stage pipelines; EnergyFlow unifies generative policy and energy recovery into a single model.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The reinterpretation "score = soft Q gradient + conservative constraint" is elegant, though the EBM-policy / DSM components are known.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10 simulated tasks + real robot + reward quality directly validated with SAC + OOD perturbation + 5 sensitivity experiments, comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theory section is clear with theorem-proof structure, three Remarks clarify assumption boundaries; Figure 1 visually distinguishes EnergyFlow from Diffusion Policy.
-- Value: ⭐⭐⭐⭐⭐ Directly adds reward output and OOD robustness to diffusion policy with unchanged inference speed, a highly practical upgrade for the robotics learning community.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](../../ICLR2026/image_generation/improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
 - [\[ICML 2026\] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](learning_general_causal_structures_with_hidden_dynamic_process_for_climate_analy.md)
+- [\[AAAI 2026\] PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork](../../AAAI2026/image_generation/padiff_predictive_and_adaptive_diffusion_policies_for_ad_hoc_teamwork.md)
+- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](../../ICLR2026/image_generation/a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
-- [\[ICML 2026\] Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation](gradient_preconditioning_for_efficient_and_reliable_reward-guided_generation.md)
 
 </div>
 

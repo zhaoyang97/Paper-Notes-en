@@ -2,100 +2,100 @@
 title: >-
   [Paper Note] IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance
 description: >-
-  [ACL 2026][Graph Learning][FMEA Knowledge Graph] This paper reformulates industrial asset maintenance question answering as an "embodied decision-making" task. The authors propose IndustryAssetEQA…
+  [ACL 2026][Graph Learning][Embodied QA] This paper remodels industrial asset maintenance QA as an "embodied decision-making" task. It proposes IndustryAssetEQA, a neurosymbolic system composed of episodic telemetry, FMEA knowledge graphs, parameterized counterfactual risk simulators, provenance verification, and safety gates. On four industrial datasets, it
 tags:
-  - "ACL 2026"
-  - "Graph Learning"
-  - "FMEA Knowledge Graph"
-  - "Embodied QA"
-  - "Counterfactual Risk"
-  - "Provenance"
-  - "Industrial Maintenance"
+  - ACL 2026
+  - Graph Learning
+  - Embodied QA
+  - Provenance
 date: 2026-05-08
-content_hash: 0fc7c8aed5edc923
+content_hash: 26401b404b81d084
 ---
-
 # IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.23446](https://arxiv.org/abs/2604.23446)  
-**Code**: https://github.com/IBM/AssetOpsBench/tree/IndustryAssetEQA/IndustryAssetEQA (Yes)  
+**Code**: https://github.com/IBM/AssetOpsBench/tree/IndustryAssetEQA/IndustryAssetEQA (Available)  
 **Area**: Knowledge Graph / Industrial / Neurosymbolic / Embodied QA  
 **Keywords**: FMEA Knowledge Graph, Embodied QA, Counterfactual Risk, Provenance, Industrial Maintenance
 
 ## TL;DR
-This paper reformulates industrial asset maintenance question answering as an "embodied decision-making" task. The authors propose IndustryAssetEQA, a neurosymbolic system comprising episodized telemetry, an FMEA Knowledge Graph, a parameterized counterfactual risk simulator, provenance verification, and a safety gate. Across four industrial datasets, the system improves structural validity, counterfactual direction accuracy, and explanation entailment rates by up to 0.51 / 0.47 / 0.64, respectively, while reducing expert-judged severe over-assertions from 28% to 2%.
+This paper remodels industrial asset maintenance QA as an "embodied decision-making" task. It proposes IndustryAssetEQA, a neurosymbolic system composed of episodic telemetry, FMEA knowledge graphs, parameterized counterfactual risk simulators, provenance verification, and safety gates. On four industrial datasets, it improves structural validity, counterfactual direction accuracy, and explanation entailment by up to 0.51 / 0.47 / 0.64 respectively, while reducing expert-judged severe over-assertions from 28% to 2%.
 
 ## Background & Motivation
 
-**Background**: Modern factories rely on operational intelligence systems to interpret multi-modal telemetry, alarm streams, and maintenance records. The current mainstream approach involves wrapping an LLM over documents and dashboards to provide a natural language interface for answering questions such as "Why did this fail?", "How should it be handled?", or "What happens after intervention?".
+**Background**: Modern factories rely on operational intelligence systems to interpret multivariate telemetry, alarm streams, and maintenance records. The current mainstream approach is to wrap an LLM over documents and dashboards to answer questions like "Why did it fail? / How to handle it? / What happens after intervention?" via a natural language interface.
 
-**Limitations of Prior Work**: In practical deployments, LLM maintenance assistants exhibit three types of consistency issues: (i) providing generic textbook explanations of faults without grounding them in the sensor readings and context of a specific episode; (ii) lacking verifiable provenance, where answers do not cite the corresponding time windows, sensors, or work order records, making them un-auditable; (iii) counterfactuals and action recommendations providing only qualitative conclusions without explicit risk models, making them unverifiable.
+**Limitations of Prior Work**: In actual deployment, LLM maintenance assistants exhibit three types of consistency issues: (i) providing generic textbook explanations of failures without binding them to specific episodic sensor readings and contexts; (ii) lacking verifiable provenance, where answers do not reference corresponding time windows, sensors, or work order records, making them unauditable; (iii) providing only qualitative conclusions for counterfactuals and action recommendations without explicit risk models that can be tested.
 
-**Key Challenge**: Framing maintenance QA as a "language generation" task ignores its nature as a "sensor + risk" decision-making task. The objective function of the former only requires fluency and alignment with corpus distributions, whereas the latter demands temporal localization, evidence chains, and verifiable intervention effects. This mismatch is the root cause of generalization failure.
+**Key Challenge**: Framing maintenance QA as a "language generation" task, whereas it is essentially a "sensor + risk" decision task. The misalignment between the objective function of the former (fluency and corpus distribution) and the requirements of the latter (temporal localization, evidence chains, and testable intervention effects) is the root cause of generalization failure.
 
-**Goal**: To construct an industrial EQA system that simultaneously satisfies four requirements—temporal localization, evidence traceability, risk constraint, and domain knowledge alignment—and to design an evaluation protocol that measures "deployable reliability" rather than "linguistic fluency."
+**Goal**: To construct an industrial EQA system that simultaneously satisfies four requirements: temporal localization, evidence traceability, risk constraint, and domain knowledge alignment, and to design an evaluation protocol measuring "deployment reliability" rather than "language fluency."
 
-**Key Insight**: The authors observe that the perception $\to$ reasoning $\to$ prediction $\to$ decision-making loop of Embodied AI is structurally isomorphic to the industrial maintenance workflow (sensing telemetry $\to$ diagnosing faults $\to$ planning interventions $\to$ executing maintenance). Therefore, they explicitly model maintenance QA as an embodied decision-making problem. Simultaneously, they utilize neurosymbolic fusion to ensure LLM free-text is dual-anchored by the FMEA Knowledge Graph and an episodic store.
+**Key Insight**: The authors observe that the perception $\to$ reasoning $\to$ prediction $\to$ decision loop of Embodied AI is structurally isomorphic to the industrial maintenance workflow (perceiving telemetry $\to$ diagnosing failures $\to$ planning interventions $\to$ executing maintenance). Thus, maintenance QA is explicitly modeled as an embodied decision problem, using neurosymbolic fusion to anchor LLM free text with both FMEA KGs and episodic stores.
 
-**Core Idea**: By integrating episodized facts, FMEA-KG, a multinomial logistic counterfactual simulator, provenance enforcement, and a safety gate, the LLM is encapsulated into an embodied QA service that can only "answer based on the provided evidence."
+**Core Idea**: Use episodic facts + FMEA-KG + polynomial logistic counterfactual simulator + provenance enforcement + safety gates to wrap the LLM into an embodied QA service that can only "answer based on provided evidence."
 
 ## Method
 
 ### Overall Architecture
 
-The input is a natural language query entered by an operator at a CMMS frontend. The system first performs question classification across five QA tasks (Description / Temporal / Diagnosis / Counterfactual / Action Recommendation), then proceeds through a pipeline of six modules:
+The system receives natural language queries from operator CMMS frontends and executes industrial maintenance QA as a perception-diagnostic-planning-execution embodied decision loop. LLM free text is anchored throughout by symbolic knowledge and episodic facts. Queries are classified into five QA categories (Description / Temporal / Diagnostic / Counterfactual / Action Recommendation), then flow through a six-module pipeline: the Fact Extractor slices telemetry into fixed windows $[t_f-\Delta, t_f]$ anchored at failure time $t_f$, extracts summary descriptors $\mathcal{F}_s = \{\mu_s, \sigma_s, \min_s, \max_s, \text{trend}_s\}$ for each sensor $s$, and appends context like error counts and hours since last maintenance to output episodic JSONL with full provenance. These episodes enter the Episodic Store (SQLite facts+features tables, indexed by `fact_id`) for threshold retrieval $\{f_i \mid x_{i,j} \bowtie \tau\}$. The FMEA-KG (63 failure modes × 9 asset types, with edges like `affects / component_of / indicated_by / mitigated_by`) injects symbolic constraints. The Causal Simulator estimates $P(y\mid\bm{x})$ using polynomial logistic regression and models interventions as do-substitutions to calculate risk $r_{\text{before}} = 1 - P(y=\text{healthy}\mid\bm{x})$, $r_{\text{after}} = 1 - P(y=\text{healthy}\mid\bm{x}^{\text{do}})$, and direction $\Delta r$. Finally, the EQA/Prompt Builder renders evidence into strict JSON contracts for the LLM, and the Verifier + Safety Gate perform structural, provenance, and counterfactual direction consistency checks, routing failed outputs to human review.
 
-1.  **Fact Extractor**: Slices telemetry time series into fixed windows $[t_f-\Delta, t_f]$ anchored at the failure time $t_f$. For each numerical sensor $s$, it extracts summary descriptors $\mathcal{F}_s = \{\mu_s, \sigma_s, \min_s, \max_s, \text{trend}_s\}$ and concatenates contextual features such as error event counts and hours since last maintenance. Combined with asset/fault/sensor semantics from the FMEA-KG, it outputs an episode JSONL with full provenance.
-2.  **Episodic Store**: A dual-table SQLite (facts + features) stores episode-level facts indexed by `fact_id`, supporting efficient retrieval based on asset, label, and threshold conditions $\{f_i \mid x_{i,j} \bowtie \tau\}$.
-3.  **FMEA-KG**: A domain knowledge graph constructed from ISO documents via the EMPWR platform, containing 63 fault modes across 9 asset classes. Nodes represent asset classes / sub-components / fault modes / sensor abstractions / maintenance actions, while edges represent `affects / component_of / indicated_by / mitigated_by`. Symbolic constraints are injected into pipeline nodes using rdflib.
-4.  **Causal Simulator**: Trains a multinomial logistic regression $P(y \mid \bm{x})$ on episode features to approximate risk. Maintenance interventions are modeled as explicit do-replacements $\bm{x} \mapsto \bm{x}^{\text{do}}$ on the feature vector. It outputs the risk before and after intervention ($r_{\text{before}} = 1 - P(y=\text{healthy} \mid \bm{x})$ and $r_{\text{after}} = 1 - P(y=\text{healthy} \mid \bm{x}^{\text{do}})$), and the direction of change $\Delta r$.
-5.  **EQA Builder + Prompt Builder**: Deterministically constructs questions based on the QA type, extracts answer templates, and queries the FMEA-KG to complete failure mode metadata. Evidence blocks (`fact_id`, asset, source, line number, window, key features, FMEA context) are rendered into a prompt with a strict JSON output contract (required fields: `direct_answer / reasoning_answer / provenance / confidence`; counterfactual tasks also mandate `risk_before / risk_after / direction`).
-6.  **Verifier + Safety Gate**: Compares the LLM output against the Episodic Store for structural, provenance, and counterfactual direction consistency. If verification fails, the output is flagged and routed for human review.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Operator Query (CMMS Frontend)<br/>Classify into 5 QA types: Description/Temporal/Diagnostic/Counterfactual/Action"] --> B
+    subgraph EP["Episodic Storage + Provenance Enforcement"]
+        direction TB
+        B["Fact Extractor<br/>Telemetry window [t_f−Δ, t_f] and sensor descriptors + provenance"] --> C["Episodic Store<br/>SQLite facts+features, threshold retrieval"]
+    end
+    C --> D["FMEA Knowledge Graph (Neurosymbolic Layer)<br/>63 modes × 9 assets, injects symbolic constraints"]
+    D --> E["Counterfactual Risk Simulator<br/>Polynomial logistic + do-substitution for Δr"]
+    E --> F["EQA/Prompt Builder<br/>Evidence blocks rendered as JSON contract → LLM"]
+    F --> G["Verifier + Safety Gate<br/>Structural / provenance / counterfactual direction check"]
+    G -->|Pass| H["Auditable Answer"]
+    G -->|Fail| I["Route to Human Expert"]
+```
 
 ### Key Designs
 
-1.  **FMEA Knowledge Graph as a Neurosymbolic Fusion Layer**:
-    *   **Function**: Encodes domain expert-validated failure modes, sensor signatures, and allowable interventions from ISO documents into a machine-interpretable graph, serving as a hard constraint for the LLM.
-    *   **Mechanism**: Nodes and relations cover the complete closed loop of Asset $\to$ Sub-component $\to$ Fault Mode $\to$ Sensor/Action. Failure modes output by the LLM must correspond to nodes in the KG; otherwise, they are failed by the Verifier. 96% of 1004 candidate triples were judged valid by an ISO-style textual entailment model, proving the high quality of the KG.
-    *   **Design Motivation**: Pure LLM explanations frequently cite incorrect failure modes or hallucinate sensors. A verifiable symbolic anchor is needed to constrain semantics.
+**1. FMEA Knowledge Graph as a Neurosymbolic Fusion Layer: Providing an Auditable Symbolic Anchor for Free Text**
 
-2.  **Episode-centric + Provenance Enforcement**:
-    *   **Function**: Anchors all QA tasks to discrete episodes defined by "Specific Asset + Specific Time Window" and forces the LLM to provide verifiable `fact_id / window / referenced sensors` in JSON.
-    *   **Mechanism**: The Fact Extractor generates JSONL for each episode containing provenance like source files and time ranges. The Prompt Builder instructs the LLM to "use only provided evidence." The Verifier checks the `fact_id` and feature values cited in the answer against the Episodic Store, rejecting mismatches.
-    *   **Design Motivation**: Ablation studies show that removing provenance enforcement causes the Full Pass rate to collapse from 0.89 to 0.19, shifting numerical prediction from deployable to unusable. This is the single most impactful component.
+Pure LLM explanations often cite incorrect failure modes or hallucinate sensors, lacking auditable semantic constraints. This paper encodes failure modes, sensor signatures, and allowed interventions—verified by experts according to ISO documents—into a machine-interpretable graph. Nodes cover the loop of asset class $\to$ sub-component $\to$ failure mode $\to$ sensor abstraction $\to$ maintenance action. Edges represent `affects / component_of / indicated_by / mitigated_by` relations, with rdflib injecting symbolic constraints into pipeline nodes. Failure modes output by the LLM must find corresponding nodes in the KG; otherwise, they are rejected by the Verifier.
 
-3.  **Parameterized Counterfactual Risk Simulator**:
-    *   **Function**: Converts "what-if" questions (e.g., "What if the bearing is replaced?") into explicit replacements of feature vector components, using multinomial logistic regression to output health probabilities and risk direction.
-    *   **Mechanism**: A unified $P(y \mid \bm{x})$ supports both diagnosis and counterfactuals. For counterfactuals, $\Delta r$ is calculated by changing the corresponding feature to a new value, paired with a lightweight confidence heuristic based on probability extremes. Simulator outputs are also used by the Safety Gate to filter low-confidence recommendations via thresholds.
-    *   **Design Motivation**: A baseline without the simulator achieved only 0.45 counterfactual direction accuracy (near random), indicating that LLMs cannot predict intervention effects via linguistic priors alone. The proxy model increases accuracy to 0.88-0.91.
+**2. Episode-centric + Provenance Enforcement: Linking Every Answer to a Specific Time Window**
+
+The biggest reliability gap in LLM deployment is the lack of verifiable sources. This paper anchors all QA to discrete episodes of "specific asset + specific window." The Fact Extractor produces JSONL with provenance (source file, time range, counts). Prompt instructions strictly require "using only provided evidence" and returning auditable `fact_id / window / referenced sensors` in JSON. The Verifier checks referenced `fact_id` and feature values against the Episodic Store. Removing this enforcement causes Full Pass rates to collapse from 0.89 to 0.19.
+
+**3. Parameterized Counterfactual Risk Simulator: Converting What-if Guesses into Testable Risk Calculations**
+
+For counterfactuals like "What if the bearing is replaced?", LLMs relying on language priors achieve only 0.45 direction accuracy (near random). The simulator uses a unified polynomial logistic estimator $P(y\mid\bm{x})$ to support both diagnosis and counterfactuals. For counterfactuals, it performs explicit do-substitutions $\bm{x}\mapsto\bm{x}^{\text{do}}$ on relevant feature components to calculate health probability and risk direction $\Delta r$. This simple proxy pulls counterfactual direction accuracy from 0.45 to 0.88-0.91.
 
 ### Loss & Training
 
-Only the Causal Simulator requires training: it fits a multinomial logistic regression on episode feature vectors $\bm{x}$ to learn $P(y \mid \bm{x})$, where labels $y$ are "healthy" or specific failure mode names, optimized using standard multi-class cross-entropy. Healthy episodes are sampled by selecting a central time $t$ such that no failure occurs in the subsequent $[t, t+H]$, then looking back at $[t-\Delta, t]$. The LLM components use black-box API calls (GPT-4o-mini and Claude Sonnet 4) without any fine-tuning.
+Only the Causal Simulator requires training: fitting a polynomial logistic regression on episode feature vectors $\bm{x}$ to learn $P(y \mid \bm{x})$, where $y$ is "healthy" or a failure mode name, using standard multi-class cross-entropy. Healthy episodes are sampled by selecting time $t$ where no failure occurs in $[t, t+H]$ and looking back at $[t-\Delta, t]$. The LLM components use black-box API calls (GPT-4o-mini and Claude Sonnet 4) without fine-tuning.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Four industrial datasets were used: Microsoft PdM (rotating machinery, 5716 episodes), C-MAPSS (turbofan engines, 4842), Genesis CPS (cyber-physical systems, 478), and Hydraulic (hydraulic test rig, 2205). Totaling 13k+ episodes with 12k+ Description / 11k Diagnosis / 3k Counterfactual / 3k Action Recommendation QA pairs. Ground truths were expert-verified.
+Four industrial datasets: Microsoft PdM (Rotating machinery, 5716 episodes), C-MAPSS (Turbofan engines, 4842), Genesis CPS (Cyber-physical systems, 478), and Hydraulic (Hydraulic test rig, 2205). Total 13k+ episodes and 12k+ Description / 11k Diagnostic / 3k Counterfactual / 3k Action QA pairs. Expert verification serves as ground truth.
 
-Performance gains on GPT-4o-mini from LLM-only to Full IndustryAssetEQA:
+Incremental improvements from LLM-only to Full IndustryAssetEQA on GPT-4o-mini:
 
 | Configuration | Struct.OK | Prov.OK | Label Cons. | CF Acc. | Entail.Pass | Claim Prec. |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-----------|---------|-------------|---------|-------------|-------------|
 | LLM-only | 0.42 | 0.47 | 0.62 | 0.45 | 0.08 | 0.12 |
 | + Episodic | 0.52 | 0.62 | 0.71 | 0.45 | 0.23 | 0.25 |
 | + Episodic + KG | 0.52 | 0.62 | 0.73 | 0.45 | 0.56 | 0.51 |
 | + Provenance | 0.82 | 0.83 | 0.89 | 0.45 | 0.63 | 0.59 |
 | **Full IndustryAssetEQA** | **0.88** | **0.89** | **0.94** | **0.88** | **0.72** | **0.67** |
 
-On Claude Sonnet 4, the Full system achieved Struct.OK 0.90, CF Acc. 0.91, and Entail.Pass 0.78, showing consistent trends. Counterfactual direction accuracy jumped from 0.45 to 0.88-0.91, proving that LLMs cannot resolve this without a simulator.
-
-### Ablation Study
+### Ablation Study (GPT-4o-mini)
 
 | Configuration | Entail.Pass | Full Pass | CF Acc. |
-| :--- | :--- | :--- | :--- |
+|------|-------------|-----------|---------|
 | Full IndustryAssetEQA | 0.72 | 0.89 | 0.88 |
 | w/o Risk simulator | 0.59 | 0.72 | **0.49** |
 | w/o Provenance enforcement | 0.42 | **0.19** | 0.81 |
@@ -104,51 +104,39 @@ On Claude Sonnet 4, the Full system achieved Struct.OK 0.90, CF Acc. 0.91, and E
 
 ### Key Findings
 
-*   **Provenance enforcement** provides the largest single-point gain—removing it causes the Full Pass rate to plummet from 0.89 to 0.19, meaning numerical predictions without citation verification are "hallucinated numbers" unfit for deployment.
-*   The **Risk simulator** is almost the sole source of counterfactual reasoning: without it, CF Acc. drops from 0.88 to 0.49 (near random), while its impact on Entail.Pass/Full Pass is limited, suggesting linguistic plausibility and causal direction are distinct issues.
-*   **Episodic memory** is the foundation: removing it causes all metrics to collapse (Entail.Pass 0.27, Full Pass 0.36, CF Acc. 0.34), showing that episodization is a prerequisite for other modules.
-*   **Expert Blind Review** (22 QA pairs): IndustryAssetEQA achieved a 97% answerability rate (vs. 46% for LLM-only), data grounding of 4.5/5 (vs. 3.0/5), and a severe over-assertion rate of 2% vs. 28% (Fleiss $\kappa = 0.63$). McNemar tests showed significance for Description / Diagnosis / Counterfactual ($p < 0.05$), while Action Recommendation was not significant ($p=0.93$), implying that action-related queries require more structural modeling beyond model swaps.
+- Provenance enforcement is the highest-impact component; without it, Full Pass drops from 0.89 to 0.19, meaning numerical predictions without reference checks are undeployable "hallucinated numbers."
+- The Risk simulator is the primary source of counterfactual reasoning: without it, CF Acc. drops from 0.88 to 0.49.
+- Episodic memory is the foundation: removing it causes all metrics to collapse, indicating that episodization is the prerequisite for other modules.
+- Expert blind review of 22 QA pairs: IndustryAssetEQA achieved an answerability rate of 97% (vs 46% for LLM-only) and a data grounding score of 4.5/5 (vs 3.0/5). Severe over-assertion dropped to 2% vs 28%.
 
 ## Highlights & Insights
 
-*   Redefining industrial QA from "language generation" to "embodied decision-making" is a clear paradigm shift. The four desiderata (time-situated / evidence-grounded / risk-constrained / knowledge-grounded) directly address four typical failure modes of LLM-only systems.
-*   The combination of provenance enforcement and JSON contracts is highly portable. Any LLM application can mitigate "hallucinated numbers" with minimal engineering cost by requiring models to cite checkable IDs in structured fields followed by a Verifier. This is applicable to legal, medical, and financial document QA.
-*   Using multinomial logistic regression as a "lightweight proxy causal model" is pragmatic. The authors acknowledge this is not a true structural causal model (SCM), but compared to LLM guesswork, it improves direction accuracy from 0.45 to 0.88. This provides an insight for RAG and tool-use systems: tools only need to constrain key decision dimensions of the LLM, rather than requiring heavy causal discovery.
+- Redefining industrial QA from "language generation" to "embodied decision-making" is a clear paradigm shift. The four desiderata (time-situated / evidence-grounded / risk-constrained / knowledge-grounded) directly address typical LLM-only failure modes.
+- The combination of Provenance enforcement + JSON contracts is highly transferable to other domains like legal or medical QA where "hallucinated numbers" must be blocked by post-hoc Verifiers.
+- Using polynomial logistic regression as a "lightweight proxy causal model" is pragmatic. It demonstrates that as long as tool outputs constrain the LLM's key decision dimensions, heavy causal discovery may not be necessary.
 
 ## Limitations & Future Work
 
-*   The counterfactual module is a parameterized proxy estimator rather than an identifiable SCM; it outputs surrogate risk rather than provable causal effects, which might reverse direction under distribution shifts or new fault modes.
-*   FMEA-KG has good coverage for semantic relations like `description / involves`, but weak structural relations (e.g., `sample / example`) have higher noise (<10% validation rate). It is also domain-level rather than asset-level, lacking coverage for rare fault modes.
-*   Using fixed windows for episodes might miss multi-scale or long-term precursors. Adaptive windowing remains unexplored. Evaluation is entirely offline, lacking data on real-world operator latency, reporting rates, or human-review adoption rates.
-*   The full pipeline increases engineering and runtime overhead compared to LLM-only approaches. The authors acknowledge that edge deployments or low-latency scenarios require trade-offs between confidence thresholds and retraining frequencies.
+- The counterfactual module is a parameterized proxy estimator rather than an identifiable structural causal model; outputs are surrogate risks rather than proven causal effects.
+- FMEA-KG has high coverage for semantic relations like `description/involves` but noise in structure for `sample/example` relations ( <10% validation rate).
+- Episodes use fixed windows, potentially missing multi-scale precursors; adaptive windowing remains unexplored. Evaluation is also entirely offline.
 
 ## Related Work & Insights
 
-*   **vs. LLM-only Maintenance QA**: Prior works let LLMs read documents and datasets directly. This work enforces an episode + KG + simulator loop, elevating "verifiability" to a system-level hard constraint, improving Prov.OK from 0.47 to 0.89.
-*   **vs. Time-series QA (MTBench / FailureSensorIQ, etc.)**: These feed time series to LLMs with increased reasoning budgets. This paper extracts episodic descriptors and risk proxies; its advantage lies in verifiable counterfactuals and actions, while its disadvantage is a dependency on manual FMEA knowledge.
-*   **vs. Embodied QA (MindPalace / OpenEQA, etc.)**: While these focus on perception-language alignment in 3D environments, this work ports the framework to industrial assets and temporal signals and requires decisions to pass through explicit risk models rather than purely visual reasoning.
+- **vs LLM-only Maintenance QA**: Prior works let LLMs read documents directly. This paper enforces an episode + KG + simulator closed loop, elevating "verifiability" to a system-level hard constraint.
+- **vs Temporal QA (MTBench / FailureSensorIQ)**: While they feed time series to LLMs for reasoning, this paper extracts episodic descriptors and risk proxies, making counterfactual and action questions testable.
+- **vs Embodied QA (MindPalace / OpenEQA)**: Traditional EQA focuses on 3D perception-language alignment. This work moves the framework to industrial assets and temporal signals, where decisions must pass through explicit risk models.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ Paradigm shift (language generation $\to$ embodied decision) + clear four-element decomposition, though individual components (KG, provenance, proxy models) are not entirely new.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 industrial datasets × 5 QA categories × 2 mainstream LLMs, step-by-step ablation, expert blind review, McNemar significance, and KG triple validation.
-*   Writing Quality: ⭐⭐⭐⭐ Fluent motivation and narrative; 5 RQs organize the experiments clearly. Figures are occasionally nested in text.
-*   Value: ⭐⭐⭐⭐⭐ Provides a deployable blueprint for industrial LLMs. AssetOpsBench is already integrated within IBM, offering direct lessons for "high-risk + LLM" domains.
+- Novelty: ⭐⭐⭐⭐ Framework redefinition (language $\to$ embodied decision) and 4-factor decomposition are clear, though individual components (KG/provenance) are established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 datasets × 5 QA types × 2 LLMs, plus expert blind review and significance testing.
+- Writing Quality: ⭐⭐⭐⭐ Strong motivational narrative and clear organization.
+- Value: ⭐⭐⭐⭐⭐ Provides a deployable blueprint for industrial LLMs; AssetOpsBench is already integrated within IBM.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-## Related Papers
-
-- [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
-- [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
-- [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
-- [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
-- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
-
-</div>
-
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)

@@ -2,98 +2,122 @@
 title: >-
   [Paper Note] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 description: >-
-  [CVPR 2026][Optimization][Model Merging] This paper proposes the BD-Merging framework, which trains a debiased router via Dirichlet evidential modeling, Adjacency Discrepancy Score (ADS)…
+  [CVPR 2026][Optimization & Theory][Model Merging] The authors propose the BD-Merging framework, which utilizes Dirichlet evidence modeling, Neighborhood Disparity Score (ADS), and disparity-aware contrastive learning to train a debiasing router for adaptive assignment of model merging weights. This significantly improves the robustness and generalization of merged mod
 tags:
-  - "CVPR 2026"
-  - "Optimization"
-  - "Model Merging"
-  - "Multi-Task Learning"
-  - "Evidential Deep Learning"
-  - "Distribution Shift"
-  - "Contrastive Learning"
-  - "uncertainty estimation"
+  - CVPR 2026
+  - Optimization & Theory
+  - Model Merging
+  - Multi-Task Learning
+  - Evidential Deep Learning
+  - Distribution Shift
+  - Contrastive Learning
+  - uncertainty estimation
 date: 2026-05-08
-content_hash: a82023b498606492
+content_hash: a76f365361515bee
 ---
-
 # BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.03920](https://arxiv.org/abs/2603.03920)  
-**Code**: Not available  
-**Area**: Self-Supervised Learning
+**Code**: None  
+**Area**: Optimization
 **Keywords**: Model Merging, Multi-Task Learning, Evidential Deep Learning, Distribution Shift, Contrastive Learning, uncertainty estimation
 
 ## TL;DR
 
-This paper proposes the BD-Merging framework, which trains a debiased router via Dirichlet evidential modeling, Adjacency Discrepancy Score (ADS), and discrepancy-aware contrastive learning to adaptively assign model merging weights, significantly improving the robustness and generalization of merged models under test-time distribution shifts and on unseen tasks.
+The authors propose the BD-Merging framework, which utilizes Dirichlet evidence modeling, Neighborhood Disparity Score (ADS), and disparity-aware contrastive learning to train a debiasing router for adaptive assignment of model merging weights. This significantly improves the robustness and generalization of merged models under test-time distribution shifts and unseen tasks.
 
 ## Background & Motivation
 
-**Rise of Model Merging (MM)**: Multi-task learning demands substantial data and computation, and data sharing is often prohibited by privacy constraints. Model merging integrates independently fine-tuned checkpoints to achieve multi-task capability without retraining, making it an efficient alternative.
+**Rise of Model Merging**: Multi-task learning requires substantial data and computational resources, often limited by privacy concerns regarding data sharing. Model merging has emerged as an efficient alternative by integrating independently fine-tuned checkpoints to achieve multi-task capabilities without retraining.
 
-**Neglected Reliability under Distribution Shift**: Existing MM methods generally assume that test data follows the same distribution as training or auxiliary data. In practice, however, sensor noise, transmission distortion, and environmental variation cause test-time input distribution shifts that severely degrade the performance of merged models.
+**Neglect of Reliability under Distribution Shift**: Existing model merging methods generally assume that test data follows the same distribution as training or auxiliary data. However, in real-world scenarios, factors such as sensor noise, transmission distortion, and environmental changes cause test-time input distribution shifts, severely undermining the performance of merged models.
 
-**Test-time Bias**: Experiments demonstrate that even mild natural perturbations cause significant accuracy drops across all existing methods (e.g., Task Arithmetic drops 16.8% at corruption level L3), revealing a lack of robustness to input-level noise in current approaches.
+**Test-time Bias**: Experiments demonstrate that even minor natural perturbations cause a significant drop in accuracy for all existing methods (e.g., Task Arithmetic drops by 16.8% at L3 level), indicating a lack of robustness to input-level noise.
 
-**Insufficient Generalization to Unseen Tasks**: AdaMerging achieves 90.79% on seen tasks but collapses to 49.83% on unseen tasks, exposing severe overfitting. Methods relying on auxiliary data further amplify the distribution gap when that auxiliary data is mismatched.
+**Inadequate Generalization to Unseen Tasks**: AdaMerging achieves 90.79% on seen tasks but plummets to 49.83% on unseen tasks, exposing severe overfitting. Methods relying on auxiliary data may even amplify distribution gaps when distributions are mismatched.
 
-**Lack of Fine-Grained Sample-Level Alignment**: Existing methods adjust weights only at the global or task level and cannot capture sample-level distributional discrepancies, leaving them unable to address conflicting knowledge and biased aggregation induced by heterogeneous distribution shifts.
+**Lack of Fine-grained Sample-level Alignment**: Existing methods fail to capture sample-level distribution discrepancies, adjusting weights only at a global or task level. This prevents them from addressing conflicting knowledge and biased integration caused by heterogeneous distribution shifts.
 
-**Core Insight**: Leveraging evidential uncertainty to capture distributional discrepancies and using it to guide adaptive representation alignment is the key breakthrough for addressing distribution shift in MM.
+**Key Insight**: Utilizing evidential uncertainty to capture distribution discrepancies and guiding adaptive representation alignment accordingly is the key breakthrough for solving the distribution shift problem in model merging.
 
 ## Method
 
 ### Overall Architecture
 
-BD-Merging comprises three core modules: (1) a joint evidential head based on the Dirichlet distribution that models uncertainty over a unified label space; (2) the Adjacency Discrepancy Score (ADS), which quantifies evidential alignment among neighboring samples; and (3) a discrepancy-aware contrastive learning mechanism that guides a debiased router to adaptively assign merging weights per sample. The entire pipeline requires no labeled data and operates in a fully unsupervised setting.
+BD-Merging aims to solve the performance collapse of merged models when encountering distribution shifts or unseen tasks at test time. The core idea is to first quantify the abnormality of an input and then utilize a lightweight router to dynamically adjust merging weights for each sample. Specifically, the input passes through a pre-trained backbone to extract features. An evidence head attached to the backbone outputs a set of Dirichlet concentration parameters in a unified label space, deriving evidence quantities such as belief and uncertainty. Next, the Neighborhood Disparity Score (ADS) uses these quantities to measure the inconsistency between the current sample and its neighbors, distinguishing "in-distribution normal samples" from "perturbed/unseen abnormal samples." Finally, disparity-aware contrastive learning uses ADS to partition positive and negative sample pairs to train a debiasing router. This router outputs a set of merging weights $\{w_k\}$ for each sample (or layer), weighting multiple task vectors into the final parameters $\theta^* = \theta_0 + \sum_k w_k \tau_k$. The entire process is unsupervised and requires no labels.
 
-### Key Design 1: Joint Evidential Head
+```mermaid
+graph TD
+    A["Unlabeled Auxiliary Samples<br/>Pre-trained Backbone θ₀ Extracts Token Embeddings"] --> B["Joint Evidence Head<br/>Unified Label Space Outputs Dirichlet Concentration α<br/>Obtains Belief / Uncertainty u + Inter-evidence Contrast IEC ν"]
+    B --> C["Neighborhood Disparity Score ADS<br/>Product of Three Neighborhood Factors<br/>Prediction Sharpness × Semantic Divergence × Opinion Conflicts"]
+    C -->|"Disparity Score d Quantifies Local Distribution Discrepancy"| D
+    subgraph D["Disparity-Aware Contrastive Learning & Debiasing Router"]
+        direction TB
+        D1["Partition Positive/Negative Pairs by Threshold ε<br/>Contrastive Loss: Pull Consistent, Push Conflicting"] --> D2["Debiasing Router R(H)<br/>Softmax Outputs Per-sample Weights wₖ"]
+    end
+    D --> E["Merged Parameters<br/>θ* = θ₀ + Σ wₖ·τₖ"]
+```
 
-- **Function**: An evidential head is appended to the pretrained backbone to output Dirichlet concentration parameters $\boldsymbol{\alpha}$ for each sample over the unified label space $\mathcal{Y} = \bigcup_{k=1}^{K} \mathcal{Y}_k$, from which belief mass $b_c$, uncertainty $u$, and predictive probability $p_c$ are derived.
-- **Mechanism**: An Inter-class Evidence Contrastive (IEC) metric $\nu = (S / \alpha_{\hat{c}^{(1)}}) \cdot (L / S) \cdot (\alpha_{\hat{c}^{(2)}} / \alpha_{\hat{c}^{(1)}})$ is introduced to jointly account for prediction concentration, inter-class competition, and semantic ambiguity, compensating for the inability of conventional EDL metrics (total evidence and top-class confidence) to characterize cross-task semantic shift.
-- **Design Motivation**: Test-time distribution shift amplifies semantic ambiguity in overlapping label spaces, and a single uncertainty measure is insufficient to distinguish different types of prediction failure. The IEC provides finer-grained uncertainty estimates by capturing inter-class dependencies.
+### Key Designs
 
-### Key Design 2: Adjacency Discrepancy Score (ADS)
+**1. Joint Evidence Head: Measuring "How Unreliable the Prediction Is" in Overlapping Label Spaces**
 
-- **Function**: For each sample $x_i$, a neighborhood set $\mathcal{A}_r(x_i)$ of radius $r$ is constructed in feature space, and the ADS $d_{ik}$ is computed by combining three complementary factors.
-- **Mechanism**: ADS is the product of three terms:
-    - **Prediction Sharpness**: $\mathrm{Sharp}(x_i) = \mathbb{E}_{x_j \in \mathcal{A}_r} \log(S_j / \max_c \alpha_{jc} - 1)$, measuring overall epistemic uncertainty in the neighborhood;
-    - **Semantic Divergence**: $\mathrm{Div}(x_i) = \mathbb{E}_{x_j \in \mathcal{N}_r} \| \boldsymbol{\alpha}_i / S_i - \boldsymbol{\alpha}_j / S_j \|_1$, quantifying class-level distributional deviation between the target sample and its neighbors;
-    - **Opinion Conflicts**: $\mathrm{Conf}(x_i, x_k) = \sum_c |p_{ic} - p_{kc}| \cdot (1-u_i)(1-u_k)$, characterizing belief conflicts among high-confidence samples.
-- **Design Motivation**: No single metric can comprehensively characterize local distributional discrepancy. The three-factor joint evaluation provides a unified view of local discrepancy from the dimensions of global uncertainty, semantic divergence, and confidence conflict, effectively distinguishing in-distribution samples from perturbed or unseen-task inputs.
+The most difficult aspect of test-time distribution shift is the magnification of semantic ambiguity in overlapping label spaces. A perturbed image might cause the model to oscillate between two adjacent classes. Traditional Evidential Deep Learning (EDL) only considers "total evidence" and "maximum class confidence," failing to distinguish this cross-task semantic drift. BD-Merging attaches an evidence head to the backbone, outputting Dirichlet concentration parameters $\boldsymbol{\alpha}$ in a unified label space $\mathcal{Y} = \bigcup_{k=1}^{K} \mathcal{Y}_k$, further calculating belief quality $b_c$, uncertainty $u$, and prediction probability $p_c$. A crucial enhancement is the introduction of the Inter-evidence Contrast (IEC) metric:
 
-### Key Design 3: Discrepancy-Aware Contrastive Learning and Debiased Router
+$$\nu = \frac{S}{\alpha_{\hat{c}^{(1)}}} \cdot \frac{L}{S} \cdot \frac{\alpha_{\hat{c}^{(2)}}}{\alpha_{\hat{c}^{(1)}}}$$
 
-- **Function**: Based on ADS threshold $\epsilon$, the neighborhood is partitioned into a positive set $\mathcal{M}_r^+(i)$ ($d_{ik} < \epsilon$) and a negative set $\mathcal{M}_r^-(i)$ ($d_{ik} \geq \epsilon$). A contrastive loss is constructed to pull consistent samples together and push conflicting ones apart. Simultaneously, a debiased router (two-layer MLP) is trained to compute per-sample task-level and layer-level merging weights from token embeddings of the pretrained backbone.
-- **Mechanism**: The router outputs $\{w_k\} = \mathrm{softmax}(R(\mathbf{H}))$, and the merged parameters are $\theta^* = \theta_0 + \sum_k w_k \cdot \tau_k$. Dynamic weight assignment replaces fixed-weight merging, allowing different inputs to receive different weight combinations.
-- **Design Motivation**: Fixed-weight merging tends to produce interference across heterogeneous tasks. The debiased router adaptively adjusts based on input features, reducing task interference while improving adaptability to unknown distributions.
+It integrates prediction concentration, inter-class competition, and semantic ambiguity into a single scalar. The first term assesses if the evidence for the best class stands out; the latter terms measure the contention between the second-highest and highest classes. By explicitly characterizing inter-class dependencies where the top two candidates are neck-and-neck, IEC identifies prediction failure types with finer granularity than single uncertainty metrics.
+
+**2. Neighborhood Disparity Score (ADS): Mapping Local Distribution Discrepancies via Three Perspectives**
+
+Sample-level evidence alone is insufficient; determining if a sample is "abnormal" requires comparing it with its neighbors. ADS defines a neighborhood set $\mathcal{A}_r(x_i)$ with radius $r$ for each sample $x_i$ and multiplies three complementary factors to form the disparity score $d_{ik}$. Any single factor would miss information; their combination provides a unified view of local discrepancy across uncertainty, semantics, and confidence conflicts.
+
+The first factor, Prediction Sharpness, measures the overall epistemic uncertainty of the neighborhood—whether the neighbors' predictions are "sharp":
+
+$$\mathrm{Sharp}(x_i) = \mathbb{E}_{x_j \in \mathcal{A}_r}\, \log\!\left(\frac{S_j}{\max_c \alpha_{jc}} - 1\right)$$
+
+The second factor, Semantic Divergence, quantifies the deviation in class-level distribution between the target sample and its neighbors using $L_1$ distance after normalizing concentration parameters into probabilities:
+
+$$\mathrm{Div}(x_i) = \mathbb{E}_{x_j \in \mathcal{N}_r}\, \left\| \frac{\boldsymbol{\alpha}_i}{S_i} - \frac{\boldsymbol{\alpha}_j}{S_j} \right\|_1$$
+
+The third factor, Opinion Conflicts, identifies sample pairs that are "confident but contradictory"—it is amplified only when both samples have low uncertainty ($(1-u_i)(1-u_k) \approx 1$) yet their predictions do not match:
+
+$$\mathrm{Conf}(x_i, x_k) = \sum_c |p_{ic} - p_{kc}| \cdot (1-u_i)(1-u_k)$$
+
+Following the union of these factors, in-distribution samples yield low ADS, while perturbed or unseen tasks yield significantly higher ADS, providing a clean signal for contrastive partitioning.
+
+**3. Disparity-Aware Contrastive Learning & Debiasing Router: Translating Disparity into Per-sample Weights**
+
+A common flaw in fixed-weight merging is interference between heterogeneous tasks—a single set of weights for all inputs inevitably compromises performance. BD-Merging uses ADS to drive contrastive learning: using the threshold $\epsilon$, the neighborhood is split into positive sets $\mathcal{M}_r^+(i)$ ($d_{ik} < \epsilon$, distributionally consistent) and negative sets $\mathcal{M}_r^-(i)$ ($d_{ik} \geq \epsilon$, distributionally conflicting). The contrastive loss pulls consistent representations together and pushes conflicting ones apart, reorganizing the feature space by distribution alignment. A debiasing router (two-layer MLP) is trained on top, reading backbone token embeddings $\mathbf{H}$ to output per-sample merging weights:
+
+$$\{w_{k}\} = \mathrm{softmax}\big(R(\mathbf{H})\big), \qquad \theta^* = \theta_0 + \sum_k w_k \cdot \tau_k$$
+
+Thus, each input receives a customized task vector combination. Normal samples use robust ratios, while abnormal samples are shifted by the router toward more reliable task branches. This evidence-led dynamic allocation allows the merged model to adapt to unfamiliar distributions while reducing task interference.
 
 ## Loss & Training
 
-Training proceeds in two stages:
+The training process consists of two phases:
 
-**Stage 1: Evidential Head Training**
+**Phase I: Evidence Head Training**
 
 $$\mathcal{L}_{\mathrm{Head}} = \mathcal{L}_{\mathrm{Ent}} + \gamma \mathcal{L}_{\mathrm{Inv}}$$
 
-- $\mathcal{L}_{\mathrm{Ent}}$: Entropy minimization with KL divergence regularization toward a non-informative prior, encouraging sharp predictions while avoiding overconfidence.
-- $\mathcal{L}_{\mathrm{Inv}}$: Inverse correlation loss, constraining uncertainty $u$ and IEC $\nu$ to maintain an inverse relationship.
+- $\mathcal{L}_{\mathrm{Ent}}$: Entropy minimization + KL divergence regularization toward a non-informative prior to encourage sharp predictions while avoiding overconfidence.
+- $\mathcal{L}_{\mathrm{Inv}}$: Inverse correlation loss to constrain the relationship between uncertainty $u$ and IEC $\nu$ as inversely proportional.
 
-**Stage 2: Router Training**
+**Phase II: Router Training**
 
 $$\mathcal{L}_{\mathrm{BD}} = \mathcal{L}_{\mathrm{Unsup}} + \eta \mathcal{L}_{Dis}$$
 
-- $\mathcal{L}_{\mathrm{Unsup}}$: Shannon entropy minimization to enhance the determinacy of merged predictions.
-- $\mathcal{L}_{Dis}$: Discrepancy-aware contrastive loss using ADS-partitioned positive and negative sample pairs.
+- $\mathcal{L}_{\mathrm{Unsup}}$: Shannon entropy minimization to enhance the certainty of merged predictions.
+- $\mathcal{L}_{Dis}$: Disparity-aware contrastive loss partitioning positive/negative pairs based on ADS.
 
-All regularization coefficients ($\lambda, \gamma, \eta$) are set to 0.1. Training runs for 300 epochs with a batch size of 16.
+All regularization coefficients ($\lambda, \gamma, \eta$) are set to 0.1. Training lasts for 300 epochs with a batch size of 16.
 
 ## Key Experimental Results
 
-### Main Results
-
-**Table 1: Performance under Test-Time Bias (ViT-B/32, average accuracy over 8 tasks)**
+**Table 1: Performance under Test-time Bias (ViT-B/32, Average Accuracy across 8 Tasks)**
 
 | Method | Clean | L1 (↓) | L2 (↓) | L3 (↓) |
 |------|-------|--------|--------|--------|
@@ -104,9 +128,9 @@ All regularization coefficients ($\lambda, \gamma, \eta$) are set to 0.1. Traini
 | AdaMerging w/Surgery | 84.40 | 79.02 (−6.4%) | 74.33 (−11.9%) | 70.97 (−15.9%) |
 | **BD-Merging (Layer)** | **87.15** | **83.31 (−4.4%)** | **78.78 (−9.6%)** | **75.36 (−13.5%)** |
 
-BD-Merging achieves the best performance across all corruption levels with the smallest performance degradation (only −4.4% at L1 vs. −5.9%–7.3% for other methods).
+BD-Merging performs best across all perturbation levels and exhibits the smallest performance degradation (L1 drop of only 4.4% vs 5.9%–7.3% for others).
 
-**Table 2: Seen vs. Unseen Task Generalization (4 seen + 4 unseen)**
+**Table 2: Seen vs. Unseen Task Generalization (4 Seen + 4 Unseen)**
 
 | Method | Seen Task Avg | Unseen Task Avg |
 |------|-------------|-------------|
@@ -114,11 +138,9 @@ BD-Merging achieves the best performance across all corruption levels with the s
 | Twin-Merging | 93.06 | 53.03 |
 | **BD-Merging** | **94.53** | **55.01** |
 
-BD-Merging improves accuracy on both seen and unseen tasks simultaneously, achieving the best generalization–specialization balance.
+BD-Merging improves accuracy on both seen and unseen tasks, achieving the best balance between generalization and specialization.
 
-### Ablation Study
-
-**(Clean / Corrupted L2)**
+**Table 3: Ablation Study (Clean / Corrupted L2)**
 
 | Variant | Clean | Corrupted |
 |------|-------|-----------|
@@ -128,45 +150,37 @@ BD-Merging improves accuracy on both seen and unseen tasks simultaneously, achie
 | w/o $\mathcal{L}_{Dis}$ | 83.34 (−3.81) | 74.26 (−4.52) |
 | w/o Div(·) | 85.36 (−1.79) | 76.28 (−2.50) |
 
-The debiased router is the most critical component (removal causes ~9/11 point drops), and among the three ADS factors, Div(·) contributes the most.
+The debiasing router is the most critical component (dropping ~9/11 points when removed). Among the three ADS factors, Div(·) contributes the most.
 
 ## Highlights & Insights
 
-1. **Precise Problem Formulation**: This work is the first to systematically study the reliability of model merging under test-time distribution shift, explicitly identifying test-time bias and unseen-task generalization as two major challenges.
-2. **Elegant Integration of Evidential Modeling and Contrastive Learning**: Uncertainty signals from EDL guide the positive/negative sample partition in contrastive learning, forming a closed loop — evidential modeling detects discrepancy → ADS quantifies discrepancy → contrastive learning exploits discrepancy.
-3. **Efficiency–Performance Balance**: BD-Merging approaches the performance of individually fine-tuned models while incurring substantially lower computational overhead than methods such as AdaMerging w/Surgery.
-4. **Interpretable Router**: The routing weight distributions for different unseen tasks exhibit clear task-specific patterns (e.g., concentrated allocation for Cars vs. uniform allocation for SUN397), providing intuitive interpretability.
+1.  **Precise Problem Definition**: This work is the first to systematically study the reliability of model merging under test-time distribution shifts, clearly identifying test-time bias and unseen task generalization as key challenges.
+2.  **Synergy of Evidence Modeling and Contrastive Learning**: Uncertainty signals from EDL guide the positive/negative pair partitioning in contrastive learning, creating a closed loop: evidence modeling detects disparity → ADS quantifies disparity → contrastive learning utilizes disparity.
+3.  **Efficiency-Performance Balance**: BD-Merging approaches the performance of individual fine-tuned models while maintaining significantly lower computational overhead than methods like AdaMerging w/Surgery.
+4.  **Router Interpretability**: Weight distributions for different unseen tasks exhibit clear task-specific patterns (e.g., concentrated allocation for Cars vs. uniform for SUN397), providing intuitive interpretability.
 
 ## Limitations & Future Work
 
-1. **Validation Limited to Image Classification**: All eight datasets are image classification benchmarks; validation on NLP, multimodal, and other task types is absent, leaving generalizability in question.
-2. **Neighborhood Construction Overhead**: ADS requires computing neighborhood sets in feature space, which may introduce additional computational cost for large-scale datasets; scalability is not discussed in the paper.
-3. **Hyperparameter Sensitivity**: Neighborhood radius $r$, threshold $\epsilon$, and multiple loss coefficients all require tuning. The paper uniformly sets all coefficients to 0.1, but careful adjustment may be necessary in different scenarios.
-4. **Limited Gains on Unseen Tasks**: Although BD-Merging outperforms baselines on unseen tasks (55.01% vs. 53.03%), the absolute performance still falls well below the pretrained model (56.99%), leaving significant room for improvement.
-5. **Fixed Router Architecture**: The two-layer MLP router is relatively simple; more expressive structures such as attention mechanisms or mixture-of-experts could be explored.
+1.  **Limited to Image Classification**: Evaluation is restricted to 8 image classification datasets. Validation on other modalities like NLP or multi-modal tasks is lacking, leaving generalization uncertain.
+2.  **Neighborhood Construction Overhead**: ADS requires computing neighborhood sets in feature space, which may impose additional computational burdens on large-scale datasets; scalability is not discussed.
+3.  **Hyperparameter Sensitivity**: Parameters such as neighborhood radius $r$, threshold $\epsilon$, and multiple loss coefficients require tuning. The paper uses a simple 0.1 for most coefficients, but different scenarios may require finer adjustment.
+4.  **Limited Improvement on Unseen Tasks**: Although BD-Merging outperforms baselines on unseen tasks (55.01% vs 53.03%), it remains far below the pre-trained model's performance (56.99%), leaving room for improvement.
+5.  **Fixed Router Structure**: The two-layer MLP router is relatively simple; more complex attention mechanisms or mixture-of-experts structures could be explored.
 
 ## Related Work & Insights
 
-- **Task Arithmetic / Ties-Merging / DARE**: Static weight merging methods that do not consider input-level adaptation and exhibit poor robustness under distribution shift. BD-Merging surpasses this fixed-weight paradigm through dynamic routing.
-- **AdaMerging**: Learns task- and layer-adaptive weights but optimizes on auxiliary data, leading to overfitting when the auxiliary distribution mismatches the test distribution. BD-Merging's evidence-guided mechanism models uncertainty directly on test features, reducing dependence on the auxiliary data distribution.
-- **Twin-Merging**: Dynamically integrates modular knowledge with high efficiency but limited accuracy. BD-Merging achieves a better trade-off between accuracy and efficiency.
-- **Surgery**: Improves merging quality through surgical adjustments but at high computational cost. BD-Merging achieves comparable accuracy with lower overhead.
-- **Evidential Deep Learning**: BD-Merging extends EDL from conventional OOD detection to the model merging setting, opening a new application direction for EDL.
+-   **Task Arithmetic / Ties-Merging / DARE**: Static weight merging methods that do not consider input-level adaptation, showing poor robustness under distribution shifts. BD-Merging surpasses this fixed-weight paradigm via dynamic routing.
+-   **AdaMerging**: Learns task/layer adaptive weights but is optimized based on auxiliary data, leading to overfitting when auxiliary and test distributions do not match. BD-Merging's evidence-guided mechanism models uncertainty directly on test features, reducing dependence on auxiliary data distributions.
+-   **Twin-Merging**: Efficiently integrates modular knowledge but has limited accuracy. BD-Merging achieves a better balance between precision and efficiency.
+-   **Surgery**: Improves merging quality via surgical adjustments but at a high computational cost. BD-Merging reaches similar accuracy with lower overhead.
+-   **Evidential Deep Learning**: BD-Merging extends EDL from traditional OOD detection to the model merging scenario, opening new directions for EDL applications.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introducing evidential learning into model merging and designing a closed loop of ADS and contrastive learning is conceptually novel and technically complete.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive coverage of multi-level corruption, seen/unseen tasks, ablations, router analysis, and multi-backbone validation; non-visual tasks are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, complete mathematical derivations, and rich figures; problem formulation and method presentation are well connected.
-- **Value**: ⭐⭐⭐⭐ — The first systematic study of distribution-shift robustness in MM, with important reference value for real-world deployment scenarios.
-
-## Related Papers
-
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)
-- [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
-- [\[ICML 2025\] What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models](../../ICML2025/self_supervised/what_has_a_foundation_model_found_using_inductive_bias_to_probe_for_world_models.md)
-- [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](../../NeurIPS2025/self_supervised/uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
-- [\[CVPR 2026\] MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications](momo_mars_orbital_model_foundation_model_for_mars_orbital_applications.md)
+-   **Novelty**: ⭐⭐⭐⭐ — Introduces evidence learning to model merging and designs a closed loop of ADS + contrastive learning; the approach is novel and the engineering is complete.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐ — Extensive coverage of multi-level perturbations, seen/unseen tasks, ablations, router analysis, and multi-backbone validation, though lacking non-vision tasks.
+-   **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, complete derivations, and rich visualizations; the transitions between problem definition and methodology are smooth.
+-   **Value**: ⭐⭐⭐⭐ — The first systematic study of MM distribution shift robustness, offering significant reference value for real-world deployment.
 
 <!-- RELATED:START -->
 

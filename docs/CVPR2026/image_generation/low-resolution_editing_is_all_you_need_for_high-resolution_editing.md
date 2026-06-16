@@ -2,130 +2,143 @@
 title: >-
   [Paper Note] Low-Resolution Editing is All You Need for High-Resolution Editing
 description: >-
-  [CVPR 2026][Image Generation][High-resolution image editing] ScaleEdit is the first work to formally define the high-resolution image editing task. It learns a 1×1 convolutional transfer function in the intermediate feat…
+  [CVPR 2026][Image Generation][Diffusion Model] ScaleEdit introduces the first formalization of high-resolution image editing. It achieves high-quality editing at 2K or even 8K resolution via test-time optimization by learning a $1 \times 1$ convolutional transfer function in the intermediate feature space of pre-trained generative models to inject fine-grained text
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "High-resolution image editing"
-  - "test-time optimization"
-  - "detail transfer function"
-  - "patch synchronization"
-  - "diffusion models"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 984ebec0c54a0aeb
+content_hash: 3c7bb4c1f265b430
 ---
-
 # Low-Resolution Editing is All You Need for High-Resolution Editing
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.19945](https://arxiv.org/abs/2511.19945)  
 **Code**: None  
-**Area**: Diffusion Models / Image Editing
-**Keywords**: High-resolution image editing, test-time optimization, detail transfer function, patch synchronization, diffusion models
+**Area**: Diffusion Models / Image Editing  
+**Keywords**: High-Resolution Image Editing, Test-Time Optimization, Detail Transfer Function, Patch Synchronization, Diffusion Models
 
 ## TL;DR
-ScaleEdit is the first work to formally define the high-resolution image editing task. It learns a 1×1 convolutional transfer function in the intermediate feature space of a pretrained generative model to inject fine-grained textural details from the source image, and employs a Blended-Tweedie-based patch synchronization strategy to ensure global consistency. Operating entirely via test-time optimization, the method achieves high-quality editing at resolutions up to 2K and even 8K.
+ScaleEdit introduces the first formalization of high-resolution image editing. It achieves high-quality editing at 2K or even 8K resolution via test-time optimization by learning a $1 \times 1$ convolutional transfer function in the intermediate feature space of pre-trained generative models to inject fine-grained textures from the source image, combined with a Blended-Tweedie-based patch synchronization strategy to ensure global consistency.
 
 ## Background & Motivation
 
-1. **Background**: Text-driven image editing methods (e.g., Step1X-Edit, ICEdit, KV-Edit, Nano Banana) have achieved impressive results at low resolutions (≤1K), but are constrained by the input resolution of pretrained models and cannot directly handle larger images.
+1. **Background**: Text-driven image editing methods (e.g., Step1X-Edit, ICEdit, KV-Edit, Nano Banana) have achieved excellent results at low resolutions ($\le 1$K) but are limited by the input resolution of pre-trained models, preventing direct processing of larger images.
 
-2. **Limitations of Prior Work**: A naive solution is to perform low-resolution editing followed by super-resolution; however, super-resolution methods cannot recover the micro-level textural details present in the source image, since the editing process is never conditioned on the high-resolution source—detail information is lost during downsampling and cannot be reconstructed from the low-resolution edited result.
+2. **Limitations of Prior Work**: Naive solutions involving low-resolution editing followed by super-resolution (SR) fail to recover micro-textures from the source image. This is because the editing process is not conditioned on the high-resolution source, leading to detail loss during downsampling that cannot be reconstructed from the low-resolution edited result.
 
-3. **Key Challenge**: High-resolution editing requires simultaneously preserving semantic correctness and fine-grained texture fidelity, yet pretrained generative models operate at a fixed resolution (typically $512^2$), making direct high-resolution inference infeasible.
+3. **Key Challenge**: High-resolution editing requires maintaining both semantic correctness and fine-grained texture fidelity. However, because the resolution of pre-trained generative models is fixed (typically $512^2$), direct operation at high resolution is infeasible.
 
-4. **Goal**: How can the strong priors of low-resolution editing methods be leveraged while faithfully preserving the fine-grained details present in the high-resolution source image?
+4. **Goal**: How can strong priors from low-resolution editing methods be utilized while faithfully preserving fine details from high-resolution source images?
 
-5. **Key Insight**: The key observation is that the low-resolution and high-resolution diffusion trajectories share a learnable mapping in the intermediate feature space of the diffusion process. A lightweight feature transfer function can learn this mapping and inject high-resolution details into the low-resolution editing result.
+5. **Key Insight**: A core observation is that low-resolution trajectories and high-resolution trajectories exhibit a learnable mapping relationship in the intermediate feature space of the diffusion process. By learning this mapping via a lightweight feature transfer function, high-resolution details can be injected into low-resolution editing outputs.
 
-6. **Core Idea**: A learnable 1×1 convolution is used as the feature transfer function to inject fine-grained details from the high-resolution source image into the generation trajectory of the low-resolution editing result during the reverse diffusion process. Non-overlapping patch synchronization is applied to eliminate boundary artifacts.
+6. **Core Idea**: Using a learnable $1 \times 1$ convolution as a feature transfer function, fine details from the high-resolution source image are injected into the generation trajectory of the low-resolution edit during inverse diffusion, complemented by non-overlapping patch synchronization to eliminate boundary artifacts.
 
 ## Method
 
 ### Overall Architecture
-Given a high-resolution source image $I_{\text{src}}^{\text{high}}$, its downsampled counterpart $I_{\text{src}}^{\text{low}}$, and a low-resolution edited reference $I_{\text{ref}}^{\text{low}}$ (produced by a standard editing method such as Nano Banana), the goal is to generate a high-resolution edited result $I_{\text{ref}}^{\text{high}}$. The method proceeds in three steps: (1) all images are divided into $N \times M$ non-overlapping patches matching the model's native resolution, and diffusion trajectories for each patch are extracted via the DDIM forward process; (2) a feature transfer function is learned for each patch to inject high-resolution source details into the edited result; (3) adjacent patches are synchronized via Blended-Tweedie combined with a resampling strategy to eliminate boundary artifacts.
+ScaleEdit addresses the problem where pre-trained models only accept $512^2$ inputs while the target images are 2K or 8K, requiring the preservation of micro-textures that vanish upon downsampling. The solution splits the large image into non-overlapping patches equal to the model's native resolution, allowing each patch to be processed by the original model, while subsequently restoring details and inter-patch consistency.
+
+The pipeline begins with three inputs: the high-resolution source $I_{\text{src}}^{\text{high}}$, its downsampled version $I_{\text{src}}^{\text{low}}$, and a low-resolution reference $I_{\text{ref}}^{\text{low}}$ edited via standard methods like Nano Banana. The process follows three steps: first, each image is divided into $N \times M$ patches, and the diffusion trajectories are extracted via the DDIM forward process; second, a feature transfer function is learned for each patch to "pour" high-resolution source details into the editing trajectory; finally, Blended-Tweedie with resampling is employed to smooth the seams between adjacent patches. This process involves no network training and instead relies entirely on test-time optimization for each image.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Three Inputs<br/>High-res Source / Downsampled Source / Low-res Ref Edit"] --> B["Split into 512² Non-overlapping Patches<br/>Extract Trajectories via DDIM Forward"]
+    B --> C["Detail Enhancement Module<br/>1×1 Conv Transfer Function Injects High-res Texture (first τ steps)"]
+    C --> D["Blended-Tweedie Sync<br/>Boundary-spanning Auxiliary Latents Smooth Seams"]
+    C --> E["Resampling Strategy<br/>Provides Fallback for Auxiliary Latents without Transfer Functions"]
+    E --> D
+    D --> F["Denoised Patches Stitched Back<br/>2K / 8K Edited Result"]
+```
 
 ### Key Designs
 
-1. **Detail Enhancement Module**:
+**1. Detail Enhancement Module: Injecting Source Textures into Edits**
 
-    - **Function**: Transfers fine-grained textural details from the high-resolution source image into the edited target image.
-    - **Mechanism**: A timestep-conditioned transfer function $\Delta\mathbf{h}_t[i] = \phi_\theta(\mathbf{h}_t[i], t)$ is defined in the intermediate feature space of the pretrained generative model, implemented as a 1×1 convolution. The optimization objective guides the low-resolution source generation trajectory toward the high-resolution source trajectory: $\mathcal{L} = \|\mathbf{x}_{t-1}^{high}[i] - f^{rev}(\tilde{\mathbf{x}}_t[i], t; \Delta\mathbf{h}_t[i])\|_2^2$. The optimized transfer function is then applied during the reverse process of the reference image to inject details. A control parameter $\tau$ restricts the transfer function to the first $\tau$ timesteps, balancing detail transfer against content preservation.
-    - **Design Motivation**: Using a constant feature offset cannot handle edits with large semantic changes (e.g., cat→dog), as different image regions require different degrees of adjustment. A 1×1 convolution enables channel-wise adaptive blending, achieving fine-grained detail transfer while preserving spatial layout.
+Low-resolution editing provides correct semantics but loses micro-textures—a failure point for "edit-then-SR" pipelines since details lost during downsampling cannot be hallucinated accurately. ScaleEdit attaches a timestep-dependent transfer function $\Delta\mathbf{h}_t[i]=\phi_\theta(\mathbf{h}_t[i],t)$ in the intermediate feature space, implemented as a lightweight $1 \times 1$ convolution. The optimization objective is to align the low-res source trajectory with the high-res source trajectory:
 
-2. **Blended-Tweedie Synchronization**:
+$$\mathcal{L}=\big\|\mathbf{x}_{t-1}^{high}[i]-f^{rev}(\tilde{\mathbf{x}}_t[i],t;\Delta\mathbf{h}_t[i])\big\|_2^2$$
 
-    - **Function**: Ensures visual consistency at the boundaries between adjacent patches.
-    - **Mechanism**: An auxiliary latent $\tilde{\mathbf{A}}_t[i,i+1]$ is constructed by concatenating the lower half of the current patch and the upper half of the adjacent patch. The Tweedie estimate $\hat{\mathbf{x}}_{t\to 0}^{aux}$ of this auxiliary latent is computed and linearly interpolated with the Tweedie estimates of the original patches. The blending weight $\mathbf{M}(v,t) = \frac{2v}{H_p} \cdot (1 - t/\tau)$ increases linearly from the boundary toward the patch center and grows stronger as the timestep advances.
-    - **Design Motivation**: Independently denoised patches produce discontinuities at boundaries. The auxiliary latent spans the boundary region, and its Tweedie estimate naturally captures a smoother transition; blending it with the original patches achieves inter-patch consistency.
+The learned transfer function is then applied to the reverse denoising process of the reference image to inject details. A $1 \times 1$ convolution is used instead of a constant vector because large semantic edits (e.g., cat $\to$ dog) require spatially varying feature adjustments; the $1 \times 1$ convolution adaptively mixes features per-channel, preserving spatial layout while enabling fine-grained adjustment. A control parameter $\tau$ ensures the transfer function only operates during the first $\tau$ steps, balancing detail injection and content preservation.
 
-3. **Resampling Strategy**:
+**2. Blended-Tweedie Synchronization: Ensuring Inter-patch Consistency**
 
-    - **Function**: Addresses the absence of a corresponding transfer function $\Delta\mathbf{h}_t$ for the auxiliary latent.
-    - **Mechanism**: A single forward step (without the transfer function) is applied to the detail-injected latent $\tilde{\mathbf{y}}_{t-1}[i]$: $\tilde{\mathbf{y}}_t^{rsp}[i] = f^{fwd}(\tilde{\mathbf{y}}_{t-1}[i], t-1)$, producing a resampled latent that retains injected details without depending on $\Delta\mathbf{h}_t$. This resampled latent is then used to construct the auxiliary latent for synchronization, and the actual reverse step is completed using the blended Tweedie estimate combined with the noise prediction from the resampled latent.
-    - **Design Motivation**: Optimizing a separate transfer function for the auxiliary latent would be computationally prohibitive. Resampling decouples synchronization from detail injection, requiring only one additional forward and reverse operation.
+When patches are denoised independently, visible seams appear at boundaries. ScaleEdit constructs auxiliary latents $\tilde{\mathbf{A}}_t[i,i+1]$ by joining the bottom of one patch with the top of an adjacent one. Since this auxiliary latent spans the boundary during denoising, its Tweedie one-step estimate $\hat{\mathbf{x}}_{t\to 0}^{aux}$ naturally provides smoother transitions. This is then linearly blended with the individual Tweedie estimates of the original patches using a weight:
+
+$$\mathbf{M}(v,t)=\frac{2v}{H_p}\cdot\Big(1-\frac{t}{\tau}\Big)$$
+
+The weight increases as the pixel position $v$ moves from the patch center to the boundary and strengthens as the timestep $t$ decreases. This "welds" the boundaries while leaving the center regions largely unaffected.
+
+**3. Resampling Strategy: Decoupling Sync and Transfer Functions**
+
+Auxiliary latents are temporary constructs and lack a corresponding transfer function $\Delta\mathbf{h}_t$, while optimizing functions for them would be computationally expensive. ScaleEdit bypasses this by first taking a detail-injected latent $\tilde{\mathbf{y}}_{t-1}[i]$ and performing a forward step without the transfer function: $\tilde{\mathbf{y}}_t^{rsp}[i]=f^{fwd}(\tilde{\mathbf{y}}_{t-1}[i],t-1)$. This produces a resampled latent that retains details but is no longer dependent on $\Delta\mathbf{h}_t$. Synchronization is then performed using these resampled latents, decoupling sync from detail injection at the cost of one extra forward-reverse pair.
+
+### A Full Example
+Processing a 2K source: The image is split into approximately $4 \times 4 = 16$ non-overlapping patches of $512^2$ resolution. DDIM forward trajectories are extracted (Total $T=50$). During the first $\tau=15$ steps, each patch optimizes its own $1 \times 1$ conv transfer function to inject high-res textures. Simultaneously, auxiliary latents at the boundaries of adjacent patches are used with Blended-Tweedie to eliminate seams. After 15 steps, the transfer functions are disabled, and the remaining 35 steps perform standard denoising. Stitched back together, the results yield a 2K edit with preserved micro-textures and no visible seams.
 
 ### Loss & Training
 
-ScaleEdit operates entirely via test-time optimization with no training required. The transfer function is optimized independently for each patch at each timestep. Stable Diffusion v2.1-base or FLUX.1-dev is used as the backbone, with total timesteps $T=50$, $\tau=15$, and an empty prompt. Null-text inversion is employed for accurate reconstruction. Low-resolution editing is performed using the Nano Banana method.
+ScaleEdit uses pure test-time optimization and requires no training. Transfer functions are optimized independently for each patch and timestep. The implementation uses Stable Diffusion v2.1-base or FLUX.1-dev with $T=50$, $\tau=15$, and null prompts. Accurate reconstruction is ensured via Null-text inversion, and Nano Banana is used for the initial low-resolution edit.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | HaarPSI↑ | M-MSE↓ | M-SSIM↑ | M-PSNR↑ | LPIPS↓ |
-|--------|---------|--------|---------|---------|--------|
+|------|---------|--------|---------|---------|--------|
 | **1K-editing** | | | | | |
 | DiT-SR | 0.335 | 0.058 | 0.695 | 21.53 | 0.477 |
 | PiSA-SR | 0.328 | 0.058 | 0.668 | 21.27 | 0.465 |
-| **ScaleEdit (Ours)** | **0.342** | **0.054** | **0.739** | **22.13** | **0.460** |
+| **Ours** | **0.342** | **0.054** | **0.739** | **22.13** | **0.460** |
 | **2K-editing** | | | | | |
 | DiT-SR | 0.316 | 0.057 | 0.754 | 21.38 | 0.507 |
 | PiSA-SR | 0.312 | 0.056 | 0.755 | 21.32 | 0.472 |
-| **ScaleEdit (Ours)** | **0.331** | **0.053** | **0.806** | **21.96** | **0.496** |
+| **Ours** | **0.331** | **0.053** | **0.806** | **21.96** | **0.496** |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|---------------|-----------|------|
-| Without synchronization | Visible boundary artifacts | Independent patch denoising produces noticeable seams |
-| With synchronization | Smooth, natural boundaries | Blended-Tweedie + resampling eliminates artifacts |
-| Constant vector vs. 1×1 convolution | Latter significantly better | Spatially adaptive transfer function is more robust |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| W/o Sync | Visible boundary artifacts | Independent denoising produces obvious seams |
+| W/ Sync | Smooth boundaries | Blended-Tweedie + Resampling eliminates artifacts |
+| Constant Vector vs. 1×1 Conv | Latter is significantly better | Spatially adaptive transfer functions are more robust |
 
 ### Key Findings
 
-- ScaleEdit consistently outperforms super-resolution baselines on all metrics, validating the argument that an "edit-then-upscale" pipeline cannot recover source image details.
-- The advantage is especially pronounced on masked metrics (M-MSE, M-SSIM, M-PSNR), indicating that the method better preserves regions of the source image that should remain unchanged.
-- The method generalizes to Transformer-based architectures such as FLUX and is not restricted to U-Net backbones.
-- The approach scales to 8K resolution editing without any additional training.
+- ScaleEdit consistently outperforms SR baseline methods, validating that the "edit-then-SR" pipeline cannot recover original source details.
+- Advantages in Masked metrics (M-MSE, M-SSIM, M-PSNR) are particularly significant, indicating better preservation of regions intended to remain unchanged.
+- The method generalizes to Transformer architectures like FLUX and is not limited to U-Net.
+- Scalability to 8K resolution is demonstrated without additional training.
 
 ## Highlights & Insights
 
-- ScaleEdit is the first work to formally define the high-resolution image editing task and distinguish it from naive "edit + super-resolution" pipelines.
-- The transfer function design is elegant—a 1×1 convolution performs channel-wise adaptive blending in feature space, achieving both efficiency and effectiveness.
-- The non-overlapping synchronization strategy substantially reduces computational overhead compared to traditional overlapping inference approaches, whose cost scales with the overlap ratio.
-- The test-time optimization framework requires no training data and is compatible with arbitrary editing methods and generative models.
+- Formalizes the high-resolution image editing task for the first time, distinguishing it from simple "edit + SR" pipelines.
+- Clever transfer function design using $1 \times 1$ convolutions allows for channel-wise adaptive mixing in feature space, being both lightweight and effective.
+- The non-overlapping synchronization strategy significantly reduces computational overhead compared to traditional overlapping inference methods.
+- The test-time optimization framework requires no training data and is compatible with various editing methods and generative models.
 
 ## Limitations & Future Work
 
-- Test-time optimization must be performed independently for each image, resulting in slow inference due to repeated forward, reverse, and iterative optimization steps.
-- The hyperparameter $\tau$ requires manual tuning to balance detail transfer against content preservation.
-- The method depends on the quality of the low-resolution edited result—if the low-resolution editing fails, the high-resolution output cannot be recovered.
-- Patch size is fixed to the model's native resolution, offering no flexibility in adjustment.
-- Results are demonstrated only for Stable Diffusion and FLUX; generalization to other architectures remains unverified.
+- Inference is relatively slow due to the per-image optimization (requiring multiple forward/reverse and optimization iterations).
+- The hyperparameter $\tau$ needs manual tuning to balance detail transfer and content preservation.
+- Performance depends on the quality of the low-resolution edit; if the low-res edit fails, the high-res result cannot be salvaged.
+- Patch size is fixed to the model's native resolution and lacks flexibility.
+- Evaluated primarily on Stable Diffusion and FLUX; other architectures remain unverified.
 
 ## Related Work & Insights
 
-- The design of the transfer function draws inspiration from Null-text inversion, which aligns forward and reverse trajectories by optimizing learnable parameters.
-- The challenge of patch synchronization also arises in video diffusion and panoramic image generation; the proposed Blended-Tweedie strategy may have broader applicability in those settings.
-- High-resolution content creation is an industry-critical need that has received insufficient attention in the academic community.
+- The transfer function design draws inspiration from Null-text inversion by optimizing learnable parameters to align forward and reverse trajectories.
+- Challenges in patch synchronization are common in video diffusion and panorama generation; the Blended-Tweedie strategy may have broader applications.
+- High-resolution content creation is a major industrial demand that has been under-addressed in academia.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First formal definition of the high-resolution editing task; novel transfer function design and non-overlapping synchronization strategy.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers quantitative, qualitative, ablation, and 8K demonstrations, though the dataset scale is limited (100 source images).
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Problem definition is clear, methodological derivation is rigorous, and figures are well-crafted.
-- **Value**: ⭐⭐⭐⭐ High-resolution editing addresses a practical need; the general-purpose framework can serve as a plug-and-play solution.
+- Novelty: ⭐⭐⭐⭐⭐ First to define high-res editing; novel transfer function and sync strategy.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Quantitative, qualitative, ablation, and 8K demos, though the dataset is small (100 images).
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, rigorous derivation, and high-quality illustrations.
+- Value: ⭐⭐⭐⭐ Addresses a practical need with a plug-and-play framework.
 
 <!-- RELATED:START -->
 
@@ -133,11 +146,11 @@ ScaleEdit operates entirely via test-time optimization with no training required
 
 ## Related Papers
 
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
+- [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
+- [\[ECCV 2024\] You Only Need One Step: Fast Super-Resolution with Stable Diffusion via Scale Distillation](../../ECCV2024/image_generation/you_only_need_one_step_fast_super-resolution_with_stable_diffusion_via_scale_dis.md)
 - [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
-- [\[ICML 2026\] You Don't Need All That Attention: Surgical Memorization Mitigation in Text-to-Image Diffusion Models](../../ICML2026/image_generation/you_dont_need_all_that_attention_surgical_memorization_mitigation_in_text-to-ima.md)
-- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](../../ICLR2026/image_generation/eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
+- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

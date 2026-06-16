@@ -2,68 +2,71 @@
 title: >-
   [Paper Note] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 description: >-
-  [ACL 2026][LLM Efficiency][Sliding Window Attention] Ours proposes BOSCH, a training-free attention-head level SWA hybridization method. It models SWA head selection as a Large Neighborhood Search problem and decomposes…
+  [ACL 2026][LLM Efficiency][KV-Cache] The authors propose BOSCH, a training-free mixture-of-SWA method at the attention-head level. It models the SWA head selection as a Large Neighborhood Search (LNS) problem and decomposes it into a three-stage optimization (Layer Importance Probing → Adaptive Rate Assignment → Grouped Head Selection). It systematically
 tags:
-  - "ACL 2026"
-  - "LLM Efficiency"
-  - "Sliding Window Attention"
-  - "Attention-Head Selection"
-  - "Black-Box Optimization"
-  - "Large Neighborhood Search"
-  - "KV-Cache"
+  - ACL 2026
+  - LLM Efficiency
+  - KV-Cache
 date: 2026-05-08
-content_hash: 8e7b167f0774fad8
+content_hash: c843f90a6c4165f2
 ---
-
 # BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.05942](https://arxiv.org/abs/2604.05942)  
 **Code**: None  
 **Area**: LLM Efficiency / Attention Optimization  
-**Keywords**: Sliding Window Attention, Attention-Head Selection, Black-Box Optimization, Large Neighborhood Search, KV-Cache
+**Keywords**: Sliding Window Attention, Attention Head Selection, Black-Box Optimization, Large Neighborhood Search, KV-Cache
 
 ## TL;DR
-Ours proposes BOSCH, a training-free attention-head level SWA hybridization method. It models SWA head selection as a Large Neighborhood Search problem and decomposes it into a three-stage optimization (Layer Sensitivity Probing → Adaptive Ratio Allocation → Grouped Head Selection), systematically outperforming layer-wise heuristics and six static head-level methods across four models and four ratio settings.
+The authors propose BOSCH, a training-free mixture-of-SWA method at the attention-head level. It models the SWA head selection as a Large Neighborhood Search (LNS) problem and decomposes it into a three-stage optimization (Layer Importance Probing → Adaptive Rate Assignment → Grouped Head Selection). It systematically outperforms layer-level heuristics and six static head-level methods across four models and four ratio settings.
 
 ## Background & Motivation
 
-**Background**: Post-training hybridization reduces KV-Cache usage and improves latency by replacing part of self-attention with Sliding Window Attention (SWA). Existing hybridization schemes mainly operate at the layer level (e.g., alternating, BME patterns) or head level based on static rankings.
+**Background**: Post-training hybridization reduces KV-Cache usage and improves latency by replacing a portion of self-attention with Sliding Window Attention (SWA). Existing schemes primarily operate at the layer level (e.g., alternating or BME patterns) or the head level based on static rankings.
 
-**Limitations of Prior Work**: Layer-wise schemes ignore the fact that different heads within the same layer route local and global dependencies separately—switching an entire layer removes critical global information. Static head-level methods (which rank all heads' local/global degree first and then convert the most local heads according to a ratio) suffer from the "entanglement problem": a head's estimated local/global behavior before hybridization may change after hybridization, leading to suboptimal selection.
+**Limitations of Prior Work**: Layer-level schemes ignore the reality that different heads within the same layer route local and global dependencies separately—switching an entire layer may remove critical global information. Static head-level methods (which rank heads by their degree of locality/globality first, then convert the most local heads) suffer from the "entanglement problem": a head's estimated behavior before hybridization may change after hybridization, leading to suboptimal selection.
 
-**Key Challenge**: The head-level search space is enormous (modern LLMs have hundreds to thousands of heads), making direct black-box optimization algorithms infeasible—each evaluation is expensive, and the probability of improvement from a single-bit flip decreases at a rate of ~1/N as dimensionality grows. Methods like MADS exhibit sharp efficiency declines when exceeding approximately 50 variables.
+**Key Challenge**: The head-level search space is massive (modern LLMs have hundreds to thousands of heads), making direct black-box optimization algorithms infeasible. Each evaluation is expensive, and the probability of improvement via single-bit flips decreases at a rate of $\sim 1/N$ as dimensions grow. Methods like MADS experience a sharp drop in efficiency when exceeding approximately 50 variables.
 
-**Goal**: To find an SWA head selection scheme superior to both layer-wise heuristics and static head-level methods within a practical evaluation budget.
+**Goal**: To find an SWA head selection scheme that outperforms both layer-level heuristics and static head-level methods within a practically feasible evaluation budget.
 
-**Key Insight**: The problem is modeled as a Large Neighborhood Search (LNS), decomposing the high-dimensional search space into three low-dimensional sub-problems.
+**Key Insight**: Model the problem as Large Neighborhood Search (LNS) and decompose the high-dimensional search space into three low-dimensional sub-problems.
 
-**Core Idea**: Instead of searching all heads directly, the method first probes layer importance, then allocates SWA ratios per layer, and finally optimizes head selection jointly within layer groups sharing the same ratio—keeping the number of variables in each sub-problem within a range manageable by black-box optimization.
+**Core Idea**: Instead of searching all heads directly, the method first probes layer importance, then assigns differentiated SWA ratios to each layer, and finally optimizes head selection jointly within layer groups sharing the same ratio. Each sub-problem's variable count is controlled within the range manageable by black-box optimization.
 
 ## Method
 
 ### Overall Architecture
-BOSCH models SWA head selection as a constrained binary black-box optimization problem: $\min_{z \in \{0,1\}^N} \mathcal{L}(\mathcal{M}, z, \mathcal{D})$, where the SWA head ratio is constrained to target $\rho$. It sequentially solves three sub-problems via Large Neighborhood Search decomposition.
+BOSCH addresses a high-dimensional constrained binary optimization problem: selecting a subset of $N$ attention heads to replace with SWA to minimize performance loss while meeting a total SWA ratio target $\rho$, formalized as $\min_{z \in \{0,1\}^N} \mathcal{L}(\mathcal{M}, z, \mathcal{D})$. Since direct black-box search on thousands of heads is infeasible, BOSCH adopts the Large Neighborhood Search (LNS) strategy to decompose this massive space into three low-dimensional sub-problems solved sequentially: probing layer sensitivity to localization, assigning differentiated SWA ratios, and optimizing specific head selection within groups. The input is a pre-trained model and a target ratio; the output is a global head selection mask that satisfies the budget with optimal performance.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Pre-trained Model + Target SWA Ratio ρ"] --> B["Layer Importance Probing<br/>Top-to-bottom cascaded search, convert ⌈ρH⌉ heads per layer"]
+    B --> C["Result: Per-layer best score vector s_best ∈ ℝ^L"]
+    C --> D["Adaptive Rate Assignment<br/>Calculate drop δ → weight w_ℓ, map to ratio r_ℓ via binning"]
+    D --> E["Shift layers between adjacent bins to precisely meet global budget ρ"]
+    E --> F["Multi-layer Head Selection<br/>Group layers by ratio, concatenate head indices for joint optimization"]
+    F -->|Driven by Loss L = −Ŝ + α(ρ(z)−ρ)²| G["Commit to Global Head Selection Mask z ∈ {0,1}^N"]
+```
 
 ### Key Designs
 
-1.  **Stage 1: Layer Sensitivity Probing**:
-    - **Function**: Evaluates the sensitivity of each layer to attention head localization.
-    - **Mechanism**: Iterates from the top layer to the bottom layer, using a small-budget black-box search at each layer to convert $\lceil \rho H \rceil$ heads to SWA and recording the best score. During each layer's search, upper layers are already localized, forming a cascaded evaluation. The output is a vector of optimal scores for each layer $s_{best} \in \mathbb{R}^L$.
-    - **Design Motivation**: To provide data-driven layer sensitivity information for subsequent adaptive ratio allocation.
+**1. Stage 1: Layer Importance Probing — Measuring sensitivity via cascaded search**
 
-2.  **Stage 2: Adaptive Ratio Allocation**:
-    - **Function**: Assigns differentiated SWA ratios to each layer based on layer sensitivity.
-    - **Mechanism**: Calculates the performance drop $\delta$ of each layer relative to the original model, converting this into weights $w_\ell \in [0,1]$ (lower values indicate easier localization). Layers are sorted by weight and mapped into buckets for coarse-grained localization ratios, with layers moved between adjacent buckets to satisfy global budget constraints.
-    - **Design Motivation**: Tolerance for localization varies significantly across layers; a unified ratio would waste budget on "easy" layers or harm "difficult" ones.
+The first step answers "which layers are sensitive to localization." BOSCH iterates from the top layer to the bottom. For each layer, it uses a small-budget black-box search to convert $\lceil \rho H \rceil$ heads to SWA and records the best score. Since the layers above it have already been localized when searching a specific layer, this forms a cascaded evaluation. The resulting scores reflect the true cost of localizing a layer given the existing context of localization. This provides a data-driven basis for differentiated budget allocation.
 
-3.  **Stage 3: Multi-layer Head Selection**:
-    - **Function**: Jointly optimizes binary decisions for heads within each ratio group.
-    - **Mechanism**: Groups layers sharing the same ratio and processes them in order from easiest to hardest to localize. Within each group, head selections for all constituent layers are optimized jointly (by concatenating head indices), converting $\lceil r_\ell H \rceil$ heads per layer to SWA. Once a group is processed, the results are committed to a global mask before moving to the next group.
-    - **Design Motivation**: The number of variables per group is controlled within the range manageable by black-box optimization, while intra-group joint optimization captures inter-layer interactions.
+**2. Stage 2: Adaptive Rate Assignment — Skewing budget toward resilient layers**
+
+Performance tolerance for localization varies significantly across layers. A uniform ratio either wastes the margin of easy layers or overwhelms difficult ones. BOSCH calculates the performance drop $\delta$ relative to the original model, converts this to a weight $w_\ell \in [0,1]$ (lower values indicate easier localization), and sorts layers into bins mapped to coarse ratio levels. By shifting layers between adjacent bins, it precisely satisfies the global budget $\rho$, ensuring "easier" layers carry more SWA load.
+
+**3. Stage 3: Multi-layer Head Selection — Joint optimization to capture inter-layer interactions**
+
+Finally, the method focuses on specific heads. Layers sharing the same ratio are grouped and processed from easiest to hardest. Within a group, instead of independent selection, BOSCH concatenates the head indices of all layers in the group for joint binary decision optimization. This approach keeps the variable count within the effective range of black-box optimization while capturing layer-to-layer interactions rather than treating them as independent.
 
 ### Loss & Training
-A normalized loss function is used: $\mathcal{L} = -\hat{\mathcal{S}} + \alpha(\rho(z) - \rho)^2$, with the performance of full SWA and full attention models serving as normalization anchors. For GQA models, same-group heads are forced to make identical decisions (otherwise KV-Cache is not saved).
+The search is driven by a normalized loss function: $\mathcal{L} = -\hat{\mathcal{S}} + \alpha(\rho(z) - \rho)^2$. The first term normalizes the score using the performance of all-SWA and all-attention models as anchors, while the second term is a quadratic penalty for deviating from the target ratio. Additionally, for GQA models, BOSCH enforces identical decisions for heads within the same group to ensure actual KV-Cache savings.
 
 ## Key Experimental Results
 
@@ -71,56 +74,56 @@ A normalized loss function is used: $\mathcal{L} = -\hat{\mathcal{S}} + \alpha(\
 
 | Method | ρ=0.25 | ρ=0.5 | ρ=0.75 | ρ=0.875 |
 | :--- | :--- | :--- | :--- | :--- |
-| BOSCH (8B) | 98.9 | 90.3 | 72.7 | 42.5 |
+| **Ours (BOSCH, 8B)** | **98.9** | **90.3** | **72.7** | **42.5** |
 | Fisher (Prev. SOTA, 8B) | 94.2 | 89.3 | 63.4 | 29.0 |
-| RAND (Layer-wise, 8B) | 45.9 | 15.4 | 12.8 | 13.2 |
-| BME (Layer-wise, 8B) | 30.8 | 12.4 | 12.2 | 12.7 |
+| RAND (Layer-level, 8B) | 45.9 | 15.4 | 12.8 | 13.2 |
+| BME (Layer-level, 8B) | 30.8 | 12.4 | 12.2 | 12.7 |
 
 ### Ablation Study
 
 | Configuration | Description |
 | :--- | :--- |
 | BOSCH-single | Uses only the single-layer search results from Stage 1 |
-| BOSCH-multi | Uses only multi-layer search from Stage 3 (no adaptive ratio) |
-| BOSCH-layer | Layer-level rather than head-level optimization |
-| Full BOSCH | Three-stage complete pipeline, consistently optimal |
+| BOSCH-multi | Uses only Stage 3 multi-layer search (no adaptive ratio) |
+| BOSCH-layer | Layer-level optimization instead of head-level |
+| **Full BOSCH** | **Complete three-stage pipeline, consistently optimal** |
 
 ### Key Findings
-- BOSCH is optimal or second-best in all 16 settings (4 models × 4 ratios), with advantages becoming more significant at high SWA ratios.
-- At $\rho=0.875$ (87.5% of heads using SWA), BOSCH maintains performance between 26.9-47.2, while most baselines approach random performance.
-- Significant differences (turnover) exist between the sets of heads selected across different SWA ratios, confirming the existence of the "entanglement problem": fixed rankings cannot address varying ratio requirements.
+- BOSCH is optimal or near-optimal across all 16 settings (4 models × 4 ratios), with its advantage becoming more pronounced at high SWA ratios.
+- At $\rho=0.875$ (87.5% of heads using SWA), BOSCH maintains performance between 26.9–47.2, while most baselines approach random performance.
+- Significant "turnover" exists in the set of selected heads under different SWA ratios, proving the existence of the "entanglement problem" and showing that fixed rankings cannot handle varying ratio requirements.
 
 ## Highlights & Insights
-- **LNS Decomposition Strategy**: The decomposition of N-dimensional binary optimization into three low-dimensional problems—each within the effective range of black-box optimization—is highly effective. This approach could be generalized to other large-scale discrete optimization problems.
-- **Discovery and Validation of the "Entanglement Problem"**: The marked differences in optimal head sets at different SWA ratios provide a strong explanation for why static ranking methods are insufficient.
-- **Training-Free Method**: Can be directly applied to post-training optimization of already deployed models.
+- The **decomposition strategy for Large Neighborhood Search** is highly effective: breaking an N-dimensional binary optimization into three low-dimensional problems keeps each within the effective range of black-box optimization.
+- **Discovery and validation of the "Entanglement Problem"**: The variation of optimal head sets across SWA ratios explains why static ranking methods are insufficient.
+- **Training-free nature**: The method can be directly applied to post-training optimization of already deployed models.
 
 ## Limitations & Future Work
-- The three-stage search still requires a certain computational budget (multiple model forward passes).
-- Validation was limited to the Qwen3 series; effectiveness on other architectures (e.g., Llama, Mistral) remains to be confirmed.
-- Evaluation utilized NIAH and LongBench, but real-world long-context application scenarios are more diverse.
+- The three-stage search still requires a computational budget (multiple model forward passes).
+- Evaluation was limited to the Qwen3 series; effectiveness on other architectures like Llama or Mistral remains to be confirmed.
+- While NIAH and LongBench were used, real-world long-context applications are more diverse.
 
 ## Related Work & Insights
-- **vs. Layer-wise Heuristics (INTR/BME)**: These ignore head-level differences in information routing, causing performance to crash sharply at high SWA ratios.
-- **vs. Fisher/Razor (Static Head-level)**: These suffer from the "entanglement problem," where changes in head behavior after hybridization lead to suboptimal selections.
+- **vs. Layer-level Heuristics (INTR/BME)**: These ignore routing differences at the head level, causing performance to collapse at high SWA ratios.
+- **vs. Fisher/Razor (Static Head-level)**: These suffer from the "entanglement problem," where head behavior changes post-hybridization, leading to suboptimal selection.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The LNS decomposition strategy is novel, and the analysis of the entanglement problem is deep.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage with 4 models × 4 ratios × 9+ baselines.
-- Writing Quality: ⭐⭐⭐⭐ Problem formalization and algorithmic descriptions are clear.
-- Value: ⭐⭐⭐⭐ Practical value for KV-Cache optimization in long-context LLMs.
+- Novelty: ⭐⭐⭐⭐ The LNS decomposition is innovative, and the entanglement analysis is deep.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 models, 4 ratios, and 9+ baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem formalization and algorithm description.
+- Value: ⭐⭐⭐⭐ Practical for KV-Cache optimization in long-context LLMs.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
-- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](../../NeurIPS2025/llm_efficiency/long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[ICML 2025\] MoH: Multi-Head Attention as Mixture-of-Head Attention](../../ICML2025/llm_efficiency/moh_multi-head_attention_as_mixture-of-head_attention.md)
+- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
+- [\[ACL 2025\] LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs](../../ACL2025/llm_efficiency/ladm_long_context_data.md)
 - [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](../../NeurIPS2025/llm_efficiency/from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](../../ICLR2026/llm_efficiency/lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
-- [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
+- [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)
 
 </div>
 

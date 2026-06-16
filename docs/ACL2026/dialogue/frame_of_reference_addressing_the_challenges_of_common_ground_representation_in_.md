@@ -2,82 +2,88 @@
 title: >-
   [Paper Note] Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][Common Ground Establishment] This paper proposes the IndiRef benchmark to evaluate the ability of dialogue systems to establish and utilize persistent common ground through "relational refere…
+  [ACL 2026][Dialogue Systems][Reinforcement Learning] Ours proposes the IndiRef benchmark to evaluate the ability of dialogue systems to establish and utilize persistent common ground through "relational reference" (e.g., "the cafe near the park we went to yesterday"). It finds that existing LLMs do not exceed 50% accuracy under full-context conditions and improves perfor
 tags:
-  - "ACL 2026"
-  - "Dialogue Systems"
-  - "Common Ground Establishment"
-  - "Relational Reference"
-  - "Situated Dialogue"
-  - "Reinforcement Learning"
-  - "Dialogue Memory"
+  - ACL 2026
+  - Dialogue Systems
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 12ac629b6f9bc318
+content_hash: b031ae6b62baa3a2
 ---
-
 # Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2601.09365](https://arxiv.org/abs/2601.09365)  
 **Code**: [GitHub](https://github.com/biswesh/IndiRef)  
 **Area**: Reinforcement Learning  
-**Keywords**: Common Ground Establishment, Relational Reference, Situated Dialogue, Reinforcement Learning, Dialogue Memory
+**Keywords**: common ground establishment, relational reference, situated dialogue, reinforcement learning, dialogue memory
 
 ## TL;DR
 
-This paper proposes the IndiRef benchmark to evaluate the ability of dialogue systems to establish and utilize persistent common ground through "relational references" (e.g., "the cafe next to the park we went to yesterday"). It finds that existing LLMs do not exceed 50% accuracy even under full-context conditions, and improves performance by 15-20% through synthetic data combined with GRPO reinforcement learning.
+Ours proposes the IndiRef benchmark to evaluate the ability of dialogue systems to establish and utilize persistent common ground through "relational reference" (e.g., "the cafe near the park we went to yesterday"). It finds that existing LLMs do not exceed 50% accuracy under full-context conditions and improves performance by 15-20% through synthetic data + GRPO reinforcement learning training.
 
 ## Background & Motivation
 
-**Background**: In dialogue, common ground refers to the shared knowledge, beliefs, and assumptions accumulated between participants. Recently, LLMs have demonstrated the ability to perform basic dialogue acts (such as confirmation and response), but whether these behaviors represent true understanding remains uncertain.
+**Background**: In dialogue, common ground refers to the shared knowledge, beliefs, and assumptions accumulated among participants. Recently, LLMs have demonstrated the ability to perform basic dialogue acts (e.g., acknowledgment, responses), but whether these behaviors represent true understanding remains uncertain.
 
-**Limitations of Prior Work**: (1) Existing LLMs may merely "simulate" understanding by generating plausible responses rather than actually establishing and utilizing common ground—a phenomenon termed the "illusion of understanding"; (2) As dialogue history grows, systems must rely on memory management techniques to retrieve information from established common ground, but existing methods (summarization, RAG, knowledge graphs) perform poorly when handling complex relational references; (3) There is a lack of effective benchmarks to measure the ability of dialogue systems to establish persistent, usable common ground.
+**Limitations of Prior Work**: (1) Existing LLMs might only "simulate" understanding by generating plausible responses rather than truly establishing and utilizing common ground—an "illusion of understanding"; (2) as dialogue history grows, systems must rely on memory management techniques to retrieve information from established common ground, but existing methods (summarization, RAG, knowledge graphs) perform poorly when handling complex relational references; (3) there is a lack of effective benchmarks to measure the ability of dialogue systems to establish persistent and usable common ground.
 
-**Key Challenge**: In situated dialogue, entities often lack unique referential expressions (e.g., the same room can be called "the room with the TV" or "the room in front of the bathroom"), and referential relationships involve multi-dimensional relational reasoning across space, time, and attributes. Existing representation methods fail to adequately capture these inter-entity relationships.
+**Key Challenge**: In situated dialogue, entities often lack unique referring expressions (e.g., the same room can be called "the room with the TV" or "the room in front of the bathroom"), and referring relationships involve multi-dimensional reasoning across space, time, and attributes. Existing representation methods cannot sufficiently capture these inter-entity relations.
 
-**Goal**: (1) Propose a benchmark based on relational reference resolution to evaluate the common ground establishment capabilities of dialogue systems; (2) Evaluate the effectiveness of common representation methods; (3) Improve the system's dialogue understanding through synthetic data and reinforcement learning.
+**Goal**: (1) Propose a benchmark based on relational reference resolution to evaluate the common ground establishment ability of dialogue systems; (2) assess the effectiveness of commonly used common ground representation methods; (3) improve the dialogue understanding capabilities of the system through synthetic data and reinforcement learning.
 
-**Key Insight**: Inspired by Kruijt and Vossen (2022), this work utilizes "relational references" common in human dialogue (referring to entities through spatial, temporal, or attribute-based relationships) as a probe for common ground capability—if a model can correctly resolve such references, it indicates the establishment of effective common ground.
+**Key Insight**: Inspired by Kruijt and Vossen (2022), "relational reference" (referring to entities through spatial, temporal, and attribute relations common in human dialogue) is utilized as a probe to test common ground capabilities—if a model can correctly resolve such references, it indicate that it has indeed established effective common ground.
 
-**Core Idea**: Treat "complex relational reference resolution" as the core metric for measuring common ground establishment in dialogue systems, and enhance the multi-step reasoning capabilities of LLMs through synthetic situated dialogue data and GRPO training.
+**Core Idea**: Treat "resolving complex relational references" as the core metric for measuring common ground establishment in dialogue systems, and enhance the multi-step reasoning capabilities of LLMs through synthetic situated dialogue data + GRPO training.
 
 ## Method
 
 ### Overall Architecture
 
-The framework comprises three research questions: (1) Benchmarking—proposing the IndiRef benchmark consisting of 400 QA pairs based on relational references; (2) Representation Evaluation—comparing summarization, chunked retrieval, and ontological common ground representation methods under resource-constrained conditions; (3) Performance Enhancement—improving model performance through synthetic data generation and GRPO reinforcement learning. The input is the situated dialogue history, and the output is the correct answer to relational reference queries.
+The work is built around three research questions: first, using an adversarial benchmark IndiRef to quantify "whether a dialogue system can truly establish persistent common ground"; second, comparing the retrieval effectiveness of several mainstream common ground representation methods under resource-constrained conditions; and finally, boosting the multi-step relational reasoning capabilities of the model using synthetic situated dialogue data + reinforcement learning. The input for the entire pipeline is a situated dialogue history, and the output is the correct answer to "relational reference" questions (e.g., which entity is "the cafe near the park we went to yesterday")—correct answers indicate that the model has successfully distilled the shared knowledge accumulated in the dialogue into actionable common ground.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Situated Dialogue History<br/>(Meetup / Spot the Difference)"] --> B["IndiRef Benchmark<br/>Relational reference resolution as probe · 400 Adversarial QA<br/>Temporal / Spatial / Attribute / Inferential Common Ground"]
+    B --> C
+    subgraph C["Common Ground Representation Comparison (Writer-Reader-Generator)"]
+        direction TB
+        C1["Summarization<br/>History compressed into summary"]
+        C2["Chunk Retrieval<br/>Top-k from overlapping utterance chunks（BM25 / NV-Embed）"]
+        C3["Agent Ontology<br/>Entity-relationship structures + Multi-step query"]
+    end
+    C --> D
+    subgraph D["Environment-First, Dialogue-Second Synthetic Data + GRPO Training"]
+        direction TB
+        D1["Procedural construction of simulated world<br/>Dual-navigators explore and record spatio-temporal facts"] --> D2["Script controller synchronizes experiences<br/>LLM only follows script to speak"]
+        D2 --> D3["Deterministic QA extraction from ground truth facts<br/>~600 pairs"]
+        D3 --> D4["GRPO training for Llama 3.1-8B<br/>Reward = Answer Correctness"]
+    end
+    D --> OUT["Relational Reference Resolution Accuracy<br/>Improved by 15-20%"]
+```
 
 ### Key Designs
 
-1. **IndiRef Benchmark**:
+**1. IndiRef Benchmark: Translating "Understanding" into Adversarial QA.** Most existing dialogue benchmarks only measure immediate behaviors (acknowledgment, responses), which models can fake by generating plausible responses. IndiRef instead uses "relational reference resolution" as a probe: 400 QA pairs (100 per category) were manually constructed based on the Meetup and Spot the Difference datasets, covering temporal reference ("the Thai restaurant we went to after seeing Spider-Man"), spatial reference ("the bottle on the table"), attribute reference ("the yellow house"), and inferential common ground (understanding implicit information).
 
-    - **Function**: Evaluates the ability of dialogue systems to utilize common ground through relational references.
-    - **Mechanism**: Based on two dialogue datasets (Meetup and Spot the Difference), 400 QA pairs (100 per category) were manually constructed, covering four reference types: Temporal (e.g., "The Thai restaurant we went to after watching Spider-Man"), Spatial (e.g., "The bottle on the table"), Attribute (e.g., "The yellow house"), and Inferential Common Ground (understanding implicit information). The design is adversarial—it includes multiple entities of the same type to prevent simple keyword matching and tests perspective taking through demonstrative pronouns (yours/mine).
-    - **Design Motivation**: Existing benchmarks only test immediate dialogue acts (like confirmation) and cannot measure whether the system has truly established persistent, exploitable common ground.
+The key lies in its adversarial nature—multiple entities of the same type are inserted into each dialogue to make simple keyword matching fail; indexical pronouns (your/my) force the model to distinguish between speaker perspectives. Only models that truly integrate multi-dimensional relations (space, time, attributes) into the common ground representation can answer correctly, thus turning the abstract concept of "understanding" into a quantifiable metric.
 
-2. **Comparison of Common Ground Representations (Writer-Reader-Generator Framework)**:
+**2. Comparison of Common Ground Representations under the Writer-Reader-Generator Framework.** Since the full history of long dialogues cannot fit into context windows, some representation must store and retrieve common ground, but which representation best preserves relational information is unknown. Ours uses a unified $W$ (Write)-$R$ (Read)-$G$ (Generate) framework to evaluate three approaches: Summarization compresses history into $s_t$; Chunk Retrieval slices the dialogue into overlapping chunks $c_i$ (7 utterances per chunk, stride 3) and retrieves the top-k relevant fragments; the Agent Ontology approach uses an agent to extract entities, attributes, relations, and speaker info to form structured knowledge, then retrieves via multi-step queries (RAG[n]→Process→Final).
 
-    - **Function**: Evaluates different common ground storage and retrieval methods in resource-constrained scenarios.
-    - **Mechanism**: Adopts a $W$ (Write)-$R$ (Read)-$G$ (Generate) framework. Three methods are compared: (a) Summarization—compressing dialogue history into a summary $s_t$; (b) Chunked Retrieval—slicing dialogue into overlapping utterance chunks $c_i$ (7 utterances, stride 3) and retrieving the top-k most relevant chunks; (c) Ontology-based—using an Agent to extract entities, attributes, relations, and speaker information to build structured knowledge, retrieving information via multi-step queries (RAG[n]→Process→Final). Both sparse (BM25) and dense (NV-Embed-V2) embeddings were tested.
-    - **Design Motivation**: Since the full history cannot fit into the context window in real-world long dialogue scenarios, it is necessary to evaluate which representation method best preserves relational information.
+Both sparse (BM25) and dense (NV-Embed-V2) embeddings were tested. This comparison directly reveals that information loss is the core bottleneck in resource-constrained scenarios and explains why the Agent Ontology method, which explicitly models entity-relationships, slightly outperforms summarization and chunking for relational reference.
 
-3. **Synthetic Data Generation + GRPO Training**:
+**3. "Environment-First, Dialogue-Second" Synthetic Data + GRPO Training.** Existing LLMs have almost no training data for situated dialogue, and asking LLMs to generate dialogues from scratch often leads to unreliable reasoning (generated spatio-temporal relations are often self-contradictory). This paper decouples reasoning logic from language generation using a three-stage process: first, procedurally construct a simulated world where two navigators explore and record spatio-temporal facts; second, use a script controller to synchronize experiences and generate dialogue scripts, where LLMs are only responsible for speaking each line under script constraints; finally, extract QA pairs deterministically from ground truth facts.
 
-    - **Function**: Addresses the scarcity of training data for situated dialogue and enhances model reasoning.
-    - **Mechanism**: Employs an "Environment-First, Dialogue-Second" three-stage generation process: (a) Procedurally build a simulated world where two navigators explore and record spatio-temporal facts; (b) Use a script controller to synchronize the navigators' experiences and generate dialogue scripts, where the LLM is only responsible for generating utterances under script constraints; (c) Deterministically extract QA pairs from ground truth facts. After generating approximately 600 QA pairs, Llama 3.1-8B is trained using GRPO, providing positive rewards for correct answers.
-    - **Design Motivation**: Existing LLMs lack training data for situated dialogue, and direct generation of dialogue by LLMs leads to unreliable reasoning; thus, reasoning logic is delegated to a procedural script controller.
-
-### Loss & Training
-
-Training is performed using Group Relative Policy Optimization (GRPO). The reward function is based on answer correctness—positive rewards are given when the model-generated answer matches the predefined ground truth. The training data consists of approximately 600 QA pairs from synthetic dialogue scenarios.
+After generating approximately 600 QA pairs, Llama 3.1-8B is trained using GRPO (Group Relative Policy Optimization), where the reward function only considers answer correctness—a positive reward is given if the model's answer matches the predefined answer. Since facts are guaranteed by the program and reasoning is handled by the script controller, the correctness of the synthetic data is controllable, resulting in clean training signals and stable 15-20% improvements on both Meetup and STD.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Full Context Baselines (Performance of LLMs on IndiRef, FEM/LLM-as-Judge)**
+**Full-Context Baseline (Performance of different LLMs on IndiRef, FEM/LLM-as-Judge)**
 
-| Model | Temporal Ref. | Spatial Ref. | Attribute Ref. | Inferential CG |
+| Model | Temporal Ref | Spatial Ref | Attribute Ref | Inference |
 |------|---------|---------|---------|---------|
 | Gemma2-2B | 0.20/0.18 | 0.18/0.16 | 0.24/0.26 | 0.26/0.16 |
 | Llama3.1-8B | 0.38/0.32 | 0.46/0.38 | 0.46/0.44 | 0.20/0.20 |
@@ -88,15 +94,15 @@ Training is performed using Group Relative Policy Optimization (GRPO). The rewar
 
 | Method | Temporal | Spatial | Attribute | Inference |
 |------|------|------|------|------|
-| Full Context Baseline | 0.38/0.32 | 0.46/0.38 | 0.46/0.44 | 0.20/0.20 |
-| Summary | 0.32/0.28 | 0.34/0.26 | 0.30/0.25 | 0.28/0.18 |
-| Chunk (NV-Embed) | 0.24/0.20 | 0.08/0.06 | 0.16/0.08 | 0.22/0.24 |
-| Chunk (BM25) | 0.26/0.24 | 0.20/0.16 | 0.20/0.18 | 0.24/0.26 |
+| Full-Context Baseline | 0.38/0.32 | 0.46/0.38 | 0.46/0.44 | 0.20/0.20 |
+| Summarization | 0.32/0.28 | 0.34/0.26 | 0.30/0.25 | 0.28/0.18 |
+| Chunking (NV-Embed) | 0.24/0.20 | 0.08/0.06 | 0.16/0.08 | 0.22/0.24 |
+| Chunking (BM25) | 0.26/0.24 | 0.20/0.16 | 0.20/0.18 | 0.24/0.26 |
 | Agent Ontology | 0.40/0.36 | 0.38/0.34 | 0.38/0.30 | 0.24/0.22 |
 
 ### Ablation Study
 
-**Effect of GRPO Training (Llama3.1-8B)**
+**GRPO Training Effect (Llama3.1-8B)**
 
 | Configuration | Temporal | Spatial | Attribute | Inference |
 |------|------|------|------|------|
@@ -113,37 +119,37 @@ Training is performed using Group Relative Policy Optimization (GRPO). The rewar
 
 ### Key Findings
 
-- Even under full-context conditions, the strongest model (Gemma2-27B) did not exceed 58% accuracy in any category, indicating that relational reference resolution is highly challenging for current LLMs.
-- All resource-constrained representation methods underperformed the full-context baseline; information loss is the core issue.
-- The Agent Ontology method outperformed summarization and chunking, suggesting that multi-step retrieval and explicit entity-relation modeling aid in understanding context.
-- Reasoning-focused models (Qwen-QWQ) performed best in the Inferential Common Ground category (0.40) but average in others, and frequently suffered from hallucinations.
-- GRPO training improved performance by 15-20% across both Meetup and STD datasets, proving that synthetic data training can transfer across different scenarios.
+- Even under full-context conditions, the strongest model (Gemma2-27B) did not exceed 58% accuracy in all categories, illustrating that relational reference resolution is highly challenging for current LLMs.
+- All resource-constrained representation methods underperform the full-context baseline; information loss is the core issue.
+- The Agent Ontology method outperforms summarization and chunking, suggesting that multi-step retrieval and explicit entity-relation modeling aid context understanding.
+- Reasoning models (Qwen-QWQ) perform best in the inference category (0.40) but average in others and often exhibit hallucinations.
+- GRPO training provides a consistent 15-20% gain on both Meetup and STD datasets, proving that synthetic data training can transfer across different scenarios.
 
 ## Highlights & Insights
 
 - Using "relational reference resolution" as a probe for common ground capability is an ingenious design—it transforms abstract "understanding" into a quantifiable QA task.
-- The "Environment-First" approach to synthetic data generation is worth emulating—delegating reasoning logic to a procedural controller and language generation to the LLM ensures factual correctness of the data.
-- The finding that sparse embeddings (BM25) slightly outperform dense embeddings for named entity retrieval provides valuable reference for RAG system design.
+- The "environment-first" approach for synthetic data generation is worth emulating—it delegates reasoning logic to a procedural controller and language generation to the LLM to ensure factual correctness.
+- We discovered that sparse embeddings (BM25) slightly outperform dense embeddings for named entity retrieval, which serves as a useful reference for RAG system design.
 
 ## Limitations & Future Work
 
 - The IndiRef benchmark is small (400 QA pairs), and manual construction limits scalability.
-- GRPO training was only conducted on an 8B parameter model; larger models might benefit more.
-- The domain of the synthetic data is narrow (primarily navigation), and its generalizability to other situated dialogues remains to be verified.
-- The Agent Ontology approach tends to merge information from different participants in scenarios with similar images (STD).
+- GRPO training was only conducted on 8B parameter models; larger models may benefit more.
+- The domain of synthetic data is narrow (primarily navigation), and its generalizability to other situated dialogues remains to be verified.
+- The Agent Ontology method tends to merge information from different participants in scenarios with similar images (STD).
 
 ## Related Work & Insights
 
-- **vs Dialog State Tracking (DST)**: DST uses slot-value pairs to represent task-oriented dialogue states but lacks the flexibility to handle inter-entity relations; the relational references in this work require richer representations.
-- **vs Knowledge Graph Methods**: KGs can model entity relationships, but entities in situated dialogue often lack stable referential expressions. This paper's ontology approach partially addresses this through event logs and multi-step queries.
-- **vs RAG Methods**: RAG relies on similarity retrieval, but in relational references, the semantics of the question may differ significantly from the segment containing the answer, leading to retrieval failure.
+- **vs Dialog State Tracking (DST)**: DST uses slot-value pairs to represent task-oriented dialogue states but lacks the flexibility to handle inter-entity relations; our relational reference requires richer representations.
+- **vs Knowledge Graph Methods**: Knowledge graphs can model entity relations, but in situated dialogue, entities often lack stable referring expressions; ours' ontology method partially solves this through event logs and multi-step querying.
+- **vs RAG Methods**: RAG relies on similarity retrieval, but in relational reference, the semantics of the query may differ significantly from the semantics of the segment containing the answer, leading to retrieval failure.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Using "relational reference" as a probe for common ground is a unique perspective; the synthetic data method is cleverly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison of multiple representation methods and models, though the dataset size is small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Three research questions progress logically, experimental design is clear, and analysis is in-depth.
-- Value: ⭐⭐⭐⭐ Reveals fundamental flaws in dialogue systems regarding common ground establishment, providing evaluation directions for embodied dialogue and social robotics.
+- Novelty: ⭐⭐⭐⭐ Using "relational reference" as a probe for common ground is a unique perspective, and the synthetic data method is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison of multiple representations and models, though the dataset size is small.
+- Writing Quality: ⭐⭐⭐⭐⭐ Three research questions progress logically, experimental design is clear, and analysis is deep.
+- Value: ⭐⭐⭐⭐ Reveals fundamental flaws in dialogue systems regarding common ground establishment and provides an evaluation direction for embodied dialogue and social robotics.
 
 <!-- RELATED:START -->
 
@@ -152,10 +158,10 @@ Training is performed using Group Relative Policy Optimization (GRPO). The rewar
 ## Related Papers
 
 - [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](../../CVPR2026/dialogue/evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
+- [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
+- [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
 - [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
-- [\[ACL 2026\] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue](context-agent_dynamic_discourse_trees_for_non-linear_dialogue.md)
-- [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
 
 </div>
 

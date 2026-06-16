@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] Exploring Reasoning Reward Model for Agents
 description: >-
-  [ACL 2026][LLM Agent][agentic RL] The authors observe that current agentic RL predominantly utilizes sparse outcome rewards (evaluating only the final correctness)…
+  [ACL 2026][LLM Agent][agentic RL] The authors identify that current agentic RL typically employs sparse outcome rewards (evaluating only final correctness), which discards high-quality signals from intermediate reasoning steps. They propose **Agent-RRM**, a reasoning reward model generating structured feedback in three segments: `<think>/<critique>/<sc
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "agentic RL"
-  - "reasoning reward model"
-  - "GRPO"
-  - "critique-guided refinement"
-  - "multimodal feedback"
+  - ACL 2026
+  - LLM Agent
+  - agentic RL
+  - reasoning reward model
+  - GRPO
+  - critique-guided refinement
 date: 2026-05-08
-content_hash: fb288ef344b0ba9a
+content_hash: fa7b1134565ce961
 ---
-
 # Exploring Reasoning Reward Model for Agents
 
 **Conference**: ACL 2026 Findings  
@@ -24,54 +22,69 @@ content_hash: fb288ef344b0ba9a
 **Keywords**: agentic RL, reasoning reward model, GRPO, critique-guided refinement, multimodal feedback
 
 ## TL;DR
-The authors observe that current agentic RL predominantly utilizes sparse outcome rewards (evaluating only the final correctness), causing high-quality multi-step reasoning signals to be lost. To address this, they propose **Agent-RRM**—a reasoning reward model that generates structured feedback in a `<think>/<critique>/<score>` format. By systematically comparing three integration strategies (C: pure critique refinement, R: scalar reward enhancement, U: combined critique + score GRPO), the final **Reagent-U** model achieves 43.7% on GAIA and 46.2% on WebWalkerQA using Qwen3-8B across 12 benchmarks. This demonstrates that joint supervision of "language-level critique + numerical reward" is significantly superior to single-signal approaches.
+The authors identify that current agentic RL typically employs sparse outcome rewards (evaluating only final correctness), which discards high-quality signals from intermediate reasoning steps. They propose **Agent-RRM**, a reasoning reward model generating structured feedback in three segments: `<think>/<critique>/<score>`. By systematically comparing three integration methods (C: pure critique refinement, R: scalar reward enhancement, U: combined critique + score GRPO), **Reagent-U** achieves 43.7% on GAIA and 46.2% on WebWalkerQA using Qwen3-8B. The results demonstrate that joint supervision using "language-level critique + numerical reward" is significantly more effective than single-signal approaches.
 
 ## Background & Motivation
-**Background**: Reinforcement Learning from Verifiable Rewards (RLVR) has been proven to significantly enhance LLM reasoning capabilities in works like DeepSeek-R1. Recently, frameworks such as Search-R1, WebSailor, and Agent0 have extended this paradigm to agents (multi-turn tool calls + information retrieval), achieving substantial gains.
+**Background**: RLVR (RL with Verifiable Rewards) has been proven to significantly enhance LLM reasoning capabilities in works like DeepSeek-R1. Recently, frameworks such as Search-R1, WebSailor, and Agent0 have extended this paradigm to agentic tasks (multi-turn tool calls + information retrieval), achieving notable gains.
 
-**Limitations of Prior Work**: (1) **Outcome-based rewards are too sparse**—most agentic RL systems only evaluate the final answer. a trajectory that fails only at the last step is scored the same as a completely nonsensical one (zero), wasting high-quality intermediate steps. (2) **Step-level reward annotation is expensive** and prone to reward hacking. (3) **Existing reasoning reward models focus on pair-wise preference** (which is better), failing to provide actionable guidance like "exactly what went wrong and how to fix it." (4) Almost all works rely solely on **scalar rewards**, completely ignoring natural language critique as a potential dense supervision signal.
+**Limitations of Prior Work**: (1) **Outcome-based rewards are too sparse**—the majority of agentic RL only evaluates the final answer; trajectories that fail at the last step are penalized the same as those that are entirely incorrect, wasting high-quality intermediate steps. (2) **Step-level reward annotation is costly** and prone to reward hacking. (3) **Existing reasoning reward models utilize pair-wise preferences**, which fail to provide actionable guidance on specific errors or improvements. (4) Almost all works rely exclusively on **scalar rewards** for training, completely ignoring natural language critiques as a potential source of dense supervision.
 
-**Key Challenge**: Long-horizon agent tasks (e.g., GAIA Lv.3 requiring 10+ tool calls) need dense signals to learn nuanced reasoning skills, yet current reward frameworks (outcome / step / preference) are either sparse, expensive, or coarse.
+**Key Challenge**: Long-horizon agent tasks (e.g., GAIA Lv.3 requiring 10+ tool steps) necessitate dense signals to learn nuanced reasoning skills, yet existing reward frameworks (outcome/step/preference) are either sparse, expensive, or coarse.
 
-**Goal**: (1) Design a multifaceted reward model capable of simultaneously producing a reasoning trace, textual critique, and scalar score. (2) Systematically compare three integration strategies for feeding critique and score into agentic RL. (3) Provide a training recipe that consistently outperforms SOTA across 12 benchmarks.
+**Goal**: (1) Design a versatile reward model capable of simultaneously producing reasoning traces, textual critiques, and scalar scores. (2) Systematically compare three integration strategies for feeding critiques and scores into agentic RL. (3) Provide a training recipe that consistently outperforms SOTA across 12 benchmarks.
 
-**Key Insight**: Borrowing from the generative reasoning RM concept in DeepSeek-R1 (RM-R1, R1-Reward), the authors extend it from single-turn QA to multi-turn agentic trajectories and, for the first time, utilize the critique text itself as a training signal (rather than just for inference-time refinement).
+**Key Insight**: The authors adapt the generative reasoning RM approach from DeepSeek-R1 (RM-R1, R1-Reward), extending it from single-turn QA to multi-turn agentic trajectories, and for the first time, utilize the critique text itself as a training signal (rather than only for inference-time refinement).
 
-**Core Idea**: Enable the reward model to "reason before judging"—first generating `<think>` to analyze trajectory consistency, then `<critique>` to identify specific flaws, and finally `<score>` for an overall rating. The downstream agent can use the critique for in-context refinement and the score for GRPO advantage normalization. In Reagent-U, these are pooled together to achieve a "1+1>2" effect.
+**Core Idea**: Enable the reward model to "reason before judging"—first generating a `<think>` block to analyze trajectory consistency, followed by a `<critique>` to identify specific flaws, and finally a `<score>` for the overall assessment. The downstream agent can use the critique for in-context refinement and the score for GRPO advantage normalization. In Reagent-U, these signals are pooled to achieve a "1+1>2" effect.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two models across two stages: (a) **Agent-RRM Training**—SFT is performed on Reagent-RRM-SFT-28K (structured judgments annotated by GPT-OSS-120B) to learn the "<think>/<critique>/<score>" output format, followed by GRPO on Reagent-RRM-RL-90K to calibrate scalar scores. (b) **Reagent Agent Training**—$\pi_{\theta_{SFT}}$ is obtained via SFT on Reagent-SFT-55.6K (correct trajectories generated by DeepSeek-V3.1), followed by an exploration of three RL variants: Reagent-C (inference-time critique refinement, no training), Reagent-R (rule reward + model score joint GRPO), and Reagent-U (critique-augmented two-stage sampling + joint pool GRPO). The agent is equipped with 6 tools: Search (Bing), Web Browse, Python Interpreter, File Reader, Image Descriptor, and Audio Converter.
+The framework consists of two stages and two models: (a) **Agent-RRM Training**: Based on Reagent-RRM-SFT-28K (structured triple-segment judgments) annotated by GPT-OSS-120B to learn the "<think>/<critique>/<score>" output format, followed by GRPO on Reagent-RRM-RL-90K to calibrate scalar scores. (b) **Reagent Agent Training**: Initial SFT on Reagent-SFT-55.6K (correct trajectories generated by DeepSeek-V3.1) to obtain $\pi_{\theta_{SFT}}$, followed by three RL variants: Reagent-C (inference-time critique refinement, no training), Reagent-R (rule reward + model score joint GRPO), and Reagent-U (critique-augmented two-stage sampling + joint pool GRPO). The agent is equipped with 6 tools: Search (Bing), Web Browse, Python Interpreter, File Reader, Image Descriptor, and Audio Converter.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph RRM["Agent-RRM: Structured Feedback Reward Model"]
+        direction TB
+        A["Multi-model sampled trajectories + GPT-OSS-120B annotation<br/>think / critique / score judgment"] --> B["Two-stage training<br/>SFT for format (28K) → GRPO for score calibration (90K)"]
+    end
+    B --> RRM_OUT["Agent-RRM<br/>Output: think / critique / score"]
+    E["Reagent-SFT-55.6K Cold-start SFT"] --> F["Seed Strategy π_SFT"]
+    F --> G{"Integration Options C / R / U"}
+    RRM_OUT -.Feedback signals.-> G
+    G -->|Critique for inference-time refinement, no training| H["Reagent-C"]
+    G -->|Rule + Score joint GRPO| I["Reagent-R"]
+    G -->|Two-stage sampling + Joint pool normalization| J["Reagent-U"]
+    H --> OUT["Final Agent Policy<br/>U requires no RRM at inference"]
+    I --> OUT
+    J --> OUT
+```
 
 ### Key Designs
 
-1.  **Structured Output of Agent-RRM**:
-    -   **Function**: Upgrades trajectory judgment from a single scalar to an interpretable chain of "Analysis → Critique → Scoring," providing dense training signals for the agent and transparency for human inspection.
-    -   **Mechanism**: During training, the model writes which steps are reasonable and which have logical flaws in `<think>`, specifies "exactly what to fix" in `<critique>`, and provides a global score $s \in [0,1]$ in `<score>`. Data for Agent-RRM is sampled from various agent models (Qwen3-8B/14B, Qwen3-ARPO-DeepSearch, etc.) to maximize error coverage, annotated by GPT-OSS-120B; final calibration is done via SFT (28K) + GRPO (90K).
-    -   **Design Motivation**: A single scalar reward cannot capture fine-grained differences like "correct answer with unnecessary steps" vs. "wrong answer with mostly correct logic." Explicit reasoning by the RM also reduces reward hacking—the model must provide a consistent internal justification to assign a high score.
+**1. Agent-RRM's Three-Stage Structured Output: Upgrading RM from Scorers to "Analyze → Criticize → Score"**
 
-2.  **Three Integration Variants: C / R / U**:
-    -   **Function**: Systematically compares the value of "linguistic critique" vs. "numerical score" signals in agentic RL, both individually and combined.
-    -   **Mechanism**: (a) **Reagent-C** is training-free; it samples $o^{(1)}_i \sim \pi_\theta(o|q)$, generates critique $c_i$ via RRM, and performs in-context refinement $o^{(2)}_i \sim \pi_\theta(o|q, o^{(1)}_i, c_i)$. (b) **Reagent-R** uses a weighted reward $R_i = R_{\text{rule}}(q, o_i) + \lambda \cdot R_{\text{model}}(q, o_i)$ for GRPO training. (c) **Reagent-U** samples from both stages and combines them into $\mathcal{G}_{pool} = \{o^{(k)}_i\}$ ($k \in \{1, 2\}$) to calculate a joint advantage $A^{(k)}_i = (R^{(k)}_i - \text{mean}(\mathbf{R}_{pool})) / \text{std}(\mathbf{R}_{pool})$. The loss is:
-        $$\mathcal{J}_U(\theta) = \mathbb{E}[\frac{1}{2G}\sum_{k=1}^2 \sum_{i=1}^G (\min(r^{(k)}_i A^{(k)}_i, \text{clip}_\epsilon) - \beta \mathbb{D}_{KL}^{(i,k)})]$$
-    -   **Design Motivation**: C isolates the zero-shot value of critique; R isolates the dense value of scalar rewards; U allows the model to simultaneously learn "how to fix based on critique" and "how to rank trajectories," inherently **internalizing** critique capabilities into the policy. Consequently, Reagent-U requires no RRM at inference time, maintaining **zero additional inference cost**.
+A single scalar cannot distinguish between "correct result via a suboptimal path" and "incorrect result with partially correct logic." Long-horizon agent tasks require this fine-grained distinction. Agent-RRM forces the reward model to reason before judging: the `<think>` segment analyzes step-wise rationality and logical gaps; the `<critique>` segment specifies what to fix; and the `<score>` segment provides the global score $s \in [0,1]$. Training data is sampled from multiple agent models (Qwen3-8B/14B, Qwen3-ARPO-DeepSearch, etc.) to maximize error coverage, annotated by GPT-OSS-120B, and trained in two stages. Explicit reasoning also suppresses reward hacking—the model must provide a self-consistent "justification" to assign high scores.
 
-3.  **Unified Pool Joint Advantage Normalization**:
-    -   **Function**: Allows initial and refined trajectories to share a single advantage distribution to facilitate cross-stage quality comparison, guiding the model to propagate refined quality back to the initial generation.
-    -   **Mechanism**: While traditional GRPO normalizes $G$ samples within a batch, Reagent-U expands this to $2G$ (initial + refined). If refined trajectories are generally better, initial samples automatically receive negative advantages, naturally pushing the policy to generate initial outputs closer to the refined ones.
-    -   **Design Motivation**: Separate normalization would decouple the two stages, leading the model to learn refinement skills without improving the initial generation. The unified pool binds both stages under a single gradient signal.
+**2. Three Integration Variants (C / R / U): Decoupling Critique and Score Values**
+
+To clarify the individual and joint value of "linguistic critiques" and "numerical scores," three variants are tested. Reagent-C is training-free: the first round samples $o^{(1)}_i \sim \pi_\theta(o|q)$, the RRM generates critique $c_i$, and the second round performs in-context refinement $o^{(2)}_i \sim \pi_\theta(o|q, o^{(1)}_i, c_i)$, evaluating only the refined output to isolate critique value. Reagent-R uses a weighted combination of rule rewards and model scores $R_i = R_{\text{rule}}(q, o_i) + \lambda \cdot R_{\text{model}}(q, o_i)$ as the GRPO signal to isolate dense reward value. Reagent-U samples in both stages, merging $\mathcal{G}_{pool} = \{o^{(k)}_i\}$ ($k \in \{1, 2\}$) into a single pool to calculate advantages $A^{(k)}_i = (R^{(k)}_i - \text{mean}(\mathbf{R}_{pool})) / \text{std}(\mathbf{R}_{pool})$. The loss is $\mathcal{J}_U(\theta) = \mathbb{E}[\frac{1}{2G}\sum_{k=1}^2 \sum_{i=1}^G (\min(r^{(k)}_i A^{(k)}_i, \text{clip}_\epsilon) - \beta \mathbb{D}_{KL}^{(i,k)})]$. Reagent-U allows the model to learn both how to refine based on critiques and how to rank trajectories of different qualities, **internalizing** the critique capability into the policy so that the RRM is unnecessary during inference.
+
+**3. Unified Pool Joint Advantage Normalization: Benefiting Initial Generations through Critique**
+
+Traditional GRPO normalizes within a batch of $G$ samples. If initial and refined stages were normalized separately, the policy would de-couple, learning refinement tricks without improving initial generations. Reagent-U expands the pool to $2G$ samples sharing the same mean/std for advantage calculation. Once refined samples are generally better than initial ones, initial samples naturally receive negative advantages, pushing the policy toward the quality of refined outputs. This ties both stages to the same gradient signal, allowing implicit critique guidance to flow back into initial generations.
 
 ### Loss & Training
-Based on the GRPO framework. Rule reward $R_{\text{rule}}$ uses string matching for final answers; model reward $R_{\text{model}}$ uses the `<score>` from Agent-RRM. The base model is Qwen3-8B, starting with SFT on Reagent-SFT-55.6K for cold-start, followed by RL.
+Based on the GRPO (Shao 2024) framework. Rule reward $R_{\text{rule}}$ uses string matching for final answers; model reward $R_{\text{model}}$ uses the `<score>` from Agent-RRM; $\lambda$ serves as a balance factor. Agent-RRM training follows the two-stage SFT + GRPO paradigm. The agent base model is Qwen3-8B, first SFTed on Reagent-SFT-55.6K, then RL-tuned.
 
 ## Key Experimental Results
 
 ### Main Results
-On four core agent benchmarks: GAIA (Lv.1/2/3), WebWalkerQA, HLE, and xbench:
+Performance on four core benchmarks (GAIA divided into Lv.1/2/3):
 
 | Model | Backbone | GAIA Avg | WebWalker Avg | HLE | xbench |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|----------|----------|---------------|-----|--------|
 | WebThinker | Qwen3-8B | 22.3 | 13.0 | 6.6 | 13.0 |
 | WebDancer | Qwen2.5-7B | 31.0 | 36.0 | – | – |
 | VerlTool | Qwen3-8B | 34.0 | – | 8.4 | – |
@@ -85,47 +98,49 @@ On four core agent benchmarks: GAIA (Lv.1/2/3), WebWalkerQA, HLE, and xbench:
 | OpenAI DeepResearch | – | 67.4 | – | **26.6** | – |
 | **Reagent-U** (Ours) | Qwen3-8B | **43.7** | **46.2** | – | – |
 
-→ Using an 8B model, Reagent-U matches ARPO 14B on GAIA and outperforms it on WebWalker by +10.2 pp. Compared to the 8B baseline ARPO (38.8 / 30.5), it sees absolute gains of +4.9 / +15.7 points, demonstrating significant RL improvement.
+$\rightarrow$ Using an 8B model, Reagent-U matches ARPO 14B on GAIA and outperforms it on WebWalker by +10.2 pp. Compared to the 8B baseline ARPO, it shows gains of +4.9 / +15.7 absolute points, demonstrating significant RL benefits.
 
 ### Ablation Study
-Self-comparison of the three variants:
+Comparison of the three variants:
 
 | Configuration | GAIA Avg | WebWalker Avg | Description |
-| :--- | :--- | :--- | :--- |
-| Reagent-SFT only | < 38.8 | < 30.5 | Cold-start only, weaker than ARPO 8B |
-| Reagent-C | Medium | Medium | Inference-only critique refinement, no training |
-| Reagent-R | High | High | Trained with RM scalar as dense reward |
-| Reagent-U | **43.7** | **46.2** | Joint training internalizes critique, no extra inference cost |
+|------|----------|---------------|------|
+| Reagent-SFT only | < 38.8 | < 30.5 | Cold-start only, weaker than ARPO 8B baseline |
+| Reagent-C | Medium | Medium | Zero-shot inference-time critique refinement |
+| Reagent-R | High | High | Training with RM scalar as dense reward |
+| Reagent-U | **43.7** | **46.2** | Joint training; internalizes critique; zero inference cost |
 
 ### Key Findings
--   **Reagent-U 8B matches or exceeds ARPO 14B**: With the same backbone size, GRPO + Agent-RRM outperforms GRPO + rule-only by 4.9 (GAIA) and 15.7 (WebWalker) points, indicating that reward signal density is more critical than model size.
--   **Gains are larger on WebWalker (+15.7 pp) than GAIA (+4.9 pp)**: WebWalker involves multi-turn web navigation (long horizon), which is more dependent on intermediate step quality. This validates that longer horizons necessitate denser critiques.
--   **Internalization vs. Inference-time use**: Reagent-U maintains high performance without RRM during inference. This significantly reduces deployment costs compared to Reagent-C, implying the value of critique lies in teaching reasoning style rather than real-time correction.
--   **Unified pool is key to U > R + C**: Simple addition of R and C does not yield U's results. Only by placing initial and refined trajectories in the same advantage distribution can the initial generation truly align with the refined quality.
+- **Reagent-U 8B matches or beats ARPO 14B**: Given the same backbone size, GRPO + Agent-RRM outperforms rule-only GRPO by substantial margins, suggesting reward signal density is more critical than model size.
+- **Greater gains on WebWalker (+15.7 pp) than GAIA (+4.9 pp)**: WebWalker involves multi-turn web navigation, which is highly dependent on intermediate step quality, whereas some GAIA tasks are solved via single search. This validates that longer horizons increase the need for dense critiques.
+- **Internalization of Critiques**: By treating critiques as training signals, Reagent-U maintains high performance without RRM calls during inference, significantly reducing costs compared to Reagent-C.
+- **Unified pooling is the key for U > R + C**: Simple addition of signals does not match the effect of Reagent-U; joint advantage normalization is required for the initial generation to converge toward refined quality.
 
 ## Highlights & Insights
--   **Structured feedback upgrades RM to "Judge + Teacher"**: `<think>` provides transparency, `<critique>` provides actionability, and `<score>` provides numerical calibration.
--   **Critique-as-training-signal as a new paradigm**: Unlike traditional critic feedback used only at inference (self-refine), this proves that using critique as GRPO training material allows the policy to internalize these capabilities.
--   **Unified pool joint advantage normalization**: A simple but effective trick that allows GRPO to support multi-stage trajectories, extendable to tree search or iterative refinement.
--   **Inference-cost-neutral**: Reagent-U requires no additional RRM calls or multi-stage sampling at deployment, making it highly attractive for industrial applications.
--   **High-quality dataset release**: The 4 datasets (SFT-55.6K, RL-709K, RRM-SFT-28K, RRM-RL-90K) provide infrastructure for math, multimodal, and tool-use scenarios.
+- **Structured feedback transforms RM into "Judge + Teacher"**: Combining `<think>`, `<critique>`, and `<score>` provides every reward dimension needed for downstream training.
+- **Critique-as-training-signal**: Shows that critique signals can be internalized by the policy via GRPO, moving the "critic model" from an inference-time plugin to a training-time teacher.
+- **Unified Pool Advantage Normalization**: A simple yet effective trick that allows GRPO to support multi-stage trajectories, extensible to iterative refinement or tree searches.
+- **Inference-cost-neutral**: Reagent-U achieves high performance without extra forward passes or refined sampling at deployment time.
+- **Open-source Datasets**: The release of four high-quality datasets (SFT, RL, RRM-SFT, RRM-RL) covering math, multimodal, web, and tools serves as robust infrastructure for the community.
 
 ## Limitations & Future Work
--   **Reliability bottleneck of Agent-RRM**: Signal quality is capped by the GPT-OSS-120B labels; if the RM has reasoning bugs, the policy will follow incorrect signals.
--   **Gap with proprietary models**: 43.7 (Reagent-U) vs 70.5 (OpenAI-o3) suggests that while RM signals help, the base model capacity remains a constraint.
--   **Ablation granularity**: Detailed R/C/U comparisons per benchmark were not fully explicitly shown in the main text.
--   **Hyperparameter sensitivity**: The impact of $\lambda$ on training stability is not thoroughly discussed.
+- **Reliability Bottleneck of Agent-RRM**: Signal quality is capped by GPT-OSS-120B; bugs in RRM reasoning can lead the policy astray.
+- **Persistent Gap with Proprietary Models**: Reagent-U 8B remains significantly behind OpenAI-o3, indicating that RM-based signals are still constrained by the base model's capacity.
+- **Insufficient Fine-grained Ablation**: While it is stated that U > R > C, comprehensive per-benchmark tables for each variant are missing.
+- **Hyperparameter Sensitivity**: The influence of the balance factor $\lambda$ on training stability is not detailed.
+- **Scalability to Extremely Long Horizons**: Verification on 50+ step tasks (e.g., deep research) is still needed.
 
 ## Related Work & Insights
--   **vs ARPO (Dong 2025)**: Reagent-U's reasoning RM density provides a clear advantage in long-horizon tasks over ARPO's rule-based reward.
--   **vs Atom-Searcher (Deng 2025)**: While others use scalar process rewards, Reagent simultaneously produces critique and scores.
--   **vs Self-Refine**: Reagent-U avoids the doubled deployment costs of iterative inference by internalizing the critique capability.
+- **vs ARPO (Dong 2025)**: Reagent-U demonstrates that reasoning RM density is superior to rule-only rewards on long-horizon tasks.
+- **vs Atom-Searcher / PPR**: These works use step-level scalars; Reagent is the first to simultaneously generate critiques and scores for agents.
+- **vs RM-R1 / R1-Reward**: Reagent adapts the reasoning RM paradigm specifically for multi-turn agentic trajectories.
+- **vs Self-Refine / Reflexion**: Unlike inference-heavy reflection methods, Reagent-U internalizes the capability to maintain efficiency.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ Systematic application of reasoning RMs to multi-turn agentic RL with internalized critique.
--   Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and baseline comparisons, though some hyperparameter analysis is missing.
--   Writing Quality: ⭐⭐⭐⭐ Clear visualization of variants and rigorous mathematical formulation of the unified pool.
--   Value: ⭐⭐⭐⭐⭐ High-quality datasets and models provided for the community, with immediate industrial applicability.
+- Novelty: ⭐⭐⭐⭐ Systematically applies reasoning RM to multi-turn agentic RL; innovates in critique internalization.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad benchmarking and variant comparison; however, some ablation details and hyperparameter sensitivity are missing.
+- Writing Quality: ⭐⭐⭐⭐ Clear diagrams and rigorous advantage normalization formulas.
+- Value: ⭐⭐⭐⭐⭐ High-quality dataset release and inference-neutral architecture offer strong utility for both research and production.
 
 <!-- RELATED:START -->
 
@@ -136,8 +151,8 @@ Self-comparison of the three variants:
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
 - [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
+- [\[NeurIPS 2025\] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](../../NeurIPS2025/llm_agent/btlui_blinkthinklink_reasoning_model_for_gui_agent.md)
 
 </div>
 

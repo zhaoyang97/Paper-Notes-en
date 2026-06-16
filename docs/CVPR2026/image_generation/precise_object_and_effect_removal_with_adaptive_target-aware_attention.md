@@ -2,78 +2,78 @@
 title: >-
   [Paper Note] Precise Object and Effect Removal with Adaptive Target-Aware Attention
 description: >-
-  [CVPR 2026][Image Generation][Object Removal] This paper proposes ObjectClear, a framework that decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA)…
+  [CVPR 2026][Image Generation][Diffusion Model] The ObjectClear framework is proposed, which decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA). Combined with Attention-Guided Fusion (AGF) and Spatially-Varying Denoising Strength (SVDS) strategies, it achieves precise removal of target objects and their incidental e
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Object Removal"
-  - "Shadow/Reflection Elimination"
-  - "Diffusion Models"
-  - "Attention-Guided Fusion"
-  - "Dataset Construction"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: afefa862cf2e9ebd
+content_hash: 9f1ac9ef897f87a0
 ---
-
 # Precise Object and Effect Removal with Adaptive Target-Aware Attention
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2505.22636](https://arxiv.org/abs/2505.22636)  
 **Code**: [https://zjx0101.github.io/projects/ObjectClear](https://zjx0101.github.io/projects/ObjectClear)  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: Object Removal, Shadow/Reflection Elimination, Diffusion Models, Attention-Guided Fusion, Dataset Construction
 
 ## TL;DR
-This paper proposes ObjectClear, a framework that decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA), combined with Attention-Guided Fusion (AGF) and Spatially Varying Denoising Strength (SVDS) strategies, enabling precise removal of target objects along with their associated visual effects such as shadows and reflections. The work also introduces OBER, the first large-scale dataset for Object-Effect Removal.
+The ObjectClear framework is proposed, which decouples foreground removal from background reconstruction via Adaptive Target-Aware Attention (ATA). Combined with Attention-Guided Fusion (AGF) and Spatially-Varying Denoising Strength (SVDS) strategies, it achieves precise removal of target objects and their incidental effects (shadows, reflections). Additionally, the first large-scale Object-Effect Removal dataset, OBER, is constructed.
 
 ## Background & Motivation
 
-**Background**: Diffusion model-based image inpainting and object removal has become the dominant paradigm, leveraging target segmentation masks with diffusion generators to erase unwanted objects. Representative methods include SDXL-Inpainting, PowerPaint, BrushNet, and RORem.
+**Background**: Image inpainting and object removal based on diffusion models have become the mainstream paradigm, erasing undesired objects by combining target segmentation masks with diffusion generators. Representative methods include SDXL-Inpainting, PowerPaint, BrushNet, and RORem.
 
-**Limitations of Prior Work**: Existing methods suffer from three core issues: (a) **Effect residuals**: only the object itself is removed, while associated visual effects such as shadows and reflections persist; (b) **Hallucination**: unwanted objects or textures are generated within the removal region; (c) **Background tampering**: colors and textures in non-target regions are inadvertently altered.
+**Limitations of Prior Work**: Existing methods face three core issues—(a) **Effect Residuals**: They only remove the object itself, struggling to eliminate visual effects like shadows and reflections; (b) **Hallucinations**: They generate unwanted new objects or textures in the removed areas; (c) **Background Alteration**: Colors and textures in non-target areas are inadvertently modified.
 
-**Key Challenge**: There is no explicit modeling of the relationship between target objects and their associated visual effects, nor effective constraints to guide generative model attention toward the removal region. Existing datasets are either purely synthetic (lacking real-world effect annotations), too small in scale, or not publicly available.
+**Key Challenge**: There is a lack of explicit modeling for the correlation between target objects and their incidental visual effects, as well as a lack of effective constraints to guide the generation model's attention toward the removal regions. Existing datasets are either based on simulated data (lacking real-world effect annotations) or are too small and not publicly available.
 
-**Key Insight**: The paper decouples foreground removal from background reconstruction by learning target-aware attention maps to adaptively localize objects and their effect regions, while maintaining high-fidelity background preservation. A large-scale hybrid dataset with both object and effect mask annotations is also constructed.
+**Key Insight**: This work decouples foreground removal from background reconstruction—learning target-aware attention maps to adaptively locate objects and their effect regions while maintaining high background fidelity. Furthermore, a large-scale hybrid dataset featuring object+effect mask annotations is constructed.
 
-**Core Idea**: ATA learns attention maps over object-effect regions; these maps are then used during inference for attention-guided fusion, simultaneously achieving precise removal and background preservation.
+**Core Idea**: Adaptive Target-Aware Attention (ATA) is used to learn attention maps of object-effect regions. These maps are then utilized during inference for attention-guided fusion, achieving the dual goals of precise removal and background preservation.
 
 ## Method
 
 ### Overall Architecture
-ObjectClear is built upon SDXL-Inpainting. The input is $\langle z_t, I_{in}, M_o, c \rangle$ (noisy latent representation, original image, object mask, text prompt). Notably, the full original image $I_{in}$ is used as input rather than the masked image $I_m$ used in conventional methods, enabling the model to better capture the visual features of object effects and background information behind transparent objects.
+ObjectClear addresses the difficult task of cleanly erasing an object along with its shadows and reflections without disturbing the background. The entire pipeline is built upon SDXL-Inpainting. Its input is $\langle z_t, I_{in}, M_o, c \rangle$: latent noise, the original image, the object mask, and a text prompt. An easily overlooked but critical choice is feeding the **complete original image** $I_{in}$ into the network instead of the traditionally masked image $I_m$ used in inpainting. By retaining the full image, the model can clearly perceive shadows cast by the object, reflections on glass, and even the background visible through transparent objects, which serve as cues for locating the "effect regions."
+
+During the training phase, the model learns to reconstruct the object and its effects while being constrained to focus cross-attention on the object+effect region (ATA). During inference, the attention map learned during training is reused as a fusion mask (AGF), and a denoising strategy that handles object and background regions separately (SVDS) is applied. This ensures both "thorough removal" and "fixed background."
+
+```mermaid
+graph TD
+    A["Input: Complete Original Image I_in + Object Mask M_o + Text Prompt"] --> B["SDXL-Inpainting Backbone"]
+    B -->|Training| C["Adaptive Target-Aware Attention (ATA)<br/>Mask loss supervises cross-attention on object+effect regions"]
+    C --> D["Learned Object-Effect Attention Map"]
+    B -->|Inference| E["Attention-Guided Fusion (AGF)<br/>Reuses attention map as soft mask for alpha blending"]
+    D -.Reused at Inference.-> E
+    E --> F["Spatially-Varying Denoising Strength (SVDS)<br/>Object zone DS=1.0 Regeneration / Background zone DS=0.99 Frozen"]
+    F --> G["Output: Object + Shadows/Reflections cleanly removed, Background unchanged"]
+```
 
 ### Key Designs
 
-1. **Adaptive Target-Aware Attention (ATA)**
+**1. Adaptive Target-Aware Attention (ATA): Allowing Attention to Grow Object-Effect Masks**
 
-    - **Function**: Guides the model to simultaneously attend to the target object region and its associated effect regions (shadows, reflections).
-    - **Mechanism**: The text embedding of the prompt "remove the instance of" is concatenated with the object visual embedding (encoded from $I_{in} \cdot M_o$ via a CLIP visual encoder and projected through an MLP) to serve as the cross-attention guidance signal. The cross-attention map $\mathbf{A}$ corresponding to visual embedding tokens is extracted and supervised using the object-effect mask $M_{fg}$.
-    - **Key Loss**: $\mathcal{L}_{mask} = \text{mean}(\mathbf{A}[1-M_{fg}]) - \text{mean}(\mathbf{A}[M_{fg}])$, which minimizes attention over background regions and maximizes attention over foreground regions.
-    - **Design Motivation**: Explicitly models the object-effect relationship rather than relying on implicit learning.
+Existing methods often target only the object itself and rely on the model to implicitly guess the location of shadows and reflections, leading to residual effects. ATA explicitly teaches the model to locate these regions: first, text embeddings of the prompt "remove the instance of" are concatenated with visual embeddings of the object (extracted by a CLIP visual encoder from $I_{in} \cdot M_o$ and projected via an MLP) to serve as guidance signals for cross-attention. Then, the cross-attention map $\mathbf{A}$ corresponding to the visual embedding token is directly supervised by the object-effect mask $M_{fg}$ using a contrastive mask loss:
 
-2. **Attention-Guided Fusion (AGF)**
+$$\mathcal{L}_{mask} = \text{mean}(\mathbf{A}[1-M_{fg}]) - \text{mean}(\mathbf{A}[M_{fg}])$$
 
-    - **Function**: Leverages ATA-predicted attention maps during inference to perform adaptive input-output blending.
-    - **Mechanism**: The cross-attention map from the first layer during inference (corresponding to the object embedding) is extracted, upsampled to the original image resolution, and smoothed via Gaussian blur to yield a soft-edge object-effect mask, which is used for alpha blending between the generated result and the original input.
-    - **Design Motivation**: Reduces background changes introduced by diffusion denoising and VAE reconstruction, preserving fine-grained color and texture consistency. Unlike BrushNet, which relies on user-provided masks, AGF uses a model-generated object-effect mask automatically.
+In other words, it suppresses attention in background areas and enhances attention in foreground (object+effect) areas. After training, the attention map itself becomes a soft mask identifying the object and its artifacts, embedding the relationship between the object and its effects into the network rather than relying on chance.
 
-3. **Spatially Varying Denoising Strength (SVDS)**
+**2. Attention-Guided Fusion (AGF): Reusing Learned Attention Maps as Inference Fusion Masks**
 
-    - **Function**: Applies different denoising strengths to the object mask region and the background region.
-    - **Mechanism**: The object region uses $DS=1.0$ (fully generated from noise for complete removal), while the background region uses $DS=0.99$ (retaining original information to prevent color drift), achieved by re-injecting background information during inference.
-    - **Design Motivation**: A uniform denoising strength presents a contradiction — $DS=1.0$ achieves complete removal but causes global color shift, while $DS=0.99$ preserves color consistency but results in incomplete removal.
+Diffusion denoising and VAE reconstruction naturally cause subtle drifts in the background—slight shifts in color and texture. AGF utilizes the output of ATA during inference to mitigate this: it takes the first-layer cross-attention map (corresponding to the object embedding), upsamples it to the original resolution, and applies Gaussian blurring to create an object-effect mask with soft edges. This mask is used for alpha blending of the generated result and the original input—using the generated result for the foreground and keeping the original image for the background. The elegance lies in the fact that this mask does not require additional user input (distinguishing it from methods like BrushNet), but is naturally learned during training.
+
+**3. Spatially-Varying Denoising Strength (SVDS): Full Regeneration for Objects, Freezing for Background**
+
+A uniform denoising strength poses a dilemma: $DS=1.0$ (complete generation from noise) erases objects cleanly but causes global color shifts; $DS=0.99$ maintains color consistency but fails to remove objects thoroughly. SVDS applies different strengths to different regions—the object mask region uses $DS=1.0$ to regenerate a clean background, while the background region uses $DS=0.99$ and continuously re-injects the original background during the denoising process to ensure color stability. This decouples the contradiction between "clean removal" and "color consistency."
 
 ### OBER Dataset Construction
-
-The hybrid dataset consists of two parts:
-- **Camera-captured data (2,878 pairs)**: Image pairs captured with a fixed camera with and without objects present; DINO+SAM is used to obtain object masks, and object-effect masks are computed via pixel-level difference between input and ground truth.
-- **Synthetic data (10,000 images)**: Background images collected from the Internet (filtered for flat regions using Mask2Former and validated for depth consistency via Depth Anything V2), with foreground objects and effect layers composited via alpha blending, supporting multi-object occlusion scenarios. The alpha value is computed as: $\alpha(p) = (I_{gt} - I_{in})/(I_{gt} + \varepsilon)$ for effect regions.
+Precise effect removal requires real-world data with object-effect annotations, which are scarce. OBER fills this gap using a hybrid approach of "Photography + Simulation." **Captured Data (2,878 pairs)** involves using a fixed camera to take two images with and without the object. Object masks are created using DINO+SAM, and object-effect masks (including shadows/reflections) are automatically calculated via pixel-wise differences between the input and ground truth (GT). **Simulated Data (10,000 images)** is collected by sourcing background images (screened for flat regions via Mask2Former and depth consistency via Depth Anything V2), then using alpha blending to composite foreground objects and effect layers. Complex scenes with multi-object occlusions are also constructed; effect region alpha is calculated as $\alpha(p) = (I_{gt} - I_{in})/(I_{gt} + \varepsilon)$. The two sources complement each other: captured data provides realistic lighting, while simulated data provides scale and occlusion diversity.
 
 ### Loss & Training
-- Built on SDXL-Inpainting; trained at 512×512 resolution, batch size 32, on 8× A100 GPUs for 100k steps, with learning rate 1e-5.
-- Total loss = standard diffusion loss + $\mathcal{L}_{mask}$.
-- Inference uses guidance scale = 1.0, 20 denoising steps.
+The model is trained based on SDXL-Inpainting at $512 \times 512$ resolution with a batch size of 32 on 8× A100 GPUs for 100k steps, using a learning rate of 1e-5. The total loss is the standard diffusion loss plus the aforementioned $\mathcal{L}_{mask}$. During inference, a guidance scale of 1.0 is used with 20 denoising steps.
 
 ## Key Experimental Results
 
@@ -88,44 +88,44 @@ The hybrid dataset consists of two parts:
 | OBER-Test | PSNR-BG↑ | **35.62** | 30.04 | +5.58 |
 | OBER-Test | LPIPS↓ | **0.0342** | 0.0521 | -0.018 |
 
-Notably, ObjectClear using only object masks outperforms all methods that use object-effect masks. The substantial lead on PSNR-BG (+5 dB) highlights a clear advantage in background preservation.
+Key Insight: ObjectClear outperforms all methods using object-effect masks, even when it only uses object masks. The PSNR-BG metric is significantly higher (+5dB), showing a clear advantage in background preservation.
 
 ### Ablation Study
 
-| Configuration | PSNR↑ | PSNR-BG↑ | LPIPS↓ | Notes |
+| Configuration | PSNR↑ | PSNR-BG↑ | LPIPS↓ | Description |
 |------|-------|----------|--------|------|
-| CC Data only | 27.29 | 27.96 | 0.0910 | Baseline |
-| + ATA | 27.56 | 28.37 | 0.0845 | Effect of attention |
-| + Sim. Data | 28.04 | 28.80 | 0.0805 | Contribution of synthetic data |
-| + AGF | 32.77 | 35.50 | 0.0348 | **Largest contributor** |
-| + SVDS | **33.04** | **35.62** | **0.0342** | Full model |
+| CC Data Only | 27.29 | 27.96 | 0.0910 | Baseline |
+| + ATA | 27.56 | 28.37 | 0.0845 | Effect of Attention |
+| + Sim. Data | 28.04 | 28.80 | 0.0805 | Contribution of Simulated Data |
+| + AGF | 32.77 | 35.50 | 0.0348 | **AGF contributes the most** |
+| + SVDS | **33.04** | **35.62** | **0.0342** | Full Model |
 
 ### Key Findings
-- **AGF is the largest contributor**: Adding AGF raises PSNR from 28.04 to 32.77 (+4.73 dB) by directly exploiting the learned attention maps to protect the background.
-- ATA and synthetic data each contribute approximately 0.5 dB; SVDS provides an additional ~0.3 dB.
-- Multi-object synthetic data is critical for robustness in complex scenarios involving occlusion and object interactions.
+- **AGF is the primary contributor**: Adding AGF causes PSNR to jump from 28.04 to 32.77 (+4.73dB) because it directly uses learned attention maps to protect the background.
+- ATA and Sim. Data each contribute approximately 0.5dB, while SVDS adds another 0.3dB.
+- Multi-object simulated data is crucial for robustness in complex scenes involving occlusions and object interactions.
 
 ## Highlights & Insights
-- The **synergistic design of ATA and AGF** is particularly elegant: the attention maps learned during training not only improve removal precision but also serve as natural guidance signals for inference-time fusion, allowing a single module to serve dual purposes.
-- The **spatially heterogeneous denoising** strategy of SVDS is broadly generalizable — applying different denoising strengths to different regions can benefit any diffusion-based editing task requiring region-differentiated processing.
-- The **dataset construction pipeline** (pixel-difference extraction of effect masks + alpha blending for synthetic compositing) constitutes a reusable toolkit.
+- The **collaborative design of ATA+AGF** is clever: the attention map learned during training not only improves removal precision but also serves as a natural guidance signal for fusion during inference, serving a dual purpose.
+- The concept of **SVDS spatially heterogeneous denoising** is generalizable—it can be used in any diffusion editing task requiring regional differentiation by applying different denoising strengths.
+- The **dataset construction pipeline** (pixel difference for effect mask extraction + alpha blending for simulation) provides a reusable toolchain.
 
 ## Limitations & Future Work
-- Training resolution is limited to 512×512, requiring additional adaptation for high-resolution real-world applications.
-- Object masks depend on external segmentation models (DINO+SAM), and mask quality directly affects results.
-- For highly complex multi-light-source scenes (e.g., intersecting shadows from multiple objects), automatic extraction of effect masks may be insufficiently accurate.
-- The method handles only static images; video object removal would require additional temporal consistency design.
+- Training resolution is limited to $512 \times 512$, requiring extra adaptation for high-resolution practical applications.
+- The object mask relies on external segmentation models (DINO+SAM); mask quality directly affects results.
+- For extremely complex multi-light source scenes (e.g., intersecting shadows of multiple objects), automatic extraction of effect masks may be inaccurate.
+- Only static images are handled; video object removal requires additional temporal consistency design.
 
 ## Related Work & Insights
-- **vs. OmniPaint**: Both methods require only object masks; OmniPaint implicitly learns effect removal, whereas ObjectClear explicitly models effect regions via ATA, leading to a 5+ dB advantage in PSNR-BG.
-- **vs. RORem**: RORem depends on manually annotated quality assurance, while ObjectClear automatically acquires high-quality effect masks via camera-captured pairs and pixel-level difference.
-- **vs. Attentive Eraser**: Both focus on attention mechanisms, but Attentive Eraser optimizes at test time, whereas ObjectClear learns through mask loss supervision during training.
+- **vs OmniPaint**: While both require only object masks, OmniPaint learns effect removal implicitly, whereas ObjectClear explicitly models effect regions via ATA, leading to a 5dB+ lead in PSNR-BG.
+- **vs RORem**: RORem requires manual annotation for quality assurance, whereas ObjectClear automatically obtains high-quality effect masks through photography and pixel differences.
+- **vs Attentive Eraser**: Both focus on attention mechanisms, but Attentive Eraser performs test-time optimization, while ObjectClear learns via mask loss during the training phase.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The joint design of ATA/AGF/SVDS is elegant, though the core idea (explicit effect modeling + attention-guided fusion) is relatively intuitive.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three test sets (including a self-collected in-the-wild set), comprehensive ablations, and fair comparisons under both mask settings.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with detailed descriptions of the dataset construction pipeline.
-- **Value**: ⭐⭐⭐⭐ The OBER dataset and precise effect removal capability offer significant practical value, though a high-resolution version is needed.
+- Novelty: ⭐⭐⭐⭐ The collaborative design of ATA/AGF/SVDS is elegant, though the core concept (explicit effect modeling + attention guidance) is relatively intuitive.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes three test sets (including a self-built Wild set), comprehensive ablation, and fair comparisons (under two mask settings).
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed description of the dataset construction process.
+- Value: ⭐⭐⭐⭐ The OBER dataset and precise effect removal are highly valuable for practical applications, though a high-resolution version is needed.
 
 <!-- RELATED:START -->
 
@@ -134,10 +134,10 @@ Notably, ObjectClear using only object masks outperforms all methods that use ob
 ## Related Papers
 
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
-- [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
 - [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
-- [\[CVPR 2026\] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation](adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
+- [\[ICML 2026\] AdaEraser: Training-Free Object Removal via Adaptive Attention Suppression](../../ICML2026/image_generation/adaeraser_training-free_object_removal_via_adaptive_attention_suppression.md)
+- [\[CVPR 2026\] Diff-SemiER: Transparency-Aware Adaptive Fusion Diffusion Model with Generative Prior for Semi-Transparent Eyeglasses Removal](diff-semier_transparency-aware_adaptive_fusion_diffusion_model_with_generative_p.md)
+- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
 
 </div>
 

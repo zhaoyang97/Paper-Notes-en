@@ -2,78 +2,101 @@
 title: >-
   [Paper Note] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification
 description: >-
-  [ACL 2026][Hallucination Detection][Financial QA] FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval…
+  [ACL 2026][Hallucination Detection][Knowledge Distillation] FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval; (2) decomposing answers into atomic claims and verifying them using a type-routed strategy across a six-category taxonomy (Numerical, Temporal, Entity Property, Comparative, Regulatory, Computational—
 tags:
-  - "ACL 2026"
-  - "Hallucination Detection"
-  - "Financial QA"
-  - "Atomic Claim Verification"
-  - "Formula Reconstruction"
-  - "Table Attribution"
-  - "Knowledge Distillation"
+  - ACL 2026
+  - Hallucination Detection
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: ecd2dfa5d58a5391
+content_hash: 0e14fde8d534a3be
 ---
-
 # FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.23588](https://arxiv.org/abs/2604.23588)  
-**Code**: Not public  
+**Code**: Undisclosed  
 **Area**: Hallucination Detection  
 **Keywords**: Financial QA, Atomic Claim Verification, Formula Reconstruction, Table Attribution, Knowledge Distillation
 
 ## TL;DR
-FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval; (2) decomposing answers into atomic claims and verifying them with a type-routed strategy across a six-category taxonomy (numerical, temporal, entity-attribute, comparative, regulatory, and computational—where computational claims use formula reconstruction + arithmetic re-verification); (3) grounded rewriting of unsupported claims with paragraph/cell-level citations. By distilling GPT-4o into an 8B detector, it achieves a 91.4% F1 score with 18× acceleration, reducing the end-to-end hallucination rate by 78% compared to GPT-4o+CoT.
+FinGround is a three-stage "verify-then-ground" pipeline for financial document QA: (1) finance-aware hybrid retrieval; (2) decomposing answers into atomic claims and verifying them using a type-routed strategy across a six-category taxonomy (Numerical, Temporal, Entity Property, Comparative, Regulatory, Computational—where computational claims use formula reconstruction and arithmetic re-verification); (3) grounded rewriting of unsupported claims with paragraph/cell-level citations. By distilling GPT-4o into an 8B detector, it achieves a 91.4% F1 score with 18× acceleration, reducing the hallucination rate by 78% compared to GPT-4o+CoT.
 
 ## Background & Motivation
 
-**Background**: LLMs in the financial industry must ground answers in specific SEC filings or financial reports. However, even GPT-4-Turbo with RAG exhibits an 81% error rate on SEC QA (Islam 2023). Furthermore, the EU AI Act mandates compliance for high-risk financial AI by August 2026, requiring "human oversight + explainability + accuracy assurance."
+**Background**: LLMs in the financial industry must ground answers in specific SEC filings or financial reports. However, even GPT-4-Turbo with RAG exhibits an 81% error rate on SEC QA (Islam 2023). Furthermore, the EU AI Act mandates a compliance deadline of August 2026 for high-risk financial AI, requiring "human oversight, explainability, and accuracy assurance."
 
-**Limitations of Prior Work**: General hallucination detectors like FActScore and SAFE treat all claims equally. While they can extract atomic facts such as "gross margin is 62.4%," they fail to align them with table cells for verification, missing 43% of computational errors. Rewriting methods like RARR assume a single source of evidence and often trigger 34% newly hallucinated content when rewriting computational claims without type differentiation. Table-cell attribution also suffers from 23% dangling citations if upstream chunking is structure-unaware.
+**Limitations of Prior Work**: General hallucination detectors like FActScore and SAFE treat all claims equally. While they can extract atomic facts like "gross margin is 62.4%", they fail to align them with table cells for verification, missing 43% of computational errors. Rewriting methods like RARR assume a single evidence source and rewrite blindly without distinguishing claim types, causing 34% of computational claims to generate new hallucinations. Table-cell attribution suffers from 23% dangling citations if upstream chunking is not structure-aware.
 
-**Key Challenge**: General hallucination detection seeks to be "domain-agnostic," but core errors in financial scenarios (numerical miscalculations, fabricated regulatory citations, table misalignment) necessitate "domain-awareness." The claim type dictates whether to use NLI, formula recalculation, or table matching. A one-size-fits-all NLI approach is destined to fail on ratio and margin verification.
+**Key Challenge**: General hallucination detection seeks to be "domain-agnostic," but core errors in financial scenarios (arithmetic mistakes, fabricated regulatory citations, table misalignment) require "domain-awareness." The type of claim determines whether to use NLI, formula recalculation, or table matching. A one-size-fits-all NLI approach is destined to fail on ratio and margin verification.
 
-**Goal**: (i) Unify detection and mitigation into a production-ready financial QA pipeline; (ii) design a type-routed verification strategy to specifically address computational errors; (iii) reduce costs to a level viable for deployment ($\le \$0.005/\text{query}$); (iv) propose a "retrieval-equalized evaluation" protocol to decouple retrieval gains from verification gains.
+**Goal**: (i) Unify detection and mitigation into a production-ready financial QA pipeline; (ii) design a claim-type routed verification strategy, specifically targeting computational errors; (iii) reduce costs to a level feasible for deployment ($\le$ $0.005/query); (iv) propose a "retrieval-equalized evaluation" protocol to decouple retrieval gains from verification gains.
 
-**Key Insight**: Based on an error analysis of 500 real financial hallucinations, the authors found that errors concentrate on six enumerable claim types, each having a corresponding optimal verification strategy. Therefore, the problem is not "stronger NLI models" but "routing by type."
+**Key Insight**: An error analysis of 500 real financial hallucinations revealed that errors concentrate on six enumerable claim types, each with an optimal verification strategy. Therefore, the requirement is not a "stronger NLI model" but "routing by type."
 
-**Core Idea**: Upgrade atomic-claim verification from a "single NLI black box" to a "multi-strategy ensemble routed by a 6-class financial claim taxonomy." Specifically, the computational class replaces traditional NLI with a three-step process: formula template matching + table cell extraction + arithmetic re-verification.
+**Core Idea**: Upgrade atomic-claim verification from a "single NLI black box" to a "multi-strategy ensemble routed by a 6-category financial claim taxonomy," where computational claims are handled via a three-step process: formula template matching, table cell extraction, and arithmetic re-verification.
 
 ## Method
 
 ### Overall Architecture
-The FinGround three-stage pipeline consists of:
-**Stage 1 Finance-Aware Hybrid Retrieval** — RoBERTa-base classifies queries into Simple/Moderate/Complex tiers. Strategies include BM25, dense retrieval + table extraction (using header-aware similarity $\text{sim}(q,t)=\alpha\cdot\cos(\mathbf{q},\mathbf{t}_{\text{cell}})+(1-\alpha)\cdot\cos(\mathbf{q},\mathbf{t}_{\text{header}})$ where $\alpha=0.6$), or iterative retrieve-then-reason. Structure-aware chunking preserves row-column relationships, with each chunk carrying $\langle\text{document, section, page, element\_type}\rangle$ provenance.
-**Stage 2 Atomic Financial Claim Verification** — Claim decomposition $\rightarrow$ classification $\rightarrow$ evidence alignment $\rightarrow$ type-routed judgment (supported / contradicted / unverifiable).
-**Stage 3 Grounded Regeneration** — Contradicted/unverifiable claims are located in the original answer spans via fuzzy alignment (edit distance $\le 3$), followed by targeted re-retrieval and RARR-style rewriting with inline citations like `[Doc:d, §s, p.p]` or `[Doc:d, Table t, Row r, Col c]`. If $\ge 3$ claims require modification, full regeneration is triggered to avoid error compounding.
+
+FinGround addresses hallucinations in financial document QA where "answers look correct but figures are miscalculated or evidence is fabricated." The pipeline follows a "verify-then-ground" flow: retrieve evidence, verify answers claim-by-claim, and rewrite unsupported sentences with traceable citations. The workflow comprises three stages: **Stage 1 Retrieval** uses RoBERTa-base to classify queries into Simple/Moderate/Complex tiers, utilizing BM25, dense retrieval with table extraction, or iterative retrieve-then-reason respectively. Table similarity is calculated using column-header-aware scoring: $\text{sim}(q,t)=\alpha\cdot\cos(\mathbf{q},\mathbf{t}_{\text{cell}})+(1-\alpha)\cdot\cos(\mathbf{q},\mathbf{t}_{\text{header}})$ ($\alpha=0.6$), with structure-aware chunking preserving row-column relationships and source tags $\langle\text{document, section, page, element\_type}\rangle$. **Stage 2 Verification** decomposes the answer into atomic claims, which are routed to different strategies based on the 6-class taxonomy, outputting states of supported / contradicted / unverifiable. This is executed by an 8B detector distilled from GPT-4o. **Stage 3 Rewriting** maps the latter two states back to the original answer spans via fuzzy alignment (edit distance $\le 3$), performs targeted re-retrieval, and rewrites using the RARR paradigm with inline citations such as `[Doc:d, §s, p.p]` or `[Doc:d, Table t, Row r, Col c]`. If $\ge 3$ claims require modification, paragraph-level regeneration is triggered to avoid error compounding.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Question + Financial Doc<br/>SEC Filing / Report"] --> S1
+
+    subgraph S1["Stage 1 · Finance-Aware Hybrid Retrieval"]
+        direction TB
+        R1["Query Tiering<br/>Simple / Moderate / Complex"] --> R2["Header-Aware Table Extraction<br/>+ Structure-Aware Chunking"]
+    end
+
+    S1 --> ANS["Generate Initial Answer"]
+    ANS --> S2
+
+    subgraph S2["Stage 2 · Atomic Claim Verification (8B Distilled Detector)"]
+        direction TB
+        V1["Decompose into Atomic Claims"] --> V2["6-Class Taxonomy + Type Routing"]
+        V2 -->|Computational| V3["Formula Reconstruction + Arithmetic Re-verification"]
+        V2 -->|Other 5 Classes| V4["NLI / Rule-base / Table Matching"]
+    end
+
+    S2 --> VERD{"Claim Supported?"}
+    VERD -->|Yes| OUT
+    VERD -->|No| S3
+
+    subgraph S3["Stage 3 · Grounded Rewriting"]
+        direction TB
+        W1["Fuzzy Alignment Span Localization<br/>+ Targeted Re-retrieval"] --> W2["RARR Rewriting<br/>+ Citation Tagging"]
+    end
+
+    S3 --> OUT["Traceable Answer"]
+```
 
 ### Key Designs
 
-1.  **6-Class Financial Claim Taxonomy + Type-Routed Verification**:
-    - **Function**: Categorizes atomic claims into numerical, temporal, entity-attribute, comparative, regulatory, and computational types, applying the most suitable verification strategy for each rather than a uniform NLI approach.
-    - **Mechanism**: After classification, routing occurs: numerical claims use structured extraction (value, unit, period, entity) for precise table matching; entity-attribute claims use cross-encoder NLI; regulatory claims query a rule database; and computational claims follow a dedicated "formula reconstruction" branch. The taxonomy was derived from 500 real hallucinations; empirical results showed the 6-class system outperformed a 3-class system by 4.3 F1 and showed no significant difference from a 10-class system ($p=0.23$).
-    - **Design Motivation**: General NLI cannot perform arithmetic for ratios or margins; forcing NLI to verify "gross margin = 62.4%" is equivalent to "asking an innumerate person to audit accounts." Routing after classification acknowledges that verification strategies are coupled with claim types.
+**1. 6-Class Financial Claim Taxonomy + Type-Routed Verification: Identify the error before deciding how to verify**
 
-2.  **Formula Reconstruction + Arithmetic Re-verification for Computational Claims**:
-    - **Function**: Re-calculates "derived quantities" (e.g., gross margin, debt-to-equity ratio) instead of performing NLI.
-    - **Mechanism**: Three steps: (a) identify implicit formulas using a library of 47 financial templates; (b) retrieve operand values from table cells; (c) re-calculate the derived quantity, allowing a $\pm 0.5\%$ tolerance for rounding. End-to-end computational verification reached 90.2% F1, a +18.9 F1 improvement over SelfCheckGPT.
-    - **Design Motivation**: Experimental analysis revealed computational claims have the highest hallucination rate (28.4%) but are the easiest to auto-verify—provided the correct operands are found. The bottleneck is not "verification difficulty" but "routing"; treating them as NLI tasks is the root cause of the problem.
+General hallucination detectors (FActScore, SAFE) treat all claims identically and feed them to NLI. However, for a claim like "gross margin was 62.4%", NLI models typically fail to calculate the accuracy, missing 43% of computational errors. FinGround addresses this by classifying atomic claims into six categories based on error types: Numerical, Temporal, Entity-Attribute, Comparative, Regulatory, and Computational. Numerical claims are matched against table cells using (value, unit, period, entity); Entity-Attribute claims use cross-encoder NLI; Regulatory claims query a rule-base; and Computational claims enter a specific formula reconstruction branch. This taxonomy, derived from an analysis of 500 real hallucinations, improves F1 by 4.3 over a 3-class system, with no significant gain from a 10-class system ($p=0.23$). Essentially, it acknowledges that verification strategies and claim types are coupled; using NLI to verify ratios is akin to asking a non-accountant to audit books.
 
-3.  **8B Distilled Detector + Retrieval-Equalized Evaluation Protocol**:
-    - **Function**: (a) Distill GPT-4o on 3,200 financial QA pairs into Llama-3-8B-Instruct, reducing p95 latency from 6.1s to 340ms (18×) and achieving 91.4% F1 (retaining 96.2% teacher performance) at $\$0.003/\text{query}$; (b) mandate that all baselines use identical retrieval results during evaluation to decouple retrieval gains from verification gains.
-    - **Mechanism**: Distillation uses reverse KL divergence + multi-task objectives (decomposition + alignment + verdict). Annotations used two-round consistency checks, discarding 8.4% of inconsistent samples. The retrieval-equalized protocol equips each baseline with FinGround's Stage 1 retrieval, isolating "verification" as the single variable when comparing Hallucination Rates (HalRate).
-    - **Design Motivation**: (a) GPT-4o's 6.1s latency is unacceptable for real-time financial QA; (b) without retrieval-equalized evaluation, RAG papers struggle to distinguish whether improvements stem from "better evidence" or "better use of evidence"—this is a neglected methodological contribution.
+**2. Computational Claim Formula Reconstruction + Arithmetic Re-verification: Recalculate derived metrics instead of guessing**
+
+Computational claims represent the highest hallucination rate (28.4%) but are also the easiest to verify automatically if operands are found. FinGround replaces semantic entailment with actual recalculation: it matches claims against a library of 47 financial formula templates (e.g., gross margin, debt-to-equity ratio), retrieves operand values from table cells, and recalculates the derived metric with a $\pm0.5\%$ tolerance for rounding. This embeds symbolic execution into RAG verification, achieving 90.2% F1 on computational claims, 18.9 points higher than SelfCheckGPT.
+
+**3. 8B Distilled Detector + Retrieval-Equalized Evaluation Protocol: Feasibility and attribution**
+
+GPT-4o verification takes 6.1s per claim, which is cost-prohibitive for real-time finance QA. FinGround distills GPT-4o (gpt-4o-2024-05-13) performances onto Llama-3-8B-Instruct using 3,200 financial QA pairs. The distillation objective uses reverse KL divergence with multi-task joints (decomposition + alignment + verdict). Samples with inconsistencies (8.4%) are removed. This reduces p95 latency from 6.1s to 340ms (18×) and deployment costs to \$0.003/query while retaining 96.2% of the teacher's F1 (at 91.4%). Additionally, the "retrieval-equalized" protocol decouples retrieval and verification gains by equipping all baselines with Stage 1 retrieval, ensuring that HalRate differences are attributable solely to the verification stage.
 
 ### Loss & Training
-Distillation employs reverse KL ($\text{KL}(p_{\text{student}} || p_{\text{teacher}})$ is more stable for mode-seeking), joint multi-task learning (decomposition + alignment + verdict), and vLLM deployment with continuous batching. The cross-encoder alignment model was fine-tuned on 8,400 TAT-QA/FinQA NLI samples, reaching 87.2% F1.
+
+Distillation employs reverse KL divergence ($\text{KL}(p_{\text{student}} || p_{\text{teacher}})$) for better mode-seeking. Multi-task learning covers decomposition, alignment, and verdict targets, deployed via vLLM with continuous batching. The cross-encoder alignment model was fine-tuned on 8,400 TAT-QA/FinQA NLI samples, reaching 87.2% F1.
 
 ## Key Experimental Results
 
-### Main Results: FinHalu Detection Performance (1,200 Expert-Annotated Triplets)
+### Main Results: FinHalu Detection Performance (1,200 expert-annotated triples)
 
 | System | Precision | Recall | F1 |
-| :--- | :---: | :---: | :---: |
+|------|-----------|--------|-----|
 | SelfCheckGPT | 69.4 | 76.5 | 72.8 |
 | HHEM (Vectara) | 78.9 | 73.8 | 76.3 |
 | FActScore | 74.2 | 79.3 | 76.7 |
@@ -82,66 +105,57 @@ Distillation employs reverse KL ($\text{KL}(p_{\text{student}} || p_{\text{teach
 | GPT-4o (teacher) | 94.1 | 95.9 | 95.0 |
 | **FinGround (8B distilled)** | **92.7** | **90.2** | **91.4** |
 
-All improvements over baselines are significant at $p < 0.01$. The FinGround 8B model retains 96.2% of the teacher's F1 with a p95 latency of 340ms (vs. 6.1s).
+All improvements over baselines are significant ($p<0.01$).
 
-### Ablation Study: End-to-End HalRate (Key FinanceBench Highlights)
+### Ablation Study (Key FinanceBench Data)
 
 | System | FinQA HalRate↓ | TAT-QA HalRate↓ | FinanceBench HalRate↓ | Uncond. Acc |
-| :--- | :---: | :---: | :---: | :---: |
+|------|---------------|----------------|----------------------|-------------|
 | Vanilla RAG | 34.7 | 31.5 | 43.8 | 63.9 |
-| FActScore | 25.3 | 22.7 | 32.4 | 66.2 |
-| Self-RAG | 22.1 | 18.4 | 28.5 | 68.2 |
 | GPT-4o + CoT | 18.6 | 15.2 | 22.4 | 71.9 |
 | **FinGround (full)** | **3.6** | **3.8** | **4.9** | **71.2** |
-| − regeneration | 3.6 | 3.8 | 4.9 | 63.8 |
-| − taxonomy (Uniform NLI) | 7.2 | 8.1 | 11.7 | 70.5 |
+| − taxonomy (unified NLI) | 7.2 | 8.1 | 11.7 | 70.5 |
 | − table retrieval | 5.9 | 10.6 | 9.4 | 66.2 |
 
-The end-to-end HalRate dropped by an average of 78% compared to GPT-4o+CoT. Under retrieval-equalized settings, it still achieved a 68–76% reduction ($p < 0.01$), proving that verification contribution is independent of retrieval.
+Ours reduces the end-to-end HalRate by an average of 78% compared to GPT-4o+CoT.
 
 ### Key Findings
-- **Removing taxonomy doubles the HalRate**: On FinanceBench, it rose from 4.9% to 11.7%, proving that "type-routed verification" is a core contribution, not just a gimmick.
-- **Removing table retrieval hurts performance on table-heavy datasets**: In TAT-QA, the HalRate jumped from 3.8% to 10.6%, highlighting that table evidence is indispensable in financial QA.
-- **Computational claims are the most difficult yet the easiest**: They represent the highest hallucination category (28.4%) but also saw the largest improvement from formula reconstruction (+18.9 F1)—evidence that the bottleneck is routing, not verification difficulty.
-- **Strong cross-generator generalization**: Even with Llama-3-70B and Claude-3.5-Sonnet, the F1 remains at 87–89%, indicating that FinGround is a generator-agnostic verification layer.
-- **Hedged language accounts for 52% of false positives**: Vague expressions like "approximately" or "roughly" cause the verifier to misjudge, marking a clear point for future improvement.
-- **4-week pilot with 24 analysts**: Incomplete retrieval recall led to 3.8% false negatives, 56% of which occurred because computational operands fell outside the retrieval window. Verification is not a panacea; it must be paired with better retrieval.
+- **Removing Taxonomy Doubled HalRate**: HalRate increased from 4.9% to 11.7% on FinanceBench, proving type-routed verification is the core contribution.
+- **Table Retrieval is Essential**: Removing table retrieval caused HalRate to surge to 10.6% on TAT-QA, highlighting the necessity of tabular evidence in finance.
+- **Computational Claims**: These are the most hallucination-prone (28.4%) but show the highest gain from formula reconstruction (+18.9 F1), confirming the bottleneck is routing, not verification difficulty.
+- **Efficiency**: The 8B model achieves \$0.003/query with sub-second latency, meeting production requirements.
 
 ## Highlights & Insights
-- **Type-routed verification is the most natural evolution after FActScore**: FActScore decomposes answers into atomic facts for independent verification but ignores that different facts require different verification methods. FinGround completes this idea. This strategy can be transferred to legal or medical QA domains (e.g., verifying dosages, side effects, or case law citations).
-- **Computational claims use formula recalculation instead of NLI**: Making the model "calculate" rather than "guess" is a practical implementation of embedding symbolic execution into RAG verification. Moreover, a library of 47 templates is more comprehensive than it seems, as financial ratios are finite.
-- **Retrieval-equalized evaluation is a neglected methodological contribution**: Decoupling "retrieval gain" from "verification gain" should become the new standard for RAG research to clarify mixed results.
-- **8B distillation to $0.003/query**: This isn't just a technical flex; it is a hard requirement for deployment across 40 banks. While many NLP papers stop at the GPT-4o teacher, FinGround completes the production-grade "last mile."
+- **Evolution of FActScore**: While FActScore decomposes answers, it treats all facts equally. FinGround completes the logic by matching verification strategies to claim types. This "type-routed verification" is transferable to legal or medical domains.
+- **Symbolic Execution in RAG**: Using formula recalculation instead of NLI moves the model from "guessing" to "calculating."
+- **Methodological Decoupling**: The "retrieval-equalized evaluation" clarifies whether RAG improvements come from finding better evidence or using evidence better, a distinction often blurred in prior work.
 
 ## Limitations & Future Work
-- The template library is limited to 47 formulas. Derived quantities outside this library fallback to NLI, leading to a drop in accuracy.
-- Handling of hedged language is weak; words like "approximately" trigger 52% of false positives, necessitating more granular uncertainty modeling.
-- Operands outside the retrieval window cause 3.8% false negatives, proving that "even perfect verification" cannot save a "retrieval miss"—pipeline performance is bounded by Stage 1 recall.
-- FinHalu consists of only 1,200 expert-labeled samples ($\kappa=0.83$), which is relatively small and heavily dependent on the financial expertise of annotators.
-- Evaluations were conducted only on English SEC domains (FinQA/TAT-QA/FinanceBench). Generalization across languages and regulatory systems (e.g., MiFID II, SAC) remains unknown.
+- The formula library is limited to 47 templates; derived quantities outside this scope fallback to NLI, reducing accuracy.
+- Hedged language (e.g., "approximately") accounts for 52% of false positives, necessitating better uncertainty modeling.
+- Accuracy is bounded by Stage 1 retrieval; 56% of false negatives stem from operands residing outside the retrieval window.
+- The FinHalu benchmark is relatively small (1,200 samples) and relies on high-expertise annotation.
 
 ## Related Work & Insights
-- **vs. FActScore (Min 2023)**: Both decompose answers into atomic facts. FActScore uses uniform NLI verification (76.7 F1), while FinGround adds 6-class taxonomy routing + formula reconstruction, gaining +14.7 F1 in financial scenarios. The fundamental difference is "type-awareness vs. type-agnosticism."
-- **vs. SelfCheckGPT (Manakul 2023)**: SelfCheckGPT relies on sampling consistency without external evidence. FinGround requires retrieved evidence but provides grounded citations. The former is better for open-domain tasks, while the latter is better for regulated domains.
-- **vs. Self-RAG / CRAG (Asai 2024, Yan 2024)**: Both improve the RAG process itself via adaptive retrieval. FinGround is a verification layer that can be layered on top of them (Table 3 shows FinGround further reduced the HalRate by 68% after Stage 1 retrieval already provided a 37% improvement).
-- **Inspiration**: (a) Any grounded QA scenario should cluster error types before designing verification; (b) embedding symbolic execution/arithmetic into RAG verification is low-hanging fruit; (c) production papers should strictly decouple the evaluation of "retrieval," "verification," and "rewriting."
+- **vs FActScore (Min 2023)**: Both use atomic facts, but FinGround adds taxonomy routing and formula reconstruction, leading to a +14.7 F1 gain in financial contexts.
+- **vs Self-RAG / CRAG (Asai 2024, Yan 2024)**: These focused on adaptive retrieval; FinGround serves as an orthogonal verification layer that can be stacked on them.
+- **Insight**: Production-grade papers should strictly decouple retrieval, verification, and rewriting in evaluations to ensure results are attributable.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The 6-class taxonomy + formula reconstruction is a substantial contribution to the financial domain; the retrieval-equalized protocol is an insightful methodological addition.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes 3 public + 1 custom benchmark, cross-generator transfer, a 4-week 24-person pilot, and detailed ablations, though the FinHalu size (1,200) is somewhat small.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear three-stage structure, data-backed claims, and honest limitations; however, formulas and tables are dense.
-- **Value**: ⭐⭐⭐⭐ Directly addresses the EU AI Act 2026 compliance deadline with a $\$0.003/\text{query}$ deployment plan; the taxonomy routing logic is highly transferable.
+- Novelty: ⭐⭐⭐⭐ (Type-routed verification and formula reconstruction are substantial domain contributions).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive ablations and cross-generator tests, though FinHalu size is a minor constraint).
+- Writing Quality: ⭐⭐⭐⭐ (Clear 3-stage structure and data-backed claims).
+- Value: ⭐⭐⭐⭐ (Directly addresses 2026 EU AI Act compliance and offers a production-ready cost profile).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
+- [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
+- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
 - [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](faithlens_detecting_and_explaining_faithfulness_hallucination.md)
-- [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](../../CVPR2026/hallucination/beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
 - [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
 
 </div>

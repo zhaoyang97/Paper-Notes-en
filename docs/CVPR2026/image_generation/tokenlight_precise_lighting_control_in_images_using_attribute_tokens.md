@@ -2,93 +2,115 @@
 title: >-
   [Paper Note] TokenLight: Precise Lighting Control in Images using Attribute Tokens
 description: >-
-  [CVPR 2026][Image Generation][relighting] TokenLight formulates image relighting as an end-to-end image generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level…
+  [CVPR 2026][Image Generation][relighting] Ours proposes TokenLight, formulating image relighting as an end-to-end generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level, and 3D light position). It achieves precise, continuous, and interpretable lighting control within a Diffusion Transformer framework.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "relighting"
-  - "attribute tokens"
-  - "diffusion transformer"
-  - "lighting control"
-  - "synthetic data"
+  - CVPR 2026
+  - Image Generation
+  - relighting
+  - attribute tokens
+  - diffusion transformer
+  - lighting control
+  - synthetic data
 date: 2026-05-08
-content_hash: a0d5274ba9fcd81c
+content_hash: a291389f67103117
 ---
-
 # TokenLight: Precise Lighting Control in Images using Attribute Tokens
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.15310](https://arxiv.org/abs/2604.15310)  
 **Code**: [vrroom.github.io/tokenlight/](https://vrroom.github.io/tokenlight/)  
-**Area**: Image Generation / Relighting
+**Area**: Image Generation / Relighting  
 **Keywords**: relighting, attribute tokens, diffusion transformer, lighting control, synthetic data
 
 ## TL;DR
 
-TokenLight formulates image relighting as an end-to-end image generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level, and 3D light source position), enabling precise, continuous, and interpretable lighting control within a diffusion Transformer framework.
+Ours proposes TokenLight, formulating image relighting as an end-to-end generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level, and 3D light position). It achieves precise, continuous, and interpretable lighting control within a Diffusion Transformer framework.
 
 ## Background & Motivation
 
-Existing relighting methods are each constrained by their lighting representations: text-driven approaches lack precision, background images carry limited information, panoramic environment maps cannot model near-field illumination, and inverse rendering methods depend on high-quality 3D reconstruction. There is a lack of a representation that is simultaneously precise, interpretable, and spatially flexible enough for direct lighting manipulation in the 2D image domain. The core requirement is to combine the intuitive flexibility of 3D lighting tools with the accessibility of 2D image editing, without requiring 3D reconstruction.
+Lighting representations in existing relighting methods have inherent limitations: text-driven approaches lack precision; background images provide limited information; panoramic environment maps cannot model near-field illumination; and inverse rendering methods rely on high-quality 3D reconstruction. There is a lack of a representation that is both precise/interpretable and spatially flexible for direct lighting manipulation in the 2D image domain. The core requirement is to combine the intuitive flexibility of 3D lighting tools with the accessibility of 2D image editing without requiring 3D reconstruction.
 
 ## Method
 
 ### Overall Architecture
 
-The method fine-tunes a pretrained diffusion Transformer (a text-to-image/video foundation model). Given control signals — attribute tokens combined with an input image — the model directly re-renders the desired output. A large-scale synthetic dataset provides precise lighting annotations, supplemented by a small amount of real data to improve generalization.
+TokenLight addresses the problem of "precise lighting control directly on 2D images without 3D reconstruction." It reformulates relighting as a conditional image generation task: fine-tuning a pre-trained Diffusion Transformer (foundation model for text-to-image/video) by feeding a set of attribute tokens describing the illumination along with the input image. The model then directly re-renders the result under the target lighting. The training data primarily consists of a large-scale Blender synthetic dataset supplemented by a small amount of real-world captures; the former provides precise ground truth for each lighting attribute, while the latter ensures realism and generalization.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Large-scale Synthetic Data Training"]
+        direction TB
+        A["Blender Path-Tracing Rendering<br/>Systematic Lighting Variations"] --> B["Precise Per-attribute Ground Truth<br/>Point Light / Environment Map / Visibility Mask"]
+    end
+    C["Attribute Token Lighting Representation<br/>Intensity / Color / Ambient / Diffuse / 3D Position"]
+    C -->|Virtual Light Placement| G["Three Practical Lighting Controls"]
+    C -->|Ambient Light Editing| G
+    C -->|Masked Scene Light Toggling| G
+    H["Input Image"] --> D["Diffusion Transformer Fine-tuning<br/>Conditional Denoising Re-rendering"]
+    G --> D
+    DATA --> D
+    D --> E["Relighting Output"]
+```
 
 ### Key Designs
 
-1. **Attribute Token Lighting Representation**: Each token encodes a physically meaningful lighting attribute — intensity, color (color temperature), diffuse level, 3D spatial position, and ambient light parameters. Each attribute is independently controllable and continuously adjustable. This decomposed representation naturally supports disentangled editing.
+**1. Attribute Token Lighting Representation: Decomposing Light into Independently Tunable Physical Quantities**
 
-2. **Large-Scale Synthetic Data Training**: A dataset is generated in Blender using a path-tracing renderer, rendering 3D assets under systematically varied lighting conditions to provide precise ground-truth supervision for each lighting attribute. The dataset includes single-light-source renders, environment light images, and light source visibility masks.
+Text is too vague, background images offer limited info, panoramas cannot model near-field light, and inverse rendering requires clean 3D geometry—these representations are either imprecise or inflexible. TokenLight decomposes lighting into a set of tokens with clear physical meanings, each encoding an attribute: intensity, color (temperature), diffuse level, 3D spatial position, and ambient parameters. Each attribute is continuously adjustable and mutually independent, naturally enabling decoupled editing such as "changing color temperature without moving the light source." This transforms the control process from a black box into interpretable physical manipulation.
 
-3. **Three Practical Lighting Control Modes**: (1) Adding a virtual point light (placing a new light source at an arbitrary 3D position); (2) editing/diffusing ambient illumination (global lighting adjustment); (3) controlling in-scene light sources (toggling emissive objects via spatial masks). Combinations of these modes enable rich creative effects.
+**2. Large-scale Synthetic Data Training: Utilizing Path-Tracing for Precise Attribute Ground Truth**
+
+For attribute tokens to be controllable, the model must observe paired supervision during training where "slight attribute changes lead to slight image changes." Such labels are nearly impossible to obtain in real-world data. The authors use the Blender path-tracing renderer to image 3D assets under systematically varied lighting conditions, providing precise ground truth supervision for each attribute. The dataset includes single-light renderings, environment maps, and light visibility masks, covering all signals required for the three control modes.
+
+**3. Three Practical Lighting Controls: A Unified Representation for Adding Lights, Environment Tuning, and Scene Light Toggling**
+
+The decomposed representation enables three types of freely combinable operations: placing a new virtual light source at any 3D position, editing or diffusing global ambient light, and using spatial masks to toggle existing emitters within the scene. Combined with the continuous tunability of attribute tokens, these allow for diverse creative lighting effects—such as placing a virtual light inside an object to create a "Jack-o'-lantern" effect.
 
 ### Loss & Training
 
-Standard diffusion denoising objective. A small amount of real data (captured by toggling in-scene light sources) supplements training to improve photorealism and generalization. The visual priors of the pretrained foundation model are retained during fine-tuning.
+Training follows the standard denoising objective of diffusion models, preserving the visual priors of the pre-trained foundation model during fine-tuning. In addition to synthetic data, a small amount of real-world data (real captures of the same scene with lights on/off) is used for supplementary training to enhance realism and generalization to real-world scenes.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on both synthetic and real images, compared against prior methods including GenLit and LightLab:
+Validated on synthetic and real images, and compared with prior methods such as GenLit and LightLab:
 
-| Task | Metric | Prev. SOTA | Ours |
-|------|--------|-----------|------|
-| Virtual light source addition | Quantitative + Qualitative | Inferior | **SOTA** |
-| Ambient light editing | Quantitative + Qualitative | Inferior | **SOTA** |
-| In-scene light source control | Quantitative + Qualitative | Inferior | **SOTA** |
+| Task | Metric | Prev. SOTA | TokenLight |
+|------|------|---------|-----------|
+| Virtual Light Addition | Quant. + Qual. | Inferior | **SOTA** |
+| Ambient Light Editing | Quant. + Qual. | Inferior | **SOTA** |
+| In-scene Light Control | Quant. + Qual. | Inferior | **SOTA** |
 
 ### Key Findings
 
-- Without inverse rendering supervision, the model exhibits an intrinsic understanding of light–scene interaction.
-- Virtual light sources can be placed inside objects (e.g., a jack-o'-lantern glow effect).
-- Relighting of transparent materials produces convincing shadows.
-- Reasoning capabilities learned solely from synthetic data transfer successfully to real-world scenes.
+- Without inverse rendering supervision, the model demonstrates an intrinsic understanding of light-scene interactions.
+- Virtual lights can be placed inside objects (e.g., the Jack-o'-lantern effect).
+- Relighting of transparent materials produces believable shadows.
+- Inference capabilities learned solely from synthetic data transfer effectively to real-world scenes.
 
 ## Highlights & Insights
 
-- Attribute tokens transform lighting control from a black box into interpretable, physically grounded manipulation.
-- The end-to-end approach demonstrates 3D lighting understanding without requiring 3D reconstruction.
-- The strategy of scaling synthetic training data offers guidance for other generative tasks that require precise annotations.
+- Attribute tokens transform lighting control from a black box into interpretable physical manipulation.
+- The end-to-end approach demonstrates 3D lighting understanding without requiring explicit 3D reconstruction.
+- The scaling strategy for synthetic training data serves as a guide for other generative tasks requiring precise labeling.
 
 ## Limitations & Future Work
 
-- The 3D light source position is coupled to the camera viewpoint, and multi-view consistency is not guaranteed.
-- Robustness under extreme lighting conditions (e.g., high dynamic range scenes) remains to be tested.
-- Inference speed for real-time interactive editing may be constrained by the diffusion model.
+- 3D light positions are coupled with the camera viewpoint; multi-view consistency is not guaranteed.
+- Robustness under extreme lighting conditions (e.g., high dynamic range scenes) needs further testing.
+- Inference speed for real-time interactive editing may be limited by the diffusion model framework.
 
 ## Related Work & Insights
 
-- The decomposed control design using attribute tokens is generalizable to other conditional generation tasks.
-- The synthetic-plus-small-real training strategy balances precision and generalization.
-- The lighting reasoning capability of diffusion Transformers suggests the possibility of end-to-end physical understanding.
+- The decomposed control design of attribute tokens can be generalized to other conditional generation tasks.
+- The "synthetic + sparse real" training strategy balances precision and generalization.
+- The lighting inference capability of the Diffusion Transformer suggests the possibility of end-to-end physical understanding.
 
 ## Rating
 
-8/10 — The representation design is elegant, and both control precision and visual quality are excellent, representing a significant advance in the relighting field.
+8/10 — The representation design is elegant, and both control precision and visual quality are excellent, marking a significant advancement in the field of relighting.
 
 <!-- RELATED:START -->
 
@@ -96,11 +118,11 @@ Evaluated on both synthetic and real images, compared against prior methods incl
 
 ## Related Papers
 
-- [\[CVPR 2026\] LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models](lumictrl_learning_illuminant_prompts_for_lighting_control_in_personalized_text-t.md)
+- [\[CVPR 2026\] Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](omni-attribute_open-vocabulary_attribute_encoder_for_visual_concept_personalizat.md)
 - [\[CVPR 2026\] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control](beyond_pixel_simulation_pathology_image_generation_via_diagnostic_semantic_token.md)
-- [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
-- [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
+- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
+- [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
+- [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
 
 </div>
 

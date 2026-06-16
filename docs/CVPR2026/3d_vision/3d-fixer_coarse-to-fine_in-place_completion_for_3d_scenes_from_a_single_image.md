@@ -2,77 +2,90 @@
 title: >-
   [Paper Note] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 description: >-
-  [CVPR 2026][3D Vision][Single-image 3D scene generation] This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level…
+  [CVPR 2026][3D Vision][Paper Note] A new "in-place completion" paradigm is proposed, extending pre-trained object-level generative priors to the scene level. It directly completes fragmented geometry at its original location without explicit pose alignment. Simultaneously, a large-scale scene dataset ARSG-110K is constructed, significantly outperforming
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Single-image 3D scene generation"
-  - "in-place completion"
-  - "coarse-to-fine completion"
-  - "occlusion robustness"
-  - "large-scale scene dataset"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 2a6293c53d658ffb
+content_hash: 409f85dcd97e322c
 ---
-
 # 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04406](https://arxiv.org/abs/2604.04406)  
-**Code**: [Project Page](https://zx-yin.github.io/3dfixer) (coming soon)  
-**Area**: 3D Vision
+**Code**: [Project Page](https://zx-yin.github.io/3dfixer) (Coming soon)  
+**Area**: 3D Vision  
 **Keywords**: Single-image 3D scene generation, in-place completion, coarse-to-fine completion, occlusion robustness, large-scale scene dataset
 
 ## TL;DR
-This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level, directly completing fragmented geometry at its original spatial location without explicit pose alignment. The authors also construct ARSG-110K, a 110K-scale scene-level dataset, and substantially outperform baselines such as MIDI and Gen3DSR.
+A new "in-place completion" paradigm is proposed, extending pre-trained object-level generative priors to the scene level. It directly completes fragmented geometry at its original location without explicit pose alignment. Simultaneously, a large-scale scene dataset ARSG-110K is constructed, significantly outperforming baselines like MIDI and Gen3DSR.
 
 ## Background & Motivation
-**Background**: Compositional 3D scene generation from a single image is a core task in robotics, AR/VR, and related domains.
+**Background**: Generating compositional 3D scenes from a single image is a core task in fields such as robotics and AR/VR.
 
-**Limitations of Prior Work — Two Main Paradigms**:
-   - **Feed-forward generation** (e.g., MIDI, SceneGen): end-to-end efficient but poor generalization, with multi-instance attention complexity scaling quadratically with the number of objects.
-   - **Divide-and-conquer** (e.g., Gen3DSR): generates or retrieves individual objects and optimizes pose alignment — good generalization but time-consuming optimization that accumulates errors.
+**Limitations of Prior Work** (Two main technical routes):
+   - **Feed-forward Generation** (e.g., MIDI, SceneGen): Efficient end-to-end but poor generalization, and multi-instance attention complexity grows quadratically with the number of objects.
+   - **Divide-and-Conquer** (e.g., Gen3DSR): Generates/retrieves individual objects then optimizes pose alignment—good generalization but the optimization process is time-consuming and prone to cumulative errors.
 
-**Key Challenge**: How can generalization be maintained while avoiding costly pose alignment?
+**Key Challenge**: How to maintain generalization while avoiding time-consuming pose alignment?
 
-**Key Observation**: Geometry estimation models can already accurately recover the 3D geometry of visible regions, which encodes both the spatial layout and the visible portion of each instance. This makes it possible to complete the invisible parts directly in place, without first generating and then aligning.
+**Key Insight**: Geometry estimation models can accurately recover the 3D geometry of visible parts, which contains both spatial layout and the visible portions of various instances. Therefore, invisible parts can be completed directly "in-place" without needing to generate and then align.
 
-**Core Idea**: Instead of "generate then align," perform *in-place completion* — using fragmented geometry as spatial anchors to complete full 3D assets at their original positions via object-level generative priors.
+**Core Idea**: Instead of "generation + alignment," perform "in-place completion"—using fragmented geometry as spatial anchors to complete full 3D assets in-place via object-level generative priors.
 
 ## Method
 
 ### Overall Architecture
-Single image input → scene decomposition (instance segmentation + geometry estimation) → per-instance progressive completion (coarse structure → fine geometry → texture) → complete 3D scene.
+The problem 3D-Fixer addresses is recovering a 3D scene composed of multiple complete objects from a single image without following the traditional path of "generating objects individually and then optimizing poses to assemble them." Its core observation is that existing geometry estimation models can accurately recover the visible parts from the image as 3D point clouds. Although incomplete (missing occluded parts), these point clouds naturally carry the correct spatial layout, scale, and orientation. Consequently, the pipeline follows these steps: scene decomposition of a single image (instance segmentation + monocular geometry estimation) yields fragmented point clouds for each instance; then per-instance "in-place completion" uses fragmented point clouds as spatial anchors to grow the missing parts via object-level generative priors. Completion proceeds in two steps (coarse-to-fine): first determining boundaries, then filling geometry and texture. Finally, completed instances are stacked back to their original positions to obtain the full scene, requiring no explicit pose alignment throughout the process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Single Image"] --> B["Scene Decomposition<br/>Instance Segmentation + Monocular Geometry Estimation"]
+    B --> C["Per-instance Fragmented Point Cloud G_frag + Visibility Mask"]
+    C --> D["Scene Context Conditioning<br/>Point Clouds as Geometry Anchors for Scale/Orientation, GAFP Projects 2D Features for Texture Guidance"]
+    D --> CF
+    subgraph CF["Coarse-to-Fine Generation"]
+        direction TB
+        E["Coarse Stage<br/>Visible Point Cloud AABB Expanded 4x → Predict Full Boundary B_full"] --> F["Fine Stage<br/>Generate High-fidelity Geometry and Texture within B_full"]
+    end
+    CF --> G["Stack Completed Instances Back In-place<br/>No Explicit Pose Alignment Needed"]
+    G --> H["Full 3D Scene"]
+    O["Occlusion Robust Feature Alignment (ORFA)<br/>Frozen TRELLIS Teacher Aligns Occluded Student Representations Layer-by-layer"] -.Stabilize during training.-> CF
+```
 
 ### Key Designs
-1. **Contextual Conditioning**:
 
-    - **Geometric conditioning**: The fragmented point cloud $G_{\text{frag}}$ and its mask are directly fed as 3D spatial anchors, providing scale and orientation information. Self-attention with depth-ratio embeddings and cross-attention with global features handle varying degrees of distortion.
-    - **Texture conditioning (GAFP)**: High-resolution 2D image features from MoGe v2 are projected onto the 3D voxel coordinates of visible point clouds, establishing precise spatial correspondences, and are injected into DiT blocks layer-by-layer to guide texture generation.
-    - **Design Motivation**: Existing methods relying solely on 2D information suffer from scale/orientation ambiguity; explicit 3D information provides strong constraints.
+**1. Scene Context Conditioning: Using fragmented 3D observations directly as generation conditions to eliminate scale and orientation ambiguity inherent in 2D inputs.**
 
-2. **Coarse-to-Fine Generation**:
+Object-level generative models originally only look at a 2D image and cannot determine how large an object is or which direction it faces in a scene, often leading to drifting results. 3D-Fixer feeds the fragmented point cloud $G_{\text{frag}}$ recovered by geometry estimation, along with its visibility mask, as 3D spatial anchors—the point clouds themselves encode true scale and orientation. To handle geometric distortions from varying levels of incompleteness, geometry conditions use self-attention with depth-ratio embeddings for local structures and cross-attention of global features for context. Textures use a dedicated path called GAFP (Geometry-Aligned Feature Projection): high-resolution 2D image features from MoGe v2 are projected back based on the 3D voxel coordinates of the visible point clouds, establishing precise correspondence between pixels and voxels, then injected into DiT blocks layer-by-layer to guide texture generation. This ensures geometry controls scale/orientation while texture controls appearance details.
 
-    - **Coarse stage**: Computes the AABB of the visible point cloud, expands it by a factor of 4 to obtain a conservative bounding box $B_{\text{exp}}$, and predicts the full bounding box $B_{\text{full}}$ within this range.
-    - **Fine stage**: Generates high-resolution, high-fidelity geometry within the predicted tight bounding box.
-    - **Design Motivation**: Occlusion causes severe bounding box ambiguity (the visible portion may be far smaller than the complete object); decoupling boundary prediction from detail generation allows each stage to specialize.
+**2. Coarse-to-Fine Generation: Predicting the full boundary within a conservative bounding box first, then filling high-fidelity geometry, decoupling "how big the object is" from "what the object looks like."**
 
-3. **Occlusion-Robust Feature Alignment (ORFA)**:
-   A frozen pretrained TRELLIS model serves as a teacher for layer-wise knowledge distillation to the student model:
-    $$\mathcal{L}_{\text{AL}} = -\mathbb{E}\Big[\frac{1}{N}\sum_{n=1}^{N} \text{sim}(\mathbf{h}_s, \mathbf{h})\Big]$$
-   The teacher receives clean images while the student receives occluded inputs; aligning intermediate representations stabilizes training.
-    - **Design Motivation**: Object-level priors are trained on occlusion-free data; scene-level occlusion introduces a severe domain gap, and direct adaptation leads to training instability.
+Boundary ambiguity is most difficult in heavily occluded scenes—seeing only the back of a chair makes it impossible to know how far it extends, as the visible part might be tiny. 3D-Fixer splits this into two steps: the coarse stage calculates the Axis-Aligned Bounding Box (AABB) of the visible point cloud and expands it 4x to obtain a loose $B_{\text{exp}}$ that surely contains the full object, then predicts the true full boundary $B_{\text{full}}$ within it; the fine stage then generates high-resolution geometry and texture within this tightened boundary. Decoupling the range from the content ensures that even with heavy occlusion, the predicted size does not collapse.
+
+**3. Occlusion Robust Feature Alignment (ORFA): Using an unoccluded teacher to pull occluded student representations back on track, mitigating the domain gap where "object-level priors have never seen occlusion."**
+
+The object-level priors (based on TRELLIS) were trained on clean, unoccluded objects. When moved to scenes, the inputs are fragmented, causing significant training instability. ORFA builds a teacher-student pair: a frozen pre-trained TRELLIS acts as the teacher (fed clean full images), and a trainable scene branch acts as the student (fed real occluded inputs). Student representations are then aligned to the teacher layer-by-layer using cosine similarity as the alignment target:
+
+$$\mathcal{L}_{\text{AL}} = -\mathbb{E}\Big[\frac{1}{N}\sum_{n=1}^{N} \text{sim}(\mathbf{h}_s, \mathbf{h})\Big]$$
+
+where $\mathbf{h}_s$ and $\mathbf{h}$ are features from the student and teacher at the same layer. The teacher always sees what the object "should" look like, keeping the student's representation stable despite fragmented inputs.
+
+### Mechanism: A Full Example
+
+Suppose a scene contains a chair where only the back and half the seat are visible, while the lower part is blocked by a table. Scene decomposition extracts the chair, and geometry estimation provides its visible point cloud $G_{\text{frag}}$—only the top half, but with the correct scale and orientation. During completion, this fragment and mask act as geometric anchors; image features from MoGe v2 are projected as texture conditions. The coarse stage expands the AABB of the fragment 4x to $B_{\text{exp}}$, within which the model predicts the true full boundary $B_{\text{full}}$ (extending down to the legs). The fine stage grows the geometry of the legs and full seat within this boundary, while textures continue the wood/fabric patterns from visible parts. The chair stays in its original position/orientation throughout, settling in-place without needing manual alignment.
 
 ### Loss & Training
-- Base loss: Flow Matching loss $L_{\text{FM}}$
-- Alignment loss: $L_{\text{AL}}$ — cosine similarity between teacher and student intermediate features
-- Built upon the TRELLIS architecture, extended to a dual-branch design (frozen original branch + trainable scene branch)
+- Basic Loss: Flow Matching loss $L_{\text{FM}}$ to drive geometry and texture generation.
+- Alignment Loss: $L_{\text{AL}}$, cosine similarity of intermediate teacher-student features (ORFA).
+- Architecture: Dual-branch expansion based on TRELLIS—the frozen original branch retains object-level priors, while the trainable scene branch adapts to occluded inputs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | 3D-Fixer | MIDI | Gen3DSR | Gain (vs. MIDI) |
+| Dataset | Metric | 3D-Fixer | MIDI | Gen3DSR | Gain (vs MIDI) |
 |--------|------|------|------|---------|------|
 | MIDI testset | CD_S ↓ | **0.069** | 0.080 | 0.123 | +13.8% |
 | MIDI testset | FS_S ↑ | **78.67** | 50.19 | 40.07 | +56.8% |
@@ -82,40 +95,40 @@ Single image input → scene decomposition (instance segmentation + geometry est
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
 | w/o ORFA | CD_O increases | Occlusion causes training instability |
-| w/o coarse-to-fine | Bounding box prediction fails | Cannot handle heavy occlusion |
-| w/o geometric conditioning | Scale/orientation ambiguity | 2D conditioning insufficient |
-| w/o GAFP | Texture quality degrades | Lack of precise spatial correspondence |
+| w/o Coarse-to-Fine | Boundary prediction failure | Difficulty handling heavy occlusion |
+| w/o Geometry Cond. | Scale/Orientation ambiguity | Insufficient 2D conditions |
+| w/o GAFP | Decreased texture quality | Lack of precise spatial correspondence |
 
 ### Key Findings
-- Object-level CD drops from 0.103 to 0.032 (69% reduction), demonstrating that in-place completion avoids accumulated alignment errors.
-- F-Score increases from 53.58 to 94.39, achieving near-perfect geometric recovery.
-- Inference takes 30 seconds — 18× faster than Gen3DSR and faster than MIDI.
-- Generalizes to complex scenes, real-world scenes, and outdoor scenes.
+- Object-level CD dropped from 0.103 to 0.032 (69% reduction), showing "in-place completion" avoids cumulative alignment errors.
+- F-Score rose from 53.58 to 94.39, achieving near-perfect geometric recovery.
+- 30-second inference, 18x faster than Gen3DSR and faster than MIDI.
+- Generalizable to complex scenes, real-world scenes, and outdoor environments.
 
 ## Highlights & Insights
-- **Paradigm innovation**: In-place completion cleverly leverages the visible portion recovered by geometry estimation as spatial anchors, entirely bypassing pose alignment as a source of error accumulation.
-- **ARSG-110K**: 110K scenes, 180K+ assets, and 3 million annotated images — currently the largest scene-level dataset.
-- **Coarse-to-fine decoupling**: Separating scale prediction from geometry generation is an elegant design for handling occlusion.
+- **Paradigm Innovation**: "In-place completion" cleverly uses visible parts from geometry estimation as spatial anchors, completely avoiding pose alignment as a source of error.
+- **ARSG-110K**: 110K scenes, 180K+ assets, and 3 million annotated images, making it the largest scene-level dataset to date.
+- **Coarse-to-Fine Decoupling**: Separating scale prediction and geometry generation is an elegant design for handling heavy occlusion.
 
 ## Limitations & Future Work
-- The pipeline depends on the quality of the geometry estimation model (MoGe v2); failures in estimation propagate through the entire pipeline.
-- Currently limited to rigid objects; deformable objects (e.g., cloth, human bodies) are not covered.
-- ARSG-110K is synthetic, and a domain gap with real scenes remains.
-- Occlusion relationship reasoning during parallel multi-instance completion may lack sufficient granularity.
+- Dependency on the quality of the geometry estimation model (MoGe v2); if estimation fails, the entire pipeline fails.
+- Currently limited to rigid objects; deformable objects (e.g., clothes, humans) are not covered.
+- ARSG-110K is synthetic, leaving a domain gap with real-world scenes.
+- Occlusion relationship reasoning during multi-instance parallel completion may not be fine-grained enough.
 
 ## Related Work & Insights
-- Compared to MIDI (multi-instance diffusion) and Gen3DSR (divide-and-conquer), 3D-Fixer achieves a superior trade-off between the two paradigms.
-- Advances in geometric foundation models (MoGe v2, UniDepth) are what make the in-place completion paradigm feasible.
-- The idea of "anchoring generation with partial observations" is generalizable to other generation tasks.
+- Compared to MIDI (multi-instance diffusion) and Gen3DSR (divide-and-conquer), 3D-Fixer finds a superior compromise.
+- Progress in geometry foundation models (MoGe v2, UniDepth) makes the "in-place completion" paradigm feasible.
+- The concept of "using partial observations to anchor generation" can be generalized to other generative tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The in-place completion paradigm is original; the ORFA training strategy is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset comparisons with complete ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and precise problem formulation.
-- Value: ⭐⭐⭐⭐⭐ Dual contributions of paradigm and dataset; high practical value.
+- Novelty: ⭐⭐⭐⭐⭐ "In-place completion" paradigm is novel; ORFA strategy is ingenious.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparisons across datasets plus full ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and precise problem definition.
+- Value: ⭐⭐⭐⭐⭐ Dual contribution of paradigm and dataset with high practical utility.
 
 <!-- RELATED:START -->
 
@@ -123,11 +136,11 @@ Single image input → scene decomposition (instance segmentation + geometry est
 
 ## Related Papers
 
-- [\[ICLR 2026\] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints](../../ICLR2026/3d_vision/generalizable_coarse-to-fine_robot_manipulation_via_language-aligned_3d_keypoint.md)
-- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
-- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
 - [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](../../ICLR2026/3d_vision/one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
+- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
+- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
 
 </div>
 

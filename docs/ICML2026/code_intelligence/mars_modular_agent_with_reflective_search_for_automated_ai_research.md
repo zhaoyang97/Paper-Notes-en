@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] MARS: Modular Agent with Reflective Search for Automated AI Research
 description: >-
-  [ICML 2026][Code Intelligence][MLE-Bench] MARS reformulates automated AI research as a problem of "searching for the optimal solution in the software repository space." By utilizing three pillars—**Budget-Aware MCTS…
+  [ICML 2026][Code Intelligence][MLE-Bench] MARS reframes automated AI research as a problem of "searching for the optimal solution within a software repository space." Built on three pillars—**Budget-Aware MCTS**, a **modular "Design-Decompose-Implement" pipeline**, and **Comparative Reflective Memory**—it achieves SOTA among open-source frameworks on MLE-Bench
 tags:
-  - "ICML 2026"
-  - "Code Intelligence"
-  - "MLE-Bench"
-  - "Modular Agent"
-  - "Budget-Aware MCTS"
-  - "Comparative Reflective Memory"
-  - "Lesson Learning"
+  - ICML 2026
+  - Code Intelligence
+  - MLE-Bench
+  - Budget-Aware MCTS
+  - Comparative Reflective Memory
+  - Lesson Learning
 date: 2026-05-08
-content_hash: 5cbfd12e7a96da45
+content_hash: 6df3a35b3bb4526d
 ---
-
 # MARS: Modular Agent with Reflective Search for Automated AI Research
 
 **Conference**: ICML 2026  
@@ -24,59 +22,70 @@ content_hash: 5cbfd12e7a96da45
 **Keywords**: MLE-Bench, Modular Agent, Budget-Aware MCTS, Comparative Reflective Memory, Lesson Learning
 
 ## TL;DR
-MARS reformulates automated AI research as a problem of "searching for the optimal solution in the software repository space." By utilizing three pillars—**Budget-Aware MCTS, a modular "Design-Decompose-Implement" pipeline, and Comparative Reflective Memory**—it achieves State-of-the-Art (SOTA) among open-source frameworks on MLE-Bench. It reaches a gold medal rate of 31.1% (using Gemini-3-Pro-Preview) and exhibits an "Aha! moment" with a 63% cross-branch lesson transfer rate.
+MARS reframes automated AI research as a problem of "searching for the optimal solution within a software repository space." Built on three pillars—**Budget-Aware MCTS**, a **modular "Design-Decompose-Implement" pipeline**, and **Comparative Reflective Memory**—it achieves SOTA among open-source frameworks on MLE-Bench with a 31.1% gold medal rate (Gemini-3-Pro-Preview) and demonstrates an "Aha! moment" with a 63% cross-branch lesson transfer rate.
 
 ## Background & Motivation
 
-**Background**: LLM agents have demonstrated strength in general software engineering (fixing GitHub issues, writing tests). Recent works (AIDE, AIRA, R&D-Agent, ML-Master, InternAgent, etc.) have begun applying them to the core bottleneck of automated AI research: Machine Learning Engineering (MLE) tasks. Performance is evaluated using gold/silver/bronze medal rates on OpenAI's MLE-Bench (75 Kaggle competitions × 24h × 1×A100).
+**Background**: LLM agents have shown strength in general software engineering (fixing GitHub issues, writing tests). Recent works (AIDE, AIRA, R&D-Agent, ML-Master, InternAgent, etc.) have begun applying them to Machine Learning Engineering (MLE) tasks, the core bottleneck of automated AI research, competing on medal rates using OpenAI’s MLE-Bench (75 Kaggle competitions $\times$ 24h $\times$ 1$\times$A100).
 
-**Limitations of Prior Work**: The authors identify three structural flaws in existing MLE agents:
-- **Ignoring Execution Costs**: Current search strategies (greedy, vanilla MCTS, evolutionary) focus solely on performance without considering wall-clock time. A solution that increases accuracy by 0.1% but extends training from 1h to 10h is disastrous within a 24h budget, yet standard UCT tends to favor it.
-- **Fragile Monolithic Scripts**: Most agents generate a single large Python file. This compresses logic due to token limits, requires total rewrites for minor changes, and complicates debugging. It cannot handle the multi-module coupling (data-model-training loop) found in real research repositories.
-- **Memory Fails at Credit Assignment**: When experimental results improve, it is unclear which specific line of code change was responsible. Verbal reflection or trajectory caching (e.g., Reflexion, MemGPT) can "remember what was done" but cannot isolate causality.
+**Limitations of Prior Work**: The authors identify three structural deficiencies in existing MLE agents:
 
-**Key Challenge**: MLE $\neq$ General Programming. The former is a probabilistic long-horizon task characterized by "expensive evaluation + opaque attribution + high architectural complexity." It requires **strategic search with budget awareness** rather than just a more intelligent single-script generator.
+- **Ignoring Execution Costs**: Current search methods (greedy, vanilla MCTS, evolutionary) optimize for task performance without considering wall-clock time. A solution that improves accuracy by 0.1% but increases training time from 1h to 10h is disastrous within a 24h budget, yet standard UCT algorithms bias toward it.
+- **Fragility of Monolithic Scripts**: Most existing agents generate a single large Python file. Token limits compress logic, single changes require full rewrites, and debugging is difficult. This cannot support the multi-module coupling of "data-model-training loop" found in real research repositories.
+- **Memory Fails at Credit Assignment**: When experimental results improve, which specific line of code change was responsible? Verbal reflection or trajectory caching (e.g., Reflexion, MemGPT) only "remembers what was done" but fails to isolate causal factors.
 
-**Goal**: Design an agent scaffolding that simultaneously addresses three sub-questions: (1) How to explicitly trade off performance and cost during search; (2) How to enable agents to produce repo-level solutions instead of scripts; (3) How to distill the differences between "success vs. failure" into transferable causal lessons.
+**Key Challenge**: MLE is not equivalent to general programming. It involves probabilistic long-horizon tasks characterized by "expensive evaluation + opaque attribution + high architectural complexity." This requires **strategic search with budget awareness** rather than just smarter single-script generators.
 
-**Key Insight**: Formalize MLE as $s^* = \arg\max_s \mathcal{O}(s, \mathcal{E})$ s.t. $\text{Cost}(s) \le B$. The solution space is redefined from "all possible Python programs" to "all possible modular repositories $s_n = \langle \{\mathcal{M}_j\}_{j=1}^{l}, \pi_{\text{main}}\rangle$." Search, memory, and reward functions are designed around this repo-level representation.
+**Goal**: Design an agent scaffolding that addresses three sub-problems: (1) how to explicitly trade-off performance and cost during search; (2) how to enable agents to produce repo-level solutions instead of scripts; and (3) how to distill differences between "success vs. failure" into transferable causal insights.
 
-**Core Idea**: Use **Budget-Aware MCTS** to search within the repository space, replace single-script generation with a **Design-Decompose-Implement** pipeline, and resolve credit assignment using **Comparative Reflective Memory** (contrasting current solutions with the best-known solution). These elements synergize to facilitate long-horizon "Aha! moments."
+**Key Insight**: Formalize MLE as $s^* = \arg\max_s \mathcal{O}(s, \mathcal{E})$ s.t. $\text{Cost}(s) \le B$. Redefine the solution space from "all possible Python programs" to "all possible modular repositories $s_n = \langle \{\mathcal{M}_j\}_{j=1}^{l}, \pi_{\text{main}}\rangle$." This ensures that search, memory, and reward functions revolve around a repo-level representation.
+
+**Core Idea**: Utilize **Budget-Aware MCTS** to search within the repository space, replace single-script generation with **Design-Decompose-Implement**, and use **Comparative Reflective Memory** (contrasting current solutions with the best-known diffs) to solve credit assignment. Together, these elements facilitate long-horizon "Aha! moments."
 
 ## Method
 
 ### Overall Architecture
-MARS is an iterative loop. The inputs are the MLE task triplet $\mathcal{P} = (\mathcal{I}, \mathcal{E}, \mathcal{O})$ (instructions / environment / objective) and a budget $B$; the output is a modular repository that maximizes $\mathcal{O}$ within $B$.
+MARS treats the objective of achieving gold-medal performance within a 24h wall-clock budget as a constrained search problem. Given a task triplet $\mathcal{P} = (\mathcal{I}, \mathcal{E}, \mathcal{O})$ (Instructions / Environment / Objective) and a budget $B$, the system seeks to find a modular repository $s_n = \langle \{\mathcal{M}_j\}_{j=1}^{l}, \pi_{\text{main}}\rangle$ that maximizes $\mathcal{O}$ within $B$.
 
-The process consists of two phases:
-1. **Task Preparation**: A multi-agent system extracts task metadata, performs Exploratory Data Analysis (EDA), generates report-guided feature engineering, and prepares train/val/test splits.
-2. **MARS Loop**: Iteratively executes three collaborative modules on an MCTS tree: Module A (Resource-Aware Planning, deciding the next action) $\rightarrow$ Module B (Modular Decomposition, generating/modifying sub-modules) $\rightarrow$ Module C (Reflective Memory, distilling lessons from trajectories back to Module B). The final output is the repository corresponding to the highest-scoring leaf in the tree.
+The system operates in an iterative loop. It begins with Task Preparation: multi-agent metadata extraction and Exploratory Data Analysis (EDA) to guide feature engineering and split train/val/test sets. The MARS Loop follows—repeatedly "deciding the next action, generating/modifying the repository, and distilling lessons from execution" on an MCTS tree. Each node represents a candidate repository. Actions include **Drafting** (new solutions from the root), **Improvement** (modifying modules in valid nodes), and **Debugging** (fixing runtime errors in buggy nodes, up to $N_d=10$ times). The repository corresponding to the highest-scoring leaf is output once the budget is exhausted.
 
-Each MCTS node represents a candidate solution $s_n = \langle \{\mathcal{M}_j\}_{j=1}^{l}, \pi_{\text{main}}\rangle$. Three expansion actions are available: **Drafting** (creating a new solution from scratch at the root), **Improvement** (modifying modules on valid nodes), and **Debugging** (fixing runtime errors on buggy nodes, up to $N_d=10$ debug iterations).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Task Triplet (Instructions/Env/Obj) + Budget B"] --> P["Task Preparation: Multi-agent EDA<br/>Split train / val / test"]
+    P --> S["Budget-Aware MCTS selects next action<br/>Reward incorporates execution time"]
+    S -->|Drafting / Improvement / Debugging| M["Modular Decomposition<br/>Design→Decompose→Implement + Diff editing"]
+    M --> E["Execute and evaluate candidate repository"]
+    E --> R["Comparative Reflective Memory<br/>Distill lessons vs. best solution"]
+    R -->|Budget remaining| S
+    R -->|Budget exhausted| O["Output: Highest scoring leaf repository"]
+```
 
 ### Key Designs
 
-1. **Modular Decomposition (Design-Decompose-Implement Pipeline)**:
-    - **Function**: Transitions agent coding from "emitting a single large script" to "architecture $\rightarrow$ decomposition $\rightarrow$ implementation and per-module validation," resulting in a multi-file repository.
-    - **Mechanism**: Three specialized agents act in sequence: the *Idea Generation Agent* writes a full plan in natural language; the *Modular Agent* decomposes the plan into independent functional modules $\{\mathcal{M}_j\}$ (e.g., `dataset.py`, `model.py`, `engine.py`, etc.); the *Coding Agent* implements each $\mathcal{M}_j$ sequentially. Each module is verified with independent validation scripts before the $\pi_{\text{main}}$ orchestrates the end-to-end pipeline. Modifications use **Diff-Based Editing**: providing "target file + block to replace + new code" in a standard diff format, allowing atomic multi-file updates in a single LLM inference.
-    - **Design Motivation**: Distributing code avoids token output limits; focusing on small logic units reduces context noise and increases accuracy; validated modules can be cached. Table 4 shows that with modularity, the average Lines of Code (LOC) increased from 474.8 to 1103.9 and file counts from 1.0 to 6.7, proving the agent produces more complex, structured solutions.
+**1. Modular Decomposition: From Script Generation to Validated Architecture**
 
-2. **Comparative Reflective Memory (Lesson Learning)**:
-    - **Function**: Addresses the credit assignment problem of "which change caused metrics to rise/fall," distilling execution trajectories into a structured, searchable lesson pool.
-    - **Mechanism**: For **successful** valid solutions, a two-step process is followed: the *Empirical Analysis Agent* extracts objective findings (e.g., metric trends) from logs; the *Lesson Distillation Agent* performs **comparative reflection**, contrasting the current solution with the "best-known solution" at a code level. It outputs a lesson containing: (1) isolated causal changes, (2) comparative impact analysis, and (3) generalized rules for future iterations. For **failed** buggy solutions, an agent analyzes buggy code, error logs, and applied fixes to output a debugging lesson. A Review Agent filters the pool for redundancy. Only the $K_m = 30$ most recent lessons are kept in context, and the agent is forced to explicitly cite used lessons.
-    - **Design Motivation**: Conventional memory typically summarizes "what happened," leading agents to over-generalize from noise. Diff-based comparison isolates algorithmic changes, effectively performing an automated ablation study. Results show a lesson-utilization rate of 65.8% and a **lesson-transfer rate of 63.0%** (lessons used across different tree branches), providing quantitative evidence of "Aha!" moments.
+Unlike standard MLE agents that generate a single Python script, MARS separates code generation into three specialized agents: the *Idea Generation Agent* creates a natural language plan; the *Modular Agent* decomposes it into independent functional modules $\{\mathcal{M}_j\}$ (e.g., `dataset.py`, `model.py`, `engine.py`); and the *Coding Agent* implements each sequentially. Each module is verified with an independent validation script before the main logic $\pi_{\text{main}}$ orchestrates the end-to-end pipeline. Subsequent modifications use **Diff-Based Editing**, specifying the target file, block to replace, and new code in standard diff format, allowing atomic multi-file updates.
 
-3. **Budget-Aware MCTS (Efficiency-Sensitive Reward Function)**:
-    - **Function**: Integrates execution time into the reward on top of standard UCT selection, systematically biasing the search towards "fast and high-performing" nodes.
-    - **Mechanism**: Node performance $M(v)$ is normalized as $G(v) = (M(v) - M_{\min}) / (M_{\max} - M_{\min})$. The budget-aware reward is defined as $R(v) = G(v) \cdot [t(v)/L(v)]^w$, where $t(v)$ is actual execution time, $L(v)$ is the time limit, and $w$ is a negative penalty weight (default $w = -0.07$). Intuition: for two solutions with the same accuracy, the faster one ($t/L$ is smaller) receives a higher reward due to the negative exponent. Expansion rules are customized for MLE: buggy nodes are marked as fully-expanded after $N_d=10$ debug steps; valid nodes are closed after generating $N_i = 2$ children; the root re-activates if $n_s$ valid nodes fail to improve the best solution.
-    - **Design Motivation**: MLE tasks have strict 24h wall-clock constraints. Vanilla MCTS wastes budget on slow solutions with marginal gains. $w = -0.07$ was found to be the sweet spot; $w=0$ (vanilla) drops performance, while $w=-0.15$ biases toward trivial fast nodes. Budget-awareness improved the effective solution rate from 16.1% to 19.5%.
+This bypasses token limits, focuses attention on small logical units, enables module caching, and localizes debugging to specific files. Table 4 shows that enabling modularity increases the average LOC from 474.8 to 1103.9 and file count from 1.0 to 6.7, indicating that the agent produces more complex, structured architectures.
 
-### Loss & Training
-MARS is a training-free scaffolding using a pre-trained LLM backbone (primarily Gemini-2.5-Pro and Gemini-3-Pro-Preview). All "learning" occurs during inference via MCTS and lesson pool evolution. Key hyperparameters: $K_m=30$ (max lessons), $N_d=10$ (debug limit), $N_i=2$ (improvement branch factor), $w=-0.07$ (reward penalty). MLE-Bench default is 24h × 1×A100 (MARS+ scales to 2 parallel trees × 2×H100 × 48 vCPU).
+**2. Comparative Reflective Memory: Causal Isolation via Diffs**
+
+To accurately determine which modifications drove performance changes, MARS uses two-step distillation. The *Empirical Analysis Agent* extracts objective findings (e.g., metric trends) from logs. The *Lesson Distillation Agent* then performs **comparative reflection**, creating a code-level diff between the current and "best-known" solution to output a lesson containing: the isolated causal change, a comparative impact analysis, and generalized rules for future iterations. For **buggy** solutions, a specialized agent analyzes the code, error logs, and applied fixes to produce debugging lessons on how to identify similar errors early.
+
+Lessons are filtered for redundancy by a Review Agent and kept in a pool of $K_m = 30$ in-context. Agents are forced to explicitly cite used lessons, ensuring auditability. Quantitatively, the lesson-utilization rate is 65.8%, and more crucially, the **lesson-transfer rate is 63.0%** (meaning 63% of used lessons originated from different tree branches). This serves as hard evidence for the "Aha! moment" where the agent treats experience as global knowledge.
+
+**3. Budget-Aware MCTS: Systematic Bias Toward Efficiency**
+
+Given the 24h constraint, vanilla MCTS would waste budget on marginal accuracy gains at high computational costs. MARS encodes cost into the reward: performance $M(v)$ of node $v$ is normalized globally as $G(v) = (M(v) - M_{\min}) / (M_{\max} - M_{\min})$. This is then adjusted by a time-penalty term:
+
+$$R(v) = G(v) \cdot \left[\frac{t(v)}{L(v)}\right]^{w},$$
+
+where $t(v)$ is actual execution time, $L(v)$ is the time limit, and $w$ is a negative penalty weight (default $w = -0.07$). Faster solutions yield a higher reward for equal accuracy, guiding the search to prune inefficient branches. Node expansion is also customized: buggy nodes are marked "fully-expanded" after 10 debug steps, while valid nodes are limited to $N_i = 2$ improvement children. The root reactivates for new Drafting if $n_s$ valid nodes fail to improve the best solution, creating an adaptive "exploration vs. restart" mechanism.
 
 ## Key Experimental Results
 
-### Main Results: MLE-Bench 75 Tasks, Mean ± SEM over 3 independent runs (%)
+### Main Results: MLE-Bench (75 tasks, Mean±SEM over 3 runs, %)
 
 | Agent | Model | Above Median | Bronze | Silver | Gold | Any Medal |
 |--------|------|------|------|------|------|------|
@@ -86,51 +95,50 @@ MARS is a training-free scaffolding using a pre-trained LLM backbone (primarily 
 | **MARS** | Gemini-3-Pro-Prev | **65.8** | 9.3 | 15.6 | **31.1** | 56.0 |
 | **MARS+** (2×H100) | Gemini-3-Pro-Prev | **74.2** | 12.4 | 16.4 | **33.8** | **62.7** |
 
-In controlled comparisons (same LLM/env), MARS significantly outperformed AIDE and AIRA-dojo. Against the official leaderboard, MARS achieved the highest Gold medal rate (31.1%) using fewer resources. MARS+ established new SOTA across all metrics. By difficulty (Table 3), MARS outperformed AIRA-dojo across Lite, Medium, and High splits.
+MARS significantly outperforms AIDE and AIRA-dojo under controlled model comparisons. On the official leaderboard, it achieves the highest Gold rate (31.1%) among all methods with fewer resources. MARS+ further improves these metrics by using parallel trees.
 
 ### Ablation Study (MLE-Bench Lite, 22 contests)
 
-| Configuration | Key Finding | Description |
-|------|---------|------|
-| Full MARS | baseline | All three modules enabled. |
-| w/o Modular Decomposition | Significant drop | Validates modularity's role in reducing context noise; LOC fell from 1103.9 to 474.8. |
-| w/o Memory | Drastic drop | Agent learns almost nothing without the lesson pool. |
-| Memory w/o Comparative Analysis | Worse than full | Causal diff analysis between current and best-known is the core of lesson quality. |
-| Greedy Search | Significantly worse | Lacks exploration, focuses only on local metric optimization. |
-| Vanilla MCTS ($w=0$) | Moderate drop | Presence of exploration but lacks budget awareness. |
-| Budget-Aware MCTS ($w=-0.07$) | Optimal | Effective solution rate 19.5% vs 16.1% for vanilla. |
+| Configuration | Key Finding |
+|------|---------|
+| Full MARS | Baseline performance. |
+| w/o Modular Decomposition | LOC drops from 1103.9 to 474.8; files drop from 6.7 to 1.0; performance significant decline. |
+| w/o Memory | Drastic drop; the agent fails to learn from iterations. |
+| Memory w/o Comparative Delta | Performance is better than no memory but significantly worse than "Full MARS." |
+| Greedy Search | Significantly worse; lacks exploration. |
+| Vanilla MCTS ($w=0$) | Moderate; lacks systematic budget awareness. |
+| Budget-Aware MCTS ($w=-0.07$) | Optimal; increases effective solution rate to 19.5% (vs. 16.1% for vanilla). |
 
 ### Key Findings
-- **Comparative memory is the core contribution**: Removing the comparative aspect while keeping empirical analysis results in a performance drop, proving that value comes from isolating causal changes.
-- **Lessons transfer across branches**: The 63% transfer rate justifies the MCTS + memory synergy as a means of global experience sharing.
-- **Budget-awareness acts as a pruning heuristic**: By favoring faster nodes for equal accuracy, the agent explores ~20% more effective solutions within the 24h limit.
-- **Modular design enables architectural thinking**: Increased LOC and file counts indicate the agent is thinking at an architectural level rather than just splitting files.
+- **Comparative memory is the core contribution**: Removing comparative analysis leads to a drop, proving that lesson value resides in "isolating causal changes via code-level diffs."
+- **Lessons transfer across branches**: A 63.0% transfer rate proves the agent treats experience as a global knowledge base.
+- **Budget-awareness as a pruning heuristic**: Setting $w = -0.07$ allows the agent to explore ~20% more effective solutions within the 24h window by favoring efficiency.
+- **Modularity enables architectural complexity**: Modular decomposition leads to doubled LOC and structured multi-file outputs, reflecting higher-level architectural reasoning.
 
 ## Highlights & Insights
-- **Paradigm shift to "search over modular repositories"**: Instead of searching for scripts, MARS treats the repository as the unit of search. This abstraction is potentially transferable to SWE-Bench or RepoCoder.
-- **Agent-led ablation studies**: Humans isolate causality via ablations; MARS internalizes this through comparative reflection.
-- **Simple but effective budget trick**: $R = G \cdot (t/L)^w$ is a minor change that significantly prunes inefficient trajectories.
-- **Mandatory interpretability**: Forcing the agent to cite lessons makes its behavior auditable and debuggable.
+- **Paradigm Shift**: Redefining MLE as "search over modular repositories" moves the search unit to the repository level, supported by diff-based editing.
+- **Ablation inside Memory**: Comparative reflection effectively performs "automated ablation" to isolate algorithmic changes from noisy logs.
+- **Efficiency Hack**: Incorporating budget into the reward function ($R = G \cdot (t/L)^w$) is a simple but highly effective trick that should be applied to any time-constrained LLM search task.
+- **Auditability via Citations**: Forcing agents to cite lessons makes their behaviors interpretable and debuggable.
 
 ## Limitations & Future Work
-- **Benchmark scope**: MLE-Bench focuses on Kaggle-like tasks; real research involving hypothesis generation and literature review is not yet covered.
-- **LLM dependency**: High reasoning load for lesson distillation and modular decomposition may limit performance on smaller open-source models.
-- **Static search breadth**: Fixed coefficients ($N_i, N_d$) may not adapt well to varying task difficulties.
-- **Memory scaling**: The current LRU truncation of 30 lessons could be replaced with RAG-style embedding-based retrieval for better cross-task scaling.
+- **Benchmark Coverage**: MLE-Bench focuses on Kaggle-like tasks; real research involving hypothesis generation and literature review remains unexplored.
+- **Backbone Dependency**: High reasoning load for lesson distillation currently requires top-tier models like Gemini-3-Pro.
+- **Fixed Search Width**: Branching factors ($N_i, N_d$) are manually tuned and not yet adaptive to task difficulty.
+- **Long-term Memory**: The lesson pool uses simple LRU; future work could include embedding-based RAG for cross-task knowledge sharing.
 
 ## Related Work & Insights
-- **vs. AIDE/AIRA**: MARS replaces greedy/single-script/trajectory-based approaches with MCTS/modular/comparative memory, leading to substantial gains in Gold medal rates.
-- **vs. Reflexion**: Unlike binary success/failure reflection, MARS performs code-level diffs to capture the logic of improvements.
-- **Insight**: Budget constraints should be treated as priors for search agents. Redefining the unit of generation to "modular components" rather than "scripts" significantly improves the ceiling for complex tasks.
+- **vs. AIDE/AIRA**: MARS replaces "greedy/monolithic scripts + full memory" with "MCTS + modular + comparative memory," increasing Any Medal from ~35% to 56%.
+- **vs. ML-Master 2.0**: MARS achieves a higher Gold rate (31.1% vs 19.6%) with fewer resources by focusing on budget awareness and modularity.
+- **vs. Reflexion**: While Reflexion uses binary success/failure, MARS distills causal rules via diffs, representing a shift from "remembering mistakes" to "deriving rules."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ While individual components exist, the consistent integration around cost-constrained repo-level search is a highly original system-level contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 75 tasks with multiple runs, LLMs, and thorough ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework diagrams and well-defined taxonomies.
-- Value: ⭐⭐⭐⭐⭐ Open-source SOTA on MLE-Bench. The design principles are highly applicable to other long-horizon agent tasks.
+- **Novelty**: ⭐⭐⭐⭐ Combines existing concepts (MCTS, modular code, reflection) into a cohesive, MLE-specific repo-level search framework.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive testing on MLE-Bench with multiple LLMs, control groups, and 4-axis ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear diagrams and well-defined hierarchical framework.
+- **Value**: ⭐⭐⭐⭐⭐ Sets a new SOTA for open-source MLE agents; modular and cost-aware designs are directly transferable to generic long-horizon coding tasks.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,7 +146,7 @@ In controlled comparisons (same LLM/env), MARS significantly outperformed AIDE a
 - [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
 - [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
+- [\[NeurIPS 2025\] Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
 - [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
 
 </div>

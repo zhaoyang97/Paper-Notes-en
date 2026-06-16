@@ -2,136 +2,145 @@
 title: >-
   [Paper Note] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models
 description: >-
-  [ACL2026][Interpretability][anisotropy] This paper reinterprets the "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. By identifying these dimensions through a traini…
+  [ACL 2026][Interpretability][anisotropy] This paper reinterprets "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. It identifies these dimensions using a training-free activation magnitude criterion and performs activation steering exclusively on these dimensions, proving more effective than full-dimension
 tags:
-  - "ACL2026"
-  - "Interpretability"
-  - "anisotropy"
-  - "massive activations"
-  - "domain-critical dimensions"
-  - "activation steering"
-  - "jailbreaking"
+  - ACL 2026
+  - Interpretability
+  - anisotropy
+  - massive activations
+  - domain-critical dimensions
+  - activation steering
+  - jailbreaking
 date: 2026-05-08
-content_hash: e0fbc239c78c2d3f
+content_hash: b9827e2754d75002
 ---
-
 # Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models
 
 **Conference**: ACL2026  
 **arXiv**: [2603.00029](https://arxiv.org/abs/2603.00029)  
 **Code**: https://github.com/nyancat0222/dimension-analyzer  
-**Area**: Interpretability / Activation steering  
+**Area**: Interpretability / Activation Steering  
 **Keywords**: anisotropy, massive activations, domain-critical dimensions, activation steering, jailbreaking
 
 ## TL;DR
-This paper reinterprets the "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. By identifying these dimensions through a training-free activation magnitude criterion and performing activation steering exclusively on them, the authors demonstrate superior performance in domain adaptation and jailbreaking scenarios compared to full-dimensional steering.
+This paper reinterprets "massive activations," often regarded as outliers in LLMs, as interpretable domain-critical dimensions. It identifies these dimensions using a training-free activation magnitude criterion and performs activation steering exclusively on these dimensions, proving more effective than full-dimension steering in domain adaptation and jailbreaking scenarios.
 
 ## Background & Motivation
-**Background**: Hidden representations in Transformer-based LLMs are typically highly anisotropic, meaning a few dimensions possess significantly higher activation magnitudes than others. Most prior work treated this phenomenon as an imbalance in the representation space or a quantization/stability issue, aiming to suppress outlier dimensions or make representations more isotropic.
+**Background**: Hidden representations in Transformer-based LLMs are typically highly anisotropic, meaning a few dimensions possess activation magnitudes significantly higher than others. Prior work often treated this as a representation imbalance or a quantization/stability issue, aiming to suppress outlier dimensions or make representations more isotropic.
 
-**Limitations of Prior Work**: Treating extreme dimensions solely as noise or artifacts ignores their potential functional roles. Conversely, interpretability methods like probe classifiers and Sparse Autoencoders (SAEs) can link internal representations to semantic concepts but usually require additional training and introduce new parameters and interpretability biases.
+**Limitations of Prior Work**: Treating extreme dimensions solely as noise or artifacts ignores their potential functional roles. Furthermore, interpretive methods like probe classifiers and Sparse Autoencoders (SAEs) can link internal representations to semantic concepts but typically require additional training and introduce new parameters or interpretive biases.
 
-**Key Challenge**: Massive activations appear to be outliers but might actually be sparse functional units formed for domain specialization. The challenge lies in identifying these dimensions without additional training and verifying that they are both interpretable and capable of controlling model behavior.
+**Key Challenge**: Massive activations appear to be outliers but may also be sparse functional units formed by the model for domain specialization. The challenge lies in identifying these dimensions without additional training and verifying that they are both interpretable and capable of controlling model behavior.
 
-**Goal**: The authors aim to prove two points: first, a small number of hidden dimensions are highly critical for performance in specific domains; second, these dimensions can serve as sparse control knobs for finer-grained activation steering.
+**Goal**: The authors aim to prove two points: first, a small number of hidden dimensions are highly critical for specific domain performance; second, these dimensions can serve as sparse control knobs for fine-grained activation steering.
 
-**Key Insight**: Starting from 57 subjects in MMLU, the authors treat each subject as a domain, sampling identification and evaluation sets respectively. They first use masking to prove that a single dimension can significantly impact domain performance, then employ simple activation statistics to approximately identify these domain-critical dimensions.
+**Key Insight**: Starting from 57 subjects in MMLU, the paper treats each subject as a domain, sampling identification and evaluation sets. It first uses masking to prove that a single dimension can significantly impact domain performance, then uses simple activation statistics to identify these domain-critical dimensions.
 
-**Core Idea**: Instead of eliminating anisotropy, one should embrace it: use activation magnitude to find domain-critical dimensions, then manipulate only these dimensions to achieve domain adaptation or behavioral guidance.
+**Core Idea**: Instead of eliminating anisotropy, embrace it: use activation magnitude to find domain-critical dimensions and manipulate only these dimensions to achieve domain adaptation or behavioral guidance.
 
 ## Method
-The central hypothesis of this paper is that "extreme activations are not pure noise, but signatures of functional specialization." Based on this, the authors designed a two-part workflow: identifying domain-critical dimensions followed by Critical Dimension Steering (CDS) targeting these dimensions. Note that the local cache only covers up to Section 2.2; steering details and full limitations are not in the cache. The following is based only on confirmable content.
+The central hypothesis is that "extreme activations are not pure noise, but traces of functional specialization." The authors design a two-part workflow: first identifying domain-critical dimensions, then using them as intervention targets for Critical Dimension Steering (CDS). Note: The local cache only covers up to Section 2.2; subsequent steering details and complete limitations are not present. Only confirmed content is included below.
 
 ### Overall Architecture
-Given a pre-trained LLM, a target domain, and several domain samples, the method first collects activation statistics for each dimension across all hidden states. For MMLU, 100 test prompts are used per subject, with 50 as an identification set to find critical dimensions and 50 as an evaluation set to verify their impact. The identification phase does not train probes or SAEs; instead, it selects top-$k$ dimensions based on activation magnitude and domain-discriminative activation frequency. The control phase uses these dimensions as sparse steering targets, modifying only the identified critical dimensions rather than applying uniform intervention to the entire hidden vector.
+Given a pre-trained LLM, a target domain, and domain samples, the method first collects activation statistics for each dimension in the hidden states of all layers. For MMLU, 100 test prompts per subject are used: 50 for the identification set to find critical dimensions, and 50 for the evaluation set to verify impacts on performance and control. The identification phase does not train probes or SAEs; instead, it selects top-$k$ dimensions based on activation magnitude and domain-discriminative activation frequency. The control phase uses these dimensions as sparse steering targets, modifying only the identified critical dimensions rather than the entire hidden vector.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pre-trained LLM + Domain Samples<br/>50 ID + 50 Eval sets per subject"] --> B["Collect activation statistics for all layers & dimensions"]
+    B --> C["Masking to verify sparse criticality<br/>Zero out dimensions to observe accuracy drops"]
+    D["Identify domain-critical dimensions via magnitude<br/>3σ active + freq difference >30% for top-k"]
+    C --> D
+    D --> E["Critical Dimension Steering (CDS)<br/>Intervention only on top-k dimensions"]
+    E -->|Domain Adaptation| F["Superior to whole-dim in 34/57 MMLU subjects"]
+    E -->|Jailbreak| G["AdvBench ASR 84% → 92%"]
+```
 
 ### Key Designs
-1. **Verifying Dimensional Sparse Criticality via Masking**:
 
-	- Function: To prove that not all hidden dimensions are equivalent and that a few dimensions possess a decisive influence on performance for certain subjects.
-	- Mechanism: For Gemma-2-2B-IT and Qwen-3-8B, the authors zero out activations of specific dimensions layer by layer and measure the accuracy drop on the evaluation set. The input embedding layer is excluded to focus on internal processing dimensions.
-	- Design Motivation: If masking a single dimension barely affects performance, the "critical dimension" hypothesis would be invalid. However, experiments show that zeroing a single dimension can cause Qwen-3-8B's average accuracy to drop significantly, indicating that dimensional importance is highly sparse.
+**1. Verifying Sparse Criticality via Masking: Proving "few dimensions determine performance"**
 
-2. **Identifying Domain-Critical Dimensions via Activation Magnitude**:
+The premise is that "extreme activations are traces of functional specialization." To validate this, the first step is proving that hidden dimensions are not equivalent. The authors conduct dimension-wise ablation on Gemma-2-2B-IT and Qwen-3-8B by zeroing out specific dimension activations across all layers (excluding input embeddings).
 
-	- Function: To find functionally critical and domain-discriminative dimensions using training-free statistical criteria.
-	- Mechanism: A dimension is considered "active" for a query if its activation deviates from the mean by more than $3\sigma$. The activation frequency of each dimension within a subject is calculated. If the difference in activation frequency between two domains exceeds 30%, the dimension exhibits a domain-discriminative pattern. Top-$k$ high-magnitude dimensions are then selected as domain-critical dimensions.
-	- Design Motivation: Activation magnitude is a signal already formed by the model itself, requiring no new training. If high-magnitude dimensions overlap with ground-truth critical dimensions identified by masking, it suggests functional importance can be inferred from statistical features.
+The results are extreme: masking the Rank-1 dimension in Qwen-3-8B causes average accuracy to collapse from 73.30% to 21.97%, while the Rank-100 dimension has almost no impact. This gap confirms that dimension importance is highly sparse, providing ground truth for sparse manipulation.
 
-3. **Critical Dimension Steering (CDS)**:
+**2. Identifying Domain-Critical Dimensions via Magnitude: Using intrinsic statistical signals instead of trained interpreters**
 
-	- Function: To use identified sparse dimensions as precise behavioral control knobs.
-	- Mechanism: While traditional activation steering applies directions to the entire hidden vector, CDS intervenes only on the top-$k$ domain-critical dimensions while leaving others untouched. Although full implementation details are missing from the cache, the abstract and introduction state that CDS is applied to domain adaptation and jailbreaking.
-	- Design Motivation: If domain behavior is dominated by a few high-impact dimensions, full-dimensional steering would disturb numerous irrelevant dimensions. Sparse steering is more likely to achieve strong control with fewer side effects and higher interpretability.
+While masking identifies critical dimensions, it is computationally expensive. Probes and SAEs require training and introduce biases. The authors leverage the model's existing activation magnitude: a dimension is defined as "active" for a query if its activation exceeds the mean by $3\sigma$. When the activation frequency difference between two domains exceeds 30%, the dimension is judged to have a domain-discriminative pattern. The final selection uses top-$k$ high-magnitude dimensions.
+
+Validation shows these statistically selected high-magnitude dimensions overlap significantly with ground-truth dimensions from masking. At the token level, dimension 1046 corresponds to mathematical terms, 2106 to biological terms, and 334 to topic keywords, proving functional importance can be inferred without training.
+
+**3. Critical Dimension Steering: Using verified sparse dimensions as precision knobs**
+
+Traditional activation steering applies a direction to the entire hidden vector. If domain behavior is dominated by a few high-impact dimensions, full-dimension steering perturbs many irrelevant dimensions, causing side effects. CDS restricts intervention to the top-$k$ domain-critical dimensions while keeping others intact, focusing intervention on verified causal handles.
+
+> ⚠️ Local cache ends near Section 2.2. Full steering coefficients and implementation formulas are not present. Results from the introduction indicate CDS outperformed whole-dimension steering in 34/57 MMLU subjects and increased jailbreak ASR on AdvBench from 84% to 92%.
 
 ### Loss & Training
-The proposed method is a training-free interpretability and inference-time steering approach, introducing no new training losses. The identification phase utilizes hidden activation statistics from MMLU subject prompts. The verification phase evaluates performance via masking, domain adaptation accuracy, and jailbreak attack success rates. Specific steering coefficients or layer selection strategies for CDS are not confirmable from the cache.
+The method is a training-free interpretation and inference-time steering approach. No new training losses are introduced. The identification phase uses hidden activation statistics from MMLU prompts. Evaluation is based on masking, domain adaptation accuracy, and jailbreak attack success rates.
 
 ## Key Experimental Results
 
 ### Main Results
-The main tables in the cache primarily show the impact of single-dimension masking on accuracy and summarize CDS effects mentioned in the abstract/introduction.
+The primary table shows the impact of single-dimension masking and the aggregate effectiveness of CDS.
 
 | Experiment | Model | Baseline/Control | Key Result | Description |
-|------|------|------------|---------:|------|
-| Single-dim masking | Gemma-2-2B-IT | Original Acc 56.53% | After Rank-1 masking: 41.97% | Mean drop of 14.56 pts |
-| Single-dim masking | Gemma-2-2B-IT | Original Acc 56.53% | After Rank-10 masking: 52.39% | Effect weakens with lower rank |
-| Single-dim masking | Qwen-3-8B | Original Acc 73.30% | After Rank-1 masking: 21.97% | Mean drop of 51.33 pts |
-| Single-dim masking | Qwen-3-8B | Original Acc 73.30% | After Rank-100 masking: 71.97% | Minimal effect for most dimensions |
-| Domain Adaptation | MMLU 57 subjects | Whole-dimension steering | CDS better on 34/57 subjects | Aggregate from introduction |
-| Jailbreaking | AdvBench | Whole-dimension: 84% ASR | CDS reaches 92% ASR | Aggregate from abstract |
+| :--- | :--- | :--- | :--- | :--- |
+| Single-dim Masking | Gemma-2-2B-IT | Original Acc: 56.53% | Rank-1 Masking: 41.97% | Average drop of 14.56 pts |
+| Single-dim Masking | Gemma-2-2B-IT | Original Acc: 56.53% | Rank-10 Masking: 52.39% | Impact weakens with rank |
+| Single-dim Masking | Qwen-3-8B | Original Acc: 73.30% | Rank-1 Masking: 21.97% | Average drop of 51.33 pts |
+| Single-dim Masking | Qwen-3-8B | Original Acc: 73.30% | Rank-100 Masking: 71.97% | Most dimensions have minimal impact |
+| Domain Adaptation | MMLU 57 subjects | Whole-dim steering | CDS better in 34/57 subjects | Aggregate result from intro |
+| Jailbreaking | AdvBench | Whole-dim ASR: 84% | CDS ASR: 92% | Aggregate result from intro |
 
 ### Ablation Study
-The local cache does not contain full ablation tables. Confirmable evidence relies on functional sparsity and domain discriminatity.
+Confirms identifying criteria: functional sparsity and domain discriminativeness.
 
-| Object | Settings (Confirmable) | Observation | Conclusion |
-|----------|------------------|------|------|
-| Functional Sparsity | Layer-wise zero-masking of a dimension | Masking Rank-1 dim in Qwen-3-8B drops accuracy from 73.30% to 21.97% | A few dimensions dominate domain performance |
-| Domain Discriminatity | Active if value $> 3\sigma$ from mean | Dimensions exist with $>30\%$ frequency difference between Math and Biology | Extreme activations carry domain information |
-| Interpretability Case | Gemma-2-2B-IT token-level patterns | Dim 1046 activates for Math terms; 2106 for Bio; 334 for keywords | Single dimensions act as semantic detectors |
+| Analysis Object | Confirmed Setting | Observation | Conclusion |
+| :--- | :--- | :--- | :--- |
+| Functional Sparsity | Dimension-wise masking across all layers | Qwen-3-8B Rank-1 masking drops acc from 73.30% to 21.97% | Few dimensions dominate performance |
+| Domain Discriminativeness | Active if value > $3\sigma$ from mean | Freq differences >30% exist between Math and Bio subjects | Extreme activations carry domain info |
+| Interpretability Case | Gemma-2-2B-IT token-level patterns | Dim 1046: Math; Dim 2106: Biology; Dim 334: Keywords | Single dimensions act as semantic detectors |
 
 ### Key Findings
-- The impact of a single hidden dimension can be massive. In Qwen-3-8B, masking the most critical dimension drops average accuracy from 73.30% to 21.97%.
-- High-magnitude dimensions are not merely unstable outliers; in MMLU subjects, they correspond to differences in domains like Mathematics and Biology.
-- Aggregate results for CDS show that sparse steering outperforms whole-dimension steering in 34/57 MMLU subjects and achieves a 92% ASR in AdvBench jailbreaking compared to 84%.
-- Due to cache limitations, subject-level accuracy, layer effects, or top-$k$ sensitivity cannot be confirmed.
+- The impact of a single hidden dimension can be massive. In Qwen-3-8B, masking the most critical dimension drops accuracy by over 50 percentage points.
+- High-magnitude dimensions are not just unstable outliers; they correspond to domain differences in MMLU subjects (e.g., Math vs. Bio).
+- CDS achieves an ASR of 92% in AdvBench jailbreaking, higher than the 84% of whole-dimension steering, demonstrating stronger control.
 
 ## Highlights & Insights
-- The most compelling aspect is the paradigm shift: while anisotropy was previously treated as a representational defect to be calibrated, this paper views it as a natural consequence of internal specialization.
-- Using magnitude to identify critical dimensions is simple yet effectively captures the observable signals of massive activations. This makes the method more lightweight than probes/SAEs and suitable for rapid diagnosis.
-- CDS connects interpretability with control: if a dimension explains a domain concept, manipulating only those dimensions acts as a "precision knob" compared to full-dimensional steering.
-- There is a security implication: sparse dimensions that increase jailbreak ASR are also weak points in the model's safety boundary, where interpretability tools and attack tools converge.
+- The paper flips the narrative: anisotropy, previously seen as a representation defect, is treated here as a natural result of internal specialization.
+- Using magnitude to identify dimensions is simple but captures the observable signal of massive activations, making it lighter than probes/SAEs for rapid diagnosis.
+- CDS links interpretability to control: if a dimension explains a domain concept, manipulating only that dimension acts as a "precision knob."
+- Security implication: Sparse dimensions that increase jailbreak ASR are also the weak points of the model's safety boundary.
 
 ## Limitations & Future Work
-- The full limitations section is missing from the cache. The following are inferred from the available experimental design.
-- Only aggregate descriptions for MMLU and AdvBench are visible; the lack of subject-level tables or layer ablations makes it difficult to judge the stability boundaries of CDS.
-- "Domains" are operationalized by MMLU subjects, which works for exam topics but may not cover mixed domains, long contexts, or open-ended generation in real-world applications.
-- While the training-free magnitude criterion is convenient, it might mistake "high-frequency formatting features" for semantic functional units. Future work should align these with causal interventions, SAE features, or probe results.
-- The use of jailbreak ASR to verify control capability implies a potential dual-use risk; public tools should include safety analysis.
+- The domain is operationalized mainly through MMLU subjects; this works for exam topics but may not cover mixed domains, long contexts, or open-ended generation in real-world applications.
+- The training-free magnitude criterion might mistake high-frequency formatting features for semantic units; future alignment with causal interventions or SAE features is needed.
+- Increased jailbreak ASR implies potential dual-use risks; public tools require accompanying defensive analysis.
 
 ## Related Work & Insights
-- **vs. isotropy calibration / outlier suppression**: Those works tend to reduce the influence of extreme dimensions; this paper argues they are meaningful functional units and should be interpreted before deciding to suppress them.
-- **vs. probe classifier**: Probes learn conceptual directions but require supervision and training. This paper directly reads activation statistics, offering lower costs and shorter explanation chains.
-- **vs. sparse autoencoder**: SAEs decompose polysemantic hidden features into sparser interpretable features. This paper searches for critical dimensions within the original hidden space, making it lighter but more limited in expressive power.
-- **vs. whole-dimension activation steering**: Traditional steering affects the entire vector, potentially introducing irrelevant perturbations. CDS limits intervention to verified causal handles by modifying only critical dimensions.
+- **vs. Isotropy Calibration / Outlier Suppression**: These aim to reduce the impact of extreme dimensions; this paper argues they are meaningful functional units to be interpreted.
+- **vs. Probe Classifiers**: Probes require supervision; this method uses activation statistics for lower cost and shorter interpretation chains.
+- **vs. Sparse Autoencoder**: SAEs decompose multi-semantic features into sparser ones; this method works on original hidden dimensions, making it lighter but more limited in expressive power.
+- **vs. Whole-dimension Activation Steering**: Traditional steering can introduce unrelated perturbations; CDS restricts intervention to verified causal handles.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The perspective is distinct, reframing massive activations as "interpretable control units" with a simple method.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Key evidence and aggregates are present, but the lack of full steering tables and ablations makes it hard to judge robustness.
-- Writing Quality: ⭐⭐⭐⭐☆ The introduction clearly explains the background and motivation.
-- Value: ⭐⭐⭐⭐☆ Insightful for interpretability, activation steering, and security auditing, particularly for lightweight internal representation diagnosis.
+- Novelty: ⭐⭐⭐⭐☆ (Distinct perspective on massive activations as interpretable units).
+- Experimental Thoroughness: ⭐⭐⭐☆☆ (Strong aggregate results, but missing full subject-level steering and sensitivity tables).
+- Writing Quality: ⭐⭐⭐⭐☆ (Clear motivation and background).
+- Value: ⭐⭐⭐⭐☆ (Insightful for interpretability, steering, and security assessment).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[ACL 2026\] DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models](dpn-le_dual_personality_neuron_localization_and_editing_for_large_language_model.md)
 - [\[ACL 2026\] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models](sparse_feature_coactivation_reveals_causal_semantic_modules_in_large_language_mo.md)
+- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

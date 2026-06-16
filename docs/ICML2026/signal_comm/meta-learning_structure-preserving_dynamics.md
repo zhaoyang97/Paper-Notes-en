@@ -2,73 +2,87 @@
 title: >-
   [Paper Note] Meta-learning Structure-Preserving Dynamics
 description: >-
-  [ICML 2026][Signal & Communication][Hamiltonian NN] This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into…
+  [ICML 2026][Signal & Communications][Hamiltonian NN] This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into Hamiltonian and GENERIC neural networks. It proposes two novel modulation schemes—latent multi-rank (MR) and latent SVD-like modulation—enabling a share
 tags:
-  - "ICML 2026"
-  - "Signal & Communication"
-  - "Hamiltonian NN"
-  - "GENERIC"
-  - "Modulation Meta-learning"
-  - "Low-rank Adaptation"
-  - "SVD modulation"
+  - ICML 2026
+  - Signal & Communications
+  - Hamiltonian NN
+  - GENERIC
+  - SVD modulation
 date: 2026-05-08
-content_hash: fa206afc6418342a
+content_hash: b5f0852963b5a51a
 ---
-
 # Meta-learning Structure-Preserving Dynamics
 
 **Conference**: ICML 2026  
 **arXiv**: [2508.11205](https://arxiv.org/abs/2508.11205)  
 **Code**: None  
 **Area**: Scientific Machine Learning / Meta-learning / Structure-Preserving Neural Networks  
-**Keywords**: Hamiltonian NN, GENERIC, Modulation Meta-learning, Low-rank Adaptation, SVD modulation
+**Keywords**: Hamiltonian NN, GENERIC, modulated meta-learning, low-rank adaptation, SVD modulation
 
 ## TL;DR
-This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into Hamiltonian and GENERIC neural networks. It proposes two novel modulations—latent multi-rank (MR) and latent SVD-like modulation—enabling a shared network to adapt to entire families of new parameter instances with few shots without knowing the system parameters $\bm{\mu}$, while strictly maintaining energy conservation/dissipation structures.
+This paper systematically introduces modulation-based meta-learning (where a hyper-network maps latent codes $\bm{z}^{(k)}$ to hierarchical modulation parameters) into Hamiltonian and GENERIC neural networks. It proposes two novel modulation schemes—latent multi-rank (MR) and latent SVD-like modulation—enabling a shared network to adapt to entire families of new parameter instances $\bm{\mu}$ with few shots, while strictly maintaining energy conservation or dissipation structures.
 
 ## Background & Motivation
 
-**Background**: Structure-preserving neural networks (HNN, LNN, port-Hamiltonian NN, GENERIC/metriplectic NN) hardcode conservation laws, symplectic structures, and dissipation laws into their architectures, allowing physically faithful predictions for dynamical systems with known parameters $\bm{\mu}$.
+**Background**: Structure-preserving neural networks (HNN, LNN, port-Hamiltonian NN, GENERIC/metriplectic NN) hard-code physical priors such as conservation laws, symplectic structures, and dissipation laws into their architectures. They provide physically faithful predictions for dynamical systems with known parameters $\bm{\mu}$.
 
-**Limitations of Prior Work**: Existing models are mostly "one model per parameter instance." If parameters change slightly, the models require retraining, making many-query scenarios (e.g., families of pendulums with different masses or oscillators with different stiffness) prohibitively expensive. Few meta-learning extensions (Lee 2021, Song 2024) follow MAML/ANIL paths, requiring unstable and inefficient high-dimensional inner-loop parameter updates.
+**Limitations of Prior Work**: Existing models are largely "trained per parameter instance." Slight changes in parameters necessitate retraining, leading to prohibitive costs in many-query scenarios (e.g., families of pendulums with varying masses or oscillators with different stiffness). Sparse existing meta-learning extensions (Lee 2021, Song 2024) rely on MAML or ANIL, which involve unstable and computationally expensive inner-loop updates of high-dimensional parameters.
 
-**Key Challenge**: HNN-style models only need to learn a scalar potential $\mathcal{H}_\Theta(\bm{q}, \bm{p})$ to describe complete dynamics, and the dependency of weights on parameters $\bm{\mu}$ is naturally low-dimensional. Existing meta-learning methods waste this low-dimensional structure by updating all parameters $\Theta$ via full gradients.
+**Key Challenge**: HNN-style models only require learning a scalar potential $\mathcal{H}_\Theta(\bm{q}, \bm{p})$ to define the entire dynamics. The dependence of weights on system parameters $\bm{\mu}$ is naturally low-dimensional. Existing meta-learning methods fail to exploit this structure by updating all parameters $\Theta$ via full gradients.
 
-**Goal**: (1) Systematically compare various modulation strategies within Hamiltonian/GENERIC frameworks; (2) Design more expressive yet parameter-efficient modulation methods; (3) Ensure that the conservation/dissipation structures are strictly preserved after modulation.
+**Goal**: (1) Systematically evaluate various modulation strategies within Hamiltonian and GENERIC frameworks; (2) Design expressive yet parameter-efficient modulation schemes; (3) Ensure that the modulated models strictly preserve conservation and dissipation structures.
 
-**Key Insight**: Borrowing from latent modulation in INRs/NeRFs (e.g., CODA by Dupont 2022), each system is compressed into a low-dimensional latent code $\bm{z}^{(k)}$. A hyper-network $\bm{f}_\text{hyper}(\bm{z}^{(k)}; \bm\phi)$ then generates small corrections for each layer, while the base weights are shared across all tasks.
+**Key Insight**: Borrowing from latent modulation in Implicit Neural Representations (INR) and NeRF (e.g., CODA, Dupont 2022), each system is compressed into a low-dimensional latent code $\bm{z}^{(k)}$. A hyper-network $\bm{f}_\text{hyper}(\bm{z}^{(k)}; \bm\phi)$ then generates small hierarchical corrections while base weights remain shared across all tasks.
 
-**Core Idea**: The combination of "shared base + instance latent + hierarchical low-rank modulation" can capture the "low-dimensional manifold of parameters $\bm{\mu}$" with minimal trainable parameters. Using SVD-like decomposition further learns orthogonal bases during the base stage, reducing test-time adaptation to updating only a few singular value scalars.
+**Core Idea**: "Shared base + instance latent + hierarchical low-rank modulation" captures the low-dimensional manifold of parameters $\bm{\mu}$ using minimal trainable parameters. The SVD-like decomposition learns orthogonal bases during the base stage, reducing test-time adaptation to fitting a few singular value scalars.
 
 ## Method
 
 ### Overall Architecture
-The input is a family of Hamiltonian/GENERIC systems $\{\mathcal{H}^{(k)}(\bm{q}, \bm{p}) = \mathcal{H}(\bm{q}, \bm{p}; \bm{\mu}^{(k)})\}_{k=1}^{n_\mu}$, with trajectories sampled for each. Model parameters are split into $\Theta^{(k)} = \Theta_\text{base} \cup \Theta_\text{indv}^{(k)}$. The base parameters are updated by meta-gradients in the outer loop, while individual parameters (latent codes $\bm{z}^{(k)}$ for each system) are updated in the inner loop. The hyper-network maps $\bm{z}^{(k)}$ to low-rank or bias correction parameters for each layer. The final $\tilde{\mathcal{H}}(\bm{q}, \bm{p}; \Theta^{(k)})$ serves as a latent-conditioned energy function, providing dynamics via $\dot{\bm q} = \partial \tilde{\mathcal H} / \partial \bm p,\ \dot{\bm p} = -\partial \tilde{\mathcal H} / \partial \bm q$. Thus, structure preservation is inherited from the base architecture.
+The input consists of a family of Hamiltonian or GENERIC systems $\{\mathcal{H}^{(k)}(\bm{q}, \bm{p}) = \mathcal{H}(\bm{q}, \bm{p}; \bm{\mu}^{(k)})\}_{k=1}^{n_\mu}$, with trajectories sampled for each. Model parameters are partitioned as $\Theta^{(k)} = \Theta_\text{base} \cup \Theta_\text{indv}^{(k)}$. The base parameters are updated by meta-gradients in the outer loop, while individual latent codes $\bm{z}^{(k)}$ are updated in the inner loop. A hyper-network maps $\bm{z}^{(k)}$ to low-rank or bias correction parameters for each layer. The resulting $\tilde{\mathcal{H}}(\bm{q}, \bm{p}; \Theta^{(k)})$ serves as the latent-conditioned energy function, producing dynamics via $\dot{\bm q} = \partial \tilde{\mathcal H} / \partial \bm p$ and $\dot{\bm p} = -\partial \tilde{\mathcal H} / \partial \bm q$. Thus, structure preservation is inherited from the base architecture.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["System Family {H(q,p;μ)}<br/>Trajectories sampled per instance"] --> B["Parameter Partitioning<br/>Θ_base shared (outer loop) + latent z instance-specific (inner loop)"]
+    B --> C["Hyper-network f_hyper(z)<br/>Maps latent code to hierarchical modulation parameters"]
+    C -->|Rank-r correction UVᵀ + bias per layer| D["Latent Multi-Rank (MR) Modulation"]
+    C -->|Shared bases uv + instance singular values d| E["Latent SVD-like Modulation<br/>Base learns bases, test-time fits singular values"]
+    D --> F["Modulated Energy H̃(q,p;Θ)"]
+    E --> F
+    F --> G["Symplectic / Metriplectic Gradients<br/>q̇=∂H̃/∂p, ṗ=−∂H̃/∂q → Structure-preserving dynamics"]
+    subgraph T["Locality Reg + Evolving Latent Training Protocol"]
+        direction TB
+        H["Outer loop updates base, inner loop updates batch latent"] --> I["Locality reg anchors latent + latent evolves throughout training"]
+        I --> J["Test-time z initialized as z_avg for few-shot auto-decoding (base frozen)"]
+    end
+    G -.Training / Testing constrained by this protocol.-> T
+```
 
 ### Key Designs
 
-1.  **Latent Multi-Rank (MR) Modulation**:
-    - **Function**: Adds an instance-specific correction of rank $r$ ($\bm{U}^{(\ell,k)} \bm{V}^{(\ell,k)\top}$) and a bias correction $\bm{s}^{(\ell,k)}$ to the MLP weights $\bm{W}^{(\ell)}$ at each layer, all generated from $\bm{z}^{(k)}$ via the hyper-network.
-    - **Mechanism**: Each layer is updated as $\bm{h} \mapsto \sigma\left((\bm{W}^{(\ell)} + \bm{U}^{(\ell,k)} \bm{V}^{(\ell,k)\top}) \bm{h} + \bm{b}^{(\ell)} + \bm{s}^{(\ell,k)}\right)$, where $\bm{U}, \bm{V} \in \mathbb{R}^{w_\ell \times r}$. When $r=1$, it reduces to RO (rank-one), which is equivalent to a minimalist LoRA-like modulation. MR(5) uses $r=5$. $\bm{U}$ and $\bm{V}$ are instance-specific, meaning the hyper-network regenerates the rank-$r$ factors for each instance.
-    - **Design Motivation**: Proposition 3.1 shows that if the local rank of $\partial_{\bm\mu} \bm{f} \le r$, an $r$-dimensional modulation is sufficient to capture all local parameter variations. MR leverages this by placing expressivity in "LoRA-style low-rank matrices."
+**1. Latent Multi-Rank (MR) Modulation: Adding latent-generated low-rank corrections to weights**
 
-2.  **Latent SVD-like Modulation (Best Solution)**:
-    - **Function**: Further factorizes low-rank modulation into "shared bases + instance singular values," allowing the hyper-network to output only a few scalars.
-    - **Mechanism**: Each layer is formulated as $\bm{h} \mapsto \sigma\left((\bm{W}^{(\ell)} + \sum_{i=1}^r d_i^{(\ell,k)} \bm{u}_i^{(\ell)} \bm{v}_i^{(\ell)\top}) \bm{h} + \bm{b}^{(\ell)} + \bm{s}^{(\ell,k)}\right)$. Here, $\bm{u}_i^{(\ell)}, \bm{v}_i^{(\ell)}$ are base parameters (updated via meta-gradients), while only the singular values $d_i^{(\ell,k)}$ and offsets $\bm{s}^{(\ell,k)}$ are generated from $\bm{z}^{(k)}$ by the hyper-network. Soft orthogonality penalties $\|\bm{U}^\top \bm{U} - \bm{I}\|_F$ and $\|\bm{V}^\top \bm{V} - \bm{I}\|_F$ plus ReLU activation in the hyper-network ensure non-negative singular values.
-    - **Design Motivation**: The base stage learns "cross-system invariant modulation directions" into $\bm{u}_i, \bm{v}_i$. During testing, only a few singular values need to be fitted to adapt to new instances. This mirrors the successful INR pattern of "learning shared bases then fitting individual coefficients."
+Since HNN-style models learn a scalar potential, weight dependence on $\bm{\mu}$ is inherently low-dimensional. MR adds a rank-$r$ instance-specific correction $\bm{U}^{(\ell,k)} \bm{V}^{(\ell,k)\top}$ and a bias correction $\bm{s}^{(\ell,k)}$ to the weights $\bm{W}^{(\ell)}$ of each MLP layer. These are generated from $\bm{z}^{(k)}$ via the hyper-network. The layer transformation becomes: $\bm{h} \mapsto \sigma\left((\bm{W}^{(\ell)} + \bm{U}^{(\ell,k)} \bm{V}^{(\ell,k)\top}) \bm{h} + \bm{b}^{(\ell)} + \bm{s}^{(\ell,k)}\right)$, where $\bm{U}, \bm{V} \in \mathbb{R}^{w_\ell \times r}$. At $r=1$, this simplifies to rank-one (RO) modulation.
 
-3.  **Locality Regularization + Evolving Latent Code Protocol**:
-    - **Function**: (a) Constrains instance parameters from deviating too far from the base; (b) Keeps $\bm{z}^{(k)}$ evolving across training rather than resetting at each epoch.
-    - **Mechanism**: Adding $\lambda_z \|\bm{z}\|_2 + \lambda_\phi \|\bm\phi\|_2$ to the loss keeps updates near the shared base. At test time, latents are initialized to the Euclidean mean of training latents, $\bm{z}_\text{avg} = \tfrac{1}{n_\mu^\text{train}} \sum_k \bm{z}_\text{train}^{(k)}$, followed by few-shot auto-decoding.
-    - **Design Motivation**: Zero-initialization (as in CODA) pushes the base to accommodate arbitrary latents, losing training signals. Evolving latents allow the base and the mean latent to co-evolve, ensuring check-time initialization falls within a "learned parameter neighborhood."
+Proposition 3.1 provides the justification: if the local rank of $\partial_{\bm\mu} \bm{f}$ is $\le r$, then $r$-dimensional modulation is sufficient to capture all local parameter variations. MR concentrates expressivity into LoRA-style low-rank matrices, requiring significantly fewer parameters than full weight updates.
+
+**2. Latent SVD-like Modulation: Decomposing corrections into shared bases and instance singular values**
+
+MR requires the hyper-network to regenerate large factors $\bm{U}, \bm{V}$. SVD-like modulation factorizes the correction as: $\bm{h} \mapsto \sigma\left((\bm{W}^{(\ell)} + \sum_{i=1}^r d_i^{(\ell,k)} \bm{u}_i^{(\ell)} \bm{v}_i^{(\ell)\top}) \bm{h} + \bm{b}^{(\ell)} + \bm{s}^{(\ell,k)}\right)$. Here, $\bm{u}_i^{(\ell)}$ and $\bm{v}_i^{(\ell)}$ are shared base parameters updated by meta-gradients. Only the singular values $d_i^{(\ell,k)}$ and bias $\bm{s}^{(\ell,k)}$ are generated from $\bm{z}^{(k)}$. Soft orthogonality penalties $\|\bm{U}^\top \bm{U} - \bm{I}\|_F$ and $\|\bm{V}^\top \bm{V} - \bm{I}\|_F$ combined with ReLU activations ensure non-negative singular values. This allows the base to learn "invariant modulation directions" across systems, while test-time adaptation fits only a few scalars.
+
+**3. Locality Reg + Evolving Latent Protocol: Anchoring modulation and sustaining latent evolution**
+
+To stabilize modulation, the authors prevent instance parameters from deviating too far from the base using a regularization term $\lambda_z \|\bm{z}\|_2 + \lambda_\phi \|\bm\phi\|_2$. During testing, the latent is initialized using the Euclidean mean of training latents $\bm{z}_\text{avg} = \tfrac{1}{n_\mu^\text{train}} \sum_k \bm{z}_\text{train}^{(k)}$. More importantly, latents $\bm{z}^{(k)}$ are not reset every epoch but evolve throughout the entire training process. This allows the base and latents to co-evolve, ensuring the base remains in a neighborhood suitable for few-shot adaptation.
 
 ### Loss & Training
-Hamiltonian systems use a symplecticity loss $\mathcal{L}_\text{symp} = \|\dot{\bm q} - \partial_{\bm p} \tilde{\mathcal H}_\Theta\|_2^2 + \|\dot{\bm p} + \partial_{\bm q} \tilde{\mathcal H}_\Theta\|_2^2$, while GENERIC systems use the corresponding metriplectic loss. The outer loop performs $N_\text{out}$ updates on $\Theta_\text{base}$, and the inner loop performs $N_\text{in}$ updates on the batch's latents. Test-time adaptation utilizes Algorithm 2 for an $N_\text{test}$-shot latent fit with a frozen base.
+Hamiltonian systems utilize a symplecticity loss $\mathcal{L}_\text{symp} = \|\dot{\bm q} - \partial_{\bm p} \tilde{\mathcal H}_\Theta\|_2^2 + \|\dot{\bm p} + \partial_{\bm q} \tilde{\mathcal H}_\Theta\|_2^2$, while GENERIC systems use a metriplectic loss. The outer loop performs $N_\text{out}$ updates to $\Theta_\text{base}$, and the inner loop performs $N_\text{in}$ updates to the latent codes of the current batch. Testing involves an $N_\text{test}$-shot latent fit with frozen base weights.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing on three conservative systems (Duffing, mass-spring, pendulum) and one dissipative system (DNO). 80 parameter instances per system (70 train / 10 test), 10 trajectories each. Metrics: $\epsilon_\text{field}$ (relative $\ell^2$ error on uniform grid, OOD metric), $\epsilon_\text{traj}$ (relative error of test trajectories).
+Experiments were conducted on three energy-conserving systems (Duffing, mass-spring, pendulum) and one dissipative system (DNO). 80 parameter instances (70 training / 10 testing) were sampled, with 10 trajectories each. Metrics include $\epsilon_\text{field}$ (relative $\ell^2$ error on uniform grid) and $\epsilon_\text{traj}$ (test trajectory relative error).
 
 | System | Method | $\epsilon_\text{field}$ ($\times 10^{-2}$) | $\epsilon_\text{traj}$ ($\times 10^{-2}$) |
 |------|------|--------------------------------------------|-------------------------------------------|
@@ -79,50 +93,46 @@ Testing on three conservative systems (Duffing, mass-spring, pendulum) and one d
 | Pendulum | Shift | 9.76 | 12.88 |
 | Pendulum | RO (MR-1) | 6.47 | 8.27 |
 | Pendulum | **SVD(5)** | **4.62** | **5.33** |
-| Mass Spring | FW | 1.60 | 1.31 |
-| Mass Spring | **SVD(5)** | **1.51** | **1.12** |
-| Duffing | FW | 10.30 | 2.78 |
-| Duffing | **SVD(5)** | **10.03** | **2.30** |
 
 ### Ablation Study
 
 | Configuration | Pendulum $\epsilon_\text{field}$ | Notes |
 |------|----------------------------------|------|
-| Multi-domain training (Duffing + spring + pendulum) | SVD(5) still best | Modulation works across different dynamics families |
-| Variable shot counts | SVD consistently best (1 to 300 shots) | Strong few-shot adaptation |
-| Locality weight $\lambda_\phi, \lambda_z$ scans | SVD has lowest variance | Robust to regularization strength |
-| Latent init (zero vs $\bm z_\text{avg}$) | $\bm z_\text{avg}$ always superior | Validates evolving-latent protocol |
-| Dissipative DNO system | SVD(3) $\epsilon_\text{traj} = 0.142$ | Reptile/ANIL NaN or diverge; SVD remains stable |
+| Multi-domain training (Joint base) | SVD(5) still optimal | Validates cross-dynamics family modulation |
+| Few-shot shot adaptation | SVD consistently best | Superior few-shot adaptation (1-300 shots) |
+| Locality weight $\lambda_\phi, \lambda_z$ | SVD lowest variance | Robust to regularization strength |
+| Latent init (zero vs $\bm z_\text{avg}$) | $\bm z_\text{avg}$ consistently superior | Validates evolving-latent protocol |
+| Dissipative DNO system | SVD(3) $\epsilon_\text{traj} = 0.142$ | Reptile / ANIL NaN or diverge |
 
 ### Key Findings
-- Modulation-based methods (FW/Shift/MR/RO/SVD) overall reduce errors by ~65% compared to optimization-based methods (MAML/Reptile/ANIL). This suggests that for structure-preserving networks where weight dependency is low-dimensional, modulation is more efficient than inner gradients.
-- SVD(5) is not only the most accurate but also has a significantly smaller hyper-network than FW (FW outputs the full matrix, while SVD outputs $r$ scalars), achieving the "accuracy/params" Pareto optimum.
-- MAML-style methods diverge on the dissipative DNO system, whereas modulation methods remain stable because they do not modify the main weights via high-variance inner loops.
-- Multi-domain training proves that the same base network can switch between Duffing, spring, and pendulum dynamics purely via latent code modulation.
+- Modulation-based methods (FW, Shift, MR, RO, SVD) reduce error by approximately 65% compared to optimization-based methods like MAML or Reptile. This confirms that modulation is more efficient in structure-preserving networks where weight dependence on system parameters is inherently low-dimensional.
+- SVD(5) achieves the lowest error while maintaining a smaller hyper-network volume than FW (as FW outputs full matrices, whereas SVD outputs $r$ scalars), representing the Pareto optimum for "accuracy vs. parameters."
+- Optimization-based methods fail (NaN or divergence) on the dissipative DNO system, suggesting that inner-loop gradient steps are unstable for dynamics involving entropy generation.
+- Multi-domain experiments show that a single base network can fit multiple dynamics families (Duffing, spring, pendulum) simultaneously, with the latent code acting as a switch between different physics.
 
 ## Highlights & Insights
-- Decomposing parameters into "shared base + latent SVD" provides "interpretability" to the latent modulation found in INRs—individual singular values reveal the importance of specific principal modulation directions for a given instance.
-- Proposition 3.1 provides a clean theoretical justification for low-rank modulation: the local rank of the parameter space determines the required modulation dimensions.
-- Combining modulation with Hamiltonian/GENERIC frameworks is naturally robust; modulation only alters the scalar value of $\mathcal{H}_\Theta$ and does not break the symplectic or metriplectic structure.
-- The evolving-latent protocol is a critical detail: keeping the base synchronized with used latents prevents distribution shift.
+- Decomposing modulation into shared base and task-specific latents via SVD provides interpretability; the magnitude of singular values indicates the importance of specific principal directions for an instance.
+- Proposition 3.1 provides a theoretical justification for low-rank modulation, linking the local rank of the parameter space to the required modulation dimension.
+- The combination of modulation and HNN/GENERIC architectures is unique: modulation only adjusts the scalar values of $\mathcal{H}_\Theta$ and does not break symplectic or metriplectic symmetry.
+- The evolving-latent protocol prevents the distribution shift typically seen when resetting latents during meta-training.
 
 ## Limitations & Future Work
-- Experiments are restricted to low-dimensional "toy" systems ($\le 4$ dimensions). Scalability to PDEs or high-dimensional multi-body systems (e.g., molecular dynamics) remains unproven.
-- Modulation was only applied to MLP layers; more general architectures like Transformers or GNNs were not explored.
-- SVD orthogonality relies on soft penalties; convergence sensitivity regarding base orthogonality was not fully discussed.
-- Interaction with long-horizon stability and specific symplectic integrators requires more systematic analysis.
+- Experimental verification is limited to low-dimensional systems ($\le 4$); performance on PDEs or high-dimensional molecular dynamics is unproven.
+- Modulation was only applied to MLP layers; extending this to GNNs or Transformers would require more complex hyper-network designs.
+- Orthogonality in the SVD basis relied on soft penalties rather than hard constraints, leading to some sensitivity during early training.
+- The interaction between modulation and long-horizon stability in symplectic integrators requires more systematic analysis.
 
 ## Related Work & Insights
-- **vs MAML / Reptile / ANIL**: This work replaces high-dimensional inner-loop gradient updates with low-dimensional auto-decoding of latent codes, reducing error by 65%.
-- **vs CODA / FW (Kirchmeyer 2022)**: FW modulates all $\bm{W}, \bm{b}$, resulting in a massive hyper-network. MR/SVD outperform FW with far fewer parameters.
-- **vs Shift modulation (Dupont 2022)**: Shift only adjusts biases, which is too weak. SVD-like modulation retains biases while adding shared rank-$r$ matrices for higher expressivity.
-- **vs LoRA**: While LoRA is a task-agnostic fine-tuning method, MR is essentially task-conditioned LoRA driven by a hyper-network, upgrading fine-tuning to meta-learning.
+- **vs MAML / Reptile / ANIL**: Replaces high-dimensional inner-loop gradient updates with low-dimensional latent auto-decoding, avoiding second-order gradients and instability.
+- **vs CODA / FW**: FW applies corrections to all weights and biases, leading to massive hyper-networks. MR and SVD significantly reduce parameter counts through low-rank sharing.
+- **vs Shift modulation**: Shift modulation only adjusts biases, which is often insufficient. SVD-like modulation adds shared rank-$r$ corrections.
+- **vs LoRA**: While LoRA is a task-agnostic fine-tuning technique, MR is effectively a task-conditioned LoRA driven by a hyper-network, bridging fine-tuning and meta-learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Applying LoRA/SVD-style modulation to structure-preserving meta-learning is a solid combination.
-- Experimental Thoroughness: ⭐⭐⭐ Cover 4 systems and 6 baselines, but the system dimensionality is low.
-- Writing Quality: ⭐⭐⭐⭐ Clear formulas and algorithm blocks; Prop 3.1 provides rigorous grounding.
-- Value: ⭐⭐⭐⭐ Provides a simple, reusable meta-learning template for many-query SciML scenarios.
+- Novelty: ⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -130,11 +140,11 @@ Testing on three conservative systems (Duffing, mass-spring, pendulum) and one d
 
 ## Related Papers
 
+- [\[ICML 2025\] Deep Electromagnetic Structure Design Under Limited Evaluation Budgets](../../ICML2025/signal_comm/deep_electromagnetic_structure_design_under_limited_evaluation_budgets.md)
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
-- [\[CVPR 2026\] Dual-Imbalance Continual Learning for Real-World Food Recognition](../../CVPR2026/signal_comm/dual-imbalance_continual_learning_for_real-world_food_recognition.md)
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](../../AAAI2026/signal_comm/task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
-- [\[NeurIPS 2025\] Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning](../../NeurIPS2025/signal_comm/contrastive_consolidation_of_top-down_modulations_achieves_sparsely_supervised_c.md)
+- [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
 
 </div>
 

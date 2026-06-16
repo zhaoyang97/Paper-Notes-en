@@ -2,119 +2,130 @@
 title: >-
   [Paper Note] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 description: >-
-  [CVPR 2026][Image Restoration][Infrared image super-resolution] This paper proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution via a T…
+  [CVPR 2026][Image Restoration][Paper Note] Ours proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution (IISR) through a Thermal-Structural Guidance module, a Conditional Adaptive Codebook, and a Thermal Ordering Consistency loss, while constructing the FLIR-IISR dataset (1457 pai
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Infrared image super-resolution"
-  - "visual autoregression"
-  - "thermal-structure guidance"
-  - "conditional adaptive codebook"
-  - "thermal order consistency"
+  - CVPR 2026
+  - Image Restoration
 date: 2026-05-08
-content_hash: 6177be9da2908251
+content_hash: fd9e399129a2f72c
 ---
-
 # Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.04745](https://arxiv.org/abs/2603.04745)  
 **Code**: [https://github.com/JZD151/Real-IISR](https://github.com/JZD151/Real-IISR)  
-**Area**: Image Restoration / Infrared Super-Resolution
-**Keywords**: Infrared image super-resolution, visual autoregression, thermal-structure guidance, conditional adaptive codebook, thermal order consistency
+**Area**: Image Restoration / Infrared Image Super-Resolution  
+**Keywords**: Infrared Image Super-Resolution, Visual Autoregression, Thermal-Structural Guidance, Conditional Adaptive Codebook, Thermal Ordering Consistency
 
 ## TL;DR
 
-This paper proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution via a Thermal-Structure Guidance (TSG) module, a Conditional Adaptive Codebook (CAC), and a Thermal Order Consistency loss. It also introduces the FLIR-IISR dataset comprising 1,457 real LR-HR infrared image pairs.
+Ours proposes Real-IISR, a unified autoregressive framework that addresses the unique challenges of real-world infrared image super-resolution (IISR) through a Thermal-Structural Guidance module, a Conditional Adaptive Codebook, and a Thermal Ordering Consistency loss, while constructing the FLIR-IISR dataset (1457 pairs of real LR-HR infrared images).
 
 ## Background & Motivation
 
-1. **Background**: Visible-image super-resolution has seen remarkable progress, yet infrared imaging exhibits unique degradations—spatially varying blur, unstable thermal boundaries, and temperature-dependent radiometric drift—caused by longer wavelengths and weaker atmospheric scattering.
-2. **Limitations of Prior Work**: Existing IISR methods are trained on synthetic datasets (downsampled IVIF datasets) and thus fail to capture real infrared degradations. Diffusion models are further limited in IISR by stochastic sampling and the absence of infrared-specific degradation priors.
-3. **Key Challenge**: (1) The lack of a real infrared degradation dataset; (2) the absence of infrared-aware degradation modeling—thermal radiation intensity does not correspond to structural edges, and non-uniform degradation introduces quantization bias.
-4. **Goal**: Simultaneously address both the dataset and methodological gaps in real-world IISR.
-5. **Key Insight**: Exploit the temperature–brightness monotonicity of infrared imaging as a physical constraint.
-6. **Core Idea**: Dual thermal-structure guidance + degradation-adaptive codebook + thermal order preservation loss.
+1. **Background**: While visible light image super-resolution has seen significant progress, infrared imaging suffers from unique degradations such as spatially-varying blur, unstable thermal boundaries, and temperature-related radiation drift due to longer wavelengths and weaker atmospheric scattering.
+2. **Limitations of Prior Work**: Existing IISR methods are trained on simulated datasets (downsampled IVIF datasets), failing to capture real infrared degradation. The stochastic sampling of diffusion models and their lack of infrared degradation priors limit their applicability in IISR.
+3. **Key Challenge**: (1) Lack of real-world infrared degradation datasets; (2) Absence of infrared-aware degradation modeling—thermal radiation intensity does not strictly align with structural edges, and non-uniform degradation introduces quantization bias.
+4. **Goal**: Simultaneously fill the fundamental gaps in both datasets and methodologies for real-world IISR.
+5. **Key Insight**: Leverage the temperature-brightness monotonicity of infrared imaging as a physical constraint.
+6. **Core Idea**: Thermal-structural dual guidance + degradation-adaptive codebook + thermal ordering preservation loss.
 
 ## Method
 
 ### Overall Architecture
 
-The TSG module fuses thermal priors for degradation-aware encoding → the VAR backbone generates outputs via scale-by-scale prediction → CAC dynamically adjusts quantized embeddings → the Thermal Order Consistency loss enforces physical consistency.
+Real-IISR treats real-world infrared super-resolution as an **autoregressive generation problem under degradation conditions**, with the entire pipeline centered around infrared-specific physical priors. A low-resolution (LR) infrared image first enters the Thermal-Structural Guidance (TSG) module, where it is decomposed into thermal and edge maps and then fused to obtain a degradation-aware encoding that "knows both the heat distribution and the edge locations." This encoding is fed into a Visual Autoregressive (VAR) backbone, which predicts discrete tokens in a coarse-to-fine manner per scale to generate high-resolution results. During generation, the Conditional Adaptive Codebook (CAC) dynamically modifies quantization embeddings based on current degradation conditions, allowing the same codebook entry to decode into different textures under different degradations. Finally, the Thermal Ordering Consistency (TOC) loss constrains the output to ensure the restored results maintain the infrared physical law of "higher temperature, brighter pixel." Compared to the stochastic multi-step denoising of diffusion methods, the deterministic scale-by-scale prediction of VAR is faster and avoids blurring high-frequency thermal details.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LR IR Image"] --> B
+    subgraph TSG["Thermal-Structural Guidance Module (TSG)"]
+        direction TB
+        B["Thermal/Edge dual paths<br/>via DINOv3 encoders"] --> C["Attention gate adaptive fusion<br/>for degradation-aware encoding"]
+    end
+    C --> D["Visual Autoregressive (VAR) backbone<br/>Coarse-to-fine discrete token prediction"]
+    E["Conditional Adaptive Codebook (CAC)<br/>Low-rank modulation per degradation"] -->|Dynamically modify embeddings| D
+    C -.Degradation Condition.-> E
+    D --> F["HR IR Image"]
+    F -->|Training Constraint| G["Thermal Ordering Consistency Loss<br/>Maintains temperature-brightness monotonicity"]
+```
 
 ### Key Designs
 
-1. **Thermal-Structure Guidance Module (TSG)**:
+**1. Thermal-Structural Guidance Module (TSG): Focusing on heat distribution and real edges simultaneously**
 
-    - **Function**: Mitigates the mismatch between thermal radiation and structural edges.
-    - **Mechanism**: A thermal map $I_{\text{Heat}}$ and an edge map $I_{\text{Edge}}$ are constructed from the LR input and encoded by DINOv3 encoders, respectively. A learnable attention gate $W = \sigma(L(A) + G(A))$ adaptively balances the contributions of both features. The fused features guide LR features via cross-attention.
-    - **Design Motivation**: A car engine as a strong heat source produces a thermal radiation region that often deviates from the vehicle's actual contour. Direct training would cause the model to overfit thermal peaks while neglecting true structural edges.
+Strong heat sources (e.g., car engines) in infrared images produce large high-brightness radiation zones, which often deviate from the actual contours of the object. End-to-end training might overfit to thermal peaks and blur edge restoration. TSG constructs a thermal map $I_{\text{Heat}}$ and an edge map $I_{\text{Edge}}$ from the LR input, extracts features using a DINOv3 encoder for each, and employs a learnable attention gate $W = \sigma(L(A) + G(A))$ to adaptively weight the contributions—relying more on the thermal map when the heat source is prominent and more on the edge map when textures are rich. The fused features guide the LR feature encoding via cross-attention, aligning "heat" and "shape" cues before generation to prevent deviations where the two signals conflict.
 
-2. **Conditional Adaptive Codebook (CAC)**:
+**2. Conditional Adaptive Codebook (CAC): Adapting discrete codebook entries to degradation conditions**
 
-    - **Function**: Dynamically corrects quantization bias to enhance texture fidelity.
-    - **Mechanism**: Each code embedding is dynamically modulated via low-rank perturbation: $Z'(g)[i] = Z[i] + \tanh(\alpha)[(U_i \odot h(g))V^\top]$, where the conditioning vector $h(g)$ is derived from TSG features. The same discrete index can be decoded into different embedding vectors under different degradation conditions.
-    - **Design Motivation**: Discretization errors introduced by standard VQ-VAE quantization are exacerbated under non-uniform infrared degradation, and a static codebook cannot adapt to spatially varying degradation patterns.
+VAR relies on VQ-VAE style discrete quantization, but the quantization error of a fixed codebook is amplified under the spatially non-uniform degradation of infrared images—the same code entry should decode into different textures in clear versus defocused areas. CAC adds a low-rank perturbation to each code embedding for dynamic modulation:
 
-3. **Thermal Order Consistency Loss $\mathcal{L}_{\text{TOC}}$**:
+$$Z'(g)[i] = Z[i] + \tanh(\alpha)\big[(U_i \odot h(g))V^\top\big]$$
 
-    - **Function**: Preserves the monotonic physical relationship between temperature and brightness.
-    - **Mechanism**: Applied over adjacent patch pairs: $\mathcal{L}_{\text{TOC}} = \text{ReLU}(-[(I_{\text{SR}}^p(i) - I_{\text{SR}}^p(j)) \times (I_{\text{HR}}^p(i) - I_{\text{HR}}^p(j))])$. It penalizes cases where brightness ordering between SR and HR is inconsistent.
-    - **Design Motivation**: In infrared images, higher temperature corresponds to higher pixel brightness (monotonicity). Degradations such as defocus and motion blur cause local thermal compression and peak shifts. MSE constrains only absolute values and cannot guarantee relative ordering.
+Where the condition vector $h(g)$ is derived from the degradation-aware features of TSG, and $\tanh(\alpha)$ limits the modulation magnitude to a controllable range to avoid training divergence. This allows the same discrete index to decode into different embedding vectors under different degradation conditions, transforming the codebook from a "static lookup table" to a "condition-tuned" system, balancing flexibility and stability with a low-rank structure.
+
+**3. Thermal Ordering Consistency Loss $\mathcal{L}_{\text{TOC}}$: Integrating "temperature-brightness monotonicity" into the objective**
+
+In infrared imaging, higher temperatures correspond to brighter pixels, which is a hard physical law. However, defocus and motion blur can compress local temperatures and shift thermal peaks. Since MSE only constrains absolute pixel values, it cannot maintain the relative brightness order of adjacent regions, potentially resulting in restored values that are numerically close but physically inverted in cold-heat order. TOC directly targets the brightness ordering of adjacent patch pairs:
+
+$$\mathcal{L}_{\text{TOC}} = \text{ReLU}\big(-[(I_{\text{SR}}^p(i) - I_{\text{SR}}^p(j)) \times (I_{\text{HR}}^p(i) - I_{\text{HR}}^p(j))]\big)$$
+
+When the direction of brightness difference for a patch pair in SR is consistent with HR, the product is positive and the ReLU yields no penalty. If SR inverts the cold-heat order, the product is negative and the loss increases. It constrains relative ordering rather than absolute values, effectively supplementing physical consistency where MSE fails, and successfully suppressing thermal peak drift in experiments.
 
 ### Loss & Training
 
-$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\text{MSE}} + \lambda_2 \mathcal{L}_{\text{TOC}}$, with $\lambda_1=0.2$, $\lambda_2=0.8$. Training uses 4 × A800 GPUs, AdamW optimizer, and 10K fine-tuning iterations.
+The total loss weighting combines autoregressive cross-entropy, pixel reconstruction, and physical constraints: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\text{MSE}} + \lambda_2 \mathcal{L}_{\text{TOC}}$, with $\lambda_1=0.2,\ \lambda_2=0.8$. The weight for the physical consistency term is significantly higher than pixel MSE, reflecting a trade-off that prioritizes maintaining thermal order over pixel-wise accuracy. Training was performed with 10K fine-tuning steps using AdamW on 4 × A800 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | Real-IISR | DifIISR (Prev. SOTA) | Gain |
+| Dataset | Metric | Ours | DifIISR (Prev. SOTA) | Gain |
 |--------|------|-----------|-------------------|------|
 | FLIR-IISR@Set5 | MUSIQ↑ | 59.90 | 54.79 | +5.11 |
 | FLIR-IISR@Set15 | MUSIQ↑ | 57.06 | 53.16 | +3.90 |
-| FLIR-IISR@Set5 | LPIPS↓ | 0.1615 | 0.2525 | −0.091 |
+| FLIR-IISR@Set5 | LPIPS↓ | 0.1615 | 0.2525 | -0.091 |
 
 ### Ablation Study
 
-| Configuration | PSNR | MUSIQ | Note |
+| Configuration | PSNR | MUSIQ | Description |
 |------|------|-------|------|
-| w/o TSG | Drop | Drop | Edge blurring, inaccurate thermal distribution |
-| w/o CAC | Drop | Drop | Unstable texture |
-| w/o $\mathcal{L}_{\text{TOC}}$ | Drop | Drop | Thermal peak drift |
-| VAR vs. diffusion baseline | VAR better | VAR better | Deterministic generation better suited for infrared |
+| W/o TSG | Decrease | Decrease | Blurred edges, inaccurate thermal distribution |
+| W/o CAC | Decrease | Decrease | Unstable textures |
+| W/o $\mathcal{L}_{\text{TOC}}$ | Decrease | Decrease | Thermal peak drift |
+| VAR vs Diffusion Baseline | VAR Better | VAR Better | Deterministic generation is more suitable for IR |
 
 ### Key Findings
 
-- Real-IISR has the highest parameter count (1144.6M) yet achieves the fastest inference (2.45 FPS), as autoregression requires no multi-step denoising.
-- Iterative denoising in diffusion-based methods blurs high-frequency thermal details and disrupts structure–thermal correspondence.
+- While Real-IISR has the most parameters (1144.6M), it achieves the fastest inference (2.45 FPS) since the autoregressive model does not require multi-step denoising.
+- The iterative denoising of diffusion methods blurs high-frequency thermal details and destroys the structure-thermal correspondence.
 - $\mathcal{L}_{\text{TOC}}$ effectively prevents thermal peak drift and maintains physical consistency.
 
 ## Highlights & Insights
 
-- **Domain-specific constraint design**: The thermal order consistency loss elegantly exploits the physical monotonicity of infrared imaging.
-- **Real dataset construction**: Real degradations are simulated via autofocus variation and motion blur, filling the gap in real-world infrared SR data.
-- **Low-rank perturbation in CAC**: A low-rank structure controls the magnitude of codebook modulation, balancing flexibility and stability.
+- **Domain-Specific Constraint Design**: The Thermal Ordering Consistency loss cleverly utilizes the physical monotonicity of infrared imaging.
+- **Real-world Dataset Construction**: Simulates real degradation through autofocus variations and motion blur, filling the gap for real infrared SR data.
+- **Low-rank Perturbation in CAC**: Uses a low-rank structure to control the modulation magnitude of the codebook, balancing flexibility and stability.
 
 ## Limitations & Future Work
 
-- The FLIR-IISR dataset contains only 1,457 pairs, limiting its scale.
-- Only 4× super-resolution is supported; generalization to other scale factors is unverified.
-- The quality of thermal and edge maps depends on the LR input, which may be unreliable under extreme degradation.
-- Future work could extend the framework to infrared video super-resolution to leverage temporal information.
+- The FLIR-IISR dataset contains only 1457 pairs, which is still limited in scale.
+- Only 4× super-resolution is supported; other magnification factors have not been verified.
+- The quality of thermal and edge maps depends on the LR input and may be unreliable under extreme degradation.
+- Future work could extend to infrared video SR to leverage temporal information.
 
 ## Related Work & Insights
 
-- **vs. VARSR**: VARSR is designed for visible images without infrared constraints; Real-IISR introduces thermal priors.
-- **vs. DifIISR**: DifIISR employs diffusion with gradient alignment, but multi-step denoising is slow and blurs infrared details.
+- **vs VARSR**: VARSR is designed for visible light without infrared constraints; Real-IISR introduces thermal priors.
+- **vs DifIISR**: DifIISR uses diffusion with gradient alignment, but multi-step denoising is slow and blurs infrared details.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Thermal-structure guidance and thermal order constraints are innovative designs tailored for infrared imaging, filling the gap in real-world infrared SR.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Two datasets, multiple competing methods, comprehensive ablation studies, and complete efficiency analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure; thermal map visualizations and grayscale fluctuation plots intuitively demonstrate physical consistency.
-- **Value**: ⭐⭐⭐⭐ — Addresses both the data and methodological gaps in real-world infrared SR, providing a benchmark for the field.
+- Novelty: ⭐⭐⭐⭐ TSG and thermal ordering constraints are innovative designs for IR, filling the gap in real infrared SR.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two datasets + multiple comparison methods + comprehensive ablations, with complete efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure; thermal map visualizations and grayscale fluctuation plots intuitively demonstrate physical consistency.
+- Value: ⭐⭐⭐⭐ Fills the double gap of data and methodology for real-world infrared SR, providing a benchmark for the field.
 
 <!-- RELATED:START -->
 
@@ -122,11 +133,11 @@ $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_1 \mathcal{L}_{\
 
 ## Related Papers
 
-- [\[CVPR 2026\] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution](finpercep_rm_a_fine_grained_reward_model_and_co_evolutionary_curriculum_for_rl_ba.md)
-- [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
-- [\[CVPR 2026\] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](unirain_unified_image_deraining_rag_dataset_distillation.md)
-- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
-- [\[CVPR 2026\] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution](ucan_unified_convolutional_attention_lightweight_sr.md)
+- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[ECCV 2024\] A New Dataset and Framework for Real-World Blurred Images Super-Resolution](../../ECCV2024/image_restoration/a_new_dataset_and_framework_for_real-world_blurred_images_super-resolution.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
 
 </div>
 

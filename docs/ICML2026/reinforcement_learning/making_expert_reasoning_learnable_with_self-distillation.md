@@ -2,70 +2,83 @@
 title: >-
   [Paper Note] Making Expert Reasoning Learnable with Self-Distillation
 description: >-
-  [ICML 2026][Reinforcement Learning][Expert Trajectories] DAIL utilizes a mixed-policy rollout sequence involving a "Teacher = self with expert solution + Student = self without expert solution." It rewrites fewer than 1…
+  [ICML 2026][Reinforcement Learning][Paper Note] DAIL utilizes a hybrid strategy rollout where "Teacher = self with expert solution + Student = self without expert solution" to rewrite fewer than 1000 expert trajectories into reasoning chains consistent with the student’s policy distribution. It then employs a contrastive loss to penalize "shortcut tokens" that have
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Expert Trajectories"
-  - "Self-distillation"
-  - "Contrastive Learning"
-  - "Distribution Alignment"
-  - "Mathematical Reasoning"
+  - ICML 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 3331e0406abc0ce7
+content_hash: 33431aec0eaab4e6
 ---
-
 # Making Expert Reasoning Learnable with Self-Distillation
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.02405](https://arxiv.org/abs/2602.02405)  
 **Code**: https://github.com/ethanm88/DAIL  
 **Area**: LLM Reasoning  
-**Keywords**: Expert Trajectories, Self-distillation, Contrastive Learning, Distribution Alignment, Mathematical Reasoning
+**Keywords**: Expert trajectories, self-distillation, contrastive learning, distribution alignment, mathematical reasoning
 
 ## TL;DR
-DAIL utilizes a mixed-policy rollout sequence involving a "Teacher = self with expert solution + Student = self without expert solution." It rewrites fewer than 1,000 expert trajectories into reasoning chains aligned with the student's policy distribution. By applying a contrastive loss to penalize "shortcut" tokens that have high probability in a negative reference model (which only sees intermediate answers), it achieves a pass@128 improvement of up to 31% on Qwen2.5-Instruct / Qwen3 and reduces reasoning tokens by half.
+DAIL utilizes a hybrid strategy rollout where "Teacher = self with expert solution + Student = self without expert solution" to rewrite fewer than 1000 expert trajectories into reasoning chains consistent with the student’s policy distribution. It then employs a contrastive loss to penalize "shortcut tokens" that have high probability in a negative reference model which only sees intermediate results. This approach achieves up to a 31% improvement in pass@128 on Qwen2.5-Instruct / Qwen3 while reducing the required reasoning tokens by half.
 
 ## Background & Motivation
 
-**Background**: The two mainstream routes for improving LLM reasoning are Reinforcement Learning with Verifiable Rewards (RLVR, such as GRPO) and distilling long CoTs from stronger teacher models. Both assume that training signals are "readily available"—either the model can sample correct answers itself, or a stronger teacher exists.
+**Background**: Currently, two mainstream paths for enhancing LLM reasoning are Reinforcement Learning from Verifiable Rewards (RLVR, e.g., GRPO) and distilling long CoT from stronger teacher models. Both assume that training signals are "readily available"—either because the model can sample the correct answer itself or because a significantly stronger teacher exists.
 
-**Limitations of Prior Work**: On hard problems like AIME/IMO, frontier models fail all 32 samples, resulting in zero reward, advantage, or gradient for RLVR. Meanwhile, solutions from human experts (e.g., Math Olympiad contestants) are written for human readers, often skipping steps or omitting derivation details. Direct SFT on these solutions tends to disrupt the reasoning processes learned by the model during post-training.
+**Limitations of Prior Work**: On hard problems at the AIME/IMO level, frontier models often fail all 32 samples, leaving RLVR with zero rewards, advantages, or gradients. Conversely, solutions written by actual expert teachers (human Olympiad contestants) are intended for human readers, often skipping steps or omitting derivation details. Directly applying SFT to such data can disrupt the reasoning processes learned during the model's post-training.
 
-**Key Challenge**: There are two types of misalignment between the expert trajectory distribution $p_{\text{expert}}$ and the student policy distribution $p_\theta$: (1) **didactic shortcuts**, where experts omit intermediate steps necessary for the student; and (2) **rationalization shortcuts**, where the model "looks ahead" at the answer and forces the derivation toward the known result rather than actually deriving it. Standard NLL treats all tokens equally, internalizing both types of shortcuts.
+**Key Challenge**: Two types of misalignment exist between the expert solution distribution $p_{\text{expert}}$ and the student policy distribution $p_\theta$: (1) **didactic shortcuts**, where experts omit intermediate steps necessary for the student; and (2) **rationalization shortcuts**, where the model, if forced to "complete" these steps, peeks at the answer and forces the derivation toward the known result rather than truly deriving it. Standard NLL treats all tokens equally, internalizing both types of shortcuts.
 
-**Goal**: To maximize the conversion of each expert solution into generalizable reasoning training signals under conditions of minimal expert data ($n < 1000$) and potentially non-verifiable problems (e.g., open-ended proofs).
+**Goal**: To transform every expert solution into a generalizable reasoning training signal under conditions where expert solutions are extremely scarce ($n < 1000$) and problems may be unverifiable (open-ended proof problems).
 
-**Key Insight**: The authors decompose the problem into two stages: first, **distribution-aligned data synthesis** (transforming OOD expert solutions into in-distribution expanded trajectories), and second, a **shortcut-sensitive objective function** (specifically penalizing tokens that are highly probable only when "peeking" at the answer).
+**Key Insight**: The authors decompose the problem into two stages: **distribution-aligned data synthesis** (transforming OOD expert solutions into in-distribution expanded trajectories) and a **shortcut-sensitive objective** (specifically penalizing tokens that exhibit high probability only when peeking at the answer).
 
-**Core Idea**: A mixed-policy rollout using a "self-distillation" teacher $M_T = M_{\theta_{\text{ref}}}(\cdot | x, s)$ (the same model conditioned on the expert solution $s$) and a student $M_\theta(\cdot | x)$ generates trajectories via a speculative-decoding-style strategy. A **negative reference model** $M_{NR}$, conditioned only on key nodes $\tilde s$ of the expert solution, is then constructed. The student is trained using the contrastive loss $\mathrm{KL}(M_\theta \| M_T) - \gamma \mathrm{KL}(M_\theta \| M_{NR})$.
+**Core Idea**: Use "self-distillation" $M_T = M_{\theta_{\text{ref}}}(\cdot | x, s)$ as the teacher (the same model conditioned on the expert solution $s$), allowing it to collaborate with the student $M_\theta(\cdot | x)$ via a "speculative-decoding-style" hybrid policy rollout to generate trajectories. Then, construct a **negative reference model** $M_{NR}$ conditioned only on key nodes of the expert solution $\tilde s$, and train the student using the contrastive loss $\mathrm{KL}(M_\theta \| M_T) - \gamma \mathrm{KL}(M_\theta \| M_{NR})$.
 
 ## Method
 
 ### Overall Architecture
-DAIL is a two-stage offline training method that takes $n < 1000$ expert (problem, solution) pairs $\mathcal{D} = \{(x_i, s_i)\}$ as input and outputs an updated student model $M_\theta$. The pipeline consists of: (1) **In-distribution trajectory synthesis**—using frozen initial weights $\theta_{\text{ref}}$, both a "teacher" (observing the expert solution) and a "student" (not observing it) are instantiated. They generate expanded reasoning trajectories $r_i$ via mixed-policy decoding to form a synthetic dataset $\mathcal{D}_{\text{syn}} = \{(x_i, r_i)\}$. (2) **Contrastive fine-tuning**—$M_\theta$ is trained on $\mathcal{D}_{\text{syn}}$ using a contrastive loss that pulls the model toward the teacher (full solution) and pushes it away from the negative reference (answer landmarks only). The training is fully offline, and since the teacher, student, and negative reference share base weights, a single set of weights with LoRA adapters and toggles can be used.
+DAIL is a two-stage offline training method that takes $n < 1000$ expert (problem, solution) pairs $\mathcal{D} = \{(x_i, s_i)\}$ and outputs an updated student model $M_\theta$. The pipeline consists of: (1) **In-distribution trajectory synthesis**—using frozen initial weights $\theta_{\text{ref}}$ to instantiate both the "Teacher" (observing $s$) and the "Student" (not observing $s$), generating expanded trajectories $r_i$ via hybrid strategy decoding to obtain a synthetic dataset $\mathcal{D}_{\text{syn}} = \{(x_i, r_i)\}$; (2) **Contrastive fine-tuning**—training $M_\theta$ on $\mathcal{D}_{\text{syn}}$ using a contrastive loss that pulls the student toward the full-solution teacher while pushing it away from the landmark-only negative reference. The process is fully offline, and since the teacher, student, and negative reference share base weights, only one set of model weights is stored using LoRA adapters.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Expert Solutions D (Problem x + Solution s), n < 1000"] --> B
+    subgraph S1["Hybrid Policy Rollout (Synthetic In-distribution Trajectories)"]
+        direction TB
+        B["Student M_θ samples token t"] -->|"M_T(t) ≥ τ: Accepted"| C["Assembled expanded trajectory r"]
+        B -->|"M_T(t) < τ: Rejected, fallback to M_T sampling"| C
+    end
+    C --> D["Synthetic Dataset D_syn = {(x, r)}<br/>Completes expert skips, aligns with student distribution"]
+    D --> E
+    subgraph S2["Contrastive Loss with Negative Reference (Token-level KL)"]
+        direction TB
+        E["Calculate contrastive term for each token"] -->|"+ Pull toward Teacher M_T (conditioned on full s)"| F["Update Student M_θ"]
+        E -->|"- γ Push away from Negative Ref M_NR (conditioned on landmarks s̃ only)"| F
+    end
+```
+
+> The three roles $M_\theta$ / $M_T$ / $M_{NR}$ share the same frozen base and switch via LoRA toggles (see Key Design 3), ensuring VRAM usage is approximately equal to single-model inference.
 
 ### Key Designs
 
-1.  **Mixed Policy Decoding**:
-    - **Function**: Rewrites expert solution $s$ into a training trajectory that is in-distribution for student $M_\theta$ but remains anchored to the content of $s$. This solves the extremes of "teacher copying $s$ exactly" and "student deviating entirely."
-    - **Mechanism**: For the $i$-th token, a sample $t \sim M_\theta(\cdot | x, r_{<i})$ is drawn from the student. The teacher then performs an "accept/reject" step: if $M_T(t | r_{<i}) \geq \tau$, $r_i := t$ is accepted; otherwise, it falls back to teacher sampling $r_i \sim M_T(\cdot | r_{<i})$. Inspired by speculative decoding and DAgger-style imitation, but with the goal of letting the student "speak" as much as possible unless it deviates significantly from the expert path.
-    - **Design Motivation**: Long CoT reasoning models (e.g., Qwen3-think) exhibit reflective properties. Direct teacher sampling often triggers meta-comments like "referring to the expert solution," which breaks the natural self-verification flow. Mixed rollout preserves the student's native backtracking/self-correction rhythm while remaining lightly anchored by the expert solution. For non-reasoning models (e.g., Qwen2.5-Instruct), direct sampling with prompt engineering is sufficient.
+**1. Hybrid policy rollout: Rewriting expert solutions into "in-distribution but anchored" trajectories**
 
-2.  **Contrastive Objective with Negative Reference**:
-    - **Function**: During training on $\mathcal{D}_{\text{syn}}$, it actively penalizes rationalization shortcut tokens—those highly probable only when the answer is known—to prevent the student from memorizing jumpy derivations.
-    - **Mechanism**: A negative reference $M_{NR}(\cdot) = M_{\theta_{\text{ref}}}(\cdot | x, \tilde s)$ is constructed, where $\tilde s$ represents "coarse-grained answer landmarks" extracted from $s$ (e.g., a list of intermediate numerical/symbolic results). A model conditioned on $\tilde s$ tends to bypass step-by-step reasoning. The loss function is:
-        $$L(\theta) = \mathbb{E}_{(x,r) \sim \mathcal{D}_{\text{syn}}} \sum_{t=1}^{|r|} \left[ \mathrm{KL}(M_\theta(\cdot|x, r_{<t}) \| M_T(\cdot | r_{<t})) - \gamma \mathrm{KL}(M_\theta(\cdot|x, r_{<t}) \| M_{NR}(\cdot | r_{<t})) \right]$$
-        This effectively "pulls toward the full-knowledge teacher and pushes away from the landmark-only negative reference."
-    - **Design Motivation**: While maximizing a negative term is theoretically unbounded, the student is initialized from $\theta_{\text{ref}}$ and strongly anchored by the positive term, making training stable in practice. This aligns with findings by Kumar et al. (2022) regarding BC on sub-optimal data—standard NLL cannot distinguish "valid reasoning" from "spurious shortcuts," whereas token-level KL contrast applies penalties precisely where the conditional distributions diverge.
+Directly using expert solutions for SFT causes two issues: a teacher who sees the answer might copy skips directly, while a student generating independently might diverge. DAIL uses a speculative-decoding-style hybrid sampling: for token $i$, a token $t$ is sampled from the student $t \sim M_\theta(\cdot | x, r_{<i})$. The teacher then performs an "accept/reject" step: if $M_T(t | r_{<i}) \geq \tau$, $r_i := t$ is accepted; otherwise, it falls back to teacher sampling $r_i \sim M_T(\cdot | r_{<i})$. The goal is opposite to standard speculative decoding—allow the student to "speak" as much as possible, intervening only when it deviates significantly from the expert path. This is crucial for long CoT models (e.g., Qwen3-think) where direct teacher sampling often triggers "meta-comments" about referencing expert solutions, whereas hybrid rollout maintains the student's native self-verification rhythm while being lightly anchored.
 
-3.  **Efficiency-Friendly Training Framework**:
-    - **Function**: Decouples the traditional RLVR "generation + optimization" cycle into "offline generation of $\mathcal{D}_{\text{syn}}$ followed by offline training," and manages the three roles using "one set of weights + one LoRA toggle."
-    - **Mechanism**: (a) The asynchronous data synthesis can be scaled across distributed clusters independently of the GPU optimization phase. (b) Since $\theta_{\text{ref}}$, $M_T$, and $M_{NR}$ share base parameters, and the student only differs by a LoRA adapter (Hu et al., 2022), all three forward passes use the same frozen weights with the LoRA toggle turned on/off as needed. VRAM usage is essentially equivalent to single-model inference.
-    - **Design Motivation**: RLVR takes ~1k GPU hours to converge on hard problems (NuRL) due to the bottleneck of interleaving sampling and training. DAIL's offline nature allows for data reuse and caching. When combined with LoRA, it allows 14B models to be trained on small clusters, enabling rapid iteration for new difficult datasets.
+**2. Contrastive loss with negative reference: Penalizing "peeking" shortcut tokens**
+
+After completing expert solutions into full trajectories, the student must be prevented from memorizing rationalization shortcuts—tokens that are highly probable only when the answer is known but not truly derived. DAIL constructs a negative reference $M_{NR}(\cdot) = M_{\theta_{\text{ref}}}(\cdot | x, \tilde s)$, where $\tilde s$ represents "coarse answer landmarks" (numerical or symbolic results) extracted via regex from $s$. A model conditioned only on landmarks tends to skip reasoning and "force-fit" the path between landmarks. The loss is:
+
+$$L(\theta) = \mathbb{E}_{(x,r) \sim \mathcal{D}_{\text{syn}}} \sum_{t=1}^{|r|} \left[ \mathrm{KL}(M_\theta(\cdot|x, r_{<t}) \| M_T(\cdot | r_{<t})) - \gamma\, \mathrm{KL}(M_\theta(\cdot|x, r_{<t}) \| M_{NR}(\cdot | r_{<t})) \right],$$
+
+effectively pulling towards the full-knowledge teacher and pushing away from the landmark-only reference. Token-level KL contrast allows precise punishment where the two conditional distributions diverge.
+
+**3. Efficiency-friendly framework: Offline decoupling + LoRA toggles**
+
+RLVR on hard problems can require 1k GPU hours due to the bottleneck of simultaneous sampling and training. DAIL decouples these into "offline synthesis of $\mathcal{D}_{\text{syn}}$" and "offline training." Data synthesis can be massively parallelized and cached. Since $\theta_{\text{ref}}$, $M_T$, and $M_{NR}$ share base parameters and only the student requires a LoRA adapter, all three forward passes happen on a single set of frozen weights, making it feasible to iterate on 14B models even on small clusters.
 
 ### Loss & Training
-The formal loss is the contrastive KL given above, with $\gamma$ as the key hyperparameter for the negative term. $\tilde s$ is constructed for mathematical scenarios using a fixed regex (preserving $\boxed{}$ and key right-hand sides of equations) without additional annotation. Training data: `e1-verifiable` (417 AIME problems from 1985–2023 that the base model fails across 32 samples) for Qwen2.5-7B-Instruct; and `e1-proof` (669 IMO-level open-ended proof problems provided by USA IMO coach Evan Chen) for Qwen3-8B/14B (think), demonstrating DAIL's ability to train on **non-verifiable** proof problems.
+The formal loss is the contrastive KL provided above, with $\gamma$ as a critical hyperparameter for the negative term. The construction of $\tilde s$ uses a fixed regex for mathematical scenarios (retaining $\boxed{}$ and right-hand sides of key equations) without additional annotation. Training data: `e1-verifiable` (417 AIME problems from 1985–2023 that the base model fails to solve in 32 samples) for Qwen2.5-7B-Instruct; and `e1-proof` (669 IMO-level open-ended proof problems) for Qwen3-8B/14B, demonstrating DAIL’s capability on **unverifiable** problems where RLVR struggles.
 
 ## Key Experimental Results
 
@@ -73,64 +86,58 @@ The formal loss is the contrastive KL given above, with $\gamma$ as the key hype
 
 Mathematical reasoning pass@k (Aggregated across AIME 2024/25, BeyondAIME, and IMO-AnswerBench; Qwen2.5-7B-Instruct trained on `e1-verifiable`):
 
-| Method | Training Type | pass@128 (vs. Base) | Remarks |
+| Method | Training Type | pass@128 (vs Base) | Notes |
 | :--- | :--- | :--- | :--- |
-| Qwen2.5-7B-Instruct (Base) | — | Baseline | Post-trained instruct model |
-| GRPO (on `e1-verifiable`) | RLVR | **Decrease** | Sparse rewards on hard problems; overfits to rare random correct rollouts |
-| NuRL + GRPO | RLVR + hint | Lower than GRPO | Relies on hints during training; drops after hint removal during inference |
-| GRPO (DeepScaleR, 40K tasks) | Large-scale RLVR | pass@1 slight inc.; pass@k dec. | Simply scaling verifiable data is insufficient for Olympiad problems |
-| Direct SFT on Expert Sol. | behavior cloning | Decrease | OOD data collapses model performance |
-| STaR rationalization | Self-synthesis | Decrease | Model lacks capability to self-generate valid reasoning chains |
-| **DAIL (Ours)** | Self-distill + Contrast | **+ up to 31% pass@128** | Only method to provide stable improvement |
+| Qwen2.5-7B-Instruct (Base) | — | Baseline | Post-trained Instruct model |
+| GRPO (on `e1-verifiable`) | RLVR | **Decrease** | Sparse rewards on hard problems; overfits to random correct rollouts |
+| NuRL + GRPO | RLVR + hint | Lower than GRPO | Dependency on hints during training; drops during inference |
+| GRPO (DeepScaleR, 40K) | Large-scale RLVR | slight pass@1 increase; pass@k drops | Scale alone is insufficient for Olympiad-level problems |
+| Direct SFT on Experts | Behavior Cloning | Decrease | OOD data causes breakdown |
+| STaR rationalization | Self-synthesis | Decrease | Model lacks capability to self-generate valid chains |
+| **DAIL (Ours)** | Self-distill + Contrast | **Up to +31% pass@128** | Only method with stable improvement |
 
-Token efficiency at test time (Qwen3-8B/14B (think) trained on `e1-proof`, pass@128 vs. token budget): Within a 512–4096 token budget, DAIL consistently outperforms untrained Qwen3 and matches the best performance of the untrained model using **2× fewer tokens**.
+Efficiency during inference (Qwen3-8B/14B on `e1-proof`): Across token budgets from 512 to 4096, DAIL consistently outperforms the base Qwen3 and matches its peak performance using **2× fewer tokens**, indicating that expert trajectory information density translates directly into reasoning efficiency.
 
-OOD Generalization (GPQA-Diamond; Graduate-level physics/chem/bio; 8 sets of pass@1 / pass@128):
-
-| Setup | Base Average | DAIL Average | Conclusion |
-| :--- | :--- | :--- | :--- |
-| Qwen2.5 pass@1 / pass@128 | 34.1 / 85.9 | **35.1** / 84.3 | Nearly equivalent; no catastrophic forgetting |
-| Qwen3 pass@128 (512/1024/2048/4096) | 93.9 / 95.5 / 93.4 / 93.4 | **96.5 / 96.9 / 96.5 / 96.0** | Consistent improvement of ~3 points |
+OOD Generalization (GPQA-Diamond, Graduate-level Sci): Across 8 settings (pass@1/pass@128 for Qwen2.5 & Qwen3), DAIL maintains or improves performance (e.g., Qwen3 pass@128 improves by ~3 points consistently), showing no catastrophic forgetting.
 
 ### Ablation Study
 
 | Configuration | Phenomenon | Explanation |
 | :--- | :--- | :--- |
-| Full DAIL (contrastive + mixed rollout) | Main result | Training set pass@k is actually **lower** than NLL, but OOD test performance is highest |
-| Replaced with NLL loss | pass@1 / pass@128 drops | Student learns rationalization shortcuts without negative reference |
-| Direct sampling vs Mixed (Qwen3-think) | Mixed significantly better | Direct sampling in reflective LRMs introduces "refer to expert" meta-comments |
-| Direct sampling vs Mixed (Qwen2.5-Inst) | Direct slightly better | Prompts are sufficient to control shortcuts in non-reflective models |
-| Training set pass@k comparison | NLL / RLVR high on train, low on test | Direct evidence: They learn shortcuts, not generalized reasoning |
+| Full DAIL (contrastive + mixed) | Main Result | Training set pass@k is **lower** than NLL, but OOD test performance is highest |
+| Replace with NLL loss | pass@1 / pass@128 drop | Student learns rationalization shortcuts without negative reference |
+| Direct vs Mixed (Qwen3-think) | Mixed is significantly better | Direct sampling introduces meta-comments in reasoning LRM |
+| Direct vs Mixed (Qwen2.5-Inst) | Direct is slightly better | Prompting is sufficient to control shortcuts in non-reflective models |
 
 ### Key Findings
-- The gain from contrastive loss primarily manifests in pass@1, with a 15–20% improvement over NLL on direct sampling data because such data contains more shortcuts, making the contrastive "filtering" more valuable.
-- DAIL's low training set scores and high test set scores—a "reverse generalization gap"—provide direct evidence that the contrastive objective successfully suppresses non-robust reasoning patterns.
-- The failure of RLVR on hard problems is not due to zero rewards but because the model **overfits** to rare stochastic successes, causing general reasoning ability to degrade.
-- DAIL scales positively across both parameters (8B→14B) and token budgets (512→4096).
+*   Contrastive loss gains are most evident in pass@1: Improving by ~15–20% on direct sampling data where shortcuts are more prevalent.
+*   The "inverse generalization gap" (lower training score, higher test score) serves as direct evidence that the contrastive objective successfully suppresses non-robust reasoning patterns.
+*   RLVR failure on hard problems is rooted in **overfitting** to rare stochastic successes rather than a total lack of reward.
+*   DAIL scales positively across both parameter count (8B to 14B) and token budgets (512 to 4096).
 
 ## Highlights & Insights
-- **"Teacher = Self + Answer" positioning**: Unlike traditional distillation requiring a stronger external teacher, DAIL uses "self with the answer," bypassing the lack of superior models for hard problems.
-- **Negative Reference construction**: By simply conditioning the same frozen model on **partial information** (e.g., answer landmarks), a control distribution biased toward shortcut behavior is naturally generated. This logic is transferable to code generation (partial = signature only) or theorem proving.
-- **Training on non-verifiable proofs**: The `e1-proof` dataset allows for post-training on problems where no executable verifier exists, serving as a vital supplement to the RLVR paradigm.
-- **The "Low Training/High Test" paradox**: When the training objective is to "reduce shortcut imitation," the loss naturally includes a term that sacrifices fit on the training distribution to achieve better generalization.
+*   **"Teacher = Self + Answer" positioning**: Unlike traditional distillation requiring stronger external models, DAIL uses "self with answer" as the teacher, bypassing the scarcity of stronger models for hard problems.
+*   **Landmark-based negative reference**: A "bad model" is generated without extra training by conditioning the frozen base on **incomplete information** (landmarks only), creating a control distribution biased toward shortcuts.
+*   **Training on unverifiable proofs**: The `e1-proof` dataset and methodology enable post-training on problems without executable verifiers, serving as a vital supplement to the RLVR paradigm.
+*   **Counter-intuitive training performance**: Lower training set fit is a natural byproduct of a loss function that punishes shortcut imitation, acting as a robust form of regularization.
 
 ## Limitations & Future Work
-- The negative reference $\tilde s$ currently relies on regex to extract nodes, which is tied to the format of math problems. Generalizing this to code or legal reasoning requires new extraction rules.
-- Evaluation is limited to Math + GPQA. Other reasoning tasks (Code, Planning, Lean) are not yet verified.
-- The stable ranges for hyperparameters $\gamma$ (negative weight) and $\tau$ (acceptance threshold) were not systematically scanned.
-- The data scale remains at several hundred expert solutions; scaling to tens of thousands of samples and managing potential tension between positive and negative terms remains an open question.
+*   Reliance on regex for $\tilde s$ extraction is currently specific to the "box + intermediate equations" format of math problems; other domains require new extraction rules.
+*   Evaluation is centered on Mathematics and Science; other tasks like coding, planning, or formal theorem proving (Lean) remain unverified.
+*   The stable intervals for hyperparameters $\gamma$ and $\tau$ are not systematically explored, increasing the potential cost of tuning for reproduction.
+*   Expert data remains at the scale of hundreds; the tension between contrastive and positive terms at larger scales (10k+) remains an open question.
 
 ## Related Work & Insights
-- **vs. On-policy distillation**: DAIL modifies the teacher to be the "same model with answer," requiring only a single model and handling teacher hallucinations via the contrastive term.
-- **vs. RLVR / GRPO**: RLVR requires verifiability and the model's ability to sample correct answers. DAIL breaks both assumptions.
-- **vs. STaR rationalization**: STaR relies on the model's own capability to rationalize; DAIL uses mixed-policy rollout anchored by expert solutions to prevent the model from "making things up."
-- **Methodological Inspiration**: The DAIL template can be applied to any scenario characterized by "scarce expert trajectories + direct imitation failure + structured answer extraction"—such as surgical robot hit-logs, SQL engineer logs, or penetration testing writeups.
+*   **vs On-policy distillation (Agarwal et al., 2024)**: DAIL removes the need for two separate models and a stronger teacher by using "self+answer" and handles teacher hallucinations via contrastive terms.
+*   **vs RLVR/GRPO (Shao et al., 2024)**: DAIL breaks the requirement for verifiability and the need for the model to sample the correct answer itself.
+*   **vs STaR (Zelikman et al., 2022)**: While STaR relies on the model's own ability to rationalize, DAIL uses expert-anchored hybrid rollouts to prevent hallucinated reasoning paths.
+*   **Methodological Inspiration**: The DAIL template is applicable to any scenario where expert trajectories are scarce, direct imitation fails, and answers can be structurally extracted—such as surgery robot demonstrations, SQL query logs, or penetration testing write-ups.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Combines self-distillation, speculative decoding, and contrastive RL into a clean two-stage framework, pioneering post-training on non-verifiable olympiad proofs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 3 math benchmarks + GPQA OOD + two base models + 5 baseline types, though lacks systematic hyperparameter scans.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation; excellently defines the concepts of "didactic shortcut vs rationalization shortcut."
-- Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for hard-problem post-training (< 1000 samples, offline, LoRA-friendly) and releases the `e1-proof` dataset.
+*   Novelty: ⭐⭐⭐⭐⭐ Seamlessly integrates self-distillation, speculative rollout, and contrastive RL; first to show effective post-training on non-verifiable Olympiad proofs.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and baselines, though lacks multi-domain (coding/planning) verification.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Clear progression of motivation and elegant definition of shortcut types.
+*   Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for hard-problem post-training with small data and offline efficiency.
 
 <!-- RELATED:START -->
 
@@ -139,10 +146,10 @@ OOD Generalization (GPQA-Diamond; Graduate-level physics/chem/bio; 8 sets of pas
 ## Related Papers
 
 - [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
-- [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](../../AAAI2026/reinforcement_learning/language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
-- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
-- [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
+- [\[ICML 2025\] The Challenge of Teaching Reasoning to LLMs Without RL or Distillation](../../ICML2025/reinforcement_learning/the_challenge_of_teaching_reasoning_to_llms_without_rl_or_distillation.md)
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
+- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
+- [\[ICML 2026\] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research](orloopbench_solver-in-the-loop_benchmarks_for_self-correction_and_behavioral_rat.md)
 
 </div>
 

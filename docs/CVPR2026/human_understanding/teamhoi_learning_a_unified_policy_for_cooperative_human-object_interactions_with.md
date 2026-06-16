@@ -2,155 +2,169 @@
 title: >-
   [Paper Note] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 description: >-
-  [CVPR 2026][multi-agent cooperation] TeamHOI proposes a framework using a Transformer-based decentralized policy network and Masked Adversarial Motion Prior (Masked AMP)…
+  [CVPR 2026][Human Understanding][Paper Note] The TeamHOI framework is proposed, utilizing a Transformer-based decentralized policy network and Masked Adversarial Motion Priors (Masked AMP). This allows a single policy to generalize to cooperative carrying tasks with an arbitrary number of agents, achieving a $97\%+$ success rate for teams of 2-8 humanoid agents c
 tags:
-  - "CVPR 2026"
-  - "multi-agent cooperation"
-  - "physics-based human motion control"
-  - "human-object interaction"
-  - "Transformer policy network"
-  - "adversarial motion prior"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: 7a493ad8832336c6
+content_hash: 55d9c37080ae443b
 ---
-
 # TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.07988](https://arxiv.org/abs/2603.07988)  
 **Code**: [Project Page](https://splionar.github.io/TeamHOI)  
-**Area**: Other
-**Keywords**: multi-agent cooperation, physics-based human motion control, human-object interaction, Transformer policy network, adversarial motion prior
+**Area**: Others  
+**Keywords**: Multi-agent cooperation, Physics-based humanoid control, Human-object interaction, Transformer policy network, Adversarial motion priors
 
 ## TL;DR
 
-TeamHOI proposes a framework using a Transformer-based decentralized policy network and Masked Adversarial Motion Prior (Masked AMP), enabling a single policy to generalize to cooperative carrying tasks with any number of agents, achieving 97%+ success rate for 2–8 humanoid agents cooperatively carrying a table.
+The TeamHOI framework is proposed, utilizing a Transformer-based decentralized policy network and Masked Adversarial Motion Priors (Masked AMP). This allows a single policy to generalize to cooperative carrying tasks with an arbitrary number of agents, achieving a $97\%+$ success rate for teams of 2-8 humanoid agents carrying tables.
 
 ## Background & Motivation
 
-**Background**: Physics-based humanoid control has made significant progress in single-agent behaviors (locomotion, grasping, manipulation), but many real-world tasks (e.g., carrying large heavy objects) require multi-agent coordination of physical actions—a scenario existing frameworks struggle to handle.
+**Limitations of Prior Work**: While physics-based humanoid control has achieved significant progress in single-agent behaviors (walking, grasping, manipulation), many real-world tasks (e.g., carrying heavy loads) require physical coordination between multiple agents, which existing frameworks struggle to handle.
 
-**Limitations of Prior Work**: Most existing methods employ fixed-size input MLP policy networks, constraining policies to a fixed team size (e.g., SMPLOlympics only supports fixed small teams) and preventing flexible adaptation to varying numbers of collaborators. Methods such as CooHOI do not model inter-agent perception at all, relying solely on shared object dynamics as an implicit communication channel, and therefore fail to capture the essential nature of human cooperation—continuously perceiving teammates and dynamically adjusting behavior. Moreover, multi-person collaborative motion capture data is nearly nonexistent, and directly using single-person reference motions severely limits the diversity of learnable cooperative behaviors and constrains cooperation patterns to only front-back lifting. CooHOI also requires pre-specified contact points for each agent (oracle assignment), preventing agents from autonomously inferring appropriate positions for stable carrying.
+**Key Challenge**: Most existing methods use MLP policy networks with fixed-size inputs, restricting policies to a specific team size (e.g., SMPLOlympics only supports fixed small teams) and failing to adapt to varying numbers of collaborators.
 
-**Key Challenge**: The combination of fixed-capacity network architectures, absence of inter-agent perception, and scarcity of multi-person motion reference data fundamentally limits the scalability and behavioral diversity of existing cooperative HOI systems.
+**Key Insight**: Methods like CooHOI lack explicit inter-agent communication, relying solely on shared object dynamics as an implicit channel. This fails to capture the essence of human collaboration, which involves continuous perception and dynamic adjustment to teammates.
 
-**Goal**: To develop a single unified policy that (1) generalizes across arbitrary team sizes, (2) enables agents to autonomously determine formation without oracle assignment, (3) produces diverse and physically realistic cooperative behaviors from limited single-person reference data.
+**Background**: High-quality multi-person collaborative motion capture data is nearly non-existent. Directly using single-person reference motions in AMP frameworks severely limits the diversity of learned collaborative behaviors.
+
+**Goal**: Existing methods (e.g., CooHOI) are restricted to simple lift-and-carry patterns due to their dependence on complete single-person reference motions, unable to produce diverse strategies like side-walking while carrying.
+
+**Novelty**: CooHOI requires pre-assigned contact points for each agent (oracle assignment); agents lack the autonomy to infer suitable positions for stable transport.
 
 ## Method
 
 ### Overall Architecture
 
-TeamHOI extends the AMP framework into a flexible multi-agent reinforcement learning setting. The core design comprises three components:
+TeamHOI extends the AMP framework to a variable-scale multi-agent reinforcement learning (MARL) setting. Each agent, within its local coordinate system, decomposes observations into tokens (proprioception, object state, target position, teammate cues) fed into a **Transformer policy network**. Self-attention processes individual tokens, while cross-attention handles a variable number of teammate tokens, enabling a single network to support any team size. The network outputs target joint rotations, driving humanoid actions via PD control, with agents coupled through shared object dynamics.
 
-- **Transformer Policy Network**: Each agent's observation is decomposed into multiple tokens (proprioception, object state, goal position, teammate cues), processed through alternating self-attention and cross-attention layers. Self-attention operates over the observing agent's own tokens; cross-attention allows it to attend to a variable number of teammate tokens, enabling generalization to arbitrary team sizes.
-- **Unified Policy Training**: Environments with different team sizes (2–8 agents) are instantiated in parallel, training a single policy across diverse configurations. PPO advantage values are normalized independently per team size to ensure training stability.
-- **Masked AMP**: Decouples motion realism from object interaction, enabling limited single-person reference motions to produce diverse cooperative behaviors.
+The reward function consists of three components: phased task rewards (approach / contact / lift / carry / place), **Masked AMP rewards** that decouple motion naturalness from object interaction, and **formation rewards** that encourage autonomous uniform distribution around the object. The unified policy is optimized via PPO, with parallel instances of 2-8 agents and independent advantage normalization for stable training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    OBS["Observation decomposed into tokens<br/>Proprioception / Object / Target / Teammates"]
+    OBS --> POL["Transformer Policy Network<br/>Self-attn (Self) + Cross-attn (Variable Teammates)"]
+    POL --> ACT["Joint Target Rotations → PD Control → Humanoid Action"]
+    ACT --> ENV["Environment Step<br/>Multi-agent coupling via shared dynamics"]
+    ENV --> RT["Task Reward<br/>Approach/Contact/Lift/Carry/Place"]
+    ENV --> RM["Masked AMP Reward<br/>σ(α)·D_mask + (1−σ(α))·D_full"]
+    ENV --> RF["Formation Reward<br/>Angular spread + Principal axis coverage"]
+    RT --> SUM["Total Reward"]
+    RM --> SUM
+    RF --> SUM
+    SUM --> PPO["PPO Unified Training<br/>2-8 Agents Parallel, Independent Normalization"]
+    PPO -.Update.-> POL
+```
 
 ### Key Designs
 
 **1. Transformer Policy Network and Teammate Tokens**
 
-Observation components (all in the agent's local coordinate frame):
+Observation composition (all in the agent's local frame):
 
-- Proprioception $\in \mathbb{R}^{223}$: joint states and root kinematics
-- Object center $\in \mathbb{R}^{3}$: 3D coordinates of the table center
-- Candidate contact points $\in \mathbb{R}^{64 \times 3}$: 64 points uniformly sampled along the table perimeter
-- Nearest hand-object points $\in \mathbb{R}^{2 \times 3}$: candidate contact points nearest to each hand
-- Goal position $\in \mathbb{R}^{3}$: target x,y coordinates and height/lift indicator of the table
-- Teammate cues $\in \mathbb{R}^{(n-1) \times 9}$: per teammate root position (2D), orientation (6D rotation), and relative angle (1D)
+- Proprioception $\in \mathbb{R}^{223}$: Joint states and root kinematics.
+- Object Center $\in \mathbb{R}^{3}$: 3D coordinates of the table center.
+- Candidate Contact Points $\in \mathbb{R}^{64 \times 3}$: 64 points sampled uniformly along the table perimeter.
+- Nearest Hand-Object Points $\in \mathbb{R}^{2 \times 3}$: Closest candidate contact points to both hands.
+- Target Location $\in \mathbb{R}^{3}$: Target x, y coordinates and height/elevation indicator.
+- Teammate Cues $\in \mathbb{R}^{(n-1) \times 9}$: Root position (2D), orientation (6D rotation), and relative angle (1D) for each teammate.
 
-Each observation component is encoded into a 64-dimensional token via an independent three-layer MLP tokenizer. The Transformer consists of 3 layers of alternating self-attention and cross-attention, each with 2 attention heads and 512-dimensional feed-forward layers. The updated learnable embedding $e$ is passed through an MLP `[1024, 512, 28]` to output target joint rotations.
+Each component is encoded into a 64-dimensional token via a 3-layer MLP tokenizer. The Transformer consists of 3 layers of alternating self-attention and cross-attention (2 heads each, 512-dim feed-forward). The updated embedding $e$ is mapped through an MLP `[1024, 512, 28]` to output target rotations.
 
-**2. Masked Adversarial Motion Prior (Masked AMP)**
+**2. Masked Adversarial Motion Priors (Masked AMP)**
 
 Two discriminator networks are trained:
-- $D_{\text{full}}$: evaluates full-body reference motion
-- $D_{\text{mask}}$: excludes body parts involved in object interaction (hands and forearms)
+- $D_{\text{full}}$: Evaluates full-body reference motion.
+- $D_{\text{mask}}$: Excludes body parts involved in object interaction (hands and forearms).
 
-Mixed style reward:
+The blended style reward is:
 $$r_t^{\text{style}} = \sigma(\alpha_t) \, r_t^{\text{mask}} + (1 - \sigma(\alpha_t)) \, r_t^{\text{full}}$$
 
-where $\sigma$ is the sigmoid function and $\alpha_t$ is a continuous interaction indicator (e.g., agent-object distance). When not interacting with the object, the full discriminator ensures whole-body motion realism; during interaction, the masked discriminator frees the hands so that task reward guides behavior.
+where $\sigma$ is the sigmoid function and $\alpha_t$ is a continuous interaction indicator (e.g., agent-object distance). Full discriminators ensure realism when not interacting, while the masked discriminator releases hand degrees of freedom to be guided by task rewards during interaction.
 
 **3. Formation Reward**
 
-Composed of two complementary components:
+Composed of two complementary parts:
 
-- **Angular spread reward** $r_{\text{ang}}$: encourages $m$ agents to distribute evenly around the table with ideal spacing $2\pi/m$:
+- **Angular Spread Reward** $r_{\text{ang}}$: Encourages $m$ agents to distribute uniformly around the table with an ideal spacing of $2\pi/m$:
 $$r_{\text{ang}} = \exp\!\left(-k_\theta \frac{1}{2}\left[(\Delta\phi_i^{\text{ccw}} - \frac{2\pi}{m})^2 + (\Delta\phi_i^{\text{cw}} - \frac{2\pi}{m})^2\right]\right)$$
 
-- **Principal axis coverage reward** $r_{\text{cov}}$: measures how well agents' support region covers the object's principal axes, computing per-axis coverage ratio $g_i = \min(d_i^+ / \ell_i^+, d_i^- / \ell_i^-)$ via convex hull projection, with $r_{\text{cov}} = \frac{1}{2}(g_1 + g_2)$.
+- **Principal Axis Coverage Reward** $r_{\text{cov}}$: Measures the coverage of the object's principal axes by the agents' support region, calculated via convex hull projections for each axis $g_i = \min(d_i^+ / \ell_i^+, d_i^- / \ell_i^-)$, resulting in $r_{\text{cov}} = \frac{1}{2}(g_1 + g_2)$.
 
-Combined formation reward: $r_{\text{form}} = 0.25 \, r_{\text{ang}} + 0.75 \, r_{\text{cov}}$
+Total formation reward: $r_{\text{form}} = 0.25 \, r_{\text{ang}} + 0.75 \, r_{\text{cov}}$.
 
 ### Loss & Training
 
-Overall reward: $r_t = r_t^{\text{task}} + \lambda_{\text{AMP}} \, r_t^{\text{style}}$
+Total reward: $r_t = r_t^{\text{task}} + \lambda_{\text{AMP}} \, r_t^{\text{style}}$
 
-- **Task reward** $r_t^{\text{task}}$: includes components for five phases—approaching, contacting, lifting, carrying, and placing—as well as the formation reward.
-- **Style reward** $r_t^{\text{style}}$: output of the Masked AMP mixed discriminator.
-- **Discriminator loss**: Standard GAN loss; $D_{\text{full}}$ and $D_{\text{mask}}$ are trained separately to distinguish reference vs. policy-generated state transitions.
+- **Task Reward** $r_t^{\text{task}}$: Includes components for approach, contact, lift, carry, and place stages, plus the formation reward.
+- **Style Reward** $r_t^{\text{style}}$: Output from the Masked AMP hybrid discriminators.
+- **Discriminator Loss**: Standard GAN loss where $D_{\text{full}}$ and $D_{\text{mask}}$ are trained separately to distinguish between reference/policy state transitions.
 
-The policy is optimized with PPO; advantage values are normalized independently per team size.
+Policy optimization uses PPO with advantages normalized independently across different team sizes.
 
-## Experiments
+## Key Experimental Results
 
 ### Main Results
 
-Evaluated on a cooperative table-carrying task with three table geometries—square (1.6m×1.6m), rectangular (2.0m×1.2m), and circular (diameter 2.0m)—with weights of 50–70 kg. Each evaluation runs 10,000 simulation episodes.
+Evaluated on cooperative table-carrying tasks with square ($1.6\text{m} \times 1.6\text{m}$), rectangular ($2.0\text{m} \times 1.2\text{m}$), and circular (diameter $2.0\text{m}$) geometries, weighing 50-70kg. Evaluations were run for 10,000 episodes.
 
-| Method | Formation | 2-agent SR (%) | 4-agent SR (%) | 8-agent SR (%) | 4-agent CoopRate | 8-agent CoopRate |
-|--------|-----------|---------------|---------------|---------------|-----------------|-----------------|
-| CooHOI*-2 | Predefined | 97.5 | 73.2 | 10.1 | 54.6% | 1.0% |
-| CooHOI*-4 | Predefined | 95.5 | 94.5 | 61.5 | 92.1% | 27.2% |
-| CooHOI*-8 | Predefined | 29.4 | 52.4 | 42.2 | 93.6% | 81.6% |
-| **TeamHOI** | **Autonomous** | **99.1** | **99.2** | **97.5** | **96.1%** | **90.1%** |
+| Method | Formation | 2-agt SR(%) | 4-agt SR(%) | 8-agt SR(%) | 4-agt Coop. Rate | 8-agt Coop. Rate |
+|------|---------|---------|---------|---------|----------|----------|
+| CooHOI*-2 | Pre-defined | 97.5 | 73.2 | 10.1 | 54.6% | 1.0% |
+| CooHOI*-4 | Pre-defined | 95.5 | 94.5 | 61.5 | 92.1% | 27.2% |
+| CooHOI*-8 | Pre-defined | 29.4 | 52.4 | 42.2 | 93.6% | 81.6% |
+| **TeamHOI** | **Learned** | **99.1** | **99.2** | **97.5** | **96.1%** | **90.1%** |
 
-**Heavy-load setting (5× table weight)**: In the 4-agent scenario TeamHOI achieves 3.5% SR (small teams can barely lift); in the 8-agent scenario TeamHOI achieves **81.1%** SR, while all CooHOI* baselines remain below 15%.
+**Heavy Load Setting ($5 \times$ Weight)**: In 4-agent scenarios, TeamHOI achieves 3.5% SR (virtually impossible for small teams to lift), while in 8-agent scenarios, TeamHOI reaches **81.1%** SR. All CooHOI* baselines remain $< 15\%$.
 
 ### Ablation Study
 
 | Ablation | Effect |
-|----------|--------|
-| Remove Masked AMP | Success rate in the lifting phase drops significantly; hand-object interaction failures are frequent |
-| Angular spread reward only (no principal axis coverage) | Agents do not distribute along the principal axes; unnatural diagonal gaits emerge |
-| Full method | Agents align along principal axes, exhibit natural symmetric gaits, and carry stably |
+|--------|------|
+| W/o Masked AMP | Significant drop in lifting success; frequent hand-object interaction failures. |
+| Angular Spread Only (No Coverage) | Agents fail to align with principal axes, resulting in unnatural diagonal gaits. |
+| Full Method | Agents align with principal axes, exhibiting natural symmetric gaits and stable transport. |
 
 ### Key Findings
 
-- **One policy for all configurations**: TeamHOI achieves high success rates across all 2–8 agent configurations with a single policy, whereas each CooHOI* variant performs well only at the team size it was trained on.
-- **Zero-shot generalization**: The model generalizes zero-shot to configurations with 16 agents.
-- **Autonomous vs. predefined formation**: TeamHOI agents must autonomously infer positions—a harder task—yet substantially outperform baselines that use pre-specified contact points.
-- **Critical role of Masked AMP**: The masking strategy allows single-person lateral walking reference motions to be reused as lateral carrying motions, greatly expanding the diversity of viable cooperative behaviors.
+- **Unified Policy**: TeamHOI achieves high success rates across all configs (2-8 agents) with a single policy, whereas CooHOI* variants only perform well on the specific team size they were trained for.
+- **Zero-shot Generalization**: The model generalizes zero-shot to configurations with 16 agents.
+- **Autonomous vs. Pre-defined Formation**: TeamHOI agents must infer positions autonomously, yet significantly outperform baselines that use oracle contact points.
+- **Role of Masked AMP**: The masking strategy allows single-person side-walking reference motions to be repurposed for side-walking while carrying, greatly expanding the diversity of valid collaborative behaviors.
 
 ## Highlights & Insights
 
-1. **Scalable decentralized architecture**: Cross-attention over variable-length teammate tokens elegantly resolves the fixed-input-size limitation, enabling a single policy to support arbitrary team sizes.
-2. **Elegant design of Masked AMP**: Only the body parts involved in object interaction are masked; full-body motion realism is preserved during non-interaction phases, while task reward guides the masked regions—unlocking diverse cooperative behaviors from limited single-person data.
-3. **Generality of the formation reward**: The combination of angular spread and principal axis coverage is robust to team size and object geometry; the principal axis coverage reward further generalizes to irregular geometries and non-uniform mass distributions.
-4. **No oracle assignment required**: Agents start from random initial positions and autonomously infer appropriate positions to form stable formations.
+1. **Scalable Decentralized Architecture**: Using Transformer cross-attention to process variable teammate tokens elegantly solves fixed-input limitations.
+2. **Masked AMP Design**: Masking only the body parts in contact with the object maintains global realism while unlocking diverse collaborative behaviors from limited single-person data via task-guided hand freedom.
+3. **General Formation Rewards**: The combination of angular spread and principal axis coverage is robust to team size and object shape, and potentially generalizes to irregular geometries.
+4. **No Oracle Assignment**: Agents start from random positions and autonomously infer stable formations.
 
 ## Limitations & Future Work
 
-1. **Single task**: Validation is limited to table carrying; the framework has not been extended to other cooperative HOI tasks (e.g., pushing, pulling, tossing and catching).
-2. **Simplified hand model**: Finger-less spherical hands are used; fine-grained grasping is not addressed.
-3. **Horizontal carrying only**: Table height is fixed slightly below the standing hand position, avoiding more complex interactions such as bending down or lifting overhead.
-4. **Limited reference motions**: The method still relies on a small set of walking and pick-up motions from AMASS, which may be insufficient for more complex cooperative behaviors.
-5. **Homogeneous agents only**: All agents share the same policy and body morphology; heterogeneous team cooperation is not explored.
+1. **Task Specificity**: Currently validated only on table carrying; not yet extended to pushing, pulling, or throwing/catching.
+2. **Simplified Hand Model**: Uses spherical hands without fingers, lacking fine-grained grasping.
+3. **Horizontal Transport Only**: Table height is fixed near standing hand level, avoiding complex interactions like crouching or high lifting.
+4. **Reference Motion Scarcity**: Still relies on limited AMASS motions; more complex collaborative patterns may need richer data.
+5. **Homogeneous Agents**: All agents share the same policy and body type; heterogeneous team collaboration remains unexplored.
 
 ## Related Work & Insights
 
-- **AMP / ASE / PMP**: The adversarial motion prior family; Masked AMP draws inspiration from PMP's partial prior concept but adopts masking combined with task reward rather than learning separate partial priors directly.
-- **TokenHSI**: Pioneer of Transformer policy networks with task tokenization; TeamHOI adopts and extends this architecture with multi-agent cross-attention.
-- **CooHOI**: The most closely related cooperative HOI work; it relies solely on object dynamics for implicit communication, lacks inter-agent perception, and exhibits limited behavioral diversity—serving as the primary baseline.
-- **PHC**: A foundational physics-based humanoid control framework adopted by several multi-character interaction works.
+- **AMP / ASE / PMP**: TeamHOI's Masked AMP is inspired by partial priors in PMP but uses masking and task rewards instead of learning explicit sub-part priors.
+- **TokenHSI**: A pioneer in Transformer policies and task tokenization; TeamHOI adapts this to multi-agent cross-attention.
+- **CooHOI**: The primary baseline; it relies only on implicit communication through physics and lacks inter-agent perception and behavioral diversity.
+- **PHC**: The underlying framework for physics-based humanoid control.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Masked AMP and principal axis coverage reward are novel; the Transformer teammate token idea is natural but effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 10k-episode evaluation, multiple geometries, 2–8 agent configurations, heavy-load testing, and comprehensive ablations; validation on more task types is lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, complete derivations, intuitive figures, and well-motivated problem formulation.
-- Value: ⭐⭐⭐⭐ — Provides a solid foundation for scalable multi-agent physical cooperation; broader task generalization remains to be demonstrated.
+- Novelty: ⭐⭐⭐⭐ — Masked AMP and principal axis coverage are novel; Transformer teammate tokens are a natural yet effective extension.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive 10k episode evaluations, diverse geometries, 2-8 agent configs, and heavy-load tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, complete equations, and intuitive diagrams.
+- Value: ⭐⭐⭐⭐ — Provides a solid foundation for scalable multi-agent physical collaboration.
 
 <!-- RELATED:START -->
 
@@ -158,11 +172,11 @@ Evaluated on a cooperative table-carrying task with three table geometries—squ
 
 ## Related Papers
 
-- [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](../../ICCV2025/others/syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
-- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
-- [\[AAAI 2026\] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](../../AAAI2026/others/hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)
-- [\[CVPR 2026\] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment](lovif_2026_semantic_quality_assessment_challenge.md)
-- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](../../ICLR2026/others/mosiv_multi-object_system_identification_from_videos.md)
+- [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
+- [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](../../ICCV2025/human_understanding/humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
+- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
+- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 
 </div>
 

@@ -2,71 +2,72 @@
 title: >-
   [Paper Note] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 description: >-
-  [ACL 2026][Model Compression][Speculative Decoding] CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns as r…
+  [ACL 2026][Model Compression][Paper Note] CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns for rescuing candidates, and employs Semantic Consistency Gating (SCG) to verify candidate reliability based on probability ratios. This approach improves s
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "Speculative Decoding"
-  - "Spurious Rejection"
-  - "Online Correction Memory"
-  - "Semantic Consistency Gating"
-  - "Training-free"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: b1b261d411939b19
+content_hash: 306ef23bdf40fab7
 ---
-
 # Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.13634](https://arxiv.org/abs/2604.13634)  
 **Code**: None  
 **Area**: Model Compression  
-**Keywords**: Speculative Decoding, Spurious Rejection, Online Correction Memory, Semantic Consistency Gating, Training-free
+**Keywords**: Speculative Decoding, False Rejections, Online Correction Memory, Semantic Consistency Gating, Training-free
 
 ## TL;DR
-CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns as rescue candidates and employs Semantic Consistency Gating (SCG) to verify candidate reliability via probability ratios. The method improves throughput by up to 2.33× while simultaneously enhancing accuracy on HumanEval and MATH500.
+CSD proposes a training-free enhancement framework for speculative decoding. It utilizes Online Correction Memory (OCM) to record high-frequency rejection patterns for rescuing candidates, and employs Semantic Consistency Gating (SCG) to verify candidate reliability based on probability ratios. This approach improves speculative decoding throughput by up to 2.33× while simultaneously increasing accuracy on HumanEval and MATH500.
 
 ## Background & Motivation
 
-**Background**: Speculative decoding is a mainstream paradigm for LLM inference acceleration. It uses a lightweight draft model to generate candidate tokens, which are then verified in parallel by a target model. Standard verification uses rejection sampling to maintain the output distribution.
+**Background**: Speculative Decoding is a mainstream paradigm for LLM inference acceleration, where a lightweight draft model generates candidate tokens and a target model performs parallel verification. Standard verification uses rejection sampling to maintain the output distribution.
 
-**Limitations of Prior Work**: Modern small models (e.g., Llama-3.2-1B) possess strong reasoning capabilities. However, standard verification relies on strict token-level exact matching, leading to significant "spurious rejections"—where the draft model generates tokens that are semantically correct but lexically different (e.g., `x` vs `*`), causing subsequent correct tokens to be discarded.
+**Limitations of Prior Work**: Modern small models (e.g., Llama-3.2-1B) possess strong reasoning capabilities. However, standard verification relies on strict token-level exact matching, leading to numerous "False Rejections"—instances where the draft model generates tokens that are semantically correct but lexically different (e.g., `x` vs `*`), causing subsequent valid tokens to be discarded.
 
-**Key Challenge**: Stronger draft models with better reasoning often exhibit vocabulary preferences that differ from the target model. This leads to more spurious rejections, meaning efficiency gains are capped by the ceiling of exact matching.
+**Key Challenge**: As draft models become stronger and more capable, their lexical choices diverge more from the target model's preferences. This leads to more false rejections, making the exact-match criterion a bottleneck for efficiency gains.
 
-**Goal**: Recover valid tokens from spurious rejections to break the acceptance rate limit without training any additional models.
+**Goal**: To recover valid tokens from false rejections without training additional models, thereby breaking the upper bound of acceptance rates imposed by exact matching.
 
-**Key Insight**: Statistical analysis of rejection patterns reveals two critical observations: (1) The top 20% high-frequency rejection patterns contribute 69% of total rejections (long-tail distribution); (2) Probability ratios for the same token pair vary across orders of magnitude depending on context (strong context dependency).
+**Key Insight**: Statistical analysis of rejection patterns reveals two key observations: (1) The top 20% of high-frequency rejection patterns contribute to 69% of total rejections (long-tail distribution); (2) Probability ratios between the same token pair vary significantly across different contexts (strong context dependency).
 
-**Core Idea**: "Frequency-guided candidate selection + Probability-guarded acceptance"—nominate rescue candidates using historical statistics and gate them using the target model's real-time confidence.
+**Core Idea**: "Frequency-Guided Candidate Selection + Probability-Guarded Acceptance"—using historical statistics to nominate rescue candidates and utilizing the target model's real-time confidence as a gatekeeper.
 
 ## Method
 
 ### Overall Architecture
-CSD is a plug-and-play enhancement for standard speculative decoding. When a draft token is rejected, a rescue process is triggered: it first queries the Online Correction Memory (OCM) to check if the rejection pattern is a high-frequency one, then verifies via Semantic Consistency Gating (SCG) whether the draft token has sufficient target model confidence in the current context. If both conditions are met, the draft token is accepted instead of resampling.
+CSD is a plug-and-play enhancement for standard speculative decoding. When a draft token is rejected, a rescue process is initiated: first, the Online Correction Memory (OCM) is queried to determine if the rejection pattern is high-frequency; second, the Semantic Consistency Gating (SCG) verifies if the draft token has sufficient target model confidence in the current context. Draft tokens are accepted instead of resampled only if both conditions are met.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Draft model generates candidate tokens"] --> B["Target model standard verification<br/>(Rejection Sampling)"]
+    B -->|Accept| Z["Output token, continue decoding"]
+    B -->|Reject| C["Online Correction Memory (OCM)<br/>Check frequency table, is it a high-frequency rescue pattern (freq > λ)?"]
+    C -->|No, incidental rejection| R["Resample target token"]
+    C -->|Yes| D["Semantic Consistency Gating (SCG)<br/>logit diff z(draft) − z(target) ≥ log τ"]
+    D -->|No, context unsafe| R
+    D -->|Yes| E["Rescue: Accept draft token"]
+    E --> Z
+```
 
 ### Key Designs
 
-1. **Online Correction Memory (OCM)**:
+**1. Online Correction Memory (OCM): Maintaining a frequency table to identify frequently "mis-rejected" tokens for rescue.**
 
-    - **Function**: Records and utilizes high-frequency rejection patterns as priors for rescue candidates.
-    - **Mechanism**: Maintains a memory table $\mathcal{T}$ of $(draft\_token, target\_token) \rightarrow frequency$. It operates in two stages: an offline calibration phase using unlabeled corpora to initialize the table, and a dynamic update phase during inference. A pattern is marked as rescuable when its frequency exceeds a threshold $\lambda$. Calibration only collects statistics without updating parameters.
-    - **Design Motivation**: The long-tail distribution implies a few high-frequency patterns account for most rejections. These systemic differences can be captured using a lightweight memory table.
+False rejections are not uniformly distributed. Statistics indicate that the top 20% of high-frequency rejection patterns account for 69% of total rejections, suggesting that capturing a few systematic differences can cover most recoverable cases. OCM maintains a memory table $\mathcal{T}$ mapping $(draft\_token, target\_token)$ to frequency. It operates in two phases: offline calibration using unlabeled corpora to initialize frequencies, followed by dynamic accumulation during inference. Once a pattern's frequency exceeds a threshold $\lambda$, it is marked as "rescuable." This calibration collects statistics without updating parameters, representing context-independent priors on benign preference differences.
 
-2. **Semantic Consistency Gating (SCG)**:
+**2. Semantic Consistency Gating (SCG): Logit-space comparison to ensure situational safety of substitutions.**
 
-    - **Function**: Verifies the semantic safety of candidate tokens in the current context.
-    - **Mechanism**: Directly compares the raw logits of the draft token and target token in logit space: $z_i(\tilde{x}_i) - z_i(t^*) \geq \log \tau$, where $\tau$ is a loose threshold (default 0.01). This is equivalent to a probability ratio test but avoids softmax computation and is invariant to sampling temperature.
-    - **Design Motivation**: Frequency priors are context-independent, but token validity is highly context-dependent. A substitution like "a $\rightarrow$ the" may be benign in some contexts but semantic-altering in others. SCG provides a context-aware final judgment.
+Frequency priors are context-independent, but a substitution like "a $\rightarrow$ the" may be benign in some contexts and semantic-altering in others. To prevent erroneous acceptance, SCG introduces target model real-time confidence for final adjudication. It compares the raw logit difference between the draft token and the target token: $z_i(\tilde{x}_i) - z_i(t^*) \geq \log \tau$ (with a default loose threshold $\tau=0.01$). This is equivalent to a probability ratio test but avoids softmax computation and remains invariant to sampling temperature. OCM determines "whether to consider a rescue," while SCG determines "safety in the current moment."
 
-3. **Two-stage Synergy and Safety**:
+**3. Dual-phase Synergy: Frequency-based nomination and confidence-based verification.**
 
-    - **Function**: Ensures OCM and SCG work in tandem.
-    - **Mechanism**: Ablation studies show that using OCM or SCG in isolation leads to accuracy drops. OCM alone might accept incorrect tokens without context, while loose SCG gating might accept non-systematic accidental matches. Only their combination (frequency filtering + confidence verification) improves acceptance rates while maintaining or enhancing accuracy.
-    - **Design Motivation**: This "nominate-verify" dual-insurance mechanism mitigates the risks associated with single relaxation strategies.
+These two layers are not optional; they serve as mutual security. Ablations show that using OCM alone (ignoring context) leads to incorrect token acceptance, while using SCG alone (with loose gating) accepts non-systematic matches, both reducing accuracy. Combining "Frequency Filtering + Confidence Verification" increases acceptance rates while maintaining or even improving accuracy. This "nomination-verification" dual insurance allows OCM to narrow the scope and SCG to authorize tokens individually, avoiding risks associated with single-strategy relaxation.
 
 ### Loss & Training
-CSD is entirely training-free. The calibration phase requires only 2000–8000 samples for statistical collection (approx. 1.5 hours/1k samples). The dynamic update of OCM during inference incurs zero additional computational overhead.
+CSD is entirely training-free. The calibration phase uses only 2000-8000 samples for statistical collection (approx. 1.5 hours per 1,000 samples). Dynamic updates of the OCM during inference incur zero additional computational overhead.
 
 ## Key Experimental Results
 
@@ -85,36 +86,36 @@ CSD is entirely training-free. The calibration phase requires only 2000–8000 s
 
 | Configuration | MATH500 Acc | MATH500 AR | HumanEval Acc | Description |
 |------|------------|------------|---------------|------|
-| SpecDecode (baseline) | 45.4% | 63.6% | 76.8% | Standard speculative decoding |
-| SD + OCM only | 37.8% | 83.1% | 70.7% | AR increases but accuracy drops significantly |
-| SD + SCG only | 43.6% | 88.7% | 70.7% | Similar accuracy drop |
-| CSD (OCM + SCG) | 48.0% | 79.6% | 79.3% | Synergistic use improves accuracy |
+| SpecDecode (baseline) | 45.4% | 63.6% | 76.8% | Standard Speculative Decoding |
+| SD + OCM only | 37.8% | 83.1% | 70.7% | Increased acceptance but significantly lower accuracy |
+| SD + SCG only | 43.6% | 88.7% | 70.7% | Accuracy degradation |
+| CSD (OCM + SCG) | 48.0% | 79.6% | 79.3% | Synergy improves both speed and accuracy |
 
 ### Key Findings
-- Recovered tokens primarily fall into four categories: math formatting (~45%), punctuation/spaces (~20%), synonyms (~20%), and logical connectors (~15%), all of which are semantically neutral surface differences.
-- CSD actually improves accuracy on reasoning tasks; the hypothesis is that the draft model helps the target model escape local optima of greedy decoding.
-- Advanced acceleration schemes (e.g., Lookahead, SWIFT) might produce negative speedups on 70B models due to FLOP bottlenecks. CSD has minimal overhead, ensuring its gains translate directly into throughput.
+- Recovered tokens fall into four categories: Mathematical formats (~45%), punctuation/spaces (~20%), lexical synonyms (~20%), and reasoning conjunctions (~15%). All are semantically neutral surface differences.
+- The accuracy improvement on reasoning tasks suggests the draft model may help the target model escape local optima of greedy decoding.
+- While advanced acceleration schemes (e.g., Lookahead, SWIFT) might yield negative acceleration on 70B models due to FLOPs bottlenecks, CSD's minimal overhead converts directly into throughput gains.
 
 ## Highlights & Insights
-- The **"nominate-verify" dual-layer architecture** is elegantly designed: OCM handles "who should be rescued" (frequency prior), while SCG handles "is it safe to rescue" (real-time verification). The ablation results proving both are indispensable are quite compelling.
-- The **Accuracy Improvement** finding is insightful—speculative decoding is not just an acceleration tool but can potentially serve as a regularizer for greedy decoding, where the draft model's alternative paths might bypass the target's greedy traps.
-- The framework is completely training-free and orthogonal to standard speculative decoding, making it stackable with existing solutions.
+- **Dual-layer Architecture**: The design is elegant—OCM handles "whom to rescue" (frequency prior) and SCG handles "safety of the rescue" (real-time verification). The ablation results demonstrating their mutual necessity are compelling.
+- **Accuracy Improvement**: The finding that speculative decoding can serve as a regularization tool rather than just an acceleration tool is insightful. Draft model paths may circumvent greedy traps of the target model.
+- **Training-free and Orthogonal**: The framework requires no training and is orthogonal to standard speculative decoding, allowing it to be layered onto existing solutions.
 
 ## Limitations & Future Work
-- The calibration phase requires domain-relevant unlabeled data; cross-domain generalization requires separate calibration.
+- Calibration requires domain-relevant unlabeled data; cross-domain generalization necessitates separate calibration.
 - The memory table grows during inference; memory management strategies for long-term deployment are not discussed.
-- Evaluated only under greedy decoding; performance in high-temperature sampling scenarios remains unknown.
-- For creative generation tasks requiring lexical diversity, recovering "similar tokens" might reduce variety.
+- Evaluated only under greedy decoding; performance under high-temperature sampling is unknown.
+- For creative generation tasks requiring lexical diversity, recovering "similar tokens" might reduce output variety.
 
 ## Related Work & Insights
-- **vs Standard SpecDecode**: Standard schemes ensure lossless output through strict matching; CSD achieves higher throughput and unexpected accuracy gains via relaxed matching.
-- **vs Fly**: Fly uses a delay window for exact matching consistency, which often fails at sequence boundaries; CSD's per-token independent verification is more flexible.
-- **vs Lossy SD**: Static threshold relaxation lacks granularity (e.g., global $\tau=0.6$); CSD provides finer relaxation control via frequency filtering.
+- **vs Standard SpecDecode**: Standard approaches ensure lossless output via strict matching; CSD achieves higher throughput and unexpected accuracy gains via relaxed matching.
+- **vs Fly**: Fly uses a delay window for consistency checks, which can fail at sequence boundaries. CSD's token-wise independent verification is more flexible.
+- **vs Lossy SD**: Static threshold relaxation lacks granularity (global $\tau=0.6$); CSD provides refined relaxation control through frequency filtering.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Formalization of the spurious rejection problem and the dual-layer recovery mechanism are novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covered two model families, four benchmarks, detailed ablations, sensitivity analysis, and recovery token type analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation; the "Frequency-Guided Selection, Probability-Guarded Acceptance" slogan is well-integrated.
+- Novelty: ⭐⭐⭐⭐ Formalization of the false rejection problem and the dual-layer recovery mechanism are novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across two model families, four benchmarks, detailed ablations, sensitivity analysis, and token type analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, with the "Frequency-Guided Selection, Probability-Guarded Acceptance" theme consistently reinforced.
 
 <!-- RELATED:START -->
 
@@ -123,10 +124,10 @@ CSD is entirely training-free. The calibration phase requires only 2000–8000 s
 ## Related Papers
 
 - [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](sssd_simply-scalable_speculative_decoding.md)
-- [\[NeurIPS 2025\] CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs](../../NeurIPS2025/model_compression/casspec_cascade_adaptive_selfspeculative_decoding_for_onthef.md)
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
-- [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
-- [\[ACL 2026\] GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts](glimprouter_efficient_collaborative_inference_by_glimpsing_one_token_of_thoughts.md)
+- [\[ICML 2025\] Speculative Decoding in Decentralized LLM Inference: Turning Communication Latency into Computation Throughput](../../ICML2025/model_compression/speculative_decoding_in_decentralized_llm_inference_turning_communication_latenc.md)
+- [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](../../NeurIPS2025/model_compression/traversal_verification_for_speculative_tree_decoding.md)
+- [\[ICML 2026\] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding](../../ICML2026/model_compression/lk_losses_direct_acceptance_rate_optimization_for_speculative_decoding.md)
 
 </div>
 

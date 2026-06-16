@@ -2,89 +2,99 @@
 title: >-
   [Paper Note] Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?
 description: >-
-  [ICML 2026][Reinforcement Learning][Continual Learning] The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks (CNNs). By using a three-fold approximation—Mon…
+  [ICML 2026][Reinforcement Learning][Buffer-Free] The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks, using a triple approximation of Monte Carlo, truncation, and Multi-Armed Bandits to estimate continuous importance rankings for each neuron. By freezing the Top-$r\%$ "expert" neurons and leaving the re
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Continual Learning"
-  - "Shapley Values"
-  - "Neuron Importance"
-  - "Catastrophic Forgetting"
-  - "Buffer-Free"
+  - ICML 2026
+  - Reinforcement Learning
+  - Buffer-Free
 date: 2026-05-08
-content_hash: aa93e19d27e6af23
+content_hash: 0325f7e91b4dd6b2
 ---
-
 # Shapley Neuron Values for Continual Learning: Which Neurons Matter Most?
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.15877](https://arxiv.org/abs/2605.15877)  
-**Code**: GitHub (The paper marks a "GitHub Code" link, URL to be added)  
+**Code**: GitHub (The paper mentions a "GitHub Code" link, URL TBD)  
 **Area**: Interpretability / Continual Learning / Shapley Value Neuron Attribution  
-**Keywords**: Continual Learning, Shapley Values, Neuron Importance, Catastrophic Forgetting, Buffer-Free
+**Keywords**: Continual Learning, Shapley Value, Neuron Importance, Catastrophic Forgetting, Buffer-Free
 
 ## TL;DR
-The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks (CNNs). By using a three-fold approximation—Monte Carlo (MC), truncation, and Multi-Armed Bandit (MAB)—they estimate continuous importance rankings for each neuron. Freezing the Top-$r\%$ "expert" neurons while keeping others plastic enables Class-Incremental Learning (CIL) on ImageNet-1k to achieve a $+2.88\%$ accuracy gain over the leading buffer-free method, and a $+6.46\%$ gain in Task-Incremental Learning (TIL), all without storing samples or expanding the architecture.
+The authors adapt Shapley values from cooperative game theory to the "filter" level of Convolutional Neural Networks, using a triple approximation of Monte Carlo, truncation, and Multi-Armed Bandits to estimate continuous importance rankings for each neuron. By freezing the Top-$r\%$ "expert" neurons and leaving the rest plastic for further training, they achieve a $+2.88\%$ accuracy gain in Class-Incremental Learning and a $+6.46\%$ gain in Task-Incremental Learning on ImageNet-1k compared to the second-best buffer-free method, without storing samples or expanding the architecture.
 
 ## Background & Motivation
 
-**Background**: The Continual Learning (CL) community primarily focuses on three categories: regularization-based (EWC, SI, LwF), replay-based (iCaRL, DER++, PODNet, GEM), and dynamic architecture-based (PNN, DyTox, MEMO). While replay-based methods show the strongest performance, they require storing samples (violating the strict "current task data only" definition and potentially infringing on GDPR). Dynamic architectures suffer from unbounded parameter growth, and regularization-based methods often collapse when tasks are highly heterogeneous.
+**Background**: The Continual Learning (CL) community primarily follows three paradigms: regularization-based (EWC, SI, LwF), replay-based (iCaRL, DER++, PODNet, GEM), and dynamic architecture-based (PNN, DyTox, MEMO). Replay-based methods are the strongest but require storing samples (violating strict "current data only" definitions and GDPR constraints); dynamic architectures suffer from unbounded parameter growth; regularization-based methods are buffer-free but collapse under highly heterogeneous tasks.
 
-**Limitations of Prior Work**: A core deficiency in existing buffer-free methods is the **lack of knowledge regarding which neurons are truly important**. Approaches like "Winning Subnetwork" (WSN) use binary $\{0,1\}$ scoring, which fails to distinguish between "marginal Top-$k$" and "absolute Top-$k$" neurons under tight capacity budgets. NFL+ gradually freezes parameters but lacks a principled measure of importance.
+**Limitations of Prior Work**: A core flaw of existing buffer-free methods is the **lack of knowledge regarding which neurons are truly important**. Approaches like "Winning Subnetwork" (WSN) use binary $\{0,1\}$ scoring, which fails to distinguish "marginal Top-$k$" from "absolute Top-$k$" under tight capacity budgets. NFL+ merely freezes parameters progressively without a principled importance measure.
 
-**Key Challenge**: The stability-plasticity trade-off becomes a binary choice of "which neurons to freeze and which to keep" under fixed capacity. Although modern over-parameterized networks have sufficient capacity, they lack a fair, continuous, and theoretically grounded attribution mechanism.
+**Key Challenge**: The stability-plasticity trade-off becomes a hard selection problem of "which neurons to freeze and which to keep" under fixed capacity. While modern over-parameterized networks have ample capacity, they lack a fair, continuous, and theoretically grounded attribution mechanism.
 
-**Goal**: To construct a principled measure that assigns **continuous real-valued** importance to each neuron without storing samples or expanding architecture, ensuring that Top-$k$ selection remains stable and effective across various sparsity budgets $c$.
+**Goal**: To construct a principled metric that assigns **continuous real-valued** importance to each neuron without storing samples or expanding architecture, ensuring that Top-$k$ selection remains stable and effective across various sparsity budgets $c$.
 
-**Key Insight**: Noticing that the Shapley value in cooperative game theory is the **unique** allocation scheme satisfying the four axioms of Efficiency, Null Contribution, Symmetry, and Linearity. Mapping "neurons as players" and "model accuracy as payoff" inherits these fairness guarantees; the remaining challenge is the engineering problem of efficient estimation within an exponential subset space.
+**Key Insight**: Shapley values in cooperative games are the **unique** solution satisfying the four axioms: Efficiency, Null Contribution, Symmetry, and Linearity. By mapping "neurons as players" and "model accuracy as payoff," all fairness guarantees are inherited. The remaining challenge is an engineering problem: how to efficiently estimate these values in an exponential subset space.
 
-**Core Idea**: Redefine neuron importance using "Shapley Neuron Values," then employ MC + Truncation + MAB to reduce exponential complexity to a manageable level. By accumulating frozen masks task-by-task, the method allocates multi-task expert subnetworks within a fixed capacity.
+**Core Idea**: Redefine neuron importance via "Shapley Neuron Values," use MC + Truncation + MAB to reduce exponential complexity to a manageable level, and accumulate task-specific freezing masks to allocate multi-task expert subnets within a fixed capacity.
 
 ## Method
 
 ### Overall Architecture
-Consider a network with $L$ layers, where the $l$-th layer has $C_l$ filters. The total number of neurons is $N = \sum_{l=1}^L C_l$, forming the set $\mathcal{M} = \{m_i\}_{i=1}^N$. A sequence of tasks $\{T_t\}_{t=1}^T$ arrives sequentially, with access only to the current task data $\mathcal{D}_t$. For each task $t$:
+Given a network with $L$ layers and $C_l$ filters in the $l$-th layer, the total number of neurons is $N = \sum_{l=1}^L C_l$, represented by the set $\mathcal{M} = \{m_i\}_{i=1}^N$. A sequence of tasks $\{T_t\}_{t=1}^T$ arrives, where only the current task data $\mathcal{D}_t$ is accessible. For each task $t$:
 
-1.  Train the "plastic" neurons (those outside the cumulative frozen mask $\mathbf{B}_{t-1} = \bigcup_{i<t} S_i$) for several epochs.
-2.  Estimate the Shapley value $\hat{\phi}_i$ for each neuron using the validation set after training.
-3.  Select the Top-$\lfloor c\cdot N\rfloor$ neurons to form the current task's binary mask $S_t$, and merge it into the cumulative frozen set $\mathbf{B}_t$.
-4.  Save the task head $h_t$ and proceed to the next task.
+1. Train for several epochs on "plastic" neurons outside the previous cumulative freezing mask $\mathbf{B}_{t-1} = \bigcup_{i<t} S_i$.
+2. Estimate the Shapley value $\hat{\phi}_i$ for each neuron using the validation set post-training.
+3. Select the Top-$\lfloor c\cdot N\rfloor$ neurons to form the current task binary mask $S_t$ and merge it into the cumulative frozen set $\mathbf{B}_t$.
+4. Store the task head $h_t$ and proceed to the next task.
 
-The parameter update rule applies the frozen mask $\mathbf{M}_{t-1}$ directly to the gradient:
+The parameter update rule applies the gradient directly to the freezing mask $\mathbf{M}_{t-1}$:
 
-$\theta \leftarrow \theta - \eta\Big(\frac{\partial \mathcal{L}}{\partial \theta}\odot \mathbf{M}_{t-1}\Big)$
+$$\theta \leftarrow \theta - \eta\Big(\frac{\partial \mathcal{L}}{\partial \theta}\odot \mathbf{M}_{t-1}\Big)$$
 
 where $(\mathbf{M}_{t-1})_j = 0$ if and only if $\theta_j$ belongs to a neuron that has already been frozen.
 
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Task T_t Data<br/>(Only current task visible)"] --> B["Train on plastic neurons<br/>Gradient multiplied by previous freeze mask"]
+    B --> C["Define Shapley Neuron Value<br/>Unique continuous importance via 4 axioms"]
+    subgraph EST["Triple Approximation Estimation (MC + Truncation + MAB)"]
+        direction TB
+        C1["Monte Carlo<br/>Expectation of permutations for marginal contribution"] --> C2["Truncation<br/>Skip when V(S)≤τ"]
+        C2 --> C3["Multi-Armed Bandit<br/>Sample only those crossing the k-th largest value"]
+    end
+    C --> EST
+    EST --> D["Select Top-⌊c·N⌋ based on budget<br/>Form task mask S_t"]
+    D --> E["Merge into cumulative freeze mask<br/>Stable / Plastic Decoupling"]
+    E -->|Next task| B
+    E --> F["Fixed-capacity multi-task expert subnets"]
+```
+
 ### Key Designs
 
-1.  **Axiomatic Definition of Shapley Neuron Value**:
-    - **Function**: Distribute the model accuracy $V(\mathcal{M})$ uniquely and fairly among $N$ neurons, assigning each a continuous real-valued importance $\phi_i \in \mathbb{R}$ such that $\sum_i \phi_i = V(\mathcal{M})$.
-    - **Mechanism**: When masking a neuron, its output is **not** set to zero but replaced with its **mean response**. This blocks the information flow while preserving the statistics for downstream layers, avoiding the cascading collapse caused by zeroing. Letting $V(\mathcal{S})$ be the accuracy when only subset $\mathcal{S}$ is retained and the rest are substituted, the Shapley value $\phi_i = \sum_{\mathcal{S}\subseteq \mathcal{M}\setminus\{i\}} \frac{|\mathcal{S}|!(|\mathcal{M}|-|\mathcal{S}|-1)!}{|\mathcal{M}|!}\bigl[V(\mathcal{S}\cup\{i\}) - V(\mathcal{S})\bigr]$ is the unique form satisfying the four axioms.
-    - **Design Motivation**: Previous binary methods (like WSN) only answer whether a neuron is in the "Top-$k$." Under small budgets $c$ (e.g., $c=0.03$), fine-grained ranking is impossible. Continuous rankings naturally provide interpretable Top-$k$ selections across multiple $c$ values and align with axioms—e.g., Null Contribution automatically removes dead neurons that never contribute, and Symmetry ensures identical neurons are treated equally.
+**1. Axiomatic Definition of Shapley Neuron Value: Fair continuous importance for each neuron**
 
-2.  **Three-fold Approximation Algorithm (MC + Truncation + MAB)**:
-    - **Function**: Reduce the $O(N!)$ exact Shapley calculation to a complexity feasible for ResNet-18.
-    - **Mechanism**:
-        (i) **Monte Carlo**: Rewrite $\phi_i$ as $\phi_i = \mathbb{E}_{\pi\sim\Pi}\bigl[V(\mathcal{S}_i^{\pi}\cup\{i\}) - V(\mathcal{S}_i^{\pi})\bigr]$ and estimate marginal contributions by sampling random permutations.
-        (ii) **Truncation**: Skip marginal calculations for a neuron when the permutation prefix $\mathcal{S}_i^{\pi}$ is too small and $V(\mathcal{S}_i^{\pi}) \le \tau$ (marginal utility is meaningless when the model is dysfunctional), saving nearly an order of magnitude in computation.
-        (iii) **Multi-Armed Bandit**: Since the goal is only to reliably distinguish the Top-$k$, sampling continues only for neurons whose confidence intervals still cross the current $k$-th largest value. Samples are not wasted on neurons clearly inside or outside the Top-$k$. Formally, the algorithm converges when the set $\mathcal{A} \leftarrow \{i : |\hat{\phi}_i - \phi^{(k)}| < \delta_i\}$ is empty, where $\delta_i = z_\alpha \cdot \sigma_i/\sqrt{n_i}$.
-    - **Design Motivation**: Pure MC is too slow for ResNet-18 (where $N$ is in the thousands). Truncation utilizes the physical intuition of "signal decay." MAB changes the objective from "estimating all $\phi_i$" to "finding Top-$k$," aligning the estimation target perfectly with the downstream decision target.
+Previous buffer-free methods lacked precise importance metrics. WSN-style methods use $\{0,1\}$ binary scores, which cannot distinguish "marginal" from "absolute" importance under small budgets $c$ (e.g., $c=0.03$). The authors leverage the fact that the Shapley value is the unique distribution satisfying Efficiency, Null Contribution, Symmetry, and Linearity. By mapping neurons to players and model accuracy to payoff, they inherit these fairness guarantees. A key implementation detail is that masking a neuron involves replacing its output with its mean response rather than zeroing it out—this blocks information flow while preserving the statistics of inputs to downstream layers, preventing cascading collapses. If $V(\mathcal S)$ is the accuracy when only subset $\mathcal S$ is preserved, then
 
-3.  **Cumulative Frozen Masks and Stable–Plastic Decoupling**:
-    - **Function**: Hard-freeze neurons "claimed" by previous tasks and leave the rest for new tasks, explicitly separating Stable Neurons (old knowledge) and Plastic Neurons (new tasks).
-    - **Mechanism**: Accumulate a binary mask $\mathbf{B}_{t-1} \in \{0,1\}^N$ at the neuron level, then expand it to the parameter level $\mathbf{M}_{t-1}$ (zeroing weights $\theta_j$ belonging to frozen neurons). During training, gradients are multiplied by $\odot\,\mathbf{M}_{t-1}$. The sparsity budget for each task $c \in (0,1)$ is typically set to $1/T$ or smaller.
-    - **Design Motivation**: Compared to WSN's "soft mask + retraining" or regularization's "soft constraints," hard freezing offers a strong guarantee of zero backward transfer (BWT $\approx 0.00$), reducing catastrophic forgetting from "minimized" to "strictly zero."
+$$\phi_i = \sum_{\mathcal{S}\subseteq \mathcal{M}\setminus\{i\}} \frac{|\mathcal{S}|!(|\mathcal{M}|-|\mathcal{S}|-1)!}{|\mathcal{M}|!}\bigl[V(\mathcal{S}\cup\{i\}) - V(\mathcal{S})\bigr]$$
+
+represents the unique assignment. This continuous ranking is interpretable across various $c$ and aligns with axioms: Null Contribution removes non-contributing "dead" neurons, while Symmetry ensures identical neurons are treated equally.
+
+**2. Triple Approximation Algorithm (MC + Truncation + MAB): Compressing $O(N!)$ for ResNet-18**
+
+Exact Shapley calculation is exponential and infeasible for ResNet-18 ($N > 1000$). The authors stack three layers of approximation. First, Monte Carlo: rewrite $\phi_i$ as an expectation over permutations $\phi_i=\mathbb{E}_{\pi\sim\Pi}[V(\mathcal S_i^\pi\cup\{i\})-V(\mathcal S_i^\pi)]$. Second, Truncation: when the permutation prefix is too small ($V(\mathcal S_i^\pi)\le\tau$), skip the marginal calculation as the model is effectively non-functional. Third, Multi-Armed Bandit: since the downstream goal is "reliable Top-$k$ identification," they continue sampling only for neurons whose confidence intervals still cross the current $k$-th largest value. Formally, $\delta_i=z_\alpha\cdot\sigma_i/\sqrt{n_i}$; the process converges when the set $\mathcal A\leftarrow\{i:|\hat\phi_i-\phi^{(k)}|<\delta_i\}$ is empty. This clever shift from "estimating all $\phi_i$ accurately" to "finding Top-$k$" perfectly matches the decision goal and can be transferred to any attribution scenario using Top-$k$ results (e.g., SHAP/LIME).
+
+**3. Cumulative Freezing Mask and Stable–Plastic Decoupling: Forcing catastrophic forgetting to "Strict Zero"**
+
+With reliable rankings, the remaining task is multi-task subnet allocation within fixed capacity. The authors maintain a cumulative binary mask $\mathbf B_{t-1}\in\{0,1\}^N$ at the neuron level, expanded to the parameter level $\mathbf M_{t-1}$. During training, gradients are updated via $\theta\leftarrow\theta-\eta(\frac{\partial\mathcal L}{\partial\theta}\odot\mathbf M_{t-1})$. Each task claims Top-$\lfloor c\cdot N\rfloor$ neurons. Unlike WSN's "soft mask + retraining" or regularization-based soft constraints, this hard freezing provides a strong guarantee of zero backward transfer (measured BWT $\approx 0.00$), as weights belonging to previous tasks remain untouched.
 
 ### Loss & Training
-Standard Cross-Entropy + Adam is used with He-initialized ResNet-18. CIFAR-100/Tiny-ImageNet are trained for 200 epochs, and ImageNet-1k for 100 epochs, all using early stopping. Hyperparameters are grid-searched on the first task's validation set and then **frozen** for all subsequent tasks (GTEP protocol).
+Standard Cross-Entropy with Adam is used. ResNet-18 with He initialization is trained for 200 epochs on CIFAR-100/Tiny-ImageNet and 100 epochs on ImageNet-1k, all utilizing early stopping. Hyperparameters are grid-searched on the first task's validation set and then **frozen** for all subsequent tasks (GTEP protocol).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Scenario | Tasks | SNV (**Ours**) | 2nd Place Buffer-Free | Gain |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Dataset | Scenario | Tasks | SNV (ours) | Prev. SOTA (buffer-free) | Gain |
+|---------|----------|-------|------------|-------------------------|------|
 | ImageNet-1k | CIL | 10 | $\mathbf{41.30\%}$ | NFL+ $38.42\%$ | $+2.88$ |
 | ImageNet-1k | CIL | 20 | $\mathbf{34.20\%}$ | NFL+ $31.50\%$ | $+2.70$ |
 | ImageNet-1k | CIL | 50 | $\mathbf{25.60\%}$ | NFL+ $22.40\%$ | $+3.20$ |
@@ -92,51 +102,51 @@ Standard Cross-Entropy + Adam is used with He-initialized ResNet-18. CIFAR-100/T
 | ImageNet-1k | TIL | 20 | $\mathbf{50.45\%}$ | NFL+ $45.80\%$ | $+4.65$ |
 | ImageNet-1k | TIL | 50 | $\mathbf{40.18\%}$ | NFL+ $37.20\%$ | $+2.98$ |
 
-SNV even outperforms the replay-based method DyTox ($40.15\%$ with 20,000 exemplars) on CIL/10, proving that principled neuron selection can compensate for the absence of a replay buffer.
+SNV on CIL/10 even outperforms the memory-based method DyTox ($40.15\%$) which uses 20,000 exemplars, proving that principled neuron selection can compensate for the absence of a replay buffer.
 
 ### Ablation Study
 
-| Config (TIL, CIFAR-100, 10 tasks) | ACC | BWT | PS | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| SNV, $c=0.03$ | $71.74$ | $0.00$ | $0.52$ | Leads WSN $(59.65)$ even under tight budget |
+| Config (TIL, CIFAR-100, 10 tasks) | ACC | BWT | PS | Note |
+|-----------------------------------|-----|-----|-----|------|
+| SNV, $c=0.03$ | $71.74$ | $0.00$ | $0.52$ | Outperforms WSN $(59.65)$ even at tight budget |
 | SNV, $c=0.05$ | $74.52$ | $0.00$ | $0.54$ | |
 | SNV, $c=0.1$ | $76.19$ | $0.00$ | $\mathbf{0.62}$ | Optimal PS |
 | SNV, $c=0.3$ | $77.89$ | $0.00$ | $0.58$ | |
 | SNV, $c=0.5$ | $\mathbf{79.76}$ | $0.00$ | $0.60$ | Optimal ACC |
-| WSN, $c=0.5$ | $64.00$ | $0.00$ | $0.66$ | Binary scoring has a lower upper bound |
-| NFL+ (no $c$) | $70.68$ | $-0.35$ | $\mathbf{0.65}$ | Non-zero BWT |
+| WSN, $c=0.5$ | $64.00$ | $0.00$ | $0.66$ | Binary scoring has clear upper limit |
+| NFL+ (no $c$ param) | $70.68$ | $-0.35$ | $\mathbf{0.65}$ | Non-zero BWT |
 | EWC | $36.47$ | $-54.13$ | $0.37$ | Regularization collapses on 1000 classes |
 
 ### Key Findings
-- **Zero backward transfer is a structural outcome**: All SNV configurations show BWT of strictly $0.00$ due to hard freezing. NFL+ and EWC show significant negative BWT, indicating their "soft" constraints fail to preserve old knowledge in long task sequences.
-- **SNV advantage is greatest at small budgets**: At $c=0.03$, SNV ($71.74$) vs. WSN ($59.65$) confirms the intuition that continuous scoring yields more accurate rankings under tight budgets.
-- **Pruning cliff reveals parameter efficiency**: SNV on CIFAR-100 can withstand $30\%$ pruning before performance collapses, whereas NFL+ collapses between $20\%$--$30\%$. EWC/LwF slide slowly from $0\%$--$80\%$, suggesting significant redundancy. The "cliff" in SNV indicates a healthy signal that every neuron is being effectively utilized.
-- **Memory-based methods matched on ImageNet-1k**: While DyTox leads most buffer-free methods using 20k exemplars, SNV matches or surpasses it without any stored samples. The authors suggest that small-buffer methods should be classified as sequential learning rather than strict CL.
+- **Zero backward transfer is a structural result, not a fluke**: All SNV configurations maintain BWT at exactly $0.00$ due to hard freezing; NFL+ and EWC show significantly negative BWT, indicating their "soft" constraints fail over long task sequences.
+- **SNV advantage is greatest at small budgets $c$**: At $c=0.03$, SNV beats WSN by $+12\%$ ($71.74$ vs $59.65$), confirming that continuous scoring is better for accurate ranking under tight constraints.
+- **Pruning cliffs reveal parameter efficiency**: SNV on CIFAR-100 only collapses after $30\%$ pruning, whereas NFL+ falls off between $20-30\%$. EWC/LwF show a slow, continuous decline, which actually exposes massive post-training parameter redundancy.
+- **SNV matches memory-based performance on ImageNet-1k**: While DyTox usually leads buffer-free methods using 20k exemplars, SNV matches or exceeds it without storing samples.
 
 ## Highlights & Insights
-- **Mean Response instead of Zeroing**: Replacing neuron outputs with mean activations on the validation set prevents downstream distribution collapse, ensuring the marginal difference in $V(\mathcal{S})$ provides a true signal—a key detail for stable MC estimation.
-- **MAB Alignment with Decision Goals**: Traditional neuron Shapley estimation seeks accuracy for all $\phi_i$; this work seeks accuracy only for the Top-$k$ threshold. Reformulating the statistical goal as best-arm identification is a transferable insight for any attribution scenario utilizing Top-$k$ results.
-- **GTEP Hyperparameter Protocol**: Hyperparameters are tuned only on the first task, avoiding the common "hidden cheating" in CL where hyperparameters are grid-searched over the entire task sequence.
-- **Honesty regarding the Buffer-Free vs. Memory-Based Comparison**: The authors explicitly argue that comparing fixed buffer sizes is often unfair and propose treating "small replay buffer" and "strict CL" as two distinct problems.
+- **Mean Response substitution**: Replacing neuron outputs with mean activations on the validation set (rather than $0$) avoids distribution collapse, making the marginal difference in $V(\mathcal{S})$ truly informative for MC estimation stability.
+- **MAB alignment with decision goals**: Instead of estimating all $\phi_i$, the authors focus on "finding Top-$k$." Reformulating the statistical goal as best-arm identification is a powerful idea applicable to many attribution tasks.
+- **GTEP Protocal**: Freezing hyperparameters after the first task prevents the "hidden cheating" often found in CL where hyperparams are grid-searched across the entire sequence.
+- **Honesty regarding memory-based vs buffer-free comparisons**: The authors explicitly argue that "fixed buffer size comparisons" are often unfair and suggest treating "small-buffer" and "strict CL" as two separate problems.
 
 ## Limitations & Future Work
-- The Shapley estimation is limited to the "filter" granularity of CNNs. Moving to Transformer/Attention head granularity may cause marginal contribution noise to explode due to strong co-adaptation between heads.
-- MC + MAB still incurs non-trivial overhead. Evaluating $\phi_i$ requires many forward passes after each task; the wall-clock overhead relative to training time was not disclosed.
-- The fixed capacity assumption acts as both an upper and lower bound. As $T \to \infty$ and $c = 1/T \to 0$, budget pressure will lead to a deadlock of "no plastic neurons available."
-- Experiments were restricted to vision CIL/TIL; evidence for NLP continual learning (e.g., sequence labeling) is currently lacking.
+- Estimation is limited to "Filter" granularity in CNNs: In Transformers/Attention heads, strong coordination between heads might cause marginal contribution noise to spike, requiring a redesign of MAB convergence.
+- MC + MAB overhead: Estimating $\phi_i$ requires many forward passes after each task; wall-clock overhead was not explicitly provided.
+- Fixed capacity limits: As $T \to \infty$, the budget $c = 1/T \to 0$. Capacity exhaustion will lead to a deadlock before accuracy drops; this was only verified up to 50 tasks.
+- Domain coverage: Lacks direct evidence of similar advantages in NLP continual learning (e.g., sequence labeling).
 
 ## Related Work & Insights
-- **vs WSN (Winning SubNetwork)**: WSN uses binary $\{0,1\}$ selection; SNV uses continuous $\phi_i$. The $12\%$ lead under small $c$ proves continuous values are superior.
-- **vs NFL+ (No Forgetting Learning)**: NFL+ is a progressive freezing heuristic without a principled importance measure. SNV wins across all 6 ImageNet-1k settings by $+2.7$ to $+6.5$.
-- **vs EWC / SI / LwF**: Regularization methods using rough approximations like diagonal Fisher fail to capture complex parameter coupling in 1000-class tasks. SNV's subset-level marginals reflect true combinatorial contributions.
-- **vs Neuron Shapley (Ghorbani et al.)**: This work inherits the MC+Truncation framework but adds MAB to prioritize Top-$k$ identification and is the first to apply Neuron Shapley for freezing in CL.
-- **Insight**: By replacing the value function $V$ with a "fairness metric" or "robustness index," the SNV framework can be repurposed for fairness attribution or identifying adversarial vulnerabilities.
+- **vs WSN**: WSN uses binary selection; SNV uses continuous values. SNV's $12\%$ lead at $c=0.03$ proves current continuous metrics are superior to binary ones.
+- **vs NFL+**: NFL+ is a purely heuristic progressive freezing method; SNV provides a unique, axiomatic distribution via the Shapley framework, winning across all ImageNet-1k settings.
+- **vs EWC / SI / LwF**: These use rough diagonal Fisher approximations that fail to capture complex parameter couplings in 1000-class scenarios.
+- **vs Neuron Shapley (Ghorbani et al.)**: SNV inherits the MC+Truncation framework but adds MAB to pivot from "estimation" to "selection" and is the first to apply this to CL freezing.
+- **Insight**: Replacing the value function $V$ with "fairness metrics" or "robustness metrics" would allow the same framework to be used for fairness attribution or locating adversarial vulnerabilities.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Shapley + Neuron is not new, but combining MAB for Top-$k$ identification within a CL freezing pipeline is.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive main experiments across three datasets, scenarios, and task counts; deep analysis into pruning and BWT. Wall-clock time is missing.
-- Writing Quality: ⭐⭐⭐⭐ — The logic from axioms to unique allocation to estimation is clean, though some minor variable definition inconsistencies exist.
-- Value: ⭐⭐⭐⭐ — Provides a principled and interpretable base for buffer-free CL with a controllable budget.
+- Novelty: ⭐⭐⭐⭐ — Shapley + Neuron is known, but "MAB for Top-$k$ selection in a CL freezing pipeline" is a novel combination.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Extensive datasets and benchmarks (CIL/TIL, up to 50 tasks). Analysis covers pruning, PS, and BWT.
+- Writing Quality: ⭐⭐⭐⭐ — Clear logic from axioms to algorithms, though some minor notation inconsistencies exist.
+- Value: ⭐⭐⭐⭐ — Provides a principled, interpretable, budget-controllable new baseline for buffer-free CL.
 
 <!-- RELATED:START -->
 
@@ -148,7 +158,7 @@ SNV even outperforms the replay-based method DyTox ($40.15\%$ with 20,000 exempl
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
 - [\[NeurIPS 2025\] Approximating Shapley Explanations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/approximating_shapley_explanations_in_reinforcement_learning.md)
 - [\[ACL 2026\] Savoir: Learning Social Savoir-Faire via Shapley-based Reward Attribution](../../ACL2026/reinforcement_learning/savoir_learning_social_savoir-faire_via_shapley-based_reward_attribution.md)
-- [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/continual_knowledge_adaptation_for_reinforcement_learning.md)
+- [\[CVPR 2026\] Resolving the Stability-Plasticity Dilemma in Reinforcement Learning via Complementary Continual Critics](../../CVPR2026/reinforcement_learning/resolving_the_stability-plasticity_dilemma_in_reinforcement_learning_via_complem.md)
 
 </div>
 

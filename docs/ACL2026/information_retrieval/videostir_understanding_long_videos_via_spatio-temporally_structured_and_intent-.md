@@ -2,79 +2,87 @@
 title: >-
   [Paper Note] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Long Video Understanding] VideoStir proposes a structured and intent-aware long video RAG framework. It models videos as spatio-temporal graphs for multi-hop clip retrieval and tra…
+  [ACL 2026][Information Retrieval & RAG][Paper Note] VideoStir proposes a structured and intent-aware long video RAG framework. By modeling videos as spatio-temporal graphs for multi-hop clip retrieval and training an intent-relevance scorer for frame-level filtering, it achieves performance comparable to SOTA long video RAG methods without relying on auxiliary text tool
 tags:
-  - "ACL 2026"
-  - "Information Retrieval & RAG"
-  - "Long Video Understanding"
-  - "Retrieval-Augmented Generation"
-  - "Spatio-Temporal Graph Structure"
-  - "Intent-Aware Retrieval"
-  - "Multi-hop Reasoning"
+  - ACL 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: 4fc6f02b4bce1f8e
+content_hash: 04366af1470f17ac
 ---
-
 # VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.05418](https://arxiv.org/abs/2604.05418)  
 **Code**: [https://github.com/RomGai/VideoStir](https://github.com/RomGai/VideoStir)  
 **Area**: Information Retrieval  
-**Keywords**: Long Video Understanding, Retrieval-Augmented Generation, Spatio-Temporal Graph Structure, Intent-Aware Retrieval, Multi-hop Reasoning
+**Keywords**: Long video understanding, Retrieval-augmented generation, Spatio-temporal graph structure, Intent-aware retrieval, Multi-hop reasoning
 
 ## TL;DR
 
-VideoStir proposes a structured and intent-aware long video RAG framework. It models videos as spatio-temporal graphs for multi-hop clip retrieval and trains an intent relevance scorer for frame-level filtering. Without relying on auxiliary text tools, it achieves performance comparable to SOTA long video RAG methods.
+VideoStir proposes a structured and intent-aware long video RAG framework. By modeling videos as spatio-temporal graphs for multi-hop clip retrieval and training an intent-relevance scorer for frame-level filtering, it achieves performance comparable to SOTA long video RAG methods without relying on auxiliary text tools.
 
 ## Background & Motivation
 
-**Background**: Long video understanding is a core frontier task in multimodal intelligence. Current methods either extend the context window for uniform sampling (prone to missing critical details or being overwhelmed by redundant information) or use RAG to retrieve key segments to compress the context.
+**Background**: Long video understanding is a core frontier task in multimodal intelligence. Current methods either extend context windows with uniform sampling (which may miss key details or be overwhelmed by redundancy) or use RAG to retrieve key segments to compress context.
 
 **Limitations of Prior Work**:
-- **Spatio-temporal Structural Decoupling**: Existing RAG methods flatten videos into independent segments, breaking the inherent spatio-temporal structure. This prevents the associated retrieval of events that are contextually related but scattered across different timestamps.
-- **Insufficient Intent Modeling**: Mainstream methods rely on contrastive embeddings like CLIP to calculate semantic similarity, which only match content that "looks similar" rather than content that is "actually important for answering the query intent" (e.g., for the query "What does the recorder do with the printer?", semantic retrieval might select printer shots rather than scenes related to the actual purpose).
+- **Spatio-Temporal Decoupling**: Existing RAG methods flatten videos into independent segments, destroying the inherent spatio-temporal structure. This prevents contextually related events scattered across different time points from being retrieved together.
+- **Insufficient Intent Modeling**: Mainstream methods rely on contrastive embeddings (e.g., CLIP) for semantic similarity, matching content that "looks similar" rather than what is "truly important for answering the query intent" (e.g., for "What does the narrator do with the printer?", semantic retrieval selects frames of the printer instead of scenes related to the actual purpose).
 
-**Key Challenge**: Flattened retrieval loses structure $\rightarrow$ missing contextually related evidence; semantic matching biases towards surface similarity $\rightarrow$ missing critical clues that are intent-relevant but lack semantic overlap.
+**Key Challenge**: Flattened retrieval loses structure $\rightarrow$ missing contextual evidence; semantic matching biases toward surface similarity $\rightarrow$ missing key clues that are intent-relevant but semantically non-overlapping.
 
-**Goal**: Improve long video RAG from two dimensions: (1) From flattened to structured: Reconstructing the video spatio-temporal topology; (2) From semantic to intent: Moving beyond surface semantic matching to model the alignment between query intent and visual clues.
+**Goal**: Improve long video RAG from two dimensions: (1) From flattened to structured: reconstructing video spatio-temporal topology; (2) From semantic to intent: moving beyond surface semantic matching to model the alignment between query intent and visual clues.
 
-**Key Insight**: Analogous to human episodic memory—first coarsely locate relevant episodes (clip retrieval), then finely examine details (frame retrieval). Use graph structures at the clip level to maintain spatio-temporal associations and MLLM reasoning at the frame level for intent relevance.
+**Key Insight**: Analogous to human episodic memory—first coarse-grained localization of relevant episodes (clip retrieval), then fine-grained examination of details (frame retrieval). Use graph structures at the clip level to maintain spatio-temporal associations, and MLLM reasoning at the frame level for intent relevance.
 
-**Core Idea**: Model the video as a spatio-temporal graph (nodes = semantically consistent clips, edges = temporal proximity/spatial similarity). Aggregate structured evidence through multi-hop traversal, followed by fine-grained filtering at the frame level using an intent relevance scorer trained via distillation.
+**Core Idea**: Model the video as a spatio-temporal graph (nodes = semantically consistent clips, edges = temporal proximity/spatial similarity) and aggregate structured evidence via multi-hop traversal, followed by fine-grained filtering at the frame level using an intent-relevance scorer trained via distillation.
 
 ## Method
 
 ### Overall Architecture
 
-VideoStir consists of three stages: (1) Spatio-temporal topology modeling—an event boundary detector segments the video into clips to build a spatio-temporal graph; (2) Graph-structured clip retrieval—query embeddings match anchor nodes, and multi-hop traversal expands the spatio-temporal neighborhood; (3) Intent-aware frame retrieval—an intent relevance scorer ranks candidate frames, filtering intent-aligned keyframes to be sent to the downstream MLLM.
+VideoStir addresses long video QA: given a long video and a query, it outputs a small number of keyframes for the downstream MLLM. It decomposes the human recall process of "coarse localization then fine observation" into two stages. First, the video is constructed into a graph that preserves spatio-temporal topology (nodes are semantically consistent clips). Multi-hop traversal aggregates contextually relevant evidence across timelines and semantic spaces at the clip level. Second, a distilled intent-relevance scorer distinguishes between frames that "look similar" and those "truly useful for answering the query" at the frame level. The entire pipeline does not rely on auxiliary text tools like OCR or caption generation, using only native visual input.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Long Video + Query"] --> B
+    subgraph G["Spatio-Temporal Topology Modeling"]
+        direction TB
+        B["Event Boundary Detection (PELT) <br/>Adaptive segmentation into consistent clip nodes"] --> C["Add two types of edges: Temporal (adjacent) <br/>Spatial (semantically similar distant clips)"]
+    end
+    C --> D["Graph-Structured Multi-hop Clip Retrieval<br/>top-N anchor clips → L-hop traversal (threshold η)"]
+    D --> E["Intent-Aware Frame Retrieval<br/>Distilled scorer (1-5 levels) → threshold κs filtering"]
+    E --> F["Keyframes → Downstream MLLM"]
+```
 
 ### Key Designs
 
-1. **Spatio-Temporal Topology Modeling**:
-    - **Function**: Models long videos as a graph $\mathcal{G}=(\mathcal{V}, \mathcal{E})$ that preserves spatio-temporal structure.
-    - **Mechanism**: An event boundary detector (PELT change-point detection on frame embeddings) adaptively segments the video into semantically consistent clip nodes. Temporal edges connect adjacent clips to maintain narrative continuity, while spatial edges connect clips that are semantically related but temporally distant based on cosine similarity of clip embeddings.
-    - **Design Motivation**: Flattened retrieval decouples spatio-temporal contexts that should remain connected. The graph structure re-entangles these relationships, allowing multi-hop retrieval to aggregate evidence along both the timeline and semantic space.
+**1. Spatio-Temporal Topology Modeling: Restructuring Flattened Clips into a Graph**
 
-2. **Graph-Structured Multi-hop Clip Retrieval**:
-    - **Function**: Starts from query-matched anchor nodes to collect contextually relevant clips along the spatio-temporal graph.
-    - **Mechanism**: Select the top-N (default 3) anchor clips most similar to the query, then perform an L-hop (default 2) traversal on the graph. Filter weak connections using an edge weight threshold $\eta$ (default 0.4) to collect the spatio-temporal neighborhood.
-    - **Design Motivation**: A query might only involve a small part of an event, but complete reasoning requires temporally adjacent and semantically related context. Multi-hop traversal utilizes the internal associations between clips to supplement evidence missed by direct query matching.
+Flattening long videos into independent segments breaks their inherent spatio-temporal structure. VideoStir uses an event boundary detector (PELT change-point detection on frame embeddings) to adaptively segment the video into semantically consistent clip nodes, forming a graph $\mathcal{G}=(\mathcal{V}, \mathcal{E})$. It then adds two types of edges: temporal edges connecting adjacent clips to maintain narrative continuity, and spatial edges connecting distant clips based on cosine similarity of clip embeddings. These edges re-link the spatio-temporal context, allowing multi-hop retrieval to expand along both the timeline and semantic space.
 
-3. **Intent-Aware Frame Retrieval + IR-600K Dataset**:
-    - **Function**: Distinguishes "intent-relevant" visual clues from those that are "only semantically similar" at the frame level.
-    - **Mechanism**: Uses Qwen2.5-VL-72B as a teacher model to label the intent relevance (levels 1-5) of 605,000 query-frame pairs. A Qwen2.5-VL-3B student scorer is trained via distillation (LoRA, only 3.7M parameters). During inference, a probability-weighted expected score is calculated for candidate frames, retaining those exceeding a threshold $\kappa_s$.
-    - **Design Motivation**: Contrastive models like CLIP optimize for semantic alignment rather than intent alignment, often selecting frames that "look relevant" but are useless for answering. MLLMs possess reasoning capabilities to judge a frame's contribution to the query intent, but large model inference is too slow; hence, they are distilled into a lightweight scorer.
+**2. Graph-Structured Multi-hop Clip Retrieval: Recovering Context Missed by Direct Matching**
+
+A query often directly hits only a small part of an event, while full reasoning requires surrounding temporal and semantic context. VideoStir selects top-$N$ (default 3) anchor clips most similar to the query, then performs an $L$-hop (default 2) traversal on the graph. Weak connections are filtered by an edge weight threshold $\eta$ (default 0.4), collecting the entire spatio-temporal neighborhood. This multi-hop traversal recovers evidence missed by point-to-point matching—a capability flattened retrieval lacks.
+
+**3. Intent-Aware Frame Retrieval + IR-600K Dataset: Upgrading from "Semantic Similarity" to "Intent Relevance"**
+
+Contrastive models like CLIP optimize for semantic alignment. For the query "What does the narrator do with the printer?", it matches printer frames rather than scenes answering the purpose, often selecting "related-looking but useless" frames. MLLMs possess the reasoning ability to judge a frame's contribution to a query intent, but direct inference is too slow. VideoStir employs a distillation route: using Qwen2.5-VL-72B as a teacher to label 605,000 query-frame pairs with 1-5 levels of intent relevance, distilling a Qwen2.5-VL-3B student scorer with only 3.7M LoRA parameters (forming the IR-600K dataset). During inference, an expected score is calculated for each candidate frame, retaining only those exceeding threshold $\kappa_s$.
 
 ### Loss & Training
 
-Scorer Training: Cross-entropy loss $\mathcal{L}_{CE} = -\sum_{\ell=1}^{5} \mathbf{1}[\ell=y_t] \log P_\theta(\ell|q, x_t, \mathcal{P}_{intent})$ is used to optimize LoRA parameters. Training uses AdamW (lr=5e-5), a cosine schedule, 1 epoch, and a batch size of 128.
+The scorer is trained via cross-entropy, optimizing only LoRA parameters:
+
+$$\mathcal{L}_{CE} = -\sum_{\ell=1}^{5} \mathbf{1}[\ell=y_t] \log P_\theta(\ell\mid q, x_t, \mathcal{P}_{intent})$$
+
+where $\ell$ iterates through 1-5 relevance levels, $y_t$ is the teacher's label, and $\mathcal{P}_{intent}$ is the intent prompt. The AdamW optimizer (lr=5e-5) with a cosine schedule is used for 1 epoch with a batch size of 128.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Base MLLM | Method | LV-Bench | MLVU | Video-MME-Long |
+| Backbone MLLM | Method | LV-Bench | MLVU | Video-MME-Long |
 |---------|------|----------|------|------------|
 | LLaVA-Video 7B | Native | 56.6 | 70.8 | - |
 | LLaVA-Video 7B | +Video-RAG | 58.7 (+3.7%) | 72.4 (+2.3%) | - |
@@ -88,39 +96,39 @@ Scorer Training: Cross-entropy loss $\mathcal{L}_{CE} = -\sum_{\ell=1}^{5} \math
 | Configuration | Overall↑ | Retrieval Acc.↑ | Description |
 |------|---------|----------------|------|
 | Full | **64.5** | **92.2** | Complete model |
-| w/o Intent Scorer (using PE) | 58.1 | 79.8 | Semantic matching is insufficient to capture intent |
-| w/o Prob-weighted Expectation | 54.2 | 71.6 | Discrete scores are inferior to distributed scoring |
-| w/o Spatio-temporal Graph | 56.4 | 74.8 | Flattened retrieval loses structural information |
-| w/o Spatial Edges | 57.2 | 79.3 | Semantically related long-distance clips are missed |
+| w/o Intent Scorer (using PE) | 58.1 | 79.8 | Semantic matching is insufficient |
+| w/o Prob-Weighted Expectation | 54.2 | 71.6 | Distributed scoring beats discrete scores |
+| w/o Spatio-Temporal Graph | 56.4 | 74.8 | Flat retrieval loses structural info |
+| w/o Spatial Edges | 57.2 | 79.3 | Distant semantic clips are missed |
 | w/o Temporal Edges | 59.8 | 83.4 | Narrative continuity is broken |
 
 ### Key Findings
-- VideoStir achieves SOTA without using any auxiliary text tools (OCR, captions, etc.), relying solely on native visual input.
-- The intent scorer provides a 6.4%/12.4% boost (Overall/Retrieval Acc.) over the strongest semantic matching (PE), highlighting the criticality of intent modeling.
-- LoRA fine-tuning (3.7M parameters) nearly matches the performance of full-parameter fine-tuning (3.0B parameters), demonstrating the efficiency of the distillation strategy.
-- Both spatial and temporal edges in the graph contribute, but removing spatial edges has a larger impact, indicating that long-distance semantic associations are crucial.
+- VideoStir achieves SOTA performance using only native visual input without any auxiliary text tools (OCR, captions).
+- The intent scorer provides a 6.4%/12.4% gain (Overall/Retrieval Acc.) over strongest semantic matching (PE), showing intent modeling is critical.
+- LoRA fine-tuning (3.7M parameters) nearly matches the performance of full fine-tuning (3.0B parameters), demonstrating distillation efficiency.
+- Both spatial and temporal edges contribute, though removing spatial edges has a larger impact, highlighting the importance of long-range semantic associations.
 
 ## Highlights & Insights
-- The paradigm shift from "semantic matching to intent awareness" is accurately positioned—semantic similarity $\neq$ utility for answering. This insight is enlightening for all RAG systems.
-- The design of the spatio-temporal graph + multi-hop retrieval is elegant: it reconstructs the video's intrinsic topology rather than performing a brute-force search, analogous to the human episodic memory recall process.
-- The IR-600K dataset is a contribution in itself: it is the first dataset oriented towards "intent-level frame-query alignment" and can be reused in future research.
-- The scorer distillation strategy is practical: moving from a 72B teacher to a 3B student using LoRA with only 3.7M parameters maintains quality while being suitable for deployment.
+- The paradigm shift "from semantic matching to intent awareness" accurately identifies a core issue: semantic similarity $\neq$ utility for answering. This insight is broadly applicable to RAG systems.
+- The Spatio-temporal Graph + Multi-hop Retrieval design is elegant, reconstructing the video's intrinsic topology rather than relying on brute-force search, mimicking human episodic memory.
+- The IR-600K dataset is a significant contribution: the first dataset for "intent-level frame-query alignment," reusable for future research.
+- The distillation strategy is practical: moving from a 72B teacher to a 3B student with only 3.7M LoRA parameters maintains quality while remaining deployment-friendly.
 
 ## Limitations & Future Work
-- The construction of the spatio-temporal graph and multi-hop retrieval introduces additional system latency; end-to-end latency optimization is an important direction.
-- The quality of the event boundary detector directly affects the graph structure and may not be robust enough for complex, interleaved narratives.
-- On Video-MME-Long, VideoStir's improvement is less significant than Video-RAG (on some MLLMs), suggesting that auxiliary text information remains valuable in certain scenarios.
-- Currently evaluated only on QA tasks; the applicability to other tasks like video summarization and temporal localization needs verification.
+- Graph construction and multi-hop retrieval introduce additional system latency; end-to-end optimizations are needed.
+- The quality of the event boundary detector directly impacts the graph structure and may not be robust for complex interleaved narratives.
+- On Video-MME-Long, VideoStir's improvement is less pronounced than Video-RAG on certain MLLMs, suggesting auxiliary text still has value in specific scenarios.
+- Evaluation is currently limited to QA tasks; applicability to video summarization or temporal localization remains to be verified.
 
 ## Related Work & Insights
-- **vs Video-RAG**: Video-RAG enhances retrieval with auxiliary text tools. VideoStir relies solely on native visual input, being more concise while achieving comparable performance.
-- **vs DrVideo/Vgent (Agent methods)**: Agent methods involve high reasoning overhead. VideoStir is more efficient through the graph structure + lightweight scorer.
-- **vs AKS (Keyframe Selection)**: AKS optimizes for semantic similarity + temporal uniformity. VideoStir introduces intent-level frame filtering.
+- **vs Video-RAG**: Video-RAG uses auxiliary text tools; VideoStir relies only on native visual input, offering a simpler yet comparable alternative.
+- **vs DrVideo/Vgent (Agent methods)**: Agent methods have high reasoning overhead; VideoStir is more efficient via its graph structure and lightweight scorer.
+- **vs AKS (Keyframe selection)**: AKS optimizes for semantic similarity and temporal uniformity; VideoStir introduces intent-level frame filtering.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of spatio-temporal graphs + intent scorers addresses two core pain points of long video RAG.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks, multiple MLLM backbones, detailed ablations, and analysis of scorer training strategies.
-- Writing Quality: ⭐⭐⭐⭐ Clear and powerful narrative structure: problem analysis $\rightarrow$ two gaps $\rightarrow$ two shifts.
+- Novelty: ⭐⭐⭐⭐ The combination of spatio-temporal graphs and intent scoring addresses two core pain points of long video RAG.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks, various MLLM backbones, detailed ablation, and scorer training analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative structure moving from problem analysis through two gaps to two shifts.
 
 <!-- RELATED:START -->
 
@@ -132,7 +140,7 @@ Scorer Training: Cross-entropy loss $\mathcal{L}_{CE} = -\sum_{\ell=1}^{5} \math
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ACL 2026\] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](s2g-rag_structured_sufficiency_and_gap_judging_for_iterative_retrieval-augmented.md)
-- [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
+- [\[ACL 2025\] The Distracting Effect: Understanding Irrelevant Passages in RAG](../../ACL2025/information_retrieval/the_distracting_effect_understanding_irrelevant_passages_in_rag.md)
 
 </div>
 

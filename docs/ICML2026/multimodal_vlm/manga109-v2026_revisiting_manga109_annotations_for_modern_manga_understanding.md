@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding
 description: >-
-  [ICML 2026][Multimodal VLM][Manga Understanding] The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR…
+  [ICML 2026][Multimodal VLM][Paper Note] The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR + dual LLM voting (GPT-5/Gemini 3 Flash) + human verification, they revised approximately 29,000 annotations (19.6% of the total 147,887 text annotati
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Manga Understanding"
-  - "OCR Evaluation"
-  - "Dataset Revision"
-  - "Onomatopoeia"
-  - "Speech Bubble Segmentation"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 38d2e80442497a94
+content_hash: 6a4fcb30b979d29d
 ---
-
 # Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding
 
 **Conference**: ICML 2026  
@@ -24,99 +18,110 @@ content_hash: 38d2e80442497a94
 **Keywords**: Manga Understanding, OCR Evaluation, Dataset Revision, Onomatopoeia, Speech Bubble Segmentation
 
 ## TL;DR
-The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR, dual LLM voting (GPT-5 & Gemini 3 Flash), and human verification, they revised approximately 29,000 annotations (19.6% of the 147,887 text annotations). The resulting Manga109-v2026 improves the end-to-end OCR H-mean from 48.5 to 62.9 (+14.4 pp).
+The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR + dual LLM voting (GPT-5/Gemini 3 Flash) + human verification, they revised approximately 29,000 annotations (19.6% of the total 147,887 text annotations) to release Manga109-v2026, improving end-to-end OCR evaluation H-mean from 48.5 to 62.9 (+14.4 pp).
 
 ## Background & Motivation
 
-**Background**: Japanese manga is a unique multimodal medium blending visual storytelling, stylized typography, speech bubbles, and onomatopoeia. Manga109 (Matsui 2017; Aizawa 2020) serves as the cornerstone for tasks like manga OCR, translation, transcription, and multimodal understanding, with nearly all manga-AI systems trained or evaluated on it.
+**Background**: Japanese manga is a unique multimodal medium blending visual storytelling, stylized typography, speech bubbles, and onomatopoeia. Manga109 (Matsui 2017; Aizawa 2020) serves as the foundational dataset for tasks like manga OCR, translation, transcription, multimodal understanding, and manga-specific large models; almost all manga-AI systems are trained or evaluated on it.
 
-**Limitations of Prior Work**: The dialogue text annotations in Manga109 were created over a decade ago based on OCR standards of that time, leading to significant mismatches with modern multimodal systems. Issues such as transcription errors, oversized bounding boxes (encompassing multiple text lines or non-text pixels), missing short emoticons ("!", "..."), overlapping annotations between dialogue and onomatopoeia, and grouping multiple adjacent bubbles into a single text region cause "correct detections" by modern OCR systems to be penalized as errors and introduce inaccurate signals during training.
+**Limitations of Prior Work**: Dialogue text annotations in Manga109 were created over a decade ago following OCR standards of that time, leading to significant mismatches with modern multimodal systems. Issues such as transcription errors, oversized bounding boxes (encompassing multiple text lines or non-text pixels), missing short emoticons ("!", "..."), overlapping annotations between dialogue and onomatopoeia, and treating multiple connected bubbles as a single text region cause "correct detections" by OCR systems to be penalized as errors and introduce inaccurate transcriptions into training signals.
 
-**Key Challenge**: There is a fundamental mismatch in representation granularity between the expressive structures of manga (onomatopoeia, bubble layout, stylized fonts) and the behavior of modern detectors. Legacy annotations organize "entire dialogues into one box," whereas modern OCR tends to output each bubble as an independent instance. Furthermore, mixing onomatopoeia into dialogue boxes disrupts the rhetorical preservation required for manga translation.
+**Key Challenge**: There is a fundamental representation granularity mismatch between the expressive structure of manga (onomatopoeia, bubble layout, stylized fonts) and the behavior of modern detectors. Old annotations organize "a whole dialogue as one box," whereas modern OCR tends to output each bubble as an independent instance. Furthermore, old annotations mixed onomatopoeia into dialogue boxes, breaking the onomatopoeic rhetoric that should be preserved during translation.
 
-**Goal**: Systematically identify and revise five categories of dialogue annotation issues without altering the overall Manga109 framework, and empirically demonstrate the impact of these revisions on the reliability of OCR evaluation.
+**Goal**: Systematically identify and revise five categories of dialogue annotation issues without changing the overall Manga109 framework, and empirically demonstrate the impact of these revisions on the reliability of OCR evaluation.
 
-**Key Insight**: Rather than treating any single OCR as the ground truth, the authors use commercial Mantra OCR output as a "discrepancy probe." Whenever the OCR output diverges from legacy annotations, the instance is sent to a human/LLM verification pipeline. This transforms the "total manual audit" problem into "audit by discrepancy sampling," significantly reducing human overhead while focusing on areas that truly impact modern systems.
+**Key Insight**: Instead of treating any single OCR as ground truth, the authors use commercial Mantra OCR outputs as "discrepancy probes." Whenever OCR outputs diverge from the old annotations, the cases are sent to a human/LLM verification pipeline. This transforms the "full audit" problem into "discrepancy-sampled verification," significantly reducing human labor while focusing on locations that truly impact modern systems.
 
-**Core Idea**: Leverage modern AI (commercial OCR + dual LLM voting) for large-scale "candidate discovery," followed by human "final adjudication," applying human-in-the-loop iteration to the generational maintenance of cultural data assets.
+**Core Idea**: Use modern AI (commercial OCR + dual LLM voting) for large-scale "candidate issue discovery," followed by human "final adjudication," applying human-AI collaborative iteration for the intergenerational maintenance of cultural data assets.
 
 ## Method
 
-The work does not propose a new model but rather a human-AI collaborative pipeline of **Problem Discovery $\rightarrow$ Categorization $\rightarrow$ Revision $\rightarrow$ Evaluation Verification**. It can be viewed as a "code review pipeline" for manga dialogue annotations: OCR acts as the linter, LLMs act as Reviewer 1 and Reviewer 2, and humans act as the maintainers.
+This work does not propose a new model but rather a human-AI collaborative workflow of **issue discovery → categorization → revision → evaluation validation**. It can be viewed as a "code review pipeline" for manga dialogue annotations: OCR acts as the linter, LLMs act as Reviewer 1 and Reviewer 2, and humans act as the maintainer.
 
 ### Overall Architecture
-The input consists of all 147,887 dialogue text annotations from the original Manga109. The process follows four steps:
-(1) Extract detection/recognition outputs from commercial Mantra OCR for all manga pages;
-(2) Perform spatial and text alignment between OCR outputs and original annotations to automatically filter five types of discrepancy candidates;
-(3) Execute specific revision sub-flows for each type (LLM voting / region sub-division / manual supplement / overlap removal / bubble re-segmentation);
-(4) Run the same OCR output against both old and new annotations using the MangaOCR protocol to compare E2E precision/recall/H-mean. The final Manga109-v2026 includes $\approx 29,000$ revisions, covering about 19.6% of all annotations.
+The input consists of all 147,887 original Manga109 dialogue text annotations. The process follows four steps:
+(1) Retrieve commercial Mantra OCR detection/recognition outputs for all manga pages;
+(2) Perform spatial and textual alignment between OCR outputs and original annotations to automatically filter five categories of discrepancy candidates;
+(3) Execute different revision sub-pipelines based on the category (LLM voting / region refinement / human supplementary labeling / overlap removal / bubble re-segmentation);
+(4) Run the same OCR outputs on both old and new annotations using the MangaOCR protocol to compare E2E precision/recall/H-mean. The final output is Manga109-v2026, covering $\approx 29,000$ revisions, approximately 19.6% of all annotations.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Original Manga109<br/>147,887 Dialogue Annotations"] --> B["OCR-as-Probe Discovery<br/>Mantra OCR as discrepancy probe, filtering five candidate types by geometry"]
+    B -->|Text Inconsistency Type 1| C["Dual LLM Voting + Human Fallback<br/>Adopt if GPT-5 and Gemini 3 Flash agree, human adjudicates discrepancy ≈9,200"]
+    B -->|Geo/Overlap Discrepancy Type 2-5| D["Geometric Revision by Semantic Track<br/>Oversized boxes·Missing·Onomatopoeia overlap·Under-segmented bubbles ≈19,800"]
+    C --> E["Manga109-v2026<br/>≈29,000 revisions (19.6%)"]
+    D --> E
+    E --> F["MangaOCR E2E Evaluation<br/>Fixed OCR, change annotations: H-mean 48.5→62.9"]
+```
 
 ### Key Designs
 
-1. **OCR-as-Probe Strategy for Problem Discovery**:
-    - **Function**: Uses a modern commercial OCR (not as GT) as a discrepancy probe to automatically identify where legacy annotations are most likely to mismatch modern systems.
-    - **Mechanism**: The authors explicitly state that OCR output is not ground truth; it serves as a "high-recall candidate generator." Consistent parts are deemed reliable, while divergent parts enter the verification queue. Discrepancies are categorized by geometric relationships: misaligned bboxes (Type 1), single bbox covering multiple OCR boxes (Type 2 or Type 5), OCR text with no annotation (Type 3), and bbox overlapping with onomatopoeia boxes (Type 4).
-    - **Design Motivation**: Compressing the audit of 148k annotations into a subset that diverges from modern systems is key to completing the work with viable manpower. Excluding OCR from the GT role avoids circular bias in evaluation.
+**1. OCR-as-Probe Discovery Strategy: Using modern OCR to automatically locate labels in need of revision.**
 
-2. **Dual LLM Voting + Human Verification for Transcription (Type 1, $\approx 9,200$ items)**:
-    - **Function**: Decides whether to keep the original annotation or adopt the OCR output for Type 1 candidates.
-    - **Mechanism**: Both the original annotation and the OCR output are fed to GPT-5 and Gemini 3 Flash to independently select the better transcription. Agreement results in automatic adoption (15,359 cases: 7,156 for OCR, 8,203 for original); 2,051 disagreements are manually adjudicated. Total Type 1 revisions: 9,207. Expected efficiency: Automatic decision rate $\approx 15359/17410 \approx 88.2\%$, with only 11.8% requiring human intervention.
-    - **Design Motivation**: A single model might have systemic biases. Dual-model alignment reduces this bias, while manual adjudication of high-discrepancy samples maintains the quality ceiling. This "AI high-throughput + human high-precision" division is the core of the pipeline's efficiency.
+Conducting a full manual audit of 148,000 annotations is impractical. The authors use Mantra OCR as a "discrepancy probe" rather than ground truth: parts where OCR aligns with old annotations are considered credible, while discrepancies enter the review queue. Discrepancies are categorized by geometric relations: completely misaligned bboxes correspond to Type 1 transcription errors; a single bbox containing multiple OCR boxes corresponds to Type 2 oversized boxes or Type 5 under-segmented bubbles; OCR text without old annotations corresponds to Type 3 missing labels; and spatial overlap with onomatopoeia boxes corresponds to Type 4. This compresses a "full audit" into auditing only the subset diverging from modern systems, which is the key to completing the work with reasonable labor while avoiding "evaluating OCR with OCR" circular bias.
 
-3. **Semantic-based Geometric Revisions (Type 2/3/4/5, $\approx 19,800$ items)**:
-    - **Function**: Splits geometric revisions into four sub-flows based on problem semantics to avoid over-simplification.
-    - **Mechanism**: Type 2 (Oversized Bbox, $\approx 50$) $\rightarrow$ Manually split large boxes into small boxes matching text segments; Type 3 (Missing Text, $\approx 800$) $\rightarrow$ Verify OCR outputs where annotations are missing and add bboxes/transcriptions (focusing on "!", "..."); Type 4 (Text-Onomatopoeia Overlap, $\approx 4,300$) $\rightarrow$ Preserve onomatopoeia annotations added in 2022 and crop overlapping dialogue boxes; Type 5 (Under-segmented Bubbles, $\approx 14,900$) $\rightarrow$ Split legacy bboxes covering multiple OCR bubbes into one bbox per bubble.
-    - **Design Motivation**: Type 2/3 fix consistency, Type 4 fixes compatibility for translation systems (treating onomatopoeia separately), and Type 5 fixes evaluation protocol compatibility. Split-track design prevents rule conflicts that would occur with a single IoU threshold.
+**2. Dual LLM Voting + Human Fallback for Transcription Revision (Type 1, $\approx 9,200$ cases): High-throughput AI consensus + high-precision human adjudication.**
 
-### Verification Strategy
-Instead of a new model, the same commercial OCR output is compared against both original Manga109 and Manga109-v2026 using the MangaOCR (Baek 2026) E2E evaluation protocol. This "fixed OCR, variable annotations" design quantifies the impact of annotation quality on OCR evaluation independently of the specific OCR system used.
+Type 1 requires deciding whether to keep the original label or adopt the OCR output. Both candidates are fed to GPT-5 and Gemini 3 Flash for independent selection: if they agree, the choice is adopted (15,359 cases, with 7,156 favoring OCR and 8,203 favoring the original); the 2,051 cases with discrepancy are manually adjudicated by the authors. This achieves an automated decision rate of $15359/17410 \approx 88.2\%$, with humans only processing 11.8%. Using two models from different vendors helps suppress systematic bias that a single model might have toward its own style, while high-discrepancy samples sent to humans maintain the quality ceiling.
+
+**3. Geometric Revision by Semantic Track (Type 2/3/4/5, $\approx 19,800$ cases): Different semantic issues follow distinct sub-pipelines.**
+
+Revision goals for the remaining four geometric issues are inherently different. Type 2 (Oversized Boxes, $\approx 50$) detects bboxes overlapping other text regions and manually splits them. Type 3 (Missing Text, $\approx 800$) adds bboxes and transcriptions for OCR outputs without original labels, focusing on "!" or "..." which are narratively important but visually small. Type 4 (Dialogue-Onomatopoeia Overlap, $\approx 4,300$) preserves onomatopoeia labels added in 2022 and clips overlapping areas from dialogue boxes. Type 5 (Under-segmented Bubbles, $\approx 14,900$, the largest volume) splits one old bbox covering multiple bubbles into one box per bubble. These tracks address different objectives—Type 2/3 improve consistency, Type 1/4 improve compatibility, and Type 5 improves evaluation protocol compatibility.
+
+### Validation Strategy
+Instead of introducing new models, the same commercial OCR outputs are compared against the original Manga109 and Manga109-v2026. Precision, recall, and H-mean are calculated according to the MangaOCR (Baek 2026) E2E protocol. This "Fixed OCR, Varied Annotations" design quantifies the impact of annotation quality on OCR evaluation independently of the specific OCR model.
 
 ## Key Experimental Results
 
 ### Annotation Revision Scale
 
-| Type | Description | Revisions |
+| Type | Name | Revision Count |
 |------|------|--------|
 | Type 1 | Transcription Errors | $\approx 9,200$ |
 | Type 2 | Oversized Bounding Boxes | $\approx 50$ |
 | Type 3 | Missing Text | $\approx 800$ |
 | Type 4 | Dialogue-Onomatopoeia Overlap | $\approx 4,300$ |
 | Type 5 | Under-segmented Speech Bubbles | $\approx 14,900$ |
-| **Total** | — | **$\approx 29,000$ (19.6% of 147,887)** |
+| Total | — | $\approx 29,000$ (19.6% of 147,887) |
 
-### OCR Evaluation Results (Same OCR output)
+### OCR Evaluation Results (Same OCR output, different annotations)
 
 | Annotation Version | Precision | Recall | H-mean |
 |----------|-----------|--------|--------|
 | Original Manga109 | 46.5 | 50.6 | 48.5 |
 | Manga109-v2026 | 63.4 | 62.4 | **62.9** |
-| **Gain** | +16.9 | +11.8 | **+14.4 pp** |
+| Gain | +16.9 | +11.8 | **+14.4 pp** |
 
 ### Key Findings
-- The +14.4 pp H-mean improvement reflects evaluation protocol alignment rather than increased OCR capability—suggesting that prior assessments of manga OCR systems have been systematically underestimated.
-- Type 5 (Under-segmented bubbles) accounts for over half of all revisions, indicating that "legacy grouping by dialogue block" is the most severe representation mismatch.
-- Dual LLM voting consistency was $\approx 88.2\%$, with 53.4% favoring original annotations and 46.6% favoring OCR—showing comparable quality but high disagreement on stylized or small text.
+- The +14.4 pp boost in H-mean is not due to improved OCR capability, but rather the alignment of the evaluation protocol with modern OCR behavior, suggesting that the community has likely systematically undervalued manga OCR systems.
+- Type 5 (Under-segmented Bubbles) accounts for more than half of the revisions, indicating that "aggregating whole dialogues into one label" is the most severe representation mismatch.
+- The dual LLM agreement rate for Type 1 is $\approx 88.2\%$ ($15359/17410$), with 53.4% favoring original labels and 46.6% favoring OCR—showing comparable quality but high divergence on stylized or small text requiring human judgment.
 
 ## Highlights & Insights
-- **"Dataset Refinement" as an ICML Paper**: In the LLM/VLM era, generational maintenance of benchmark annotations is methodologically valuable. Reorganizing data to align with modern system behavior can lead to order-of-magnitude changes in evaluation.
-- The **OCR-as-Probe + Dual LLM Voting + Human Adjudication** pipeline reduces "total human audit" costs to 11.8%, providing an engineering paradigm for updating other legacy datasets (e.g., VQA, RefCOCO).
-- **Expressive Compatibility**: Explicitly addressing the compatibility between expressive structures (onomatopoeia) and evaluation protocols ensures that annotations evolve alongside downstream tasks.
+- **"Repairing a dataset" as an ICML paper**: In the LLM/VLM era, the intergenerational maintenance of benchmark annotations carries methodological value. Reorganizing the same data to align with modern system behavior can lead to order-of-magnitude changes in results.
+- **OCR-as-Probe + Dual LLM Voting + Human Fallback**: This three-layer pipeline reduces "full human audit" costs to 11.8%, providing an engineering paradigm transferable to other legacy datasets (e.g., old VQA, RefCOCO, or grounding datasets).
+- **Expressive Structures and Evaluation Compatibility**: Treating the compatibility between onomatopoeia/layout and evaluation protocols as a first-class annotation problem reflects a "semantic evolution" of datasets that is more sustainable than fixed-schema paradigms.
+- The 88.2% LLM agreement rate is an interesting byproduct: using frontier LLMs from different vendors as weak labeling ensemblers, paired with human fallback for discrepancies, is a pattern worth reusing in more annotation tasks.
 
 ## Limitations & Future Work
-- The commercial Mantra OCR is closed-source. Collaborative replication requires substituting it with open-source OCR, which may yield different discrepancy sets.
-- Geometric revisions (Types 2-5) relied heavily on manual labor by the four authors; no automated script was provided for replication.
-- Only "dialogue text" was revised; higher-level annotations like panels and characters remain untouched, though manga VLM evaluation relies heavily on them.
+- The commercial Mantra OCR is closed-source; the paper does not disclose architecture details, making the "discrepancy candidate generator" inaccessible to the community.
+- There is no automated, rule-based script for Type 2-5 geometric revisions; they relied on manual execution by the four authors, requiring significant effort for replication. Inter-annotator agreement metrics are not provided.
+- Only the "dialogue text" layer was revised; higher-level annotations like panels or characters remain untouched, though manga-specific VLM evaluations (e.g., MangaUB, MangaVQA) rely heavily on these.
+- The +14.4 pp gain is relative; comparing with a third-party OCR would better isolate the contributions of "protocol improvement" vs. "OCR adaptation to new labels."
 
 ## Related Work & Insights
-- **vs MangaOCR (Baek 2026)**: While MangaOCR improved the model, this work improves the benchmark; the authors utilize the MangaOCR protocol to quantify improvements.
-- **vs COO (Baek 2022)**: COO introduced onomatopoeia labels; this work builds on that by resolving spatial conflicts between dialogue and onomatopoeia.
-- **Insight**: Using different frontier LLMs as weak-label ensemblers for discrepancy samples is a robust pattern for large-scale data maintenance.
+- **vs. MangaOCR (Baek 2026)**: MangaOCR improved the recognition model; this paper improves the evaluation benchmark. This work uses the MangaOCR E2E protocol to quantify "benchmark-side" contributions.
+- **vs. COO (Baek 2022)**: COO introduced onomatopoeia labels to Manga109; this work further resolves spatial conflicts between onomatopoeia and dialogue labels.
+- **vs. Transcription Models (Manga Whisperer / Magi series, Sachdeva & Zisserman 2024)**: These generative models rely on Manga109 for training/eval. Annotation quality directly determines their evaluation ceiling; this work is a contribution "upstream."
+- **Insight**: Re-evaluating legacy vision datasets every few years to check if benchmarks can still distinguish model differences is a research problem worth systematic attention as multimodal models evolve.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ (Methodology of AI-assisted generational maintenance is significant even without a new model.)
-- **Experimental Thoroughness**: ⭐⭐⭐ (Sufficient to prove the point, but lacks multi-OCR validation or inter-annotator agreement metrics.)
-- **Writing Quality**: ⭐⭐⭐⭐ (Clear categorization with helpful statistical breakdowns.)
-- **Value**: ⭐⭐⭐⭐⭐ (Manga109 is the de facto benchmark; this update essentially upgrades the reliability of the entire manga AI toolchain.)
+- Novelty: ⭐⭐⭐ No new model, but "AI-assisted annotation maintenance" is executed as a rigorous methodology; value exceeds technical novelty.
+- Experimental Thoroughness: ⭐⭐⭐ Comparative experiments on a single OCR/benchmark are sufficient to prove the point, but lack third-party OCR verification and agreement metrics.
+- Writing Quality: ⭐⭐⭐⭐ Clear categorization of the five issues, with statistics and figures for each; claims are conservative and well-supported.
+- Value: ⭐⭐⭐⭐⭐ Manga109 is the de facto benchmark for manga AI; the new version will be widely adopted, upgrading the reliability of the entire manga AI toolchain.
 
 <!-- RELATED:START -->
 
@@ -128,18 +133,7 @@ Instead of a new model, the same commercial OCR output is compared against both 
 - [\[ACL 2026\] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines](../../ACL2026/multimodal_vlm/reducing_peak_memory_usage_for_modern_multimodal_large_language_model_pipelines.md)
 - [\[AAAI 2026\] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](../../AAAI2026/multimodal_vlm/towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)
 - [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2026/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model.md)
-- [\[ACL 2026\] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines](../../ACL2026/multimodal_vlm/reducing_peak_memory_usage_for_modern_multimodal_large_language_model_pipelines.md)
-- [\[AAAI 2026\] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](../../AAAI2026/multimodal_vlm/towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)
-- [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](../../NeurIPS2025/multimodal_vlm/revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
+- [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](../../CVPR2026/multimodal_vlm/revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
 
 </div>
 

@@ -2,82 +2,81 @@
 title: >-
   [Paper Note] Convex Distance Operator Transport: A Convex and Geometry-Preserving Formulation
 description: >-
-  [ICML 2026][3D Vision][Optimal Transport] This paper introduces CDOT (Convex Distance Operator Transport), which "operatorizes" the distance matrices and coupling of each metric space. By replacing the non-convex squared…
+  [ICML 2026][3D Vision][Gromov–Wasserstein] This paper proposes CDOT (Convex Distance Operator Transport), which "operatorizes" the distance matrices and coupling of each metric space. By replacing the non-convex squared pairwise distance difference in FGW with $\|D_X T_\pi - T_\pi D_Y\|_{\mathrm{HS}}^2$, the authors obtain a framework for heterogeneous space al
 tags:
-  - "ICML 2026"
-  - "3D Vision"
-  - "Optimal Transport"
-  - "Gromov–Wasserstein"
-  - "Distance Operator"
-  - "Convex Optimization"
-  - "Frank–Wolfe"
+  - ICML 2026
+  - 3D Vision
+  - Gromov–Wasserstein
+  - Frank–Wolfe
 date: 2026-05-08
-content_hash: 5aab7c6f10c88732
+content_hash: 4c155625842257d3
 ---
-
 # Convex Distance Operator Transport: A Convex and Geometry-Preserving Formulation
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.02047](https://arxiv.org/abs/2606.02047)  
-**Code**: None  
+**Code**: N/A  
 **Area**: Optimal Transport / Convex Optimization / Metric Measure Spaces  
 **Keywords**: Optimal Transport, Gromov–Wasserstein, Distance Operator, Convex Optimization, Frank–Wolfe
 
 ## TL;DR
-This paper introduces CDOT (Convex Distance Operator Transport), which "operatorizes" the distance matrices and coupling of each metric space. By replacing the non-convex squared pairwise distance difference in FGW with $\|D_X T_\pi - T_\pi D_Y\|_{\mathrm{HS}}^2$, the authors obtain a heterogeneous space alignment framework that is **strictly convex with respect to the coupling $\pi$**, while remaining a valid pseudo-metric and possessing finite-sample risk bounds.
+This paper proposes CDOT (Convex Distance Operator Transport), which "operatorizes" the distance matrices and coupling of each metric space. By replacing the non-convex squared pairwise distance difference in FGW with $\|D_X T_\pi - T_\pi D_Y\|_{\mathrm{HS}}^2$, the authors obtain a framework for heterogeneous space alignment that is **strictly convex with respect to the coupling $\pi$**, while remaining a valid pseudo-metric and possessing finite-sample risk bounds.
 
 ## Background & Motivation
 
-**Background**: The de facto standard for comparing probability distributions across heterogeneous domains is Gromov–Wasserstein (GW) and its node-featured version, Fused GW (FGW). These methods measure structural misalignment using squared pairwise distance differences like $|d_\mathcal{X}(X,X') - d_\mathcal{Y}(Y,Y')|^2$, overlaid with a feature alignment term $\mathbb{E}_\pi[\|f_\mathcal{X}(X)-f_\mathcal{Y}(Y)\|^2]$. This framework is widely used in tasks requiring cross-domain comparisons such as graph classification, brain connectome alignment, and shape matching.
+**Background**: The de facto standard for comparing probability distributions across heterogeneous domains is Gromov–Wasserstein (GW) and its feature-augmented version, Fused GW (FGW). They measure structural misalignment using squared pairwise distance differences like $|d_\mathcal{X}(X,X') - d_\mathcal{Y}(Y,Y')|^2$, overlaid with a feature alignment term $\mathbb{E}_\pi[\|f_\mathcal{X}(X)-f_\mathcal{Y}(Y)\|^2]$. This framework is widely used in tasks requiring cross-domain comparisons, such as graph classification, brain connectome alignment, and shape matching.
 
-**Limitations of Prior Work**: The structural term in FGW/GW involves a **tensor product form** $\pi \otimes \pi$. While quadratic in $\pi$, its Hessian is indefinite, making the **objective non-convex**. Consequently: (i) Frank–Wolfe or projected gradient methods can only guarantee convergence to local stationary points; (ii) the methods are highly sensitive to graphs with different node cardinalities or local geometric jitter—slight perturbations in node counts or edge weights can cause pairwise distance matching to fail; (iii) almost no non-convex GW variant provides statistical consistency or finite-sample bounds for the "actual coupling output by the algorithm," usually only proving the distance between empirical and population risks. Table 1 compares GW, FGW, Entropic GW, Sliced GW, Low-rank GW, GW-SDP, IsoRank, and COPT, showing that the column for "simultaneously satisfying pseudo-metric, convexity, consistency, and finite-sample bounds on mm spaces" is almost entirely marked with ✗.
+**Limitations of Prior Work**: The structural term in FGW/GW involves a **tensor product form** $\pi \otimes \pi$, which is quadratic in $\pi$ but with an indefinite Hessian, making the **objective non-convex**. Consequently: (i) Algorithms like Frank–Wolfe or projected gradient only guarantee convergence to local stationary points; (ii) The models are highly sensitive to differences in node cardinality or local geometric jitters—slight perturbations in nodes or edge weights can cause pairwise distance comparisons to fail; (iii) Almost all non-convex GW variants lack statistical consistency and finite-sample bounds for the "actual coupling output by the algorithm," only proving the distance between empirical and population risks. Table 1 compares GW, FGW, Entropic GW, Sliced GW, Low-rank GW, GW-SDP, IsoRank, and COPT, showing that the column "Simultaneously possessing pseudo-metric, convexity, consistency, and finite-sample bounds on mm spaces" is almost entirely marked with ✗.
 
-**Key Challenge**: Retaining the **pairwise distance** comparison of GW yields elegant pseudo-metric properties, but it also embeds non-convexity directly into the objective. Attempting to convexify (e.g., via entropy regularization, SDP relaxation, or slicing) often breaks the metric properties or loses the explicit transport plan. The authors aim to achieve three things simultaneously: **convexity + pseudo-metric + explicit coupling**.
+**Key Challenge**: Retaining the **pairwise distance** comparison of GW yields elegant pseudo-metric properties but hardcodes non-convexity into the objective. Attempts to convexify (e.g., entropic regularization, SDP relaxation, slicing) often break the metric property or lose an explicit transport plan. The authors aim to achieve three things simultaneously: **convexity + pseudo-metric + explicit coupling**.
 
-**Goal**: (1) Propose an alignment objective that is strictly convex in $\pi$ and remain geometry-aware; (2) prove that it induces a valid pseudo-metric on attributed compact mm spaces; (3) provide an algorithm with global convergence in polynomial time, accompanied by a finite-sample risk decomposition.
+**Goal**: (1) Provide an alignment objective that is strictly convex in $\pi$ and geometry-aware; (2) Prove that it induces a valid pseudo-metric on attributed compact mm spaces; (3) Develop an algorithm with global convergence in polynomial time, accompanied by a finite-sample risk decomposition.
 
-**Key Insight**: This work elevates "distance" from a matrix to an operator—defining the distance operator as $(D_{\mathbb{P}_X} f)(x) = \int d_\mathcal{X}(x,x') f(x') \mathbb{P}_X(dx')$ and the "coupling" as a conditional expectation operator $(T_\pi g)(x) = \int g(y) \pi(dy|x)$. At the operator level, "aligning structures" naturally translates to whether $D_X T_\pi$ and $T_\pi D_Y$ **intertwine**, measured by the difference in Hilbert–Schmidt norms. This "operator intertwining error" is a linear function of $T_\pi$ → the squared HS norm is quadratic and positive semi-definite with respect to $\pi$ → directly convex.
+**Key Insight**: Elevate "distances" from matrices to operators—defining the distance operator as $(D_{\mathbb{P}_X} f)(x) = \int d_\mathcal{X}(x,x') f(x') \mathbb{P}_X(dx')$ and the "coupling" as a conditional expectation operator $(T_\pi g)(x) = \int g(y) \pi(dy|x)$. At the operator level, "structural alignment" naturally becomes the question of whether $D_X T_\pi$ and $T_\pi D_Y$ **intertwine**, measured by the Hilbert–Schmidt norm difference. This "operator commutation error" is a linear function of $T_\pi \rightarrow$ the squared HS norm is quadratic and positive semi-definite in $\pi \rightarrow$ directly convex.
 
-**Core Idea**: By using "the conditional average distance from each $x$ to $Y$ under $\pi$" minus "the conditional average distance from each $y$ to $X$ under $\pi$" as the structural misalignment measure, the method **upgrades GW's edge-by-edge comparison to a comparison of aggregated distance profiles**. This eliminates the non-convex $\pi\otimes\pi$ tensor product and makes the model more robust to node count differences and local noise (e.g., Figure 1 shows two cycle graphs with different node counts are structurally equivalent under CDOT but not under FGW).
+**Core Idea**: Use the difference between "the conditional average distance from each $x$ to $Y$ viewed by $\pi$" and "the conditional average distance from each $y$ to $X$ viewed by $\pi$" as the structural misalignment measure. **This upgrades the edge-by-edge comparison of GW to an aggregated distance profile comparison**, eliminating the non-convex $\pi\otimes\pi$ tensor product while remaining robust to cardinality differences and local noise (as shown in Figure 1, two cycles with different node counts are structurally equivalent under CDOT but not under FGW).
 
 ## Method
 
 ### Overall Architecture
 
-The inputs are two attributed compact mm spaces $\mathfrak{X} = (\mathcal{X}, d_\mathcal{X}, \mathbb{P}_X, f_\mathcal{X})$ and $\mathfrak{Y} = (\mathcal{Y}, d_\mathcal{Y}, \mathbb{P}_Y, f_\mathcal{Y})$, and the output is a transport plan $\pi \in \Pi(\mathbb{P}_X, \mathbb{P}_Y)$ (optionally projected to a permutation matrix $\hat P$). The pipeline involves:
+The core problem CDOT addresses is how to measure structural misalignment between two heterogeneous metric spaces without sacrificing convexity. While FGW compares pairwise distance differences $|d_\mathcal{X}-d_\mathcal{Y}|^2$—which is geometrically intuitive but forces the non-convex $\pi\otimes\pi$ into the objective—CDOT adopts a different perspective. It first promotes both "distance" and "coupling" to operators, then formulates "structural alignment" as the commutation of these two operators.
 
-1.  **Operatorizing Geometry**: Representing the geometry of both spaces as distance operators $D_{\mathbb{P}_X}$ and $D_{\mathbb{P}_Y}$, and the coupling to be solved as a conditional expectation operator $T_\pi$.
-2.  **Convex CDOT Objective**: $\mathcal{L}_\alpha(\pi) = (1-\alpha)\,\mathbb{E}_\pi[c_f(X,Y)] + \tfrac{\alpha}{2}\|D_{\mathbb{P}_X} T_\pi - T_\pi D_{\mathbb{P}_Y}\|_{\mathrm{HS}}^2$, where $c_f(x,y)=\|f_\mathcal{X}(x)-f_\mathcal{Y}(y)\|_2^2$.
-3.  **Discretization**: $D_{\hat{\mathbb{P}}_X}$ uses the normalized distance matrix $d_\mathcal{X}(X_i,X_j)/n_X$, and $T_\pi$ is represented by $n\pi$. The structural term becomes $\|D_{\hat{\mathbb{P}}_X}\pi - \pi D_{\hat{\mathbb{P}}_Y}\|_F^2$, resulting in a **convex QP** over the transport polytope.
-4.  **Solver**: The Frank–Wolfe (FW) algorithm is used (projection-free), solving a linear minimization (standard LP, solvable by OT solvers) at each step. The paper also introduces "lazy gradient FW" to update gradients incrementally using the quadratic structure, reducing the constant factors.
-5.  **Optional Hard Matching**: The Hungarian algorithm is used to solve the LAP $\hat P = \arg\max_{P\in\mathcal{P}_n} \mathrm{Tr}(P^\top \hat\pi)$, projecting the soft coupling into a permutation.
+Specifically, the input consists of two attributed compact mm spaces $\mathfrak{X} = (\mathcal{X}, d_\mathcal{X}, \mathbb{P}_X, f_\mathcal{X})$ and $\mathfrak{Y} = (\mathcal{Y}, d_\mathcal{Y}, \mathbb{P}_Y, f_\mathcal{Y})$, and the output is a transport plan $\pi \in \Pi(\mathbb{P}_X, \mathbb{P}_Y)$. The first step expresses the distances on both sides as distance operators $D_{\mathbb{P}_X}, D_{\mathbb{P}_Y}$ and the target coupling as a conditional expectation operator $T_\pi$. The CDOT objective is then defined as the feature alignment term plus a "commutation error" structural term: $\mathcal{L}_\alpha(\pi) = (1-\alpha)\,\mathbb{E}_\pi[c_f(X,Y)] + \tfrac{\alpha}{2}\|D_{\mathbb{P}_X} T_\pi - T_\pi D_{\mathbb{P}_Y}\|_{\mathrm{HS}}^2$, where $c_f(x,y)=\|f_\mathcal{X}(x)-f_\mathcal{Y}(y)\|_2^2$. For finite samples, the distance operator is discretized using a normalized distance matrix $d_\mathcal{X}(X_i,X_j)/n_X$, the coupling is represented by $n\pi$, and the structural term becomes $\|D_{\hat{\mathbb{P}}_X}\pi - \pi D_{\hat{\mathbb{P}_Y}}\|_F^2$. The entire problem is a convex quadratic program (QP) over the transport polytope. It is solved using the projection-free Frank–Wolfe algorithm, where each step involves solving a linear minimization problem (a standard LP, solvable via OT solvers). If a hard matching is required downstream, the Hungarian algorithm projects the soft coupling onto a permutation matrix $\hat P = \arg\max_{P\in\mathcal{P}_n} \mathrm{Tr}(P^\top \hat\pi)$.
 
 ### Key Designs
 
-1.  **Operator-Layer Structure Regularization $\mathcal{R}(\pi) = \|D_{\mathbb{P}_X} T_\pi - T_\pi D_{\mathbb{P}_Y}\|_{\mathrm{HS}}^2$**:
-    *   Function: Replaces the bilinear, non-convex pairwise distance difference in FGW with a convex operator intertwining error in $\pi$.
-    *   Mechanism: It can be proven via integral transforms that $\mathcal{R}(\pi) = \iint \Gamma_\pi(x,y)^2\,\mathbb{P}_X(dx)\mathbb{P}_Y(dy)$, where $\Gamma_\pi(x,y) = \mathbb{E}_\pi[d_\mathcal{X}(x,X)|Y=y] - \mathbb{E}_\pi[d_\mathcal{Y}(y,Y)|X=x]$. That is, CDOT compares the difference between "the conditional average distance profile of $x$ in $\mathcal{X}$" and "the conditional average distance profile of $y$ in $\mathcal{Y}$" rather than pairwise distances. The convexity follows from the HS norm squared with respect to $T_\pi$ (and thus $\pi$), combined with the linearity of the feature term, making the overall $\mathcal{L}_\alpha$ strictly convex (Theorem 3.4). Furthermore, the square root of this objective $d_{\mathrm{CT}}^{(\alpha)}$ constitutes a pseudo-metric on attributed compact mm spaces (Theorem 3.5).
-    *   Design Motivation: The "pairwise distance" $|d-d'|^2$ form of GW, which inherently includes $\pi\otimes\pi$, is the root of non-convexity. Replacing "pairwise" with "aggregated expectations" preserves geometric meaning (relationships between a node and its surrounding structure) while reducing the objective from bilinear to linear plus quadratic positive semi-definite forms, which is the key to convexification. This also makes the model naturally robust to node cardinality differences.
+**1. Operator-level Structural Regularization: Replacing FGW's Non-convex Pairwise Differences with a Convex "Commutation Error"**
 
-2.  **Dispersion Gap Decomposition: $\mathcal{R}_{\mathrm{GW},2}(\pi) - \mathcal{R}(\pi) = \mathcal{V}(\pi)$**:
-    *   Function: Quantifies exactly what CDOT omits compared to GW within the same coordinate system, theoretically explaining why GW is non-convex.
-    *   Mechanism: Dispersion is defined as $\mathcal{V}(\pi) = \iint (\mathrm{Var}_\pi[d_\mathcal{X}(x,X)|Y=y] + \mathrm{Var}_\pi[d_\mathcal{Y}(y,Y)|X=x])\,\mathbb{P}_X(dx)\mathbb{P}_Y(dy)$, capturing the "conditional variance of distance" induced by the coupling. Theorem 3.7 strictly proves that GW structural cost = CDOT structural cost + dispersion, which is equivalent to decomposing GW into a "convex structural term + concave dispersion penalty."
-    *   Design Motivation: This decomposition provides a clean geometric explanation for non-convexity. GW contour lines in the $(\mathcal{R},\mathcal{V})$ plane are $x+y=c$ lines, which can be tangent to non-convex "dart-shaped" feasible regions at local optima. CDOT contour lines are vertical $x=c$ lines, heading straight toward the global optimum horizontally (Figure 2). This also explains why GW prefers nearly deterministic couplings (minimizing dispersion), while CDOT tends toward more diffused soft couplings (requiring LAP post-processing for hard matching).
+The bilinear form of $\pi\otimes\pi$ in the FGW structural term is the source of non-convexity. CDOT replaces it with the regularization term $\mathcal{R}(\pi) = \|D_{\mathbb{P}_X} T_\pi - T_\pi D_{\mathbb{P}_Y}\|_{\mathrm{HS}}^2$. A crucial observation is that via integral transformation, $\mathcal{R}(\pi) = \iint \Gamma_\pi(x,y)^2\,\mathbb{P}_X(dx)\mathbb{P}_Y(dy)$, where $\Gamma_\pi(x,y) = \mathbb{E}_\pi[d_\mathcal{X}(x,X)\mid Y=y] - \mathbb{E}_\pi[d_\mathcal{Y}(y,Y)\mid X=x]$. In other words, CDOT compares the "conditional average distance profile of $x$ in $\mathcal{X}$" against the "conditional average distance profile of $y$ in $\mathcal{Y}$"—aggregating "pairwise distances" into "expected distances."
 
-3.  **Frank–Wolfe + Glued Measure Risk Decomposition**:
-    *   Function: Decomposes the gap between "the coupling $\hat\pi$ output by the algorithm on finite samples" and "the population optimum $\pi^*$" into two controllable terms.
-    *   Mechanism: (i) Since discrete CDOT is a convex QP on the transport polytope, standard FW (with step size $\gamma_t=2/(t+2)$) achieves global convergence at $O(1/T)$. (ii) A glued measure $\Phi_n(\hat\pi)(dx,dy) = \int Q_X(dx|\hat x) Q_Y(dy|\hat y) \hat\pi(d\hat x, d\hat y)$ ($Q_X, Q_Y$ are optimal couplings for $\mathbb{P}_X$↔$\hat{\mathbb{P}}_X$ and $\mathbb{P}_Y$↔$\hat{\mathbb{P}}_Y$) is used to lift the discrete solution back to the population space. Theorem 5.6 provides $|\mathcal{L}_\alpha(\Phi_n(\hat\pi)) - \min \mathcal{L}_\alpha| \le \tfrac{32\alpha n_{\min}}{T+3} + C\,(W_1^{d_\mathcal{X}}(\mathbb{P}_X,\hat{\mathbb{P}}_X) + W_1^{d_\mathcal{Y}}(\mathbb{P}_Y,\hat{\mathbb{P}}_Y))$. Corollary 5.7 achieves almost sure risk consistency as $n_{\min}/T_n\to 0$.
-    *   Design Motivation: Previous GW-style methods could only prove that empirical and population risks were close, but not that "the algorithm's returned $\hat\pi$ itself" approximated the population optimum. CDOT's convexity allows the "global convergence" and "empirical-population connection" steps to be controlled separately, providing the first finite-sample bound for an algorithmic output on mm spaces.
+This reformulation is effective because $T_\pi$ is a linear operator with respect to $\pi$, so the squared HS norm is quadratic and positive semi-definite in $T_\pi$ (and thus $\pi$). Combined with the linear feature term, the overall $\mathcal{L}_\alpha$ is strictly convex (Theorem 3.4). Meanwhile, it retains geometric meaning by characterizing the relationship between a node and its surrounding structure; thus, the square root of the objective $d_{\mathrm{CT}}^{(\alpha)}$ remains a valid pseudo-metric on attributed compact mm spaces (Theorem 3.5). Aggregated expectations are also naturally robust to cardinality differences: two spaces with similar geometry but different node counts can be identified as equivalent under CDOT (Figure 1).
+
+**2. Dispersion Gap Decomposition: Quantifying What CDOT Omits Relative to GW**
+
+To explain why GW is non-convex and where CDOT gains convexity, the paper provides a clean decomposition within the same coordinate system. Defining dispersion $\mathcal{V}(\pi) = \iint \big(\mathrm{Var}_\pi[d_\mathcal{X}(x,X)\mid Y=y] + \mathrm{Var}_\pi[d_\mathcal{Y}(y,Y)\mid X=x]\big)\,\mathbb{P}_X(dx)\mathbb{P}_Y(dy)$, which captures the "conditional variance of distances" induced by the coupling, Theorem 3.7 proves that the GW structural cost is exactly the CDOT structural cost plus this dispersion:
+
+$$\mathcal{R}_{\mathrm{GW},2}(\pi) - \mathcal{R}(\pi) = \mathcal{V}(\pi).$$
+
+Thus, GW equals "Convex structural term + Concave dispersion penalty." This gives a geometric explanation for non-convexity: in the $(\mathcal{R},\mathcal{V})$ plane, GW contour lines are diagonal $x+y=c$, which can be tangent to non-convex "dart-shaped" feasible regions at local optima. CDOT contour lines are vertical $x=c$, heading straight toward the global optimum along the horizontal axis (Figure 2). This also explains why GW prefers nearly deterministic couplings (to minimize dispersion), while CDOT does not penalize dispersion and tends towards more diffuse soft couplings, requiring a subsequent LAP for hard matching.
+
+**3. Frank–Wolfe + Glued Measure: Connecting Algorithmic Output to Population Optimality**
+
+Prior GW-style methods could prove empirical risk approximates population risk but could not guarantee that "the specific $\hat\pi$ returned by the algorithm" approximates the population optimum. CDOT's convexity allows this to be controlled in two steps. First, discrete CDOT is a convex QP, and standard FW (step size $\gamma_t=2/(t+2)$) achieves global convergence at $O(1/T)$, bounding the optimization error. Second, a glued measure $\Phi_n(\hat\pi)(dx,dy) = \int Q_X(dx\mid \hat x) Q_Y(dy\mid \hat y) \hat\pi(d\hat x, d\hat y)$ (where $Q_X, Q_Y$ are optimal couplings for $\mathbb{P}_X\leftrightarrow\hat{\mathbb{P}}_X$ and $\mathbb{P}_Y\leftrightarrow\hat{\mathbb{P}}_Y$) is used to lift the discrete solution back to the population space, bounding the statistical error via $W_1$. Together, Theorem 5.6 provides a finite-sample bound for the algorithmic output:
+
+$$\big|\mathcal{L}_\alpha(\Phi_n(\hat\pi)) - \min \mathcal{L}_\alpha\big| \le \tfrac{32\alpha n_{\min}}{T+3} + C\,\big(W_1^{d_\mathcal{X}}(\mathbb{P}_X,\hat{\mathbb{P}}_X) + W_1^{d_\mathcal{Y}}(\mathbb{P}_Y,\hat{\mathbb{P}}_Y)\big),$$
+
+where the first term is optimization error and the second is statistical error. Corollary 5.7 further provides almost sure risk consistency as $n_{\min}/T_n\to 0$—a guarantee for algorithmic output previously unavailable for the GW family on mm spaces.
 
 ### Loss & Training
 
-The empirical objective $\hat{\mathcal{L}}_\alpha(\pi) = (1-\alpha)\langle C_f, \pi\rangle_F + \tfrac{\alpha}{2}\, n_X n_Y \|D_{\hat{\mathbb{P}}_X}\pi - \pi D_{\hat{\mathbb{P}}_Y}\|_F^2$. A fusion weight of $\alpha=0.5$ is the default for synthetic and real-world data. Iteration counts $T \in \{50, 100, 200\}$ are sufficient to reduce optimization error to negligible levels. The per-step complexity is $\mathcal{O}(n^3)$ (same order as FGW), and the lazy gradient variant significantly reduces the constant factor. Overall, the complexity is three orders of magnitude lower than the $\mathcal{O}(n^6)$ of GW-SDP. Applications requiring hard matching follow with the Hungarian algorithm.
+The empirical objective is $\hat{\mathcal{L}}_\alpha(\pi) = (1-\alpha)\langle C_f, \pi\rangle_F + \tfrac{\alpha}{2}\, n_X n_Y \|D_{\hat{\mathbb{P}}_X}\pi - \pi D_{\hat{\mathbb{P}}_Y}\|_F^2$. The fusion weight defaults to $\alpha=0.5$ (applicable to both synthetic and real data), and iterations $T \in \{50,100,200\}$ are sufficient to make optimization error negligible. Per-step complexity is $\mathcal{O}(n^3)$ (same as FGW). The paper's lazy gradient FW variant uses the quadratic structure for incremental gradient updates to reduce constant factors, making it three orders of magnitude faster than the $\mathcal{O}(n^6)$ GW-SDP. Applications requiring hard matching apply a Hungarian step after convergence.
 
 ## Key Experimental Results
 
 ### Main Results
 
-On synthetic 2D clustering point clouds ($N=4n$, repeated 100 times, reporting MSE), CDOT is compared with FGW, Entropic FGW, IsoRank, Spectral, and COPT:
+Synthetic 2D clustering point clouds ($N=4n$, 100 repetitions, reporting MSE). CDOT is compared against FGW, Entropic FGW, IsoRank, Spectral, and COPT:
 
 | $n$ | CDOT | FGW | EFGW | IsoRank | Spectral | COPT |
 |----|------|------|------|---------|----------|------|
@@ -85,9 +84,9 @@ On synthetic 2D clustering point clouds ($N=4n$, repeated 100 times, reporting M
 | 300 | **0.0027** | 0.0055 | 0.0038 | 0.0053 | 1.3276 | 0.6670 |
 | 500 | **0.0016** | 0.0034 | 0.0025 | 0.0033 | 1.3373 | 0.6670 |
 
-CDOT achieves the lowest MSE across all sample sizes, with MSE monotonically decreasing as $n$ increases—directly validating the statistical consistency of Theorem 5.6. Spectral and COPT, which do not use feature information, consistently fail to learn the correct alignment.
+CDOT achieves the lowest MSE across all sample sizes, and the MSE decreases monotonically as $n$ increases—empirically validating the statistical consistency of Theorem 5.6. Spectral and COPT, which ignore feature information, fail to learn the correct alignment.
 
-Node alignment accuracy for OASIS-3 brain connectomes (pairwise matching of 100 subjects):
+OASIS-3 Brain Connectome Node Alignment Accuracy (pairwise matching of 100 subjects):
 
 | Method | Diffusion Distance | Geodesic Distance | Topology |
 |------|----------------|---------------|----------|
@@ -97,9 +96,9 @@ Node alignment accuracy for OASIS-3 brain connectomes (pairwise matching of 100 
 | IsoRank | – | – | **0.4055** |
 | Spectral / COPT | – | – | 0.0737 / 0.0253 |
 
-CDOT significantly leads when using diffusion distance (0.61 vs FGW 0.19). FGW performs slightly better on geodesic distance because FGW directly penalizes pairwise distance distortion, favoring geometric information sensitive to single shortest paths. Conversely, diffusion averages all paths, reducing the "pairwise difference contrast" required by GW; CDOT's operator aggregation successfully leverages this global signal.
+CDOT leads significantly under diffusion distance (0.61 vs. FGW 0.19). FGW performs slightly better on geodesic distance because FGW directly penalizes pairwise distance distortion, favoring geometric information sensitive to single shortest paths. Diffusion distance, which averages all paths, lowers the "pairwise difference contrast" needed by GW, whereas CDOT's operator aggregation effectively utilizes such global signals.
 
-Graph classification benchmarks (node counts 17–40):
+Graph Classification Benchmarks (Node counts 17–40):
 
 | Dataset | CDOT | FGW | GW | COPT |
 |--------|------|-----|----|----- |
@@ -109,49 +108,48 @@ Graph classification benchmarks (node counts 17–40):
 | NCI1   | **0.748** | 0.730 | 0.571 | 0.599 |
 | ENZYMES| **0.513** | 0.445 | 0.238 | 0.235 |
 
-CDOT wins on 5/5 datasets, with gains of 1.7–6.8 percentage points over FGW and even larger gaps compared to GW/COPT.
+CDOT outperforms in 5/5 datasets, with improvements over FGW ranging from 1.7–6.8 percentage points, and larger gaps over GW/COPT.
 
 ### Ablation Study
 
-| Configuration | Key Finding | Description |
+| Configuration | Key Phenomenon | Explanation |
 |------|----------|------|
-| $\alpha$ sweep | Most stable near $\alpha=0.5$ | Feature and structural terms need balance; excessive structural weight biases toward pure geometry. |
-| Iteration count $T$ | $T=200$ is sufficient | Consistent with the $O(1/T)$ rate in Theorem 5.6. |
-| Distance normalization | Stable with max-normalization | Operator scale is sensitive to the HS norm. |
-| Soft vs. LAP | Soft couplings are naturally diffuse | Dispersion gap explanation: CDOT does not penalize dispersion, requiring LAP for hard matching. |
-| Distance (Diff. vs Geo.) | CDOT prefers diffusion | Confirms CDOT uses aggregated profiles while FGW uses pairwise differences. |
+| $\alpha$ sweep | Most stable around $\alpha=0.5$ | Balance needed; excessive structural weight biases toward pure geometry. |
+| Iterations $T=50/100/200$ | $T=200$ is sufficient | Consistent with the $O(1/T)$ rate in Theorem 5.6. |
+| Distance normalization | Stable with max-value normalization | Operator scale is sensitive to the HS norm. |
+| Soft vs. LAP Post-proc | Soft coupling has inherent diffusion | Dispersion gap explanation: CDOT doesn't penalize dispersion, requiring LAP for hard matching. |
+| Distance Choice | CDOT prefers diffusion; FGW prefers geodesic | Confirms CDOT uses aggregated profiles while FGW uses pairwise differences. |
 
 ### Key Findings
 
-- **Convexity matters**: CDOT systematically outperforms FGW on synthetic data. The fact that EFGW (which smooths GW to be "near-convex") performs similarly to CDOT reinforces that non-convexity is FGW's primary bottleneck.
-- **Dispersion gap is more than theory**: The inverse performance on brain connectomes (diffusion vs. geodesic) corresponds exactly to geometries with high/low distance variance. CDOT performs better in high-variance geometries as it does not penalize dispersion.
-- **Consistency of algorithm outputs**: CDOT wins consistently on real data like brain connectomes and graph classification, often with lower variance (std 0.04 vs FGW 0.07 on IMDB-B), suggesting FW is much more stable on a convex landscape than FGW in local optima traps.
+- **Convexity is genuinely effective**: CDOT systematically outperforms FGW on synthetic data. EFGW (which smooths GW to be "near-convex") performs closer to CDOT, suggesting non-convexity is the primary bottleneck for FGW.
+- **Dispersion gap is not just a theoretical toy**: The performance swap in brain connectomes (diffusion vs. geodesic) corresponds to high/low variance geometries. CDOT performs better in high-variance geometries because it does not penalize dispersion.
+- **Algorithmic output itself is consistent**: CDOT consistently wins on real data (brain connectomes, graph classification) with generally lower variance (std 0.04 on IMDB-B vs. FGW 0.07), suggesting FW on a convex landscape is far more stable than FGW in local optima traps.
 
 ## Highlights & Insights
 
-- **"Operatorizing Geometry" is the master key to convex GW**: By lifting distance matrices and couplings to operators, "structural alignment" naturally becomes the intertwining error of two operators, eliminating the bilinear $\pi\otimes\pi$. This paradigm of "lifting to operator layers then using linear spectral theory" has precedents in kernel mean embedding and HSIC, but its application to convexify GW is novel. The key is that $T_\pi$ is a linear operator of $\pi$.
-- **Dispersion gap is a rare "exact decomposition of non-convexity"**: Being able to write $\mathcal{R}_{\mathrm{GW}} = \mathcal{R}_{\mathrm{CDOT}} + \mathcal{V}$ (convex + concave), alongside the geometric contour analysis in the $(\mathcal{R},\mathcal{V})$ plane, upgrades the "GW local optima trap" from an empirical observation to a structural explanation. This analysis can be extended to other $\pi\otimes\pi$ based objectives like sliced GW or low-rank GW.
-- **Glued measure is the standard bridge between discrete and population optima**: Using $\Phi_n$ to lift $\hat\pi$ back to the population space and $W_1$ to control statistical error is a powerful trick that can be reused in other consistency proofs for algorithmic outputs, such as entropic OT estimation or neural OT.
+- **"Operatorized Geometry" is the key to convexifying GW**: Lifting distance matrices and couplings to operators turns "structural alignment" into an operator commutation error, eliminating the bilinear $\pi\otimes\pi$. This paradigm of "lifting to operator space and using spectral theory" has precedents in kernel mean embedding and HSIC, but applying it to convexify GW is novel.
+- **The dispersion gap provides a precise decomposition of non-convexity**: Formulating $\mathcal{R}_{\mathrm{GW}} = \mathcal{R}_{\mathrm{CDOT}} + \mathcal{V}$ (Convex + Concave) allows for a geometric interpretation of GW's local optima traps. This analysis can be extended to other $\pi\otimes\pi$ objectives like sliced or low-rank GW.
+- **Glued measure is a standard bridge for consistency proofs**: Using $\Phi_n$ to lift $\hat\pi$ back to population space and bounding statistical error via $W_1$ is a reusable trick for providing guarantees on algorithmic outputs in other OT contexts.
 
 ## Limitations & Future Work
 
-- The authors acknowledge: (i) Zero-discriminativity is still a step away—$d_{\mathrm{CT}}^{(\alpha)} = 0$ does not imply mm space equivalence, but rather a form of "fractional structural equivalence." A complete characterization of the zero-set remains for future work. (ii) The statistical rate on $\mathbb{R}^d$ is $O(n^{-1/d})$, and no polynomial rate is guaranteed in infinite-dimensional settings without additional structure.
-- Observations: (i) The produced couplings are highly diffuse; almost all hard-matching applications require the Hungarian algorithm, yet the approximation gap between soft and hard remains unquantified. (ii) The per-step $\mathcal{O}(n^3)$ complexity is still a bottleneck for graphs with thousands of nodes; lazy FW only provides a constant speedup without offering sub-cubic variants like sliced or low-rank methods. (iii) Assumption 5.5 (Lipschitzness of the optimal coupling's conditional distribution under $W_1$) is quite strong and requires case-by-case verification in discrete graph tasks.
-- Improvement ideas: Use the dispersion decomposition as a "diagnostic tool" to design "semi-convex CDOT" with controllable concave terms, aiming to partially restore GW's hard-matching preference while retaining CDOT's global optimality; combine with entropic regularization or slicing for $\mathcal{O}(n^2)$ approximations; extend the operator framework to non-Euclidean metrics (tree metrics, Wasserstein-on-Wasserstein).
+- The authors acknowledge: (i) Discriminability—$d_{\mathrm{CT}}^{(\alpha)} = 0$ does not imply mm space identity, only a "fractional structural equivalence." Characterizing the zero set is future work; (ii) The statistical rate in $\mathbb{R}^d$ is $O(n^{-1/d})$, and no polynomial rate exists in the infinite-dimensional setting without further structural assumptions.
+- Self-identified limitations: (i) The resulting couplings are highly diffuse, requiring Hungarian matching for almost all hard-matching tasks; the approximation gap between soft and hard remains unquantified; (ii) Per-step $\mathcal{O}(n^3)$ complexity remains a bottleneck for graphs with thousands of nodes; lazy FW offers only constant speedup; (iii) Assumption 5.5 (Lipschitz optimal coupling conditionals) is quite strong and may require case-by-case verification in discrete graph tasks.
+- Improvement ideas: Use the dispersion decomposition as a "diagnostic" to design "semi-convex CDOT" with controllable concave terms; combine with entropic or sliced methods for $\mathcal{O}(n^2)$ approximations; extend operator frameworks to non-Euclidean metrics (tree metrics, Wasserstein-on-Wasserstein).
 
 ## Related Work & Insights
 
-- **vs FGW (Vayer et al., 2020)**: FGW aligns pairwise distances via $\mathbb{E}_{\pi\otimes\pi}|d_\mathcal{X}-d_\mathcal{Y}|^2$, which is non-convex in $\pi$. CDOT uses operator intertwining, resulting in a convex objective. Both share $\mathcal{O}(n^3)$ complexity, but CDOT adds pseudo-metric properties, consistency, and finite-sample bounds.
-- **vs Entropic GW (Peyré et al., 2016)**: Entropy smoothes GW to be "near-convex" but breaks the original pseudo-metric properties and depends on $\varepsilon$ tuning. CDOT is convex in its **original unregularized** form without needing an entropy bridge.
-- **vs GW-SDP (Chen et al., 2024)**: Achieves convexity via SDP relaxation at the cost of $\mathcal{O}(n^6)$ complexity and loss of pseudo-metric properties. CDOT maintains $\mathcal{O}(n^3)$ and remains a pseudo-metric.
-- **vs Sliced GW / Sliced FGW**: Slicing avoids non-convexity by projecting to 1D but often fails to output explicit couplings or sacrifices metric properties. CDOT retains the "explicit transport plan + metricity + convexity" triad.
-- **Inspiration**: The "lift geometry to operators, operate in RKHS / $L^2$ layers" paradigm is highly suitable for graph kernels, scene-graph alignment, and cross-modal OT where both "convexity" and "geometry-awareness" are required. The dispersion gap decomposition serves as a general tool for future research on the convexification of non-convex OT objectives.
+- **vs. FGW (Vayer et al., 2020)**: FGW uses $\mathbb{E}_{\pi\otimes\pi}|d_\mathcal{X}-d_\mathcal{Y}|^2$ for pairwise alignment (non-convex). CDOT uses operator commutation error (convex). Both are $\mathcal{O}(n^3)$, but CDOT adds pseudo-metric + consistency + finite-sample bounds.
+- **vs. Entropic GW (Peyré et al., 2016)**: Entropic regularization smooths GW to be "near-convex" but breaks the pseudo-metric property and depends on $\varepsilon$ tuning. CDOT is convex in its **original, unregularized** form.
+- **vs. GW-SDP (Chen et al., 2024)**: Achieves convexity via SDP relaxation at a cost of $\mathcal{O}(n^6)$ complexity and loss of the pseudo-metric. CDOT maintains $\mathcal{O}(n^3)$ and the metric property.
+- **vs. Sliced GW / FGW**: Slicing avoids non-convexity via 1D projections but either does not output explicit couplings or sacrifices the metric property. CDOT retains the "explicit transport plan + metricity + convexity" triad.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The first truly convex geometry-aware OT objective; the dispersion gap provides a precise decomposition of GW's non-convexity.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers typical heterogeneous alignment scenarios across synthetic, brain connectome, and 5 graph datasets, though checks on larger scales (>1k nodes) or high-frequency applications like 3D shapes are missing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure; Table 1 provides high information density; the flow from convexity and pseudo-metrics to dispersion gaps and risk bounds is seamless.
-- Value: ⭐⭐⭐⭐ Fills a critical gap in the GW family regarding "convexity + consistency + finite-sample bounds," offering significant theoretical value and immediate practical utility for graph alignment and brain connectome analysis.
+- Novelty: ⭐⭐⭐⭐⭐ First truly convex geometry-aware OT objective; the dispersion gap provides an insightful decomposition of GW's non-convexity.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers synthetic, brain connectome, and 5 graph datasets. Lacks larger-scale graphs (>1k nodes) and high-frequency applications like 3D shapes.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure; Table 1 provides high information density; consistent logical flow from convexity to risk bounds.
+- Value: ⭐⭐⭐⭐ Fills a critical gap in the GW family regarding "convexity + consistency + sample bounds." Highly significant theoretical value with direct practical applicability to graph and connectome analysis.
 
 <!-- RELATED:START -->
 
@@ -160,10 +158,10 @@ CDOT wins on 5/5 datasets, with gains of 1.7–6.8 percentage points over FGW an
 ## Related Papers
 
 - [\[ICML 2026\] AvAtar: Learning to Align via Active Optimal Transport](avatar_learning_to_align_via_active_optimal_transport.md)
+- [\[ECCV 2024\] Differentiable Convex Polyhedra Optimization from Multi-view Images](../../ECCV2024/3d_vision/differentiable_convex_polyhedra_optimization_from_multi-view_images.md)
 - [\[ICML 2026\] Streaming Sliced Optimal Transport](streaming_sliced_optimal_transport.md)
-- [\[NeurIPS 2025\] Fully Dynamic Algorithms for Chamfer Distance](../../NeurIPS2025/3d_vision/fully_dynamic_algorithms_for_chamfer_distance.md)
-- [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](../../ICCV2025/3d_vision/identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](../../CVPR2026/3d_vision/glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
+- [\[CVPR 2025\] 3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes](../../CVPR2025/3d_vision/3d_convex_splatting_radiance_field_rendering_with_3d_smooth_convexes.md)
+- [\[ICML 2026\] Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning](geometry-guided_modeling_of_foundation_features_enables_generalizable_object_sha.md)
 
 </div>
 

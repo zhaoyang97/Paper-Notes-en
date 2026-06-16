@@ -2,80 +2,90 @@
 title: >-
   [Paper Note] XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration
 description: >-
-  [ACL 2026][Text Generation][Paper revision] This paper proposes XtraGPT—the first open-source LLM suite (1.5B–14B) specifically designed for academic paper revision. By fine-tuning on 7…
+  [ACL 2026][Text Generation][Paper Note] This paper presents XtraGPT—the first open-source LLM suite (1.5B–14B) specifically for academic paper revision. By fine-tuning on 7,000 top-tier conference papers and 140,000 standard-guided instruction-revision pairs, it achieves context-aware paragraph-level controllable revisions. The 7B version matches GPT-4o-mini
 tags:
-  - "ACL 2026"
-  - "Text Generation"
-  - "Paper revision"
-  - "human-AI collaboration"
-  - "context-awareness"
-  - "controllable generation"
-  - "academic writing"
+  - ACL 2026
+  - Text Generation
 date: 2026-05-08
-content_hash: e5f71ac17f30ac33
+content_hash: 639fbf33329f02b7
 ---
-
 # XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.11336](https://arxiv.org/abs/2505.11336)  
 **Code**: [GitHub](https://github.com/Xtra-Computing/XtraGPT)  
 **Area**: Text Generation  
-**Keywords**: Paper revision, human-AI collaboration, context-awareness, controllable generation, academic writing
+**Keywords**: Paper Revision, Human-AI Collaboration, Context-Awareness, Controllable Generation, Academic Writing
 
 ## TL;DR
 
-This paper proposes XtraGPT—the first open-source LLM suite (1.5B–14B) specifically designed for academic paper revision. By fine-tuning on 7,000 top-tier conference papers and 140,000 criteria-guided instruction-revision pairs, it achieves context-aware paragraph-level controllable revisions. The 7B version matches GPT-4o-mini, while the 14B version outperforms it. Human evaluation indicates that the predicted scores of revised papers increase by an average of 0.65 points.
+This paper presents XtraGPT—the first open-source LLM suite (1.5B–14B) specifically for academic paper revision. By fine-tuning on 7,000 top-tier conference papers and 140,000 standard-guided instruction-revision pairs, it achieves context-aware paragraph-level controllable revisions. The 7B version matches GPT-4o-mini, while the 14B version outperforms GPT-4o-mini. Human evaluations show an average increase of 0.65 points in predicted paper scores after revisions.
 
 ## Background & Motivation
 
-**Background**: The application of LLMs in academic workflows is increasingly widespread, but it remains primarily limited to surface-level polishing via general-purpose models like ChatGPT. Existing AI writing tools either generate entire papers from scratch (raising originality and ethical concerns) or focus solely on grammatical corrections.
+**Background**: LLMs are increasingly used in academic workflows, but applications are mostly limited to surface-level polishing using general-purpose models like ChatGPT. Existing AI writing tools either generate entire papers from scratch (raising originality and ethical concerns) or focus solely on grammatical corrections.
 
-**Limitations of Prior Work**: (1) General LLM revisions of academic papers are often superficial—improving fluency without addressing core argumentative issues (e.g., unclear motivation or vague contributions); (2) Academic writing is inherently iterative, but current LLM workflows treat each prompt as an independent interaction, lacking context tracking across revision rounds; (3) Existing systems lack three critical types of controllability: following contextual examples, following user instructions, and following explicit writing criteria.
+**Limitations of Prior Work**: (1) Revisions by general LLMs often remain superficial—improving fluency without addressing core argumentative issues (e.g., unclear motivation, vague contributions); (2) Academic writing is inherently iterative, but current LLM workflows treat each prompt as an independent interaction, lacking context tracking across revision rounds; (3) Existing systems lack three key controllabilities: following contextual examples, following user instructions, and following explicit writing standards.
 
 **Key Challenge**: Academic paper revision requires an understanding of the full-text context and adherence to domain-specific writing standards, yet general LLMs lack both full-text comprehension capabilities and the internalization of academic writing norms.
 
-**Goal**: To build a human-AI collaborative framework for paper revision where the model acts as an "assistant" providing context-aware, targeted revisions, while humans retain creative control.
+**Goal**: To build a human-AI collaborative paper revision framework where the model acts as an "assistant" providing context-aware, targeted revisions while humans retain creative control.
 
-**Key Insight**: Modeling the revision task as criteria-guided conditional generation—given the full text $T$, the target paragraph $p$, and user instruction $q$, the model generates the revised paragraph $\hat{p} = \text{Model}_\theta(p, q, T)$. Revision intent is regularized through 20 writing criteria extracted from top-tier conference review guidelines.
+**Key Insight**: Modeling the revision task as standard-guided conditional generation—given the full text $T$, target paragraph $p$, and user instruction $q$, generate the revised paragraph $\hat{p} = \text{Model}_\theta(p, q, T)$. Revision intents are standardized through 20 writing criteria distilled from top-tier conference review guidelines.
 
-**Core Idea**: By utilizing criteria-guided intent alignment and context-aware modeling, academic paper revision is elevated from "general polishing" to "precise structural improvement."
+**Core Idea**: Elevating academic paper revision from "general polishing" to "precise structural improvement" through standard-guided intent alignment and context-aware modeling.
 
 ## Method
 
 ### Overall Architecture
 
-The post-training framework of XtraGPT consists of three core components: (1) Criteria-guided intent alignment—20 writing criteria covering six sections: Title, Abstract, Introduction, Background, Experiments, and Conclusion; (2) Context-aware modeling—using the full text $T$ as an explicit input; (3) Controllable Post-Training (CPT)—maximizing $\log P_\theta(\hat{p} | q, T, p)$ on the ReviseQA dataset. During inference, the system follows the HAC protocol: users select a paragraph and issue instructions, the model returns revisions, and the user reviews and integrates them.
+XtraGPT aims to solve the issue where general LLMs only perform "surface-level polishing"—improving sentence flow without addressing core argumentative issues like unclear motivation or vague contributions, while treating prompts as isolated interactions without full-text context. Its post-training framework models "revising a paragraph" as standard-guided conditional generation: given full text $T$, target paragraph $p$, and user instruction $q$, the output is the revised paragraph $\hat{p} = \text{Model}_\theta(p, q, T)$. Three components manage the "direction of revision" (20 writing standards aligning vague intents to specific strategies), "basis for revision" (full text $T$ as explicit input), and "how to learn" (controllable post-training CPT on ReviseQA, maximizing $\log P_\theta(\hat{p}\mid q,T,p)$). During inference, a Human-AI Collaboration (HAC) protocol is followed: the user selects a paragraph and issues instructions, the model provides revisions, and the user audits and integrates them, ensuring creative control remains with the human.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    STD["Standard-Guided Intent Alignment<br/>20 Writing Standards C (across 6 sections)"]
+    CTX["Context-Aware Modeling<br/>Full text T (≤16K tokens) as explicit input"]
+    subgraph DATA["ReviseQA Dataset Construction"]
+        direction TB
+        P["7,000 ICLR Submissions"] --> SMP["Sample paragraphs across 6 core sections"]
+        SMP --> GEN["GPT-4o-mini generates instruction-revision pairs based on standards"]
+        GEN --> VAL["Quality verification by 3 PhD students"]
+        VAL --> D140["140K instruction-revision pairs<br/>(Standard labels + Full text T)"]
+    end
+    STD --> GEN
+    DATA --> CPT["Controllable Post-Training CPT<br/>Maximize log P（p̂ | q, T, p）"]
+    CTX --> CPT
+    CPT --> M["XtraGPT（1.5B–14B）"]
+    M --> HAC["Human-AI Collaboration Inference HAC<br/>Select → Instruct → Revision → Audit → Integrate"]
+```
 
 ### Key Designs
 
-1.  **Criteria-Guided Intent Alignment**:
-    - **Function**: Maps vague user instructions to specific, executable revision strategies.
-    - **Mechanism**: Extracts 20 paragraph-level writing criteria $C$ from ICLR review guidelines and expert experience, covering six core sections (e.g., "Consistency between Title and Content," "Strength and Clarity of Motivation in Introduction," "Support for Main Innovations in Experiments"). Each instruction-revision pair in the training data is explicitly associated with a criterion $c \in C$, enabling the model to learn to associate specific types of requests with corresponding revision strategies.
-    - **Design Motivation**: Author instructions are often high-level and vague (e.g., "strengthen the contribution"), requiring a set of structured criteria to serve as a "bridge" to transform abstract intent into concrete textual operations. These criteria originate from authoritative writing guides, ensuring revisions comply with academic norms.
+**1. Standard-Guided Intent Alignment: Translating high-level vague instructions like "strengthen contribution" into executable revision strategies**
 
-2.  **Context-Aware Modeling**:
-    - **Function**: Ensures paragraph revisions are consistent with the global narrative of the paper.
-    - **Mechanism**: The complete paper body $T$ (excluding acknowledgments and references, controlled within 16,384 tokens) is used as explicit input for the model. The training objective $\mathcal{L}_{CPT}(\theta) = -\mathbb{E}[\log P_\theta(\hat{p} | q, T, p)]$ forces the model to learn representations conditioned on global narrative, structure, and terminology.
-    - **Design Motivation**: Revisions to the "Introduction Motivation" require entirely different considerations than those for "Experimental Analysis." Revisions lacking full-text context lead to inconsistencies—ablation studies show that removing context causes the LC win rate in the Conclusion section to plummet from 50% to 11.76%.
+Author instructions are often broad (e.g., "make the motivation clearer"), leaving the model unsure of what specific changes to make. XtraGPT distills 20 paragraph-level writing standards $C$ from ICLR review guidelines and expert experience, covering six sections: Title, Abstract, Introduction, Background, Experiments, and Conclusion (e.g., "Consistency between title and content," "Strength and clarity of motivation in the introduction," "Experimental support for main innovations"). Each instruction-revision pair in the training data is explicitly tagged with a standard $c \in C$, allowing the model to learn the association between specific requests and corresponding revision strategies. This set of standards bridges the gap between abstract intent and concrete textual operations, ensuring revisions adhere to academic norms rather than random model generation.
 
-3.  **ReviseQA Dataset Construction**:
-    - **Function**: Provides large-scale, high-quality criteria-guided revision training data.
-    - **Mechanism**: Paragraphs were sampled from the six core sections of 7,000 submissions to ICLR 2024, and instruction-revision pairs were generated based on 20 criteria. GPT-4o-mini was used to generate revisions (with a hallucination rate of only 1.7%), and human quality verification was performed by three PhD students. The dataset comprises 140,000 high-quality instruction-revision pairs, with 5% reserved as a test set.
-    - **Design Motivation**: Existing datasets either focus on grammatical correction or cover end-to-end generation, lacking large-scale training resources for paragraph-level structural revision.
+**2. Context-Aware Modeling: maintaining consistency between paragraph revisions and the global narrative**
+
+Revising "motivation in the introduction" requires different considerations than revising "analysis in the experiments"; revisions without full-text context often become detached from the overall paper. XtraGPT includes the complete paper body $T$ (excluding acknowledgments and references, capped at 16,384 tokens) as explicit model input. The training objective $\mathcal{L}_{CPT}(\theta) = -\mathbb{E}[\log P_\theta(\hat{p} \mid q, T, p)]$ forces the model to represent the current paragraph conditioned on global narrative, structure, and terminology. This is the most critical pillar of the framework: ablation studies show that removing context $T$ causes the LC win rate for the conclusion section to plummet from 50% to 11.76%, demonstrating that targeted revision is nearly impossible without the full text.
+
+**3. ReviseQA Dataset Construction: powering large-scale, high-quality standard-guided revision training**
+
+Existing datasets either focus on grammatical correction or end-to-end full-paper generation, lacking resources for "paragraph-level structural revision." Starting from 7,000 ICLR 2024 submissions, XtraGPT samples paragraphs from six core sections of each paper and generates instruction-revision pairs based on the 20 standards. Revisions are produced by GPT-4o-mini (with a hallucination rate of only 1.7%) and verified by three PhD students for quality, resulting in 140,000 high-quality instruction-revision pairs (with 5% reserved for testing). This "full-text context + standard labels + paragraph revision" triadic data enables even small models to internalize academic writing norms.
 
 ### Loss & Training
 
-The model uses a standard conditional language model loss $\mathcal{L}_{CPT}(\theta) = -\mathbb{E}[\log P_\theta(\hat{p} | q, T, p)]$. It employs full-parameter fine-tuning (outperforming LoRA). Evaluation uses Length-Controlled Win Rate (LC Win Rate), judged automatically via `alpaca_eval_gpt4_turbo_fn` to eliminate length bias.
+A standard conditional language model loss is used: $\mathcal{L}_{CPT}(\theta) = -\mathbb{E}[\log P_\theta(\hat{p} \mid q, T, p)]$, utilizing full-parameter fine-tuning (which outperformed LoRA). Evaluation utilizes the Length-Controlled Win Rate (LC Win Rate), judged by alpaca_eval_gpt4_turbo_fn to eliminate length bias.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Length-Controlled Win Rate (vs. XtraGPT-7B as anchor)**
+**Length-Controlled Win Rate (vs XtraGPT-7B as anchor)**
 
 | Model | Title | Abstract | Intro | Background | Exp | Conclusion | Overall |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------|------|------|------|------|------|------|
 | QwQ-32B | 46.58 | 85.34 | 81.99 | 83.82 | 82.64 | 95.69 | **80.86** |
 | DeepSeek-v3-671B | 56.42 | 65.71 | 68.32 | 74.12 | 72.11 | 64.83 | **67.70** |
 | XtraGPT-14B | 55.29 | 59.43 | 50.90 | 59.43 | 57.87 | 52.11 | **55.49** |
@@ -86,46 +96,46 @@ The model uses a standard conditional language model loss $\mathcal{L}_{CPT}(\th
 ### Ablation Study
 
 | Configuration | Overall LC Win Rate | Description |
-| :--- | :--- | :--- |
+|------|----------------|------|
 | XtraGPT-7B (Full CPT) | 50.00 | Anchor |
-| w/o Writing Criteria | 44.65 | Removed criteria guidance |
-| Qwen2.5-7B (Base) | 40.80 | Without fine-tuning |
+| w/o Writing Standards | 44.65 | Removed standard guidance |
+| Qwen2.5-7B (Base) | 40.80 | No fine-tuning |
 | w/o Context $T$ | 34.71 | Removed full-text context |
 
 ### Key Findings
 
 - XtraGPT-7B outperforms all open-source models of the same scale and exceeds GPT-4o-mini in the Abstract, Experiments, and Conclusion sections.
-- Context $T$ is the most critical component: after its removal, the LC win rate for the Conclusion section dropped from 50% to 11.76%, and the overall rate fell to 34.71%.
-- Criteria guidance contributes significantly but is secondary to context (44.65 vs. 50.00); it is particularly important in structured sections like the Introduction and Abstract.
-- AI-SCIENTIST full-text evaluation shows: after revision, Contribution scores increased by +7.89%, Presentation by +12.50%, and Soundness by +6.41%, with the overall rating rising from 6.08 to 6.73 ($p < 0.001$).
-- In human evaluation, the revision acceptance rate was 3.23/5.0, and instruction following was 3.78/5.0.
+- Context $T$ is the most critical component: without it, the LC win rate for the Conclusion section dropped sharply from 50% to 11.76%, and overall to 34.71%.
+- Standard guidance makes a significant contribution but is secondary to context (44.65 vs 50.00), proving particularly important in structured sections like the Introduction and Abstract.
+- AI-SCIENTIST full-paper evaluation showed: Contribution score +7.89%, Soundness +12.50%, Rigor +6.41%, with the overall score rising from 6.08 to 6.73 (p<0.001).
+- Human evaluation showed a revision acceptance rate of 3.23/5.0 and instruction following of 3.78/5.0.
 
 ## Highlights & Insights
 
-- The design philosophy of the HAC protocol is noteworthy: humans are responsible for creativity and decision-making, while AI handles execution and improvement, avoiding the originality and ethical risks associated with full automation.
-- The extraction of 20 writing criteria is a valuable resource in itself—serving as a self-check list or a review guide for papers.
-- Using AI-SCIENTIST as a paper quality evaluator is a clever experimental design—transforming the subjective question "has the paper improved?" into quantifiable changes in predicted scores.
+- The design philosophy of the HAC protocol is noteworthy: humans are responsible for creativity and decision-making, while AI handles execution and improvement, avoiding originality and ethical risks associated with full automation.
+- The distillation of 20 writing standards is a valuable resource in itself—potentially serving as a paper self-check list or a reviewer's guide.
+- Using AI-SCIENTIST as a paper quality evaluator is a clever experimental design—transforming the subjective "did the paper get better" into quantifiable changes in predicted scores.
 
 ## Limitations & Future Work
 
-- ReviseQA only includes data from ICLR 2024, which may bias the results toward ML/AI writing styles; generalization to other disciplines (e.g., NLP, biomedicine) is unknown.
-- Revisions generated by GPT-4o-mini used as training targets may introduce the preferences and stylistic biases of that model.
-- Currently, only single-round revision evaluation is supported; the cumulative effect of multi-round iterative revisions hasn't been systematically measured.
+- ReviseQA is derived solely from ICLR 2024, which may bias it toward ML/AI writing styles; generalization to other disciplines (e.g., NLP, Biomedicine) is unknown.
+- Revisions generated by GPT-4o-mini as training targets may introduce the preferences and stylistic biases of that model.
+- Currently, only single-round revision evaluation is supported; the cumulative effect of multi-round iterative revisions has not been systematically measured.
 - The 16K token context window limits the ability to process extremely long papers.
-- The possibility of aligning with human revision history (e.g., revision records on OpenReview) has not yet been explored.
+- The possibility of aligning with human revision histories (e.g., revision records on OpenReview) has not yet been explored.
 
 ## Related Work & Insights
 
-- **vs. AI Scientist**: AI Scientist pursues fully automated paper generation and review, which raises concerns about originality; XtraGPT is explicitly positioned as an "assistant tool" that maintains human control.
-- **vs. STORM/CO-STORM**: STORM generates articles from scratch, facing issues with factual hallucinations and consistency; XtraGPT revises based on human drafts, naturally reducing hallucination risks.
-- **vs. CycleResearcher**: CycleResearcher uses a paper generation-review loop for self-improvement but is prone to reward hacking; XtraGPT uses criteria-guided data validated by human annotation.
+- **vs AI Scientist**: AI Scientist pursues fully automated paper generation and reviewing, with questionable originality; XtraGPT explicitly positions itself as an "assistant tool" that retains human leadership.
+- **vs STORM/CO-STORM**: STORM generates articles from scratch, facing factual hallucinations and consistency issues; XtraGPT modifies based on human drafts, naturally reducing hallucination risks.
+- **vs CycleResearcher**: CycleResearcher uses a generation-review loop for self-improvement but is prone to reward hacking; XtraGPT uses standard-guided data validated by human labels.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First open-source LLM suite for academic paper revision; sound HAC framework design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ LC win rate + human evaluation + AI-SCIENTIST evaluation + ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear description of the framework and clear positioning relative to existing work.
-- Value: ⭐⭐⭐⭐⭐ Addresses daily pain points for researchers; high utility with open-source models + datasets + Overleaf plugin.
+- Novelty: ⭐⭐⭐⭐ First open-source LLM suite for academic paper revision with a well-designed HAC framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes LC win rate, human evaluation, AI-SCIENTIST full-text evaluation, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework description and distinct positioning compared to existing work.
+- Value: ⭐⭐⭐⭐⭐ Addresses real-world pain points for researchers; high utility with open-source models, datasets, and Overleaf plugins.
 
 <!-- RELATED:START -->
 
@@ -133,11 +143,11 @@ The model uses a standard conditional language model loss $\mathcal{L}_{CPT}(\th
 
 ## Related Papers
 
-- [\[ACL 2026\] Difficulty-Controllable Cloze Question Distractor Generation](difficulty-controllable_cloze_question_distractor_generation.md)
-- [\[ACL 2026\] Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification](right_at_my_level_a_unified_multilingual_framework_for_proficiency-aware_text_si.md)
+- [\[ACL 2025\] Context-Aware Hierarchical Merging for Long Document Summarization](../../ACL2025/nlp_generation/context-aware_hierarchical_merging_for_long_document_summarization.md)
 - [\[ACL 2026\] Adaptive Planning for Multi-Attribute Controllable Summarization with Monte Carlo Tree Search](adaptive_planning_for_multi-attribute_controllable_summarization_with_monte_carl.md)
-- [\[AAAI 2026\] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation](../../AAAI2026/nlp_generation/c3tg_conflict-aware_composite_and_collaborative_controlled_text_generation.md)
+- [\[ACL 2026\] Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification](right_at_my_level_a_unified_multilingual_framework_for_proficiency-aware_text_si.md)
 - [\[ACL 2026\] Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety](childrens_english_reading_story_generation_via_supervised_fine-tuning_of_compact.md)
+- [\[ACL 2026\] Difficulty-Controllable Cloze Question Distractor Generation](difficulty-controllable_cloze_question_distractor_generation.md)
 
 </div>
 

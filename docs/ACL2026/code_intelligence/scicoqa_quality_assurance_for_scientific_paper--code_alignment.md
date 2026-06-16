@@ -2,78 +2,84 @@
 title: >-
   [Paper Note] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment
 description: >-
-  [ACL 2026][Code Intelligence][Paper-Code Difference Detection] This paper proposes SciCoQA, the first benchmark dataset for detecting differences between scientific papers and their code implementations. It contains 635…
+  [ACL 2026][Code Intelligence][Paper Note] Ours introduces SciCoQA, the first benchmark dataset for detecting discrepancies between scientific papers and their code implementations. It contains 635 discrepancy instances (92 real + 543 synthetic). Evaluation of 22 LLMs reveals that the strongest model only detects 46.7% of real discrepancies, highlighting a crit
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Paper-Code Difference Detection"
-  - "Scientific Reproducibility"
-  - "Cross-modal Verification"
-  - "LLM Evaluation"
-  - "Quality Assurance"
+  - ACL 2026
+  - Code Intelligence
 date: 2026-05-08
-content_hash: d276881086dec7ec
+content_hash: 5de2328d21fb9b14
 ---
-
 # SciCoQA: Quality Assurance for Scientific Paper–Code Alignment
 
 **Conference**: ACL 2026  
 **arXiv**: [2601.12910](https://arxiv.org/abs/2601.12910)  
 **Code**: [https://github.com/ukplab/scicoqa](https://github.com/ukplab/scicoqa)  
-**Area**: Scientific Reproducibility / Paper-Code Alignment Verification  
-**Keywords**: Paper-Code Difference Detection, Scientific Reproducibility, Cross-modal Verification, LLM Evaluation, Quality Assurance
+**Area**: Scientific Reproducibility/Paper-Code Alignment Verification  
+**Keywords**: Paper-code discrepancy detection, scientific reproducibility, cross-modal verification, LLM evaluation, quality assurance
 
 ## TL;DR
 
-This paper proposes SciCoQA, the first benchmark dataset for detecting differences between scientific papers and their code implementations. It contains 635 difference instances (92 real + 543 synthetic). After evaluating 22 LLMs, the study finds that the strongest model only detects 46.7% of real differences, revealing a critical capability gap in automated scientific quality assurance.
+Ours introduces SciCoQA, the first benchmark dataset for detecting discrepancies between scientific papers and their code implementations. It contains 635 discrepancy instances (92 real + 543 synthetic). Evaluation of 22 LLMs reveals that the strongest model only detects 46.7% of real discrepancies, highlighting a critical capability gap in automated scientific quality assurance.
 
 ## Background & Motivation
 
-**Background**: The scientific reproducibility crisis continues to plague academia. While publishing code and data has become a consensus, code availability does not equate to consistency between the code and the paper's description. In practice, implementation details often deviate from paper descriptions—ranging from "mathiness" (where equations merely simulate technical depth while actual gains come from undocumented tricks) to implementation differences in evaluation metrics (e.g., different implementations of BLEU scores rendering scientific comparisons invalid).
+**Background**: The scientific reproducibility crisis continues to plague academia. While publishing code and data has become standard, code availability does not guarantee consistency with the paper's description. In practice, implementation details often deviate from descriptions—ranging from "mathiness" (equations simulating technical depth while gains come from undocumented tricks) to differences in evaluation metric implementations (e.g., varying BLEU score implementations rendering scientific comparisons invalid).
 
-**Limitations of Prior Work**: (1) Paper-code inconsistencies are typically discovered only during reproduction attempts, wasting significant resources and eroding scientific trust; (2) Reviewers already face severe time pressure, making meticulous code review impractical; (3) With the rise of automated systems like "AI Scientists" (generating ideas, code, and papers automatically), manual review is increasingly unfeasible—an automatically generated codebase might run perfectly and perform well, but the implemented method may differ entirely from the paper's description.
+**Limitations of Prior Work**: (1) Paper-code inconsistencies are usually only discovered during reproduction attempts, wasting resources and eroding scientific trust; (2) Reviewers face severe time pressure, making meticulous code review impractical; (3) With the rise of automated systems like "AI Scientists" (generating ideas, code, and papers), manual review is increasingly infeasible—an automatically generated codebase might run perfectly and perform well, but implement a method entirely different from the paper's claim.
 
-**Key Challenge**: Scientific output is growing exponentially due to automation, yet the ability to verify the faithfulness of papers and code still relies entirely on manual effort. Existing evaluations (such as manual rubrics in PaperBench, general LLM-as-a-judge, or "does the code run") cannot reliably detect semantic differences between papers and code.
+**Key Challenge**: Scientific output is growing exponentially due to automation, yet the ability to verify the faithfulness of papers to code remains entirely dependent on humans. Existing evaluations (such as PaperBench’s manual rubrics, general LLM-as-judge, or "does the code run") cannot reliably detect semantic paper-code discrepancies.
 
-**Goal**: Build the first paper-code difference detection benchmark to systematically evaluate whether LLMs can automatically discover semantic inconsistencies between scientific papers and code.
+**Goal**: To build the first benchmark for paper-code discrepancy detection to systematically evaluate whether LLMs can automatically discover semantic inconsistencies between scientific papers and code.
 
-**Key Insight**: Start from "natural discoveries" in the reproducibility community—utilizing user-reported paper-code differences in GitHub Issues and reproduction reports from Reproducibility Challenges as sources of real differences, then expanding data to computational science fields beyond CS via a synthetic generation pipeline.
+**Key Insight**: Leverage "natural discoveries" from the reproducibility community—using GitHub Issues where users report paper-code differences and reproduction reports from challenges as sources for real discrepancies. Expand the data to computational science fields beyond CS via a synthetic generation pipeline.
 
-**Core Idea**: Define paper-code difference detection as a cross-modal verification task (text vs. code). Construct a structured dataset including a difference type taxonomy (Difference/Paper Omission/Code Omission) and an impact category taxonomy (Algorithm/Model/Loss/Evaluation/Data/Training) to evaluate the long-context cross-modal reasoning capabilities of LLMs.
+**Core Idea**: Formulate paper-code discrepancy detection as a cross-modal verification task (text vs. code). Construct a structured dataset including a discrepancy type taxonomy (Difference/Paper Omission/Code Omission) and impact category taxonomy (Algorithm/Model/Loss/Evaluation/Data/Training) to evaluate the long-context cross-modal reasoning capabilities of LLMs.
 
 ## Method
 
 ### Overall Architecture
 
-The construction of SciCoQA follows two paths: real data collection and synthetic data generation. Real data is obtained from GitHub Issues (59 differences from 10,636 issues across 1,890 repositories after automated + manual filtering) and reproducibility papers (65 differences from 171 reproduction reports via GPT-5 extraction + manual verification), followed by dual verification and standardized description generation using Gemini 3.1 Pro and GPT-5, resulting in 92 real differences. Synthetic data consists of 543 differences across 204 repositories where GPT-5 generated code modifications, covering CS as well as physics and statistics.
+SciCoQA formalizes whether "paper and code faithfully correspond" as a cross-modal verification task: given a paper's method description and its corresponding codebase, output a list of semantic discrepancies. The dataset is built via real and synthetic paths. Real discrepancies are mined from community "natural discoveries" (10,636 GitHub Issues from 1,890 repos were filtered to 59 discrepancies; 171 reproduction reports were processed via GPT-5 and manual validation to yield 65 discrepancies). These were verified by Gemini 3.1 Pro and GPT-5 to produce 92 real discrepancies with standardized descriptions. Synthetic discrepancies (543) were generated by GPT-5 injecting controlled code changes into 204 repos, extending the domain to physics, statistics, and other computational sciences. Evaluation is performed via LLM-as-Judge (GPT-OSS 20B reasoning model) to parse model outputs and match them against ground truth, achieving an F1 of 87.5% on 1,039 manually annotated samples.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SCHEMA["Annotation Schema<br/>① Def. + 3 Types  ② 6 Impact Categories"]
+    subgraph REAL["Real Discrepancy Mining (Dual Source + Dual Model Verification)"]
+        direction TB
+        G1["GitHub Issues: 1,890 repos / 10,636 issues<br/>Qwen3 classification → 232 candidates → Manual → 59"]
+        R1["Reproduction Reports: 171 reports<br/>GPT-5 extraction → 132 candidates → Manual → 65"]
+        G1 --> V["Gemini 3.1 Pro + GPT-5 Dual Verification<br/>+ Std. Description → 92 Real Discrepancies"]
+        R1 --> V
+    end
+    SYN["Synthetic Discrepancy Pipeline<br/>204 repos → GPT-5 injects 5 diffs → Retain ≤3 → 543 Synthetic"]
+    SCHEMA --> REAL
+    SCHEMA --> SYN
+    REAL --> DS["SciCoQA Dataset (635 discrepancies, annotated)"]
+    SYN --> DS
+    DS --> EVAL["LLM-as-Judge Evaluation<br/>List output → GPT-OSS 20B matches labels → Recall"]
+```
 
 ### Key Designs
 
-1.  **Strict Definition and Three-Type Classification of Paper-Code Differences**:
-    *   Function: Establishes clear boundaries for difference definitions to exclude irrelevant noise.
-    *   Mechanism: A difference is defined as a "semantic conflict between the paper's description of the scientific method and the code implementation, making the code unable to faithfully reproduce the reported method." It is categorized into three types: Difference (logic differs, e.g., L1 vs. L2 regularization), Paper Omission (code contains key components not described in the paper), and Code Omission (steps described in the paper are missing in the code). Specifically excluded are bugs (unrelated to paper description), hyperparameter differences resolvable via CLI/config, and standard engineering practices (e.g., noise addition for numerical stability).
-    *   Design Motivation: Without a clear definition, consistent annotation standards cannot be built. Excluding engineering details and bugs ensures the dataset focuses on semantic differences affecting scientific validity.
+**1. Strict Definition and Three-Type Classification**: 
+Benchmark consistency is built on a tight definition: a discrepancy is a "semantic conflict between the scientific method description in the paper and the code implementation, such that the code fails to faithfully reproduce the reported method." This is further divided into: **Difference** (logic differs, e.g., L2 vs. L1 regularization), **Paper Omission** (code contains key components not in the paper), and **Code Omission** (steps described in the paper are missing in the code). The definition explicitly excludes noise: non-paper-related bugs, hyperparameter differences switchable via CLI, and standard engineering practices like numerical stability adjustments.
 
-2.  **Six-Category Impact Taxonomy**:
-    *   Function: Describes which part of the research pipeline the difference affects.
-    *   Mechanism: Defines six categories: Algorithm (step order/operations/core logic), Model (architecture/weight initialization), Loss (loss definitions/terms), Evaluation (evaluation logic/metrics), Data (data usage/preprocessing/augmentation), and Training (learning process/scheduling/optimization). In real data, Algorithm (25%) and Loss (24%) dominate; in synthetic data, Algorithm (26%) and Model (21%) dominate.
-    *   Design Motivation: Knowing the type (what) and the scope of impact (where) helps in understanding the severity and detection difficulty of different inconsistencies.
+**2. Six Impact Categories**: 
+Each discrepancy is labeled by where it impacts the research pipeline: **Algorithm** (step order/operations), **Model** (architecture/initialization), **Loss** (definitions/terms), **Evaluation** (logic/metrics), **Data** (preprocessing/augmentation), and **Training** (schedules/optimization). Real data is dominated by Algorithm (25%) and Loss (24%), while synthetic data focuses on Algorithm (26%) and Model (21%).
 
-3.  **Synthetic Data Generation Pipeline**:
-    *   Function: Scales the dataset from CS/AI to other computational scientific fields such as physics, statistics, and quantitative biology.
-    *   Mechanism: Samples 204 repositories linked to arXiv papers with permissive licenses from GitHub. GPT-5 generates 5 code diffs per repository based on paper and code (constrained by difference definitions). At most 3 modifications per repository that do not manipulate the same file and allow exact matching to original code are sampled. The correlation of detection rates between real and synthetic data reaches $r = 0.94$, validating synthetic data as a reliable proxy for model ranking.
-    *   Design Motivation: Real differences are naturally scarce and limited to CS/AI. The synthetic pipeline addresses bottlenecks in data scale and domain coverage while generating data not present in model pre-training corpora to combat data contamination.
+**3. Real Discrepancy Mining**: 
+Real discrepancies are harvested from two community channels. First, **GitHub Issues**: 10,636 issues from 1,890 repos were filtered using Qwen3 4B to find 232 candidates, resulting in 59 confirmed cases. Second, **Reproduction Reports**: 171 reports from challenges were processed by GPT-5 to extract 132 candidates, yielding 65 confirmed cases. Final validation used Gemini 3.1 Pro and GPT-5 to check paper text and code, with manual adjudication for disagreements. Models then generated standardized 3–8 sentence descriptions as ground truth.
 
-### Loss & Training
-
-This work evaluates benchmarks and does not involve model training. Evaluation uses LLM-as-Judge (GPT-OSS 20B reasoning model), achieving an F1 of 87.5% on 1,039 manually annotated samples. Models are prompted to generate a list of differences, which are then parsed into independent differences for matching evaluation.
+**4. Synthetic Discrepancy Pipeline**: 
+To address sparsity and domain bias (mostly CS/AI), 204 repos linked to arXiv were sampled. GPT-5 generated 5 code diffs per repo under discrepancy constraints; at most 3 non-overlapping, matching diffs were kept per repo. The correlation between detection rates on synthetic and real data is $r = 0.94$, proving the synthetic set is a reliable proxy for model ranking while resisting data contamination.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Real Data Recall | Synthetic Data Recall | Average Recall |
-| :--- | :--- | :--- | :--- |
+| Model | Recall (Real) | Recall (Synthetic) | Avg Recall |
+|------|-------------|-------------|----------|
 | Gemini 3.1 Pro | 46.7% | — | — |
 | GPT-5 Mini | 46.7% | — | — |
 | GPT-5 | — | 70.0% | — |
@@ -81,55 +87,55 @@ This work evaluates benchmarks and does not involve model training. Evaluation u
 | Qwen3 30B Coder | — | — | 23.5% |
 
 | Model | Precision | Recall | F1 |
-| :--- | :--- | :--- | :--- |
+|------|-----------|--------|----|
 | GPT-5 | 88.0 | 51.2 | 64.7 |
 | Gemini 2.5 Pro | 94.6 | 41.1 | 57.3 |
 | GPT-OSS 20B | 69.9 | 55.8 | 62.1 |
 
 ### Ablation Study
 
-| Input Condition | Real Data | Synthetic Data | Description |
-| :--- | :--- | :--- | :--- |
-| Paper + Code | Baseline | Baseline | Complete input |
-| Code Only | -19.2pp (rel. ↓48.3%) | -16.3pp (rel. ↓30.8%) | Paper provides necessary cross-modal signals |
+| Condition | Real Data | Synthetic Data | Description |
+|---------|---------|---------|------|
+| Paper + Code | Baseline | Baseline | Full Input |
+| Code Only | -19.2pp (Relative ↓48.3%) | -16.3pp (Relative ↓30.8%) | Papers provide necessary cross-modal signals |
 
 ### Key Findings
 
-*   **Recall is the core bottleneck**: The strongest model detects only 46.7% of real differences. Precision (88-94.6%) is significantly higher than recall, indicating that models are "mostly correct in what they find, but miss too much."
-*   **Paper Omission is hardest to detect**: Inconsistencies where code contains components not described in the paper are the most difficult to find (differences from GitHub are 71.4% "Difference" and thus easier; reproduction reports are 50% "Paper Omission" and harder) because there is no anchor in the paper for comparison.
-*   **Long context severely degrades performance**: Detection rates consistently drop as paper + code token counts increase. Median input is 56,903 tokens, with 73/276 papers exceeding 100k tokens.
-*   **Data contamination has a significant impact**: Models perform better on papers published before their pre-training cutoff. Detection rates are lowest for 2025 papers, suggesting models benefit from specific papers and code seen during pre-training.
-*   **Paper is a necessary input**: Performance drops significantly for all models when the paper is removed (rel. drop of 48.3% on real data), confirming the cross-modal nature of the task.
-*   **Code-specific models do not hold an advantage**: GPT-5 Codex performed worse than GPT-5 Mini, indicating that this task requires a combination of code understanding and natural language reasoning, where general instruction-following is more useful.
+- **Recall is the core bottleneck**: The strongest models only detect 46.7% of real discrepancies. Precision (88-94.6%) is much higher than recall, meaning models "are mostly right about what they find, but they miss too much."
+- **Paper Omission is hardest to detect**: It is difficult to find discrepancies when code contains components not described in the paper because there is no anchor in the text for comparison.
+- **Long context degrades performance**: Detection rates consistently drop as the token count for paper+code increases. Median input is 56,903 tokens; 73/276 papers exceed 100k tokens.
+- **Data contamination is significant**: Models perform better on papers published before their pre-training cutoff; 2025 papers show the lowest detection rates.
+- **Paper is required**: Removing the paper leads to a 48.3% relative drop in real data performance, confirming the cross-modal nature of the task.
+- **Code-specific models lack advantage**: GPT-5 Codex underperformed GPT-5 Mini, suggesting the task requires a mix of code understanding and natural language reasoning where general instruction following is more beneficial.
 
 ## Highlights & Insights
 
-*   **Filling a Critical Gap**: Formally defines paper-code alignment detection as a benchmarkable NLP task for the first time, possessing high practical significance in the era of scientific automation.
-*   **Complementary Real and Synthetic Design**: Real data ensures realism (from actual user reports and reproduction efforts), while synthetic data addresses scarcity and domain coverage. The high correlation ($r=0.94$) between their detection rates validates the design.
-*   **Insight on "High Precision, Low Recall"**: In verification scenarios, low recall is most damaging—missed differences provide a false sense of security, whereas false positives can be filtered by humans. This serves as a critical warning for deploying automated verification systems.
-*   **Natural Testbed for Data Contamination**: Analyzing detection rates by publication year cleverly reveals data contamination issues, while the synthetic pipeline provides a solution for generating uncontaminated data.
+- **Filling a critical gap**: Formulates paper-code consistency detection as a benchmarkable NLP task, which is highly relevant in the era of scientific automation.
+- **Complementary Real/Synthetic design**: Real data ensures realism, while synthetic data solves scarcity and domain coverage. The high correlation ($r=0.94$) validates the design.
+- **Deep insight into "High Precision, Low Recall"**: In verification scenarios, low recall is most damaging—missed discrepancies provide a false sense of security, whereas false positives can be manually filtered.
+- **Natural testbed for data contamination**: Analyzing detection rates by publication year effectively reveals contamination issues; the synthetic pipeline offers a solution to generate uncontaminated data.
 
 ## Limitations & Future Work
 
-*   Real data is heavily biased toward CS/AI; non-CS domains only have synthetic data, and error distributions may differ from reality.
-*   Synthetic differences are generated by GPT-5, and since GPT-5 is also an evaluated model, self-preference bias may exist ($r$ increases from 0.94 to 0.98 when GPT-5 is removed).
-*   The dataset size is relatively small (635 differences), reflecting a trade-off between quality and scale.
-*   Difference definitions exclude bugs and hyperparameter issues, not covering the full spectrum of software engineering defects in research code.
-*   Future work needs to expand collection channels for real non-CS data and develop specialized models for paper-code verification.
+- Real data is heavily biased toward CS/AI; non-CS domains only have synthetic data where error distributions may differ.
+- Synthetic discrepancies were generated by GPT-5, and GPT-5 was also evaluated, possibly introducing self-preference bias (removing GPT-5 increased $r$ from 0.94 to 0.98).
+- Dataset size (635 discrepancies) is a trade-off between quality and scale.
+- Definition excludes bugs and hyperparameters, failing to cover the full spectrum of software engineering flaws in research code.
+- Future work should expand real data collection in non-CS fields and develop specialized paper-code verification models.
 
 ## Related Work & Insights
 
-*   **vs. Bianchi et al. (2025)**: That work detects inconsistencies within paper text; SciCoQA extends this to cross-modal inconsistencies between paper and code.
-*   **vs. PaperBench**: PaperBench uses manual rubrics to verify code implementation correctness, which is high-cost and non-scalable; SciCoQA provides an automatically evaluatable benchmark.
-*   **vs. CCI (Code-Comment Inconsistency)**: CCI handles function-level code-comment inconsistencies; SciCoQA requires global semantic alignment across an entire paper and a multi-file codebase, making it significantly more challenging.
-*   **vs. ProcessBench/ErrorRadar**: These benchmarks detect errors in reasoning chains; SciCoQA detects cross-modal semantic differences between paper descriptions and code implementations.
+- **vs. Bianchi et al. (2025)**: That work detects internal text inconsistencies; SciCoQA extends this to cross-modal paper-code inconsistencies.
+- **vs. PaperBench**: PaperBench uses manual rubrics to verify implementation, which is costly and non-scalable; SciCoQA provides an automatically evaluatable benchmark.
+- **vs. CCI (Code-Comment Inconsistency)**: CCI handles function-level inconsistencies; SciCoQA requires global semantic alignment across full papers and multi-file codebases.
+- **vs. ProcessBench/ErrorRadar**: These benchmarks detect errors in reasoning chains; SciCoQA detects cross-modal semantic gaps between descriptions and implementations.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ First to formalize paper-code alignment verification; precise and highly relevant problem definition.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 22 models, multi-dimensional analysis (type/source/length/year/ablation/precision verification); rigorous experimental design.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Insightful motivation, strict difference definitions, and progressive experimental analysis.
-*   Value: ⭐⭐⭐⭐⭐ Provides infrastructure-level contributions for verifying paper-code faithfulness in the era of scientific automation.
+- Novelty: ⭐⭐⭐⭐⭐ First formalization of paper-code consistency verification; precise and highly significant definition.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 22 models and multi-dimensional analysis (type/source/length/year/ablation).
+- Writing Quality: ⭐⭐⭐⭐⭐ Deep motivation, strict definitions, and logical experimental progression.
+- Value: ⭐⭐⭐⭐⭐ Provides foundational infrastructure for verifying paper-code faithfulness in the age of automated science.
 
 <!-- RELATED:START -->
 

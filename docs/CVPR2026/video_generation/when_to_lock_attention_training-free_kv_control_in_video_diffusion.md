@@ -2,18 +2,23 @@
 title: >-
   [Paper Note] When to Lock Attention: Training-Free KV Control in Video Diffusion
 description: >-
-  [Video Generation] This paper proposes KV-Lock, a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection…
+  [CVPR 2026][Video Generation][Training-Free Video Editing] KV-Lock is proposed as a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection. It simultaneously ensures background consistency and foreground generation quality in video editing.
 tags:
-  - "Video Generation"
+  - CVPR 2026
+  - Video Generation
+  - Training-Free Video Editing
+  - KV Cache
+  - Classifier-Free Guidance
+  - Diffusion Hallucination Detection
+  - DiT
 date: 2026-05-08
-content_hash: df986a5241c048fa
+content_hash: 2e78e1cec98bb139
 ---
-
 # When to Lock Attention: Training-Free KV Control in Video Diffusion
 
 ## Basic Information
 
-- **Conference**: CVPR 2026
+- **Conference**: CVPR2026
 - **arXiv**: [2603.09657](https://arxiv.org/abs/2603.09657)
 - **Code**: Not released
 - **Area**: Image Generation / Video Editing
@@ -21,124 +26,111 @@ content_hash: df986a5241c048fa
 
 ## TL;DR
 
-This paper proposes KV-Lock, a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection, simultaneously ensuring background consistency and foreground generation quality in video editing.
+KV-Lock is proposed as a training-free framework that dynamically schedules background KV cache fusion ratios and CFG guidance strength based on diffusion hallucination detection. It simultaneously ensures background consistency and foreground generation quality in video editing.
 
 ## Background & Motivation
 
-The core challenge in video editing lies in editing foreground targets while preserving the high fidelity of background scenes. Existing methods fall into two extremes:
+The core challenge of video editing lies in maintaining high fidelity of background scenes while editing foreground objects. Existing methods face two extremes:
 
-**Full-frame information injection** (e.g., cross-attention manipulation, latent space interpolation): Edit effects tend to leak into background regions, causing background artifacts—particularly localized hallucinations in attributes such as color and pose.
+**Global Information Injection** (e.g., cross-attention manipulation, latent space interpolation): Editing effects easily leak into background areas, causing background artifacts and local hallucinations in attributes like color or pose.
 
-**Rigid background locking** (fixed KV cache weights): Overly constrains the model's expressive capacity, degrading foreground generation quality.
+**Rigid Background Locking** (fixed KV cache weights): Over-constrains the model's expressiveness, leading to degraded foreground generation quality.
 
-Recent works (ProEdit, Follow-Your-Shape) leverage KV caches in DiT architectures to preserve backgrounds, but adopt fixed fusion weights or simple heuristic schedules, failing to adaptively balance foreground quality and background consistency. This raises a central question: **When should attention be locked to cached KVs, and when should the model be allowed to recompute attention patterns?**
+Recent works (ProEdit, Follow-Your-Shape) utilize KV caches in DiT architectures for background preservation but employ fixed fusion weights or simple heuristic scheduling, failing to adaptively balance foreground quality and background consistency. This raises a core problem: **When should attention be locked to the cached KV, and when should the model be allowed to recompute attention patterns?**
 
-The core insight of KV-Lock is that the hallucination detection metric of diffusion models (variance of the $\hat{x}_0$ trajectory) naturally corresponds to the diversity modulation function of CFG guidance scale—variance can thus serve as a unified scheduling signal, transforming heuristic hyperparameter tuning into principled variance-based decisions.
+The Key Insight of KV-Lock: Hallucination detection metrics in diffusion models ($\hat{x}_0$ trajectory variance) naturally correspond to the diversity regulation function of CFG guidance scales. The variance can serve as a unified scheduling signal to transform heuristic tuning into principled decision-making.
 
 ## Method
 
 ### Overall Architecture
 
-KV-Lock is a plug-and-play training-free framework applicable to any pretrained DiT model. The overall pipeline consists of three stages:
+KV-Lock is a plug-and-play training-free framework applicable to any pre-trained DiT model. The workflow consists of three stages:
 
-1. **Encoding Stage**: A 3D VAE encodes the source video into a latent representation, and the editing mask is mapped into token space.
-2. **Inversion Stage**: The source video undergoes forward diffusion; KV pairs from all Transformer layers are cached at each timestep.
-3. **Denoising Stage**: A hallucination-aware scheduler dynamically fuses newly generated KVs with cached KVs (for background preservation), while dynamically adjusting CFG guidance strength (for foreground quality).
+1.  **Encoding Phase**: A 3D VAE encodes the source video into latent representations while mapping the edit mask to the token space.
+2.  **Inversion Phase**: Forward diffusion is performed on the source video to cache source KV pairs at each timestep and Transformer layer.
+3.  **Denoising Phase**: A hallucination-aware scheduler dynamically fuses new KV pairs with cached KV pairs (to preserve background) and adjusts CFG guidance strength (to optimize foreground).
 
-### Key Design 1: Token-Level KV Cache Locking
+The denoising phase acts as a feedback loop: in each step, the hallucination detection calculates a variance signal, which drives two "knobs": the background lock intensity and the foreground guidance strength.
 
-#### Latent Space Mask Encoding
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Source Video + Edit Mask"] --> B
+    subgraph B["Token-level KV Cache Locking"]
+        direction TB
+        B1["3D VAE Encoding<br/>Mask mapped to token space"] --> B2["Inversion Forward<br/>Cache 24-layer background KV anchors"]
+    end
+    B -->|"Denoising, last κ=20 steps"| D["Local Hallucination Detection<br/>Calc foreground x̂0 window variance σ²"]
+    D -->|"σ² signal"| E["Dynamic KV Fusion<br/>α adjusts background lock strength"]
+    D -->|"σ² signal"| F["Foreground Gen Guidance<br/>Dynamic ω + s* closed-form scaling"]
+    E --> G["Denoising Step"]
+    F --> G
+    G -->|"Not finished"| D
+    G -->|"Finished"| H["Edited Video"]
+```
 
-The input video $\mathcal{V}_{\text{src}} \in \mathbb{R}^{3 \times F \times H \times W}$ is encoded by a 3D VAE (compression ratio $s = (4, 8, 8)$). The editing mask $\mathcal{M}$ is aligned with the VAE's temporal compression via temporal max-pooling:
+### Key Designs
+
+**1. Token-level KV Cache Locking: Precise background token identification**
+
+To preserve the background, the model must identify which tokens belong to it. KV-Lock aligns the edit mask to the DiT token granularity. The source video $\mathcal{V}_{\text{src}} \in \mathbb{R}^{3 \times F \times H \times W}$ is encoded by a 3D VAE (compression ratio $s = (4, 8, 8)$). The edit mask $\mathcal{M}$ is max-pooled along the temporal dimension to align with the VAE:
 
 $$m_0^{\text{latent},t} = \begin{cases} \max(\mathcal{M}_0), & t=0 \\ \max(\mathcal{M}_{[1+(t-1)s_t : 1+ts_t]}), & t \geq 1 \end{cases}$$
 
-Max-pooling ensures that whenever any frame within a temporal window requires editing, the corresponding latent mask is marked as 1.
-
-#### Token Space Projection
-
-DiT patchifies the latent with patch size $p = (1, 2, 2)$, producing $N = T \cdot (h/p_h) \cdot (w/p_w)$ tokens. The mask is aligned to token space via 3D MaxPool:
+Max-pooling is used to ensure that if any frame in a time window requires editing, the corresponding latent position is marked as foreground. Then, the DiT patchifies the latent into $N$ tokens, and the mask is projected into the token space via 3D MaxPool:
 
 $$m_{\text{token}} = \text{Flatten}(\text{MaxPool3D}(m_0^{\text{latent}}, \text{kernel}=p, \text{stride}=p)) \in \{0,1\}^N$$
 
-This ensures that any token $i$ whose receptive field covers any masked pixel is labeled as a foreground token.
+Any token capturing edited pixels in its receptive field is considered foreground. With this token mask, background "content anchors" are cached: at each denoising step $t_k$, the source latent constructs a noisy input $z_{t_k}^{\text{src}}$, and the KV pairs $\mathcal{K}_k^\ell, \mathcal{V}_k^\ell$ for all $L=24$ layers are stored during a forward pass. Replacing background token KVs with cached source KVs pins the attention output to the source content manifold.
 
-#### KV Cache Extraction
+**2. Local Hallucination Detection: Unified variance signal**
 
-At each denoising timestep $t_k$, the noisy source latent is constructed as:
+KV-Lock uses the fluctuations of $\hat{x}_0$ in the foreground region as a proxy for hallucinations. Predicted $\hat{x}_0$ is flattened and averaged within the mask area:
 
-$$z_{t_k}^{\text{src}} = \sqrt{\bar{\alpha}_{t_k}} \mathcal{E}(\mathcal{V}_{\text{src}}) + \sqrt{1 - \bar{\alpha}_{t_k}} \epsilon$$
+$$\hat{x}_0^{\text{masked},(k)} = \frac{1}{B} \sum_{b=1}^{B} \text{Flatten}(\hat{x}_0^{(k,b)} \odot m_0^{\text{latent}})$$
 
-KV pairs are extracted from all $L=24$ Transformer layers via a forward pass:
+Variance is then calculated within a sliding window:
 
-$$\mathcal{K}_k^\ell = W_K^{(\ell)} h_{t_k}^{(\ell)}, \quad \mathcal{V}_k^\ell = W_V^{(\ell)} h_{t_k}^{(\ell)}, \quad \forall \ell \in \{1, \ldots, L\}$$
+$$\sigma_{\hat{x}_0^{(k)}}^2 = \frac{1}{W-1} \sum_{i=t_k-W+1}^{t_k} (\hat{x}_0^{\text{masked},(i)} - \bar{\hat{x}}_0^{\text{masked}})^2$$
 
-These cached KVs serve as "content anchors." The attention mechanism can be understood as differentiable retrieval: query $q_i$ computes similarity with all keys and aggregates values by weighting. When the KVs of background tokens are replaced with cached source video KVs, attention outputs are constrained to the manifold of source content, providing a deterministic reconstruction mechanism.
+A variance exceeding $\tau = 0.01$ indicates hallucination risk. In-support samples converge to consistent representations (low variance), while hallucinated samples oscillate between modes (high variance). Focusing only on the mask area prevents the signal from being diluted by stable background pixels.
 
-### Key Design 2: Hallucination-Aware Dynamic KV Fusion
+**3. Hallucination-aware Dynamic KV Fusion: Adaptive locking**
 
-Fully locking background KVs constrains the model's foreground generation capacity. A dynamic fusion rate $\alpha_k \in [0,1]$ is introduced to modulate KV locking strength according to denoising variance:
+Rather than locking the background rigidly, KV-Lock introduces an adjustable fusion rate $\alpha_k \in [0,1]$ that follows the denoising variance:
 
 $$\alpha_k = \text{clamp}\left(\frac{\sigma_{\hat{x}_0^{(k)}}^2}{\tau}, 0, 1\right)$$
 
-where $\tau = 0.01$ is the hallucination threshold. In the final $\kappa = 20$ sampling steps, weighted interpolation is applied to background tokens:
+During the final $\kappa = 20$ sampling steps, weighted interpolation is applied to background tokens:
 
 $$K_k^{\text{mix}} = m_{\text{token}} \odot K_k^{\text{new}} + (1 - m_{\text{token}}) \odot (\alpha_k \cdot \tilde{\mathcal{K}}_k^\ell + (1 - \alpha_k) \cdot K_k^{\text{new}})$$
 
 $$V_k^{\text{mix}} = m_{\text{token}} \odot V_k^{\text{new}} + (1 - m_{\text{token}}) \odot (\alpha_k \cdot \tilde{\mathcal{V}}_k^\ell + (1 - \alpha_k) \cdot V_k^{\text{new}})$$
 
-- Foreground tokens ($m_{\text{token}} = 1$): use newly generated KVs, retaining full degrees of freedom.
-- Background tokens ($m_{\text{token}} = 0$): interpolate between cached and new KVs, with larger $\alpha_k$ imposing stronger locking.
+Foreground tokens remain free to utilize new KVs. High variance triggers tighter locking to prevent hallucinations from spreading into the background.
 
-Design motivation: high variance = model uncertainty in current region → stronger background constraints are needed to prevent hallucinations from spreading to the background.
+**4. Foreground Generation Guidance: Enhancing foreground quality**
 
-### Key Design 3: Foreground Generation Guidance (CFG Optimization)
-
-#### Adaptive Scaling Factor $s^*$
-
-Standard CFG uses a fixed guidance strength $\omega$ to linearly interpolate conditional and unconditional noise predictions, but cannot compensate for noise estimation bias caused by model underfitting (especially in early denoising stages). An optimizable scaling factor $s$ is introduced:
+To improve foreground generation while the background is locked, KV-Lock modifies CFG in two ways. First, it adds an optimizable scaling factor $s$ to the unconditional branch to compensate for noise estimation bias:
 
 $$\tilde{\epsilon}_\theta(x_t, t | y) = (1 - \omega) \cdot s \cdot \epsilon_\theta(x_t, t | \emptyset) + \omega \cdot \epsilon_\theta(x_t, t | y)$$
 
-Objective: minimize $\|\tilde{\epsilon}_\theta - \epsilon_t\|_2^2$. Since the true noise $\epsilon_t$ is unobservable, an upper bound is derived via the triangle inequality; after eliminating $\epsilon_t$, a closed-form solution is obtained:
+A closed-form solution $s^*$ is derived by minimizing the error upper bound:
 
-$$s^* = \frac{\langle \epsilon_\theta(x_t, t | y), \epsilon_\theta(x_t, t | \emptyset) \rangle}{\|\epsilon_\theta(x_t, t | \emptyset)\|_2^2 + \varepsilon}$$
+$$s^* = \frac{\langle \epsilon_\theta(x_t, t | y), \epsilon_\theta(x_t, t | \emptyset) \rangle}{\|\epsilon_\theta(x_t, t | \emptyset)\|2^2 + \varepsilon}$$
 
-Geometric interpretation: $s^*$ is the orthogonal projection of the conditional noise prediction vector onto the direction of the unconditional noise prediction, aligning the two noise estimates to reduce bias introduced by model underfitting. The computational overhead consists of only one inner product and one norm operation.
-
-#### Hallucination-Aware Dynamic CFG Guidance
-
-When hallucination risk is detected, the guidance strength is dynamically increased within a window $W = 10$:
+Geometrically, $s^*$ is the orthogonal projection of the conditional noise prediction onto the unconditional direction. Second, the guidance strength $\omega$ is dynamically adjusted based on variance:
 
 $$\omega = \omega_0 \cdot \text{clamp}\left(\frac{\sigma_{\hat{x}_0^{(k)}}^2}{\tau}, 0, b\right)$$
 
-where $b = 2$ is the clamp upper bound. Core insight: the CFG guidance strength $\omega$ itself modulates the diversity of generated samples, which naturally corresponds to the variance metric of hallucination detection—increasing $\omega$ when variance is high (high hallucination risk) constrains sample diversity, enforces conditional alignment, and stabilizes the diffusion process. Since all samples exhibit high variance in early diffusion stages, dynamic scheduling is only activated in the final $\kappa = 20$ steps.
+Higher variance (hallucination risk) increases $\omega$, suppressing diversity to enforce alignment with the conditions.
 
-### Key Design 4: Local Hallucination Detection
-
-A sliding window is used to track the $\hat{x}_0$ variance in the foreground region as a hallucination proxy metric:
-
-$$\hat{x}_0^{\text{masked},(k)} = \frac{1}{B} \sum_{b=1}^{B} \text{Flatten}(\hat{x}_0^{(k,b)} \odot m_0^{\text{latent}})$$
-
-$$\sigma_{\hat{x}_0^{(k)}}^2 = \frac{1}{W-1} \sum_{i=t_k-W+1}^{t_k} (\hat{x}_0^{\text{masked},(i)} - \bar{\hat{x}}_0^{\text{masked}})^2$$
-
-If variance exceeds threshold $\tau = 0.01$, hallucination risk is flagged. Key improvement: compared to global variance computation, **local variance** (mask region only) captures hallucination signals more sensitively—in the ablation study, global detection achieves Ave. 84.05% vs. local detection's 84.87%.
-
-Theoretical basis: $\hat{x}_0$ of in-support samples converges to consistent representations (low variance) in late denoising stages; hallucinated samples exhibit persistent fluctuation (high variance) due to mode interpolation uncertainty.
-
-## Experiments
-
-### Experimental Setup
-
-- **Base model**: Wan 2.1 (for CFG-Zero*, APG, ProEdit, KV-Lock), SD 2.1 (for FateZero, FLATTEN, TokenFlow)
-- **Test data**: 52 samples (22 VACE-Benchmark + 30 web videos), 80–210 frames, resolution 480×832
-- **Hardware**: A100 80GB GPU
-- **Evaluation metrics**: VBench 5 dimensions (SC/BC/MS/AQ/IQ), background metrics (SSIM/PSNR), user study across 3 dimensions (PF/FC/VQ, 54 valid questionnaires)
+## Key Experimental Results
 
 ### Main Results
 
 | Method | SC↑ | BC↑ | AQ↑ | IQ↑ | Ave.↑ | SSIM↑ | PSNR↑ | User↑ | Time(s)↓ |
-|------|------|------|------|------|-------|-------|-------|-------|---------|
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | FateZero | 87.17 | 92.89 | 53.84 | 57.53 | 77.23 | 0.715 | 17.57 | 1.74 | 3.98 |
 | FLATTEN | 92.90 | 95.54 | 53.24 | 59.41 | 79.71 | 0.772 | 19.30 | 2.60 | **1.14** |
 | TokenFlow | 93.64 | 96.17 | 57.22 | 69.67 | 83.03 | 0.805 | 20.07 | 2.51 | 11.92 |
@@ -151,46 +143,46 @@ Theoretical basis: $\hat{x}_0$ of in-support samples converges to consistent rep
 ### Ablation Study
 
 | Configuration | SC↑ | BC↑ | MS↑ | Ave.↑ | SSIM↑ | PSNR↑ |
-|------|------|------|------|-------|-------|-------|
-| Variance KV scheduling only | 93.01 | 95.89 | 98.10 | 83.69 | 0.913 | 31.01 |
-| CFG ω scheduling only | 93.32 | 93.89 | 97.72 | 83.46 | 0.922 | 29.84 |
-| CFG s* scheduling only | 91.76 | 92.18 | 96.92 | 82.24 | 0.914 | 29.59 |
-| CFG s* + ω scheduling | 93.28 | 95.71 | **98.63** | 84.05 | 0.913 | 30.55 |
-| Fixed fusion α=0.5 | 90.33 | 93.97 | 97.51 | 82.58 | 0.918 | 30.90 |
-| Global hallucination detection | 93.14 | 95.85 | 98.28 | 84.05 | 0.925 | 30.96 |
-| **Full model** | **94.56** | **96.92** | 98.57 | **84.87** | **0.931** | **31.04** |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Var. KV Scheduling only | 93.01 | 95.89 | 98.10 | 83.69 | 0.913 | 31.01 |
+| CFG ω Scheduling only | 93.32 | 93.89 | 97.72 | 83.46 | 0.922 | 29.84 |
+| CFG s* Scheduling only | 91.76 | 92.18 | 96.92 | 82.24 | 0.914 | 29.59 |
+| CFG s* + ω Scheduling | 93.28 | 95.71 | **98.63** | 84.05 | 0.913 | 30.55 |
+| Fixed Fusion α=0.5 | 90.33 | 93.97 | 97.51 | 82.58 | 0.918 | 30.90 |
+| Global Hallucination Detection | 93.14 | 95.85 | 98.28 | 84.05 | 0.925 | 30.96 |
+| **Full Model** | **94.56** | **96.92** | 98.57 | **84.87** | **0.931** | **31.04** |
 
 ### Key Findings
 
-1. **All three modules are essential**: The combination of KV scheduling, CFG ω scheduling, and CFG s* optimization is required to achieve optimal performance; using any component individually yields a notable gap (Ave. 82.24–83.69 vs. 84.87).
-2. **Dynamic scheduling substantially outperforms fixed strategies**: Fixed α=0.5 achieves only 90.33% SC, far below dynamic scheduling's 94.56% (↓4.23%), demonstrating the core value of adaptive scheduling.
-3. **Local hallucination detection outperforms global**: Global detection dilutes signals and causes missed detections; SSIM improves from 0.925 to 0.931 with local detection.
-4. **Surpasses the training-based method VACE**: KV-Lock outperforms VACE on both VBench Ave. (84.87 vs. 84.13) and user study (4.21 vs. 4.10).
-5. **Inference time cost**: 7.39s per iteration, with primary overhead from KV caching and sliding window computation, plus approximately 10GB additional GPU memory.
+1.  **Synergy of Modules**: Optimized performance requires the combination of KV scheduling, CFG $\omega$ scheduling, and CFG $s^*$ optimization.
+2.  **Dynamic vs. Fixed Strategy**: Dynamic scheduling significantly outperforms fixed $\alpha=0.5$, validating the value of adaptive control.
+3.  **Local vs. Global Detection**: Local detection prevents signal dilution, improving SSIM from 0.925 to 0.931.
+4.  **Comparison with Training-based VACE**: Ours outperforms VACE in VBench Ave. (84.87 vs 84.13) and user preferences.
+5.  **Inference Overhead**: 7.39s/iter, mainly due to KV caching and sliding window calculations, with ~10GB additional VRAM.
 
 ## Highlights & Insights
 
-- **Theory-driven unified scheduling**: Variance → hallucination risk → simultaneously drives KV fusion rate and CFG strength; a single signal addresses two problems with an elegant and concise design.
-- **Closed-form CFG scaling factor $s^*$**: Unobservable true noise is eliminated via an upper bound derivation, yielding an analytic solution as an orthogonal projection without iterative optimization.
-- **Plug-and-play**: Training-free; seamlessly integrates into any pretrained DiT model (validated on Wan 2.1).
-- **Comprehensive evaluation**: 52 samples × 5 VBench metrics + 2 background metrics + 3 user study dimensions + 54 valid questionnaires + detailed ablation study.
+- **Theory-driven Unified Scheduling**: Correlating variance with hallucination risk to drive both KV fusion and CFG intensity is an elegant design.
+- **Closed-form CFG Scaling $s^*$**: Derives an analytical solution via orthogonal projection to eliminate unobservable noise without iterative optimization.
+- **Plug-and-play**: Training-free and seamlessly integrates into pre-trained DiT models.
+- **Comprehensive Evaluation**: Extensive testing across VBench, background metrics, and user studies with detailed ablations.
 
 ## Limitations & Future Work
 
-- Inference speed is relatively slow (7.39s/iter); KV caching requires a full forward pass over the source video.
-- Approximately 10GB additional GPU memory overhead.
-- Relies on external mask input to separate foreground and background; automatic segmentation is not supported.
-- The definition of diffusion hallucination is ambiguous; variance-based detection may miss non-variance-type hallucinations.
-- Some baselines (FateZero/FLATTEN/TokenFlow) use SD 2.1 rather than Wan 2.1, introducing backbone discrepancy.
+- Slower inference speed (7.39s/iter) due to the required source video pre-run.
+- Additional GPU memory overhead (~10GB).
+- Dependency on external masks for foreground/background separation.
+- Hallucination detection via variance might miss non-variance-type hallucinations.
+- Baseline discrepancies (some models use SD 2.1 vs. Wan 2.1).
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-- **Novelty** ⭐⭐⭐⭐: The hallucination detection-driven dynamic scheduling approach is novel; the theoretical connections among variance, CFG, and KV are well-argued.
-- **Experimental Thoroughness** ⭐⭐⭐⭐: Metrics are comprehensive and ablations are detailed, but 52 samples is a relatively small test set and some baselines use inconsistent backbones.
-- **Writing Quality** ⭐⭐⭐⭐: Mathematical derivations are rigorous, the framework diagram is intuitive, and the motivation is clearly articulated.
-- **Value** ⭐⭐⭐: Training-free plug-and-play nature is a clear advantage, but slow inference and dependency on external masks limit practical applicability.
+- **Novelty** ⭐⭐⭐⭐: The idea of driving dynamic scheduling via hallucination detection is novel and theoretically grounded.
+- **Experiments** ⭐⭐⭐⭐: Comprehensive metrics and ablations, though sample size is somewhat small.
+- **Writing** ⭐⭐⭐⭐: Mathematically rigorous with clear logic and frameworks.
+- **Value** ⭐⭐⭐: Training-free and plug-and-play are major advantages, though inference speed and mask dependency are limiting factors.
 
 <!-- RELATED:START -->
 
@@ -202,7 +194,7 @@ Theoretical basis: $\hat{x}_0$ of in-support samples converges to consistent rep
 - [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](../../ICCV2025/video_generation/vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
 - [\[ICCV 2025\] Prompt-A-Video: Prompt Your Video Diffusion Model via Preference-Aligned LLM](../../ICCV2025/video_generation/prompt-a-video_prompt_your_video_diffusion_model_via_preference-aligned_llm.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
-- [\[ICCV 2025\] DIVE: Taming DINO for Subject-Driven Video Editing](../../ICCV2025/video_generation/dive_taming_dino_for_subject-driven_video_editing.md)
+- [\[CVPR 2025\] DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](../../CVPR2025/video_generation/dynamicscaler_seamless_and_scalable_video_generation_for_panoramic_scenes.md)
 
 </div>
 

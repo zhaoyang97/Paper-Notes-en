@@ -25,14 +25,14 @@ item_total: 2
 
 **🧪 ICML2026** · **2** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🔬 ICLR2026 (13)](../../ICLR2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🔬 ICLR2026 (13)](../../ICLR2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
 
 🔥 **Top topics:** Medical Imaging ×2
 
 **[ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education](clintutor-r1_advancing_scalable_and_robust_one-to-many_alignment_in_clinical_soc.md)**
 
-:   This paper proposes ClinTutor-R1, the first Vision-Language Agent designed for one-to-many alignment in clinical Socratic teaching. By constructing the 48k ClinTeach dialogue dataset via the multi-agent simulator ClinEdu, and employing explicit Theory of Mind (ToM) reasoning and three-axis rubric reinforcement learning, the model maintains stable teaching quality even as the student count scales to 10, surpassing baseline models by 20% and achieving performance parity with GPT-4o.
+:   This paper proposes ClinTutor-R1, the first vision-language Agent for one-to-many alignment in clinical Socratic teaching. By constructing a 48k dialogue dataset (ClinTeach) via the multi-agent simulator ClinEdu, and utilizing explicit Theory of Mind (ToM) reasoning with triple-axis rubric reinforcement learning, the model maintains stable teaching quality even when scaled to 10 students, outperforming baselines by 20% and achieving performance comparable to GPT-4o.
 
 **[MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)**
 
-:   The authors propose a "staged LLM + terminology grounding + repair loop" pipeline to convert free-text medical cases into HL7 FHIR R4 standard-compliant patient bundles. Based on this, they construct the MedCase-Structured dataset from MedCaseReasoning, consisting of 1,408 structured synthetic cases (82.5% success rate). Experiments show that the diagnostic accuracy of GPT-5.4 / Gemini-3.1-Pro / Claude-Opus-4.6 consistently drops by 4–23 points on structured FHIR inputs compared to pure text inputs.
+:   The authors propose a "staged LLM + terminology grounding + repair loop" pipeline to convert free-text clinical cases into HL7 FHIR R4 standard bundles. Based on this, they construct the MedCase-Structured dataset (1,408 structured synthetic cases with an 82.5% success rate) from MedCaseReasoning. Experiments demonstrate that the diagnostic accuracy of GPT-5.4 / Gemini-3.1-Pro / Claude-Opus-4.6 consistently drops by 4–23 percentage points when using structured FHIR inputs compared to pure text inputs.

@@ -2,130 +2,135 @@
 title: >-
   [Paper Note] Dynamic Token Reweighting for Robust Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM safety] This paper proposes DTR (Dynamic Token Reweighting), the first inference-time defense against multimodal jailbreak attacks that operates by optimizing the KV cache of VLMs. DTR int…
+  [CVPR 2026][Multimodal VLM][VLM safety] This paper proposes Dtr (Dynamic Token Reweighting), the first inference-time defense method that optimizes the VLM's KV cache to counter multimodal jailbreak attacks. By defining "Reverse Safety Shift" (RSS), Dtr identifies vision tokens that cause safety degradation and dynamically adjusts their weights to restore sa
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "VLM safety"
-  - "jailbreak defense"
-  - "KV cache optimization"
-  - "token reweighting"
-  - "refusal direction"
+  - CVPR 2026
+  - Multimodal VLM
+  - VLM safety
+  - jailbreak defense
+  - KV cache optimization
+  - token reweighting
+  - refusal direction
 date: 2026-05-08
-content_hash: ab7119b5c7d6132d
+content_hash: 2ad04e36ef3c2e76
 ---
-
 # Dynamic Token Reweighting for Robust Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2505.17132](https://arxiv.org/abs/2505.17132)  
 **Code**: [GitHub](https://github.com/TanqiuJiang/DTR)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: VLM safety, jailbreak defense, KV cache optimization, token reweighting, refusal direction
 
 ## TL;DR
-This paper proposes DTR (Dynamic Token Reweighting), the first inference-time defense against multimodal jailbreak attacks that operates by optimizing the KV cache of VLMs. DTR introduces the concept of "Reversal Safety-Relevant Shift" (RSS) to identify visual tokens responsible for safety degradation, dynamically adjusts their weights to restore the model's safety alignment, and preserves benign task performance.
+This paper proposes Dtr (Dynamic Token Reweighting), the first inference-time defense method that optimizes the VLM's KV cache to counter multimodal jailbreak attacks. By defining "Reverse Safety Shift" (RSS), Dtr identifies vision tokens that cause safety degradation and dynamically adjusts their weights to restore safety alignment while maintaining performance on benign tasks.
 
 ## Background & Motivation
 
-**Background**: Large vision-language models (VLMs) achieve powerful multimodal reasoning by integrating visual and linguistic capabilities, yet the introduction of the visual modality creates new security vulnerabilities — multimodal jailbreak attacks exploit vision-text interactions to bypass safety guardrails.
+**Background**: Large Vision-Language Models (VLMs) achieve powerful multimodal reasoning by integrating visual and linguistic capabilities. However, the introduction of the visual modality brings new security vulnerabilities, as multimodal jailbreak attacks exploit vision-text interactions to bypass safety guardrails.
 
-**Limitations of Prior Work**: Fine-tuning-stage approaches (e.g., RLHF-based safety alignment) are computationally expensive and require annotated data. Inference-stage approaches either rely on iterative prompting (high overhead) or image-to-text conversion (severe information loss). Recent distribution-shift correction methods (ShiftDC, CoCA) require safety references, which are typically obtained via lossy image-to-text translation.
+**Limitations of Prior Work**: Fine-tuning solutions (such as RLHF safety alignment) are computationally expensive and depend on annotated data. Inference-stage solutions either require iterative prompting (high overhead) or rely on image-to-text conversion (significant information loss). Recent distribution shift correction methods (e.g., ShiftDC, CoCA) require a safety reference, which is typically obtained through lossy image-to-text processes.
 
-**Key Challenge**: Accurately quantifying the "safety shift" induced by the visual modality requires comparing states with and without an image, but obtaining an accurate text-only counterpart inherently involves information loss.
+**Key Challenge**: Accurately quantifying the "safety shift" caused by the visual modality requires comparing the state with and without the image. However, obtaining an accurate text-only counterpart is inherently a process prone to information loss.
 
-**Goal**: Design an inference-time jailbreak defense that requires no safety reference data, no image-to-text conversion, and incurs minimal computational overhead.
+**Goal**: To design an inference-time jailbreak defense that requires no safety reference data, no image-to-text conversion, and incurs extremely low computational overhead.
 
-**Key Insight**: Rather than measuring "how much shift the image introduces," DTR measures "how much of the shift can be reversed by adjusting visual token weights" — this RSS directly distinguishes jailbreak queries from benign ones.
+**Key Insight**: Instead of measuring "how much shift occurred after adding the image," this work measures "how much of the shift can be pushed back by adjusting vision token weights." This "Reverse Safety Shift" (RSS) can directly distinguish jailbreak queries from benign queries.
 
-**Core Idea**: Jailbreak attacks optimize a query from "refused" to "accepted," and therefore the shift can be reversed — whereas benign queries lack this reversibility.
+**Core Idea**: Jailbreak attacks optimize a query from "refused" to "accepted," making the process inherently reversible. In contrast, benign queries do not exhibit this reversibility.
 
 ## Method
 
 ### Overall Architecture
-Given a query $\mathbf{x} = \mathbf{x}_{txt} \| \mathbf{x}_{img}$, a scaling factor $\alpha_i \in [0,1]$ is assigned to each visual token. Gradient descent is used to optimize $\alpha$ so as to minimize the projection of the last-layer activation along the refusal direction (i.e., reversing the safety shift), while a distance constraint to the original activation is imposed to maintain benign performance. After optimization, low-weight tokens are evicted, and inference proceeds with the adjusted KV cache.
+Dtr aims to address the safety breach opened by the visual modality in VLMs, where jailbreak images "influence" harmful queries—which should be rejected—into being accepted. Previous inference-time defenses relied on image-to-text (lossy) or iterative prompting (high cost). Dtr instead adjusts the "influence" of vision tokens without altering the image content. It first computes a "refusal direction" $\mathbf{d}_{ref}$ offline using 32 harmful and 32 harmless prompts as a safety metric axis. During inference, given a query $\mathbf{x} = \mathbf{x}_{txt} \| \mathbf{x}_{img}$, a scaling factor $\alpha_i \in [0,1]$ is assigned to each vision token. These factors are optimized via gradient descent to minimize the projection of the final layer activation onto the refusal direction (minimizing RSS) while constrained by a distance penalty to ensure benign activations do not drift. Optimization typically stops early (3-4 steps), and tokens with weights below a threshold $\beta$ are evicted from the KV cache. The adjusted cache is then used for decoding. This mechanism only modifies the KV cache and not the weights, making it a pure inference-time method.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["Refusal Direction Extraction (Offline Once)<br/>Difference between mean activations of 32 harmful + 32 harmless samples"] --> O
+    A["Input Query<br/>Text tokens ‖ Vision tokens"] --> B["Assign scaling factor α∈[0,1]<br/>to each vision token"]
+    B --> O["Dynamic Token Reweighting: Optimize α<br/>Minimize projection along refusal direction = Min RSS<br/>+ Distance constraint to preserve benign performance"]
+    O -->|Loss drops rapidly; early stop at 3–4 steps| E["Token Eviction<br/>Evict vision tokens with α≤β from KV cache"]
+    E --> D["Decode with adjusted KV cache → Response y"]
+```
 
 ### Key Designs
 
-1. **Reversal Safety-Relevant Shift (RSS)**
+**1. Reverse Safety Shift (RSS): Measuring Reversibility Instead of Absolute Shift**
 
-    - **Function**: Bypasses image-to-text conversion by directly quantifying the reversibility of the safety shift through optimization.
-    - **Mechanism**: Defines $\Delta^*_{safe}(\mathbf{x}) = \max_{\alpha} \frac{(f(\mathbf{x}) - f(\mathbf{x}(\alpha))) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|}$, i.e., the maximum reversal shift achievable along the refusal direction by adjusting visual token weights. The RSS of jailbreak queries is substantially larger than that of benign queries, since attacks are inherently optimized along the refusal direction and are thus naturally reversible.
-    - **Design Motivation**: Eliminates the information loss and additional VLM overhead associated with image-to-text conversion, while creating a fundamental dilemma for attackers — increasing adversarial token importance amplifies RSS and makes detection easier, whereas decreasing it renders the jailbreak ineffective.
+To quantify the safety shift brought by the visual modality, the standard approach is to compare the "image-present" and "image-absent" states. However, text-only counterparts created via lossy image-to-text are inaccurate. Dtr defines the Reverse Safety Shift as $\Delta^*_{safe}(\mathbf{x}) = \max_{\alpha} \frac{(f(\mathbf{x}) - f(\mathbf{x}(\alpha))) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|}$, which represents the maximum distance an activation can be pushed back along the refusal direction $\mathbf{d}_{ref}$ by adjusting vision token weights. The key observation is that jailbreak attacks are products of optimizing a query from "refused" to "accepted," making them naturally reversible (high RSS). Benign queries were never so optimized, making them difficult to "push back" (low RSS). Thus, RSS serves as a criterion to distinguish jailbreak from benign queries without extra VLM calls or information loss. This creates a dilemma for attackers: increasing adversarial token influence improves the jailbreak but significantly increases RSS, making detection easier.
 
-2. **Dynamic Token Reweighting Optimization**
+**2. Dynamic Token Reweighting: Balancing Safety Recovery and Performance Preservation**
 
-    - **Function**: Optimizes the scaling vector for visual tokens to simultaneously recover safety and preserve performance.
-    - **Mechanism**: $\alpha^* = \arg\min_{\alpha} \left[\frac{f(\mathbf{x}(\alpha)) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|} + \lambda \|f(\mathbf{x}) - f(\mathbf{x}(\alpha))\|_2 \right]$, where the first term minimizes the projection along the refusal direction (safety recovery) and the second term constrains the distance from the original activation (performance preservation), with $\lambda$ balancing the two objectives.
-    - **Design Motivation**: Minimizing the safety shift alone degrades benign performance; the distance constraint ensures minimal impact on benign queries.
+Simply pushing back the safety shift is insufficient, as purely minimizing the projection along the refusal direction might degrade performance on benign visual tasks. Dtr formulates the optimization objective as a trade-off between two terms:
 
-3. **Early Stopping + Token Eviction**
+$$\alpha^* = \arg\min_{\alpha} \left[\frac{f(\mathbf{x}(\alpha)) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|} + \lambda \|f(\mathbf{x}) - f(\mathbf{x}(\alpha))\|_2 \right]$$
 
-    - **Function**: Only 3–4 optimization steps are required; evicting low-weight tokens further improves efficiency.
-    - **Mechanism**: The loss for jailbreak queries decreases rapidly in the first few steps, making full convergence unnecessary. Tokens whose weights fall below threshold $\beta$ are evicted directly from the KV cache — visual tokens are inherently redundant, so eviction actually accelerates inference.
-    - **Design Motivation**: Minimal optimization steps combined with token eviction yield inference latency comparable to or lower than the baseline.
+The first term suppresses activations along the refusal direction to restore safety alignment. The second term is a distance constraint that penalizes adjusted activations for straying too far from original activations, preserving benign performance. For jailbreak queries, the first term drives $\alpha$ to suppress adversarial tokens. For benign queries, where there is little safety shift to suppress, the distance constraint ensures $\alpha$ remains near 1, minimizing impact.
 
-4. **Robustness of the Refusal Direction**
+**3. Early Stopping + Token Eviction: Enhancing Efficiency**
 
-    - **Function**: A stable refusal direction can be extracted from as few as 32 harmful/harmless text prompt pairs.
-    - **Mechanism**: 32 harmful prompts are sampled from AdvBench and 32 benign prompts from AlpacaEval; the refusal direction is computed as the difference between the mean last-layer activations. Experiments demonstrate that this direction generalizes across languages, attack types, and datasets.
-    - **Design Motivation**: The refusal direction captures an intrinsic model-level property rather than dataset-specific artifacts, making small-sample extraction sufficient.
+While inference-time methods are often criticized for overhead, Dtr leverages efficiency. First, the loss for jailbreak queries drops sharply in the first few steps, allowing for early stopping (default 3-4 steps). Second, vision tokens with weights below the threshold $\beta$ are evicted from the KV cache after optimization. Since vision tokens are highly redundant, removing low-weight tokens does not hurt performance but reduces cache size and accelerates subsequent decoding. Consequently, inference with defense can be faster than the baseline without it.
+
+**4. Robust Extraction of Refusal Direction: Efficiency with 32 Samples**
+
+The mechanism relies on a reliable refusal direction $\mathbf{d}_{ref}$. Dtr extracts this at a very low cost: it subtracts the mean activation of 32 harmful prompts (from AdvBench) from the mean activation of 32 harmless prompts (from AlpacaEval). This works with small samples because the refusal direction captures intrinsic model properties rather than dataset-specific artifacts, remaining consistent across languages, attack types, and datasets.
 
 ### Loss & Training
-DTR is a fully inference-time method requiring no training. Optimization uses AdamW with a learning rate of 0.01, $\lambda=0.1$, and a default of 3–4 gradient descent steps.
+This is entirely an inference-time method requiring no training. It uses the AdamW optimizer with a learning rate of 0.01, $\lambda=0.1$, and 3-4 steps of gradient descent by default.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**LLaVA-LLaMA2-7B Attack Success Rate (ASR↓, lower is better)**
+**Attack Success Rate on LLaVA-LLaMA2-7B (ASR↓, Lower is Better)**
 
-| Defense | HADES-S | HADES-S+A | HADES-S+T+A | MM-Safety-S | MM-Safety-T | JailBreak-Style |
-|---------|---------|-----------|-------------|-------------|-------------|-----------------|
+| Defense Method | HADES-S | HADES-S+A | HADES-S+T+A | MM-Safety-S | MM-Safety-T | JailBreak-Style |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | No Defense | 31.4% | 44.9% | 56.9% | 70.0% | 72.7% | 34.0% |
 | AdaShield | 7.5% | 5.5% | 17.6% | 8.2% | 4.5% | 8.5% |
 | ShiftDC | 20.0% | 32.9% | 16.8% | 10.9% | 5.5% | 25.5% |
 | CoCA | 23.6% | 20.8% | 35.7% | 24.3% | 26.3% | 8.5% |
-| **DTR** | **8.9%** | **4.8%** | **15.9%** | **3.6%** | **3.6%** | **6.4%** |
+| **Dtr** | **8.9%** | **4.8%** | **15.9%** | **3.6%** | **3.6%** | **6.4%** |
 
 ### Ablation Study
 
 | Configuration | ASR↓ | MM-Vet↑ | Inference Time |
-|---------------|------|---------|----------------|
-| DTR (full) | ~5% | ~35 | ~7s |
+| :--- | :--- | :--- | :--- |
+| Dtr Full | ~5% | ~35 | ~7s |
 | w/o distance constraint ($\lambda=0$) | ~3% | ~28 | ~7s |
 | w/o token eviction | ~5% | ~35 | ~9s |
-| eviction only, no reweighting | ~15% | ~34 | ~5s |
-| Baseline (no defense) | ~45% | ~35 | ~6s |
+| Eviction only (no reweighting) | ~15% | ~34 | ~5s |
+| Baseline (No Defense) | ~45% | ~35 | ~6s |
 
 ### Key Findings
-- DTR achieves the lowest ASR across nearly all attack types, with the largest reduction on MM-Safety-S (70% → 3.6%).
-- DTR maintains or improves inference efficiency, as token eviction reduces KV cache size.
-- The distance constraint $\lambda$ is critical for benign performance; removing it causes MM-Vet to drop from 35 to 28.
-- The refusal direction requires only 32 sample pairs and generalizes strongly across domains.
-- Attackers face a fundamental dilemma: strengthening adversarial tokens increases RSS, making detection easier.
+- Dtr achieves the lowest ASR across almost all attack types, notably reducing MM-Safety-S from 70% to 3.6%.
+- Dtr maintains or even improves inference efficiency because token eviction reduces the KV cache size.
+- The distance constraint $\lambda$ is critical for benign performance; without it, the MM-Vet score drops from 35 to 28.
+- The refusal direction is stable with only 32 sample pairs and exhibits strong cross-domain generalization.
+- Attackers face a fundamental dilemma: strengthening adversarial tokens increases RSS, making them easier to detect.
 
 ## Highlights & Insights
-- **The attacker's dilemma** is the most profound contribution — rather than engaging in a specific attack-defense arms race, the paper establishes a fundamental trade-off between attack effectiveness and detectability.
-- **First work to apply KV cache optimization for safety** — unifying efficiency optimization (token eviction) and safety defense (token reweighting) within a single optimization framework.
-- **RSS as a substitute for image-to-text conversion** is an elegant design — instead of asking "how much shift does the image introduce," it asks "how much of the shift can be reversed by adjusting tokens," neatly circumventing the information loss problem.
+- **Attacker's Dilemma**: This is a profound contribution—it proves a fundamental trade-off between attack success and detectability rather than just playing an arms race.
+- **First work using KV cache optimization for safety**: It unifies efficiency optimization (token eviction) and safety defense (token reweighting) into a single framework.
+- **RSS as a replacement for image-to-text**: Measuring reversibility instead of absolute shift elegantly bypasses the information loss problem.
 
 ## Limitations & Future Work
-- Each inference requires 3–4 gradient optimization steps, which, while fast, still incurs overhead.
-- The refusal direction assumes that safety concepts are linearly represented in activation space, which may be insufficient for highly complex safety scenarios.
-- Validation is limited to image-text VLMs; generalization to video/audio multimodal settings remains unexplored.
-- The eviction threshold $\beta$ requires tuning.
+- While fast, 3-4 gradient optimization steps per inference still incur some overhead.
+- The refusal direction assumes safety concepts are linear in the activation space, which might not hold for extremely complex scenarios.
+- It has only been verified on image+text VLMs; performance on video/audio multimodal scenarios remains unknown.
+- The eviction threshold $\beta$ requires manual tuning.
 
 ## Related Work & Insights
-- **vs. AdaShield**: Relies on iterative prompting to check image safety, incurring high computational cost; DTR operates directly at the KV cache level.
-- **vs. ShiftDC**: Requires image-to-text conversion to obtain safety references, resulting in information loss; DTR bypasses this requirement via RSS.
-- **vs. CoCA**: Corrects the shift at the decoding logit level; DTR operates at the lower-level KV cache, yielding superior performance.
+- **vs AdaShield**: AdaShield uses iterative prompts to check safety, which is computationally heavy; Dtr operates directly at the KV cache level.
+- **vs ShiftDC**: ShiftDC requires image-to-text for safety references, leading to information loss; Dtr bypasses this with RSS.
+- **vs CoCA**: CoCA corrects shifts at the decoding logit level; Dtr operates at the lower KV cache level with better results.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Both the RSS concept and KV cache-based safety optimization are pioneering contributions; the attacker dilemma analysis is particularly insightful.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluated on 5 VLMs, 3 attack benchmarks, multiple attack types, adaptive attacks, and comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain from problem formulation to theoretical analysis to experiments is complete and clear.
-- **Value**: ⭐⭐⭐⭐⭐ Directly applicable to safe VLM deployment; opens a new direction in KV cache-based safety optimization.
+- **Novelty**: ⭐⭐⭐⭐⭐ The RSS concept and KV cache safety optimization are pioneering; the analysis of the attacker's dilemma is insightful.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive testing across 5 VLMs, 3 attack benchmarks, multiple attack types, and comprehensive ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logical progression from problem definition to theoretical analysis and experimental validation.
+- **Value**: ⭐⭐⭐⭐⭐ Directly applicable to safe VLM deployment and opens a new direction for KV cache-based safety.
 
 <!-- RELATED:START -->
 
@@ -135,9 +140,9 @@ DTR is a fully inference-time method requiring no training. Optimization uses Ad
 
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
 - [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
-- [\[CVPR 2026\] Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models](variation-aware_vision_token_dropping_for_faster_large_vision-language_models.md)
-- [\[CVPR 2026\] ReHARK: Refined Hybrid Adaptive RBF Kernels for Robust One-Shot Vision-Language Adaptation](rehark_refined_hybrid_adaptive_rbf_kernels_for_robust_one-shot_vision-language_a.md)
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 
 </div>
 

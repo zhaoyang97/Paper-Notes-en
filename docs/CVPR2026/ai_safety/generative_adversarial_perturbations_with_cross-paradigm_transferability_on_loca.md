@@ -2,127 +2,136 @@
 title: >-
   [Paper Note] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 description: >-
-  [CVPR 2026][AI Safety][adversarial attack] This paper proposes CrowdGen, the first cross-paradigm adversarial attack framework targeting both density-map and point-regression crowd counting models. A lightweight UNet gen…
+  [CVPR 2026][AI Safety][Paper Note] The paper proposes CrowdGen, the first adversarial attack framework with cross-paradigm (density map + point regression) transferability. By utilizing a lightweight UNet generator and a multi-task loss (logit suppression + density suppression + GradCAM guidance + frequency domain constraints), it achieves high transfer
 tags:
-  - "CVPR 2026"
-  - "AI Safety"
-  - "adversarial attack"
-  - "crowd counting"
-  - "cross-paradigm transferability"
-  - "generative adversarial perturbation"
-  - "black-box attack"
+  - CVPR 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 573e115a2dc893e2
+content_hash: 1225daaf5dfa6221
 ---
-
 # Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24821](https://arxiv.org/abs/2603.24821)  
 **Code**: [https://github.com/simurgh7/CrowdGen](https://github.com/simurgh7/CrowdGen)  
-**Area**: AI Safety / Adversarial Attacks
-**Keywords**: adversarial attack, crowd counting, cross-paradigm transferability, generative adversarial perturbation, black-box attack
+**Area**: AI Safety / Adversarial Attacks  
+**Keywords**: Adversarial attack, Crowd counting, Cross-paradigm transferability, Generative adversarial perturbations, Black-box attack
 
 ## TL;DR
-This paper proposes CrowdGen, the first cross-paradigm adversarial attack framework targeting both density-map and point-regression crowd counting models. A lightweight UNet generator combined with a multi-task loss (logit suppression, density suppression, GradCAM guidance, and frequency-domain constraint) achieves high transferability (TR up to 1.69) across seven SOTA crowd counting models while maintaining visual imperceptibility (~19 dB PSNR), increasing attack MAE by an average factor of 7×.
+The paper proposes CrowdGen, the first adversarial attack framework with cross-paradigm (density map + point regression) transferability. By utilizing a lightweight UNet generator and a multi-task loss (logit suppression + density suppression + GradCAM guidance + frequency domain constraints), it achieves high transferability (TR up to 1.69) across seven SOTA crowd counting models while maintaining visual stealthiness (~19dB PSNR), increasing the attack MAE by 7x on average.
 
 ## Background & Motivation
-Localized crowd counting is widely deployed in public safety, retail analytics, and epidemic monitoring. Current mainstream approaches fall into two paradigms: **density-map methods** (e.g., SASNet, FIDTM), which regress spatial density distributions and extract localization via post-processing, and **point-regression methods** (e.g., P2PNet, PET), which directly predict coordinates and confidence scores end-to-end.
+Localized crowd counting is widely applied in public safety, retail analysis, and epidemic tracking. Currently, mainstream solutions are divided into two paradigms: **Density map methods** (e.g., SASNet, FIDTM) which regress spatial density distributions and extract locations via post-processing, and **Point regression methods** (e.g., P2PNet, PET) which output coordinates and confidence scores end-to-end.
 
-Existing adversarial attacks suffer from the following limitations:
+Existing adversarial attacks face the following limitations:
 
-**Attack strength vs. imperceptibility trade-off**: PAP and GE-AdvGAN achieve good visual quality (PSNR ≥ 22 dB) but weak attacks (MAE < 120); DiffAttack yields strong attacks (MAE = 414) but severe visual degradation (PSNR = 11.5 dB).
+**Trade-off between attack strength and stealthiness**: PAP and GE-AdvGAN provide good visual quality (PSNR $\ge$ 22dB) but weak attacks (MAE < 120); DiffAttack provides strong attacks (MAE = 414) but suffers from visual collapse (PSNR = 11.5dB).
 
-**Single-paradigm limitation**: Existing transferable attacks (APAM, PAP) transfer only within density-map methods and do not consider cross-paradigm transfer (density-map ↔ point-regression).
+**Single-paradigm limitation**: Existing transferable attacks (APAM, PAP) only transfer between density map methods and do not account for cross-paradigm (density map $\leftrightarrow$ point regression) transfer.
 
-**Black-box deployment requirements**: Real-world crowd counting systems are typically black-box, necessitating surrogate-model-based transfer attacks.
+**Black-box requirements**: Authentically deployed crowd counting systems are typically black-box, necessitating transferable attacks based on proxy models.
 
-**Core Idea**: The shared backbone feature space (e.g., VGG-16, ResNet-50) across both paradigms encodes common inductive biases. By combining paradigm-specific attack losses with paradigm-agnostic perceptual constraints, a unified generative perturbation generator can be learned.
+Core Idea: Leverage the inductive bias of shared backbone feature spaces (e.g., VGG-16, ResNet-50) using paradigm-specific attack losses and paradigm-agnostic perceptual constraints to learn a unified generative perturber.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of three core components: a 3-layer UNet generator $G_\theta$ that maps input images to bounded perturbations $\delta$, with the total loss composed of a **paradigm-specific model loss** $\mathcal{L}_{model}$ and a **cross-paradigm perturbation loss** $\mathcal{L}_{pert}$. Training is performed against surrogate models; at inference time, adversarial examples are generated in a single forward pass without per-image optimization.
+
+This paper attacks localized crowd counting. The challenge lies in the completely different output formats of density map and point regression paradigms, where previous transferable attacks only functioned within a single paradigm. CrowdGen trains a lightweight 3-layer UNet generator $G_\theta$ that maps input images directly to a bounded perturbation $\delta$ (upper bound $\epsilon=8/255$), which is superimposed on the original image to generate adversarial samples. During training, gradients are backpropagated through a proxy model. The total loss is split into two parts: the **paradigm-specific loss** $\mathcal{L}_{model}$ targeting a specific paradigm, and the **cross-paradigm perturbation loss** $\mathcal{L}_{pert}$, which is universal to both paradigms and designed to enhance transferability. At inference, perturbations are generated in a single forward pass without iterative optimization for each image.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image"] --> B["UNet Generator G_θ<br/>Single forward pass generates bounded perturbation δ (ε=8/255)"]
+    B --> C["Adversarial Example = Original + δ"]
+    C --> D["Proxy Model Gradient Backpropagation"]
+    D -->|Point Regression Paradigm| E["Logit Suppression Loss<br/>Eliminate high-confidence detections · Dense/Sparse branches + Threshold decay"]
+    D -->|Density Map Paradigm| F["Density Suppression Loss<br/>Heatmap / Peak suppression selected by isolation ratio"]
+    E --> G["Paradigm-specific Loss L_model"]
+    F --> G
+    subgraph H["Cross-paradigm Perturbation Loss L_pert"]
+        direction TB
+        I["Frequency Domain Constraint · FFT high-frequency suppression"]
+        J["GradCAM Guidance · Perturbation focused on shared backbone"]
+        K["Amplitude + Smoothness Constraints · Maintain ~19dB stealthiness"]
+    end
+    B --> H
+    G --> M["Total Loss L_attack"]
+    H --> M
+    M -->|Backprop Update| B
+```
 
 ### Key Designs
 
-1. **Logit Suppression Loss (for point-regression models)**:
+**1. Logit Suppression Loss: Forcing point regression models to miss high-confidence detections**
 
-    - Attacks are focused on high-confidence detections $\mathcal{P}_{high} = \{i : s_i^{(h)} > \tau\}$
-    - Dense scenes ($C_{gt} > C_{sparse}$): directly minimizes logit values in high-confidence regions
-    - Sparse scenes ($C_{gt} \le C_{sparse}$): applies weighted penalties to detections near the confidence boundary
-    - Adaptive threshold decay: $\tau(t) = \max(\tau_{min}, \tau_{max} - \nu \cdot t / T_{max})$, progressively lowering the threshold during training to expand the attack surface
+Point regression models (P2PNet, PET) output coordinates and confidence for each point. To reduce the count, the most direct method is to eliminate high-confidence detections. The loss targets the set $\mathcal{P}_{high} = \{i : s_i^{(h)} > \tau\}$ and branches based on scene density: in dense scenarios ($C_{gt} > C_{sparse}$), it directly minimizes logits in high-confidence regions; in sparse scenarios ($C_{gt} \le C_{sparse}$), it applies weighted penalties to detections near the confidence boundary to avoid wasting perturbation budget on already sparse points. The threshold also adaptively decays: $\tau(t) = \max(\tau_{min}, \tau_{max} - \nu \cdot t / T_{max})$. As training progresses, the threshold lowers to expand the attack surface, gradually including medium-confidence detections.
 
-2. **Density Suppression Loss (for density-map models)**:
+**2. Density Suppression Loss: Flattening peaks and clusters in density maps**
 
-    - **Heatmap suppression** $\mathcal{L}_{hmap}$: simultaneously attacks salient peaks and near-threshold regions; local maxima are detected via 3×3 max-pooling, with foreground separated by an adaptive threshold $\phi = \phi' \cdot \max(\mathcal{D})$
-    - **Peak suppression** $\mathcal{L}_{peak}$: additionally incorporates peak prominence (difference between peak value and local neighborhood) to emphasize isolated high-density clusters
-    - An isolation ratio (proportion of peaks with no neighbors within a 5×5 window > 0.7) automatically selects which loss to apply
+Density map models (SASNet, FIDTM) regress spatial density distributions; localization relies on post-processing to find peaks. Thus, the attack must suppress both significant peaks and transition zones near thresholds. Heatmap suppression $\mathcal{L}_{hmap}$ uses $3\times3$ max-pooling to detect local maxima and suppresses the foreground globally after separating it from the background using an adaptive threshold $\phi = \phi' \cdot \max(\mathcal{D})$. Peak suppression $\mathcal{L}_{peak}$ introduces peak prominence (the difference between a peak and its local neighborhood) specifically for isolated high-density clusters. These are not used simultaneously; instead, one is selected based on the isolation ratio (the proportion of peaks without neighbors in a $5\times5$ window $>0.7$).
 
-3. **Cross-paradigm Perturbation Loss**:
+**3. Cross-paradigm Perturbation Loss: Leveraging paradigm-agnostic constraints for transferability**
 
-    - **Frequency-domain constraint** $\mathcal{L}_{freq}$: suppresses high-frequency components via FFT, exploiting the low-frequency dominance of crowd scenes to improve transferability
-    - **GradCAM guidance** $\mathcal{L}_{cam}$: concentrates perturbations on semantically important regions identified by the shared backbone, minimizing perturbation outside attention regions
-    - **Magnitude constraint** $\mathcal{L}_{hinge}$: bounds perturbation energy via L2 norm
-    - **Spatial smoothness regularization** $\mathcal{L}_{tv}$: total variation regularization to reduce perturbation artifacts
+The first two losses depend on the proxy model. To transfer perturbations to black-box targets, a set of constraints unlinked to specific paradigms is used. Frequency domain constraint $\mathcal{L}_{freq}$ suppresses high-frequency components of the perturbation via FFT, utilizing the low-frequency dominant statistical properties of crowd scenes to place perturbations in frequency bands that transfer more easily across models. GradCAM guidance $\mathcal{L}_{cam}$ concentrates perturbations in areas the shared backbone (VGG-16, ResNet-50) deems semantically important, minimizing perturbation energy outside attention regions. Amplitude constraint $\mathcal{L}_{hinge}$ limits total energy via the L2 norm, and spatial smoothness regularization $\mathcal{L}_{tv}$ reduces artifacts via Total Variation; together, they maintain ~19dB visual stealthiness.
 
 ### Loss & Training
 Total loss: $\mathcal{L}_{attack} = \alpha \cdot \mathcal{L}_{model} + \beta \cdot \mathcal{L}_{hinge} + \gamma \cdot \mathcal{L}_{tv} + \zeta \cdot \mathcal{L}_{freq} + \kappa \cdot \mathcal{L}_{cam}$
 
-- Perturbation budget $\epsilon = 8/255$; image resolution 512×512
-- Cosine annealing learning rate schedule
-- Hyperparameters tuned via grid search on a validation set: $\beta=0.01, \gamma=0.05, \zeta=0.01, \kappa=0.5$
+- Perturbation bound $\epsilon = 8/255$, image size $512\times512$.
+- Learning rate adjusted using cosine annealing.
+- Hyperparameters found via grid search on the validation set: $\beta=0.01, \gamma=0.05, \zeta=0.01, \kappa=0.5$.
 
 ## Key Experimental Results
 
 ### Main Results (Cross-model Transferability, SHHA Dataset)
 
-| Surrogate → Target | MAE / TR | Notes |
+| Proxy Model → Target Model | MAE / TR | Description |
 |---------|---------|------|
-| HMoDE → P2PNet | 420.71 / **1.69** | Cross-paradigm super-transfer: stronger than white-box self-attack |
-| FIDTM → P2PNet | 426.89 / 1.64 | Density-map → point-regression strong transfer |
-| SASNet → APGCC | 397.96 / 1.32 | Density-map → point-regression |
-| P2PNet → SASNet | 281.00 / 0.89 | Point-regression → density-map |
-| APGCC → HMoDE | 171.53 / **0.55** | Weakest transfer, yet MAE still doubles |
-| Clean baseline | 28–75 | Counting error on clean images |
+| HMoDE → P2PNet | 420.71 / **1.69** | Cross-paradigm super-transfer: stronger than white-box itself |
+| FIDTM → P2PNet | 426.89 / 1.64 | Density Map → Point Regression: strong transfer |
+| SASNet → APGCC | 397.96 / 1.32 | Density Map → Point Regression |
+| P2PNet → SASNet | 281.00 / 0.89 | Point Regression → Density Map |
+| APGCC → HMoDE | 171.53 / **0.55** | Weakest transfer but MAE still doubled |
+| Clean baseline | 28-75 | Counting error on clean images |
 
 ### Ablation Study (Loss Combinations, SHHA Dataset)
 
-| Loss Combination | Miss Rate (%) | PSNR (dB) | Notes |
+| Loss Combination | Miss Rate(%) | PSNR(dB) | Description |
 |---------|-------------|----------|------|
-| $\mathcal{L}_{hmap} + \mathcal{L}_{hinge}$ (baseline) | 45.35 | 17.67 | Basic density attack only |
+| $\mathcal{L}_{hmap} + \mathcal{L}_{hinge}$ (Baseline) | 45.35 | 17.67 | Basic density attack only |
 | + $\mathcal{L}_{cam}$ | 59.47 | 17.67 | GradCAM adds +14% MR |
-| + $\mathcal{L}_{freq}$ | 60.46 | 17.75 | Frequency constraint also significantly improves |
-| Full combination (density-map) | **60.89** | 17.47 | Best attack strength |
-| $\mathcal{L}_{logit} + \mathcal{L}_{hinge}$ (baseline) | 45.15 | 19.09 | Basic logit attack only |
-| + $\mathcal{L}_{cam}$ | **45.61** | **19.10** | Best trade-off for point-regression |
+| + $\mathcal{L}_{freq}$ | 60.46 | 17.75 | Frequency constraint also improves significantly |
+| All (Density Map) | **60.89** | 17.47 | Optimal attack strength |
+| $\mathcal{L}_{logit} + \mathcal{L}_{hinge}$ (Baseline) | 45.15 | 19.09 | Basic logit attack only |
+| + $\mathcal{L}_{cam}$ | **45.61** | **19.10** | Optimal trade-off for Point Regression |
 
 ### Key Findings
-- **Cross-paradigm super-transfer**: CNN-based HMoDE attacking Transformer-based PET achieves TR = 1.60 on UCF-QNRF, validating the shared backbone inductive bias hypothesis.
-- The contribution of each loss component is **paradigm-dependent**: frequency-domain constraints are critical for density-map models, while GradCAM guidance benefits point-regression models more.
-- In dense scenes, the miss rate reaches 58%, concealing the majority of the crowd, whereas prior methods achieve only 15–31%.
+- **Cross-paradigm Super-transfer**: The TR of CNN-based HMoDE attacking Transformer-based PET reaches 1.60 (UCF-QNRF), confirming the inductive bias hypothesis of shared backbones.
+- **Paradigm-dependent Impact**: The frequency domain constraint is crucial for density maps, while GradCAM guidance is more beneficial for point regression.
+- In dense scenarios, the miss rate reaches 58%, hiding the majority of the crowd, whereas previous methods achieved only 15-31%.
 
 ## Highlights & Insights
-- This work is the first to reveal cross-paradigm adversarial vulnerability in crowd counting models; the super-transfer phenomenon (TR > 1) suggests that black-box attackers may be more effective than white-box ones.
-- The scene-density-adaptive logit suppression strategy (dense vs. sparse branches) elegantly handles the distinct characteristics of different scene types.
-- The generative single-forward-pass attack is more practical than iterative optimization methods, offering high inference efficiency.
+- First to reveal the cross-paradigm adversarial vulnerability of crowd counting models. The "super-transfer" phenomenon (TR > 1) suggests black-box attackers can be more effective than white-box ones.
+- The scene-density adaptive logit suppression strategy (dense vs. sparse branches) elegantly handles different scene characteristics.
+- The generative single-forward attack is more practical than iterative optimization methods, offering high inference efficiency.
 
 ## Limitations & Future Work
-- Only digital-domain attacks are evaluated; physical-world scenarios (printing, projection) are not considered.
-- The attack focuses primarily on under-counting; the over-counting direction (hallucinating crowds) remains unexplored.
-- The perturbation budget $\epsilon = 8/255$ is standard; performance under smaller budgets has not been verified.
-- Experiments against adversarial defense methods are absent.
+- Only validated in the digital domain; physical world scenarios (printing, projection) were not considered.
+- The attack primarily adopts an under-counting strategy; the over-counting (phantom crowds) direction remains unexplored.
+- The perturbation bound $\epsilon = 8/255$ is standard; effectiveness under smaller perturbations requires verification.
+- Lack of adversarial experiments involving defense methods.
 
 ## Related Work & Insights
-- This framework can serve as a standardized benchmark for robustness evaluation of crowd counting systems.
-- The GradCAM-guided perturbation allocation strategy is generalizable to adversarial attacks on other dense prediction tasks.
-- The finding of shared-backbone vulnerability across paradigms has important implications for security strategies in model deployment.
+- Provides a standardized benchmark for evaluating the robustness of crowd counting systems.
+- The GradCAM-guided perturbation allocation strategy can be generalized to adversarial attacks for other dense prediction tasks.
+- The discovery of vulnerabilities in shared backbones across paradigms serves as a critical reference for security policies in model deployment.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First cross-paradigm adversarial attack on crowd counting, though the generative adversarial perturbation framework itself is not entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Transfer matrix across 7 models × 2 datasets, comparison with 9 baselines, and ablation studies — fairly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear and notation is complete, though some symbols are heavy.
-- Value: ⭐⭐⭐⭐ Provides important insights into the vulnerability of safety-critical crowd analysis systems.
+- Novelty: ⭐⭐⭐⭐ First cross-paradigm crowd counting attack, though the generative framework itself is not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive transfer matrix (7 models × 2 datasets) + 9 baselines + ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and complete formulas, though notation is slightly heavy.
+- Value: ⭐⭐⭐⭐ Significant revelation of vulnerabilities in safety-critical crowd analysis systems.
 
 <!-- RELATED:START -->
 
@@ -130,11 +139,11 @@ Total loss: $\mathcal{L}_{attack} = \alpha \cdot \mathcal{L}_{model} + \beta \cd
 
 ## Related Papers
 
+- [\[CVPR 2026\] Improving Adversarial Transferability with Local Perturbation Augmentation](improving_adversarial_transferability_with_local_perturbation_augmentation.md)
+- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
+- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
 - [\[NeurIPS 2025\] Boosting Adversarial Transferability with Spatial Adversarial Alignment](../../NeurIPS2025/ai_safety/boosting_adversarial_transferability_with_spatial_adversarial_alignment.md)
-- [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
-- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
-- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](../../ICML2026/ai_safety/fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
+- [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
 
 </div>
 

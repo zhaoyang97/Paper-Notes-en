@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 description: >-
-  [ACL 2026][LLM Agent][Tool Use] Fission-GRPO is proposed to dynamically transform tool execution errors into on-policy correction training instances within the RL training loop. By generating diagnostic feedback via a le…
+  [ACL 2026][LLM Agent][Reinforcement Learning] Ours proposes Fission-GRPO, which dynamically transforms tool execution errors into online-policy correction training instances within the RL loop. By utilizing a learned error simulator to generate diagnostic feedback and resampling recovery trajectories, it improves the error recovery rate of Qwen3-8B by 5.7% and the
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Tool Use"
-  - "Error Recovery"
-  - "Reinforcement Learning"
-  - "GRPO"
-  - "Error Simulator"
+  - ACL 2026
+  - LLM Agent
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: e8791d088854c865
+content_hash: 3b2e253e70827c68
 ---
-
 # Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 
 **Conference**: ACL 2026  
@@ -25,51 +21,59 @@ content_hash: e8791d088854c865
 
 ## TL;DR
 
-Fission-GRPO is proposed to dynamically transform tool execution errors into on-policy correction training instances within the RL training loop. By generating diagnostic feedback via a learned error simulator and resampling recovery trajectories, it improves the error recovery rate of Qwen3-8B by 5.7% and the overall accuracy from 42.75% to 46.75%.
+Ours proposes Fission-GRPO, which dynamically transforms tool execution errors into online-policy correction training instances within the RL loop. By utilizing a learned error simulator to generate diagnostic feedback and resampling recovery trajectories, it improves the error recovery rate of Qwen3-8B by 5.7% and the overall accuracy from 42.75% to 46.75%.
 
 ## Background & Motivation
 
-**Background**: LLMs can effectively call tools, but in multi-turn executions, small models often fall into hallucinated retry loops after encountering API errors instead of interpreting feedback and recovering.
+**Background**: While LLMs can call tools effectively, small models often fall into "hallucinated retry loops" when encountering API errors in multi-turn executions instead of interpreting feedback to recover.
 
-**Limitations of Prior Work**: (1) Standard RL (e.g., GRPO) treats errors only as sparse negative rewards, telling the model it is "wrong" without teaching "how to recover"; (2) When all sampled trajectories fail, the advantage variance is zero, leading to vanishing gradients; (3) Offline synthesized error correction datasets suffer from distribution shift as the policy evolves.
+**Limitations of Prior Work**: (1) Standard RL (e.g., GRPO) treats errors only as sparse negative rewards, indicating "what is wrong" without teaching "how to recover"; (2) Gradient vanishing occurs when the advantage variance is zero because all sampled trajectories fail; (3) Offline synthesized correction datasets suffer from distribution shift as the policy evolves.
 
-**Key Challenge**: Existing methods treat errors as "outcomes to be avoided" rather than "experiences to be learned."
+**Key Challenge**: Prior methods treat errors as "outcomes to be avoided" rather than "experiences to be learned from."
 
-**Goal**: Transform execution errors into dense, on-policy aligned correction training signals.
+**Goal**: Transform execution errors into dense, online-policy-aligned correction training signals.
 
 **Key Insight**: Analogous to nuclear fission—a single error event triggers a chain reaction, generating multiple correction trajectories.
 
-**Core Idea**: Intercept failed trajectories → Use a learned error simulator to generate diagnostic feedback → Resample $G'$ recovery trajectories ("fission") from the augmented context to continuously align the current policy's error patterns within the training loop.
+**Core Idea**: Intercept failure trajectories → generate diagnostic feedback using a learned error simulator → resample $G'$ recovery trajectories ("fission") from the augmented context to continuously align with the current policy's error patterns in the training loop.
 
 ## Method
 
 ### Overall Architecture
 
-A three-stage closed loop: Stage 1 standard GRPO exploration (establishing basic tool capabilities); Stage 2 error identification and correction sample construction (generating diagnostic feedback using an error simulator $S_\phi$); Stage 3 fission update (resampling $G'$ recovery trajectories from the correction context and updating the policy).
+Fission-GRPO establishes a closed loop for "recovering from errors" within the RL training cycle. Inspired by the metaphor of nuclear fission, a single execution error triggers a chain reaction to sprout multiple correction trajectories. Training alternates through three stages: Stage 1 involves standard GRPO to explore and establish basic tool-calling capabilities; Stage 2 intercepts failure trajectories and uses a learned error simulator $S_\phi$ to generate diagnostic feedback and construct a correction context; Stage 3 resamples $G'$ recovery trajectories ("fission") from the correction context to update the policy. Consequently, errors are no longer just sparse negative rewards but are transformed on-the-fly into dense correction signals aligned with the current policy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Stage 1: Standard GRPO Exploration<br/>Establish basic tool-calling capability"] --> B{"Trajectory failed?"}
+    B -->|No| H["Policy πθ Update"]
+    B -->|Yes, Intercept τ_err| C["Error Simulator Sφ<br/>Generate non-leaking diagnostic feedback f"]
+    C --> D["Construct Correction Context<br/>x_corr = [x; τ_err; f]"]
+    D --> E["Fission Resampling<br/>Sample G′ recovery trajectories"]
+    E --> F["Time-varying Compound Reward R(τ,t)<br/>Format first, then semantics"]
+    F --> G["Fission Group-relative Advantage<br/>GRPO Objective Update"]
+    G --> H
+    H -.->|LIFO Buffer: Supply correction samples from recent policy| C
+```
 
 ### Key Designs
 
-1.  **Error Simulator $S_\phi$**:
+**1. Error Simulator $S_\phi$: Replacing Expensive Real APIs with Controllable Diagnostic Feedback**
 
-    - **Function**: Generates realistic runtime diagnostic feedback.
-    - **Mechanism**: SFT based on Qwen3-32B using approximately 2K instances (system prompt + tool description + dialogue state + failed call + correct call + teacher diagnostic message). During inference, it takes a failed call as input and outputs a diagnostic string resembling runtime errors, constrained to non-leaking descriptions (e.g., "parameter status expects value OPEN").
-    - **Design Motivation**: Real API interactions are costly and non-reproducible; the learned simulator provides controllable diagnostic feedback. The non-leaking constraint prevents direct exposure of answers.
+Interaction with real APIs is costly and non-reproducible, yet teaching a model "how to recover" requires plausible runtime errors. Fission-GRPO performs SFT on Qwen3-32B using approximately 2K samples (system prompts + tool descriptions + dialogue states + failed calls + correct calls + teacher diagnostic messages) to obtain the error simulator $S_\phi$. During inference, it takes a failed call as input and outputs a diagnostic string resembling a runtime error. A key constraint is "non-leaking"—describing the issue (e.g., "parameter status expects value OPEN") without providing the direct answer—thereby providing effective clues without allowing the model to take shortcuts. Human evaluation shows a 96% non-leaking rate (Cohen's κ=0.71) and generalization to unseen tool schemas.
 
-2.  **Fission Resampling**:
+**2. Fission Resampling: Amplifying a Single Error into Dense Signals**
 
-    - **Function**: Generates dense correction signals from a single error.
-    - **Mechanism**: For each correction context $x_{\text{corr}} = [x; \tau_{\text{err}}; f]$, $G'$ recovery trajectories $\{\tau'_j\}_{j=1}^{G'} \sim \pi_\theta(\cdot | x_{\text{corr}})$ are sampled. Normalized advantages are calculated within the fission group to update the policy using the GRPO objective.
-    - **Design Motivation**: Diagnostic feedback increases intra-group outcome diversity, alleviating the vanishing gradient problem in standard GRPO when all samples in a group fail.
+Standard GRPO faces an issue where gradient vanishing occurs when a group of sampled trajectories all fail because the advantage variance is zero. Fission resampling targets each correction context $x_{\text{corr}} = [x; \tau_{\text{err}}; f]$ by sampling $G'$ recovery trajectories $\{\tau'_j\}_{j=1}^{G'} \sim \pi_\theta(\cdot \mid x_{\text{corr}})$, and then calculates normalized advantages within this fission group for the GRPO objective update. Since the diagnostic feedback $f$ injects additional information, the intra-group diversity is significantly improved, mitigating gradient vanishing caused by all-failure groups.
 
-3.  **Time-varying Composite Reward**:
+**3. Time-varying Compound Reward: Format First, then Semantics**
 
-    - **Function**: Guides the policy from format compliance to semantic precision.
-    - **Mechanism**: $R(\tau,t) = \frac{1}{3}[w_{\text{fmt}}(t)R_{\text{fmt}} + w_{\text{corr}}(t)R_{\text{corr}} + R_{\text{len}}]$, where format weight decreases and correctness weight increases over time. The correctness reward combines function selection precision and parameter F1.
-    - **Design Motivation**: Learn formatting in the early stages and focus on parameter accuracy later.
+Tool calling requires both format compliance and precise parameters, but applying pressure to both simultaneously can lead to unstable training. Fission-GRPO uses a time-varying compound reward $R(\tau,t) = \frac{1}{3}[w_{\text{fmt}}(t)R_{\text{fmt}} + w_{\text{corr}}(t)R_{\text{corr}} + R_{\text{len}}]$ for staged guidance. The format weight $w_{\text{fmt}}(t)$ decreases over the course of training while the correctness weight $w_{\text{corr}}(t)$ increases. The correctness reward $R_{\text{corr}}$ combines function selection accuracy and parameter F1. Thus, the policy learns the correct output format early on and concentrates on semantic precision of parameters in later stages.
 
 ### Loss & Training
 
-Standard GRPO and fission-correction GRPO are performed alternately. A LIFO buffer ensures that correction samples remain aligned with the current policy.
+Standard GRPO and Fission-Correction GRPO alternate: the former handles routine exploration, while the latter specifically digests intercepted failure trajectories. A LIFO (Last-In-First-Out) buffer ensures that correction samples always originate from the most recent policy, preventing the distribution shift often associated with offline synthesized correction data.
 
 ## Key Experimental Results
 
@@ -82,48 +86,48 @@ Qwen3 series models on BFCL v4 Multi-Turn:
 | Base | 7.80 | 19.37 | 42.75 |
 | GRPO | 17.12 | 36.38 | 42.75 |
 | DAPO | 16.00 | 38.25 | — |
-| **Fission-GRPO** | **20.38** | **40.50** | **46.75** |
+| **Ours (Fission-GRPO)** | **20.38** | **40.50** | **46.75** |
 
-Generalization results on TAU-Bench show up to a +17.4% improvement on the Retail set.
+Generalization results on TAU-Bench show up to a +17.4% Gain on Retail.
 
 ### Ablation Study
 
 | Configuration | Overall | Description |
 |------|---------|------|
 | GRPO only | 42.75 | No error recovery training |
-| + Offline error data | 44.00 | Static distribution shift |
-| + Fission (No simulator) | 44.50 | No diagnostic feedback |
-| + Fission-GRPO | **46.75** | Full framework |
+| + Offline Error Data | 44.00 | Static distribution shift |
+| + Fission (no simulator) | 44.50 | No diagnostic feedback |
+| + Ours (Fission-GRPO) | **46.75** | Full framework |
 
 ### Key Findings
 
-- The error recovery rate improved by 5.7% (from ~20% to ~26%), which is the primary source of the overall accuracy gain.
-- The simulator achieved a 96% non-leaking rate (human evaluation, Cohen's $\kappa=0.71$) and maintained generalization on unseen tool patterns.
-- The Fission mechanism is consistently effective across model scales (1.7B/4B/8B).
+- The error recovery rate improved by 5.7% (from ~20% to ~26%), which is the primary source of the overall accuracy Gain.
+- The simulator's non-leaking rate is 96% (human eval, Cohen's κ=0.71), maintaining generalization on unseen tool schemas.
+- The Fission mechanism is consistently effective across model scales (Gains observed at 1.7B/4B/8B).
 
 ## Highlights & Insights
 
-- **"Errors are experiences rather than punishments"**: This philosophy changes the RL training paradigm for tool use—not just telling the model it is wrong, but teaching it how to fix the error.
-- **LIFO Buffer**: Ensures correction samples are always aligned with the latest policy, avoiding the distribution shift common in offline datasets.
-- **Fission Metaphor**: Intuitive and powerful—one error leads to multiple recovery attempts, providing dense training signals.
+- The philosophy that **"errors are experiences rather than punishments"** changes the training paradigm for RL tool use—not just telling the model "you're wrong," but teaching it "how to fix it."
+- The **LIFO buffer** ensures that correction samples remain aligned with the latest policy, avoiding distribution shifts in offline data.
+- The **Fission metaphor** is intuitive and powerful—one error → multiple recovery attempts → dense signals.
 
 ## Limitations & Future Work
 
-- The error simulator is based on Qwen3-32B (significantly larger than the target models), so deployment costs must be considered.
-- Validation was only conducted for tool calling; the transferability to reasoning or code error recovery remains to be verified.
-- Tuning the LIFO buffer size and the fission group size $G'$ requires empirical effort.
+- The error simulator is based on Qwen3-32B (much larger than the target model), which necessitates cost considerations for deployment.
+- Validation is limited to tool-calling scenarios; portability to reasoning or code error recovery remains to be verified.
+- Tuning the LIFO buffer size and fission group size G' requires empirical effort.
 
 ## Related Work & Insights
 
-- **vs DAPO/NGRPO**: These methods reshape the loss surface of negative signals but do not construct positive signals; Fission-GRPO actively constructs recovery trajectories.
-- **vs ToolACE/LoopTool**: These rely on offline synthesized correction data, which suffers from severe distribution shift; Fission-GRPO maintains alignment through online generation.
+- **vs DAPO/NGRPO**: These methods reshape the loss surface of negative signals but do not construct positive signals; Fission-GRPO proactively builds recovery trajectories.
+- **vs ToolACE/LoopTool**: These use offline synthesis for correction data, leading to severe distribution shift issues; Fission-GRPO maintains alignment via online generation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The idea of integrating error recovery training directly into the RL loop is highly novel and elegant.
+- Novelty: ⭐⭐⭐⭐⭐ The idea of integrating error recovery training into the RL loop is highly innovative and elegant.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple model scales, multiple benchmarks, and human evaluation of simulator reliability.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework diagrams and a vivid fission analogy.
-- Value: ⭐⭐⭐⭐⭐ Provides practical value for improving the robustness of tool-using agents.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework diagrams and vivid fission analogy.
+- Value: ⭐⭐⭐⭐⭐ Practically advances the robustness of tool-using Agents.
 
 <!-- RELATED:START -->
 
@@ -132,10 +136,10 @@ Generalization results on TAU-Bench show up to a +17.4% improvement on the Retai
 ## Related Papers
 
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
-- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
-- [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
 - [\[ACL 2026\] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning](temp-r1_a_unified_autonomous_agent_for_complex_temporal_kgqa_via_reverse_curricu.md)
+- [\[ACL 2026\] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"](toolgrad_efficient_tool-use_dataset_generation_with_textual_gradients.md)
 
 </div>
 

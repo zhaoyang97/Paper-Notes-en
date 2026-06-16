@@ -2,129 +2,138 @@
 title: >-
   [Paper Note] Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data
 description: >-
-  [ICML 2026][Multimodal VLM][CLIP] The authors train a CLIP-style Transformer end-to-end using a 1D synthetic image-text testbed and find that such models can learn "left/right" relations and generalize to unseen object p…
+  [ICML 2026][Multimodal VLM][CLIP] The authors train a CLIP-style Transformer end-to-end on a 1D synthetic image-text testbed and find that such models can learn "left/right" relations and generalize to unseen object pairs. The mechanism involves the **cross-term of token and position embeddings $EW_{QK}P^T$ inducing a horizontal gradient** in the visio
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "CLIP"
-  - "Spatial Reasoning"
-  - "Mechanistic Interpretability"
-  - "Attention Decomposition"
-  - "Position Embeddings"
+  - ICML 2026
+  - Multimodal VLM
+  - CLIP
 date: 2026-05-08
-content_hash: 6ddd8d25d14f5380
+content_hash: 47f8cf858a7655b7
 ---
-
 # Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.12809](https://arxiv.org/abs/2601.12809)  
-**Code**: None (Modified from OpenAI CLIP and Sea-Snell/grokking public code)  
+**Code**: None (Modified based on OpenAI CLIP and Sea-Snell/grokking public repositories)  
 **Area**: Multimodal VLM  
-**Keywords**: CLIP, Spatial Reasoning, Mechanistic Interpretability, Attention Decomposition, Position Embeddings
+**Keywords**: CLIP, Spatial Reasoning, Mechanistic Interpretability, Attention Decomposition, Positional Embeddings
 
 ## TL;DR
-The authors train a CLIP-style Transformer end-to-end using a 1D synthetic image-text testbed and find that such models can learn "left/right" relations and generalize to unseen object pairs. The mechanism is a **horizontal gradient induced by the cross-term $EW_{QK}P^T$ of position and token embeddings in the vision encoder attention logits**, which breaks left-right symmetry; ablating this term drops left-right discrimination accuracy to random levels.
+The authors train a CLIP-style Transformer end-to-end on a 1D synthetic image-text testbed and find that such models can learn "left/right" relations and generalize to unseen object pairs. The mechanism involves the **cross-term of token and position embeddings $EW_{QK}P^T$ inducing a horizontal gradient** in the vision encoder's attention logits, breaking left-right symmetry; ablating this term drops left-right discrimination accuracy to random levels.
 
 ## Background & Motivation
 
-**Background**: CLIP-style VLMs are powerful in zero-shot retrieval and classification but consistently fail in relationship understanding ("who is to the left of whom"), spatial reasoning, and compositional generalization. Benchmarks like ARO, CLEVR, Winoground, and NLVR2 consistently show that large VLMs often degenerate into a "bag-of-words"—identifying what is present but not how they are arranged.
+**Background**: CLIP-style VLMs are powerful in zero-shot retrieval and classification but repeatedly fail in relational understanding ("who is to the left of whom"), spatial reasoning, and compositional generalization. Benchmarks like ARO, CLEVR, Winoground, and NLVR2 consistently show that large VLMs often degenerate into "bag-of-words"—recognizing what is present but not its arrangement.
 
-**Limitations of Prior Work**: While evaluative studies are numerous, **mechanistic explanations are scarce**: it remains unclear which specific path VLMs use to perceive "left vs right," and no study has proven causality by directly disabling this ability through the ablation of specific components. Recent work has pointed to visual tokens suppressing positional information in LLMs (Qi 2025) or attributed spatial failure to training data (Chen 2024), but a unified picture is missing.
+**Limitations of Prior Work**: While evaluation-focused studies are abundant, **mechanistic explanations are scarce**. No work has clearly identified the pathway through which VLMs perceive "left vs right," nor has the capability been proven causal by ablating a specific component. Recent studies suggest visual tokens suppress positional information in LLMs (Qi 2025) or attribute spatial failure to training data (Chen 2024), but a unified picture is missing.
 
-**Key Challenge**: The CLIP training objective does not explicitly require the model to distinguish between "left of X" and "right of X"; the contrastive loss can be fully satisfied without utilizing compositional structure. Why do some models learn it while others do not? Which part of the architecture makes the difference?
+**Key Challenge**: The CLIP training objective itself does not explicitly require the model to distinguish "left of X" from "right of X"; contrastive loss can be satisfied without utilizing compositional structure. Why do some models learn this while others do not? Which part of the architecture makes the difference?
 
-**Goal**: To answer in a fully controllable minimal setting: (a) Can CLIP-style Transformers learn faithful encodings of relative spatial relations? (b) What mechanism implements this? (c) Which training factors are critical?
+**Goal**: To answer in a fully controlled minimal setting: (a) Can CLIP-style Transformers learn faithful relative spatial relation encodings? (b) By what mechanism? (c) Which training factors are critical?
 
-**Key Insight**: Following the tradition of mechanistic interpretability (Elhage 2021/2022, Olsson 2022, Okawa 2023), the authors reverse-engineer attention circuits using a minimalist toy task and small models. Specifically, they reduce images to a 1D sequence of 10 pixels, where objects occupy 1 pixel, and use simple text templates like "X is on the left of Y" with a 1-layer / 4-head Transformer.
+**Key Insight**: Following the tradition of mechanistic interpretability (Elhage 2021/2022, Olsson 2022, Okawa 2023), the authors reverse-engineer the attention circuit using a minimalist toy task and small models. This involves reducing images to 1D with 10 pixels, objects occupying 1 pixel, and text using templates like "X is on the left of Y," paired with a 1-layer / 4-head Transformer.
 
-**Core Idea**: First, demonstrate that this minimalist version can replicate the "label diversity drives generalization" phenomenon. Then, perform a four-term decomposition of the attention logits into token and position embeddings to identify the unique term that breaks left-right symmetry, confirming it as a necessary condition through ablation experiments.
+**Core Idea**: Demonstrate that this minimal version can reproduce the "label diversity-driven generalization" phenomenon, then perform a four-term decomposition of token-position embeddings in the attention logits to identify the unique term breaking left-right symmetry, confirming it as a necessary condition through ablation.
 
 ## Method
 
-The methodology is not a new model but a four-part suite: **controllable synthetic dataset + simplified Transformer + attention decomposition + ablation**. The synthetic data allows for precise control of variables; the simplified Transformer (no LayerNorm/MLP, 1 layer, 4 heads, Elhage 2021 style) makes analysis tractable; term-by-term decomposition reveals which part causes left-right asymmetry; and ablation upgrades correlation to causality.
+The methodology is not a new model but a four-part framework: **controlled synthetic dataset + simplified Transformer + attention decomposition + ablation**. Synthetic data allow precise control of variables; a simplified Transformer (no LayerNorm/MLP, 1 layer, 4 heads, Elhage 2021 style) makes analysis tractable; term-by-term decomposition reveals the source of left-right asymmetry; and ablation upgrades correlation to causality.
 
 ### Overall Architecture
-(1) Synthetic 1D Image-Text Data: Images are 1D sequences of length $D^{\rm image}=10$ with background 0 and object IDs $\geq 1$ (single or dual objects); captions use the template "[label] is on the left/right of [label]". Training uses all ordered pairs from $N_{\rm pair}=15$ labels ($N_{\rm val}=5$ held out), with positions randomly sampled.  
-(2) Dual-Encoder CLIP: The vision encoder uses bidirectional self-attention, while the text encoder uses causal masking. Both share $d_{\rm model}=128$, $d_{\rm head}=32$. CLS / EOT tokens are used for final representations with cosine similarity and standard CLIP contrastive loss.  
-(3) Evaluation of Three Generalizations: Single-object positional, seen-pair configuration, and unseen-pair generalization.  
-(4) **Attention Decomposition**: For a generalized 1-layer 4-head model, decompose the pre-softmax logit $QK^T$ into weight-bias terms, then expand the main term $XW_{QK}X^T$ (where $X=E+P$) into four terms ($EE, EP, PE, PP$), visualizing and ablating them individually.
+(1) Synthetic 1D image-text data: Images are 1D sequences of length $D^{\rm image}=10$ with background 0 and object IDs $\geq 1$ (single or dual objects); captions use templates like "[label] is on the left/right of [label]". Training uses all ordered pairs of $N_{\rm pair}=15$ labels (with $N_{\rm val}=5$ reserved for unseen pairs), with positions randomly sampled.
+(2) Dual-encoder CLIP: The vision encoder uses bidirectional self-attention, and the text encoder uses causal masking. Both share $d_{\rm model}=128$, $d_{\rm head}=32$. CLS / EOT serve as final representations for cosine similarity and standard CLIP contrastive loss.
+(3) Evaluation of three types of generalization: single-object positional / seen-pair configuration / unseen-pair generalization.
+(4) **Attention decomposition** on Generalized 1-layer 4-head models: Perform weight-bias decomposition on pre-softmax logits $QK^T$, then expand the primary term $XW_{QK}X^T$ (where $X=E+P$) into four terms for visualization and ablation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Controlled 1D Synthetic Dataset<br/>10-pixel image + left/right template<br/>Sweeping N_pair / layout n2"] --> B["Train Dual-Encoder CLIP<br/>Simplified: No LN/MLP, 1-layer 4-head<br/>End-to-end Contrastive Loss"]
+    B --> C["Three Generalization Evaluations<br/>Single-object / Seen-pair / Unseen-pair<br/>→ Select Generalized Model"]
+    C --> D
+    subgraph D["Attention Logit Four-Term Decomposition"]
+        direction TB
+        D1["Weight-bias decomposition of QK^T<br/>Primary term XW_QK X^T accounts for 76-91%"] --> D2["Expand by X=E+P<br/>EE / EP / PE / PP channels"]
+        D2 --> D3["Only EP term EW_QK P^T<br/>Shows Left-to-Right Horizontal Gradient"]
+    end
+    D --> E["EP Term Ablation<br/>Inference zeroing → Acc 0.9→0.5<br/>Upgrade Correlation to Causality"]
+    E --> F["Text-side Mirror + Image-Text Alignment<br/>EOT→First-word Bias; Rotation Quotient Space Alignment"]
+```
 
 ### Key Designs
 
-1.  **Controllable 1D Synthetic Dataset + Dual-Axis Scanning**:
-    *   **Function**: Enables the study of drivers for spatial relation generalization as intervenable variables while keeping the CLIP pipeline intact.
-    *   **Mechanism**: Reduces images to 10-pixel 1D sequences where "left/right" is the only spatial degree of freedom. Two axes are scanned during training: label diversity $N_{\rm pair} \in \{5, \dots, 15\}$ and layout diversity $n_2$ (number of position combinations per pair). Key observation: Increasing $N_{\rm pair}$ significantly improves all three types of generalization, while increasing $n_2$ has almost no effect—**label diversity, not layout diversity**, is the primary driver of generalization. This aligns with Uselis 2025 regarding "diversity driving compositionality" but specifies that diversity must occur along the "label" axis for relational tasks.
-    *   **Design Motivation**: Mechanistic research requires both "generalizable" and "non-generalizable" samples for comparison. The 1D design limits the vision encoder to 10 key positions, making the resulting logit decomposition heatmaps human-interpretable.
+**1. Controlled 1D Synthetic Dataset + Label/Layout Dual-Axis Sweep: Turning "Drivers of Spatial Generalization" into Interferable Variables**
 
-2.  **Simplified Transformer + Weight-Bias-Token-Position Logit Decomposition**:
-    *   **Function**: Splits vision encoder attention logits into interpretable components to identify which term encodes the "left/right" signal.
-    *   **Mechanism**: Following Elhage 2021, LayerNorm and MLP are removed, leaving a 1-block 4-head Transformer. Defining $Q=XW_Q^T+B_Q^T$ and $K=XW_K^T+B_K^T$, then $QK^T = XW_{QK}X^T + XW_Q^TB_K + B_Q^TW_KX^T + B_Q^TB_K$, where $W_{QK}=W_Q^TW_K$. Since Softmax is invariant to row-wise constant subtractions, only columns that vary—$XW_{QK}X^T$ and $B_Q^TW_KX^T$—affect the CLS row attention. Substituting $X=E+P$ results in: $XW_{QK}X^T = EW_{QK}E^T + EW_{QK}P^T + PW_{QK}E^T + PW_{QK}P^T$ (denoted as EE, EP, PE, PP). Visualization reveals that **only the EP term $EW_{QK}P^T$ produces a clear left-to-right monotonic gradient on the CLS row**, adding logit bias to right-side objects. In non-generalizing models, this EP horizontal gradient is entirely absent (App. G).
-    *   **Design Motivation**: Additive decomposition treats attention as four channels: Content-Content (EE), Content-Position (EP), Position-Content (PE), and Position-Position (PP). This directly locates the channel through which left-right asymmetry flows.
+Mechanistic studies require comparing "generalizing" and "non-generalizing" models to see differences in attention decomposition—something difficult with real image-text data due to confounding variables. This work reduces images to 1D 10-pixel sequences where "left/right" is the sole spatial degree of freedom. By sweeping two axes—label diversity $N_{\rm pair} \in \{5, ..., 15\}$ and layout diversity $n_2$ (number of position combinations per pair)—the authors test three types of generalization. The key observation is that increasing $N_{\rm pair}$ significantly boosts all generalization accuracies, while increasing $n_2$ has almost no effect—**label diversity, not layout diversity, drives generalization**.
 
-3.  **EP Term Ablation as Causal Evidence**:
-    *   **Function**: Manually zeros out the EP term during inference to see if unseen-pair accuracy collapses.
-    *   **Mechanism**: The EP term in pre-softmax logits is forced to 0 for all 4 heads (using pre-trained weights without retraining). Other terms like PP/PE/BP ($B_Q^TW_KP^T$) are ablated as negative controls. Result: **EP ablation drops accuracy from $\approx 0.9$ to $\approx 0.5$ (random)**, while PP/PE ablation has minimal impact. App. H shows ablated models still recognize "X and Y are in the image" but cannot judge their relative positions, cleanly decoupling "recognition" from "spatial encoding."
-    *   **Design Motivation**: While seeing a gradient in the EP term provides correlational evidence, "hard ablation" provides causal evidence: without this term, the capability disappears. This adheres to the ablation-as-causation principle in mechanistic interpretability.
+**2. Simplified Transformer + Four-Term Decomposition of Attention Logits: Locating the "Left/Right" Signal Channel**
 
-### Text Side and Alignment
-The text encoder's causal mask inherently encodes sequence order. At least one of the four heads strongly biases EOT→word attention toward the first mentioned entity, independent of the label, forming a "linguistic left-right break" symmetrical to the vision side. The authors also find that while image/text token embeddings for the same label have low cosine similarity in raw space, they can be aligned on unseen labels (16-20) by fitting a rotation matrix on seen labels (1-15)—suggesting CLIP alignment exists in a rotation quotient space.
+To identify which component encodes left-right, the attention logit is split into interpretable blocks. Following Elhage 2021, LayerNorm and MLP are removed. Query/Key are written as $Q=XW_Q^T+B_Q^T$ and $K=XW_K^T+B_K^T$, leading to $QK^T = XW_{QK}X^T + XW_Q^TB_K + B_Q^TW_KX^T + B_Q^TB_K$ (where $W_{QK}=W_Q^TW_K$). Since Softmax is insensitive to row-wise constant shifts, only column-wise variations in $XW_{QK}X^T$ and $B_Q^TW_KX^T$ affect the CLS-row attention distribution.
+
+Substituting $X=E+P$ into the primary term yields: $XW_{QK}X^T = \underbrace{EW_{QK}E^T}_{\rm EE} + \underbrace{EW_{QK}P^T}_{\rm EP} + \underbrace{PW_{QK}E^T}_{\rm PE} + \underbrace{PW_{QK}P^T}_{\rm PP}$. Visualization reveals that **only the EP term $EW_{QK}P^T$ shows a clear left-to-right monotonic gradient on the CLS row**, adding logit bias to rightward objects. The EE term is label-specific, and PP is geometrically symmetric. Crucially, this horizontal gradient is **entirely missing** in non-generalizing models.
+
+**3. EP Term Ablation: Upgrading Correlation to Causality**
+
+To prove causality, the authors perform inference-time ablation by zeroing out the EP term in the pre-softmax logits for all 4 heads (using trained baseline weights). Ablating PP / PE / BP ($B_Q^TW_KP^T$) serves as a negative control. Result: **EP ablation drops accuracy from $\approx 0.9$ to $\approx 0.5$ (random)**, while PP/PE ablation has no effect. The model remains able to identify "X and Y are present" but loses the ability to tell who is on the left—accurately decoupling "recognition" from "spatial encoding."
+
+**4. Text-Side Mirroring and Image-Text Alignment: Symmetric Symmetry Breaking**
+
+The text encoder's causal mask inherently encodes sequence order. At least one of the 4 heads strongly biases EOT $\to$ first mentioned entity, independent of the label, mirroring the vision-side "symmetry break." Furthermore, while token embeddings of the same label in visual and text spaces do not have high cosine similarity, fitting a rotation matrix on trained labels enables alignment on unseen labels, suggesting CLIP's alignment exists in a rotation quotient space.
 
 ## Key Experimental Results
 
-### Generalization Improvement with Label Diversity
+### Generalization Metrics vs. Label Diversity
 
 | $N_{\rm pair}$ (Training Labels) | Single-object positional | Seen-pair configuration | Unseen-pair |
-| :--- | :--- | :--- | :--- |
-| 5 (Low) | Medium | Medium | Near Random |
-| 15 (High) | High | High | High (Near Perfect) |
-| Layout Diversity $n_2$ variation | Almost No Impact | Almost No Impact | Almost No Impact |
+|---------------------------------|--------------------------|-------------------------|-------------|
+| 5 (Low)                         | Moderate                 | Moderate                | Near Random |
+| 15 (High)                       | High                     | High                    | High        |
+| Layout diversity $n_2$ variation | Almost No Impact         | Almost No Impact        | Almost No Impact |
 
-(Values summarized from Fig. 3 trend; shows "label diversity" is the driver.)
+(Trends summarized from Fig. 3; shows label diversity is the primary driver.)
 
-### Effect of Logit Term Ablation on Unseen-pair Accuracy
+### Impact of Attention Logit Ablation on Unseen-pair Accuracy
 
-| Ablation Condition (Zeroed at Inference) | Unseen-pair Accuracy | Note |
-| :--- | :--- | :--- |
-| Baseline (No Ablation) | $\approx 0.9$ | Model generalizes |
-| Ablate EP term $EW_{QK}P^T$ | $\approx 0.5$ | **Drops to random**; loses spatial judgment |
-| Ablate PE term $PW_{QK}E^T$ | Near Baseline | Not responsible for spatial encoding |
-| Ablate PP term $PW_{QK}P^T$ | Near Baseline | Not responsible for spatial encoding |
-| Ablate BP term $B_Q^TW_KP^T$ | Moderate Drop | Bias-position coupling carries some signal |
-| Ablate EP + Value-channel VP term $PW_V^T$ | $\approx 0.5$ | Attention and values cooperate |
+| Ablation Condition (Inference-time) | Unseen-pair Accuracy | Explanation |
+|-------------------------------------|----------------------|-------------|
+| Baseline (No ablation)              | $\approx 0.9$        | Full model generalizes |
+| Ablate EP term $EW_{QK}P^T$         | $\approx 0.5$        | **Drops to random**, loses spatial discrimination |
+| Ablate PE term $PW_{QK}E^T$         | Near Baseline        | Not responsible for spatial encoding |
+| Ablate PP term $PW_{QK}P^T$         | Near Baseline        | Not responsible for spatial encoding |
+| Ablate BP term $B_Q^TW_KP^T$        | Moderate Drop        | Bias-position coupling carries minor signal |
+| Concurrent EP + VP ($PW_V^T$) Ablation | $\approx 0.5$     | High impact on recognition too |
 
-(Values summarized from Fig. 5(e) and App. I.)
+(Trends summarized from Fig. 5(e) and App. I.)
 
 ### Key Findings
-- **Label Diversity >> Layout Diversity**: Increasing labels used in pairs from 5 to 15 lifts all generalizations to near-perfect levels; increasing position combinations $n_2$ does nothing.
-- **EP Term is Necessary for Unseen-pair Generalization**: Ablating it drops accuracy to $\approx 0.5$ while retaining label-set recognition, precisely excising spatial ability.
-- In non-generalizing models, the horizontal gradient in the EP term is totally missing (App. G)—the presence of the gradient correlates exactly with the capability.
-- Scaling captions from "only left" to "left + right" requires 2 text layers to maintain generalization, while the vision side mechanism remains focused on the EP term.
-- The mechanism replicates in 2D settings ($4\times 4$ grid) and 3-object settings, and is observed in autoregressive VLMs (App. O).
+- **Label Diversity >> Layout Diversity**: Increasing the number of labels used in pairs from 5 to 15 raises all generalization types from moderate to near-perfect; increasing layout combinations $n_2$ does not.
+- **EP Term is Necessary**: Ablating it drops accuracy to random levels while retaining label-set recognition.
+- In models that fail to generalize, the horizontal gradient in the EP term is absent, showing a perfect one-to-one correspondence.
+- For "left + right" dual-template captions, a 1-layer text encoder is insufficient; increasing to 2 layers restores generalization.
+- The mechanism replicates in 2D settings ($4 \times 4$ grid) and 3-object settings, as well as in autoregressive VLMs (App. O).
 
 ## Highlights & Insights
-- **Transformation of a Vague Capability into a Causal Hypothesis**: The study moves from "CLIP can do left/right" to "which logit term drives it," a clean demonstration of mechanistic interpretability.
-- **EP Term as a Functional Unit**: The content-position cross-term is not just a mathematical artifact but a functional circuit; position embeddings are the carrier of compositional generalization, not just a syntactic skeleton.
-- **Label vs. Layout Diversity Asymmetry**: This provides direct guidance for CLIP data curation—budgets should favor label combinations over positional variations. This also explains why large-scale VLMs struggle with spatial relations: web-scale entity-pair coverage remains sparse despite massive label counts.
-- **Rotation Quotient Space**: The discovery that token embeddings align only after a rotation hints that CLIP's geometric space is far richer than what simple cosine similarity reveals.
+- **Mechanism as an Ablatable Hypothesis**: Translates the vague problem of "CLIP learning spatiality" into a specific checkable hypothesis in the attention logit.
+- **EP Term as a Mechanistic Unit**: The content-position cross-term is not just a mathematical split but a circuit carrying the relational signal. Positional embeddings are carriers of compositional generalization.
+- **Data Curation Insights**: To train models that understand relations, budgets should be spent on diverse label combinations rather than more positional layouts.
+- **Rotation Quotient Space**: The finding that cross-modal alignment requires a rotation matrix fit suggests the underlying geometry is richer than what simple cosine similarity measures.
 
 ## Limitations & Future Work
-- Experiments use 1D/2D toy tasks and tiny Transformers (1-2 layers); verification on web-scale CLIP is required. This is a "first-order mechanistic understanding."
-- Only covers left/right relations; "front/back," "inside/outside," or "overlap" may rely on different mechanism carriers.
-- Text-side mechanism becomes less "clean" with more layers; the authors focused on the vision side.
-- Removing LayerNorm/MLP simplifies analysis, but non-linear components likely modify the mechanism (App. R).
+- The study uses 1D/2D toy setups and small Transformers; direct verification on web-scale CLIP is not provided.
+- Only left-right relations are covered; more complex relations like before/after or inside/outside may utilize different mechanisms.
+- Deepening text encoders to 2 layers makes attention decomposition less clean; text-side mechanisms remain partially open.
+- Simplified models lack LayerNorm and MLP; while necessary for analysis, non-linear components may modify the mechanism.
 
 ## Related Work & Insights
-- **vs. Yuksekgonul 2023 (ARO bag-of-words)**: They empirically noted CLIP's degeneration; this paper explains "why it doesn't degenerate under certain conditions"—label diversity allows the EP term to learn the necessary gradient.
-- **vs. Qi 2025 (Beyond Semantics)**: They observed positional suppression in LLMs; this paper shows position is crucial *inside* the vision encoder for spatial generalization.
-- **vs. Uselis 2025 (Diversity → Compositionality)**: They focused on additive factorization for attributes; this paper focuses on positional dependencies for relations.
-- **vs. Elhage 2021/2022 (Circuits)**: Extension of mechanistic interpretability to multimodal contrastive learning.
+- **vs. Yuksekgonul 2023 (ARO)**: They empirically noted CLIP's bag-of-words behavior; this work provides the mechanism for why it *doesn't* fail under certain conditions (sufficient label diversity inducing the EP gradient).
+- **vs. Qi 2025**: They show visual tokens suppress position in LLMs; this work shows position is crucial inside the vision encoder for relation generalization.
+- **vs. Uselis 2025**: They focus on attribute composition (color $\times$ shape); this work shows relational composition (left/right) requires position-dependent attention rather than additive factorization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Toy tasks are common, but identifying the EP term as the causal path for CLIP is a significant step in mechanistic understanding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various generalizations, decompositions, and ablations across 1D/2D and different paradigms.
-- Writing Quality: ⭐⭐⭐⭐ Clear concepts, but some crucial data is relegated to the appendix.
-- Value: ⭐⭐⭐⭐ Offers the first mechanistic answer to a problem previously only analyzed via benchmarks.
+- Novelty: ⭐⭐⭐⭐ (While toy tasks aren't new, identifying the EP term as a causal path is a significant first for CLIP mechanistic interpretability.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Includes 3 generalization types, 4-term decomposition, ablations, and 2D/3-object/AR VLM replications.)
+- Writing Quality: ⭐⭐⭐⭐ (Clear concepts, though some key data are in appendices.)
+- Value: ⭐⭐⭐⭐ (Provides the first mechanistic answer to how CLIP learns spatial relations, with direct implications for training data curation.)
 
 <!-- RELATED:START -->
 
@@ -132,11 +141,11 @@ The text encoder's causal mask inherently encodes sequence order. At least one o
 
 ## Related Papers
 
+- [\[ACL 2025\] SpaRE: Enhancing Spatial Reasoning in Vision-Language Models with Synthetic Data](../../ACL2025/multimodal_vlm/spare_enhancing_spatial_reasoning_in_vision-language_models_with_synthetic_data.md)
 - [\[ICCV 2025\] CLIPSym: Delving into Symmetry Detection with CLIP](../../ICCV2025/multimodal_vlm/clipsym_delving_into_symmetry_detection_with_clip.md)
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
-- [\[ICML 2026\] Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework](hierarchical_synthetic_tabular_data_generation_a_hybrid_top-down_and_bottom-up_f.md)
-- [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](../../AAAI2026/multimodal_vlm/safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
+- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 
 </div>
 

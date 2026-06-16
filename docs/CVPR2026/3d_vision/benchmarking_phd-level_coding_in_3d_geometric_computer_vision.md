@@ -2,80 +2,84 @@
 title: >-
   [Paper Note] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision
 description: >-
-  [CVPR 2026][3D Vision][3D Vision Code Generation] The first PhD-level code generation benchmark for 3D geometric computer vision, GeoCodeBench…
+  [CVPR 2026][3D Vision][Paper Note] GeoCodeBench is the first PhD-level code generation benchmark for 3D geometric computer vision. It contains 100 function completion tasks curated from 2025 top-tier papers and codebases, accompanied by automated and diverse unit tests. The strongest model, GPT-5, achieves only a 36.6% pass rate, revealing a significant
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Vision Code Generation"
-  - "LLM Evaluation"
-  - "Geometric Algorithm Implementation"
-  - "PhD-level Benchmark"
-  - "Unit Testing"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 9efcc652796e42ec
+content_hash: 974ce02063fbf540
 ---
-
 # GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.30038](https://arxiv.org/abs/2603.30038)  
 **Code**: [https://geocodebench.github.io/](https://geocodebench.github.io/)  
-**Area**: LLM Efficiency / Code Generation Evaluation  
-**Keywords**: 3D Vision Code Generation, LLM Evaluation, Geometric Algorithm Implementation, PhD-level Benchmark, Unit Testing
+**Area**: 3D Vision  
+**Keywords**: 3D vision code generation, LLM evaluation, geometric algorithm implementation, PhD-level benchmark, unit testing
 
 ## TL;DR
-The first PhD-level code generation benchmark for 3D geometric computer vision, GeoCodeBench, comprising 100 function completion tasks curated from top-venue 2025 papers and codebases, with automated diverse unit tests. The strongest model GPT-5 achieves only 36.6% pass rate, revealing a significant gap in LLM scientific-level 3D code implementation.
+GeoCodeBench is the first PhD-level code generation benchmark for 3D geometric computer vision. It contains 100 function completion tasks curated from 2025 top-tier papers and codebases, accompanied by automated and diverse unit tests. The strongest model, GPT-5, achieves only a 36.6% pass rate, revealing a significant gap in LLMs' ability to implement scientific-grade 3D code.
 
 ## Background & Motivation
 
-**Background**: AI-assisted programming has reshaped software practices and research workflows, but existing models still struggle with complex 3D geometric vision code. If models could reliably write such code, 3D vision research would be fundamentally transformed (automated prototyping, accelerated research cycles, democratized algorithm development).
+**Background**: AI-assisted programming has reshaped software practices and research workflows, but existing models still struggle with complex 3D geometric vision code. Reliability in writing such code would fundamentally transform 3D vision research (automated prototyping, accelerated research cycles, democratized algorithm development).
 
-**Limitations of Prior Work**: (1) Existing code benchmarks (HumanEval/MBPP/SWE-bench) do not cover 3D geometric implementations—they target general software engineering or competitive programming; (2) Scientific 3D vision code requires mathematically precise geometric operators, physical modeling, and multi-view reasoning—far beyond general-purpose capabilities; (3) Paper-to-code long-context scientific understanding remains an open problem.
+**Limitations of Prior Work**: (1) Existing code benchmarks (HumanEval/MBPP/SWE-bench) do not cover 3D geometric implementations—they target general software engineering or competitive programming; (2) Scientific 3D vision code requires mathematically precise geometric operators, physical modeling, and multi-view reasoning—capabilities far beyond general-purpose coding; (3) Long-context scientific understanding from paper-to-code remains an unsolved problem.
 
-**Key Challenge**: LLMs can generate general-purpose code but cannot reliably implement core functions in 3D geometric vision—how large is this gap? Where are the bottlenecks?
+**Key Challenge**: LLMs can generate general code but cannot reliably implement core functions for 3D geometric vision—how large is this gap? Where is the bottleneck?
 
-**Key Insight**: Simulating real research scenarios—giving models paper text plus function skeletons, requiring implementation completion, with automatic evaluation via unit tests.
+**Key Insight**: Simulating actual research scenarios—providing the model with paper text and a function skeleton, requiring implementation, and evaluating via automated unit tests.
 
-**Core Idea**: (1) Extract core functions from official repositories of 2025 top-venue papers; (2) Automated tool nomination plus manual curation to ensure quality; (3) Diverse boundary tests covering geometric degenerate configurations; (4) Two-level capability taxonomy for evaluation.
+**Core Idea**: (1) Extract core functions from official repositories of 2025 top-tier papers; (2) Utilize automated tool nomination combined with human filtering to ensure quality; (3) Implement diverse boundary tests covering geometric degenerate configurations; (4) Evaluate using a two-level capability classification system.
 
 ## Method
 
 ### Overall Architecture
-Paper PDF (OCR → structured JSON) + Code repository (automated candidate extraction → manual curation → function masking) + Unit tests (auto-generation → manual review) → LLM receives (paper + masked code + execution template) → fills implementation → sandbox execution + testing → PassRate scoring.
+GeoCodeBench transforms the real research scenario of "reading a paper and implementing algorithms" into an automatically evaluable task: for each problem, the model is provided with the main text of a 3D geometric vision paper, a code file with core functions removed, and a standardized execution template. The model must complete the empty functions. The completed code is executed in a sandbox, run against unit tests, and scored by pass rate. The pipeline starts from original paper PDFs and official repositories, proceeding through paper OCR, function hollowing, and test generation to create 100 completion tasks, followed by the "input → completion → execution → scoring" evaluation loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BUILD["Three-way Parallel Construction (Auto-nomination + Human-review)"]
+        direction TB
+        P["Paper Side · OCR<br/>MinerU extracts text/formulae/figures<br/>→ Structured JSON by section"]
+        C["Code Side · Hollow-out<br/>Cursor nominates 10–20 candidates<br/>→ Human selects 3–5 core functions<br/>Function body replaced with ****EMPTY****"]
+        T["Test Side · Generation<br/>Cursor generates ~10 multi-config tests<br/>+ Unified template → Human-review"]
+    end
+    P --> TASK["100 Function Completion Tasks"]
+    C --> TASK
+    T --> TASK
+    TASK --> TAX["Two-level Capability Classification<br/>General (Geo-transform / Mechanics & Optics)<br/>Research (New Algorithms / Geo-logic Routing)"]
+    TAX --> IN["Three Inputs for LLM<br/>Structured paper + Hollowed code + Template"]
+    IN -->|"Context Ablation: Full / Method only / Abstract only"| LLM["Target LLM completes empty functions"]
+    LLM --> SAND["Sandbox Execution → Run unit tests"]
+    SAND --> SCORE["PassRate scoring"]
+```
 
 ### Key Designs
 
-1. **Benchmark Construction Pipeline**:
+**1. Three-way Parallel Construction: Precisely extracting "core 3D geometric functions" from top-tier repositories**
 
-    - **Paper Processing**: MinerU OCR automatically extracts text/formulas/figures → organized into JSON by sections
-    - **Code Processing**: Cursor automatically recommends candidate functions (10–20 per repository) → **manual review by 3D vision researchers** → retains 3–5 core geometric functions → function bodies replaced with `****EMPTY****` placeholders
-    - **Unit Tests**: Cursor auto-generates 10 test cases (multiple parameter configurations) → manual review ensures reliability. Standardized execution templates (import/input-output definitions) are also provided
-    - Design Motivation: Automated nomination is efficient but may select trivial/auxiliary functions → manual curation ensures every task is a "paper-core 3D geometric component"
+The difficulty of a scientific coding benchmark lies not in collecting code, but in selecting functions that test geometric ability without being trivial. The paper splits construction into three parallel processes: the paper side uses MinerU for OCR to extract text, formulas, and charts into structured JSON; the code side first uses Cursor to recommend 10–20 candidates per repo, which are then **manually reviewed by 3D vision researchers** to keep 3–5 core geometric functions, replacing their bodies with `****EMPTY****`; the test side similarly uses Cursor to generate ~10 test cases covering various parameter configurations, followed by manual verification and a unified template. Human review is critical here—auto-nomination is efficient but prone to selecting trivial utility functions. All papers are from 2025 (CVPR / ICCV / ICLR) to mitigate data leakage, covering 3DGS, pose estimation, SLAM, reconstruction, physics-based modeling, NeRF, and 3D segmentation.
 
-2. **Two-Level Capability Taxonomy**:
+**2. Two-level Capability Classification: Distinguishing "geometric basics" from "research-level reasoning"**
 
-    - **General 3D Capability** (foundational geometric knowledge):
-        - Geometric Transformations (24%): coordinate conversions, projections, normals, rotation parameterizations
-        - Mechanics/Optics Formulation (31%): spherical harmonics, BRDF, equations of motion, radiometric quantities
-    - **Research Capability** (research-level reasoning):
-        - Novel Algorithm Implementation (34%): function-level implementation of paper-core novel ideas
-        - Geometric Logic Routing (11%): composing existing operators into new pipelines—many influential papers are structured this way
-    - Design Motivation: Separating foundational and research capabilities to diagnose model weaknesses
+A single pass rate doesn't reveal whether a model fails at basic geometric knowledge or higher-level research reasoning. The benchmark divides 100 tasks into two levels across four categories. The base level is General 3D Capability, testing basic geometry: Geometric Transformations (coordinate systems, projection, normals, rotations, 24%) and Mechanics/Optics Formulation (Spherical Harmonics, BRDF, equations of motion, radiometry, 31%). The upper level is Research Capability, involving research-level reasoning: New Algorithm Implementation (core ideas of papers, 34%) and Geometric Logic Routing (composing existing operators into new pipelines, 11%). This allowed pinpointing specific capability shortfalls.
 
-3. **Evaluation Metric**:
+**3. PassRate Metric and Context Ablation: Quantifying performance and identifying bottlenecks**
 
-    - PassRate = $\frac{1}{N}\sum_{i=1}^{N}\frac{p_i}{T_i}$, where $p_i$ is the number of passed tests and $T_i$ is the total number of tests
-    - Context ablation: Method-only vs. full-text input
+Scoring uses PassRate, defined as the average ratio of passed tests to total tests across all tasks:
 
-### Paper Sources
-Covering 3DGS, pose estimation, SLAM, reconstruction, physics-based modeling, NeRF, 3D segmentation, and other subfields. All papers are from CVPR/ICCV/ICLR 2025, maximizing reduction of data leakage risk.
+$$\text{PassRate} = \frac{1}{N}\sum_{i=1}^{N}\frac{p_i}{T_i}$$
+
+Where $p_i$ is the number of tests passed for problem $i$, $T_i$ is the total tests for that problem, and $N$ is the total number of tasks. Additionally, the benchmark includes context ablations—switching input between "Full paper / Method only / Abstract only"—to identify which text truly aids implementation.
 
 ## Key Experimental Results
 
 ### Main Results (8 Representative Models)
 
 | Model | Company | Overall | General | Research | Geo.Trans. | Algorithm |
-|-------|---------|---------|---------|----------|------------|-----------|
+|------|------|---------|---------|----------|------------|-----------|
 | **GPT-5** | OpenAI | **36.6%** | **42.8%** | **29.1%** | 41.7% | 29.1% |
 | Claude-Sonnet-4.5 | Anthropic | 31.1% | 37.2% | 23.7% | 38.3% | 19.7% |
 | Gemini-2.5-Pro | Google | 30.4% | 33.8% | 26.2% | 41.9% | 25.3% |
@@ -86,42 +90,42 @@ Covering 3DGS, pose estimation, SLAM, reconstruction, physics-based modeling, Ne
 
 ### Ablation Study
 
-| Input Context | PassRate | Note |
-|---------------|----------|------|
-| Full text | Baseline | Includes introduction, related work, etc. |
-| **Truncated to Method** | **Statistically significantly better** | Irrelevant context interferes with reasoning |
-| Abstract only | Significant drop | Insufficient technical details |
+| Input Context | PassRate | Description |
+|-----------|----------|------|
+| Full Text | Baseline | Includes intro, related work, etc. |
+| **Method Only** | **Statistically superior** | No irrelevant context to distract reasoning |
+| Abstract Only | Significantly lower | Insufficient technical detail |
 
 ### Key Findings
-- **Best model achieves only 36.6%**: GPT-5 is far from reliable on PhD-level 3D code
-- **Research tasks are harder but positively correlated with General**: Geometric fundamentals are necessary but not sufficient for research-level implementation
-- **Truncating to Method section actually performs better**: This indicates LLMs face severe difficulties in long-context scientific paper understanding—more text equals more interference rather than more useful information
-- **Creative correctness**: In some successful cases, models used completely different but mathematically equivalent approaches to pass tests—demonstrating genuine problem-solving beyond copying
-- **Geometric Logic Routing (11% of tasks)** reflects how many classic 3D vision papers are constructed—composing existing operators—requiring higher-level system design capabilities
+- **Strongest model at 36.6%**: GPT-5 is far from reliable for PhD-level 3D code.
+- **Research tasks are harder but correlated with General**: Geometric basics are necessary but not sufficient for research-level implementation.
+- **Truncating to Method is better**: Suggests LLMs face severe difficulties in long-context scientific understanding—more text often means more noise rather than useful information.
+- **Creative correctness**: In some cases, models passed tests using different but mathematically equivalent methods, showing true problem-solving.
+- **Geometric Logic Routing (11%)**: Reflects how classic 3D vision papers are built—combining operators—requiring higher-level system design.
 
 ## Highlights & Insights
-- **First 3D vision code benchmark**: Fills the gap in AI coding evaluation for the scientific 3D domain. The community-driven, extensible design enables continuous growth with new papers
-- **"More context is not better" finding**: Raises sharp questions about LLMs' long-context scientific understanding capabilities. Method truncation outperforms full text → LLMs may be misled by noise in introduction/related work sections
-- **Paper-to-code research paradigm**: GeoCodeBench's evaluation setup directly simulates the real research workflow of "read paper → implement algorithm," representing a first step toward an "automated 3D vision scientist"
-- **Unit test engineering contribution**: The diverse, boundary-case-covering automated tests for each function are themselves valuable pedagogical materials for 3D geometry
+- **First 3D vision code benchmark**: Fills a gap in AI coding evaluation for scientific 3D domains. The community-driven, scalable design allows it to grow with new papers.
+- **Insight on "more context is not better"**: Questions LLM long-context capabilities; Method truncation being superior suggests models are misled by introductory noise.
+- **Paper-to-code paradigm**: Directly simulates the research workflow of "reading a paper → implementation," a step toward "automated 3D vision scientists."
+- **Engineering contribution of unit tests**: Provides automated, boundary-covering tests that serve as valuable educational material for 3D geometry.
 
 ## Limitations & Future Work
-- The scale of 100 functions remains limited—continuous expansion is needed
-- Restriction to 2025 papers may require updates over time to avoid data leakage
-- Unit test coverage may be incomplete—passing tests does not necessarily guarantee a fully correct implementation
-- Only evaluates function-level completion—full paper reproduction (including training loops, data pipelines) is more challenging
+- Scale of 100 functions is limited—needs continuous expansion.
+- Limited to 2025 papers, requiring updates to avoid future data leakage.
+- Unit test coverage may not be absolute—passing tests doesn't guarantee 100% correctness.
+- Only evaluates function-level completion—full paper reproduction (training loops, data pipelines) is more challenging.
 
 ## Related Work & Insights
-- **vs HumanEval/MBPP**: General programming benchmarks without domain knowledge. GeoCodeBench requires deep 3D geometric reasoning
-- **vs SWE-bench**: Repository-level issue resolution; GeoCodeBench is function-level paper-to-code
-- **vs PaperBench**: Full paper reproduction evaluation; GeoCodeBench focuses on function-level core components—complementary
-- **vs ResearchCodeBench**: Also masks key paper code, but does not focus on 3D geometry and tests are less diverse
+- **vs HumanEval/MBPP**: General programming benchmarks without domain knowledge; GeoCodeBench requires deep 3D geometric reasoning.
+- **vs SWE-bench**: Repository-level issue solving; GeoCodeBench is function-level paper-to-code.
+- **vs PaperBench**: Full paper reproduction; GeoCodeBench focuses on core function components—they are complementary.
+- **vs ResearchCodeBench**: Also masks core code but doesn't focus on 3D geometry or diverse testing.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First 3D vision code benchmark with an insightful two-level capability taxonomy
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 models, context ablation, category analysis, creative case studies
-- Writing Quality: ⭐⭐⭐⭐⭐ Transparent and reproducible construction pipeline
-- Value: ⭐⭐⭐⭐⭐ Long-term impact on 3D vision automation research and LLM scientific coding evaluation
+- Novelty: ⭐⭐⭐⭐⭐ First 3D vision code benchmark, insightful classification.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 models, context ablation, categorical analysis, case studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Transparent and reproducible pipeline.
+- Value: ⭐⭐⭐⭐⭐ Significant push for automated 3D vision research and scientific LLM evaluation.
 
 <!-- RELATED:START -->
 
@@ -129,11 +133,11 @@ Covering 3DGS, pose estimation, SLAM, reconstruction, physics-based modeling, Ne
 
 ## Related Papers
 
-- [\[ICLR 2026\] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra](../../ICLR2026/3d_vision/giq_benchmarking_3d_geometric_reasoning_of_vision_foundation_models_with_simulat.md)
-- [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
-- [\[CVPR 2026\] LoST: Level of Semantics Tokenization for 3D Shapes](lost_level_of_semantics_tokenization_for_3d_shapes.md)
-- [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] A Cookbook of 3D Vision: Data, Learning Paradigms, and Application](a_cookbook_of_3d_vision_data_learning_paradigms_and_application.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
+- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
+- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
 
 </div>
 

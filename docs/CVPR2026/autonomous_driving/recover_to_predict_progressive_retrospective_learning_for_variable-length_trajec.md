@@ -2,104 +2,100 @@
 title: >-
   [Paper Note] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 description: >-
-  [CVPR2026][Autonomous Driving][trajectory prediction] This paper proposes the Progressive Retrospective Framework (PRF), which employs cascaded retrospective units to progressively align features from incomplete observat…
+  [CVPR 2026][Autonomous Driving][Knowledge Distillation] Ours proposes PRF, a progressive retrospective framework that gradually aligns features of incomplete observations to complete ones through cascaded retrospective units. It significantly improves variable-length trajectory prediction performance and is plug-and-play compatible with existing methods.
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "trajectory prediction"
-  - "variable-length observation"
-  - "progressive retrospection"
-  - "knowledge distillation"
+  - CVPR 2026
+  - Autonomous Driving
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 79428385997371c2
+content_hash: 6c59171d6ecb39b8
 ---
-
 # Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.10597](https://arxiv.org/abs/2603.10597)  
 **Code**: [zhouhao94/PRF](https://github.com/zhouhao94/PRF)  
-**Area**: Autonomous Driving
-**Keywords**: trajectory prediction, variable-length observation, progressive retrospection, knowledge distillation, autonomous driving
+**Area**: Autonomous Driving  
+**Keywords**: Trajectory Prediction, Variable-Length Observation, Progressive Retrospective, Knowledge Distillation, Autonomous Driving
 
 ## TL;DR
 
-This paper proposes the Progressive Retrospective Framework (PRF), which employs cascaded retrospective units to progressively align features from incomplete observations to those of complete observations, substantially improving variable-length trajectory prediction performance in a plug-and-play manner compatible with existing methods.
+Ours proposes PRF, a progressive retrospective framework that gradually aligns features of incomplete observations to complete ones through cascaded retrospective units. It significantly improves variable-length trajectory prediction performance and is plug-and-play compatible with existing methods.
 
 ## Background & Motivation
 
-1. **Trajectory prediction is a core task in autonomous driving**: Accurately forecasting the future motion of dynamic traffic participants is critical for safe planning and collision avoidance.
-2. **Existing methods rely on fixed-length observations**: The vast majority of methods are optimized for standard-length inputs (e.g., 50 or 20 steps) and are highly sensitive to variation in observation length.
-3. **Incomplete observations are pervasive in real-world scenarios**: Vehicles newly entering the perception range, re-detected after occlusion, or recovered from tracking loss all produce variable-length or incomplete trajectories.
-4. **Performance degrades sharply as observations shorten**: The SOTA method DeMo sees mADE6 deteriorate from 0.658 to 0.861 on Argoverse 2 when observation length drops to 10 steps—a substantial regression.
-5. **One-step mapping strategies struggle with short trajectories**: Existing approaches (DTO, FLN, LaKD, CLLS) directly map incomplete features to complete features, performing poorly when the information gap is large.
-6. **Independent training (IT) offers diminishing returns at high cost**: Training a separate model for each observation length yields marginal improvements but incurs enormous computational and storage overhead.
+1.  **Trajectory prediction is a core task for autonomous driving**: Accurately predicting the future motion of dynamic traffic participants is crucial for safety planning and collision avoidance.
+2.  **Existing methods rely on fixed-length observations**: The vast majority of methods are optimized for standard input lengths (e.g., 50 steps/20 steps) and are highly sensitive to variations in observation length.
+3.  **Incomplete observations are prevalent in real-world scenarios**: Scenarios such as vehicles newly entering the perception range, being re-detected after occlusion, or tracking loss result in variable-length/incomplete trajectories.
+4.  **Performance drops sharply as observations shorten**: The SOTA method DeMo sees its mADE6 deteriorate from 0.658 to 0.861 under 10-step observations (Argoverse 2), a significant degradation.
+5.  **"One-step mapping" strategy struggles with short trajectories**: Existing methods (DTO, FLN, LaKD, CLLS) directly map incomplete features to complete ones, which performs poorly when the information gap is large.
+6.  **Independent training (IT) is costly with low returns**: Training separate models for each length yields minor improvements but incurs massive computational and storage overhead.
 
 ## Method
 
-### Overall Architecture: Progressive Retrospective Framework (PRF)
+### Overall Architecture
 
-PRF inserts $\tau$ cascaded retrospective units between the encoder and decoder. Each unit $\Phi^v$ is responsible for retrospecting features of an incomplete observation of length $T_v$ toward features corresponding to length $T_{v-1}$ (recovering an additional $\Delta T$ steps). At inference, an input of length $T_v$ passes sequentially through $\Phi^v, \Phi^{v-1}, \dots, \Phi^1$, progressively recovering to the standard length $T_0$, before being fed into the shared decoder for prediction.
+PRF addresses a practical pain point: existing trajectory predictors are trained on fixed-length observations. Once a vehicle just enters the perception range, is re-detected, or tracking is lost, performance collapses (DeMo's mADE6 worsens from 0.658 to 0.861 at Obs=10). Previous methods often used "one-step mapping" to force short features into long ones, which fails when the information gap is too large. PRF adopts a different approach: inserting $\tau$ cascaded retrospective units between the encoder and decoder. Each unit $\Phi^v$ only recovers feature length $T_v$ by $\Delta T$ steps to align with $T_{v-1}$. During inference, an input of length $T_v$ passes through $\Phi^v, \Phi^{v-1}, \dots, \Phi^1$ sequentially to recover the standard length $T_0$ before being fed into a shared decoder. Each unit consists of two modules: the Retrospective Distillation Module (RDM) handles feature alignment (used during inference), and the Retrospective Prediction Module (RPM) provides implicit supervision during training (disabled during inference). All variable-length observations share the same encoder and decoder, making PRF plug-and-play for methods like QCNet and DeMo.
 
-- **Plug-and-play**: PRF operates between the encoder and decoder and is directly compatible with existing prediction methods (QCNet, DeMo).
-- **Shared encoder**: A single encoder extracts features for all variable-length observations, avoiding the need to maintain multiple models.
-- **Progressive alignment**: Each unit need only bridge a small temporal gap $\Delta T$, reducing learning difficulty.
+```mermaid
+graph TD
+    A["Variable-Length Observation<br/>Length T_v (e.g., Obs=10)"] --> B["Shared Encoder<br/>QCNet / DeMo"]
+    B --> C["Incomplete Feature F^v"]
+    subgraph U["Retrospective Unit Φ^v (τ cascaded units, each recovering ΔT steps)"]
+        direction TB
+        D["Retrospective Distillation Module RDM<br/>Gated retention of reliable components + Residual for missing data"]
+        E["Retrospective Prediction Module RPM<br/>Decoupled queries for coarse-to-fine history recovery"]
+        E -.Training-only implicit supervision.-> D
+    end
+    C --> U
+    U -->|"Step-by-step alignment to standard length T_0"| F["Shared Decoder"]
+    F --> G["Multi-modal Future Trajectories"]
+```
 
-### Retrospective Distillation Module (RDM)
+### Key Designs
 
-RDM adopts a **residual distillation strategy** that models missing time-step features as learnable residuals, avoiding feature conflicts induced by the shared encoder:
+**1. Retrospective Distillation Module (RDM): Recovering missing steps via residual distillation without destroying reliable components**
 
-1. **Scene context injection**: Agent features are fused with HD Map features $\mathbf{F}_m$ via cross-attention.
-2. **Dual-branch structure**:
-    - **Logit branch**: self-attention → MLP → Sigmoid, producing an element-wise gating vector $\mathbf{g}^v$.
-    - **Residual branch**: self-attention → MLP → ReLU, learning a residual feature $\mathbf{F}_r^v$.
-3. **Gated fusion**: $\tilde{\mathbf{F}}^{v-1} = \mathbf{g}^v \odot \mathbf{F}^v + \mathbf{F}_r^v$, retaining reliable components while supplementing missing information.
+The shared encoder generates conflicting features for the same trajectory at different lengths. Direct alignment risks biasing correctly encoded parts. RDM thus models missing timesteps as learnable residuals rather than overwriting the whole feature. It first fuses agent features with HD Map features $\mathbf{F}_m$ via cross-attention to inject scene context, then splits into two branches: the Logit branch (self-attention → MLP → Sigmoid) produces an element-wise gating vector $\mathbf{g}^v$, and the Residual branch (self-attention → MLP → ReLU) learns the residual feature $\mathbf{F}_r^v$.
 
-### Retrospective Prediction Module (RPM)
+These are fused via $\tilde{\mathbf{F}}^{v-1} = \mathbf{g}^v \odot \mathbf{F}^v + \mathbf{F}_r^v$. The gate preserves reliable components in the input, while the residual only fills in missing information. Each retrospective step is an "incremental addition" rather than a "complete rewrite."
 
-RPM recovers the missing $\Delta T$ historical time steps from the distilled features, employing a **decoupled query strategy** for coarse-to-fine retrospection:
+**2. Retrospective Prediction Module (RPM): "Predicting" back missing history via decoupled queries in a coarse-to-fine manner**
 
-1. **Anchor-Free Mode Queries**: $K$ mode queries are initialized via MLP → cross-attention extracts scene features → self-attention models inter-mode interactions → multimodal coarse trajectory proposals are predicted.
-2. **Anchor-Based State Queries**: $\Delta T$ state queries are initialized via MLP → cross-attention + **Mamba** models temporal dynamics → fine-grained refinement anchored on the coarse proposals.
-3. **Cross-unit sharing**: All retrospective units share a single RPM (since each recovers a fixed $\Delta T$ steps); batched processing accelerates training.
-4. **Training-only module**: RPM provides implicit supervision for RDM and is disabled at inference, **adding no inference overhead**.
+Aligning features is insufficient; the missing $\Delta T$ historical timesteps must be physically recovered. RPM uses two sets of decoupled queries for coarse-to-fine estimation: $K$ Anchor-Free Mode Queries (MLP initialization → cross-attention for scene features → self-attention for modality interaction) predict coarse multi-modal trajectory proposals; then $\Delta T$ Anchor-Based State Queries (MLP initialization → cross-attention + Mamba for temporal dynamics) use the coarse proposals as anchors for refinement. Since the retrospective step $\Delta T$ is fixed, all units share the same RPM, enabling training acceleration via batch processing.
 
-### Rolling-Start Training Strategy (RSTS)
+Crucially, RPM is only used during training—it provides implicit supervision for RDM and is disabled during inference, adding zero inference overhead.
 
-Exploiting PRF's natural support for short-trajectory training, RSTS generates multiple training samples from a single sequence:
+### A Full Example
 
-- In addition to the standard sample $([1,50], [51,110])$, samples $([1,40],[41,100])$, $([1,30],[31,90])$, and $([1,20],[21,80])$ are also generated.
-- Each retrospective unit receives a number of training samples inversely proportional to its input length—shorter observations are harder to retrospect and thus receive more training data.
-- On Argoverse 2, a single sequence yields 4 decoder training samples and $\{4,3,2,1\}$ samples for each retrospective unit.
+Take a short observation of Obs=10 on Argoverse 2: It first enters the corresponding retrospective unit $\Phi$. The RDM aligns it while the RPM implicitly supervises the recovery of $\Delta T$ steps of history, resulting in a feature equivalent to Obs=20. This feature then passes through the next unit to become Obs=30, and so on. Each hop only bridges a small $\Delta T$ interval until the standard length Obs=50 is reached and sent to the shared decoder. Because each hop has a lower learning difficulty, inputs with large information gaps like 10 steps can be recovered step-by-step—at the cost of passing through all $\tau$ units, making the inference time approximately 1.9x the standard length (0.268s vs 0.140s).
 
 ### Loss & Training
 
-End-to-end training comprises three components:
+A Rolling Start Training Strategy (RSTS) is used to generate variable-length samples. From a sequence, besides the standard sample $([1,50], [51,110])$, segments like $([1,40],[41,100])$, $([1,30],[31,90])$, and $([1,20],[21,80])$ are extracted. Consequently, one Argoverse 2 sequence generates 4 decoder samples and $\{4,3,2,1\}$ retrospective unit samples—shorter observations, being harder to recover, naturally receive more training data.
 
-- **Decoder loss**: Smooth-L1 (trajectory regression) + cross-entropy (mode probability classification), following the QCNet/DeMo setup.
-- **RPM loss**: $\mathcal{L}_{rpm} = \frac{1}{\tau}\sum_{v=1}^{\tau}(\mathcal{L}_{mq}^v + \mathcal{L}_{sq}^v)$, supervising mode queries and state queries respectively.
-- **RDM loss**: $\mathcal{L}_{rdm} = \frac{1}{\tau}\sum_{v=1}^{\tau}\text{SmoothL1}(\tilde{\mathbf{F}}^{v-1}, \mathbf{F}^{v-1})$
+The end-to-end loss consists of three parts: Decoder loss (Smooth-L1 trajectory regression + Cross-Entropy mode classification, following QCNet/DeMo), RPM loss $\mathcal{L}_{rpm} = \frac{1}{\tau}\sum_{v=1}^{\tau}(\mathcal{L}_{mq}^v + \mathcal{L}_{sq}^v)$ (supervising mode/state queries), and RDM loss $\mathcal{L}_{rdm} = \frac{1}{\tau}\sum_{v=1}^{\tau}\text{SmoothL1}(\tilde{\mathbf{F}}^{v-1}, \mathbf{F}^{v-1})$.
 
 ## Key Experimental Results
 
-### Variable-Length Trajectory Prediction (Argoverse 2 Validation Set, mADE6/mFDE6)
+### Variable-Length Trajectory Prediction (Argoverse 2 Val, mADE6/mFDE6)
 
 | Method | Obs=10 | Obs=20 | Obs=30 | Obs=40 | Obs=50 | Avg-Δ50 |
-|--------|--------|--------|--------|--------|--------|---------|
+|------|--------|--------|--------|--------|--------|---------|
 | DeMo-Ori | 0.861/1.533 | 0.700/1.358 | 0.671/1.306 | 0.662/1.288 | 0.658/1.278 | 0.066/0.093 |
 | DeMo-CLLS | 0.641/1.258 | 0.630/1.249 | 0.623/1.234 | 0.614/1.225 | 0.615/1.223 | 0.012/0.019 |
 | **DeMo-PRF** | **0.617/1.183** | **0.603/1.155** | **0.598/1.143** | **0.599/1.145** | **0.596/1.142** | **0.008/0.015** |
 | QCNet-CLLS | 0.735/1.247 | 0.727/1.232 | 0.725/1.227 | 0.719/1.222 | 0.714/1.215 | 0.013/0.017 |
 | **QCNet-PRF** | **0.727/1.213** | **0.711/1.181** | **0.706/1.169** | **0.702/1.164** | **0.702/1.166** | **0.010/0.016** |
 
-### Standard Prediction — Argoverse 2 Leaderboard (b-mFDE6)
+### Main Results: Argoverse 2 Leaderboard (b-mFDE6)
 
 | Method | b-mFDE6 | mADE6 | mFDE6 | MR6 |
-|--------|---------|-------|-------|-----|
+|------|---------|-------|-------|-----|
 | DeMo+ReMo | 1.84 | 0.61 | 1.17 | 0.13 |
 | **DeMo-PRF** | **1.81** | **0.60** | **1.14** | **0.13** |
 
-### Ablation Study (Argoverse 2 Validation Set, DeMo backbone)
+### Ablation Study (Argoverse 2 Val, DeMo backbone)
 
 | RDM | RPM | RSTS | Obs=10 | Obs=50 |
 |-----|-----|------|--------|--------|
@@ -108,48 +104,48 @@ End-to-end training comprises three components:
 | ✓ | ✓ | ✗ | 0.652/1.241 | 0.635/1.208 |
 | ✓ | ✓ | ✓ | **0.617/1.183** | **0.596/1.142** |
 
-- RDM contributes the most: at Obs=10, mADE6 drops from 0.876 to 0.655 (↓25.2%).
-- RPM further reduces mFDE6 by approximately 1.3% on top of RDM.
-- RSTS improves performance across all observation lengths; at Obs=10, mADE6 decreases by an additional 5.3%.
-- Progressive distillation vs. direct distillation: mADE6 of 0.652 vs. 0.663 at Obs=10, with the advantage more pronounced for shorter sequences.
-- Mamba vs. GRU vs. Attention (RPM temporal modeling): Mamba achieves the best mFDE6 across all settings.
-- Inference overhead: each additional retrospective stage adds only approximately 0.07G FLOPs and 0.03s latency.
+- RDM contributes most: reduces mADE6 from 0.876 to 0.655 at Obs=10 (↓25.2%).
+- RPM further reduces mFDE6 by ~1.3% on top of RDM.
+- RSTS improves performance across all lengths; mADE6 drops another 5.3% at Obs=10.
+- Progressive vs. Direct Distillation: mADE6 is 0.652 vs 0.663 at Obs=10, showing greater advantage for short sequences.
+- Mamba vs. GRU vs. Attention (RPM temporal modeling): Mamba is superior across the board for mFDE6.
+- Inference overhead: Each additional retrospective stage adds only ~0.07G FLOPs + 0.03s latency.
 
 ## Highlights & Insights
 
-1. **Progressive retrospection is both simple and effective**: Decomposing "long-range feature alignment" into multiple "short-range alignment" steps substantially reduces learning difficulty, as clearly verified by t-SNE visualization.
-2. **Plug-and-play design**: Inserted between encoder and decoder, PRF successfully adapts to two SOTA methods, QCNet and DeMo.
-3. **RPM is training-only**: It provides implicit supervision without adding inference overhead, making it engineering-friendly.
-4. **RSTS data augmentation is elegantly designed**: Leveraging the variable-length property to generate multiple samples from a single sequence, with shorter trajectories receiving more training data.
-5. **SOTA on both standard and variable-length tracks**: PRF leads comprehensively on variable-length prediction and simultaneously sets a new record on the standard Argoverse 2 leaderboard.
+1.  **Progressive retrospective concept is simple yet effective**: Decomposing "long-distance feature alignment" into multiple "short-distance alignments" significantly lowers learning difficulty, as verified by t-SNE visualization.
+2.  **Plug-and-play design**: Successfully adapted to two SOTA methods, QCNet and DeMo, by inserting between encoder and decoder.
+3.  **RPM used only during training**: Provides implicit supervision without adding inference overhead, making it engineering-friendly.
+4.  **Clever RSTS data augmentation**: Leverages variable-length characteristics to generate multiple samples from one sequence, giving more training data to short trajectories.
+5.  **Dual-track SOTA**: Not only leads in variable-length prediction but also refreshes records on the standard Argoverse 2 leaderboard.
 
 ## Limitations & Future Work
 
-1. **Discrete observation lengths**: Only observation lengths that are integer multiples of $\Delta T$ are supported; intermediate lengths must be truncated to the nearest valid value (e.g., 32→30), potentially wasting information.
-2. **Inference latency scales linearly with missing steps**: The shortest observation must pass through all $\tau$ retrospective units; at 10 steps, inference time is 1.9× that of the standard setting (0.268s vs. 0.140s).
-3. **Validation limited to two backbones**: Although plug-and-play compatibility is claimed, the method is only validated on QCNet and DeMo; diffusion-based and GPT-based predictors remain untested.
-4. **Extremely short observations unexplored**: The behavior under only 1–5 observation steps is not investigated.
-5. **Training cost not thoroughly compared**: RSTS generates several times more samples, yet total training time (8×RTX4090, 60 epochs) is not compared against baselines.
-6. **No real-world deployment validation**: All experiments are conducted on offline datasets; online or on-vehicle deployment results are not presented.
+1.  **Discretization of observation lengths**: Currently supports observation lengths in multiples of $\Delta T$; intermediate lengths must be truncated to the nearest valid value (e.g., 32→30), potentially wasting information.
+2.  **Linear increase in inference latency with missing data**: The shortest observations must pass through all $\tau$ units; inference time for Obs=10 is 1.9x that of the standard (0.268s vs 0.140s).
+3.  **Backbone validation is limited**: Although claimed to be plug-and-play, it was only validated on QCNet and DeMo; Diffusion/GPT-based predictors were not tested.
+4.  **Lack of discussion on extremely short observations**: The effect of observations with only 1-5 steps was not explored.
+5.  **Training cost not detailed**: RSTS generates multiple samples per sequence; the total training time for 60 epochs on 8×RTX4090 was not compared with baselines.
+6.  **Missing real-world deployment validation**: All experiments were on offline datasets; online/on-vehicle deployment effects were not showcased.
 
 ## Related Work & Insights
 
-| Method | Strategy | Short-Trajectory Performance | Inference Overhead | Compatibility |
-|--------|----------|-----------------------------|--------------------|---------------|
-| DTO | Teacher–student distillation | Moderate | None | Medium |
-| FLN | Temporal-invariant representation | Moderate | None | Medium |
-| LaKD | Length-agnostic distillation | Good | None | Medium |
-| CLLS | Contrastive learning | Good | None | Medium |
-| **PRF** | **Progressive retrospective distillation** | **Best** | **Marginal increase** | **High (plug-and-play)** |
+| Method | Strategy | Short Traj. Performance | Inference Overhead | Compatibility |
+|------|------|-----------|---------|--------|
+| DTO | Teacher-Student Distillation | Medium | None | Medium |
+| FLN | Temporal Invariant Rep. | Medium | None | Medium |
+| LaKD | Length-Agnostic Distillation | Good | None | Medium |
+| CLLS | Contrastive Learning | Good | None | Medium |
+| **PRF** | **Progressive Retro. Distill.** | **Best** | **Minor increase** | **High (Plug-and-play)** |
 
-Core distinction: the above methods all perform one-step mapping from short features to long features, whereas PRF progressively aligns features through cascaded units—yielding greater advantages as the information gap widens.
+Key Difference: Previous methods attempt "one-step mapping" from short to long features, whereas PRF aligns them progressively through cascaded units—the advantage becomes more pronounced as the information gap increases.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (The combination of progressive retrospection, residual distillation, and decoupled queries is original; the approach is conceptually clean and elegant.)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Two datasets, two backbones, six baselines, detailed ablations, t-SNE visualization, and efficiency analysis.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, well-formatted equations, and rich figures and tables.)
-- Value: ⭐⭐⭐⭐ (Variable-length observation is a key pain point in real-world driving; the method is practical and achieves SOTA.)
+- Novelty: ⭐⭐⭐⭐ (Combination of progressive retrospection, residual distillation, and decoupled queries is innovative and elegant.)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Two datasets, two backbones, six baselines, detailed ablations, t-SNE, and efficiency analysis.)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, standardized formulas, and rich tables/figures.)
+- Value: ⭐⭐⭐⭐ (Variable-length observation is a critical pain point in real-world driving; the method is practical and achieves SOTA.)
 
 <!-- RELATED:START -->
 
@@ -157,11 +153,11 @@ Core distinction: the above methods all perform one-step mapping from short feat
 
 ## Related Papers
 
+- [\[ECCV 2024\] Progressive Pretext Task Learning for Human Trajectory Prediction](../../ECCV2024/autonomous_driving/progressive_pretext_task_learning_for_human_trajectory_prediction.md)
+- [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
+- [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
 - [\[CVPR 2026\] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](den_tp_a_density_balanced_data_curation_and_evaluation_framework_for_trajectory.md)
-- [\[CVPR 2026\] MetaDAT: Generalizable Trajectory Prediction via Meta Pre-training and Data-Adaptive Test-Time Updating](metadat_generalizable_trajectory_prediction_via_meta_pre-training_and_data-adapt.md)
-- [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
-- [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](../../ICCV2025/autonomous_driving/donut_a_decoder-only_model_for_trajectory_prediction.md)
-- [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
+- [\[CVPR 2026\] DrivePTS: A Progressive Learning Framework with Textual and Structural Enhancement for Driving Scene Generation](drivepts_a_progressive_learning_framework_with_textual_and_structural_enhancemen.md)
 
 </div>
 

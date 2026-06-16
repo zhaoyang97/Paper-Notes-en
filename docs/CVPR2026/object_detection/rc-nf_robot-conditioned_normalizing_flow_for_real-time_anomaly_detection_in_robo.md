@@ -2,92 +2,105 @@
 title: >-
   [Paper Note] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 description: >-
-  [CVPR2026][Object Detection][Anomaly Detection] This paper proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object motion trajectories via a conditional normali…
+  [CVPR 2026][Object Detection][normalizing flow] Proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object trajectories through conditional normalizing flows. It achieves <100ms real-time anomaly detection and serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanni
 tags:
-  - "CVPR2026"
-  - "Object Detection"
-  - "Anomaly Detection"
-  - "Normalizing Flow"
-  - "VLA Monitoring"
-  - "Robotic Manipulation"
-  - "Out-of-Distribution"
+  - CVPR 2026
+  - Object Detection
+  - normalizing flow
+  - VLA monitoring
 date: 2026-05-08
-content_hash: fb281f0a38ba6964
+content_hash: d582825c544af2a4
 ---
-
 # RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.11106](https://arxiv.org/abs/2603.11106)  
 **Code**: None  
-**Area**: Robotics
-**Keywords**: Anomaly Detection, Normalizing Flow, VLA Monitoring, Robotic Manipulation, Out-of-Distribution
+**Area**: Object Detection  
+**Keywords**: Anomaly detection, normalizing flow, VLA monitoring, robotic manipulation, out-of-distribution
 
 ## TL;DR
 
-This paper proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object motion trajectories via a conditional normalizing flow, enabling real-time anomaly detection at <100ms latency. RC-NF serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanning and state-level trajectory rollback (homing).
+Proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object trajectories through conditional normalizing flows. It achieves <100ms real-time anomaly detection and serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanning and state-level trajectory homing.
 
 ## Background & Motivation
 
-VLA (Vision-Language-Action) models learn from expert demonstrations via imitation learning, mapping natural language instructions to low-level control actions. However, real-world deployment faces severe OOD (Out-of-Distribution) challenges:
+Vision-Language-Action (VLA) models learn from expert demonstration data via imitation learning to map natural language instructions to low-level control actions. However, they face severe Out-of-Distribution (OOD) challenges during real-world deployment:
 
-**Task-level OOD**: Environmental changes render the current instruction inapplicable (e.g., the drawer closes unexpectedly during "place the ball into the drawer").
+**Task-level OOD**: Environmental changes make the current instruction no longer applicable (e.g., the drawer suddenly closes while executing "put the ball in the drawer").
 
-**State-level OOD**: The instruction remains valid but the robot's physical state deviates from the training distribution (e.g., an object slips from the gripper).
+**State-level OOD**: The instruction remains valid, but the physical state of the robot deviates from the training distribution (e.g., an object slips from the gripper).
 
-Limitations of existing runtime monitoring approaches:
+Limitations of existing runtime monitoring solutions:
 
-- **State classification methods** (behavior trees, etc.): Rely on exhaustive enumeration of anomaly conditions or manually defined preconditions, making it difficult to cover the combinatorial variability in real manipulation.
-- **VLM reasoning methods** (e.g., Sentinel's dual-system architecture): Require chain-of-thought reasoning, incurring second-level latency that precludes timely intervention.
+- **State Classification Methods** (e.g., Behavior Trees): Rely on exhaustive enumeration of anomalous conditions or manually defined preconditions, making it difficult to cover the combinatorial variability of real-world manipulation.
+- **VLM Inference Methods** (e.g., dual-system architectures like Sentinel): Require chain-of-thought reasoning, resulting in latencies of several seconds, which precludes timely intervention.
 - **FailDetect** (unsupervised flow matching): Directly concatenates image features with robot states, leaving room for improvement in feature selection and processing.
 
-**Core Motivation**: A positive-only trained, real-time (<100ms), plug-and-play anomaly detection module is needed — one that requires neither enumerating all anomaly types nor multi-step reasoning.
+**Core Motivation**: A need for an anomaly detection module that is trained only on positive samples, operates in real-time (<100ms), and is plug-and-play, without the need to enumerate all anomaly types or perform multi-step reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-RC-NF is built on the Glow normalizing flow architecture. Its key contribution is a novel affine coupling layer — **RCPQNet (Robot-Conditioned Point Query Network)** — which injects robot state and task information as conditions into the normalizing flow.
+The problem RC-NF aims to solve is: how a VLA can perceive that "something is wrong" within <100ms during real execution using only normal demonstration data. Its core idea is to put "what the robot is doing" and "how the object is moving" into the same conditional normalizing flow to calculate the probability density of the current frame's configuration under the normal distribution—the lower the density, the more anomalous. The entire network is based on the Glow architecture, with the core modification being the design of a new affine coupling layer, RCPQNet (Robot-Conditioned Point Query Network), which injects robot states and task information as conditions into the flow.
 
-The overall pipeline consists of three stages:
+The data flow is as follows: SAM2 first segments objects from third-person video into masks, which are then grid-sampled into point sets; the task prompt is encoded into a uniform distribution vector on a hypersphere; robot proprioception simultaneously provides joint, gripper, and pose states. These three information streams enter the normalizing flow conditioned on robot states and task embeddings. After $K=12$ steps of reversible transformations, the negative log-likelihood (NLL) is output as the anomaly score. Once the score crosses a calibrated threshold, tiered correction is triggered: task-level OOD leads to replanning, while state-level OOD triggers trajectory homing to a safe pose.
 
-1. **Input Processing**: SAM2 extracts object segmentation masks from the video stream → grid-sampled into point sets; task prompts are encoded as uniformly distributed vectors on a hypersphere; robot proprioception provides joint/gripper/pose states.
-2. **RC-NF Inference**: Conditioned on robot states and task embeddings, K=12 invertible transformation steps compute the probability density of the current configuration under the normal task distribution; the negative log-likelihood serves as the anomaly score.
-3. **Anomaly Detection and Response**: When the anomaly score exceeds a threshold, corrective action is triggered — task-level OOD triggers replanning; state-level OOD triggers trajectory rollback (homing).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 380, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Third-person Video"] --> B["SAM2 Segmentation + Grid Sampling<br/>→ Object Point Set"]
+    P["Task Prompt → Hyperspherical Uniform Encoding<br/>→ Task Embedding τ"]
+    R["Robot Proprioception<br/>→ State s (Joint / Gripper / Pose)"]
+
+    subgraph RCPQ["RCPQNet Affine Coupling Layer (Query–Memory Decoupled Interaction)"]
+        direction TB
+        QY["Query: FiLM modulates Robot State s with τ"]
+        MEM["Memory: Dual-branch Point Encoding<br/>Dynamic Shape + Positional Residual"]
+        QY --> CA["Cross-attention → Affine Parameters γ, β"]
+        MEM --> CA
+    end
+
+    B --> MEM
+    R --> QY
+    P --> QY
+    CA --> NF["Conditional Normalizing Flow K=12 steps Reversible Transformation<br/>→ NLL = Anomaly Score"]
+    NF -->|Score < Threshold| OK["Normal: Control returned to VLA"]
+    NF -->|Score > Calibrated Threshold| H{"Two-layer OOD Determination"}
+    H -->|Task-level| REPLAN["Replan Subtasks"]
+    H -->|State-level| HOME["Homing Trajectory Rollback"]
+```
 
 ### Key Designs
 
-#### Conditional Normalizing Flow
+**1. Conditional Normalizing Flow: Calculating a comparable probability density for "normal"**
 
-RC-NF extends a standard normalizing flow to a conditional form, with condition $c = (s, \tau)$, where $s$ denotes the robot state (T-dimensional joint states, gripper states, Cartesian pose) and $\tau$ is the task embedding. The task embedding is obtained by mapping task prompts to T-dimensional vectors on the surface of a hypersphere, where the uniform distribution ensures maximal separation between task embeddings.
-
-The point set $\mathcal{X}$ is mapped to a Gaussian latent distribution $\mathcal{Z} \sim \mathcal{N}(\mu_{\text{task}}, I)$, with mean $\mu_{\text{task}}$ broadcast from the task embedding. The conditional likelihood is computed as:
+Normal demonstrations actually have a wide distribution (different objects, placements, and grasping sequences). It is nearly impossible for a classifier to enumerate "what counts as normal," so RC-NF uses density estimation instead. Within the condition $c = (s, \tau)$, $s$ represents the robot state (T-dimensional joint state, gripper state, Cartesian pose) and $\tau$ is the task embedding; the object point set $\mathcal{X}$ is mapped to a Gaussian latent distribution $\mathcal{Z} \sim \mathcal{N}(\mu_{\text{task}}, I)$ through $K=12$ reversible transformations. The latent space mean $\mu_{\text{task}}$ is obtained by broadcasting the task embedding. The conditional likelihood is calculated according to the change of variables formula, accumulating the Jacobian determinant of each reversible transformation:
 
 $$\log p_{X|C}(x|c) = \log p_{Z|C}(z|c) + \sum_{i=1}^{K} \log \left| \det \frac{\partial f_{i,c}(y_{i-1})}{\partial y_{i-1}} \right|$$
 
-#### RCPQNet: Robot-Conditioned Point Query Network
+Its negative value is the anomaly score: normal configurations fall in high-density regions with low scores; once they deviate from the training distribution, the density drops sharply and the score spikes. The task embedding step is equally critical—mapping different task prompts to the surface of a T-dimensional hypersphere. A uniform distribution on the hypersphere ensures that the latent distribution means of different tasks are as separated as possible to avoid density contamination between tasks.
 
-RCPQNet serves as the affine coupling layer and contains two core components:
+**2. RCPQNet: Aligning "robot action" with "object movement" via query–memory structure**
 
-**Task-aware Robot-Conditioned Query (query generation)**: Robot states are projected into the latent space via a linear layer, then modulated by a FiLM mechanism using the task embedding $\tau$, producing task-aware query tokens. These query tokens jointly encode robot state context and task objectives.
+The effectiveness of a conditional flow depends on how the affine coupling layer consumes the condition. RCPQNet splits this into "query" and "memory" paths. The query path (Task-aware Robot-Conditioned Query) linearly projects the robot state into latent space, then uses the FiLM mechanism to modulate it with the task embedding $\tau$, generating a query token that encodes both robot state and task goals—equivalent to observing the object with the question "I am doing this task, and the robot is currently in this pose." The memory path (Dual-Branch Point Feature Encoding) characterizes object movement through two branches: the Dynamic Shape branch centralizes and normalizes the point set of each frame to eliminate translation and scale effects, treating all object points as a whole and representing relative motion between objects through shape changes; the Positional Residual branch restores the positional information lost during shape normalization, preserving the average displacement in robot–object motion. The two branches are respectively processed by MLP dimension raising → average pooling for frame-level representation → GRU for temporal dependency → Transformer Encoder to form a memory vector. Finally, the query and memory perform cross-attention in a Transformer to output affine transformation parameters $\gamma, \beta$. For example: during gripper slippage, the query shows the gripper should be holding the object, but the memory shows unexpected relative displacement in the object point set; when aligned, the density drops immediately, and the score triggers an alarm.
 
-**Dual-Branch Point Feature Encoding (memory generation)**:
-- **Dynamic Shape Branch**: Centers and normalizes each frame's point set to remove translation and scale effects, extracting shape features; all object point sets are treated as a unified whole, with shape changes representing relative motion among target objects.
-- **Positional Residual Branch**: Compensates for position information lost during shape normalization, preserving average displacement features in robot–object motion.
+**3. Decoupled but Interacting Feature Processing: Avoiding entanglement and imbalance in FailDetect**
 
-Each branch is processed as follows: MLP dimensionality expansion → average pooling to obtain frame-level representations → GRU for temporal dependency modeling → Transformer Encoder to generate memory vectors. The query and memory vectors then interact via cross-attention in a Transformer to produce affine transformation parameters $\gamma, \beta$.
+FailDetect directly concatenates image features and robot states into the flow. The problem is that these two types of features have vastly different dimensions and semantics. Concatenation often leads to "feature entanglement" where one drowns the other, or "feature imbalance" where one dominates. The decoupling in RC-NF addresses this directly: robot states only go through the query path, and object point features only go through the memory path. They only interact at the cross-attention stage. This preserves the causal interaction of "robot state determines how objects should move" while maintaining clear and balanced representations for both paths. Ablation studies confirm this—removing the robot state condition drops the AUC for "Gripper Open" from 0.931 to 0.633; removing the Dynamic Shape branch collapses the "Spatial Misalignment" AUC to 0.102, proving that decoupling and interaction are both indispensable.
 
-#### Core Idea of the Decoupled Design
+**4. Two-layer OOD Detection and Tiered Handling: Linking "sensing" to "correction"**
 
-Unlike FailDetect, which directly concatenates image and robot features, RC-NF treats robot states as queries and object point features as memory, achieving **decoupled yet interactive** feature processing. This avoids feature entanglement and feature imbalance issues.
+Calculating an anomaly score is only the first step; practical deployment requires answering "what to do after detecting something is wrong." As a parallel monitoring module, RC-NF continuously reads the vision stream and robot state feedback, treating the negative log-likelihood of the current configuration as the anomaly score at each time step. Once it crosses a static threshold estimated from a calibration set (debiasing during training ensures the temporal smoothness of scores, so the threshold does not need to vary over time), the high-level system determines which type of OOD occurred and handles it hierarchically. Task-level OOD implies the environment or context no longer matches the instruction (e.g., the drawer is closed while the task is "put the blue ball in the open drawer"); at this point, RC-NF notifies the high-level controller (human or LLM planner) to replan a sequence of subtasks fitting the new environment. State-level OOD implies the task remains valid but the physical state of the robot has drifted out of the normal distribution (e.g., the ball slips from the gripper); this triggers homing to return the arm to an initial safe state and locally adjust the trajectory until the score falls below the threshold, after which control is seamlessly returned to the VLA. In practice, the system first attempts lightweight state-level recovery and only escalates to task-level replanning when necessary—this is more granular than a blanket "stop upon failure" and closer to real-world deployment needs.
 
 ### Loss & Training
 
-- **Training Objective**: Maximize the conditional log-likelihood of normal demonstrations (Eq. 5), equivalent to minimizing $\frac{1}{2}\|z - \mu_{\text{task}}\|_2^2$ plus the Jacobian determinant term.
-- **Positive-only Unsupervised Training**: Only successful demonstration data are required; no anomalous samples are needed.
-- **Debiasing**: A debiasing operation is applied during training to ensure temporal smoothness of the anomaly score.
-- **Static Threshold**: The upper threshold is estimated from a calibration set as $\text{Upper}_\mathcal{T} = \mu_\mathcal{T} + Q_{1-\alpha}(D_\mathcal{T})$, with $\alpha = 0.05$.
-- **Training Setup**: K=12 flow steps, trained for 100 epochs with 50 demonstrations per task.
+- **Goal**: Maximize the conditional log-likelihood of normal demonstrations (Eq. 5), which is equivalent to minimizing $\frac{1}{2}\|z - \mu_{\text{task}}\|_2^2$ plus the Jacobian determinant term.
+- **Unsupervised Training (Positive Samples Only)**: Only successful demonstration data is required; no anomaly samples are needed.
+- **Debiasing**: A debiasing operation is applied during training to ensure the temporal smoothness of anomaly scores.
+- **Static Threshold**: The upper threshold is estimated from a calibration set: $\text{Upper}_\mathcal{T} = \mu_\mathcal{T} + Q_{1-\alpha}(D_\mathcal{T})$, where $\alpha = 0.05$.
+- **Training Setup**: $K=12$ flow steps, trained for 100 epochs, with 50 demonstrations per task.
 
 ## Key Experimental Results
 
@@ -113,43 +126,43 @@ Unlike FailDetect, which directly concatenates image and robot features, RC-NF t
 
 ### Key Findings
 
-1. **RC-NF substantially outperforms VLM-based approaches**: On Spatial Misalignment, VLMs degrade to near-random performance (AUC ≈ 0.5), while RC-NF achieves 0.968, demonstrating that trajectory-based density estimation far surpasses semantic reasoning for this task.
-2. **The Dynamic Shape branch is critical**: Removing it causes the average AUC to drop from 0.931 to 0.684, with a catastrophic collapse to 0.102 on Spatial Misalignment, confirming that temporal shape evolution is the strongest evidence for anomaly detection.
-3. **Robot state conditioning is indispensable**: Removing it causes the Gripper Open AUC to drop sharply from 0.931 to 0.633, since an unclosed gripper does not directly displace objects — the anomaly manifests in the relative motion between the robot and the object.
-4. **Real-time performance**: Inference latency on an RTX 3090 is <100ms, far faster than the second-level latency of VLM-based approaches.
-5. **Successful sim-to-real transfer**: RC-NF transfers effectively from simulation to physical environments, and in combination with π₀, successfully handles both task-level OOD (drawer closing unexpectedly) and state-level OOD (ball slipping from gripper).
+1. **RC-NF Outperforms VLM Solutions**: In Spatial Misalignment, VLMs degrade to near-random levels (AUC≈0.5), while RC-NF reaches 0.968, indicating that probability-density-based trajectory methods are far superior to VLM-based semantic reasoning.
+2. **The Dynamic Shape Branch is Crucial**: Removing it drops the average AUC from 0.931 to 0.684, and Spatial Misalignment collapses to 0.102, proving that temporal shape evolution is the strongest evidence for anomaly detection.
+3. **Robot State Condition is Indispensable**: Removing it causes the Gripper Open AUC to drop from 0.931 to 0.633; since a gripper failing to close does not immediately displace the object, the anomaly is reflected in the relative motion between the robot and the object.
+4. **Real-time Performance**: Inference latency on an RTX 3090 is <100ms, far faster than the multi-second latency of VLM solutions.
+5. **Successful Real-World Transfer**: RC-NF effectively transfers from simulation to hardware. Integrated with π₀, it successfully handled scenarios like sudden drawer closure (task-level) and ball slipping (state-level).
 
 ## Highlights & Insights
 
-1. **Elegant decoupled conditioning design**: Treating robot states as queries and object point sets as memory achieves decoupled yet interactive feature processing, avoiding feature entanglement — a fundamental improvement over FailDetect's naive concatenation strategy.
-2. **Positive-only training**: Unsupervised training on successful demonstrations alone avoids the difficulty of enumerating anomaly types, better suiting real-world deployment.
-3. **Two-level OOD response mechanism**: Distinguishing task-level from state-level OOD and responding accordingly (replanning vs. trajectory rollback) is more granular and practical than a monolithic failure detection approach.
-4. **Plug-and-play**: RC-NF operates as a parallel monitoring module without modifying the VLA architecture, making it straightforward to deploy in practice.
-5. **Hyperspherical task embedding**: Mapping task prompts to a uniform distribution on a hypersphere ensures maximal inter-task separation, providing a favorable geometric structure for density estimation.
+1. **Sophisticated Decoupled Conditioning**: Treating robot states as queries and object points as memory avoids feature entanglement while preserving interaction info—a fundamental improvement over FailDetect’s simple concatenation.
+2. **Positive Samples Only**: Unsupervised training depends only on successful demonstrations, avoiding the difficulty of enumerating anomaly types, which is more practical for deployment.
+3. **Two-layer OOD Handling**: Differentiating between task-level and state-level OOD (replanning vs. homing) provides a more granular and practical approach than simple failure detection.
+4. **Plug-and-play**: Does not require modifying the VLA architecture; it runs as a parallel monitoring module, making it engineering-friendly.
+5. **Hyperspherical Task Embeddings**: Mapping task prompts to a uniform distribution on a hypersphere ensures maximum separation between tasks, providing a solid geometric structure for density estimation.
 
 ## Limitations & Future Work
 
-1. **Dependency on SAM2 segmentation quality**: The first frame requires a bounding box prompt (obtained via graphics methods in simulation, and Gemini 2.5 Pro in the real world); segmentation failures degrade point set quality.
-2. **Per-task training and threshold calibration**: New tasks require re-collecting demonstrations and re-calibrating thresholds, limiting scalability.
-3. **Static threshold**: Although debiasing ensures temporal smoothness, a fixed threshold may be insufficiently robust in long-tail distribution scenarios.
-4. **Single third-person camera only**: RC-NF relies on a single third-person viewpoint for monitoring; multi-view fusion could further improve performance.
-5. **Coarse anomaly categorization**: Only task-level and state-level OOD are distinguished, without finer-grained anomaly typing to guide specific recovery strategies.
-6. **Limited scale of LIBERO-Anomaly-10**: The benchmark covers only 10 tasks and 3 anomaly types; larger-scale and more diverse benchmarks are warranted.
+1. **Dependency on SAM2 Segmentation**: Requires a bbox prompt in the first frame (simulated via graphics, real-world via Gemini 2.5 Pro). Segmentation failure degrades point set quality.
+2. **Per-task Training and Calibration**: Each new task requires new demonstrations and threshold calibration, limiting scalability.
+3. **Static Thresholds**: While debiasing ensures temporal smoothness, a fixed threshold may not be robust enough in long-tail distribution scenarios.
+4. **Single Third-person Camera**: RC-NF only uses one perspective; multi-view fusion could further improve performance.
+5. **Coarse Anomaly Classification**: Only distinguishes between task-level and state-level OOD without subdividing types to guide specific recovery strategies.
+6. **Limited Scale of LIBERO-Anomaly-10**: Contains only 10 tasks and 3 anomaly categories; larger and more diverse benchmarks are needed.
 
 ## Related Work & Insights
 
-- **FailDetect**: The most direct baseline, also a flow-based unsupervised method but relying on naive feature concatenation; the decoupled conditioning design in RC-NF is the core differentiator.
-- **Sentinel / VLM monitoring**: VLMs excel at semantic understanding but struggle with spatial reasoning and incur high latency, underscoring the importance of low-level geometric and trajectory features for manipulation anomaly detection.
-- **Pedestrian anomaly detection methods**: RC-NF's normalizing flow approach is inspired by pedestrian anomaly detection and adapted to robotic manipulation.
-- **VLA models (e.g., π₀)**: RC-NF is positioned as an auxiliary monitoring module for VLAs — augmenting rather than replacing them.
-- Insight: **Decoupled design + probabilistic density estimation** may generalize to other robotic tasks requiring real-time monitoring (e.g., navigation, multi-arm collaboration).
+- **FailDetect**: Also uses a flow-based unsupervised approach but concatenates features; it is the most direct baseline. RC-NF's decoupled conditioning is the core differentiator.
+- **Sentinel / VLM Monitoring**: VLMs are strong in semantic understanding but weak in spatial reasoning and have high latency, highlighting the importance of low-level geometric/trajectory features for manipulation anomaly detection.
+- **Pedestrian Anomaly Detection**: The normalizing flow strategy in RC-NF is inspired by pedestrian scenes and transferred to robotic manipulation.
+- **VLA Models (e.g., π₀)**: RC-NF is positioned as an auxiliary monitoring module for VLAs, enhancing rather than replacing them.
+- **Insight**: The **decoupled design + probability density estimation** could be extended to other robot tasks requiring real-time monitoring (navigation, multi-arm collaboration, etc.).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Applying conditional normalizing flows to robot anomaly detection is a novel combination; the RCPQNet decoupled design has both engineering and academic value.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Quantitative evaluation (simulation benchmark, multi-baseline comparison, ablation) and qualitative validation (real-world π₀ integration) are both thorough; ablation analysis is in-depth.
-- Writing Quality: ⭐⭐⭐⭐ — Problem formulation is clear, method description is complete, and figures are intuitive.
-- Value: ⭐⭐⭐⭐⭐ — Addresses a core pain point in VLA deployment; the plug-and-play design is highly practical; <100ms latency meets real-time requirements.
+- Novelty: ⭐⭐⭐⭐ — Combining conditional normalizing flows for robot anomaly detection is a novel combination; the RCPQNet decoupled design has engineering and academic value.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Combines quantitative (simulation benchmarks + multi-baseline comparison + ablation) and qualitative (real-world π₀ integration) results with thorough ablation analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear problem definition, complete method description, and intuitive diagrams.
+- Value: ⭐⭐⭐⭐⭐ — Directly addresses a core pain point for VLA deployment with a practical plug-and-play design and <100ms latency.
 
 <!-- RELATED:START -->
 
@@ -157,11 +170,11 @@ Unlike FailDetect, which directly concatenates image and robot features, RC-NF t
 
 ## Related Papers
 
-- [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
 - [\[CVPR 2026\] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection](bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat.md)
-- [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](../../ICCV2025/object_detection/yoloe_realtime_seeing_anything.md)
-- [\[AAAI 2026\] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice](../../AAAI2026/object_detection/an_overall_real-time_mechanism_for_classification_and_quality_evaluation_of_rice.md)
-- [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
+- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
+- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 
 </div>
 

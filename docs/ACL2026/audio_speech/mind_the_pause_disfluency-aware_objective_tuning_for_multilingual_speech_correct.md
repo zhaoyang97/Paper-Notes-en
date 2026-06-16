@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs
 description: >-
-  [ACL 2026][Audio & Speech][disfluency correction] The authors propose a multilingual disfluency correction pipeline: first, MuRIL is used for token-level fluent/disfluent labeling…
+  [ACL 2026][Audio & Speech][disfluency correction] The authors propose a multilingual disfluency correction pipeline: first using MuRIL for token-level fluent/disfluent labeling, then feeding the "original transcript + token labels" into Llama-3.2-3B / Qwen2.5-3B for instruction fine-tuning. The key innovation is an **anti-disfluency contrastive loss** term that explic
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "disfluency correction"
-  - "contrastive loss"
-  - "MuRIL"
-  - "instruction tuning"
-  - "Hindi/Bengali/Marathi"
+  - ACL 2026
+  - Audio & Speech
+  - disfluency correction
+  - contrastive loss
+  - MuRIL
+  - instruction tuning
+  - Hindi/Bengali/Marathi
 date: 2026-05-08
-content_hash: 38825139c27a373c
+content_hash: 0500329d8420f032
 ---
-
 # Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs
 
 **Conference**: ACL 2026  
@@ -24,129 +23,131 @@ content_hash: 38825139c27a373c
 **Keywords**: disfluency correction, contrastive loss, MuRIL, instruction tuning, Hindi/Bengali/Marathi
 
 ## TL;DR
-The authors propose a multilingual disfluency correction pipeline: first, MuRIL is used for token-level fluent/disfluent labeling, then the "original transcript + token labels" are fed into Llama-3.2-3B / Qwen2.5-3B for instruction fine-tuning. The key innovation is an **anti-disfluency contrastive loss term** that explicitly penalizes the probability of generating disfluent tokens ($-\log(1-\sum_v w_v P_\theta(v))$). On real Hindi/Bengali/Marathi ASR data, this approach achieves a +1.97 BLEU gain over non-contrastive baselines and +8.54 BLEU over mBART. The 3B models match or surpass GPT-4o in most settings.
+The authors propose a multilingual disfluency correction pipeline: first using MuRIL for token-level fluent/disfluent labeling, then feeding the "original transcript + token labels" into Llama-3.2-3B / Qwen2.5-3B for instruction fine-tuning. The key innovation is an **anti-disfluency contrastive loss** term that explicitly penalizes the probability of generating disfluent tokens (penalizing $-\log(1-\sum_v w_v P_\theta(v))$). On real Hindi/Bengali/Marathi ASR data, the method outperforms the non-contrastive baseline by +1.97 BLEU and mBART by +8.54 BLEU. Furthermore, the 3B models match or even exceed GPT-4o in most settings.
 
 ## Background & Motivation
 
-**Background**: Spontaneous speech almost inevitably contains disfluencies (fillers like "uh/um", repetitions, false starts, self-repairs), which ASR systems do not automatically remove. The authors' tests show that Whisper v3 Large and AI4Bharat Indic Conformer leave at least one disfluency in approximately 30% of sentences in real Indic language dialogues. This noise causes drops of 0.5–1.6 points in QA (on a 5-point scale), 2–4.7 BLEU in MT, and ~2 points in TTS naturalness MOS.
+**Background**: Spontaneous speech almost inevitably contains disfluencies (fillers like "uh/um", repetitions, false starts, and self-repairs), which ASR systems do not automatically remove. The authors' measurements show that approximately 30% of sentences in real Indic dialogue recordings contain at least one disfluency. This noise degrades downstream QA performance by 0.5–1.6 points (on a 5-point scale), decreases MT performance by 2–4.7 BLEU, and drops TTS naturalness MOS by ~2 points.
 
-**Limitations of Prior Work**: (i) Traditional pipelines use "detect-then-delete," where sequence taggers like MuRIL mark disfluent tokens for direct removal, leading to grammatical fractures and semantic incompleteness. (ii) Research on Indic languages (Hindi/Bengali/Marathi) has mostly stopped at the detection stage (Bhat 2023, Kundu 2022), lacking full-sentence correction solutions. (iii) Existing LLM-based work either uses LLMs as data generators to train small taggers (Cheng 2024) or prompts GPT-4 directly to delete disfluencies (Lima & Campelo 2024 for Portuguese), lacking an integrated end-to-end correction pipeline combining token-level detection and LLM rewriting.
+**Limitations of Prior Work**: (i) Traditional pipelines use "detect-then-delete"—sequence taggers like MuRIL mark disfluent tokens for direct deletion, which often causes syntactic fragmentation and semantic incompleteness. (ii) Research on Indic languages (Hindi/Bengali/Marathi) has largely stopped at the detection stage (Bhat 2023, Kundu 2022), lacking full-sentence correction solutions. (iii) Existing LLM-based works either use LLMs as data generators for small taggers (Cheng 2024) or directly prompt GPT-4 to remove disfluencies (Lima & Campelo 2024 for Portuguese), but none integrate token-level detection and LLM rewriting into an end-to-end correction pipeline.
 
-**Key Challenge**: Cross-entropy (CE) fine-tuning provides LLMs with a positive signal to "look like the fluent reference," but **lacks a mechanism to explicitly instruct the model "not to copy disfluent tokens."** The authors observed that even when MuRIL tags are provided, models trained only with cross-entropy occasionally copy fillers into the output. Thus, positive-only supervision is insufficient.
+**Key Challenge**: Cross-entropy (CE) fine-tuning provides a positive signal to the LLM to "look like the fluent reference," but **there is no mechanism to tell the model "do not copy disfluent tokens."** The authors observed that even when provided with MuRIL tags, models trained only with cross-entropy occasionally still copy fillers into the output. Thus, positive-only supervision in cross-entropy is insufficient.
 
-**Goal**: (a) Perform end-to-end disfluency correction for Hindi/Bengali/Marathi rather than just detection; (b) Design a training objective that directly suppresses the generation probability of disfluent tokens to fill the gap in cross-entropy; (c) Verify if 3B-scale open-source LLMs with this training strategy can rival GPT-4o / Gemini 2.5 Pro.
+**Goal**: (a) Perform end-to-end disfluency correction for Hindi/Bengali/Marathi rather than detection-only; (b) Design a training objective that directly suppresses the generation probability of disfluent tokens to fill the gap left by cross-entropy; (c) Verify if 3B-scale open-source LLMs with this strategy can rival GPT-4o or Gemini 2.5 Pro.
 
-**Key Insight**: Treat the output of the token-level detector as a "negative sample indicator" for contrastive learning. Since MuRIL already identifies disfluent tokens, pulling down their generation probability provides targeted negative supervision.
+**Key Insight**: Treat the token-level detector's output as a "negative sample indicator for contrastive learning." Since MuRIL has already identified which tokens are disfluent, directly lowering the probability of these tokens during generation provides the most targeted negative supervision.
 
-**Core Idea**: CE loss learns "what should be generated" (push), while contrastive loss learns "what should not be generated" (pull). These push-pull signals collaborate to separate fluent targets from disfluent tokens in the representation space.
+**Core Idea**: CE loss learns "what should be generated" (push), while contrastive loss learns "what should not be generated" (pull). These two signals work in a push-pull synergy to separate fluent targets from disfluent tokens in the representation space.
 
 ## Method
 
 ### Overall Architecture
-A two-stage process with dual losses. **Stage 1**: MuRIL (Multilingual BERT pre-trained on 17 Indic languages) performs token-level binary classification (0=fluent, 1=disfluent), fine-tuned on a merged dataset of three languages. **Stage 2**: The "instruction + disfluent sentence + MuRIL predicted token labels" are concatenated in Alpaca-style and fed to the LLM (Llama-3.2-3B-Instruct or Qwen2.5-3B-Instruct). The target output is the fluent reference. Training Objective = CE loss + $\lambda$ × Contrastive loss. During inference, the LLM directly generates the fluent transcript using the same input format.
+The core conflict this pipeline addresses is that standard fine-tuning lacks a mechanism to prevent copying fillers. The authors employ a two-stage process with dual losses. Stage 1: MuRIL (Multilingual BERT pre-trained on 17 Indic languages) performs token-level binary classification (0=fluent, 1=disfluent). Stage 2: The "instruction + original sentence with disfluencies + MuRIL predicted label sequence" are concatenated in Alpaca format for 3B LLMs (Llama-3.2-3B or Qwen2.5-3B). The training objective combines standard CE with an explicit anti-disfluency contrastive loss.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Original ASR sentence with disfluencies"] --> B
+    subgraph TAG["MuRIL Labels as Prompts (not for deletion)"]
+        direction TB
+        B["MuRIL Token Labeling<br/>Per-token fluent / disfluent tags"] --> C["Alpaca Prompt Concatenation<br/>Instruction + Original + Label Sequence"]
+    end
+    D["Multilingual Instruction Tuning<br/>Hindi / Bengali / Marathi 120k pairs"] --> E
+    TAG --> E["3B LLM Fine-tuning<br/>Llama-3.2-3B / Qwen2.5-3B"]
+    subgraph LOSS["Objective = Cross-Entropy + Contrastive Loss"]
+        direction TB
+        F["Cross-Entropy (CE)<br/>Push: Learn 'what to generate'"]
+        G["Anti-disfluency Contrastive Loss<br/>Pull: Suppress disfluent token probability"]
+    end
+    E --> LOSS
+    LOSS --> H["Fluent Clean Transcript"]
+```
 
 ### Key Designs
 
-1.  **MuRIL token-tagging as Auxiliary Supervision**:
-    *   **Function**: Downgrades disfluency detection from "deciding which tokens to delete" to "providing a hint to the LLM," avoiding grammatical damage caused by hard deletion.
-    *   **Mechanism**: MuRIL achieves a token-level F1 of 0.987 on manually edited data but only ~85% sentence-level accuracy (falling to 33–63% on real data). The authors allow the LLM to "reference but not blindly trust" tags. The input $x_i$ includes the instruction, disfluent sentence, and labels. The CE loss is $L_{CE} = -\sum_i \sum_t \log P_\theta(y^t_i \mid y^{<t}_i, x_i)$.
-    *   **Design Motivation**: Detection-only methods fail because they separate recognition from rewriting, losing grammatical context. Providing tags to the LLM allows it to use its language modeling capabilities to decide whether a disfluent token should be deleted or rewritten. Imperfact MuRIL sentence-level accuracy actually aids robustness training.
+**1. MuRIL Labels as LLM Prompts Instead of Deletion Commands: Rewriting Over Deletion**
+Traditional detect-then-delete fails by separating "identification" from "rewriting." Here, MuRIL's token labels are provided to the LLM as context, allowing the model to decide whether a disfluent token should be deleted or rewritten for grammatical equivalence. Crucially, the model "references but does not blindly trust" the tags. While MuRIL achieves an F1 of 0.987 on human-edited data, its sentence-level accuracy drops significantly on real data; the LLM learns to correct these labeling errors during instruction tuning.
 
-2.  **Anti-Disfluency Contrastive Loss**:
-    *   **Function**: Explicitly penalizes the LLM for assigning probability mass to identified disfluent tokens at generation step $t$.
-    *   **Mechanism**: For sample $i$, the disfluent token set $D_i$ is pre-calculated. At step $t$, the disfluent probability mass is $s_{i,t} = \sum_{v \in D_i} w_v P_\theta(v \mid y^{<t}_i, x_i)$, where $w_v \in (0, 1]$ follows a geometric decay weight (1, 0.5, 0.25, ...) based on subword position. The contrastive loss is $L_{\text{contrastive}} = \frac{1}{N}\sum_i \frac{1}{T_i} \sum_{t=r_i}^{T_i} -\log(1 - s_{i,t})$, where $r_i$ is the response start. The final loss is $L_{\text{total}} = L_{CE} + \lambda \cdot L_{\text{contrastive}}$ with a warm-up schedule for $\lambda$.
-    *   **Design Motivation**: Unlike traditional representation-level InfoNCE, this is a **hard constraint at the token-distribution level**. $-\log(1-s_{i,t})$ explodes as $s \to 1$, providing a strong back-gradient if the model favors disfluent tokens. Geometric decay weights target the most identifiable first subword after BPE tokenization. The warm-up ensures CE establishes basic generation capability before the contrastive penalty begins.
+**2. Anti-disfluency Contrastive Loss: Adding Negative Supervision**
+This is the core innovation. While CE is a positive push, the contrastive loss pulls probability away from disfluent tokens at each generation step. For a sample $i$, the set of disfluent tokens $D_i$ is mapped. The probability mass on these tokens at step $t$ is defined as $s_{i,t} = \sum_{v \in D_i} w_v P_\theta(v \mid y^{<t}_i, x_i)$, where weights $w_v \in (0,1]$ follow a geometric decay based on subword position ($1, 0.5, 0.25, \dots$). The contrastive loss is $L_{\text{contrastive}} = \frac{1}{N}\sum_i \frac{1}{T_i} \sum_{t=r_i}^{T_i} -\log(1 - s_{i,t})$. As $s \to 1$, the loss explodes, penalizing the model heavily if it attempts to generate a disfluent token.
 
-3.  **Merged Multilingual Instruction Tuning**:
-    *   **Function**: Handles Hindi/Bengali/Marathi with a single model using instructions for fluent rewriting.
-    *   **Mechanism**: 120k parallel disfluent-fluent pairs (40k per language). Instructions follow the Alpaca format. Zero-shot cross-lingual transfer experiments show that migrating from Hindi-only to Bengali maintains 87.1 BLEU, demonstrating strong shared representations.
-    *   **Design Motivation**: High lexical/syntactic similarity among Indic languages allows one checkpoint to cover three languages, reducing deployment costs.
+**3. Multilingual Instruction Tuning: Single Checkpoint for Hindi/Bengali/Marathi**
+Given the high lexical and syntactic similarity between Indic languages, the authors train a single model on a merged dataset of 120k pairs (40k per language). Using Alpaca-style formatting leverages the LLM's existing instruction-following capabilities, framing the task as "rewriting for fluency" rather than simple sequence mapping. The cross-lingual transfer is strong: a model fine-tuned only on Hindi achieves 87.1 BLEU when transferred zero-shot to Bengali.
 
 ### Loss & Training
-$L_{\text{total}} = L_{CE} + \lambda \cdot L_{\text{contrastive}}$; $\lambda$ uses a warm-up schedule. Geometric decay weights $w_v$ for disfluent subwords follow $1, 0.5, 0.25, \dots$. Backbones used: Llama-3.2-3B-Instruct and Qwen2.5-3B-Instruct.
+The total objective is $L_{\text{total}} = L_{CE} + \lambda \cdot L_{\text{contrastive}}$, where $\lambda$ follows a warm-up schedule to allow CE to build basic generation capability before contrastive penalties are introduced. Weights $w_v$ for subwords of a disfluent word are set to $1, 0.5, 0.25, \dots$ to prioritize the first subword. Both Llama-3.2-3B and Qwen2.5-3B backbones were used.
 
 ## Key Experimental Results
 
 ### Main Results
-Performance of Llama-3.2-3B-Instruct on real ASR data (BLEU / chrF2 / TER):
+Llama-3.2-3B-Instruct results on three languages (BLEU / chrF2 / TER on real ASR data):
 
 | Language | Data | mBART | Multilingual Instruction FT | w/o Contrastive | **With Contrastive** |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|----------|------|-------|------------------------------|------------------|----------------------|
 | Hindi | Real | 71.4 / 85.5 / 15.1 | 64.8 / 81.7 / 23.4 | 87.4 / 93.3 / 9.2 | **90.4 / 95.6 / 5.8** |
 | Bengali | Real | 73.5 / 87.9 / 13.0 | 69.6 / 89.0 / 21.6 | 70.7 / 90.5 / 20.8 | **74.4 / 93.8 / 17.9** |
 | Marathi | Real | 82.6 / 93.1 / 8.2 | 80.0 / 94.3 / 11.8 | 83.2 / 95.5 / 9.3 | **83.6 / 96.6 / 9.2** |
 
-Qwen2.5-3B-Instruct showed even higher gains (Hindi real: 91.1 BLEU vs 84.2 w/o contrastive, +6.9). Average gains: +4.68 BLEU / +2.37 chrF2 / −3.22 TER compared to the non-contrastive baseline.
+Qwen2.5-3B-Instruct showed even larger gains (Hindi real: 91.1 BLEU vs 84.2 w/o contrastive, **Gain**: +6.9).
 
 ### Ablation Study
-Average gains attributed to contrastive loss on Llama-3.2-3B-Instruct:
+Average improvement brought by contrastive loss on Llama-3.2-3B-Instruct:
 
 | Configuration | ΔBLEU | ΔchrF2 | ΔTER |
-| :--- | :--- | :--- | :--- |
+|---------------|-------|--------|------|
 | Multilingual instruction FT (no MuRIL tags) | baseline | baseline | baseline |
 | + MuRIL tag conditioning (w/o contrastive) | +6.16 | — | — |
 | **+ MuRIL tag + Contrastive loss (Ours)** | **+1.97 over above** | +1.53 | −1.65 |
-| **Total vs mBART** | **+8.54** | — | — |
+| Total vs mBART | +8.54 | — | — |
 
-LLM-as-Judge results (using Qwen2.5-3B to avoid self-preference, bidirectional pairwise):
+LLM-as-Judge (using Qwen2.5-3B as judge, bidirectional pairwise):
 
-| Language | Data | Proposed Win | Parallel FT Win | Draw |
-| :--- | :--- | :--- | :--- | :--- |
+| Language | Data | Proposed Won | Parallel FT Won | Draw |
+|----------|------|--------------|-----------------|------|
 | Hindi | Real | 28.0% | 9.3% | 62.7% |
 | Marathi | Real | 30.0% | 8.0% | 62.0% |
 | Bengali | Real | 18.0% | 27.0% | 55.0% |
 
 ### Key Findings
-*   **Contrastive loss benefits Qwen significantly more than Llama**: Qwen improved by 4.68 BLEU vs Llama's 1.97. This is attributed to Qwen's superior multilingual grounding; contrastive loss is most effective for models that "understand the language but occasionally slip."
-*   **3B models rival GPT-4o**: They match or exceed GPT-4o in 4 out of 6 evaluation conditions and beat Gemini 2.5 Pro across all three languages.
-*   **Significant cross-lingual zero-shot transfer**: Models fine-tuned on one language keep BLEU scores in the mid-60s to low-80s on others, proving strong representation transfer in the Indic family.
-*   **Disfluencies significantly harm downstream tasks**: In QA, LLaMA Hindi dropped from 1.70 to 1.18; in MT (Hindi→Bengali), BLEU dropped 3.9.
+- **Contrastive Learning benefits Qwen more than Llama**: Qwen improved by an average of 4.68 BLEU compared to Llama's 1.97 BLEU, likely due to Qwen's superior multilingual grounding.
+- **3B open-source models match GPT-4o**: The proposed method matched or outperformed GPT-4o in 4 out of 6 experimental conditions and beat Gemini 2.5 Pro across all three languages.
+- **Cross-lingual zero-shot transfer is significant**: Models fine-tuned on a single language maintained performance in the 60s to 80s BLEU range on other Indic languages.
+- **Disfluencies severely impact downstream tasks**: Disfluency causes LLaMA Hindi QA scores to drop from 1.70 to 1.18 and Hindi→Bengali MT BLEU to drop by 3.9.
 
 ## Highlights & Insights
-*   **"Negative sample indicators" is a portable concept**: This hard-constraint contrastive loss can be applied to any task where an external tagger identifies negatives—such as hallucination suppression, toxicity removal, or deprecated API usage in code generation.
-*   **Geometric weights for BPE is a clever detail**: Assigning higher weights to the first subword concentrates the penalty where the disfluency signal is strongest.
-*   **Small models beating GPT-4o**: This provides strong evidence for industrial deployment that task-specific contrastive training is a viable alternative to scaling and prompting.
-*   **Rigorous LLM-as-Judge**: Using a different model as judge (Qwen to judge Llama/Qwen) and bidirectional pairwise testing minimizes self-preference and position bias.
+- **Using detection tags as negative indicators is a portable idea**: This hard-constraint contrastive loss can be applied to any task where an external tagger can identify negative samples (e.g., hallucination suppression, toxicity removal, or deprecated API detection in code).
+- **Geometric decay for BPE subwords is a clever detail**: By assigning $w_v \in \{1, 0.5, 0.25, \dots\}$, the model prioritizes penalizing the primary subword that identifies the disfluent word, avoiding over-penalization of common trailing subwords.
+- **3B beats GPT-4o**: This provides strong evidence that task-specific contrastive training on small models can outperform massive closed-source models for specialized industrial applications.
 
 ## Limitations & Future Work
-*   Experiments were limited to 3B models; the effect at 70B+ scales remains unverified.
-*   The dataset relies on one public parallel dataset (Kundu 2022) and synthetic rules, potentially missing complex real-world disfluencies like code-mixing or accent-specific issues.
-*   The gain from contrastive loss versus traditional instruction tuning is not fully disentangled from potential data distribution factors in Bengali.
-*   The $\lambda$ parameter and warm-up schedule require empirical tuning with no theoretical guiding framework presented yet.
+- **Model Scale**: Experiments were limited to 3B models; whether contrastive loss saturates at 7B/70B scales remains unverified.
+- **Data Distribution**: Much of the training data was synthetically generated; real-world complexities like code-mixing or accent-induced disfluencies may not be fully covered.
+- **Evaluation**: The gain from contrastive loss versus instruction tuning alone could be further analyzed through more granular sensitivity analysis of the $\lambda$ parameter.
 
 ## Related Work & Insights
-*   **vs Bhat et al. 2023a**: Bhat uses detection-only + hard deletion; Ours uses detection + LLM rewriting + contrastive suppression, raising BLEU from the 60s to the 90s.
-*   **vs Smooth-LLaMa (2025)**: Smooth-LLaMa uses end-to-end audio-to-text; Ours is ASR-agnostic and modular, making it easier to deploy but losing raw audio cues.
-*   **vs Lima & Campelo (2024)**: They find GPT-4 zero-shot sufficient for Portuguese; Ours proves zero-shot performance is poor for Indic languages, necessitating task-specific training.
+- **vs Bhat et al. 2023a**: Bhat used detection-only + hard deletion. Ours uses detection + LLM rewriting + contrastive suppression, boosting BLEU from the 60s to the 90s.
+- **vs Smooth-LLaMa (Altinok 2025)**: Smooth-LLaMa is an audio-to-text end-to-end model. Ours is ASR-agnostic and modular, which is easier to deploy but lacks raw acoustic features.
+- **vs Lima & Campelo 2024**: They found GPT-4 zero-shot sufficient for Portuguese. This paper shows that for Indic languages, zero-shot performance is poor, necessitating task-specific fine-tuning.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ The anti-disfluency contrastive loss is a novel design for token-level suppression.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across models, languages, and downstream tasks.
-*   Writing Quality: ⭐⭐⭐⭐ Formulas and logic are clear, though some failure modes in Bengali could be explored further.
-*   Value: ⭐⭐⭐⭐ High utility for Indic ASR applications with a portable contrastive learning idea.
+- **Novelty**: ⭐⭐⭐⭐ The anti-disfluency contrastive loss objective is a novel and solid implementation of hard-negative suppression.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation across 2 backbones, 3 languages, real/manual data, and downstream tasks.
+- **Writing Quality**: ⭐⭐⭐⭐ Formulas and the push-pull mechanism are clearly explained.
+- **Value**: ⭐⭐⭐⭐ Directly applicable to Indic ASR; the 3B vs GPT-4o results are highly relevant for industrial deployment.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
-- [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
-- [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
-- [\[AAAI 2026\] A Mind Cannot Be Smeared Across Time](../../AAAI2026/audio_speech/a_mind_cannot_be_smeared_across_time.md)
-- [\[NeurIPS 2025\] EuroSpeech: A Multilingual Speech Corpus](../../NeurIPS2025/audio_speech/eurospeech_a_multilingual_speech_corpus.md)
-
+...
 </div>
-
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
 - [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+- [\[AAAI 2026\] A Mind Cannot Be Smeared Across Time](../../AAAI2026/audio_speech/a_mind_cannot_be_smeared_across_time.md)
 - [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
 - [\[NeurIPS 2025\] EuroSpeech: A Multilingual Speech Corpus](../../NeurIPS2025/audio_speech/eurospeech_a_multilingual_speech_corpus.md)
-- [\[AAAI 2026\] A Mind Cannot Be Smeared Across Time](../../AAAI2026/audio_speech/a_mind_cannot_be_smeared_across_time.md)
 
 </div>
 

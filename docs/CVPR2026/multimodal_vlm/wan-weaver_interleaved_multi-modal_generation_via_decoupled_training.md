@@ -2,126 +2,138 @@
 title: >-
   [Paper Note] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Interleaved multi-modal generation] Wan-Weaver proposes a decoupled architecture consisting of a planner (VLM) and a visualizer (DiT). By training the planner on large-scale textual-proxy data…
+  [CVPR 2026][Multimodal VLM][Paper Note] Wan-Weaver proposes a decoupled architecture consisting of a Planner (VLM) and a Visualizer (DiT). By training the planner with large-scale textual-proxy data instead of real interleaved data, it achieves SOTA interleaved text-image generation. It reaches an Overall score of 8.67 on OpenING, surpassing GPT-4o (8.20) an
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Interleaved multi-modal generation"
-  - "decoupled training"
-  - "textual-proxy data"
-  - "visual consistency"
-  - "planning-visualization"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: f714b9091e7bcfa5
+content_hash: 42693acfdfeed927
 ---
-
 # Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.25706](https://arxiv.org/abs/2603.25706)  
 **Code**: [https://doubiiu.github.io/projects/WanWeaver](https://doubiiu.github.io/projects/WanWeaver)  
-**Area**: Multimodal VLM
+**Area**: Multi-modal VLM  
 **Keywords**: Interleaved multi-modal generation, decoupled training, textual-proxy data, visual consistency, planning-visualization
 
 ## TL;DR
 
-Wan-Weaver proposes a decoupled architecture consisting of a planner (VLM) and a visualizer (DiT). By training the planner on large-scale textual-proxy data instead of real interleaved data, it achieves an Overall score of 8.67 on OpenING—approaching Nano Banana's 8.85—while maintaining strong comprehension capability (MMMU 74.9) and state-of-the-art interleaved text-image generation.
+Wan-Weaver proposes a decoupled architecture consisting of a Planner (VLM) and a Visualizer (DiT). By training the planner with large-scale textual-proxy data instead of real interleaved data, it achieves SOTA interleaved text-image generation. It reaches an Overall score of 8.67 on OpenING, surpassing GPT-4o (8.20) and performing competitively with Nano Banana (8.85), while maintaining strong understanding capabilities (MMMU 74.9).
 
 ## Background & Motivation
 
-1. **Background**: Interleaved multi-modal generation requires models to produce coherent content with interleaved text and images (e.g., illustrated tutorials, story visualization) following user instructions. GPT-4o+DALL-E3 leads via a pipeline approach, while open-source alternatives (Anole, Emu3) lag significantly behind.
-2. **Limitations of Prior Work**: (1) High-quality real interleaved data is extremely scarce—web-crawled image-text data suffers from low quality and copyright risks; (2) Joint training of text understanding and image generation causes mutual interference, with generation training degrading comprehension; (3) Visual consistency across long sequences is difficult to maintain—characters generated earlier tend to change appearance later.
-3. **Key Challenge**: Interleaved generation simultaneously demands *planning capability* (deciding when to insert images and formulating their descriptions) and *visual consistency* (maintaining character/style coherence across multiple images), yet the two require fundamentally different training signals and data.
-4. **Goal**: Independently optimize planning and visualization through decoupled training, and substitute scarce real interleaved data with synthetic textual-proxy data.
-5. **Key Insight**: Decompose interleaved generation into two independently trainable sub-tasks—the planner only needs to learn "where to insert images and what to describe," which can be trained on purely textual proxy data; the visualizer only needs to learn "how to generate consistent images given a description and reference images."
-6. **Core Idea**: Decoupled Training + textual-proxy data + Dense Prompt Context Window (DPCW) attention mechanism.
+1.  **Background**: Interleaved multi-modal generation requires models to generate coherent content with interspersed text and images based on user instructions, such as illustrated tutorials or storyboarding. While GPT-4o+DALL-E3 leads via pipeline methods, open-source solutions (Anole, Emu3) still lag significantly.
+2.  **Limitations of Prior Work**: (1) High-quality real interleaved data is extremely scarce—web-crawled data often has poor quality and high copyright risks. (2) Joint training of text understanding and image generation leads to mutual interference, where generation training typically degrades understanding performance. (3) Maintaining visual consistency in long-sequence generation is difficult, often leading to "identity shifting" for characters across multiple images.
+3.  **Key Challenge**: Interleaved generation requires both "planning ability" (deciding when to insert images and their descriptions) and "visual consistency" (maintaining character/style across images). The training signals and data requirements for these two tasks are fundamentally different.
+4.  **Goal**: To optimize planning and visualization capabilities separately through decoupled training, using synthetic textual-proxy data to substitute for scarce real interleaved data.
+5.  **Key Insight**: Interleaved generation can be split into two independently trainable sub-tasks. The planner only needs to learn "where to insert an image and what its detailed description should be," which can be trained using pure text. The visualizer only needs to learn "how to generate consistent images based on descriptions and reference images."
+6.  **Core Idea**: Decoupled Training + Textual-proxy data + Dense Prompt Context Window (DPCW) attention mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-User instruction → Planner (QWen2.5-VL-32B-Think) generates text with `<imagine>` tags and dense image descriptions → Visualizer (Twin DiT) generates images conditioned on dense descriptions and preceding visual references → DPCW attention enforces visual consistency → Output interleaved text-image content.
+Wan-Weaver addresses the task of generating coherent content with interspersed text and illustrations from a single prompt. Its core design splits this task into two distinct roles: a **Planner** responsible for determining the "narrative flow, insertion points, and detailed image descriptions," and a **Visualizer** responsible for rendering the planner's descriptions into actual images while ensuring character and style consistency.
+
+The inference cycle proceeds as follows: the user instruction is processed by the Planner (based on QWen2.5-VL-32B Think version), which outputs standard text and inserts `<imagine>…</imagine>` tags at appropriate locations containing dense descriptions. The Visualizer (Twin DiT) takes these descriptions for diffusion generation, utilizing the DPCW attention mechanism to attend to previously generated image features in the context, ensuring the new image matches previous styles and characters. This alternating process creates the final interleaved output. The system is supported by a training workflow that separates planning from visualization: the planner is trained on textual-proxy data, while the visualizer is trained on reference image data.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Decoupled Training: Three-phase alternate freezing"]
+        direction TB
+        T1["① Train Visualizer<br/>Text-to-Image → Single-ref → Multi-ref"]
+        T2["② Train Planner<br/>Replace real images with dense descriptions"]
+        T3["③ DPCW Fine-tuning of Visualizer"]
+        PX["Textual-Proxy Data<br/>Imagine dense descriptions replace real images (5:1 ratio)"] --> T2
+        T1 --> T2 --> T3
+    end
+    TRAIN ==> U["User Instruction"]
+    U --> P["Planner VLM<br/>Outputs text + 'imagine' dense description"]
+    P --> V["Visualizer DiT + DPCW<br/>Look back at history for consistency"]
+    V --> O["Interleaved Output"]
+    O -->|"Concatenated into history & fed back to planner"| P
+```
 
 ### Key Designs
 
-1. **Decoupled Training Strategy**
+**1. Decoupled Training: Splitting Planning and Rendering into Three Non-Interfering Phases**
 
-    - Function: Independently optimize planning and visualization to avoid training conflicts.
-    - Mechanism: Three stages—(1) freeze the planner and train only the visualizer (three consistency modes: T2I, single-image reference SI2I, multi-image reference MI2I); (2) freeze the visualizer and fine-tune only the planner (using textual-proxy data, with images replaced by dense descriptions); (3) DPCW fine-tuning to adapt the visualizer to context-window conditioning. Total training: 9.6T tokens (visualizer) + 35.72G tokens (planner).
-    - Design Motivation: In joint training, visual and text losses interfere with each other—ablations show that the visual loss curve under decoupled training is smoother (decreasing from ~0.25 to 0.15), compared to oscillations observed under joint training.
+Interleaved generation usually requires simultaneous "planning" and "visual consistency" capabilities, yet their training signals often conflict—joint training image losses often degrade language understanding. Wan-Weaver employs a three-stage alternate freezing strategy: first, the planner is frozen to train the visualizer sequentially on T2I, single-reference, and multi-reference consistency modes. Second, the visualizer is frozen while fine-tuning the planner using textual-proxy data (replacing images with descriptions). Finally, a DPCW fine-tuning stage allows the visualizer to adapt to the new conditioning via context windows. The total training volume includes 9.6T tokens for the visualizer and 35.72G tokens for the planner. Ablations show that decoupled training allows the visual loss to drop smoothly from ~0.25 to 0.15, whereas joint training suffers from constant oscillation.
 
-2. **Textual-Proxy Data**
+**2. Textual-Proxy Data: Circumventing Data Scarcity by Using Dense Descriptions as Image Proxies**
 
-    - Function: Simulate interleaved data using pure text to train the planner.
-    - Mechanism: Images in target interleaved data are replaced with VLM-generated dense descriptions wrapped in `<imagine>` tags. Three data sources are used: LLM-generated user query pairs, VLM-generated query pairs grounded in a database of images, and multi-image narratives (refined after SigLIP-based clustering). The generation-to-understanding data ratio is 5:1.
-    - Design Motivation: High-quality real interleaved data is unavailable, whereas textual-proxy data can be generated at scale. The planner only needs to learn "when to insert images and what to describe," without ever observing actual images.
+High-quality interleaved data is nearly impossible to crawl without quality or copyright issues. Wan-Weaver’s breakthrough is the realization that the planner does not need to "see" images; it only needs to learn "where to place them and what they should contain." This can be taught using pure text. By replacing every image in target interleaved datasets with a VLM-generated dense description wrapped in `<imagine>` tags, the planner sees a pure text sequence. Proxies come from three sources: LLM-synthesized user queries, VLM-back-captioned image galleries, and refined multi-image narratives clustered via SigLIP. Generation and understanding data are mixed in a 5:1 ratio, effectively bypassing the interleaved data bottleneck through infinite synthetic text.
 
-3. **Dense Prompt Context Window (DPCW)**
+**3. Dense Prompt Context Window (DPCW): Maintaining Consistency Across N Images**
 
-    - Function: Enable the visualizer to attend to visual references in context during denoising.
-    - Mechanism: Self-attention windows are constructed around dense prompt positions; an attention mask strategy allows the currently generated image to attend to visual reference features from prior steps. 3D RoPE encoding is used for temporal position encoding.
-    - Design Motivation: Standard diffusion generation conditions only on the current prompt and cannot leverage visual information from preceding images to maintain consistency.
+Standard diffusion models only condition on the current prompt, unaware of previously generated images, leading to character "drifting." DPCW implements a self-attention window around the dense prompts. An attention mask allows the current denoising image to attend to visual features of previously generated images in the context, using 3D RoPE to encode temporal positions. This ensures the visualizer considers not just "what to draw now" but "what the subject looked like before," maintaining appearance and style consistency across long sequences.
+
+### Mechanism
+
+Consider the prompt: "Create an illustrated story about Robin the fox's day." The Planner first outputs: "In the morning, Robin peeks out of his den," followed by an `<imagine>A small orange fox, fluffy tail, peeking out of a den, morning light, watercolor style</imagine>` tag. The Visualizer generates Image ①. Next, the Planner writes: "At noon, he goes to the river to drink," and outputs a second `<imagine>` tag. This time, the Visualizer uses DPCW to look back at the orange fur and tail features from Image ①, ensuring the fox in Image ② is the same character. This process continues, with each visualization step referencing all previous images. Throughout this, the Planner never "sees" a real image; it only processes "Text + `<imagine>` description" sequences.
 
 ### Loss & Training
 
-Visualizer: flow-matching loss. Planner: standard autoregressive cross-entropy. The visualizer is trained progressively across three stages (T2I → +SI2I → +MI2I).
+The visualizer uses a Flow-matching loss, while the planner uses standard autoregressive cross-entropy. The visualizer's three-stage training progressively builds consistency: T2I (Text-to-Image) → +SI2I (Single-image reference) → +MI2I (Multi-image reference).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | OpenING Overall ↑ | WeaverBench Overall ↑ | MMMU (Comprehension) ↑ | GenEval (T2I) ↑ | DPG (T2I) ↑ |
-|---|---|---|---|---|---|
+| Method | OpenING Overall ↑ | WeaverBench Overall ↑ | MMMU (Understanding) ↑ | GenEval (T2I) ↑ | DPG (T2I) ↑ |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Anole | 5.75 | 3.74 | - | - | - |
 | Emu3 | 5.76 | - | - | - | - |
-| Gemini+Flux | 7.23 | - | - | - | - |
-| GPT-4o+DALL-E3 | 8.20 | - | - | - | - |
+| Gemini + Flux | 7.23 | - | - | - | - |
+| GPT-4o + DALL-E3 | 8.20 | - | - | - | - |
 | Nano Banana | 8.85 | 8.38 | - | - | - |
 | Bagel | - | - | 55.3 | 0.88 | 85.07 |
-| **Wan-Weaver** | **8.67** | **8.43** | **74.9** | **0.89** | **87.21** |
+| **Ours (Wan-Weaver)** | **8.67** | **8.43** | **74.9** | **0.89** | **87.21** |
 
 ### Ablation Study
 
-| Configuration | Result | Note |
-|---|---|---|
-| Decoupled vs. joint training | Visual loss 0.15 vs. 0.25 | Decoupled training is more stable |
-| Data ratio 0g1u | Token acc ~0% | Pure understanding data yields no generation capability |
-| Data ratio 5g1u | Optimal | Generation-dominant with auxiliary understanding |
-| T2I only | Basic text-image alignment | No reference capability |
-| +SI2I | Appearance preservation | Single-image reference |
-| +MI2I | Long-range visual consistency | Full capability |
+| Configuration | Effect | Description |
+| :--- | :--- | :--- |
+| Decoupled vs. Joint | Visual Loss 0.15 vs. 0.25 | Decoupled is more stable |
+| Data Ratio 0g:1u | Token acc ~0% | Understanding data lacks generation ability |
+| Data Ratio 5g:1u | Optimal | Generation-led with understanding assistance |
+| T2I only | Basic alignment | Lacks reference capability |
+| +SI2I | Appearance retention | Single-image reference |
+| +MI2I | Long-range consistency | Full capability |
 
 ### Key Findings
 
-- Wan-Weaver retains comprehension capability close to its base model QWen2.5-VL-32B (MMMU 74.9 vs. 75.1), demonstrating that decoupled training effectively prevents generation from degrading understanding.
-- An OpenING score of 8.67 approaches or surpasses GPT-4o+DALL-E3 (8.20) on certain metrics, indicating that open-source solutions are now close to the closed-source ceiling.
-- Image editing performance (ImgEdit 4.31) substantially surpasses the dedicated editing model Step1X-Edit (3.06).
+- Wan-Weaver maintains understanding performance nearly identical to its base QWen2.5-VL-32B (MMMU 74.9 vs. 75.1), proving decoupled training prevents generation from degrading understanding.
+- The OpenING score of 8.67 approaches or exceeds GPT-4o+DALL-E3 (8.20) in several metrics, indicating open-source solutions are hitting the ceiling of closed-source performance.
+- Image editing performance (ImgEdit 4.31) significantly outperforms specialized editing models like Step1X-Edit (3.06).
 
 ## Highlights & Insights
 
-- **Elegant design of textual-proxy data**: Training the planner with dense descriptions in place of real images completely circumvents the scarcity of interleaved data—an elegant "data dimensionality reduction" strategy.
-- **Engineering value of decoupled training**: The planner and visualizer can be independently iterated and upgraded without requiring re-joint training, substantially reducing system maintenance costs.
-- **Unified understanding, generation, and editing**: A single model achieves state-of-the-art performance across understanding (MMMU 74.9), generation (GenEval 0.89), and editing (ImgEdit 4.31).
+- **Ingenious Textual-Proxy Design**: Replacing images with dense descriptions to train the planner elegantly sidesteps the interleaved data scarcity problem—a clever form of "data dimensionality reduction."
+- **Engineering Value of Decoupled Training**: The planner and visualizer can be upgraded independently without retraining the entire system, significantly lowering maintenance costs.
+- **Three-in-One Paradigm**: A single model achieves SOTA levels in understanding (MMMU 74.9), generation (GenEval 0.89), and editing (ImgEdit 4.31).
 
 ## Limitations & Future Work
 
-- Users must pre-specify the resolution and aspect ratio of generated images; the model cannot adaptively determine these based on content.
-- Sequential generation bottleneck—all previously generated content must be fed back into the model, causing GPU memory consumption to grow linearly with sequence length.
-- Improvements in generation capability do not reciprocally benefit comprehension—bidirectional mutual enhancement remains an open problem.
-- Occasional structural collapse (e.g., grid layouts appearing in place of expected individual images); geometric reasoning and symbolic grounding remain deficient.
+- Users must pre-specify the resolution and aspect ratio; the model cannot yet adaptively decide these based on content.
+- Sequential generation bottleneck: all generated content must be fed back into the model, leading to linear GPU memory growth for long sequences.
+- Improved generation does not yet feed back to enhance understanding; bi-directional enhancement remains an open problem.
+- Occasional structural collapse (e.g., unexpected grid layouts instead of independent images) suggests flaws in geometric reasoning and symbol grounding.
 
 ## Related Work & Insights
 
-- **vs. GPT-4o+DALL-E3**: The closed-source pipeline achieves OpenING 8.20; Wan-Weaver achieves 8.67—the primary advantages lie in multi-step consistency (8.56 vs. 8.38) and content completeness (9.41 vs. 8.66).
-- **vs. Bagel/UniWorld**: These unified models suffer comprehension degradation from joint training (MMMU 55–59); Wan-Weaver preserves 74.9 through decoupled training.
-- **vs. Emu3**: The pure discrete-token approach achieves only OpenING 5.76; the gap with Wan-Weaver originates from differences in visual quality and consistency.
+- **vs. GPT-4o+DALL-E3**: Compared to the closed-source pipeline (8.20), Wan-Weaver (8.67) shows advantages in multi-step consistency (8.56 vs. 8.38) and content completeness (9.41 vs. 8.66).
+- **vs. Bagel/UniWorld**: These unified models suffer from degraded understanding (MMMU 55-59) due to joint training, while Wan-Weaver maintains 74.9 through decoupling.
+- **vs. Emu3**: The pure discrete token approach of Emu3 reaches only 5.76 on OpenING, with Wan-Weaver's lead stemming from superior visual quality and consistency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Decoupled training combined with textual-proxy data represents an important paradigm innovation for interleaved generation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation on OpenING + WeaverBench + unimodal benchmarks + detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear, though training details are dense.
-- Value: ⭐⭐⭐⭐⭐ A milestone work bringing open-source interleaved generation to near closed-source performance.
+- Novelty: ⭐⭐⭐⭐⭐ Decoupled training and textual-proxy data are significant innovations for interleaved generation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation on OpenING, WeaverBench, and single-modal benchmarks with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology, though training details are dense.
+- Value: ⭐⭐⭐⭐⭐ A milestone for bringing open-source interleaved generation to closed-source performance levels.
 
 <!-- RELATED:START -->
 
@@ -129,11 +141,11 @@ Visualizer: flow-matching loss. Planner: standard autoregressive cross-entropy. 
 
 ## Related Papers
 
+- [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
 - [\[CVPR 2026\] Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning](narrative_weaver_towards_controllable_long-range_visual_consistency_with_multi-m.md)
-- [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
-- [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
-- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions](dsert_roll_robust_multi_modal_perception_for_diverse_driving_conditions.md)
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
+- [\[CVPR 2026\] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation](weave_unleashing_and_benchmarking_the_in-context_interleaved_comprehension_and_g.md)
+- [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
+- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
 
 </div>
 

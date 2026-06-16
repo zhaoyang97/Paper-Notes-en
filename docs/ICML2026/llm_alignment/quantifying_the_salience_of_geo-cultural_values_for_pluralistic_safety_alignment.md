@@ -2,82 +2,84 @@
 title: >-
   [Paper Note] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment
 description: >-
-  [ICML 2026][LLM Alignment][Pluralistic Alignment] The authors re-stratify annotators into "cultural zones/quadrants" using the Inglehart-Welzel cultural map. Using multilevel modeling across 8 safety datasets…
+  [ICML 2026][Alignment & RLHF][Paper Note] The authors re-stratify annotators into "cultural zones/quadrants" using the Inglehart-Welzel Cultural Map. Applying multilevel modeling across 8 safety datasets, they demonstrate that cultural zones significant explain safety rating variance even after controlling for demographics (age, gender, ethnicity) ($p < 0.05$
 tags:
-  - "ICML 2026"
-  - "LLM Alignment"
-  - "Pluralistic Alignment"
-  - "Cultural Values"
-  - "Safety Annotation"
-  - "Annotator Disagreement"
-  - "Multilevel Modeling"
+  - ICML 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: 3521045efbd21f39
+content_hash: 1c70c18bbd760494
 ---
-
 # Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00369](https://arxiv.org/abs/2606.00369)  
 **Code**: https://github.com/asaakyan/culture-safety  
 **Area**: Alignment / AI Safety / Pluralistic Alignment  
-**Keywords**: Pluralistic Alignment, Cultural Values, Safety Annotation, Annotator Disagreement, Multilevel Modeling
+**Keywords**: Pluralistic Alignment, Cultural Values, Safety Labeling, Annotator Disagreement, Multilevel Modeling
 
 ## TL;DR
-The authors re-stratify annotators into "cultural zones/quadrants" using the Inglehart-Welzel cultural map. Using multilevel modeling across 8 safety datasets, they demonstrate that cultural zones significant explain safety score variance even after controlling for demographics (age/gender/ethnicity) ($p<0.05$ in 6/8 datasets). They propose a Bayesian "cultural sensitivity score" quantifying that approximately 10% of samples would be mislabeled as safe if a cultural quadrant were ignored; further experiments indicate that while LLMs are unreliable as rater surrogates, they are feasible as triage tools for "culturally sensitive samples."
+The authors re-stratify annotators into "cultural zones/quadrants" using the Inglehart-Welzel Cultural Map. Applying multilevel modeling across 8 safety datasets, they demonstrate that cultural zones significant explain safety rating variance even after controlling for demographics (age, gender, ethnicity) ($p < 0.05$ in 6/8 datasets). They further propose a Bayesian "cultural sensitivity score" to quantify that approximately 10% of samples in current datasets would be mislabeled as safe if a specific cultural quadrant were ignored. Experimental results indicate that while LLMs are unreliable as rater proxies, they are viable as triage tools for cultural sensitivity.
 
 ## Background & Motivation
 
-**Background**: Current AI safety alignment (RLHF, Constitutional AI, LLM-as-a-judge) relies heavily on human safety ratings. However, major datasets (Anthropic HH, Bai et al. 2022, Glaese et al. 2022, etc.) primarily utilize rater pools with highly concentrated geographic origins (mostly US/UK crowdsourced workers). While a few geo-diverse datasets (PRISM, DICES, CREHate) have begun incorporating "country" as an attribute, most analyses remain limited to descriptive visualizations.
+**Background**: Current AI safety alignment (RLHF, Constitutional AI, LLM-as-a-judge) relies heavily on human safety ratings. However, the rater pools for mainstream datasets (e.g., Anthropic HH, Bai et al. 2022, Glaese et al. 2022) are geographically concentrated, primarily consisting of US/UK crowdsourced workers. While few geo-diverse datasets (PRISM, DICES, CREHate) have introduced "country" as an attribute, analysis remains largely limited to descriptive visualization.
 
-**Limitations of Prior Work**: (i) Most safety datasets do not report geographic or cultural variables, making retrospective analysis impossible. (ii) Those that do report such data often analyze demographic variables (age/gender/ethnicity) and "country" separately without joint control, potentially misattributing cultural effects to demographic differences or vice versa. (iii) The industry is shifting toward using LLMs-as-a-Judge to replace human annotation at scale, yet the ability of LLMs to simulate the judgments of diverse cultural groups has not been validated.
+**Limitations of Prior Work**: (i) Most safety datasets fail to report geographic/cultural variables, precluding retrospective analysis; (ii) existing reports analyze demographics (age/gender/ethnicity) and "country" separately without joint control, risking the misattribution of cultural effects to demographic differences or vice versa; (iii) the industry is shifting toward LLM-as-a-Judge to replace human annotation without validating whether LLMs can truly simulate the judgments of diverse cultural groups.
 
-**Key Challenge**: Pluralistic alignment requires covering cross-cultural differences, but it remains unclear whether existing "demographically stratified" annotation protocols are sufficient, or if culture must be stratified as a factor independent of demographics. No methodological framework has previously existed to rigorously address this question.
+**Key Challenge**: Pluralistic alignment requires covering cross-cultural differences, but is the existing "demographic stratification" protocol sufficient? Or must culture be treated as an independent factor requiring separate stratification? Previously, no methodological framework existed to rigorously answer this.
 
-**Goal**: To quantitatively answer three sub-questions: (1) Why: Do geo-cultural factors remain significant after controlling for demographics? (2) Where: Which specific data samples are mislabeled due to a lack of cultural coverage? (3) How: Can LLMs mitigate the high costs of global annotation?
+**Goal**: Quantitatively address three sub-questions: (1) why: are geo-cultural factors significant after controlling for demographics? (2) where: which specific data samples are mislabeled due to lack of cultural coverage? (3) how: can LLMs mitigate the high cost of global annotation?
 
-**Key Insight**: The authors leverage two primary axes proposed by Inglehart and Welzel based on the World Values Survey (WVS)—Traditional vs. Secular and Survival vs. Self-Expression. These axes explain over 70% of cross-national variance in the WVS and categorize countries into "cultural zones." This provides a theory-driven, low-dimensional cultural proxy that avoids the overfitting and sparsity issues associated with one-hot encoding over 200 countries.
+**Key Insight**: The authors leverage two primary axes proposed by political scientists Inglehart and Welzel based on the World Values Survey (WVS)—Traditional vs. Secular and Survival vs. Self-Expression—which explain over 70% of cross-national variance in the WVS. These axes categorize countries into "cultural zones," providing a theory-driven, low-dimensional cultural proxy that avoids the overfitting and sparsity issues associated with one-hot encoding over 200 countries.
 
-**Core Idea**: "Cultural zones/quadrants" are treated as fixed effects in multilevel models, jointly fitted with demographic fixed effects and rater/item random effects. A likelihood ratio test (LRT) is used to strictly compare models with and without cultural factors. Furthermore, a Bayesian posterior is constructed at the quadrant level to quantify the proportion of unsafe samples missed when a specific quadrant is ignored.
+**Core Idea**: "Cultural zones/quadrants" are treated as fixed effects in a multilevel model, fitted alongside demographic fixed effects and rater/item random effects. Likelihood ratio tests (LRT) are used to compare model fits with and without cultural variables. Additionally, a Bayesian posterior is constructed at the quadrant level to quantify the "proportion of unsafe samples missed when ignoring a specific quadrant."
 
 ## Method
 
 ### Overall Architecture
-The methodology proceeds in three stages:
+The study addresses whether demographic stratification (age/gender/ethnicity) is sufficient or if culture must be a standalone factor. The authors perform a meta-analysis to select 8 safety datasets reporting both demographics and geography (DIVE, CulturalFrames, PRISM, DICES-990, NLPositionality, D3, CREHate, Severity). After mapping each rater to an Inglehart-Welzel (IW) cultural quadrant, they conduct multilevel regression to test cultural explanatory power. Finally, they quantify cultural sensitivity and evaluate LLMs in dual roles. The "rater → cultural quadrant" mapping serves as the foundational infrastructure for all subsequent analyses.
 
-1.  **Meta-analysis (Sec. 3)**: Using snowballing and keyword searches (10+ top conferences, 1062 candidates), 8 safety datasets that report both demographic and geographic attributes were selected (DIVE, CulturalFrames, PRISM, DICES-990, NLPositionality, D3, CREHate, Severity). Their modalities, annotation tasks, attribute coverage, and existing analysis methods were cataloged.
-2.  **Significance Testing (Sec. 4)**: Each rater is mapped to a cultural zone/quadrant based on the Inglehart-Welzel map (priority: CoLR/CoB > CoR > CoN). A series of multilevel regression models are fitted. Significance is tested using three metrics: LRT, $\Delta$AIC, and the rater variance reduction ratio, to sequentially examine "Demographics vs. Base," "Culture vs. Base," "Culture + Demographics vs. Demographics Only," and "Culture $\times$ Demographics Interaction."
-3.  **Blind Spot Quantification and LLM Automation (Sec. 5 & 6)**: A Bayesian posterior estimates the unsafe probability for each item per cultural quadrant to identify "culturally sensitive items." Subsequently, fine-tuned models (DeBERTa-Large, Gemma-3-4B) and prompted reasoning models (Gemini-3 Flash, GPT-5 Nano) are used to verify if LLMs can (a) simulate ratings for a specific cultural quadrant or (b) at least identify cultural sensitivity.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["8 Safety Datasets<br/>(Report Demographics + Geography)"] --> B["Rater → IW Cultural Quadrant Mapping<br/>Proxy Priority: CoLR > CoB > CoR > CoN"]
+    B --> C["Multilevel Regression + LRT<br/>Nested Models: D / CZ / D+CZ / D×CZ"]
+    C -->|"Culture significant after controlling demographics (6/8)"| D["Cultural Sensitivity Score<br/>Beta Posterior + Quadrant Independent Product"]
+    D -->|"Identifies ~10% Culturally Sensitive Samples"| E["LLM Dual-Role Evaluation"]
+    E -->|"Proxy Role: Role-playing Quadrant Ratings"| F["Proxy Experiment: ≤ always-unsafe baseline<br/>→ Cannot replace diverse annotators"]
+    E -->|"Filtering Culturally Sensitive Samples"| G["Triage Experiment: F1=0.72 > baseline<br/>→ Viable as a prioritization tool"]
+```
 
 ### Key Designs
 
-1.  **Multilevel Regression + LRT to Quantify Independent Contributions**:
-    *   **Function**: Quantitatively determines if cultural zones possess explanatory power while strictly controlling for rater/item random effects and demographic fixed effects.
-    *   **Mechanism**: Taking Likert scores $H_{ij}$ as an example, the base model is $H_{ij}=\beta_0+u_i+v_j+\epsilon_{ij}$, where $u_i\sim\mathcal{N}(0,\sigma_{\text{rater}}^2)$ and $v_j\sim\mathcal{N}(0,\sigma_{\text{item}}^2)$. Demographic vectors $\mathbf{E}_i, \mathbf{A}_i, \mathbf{G}_i$ (ethnicity/age/gender) and cultural zone vectors $\mathbf{C}_i$ are added to create nested models (D, CZ, D+CZ, D$\times$CZ). Models are compared via LRT with Benjamini-Hochberg correction, $\Delta\text{AIC}$, and rater variance reduction $\%\Delta\sigma_{\text{rater}}^2$.
-    *   **Design Motivation**: Conventional IRR methods relying on bootstrapping and stratified sub-samples are infeasible for sparse "Culture $\times$ Demographic" grids. Multilevel models handle unbalanced data by modeling variation at item, rater, and group levels, cleanly decoupling cultural and demographic fixed effects.
+**1. Multilevel Regression + LRT: Decoupling Cultural and Demographic Contributions**
 
-2.  **Cultural Sensitivity Score: Bayesian Quantification of Ignoring a Quadrant**:
-    *   **Function**: For each dataset sample, it outputs a score $S_{iq} \in [0, 1]$ representing the probability that only quadrant $q$ considers it unsafe while others consider it safe. Items with $S_{iq}>0.5$ are labeled culturally sensitive.
-    *   **Mechanism**: For sample $i$ and quadrant $q$, with total votes $n_{iq}$ and unsafe votes $k_{iq}$, a posterior $\text{Beta}(1+k_{iq},1+n_{iq}-k_{iq})$ is derived using a Beta(1,1) prior. The probability that the majority in that quadrant deems it unsafe is $H_{iq}=P(\theta_{iq}>0.5)$. Defining $S_{iq}=H_{iq}\cdot\prod_{q'\neq q,\,q'\text{ valid}}(1-H_{iq'})$, assuming quadrant independence. A validity filter requires at least 3 votes per quadrant, not all from a single demographic group.
-    *   **Design Motivation**: Point estimates from raw voting ratios are dominated by noise in small samples ($n_{iq}=3$). The Bayesian posterior provides natural smoothing and uncertainty quantification. The product form calculates the joint probability of "minority unsafe + majority safe," providing an interpretable metric for missed labels.
+Cultural effects are prone to misattribution—e.g., a "stricter Eastern European rater" might simply reflect an older demographic. To distinguish these, both factors must be controlled jointly. Using Likert scores $H_{ij}$ as the response, the base model includes rater/item random effects: $H_{ij} = \beta_0 + u_i + v_j + \epsilon_{ij}$ where $u_i \sim \mathcal{N}(0, \sigma_{\text{rater}}^2)$ and $v_j \sim \mathcal{N}(0, \sigma_{\text{item}}^2)$. Fixed effects are added incrementally: demographics $\mathbf{E}_i, \mathbf{A}_i, \mathbf{G}_i$ (ethnicity/age/gender), cultural zone $\mathbf{C}_i$, and interaction terms $\mathbf{C}_i \times \mathbf{E}_i$, forming four nested models (D, CZ, D+CZ, D×CZ). Likelihood ratio tests (LRT) compare these pairs with Benjamini-Hochberg correction. Gains are quantified via $\Delta\text{AIC}$ and the proportion of rater variance reduction $\%\Delta\sigma_{\text{rater}}^2$ (pseudo-$R^2$). Multilevel modeling is preferred over traditional IRR as it handles imbalanced descriptors and joint variance allocation across item, rater, and group levels.
 
-3.  **LLM Dual-Role Evaluation: Rater Surrogate vs. Sensitivity Triage**:
-    *   **Function**: Tests whether LLMs can replace multi-cultural human annotation (predicting $H_{iq}>0.5$) and whether they can assist in triaging sensitive samples to save costs.
-    *   **Mechanism**: (a) The surrogate task is modeled as 4-label multi-label classification using masked binary cross-entropy. (b) The triage task is binary: classifying "safe vs. sensitive" versus "safe vs. unsafe" on the D3 dataset.
-    *   **Design Motivation**: While the industry assumes LLMs-as-a-Judge can simulate diverse human perspectives, this has not been validated culturally. The separate evaluation of "replacement" versus "assistance" allows for both negative (cannot replace) and constructive (can triage) conclusions.
+**2. Cultural Sensitivity Score: Quantifying the Cost of "Ignoring a Quadrant"**
+
+To locate specific samples missed due to cultural gaps, a score $S_{iq} \in [0, 1]$ is defined for each sample $i$ and quadrant $q$, representing the probability that "only quadrant $q$ deems it unsafe, while all others deem it safe." A sample is "culturally sensitive" if $S_{iq} > 0.5$. Given total votes $n_{iq}$ and unsafe votes $k_{iq}$, the posterior $\text{Beta}(1 + k_{iq}, 1 + n_{iq} - k_{iq})$ is derived using a Beta(1,1) prior. The probability of a quadrant majority judging it unsafe is $H_{iq} = P(\theta_{iq} > 0.5)$. Under the quadrant independence assumption:
+
+$$S_{iq} = H_{iq} \cdot \prod_{q' \neq q, \, q' \text{ valid}} (1 - H_{iq'}).$$
+
+A validity filter ensures at least 3 votes per quadrant and prevents demographic mono-representation (e.g., single gender/ethnicity). The Bayesian approach smoothens noise from small samples ($n_{iq}=3$) and quantifies uncertainty, while the product form explicitly captures the "minority unsafe + majority safe" blind spot. This metric identifies a ~10% sensitivity rate across 6 datasets.
+
+**3. LLM Dual-Role Evaluation: Triage over Proxy**
+
+The "proxy" experiment tests if LLMs can directly simulate specific quadrant ratings as a 4-label classification task. DeBERTa-Large and Gemma-3-4B are fine-tuned using masked binary cross-entropy, and zero-shot prompts are applied to Gemini-3 Flash and GPT-5 Nano. The "always predict unsafe" baseline serves as the lower bound. The "triage" experiment evaluates if LLMs can identify culturally sensitive samples. Classifiers are trained on safe, unsafe, and sensitive subsets from D3 to compare performance. This distinguishes between the LLM's inability to replace diverse raters and its potential as a prioritization tool.
 
 ### Loss & Training
-- Multilevel regressions are fitted via maximum likelihood estimation using lme4/lmer. Cumulative link mixed models were used for validation on Likert scores.
-- LLM Surrogate experiments: 10 random seeds × 5 epochs; checkpoints selected by average validation F1. Masked binary cross-entropy applied only to quadrants with existing annotations.
-- Triage experiments: 970 samples split 65/15/20 with no item overlap.
+- Multilevel regression fitted via maximum likelihood estimation (lme4/lmer style); cumulative link mixed models were used for cross-checking Likert data.
+- LLM Proxy: 10 random seeds × 5 epochs, selecting checkpoints via validation F1; masked cross-entropy applied only to quadrants with labels.
+- Triage: 970 samples split 65/15/20 with no item overlap.
 
 ## Key Experimental Results
 
-### Main Results: Significance of Cultural Zones (Summary of Table 2 & 3)
+### Main Results: Significance of Culture After Demographic Control (Summary of Tables 2 & 3)
 
 | Dataset | D vs Base $p$ | CZ vs Base $p$ | D+CZ vs D $p$ | $\Delta$AIC (D+CZ vs D) |
 | :--- | :--- | :--- | :--- | :--- |
-| DIVE | $<0.001$ | $0.003$ | $0.581$ | $+8.35$ (No gain) |
+| DIVE | $<0.001$ | $0.003$ | $0.581$ | $+8.35$ (No Gain) |
 | CulturalFrames | $0.134$ | $<0.001$ | $<0.001$ | $-41.19$ |
 | PRISM | $<0.001$ | $0.003$ | $0.012$ | $-3.97$ |
 | DICES-990 | $<0.001$ | $0.004$ | $0.005$ | $-5.86$ |
@@ -86,11 +88,11 @@ The methodology proceeds in three stages:
 | Severity | $0.001$ | $<0.001$ | $<0.001$ | $-40.95$ |
 | NLPositionality | $0.069$ | $0.344$ | $0.271$ | $+3.62$ |
 
-Ours: In 6/8 datasets, adding cultural zones significantly improved the fit even after controlling for demographics (average $\Delta$AIC of $-46$, additional 4.64% rater variance explained). Insignificance in the remaining two was due to cultural imbalance or extremely small sample sizes.
+In 6/8 datasets, adding cultural zones significantly improved the model even after controlling for demographics (Average $\Delta$AIC $-46$, additional rater variance explained: 4.64%). Failures in DIVE and NLPositionality were attributed to cultural imbalance or low sample size.
 
-### Proportion of Culturally Sensitive Samples (Summary of Table 5)
+### Cultural Sensitivity Proportion (Summary of Table 5)
 
-| Dataset | Sensitive Samples | Ratio ($S_{iq}>0.5$) | Valid Samples |
+| Dataset | Sensitive Samples | Proportion ($S_{iq} > 0.5$) | Valid Samples |
 | :--- | :--- | :--- | :--- |
 | DIVE | 123 | 13.9% | 887 |
 | DICES-990 | 130 | 13.1% | 990 |
@@ -98,52 +100,53 @@ Ours: In 6/8 datasets, adding cultural zones significantly improved the fit even
 | CREHate | 174 | 11.1% | 1562 |
 | Severity | 2 | 3.0% | 66 |
 
-Applying a stricter threshold of $S_{iq}>0.7$ reduced the overall ratio to approximately 3%, demonstrating reasonable robustness to threshold selection.
+Tightening the threshold to $S_{iq} > 0.7$ reduced the overall proportion to ~3%, showing robustness.
 
-### Ablation Study / LLM Automation
+### Ablation Study / LLM Automation Experiments
 
 | Configuration | Key Metric | Description |
 | :--- | :--- | :--- |
-| Always-Unsafe baseline | F1 $\approx 2p/(p+1)$ | Lower bound for surrogate task |
-| DeBERTa-Large FT (Surrogate) | $\le$ baseline on D3 Q II/Q IV | Unreliable cultural simulation |
-| Gemma-3-4B FT (Surrogate) | Similar to DeBERTa | Scaling didn't yield stable gains |
-| Reasoning models (Prompted) | Below baseline | Reasoning LMs did not resolve the issue |
-| Gemma-3-4B (Triage, S vs sensitive) | F1 = 0.72, $p=0.044$ | Significantly better than baseline |
+| Always-Unsafe baseline | F1 $\approx 2p/(p+1)$ | Lower bound for proxy tasks |
+| DeBERTa-Large (Proxy) | $\le$ baseline in Q II/Q IV | Unreliable cultural judgment simulation |
+| Gemma-3-4B (Proxy) | Comparable to DeBERTa | Scale does not bring stable gains |
+| Gemini-3 Flash / GPT-5 Nano | Below baseline | Reasoning models cannot recover performance |
+| Gemma-3-4B (Triage, safe vs sensitive) | F1 = 0.72, $p=0.044$ | Significantly better than baseline |
 | DeBERTa-Large (Triage) | F1 = 0.71, $p=0.071$ | Consistent trend |
+| Safe-vs-unsafe → safe-vs-sensitive | ~ -14% to -16% F1 | Cultural sensitivity classification is harder |
 
 ### Key Findings
-- Cultural zones contribute significant predictive power in 6/8 datasets even after controlling for age/gender/ethnicity, invalidating the assumption that demographic stratification alone is sufficient. The largest effect in D3 is attributed to its unique demographic balancing within each cultural zone.
-- D3 is the only dataset showing significant "Cultural Zone $\times$ Demographic" interactions, suggesting that detecting fine-grained differences (e.g., Elder+LatAm vs. Elder+Confucian) requires demographic balancing within zones.
-- Approximately 10% of safety dataset samples are culturally sensitive, a stable conclusion across tasks. This implies current RLHF data might systematically label 1/10th of content dangerous to specific cultures as "safe."
-- LLMs cannot replace culturally diverse annotators; however, fine-tuned LLMs can serve as triage tools for culturally sensitive items (0.72 F1). The ability for "safe-sensitive" training to transfer to "safe-unsafe" tasks (but not vice versa) suggests "sensitive samples" contain richer safety representations.
+- Cultural zones contribute significant predictive power in 6/8 datasets even after controlling for demographics, invalidating the assumption that "demographic stratification alone is sufficient."
+- D3 is the only dataset where "Cultural Zone × Demographics" interaction is significant, suggesting that identifying fine-grained differences (e.g., "Elderly + Latin" vs "Elderly + Confucian") requires within-zone demographic balancing.
+- The finding that ~10% of safety items are culturally sensitive is stable across tasks/modalities, implying mainstream RLHF data systemically mislabels a tenth of culturally dangerous content as safe.
+- LLMs cannot replace diverse annotators: fine-tuned and reasoning models often underperform an "always unsafe" baseline. However, fine-tuned LLMs can serve as triage tools ($F1=0.72$) for cultural sensitivity.
 
 ## Highlights & Insights
-- Integrating the Inglehart-Welzel cultural map provides a theory-driven, cross-dataset proxy for "culture," avoiding the pitfalls of sparse one-hot encodings.
-- The Bayesian cultural sensitivity score quantifies the "cost of ignoring a cultural group" as a computable probability, which is more robust than traditional IRR for small-sample cells.
-- The conclusion that "LLMs cannot be surrogates but can be triage tools" provides a constructive path forward, cautioning against LLM-as-a-Judge while offering a method for prioritization.
-- The recommended rater proxy hierarchy (CoLR/CoB > CoR > CoN) offers direct engineering value for global rater recruitment, identifying which variables are most representative of true cultural values.
+- Adopting the Inglehart-Welzel Cultural Map provides a low-dimensional and theory-driven proxy variable, avoiding the sparsity of country-level one-hot encoding.
+- The Bayesian cultural sensitivity score translates the "cost of ignoring a culture" into a computable probability, providing a robust metric for small-sample scenarios.
+- The "triage over proxy" conclusion offers a constructive pathway for resource-constrained teams: while LLMs cannot judge for everyone, they can prioritize samples for human review.
+- The practical advice on rater proxies (Priority: CoLR > CoB > CoR > CoN) is a valuable engineering insight, as Country of Residence (CoR) and Nationality (CoN) are often corrupted by migration or strategic reporting by crowdsourced workers.
 
 ## Limitations & Future Work
-- Cultural zones are coarse simplifications; the IW map cannot capture nuanced regional differences within a quadrant (e.g., Confucian vs. Eastern Orthodox).
-- The meta-analysis was limited to 8 predominantly English datasets, and WVS data coverage is not universal.
-- LLM experiments focused on text; conclusions for multimodal (image-text) safety require validation.
-- Future work could collect datasets fully balanced across "Cultural Quadrant $\times$ Demographics" and integrate cultural sensitivity scores into active learning pipelines to optimize annotation budgets.
+- Cultural quadrants are coarse simplifications. The IW map cannot capture nuanced regional differences (e.g., Confucian vs. Eastern Orthodox differences within the same quadrant).
+- Meta-analysis was skewed toward English-centric datasets and countries with available WVS data.
+- LLM experiments were limited to text; multimodal safety tasks require separate validation. Fine-tuned triage models still require some initial ground-truth labels.
+- Future work could collect datasets fully balanced across "Cultural Zone × Demographics" and integrate cultural sensitivity scores into active learning pipelines.
 
 ## Related Work & Insights
-- **vs DICES (Aroyo et al., 2023), PRISM (Kirk et al., 2024)**: While these introduced cross-national rater pools, their analyses were descriptive; this paper provides rigorous statistical evidence using multilevel modeling to decouple cultural and demographic contributions.
-- **vs D3 (Davani et al., 2024)**: This paper extends the multilevel approach by jointly controlling for demographic factors and adding cultural zones and interactions.
-- **vs LLM-as-a-Judge Paradigms (Bai 2022b, Yuan 2025)**: This work provides the first counter-evidence regarding cultural dimensions, serving as a warning for engineering practices like Constitutional AI.
-- **vs Sorensen et al. (2024)**: While that work provided a conceptual taxonomy for pluralistic alignment, this paper implements it and provides quantitative evidence for "geo-cultural pluralism."
+- **vs DICES & PRISM**: These introduced global rater pools but lacked joint control of demographic/cultural factors; Ours provides rigorous statistical evidence through multilevel modeling.
+- **vs D3**: D3 used multilevel regression but analyzed demographics in isolation; Ours jointly controls for demographics, culture, and interactions.
+- **vs LLM-as-a-Judge**: Ours provides strong counter-evidence against using LLMs to simulate diverse human judgment, serving as a warning to practices like Constitutional AI.
+- **vs Sorensen et al. (2024)**: While their work is a conceptual taxonomy of pluralistic alignment, Ours offers a methodological implementation and quantitative evidence for geo-cultural pluralism.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Strong methodological originality in combining the IW map, multilevel modeling, and Bayesian sensitivity scores for safety analysis.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage across 8 datasets, multiple model types, and independent surrogate/triage experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with detailed statistical reporting, though background in multilevel modeling is helpful for some technical sections.
-- **Value**: ⭐⭐⭐⭐⭐ Directly challenges industry assumptions and provides actionable takeaways for rater recruitment and LLM triage in RLHF.
+- Novelty: ⭐⭐⭐⭐ Smart cross-disciplinary application of IW maps and Bayesian sensitivity scoring; however, tools themselves are mature migrations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive coverage across 8 datasets and multiple LLM roles.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and complete statistical detail; some terms may require prior familiarity with multilevel modeling.
+- Value: ⭐⭐⭐⭐⭐ Rebuts industry assumptions regarding stratification and LLM raters; provides immediate engineering guidance for RLHF and safety dataset design.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 

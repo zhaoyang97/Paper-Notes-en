@@ -2,75 +2,109 @@
 title: >-
   [Paper Note] PersonaVLM: Long-Term Personalized Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Personalization] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. Through proactive memory management (four-type memory database)…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. By utilizing active memory management (four memory databases), multi-step reasoning retrieval, and a momentum-based personality evolution mechanism, it transforms general MLLMs into personalized assistants capable of adapting to
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Personalization"
-  - "Long-term Memory"
-  - "Multimodal Assistant"
-  - "Big Five Personality"
-  - "Agent Framework"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: df5b86d692c13725
+content_hash: e6646e620a83094c
 ---
-
 # PersonaVLM: Long-Term Personalized Multimodal LLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.13074](https://arxiv.org/abs/2604.13074)  
-**Code**: [Project Page](https://PersonaVLM.github.io)  
-**Area**: Multimodal VLM
-**Keywords**: Personalization, Long-term Memory, Multimodal Assistant, Big Five Personality, Agent Framework
+**Code**: [Project Homepage](https://PersonaVLM.github.io)  
+**Area**: Multimodal VLM  
+**Keywords**: Personalization, Long-term Memory, Multimodal Agent, Big Five Personality, Agent Framework
 
 ## TL;DR
-This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. Through proactive memory management (four-type memory database), multi-step reasoning-based retrieval, and a momentum-based personality evolution mechanism, it transforms a general-purpose MLLM into a personalized assistant capable of adapting to shifting user preferences, surpassing GPT-4o by 5.2% under a 128K context.
+This paper proposes PersonaVLM, a multimodal agent framework for long-term personalization. By utilizing active memory management (four memory databases), multi-step reasoning retrieval, and a momentum-based personality evolution mechanism, it transforms general MLLMs into personalized assistants capable of adapting to evolving user preferences, outperforming GPT-4o by 5.2% in 128K context scenarios.
 
 ## Background & Motivation
 
-1. **Background**: Multimodal large language models are being used by millions as assistants, creative partners, and companions. User expectations are shifting from general-purpose problem-solving toward personalized, empathetic, long-term experiences. Existing personalization methods fall into three categories: adaptation-based (fine-tuning methods such as Yo'LLaVA and MyVLM), augmentation-based (retrieval methods such as RAP), and alignment-based (preference methods such as ALIGNXPERT and PAS).
-2. **Limitations of Prior Work**: Adaptation-based methods require fine-tuning for each new concept and cannot capture evolving preferences; augmentation-based methods rely on predefined databases and lack proactive management and update mechanisms; alignment-based methods assume static user characteristics and cannot adapt to personality changes over time. All existing methods are designed for static interactions and fail to handle preference drift (e.g., a user switching from preferring Sprite to Coca-Cola) or personality evolution.
-3. **Key Challenge**: User preferences and personalities are inherently diverse and dynamic, yet existing methods apply fixed context windows and one-size-fits-all paradigms on the model side, while failing to track continuously evolving user characteristics on the user side.
-4. **Goal**: To design a unified framework that simultaneously achieves three core capabilities — memory (proactively extracting and managing multimodal memories), reasoning (multi-turn reasoning based on retrieval), and alignment (adapting outputs according to evolving personality).
-5. **Key Insight**: Drawing on cognitive science's taxonomy of memory (core/semantic/episodic/procedural memory) and the psychological Big Five personality model to construct a structured personalized memory architecture.
-6. **Core Idea**: The four-type memory database provides "what is known about the user," while the PEM momentum update mechanism provides "what kind of person the user is." The two components work in concert to achieve genuine long-term personalization.
+1. **Background**: Multimodal Large Language Models (MLLMs) are being used by millions as assistants, creative partners, and companions. User expectations are shifting from general problem-solving toward personalized, empathetic, long-term experiences. Existing personalization methods are categorized into three types: adaptation-based (fine-tuning like Yo'LLaVA, MyVLM), augmentation-based (retrieval like RAP), and alignment-based (preference methods like ALIGNXPERT, PAS).
+2. **Limitations of Prior Work**: Adaptation methods require fine-tuning for every new concept and fail to capture evolving preferences; augmentation methods use predefined databases lacking active management and update mechanisms; alignment methods assume static user traits and cannot adapt to personality changes over time. All methods are designed for static interactions and struggle with preference drift (e.g., switching from Sprite to Coke) and personality evolution.
+3. **Key Challenge**: User preferences and personalities are inherently diverse and dynamic, yet existing methods use fixed windows and "one-size-fits-all" paradigms on the model side, failing to track continuously evolving traits on the user side.
+4. **Goal**: To design a unified framework that simultaneously achieves three core capabilities: memory (active extraction and management of multimodal memories), reasoning (retrieval-based multi-turn reasoning), and alignment (adjusting outputs according to evolving personality).
+5. **Key Insight**: Drawing from memory classification in cognitive science (Core/Semantic/Episodic/Procedural memory) and the Big Five personality model in psychology to construct a structured personalized memory architecture.
+6. **Core Idea**: "Knowing what the user knows" is provided through four memory databases, and "understanding who the user is" is provided through the PEM momentum update mechanism. These two collaborate to achieve true long-term personalization.
 
 ## Method
 
 ### Overall Architecture
-PersonaVLM is built on Qwen2.5-VL-7B as the backbone and comprises a personalized memory architecture (personality profile + four-type memory database) and two collaborative phases: a response phase (input → retrieval → reasoning → personalized response generation) and an update phase (interaction analysis → memory and personality update). Training follows a two-stage pipeline: SFT (78K samples) followed by GRPO reinforcement learning.
+PersonaVLM aims to solve the issue where general MLLMs treat every user as the same stranger, failing to remember past interactions or perceive changing preferences. Using Qwen2.5-VL-7B as the backbone, an external personalized memory architecture is attached—comprising a Big Five personality profile and four types of memory databases—allowing the model to operate around this external storage. Each interaction cycle consists of two phases: a Response Phase that retrieves relevant segments from memory and generates user-aligned answers after reasoning; and an Update Phase that reviews the interaction to write new facts into memory and slightly shift the personality vector toward the user's latest behavior. Thus, "what the user knows" is carried by memory banks, while "who the user is" is carried by the persona profile, both being refreshed continuously while model weights remain fixed after a two-stage SFT + GRPO training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["User Query: Text + Optional Image + Timestamp"] --> T
+
+    subgraph RESP["Response Phase: Multi-step Agent Retrieval"]
+        direction TB
+        T["think: determine retrieval necessity"] -->|insufficient info| RET["retrieve: by time period + keywords<br/>parallel top-k from semantic/episodic/procedural memory"]
+        RET -->|max 3 rounds| T
+        T|sufficient info| ANS["answer: generate personalized response"]
+    end
+
+    subgraph MEM["Personalized Memory Architecture"]
+        direction TB
+        P["Persona Profile P: Big Five 5D Vector"]
+        DB["Four Memory Banks M: Core / Semantic / Episodic / Procedural"]
+    end
+
+    subgraph UPD["Update Phase: Personality Evolution & Memory Refreshing"]
+        direction TB
+        PEM["PEM: Cosine-decay EMA for long-term personality"]
+        MU["Refresh four memory types<br/>semantic per turn · core/procedural per session · episodic by topic"]
+    end
+
+    MEM -.Read.-> RET
+    ANS --> UPD
+    UPD -.Write back.-> MEM
+    TRAIN["Two-stage Training (SFT + GRPO): SFT cold start → GRPO strengthens multi-step reasoning"] -.Offline backbone training.-> T
+```
 
 ### Key Designs
 
-1. **Personalized Memory Architecture**:
-    - Function: Construct and maintain a comprehensive long-term user profile.
-    - Mechanism: Consists of two main components: (1) a user personality profile $\mathcal{P}$ — a quantitative vector over the Big Five personality dimensions (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism, each scored 1–5); (2) a multi-type memory database $\mathcal{M}$ — core memory (basic attributes, retaining only the latest version), semantic memory (event-independent abstract knowledge, including entities, relations, and multimodal concepts), episodic memory (timestamped atomic events, including summaries, dialogue turns, and keywords), and procedural memory (plans, goals, and habitual behaviors). CRUD operations are supported; episodic and semantic memories are stored along a timeline, while core and procedural memories retain only the latest version.
-    - Design Motivation: Existing memory architectures either rely on commercial models, handle only text, or lack user-centric design. The four-type memory taxonomy covers a complete user portrait — from "who the user is" to "what the user has done" to "what the user is accustomed to."
+**1. Personalized Memory Architecture: Decomposition of User Profile into CRUD-enabled Categories**
 
-2. **Personality Evolution Mechanism (PEM)**:
-    - Function: Dynamically track and update the user's personality traits.
-    - Mechanism: Maintains a long-term personality vector $\mathbf{p} \in \mathbb{R}^5$. At each turn, the current personality vector $\mathbf{p}'_m$ is inferred and updated via exponential moving average (EMA): $\mathbf{p}_m \leftarrow \lambda \cdot \mathbf{p}_{m-1} + (1-\lambda) \cdot \mathbf{p}'_m$. A key innovation is the use of a cosine decay schedule for $\lambda$ — a low $\lambda$ in early interactions enables rapid adaptation, while a high $\lambda$ in later stages maintains stability. The updated numerical vector is converted into a textual description for generation.
-    - Design Motivation: A static personality assumption cannot handle scenarios such as "a user who initially appears extroverted but later exhibits introverted traits." The cosine decay in EMA strikes a balance between rapid learning and long-term stability.
+To address the limitations where old methods use fixed windows or static databases, PersonaVLM splits the profile into a Persona Profile $\mathcal{P}$ (a quantitative vector of the Big Five: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism, each 1–5) and a multi-type memory bank $\mathcal{M}$. Memories are classified into four types: Core Memory (basic attributes like name/occupation, keeping only the latest version), Semantic Memory (abstract knowledge independent of events, like entities and relations), Episodic Memory (timestamped atomic events including summaries and keywords), and Procedural Memory (plans/goals/habits). All support CRUD operations, with episodic and semantic memories being appended chronologically, while core and procedural memories maintain only the latest version. This covers the full spectrum from "who the user is" to "what the user has done" and "what the user is used to."
 
-3. **Two-Stage Training (SFT + GRPO)**:
-    - Function: Train a general-purpose MLLM to acquire personalization capabilities.
-    - Mechanism: The SFT stage uses 78K synthetic samples to train foundational abilities in memory management and multi-turn reasoning. The RL stage applies GRPO to further enhance reasoning — outputs must follow the `<think>` → `<retrieve>/<answer>` structure, and the reward function $r_i = f_{\text{acc}} \cdot f_{\text{cons}} + 0.5 \cdot f_{\text{format}}$ jointly measures accuracy, reasoning consistency, and format compliance. Training data is generated via PersonaHub, synthesizing 500 diverse user profiles and simulating long-term multimodal interactions (30K+ interactions).
-    - Design Motivation: SFT alone cannot teach strategic retrieval decision-making (when to retrieve, what to retrieve, and from which time period). The exploratory nature of RL training supplements this capability.
+**2. Response Phase: Multi-step Agent Retrieval—Autonomous Decision on Whether, What, and When to Retrieve**
 
-### Loss & Training
-SFT uses standard cross-entropy loss. GRPO applies group-normalized advantage functions; accuracy and consistency scores are computed by Qwen3-30B-A3B as an LLM judge. Retrieval attempts are limited to a maximum of 3 per trajectory.
+User queries often rely on context and contain anaphoras ("that thing we talked about last time"). A single semantic retrieval often misses the target. The Response Phase treats "fetching memory" as a multi-turn agent interaction: the model receives the instruction, context, and a consolidated profile (Core Memory + Persona), then outputs reasoning and an `action`. If more info is needed, it generates retrieval conditions—`time period` and `keywords`. The agent filters memory by time, then performs parallel top-$k$ retrieval across semantic, episodic, and procedural banks to backfill the model. This iterates until a final response $\mathcal{R}_m$ is generated (max 3 retrievals per trajectory).
+
+**3. Update Phase: Personality Evolution Mechanism (PEM) and Memory Refreshing**
+
+After response generation during user idle time, the update phase analyzes the interaction $U(\mathcal{Q}_m, \mathcal{R}_m, \mathcal{M}_{m-1})$. For personality, PEM maintains a long-term vector $\mathbf{p} \in \mathbb{R}^5$. It infers an instantaneous personality $\mathbf{p}'_m$ from the current query and integrates it into the long-term vector via Exponential Moving Average:
+
+$$\mathbf{p}_m \leftarrow \lambda \cdot \mathbf{p}_{m-1} + (1-\lambda) \cdot \mathbf{p}'_m$$
+
+The weight $\lambda$ follows a cosine decay schedule: $\lambda$ is small in early stages for rapid adaptation, and increases as interactions accumulate to stabilize the profile against single-turn fluctuations. Simultaneously, memories are refreshed: semantic memory extracts preferences per turn, core/procedural memories are updated via agent analysis at session ends, and episodic memory segments the conversation by topic.
+
+**4. Loss & Training (SFT + GRPO): Learning Memory Management and Strategic Retrieval**
+
+To enable the model to decide "when to retrieve" rather than just "how to format," training follows two steps. The SFT phase uses 78K synthetic samples to instill memory mechanisms (persona inference + CRUD) and QA with full multi-step reasoning trajectories. The RL phase uses GRPO to reinforce multi-turn reasoning, enforcing an output structure of `<think>` → `<retrieve>` / `<answer>`. The reward function:
+
+$$r_i = f_{\text{acc}} \cdot f_{\text{cons}} + 0.5 \cdot f_{\text{format}}$$
+
+computes the product of accuracy $f_{\text{acc}}$ and reasoning-answer consistency $f_{\text{cons}}$, plus a half-weighted format compliance term $f_{\text{format}}$. Scores are provided by Qwen3-30B-A3B as a zero-shot LLM judge. Training data was generated via PersonaHub, sampling 500 profiles for 30K+ long-term multimodal interactions.
+
+### Example: Preference Drift from Sprite to Coke
+
+A user previously liked Sprite (recorded in Core Memory and Episodic events). If the user sends an image of Coke saying "I've started drinking this lately," the **Response Phase** sees the model `<think>` and `<retrieve>` historical context. Detecting a conflict, it generates an `<answer>` acknowledging the shift in taste. During the **Update Phase**, the agent performs an `update` on Core Memory (Sprite $\rightarrow$ Coke) and `appends` to Episodic Memory. PEM integrates the turn's data; as long-term interactions are already high, $\lambda$ is large, ensuring the personality remains stable despite the single behavioral change.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Persona-MME Benchmark (128K context)**:
+**Persona-MME Benchmark (128K Context)**:
 
 | Model | Overall | Memory | Intent | Preference | Behavior | Growth |
 |------|---------|--------|--------|------------|----------|--------|
 | GPT-4o | 72.35% | 86.99 | 83.87 | 63.12 | 57.14 | 73.87 |
 | Qwen2.5-VL-7B (Baseline) | 64.84% | 66.13 | 66.85 | 59.75 | 59.24 | 70.69 |
-| **PersonaVLM** | **77.5%** | — | — | — | — | — |
+| **PersonaVLM (Ours)** | **77.5%** | — | — | — | — | — |
 
 **Comparison with GPT-4o**:
 
@@ -81,40 +115,40 @@ SFT uses standard cross-entropy loss. GRPO applies group-normalized advantage fu
 
 ### Ablation Study
 
-| Configuration | Persona-MME | Notes |
+| Configuration | Persona-MME | Description |
 |------|------------|------|
 | PersonaVLM (SFT+RL) | 77.5% | Full method |
-| SFT only | ~72% | RL contributes ~5% |
-| w/o PEM | ~73% | PEM contributes ~4% |
-| Full context (no RAG) | Lower | Low information utilization efficiency under long context |
-| RAG mode | Higher | Structured retrieval outperforms direct long-context |
+| SFT Only | ~72% | RL gain approx. 5% |
+| Without PEM | ~73% | Evolution mechanism contribution approx. 4% |
+| Full context (No RAG) | Lower | Low info utilization in long contexts |
+| RAG mode | Higher | Structured retrieval outperforms raw long context |
 
 ### Key Findings
-- **A 7B model surpasses GPT-4o**: PersonaVLM outperforms GPT-4o by 5.2% on Persona-MME and 9.8% on PERSONAMEM, demonstrating the value of specialized training for personalization.
-- **Greater advantage under 128K context**: Long-term interactions accumulate more memories, making the advantages of the structured memory architecture more pronounced.
-- **RL is critical for reasoning strategy**: GRPO training enables the model to learn when to retrieve and how to select reasoning paths.
+- **7B Model outperforms GPT-4o**: PersonaVLM exceeds GPT-4o by 5.2% on Persona-MME and 9.8% on PERSONAMEM, demonstrating the value of specialized personalized training.
+- **Greater advantage in 128K context**: The structured memory architecture becomes more significant as long-term interaction memory accumulates.
+- **RL is vital for reasoning strategy**: GRPO training enables the model to learn when to retrieve and how to select reasoning paths.
 
 ## Highlights & Insights
-- The **cognitive science inspiration behind the memory architecture** is highly compelling: the four memory types (core/semantic/episodic/procedural) map directly to human memory taxonomies, resulting in a design that is both principled and functionally complementary.
-- The **cosine decay design in PEM** elegantly resolves the tension between "rapid early learning" and "long-term stability," naturally adapting to the interaction lifecycle without requiring manual learning rate tuning.
-- The **data synthesis pipeline** is an underappreciated contribution: the synthetic dataset of 500 user profiles and 30K+ multimodal interactions directly addresses the core challenge of scarce personalization training data.
+- **Cognitive Science Inspiration**: The mapping to four memory types (Core/Semantic/Episodic/Procedural) is well-justified and provides complementary functionality.
+- **PEM Cosine Decay**: Effectively balances initial rapid learning with long-term stability without manual learning rate tuning.
+- **Data Synthesis Pipeline**: Sampling 500 profiles for 30K+ interactions addresses the core issue of scarce personalized training data.
 
 ## Limitations & Future Work
-- Personality modeling is grounded in the Big Five model, which may not capture all cultural and individual differences.
-- Synthetic training data may exhibit distributional gaps relative to real user interactions.
-- Validation is limited to Qwen2.5-VL-7B; larger-scale models remain untested.
-- CRUD operations on memory may introduce errors (e.g., incorrectly deleting important memories), and no error-correction mechanism is in place.
-- Future work could explore privacy-preserving personalization (federated learning) and multi-user shared memory.
+- Personality modeling is based on the Big Five, which may not capture all cultural nuances.
+- Distribution shift may exist between synthetic training data and real user interactions.
+- Validated only on Qwen2.5-VL-7B; larger scales remain untested.
+- Memory CRUD operations may introduce errors (e.g., false deletions) without a robust error-correction mechanism.
+- Future work: privacy-preserving personalization (federated learning) and multi-user shared memories.
 
 ## Related Work & Insights
-- **vs. Yo'LLaVA/MyVLM**: These methods learn user-specific visual concepts by fine-tuning embeddings but cannot manage or update memories. PersonaVLM's agent architecture supports dynamic CRUD operations.
-- **vs. MemGPT**: MemGPT provides OS-like memory management but is text-only and depends on commercial models. PersonaVLM is self-contained, supports multimodality, and has an explicit personalization objective.
+- **vs Yo'LLaVA/MyVLM**: These learn user concepts via fine-tuning embeddings but cannot update memory dynamically. PersonaVLM's agent architecture supports active CRUD.
+- **vs MemGPT**: MemGPT provides OS-like memory management but is text-only and depends on commercial models. PersonaVLM is self-contained, multimodal, and persona-driven.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First multimodal agent framework targeting long-term dynamic personalization; PEM design is original.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Introduces the Persona-MME benchmark, compares 10+ models, and conducts multi-dimensional ablations.
-- Writing Quality: ⭐⭐⭐⭐ Framework description is comprehensive, though the large number of components requires careful reading.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for MLLM personalization through long-term dynamic interaction.
+- Novelty: ⭐⭐⭐⭐⭐ First multimodal agent framework for long-term dynamic personalization; original PEM design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ New Persona-MME benchmark, 10+ models compared, extensive ablation.
+- Writing Quality: ⭐⭐⭐⭐ Comprehensive framework, though many components require careful reading.
+- Value: ⭐⭐⭐⭐⭐ Opens new directions for long-term dynamic interaction in MLLM personalization.
 
 <!-- RELATED:START -->
 
@@ -123,10 +157,10 @@ SFT uses standard cross-entropy loss. GRPO applies group-normalized advantage fu
 ## Related Papers
 
 - [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
+- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
+- [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](personalized_image_descriptions_from_attention_sequences.md)
 - [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs](dictionary_aligned_concept_control_for_safeguarding_multimodal_llms.md)
 
 </div>
 

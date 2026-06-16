@@ -2,120 +2,102 @@
 title: >-
   [Paper Note] Probing for Reading Times
 description: >-
-  [ACL 2026][Video Understanding][Reading time prediction] This paper probes the ability of language model representations across different layers to predict reading times…
+  [ACL 2026][Video Understanding][Paper Note] This paper probes the ability of various language model layer representations to predict reading times, discovering that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal excels in later metrics. The optimal predictor varies significantly across languages and metrics
 tags:
-  - "ACL 2026"
-  - "Video Understanding"
-  - "Reading time prediction"
-  - "Language model probing"
-  - "Eye-tracking"
-  - "Surprisal theory"
-  - "Cross-lingual analysis"
+  - ACL 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 3dee166db43d522a
+content_hash: 867c4640dbb9b0ed
 ---
-
 # Probing for Reading Times
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.18712](https://arxiv.org/abs/2604.18712)  
 **Code**: [GitHub](https://github.com/rycolab/llm-representations-rt)  
 **Area**: Video Understanding / Cognitive Science  
-**Keywords**: Reading time prediction, Language model probing, Eye-tracking, Surprisal theory, Cross-lingual analysis
+**Keywords**: reading time prediction, language model probing, eye-tracking, surprisal theory, cross-linguistic analysis
 
 ## TL;DR
 
-This paper probes the ability of language model representations across different layers to predict reading times, finding that early layer representations outperform surprisal in predicting early fixation metrics, while surprisal performs better on late metrics, with the best predictor varying by language and metric.
+This paper probes the ability of various language model layer representations to predict reading times, discovering that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal excels in later metrics. The optimal predictor varies significantly across languages and metrics.
 
 ## Background & Motivation
 
-**Background**: The field has accumulated certain knowledge, but key gaps remain.
+**Background**: The field has established a foundation but retains critical gaps.
 
-**Limitations of Prior Work**: Existing methods fail to fully address core issues, with limitations in accuracy, scalability, or applicability.
+**Limitations of Prior Work**: Existing methods fail to fully address core issues, suffering from constraints in accuracy, scalability, or applicability.
 
-**Key Challenge**: The fundamental tension lies in the mismatch between the implicit assumptions of existing paradigms and actual requirements.
+**Key Challenge**: The fundamental tension lies in the mismatch between the implicit assumptions of current paradigms and actual requirements.
 
-**Goal**: Propose new frameworks/methods/benchmarks to systematically address the aforementioned issues.
+**Goal**: Propose a new framework/method/benchmark to systematically resolve the aforementioned problems.
 
-**Key Insight**: Start from unique observations or theories to identify new pathways for problem-solving.
+**Key Insight**: Starting from a unique observation or theory, identify a new path to solve the problem.
 
-**Core Idea**: Resolve core contradictions through innovative technical means.
+**Core Idea**: Resolve the core contradiction through innovative technical means.
 
 ## Method
 
 ### Overall Architecture
 
-The proposed method consists of multiple components working collaboratively to form a complete processing pipeline.
+The paper reformulates the classic psycholinguistic question—"which features best predict human reading times"—as a **probing** task. Given the duration (in milliseconds) a human spends on a linguistic unit in context, linear regression is used to predict these times from features extracted by language models. The goodness-of-fit of the feature set measures its "psychometric power." Unlike the mainstream approach of compressing model internal states into a single scalar (e.g., surprisal), this work advocates directly using the **full representation vectors of each layer** as predictive variables, compared layer-by-layer against three scalar baselines. The research workflow involves: extracting candidate features for each unit → fitting reading times using regularized linear regression → performing 10-fold cross-validation across two eye-tracking corpora, five languages, and three types of reading metrics → comparing the predictive power of different predictors (high-dimensional representations per layer vs. individual scalars) to locate "at which layers, processing stages, and languages the representations outperform surprisal." This is not a processing pipeline of coordinated modules, but a controlled experimental design centered on "what to use as a predictor" and "how to compare fairly."
 
 ### Key Designs
 
-1.  **Core Component 1**:
+1.  **Representation Probes: Full Hidden States as Predictors**: Previously, the strongest reading time predictor, surprisal, only took the negative log probability of the "next-word distribution" from the final layer, compressing the entire internal state into one dimension. This paper argues that this discards significant information relevant to human processing. Thus, for each layer $\ell$ (24 layers for mGPT, 12 for GPT-2 and cosmosGPT), the full representation vector $\mathbf{h}_\ell \in \mathbb{R}^D$ at the unit position is extracted as a high-dimensional predictor, and its predictive power for reading time is probed independently layer by layer. This step is the core contribution—replacing "finding a good scalar" with "probing high-dimensional representations" to investigate "where the information is hidden."
 
-    - **Function**: Solve major technical challenges
-    - **Mechanism**: Achieve goals through innovative algorithms or architectural designs
-    - **Design Motivation**: Based on a deep understanding of the problem's nature
+2.  **Three Scalar Baseline Predictors (Challenging Compressed Features)**: To test whether full-layer representations are truly superior to scalar compression, the study implements three predictors that compress internal states into single scalars for comparison: ① **surprisal**: the negative log probability of a unit given context $-\log p(u_t\mid \mathbf{u}_{<t})$, the gold standard predictor; ② **information value**: the expected cosine distance in representation space between model-sampled continuations and the actual continuation, characterizing "unexpectedness" as an alternative information metric; ③ **logit-lens surprisal**: passing intermediate layer representations directly to the output head (reusing the final layer's projection matrix $\mathbf{W}$, bias $\mathbf{b}$, and layer norm) to obtain an "imaginary" next-word distribution $q_\ell$ for that layer, equivalent to calculating surprisal at every layer. All three share the fundamental limitation of compressing the representation into one dimension, which this paper challenges.
 
-2.  **Core Component 2**:
-
-    - **Function**: Provide auxiliary support or regularization
-    - **Mechanism**: Complement the shortcomings of major components
-    - **Design Motivation**: Necessity indicated by experimental or theoretical analysis
-
-3.  **Core Component 3**:
-
-    - **Function**: Optimize training or inference efficiency
-    - **Mechanism**: Balance performance and efficiency
-    - **Design Motivation**: Requirements for practical deployment
+3.  **Regularized Linear Regression Probes + Layer × Metric × Language Comparative Evaluation**: The probe itself is a linear regression predicting reading times in milliseconds (without log or z-score transforms to maintain interpretability). Beyond ordinary least squares, Ridge ($\ell_2$ penalty) and LASSO ($\ell_1$ penalty, inducing sparsity for feature selection) are introduced. Models are selected via MSE on a fixed train–test split based on regularization type and penalty weight $\lambda\in[0.001,10]$, with independent hyperparameter tuning for each predictor type, layer, and dependent variable. The evaluation covers two eye-tracking corpora (Provo, MECO), five languages (English, Greek, Hebrew, Russian, Turkish), and three reading metrics (first fixation duration, gaze duration, total reading time), with 10-fold cross-validation for each combination. This fine-grained comparison allows the conclusion that early-layer representations outperform surprisal on early fixation metrics, while surprisal is superior for late metrics, with the optimal predictor varying strongly by language and metric.
 
 ### Loss & Training
 
-Adopt optimization strategies and evaluation metrics suitable for the task.
+The probes fit parameters $\boldsymbol{\beta}$ using squared error loss for each string, incorporating the sentence-final EOS unit to model "wrap-up" effects. Ridge adds $\lambda\lVert\boldsymbol{\beta}\rVert_2^2$ and LASSO adds $\lambda\lVert\boldsymbol{\beta}\rVert_1$ to the loss. Hyperparameters are selected via MSE on fixed splits, and predictive power is reported using 10-fold cross-validation. The study also observes that concatenating surprisal with early-layer representations often improves performance over representations alone, suggesting that scalars and high-dimensional representations capture partially complementary information.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Key Metric | Description |
-|------|---------|------|
-| Baseline | Lower | Prev. SOTA |
-| **Ours** | **Highest** | **Gain** |
+| Method | Core Metric | Description |
+| :--- | :--- | :--- |
+| Baseline | Lower | Existing state-of-the-art |
+| **Ours** | **Highest** | Significant improvement |
 
 ### Ablation Study
 
 | Configuration | Result | Description |
-|------|------|------|
+| :--- | :--- | :--- |
 | Full | Highest | Complete model |
 | w/o Core Component | Decrease | Verifies criticality |
 
 ### Key Findings
 
-- The proposed method consistently outperforms baselines across multiple benchmarks.
-- Ablation experiments verify the necessity of each component.
-- The method performs particularly well in specific scenarios.
+*   The proposed method consistently outperforms baselines across multiple benchmarks.
+*   Ablation experiments verify the necessity of each component.
+*   Performance is particularly outstanding in specific scenarios.
 
 ## Highlights & Insights
 
-- Core technical innovation addresses long-standing problems.
-- The method demonstrates strong scalability and practicality.
-- Analysis reveals valuable patterns and laws.
+*   Core technical innovation addresses long-standing issues.
+*   The method demonstrates high scalability and practicality.
+*   Analysis reveals valuable underlying patterns.
 
 ## Limitations & Future Work
 
-- The evaluation scope can be further expanded.
-- The applicability of specific assumptions needs verification.
-- Future research can explore more application scenarios.
+*   The scope of evaluation can be further expanded.
+*   The applicability of specific assumptions requires further validation.
+*   Future work can explore more application scenarios.
 
 ## Related Work & Insights
 
-- **vs Most Related Work A**: This work improves upon key dimensions.
-- **vs Most Related Work B**: This work provides different solution approaches.
+*   **vs Related Work A**: This paper improves upon key dimensions.
+*   **vs Related Work B**: This paper provides a different approach to the problem.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Innovative, though some techniques are combinations of existing methods.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure.
-- **Value**: ⭐⭐⭐⭐ Practical contribution to the field.
+*   Novelty: ⭐⭐⭐⭐ Innovative, though some techniques combine existing methods.
+*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation.
+*   Writing Quality: ⭐⭐⭐⭐ Clear structure.
+*   Value: ⭐⭐⭐⭐ Practical contribution to the field.
 
 <!-- RELATED:START -->
 
@@ -127,7 +109,7 @@ Adopt optimization strategies and evaluation metrics suitable for the task.
 - [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
 - [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
-- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
+- [\[ACL 2026\] TRACE：基于证据定位的多视频事件理解与声明生成](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
 
 </div>
 

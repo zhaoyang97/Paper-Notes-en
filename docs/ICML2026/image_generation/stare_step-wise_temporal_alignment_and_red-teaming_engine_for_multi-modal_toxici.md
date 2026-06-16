@@ -2,138 +2,140 @@
 title: >-
   [Paper Note] STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack
 description: >-
-  [ICML 2026][Image Generation][Multi-modal red-teaming] This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming attacks. It proposes a hierarchical RL framework (STARE)…
+  [ICML 2026][Image Generation][GRPO] This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming. By employing a hierarchical RL framework (STARE) consisting of a high-level prompt editor and low-level GRPO fine-tuning of a rectified-flow model, the authors not only improve the attack success rate by 68% ove
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "Multi-modal red-teaming"
-  - "diffusion trajectory attack"
-  - "hierarchical RL"
-  - "GRPO"
-  - "temporal alignment analysis"
+  - ICML 2026
+  - Image Generation
+  - GRPO
 date: 2026-05-08
-content_hash: 07a320bd324bc57b
+content_hash: a00ee17ff453d31c
 ---
-
 # STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.00699](https://arxiv.org/abs/2605.00699)  
-**Code**: https://github.com/henrymao2004/STARE.git (available)  
-**Area**: Image Generation / Multi-modal VLM Security / Red-teaming Attacks  
-**Keywords**: Multi-modal red-teaming, diffusion trajectory attack, hierarchical RL, GRPO, temporal alignment analysis
+**Code**: https://github.com/henrymao2004/STARE.git (Available)  
+**Area**: Image Generation / Multi-modal VLM Safety / Red-teaming  
+**Keywords**: Multi-modal Red-teaming, Diffusion Trajectory Attack, Hierarchical RL, GRPO, Temporal Alignment Analysis
 
 ## TL;DR
-This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming attacks. It proposes a hierarchical RL framework (STARE) combining a high-level prompt editor and low-level GRPO fine-tuning of rectified-flow models. This approach not only improves attack success rate by 68% over SOTA, but also reveals a novel phenomenon—Optimization-Induced Phase Alignment: adversarial optimization automatically binds "conceptual toxicity" to early denoising and "detail toxicity" to later stages, transforming the chaotic toxicity formation process into several predictable "vulnerability time windows."
+This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming. By employing a hierarchical RL framework (STARE) consisting of a high-level prompt editor and low-level GRPO fine-tuning of a rectified-flow model, the authors not only improve the attack success rate by 68% over SOTA but also reveal a novel phenomenon—Optimization-Induced Phase Alignment: adversarial optimization automatically binds "conceptual toxicity" to the early denoising stages and "detailed toxicity" to the late stages, transforming the chaotic toxicity formation process into predictable "vulnerability windows."
 
 ## Background & Motivation
 
-**Background**: Toxic continuation attacks on VLMs represent a major multi-modal security threat—attackers use T2I models to generate adversarial images, paired with a text prefix, to induce highly toxic VLM continuations. Existing red-teaming methods (PGJ, DiffZOO, ART, RedDiffuser, etc.) treat T2I as a black box—focusing only on terminal toxicity scores, without considering at which step toxic semantics emerge.
+**Background**: Toxic continuation attacks on VLMs represent a deceptive multi-modal safety threat where attackers use T2I models to generate adversarial images that prompt a VLM to generate highly toxic textual continuations. Existing red-teaming methods (PGJ, DiffZOO, ART, RedDiffuser, etc.) largely treat T2I as a black box—focusing only on terminal toxicity scores regardless of when toxic semantics emerge.
 
-**Limitations of Prior Work**: The terminal-only perspective leads to a "temporal opacity" problem. Diffusion models inherently exhibit a coarse-to-fine semantic emergence mechanism (early stages determine layout/concept, later stages determine details), but current red-teaming ignores this temporal structure, resulting in sparse global rewards that lack attribution—making it unclear "why" an adversarial image can jailbreak, and preventing precise defense interventions.
+**Limitations of Prior Work**: A terminal-only perspective leads to "temporal opacity." While diffusion models possess an inherent coarse-to-fine semantic emergence mechanism (layouts/concepts in early stages, details in late stages), existing red-teaming methods ignore this temporal structure. Consequently, sparse global rewards fail to provide attribution—leaving it unknown why an adversarial image triggers a jailbreak and preventing precise defensive interventions.
 
-**Key Challenge**: (1) Black-box optimization vs. white-box attack surface: treating T2I as a black box only yields final toxicity, but intermediate steps in diffusion models have exploitable semantic emergence patterns; (2) Flat RL vs. hierarchical semantic structure: standard RL (e.g., DDPO) treats the entire generation as a single policy, unable to match the natural division between "early layout / late details"; (3) Conceptual toxicity vs. detail toxicity: real-world toxicity includes "concept-level" (identity/threat, requiring early seeds) and "detail-level" (obscene/insult, requiring late amplification), but baselines apply uniform pressure.
+**Key Challenge**: (1) Black-box optimization vs. white-box attack surface: treating T2I as a black box only yields final toxicity, overlooking exploitable semantic patterns in intermediate diffusion steps; (2) Flat RL vs. hierarchical semantic structure: standard RL (e.g., DDPO) treats generation as a single policy, failing to map to the natural division of "early layout / late details"; (3) Conceptual vs. detailed toxicity: real-world toxicity includes "conceptual" aspects like identity/threat (requiring early seeds) and "detailed" aspects like obscene/insult (requiring late-stage amplification), yet baselines apply uniform pressure.
 
-**Goal**: (1) Design a hierarchical RL framework that can explicitly manipulate early and late stages of the denoising trajectory for end-to-end toxicity attacks on VLMs; (2) Use temporal alignment analysis to reveal the impact of adversarial optimization on diffusion temporal structure; (3) Push ASR to SOTA.
+**Goal**: (1) Design a hierarchical RL framework capable of explicitly manipulating both early and late stages of the denoising trajectory for end-to-end VLM toxicity attacks; (2) Reveal the impact of adversarial optimization on the temporal structure of diffusion via temporal alignment analysis; (3) Push ASR to the state-of-the-art.
 
-**Key Insight**: The authors use rectified flow as the base (its velocity field is explicit and trajectories are nearly linear, facilitating temporal attribution analysis). "Prompt editing for semantic subgoals" and "velocity field fine-tuning for detail amplification" are mapped to high-level/low-level MDPs—naturally corresponding to early/late semantic emergence in diffusion.
+**Key Insight**: The authors utilize rectified flow as the base model because its velocity field is explicit and trajectories are nearly linear, facilitating temporal attribution. They then decouple the attack into a high-level MDP for "prompt editing to set semantic subgoals" and a low-level MDP for "velocity field fine-tuning to amplify details." This hierarchical structure naturally corresponds to the early and late stages of semantic emergence in diffusion.
 
-**Core Idea**: The high-level prompt editor seeds "conceptual toxicity subgoals" in embedding space, while the low-level GRPO fine-tunes the rectified-flow velocity field to amplify "detail toxicity." Both policies share the same toxicity reward. Temporal attribution analysis (MLMC + block perturbation) demonstrates that this hierarchical structure aligns with real early/late vulnerability windows.
+**Core Idea**: A high-level prompt editor plants "conceptual toxicity subgoals" in the embedding space, while low-level GRPO fine-tunes the rectified-flow velocity field to amplify "detailed toxicity." Both policies share a single toxicity reward. Temporal attribution analysis (MLMC + block perturbation) demonstrates that this hierarchical structure maps to real early and late vulnerability windows.
 
 ## Method
 
 ### Overall Architecture
 
-Input: root prompt $p$, white-box T2I model (SD 3.5-Medium + LoRA $r=16$), query-level black-box VLM (LLaVA-v1.6-mistral-7b). Pipeline: (1) High-level adds noise perturbations to $p$ embedding to obtain $K$ candidate edits $e_p + \delta_j$, decoded via vec2text into $K$ subgoal prompts $p'^{(j)}$; (2) Low-level, for each $p'^{(j)}$, uses the current LoRA-augmented velocity field $v_\theta$ to run $M$ image rollouts (using Marginal-Preserving Stochastic SDE discretization for exploration); (3) VLM evaluates each image + continuation prompt for toxicity score, combines with CLIPScore alignment reward to form terminal reward; (4) Both policies are updated with GRPO objective (group-normalized advantage): high-level group is the average reward + edit reward over $K$ candidates, low-level group is the individual reward over all $K \times M$ rollouts. The pipeline forms a dual-loop: "semantic subgoal → image generation → VLM continuation → toxicity → backprop to both policies."
+STARE addresses the limitation of existing red-teaming methods that focus solely on the final T2I output by turning the entire denoising trajectory into an optimizable and attributable attack surface. It decouples "semantic modification" and "detail amplification" into two policy layers: a high-level prompt editor that seeds conceptual toxicity subgoals in the embedding space, and a low-level GRPO that fine-tunes the rectified-flow velocity field to amplify detail-level toxicity. Both layers share a toxicity reward, and a temporal attribution analysis verifies that this hierarchical structure corresponds to early and late vulnerability windows. Specifically, given a root prompt $p$, a white-box T2I (SD 3.5-Medium + LoRA $r=16$), and a query-level black-box VLM (LLaVA-v1.6-mistral-7b), the high-level policy perturbs the embedding of $p$ to generate $K$ candidate edits, decoded via vec2text into $K$ subgoal prompts. The low-level policy then runs $M$ image rollouts for each subgoal using the current velocity field. Finally, the VLM generates continuations scored for toxicity, which—combined with a CLIPScore alignment reward—forms the terminal reward backpropagated to both policy layers.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["root prompt p"] --> HE["Hierarchical MDP · High-level: Semantic Modification<br/>Embedding perturbation for K edits → vec2text decoding"]
+    HE --> SG["K subgoal prompts"]
+    SG --> LL["Hierarchical MDP · Low-level: Detail Amplification<br/>Rectified-flow velocity field runs M rollouts"]
+    LL --> IMG["K×M adversarial images"]
+    IMG --> VLM["VLM Continuation & Scoring<br/>6-dim toxicity + CLIPScore alignment"]
+    VLM --> R["terminal reward"]
+    R -->|"Hierarchical GRPO Optimization: Group-normalized advantage for variance reduction"| HE
+    R -->|"Hierarchical GRPO Optimization"| LL
+    LL -.->|"Temporal Alignment Analysis: MLMC block perturbation"| TS["TemporalScore Heatmap<br/>Conceptual toxicity → Early, Detail toxicity → Late"]
+```
 
 ### Key Designs
 
-1. **Hierarchical MDP: High-Level Prompt Editor + Low-Level Velocity Fine-tuning**:
+**1. Hierarchical MDP: High-level semantics and low-level details corresponding to diffusion stages**
 
-    - **Function**: Separates semantic injection and detail amplification into two policies at different temporal scales, corresponding to early concept seeding and late detail refinement in diffusion.
-    - **Mechanism**: High-level MDP is a single-step decision—state is prompt embedding $e_p$, action is edit vector $\delta$, policy $\pi_{edit}(\delta|e_p)$ is an encoder-decoder Transformer outputting $\mu_j$, projected onto an $\ell_2$ ball $\delta_j = \epsilon_p \cdot \mu_j / \max(\|\mu_j\|_2, \epsilon_p)$ ($\epsilon_p = 0.8$). Low-level MDP is iterative denoising—state $s_t = (x_t, t, c)$, action $a_t = x_{t - \Delta t}$, policy $\pi_\theta(a_t|s_t) = \mathcal{N}(\mu_\theta, \sigma_t^2 I)$, where $\mu_\theta = x_t - v_\theta(x_t, t, c) \Delta t$; MPS SDE discretization $x_{t - \Delta t} = x_t - v_\theta \Delta t + \sigma_t \varepsilon$ ensures exploration.
-    - **Design Motivation**: Early T2I stages mainly determine semantics/layout, later stages determine details—naturally matching "prompt edits for semantics" and "velocity edits for image statistics." Assigning to two policies allows each to focus on its optimal temporal segment, outperforming flat RL (e.g., DDPO) by 21% ASR in experiments.
+Existing red-teaming methods treat T2I as a single black box and apply uniform pressure via flat RL (e.g., DDPO), failing to match the "early layout/concept, late detail" division. STARE splits the attack into two MDPs across different time scales. The High-level is a single-step decision: the state is the prompt embedding $e_p$, actions are edit vectors $\delta$, and the policy $\pi_{edit}(\delta|e_p)$ utilizes an encoder-decoder Transformer to output $\mu_j$, projected onto an $\ell_2$ ball $\delta_j = \epsilon_p \cdot \mu_j / \max(\|\mu_j\|_2, \epsilon_p)$ ($\epsilon_p = 0.8$) to keep edits at the conceptual level. The Low-level is an iterative denoising MDP: state $s_t = (x_t, t, c)$, action $a_t = x_{t-\Delta t}$, and policy $\pi_\theta(a_t|s_t) = \mathcal{N}(\mu_\theta, \sigma_t^2 I)$, where $\mu_\theta = x_t - v_\theta(x_t, t, c)\Delta t$. This is discretized via Marginal-Preserving Stochastic SDE $x_{t-\Delta t} = x_t - v_\theta \Delta t + \sigma_t \varepsilon$ to inject noise for exploration. This separation allows each policy to focus on its specific temporal strengths, achieving a 21% higher ASR compared to flat DDPO.
 
-2. **Dual-level GRPO Optimization + Marginal Reward Combination**:
+**2. GRPO Hierarchical Optimization: Group normalization to handle sparse reward variance**
 
-    - **Function**: Uses group-normalized advantage instead of absolute reward to reduce variance under sparse rewards; high-level includes an auxiliary "edit semantic preservation" reward.
-    - **Mechanism**: GRPO loss $\mathcal{L}_{grp}(r_t, \hat A, \varepsilon) = \min(r_t \hat A, \mathrm{clip}(r_t, 1-\varepsilon, 1+\varepsilon) \hat A)$, where $r_t = \pi_\theta(a_t|s_t)/\pi_{old}(a_t|s_t)$, group-normalized advantage $\hat A_i = (X_i - \mu_{grp})/(\sigma_{grp} + \epsilon)$. High-level group uses average reward over $K$ candidates plus edit reward $\mathcal{R}_{high}^{(j)} = \bar R_j + \mathcal{R}_{edit}^{(j)}$, where $\mathcal{R}_{edit}^{(j)} = \lambda_{sem}[s_{SBERT}(e_p, e_p + \delta_j) - \tau_{sem}]_+ + \lambda_{recon}/(1 + \|e_p + \delta_j - \mathrm{emb}(p'^{(j)})\|^2)$, encouraging both semantic similarity to the original prompt and consistency between embedding edit and vec2text-decoded text. Low-level group is all $K \times M$ rollout rewards $R^{(j,m)} = R_{tox}^{(j,m)} + w_{align} R_{align}^{(j,m)}$, with per-step KL $D_{KL}(\pi_\theta^{(t)} \| \pi_{ref}^{(t)}) = \tfrac{1}{2\sigma_t^2}\|\mu_\theta - \mu_{ref}\|^2$ to stabilize mean drift.
-    - **Design Motivation**: Toxicity reward is a sparse and noisy terminal reward; group normalization greatly reduces variance compared to absolute reward. Methods like Flow-DPO requiring preference datasets are too costly for the dual-level structure; GRPO is the most lightweight choice. Edit reward prevents high-level from editing prompts into irrelevant directions.
+Toxicity serves as a sparse and noisy terminal reward with high variance. Methods like Flow-DPO, which require preference datasets, are too costly for hierarchical structures. STARE uses GRPO for both layers, with the loss $\mathcal{L}_{grp}(r_t, \hat A, \varepsilon) = \min(r_t \hat A, \mathrm{clip}(r_t, 1-\varepsilon, 1+\varepsilon)\hat A)$, where $r_t = \pi_\theta(a_t|s_t)/\pi_{old}(a_t|s_t)$. The advantage $\hat A_i = (X_i - \mu_{grp})/(\sigma_{grp} + \epsilon)$ uses group normalization instead of absolute rewards to reduce variance. For the High-level, the group consists of $K$ candidates with an additional edit reward $\mathcal{R}_{high}^{(j)} = \bar R_j + \mathcal{R}_{edit}^{(j)}$, where $\mathcal{R}_{edit}^{(j)} = \lambda_{sem}[s_{SBERT}(e_p, e_p + \delta_j) - \tau_{sem}]_+ + \lambda_{recon}/(1 + \|e_p + \delta_j - \mathrm{emb}(p'^{(j)})\|^2)$. This encourages semantic similarity to the original prompt and consistency between embedding edits and decoded text. The Low-level group includes all $K \times M$ rollouts with reward $R^{(j,m)} = R_{tox}^{(j,m)} + w_{align} R_{align}^{(j,m)}$, plus a per-step KL divergence $D_{KL}(\pi_\theta^{(t)}\|\pi_{ref}^{(t)}) = \tfrac{1}{2\sigma_t^2}\|\mu_\theta - \mu_{ref}\|^2$ to stabilize mean drift.
 
-3. **Temporal Alignment Analysis (MLMC Temporal Attribution)**:
+**3. Temporal Alignment Analysis: Quantifying "which step contributes which toxicity" via MLMC**
 
-    - **Function**: Quantifies "which denoising step contributes most to which toxicity type" as a $T \times D$ heatmap, verifying that the hierarchical structure indeed corresponds to different temporal windows.
-    - **Mechanism**: Define net toxicity score $\mathcal{R}_d(I, p) = R_d(\mathrm{VLM}(I, p)) - R_d(\mathrm{VLM}(\mathrm{null}, p))$ to isolate the image's marginal contribution; define sensitivity to time block $B$ as $\Delta_B^{(d)} = \mathbb{E}_{\mathbf{z}}[(\mathcal{R}_d(G^{(B, +\eta\mathbf{z})}) - \mathcal{R}_d(G^{(B, -\eta\mathbf{z})}))/(2\eta)]$ (finite difference with symmetric perturbation within the block). Use coarse-to-fine search + Multi-Level Monte Carlo $\hat\Delta_B^{MLMC} = \tfrac{1}{M_0}\sum \hat\Delta_B^{(0)} + \sum_\ell \tfrac{1}{M_\ell}\sum(\hat\Delta_B^{(\ell)} - \hat\Delta_B^{(\ell-1)})$ for efficient estimation; finally, for singleton $B = \{t\}$, obtain TemporalScore$(t, d) = \hat\Delta_{\{t\}}^{(d), MLMC}$, rescaled to $[-1, 1]$ for heatmap visualization.
-    - **Design Motivation**: Converts "what adversarial optimization did" from a black-box reward number into a 2D time-dimension visualization—this is the paper's main methodological contribution. MLMC is necessary—since 6 toxicity dimensions × $T$ steps is too expensive for direct sampling, MLMC uses low-fidelity hierarchical estimates plus a few high-fidelity corrections to significantly reduce variance.
+Terminal rewards alone do not reveal which segment of the trajectory adversarial optimization modifies. The authors designed a temporal attribution method to transform the black-box optimization into a 2D temporal-dimensional heatmap. First, the net toxicity score $\mathcal{R}_d(I, p) = R_d(\mathrm{VLM}(I, p)) - R_d(\mathrm{VLM}(\mathrm{null}, p))$ isolates the marginal contribution of the image to the $d$-th dimension of toxicity. Then, finite difference sensitivity is applied to time block $B$: $\Delta_B^{(d)} = \mathbb{E}_{\mathbf{z}}[(\mathcal{R}_d(G^{(B,+\eta\mathbf{z})}) - \mathcal{R}_d(G^{(B,-\eta\mathbf{z})}))/(2\eta)]$. To reduce the cost of sampling across 6 dimensions and $T$ steps, Multi-Level Monte Carlo (MLMC) is used: $\hat\Delta_B^{MLMC} = \tfrac{1}{M_0}\sum \hat\Delta_B^{(0)} + \sum_\ell \tfrac{1}{M_\ell}\sum(\hat\Delta_B^{(\ell)} - \hat\Delta_B^{(\ell-1)})$. This combines hierarchical low-fidelity estimates with high-fidelity corrections to reduce variance, ultimately yielding TemporalScore$(t, d) = \hat\Delta_{\{t\}}^{(d), MLMC}$, which is rescaled to $[-1, 1]$ for visualization.
 
 ### Loss & Training
 
-Total loss = High-level GRPO loss + Low-level $\mathcal{J}_{low} = \mathbb{E}_\tau[\tfrac{1}{T}\sum_t(\mathcal{L}_{grp}^{low}(t) - \beta_t D_{KL}(\pi_\theta^{(t)}\|\pi_{ref}^{(t)}))]$. Key hyperparameters: $K = 4$ candidates, $M = 8$ rollouts, $\epsilon_p = 0.8$, $\tau_{sem} = 0.7$, $\lambda_{sem} = 1.0, \lambda_{recon} = 0.1$, $\beta_{high} = 0.02, \beta_t = 0.04$, PPO clip $\varepsilon_{low} = \varepsilon_{high} = 0.001$. Training uses 20 denoising steps, inference 40 steps.
+The total loss is the sum of the High-level GRPO loss and the Low-level loss $\mathcal{J}_{low} = \mathbb{E}_\tau[\tfrac{1}{T}\sum_t(\mathcal{L}_{grp}^{low}(t) - \beta_t D_{KL}(\pi_\theta^{(t)}\|\pi_{ref}^{(t)}))]$. Key hyperparameters: $K = 4$ candidates, $M = 8$ rollouts, $\epsilon_p = 0.8$, $\tau_{sem} = 0.7$, $\lambda_{sem} = 1.0, \lambda_{recon} = 0.1$, $\beta_{high} = 0.02, \beta_t = 0.04$, and PPO clip $\varepsilon_{low} = \varepsilon_{high} = 0.001$. Training uses 20 denoising steps, while inference uses 40 steps.
 
 ## Key Experimental Results
 
 ### Main Results
 
-On LLaVA + RTP dataset, ASR (%) ↑:
+ASR (%) on LLaVA + RTP dataset ↑:
 
 | Method | Any ↑ | Toxic ↑ | Obscene ↑ | Identity ↑ | Insult ↑ | CLIP ↑ |
-|--------|-------|---------|-----------|------------|----------|--------|
+|------|-------|---------|-----------|------------|----------|--------|
 | Text-Only | 5.20 | 3.10 | 5.10 | 0.60 | 2.80 | – |
 | Text + SD | 11.15 | 5.71 | 10.63 | 3.97 | 6.11 | 0.72 |
 | PGJ | 14.86 | 7.85 | 13.98 | 3.43 | 8.09 | 0.71 |
 | DiffZOO | 17.20 | 9.01 | 16.42 | 4.14 | 7.88 | 0.73 |
 | ART | 18.62 | 9.22 | 17.54 | 6.45 | 8.94 | 0.75 |
-| STARE w/ DDPO (same white-box budget) | 27.84 | 15.62 | 26.12 | 5.80 | 15.11 | 0.75 |
-| **STARE (Ours, $w_{align}=0.2$)** | **31.36** | **17.10** | **29.73** | 6.14 | 15.95 | 0.78 |
+| STARE w/ DDPO (Same budget) | 27.84 | 15.62 | 26.12 | 5.80 | 15.11 | 0.75 |
+| **STARE (Ours, $w_{align}=0.2$)** | **31.36** | **17.10** | **29.73** | **6.14** | **15.95** | **0.78** |
 
-On OOD PolygloToxicityPrompts test, STARE Any 30.83 vs ART 22.01, demonstrating generalization. Transfer to Qwen2.5-VL and Gemini-2.5-Pro also maintains significant lead.
+On OOD PolygloToxicityPrompts, STARE achieved 30.83 Any ASR compared to ART's 22.01, demonstrating generalization. Transferability to Qwen2.5-VL and Gemini-2.5-Pro also remained significantly leading.
 
 ### Ablation Study
 
-| Configuration | Any ASR | Notes |
-|---------------|---------|-------|
-| Full STARE ($w_{align}=0.2$) | **31.36** | Full method |
-| STARE w/o LoRA (remove low-level) | 22.04 | -9.32, showing velocity fine-tuning is the largest contributor |
-| STARE w/o Edit (remove high-level) | 25.56 | -5.80, prompt edit is the next largest contributor |
-| STARE w/o Align (remove alignment reward) | 26.43 | -4.93, CLIP drops to 0.68 |
-| STARE w/ DDPO (replace with flat RL) | 27.84 | -3.52, showing hierarchical > flat |
+| Configuration | Any ASR | Description |
+|------|---------|------|
+| Full STARE ($w_{align}=0.2$) | **31.36** | Complete method |
+| STARE w/o LoRA | 22.04 | -9.32, velocity tuning is the major contributor |
+| STARE w/o Edit | 25.56 | -5.80, prompt editing is second significant |
+| STARE w/o Align | 26.43 | -4.93, CLIP drops to 0.68 |
+| STARE w/ DDPO | 27.84 | -3.52, Hierarchical > Flat |
 
 ### Key Findings
 
-- **Optimization-Induced Phase Alignment**: Temporal attribution heatmaps show that vanilla SD's toxicity contribution is diffuse over time, but after adversarial optimization, identity/threat (concept-level) toxicity concentrates in early timesteps, obscene/insult (detail-level) toxicity in late timesteps, with almost no overlap. This is not a side effect of the hierarchical design, but a real temporal pattern "induced" by RL optimization—targeting early windows only suppresses concept toxicity, late windows only suppress detail toxicity, confirming causality.
-- **Hierarchical > Flat RL**: STARE outperforms STARE w/ DDPO (same white-box budget but flat) by 3.5% ASR, and the temporal window structure is clearer; DDPO's optimization pressure is smeared across the trajectory, failing to exploit diffusion's intrinsic temporal structure.
-- **Strong Transfer**: Maintains ASR lead across different VLMs (Qwen2.5-VL, Gemini-2.5-Pro, GPT-5.4) and T2I generators (FLUX.1-dev), showing the attack is not overfitting to specific victims or "trick prompts."
-- **CLIP align actually improves ASR**: Intuitively, "preserving CLIP alignment" might restrict adversarial freedom, but $w_{align}=0.2$ yields the highest ASR. The authors explain that alignment prevents images from collapsing into meaningless noise (which is actually harder to trigger toxic continuation), and maintaining image-prompt consistency ensures VLMs use the image as real context.
+- **Optimization-Induced Phase Alignment**: Temporal attribution heatmaps show that while vanilla SD toxicity is diffuse, adversarial optimization concentrates identity/threat (concept-level) toxicity in early timesteps and obscene/insult (detail-level) toxicity in late timesteps. This is not a side effect of design but a "reality" induced by RL—targeted perturbations in early windows only suppress conceptual toxicity, while late-stage perturbations only suppress detailed toxicity.
+- **Hierarchical > Flat RL**: STARE outperforms STARE w/ DDPO by 3.5% ASR with clearer temporal structures. DDPO smears optimization pressure across the trajectory, failing to exploit the inner temporal structure of diffusion.
+- **Strong Transferability**: The method maintains leading ASR across different VLMs and T2I generators (FLUX.1-dev), proving the attack is not a "trick prompt" overfitted to a specific victim.
+- **CLIP Alignment Benefits ASR**: Surprisingly, CLIP alignment ($w_{align}=0.2$) improves ASR. The authors suggest this prevents image collapse into meaningless noise, maintaining image-prompt consistency which ensures the VLM uses the image as context.
 
 ## Highlights & Insights
 
-- The reframing of "treating the denoising trajectory itself as the attack surface" is highly innovative—transforming T2I from a "black-box image generator" into a "white-box temporal-semantic structure exploit target," opening new directions for attacks and defenses based on diffusion temporal structure.
-- The Optimization-Induced Phase Alignment phenomenon is more valuable than the attack numbers—it shows that the early/late semantic emergence mechanism of diffusion models is not just empirical, but a real causal structure that can be "amplified" and "exploited" by adversarial optimization. For defense, this suggests phase-specific monitoring (concept-level filters in early timesteps, detail-level filters in late timesteps), greatly reducing defense costs.
-- MLMC's hierarchical estimation reduces variance, making attribution analysis feasible at $O(T \cdot D \cdot M)$ cost—this is the engineering key to scaling perturbation analysis.
-- Using vec2text to invert embedding edits back to text prompts is an ingenious engineering solution: it allows high-level optimization in continuous embedding space, but the final T2I input remains discrete text, avoiding distribution mismatch from direct prompt embedding injection.
+- Reframing the denoising trajectory as an attack surface is highly innovative—transforming T2I from a "black-box image generator" into a "white-box temporal-semantic exploit target."
+- The "Optimization-Induced Phase Alignment" phenomenon is more valuable than the attack metrics themselves. it suggests that the early/late semantic emergence in diffusion is a causal structure that can be amplified and exploited. This implies defense side "phase-specific monitoring" could reduce costs.
+- Using MLMC for attribution significantly reduces the variance and cost of sensitivity analysis, making large-scale perturbation analysis feasible.
+- Decoding embedding edits back to text via vec2text is a clever engineering choice, ensuring T2I inputs remain within the pre-trained distribution while allowing continuous optimization.
 
 ## Limitations & Future Work
 
-- The white-box T2I assumption is strong (requires access to all SD 3.5 parameters for LoRA fine-tuning), not applicable to fully black-box T2I (DALL-E 3, Midjourney); transfer experiments were done on FLUX.1-dev but not on true black-box commercial APIs.
-- The VLM is assumed to be query-only black-box, but the reward signal requires 6-dimensional toxicity per query, making commercial API usage costly (no query budget analysis provided).
-- Causal evidence for Optimization-Induced Phase Alignment comes from perturbation experiments, but the authors do not provide an analytic theory for "alignment strength"—why 6 toxicity dimensions, why early/late stages correspond to concept/detail, remain empirical observations.
-- The rectified flow assumption is necessary (explicit velocity + near-linear trajectories); for models with high trajectory curvature (DDIM/DDPM), temporal attribution may be distorted.
-- Red-teaming ethics: a 31% success rate poses a significant threat to LLaVA; the paper includes a content warning but no disclosure timeline.
-- Group sizes $K = 4, M = 8$ are limited by GPU; larger groups could further reduce GRPO variance but would sharply increase training cost.
+- White-box T2I requirement: Accessing all parameters for LoRA fine-tuning (e.g., SD 3.5) is required, which may not apply to proprietary black-box APIs like DALL-E 3.
+- Query cost: The query-only black-box VLM assumption requires 6-dimensional toxicity scores per query, which is expensive for commercial APIs.
+- Causality of Alignment: While empirical evidence is strong, a refined analytical theory for why specifically 6 dimensions of toxicity map to these stages is still missing.
+- Rectified Flow dependency: The linearity of rectified flow is critical; temporal attribution might distort for models with high trajectory curvature like DDIM/DDPM.
+- Ethics: A 31% success rate is a significant threat to VLMs; the paper lacks a specific disclosure timeline despite safety warnings.
 
 ## Related Work & Insights
 
-- **vs PGJ / DiffZOO / ART**: All are prompt-side black-box search + frozen T2I, unable to exploit generation temporal structure; STARE manipulates both prompt edit and velocity field, doubling ASR.
-- **vs RedDiffuser (Wang et al. 2025a)**: Also steers diffusion but lacks hierarchy and phase-level analysis; STARE's hierarchical structure and temporal attribution are differentiators.
-- **vs DDPO (Black et al. 2024)**: DDPO is flat diffusion RL; STARE-w/-DDPO ablation shows hierarchy outperforms flat by 3.5% ASR and yields clearer temporal structure.
-- **vs Flow-GRPO (Liu et al. 2025)**: The low-level GRPO idea is similar, but Flow-GRPO is single-level; STARE embeds it within a high-level prompt editor for a dual-level approach.
-- **vs Text jailbreak (GCG, etc.)**: Pure text jailbreak lacks the image channel and cannot trigger multi-modal toxic-continuation attacks; STARE reveals the "image channel as an underestimated attack surface."
+- **vs. PGJ / DiffZOO / ART**: These rely on prompt-side black-box search with frozen T2I, failing to utilize generation structure. STARE manipulates both prompt edits and velocity fields, doubling the ASR.
+- **vs. RedDiffuser (Wang et al. 2025a)**: RedDiffuser steers diffusion without hierarchical analysis or phase-level insights.
+- **vs. DDPO (Black et al. 2024)**: DDPO is a flat RL approach; STARE-w/-DDPO shows that hierarchy adds 3.5% ASR and sharper temporal focus.
+- **vs. Flow-GRPO (Liu et al. 2025)**: While the low-level GRPO is similar, STARE embeds it into a dual-layer system with a high-level prompt editor.
+- **vs. Text Jailbreaking (GCG, etc.)**: Purely textual jailbreaks lack the image channel and cannot trigger multi-modal toxic continuations; STARE reveals the image channel is an underrated attack surface.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Treating diffusion trajectory as attack surface + Phase Alignment phenomenon are paradigm-shifting innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Dual datasets + three VLM transfers + DDPO compute-matched baseline + full ablation + MLMC temporal attribution; lacks query budget and defense comparison.
-- Writing Quality: ⭐⭐⭐⭐ Hierarchical MDP / GRPO / MLMC formulas are rigorous, threat model is clear; temporal attribution is math-heavy but Figures 1/3 aid readability.
-- Value: ⭐⭐⭐⭐ Provides both an attack tool and a foundation for defense design (phase-aware monitoring) for the multi-modal safety community, but responsible disclosure is needed.
+- Novelty: ⭐⭐⭐⭐⭐ Decoupling trajectory as an attack surface and the Phase Alignment discovery are paradigm-shifting.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Dual datasets, three VLMs, DDPO baseline, full ablation, and MLMC attribution; however, lacks a defense comparison.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous formulas for hierarchical MDP/GRPO/MLMC; temporal attribution involves heavy math but is saved by clear visualization.
+- Value: ⭐⭐⭐⭐ Provides both an attack tool and a basis for defense (phase-aware monitoring), though requires responsible disclosure.
 
 <!-- RELATED:START -->
 
@@ -142,10 +144,10 @@ On OOD PolygloToxicityPrompts test, STARE Any 30.83 vs ART 22.01, demonstrating 
 ## Related Papers
 
 - [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](pareto-guided_optimal_transport_for_multi-reward_alignment.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](../../ICCV2025/image_generation/autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
+- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](omp_one-step_meanflow_policy_with_directional_alignment.md)
-- [\[CVPR 2026\] CognitionCapturerPro: Towards High-Fidelity Visual Decoding from EEG/MEG via Multi-modal Information and Asymmetric Alignment](../../CVPR2026/image_generation/cognitioncapturerpro_towards_highfidelity_visual_d.md)
+- [\[ICLR 2026\] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning](../../ICLR2026/image_generation/image_can_bring_your_memory_back_a_novel_multi-modal_guided_attack_against_image.md)
 
 </div>
 

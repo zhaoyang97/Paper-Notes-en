@@ -2,144 +2,139 @@
 title: >-
   [Paper Note] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Zero-shot anomaly detection] MoECLIP introduces Mixture-of-Experts into zero-shot anomaly detection (ZSAD), achieving patch-level dynamic expert routing and specialization via Frozen Orthogo…
+  [CVPR 2026][Object Detection][CLIP] This paper proposes MoECLIP, which introduces the Mixture-of-Experts architecture into Zero-Shot Anomaly Detection (ZSAD). By employing Frozen Orthogonal Feature Separation (FOFS) and Equiangular Tight Frame (ETF) loss, it achieves patch-level dynamic expert routing and specialization, reaching SOTA performance across
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Zero-shot anomaly detection"
-  - "mixture of experts"
-  - "CLIP"
-  - "LoRA"
-  - "expert specialization"
+  - CVPR 2026
+  - Object Detection
+  - CLIP
+  - LoRA
 date: 2026-05-08
-content_hash: ef54f1960d186356
+content_hash: a7ba50c137e3538c
 ---
-
 # MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.03101](https://arxiv.org/abs/2603.03101)  
 **Code**: [Available](https://github.com/CoCoRessa/MoECLIP)  
-**Area**: Medical Imaging
-**Keywords**: Zero-shot anomaly detection, mixture of experts, CLIP, LoRA, expert specialization
+**Area**: Object Detection  
+**Keywords**: Zero-shot anomaly detection, Mixture-of-Experts, CLIP, LoRA, expert specialization
 
 ## TL;DR
 
-MoECLIP introduces Mixture-of-Experts into zero-shot anomaly detection (ZSAD), achieving patch-level dynamic expert routing and specialization via Frozen Orthogonal Feature Separation (FOFS) and an Equiangular Tight Frame (ETF) loss, attaining state-of-the-art performance across 14 industrial and medical benchmarks.
+This paper proposes MoECLIP, which introduces the Mixture-of-Experts architecture into Zero-Shot Anomaly Detection (ZSAD). By employing Frozen Orthogonal Feature Separation (FOFS) and Equiangular Tight Frame (ETF) loss, it achieves patch-level dynamic expert routing and specialization, reaching SOTA performance across 14 industrial and medical benchmarks.
 
 ## Background & Motivation
 
-### 1. State of the Field
-Visual anomaly detection (AD) identifies regions deviating from normal patterns and is critical in industrial defect inspection and medical image diagnosis. Conventional unsupervised AD (UAD) learns exclusively from normal data but still requires large collections of normal samples. Zero-shot anomaly detection (ZSAD) leverages the strong generalization capability of vision–language models such as CLIP to detect anomalies without any training data from the target category, establishing itself as an emerging paradigm.
+### 1. Background
+Visual Anomaly Detection (AD) aims to identify regions deviating from normal patterns and is crucial for industrial defect detection and medical diagnosis. Traditional Unsupervised Anomaly Detection (UAD) learns solely from normal data but still requires a large number of normal samples. Zero-Shot Anomaly Detection (ZSAD) leverages the powerful generalization of Vision-Language Models like CLIP to detect anomalies without training data from target categories, becoming an emerging paradigm.
 
 ### 2. Limitations of Prior Work
-CLIP is pre-trained for global semantic understanding and is inherently ill-suited for detecting local anomalies. Existing ZSAD methods (PromptAD, AnomalyCLIP, AdaCLIP, AA-CLIP) enhance patch representations through prompt learning or adapters, yet all adopt a **patch-agnostic design**: they apply a single, uniform transformation to every patch, ignoring the distinct characteristics of different image regions (object parts, background, anomalous regions).
+The pre-training objective of CLIP focuses on global semantic understanding, which is not optimized for detecting local anomalies. Existing ZSAD methods (PromptAD, AnomalyCLIP, AdaCLIP, AA-CLIP) enhance patch representations through prompt learning or adapters but primarily adopt a **patch-agnostic design**, applying the same uniform transformation to all patches. This ignores the unique characteristics of different image regions (object parts, backgrounds, and anomalous areas).
 
-### 3. Root Cause
-Specializing CLIP for anomaly detection must not come at the cost of its generalization ability; differentiating treatment across patches risks **functional redundancy** in a naïve multi-expert setup, where experts converge to similar functions.
+### 3. Key Challenge
+There is a need to specialize CLIP for anomaly detection while preserving its generalization capabilities. Different patches require differentiated processing; however, simple multi-expert combinations often lead to **functional redundancy**, where experts learn similar features.
 
-### 4. Core Problem
-(1) Break the patch-agnostic design constraint to enable patch-level dynamic adaptation; (2) resolve expert functional redundancy in MoE so that each expert achieves genuine specialization.
+### 4. Goal
+(1) Break the limitations of patch-agnostic design to achieve patch-level dynamic adaptation; (2) Resolve the functional redundancy in MoE to ensure genuine expert specialization.
 
-### 5. Starting Point
-Combine a MoE architecture with LoRA and introduce simultaneous constraints at both the input and output ends to disentangle expert functions.
+### 5. Key Insight
+The MoE architecture is integrated with LoRA for ZSAD, imposing constraints on both input and output ends to separate expert functions.
 
 ### 6. Core Idea
-Route each patch dynamically to appropriate LoRA experts via a MoE architecture; apply FOFS to orthogonally partition the feature space at the input side, and enforce maximal equiangular separation via ETF loss at the output side, jointly eliminating expert redundancy.
+A MoE architecture dynamically routes each patch to the appropriate LoRA expert. FOFS is used to orthogonally partition the feature space at the input, while ETF loss enforces maximum equiangular separation at the output, eliminating expert redundancy through a dual-pronged approach.
 
 ## Method
 
 ### Overall Architecture
 
-MoECLIP integrates MoE modules at the outputs of multiple layers (layers 6, 12, 18, and 24) of the CLIP Vision Encoder (ViT-L/14-336), with the encoder weights completely frozen. Each MoE module contains $K=4$ LoRA experts and a linear router with a Top-2 routing strategy. The model is trained with supervision on an auxiliary dataset (VisA) and evaluated on entirely unseen categories at test time.
+The core problem MoECLIP addresses is that CLIP patch features treat all regions equally, whereas anomaly detection requires distinguishing between objects, backgrounds, and defects. The approach equips the frozen CLIP Vision Encoder (ViT-L/14-336) with a set of "patch-wise branched" experts. Specifically, MoE modules are inserted at the outputs of the 6th, 12th, 18th, and 24th layers of the encoder. Each module consists of $K=4$ LoRA experts and a linear router, which calculates expert scores for each patch and performs Top-2 weighted selection.
 
-Overall pipeline: input image → multi-layer patch feature extraction by CLIP ViT → dynamic routing and feature adaptation by per-layer MoE modules → multi-scale aggregation by PAA → cosine similarity with text features → anomaly map and anomaly score.
+When an image is processed, the CLIP ViT extracts multi-layer patch features. The MoE module at each layer routes patches to suitable experts for residual adaptation based on content. The adapted features are aggregated across multiple scales via PAA, then bifurcated: one branch computes per-patch similarity with text features for pixel-level anomaly maps, while the other processes global features through a Depth-wise Adapter to compute image-level anomaly scores. Training is supervised only on an auxiliary dataset (VisA), while testing is conducted on completely unseen categories. Only the LoRA up-projections, routers, and two lightweight adapter heads are learnable; the CLIP backbone remains frozen.
+
+```mermaid
+graph TD
+    A["Input Image 518×518"] --> B["CLIP ViT-L/14 (Frozen)<br/>Extract 6/12/18/24 layer patch features"]
+    subgraph MOE["MoE Feature Adaptation (One per layer · Top-2 Routing + K=4 LoRA Experts)"]
+        direction TB
+        C["FOFS (Input Separation)<br/>Frozen orthogonal blocked down-projection A, split into K subspaces"] --> D["K LoRA Experts<br/>Router for Top-2 weighted residual"]
+        D --> E["ETF Loss (Output Separation)<br/>Constrains expert outputs to max equiangular separation"]
+    end
+    B --> MOE
+    MOE --> F["PAA Multi-scale Aggregation<br/>Sliding windows s∈{1,3,5} Mean Pooling · Zero parameters"]
+    F -->|Per-patch similarity with text| G["Pixel-level Anomaly Map"]
+    F -->|Final layer features| H["Depth-wise Adapter<br/>Depthwise separable conv + GAP → V_image"]
+    H -->|Similarity with text| I["Image-level Anomaly Score"]
+```
 
 ### Key Designs
 
-#### 1. MoE-based Feature Adaptation
+**1. MoE Feature Adaptation: Routing patches to specific expert channels**
 
-**Function**: Dynamically select the optimal expert combination for each patch at every layer to adapt its representation.
+This directly addresses the "patch-agnostic" pain point. Given that different regions have distinct properties, they should not share the same transformation. When a MoE module receives patch features $F_i^l \in \mathbb{R}^d$, the router selects Top-2 experts to generate weighted residual outputs $F_{i,\text{expert}}^l$. To maintain training stability and generalization, the residual is $\ell_2$-normalized to match the original feature magnitude and mixed with a small weight ($\lambda_{\text{MoE}}=0.1$). Using LoRA (rank=8) as experts reduces parameters and overfitting risks, which is vital for zero-shot scenarios.
 
-**Mechanism**: Each MoE module receives patch feature $F_i^l \in \mathbb{R}^d$; the router computes routing scores for each expert and selects the Top-$k$ experts to produce a weighted residual output $F_{i,\text{expert}}^l$. A critical technique is **norm normalization** of the MoE output (matching the $\ell_2$ norm of the original feature), followed by a weighted residual connection ($\lambda_{\text{MoE}}=0.1$) with the original feature, preventing norm mismatch from causing training instability and generalization degradation.
+**2. FOFS (Frozen Orthogonal Feature Separation): Diverging expert "views" from the input**
 
-**Design Motivation**: LoRA experts are inherently parameter-efficient (rank=8), reducing overfitting risk; norm normalization, inspired by AA-CLIP, preserves the stability of CLIP's representation space.
+FOFS prevents functional redundancy by physically isolating inputs. The $d$-dimensional feature space is partitioned into $K$ non-overlapping subspaces $c_1, \dots, c_K$, such that the $n$-th expert only "sees" the $n$-th block. The LoRA down-projection matrix $A_n \in \mathbb{R}^{r \times d}$ is constructed as a block matrix: only columns corresponding to the $n$-th subspace contain an orthogonal matrix $Q_n$ (obtained via QR decomposition), with all other columns set to zero. Thus, for any two experts:
 
-#### 2. FOFS (Frozen Orthogonal Feature Separation)
+$$A_n A_m^\top = 0 \quad (n \neq m),$$
 
-**Function**: Enforce disjoint feature subspaces at the input end of LoRA experts to eliminate input-level redundancy.
+ensuring the input subspaces are inherently orthogonal. $A_n$ remains frozen while only $B_n$ is learned, preserving CLIP's generalization while aligning with recent findings that randomly initialized orthogonal down-projections perform as well as learned ones.
 
-**Mechanism**: The $d$-dimensional input feature space is partitioned into $K$ non-overlapping subspaces $c_1, \dots, c_K$. Each expert's LoRA down-projection matrix $A_n \in \mathbb{R}^{r \times d}$ is constructed as a block matrix — only the columns corresponding to the $n$-th subspace are filled with an orthogonal matrix $Q_n$ obtained via QR decomposition, with remaining columns set to zero. This guarantees $A_n A_m^T = 0$ ($n \neq m$), i.e., mutual orthogonality across experts. Critically, $A_n$ is frozen throughout training; only $B_n$ is learnable.
+**3. ETF Loss (Equiangular Tight Frame Loss): Separation at the output**
 
-**Design Motivation**: (1) Physically forces different experts to attend to distinct feature dimensions, preventing redundancy from initialization; (2) freezing $A$ preserves CLIP's generalization ability and reduces overfitting risk, inspired by recent LoRA research showing that randomly initialized orthogonal $A$ matrices can match the performance of learned ones.
+While FOFS manages the input, the learnable $B_n$ could still pull outputs into similar directions. ETF loss computes the Gram matrix of the $\ell_2$-normalized outputs of $K$ experts for each patch, penalizing the divergence from an "ideal ETF structure." The ideal structure requires 1 on the diagonal (unit norm) and $-1/(K-1)$ for off-diagonal elements, forcing maximum equiangular separation on the hypersphere. Combined with FOFS, this reduces expert similarity from 0.45 in vanilla MoE to near 0.02.
 
-#### 3. ETF Loss (Equiangular Tight Frame Loss)
+**4. PAA (Patch Average Aggregation): Earlier multi-scale perception**
 
-**Function**: Constrain expert output vectors to maximal equiangular separation at the output end of LoRA experts, eliminating output-level redundancy.
+ViT patch sizes are fixed, making it difficult to capture both small defects and large lesions. PAA reshapes patch embeddings into a 2D grid and applies mean pooling with sliding window scales $s \in \{1, 3, 5\}$ to produce multi-scale features without additional parameters. This is particularly effective for medical datasets where lesion sizes vary significantly.
 
-**Mechanism**: For each patch at each layer, the Gram matrix of the $K$ expert outputs (after $\ell_2$ normalization) is computed, and its deviation from the ideal ETF Gram matrix is penalized via the Frobenius norm. The ideal structure requires diagonal entries of 1 (unit norm) and off-diagonal entries of $-1/(K-1)$ (maximal equiangularity).
+**5. Depth-wise Adapter: Global representation for semantic alignment**
 
-**Design Motivation**: FOFS constrains only the input side; the learnable $B$ matrices can still cause expert outputs to converge to similar subspaces. The ETF loss serves as a complementary mechanism, further enforcing expert differentiation at the output side.
+To obtain a clean global vector for image-level scores, MoECLIP employs a lightweight 1D depthwise separable convolution (Depthwise + Pointwise) on the final PAA features. Global Average Pooling (GAP) then yields the image-level vector $V_{\text{image}}$. This structure integrates local features into a semantically aligned representation with minimal parameter overhead.
 
-#### 4. PAA (Patch Averaging Aggregation)
-
-**Function**: Integrate multi-scale contextual information during training to improve detection of anomalies at varying sizes.
-
-**Mechanism**: Patch embeddings are reshaped into a 2D spatial grid, and average pooling is applied over multiple sliding window scales $s \in \{1, 3, 5\}$, independently producing multiple sets of patch features. No additional parameters are introduced.
-
-**Design Motivation**: The fixed patch size of ViT is inherently limited in detecting anomalies at different scales; existing methods apply patch aggregation only at test time, lacking multi-scale awareness during training. The benefit is especially pronounced on medical datasets.
-
-#### 5. Depth-wise Adapter
-
-**Function**: Provide semantically aligned global features for image-level anomaly scoring.
-
-**Mechanism**: Inspired by MobileNet, a 1D depthwise separable convolution (Depthwise + Pointwise) processes the final-layer PAA features, followed by global average pooling to obtain an image-level vector $V_{\text{image}}$, which is compared with text features via cosine similarity to produce the anomaly score.
+> Routing learns content-related division: Grad-CAM visualizations show Expert 1 focuses on anomaly regions, Expert 2 on the object body, and Expert 3 on the background.
 
 ### Loss & Training
 
-Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{seg}} + \mathcal{L}_{\text{ac}} + \lambda_{\text{etf}}\mathcal{L}_{\text{etf}} + \lambda_{\text{bal}}\mathcal{L}_{\text{bal}}$
+Total Loss: $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{seg}} + \mathcal{L}_{\text{ac}} + \lambda_{\text{etf}}\mathcal{L}_{\text{etf}} + \lambda_{\text{bal}}\mathcal{L}_{\text{bal}}$$
 
-- **Segmentation loss** $\mathcal{L}_{\text{seg}}$: Focal + Dice Loss, applied to multi-layer multi-scale anomaly maps
-- **Classification loss** $\mathcal{L}_{\text{ac}}$: BCE Loss, applied to image-level anomaly scores
-- **ETF loss**: $\lambda_{\text{etf}}=0.01$, constrains expert outputs to equiangular separation
-- **Balance loss**: $\lambda_{\text{bal}}=0.01$, uses the squared coefficient of variation of routing probabilities to prevent expert collapse
+- **Segmentation Loss** $\mathcal{L}_{\text{seg}}$: Focal + Dice Loss, applied to multi-layer multi-scale anomaly maps.
+- **Classification Loss** $\mathcal{L}_{\text{ac}}$: BCE Loss, applied to image-level anomaly scores.
+- **ETF Loss**: $\lambda_{\text{etf}}=0.01$, constrains expert outputs to be equiangular.
+- **Balance Loss**: $\lambda_{\text{bal}}=0.01$, prevents expert collapse using the squared coefficient of variation for routing probabilities.
 
-Training configuration: OpenCLIP ViT-L/14-336, image size 518×518, Adam with $\text{lr}=5 \times 10^{-4}$, 20 epochs, 2× V100 16 GB.
+Training config: OpenCLIP ViT-L/14-336, 518×518 images, Adam $\text{lr}=5 \times 10^{-4}$, 20 epochs, 2×V100 16GB.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison with 6 state-of-the-art methods on 14 datasets (5 industrial + 9 medical); all models are trained on VisA (for VisA evaluation, MVTec-AD is used as the training set).
+Evaluated against 6 SOTA methods across 14 datasets (5 industrial + 9 medical). VisA was used for training (except when evaluating VisA, where MVTec-AD was used).
 
-**Table 1: Image-level anomaly classification (AUROC, AP)**
+**Table 1: Image-level Anomaly Classification (AUROC, AP)**
 
-| Method | MVTec-AD | VisA | BTAD | RSDD | DTD-Syn | BrainMRI | HeadCT | LiverCT | RetinaOCT | **Average** |
-|--------|----------|------|------|------|---------|----------|--------|---------|-----------|-------------|
+| Method | MVTec-AD | VisA | BTAD | RSDD | DTD-Syn | BrainMRI | HeadCT | LiverCT | RetinaOCT | **Avg** |
+|------|----------|------|------|------|---------|----------|--------|---------|-----------|----------|
 | WinCLIP | (91.8,95.1) | (78.1,77.5) | (83.3,84.1) | (85.3,65.3) | (95.0,97.9) | (45.1,80.3) | (83.7,81.6) | (66.5,56.1) | (53.7,44.3) | (75.8,75.8) |
 | AnomalyCLIP | (91.9,96.2) | (82.1,85.4) | (92.5,94.2) | (74.0,73.2) | (93.3,97.7) | (70.8,90.6) | (95.1,95.3) | (68.2,63.4) | (74.7,73.9) | (82.5,85.5) |
 | AA-CLIP | (90.9,96.0) | (79.2,83.7) | (94.8,97.5) | (94.9,94.2) | (92.5,97.7) | (79.6,94.4) | (95.4,94.3) | (58.4,49.7) | (83.4,83.8) | (85.5,87.9) |
 | Bayes-PFL | (92.2,96.1) | (86.8,89.3) | (93.0,96.7) | (91.3,89.7) | (93.5,97.7) | (81.9,94.5) | (95.4,93.2) | (61.7,55.2) | (83.7,81.8) | (86.6,88.2) |
 | **MoECLIP** | **(93.9,96.8)** | **(83.6,86.2)** | **(93.1,98.0)** | **(95.3,95.1)** | **(95.5,98.6)** | **(88.5,97.1)** | **(96.6,94.5)** | **(74.0,64.6)** | **(85.5,84.9)** | **(89.6,90.6)** |
 
-MoECLIP achieves an average image-level AUROC of 89.6% (+3.0%) and AP of 90.6% (+2.4%).
+**Table 2: Pixel-level Anomaly Segmentation (AUROC, AP) - Selected Data**
 
-**Table 2: Pixel-level anomaly segmentation (AUROC, AP) — selected results**
-
-| Method | MVTec-AD | BTAD | BrainMRI | ColonDB | ClinicDB | Kvasir | **Average** |
-|--------|----------|------|----------|---------|----------|--------|-------------|
+| Method | MVTec-AD | BTAD | BrainMRI | ColonDB | ClinicDB | Kvasir | **Avg** |
+|------|----------|------|----------|---------|----------|--------|----------|
 | AA-CLIP | (91.6,45.4) | (95.6,49.4) | (96.7,55.1) | (82.8,31.5) | (89.2,49.8) | (86.0,52.9) | (93.2,45.8) |
 | Bayes-PFL | (91.9,48.4) | (95.6,48.6) | (95.7,42.9) | (82.9,30.7) | (88.2,49.1) | (85.6,53.4) | (93.2,44.3) |
 | **MoECLIP** | **(92.5,45.7)** | **(96.8,50.4)** | **(97.3,61.3)** | **(85.4,34.8)** | **(89.7,49.9)** | **(88.1,57.6)** | **(94.3,47.5)** |
 
-Pixel-level average AUROC reaches 94.3% (+1.1%) and AP 47.5% (+1.7%), with particularly notable gains on medical datasets (BrainMRI AP +6.2%, Kvasir AP +4.2%).
-
 ### Ablation Study
 
-**Table 3: Component ablation (Pixel AUROC, Image AUROC)**
+**Table 3: Component Ablation (Pixel AUROC, Image AUROC)**
 
 | Configuration | MVTec-AD | DTD-Syn | HeadCT | ColonDB | Average |
-|---------------|----------|---------|--------|---------|---------|
+|------|----------|---------|--------|---------|------|
 | Vanilla CLIP | (38.4,74.1) | (33.9,71.6) | (-,56.5) | (49.5,-) | (40.6,67.4) |
 | w/o FOFS & ETF | (91.6,91.7) | (97.8,93.1) | (-,94.4) | (84.1,-) | (91.2,93.1) |
 | w/o FOFS | (92.0,92.8) | (98.3,93.9) | (-,95.0) | (85.3,-) | (91.9,93.9) |
@@ -150,39 +145,39 @@ Pixel-level average AUROC reaches 94.3% (+1.1%) and AP 47.5% (+1.7%), with parti
 
 ### Key Findings
 
-1. **FOFS and ETF are complementary**: Removing either component individually degrades performance, and removing both causes a larger drop, confirming the necessity of dual constraints at the input and output ends.
-2. **Functional redundancy quantified**: Inter-expert cosine similarity decreases from 0.45 (vanilla MoE) → 0.24 (after adding FOFS) → 0.02 (after adding ETF), nearly eliminating redundancy entirely.
-3. **PAA is critical for the medical domain**: Removing PAA decreases performance by 3.5% on HeadCT and 3.5% on ColonDB, demonstrating the importance of multi-scale perception for medical anomaly detection.
-4. **More experts is not necessarily better**: $K=4$ is optimal; $K>4$ leads to performance degradation due to functional redundancy.
-5. **Cross-domain generalization**: Despite training only on industrial data, MoE experts still route and specialize effectively on medical data.
+1. **FOFS and ETF are complementary**: Removing either component degrades performance; removing both results in a significantly larger drop, proving the necessity of dual constraints.
+2. **Functional Redundancy Quantification**: Inter-expert cosine similarity drops from 0.45 (vanilla MoE) to 0.24 (with FOFS) and finally to 0.02 (with ETF), eliminating nearly all redundancy.
+3. **PAA is crucial for the medical domain**: Removing PAA drops HeadCT by 3.5% and ColonDB by 3.5%, highlighting the importance of multi-scale context in medical AD.
+4. **Optimal Expert Count**: $K=4$ is optimal; larger $K$ values lead to performance degradation due to redundancy.
+5. **Cross-domain Generalization**: Even when trained on industrial data, MoE experts specialize and route effectively for medical data.
 
 ## Highlights & Insights
 
-1. **First introduction of MoE into ZSAD**: A pioneering paradigm shift from patch-agnostic to patch-specialized processing.
-2. **Elegant dual-end constraint design**: FOFS physically isolates subspaces at the input side (frozen, zero extra parameters); ETF loss enforces a geometrically optimal structure at the output side; the two mechanisms are orthogonal and mutually complementary.
-3. **Intuitive visualization**: Grad-CAM clearly shows Expert 1 focusing on anomalous regions, Expert 2 on the object body, and Expert 3 on the background, confirming that routing is genuinely content-driven.
-4. **The elegance of freezing $A$ in FOFS**: By leveraging the recent LoRA finding that random orthogonal $A \approx$ learned $A$, the design simultaneously achieves orthogonal separation, parameter savings, and overfitting suppression.
+1. **First introduction of MoE to ZSAD**: Pioneering shift from patch-agnostic to patch-specialized paradigms.
+2. **Elegant Dual-Constraint Design**: FOFS physically isolates subspaces at the input (frozen, zero overhead), while ETF loss enforces geometric constraints at the output.
+3. **Intuitive Visual Verification**: Grad-CAM clear shows content-based routing (Expert 1: anomaly, Expert 2: object, Expert 3: background).
+4. **Effective usage of frozen A matrices in FOFS**: Leverages insights from LoRA research (random orthogonal A $\approx$ learned A) to gain separation, parameter efficiency, and reduced overfitting.
 
 ## Limitations & Future Work
 
-1. **Expert count set manually**: $K=4$ is an empirical choice; no mechanism exists to adaptively determine the number of experts.
-2. **FOFS partitions subspaces equally**: Feature dimensions are divided uniformly across experts, without accounting for the possibility that different experts may require different dimensionalities.
-3. **Validated on ViT-L/14 only**: The effect of different backbone scales (e.g., ViT-B, ViT-H) remains unexplored.
-4. **Single auxiliary training set**: VisA is consistently used as the auxiliary training set; the impact of different training sets on generalization has not been investigated.
-5. **Fixed PAA window scales**: $s \in \{1,3,5\}$ is manually defined; adaptive or learnable scale selection could be considered.
+1. **Static Expert Count**: $K=4$ is empirical; lacks an adaptive mechanism for determining the number of experts.
+2. **Equal Subspace Partitioning in FOFS**: Dimensionality is split evenly among experts without considering that different experts might require different capacities.
+3. **Backbone Scale**: Validated only on ViT-L/14; the impact of larger or smaller backbones (e.g., ViT-B, ViT-H) remains unexplored.
+4. **Training Data Diversity**: Relies on VisA as the auxiliary training set; the impact of alternative training sets on generalization is unknown.
+5. **Fixed PAA Scales**: Windows $s \in \{1, 3, 5\}$ are manually set; adaptive or learnable scale selection could be explored.
 
 ## Related Work & Insights
 
-- **Evolution of ZSAD methods**: WinCLIP → April-GAN → AnomalyCLIP → AdaCLIP → AA-CLIP → Bayes-PFL → MoECLIP, progressing from hand-crafted prompts to learned prompts, then adapters, and finally MoE-based dynamic routing.
-- **Addressing functional redundancy in MoE**: Existing approaches (contrastive loss, orthogonal regularization) act solely on the output side; this work simultaneously constrains both the input and output sides, a strategy transferable to other MoE scenarios.
-- **Inspiration from freezing $A$ in LoRA**: Works such as VeRA have validated the feasibility of shared/frozen down-projection matrices; combining this with orthogonal separation is worth exploring in other PEFT+MoE settings.
+- **Evolution of ZSAD**: From WinCLIP $\rightarrow$ April-GAN $\rightarrow$ AnomalyCLIP $\rightarrow$ AdaCLIP $\rightarrow$ AA-CLIP $\rightarrow$ Bayes-PFL $\rightarrow$ MoECLIP. The trend has shifted from manual prompt engineering to learnable prompts, adapters, and finally dynamic MoE routing.
+- **Solving MoE Redundancy**: Traditional methods (contrastive loss, orthogonal regularization) act only on outputs. This paper's dual-sided constraint (input + output) is a generalizable idea for other MoE applications.
+- **LoRA Orthogonality**: Works like VeRA have verified frozen down-projection matrices. Combining this with orthogonal separation for MoE is a promising direction for PEFT research.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Pioneering introduction of MoE into ZSAD establishing a patch-specialized paradigm; the dual-end FOFS+ETF constraint is conceptually distinctive.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across 14 datasets (industrial + medical) with full comparisons, ablations, visualizations, and quantified expert similarity; highly rigorous.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, methodology is systematically presented, and visualizations are informative.
-- **Value**: ⭐⭐⭐⭐ — Provides elegant solutions to both ZSAD and MoE functional redundancy; the approach generalizes naturally to other PEFT+MoE scenarios.
+- Novelty: ⭐⭐⭐⭐ Introduces MoE to ZSAD for a patch-specialized paradigm; unique dual-constraint approach (FOFS+ETF).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive evaluation on 14 datasets, ablation studies, visualization, and redundancy quantification.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, systematic methodology, and rich visualizations.
+- Value: ⭐⭐⭐⭐ Elegantly solves both the ZSAD patch-agnostic problem and MoE functional redundancy, with potential for broader PEFT+MoE applications.
 
 <!-- RELATED:START -->
 
@@ -191,10 +186,10 @@ Pixel-level average AUROC reaches 94.3% (+1.1%) and AP 47.5% (+1.7%), with parti
 ## Related Papers
 
 - [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](../../AAAI2026/object_detection/promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
-- [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
+- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
+- [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
 
 </div>
 

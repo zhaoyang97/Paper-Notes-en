@@ -2,85 +2,98 @@
 title: >-
   [Paper Note] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Multi-Object Tracking] This paper proposes OA-SORT, an occlusion-aware tracking framework that explicitly models target occlusion states to mitigate positional cost ambiguity and Kalman F…
+  [CVPR 2026][Video Understanding][Kalman Filter] The authors propose OA-SORT, an occlusion-aware tracking framework that explicitly models the occlusion states of objects to mitigate position cost confusion and Kalman Filter estimation instability. It achieves SOTA-level improvements on DanceTrack, SportsMOT, and MOT17, with components that can be integrated into var
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Multi-Object Tracking"
-  - "Occlusion Awareness"
-  - "Kalman Filter"
-  - "Data Association"
-  - "Plug-and-Play"
+  - CVPR 2026
+  - Video Understanding
+  - Kalman Filter
 date: 2026-05-08
-content_hash: 86a74d90c3381e32
+content_hash: 83b0f0fcfbce13be
 ---
-
 # Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.06034](https://arxiv.org/abs/2603.06034)  
 **Code**: None  
 **Area**: Video Understanding  
-**Keywords**: Multi-Object Tracking, Occlusion Awareness, Kalman Filter, Data Association, Plug-and-Play
+**Keywords**: Multi-Object Tracking, Occlusion-Aware, Kalman Filter, Data Association, Plug-and-Play
 
 ## TL;DR
 
-This paper proposes OA-SORT, an occlusion-aware tracking framework that explicitly models target occlusion states to mitigate positional cost ambiguity and Kalman Filter estimation instability. The method achieves state-of-the-art improvements on DanceTrack, SportsMOT, and MOT17, with all components being plug-and-play compatible with multiple tracker architectures.
+The authors propose OA-SORT, an occlusion-aware tracking framework that explicitly models the occlusion states of objects to mitigate position cost confusion and Kalman Filter estimation instability. It achieves SOTA-level improvements on DanceTrack, SportsMOT, and MOT17, with components that can be integrated into various trackers in a plug-and-play manner.
 
 ## Background & Motivation
 
-**Positional cost ambiguity caused by occlusion in 2D MOT**: When objects of the same category partially occlude one another, detectors struggle to distinguish foreground from background, producing inaccurate detections and thereby introducing ambiguity into the IoU cost matrix, which leads to identity switches (ID switches).
+**Occlusion in 2D MOT causes position cost confusion**: When objects of the same category are partially occluded, detectors struggle to distinguish between foreground and background, leading to inaccurate detections. This creates ambiguity in the IoU cost matrix, triggering identity switches (ID switches).
 
-**Kalman Filter sensitivity to inaccurate detections**: The discrete linear KF accumulates errors when repeatedly updated with inaccurate detections caused by occlusion, resulting in unstable estimates—a problem that is exacerbated under non-linear motion patterns.
+**Kalman Filter is sensitive to inaccurate detections**: Discrete linear Kalman Filters (KF) accumulate errors after frequently receiving inaccurate detections caused by occlusion, leading to unstable estimation, which is further exacerbated in scenes with non-linear pose changes.
 
-**Vulnerability of auxiliary cues to occlusion**: Appearance features become unreliable under occlusion due to contamination from occluding targets; motion direction partially reduces matching failures but does not resolve cost ambiguity; detection confidence is also sensitive to occlusion.
+**Existing auxiliary cues remain fragile under occlusion**: The reliability of appearance features decreases under occlusion (contaminated by features of the foreground object); while motion direction helps reduce matching failures, cost confusion persists; detection confidence is also sensitive to occlusion.
 
-**Absence of explicit occlusion state modeling**: Existing methods either model occlusion indirectly (e.g., via active/inactive states) or employ motion compensation to recover lost targets, but none directly estimate occlusion severity and leverage it to correct association costs.
+**Lack of explicit modeling of occlusion states**: Existing methods either model occlusion indirectly (e.g., using active/inactive states) or use motion compensation to recover lost objects, but they do not directly estimate the severity of occlusion or utilize it to refine association costs.
 
-**Underutilization of depth information**: Although methods such as PD-SORT and SparseTrack exploit pseudo-depth to design association strategies, they remain susceptible to cost ambiguity induced by occlusion.
+**Insufficient utilization of depth information**: Although methods like PD-SORT and SparseTrack use pseudo-depth to design association strategies, they are still affected by cost confusion caused by occlusion.
 
-**Need for a general, training-free occlusion-aware framework**: The objective is to design plug-and-play, training-free components that can be readily integrated into diverse tracker architectures to improve robustness.
+**Need for a generic, training-free occlusion-aware framework**: The goal is to design plug-and-play, training-free components that can be easily integrated into various tracker architectures to enhance robustness.
 
 ## Method
 
 ### Overall Architecture
 
-OA-SORT builds upon Hybrid-SORT as the baseline, employing a three-stage association strategy (high-score detection association → low-score detection association → lost tracklet re-linking), augmented with three occlusion-aware components:
+The core problem OA-SORT addresses is the inaccuracy of detection boxes when objects of the same class occlude each other, which leads to IoU association cost confusion and Kalman Filter (KF) estimation divergence, resulting in identity switches. Built upon the three-stage association of Hybrid-SORT (High-score association → Low-score association → Lost track reconnection), it appends three "occlusion-aware" components: the Occlusion-Aware Module (OAM) calculates the occlusion degree for each object, the Occlusion-Aware Offset (OAO) injects this degree into association costs, and the Bias-Aware Momentum (BAM) injects it into KF updates. The entire framework is plug-and-play and training-free. Specifically, OAM consists of three sub-steps: "Depth Sorting → Occlusion Coefficient → Gaussian Map Refinement" (corresponding to the first three points of Key Designs). OAO and BAM are independent components.
 
-- **OAM (Occlusion-Aware Module)**: Analyzes target occlusion states and produces occlusion coefficients.
-- **OAO (Occlusion-Aware Offset)**: Incorporates occlusion coefficients into positional costs to alleviate cost ambiguity.
-- **BAM (Bias-Aware Momentum)**: Leverages occlusion coefficients to refine the KF update step and suppress estimation drift.
+The data flow for a single frame is as follows: The KF first provides position predictions, based on which OAM calculates the occlusion coefficients. During high-score detection association, OAO uses the occlusion coefficient from the KF estimation side to refine the spatial consistency metric. Tracks associated with low-score detections then have their KF motion parameters adjusted via BAM. Finally, at the end of the frame, OAM recalculates the occlusion coefficients based on the latest observations for use by BAM in the next frame.
 
-The pipeline proceeds as follows: (1) After KF prediction, OAM computes occlusion coefficients from the estimates; (2) During association, OAO integrates occlusion coefficients into the spatial consistency measure; (3) Tracklets associated with low-score detections have their KF motion parameters refined via BAM; (4) Before the current frame ends, OAM recomputes occlusion coefficients from the latest observations for subsequent BAM usage.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["KF Position Prediction"] --> OAM
+    subgraph OAM["OAM: Occlusion-Aware Module (Estimating Occlusion Coefficient)"]
+        direction TB
+        D1["Depth Sorting<br/>Determine front/back by bottom y-coord"] --> D2["Occlusion Coefficient<br/>Ratio of occluded area"]
+        D2 --> D3["Gaussian Map Refinement<br/>Exclude background at bbox edges"]
+    end
+    OAM -->|"Occl. coeff (estimate side)"| S1["High-score Association<br/>OAO injects occl. and refines spatial consistency"]
+    S1 --> S2["Low-score Association<br/>BAM adjusts KF update by occl."]
+    S2 --> S3["Lost Track Reconnection"]
+    S3 --> OUT["Output Frame Trajectories"]
+    OUT -.->|"Recalculate at frame end for next BAM"| OAM
+```
 
 ### Key Designs
 
-**1. Depth Ordering**: Under a bird's-eye-view camera geometry, the vertical position of a bounding box's bottom edge is used to infer depth ordering—a lower bottom-edge $y$-coordinate indicates a target closer to the camera. A 5-pixel threshold is applied to reduce sensitivity.
+**1. Depth Sorting: Determining who occludes whom**
 
-**2. Occlusion Coefficient**: Based on depth ordering, the occlusion coefficient for a target is computed as the ratio of the occluded area to its own bounding box area: $Oc_i = A(\mathcal{O}_i) / A(\mathcal{D}_i)$, with union-based handling for simultaneous occlusion by multiple targets.
+To calculate occlusion, one must first determine which of two overlapping objects is in front. OA-SORT utilizes the imaging principle of top-down cameras: the closer an object is to the camera, the smaller the y-coordinate of its bounding box's bottom edge. This is used to infer depth order. To reduce misjudgment caused by jitter, a 5-pixel threshold is set; if the difference in bottom edges is within this range, no occlusion is determined.
 
-**3. Gaussian Map (GM) Refinement**: The raw occlusion coefficient may overestimate occlusion severity because bounding box borders enclose substantial background pixels. A 2D Gaussian weight map is introduced to assign higher weights to pixels near the target center, yielding a refined coefficient $\hat{Oc}_i = \sum_{(x,y) \in \mathcal{O}_i} GM_{x,y} / A(\mathcal{D}_i)$.
+**2. Occlusion Coefficient: Quantifying occlusion severity as a ratio**
 
-**4. OAO Spatial Consistency Score**: The occlusion coefficient is applied to the KF estimate (rather than the detection, which is unstable under occlusion) and combined with IoU in a weighted sum: $S = \tau \cdot (1 - \hat{Oc}^X) + (1-\tau) \cdot C_{IoU}(\mathcal{D}, X)$. This is activated only during the first-stage high-score detection association.
+With depth order established, the occlusion degree of the occluded object $i$ is defined as the ratio of the occluded area to its own area: $Oc_i = A(\mathcal{O}_i) / A(\mathcal{D}_i)$, where $\mathcal{O}_i$ is the region covered by foreground objects and $\mathcal{D}_i$ is its own detection box. The union area is taken if multiple objects cause occlusion. This scalar is fed directly into association and KF update stages, serving as the central value of the framework.
 
-**5. BAM Adaptive Momentum**: For low-score detections, a momentum term is derived from the occlusion coefficient of the tracklet's most recent observation and an IoU measure: $BAM = C_{IoU}(X_{t|t-1}, Z_t) \cdot (1 - \hat{Oc}^{Z_{t-1}})$. The current observation is then blended with the KF prediction: $\hat{Z}_t = BAM \cdot Z_t + (1-BAM) \cdot H_t X_{t|t-1}$. Severer occlusion or larger detection deviation causes the update to rely more heavily on the KF estimate.
+**3. Gaussian Map Refinement: Excluding background at bbox edges**
+
+Using simple area ratios tends to overestimate occlusion because bounding box edges often contain background pixels; covering these background areas does not represent true object occlusion. Thus, a 2D Gaussian weight map $GM$ is introduced, assigning higher weights to pixels near the object center and lower weights to edge pixels. The refined coefficient is $\hat{Oc}_i = \sum_{(x,y) \in \mathcal{O}_i} GM_{x,y} / A(\mathcal{D}_i)$. The Gaussian parameters $\sigma^x, \sigma^y$ are tuned based on dataset motion patterns (see Training Strategy). This step provides the largest single gain in the ablation study.
+
+**4. OAO: Injecting occlusion coefficients into association costs on the estimate side**
+
+Since occlusion makes detections unreliable, OAO applies the occlusion coefficient to the KF estimate $X$ (rather than the jittery detection) and combines it with the IoU cost as a weighted spatial consistency score: $S = \tau \cdot (1 - \hat{Oc}^X) + (1-\tau) \cdot C_{IoU}(\mathcal{D}, X)$. Here, $\tau$ controls the weight of the occlusion term (DanceTrack 0.15 / SportsMOT 0.2 / MOT17 0.1), and it is only triggered during the first-stage high-score detection association, which is the most prone to identity mismatches due to occlusion.
+
+**5. BAM: Adjusting KF updates based on occlusion severity**
+
+For low-score detections, OA-SORT uses adaptive momentum to adjust the KF update strength: $BAM = C_{IoU}(X_{t|t-1}, Z_t) \cdot (1 - \hat{Oc}^{Z_{t-1}})$. The current observation is then weighted as $\hat{Z}_t = BAM \cdot Z_t + (1-BAM) \cdot H_t X_{t|t-1}$. The intuition is straightforward: when an observation is heavily occluded (large $\hat{Oc}$) or has a large deviation from the prediction (low IoU), $BAM$ decreases, making the update rely more on the KF's own prediction, thereby preventing inaccurate occluded detections from biasing the filter.
 
 ### Loss & Training
 
-OA-SORT is a **training-free** framework requiring no additional training or fine-tuning. All hyperparameters are set empirically:
-
-- The GM parameters $\sigma^x, \sigma^y$ are adjusted according to dataset motion characteristics (DanceTrack: $w/3\sqrt{2}, h/3$; SportsMOT: $w/4, h/3$; MOT17: $w/2, h/2$).
-- The OAO balancing coefficient $\tau$ is tuned in the range 0.1–0.2 (DanceTrack: 0.15, SportsMOT: 0.2, MOT17: 0.1).
-- BAM uniformly uses HMIoU as the spatial consistency measure.
+This method is a **training-free** framework, requiring no additional training or fine-tuning. All hyperparameters are set empirically: $GM$ parameters $\sigma^x, \sigma^y$ are adjusted by dataset motion patterns (DanceTrack: $w/3\sqrt{2}, h/3$; SportsMOT: $w/4, h/3$; MOT17: $w/2, h/2$), the OAO balance coefficient $\tau$ is between 0.1–0.2, and BAM consistently uses HMIoU as the spatial consistency metric.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**DanceTrack test set (non-linear motion + frequent occlusion)**
+**DanceTrack test set (Non-linear motion + frequent occlusion)**
 
 | Method | HOTA | AssA | MOTA | IDF1 |
-|--------|------|------|------|------|
+|------|------|------|------|------|
 | Hybrid-SORT | 62.2 | 47.4 | 91.6 | 63.0 |
 | **OA-SORT** | **63.1** | **48.5** | **91.7** | **64.2** |
 | OA-Byte (ByteTrack+OA) | 49.0 | 33.7 | 89.6 | 55.9 |
@@ -88,39 +101,39 @@ OA-SORT is a **training-free** framework requiring no additional training or fin
 | OA-Sparse (SparseTrack+OA) | 57.8 | 41.8 | 91.5 | 60.2 |
 | OA-PD (PD-SORT+OA) | 60.4 | 44.9 | 91.4 | 60.8 |
 
-**SportsMOT test set (variable-speed motion + camera motion)**
+**SportsMOT test set (Variable speed + camera motion)**
 
 | Method | HOTA | AssA | MOTA | IDF1 |
-|--------|------|------|------|------|
+|------|------|------|------|------|
 | Hybrid-SORT | 73.0 | 61.6 | 94.3 | 73.3 |
 | **OA-SORT** | **73.4** | **62.3** | **94.4** | **74.1** |
 | Hybrid-SORT* | 74.8 | 63.2 | 96.2 | 75.1 |
 | **OA-SORT*** | **75.2** | **63.8** | **96.3** | **75.8** |
 
-**MOT17 test set (linear motion + long-term occlusion)**
+**MOT17 test set (Linear motion + long-term occlusion)**
 
 | Method | HOTA | AssA | MOTA | IDF1 |
-|--------|------|------|------|------|
+|------|------|------|------|------|
 | Hybrid-SORT | 63.6 | 63.2 | 80.6 | 78.4 |
 | **OA-SORT** | **64.2** | **64.0** | 79.6 | **79.1** |
 | Hybrid-SORT-REID | 64.0 | 63.5 | 79.9 | 78.7 |
 
 ### Ablation Study
 
-**Component ablation (DanceTrack-val)**
+**Component Ablation (DanceTrack-val)**
 
-| OAO | BAM | GM | HOTA | AssA | IDF1 | Time Overhead |
-|-----|-----|----|------|------|------|---------------|
+| OAO | BAM | GM | HOTA | AssA | IDF1 | Inference Latency $\Delta$ |
+|-----|-----|----|------|------|------|----------|
 | - | - | - | 59.4 | 44.9 | 60.7 | 9.57ms |
 | ✓ | - | - | 59.9 | 45.6 | 60.9 | +1.96ms |
 | - | ✓ | - | 60.5 | 46.5 | 62.2 | +3.81ms |
 | ✓ | ✓ | - | 60.6 | 46.7 | 62.0 | +9.25ms |
 | ✓ | ✓ | ✓ | **61.5** | **48.0** | **63.7** | +14.99ms |
 
-**Cross-tracker generalization (DanceTrack-val, all with OAO+BAM+GM)**
+**Generalization across Trackers (DanceTrack-val with OAO+BAM+GM)**
 
-| Tracker | HOTA: Orig→New | IDF1: Orig→New |
-|---------|----------------|----------------|
+| Tracker | Org HOTA→New HOTA | Org IDF1→New IDF1 |
+|--------|-------------------|-------------------|
 | SORT | 48.4→50.4 (+2.0) | 49.6→53.3 (+3.7) |
 | ByteTrack | 47.1→49.3 (+2.2) | 52.7→55.7 (+3.0) |
 | OC-SORT | 52.3→53.8 (+1.5) | 52.0→53.9 (+1.9) |
@@ -128,38 +141,38 @@ OA-SORT is a **training-free** framework requiring no additional training or fin
 
 ### Key Findings
 
-- GM is the most critical component, contributing +2.1 HOTA when introduced alone, as it effectively suppresses the interference of background pixels at bounding box borders on occlusion estimation.
-- BAM alone outperforms OAO alone (+1.1 vs. +0.5 HOTA), indicating that refining KF estimates is more beneficial than correcting association costs.
-- Performance degrades when $\tau$ exceeds approximately 0.2; excessively large occlusion offsets distort the spatial consistency representation.
-- OA-SORT without ReID even surpasses Hybrid-SORT-REID (+0.5 AssA, +0.3 IDF1), demonstrating that occlusion awareness can partially substitute for appearance features.
-- Sequences with more severe occlusion benefit from larger improvements (see Fig. 1).
+- GM is the most critical component, providing a +2.1 HOTA gain alone because it effectively suppresses background noise in occlusion estimation.
+- BAM alone performs better than OAO alone (+1.1 vs +0.5 HOTA), suggesting that optimizing the KF estimate is more important than refining association costs.
+- Performance drops when $\tau$ exceeds ~0.2, as excessively large occlusion offsets disrupt the spatial consistency representation.
+- OA-SORT without ReID outperforms Hybrid-SORT-REID (+0.5 AssA, +0.3 IDF1), suggesting that occlusion-awareness can partially substitute for appearance features.
+- The more severe the occlusion in a video sequence, the greater the performance gain (see Fig. 1).
 
 ## Highlights & Insights
 
-- **Direct modeling of occlusion severity**: Unlike indirect occlusion handling methods, OAM explicitly computes occlusion coefficients and injects them into both the association stage and the KF update step.
-- **Gaussian Map refinement of occlusion estimates**: The use of a 2D Gaussian weight map to downweight background pixels near bounding box borders is a novel contribution and the largest source of performance gain in the paper.
-- **Fully plug-and-play and training-free**: All three modules can be used independently and have been validated across seven trackers: SORT, ByteTrack, OC-SORT, SparseTrack, PD-SORT, TrackTrack, and BOT-SORT.
-- **Rigorous problem analysis**: Section 3 provides a systematic analysis of how occlusion induces cost ambiguity through detection error and estimation error accumulation, establishing a solid theoretical foundation for the proposed designs.
+- **Direct modeling of occlusion severity**: Unlike indirect occlusion handling, OAM explicitly calculates an occlusion coefficient and injects it into both association and KF update steps.
+- **Gaussian Map refined occlusion estimation**: Innovatively uses 2D Gaussian weights to reduce the impact of background pixels at bbox edges, providing the most significant gain.
+- **Fully plug-and-play and training-free**: All three modules can be used independently and have been verified effective across seven trackers including SORT, ByteTrack, OC-SORT, and others.
+- **Clear problem analysis**: Section 3 provides a rigorous analysis of how occlusion causes cost confusion through detection and estimation error accumulation, offering a solid theoretical foundation.
 
-## Limitations & Future Work
+## Limitations
 
-- **Restrictive assumption of bottom-edge depth ordering**: When the lower half of a target is occluded or when targets are airborne (e.g., jumping), the bottom-edge position fails to accurately reflect depth relationships, degrading framework performance.
-- **Lack of long-term occlusion modeling**: Occlusion states and their temporal evolution constitute a continuous process; the current method relies only on instantaneous occlusion information without modeling the long-term temporal dynamics of occlusion.
-- **Computational overhead of GM**: Introducing GM increases average per-frame tracking time by approximately 15ms, which, while still satisfying real-time requirements, may become a bottleneck in very large-scale scenarios.
-- **Dataset-specific hyperparameter tuning**: The parameters $\sigma^x$, $\sigma^y$, and $\tau$ require empirical tuning for different scenarios, necessitating additional calibration when generalizing to entirely new domains.
+- **Restricted depth sorting assumption**: When the lower half of an object is occluded or the object is airborne (e.g., jumping), the bottom-edge position fails to reflect true depth relative to others.
+- **Lack of long-term occlusion modeling**: Occlusion is a continuous process; current methods use only instantaneous occlusion information without modeling temporal evolution.
+- **GM computational overhead**: Introducing GM increases average tracking time by ~15ms per frame, which, while still real-time, may become a bottleneck in massive-scale scenes.
+- **Dataset-specific hyperparameters**: Parameters like $\sigma^x, \sigma^y, \tau$ require empirical tuning per scene, which may limit out-of-the-box generalization.
 
 ## Related Work & Insights
 
-- **Position-association methods**: SORT → OC-SORT → Hybrid-SORT → PD-SORT/SparseTrack (leveraging pseudo-depth). OA-SORT extends this line by further introducing explicit occlusion modeling.
-- **Feature-association methods**: StrongSORT++ and BOT-SORT-REID enhance association with appearance features, but feature reliability also degrades under occlusion. OA-SORT demonstrates that occlusion awareness can partially replace ReID.
-- **Occlusion handling methods**: Stadler (indirect modeling via active/inactive states), Hibo (motion compensation to recover lost targets), and DiffMOT (diffusion-model-based prediction)—none of these directly estimate occlusion severity.
+- **Position-Association series**: Follows the lineage of SORT → OC-SORT → Hybrid-SORT → PD-SORT/SparseTrack (using pseudo-depth). OA-SORT introduces explicit occlusion modeling to this chain.
+- **Feature-Association series**: Methods like StrongSORT++ and BOT-SORT-REID use appearance features, but feature reliability also suffers under occlusion. OA-SORT proves occlusion-awareness can be a competitive alternative.
+- **Occlusion handling methods**: Compares against Stadler (indirect active/inactive modeling), Hibo (motion compensation for recovery), and DiffMOT (diffusion-based prediction), none of which directly estimate occlusion severity.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Explicit occlusion coefficients, Gaussian Map refinement, and dual-path injection constitute a novel and well-motivated design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets, seven tracker integrations, detailed ablations, and hyperparameter sensitivity analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Problem analysis is thorough, mathematical derivations are clear, and figures and tables are well-organized.
-- Value: ⭐⭐⭐⭐ — The plug-and-play design offers strong practical utility, with consistent and reasonable performance gains.
+- Novelty: ⭐⭐⭐⭐ — Explicit occlusion coefficient + Gaussian refinement + dual-path injection is a novel combined approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Three datasets + seven tracker integrations + detailed ablation + parameter analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Sound problem analysis, clear mathematical derivations, and professional charts.
+- Value: ⭐⭐⭐⭐ — Practical plug-and-play design with consistent and reasonable improvements.
 
 <!-- RELATED:START -->
 
@@ -167,11 +180,11 @@ OA-SORT is a **training-free** framework requiring no additional training or fin
 
 ## Related Papers
 
-- [\[CVPR 2026\] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking](fc-track_overlap-aware_post-association_correction_for_online_multi-object_track.md)
-- [\[AAAI 2026\] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](../../AAAI2026/video_understanding/plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)
+- [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
+- [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
-- [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](storm_referring_multi_object_tracking.md)
-- [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
+- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
 
 </div>
 

@@ -2,75 +2,84 @@
 title: >-
   [Paper Note] Multi-Drafter Speculative Decoding with Alignment Feedback
 description: >-
-  [ACL 2026][LLM Efficiency][Speculative Decoding] This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. It models drafter selection as a Multi-Armed Ban…
+  [ACL 2026][LLM Efficiency][Inference Acceleration] This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. By modeling drafter selection as a Multi-Armed Bandit (MAB) problem and using Block Divergence as a reward signal, MetaSD dynamically selects the drafter most aligned with the target LLM. It consis
 tags:
-  - "ACL 2026"
-  - "LLM Efficiency"
-  - "Speculative Decoding"
-  - "Multi-Armed Bandit"
-  - "Multi-Drafter"
-  - "Alignment Feedback"
-  - "Inference Acceleration"
+  - ACL 2026
+  - LLM Efficiency
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: aeebdfda4b432873
+content_hash: b95801f94e053d81
 ---
-
 # Multi-Drafter Speculative Decoding with Alignment Feedback
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.05417](https://arxiv.org/abs/2604.05417)  
 **Code**: Yes  
 **Area**: LLM Efficiency  
-**Keywords**: Speculative Decoding, Multi-Armed Bandit, Multi-Drafter, Alignment Feedback, Inference Acceleration
+**Keywords**: Speculative Decoding, Multi-Armed Bandit, Multi-Drafters, Alignment Feedback, Inference Acceleration
 
 ## TL;DR
 
-This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. It models drafter selection as a Multi-Armed Bandit (MAB) problem and dynamically selects the drafter best aligned with the target LLM using a Block Divergence reward signal. MetaSD consistently outperforms single-drafter methods in both black-box and white-box configurations.
+This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. By modeling drafter selection as a Multi-Armed Bandit (MAB) problem and using Block Divergence as a reward signal, MetaSD dynamically selects the drafter most aligned with the target LLM. It consistently outperforms single-drafter methods in both black-box and white-box configurations.
 
 ## Background & Motivation
 
-**Background**: Speculative decoding accelerates LLM inference by using a small model (drafter) to predict future tokens, which are then verified in parallel by a large model. Existing methods have improved acceptance rates through architectural enhancements (e.g., EAGLE, Medusa), knowledge distillation, and tree-search verification.
+**Background**: Speculative decoding accelerates LLM inference using small models (drafters) to predict future tokens, which are verified in parallel by a larger model. Existing methods have improved acceptance rates through architectural enhancements (e.g., EAGLE, Medusa), knowledge distillation, and tree-search verification.
 
-**Limitations of Prior Work**: Existing methods almost exclusively rely on a single drafter. However, a single drafter is typically trained for specific tasks or domains and performs poorly on out-of-distribution inputs or dynamic user queries. As the trend toward "integration of expert models" (similar to LLM routing) rises, the limitations of single drafters become more pronounced.
+**Limitations of Prior Work**: Most existing methods rely on a single drafter. However, a single drafter is typically trained for specific tasks or domains and performs poorly on out-of-distribution inputs or dynamic user queries. With the rise of "Expert Model Integration" (similar to LLM routing), the limitations of single drafters have become more pronounced.
 
-**Key Challenge**: Different tasks require different drafters, but it is impossible to determine the most suitable drafter for a given input before inference. Manual switching is impractical, necessitating an adaptive dynamic selection mechanism.
+**Key Challenge**: Different tasks require different drafters, but it is impossible to know which drafter is most suitable for a given input in advance during inference. Manual switching is infeasible, necessitating an automated dynamic selection mechanism.
 
-**Goal**: Design a multi-drafter framework capable of dynamically selecting the optimal drafter during the inference process.
+**Goal**: Design a multi-drafter framework that can dynamically select the optimal drafter during the inference process.
 
-**Key Insight**: Speculative decoding naturally provides "alignment feedback"—the degree of match between the drafter's predictions and the target model's predictions—which can serve as a real-time reward signal. This perfectly corresponds to the Multi-Armed Bandit problem, where each drafter is an arm and the alignment feedback is the reward signal.
+**Key Insight**: Speculative decoding naturally provides "alignment feedback"—the degree of match between drafter predictions and target model predictions—which can serve as a real-time feedback signal. This maps perfectly to the Multi-Armed Bandit problem: each drafter acts as an arm, and the alignment feedback serves as the reward signal.
 
-**Core Idea**: Multi-drafter speculative decoding is modeled as an MAB problem. The paper proposes Block Divergence (BD) as a reward signal (which is more informative and has lower variance than traditional block efficiency) and applies the UCB algorithm to dynamically balance exploration and exploitation for drafter selection.
+**Core Idea**: Multi-drafter speculative decoding is modeled as an MAB problem. The paper introduces Block Divergence (BD) as a reward signal, which is more informative and has lower variance than traditional block efficiency. The UCB algorithm is employed to dynamically balance exploration and exploitation during drafter selection.
 
 ## Method
 
 ### Overall Architecture
 
-The system maintains a pool of $K$ heterogeneous drafters. In each speculative decoding round, the UCB algorithm selects one drafter to perform a draft-verify-accept step. A Block Divergence reward is calculated based on the acceptance result to update the empirical mean and confidence interval for that drafter. This cycle continues until a sequence of target length $B$ is generated.
+MetaSD maintains a pool of $K$ heterogeneous drafters to address the problem of selecting the most aligned drafter in real-time. This selection process is framed within a Multi-Armed Bandit structure where each drafter is an arm, and the alignment feedback generated by speculative decoding represents the reward. The mechanism optimizes for stopping-time regret. In each round, the UCB algorithm selects a drafter based on historical performance to execute a draft-verify-accept cycle. The resulting block divergence reward is used to update the empirical mean and confidence interval for that drafter. This loop continues until a target sequence of length $B$ is generated, allowing the selection strategy to converge to the optimal drafter as observations accumulate.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pool of K Heterogeneous Drafters<br/>Each Drafter = One Arm"] --> B["MetaSD-UCB Selects Drafter<br/>Empirical Mean (Exploitation) + Confidence Interval (Exploration)"]
+    B --> C["Execute One Draft-Verify-Accept Step"]
+    C --> D["Block Divergence Reward<br/>Average of 1−TV Distance per Position"]
+    D --> E["Update Empirical Mean + Confidence Interval"]
+    E -->|Generated B Tokens? No| B
+    E -->|Yes| F["Output Target Sequence of Length B"]
+```
+
+> Optimization Goal: Stopping-time regret—minimizing the difference in total rounds between the current policy and an "oracle optimal" policy for generating $B$ tokens, driving the loop to converge on the optimal arm as quickly as possible.
 
 ### Key Designs
 
-1.  **Block Divergence (BD) Reward**:
-    - **Function**: Provides more informative alignment feedback than traditional block efficiency (BE).
-    - **Mechanism**: $r_{i,t}^{BD} = \frac{1}{N_{max}} \sum_{j=0}^{N_{max}-1} (1 - d_{TV}(p^{l(t)+j}, q_i^{l(t)+j}))$, which calculates the average Total Variation (TV) distance between the probability distributions of the target model and the drafter across all positions in a draft block. Unlike BE (which only counts accepted tokens), BD provides continuous alignment information at every position, avoiding binary information loss.
-    - **Design Motivation**: It is theoretically proven that the "feedback signal" of the BD reward, $R(r_i) = \frac{\Delta_i^2}{\max(\text{Var}[r_i], \text{Var}[r_{i^*}])}$, is greater than that of the BE reward in most cases. A stronger feedback signal allows the bandit algorithm to identify the optimal drafter more quickly and accurately. Empirical results also verify that BD has lower variance and larger mean differences.
+**1. Block Divergence Reward: Replacing Binary Acceptance with Continuous Alignment**
 
-2.  **Stopping Time Regret Objective**:
-    - **Function**: Defines an appropriate optimization objective for multi-drafter speculative decoding.
-    - **Mechanism**: $\text{Reg}(\pi, B) = \mathbb{E}[\tau(\pi, B)] - \mathbb{E}[\tau(\pi^*, B)]$, aiming to minimize the gap between the number of speculative decoding rounds required to generate $B$ tokens and the optimal strategy. A lemma proves this is equivalent to maximizing the number of accepted tokens, aligning with the goal of speculative decoding.
-    - **Design Motivation**: Standard MAB regret (maximizing cumulative reward) does not directly correspond to speculative decoding efficiency, as the number of rounds is stochastic and depends on the quality of the drafters.
+To identify the optimal arm quickly, reward signals should be as clean as possible. Traditional "block efficiency" (the count of accepted tokens in a block) is a discrete integer that collapses rich distribution information, leading to high variance. MetaSD introduces Block Divergence (BD): at each position of a draft block, it calculates the Total Variation (TV) distance between the target model and the drafter's probability distributions, then averages them: $r_{i,t}^{BD} = \frac{1}{N_{max}} \sum_{j=0}^{N_{max}-1} \big(1 - d_{TV}(p^{l(t)+j}, q_i^{l(t)+j})\big)$. This allows every position to contribute continuous alignment information, avoiding the loss of information inherent in binary "accept/reject" signals.
 
-3.  **MetaSD-UCB Algorithm**:
-    - **Function**: Dynamically selects the current optimal drafter by balancing exploration and exploitation.
-    - **Mechanism**: The drafter is chosen via $a_t = \arg\max_{i \in [K]} \hat{\mu}_{i,t} + \beta \sqrt{\frac{2 \ln t}{n_i}}$, where $\hat{\mu}_{i,t}$ is the empirical mean reward and the second term is the confidence interval. Each drafter is tried once during the initialization phase, followed by UCB selection. Theoretical analysis proves an $O(\ln B)$ regret upper bound under the stopping time regret objective.
-    - **Design Motivation**: UCB achieves optimal performance in standard stochastic bandits; MetaSD extends this naturally to the non-standard setting of speculative decoding with rigorous regret analysis.
+The paper quantitatively explains why this is superior by defining feedback signal strength as $R(r_i) = \frac{\Delta_i^2}{\max(\text{Var}[r_i], \text{Var}[r_{i^*}])}$. It demonstrates that in most cases, BD provides a stronger signal than block efficiency, enabling the bandit to identify the optimal drafter with fewer exploration steps.
+
+**2. Stopping-Time Regret: An Objective Tailored for Speculative Decoding**
+
+The regret in standard bandits is "maximizing cumulative reward," which does not directly correspond to speculative decoding efficiency—where the primary concern is the number of rounds required to generate $B$ tokens. MetaSD reformulates the target as stopping-time regret $\text{Reg}(\pi, B) = \mathbb{E}[\tau(\pi, B)] - \mathbb{E}[\tau(\pi^*, B)]$, representing the difference in total rounds between the chosen policy and the optimal strategy.
+
+The paper proves via a lemma that this objective is equivalent to "maximizing the number of tokens accepted per round," which aligns perfectly with the goal of speculative decoding acceleration.
+
+**3. MetaSD-UCB: Dynamic Exploration-Exploitation Trade-off**
+
+MetaSD utilizes a UCB selection rule: in each round, it chooses $a_t = \arg\max_{i \in [K]} \hat{\mu}_{i,t} + \beta \sqrt{\frac{2 \ln t}{n_i}}$. The first term represents the empirical mean reward (exploitation), while the second term represents the width of the confidence interval (exploration). After an initial phase where each drafter is tried once, the rule is applied throughout the generation process. The paper provides rigorous theoretical guarantees, achieving an $O(\ln B)$ regret upper bound, meaning the cost of exploring non-optimal drafters grows only logarithmically with sequence length.
 
 ### Loss & Training
 
-Completely training-free. MetaSD is an inference-time algorithm requiring no additional training. Drafters can be any pre-trained models, supporting both black-box (independent drafters) and white-box (e.g., EAGLE drafters using target LLM hidden states) configurations.
+MetaSD is a training-free, inference-only algorithm. Drafters in the pool can be any pre-trained models. The framework supports both black-box (independent drafters) and white-box (EAGLE drafters reusing target LLM latent representations) configurations.
 
 ## Key Experimental Results
 
-### Black-box Speculative Decoding Speedup
+### Black-Box Speculative Decoding Speedup
 
 | Task | Best Single Drafter | MetaSD-UCB |
 |------|-------------|------------|
@@ -80,7 +89,7 @@ Completely training-free. MetaSD is an inference-time algorithm requiring no add
 | QA | 1.960 | 1.711 |
 | Math | 2.454 | 2.280 |
 
-### White-box Speculative Decoding Speedup (EAGLE Drafters)
+### White-Box Speculative Decoding Speedup (EAGLE Drafters)
 
 | Task | Best Single Drafter | MetaSD-UCB |
 |------|-------------|------------|
@@ -91,32 +100,32 @@ Completely training-free. MetaSD is an inference-time algorithm requiring no add
 | Math | 3.903 | 3.520 |
 
 ### Key Findings
-- MetaSD-UCB automatically selects performance levels near those of the optimal "expert" drafter without prior knowledge of the task type.
-- MetaSD-UCB significantly outperforms random selection (Rand) and static integration, demonstrating the effectiveness of dynamic selection.
-- The larger mean differences and lower variance of the BD reward enable UCB to converge to the optimal drafter faster.
-- The framework naturally handles non-stationarity between queries (by re-initializing for each query) and can be extended to intra-query non-stationarity.
-- Requires no additional training and is plug-and-play.
+- MetaSD-UCB automatically achieves performance levels close to the optimal expert drafter without prior knowledge of the task type.
+- Significant improvements over random selection (Rand) and static aggregation demonstrate the effectiveness of dynamic selection.
+- The high mean difference and low variance of BD rewards allow UCB to converge faster to the optimal drafter.
+- The framework naturally handles non-stationarity between queries and is extensible to non-stationarity within a query.
+- Plug-and-play capability requires no additional training.
 
 ## Highlights & Insights
-- **The combination of speculative decoding and Multi-Armed Bandits** is highly natural: alignment feedback provides reward signals without needing extra design. This modeling introduces online decision theory to LLM inference acceleration.
-- **Deep theoretical analysis of Block Divergence vs. Block Efficiency**: Proving BD's superiority over BE from the perspective of feedback signal strength provides an analytical framework applicable to other scenarios requiring reward design.
-- **Stopping Time Regret** as a new optimization objective is meaningful: It reveals that standard MAB regret is not directly applicable to speculative decoding and requires specialized design.
+- **Integration of MAB and Speculative Decoding**: The combination is highly natural, as alignment feedback inherently provides reward signals. This modeling bridges online decision theory with LLM inference acceleration.
+- **Analytical Depth of BD vs. BE**: Proving the superiority of Block Divergence via feedback signal strength provides a theoretical framework that can be extended to other reward design scenarios.
+- **Stopping-Time Regret**: This objective reveals that standard MAB regret is not directly applicable to speculative decoding and provides a more appropriate metric for inference efficiency.
 
 ## Limitations & Future Work
-- The acceleration ratio of MetaSD is always slightly lower than the ideal upper bound of an "oracle" optimal drafter, as some rounds must be spent exploring non-optimal drafters.
-- Switching drafters incurs KV-cache recalculation overhead, though this can be mitigated using Sequential Halving.
-- Access to the drafter's output distribution is required (rather than just sampled tokens), making it unsuitable for pure black-box APIs.
-- The experiments used 5 drafters; larger drafter pools may require more efficient exploration strategies.
+- Speedup remains slightly below the "Oracle Optimal" upper bound due to required exploration cycles.
+- Drafter switching incurs overhead for KV-cache recomputation, though this can be mitigated by techniques like Sequential Halving.
+- Requires access to probability distributions, making it unsuitable for pure black-box APIs that only return tokens.
+- Scales to larger pools might require more efficient exploration strategies than standard UCB.
 
 ## Related Work & Insights
-- **vs. Standard Speculative Decoding**: Standard methods use a single drafter, while MetaSD extends to a multi-drafter pool with dynamic selection.
-- **vs. LLM Routing**: LLM routing directs queries between models, whereas MetaSD routes speculative decoding steps between drafters at a much finer granularity.
-- **vs. Hou et al. (2025) concurrent work**: Both use MAB for speculative decoding, but MetaSD introduces the BD reward and stronger instance-dependent regret upper bounds.
+- **vs. Standard Speculative Decoding**: While standard methods use a single drafter, MetaSD extends to a heterogeneous pool with dynamic selection.
+- **vs. LLM Routing**: While LLM routing occurs at the query level, MetaSD operates at the finer granularity of speculative decoding steps.
+- **vs. Hou et al. (2025)**: While both use MAB for speculative decoding, MetaSD introduces the BD reward and stronger instance-dependent regret bounds.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The MAB modeling for multi-drafter speculative decoding is natural and elegant, and the BD reward design has theoretical depth.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers black-box/white-box, multi-task, multi-lingual, and non-stationary environments.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical analysis with mutual verification between experiments and theory.
+- Novelty: ⭐⭐⭐⭐ MAB modeling for multi-drafter decoding is elegant, and BD reward design has theoretical depth.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers black-box/white-box settings, multiple tasks, languages, and non-stationary environments.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical analysis validated by experimental results.
 - Value: ⭐⭐⭐⭐ Provides a theoretically optimal selection algorithm for multi-drafter speculative decoding.
 
 <!-- RELATED:START -->
@@ -125,11 +134,11 @@ Completely training-free. MetaSD is an inference-time algorithm requiring no add
 
 ## Related Papers
 
-- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
 - [\[ACL 2026\] RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding](racer_retrieval-augmented_contextual_rapid_speculative_decoding.md)
+- [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](../../NeurIPS2025/llm_efficiency/omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
+- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 
 </div>
 

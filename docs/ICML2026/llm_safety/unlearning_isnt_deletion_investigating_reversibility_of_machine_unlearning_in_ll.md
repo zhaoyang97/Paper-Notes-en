@@ -1,72 +1,69 @@
 ---
 title: >-
-  [Paper Note] Forgetting is Not Erasing: A Survey of Reversibility in Large Language Model Machine Unlearning
+  [Paper Note] 遗忘并非删除：大语言模型机器遗忘中的可逆性调查
 description: >-
-  [ICML 2026][LLM Safety][Machine Unlearning] This paper systematically analyzes the reversibility of LLM unlearning using representation-level diagnostic tools—finding that many unlearning methods merely suppress rather t…
+  [ICML 2026][LLM Safety][Paper Note] This paper systematically analyzes the reversibility of LLM unlearning using representational diagnostic tools. It discovers that many unlearning methods merely suppress rather than truly delete information and proposes a four-tier unlearning taxonomy to distinguish genuine information erasure from superficial performa
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Machine Unlearning"
-  - "Reversibility"
-  - "Representational Analysis"
-  - "LLM Security"
-  - "Privacy"
+  - ICML 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 72ac80caba11fe58
+content_hash: 56fc007b3b90b170
 ---
-
-# Forgetting is Not Erasing: A Survey of Reversibility in Large Language Model Machine Unlearning
+# Unlearning is Not Erasure: An Investigation of Reversibility in LLM Machine Unlearning
 
 **Conference**: ICML 2026  
 **arXiv**: [2505.16831](https://arxiv.org/abs/2505.16831)  
 **Code**: https://github.com/XiaoyuXU1/Representational_Analysis_Tools  
-**Area**: LLM Security / Privacy Protection  
-**Keywords**: Machine Unlearning, Reversibility, Representational Analysis, LLM Security, Privacy
+**Area**: LLM Safety / Privacy Protection  
+**Keywords**: Machine Unlearning, Reversibility, Representational Analysis, LLM Safety, Privacy
 
 ## TL;DR
-This paper systematically analyzes the reversibility of LLM unlearning using representation-level diagnostic tools—finding that many unlearning methods merely suppress rather than truly delete information, and proposes a four-tier unlearning taxonomy to distinguish true information erasure from surface-level performance degradation.
+This paper systematically analyzes the reversibility of LLM unlearning using representational diagnostic tools. It discovers that many unlearning methods merely suppress rather than truly delete information and proposes a four-tier unlearning taxonomy to distinguish genuine information erasure from superficial performance degradation.
 
 ## Background & Motivation
 
-**Limitations of Prior Work**: Current LLM unlearning methods primarily use task-level metrics (accuracy, perplexity) for evaluation, but these metrics are deceptive—even when a model appears to "forget," its original behavior can be rapidly recovered via minimal fine-tuning, suggesting information is only suppressed rather than truly deleted.
+**Limitations of Prior Work**: Current LLM unlearning methods are primarily evaluated using task-level metrics (accuracy, perplexity). However, these metrics can be deceptive; even if a model appears to have "forgotten," its original behavior can be rapidly recovered through minimal fine-tuning, implying that information was only suppressed rather than truly deleted.
 
-**Key Challenge**: The evaluation flaw lies in the inability to distinguish true information erasure from reversible surface performance collapse. Current evaluation frameworks overlook representation-level changes, leading to false unlearning claims.
+**Key Challenge**: The flaw in current evaluations lies in the inability to distinguish between genuine information erasure and reversible superficial performance collapse. Existing evaluation frameworks ignore changes at the representational level, leading to false claims of unlearning.
 
-**Goal**: Establish a representation-level unlearning evaluation framework to uncover the intrinsic mechanisms of unlearning methods and distinguish true information deletion from suppression.
+**Goal**: Establish a representational-level unlearning evaluation framework to discover the internal mechanisms of unlearning methods and distinguish between true information deletion and information suppression.
 
-**Key Insight**: Starting from two dimensions—reversibility (whether forgotten information can be recovered) and catastrophic nature (collateral damage to retained knowledge)—this work introduces tools like PCA similarity, CKA, and Fisher information to systematically analyze representation dynamics.
+**Key Insight**: Starting from two dimensions—reversibility (whether forgotten information can be recovered) and catastrophicity (collateral damage to retained knowledge)—the authors introduce tools like PCA similarity, CKA, and Fisher Information to systematically analyze representational dynamics.
 
 ## Method
 
 ### Overall Architecture
-This paper proposes a unified diagnostic toolkit for unlearning evaluation, containing four complementary representation analysis tools—(1) **PCA Similarity and Shift**: measures directional alignment and translational drift of feature subspaces; (2) **Centered Kernel Alignment (CKA)**: evaluates the preservation of activation subspaces; (3) **Fisher Information Matrix (FIM)**: tracks parameter sensitivity changes in the loss landscape; (4) **Mean PCA Distance**: quantifies the degree of representation drift.
+The paper does not propose a new unlearning algorithm but instead builds a representational-level diagnostic framework to answer a question obscured by task-level metrics: whether unlearning truly deletes information or just temporarily suppresses it. The framework consists of two parts: a **Restricted Relearning Probe**, which uses a minimal fine-tuning budget to test if forgotten knowledge can be recalled to determine "reversibility," and a **Representational Diagnostic Toolkit**, which examines whether internal weights have undergone fundamental changes from the perspectives of feature geometry, activation subspaces, and parameter sensitivity. The signals from these two components are combined to categorize unlearning methods into a four-tier taxonomy: "Reversible/Irreversible × Catastrophic/Non-catastrophic."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Model after unlearning θ_u<br/>vs. original model θ_0"] --> B["Restricted Relearning Probe<br/>Budget = Forget set size"]
+    A --> C["Representational Diagnostic Toolkit<br/>Directly probe internal weights"]
+    B --> B1["Compare recovery speed across three data sources<br/>Forget set / Domain retain set / Irrelevant data"]
+    B1 --> B2["Recovery amount Δ_r → Reversibility dimension"]
+    C --> C1["PCA Similarity & Shift / CKA / Fisher Info<br/>Determine if representations changed substantially"]
+    B2 --> D["Four-tier Unlearning Taxonomy<br/>Reversible / Irreversible × Catastrophic / Non-catastrophic"]
+    C1 --> D
+```
 
 ### Key Designs
 
-1. **Four-tier Unlearning Taxonomy**:
+**1. Restricted Relearning Probe: Probing latent information with a budget equal to the forget set size**  
+Full retraining is too costly to use as a regular probe. This paper uses restricted relearning, where the fine-tuning budget is strictly equal to the size of the forget set, to see if this limited data can "hook back" the forgotten capabilities. If it can, the knowledge was never deleted but was merely latent. Crucially, the protocol deliberately uses three data sources for comparison: the forget set itself (worst-case scenario), domain-related retain sets (realistic scenario, indirect recall via related knowledge), and irrelevant data (robustness test). Comparing the sample efficiency required to achieve the same level of recovery provides a fine-grained scale of unlearning strength. For example, the forget set might require only 100% budget for rapid recovery, while irrelevant data might require 300%+ and only achieve limited recovery.
 
-    - Function: Categorizes unlearning methods into four types based on reversibility and catastrophic nature—Reversible-Non-catastrophic (Target), Reversible-Catastrophic, Irreversible-Catastrophic, and Irreversible-Non-catastrophic (Ideal but difficult to achieve).
-    - Mechanism: Defines performance degradation $\Delta_u(\mathcal{T}) = E(\theta_0, \mathcal{T}) - E(\theta_u, \mathcal{T})$ and performance change after recovery $\Delta_r(\mathcal{T})$, validating the true nature of forgetting through relearning probes.
-    - Design Motivation: Task-level metrics cannot reveal the essential mechanism of forgetting; controlled relearning experiments are necessary to detect whether information is truly deleted.
+**2. Representational Diagnostic Toolkit: Three complementary perspectives to determine if weights truly changed**  
+Relying solely on output is misleading, so the internal weights must be probed directly. The toolkit runs three perspectives in parallel: the geometric perspective uses **PCA similarity and shift** to measure direction alignment and translational drift of feature principal subspaces, quantifying overall drift via **Mean PCA Distance**; the subspace perspective uses **Centered Kernel Alignment (CKA)** to evaluate how much overlap remains in activation subspaces; and the optimization perspective uses the **Fisher Information Matrix (FIM)** to track changes in parameter sensitivity within the loss landscape. While a single metric might misjudge due to accidental alignment at a specific layer, the conclusion is only considered reliable when all three perspectives signal that "representations have substantially changed." These tools are valuable because when the relearning probe indicates "no recovery," representational diagnostics can provide internal evidence that the information was indeed rewritten rather than masked by measurement noise.
 
-2. **Representational Diagnostic Toolkit**:
-
-    - Function: Jointly captures feature geometry, activation subspace preservation, and parameter sensitivity.
-    - Mechanism: Integrates geometric perspective (PCA), subspace perspective (CKA), and optimization perspective (FIM) to verify whether fundamental changes occur in representations from multiple angles.
-    - Design Motivation: A single metric might be misleading; multiple tools used jointly can more accurately determine the true state of representations.
-
-3. **Restricted Relearning Protocol**:
-
-    - Function: Probes whether forgotten knowledge still exists latently through limited-budget fine-tuning, where the budget equals the size of the forget set.
-    - Mechanism: Uses three types of data sources (forget set, domain-related retain set, unrelated data) for relearning, comparing sample efficiency to judge recoverability.
-    - Design Motivation: Full retraining is too costly; restricted relearning is a low-cost, efficient means of probing reversibility.
+**3. Four-tier Unlearning Taxonomy: Replacing single accuracy with orthogonal dimensions of reversibility and catastrophicity**  
+Using signals from the two components above, the evaluation is split into two independent questions and synthesized into a 2D coordinate system. The first is reversibility: defined by the performance drop caused by unlearning $\Delta_u(\mathcal{T}) = E(\theta_0, \mathcal{T}) - E(\theta_u, \mathcal{T})$ (difference between original model $\theta_0$ and unlearned model $\theta_u$ on task $\mathcal{T}$), followed by the recovery amount $\Delta_r(\mathcal{T})$ after restricted relearning. If $\Delta_r$ brings performance back near original levels, it is "reversible," meaning information was not truly deleted. The second is catastrophicity: whether unlearning accidentally damaged the retain set (knowledge that should be kept), measured directly by retain set performance degradation. Binary values for each dimension yield four quadrants: Reversible-Non-catastrophic (a practically acceptable trade-off), Reversible-Catastrophic, Irreversible-Catastrophic, and the ideal but hard-to-reach Irreversible-Non-catastrophic.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Unlearning Method | Forget Accuracy ↓ | Retain Accuracy ↓ | Reversibility | Catastrophic | Classification |
-|---------|------------|-----------|------|------|------|
+| Unlearning Method | Forget Acc ↓ | Retain Acc ↓ | Reversibility | Catastrophicity | Classification |
+|:---|:---|:---|:---|:---|:---|
 | GA | 13.5-20.7% | 11.5-16.0% | ✓ | ✓ | Reversible-Catastrophic |
 | GA+GD | 3.8-15.7% | 0.9-4.3% | ✓ | ✗ | Reversible-Non-catastrophic |
 | GA+KL | 7.9-12.7% | 7.0-12.8% | ✓ | ✓ | Reversible-Catastrophic |
@@ -76,37 +73,37 @@ This paper proposes a unified diagnostic toolkit for unlearning evaluation, cont
 
 ### Relearning Recovery Efficiency
 
-| Data Source Type | Sample Requirement | Recovery Speed | Final Performance | Remarks |
-|---------|---------|--------|--------|------|
-| Forget set itself | 100% | Fastest | Near original | Worst-case scenario |
-| Domain-related retain set | 150-200% | Medium | Partial recovery | Realistic scenario |
-| Unrelated data | 300%+ | Slowest | Limited recovery | Robustness test |
+| Data Source Type | Sample Volume Required | Recovery Speed | Final Performance | Remarks |
+|:---|:---|:---|:---|:---|
+| Forget set itself | 100% | Fastest | Near Original | Worst-case scenario |
+| Domain Retain set | 150-200% | Medium | Partial Recovery | Realistic scenario |
+| Irrelevant data | 300%+ | Slowest | Limited Recovery | Robustness test |
 
 ### Key Findings
 - All six standard methods exhibit reversibility under single-session unlearning, but only GA+GD, NPO variants, and RLabel achieve non-catastrophicity.
-- Recovery strategies without parameter updates, such as prompt attacks, jailbreaking, and quantization, fail completely, indicating that representations are truly altered after unlearning.
-- Sample efficiency analysis reveals heterogeneous recovery characteristics across different data sources.
+- Recovery strategies without parameter updates, such as prompt attacks, jailbreaking, and quantization, fail completely, indicating that representations after unlearning are indeed altered.
+- Sample efficiency analysis reveals that different data sources possess heterogeneous recovery characteristics.
 - In sequential unlearning scenarios, Reversible-Catastrophic methods lead to irreversible collapse of retained knowledge.
 
 ## Highlights & Insights
-- **Innovative combination of representation tools**: First to jointly use PCA, CKA, and FIM to diagnose unlearning.
-- **Relearning as a universal probe**: Standardizes relearning as a reversibility testing method, formalizing a new paradigm for unlearning evaluation.
-- **Clarity of the four-tier taxonomy**: Clearly characterizes essential differences in unlearning through the orthogonal decomposition of reversibility and catastrophicity.
+- **Innovative combination of representational tools**: First work to combine PCA, CKA, and FIM for diagnosing unlearning.
+- **Relearning as a universal probe**: Standardizes relearning as a normalized reversibility test, formalizing a new paradigm for unlearning evaluation.
+- **Clarity of the four-tier taxonomy**: Clearly characterizes the fundamental differences in unlearning through the orthogonal decomposition of reversibility and catastrophicity.
 
 ## Limitations & Future Work
-- Computational cost—representation analysis requires large-scale computation with limited scalability on ultra-large models.
-- Ambiguity of reversibility thresholds—no explicit threshold is provided to determine when "basic recovery" is achieved.
-- Irreversible-Non-catastrophic unlearning remains hard to achieve—a case was identified, but no systematic algorithm was proposed.
+- Computational cost—representational analysis requires large-scale computation, with limited scalability for extremely large models.
+- Ambiguity of reversibility thresholds—no explicit threshold is provided to determine when "substantial recovery" has occurred.
+- Irreversible-Non-catastrophic unlearning remains difficult to achieve—the study identifies the category but does not propose a systematic algorithm to reach it.
 
 ## Related Work & Insights
-- **vs mechanistic interpretability work**: This paper diagnoses existing unlearning methods via representation analysis without modifying model architectures.
-- **vs privacy protection work**: Focuses on the reversibility of information deletion rather than the mathematical boundaries of privacy leakage.
+- **vs. Interpretability/Mechanism work**: This paper does not modify model architecture but diagnoses existing unlearning methods via representational analysis.
+- **vs. Privacy protection work**: Focuses on the reversibility of information deletion rather than mathematical boundaries of privacy leakage.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First systematic representation-level reversibility analysis.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic reversibility analysis at the representational level.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Covers 6 unlearning methods, 2 models, and multiple data domains.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear problem statement and intuitive four-tier taxonomy.
-- Value: ⭐⭐⭐⭐⭐ Reveals fundamental flaws in unlearning evaluation and sets new standards for LLM security assessment and privacy protection.
+- Value: ⭐⭐⭐⭐⭐ Reveals fundamental flaws in unlearning evaluation and sets new standards for LLM safety and privacy evaluation.
 
 <!-- RELATED:START -->
 
@@ -114,11 +111,11 @@ This paper proposes a unified diagnostic toolkit for unlearning evaluation, cont
 
 ## Related Papers
 
-- [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](../../ICLR2026/llm_safety/model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
-- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
-- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
+- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

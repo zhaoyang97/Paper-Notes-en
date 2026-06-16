@@ -2,62 +2,72 @@
 title: >-
   [Paper Note] Image Generation as a Visual Planner for Robotic Manipulation
 description: >-
-  [CVPR 2026][Image Generation][Visual Planning] This work adapts a pretrained image generation model (DiT) via LoRA fine-tuning into a visual planner for robotic manipulation…
+  [CVPR 2026][Image Generation][Diffusion Model] A pre-trained image generation model (DiT) is adapted via LoRA fine-tuning as a visual planner for robotic manipulation. By generating temporally coherent manipulation sequences in the form of $3 \times 3$ grid images, it supports both text-conditioned and trajectory-conditioned control modes.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Visual Planning"
-  - "Robotic Manipulation"
-  - "Diffusion Models"
-  - "Grid Image Generation"
-  - "LoRA"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
+  - LoRA
 date: 2026-05-08
-content_hash: f7af2860a3a634cf
+content_hash: aee0ae5db3faf8a5
 ---
-
 # Image Generation as a Visual Planner for Robotic Manipulation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.00532](https://arxiv.org/abs/2512.00532)  
 **Code**: [GitHub](https://github.com/pangye202264690373/Image-Generation-as-a-Visual-Planner-for-Robotic-Manipulation)  
-**Area**: Image Generation / Robotic Manipulation
+**Area**: Image Generation / Robotic Manipulation  
 **Keywords**: Visual Planning, Robotic Manipulation, Diffusion Models, Grid Image Generation, LoRA
 
 ## TL;DR
 
-This work adapts a pretrained image generation model (DiT) via LoRA fine-tuning into a visual planner for robotic manipulation, generating temporally coherent action sequences in the form of $3\times3$ grid images, supporting both text-conditioned and trajectory-conditioned control modes.
+A pre-trained image generation model (DiT) is adapted via LoRA fine-tuning as a visual planner for robotic manipulation. By generating temporally coherent manipulation sequences in the form of $3 \times 3$ grid images, it supports both text-conditioned and trajectory-conditioned control modes.
 
 ## Background & Motivation
 
-Generating realistic robotic manipulation videos is a critical step toward unified perception-planning-action systems. Existing video diffusion models require large domain-specific datasets, exhibit limited generalization, and incur high computational costs. Meanwhile, large-scale image generation models (e.g., FLUX.1-dev), trained on language-image pairs, demonstrate **strong compositional generation capabilities**—arranging multiple semantically consistent sub-images within a single grid layout, implicitly exhibiting temporal transitions reminiscent of short video clips.
+Generating realistic robotic manipulation videos is a key step towards unifying perception, planning, and action. Existing video diffusion models require large-scale domain-specific datasets, suffer from limited generalization, and entail high computational costs. Meanwhile, large-scale image generation models (such as FLUX.1-dev) trained on image-language pairs have demonstrated **strong compositional generation capabilities**—arranging multiple semantically consistent sub-images within a single grid layout, implicitly representing temporal transitions similar to short videos.
 
-The central hypothesis of this paper is that **pretrained image generators already encode transferable temporal priors**, and lightweight LoRA fine-tuning is sufficient to repurpose them as visual planners for robotic manipulation, without designing dedicated video architectures.
+The core hypothesis of this work is: **Pre-trained image generators have already encoded transferable temporal priors.** Through lightweight LoRA fine-tuning, they can serve as visual planners for robotic manipulation without the need for specialized video architectures.
 
 ## Method
 
 ### Overall Architecture
 
-The framework reformulates robotic manipulation video generation as a $3\times3$ grid image problem. Nine frames are uniformly sampled from each manipulation video and arranged in a serpentine layout ($1\to2\to3$, $6\leftarrow5\leftarrow4$, $7\to8\to9$) to form a grid image. During training, only the top-left first frame is retained as the conditioning input (the remaining cells are masked to black), and the model learns to predict the complete 9-frame grid. The method is built upon FLUX.1-dev (DiT architecture) and employs LoRA adapters for parameter-efficient fine-tuning.
+The core premise of this paper is that pre-trained image generation models have implicitly learned temporal priors. Instead of designing dedicated video architectures, lightweight fine-tuning allows them to function as visual planners for robotic manipulation. Specifically, a manipulation video is sampled into 9 frames and arranged in a $3 \times 3$ grid following a snake-like pattern to form a single image. Consequently, "video generation" is transformed into "grid image generation." During training, only the first frame in the top-left corner is provided as a condition while others are masked. The DiT (based on FLUX.1-dev) learns to complete the entire 9-frame grid using Parameter-Efficient Fine-Tuning (PEFT) via LoRA.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Manipulation Video<br/>Sample 9 frames"] --> B["Snake-like Grid Arrangement<br/>Temporally adjacent frames are physically adjacent in 3×3 grid"]
+    B --> C{"Condition Mode"}
+    C -->|Semantic Control| D["Dual-modal Control: Text<br/>Instructions encoded via CLIP+T5"]
+    C -->|Spatial Control| E["Dual-modal Control: Trajectory<br/>First frame overlaid with 2D EEF trajectory"]
+    D --> F["LoRA Parameter-Efficient Adaptation<br/>DiT (FLUX.1-dev) completes whole grid in one pass"]
+    E --> F
+    F --> G["Output 9-frame Grid<br/>Parsed back to manipulation sequence"]
+```
 
 ### Key Designs
 
-1. **Serpentine Grid Layout**: Nine frames are arranged in serpentine order within a $3\times3$ grid, ensuring that temporally adjacent frames are also spatially adjacent. This design exploits the local attention mechanism of Transformers for modeling short-range temporal dependencies, achieving inter-frame consistency without explicit temporal modeling. The grid is constructed as:
+**1. Snake-like Grid Arrangement: Spatial Adjacency for Temporal Proximity**
+
+A challenge in fitting video into a grid is the temporal relationship—if the spatial layout does not match the temporal order, the local attention of the Transformer cannot capture continuous motion. The snake-like arrangement addresses this: 9 frames are laid out in a loop order of $1\to2\to3$, $6\leftarrow5\leftarrow4$, $7\to8\to9$:
 
 $$\mathbf{D} = \begin{bmatrix} D^{\text{img}_1} & D^{\text{img}_2} & D^{\text{img}_3} \\ D^{\text{img}_6} & D^{\text{img}_5} & D^{\text{img}_4} \\ D^{\text{img}_7} & D^{\text{img}_8} & D^{\text{img}_9} \end{bmatrix}$$
 
-   The design motivation is to ensure that any two temporally adjacent frames are also physically adjacent in the grid, facilitating local attention in capturing continuous actions.
+This ensures that any two temporally adjacent frames are physically adjacent in the grid, allowing local attention to naturally model short-range temporal dependencies and guarantee consistency across frames without explicit temporal modules.
 
-2. **Dual-Mode Conditioning**:
+**2. Dual-modal Conditioning: Text for Semantics, Trajectory for Spatial Control**
 
-    - **Text-conditioned generation**: Given a language instruction (e.g., "pick up the red cup") and the first frame, text embeddings $c_{\text{text}} = \{e_{\text{clip}}, E_{\text{t5}}\}$ are encoded via CLIP and T5 and injected into the DiT via cross-attention. This mode emphasizes **semantic understanding**—the model must interpret high-level semantics and translate them into a plausible action sequence.
+The planner provides two control methods for different needs. Text-conditioned generation receives language instructions (e.g., "pick up the red cup") plus the initial frame. Text is encoded via CLIP + T5 into $c_{\text{text}} = \{e_{\text{clip}}, E_{\text{t5}}\}$ and injected via cross-attention, excelling at deriving reasonable action sequences from high-level semantics. Trajectory-conditioned generation renders the 2D trajectory of the end-effector on the first frame (red to blue indicating time progression). The overlaid image $\tilde{\mathbf{D}}^{\tau}$ replaces the first frame as the condition, guiding the model along a specific path. These modes are complementary: text for semantic reasoning and trajectory for geometric precision.
 
-    - **Trajectory-conditioned generation**: A 2D end-effector trajectory (color-coded red→blue to indicate temporal progression) is rendered onto the first frame, and the composited image replaces the first frame as the conditioning input $\tilde{\mathbf{D}}^{\tau}$. This mode emphasizes **spatial precision**—the model generates actions along the provided trajectory path.
+**3. LoRA Parameter-Efficient Adaptation: Cross-domain Transfer via Low-rank Increments**
 
-3. **Parameter-Efficient Adaptation via LoRA**: LoRA is applied to the query/value projections of self-attention layers and feed-forward layers in the DiT (with low rank $r \ll d$), training only $O(rd)$ parameters instead of $O(d^2)$. This enables efficient transfer from general image generation to the robotic video domain without increasing inference latency.
+To transfer a general image generator to the robotic video domain, full fine-tuning is expensive and prone to overfitting. LoRA (with rank $r \ll d$) is applied only to the query/value projections of self-attention and feed-forward layers in the DiT. Training parameters are reduced from $O(d^2)$ to $O(rd)$, achieving low-cost migration without increasing inference latency. Ablation studies show this is critical—the model fails completely without LoRA.
 
 ### Loss & Training
 
-A latent-space MSE loss is employed: $\mathcal{L}_{\text{lat}} = \|\mathcal{E}(\mathbf{D}_{gt}) - \mathcal{E}(\hat{\mathbf{D}})\|_2^2$, where $\mathcal{E}$ denotes the VAE encoder. The model performs **single-pass grid generation** (non-autoregressive), predicting the complete 9-frame grid in one step and leveraging the compositional priors of the image generation model for implicit temporal reasoning.
+A latent space MSE loss is utilized: $\mathcal{L}_{\text{lat}} = \|\mathcal{E}(\mathbf{D}_{gt}) - \mathcal{E}(\hat{\mathbf{D}})\|_2^2$, where $\mathcal{E}$ is the VAE encoder. The model performs **single-pass grid generation** (non-autoregressive), predicting the full 9-frame grid at once by leveraging the compositional priors of the image generation model for implicit temporal reasoning.
 
 ## Key Experimental Results
 
@@ -74,48 +84,48 @@ A latent-space MSE loss is employed: $\mathcal{L}_{\text{lat}} = \|\mathcal{E}(\
 
 ### Ablation Study (BridgeV2)
 
-| Configuration | FVD↓ | SSIM↑ | Success↑ | Note |
-|---------------|------|-------|----------|------|
-| Full (Traj) | 644.2 | 0.733 | 73.2% | Full model |
-| Full (Text) | 693.2 | 0.726 | 70.9% | Full model |
+| Configuration | FVD↓ | SSIM↑ | Success↑ | Description |
+|---------------|------|-------|----------|-------------|
+| Full (Traj) | 644.2 | 0.733 | 73.2% | Complete model |
+| Full (Text) | 693.2 | 0.726 | 70.9% | Complete model |
 | w/o LoRA | 4377.1 | 0.064 | 0% | Frozen backbone fails completely |
 | w/o Prompt Template | 843.4 | 0.754 | 2.5% | Severe degradation in semantic guidance |
 | w/o Trajectory Overlay | 720.0 | 0.749 | 3.9% | Loss of spatial control |
 
 ### Key Findings
 
-- LoRA is a critical component: removing it causes FVD to surge from 644 to 4377, with success rate dropping to 0%.
-- The prompt template is essential for semantic understanding: its removal reduces success rate from 73.2% to 2.5%.
-- Text conditioning outperforms trajectory conditioning on JacoPlay and BridgeV2 (semantic following), while trajectory conditioning outperforms on RT-1 (spatial following).
-- The two conditioning modes are complementary: text excels at semantic reasoning, while trajectory excels at geometric precision.
+- LoRA is a critical component: without it, FVD jumps from 644 to 4377 and success rate drops to 0%.
+- Text templates are vital for semantic understanding: removing them drops the success rate from 73.2% to 2.5%.
+- Text conditions perform better on JacoPlay/BridgeV2 (semantic following), while trajectory conditions excel on RT-1 (spatial following).
+- The two conditioning modes are complementary: text is better for semantic reasoning, and trajectory is better for geometric accuracy.
 
 ## Highlights & Insights
 
-1. **Novel perspective**: This work is the first to systematically demonstrate that pretrained image generation models can serve as visual planners for robotics—converting an image generator into a video synthesizer via LoRA fine-tuning alone.
-2. **Extremely simple temporal modeling**: Temporal consistency is achieved entirely through grid layout and local attention, without any dedicated temporal modules.
-3. **Cost efficiency**: The approach requires neither large-scale video datasets nor specialized video architectures, leveraging the compositional priors of pretrained image generators with only LoRA fine-tuning.
+1. **Novel Perspective**: First systematic verification that pre-trained image generation models can serve as robotic visual planners—transforming image generators into video synthesizers through LoRA fine-tuning.
+2. **Simplified Temporal Modeling**: No temporal modules are used; frame consistency is achieved solely through grid layout and local attention.
+3. **Cost-Effectiveness**: Leverages compositional priors of pre-trained image generators using LoRA without requiring large-scale video datasets or specialized video architectures.
 
 ## Limitations & Future Work
 
-1. Occasional color/texture inconsistencies appear at grid tile boundaries, with minor misalignment at seams.
-2. The 9-frame sequence length is relatively short, making it difficult to cover long-horizon manipulation tasks.
-3. Success rate is evaluated via visual inspection and has not been validated in closed-loop real robot execution.
-4. Evaluation is limited to 3 datasets; cross-domain generalization (e.g., from JacoPlay to BridgeV2) remains unverified.
-5. Trajectory conditioning requires a pre-provided 2D trajectory, limiting its practical utility for autonomous planning.
+1. Occasional inconsistencies in tone/texture between grid blocks; slight misalignments may occur at grid boundaries.
+2. The 9-frame sequence length is short, making it difficult to cover long-horizon manipulation tasks.
+3. Success rates are based on visual judgment rather than closed-loop verification with real robot execution.
+4. Testing is limited to 3 datasets; cross-domain generalization (e.g., JacoPlay to BridgeV2) has not been verified.
+5. Trajectory conditioning requires pre-provided 2D trajectories, limiting practical utility for autonomous planning.
 
 ## Related Work & Insights
 
-- **RIGVid**: Estimates 6-DoF trajectories from AI-generated task videos for execution on real robots.
-- **Gen2Act**: Generates human execution videos and conditions policies on them to generalize to new scenes.
-- **ControlNet**: Injects spatial conditioning via a branch into a frozen text-to-image model, inspiring the trajectory conditioning design in this work.
-- **Insight**: The compositional priors of image generation models may be broadly applicable to other planning tasks—such as navigation path planning and assembly sequence planning.
+- **RIGVid**: Uses AI-generated task videos to estimate 6-DoF trajectories for real robot execution.
+- **Gen2Act**: Generates human execution videos and conditions policies to generalize to new scenarios.
+- **ControlNet**: Injects spatial conditions into frozen text-to-image models, inspiring the trajectory condition design in this work.
+- **Insight**: Compositional priors of image models might be applicable to more planning tasks, such as navigation path planning or assembly sequence planning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The idea of repurposing image generators as visual planners is novel and thought-provoking.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets with complete ablations, but direct comparison with video generation baselines and real-robot validation are lacking.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear, though mathematical descriptions are slightly redundant with some repetitive content.
-- Value: ⭐⭐⭐⭐ Offers an interesting research direction, but practical value is limited by the absence of closed-loop execution validation.
+- Novelty: ⭐⭐⭐⭐⭐ Re-positioning image generators as visual planners is an innovative and inspiring idea.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete across 3 datasets and ablations, though lacks direct comparison with video generation baselines and real-world hardware validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, though mathematical descriptions are slightly redundant and some content repeats.
+- Value: ⭐⭐⭐⭐ Provides an interesting research direction, but practical value is limited by the lack of closed-loop execution verification.
 
 <!-- RELATED:START -->
 
@@ -123,10 +133,10 @@ A latent-space MSE loss is employed: $\mathcal{L}_{\text{lat}} = \|\mathcal{E}(\
 
 ## Related Papers
 
+- [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](../../ICCV2025/image_generation/a0_affordance_aware_hierarchical_model_robotic_manipulation.md)
 - [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
 - [\[ICLR 2026\] Self-Improving Loops for Visual Robotic Planning](../../ICLR2026/image_generation/self-improving_loops_for_visual_robotic_planning.md)
 - [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
-- [\[ICCV 2025\] A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](../../ICCV2025/image_generation/a0_an_affordance-aware_hierarchical_model_for_general_robotic_manipulation.md)
 - [\[ICCV 2025\] EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching](../../ICCV2025/image_generation/ec-flow_enabling_versatile_robotic_manipulation_from_action-unlabeled_videos_via.md)
 
 </div>

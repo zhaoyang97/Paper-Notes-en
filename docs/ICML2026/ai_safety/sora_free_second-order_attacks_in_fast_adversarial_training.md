@@ -2,72 +2,76 @@
 title: >-
   [Paper Note] SORA: Free Second-Order Attacks in Fast Adversarial Training
 description: >-
-  [ICML 2026][AI Safety][Fast Adversarial Training] This paper re-examines Catastrophic Overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes PertAlign…
+  [ICML 2026][AI Safety][Paper Note] This work revisits catastrophic overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes a zero-cost curvature metric, PertAlign, to provide early warnings for CO, and derives SORA: an adaptive fast adversarial training algorithm that estimates the Hessian "for free" using gradi
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Fast Adversarial Training"
-  - "Catastrophic Overfitting"
-  - "Second-Order Optimization"
-  - "Adaptive Step Size"
-  - "Robustness"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: ae1d79d7fc5a17fe
+content_hash: ec0446e1a390622c
 ---
-
 # SORA: Free Second-Order Attacks in Fast Adversarial Training
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00738](https://arxiv.org/abs/2606.00738)  
 **Code**: https://github.com/SecondOrderAT/SORA  
 **Area**: AI Security / Adversarial Training  
-**Keywords**: Fast Adversarial Training, Catastrophic Overfitting, Second-Order Optimization, Adaptive Step Size, Robustness  
+**Keywords**: Fast Adversarial Training, Catastrophic Overfitting, Second-Order Optimization, Adaptive Step-Size, Robustness  
 
 ## TL;DR
-This paper re-examines Catastrophic Overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes PertAlign, a zero-cost curvature metric for early warning of CO, and derives SORA: an adaptive fast adversarial training algorithm that estimates the Hessian "for free" using backpropagated gradients from the previous step and samples optimal step sizes per-channel. SORA consistently avoids CO across 6 datasets and 4 architectures using a single set of hyperparameters, achieving a new state-of-the-art trade-off between robustness and clean accuracy for single-step AT.
+This work revisits catastrophic overfitting (CO) in single-step adversarial training from a second-order perspective. It proposes a zero-cost curvature metric, PertAlign, to provide early warnings for CO, and derives SORA: an adaptive fast adversarial training algorithm that estimates the Hessian "for free" using gradients from the previous backpropagation and performs channel-wise randomized sampling for optimal step-sizes. Across 6 datasets and 4 architectures, SORA consistently avoids CO using a single set of hyperparameters and improves the robustness/clean accuracy trade-off for single-step AT.
 
 ## Background & Motivation
-**Background**: Adversarial Training (AT) is the most effective defense against adversarial examples, but the inner maximization of multi-step PGD-AT requires multiple backpropagations, making it extremely costly for large datasets and deep networks. Wong et al. (2020) proposed FGSM-RS with random starts, compressing the inner loop to a single step, making fast adversarial training (FAT) a viable solution.
+**Background**: Adversarial Training (AT) is the most effective defense against adversarial examples. however, the inner maximization of multi-step PGD-AT requires multiple backpropagations, making it extremely costly on large datasets and deep networks. Wong et al. (2020) proposed FGSM-RS with random starts, compressing the inner loop to a single step and making fast adversarial training (FAT) a viable solution.
 
-**Limitations of Prior Work**: Single-step AT generally suffers from Catastrophic Overfitting (CO)—after training for a certain number of batches, robust accuracy against PGD suddenly collapses to near 0%, while FGSM accuracy increases, sometimes even exceeding clean accuracy. Existing mitigation methods (GradAlign, NuAT, N-FGSM, ATAS, ELLE, etc.) either require expensive additional backpropagations/regularization terms or have hyperparameters tightly bound to specific datasets/architectures, often failing in challenging scenarios like PathMNIST and TissueMNIST, which contradicts the "low-cost" objective of FAT.
+**Limitations of Prior Work**: Single-step AT is prone to catastrophic overfitting (CO)—after several training batches, the robust accuracy against PGD suddenly collapses to nearly 0%, while FGSM accuracy rises or even exceeds clean accuracy. Existing mitigation methods (GradAlign, NuAT, N-FGSM, ATAS, ELLE, etc.) either require expensive additional backpropagations/regularization terms or have hyperparameters tightly coupled to specific datasets/architectures, often failing in challenging scenarios like PathMNIST and TissueMNIST, which contradicts the low-cost objective of FAT.
 
-**Key Challenge**: FGSM repeatedly attacks the model using perturbations of fixed size and direction, causing the model to minimize loss only along a narrow path within the $\epsilon$-ball. The loss surface becomes highly non-linear along this line, a phenomenon the authors define as **Epsilon Overfitting (EO)**—the geometric root of CO. To break EO, diversity in perturbation magnitude is required; to make this diversity effective, knowledge of the local curvature of the loss surface is needed; however, explicit Hessian computation would destroy the cost advantage of single-step AT.
+**Key Challenge**: FGSM repeatedly attacks the model with fixed-magnitude, fixed-direction perturbations, causing the model to minimize loss only along a narrow path within the $\epsilon$-ball. This leads the loss surface to become highly non-linear along this line, a phenomenon characterized as **Epsilon Overfitting (EO)**—the geometric root of CO. Breaking EO requires diversity in perturbation magnitudes; directing this diversity effectively requires knowledge of the local curvature of the loss surface. However, explicitly calculating the Hessian would destroy the cost advantage of single-step AT.
 
-**Goal**: (1) Provide a geometric characterization of CO and prove that perturbation magnitude diversity is key to resolving EO; (2) Design a "free" curvature metric within single-step AT to both warn of CO and guide the attack; (3) Develop a fast AT method that is robust to datasets and architectures without extra backpropagations or parameter tuning.
+**Goal**: (1) Provide a geometric characterization of CO and prove that perturbation magnitude diversity is key to resolving EO; (2) Design a curvature metric obtainable "for free" in single-step AT for both CO warning and attack guidance; (3) Develop a fast AT method that is robust across datasets and architectures without additional backpropagations or hyperparameter tuning.
 
-**Key Insight**: The authors notice that when backpropagation computes derivatives with respect to parameters, the first layer of the chain rule is exactly $\nabla_x \mathcal{L}(f_\theta(x+\delta), y)$. By simply "extending" this gradient to the input layer and computing its cosine similarity with $\nabla_x \mathcal{L}(f_\theta(x'), y)$ (already calculated during adversarial example generation), one obtains a curvature proxy with zero extra overhead.
+**Key Insight**: This work observes that the first layer of the chain rule during backpropagation for parameter gradients is precisely $\nabla_x \mathcal{L}(f_\theta(x+\delta), y)$. By simply "extending" and extracting this gradient and calculating its cosine similarity with the $\nabla_x \mathcal{L}(f_\theta(x'), y)$ already computed during adversarial example generation, a curvature proxy is obtained with zero extra overhead.
 
-**Core Idea**: Treat inner maximization as a second-order problem. Use the gradients already computed in the previous batch to approximate the Hessian-vector product, deriving an analytical optimal step size $\alpha^*$. Sample step sizes uniformly within $[0, \alpha^*]$ for each channel to simultaneously break EO and CO.
+**Core Idea**: Treat the inner maximization as a second-order problem. Use gradients already computed in the previous batch to approximate the Hessian-vector product, deriving an analytical optimal step-size $\alpha^*$. Sample step-sizes uniformly within $[0, \alpha^*]$ for each channel to simultaneously break EO and CO.
 
 ## Method
 
 ### Overall Architecture
-SORA replaces the "FGSM + fixed step size $\alpha$" in single-step AT with "FGSM direction + adaptive random step size." The training workflow for each batch is: (1) Add a random start $\eta \sim \mathcal{U}(-\epsilon, \epsilon)^d$; (2) Compute $g = \nabla_x \mathcal{L}(f_\theta(x+\eta), y)$; (3) Independently sample step sizes $\alpha_i$ from $\mathcal{U}(0, \alpha^*)$ for each pixel channel, construct $x' = x + \eta + \alpha_i \odot \text{sign}(g)$ and clip to $[0,1]$; (4) Backpropagate to update $\theta$, simultaneously retaining the gradient $g'$ extended to the input layer; (5) Update the EMA linearity coefficient $v$ using the dot product of $g$ and $g'$ along the sign direction $p = \text{sign}(g)$, and derive a new $\alpha^*$ for the next batch. Relative to FGSM-RS, this process involves no extra backpropagation, with negligible time and memory overhead.
+SORA replaces the "FGSM + fixed step-size $\alpha$" in single-step AT with "FGSM direction + adaptive randomized step-size." The training flow for each batch is: (1) Add a random start $\eta \sim \mathcal{U}(-\epsilon, \epsilon)^d$; (2) Compute $g = \nabla_x \mathcal{L}(f_\theta(x+\eta), y)$; (3) Independently sample step-size $\alpha_i$ from $\mathcal{U}(0, \alpha^*)$ for each pixel channel; (4) Construct $x' = x + \eta + \alpha_i \odot \text{sign}(g)$ and clip to $[0,1]$; (5) Backpropagate to update $\theta$ while retaining the gradient $g'$ extended to the input layer; (6) Use the dot product of $g$ and $g'$ along the sign direction $p = \text{sign}(g)$ to update the EMA linearity coefficient $v$, deriving a new $\alpha^*$ for the next batch. Compared to FGSM-RS, there are no additional backpropagations, and the time/memory overhead is negligible. The following diagram illustrates this single-step loop:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input x + random start η ~ U(−ε, ε)"] --> B["Forward pass & compute input gradient<br/>g = ∇ₓ L(f(x+η), y)"]
+    B --> C["Channel-wise randomized step-size<br/>Independent sampling αᵢ ~ U(0, α*)"]
+    C --> D["Construct adversarial samples<br/>x' = x + η + αᵢ ⊙ sign(g), clip to [0,1]"]
+    D --> E["Backprop: get param gradient g_θ and input-layer gradient g'"]
+    E --> F["Update parameters θ ← SGD(θ, g_θ)"]
+    E --> G["PertAlign = cos(g, g')<br/>Sharp drop warns of catastrophic overfitting (CO)"]
+    E --> H["Second-order optimal step-size α* + EMA linearity v<br/>v ← (1−β)v + β·pᵀg'/‖g‖₁"]
+    H -->|Reuse α* for next batch| C
+```
 
 ### Key Designs
 
-1.  **PertAlign: A Zero-Cost Second-Order CO Warning Metric**:
-    *   **Function**: Uses a cosine similarity to measure the non-linearity of the loss surface along the attack direction, providing a "pre-CO" signal before PGD accuracy collapses.
-    *   **Mechanism**: Define $\text{PertAlign} = \cos\!\big(\nabla_x \mathcal{L}(f_\theta(x'), y),\ \nabla_x \mathcal{L}(f_\theta(x'+\delta), y)\big)$, where $x' = x + \eta$ and $\delta = \alpha v$. The paper proves $1 - \text{PertAlign} \approx \tfrac{\alpha^2}{2}\|h_{\perp g}\|^2$, where $h = Hv/\|g\|$. Thus, PertAlign directly captures the component of the Hessian-vector product orthogonal to the gradient. When CO occurs, this component explodes, and PertAlign drops sharply from near 1 toward 0. One gradient comes from generating the adversarial sample, and the other from the standard backpropagation extended by one layer, thus requiring **zero additional forward or backward passes**.
-    *   **Design Motivation**: Existing metrics like GradAlign and ELLE require an extra backpropagation, violating FAT cost constraints. Furthermore, PertAlign triggers earlier than metrics like GradAlign / AAE share / TRADES-KL (Fig 3 shows PertAlign dropping at batch 3775, whereas FGSM/PGD accuracy diverges visibly only at batch 3825).
+**1. PertAlign: A zero-cost cosine similarity metric that warns of CO before PGD accuracy collapses**
 
-2.  **Second-Order Optimal Step Size $\alpha^*$ + EMA Linearity Coefficient**:
-    *   **Function**: Provides a theoretically optimal attack step size for the next batch without explicitly calculating the Hessian.
-    *   **Mechanism**: Perform a second-order expansion of the loss along direction $v = \alpha\, \text{sign}(g)$ as $\mathcal{L}(x+v) \approx \mathcal{L}(x) + v^T g + \tfrac{1}{2}v^T H v$. Differentiating with respect to $\alpha$ yields the optimal step size $\alpha^* = \min\!\big(\alpha_{\max},\ \alpha_0 / (1 - p^T g'/\|g\|_1)\big)$, where $g' = g + \alpha H p$ is obtained for free from the input-layer gradient of the previous batch. SORA maintains an EMA $v \leftarrow (1-\beta) v + \beta \cdot p^T g'/\|g\|_1$ to stabilize the estimation of $\alpha^*$. Reusing information across batches exploits the assumption that weights change only slightly per step and batches come from the same distribution, making second-order information "essentially for free."
-    *   **Design Motivation**: Explicitly calculating $H$ is unacceptable for large models. The method must be more robust than empirically tuned fixed $\alpha$, hence the introduction of an analytical approximation that reuses existing gradients.
+Existing CO indicators like GradAlign and ELLE require separate backpropagations. This work notes that the first layer of the backpropagation chain rule is $\nabla_x\mathcal{L}$. By taking the "gradient already computed for attack generation" and the "gradient obtained by extending regular backpropagation by one layer," the cosine similarity is defined as $\text{PertAlign} = \cos\!\big(\nabla_x \mathcal{L}(f_\theta(x'), y),\ \nabla_x \mathcal{L}(f_\theta(x'+\delta), y)\big)$, where $x' = x + \eta$ and $\delta = \alpha v$. The paper proves $1 - \text{PertAlign} \approx \tfrac{\alpha^2}{2}\|h_{\perp g}\|^2$, where $h = Hv/\|g\|$. This metric directly captures the component of the Hessian-vector product orthogonal to the gradient. When CO occurs, this component explodes, and PertAlign drops sharply from near 1 toward 0. Since both gradients are already available, this measurement **requires no extra forward or backward passes** and triggers warnings earlier than GradAlign, AAE, or TRADES-KL.
 
-3.  **Channel-wise Randomized Step Size to Break Epsilon Overfitting**:
-    *   **Function**: Adds a layer of perturbation diversity on top of $\alpha^*$ to prevent the model from overfitting to a specific $\epsilon$ value.
-    *   **Mechanism**: Instead of using $\alpha^*$ directly, sample $\alpha_i \sim \mathcal{U}(0, \alpha^*)$ independently for each channel of each pixel, then set $x' = x + \eta + \alpha_i \odot \text{sign}(g)$. This ensures samples within the same batch see a wide distribution of perturbation magnitudes, covering the $\ell_\infty$ ball more uniformly and removing the "EO signature" where FGSM accuracy spikes at certain $\epsilon$ values.
-    *   **Design Motivation**: Sec. 3 identifies EO as the root cause of CO—fixed large perturbations flatten the loss only along narrow paths. Randomized step sizes $\mathcal{U}(0, \alpha^*)$ combined with adaptive $\alpha^*$ address both the symptoms (CO) and the root cause (EO).
+**2. Second-order optimal step-size $\alpha^*$ + EMA linearity coefficient: A theoretically optimal attack step-size without explicit Hessian computation**
+
+Explicit Hessian calculation is prohibitively expensive. This work performs a second-order expansion of the loss along direction $v = \alpha\,\text{sign}(g)$: $\mathcal{L}(x+v) \approx \mathcal{L}(x) + v^T g + \tfrac{1}{2}v^T H v$. Solving for the derivative with respect to $\alpha$ yields the optimal step-size $\alpha^* = \min\!\big(\alpha_{\max},\ \alpha_0 / (1 - p^T g'/\|g\|_1)\big)$, where $g' = g + \alpha H p$ is obtained for free from the previous batch's backpropagation. To stabilize this estimate, SORA maintains an EMA $v \leftarrow (1-\beta) v + \beta \cdot p^T g'/\|g\|_1$ across batches, leveraging the assumption that weights change slowly and batches come from the same distribution.
+
+**3. Channel-wise randomized step-size: Diversifying perturbations to address Epsilon Overfitting**
+
+The root cause of CO is identified as EO—fixed large perturbations causing the loss to flatten only along a narrow path. Adaptive $\alpha^*$ alone is insufficient; diversity in perturbation magnitude is essential. SORA samples $\alpha_i \sim \mathcal{U}(0, \alpha^*)$ independently for each channel of each pixel. This ensures a broad distribution of perturbation magnitudes within a batch, covering the $\ell_\infty$ ball more uniformly and preventing the FGSM accuracy spikes/cliffs characteristic of EO.
 
 ### Loss & Training
-Standard Cross-Entropy + SGD (momentum 0.9, weight decay $5\times 10^{-4}$) is used throughout with a single set of hyperparameters: $\alpha_0 = 0.02$, $\beta = 0.05$, $\alpha_{\max} = 2\epsilon$, $\epsilon = 8/255$. The EMA coefficient $v$ is initialized to 0.99. When the model reaches the CO threshold, PertAlign drops, $v$ decreases, and $\alpha^*$ is automatically scaled up via $\alpha_0/(1-v)$, generating stronger adversarial samples to recover robustness. Under normal conditions, $\alpha^*$ is clipped by $\alpha_{\max}$, maintaining costs similar to FGSM-RS.
+The method uses standard Cross-Entropy + SGD (momentum 0.9, weight decay $5\times 10^{-4}$) with a single set of hyperparameters: $\alpha_0 = 0.02, \beta = 0.05, \alpha_{\max} = 2\epsilon, \epsilon = 8/255$. The EMA coefficient $v$ is initialized to 0.99. When PertAlign drops (indicating CO risk), $v$ decreases, and $\alpha^*$ automatically increases via $\alpha_0/(1-v)$, generating stronger adversarial samples to restore robustness. Under normal conditions, $\alpha^*$ is clipped by $\alpha_{\max}$.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper compares 15 baselines across 6 datasets (CIFAR-10/100, TinyImageNet, ImageNet-100, PathMNIST, TissueMNIST) and 4 architectures (ResNet, PreActResNet, WideResNet, SENet, ViT). Representative results for PreActResNet-18, $\epsilon = 8/255$, evaluated via AutoAttack:
+The paper compares SORA with 15 baselines across CIFAR-10/100, TinyImageNet, ImageNet-100, PathMNIST, and TissueMNIST using 4 architecture classes (ResNet, PreActResNet, WideResNet, SENet, ViT). Representative results for PreActResNet-18 at $\epsilon = 8/255$ under AutoAttack:
 
 | Dataset | Metric | SORA | N-FGSM | AAER | FGSM |
 |--------|------|------|--------|------|------|
@@ -76,43 +80,40 @@ The paper compares 15 baselines across 6 datasets (CIFAR-10/100, TinyImageNet, I
 | ImageNet-100 | Clean | **57.26** | 49.38 | 48.26 | 15.98 |
 | ImageNet-100 | AutoAttack | **18.56** | 15.52 | 17.18 | 0.00 |
 
-SORA is the only single-step method to successfully avoid CO and achieve the highest robust and clean accuracy across all 6 datasets and 4 architectures. On PathMNIST, it improves AutoAttack robustness from < 2% (all baselines) to 35.54%.
+SORA is the only single-step method that avoids CO across all 6 datasets while achieving the highest robust and clean accuracy. On PathMNIST, it improves robust accuracy from < 2% (baselines) to 35.54%.
 
 ### Ablation Study
 | Configuration | Clean | FGSM | PGD-10 | Description |
 |------|-------|------|--------|------|
-| SORA (full) | 84.69 | 57.51 | **45.56** | Complete Method |
-| – Without Random Sampling | 85.67 | 58.89 | 45.35 | Remove channel-level randomization |
-| – Clamping Step-Size | 86.82 | 52.02 | 34.08 | Clamp adaptive $\alpha^*$ to fixed value |
-| – Without Optimal Step-Size | 89.93 | 28.30 | 17.23 | Degenerate to fixed step size FGSM-RS |
+| SORA (full) | 84.69 | 57.51 | **45.56** | Full method |
+| – Without Random Sampling | 85.67 | 58.89 | 45.35 | Remove channel-wise randomization |
+| – Clamping Step-Size | 86.82 | 52.02 | 34.08 | Fixed $\alpha^*$ |
+| – Without Optimal Step-Size | 89.93 | 28.30 | 17.23 | Revert to fixed step-size FGSM-RS |
 
 ### Key Findings
-- **Adaptive $\alpha^*$ is the performance anchor**: Removing it causes PGD-10 robustness to drop from 45.56% to 17.23%, while clean accuracy increases to 89.93%—a classic EO sign where clean accuracy appears fine but robustness is broken.
-- **PertAlign provides earlier CO warning than GradAlign / AAE / TRADES-KL / ELLE**: On CIFAR-10, it signals approximately 50 batches earlier, sufficient for SORA to automatically increase $\alpha^*$ and stabilize training.
-- **Hyperparameter stability across domains**: All experiments use the same $(\alpha_0, \beta, \alpha_{\max})$. In contrast, methods like GradAlign, N-FGSM, and ATAS failed to find configurations on PathMNIST that didn't either cause CO or drop performance on CIFAR.
-- **Negligible cost**: PertAlign and $\alpha^*$ reuse existing gradients. Training time for 30 epochs on an RTX 4090 is comparable to FGSM-RS, with almost no increase in memory usage.
+- **$\alpha^*$ is the performance anchor**: Removing it drops PGD-10 from 45.56% to 17.23%, with clean accuracy rising to 89.93%, a classic signature of EO.
+- **PertAlign provides earlier warnings**: On CIFAR-10, it signals CO approximately 50 batches earlier than other metrics, allowing SORA to adjust $\alpha^*$ in time.
+- **Hyperparameter Stability**: A single set of $(\alpha_0, \beta, \alpha_{\max})$ works across all contexts, whereas competitors fail on PathMNIST even with tuning.
+- **Negligible Cost**: Training time on an RTX 4090 for 30 epochs is comparable to FGSM-RS, with no significant memory increase.
 
 ## Highlights & Insights
-- **Solving inner maximization as a second-order problem at first-order cost**: Reusing the "extended" input gradient from the chain rule as a proxy for the Hessian-vector product is an elegant combination of engineering and theory, applicable to any training workflow requiring curvature (e.g., sharpness-aware minimization, second-order meta-learning).
-- **CO reinterpreted as a symptom of EO rather than the root cause**: Diversity in perturbation magnitude is more critical than direction. This reshapes the traditional explanation of why random starts work—not just by stabilizing direction, but by indirectly breaking local overfitting at a fixed $\epsilon$.
-- **PertAlign as a universal diagnostic tool**: Since it only relies on two gradients already present in single-step attacks, it can be added to any fast AT method for "early CO warning" without modifying the core algorithm.
-- **"Delayed-by-one" second-order estimation**: Using $g'$ from the previous batch for the current $\alpha^*$ is experimental proof that this "gradient time-shifting" is stable enough. This logic is valuable for large-batch optimization and distributed asynchronous training.
-- **Per-channel vs. Per-sample step size**: The choice of per-channel randomization increases $\ell_\infty$ ball coverage by ensuring different channels of the same image have different perturbations. This "fine-grained diversity" is applicable to patch attacks, style transfer, and other tasks needing to break singular perturbation patterns.
+- **Second-order solutions at first-order cost**: Reusing the gradient from the chain rule for Hessian-vector products is an elegant combination of theory and engineering, potentially applicable to other curvature-aware training.
+- **CO as a symptom of EO**: Diversity in perturbation magnitude is more critical than direction. This refines the understanding of why random starts work—not just by randomizing direction, but by indirectly breaking local overfitting at fixed $\epsilon$.
+- **PertAlign as a universal diagnostic**: It can be integrated into any fast AT method for early CO detection without modifying the core algorithm.
+- **Channel-wise vs. Sample-wise randomized step-size**: Independent randomization for each channel maximizes the coverage of the $\ell_\infty$ ball, a strategy that could benefit patch attacks or style transfer.
 
 ## Limitations & Future Work
-- The second-order derivation assumes weights and batches change minimally between steps. This approximation might fail with large learning rates or very small batches, which the EMA smoothing aims to address.
-- Experiments focus exclusively on $\ell_\infty$ threat models and image classification; transferability to $\ell_2$, patch attacks, NLP, detection, or segmentation remains unverified.
-- PertAlign provides a "post-hoc" signal; while earlier than other metrics, it is not a "prediction" in a true sense. Stronger metrics directly characterizing Hessian spectral properties theoretically exist.
-- A gap remains between SORA and multi-step PGD-AT robustness. The paper treats multi-step methods as an "upper bound baseline" rather than attempting to bridge the gap entirely.
+- The second-order derivation assumes small changes between batches; this approximation may fail with very high learning rates or tiny batch sizes.
+- Experiments focus on $\ell_\infty$ threat models in image classification; transferability to $\ell_2$, object detection, or NLP remains unverified.
+- PertAlign is a "reactive" signal; future work could seek stronger metrics that characterize Hessian spectral properties directly.
+- A robustness gap still exists between SORA and multi-step PGD-AT.
 
 ## Related Work & Insights
-- **vs GradAlign (Andriushchenko & Flammarion, 2020)**: Both measure local linearity, but GradAlign requires an extra doubly-back-propagation as a regularization term, while PertAlign reuses gradients. SORA uses the metric to dynamically adjust step size rather than as a loss penalty.
-- **vs N-FGSM (de Jorge et al., 2022)**: N-FGSM increases random noise and removes clipping to mitigate CO. SORA uses an analytical optimal step size + channel-level randomization, providing a clearer theoretical foundation and significantly higher robustness on hard datasets like PathMNIST.
-- **vs ATAS (Huang et al., 2022) / Zhao et al. (2025)**: Both are adaptive step size methods, but ATAS uses empirical gradient norm scaling. SORA is the first to explicitly model step size selection as second-order optimization with a closed-form solution.
-- **vs Curvature regularization (Moosavi-Dezfooli et al., 2018; Ma et al., 2021)**: These add curvature penalties to the loss, usually in multi-step AT. SORA integrates curvature awareness into the attack step size selection, preserving the FAT cost budget.
-- **vs Free AT (Shafahi et al., 2019)**: Free AT reuses adversarial gradients for parameter updates. SORA shares this "gradient reuse" philosophy but extends it to curvature estimation rather than just parameter updates.
-- **vs ELLE (Rocamora et al., 2024)**: ELLE encourages local linearity via regularization. SORA does not force linearity but instead tracks current curvature, remaining robust even on architectures like ViT without prior landscape bias.
-- **vs AAER (Lin et al., 2024)**: AAER identifies and suppresses "abnormal adversarial examples" via regularization. SORA uses adaptive $\alpha^*$ to ensure the attack reaches a true local maximum (NAE), preventing AAER at the source without extra regularization.
+- **vs GradAlign**: GradAlign requires an extra double-backpropagation; PertAlign reuses existing gradients. SORA uses the info to adjust step-size rather than as a penalty.
+- **vs N-FGSM**: N-FGSM uses large noise; SORA uses analytical optimal step-sizes with channel-wise randomization, providing better theoretical grounding and performance on hard datasets.
+- **vs Free AT**: Free AT reuses gradients for parameter updates. SORA extends this "reuse" philosophy to curvature estimation.
+- **vs ELLE**: ELLE encourages explicit linearity; SORA allows the attack to track the current curvature, making it more flexible for non-linear structures like ViTs.
+- **vs AAER**: AAER regularizes "abnormal" samples; SORA prevents their occurrence by ensuring the attack reaches local maxima (NAE).
 
 <!-- RELATED:START -->
 
@@ -120,11 +121,11 @@ SORA is the only single-step method to successfully avoid CO and achieve the hig
 
 ## Related Papers
 
+- [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](../../CVPR2026/ai_safety/mitigating_error_amplification_in_fast_adversarial_training.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
-- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
 - [\[ICML 2026\] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling](rotation-invariant_spherical_watermarking_via_third-order_so3_representation_cou.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
-- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](../../CVPR2026/ai_safety/one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
+- [\[ECCV 2024\] Preventing Catastrophic Overfitting in Fast Adversarial Training: A Bi-level Optimization Perspective](../../ECCV2024/ai_safety/preventing_catastrophic_overfitting_in_fast_adversarial_training_a_bi-level_opti.md)
+- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
 
 </div>
 

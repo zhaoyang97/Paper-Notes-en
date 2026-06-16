@@ -83,7 +83,7 @@ item_total: 62
 
 **🔬 ICLR2026** · **62** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [📷 CVPR2026 (223)](../../CVPR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (622)](../../CVPR2026/3d_vision/index.md) · [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
 
 🔥 **Top topics:** 3D Gaussian Splatting ×11 · Dynamic Scenes ×4 · 3D Reconstruction ×4 · Robotics ×3 · Novel View Synthesis ×3
 

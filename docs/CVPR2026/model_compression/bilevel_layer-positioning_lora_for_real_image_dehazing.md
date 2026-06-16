@@ -2,198 +2,187 @@
 title: >-
   [Paper Note] Bilevel Layer-Positioning LoRA for Real Image Dehazing
 description: >-
-  [CVPR2026][Model Compression][image dehazing] This paper proposes BiLaLoRA, which employs bilevel optimization to automatically identify the optimal network layers for LoRA insertion…
+  [CVPR 2026][Model Compression][image dehazing] Ours proposes BiLaLoRA, which automatically locates the optimal network layers for LoRA insertion through bilevel optimization. Combined with H2C Loss (an unsupervised dehazing loss based on CLIP semantic directions), it achieves efficient adaptation of synthetic-data pre-trained dehazing models to real-world scenarios
 tags:
-  - "CVPR2026"
-  - "Model Compression"
-  - "image dehazing"
-  - "LoRA"
-  - "bilevel optimization"
-  - "CLIP"
-  - "unsupervised adaptation"
-  - "parameter-efficient fine-tuning"
+  - CVPR 2026
+  - Model Compression
+  - image dehazing
+  - LoRA
+  - bilevel optimization
+  - CLIP
+  - unsupervised adaptation
+  - parameter-efficient fine-tuning
 date: 2026-05-08
-content_hash: 8dd59c666e7ae26b
+content_hash: 4c340cfc759519ff
 ---
-
 # Bilevel Layer-Positioning LoRA for Real Image Dehazing
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.10872](https://arxiv.org/abs/2603.10872)  
 **Code**: [GitHub](https://github.com/YanZhang-zy/BiLaLoRA)  
-**Area**: Model Compression
+**Area**: Model Compression  
 **Keywords**: image dehazing, LoRA, bilevel optimization, CLIP, unsupervised adaptation, parameter-efficient fine-tuning
 
 ## TL;DR
 
-This paper proposes BiLaLoRA, which employs bilevel optimization to automatically identify the optimal network layers for LoRA insertion, coupled with H2C Loss — an unsupervised dehazing loss based on CLIP semantic directions — to efficiently adapt synthetic-data-pretrained dehazing models to real-world scenes. The approach reduces training time by 77.7% while matching full fine-tuning performance, and generalizes across models and domains.
+Ours proposes BiLaLoRA, which automatically locates the optimal network layers for LoRA insertion through bilevel optimization. Combined with H2C Loss (an unsupervised dehazing loss based on CLIP semantic directions), it achieves efficient adaptation of synthetic-data pre-trained dehazing models to real-world scenarios—reducing training time by 77.7% while maintaining performance comparable to full fine-tuning across models and domains.
 
 ## Background & Motivation
 
-Image dehazing is a classical problem in low-level vision. Mainstream methods rely on synthetic data (e.g., ITS/OTS from the RESIDE dataset) for supervised training, but suffer from a severe domain gap:
+Image dehazing is a classic low-level vision problem. Current mainstream methods rely on supervised training with synthetic data (e.g., ITS/OTS from RESIDE), but face severe domain gap issues:
 
-**Synthetic-to-real domain gap**: Synthetic hazy images are generated via the atmospheric scattering model $I(x) = J(x)t(x) + A(1-t(x))$, which differs significantly from the complex degradations in real haze (non-uniform haze, color shifts, multi-layer fog, etc.).
+**Synthetic-Real Domain Gap**: Synthetic hazy images generated via the atmospheric scattering model $I(x) = J(x)t(x) + A(1-t(x))$ differ significantly from complex real-world degradation (non-uniform haze, color shifts, multi-layer haze, etc.).
 
-**Absence of paired real data**: It is nearly impossible to obtain paired hazy/clear images of the same real scene, rendering conventional supervised fine-tuning infeasible.
+**Unpaired Real Data**: It is nearly impossible to obtain paired hazy/haze-free images in real scenarios, making traditional supervised fine-tuning infeasible.
 
-**High cost of full fine-tuning**: For Transformer-based dehazing models, updating all parameters is time-consuming and prone to overfitting on limited adaptation data.
+**High Cost of Full Fine-tuning**: For Transformer-based dehazing models, fine-tuning all parameters is time-consuming and prone to overfitting on limited adaptation data.
 
-Limitations of prior methods:
-- **Domain adaptation methods** (DA-dehazing, USID-Net) rely on CycleGAN-style translation, which suffers from training instability and may introduce artifacts.
-- **LoRA fine-tuning** reduces parameter count, but **the choice of which layers to insert LoRA into is critical** — random or uniform placement is far from optimal.
+Limitations of Prior Work:
+- **Domain Adaptation Methods** (DA-dehazing, USID-Net) use CycleGAN-style translation, but training is unstable and may introduce artifacts.
+- **LoRA Fine-tuning** reduces parameter count, but **where to insert LoRA is critical**—random selection or uniform distribution is far from optimal.
 
 ## Core Problem
 
-How can a dehazing model pretrained on synthetic data be adapted to real haze scenes at minimal training cost, without any real paired supervision? Two sub-problems must be addressed:
-1. Design of an unsupervised optimization objective in the absence of real ground truth.
-2. Automated and optimal selection of LoRA insertion layers.
+How to adapt a dehazing model pre-trained on synthetic data to real hazy scenarios with minimal training cost and no real-world paired supervision? Specifically:
+1. Designing an unsupervised optimization objective without real GT.
+2. Automating and optimizing the selection of LoRA layers.
 
 ## Method
 
-### H2C Loss: Haze-to-Clear Text-Guided Loss
+### Overall Architecture
 
-**Core idea**: The CLIP-pretrained vision-language alignment space is leveraged to construct a semantic direction from "hazy" to "clear" as an unsupervised dehazing signal.
+BiLaLoRA aims to adapt a dehazing model pre-trained on synthetic haze to real scenarios without paired supervision or the cost of full fine-tuning. The pipeline decouples "what signal to train with" and "where to train"—the former utilizes the unsupervised H2C Loss instead of missing real GT, while the latter uses bilevel optimization (BiLaLoRA) to automatically locate "bottleneck layers" for LoRA insertion. The key insight is that bottleneck layers affected by domain gaps are not fixed but vary dynamically with the backbone (the end of the encoder often contributes most, though specifics depend on the architecture); thus, layer selection must be automated. BiLaLoRA execution involves two stages: Stage 1 (Bilevel Search) learns layer-selection gating $\alpha$ and LoRA weights $\omega$ simultaneously, selecting Top-K layers based on $\alpha$; Stage 2 (LoRA Fine-tuning) trains LoRA only on these Top-K layers while freezing others. Both stages use H2C Loss.
 
-**Defining positive and negative text prompts**:
-- $T_{\text{pos}}$ (positive/clear): "a clear photo", "a bright image", "a high-quality photo"
-- $T_{\text{neg}}$ (negative/hazy): "a hazy photo", "a foggy image", "a blurry photo"
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Synthetic Pre-trained Model<br/>+ Unpaired Real Hazy Images"] --> H["H2C Loss<br/>CLIP Semantic Direction as Unsupervised Signal"]
+    H --> S1
+    subgraph BLL["BiLaLoRA: Bilevel Optimization for LoRA Positioning"]
+        direction TB
+        S1["Stage 1: Bilevel Search<br/>Upper: Update gating α, Lower: Learn LoRA weights ω"] --> S2["Rank-one Hypergradient Approximation<br/>Select Top-K Bottleneck Layers via α"]
+        S2 --> S3["Stage 2: Fine-tuning<br/>Train LoRA on Top-K Layers only, others frozen"]
+    end
+    S3 --> O["Adapted Real-Domain Dehazing Model"]
+```
 
-**Semantic direction computation**:
+### Key Designs
 
-Image-domain direction: $\Delta V_{\text{img}} = V_{\text{out}} - V_{\text{in}}$
+**1. H2C Loss: CLIP Semantic Direction as Supervision without Real GT**
 
-where $V_{\text{out}} = \text{CLIP}_{\text{img}}(\hat{J})$ is the CLIP image feature of the dehazed output and $V_{\text{in}} = \text{CLIP}_{\text{img}}(I)$ is the feature of the hazy input.
+Real scenarios lack paired hazy/haze-free images. H2C Loss leverages the aligned vision-language space of CLIP to reformulate "dehazing" as cross-modal semantic alignment. A negative prompt $T_{\text{neg}}$ ("a photo with haze") and a positive prompt $T_{\text{pos}}$ ("a clear photo") are encoded via the CLIP text encoder. The difference $\Delta T_{\text{text}} = T_{\text{pos}} - T_{\text{neg}}$ represents the ideal "hazy to clear" semantic direction. Adapting to different scenarios (e.g., nighttime haze) only requires changing the prompts.
 
-Text-domain direction: $\Delta T_{\text{text}} = T_{\text{pos}} - T_{\text{neg}}$
+Correspondingly, hazy input $I_{\text{in}}$ and dehazed output $I_{\text{out}}$ are passed through the CLIP image encoder to obtain a displacement vector $\Delta V_{\text{img}} = V_{\text{out}} - V_{\text{in}}$, where $V_{\text{in}} = \text{CLIP}_{\text{img}}(I_{\text{in}})$ and $V_{\text{out}} = \text{CLIP}_{\text{img}}(I_{\text{out}})$. The loss enforces alignment between these directions via cosine similarity:
 
-**H2C Loss**:
+$$\mathcal{L}_{\text{H2C}} = 1 - \frac{\Delta V_{\text{img}} \cdot \Delta T_{\text{text}}}{\|\Delta V_{\text{img}}\|_2 \cdot \|\Delta T_{\text{text}}\|_2}$$
 
-$$\mathcal{L}_{\text{H2C}} = 1 - \cos(\Delta V_{\text{img}}, \Delta T_{\text{text}})$$
+The key lies in "directional alignment" rather than "absolute distance"—it constrains the image to move toward a clear direction without forcing the output to match a specific text, avoiding artifacts and training instability typical of CycleGAN method.
 
-This maximizes the cosine similarity between the image change direction and the "hazy→clear" text direction, requiring no real ground truth and relying entirely on CLIP's semantic priors.
+**2. BiLaLoRA: Modeling LoRA layer positioning as Differentiable Bilevel Optimization**
 
-### BiLaLoRA: Bilevel Optimization for Layer Positioning
+LoRA efficiency depends heavily on layer placement. However, bottleneck layers affected by domain gaps vary across architectures. BiLaLoRA reformulates layer selection as a differentiable architecture search by attaching a learnable gating $\alpha$ (constrained to $(0,1)$ via sigmoid) to each candidate LoRA module, modulating the contribution of the low-rank increment alongside the scaling factor $\gamma$:
 
-Determining which layers to insert LoRA into and how to weight their importance is a combinatorial optimization problem. BiLaLoRA formulates this as bilevel optimization:
+$$W' = W_0 + \alpha \cdot \gamma \cdot \Delta W$$
 
-**Upper-level optimization** (layer selection weights $\alpha$):
+The gating $\alpha$ and LoRA weights $\omega$ involve hierarchical dependencies that single-level optimization cannot capture. This is formulated as a bilevel optimization problem where the upper level selects layers and the lower level learns weights:
 
-$$\min_{\alpha} \mathcal{L}_{\text{val}}(\omega^*(\alpha), \alpha)$$
+$$\min_{\alpha} \varphi(\omega^*(\alpha), \alpha), \quad \text{s.t.}\ \omega^*(\alpha) \in \arg\min_{\omega} \psi(\omega, \alpha)$$
 
-**Lower-level optimization** (LoRA weights $\omega$):
+To avoid the prohibitive cost of second-order Hessian inversion in the hypergradient $\nabla_\alpha \varphi$, a rank-one outer product approximation is used, reducing the hypergradient to first-order derivatives:
 
-$$\omega^*(\alpha) = \arg\min_{\omega} \mathcal{L}_{\text{train}}(\omega, \alpha)$$
+$$g_\alpha \approx \nabla_\alpha \varphi - \frac{\nabla_\omega \varphi^\top \nabla_\omega f}{\|\nabla_\omega f\|^2} \nabla_\alpha f$$
 
-where $\alpha = \{\alpha_1, \ldots, \alpha_L\}$ denotes per-layer selection weights and $\omega$ denotes all LoRA parameters.
+This step facilitates automatic and efficient layer selection, while training time is drastically saved by only fine-tuning Top-K layers in Stage 2.
 
-**Continuous relaxation**: Gumbel-Sigmoid is applied to relax the discrete layer selection:
+### Loss & Training
 
-$$g_l = \sigma\left(\frac{\log(\alpha_l / (1-\alpha_l)) + G}{\tau}\right)$$
-
-where $G$ is Gumbel noise and $\tau$ is a temperature parameter. During training, $g_l$ serves as a continuous weight; after the search, the Top-K layers are selected and fixed.
-
-**Efficient hypergradient computation**: Standard bilevel optimization requires second-order Hessian computation. This work adopts a rank-one approximation:
-
-$$\nabla_\alpha \mathcal{L}_{\text{val}} \approx \nabla_\alpha \mathcal{L}_{\text{val}} - \frac{\eta}{\epsilon} (\nabla_\alpha \mathcal{L}_{\text{train}}(\omega^+) - \nabla_\alpha \mathcal{L}_{\text{train}}(\omega^-))$$
-
-where $\omega^\pm = \omega \pm \epsilon \nabla_\omega \mathcal{L}_{\text{val}}$, requiring only first-order derivatives.
-
-### Two-Stage Training Pipeline
-
-1. **Stage 1 — Bilevel Search**: $\alpha$ and $\omega$ are jointly optimized using Gumbel-Sigmoid continuous relaxation. After the search, Top-K layers are selected based on $\alpha$ values.
-2. **Stage 2 — LoRA Fine-tuning**: LoRA weights are trained only on the Top-K fixed layers; all other layers remain frozen.
-
-### Total Training Loss
-
-$$\mathcal{L} = \mathcal{L}_{\text{H2C}} + \lambda \mathcal{L}_{\text{reg}}$$
-
-where $\mathcal{L}_{\text{reg}}$ is a regularization term preventing excessive deviation of the dehazed output from the input, and $\lambda$ is a balancing coefficient.
+The pipeline uses H2C Loss as the sole objective and proceeds in two stages: **Stage 1 (Bilevel Positioning, $t=0 \ldots T_s-1$)** performs alternating updates—arch parameters $\alpha$ are updated via rank-one hypergradients, followed by LoRA weights $\omega$. At the switching epoch $T_s$, Top-K layers are fixed based on $\alpha$ values. **Stage 2 (LoRA Fine-tuning, $t=T_s \ldots T$)** freezes the selection $\alpha^*$ and focuses solely on training LoRA weights in those Top-K layers.
 
 ## Key Experimental Results
 
-### Cross-Model Adaptation Performance
+### Performance Across Model Backbones
 
-BiLaLoRA is effective across four different dehazing backbones:
+BiLaLoRA is effective across four distinct dehazing backbones:
 
 | Base Model | Method | RTTS (MUSIQ↑) | URHI (MUSIQ↑) | Parameters |
-|-----------|--------|--------------|--------------|------------|
+|:---:|:---:|:---:|:---:|:---:|
 | MSBDN | Full Fine-tuning | Baseline | Baseline | 100% |
-| MSBDN | **BiLaLoRA** | **On par** | **On par** | ~5% |
+| MSBDN | **BiLaLoRA** | **Comparable** | **Comparable** | ~5% |
 | DeHamer | Full Fine-tuning | Baseline | Baseline | 100% |
-| DeHamer | **BiLaLoRA** | **On par** | **On par** | ~5% |
+| DeHamer | **BiLaLoRA** | **Comparable** | **Comparable** | ~5% |
 | ConvIR | Full Fine-tuning | Baseline | Baseline | 100% |
-| ConvIR | **BiLaLoRA** | **On par** | **On par** | ~5% |
+| ConvIR | **BiLaLoRA** | **Comparable** | **Comparable** | ~5% |
 | DEA | Full Fine-tuning | Baseline | Baseline | 100% |
-| DEA | **BiLaLoRA** | **On par** | **On par** | ~5% |
+| DEA | **BiLaLoRA** | **Comparable** | **Comparable** | ~5% |
 
-### Comparison with Real Dehazing SOTA
+### Main Results
 
 | Method | RTTS | URHI | Fattal |
-|--------|------|------|--------|
+|:---:|:---:|:---:|:---:|
 | DAD (CVPR 2020) | Low | Low | Low |
-| USID-Net (TIP 2022) | Medium | Medium | Medium |
+| USID-Net (TIP 2022) | Mid | Mid | Mid |
 | **BiLaLoRA (Ours)** | **SOTA** | **SOTA** | **SOTA** |
 
-State-of-the-art results are achieved on all three real dehazing benchmarks: RTTS, URHI, and Fattal.
+Ours achieves SOTA results on RTTS, URHI, and Fattal real-world datasets.
 
-### Training Efficiency
+### Efficiency
 
-| Method | Training Time | vs. Full Fine-tuning |
-|--------|--------------|----------------------|
+| Method | Training Time | Rel. to Full Fine-tuning |
+|:---:|:---:|:---:|
 | Full Fine-tuning | 100% | Baseline |
-| LoRA (uniform) | ~40% | −60% |
-| **BiLaLoRA** | **~22.3%** | **−77.7%** |
+| LoRA (Uniform) | ~40% | -60% |
+| **BiLaLoRA** | **~22.3%** | **-77.7%** |
 
-Training time is reduced by 77.7%, primarily due to training only on a small number of layers after Stage 1 search.
+Training time is reduced by 77.7% as Stage 2 only trains a subset of layers.
 
 ### Ablation Study
 
-| Component | MUSIQ | Note |
-|-----------|-------|------|
+| Component | MUSIQ | Description |
+|:---:|:---:|:---:|
 | Full BiLaLoRA | Best | — |
-| w/o H2C Loss (replaced with L1) | Significant drop | Unsupervised adaptation fails |
-| Uniform LoRA (no bilevel search) | Drop | Demonstrates importance of layer selection |
-| Random layer selection | Larger drop | Worse than uniform |
-| Full-layer LoRA | Moderate | More parameters but inferior to targeted placement |
+| w/o H2C Loss (use L1) | Significant drop | Cannot adapt without supervision |
+| Uniform LoRA (no Search) | Drop | Highlighting importance of layer selection |
+| Random Selection | Further drop | Random is worse than uniform |
+| Full-Layer LoRA | Mid | More params but less effective than positioning |
 
 ### Cross-Domain Adaptation
 
-| Training Data | Test Data | BiLaLoRA |
-|--------------|-----------|----------|
-| ITS (indoor synthetic) | RTTS (real) | Effective |
-| OTS (outdoor synthetic) | URHI (real) | Effective |
-| Daytime haze | Nighttime haze | Effective |
-| Synthetic domain A | Synthetic domain B | Effective |
+| Training Data | Test Data | BiLaLoRA Effect |
+|:---:|:---:|:---:|
+| ITS (Indoor Synthetic) | RTTS (Real) | Effective |
+| OTS (Outdoor Synthetic) | URHI (Real) | Effective |
+| Daytime Haze | Nighttime Haze | Effective |
+| Synthetic A | Synthetic B | Effective |
 
 ## Highlights & Insights
 
-1. **Elegant H2C Loss design**: Constructing an unsupervised loss via directional semantics in CLIP space is more stable than CycleGAN-style methods and avoids artifact risks. The key insight is using a *directional difference* rather than an absolute distance, preventing degenerate solutions where the output is forced to match specific text embeddings.
-2. **Applying NAS ideas to LoRA layer selection**: Bilevel optimization automates optimal layer identification, eliminating manual trial-and-error. Gumbel-Sigmoid relaxation makes the discrete search differentiable.
-3. **Rank-one approximation reduces bilevel optimization cost**: Simplifying second-order Hessian computation to first-order significantly improves practical feasibility.
-4. **Strong cross-model generalizability**: The method is effective on both CNN (MSBDN, ConvIR) and Transformer (DeHamer, DEA) architectures, demonstrating architecture-agnostic applicability.
-5. **Decoupled two-stage pipeline**: Separating search from training allows the search phase to complete rapidly, with training focused on only the most effective layers.
+1.  **Elegant H2C Loss**: Leverages CLIP's semantic space for unsupervised loss construction; more stable than CycleGAN and artifact-free. Use of "direction" instead of "distance" allows adaptation by simply changing prompts.
+2.  **NAS for LoRA Placement**: Introduces differentiable architecture search to LoRA positioning, avoiding manual trial and error.
+3.  **Efficiency via Rank-one Approximation**: Simplifies the hypergradient from second-order to first-order, making bilevel optimization practical for large models.
+4.  **Generality**: Proven effective across both CNN and Transformer architectures.
+5.  **Two-stage Decoupling**: Separating search from training allows fast convergence on the most critical bottleneck layers.
 
 ## Limitations & Future Work
 
-1. **CLIP dependency**: The quality of H2C Loss depends on the quality of CLIP's semantic space. For degradation types not well covered by CLIP (e.g., extreme haze), the directional signal may be inaccurate.
-2. **Hard Top-K truncation**: Selecting Top-K layers after the search is a discrete approximation that may discard contributions from borderline layers. The choice of K requires cross-validation.
-3. **Validation limited to dehazing**: Although the framework is general, experiments are conducted only on dehazing; effectiveness on other low-level vision tasks (deraining, denoising, super-resolution) remains unverified.
-4. **Limitations of perceptual quality metrics**: Evaluation relies primarily on no-reference metrics such as MUSIQ; validation using reference metrics (PSNR/SSIM on paired data) is absent.
-5. **Lack of comparison with recent vision foundation models**: No comparison is made against generative dehazing methods such as Stable Diffusion.
+1.  **CLIP Dependency**: H2C Loss quality depends on the CLIP semantic space; it may be less accurate for degradation types not well-represented in CLIP.
+2.  **Top-K Hard Truncation**: Fixing Top-K layers is a discrete approximation that might overlook marginal contributions from other layers.
+3.  **Task Scope**: Currently only validated on dehazing; effectiveness for other low-level tasks (deraining, denoising, SR) remains to be seen.
+4.  **Reference Metrics Missing**: Primarily evaluated with no-reference metrics (MUSIQ); lacks validation with reference-based metrics (PSNR/SSIM) on paired sets.
+5.  **Foundation Model Baseline**: Comparisons with recent generative dehazing methods (e.g., Stable Diffusion based) are missing.
 
 ## Related Work & Insights
 
-- **vs. standard LoRA fine-tuning**: Uniform LoRA insertion underperforms BiLaLoRA's adaptive selection, demonstrating that *where* LoRA is inserted matters more than *how much*.
-- **Analogy to DARTS** (classic bilevel optimization in NAS): BiLaLoRA transfers DARTS's operation search paradigm to LoRA layer selection, representing a cross-disciplinary innovation between NAS and PEFT.
-- **Connection to CLIP-guided methods** (CLIPasso, StyleCLIP): All leverage CLIP semantic directions to guide optimization, but BiLaLoRA introduces directional loss for low-level vision tasks, with a use case more grounded in physical degradation modeling.
-- **Insights**: (1) The bilevel layer selection paradigm can be extended to position optimization for other PEFT methods (e.g., Adapter, Prefix Tuning); (2) The "directional" design of H2C Loss can be applied to other unsupervised image restoration tasks — requiring only the definition of a degraded→restored text direction.
+- **Vs. Standard LoRA**: Uniform LoRA insertion is inferior to adaptive positioning, proving "where to insert" is more vital than "how much to insert."
+- **Vs. DARTS**: BiLaLoRA adapts the bilevel optimization of DARTS to PEFT layer selection—an intersection of NAS and PEFT.
+- **Vs. CLIP-guided Methods**: Like CLIPasso or StyleCLIP, it uses semantic directions but adapts this to physical degradation in low-level vision.
+- **Inspiration**: The bilevel positioning logic can be extended to other PEFT methods like Adapters or Prefix Tuning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — H2C Loss and bilevel layer positioning each contribute independently, forming a coherent and complete solution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Cross-model, cross-domain, and ablation experiments are thorough, though reference-metric validation is absent.
-- **Practicality**: ⭐⭐⭐⭐⭐ — A 77.7% reduction in training time with no performance degradation is highly deployment-friendly.
-- **Writing Quality**: ⭐⭐⭐⭐ — Method description is clear; mathematical derivation of bilevel optimization is complete.
+- **Novelty**: ⭐⭐⭐⭐
+- **Experimental Thoroughness**: ⭐⭐⭐⭐
+- **Value**: ⭐⭐⭐⭐⭐
+- **Writing Quality**: ⭐⭐⭐⭐
 - **Overall**: ⭐⭐⭐⭐ (4.0/5)
 
 <!-- RELATED:START -->
@@ -202,11 +191,11 @@ Training time is reduced by 77.7%, primarily due to training only on a small num
 
 ## Related Papers
 
+- [\[CVPR 2025\] CoA: Towards Real Image Dehazing via Compression-and-Adaptation](../../CVPR2025/model_compression/coa_towards_real_image_dehazing_via_compression-and-adaptation.md)
 - [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
-- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
-- [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
-- [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](../../ACL2026/model_compression/a_layer-wise_analysis_of_supervised_fine-tuning.md)
-- [\[ICML 2026\] Hierarchical Image Tokenization for Multi-Scale Image Super Resolution](../../ICML2026/model_compression/hierarchical_image_tokenization_for_multi-scale_image_super_resolution.md)
+- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
+- [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
 
 </div>
 

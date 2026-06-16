@@ -2,77 +2,83 @@
 title: >-
   [Paper Note] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal Large Language Models] The paper shifts the VRAM bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching during the decoding phase" forward to the "peak vis…
+  [ACL 2026][Multimodal VLM][Paper Note] The paper shifts the VRAM bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching during decoding" to the "visual token peak caching during prefill." It proposes a structure-aware KV-cache framework that performs computation and compression concurrently during the prefill phase, maintaining pe
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Multimodal Large Language Models"
-  - "KV Cache"
-  - "prefill compression"
-  - "VRAM optimization"
-  - "visual tokens"
+  - ACL 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 125003be85dcde66
+content_hash: 19e248a2d1e6fda1
 ---
-
 # Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.16734](https://arxiv.org/abs/2604.16734)  
-**Code**: Not disclosed  
+**Code**: Not released  
 **Area**: Multimodal VLM / Inference Efficiency / KV Cache Compression  
-**Keywords**: Multimodal Large Language Models, KV Cache, prefill compression, VRAM optimization, visual tokens
+**Keywords**: Multimodal Large Language Models, KV Cache, Prefill Compression, VRAM Optimization, Visual Tokens
 
 ## TL;DR
-The paper shifts the VRAM bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching during the decoding phase" forward to the "peak visual token caching during the prefill phase." It proposes a structure-aware KV-cache framework that performs computation and compression simultaneously during prefill. This maintains peak VRAM within a fixed cache budget while preserving image and video understanding capabilities as much as possible.
+The paper shifts the VRAM bottleneck of Multimodal Large Language Models (MLLMs) from "long-context caching during decoding" to the "visual token peak caching during prefill." It proposes a structure-aware KV-cache framework that performs computation and compression concurrently during the prefill phase, maintaining peak VRAM within a fixed budget while preserving image and video understanding capabilities.
 
 ## Background & Motivation
-**Background**: Modern MLLMs typically use visual encoders to extract image or video features, which are then fed into the LLM backbone via projection layers. This allows text tokens and a large number of visual tokens to enter self-attention together. High-resolution images, multi-tile inputs, and long video frame sequences cause visual token counts to expand rapidly, requiring the model to process extremely long multimodal prefixes before decoding.
+**Background**: Modern MLLMs typically use visual encoders to extract image or video features, which are then fed into the LLM backbone via a projection layer. This results in text tokens and a massive number of visual tokens entering the self-attention mechanism simultaneously. High-resolution images, multi-tile inputs, and long video frame sequences cause visual tokens to expand rapidly, requiring the model to process extremely long multimodal prefixes before decoding begins.
 
-**Limitations of Prior Work**: KV cache was originally designed to reduce redundant computation in autoregressive decoding, but cache size grows linearly with the number of tokens, layers, and heads. In MLLMs, peak VRAM usage often occurs not when generating long answers, but during the prefill phase: the model must first construct the KV cache for the complete visual context before generation begins. Many existing KV compression methods perform eviction or merging only after the full cache has already been built, thus failing to avoid VRAM spikes and OOM (Out-of-Memory) during prefill.
+**Limitations of Prior Work**: KV cache was originally designed to reduce redundant computation during autoregressive decoding, but its size grows linearly with the number of tokens, layers, and heads. In MLLMs, peak VRAM usage often occurs not during long response generation, but during the prefill phase: the model must construct the KV cache for the entire visual context before generation starts. Many existing KV compression methods perform eviction or merging *after* the full cache has already been built, thus failing to prevent VRAM spikes and OOM (Out-of-Memory) errors during prefill.
 
-**Key Challenge**: Multimodal inference needs to retain sufficiently fine-grained visual information, especially for high-resolution localization and long-video temporal cues. However, if full encoding precedes compression, the VRAM peak has already occurred. Simply lowering input resolution or deleting visual tokens directly results in the loss of task-essential details.
+**Key Challenge**: Multimodal inference requires retaining sufficiently fine-grained visual information, especially for high-resolution localization and long-video temporal cues. However, if encoding is completed before compression, the VRAM peak has already occurred. Conversely, directly reducing input resolution or dropping visual tokens causes a loss of task-essential details.
 
-**Goal**: To design an inference framework that maintains a fixed KV-cache budget during the prefill process, enabling the model to handle larger-scale visual inputs. Additionally, the paper compares query-aware and query-agnostic online eviction strategies and analyzes the relationship between VRAM, latency, and accuracy.
+**Goal**: Design an inference framework that maintains a fixed KV-cache budget during the prefill process, enabling models to handle larger-scale visual inputs. Additionally, compare query-aware and query-agnostic online eviction strategies and analyze the relationships between VRAM, latency, and accuracy.
 
-**Key Insight**: The authors observe that visual tokens differ from pure text tokens; images possess spatial continuity, and videos possess temporal redundancy. These structures imply that compression granularity should not be entirely random or rely solely on global attention statistics but should align with visual patches, tiles, or groups of frames.
+**Key Insight**: The authors observe that visual tokens differ from pure text tokens; images possess spatial continuity and videos possess temporal redundancy. These structures imply that compression granularity should not be entirely random or rely solely on global attention statistics, but should instead align with visual patches, tiles, or frame groups.
 
-**Core Idea**: Instead of waiting for the entire multimodal prefix to be encoded before compressing, the visual context is processed in blocks during prefill. Each time a block is processed, the KV cache is compressed back to a fixed budget, changing "process first, compress later" to "compress as you prefill."
+**Core Idea**: Instead of waiting for the full multimodal prefix to be encoded before compressing, the visual context is processed in blocks during prefill. Each time a block is processed, the KV cache is compressed back to a fixed budget, effectively changing "process first, compress later" to "compress as you prefill."
 
 ## Method
-The method in this paper does not train a new model but modifies the inference execution path of MLLMs. The key is to break the traditional one-time prefill into block-wise prefill: the input sequence is divided into continuous blocks, and the model calculates KV block by block. Every time new KV blocks are appended, if the cache exceeds the budget, tokens are immediately removed according to an eviction strategy. Consequently, the complete visual context never resides in VRAM as a full cache; peak VRAM is controlled by the budget rather than the raw number of visual tokens.
+The method proposed in this paper does not involve training a new model but instead reconstructs the inference execution path of MLLMs. The key is to decompose traditional one-time prefill into block-wise prefill: the input sequence is divided into continuous blocks, and the model calculates KV for each block sequentially. After appending new KV pairs, if the cache exceeds the budget, tokens are immediately removed according to an eviction strategy. Thus, the full visual context never resides in VRAM as a complete cache simultaneously; peak VRAM is controlled by the budget rather than the original visual token count.
 
 ### Overall Architecture
-Given a multimodal input sequence $S$, block size $b$, and cache budget $M$, the framework first divides $S$ into several continuous blocks. When processing the $i$-th block, the model calculates the key/value for that block and adds them to the existing cache $C$. If $|C| > M$, the system calculates the excess amount $k_{excess}=|C|-M$ and calls the eviction strategy to compress the cache back within the budget. This process continues until prefill is complete, resulting in a budget-controlled compressed KV cache for subsequent decoding.
+Given a multimodal input sequence $S$, block size $b$, and cache budget $M$, the framework first divides $S$ into continuous blocks. When processing the $i$-th block, the model computes its key/value pairs and appends them to the existing cache $C$. If $|C| > M$, the system calculates the excess $k_{excess} = |C| - M$ and invokes the eviction strategy to compress the cache back within the budget. This process continues until prefill is complete, resulting in a budget-controlled compressed KV cache for subsequent decoding.
 
-The paper considers two types of online eviction. In single-turn QA, where the text query is already visible, a query-aware SnapKV-style strategy can be used to estimate the importance of visual tokens using the similarity between a proxy query in the prompt and the cached keys. In potential multi-turn scenarios where subsequent queries are unknown, a query-agnostic KeyDiff-style strategy is used to retain tokens that deviate more from the mean key representation to maintain visual diversity.
+The paper considers two types of online eviction. In single-turn Q&A, where the text query is visible, a query-aware "SnapKV-style" strategy estimates the importance of visual tokens relative to the current question using similarity between proxy queries and cached keys. In potential multi-turn scenarios where future queries are unknown, a query-agnostic "KeyDiff-style" strategy is used, retaining tokens that deviate more from the mean key representation to maintain visual diversity.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input sequence S<br/>Block size b, Budget M"] --> B["Structure-aligned granularity<br/>Boundaries on tiles / grids / frames"]
+    B --> C["Block-wise prefill<br/>Compute and append block i K/V to cache C"]
+    C --> D{"|C| > M ?"}
+    D -->|Yes| E["Calculate excess k_excess = |C| − M<br/>Invoke eviction strategy"]
+    E --> F{"Is query visible?"}
+    F -->|Single-turn / Known| G["Query-aware path (SnapKV style)<br/>Similarity-based retention"]
+    F -->|Multi-turn / Unknown| H["Query-agnostic path (KeyDiff style)<br/>Diversity-based retention"]
+    G --> I{"Next block exists?"}
+    H --> I
+    D -->|No| I
+    I -->|Yes| C
+    I -->|No| J["Budget-controlled KV cache<br/>→ Used for decoding"]
+```
 
 ### Key Designs
-1. **Fixed-budget block-wise prefill**:
 
-    - **Function**: Limits the peak VRAM of the KV cache during the prefill phase to near budget $M$, avoiding transient OOM caused by full visual contexts.
-    - **Mechanism**: The input is split into continuous blocks; the model appends KV and immediately performs eviction after processing each block. Unlike post-prefill compression, it never needs to store the full cache, so peak VRAM grows with the budget rather than the original token count.
-    - **Design Motivation**: Long visual inputs in MLLMs create VRAM peaks before decoding; optimizing only the generation phase is insufficient. Online compression acts directly where the peak occurs.
+**1. Fixed-budget block-wise prefill: Pinning peak VRAM near budget $M$ rather than expanding with original visual tokens**
 
-2. **Visual structure-aligned compression granularity**:
+The long visual input of MLLMs creates high VRAM spikes before decoding even begins—the model must build the KV cache for the full visual context to generate the first token. Optimizing only the generation phase does not address this peak. This framework decomposes prefill into block-wise execution: the input sequence is cut into blocks of size $b$. When processing block $i$, calculated K/V pairs are added to cache $C$; if $|C| > M$, $k_{excess} = |C| - M$ tokens are immediately evicted. This ensures the full visual context never resides in VRAM as a complete cache. Compared to post-prefill eviction methods, online compression acts directly at the spike's origin to prevent OOM.
 
-    - **Function**: Ensures cache compression respects the structure of image tiles, spatial grids, and video frame groups to reduce the risk of erroneously deleting critical visual information.
-    - **Mechanism**: Block boundaries are aligned as much as possible with the natural structure of the visual input. The paper's analysis shows Qwen2.5-VL-7B performs best with a block size of 784, which corresponds exactly to its $28 \times 28$ visual tokenization.
-    - **Design Motivation**: Redundancy in visual tokens is not unstructured noise but comes from repetitions in adjacent areas and frames. If compression granularity disrupts this structure, it harms localization and fine-grained understanding.
+**2. Structure-aligned compression granularity: Aligning block boundaries with tiles, spatial grids, and frame groups to avoid deleting critical visual information**
 
-3. **Query-aware and query-agnostic dual-path eviction**:
+Redundancy in visual tokens is not unstructured noise but stems from repetition in adjacent regions and frames. If compression granularity cuts across these structures, tokens necessary for localization and fine-grained understanding may be erroneously deleted. Thus, block boundaries are intentionally aligned with the natural structure of visual inputs. Analysis shows Qwen2.5-VL-7B performs best with a block size of 784, which exactly matches its $28 \times 28$ visual tokenization. Structure alignment ensures eviction makes trade-offs while respecting spatial/temporal continuity.
 
-    - **Function**: Covers both single-turn and potential multi-turn task scenarios.
-    - **Mechanism**: The query-aware path scores cached keys using a proxy query from the text prompt to retain tokens related to the current question. The query-agnostic path calculates the difference between keys and the mean representation to retain representative or rare visual tokens.
-    - **Design Motivation**: Single-turn tasks prioritize task relevance, while multi-turn tasks require reusable visual caches. These strategies correspond to the assumptions that "the input is most useful for the current question" versus "may be useful for future questions."
+**3. Query-aware vs. query-agnostic dual-path eviction: Addressing "task-specific utility" vs. "future-proofed utility"**
+
+In single-turn Q&A, the text query is visible, making task relevance the primary goal. However, in multi-turn scenarios, subsequent queries are unknown, requiring the cache to maintain reusability. The framework provides two paths: the query-aware path uses a SnapKV-style approach to retain tokens relevant to the current question, while the query-agnostic path uses a KeyDiff-style approach, calculating the deviation of each key from the mean representation to preserve rare and representative tokens. This dual-path approach allows the framework to cover both single-turn and potential multi-turn deployments.
 
 ### Loss & Training
-This paper does not introduce new training objectives or require model fine-tuning; it is an inference-time KV-cache management method. Main hyperparameters include KV budget, block size, and eviction strategy. The default block size is 256, but the authors found that structure-aligned block sizes significantly improve performance. To reduce latency from pure block-wise execution, the paper uses a hybrid strategy: it attempts to process the part that fits within the budget via a single bulk forward pass, entering block-wise execution only when the budget is exceeded.
+This paper does not introduce a new training objective or require model fine-tuning; it is an inference-time KV-cache management method. Primary hyperparameters include KV budget, block size, and eviction strategy. The default block size is 256, though the authors found that structure-aligned block sizes significantly improve performance. To mitigate latency from pure block-wise execution, a hybrid strategy is used: bulk forward is used for the portion of the sequence that fits within the budget, with block-wise execution triggered only when the budget is exceeded.
 
 ## Key Experimental Results
 
 ### Main Results
-The main experiments cover fine-grained image localization and long video understanding tasks, including ImageNeedleInHaystack, V*, MLVU, and Video-MME long setting. The following results are for 8B/7B models, where Average is higher-is-better and Delta indicates the average decline relative to full cache.
+Main experiments cover fine-grained image localization and long video understanding tasks, including ImageNeedleInHaystack, V*, MLVU, and Video-MME long setting. The following 8B/7B model results demonstrate compression effectiveness (Average: higher is better; Delta: average drop relative to full cache).
 
 | Model | Method / KV Budget | ImageNeedle | V* | MLVU | Video-MME(L) | Average | Delta ↓ |
 |------|---------------|-------------|----|------|--------------|---------|---------|
@@ -83,7 +89,7 @@ The main experiments cover fine-grained image localization and long video unders
 | Qwen2.5-VL-7B | SnapKV 4096 | 85.00 | 78.53 | 44.82 | 48.77 | 64.28 | 1.24 |
 | Qwen2.5-VL-7B | KeyDiff 4096 | 81.56 | 79.58 | 47.41 | 49.33 | 64.47 | 1.05 |
 
-Model scale experiments show the method works on larger models, though performance drops more noticeably under a 1024 budget.
+Model scale experiments indicate the method works on larger backbones, though degradation is more pronounced at a 1024 budget.
 
 | Model | Method / KV Budget | ImageNeedle | V* | MLVU | Video-MME(L) | Average | Delta ↓ |
 |------|---------------|-------------|----|------|--------------|---------|---------|
@@ -95,57 +101,57 @@ Model scale experiments show the method works on larger models, though performan
 | Qwen2.5-VL-32B | KeyDiff 1024 | 67.19 | 72.25 | 45.82 | 54.56 | 59.96 | 11.03 |
 
 ### Ablation Study
-Prefill strategy analysis shows that the gains from this method are not simply from reduced resolution, nor is any dynamic budget effective.
+Prefill strategy analysis shows that benefits do not simply come from reducing input resolution, nor is any dynamic budget effective.
 
 | Analysis Item | Setting | ImageNeedle | Note |
 |--------|------|-------------|------|
-| Forward under budget | Block Forward 1024 | 80.94 | Entire prefill performed in blocks; stable VRAM but higher latency |
-| Forward under budget | Bulk Forward 1024 | 80.31 | Default hybrid strategy; similar accuracy with lower latency |
+| Forward under budget | Block Forward 1024 | 80.94 | Full block-wise execution, stable VRAM but higher latency |
+| Forward under budget | Bulk Forward 1024 | 80.31 | Default hybrid strategy, near accuracy with lower latency |
 | Static vs. Dynamic | Static 1024 | 80.31 | Fixed budget is more reliable during prefill |
-| Static vs. Dynamic | Dynamic 1024 | 74.68 | Dynamic layer-wise budget drops by 5.63 points |
-| Input res. vs. Compression | Compression 1024 | 80.31 | Keep high-res input, compress only KV cache |
-| Input res. vs. Compression | Reduction 1024 | 9.38 | Direct resolution reduction severely breaks visual localization |
+| Static vs. Dynamic | Dynamic 1024 | 74.68 | Dynamic layer-wise budget drops 5.63 points |
+| Input res. vs. Compression | Compression 1024 | 80.31 | Retains high-res input, compresses KV cache only |
+| Input res. vs. Compression | Reduction 1024 | 9.38 | Direct resolution reduction destroys visual localization |
 
-Block size ablation proves "structural alignment" is a key factor affecting compression robustness.
+Block size ablation further proves that "structure alignment" is critical for compression robustness.
 
-| Block size / KV budget | ImageNeedle | Global Peak (GB) | Avg. Peak (GB) | Observation |
+| Block size / KV Budget | ImageNeedle | Global Peak (GB) | Avg. Peak (GB) | Observation |
 |----------------------|-------------|------------------|----------------|------|
-| 256 / 2048 | 72.19 | 17.80 | 17.12 | Small default block; lowest VRAM but weak accuracy |
-| 512 / 2048 | 75.31 | 18.00 | 17.19 | Not fully aligned with visual grid |
-| 784 / 2048 | 80.63 | 18.21 | 17.26 | Matches $28 \times 28$ tokenization; best performance |
-| 1024 / 2048 | 79.38 | 18.38 | 17.37 | Slightly higher VRAM yields better accuracy |
+| 256 / 2048 | 72.19 | 17.80 | 17.12 | Default small block, lowest VRAM but lower accuracy |
+| 512 / 2048 | 75.31 | 18.00 | 17.19 | Incompletely aligned with visual grid |
+| 784 / 2048 | 80.63 | 18.21 | 17.26 | Matches $28 \times 28$ tokenization, best performance |
+| 1024 / 2048 | 79.38 | 18.38 | 17.37 | Slightly higher VRAM for good accuracy |
 
 ### Key Findings
-- The prefill phase is the critical VRAM peak for MLLMs with many visual tokens; post-prefill compression does not solve this.
-- On InternVL3.5-8B, a SnapKV 1024 budget resulted in only a 0.78 average drop, indicating that ~90% KV cache compression can still preserve primary visual abilities.
-- Query-aware eviction is stronger when the query is visible; query-agnostic KeyDiff provides a reusable solution for multi-turn or unknown query scenarios.
-- Directly reducing input resolution causes ImageNeedle to drop from 80.31 to 9.38, suggesting that keeping the original visual input and only compressing the cache is safer than input-level reduction.
-- This method transforms unrunnable OOM cases into adjustable memory-latency trade-offs, though increased latency is a necessary system cost.
+- The prefill phase is the critical VRAM bottleneck for MLLMs with many visual tokens; post-prefill compression does not solve this.
+- On InternVL3.5-8B, a budget of 1024 resulted in only a 0.78 average drop, suggesting ~90% KV cache compression can still preserve major visual capabilities.
+- Query-aware eviction is stronger when the query is visible, while query-agnostic KeyDiff provides a reusable solution for multi-turn or unknown query scenarios.
+- Directly reducing input resolution causes ImageNeedle to drop from 80.31 to 9.38, indicating that retaining original visual input while compressing the cache is safer than input-level reduction.
+- The method converts OOM failures into an adjustable memory-latency trade-off, though increased latency is an unavoidable system cost.
 
 ## Highlights & Insights
-- The paper accurately identifies the problem: VRAM pressure in MLLMs comes not just from "generating long outputs" but from "loading massive visual tokens before generation starts." This perspective extends KV-cache compression from decoding optimization to prefill optimization.
-- The method does not retrain models and has low engineering overhead. Any inference system supporting block-wise prefill and online eviction can integrate existing MLLMs.
-- The analysis of structural alignment is enlightening. Visual token compression should respect structures like patch grids, tiles, and frame sequences rather than just numerical importance.
-- The comparison with input downsampling is persuasive. The paper shows that "seeing less of the image" and "seeing the whole image but compressing the cache" are not equivalent; the latter is better for fine-grained visual tasks.
+- The paper accurately identifies the problem: VRAM pressure in MLLMs results not only from "long generation" but from the "massive visual tokens injected before generation." This perspective extends KV-cache compression from decoding optimization to prefill optimization.
+- The method does not require retraining, making it low-impact for engineering. As long as the inference system supports block-wise prefill and online eviction, it can be integrated into existing MLLMs.
+- The structure-alignment analysis is insightful. Visual token compression cannot rely solely on numerical importance; it must respect structures like patch grids, tiles, and frame sequences.
+- The comparison with input downsampling is compelling. The paper shows that "viewing a lower resolution" is not equivalent to "viewing a high-resolution image but compressing the cache," with the latter being superior for fine-grained tasks.
 
 ## Limitations & Future Work
-- Block-wise prefill increases time-to-first-token (TTFT), especially with smaller budgets; the system requires a trade-off between runnability and latency.
-- Query-agnostic eviction only preserves representation diversity and does not know what a user will actually ask, making it weaker than query-aware strategies in task relevance.
-- Compression effectiveness depends on the alignment of block boundaries with visual tokenization; different MLLM visual encoding methods may require separate tuning.
-- This method only compresses at inference time and does not adapt the model to prefill-stage compression during training; future work could train models to be more robust under compressed cache conditions.
-- VRAM curves in the paper are mainly shown as figures without accompanying precise textual values, requiring further verification via the original figures or code when reproducing experiments.
+- Block-wise prefill increases Time-to-First-Token (TTFT), especially under small budgets; systems must balance feasibility and latency.
+- Query-agnostic eviction only preserves representation diversity and does not account for what the user will actually ask, making it weaker in task-relevance compared to query-aware strategies.
+- Compression effectiveness depends on aligning block boundaries with visual tokenization, which may require per-model tuning for different MLLMs.
+- The method only compresses during inference without training the model to adapt; future work could train models to be more robust under prefill-stage compression conditions.
+- VRAM curves in the paper are primarily shown in figures; exact numerical values for peaks were not provided in text, requiring code or figure analysis for precise replication.
 
 ## Related Work & Insights
-- **vs SnapKV / H2O etc. post-prefill KV eviction**: These methods compress the decoding phase cache but usually construct the full context first. This paper moves compression into the prefill phase, directly reducing peak VRAM.
-- **vs KeyDiff**: KeyDiff is a query-agnostic diversity-preserving strategy. This paper places it into an online prefill framework, allowing continuous budget control during visual context construction.
-- **vs Input-level token pruning / resolution reduction**: Input pruning reduces the visual information entering the model, which can easily lose details. This paper retains high-resolution input and only applies budget control at the KV cache layer.
-- **vs MEDA / FlowMM**: These methods emphasize hierarchical or cross-modal structures of multimodal caches. The insight here is that system execution timing is equally important; compression occurring after the full cache versus during prefill leads to entirely different peak VRAM.
+- **vs SnapKV / H2O etc. post-prefill KV eviction**: These compress decoding-phase caches but usually require building the full context first. This work moves compression into the prefill phase to lower peak VRAM.
+- **vs KeyDiff**: KeyDiff is a query-agnostic diversity retention strategy; this paper integrates it into an online prefill framework to maintain a continuous cache budget during visual context construction.
+- **vs Input-level token pruning / resolution reduction**: Input pruning reduces the visual information entering the model, leading to detail loss; this paper retains high-resolution input and controls the budget at the KV cache layer.
+- **vs MEDA / FlowMM**: While these emphasize hierarchical or cross-modal cache structures, this work suggests that system execution timing (compressing during or after prefill) leads to entirely different peak VRAM outcomes.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Explicitly moving KV-cache compression to the MLLM prefill stage provides a clear problem definition and system perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers images, videos, various model sizes, and multiple ablations, though VRAM curve numerical readability is limited.
-- Writing Quality: ⭐⭐⭐⭐ Concise structure, direct motivation, and clear explanation of system trade-offs.
-- Value: ⭐⭐⭐⭐ Practical for deploying high-resolution and long-video MLLMs, especially in VRAM-constrained inference scenarios.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers images, video, various model sizes, and numerous ablations, though specific VRAM numerical readability is limited.
+- Writing Quality: ⭐⭐⭐⭐ Standard structure, direct motivation, and clear explanation of system trade-offs.
+- Value: ⭐⭐⭐⭐ Practical for deploying high-resolution and long-video MLLMs, especially in VRAM-constrained inference environments.
 
 <!-- RELATED:START -->
 
@@ -155,20 +161,9 @@ Block size ablation proves "structural alignment" is a key factor affecting comp
 
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
 - [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
-- [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
-- [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](../../CVPR2026/multimodal_vlm/capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
 - [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](../../CVPR2026/multimodal_vlm/capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
 - [\[ACL 2026\] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning](enhancing_multimodal_large_language_models_for_ancient_chinese_character_evoluti.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](../../CVPR2026/multimodal_vlm/pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
 
 </div>
 

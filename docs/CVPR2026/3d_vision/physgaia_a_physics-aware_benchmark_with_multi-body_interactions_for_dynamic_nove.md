@@ -2,121 +2,123 @@
 title: >-
   [Paper Note] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Physics-aware benchmark] PhysGaia constructs a physics-aware benchmark dataset comprising 17 scenes that cover multi-body interactions across four material categories—liquid, gas, cloth…
+  [CVPR 2026][3D Vision][Paper Note] PhysGaia constructs a physics-aware benchmark dataset containing 17 scenes, covering multi-body interactions of various materials such as liquids, gases, fabrics, and rheological substances. It provides ground truth for 3D particle trajectories and physical parameters (e.g., viscosity), and proposes two new metrics, Tr
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Physics-aware benchmark"
-  - "dynamic novel view synthesis"
-  - "multi-body interaction"
-  - "4D Gaussian splatting"
-  - "physical parameter evaluation"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 6b2b68699ab0abd4
+content_hash: 445c8d79f2f265af
 ---
-
 # PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2506.02794](https://arxiv.org/abs/2506.02794)  
 **Code**: [https://cv.snu.ac.kr/research/PhysGaia/](https://cv.snu.ac.kr/research/PhysGaia/)  
-**Area**: 3D Vision / Dynamic Scene Reconstruction
-**Keywords**: Physics-aware benchmark, dynamic novel view synthesis, multi-body interaction, 4D Gaussian splatting, physical parameter evaluation
+**Area**: 3D Vision / Dynamic Scene Reconstruction  
+**Keywords**: Physics-aware benchmark, Dynamic novel view synthesis, Multi-body interaction, 4D Gaussian Splatting, Physical parameter evaluation
 
 ## TL;DR
-PhysGaia constructs a physics-aware benchmark dataset comprising 17 scenes that cover multi-body interactions across four material categories—liquid, gas, cloth, and rheological matter—providing ground truth 3D particle trajectories and physical parameters (e.g., viscosity). The paper further introduces two new metrics, Trajectory Distance (TD) and AUOP, to quantify the physical realism of 4DGS methods, revealing severe deficiencies in physical reasoning among existing DyNVS approaches.
+PhysGaia constructs a physics-aware benchmark dataset containing 17 scenes, covering multi-body interactions of various materials such as liquids, gases, fabrics, and rheological substances. It provides ground truth for 3D particle trajectories and physical parameters (e.g., viscosity), and proposes two new metrics, Trajectory Distance (TD) and AUOP, to quantify the physical realism of 4DGS methods, revealing significant deficiencies in the physical reasoning of existing DyNVS methods.
 
 ## Background & Motivation
 
-**Background**: Dynamic novel view synthesis (DyNVS) has been a prominent research direction in 3D vision. From NeRF to 4D Gaussian Splatting (4DGS), existing methods have made substantial progress in photorealism, enabling high-quality 4D spatiotemporal scene reconstruction from video input.
+**Background**: Dynamic Novel View Synthesis (DyNVS) has become a focal point in 3D vision. From NeRF to 4D Gaussian Splatting (4DGS), existing methods have made considerable progress in photorealism, enabling high-quality 4D spatio-temporal scene reconstruction from video inputs.
 
-**Limitations of Prior Work**: (1) Existing DyNVS datasets (e.g., D-NeRF, Nerfies, DyCheck) focus almost exclusively on appearance reconstruction quality, with little consideration of physical realism. (2) The few physically oriented datasets (e.g., Spring-Gaus, PAC-NeRF, ScalarFlow) are limited to a single material type (only rheological matter or only gas) and single-object scenes, lacking multi-body interactions. (3) Real-world videos can capture complex scenes but cannot provide ground truth 3D trajectories or physical parameters, making quantitative evaluation of physical reasoning infeasible.
+**Limitations of Prior Work**: (1) Existing DyNVS datasets (e.g., D-NeRF, Nerfies, DyCheck) primarily focus on appearance reconstruction quality and almost entirely ignore physical realism; (2) The few physics-related datasets (e.g., Spring-Gaus, PAC-NeRF, ScalarFlow) are limited to single materials (only rheological substances or only gas) and single-object scenes, lacking multi-body interactions; (3) Real videos, while capturing complex scenes, cannot provide ground truth for 3D trajectories and physical parameters, making it difficult to quantitatively evaluate physical reasoning capabilities.
 
-**Key Challenge**: DyNVS is evolving from "looking like" to "behaving like" real physics—from photorealism to physical realism—yet the benchmarks needed to support this transition are absent. What is required is a dataset that simultaneously encompasses complex multi-body interactions, diverse material types, and reliable physical ground truth.
+**Key Challenge**: DyNVS is evolving from "looking real" to "behaving real" (from photorealism to physical realism), but there is a lack of benchmarks to support this transition—datasets that simultaneously possess complex multi-body interactions, diverse materials, and reliable physical ground truth are required.
 
-**Goal**: (1) Construct a physics-aware dataset featuring multi-body interaction scenes across four material categories; (2) provide complete ground truth (3D trajectories and physical parameters); (3) design physical realism metrics; (4) expose the physical limitations of existing methods.
+**Goal**: (1) Construct a physics-aware dataset covering multi-body interaction scenes across 4 material categories; (2) Provide complete ground truth (3D trajectories + physical parameters); (3) Design physical realism metrics; (4) Reveal the physical limitations of existing methods.
 
-**Key Insight**: Professional physics solvers (FLIP, Pyro, Vellum, MPM) are employed to ensure that each scene strictly adheres to the laws of physics, generating synthetic data with accurate physical ground truth.
+**Key Insight**: Utilize professional physical solvers (FLIP, Pyro, Vellum, MPM) to ensure each scene strictly follows physical laws, generating synthetic data with accurate physical ground truth.
 
-**Core Idea**: Use material-specific physics solvers to generate a multi-body interaction benchmark dataset, and evaluate DyNVS methods along both photometric and physical dimensions.
+**Core Idea**: Generate a multi-body interaction benchmark dataset using material-specific physical solvers to evaluate DyNVS methods across both photometric and physical dimensions.
 
 ## Method
 
 ### Overall Architecture
-PhysGaia is constructed at three levels: (1) Scene design and physics simulation—appropriate solvers are selected for each of the four material categories to generate 17 multi-body interaction scenes; (2) Data collection—multi-view and monocular videos, depth maps, normal maps, 3D particle trajectories, and physical parameters are extracted from the simulations; (3) Evaluation framework—in addition to standard photometric metrics (PSNR/SSIM/LPIPS), two new physical metrics, TD and AUOP, are introduced.
+PhysGaia aims to address a question bypassed by existing dynamic reconstruction benchmarks: do scenes reconstructed by 4DGS methods move "physically correctly" in addition to "looking correct"? To achieve this, the entire pipeline is divided into three layers. The upstream layer consists of scene design and physical simulation—selecting the most appropriate professional solvers for liquid, gas, fabric, and rheological substances to generate 17 scenes with multi-body interactions, ensuring every frame strictly adheres to physical laws. The midstream layer involves data acquisition—exporting multi-view/monocular videos, depth maps, and normal maps from the simulator, alongside 3D trajectory ground truth for each particle and physical parameters (e.g., viscosity) ground truth. The downstream layer is the evaluation system—supplementing standard photometric metrics (PSNR/SSIM/LPIPS) with two physical metrics, TD and AUOP, that directly quantify motion accuracy. By integrating these three layers, PhysGaia separately evaluates photometric realism and physical realism.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Scene Design<br/>17 Multi-body Interaction Scenes<br/>Liquid / Gas / Fabric / Rheological"] --> B["Material-Specific Solvers<br/>Liquid→FLIP, Gas→Pyro<br/>Fabric→Vellum, Rheological→MPM"]
+    B --> C["Data Acquisition<br/>Multi-view/Monocular Video + Depth + Normal<br/>+ 3D Particle Trajectory GT + Physical Parameter GT"]
+    C --> D["Photometric Evaluation<br/>PSNR / SSIM / LPIPS"]
+    C --> E["Trajectory Distance (TD)<br/>Mean Euclidean Distance between Reconstructed and GT Trajectories"]
+    C --> F["AUOP<br/>Area under the curve of cumulative permanent outlier percentages"]
+```
 
 ### Key Designs
 
-1. **Material-Specific Solvers**:
+**1. Material-Specific Solvers: Assigning optimal simulators to each material category**
 
-    - Function: Ensure physically accurate behavior for each material type.
-    - Mechanism: The FLIP (Fluid-Implicit Particle) solver is used for liquids, Pyro for gases, Vellum for cloth, and MPM (Material Point Method) for rheological matter. Each solver represents best practice for its material class—for instance, FLIP's hybrid particle-grid representation offers superior stability for incompressible fluids compared to pure-particle SPH, while Pyro's voxel grid accurately captures thermodynamic effects such as temperature and buoyancy.
-    - Design Motivation: Existing physics-integrated 4DGS works almost universally rely on MPM; however, MPM is fundamentally better suited to solids and rheological matter, and applying it to liquids or gases yields suboptimal accuracy and stability. Different materials require different solvers.
+Existing physics-aware 4DGS works almost exclusively use MPM (Material Point Method). However, MPM is inherently designed for solids and rheological substances; using it for liquids or gases leads to suboptimal precision and numerical stability. PhysGaia abandons the "one solver fits all" approach and assigns specialized solvers: FLIP (Fluid-Implicit Particle) for liquids, Pyro for gases, Vellum for fabrics, and MPM only for rheological substances. Each choice corresponds to the best simulation practice for that material class—FLIP's hybrid particle-mesh representation is more stable than SPH for incompressible fluids, and Pyro's voxel grids accurately capture thermodynamic effects like temperature and buoyancy. This targeted strategy ensures that motions in the benchmark are physically sound across all four material types.
 
-2. **Trajectory Distance (TD) Metric**:
+**2. Trajectory Distance (TD): Directly measuring the error between reconstructed and ground truth trajectories**
 
-    - Function: Quantify the spatial deviation between reconstructed particle trajectories and ground truth trajectories.
-    - Mechanism: Given $M$ reconstructed Gaussian primitives over $T$ frames, each reconstructed primitive $i$ is matched to its corresponding ground truth trajectory $j(i)$ via nearest-neighbor assignment in the initial frame. The average Euclidean distance over the entire temporal sequence is then computed: $\text{TD} = \frac{1}{MT}\sum_{i}\sum_{t}\|X_i^{t,\text{recon}} - X_{j(i)}^{t,\text{gt}}\|_2$
-    - Design Motivation: Traditional photometric metrics (PSNR, SSIM) evaluate only rendered image quality and cannot reflect whether the actual 3D motion of particles conforms to physics—a particle may be rendered at the "correct" location while its underlying trajectory is entirely wrong.
+Photometric metrics (PSNR, SSIM) only evaluate rendered images and cannot determine how particles actually move in 3D space—a particle might be rendered at the "correct" location, but its overall trajectory could be entirely wrong. TD quantifies this explicitly. Given $M$ reconstructed Gaussian primitives over $T$ frames, each reconstructed primitive $i$ is first matched to a corresponding ground truth trajectory $j(i)$ in the initial frame using nearest neighbors. The average Euclidean distance is then calculated along the entire timeline:
 
-3. **Area Under the Outlier Percentages (AUOP) Metric**:
+$$\text{TD} = \frac{1}{MT}\sum_{i}\sum_{t}\big\|X_i^{t,\text{recon}} - X_{j(i)}^{t,\text{gt}}\big\|_2$$
 
-    - Function: Detect and quantify the persistence and extent of trajectory deviations.
-    - Mechanism: For each primitive at each time step, the metric determines whether its deviation exceeds a threshold $\delta$. A key design choice is that once a primitive is flagged as an outlier, it remains an outlier permanently ($O_i^t = 1$ if $O_i^{t-1}=1$ or if the current deviation exceeds the threshold). The area under the curve of the outlier ratio over time is then computed. This captures the **cumulative effect** of physical deviation, analogous to the butterfly effect in chaotic systems.
-    - Design Motivation: TD is a global average and can be pulled down by a small number of accurate trajectories. AUOP instead focuses on "how many trajectories begin to deviate from physics at some point and continue to do so," providing a more informative measure of the severity of physical reasoning failures.
+A lower TD indicates that the reconstructed particles not only look correct but also follow trajectories consistent with real physics.
+
+**3. Area Under the Outlier Percentages (AUOP): Capturing the cumulative amplification of physical deviations**
+
+TD is a global average across the timeline, which can be pulled down by a large number of accurate trajectories, potentially masking critical failures where a minority of trajectories diverge significantly and never recover. AUOP is designed to monitor this cumulative effect. For each primitive at each time step, it determines if the deviation exceeds a threshold $\delta$. A key feature is the "once an outlier, always an outlier" logic—i.e., $O_i^t = 1$ if $O_i^{t-1}=1$ or the current deviation exceeds the threshold. The area under the percentage curve of outliers over time is then calculated. This irreversible marking reflects a core phenomenon in physical simulation: small initial errors are exponentially amplified in subsequent frames, similar to the butterfly effect in chaotic systems. Thus, AUOP measures the extent to which trajectories have permanently diverged from physical reality rather than frame-level error.
 
 ### Loss & Training
-PhysGaia is a dataset rather than a model; no training is involved. Its core contributions lie in providing COLMAP-reconstructed point clouds and an integration pipeline compatible with five 4DGS methods, enabling researchers to use the benchmark directly.
+PhysGaia is a benchmark dataset rather than a specific model and does not involve custom training. It additionally provides COLMAP reconstructed point clouds and ready-to-use integration pipelines for 5 4DGS methods for immediate research use.
 
 ## Key Experimental Results
 
-### Main Results (Photometric Quality — Average per Material under Monocular Setting)
+### Main Results (Photometric Quality - Average across materials in monocular setting)
 
-| Method | Liquid PSNR↑ | Gas PSNR↑ | Rheological PSNR↑ | Cloth PSNR↑ |
-|--------|-------------|----------|------------------|------------|
+| Method | Liquid PSNR↑ | Gas PSNR↑ | Rheological PSNR↑ | Fabric PSNR↑ |
+|------|-----------|-----------|-------------|-----------|
 | D-3DGS | 22.7 | 21.9 | 20.1 | 22.1 |
 | 4DGS | 24.2 | 21.7 | 19.5 | 24.9 |
 | STG | 19.2 | 21.9 | 13.6 | 21.9 |
 | MoSca | 20.5 | 21.2 | 17.8 | 18.6 |
 | SoM | 19.6 | 20.0 | 16.7 | 20.7 |
 
-### Ablation Study (Comparison with Existing Physics Benchmarks)
+### Ablation Study (Comparison with existing physical benchmarks)
 
-| Benchmark | Multi-Body | Dynamic Score↑ | FID↓ | KID↓ |
-|-----------|-----------|---------------|------|------|
+| Benchmark | Multi-body Interaction | Dynamic Score↑ | FID↓ | KID↓ |
+|------|---------|---------------|------|------|
 | ScalarFlow | No | 0.391 | 293.5 | 0.255 |
 | PAC-NeRF | No | N/A | 242.6 | 0.164 |
 | Spring-Gaus | No | 0.372 | 261.8 | 0.171 |
-| **PhysGaia** | **Yes** | **0.444** | **207.8** | **0.118** |
+| **PhysGaia (Ours)** | **Yes** | **0.444** | **207.8** | **0.118** |
 
 ### Key Findings
-- **All existing methods perform substantially worse on PhysGaia than on conventional datasets**: Even under multi-view settings, the average PSNR falls below 30, far short of performance on D-NeRF (35+). The root cause is that multi-body interactions introduce motion complexity that far exceeds single-object deformation.
-- **Rheological matter scenes are the most challenging**: PSNR is the lowest across all methods (STG achieves only 13.6), as rheological interactions (e.g., jelly collisions) involve complex dynamics among multiple components that polynomial motion models or ARAP constraints cannot capture.
-- **Needle-like artifacts are a pervasive problem**: In multi-body collision scenes such as "jelly party," all methods produce severe geometric artifacts, indicating that none can maintain reasonable Gaussian distributions in physical contact regions.
-- **PhysGaia achieves the highest Dynamic Score (0.444)**, confirming that its motion complexity significantly exceeds that of existing benchmarks.
+- **All existing methods perform significantly worse on PhysGaia than on traditional datasets**: Even in multi-view settings, the average PSNR is below 30, much lower than the performance on D-NeRF (35+). The fundamental reason is that motion complexity introduced by multi-body interactions far exceeds that of single-object deformation.
+- **Rheological scenes are the most difficult to reconstruct**: They exhibit the lowest PSNR (STG only 13.6), because rheological interactions (such as jelly collisions) involve complex dynamics across multiple components that current polynomial motion models or ARAP constraints cannot capture.
+- **Needle-like artifacts are a universal problem**: In multi-body collision scenes like "jelly party," all methods produce severe geometric artifacts, indicating their inability to maintain reasonable Gaussian distributions in physical contact areas.
+- **PhysGaia achieves the highest Dynamic Score (0.444)**, validating that its motion complexity is significantly higher than existing benchmarks.
 
 ## Highlights & Insights
-- **The "once an outlier, always an outlier" design of AUOP is particularly elegant**: It captures a fundamental phenomenon in physics simulation—initial deviations amplify exponentially across subsequent frames. This irreversible outlier-flagging strategy reflects the reliability of physical reasoning more faithfully than simple per-frame error statistics.
-- **The material-specific solver approach carries important implications for 4DGS research**: Nearly all physics-aware 4DGS methods currently rely on MPM, yet liquids (FLIP), gases (voxel grids with thermodynamics), and cloth (Vellum/PBD) each require different solvers—pointing to a largely overlooked research direction.
-- **Complete simulation node graphs and source files are provided**, allowing users to generate data at higher resolutions and with additional modalities (depth, normals, relighting), greatly enhancing the benchmark's extensibility.
+- **The "once an outlier, always an outlier" AUOP design is highly effective**: It captures a core phenomenon in physical simulation where initial deviations amplify exponentially. This irreversible outlier marking reflects the reliability of physical reasoning better than simple frame-wise error statistics.
+- **The material-specific solver approach provides critical insights for 4DGS research**: Currently, almost all physics-aware 4DGS works use MPM. However, liquids (FLIP), gases (voxel grids + thermodynamics), and fabrics (Vellum/PBD) require different solvers. This identifies a previously neglected research direction.
+- **Providing complete simulation node graphs and source files** allows users to customize and generate data with higher resolutions and more modalities (depth, normals, relighting), greatly enhancing the scalability of the benchmark.
 
 ## Limitations & Future Work
-- **Only 17 scenes**: The number of scenes is relatively small relative to the data requirements of deep learning models; certain material categories (e.g., gas) contain only 2–3 scenes.
-- **Domain gap between synthetic and real data**: Although FID/KID scores indicate high visual fidelity, differences in texture and lighting distribution between synthetic rendering and real-world capture remain.
-- **Absence of rigid-body collision scenes**: All four material categories are deformable, with no rigid-body collision scenarios, which are equally important for applications such as robotic manipulation.
-- **Initial-frame matching assumption in TD**: If reconstructed Gaussian primitives have large positional errors in the initial frame, nearest-neighbor matching may produce incorrect trajectory correspondences.
+- **Limited to 17 scenes**: Compared to the data requirements of deep learning models, the number of scenes is relatively small, with some material categories (like gas) having only 2-3 scenes.
+- **Domain gap between synthetic and real data**: Although FID/KID metrics indicate high visual fidelity, differences in texture and lighting distribution still exist between synthetic rendering and real-world photography.
+- **Lack of rigid-body collision scenes**: All four material types are deformable; rigid-body collisions are not included, despite their importance in applications like robotic manipulation.
+- **Initial frame matching assumption for TD**: If reconstructed Gaussian primitives have large positional errors in the initial frame, nearest-neighbor matching might lead to incorrect trajectory correspondences.
 
 ## Related Work & Insights
-- **vs Spring-Gaus**: Spring-Gaus is limited to rheological matter and single objects; PhysGaia extends coverage to four material types and multi-body interactions while providing richer ground truth.
-- **vs PAC-NeRF**: The liquid scenes in PAC-NeRF are actually high-viscosity fluids that behave more like elastic solids; PhysGaia employs a FLIP solver to simulate genuinely low-viscosity liquids.
-- **vs Phystwin**: Phystwin contains 22 scenes but is restricted to rheological matter and provides no ground truth physical parameters; PhysGaia is superior in terms of physical information completeness.
-- **Insights**: This benchmark can drive physics-aware 4DGS research from single-material toward multi-material, multi-body interaction settings, particularly regarding how to integrate multiple physics solvers within a unified framework.
+- **vs Spring-Gaus**: Spring-Gaus is limited to rheological substances and single objects. PhysGaia expands to 4 material types and multi-body interactions while providing richer ground truth.
+- **vs PAC-NeRF**: PAC-NeRF's liquid scenes are actually high-viscosity fluids (behaving like elastomers); PhysGaia uses the FLIP solver to simulate true low-viscosity liquids.
+- **vs Phystwin**: Phystwin includes 22 scenes but is limited to rheological substances and lacks ground truth physical parameters. PhysGaia is superior in terms of physical information completeness.
+- **Insight**: This benchmark can drive "physics-aware 4DGS" from single-material to multi-material and multi-body interaction scenarios, particularly highlighting the challenge of integrating multiple physical solvers within a unified framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First physics-aware DyNVS benchmark covering multiple materials and multi-body interactions; the AUOP metric design is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five mainstream 4DGS methods are evaluated and comparisons with three physics benchmarks are provided, though the analysis of TD/AUOP metrics is relatively brief.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with strong visualizations and well-justified rationale for solver selection.
-- Value: ⭐⭐⭐⭐ Points the way for physics-aware dynamic scene reconstruction, though the limited number of scenes constrains practical applicability.
+- Novelty: ⭐⭐⭐⭐ First physics-aware DyNVS benchmark with multi-material multi-body interactions; novel AUOP metric design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated 5 mainstream 4DGS methods and compared against 3 physical benchmarks, though analysis of TD/AUOP metrics could be more extensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, high-quality visualizations, and well-justified choices for physical solvers.
+- Value: ⭐⭐⭐⭐ Direction-setting for physics-aware dynamic scene reconstruction, although the scene count limits its practical utility in some contexts.
 
 <!-- RELATED:START -->
 
@@ -124,11 +126,11 @@ PhysGaia is a dataset rather than a model; no training is involved. Its core con
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](../../ICLR2026/3d_vision/dynamic_novel_view_synthesis_in_high_dynamic_range.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting for Efficient Retrospective Dynamic Scene Novel View Synthesis with a Standardized Benchmark](3d_gaussian_splatting_for_efficient_retrospective_dynamic_scene_novel_view_synth.md)
+- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
-- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
-- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
+- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](../../ICLR2026/3d_vision/dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 
 </div>
 

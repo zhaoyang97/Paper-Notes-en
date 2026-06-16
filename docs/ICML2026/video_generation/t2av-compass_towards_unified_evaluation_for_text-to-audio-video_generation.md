@@ -2,80 +2,83 @@
 title: >-
   [Paper Note] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation
 description: >-
-  [ICML 2026][Video Generation][Text-to-audio-video generation] T2AV-Compass is the first comprehensive evaluation benchmark for text-to-audio-video (T2AV) generation…
+  [ICML 2026][Video Generation][Paper Note] T2AV-Compass is the first comprehensive evaluation benchmark for Text-to-Audio-Video (T2AV) generation, featuring 500 complex prompts and a dual-layer evaluation framework (low-level signal metrics + high-level MLLM diagnostics). It systematically evaluates 15 cutting-edge T2AV systems, quantitatively revealing an "aud
 tags:
-  - "ICML 2026"
-  - "Video Generation"
-  - "Text-to-audio-video generation"
-  - "cross-modal alignment"
-  - "evaluation benchmark"
-  - "MLLM-as-judge"
-  - "audiovisual imbalance"
+  - ICML 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 646c68c3371d5bf2
+content_hash: 6fcc01bb2881e7f3
 ---
-
 # T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2512.21094](https://arxiv.org/abs/2512.21094)  
-**Code**: To be confirmed  
-**Area**: Multimodal VLM / Benchmark Evaluation  
-**Keywords**: Text-to-audio-video generation, cross-modal alignment, evaluation benchmark, MLLM-as-judge, audiovisual imbalance
+**Code**: TBD  
+**Area**: Multimodal VLM / Evaluation Benchmark  
+**Keywords**: Text-to-Audio-Video Generation, Cross-modal Alignment, Evaluation Benchmark, MLLM-as-Judge, Audio-Visual Imbalance
 
 ## TL;DR
-T2AV-Compass is the first comprehensive evaluation benchmark for text-to-audio-video (T2AV) generation, featuring 500 complex prompts and a dual-layer evaluation framework (low-level signal metrics + high-level MLLM diagnostics). It systematically evaluates 15 cutting-edge T2AV systems, quantitatively revealing an "audio realism bottleneck" where even top-tier models achieve 85%+ realism in video but only 50% in audio.
+T2AV-Compass is the first comprehensive evaluation benchmark for Text-to-Audio-Video (T2AV) generation, featuring 500 complex prompts and a dual-layer evaluation framework (low-level signal metrics + high-level MLLM diagnostics). It systematically evaluates 15 cutting-edge T2AV systems, quantitatively revealing an "audio realism bottleneck" where even top-tier models achieve 85%+ realism in the video dimension versus only 50% in audio.
 
 ## Background & Motivation
 
-**Background**: T2AV generation is at the forefront of multimodal content creation, with breakthrough systems like Sora and Veo emerging. however, evaluation frameworks remain inadequate, mostly reusing unimodal or weak multimodal benchmarks (e.g., VBench for video only, AudioCaps for audio only), which fail to capture true multimodal synergy.
+**Background**: T2AV generation represents the frontier of multimodal content creation, with breakthrough systems like Sora and Veo emerging. However, evaluation systems remain inadequate, often relying on unimodal or weak multimodal benchmarks (e.g., VBench for video only, AudioCaps for audio only), which fail to characterize true multimodal synergetic properties.
 
 **Limitations of Prior Work**:
-- Fragmented capture of cross-modal semantic alignment and temporal synchronization—existing metrics cannot determine if generated sounds correspond to visible events.
-- Benchmark datasets are generally short and simplistic, failing to stress-test complex real-world scenarios.
-- Evaluation dimensions are fragmented—some focus on vision, others on audio, with almost no end-to-end multidimensional diagnostic framework.
-- Evaluation lacks interpretability—it is difficult to attribute specific failure reasons.
+- **Insufficient Capture of Alignment**: Existing metrics fail to address whether generated sounds correspond to visible events in terms of semantic alignment and temporal synchronization.
+- **Simplistic Datasets**: Benchmark datasets are generally short and simplistic, failing to stress-test complex real-world scenarios.
+- **Fragmented Evaluation Dimensions**: Current methods focus either on vision or audio, lacking an end-to-end multi-dimensional diagnostic framework.
+- **Lack of Interpretability**: It is difficult to attribute specific failure cases to underlying causes.
 
-**Key Challenge**: T2AV generation requires simultaneous success across multiple axes (perceptual quality, cross-modal alignment, temporal synchronization, instruction following, and physical realism), yet evaluation frameworks often neglect one for another.
+**Key Challenge**: T2AV generation requires simultaneous success across multiple axes (perceptual quality, cross-modal alignment, temporal synchronization, instruction following, and physical realism), yet evaluation frameworks often neglect one or more of these dimensions.
 
-**Goal**: Construct the first professional evaluation benchmark for T2AV generation that satisfies both "comprehensiveness" (covering multidimensional evaluation) and "diagnosticity" (interpretable failure analysis).
+**Goal**: To construct the first professional evaluation benchmark for T2AV generation that satisfies both "comprehensiveness" (covering multi-dimensional evaluation) and "diagnosticity" (interpretable failure analysis).
 
-**Key Insight**: A taxonomy-driven data construction combined with a dual-layer evaluation metric system—utilizing both low-level signal-based objective metrics and high-level semantic MLLM subjective diagnostics.
+**Key Insight**: A taxonomy-driven data construction approach combined with a dual-layer evaluation metric system—integrating low-level signal objective metrics with high-level semantic MLLM subjective diagnostics.
 
-**Core Idea**: Use structured checklists (QA lists) to transform ambiguous instructions into verifiable constraints, supplemented by physical and knowledge realism checks, unifying technical fidelity, semantic alignment, and instruction following within a single framework.
+**Core Idea**: Transform vague instructions into verifiable constraints using structured questionnaires (QA checklists), supplemented by physical/knowledge realism checks to unify technical fidelity, semantic alignment, and instruction following within a single framework.
 
 ## Method
 
 ### Overall Architecture
-Three core components: (1) **Data Construction**—a taxonomy-driven hybrid pipeline generating 500 high-complexity multimodal prompts; (2) **Dual-layer Evaluation Framework**—low-level signal metrics plus high-level MLLM diagnostics; (3) **System Benchmarking**—evaluating 15 frontier T2AV systems to provide dimension-level comparisons and failure mode analysis.
+T2AV-Compass addresses a question often avoided by existing benchmarks: when a model generates images and sounds simultaneously, which modality is the bottleneck and in which dimension does it fail? The benchmark is implemented in three stages: first, a taxonomy-driven hybrid pipeline generates 500 high-complexity audio-visual prompts; second, a dual-layer framework of "low-level signal metrics + high-level MLLM diagnostics" is used for scoring; finally, 15 cutting-edge T2AV systems are evaluated on the same scale to provide dimension-level comparisons and failure attribution. The most critical components are the data construction process, the layered evaluation, and the traceability of MLLM scoring.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph D1["Taxonomy-Driven Multi-Source Data Construction (Design 1)"]
+        direction TB
+        A["Multi-source Prompt Aggregation ~70K<br/>Cosine 0.8 Deduplication"] --> C["Gemini-2.5-Pro Rewriting<br/>Visual/Motion/Audio/Cinematic Constraints (54→154 tokens)"]
+        B["Real Video Inversion<br/>100 YouTube clips (4–10s)"] --> C
+        C --> E["3-Round Human Verification<br/>Remove Non-compliant/Long/Physical Contradictions → 500 Complex Prompts"]
+    end
+    D1 --> EVAL["Dual-Layer Evaluation Framework (Design 2)<br/>Low-level Signal Metrics + High-level MLLM Diagnostics"]
+    EVAL --> L["Low-level Signal Metrics<br/>VT/VA/AA/SQ + T-A/T-V/A-V/Sync"]
+    EVAL --> D3
+    subgraph D3["Structured Checklist + MLLM-as-Judge Protocol (Design 3)"]
+        direction TB
+        F["Prompt-derived QA Checklist<br/>Instruction Following (IF) + Realism (RE)"] --> J["Step-by-step Verification: Reasoning Text First<br/>Then 1–5 Score, Store in JSON"]
+    end
+    L --> R["15 Cutting-edge T2AV Systems Benchmarking<br/>Dimension-level Diagnosis: Revealing A-V Imbalance"]
+    D3 --> R
+```
 
 ### Key Designs
 
-1. **Taxonomy-driven Multi-source Data Construction**:
+**1. Taxonomy-Driven Multi-Source Data Construction: Ensuring Complexity and Physical Plausibility**
+Short and simplistic prompts fail to reveal real model shortcomings, a common issue in older benchmarks (prompts often 50-68 words). This work aggregates high-quality prompts from communities like VidProM, Kling, LMArena, and Shot2Story, deduplicating via cosine similarity (0.8) to obtain ~70K entries. These are then rewritten using Gemini-2.5-Pro to add constraints across visual, motion, audio, and cinematic axes, increasing average length from 54 to 154 tokens and constraints from 5 to 10. To avoid the hallucinations of pure text generation, 100 high-fidelity YouTube clips (4-10s) are used for video inversion to align prompts with real-world dynamics. Finally, samples are filtered through three rounds of human verification. The taxonomy covers 8 metaphor types, 5 annotation dimensions, and 4 complexity factors.
 
-    - Function: Ensures semantic coverage, complexity, and physical rationality of the prompt set.
-    - Mechanism: (1) Aggregates high-quality community prompts (VidProM / Kling / LMArena / Shot2Story), deduplicated via cosine similarity at 0.8 to obtain 70K; (2) Rewrites prompts using Gemini-2.5-Pro to add visual, motion, sonic, and cinematographic constraints, increasing average length from 54 to 154 tokens and constraints from 5 to 10; (3) Introduces 100 high-fidelity 4-10s YouTube clips for video inversion to ensure alignment with realistic dynamics; (4) Three rounds of manual verification to filter non-compliant, overly long, or irrational prompts.
-    - Design Motivation: Avoids pure text hallucinations and enhances real-world representation; multi-source fusion expands semantic space coverage; the taxonomy includes 8 metaphor types, 5 annotation dimensions, and 4 complexity factors.
+**2. Dual-Layer Evaluation Framework: Signal Metrics for "Speed and Breadth," MLLM for "Depth and Detail"**
+Signal-level metrics are objective and reproducible but miss semantic nuance, while MLLM judgments capture subtle semantics but are slow and biased. This framework uses both: low-level metrics cover Video Quality (VT via DOVER++), Aesthetics (VA via Aesthetic Predictor V2.5), Audio Quality (AA and SQ via NISQA), and cross-modal alignment (T-A via CLAP, T-V via VideoCLIP-XL-V2, A-V via ImageBind, and temporal Sync via Synchformer). High-level subjective evaluation reflects Instruction Following (IF) via a structured QA checklist from Gemini-2.5 (across 7 dimensions and 17 sub-dimensions) and Realism (RE), split into Video (Motion Smoothness, Object Integrity, Temporal Coherence) and Audio (Audio Artifacts, Texture Consistency).
 
-2. **Dual-layer Evaluation Framework**:
-
-    - Function: End-to-end diagnostics ranging from low-level signal integrity to high-level semantic rationality.
-    - Mechanism:
-      - **Objective Evaluation**—Video quality VT (DOVER++) + VA (Aesthetic Predictor V2.5); Audio quality AA + SQ (NISQA); Cross-modal alignment T-A (CLAP) + T-V (VideoCLIP-XL-V2) + A-V (ImageBind) + Temporal synchronization (Synchformer).
-      - **Subjective Evaluation**—Instruction Following (IF) uses Gemini-2.5 to generate structured QA checklists across 7 dimensions and 17 sub-dimensions; Realism (RE) includes MSS (motion smoothness) / OIS (object integrity) / TCS (temporal coherence) + AAS (audio artifacts) / MTC (texture consistency).
-    - Design Motivation: Signal metrics are fast and reliable but coarse-grained; MLLM judgments capture subtle semantics but are time-consuming—the two are complementary.
-
-3. **Structured Checklist + MLLM-as-Judge Protocol**:
-
-    - Function: Maps abstract instructions to verifiable and traceable constraint checks.
-    - Mechanism: Automatically generates two types of checklists—"Instruction Following" and "Realism"—from 500 prompts; for each check, the MLLM is required to **output reasoning text before providing a 1-5 score**, saved as JSON for error analysis.
-    - Design Motivation: The reasoning-before-scoring protocol enhances diagnostic interpretability and supports fine-grained failure attribution, avoiding credibility issues inherent in black-box scoring.
+**3. Structured Checklist + MLLM-as-Judge Protocol: From "Vague Scoring" to "Traceable Root Causes"**
+Directly feeding abstract text instructions to an MLLM for a total score is neither credible nor attributable. This work automatically expands 500 prompts into "Instruction Following" and "Realism" checklists, where each check corresponds to a verifiable constraint. During scoring, the MLLM is forced to **write reasoning text before providing a 1-5 score**, storing both in JSON. This "Reasoning-before-Scoring" approach provides a basis for judgment, reduces black-box randomness, and allows for post-hoc localization of exactly which constraint failed.
 
 ## Key Experimental Results
 
 ### Main Results: Comparison of 15 T2AV Systems
 
-| Method | Open Source | Video Fidelity VT | Video Aesthetics VA | Audio Aesthetics AA | A-V Alignment | Sync DS ↓ | Avg Score |
+| Method | Open Source | Video Fidelity (VT) | Video Aesthetic (VA) | Audio Aesthetic (AA) | A-V Align | Sync (DS) ↓ | Avg Score |
 |------|------|-----------|-----------|-----------|---------|----------|---------|
 | Veo-3.1 | ✗ | 13.39 | 5.425 | 6.818 | 0.2856 | 0.6776 | 70.29 |
 | Sora-2 | ✗ | 7.568 | 4.112 | 5.584 | 0.2419 | 0.8100 | 69.83 |
@@ -84,47 +87,47 @@ Three core components: (1) **Data Construction**—a taxonomy-driven hybrid pipe
 | LTX-2 | ✓ | 7.160 | 4.661 | 6.742 | 0.1851 | 0.8756 | 63.72 |
 | Ovi-1.1 | ✓ | 9.336 | 4.368 | 6.531 | 0.1620 | 0.9624 | 61.23 |
 
-Closed-source models dominate the top, but no single model leads across all dimensions.
+Closed-source models dominate the top tier, but no single model leads in all dimensions.
 
-### Dimension Diagnosis: Audiovisual Imbalance
+### Dimensional Diagnosis: Audio-Visual Imbalance
 
-| Config | IF (Video) | IF (Audio) | Video Realism | Audio Realism | Description |
+| Config | IF (Video) | IF (Audio) | Video Realism | Audio Realism | Note |
 |------|---------------|---------------|---------|---------|------|
-| Veo-3.1 | 76.15% | 67.90% | 87.14% | 49.95% | Top models still show severe audio deficiency |
-| Kling-2.6 | 73.72% | 63.89% | 87.98% | 47.03% | Excellent video but weak audio |
-| Wan-2.2 + Hunyuan-Foley | 74.45% | 58.23% | 89.63% | 62.14% | Cascade pipeline: Great video but broken A-V alignment |
-| AudioLDM2 + MTV | 68.30% | 65.80% | 76.45% | 58.92% | Pure AV synthesis lags behind |
+| Veo-3.1 | 76.15% | 67.90% | 87.14% | 49.95% | Top model still shows severe audio deficit |
+| Kling-2.6 | 73.72% | 63.89% | 87.98% | 47.03% | Excellent video, weaker audio |
+| Wan-2.2 + Hunyuan-Foley | 74.45% | 58.23% | 89.63% | 62.14% | Cascade: Good video, but A-V alignment breaks |
+| AudioLDM2 + MTV | 68.30% | 65.80% | 76.45% | 58.92% | Pure synthesis methods lag behind |
 
 ### Key Findings
-- **Audio Realism Bottleneck**: A gap of 30-50 points exists between video and audio realism, revealing a structural **audiovisual imbalance**—even when top models reach 85%+ in video integrity/temporal stability, audio remains at ~50%.
-- **Dynamic Instruction Following is Most Challenging**: The "Dynamics" dimension is the most discriminative in video instruction following; frontier models lose significant points when executing complex motions and interactions (temporal coherence bottleneck).
-- **Sound Effect Synthesis is the Weakest Link**: Sound Effects (SFX) is the most error-prone sub-category in audio instruction following; models struggle to associate diverse physical sound events with prompts and visual events.
-- **Cascade Pipeline Disparity**: Cascade T2V → V2A pipelines can compete with end-to-end models in unimodal quality (Wan-2.2 + Hunyuan-Foley reaches 89.63 in video realism), but suffer from severe lags in global A-V alignment ("fragmented optimization").
+- **Audio Realism Bottleneck**: A 30-50 point gap exists between video and audio realism, revealing a structural **audio-visual imbalance**. Even top models reaching 85%+ in temporal stability struggle with audio realism (~50%).
+- **Dynamic Instruction Following is Challenging**: The "Dynamics" dimension is the most discriminative in video IF; frontier models lose significant points during complex motion execution and interaction.
+- **Sound Effect Synthesis is Weakest**: Sound Effects (SFX) is the most error-prone sub-category in audio IF; models struggle to link diverse physical sound events with visual prompts.
+- **Fragmented Cascaded Pipelines**: Cascaded T2V → V2A pipelines can compete in unimodal quality (e.g., Wan-2.2 + Hunyuan-Foley video realism at 89.63), but global A-V alignment lags significantly due to "fragmented optimization."
 
 ## Highlights & Insights
-- **Systematic Multidimensional Diagnostic System**: Integrates low-level signal metrics (DOVER++, CLAP, Synchformer) with high-level semantic verification (MLLM reasoning-based scoring) within a unified framework, upgrading failure attribution from "vague scores" to "traceable root causes."
-- **Taxonomy-driven Data Construction**: Systematically designs constraints across cinematographic, physical causality, and acoustic environment dimensions, followed by LLM rewriting and three-round manual verification; this pipeline is reusable for other evaluation benchmarks.
-- **Quantitative Reveal of Audiovisual Imbalance**: Explicitly characterizes why AV generation has not reached human levels—it is not that all dimensions lag, but rather a structural "bottleneck" in audio.
-- **Interpretable Reasoning-before-Scoring**: Mandatory textual reasoning before MLLM judgment avoids the credibility issues of black-box scoring.
+- **Systematic Multi-dimensional Diagnostic System**: First to integrate low-level signal metrics (DOVER++, CLAP, Synchformer) with high-level semantic verification (MLLM reasoning-based scoring) in a unified framework.
+- **Taxonomy-Driven Data Construction**: Systematic design of constraints across cinematography, physical causality, and acoustic environments, moving beyond simple prompt collections.
+- **Quantitative Revelation of A-V Imbalance**: Explicitly characterizes the "bottleneck" of audio-visual generation—it is not a uniform lag across dimensions but a structural weakness in audio.
+- **Interpretable Reasoning-before-Scoring**: Mandating textual reasoning before MLLM scoring mitigates the credibility issues associated with black-box evaluation.
 
 ## Limitations & Future Work
-- While 500 prompts are rich, they do not cover all possible scenarios (e.g., long videos > 10s, unconventional AV interactions).
-- MLLM-as-Judge still exhibits MLLM bias and instability.
-- Audio evaluation is not deep enough—lacking fine-grained metrics like spatial audio or spectral distortion.
-- Many evaluation metrics rely on closed-source LLMs, limiting reproducibility; manual verification across languages and cultures is still needed.
-- Temporal sync metrics assume single AV event alignment, potentially failing for complex multi-source soundscapes.
+- 500 prompts, while representative, do not cover all scenarios (e.g., videos > 10s, unconventional interactions).
+- MLLM-as-judge still carries inherent biases and potential instability.
+- Audio evaluation could be deeper, lacking fine-grained metrics for spatial audio or spectral distortion.
+- Dependence on closed-source LLMs for evaluation limits full reproducibility; large-scale human cross-validation is still needed.
+- Temporal sync metrics assume single-event alignment, which may struggle with complex, multi-source soundscapes.
 
 ## Related Work & Insights
-- **vs VBench / EvalCrafter**: These only evaluate video quality and text alignment, completely ignoring audio; T2AV-Compass promotes audio to a first-class citizen.
-- **vs JavisBench / VABench**: While these involve joint AV evaluation, this work represents a qualitative leap in prompt complexity (154 vs 50-68 tokens), metric systematicity, and diagnostic depth.
-- **vs AudioCaps / TTA-Bench**: These are pure audio benchmarks and cannot characterize multimodal synergy.
-- **Insights**: The correct path for establishing professional benchmarks is "taxonomy-driven data design + hybrid objective/subjective metrics + interpretable diagnostic systems," which serves as a reference for other generative tasks (3D generation, controllable text generation).
+- **vs. VBench / EvalCrafter**: These only evaluate video quality and text alignment, ignoring audio; T2AV-Compass promotes audio to a first-class citizen.
+- **vs. JavisBench / VABench**: While involving joint evaluation, this work provides a leap in prompt complexity (154 vs. 50-68 tokens), metric systematicity, and diagnostic depth.
+- **vs. AudioCaps / TTA-Bench**: Pure audio benchmarks that cannot characterize multimodal synergy.
+- **Insight**: The path to professional benchmarking lies in "taxonomy-driven data design + hybrid objective-subjective metrics + interpretable diagnostics," a paradigm applicable to 3D or controllable text generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First comprehensive evaluation benchmark for T2AV generation; structured QA paradigm for MLLM-as-Judge + quantitative reveal of "audiovisual imbalance."
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 15 representative systems with detailed diagnostics; lacks large-scale correlation validation with human annotations and metric stability analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, excellent charts, and refined details; multiple contributions are presented clearly.
-- Value: ⭐⭐⭐⭐⭐ Provides the first professional open evaluation framework for subsequent T2AV research; released code and data are expected to drive long-term progress in the community.
+- Novelty: ⭐⭐⭐⭐⭐ First comprehensive T2AV benchmark; structured QA paradigm for MLLM-as-Judge; quantitative discovery of A-V imbalance.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation of 15 systems with detailed diagnostics; however, lacks large-scale correlation analysis with human labels.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical flow, high-quality visualizations, and well-defined technical contributions.
+- Value: ⭐⭐⭐⭐⭐ Provides a professional open evaluation framework for the T2AV community; code and data release expected to drive significant progress.
 
 <!-- RELATED:START -->
 

@@ -2,153 +2,170 @@
 title: >-
   [Paper Note] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 description: >-
-  [CVPR 2026][Segmentation][Vector layer construction] This paper proposes SemLayer, a generative-model-based pipeline that recovers semantically structured…
+  [CVPR 2026][Segmentation][Diffusion Model] SemLayer is proposed as a generative model-based pipeline to restore semantic layered structures from flattened vector icons. The method redefines segmentation as a coloring task via a diffusion model, performs semantic completion of occluded regions, and determines layer order using Integer Linear Programming (ILP), a
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Vector layer construction"
-  - "semantic segmentation colorization"
-  - "amodal completion"
-  - "icon editing"
-  - "diffusion models"
+  - CVPR 2026
+  - Segmentation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: b6cc2da9d45b2031
+content_hash: 913f27d9e60dead0
 ---
-
 # SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24039](https://arxiv.org/abs/2603.24039)  
 **Code**: [https://xxuhaiyang.github.io/SemLayer/](https://xxuhaiyang.github.io/SemLayer/)  
-**Area**: Segmentation / Vector Graphics
-**Keywords**: Vector layer construction, semantic segmentation colorization, amodal completion, icon editing, diffusion models
+**Area**: Segmentation / Vector Graphics  
+**Keywords**: Vector layer construction, Semantic segmentation coloring, Amodal completion, Icon editing, Diffusion models
 
 ## TL;DR
 
-This paper proposes SemLayer, a generative-model-based pipeline that recovers semantically structured, layered representations from flattened vector icons. The approach reframes segmentation as a colorization task via a diffusion model, follows with semantic amodal completion of occluded regions, and applies integer linear programming (ILP) to determine layer ordering, achieving segmentation gains of +5.0 mIoU and +16.7 PQ.
+SemLayer is proposed as a generative model-based pipeline to restore semantic layered structures from flattened vector icons. The method redefines segmentation as a coloring task via a diffusion model, performs semantic completion of occluded regions, and determines layer order using Integer Linear Programming (ILP), achieving improvements of +5.0 in mIoU and +16.7 in PQ.
 
 ## Background & Motivation
 
-1. **Background**: Vector icons are a cornerstone of modern design workflows. Designers typically organize semantically meaningful graphical elements across multiple editable layers. However, icons are frequently "flattened" upon publication and distribution, merging all layers into a single composite path and discarding the original semantic layer hierarchy.
+1.  **Background**: Vector icons are a cornerstone of modern design workflows, where designers typically organize semantically meaningful graphic elements into multiple editable layers. However, icons are often "flattened" during publishing and distribution, merging all layers into a single compound path and losing the original semantic hierarchy.
 
-2. **Limitations of Prior Work**: Once semantic structure is lost, downstream operations such as recoloring, animation, and local editing become extremely difficult, forcing designers to manually re-segment and reconstruct icons. Existing methods such as SAM perform poorly on highly abstract black-and-white icons due to the absence of texture, shadow, and color cues, while optimization-based methods tend to generate excessively fragmented layers.
+2.  **Limitations of Prior Work**: Once the semantic structure is lost, downstream operations such as recoloring, animation, and local editing become extremely difficult. Designers are forced to manually re-segment and reconstruct icons. Existing methods like SAM perform poorly on highly abstract black-and-white icons due to the lack of cues like texture, shading, and color, while optimization-based methods often generate excessively fragmented layers.
 
-3. **Key Challenge**: The high level of abstraction in icons means that conventional visual understanding cues—texture, shading, and depth—are almost entirely absent. At the same time, recovering complete geometry, including occluded regions, and correctly inferring stacking order remain essential requirements.
+3.  **Key Challenge**: The extreme abstraction of icons means traditional visual understanding cues (texture, shading, depth) are almost entirely absent. Simultaneously, the task requires recovering complete geometries (including occluded areas) and determining the correct stacking order.
 
-4. **Goal**: To recover an editable, semantically layered representation from flattened single-path or composite-path vector icons.
+4.  **Goal**: To restore an editable semantic layered representation from flattened single-path/compound-path vector icons.
 
-5. **Key Insight**: Leverage the rich shape priors embedded in generative models (diffusion models) to compensate for the scarcity of icon-domain data and the absence of visual features.
+5.  **Key Insight**: Leverage the rich shape priors inherent in generative models (diffusion models) to compensate for the scarcity of icon-specific data and the absence of visual features.
 
-6. **Core Idea**: Reframe semantic segmentation as a colorization task—using a diffusion model to colorize black-and-white icons such that different semantic components become visually separable—then employ a diffusion model for amodal completion of occluded regions, and finally apply ILP to determine layer ordering.
+6.  **Core Idea**: Redefine semantic segmentation as a coloring task (using a diffusion model to "color" a black-and-white icon to visually separate different semantic parts), then utilize a diffusion model to complete occluded regions, and finally use ILP to determine the layer order.
 
 ## Method
 
 ### Overall Architecture
 
-The pipeline consists of three stages: (1) **Semantic-aware Generative Segmentation**: a monochrome icon is fed into a diffusion model to generate a colorized version in which distinct colors correspond to distinct semantic components; binary masks $\{V_1, ..., V_K\}$ are extracted via color thresholding. (2) **Amodal Layer Completion**: each semantic component's complete shape, including occluded portions, is recovered using a diffusion model to yield $\{A_1, ..., A_K\}$. (3) **Layer Order Optimization**: ILP determines the stacking order of components, which are subsequently vectorized back into SVG format.
+SensLayer performs a specific task: taking a black-and-white vector icon that has been "flattened" into a single compound path and restoring it to the layered, individually editable semantic structure originally intended by the designer. The difficulty lies in the fact that icons lack conventional visual cues, and the overlapping relationship between components is lost.
+
+The pipeline follows three sequential steps: first, the monochromatic icon is fed into a diffusion model for "coloring"—where different semantic parts are assigned different colors—and visible region masks $\{V_1, ..., V_K\}$ are extracted based on color thresholds. Second, another diffusion model completes the full geometry $\{A_1, ..., A_K\}$ for each occluded part. Finally, Integer Linear Programming (ILP) is used to infer the stacking order of these parts, and the results are re-vectorized into SVG format. These steps correspond to the three key designs below.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Flattened B&W Vector Icon<br/>(Single Compound Path)"] --> B["Semantic-aware Generative Segmentation<br/>Diffusion + conditional LoRA Coloring"]
+    B -->|Separation by Color Threshold| C["Visible Region Masks<br/>{V₁ … V_K}"]
+    C --> D["Amodal Layer Completion<br/>pix2gestalt Finetuning + Fragment Training"]
+    D -->|Fragment Merging (IoU τ=0.7)| E["Amodal Component Shapes<br/>{A₁ … A_K}"]
+    E --> F["Layer Order Optimization<br/>ILP Rewards Correct Occlusion / Punishes Incorrect Visibility"]
+    F --> G["potrace Vectorization<br/>Editable Layered SVG"]
+```
 
 ### Key Designs
 
-1. **Semantic-aware Generative Segmentation (Segmentation as Colorization)**
+**1. Semantic-aware Generative Segmentation: Reformulating "Segmentation" as "Coloring"**
 
-    - **Function**: Decompose monochrome or two-color icons into semantically meaningful components.
-    - **Mechanism**: Conventional segmentation methods (e.g., SAM) fail on abstract icons due to the absence of color and texture cues. The paper reframes segmentation as a colorization task—assigning distinct colors to different semantic components while preserving structural integrity. The approach is built on the EasyControl framework, employing a conditional LoRA on a diffusion Transformer, with binary contour maps as control-encoded conditions and text prompts guiding colorization. Training uses a flow-matching objective: $\mathcal{L}_{\text{FM}} = \mathbb{E}_{t,\epsilon} \|v_\theta(z_n, t, z_c) - (\epsilon - x_0)\|_2^2$. At inference, each color channel in the output is thresholded to produce independent masks. The training set comprises 8,567 icon–colorization pairs sourced from real SVGs and GPT-4o+gpt-image-1 synthesis.
-    - **Design Motivation**: Colorization is a task better suited to generative models than segmentation—diffusion models possess strong priors for understanding shape semantics and color assignment, elegantly circumventing the difficulties that conventional segmentation methods face on icons.
+Standard segmentors like SAM fail on abstract icons because the color, texture, and depth cues they rely on are virtually nonexistent. SemLayer shifts the paradigm: rather than forcing a segmentation model to predict boundaries on feature-deprived inputs, it reframes the task as coloring—a form generative models excel at. The model assigns a distinct color to each semantic part while maintaining the original structure. Consequently, the segmentation problem of "which pixels belong to the same part" becomes a problem of "which pixels are dyed the same color."
 
-2. **Amodal Layer Completion**
+The implementation is based on the EasyControl framework with a conditional LoRA attached to a Diffusion Transformer. It takes binary outlines as control conditions and uses text prompts to guide coloring. The training objective follows the flow-matching loss $\mathcal{L}_{\text{FM}} = \mathbb{E}_{t,\epsilon} \|v_\theta(z_n, t, z_c) - (\epsilon - x_0)\|_2^2$. During inference, binary masks $\{V_1, ..., V_K\}$ are obtained by thresholding each color channel. The training data consists of 8,567 icon-coloring pairs derived from real SVGs and synthesized via GPT-4o + gpt-image-1. This is effective because diffusion models possess rich priors for shape semantics and color assignment, making coloring a "natural" task for them.
 
-    - **Function**: Recover the complete shape of each semantic component, including regions occluded by other components.
-    - **Mechanism**: Built on fine-tuning the pix2gestalt latent diffusion model. The input consists of the occluded image and the visible region mask; high-level semantic conditioning is provided via CLIP image embeddings, while geometric conditioning is supplied by concatenating VAE-encoded occluded patches with the mask. Training employs a fragmented-visibility strategy: when a component is occluded and split into multiple disconnected fragments $\{V^{(i)}\}$, each fragment is used independently as input, but all fragments supervise the recovery of the same complete shape (many-to-one completion). A post-inference IoU merging step ($\tau=0.7$) consolidates multiple completion results belonging to the same object. The completion dataset SemLayer-Completion contains 50,000 training triplets.
-    - **Design Motivation**: Amodal completion models trained on natural images cannot be directly applied to black-and-white icons due to the large domain gap, necessitating dedicated fine-tuning for the icon style.
+**2. Amodal Layer Completion: Restoring Occluded Parts**
 
-3. **Layer Order Optimization (ILP Formulation)**
+The previous step yields only the "visible portions," but designers require complete shapes. For example, if one graphic overlaps another, the hidden part must be restored to prevent holes when the layers are reordered. Since amodal completion models for natural images suffer from a significant domain gap with black-and-white icons, the authors fine-tuned a pix2gestalt latent diffusion model specifically for icon styles.
 
-    - **Function**: Determine the stacking order of completed components.
-    - **Mechanism**: Binary variables $x_{ij}$ encode whether component $i$ lies above component $j$, subject to anti-symmetry and transitivity constraints. Two pixel-level coverage variables are introduced: $y_i=1$ indicates that the extra region $E_i = A_i \setminus I$ is covered by an upper layer (desirable), and $z_i=1$ indicates that the visible region $V_i$ is incorrectly occluded (undesirable). The objective $\max_{x,y,z} \sum_i y_i - \lambda \sum_i z_i$ trades off between rewarding correct occlusion coverage and penalizing erroneous occlusion, with $\lambda=1$.
-    - **Design Motivation**: Layer order determination is a combinatorial optimization problem for which ILP provides an exact solution, and the objective metrics—occlusion consistency versus visibility preservation—are clearly defined.
+The completion model consumes two conditions: a CLIP image embedding for high-level semantics and the VAE-encoded occluded patch concatenated with the mask for geometric constraints. A crucial training technique is "fragmented visibility"—where an occluded part may be split into multiple disconnected fragments $\{V^{(i)}\}$. During training, each fragment serves as an independent input, but all are supervised to recover the same complete shape. This many-to-one mapping forces the model to learn to "hallucinate the whole from a small piece." During inference, a merging step using an IoU threshold $\tau=0.7$ combines multiple completion results belonging to the same object. The SemLayer-Completion dataset contains 50,000 training triplets.
+
+**3. Layer Order Optimization: Precision Inference of Stacking via ILP**
+
+After completion, all components represent full shapes, but the "who is on top" stacking order remains undetermined. The paper formalizes this as an Integer Linear Programming (ILP) problem. Binary variables $x_{ij}$ represent whether part $i$ is stacked above part $j$, subject to anti-symmetry and transitivity constraints (i.e., a legal total order).
+
+Quality is determined by two pixel-level coverage variables: $y_i=1$ if the extra completion area $E_i = A_i \setminus I$ (the part not in the original image) is indeed covered by an upper layer—this is a "correct occlusion" that is rewarded; $z_i=1$ if a part's originally visible area $V_i$ is erroneously covered by an upper layer—this is an "incorrect occlusion" that is penalized. The objective function:
+
+$$\max_{x,y,z} \sum_i y_i - \lambda \sum_i z_i$$
+
+balances "completed parts should be hidden" against "originally visible parts should remain visible," with $\lambda=1$. The combinatorial optimization is solved precisely via an ILP solver.
+
+### Example Scenario
+
+Consider an "envelope + letter" icon: The input is a single compound B&W path merging the envelope and letter. **Step 1 (Segmentation)**: The model colors the envelope blue and the visible letter yellow, producing two visible masks—where the letter $V_{\text{letter}}$ is just a small strip protruding from the envelope. **Step 2 (Completion)**: This fragment is fed into the completion model, which uses amodal priors to restore the entire rectangular letter $A_{\text{letter}}$ hidden behind the envelope. **Step 3 (ILP)**: The extra region $E_{\text{letter}}$ should be covered by the envelope ($y$ reward), while the envelope's visible area should not be pressed by the letter ($z$ penalty). The solver determines "envelope on top, letter on bottom." Finally, potrace generates two vector layers ready for coloring, translation, or animation.
 
 ### Loss & Training
 
-The segmentation model is trained from scratch for 40,000 steps (lr $1 \times 10^{-4}$, CFG scale 4.5), with 25 inference steps at resolution $512 \times 512$. The completion model is fine-tuned for 50,000 steps (lr $1 \times 10^{-5}$), with 50 inference steps at resolution $256 \times 256$. All experiments are conducted on 8 A100 GPUs. Vectorization uses potrace with a curve-reuse strategy to maximize retention of original Bézier segments.
+The segmentation model was trained for 40,000 steps (lr $1 \times 10^{-4}$, CFG scale 4.5), with 25 inference steps at $512 \times 512$ resolution. The completion model was fine-tuned for 50,000 steps (lr $1 \times 10^{-5}$), with 50 inference steps at $256 \times 256$ resolution. Experiments were conducted on 8 A100 GPUs. Vectorization uses potrace with a curve-reuse strategy to preserve original Bézier segments.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Segmentation performance comparison (48-icon real SVG test set):
+Segmentation Performance Comparison (48 real SVG test-sets):
 
 | Method | mIoU (%) | PQ (%) | Completion mIoU (%) | Completion CD ↓ |
-|--------|----------|--------|---------------------|-----------------|
+|------|----------|--------|--------------|----------|
 | gpt-image-1 | 25.4 | 6.20 | 60.9 | 71.4 |
 | SAM2 | 51.1 | 26.2 | 69.2 | 61.7 |
-| SAM2* (fine-tuned) | 79.3 | 59.4 | 80.7 | 49.1 |
-| **SemLayer (Ours)** | **84.3** | **76.1** | **85.2** | **46.6** |
+| SAM2* (Finetuned) | 79.3 | 59.4 | 80.7 | 49.1 |
+| **Ours** | **84.3** | **76.1** | **85.2** | **46.6** |
 
-Completion model comparison (using fixed segmentation input from this paper):
+Completion Model Comparison (Fixed visible inputs):
 
 | Method | mIoU (%) ↑ | CD ↓ |
-|--------|-----------|------|
+|------|-----------|------|
 | gpt-image-1 | 10.7 | 98.6 |
 | MP3D | 70.5 | 79.4 |
 | MP3D-finetuned | 75.3 | 68.9 |
-| **SemLayer (Ours)** | **85.2** | **46.6** |
+| **Ours** | **85.2** | **46.6** |
 
 ### Ablation Study
 
-Refined segmentation metrics:
+Refined segmentation metric improvements:
 
 | Configuration | mIoU_Refined (%) | PQ_Refined (%) |
-|---------------|-----------------|----------------|
+|------|-----------------|----------------|
 | gpt-image-1 | 57.2 | 39.3 |
 | SAM2 | 62.2 | 37.8 |
 | SAM2* | 85.3 | 78.0 |
-| **SemLayer** | **86.4** | **78.3** |
+| **Ours** | **86.4** | **78.3** |
 
 ### Key Findings
 
-- **Segmentation-as-colorization significantly outperforms direct segmentation**: gains of +5.0 mIoU and +16.7 PQ over fine-tuned SAM2*.
-- **gpt-image-1 performs poorly on icon segmentation**: mIoU of only 25.4%, demonstrating that general-purpose generative models struggle to understand the semantic structure of icons.
-- **Domain adaptation of the completion model is critical**: the generic MP3D model achieves mIoU=70.5%; fine-tuning raises this to 75.3%, while the dedicated icon completion training in this paper reaches 85.2%.
-- **The fragmented-visibility training strategy is effective**: many-to-one completion training enables the model to recover complete shapes from individual fragments.
-- **The end-to-end pipeline produces directly editable layered SVGs**: supporting local recoloring, rotation, scaling, and simple animation.
+-   **Coloring-as-Segmentation significantly outperforms direct segmentation**: Ours exceeds fine-tuned SAM2* by +5.0 mIoU and +16.7 PQ.
+-   **gpt-image-1 performs poorly on icon segmentation**: With an mIoU of only 25.4%, it suggests general-purpose generative models struggle to grasp icon semantic structures.
+-   **Domain adaptation is vital for completion**: The generic MP3D model achieved mIoU=70.5%, increasing to 75.3% after fine-tuning, while the specialized icon completion training reached 85.2%.
+-   **Fragmented visibility training is effective**: The many-to-one mapping allows models to recover full shapes from single fragments.
+-   **The end-to-end pipeline outputs editable layered SVGs**: Specifically supporting local recoloring, rotation, scaling, and simple animations.
 
 ## Highlights & Insights
 
-- **The paradigm shift of segmentation-as-colorization is particularly elegant**: when conventional segmentation methods fail in a specific domain, the key insight is to ask "what task formulation is more amenable to generative models?" Colorization is a more natural task for diffusion models—this insight is transferable to other domains where direct segmentation is difficult.
-- **The data construction pipeline is practical**: combining real SVGs from LayerPeeler with GPT-4o/gpt-image-1 synthesis, the authors constructed a segmentation dataset of 8,567 training samples and 50,000 completion triplets at modest manual cost.
-- **The ILP formulation for layer ordering is intuitively clear**: the objective function—rewarding correct occlusion coverage and penalizing erroneous visibility occlusion—is concise and elegant.
+-   **The "Segmentation via Coloring" paradigm shift is ingenious**: When traditional segmentation fails in specific domains, one should consider what task format is most "friendly" to generative models. Coloring is a more natural task for diffusion models, an insight transferable to other domains where direct segmentation is difficult.
+-   **Practical data construction pipeline**: By utilizing LayerPeeler's real SVGs and GPT-mediated synthesis, the authors built a segmentation dataset of 8,567 samples and 50,000 completion triplets with low manual cost.
+-   **Intuitive ILP design for layer ordering**: The objective function, which rewards correct occlusion and punishes incorrect visibility, is elegantly simple.
 
 ## Limitations & Future Work
 
-- **Only black-and-white line icons are handled**: colored and filled icons are not yet covered, though the authors note that color itself serves as a strong semantic cue, making extension relatively straightforward.
-- **Highly entangled or heavily occluded icons may fail**: the paper acknowledges failure cases (Fig. 9).
-- **The test set contains only 48 icons**: the evaluation scale is limited and may not represent all icon styles.
-- **Stochasticity of generative models**: multiple runs and averaging are needed to stabilize results.
+-   **Limited to B&W line icons**: Colored and filled icons are not yet covered (though the authors note that color itself provides strong semantic cues, making expansion relatively straightforward).
+-   **Highly tangled/occluded icons may fail**: The paper acknowledges failure cases in Fig. 9.
+-   **Small test set**: Evaluation on only 48 icons may not fully represent all icon styles.
+-   **Stochasticity of generative models**: Requires multiple runs or averaging to stabilize results.
 
 ## Related Work & Insights
 
-- **vs. LayerPeeler**: LayerPeeler provides a source of existing layered SVG data but lacks a segmentation method; SemLayer builds a complete segmentation–completion–ordering pipeline on top of its data.
-- **vs. SAM2**: Even after fine-tuning, SAM2 still suffers from fragmentation and alignment issues because its design assumes rich visual cues; the colorization paradigm avoids these problems.
-- **vs. optimization-based vectorization methods**: Differentiable rendering methods such as DiffVG achieve high visual fidelity but generate excessively fragmented layers and lack semantic consistency.
+-   **vs LayerPeeler**: LayerPeeler provides the source of real layered SVG data but lacks a robust segmentation method; SemLayer builds a complete segmentation-completion-sorting pipeline on top of it.
+-   **vs SAM2**: Even after fine-tuning, SAM2 suffers from fragmentation and alignment issues because its design assumes rich visual cues; the coloring paradigm avoids these pitfalls.
+-   **vs Optimization-based Vectorization**: Methods like DiffVG provide visual fidelity but generate excessively fragmented layers, lacking semantic consistency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The insight of reframing segmentation as colorization is highly creative, and the three-stage pipeline design is clean and well-motivated.
-- Experimental Thoroughness: ⭐⭐⭐ Quantitative evaluation on 48 test icons is somewhat limited, though qualitative visualizations sufficiently demonstrate the results.
-- Writing Quality: ⭐⭐⭐⭐ Problem formalization is clear, with four identified challenges each addressed by a corresponding solution.
-- Value: ⭐⭐⭐⭐ The work has practical application value for design tooling, and the dataset and methodology can lay a foundation for vector graphics understanding.
+-   Novelty: ⭐⭐⭐⭐⭐ The insight of redefining segmentation as a coloring task is highly creative.
+-   Experimental Thoroughness: ⭐⭐⭐ Quantitative evaluation on 48 icons is somewhat limited, though qualitative visualizations are compelling.
+-   Writing Quality: ⭐⭐⭐⭐ Problem formalization is clear, with solutions directly addressing the four defined challenges.
+-   Value: ⭐⭐⭐⭐ High practical value for design tools; the dataset and method lay a foundation for vector graphics understanding.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
+- [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
+- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
 - [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[CVPR 2026\] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training](data_warmup_complexity-aware_curricula_for_efficient_diffusion_training.md)
-- [\[ICCV 2025\] LayerAnimate: Layer-level Control for Animation](../../ICCV2025/segmentation/layeranimate_layer-level_control_for_animation.md)
-- [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
 
 </div>
 

@@ -2,140 +2,140 @@
 title: >-
   [Paper Note] MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A
 description: >-
-  [ACL2026][Information Retrieval & RAG][MM-RAG] MM-BizRAG demonstrates that enterprise multimodal RAG should not rely solely on page screenshots and visual embeddings. Instead…
+  [ACL 2026][Information Retrieval & RAG][MM-RAG] MM-BizRAG demonstrates that enterprise multimodal RAG should not rely solely on page screenshots and visual embeddings. Instead, it should first differentiate between reports and slides based on document structure, explicitly parse text, tables, and images, and then assemble multimodal contexts during inference. This a
 tags:
-  - "ACL2026"
-  - "Information Retrieval & RAG"
-  - "MM-RAG"
-  - "Enterprise Documents"
-  - "Structure-aware Parsing"
-  - "Multimodal Retrieval"
-  - "FastRAGEval"
+  - ACL 2026
+  - Information Retrieval & RAG
+  - MM-RAG
+  - FastRAGEval
 date: 2026-05-08
-content_hash: d4693ae1c1d1a0f2
+content_hash: 6ebe84db36690d00
 ---
-
 # MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A
 
 **Conference**: ACL2026  
 **arXiv**: [2606.04231](https://arxiv.org/abs/2606.04231)  
-**Code**: None (Cache repository not provided)  
+**Code**: None (cache repository not provided)  
 **Area**: Multimodal Retrieval-Augmented Generation / Enterprise Q&A  
 **Keywords**: MM-RAG, Enterprise Documents, Structure-aware Parsing, Multimodal Retrieval, FastRAGEval
 
 ## TL;DR
-MM-BizRAG demonstrates that enterprise multimodal RAG should not rely solely on page screenshots and visual embeddings. Instead, it should first distinguish reports from slides based on document structure, explicitly parse text, tables, and images, and assemble multimodal contexts during inference. This approach significantly outperforms vision-centric baselines on SlideVQA, FinRAGBench-V, and internal enterprise data.
+MM-BizRAG demonstrates that enterprise multimodal RAG should not rely solely on page screenshots and visual embeddings. Instead, it should first differentiate between reports and slides based on document structure, explicitly parse text, tables, and images, and then assemble multimodal contexts during inference. This approach significantly outperforms vision-centric baselines on SlideVQA, FinRAGBench-V, and internal enterprise data.
 
 ## Background & Motivation
-**Background**: Enterprise knowledge bases commonly contain documents such as PDF, DOCX, PPTX, HTML, and TXT, which mix text, tables, images, charts, and complex layouts. A simplified route in multimodal RAG has recently become popular: treating pages as images, using visual embeddings for retrieval, and passing page images to a VLM to generate answers.
+**Background**: Enterprise knowledge bases commonly contain documents like PDF, DOCX, PPTX, HTML, and TXT, which mix text, tables, images, charts, and complex layouts. A recent popular simplified route for multimodal RAG treats pages as images, uses visual embeddings for retrieval, and passes page images to Vision Language Models (VLMs) to generate answers.
 
-**Limitations of Prior Work**: The page-as-image route skips parsing but leaves the reading order, table structure, and image-text spatial relationships to be implicitly understood by pre-trained VLMs. Structured information in enterprise documents—especially financial reports, compliance materials, technical documents, and multi-page business reports—is often outside the training distribution of general-purpose models.
+**Limitations of Prior Work**: While the page-as-image route skips parsing, it delegates the implicit understanding of reading order, table structures, and spatial relationships between text and images entirely to pretrained VLMs. Structured information in enterprise documents—such as financial reports, compliance materials, technical documents, and multi-page business reports—often falls outside the training distribution of general-purpose models.
 
-**Key Challenge**: RAG retrieval requires lightweight, stable, and indexable representations, while answer generation requires rich, structure-preserving multimodal contexts. Using the same page screenshot for both retrieval and generation may lead to inaccurate retrieval and the loss of table structures or logical reading orders.
+**Key Challenge**: RAG retrieval requires lightweight, stable, and indexable representations, while answer generation requires rich, structure-preserving multimodal context. Using the same page screenshot for both retrieval and generation may lead to inaccurate retrieval or the loss of table data and reading order.
 
-**Goal**: The authors aim to build an MM-RAG system that is deployable for heterogeneous enterprise documents without model fine-tuning, explicitly handling structured artifacts and systematically comparing the impact of different ingestion representations and embedding strategies.
+**Goal**: The authors aim to build an MM-RAG system that can be deployed for heterogeneous enterprise documents without model fine-tuning, explicitly handling structured artifacts and systematically comparing the impact of different ingestion representations and embedding strategies.
 
-**Key Insight**: The paper shunts documents into vertical documents (reports, PDFs, filings) and horizontal documents (slide decks) according to their structure, then designs separate parsing and chunking strategies. Lightweight representations are used during retrieval for indexing, while original artifacts are reassembled during the generation stage.
+**Key Insight**: The paper first bifurcates documents into vertical documents (reports, PDFs, filings) and horizontal documents (slide decks) based on structure, then designs separate parsing and chunking strategies. It uses representations better suited for indexing during the retrieval phase and reassembles the original artifacts during the generation phase.
 
-**Core Idea**: Decouple the "representation for retrieval" from the "context for generation." During retrieval, text, descriptions, or page representations are indexed lightly. During generation, table Markdown, images, and page screenshots are restored based on placeholders and metadata to construct multimodal evidence closer to the original structure.
+**Core Idea**: Decouple the "representation for retrieval" from the "context for generation." During retrieval, it indexes lightweight text, descriptions, or page representations. During generation, it restores table markdown, images, and page screenshots based on placeholders and metadata to construct multimodal evidence closer to the original structure.
 
 ## Method
-The core of MM-BizRAG is document structure-aware ingestion. The system first determines whether a document has a vertical or horizontal structure. Vertical documents usually have a natural reading order suitable for layout-aware parsing, while horizontal slides treat each page as a complete semantic unit suitable for full-page images + VLM descriptions. Subsequently, the paper defines three variants by changing chunk granularity, embedding models, and artifact injection timing.
 
 ### Overall Architecture
-For vertical documents, tools like Docling extract text blocks, tables, images, and page images. Placeholders for tables/images are inserted into text representations to maintain reading order. Tables are converted to Markdown, and row-by-row descriptions are generated by an LLM; images are described by a VLM, with uninformative content like logos filtered out. For horizontal documents, page images are retained, and detailed slide-level descriptions are generated by a VLM.
+MM-BizRAG addresses heterogeneous documents in enterprise repositories: PDF financial reports, PPTX slides, and DOCX technical documents. Relying solely on page screenshots + visual embeddings loses table structures and reading sequences. The core mechanism is document structure-aware ingestion: first classifying whether a document has a vertical structure (reports/filings with natural reading order) or a horizontal structure (slides where each page is a complete semantic unit), and then following different parsing routes.
 
-During retrieval, chunks are generated based on the variant to establish text or multimodal embeddings. At inference, a query rewriter first reformulates the query based on conversation history. The system uses dense + BM25 hybrid retrieval. After RRF (Reciprocal Rank Fusion) fusion, the top 30 candidates are sent to an LLM list-wise reranker, and the top 20 chunks are selected to assemble the multimodal context for GPT-4.1 to generate the answer.
+For vertical documents, tools like Docling extract text blocks, tables, images, and page images. Placeholders for tables/images are inserted into the text to maintain reading order; tables are converted to markdown with line-by-line descriptions generated by an LLM, and images are described by a VLM (filtering out non-informative content like logos). For horizontal documents, each page is preserved as a page image plus a slide-level description generated by a VLM. During retrieval, text or multimodal embeddings are established based on the variant. During inference, a query rewriter first modifies the query using conversation history, followed by dense + BM25 hybrid retrieval. RRF fusion selects the top 30 chunks for a list-wise reranker, and finally, the top 20 chunks are assembled into a multimodal context for GPT-4.1 to generate answers. Three variants are defined (TCTE, PCMHE, TCMIE), differing in chunk granularity, embedding models, and artifact injection timing.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Enterprise Documents<br/>PDF / PPTX / DOCX / HTML / TXT"] --> B["Structure-Aware Routing<br/>Vertical/Horizontal Classifier"]
+    B -->|Vertical: Reports/Filings| C["Layout Parsing<br/>Text+Placeholders / Tables→Markdown→LLM Desc / Images→VLM Desc"]
+    B -->|Horizontal: Slides| D["Page-level Repr.<br/>Page Image + Slide-level VLM Desc"]
+    C --> E["Lightweight Index Repr.<br/>Text / Multimodal Embedding (Decoupled Retrieval)"]
+    D --> E
+    E --> F["Query Rewriting<br/>Contextual Self-contained Query"]
+    F --> G["Hybrid Retrieval<br/>Dense 70 + BM25 100 → RRF top30"]
+    G --> H["List-wise Rerank<br/>Select Top 20 Chunks"]
+    H --> I["Inference Context Assembly<br/>Restore Markdown/Images via Placeholders (Decoupled Generation)"]
+    I --> J["GPT-4.1 Generation"]
+```
 
 ### Key Designs
-1.  **Structure-aware Document Shunting**:
-    - **Function**: Selects different ingestion pipelines based on the document layout structure.
-    - **Mechanism**: Vertical documents undergo layout-aware parsing to preserve text sequence, table Markdown, image descriptions, and page images. Horizontal documents are not forcibly split into blocks; instead, each slide is treated as a holistic semantic unit represented by page images and VLM descriptions.
-    - **Design Motivation**: Reports and slides organize information differently. Reports rely on the sequence of paragraphs and tables, whereas slides rely on spatial layout. A single parsing strategy cannot adapt to both simultaneously.
 
-2.  **Decoupling Retrieval Representation and Generation Context**:
-    - **Function**: Maintains efficient retrieval while providing generation with sufficiently rich evidence.
-    - **Mechanism**: For instance, the TCTE variant uses text chunks, table descriptions, and image descriptions for text embedding. When a table or image description is retrieved, the system finds the parent text chunk of its placeholder and injects table Markdown, image artifacts, and descriptions back into their original positions.
-    - **Design Motivation**: Table Markdown and image Base64 are not suitable for direct indexing, but they are needed for generation. Assembly at inference time avoids index bloat.
+**1. Structure-Aware Routing: Reports and slides require different parsing**
 
-3.  **FastRAGEval Single-call Evaluation**:
-    - **Function**: Reduces the LLM judge cost for long-answer enterprise QA and better matches human annotations.
-    - **Mechanism**: FastRAGEval extracts atomic facts from both reference and prediction in a single LLM call and calculates precision, recall, and F1. The paper primarily uses FRE recall, replacing the two-stage claim decomposition and matching of RAGChecker.
-    - **Design Motivation**: Enterprise long answers are more concerned with critical fact recall; traditional token overlap is inapplicable. RAGChecker has high cost and latency, making a single-call judge more suitable for large-scale system evaluation.
+Reports depend on the linear sequence of paragraphs and tables, whereas slides depend on the spatial layout of the entire page. Forcing both into a single chunking strategy inevitably results in sub-optimal performance. MM-BizRAG uses a vertical/horizontal classifier where vertical documents undergo layout-aware parsing to preserve reading order, while horizontal documents treat each page as an indivisibility semantic unit. In experiments, this classifier achieved 100% precision and 83.28% recall, making the subsequent structure-customized parsing reliable.
+
+**2. Decoupling Retrieval Representation and Generation Context: Use descriptions for indexing, restore artifacts for generation**
+
+Table markdown and base64 images are bulky; indexing them directly bloats the vector database and slows down retrieval. However, generation needs these original pieces of evidence. MM-BizRAG separates the "representation for retrieval" from the "context for generation." In the TCTE variant, the index only uses text chunks, table descriptions, and image descriptions for text embedding. When a table or image description is hit, the system uses its placeholder to find the parent text chunk and injects the actual table markdown or image artifact back into the placeholder's original position. This keeps indexing lean while providing generation with multimodal evidence close to the original structure.
+
+**3. FastRAGEval (FRE): Fact-level recall via single LLM call**
+
+Answers in enterprise QA are often long paragraphs; token overlap or exact match cannot measure if key facts were retrieved. Two-stage approaches like RAGChecker (claim decomposition + matching) have high latency. FastRAGEval (FRE) compresses this into a single LLM call that extracts atomic facts from both reference and prediction to calculate precision, recall, and F1. The paper primarily uses FRE recall, which shows a higher correlation with human judgment (Pearson 0.808 vs. RAGChecker's 0.748), proving that the single-call approach does not sacrifice consistency while significantly reducing judge costs.
+
+### A Full Example: How a query retrieves table evidence
+Consider a user asking about "Year-on-year change in Q3 overseas revenue" in a financial report. The query rewriter first completes the query using history. In hybrid retrieval, 70 chunks are taken from dense and 100 from BM25, fused via RRF, and the top 30 are sent to the list-wise reranker. Suppose a top hit is a table description: "This table shows quarterly revenue by region." Instead of feeding this dry description to the generator, the system follows the placeholder back to the parent text chunk and injects the corresponding table markdown (containing the actual numbers) and surrounding paragraphs. The final top 20 chunks contain the structured, readable original table, allowing GPT-4.1 to answer accurately rather than guessing cells from a screenshot.
 
 ### Loss & Training
-This paper does not train dedicated retrievers or generation models, focusing instead on the design of ingestion, retrieval, and assembly. Components used include Docling, EasyOCR, PyPdfium2, Tableformer, OpenAI text-embedding-3-large, nomic-multimodal-embed-3b, cohere-embed-v4, the GPT-4.1 model family, ColPali, and VisRAG-Ret. In the inference pipeline, dense retrieval takes 70 chunks, BM25 takes 100 chunks, and after RRF, the top 30 enter the list-wise reranker, with the final top 20 used for answer generation.
+This work does not train specific retrievers or generation models; the focus is entirely on the design of ingestion, retrieval, and assembly. Components used include Docling, EasyOCR, PyPdfium2, Tableformer, OpenAI text-embedding-3-large, nomic-multimodal-embed-3b, cohere-embed-v4, the GPT-4.1 series, ColPali, and VisRAG-Ret. The inference pipeline settings are: dense retrieval (70 chunks), BM25 (100 chunks), RRF top 30 for list-wise reranking, and final top 20 for generation.
 
 ## Key Experimental Results
 
 ### Main Results
-| Pipeline | SlideVQA FRE | FinRAGBench-V FRE | Internal FRE | Key Findings |
-| :--- | :--- | :--- | :--- | :--- |
+| Pipeline | SlideVQA FRE | FinRAGBench-V FRE | Internal FRE | Main Conclusion |
+|------|------|------|------|------|
 | Text-Only | 67.8 | 60.3 | 83.7 | Strong on text-only questions, weak on tables/images |
 | ColPali | 83.6 | 49.3 | - | Stronger than text-only for slides, weak for reports |
-| VisRAG | 78.8 | 46.0 | - | Similarly limited by page-image-centric approach |
+| VisRAG | 78.8 | 46.0 | - | Similarly limited by the page-image-centric approach |
 | TCTE (OAI v3-large) | 87.3 | 80.2 | 88.1 | Recommended production config; lower latency for vertical docs |
 | PCMHE (Nomic) | 89.9 | 79.6 | 87.6 | Strongest on SlideVQA |
 | PCMHE (Cohere) | 89.06 | 82.4 | 87.8 | Strongest on FinRAGBench-V |
-| TCMIE (Cohere) | 88.2 | 76.9 | 88.0 | Internal data performance close to TCTE |
+| TCMIE (Cohere) | 88.2 | 76.9 | 88.0 | Closest to TCTE on internal data |
 
 ### Ablation Study
-| Analysis | Value / Phenomenon | Description |
-| :--- | :--- | :--- |
-| Vertical-horizontal classifier | Precision 100.00, Recall 83.28, F1 90.87 | Document shunting is reliable, but recall can be improved |
-| FRE vs RAGChecker Pearson | 0.808 vs 0.748 | FRE has higher correlation with human judgment |
+| Analysis Item | Value / Phenomenon | Description |
+|------|------|------|
+| Vertical-horizontal classifier | Precision 100.00, Recall 83.28, F1 90.87 | Structural routing is reliable, though recall can improve |
+| FRE vs RAGChecker Pearson | 0.808 vs 0.748 | FRE correlates better with human judgment |
 | FRE vs RAGChecker Spearman | 0.808 vs 0.736 | Better ranking consistency |
 | FRE vs RAGChecker Kendall | 0.808 vs 0.725 | Single-call metric does not sacrifice consistency |
-| Human Labeling Consistency | Cohen's kappa 0.966 | High agreement between two annotators on 200 instances |
-| TCTE Latency | FinRAGBench-V 11.9s, Internal 11.1s | Vertical doc latency is roughly half of PCMHE Cohere |
+| Human Labeling Consistency | Cohen's kappa 0.966 | High agreement across 200 double-labeled instances |
+| TCTE Latency | FinRAGBench-V 11.9s, Internal 11.1s | For vertical docs, approx. half the latency of PCMHE Cohere |
 
 ### Key Findings
-- On SlideVQA, the highest FRE recall for MM-BizRAG is 89.9, an improvement of 6.3 percentage points over ColPali's 83.6, showing that explicit text/visual fusion is beneficial even when slides favor visual routes.
-- On FinRAGBench-V, PCMHE Cohere achieves an FRE recall of 82.4, while ColPali is only 49.3 and VisRAG 46.0; page-image-centric methods degrade significantly in report-style documents.
-- Internal data includes 1,908 questions, 1,048 documents, and 20,429 pages. All MM-BizRAG variants show higher FRE recall than the 83.7 of text-only.
-- TCTE is the recommended production configuration: its recall discrepancy from the optimum in vertical documents is usually only 1-3 percentage points, but its latency is approximately half that of PCMHE.
-- The faithfulness of all MM-BizRAG variants exceeds 90%, indicating that structured assembly does not trade more evidence for more ungrounded generation.
+- On SlideVQA, MM-BizRAG achieves a peak FRE recall of 89.9, a 6.3 percentage point improvement over ColPali's 83.6; this indicates that even for slides, explicit text/vision fusion is beneficial.
+- On FinRAGBench-V, PCMHE Cohere achieves an FRE recall of 82.4, whereas ColPali scores only 49.3 and VisRAG only 46.0; page-image-centric methods degrade significantly in report-style documents.
+- Internal data includes 1,908 questions, 1,048 documents, and 20,429 pages; all MM-BizRAG variants outperform the text-only FRE recall of 83.7.
+- TCTE is the recommended production configuration: its recall is usually only 1-3 percentage points behind the best performer on vertical docs, but its latency is roughly half that of PCMHE.
+- All MM-BizRAG variants maintain a faithfulness score above 90%, implying that structured assembly does not result in more ungrounded generations despite the richer context.
 
 ## Highlights & Insights
-- The paper refutes the intuition that "parsing is unnecessary once VLMs are strong enough." Explicit modeling of tables, headers/footers, cross-page narratives, and image-text order in enterprise documents is still required.
-- Decoupling retrieval representation from generation context is a highly practical engineering design. Many RAG systems tie index schemas to prompt context schemas, resulting in either heavy retrieval or impoverished generation evidence.
-- The performance of TCTE is highly realistic: the strongest configuration is not necessarily the most suitable for production; trade-offs between latency, cost, and recall must be evaluated together.
-- FastRAGEval is also practical. Enterprise QA answers are often long paragraphs where token F1 or exact match are meaningless; single-call fact-level recall is closer to business evaluation.
+- The paper refutes the intuition that "parsing is unnecessary once VLMs are strong enough." Tables, headers/footers, cross-page narratives, and image-text sequences in enterprise documents still require explicit modeling.
+- The decoupling of retrieval representation and generation context is a critical engineering design. Many RAG systems tie the index schema to the prompt context schema, leading to either heavy indexing or poor evidence for generation.
+- TCTE's performance is highly practical: the strongest configuration is not always the best for production; trade-offs between latency, cost, and recall must be viewed holistically.
+- FastRAGEval is highly practical. For long-paragraph enterprise QA answers, token F1 or exact match is meaningless; single-call fact-level recall is much closer to business evaluation.
 
 ## Limitations & Future Work
 - Public slide evaluations rely mainly on SlideVQA, which is relatively simple and may not fully represent complex enterprise-grade presentations.
-- FinRAGBench-V only processes a subset of 213 English documents for which the authors could obtain PDFs, not covering the full 1,100+ documents or multilingual enterprise scenarios.
-- Public baselines only include ColPali and VisRAG, lacking comparisons with more recent or closed-source enterprise RAG systems.
-- Internal enterprise data cannot be released due to privacy and organizational constraints, limiting reproducibility; future releases of anonymous or synthetic versions would be valuable.
-- The system relies on GPT-4.1 for description generation, query rewriting, reranking, and answering; cost, rate limits, and model version changes will affect deployment performance.
+- FinRAGBench-V only processed a subset of 213 English documents in PDF format, not covering the full 1,100+ documents or evaluating multi-lingual enterprise scenarios.
+- Public baselines are limited to ColPali and VisRAG; comparisons with more recent or closed-source enterprise RAG systems are missing.
+- Internal enterprise data cannot be released due to privacy, limiting reproducibility.
+- The system relies on GPT-4.1 for descriptions, rewriting, reranking, and answering; costs, rate limits, and model version changes will affect deployment performance.
 
 ## Related Work & Insights
-- **vs ColPali**: ColPali uses VLMs for page-level retrieval, suitable for visual matching. MM-BizRAG explicitly restores text, table, and image structures, showing clear advantages in report-style documents.
-- **vs VisRAG**: VisRAG also emphasizes page images and multimodal retrieval. MM-BizRAG argues that generation contexts require artifact-aware assembly rather than just passing page images.
-- **vs Text-only RAG**: Text-only remains strong on text-dense questions but fails on tables and images; MM-BizRAG supplements multimodal evidence without sacrificing text advantages.
-- **Insight**: Ingestion for enterprise RAG should not just ask "which embedding to use," but also "what is the document structure, which artifacts are used for indexing, and which artifacts are restored during generation."
+- **vs ColPali**: ColPali uses VLMs for page-level retrieval, suitable for visual matching; MM-BizRAG explicitly restores text, table, and image structures, showing clear advantages on report-style documents.
+- **vs VisRAG**: VisRAG also emphasizes page images and multimodal retrieval; MM-BizRAG argues that generation context requires artifact-aware assembly rather than just passing page images.
+- **vs Text-only RAG**: Text-only remains strong on text-heavy queries but drops in performance with tables and images; MM-BizRAG complements text strengths with multimodal evidence.
+- **Insight**: Ingestion for enterprise RAG should not just ask "which embedding to use," but also "what is the document structure, which artifacts are for indexing, and which are restored during generation."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Most components use existing technology, but the systematic combination of structure shunting, placeholder alignment, and inference-time assembly is engineeringly innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Strong support from internal large-scale data and two public benchmarks, though public reproducibility and baseline scope are limited.
-- Writing Quality: ⭐⭐⭐⭐☆ The system design is clear, and variant comparisons are useful; readers must track symbols and pipelines carefully due to the complexity of the enterprise system.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for the implementation of enterprise-level multimodal RAG, particularly as a reminder not to abandon explicit document parsing prematurely.
+- Novelty: ⭐⭐⭐⭐☆ Most components use existing technology, but the combination of structural routing, placeholder alignment, and inference-time assembly represents significant engineering innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Supported by large-scale internal data and two public benchmarks, though public reproducibility and the range of baselines are limited.
+- Writing Quality: ⭐⭐⭐⭐☆ System design is clear, and variant comparisons are useful; the enterprise system details require the reader to follow symbols and pipelines closely.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for deploying enterprise-grade multimodal RAG, particularly as a reminder not to abandon explicit document parsing prematurely.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-## Related Papers
-
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
-- [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/information_retrieval/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/information_retrieval/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
-
-</div>
-
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)

@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection
 description: >-
-  [ICML 2026][Object Detection][Open-Set Supervised Anomaly Detection] MPFM replaces the traditional "unimodal Gaussian prototype" in OSAD with a learnable **Gaussian Mixture Prototype Space**. It employs flow matching to…
+  [ICML 2026][Object Detection][Flow Matching] MPFM replaces the traditional "unimodal Gaussian prototypes" in OSAD with a learnable **Gaussian Mixture Model (GMM) prototype space**. It uses flow matching to directly regress a velocity field in GMM form, augmented by a mutual information maximization regularization to prevent prototype collapse. The method outperfo
 tags:
-  - "ICML 2026"
-  - "Object Detection"
-  - "Open-Set Supervised Anomaly Detection"
-  - "Flow Matching"
-  - "Gaussian Mixture Prototypes"
-  - "Mutual Information Regularization"
-  - "OSAD"
+  - ICML 2026
+  - Object Detection
+  - Flow Matching
+  - OSAD
 date: 2026-05-08
-content_hash: 91fa8d485c32e79a
+content_hash: 8b30222962fdbf52
 ---
-
 # Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection
 
 **Conference**: ICML 2026  
@@ -24,64 +20,70 @@ content_hash: 91fa8d485c32e79a
 **Keywords**: Open-Set Supervised Anomaly Detection, Flow Matching, Gaussian Mixture Prototypes, Mutual Information Regularization, OSAD
 
 ## TL;DR
-MPFM replaces the traditional "unimodal Gaussian prototype" in OSAD with a learnable **Gaussian Mixture Prototype Space**. It employs flow matching to directly regress a velocity field in GMM form, supplemented by a mutual information maximization regularizer to prevent prototype collapse. It outperforms all SOTA methods like DRA, AHL, and DPDL on 9 industrial/medical AD datasets under 10/1 anomaly sample settings.
+MPFM replaces the traditional "unimodal Gaussian prototypes" in OSAD with a learnable **Gaussian Mixture Model (GMM) prototype space**. It uses flow matching to directly regress a velocity field in GMM form, augmented by a mutual information maximization regularization to prevent prototype collapse. The method outperforms all SOTA methods, including DRA, AHL, and DPDL, across 9 industrial and medical AD datasets under the 10/1 anomaly sample setting.
 
 ## Background & Motivation
 
-**Background**: Anomaly detection is categorized into three paradigms: unsupervised AD (normal samples only), few-shot AD (extremely few normal samples), and supervised AD (massive anomaly samples). Open-Set Supervised AD (OSAD) is a compromise: training involves a small amount of labeled anomaly images (image-level) and a large amount of normal images, while testing requires identifying both **known and unseen** anomalies. Existing OSAD methods are divided into: (a) data augmentation + outlier exposure (DRA), (b) heterogeneous simulation (AHL), and (c) prototype learning + generative dynamics (DPDL).
+**Background**: Anomaly detection is categorized into three paradigms: unsupervised AD (normal samples only), few-shot AD (minimal normal samples), and supervised AD (large-scale anomaly samples). Open-Set Supervised AD (OSAD) is a compromise: during training, a small number of labeled anomalies (image-level) and a large number of normal images are provided. At test time, the model must identify both **known and unseen** anomalies. Existing OSAD methods include: (a) data augmentation + outlier exposure (DRA), (b) heterogeneous simulation (AHL), and (c) prototype learning + generative dynamics (DPDL).
 
-**Limitations of Prior Work**: DPDL, the closest SOTA method in the third category, utilizes **simple unimodal Gaussians** as the prototype distribution for normal samples and "pulls" normal features toward these prototypes via diffusion bridges. However, normal samples in industrial scenarios are inherently **multimodal** (e.g., variations in sub-patterns, angles, or lighting within the same category). Forcing a unimodal Gaussian fit treats rare but legitimate normal sub-patterns as anomalies, leading to high false positives and blurred decision boundaries.
+**Limitations of Prior Work**: DPDL, the third category and closest to current SOTA, uses a **simple unimodal Gaussian** as the prototype distribution for normal samples and "pulls" normal features toward these prototypes via a diffusion bridge. However, normal samples in industrial scenarios are inherently **multi-modal** (diverse sub-patterns, angles, or lighting within the same category). Forcing them into a unimodal Gaussian causes rare but legitimate normal sub-patterns to be misclassified as anomalies, creating high false positives and blurred decision boundaries.
 
-**Key Challenge**: The goal is to ensure **compact** density estimation for normal samples (high recall on normal) while allowing the boundary to **extrapolate to unseen anomaly** types (high recall on unknown anomalies). Unimodal Gaussian priors directly undermine the first objective, while discrete multiple Gaussians lack structural correlation, causing a loss of semantic continuity as the model fails to capture transitions between modes.
+**Key Challenge**: The model must maintain a **compact** density estimation for normal samples (high recall on normal) while ensuring the boundary **extrapolates to unseen anomaly** types (high recall on unknown anomalies). A unimodal Gaussian prior directly compromises the former, while discrete multiple Gaussians lack structural correlation, causing the model to lose semantic continuity between modes.
 
-**Goal**: (1) Replace unimodal Gaussians with a **continuous, structured** multimodal prototype space; (2) Ensure the flow matching velocity field is inherently multimodal rather than regressing a single mean vector; (3) Prevent multiple Gaussian components from collapsing into the same mode.
+**Goal**: (1) Replace unimodal Gaussians with a **continuous, structured** multi-modal prototype space; (2) Ensure the flow matching velocity field itself is multi-modal rather than regressing a single mean vector; (3) Prevent multiple Gaussian components from collapsing into a single mode.
 
-**Key Insight**: Explicitly model the prototype space as a GMM and learn a continuous transport mapping from the normal feature distribution to this GMM using flow matching. A key observation is that under a standard linear noise schedule, a single-step reverse transition preserves GMM closure (the closure of linear-Gaussian systems), enabling closed-form step-wise sampling without numerical integration.
+**Key Insight**: Explicitly model the prototype space as a GMM and use flow matching to learn a continuous transport mapping from the normal feature distribution to this GMM. A crucial observation is that under a standard linear noise schedule, a single-step reverse transition maintains GMM closure (closure of linear-Gaussian systems), allowing for closed-form step-wise sampling without numerical integration.
 
-**Core Idea**: **Use a velocity field in GMM form instead of a single velocity vector for flow matching to propagate multimodal priors from the prior to the transport dynamics, and expand GMM components using mutual information maximization.**
+**Core Idea**: **Replace the single velocity vector with a GMM-form velocity field in flow matching, propagating the multi-modal prior from the prior through the transport dynamics, and utilize mutual information maximization to spread the GMM components.**
 
 ## Method
 
 ### Overall Architecture
 
-Input: Training set $\mathcal{Z}_{tr} = \mathcal{Z}_{tr}^{n} \cup \mathcal{Z}_{tr}^{a}$ (Normal $N$ + Anomaly $M$, $N \gg M$, image-level labels only); Output: Anomaly score $S(z)$ for test sample $z \in \mathcal{Z}_{te}$.
+Input: Training set $\mathcal{Z}_{tr} = \mathcal{Z}_{tr}^{n} \cup \mathcal{Z}_{tr}^{a}$ (normal $N$ samples + anomaly $M$ samples, $N \gg M$, image-level labels only); Output: Anomaly score $S(z)$ for test sample $z \in \mathcal{Z}_{te}$.
 
-Pipeline:
-1. **Feature Extraction**: Use a ResNet-18 backbone $f: \mathcal{Z} \to \mathbb{R}^d$ to map images to 1D features.
-2. **K-means++ Initialization for GMM**: Run K-means++ on $\mathcal{F}_{tr}^{n}$ to obtain $K$ cluster centers $\mu_k$, mixing weights $\pi_k = |C_k| / N$, and shared variance $s^2 = \frac{1}{dN} \sum_k \sum_{i \in C_k} \| z_0^{n,i} - \mu_k \|_2^2$. This breaks the cyclic dependency between flow network optimization and GMM parameters.
-3. **Flow Matching Training**: Under a linear noise schedule $\alpha_t = 1-t, \sigma_t = t$, the velocity is $u = \frac{z_T - z_0}{t}$. Maximize the GMM velocity field likelihood for normal samples and **reversely** minimize it for anomalies (pushing anomalous velocity away from the normal distribution).
-4. **MIMR Regularization**: Maximize the mutual information between "prototype assignment $c$" and "flowed features $\psi(z_0^{n,i})$" for normal samples to achieve confident assignment and balanced usage.
-5. **Four-module Anomaly Score Prediction**: Global $M_g$ (GMM NLL) + Local $M_a$ (top-O patch scores) + Normal $M_n$ (global pooling) + Residual $M_r$ ($(\psi(z) - \mu_{c^*})/s$ through a classification head). Inference: $S(z) = S_g + S_a + S_r - S_n$.
+Mechanism:
+1. **Feature Extraction**: ResNet-18 backbone $f: \mathcal{Z} \to \mathbb{R}^d$ maps images to 1D features.
+2. **K-means++ GMM Initialization**: Run K-means++ on $\mathcal{F}_{tr}^{n}$ to obtain $K$ cluster centers $\mu_k$, mixing weights $\pi_k = |C_k| / N$, and shared variance $s^2 = \frac{1}{dN} \sum_k \sum_{i \in C_k} \| z_0^{n,i} - \mu_k \|_2^2$. This step breaks the coupled optimization cycle between the flow network and GMM parameters.
+3. **Flow Matching Training**: Under a linear noise schedule $\alpha_t = 1-t, \sigma_t = t$, the velocity is $u = \frac{z_T - z_0}{t}$. Maximize the GMM velocity field likelihood for normal samples and **reverse** minimize it for anomalies (pushing anomalous velocity away from the normal distribution).
+4. **MIMR Regularization**: Maximize the mutual information between the "prototype assignment $c$" and the "flowed feature $\psi(z_0^{n,i})$" for normal samples to ensure confident assignment and balanced usage.
+5. **Four-Module Score Prediction**: Global $M_g$ (GMM NLL) + Local $M_a$ (top-O patch score) + Normal $M_n$ (global pooling) + Residual $M_r$ ($(\psi(z) - \mu_{c^*})/s$ via classification head). Inference: $S(z) = S_g + S_a + S_r - S_n$.
+
+```mermaid
+graph TD
+    A["Input Image z → ResNet-18 Feature Extraction"] --> B["K-means++ Initialize GMM Prototypes<br/>μ_k / π_k / Shared Variance s², Breaking Coupling"]
+    B --> C["GMM Velocity Field<br/>Velocity modeled as GMM: Σ π_k·N(u; μ_k, s²I), Closed-form Sampling"]
+    C --> D["Forward / Reverse Flow Matching Loss<br/>Normal attraction (NLL) · Anomaly repulsion"]
+    D --> E["MIMR Regularization<br/>Mutual info from GMM posterior to prevent collapse (Normal only)"]
+    E --> F["Four-module Anomaly Score<br/>S = S_g + S_a + S_r − S_n → Output S(z)"]
+```
 
 ### Key Designs
 
-1. **Mixture Prototype Flow Learning (MPFL): GMM-based Velocity Field**:
-    - **Function**: Replaces the traditional "flow matching $\rightarrow$ unimodal Gaussian" mapping with "flow matching $\rightarrow$ multimodal GMM," where each component corresponds to a normal sub-pattern.
-    - **Mechanism**: Instead of using a unimodal conditional Gaussian $q_\theta(u | z_t) = \mathcal{N}(u; \mu_\theta(z_t), s^2 I)$, the velocity field is modeled as a Gaussian Mixture $q_\theta(u | z_t^{n,i}) = \sum_{k=1}^K \pi_k(z_t^{n,i}; \theta) \mathcal{N}(u; \mu_k(z_t^{n,i}; \theta), s^2 I)$, where weights $\pi_k$ and means $\mu_k$ are functions of input features. Training uses NLL: $\mathcal{L}_{NLL} = \mathbb{E} [-\log \sum_k \pi_k \mathcal{N}(u; \mu_k, s^2 I)]$. Under a linear schedule, the reverse transition $q_\theta(z_{t-\Delta t}^{n,i} | z_t^{n,i})$ remains a GMM with coefficients determined by the schedule, eliminating the need for numerical ODE solvers.
-    - **Design Motivation**: Unimodal velocity fields force all normal samples toward a single mean, flattening multimodal sub-patterns—the root cause of high false positives in DPDL for industrial AD. Encoding multimodal structures into the velocity field addresses this fundamentally.
+**1. GMM-form Velocity Field (Core of MPFL): Propagating Multi-modality into Transport Dynamics**
 
-2. **Bi-directional Flow Loss**:
-    - **Function**: Attracts normal samples to the GMM prototype space while repelling anomalies.
-    - **Mechanism**: Normal samples use standard NLL $\mathcal{L}_{flow}^{n} = \mathbb{E}[-\log q_\theta(u | z_t^{n,i})]$, while anomalies use the **negated** $\mathcal{L}_{flow}^{a} = \mathbb{E}[\log q_\theta(u | z_t^{a,i})]$. Maximizing NLL for anomalies ensures their velocity distribution stays away from the normal GMM.
-    - **Design Motivation**: Traditional OSAD uses contrastive loss or binary classification in the final feature space; this method applies repulsion at the **velocity field level**, affecting the entire transport trajectory with gradient signals at every step $t$.
+This corresponds to the "GMM Velocity Field" node. Traditional methods like DPDL model the velocity field as a unimodal conditional Gaussian $q_\theta(u | z_t) = \mathcal{N}(u; \mu_\theta(z_t), s^2 I)$, regressing only one mean vector. This forces all normal samples toward a single mode, flattening the diverse sub-patterns in industrial scenes and causing false positives. MPFM establishes a mixture conditional velocity field $q_\theta(u | z_t^{n,i}) = \sum_{k=1}^K \pi_k(z_t^{n,i}; \theta) \mathcal{N}(u; \mu_k(z_t^{n,i}; \theta), s^2 I)$, where weights $\pi_k$ and means $\mu_k$ are functions of the current feature. Training uses NLL $\mathcal{L}_{NLL} = \mathbb{E} [-\log \sum_k \pi_k \mathcal{N}(u; \mu_k, s^2 I)]$ to align the predicted velocity distribution with the GMM. A key engineering feat is closed-form reverse sampling: under a linear noise schedule, the reverse transition $q_\theta(z_{t-\Delta t}^{n,i} | z_t^{n,i})$ remains a GMM, with coefficients $c_1, c_2, c_3$ determined solely by the schedule. This allows for analytical sampling without numerical ODE solvers.
 
-3. **Mutual Information Maximization Regularizer (MIMR)**:
-    - **Function**: Prevents GMM components from collapsing into the same mode and maintains discriminability.
-    - **Mechanism**: Utilizes the GMM posterior $p(c=k | \psi(z_0^{n,i})) = \frac{\pi_k \mathcal{N}(\psi(z_0^{n,i}); \mu_k, s^2 I)}{\sum_j \pi_j \mathcal{N}(\psi(z_0^{n,i}); \mu_j, s^2 I)}$ to maximize mutual information $I(\psi(z_0^{n,i}); c) = H(c) - H(c | \psi(z_0^{n,i}))$. The loss is $\mathcal{L}_{mim} = \mathbb{E}[\sum_k p(c=k|\cdot) \log p(c=k|\cdot)] - \sum_k \pi_k \log \pi_k$. The first term **minimizes** conditional entropy (confident assignment), and the second **maximizes** marginal entropy (balanced usage).
-    - **Design Motivation**: Applying entropy constraints directly to the GMM posterior avoids extra discriminative heads or adversarial training.
+**2. Forward / Reverse Flow Matching Loss: Simultaneous Attraction and Repulsion**
+
+Normal samples follow the standard NLL $\mathcal{L}_{flow}^{n} = \mathbb{E}[-\log q_\theta(u | z_t^{n,i})]$ to be pulled into the GMM prototype space. Anomaly samples utilize the symmetric $\mathcal{L}_{flow}^{a} = \mathbb{E}[\log q_\theta(u | z_t^{a,i})]$, maximizing the NLL to push anomalous velocities away from the normal GMM. The anomaly "ground-truth velocity" $u^{a}$ is calculated using the same linear schedule as if it were normal, forcing the model to learn the distinction. Unlike traditional OSAD using contrastive loss in the final feature space, this repulsion acts on the entire transport trajectory, providing gradient signals at every step $t \in [0, T]$.
+
+**3. MIMR Regularization: Preventing Collapse via GMM Posteriors**
+
+Multiple Gaussian components may collapse into a single mode without explicit constraints. MIMR leverages the GMM's inherent posterior $p(c=k | \psi(z_0^{n,i})) = \frac{\pi_k \mathcal{N}(\psi(z_0^{n,i}); \mu_k, s^2 I)}{\sum_j \pi_j \mathcal{N}(\psi(z_0^{n,i}); \mu_j, s^2 I)}$ to maximize mutual information $I(\psi(z_0^{n,i}); c) = H(c) - H(c | \psi(z_0^{n,i}))$. The loss $\mathcal{L}_{mim} = \mathbb{E}[\sum_k p(c=k|\cdot) \log p(c=k|\cdot)] - \sum_k \pi_k \log \pi_k$ minimizes conditional entropy (enforcing confident assignment) and maximizes marginal entropy (enforcing balanced usage). This requires no additional discriminators or adversarial training.
 
 ### Loss & Training
 
 Total Loss:
-$\mathcal{L} = \underbrace{\mathcal{L}_{M_a} + \mathcal{L}_{M_n} + \mathcal{L}_{M_r} + \mathcal{L}_{M_g}}_{\text{Anomaly Score Modules}} + \underbrace{\mathcal{L}_{flow}^{n} + \mathcal{L}_{flow}^{a}}_{\text{Flow Matching}} + \lambda \mathcal{L}_{mim}$.
+$\mathcal{L} = \underbrace{\mathcal{L}_{M_a} + \mathcal{L}_{M_n} + \mathcal{L}_{M_r} + \mathcal{L}_{M_g}}_{\text{Score Modules}} + \underbrace{\mathcal{L}_{flow}^{n} + \mathcal{L}_{flow}^{a}}_{\text{Flow Matching}} + \lambda \mathcal{L}_{mim}$.
 
-The four anomaly score modules use binary classification loss (BCE) and are trained jointly. $\lambda$ controls MIMR intensity. During inference, $S(z) = S_g(z) + S_a(z) + S_r(z) - S_n(z)$, where $S_n$ is subtracted as it represents the "normality degree."
+The four score modules utilize Binary Cross-Entropy (BCE) loss and are trained jointly. $\lambda$ controls MIMR intensity. During inference, $S(z) = S_g(z) + S_a(z) + S_r(z) - S_n(z)$, where $S_n$ is subtracted as it represents "normality."
 
 ## Key Experimental Results
 
 ### Main Results
 
-Performance (AUC) on 9 AD datasets (MVTec AD, Optical, SDD, etc.) using the general setting of 10 training anomaly samples.
+AUC across 9 datasets (MVTec AD / Optical / SDD / etc.) under the 10-anomaly sample general setting.
 
 | Dataset | DRA | AHL | DPDL | **MPFM (Ours)** |
 |--------|------|------|------|------|
@@ -89,49 +91,49 @@ Performance (AUC) on 9 AD datasets (MVTec AD, Optical, SDD, etc.) using the gene
 | Optical | 0.965±0.006 | 0.976±0.004 | 0.983±0.005 | **0.992±0.002** |
 | SDD | 0.991±0.005 | — | — | (Best, see paper) |
 
-MPFM ranks first or tied for first across all datasets, with a 0.5% gain over DPDL on MVTec AD and a 0.9% gain on Optical (within the 0.97+ AUC saturation zone).
+MPFM ranks first or tied for first on all reported datasets, gaining 0.5 points over DPDL on MVTec AD.
 
 ### Ablation Study
 
-| Configuration | Key Indicator | Description |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| Full MPFM | Best AUC | Complete model. |
-| w/o GMM | Significant drop | Validates multimodal velocity field (equivalent to DPDL approach). |
-| w/o MIMR | Moderate drop | Validates the anti-collapse regularizer. |
-| w/o Reverse flow loss | Large drop | Loss of repulsion at the transport level. |
+| Full MPFM | Best AUC | Complete model |
+| w/o GMM | Significant Drop | Validates multi-modal velocity field (reduces to DPDL) |
+| w/o MIMR | Moderate Drop | Validates anti-collapse regularization |
+| w/o Reverse Flow Loss $\mathcal{L}_{flow}^{a}$ | Major Drop | Anomaly repulsion at the transport level is critical |
 
 ### Key Findings
 
-- **Multimodal Velocity Field is the Lead Contributor**: Removing the GMM structure (reverting to unimodal) caused the most significant performance drop, confirming that unimodal Gaussians cannot capture sub-pattern diversity.
-- **K-means++ Initialization is Critical**: Pre-initializing GMM parameters is essential to break the coupling between the flow network and GMM parameters.
-- **MIMR vs. Distance Regularization**: MIMR is more refined than simple mean-distance constraints as it simultaneously manages confident assignment and balanced prototype usage.
-- **Shared Variance $s^2$ ensures Stability**: Using a shared variance across components prevents variance explosion or collapse, as discussed in the supplementary material.
+- **Multi-modal velocity field is the primary contributor**: Removing the GMM structure results in the largest performance drop, confirming that unimodal Gaussians cannot capture normal sub-pattern diversity.
+- **K-means++ initialization is crucial for convergence**: Coupled optimization of the flow network and GMM parameters is difficult without a good prior.
+- **MIMR vs. Distance Regularization**: MIMR manages both confident assignment and balanced usage more effectively than simple mean-distance constraints.
+- **Shared variance $s^2$ is an engineering stability trick**: Sharing $s$ across components prevents variance explosion or collapse in specific components.
 
 ## Highlights & Insights
 
-- **Pervasive Multimodality**: Unlike previous methods where only the flow endpoint is a GMM, MPFM ensures the flow process itself is a GMM velocity field, maintaining semantic structure throughout the dynamics.
-- **Analytical GMM Closure**: By leveraging the properties of linear-Gaussian systems, the reverse transition is entirely closed-form, allowing inference without numerical ODE solvers.
-- **Reverse Flow Matching Loss**: Elegantly implements transport-level repulsion by negating the log-likelihood for anomalies without requiring adversarial training.
-- **Subtraction-based Score Combination**: The $S = S_g + S_a + S_r - S_n$ formulation combines perspectives of both "anomalousness" and "non-normality," which is highly effective in practice.
+- **Priors through Dynamics**: The major difference from prior "Prototype + Bridge" methods is that MPFM propagates multi-modality through the velocity field at every step, whereas others only enforce it at the endpoint.
+- **Analytical Backward Sampling**: Preserving GMM closure in the linear-Gaussian system allows for inference without numerical ODE solvers, making the multi-modal field practical for deployment.
+- **Negative Flow Likelihood for Repulsion**: Repulsion is elegantly implemented within the flow matching framework without extra modules or adversarial training.
+- **Subtractive Score Composition**: Using $S = S_g + S_a + S_r - S_n$ incorporates the dual perspective of "looking like an anomaly" and "not looking like normal."
 
 ## Limitations & Future Work
 
-- **Hyperparameter $K$**: The number of components $K$ requires manual setting or K-means++ pre-calculation; adaptive selection for different categories is not explored.
-- **Backbone Dependency**: Evaluated primarily on ResNet-18; the impact of stronger backbones like CLIP or DINOv2 on prototype structure remains to be seen.
-- **MIMR Scope**: MIMR only considers normal samples; additional constraints to ensure anomalies do not occupy any prototypes could be beneficial.
-- **Pixel-level Localization**: The study focuses on image-level AUC and lacks evaluation for pixel-level anomaly localization.
+- **Hyperparameter $K$**: The choice of $K$ currently requires K-means++ pre-processing and is not adaptive to different categories with varying sub-pattern counts.
+- **Backbone Scaling**: Experiments were limited to ResNet-18; the impact of stronger backbones like CLIP or DINOv2 remains unexplored.
+- **Anomaly MIMR Constraint**: Anomalies are not explicitly constrained to be "far" from being confident in any specific prototype in the MIMR loss.
+- **Pixel-level Localization**: The evaluation focuses on image-level AUC, which does not cover industrial requirements for identifying "where" the anomaly is.
 
 ## Related Work & Insights
 
-- **vs. DPDL**: DPDL uses independent unimodal Gaussians with simple velocity vectors; MPFM uses a structured continuous GMM velocity field with semantic associations.
-- **vs. DRA / AHL**: Those methods focus on augmenting or simulating anomalies (data-centric); MPFM improves normal sample modeling (model-centric).
-- **vs. Rectified Flow / SD3**: While the latter are generative, MPFM repurposes flow matching as a discriminative representation framework and density estimator.
+- **vs. DPDL**: DPDL uses discrete unimodal Gaussians and simple velocity vectors; MPFM uses structured GMMs and GMM velocity fields.
+- **vs. DRA / AHL**: These rely on data augmentation to cover anomaly space; MPFM focuses on how to better model the normal distribution (orthogonal approach).
+- **vs. Rectified Flow**: While Rectified Flow is generative, MPFM repurposes flow matching as a density estimator for discriminative representation learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of GMM velocity fields, MIMR, and reverse flow loss is a fresh ensemble for OSAD.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive testing on 9 datasets with multiple seeds, though missing pixel-level metrics.
-- Writing Quality: ⭐⭐⭐⭐ Rigorous mathematical derivations and clear motivation via visualization.
-- Value: ⭐⭐⭐⭐ Provides a robust baseline for industrial AD and a transferable design philosophy for diffusion-based representation learning.
+- Novelty: ⭐⭐⭐⭐ The combination of GMM velocity fields, MIMR, and reverse flow loss is a novel synthesis in OSAD.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive across 9 datasets, though lacking pixel-level evaluation and diverse backbones.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous mathematical derivation and clear motivation.
+- Value: ⭐⭐⭐⭐ Provides a robust new baseline for industrial AD with a transferable "priors through dynamics" design philosophy.
 
 <!-- RELATED:START -->
 
@@ -139,11 +141,11 @@ MPFM ranks first or tied for first across all datasets, with a 0.5% gain over DP
 
 ## Related Papers
 
+- [\[CVPR 2025\] Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection](../../CVPR2025/object_detection/distribution_prototype_diffusion_learning_for_open-set_supervised_anomaly_detect.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 - [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](../../NeurIPS2025/object_detection/scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
 - [\[CVPR 2026\] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting](../../CVPR2026/object_detection/unispector_towards_universal_open-set_defect_recognition_via_spectral-contrastiv.md)
-- [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](../../AAAI2026/object_detection/vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
-- [\[ICCV 2025\] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](../../ICCV2025/object_detection/3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)
-- [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/object_detection/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
+- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](../../CVPR2026/object_detection/complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
 
 </div>
 

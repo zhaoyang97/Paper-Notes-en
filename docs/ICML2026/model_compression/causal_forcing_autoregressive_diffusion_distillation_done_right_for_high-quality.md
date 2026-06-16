@@ -2,78 +2,81 @@
 title: >-
   [Paper Note] Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video
 description: >-
-  [ICML 2026][Model Compression][Autoregressive Video Generation] By identifying the theoretical requirement for "**frame-level injectivity**," this paper proposes Causal Forcing—a method that replaces the **bidirectional…
+  [ICML 2026][Model Compression][Paper Note] This paper identifies the theoretical requirement of "**frame-wise injectivity**" and proposes the Causal Forcing method. By substituting the **bidirectional teacher with an autoregressive teacher** for ODE distillation initialization, it avoids performance collapse seen in Self-Forcing. Compared to Self-Forcing, it ac
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Autoregressive Video Generation"
-  - "Diffusion Distillation"
-  - "Causal Attention"
-  - "Frame-level Injectivity"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 9a3625ed05fda065
+content_hash: d173b06f9889b0bb
 ---
-
 # Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.02214](https://arxiv.org/abs/2602.02214)  
-**Code**: To be confirmed  
-**Area**: Video Generation / Diffusion Model Distillation  
-**Keywords**: Autoregressive Video Generation, Diffusion Distillation, Causal Attention, Frame-level Injectivity
+**Code**: TBD  
+**Area**: Video Generation / Diffusion Distillation  
+**Keywords**: Autoregressive Video Generation, Diffusion Distillation, Causal Attention, Frame-wise Injectivity
 
 ## TL;DR
-By identifying the theoretical requirement for "**frame-level injectivity**," this paper proposes Causal Forcing—a method that replaces the **bidirectional teacher with an autoregressive teacher** for ODE distillation initialization. This prevents the performance collapse seen in Self-Forcing; compared to Self-Forcing, the method achieves +19.3% in dynamics, +8.7% in VisionReward, and +16.7% in instruction following, while maintaining the same inference latency (0.69s).
+This paper identifies the theoretical requirement of "**frame-wise injectivity**" and proposes the Causal Forcing method. By substituting the **bidirectional teacher with an autoregressive teacher** for ODE distillation initialization, it avoids performance collapse seen in Self-Forcing. Compared to Self-Forcing, it achieves +19.3% Dynamics, +8.7% VisionReward, and +16.7% Instruction Following while maintaining the same inference latency (0.69s).
 
 ## Background & Motivation
 
-**Background**: Real-time interactive video generation requires distilling multi-step diffusion models into few-step autoregressive (AR) models. Current approaches (CausVid, Self-Forcing) employ "asymmetric distillation"—distilling a pre-trained bidirectional video diffusion model into an AR student model.
+**Background**: Real-time interactive video generation requires distilling multi-step diffusion models into few-step autoregressive (AR) models. Current methods (CausVid, Self-Forcing) employ "asymmetric distillation"—distilling a pre-trained bidirectional video diffusion model into an AR student model.
 
-**Limitations of Prior Work**: Although Self-Forcing is the current SOTA, a significant performance gap remains compared to standard DMD (distilling bidirectional students)—with dynamics, visual quality, and instruction following drops of 10-20%. This suggests a fundamental issue in existing AR distillation pipelines.
+**Limitations of Prior Work**: Although Self-Forcing is SOTA, a significant performance gap remains compared to standard DMD (which distills bidirectional students)—with 10-20% declines in dynamics, visual quality, and instruction following. This indicates fundamental issues within existing AR distillation pipelines.
 
-**Key Challenge**: An "architectural gap" exists when distilling from a bidirectional model to an AR student—the bidirectional model uses full attention (accessing future frames), while the AR model is restricted to causal attention (conditioned only on past frames). Although current methods include ODE initialization and DMD stages, neither theoretically addresses this gap correctly.
+**Key Challenge**: An "architectural gap" exists when distilling from a bidirectional model to an AR student. Bidirectional models use full attention (accessing future frames), whereas AR models are restricted to causal attention (conditioned only on past frames). While current methods use ODE initialization and DMD stages, neither theoretically addresses this gap correctly.
 
-**Core Idea**: The root cause is that ODE distillation violates the "**frame-level injectivity**" requirement. When distilling a bidirectional teacher into an AR student, a single noisy frame can correspond to multiple different clean frames, causing the MSE loss to learn the conditional expectation (mean) rather than the true flow mapping. The solution is to use an AR teacher for ODE distillation initialization, as the AR teacher's PF-ODE naturally satisfies frame-level injectivity.
+**Key Insight**: The root cause is that ODE distillation violates the "**frame-wise injectivity**" requirement. When distilling from a bidirectional teacher to an AR student, a single noisy frame can correspond to multiple distinct clean frames, causing the MSE loss to learn the conditional expectation (mean) rather than a true flow mapping. The solution is using an AR teacher for ODE distillation initialization, as the AR teacher's PF-ODE naturally satisfies frame-wise injectivity.
 
 ## Method
 
 ### Overall Architecture
-A three-stage pipeline:
-- **Stage 1**: Train an autoregressive diffusion model using Teacher Forcing (TF) to serve as the teacher for subsequent ODE distillation.
-- **Stage 2**: Perform Causal ODE Distillation based on this AR teacher to train a few-step AR student.
-- **Stage 3**: Apply asymmetric DMD on top of the ODE initialization to further refine the student model.
 
-The key difference from Self-Forcing is the replacement of the bidirectional teacher with an AR teacher during ODE initialization.
+Ours distills multi-step bidirectional video diffusion models into real-time interactive few-step AR students. The core innovation lies in replacing the teacher used for ODE initialization. The process consists of three stages: first, training an AR diffusion model as a teacher using Teacher Forcing (TF); second, performing Causal ODE distillation to initialize the few-step AR student using this AR teacher; third, applying asymmetric DMD optimization based on this initialization. The sole yet critical difference from Self-Forcing is the use of an AR teacher that satisfies frame-wise injectivity.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Real Video + Pre-trained Bidirectional Video Diffusion Model"] --> B["Teacher Forcing (TF) training of AR Teacher<br/>Conditioned on clean prefix frames to align with inference"]
+    P["Frame-wise Injectivity Principle<br/>Noisy frame must correspond to unique clean frame<br/>Otherwise MSE regression collapses to conditional expectation (blurring)"]
+    P -.->|Constraints Teacher Selection| C
+    B --> C["Causal ODE Distillation to initialize Student<br/>AR Teacher PF-ODE Trajectory → Student MSE Regression"]
+    C --> D["Asymmetric DMD Optimization<br/>Using existing methods; upper bound is locked by initialization quality"]
+    D --> E["Few-step AR Student<br/>Real-time Interactive Video Generation (0.69s latency)"]
+```
 
 ### Key Designs
 
-1. **Frame-level Injectivity Principle**:
-    - **Function**: Identifies the theoretical condition that ODE distillation must satisfy—each noisy frame must map to a unique clean frame.
-    - **Mechanism**: Frame-level injectivity is defined as: for any noisy frame $x_t^i$, there exists a unique clean frame $x_0^i$ such that $x_0^i = \phi^{AR}(x_t^i, t)$. It is proven that the PF-ODE trajectory of a bidirectional teacher only satisfies injectivity at the video level but violates it at the frame level (Lemma 3.2)—the same noisy frame can map to multiple clean frames depending on different subsequent frames.
-    - **Design Motivation**: In Self-Forcing, when an AR student is distilled from a bidirectional teacher, the MSE regression target collapses to the conditional expectation $\mathbb{E}[x_0^i \mid x_t^i]$, resulting in blurry videos; this is a fundamental theoretical flaw that cannot be fixed by the subsequent DMD stage.
+**1. Frame-wise Injectivity: Diagnosing the Theoretical Root of Self-Forcing Performance Collapse**
 
-2. **Teacher Forcing vs. Diffusion Forcing**:
-    - **Function**: Selects the optimal training strategy for the AR diffusion model.
-    - **Mechanism**: Teacher Forcing (TF) conditions on clean prefix frames $x_0^{<i}$ during training; Diffusion Forcing (DF) conditions on noisy prefixes $x_t^{<i}$. While DF is considered standard, it is counter-intuitively found that TF is superior (Proposition 3.4)—DF creates a training-inference distribution mismatch where the model sees high-noise previous frames during training but clean frames during inference, leading to "collapse."
-    - **Design Motivation**: TF eliminates this distribution mismatch, aligning the training objective with inference; experiments show TF achieves a 111.2% higher VisionReward than DF.
+The degradation of image quality and dynamics when distilling AR students from bidirectional teachers was previously considered a niche engineering issue. This paper attributes it to a neglected theoretical condition: frame-wise injectivity. For ODE distillation to be valid, every noisy frame must map to a unique clean frame, i.e., $x_0^i = \phi^{AR}(x_t^i, t)$. The PF-ODE trajectory of a bidirectional teacher satisfies injectivity for the entire video but violates it at the single-frame level (Lemma 3.2). Specifically, one noisy frame may correspond to multiple clean frames depending on different future frames. Consequently, the student's MSE regression target does not converge to a deterministic flow mapping but collapses to the conditional expectation $\mathbb{E}[x_0^i \mid x_t^i]$, resulting in blurred outputs. Since this is a fundamental flaw in the initialization stage, subsequent DMD optimization cannot recover the lost quality, necessitating a change in teacher selection.
 
-3. **Causal ODE Distillation Flow**:
-    - **Function**: Initializes the AR student using an AR teacher that satisfies frame-level injectivity.
-    - **Mechanism**: Given ground-truth clean prefix frames $x_{gt}^{<i}$, intermediate states $\{x_t^i\}_{t \in \mathcal{S}}$ are generated starting from Gaussian noise $x_T^i$ using the AR teacher along the PF-ODE trajectory. The student learns the flow mapping via MSE regression: $\min_\theta \mathbb{E}[\|G_\theta(x_t^i, x_{gt}^{<i}, t) - x_0^i\|^2]$. Since the AR teacher is inherently causal, its PF-ODE naturally satisfies injectivity at the frame level.
-    - **Design Motivation**: Ensures the student learns the correct flow mapping instead of conditional expectations, providing high-quality initialization for subsequent DMD.
+**2. Teacher Forcing vs. Diffusion Forcing: Selecting the "Non-standard" TF**
+
+To create an AR teacher, one must decide on the conditioning method. Two options exist: Teacher Forcing (TF) conditions on clean prefix frames $x_0^{<i}$ during training, while Diffusion Forcing (DF) conditions on noisy prefix frames $x_t^{<i}$. Although DF is often treated as the standard approach, this paper finds TF to be superior (Proposition 3.4). DF introduces a training-inference distribution mismatch: the model sees high-noise previous frames during training but clean generated frames during inference. TF training aligns with the inference input distribution, eliminating this gap. Experiments show a massive difference, with TF achieving 111.2% higher VisionReward than DF.
+
+**3. Causal ODE Distillation: Initializing Students with Injectivity-Satisfying AR Teachers**
+
+An AR teacher trained via TF replaces the bidirectional teacher for ODE initialization. Given ground-truth clean prefix frames $x_{gt}^{<i}$, starting from Gaussian noise $x_T^i$, the AR teacher generates a sequence of intermediate states $\{x_t^i\}_{t \in \mathcal{S}}$ along the PF-ODE trajectory. The student fits this flow mapping via MSE regression:
+
+$$\min_\theta \mathbb{E}\big[\|G_\theta(x_t^i, x_{gt}^{<i}, t) - x_0^i\|^2\big]$$
+
+This succeeds because the AR teacher is inherently causal, and its PF-ODE naturally satisfies frame-wise injectivity. The MSE regression no longer collapses to an average, allowing the student to learn the true flow mapping. This provides a clean, high-quality starting point for DMD, which experiments confirm is limited by the quality of this initialization.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Throughput ↑ | Latency ↓ | Dynamics ↑ | VisionReward ↑ | Instruction Following ↑ | User Rating ↓ |
+| Model | Throughput ↑ | Latency ↓ | Dynamics ↑ | VisionReward ↑ | Instruction Following ↑ | User Study Score ↓ |
 |------|--------|------|--------|---------------|----------|----------|
 | Wan2.1 (Bidirectional) | 0.78 | 103s | 61 | 5.275 | 42 | 2.29 |
 | CausVid (AR Distillation) | 17.0 | 0.69s | 62 | 5.741 | 12 | 4.27 |
 | Self-Forcing | 17.0 | 0.69s | 57 | 5.820 | 48 | 2.87 |
-| **Causal Forcing (Ours)** | **17.0** | **0.69s** | **68** | **6.326** | **56** | **1.64** |
+| **Causal Forcing** | **17.0** | **0.69s** | **68** | **6.326** | **56** | **1.64** |
 
-Improvements over Self-Forcing: Dynamics +19.3%, VisionReward +8.7%, Instruction Following +16.7%.
+Gains over Self-Forcing: Dynamics +19.3%, VisionReward +8.7%, Instruction Following +16.7%.
 
 ### Ablation Study
 
@@ -82,46 +85,47 @@ Improvements over Self-Forcing: Dynamics +19.3%, VisionReward +8.7%, Instruction
 | Diffusion Forcing (DF) + Self-Forcing ODE + DMD | 60 | 1.583 | 30 | DF leads to severe collapse |
 | Teacher Forcing (TF) + Self-Forcing ODE + DMD | 50 | 3.343 | 32 | TF improves but ODE is insufficient |
 | TF + Self-Forcing ODE + DMD (Chunk-level) | 24 | 3.330 | 38 | Bidirectional teacher ODE performs poorly |
-| **TF + Causal ODE + DMD (Chunk-level)** | **68** | **6.326** | **56** | Full Proposed Solution |
+| **TF + Causal ODE + DMD (Chunk-level)** | **68** | **6.326** | **56** | Full Proposed Method |
 
 ### Key Findings
-- TF significantly outperforms DF (VisionReward +111%)—training-inference distribution alignment is critical.
-- Causal ODE significantly outperforms Self-Forcing ODE in chunk-level settings (VisionReward +90%, Dynamics +183%), with even more extreme improvements in frame-level settings (Dynamics +3100%).
-- The DMD stage cannot compensate for gaps in ODE initialization—high-quality initialization determines the upper bound for DMD.
+- TF significantly outperforms DF (VisionReward +111%), highlighting the importance of training-inference distribution alignment.
+- Causal ODE significantly outperforms Self-Forcing ODE in chunk-level settings (VisionReward +90%, Dynamics +183%), with even more extreme gains at the frame level (Dynamics +3100%).
+- The DMD stage cannot compensate for gaps in ODE initialization; high-quality initialization determines the performance ceiling for DMD.
 
 ## Highlights & Insights
-- **Clear Theoretical Contribution**: The first mathematical framework using frame-level injectivity to explain performance collapse in AR distillation, proving Self-Forcing fundamentally violates this condition—theoretical insight surpasses empirical tuning.
-- **Flipping the TF vs. DF Conclusion**: Counters common belief by showing DF is actually inferior to TF in AR diffusion; the paper provides a rigorous proof of distribution mismatch and quantifies a 111% performance gap, serving as an important correction to the field.
-- **Transferable Design Principles**: The frame-level injectivity principle applies not only to ODE distillation but also naturally extends to Consistency Distillation (CD) frameworks—this paper introduces the first Causal CD.
-- **Significant Practical Impact**: Under identical computational budgets, the method achieves double-digit percentage improvements across multiple metrics compared to SOTA Self-Forcing.
+- **Clear Theoretical Contribution**: This work is the first to use a mathematical framework of frame-wise injectivity to explain performance collapse in AR distillation, proving that Self-Forcing fundamentally violates this condition.
+- **Counter-intuitive TF vs. DF Conclusion**: Challenging common assumptions, the paper proves DF is inferior to TF in AR diffusion due to distribution mismatch, quantifying a 111% performance gap.
+- **Transferable Design**: The frame-wise injectivity principle applies not only to ODE distillation but also naturally extends to Consistency Distillation (CD) frameworks, leading to the introduction of Causal CD.
+- **Significant Practical Impact**: Under identical computational budgets, the method achieves double-digit percentage improvements over SOTA Self-Forcing across multiple metrics.
 
 ## Limitations & Future Work
-- Gap in long video generation: The model is trained on 5-second videos; direct extrapolation to longer videos creates a training-inference gap, requiring orthogonal long-video adaptation methods like LongLive or Rolling Forcing.
-- Consistency Distillation remains weaker than ODE: Although theoretically correct, the proposed Causal CD still underperforms relative to Causal ODE distillation—current vanilla LCM implementations have room for improvement.
-- Insufficient comparison with GAN distillation: Comparison with APT2, which uses GAN + Teacher Forcing CD initialization, was not possible due to its closed-source status.
+- Gap in long video generation: The model is trained on 5-second videos; direct extrapolation to longer sequences creates a training-inference gap. Orthogonal long-video adaptation methods like LongLive or Rolling Forcing are required.
+- Consistency Distillation remains weaker than ODE: While theoretically correct, the proposed Causal CD performs worse than Causal ODE distillation, likely due to the vanilla LCM implementation.
+- Insufficient comparison with GAN distillation: Lacks direct comparison with APT2 (which uses GAN + TF CD initialization) because it is not open-sourced.
 
 ## Related Work & Insights
-- **vs. Self-Forcing** (Huang et al. 2025a): Both use a two-stage ODE distillation + DMD pipeline, but Self-Forcing uses a bidirectional teacher while this work uses an AR teacher; the key difference is the satisfaction of frame-level injectivity. This work is a fundamental correction to the Self-Forcing architectural flaw.
-- **vs. CausVid** (Yin et al. 2025): Both focus on AR distillation, but CausVid initially proposed the asymmetric distillation paradigm with lower performance.
-- **vs. DMD Methodology**: Standard DMD effectively distills bidirectional students but performs poorly when directly used for AR student initialization—initialization quality determines the DMD performance ceiling.
+- **vs. Self-Forcing** (Huang et al. 2025a): Both utilize a two-stage ODE distillation + DMD pipeline. However, Self-Forcing uses a bidirectional teacher while ours uses an AR teacher. The critical distinction is the satisfaction of frame-wise injectivity; ours provides a fundamental correction to Self-Forcing's architectural flaw.
+- **vs. CausVid** (Yin et al. 2025): Both focus on AR distillation, but CausVid first proposed the asymmetric distillation paradigm and exhibits lower performance.
+- **vs. DMD Methodology**: Standard DMD is effective for distilling bidirectional students but shows poor performance when directly applied to AR student initialization; the initialization quality effectively dictates the DMD upper bound.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The theoretical framework of frame-level injectivity and the flipped TF vs. DF conclusion are pioneering; the combination of Causal ODE distillation and teacher selection strategy is unique and profound.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers ODE initialization / DMD / CD directions, chunk-level and frame-level evaluation modes, 5 baseline methods, and 3 layers of evaluation (VBench + VisionReward + User Study).
-- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivations and deep problem diagnosis; some expressions could be more concise.
-- Value: ⭐⭐⭐⭐⭐ Resolves a core performance bottleneck in real-time video generation, provides a reusable theoretical framework, and achieves 15-20% improvements over SOTA under the same training budget.
+- Novelty: ⭐⭐⭐⭐⭐ The theoretical framework of frame-wise injectivity and the flipped conclusion on TF vs. DF are highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers ODE distillation, DMD, and CD across both chunk-level and frame-level evaluations, employing VBench, VisionReward, and user studies.
+- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear and problem diagnosis is deep, though some phrasing could be more concise.
+- Value: ⭐⭐⭐⭐⭐ Resolves a core performance bottleneck in real-time video generation and provides a reusable theoretical framework with substantial gains over SOTA.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/model_compression/elastic_weight_consolidation_done_right_for_continual_learning.md)
+- [\[CVPR 2025\] Towards Practical Real-Time Neural Video Compression](../../CVPR2025/model_compression/towards_practical_real-time_neural_video_compression.md)
 - [\[ICML 2026\] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning](beyond_tokens_enhancing_rtl_quality_estimation_via_structural_graph_learning.md)
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
 - [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
-- [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 
 </div>
 

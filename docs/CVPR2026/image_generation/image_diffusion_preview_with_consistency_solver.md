@@ -2,74 +2,80 @@
 title: >-
   [Paper Note] Image Diffusion Preview with Consistency Solver
 description: >-
-  [CVPR 2026][Image Generation][Diffusion model acceleration] This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning—that generates h…
+  [CVPR 2026][Image Generation][Reinforcement Learning] This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning. It generates high-quality preview images during low-step sampling while ensuring consistency with full-step outputs. It achieves an FID comparable to Multistep DPM-Solver with
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Diffusion model acceleration"
-  - "ODE solver"
-  - "reinforcement learning"
-  - "preview-and-refine"
-  - "sampling efficiency"
+  - CVPR 2026
+  - Image Generation
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: a48d498c42864867
+content_hash: 3330044a255cbe98
 ---
-
 # Image Diffusion Preview with Consistency Solver
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.13592](https://arxiv.org/abs/2512.13592)  
 **Code**: [https://github.com/G-U-N/consolver](https://github.com/G-U-N/consolver)  
-**Area**: Diffusion Models / Image Generation
-**Keywords**: Diffusion model acceleration, ODE solver, reinforcement learning, preview-and-refine, sampling efficiency
+**Area**: Diffusion Models / Image Generation  
+**Keywords**: Diffusion Model Acceleration, ODE Solver, Reinforcement Learning, Preview-and-Refine, Sampling Efficiency
 
 ## TL;DR
 
-This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning—that generates high-quality preview images with few-step sampling while ensuring consistency with full-step outputs. It achieves FID comparable to Multistep DPM-Solver using 47% fewer steps, reducing user interaction time by nearly 50%.
+This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning. It generates high-quality preview images during low-step sampling while ensuring consistency with full-step outputs. It achieves an FID comparable to Multistep DPM-Solver with 47% fewer steps and reduces user interaction time by nearly 50%.
 
 ## Background & Motivation
 
-**Background**: Diffusion models excel at high-fidelity image generation, but inference requires numerically solving reverse differential equations, incurring substantial computational cost. Existing acceleration methods fall into two categories: training-free ODE solvers (DDIM, DPM-Solver, UniPC, etc.) and post-training distillation methods (LCM, DMD2, etc.).
+**Background**: Diffusion models demonstrate excellence in high-fidelity image generation, but inference requires numerically solving reverse differential equations, which is computationally expensive. Existing acceleration methods fall into two categories: training-free ODE solvers (DDIM, DPM-Solver, UniPC, etc.) and post-training distillation methods (LCM, DMD2, etc.).
 
-**Limitations of Prior Work**: Training-free solvers rely on theoretical assumptions and produce poor quality at low step counts; distillation methods require expensive retraining, disrupt the deterministic mapping of the PF-ODE (the correspondence from noise space to data space), and suffer from accumulated distillation errors that degrade generation quality. Critically, distilled models typically lose the flexibility of choosing inference step counts freely.
+**Limitations of Prior Work**: Training-free solvers rely on theoretical assumptions and produce poor generation quality at low steps. Distillation methods require expensive retraining, destroy the deterministic mapping of the PF-ODE (the correspondence between noise space and data space), and suffer from accumulated distillation errors leading to quality degradation. Crucially, distilled models often lose the flexibility of choosing inference steps.
 
-**Key Challenge**: In interactive generation workflows (e.g., design prototyping), users need to rapidly preview multiple variants to select a satisfying direction before refinement. Existing methods are either "fast but low-quality and inconsistent" (training-free solvers) or "high-quality but expensive and determinism-breaking" (distillation).
+**Key Challenge**: In interactive generation (such as design prototyping), users need to quickly preview multiple variants to choose a satisfactory direction before refinement. Existing methods are either "fast but low quality and inconsistent" (training-free solvers) or "high quality but expensive and determinism-breaking" (distillation).
 
-**Goal**: Design a Preview-and-Refine workflow satisfying three requirements: (1) high preview fidelity (close to the final output); (2) high preview efficiency (low step count); (3) consistency between preview and final output (visually coherent results from the same random seed).
+**Goal**: Design a Preview-and-Refine workflow that satisfies three requirements: (1) high preview fidelity (close to the final output); (2) high preview efficiency (low steps); (3) consistency between preview and final output (the same random seed produces visually consistent results).
 
-**Key Insight**: Rather than modifying the diffusion model itself, this work optimizes the ODE solver. The integration coefficients of the solver are treated as a learnable policy, and reinforcement learning is used to search for the optimal integration strategy.
+**Key Insight**: Instead of modifying the diffusion model itself, this work optimizes the ODE solver. The integration coefficients of the solver are treated as a learnable strategy, and reinforcement learning is used to search for the optimal integration strategy.
 
-**Core Idea**: Parameterize ODE solver coefficients as a lightweight MLP and optimize it via PPO reinforcement learning, so that few-step sampling maximizes perceptual similarity to the full-step output.
+**Core Idea**: Parameterize the ODE solver coefficients as a lightweight MLP and optimize them using PPO reinforcement learning, enabling low-step sampling to maximize similarity with full-step outputs.
 
 ## Method
 
 ### Overall Architecture
 
-Given a text prompt and noise image, the diffusion model $\epsilon_\phi$ predicts the denoising direction. The learnable ODE solver $\Psi_\theta$ generates a preview image $\mathbf{x}_p$ in few steps, while the training-free solver $\Psi$ generates the target image $\mathbf{x}_{gt}$ with full steps. A similarity reward $\mathcal{R}$ is computed based on depth maps, segmentation masks, DINO features, etc., and used to update $\theta$ via PPO.
+Given a text prompt and noise map, the diffusion model $\epsilon_\phi$ predicts the denoising direction. The learnable ODE solver $\Psi_\theta$ generates a preview image $\mathbf{x}_p$ using a few steps, while a training-free solver $\Psi$ generates the target image $\mathbf{x}_{gt}$ using full steps. Similarity rewards $\mathcal{R}$ are calculated based on depth maps, segmentation masks, DINO features, etc., and $\theta$ is updated via PPO.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    DATA["Offline Triplet Dataset<br/>Prompt c + Noise z + Full-step Target x_gt"] --> SOLVER
+    DM["Diffusion Model ε_φ (Frozen)"] --> SOLVER["ConsistencySolver Ψθ<br/>MLP outputs timestep-dependent weights for (t_i, t_i+1)"]
+    SOLVER --> PREVIEW["K-step Preview Image x_p"]
+    DATA --> GT["Full-step Target x_gt (Training-free Solver)"]
+    PREVIEW --> REWARD["Multi-dimensional Similarity Reward R<br/>Depth map for training, expanded to 6D for evaluation"]
+    GT --> REWARD
+    REWARD --> PPO["PPO updates MLP parameters θ<br/>Only a few thousand parameters in the gradient"]
+    PPO -->|Policy Iteration| SOLVER
+```
 
 ### Key Designs
 
-1. **Parameterization of ConsistencySolver**:
+**1. Learnable Parameterization of ConsistencySolver: Replacing Fixed Theoretical Coefficients with Timestep-dependent Weights**
 
-    - **Function**: An adaptive high-order ODE solver that dynamically adjusts integration strategy based on the current timestep.
-    - **Mechanism**: Derived from the general linear multistep method (LMM), each update step takes the form $\mathbf{y}_{t_{i+1}} = \mathbf{y}_{t_i} + (n_{t_{i+1}} - n_{t_i}) \cdot [\sum_{j=1}^{m} w_j(t_i, t_{i+1}) \cdot \epsilon_{i+1-j}]$, where $\mathbf{y}_t = \mathbf{x}_t / \alpha_t$. The key innovation is that the weights $w_j$ are not fixed theoretical values but are dynamically predicted by a lightweight MLP $\mathbf{f}_\theta(t_i, t_{i+1})$ conditioned on the current and target timesteps. This MLP takes only two scalar inputs and outputs $m$ weights.
-    - **Design Motivation**: Classical solvers (DDIM as first-order, DPM-Solver-2 as midpoint approximation) can all be viewed as special cases of this framework with different fixed weight values. Making the weights learnable enables the solver to adapt to the actual sampling dynamics of the model rather than relying on theoretical assumptions.
+The poor quality of training-free solvers at low steps stems from their use of **hard-coded integration coefficients**. These coefficients are derived under theoretical assumptions of "sufficient steps and negligible discretization error," which collapse when steps are compressed to 5–8. Starting from the general Linear Multi-step Method (LMM), this work formulates each update as $\mathbf{y}_{t_{i+1}} = \mathbf{y}_{t_i} + (n_{t_{i+1}} - n_{t_i}) \cdot \big[\sum_{j=1}^{m} w_j(t_i, t_{i+1}) \cdot \epsilon_{i+1-j}\big]$ (where $\mathbf{y}_t = \mathbf{x}_t / \alpha_t$ is the state normalized by noise scale). The key modification is that the multi-step weights $w_j$ are no longer constants but are dynamically generated by a lightweight MLP $\mathbf{f}_\theta(t_i, t_{i+1})$ based on "current timestep and target timestep."
 
-2. **PPO-Based Reinforcement Learning Optimization**:
+The advantage of this form is its **backward compatibility** with the entire family of classical solvers: DDIM is a special case of first-order fixed weights, and DPM-Solver-2 is a special case of midpoint approximation—both simply represent specific fixed weight values within this framework. By making the weights learnable, the solver can fit the **actual** sampling dynamics of the model rather than adhering to theoretical values, which is why it outperforms fixed-coefficient solvers in the 5–8 step range.
 
-    - **Function**: Search for optimal solver coefficients to maximize consistency between preview and target.
-    - **Mechanism**: An offline dataset $\{(c^{(k)}, z^{(k)}, x_{gt}^{(k)})\}$ is pre-generated and fixed for reuse. In each PPO episode, a batch of triplets is sampled and a $K$-step preview trajectory is rolled out. At each transition, the MLP outputs coefficients and probabilities. Upon completion, the similarity reward $\mathcal{R} = \text{Sim}(x_{gt}, x_p)$ is computed, and the policy is updated using the standard PPO clipped surrogate objective. Advantage estimation is computed via batch-wise self-normalization.
-    - **Design Motivation**: RL offers three key advantages over distillation: (1) compatibility with non-differentiable rewards, eliminating the need for backpropagation through the diffusion trajectory; (2) better generalization; and (3) lower training overhead, as only the compact MLP participates in gradient computation.
+**2. Searching for Coefficients via PPO Instead of Distilling Them**
 
-3. **Multi-Dimensional Similarity Reward Design**:
+How is the weight MLP trained? The ultimate consistency goal is that "low-step previews should closely match full-step outputs," but consistency metrics (like depth map similarity) are often **non-differentiable**, preventing direct backpropagation through diffusion trajectories. This work treats the solving process as a sequential decision problem and uses PPO to search: first, an offline dataset of fixed triplets $\{(c^{(k)}, z^{(k)}, x_{gt}^{(k)})\}$ (prompt, noise, full-step target) is generated for reuse; in each episode, a batch of triplets is sampled, and the MLP-driven solver executes a $K$-step preview trajectory. After the trajectory, a similarity reward $\mathcal{R} = \text{Sim}(x_{gt}, x_p)$ is computed, and the policy is updated using the standard PPO clipped surrogate objective, with advantages self-normalized by batch mean/standard deviation.
 
-    - **Function**: Measure preview-target consistency across multiple perceptual dimensions.
-    - **Mechanism**: Depth maps are used as the default RL reward signal. Evaluation employs six dimensions: CLIP semantic alignment, DINO structural consistency, Inception perceptual similarity, SegFormer segmentation accuracy, pixel-level PSNR, and depth consistency.
-    - **Design Motivation**: A single metric cannot comprehensively capture consistency; multi-dimensional evaluation ensures that previews are faithful to the final output in terms of semantics, structure, and geometry.
+Choosing RL over distillation is not for novelty's sake: distillation requires either differentiable rewards or backpropagation through the entire diffusion trajectory, which is expensive and prone to error accumulation. RL is **compatible with non-differentiable rewards**, does not touch the gradients of the diffusion trajectory, and only involves a few thousand parameters of the MLP in gradient calculations, resulting in extremely low training overhead and better generalization (FID 20.39 vs. 22.91 for the distilled version in ablations).
+
+**3. Multi-dimensional Similarity Reward: Consistency Beyond a Single Metric**
+
+The "consistency between preview and final output" is multifaceted—involving semantic correctness, structural stability, and geometric accuracy. During training, **depth map similarity** is used as the default RL reward (geometric structure is most sensitive to low-step sampling and provides the most stable signal). During evaluation, this is expanded to six dimensions for cross-validation: CLIP semantic alignment, DINO structural consistency, Inception perceptual similarity, SegFormer segmentation accuracy, pixel-level PSNR, and depth consistency. This ensures the training signal is concentrated while confirming that previews are faithful across semantic, structural, and geometric levels during evaluation.
 
 ### Loss & Training
 
-The PPO clipped surrogate objective is used with clipping parameter $\epsilon \in (0,1)$. Advantages are normalized using batch-wise mean and standard deviation. Only the lightweight MLP parameters (on the order of thousands) are updated during training, while the diffusion model is fully frozen. A solver trained on Stable Diffusion can be directly transferred to SD1.4, DreamShaper, and even SDXL without retraining.
+A PPO clipped surrogate objective is used with a clipping parameter $\epsilon \in (0,1)$. Advantages are normalized with batch mean and standard deviation. Only the lightweight MLP parameters (a few thousand) are updated during training; the diffusion model is fully frozen. Once trained on Stable Diffusion, the solver can be directly migrated to different architectures and scales like SD1.4, DreamShaper, and even SDXL.
 
 ## Key Experimental Results
 
@@ -85,10 +91,10 @@ The PPO clipped surrogate objective is used with clipping parameter $\epsilon \i
 | **ConsistencySolver** | **5** | **20.39** | **94.2** | **86.5** | **19.3** |
 | Multistep DPM | 10 | 19.29 | 97.0 | 93.0 | 24.1 |
 | **ConsistencySolver** | **8** | **18.82** | **96.4** | **91.2** | **22.2** |
-| LCM (distillation) | 4 | 22.00 | 90.0 | 75.1 | 14.3 |
-| DMD2 (distillation) | 1 | 19.88 | 89.3 | 73.8 | 12.6 |
+| LCM (Distill) | 4 | 22.00 | 90.0 | 75.1 | 14.3 |
+| DMD2 (Distill) | 1 | 19.88 | 89.3 | 73.8 | 12.6 |
 
-**Cross-Model Generalization (Trained on SD1.5 → Direct Transfer)**:
+**Cross-model Generalization (Trained on SD1.5 → Direct Migration)**:
 
 | Target Model | Steps | Multistep DPM FID | ConsistencySolver FID |
 |----------|------|-------------------|----------------------|
@@ -97,47 +103,47 @@ The PPO clipped surrogate objective is used with clipping parameter $\epsilon \i
 
 ### Ablation Study
 
-| Dimension | Configuration | FID↓ | DINO↑ |
+| Comparison Dimension | Configuration | FID↓ | DINO↑ |
 |----------|------|------|-------|
-| Training method | RL (PPO) | **20.39** | **86.5** |
+| Training Method | RL (PPO) | **20.39** | **86.5** |
 | | Distillation (Ours-Distill) | 22.91 | 85.1 |
-| | AMED (distillation) | 31.09 | 80.8 |
-| Efficiency | ConsistencySolver 8 steps | 18.82 | 91.2 |
-| | DPM-Solver 10 steps (comparable quality) | 19.29 | 93.0 |
+| | AMED (Distill) | 31.09 | 80.8 |
+| Efficiency Comparison | ConsistencySolver 8 steps | 18.82 | 91.2 |
+| | DPM-Solver 10 steps (Similar quality) | 19.29 | 93.0 |
 
 ### Key Findings
 
-- ConsistencySolver at 5 steps (FID 20.39) already outperforms Multistep DPM-Solver at 5 steps (FID 25.87), a ~21% reduction.
-- ConsistencySolver at 8 steps (FID 18.82) matches or surpasses Multistep DPM-Solver at 10 steps (FID 19.29), achieving a 47% step reduction (8 vs. ~15 steps for equivalent quality).
-- RL training clearly outperforms distillation training (FID 20.39 vs. 22.91) with better generalization.
-- A solver trained on SD1.5 transfers directly to SDXL, suggesting that different diffusion models share similar optimal sampling dynamics.
-- User studies demonstrate a nearly 50% reduction in overall interaction time.
+- The FID of ConsistencySolver-5 steps (20.39) is already superior to Multistep DPM-Solver-5 steps (25.87), a reduction of approximately 21%.
+- 8-step ConsistencySolver (FID 18.82) can match or even exceed 10-step Multistep DPM-Solver (FID 19.29), achieving a 47% step reduction (8 vs. ~15 steps to reach equivalent quality).
+- RL training is significantly better than distillation training (FID 20.39 vs. 22.91) and exhibits better generalization.
+- Solvers trained on SD1.5 can be directly migrated to SDXL, suggesting that different diffusion models share similar optimal sampling dynamics.
+- User studies indicate a nearly 50% reduction in overall interaction time.
 
 ## Highlights & Insights
 
-- **"Optimize the solver, not the model" paradigm**: The diffusion model weights are left entirely untouched; only a compact MLP with thousands of parameters is trained to serve as the solver. The investment is minimal yet the gains are substantial. This approach generalizes to any generative model requiring accelerated sampling.
-- **Cross-model generalization finding**: A solver trained on SD1.5 remains effective when applied directly to SDXL, suggesting that optimal sampling strategies share common structure across different diffusion models—a theoretically valuable insight.
-- **Practical value of the Preview-and-Refine workflow**: Dividing diffusion model usage into "rapid exploration" and "refinement" stages closely aligns with the real-world needs of designers.
+- **Paradigm of "Optimizing the Solver, Not the Model"**: Without touching the diffusion model weights, only a lightweight MLP with a few thousand parameters is trained, yielding significant results with minimal investment. This approach can be extended to any generative model requiring accelerated sampling.
+- **Discovery of Cross-model Generalization**: The effectiveness of a solver trained on SD1.5 when applied to SDXL suggests that optimal sampling strategies for different diffusion models share commonalities—a valuable theoretical insight.
+- **Practical Value of the Preview-and-Refine Workflow**: Dividing diffusion model usage into "rapid exploration" and "refinement" stages aligns perfectly with the actual needs of designers.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to image generation and image editing; extension to video generation acceleration has not been explored.
-- The choice of reward function (depth maps by default) may not be optimal for all tasks.
-- The MLP takes only two scalar inputs $(t_i, t_{i+1})$ without conditioning on the current image state, which may limit its adaptive capacity.
-- Combining ConsistencySolver with distillation methods is a promising direction for future work.
+- Currently only validated on image generation and image editing; not yet extended to video generation acceleration.
+- The choice of reward function (defaulting to depth maps) may not be optimal for all tasks.
+- The MLP only accepts two scalar inputs $(t_i, t_{i+1})$, without considering the state of the current image, which may limit adaptive capabilities.
+- Future work could explore combining ConsistencySolver with distillation methods.
 
 ## Related Work & Insights
 
-- **vs. DPM-Solver / UniPC (training-free solvers)**: These methods use fixed theoretical coefficients, whereas ConsistencySolver employs learned adaptive coefficients, yielding a clear advantage at low step counts.
-- **vs. LCM / DMD2 (distillation methods)**: Distillation methods modify model weights, disrupting the PF-ODE mapping and requiring expensive training. ConsistencySolver leaves the model untouched, preserves the full deterministic mapping, and incurs minimal training cost.
-- **vs. AMED (distillation-based solver)**: Both approaches train solver coefficients, but AMED uses trajectory distillation while ConsistencySolver uses RL, with the latter achieving better generalization.
+- **vs. DPM-Solver / UniPC (Training-free Solvers)**: These methods use fixed theoretical coefficients, whereas ConsistencySolver uses learned adaptive coefficients, showing a clear advantage at low steps.
+- **vs. LCM / DMD2 (Distillation Methods)**: Distillation methods modify model weights, destroy PF-ODE mapping, and require expensive training. ConsistencySolver leaves the model untouched, maintains complete deterministic mapping, and has extremely low training costs.
+- **vs. AMED (Distillation Solver)**: Also trains solver coefficients, but AMED uses trajectory distillation, while ConsistencySolver uses RL, resulting in better generalization for the latter.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Training ODE solvers with RL is a novel angle; the Preview-and-Refine paradigm is also practically compelling.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Validation on two models, cross-model transfer, multiple baselines, user studies, and detailed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, and the relationship to classical solvers is well articulated.
-- **Value**: ⭐⭐⭐⭐ High practical value, extremely low training cost, and plug-and-play usability.
+- Novelty: ⭐⭐⭐⭐ Training an ODE solver via RL is a novel angle, and the Preview-and-Refine paradigm is highly practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validation across two models, cross-model generalization, multiple baseline comparisons, user research, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivation and well-articulated relationship with classical solvers.
+- Value: ⭐⭐⭐⭐ High practical value, extremely low training cost, and plug-and-play capability.
 
 <!-- RELATED:START -->
 
@@ -148,8 +154,8 @@ The PPO clipped surrogate objective is used with clipping parameter $\epsilon \i
 - [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](../../ICLR2026/image_generation/dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
 - [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](../../ICLR2026/image_generation/lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
+- [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
 - [\[ICCV 2025\] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization](../../ICCV2025/image_generation/latino-pro_latent_consistency_inverse_solver_with_prompt_optimization.md)
-- [\[CVPR 2026\] Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection](layer_consistency_matters_elegant_latent_transition_discrepancy_for_generalizabl.md)
 
 </div>
 

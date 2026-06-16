@@ -2,70 +2,76 @@
 title: >-
   [Paper Note] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][blind-spot network] This paper proposes TM-BSN, a triangular-masked blind-spot network that designs the blind-spot region to precisely align with the diamond-shaped spatial correlation patt…
+  [CVPR 2026][Image Restoration][Knowledge Distillation] Ours proposes the Triangular-Masked Blind-Spot Network (TM-BSN), which aligns the blind-spot shape precisely with the diamond-shaped spatial correlation patterns of real sRGB noise. It achieves self-supervised image denoising at the original resolution without downsampling and further enhances performance through knowl
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "blind-spot network"
-  - "self-supervised denoising"
-  - "triangular-masked convolution"
-  - "spatially correlated noise"
-  - "knowledge distillation"
+  - CVPR 2026
+  - Image Restoration
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 2b10ef65b630f637
+content_hash: b172d57ed8c5a5b8
 ---
-
 # TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.04484](https://arxiv.org/abs/2604.04484)  
 **Code**: [https://github.com/parkjun210/TM-BSN](https://github.com/parkjun210/TM-BSN)  
-**Area**: Image Restoration / Self-Supervised Denoising
-**Keywords**: blind-spot network, self-supervised denoising, triangular-masked convolution, spatially correlated noise, knowledge distillation
+**Area**: Image Restoration / Self-Supervised Denoising  
+**Keywords**: Blind-Spot Network, Self-Supervised Denoising, Triangular-Masked Convolution, Spatially Correlated Noise, Knowledge Distillation
 
 ## TL;DR
 
-This paper proposes TM-BSN, a triangular-masked blind-spot network that designs the blind-spot region to precisely align with the diamond-shaped spatial correlation pattern of real-world sRGB noise, enabling self-supervised image denoising at full resolution without downsampling. Combined with knowledge distillation, TM-BSN achieves state-of-the-art self-supervised denoising performance on the SIDD and DND benchmarks.
+Ours proposes the Triangular-Masked Blind-Spot Network (TM-BSN), which aligns the blind-spot shape precisely with the diamond-shaped spatial correlation patterns of real sRGB noise. It achieves self-supervised image denoising at the original resolution without downsampling and further enhances performance through knowledge distillation, reaching SOTA on SIDD and DND benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: Blind-spot networks (BSNs) represent the mainstream approach to self-supervised image denoising. Their core idea is to prevent identity mapping by excluding the target pixel from its own receptive field, thereby estimating the clean signal without requiring clean image supervision.
-2. **Limitations of Prior Work**: BSNs assume pixel-wise independent noise; however, in real-world sRGB images, the ISP pipeline—particularly the demosaicing stage—introduces strongly spatially correlated noise that violates this independence assumption, causing the network to degenerate into an identity mapping.
-3. **Key Challenge**: Existing solutions either apply pixel-shuffle downsampling (PD) to decorrelate noise, which alters the noise statistics and requires post-processing (e.g., AP-BSN), or enlarge the blind-spot region at full resolution (e.g., AT-BSN) using rectangular blind spots that mismatch the diamond-shaped correlation pattern of real noise, thereby excluding useful uncorrelated pixels.
-4. **Goal**: To design a self-supervised denoising network whose blind-spot shape precisely matches the spatial correlation geometry of real-world noise.
-5. **Key Insight**: The authors observe that during demosaicing, each pixel is reconstructed from neighboring samples using spatially decaying weights, producing a diamond-shaped correlation pattern centered on the target pixel. The blind spot should precisely cover this diamond-shaped region.
-6. **Core Idea**: Triangular-masked convolutions are used to construct a diamond-shaped blind spot that precisely matches the spatial correlation geometry of sRGB noise, maximizing the utilization of contextual information from uncorrelated pixels while excluding all correlated ones.
+1. **Background**: Blind-spot networks (BSN) are a mainstream approach for self-supervised image denoising. The core idea is to prevent identity mapping by excluding the receptive field of the target pixel, thereby estimating the clean signal without clean supervision.
+2. **Limitations of Prior Work**: BSN assumes noise is pixel-independent. However, in real sRGB images, the ISP pipeline (especially demosaicing) introduces strong spatially correlated noise, violating the independence assumption and causing the network to degrade into identity mapping.
+3. **Key Challenge**: Existing solutions either use pixel-shuffle downsampling (PD) to decorrelate noise, which changes noise statistics and requires post-processing (e.g., AP-BSN), or expand the blind-spot area at full resolution (e.g., AT-BSN). However, rectangular blind spots mismatch the diamond-shaped correlation pattern of noise, excluding useful uncorrelated pixels.
+4. **Goal**: How to design a self-supervised denoising network where the blind-spot shape precisely matches the geometric structure of real noise spatial correlation?
+5. **Key Insight**: It is observed that during demosaicing, each pixel is reconstructed using neighboring samples with spatially decaying weights, producing a diamond-shaped correlation pattern centered on the target pixel. The blind spot should precisely cover this diamond region.
+6. **Core Idea**: Use Triangular-Masked Convolutions (TMC) to construct a diamond-shaped blind spot. This precisely matches the spatial correlation geometry of sRGB noise, excluding all correlated pixels while retaining maximum contextual information.
 
 ## Method
 
 ### Overall Architecture
 
-The noisy input image is processed through four rotated branches (0°, 90°, 180°, 270°) for feature extraction. Each branch replaces standard 3×3 convolutions with triangular-masked convolutions (TMC) in the backbone and applies feature shifting to form the blind spot. The features from all four branches are inverse-rotated and concatenated along the channel dimension, followed by a 1×1 convolution to produce the denoised output. Optionally, knowledge distillation is applied to transfer complementary information from multiple blind-spot predictions into a lightweight U-Net student network.
+The core problem TM-BSN addresses is that real sRGB noise is not pixel-independent. Demosaicing interpolation makes each pixel correlate with its neighborhood in a **diamond-shaped** region. Traditional blind-spot networks either disrupt noise statistics via downsampling or use rectangular blind spots that exclude usable uncorrelated pixels. This method shapes the blind spot to fit this diamond geometry.
+
+Specifically, the noisy image is first copied into four versions, rotated 0°, 90°, 180°, and 270°. Each version is fed into a backbone composed of Triangular-Masked Convolutions (TMC) replacing standard $3 \times 3$ convolutions. Combined with feature shifting, this pushes the target pixel out of its own receptive field, creating a triangular blind region for each branch. Merging the four triangular regions creates a complete diamond blind spot. Features from each branch are de-rotated, concatenated along the channel dimension, and fused via a $1 \times 1$ convolution. To further boost performance, knowledge distillation transfers complementary predictions from multiple blind-spot sizes into a lightweight U-Net.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Noisy sRGB Image"] --> B["Copy and Rotate 0°/90°/180°/270°"]
+    B --> C["TMC Backbone<br/>+ Feature Shift (Triangular Blind Zones)"]
+    C --> D["Four-Branch Aggregation<br/>De-rotation + Concat + 1×1 Conv"]
+    D --> E["TM-BSN Output (Diamond Blind Spot)"]
+    E -->|Vary shift offset 's' for Teacher| F["Recharged Distillation<br/>Noise Recharge + L1 Supervision"]
+    F --> G["Lightweight Student U-Net<br/>Integrating Multi-scale Information"]
+    G --> H["Final Denoising Result"]
+```
 
 ### Key Designs
 
-1. **Triangular-Masked Convolution (TMC)**:
+**1. Triangular-Masked Convolution (TMC): Controlling Blind-Spot "Edges"**
 
-    - **Function**: Restricts the convolutional kernel's receptive field to the upper-triangular region, serving as the foundation for constructing the diamond-shaped blind spot.
-    - **Mechanism**: A binary mask $M_{ij} = 1 \text{ if } i \leq j$ is applied to the 3×3 convolutional kernel, zeroing out the lower-triangular elements. Stacking multiple TMC layers progressively expands the receptive field along the upper-triangular direction. Combined with a feature-shifting operation (shifting the feature map upward or rightward by $s$ pixels), the target pixel is excluded from its own receptive field, forming the blind spot.
-    - **Design Motivation**: Conventional BSNs employ rectangular blind spots, which do not match the diamond-shaped spatial correlation region produced by demosaicing. TMC geometrically aligns the blind-spot shape with this diamond pattern, maximizing the use of uncorrelated contextual information.
+The challenge is that the blind spot must exclude the target pixel and its correlated neighborhood, but rectangular spots also block uncorrelated pixels outside the diamond. TMC applies an upper-triangular binary mask $M_{ij} = 1\ \text{if}\ i \leq j$ to the $3 \times 3$ kernel weights. The receptive field grows only in the upper-triangular direction across layers. Combined with shifting the feature map by $s$ pixels, the target pixel is pushed out of the receptive field. Since the receptive field is triangular, it naturally covers one edge of the diamond correlation zone, laying the foundation for assembling a diamond blind spot without wasting corner information.
 
-2. **Four-Branch Rotational Aggregation**:
+**2. Four-Branch Aggregation: Assembling Symmetric Diamonds**
 
-    - **Function**: Combines triangular receptive fields from four rotation directions to form a complete diamond-shaped blind spot.
-    - **Mechanism**: The input image is rotated by 0°, 90°, 180°, and 270°, each processed by a separate TMC branch with feature shifting. Each branch's triangular receptive field covers only one directional quadrant; aggregating all four branches yields a complete diamond-shaped blind spot. Vertical and horizontal shifted features are concatenated to avoid the discontinuous coverage introduced by diagonal shifting.
-    - **Design Motivation**: A single triangular mask can only form a unidirectional blind spot; multi-directional rotation is necessary to construct a symmetric diamond region while ensuring that all uncorrelated pixels outside the blind spot remain accessible.
+A single TMC can only create a triangular blind zone in one direction. The design rotates the input across four orientations. Each branch's triangular receptive field handles one side of the diamond. Aggregating the four branches forms a complete diamond—blocking all target-correlated pixels while preserving all uncorrelated context outside the diamond. A key detail: aggregation only concatenates features from vertical and horizontal shifts, avoiding diagonal shifts that could leave leaks at the blind-spot boundary.
 
-3. **Knowledge Distillation (Recharged Distillation)**:
+**3. Recharged Distillation: Breaking the Information Ceiling**
 
-    - **Function**: Transfers complementary knowledge from multiple teacher predictions with varying blind-spot sizes into a lightweight student network, balancing accuracy and efficiency.
-    - **Mechanism**: TM-BSN can efficiently generate multiple blind-spot predictions by varying the shift offset $s$, incurring only approximately 15% additional computation. The Recharged Distillation framework is adopted: a random subset of noisy pixels is injected into each teacher output, and a lightweight U-Net student network is trained with an L1 loss. The student network is not subject to blind-spot constraints and can directly access target pixel information.
-    - **Design Motivation**: Different blind-spot sizes provide complementary restoration cues; distillation integrates these cues and enables the student to surpass the performance ceiling of any single blind-spot prediction.
+The blind-spot constraint inherently discards target pixel information, capping single-network accuracy. TM-BSN can generate multiple predictions with different blind-spot sizes by simply changing the shift offset $s$ on the shared backbone (approx. +15% compute). The distillation framework synthesizes these teacher outputs into a supervisory signal. It randomly "recharges" a portion of original noisy pixels into the teacher's results and trains a lightweight U-Net student using an L1 loss. This student is not constrained by a blind spot and can integrate complementary information from multiple scales.
 
 ### Loss & Training
 
-- **TM-BSN Training**: Self-supervised L1 loss with shift offset $s=5$; Adam optimizer for 500k iterations.
-- **Distillation Training**: Recharged Distillation loss $\mathcal{L}_{RD} = \sum_{s_i \in S} \| f_D(y) - \text{sg}[T_{s_i} \odot (1-M_i) + y \odot M_i] \|_1$, with inference offset set $S=\{2,3,4,5,6\}$; student U-Net (1.02M parameters) trained for 200k iterations.
+The TM-BSN backbone is trained with a self-supervised L1 loss using a fixed shift offset $s=5$. This is the "sweet spot": $s=4$ is too small to block correlated pixels (leading to identity mapping), while $s \geq 6$ discards useful neighbors. The distillation objective is:
+
+$$\mathcal{L}_{RD} = \sum_{s_i \in S} \big\| f_D(y) - \text{sg}\big[T_{s_i} \odot (1-M_i) + y \odot M_i\big] \big\|_1$$
+
+where $f_D$ is the student, $T_{s_i}$ is the teacher's prediction with offset $s_i$, $M_i$ marks recharged noisy pixels, and $\text{sg}[\cdot]$ denotes the stop-gradient operator. The inference offset set $S=\{2,3,4,5,6\}$ provides diverse and stable supervision. The student U-Net has only 1.02M parameters.
 
 ## Key Experimental Results
 
@@ -76,51 +82,51 @@ The noisy input image is processed through four rotated branches (0°, 90°, 180
 | SIDD Val | PSNR | **38.08** | 38.00 | 37.71 | 37.88 |
 | SIDD Benchmark | PSNR | **38.31** | 38.26 | 38.02 | 38.14 |
 | DND Benchmark | PSNR | **39.41** | 38.83 | 39.08 | 38.68 |
-| DND (fully self-supervised) | PSNR | **38.96** | 38.57 | - | 38.29 |
+| DND (Fully Self-Sup.) | PSNR | **38.96** | 38.57 | - | 38.29 |
 
 ### Ablation Study
 
-| Configuration | SIDD Val PSNR | Note |
+| Configuration | SIDD Val PSNR | Description |
 |------|---------------|------|
-| Training $s=4$ | Severe degradation | Offset too small; correlated pixels not blocked; identity mapping occurs |
-| Training $s=5$ | **37.31** | Optimal balance: avoids identity mapping while leveraging nearby information |
-| Training $s=6$ | Suboptimal | Offset too large; useful context discarded |
-| Training $s=7$ | Suboptimal | Excessive offset further reduces information |
-| Distillation $S=\{1,2,3,4,5\}$ | Suboptimal | $s=1$ deviates too far from training offset; unstable teacher signals |
-| Distillation $S=\{2,3,4,5,6\}$ | **Best** | Diverse yet reliable supervision targets |
-| Distillation $S=\{3,4,5,6,7\}$ | Suboptimal | Large offsets limit information utilization |
+| $s=4$ Training | Severe Degradation | Offset too small; fails to block correlations; identity mapping |
+| $s=5$ Training | **37.31** | Optimal Balance: Avoids identity mapping + utilizes neighbors |
+| $s=6$ Training | Suboptimal | Offset too large; loses useful context |
+| $s=7$ Training | Suboptimal | Excessive offset further loses information |
+| Distill $S=\{1,2,3,4,5\}$ | Suboptimal | $s=1$ too far from training offset; unstable teacher |
+| Distill $S=\{2,3,4,5,6\}$ | **Optimal** | Diverse and reliable supervision targets |
+| Distill $S=\{3,4,5,6,7\}$ | Suboptimal | Large offsets limit information utilization |
 
 ### Key Findings
 
-- Training offset $s=5$ is the optimal balance: $s=4$ is too small and causes identity mapping, while $s \geq 6$ is too large and discards useful context.
-- TM-BSN (D) after distillation achieves +0.33 dB on DND over TBSN, with only 1.02M parameters and 3.21 ms inference time.
-- In terms of efficiency, TM-BSN (D) requires only 26.74 GFLOPs and 3.21 ms inference, far outperforming TBSN (5463.9 GFLOPs, 1004.6 ms).
+- A training offset of $s=5$ is the optimal balance: $s=4$ is too small, while $s \geq 6$ loses the local context.
+- Distilled TM-BSN (D) improves DND performance by +0.33 dB (vs. TBSN) with only 1.02M parameters and 3.21ms latency.
+- Efficiency: TM-BSN (D) consumes only 26.74 GFLOPs, performing significantly better than TBSN (5463.9 GFLOPs).
 
 ## Highlights & Insights
 
-- **Diamond Blind-Spot Design**: This work is the first to precisely align the blind-spot shape with the spatial correlation geometry of noise, rather than relying on a simple rectangular blind spot. This approach underscores the importance of understanding the physical origin of noise (the interpolation pattern of demosaicing) for designing better denoising architectures.
-- **Efficient Multi-Scale Prediction**: By sharing feature extraction and applying different shift offsets, the method generates multiple complementary predictions at only approximately 15% additional computation—a "extract once, use multiple times" design philosophy transferable to other tasks requiring multi-scale predictions.
-- **Distillation Breaks the Blind-Spot Performance Ceiling**: The blind-spot constraint inherently limits information utilization; distilling into a student network free of blind-spot constraints overcomes this bottleneck.
+- **Diamond Blind-Spot Design**: This is the first work to align the blind-spot shape precisely with the spatial correlation geometry of noise rather than using simple rectangles. This insight suggests that understanding the physical origins of noise (demosaicing patterns) is crucial for architecture design.
+- **Efficient Multi-scale Prediction**: By utilizing a shared backbone with varying shift offsets, the model produces complementary predictions with only ~15% overhead. This "extract once, use multiple times" approach is transferable.
+- **Breaking the Ceiling via Distillation**: Blind-spot constraints naturally limit information. Distilling into a student network without such constraints breaks this bottleneck effectively.
 
 ## Limitations & Future Work
 
-- The diamond blind-spot design assumes that the noise correlation pattern originates from standard Bayer CFA demosaicing; adjustments to the blind-spot shape may be required for non-standard CFAs or alternative ISP pipelines.
-- The choice of training offset $s$ relies on ablation experiments, and an adaptive mechanism for determining the optimal offset is lacking.
-- Validation is conducted only on SIDD and DND, without coverage of other self-supervised denoising scenarios such as medical imaging.
-- Extending the diamond blind-spot concept to video denoising by designing three-dimensional blind spots that exploit spatiotemporal correlations is a promising direction.
+- The diamond blind-spot assumes noise correlation stems from standard Bayer CFA demosaicing; non-standard CFAs or different ISP pipelines might require different shapes.
+- The choice of training offset $s$ relies on ablation; there is no adaptive mechanism to determine the optimal offset automatically.
+- Validation is limited to SIDD and DND; applications in other domains like medical imaging are not yet explored.
+- The diamond blind-spot concept could be extended to video denoising by designing 3D blind spots for spatio-temporal correlations.
 
 ## Related Work & Insights
 
-- **vs. AP-BSN**: AP-BSN applies pixel-shuffle downsampling to decorrelate noise, requiring post-processing to remove checkerboard artifacts, and severely restricts the receptive field. TM-BSN operates at full resolution with no post-processing required.
-- **vs. AT-BSN**: AT-BSN uses asymmetric operations to form rectangular blind spots at full resolution, but the rectangular shape mismatches the diamond correlation pattern, excluding uncorrelated corner pixels. TM-BSN's diamond blind spot provides a more precise fit.
-- **vs. TBSN**: TBSN employs Transformer attention blocks with enormous computational overhead (5463 GFLOPs), whereas TM-BSN (D) achieves superior performance with only 26.7 GFLOPs.
+- **vs. AP-BSN**: AP-BSN uses pixel-shuffle downsampling to decorrelate noise, requiring post-processing for checkerboard artifacts and limiting the receptive field. TM-BSN works at full resolution without post-processing.
+- **vs. AT-BSN**: AT-BSN uses asymmetric operations for rectangular spots. However, the rectangle excludes useful corner pixels that the diamond preserves.
+- **vs. TBSN**: TBSN uses Transformer blocks with massive computational costs (5463 GFLOPs); TM-BSN (D) achieves better performance with only 26.7 GFLOPs.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The diamond blind-spot design is physically motivated and the triangular-masked convolution implementation is elegant, though the overall framework remains an improvement within the BSN paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive evaluation on the standard SIDD and DND benchmarks with detailed ablation studies and complexity analysis, though the variety of datasets is limited.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The derivation chain from the physical origin of noise to the architectural design is clear and complete, with intuitive illustrations.
-- **Value**: ⭐⭐⭐⭐ — Achieves new state-of-the-art in self-supervised denoising with strong practical utility; the ideas offer inspiration for other tasks that exploit structural priors of noise.
+- Novelty: ⭐⭐⭐⭐ The diamond design has strong physical intuition, and the TMC implementation is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation on standard benchmarks with complexity analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain from physical noise causes to architecture design.
+- Value: ⭐⭐⭐⭐ Reaches SOTA in self-supervised denoising with high practical efficiency.
 
 <!-- RELATED:START -->
 
@@ -128,11 +134,11 @@ The noisy input image is processed through four rotated branches (0°, 90°, 180
 
 ## Related Papers
 
-- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
-- [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](../../ICCV2025/image_restoration/self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
-- [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](../../ICCV2025/image_restoration/blind2sound_self-supervised_image_denoising_without_residual_noise.md)
-- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
+- [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
+- [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
+- [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
+- [\[CVPR 2026\] Self-Diffusion Driven Blind Imaging](self-diffusion_driven_blind_imaging.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>
 

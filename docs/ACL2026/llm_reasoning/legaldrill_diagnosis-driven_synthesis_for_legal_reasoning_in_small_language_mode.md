@@ -2,84 +2,108 @@
 title: >-
   [Paper Note] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][Legal Reasoning] LegalDrill utilizes an Audit Agent to diagnose specific error patterns in 0.6B/1.7B SLMs during legal reasoning. A strong teacher (GPT-4o / Qwen3-30B) generates preference pairs…
+  [ACL 2026][LLM Reasoning][Difficulty Score] LegalDrill employs an Audit Agent to diagnose specific error patterns in 0.6B/1.7B small language models (SLMs) during legal reasoning. It prompts a strong teacher (GPT-4o / Qwen3-30B) to "deliberately reproduce and correct" these errors to generate preference pairs based on diagnostic instructions. Samples that the st
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Legal Reasoning"
-  - "SLM Distillation"
-  - "Diagnosis-Driven Synthesis"
-  - "Difficulty Score"
-  - "Iterative DPO"
+  - ACL 2026
+  - LLM Reasoning
+  - Difficulty Score
 date: 2026-05-08
-content_hash: c10420b44f29a376
+content_hash: 2f0420b024460854
 ---
-
 # LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.23809](https://arxiv.org/abs/2604.23809)  
 **Code**: TBD  
-**Area**: Law / Small Language Models (SLMs) / Knowledge Distillation / DPO  
+**Area**: Law / SLM / Knowledge Distillation / DPO  
 **Keywords**: Legal Reasoning, SLM Distillation, Diagnosis-Driven Synthesis, Difficulty Score, Iterative DPO
 
 ## TL;DR
-LegalDrill utilizes an Audit Agent to diagnose specific error patterns in 0.6B/1.7B SLMs during legal reasoning. A strong teacher (GPT-4o / Qwen3-30B) generates preference pairs through "deliberate reproduction + correction" based on these error instructions. Samples are then filtered using a Difficulty Score derived from the student’s forced-choice probabilities. After iterative SFT+DPO, the 1.7B student approaches the performance of the 30B teacher on several LegalBench subsets.
+LegalDrill employs an Audit Agent to diagnose specific error patterns in 0.6B/1.7B small language models (SLMs) during legal reasoning. It prompts a strong teacher (GPT-4o / Qwen3-30B) to "deliberately reproduce and correct" these errors to generate preference pairs based on diagnostic instructions. Samples that the student already understands are filtered out using a Difficulty Score derived from the student's own forced-choice probabilities. After iterative SFT+DPO, the 1.7B student model approaches the performance of the 30B teacher across multiple LegalBench subsets.
 
 ## Background & Motivation
-**Background**: There is a strong demand for legal LLMs in tasks such as judgment prediction, contract QA, and privacy policy entailment. However, legal documents are inherently sensitive, precluding the use of external APIs (GPT/Gemini) or cloud-based RAG. Consequently, local deployment is necessary. Since hosting 30B+ open-source LLMs is cost-prohibitive, **SLMs (<3B)** like Qwen3-0.6B/1.7B are the practical choice for the industry.
+**Background**: There is a strong demand for legal LLMs in tasks such as judgment prediction, contract QA, and privacy policy entailment. However, legal documents are inherently sensitive, precluding the use of external APIs (GPT/Gemini) or cloud-based RAG. Consequently, local deployment is required, but open-source LLMs exceeding 30B are too costly. Pragmatic industry applications rely on **SLMs < 3B** (e.g., Qwen3-0.6B/1.7B).
 
-**Limitations of Prior Work**: SLMs often demonstrate "the writing style of a lawyer but the logic of a novice" in legal reasoning—frequently misinterpreting statutes or performing logical leaps, leading to incorrect yes/no decisions. Directly applying teacher CoT trajectories for SFT is often ineffective because strong models (especially RL-aligned ones like o1/DeepSeek-R1) generate long, self-reflective, and exploratory paths that exceed the capacity of SLMs to learn effectively.
+**Limitations of Prior Work**: SLMs in legal reasoning often "write like a lawyer but reason like a novice"—frequently misinterpreting legal provisions or making logical leaps, leading to incorrect final verdicts. Direct SFT using CoT trajectories from strong LLMs is often ineffective because strong models (especially RL-aligned ones like o1/DeepSeek-R1) produce long, self-reflective, and exploratory chains that exceed the capacity of an SLM.
 
-**Key Challenge**: Legal SFT data is expensive to acquire (requiring professional lawyer annotations), and standard rejection sampling (selection based on final verdict correctness) is too coarse-grained. It identifies "which answer is right" without explaining "why it is wrong," and fails to generate the concise reasoning chains that SLMs can actually internalize. Essentially, the teacher's behavioral distribution does not match the student's learnable distribution.
+**Key Challenge**: High-quality legal SFT data is expensive (requiring expert annotation), and standard rejection sampling (based on the final verdict) is too coarse—it indicates "what's right" without explaining "why it's wrong," failing to generate the "concise yet precise" reasoning chains SLMs can effectively learn. Fundamentally, the teacher's behavioral distribution $\neq$ the student's learnable distribution.
 
-**Goal**: (1) Transform the teacher's implicit knowledge into concise, error-correcting reasoning chains within SLM capacity; (2) Focus the training budget on samples where the SLM **actually fails**, rather than wasting it on samples it already masters; (3) Eliminate the need for human legal expert annotations throughout the process.
+**Goal**: (1) Transfer the teacher's implicit knowledge into concise, error-correcting reasoning chains within SLM capacity; (2) Focus the training budget on samples the SLM **genuinely fails** at; (3) Eliminate the need for human legal expert annotation.
 
-**Key Insight**: Rather than allowing the teacher to generate content freely, an Audit Agent first **diagnoses the student's specific current errors** (e.g., "statute misinterpretation" or "logical leap"). These diagnoses are abstracted into **context-decoupled error instructions**. The teacher then follows these instructions to "deliberately commit errors + simultaneously correct them." The resulting preference pairs serve as "targeted training data" directly addressing the student's blind spots.
+**Key Insight**: Rather than allowing the teacher full creative freedom, an Audit Agent first **diagnoses the student's current specific errors** (e.g., "misinterpretation of statutes" or "logical leaps"). These diagnoses are abstracted into **context-agnostic error instructions**, which the teacher uses to "deliberately fail + simultaneously correct." The resulting preference pairs serve as "targeted training data" for the student's current blind spots.
 
-**Core Idea**: Diagnosis → Abstract Error Patterns → Targeted Synthesis of Preference Pairs → Filter Trivial Samples via Student Probabilities → Iterative DPO.
+**Core Idea**: Diagnosis → Abstracting error patterns → Targeted preference pair synthesis → Filtering trivial samples using student probabilities → Iterative DPO.
 
 ## Method
 
 ### Overall Architecture
-LegalDrill follows a teacher–student iterative framework, with three steps in each round $t$:
+LegalDrill is an iterative teacher-student framework consisting of three steps per round $t$:
 
-- **Input**: $N$ legal queries $x_i = (c_i, q_i)$ (context + question), current student $\pi_{\theta_t}$, teacher $\pi_{\text{teach}}$, and Audit Agent $\pi_{\text{audit}}$.
-- **Stage 1 Exploration + Diagnosis**: The student generates responses $\hat{y}_i$ using a CoT system prompt. The Audit Agent examines $(x_i, \hat{y}_i)$ to produce **context-agnostic** error instructions $\mathcal{I}^{(i)}$ (e.g., "ignoring the statute of limitations"). These are aggregated into an Error Instruction Bank $\Phi_{\text{err}} = \{\mathcal{I}^{(1)}, ..., \mathcal{I}^{(N)}\}$.
-- **Stage 2 Targeted Generation**: For each sample $x$, $K$ error instructions are sampled from $\Phi_{\text{err}}$. The teacher first intentionally generates a rejected response $y_-^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k)$ based on the instruction, and then generates a chosen response $y_+^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k, y_-^{(k)})$ conditioned on the mistake.
-- **Stage 3 Self-Reflective Verification**: A Difficulty Score is calculated using the student model to filter out trivial samples. The remaining $\mathcal{D}_{\text{train}}^t$ is used for SFT (initial cold-start) + DPO to update the student.
+- **Inputs**: $N$ legal queries $x_i = (c_i, q_i)$ (context + question), current student $\pi_{\theta_t}$, teacher $\pi_{\text{teach}}$, and Audit Agent $\pi_{\text{audit}}$.
+- **Stage 1 Exploration + Diagnosis**: The student generates response $\hat{y}_i$ using CoT prompts. The Audit Agent examines $(x_i, \hat{y}_i)$ to produce **context-agnostic** error instructions $\mathcal{I}^{(i)}$ (e.g., "ignore the statute of limitations"). These are aggregated into an Error Instruction Bank $\Phi_{\text{err}} = \{\mathcal{I}^{(1)}, ..., \mathcal{I}^{(N)}\}$.
+- **Stage 2 Targeted Generation**: For each sample $x$, $K$ error instructions are sampled from $\Phi_{\text{err}}$. The teacher first follows the instruction to generate a rejected response $y_-^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k)$, then generates a chosen response conditioned on the error: $y_+^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k, y_-^{(k)})$.
+- **Stage 3 Self-Reflective Verification**: A Difficulty Score is calculated using the student model to filter out trivial samples. The remaining $\mathcal{D}_{\text{train}}^t$ is used for SFT (initial cold start) + DPO updates.
 - **Iteration**: $\pi_{\theta_{t+1}}$ enters the next round for re-diagnosis, with the reference model updated as $\pi_{\text{ref}} \leftarrow \pi_{\theta_t}$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Legal query x=(context, question)<br/>+ Current Student π_θt"]
+    subgraph S1["Diagnosis-Driven Error Instruction Synthesis"]
+        direction TB
+        A["Student CoT Exploration: Output ŷ"] --> B["Audit Agent Diagnosis:<br/>Context-agnostic error instructions"]
+        B --> C["Error Instruction Bank Φerr = {I⁽¹⁾…I⁽ᴺ⁾}"]
+    end
+    subgraph S2["Targeted Two-Step Preference Generation"]
+        direction TB
+        D["Sample K Error Instructions Iₖ"] --> E["Teacher follows Iₖ to fail → rejected y₋"]
+        E --> F["Teacher corrects y₋ → chosen y₊"]
+    end
+    G["Self-Reflective Difficulty Score Filtering:<br/>Calculate DS via forced-choice probability;<br/>Keep high-confusion samples (DS > τ)"]
+    H["Training: SFT(t=0) + Iterative DPO<br/>Update π_ref ← π_θt"]
+    X --> S1
+    S1 --> S2
+    S2 --> G
+    G --> H
+    H -->|"π_θt+1 next round diagnosis"| X
+```
 
 ### Key Designs
 
-1.  **Diagnosis-Driven Error Instruction Synthesis (Audit Agent + Context Decoupling)**:
-    - **Function**: Abstracts errors from specific student responses into reusable "error instruction templates" calibrated against common legal error taxonomies.
-    - **Mechanism**: After reviewing $(x_i, \hat{y}_i)$, the Audit Agent is **forbidden from referencing specific case details**, outputting only context-agnostic descriptions such as "ignoring time windows during limitation period calculations." This allows every instruction in $\Phi_{\text{err}}$ to be recombined with any context to generate new preference pairs, expanding the data volume from $|\mathcal{D}|$ to $K \cdot |\mathcal{D}|$. This also acts as a strong regularizer: since chosen/rejected pairs share the same context and error type, the student cannot rely on surface shortcuts (like length or vocabulary) and must learn the logic of reasoning.
-    - **Design Motivation**: Simply allowing the teacher to generate arbitrary rejected responses often results in chosen/rejected pairs with excessive superficial differences. The model then learns irrelevant features like "chosen is longer." Decoupling error patterns from context forces the model to focus on "logical rigor."
+**1. Diagnosis-Driven Error Instruction Synthesis: Abstracting specific student errors into reusable templates**
 
-2.  **Targeted Two-Step Preference Generation (Error-First, Correction-Following)**:
-    - **Function**: Generates the most targeted chosen-rejected pairs under a fixed error instruction.
-    - **Mechanism**: This involves two steps: first, the teacher deliberately commits an error $\mathcal{I}_k$ to generate $y_-^{(k)}$; second, $y_-^{(k)}$ is used as additional input, requiring the teacher to generate $y_+^{(k)}$ by specifically identifying and correcting that error. This "correction-after-error" approach produces a more precise contrastive signal than independent generation, as the chosen response is not just correct but is a **specific counter-example to the error in the rejected response**.
-    - **Design Motivation**: Standard DPO where chosen and rejected are sampled independently results in differences across multiple dimensions (length, style, path), leading to noisy signals. Conditional generation constrains the difference strictly to the specified logical error.
+Directly asking a teacher to generate rejected responses often leads to significant surface-level differences (e.g., length or formatting) between chosen and rejected outputs. This causes the model to learn "chosen is longer" rather than "chosen is logically rigorous." LegalDrill requires the Audit Agent to produce diagnoses of $(x_i, \hat{y}_i)$ that are **forbidden from referencing specific case details**. Instead, it outputs context-agnostic descriptions like "ignoring time windows when calculating limitations," calibrated against a taxonomy of common legal errors.
 
-3.  **Self-Reflective Difficulty Score Filtering (Student-Led)**:
-    - **Function**: Uses the student's own probability distribution to filter out "trivial" preference pairs it can already distinguish, focusing the training budget on genuine blind spots.
-    - **Mechanism**: Instead of calculating the likelihood of the entire sequence $\pi(y \mid x)$ (which is prone to length/vocabulary interference), a binary forced-choice verification prompt $\mathcal{P}_{\text{ver}}(c, q, y)$ is constructed. The student outputs over $\{\texttt{correct}, \texttt{incorrect}\}$, and the normalized score $s_{\theta_t}(y \mid x) = \pi_{\theta_t}(\texttt{correct} \mid \mathcal{P}_{\text{ver}}) / [\pi_{\theta_t}(\texttt{correct}) + \pi_{\theta_t}(\texttt{incorrect})]$ is obtained. The Difficulty Score $\mathrm{DS} = s_{\theta_t}(y_-^{(k)} \mid x) - s_{\theta_t}(y_+^{(k)} \mid x)$ measures the extent to which the student is deceived by the incorrect response. Only samples with $\mathrm{DS} > \tau$ are retained.
-    - **Design Motivation**: While teacher-synthesized pairs are objectively high-quality, many are already distinguishable by the student. Training on these is wasteful and risks degradation. Using the student's confidence gap as a threshold significantly improves data efficiency.
+This context decoupling provides two benefits. First, data augmentation: each error instruction can be recombined with any context, expanding the dataset from $|\mathcal{D}|$ to $K \cdot |\mathcal{D}|$. Second, it acts as a strong regularizer: since the chosen and rejected responses share the same context and error type, the student cannot rely on surface shortcuts and is forced to learn the nuances of logical rigor.
+
+**2. Targeted Two-Step Preference Generation: Deliberately failing and then correcting based on that failure**
+
+The standard approach of independently sampling chosen and rejected responses from a teacher results in noisy DPO signals across multiple dimensions (style, length, reasoning path). LegalDrill utilizes a two-step conditional generation: first, the teacher deliberately commits an error based on $\mathcal{I}_k$ to produce $y_-^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k)$. In the second step, $y_-^{(k)}$ is provided as input, and the teacher is tasked with identifying and fixing that specific error to generate $y_+^{(k)} \sim \pi_{\text{teach}}(\cdot \mid x, \mathcal{I}_k, y_-^{(k)})$.
+
+This ensures the chosen response is not just "correct" but is a **direct counter-example to the logic in the rejected response**. The variance between the pair is strictly tied to the presence of the specified logical error, yielding clean DPO signals.
+
+**3. Self-Reflective Difficulty Score Filtering: Using student confidence to pruning "easy" samples**
+
+Many teacher-synthesized pairs may already be distinguishable by the student. Training on these is inefficient and risks degradation. To avoid shortcuts where the likelihood $\pi(y \mid x)$ is influenced by length, LegalDrill uses a binary forced-choice verification prompt $\mathcal{P}_{\text{ver}}(c, q, y)$ to normalize scores over $\{\texttt{correct}, \texttt{incorrect}\}$:
+
+$$s_{\theta_t}(y \mid x) = \frac{\pi_{\theta_t}(\texttt{correct} \mid \mathcal{P}_{\text{ver}})}{\pi_{\theta_t}(\texttt{correct}) + \pi_{\theta_t}(\texttt{incorrect})}$$
+
+The difficulty score $\mathrm{DS} = s_{\theta_t}(y_-^{(k)} \mid x) - s_{\theta_t}(y_+^{(k)} \mid x)$ measures how much the student is deceived by the rejected response. Only high-confusion samples where $\mathrm{DS} > \tau$ are kept for $\mathcal{D}_{\text{train}}^t$. Using forced-choice probabilities avoids the bias where longer "chosen" responses naturally have lower sequence likelihoods.
 
 ### Loss & Training
 Two-stage optimization:
-- **Cold-start SFT ($t=0$ only)**: $\mathcal{L}_{\text{SFT}}(\theta_0) = -\mathbb{E}_{(x, y_+) \sim \mathcal{D}_{\text{train}}^0}[\log \pi_{\theta_0}(y_+ \mid x)]$, providing a stable starting point for DPO.
-- **Iterative DPO**: $\mathcal{L}_{\text{DPO}}(\theta_{t+1}) = -\mathbb{E}[\log \sigma(\beta(\log\frac{\pi_{\theta_{t+1}}(y_+ \mid x)}{\pi_{\theta_t}(y_+ \mid x)} - \log\frac{\pi_{\theta_{t+1}}(y_- \mid x)}{\pi_{\theta_t}(y_- \mid x)}))]$. A key technique is $\pi_{\text{ref}} = \pi_{\theta_t}$ (the current strategy serves as the reference for the next round), achieving progressive improvement in an online-DPO style.
-- **Hyperparameters**: 1-3 epochs, learning rate $1 \times 10^{-4}$. $K$ (instructions per sample) and $\tau$ (DS threshold) are tuned per dataset.
+
+- **Cold-Start SFT (at $t=0$)**: $\mathcal{L}_{\text{SFT}}(\theta_0) = -\mathbb{E}_{(x, y_+) \sim \mathcal{D}_{\text{train}}^0}[\log \pi_{\theta_0}(y_+ \mid x)]$, providing a stable baseline for DPO.
+- **Iterative DPO**: $\mathcal{L}_{\text{DPO}}(\theta_{t+1}) = -\mathbb{E}[\log \sigma(\beta(\log\frac{\pi_{\theta_{t+1}}(y_+ \mid x)}{\pi_{\theta_t}(y_+ \mid x)} - \log\frac{\pi_{\theta_{t+1}}(y_- \mid x)}{\pi_{\theta_t}(y_- \mid x)}))]$, where $\pi_{\text{ref}} = \pi_{\theta_t}$ (the current strategy acts as the next round's reference) for online-style progressive improvement.
+- **Hyperparameters**: 1-3 epochs, learning rate $1 \times 10^{-4}$, where $K$ and $\tau$ are tuned per dataset.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation was conducted on four subsets of LegalBench (Cos. QA / Con. QA / Sara Ent. / Priv. Ent.) and two real-world financial legal document datasets (Real-World POA / Trust). Metrics include Accuracy, F1, and Judge Accuracy (LLM-as-Judge for reasoning quality).
+Evaluations were conducted on four LegalBench subsets (Cos. QA / Con. QA / Sara Ent. / Priv. Ent.) and two real-world financial-legal document datasets (Real-World POA / Trust). Metrics include Accuracy, F1, and Judge Accuracy (LLM-as-Judge for reasoning quality).
 
 | Model | Cos. QA Acc | Con. QA Acc | Sara Ent. Acc | Priv. Ent. Acc | RW POA Acc | RW Trust Acc |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+|------|-------------|-------------|---------------|----------------|------------|--------------|
 | Qwen3-0.6B (base) | 0.69 | 0.83 | 0.59 | 0.30 | 0.76 | 0.74 |
 | Qwen3-1.7B (base) | 0.79 | 0.87 | 0.66 | 0.47 | 0.78 | 0.79 |
 | Qwen3-30B-A3B (teacher) | 0.98 | 0.96 | 0.86 | 0.83 | — | — |
@@ -89,51 +113,46 @@ Evaluation was conducted on four subsets of LegalBench (Cos. QA / Con. QA / Sara
 | **LegalDrill-0.6B (GPT-4o teach)** | 0.86 | 0.95 | 0.75 | 0.59 | **0.87** | **0.86** |
 | **LegalDrill-1.7B (GPT-4o teach)** | 0.94 | 0.97 | 0.75 | 0.60 | **0.92** | **0.90** |
 
-Notable Findings: LegalDrill-1.7B improved from 0.47 to 0.85 (+0.38 Gain) on Priv. Ent., **surpassing the 30B teacher** (0.83). On Real-World POA, the 1.7B student (0.92) roughly equaled the GPT-4o teacher (0.91). On Con. QA, the 1.7B student distilled from GPT-4o reached 0.97, **outperforming GPT-4o** (0.92).
+Notable data: LegalDrill-1.7B improved from 0.47 to 0.85 on Priv. Ent. (+0.38), **surpassing the 30B teacher** (0.83). On Real-World POA, the 1.7B student (0.92) roughly matched GPT-4o (0.91). On Con. QA, the 1.7B student distilled from GPT-4o reached 0.97, **outperforming its teacher** (0.92).
 
 ### Ablation Study
 
 | Configuration | Trend | Description |
-| :--- | :--- | :--- |
-| Full (SFT + DPO) | Optimal | Complete LegalDrill framework. |
-| SFT Only (No DPO) | Consistent decline | The contrastive signal of chosen/rejected in DPO is key to gains. |
-| No Difficulty Score | Increased compute, less gain | Trivial samples dilute critical gradients and risk degradation. |
-| No context-agnostic constraint | Lower robustness | Student learns shortcuts; decoupling is essential for anti-shortcut training. |
-| Increased iterations | Monotonic diminishing returns | Student blind spots are progressively filled. |
+|------|------|------|
+| Full (SFT + DPO) | Optimal | Complete LegalDrill framework |
+| SFT Only (w/o DPO) | Consistent Decline | The contrast signal in DPO is critical for gains |
+| Remove DS Filtering | High volume, low gain | Trivial samples dilute critical gradients |
+| Remove context-agnostic constraint | Robustness decline | Decoupling is the key to preventing shortcut learning |
+| Increase iterations | Diminishing returns | Student blind spots are filled over rounds |
 
 ### Key Findings
-- **DPO > SFT-only across nearly all settings**: This confirms that in legal reasoning, "seeing counter-examples to understand mistakes" is more effective than "seeing only positive examples," mirroring the intuition of using "error logs" in professional legal training.
-- **Gain for 1.7B > 0.6B**: Qwen3-1.7B with LegalDrill approaches or exceeds the 30B teacher on multiple tasks, whereas the 0.6B model has a lower ceiling. This suggests a minimum capacity threshold for SLMs to master complex reasoning (modeling $\leq$ 0.5B is not recommended).
-- **GPT-4o is not a universal teacher**: On Priv. Ent., GPT-4o scores only 0.67, and the 1.7B student reaches 0.60. On the same task, Qwen3-30B teaches the student to 0.85—showing the teacher's domain competence sets the student's upper bound.
-- **Instruction reusability enables $K$-fold data expansion**: Decoupling context ensures the model does not overfit to specific cases while expanding the dataset from $|\mathcal{D}|$ to $K \cdot |\mathcal{D}|$.
+- **DPO > SFT-only across nearly all settings**: This suggests that "learning where one failed" is more effective than "seeing only correct examples" in legal reasoning, mirroring intuitive human legal training.
+- **Gain for 1.7B > 0.6B**: Qwen3-1.7B with LegalDrill approaches or beats 30B teachers, but 0.6B has a lower ceiling, suggesting a capacity threshold for complex reasoning.
+- **GPT-4o is not an omnipotent teacher**: On Priv. Ent., GPT-4o scored 0.67, and its student reached 0.60; however, Qwen3-30B (scoring 0.83) yielded a student at 0.85. The teacher's domain performance dictates the student's upper bound.
 
 ## Highlights & Insights
-- **"Context-agnostic error instructions" as an anti-shortcut mechanism**: Since chosen and rejected share the same context and error type, DPO is forced to learn the "reasoning rigor" axis rather than superficial traits like length. This approach is transferable to any reasoning distillation task (math, code, medicine).
-- **Difficulty Score via binary forced-choice**: This avoids the bias where longer chosen responses naturally have lower likelihoods, serving as an elegant verification reward model more robust than PPL-based filtering.
-- **Two-step conditional generation (chosen|rejected)**: Requiring the teacher to correct its own deliberate mistake produces a cleaner pair signal than independent sampling, representing a best practice for DPO data synthesis.
-- **Iterative reference model**: Updating $\pi_{\text{ref}} = \pi_{\theta_t}$ rather than using a fixed base model is a standard online-DPO technique, but here it creates a complete "diagnosis → data → training → re-diagnosis" flywheel.
-- **Real-world industrial validation**: Testing on financial POA/Trust datasets provides evidence for the industrial feasibility of achieving 0.9+ accuracy on locally deployed 1.7B models using GPT-4o as a teacher.
+- **Context-agnostic instructions represent an anti-shortcut breakthrough**: By sharing the same context and error type between pairs, DPO is forced to focus strictly on reasoning rigor. This can be generalized to any reasoning distillation task (math, code, medicine).
+- **Forced-choice Difficulty Score**: Using binary probabilities instead of sequence likelihood avoids length biases, serving as an elegant verification reward model.
+- **Two-step conditional generation**: Conditioning chosen on rejected responses creates a purer signal compared to independent sampling, representing a best practice for DPO data synthesis.
+- **Iterative reference models**: Updating $\pi_{\text{ref}} = \pi_{\theta_t}$ creates a flywheel of "diagnosis → data → training → re-diagnosis."
 
 ## Limitations & Future Work
-- **Heavy dependence on teacher's domain capability**: If the teacher is weak (e.g., GPT-4o on Priv. Ent.), the student cannot exceed it easily; no strategy for "weak teacher" scenarios is provided.
-- **Diagnosis also relies on the teacher**: Using the same teacher for the Audit Agent may result in systematic omissions of errors that the teacher itself cannot identify.
-- **Hard hyperparameters**: The DS threshold $\tau$ and $K$ are manually tuned per dataset; an adaptive mechanism is lacking.
-- **Limited to binary yes/no tasks**: Open-ended tasks like judgment generation or contract drafting are not covered, and the "final verdict" filtering is optimized for binary outcomes.
-- **Lower bound of SLMs**: 0.6B models remain weak on certain tasks, indicating that sub-billion models may be insufficient for complex legal reasoning.
-- **Future Directions**: Implementing multi-agent debate (red-teaming) for the Audit Agent; generalizing forced-choice DS to multi-class labels; and packaging the framework into a toolkit for other high-stakes domains like medicine and compliance.
+- **Teacher Dependency**: The student's performance is limited by the teacher's domain-specific capability. No solution is provided for cases where the teacher is weaker than the student.
+- **Diagnostic Source**: The Audit Agent uses the same teacher model, potentially missing errors that the teacher themselves cannot identify.
+- **Hyperparameter Sensitivity**: $\tau$ and $K$ are manually tuned per dataset rather than being adaptive.
+- **Task Scope**: Evaluation is restricted to binary yes/no tasks; subjective legal tasks like contract drafting or judgment writing are not covered.
 
 ## Related Work & Insights
-- **vs Standard Rejection Sampling**: LegalDrill provides "precision-guided" data by using diagnosis to create concise, targeted chains rather than the potentially over-long chains produced by standard sampling.
-- **vs Reasoning Compression (Zhao et al. 2025, Zhang et al. 2025)**: Instead of pruning the teacher's long CoTs, LegalDrill re-synthesizes targeted chains from scratch to fit the SLM's behavioral distribution.
-- **vs SMART (Kim et al. 2025)**: LegalDrill bakes knowledge entirely into the SLM parameters, allowing for zero-dependency local deployment, unlike SMART which requires external LLM calls at inference.
-- **vs UniLaw-R1 / Legal PRMs**: Instead of complex RL with step-wise or validity rewards, LegalDrill uses DPO to bypass reward model training while making the "reward criteria" explicit and readable via error instructions.
-- **vs Iterative DPO (Pang et al. 2024, Xu et al. 2025)**: LegalDrill adds a diagnosis-synthesis loop to the data generation phase, providing higher blind-spot specificity than simple iterative sampling.
+- **vs. Standard Rejection Sampling**: Rejection sampling based on final answers is coarse. LegalDrill's diagnosis-driven approach acts as a "precision-guided" upgrade.
+- **vs. Reasoning Compression**: Unlike methods that prune teacher CoT, LegalDrill regenerates targeted chains to better align with SLM behavioral distributions.
+- **vs. SMART**: While SMART requires external LLM calls during inference, LegalDrill internalizes knowledge into the SLM parameters for zero-dependency local deployment.
+- **vs. Iterative DPO**: LegalDrill distinguishes itself by introducing the diagnosis-synthesis loop on the data generation side, rather than just iterating on sampling.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of diagnosis-driven synthesis, context-agnostic instructions, and DS filtering is quite novel for SLM distillation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 6 datasets (4 public, 2 industrial) across 2 teachers and 2 students with robust ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical flow from motivation to method to experiments; formulas are concise.
-- Value: ⭐⭐⭐⭐⭐ High industrial demand for private legal SLMs; methodology is directly applicable to other high-sensitivity domains.
+- Novelty: ⭐⭐⭐⭐ The combination of diagnosis-driven, context-agnostic instructions and DS filtering is innovative in the SLM space.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 6 datasets (4 public, 2 industrial) with multiple teacher-student combinations.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical progression from motivation to methodology.
+- Value: ⭐⭐⭐⭐⭐ Locally deployed legal SLMs are a genuine industry need; the method is applicable to other high-stakes domains like medicine and finance.
 
 <!-- RELATED:START -->
 
@@ -143,9 +162,9 @@ Notable Findings: LegalDrill-1.7B improved from 0.47 to 0.85 (+0.38 Gain) on Pri
 
 - [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[ACL 2026\] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models](trigreason_trigger-based_collaboration_between_small_and_large_reasoning_models.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
 - [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
+- [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
 
 </div>
 

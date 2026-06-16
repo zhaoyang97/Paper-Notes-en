@@ -2,78 +2,91 @@
 title: >-
   [Paper Note] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play
 description: >-
-  [ACL2026][LLM Reasoning][self-play] Stratagem shifts away from strengthening models based solely on win/loss outcomes in text game self-play. Instead…
+  [ACL 2026][LLM Reasoning][self-play] Instead of reinforcing models based solely on win/loss outcomes in text-style game self-play, Stratagem modulates the advantage signal using "abstract transferability" and "reasoning evolution." This ensures that policies learned from games transfer effectively to mathematics, general reasoning, and code generation tas
 tags:
-  - "ACL2026"
-  - "LLM Reasoning"
-  - "self-play"
-  - "Transferable Reasoning"
-  - "Trajectory Advantage Modulation"
-  - "Mathematical Reasoning"
-  - "Code Generation"
+  - ACL 2026
+  - LLM Reasoning
+  - self-play
 date: 2026-05-08
-content_hash: 13a0f77007f8d306
+content_hash: d160ad657ffbd54d
 ---
-
 # Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play
 
 **Conference**: ACL2026  
 **arXiv**: [2604.17696](https://arxiv.org/abs/2604.17696)  
 **Code**: https://github.com/ydyyyy/Stratagem  
-**Area**: Code Intelligence / LLM Reasoning / Self-play Reinforcement Learning  
-**Keywords**: self-play, Transferable Reasoning, Trajectory Advantage Modulation, Mathematical Reasoning, Code Generation
+**Area**: Code Intelligence / LLM Reasoning / Self-play RL  
+**Keywords**: self-play, transferable reasoning, trajectory advantage modulation, mathematical reasoning, code generation
 
 ## TL;DR
-Stratagem shifts away from strengthening models based solely on win/loss outcomes in text game self-play. Instead, it modulates the advantage using two trajectory-level signals—"abstract transferability" and "reasoning evolution"—ensuring that strategies learned from games are more transferable to mathematics, general reasoning, and code generation tasks.
+Instead of reinforcing models based solely on win/loss outcomes in text-style game self-play, Stratagem modulates the advantage signal using "abstract transferability" and "reasoning evolution." This ensures that policies learned from games transfer effectively to mathematics, general reasoning, and code generation tasks.
 
 ## Background & Motivation
-**Background**: Training agents using games is a classic reinforcement learning approach recently applied to LLM training. Methods like SPIRAL involve language models in zero-sum text game self-play, updating policies through end-game win/loss signals with the hope that planning, probabilistic judgment, and decision-making capabilities will transfer to math and code tasks.
+**Background**: Training agents via games is a classic RL approach recently applied to LLM training. Methods like SPIRAL allow language models to engage in self-play within zero-sum text games, updating policies via end-game win/loss signals with the hope that planning, probabilistic judgment, and decision-making capabilities transfer to math and code tasks.
 
-**Limitations of Prior Work**: End-game outcomes only indicate whether a round was won or lost; they fail to distinguish which reasoning steps within a winning trajectory are transferable abstract strategies versus game-specific heuristics. For instance, memorizing rules like "King beats Queen" helps win a game but does not necessarily assist in solving math problems.
+**Limitations of Prior Work**: Final win/loss outcomes only indicate success or failure but fail to distinguish which reasoning steps are transferable abstract strategies versus game-specific tricks. For example, memorizing rules like "Kings beat Queens" might win a card game but does not necessarily assist in solving math problems.
 
-**Key Challenge**: While self-play generates rich trajectories, traditional advantage signals focus only on the game outcome. Consequently, models may reinforce domain-specific heuristics rather than prioritizing transferable skills such as enumeration, proof by contradiction, condition decomposition, and probabilistic reasoning.
+**Key Challenge**: While self-play produces rich trajectories, traditional advantage focuses only on the game outcome. Models may reinforce domain-specific heuristics rather than prioritizing transferable patterns such as enumeration, proof by contradiction, conditional decomposition, and probabilistic reasoning.
 
-**Goal**: The authors aim to sift out reasoning patterns from game trajectories that truly transfer to downstream tasks without relying on human reasoning data, biasing training signals toward these trajectories.
+**Goal**: The authors aim to sift through game trajectories for reasoning patterns that truly transfer to downstream tasks without relying on human reasoning data, biasing the training signal toward these trajectories.
 
-**Key Insight**: The paper attributes transfer failure to two reasons: domain specificity, which keeps the model trapped in game semantics, and contextual stasis, where the model lacks the ability to deepen reasoning as the context progresses.
+**Key Insight**: Transfer failures are attributed to two causes: domain specificity (confining the model to game semantics) and contextual stasis (a lack of deepening reasoning as the context evolves).
 
-**Core Idea**: Add trajectory-level modulation to the SPIRAL game advantage. Trajectories with high abstraction retain a larger advantage, while those where reasoning continuously deepens across multiple rounds receive an additional reward.
+**Core Idea**: Add trajectory-level modulation to the SPIRAL game advantage. Trajectories with higher abstraction retain more advantage, while those where reasoning evolves across multiple rounds receive additional rewards.
 
 ## Method
-The Method of Stratagem is constrained: it does not redesign game environments or mix math problems into training. Instead, it modifies the training weights of self-play trajectories. Given a game trajectory, while the original SPIRAL calculates the game advantage based on the final outcome and a role baseline, Stratagem modulates it using two signals to obtain a modified advantage for policy gradient updates.
+Stratagem's approach is constrained: it neither redesigns the game environment nor mixes math problems into training. Instead, it modifies the training weights of self-play trajectories. Given a trajectory, Stratagem modulates the original SPIRAL advantage (calculated from game outcomes and role baselines) using a Reasoning Transferability Coefficient and a Reasoning Evolution Reward to produce a modified advantage for policy gradient updates.
 
 ### Overall Architecture
-The training environment consists of three text-based zero-sum games: Tic-Tac-Toe, Kuhn Poker, and Simple Negotiation. These cover spatial planning, probabilistic reasoning, and strategy optimization, respectively. Both players share the same LLM policy, distinguished by role-conditioned prompts.
+The training environment includes three text-based zero-sum games: Tic-Tac-Toe, Kuhn Poker, and Simple Negotiation, covering spatial planning, probabilistic reasoning, and strategic optimization. Both players share the same LLM policy, distinguished by role-conditioning.
 
-Each trajectory includes multi-turn states, model responses, reasoning text, and actions. Whereas SPIRAL calculates a role-conditioned advantage based strictly on the outcome, Stratagem computes a Reasoning Transferability Coefficient and a Reasoning Evolution Reward, updating the model using the formula: $A_{mod} = A_{game} \cdot \phi + \beta \cdot \psi$.
+Each trajectory consists of multiple rounds of states, model responses, reasoning chain text, and actions. Whereas SPIRAL relies on outcome-based role-conditioned advantage, Stratagem computes a Reasoning Transferability Coefficient ($\phi$) and a Reasoning Evolution Reward ($\psi$) to update the model using the formula $A_{\text{mod}} = A_{\text{game}} \cdot \phi + \beta \cdot \psi$.
 
-Experiments use Qwen3-4B-Base as the base model. $\phi$ and $\psi$ are scored by GPT-4 acting as an evaluator, with $\beta$ set to 0.2 by default. The authors control evaluation costs via trajectory subsampling; a single training run takes approximately 30 GPU-hours on 2 A100s, with GPT-4 scoring costing about $100.
+The experiment uses Qwen3-4B-Base as the backbone. $\phi$ and $\psi$ are scored by GPT-4 as an evaluator, with $\beta$ set to 0.2 by default. Computational costs are managed via trajectory sub-sampling, requiring approximately 30 GPU-hours on 2 A100s, with GPT-4 evaluation costs around $100.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Self-play in three text zero-sum games<br/>Tic-Tac-Toe / Kuhn Poker / Simple Negotiation"] --> B["Shared LLM policy<br/>Role-conditioned acting"]
+    B --> C["Game Trajectory<br/>States / Responses / Reasoning / Actions"]
+    C --> D["SPIRAL calculates Game Advantage A_game<br/>Outcome + Role baseline"]
+    C --> EVAL["GPT-4 Evaluator<br/>Scoring trajectory reasoning"]
+    EVAL --> E["Reasoning Transferability Coefficient φ<br/>Keep abstract reasoning, suppress tricks"]
+    EVAL --> F["Reasoning Evolution Reward ψ<br/>Positive reward for deepening reasoning"]
+    D --> G["Trajectory Advantage Modulation<br/>A_mod = A_game·φ + β·ψ"]
+    E --> G
+    F --> G
+    G --> H["Self-play Policy Gradient Update"]
+    H -->|No downstream data mixed in| I["Transfer to Math / General Reasoning / Code"]
+```
 
 ### Key Designs
-1. **Reasoning Transferability Coefficient**:
-    - **Function**: Measures whether the reasoning in a game trajectory is abstract, domain-agnostic, and transferable.
-    - **Mechanism**: $\phi$ takes values of 0, 0.5, or 1. When game-specific rules and fixed routines dominate, the trajectory weight is suppressed; when abstract reasoning such as scenario enumeration, probability estimation, or goal-constraint decomposition appears, the trajectory retains a higher advantage.
-    - **Design Motivation**: Win/loss rewards reinforce all behaviors that lead to a win, whereas transfer training needs to prioritize the reasoning structures *why* a win was possible.
 
-2. **Reasoning Evolution Reward**:
-    - **Function**: Rewards reasoning that updates, deepens, and remains self-consistent as the game progresses.
-    - **Mechanism**: $\psi$ takes values of -1, 0, or +1, evaluating whether the reasoning adjusts strategies based on new states, maintains multi-step consistency, and evolves from shallow reactions into complete plans.
-    - **Design Motivation**: Contexts in math and code tasks change continuously as intermediate results emerge. Without rewarding "reasoning evolution," static game training tends to learn fixed templates.
+**1. Reasoning Transferability Coefficient ($\phi$): Gating winning trajectories with an abstraction coefficient to separate "how to win" from "why it wins"**
 
-3. **Trajectory-Modulated Advantage Training**:
-    - **Function**: Converts the two trajectory quality signals into training weights for policy gradients.
-    - **Mechanism**: $A_{game} \cdot \phi$ acts as a multiplicative gate, ensuring low-transferability trajectories have minimal impact even if they win. $\beta \cdot \psi$ acts as an additive reward, giving evolving reasoning trajectories extra signals beyond the win/loss.
-    - **Design Motivation**: The multiplicative term addresses "learning the wrong heuristics," while the additive term addresses "learning only static reactions." Together, they shift self-play from winning games to learning reasoning.
+The issue with outcome rewards is that they reinforce all winning behaviors equally, including game-specific rules. Stratagem uses a GPT-4 evaluator to assign a transferability coefficient $\phi \in \{0, 0.5, 1\}$. When trajectories are dominated by game-specific rules, the weight is suppressed. When abstract reasoning like enumeration, probability estimation, or constraint decomposition appears, the advantage is preserved. This ensures the model learns "universal reasoning structures" rather than "memorized rules."
+
+**2. Reasoning Evolution Reward ($\psi$): Rewarding reasoning that deepens as the game progresses to avoid static templates**
+
+Math and code tasks require dynamic reasoning where subsequent logic must adapt to intermediate results. $\psi \in \{-1, 0, +1\}$ evaluates whether reasoning adjusts based on new states, maintains consistency across steps, and evolves from shallow reactions into complete plans. While $\phi$ focuses on abstraction, $\psi$ focuses on contextual progression.
+
+**3. Trajectory-Modulated Training: Merging signals into a modified advantage**
+
+Stratagem integrates these signals into the advantage without changing the environment:
+
+$$A_{\text{mod}} = A_{\text{game}} \cdot \phi + \beta \cdot \psi$$
+
+The multiplicative term $A_{\text{game}} \cdot \phi$ acts as a gate—limiting the influence of non-transferable winning trajectories. The additive term $\beta \cdot \psi$ provides an auxiliary reward for evolving reasoning, independent of the game outcome, with $\beta$ defaulting to $0.2$. Together, they shift the optimization objective from "winning the game" to "learning transferable reasoning."
 
 ### Loss & Training
-Training remains based on self-play policy gradients. The difference lies in replacing the update advantage $A_{game}$ with $A_{mod}$. After sampling game trajectories in each round, the system calculates the player's final payoff, role baseline, $\phi$, and $\psi$, and then computes the log-probability gradient for the player's generated responses.
+Training utilizes self-play policy gradients. The update replaces `A_game` with `A_mod`. After sampling trajectories, the system calculates final payoffs, role baselines, $\phi$, and $\psi$, then computes log-probability gradients for the generated responses.
 
-Since downstream benchmarks are not used as training rewards, improvements in math, general reasoning, and code can be interpreted as cross-domain transfer rather than direct optimization on target tasks. This setup clarifies the core argument: whether game training transfers depends on the type of reasoning reinforced in the trajectories.
+Downstream benchmarks are never used as training rewards; thus, improvements in math and code are interpreted as cross-domain transfer rather than direct optimization on target tasks.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluations cover mathematical reasoning, general reasoning, and code generation. All assessments use zero-shot prompting, and code tasks utilize HumanEval pass@1.
+Evaluation covers mathematical reasoning, general reasoning, and code generation. All tests use zero-shot prompting; code tasks use HumanEval pass@1.
 
 | Model | MATH500 | AIME24 | AIME25 | AMC-23 | GPQA | MMLU-Pro | HumanEval |
 |------|---------|--------|--------|--------|------|----------|-----------|
@@ -83,7 +96,7 @@ Evaluations cover mathematical reasoning, general reasoning, and code generation
 | Stratagem vs Base | +10.20 | +10.00 | +10.00 | +10.00 | +7.63 | +10.63 | +10.00 |
 | Stratagem vs SPIRAL | +5.00 | +10.00 | +6.60 | +15.00 | +1.82 | +3.90 | +0.49 |
 
-The strongest gains are concentrated in competition math: AIME24 improved from 10.00 to 20.00, AIME25 from 3.30 to 13.30, and AMC-23 from 50.00 to 60.00. This aligns with the hypothesis that complex multi-step reasoning relies more on transferable strategic structures than on simple knowledge recall.
+The most significant gains are in competition math: AIME24 increased from 10.00 to 20.00, and AMC-23 from 50.00 to 60.00. This supports the hypothesis that complex multi-step reasoning relies more on transferable strategic structures.
 
 ### Ablation Study
 
@@ -91,7 +104,7 @@ The strongest gains are concentrated in competition math: AIME24 improved from 1
 |------|---------|--------|--------|---------------|--------|------|----------|-----------|
 | Stratagem full | 76.00 | 20.00 | 13.30 | 39.90 | 60.00 | 38.23 | 57.83 | 77.93 |
 | w/o Evolution Reward | 74.60 | 13.30 | 10.00 | 39.30 | 52.50 | 37.22 | 56.92 | 77.80 |
-| Gain (full - w/o) | +1.40 | +6.70 | +3.30 | +0.60 | +7.50 | +1.01 | +0.91 | +0.13 |
+| Gain | +1.40 | +6.70 | +3.30 | +0.60 | +7.50 | +1.01 | +0.91 | +0.13 |
 
 | Human Eval Dimensions | Qwen3-4B-Base | SPIRAL | Stratagem w/o evolution | Stratagem |
 |----------------|--------------|--------|--------------------------|-----------|
@@ -99,45 +112,46 @@ The strongest gains are concentrated in competition math: AIME24 improved from 1
 | Reasoning Progression | 2.32 | 3.08 | 3.36 | 4.18 |
 
 ### Key Findings
-- $\psi$ contributes most significantly to AIME24 and AMC-23, indicating that "whether reasoning progresses with the game state" is particularly vital for competition math-style tasks.
-- Parameter sensitivity shows $\beta = 0.20$ is the overall optimal point; a $\beta$ that is too small approaches removing the evolution reward, while a $\beta$ that is too large allows evolution scores to overshadow the original game objective, leading to unstable training.
-- Human evaluation indicates that while abstraction remains high even without $\psi$, progression drops significantly, supporting the idea that $\phi$ and $\psi$ correspond to two distinct capability dimensions.
+- $\psi$ contributes most significantly to AIME24 and AMC-23, suggesting "contextual evolution" is vital for competition math.
+- Parameter sensitivity shows $\beta = 0.20$ is optimal; too small a value resembles removing the evolution reward, while too large a value destabilizes training by overshadowing game objectives.
+- Human evaluation shows that without $\psi$, abstraction remains relatively high, but progression scores drop significantly, confirming that $\phi$ and $\psi$ target distinct capabilities.
 
 ## Highlights & Insights
-- The paper identifies a core difficulty in self-play transfer: it is not about whether games can generate data, but which game trajectories are worth learning. This issue is more fundamental than simply scaling the number of games.
-- The combination of $\phi$ and $\psi$ is intuitive. One filters out domain-specific heuristics, while the other rewards dynamic reasoning processes, corresponding exactly to "ability to abstract" and "ability to progress."
-- While code generation gains were less significant than math, HumanEval scores still exceeded SPIRAL, suggesting that structured planning and constraint satisfaction in games may have weak transfer to program synthesis.
-- This paper provides a more general training paradigm: when environmental rewards cover only outcomes, a trajectory-level meta-evaluator can weight process quality without requiring manual step-by-step labels.
+- The paper addresses the core challenge of self-play transfer: it is not about data quantity, but identifying which trajectories are worth learning.
+- The combination of $\phi$ and $\psi$ is intuitive, targeting "how to abstract" and "how to progress."
+- While code generation gains are less dramatic than math, the improvement over SPIRAL on HumanEval suggests that structured planning from games transfers weakly to program synthesis.
+- Stratagem provides a general paradigm: when environment rewards are sparse/outcome-only, a trajectory-level meta-evaluator can weight process quality without requiring per-step human labels.
 
 ## Limitations & Future Work
-- Trajectory quality scoring relies on GPT-4, introducing issues regarding cost, bias, and reproducibility; the trained model may inherit specific reasoning style preferences from the evaluator.
-- The training environment is limited to three text games, covering a restricted range of reasoning types. Whether this is effective for complex tool use, code debugging, or multi-agent collaboration remains to be verified.
-- $\phi$ and $\psi$ use discrete levels, which limits expressiveness. Real trajectories may contain both transferable strategies and game-specific tricks simultaneously; coarse-grained scoring may lose these details.
-- The method does not directly prove that internal model representations have abstracted from game semantics to mathematical semantics; current evidence primarily comes from downstream scores and manual trajectory ratings.
+- Dependency on GPT-4 for trajectory scoring introduces costs, biases, and reproducibility concerns.
+- The use of only three text games limits the diversity of reasoning types. Future work should explore tool-use, code debugging, or multi-agent collaboration.
+- Discrete scoring for $\phi$ and $\psi$ may lack the granularity needed to capture trajectories containing mixed (transferable and game-specific) strategies.
+- There is no direct proof that internal representations shifted from game semantics to math semantics; evidence remains focused on downstream scores and human ratings.
 
 ## Related Work & Insights
-- **vs SPIRAL**: SPIRAL uses only end-game outcomes to update policies. Stratagem adds trajectory quality modulation within the same self-play framework, explaining why certain winning trajectories are more valuable to learn.
-- **vs Absolute Zero / Self-play Reasoning**: These works emphasize self-generated training without external data. Stratagem focuses on reward shaping, specifically separating transferable reasoning signals from environmental outcome rewards.
-- **vs RLHF / RLAIF**: RLHF typically evaluates response preferences. Stratagem evaluates the abstraction and evolution of the entire interaction trajectory, a granularity better suited for multi-step reasoning training.
-- **Insight**: In the field of Code Intelligence, unit test pass rates could be treated as $A_{game}$, with "solution abstraction" and "debugging progression" introduced as trajectory modulation signals to prevent models from learning specific hacks for test cases.
+- **vs SPIRAL**: SPIRAL uses only outcome rewards; Stratagem adds trajectory modulation to explain why certain wins are more valuable.
+- **vs Absolute Zero / Self-play Reasoning**: Unlike works emphasizing zero-data generation, Stratagem focuses on reward shaping to isolate transferable signals.
+- **vs RLHF / RLAIF**: While RLHF evaluates response preference, Stratagem evaluates the abstraction and evolution of entire interaction trajectories.
+- **Insight**: In code intelligence, one could treat unit test pass rates as $A_{\text{game}}$ and introduce "solution abstraction" and "debugging progression" as modulation signals to prevent models from learning brittle, test-case-specific hacks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Explains and improves game-to-reasoning transfer using trajectory modulation; the idea is clear and inspiring.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers math, general reasoning, code, and human evaluation, though game environments and base model scales remain somewhat limited.
-- Writing Quality: ⭐⭐⭐⭐☆ Problem definitions and formulas are concise; some details regarding $\phi$ and $\psi$ scoring could be more transparent.
-- Value: ⭐⭐⭐⭐☆ Highly relevant for self-play training and RL for code reasoning, especially for tasks with sparse outcome rewards but rich trajectories.
+- Novelty: ⭐⭐⭐⭐☆ Excellent use of trajectory modulation to improve transfer from games to reasoning tasks.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Good coverage across domains, though game environments and model scales are limited.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear definitions, though some scoring details for $\phi$ and $\psi$ could be more transparent.
+- Value: ⭐⭐⭐⭐☆ Highly relevant for self-play training and RL for code/reasoning, especially where outcome rewards are sparse.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](../../ICML2026/llm_reasoning/self-play_only_evolves_when_self-synthetic_pipeline_ensures_learnable_informatio.md)
 - [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
 - [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
+- [\[ICML 2025\] Improving Rationality in the Reasoning Process of Language Models through Self-playing Game](../../ICML2025/llm_reasoning/improving_rationality_in_the_reasoning_process_of_language_models_through_self-p.md)
 - [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
-- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
 
 </div>
 

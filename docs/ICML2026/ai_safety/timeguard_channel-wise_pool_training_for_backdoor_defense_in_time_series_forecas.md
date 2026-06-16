@@ -2,76 +2,82 @@
 title: >-
   [Paper Note] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting
 description: >-
-  [ICML 2026][AI Safety][Time Series Forecasting] TimeGuard reframes backdoor defense in multivariate time series forecasting (TSF) from "discarding the entire window" to a reliable "channel-wise + time-step" pool training…
+  [ICML 2026][AI Safety][Paper Note] TimeGuard reconstructs backdoor defense in multivariate time series forecasting (TSF) from "window-level discarding" to "channel-wise + time-step" reliable pool training. It initializes a high-purity pool using the intersection of Reverse Consistency (RCF) and Neighborhood Diversity (NDF), then progressively expands it
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Time Series Forecasting"
-  - "Backdoor Attacks"
-  - "Training-phase Defense"
-  - "Channel-wise Training"
-  - "Trustworthy Machine Learning"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 0df614adb151f882
+content_hash: 5482e76349d365a9
 ---
-
 # TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.22365](https://arxiv.org/abs/2605.22365)  
 **Code**: https://github.com/qducnguyen/TimeGuard  
 **Area**: AI Security / Backdoor Defense / Time Series Forecasting  
-**Keywords**: Time Series Forecasting, Backdoor Attacks, Training-phase Defense, Channel-wise Training, Trustworthy Machine Learning
+**Keywords**: Time Series Forecasting, Backdoor Attack, Training-phase Defense, Channel-wise Training, Trustworthy Machine Learning
 
 ## TL;DR
-TimeGuard reframes backdoor defense in multivariate time series forecasting (TSF) from "discarding the entire window" to a reliable "channel-wise + time-step" pool training mechanism. It initializes a high-purity pool using the intersection of Reverse-Consistency Filtering (RCF) and Neighborhood Diversity Filtering (NDF), then progressively expands it via Distance-Regularized Loss Selection (DRLS). Without relying on any clean data, it improves $\text{MAE}_{\text{P}}$ against SOTA attacks like BackTime to 1.96 times that of the strongest baseline, PDB.
+TimeGuard reconstructs backdoor defense in multivariate time series forecasting (TSF) from "window-level discarding" to "channel-wise + time-step" reliable pool training. It initializes a high-purity pool using the intersection of Reverse Consistency (RCF) and Neighborhood Diversity (NDF), then progressively expands it using Distance-Regularized Loss Selection (DRLS). Without relying on any clean data, it improves $\text{MAE}_{\text{P}}$ against SOTA attacks like BackTime to 1.96x that of the strongest baseline PDB.
 
 ## Background & Motivation
 
-**Background**: Time Series Forecasting (TSF) is widely deployed in critical scenarios such as transportation, meteorology, and power grids. However, attacks like BackTime (Lin 2024) have demonstrated that TSF models are vulnerable to backdoor injections—attackers only need to pollute **a small subset of channels and a short time window** in the training sequences to hijack predictions at inference time using trigger patterns. Corresponding defenses are nearly non-existent: mature backdoor defenses primarily target classification (Spectral, ABL, Fine-pruning, NAD, STRIP, etc.) and have never been systematically evaluated for TSF.
+**Background**: Time Series Forecasting (TSF) has been deployed at scale in critical scenarios such as transportation, weather, and power grids. However, attacks like BackTime (Lin 2024) have proven that TSF models are susceptible to backdoor injections—attackers only need to contaminate a **small fraction of channels and a short time window** in the training sequence to hijack predictions using a trigger pattern during inference. Corresponding defenses are almost non-existent; mature backdoor defenses for classification (Spectral, ABL, Fine-pruning, NAD, STRIP, etc.) have never been systematically evaluated for TSF.
 
-**Limitations of Prior Work**: The authors first systematically benchmarked 13 representative classification-side defenses on TSF across four stages: pre-training, in-training, post-training, and inference. The results were poor: sample-level filtering (Spectral / TED / TED++) had FDER hovering around 0.5, indicating failure; pure loss-separation methods (ABL / ESTI) averaged 0.497 FDER, as poisoned sample losses became indistinguishable from clean ones within a few epochs; and inference-time detection (STRIP / TeCo / IBD-PSC) showed AUROC near 0.55 while increasing latency from 2 seconds to 200+ seconds. The only "marginal" methods, Fine-pruning, NAD, and PDB, require a trusted clean subset, which is expensive in TSF scenarios.
+**Limitations of Prior Work**: The authors first performed a systematic evaluation of 13 representative classification-side defenses on TSF, covering four stages: pre-training, in-training, post-training, and inference-time. The results were poor: sample-level filtering (Spectral / TED / TED++) had FDER scores hovering around 0.5, indicating failure. Pure loss-separation methods (ABL / ESTI) had an average FDER of 0.497, as poisoned sample losses became indistinguishable from clean ones within a few epochs. Inference-time detection (STRIP / TeCo / IBD-PSC) generally yielded AUROC values around 0.55 while increasing latency from 2 seconds to over 200 seconds. The only "moderately usable" methods—Fine-pruning, NAD, and PDB—require a trusted clean subset, which is expensive in TSF scenarios.
 
-**Key Challenge**: The failure is attributed to two TSF-specific properties. (1) **Data entanglement**: Multivariate sequences have both channel structures and temporal dependencies. Attacks often affect only a few channels, but classification defenses make "whole-window" decisions, leading to *channel-level signal dilution* as clean channels dilute the signal. (2) **Task-formulation shift**: TSF involves continuous-value regression on overlapping windows. Poisoned windows can quickly minimize loss by fitting, leading to *training-loss degeneration* where the loss distribution collapses. These properties undermine both "sample-level filtering" and "loss-based differentiation."
+**Key Challenge**: The failure is attributed to two unique properties of TSF: (1) **Data entanglement**: Multivariate sequences have both channel structures and temporal dependencies. Attacks often modify only a subset of channels, but classification defenses make "whole-window" decisions, where clean channels dilute the signal—termed *channel-level signal dilution*. (2) **Task-formulation shift**: TSF involves continuous regression with sliding overlapping windows. Poisoned windows can quickly minimize loss, leading to a collapsed loss distribution—termed *training-loss degeneration*. These properties undermine both "sample-level filtering" and "loss-based separation."
 
-**Goal**: To design a reliable training-phase sample selection mechanism that is sensitive to channel granularity and does not rely on a single loss signal or clean subsets.
+**Goal**: To develop a training-stage reliable sample selection mechanism that is sensitive to channel granularity and does not rely solely on loss signals, without assuming the existence of a clean subset.
 
-**Key Insight**: Two observations are used. First, TSF backdoors define a **unidirectional** dependency (history → future); they do not protect the reverse (future → history). Training a backcaster can leverage this "directional asymmetry" to amplify differences between clean and poisoned samples. Second, using NTK-style kernel regression, the authors prove a backdoor success bound (Theorem 4.1), concluding that **successful TSF backdoors necessitate poisoned input windows "clustering" in the feature space**, meaning poisoned samples will exhibit **abnormally small neighborhood distances**.
+**Key Insight**: The authors based their approach on two observations. First, TSF backdoors define a **unidirectional** dependency (history $\rightarrow$ future); since there is no protection for the reverse (future $\rightarrow$ history), training a backcaster can leverage this "directional asymmetry" to amplify differences between clean and poisoned samples. Second, the authors used NTK-style kernel regression to prove a backdoor success boundary (Theorem 4.1), concluding that **successful TSF backdoors require poisoned input windows to "cluster" in the feature space**. This implies that poisoned samples will exhibit **abnormally small neighborhood distances**.
 
-**Core Idea**: Transforming training into "channel-wise pool training" at both **channel and time** granularities. A high-purity pool is initialized using RCF and NDF. Then, DRLS (Distance-Regularized Loss Selection) is used for progressive expansion, adding a distance regularizer to loss-based screening to prevent highly correlated poisoned windows from being re-absorbed in later stages.
+**Core Idea**: Transform training into "channel-wise pool training" at both **channel and time-step** granularities. Use RCF and NDF intersection to initialize a high-purity pool, followed by DRLS for progressive expansion. This avoids the dilution of sample-level filtering and applies distance regularization to loss selection, preventing highly correlated poisoned windows from being re-absorbed in later stages.
 
 ## Method
 
 ### Overall Architecture
-Let the training set be $\mathcal{D}=\{(\mathbf{X}_{t,h}, \mathbf{X}_{t,f})\}$, where each sample consists of a history window of size $L_{\text{in}} \times C$ and a future window of size $L_{\text{out}} \times C$. TimeGuard does **not** treat $(\mathbf{X}_{t,h},\mathbf{X}_{t,f})$ as an indivisible unit. Instead, it maintains an independent reliable pool $\mathcal{D}^{(c)}_{\text{rel}}$ for each channel $c$ and introduces a binary mask $m_{t,c} \in \{0,1\}$ to decide if the "channel $c$ at time $t$" participates in training. The predictor $f_\theta$ is trained with a masked loss:
+TimeGuard aims to identify contaminated "channel $\times$ time-step" units during training without a clean reference set. The key shift is no longer treating a window as an indivisible unit; instead, a reliable sample pool is maintained for each channel separately. A fine-grained mask determines whether each grid point participates in training, and the pool grows from "small and pure" to "large and accurate" over two stages.
+
+Specifically, given training set $\mathcal{D}=\{(\mathbf{X}_{t,h}, \mathbf{X}_{t,f})\}$, where samples consist of input windows $L_{\text{in}} \times C$ and target windows $L_{\text{out}} \times C$. A binary mask $m_{t,c} \in \{0,1\}$ determines if "channel $c$ at time $t$" enters training. The predictor $f_\theta$ learns on a masked loss:
 
 $$\mathcal{L}_{\text{def}}(\theta;m) = \frac{1}{\sum_{t,c} m_{t,c}} \sum_{t,c} m_{t,c} \, \ell(f_\theta^{(c)}(\mathbf{X}_{t,h}), \mathbf{x}_{t,f}^{(c)})$$
 
-The pipeline consists of two stages: **Stage I ($T_1=10$ epochs)** initializes a conservative but high-precision pool via RCF ∩ NDF; **Stage II ($T_2=90$ epochs)** uses DRLS to linearly expand the pool proportion $\gamma$ from $\alpha$ to $\beta=0.5$. No clean reference subset is needed, and the predictor architecture remains unchanged.
+The pipeline consists of: Stage I (first $T_1=10$ epochs) initializes a conservative but high-precision pool via RCF $\cap$ NDF; Stage II (remaining $T_2=90$ epochs) uses DRLS to linearly expand the pool ratio $\gamma$ from $\alpha=0.2$ to $\beta=0.5$. No clean reference data is needed, and the predictor architecture remains unchanged.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Multivariate Training Sequence D<br/>Contaminated channels/steps, no clean set"] --> SG
+    subgraph SG["Channel-wise Pool Training"]
+        direction TB
+        B["Stage I: Dual Signal Initialization<br/>RCF (Reverse Consistency) ∩ NDF (Neighborhood Diversity)"] --> C["High-purity Reliable Pool D_rel"]
+        C --> D["Stage II: DRLS<br/>Distance Constraint + Loss Selection, γ: 0.2 to 0.5"]
+        D --> E["Grid-level mask m(t,c) → Masked Loss Training f_θ"]
+    end
+    E --> F["Backdoor-resistant Predictor"]
+```
 
 ### Key Designs
 
-1. **Channel-wise Pool Training**:
-    - **Function**: Refines "sample-level" binary classification into a grid-level mask $m_{t,c}$ for "time $t \times$ channel $c$."
-    - **Mechanism**: Maintains $\mathcal{D}^{(c)}_{\text{rel}}$ for each channel $c$. Filtering criteria (RCF / NDF / DRLS) are applied independently within each channel. The masked MAE/MSE loss is accumulated only on selected grid points.
-    - **Design Motivation**: In ablation studies, reverting to sample-level filtering ("w/o Channel-wise") caused FDER to drop from 0.868 to 0.478. This is because attacks like BackTime often have $\eta_S = 0.3$. Sample-level discarding either removes clean channels (hurting $\text{MAE}_{\text{C}}$) or retains poisoned ones (hurting $\text{MAE}_{\text{P}}$), making channel granularity the correct alignment for defense.
+**1. Channel-time Granularity: Refining "Window Selection" to Grid-level to Align with TSF Attack Sparsity**
 
-2. **Stage I: RCF ∩ NDF Initialization**:
-    - **Function**: Constructs a **conservative but high-precision** initial pool to prevent reinforcement of poisoned samples early in training.
-    - **Mechanism**: (a) **RCF (Reverse-Consistency Filtering)**: Trains a backcaster $b_\phi$ to predict the reversed history window from the reversed future window. Loss is $\mathcal{L}_{\text{rcf}}(\mathbf{x}_t) = \ell(b_\phi(\text{Flip}(\mathbf{X}_{t,f})), \text{Flip}(\mathbf{x}_{t,h}))$. Samples below the $\alpha$-quantile of reverse loss enter $\mathcal{D}_{\text{RCF}}$. (b) **NDF (Neighborhood Diversity Filtering)**: Defines distance between windows as $d_\omega(\mathbf{x}_i,\mathbf{x}_j)=1-r_\omega(\mathbf{x}_i,\mathbf{x}_j)$ using Gaussian-weighted Pearson correlation (weight $\omega_\tau$ emphasizes the history-future boundary). Average distance to $K$ neighbors $S(\mathbf{x}_i)$ is calculated, and the top-$\alpha$ samples enter $\mathcal{D}_{\text{NDF}}$. The final pool is $\mathcal{D}_{\text{rel}} = \mathcal{D}_{\text{RCF}} \cap \mathcal{D}_{\text{NDF}}$.
-    - **Design Motivation**: Theorem 4.1 provides a kernel regression upper bound $\|\hat y(\mathbf{x})-T(\mathbf{x})\|_2 \le \frac{N_{\text{bg}} M \varepsilon}{N_p \exp(-\gamma \sigma_p^2(\mathbf{x}))} + L_T \sigma_p(\mathbf{x})$. For an attack to succeed, poisoned input windows must cluster ($\sigma_p$ must be small), hence they naturally fall into the "abnormally small neighborhood distance" end targeted by NDF. RCF and NDF use independent loss and geometric signals, acting as uncorrelated lie detectors to boost pool purity.
+The root of classification-side defense failure is channel-level signal dilution. In attacks like BackTime, the channel poisoning rate $\eta_S$ is typically 0.3. Decisions at the window level either discard many clean channels (harming $\text{MAE}_{\text{C}}$) or retain poisoned channels to save clean ones (harming $\text{MAE}_{\text{P}}$). TimeGuard addresses this by refining the binary reliability decision to a grid-level mask $m_{t,c}$ for "time $t \times$ channel $c$". A reliable pool $\mathcal{D}^{(c)}_{\text{rel}}$ is maintained for each channel, and all criteria (RCF / NDF / DRLS) are calculated independently per channel. This allows clean channels within the same window as poisoned ones to contribute to training. Removing this ("w/o Channel-wise") causes FDER to collapse from 0.868 to 0.478, proving it is a first-principle design for scale alignment.
 
-3. **Stage II: DRLS (Distance-Regularized Loss Selection)**:
-    - **Function**: Addresses the degradation where poisoned samples are re-absorbed due to collapsed loss signals; gradually expands the pool from $\alpha=0.2$ to $\beta=0.5$ to ensure clean accuracy.
-    - **Mechanism**: Neighborhood distance is calculated using $\mathcal{D}_{\text{unrel}}$ (the unreliable subset) as reference neighbors to sharpen the signal as $\mathcal{D}_{\text{unrel}}$ becomes enriched with poisoned samples. Filtering involves two steps: (i) Selecting top $100\pi\gamma\%$ high-distance samples as candidates $\mathcal{D}_{\text{NDF}}^{\text{cand}}$; (ii) Selecting the $\gamma|\mathcal{D}|$ samples with the lowest loss from the candidates to form $\mathcal{D}_{\text{DRLS}}$.
-    - **Design Motivation**: Removing DRLS ("w/o DRLS") reduced FDER to 0.607, confirming that loss signals alone are insufficient due to task-formulation shift. Pre-filtering with neighborhood diversity provides a necessary safety constraint.
+**2. Stage I: Dual Signal Initialization using RCF and NDF**
+
+Early training must avoid poisoned samples to prevent reinforcement. Stage I aims for a conservative but accurate starting point by intersecting two independent signals. **RCF (Reverse Consistency Filtering)**: Trains a backcaster $b_\phi$ (same architecture as $f_\theta$) to reconstruct history from flipped future windows: $\mathcal{L}_{\text{rcf}}(\mathbf{x}_t) = \ell(b_\phi(\text{Flip}(\mathbf{X}_{t,f})), \text{Flip}(\mathbf{x}_{t,h}))$. Samples below the $\alpha$ quantile of reverse loss enter $\mathcal{D}_{\text{RCF}}$. This leverages the "history $\rightarrow$ future" asymmetry of backdoors. **NDF (Neighborhood Diversity Filtering)**: Defines window distance $d_\omega(\mathbf{x}_i,\mathbf{x}_j)=1-r_\omega(\mathbf{x}_i,\mathbf{x}_j)$ using Gaussian-weighted Pearson correlation, focusing on the history-future boundary. It calculates average distance $S(\mathbf{x}_i)$ for $K$ nearest neighbors and selects the top-$\alpha$ most "isolated" samples for $\mathcal{D}_{\text{NDF}}$. Based on Theorem 4.1, poisoned samples must cluster (small $\sigma_p$) to succeed, making them "neighborhood distance outliers" that NDF excludes. The intersection $\mathcal{D}_{\text{rel}} = \mathcal{D}_{\text{RCF}} \cap \mathcal{D}_{\text{NDF}}$ provides a highly pure pool.
+
+**3. Stage II: DRLS for Progressive Expansion with Distance Constraints**
+
+In Stage II, loss-based separation degrades due to TSF task-formulation shift. DRLS (Distance-Regularized Loss Selection) adds a geometric constraint before loss filtering. It uses $\mathcal{D}_{\text{unrel}}$ (the unreliable set) as reference neighbors. As the pool expands, $\mathcal{D}_{\text{unrel}}$ becomes richer in poisoned samples, making the neighborhood signal sharper. It first selects the top $100\pi\gamma\%$ (where $\pi \ge 1$) furthest samples from $\mathcal{D}$ to form a candidate set $\mathcal{D}_{\text{NDF}}^{\text{cand}}$, then selects the $\gamma|\mathcal{D}|$ samples with the lowest loss from this candidate set for $\mathcal{D}_{\text{DRLS}}$. The expansion ratio $\gamma$ grows linearly from $\alpha$ to $\beta$, ensuring the "neighborhood gate" remains effective while maintaining clean accuracy. Removing DRLS ("w/o DRLS") drops FDER from 0.868 to 0.607.
 
 ### Loss & Training
-Predictor $f_\theta$ is optimized with Adam (Stage I: 10 epochs, Stage II: 90 epochs). The backcaster $b_\phi$ is trained for 10 epochs. Hyperparameters: $\alpha=0.2$, $\beta=0.5$, $\pi \in [1.25, 1.5]$, $K \in [20, 32]$. All components operate independently per channel.
+Predictor $f_\theta$ is optimized with Adam (Stage I: $T_1=10$, Stage II: $T_2=90$). Backcaster $b_\phi$ is trained for $T_b=10$ epochs. Hyperparameters: $\alpha=0.2, \beta=0.5, \pi \in \{1.25, 1.5\}, K \in \{20, 32\}$. All components are computed independently per channel.
 
 ## Key Experimental Results
 
-**Data**: PEMS03, Weather, ETTm1; **Models**: SimpleTM, FEDformer, TimesNet; **Attacks**: Random, FreqBack-TSF, BackTime; **Metrics**: $\text{MAE}_{\text{C}}$ ↓, $\text{MAE}_{\text{P}}$ ↑, FDER ↑.
+Datasets: PEMS03, Weather, ETTm1. Models: SimpleTM, FEDformer, TimesNet. Attacks: Random, FreqBack-TSF, BackTime. Metrics: $\text{MAE}_{\text{C}}$ ↓ (clean accuracy), $\text{MAE}_{\text{P}}$ ↑ (distance when hijacked), FDER ↑ (composite metric).
 
 ### Main Results
 
@@ -80,47 +86,60 @@ Comparison on PEMS03 (average of three models):
 | Method | $\text{MAE}_{\text{C}}$ ↓ (Random / BackTime) | $\text{MAE}_{\text{P}}$ ↑ (Random / BackTime) | FDER ↑ (Random / BackTime) |
 |----------|-------|-------|-------|
 | No Defense | 17.634 / 17.607 | 17.772 / 14.201 | – / – |
-| Fine-pruning (requires clean data) | 19.020 / 18.686 | 31.643 / 19.736 | 0.633 / 0.623 |
-| PDB (Prev. SOTA, requires clean data) | 18.630 / 18.967 | 54.690 / 22.397 | 0.693 / 0.639 |
-| **TimeGuard (Ours, no clean data)** | **17.928 / 18.048** | **104.677 / 39.303** | **0.868 / 0.808** |
+| Fine-pruning (Req. Clean) | 19.020 / 18.686 | 31.643 / 19.736 | 0.633 / 0.623 |
+| PDB (Prev. SOTA, Req. Clean) | 18.630 / 18.967 | 54.690 / 22.397 | 0.693 / 0.639 |
+| **Ours (No Clean Data)** | **17.928 / 18.048** | **104.677 / 39.303** | **0.868 / 0.808** |
 
-Overall: 1.96x gain in $\text{MAE}_{\text{P}}$ and 6.09% reduction in $\text{MAE}_{\text{C}}$ relative to PDB. On Weather, $\text{MAE}_{\text{C}}$ was 3.02% lower than No Defense, suggesting a regularization effect from distance filtering.
+BackTime comparison across datasets:
 
-### Ablation Study (PEMS03 Average)
+| Dataset | Method | $\text{MAE}_{\text{C}}$ ↓ | $\text{MAE}_{\text{P}}$ ↑ | FDER ↑ |
+|--------|------|--------|--------|--------|
+| PEMS03 | Prev. SOTA / **Ours** | 18.97 / **18.05** | 22.40 / **39.30** | 0.639 / **0.808** |
+| Weather | Prev. SOTA / **Ours** | 11.73 / **10.72** | 56.44 / **66.53** | 0.827 / **0.874** |
+| ETTm1 | Prev. SOTA / **Ours** | 1.274 / 1.268 | 1.422 / **1.443** | 0.648 / **0.652** |
 
-| Configuration | $\text{MAE}_{\text{C}}$ ↓ (Random / BackTime) | $\text{MAE}_{\text{P}}$ ↑ (Random / BackTime) | FDER ↑ (Random / BackTime) |
+Overall: 1.96x average $\text{MAE}_{\text{P}}$ Gain and 6.09% average $\text{MAE}_{\text{C}}$ improvement compared to PDB. On Weather, $\text{MAE}_{\text{C}}$ is even 3.02% lower than No Defense, suggesting a regularization effect.
+
+### Ablation Study (PEMS03, Average)
+
+| Configuration | $\text{MAE}_{\text{C}}$ ↓ | $\text{MAE}_{\text{P}}$ ↑ | FDER ↑ |
 |------|-------|-------|-------|
-| **Full TimeGuard** | 17.93 / 18.05 | **104.68** / **39.30** | **0.868** / **0.808** |
+| **Full Ours** | 17.93 / 18.05 | **104.68 / 39.30** | **0.868 / 0.808** |
 | w/o Channel-wise | 18.32 / 19.07 | 16.15 / 14.93 | 0.478 / 0.507 |
+| w/o NDF | 18.58 / 18.42 | 104.46 / 38.35 | 0.853 / 0.795 |
+| w/o RCF | 18.06 / 18.61 | 104.41 / 39.61 | 0.865 / 0.796 |
 | w/o DRLS | 19.75 / 20.08 | 76.44 / 22.92 | 0.607 / 0.586 |
 
 ### Key Findings
-- **Channel granularity is paramount**: Removing channel-wise training caused FDER to drop to ~0.49, proving signal dilution is the primary cause of prior defense failures.
-- **DRLS is more critical than Stage I filtering**: Removing NDF/RCF individually only dropped FDER by 1–2%, but removing DRLS dropped it to 0.61. Managing long-term loss degradation is harder than initial pool purity.
-- **Efficiency**: Training time is 1.58x vanilla, comparable to PDB and much faster than ESTI. **Zero overhead** at inference.
-- **Adaptive Resistance**: An adaptive attack designed to minimize neighborhood distance actually performed worse ($\text{MAE}_{\text{P}}$ 15.34 vs 14.20), as disrupting the clustering also disrupts the attack mechanism per Theorem 4.1.
+- **Channel granularity is fundamental**: Removing the channel-time granularity ("w/o Channel-wise") reduces FDER to nearly zero (0.49), confirming channel-level signal dilution as the primary cause of prior failures.
+- **DRLS is more critical than Stage I**: Removing NDF or RCF drops FDER by only 1–2%, but removing DRLS drops it to 0.61, highlighting the difficulty of resisting long-term loss degradation.
+- **Efficiency**: Training time is 1.58x that of vanilla training, comparable to PDB and much faster than ESTI. **Zero additional overhead** during inference.
+- **Adaptive Attack Resistance**: A worst-case adaptive attack (using backcaster regularization and suppressing poisoned sample correlation) actually performed worse ($\text{MAE}_{\text{P}}$ 15.34 vs. 14.20). Ours maintained an FDER of 0.744, validating Theorem 4.1.
 
 ## Highlights & Insights
-- The **"channel-wise + time-step" training paradigm** is the most transferable contribution. It is applicable to any scenario where attacks affect a subset of dimensions but losses aggregate across all (e.g., multi-task or multimodal defenses).
-- **Asymmetric backcaster checking** is elegant: it translates the attacker's failure to ensure reverse consistency into a computable loss signal with minimal overhead.
-- **NTK bound → geometric prior**: Theorem 4.1 bridges theoretical requirements for attack success with a geometric detection signal ("abnormally small neighborhood distance"), providing a principled path for defense.
-- **Relative neighbor reference**: DRLS uses $\mathcal{D}_{\text{unrel}}$ as a reference. As the pool expands, the signal from the increasingly poisoned $\mathcal{D}_{\text{unrel}}$ becomes sharper, creating a self-strengthening loop.
+- The **"channel-wise + time-step" training paradigm** is the most transferable contribution for scenarios where attacks affect only subset dimensions.
+- **Using a backcaster for reverse consistency** is clever: it translates a structural asymmetry in backdoors (正向 history $\rightarrow$ future vs. 反向 future $\rightarrow$ history) into a computational loss signal.
+- The link from **NTK bound to geometric priors** is elegant: Theorem 4.1 turns an empirical observation into a theoretical conclusion, enabling neighborhood distance as a side-channel detection signal independent of loss.
+- **DRLS using $\mathcal{D}_{\text{unrel}}$ as a reference** creates a self-reinforcing loop where the neighborhood signal becomes sharper as the pool of excluded samples grows.
 
 ## Limitations & Future Work
-- **Limitations**: Training overhead remains (1.58x); applicable only to training-phase (not black-box deployment); inference-time detection in TSF remains an open problem.
-- **Observations**: Theorem 4.1 relies on kernel approximations; effectiveness on long-horizon (720+) forecasting is not fully explored; fixed Gaussian weights might need tuning for different sampling rates.
-- **Future Work**: Lightweight frequency-domain reconstruction to replace the backcaster; introducing cross-channel coordination mechanisms in DRLS; extending Theorem 4.1 to non-linear Transformer-based predictors.
+- Training overhead reaches 1.58x; intended for the training phase and cannot protect pre-deployed "black-box" models.
+- Theorem 4.1 relies on kernel regression approximations; qualitative for deep non-linear models.
+- Experiments focused on short windows ($L_{\text{in}}=L_{\text{out}}=12$); neighborhood distance effectiveness on long horizons remains to be fully verified.
+- The fixed Gaussian weight $\sigma=2$ may require tuning for different sampling rates.
+- Future work: exploring frequency-domain reverse reconstruction to reduce backcaster costs and incorporating cross-channel coordination in DRLS.
 
 ## Related Work & Insights
-- **vs BackTime**: TimeGuard directly counters BackTime's sparse channel poisoning by operating at the same granularity.
-- **vs PDB**: Unlike PDB, which views backdoors as "capacity surplus," TimeGuard looks at the data pool and requires no clean subset, yielding a 1.96x $\text{MAE}_{\text{P}}$ gain.
-- **vs ABL / ESTI**: These rely on early-loss separation, which fails in TSF as poisoned losses quickly collapse. TimeGuard uses distance-regularized criteria to overcome this.
+- **vs. BackTime (Lin et al., 2024)**: BackTime is the strongest attack baseline; Ours uses the "sparse channel poisoning" property discovered by BackTime to design a defense.
+- **vs. PDB (Wei et al., 2024)**: PDB is a strong in-training defense for classification requiring clean data. Ours requires no clean data and achieves 1.96x $\text{MAE}_{\text{P}}$ Gain.
+- **vs. ABL / ESTI**: These rely on early-loss separation, which collapses quickly in TSF. Ours uses the "distance $\times$ loss" DRLS selector to overcome this.
+- **vs. Spectral / TED / TED++**: These fail due to channel-level signal dilution; Ours restores their effectiveness by applying criteria at the correct granularity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First systematic eval of TSF backdoor defense + first no-clean-data in-training method + channel-time granularity.
-- Thoroughness: ⭐⭐⭐⭐⭐ 3 datasets × 3 predictors × 3 attacks + 13 baselines + adaptive/LLM transfer experiments.
-- Writing: ⭐⭐⭐⭐ Clear logical flow, though some DRLS threshold definitions are densely formatted.
-- Value: ⭐⭐⭐⭐⭐ High engineering value for deploying open-weight time series foundation models securely.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic evaluation for TSF + first no-clean-data in-training method + channel-time dual granularity + NTK geometric prior.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 Datasets $\times$ 3 Predictors $\times$ 3 Attacks + 13 Defense comparisons + detailed ablation + adaptive attacks + LLM transfer.
+- Writing Quality: ⭐⭐⭐⭐ Very clear narrative arc. Mathematical symbols in DRLS/Loss sections are slightly dense.
+- Value: ⭐⭐⭐⭐⭐ Immediate engineering value for deploying open-weight time series foundation models where trusted data is scarce.
 
 <!-- RELATED:START -->
 
@@ -129,9 +148,9 @@ Overall: 1.96x gain in $\text{MAE}_{\text{P}}$ and 6.09% reduction in $\text{MAE
 ## Related Papers
 
 - [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
-- [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](../../NeurIPS2025/ai_safety/mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
-- [\[ICML 2026\] Rethinking Evaluation Paradigms in IBP-based Certified Training](rethinking_evaluation_paradigms_in_ibp-based_certified_training.md)
-- [\[NeurIPS 2025\] Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing](../../NeurIPS2025/ai_safety/generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess.md)
+- [\[CVPR 2026\] Logit-Margin Repulsion for Backdoor Defense](../../CVPR2026/ai_safety/logit-margin_repulsion_for_backdoor_defense.md)
+- [\[ICML 2025\] TIMING: Temporality-Aware Integrated Gradients for Time Series Explanation](../../ICML2025/ai_safety/timing_temporality-aware_integrated_gradients_for_time_series_explanation.md)
+- [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](../../CVPR2026/ai_safety/eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
 - [\[ICML 2026\] Scaling Unsupervised Multi-Source Federated Domain Adaptation through Group-Wise Discrepancy Minimization](scaling_unsupervised_multi-source_federated_domain_adaptation_through_group-wise.md)
 
 </div>

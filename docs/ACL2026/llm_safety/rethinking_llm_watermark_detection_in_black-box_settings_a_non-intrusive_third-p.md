@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 description: >-
-  [ACL 2026][LLM Safety][LLM Watermarking] The paper proposes TTP-Detect, the first black-box third-party watermark verification framework that decouples watermark detection and injection. By using a proxy model to amplify…
+  [ACL 2026][LLM Safety][Paper Note] TTP-Detect is proposed as the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision det
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "LLM Watermarking"
-  - "Black-box Detection"
-  - "Third-party Auditing"
-  - "Hypothesis Testing"
-  - "Proxy Model"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: a024ea63f93a0eeb
+content_hash: 8dcf38569e02c662
 ---
-
 # Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 
 **Conference**: ACL 2026 Findings  
@@ -24,52 +18,70 @@ content_hash: a024ea63f93a0eeb
 **Keywords**: LLM Watermarking, Black-box Detection, Third-party Auditing, Hypothesis Testing, Proxy Model
 
 ## TL;DR
-The paper proposes TTP-Detect, the first black-box third-party watermark verification framework that decouples watermark detection and injection. By using a proxy model to amplify watermark signals and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision detection across various watermarking schemes without accessing secret keys or internal model states.
+TTP-Detect is proposed as the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision detection across various watermarking schemes without access to keys or internal model states.
 
 ## Background & Motivation
 
-**Background**: LLM watermarking embeds statistical signals during the generation process for content provenance, serving as a vital mechanism against AI-generated misinformation. Existing solutions (KGW, AAR, etc.) rely on secret keys to detect watermarks.
+**Background**: LLM watermarking facilitates content provenance by embedding statistical signals during the generation process, serving as a vital mechanism against AI-generated misinformation. Current schemes (e.g., KGW, AAR) depend on keys for detection.
 
-**Limitations of Prior Work**: Watermark injection and detection are tightly coupled—detection must use the same key as injection. Courts or platform auditors cannot independently verify watermarks and must rely on opaque claims from service providers. Disclosing keys to third parties would compromise security (adversaries could mimic or remove watermarks).
+**Limitations of Prior Work**: Watermark injection and detection are tightly coupled; detection must utilize the same key used for injection. Consequently, court or platform auditors cannot verify watermarks independently and must rely on opaque claims from service providers. Disclosing keys to third parties compromises security, as adversaries could mimic or remove watermarks.
 
-**Key Challenge**: Existing private-key schemes cannot simultaneously support independent verification and maintain key secrecy, making true third-party auditing impossible. Even recent publicly verifiable schemes still bind detection logic to specific injection mechanisms.
+**Key Challenge**: Existing private-key schemes fail to simultaneously support independent verification and maintain key confidentiality, rendering genuine third-party auditing impossible. Even recent publicly verifiable schemes remain bound to specific injection mechanisms.
 
-**Goal**: Design a key-agnostic black-box detection framework that allows a Trusted Third Party (TTP) to judge whether text contains a watermark solely from the output.
+**Goal**: Design a key-agnostic black-box detection framework that enables a Trusted Third Party (TTP) to determine the presence of a watermark solely from the output text.
 
-**Key Insight**: Reframe absolute threshold detection as a relative hypothesis testing problem—determining whether the query text fits the watermarked distribution or the non-watermarked distribution better.
+**Key Insight**: Reframe absolute threshold detection as a relative hypothesis testing problem—determining whether a query text aligns more closely with a watermarked or non-watermarked distribution.
 
-**Core Idea**: Amplify watermark-related differences through a proxy model and capture statistical characteristics of different watermarking schemes by combining three complementary metrics: local consistency, global geometry, and adaptive rank testing.
+**Core Idea**: Amplify watermark-related differences via a proxy model and capture statistical characteristics of different schemes using local consistency, global geometry, and adaptive rank testing.
 
 ## Method
 
 ### Overall Architecture
-Three-party setup: The user submits query text; the service provider exposes an API (supporting a watermark toggle); the trusted third-party auditor obtains reference samples through the API to construct watermarked/non-watermarked reference sets. The TTP determines whether the query contains a watermark using the proxy model and multi-dimensional metrics. No access to keys or internal model states is required throughout the process.
+TTP-Detect addresses the fundamental conflict where detection is tied to the injection key, preventing independent verification by third parties (e.g., courts, auditors). The process is reconstructed as a three-party collaborative relative hypothesis test: a user submits query text; the service provider exposes an API with a watermark toggle; the TTP auditor obtains watermarked/non-watermarked reference samples under the same prompt via this API. A proxy model then maps the text into a representation space that magnifies watermark differences. Finally, three complementary metrics are integrated to decide whether the text aligns with the watermarked or non-watermarked distribution—without ever accessing keys or internal model states.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Query Text + Provider API (Watermark Toggle)"] --> D["Construct Paired Dataset D_sft<br/>Watermarked/Non-watermarked pairs via identical prompts"]
+    D --> P["Proxy Model Representation Extraction<br/>Discriminative SFT, use last layer last token ℓ2 normalized hidden state"]
+    P --> M
+    subgraph M["Three Complementary Relative Metrics"]
+        direction TB
+        L["Local Consistency A_Loc<br/>KNN-weighted density estimation of neighborhood"]
+        G["Global Geometry A_Mah / A_Ene<br/>Mahalanobis + Energy Distance"]
+        R["Adaptive Rank Test A_Ada<br/>NLL statistics for generation dynamics"]
+    end
+    M --> E["Ensemble & Robust Calibration<br/>Logistic regression into A_ens, calibrate threshold τ by FPR"]
+    E -->|"A_ens ≥ τ"| W["Decision: Watermarked"]
+    E -->|"A_ens < τ"| N["Decision: Non-watermarked"]
+```
 
 ### Key Designs
 
-1.  **Proxy-Based Representation**:
-    *   **Function**: Maps text to a representation space that amplifies watermark differences.
-    *   **Mechanism**: Construct a training set $\mathcal{D}_{sft}$ by obtaining watermarked/non-watermarked text pairs for the same prompts via the provider's API. Perform discriminative instruction fine-tuning on a proxy model (learning to predict watermark labels), then extract the $\ell_2$-normalized hidden state of the last token in the last layer as the representation. This naturally separates watermarked and non-watermarked text in the representation space.
-    *   **Design Motivation**: Watermark signals extracted directly from raw text are too weak; the fine-tuned proxy model can internalize discriminatory clues.
+**1. Proxy Model Representation Extraction: Mapping text to a space that amplifies watermark differences**
 
-2.  **Three Complementary Relative Metrics**:
-    *   **Function**: Captures watermark traces across different statistical scales.
-    *   **Mechanism**: (a) Local Consistency Test $A_{Loc}$: Uses KNN weighted density estimation to calculate the proportion of watermarked samples in the query text's neighborhood; (b) Global Geometry Test: Mahalanobis distance $A_{Mah}$ captures covariance structure, and Energy distance $A_{Ene}$ handles non-Gaussian distributions; (c) Adaptive Rank Test $A_{Ada}$: Captures watermark traces in generation dynamics through proxy model NLL statistics (global cross-entropy and local volatility) and adaptively infers the direction of the watermark effect.
-    *   **Design Motivation**: Different watermarking schemes leave traces at different statistical scales; a single statistic cannot be universal. Multi-module complementarity ensures coverage.
+Watermark signals are often too weak to be detected directly from raw text, as they consist of subtle statistical biases embedded during generation. TTP-Detect constructs a training set $\mathcal{D}_{sft}$ using the provider's API—pairing watermarked and non-watermarked texts for the same prompt—and performs discriminative instruction fine-tuning on a proxy model to distinguish between the two. The $\ell_2$ normalized hidden state of the last token in the last layer is used as the representation. In this space, watermarked and non-watermarked texts are naturally separated, enabling effective geometric measurements.
 
-3.  **Ensemble and Robust Calibration**:
-    *   **Function**: Fuses multiple metrics into a unified decision score.
-    *   **Mechanism**: $A_{ens} = \sigma(\mathbf{w}^\top \mathbf{A} + b)$, with logistic regression weights trained on an augmented validation set containing adversarial perturbations. The threshold $\tau$ is calibrated on a large-scale benign text set according to the target false alarm rate.
-    *   **Design Motivation**: Robust calibration ensures reliability under adversarial attacks, and threshold calibration supports evidence standards for legal/regulatory use.
+**2. Three Complementary Relative Metrics: Capturing signs across local, global, and dynamic scales**
+
+Different watermarking schemes (KGW, SynthID, Unbiased, etc.) leave traces at various statistical scales. TTP-Detect combines three perspectives for universal coverage. Local consistency testing $A_{Loc}$ uses KNN-weighted density estimation to determine the proportion of watermarked samples in the neighborhood of the query. Global geometry testing captures the distribution shape using Mahalanobis distance $A_{Mah}$ for covariance structures and Energy distance $A_{Ene}$ for non-Gaussian distributions. Adaptive rank testing $A_{Ada}$ extracts generation dynamics from the proxy model’s NLL statistics (global cross-entropy and local volatility) and adaptively infers the direction of the watermark effect.
+
+**3. Ensemble & Robust Calibration: Fusing metrics into a unified, perturbation-resistant decision score**
+
+To handle adversarial perturbations and meet regulatory evidence standards, TTP-Detect employs logistic regression to compress all metrics into a single score:
+
+$$A_{ens} = \sigma(\mathbf{w}^\top \mathbf{A} + b)$$
+
+Weights are trained on an augmented validation set containing adversarial samples, ensuring the ensemble remains robust under attack. The final threshold $\tau$ is calibrated on a large-scale benign text set based on a target False Positive Rate (FPR), providing controlled error rates suitable for legal or regulatory use.
 
 ### Loss & Training
-The proxy model is fine-tuned using conditional negative log-likelihood (SFT). Ensemble weights are learned via logistic regression on the augmented validation set. The detection threshold is calibrated by controlling the false alarm rate.
+The proxy model is trained via SFT using conditional negative log-likelihood (NLL). Ensemble weights are learned via logistic regression on the augmented validation set. The detection threshold is calibrated by controlling the FPR.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Watermarking Scheme | TPR↑ | TNR↑ | F1↑ | AUC↑ |
+| Watermark Scheme | TPR↑ | TNR↑ | F1↑ | AUC↑ |
 |----------|------|------|-----|------|
 | KGW (Llama-3.1-8B, C4) | 0.980 | 0.980 | 0.980 | 0.998 |
 | Unigram (Llama-3.1-8B, C4) | 1.000 | 0.990 | 0.995 | 0.999 |
@@ -82,38 +94,38 @@ The proxy model is fine-tuned using conditional negative log-likelihood (SFT). E
 
 | Configuration | F1↑ | Description |
 |------|-----|------|
-| Full TTP-Detect | 0.980 | Full model |
-| w/o Local Consistency | - | Remove local consistency test |
-| w/o Global Geometry | - | Remove global geometry test |
-| w/o Adaptive Rank | - | Remove adaptive rank test |
+| Full TTP-Detect | 0.980 | Complete model |
+| w/o Local Consistency | - | Local consistency check removed |
+| w/o Global Geometry | - | Global geometry check removed |
+| w/o Adaptive Rank | - | Adaptive rank test removed |
 
 ### Key Findings
-- TTP-Detect achieves near-perfect detection on logits-based watermarks (KGW, Unigram) with F1 > 0.97, and maintains 0.85+ F1 on distribution-preserving schemes (SynthID, Unbiased).
-- Shows good generalization across models (Llama-3.1-8B, OPT-6.7B) and datasets (C4, OpenGen).
-- SymMark (synthetic scheme) achieves perfect detection (TPR/TNR/F1/AUC all 1.0).
-- The three types of metrics are highly complementary; removing any leads to a performance drop on specific schemes.
+- TTP-Detect achieves near-perfect detection on logits-based watermarks (KGW, Unigram) with F1 > 0.97, and maintains F1 > 0.85 on distribution-preserving schemes (SynthID, Unbiased).
+- Strong generalization across models (Llama-3.1-8B, OPT-6.7B) and datasets (C4, OpenGen).
+- Perfect detection is achieved for SymMark (TPR/TNR/F1/AUC all 1.0).
+- The three categories of metrics are highly complementary; removing any category leads to performance degradation in specific watermarking schemes.
 
 ## Highlights & Insights
-- Reforming watermark detection from "absolute thresholding" to "relative hypothesis testing" is the key innovation, making detection without keys possible. This logic can be generalized to other scenarios requiring black-box detection.
-- The design of three complementary metrics is systematic: looking at the neighborhood (local), distribution (global), and likelihood (dynamic) provides a complete detection perspective.
-- The design in the Adaptive Rank Test that automatically infers the watermark effect direction is practical, avoiding prior assumptions about specific mechanisms.
+- Reformulating watermark detection from an "absolute threshold" to a "relative hypothesis test" is a pivotal innovation that enables key-agnostic detection. This approach is generalizable to other black-box detection scenarios.
+- The systematic design of three complementary metrics—local neighborhood, global distribution, and dynamic likelihood—provides a holistic detection perspective.
+- The design for automatically inferring the direction of watermark effects in the adaptive rank test is practical, avoiding prior assumptions about specific watermark mechanisms.
 
 ## Limitations & Future Work
-- Requires obtaining reference samples (watermarked/non-watermarked pairs) through an API, relying on service providers to offer a watermark toggle.
+- Requires access to reference samples (watermarked/non-watermarked pairs) via API, relying on providers to offer a watermark toggle.
 - The discriminative power of the proxy model is limited by the quality and scale of SFT training data.
-- Detection performance is relatively weaker on distribution-preserving schemes (F1~0.85), as these are inherently designed to minimize detectability.
-- Future work could explore detection under zero-shot or few-shot reference conditions.
+- Detection performance is relatively lower on distribution-preserving schemes (F1~0.85), which are inherently designed to minimize detectability.
+- Future work may explore detection under zero-shot or few-shot reference conditions.
 
 ## Related Work & Insights
-- **vs KGW Original Detector**: Requires keys and knowledge of the specific scheme; this work requires neither.
-- **vs UPV**: Still relies on shared parameters at the injection end; this work completely decouples injection and detection.
-- **vs PVMark**: Uses zero-knowledge proofs to wrap the detector but still requires scheme-specific circuits; this work is scheme-agnostic.
+- **vs KGW Original Detector**: Requires keys and knowledge of the specific scheme; Ours requires neither.
+- **vs UPV**: Still depends on shared parameters at the injection stage; Ours completely decouples injection and detection.
+- **vs PVMark**: Uses zero-knowledge proofs to wrap the detector but still requires scheme-specific circuits; Ours is scheme-agnostic.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to achieve truly scheme-agnostic black-box third-party watermark detection.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple schemes and models, though lacks detailed ablation on adversarial attacks.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework description and rigorous mathematical notation.
-- Value: ⭐⭐⭐⭐⭐ Addresses a key transparency issue in AI governance with direct regulatory application value.
+- Novelty: ⭐⭐⭐⭐⭐ First to achieve true scheme-agnostic black-box third-party detection.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple schemes and models, though detailed ablation on adversarial attacks is limited.
+- Writing Quality: ⭐⭐⭐⭐ Framework description is clear and mathematical notation is rigorous.
+- Value: ⭐⭐⭐⭐⭐ Addresses key trust issues in AI governance with direct regulatory application value.
 
 <!-- RELATED:START -->
 
@@ -122,10 +134,10 @@ The proxy model is fine-tuned using conditional negative log-likelihood (SFT). E
 ## Related Papers
 
 - [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](../../AAAI2026/llm_safety/psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
-- [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
 - [\[AAAI 2026\] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs](../../AAAI2026/llm_safety/graphtextack_a_realistic_black-box_node_injection_attack_on_llm-enhanced_gnns.md)
 - [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
-- [\[NeurIPS 2025\] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](../../NeurIPS2025/llm_safety/on_the_empirical_power_of_goodness-of-fit_tests_in_watermark_detection.md)
+- [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
+- [\[ICML 2025\] An Attack to Break Permutation-Based Private Third-Party Inference Schemes for LLMs](../../ICML2025/llm_safety/an_attack_to_break_permutation-based_private_third-party_inference_schemes_for_l.md)
 
 </div>
 

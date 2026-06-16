@@ -2,81 +2,89 @@
 title: >-
   [Paper Note] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents
 description: >-
-  [ICML 2026][LLM Agent][GUI Agent] Addressing the pain point where GUI agents get stuck in "self-inflicted errors" during real deployment…
+  [ICML 2026][LLM Agent][Paper Note] To address the critical issue where GUI agents commonly fail to recover from "self-induced errors" in real-world deployments, the authors developed GUI-RobustEval (1216 executable tests covering 11 policy-induced error types across 4 error depths) for fine-grained evaluation. Simultaneously, they proposed RoTS, an onli
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "GUI Agent"
-  - "Policy-Induced Errors"
-  - "Error Recovery"
-  - "Trajectory Tree Synthesis"
-  - "Reflection Data"
+  - ICML 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 68a10b8f8c1e4221
+content_hash: d94efa74a4bb2464
 ---
-
 # Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.29447](https://arxiv.org/abs/2605.29447)  
 **Code**: https://github.com/AlibabaResearch/RoTS (Available)  
 **Area**: Agent / GUI Agent / Robustness / Data Synthesis  
-**Keywords**: GUI Agent, Policy-Induced Errors, Error Recovery, Trajectory Tree Synthesis, Reflection Data
+**Keywords**: GUI Agents, Policy-Induced Errors, Error Recovery, Trajectory Tree Synthesis, Reflection Data
 
 ## TL;DR
-Addressing the pain point where GUI agents get stuck in "self-inflicted errors" during real deployment, this work introduces GUI-RobustEval (1216 executable tests covering 11 types of policy-induced errors across 4 error depths) for fine-grained evaluation. Simultaneously, it proposes RoTS—an online data synthesis framework based on trajectory trees. By actively exposing new errors on correct subtrees using fragility-based UCB and performing long-range recovery rollbacks on failed subtrees via neighboring experience, RoTS synthesizes 800k reflection samples. RoTS-32B achieves an open-source SOTA on OSWorld with 47.4% SR and 33.8% All-Pass@4.
+To address the critical issue where GUI agents commonly fail to recover from "self-induced errors" in real-world deployments, the authors developed GUI-RobustEval (1216 executable tests covering 11 policy-induced error types across 4 error depths) for fine-grained evaluation. Simultaneously, they proposed RoTS, an online data synthesis framework based on trajectory trees: it actively exposes new errors in correct subtrees using fragility-based UCB and performs long-range recovery rollbacks in failed subtrees using sibling experiences. Ultimately, 800k reflection data samples were synthesized, allowing RoTS-32B to achieve an open-source SOTA of 47.4% SR / 33.8% All-Pass@4 on OSWorld.
 
 ## Background & Motivation
-**Background**: Over the past year, GUI agents utilizing VLMs (GPT-5.1, Claude 4.5, Qwen3-VL, UI-TARS, OpenCUA, etc.) have achieved 30~40% average success rates on desktop tasks like OSWorld. The dominant training paradigm involves SFT on human demonstration trajectories followed by online RL, with evaluation focusing on grounding accuracy, planning precision, and overall task success rate.
+**Background**: Over the past year, GUI agents driven by VLMs (GPT-5.1, Claude 4.5, Qwen3-VL, UI-TARS, OpenCUA, etc.) have pushed average success rates on desktop tasks like OSWorld to 30~40%. The mainstream training paradigm involves "SFT on human demonstration trajectories + online RL," while evaluation metrics focus on grounding accuracy, planning precision, and overall task success rate.
 
-**Limitations of Prior Work**: Agents frequently encounter *policy-induced errors* in real deployment—such as incorrect grounding, misreading screens, or faulty sub-goal decomposition—and struggle to recover once an error occurs. Existing benchmarks often measure external perturbations like "injected noise" or "adversarial attacks." Training data for reflection is typically either manually authored or augmented offline, resulting in a distribution that deviates significantly from the actual errors committed by the policy. System-level solutions often rely on a reflection sub-agent for recovery rather than teaching the model to "identify and fix its own errors" at the training level.
+**Limitations of Prior Work**: In real deployments, agents frequently encounter *policy-induced errors*—such as incorrect grounding, misreading the screen, or faulty sub-goal decomposition—which often lead to irreversible failure loops. However, existing benchmarks primarily measure external disturbances like "injected noise" or "adversarial attacks." Furthermore, reflection samples in training data are either manually authored or augmented offline, resulting in distributions that deviate significantly from the actual errors made by the policy. Frameworks typically rely on a reflection sub-agent as a fallback rather than inherently teaching the model to "identify and fix self-made errors" at the training level.
 
-**Key Challenge**: This mismatch is explicitly categorized into two gaps: (1) **Error type mismatch**—training data is dominated by low-level execution errors (invalid clicks), whereas real failures are more often compositional planning or progress-perception errors; (2) **Error time-course mismatch**—errors in training data are usually identifiable within one step, but policy-induced errors often only manifest after several subsequent steps, requiring long-range backtracking.
+**Key Challenge**: The authors explicitly decompose this mismatch into two gaps: (1) **Error Type Mismatch**—training data is dominated by low-level execution errors (invalid clicks), whereas real failures are more often compositional planning or progress-awareness errors; (2) **Error Temporal Mismatch**—most errors in training data are identifiable within 1 step, but policy-induced errors often take several steps to manifest, requiring long-range backtracking.
 
-**Goal**: To bridge these two gaps at both the evaluation and data ends by creating a diagnostic benchmark categorized by error type and depth, and an extensible pipeline that actively exposes diverse error patterns to synthesize long-range recovery trajectories.
+**Goal**: To close these two gaps across both evaluation and data synthesis by creating a diagnostic benchmark categorized by error type and depth, and an extensible pipeline that actively exposes diverse error patterns while synthesizing long-range recovery trajectories.
 
-**Key Insight**: Since real policy-induced errors are "branches" created when the policy interacts with the environment, the most compatible synthesizer is the policy itself performing repeated rollouts on a replayable trajectory tree. Success branches are used to actively search for new errors ("exploration"), while failure branches are used to synthesize recovery trajectories ("resurrection"). Their co-expansion naturally covers both error type and time-course gaps.
+**Key Insight**: The authors observe that since real policy-induced errors are "branches" generated during policy-environment interaction, the best synthesizer for this distribution is the policy itself performing repeated rollouts on a replayable trajectory tree. Correct branches are used to actively seek new errors ("exploration"), and failed branches are used to synthesize recovery trajectories ("resurrection"). Their symbiotic expansion naturally covers both the type and temporal gaps.
 
-**Core Idea**: Replace manual reflection data with "exploration-recovery co-expansion" on online trajectory trees, allowing the agent to train its robustness using its own failed-recovery pairs.
+**Core Idea**: Utilize an online trajectory tree with "exploration-recovery co-expansion" to replace manual reflection data, allowing the agent to train its own robustness using self-generated failure-recovery pairs.
 
 ## Method
-RoTS consists of two main components: (i) the construction of GUI-RobustEval, and (ii) the RoTS data synthesis pipeline.
 
 ### Overall Architecture
-**Evaluation Side: GUI-RobustEval**: From 1.5k failed trajectories of 12 SOTA agents on OSWorld, root-cause steps and error types were manually labeled. This resulted in 11 categories of policy-induced errors across 4 error depths $d \in \{0,1,3,5\}$. Each test case consists of a manually cleaned correct prefix + a root-cause step + $d$ steps of subsequent erroneous execution. The environment state is replayed to this "post-error" state, and the agent under test takes over. Two complementary metrics are reported: *Error-Awareness Rate* (whether the agent recognizes the error in the first step, judged by a VLM) and *Post-Error Success Rate* (final task completion).
+The objective is to resolve the inability of GUI agents to recover from self-induced errors by bridging the error type and temporal gaps in both evaluation and data. On the evaluation side, GUI-RobustEval identifies root-cause steps and error types from 1.5k failed trajectories of 12 SOTA agents on OSWorld, summarizing 11 types of policy-induced errors across 4 error depths $d \in \{0,1,3,5\}$. Each test case consists of a "clean human-rectified prefix + root-cause step + $d$ subsequent erroneous executions." The agent is then evaluated on its ability to handle the state after replaying these errors, reporting the *Error-Awareness Rate* (whether the first step after takeover realizes the error, judged by VLM) and *Post-Error Success Rate* (ultimate completion).
 
-**Synthesis Side: RoTS**: Trajectory trees $T=(O,A,E)$ are built on 20k tasks with reproducible snapshots, where nodes represent screenshots and edges represent actions. $N=4$ rollouts are initialized in parallel, followed by $K=32$ iterations of "explore-recovery co-expansion." In each round, $T$ is partitioned into a success subtree $T^{\text{corr}}$ and a failure subtree $T^{\text{fail}}$ based on an external reward model $\mathcal{R}$, with each side expanded once. Finally, rollouts are filtered and assembled into 800k training samples for SFT of Qwen2.5-VL-7B/32B. For each sample $x_i=(u, h_{i-1}, o_i, a_i)$, NLL is calculated only for the action tokens $a_i$ to avoid learning noisy history.
+On the data side, RoTS builds trajectory trees $T=(O,A,E)$ (nodes as screenshots, edges as actions) on 20k tasks with reproducible snapshots. It starts with $N=4$ parallel rollouts for initialization, followed by $K=32$ rounds of "explore-recovery co-expansion." In each round, the tree is split into correct subtrees $T^{\text{corr}}$ and failed subtrees $T^{\text{fail}}$ by a reward model $\mathcal{R}$—the former expands to find new errors, and the latter synthesizes recovery trajectories. Finally, after post-processing and filtering, 800k training samples are assembled for SFT on Qwen2.5-VL-7B/32B.
+
+```mermaid
+graph TD
+    subgraph EVAL["GUI-RobustEval Benchmark Construction"]
+        direction TB
+        B1["12 SOTA agents<br/>1.5k real failed trajectories"] --> B2["Manual root-cause annotation<br/>+ 11 error types × 4 depths"]
+        B2 --> B3["Standardized executable templates<br/>Clean prefix + subsequent d-step error"]
+        B3 --> B4["Takeover after replaying to error state<br/>Measure Awareness / Post-Error Success"]
+    end
+    T0["20k tasks with reproducible snapshots"] --> T1["N=4 parallel rollouts<br/>Initialize trajectory tree T"]
+    T1 --> RM["Reward model R<br/>Split correct / failed subtrees"]
+    RM -->|Correct Subtree| FDE["FDE Fragility Exploration<br/>UCB selects fragile nodes to fork new errors"]
+    RM -->|Failed Subtree| EIR["EIR Experience-Guided Recovery<br/>Leverage sibling experience for long-range repair"]
+    FDE -->|Feedback| RM
+    EIR -->|Feedback| RM
+    RM -->|After K=32 rounds| POST["Post-processing & Filtering<br/>Split into reflection-agnostic / reflection-related subsets"]
+    POST --> SFT["SFT Qwen2.5-VL-7B/32B → RoTS"]
+```
 
 ### Key Designs
 
-1.  **GUI-RobustEval: Controlled Error Prefixes from Real Failures**:
-    *   **Function**: Constructs a robustness benchmark for fine-grained diagnostics by error type and depth, identifying which errors are unrecognizable and at what depth recovery becomes impossible.
-    *   **Mechanism**: Root-cause steps and error distributions were extracted from 1.5k failures of SOTA agents. Cases were standardized into templates: "clean prefix + root-cause + $d$ subsequent steps" (unified via action summaries and PyAutoGUI). During testing, the system replays the prefix to depth $d$, placing the agent in a state where an error has already persisted for $d$ steps.
-    *   **Design Motivation**: Unlike benchmarks like GUI-Reflection or RedTeamCUA that use synthetic or environmental perturbations, GUI-RobustEval cases come from real agent failures. Controlling error depth allows for the first quantitative measurement of "long-range recovery"—data shows success rates drop monotonically with depth, highlighting a neglected dimension of robustness.
+**1. GUI-RobustEval: Back-tracing Controllable Error Prefixes from Real Failures**
 
-2.  **Fragility-Driven Exploration (FDE): Active Error Discovery in Success Subtrees**:
-    *   **Function**: Identifies nodes in $T^{\text{corr}}$ that "appear correct but are prone to failure" and initiates rollouts from there to generate new failure branches, solving the error type coverage issue.
-    *   **Mechanism**: For each node $o_i$, a pre-operative progress scorer $\mathcal{R}_p$ evaluates $N$ candidate actions sampled from the policy to calculate a step-level success rate $r_i = \tfrac{1}{N}\sum_n r_{i,n}$. A fragility score is defined as $f_i = (1-r_i) + c\sqrt{\ln(V^f_{p(i)}+1)/(V^f_i+1)}$ in a UCB format ($V^f$ is the visit count). The node $i^*=\arg\max_i f_i$ is selected for further rollout by the policy $\pi_\theta$.
-    *   **Design Motivation**: Parallel sampling from the root is inefficient and lacks breadth. FDE reuses correct prefixes and branches at unstable nodes, concentrating the sampling budget on positions likely to expose errors while ensuring diversity through the UCB exploration term.
+Existing benchmarks (GUI-Reflection, GUI-Robust, D-GARA, RedTeamCUA) measure synthetic disturbances, environment noise, or adversarial attacks, rather than errors generated by the policy itself, resulting in a mismatch between evaluation signals and real failure distributions. GUI-RobustEval extracts root-cause steps and error distributions from 1.5k failed trajectories of 12 SOTA agents, standardizing each case into an executable template of "clean prefix + root-cause + subsequent $d$ steps" (unified into action summary + PyAutoGUI, then converted back to native agent formats during testing). By replaying the prefix to a specific depth $d \in \{0,1,3,5\}$, the agent is dropped into an "already erred for $d$ steps" state to test its awareness and recovery. This makes error depth a controllable first-order variable—Fig. 3(d) shows that success rates for almost all agents drop monotonically with depth, highlighting that long-range recovery is a significantly underestimated dimension.
 
-3.  **Experience-Induced Recovery (EIR): Synthesis of Long-Range Recovery in Failure Subtrees**:
-    *   **Function**: Automatically locates root causes in $T^{\text{fail}}$, provides natural language recovery advice, and uses a recovery actor to generate long-range recovery trajectories.
-    *   **Mechanism**: For each failed trajectory $\tau^{\text{fail}}$, experience from sibling branches $\mathcal{E}(\tau^{\text{fail}})=\{E_{\tau^{\text{nb}}}\}$ (reusable successful trajectories) is aggregated. A reflector $\pi^{er}_\theta$ generates $(i, g_i, p_i)$—the candidate error step, recovery guidance, and expansion priority. Nodes are selected via a UCB score $s_i = p_i + c\sqrt{\ln(V^r_{p(i)}+1)/(V^r_i+1)}$, and a recovery actor generates $\tau^{\text{rec}} \sim \pi^{rec}_\theta(u, o_{i^*}, h_{i^*-1}, g_{i^*})$.
-    *   **Design Motivation**: Failures contain information: brother branches show "what was right," and reflectors explain "what went wrong." Combining these into advice-conditioned rollouts produces "error → identification → recovery → completion" samples. Post-processing categorizes data into reflection-agnostic $\mathcal{D}_{\text{agn}}$ and reflection-related $\mathcal{D}_{\text{ref}}$ subsets.
+**2. Fragility Driven Exploration (FDE): Actively Finding New Errors in Correct Subtrees**
+
+Simple parallel sampling often repeats from the root, wasting computation and yielding narrow error coverage, which causes training data to be dominated by low-level execution errors. FDE instead selects nodes in $T^{\text{corr}}$ that "appear correct but are prone to failure": for each node $o_i$, a pre-operative progress scorer $\mathcal{R}_p$ samples $N$ candidate actions from the policy to calculate a step-level success rate $r_i = \tfrac{1}{N}\sum_n r_{i,n}$. A fragility score is computed as $f_i = (1-r_i) + c\sqrt{\ln(V^f_{p(i)}+1)/(V^f_i+1)}$ (UCB form, where $V^f$ is the visit count for FDE). Environment states are replayed to the node $i^*=\arg\max_i f_i$ for further rollout. Combining "reused correct prefixes + branching at the most unstable nodes" focuses the sampling budget on the most likely error-prone locations, while UCB exploration prevents repetitive sampling.
+
+**3. Experience-Guided Recovery (EIR): Synthesizing Long-range Recovery in Failed Subtrees**
+
+Policy-induced errors often take steps to manifest, requiring long-range backtracking, whereas most training errors are recognizable in 1 step. EIR extracts information from failed trajectories $\tau^{\text{fail}}$ by aggregating sibling branch experiences $\mathcal{E}(\tau^{\text{fail}})=\{E_{\tau^{\text{nb}}}\}$ (reusable trajectory experiences identified by the reward model, effectively "how the correct paths went"). These are fed to a reflector $\pi^{er}_\theta$ to produce $(i, g_i, p_i)$—candidate error step, recovery guidance, and expansion priority. UCB-style selection $s_i = p_i + c\sqrt{\ln(V^r_{p(i)}+1)/(V^r_i+1)}$ picks the node to repair, which is replayed to $o_{i^*}$ and followed by a recovery actor rollout $\tau^{\text{rec}} \sim \pi^{rec}_\theta(u, o_{i^*}, h_{i^*-1}, g_{i^*})$. By merging "sibling experience" and "reflector advice" into an advice-conditioned rollout, the system stably produces "error → identification → recovery → completion" long-range samples.
 
 ### Loss & Training
-The model is trained on a mixture of data: $\mathcal{D}_{\text{train}} = \mathcal{D}_{\text{agn}} \cup \lambda_{\text{ref}} \mathcal{D}_{\text{ref}}$, where $\lambda_{\text{ref}}=0.1$ (720k agnostic + 80k reflection samples). The objective is standard teacher-forcing NLL:
+The training data is a mixture: $\mathcal{D}_{\text{train}} = \mathcal{D}_{\text{agn}} \cup \lambda_{\text{ref}} \mathcal{D}_{\text{ref}}$, where $\lambda_{\text{ref}} \in [0,1]$ controls the ratio of reflection samples (final choice $\lambda_{\text{ref}}=0.1$, consisting of 720k agnostic + 80k reflection samples). Each training sample is $x_i=(u, h_{i-1}, o_i, a_i)$, and the loss is the standard teacher-forcing NLL:
 $$\mathcal{L}(\theta) = \mathbb{E}_{(u,h,o,a)\sim\mathcal{D}_{\text{train}}}[-\log \pi_\theta(a|u,h,o)]$$
-Only tokens for $a_i$ are supervised; context $h$ is used solely for conditioning to avoid gradient updates on imperfect rollout noise. Base models are Qwen2.5-VL-7B and 32B.
+The NLL is only calculated on action $a_i$ tokens; historical context $h$ is used only as context to avoid back-propagating noise from imperfect rollouts. The base models are Qwen2.5-VL-7B and 32B with pure SFT.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Success rates across error depths on GUI-RobustEval (Open-source models):
+Success rates across different error depths on GUI-RobustEval (Open-source models):
 
-| Agent | Depth 0 | Depth 1 | Depth 3 | Depth 5 | Gain (Relative) | Awareness |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Agent | Depth 0 | Depth 1 | Depth 3 | Depth 5 | Drop | Awareness |
+|------|--------|--------|--------|--------|------|-----------|
 | Qwen2.5-VL-7B | 5.1 | 3.0 | 2.9 | 1.3 | ↓75% | — |
 | GUI-Owl-7B | 28.7 | 15.6 | 8.1 | 10.4 | ↓64% | 5.9 |
 | UI-TARS1.5-7B | 39.6 | 34.2 | 27.8 | 23.3 | ↓41% | 38.0 |
@@ -85,69 +93,64 @@ Success rates across error depths on GUI-RobustEval (Open-source models):
 | **RoTS-7B** | 43.5 | 36.6 | 30.1 | 26.7 | **↓38%** | 51.9 |
 | **RoTS-32B** | **49.7** | **41.8** | **36.5** | **33.2** | **↓33%** | **58.8** |
 
-OSWorld-Verified Main Results (Max 50 steps, All-Pass@4 measures the success rate across 4 independent runs):
+OSWorld-Verified Main Comparison (Max 50 steps, All-Pass@4 measures the success rate of all 4 independent runs):
 
 | Agent | Data Source | All-Pass@4 | Max 15 | Max ≥50 |
-| :--- | :--- | :--- | :--- | :--- |
-| Claude 4.5 Sonnet | Closed | – | 42.9 | 58.1 |
-| GPT-OpenAI CUA | Closed | – | 26.0 | 31.3 |
-| Qwen3-VL-Plus | Closed | 24.5 | 33.1 | 35.2 |
-| OpenCUA-7B | Open | 12.5 | 24.3 | 28.2 |
-| GUI-OWL-7B | Closed | 14.7 | 27.1 | 29.4 |
-| OpenCUA-32B | Open | 15.5 | 29.7 | 34.1 |
-| **RoTS-7B** | Open | **26.3** | 31.7 | **36.3** |
-| **RoTS-32B** | Open | **33.8** | **42.8** | **47.4** |
+|------|---------|-----------|--------|---------|
+| Claude 4.5 Sonnet | Proprietary | – | 42.9 | 58.1 |
+| GPT-OpenAI CUA | Proprietary | – | 26.0 | 31.3 |
+| Qwen3-VL-Plus | Proprietary | 24.5 | 33.1 | 35.2 |
+| OpenCUA-7B | Open Source | 12.5 | 24.3 | 28.2 |
+| GUI-OWL-7B | Proprietary | 14.7 | 27.1 | 29.4 |
+| OpenCUA-32B | Open Source | 15.5 | 29.7 | 34.1 |
+| **RoTS-7B** | Open Source | **26.3** | 31.7 | **36.3** |
+| **RoTS-32B** | Open Source | **33.8** | **42.8** | **47.4** |
 
 ### Ablation Study
-Rollout strategy ablation with 100k data (PS = Parallel Sampling):
+Ablation of rollout strategies at a scale of 100k data (PS = parallel sampling):
 
-| Data Source | Aware. | Post.Succ. | All-Pass@4 | OSWorld(50) | Description |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| PS | 19.9 | 12.1 | 8.6 | 18.1 | Pure parallel sampling baseline |
-| + FDE | 22.5 | 14.4 | 9.1 | 19.6 | Adds fragility exploration |
-| + EIR | 28.3 | 18.1 | 12.1 | 19.5 | Adds recovery rollback |
-| + FDE + EIR | **32.1** | **22.1** | **14.1** | **21.4** | Co-expansion best |
+| Data Source | Aware. | Post.Succ. | All-Pass@4 | OSWorld(50) |
+|---------|--------|-----------|-----------|-------------|
+| PS | 19.9 | 12.1 | 8.6 | 18.1 |
+| + FDE | 22.5 | 14.4 | 9.1 | 19.6 |
+| + EIR | 28.3 | 18.1 | 12.1 | 19.5 |
+| + FDE + EIR | **32.1** | **22.1** | **14.1** | **21.4** |
 
-Comparison with human demonstrations (AgentNet):
+Comparison of data sources with AgentNet (Human demonstrations):
 
-| Training Data | All-Pass@4 | OSWorld(50) | Description |
-| :--- | :--- | :--- | :--- |
-| $\mathcal{D}_{\text{agn(hum)}}$ | 7.8 | 15.3 | Human reflection-agnostic only |
-| $\mathcal{D}_{\text{agn(hum)}} \cup \mathcal{D}_{\text{ref(hum)}}$ | 8.4 | 16.1 | Adds human reflection samples |
-| $\mathcal{D}_{\text{agn(hum)}} \cup \mathcal{D}_{\text{ref}}$ | 11.6 | 18.8 | Replaces human reflection with RoTS |
-| $\mathcal{D}_{\text{agn}} \cup \mathcal{D}_{\text{ref}}$ | **14.1** | **21.4** | Entirely RoTS data |
+| Training Data | All-Pass@4 | OSWorld(50) |
+|--------------|-----------|-------------|
+| $\mathcal{D}_{\text{agn(hum)}}$ | 7.8 | 15.3 |
+| $\mathcal{D}_{\text{agn(hum)}} \cup \mathcal{D}_{\text{ref(hum)}}$ | 8.4 | 16.1 |
+| $\mathcal{D}_{\text{agn(hum)}} \cup \mathcal{D}_{\text{ref}}$ | 11.6 | 18.8 |
+| $\mathcal{D}_{\text{agn}} \cup \mathcal{D}_{\text{ref}}$ | **14.1** | **21.4** |
 
 ### Key Findings
-*   **EIR contributes to robustness, while FDE enhances overall success rate**: Adding EIR improves All-Pass@4 from 8.6 to 12.1 (+3.5) but leaves OSWorld mostly unchanged; adding FDE improves OSWorld from 18.1 to 19.6 but only adds 0.5 to All-Pass@4. Joint expansion secures both benefits.
-*   **Data distribution is more critical than volume**: 100k human reflection samples only improve OSWorld success by 0.6 points, whereas 100k policy-induced RoTS reflection samples improve it by 5.3 points. The bottleneck is error distribution alignment, not sample count.
-*   **Optimal $\lambda_{\text{ref}}$ exists**: Reflection data at 0.1 ratio is optimal. Values $>0.2$ perform worse than $\lambda_{\text{ref}}=0$, suggesting "over-reflection" leads the model to hallucinate errors in correct rollouts.
-*   **Scalability**: Performance improves as the number of expansion rounds increases from 0 to 32. Scaling data from 50k to 1000k shows saturation at 36.4% success on OSWorld, attributed to the fixed budget of $N=4$ and 32 rounds.
+- **EIR contributes robustness, FDE contributes overall success rate**: Adding EIR alone pushed All-Pass@4 from 8.6 to 12.1 (+3.5), while OSWorld success remained stagnant. Conversely, FDE alone helped OSWorld but barely moved All-Pass@4.
+- **Data distribution is more important than data quantity**: 100k human reflection data points only increased OSWorld SR by 0.6 over agnostic data, whereas policy-induced RoTS reflection data at the same scale increased it by 5.3 points.
+- **$\lambda_{\text{ref}}$ has an optimal range**: A reflection data ratio of 0.1 is optimal; ratios > 0.2 lead to "over-reflection," where the model attempts to fix parts of rollouts that are not actually erroneous.
 
 ## Highlights & Insights
-*   Reframes GUI agent robustness from "adding a reflection sub-agent" to a "training data distribution alignment" problem. Since the synthesizer comprises the policy and environment interaction, it naturally matches the policy-induced error distribution.
-*   The dual design of UCB-based exploration on success subtrees and experience-based rollback on failure subtrees is elegant. A single tree handles both error generation and correction, sharing prefixes across branches to maximize sampling efficiency.
-*   Treating error depth as a first-order variable in evaluation provides the first quantifiable measurement for long-horizon recovery, similar to how CoT evaluation was decoupled from single-step accuracy.
+- The study pulls the GUI agent robustness problem away from the engineering focus of "adding reflection sub-agents" toward the core issue of "training data distribution alignment."
+- The dual-tree design is ingenious: it uses the same structure for both error creation and repair, balancing coverage and exploitation via UCB, while prefix sharing across branches mimics MCTS concepts without the complexity of value backup.
+- Making error depth a first-order variable in evaluation allows "long-horizon recovery" to have its own comparable curves, providing clarity similar to how Chain-of-Thought evaluation separated single-step from multi-step reasoning.
 
 ## Limitations & Future Work
-*   Current coverage is limited to Desktop OS (Ubuntu/Windows 11). Mobile and edge GUI tasks involve different visual structures and state spaces that may challenge the snapshot-replay assumption.
-*   The benchmarking protocol requires injecting unified prefixes into various agent-native action spaces, which may introduce conversion noise.
-*   Training is strictly SFT. This lacks a closed-loop online RL flywheel, meaning the model cannot iterate once it exceeds the capability of the initial synthesisers.
-*   High infrastructure cost: 800k samples required 32 A100 GPUs, 120-way parallelism, and extensive API usage, making full reproduction difficult for the open-source community.
+- Currently limited to desktop environments (Ubuntu / Windows 11); mobile and edge GUI tasks remain unverified.
+- Evaluators must inject unified prefixes into each agent's native action space, which may introduce degradation during conversion.
+- Training relies purely on SFT without a closed-loop online RL component; the lack of a "data flywheel" means the model cannot iterate once it exceeds the capabilities of the synthesizer.
+- The 800k sample synthesis requires significant infrastructure (32x A100, 120-way parallelism, proprietary APIs), making exact reproduction difficult for the open-source community.
 
 ## Related Work & Insights
-*   **vs GUI-Reflection / RedTeamCUA**: Those focus on external or adversarial noise, while RoTS measures recovery from the agent's own errors across controlled depths.
-*   **vs AgentNet / AgentTrek**: Prior works use human-derived reflection data which tend to be low-level. RoTS uses policy-induced errors, achieving superior data efficiency (Table 5 shows a 6-point OSWorld gain with the same sample size).
-*   **vs Agent S / UFO**: These use inference-time reflection modules. RoTS embeds robustness into the model weights, reducing inference overhead at the cost of training complexity.
+- **vs GUI-Reflection / GUI-Robust / D-GARA**: While they focus on synthetic or adversarial noise, Ours measures recovery from errors actually generated by the policy, where error depth is controllable.
+- **vs AgentNet / AgentTrek**: These rely on human demos or offline augmentation; RoTS allows the policy to branch off its own errors, matching the policy-induced failure distribution more naturally.
+- **vs Agent S / UFO**: These use inference-time reflection modules; RoTS "burns" robustness into the model weights, saving inference costs but increasing training complexity.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐
-*   Writing Quality: ⭐⭐⭐⭐
-*   Value: ⭐⭐⭐⭐⭐
-
-<!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 ## Related Papers
 
@@ -155,7 +158,23 @@ Comparison with human demonstrations (AgentNet):
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](../../ACL2026/llm_agent/robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[ICML 2026\] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation](rule2drc_benchmarking_llm_agents_for_drc_script_synthesis_with_execution-guided_.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
-- [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
+- [\[ACL 2025\] OS-Genesis: Automating GUI Agent Trajectory Construction via Reverse Task Synthesis](../../ACL2025/llm_agent/os_genesis_gui_agent_trajectory.md)
+
+</div>
+
+<!-- RELATED:END -->
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
+- [\[ICML 2026\] Constitutional Black-Box Monitoring for Scheming in LLM Agents](constitutional_black-box_monitoring_for_scheming_in_llm_agents.md)
+- [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
+- [\[ICML 2026\] Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach](post-training_llms_as_better_decision-making_agents_a_regret-minimization_approa.md)
+- [\[ICML 2026\] Talk, Judge, Cooperate: Gossip-Driven Indirect Reciprocity in Self-Interested LLM Agents](talk_judge_cooperate_gossip-driven_indirect_reciprocity_in_self-interested_llm_a.md)
 
 </div>
 

@@ -2,198 +2,175 @@
 title: >-
   [Paper Note] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 description: >-
-  [CVPR 2026][Autonomous Driving][LiDAR Localization] This paper proposes BEV-SLD, a self-supervised scene landmark detection (SLD)-based method for LiDAR global localization. By decoupling detection from correspondence pr…
+  [CVPR 2026][Autonomous Driving][BEV] This paper proposes BEV-SLD, a LiDAR global localization method based on self-supervised Scene Landmark Detection (SLD). By decoupling detection from correspondence prediction, it achieves high-precision $(x, y, \text{azimuth})$ pose estimation across various scenarios with a compact storage footprint of only 20MB.
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "LiDAR Localization"
-  - "BEV"
-  - "Scene Landmark Detection"
-  - "Self-Supervised Learning"
-  - "Global Localization"
+  - CVPR 2026
+  - Autonomous Driving
+  - BEV
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: d84bcc8800a2de1a
+content_hash: 07bbaf833fb4e8f8
 ---
-
 # BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.17159](https://arxiv.org/abs/2603.17159)  
 **Code**: [davidskdds/BEV-SLD](https://github.com/davidskdds/BEV-SLD)  
-**Area**: Autonomous Driving
-**Keywords**: LiDAR Localization, BEV, Scene Landmark Detection, Self-Supervised Learning, Global Localization
+**Area**: Autonomous Driving  
+**Keywords**: LiDAR localization, BEV, scene landmark detection, self-supervised learning, global localization
 
 ## TL;DR
 
-This paper proposes BEV-SLD, a self-supervised scene landmark detection (SLD)-based method for LiDAR global localization. By decoupling detection from correspondence prediction, the approach achieves high-accuracy $(x, y, \text{azimuth})$ pose estimation across diverse environments using only 20 MB of storage.
+This paper proposes BEV-SLD, a LiDAR global localization method based on self-supervised Scene Landmark Detection (SLD). By decoupling detection from correspondence prediction, it achieves high-precision $(x, y, \text{azimuth})$ pose estimation across various scenarios with a compact storage footprint of only 20MB.
 
 ## Background & Motivation
 
-LiDAR-based global localization is a core capability in autonomous driving and robot navigation. Existing approaches fall into two main categories:
+LiDAR global localization is a core capability for autonomous driving and robot navigation. Existing methods are primarily categorized into two types:
 
-- **Place recognition-based methods** (e.g., BEVPlace++): retrieve the nearest map frame and then refine the pose. Retrieval relies on global descriptors and degrades sharply when queries are far from existing trajectories, as these methods implicitly assume that database frames exist near the query location.
-- **Point cloud registration-based methods** (e.g., KISS-Matcher): directly match local feature points for pose estimation. These methods are computationally expensive, require storing complete point cloud maps, and have limited scalability.
+- **Place recognition-based**: e.g., BEVPlace++, which retrieves the nearest neighbor map frame before refining the pose. Retrieval relies on global descriptors and suffers performance degradation in query areas far from existing trajectories, as these methods implicitly assume the presence of database frames near the query location.
+- **Point cloud registration-based**: e.g., KISS-Matcher, which directly matches local feature points for pose estimation. This approach is computationally expensive, requires storing full point cloud maps, and has limited scalability.
 
-Scene Landmark Detection (SLD) was originally proposed in the visual localization community. Its core idea is to **learn a set of fixed, repeatably detectable scene landmarks, establish observation-to-map correspondences, and solve for pose via PnP/RANSAC**. This paradigm is naturally suited for large-scale localization — the landmark list is compact and queries do not depend on the spatial coverage density of database frames.
+Scene Landmark Detection (SLD) was originally proposed in the vision domain. The core idea is to **learn fixed, repeatedly detectable landmarks in a scene, establish observation-to-map correspondences, and solve for the pose using PnP/RANSAC**. This paradigm is naturally suited for large-scale localization due to its compact landmark lists and lack of dependence on spatial coverage density of database frames.
 
-However, directly transferring SLD to LiDAR BEV images poses challenges: (1) the information density of BEV images differs from that of camera images; (2) detection accuracy and large-map scalability must be addressed simultaneously. BEV-SLD is designed to tackle these issues.
+However, moving the original SLD design from camera images to LiDAR BEV presents challenges: (1) information density differences and (2) the need to balance detection accuracy with large-scale scalability. BEV-SLD is designed to address these issues.
 
 ## Method
 
 ### Overall Architecture
 
-BEV-SLD operates in three stages:
+BEV-SLD reformulates LiDAR global localization as detecting a fixed set of reproducible scene landmarks on a bird's-eye view. It involves three steps: offline joint learning of the landmark set $\Lambda$ and detection network $N(\theta)$; map building by storing only the learned landmarks $\Lambda$ and weights $\theta$ (approx. 20MB total); and online inference where the network predicts heatmaps and correspondence maps from a BEV density map to estimate the 3-DoF $(x, y, \text{azimuth})$ pose via RANSAC. The input BEV density map is a projection of LiDAR point cloud occupancy.
 
-1. **Offline Training**: jointly learns a landmark set $\Lambda$ and detection network $N(\theta)$ on BEV density maps.
-2. **Map Building**: stores the learned landmark list $\Lambda$ and network weights $\theta$ (totaling ~20 MB).
-3. **Online Inference**: BEV density map → network predicts heatmap and correspondence maps → RANSAC estimates $(x, y, \text{azimuth})$.
-
-The input is a BEV density map generated by projecting LiDAR point clouds into a bird's-eye-view occupancy density representation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LiDAR Point Cloud → BEV Density Map"] --> B["Improved FPN Architecture<br/>4.7M Lightweight Multi-scale Backbone"]
+    B --> DEC
+    subgraph DEC["Decoupled Detection and Correspondence"]
+        direction TB
+        C["Heatmap Branch<br/>High-res H×W Pixel-wise Detection"]
+        D["Correspondence Branch<br/>Low-res L×dP×dP Landmark Identity"]
+    end
+    C --> E["Softmax Coordinate Extraction<br/>Patch-based Softmax·Sub-pixel Differentiable"]
+    E --> F["Learnable Landmark Embeddings Λ<br/>End-to-End Learned Structural Points"]
+    D --> F
+    F -->|Training| G["Distance Loss + Correspondence Loss<br/>Self-supervised: Requires only BEVs and Poses"]
+    F -->|Inference| H["RANSAC Solver<br/>(x, y, azimuth) 3-DoF Pose"]
+```
 
 ### Key Designs
 
-**Design 1: Decoupling Detection from Correspondence**
+**1. Decoupled Detection and Correspondence**
 
-This is the core innovation of BEV-SLD. The network produces two branches:
+This is the core innovation of BEV-SLD. If a single branch predicts both location and identity, the resolution and computation conflict as the total number of landmarks $L$ increases. BEV-SLD splits the network: a Heatmap branch predicts "is this a landmark" at high resolution ($H\times W$) for sub-pixel accuracy, while the Correspondence maps branch predicts the identity at lower resolution ($L\times d_P\times d_P$). This ensures heatmap accuracy is independent of $L$, allowing for scalability to large maps.
 
-- **Heatmap branch** (high-resolution $H \times W$): predicts per-pixel landmark likelihood, providing sub-pixel detection accuracy.
-- **Correspondence maps branch** (low-resolution $L \times d_P \times d_P$): for each detected landmark, predicts which entry in the landmark list it corresponds to, where $L$ is the total number of landmarks.
+**2. Softmax Extraction of Landmark Coordinates**
 
-The benefit of this decoupling is that heatmap resolution is not constrained by $L$ (high resolution ensures accuracy), while the correspondence map can operate at lower resolution (saving computation and supporting large $L$).
-
-**Design 2: Softmax-Based Landmark Coordinate Extraction**
-
-Softmax-weighted aggregation over each heatmap patch region extracts global coordinates:
+To enable end-to-end learning, extraction must be differentiable. Global coordinates are extracted using softmax weighting within each heatmap patch:
 
 $$\hat{s}_i = \sum_{p \in \text{patch}_i} \text{softmax}(h_p) \cdot c_p$$
 
-where $h_p$ is the heatmap value and $c_p$ is the world coordinate of pixel $p$. This yields a differentiable, sub-pixel-accurate landmark position estimate.
+where $h_p$ is the heatmap value and $c_p$ represents the pixel's world coordinates. The resulting coordinates are differentiable and achieve sub-pixel precision.
 
-**Design 3: Learnable Landmark Embeddings $\Lambda$**
+**3. Learnable Landmark Embeddings $\Lambda$**
 
-The landmark set $\Lambda$ is not manually specified but is optimized end-to-end as a learnable parameter alongside the network. Each landmark $\Lambda_j$ is a 2D world coordinate. During training, landmarks automatically concentrate at structurally distinctive and repeatably detectable locations (e.g., building corners, trees).
+The landmark set $\Lambda$ is not manually selected but treated as learnable parameters optimized end-to-end. Each $\Lambda_j$ is a 2D world coordinate. During training, landmarks automatically aggregate at stable structural positions (building corners, trees), ensuring reproducibility without manual labels and maintaining robustness even far from training trajectories.
 
-**Design 4: Improved FPN Architecture**
+**4. Improved FPN Architecture**
 
-The network is built upon a Feature Pyramid Network with only 4.7M parameters, making it lightweight and efficient. Multi-scale feature fusion enables simultaneous capture of local structural details and global context.
+Based on a Feature Pyramid Network, the backbone contains only 4.7M parameters. Multi-scale feature fusion captures both local details and global context, enabling edge deployment and a compact 20MB map size.
 
 ### Loss & Training
 
-Training combines two loss terms:
-
-**Distance Loss (detection loss)**:
+The training utilizes a combination of two losses. **Distance Loss** aligns each detected landmark $\hat{s}_i$ to the nearest $\Lambda_j$ in the map:
 
 $$\mathcal{L}_{\text{dist}} = \sum_i \log\left(1 + \gamma \cdot \min_j \|\hat{s}_i - \Lambda_j\|\right)$$
 
-This aligns each detected landmark position $\hat{s}_i$ to the nearest landmark $\Lambda_j$ in the list. The log function suppresses the influence of outliers, and $\gamma$ controls gradient magnitude.
-
-**Correspondence Loss**:
-
-Cross-entropy is applied to the correspondence map output, with the supervision signal being the index of the nearest landmark:
+The log function suppresses outliers. **Correspondence Loss** applies cross-entropy to the correspondence map output, using the index of the nearest landmark as the ground truth:
 
 $$\mathcal{L}_{\text{corr}} = -\sum_i \log P(j^* | \hat{s}_i)$$
 
-where $j^* = \arg\min_j \|\hat{s}_i - \Lambda_j\|$.
-
-Training is fully self-supervised — only BEV images and their associated poses (from SLAM or odometry) are required; no manual landmark annotation is needed.
-
-**Inference**: detect landmarks → query correspondence maps to identify map landmark matches → feed correspondences into RANSAC to estimate 3-DoF pose $(x, y, \text{azimuth})$.
+where $j^* = \arg\min_j \|\hat{s}_i - \Lambda_j\|$. Training is fully self-supervised, requiring only BEV images and poses (from SLAM or odometry).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Success rate comparison across four scenes (percentage of estimates within a pose error threshold):
+Success rate comparison (percentage of successful localization within pose error thresholds) across four scenarios:
 
-| Method | MCD (Campus) | NCLT (Campus) | Wild-Places (Forest) | Factory Floor (Factory) |
-|--------|-------------|--------------|---------------------|------------------------|
+| Method | MCD (Campus) | NCLT (Campus) | Wild-Places (Forest) | Factory Floor |
+|------|-----------|------------|-------------------|---------------------|
 | BEVPlace++ | Low | Medium | Low | Medium |
 | LightLoc | Medium | Medium | Low | Medium |
 | KISS-Matcher | Medium | High | Medium | High |
 | PosePN++ | Low | Medium | Low | Medium |
-| **BEV-SLD** | **Best** | **Best** | **Best** | **Best** |
+| **Ours (BEV-SLD)** | **Best** | **Best** | **Best** | **Best** |
 
-BEV-SLD achieves the highest success rate on all four datasets, with particularly pronounced advantages in non-standard environments such as Wild-Places (forest) and Factory Floor (factory).
+BEV-SLD achieves the highest success rate across all datasets, with significant advantages in non-standard environments like forests and factories.
 
 ### Ablation Study
 
-| Component | Change in Success Rate |
-|-----------|----------------------|
-| Remove decoupling (single branch) | Significant drop |
-| Remove learnable $\Lambda$ (fixed grid) | Noticeable drop |
-| Reduce landmark count $L$ | Small impact on small maps; large impact on large maps |
-| Remove log distance loss (use L2) | Sensitive to outliers; slight drop |
+| Component | Success Rate Change |
+|------|-----------------|
+| W/O Decoupled Design (Single Branch) | Significant Decrease |
+| W/O Learnable Λ (Fixed Grid) | Notable Decrease |
+| Reducing Landmark Count L | Minor for small maps, major for large maps |
+| Replacing Log-Distance with L2 | Sensitive to outliers, slight decrease |
 
 ### Key Findings
 
-1. **Greatest gains for off-trajectory queries**: when query locations are far from training trajectories, retrieval-based methods collapse, whereas BEV-SLD maintains stable performance by relying on distributed landmarks — this is its primary advantage.
-2. **Extremely compact representation**: the entire map requires only 20 MB (network weights + landmark list), far smaller than methods that store full point cloud maps.
-3. **Cross-scene generalization**: the method works effectively across structured campuses, dense forests, and factory environments.
-4. **A 4.7M-parameter lightweight network** suffices to achieve state-of-the-art results, making it suitable for edge deployment.
+1. **Performance Gains in Off-Trajectory Queries**: Retrieval methods fail when query positions are far from training tracks, whereas BEV-SLD remains stable due to distributed landmarks.
+2. **Extreme Efficiency**: Map representation requires only 20MB, far smaller than point cloud maps.
+3. **Generalization**: Effective across campus, forest, and factory environments.
 
 ## Highlights & Insights
 
-- **Paradigm innovation**: transferring SLD from visual localization (6-DoF) to LiDAR BEV localization (3-DoF) is an elegant dimensionality reduction — BEV naturally eliminates height, pitch, and roll degrees of freedom.
-- **Elegant decoupling design**: high-resolution heatmaps ensure detection accuracy; low-resolution correspondence maps ensure scalability — the two are mutually independent.
-- **Self-supervised training**: no landmark annotation is required; only pose information is needed, substantially lowering the deployment barrier.
-- **20 MB map representation**: compared to point cloud maps (several GB), the compression ratio is remarkable, making the approach well-suited for resource-constrained robotic platforms.
+- **Paradigm Shift**: Effectively migrates SLD from 6-DoF visual localization to 3-DoF LiDAR BEV, a clever dimensionality reduction.
+- **Elegant Decoupling**: High-res heatmaps ensure precision while low-res correspondence maps ensure scalability.
+- **Self-Supervised**: Zero manual labeling required, lowering deployment barriers.
+- **Compactness**: The 20MB map size is ideal for resource-constrained robotic platforms.
 
 ## Limitations & Future Work
 
-1. **Only 3-DoF pose estimation $(x, y, \text{azimuth})$**: the method cannot handle multi-floor environments or scenarios requiring altitude information.
-2. **Dependence on BEV projection quality**: LiDAR occlusions and sparse regions degrade BEV density map quality, which in turn affects landmark detection.
-3. **Landmark count $L$ must be pre-specified**: different scene scales may require tuning; no adaptive mechanism is available.
-4. **Dynamic environments not explored**: the impact of long-term scene changes (seasonal variation, construction) on landmark stability has not been thoroughly studied.
-5. **Scalability to city-scale?**: current datasets are relatively small (campus/factory); scalability to city-scale ($\text{km}^2$) areas remains to be validated.
+1. **3-DoF Only**: Cannot handle scenarios requiring height information (e.g., multi-story car parks).
+2. **BEV Quality Dependency**: Occlusions and sparse point clouds affect density projections.
+3. **Fixed $L$**: The number of landmarks requires manual tuning; adaptive mechanisms are lacking.
+4. **Dynamic Environments**: Long-term stability under seasonal or structural changes is not fully explored.
 
 ## Related Work & Insights
 
-- **SLD (original)**: Panek et al., visual scene landmark detection → inspired the adoption of the landmark concept for LiDAR localization.
-- **BEVPlace++**: BEV-based place recognition → BEV-SLD demonstrates that the landmark paradigm outperforms the retrieval paradigm.
-- **KISS-Matcher**: point cloud registration → achieves comparable accuracy but requires significantly larger map storage.
-- **Insight**: the decoupling design is generalizable to other joint detection-recognition tasks, such as decoupling localization accuracy from class count in object detection.
+- **SLD (Original)**: Panek et al. inspired the introduction of the landmark concept to LiDAR.
+- **BEVPlace++**: Demonstrates that the landmark paradigm outperforms the retrieval paradigm in sparse data.
+- **KISS-Matcher**: Shows comparable accuracy but at the cost of significantly larger map storage.
 
 ## Rating
 
-| Dimension | Score (1–5) | Notes |
-|-----------|------------|-------|
-| Novelty | 4.5 | Transferring SLD to LiDAR BEV is a novel paradigm shift; the decoupling design is elegant. |
-| Practicality | 4.5 | 20 MB map, 4.7M parameters — highly deployment-friendly. |
-| Experimental Thoroughness | 4.0 | Four datasets covering diverse scenes, though scale is relatively small. |
-| Writing Quality | 4.0 | Clear structure with complete mathematical derivations. |
-| **Overall** | **4.3** | The method is concise and elegant, highly practical, with an excellent balance between localization accuracy and efficiency. |
+| Dimension | Score (1-5) | Explanation |
+|------|-----------|------|
+| Novelty | 4.5 | Elegant transition of SLD to BEV with decoupled design. |
+| Practicality | 4.5 | 20MB map and 4.7M parameters are highly deployment-friendly. |
+| Experimental Thoroughness | 4.0 | Covers diverse scenarios, though dataset scale is moderate. |
+| Writing Quality | 4.0 | Clear structure and complete derivations. |
+| **Overall** | **4.3** | Simple, elegant, and highly practical balance of precision and efficiency. |
 
 ## Comparison with Related Work
 
-| Method | Paradigm | Map Size | Annotation Required | Robustness off Trajectory | 3-DoF Accuracy |
-|--------|----------|---------|--------------------|-----------------------------|----------------|
-| BEVPlace++ | Retrieval + Refinement | Medium (descriptor DB) | ✗ | Poor | Medium |
-| KISS-Matcher | Point Cloud Registration | Large (point cloud map) | ✗ | Medium | High |
-| LightLoc | Pose Regression | Small (network weights) | ✗ | Medium | Medium |
-| PosePN++ | Pose Regression | Small (network weights) | ✗ | Poor | Low |
-| **BEV-SLD** | **Landmark Detection** | **Minimal (20 MB)** | **✗ (self-supervised)** | **Strong** | **Highest** |
-
-The core advantages of BEV-SLD are: (1) an extremely compact map requiring only a landmark coordinate list and a lightweight network; (2) query performance that is not constrained by training trajectories, since landmarks are intrinsic scene structures rather than byproducts of database frames; (3) self-supervised training requiring no manual annotation.
-
-## Inspirations & Connections
-
-1. **Multi-modal landmark fusion**: the current approach uses only LiDAR BEV; extending to joint LiDAR+Camera landmark detection could leverage visual texture to improve landmark discriminability.
-2. **Hierarchical landmarks**: for city-scale scenes, a coarse-to-fine two-level landmark design could be adopted — coarse landmarks for region-level localization and fine landmarks for precise pose estimation, analogous to hierarchical localization.
-3. **Dynamic landmark update**: introducing an incremental learning mechanism to continuously update the landmark list during deployment would enable adaptation to scene changes (seasonal variation, construction).
-4. **Integration with SLAM back-end**: BEV-SLD provides a global localization initialization, which, combined with LiDAR odometry in a back-end optimization framework, could yield more robust long-term localization.
-5. **3-DoF → 6-DoF extension**: extending BEV to multi-layer slices or voxel representations would enable handling of multi-floor buildings and structured parking environments requiring altitude information.
+| Method | Paradigm | Map Size | Labels Needed | Off-traj Robustness | 3-DoF Accuracy |
+|------|------|---------|-----------|-------------|----------|
+| BEVPlace++ | Retrieval + Refinement | Medium | ✗ | Poor | Medium |
+| KISS-Matcher | Point Cloud Registration | Large | ✗ | Medium | High |
+| LightLoc | Pose Regression | Small | ✗ | Medium | Medium |
+| **Ours (BEV-SLD)** | **Landmark Detection** | **Tiny (20MB)** | **✗ (Self-sup)** | **Strong** | **Highest** |
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
+- [\[CVPR 2026\] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization](bev-car_enhancing_monocular_birds_eye_view_segmentation_with_context-aware_raste.md)
+- [\[CVPR 2026\] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection](spe-bevhead_rethinking_the_detection_head_design_for_birds-eye-view_object_detec.md)
 - [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
-- [\[CVPR 2026\] LEADER: Learning Reliable Local-to-Global Correspondences for LiDAR Relocalization](leader_lidar_relocalization.md)
-- [\[CVPR 2026\] Ghost-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Ghost Detection and Removal](ghost-fwl_a_large-scale_full-waveform_lidar_dataset_for_ghost_detection_and_remo.md)
-- [\[CVPR 2026\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
+- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
+- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
 
 </div>
 

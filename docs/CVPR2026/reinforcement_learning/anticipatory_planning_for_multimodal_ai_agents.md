@@ -2,161 +2,169 @@
 title: >-
   [Paper Note] Anticipatory Planning for Multimodal AI Agents
 description: >-
-  [CVPR 2026][Reinforcement Learning][Multimodal agents] This paper proposes TraceR1, a two-stage RL framework in which the first stage employs trajectory-level reward optimization to train agents to perform multi-step loo…
+  [CVPR 2026][Reinforcement Learning][GRPO] TraceR1 is proposed as a two-stage RL framework: Stage 1 utilizes trajectory-level reward optimization to enable agents to perform anticipatory planning by "looking several steps ahead," and Stage 2 employs grounded fine-tuning based on tool execution feedback to enhance single-step precision, achieving open-source SOT
 tags:
-  - "CVPR 2026"
-  - "Reinforcement Learning"
-  - "Multimodal agents"
-  - "anticipatory planning"
-  - "trajectory-level reinforcement learning"
-  - "GUI interaction"
-  - "tool use"
-  - "GRPO"
+  - CVPR 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: c4e945121ce1a9f2
+content_hash: 9d42cd149ba4e6d9
 ---
-
 # Anticipatory Planning for Multimodal AI Agents
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.16777](https://arxiv.org/abs/2603.16777)  
-**Code**: Not released  
-**Area**: Reinforcement Learning
-**Keywords**: Multimodal agents, anticipatory planning, trajectory-level reinforcement learning, GUI interaction, tool use, GRPO
+**Code**: Not open-sourced  
+**Area**: Reinforcement Learning  
+**Keywords**: Multimodal Agents, Anticipatory Planning, Trajectory-level Reinforcement Learning, GUI Interaction, Tool Use, GRPO
 
 ## TL;DR
 
-This paper proposes TraceR1, a two-stage RL framework in which the first stage employs trajectory-level reward optimization to train agents to perform multi-step look-ahead planning, while the second stage applies grounded fine-tuning via tool execution feedback to improve single-step precision. The approach achieves open-source state-of-the-art results across 7 GUI and tool-use benchmarks.
+TraceR1 is proposed as a two-stage RL framework: Stage 1 utilizes trajectory-level reward optimization to enable agents to perform anticipatory planning by "looking several steps ahead," and Stage 2 employs grounded fine-tuning based on tool execution feedback to enhance single-step precision, achieving open-source SOTA across 7 GUI and tool-use benchmarks.
 
 ## Background & Motivation
 
-**Background**: Multimodal agents have made significant progress in GUI interaction and tool invocation, yet the vast majority of existing systems remain fundamentally **reactive** — selecting the next action based solely on the current observation without considering long-term consequences.
+**Background**: Current multimodal agents have achieved significant progress in GUI interaction and tool invocation, but most systems remain essentially **reactive**—making next-step decisions based solely on current observations without considering long-term consequences.
 
-**Limitations of Prior Work**: In multi-step tasks, the effects of actions are often delayed and cumulative. Reactive agents cannot anticipate downstream consequences, leading to progressive goal deviation and poor planning coherence in long-horizon tasks.
+**Limitations of Prior Work**: In multi-step tasks, the impact of actions is often delayed and cumulative. Reactive agents fail to anticipate consequences, leading to gradual deviation from goals and poor planning coherence in long-horizon tasks.
 
-**Key Challenge**: Both mainstream technical approaches face fundamental obstacles — model-free RL relies on sparse terminal rewards and struggles to capture long-range dependencies, while model-based planning requires constructing a world model, which is exceedingly difficult in visually rich interactive environments.
+**Key Challenge**: Existing technical routes face fundamental obstacles—Model-free RL relies on sparse final rewards, making it difficult to learn long-term dependencies; Model-based planning requires constructing world models, which is extremely challenging in visually rich interaction environments.
 
-**Goal**: To efficiently train multimodal agents capable of adaptive anticipatory reasoning, enabling consistent planning in complex long-horizon tasks.
+**Goal**: Efficiently train multimodal agents to possess adaptive anticipatory reasoning capabilities, maintaining planning consistency in complex long-horizon tasks.
 
-**Key Insight**: Rather than building an explicit world model, the paper directly applies RL at the trajectory level, training the model to predict a sequence of future actions while executing only the first step — analogous to the human strategy of "thinking several steps ahead, acting one step at a time."
+**Key Insight**: Instead of building an explicit world model, RL is performed directly at the trajectory level, teaching the model to predict a sequence of future actions and then executing only the first step, resembling the human planning style of "thinking several steps ahead while taking one step."
 
-**Core Idea**: A two-stage training procedure — trajectory-level alignment for global consistency followed by grounded RL for single-step executability — unifies anticipatory planning and precise execution.
+**Core Idea**: Unify anticipatory planning and precise execution through two-stage training—first performing trajectory-level alignment for global consistency, then grounded RL for single-step executability.
 
 ## Method
 
 ### Overall Architecture
 
-TraceR1 adopts a plan-act loop: given the current observation, the model predicts a multi-step future trajectory $\hat{\tau}_{t:T}$ but executes only the first action, then replans upon receiving environmental feedback. Training proceeds in two stages:
+TraceR1 addresses a specific flaw: current multimodal agents are mostly reactive "look-and-act" players that deviate during multi-step tasks. Rather than building an explicit world model, it requires the model to "think ahead" at each step—predicting an action trajectory $\hat{\tau}_{t:T}$ for multiple future steps given current observations, but actually executing only the first step and re-predicting after receiving environment feedback. Training proceeds in two stages: Stage 1 (Anticipatory Trajectory Optimization) teaches long-term coherence through trajectory-level RL, and Stage 2 (Grounded Reinforcement Fine-tuning) utilizes feedback from a frozen tool proxy's execution to refine single-step accuracy. The backbone is Qwen3-VL-8B-Thinking, and the training framework uses EasyR1.
 
-- **Stage 1 (Anticipatory Trajectory Optimization)**: Trajectory-level RL with a global alignment reward encouraging coherent multi-step planning.
-- **Stage 2 (Grounded Reinforcement Fine-tuning)**: Step-level RL using execution feedback from a frozen tool agent to improve single-step precision.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: User Instruction + Current Observation<br/>+ K-step Interaction History"]
+    IN --> PRED["Predict future T-step action trajectory<br/>(Action type + grounding instruction per step)"]
+    subgraph S1["Stage 1: Anticipatory Trajectory Optimization (Learning to look ahead)"]
+        direction TB
+        D1["Trajectory-level Alignment Reward<br/>Global alignment between predicted and reference trajectories"]
+        D2["Repetition Penalty + Time Discounting<br/>Prevents reward hacking and stabilizes near-term steps"]
+        D1 --> D2
+    end
+    PRED --> S1
+    S1 -->|GRPO Group Relative Advantage| MID["Policy π_θ: Globally Coherent Multi-step Planning"]
+    MID --> D3["Grounded RL Fine-tuning (Learning execution precision)<br/>Frozen tool proxy executes 1st step → Coordinate/Answer match reward"]
+    D3 -->|GRPO| TRAINED["Trained Planning Model"]
+    TRAINED --> D4["Inference: Plan-Act Cycle<br/>Re-predict full trajectory per step, execute 1st step, rolling correction"]
+```
 
-The backbone model is Qwen3-VL-8B-Thinking, trained with the EasyR1 framework.
+### Key Designs
 
-### Key Design 1: Trajectory-Level Alignment Reward
+**1. Trajectory-level Alignment Reward: Planning future steps instead of optimizing per token**
 
-- **Function**: Given the user instruction, current observation, and interaction history, the model predicts an action sequence over $T$ future steps, which is aligned against a reference trajectory.
-- **Mechanism**: A discounted trajectory reward is defined as $R(\hat{\tau}, \tau^*) = \sum_{t=1}^{T} \gamma^{t-1} r_t$, where $r_t = \lambda_{\text{align}} \cdot \text{sim}(\hat{a}_t, a_t^*) - \lambda_{\text{rep}} \cdot \text{rep}(\hat{a}_{1:t})$. The term $\text{sim}$ measures action alignment and $\text{rep}$ penalizes repetitive or cyclic actions.
-- **Design Motivation**: SFT under teacher forcing optimizes token-by-token and neglects global coherence. Trajectory-level RL enables the model to learn cross-step dependencies and avoid redundant or unstable rollouts.
+The fundamental issue with reactive agents is they only account for current observations, while SFT teacher forcing optimizes per token, naturally ignoring global consistency across steps. TraceR1 gives rewards at the trajectory level: given instruction $u$, current observation $s_t$, and interaction history, the model outputs a sequence of future $T$ actions, which is aligned with a reference trajectory $\tau^*$ using a discounted trajectory reward.
 
-### Key Design 2: Repetition Penalty and Temporal Discount
+$$R(\hat{\tau}, \tau^*) = \sum_{t=1}^{T} \gamma^{t-1} r_t, \quad r_t = \lambda_{\text{align}} \cdot \text{sim}(\hat{a}_t, a_t^*) - \lambda_{\text{rep}} \cdot \text{rep}(\hat{a}_{1:t})$$
 
-- **Function**: $\lambda_{\text{rep}}$ penalizes repeated actions within a trajectory; $\gamma$ serves as a temporal discount factor that biases the model toward near-term correctness.
-- **Mechanism**: These components jointly prevent reward hacking — without repetition penalty, the planner may click the same UI element or invoke the same tool repeatedly to inflate rewards; $\gamma < 1$ prevents overfitting to highly uncertain long-range predictions.
-- **Design Motivation**: Ablation studies confirm that removing either component leads to significant performance degradation (see Ablation Study section).
+where $\text{sim}$ measures the alignment between predicted and reference actions, and $\text{rep}$ penalizes inner-trajectory repetitions. Since the reward is calculated for the entire trajectory, the model is forced to learn cross-step dependencies rather than just ensuring the immediate step looks correct—this is key to avoiding redundant and unstable rollouts.
 
-### Key Design 3: Grounded RL Fine-tuning
+**2. Repetition Penalty and Time Discounting: Preventing reward hacking and long-term gambling**
 
-- **Function**: The model outputs $(\hat{a}_t, \hat{g}_t)$, which are passed to a frozen tool agent (e.g., UI-TARS-7B) for execution; the execution result is compared against the ground truth to derive a step-level reward.
-- **Mechanism**: For GUI tasks, a coordinate matching reward is used; for tool-use tasks, an answer matching reward is applied: $r_t^G = \mathbb{1}[\text{coord match}]$ or $\mathbb{1}[\text{answer match}]$.
-- **Design Motivation**: The trajectory reward in Stage 1 is abstract and provides no signal regarding whether predicted actions are actually executable. Stage 2 supplies concrete execution outcomes as corrective signals, compensating for the "idealized planning" problem.
+Once trajectory-level rewards are introduced, the model easily finds shortcuts. Without the repetition penalty $\lambda_{\text{rep}}$, the planner might repeatedly click the same element or call the same tool to inflate "alignment" rewards; without time discounting $\gamma < 1$, the model might gamble on highly uncertain distant predictions, compromising near-term accuracy. These two parameters ensure the model avoids "looping" and prioritizes stabilizing immediate steps, which are essential for effective planning. Ablations show significant performance drops when either is removed.
 
-### Key Design 4: Plan-Act Loop at Inference
+**3. Grounded RL Fine-tuning: Providing hard feedback for abstract planning**
 
-- **Function**: At inference time, the model predicts a multi-step trajectory but executes only the first action, then replans upon observing the updated state.
-- **Mechanism**: This is analogous to Model Predictive Control (MPC): rolling prediction, single-step execution, and continuous correction.
-- **Design Motivation**: Multi-step prediction provides anticipatory context, yet since the environment changes continuously, executing one step and replanning balances look-ahead capability with robustness.
+Stage 1 trajectory rewards are essentially abstract—they tell the model "how much your plan looks like the reference" but cannot guarantee the predicted actions are executable or accurate on a real interface. Stage 2 fills this gap: the model outputs actions and grounding coordinates $(\hat{a}_t, \hat{g}_t)$, which are executed by a frozen tool proxy (e.g., UI-TARS-7B). Rewards are then calculated based on the execution result relative to the ground truth—coordinate matching for GUI tasks and answer matching for tool-use tasks.
 
-## Loss & Training
+$$r_t^G = \mathbb{1}[\text{coord match}] \quad \text{or} \quad \mathbb{1}[\text{answer match}]$$
 
-Both stages employ **GRPO (Group-Relative Policy Optimization)** as the optimization objective:
+With this grounded signal, the model avoids staying in an "ideal but unexecutable" state, bridging the gap between foresight and executability.
 
-- Stage 1: $\nabla_\theta J(\theta) = \mathbb{E}_{\hat{\tau}}[\hat{A}(\hat{\tau}, \tau^*) \nabla_\theta \log \pi_\theta(\hat{\tau} | u, s_t, \tau_{1:t-1})]$, where $\hat{A}$ is the normalized group-relative advantage derived from trajectory rewards.
-- Stage 2: The trajectory reward is replaced by the grounded step reward $r_t^G$; GRPO updates are applied identically.
+**4. Inference-time Plan-Act Cycle: Balancing foresight and robustness via MPC**
 
-Training data for GUI tasks includes trajectory datasets from AgentNet, AndroidControl, GUI-Odyssey, Multimodal-Mind2Web, and AgentTrek; tool-use tasks use trajectory data from T3-Agent together with an executable toolbox.
+Multi-step prediction provides foresight, but interactive environments change constantly. Executing several steps at once is risky. TraceR1 adopts a Model Predictive Control (MPC) approach during inference: the model re-predicts the entire future trajectory at every step but only executes the first action. This preserves the global perspective of "thinking ahead" while allowing for "rolling corrections" based on real feedback.
+
+### Loss & Training
+
+Both stages utilize GRPO (Group-Relative Policy Optimization) as the optimization target, differing only in the reward signal source. The gradient in Stage 1 is based on the trajectory reward's group relative advantage:
+
+$$\nabla_\theta J(\theta) = \mathbb{E}_{\hat{\tau}}\big[\hat{A}(\hat{\tau}, \tau^*)\, \nabla_\theta \log \pi_\theta(\hat{\tau} \mid u, s_t, \tau_{1:t-1})\big]$$
+
+where $\hat{A}$ is the normalized group relative advantage based on trajectory rewards. Stage 2 replaces the trajectory reward with the grounded step reward $r_t^G$. Training data for GUI tasks includes AgentNet, AndroidControl, GUI-Odyssey, Multimodal-Mind2Web, and AgentTrek, while tool-use tasks use T3-Agent trajectories.
 
 ## Key Experimental Results
 
 ### Main Results: Online GUI Benchmarks (Table 1 — Success Rate %)
 
-| Model | Params | AndroidWorld | OSWorld-Verified |
-|-------|--------|:---:|:---:|
-| OpenAI CUA-o3 | — | 52.5 | 38.1 |
-| UI-TARS-2 | — | 73.3 | 53.1 |
-| Claude 4.5 Sonnet | — | — | 62.9 |
-| Agent S2.5 w/ o3 | 7B w/ — | — | 56.0 |
+| Model | Parameters | AndroidWorld | OSWorld-Verified |
+|------|--------|:---:|:---:|
+| OpenAI CUA-o3 | - | 52.5 | 38.1 |
+| UI-TARS-2 | - | 73.3 | 53.1 |
+| Claude 4.5 Sonnet | - | - | 62.9 |
+| Agent S2.5 w/ o3 | 7B w/ - | - | 56.0 |
 | Qwen3-VL-32B-Thinking | 32B | 61.4 | 35.6 |
 | **TraceR1 (Qwen3-VL-32B w/ Ours)** | **32B w/ 8B** | **64.8** | **41.2** |
 
-**Key Takeaway**: TraceR1 improves the OSWorld success rate of Qwen3-VL-32B-Thinking from 35.6% to 41.2% (relative gain of 15.7%) and AndroidWorld from 61.4% to 64.8%, establishing open-source state-of-the-art performance.
+**Key Finding**: TraceR1 improves Qwen3-VL-32B-Thinking's success rate from 35.6% to 41.2% in OSWorld (a 15.7% relative improvement) and from 61.4% to 64.8% in AndroidWorld, setting an open-source SOTA.
 
-### Tool-Use Benchmarks (Table 3 — GAIA & GTA)
+### Tool Use Benchmarks (Table 3 — GAIA & GTA)
 
-| Model | Params | GAIA AnsAcc | GTA AnsAcc | GTA ToolAcc | GTA CodeExec |
-|-------|--------|:---:|:---:|:---:|:---:|
-| GPT-4o | — | 33.4 | 57.1 | 63.4 | 95.1 |
-| GPT-5 | — | 59.3 | 60.9 | 68.3 | 98.7 |
+| Model | Parameters | GAIA AnsAcc | GTA AnsAcc | GTA ToolAcc | GTA CodeExec |
+|------|--------|:---:|:---:|:---:|:---:|
+| GPT-4o | - | 33.4 | 57.1 | 63.4 | 95.1 |
+| GPT-5 | - | 59.3 | 60.9 | 68.3 | 98.7 |
 | Qwen3-VL-8B | 8B | 31.5 | 49.2 | 56.8 | 74.2 |
 | T3-Agent | 7B | 16.9 | 53.8 | 64.6 | 84.3 |
 | **TraceR1** | **8B** | **40.2** | **56.7** | **65.7** | **87.4** |
 
-**Key Takeaway**: At the 8B scale, TraceR1 surpasses GPT-4o on GAIA (40.2 vs. 33.4) and outperforms Qwen3-VL-8B of the same scale by +8.7 AnsAcc.
+**Key Finding**: The 8B model surpasses GPT-4o on GAIA (40.2 vs 33.4) and achieves a +8.7 AnsAcc gain over the base Qwen3-VL-8B.
 
 ### Ablation Study
 
-| Configuration | AndroidWorld | OSWorld-Verified | GTA |
-|---------------|:---:|:---:|:---:|
+| Setting | AndroidWorld | OSWorld-Verified | GTA |
+|------|:---:|:---:|:---:|
 | Full TraceR1 (w/ Stage 2) | 64.8 | 41.2 | 56.7 |
 | w/o Stage 2 | 57.2 | 36.3 | 50.2 |
 
-Removing Stage 2 causes an average drop of approximately 6%, demonstrating that grounded execution feedback is critical for planning stability.
+Removing Stage 2 results in an average decline of approximately 6%, demonstrating that grounded execution feedback is critical for planning stability.
 
-Additional ablation findings:
-- **Prediction horizon $T$**: Performance peaks at $T \approx 10$; larger values cause accumulated uncertainty and performance degradation.
-- **$\lambda_{\text{rep}} = 0$**: Removing the repetition penalty induces reward hacking (e.g., repeatedly clicking the same element).
-- **$\gamma = 1$**: Removing the temporal discount causes the model to overfit to highly uncertain long-range predictions.
+**Other findings**:
+- **Prediction length $T$**: Performance peaks at $T \approx 10$; excessive lengths accumulate uncertainty.
+- **$\lambda_{\text{rep}} = 0$**: Reward hacking occurs (repeated clicks) without the repetition penalty.
+- **$\gamma = 1$**: The model overfits to uncertain distant predictions without time discounting.
 
 ## Highlights & Insights
 
-1. **The "think several steps, act one step" paradigm is elegant and concise**: No explicit world model is required; trajectory-level RL directly instills anticipatory reasoning, making the approach far more tractable than model-based planning.
-2. **The two-stage decoupled design is well-motivated**: Stage 1 addresses "seeing far ahead" (global consistency), while Stage 2 addresses "acting accurately" (execution feasibility), with a clear division of responsibilities.
-3. **Strong generality**: The same framework applies to both GUI interaction (desktop and mobile) and general tool invocation, with comprehensive validation across 7 benchmarks.
-4. **Open-source 8B model surpasses GPT-4o**: TraceR1 at 8B outperforms GPT-4o on GAIA, offering exceptional cost-effectiveness.
-5. **Thorough ablations on repetition penalty and temporal discount**: The experiments clearly expose the reward hacking problem and its resolution.
+1.  **"Think ahead, act once" is elegant**: It enables anticipatory reasoning via trajectory-level RL without requiring explicit world models, making it engineering-friendly.
+2.  **Rational decoupled design**: Stage 1 focuses on "looking far" (global consistency), while Stage 2 focuses on "executing accurately" (feasibility).
+3.  **High Versatility**: The same framework applies to GUI interaction (desktop/mobile) and general tool use, validated across 7 benchmarks.
+4.  **Open-source 8B outperforms GPT-4o**: Achieves exceptional cost-performance efficiency on GAIA.
+5.  **Critical Ablations**: Clearly demonstrates the reward hacking problem and the effectiveness of the proposed solutions (repetition penalty and time discounting).
 
 ## Limitations & Future Work
 
-1. **Limitations of short-horizon updates**: The current method provides only local corrections and cannot reshape the agent's understanding of long-term feasibility and task structure. Future work may explore multi-round or hierarchical planning mechanisms.
-2. **Stage 2 depends on a frozen tool agent**: The quality of the tool agent directly affects the reliability of grounded rewards; errors in the tool agent introduce noise into the corrective signal.
-3. **Offline training vs. online interaction**: The current grounded setup is offline and does not involve real online environment interaction, potentially limiting adaptability to dynamic environment changes.
-4. **Sensitivity to prediction horizon**: Performance degrades when $T > 10$, indicating that the method still has bottlenecks on very long-horizon tasks.
-5. **Absence of memory and state update mechanisms**: The current framework lacks cross-episode memory integration and cannot learn from historical failures.
+1.  **Limited short-term updates**: The current method provides local corrections but may not fully reshape the agent's understanding of long-term feasibility. Hierarchical planning could be explored.
+2.  **Dependence on frozen tool proxies**: The quality of the tool proxy directly impacts the reliability of the grounded reward; errors in the proxy introduce noise.
+3.  **Offline vs. Online**: The current grounded setup is offline, lacking true online interaction, which may limit adaptability to dynamic environments.
+4.  **Horizon Sensitivity**: Performance drops when $T > 10$, indicating a bottleneck for ultra-long-horizon tasks.
+5.  **Lack of Memory/State**: The framework lacks cross-episode memory integration and cannot learn from historical failures.
 
 ## Related Work & Insights
 
-| Compared Method | Key Differences |
-|-----------------|-----------------|
-| **GUI-R1 / InfiGUI-R1** | Both adopt R1-style RL training but apply only step-level rewards, lacking trajectory-level global optimization. TraceR1 surpasses them by over 40% on AndroidControl-High, validating the necessity of trajectory-level reasoning. |
-| **Agent S2 / GTA1** | Rely on closed-source models (o3/GPT-5) as planners with open-source small models for execution. TraceR1 does not depend on closed-source planners and instead directly trains the intrinsic planning capabilities of open-source models, yielding greater autonomy. |
-| **UI-TARS-1.5/2** | Commercial closed-source systems with strong performance but no reproducibility. TraceR1 with an 8B open-source model paired with a 32B executor approaches the performance level of UI-TARS-1.5. |
+| Comparison Method | Difference |
+|---------|--------|
+| **GUI-R1 / InfiGUI-R1** | Also use R1-style RL but focus on step-level rewards. TraceR1's trajectory-level optimization leads to a 40%+ gain on AndroidControl-High. |
+| **Agent S2 / GTA1** | Rely on closed-source models (o3/GPT-5) as planners. TraceR1 trains the intrinsic planning capability of open-source models. |
+| **UI-TARS-1.5/2** | Commercial closed-source systems. TraceR1 approaches their level using an 8B open model and a 32B executor. |
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The two-stage design combining trajectory-level RL and grounded fine-tuning represents a meaningful advance over existing R1-style methods; the MPC-inspired "predict multiple steps, execute one" strategy is relatively novel in the context of multimodal agent training.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Seven benchmarks spanning online/offline GUI and tool-use settings; comprehensive ablations covering Stage 2, prediction horizon, repetition penalty, and temporal discount; results reported as the mean of three independent runs.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-articulated motivation, rigorous mathematical notation, and rich figures and tables; related work is thoroughly categorized.
-- **Value**: ⭐⭐⭐⭐ — Provides a general and practical training paradigm for anticipatory planning in multimodal agents; the result of an 8B model surpassing GPT-4o carries strong practical significance.
+- **Novelty**: ⭐⭐⭐⭐ — The two-stage design with trajectory-level RL and grounded fine-tuning is a significant advancement for R1-style methods.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 7 benchmarks across GUI and tool use with comprehensive ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-articulated motivation, and standardized formalisms.
+- **Value**: ⭐⭐⭐⭐ — Provides a practical paradigm for training anticipatory planning in multimodal agents.
 
 <!-- RELATED:START -->
 
@@ -166,9 +174,9 @@ Additional ablation findings:
 
 - [\[ACL 2026\] Controlling Multimodal Conversational Agents with Coverage-Enhanced Latent Actions](../../ACL2026/reinforcement_learning/controlling_multimodal_conversational_agents_with_coverage-enhanced_latent_actio.md)
 - [\[NeurIPS 2025\] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents](../../NeurIPS2025/reinforcement_learning/deep_rl_needs_deep_behavior_analysis_exploring_implicit_planning_by_model-free_a.md)
-- [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
+- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] Adversarial Agents: Black-Box Evasion Attacks with Reinforcement Learning](adversarial_agents_black-box_evasion_attacks_with_reinforcement_learning.md)
+- [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](../../ICML2026/reinforcement_learning/laplacian_representations_for_decision-time_planning.md)
 
 </div>
 

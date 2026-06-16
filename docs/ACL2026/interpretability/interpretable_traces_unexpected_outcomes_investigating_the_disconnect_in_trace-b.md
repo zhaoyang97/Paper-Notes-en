@@ -2,75 +2,92 @@
 title: >-
   [Paper Note] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 description: >-
-  [ACL 2026][Interpretability][CoT reasoning chains] This paper reveals that the semantic correctness of Chain-of-Thought (CoT) reasoning traces is unreliably correlated with final answer accuracy (correct traces lead to c…
+  [ACL 2026][Interpretability][Knowledge Distillation] By constructing a verifiable intermediate reasoning chain dataset using a rule-based problem decomposition method, this work reveals that the semantic correctness of CoT reasoning chains is unreliably correlated with final answer accuracy (correct chains lead to correct answers only 28% of the time). Furthermore, the m
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "CoT reasoning chains"
-  - "Knowledge Distillation"
-  - "Semantic Correctness"
-  - "Faithfulness of reasoning chains"
+  - ACL 2026
+  - Interpretability
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 89a87d90133c6ec3
+content_hash: 259833a5a10c2c82
 ---
-
 # Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.13792](https://arxiv.org/abs/2505.13792)  
 **Code**: Yes (GitHub)  
-**Area**: Interpretability / Knowledge Distillation  
-**Keywords**: CoT reasoning chains, Knowledge Distillation, Semantic Correctness, Interpretability, Faithfulness of reasoning chains
+**Area**: Explainability / Knowledge Distillation  
+**Keywords**: CoT reasoning chains, knowledge distillation, semantic correctness, explainability, reasoning chain faithfulness
 
 ## TL;DR
-This paper reveals that the semantic correctness of Chain-of-Thought (CoT) reasoning traces is unreliably correlated with final answer accuracy (correct traces lead to correct answers only 28% of the time) through verifiable intermediate reasoning trace datasets constructed via rule-based problem decomposition. Furthermore, the most interpretable reasoning traces are not the ones that most improve performance—verbose R1 traces yield the best performance but are rated as the least interpretable by users.
+By constructing a verifiable intermediate reasoning chain dataset using a rule-based problem decomposition method, this work reveals that the semantic correctness of CoT reasoning chains is unreliably correlated with final answer accuracy (correct chains lead to correct answers only 28% of the time). Furthermore, the most interpretable reasoning chains are not the most performance-enhancing—lengthy R1 chains perform best but are rated as the least interpretable by users.
 
 ## Background & Motivation
 
-**Background**: Reasoning-intensive LLMs (e.g., DeepSeek R1) enhance performance by generating CoT reasoning traces. These traces are used not only to guide the model during inference but also as supervision signals in Knowledge Distillation (KD) to improve smaller models.
+**Background**: Reasoning LLMs (e.g., DeepSeek R1) enhance performance by generating Chain-of-Thought (CoT) reasoning chains. These traces serve as inference-time guidance and are also used as supervision signals for knowledge distillation (KD) to improve smaller models.
 
-**Limitations of Prior Work**: A common but untested implicit assumption is that CoT reasoning traces are both semantically correct during reasoning and interpretable to end-users. However, the SFT training objective does not mandate that reasoning traces be semantically correct or interpretable, only that the final answer is correct. The verbose and unstructured nature of reasoning traces makes verifying their effectiveness and interpretability extremely difficult.
+**Limitations of Prior Work**: A common but untested implicit assumption is that CoT reasoning chains are both semantically correct at inference time and interpretable to end users. However, SFT training objectives do not require reasoning chains to be semantically correct or interpretable, only that the final answer be correct. The lengthy and unstructured nature of reasoning chains makes verifying their effectiveness and explainability extremely difficult.
 
-**Key Challenge**: Reasoning traces are simultaneously assigned two roles: (1) acting as training/inference signals for LLMs to improve performance, and (2) serving as interpretability tools to explain the reasoning process to users. These two goals may be fundamentally contradictory.
+**Key Challenge**: Reasoning chains are assigned dual roles: (1) as training/inference signals for LLMs to improve performance, and (2) as explainability tools to clarify reasoning processes to users—but these two goals may be fundamentally contradictory.
 
-**Goal**: To independently evaluate (1) whether the semantic correctness of CoT traces is related to task performance, and (2) whether the interpretability of CoT traces is related to task performance.
+**Goal**: Independently evaluate (1) whether the semantic correctness of CoT chains correlates with task performance, and (2) whether the interpretability of CoT chains correlates with task performance.
 
-**Key Insight**: Utilize rule-based problem decomposition methods (classification steps + information retrieval steps) to construct SFT datasets where intermediate reasoning traces are verifiable, allowing correctness and answer accuracy to be evaluated independently.
+**Key Insight**: Utilize a rule-based problem decomposition method (classification step + information retrieval step) to construct SFT datasets with verifiable intermediate reasoning chains, allowing correctness and answer accuracy to be evaluated independently.
 
-**Core Idea**: Demonstrate through verifiable experimental design that researchers should decouple "model supervision objectives" from "user-oriented reasoning trace design"—the two should not be conflated.
+**Core Idea**: Demonstrate through verifiable experimental design that researchers should decouple "model supervision objectives" from "user-oriented reasoning chain design"—the two should not be conflated.
 
 ## Method
 
 ### Overall Architecture
-In the open-book QA domain (CoTemp QA, MS MARCO, Facebook bAbI), rule-based problem decomposition is used to generate verifiable correct/incorrect intermediate reasoning traces. Various SFT datasets are then constructed to train small models, while a human interpretability study involving 100 participants is conducted.
+
+This study addresses an assumed but unverified question: whether the roles of CoT reasoning chains as performance-boosting supervision signals and user-facing explanation tools are in conflict. To this end, the authors use rule-based problem decomposition to generate "independently verifiable at every step" intermediate reasoning chains on open-book QA (CoTemp QA, MS MARCO, Facebook bAbI). They construct multiple SFT data suites (correct chains / incorrect chains) to train small models, decoupling "semantic correctness of the chain" from "final answer accuracy." Additionally, a 100-person human explainability study is conducted to compare "the best-performing chains" with "the chains users find most interpretable."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Open-book QA Datasets<br/>CoTemp QA / MS MARCO / bAbI"]
+    subgraph S1["Rule-based Problem Decomposition & Trace Construction"]
+        direction TB
+        B["Classification Step: Determine Question Type"] --> C["Retrieval Step: Identify Required Facts"]
+        C --> D["Input–Trace–Output Triples<br/>Every step verifiable"]
+    end
+    A --> S1
+    S1 -->|"Correct vs. Incorrect Traces"| E["SFT Small Models<br/>Isolate Correctness ↔ Accuracy"]
+    S1 -->|"Four Trace Types"| F["Interpretability–Performance Comparison<br/>Decomposed / R1 / R1-Summary / Post-hoc SFT"]
+    F --> G["100-Person Human Study<br/>Likert: Predictability/Understanding/Faithfulness + Load"]
+    E --> H["Conclusion: Performance diverges from Correctness and Explainability<br/>Decouple Supervision vs. Explanation"]
+    G --> H
+```
 
 ### Key Designs
 
-1.  **Rule-based Problem Decomposition and Trace construction**:
-    *   **Function**: Generates structured intermediate reasoning traces whose correctness can be independently verified.
-    *   **Mechanism**: Decomposes QA problems into two steps: (1) a classification step to determine the question type (e.g., temporal relationship), and (2) an information retrieval (IR) step to identify the textual facts needed to answer the question. This forms Input-Trace-Output triples where each trace step is independently verifiable. "SFT w/ Correct Traces" uses correct classifications and correct facts; "SFT w/ Incorrect Traces" uses incorrect classifications and incorrect facts while maintaining the correct final answer.
-    *   **Design Motivation**: Reasoning traces generated by LLMs are noisy and cannot be deterministically verified; rule-based decomposition ensures binary, non-probabilistic evaluation.
+**1. Rule-based Problem Decomposition and Trace Construction: Enabling binary verification of intermediate steps**
 
-2.  **Comparison of Interpretability Across Trace Types**:
-    *   **Function**: Evaluates the interpretability-performance trade-off for different types of reasoning traces.
-    *   **Mechanism**: Conducts SFT using four types of reasoning traces: (1) correct rule-based decomposed traces, (2) verbose DeepSeek R1 reasoning traces, (3) R1 trace summaries generated by GPT-4o-mini, and (4) post-hoc explanations generated by GPT-4o-mini. Performance is evaluated on the same tasks alongside human interpretability assessments.
-    *   **Design Motivation**: If interpretability and performance can be optimized simultaneously, then interpretable traces should also yield high performance; if they are in conflict, decoupling is required.
+CoT reasoning chains generated by LLMs are often noisy and lack deterministic truth values, making correctness evaluation dependent on probabilistic scoring. This work adopts a rule-based two-step decomposition: first, a classification step to determine the question type (e.g., temporal relation type); second, an information retrieval step to target the textual facts required for the answer. This constructs Input–Trace–Output triples where every step of the Trace can be independently compared against ground truth, yielding binary labels.
 
-3.  **100-Person Human Interpretability Study**:
-    *   **Function**: Quantifies end-user perception of interpretability for different reasoning trace types.
-    *   **Mechanism**: Recruits 100 participants on Prolific (25 per group) to evaluate four types of reasoning traces using a standardized Likert scale across three dimensions: predictability, understandability, and faithfulness. Cognitive load is also measured.
-    *   **Design Motivation**: While model performance is measured by automatic metrics, interpretability must be judged subjectively by humans.
+This verifiable framework allows precise control over experimental variables: SFT w/ Correct Traces uses correct classifications + correct facts, while SFT w/ Incorrect Traces intentionally uses incorrect classifications + incorrect facts while keeping the final answer correct. The difference lies solely in the semantic correctness of the intermediate chain, allowing the performance impact of semantic correctness to be cleanly isolated.
 
-### Loss & Training
-Llama-3.2-1B-Instruct and Qwen3-1.7B are used for SFT. Qwen3-8B and Llama-3.1-8B are additionally used for interpretability experiments.
+**2. Interpretability–Performance Comparison: Exposing the trade-offs**
+
+If explainability and performance could be optimized simultaneously, the most interpretable chains should yield the best performance. If they conflict, "training signals" and "user explanations" must be decoupled. Four source traces were used for SFT to measure performance and interpretability on the same task: (1) rule-based decomposed correct chains, (2) lengthy raw traces from DeepSeek R1, (3) GPT-4o-mini summaries of R1 traces, and (4) GPT-4o-mini post-hoc explanations of R1 traces.
+
+These four types cover the spectrum from "short, structured, and human-readable" to "long, unstructured, and machine-friendly." Comparing them reveals whether performance and explainability curves align—the study concludes they do not.
+
+**3. 100-Person Human Explainability Study: Benchmarking "Interpretability"**
+
+While model performance is measured by automated metrics, explainability remains a subjective human judgment. 100 participants were recruited via Prolific (25 per group) to rate the four trace types using Likert scales across predictability, understandability, and faithfulness, while also measuring cognitive load.
+
+This design converts "explainability" from a researcher's claim into quantifiable user perception. It reveals the core contrast: R1 traces achieve optimal performance but are rated least interpretable with the highest cognitive load, while the most interpretable decomposed traces perform the worst.
+
+### Training Strategy
+SFT was performed using Llama-3.2-1B-Instruct and Qwen3-1.7B. For explainability experiments, Qwen3-8B and Llama-3.1-8B were additionally utilized.
 
 ## Key Experimental Results
 
 ### Main Results
 Results on the CoTemp QA dataset:
 
-| Model + Setting | Final Answer Accuracy | Classification Step Accuracy | IR Step Accuracy |
-| :--- | :--- | :--- | :--- |
+| Model + Setup | Final Answer Accuracy | Classification Step Accuracy | IR Step Accuracy |
+|----------|-------------|-------------|------------|
 | Qwen3-1.7B SFT-Vanilla | 60.33% | — | — |
 | Qwen3-1.7B SFT-Correct Traces | 52.88% | 47.06% | 78.99% |
 | Qwen3-1.7B SFT-Incorrect Traces | **63.88%** | 20.36% | 56.92% |
@@ -78,42 +95,42 @@ Results on the CoTemp QA dataset:
 | Llama SFT-Correct Traces | 39.55% | 39.09% | 79.40% |
 | Llama SFT-Incorrect Traces | **45.58%** | 18.80% | 73.62% |
 
-### Ablation Study
+### Explainability Evaluation
 
-| Trace Type | Interpretability Score (1-5) | Cognitive Load (1-5) | Model Performance |
-| :--- | :--- | :--- | :--- |
-| R1 Reasoning Trace | 3.39 (Lowest) | 4.59 (Highest) | **Optimal** |
-| R1 Summary | Moderate | Moderate | Moderate |
-| Post-hoc Explanation | Moderately High | Moderately Low | Moderate |
-| Decomposed Trace | **Highest** | **Lowest** | Lowest |
+| Trace Type | Explainability Score (1-5) | Cognitive Load (1-5) | Model Performance |
+|-----------|-----------------|-------------|---------|
+| R1 Traces | 3.39 (Lowest) | 4.59 (Highest) | **Best** |
+| R1 Summary | Medium | Medium | Medium |
+| Post-hoc Explanation | Medium-High | Medium-Low | Medium |
+| Decomposed Traces | **Highest** | **Lowest** | Lowest |
 
 ### Key Findings
-*   Correct reasoning traces lead to correct final answers only 28% of the time—semantic correctness is unreliably correlated with answer accuracy.
-*   Models trained with incorrect reasoning traces actually perform better (63.88% vs. 52.88%), suggesting that the role of reasoning traces in LLMs is not semantic guidance.
-*   R1 reasoning traces provide optimal performance but the worst interpretability (3.39/5) and highest cognitive load (4.59/5)—a fundamental trade-off exists.
-*   The most interpretable decomposed reasoning traces result in the worst performance—interpretability and performance objectives are in conflict.
+- Correct reasoning chains lead to correct final answers only 28% of the time—semantic correctness is unreliably correlated with answer accuracy.
+- Models trained on incorrect reasoning chains actually performed better (63.88% vs 52.88%), suggesting reasoning traces do not function as semantic guides for LLMs.
+- R1 traces provide optimal performance but have the worst explainability (3.39/5) and highest cognitive load (4.59/5)—a fundamental trade-off exists.
+- The most interpretable decomposed traces yield the worst performance—the goals of explainability and performance are in conflict.
 
 ## Highlights & Insights
-*   The finding that "semantically correct reasoning traces do not necessarily improve performance" raises fundamental questions about current CoT distillation practices—reasoning traces may act more as "token density regulators" than "reasoning path guides."
-*   The recommendation to "decouple model supervision objectives from user interpretability" has significant practical implications—systems should potentially generate two distinct sets of reasoning traces.
-*   The methodology of using rule-based problem decomposition to make reasoning trace correctness independently verifiable is a valuable contribution for future experimental designs.
+- The finding that "semantically correct traces do not necessarily improve performance" fundamentally challenges current CoT distillation practices—traces may act more as "token density regulators" than "reasoning path guides."
+- The recommendation to "decouple model supervision objectives from user explainability" has significant practical implications; systems should generate two distinct sets of traces.
+- Rule-based problem decomposition enables independent verification of trace correctness, an experimental methodology that possesses broad generalization value.
 
 ## Limitations & Future Work
-*   Validated only in the QA domain; conclusions might differ in areas like mathematical reasoning or code generation.
-*   Rule-based decomposition is only applicable to problem types that can be structured, limiting generalizability.
-*   The human study involved only 100 people (25 per group), which may limit statistical power.
-*   Future work should explore mechanistic explanations for "why incorrect reasoning traces can also improve performance."
+- Validated only in the QA domain; conclusions in mathematical reasoning or code generation may differ.
+- Rule-based decomposition is limited to problems that can be structured, restricting generalizability.
+- The human study included only 100 participants (25 per group), limiting statistical power.
+- Future work should explore mechanistic explanations for why incorrect reasoning chains can still enhance performance.
 
 ## Related Work & Insights
-*   **vs. Magister et al. (CoT Distillation)**: While they assume CoT traces provide valuable reasoning signals, this paper questions that assumption.
-*   **vs. Barez et al. (Uninterpretable Reasoning Traces)**: They argue that reasoning traces are not interpretable to users; this paper further quantifies the interpretability-performance trade-off.
-*   **vs. Kambhampati et al. (R1 Trace Analysis)**: They note that R1 traces are verbose and unstructured; this paper provides systematic experimental evidence for the resulting disconnect.
+- **vs Magister et al. (CoT Distillation)**: While they assume CoT chains provide valuable reasoning signals, this work questions that assumption.
+- **vs Barez et al. (Uninterpretability of Traces)**: While they argue traces are uninterpretable to users, this work quantifies the trade-off between explainability and performance.
+- **vs Kambhampati et al. (R1 Trace Analysis)**: While they note R1 traces are lengthy and unstructured, this work provides systematic experimental evidence.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ Challenges core assumptions of CoT distillation with unexpected and important findings.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets, four trace types, and a human study, though the scale is somewhat limited.
-*   Writing Quality: ⭐⭐⭐⭐ Logical argumentation is clear, though some result tables could be more intuitive.
-*   Value: ⭐⭐⭐⭐⭐ Provides critical direction for CoT distillation and interpretability research.
+- Novelty: ⭐⭐⭐⭐⭐ Challenges core assumptions of CoT distillation with unexpected and critical findings.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets, four trace types, and a human study, though the scale is relatively limited.
+- Writing Quality: ⭐⭐⭐⭐ Logical argumentation is clear, though some result tables could be more intuitive.
+- Value: ⭐⭐⭐⭐⭐ Provides crucial directional guidance for CoT distillation and explainability research.
 
 <!-- RELATED:START -->
 
@@ -123,9 +140,9 @@ Results on the CoTemp QA dataset:
 
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
 - [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
 
 </div>
 

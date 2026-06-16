@@ -2,75 +2,89 @@
 title: >-
   [Paper Note] Debiasing Reward Models via Causally Motivated Inference-Time Intervention
 description: >-
-  [ACL 2026][LLM Alignment][reward model] The authors interpret the Bradley-Terry reward model as a causal graph for estimating the total effect. They identify bias-specific neurons (accounting for <2% of total neurons) hi…
+  [ACL 2026][Alignment & RLHF][reward model] The authors treat the Bradley-Terry reward model as a causal graph for estimating total effect and identify bias-specific neurons (representing <2% of total neurons) highly correlated with five types of stylistic biases (length, paragraph, word overlap, exclamation mark, and bolding). During inference, these neuron act
 tags:
-  - "ACL 2026"
-  - "LLM Alignment"
-  - "reward model"
-  - "causal intervention"
-  - "neuron editing"
-  - "length bias"
-  - "format bias"
+  - ACL 2026
+  - Alignment & RLHF
+  - reward model
 date: 2026-05-08
-content_hash: 3b0cf8f5e46759a2
+content_hash: d73f96528e45f948
 ---
-
 # Debiasing Reward Models via Causally Motivated Inference-Time Intervention
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.27495](https://arxiv.org/abs/2604.27495)  
-**Code**: Paper repository link not public (not in cache)  
+**Code**: Repository link not disclosed in the paper  
 **Area**: LLM Alignment / RLHF / Causal Intervention / Interpretability  
-**Keywords**: reward model, causal intervention, neuron editing, length bias, format bias
+**Keywords**: reward model, causal intervention, neuron editing, length bias, formatting bias
 
 ## TL;DR
-The authors interpret the Bradley-Terry reward model as a causal graph for estimating the total effect. They identify bias-specific neurons (accounting for <2% of total neurons) highly correlated with activations of five stylistic biases (length / paragraph / word overlap / exclamations / bolding). During inference, these activations are replaced with the validation set median to estimate the controlled direct effect. On RewardBench and RM-Bench, this method eliminates bias without performance degradation. When used for downstream DPO, an 8B model's alignment score matches that of a 70B SOTA reward model.
+The authors treat the Bradley-Terry reward model as a causal graph for estimating total effect and identify bias-specific neurons (representing <2% of total neurons) highly correlated with five types of stylistic biases (length, paragraph, word overlap, exclamation mark, and bolding). During inference, these neuron activations are replaced with the validation set median to estimate the controlled direct effect. This method eliminates bias without performance degradation on RewardBench/RM-Bench. Its downstream use in DPO allows an 8B model to match the alignment scores of 70B SOTA reward models.
 
 ## Background & Motivation
-**Background**: The reward model (RM) in RLHF is core to preference scoring for LLMs, typically implemented using the BT model $p(y_1\succ y_2\mid q)=\sigma(r_\theta(x_1)-r_\theta(x_2))$. However, research increasingly finds that RMs have systematic preferences for response length (length bias) and formats such as lists, bolding, paragraphs, and emojis (Singhal et al. 2024, Zhang et al. 2025).
+**Background**: The reward model (RM) in RLHF is core to scoring LLM preference, typically implemented via the BT model $p(y_1\succ y_2\mid q)=\sigma(r_\theta(x_1)-r_\theta(x_2))$. However, increasing research reveals that RMs have systemic preferences for response length (length bias) and formatting such as lists, bolding, paragraphs, and emojis (Singhal et al. 2024, Zhang et al. 2025).
 
-**Limitations of Prior Work**: (i) Training-time debiasing (ensemble, weight averaging, infoBN, ODIN with extra heads, data augmentation) requires retraining. Costs are high as each new bias requires re-processing data or architectures. (ii) Inference-time debiasing relies on two methods: length penalty (subtracting reward based on character count) and LWR (Locally Weighted Regression to estimate length-only bias terms). Both handle only length and introduce a performance trade-off between biased and unbiased data subsets (unbiased improves, while biased drops significantly). (iii) Internal "encoding" of these biases in RMs remains a black box.
+**Limitations of Prior Work**: (i) Training-time debiasing (ensemble, weight averaging, infoBN, ODIN heads, data augmentation) requires retraining the RM. Costs are high as new data/architectures are needed for every new bias. (ii) Inference-time debiasing is limited to length penalty (subtracting reward based on character count) and LWR (locally weighted regression to estimate length-only bias terms). Both only handle length and introduce performance trade-offs between biased and unbiased data subsets (unbiased improves while biased drops significantly). (iii) How RMs "encode" these biases internally remains a black box.
 
-**Key Challenge**: Training-time debiasing is expensive and does not generalize to new bias types; existing inference-time methods perform coarse-grained reward subtractions without addressing internal RM representations, leading to inherent trade-offs between biased and unbiased performance.
+**Key Challenge**: Training-time debiasing is expensive and does not generalize to new bias types; existing inference-time methods perform coarse-grained subtraction on the reward without touching internal representations, naturally resulting in a trade-off between biased and unbiased scenarios.
 
-**Goal**: (i) Provide a **training-free** inference-time debiasing method handling multiple stylistic biases simultaneously. (ii) Reveal which neurons and layers in the RM encode these biases to providing evidence for interpretability. (iii) Apply the method to DPO preference labeling to evaluate improvements in downstream LLM alignment.
+**Goal**: (i) Propose a **training-free** inference-time debiasing method capable of handling multiple stylistic biases; (ii) Reveal which neurons and layers in the RM encode these biases for interpretability; (iii) Apply this method to DPO preference labeling to evaluate improvements in downstream LLM alignment.
 
-**Key Insight**: View the RM as a causal graph: input $x$ → mediator $m$ (bias neuron activation) → output $r$. The BT model implicitly estimates the total effect $\hat{\mathrm{TE}}$, failing to separate "content quality" from "bias signals." The goal is shifted to estimating the controlled direct effect $\hat{\mathrm{CDE}}$—fixing $m$ to $m^*$ (the validation set median) before calculating the difference, effectively comparing content quality as if both responses had the same bias degree.
+**Key Insight**: Treat the RM as a causal graph: input $x \to$ mediator $m$ (bias neuron activation) $\to$ output $r$. The BT model implicitly estimates the total effect $\hat{\mathrm{TE}}$, failing to separate "content quality" from "bias signals." Instead, estimate the controlled direct effect $\hat{\mathrm{CDE}}$ by fixing $m$ to a constant $m^*$ (validation set median). This effectively compares content quality while "assuming both responses have the same level of bias."
 
-**Core Idea**: First, use Spearman correlation to identify the top/bottom-$k$ neurons most relevant to 5 stylistic biases. Then, replace their activations with the validation set median during inference. This is equivalent to CDE estimation, achieving debiasing without retraining, across bias types, and without trade-offs.
+**Core Idea**: First, use Spearman correlation to identify the top/bottom-$k$ neurons most correlated with five categories of bias. Then, during inference, replace their activations with the validation set median. This is equivalent to CDE estimation, achieving a "retraining-free, multi-bias, trade-off-free" solution.
 
 ## Method
 
 ### Overall Architecture
-Two stages (Figure 2). **Offline Phase**: On a 500-sample RewardBench validation subset, collect paired samples of "last-token activations" and five bias metrics $f_b(x)$ for every RM neuron. Calculate Spearman $\rho$ and select top-$k$ and bottom-$k$ as bias-specific neurons; record the median activation $m^*$ for each neuron on the validation set. Jointly search $k\in\{50,100,200,500,1000,2000,5000\}$ for each bias type using Optuna + TPE ($7^5 \approx 16,807$ combinations, 100 trials). **Online Phase**: During inference, perform a forward pass for each prompt-response, force-replace activations of hit bias-specific neurons with their respective $m^*$, and output the reward. The BT comparison then equates to estimating $\hat{\mathrm{CDE}} = r_\theta(x_1, m^*) - r_\theta(x_2, m^*)$.
+CIRM (Causally motivated Inference-time intervention for Reward Models) splits RM debiasing into two steps: offline localization and online intervention, without ever modifying RM weights (Figure 2). During the offline phase, it collects "last-token activations" paired with five stylistic bias metrics $f_b(x)$ for each neuron using 500 RewardBench validation sub-samples. Spearman correlation is used to select the few neurons that truly encode bias, and their median activations on the validation set are recorded. The optimal number of edited neurons $k$ for each bias category is determined via a five-dimensional joint search using Optuna to maximize validation accuracy. During online inference, each prompt-response pair undergoes a standard forward pass, but the activations of these bias-specific neurons are forced to the median $m^*$ before outputting the reward. This transforms the BT comparison from estimating total effect to the controlled direct effect $\hat{\mathrm{CDE}} = r_\theta(x_1, m^*) - r_\theta(x_2, m^*)$, comparing content quality under equalized bias conditions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["500 RewardBench Validation Samples"] --> B
+    subgraph LOC["Multi-bias Metrics + Spearman Localization of Bias-specific Neurons"]
+        direction TB
+        B["Per-neuron last-token activation<br/>vs. Five bias metrics f_b"] --> C["Spearman ranking to select top/bottom-k<br/>Record validation set median activation m*"]
+    end
+    C --> D["Optuna Joint Search for k across 5 bias types<br/>100 TPE samples to determine edited neuron sets"]
+    D --> E["Online: Prompt-response forward pass in RM"]
+    subgraph INT["Causal Intervention: CDE replaces TE"]
+        direction TB
+        E --> F["Forward hook pins bias neuron activations to m*"]
+        G["BT comparison reduces to<br/>CDE = r(x1,m*) − r(x2,m*)"]
+        F --> G
+    end
+    G --> H["Unbiased reward → DPO preference labeling"]
+```
 
 ### Key Designs
 
-1. **Multi-bias metrics + Spearman ranking to identify bias-specific neurons**:
+**1. Localization of bias-specific neurons via multi-bias metrics + Spearman ranking: Moving debiasing from the reward layer to the neuron layer**
 
-    - Function: Locate internal RM neuron sets representing specific stylistic biases without training.
-    - Mechanism: Define quantifiable surface features for each bias $b\in\{\text{len, para, over, excl, bold}\}$: length = characters; paragraph = `\n\n` count; overlap = word overlap ratio between response and query; exclamations/bold = `!` / `**` counts. Calculate $\rho(a_n, f_b)$ for neuron $n$ on the validation set, taking top/bottom-$k$ as bias-specific neurons. Merging all biases results in editing only 1.7% of neurons in GRM and 0.085% in FsfairX.
-    - Design Motivation: Neuron-level causal localization provides finer granularity than prompt-level or reward-level correction. Spearman correlation captures monotonic relationships and is robust to outliers, while taking both top and bottom $k$ accounts for both positive and negative encoding of biases.
+Previous methods like LP/LWR only operate on the scalar reward value, which is too coarse. This paper identifies which specific internal neurons are responsible for stylistic bias. For each bias $b\in\{\text{len, para, over, excl, bold}\}$, a quantifiable surface feature is defined: length as character count, paragraph as `\n\n` occurrences, overlap as the ratio of shared words between response and query, and exclamation/bold as the count of `!` / `**`. Spearman correlation $\rho(a_n, f_b)$ is calculated for each neuron $n$ on the validation set. Both top-$k$ and bottom-$k$ neurons are selected as bias-specific neurons, as bias can be encoded via both positive and negative correlations.
 
-2. **Causal intervention via CDE instead of TE**:
+Spearman correlation is preferred over Pearson because it only requires monotonic relationships and is more robust to outlier activations. This localization is highly precise; after merging the five bias categories, only 1.7% of neurons in GRM and 0.085% in FsfairX require editing to cover all stylistic biases.
 
-    - Function: Systematically eliminate the reward contribution from stylistic biases by fixing the mediator during BT scoring.
-    - Mechanism: Formulate the RM causal graph (Figure 3) as a direct path $x \to r$ and an indirect path $x \to m \to r$. Original BT estimates $\hat{\mathrm{TE}} = r_\theta(x_1, m(x_1)) - r_\theta(x_2, m(x_2))$, covering both paths. This work uses $\hat{\mathrm{CDE}} = r_\theta(x_1, m^*) - r_\theta(x_2, m^*)$, where $m^*$ is the validation median activation scores (the authors also tested 0 and swapping, but median was most stable).
-    - Design Motivation: CDE conceptually identifies "who has better content assuming $x_1, x_2$ are identical in bias dimensions," which is the "unbiased comparison" desired for RMs. The median is used over the mean for robustness to outliers, and a single fixed value avoids content differences from $x_1, x_2$ infecting the mediator.
+**2. Joint search for $k$ across multiple biases using Optuna: Coordinating neuron counts**
 
-3. **Optuna joint search for multi-bias $k$**:
+Simply identifying candidates is insufficient; the number of neurons to edit ($k$) for each bias cannot be tuned in isolation. Doing so ignores the overlap and interference between different bias neuron sets (e.g., fixing length might negatively impact paragraph bias). CIRM treats the five $k$ values as a 5D hyperparameter space for joint search. Candidate values $k\in\{50,100,200,500,1000,2000,5000\}$ yield $7^5 \approx 16,807$ combinations. After 100 TPE samples, the objective function is the overall reward accuracy on the 500 validation samples.
 
-    - Function: Balance the number of edited neurons and performance automatically to avoid coupling issues where fixing one bias breaks another.
-    - Mechanism: Treat $k$ values for 5 biases as 5-dimensional hyperparameters for joint search, targeting overall reward accuracy on 500 validation samples using TPE sampling for 100 iterations. Final selections: GRM (len=5000, para=5000, over=500, excl=200, bold=50); FsfairX (len=500, para=100, over=100, excl=50, bold=200).
-    - Design Motivation: Independent searches for $k$ ignore overlaps and interference between neuron sets. TPE joint search detects coupling, such as how editing too many paragraph neurons might degrade length accuracy.
+This joint search allows TPE to perceive couplings, such as how editing too many paragraph neurons might degrade length accuracy. Ultimately, GRM was tuned to len=5000, para=5000, over=500, excl=200, bold=50, while FsfairX used significantly fewer (len=500, para=100, over=100, excl=50, bold=200), reflecting different encoding redundancies across RMs.
+
+**3. Causal intervention using CDE instead of TE: Systematically removing stylistic contributions by pinning mediators**
+
+Actual debiasing occurs during online inference. Viewing the RM as a causal graph (Figure 3), there are two paths from input $x$ to reward $r$: the direct content path $x \to r$ and the indirect bias path $x \to m \to r$ (where $m$ is the bias neuron activation). Vanilla BT estimates $\hat{\mathrm{TE}} = r_\theta(x_1, m(x_1)) - r_\theta(x_2, m(x_2))$, conflating content quality with stylistic strength. CIRM instead estimates $\hat{\mathrm{CDE}} = r_\theta(x_1, m^*) - r_\theta(x_2, m^*)$, using forward hooks to fix the mediator to a common value $m^*$. Conceptually, this answers "which content is better if $x_1$ and $x_2$ were identical in the bias dimension," which is the goal of an unbiased comparison.
+
+The value $m^*$ is the median activation from the validation set. The authors tested 0, swap, and median; median performed most robustly. Using the median instead of the mean provides robustness against outliers, and using a fixed value instead of a swap prevents content differences from $x_1, x_2$ from bleeding through the mediator.
 
 ### Loss & Training
-**Completely training-free**. All edits are performed via forward hooks during inference to replace activations with $m^*$. Downstream DPO training uses standard hyperparameters ($\beta=0.1$, lr 5e-7, batch 64, 1 epoch).
+**Completely training-free.** All edits occur during inference via forward hooks that replace targeted activations with $m^*$. Downstream DPO training uses standard hyperparameters ($\beta=0.1$, lr 5e-7, batch 64, 1 epoch).
 
 ## Key Experimental Results
 
 ### Main Results
-RewardBench bias subsets and overall (excerpt from Table 2, $B_b$ is biased subset / $\overline{B_b}$ is unbiased subset, accuracy %):
+RewardBench bias subsets + Overall (Excerpt from Table 2, $B_b$ is biased subset / $\overline{B_b}$ is unbiased subset, accuracy %):
 
 | RM / Method | $B_{\text{len}}$ | $\overline{B_{\text{len}}}$ | $\overline{B_{\text{para}}}$ | $\overline{B_{\text{over}}}$ | $\overline{B_{\text{excl}}}$ | ALL |
 |-----------|-----:|-----:|-----:|-----:|-----:|----:|
@@ -80,9 +94,9 @@ RewardBench bias subsets and overall (excerpt from Table 2, $B_b$ is biased subs
 | **FsfairX + CIRM** | **95.25** | 78.02 | 74.91 | 83.27 | 72.16 | 86.80 |
 | INF-ORM-70B (SOTA) | 96.72 | 95.70 | 93.91 | 95.72 | 90.72 | 96.60 |
 
-While LP / LWR appear to gain more on $\overline{B_{\text{len}}}$, they sacrifice points on $B_{\text{len}}$ (FsfairX 95.14→93.45). CIRM maintains or slightly improves both subsets, and on GRM, $\overline{B_{\text{para}}}$ increases while $B_{\text{para}}$ also rises to 93.69. Similar behavior is observed on RM-Bench (Table 3), where LP/LWR trade off between Easy and Hard subsets, while CIRM keeps Easy stable and maintains Hard performance.
+While LP/LWR show higher gains on $\overline{B_{\text{len}}}$, it comes at the cost of performance on $B_{\text{len}}$ (FsfairX 95.14 $\to$ 93.45). CIRM maintains or slightly improves both subsets. On RM-Bench (Table 3), LP/LWR often degrade performance on "Easy" samples while improving "Hard" ones (trade-off), while CIRM maintains Easy performance while matching Hard.
 
-Downstream DPO + AlpacaEval 2.0 / MT-Bench (excerpt from Table 4, Llama-3-8B-Instruct):
+Downstream DPO + AlpacaEval 2.0 / MT-Bench (Excerpt from Table 4, Llama-3-8B-Instruct):
 
 | Reward model | LCWR | WR | length | MT-Bench |
 |---|---:|---:|---:|---:|
@@ -96,10 +110,10 @@ Downstream DPO + AlpacaEval 2.0 / MT-Bench (excerpt from Table 4, Llama-3-8B-Ins
 | **FsfairX + CIRM** | 39.49 | **51.19** | 2345 | 7.62 |
 | INF (70B SOTA) | 40.63 | 49.61 | 2201 | 7.42 |
 
-The WR 51.19 for 7B + CIRM exceeds the 70B INF score of 49.61, with comparable MT-Bench results.
+The WR 51.19 of the 7B + CIRM model exceeds the 49.61 of the 70B INF and matches it on MT-Bench.
 
 ### Ablation Study
-Table 5: Removing intervention for specific bias types sequentially (FsfairX + Llama3-8B):
+Table 5: Sequentially removing intervention for specific biases (FsfairX + Llama3-8B):
 
 | Configuration | LCWR | WR | MT-Bench |
 |------|-----:|---:|---------:|
@@ -110,38 +124,38 @@ Table 5: Removing intervention for specific bias types sequentially (FsfairX + L
 | −excl | 37.06 | 50.21 | 7.56 |
 | −bold | 38.38 | 50.06 | 7.29 |
 
-Removing any bias intervention disrupts the overall balance across LCWR/WR/MT-Bench, proving the necessity of joint handling. Table 6 verifies that CIRM slightly reduces the biased proportion in GRM labeling (len 54.85→51.71, para 55.88→52.14) compared to the aggressive reduction by LP/LWR (len 25.65); this "moderate suppression" is why MT-Bench remains stable.
+Removing any bias intervention breaks the balance of performance, proving all 5 categories must be handled jointly.
 
 ### Key Findings
-- **Bias-specific neurons are concentrated in shallow layers** (Figures 4-5): Neurons for the 5 bias types are primarily located in early transformer layers of the RM, mostly in query/up/gate projections. Consistent with Meng et al. 2022's hypothesis on up-projections for knowledge retrieval, this suggests RMs place "surface style" in early fast-paths, facilitating local editing.
-- **CIRM avoids the biased / unbiased trade-off**: LP drops Easy accuracy on RM-Bench from 88.43 to 82.39 while increasing Hard accuracy to 59.55; CIRM maintains Easy at 88.95 and Hard at 49.04. It only disables bias dependency without affecting semantic signals for correct comparisons.
-- **2B / 7B + CIRM ≈ 70B INF**: 8B RMs with CIRM perform on par with the 70B SOTA RM on AlpacaEval LCWR and MT-Bench, implying that "debiasing" may contribute more to downstream DPO value than simply increasing RM scale.
-- **Downstream LLM bias is also suppressed** (Table 7): After DPO, Gemma-2 using vanilla GRM labels amplifies length (1323→1538) and bolding (14.82→21.22). Using CIRM labels results in moderate changes (1323→1511) without pushing exclamation marks significantly higher, unlike LP/LWR.
-- **TruthfulQA Improvement** (Table 8): Three out of four groups show increased truthfulness after CIRM, indicating that eliminating stylistic bias forces the RM to focus more on content veracity, benefiting downstream factuality.
+- **Bias-specific neurons are concentrated in shallow layers** (Figures 4-5): Neurons for the 5 biases are primarily in early transformer layers, mostly within query/up/gate projections. This supports the hypothesis (Meng et al. 2022) that up-projections retrieve knowledge. RMs likely place "surface style" in shallow fast-pass routes.
+- **CIRM avoids the biased/unbiased trade-off**: LP drops Easy accuracy on RM-Bench (88.43 $\to$ 82.39) to gain on Hard; CIRM maintains Easy at 88.95 without significantly shifting Hard. It only removes reliance on bias without touching semantic signals.
+- **2B / 7B + CIRM $\approx$ 70B INF**: Smaller RMs with CIRM perform on par with 70B SOTA RMs, suggesting "unbiasing" is potentially more valuable for downstream DPO than scaling up the RM.
+- **Downstream LLM bias is suppressed** (Table 7): Using vanilla GRM labels for DPO amplifies length (1323 $\to$ 1538) and bolding (14.82 $\to$ 21.22). CIRM labels result in much milder shifts (1323 $\to$ 1511).
+- **TruthfulQA Improvement** (Table 8): Truthfulness increased in three out of four groups after CIRM, suggesting style removal forces RMs to prioritize factual content.
 
 ## Highlights & Insights
-- **Interpreting BT reward as TE estimation and substituting with CDE is a clean causal narrative**: This is the first formal connection of causal mediation analysis to RLHF reward modeling, providing a formal language for the "style vs. content" decomposition in rewards.
-- **"Median activation replacement" outperforms zeroing or swapping**: Experimental results for three $m^*$ choices show the median is most effective, likely acting as a controlled value robust to abnormal activations. This insight is valuable for all neuron intervention work (Vig 2020, Kojima 2024).
-- **Joint $k$ search reveals interactions between biases**: Paragraph bias in $\overline{B_{\text{para}}}$ was slightly harmed by CIRM, yet removing it caused downstream DPO to drop, suggesting that RM benchmark subset accuracy is not always a reliable proxy for downstream alignment.
+- **Clean Causal Narrative**: This work is the first to formally connect causal mediation analysis to RLHF reward modeling, providing a formal language for the "style vs. content" decomposition in rewards.
+- **Median Activation Replacement**: The finding that median replacement outperforms zero/swap is a valuable empirical insight for neuron intervention research (Vig 2020, Kojima 2024), as it provides a robust controlled value.
+- **Joint $k$ Search**: This revealed that bias categories interact; paragraph bias accuracy on RewardBench was slightly compromised by CIRM, yet its inclusion was necessary for downstream performance. This suggests that RM benchmark subset accuracy is an imperfect proxy for alignment.
 
 ## Limitations & Future Work
-- Only 5 predefined bias types are covered (length / paragraph / overlap / exclamation / bold); other stylistic biases like lists, links, or emojis, or task-specific biases, require manual addition of surface features.
-- Bias-specific neuron identification relies on a 500-sample validation set and hyperparameter search, risking overfitting; the optimal $k$ varies significantly across RMs (GRM 21k vs. FsfairX 1.9k).
-- The causal graph is simplified to $x\to m\to r$; intervention efficiency might decrease if bias signals are widely distributed across multiple hidden states.
-- Downstream alignment relies on LLM-as-judge (GPT-4o / GPT-4-turbo), which may inherit similar biases.
-- The method depends on the RM's "last token activation" for correlation analysis, necessitating redesigns for encoder-only or non-autoregressive RMs.
+- Only covers 5 predefined biases; other styles like lists, links, or emojis require manual surface feature engineering.
+- Bias-specific neuron identification depends on a 500-sample validation set and hyperparameter search, risking overfitting.
+- The causal graph ($x\to m\to r$) is simplified; intervention efficiency may drop if bias signals are widely distributed across multiple hidden states.
+- Downstream alignment evaluation heavily relies on LLM-as-judge (GPT-4o), which may inherit similar biases.
+- Method relies on "last-token activations," requiring redesigned analysis for encoder-only or non-autoregressive RMs.
 
 ## Related Work & Insights
-- **vs LP (Dong et al. 2024) / LWR (Huang et al. 2024)**: Also training-free, but only handle length via reward-level subtraction. CIRM is a neuron-level causal intervention handling 5 bias types without trade-offs.
-- **vs ODIN / InfoRM / Park et al. 2024a**: These require retraining RMs (adding heads, info-bottlenecks, or data augmentation); CIRM is performed entirely at inference time.
-- **vs Vig et al. 2020 / Meng et al. 2022 / Kojima et al. 2024**: Those used causal mediation for single-class attributes (gender, knowledge, language); this work extends it to RLHF reward modeling and handles multiple biases jointly.
-- **vs RM Ensemble (Eisenstein 2024) / WARM (Rame 2024)**: These use averaging for robustness, requiring multiple RMs; CIRM works with a single RM and is easier to deploy.
+- **vs. LP (Dong et al. 2024) / LWR (Huang et al. 2024)**: CIRM uses neuron-level causal intervention instead of reward-level subtraction, allowing it to handle multiple biases without trade-offs.
+- **vs. ODIN / InfoRM / Park et al. 2024a**: These require RM retraining; CIRM is entirely inference-time.
+- **vs. Vig et al. 2020 / Meng et al. 2022**: Previous causal mediation works focuses on single attributes (gender/knowledge); this work expands to multi-bias joint handling for RLHF.
+- **vs. RM Ensemble (Eisenstein 2024) / WARM (Rame 2024)**: While those use averaging across multiple models, CIRM works on a single RM, making deployment simpler.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Interpreting BT as TE and using CDE to intervene in RM neurons is highly novel and lightweight in implementation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multidimensional verification across RM benchmarks, downstream DPO, residual bias, and TruthfulQA; however, more RM architectures could be included.
-- Writing Quality: ⭐⭐⭐⭐ Causal graphs and formulas are clear; case studies are intuitive.
-- Value: ⭐⭐⭐⭐⭐ Enabling 7B RMs to reach 70B SOTA alignment quality directly benefits industrial RLHF pipelines.
+- Novelty: ⭐⭐⭐⭐⭐ Innovative causal interpretation of BT and lightweight neuron intervention.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive validation across RM benchmarks, DPO, and TruthfulQA; could benefit from more RM architectures.
+- Writing Quality: ⭐⭐⭐⭐ Clear causal graphs and formalisms; intuitive case studies.
+- Value: ⭐⭐⭐⭐⭐ Enables 7B RMs to reach 70B SOTA alignment quality; highly applicable to industrial RLHF pipelines.
 
 <!-- RELATED:START -->
 
@@ -151,9 +165,9 @@ Removing any bias intervention disrupts the overall balance across LCWR/WR/MT-Be
 
 - [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
-- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
 - [\[ACL 2026\] Student Guides Teacher: Weak-to-Strong Inference via Spectral Orthogonal Exploration](student_guides_teacher_weak-to-strong_inference_via_spectral_orthogonal_explorat.md)
 - [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
+- [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
 
 </div>
 

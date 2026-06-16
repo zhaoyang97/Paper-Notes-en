@@ -2,89 +2,103 @@
 title: >-
   [Paper Note] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 description: >-
-  [CVPR 2026][Segmentation][Remote Sensing Foundation Model] This paper proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework that employs a multispectral self-distillatio…
+  [CVPR 2026][Segmentation][Knowledge Distillation] Proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework. It utilizes a multispectral self-distillation teacher to learn spectral representations and an optical VFM teacher (DINOv3) to inject high-level semantic priors. This enables a single student network to excel in bo
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Remote Sensing Foundation Model"
-  - "Multispectral"
-  - "Knowledge Distillation"
-  - "Contrastive Learning"
-  - "Dual-Teacher Training"
+  - CVPR 2026
+  - Segmentation
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: a0419f92bf8342ac
+content_hash: 64bc3722deee8b08
 ---
-
 # Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19863](https://arxiv.org/abs/2602.19863)  
 **Code**: [Project Page](https://wolfilip.github.io/DEO/)  
-**Area**: Image Segmentation
-**Keywords**: Remote Sensing Foundation Model, Multispectral, Knowledge Distillation, Contrastive Learning, Dual-Teacher Training
+**Area**: Image Segmentation  
+**Keywords**: Remote Sensing Foundation Models, Multispectral, Knowledge Distillation, Contrastive Learning, Dual-Teacher Training  
 
 ## TL;DR
 
-This paper proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework that employs a multispectral self-distillation teacher to learn spectral representations and a frozen optical VFM teacher (DINOv3) to inject high-level semantic priors. The resulting single student network excels at both optical and multispectral remote sensing tasks, achieving state-of-the-art performance across semantic segmentation, change detection, and classification.
+Proposes **DEO (Distillation for Earth Observation)**, a dual-teacher contrastive distillation framework. It utilizes a multispectral self-distillation teacher to learn spectral representations and an optical VFM teacher (DINOv3) to inject high-level semantic priors. This enables a single student network to excel in both optical and multispectral remote sensing tasks, achieving SOTA across semantic segmentation, change detection, and classification.
 
 ## Background & Motivation
 
-**Background**: Foundation models are transforming Earth Observation (EO). Large amounts of unlabeled data combined with flexible task adaptation make them especially valuable in annotation-scarce EO settings. However, given the diversity of EO sensors and modalities, training a single universal model is **impractical**; multiple specialized foundation models will coexist.
+**Background**: Foundation models are transforming the Earth Observation (EO) field. Large-scale unlabeled data combined with flexible task adaptation is particularly valuable given the scarcity of annotations in EO. However, the diversity of sensors and modalities makes training a single universal model **unrealistic**, leading to the co-existence of multiple specialized foundation models.
 
 **Limitations of Prior Work**:
-   - Most EO pre-training relies on **Masked Image Modeling (MIM)**, which emphasizes local reconstruction but offers **limited control over global semantic structure**
-   - General-purpose VFMs (e.g., DINOv2/DINOv3) possess strong optical semantic priors but lack multispectral (MS) capability
-   - Training MS foundation models from scratch is **computationally expensive**
+   - Most EO pre-training utilizes **Masked Image Modeling (MIM)**, which emphasizes local reconstruction but has **limited control** over global semantic structures.
+   - General VFMs (e.g., DINOv2/DINOv3) possess strong optical semantic priors but lack multispectral (MS) capabilities.
+   - Training MS foundation models from scratch is **computationally expensive**.
 
-**Key Challenge**: How can the strong optical semantic priors of VFMs be efficiently transferred to a multispectral student **without compromising the learning of MS-specific information**? Existing approaches (e.g., Copernicus-FM) combine MIM with VFM distillation, but the MIM objective is **incompatible** with the contrastive self-distillation objective of VFMs, resulting in weaker global semantic structure.
+**Key Challenge**: How to efficiently transfer a VFM's strong optical semantic priors to a multispectral student **without compromising the learning of MS-specific information**? Existing methods (e.g., Copernicus-FM) combine MIM with VFM distillation, but the MIM objective is **incompatible** with the contrastive self-distillation objective of VFMs, resulting in weak global semantic structures.
 
-**Goal**: Propose a pre-training strategy that enables strong performance when multispectral data is available, without sacrificing performance on optical-only tasks.
+**Goal**: Propose a pre-training strategy that performs exceptionally well when multispectral data is available, while not sacrificing performance on optical-only tasks.
 
-**Key Insight**: **Align the pre-training objective of the student with that of the VFM teacher** — if the VFM was trained with contrastive self-distillation, the student should be trained the same way, making latent feature space alignment more tractable.
+**Key Insight**: **Match the pre-training objectives of the student and the VFM teacher**. If the VFM was trained with contrastive self-distillation, the student should also use contrastive self-distillation, making the latent feature spaces easier to align.
 
-**Core Idea**: Dual teacher = a multispectral contrastive self-distillation teacher (for structured MS feature space) + a frozen optical VFM teacher (for global semantic priors), unified under a contrastive distillation framework.
+**Core Idea**: Dual-Teacher = Multispectral contrastive self-distillation teacher (structuring MS feature space) + Optical VFM frozen teacher (providing global semantic priors), unified under a contrastive distillation framework.
 
 ## Method
 
 ### Overall Architecture
 
-As shown in Figure 2:
-- **Input Augmentation**: Multi-scale global/local views generated from Sentinel-2 multispectral images
-- **Multispectral Branch (red)**: MS teacher (EMA-updated) + student, contrastive self-distillation
-- **Optical Branch (blue)**: Frozen DINOv3 teacher + student, feature distillation
-- **Student Network (green)**: Swin Transformer backbone with dual patch embeddings (10-channel for MS, 3-channel for optical)
+DEO aims for a **single student network** capable of handling both multispectral (MS) and optical (RGB) inputs effectively. It bridges these using a shared backbone and two sets of teachers. Starting from a Sentinel-2 MS image, it generates global/local views via multi-scale augmentation, which are fed into the same student through two paths. In the **multispectral branch**, the student performs contrastive self-distillation with an EMA-updated MS teacher to learn structured spectral features. In the **optical branch**, the student performs feature distillation with a frozen DINOv3 teacher to ingest optical semantic priors. The student uses a Swin Transformer backbone with dual patch embeddings (10-channel for MS, 3-channel for optical), followed by shared Transformer layers to map both modalities into a unified feature space.
+
+```mermaid
+graph TD
+    A["fMoW-Sentinel MS (10-band)<br/>+ fMoW-RGB / High-res Aerial"] --> B["Multi-scale Augmentation<br/>Global + Local Views"]
+    B --> C
+    subgraph BK["Backbone & Data Strategy"]
+        direction TB
+        C["Dual Patch Embedding<br/>MS 10-ch / Optical 3-ch Entry"] --> D["Shared Swin Student Backbone<br/>Patch size 4, Fine-grained Features"]
+    end
+    D --> E
+    D --> H
+    subgraph MS["Multispectral Contrastive Self-Distillation"]
+        direction TB
+        E["Student: Local + Global Views"] -.EMA Update.-> F["MS Teacher: Global Views Only"]
+        E --> G["L_MS: Cosine Similarity<br/>- Coding Rate Regularization"]
+        F --> G
+    end
+    subgraph OPT["Optical VFM Distillation"]
+        direction TB
+        H["Student Optical Features<br/>cls / patch / mid-layer patch"] --> J["L_O: DINOv3 Feature Alignment<br/>Independent Projection Heads"]
+        I["Frozen DINOv3 Teacher (ViT)"] --> J
+    end
+    G --> K["Total Loss L = -L_MS - L_O"]
+    J --> K
+```
 
 ### Key Designs
 
-#### 1. Multispectral Contrastive Self-Distillation
+**1. Multispectral Contrastive Self-Distillation: Contrastive Objectives for Global Semantics**
 
-- **Function**: Learn robust multispectral representations
-- **Mechanism**: Based on the DINO framework; MS teacher weights are updated via EMA. The loss combines cosine similarity (compression) and coding rate regularization (expansion):
-  $$\mathcal{L}_{MS} = \mathcal{L}_\text{cos}(p_M(\mathbf{z}_g^M), p_s^{MS}(\mathbf{z}_{g \cup l}^M)) - \gamma \mathcal{L}_{CR}(\cdot)$$
-  where $\mathcal{L}_{CR} = -\log\det(\mathbf{I} + \text{Cov}[\mathbf{z}])$ prevents representation collapse
-- **Design Motivation**: Contrastive learning yields strong semantic representations invariant to distributional shifts; coding rate regularization replaces conventional temperature scaling/negative sampling strategies to prevent collapse more elegantly
+EO pre-training has long relied on Masked Image Modeling (MIM), which excels at local reconstruction but fails to regulate global semantic structures. DEO adopts the contrastive self-distillation approach of DINO: the MS teacher weights are slowly updated via student EMA. The student processes local+global views while the teacher processes only global views, forcing the student to map different views to consistent features. The loss simultaneously compresses and expands the feature space—a cosine term pulls positive pairs together, while a coding rate regularization term expands the overall representation to prevent collapse:
 
-#### 2. Optical VFM Distillation
+$$\mathcal{L}_{MS} = \mathcal{L}_\text{cos}(p_M(\mathbf{z}_g^M), p_s^{MS}(\mathbf{z}_{g \cup l}^M)) - \gamma \mathcal{L}_{CR}(\cdot)$$
 
-- **Function**: Transfer DINOv3's global semantic and pixel-level features to the student
-- **Mechanism**: Three categories of features are distilled via independent projection heads:
-  $$\mathcal{L}_O = \alpha_1 \mathcal{L}_\text{cos}(\text{[cls]}_F) + \alpha_2 \mathcal{L}_\text{cos}(\text{[p]}_F) + \alpha_3 \mathcal{L}_\text{cos}(\text{[p]}_\text{mid})$$
-  - $\text{[cls]}_F$: final-layer class token (global semantics)
-  - $\text{[p]}_F$: final-layer patch tokens (pixel-level features)
-  - $\text{[p]}_\text{mid}$: intermediate-layer patch tokens (mid-level features)
-- **Design Motivation**: Distilling only the class token is insufficient for dense prediction tasks; patch-level features are necessary. Intermediate-layer features provide complementary mid-level semantic information.
+The coding rate regularization $\mathcal{L}_{CR} = -\log\det(\mathbf{I} + \text{Cov}[\mathbf{z}])$ measures the volume of the feature covariance. A larger volume indicates more spread-out features, replacing traditional negative sampling or temperature scaling to prevent collapse.
 
-#### 3. Backbone Selection and Data Strategy
+**2. Optical VFM Distillation: Matching Teacher Objectives**
 
-- **Backbone**: Swin Transformer (patch size 4 vs. ViT's 16), yielding finer feature resolution
-- **Data**: fMoW-Sentinel (MS) + fMoW-RGB (optical), with low-resolution optical bands replaced by 150K high-resolution aerial images
-- **Dual Patch Embedding**: 10-channel for MS, 3-channel for optical; subsequent Transformer layers are shared
+DEO’s key insight is that **the student’s pre-training objective must match the teacher's**. Since DINOv3 is trained via contrastive self-distillation, the student uses the same, making latent feature space alignment natural. Three types of features are distilled using independent projection heads:
+
+$$\mathcal{L}_O = \alpha_1 \mathcal{L}_\text{cos}(\text{[cls]}_F) + \alpha_2 \mathcal{L}_\text{cos}(\text{[p]}_F) + \alpha_3 \mathcal{L}_\text{cos}(\text{[p]}_\text{mid})$$
+
+These terms correspond to the final layer class token $\text{[cls]}_F$ (global semantics), final layer patch tokens $\text{[p]}_F$ (pixel-level features), and intermediate layer patch tokens $\text{[p]}_\text{mid}$ (mid-level semantics). Patch-level distillation is crucial for dense prediction tasks like segmentation.
+
+**3. Backbone & Data Strategy: Fine-resolution Swin and High-res Optical Support**
+
+Dense prediction requires high feature resolution. While ViT typically uses a patch size of 16, DEO employs a Swin Transformer (patch size 4) for finer feature maps. The model is pre-trained on fMoW-Sentinel (MS) and fMoW-RGB (Optical). Since Sentinel-2 optical bands have low resolution (10–60m), the authors replace them with ~150,000 high-resolution aerial images for the optical branch to provide clearer supervision.
 
 ### Loss & Training
 
+The objectives of both branches are jointly optimized:
+
 $$\mathcal{L} = -\mathcal{L}_{MS} - \mathcal{L}_O$$
 
-Multispectral and optical objectives are jointly optimized with coefficients $\alpha_1=1, \alpha_2=0.5, \alpha_3=0.5, \gamma=1$.
+Weights are set to $\alpha_1=1,\ \alpha_2=0.5,\ \alpha_3=0.5,\ \gamma=1$.
 
 ## Key Experimental Results
 
@@ -92,91 +106,74 @@ Multispectral and optical objectives are jointly optimized with coefficients $\a
 
 **Optical Segmentation:**
 
-| Method | SpaceNet | GB-cattle | GB-pv | GB-chesa. | Avg. |
-|--------|----------|-----------|-------|-----------|------|
+| Method | SpaceNet | GB-cattle | GB-pv | GB-chesa. | Average |
+|------|----------|-----------|-------|-----------|------|
 | DINOv3-B (RGB) | 79.06 | 73.01 | 94.34 | 64.04 | 77.61 |
 | Copernicus-FM (MS) | 75.45 | 68.88 | 93.56 | 55.81 | 73.43 |
-| **DEO** | **82.22** | 76.22 | **95.36** | **75.08** | **82.22** |
+| **Ours (DEO)** | **82.22** | **76.22** | **95.36** | **75.08** | **82.22** |
 
 **Multispectral Segmentation:**
 
-| Method | GB-SA-crop | GB-cashew | S1F11 | PASTIS | Avg. |
-|--------|-----------|-----------|-------|--------|------|
+| Method | GB-SA-crop | GB-cashew | S1F11 | PASTIS | Average |
+|------|-----------|-----------|-------|--------|------|
 | TerraFM (MS) | 30.95 | 59.49 | 92.72 | 19.65 | 50.70 |
 | Copernicus-FM (MS) | - | 55.71 | 92.58 | 21.49 | 51.11 |
-| **DEO** | **36.59** | **65.60** | **93.30** | **23.06** | **63.51** |
+| **Ours (DEO)** | **36.59** | **65.60** | **93.30** | **23.06** | **63.51** |
 
-- MS segmentation average surpasses Prev. SOTA by **+4.20 pp** (63.51 vs. 51.11)
-
-### Change Detection (F1)
-
-| Method | LEVIR (Optical) | OSCD (MS) | Avg. |
-|--------|----------------|-----------|------|
-| DINOv3-LS | 91.8 | 57.2 | 74.5 |
-| TerraFM | 89.5 | 57.5 | 73.5 |
-| **DEO** | **91.3** | **59.2** | **75.3** |
-
-### Classification (Linear Probing)
-
-| Method | m-bigearthnet F1 | m-so2sat Top1 | m-eurosat Top1 | Avg. |
-|--------|-----------------|---------------|----------------|------|
-| DINOv3-B | 55.48 | - | 93.3 | - |
-| TerraFM | - | 47.57 | 93.1 | 67.61 |
-| **DEO** | **58.43** | **53.09** | **93.8** | **68.44** |
+- MS segmentation average **+12.4 pp gain** over Prev. SOTA (63.51 vs 51.11).
 
 ### Ablation Study
 
-| Component | Optical Avg. | MS Avg. | Overall Avg. |
-|-----------|-------------|---------|--------------|
-| Base (MS self-distillation only) | 77.87 | 60.44 | 69.16 |
+| Component | Optical Avg | MS Avg | Total Avg |
+|------|----------|--------|--------|
+| Base (MS Self-distill only) | 77.87 | 60.44 | 69.16 |
 | +DINOv3 [cls] | 79.07 (+1.20) | 62.81 (+2.37) | 70.94 |
-| +Separate optical path | 81.20 (+2.13) | 62.69 (-0.12) | 71.95 |
+| +Independent Optical Path | 81.20 (+2.13) | 62.69 (-0.12) | 71.95 |
 | +DINOv3 [p] | 81.74 (+0.53) | 62.46 | 72.10 |
-| +Optical augmentation | 81.95 | 63.02 (+0.55) | 72.48 |
-| +High-resolution optical | 82.22 (+0.27) | 63.51 (+0.50) | 72.87 |
+| +Optical Aug. | 81.95 | 63.02 (+0.55) | 72.48 |
+| +High-res Optical | 82.22 (+0.27) | 63.51 (+0.50) | 72.87 |
 
 ### Key Findings
 
-1. **Optical VFM distillation improves not only optical but also MS performance**: Adding DINOv3 [cls] distillation yields +2.37 pp on MS average.
-2. **Objective compatibility is critical**: The contrastive self-distillation objective aligns naturally with DINOv3's training objective, enabling inherent feature space alignment (confirmed by PCA visualization in Figure 3).
-3. **All components contribute cumulatively**: Overall average improves from 69.16 (base) to 72.87 (full model), with each component contributing positively.
-4. **DEO ranks first overall**: Achieves the highest average rank across 11 benchmarks (Table 4), with only 87M parameters and 500K pre-training images.
+1. **Optical VFM distillation benefits MS performance**: Adding DINOv3 [cls] distillation improved MS average by **+2.37pp**.
+2. **Objective compatibility is crucial**: Matching the student's contrastive objective with DINOv3 allows for natural feature space alignment.
+3. **Efficiency**: DEO achieves SOTA with only 500k images (vs. TerraFM's 18M) and 87M parameters.
+4. **Swin Backbone Advantages**: Patch size 4 provides fine-grained features essential for dense tasks, even when distilled from a ViT teacher.
 
 ## Highlights & Insights
 
-1. **Deep insight into objective compatibility**: The student's pre-training objective should match that of the teacher model — this explains why MIM + VFM distillation (e.g., Copernicus-FM) underperforms contrastive distillation + VFM distillation.
-2. **Exceptional efficiency**: Trained on only 500K images (vs. TerraFM's 18M), with 87M parameters (vs. DINOv3-LS's 303M) and 100 epochs on 16× A100s, yet achieves comprehensive state-of-the-art results.
-3. **Non-destructive multimodality**: Incorporating MS capability does not sacrifice optical performance — a rare quality in multimodal foundation models.
-4. **Swin over ViT**: The finer feature resolution from patch size 4 is critical for dense prediction tasks; cross-architecture distillation from a ViT teacher to a Swin student is shown to be effective.
+1. **Insight on Objective Compatibility**: Pre-training objectives should align between student and teacher. This explains why MIM+VFM distillation (e.g., Copernicus-FM) is less effective than contrastive+VFM distillation.
+2. **"No-Harm" Multimodality**: Integrating MS capabilities does not sacrifice optical performance, which is rare in multi-modal foundation models.
+3. **Scalable Efficiency**: Achieved comprehensive SOTA using 16×A100 GPUs for 100 epochs on a relatively small dataset.
 
 ## Limitations & Future Work
 
-1. **Limited to 10 Sentinel-2 bands**: SAR, thermal infrared, and other modalities are not addressed.
-2. **Spatial resolution constraint**: Sentinel-2's native 10–60 m resolution limits applications; while high-resolution optical data partially replaces low-resolution bands, MS bands remain low-resolution.
-3. **Geographic bias in fMoW**: The dataset primarily covers certain regions; generalization to polar, oceanic, and other underrepresented areas remains unknown.
-4. Whether larger student models could further benefit from this framework is left unexplored.
+1. **Modality Coverage**: Currently only covers 10 Sentinel-2 bands; does not yet include SAR or Thermal IR.
+2. **Spatial Resolution**: MS bands are still limited by Sentinel-2's native 10-60m resolution.
+3. **Geographical Bias**: The fMoW dataset may have biases, with unknown generalization to polar or maritime regions.
 
 ## Related Work & Insights
 
-- **DINOv3**: The latest vision foundation model with particular attention to remote sensing — DEO demonstrates the merit of efficiently leveraging its knowledge rather than competing from scratch.
-- **Coding Rate Regularization**: Derived from MCR² (Ma et al.), it replaces negative sampling/temperature scaling in conventional contrastive learning, preventing representation collapse more elegantly.
-- **Implications for the EO community**: Rather than investing enormous compute to train MS foundation models from scratch, efficiently absorbing knowledge from existing VFMs via distillation points toward a sustainable EO foundation model ecosystem.
+- **DINOv3**: Provided the foundation for the optical priors used in DEO.
+- **Coding Rate Regularization**: From MCR², it serves as an elegant alternative to negative sampling in contrastive learning to prevent representation collapse.
+- **Insight for the EO Community**: Instead of spending massive compute to train MS models from scratch, efficiently distilling knowledge from existing VFMs is a more sustainable path for EO foundation models.
 
 ## Rating
 
-⭐⭐⭐⭐⭐ — Insightful (objective compatibility), highly efficient (SOTA with only 500K images), and experimentally comprehensive (11 datasets across 3 tasks). An outstanding contribution to the remote sensing foundation model literature.
+⭐⭐⭐⭐⭐ — Strong insights (objective compatibility), excellent efficiency (SOTA with 500k images), and comprehensive evaluation across 11 datasets.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
 - [\[ICCV 2025\] On the Generalization of Representation Uncertainty in Earth Observation](../../ICCV2025/segmentation/on_the_generalization_of_representation_uncertainty_in_earth_observation.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] CTFS: Collaborative Teacher Framework for Forward-Looking Sonar Image Semantic Segmentation with Extremely Limited Labels](ctfs_collaborative_teacher_framework_for_forward-looking_sonar_image_semantic_se.md)
-- [\[CVPR 2026\] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation](pixdlm_uav_reasoning_segmentation.md)
-- [\[CVPR 2026\] RecycleLoRA: Rank-Revealing QR-Based Dual-LoRA Subspace Adaptation for Domain Generalized Semantic Segmentation](recyclelora_rank-revealing_qr-based_dual-lora_subspace_adaptation_for_domain_gen.md)
+- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
 
 </div>
 

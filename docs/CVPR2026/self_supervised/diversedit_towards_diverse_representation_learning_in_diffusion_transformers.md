@@ -2,116 +2,125 @@
 title: >-
   [Paper Note] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Diffusion Transformer] Through systematic analysis, this work identifies inter-block representation diversity as a key factor for effective learning in DiTs…
+  [CVPR 2026][Self-Supervised Learning][Image Generation] Systematic analysis reveals that representation diversity among DiT blocks is a key factor for effective learning. This paper proposes DiverseDiT: using long residual connections to diversify inputs and a representation diversity loss to explicitly promote feature differentiation between blocks, accelerating convergenc
 tags:
-  - "CVPR 2026"
-  - "Self-Supervised Learning"
-  - "Diffusion Transformer"
-  - "representation diversity"
-  - "long residual connections"
-  - "diversity loss"
-  - "image generation"
+  - CVPR 2026
+  - Self-Supervised Learning
+  - Image Generation
 date: 2026-05-08
-content_hash: 29108a9715fa3483
+content_hash: f727c543b205de3c
 ---
-
 # DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.04239](https://arxiv.org/abs/2603.04239)  
 **Code**: [Available](https://github.com/kobeshegu/DiverseDiT)  
-**Area**: Self-Supervised / Representation Learning
-**Keywords**: Diffusion Transformer, representation diversity, long residual connections, diversity loss, image generation
+**Area**: Self-Supervised/Representation Learning  
+**Keywords**: Diffusion Transformer, Representation Diversity, Long Residual Connection, Diversity Loss, Image Generation
 
 ## TL;DR
 
-Through systematic analysis, this work identifies inter-block representation diversity as a key factor for effective learning in DiTs, and proposes DiverseDiT: long residual connections to diversify inputs combined with a representation diversity loss to explicitly promote feature differentiation across blocks—accelerating convergence and improving generation quality without any external guidance model.
+Systematic analysis reveals that representation diversity among DiT blocks is a key factor for effective learning. This paper proposes DiverseDiT: using long residual connections to diversify inputs and a representation diversity loss to explicitly promote feature differentiation between blocks, accelerating convergence and improving generation quality without external guidance models.
 
 ## Background & Motivation
 
-### 1. State of the Field
+### 1. Background
 
-Diffusion Transformers (DiT) have achieved breakthroughs in visual generation owing to their excellent scalability. Recent studies have found that high-performing diffusion models can capture more discriminative internal representations, inspiring methods such as REPA—which aligns intermediate DiT representations with features from pretrained visual encoders (e.g., DINOv2)—with subsequent works like REPA-E and REG further extending this direction.
+Diffusion Transformers (DiT) have achieved breakthroughs in visual generation due to their excellent scalability. Recent studies have found that high-performance diffusion models capture more discriminative internal representations, leading to methods like REPA, which align DiT intermediate representations with features from pre-trained visual encoders (e.g., DINOv2). Subsequent works like REPA-E and REG have further extended this approach.
 
 ### 2. Limitations of Prior Work
 
-- **Dependence on large external models**: REPA-family methods require strong pretrained visual encoders (DINOv2, MAE, etc.), which are themselves costly to train.
-- **Unclear mechanisms**: Fundamental questions—how DiTs learn meaningful representations and why external alignment helps—remain poorly understood.
-- **Blind alignment is harmful**: Aligning more blocks with more encoders can actually degrade performance.
+- **Dependency on Large External Models**: REPA-style methods require powerful pre-trained visual encoders (DINOv2, MAE, etc.), which are themselves costly to train.
+- **Unclear Mechanisms**: Fundamental questions remain regarding how DiTs learn meaningful representations and why external alignment is effective.
+- **Blind Alignment Can Be Harmful**: Aligning more blocks with more encoders can lead to performance degradation.
 
-### 3. Root Cause
+### 3. Key Challenge
 
-A disconnect exists between "using external models to provide guidance" and "understanding the intrinsic representation learning mechanism"—practitioners apply REPA without understanding why it works, precluding principled improvements.
+There is a gap between "using external models for guidance" and "understanding the model's internal representation learning mechanism." The widespread use of REPA without understanding why it works hinders more principled architectural improvements.
 
-### 4. Paper Goals
+### 4. Goal
 
-Reveal the intrinsic mechanisms of representation learning in DiTs, and on that basis design an efficient representation learning framework that requires no external guidance.
+To reveal the internal mechanisms of representation learning in DiT and design an efficient representation learning framework that does not rely on external guidance.
 
-### 5. Starting Point
+### 5. Key Insight
 
-CKA (Centered Kernel Alignment) is used to systematically measure the evolution of inter-block representation similarity during training, offering a novel perspective—inter-block representation diversity—for understanding and improving DiTs.
+Systematic measurement of representation similarity changes across blocks during training using Centered Kernel Alignment (CKA) allows for understanding and improving DiT from a new perspective: "inter-block representation diversity."
 
 ### 6. Core Idea
 
-**Representation diversity hypothesis**: The greater the representational difference across blocks in a DiT, the better the model learns. REPA is effective precisely because it increases the representational difference between the aligned block and the others. Based on this insight, one can directly design mechanisms to promote diversity without relying on external encoders.
+**Representation Diversity Hypothesis**: The greater the difference in representations between DiT blocks, the better the model learns. REPA is effective essentially because it increases the representation difference between aligned blocks and others. Based on this, mechanisms can be designed to promote diversity directly without relying on external encoders.
 
 ## Method
 
 ### Overall Architecture
 
-DiverseDiT comprises two complementary components:
+DiverseDiT addresses the premise that DiT performance depends on the diversity of representations across blocks, which previously relied on external encoders (like DINOv2 in REPA). Its strategy is to act internally by transforming block inputs and constraining block outputs to foster diversity. The pipeline adds two complementary components to the standard DiT: **Long Residual Connections (LRC)**, which cross-connect shallow block outputs to symmetric deep blocks to break input homogeneity; and **Representation Diversity Loss**, consisting of orthogonality, mutual information minimization, and feature dispersion terms to explicitly differentiate block features. The former handles "input diversification" while the latter handles "output differentiation," both without external pre-trained models.
 
-1. **Long Residual Connections**: Inject shallow-block outputs into their symmetric deep counterparts, breaking input homogenization.
-2. **Representation Diversity Loss**: Composed of an orthogonality loss, a mutual information minimization loss, and a feature dispersion loss, explicitly constraining each block to learn distinct features.
-
-The two components promote representation diversity from the perspectives of input diversification and output differentiation, respectively, without requiring any external pretrained model.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Noisy latent + timestep t"] --> LRC
+    subgraph LRC["Long Residual Connections (Input Diversification)"]
+        direction TB
+        B["DiT block stack (L layers)"]
+        C["Shallow block i output concatenated with prev output<br/>→ Norm + Linear projection to D dims<br/>→ Cross-connect to symmetric block (L-i)"]
+        B --> C
+        C -.Differentiated Input.-> B
+    end
+    LRC --> E["Block output features"]
+    E --> DIV
+    subgraph DIV["Representation Diversity Loss (Output Differentiation)"]
+        direction TB
+        F["Orthogonal Loss: Separate mean block directions"]
+        G["MI Minimization Loss: Cut statistical dependencies"]
+        H["Feature Dispersion Loss: Utilize all channels"]
+    end
+    DIV --> I["Adaptive Weight (Piecewise Linear)<br/>Stop optimization if diversity loss is too low"]
+    I --> J["Denoising Training Objective → Image Generation"]
+```
 
 ### Key Designs
 
-#### Design 1: Long Residual Connections
+**1. Long Residual Connections: Breaking inter-block homogeneity from the input side**
 
-- **Function**: Connect the output of block $i$ to block $(L-i)$ (where $L$ is the total number of layers), forming symmetric skip connections.
-- **Mechanism**: $f_l = \text{Linear}(\text{Norm}(f_i \oplus f_{l-1}))$, where $\oplus$ denotes concatenation; the concatenated $2D$-dimensional features are projected back to $D$ dimensions via LayerNorm + Linear.
-- **Design Motivation**: In vanilla DiT, each block receives input only from the previous layer's output, leading to highly homogeneous inputs. Injecting shallow-layer features provides differentiated input signals to different blocks, encouraging feature reuse and preventing representation collapse.
+In traditional DiT, the input for each block comes only from the previous layer, causing signals to become increasingly similar as they pass through layers, which is the root of representation diversity degradation. LRC connects the output of the $i$-th block directly to the symmetric $(L-i)$-th block ($L$ total layers), providing deep blocks with a differentiated shallow signal alongside the regular input. The fusion is performed by concatenating the shallow feature $f_i$ with the previous layer output $f_{l-1}$ and projecting back to the original dimension:
 
-#### Design 2: Orthogonality Loss $\mathcal{L}_{\text{orth}}$
+$$f_l = \text{Linear}(\text{Norm}(f_i \oplus f_{l-1}))$$
 
-- **Function**: Penalizes high cosine similarity between the mean representations of different blocks.
-- **Mechanism**: The token-level representation of each block is averaged over the batch and token dimensions to obtain $\mu_l \in \mathbb{R}^D$; cosine similarity between selected block pairs is then minimized.
-- **Design Motivation**: Encourages different blocks to learn features with orthogonal directions, avoiding redundancy.
+where $\oplus$ is concatenation. The $2D$ feature is passed through LayerNorm and a Linear layer to return to $D$ dimensions. This prevents inputs to different blocks from converging, promoting shallow feature reuse and preventing representation collapse with minimal additional parameters.
 
-#### Design 3: Mutual Information Minimization Loss $\mathcal{L}_{\text{MI}}$
+**2. Orthogonal Loss $\mathcal{L}_{\text{orth}}$: Orthogonalizing mean representation directions**
 
-- **Function**: Minimizes statistical dependencies between representations of different blocks.
-- **Mechanism**: The average cosine similarity between normalized token vectors serves as an efficient proxy for mutual information, avoiding direct computation of high-dimensional covariance matrices.
-- **Design Motivation**: Ensures statistical independence among inter-block representations so that each block captures complementary information.
+The orthogonal loss targets redundancy. If two blocks have similar overall representation directions, they learn redundant information. The token-level representations of a block are averaged across batch and token dimensions to obtain a mean vector $\mu_l \in \mathbb{R}^D$. The cosine similarity between $\mu_l$ for selected block pairs is penalized, forcing different blocks to develop in orthogonal directions.
 
-#### Design 4: Feature Dispersion Loss $\mathcal{L}_{\text{disp}}$
+**3. Mutual Information Minimization Loss $\mathcal{L}_{\text{MI}}$: Severing statistical dependencies**
 
-- **Function**: Maximizes the variance of feature activations across the channel dimension.
-- **Mechanism**: After flattening and normalizing representations of each block, the mean activation per dimension is computed; its variance is then maximized (negated as the loss).
-- **Design Motivation**: Encourages the model to fully utilize all feature channels, preventing activations from concentrating on a few dimensions.
+While orthogonality constrains mean directions, fine-grained statistical correlations might still exist. $\mathcal{L}_{\text{MI}}$ aims for statistical independence between block representations. Instead of expensive covariance matrix calculations, the average cosine similarity between normalized token vectors is used as an efficient proxy for mutual information to reduce statistical coupling during training.
+
+**4. Feature Dispersion Loss $\mathcal{L}_{\text{disp}}$: Encouraging full channel utilization**
+
+This term addresses the "internal collapse" of single representations. If activations are concentrated in a few channels, feature capacity is wasted. $\mathcal{L}_{\text{disp}}$ flattens and normalizes block representations, calculates the mean activation for each channel, and maximizes the variance of these activations across the channel dimension (implemented as a negative variance loss). This encourages the model to fully utilize all feature channels.
 
 ### Loss & Training
 
-Total diversity loss: $\mathcal{L}_{\text{div}} = 0.33 \cdot \mathcal{L}_{\text{orth}} + 0.33 \cdot \mathcal{L}_{\text{MI}} + 0.33 \cdot \mathcal{L}_{\text{disp}}$
+Total Diversity Loss: $\mathcal{L}_{\text{div}} = 0.33 \cdot \mathcal{L}_{\text{orth}} + 0.33 \cdot \mathcal{L}_{\text{MI}} + 0.33 \cdot \mathcal{L}_{\text{disp}}$
 
-**Adaptive weighting mechanism**: When $\mathcal{L}_{\text{div}}$ approaches zero, the model diverges (excessive separation impedes learning of shared semantic representations). A piecewise linear weight is therefore applied:
+**Adaptive Weighting Mechanism**: If $\mathcal{L}_{\text{div}}$ becomes too small, the model may diverge by over-separating and failing to learn shared semantics. A piecewise linear weight $w$ is used:
 
-- $\mathcal{L}_{\text{div}} > 0.5$: weight $w=1$ (normal optimization)
-- $0.1 < \mathcal{L}_{\text{div}} \le 0.5$: weight $w = (\mathcal{L}_{\text{div}} - 0.1) / 0.5$ (gradually reduced)
-- $\mathcal{L}_{\text{div}} \le 0.1$: weight $w=0$ (diversity optimization halted)
+- If $\mathcal{L}_{\text{div}} > 0.5$: $w=1$ (Normal optimization)
+- If $0.1 < \mathcal{L}_{\text{div}} \le 0.5$: $w = (\mathcal{L}_{\text{div}} - 0.1) / 0.5$ (Gradual weakening)
+- If $\mathcal{L}_{\text{div}} \le 0.1$: $w=0$ (Stop diversity optimization)
 
-Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a small number of additional parameters (Linear layers for long residual connections) are introduced.
+Training: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Minimal extra parameters from LRC Linear layers.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: Results at different model scales on ImageNet 256×256 (no CFG, 400K iterations)**
+**Table 1: Comparison of different model scales on ImageNet 256×256 (w/o CFG, 400K iterations)**
 
 | Model | FID↓ | sFID↓ | IS↑ | Prec.↑ | Rec.↑ |
-|-------|------|-------|-----|--------|-------|
+|------|------|-------|-----|--------|-------|
 | SiT-B | 36.80 | 6.77 | 40.09 | 0.51 | 0.63 |
 | **+ Ours** | **28.05** | **6.04** | **50.66** | **0.57** | 0.63 |
 | REPA-B | 22.99 | 6.70 | 64.73 | 0.59 | 0.65 |
@@ -124,7 +133,7 @@ Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a sma
 **Table 2: Comparison with SOTA methods on ImageNet 256×256 (with CFG)**
 
 | Method | Epochs | FID↓ | IS↑ | Rec.↑ |
-|--------|--------|------|-----|-------|
+|------|--------|------|-----|-------|
 | DiT-XL/2 | 1400 | 2.27 | 278.20 | 0.57 |
 | SiT-XL/2 | 1400 | 2.06 | 270.30 | 0.59 |
 | REPA | 200 | 1.96 | 264.00 | 0.60 |
@@ -133,62 +142,62 @@ Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a sma
 | **DiverseDiT (Ours)** | **80** | **1.89** | **276.85** | **0.66** |
 | **DiverseDiT (Ours)** | **200** | **1.52** | **282.72** | **0.66** |
 
-**Single-step generation SOTA (ImageNet 256×256, with CFG)**: MeanFlow-XL/2 + Ours achieves FID=**2.99**, surpassing all existing single-step methods.
+**Single-step SOTA (ImageNet 256×256, with CFG)**: MeanFlow-XL/2 + Ours reaches FID=**2.99**, outperforming all existing single-step methods.
 
 ### Ablation Study
 
-**Component ablation (SiT-B / REPA-B, 400K iter)**:
+**Component Ablation (SiT-B / REPA-B, 400K iter)**:
 
 | Configuration | SiT-B FID↓ | REPA-B FID↓ |
-|---------------|-----------|------------|
-| Full (complete method) | 28.05 | 17.29 |
+|------|-----------|------------|
+| Full Method | 28.05 | 17.29 |
 | w/o diversity loss | 32.77 | 20.66 |
 | w/o residual connections | 33.72 | 18.18 |
 
-**Loss variant ablation (REPA-B)**:
+**Loss Variant Ablation (REPA-B)**:
 
 | Configuration | FID↓ | IS↑ |
-|---------------|------|-----|
+|------|------|-----|
 | Full | 17.29 | 79.92 |
 | only $\mathcal{L}_{\text{orth}}$ | 18.97 | 75.44 |
 | only $\mathcal{L}_{\text{MI}}$ | 17.70 | 78.34 |
 | only $\mathcal{L}_{\text{disp}}$ | 20.85 | 68.74 |
 
-**Adaptive range ablation**: A constant weight causes divergence; the range [0.1, 0.5] is optimal (FID 28.05), outperforming [0.2, 0.7] (30.59) and [0.3, 0.9] (31.85).
+**Adaptive Range Ablation**: Constant weight leads to divergence; the [0.1, 0.5] range is optimal (FID 28.05), performing better than [0.2, 0.7] (30.59) and [0.3, 0.9] (31.85).
 
 ### Key Findings
 
-1. **Consistent improvement**: The method yields stable gains across three baselines (SiT, REPA, MeanFlow) and three scales (B/L/XL).
-2. **Cross-scale competitiveness**: REPA-B + Ours (17.29) outperforms vanilla SiT-L (18.77); REPA-L + Ours (8.47) outperforms REPA-XL (8.73).
-3. **Training efficiency**: FID 1.89 is achieved with only 80 epochs, surpassing REPA's 1.96 at 200 epochs.
-4. **Complementarity with existing methods**: SiT-B + Ours + DispLoss + SRA = FID 21.95, outperforming REPA-B (22.99) without requiring an external encoder.
+1. **Consistent Improvement**: Stable improvements across SiT, REPA, and MeanFlow baselines at B, L, and XL scales.
+2. **Cross-Scale Competitiveness**: REPA-B + Ours (17.29) outperforms the original SiT-L (18.77); REPA-L + Ours (8.47) outperforms REPA-XL (8.73).
+3. **Training Efficiency**: Achieves FID 1.89 in just 80 epochs, outperforming REPA at 200 epochs (FID 1.96).
+4. **Complementarity**: SiT-B + Ours + DispLoss + SRA = FID 21.95, better than REPA-B (22.99) without requiring external encoders.
 
 ## Highlights & Insights
 
-- **Analysis-driven design**: Systematic CKA analysis first reveals "representation diversity" as the key factor, which then motivates the method design—the logical chain is complete and principled.
-- **New explanation for REPA**: REPA is effective not because of external knowledge per se, but because it increases the representational difference between the target block and the others—a highly illuminating insight.
-- **Simplicity and efficiency**: Both components are conceptually simple and lightweight, introducing only a small number of additional parameters (Linear layers for long residual connections), with broad applicability.
-- **No external models required**: Eliminates dependence on large pretrained encoders such as DINOv2 and MAE.
+- **Analysis-Driven Design**: The method is designed based on systematic CKA analysis highlighting representation diversity, ensuring a strong logical foundation.
+- **New Explanation for REPA**: Suggests that REPA's effectiveness stems from increasing representation differences between target blocks rather than external knowledge per se—an insightful perspective.
+- **Simple and Efficient**: Components are conceptually simple, lightweight to implement, and generalizable with minimal parameter overhead.
+- **No External Models**: Removes dependency on massive pre-trained encoders like DINOv2 or MAE.
 
 ## Limitations & Future Work
 
-- The adaptive weighting mechanism (piecewise linear function) is somewhat ad hoc; the thresholds 0.1/0.5 lack theoretical justification.
-- The selection strategy for block pairs (subset $\mathcal{P}$) is not thoroughly discussed; the optimal choice may depend on model scale and depth.
-- Validation is limited to ImageNet; more complex scenarios such as text-to-image and video generation remain untested.
-- A gap remains compared to REG (FID 1.36@800ep) vs. Ours (FID 1.52@200ep); performance under extended training is not fully explored.
-- The generalizability of long residual connections to asymmetric architectures (e.g., U-ViT) awaits verification.
+- The adaptive weighting mechanism (piecewise linear) is somewhat ad-hoc; thresholds 0.1/0.5 lack theoretical derivation.
+- The strategy for selecting block pairs (subset $\mathcal{P}$) is not deeply discussed; optimal selection might vary with model scale or depth.
+- Validation is limited to ImageNet; performance on text-to-image or video generation is untested.
+- A gap remains compared to REG (FID 1.36 @ 800ep); performance under very long training needs further exploration.
+- Generalization of LRC to non-symmetric architectures (e.g., U-ViT) needs verification.
 
 ## Related Work & Insights
 
-- **REPA [Yu et al.]**: Aligns intermediate hidden states with external encoders; this work explains the root cause of its effectiveness.
-- **DispLoss [Wang et al.]**: Dispersion loss encourages representations to spread across the embedding space; DiverseDiT takes a more systematic approach (input diversity + output diversity simultaneously).
-- **SRA [Li et al.]**: A self-alignment method where low-noise layers guide high-noise layers; complementary to and stackable with DiverseDiT.
-- **MeanFlow [Liu et al.]**: A single-step generation method; DiverseDiT applies seamlessly and sets a new SOTA.
-- **Insights**: The inter-block diversity perspective generalizes to other Transformer architectures (ViT, LLMs)—the question of "inter-layer collaboration vs. inter-layer redundancy" in deep networks is a broadly relevant research direction worth further investigation.
+- **REPA [Yu et al.]**: Aligning intermediate states with external encoders; DiverseDiT explains the root of its effectiveness.
+- **DispLoss [Wang et al.]**: Encourages scattered embeddings; DiverseDiT is more systematic (diversifying both inputs and outputs).
+- **SRA [Li et al.]**: Self-alignment by guiding high-noise layers with low-noise layers; complementary to DiverseDiT.
+- **MeanFlow [Liu et al.]**: Single-step generation; DiverseDiT refreshes SOTA when integrated.
+- **Insight**: Inter-block diversity is applicable to other Transformer architectures (ViT, LLM). The tradeoff between layer-wise collaboration and redundancy is a fundamental topic for study.
 
 ## Rating
 
-⭐⭐⭐⭐ A solid, analysis-driven work. The logical chain from CKA observations to method design is self-consistent; the two components are simple, effective, and complementary to existing methods; experiments comprehensively cover multiple baselines and scales. Minor weaknesses include the somewhat empirical nature of the adaptive weighting design and the absence of validation on broader generative scenarios.
+⭐⭐⭐⭐ Solid analysis-driven work with logical consistency from CKA observations to method design. Components are simple yet effective and complementary to existing methods. Experimental coverage across baselines and scales is thorough. Minor weaknesses include the empirical nature of adaptive weighting and limited validation on broader generation tasks.
 
 <!-- RELATED:START -->
 
@@ -199,8 +208,8 @@ Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a sma
 - [\[ICLR 2026\] No Other Representation Component Is Needed: Diffusion Transformers Can Provide Representation Guidance by Themselves](../../ICLR2026/self_supervised/no_other_representation_component_is_needed_diffusion_transformers_can_provide_r.md)
 - [\[CVPR 2026\] Vision Transformers Need More Than Registers](vision_transformers_need_more_than_registers.md)
 - [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)
+- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
 - [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](trackmae_video_representation_learning_via_track_mask_and_predict.md)
-- [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
 
 </div>
 

@@ -2,78 +2,80 @@
 title: >-
   [Paper Note] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 description: >-
-  [CVPR2026][Video Understanding][RGBT Tracking] This paper is the first to introduce textual descriptions into RGBT tracking, proposing RAGTrack…
+  [CVPR 2026][Video Understanding][Paper Note] Introduces text descriptions to RGBT tracking for the first time, proposing the RAGTrack framework based on Retrieval-Augmented Generation (RAG). By utilizing a multimodal Transformer encoder, adaptive token fusion, and a context-aware reasoning module, it achieves SOTA performance on four RGBT benchmarks.
 tags:
-  - "CVPR2026"
-  - "Video Understanding"
-  - "RGBT Tracking"
-  - "Retrieval-Augmented Generation"
-  - "Multimodal Fusion"
-  - "Language-Guided Tracking"
-  - "Adaptive Token Fusion"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 97fb1c7da3730e9d
+content_hash: 1f7ccae0ae0e4acf
 ---
-
 # RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.03617](https://arxiv.org/abs/2603.03617)  
 **Code**: [IdolLab/RAGTrack](https://github.com/IdolLab/RAGTrack)  
-**Area**: Video Understanding / RGBT Tracking
-**Keywords**: RGBT Tracking, Retrieval-Augmented Generation, Multimodal Fusion, Language-Guided Tracking, Adaptive Token Fusion
+**Area**: Video Understanding / RGBT Tracking  
+**Keywords**: RGBT Tracking, Retrieval-Augmented Generation, Multimodal Fusion, Language-guided Tracking, Adaptive Token Fusion
 
 ## TL;DR
 
-This paper is the first to introduce textual descriptions into RGBT tracking, proposing RAGTrack, a retrieval-augmented generation (RAG)-based framework. Through a Multimodal Transformer Encoder (MTE), Adaptive Token Fusion (ATF), and a Context-aware Reasoning Module (CRM), it achieves state-of-the-art performance on four RGBT benchmarks.
+Introduces text descriptions to RGBT tracking for the first time, proposing the RAGTrack framework based on Retrieval-Augmented Generation (RAG). By utilizing a multimodal Transformer encoder, adaptive token fusion, and a context-aware reasoning module, it achieves SOTA performance on four RGBT benchmarks.
 
 ## Background & Motivation
 
-1. **Limitations of RGBT tracking**: Existing RGBT trackers rely solely on first-frame visual information to model the target, making them prone to drift under drastic appearance changes.
-2. **Insufficient single-frame template information**: A single template image cannot capture the full appearance variation of a target across different viewpoints, resulting in limited semantic expressiveness.
-3. **Inherent target ambiguity**: Trackers may confuse foreground with background (e.g., brooms, dustpans, or the lower body of pedestrians), lacking high-level semantic discriminability.
-4. **Redundancy in the search region**: Conventional methods process large amounts of redundant background regions and distractors at the token level, degrading tracking precision.
-5. **Heterogeneous modality gap**: Significant feature discrepancies exist between RGB and TIR modalities, impeding effective cross-modal correspondence.
-6. **Absence of language annotations**: Existing RGBT tracking benchmarks lack textual annotations, limiting research on language-guided tracking.
+1. **Limitations of RGBT Tracking**: Existing RGBT trackers rely solely on first-frame visual information to model targets, making them prone to drifting when target appearance changes drastically.
+2. **Inadequate Single-frame Templates**: Single template images cannot cover the complete appearance variations of a target from different perspectives, leading to limited semantic representation.
+3. **Inherent Target Ambiguity**: Trackers may confuse foreground and background (e.g., brooms, dustpans, lower bodies of pedestrians) due to a lack of high-level semantic discriminative power.
+4. **Search Area Redundancy**: Traditional methods process large amounts of redundant background regions and distractors at the token level, reducing tracking accuracy.
+5. **Heterogeneous Modality Gap**: Significant feature differences between RGB and TIR modalities hinder effective cross-modal correspondence modeling.
+6. **Lack of Language Annotations**: Existing RGBT tracking benchmarks lack text annotations, restricting research into language-guided tracking.
 
 ## Method
 
 ### Overall Architecture
 
-RAGTrack comprises three core modules: a Multimodal Transformer Encoder (MTE), Adaptive Token Fusion (ATF), and a Context-aware Reasoning Module (CRM). The inputs are RGB/TIR search images, template images, and language descriptions; the output is the target bounding box.
+RGBT tracking has long relied only on visual templates from the first frame for target modeling, which drifts under appearance changes or confuses the target with background elements (like brooms, dustpans, or lower bodies). RAGTrack introduces text descriptions to RGBT tracking for the first time and uses the Retrieval-Augmented Generation (RAG) paradigm to dynamically update target language descriptions across frames. It consists of three components: a Multimodal Transformer Encoder (MTE) for joint vision-language modeling, Adaptive Token Fusion (ATF) for cross-modal feature fusion and redundancy removal, and a Context-aware Reasoning Module (CRM) for temporal language reasoning via the RAG paradigm. Inputs include RGB/TIR search images, template images, and language descriptions, while the output is the target bounding box; new decriptions generated by an MLLM at the end of CRM flow back to the next frame, forming a cross-frame RAG reasoning loop.
 
-### Multimodal Transformer Encoder (MTE)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["RGB/TIR Search + Template Images, Language Description, Reasoning Tokens"] --> MTE["Multimodal Transformer Encoder (MTE)<br/>Concatenates four types of tokens into a unified sequence<br/>Shared-parameter self-attention for vision-language modeling"]
+    MTE --> ATF["Adaptive Token Fusion (ATF)<br/>Dynamic Token Selection (Keep-ratio γ=85%)<br/>+ Adaptive Channel Exchange (Exchange-ratio σ=50%)"]
+    ATF --> CRM
+    subgraph CRM["Context-aware Reasoning Module (CRM) · RAG Four Steps"]
+        direction TB
+        C1["Construction: Maintain dynamic knowledge base D (n=4 historical text features)"] --> C2["Retrieval: Retrieve top-k=2 relevant features to refine search features"]
+        C2 --> C3["Augmentation: Generate next-frame reasoning tokens to enhance temporal representation"]
+        C3 --> C4["Generation: QWen2.5-VL-3B generates context-aware target descriptions"]
+    end
+    CRM --> HEAD["Prediction Head<br/>Outputs target bounding box"]
+    C4 -. Update language description for next frame .-> IN
+```
 
-- A three-stage downsampling operation converts template and search images into patch tokens.
-- A sequence prefix $\mathbf{E}^t$ (fixed text prompt + learnable tokens) is concatenated with the language description $\mathbf{L}^t$ and encoded via a CLIP text encoder.
-- Reasoning tokens $\mathbf{R}_m^t$, text tokens $\hat{\mathbf{H}}^t$, template tokens $\hat{\mathbf{Z}}_m^t$, and search tokens $\hat{\mathbf{X}}_m^t$ are concatenated into a unified sequence.
-- Both the RGB and TIR branches share parameters and apply multi-head self-attention for unified vision–language modeling.
+### Key Designs
 
-### Adaptive Token Fusion (ATF)
+**1. Multimodal Transformer Encoder (MTE): Unified modeling by concatenating reasoning, text, template, and search tokens into a single sequence.**
 
-- **Dynamic token selection**: Self-attention scores are reused to compute the total attention score $\mathbf{A}_m^{total}$ between search tokens and reasoning/text/template/search tokens. Target-relevant tokens are retained at a ratio of $\gamma=85\%$ with no additional parameter overhead.
-- **Adaptive channel exchange**: Cross-modal channel correlation $\mathbf{S}$ between RGB and TIR features is computed; the top $\sigma=50\%$ channels are selected for exchange, followed by MLP-based fusion.
-- ATF is deployed at layers 6/12/18/24 of HiViT-B, enabling progressive cross-layer fusion.
+To truly involve language in tracking, text and vision should not be computed separately. MTE first uses three-stage downsampling to divide template and search images into patch tokens. On the language side, a sequence prefix $\mathbf{E}^t$ (fixed text prompt + learnable tokens) is concatenated with the language description $\mathbf{L}^t$ and passed through a CLIP text encoder. Subsequently, reasoning tokens $\mathbf{R}_m^t$, text tokens $\hat{\mathbf{H}}^t$, template tokens $\hat{\mathbf{Z}}_m^t$, and search tokens $\hat{\mathbf{X}}_m^t$ are concatenated into a unified sequence. RGB/TIR branches perform joint vision-language modeling using shared-parameter multi-head self-attention, allowing text semantics to interact with visual tokens in the same attention space from the start.
 
-### Context-aware Reasoning Module (CRM)
+**2. Adaptive Token Fusion (ATF): Parameter-free selection of target tokens followed by cross-modal exchange of critical channels.**
 
-A RAG paradigm is adopted for temporal language reasoning, consisting of four stages:
+Search regions contain many redundant background areas and distractors, and the significant gap between RGB and TIR makes direct fusion unreliable. ATF handles this in two steps: **Dynamic Token Selection** reuses existing self-attention scores to calculate the total attention $\mathbf{A}_m^{total}$ of search tokens toward reasoning/text/template/search tokens, keeping target-related tokens according to a keep-ratio $\gamma=85\%$ without parameter overhead. **Adaptive Channel Exchange** computes cross-modal channel correlation $\mathbf{S}$ between RGB and TIR features, selecting critical channels for exchange based on an exchange-ratio $\sigma=50\%$, followed by MLP fusion. These steps are deployed at layers 6, 12, 18, and 24 of HiViT-B to achieve progressive cross-layer fusion. In fusion paradigm comparisons, ATF achieves better results than heavier solutions like TBSI (145.9M) with only 101.8M parameters.
 
-1. **Construction**: A dynamic knowledge base $\mathbf{D}_m$ is maintained with $n=4$ historical text features; a new feature is added only when its cosine similarity to all existing entries falls below threshold $\lambda=1.0$.
-2. **Retrieval**: The top-$k=2$ most relevant features are retrieved from the knowledge base, and intra-modal cross-attention $\Phi$ is applied to refine the search features.
-3. **Augmentation**: Reasoning, text, and template features are average-pooled and concatenated, then passed through an MLP to generate the reasoning token for the next frame; cross-attention and Hadamard product are further applied to enhance temporal representations.
-4. **Generation**: QWen2.5-VL-3B dynamically generates context-aware target descriptions from search images and structured prompts, continuously updating the multimodal reference.
+**3. Context-aware Reasoning Module (CRM): Using RAG to retrieve historical descriptions and maintain target identity across frames.**
+
+Single-frame template information is limited, causing tracking failure during drastic target changes. CRM introduces RAG to tracking through four rolling steps: **Construction** maintains a dynamic knowledge base $\mathbf{D}_m$ (storing $n=4$ historical text features), adding new features only when cosine similarity with existing entries is below threshold $\lambda=1.0$ to avoid redundancy; **Retrieval** retrieves the top-$k=2$ most relevant features from the base to refine search features via intra-modal cross-attention $\Phi$; **Augmentation** concatenates average-pooled reasoning/text/template features and passes them through an MLP to generate next-frame reasoning tokens, enhancing temporal representation via cross-attention and Hadamard product; **Generation** uses QWen2.5-VL-3B to dynamically generate context-aware target descriptions based on search images and structured prompts, continuously updating multimodal references. This RAG loop specifically benefits scenarios in LasHeR attribute analysis such as total occlusion (+10.7% PR) and out-of-view (+5.5% SR).
 
 ### Loss & Training
 
-A multi-task joint loss is used: $\mathcal{L} = L_{\text{cls}} + 2 L_{\text{iou}} + 5 L_1$, where classification employs focal loss and regression employs L1 + GIoU loss.
+Multi-task joint loss $\mathcal{L} = L_{\text{cls}} + 2 L_{\text{iou}} + 5 L_1$, where Focal Loss is used for classification and L1 + GIoU loss for regression.
 
 ## Key Experimental Results
 
-### SOTA Comparison on Four RGBT Benchmarks
+### Main Results
 
 | Dataset | Metric | RAGTrack | Runner-up | Gain |
-|---------|--------|----------|-----------|------|
+|---------|------|----------|----------|------|
 | GTOT | MPR/MSR | **95.1/79.3** | DMD 94.2/78.6 | +0.9/+0.7 |
 | RGBT210 | PR/SR | **93.2/67.1** | AETrack 90.4/66.3 | +2.8/+0.8 |
 | RGBT234 | MPR/MSR | **93.8/69.5** | SUTrack 92.1/69.2 | +1.7/+0.3 |
@@ -82,64 +84,64 @@ A multi-task joint loss is used: $\mathcal{L} = L_{\text{cls}} + 2 L_{\text{iou}
 ### Ablation Study (RGBT234)
 
 | Configuration | MPR | MSR |
-|---------------|-----|-----|
+|------|-----|-----|
 | Baseline | 87.9 | 64.5 |
-| + CRM* (w/o text) | 89.1 | 65.0 |
+| + CRM* (No text) | 89.1 | 65.0 |
 | + MTE + CRM* | 91.1 | 66.7 |
-| + MTE + CRM (w/ text) | 91.8 | 67.4 |
-| + MTE + CRM + ATF (full) | **93.8** | **69.5** |
+| + MTE + CRM (With text) | 91.8 | 67.4 |
+| + MTE + CRM + ATF (Full) | **93.8** | **69.5** |
 
-### Fusion Paradigm Comparison (RGBT234)
+### Comparison of Fusion Paradigms (RGBT234)
 
-| Method | MPR | MSR | Params |
-|--------|-----|-----|--------|
+| Method | MPR | MSR | Parameters |
+|------|-----|-----|--------|
 | TBSI | 92.8 | 67.6 | 145.9M |
 | BSI | 93.1 | 68.2 | 103.6M |
 | DFM | 92.7 | 67.8 | 110.3M |
 | ATF (Ours) | **93.8** | **69.5** | **101.8M** |
 
-Attribute-level analysis on LasHeR shows: Total Occlusion (TO) +10.7% PR and Out-of-View (OV) +5.5% SR, demonstrating CRM's ability to maintain target identity under severe appearance changes.
+LasHeR attribute-level analysis shows: Total Occlusion (TO) +10.7% PR, Out-of-View (OV) +5.5% SR, demonstrating CRM's ability to maintain target identity under drastic appearance changes.
 
 ## Highlights & Insights
 
-1. **First to introduce language descriptions into RGBT tracking**: MLLMs are used to automatically generate text annotations, extending four existing benchmarks (LasHeR training set annotated with 514,081 descriptions).
-2. **Elegant ATF design**: Parameter-free token selection (reusing attention scores) combined with adaptive channel exchange achieves the best fusion performance with the fewest parameters.
-3. **Novel RAG paradigm**: The first application of retrieval-augmented generation to RGBT tracking; a dynamic knowledge base with reasoning token propagation enables continuous temporal reasoning.
-4. **MLLM-based dynamic description generation**: Overcomes the limitations of static language annotations by adaptively updating target descriptions across frames.
+1. **First to introduce language descriptions to RGBT tracking**: Utilized MLLM to automatically generate text annotations, extending four existing benchmarks (annotating 514,081 descriptions for the LasHeR training set).
+2. **Elegant ATF design**: Parameter-free token selection (reusing attention scores) + adaptive channel exchange achieves optimal fusion with minimal parameters.
+3. **Novel RAG paradigm**: First to introduce Retrieval-Augmented Generation into RGBT tracking; dynamic knowledge base + reasoning token propagation achieves continuous temporal reasoning.
+4. **Dynamic description generation via MLLM**: Overcomes the limitations of static language annotations by adaptively updating target descriptions across frames.
 
 ## Limitations & Future Work
 
-1. **Inference overhead**: QWen2.5-VL-3B is invoked per frame to generate descriptions, limiting real-time applicability; no FPS is reported in the paper.
-2. **Dependence on MLLM quality**: Automatically generated text may contain hallucinations; although human verification is performed, scaling to larger datasets incurs high cost.
-3. **Validated only on RGBT**: The framework is theoretically transferable to other multimodal tracking settings (e.g., RGB-Depth, RGB-Event), but no such experiments are conducted.
-4. **Fixed knowledge base size**: $n=4$ is manually set; adaptive sizing could further improve performance in long-video scenarios.
-5. **Training resources**: Training requires 4× V100 GPUs; adaptation for lightweight deployment scenarios remains unclear.
+1. **Inference Overhead**: Calling QWen2.5-VL-3B per frame to generate descriptions limits real-time performance; FPS is not reported in the paper.
+2. **Text Annotation Reliance on MLLM Quality**: Automatically generated text may contain hallucinations; though manually verified, the cost of scaling to larger datasets is high.
+3. **Validated only on RGBT**: The framework can theoretically be transferred to other multimodal tracking (e.g., RGB-Depth, RGB-Event), but this was not verified.
+4. **Fixed Knowledge Base Size**: $n=4$ was set manually; adaptive size adjustment might further improve performance in long-video scenarios.
+5. **Training Resources**: Trained on 4× V100; adaptation for lightweight deployment scenarios is unclear.
 
 ## Related Work & Insights
 
-- **vs ViPT/BAT/SDSTrack** (visual prompt learning): These methods enhance tracking with visual prompts only, lacking language-level semantics; RAGTrack introduces textual descriptions for more abstract target representation.
-- **vs RGBL tracking (CiteTracker/UVLTrack)**: RGBL methods suffer from static vision–language misalignment; RAGTrack addresses this by dynamically generating descriptions via MLLMs.
-- **vs TrackingMiM** (the only prior RAG-based tracking work): It merely reuses pre-stored features; RAGTrack achieves genuine RAG through a dynamic knowledge base and contextual reasoning.
-- **vs SUTrack/AINet** (current SOTA): On RGBT234, ATF with only 101.8M parameters surpasses SUTrack (384 resolution), demonstrating superior efficiency.
+- **vs ViPT/BAT/SDSTrack (Visual Prompt Learning)**: These methods use only visual prompts to enhance tracking and lack language-level semantics; RAGTrack introduces text descriptions for more abstract target representation.
+- **vs RGBL Tracking (CiteTracker/UVLTrack)**: RGBL methods face static vision-language misalignment; RAGTrack solves this via dynamic description generation with MLLM.
+- **vs TrackingMiM (only other RAG-based tracking)**: TrackingMiM only reuses pre-stored features; RAGTrack achieves true RAG via a dynamic knowledge base and contextual reasoning.
+- **vs SUTrack/AINet (Current SOTA)**: On RGBT234, ATF with 101.8M parameters outperforms SUTrack (384 resolution), showing superior efficiency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First to introduce language descriptions and the RAG paradigm into RGBT tracking; the parameter-free token selection design in ATF is innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive SOTA results on four benchmarks; ablations cover individual components, hyperparameters, fusion paradigms, and attention score combinations.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, rich figures and tables, complete mathematical derivations.
-- Value: ⭐⭐⭐⭐ — Opens a new language-guided direction for RGBT tracking, though real-time performance and deployment costs warrant attention.
+- Novelty: ⭐⭐⭐⭐ — First to introduce language descriptions and the RAG paradigm to RGBT tracking; the parameter-free token selection in ATF is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive SOTA across four benchmarks; ablations cover every component, hyperparameter, fusion paradigm, and attention score combinations.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, rich diagrams, and complete formula derivations.
+- Value: ⭐⭐⭐⭐ — Opens a new language-guided direction for RGBT tracking, though real-time performance and deployment costs require attention.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
-- [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](../../NeurIPS2025/video_understanding/adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
-- [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
-- [\[CVPR 2026\] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking](fc-track_overlap-aware_post-association_correction_for_online_multi-object_track.md)
-- [\[CVPR 2026\] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry](dual-agent_reinforcement_learning_for_adaptive_and_cost-aware_visual-inertial_od.md)
+- [\[CVPR 2026\] Progressive Multi-cue Alignment for Unaligned RGBT Tracking](progressive_multi-cue_alignment_for_unaligned_rgbt_tracking.md)
+- [\[CVPR 2026\] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking](spatio-temporal_conditional_denoising_transformer_for_modality-missing_rgbt_trac.md)
+- [\[CVPR 2026\] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)
+- [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
 
 </div>
 

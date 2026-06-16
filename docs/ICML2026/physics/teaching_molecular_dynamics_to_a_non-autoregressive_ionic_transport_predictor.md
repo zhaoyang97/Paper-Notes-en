@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Ionic Transport] This paper treats expensive atomic trajectories as "privileged auxiliary modalities" during training. A dual-modality trainer first learns dynamics from trajec…
+  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper treats expensive atomic trajectories as "privileged auxiliary modalities" during training. A dual-modality trainer first learns dynamics from trajectories, then distills its hidden representations into a structure-only non-autoregressive (NAR) predictor via closed-form Ridge Regression. On Li-ion mean square
 tags:
-  - "ICML 2026"
-  - "Physics & Scientific Computing"
-  - "Ionic Transport"
-  - "Molecular Dynamics"
-  - "Auxiliary Modality Learning"
-  - "Closed-form Ridge Regression Initialization"
-  - "Privileged Information"
+  - ICML 2026
+  - Physics & Scientific Computing
 date: 2026-05-08
-content_hash: 55da3f1e2f6cedac
+content_hash: 9a4b0f353ed062e2
 ---
-
 # Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor
 
 **Conference**: ICML 2026  
@@ -24,48 +18,66 @@ content_hash: 55da3f1e2f6cedac
 **Keywords**: Ionic Transport, Molecular Dynamics, Auxiliary Modality Learning, Closed-form Ridge Regression Initialization, Privileged Information
 
 ## TL;DR
-This paper treats expensive atomic trajectories as "privileged auxiliary modalities" during training. A dual-modality trainer first learns dynamics from trajectories, which are then distilled via closed-form ridge regression into the hidden representations of a non-autoregressive predictor that only views equilibrium structures. This approach is 200× faster and more accurate than autoregressive SOTA in lithium-ion Mean Squared Displacement (MSD) prediction.
+This paper treats expensive atomic trajectories as "privileged auxiliary modalities" during training. A dual-modality trainer first learns dynamics from trajectories, then distills its hidden representations into a structure-only non-autoregressive (NAR) predictor via closed-form Ridge Regression. On Li-ion mean squared displacement (MSD) prediction, it is 200× faster and more accurate than autoregressive SOTA models.
 
 ## Background & Motivation
-**Background**: Predicting ionic transport properties (MSD, diffusivity, conductivity) of battery materials primarily relies on Molecular Dynamics (MD) simulations: numerically integrating Newton's equations starting from equilibrium structures to obtain atomic trajectories for property calculation. Even with MLIP acceleration, a single material still requires hours. The machine learning community offers two alternatives: autoregressive MD acceleration (e.g., LiFlow, generating trajectories step-by-step) and non-autoregressive material property prediction (e.g., MatFormer, ComFormer, DenseGNN, mapping structure to property in one forward pass).
+**Background**: Predicting ionic transport properties (MSD, diffusivity, conductivity) of battery materials currently relies on Molecular Dynamics (MD) simulations. Starting from an equilibrium structure, Newton’s equations are numerically integrated to obtain atomic trajectories, from which transport quantities are calculated. Even with MLIP acceleration, a single material takes hours. The ML community offers two alternatives: autoregressive MD acceleration (e.g., LiFlow, step-by-step trajectory generation) and non-autoregressive material property prediction (e.g., MatFormer, ComFormer, DenseGNN, mapping structure → property in a single forward pass).
 
 **Limitations of Prior Work**:
-- Autoregressive solutions are slow to infer and accumulate errors, leading to trajectory divergence.
-- Non-autoregressive solutions offer fast inference but sacrifice accuracy as they cannot observe dynamic information.
-- Existing methods are restricted to either "trajectory-available" or "structure-only" datasets, unable to leverage both when data is scarce in real-world scenarios.
+- Autoregressive solutions are slow in inference and accumulate errors, leading to trajectory divergence.
+- Non-autoregressive solutions are fast but sacrifice accuracy because they lack access to dynamical information.
+- Existing methods can only utilize either "trajectory-labeled" or "structure-only" datasets, whereas in real-world scenarios, both types of data are scarce and cannot support each other.
 
-**Key Challenge**: Ionic transport inherently involves long-term dynamics (rare jump events + vibrational background), but fast inference necessitates starting from static structures. Consuming dynamics while maintaining fast inference presents a fundamental contradiction between "input modality vs. inference cost." Furthermore, iterative optimization in traditional KD suffers from high variance in few-shot scenarios, making reliable knowledge transfer difficult.
+**Key Challenge**: Ionic transport is essentially long-term dynamics (rare jump events + vibrational background), but fast inference requires starting from a static structure. Incorporating dynamics while maintaining fast inference is a fundamental contradiction between "input modality vs. inference cost." Furthermore, in few-shot scenarios, the iterative optimization of traditional knowledge distillation (KD) suffers from high variance, making reliable knowledge transfer difficult.
 
-**Goal**: (i) Enable a non-autoregressive predictor to learn dynamic priors without requiring trajectories at inference time; (ii) Utilize both "trajectory-labeled" and "structure-only" datasets; (iii) Achieve stable knowledge transfer even in data-scarce scenarios with minimal trajectory data.
+**Goal**: (i) Enable a non-autoregressive predictor to learn dynamical priors without requiring trajectories during inference; (ii) Simultaneously utilize both "trajectory-labeled" and "structure-only" datasets; (iii) Ensure stable knowledge transfer even in few-shot scenarios with extremely limited trajectory data.
 
-**Key Insight**: Atomic trajectories are positioned as "privileged information" / "auxiliary modalities" (auxiliary modality learning, AML), present only during training. Strong priors are provided by pre-trained scientific foundation models (SevenNet for structural embeddings, MOMENT for temporal embeddings) to avoid learning from scratch on scarce data. Closed-form ridge regression replaces iterative optimization for modality alignment to circumvent variance explosion in SGD under small sample sizes.
+**Key Insight**: Atomic trajectories are positioned as "privileged information" / "auxiliary modalities" (Auxiliary Modality Learning, AML), existing only during training. Pre-trained scientific foundation models (SevenNet for structural embeddings, MOMENT for temporal embeddings) are used to provide strong priors and avoid learning from scratch on scarce data. Closed-form Ridge Regression replaces iterative optimization for modality alignment, avoiding the variance explosion of SGD in small samples.
 
-**Core Idea**: A trio of "Privileged Dynamic Modalities + Closed-form Distillation + Cross-dataset Representation Initialization" allows a structure-only predictor to implicitly inherit dynamic representations learned from trajectories.
+**Core Idea**: A trio of "privileged dynamics modality + closed-form distillation + cross-dataset representation initialization" allows a structure-only predictor to implicitly inherit dynamical representations learned from trajectories.
 
 ## Method
 
 ### Overall Architecture
-Two levels of auxiliary modality learning: (1) **Model-level** —— A dual-modality trainer $g$ is first trained on the trajectory dataset $\mathcal{D}^{trj}$ (consuming trajectory embeddings $\mathbf{E}_\mathbf{p}$, structural embeddings $\mathbf{E}_\mathbf{x}$, and temperature embeddings $\mathbf{E}_T$). Then, the merged hidden representation $\mathbf{H}=\mathbf{H}_\mathbf{p}+\mathbf{H}_{\mathbf{x},T}$ of $g$ is distilled via closed-form ridge regression into the encoder of predictor $f_1$, followed by fine-tuning; (2) **Data-level** (Optional) —— When training predictor $f_2$ for structure-only datasets $\mathcal{D}^{str}$, the encoder is initialized from $g$'s structural encoder, and the decoder is initialized from $f_1$'s decoder, transferring dynamic knowledge across datasets.
+Two levels of auxiliary modality learning: (1) **Model-level** — A dual-modality trainer $g$ is first trained on a trajectory-labeled dataset $\mathcal{D}^{trj}$ (taking trajectory embeddings $\mathbf{E}_\mathbf{p}$, structural embeddings $\mathbf{E}_\mathbf{x}$, and temperature embeddings $\mathbf{E}_T$). A closed-form Ridge Regression then distills the combined hidden representation $\mathbf{H}=\mathbf{H}_\mathbf{p}+\mathbf{H}_{\mathbf{x},T}$ from $g$ into the encoder of predictor $f_1$, followed by fine-tuning. (2) **Data-level** (Optional) — When training predictor $f_2$ for structure-only datasets $\mathcal{D}^{str}$, the encoder is initialized from the structural encoder of $g$, and the decoder is initialized from the decoder of $f_1$, transferring dynamical knowledge across datasets.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["Atomic Trajectories (Privileged Modality, Training Only)<br/>Fourier Frequency Domain → MOMENT Temporal Embedding E_p"]
+    X["Equilibrium Structure<br/>SevenNet → 3rd-order Polynomial Expansion E_x"]
+    T["Temperature E_T"]
+    P --> G
+    X --> G
+    T --> G
+    G["Dual-modality Trainer g + Structure-only Regularization<br/>H = H_p + H_x,T; Constrains structural path to be accurate independently"]
+    G -->|Closed-form Ridge Distillation Init| F1["Predictor f1<br/>Encoder inherits latent H, Decoder reuses g_dec"]
+    F1 -->|"Fine-tune on D_trj (No trajectories at inference)"| OUT1["Structure-only Inference → Transport Properties<br/>MSD / Diffusivity / Conductivity"]
+    G -.Structural Encoder W_x,T.-> F2["Cross-dataset Initialization (Data-level)<br/>Predictor f2: Encoder←g structural encoder, Decoder←f1 decoder"]
+    F1 -.Decoder f_dec.-> F2
+    F2 --> OUT2["Structure-only Dataset D_str<br/>Cross-dataset / Cross-species Transfer"]
+```
 
 ### Key Designs
 
-1. **Dual-modality Trainer $g$ + Structure-only Regularization**:
-    - **Function**: Forces the structural encoder to learn useful dynamics-related representations during trajectory-based training, preventing it from being overshadowed by the trajectory encoder.
-    - **Mechanism**: $g$ consists of two linear layers $\mathbf{W}_\mathbf{p}$ (trajectory) and $\mathbf{W}_{\mathbf{x},T}$ (structure + temperature). Their sum $\mathbf{H}$ is passed through an MLP decoder. An auxiliary loss term requires accurate prediction using only structural embeddings: $\mathcal{L}(\hat y^i,y_s^i)+\lambda_b\mathcal{L}(\hat y^i_{\mathbf{x},T},y_s^i)$. Structural embeddings utilize third-order polynomial expansion $\mathbf{E}_\mathbf{x}=[\mathbf{E}_{a,s};\mathbf{E}_{a,s}\odot\mathbf{E}_{a,s};\mathbf{E}_{a,s}^{\odot 3}]$ after SevenNet node/edge feature aggregation to supplement linear layer expressiveness.
-    - **Design Motivation**: Trajectory signals are too strong; without regularization, the structural encoder becomes an empty "placeholder," leaving nothing for the structure-only model to inherit during closed-form distillation.
+**1. Dual-modality Trainer $g$ + Structure-only Regularization: Forcing the structural encoder to learn meaningful features despite trajectory availability**
 
-2. **Closed-form Ridge Regression Distillation Initialization**:
-    - **Function**: Directly transfers the hidden representation $\mathbf{H}^i$ of $g$ to the encoder $\mathbf{W}^{trj}$ of the structure-only predictor $f_1$.
-    - **Mechanism**: Solving $\min_{\mathbf{W}^{trj}}\sum_i\|\mathbf{X}^i\mathbf{W}^{trj}-\mathbf{H}^i\|_F^2+\lambda_r\|\mathbf{W}^{trj}\|_F^2$ yields the closed-form solution $\mathbf{W}^{trj}=(\sum_i(\mathbf{X}^i)^\top\mathbf{X}^i+\lambda_r\mathbf{I})^{-1}(\sum_i(\mathbf{X}^i)^\top\mathbf{H}^i)$, computed via Cholesky decomposition to floating-point precision. The decoder $g_{\text{dec}}$ is reused directly. Subsequent fine-tuning on $\mathcal{D}^{trj}$ uses only structure-temperature embeddings without trajectories.
-    - **Design Motivation**: Traditional KD using iterative gradient optimization exhibits extreme variance in small-data scenarios (dozens to hundreds of samples) typical of ionic transport. The closed-form solution is determinant and requires no learning rate tuning or early stopping, making it a natural choice for data-scarce settings.
+If trajectories and structures are trained together directly, the strong trajectory signal might cause the structural encoder to become a "placeholder." $g$ includes two linear layers $\mathbf{W}_\mathbf{p}$ (trajectory) and $\mathbf{W}_{\mathbf{x},T}$ (structure + temperature). Their sum $\mathbf{H}$ is passed to an MLP decoder. Crucially, an auxiliary structure-only constraint $\mathcal{L}(\hat y^i,y_s^i)+\lambda_b\mathcal{L}(\hat y^i_{\mathbf{x},T},y_s^i)$ is added to the loss, forcing the structural path to independently handle the prediction task. Structural embeddings are also enhanced using a 3rd-order polynomial expansion $\mathbf{E}_\mathbf{x}=[\mathbf{E}_{a,s};\mathbf{E}_{a,s}\odot\mathbf{E}_{a,s};\mathbf{E}_{a,s}^{\odot 3}]$ to supplement the linear layer's expressivity. This regularization ensures the structural encoder learns dynamics-related representations eligible for distillation.
 
-3. **Cross-dataset Initialization (data-level AML)**:
-    - **Function**: Migrates dynamic priors learned from trajectory datasets to structure-only datasets $\mathcal{D}^{str}$ that lack trajectories entirely.
-    - **Mechanism**: The encoder $\mathbf{W}^{str}$ of $f_2$ is initialized from the structural encoder $\mathbf{W}_{\mathbf{x},T}$ of $g$ (as its learned representations are more general under structure-only regularization), while the decoder is initialized from $f_1$'s $f_{\text{dec}}^{trj}$ (which captures robust mappings from hidden representations to transport properties). This "structural-path encoder + trajectory-path decoder" cross-initialization avoids the issue where $\mathbf{W}^{trj}$ is overfitted to the trajectory distribution.
-    - **Design Motivation**: Since $\mathbf{W}^{trj}$ was fitted to $\mathbf{H}$ via the closed-form solution, it is biased toward the trajectory distribution and generalizes poorly to structure-only data. Conversely, $\mathbf{W}_{\mathbf{x},T}$ has been regularized to learn structural representations, making it a better starting point for new datasets.
+**2. Closed-form Ridge Regression Distillation Initialization: Replacing high-variance iterative KD with an analytical solution**
+
+To transfer the hidden representation $\mathbf{H}^i$ of $g$ to the encoder of the structure-only predictor $f_1$, the authors solve a Ridge Regression:
+
+$$\mathbf{W}^{trj}=\Big(\sum_i(\mathbf{X}^i)^\top\mathbf{X}^i+\lambda_r\mathbf{I}\Big)^{-1}\Big(\sum_i(\mathbf{X}^i)^\top\mathbf{H}^i\Big),$$
+
+Using Cholesky decomposition allows for direct calculation to floating-point precision, and the decoder directly reuses $g_{\text{dec}}$. Subsequent fine-tuning on the trajectory dataset uses only structure-temperature embeddings. The closed-form solution requires no tuning and provides a stable choice for few-shot scenarios compared to iterative SGD.
+
+**3. Cross-dataset Initialization (Data-level AML): Cross-initialization of structural and trajectory paths**
+
+To transfer dynamics priors to a structure-only dataset $\mathcal{D}^{str}$, directly reusing $\mathbf{W}^{trj}$ fails because it is overfitted to the trajectory distribution. The authors use cross-initialization: the encoder $\mathbf{W}^{str}$ of $f_2$ starts from the structural encoder $\mathbf{W}_{\mathbf{x},T}$ of $g$ (which learned more general representations), while the decoder starts from $f_{\text{dec}}^{trj}$ of $f_1$ (which captured a robust mapping to transport properties). This "general structural encoder + robust trajectory decoder" approach enables dynamics knowledge to transfer across datasets and even ionic species.
 
 ### Loss & Training
-The entire process uses $L_1$ loss to predict transport properties on a $\log_{10}$ scale. The dual-modality trainer includes an auxiliary structure-only term weighted by $\lambda_b$. Closed-form initialization uses $\lambda_r$ to balance fitting vs. overfitting. The three datasets are: Dataset 1 (MD-calculated Li-MSD, trajectory-based), Dataset 2 (MD-calculated multi-element diffusivity, structure-only, Na reserved for unseen species testing), and Dataset 3 (Experimental Li-conductivity, structure-only).
+$L_1$ loss is used throughout to predict transport quantities on a $\log_{10}$ scale. The dual-modality trainer includes an additional structure-only auxiliary term weighted by $\lambda_b$. Three datasets are used: Dataset 1 (MD-calculated Li-MSD, trajectory-based), Dataset 2 (MD-calculated multi-element diffusivity, structure-only), and Dataset 3 (Experimental Li conductivity, structure-only).
 
 ## Key Experimental Results
 
@@ -79,7 +91,7 @@ The entire process uses $L_1$ loss to predict transport properties on a $\log_{1
 | DenseGNN | Non-autoregressive | 29 | 0.412 | 0.472 | 0.531 | 0.523 |
 | **Ours** | Non-autoregressive | **14** | **0.344** | **0.367** | **0.402** | **0.390** |
 
-Ours is approximately 200× faster than LiFlow, with lower MAE across all temperatures (preserving dynamic knowledge).
+The proposed method is approximately 200× faster than LiFlow, with lower MAE across all temperatures.
 
 Cross-dataset results:
 
@@ -90,8 +102,6 @@ Cross-dataset results:
 | DenseGNN | 0.312 | 2.048 |
 | **Ours** | **0.064** | **1.388** |
 
-Gain of 5× on Dataset 2; Dataset 3 (real experimental data) saw an MAE reduction of 0.66.
-
 ### Ablation Study
 
 | Configuration | Dataset 1 MAE@600K |
@@ -99,36 +109,32 @@ Gain of 5× on Dataset 2; Dataset 3 (real experimental data) saw an MAE reductio
 | Full | 0.344 |
 | w/o model-level AML | 0.395 |
 
-The appendix further verifies: Removing structure-only regularization makes the structural encoder useless after closed-form distillation; removing data-level AML eliminates most gains on Datasets 2/3; substituting the closed-form solution with iterative SGD decreases accuracy in data-scarce scenarios.
-
 ### Key Findings
-- **Dynamic priors are distillable**: Even without trajectories at inference, models can inherit vibration + jump patterns learned from trajectories. The key is Fourier transformation to the frequency domain + MOMENT temporal foundation model for compact representation.
-- **Cross-dataset transfer holds across ionic species**: Na-ions benefited from representations learned on Li-data despite being excluded during training.
-- **Small data + Strong priors**: On scales of hundreds of samples, closed-form solutions + pre-trained foundation model embeddings far outperform deep networks trained from scratch.
+- **Dynamics priors are distillable**: Even without trajectories during inference, models can inherit vibration + jump patterns via Fourier frequency domain representations and temporal foundation models.
+- **Cross-dataset and cross-species transfer works**: Na-ions benefit from dynamics representations learned from Li data.
+- **Small data + Strong priors**: Closed-form solutions + pre-trained foundation model embeddings outperform training deep networks from scratch on limited samples.
 
 ## Highlights & Insights
-- **Practical combination of "Privileged Information + Closed-form Distillation"**: Implements the LUPI framework in a material science context, demonstrating that closed-form solutions are more stable than SGD distillation for small data—a recipe for "few-shot knowledge transfer" worth promoting.
-- **Polynomial embeddings for linear layers**: Using $[\mathbf{E}; \mathbf{E}^{\odot 2}; \mathbf{E}^{\odot 3}]$ enables finite-order nonlinearity for linear mappings. Combined with SevenNet's strong priors, this enhances expressiveness without adding significant parameters.
-- **Cross-dataset encoder/decoder cross-initialization**: Avoids the pitfall where the encoder becomes locked to the source domain distribution after closed-form distillation. This logic is transferable to any "pre-train on rich domain, transfer to poor domain" scenario.
+- **Practical combination of "Privileged Information + Closed-form Distillation"**: Successfully applies the LUPI framework to material science, proving that analytical solutions are more stable than SGD distillation for small data.
+- **Polynomial embeddings to supplement linear layers**: Using $[\mathbf{E}; \mathbf{E}^{\odot 2}; \mathbf{E}^{\odot 3}]$ gains expressivity without significantly increasing parameters.
+- **Encoder/Decoder cross-initialization**: A robust strategy to prevent encoders from being "tied" to the trajectory distribution after distillation, facilitating transfer to structure-only domains.
 
 ## Limitations & Future Work
-- Closed-form solutions require $D \times D$ matrix inversion; caution is needed for high embedding dimensions (currently mitigated by linear layers + polynomial expansion).
-- Experiments were validated primarily on Li/Na; more complex multi-element co-diffusion scenarios require further testing.
-- MAE on real experimental Dataset 3 remains high (1.388, an order of magnitude error!), indicating that sim-to-real remains an open problem requiring more experimental data and domain adaptation.
-- Assumes consistent trajectory length $L$; more complex MD protocols (variable length/temperature ramps) require redesigned Fourier representations.
+- Closed-form solutions require $D\times D$ matrix inversion, which scales poorly with very large embedding dimensions.
+- Validated primarily on Li / Na; multi-element co-diffusion scenarios require further testing.
+- The MAE on real experimental data (Dataset 3) remains substantial, indicating that sim-to-real domain adaptation is still an open problem.
+- Assumptions on consistent trajectory length $L$ limit flexibility for varying MD protocols.
 
 ## Related Work & Insights
-- **vs. LiFlow (autoregressive)**: LiFlow samples atomic trajectories via generative models to compute properties, which is slow and accumulates error; Ours uses direct NAR prediction and is more accurate.
-- **vs. MatFormer / ComFormer / DenseGNN**: These share the structure-to-property NAR approach but lack dynamic knowledge; Ours injects this via AML.
-- **vs. Traditional KD (Hinton 2015)**: Traditional KD uses iterative gradients for logit distillation; Ours uses closed-form representation distillation tailored for data-scarce settings.
-- **vs. LUPI / Generalized Distillation**: This marks the first time atomic trajectories have been positioned as privileged modalities for material prediction.
-- **Insight**: In scenarios like biomedicine or chemistry where data is scarce but "expensive oracles" (e.g., wet labs, quantum simulations) exist, this paradigm of "pre-train on rich modality, distill via closed form, transfer across datasets" is highly reusable.
+- **vs. LiFlow (Autoregressive)**: Generative models for trajectories are slow and accumulate error; the proposed NAR approach is faster and more accurate.
+- **vs. MatFormer / ComFormer / DenseGNN**: These NAR models lack dynamics-aware structural representations, which the proposed AML strategy provides.
+- **Insight**: In domains where data is scarce but "expensive oracles" (like MD or wet labs) exist, the "pre-train on rich modality, distill via closed-form, transfer to structure-only" paradigm is highly valuable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First use of atomic trajectories as privileged modality + closed-form distillation; highly novel in AI4Science.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets covering sim+real, extensive comparison with autoregressive and NAR baselines, complete ablation.
-- Writing Quality: ⭐⭐⭐⭐ Clear three-part motivation (cost/accuracy/data scarcity), intuitive methodology diagrams.
-- Value: ⭐⭐⭐⭐ 200× acceleration + cross-dataset transfer, direct engineering value for battery material screening.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -139,8 +145,8 @@ The appendix further verifies: Removing structure-only regularization makes the 
 - [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](speculative_sampling_for_faster_molecular_dynamics.md)
 - [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](../../NeurIPS2025/physics/flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
-- [\[ICLR 2026\] Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges](../../ICLR2026/physics/contact_wasserstein_geodesics_for_non-conservative_schrödinger_bridges.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](../../NeurIPS2025/physics/feat_free_energy_estimators_with_adaptive_transport.md)
+- [\[ICML 2025\] Teaching LLMs to Speak Spectroscopy](../../ICML2025/physics/teaching_llms_to_speak_spectroscopy.md)
+- [\[ICML 2025\] Universal Neural Optimal Transport](../../ICML2025/physics/universal_neural_optimal_transport.md)
 
 </div>
 

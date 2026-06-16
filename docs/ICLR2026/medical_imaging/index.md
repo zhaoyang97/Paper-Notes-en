@@ -63,7 +63,7 @@ item_total: 22
 
 **🔬 ICLR2026** · **22** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [📷 CVPR2026 (56)](../../CVPR2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (74)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (174)](../../CVPR2026/medical_imaging/index.md) · [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (74)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
 🔥 **Top topics:** Medical Imaging ×5 · Diffusion Models ×3 · Segmentation ×2
 

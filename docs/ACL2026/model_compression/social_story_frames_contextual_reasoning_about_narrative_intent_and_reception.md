@@ -2,133 +2,143 @@
 title: >-
   [Paper Note] Social Story Frames: Contextual Reasoning about Narrative Intent and Reception
 description: >-
-  [ACL2026][Model Compression][Narrative understanding] This paper proposes SocialStoryFrames, utilizing a 10-dimension reader response taxonomy and two distilled models to situate Reddit stories within community and conve…
+  [ACL 2026][Model Compression][Narrative Understanding] This paper proposes SocialStoryFrames, utilizing a 10-dimensional reader response taxonomy and two distilled models to situate Reddit stories within their community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrati
 tags:
-  - "ACL2026"
-  - "Model Compression"
-  - "Narrative understanding"
-  - "reader response"
-  - "social media"
-  - "contextual reasoning"
-  - "model distillation"
+  - ACL 2026
+  - Model Compression
+  - Narrative Understanding
 date: 2026-05-08
-content_hash: 03ffdde8adb65e9d
+content_hash: f68c8822c7fd8bc4
 ---
-
 # Social Story Frames: Contextual Reasoning about Narrative Intent and Reception
 
 **Conference**: ACL2026  
 **arXiv**: [2512.15925](https://arxiv.org/abs/2512.15925)  
 **Code**: social-story-frames (Project name provided in the paper; full URL not expanded in the main text)  
 **Area**: NLP Understanding / Computational Social Science / Narrative Reasoning  
-**Keywords**: Narrative understanding, reader response, social media, contextual reasoning, model distillation
+**Keywords**: Narrative Understanding, Reader Response, Social Media, Contextual Reasoning, Model Distillation
 
 ## TL;DR
-This paper proposes SocialStoryFrames, utilizing a 10-dimension reader response taxonomy and two distilled models to situate Reddit stories within community and conversational contexts. It infers narrative intent, reader emotions, and value judgments, demonstrating a more granular analysis of community narrative practices on 6,140 social media stories compared to semantic similarity.
+This paper proposes SocialStoryFrames, utilizing a 10-dimensional reader response taxonomy and two distilled models to situate Reddit stories within their community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrative practices than semantic similarity across 6,140 social media stories.
 
 ## Background & Motivation
-**Background**: NLP approaches to story processing have long focused on internal content, such as event causality, character psychology, plot consistency, or local reader reactions like suspense and curiosity. Computational social science also analyzes narratives in online communities, but common practices either involve deep studies of a single community or statistical analysis of story counts, structural archetypes, or thematic distributions across large-scale corpora.
+**Background**: NLP treatment of stories has long leaned toward internal content, such as event causality, character psychology, plot consistency, or local reader reactions like suspense and curiosity. Computational social science also analyzes narratives in online communities, but common practices either involve deep studies of single communities or statistical analysis of story counts, structural prototypes, or topic distributions across large corpora.
 
-**Limitations of Prior Work**: These two paths involve a clear trade-off between depth and scale. Case studies can explain the negotiation of power, identity, or emotion within a specific community but are difficult to apply horizontally across dozens of communities. Large-scale analyses scale easily but often simplify stories into textual themes or embedding similarities, losing the social-pragmatic layers of "why the author told this story" and "how readers might interpret it."
+**Limitations of Prior Work**: These two approaches face clear trade-offs between depth and scale. Case studies explain power, identity, or emotional negotiation within a community but are hard to compare across dozens of communities; large-scale analyses scale easily but often simplify stories into text topics or embedding similarities, losing the socio-pragmatic layers of "why the author told this story" and "how readers might understand it."
 
-**Key Challenge**: Social media stories are not isolated texts. An individual telling a story about a product failure in r/buildapc versus a story about a failed trial in r/MakeupAddiction involves completely different surface topics, yet both might be seeking advice, validating experiences, or obtaining emotional support. Relying solely on story text misses this similarity in "narrative function," while relying purely on manual interpretation cannot cover the vast volume of communities.
+**Key Challenge**: Social media stories are not isolated texts. A product failure story in r/buildapc and a trial failure story in r/MakeupAddiction have completely different surface topics, yet both might involve seeking advice, validating experiences, or gaining emotional support. Focusing only on story text misses this similarity in "narrative function," while manual interpretation cannot cover a massive number of communities.
 
-**Goal**: The authors aim to construct a formalized framework that possesses both theoretical explanatory power and the capability for batch application by models. This framework seeks to answer: what intent a story is perceived to have in specific communities and dialogues; what interpretations, predictions, emotions, and value judgments readers produce; and whether narrative practices across different communities can be compared beyond semantic themes.
+**Goal**: The authors aim to construct a formalized framework with both theoretical explanatory power and the capability for batch application by models. The objective is to answer three types of questions: what intent a story is perceived to have within a specific community and conversation; what interpretations, predictions, emotions, and value judgments readers generate; and whether narrative practices across different communities can be compared beyond semantic topics.
 
-**Key Insight**: The paper maps concepts from reader response theory, narrative theory, pragmatics, and psychology into a SocialStoryFrames taxonomy. Reference reasoning is generated using GPT-4o / GPT-4.1 and then distilled into open-weight models. This approach preserves theoretical dimensions while transforming expensive expert or closed-source model reasoning into reproducible batch pipelines.
+**Key Insight**: The paper operationalizes concepts from reader response theory, narrative theory, pragmatics, and psychology into a SocialStoryFrames taxonomy. Reference reasoning is generated using GPT-4o / GPT-4.1 and distilled into open-weight models. This preserves theoretical dimensions while transforming expensive expert or closed-source model reasoning into a reproducible batch pipeline.
 
-**Core Idea**: Use "community context + conversational context + reader response taxonomy" to replace simple textual semantic representations, modeling the social functions and reception ways of stories in online communities.
+**Core Idea**: Utilizing "Community Context + Conversational Context + Reader Response Taxonomy" to replace pure text semantic representations, modeling the social functions and reception of stories in online communities.
 
 ## Method
-SocialStoryFrames is not a single classifier but a complete pipeline encompassing theoretical taxonomy, corpus construction, context summarization, reasoning generation, reasoning classification, and community analysis. The input consists of a Reddit comment containing a story, its community information, and the preceding dialogue; the output includes free-text reasoning across multiple dimensions and a distribution of taxonomy labels.
+SocialStoryFrames is not a single classifier but a complete pipeline covering theoretical taxonomy, corpus construction, context summarization, reasoning generation, reasoning classification, and community analysis. The input is a Reddit comment containing a story, its community information, and the preceding conversation; the output consists of free-text reasoning across multiple dimensions and taxonomy label distributions.
 
 ### Overall Architecture
-The overall process is divided into four steps. First, stories are filtered from ConvoKit's reddit-corpus-small to construct the SSF-Corpus, retaining community and conversational contexts for each story. Second, GPT-4o is used to summarize subreddit purposes, norms, original posts, and ancestor/sibling comments, allowing the model to see the context that readers actually possess. Third, SSF-Generator generates reader response reasoning for each taxonomy dimension, such as author intent, causal explanations, future predictions, or aesthetic feelings. Fourth, SSF-Classifier maps the free-text reasoning to fine-grained taxonomy sub-labels, resulting in statistical and comparable community-level narrative representations.
+The process is divided into four steps. First, stories are filtered from ConvoKit's reddit-corpus-small to construct the SSF-Corpus, retaining community and conversational context for each story. Second, GPT-4o summarizes subreddit purposes, rules, original posts, and ancestor/sibling comments, allowing the model to see the context actual readers would have. Third, the SSF-Generator produces reader response reasoning for each taxonomy dimension, such as author intent, causal explanations, future predictions, or aesthetic feelings. Fourth, the SSF-Classifier maps free-text reasoning to fine-grained taxonomy sub-labels, resulting in statistical, comparable community-level narrative representations. The SSF-Taxonomy governs both the 10 dimensions for reasoning generation and the sub-labels for classification.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Reddit Story<br/>+ Community + Preceding Conversation"] --> B["SSF-Corpus Construction<br/>+ GPT-4o Summary of Rules/OP/Ancestors"]
+    TAX["SSF-Taxonomy<br/>10 Dimensions of Reader Response (inc. sub-labels)"]
+    B --> GEN["Context-Aware Reasoning Generation & Distillation<br/>GPT-4o Teacher → LoRA Distilled SSF-Generator"]
+    TAX -.Defines Dimensions.-> GEN
+    subgraph SIM["Reasoning Classification & ssf-sim Community Comparison"]
+        direction TB
+        CLS["SSF-Classifier<br/>Free-text Reasoning → Taxonomy Sub-labels"] --> SS["ssf-sim<br/>Comparing Reasoning/Label Distributions rather than Text Topics"]
+    end
+    GEN --> CLS
+    TAX -.Provides Sub-labels.-> CLS
+    SS --> OUT["Output: Community-level Narrative Function Representation<br/>Frequency / NPMI / Entropy / Similarity Analysis"]
+```
 
 ### Key Designs
-1.  **SSF-Taxonomy Reader Response Dimensions**:
-    - **Function**: Deconstructs "how readers understand a story" into 10 actionable dimensions, including overall goal, narrative intent, author emotional response, causal explanation, prediction, character appraisal, moral, stance, narrative feeling, and aesthetic feeling.
-    - **Mechanism**: Dimensions are organized from narrative theory, pragmatics, emotional psychology, and value theory, with sub-categories designed for each. For instance, narrative intent includes identity expression, meaning-making, emotional release, entertainment, argumentation, and support-seeking; the moral dimension uses high-level categories from Schwartz's Value Theory.
-    - **Design Motivation**: This taxonomy ensures model outputs go beyond "this comment is sad" or "the themes are similar," mapping instead to interpretable social functions. It also provides a common coordinate system for community comparison, eliminating the need to define labels for every subreddit.
 
-2.  **Context-Aware Reasoning Generation and Distillation**:
-    - **Function**: Generates free-text reasoning that readers might produce for each story and each dimension.
-    - **Mechanism**: GPT-4o serves as the teacher to generate up to 3 independent reasonings for each story-dimension pair in the SSF-Split-Corpus. Each reasoning uses dimension-specific templates but allows for free-form content. Subsequently, Llama3.1-8B-Instruct is distilled into the SSF-Generator via LoRA to reduce batch inference costs.
-    - **Design Motivation**: Reader reactions are highly dependent on community norms and prior dialogue; direct zero-shot processing by small models tends to be shallow. Distillation transfers the reasoning capabilities of closed-source large models in complex contexts to open-source student models, while human plausibility surveys verify the reasonableness of the reasoning.
+**1. SSF-Taxonomy Reader Response Dimensions: Deconstructing "how readers understand a story" into 10 operational dimensions.**
 
-3.  **Reasoning Classification and ssf-sim Community Comparison**:
-    - **Function**: Converts free-text reasoning into taxonomy labels and compares community narrative practices accordingly.
-    - **Mechanism**: Recognizing that zero-shot performance for multi-label inference classification is poor, the authors use GPT-4.1 with k-shot prompting to generate classification references, then distill Llama3.1-8B-Instruct as the SSF-Classifier. Community similarity, $ssf\text{-}sim$, does not compare raw text embeddings but compares the reasoning from SSF-Generator and label distributions from SSF-Classifier.
-    - **Design Motivation**: Free-text reasoning is information-dense but difficult to quantify; label distributions facilitate frequency, NPMI, entropy, and similarity analysis at the community level. Consequently, $ssf\text{-}sim$ can identify community pairs with "different themes but similar narrative functions."
+Relying solely on story text often results in models outputting "this comment is sad" or "similar topics," missing the socio-pragmatic layer. Instead of unsupervised clustering, the SSF-Taxonomy organizes 10 dimensions—overall goal, narrative intent, author emotional response, causal explanation, prediction, character appraisal, moral, stance, narrative feeling, and aesthetic feeling—derived from reader response theory, narrative theory, pragmatics, emotional psychology, and value theory. Each dimension includes sub-categories; for instance, narrative intent includes identity expression, sense-making, emotional release, entertainment, argumentation, and seeking support, while moral uses high-level categories from Schwartz's value theory.
+
+**2. Context-Aware Reasoning Generation & Distillation: Relying on community norms and conversational history, then transferring closed-source power to open-source students.**
+
+Reader response is highly context-dependent. GPT-4o acts as a teacher to generate up to 3 independent reasonings for each story-dimension pair in the SSF-Split-Corpus, constrained by dimension-specific templates via free-text. GPT-4o is also used to summarize subreddit purposes, rules, the original post, and ancestor comments to provide the model with the reader's actual context. Subsequently, Llama3.1-8B-Instruct is distilled using LoRA to become the SSF-Generator, turning expensive closed-source reasoning into a batch-processable and reproducible pipeline.
+
+**3. Reasoning Classification and ssf-sim Community Comparison: Compressing free-text reasoning into label distributions to compare communities with "different topics but similar narrative functions."**
+
+Free-text reasoning is information-dense but difficult to quantify. Zero-shot multi-label inference classification performed poorly; therefore, the authors used k-shot prompting with GPT-4.1 to generate classification references and distilled the SSF-Classifier to map each reasoning to taxonomy sub-labels. Community similarity, *ssf-sim*, compares the reasoning and label distributions from the SSF-Generator and SSF-Classifier rather than raw text embeddings. This allows for frequency, NPMI, entropy, and similarity analysis at the community level, enabling *ssf-sim* to identify community pairs like r/MakeupAddiction and r/buildapc that share narrative functions despite disparate topics.
 
 ### Loss & Training
-The paper does not emphasize new training losses; the core strategy is teacher-student distillation. The generation side uses GPT-4o for reference reasoning with LoRA fine-tuning on Llama3.1-8B-Instruct. The classification side uses GPT-4.1 k-shot outputs as references to fine-tune the same series of open-source models for zero-shot multi-label classification. The SSF-Split-Corpus contains 1,778 stories, with a training/validation/test split of approximately 2/3, 1/6, and 1/6. To evaluate cross-community generalization, 10% of the stories in the validation and test sets are from 55 subreddits not present in the training set.
+The paper does not emphasize a new training loss; the core strategy is teacher-student distillation. The generation side uses GPT-4o for reference reasoning to fine-tune Llama3.1-8B-Instruct via LoRA. The classification side uses GPT-4.1 k-shot outputs as references to fine-tune open-source models for zero-shot multi-label classification. In the SSF-Split-Corpus (1,778 stories), the Train/Val/Test split is roughly 2/3, 1/6, 1/6, with 10% of stories in validation and testing coming from 55 unseen subreddits to evaluate cross-community generalization.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Target | Setup | Key Metrics | Results | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| SSF-Corpus | Filtered from 100 Reddit subreddits | Number of stories | 6,140 | Each includes story, dialogue, and community context |
-| SSF-Split-Corpus | Train/Val/Test | Number of stories | 1,778 | Val/Test each contain 10% unseen subreddits |
-| GPT-4o Reasoning Plausibility | Prolific Human Eval | Valid ratings | 4,239 ratings / 278 annotators | Representative US adult sample |
-| SSF-Generator Output Plausibility | Human Eval | Plausible ratio | $\ge 94\%$ | Most reasoning considered contextually reasonable |
-| SSF-Generator Output Likelihood | Human Eval | Somewhat/very likely ratio | $\ge 78\%$ | Not just reasonable, but highly probable |
-| $ssf\text{-}sim$ Construct Validity | 50 story pair comparisons | Human agreement | 74% | Sentence-BERT baseline is 52% |
+| Target | Setting | Key Metric | Result | Description |
+|--------|---------|------------|--------|-------------|
+| SSF-Corpus | Filtered from 100 Subreddits | Story Count | 6,140 | Each includes story, conversation, and community context |
+| SSF-Split-Corpus | Train/Val/Test | Story Count | 1,778 | Val/Test each contain 10% unseen subreddits |
+| GPT-4o Reasoning Plausibility | Prolific Human Eval | Valid Ratings | 4,239 ratings / 278 annotators | Representative US adult sample |
+| SSF-Generator Output Plausibility | Human Eval | Plausible % | >=94% | Most reasonings deemed contextually reasonable |
+| SSF-Generator Output Likelihood | Human Eval | Somewhat/Very Likely | >=78% | Deemed plausible and highly probable |
+| *ssf-sim* Construct Validity | 50 Story Pair Comp. | Agreement with Human | 74% | Sentence-BERT baseline is 52% |
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Description |
-| :--- | :--- | :--- |
-| Full context SSF-Generator | Best alignment with human-validated GPT-4o teacher | Uses story, community, and dialogue context |
-| W/o Community Context | Alignment decrease | Community norms and values affect reader interpretation |
-| W/o Conversational Context | Significant decrease | Conversational context is particularly critical |
-| Sentence-BERT semantic similarity | 52% human-aligned | Thematic similarity fails to capture functional similarity |
-| $ssf\text{-}sim$ | 74% human-aligned | Based on reasoning and taxonomy labels; closer to pragmatic function |
+| Configuration | Key Metric | Description |
+|---------------|------------|-------------|
+| Full context SSF-Generator | Best alignment with GPT-4o teacher | Uses story, community, and conversational context |
+| W/O Community Context | Alignment drop | Community norms and values affect reader interpretation |
+| W/O Conversational Context | Significant drop | Conversational context is particularly critical |
+| Sentence-BERT semantic similarity | 52% human-aligned | Topic similarity fails to capture functional similarity |
+| *ssf-sim* | 74% human-aligned | Based on reasoning and taxonomy labels, closer to pragmatic function |
 
 ### Key Findings
-- The distribution of narrative intent shows that the most common intent is to "justify or challenge a belief" (40%); "clarification" and "emotional release" each account for 14%, while "identity" and "entertainment" each account for 10%. This indicates that online stories often serve argumentative and social negotiation functions rather than just entertainment.
-- "Emotional support" in overall goals shows a strong correlation with "conveying a similar experience" in narrative intent (NPMI = 0.35), supporting the online mechanism of "using similar experiences to express empathy."
-- SSF-Classifier performance on the test set is close to GPT-4.1 k-shot. Its Micro F1 scores surpass, match, or are within 0.05 of GPT-4.1 across 7/10 dimensions, with the gap never exceeding 0.1 in any dimension.
-- Community comparisons reveal that communities with vast thematic differences, such as r/MakeupAddiction and r/buildapc, can have similar narrative functions. Conversely, even if themes are similar, such as r/funny versus r/news or r/politics, the narrative orientations can be entirely different.
+- Narrative intent distribution shows the most common intent is to *justify or challenge a belief* (40%), followed by *clarification* and *emotional release* (14% each), and *identity* and *entertainment* (10% each). This indicates online stories often serve argumentative and social negotiation functions rather than just entertainment.
+- *Emotional support* in overall goal correlates strongly with *conveying a similar experience* in narrative intent (NPMI = 0.35), supporting the mechanism of empathy through shared experience.
+- The SSF-Classifier approaches GPT-4.1 k-shot performance. Its Micro F1 scores exceed, match, or are within 0.05 of GPT-4.1 on 7/10 dimensions, with no dimension trailing GPT-4.1 by more than 0.1.
+- Community comparisons reveal that r/MakeupAddiction and r/buildapc share similar narrative functions despite topic differences, whereas r/funny and r/news/r/politics may have entirely different narrative orientations despite topic proximity.
 
 ## Highlights & Insights
-- Moving "story understanding" from internal text to social context is the most valuable contribution of this paper. It does not merely ask what happened in the story, but how the story is used and received within a community.
-- The taxonomy design is restrained: it covers 10 dimensions—broad enough—but maintains statistical utility through sub-labels. This design is more suitable for cross-community analysis than direct long-form LLM explanations.
-- The $ssf\text{-}sim$ concept is highly transferable. Similarity in many tasks should not only compare content; for instance, customer service dialogues, medical narratives, forum help requests, or product reviews can all be compared via "communicative function" and "expected reaction."
-- The paper places human validation on two levels: first validating the plausibility of generated reasoning, then validating the construct validity of the similarity metrics. This approach ensures the method is not just a collection of LLMs but possesses social science measurement awareness.
+- Shifting "story understanding" from internal text to social context is the most valuable contribution. The framework asks not just what happened, but how the story is used and received within a community.
+- The taxonomy design is restrained: 10 dimensions provide sufficient breadth while sub-labels maintain statistical utility. This is more suitable for cross-community analysis than long LLM explanations.
+- *ssf-sim* is a highly transferable concept. Similarity in many tasks should compare "communicative function" and "expected response" rather than just content—e.g., in customer service, medical narratives, or product reviews.
+- Human validation is applied at two levels: first for the plausibility of generated reasoning, then for the construct validity of the similarity metric, ensuring social science measurement rigor rather than just LLM prompting.
 
 ## Limitations & Future Work
-- The context summarization uses iterative processes, which may lead to a cascaded loss of information, particularly for short contexts or stories requiring fine details.
-- The current models and corpora are focused on English Reddit, and human evaluators are primarily US adults. Treating these results as universal reader responses may introduce cultural, gender, and ideological biases.
-- The taxonomy is not exhaustive. Aspects such as narrative absorption, complex aesthetic emotions, reader identity differences, and dependencies between dimensions are simplified.
-- The model assumes a "common reader response" within a community, but communities with high polarization, high professional barriers, or highly individualistic responses may not satisfy this assumption.
-- Future work could build dimensions into a joint structural model, explicitly modeling dependencies among intent, stance, emotion, and morals instead of generating each dimension independently.
+- Context summarization uses iterative techniques, which may lead to information loss, especially for stories requiring specific details or short contexts.
+- The current model and corpus focus on English Reddit with US-based human evaluators, potentially introducing cultural, gender, and ideological biases.
+- The taxonomy is not exhaustive; aspects like narrative absorption, complex aesthetic emotions, reader identity differences, and inter-dimensional dependencies are simplified.
+- The model assumes a "typical reader response" for a community, which may not hold in highly polarized or specialized subreddits.
+- Future work could build joint structural models for dimensions to explicitly model dependencies between intent, stance, emotion, and morals.
 
 ## Related Work & Insights
-- **vs. Traditional Commonsense Reasoning**: Works like ATOMIC/COMET typically perform decontextualized reasoning based on short events; this paper embeds stories into communities and dialogues to reason about reader reception and social functions.
-- **vs. Narrative Schema / Story Understanding**: Existing narrative NLP often focuses on plot, character psychology, or causal consistency. This paper focuses on why stories are told and how they are understood by readers.
-- **vs. Sentence-BERT Semantic Similarity**: Semantic similarity excels at finding text with close themes; $ssf\text{-}sim$ can find community narratives with close functions even if themes differ.
-- **Insights**: The path of "theoretical taxonomy + LLM distillation + human construct validation" is well-suited for high-level social semantic tasks, such as value conflict identification, community norm modeling, and stance/support function analysis in multi-party dialogues.
+- **vs. Traditional Commonsense Reasoning**: Unlike ATOMIC/COMET, which performs decontextualized reasoning on short events, this work embeds stories in communities and conversations to infer social function.
+- **vs. Narrative Schemas**: While previous NLP focuses on plot or causal consistency, this work focuses on "why" a story is told and "how" it is understood.
+- **vs. Sentence-BERT**: Semantic similarity finds topic-proximate texts, whereas *ssf-sim* finds communities with similar narrative functions despite different topics.
+- **Insight**: The "theory taxonomy + LLM distillation + human construct validation" pipeline is well-suited for high-level social semantics tasks, such as value conflict identification, community norm modeling, and stance/support analysis in multi-party dialogues.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Social narrative reception modeling and $ssf\text{-}sim$ are highly innovative, though the core model training is relatively conventional.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes human plausibility, expert annotation, and community analysis, though the scale of global similarity validation remains relatively small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical motivation, taxonomy, modeling, and social science analysis are seamlessly connected.
-- Value: ⭐⭐⭐⭐ Highly inspiring for NLP+CSS with strong reusability, though cross-platform and cross-cultural generalization requires further verification.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning](../../ICLR2026/model_compression/acpbench_hard_unrestrained_reasoning_about_action_change_and_planning.md)
-- [\[ACL 2026\] VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection](veccisc_improving_confidence-informed_self-consistency_with_reasoning_trace_clus.md)
+- [\[CVPR 2025\] ECVC: Exploiting Non-Local Correlations in Multiple Frames for Contextual Video Compression](../../CVPR2025/model_compression/ecvc_exploiting_non-local_correlations_in_multiple_frames_for_contextual_video_c.md)
+- [\[CVPR 2026\] Rethinking Dataset Distillation: Hard Truths about Soft Labels](../../CVPR2026/model_compression/rethinking_dataset_distillation_hard_truths_about_soft_labels.md)
 - [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](../../AAAI2026/model_compression/efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 
 </div>
 

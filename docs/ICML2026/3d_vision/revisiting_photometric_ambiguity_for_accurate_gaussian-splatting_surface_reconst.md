@@ -2,118 +2,126 @@
 title: >-
   [Paper Note] Revisiting Photometric Ambiguity for Accurate Gaussian-Splatting Surface Reconstruction
 description: >-
-  [ICML 2026][3D Vision][Photometric Ambiguity] AmbiSuR explicitly models two types of intrinsic photometric ambiguities in Gaussian Splatting (primitive boundary spillover and under-constrained pixel blending) and resolve…
+  [ICML 2026][3D Vision][Paper Note] AmbiSuR explicitly models two types of endogenous photometric ambiguities in Gaussian Splatting (primitive edge overflow and pixel-mixing under-constraint) and disambiguates them using truncation and ray-color consistency. It further leverages high-order Spherical Harmonic (SH) coefficients as "self-indicators" to iden
 tags:
-  - "ICML 2026"
-  - "3D Vision"
-  - "Photometric Ambiguity"
-  - "Gaussian Truncation"
-  - "Ray-Color Consistency"
-  - "SH Self-Indicator"
-  - "Sparse Regularization"
+  - ICML 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 86f60e33f48016bd
+content_hash: 215401b13d7c898e
 ---
-
 # Revisiting Photometric Ambiguity for Accurate Gaussian-Splatting Surface Reconstruction
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.12494](https://arxiv.org/abs/2605.12494)  
-**Code**: Project page https://fictionarry.github.io/AmbiSuR-Proj/  
+**Code**: Project Page https://fictionarry.github.io/AmbiSuR-Proj/  
 **Area**: 3D Vision / Surface Reconstruction / Gaussian Splatting  
-**Keywords**: Photometric Ambiguity, Gaussian Truncation, Ray-Color Consistency, SH Self-Indicator, Sparse Regularization
+**Keywords**: Photometric ambiguity, Gaussian truncation, Ray-color consistency, SH self-indication, Sparse regularization
 
 ## TL;DR
-AmbiSuR explicitly models two types of intrinsic photometric ambiguities in Gaussian Splatting (primitive boundary spillover and under-constrained pixel blending) and resolves them using truncation and ray-color consistency. It further employs higher-order spherical harmonic coefficients as "self-indicators" to identify high-risk ambiguous primitives and applies amorphous local prior regularization. This reduces the average Chamfer distance on DTU to 0.46, surpassing the previous best GeoSVR (0.47).
+AmbiSuR explicitly models two types of endogenous photometric ambiguities in Gaussian Splatting (primitive edge overflow and pixel-mixing under-constraint) and disambiguates them using truncation and ray-color consistency. It further leverages high-order Spherical Harmonic (SH) coefficients as "self-indicators" to identify high-risk primitives, applying amorphous local prior regularization. AmbiSuR reduces the average Chamfer distance on DTU to 0.46, surpassing the previous state-of-the-art GeoSVR (0.47).
 
 ## Background & Motivation
-**Background**: Converting multi-view images into 3D surfaces has shifted from implicit SDF methods (e.g., NeuS, Neuralangelo) to explicit 3DGS families (e.g., 2DGS, GOF, PGSR, MILo, GeoSVR), which demonstrate clear advantages in efficiency and detail. These methods commonly rely on "multi-view photometric consistency," where the color of the same spatial point should remain consistent across different views.
+**Background**: Transforming multi-view images into 3D surfaces has shifted from implicit SDFs (NeuS, Neuralangelo) to the explicit 3DGS family (2DGS, GOF, PGSR, MILo, GeoSVR), the latter offering significant advantages in efficiency and detail. The common premise of these methods is "multi-view photometric consistency"—the idea that the color of a spatial point should be consistent across different views.
 
-**Limitations of Prior Work**: In real-world scenarios, photometric consistency is rarely perfectly satisfied due to textureless regions, reflective surfaces, shadows, and insufficient coverage, leading to severely ill-posed multi-view triangulation. Existing solutions either involve complex ray modeling for reflections (limited to specific scenes) or apply coarse-grained regularization using MonoDepth/Normal models (which tend to "smooth out" entire images), without addressing the root cause within the 3DGS representation itself.
+**Limitations of Prior Work**: In reality, photometric consistency is almost never perfectly met. Textureless regions, reflective surfaces, shadows, and insufficient coverage make multi-view triangulation severely ill-posed. Existing mitigation strategies either involve complex ray modeling for reflections (limited to specific scenes) or apply coarse-grained regularization using large MonoDepth/Normal models (which tend to "smooth out" the entire image), failing to address the root cause within the 3DGS representation itself.
 
-**Key Challenge**: The 3DGS rendering equation $\mathbf{C} = \sum_i c_i \tilde\alpha_i \prod_{j<i}(1-\tilde\alpha_j)$ aims for "weighted sum equals ground truth," which suffices for pixel color synthesis but is severely under-constrained for "unique surface reconstruction." Any set $\{c_i, w_i\}$ that sums to $\mathbf{C}_{gt}$ is considered correct, allowing reconstruction to be misled by "pseudo-geometry and view-dependent effects."
+**Key Challenge**: The 3DGS rendering equation $\mathbf{C} = \sum_i c_i \tilde\alpha_i \prod_{j<i}(1-\tilde\alpha_j)$ aims for "weighted sum equals ground truth." While sufficient for pixel color synthesis, this is severely under-constrained for "recovering a unique surface"—any set of $\{c_i, w_i\}$ that sums to $\mathbf{C}_{gt}$ is considered correct, causing the reconstruction to be misled by "pseudo-geometry + view-dependent effects."
 
-**Goal**: To resolve ambiguities at both the representation and supervision levels—eliminating geometric ambiguities in Gaussian forward computation and actively identifying ambiguities in unreliable supervision, providing targeted prior compensation.
+**Goal**: To disambiguate at both the representation and supervision levels—mitigating the inherent geometric ambiguity of Gaussians during forward computation and actively identifying supervision ambiguities to provide directed prior compensation.
 
-**Key Insight**: By systematically analyzing the 3DGS pipeline, the authors identified two types of intrinsic representation ambiguities (long-tail low-opacity primitives and excessive freedom in primitive color blending). They also observed that SH coefficients can naturally serve as "ambiguity detectors"—abnormally large higher-order SH coefficients indicate fitting view-dependent residuals, while abnormally small coefficients suggest insufficient supervision.
+**Key Insight**: After systematically decomposing the 3DGS pipeline, the authors identified two types of endogenous representation ambiguities (low-opacity long tails of primitives and excessive degrees of freedom in color mixing). Simultaneously, they observed that SH coefficients can serve as "natural detectors" for supervision ambiguity—abnormally large high-order SH values suggest fitting view-dependent residuals, while abnormally small values suggest insufficient supervision.
 
-**Core Idea**: Address representation ambiguities with "primitive truncation + ray-color variance" constraints, then use higher-order SH coefficients as dual-ended indicators (upper/lower quantiles) to identify problematic primitives. Apply minimal-intrusion amorphous local normal regularization to these primitives.
+**Core Idea**: Use "primitive truncation + ray-color variance" as gentle constraints to address representation-level ambiguity. Then, use dual-end indications (upper/lower quantiles) of high-order SH coefficients to identify problematic primitives, followed by amorphous local normal regularization for minimal-intrusive refinement.
 
 ## Method
 
 ### Overall Architecture
-AmbiSuR is integrated into 3DGS reconstruction pipelines like PGSR, with two new components: (a) Gaussian Splatting photometric disambiguation—truncating Gaussian boundaries during forward computation and introducing ray-color consistency constraints; (b) SH ambiguity self-indication—selecting high-ambiguity primitives based on each primitive's $I_{SH} = \|f_{\text{rest}}\|_2^2$ upper/lower quantiles, applying depth-normal consistency regularization in their projection regions, and freezing parameters of other primitives. The total loss is $\mathcal{L} = \mathcal{L}_{photo} + \tau\mathcal{L}_{geo} + \mu_1\mathcal{N} + \mu_2\mathcal{R}$, with both a metric-depth-enhanced version (AmbiSuR) and a mono-depth-compatible version (AmbiSuR-Mono).
+AmbiSuR addresses the long-tolerated "photometric ambiguity" in 3DGS surface reconstruction, where erroneous primitive combinations can produce correct pixels despite inconsistent geometry. It tackles this in two layers: representation-side ambiguity (from the primitives themselves) and supervision-side ambiguity (from unreliable imagery). The method integrates two modifications into the PGSR pipeline. The first is Gaussian Splatting photometric disambiguation, which truncates the low-opacity edges of primitives and adds a ray-color consistency constraint during forward rendering. The second is SH high-order coefficient self-indication, using the energy $I_{SH} = \|f_{\text{rest}}\|_2^2$ as a probe to select a set $\mathcal{S}$ of high-risk primitives. Local geometric priors are then supplemented only within their projected regions, while other primitives remain frozen. Training is driven by the total loss $\mathcal{L} = \mathcal{L}_{photo} + \tau\mathcal{L}_{geo} + \mu_1\mathcal{N} + \mu_2\mathcal{R}$.
+
+```mermaid
+graph TD
+    A["Multi-view Images → PGSR / 3DGS Baseline"] --> B
+    subgraph DEAMB["1. Gaussian Truncation + Ray-Color Consistency (Representation Disambiguation)"]
+        direction TB
+        B["Primitive Truncation<br/>Keep 2σ core, disable low-opacity tail overflow"] --> C["Ray-Color Consistency<br/>Minimize color variance of primitives on the same surface"]
+    end
+    DEAMB --> D["2. SH High-Order Coefficient Self-Indication<br/>I_SH=‖f_rest‖² Dual-end quantile selects high-risk set S"]
+    D --> E["3. Amorphous Local Regularization + Parameter Isolation<br/>Soft mask M + Freeze non-S primitives, apply normal prior only to S"]
+    E --> F["Total Loss Training → TSDF Mesh Extraction"]
+```
 
 ### Key Designs
 
-1. **Gaussian Primitive Truncation + Ray-Color Consistency**:
+**1. Gaussian Primitive Truncation + Ray-Color Consistency: Blocking Representation Ambiguities**
 
-    - **Function**: Resolves two types of 3DGS representation ambiguities—low-opacity primitive boundary spillover and under-constrained pixel color blending.
-    - **Mechanism**: Each Gaussian projection is divided into a core region $\mathcal{G}_{core}$ and an edge region $\mathcal{G}_{edge}$. Only the core is retained during rendering: $\tilde\alpha_{\mathcal{T}}(\mathbf{x}) = \alpha\,\mathcal{G}_{core}(\mathbf{x})\cdot\mathbb{1}(\|\mathbf{x}-\mu_i\|\le \gamma\sigma_i)$ ($\gamma=2$), physically enforcing that each primitive "speaks" only within its $2\sigma$ range. Alpha-blending is treated as a probability distribution along the ray, defining ray-color consistency $\mathcal{R}(\mathbf{r}) = \sum_i w_i\|c_i - \mathbf{C}\|_2^2$ (only $c_i$ participates in gradients), ensuring that primitives representing the same surface have similar view-dependent colors.
-    - **Design Motivation**: Truncation physically eliminates the disadvantageous behavior of "low-opacity long tails repeatedly mismatched across views." Ray-color variance upgrades the weak constraint of "weighted sum equals ground truth" to "color terms should be mutually consistent," forcing individual primitives to fit the true optical properties of the surface rather than cheating through blending.
+The 3DGS representation contains two inherent flaws: First, each Gaussian has a long tail with low opacity. These "nearly transparent" overflows are repeatedly mismatched across views, creating non-existent geometry. Second, pixel color is a weighted average where individual primitive colors can be arbitrary as long as the sum is correct. Truncation addresses the first flaw by dividing the Gaussian projection into a core region $\mathcal{G}_{core}$ and an edge region $\mathcal{G}_{edge}$, keeping only the core: $\tilde\alpha_{\mathcal{T}}(\mathbf{x}) = \alpha\,\mathcal{G}_{core}(\mathbf{x})\cdot\mathbb{1}(\|\mathbf{x}-\mu_i\|\le \gamma\sigma_i)$. Setting $\gamma=2$ forces each primitive to "speak" only within its $2\sigma$ range, physically disabling long-tail mismatches. Ray-color consistency addresses the second flaw by viewing alpha-blending as a probability distribution along a ray, requiring primitives representing the same surface to have similar colors:
 
-2. **Higher-Order SH Coefficients as Photometric Ambiguity Self-Indicators**:
+$$\mathcal{R}(\mathbf{r}) = \sum_i w_i\|c_i - \mathbf{C}\|_2^2$$
 
-    - **Function**: Automatically identifies primitives most likely to suffer from supervision ambiguity or underfitting without external oracles.
-    - **Mechanism**: Decompose each primitive's color function as $C(\mathbf{d}) = \bar C + \sum_i \beta_i Y_i(\mathbf{d})$. By orthogonality, view-dependent bias energy $\propto \sum_i \beta_i^2$, defining $I_{SH} = \|f_{\text{rest}}\|_2^2$. Use "dual-ended indication"—abnormally high $I_{SH}$ (upper $\eta_U$ quantile) suggests overfitting view-dependent residuals due to inconsistent supervision, while abnormally low $I_{SH}$ (lower $\eta_L$ quantile) suggests under-supervision or erroneous appearance baking. The union $\mathcal{S} = \mathcal{S}_U\cup\mathcal{S}_L$ forms the "high-risk ambiguity" primitive set.
-    - **Design Motivation**: 3DGS inherently learns SH coefficients, making this a true free-lunch approach. Dual-ended indication covers both "overfitting view-dependent effects" and "underfitting textureless regions," outperforming reliance on external segmentation/uncertainty networks.
+Only the color term $c_i$ receives gradients. This upgrades the weak "weighted sum" constraint to a stronger "mutual consistency" constraint, forcing primitives to fit true optical properties rather than cheating via mixing.
 
-3. **Amorphous Local Regularization + Parameter Separation**:
+**2. SH High-order Coefficients as Self-Indicators: Locating Supervision Pathologies**
 
-    - **Function**: Applies geometric priors only within the projection regions of ambiguous primitives, avoiding contamination of well-converged regions.
-    - **Mechanism**: Freeze parameters of non-ambiguous primitives and exclude opacity $\alpha$ and scale $s$ from regularization (only direction-related attributes are adjusted). Use the indicator set $\mathcal{S}$ to compute a soft mask $\mathbf{M} = \sum_i \mathbb{1}(i\in\mathcal{S})\,\tilde\alpha_i\prod_{j<i}(1-\tilde\alpha_j)$ for each pixel, then apply $\mathcal{N} = \mathrm{Mean}(\mathbf{M}\cdot(1 - \mathbf{N}_{\mathbf{D}}\cdot\mathbf{N}_P))$, where the angular difference between rendered depth-derived normals and prior normals is weighted by the soft mask, effective only in ambiguous projection regions.
-    - **Design Motivation**: Traditional methods apply priors uniformly across the entire image, smoothing out good regions. This work uses "indicator-based primitive selection → soft mask-based pixel selection" for precise localization, ensuring priors are applied only to the weakest areas while maintaining compatibility with various prior sources (monocular, multi-view, stereo matching).
+Without an external oracle for supervision reliability, the authors found that the learned SH coefficients are natural probes. Expanding the color function via SH, $C(\mathbf{d}) = \bar C + \sum_i \beta_i Y_i(\mathbf{d})$, the energy of view-dependent deviations is proportional to $\sum_i \beta_i^2$. Thus, $I_{SH} = \|f_{\text{rest}}\|_2^2$ serves as an indicator. The key is "dual-end indication": abnormally high $I_{SH}$ (top $\eta_U$ quantile) indicates primitives memorizing residuals (supervision inconsistency), while abnormally low $I_{SH}$ (bottom $\eta_L$ quantile) indicates insufficient supervision or baked-in appearance. The union $\mathcal{S} = \mathcal{S}_U\cup\mathcal{S}_L$ defines the high-risk set. Since SH is a byproduct of training, this is a "free-lunch" indicator covering both view-dependent overfitting and underfitting.
+
+**3. Amorphous Local Regularization + Parameter Isolation: Targeted Prior Intervention**
+
+Standard practices apply global geometric priors, which often smooth out well-reconstructed areas. AmbiSuR uses two layers of localization. Layer one freezes the parameters of non-ambiguous primitives and excludes opacity $\alpha$ and scale $s$ from regularization to avoid destroying converged shapes. Layer two accumulates a soft mask $\mathbf{M}$ based on the indicator set $\mathcal{S}$:
+
+$$\mathbf{M} = \sum_i \mathbb{1}(i\in\mathcal{S})\,\tilde\alpha_i\prod_{j<i}(1-\tilde\alpha_j)$$
+
+The angular difference between the rendered depth normal $\mathbf{N}_{\mathbf{D}}$ and the prior normal $\mathbf{N}_P$ is weighted by this mask: $\mathcal{N} = \mathrm{Mean}(\mathbf{M}\cdot(1 - \mathbf{N}_{\mathbf{D}}\cdot\mathbf{N}_P))$. This ensures priors only take effect in the projection regions of ambiguous primitives, maintaining compatibility with various prior sources (monocular, multi-view, etc.).
 
 ### Loss & Training
-The total loss is $\mathcal{L} = \mathcal{L}_{photo} + \tau\mathcal{L}_{geo} + \mu_1\mathcal{N} + \mu_2\mathcal{R}$, with fixed $\tau=0.1, \mu_1=0.1, \mu_2=10^{-5}$. Training involves 30k iterations. The metric version uses Depth Anything 3 for multi-view depth, while the Mono version uses Depth Anything V2 for monocular depth. TSDF mesh extraction is applied.
+Total objective: $\mathcal{L} = \mathcal{L}_{photo} + \tau\mathcal{L}_{geo} + \mu_1\mathcal{N} + \mu_2\mathcal{R}$, with $\tau=0.1, \mu_1=0.1, \mu_2=10^{-5}$. Training lasts 30k iterations. The metric version uses Depth Anything V2 multi-view depth, while the Mono version uses monocular depth. Surfaces are extracted via TSDF.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | Prev. SOTA | AmbiSuR | Notes |
-|---------|--------|------------|---------|-------|
-| DTU Avg | Chamfer ↓ | 0.47 (GeoSVR) | 0.46 | 0.6h training |
-| DTU 24/37/40 | Chamfer ↓ | 0.32/0.51/0.30 (GeoSVR) | 0.32/0.48/0.31 | Comparable or better across scenes |
-| Tanks&Temples | F1 ↑ | Best per competitor | Highest F1 overall | Large scenes with significant photometric ambiguity |
-| Training Time | — | NeuS >12h, Neuralangelo >128h | 0.6h | Explicit + efficient |
+| Dataset | Metric | Prev. SOTA | AmbiSuR | Remarks |
+|--------|------|----------|---------|------|
+| DTU Avg. | Chamfer ↓ | 0.47 (GeoSVR) | 0.46 | 0.6h training |
+| DTU 24/37/40 | Chamfer ↓ | 0.32/0.51/0.30 | 0.32/0.48/0.31 | Comparable or superior |
+| Tanks&Temples | F1 ↑ | Best competitor | Highest F1 | Large scenes with high ambiguity |
+| Training Time | — | NeuS >12h | 0.6h | Explicit + Efficient |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| PGSR baseline only | 0.52 (DTU Chamfer) | Starting point |
-| + Primitive Truncation | Improved but limited | Addresses representation ambiguity only |
-| + Ray-Color Consistency | Further improvement | Suppresses blending ambiguity |
-| + SH Dual-Ended Indication + Amorphous Regularization | Converges to 0.46 | Resolves supervision ambiguity |
-| Single-Ended vs Dual-Ended Indication | Dual-ended more stable | Low SH also provides value |
-| Full-Image Regularization vs Amorphous | Amorphous preserves details | Validates selective regularization benefits |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| PGSR baseline | 0.52 (DTU Chamfer) | Starting point |
+| + Truncation | Limited gain | Fixes representation ambiguity only |
+| + Ray-color consistency | Additive gain | Suppresses mixing ambiguity |
+| + Dual-end SH Indicator | Final 0.46 | Fixes supervision-side ambiguity |
+| Dual vs. Single-end | Dual is more stable | Low SH also indicates ambiguity |
+| Global vs. Amorphous Reg. | Amorphous preserves detail | Validates selective regularization |
 
 ### Key Findings
-- The long-tail opacity of "representative" primitives is an overlooked source of ambiguity—simple truncation yields significant gains, revealing long-tolerated flaws in 3DGS representation.
-- Higher-order SH coefficients serve as "free ambiguity detectors," highly beneficial for budget-sensitive industrial 3D reconstruction, as they eliminate the need for additional classifiers or large models.
-- AmbiSuR-Mono achieves near-metric performance with monocular depth, demonstrating robustness to prior quality due to its design of applying priors only in ambiguous regions, rather than relying on specific depth sources.
+- The low-opacity long tail of "representative" primitives is a neglected source of ambiguity; simple truncation yields significant gains.
+- High-order SH coefficients are "free ambiguity detectors," ideal for industrial 3D reconstruction where extra classifier or large model costs are sensitive.
+- AmbiSuR-Mono approaches the performance of the metric version, demonstrating that robustness arises from "where to apply the prior" rather than the specific prior source.
 
 ## Highlights & Insights
-- Using SH coefficients as indicators is a rare true free-lunch approach—repurposing existing learned parameters as new functional indicators with almost zero additional computation. This idea is transferable to other explicit representations (e.g., uncertainty in 3DGS-SLAM).
-- Ray-color variance upgrades "weighted sum correctness" to "distribution consistency," providing an elegant tightening of under-constrained supervision. This concept is also applicable to other "weighted aggregation" tasks (e.g., NeRF density fields, light field reconstruction).
-- The three-layer control of "primitive freezing + soft masking + direction-only parameters" is a key engineering technique for amorphous regularization, emphasizing that "where to add priors" is more critical than "what priors to add."
+- "SH as an indicator" is a rare "free-lunch"—repurposing existing parameters as functional indicators with zero extra computation. This is transferable to other explicit representations (e.g., uncertainty in 3DGS-SLAM).
+- Ray-color variance upgrades "weighted sum correctness" to "distribution tightness," providing an elegant optimization for under-constrained supervision.
+- The three-layer control (primitive freezing + soft mask + orientation-only parameters) is a crucial engineering trick for amorphous regularization, emphasizing that "where to regularize" is more important than "what to regularize."
 
 ## Limitations & Future Work
-- The truncation threshold $\gamma$ and upper/lower quantiles $\eta_U, \eta_L$ still require minor tuning per dataset (different values for DTU and outdoor scenes), lacking adaptive mechanisms.
-- Transparent objects and strong specular surfaces (conflicting with BRDF and SH assumptions) remain untested, potentially requiring stronger view-dependent modeling.
-- Indicators are based on single-frame SH, without leveraging temporal/viewpoint consistency, which needs extension for dynamic scenes.
+- Truncation threshold $\gamma$ and quantiles $\eta_U, \eta_L$ still require manual tuning across datasets; an adaptive mechanism is needed.
+- Not yet deeply validated on transparent objects or strong specularities (where BRDF and SH assumptions clash).
+- The indicator is currently per-frame; it does not yet exploit temporal or cross-view consistency for dynamic scenes.
 
 ## Related Work & Insights
-- **vs 2DGS / GOF / PGSR / MILo / GeoSVR**: These works focus on "geometric alignment + high-quality mesh extraction," while this paper traces back to "photometric ambiguity" and provides dual-level disambiguation for representation and supervision, making it orthogonal to them.
-- **vs MonoSDF / Neuralangelo**: SDF methods rely on implicit high-capacity MLPs, with training times exceeding tens of hours. AmbiSuR achieves superior results in 0.6h using explicit 3DGS, highlighting the engineering advantages of explicit representations.
-- **vs VCR-GauS / Geometric Prior Embedding**: Previous methods applied strong priors uniformly across the entire image, while this work uses SH self-indicators to focus priors on "truly information-deficient" regions, avoiding the common issue of "smoothing out details with priors."
+- **vs 2DGS / GOF / PGSR / GeoSVR**: These focus on "geometry alignment + mesh extraction." Ours traces back to "photometric ambiguity" and provides a dual solution for representation and supervision.
+- **vs MonoSDF / Neuralangelo**: SDF series rely on high-capacity MLPs (training for hours). AmbiSuR achieves better results in 0.6h using explicit 3DGS.
+- **vs VCR-GauS / Global Priors**: Previous works applied priors uniformly. Ours uses SH indicators to focus priors on "information-deficient" regions, avoiding the common pitfall of over-smoothing details.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to combine "SH higher-order coefficients as ambiguity indicators" and "ray-color variance."
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive comparisons on DTU and T&T, testing various prior sources, but lacks dedicated tests for reflective/transparent objects.
-- Writing Quality: ⭐⭐⭐⭐ Clear argumentation structured around representation and supervision, with well-integrated formulas and visualizations.
-- Value: ⭐⭐⭐⭐ Achieves SOTA in 0.6h training, robust to priors, and industrially deployable.
+- Novelty: ⭐⭐⭐⭐ First use of "SH high-order energy" as an ambiguity indicator combined with ray-color variance.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive DTU + T&T evaluation; lacking specific stress tests for refraction/transparency.
+- Writing Quality: ⭐⭐⭐⭐ Clear argumentation layered by representation/supervision; good formula-visualization synergy.
+- Value: ⭐⭐⭐⭐ Surpasses SOTA in 0.6h and is robust to prior quality; highly practical for industrial deployment.
 
 <!-- RELATED:START -->
 
@@ -125,7 +133,7 @@ The total loss is $\mathcal{L} = \mathcal{L}_{photo} + \tau\mathcal{L}_{geo} + \
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
 - [\[NeurIPS 2025\] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction](../../NeurIPS2025/3d_vision/geosvr_taming_sparse_voxels_for_geometrically_accurate_surface_reconstruction.md)
 - [\[ICCV 2025\] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting](../../ICCV2025/3d_vision/surfacesplat_connecting_surface_reconstruction_and_gaussian_splatting.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[CVPR 2026\] Distilling Unsigned Distance Function for Surface Reconstruction from 3D Gaussian Splatting](../../CVPR2026/3d_vision/distilling_unsigned_distance_function_for_surface_reconstruction_from_3d_gaussia.md)
 
 </div>
 

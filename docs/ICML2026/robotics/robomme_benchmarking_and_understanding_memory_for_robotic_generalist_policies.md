@@ -2,80 +2,73 @@
 title: >-
   [Paper Note] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies
 description: >-
-  [ICML 2026][Robotics][Memory enhancement] RoboMME systematically maps the four categories of human cognition—"temporal, spatial, object…
+  [ICML 2026][Robotics & Embodied AI][VLA] RoboMME systematically maps the four categories of human cognitive memory—"temporal, spatial, object, and procedural"—to 16 long-horizon robotic manipulation tasks (770k high-quality timesteps) for the first time. It performs systematic ablations on 14 "memory representation × integration mechanism" combinations using
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "Memory enhancement"
-  - "VLA"
-  - "Robot benchmark"
-  - "Long-horizon manipulation"
-  - "π0.5"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - VLA
+  - π0.5
 date: 2026-05-08
-content_hash: ae4565adc8adf0d0
+content_hash: a752d99a18c22917
 ---
-
 # RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.04639](https://arxiv.org/abs/2603.04639)  
 **Code**: https://robomme.github.io/  
-**Area**: robotics  
-**Keywords**: Memory enhancement, VLA, Robot benchmark, Long-horizon manipulation, π0.5
+**Area**: Robotics  
+**Keywords**: Memory augmentation, VLA, Robotic benchmark, Long-horizon manipulation, π0.5
 
 ## TL;DR
-RoboMME systematically maps the four categories of human cognition—"temporal, spatial, object, and procedural"—to 16 long-horizon robotic manipulation tasks (770k high-quality timesteps) for the first time. Through a systematic ablation of 14 "memory representation × integration" combinations on the π0.5 base, it identifies "perceptual memory + AdaLN modulator" as the current optimal comprehensive trade-off.
+RoboMME systematically maps the four categories of human cognitive memory—"temporal, spatial, object, and procedural"—to 16 long-horizon robotic manipulation tasks (770k high-quality timesteps) for the first time. It performs systematic ablations on 14 "memory representation × integration mechanism" combinations using a π0.5 backbone, concluding that "perceptual memory + AdaLN modulator" offers the current best comprehensive trade-off.
 
 ## Background & Motivation
-**Background**: While mainstream manipulation benchmarks like LIBERO, CALVIN, RLBench, and SimplerEnv involve temporal sequences, the vast majority of tasks are actually "Markovian"—the current frame plus the instruction is sufficient to predict the next action, and past observations can be discarded. Consequently, almost all VLAs (such as π0.5, RoboVLM) achieve high SR on these benchmarks without truly examining memory capabilities.
+**Background**: While mainstream manipulation benchmarks like LIBERO, CALVIN, RLBench, and SimplerEnv involve temporal sequences, the vast majority of their tasks are effectively "Markovian." The current frame combined with the instruction is sufficient to predict the next action, making past observations disposable. Consequently, almost all VLAs (π0.5, RoboVLM, etc.) achieve high Success Rates (SR) on these benchmarks without truly testing memory capabilities.
 
-**Limitations of Prior Work**: The few works intentionally examining memory follow disparate paths: MemoryBench only covers three nearly-resolved spatial tasks; MIKASA-Robo tasks are too short and lack high-quality demonstrations; and memory-enhanced models like HistRISE, MemoryVLA, ContextVLA, and RoboMamba each use different backbones and evaluation protocols, making it impossible to horizontally compare which "memory design" is genuinely superior.
+**Limitations of Prior Work**: The few works intentionally examining memory employ disparate approaches: MemoryBench only covers three nearly-solved spatial tasks; MIKASA-Robo tasks are too short and lack high-quality demonstrations; memory-augmented models such as HistRISE, MemoryVLA, ContextVLA, and RoboMamba use different backbones and evaluation protocols, making it impossible to benchmark which "memory design" is superior.
 
-**Key Challenge**: (1) The lack of a benchmark that is truly non-Markovian and sufficiently large-scale; (2) The lack of an experimental framework to systematically compare all mainstream memory architectures under a fixed backbone and fixed data budget. These gaps leave the "memory enhancement" field in a state where progress seems apparent, but it is unclear which approach actually wins.
+**Key Challenge**: (1) The lack of a benchmark where tasks are explicitly non-Markovian and sufficiently large-scale; (2) The absence of an experimental framework to systematically compare all mainstream memory architectures under a fixed backbone and data budget. These gaps leave the "memory augmentation" field in a state where progress seems apparent, but the optimal direction remains unknown.
 
-**Goal**: (i) To design a large-scale manipulation benchmark driven by cognitive theory, explicitly non-Markovian, and covering four types of memory requirements; (ii) To perform a complete orthogonal ablation of three memory representations (symbolic, perceptual, recurrent) and three integration methods on the same π0.5 base under the same data budget.
+**Goal**: (i) To design a large-scale manipulation benchmark driven by cognitive theory, characterized by explicit non-Markovian properties across four types of memory requirements; (ii) To conduct a comprehensive orthogonal ablation of three memory representations (symbolic, perceptual, recurrent) and three integration mechanisms under a unified π0.5 backbone and fixed data budget.
 
-**Key Insight**: The classic Atkinson-Shiffrin memory model divides long-term memory into procedural and declarative; declarative memory is further divided into episodic (containing temporal, spatial, and object dimensions) and procedural. The authors utilize these four dimensions as the axes for task design, creating a task suite for each dimension to ensure the benchmark covers a cognitively sound "memory stimulus space."
+**Key Insight**: The classic Atkinson-Shiffrin memory model divides long-term memory into procedural and declarative, with declarative memory further split into episodic (temporal, spatial, and object-based) and semantic. This work uses these four dimensions as the axes for task design, creating a task suite for each to ensure the benchmark covers a cognitively grounded "memory stimulus space."
 
-**Core Idea**: By organizing tasks by cognitive dimensions (when/where/what/how) and models by a 2D "memory representation × integration mechanism" matrix, the result is not just "another SOTA," but an interpretable conclusion on "which design is effective for which type of task."
+**Core Idea**: By organizing tasks according to cognitive dimensions (when/where/what/how) and models via a 2D "memory representation × integration mechanism" matrix, the result is not just "another SOTA" but an interpretable conclusion on "which design is effective for which type of task."
 
 ## Method
-There are two independent but coupled products: the RoboMME benchmark (16 tasks, 4 suites, 1600 demonstrations, 770k timesteps) and the MME-VLA model suite (14 memory variants built on π0.5). The benchmark provides a strictly non-Markovian evaluation environment, while the model suite provides controlled orthogonal ablations.
+The work produces two independent but coupled outputs: the RoboMME benchmark (16 tasks, 4 suites, 1600 demonstrations, 770k timesteps) and the MME-VLA model suite (14 memory variants built on π0.5). The benchmark provides a strictly non-Markovian evaluation environment, while the model suite provides controlled orthogonal ablations.
 
 ### Overall Architecture
-The benchmark utilizes ManiSkill simulation with a 7-DoF Franka Panda, dual frontal/wrist cameras at 256×256, and joint-end-effector dual action spaces. Each task includes 100 episodes generated via trajectory replay; trajectories are injected with 5% key-waypoint noise and recovery to enhance failure-recovery behavior. On the model side, the π0.5 backbone is fixed with a 512-token memory budget and 80k-step training, evaluated uniformly under 50 episodes × 3 seeds × last-3 ckpt, converging all variables to the "memory design" itself.
+The benchmark utilizes ManiSkill simulation with a 7-DoF Franka Panda, dual 256×256 cameras (front/wrist), and a joint-end-effector dual action space. Each task includes 100 episodes generated via trajectory playback; 5% key waypoint noise is injected into trajectories to enhance failure-recovery behaviors. On the model side, a fixed π0.5 backbone, a memory budget of 512 tokens, and 80k training steps are used. Evaluations are standardized across 50 episodes × 3 seeds × last-3 checkpoints to isolate the variables of "memory design."
 
 ### Key Designs
 
-1.  **Cognitive-Oriented 4-Dimensional Task Taxonomy (Counting / Permanence / Reference / Imitation)**:
-    - **Function**: Decouples the abstract concept of "memory" into four independently evaluable cognitive dimensions (when/where/what/how), with 4 tasks of increasing difficulty per dimension, covering scenarios where Markovian policies are guaranteed to fail.
-    - **Mechanism**: The **Counting suite** tests temporal memory (e.g., PickXTimes requires repeated grasping as specified; StopCube requires pressing a button at a specific moment); the **Permanence suite** tests spatial memory (VideoUnmask/ButtonUnmask requires identifying targets based on memory while all blocks are occluded; Swap variants dynamically exchange container positions); the **Reference suite** tests object memory (PickHighlight requires picking a block that flashed briefly; VideoPlaceButton/Order requires execution based on temporal/ordinal references in language); the **Imitation suite** tests procedural memory (MoveCube/InsertPeg/PatternLock/RouteStick requires replicating grasp patterns, insertion directions, or linear/circular trajectories after watching a video demonstration).
-    - **Design Motivation**: Previous benchmarks either tested one type of memory or mixed them, preventing localization of "what memory the model lacks." By slicing according to cognitive dimensions, the strength/weakness profile of each model can be directly read, facilitating diagnosis and improvement.
+**1. Cognitive-oriented 4D Task Classification (Counting / Permanence / Reference / Imitation): Decomposing "memory" into when/where/what/how.**
 
-2.  **MME-VLA Model Suite: Three Memory Representations × Three Integration Methods**:
-    - **Function**: Implements 14 memory architecture variants on a fixed π0.5 backbone, forming an orthogonal ablation design space.
-    - **Mechanism**: **Representation Side**—*Symbolic memory* compresses history into natural language sub-goals (SimpleSG for description; GroundSG adds frontal view coordinates $[x, y]$), generated by Gemini-2.5-Pro, fine-tuned Qwen3-VL-4B, or Oracle simulator truths; *Perceptual memory* preserves history as visual tokens, controlled within a 512-token budget via token dropping (redundancy removal by RGB difference) or frame sampling (uniform downsampling); *Recurrent memory* uses TTT (online updating of fast weights) or RMT (learned memory slots) to compress sequences into fixed-length hidden states. **Integration Side**—*Memory-as-Context* concatenates memory tokens directly into the VLM input; *Memory-as-Modulator* uses AdaLN in each layer of the action expert to transform memory via multi-head attention into scale/shift parameters to modulate action features; *Memory-as-Expert* adds a dedicated memory expert path communicating with the VLM/action expert via blockwise causal attention.
-    - **Design Motivation**: Previous memory methods reported results using different backbones, making them incomparable. By locking down π0.5 and the 512-token budget, the remaining differences can be purely attributed to "how memory is stored" and "how memory is used," providing a scientific controlled experiment.
+Previous memory benchmarks either tested a single category or confounded multiple types, making it impossible to pinpoint "what memory the model lacks." RoboMME adopts the Atkinson-Shiffrin model to create four task suites along cognitive dimensions, each with 4 tasks of increasing difficulty, all designed to fail under Markovian policies. The Counting suite tests temporal memory (e.g., PickXTimes requires repeated grasping tasks); the Permanence suite tests spatial memory (VideoUnmask/ButtonUnmask requires remembering targets when objects are occluded); the Reference suite tests object memory (PickHighlight requires picking a briefly highlighted block); the Imitation suite tests procedural memory (RouteStick requires reproducing a trajectory after watching a video demonstration).
 
-3.  **Strictly Non-Markovian Data Construction and Unified Evaluation Protocol**:
-    - **Function**: Ensures each task "must use historical information for correct decision-making" and freezes all confounding variables that might introduce variance.
-    - **Mechanism**: All tasks are designed such that the same observation might correspond to different histories $\rightarrow$ different correct actions (e.g., seeing a red button may trigger different sub-actions depending on whether it was pressed twice or five times before); video-conditioned tasks provide a piece of historical video frames + paired proprioception at the initial step, but only the current frame during execution; action chunk training length is 20, execution length is 16; evaluation involves 50 episodes per task, max 1300 steps, with results averaged over the last 3 ckpt × 3 seeds (9 runs total); outside baselines like π0.5, π0.5 w/ past actions, SAM2Act+, and MemER are included for comparison.
-    - **Design Motivation**: Many tasks in previous "memory benchmarks" could actually be solved with the current frame, allowing baselines to achieve high scores. This benchmark cuts off such shortcuts at the source. The unified evaluation protocol makes the horizontal comparison of 14 variants truly credible.
+**2. MME-VLA Model Suite: An orthogonal ablation matrix of three representations × three integration mechanisms.**
+
+To ensure comparability, all variables are locked to π0.5 with a 512-token memory budget, varying only how memory is stored and used. Representations include: Symbolic memory (compressing history into natural language sub-goals like SimpleSG or GroundSG with $[x,y]$ coordinates); Perceptual memory (retaining raw visual tokens compressed via token dropping or frame sampling); and Recurrent memory (compressing sequences into fixed-length hidden states using TTT or RMT). Integration mechanisms include: Memory-as-Context (concatenation at the input); Memory-as-Modulator (using AdaLN to modulate action features via multi-head attention); and Memory-as-Expert (adding a dedicated memory expert pathway with blockwise causal attention).
+
+**3. Strict Non-Markovian Data Construction and Unified Evaluation Protocol.**
+
+RoboMME ensures that "the same observation may correspond to different histories, leading to different correct actions" (e.g., seeing a red button requires different responses depending on whether it has been pressed 2 or 5 times). Video-conditioned tasks provide history only at initial steps, forcing the model to rely on memory during execution. The protocol fixes the action chunk training length at 20 and execution length at 16, with results averaged across 9 runs of the last 3 checkpoints × 3 seeds.
 
 ### Loss & Training
-All models use the native flow matching action diffusion loss of π0.5 for multi-task joint training. Non-recurrent memory variants use batch=64, while recurrent variants (TTT/RMT) are reduced to batch=16 due to VRAM constraints. Training is unified at 80k steps. For symbolic memory, QwenVL is supervised fine-tuned on sub-goal annotations of 1600 demonstrations, while Gemini relies solely on prompt engineering.
+All models utilize the native flow matching action diffusion loss of π0.5 for multi-task joint training. Non-recurrent variants use a batch size of 64, while recurrent variants (TTT/RMT) are reduced to 16 due to VRAM constraints. Symbolic memory using QwenVL is fine-tuned on sub-goal annotations from 1600 demonstrations, while Gemini-based variants utilize prompt engineering.
 
 ## Key Experimental Results
 
-### Main Results (Average SR% of representative variants across 16 tasks)
+### Main Results (Average SR% for representative variants across 16 tasks)
 | Model Category | Variant (Memory + Integration) | Avg SR (%) |
 |------|------|------|
-| No-Memory Baseline | π0.5 | 17.93 |
-| No-Memory Baseline | π0.5 + past actions | 19.73 |
+| Memoryless Baseline | π0.5 | 17.93 |
+| Memoryless Baseline | π0.5 + past actions | 19.73 |
 | External SOTA | SAM2Act+ | 21.37 |
 | External SOTA | MemER | 42.38 |
 | Symbolic (Oracle Upper Bound) | GroundSG + Oracle | **84.08** |
-| Symbolic (Actual VLM) | GroundSG + QwenVL | 32.70 |
+| Symbolic (Real VLM) | GroundSG + QwenVL | 32.70 |
 | Perceptual (Ours Best) | **FrameSamp + Modul** | **44.51** |
 | Perceptual | TokenDrop + Modul | 38.04 |
 | Perceptual | FrameSamp + Expert | 36.25 |
@@ -83,57 +76,61 @@ All models use the native flow matching action diffusion loss of π0.5 for multi
 | Recurrent | RMT + Context | 19.46 |
 | Human Reference | Human | 90.50 |
 
-### Ablation Study (FrameSamp+Modul vs. π0.5 Baseline by Suite)
-| Suite (Representative Task) | π0.5 Baseline | FrameSamp+Modul | Gain |
+### Ablation Study (FrameSamp + Modul vs π0.5 Baseline by Suite)
+| Suite (Representative Task) | π0.5 Baseline | FrameSamp + Modul | Gain |
 |------|---------|---------|---------|
-| Counting (StopCube) | 6.67 | 42.00 | +35.33 |
-| Permanence (VideoUnmaskSwap) | 18.67 | 24.44 | +5.77 |
-| Reference (VideoRepick) | 0.44 | 30.44 | +30.00 |
-| Imitation (RouteStick) | 4.67 | 66.67 | +62.00 |
+| Counting (StopCube) | 6.67 | 42.00 | +35.3 |
+| Permanence (VideoUnmaskSwap) | 18.67 | 24.44 | +5.8 |
+| Reference (VideoRepick) | 0.44 | 30.44 | +30.0 |
+| Imitation (RouteStick) | 4.67 | 66.67 | +62.0 |
 
 ### Key Findings
-- **No Silver Bullet**: None of the 14 variants lead across all 4 types of memory. Symbolic memory is strong in tasks with "high-level discrete logic" like Counting/Permanence but weak in continuous action imitation like Imitation; perceptual memory shows the opposite.
-- **Perceptual + AdaLN Modulator is the best overall**: FrameSamp+Modul (44.51%) outperforms all other trainable variants, gaining 26.6 points over the memory-less π0.5, validating that "directly conditioning the action path on memory" is more efficient than "stuffing it into the prompt."
-- **Recurrent Memory Lags Significantly**: Compressing history into fixed-length hidden states via TTT/RMT loses too much visual detail, with an average SR below 23, performing worse than simply retaining visual tokens. This suggests current SSM-style recurrent representations are not yet strong enough.
-- **GroundSG+Oracle 84.08 shows a high upper bound**: As long as sub-goal information is accurate (including $[x, y]$ coordinates), simple sub-goal concatenation can approach human levels. The bottleneck lies entirely in the sub-goal predictor, not the VLA itself—using a VLM as a "memory generator" is a promising direction.
-- **MemER 42.38 vs. SAM2Act+ 21.37**: MemER, which mixes "perceptual keyframes + symbolic sub-goals," doubles the performance of SAM2Act+ (pure perceptual memory bank), again indicating that "language-visual hybrid" memory designs are more robust than single-modality ones.
+- **No Silver Bullet**: No single variant leads across all four memory types. Symbolic memory excels in tasks with "high-level discrete logic" (Counting/Permanence) but fails in continuous action imitation (Imitation), where perceptual memory thrives.
+- **Perceptual + AdaLN Modulator is Overall Best**: FrameSamp+Modul achieved an average SR of 44.51, outperforming all other trainable variants and improving by 26.6 points over the memoryless baseline, validating that direct conditioning of the action pathway is more efficient than prompt insertion.
+- **Recurrent Memory Lags Significantly**: Compressing history into fixed-length hidden states via TTT/RMT loses too much visual detail, resulting in SRs under 23, suggesting current SSM-style recurrent representations are not yet strong enough for this domain.
+- **High Upper Bound of GroundSG+Oracle**: If sub-goal information is accurate (including coordinates), simple concatenation can approach human-level performance. The bottleneck lies in the sub-goal predictor, not the VLA itself.
+- **MemER vs SAM2Act+**: MemER, which mixes perceptual and symbolic cues, doubled the performance of the purely perceptual SAM2Act+, indicating that "vision-language hybrid" memory is more robust.
 
 ## Highlights & Insights
-- Returning "memory" from an overused adjective to deconstructible cognitive dimensions (when/where/what/how) is a rare scientific attempt in this field—any subsequent memory method can draw a radar chart on these four dimensions.
-- The "Representation × Integration" 2D ablation matrix orthogonalizes the model design space and serves as a general methodology: any work "adding a new module to an existing model" should compare across such a grid rather than just reporting numbers for a single combination.
-- The finding that FrameSamp+Modul is superior to Context and Expert suggests that in flow matching action heads, AdaLN modulation is more suitable for "non-semantic conditional signals" than prompt concatenation. This has transferable value for designing DiT-style diffusion action models.
-- Plotting both human performance (90.5) and the Oracle upper bound (84.08) reveals a 46-point gap between current best VLAs and humans, while showing that if the sub-goal predictor were perfect, the gap would close to just 6 points. This clearly points subsequent research toward "improving the precision of sub-goal VLMs."
+- Deconstructing "memory" from an overused adjective into cognitive dimensions (when/where/what/how) is a rigorous scientific advancement for the field.
+- The 2D "Representation × Integration" ablation matrix serves as a methodology for future work integrating new modules into existing models.
+- The discovery that AdaLN modulation is superior to prompt concatenation for "non-semantic conditional signals" offers transferrable value for Designing DiT-style diffusion action models.
+- Comparison with Oracle bounds (84.08) and Human performance (90.50) reveals that while a 46-point gap remains between current VLAs and humans, improving sub-goal prediction could close that gap to within 6 points.
 
 ## Limitations & Future Work
-- The work is entirely within ManiSkill simulation and lacks real-world robot validation; specifically, performance in Permanence-type tasks may drop significantly under real occlusion and sensor noise.
-- All 16 tasks are single-arm tabletop scenarios, lacking more complex memory requirements such as mobile manipulation, dual-arm collaboration, or human-robot interaction.
-- The 512-token memory budget is fixed; the "budget-performance" curve was not studied. Different tasks may require different budgets.
-- Recurrent memory implementations (TTT, RMT) are relatively conservative; stronger recent SSM variants like Mamba-2 or Griffin were not tested, and their potential may be underestimated.
-- Sub-goal labeling relies on simulator ground truths; porting to real-world scenarios would require a more generalized labeling pipeline.
+- The study is conducted entirely in ManiSkill simulation and lacks real-robot validation, where Permanence tasks might degrade under sensor noise.
+- The 16 tasks are limited to tabletop single-arm scenarios, excluding mobile manipulation or human-robot interaction.
+- The fixed 512-token memory budget precludes an analysis of the "budget-performance" curve.
+- Implementation of recurrent memory was conservative; more powerful SSM variants like Mamba-2 or Griffin were not tested.
+- Sub-goal annotation relies on simulator ground truth; real-world deployment requires a more generalized annotation pipeline.
 
 ## Related Work & Insights
-- **vs. MemoryBench**: The latter has only 3 spatial tasks and is nearly saturated; RoboMME covers 16 non-Markovian tasks across 4 memory types, with a scale an order of magnitude larger.
-- **vs. MIKASA-Robo**: MIKASA has short tasks and few demonstrations, mainly targeting RL; RoboMME provides 770k high-quality demonstrations to support large-scale imitation learning.
-- **vs. MemoryVLA / SAM2Act / MemER**: These methods each report results on custom tasks; RoboMME is the first to compare them horizontally with 14 new variants under the same benchmark and backbone.
-- **vs. ContextVLA / UniVLA**: They use simple concatenation of past frames or actions; this work further refines "integration methods" into three categories (Context/Modulator/Expert) and systematically compares them, finding Modulator to be significantly superior.
+- **vs MemoryBench**: RoboMME covers 16 non-Markovian tasks across 4 categories, whereas MemoryBench is limited to 3 space-centric tasks that are near saturation.
+- **vs MIKASA-Robo**: RoboMME provides 770k high-quality demonstrations for large-scale imitation learning, contrasting with MIKASA's limited RL-focused data.
+- **vs MemoryVLA / SAM2Act / MemER**: RoboMME provides the first unified benchmark to compare these methods under a standardized backbone and protocol.
+- **vs ContextVLA / UniVLA**: While these utilize past frames/actions via concatenation, this work specifically identifies the Modulator as a significantly superior integration mechanism.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The cognitive orientation of the benchmark design plus the orthogonalization of the ablation matrix are of high methodological value.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 14 variants × 16 tasks × 9 runs + 4 external baselines—essentially everything that should be tested has been tested.
-- Writing Quality: ⭐⭐⭐⭐ Task definitions are clear and table information density is high; lacks some visual analysis of failure cases.
-- Value: ⭐⭐⭐⭐⭐ Provides the first truly usable standardized evaluation platform for "memory-enhanced robotic policies"; impact is likely to grow over time.
+- Novelty: ⭐⭐⭐⭐ The cognitive task design and orthogonal ablation matrix offer significant methodological value.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive testing of 14 variants across 16 tasks with 9 runs each plus 4 external baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear task definitions and high information density; could benefit from more visual error analysis.
+- Value: ⭐⭐⭐⭐⭐ Provides the first truly usable standardized evaluation platform for memory-augmented robotic policies.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](../../ICLR2026/robotics/memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
 - [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](../../ICLR2026/robotics/robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
+- [\[CVPR 2026\] FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising](../../CVPR2026/robotics/fm-steer_enhance_generalist_policies_with_value-guided_cascaded_denoising.md)
 - [\[ICML 2026\] TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation](tapsampling_inference-time_sampling_with_a_task-progress-understanding_verifier_.md)
-- [\[ICML 2026\] DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics](dlo-lab_benchmarking_deformable_linear_object_manipulations_with_differentiable_.md)
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 
 </div>
 

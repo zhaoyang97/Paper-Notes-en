@@ -128,10 +128,10 @@ The unified PRPO objective: for partition $m$ and reward dimension $k$, the adva
 ## Related Papers
 
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
-- [\[CVPR 2026\] BoSS: A Best-of-Strategies Selector as an Oracle for Deep Active Learning](../../CVPR2026/self_supervised/boss_a_best-of-strategies_selector_as_an_oracle_for_deep_active_learning.md)
 - [\[AAAI 2026\] FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients](../../AAAI2026/self_supervised/fedgrpo_privately_optimizing_foundation_models_with_group-relative_rewards_from_.md)
-- [\[NeurIPS 2025\] Continuous Subspace Optimization for Continual Learning (CoSO)](../../NeurIPS2025/self_supervised/continuous_subspace_optimization_for_continual_learning.md)
 - [\[CVPR 2026\] Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces](../../CVPR2026/self_supervised/hier-cos_making_deep_features_hierarchy-aware_via_composition_of_orthogonal_subs.md)
+- [\[NeurIPS 2025\] Continuous Subspace Optimization for Continual Learning (CoSO)](../../NeurIPS2025/self_supervised/continuous_subspace_optimization_for_continual_learning.md)
+- [\[ICLR 2026\] Temporal Slowness in Central Vision Drives Semantic Object Learning](temporal_slowness_in_central_vision_drives_semantic_object_learning.md)
 
 </div>
 

@@ -2,77 +2,92 @@
 title: >-
   [Paper Note] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Text-to-point-cloud localization] This paper proposes VLM-Loc, a framework that converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning with VLMs…
+  [CVPR 2026][Multimodal VLM][BEV] The VLM-Loc framework is proposed, which converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning by VLMs. Combined with a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point cloud alignment, it significantly outperforms previous SOTA on the self-built CityLoc be
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Text-to-point-cloud localization"
-  - "BEV"
-  - "scene graph"
-  - "VLM spatial reasoning"
-  - "autonomous driving"
+  - CVPR 2026
+  - Multimodal VLM
+  - BEV
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: a02bf5106fe2d957
+content_hash: e4b4f9b4c4594bc9
 ---
-
 # VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.09826](https://arxiv.org/abs/2603.09826)  
-**Code**: Available (see paper repository)  
-**Area**: Multimodal VLM
-**Keywords**: Text-to-point-cloud localization, BEV, scene graph, VLM spatial reasoning, autonomous driving
+**Code**: Yes (see paper repository)  
+**Area**: Multimodal VLM  
+**Keywords**: Text-to-point cloud localization, BEV, Scene graph, VLM spatial reasoning, Autonomous driving
 
 ## TL;DR
-This paper proposes VLM-Loc, a framework that converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning with VLMs, and introduces a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point-cloud localization. On the newly constructed CityLoc benchmark, VLM-Loc achieves a 14.20% improvement in Recall@5m over the previous state of the art.
+The VLM-Loc framework is proposed, which converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning by VLMs. Combined with a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point cloud alignment, it significantly outperforms previous SOTA on the self-built CityLoc benchmark with a 14.20% improvement in Recall@5m.
 
 ## Background & Motivation
-**Background**: Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions—a task relevant, for example, to passengers in robotaxi scenarios describing their surroundings to aid localization. Existing methods such as Text2Pos, Text2Loc, and CMMLoc adopt a coarse-to-fine strategy.
+**Background**: Text-to-Point Cloud (T2P) localization aims to infer precise spatial positions in 3D point cloud maps from natural language descriptions, typically applied in scenarios like Robo-taxi passengers describing surroundings to assist localization. Existing methods such as Text2Pos, Text2Loc, and CMMLoc adopt a coarse-to-fine strategy.
 
-**Limitations of Prior Work**: (a) The sub-maps used in the fine localization stage are typically constrained to small, simple regions (e.g., 30m×30m), overly simplifying real-world environmental complexity; (b) existing methods follow an end-to-end position prediction paradigm that lacks explicit spatial reasoning, limiting localization accuracy in complex environments.
+**Limitations of Prior Work**: (a) Sub-maps in the fine-grained localization phase are usually restricted to small, simple areas (e.g., 30m × 30m), oversimplifying actual environmental complexity; (b) Existing methods adopt an end-to-end position prediction paradigm, lacking explicit spatial reasoning, which limits localization accuracy in complex environments.
 
-**Key Challenge**: Simple text-to-point-cloud correspondence matching cannot effectively handle large-scale, complex spatial environments—models must be capable of interpreting spatial relationships expressed in language and grounding them in the environment.
+**Key Challenge**: Simple text-point cloud correspondence matching cannot effectively handle large-scale, complex spatial environments—it requires the model to interpret spatial relationships in language and connect them to the environment.
 
-**Goal**: (a) Perform fine-grained T2P localization over larger and more complex regions; (b) introduce explicit spatial reasoning capability; (c) handle partial matching between textual descriptions and the map.
+**Goal**: (a) Perform fine-grained T2P localization in larger and more complex areas; (b) Introduce explicit spatial reasoning capabilities; (c) Handle partial matching issues between text descriptions and maps.
 
-**Key Insight**: Leverage the powerful multimodal reasoning capability of VLMs for spatial description understanding and localization, by converting 3D point clouds into BEV images and scene graphs that VLMs can process.
+**Key Insight**: Leverage the powerful multimodal reasoning capabilities of VLMs for spatial description understanding and localization by converting 3D point clouds into BEV images + scene graphs that VLMs can process.
 
-**Core Idea**: Convert point clouds into BEV images and scene graphs for VLM spatial reasoning; use a Partial Node Assignment mechanism to explicitly align textual cues with scene graph nodes, enabling interpretable fine-grained localization.
+**Core Idea**: Convert point clouds into BEV images + scene graphs for VLM spatial reasoning, and use the PNA mechanism to explicitly align text cues with scene graph nodes, achieving interpretable fine-grained localization.
 
 ## Method
 
 ### Overall Architecture
-The input point cloud map undergoes two-stage conversion: (1) generating a BEV image (bird's-eye-view color projection) to provide a dense geometric layout; and (2) constructing a scene graph in which each object is represented as a node encoding a semantic label and BEV pixel coordinates. The VLM (Qwen3-VL-8B-Instruct) receives the BEV image as visual input, and the scene graph, system prompt, and text query as textual input. Through autoregressive decoding, it outputs partial node assignments and position estimates.
+This paper addresses fine-grained T2P localization: given a natural language description of the surroundings (e.g., "A building is ahead, a row of cars is parked on the left"), determine the speaker's precise location in a large-scale urban point cloud map. Prior methods treated this as end-to-end position regression—encoding text and point clouds, calculating similarity, and outputting coordinates—a black-box process that struggles with large scenes and lacks interpretability.
+
+VLM-Loc takes a different route: instead of directly "guessing coordinates," it translates the point cloud into two representations understandable by Vision-Language Models, allowing the VLM to "find objects and determine locations based on the map" like a human. Specifically, the point cloud map is rendered into a BEV top-down view (providing dense geometric layout) and extracted into a scene graph (each object is a node with a semantic label and pixel coordinates on the BEV map). The VLM (Qwen3-VL-8B-Instruct) uses the BEV image as visual input and the scene graph with system prompts and text queries as text input. Through a single auto-regressive decoding step, it performs Partial Node Assignment (PNA, determining which objects in the text correspond to which nodes) and then estimates the target's 2D pixel position, which is finally back-projected to world coordinates. The flowchart below shows the data flow from point clouds to world coordinates, with three contribution stages (BEV rendering + Scene Graph, PNA, Position Estimation) sequentially linked within the VLM's decoding.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    PC["Point Cloud Map (Input)"]
+    subgraph REP["BEV Rendering + Scene Graph"]
+        direction TB
+        BEV["BEV Image<br/>Dense Geometry/Appearance<br/>(Visual Input)"]
+        SG["Scene Graph<br/>Nodes = Semantic Labels + BEV Pixel Coordinates<br/>(Text Input)"]
+    end
+    PC --> REP
+    Q["Text Query + System Prompt"]
+    REP --> VLM["VLM (Qwen3-VL-8B)<br/>Single Auto-regressive Decoding"]
+    Q --> VLM
+    VLM --> PNA["Partial Node Assignment (PNA)<br/>Judge validity → Link nodes / Set null"]
+    PNA --> POS["Position Estimation<br/>Decoding 2D Pixel Position"]
+    POS --> OUT["Back-projection to World Coordinates<br/>2DoF Localization (Output)"]
+```
 
 ### Key Designs
 
-1. **BEV Rendering and Scene Graph Construction**:
+**1. BEV Rendering + Scene Graph: Translating Point Clouds into VLM-readable "Images"**
 
-    - **Function**: Convert 3D point clouds into two complementary representations processable by VLMs.
-    - **Mechanism**: The BEV image is obtained by projecting the point cloud onto the ground plane and rasterizing it ($I \in \mathbb{R}^{H \times W \times 3}$), with each object assigned its mean RGB color. The scene graph $\mathcal{G}=(\mathcal{V},\mathcal{E})$ represents each object as a node $n_i=(i, l_i, \mathbf{u}_i)$ encoding index, semantic label, and BEV pixel coordinates.
-    - **Design Motivation**: BEV images provide dense visual cues but lack explicit semantics; scene graphs provide structured relational information. The two representations are complementary, enabling the VLM to leverage both fine-grained geometric cues and high-level semantic relationships.
+VLMs cannot directly process raw point clouds. The paper proposes two complementary conversions. The BEV image orthogonally projects the point cloud to the ground and rasterizes it into an RGB top-down image $I \in \mathbb{R}^{H \times W \times 3}$, where each object takes the average color of its points, preserving dense geometric layout and appearance. The scene graph $\mathcal{G}=(\mathcal{V},\mathcal{E})$ abstracts the scene into a discrete structure, where each node $n_i=(i, l_i, \mathbf{u}_i)$ records the index, semantic label $l_i$, and the object's pixel coordinates $\mathbf{u}_i$ on the BEV map. These two representations are complementary: BEV provides fine-grained visual cues, while the scene graph provides high-level semantics. Providing both to the VLM is more conducive to spatial reasoning than either alone (Ablation: BEV only 13.21, Scene Graph only 24.62).
 
-2. **Partial Node Assignment (PNA) Mechanism**:
+**2. Partial Node Assignment (PNA): Teaching the Model to Distinguish Useful Cues from Noise**
 
-    - **Function**: Explicitly supervise the VLM to align object mentions in the text with scene graph nodes, handling partial visibility.
-    - **Mechanism**: For each object mentioned in the text query, the distance between its projected center in the map (A) and the center of its visible portion within the pose cell (B) is computed. If the distance is below a threshold $\tau$, the object is marked as valid and linked to the corresponding node; otherwise it is marked as invalid (null assignment). The threshold $\tau$ is set dynamically per semantic category (5m for "object" class, 15m for "stuff" class).
-    - **Design Motivation**: Map coverage is limited, and objects mentioned in the text may lie outside the map extent. PNA trains the model to determine which cues are usable and which are not, improving robustness.
+Map coverage is finite, and objects mentioned in a description may not all fall within the current map—some are beyond boundaries or only partially visible. Forcing every text-mentioned object to match a node introduces noise. PNA performs an "availability judgment" for each mentioned object: calculating the distance between its projection center $A$ in the full map and its visible part's center $B$ in the current pose cell. If the distance is less than a threshold $\tau$, it is valid and linked to the corresponding scene graph node; otherwise, it is null. Thresholds are dynamic: 5m for countable "object" classes (e.g., car, pole) and 15m for large-area "stuff" classes (e.g., building, road), as large objects' visible centers shift more easily. This improves robustness as the model learns to judge cue reliability before use (adding PNA increased the Scene Graph performance from 24.62 to 32.34).
 
-3. **Position Estimation**:
+**3. Position Estimation: Integrating Coordinate Prediction into Single Decoding**
 
-    - **Function**: Predict the target 2-DoF position in the BEV image coordinate system based on the node assignment results.
-    - **Mechanism**: Position prediction is integrated into VLM autoregressive decoding. The model outputs a JSON structure containing matched text–node pairs and a 2D pixel position, which is then converted to world coordinates.
-    - **Design Motivation**: A unified decoding strategy ensures consistency in reasoning from correspondences to spatial coordinates.
+After node assignment, the final step is generating the position. Rather than using a separate regression head, the paper integrates position prediction into the VLM's auto-regressive decoding. The model outputs a JSON string containing matched "text phrase ↔ node" pairs and the target's 2D pixel position in the BEV coordinate system, which is then back-projected to world coordinates based on the known BEV scale. Generating correspondences and spatial coordinates in a single decoding step ensures the localization conclusion is based on identified nodes, making the reasoning chain consistent and naturally interpretable.
+
+### A Complete Example
+Consider the query: "A building is ahead of me, a row of parked cars is on the right, and a street light pole is to the front left." In the rendering stage, the point cloud of the current pose cell is projected into a BEV image and a scene graph with nodes like building#0, car#1~#4, pole#5, tree#6, and road#7. For PNA judgment: the visible center of building#0 is 4m (< 15m) from its full center, marked valid. For the cars, three are within 5m and marked valid, while one is partly outside the boundary (> 5m) and marked null. pole#5 is 6m (> 5m) away and marked null (the pole mentioned by the speaker is actually outside the map). Thus, the three text phrases map to {building#0, [car#1, car#2, car#3], null}. In position estimation, the VLM outputs these matches and provides pixel coordinates based on the "building ahead, cars right" relative orientation. The missing pole is not forced into a match, preventing it from pulling the localization in the wrong direction—demonstrating the value of PNA over "full assignment."
+
+> ⚠️ Node numbers and distances above are illustrative examples for mechanism explanation and do not represent specific values from the original text.
 
 ### Loss & Training
-Standard autoregressive cross-entropy loss is used for training. LoRA fine-tuning (rank=8, $\alpha$=16) is performed via the Swift framework, updating only LoRA parameters while keeping the visual encoder and language backbone frozen. Training runs for 2 epochs on 8×RTX 4090 GPUs.
+The model is trained using standard auto-regressive cross-entropy loss. Fine-tuning is performed using LoRA via the Swift framework (rank=8, $\alpha=16$), updating only LoRA parameters while the vision encoder and language backbone remain frozen. Training was conducted on 8×RTX 4090 for 2 epochs.
 
 ## Key Experimental Results
 
 ### Main Results — CityLoc-K Localization Accuracy
 
 | Method | Val R@5m | Val R@10m | Test R@5m | Test R@10m |
-|--------|----------|-----------|-----------|------------|
+| :--- | :--- | :--- | :--- | :--- |
 | Text2Pos | 16.48 | 40.69 | 14.62 | 38.27 |
 | Text2Loc | 18.91 | 45.26 | 17.97 | 41.22 |
 | CMMLoc | 20.77 | 48.65 | 21.71 | 46.67 |
@@ -81,7 +96,7 @@ Standard autoregressive cross-entropy loss is used for training. LoRA fine-tunin
 ### Ablation Study — Component Contributions
 
 | Configuration | BEV | SG | PNA | Test R@5m |
-|---------------|-----|----|-----|-----------|
+| :--- | :---: | :---: | :---: | :--- |
 | (a) BEV only | ✓ | ✗ | ✗ | 13.21 |
 | (b) SG only | ✗ | ✓ | ✗ | 24.62 |
 | (c) SG+PNA | ✗ | ✓ | ✓ | 32.34 |
@@ -90,44 +105,45 @@ Standard autoregressive cross-entropy loss is used for training. LoRA fine-tunin
 
 ### Key Findings
 - VLM-Loc achieves 35.91% Recall@5m on the CityLoc-K test set, surpassing the strongest baseline CMMLoc by 14.20 percentage points.
-- Scene graphs contribute more to localization than BEV images (24.62 vs. 13.21), indicating that relational structure is more informative than dense appearance.
-- PNA contributes substantially: adding PNA improves SG+PNA over SG-only by 7.72%, and the full model over BEV+SG by 6.12%.
-- Directional cues are the most critical textual component: removing them reduces R@5m from 35.91% to 18.01%.
-- Cross-domain generalization is strong: VLM-Loc also leads by a large margin on CityLoc-C, which uses an entirely different point cloud source (UAV aerial vs. vehicle-mounted LiDAR).
+- Scene graphs are more important than BEV images for localization (24.62 vs 13.21), as relational structural information is more effective than dense appearance.
+- PNA contribution is significant: adding PNA improves the SG configuration by 7.72% and the full model by 6.12% compared to BEV+SG.
+- Directional cues are the most critical text component: removing direction drops R@5m from 35.91% to 18.01%.
+- Strong cross-domain generalization: significantly leads on CityLoc-C, which uses completely different point cloud sources (UAV aerial vs vehicle LiDAR).
 
 ## Highlights & Insights
-- **Paradigm innovation for VLM-based T2P localization**: This work is the first to apply VLM spatial reasoning to text-to-point-cloud localization, bridging 3D point clouds and 2D VLMs via BEV images and scene graphs—a conceptually elegant approach.
-- **Partial Node Assignment mechanism**: Elegantly addresses the practical problem of objects mentioned in text being absent from the map; this design yields 18%+ improvement over full assignment and offers genuine practical inspiration.
-- **Dominant role of directional information**: Experiments clearly demonstrate the decisive contribution of directional cues to spatial reasoning, with performance nearly halved upon their removal.
+- **Paradigm Innovation for VLM in T2P Localization**: First use of VLM spatial reasoning for T2P localization, bridging 3D and 2D VLMs via BEV+Scene Graphs.
+- **Partial Node Assignment Mechanism**: Elegantly handles the practical issue of objects in text being absent from the map, improving performance by over 18% compared to full assignment.
+- **Dominant Role of Directional Information**: Experiments clearly prove that directional cues are decisive for spatial reasoning, as performance nearly halves when they are removed.
 
 ## Limitations & Future Work
-- Text queries are generated automatically from templates and may diverge from natural human language descriptions.
-- BEV rendering discards height information, which may be insufficient for scenarios requiring full 3D reasoning.
-- LoRA fine-tuning may limit the VLM's ability to adapt to domain shift in the BEV image space.
-- Although larger and more complex than KITTI360Pose, the CityLoc benchmark remains predominantly urban.
-- Iterative dialogue-based localization (multi-turn interaction for progressive refinement) has not been explored.
+- Text queries are auto-generated from templates, which differs from human natural language descriptions.
+- BEV rendering loses height information, which may be insufficient for scenes requiring 3D reasoning.
+- LoRA fine-tuning might limit the VLM's ability to adapt to BEV domain shifts.
+- While the CityLoc benchmark is larger and more complex than KITTI360Pose, it remains focused on urban environments.
+- Interactive conversational localization (multi-turn refinement) has not yet been explored.
 
 ## Related Work & Insights
-- **vs. Text2Pos / Text2Loc / CMMLoc**: These methods directly learn text-to-3D correspondences without explicit reasoning; VLM-Loc substantially outperforms them through structured representation combined with VLM reasoning.
-- **vs. 3DRS / SpatialVLM and similar VLM+3D methods**: These primarily address indoor scene understanding and grounding; VLM-Loc is the first to apply such an approach to large-scale outdoor localization.
+- **vs Text2Pos/Text2Loc/CMMLoc**: These methods directly learn text-3D correspondences without explicit reasoning; VLM-Loc significantly outperforms them using structured representation + VLM reasoning.
+- **vs VLM+3D methods like 3DRS/SpatialVLM**: These focus mainly on indoor scene understanding/grounding; VLM-Loc is the first applied to large-scale outdoor localization tasks.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Applying VLMs to T2P localization is a novel direction; the BEV+scene graph conversion design is creative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive ablations including cross-domain generalization and multi-backbone experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with well-defined problem formulation.
-- **Value**: ⭐⭐⭐⭐ Provides an effective paradigm for applying VLM spatial reasoning to localization tasks.
+- Novelty: ⭐⭐⭐⭐ Applying VLM to T2P localization is a novel direction, and the BEV+Scene Graph conversion is creative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive ablation studies, including cross-domain generalization and multiple VLM backbones.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-defined problems.
+- Value: ⭐⭐⭐⭐ Provides an effective paradigm for applying VLM spatial reasoning to localization.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
+- [\[CVPR 2025\] Generalized Few-Shot 3D Point Cloud Segmentation with Vision-Language Model](../../CVPR2025/multimodal_vlm/generalized_few-shot_3d_point_cloud_segmentation_with_vision-language_model.md)
 - [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](../../ICCV2025/multimodal_vlm/exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](rethinking_vlms_for_image_forgery_detection_and_localization.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](seeing_through_touch_tactile_localization.md)
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
+- [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
 
 </div>
 

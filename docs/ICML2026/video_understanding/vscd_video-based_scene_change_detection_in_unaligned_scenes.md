@@ -1,20 +1,14 @@
 ---
 title: >-
-  [Paper Note] VSCD: Video Scene Change Detection in Unaligned Scenarios
+  [Paper Note] VSCD：无对齐场景的视频场景变化检测
 description: >-
-  [ICML 2026][Video Understanding][Scene Change Detection] This paper introduces the VSCD task—detecting object-level changes per pixel between two video sequences of the same environment recorded at different times. Under…
+  [ICML 2026][Video Understanding][Paper Note] This paper introduces the VSCD task—detecting object-level changes pixel-by-pixel between two video sequences of the same environment recorded at different times through a query-centric multi-reference model. It utilizes temporal consistency, patch-level correspondence, and confidence-weighted fusion to handle unconstr
 tags:
-  - "ICML 2026"
-  - "Video Understanding"
-  - "Scene Change Detection"
-  - "Video Alignment"
-  - "Multi-reference Matching"
-  - "Multi-view Geometry"
-  - "Long-term Autonomy"
+  - ICML 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 615554f33ba741b5
+content_hash: d513babf8d76a332
 ---
-
 # VSCD: Video Scene Change Detection in Unaligned Scenarios
 
 **Conference**: ICML 2026  
@@ -24,94 +18,113 @@ content_hash: 615554f33ba741b5
 **Keywords**: Scene Change Detection, Video Alignment, Multi-reference Matching, Multi-view Geometry, Long-term Autonomy
 
 ## TL;DR
-This paper introduces the VSCD task—detecting object-level changes per pixel between two video sequences of the same environment recorded at different times. Under unconstrained camera motion and severe viewpoint mismatch, the method leverages temporal consistency, patch-level correspondence, and confidence-weighted fusion through a query-centric multi-reference model.
+This paper introduces the VSCD task—detecting object-level changes pixel-by-pixel between two video sequences of the same environment recorded at different times through a query-centric multi-reference model. It utilizes temporal consistency, patch-level correspondence, and confidence-weighted fusion to handle unconstrained camera motion and severe viewpoint mismatch.
 
 ## Background & Motivation
 
-**Background**: Change detection is a classic computer vision problem. Existing methods generally fall into two categories: image-based (RSCD, SCD), which assume relatively fixed viewpoints, and video-based (AOD), which assume reference and query videos follow identical or opposite trajectories.
+**Background**: Change detection is a classic computer vision problem. Existing methods are categorized into two types: image-based (RSCD, SCD), which assume basically fixed viewpoints; and video-based (AOD), which assume reference and query videos move along identical or opposite trajectories.
 
-**Limitations of Prior Work**: These methods fail to handle three real-world challenges: (1) unconstrained camera motion; (2) drastic viewpoint changes; and (3) simultaneous appearance or disappearance of multiple objects. These issues coexist when mobile robots detect environmental changes during long-term autonomous operation.
+**Limitations of Prior Work**: These methods fail to address three real-world challenges: (1) unconstrained camera motion; (2) severe viewpoint changes; and (3) simultaneous appearance or disappearance of multiple objects. These problems frequently coexist when mobile robots must detect environmental changes during long-term autonomous operations.
 
-**Key Challenge**: Frame-level registration is unfeasible—comparing any two frames directly results in massive alignment errors due to completely different viewpoints. However, the temporal structure of video sequences contains sufficient regularity.
+**Key Challenge**: Frame-level registration is infeasible—comparing any two frames individually results in numerous misalignments because the viewpoints are entirely different. However, the temporal structure of video sequences contains sufficient regularity.
 
-**Goal**: Define the new VSCD task; construct a large-scale annotated dataset (1.1M+ frames plus a real-world test set); and propose a method that utilizes temporal structure to detect changes without explicit trajectory alignment.
+**Goal**: Define the new VSCD task; construct a large-scale annotated dataset (over 1.1 million frames + a real-world test set); and propose a method that leverages temporal structure for change detection without explicit trajectory alignment.
 
-**Key Insight**: Although single-frame mismatch is severe, **the temporal coherence of video sequences and multi-view geometric constraints are sufficient for reliable reasoning**.
+**Key Insight**: While mismatches between individual frames are severe, the **temporal coherence and multi-view geometric constraints of video sequences are sufficient for reliable reasoning**.
 
-**Core Idea**: **Multi-reference matching + Temporal alignment + Patch-level correspondence + Confidence-weighted fusion**—implicitly learning robust change detection capabilities from video sequences without prior knowledge of camera motion or trajectory alignment.
+**Core Idea**: **Multi-reference matching + temporal alignment + patch-level correspondence + confidence-weighted fusion**—implicitly learning robust change detection capabilities from video sequences without prior knowledge of camera motion or trajectory alignment.
 
 ## Method
 
 ### Overall Architecture
-VSCDNet utilizes a query-centric multi-reference architecture consisting of three stages: (1) **Frame-level alignment**: Uniformly sampling keyframes, encoding them via ViT, computing a frame-level similarity grid, and finding candidate reference frame combinations through soft matching; (2) **Patch-level correspondence**: Computing local correlation volumes at the patch scale for each reference candidate and performing geometric compensation via differentiable warp; (3) **Confidence-weighted fusion**: Combining frame-level confidence (from the frame matching distribution) and patch-level confidence (from local matching sharpness and entropy) to fuse multi-reference change features.
+VSCDNet is a query-centric multi-reference architecture divided into three stages: (1) **Frame-level alignment**: Uniformly sample keyframes, encode them with a ViT, calculate a frame-level similarity grid, and find candidate reference frame combinations through soft matching; (2) **Patch-level correspondence**: Calculate local correlation volumes at the patch scale for each reference candidate and perform geometric compensation via differentiable warping; (3) **Confidence-weighted fusion**: Combine frame-level confidence (derived from frame matching distributions) and patch-level confidence (derived from local matching sharpness and entropy) to fuse multi-reference change features weighted by reliability. Finally, high-resolution change masks are solved frame-by-frame by a query-guided decoder (which injects query RGB data to recover boundaries).
+
+```mermaid
+graph TD
+    IN["Reference Video + Query Video<br/>Unaligned / No Time Sync"] --> KF["Uniformly Sample Keyframes<br/>Frozen SAM-ViT Encoding"]
+    KF --> S1
+    subgraph S1["Temporal-Consistent Frame-level Alignment (Design 1)"]
+        direction TB
+        A1["Frame Similarity Grid + Conv Refinement<br/>Row-wise Softmax Matching"] --> A2["Temporal Smoothing → Matching Segments<br/>→ Reference Candidate Set"]
+    end
+    S1 --> S2
+    subgraph S2["Patch-level Correspondence + Differentiable Warp (Design 2)"]
+        direction TB
+        B1["k×k Local Correlation Volume<br/>Expected Displacement + Bilinear Warp"] --> B2["Per-candidate Change Features"]
+    end
+    S2 --> S3
+    subgraph S3["Confidence-weighted Fusion (Design 3)"]
+        direction TB
+        C1["Frame-level Confidence + Patch-level Confidence<br/>(Correlation Peak + Entropy)"] --> C2["Weighted Fusion by Reliability"]
+    end
+    S3 --> DEC["Query-guided Decoding<br/>Inject Query RGB to Recover Boundaries"]
+    DEC --> OUT["Pixel-wise Change Mask"]
+```
 
 ### Key Designs
 
-1.  **Temporal Consistency Frame Alignment**:
-    - **Function**: To find corresponding frame segments within the reference and query videos, providing coarse-grained correspondence for subsequent patch matching.
-    - **Mechanism**: Computes the cosine similarity of frame features $S_{t,s} = \cos(v_t^q, v_s^r)$ for each keyframe pair $(t, s)$, refined by a shallow convolutional head to obtain $A = S + h_\psi(S)$; then normalized via row-wise softmax as $P_{\text{frame}}(t,s) = \text{softmax}_s(A_{t,s}/\tau_f)$. Temporal coherence is used to cluster frames into segments via matching segment proposals.
-    - **Design Motivation**: Temporal coherence is a key constraint for sequence-level alignment; reliable reference segments can be identified using temporal smoothing priors without explicit pose estimation.
+**1. Temporal-Consistent Frame-level Alignment: Finding corresponding segments at the frame scale to provide a coarse correspondence for subsequent patch matching**
 
-2.  **Patch-level Correspondence + Differentiable Warp**:
-    - **Function**: Locally compensates for viewpoint changes and occlusions within the feature space.
-    - **Mechanism**: For each reference candidate $s$, the dot-product correlation between query patches and reference patches is computed within a $k \times k$ local window: $P_{\text{patch},i}^{(t,s)}(x,y) = \text{softmax}(dots)$; the expected displacement is calculated as $\Delta^{(t,s)}(x,y) = \sum_i P_{\text{patch},i}^{(t,s)} \delta_i$. Reference features are warped via bilinear sampling, and a lightweight convolutional head fuses them to obtain change features $F_{t,s} = g_\phi(E_t^q, E_{t,s}^{r(w)})$.
-    - **Design Motivation**: Patch-level local matching is more robust than global matching; differentiable warping avoids explicit pose estimation; the soft correlation distribution retains uncertainty information.
+Since viewpoints between individual frames are entirely different, arbitrary pairing causes massive misalignment; thus, direct frame-to-frame comparison is avoided. Instead, this step utilizes the temporal coherence of video: for each keyframe pair $(t, s)$, the cosine similarity of frame features is calculated as $S_{t,s} = \cos(v_t^q, v_s^r)$, refined through a shallow convolutional head to obtain $A = S + h_\psi(S)$, and normalized via row-wise softmax as $P_{\text{frame}}(t,s) = \text{softmax}_s(A_{t,s}/\tau_f)$. Temporal smoothing priors are used to cluster frames into matching segments. The benefit is that no explicit pose estimation or SLAM is required—only the temporal constraint that "correspondences of adjacent frames should also be adjacent" is used to converge chaotic frame-to-frame matches into orderly segment-level correspondences, drastically narrowing the search range for the next step.
 
-3.  **Confidence-weighted Fusion**:
-    - **Function**: Intelligently aggregates multi-reference change features while suppressing candidates with uncertain matching or failed geometric registration.
-    - **Mechanism**: Frame-level confidence $C_f(t,s) = P_{\text{frame}}(t,s)$; patch-level confidence $C_{sp}^{(t,s)}(x,y) = c_p \cdot p_{\max}^{(t,s)} + c \cdot (1 - e^{(t,s)})$ (peak + normalized entropy); fusion is performed as $F_t = \sum_s C_f(t,s) \cdot C_{sp}^{(t,s)} \cdot F_{t,s} / \text{norm}$.
-    - **Design Motivation**: Direct fusion of multiple references is easily contaminated by poor registrations; entropy detects "ambiguous" matches (multiple offset probabilities are similar), which usually indicates the patch cannot be reliably aligned.
+**2. Patch-level Correspondence + Differentiable Warp: Compensating for viewpoint changes and occlusions locally in the feature space**
+
+Frame-level alignment only provides coarse correspondence. Under severe viewpoint mismatch, alignment must occur at a finer scale. For each reference candidate $s$, the dot-product correlation between query and reference patches is calculated within a $k \times k$ local window: $P_{\text{patch},i}^{(t,s)}(x,y) = \text{softmax}(\text{dots})$. The expected displacement is determined via a weighted average $\Delta^{(t,s)}(x,y) = \sum_i P_{\text{patch},i}^{(t,s)} \delta_i$, followed by bilinear sampling to warp reference features to the query perspective. Finally, change features are fused by a lightweight convolutional head $F_{t,s} = g_\phi(E_t^q, E_{t,s}^{r(w)})$. Local correlation is significantly more robust than global matching, and differentiable warping allows geometric compensation without explicit camera pose estimation, while the soft distribution of correlations propagates uncertainty about alignment quality.
+
+**3. Confidence-weighted Fusion: Reliability voting among multi-reference results to suppress candidates with failed registration**
+
+Since a single query frame corresponds to multiple reference candidates, simple averaging is easily corrupted by poor registration. VSCDNet calculates two layers of confidence for each candidate: frame-level $C_f(t,s) = P_{\text{frame}}(t,s)$, reflecting the strength of the segment correspondence, and patch-level $C_{sp}^{(t,s)}(x,y) = c_p \cdot p_{\max}^{(t,s)} + c \cdot (1 - e^{(t,s)})$, which considers both the correlation peak and normalized entropy. The final fusion is $F_t = \sum_s C_f(t,s) \cdot C_{sp}^{(t,s)} \cdot F_{t,s} / \text{norm}$. Incorporating entropy is a critical design: when the probability distribution of a patch's offset is flat (multiple displacements are nearly equally probable), the entropy is high, indicating the patch cannot be accurately aligned and its weight should be suppressed—an ambiguity that peak value alone cannot detect.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Synthetic F1 | Real-world F1 | vs Prev. SOTA |
-| :--- | :--- | :--- | :--- |
+| Method | Synthetic F1 | Real-world F1 | vs SOTA |
+|------|-------------|-------------|---------|
 | TCF-LMO (AOD) | 19.7% | 10.3% | -44.5% |
 | PBCD-MC (AOD) | 26.8% | 16.1% | -28.4% |
 | CSCDNet (SCD) | 19.8% | 9.1% | -45.4% |
 | DR-TANet (SCD) | 20.6% | 11.6% | -43.1% |
 | C-3PO (SCD) | 24.1% | 11.7% | -39.9% |
-| GeSCF (Prev. SOTA) | 29.5% | 17.3% | baseline |
+| GeSCF (SOTA) | 29.5% | 17.3% | baseline |
 | **VSCDNet (Ours)** | **36.6%** | **25.4%** | **+7.1% / +8.1%** |
 
-### Hierarchical Evaluation
+### Layered Evaluation
 
-| Video Length | Low | Med | High | Low Graph Quality | Med | High | Few Changes | Med | Many |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| F1 | 38.1% | 36.9% | 33.9% | 40.7% | 31.7% | 32.1% | 37.7% | 39.0% | 36.6% |
+| Video Length | Low | Med | High | Graphics Quality | Low | Med | High | Obj Changes | Few | Med | Many |
+|---------|-----|-----|-----|----------|-----|-----|----------|-----|-----|-----|
+| F1 | 38.1% | 36.9% | 33.9% | - | 40.7% | 31.7% | 32.1% | - | 37.7% | 39.0% | 36.6% |
 
 ### Key Findings
-- Temporal consistency frame alignment converts chaotic frame-to-frame matching into ordered sequence correspondence, serving as the cornerstone of model performance.
-- Patch-level correspondence is more robust than global features, maintaining a 31-40% F1 score in scenes with high viewpoint variation.
-- Entropy-regularized confidence is crucial; normalized entropy provides additional detection for "flat distributions" (where multiple offsets have equal probability).
-- Generalization to real-world data: The performance drop from synthetic to real is approximately 11%, demonstrating strong generalization compared to other methods (which drop 50%+).
+- Temporal-consistent frame-level alignment transforms chaotic frame-to-frame matches into ordered sequence correspondences via segment proposals—serving as the cornerstone of model performance.
+- Patch-level correspondence is more robust than global features, maintaining a 31-40% F1 even in scenarios with high viewpoint variation.
+- Entropy-regularized confidence is crucial; normalized entropy provides additional detection of "flat distributions" where multiple offsets are equally likely.
+- Generalization to real-world data is strong—the performance drop from synthetic to real data is approximately 11%, compared to other methods which drop by over 50%.
 
 ## Highlights & Insights
-- **Paradigm Shift from Frame to Sequence**: Breakthrough use of the video sequence's temporal structure as an alignment prior, eliminating the need for SLAM or motion estimation.
-- **Elegance of Implicit Geometric Learning**: Implicitly learns multi-view correspondence through patch-level correlation and differentiable warping instead of explicitly estimating camera poses.
-- **Ingenious Dual-layer Confidence Mechanism**: The combination of peak and entropy detects both "certain matches" and "ambiguous matches."
-- **New Benchmark for Unconstrained Video Understanding**: The scale of 1.1 million frames and its authenticity exceeds existing change detection datasets by an order of magnitude.
+- **Paradigm shift from frame-level to sequence-level**: Groundbreaking use of the video sequence's temporal structure as an alignment prior, eliminating the need for SLAM or motion estimation.
+- **Elegance of implicit geometric learning**: Avoids explicit camera pose estimation, instead implicitly learning multi-view correspondences through patch-level correlation and differentiable warping.
+- **Ingenious two-layer confidence mechanism**: Combining peak values and entropy detects both "certain matches" and "ambiguous matches."
+- **New benchmark for unconstrained video understanding**: The scale of 1.1 million frames and real-world authenticity exceeds existing change detection datasets by an order of magnitude.
 
 ## Limitations & Future Work
-- The method depends on video temporal length; segmentation and streaming processing for extremely long videos remain unexplored.
-- The real-world dataset contains only 8 video pairs, offering limited environmental diversity.
-- It assumes that object states remain fixed during a single video recording pass.
-- Future improvements: Sliding windows or hierarchical temporal encoding for ultra-long videos; collection of more real-world data; adaptive hyperparameter tuning; and optimization of the inference pipeline.
+- The method depends on video temporal length; segmentation and streaming for extremely long videos have not yet been explored.
+- The real-world dataset size is only 8 video pairs, with limited environmental diversity.
+- It assumes that object states within the scene remain fixed during the recording of a single video.
+- Improvements: Implement sliding windows or hierarchical temporal encoding for ultra-long videos; collect more real-world data; introduce adaptive hyperparameter adjustment; and optimize the inference pipeline.
 
 ## Related Work & Insights
-- **vs RSCD**: Aerial/satellite-based, assuming fixed viewpoints; Ours targets indoor scenes with strong mismatches.
+- **vs RSCD**: Aerial/satellite focus assuming fixed viewpoints; Ours targets indoor environments with severe mismatch.
 - **vs SCD**: Handles isolated image pairs; Ours utilizes temporal coherence.
-- **vs AOD**: Assumes identical/opposite trajectories; Ours tackles more difficult unconstrained motion.
-- **vs Video Copy Localization**: Ours borrows the frame similarity map concept but applies it to pixel-level change detection.
-- **Insight**: Multi-reference fusion + confidence weighting can be transferred to video frame interpolation, stereo matching, and optical flow estimation.
+- **vs AOD**: Assumes identical or opposite trajectories; Ours handles unconstrained motion, which is more challenging.
+- **vs Video Copy Localization**: Shared ideas in frame similarity graphs, but applied here to pixel-level change detection.
+- **Insights**: Multi-reference fusion + confidence weighting can be transferred to video frame interpolation, stereo matching, and optical flow estimation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The VSCD task definition fills a critical gap; the shift in thinking combined with implicit geometric learning is an industry first.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 1.1M synthetic frames + 8 real pairs + 4 baseline comparisons + hierarchical evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, standardized formulas, and highly informative charts.
-- Value: ⭐⭐⭐⭐⭐ Addresses frontier requirements for long-term autonomous navigation, providing a practical solution + high-quality dataset + open-source implementation.
+- Novelty: ⭐⭐⭐⭐⭐ The VSCD task definition fills a critical gap; the shift in thinking + implicit geometric learning is an industry first.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 1.1M synthetic frames + 8 pairs of real data + 4 baseline comparisons + layered evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, standardized formulas, and informative diagrams.
+- Value: ⭐⭐⭐⭐⭐ Addresses frontier needs in long-term autonomous navigation; provides a practical solution + high-quality dataset + open-source implementation.
 
 <!-- RELATED:START -->
 
@@ -119,11 +132,11 @@ VSCDNet utilizes a query-centric multi-reference architecture consisting of thre
 
 ## Related Papers
 
-- [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](../../CVPR2026/video_understanding/savax_egotoexo_imitation_error_detection_via_scene.md)
-- [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
-- [\[CVPR 2026\] Seen-to-Scene: Keep the Seen, Generate the Unseen for Video Outpainting](../../CVPR2026/video_understanding/seen_to_scene_keep_the_seen_generate_the_unseen_for_video_outpainting.md)
-- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
-- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/video_understanding/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
+- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
+- [\[ICML 2026\] Return of Frustratingly Easy Unsupervised Video Domain Adaptation](return_of_frustratingly_easy_unsupervised_video_domain_adaptation.md)
+- [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
+- [\[ICML 2026\] Foresee-to-Ground: From Predictive Temporal Perception to Evidence-Driven Reasoning](foresee-to-ground_from_predictive_temporal_perception_to_evidence-driven_reasoni.md)
+- [\[ICML 2026\] RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)
 
 </div>
 

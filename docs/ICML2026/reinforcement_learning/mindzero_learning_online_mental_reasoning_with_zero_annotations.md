@@ -2,124 +2,137 @@
 title: >-
   [Paper Note] MindZero: Learning Online Mental Reasoning with Zero Annotations
 description: >-
-  [ICML2026][Reinforcement Learning][Mental Reasoning] MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward model maximizes the likelihood of observed…
+  [ICML 2026][Reinforcement Learning][GRPO] MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward maximizes the likelihood of observed human actions given the generated mental hypotheses. Trained via GRPO, the model achieves single-forward, fast, and robust online mental reasoning without requ
 tags:
-  - "ICML2026"
-  - "Reinforcement Learning"
-  - "Mental Reasoning"
-  - "GRPO"
-  - "Self-supervised RL"
-  - "Variational Inference"
-  - "Proactive Assistance"
+  - ICML 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: 7c19f16aa76011e2
+content_hash: 90eb3263f539e382
 ---
-
 # MindZero: Learning Online Mental Reasoning with Zero Annotations
 
 **Conference**: ICML2026  
 **arXiv**: [2606.00240](https://arxiv.org/abs/2606.00240)  
 **Code**: https://scai.cs.jhu.edu/MindZero  
 **Area**: Reinforcement Learning / Theory of Mind / Multimodal LLM Post-training  
-**Keywords**: Mental Reasoning, GRPO, Self-supervised RL, Variational Inference, Proactive Assistance
+**Keywords**: Mental Reasoning, GRPO, Self-Supervised RL, Variational Inference, Proactive Assistance
 
 ## TL;DR
-MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward model maximizes the likelihood of observed human actions based on generated mental hypotheses. Using GRPO training, small models achieve single-forward, fast, and robust online mental reasoning without requiring any mental annotations.
+MindZero reformulates Bayesian Inverse Planning (BIP) into a "self-supervised RL" objective for multimodal LLMs. The reward maximizes the likelihood of observed human actions given the generated mental hypotheses. Trained via GRPO, the model achieves single-forward, fast, and robust online mental reasoning without requiring any manual mental annotations.
 
 ## Background & Motivation
 
-**Background**: For AI to proactively assist humans in real-world environments, it must possess a strong Theory of Mind (ToM)—inferring goals or beliefs from behavior. Current approaches fall into three categories: (i) Prompting-based LLMs answering directly; (ii) Model-driven Bayesian Inverse Planning (BIP) explicitly enumerating hypotheses; (iii) Supervised learning directly fitting annotations.
+**Background**: For AI to proactively assist humans in real-world environments, it must possess strong Theory of Mind (ToM)—inferring goals/beliefs from behavior. Current approaches follow three paths: (i) prompt-engineered LLMs for direct questioning; (ii) model-driven Bayesian Inverse Planning (BIP) which explicitly enumerates hypotheses; (iii) supervised learning (SL) to fit annotations.
 
-**Limitations of Prior Work**: (1) Prompting methods systematically fail on long contexts and recursive reasoning; (2) BIP-based methods (e.g., AutoToM, ThoughtTracing) require searching the large hypothesis space and calling LLM evaluations at every step, often exceeding hundreds of TFLOPs per inference, making them unsuitable for real-time use; (3) Supervised learning is nearly impossible to scale as "ground-truth mental states" are rarely available in real home or web environments.
+**Limitations of Prior Work**: (1) Prompting methods systematically fail in long contexts and recursive reasoning; (2) BIP-based methods (e.g., AutoToM, ThoughtTracing) require searching and LLM evaluation at every step, often exceeding hundreds of TFLOPs per inference, making them unsuitable for real-time use; (3) Supervised learning is nearly impossible to scale as "ground-truth mental states" are rarely available in real-world household or web environments.
 
-**Key Challenge**: Model-driven BIP is robust but slow, while LLM single-forward passes are fast but unreliable. Furthermore, the "ground-truth mental states" required for offline supervision are unattainable in open scenarios. This necessitates a new paradigm: preserving the deductive structure of BIP (using action likelihood to test mental hypotheses) during training, while compressing it into a single LLM forward pass for deployment.
+**Key Challenge**: Model-driven BIP is robust but slow, while LLM single-forward passes are fast but unreliable. Furthermore, the lack of ground-truth mental states in open scenarios necessitates a new paradigm: retaining the deductive structure of BIP (using action likelihood to verify hypotheses) during training, while compressing it into a single LLM forward pass during deployment.
 
-**Goal**: (i) Train small multimodal LLMs for online, uncertainty-aware mental reasoning without any mental labels; (ii) Ensure the trained models are both accurate and real-time responsive in proactive assistance tasks.
+**Goal**: (i) Train small multimodal LLMs for online, uncertainty-aware mental reasoning without any mental labels; (ii) ensure the trained models are both accurate and real-time responsive in proactive assistance tasks.
 
-**Key Insight**: The ELBO form of BIP, $\mathbb{E}_{Q_\theta}[\log P(a|m,s) P(m)] + H(Q_\theta)$, naturally depends only on the likelihood of the "action-state-hypothesis" triplet and not on a ground-truth $m^\star$. By treating this term as an RL reward, an LLM can "internalize" the deductive structure of BIP directly via GRPO.
+**Key Insight**: The ELBO form of BIP, $\mathbb{E}_{Q_\theta}[\log P(a|m,s) P(m)] + H(Q_\theta)$, depends naturally on the likelihood of the "action-state-hypothesis" triplet, rather than the ground-truth $m^\star$. By treating this term as an RL reward, the LLM can "internalize" the deductive structure of BIP via GRPO.
 
-**Core Idea**: Use "explaining observed human actions" as a self-supervised reward to distill Bayesian Inverse Planning into the LLM's policy distribution.
+**Core Idea**: Use "explaining observed human actions" as a self-supervised reward to distill Bayesian Inverse Planning into the LLM strategy distribution.
 
 ## Method
 
 ### Overall Architecture
 
-MindZero trains a multimodal LLM $Q_\theta(\cdot \mid s_{1:t}, a_{1:t})$ that, given a historical state-action sequence, outputs $N$ mental hypotheses $\mathcal{M}_t = \{m_t^{(1)}, \dots, m_t^{(N)}\}$ and their normalized posteriors $\mathcal{Q}_t = \{q_t^{(1)}, \dots, q_t^{(N)}\}$ ($\sum q^{(i)} = 1$) in a single pass. An external "action likelihood evaluator" (a model-driven planner in GridWorld; an LLM in the home domain) provides $P(a_{1:t} \mid m_t^{(i)}, s_{1:t})$, while another LLM (or a uniform distribution) provides the prior $P(m_t^{(i)})$. These are synthesized into a reward for GRPO model updates. During deployment, the model performs one forward pass at each timestep to obtain the multi-hypothesis distribution, and a downstream helper plans assistive actions using $P(a^A_t | s_{1:t}, a_{1:t}) = \sum_{m_t} P(a^A_t | s_t, m_t) P(m_t | s_{1:t}, a_{1:t})$.
+MindZero trains a multimodal LLM $Q_\theta(\cdot \mid s_{1:t}, a_{1:t})$. Given the historical state-action sequence, it outputs $N$ mental hypotheses $\mathcal{M}_t = \{m_t^{(1)}, \dots, m_t^{(N)}\}$ and their normalized posteriors $\mathcal{Q}_t = \{q_t^{(1)}, \dots, q_t^{(N)}\}$ (where $\sum q^{(i)} = 1$) in a single pass. An external "action likelihood evaluator" (a model-driven planner for GridWorld; an LLM for the household domain) provides $P(a_{1:t} \mid m_t^{(i)}, s_{1:t})$, while another LLM (or a uniform distribution) provides the prior $P(m_t^{(i)})$. The reward is synthesized and fed to GRPO to update the model. During deployment, the model performs one forward pass per timestep to obtain the hypothesis distribution, and a downstream helper plans actions via $P(a^A_t | s_{1:t}, a_{1:t}) = \sum_{m_t} P(a^A_t | s_t, m_t) P(m_t | s_{1:t}, a_{1:t})$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Historical State-Action Sequence (s, a)₁:ₜ"] --> B["Multi-hypothesis + Entropy Regularization<br/>LLM Qθ: One pass for N hypotheses m⁽ⁱ⁾ and posteriors q⁽ⁱ⁾"]
+    B --> EST
+    subgraph EST["Explicit Prior Modeling + Dual Estimators"]
+        direction TB
+        C["Action Likelihood Evaluator<br/>planner / LLM → P(a | m, s)"]
+        D["Prior Estimator<br/>LLM Commonsense / Uniform → P(m)"]
+    end
+    EST --> E["Self-Supervised RL Reward = ELBO<br/>Σ q⁽ⁱ⁾·log(Likelihood · Prior) − Entropy Reg. H(Qθ)"]
+    B -->|Posteriors q⁽ⁱ⁾ + Entropy| E
+    E --> F["GRPO Group-relative Advantage Update"]
+    F -->|Self-Supervised Loop| B
+    F ==>|Deployment| G["Single forward for hypothesis distribution<br/>Helper plans via belief-state"]
+```
 
 ### Key Designs
 
-1.  **Self-supervised RL Reward = ELBO**:
-    - **Function**: Provides a learning signal for the LLM under zero mental annotations, allowing it to learn implicit supervision based on "mental hypotheses that explain human behavior."
-    - **Mechanism**: For unlabeled trajectories, ToM is treated as variational inference $Q_\theta \approx P(m | s, a)$, maximizing the ELBO $\mathcal{J}(\theta) = \mathbb{E}_{Q_\theta}[\log(P(a_{1:t} | m_t, s_{1:t}) \cdot P(m_t))] + H(Q_\theta)$. For $N$ sampled hypotheses, this becomes $R(\mathcal{M}_t, \mathcal{Q}_t) = \sum_i q_t^{(i)} \log[P(a_{1:t} | m_t^{(i)}, s_{1:t}) P(m_t^{(i)})] - \sum_i q_t^{(i)} \log q_t^{(i)}$. GRPO is used for relative advantage updates within a group, avoiding the need for a critic.
-    - **Design Motivation**: Traditional next-token prediction is "forward" (fitting $a | s$), whereas mental reasoning must be "inverse" inference (inferring $m | s, a$). These have different training objectives. Formulating the ELBO as a reward integrates inverse inference into the RL post-training pipeline without needing ground-truth $m^\star$.
+**1. Self-Supervised RL Reward = ELBO: Learning signals without mental annotations**
 
-2.  **Multi-hypothesis + Entropy Regularization**:
-    - **Function**: Enables the model to maintain multiple competing mental hypotheses and explicitly provide confidence levels for each, preventing premature commitment to a wrong goal when evidence is insufficient.
-    - **Mechanism**: The reward function forces the model to output $N$ hypotheses and normalized posteriors $\{q_t^{(i)}\}$ simultaneously. The entropy term $H(Q_\theta) = -\sum_i q_t^{(i)} \log q_t^{(i)}$ directly penalizes "single-point collapse." This allows the downstream helper to weight actions by $P(a^A | m) \cdot q(m)$ in ambiguous scenarios.
-    - **Design Motivation**: The robustness of traditional BIP stems from explicitly tracking the posterior distribution of multiple hypotheses. Single-point prediction in early, ambiguous stages (e.g., in GridWorld) causes the helper to act prematurely in the wrong direction. Ablations show an 8.8% drop in speedup without multi-hypothesis and a 13.9% drop without entropy regularization—the entropy term is the critical switch against collapse.
+The primary barrier to ToM is the absence of ground-truth mental states $m^\star$ in open scenarios. MindZero frames ToM as variational inference $Q_\theta \approx P(m|s,a)$, maximizing the ELBO which relies only on the triplets:
 
-3.  **Explicit Prior Modeling + Dual Estimators**:
-    - **Function**: Uses an LLM as a prior estimator to constrain the hypothesis space and avoid reward hacking; uses a domain-adapted likelihood estimator (model-based planner/LLM) to provide Bayesian evidence.
-    - **Mechanism**: The prior $P(m_t)$ is generated by an LLM scoring the "commonsense reasonableness" of candidate goals (e.g., "putting an apple in the dishwasher" receives a very low score). The likelihood $P(a_{1:t} | m_t, s_{1:t})$ is estimated using a model-based planner in GridWorld and a pre-trained LLM in the home domain. Both are integrated into the $\log$ of the ELBO reward.
-    - **Design Motivation**: Using only the likelihood term might lead the model to generate overly broad goals (e.g., "pick up everything on the table") to make any behavior "reasonable," achieving high scores via reward hacking. The prior term closes this shortcut. Decoupling the two estimators also allows the framework to migrate to new domains by simply replacing the planner or prompt.
+$$\mathcal{J}(\theta) = \mathbb{E}_{Q_\theta}\big[\log\big(P(a_{1:t}|m_t,s_{1:t})\cdot P(m_t)\big)\big] + H(Q_\theta).$$
+
+For $N$ sampled hypotheses, this becomes $R(\mathcal{M}_t,\mathcal{Q}_t)=\sum_i q_t^{(i)}\log[P(a_{1:t}|m_t^{(i)},s_{1:t})P(m_t^{(i)})] - \sum_i q_t^{(i)}\log q_t^{(i)}$. GRPO facilitates updates using group-relative advantages without a critic. This effectively "internalizes" the deductive structure of BIP into the LLM weights.
+
+**2. Multi-hypothesis + Entropy Regularization: Preventing premature commitment**
+
+BIP is robust because it explicitly tracks multiple hypotheses. Single-point predictions in ambiguous tasks (like early-stage GridWorld) cause helpers to act prematurely in the wrong direction. MindZero enforces the output of $N$ hypotheses and their posteriors $\{q_t^{(i)}\}$, while using the entropy term $H(Q_\theta)=-\sum_i q_t^{(i)}\log q_t^{(i)}$ to penalize "point-collapse." This allows the downstream helper to weight actions based on the distribution until more evidence is observed.
+
+**3. Explicit Prior Modeling + Dual Estimators: Preventing reward hacking and enabling transfer**
+
+Without a prior, models might output overly broad goals (e.g., "pick up everything") to make any action appear "likely," leading to reward hacking. MindZero uses an LLM as a prior estimator to score "commonsense plausibility" (e.g., "putting an apple in the dishwasher" receives a very low log-prior). The likelihood $P(a_{1:t}|m_t,s_{1:t})$ is provided by domain-specific evaluators—a model-based planner for GridWorld and a pre-trained LLM for the household domain. Decoupling likelihood and prior allows the framework to migrate to new domains by merely swapping the planner or prompt.
 
 ### Loss & Training
 
-The reward $R$ is calculated as per the above formula. GRPO updates $Q_\theta$ using normalized advantages within a group without a value network. Small models like Llama-3.2-3B, which struggle with consistent formatting, undergo SFT warmup using self-sampled data from Llama-3.1-8B (learning format only, no ground-truth) before entering the RL phase.
+The reward $R$ is calculated as above, and $Q_\theta$ is updated via GRPO using group-normalized advantages. Small models like Llama-3.2-3B undergo an SFT "warm-up" using historical data sampled from Llama-3.1-8B to learn formatting (without ground-truth) before RL.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Four evaluations: GridWorld QA, GridWorld Proactive Assistance, Home QA (MMToM-QA), and Home Proactive Assistance (O-WAH). The Speedup metric measures the acceleration of task completion compared to a "human alone" baseline.
+Evaluations were conducted on GridWorld QA, GridWorld Proactive Assistance, Household QA (MMToM-QA), and Household Proactive Assistance (O-WAH). The "Speedup" metric indicates the efficiency gain relative to a human performing the task alone.
 
 | Scenario | Baseline (Same Backbone) | MindZero (Ours) | Notes |
-|----------|--------------------------|-----------------|-------|
-| GridWorld Proactive (Qwen3-VL-4B) | 1.4% speedup | 23.0% speedup | Order of magnitude improvement |
-| GridWorld Proactive (Qwen3-VL-8B) | -0.1% speedup | 24.5% speedup | 8B base model shows negative speedup due to instruction instability |
-| Home Proactive (Qwen3-4B) | 2.3% speedup | 19.1% speedup | Surpasses GPT-5.2 (9.4%) and Gemini-3-Flash (17.7%) |
-| Home Proactive (Llama-3.1-8B) | 1.7% speedup | 17.4% speedup | Outperforms Gemini-3-Flash with approx. 1/2 the compute |
-| QA Accuracy (avg.) | Base Model | 2.1–2.5× | Accuracy multiplier relative to the same backbone |
+|------|----------------|------------------|------|
+| GridWorld Assistance (Qwen3-VL-4B) | 1.4% speedup | 23.0% speedup | Order of magnitude improvement |
+| GridWorld Assistance (Qwen3-VL-8B) | -0.1% speedup | 24.5% speedup | Base 8B model had negative speedup |
+| Household Assistance (Qwen3-4B) | 2.3% speedup | 19.1% speedup | Outperforms GPT-5.2 (9.4%) & Gemini-3 (17.7%) |
+| Household Assistance (Llama-3.1-8B) | 1.7% speedup | 17.4% speedup | Beats Gemini-3-Flash with ~1/2 compute |
+| QA Accuracy (avg.) | Base Models | 2.1–2.5× | Accuracy multiplier over base models |
 
-### Ablation Study (Qwen3-4B / Home Proactive Assistance)
+### Ablation Study (Qwen3-4B / Household Assistance)
 
-| Configuration | Speedup ↑ | TFLOPs ↓ | Description |
-|---------------|-----------|----------|-------------|
+| Configuration | Speedup ↑ | TFLOPs ↓ | Note |
+|------|------------|------------|------|
 | MindZero (Full) | 19.1% | 201.2 | All three designs active |
-| w/o Explicit Prior | 17.0% | 200.5 | Tendency toward reward hacking observed |
-| w/o Multi-hypothesis | 10.3% | 132.6 | Single-point prediction, premature commitment |
-| w/o Entropy Reg. | 5.2% | 245.1 | Mode collapse, higher token count but worst performance |
+| w/o Explicit Prior | 17.0% | 200.5 | Slight reward hacking tendency |
+| w/o Multi-hypothesis | 10.3% | 132.6 | Single-point prediction; early commitment |
+| w/o Entropy Regularization | 5.2% | 245.1 | Mode collapse; worst performance |
 
 ### Key Findings
 
-- **Small Model + MindZero ≥ Large Model Zero-shot**: Qwen3-4B trained with MindZero achieved 19.1% speedup in home assistance, exceeding Qwen3-235B-A22B (12.3%) and GPT-5.2 (9.4%), and matching Gemini-3-Flash (17.7%) at a fraction of the compute cost.
-- **Large Models Fail on GridWorld**: GPT-5.2, Gemini-3-Flash, and Qwen3-235B all showed speedup ≤ 1% in GridWorld proactive assistance because their goal predictions fluctuated every step, causing the agent to oscillate. MindZero's 24.5% speedup highlights that "online reasoning stability" is far more important than "single-step reasoning quality."
-- **Entropy > Multi-hypothesis > Prior**: Based on ablation drops, the entropy term for preventing collapse is the "soul" of MindZero, while the prior term acts as a "fuse" to block reward hacking.
-- **Human Study Validation**: 12 JHU participants using the MindZero (Qwen3-4B) assistant achieved a 19.7% actual speedup, with no statistically significant difference from Gemini-3-Flash (23.4%, $p=0.24$).
+- **Small Model + MindZero ≥ Large Model Zero-shot**: A 4B Qwen3 model trained with MindZero achieved a 19.1% speedup in household assistance, surpassing the 235B Qwen3-235B-A22B (12.3%) and GPT-5.2 (9.4%).
+- **Large Models Fail on GridWorld**: GPT-5.2 and Gemini-3-Flash achieved $\leq 1\%$ speedup because their goal predictions fluctuated wildly at each step, causing the agent to oscillate. MindZero's 24.5% speedup highlights that "online reasoning stability" is more critical than "single-step reasoning quality."
+- **Entropy > Hypotheses > Prior**: Ablation results show that the entropy term is the "soul" of MindZero for preventing collapse, while the prior acts as a "fuse" against reward hacking.
+- **Human Study**: In tests with 12 human subjects, MindZero (Qwen3-4B) provided a 19.7% real-world speedup, which is statistically comparable ($p=0.24$) to Gemini-3-Flash (23.4%).
 
 ## Highlights & Insights
 
-- **Rewriting BIP as RL Reward**: The core contribution is "treating variational ELBO as a GRPO reward." This allows Bayesian Inverse Planning to be "internalized" by an LLM as a single-forward pass without any annotations—a long-awaited missing link in the field.
-- **"Explicit Hypotheses + Posterior" Format as a Contribution**: While many ToM-LLM works use implicit reasoning, MindZero's forced schema of $N$ pairs of $(m^{(i)}, q^{(i)})$ provides a direct target for entropy regularization and multi-hypothesis collapse prevention, enabling true belief-state planning for downstream helpers.
-- **Transferable Trick**: The "ELBO-as-reward + GRPO" paradigm can be applied to other LLM post-training tasks requiring inverse inference, such as code bug tracing, user intent inference in dialogue, or robot fault diagnosis—provided one can formulate $P(\text{evidence}|\text{hypothesis})$.
+- **BIP as RL Reward**: Rewriting variational ELBO as a reward for GRPO allows Bayesian Inverse Planning to be internalized by LLMs as a single-forward pass without needing labels.
+- **Formatting as Contribution**: By forcing a $(m^{(i)}, q^{(i)})$ schema, the model avoids collapse through explicit entropy regularization and enables downstream belief-state planning.
+- **Transferable Paradigm**: The "ELBO-as-reward + GRPO" paradigm can be applied to any LLM post-training task requiring inverse inference (e.g., code debugging, intent inference, or robot failure diagnosis) where $P(\text{evidence}|\text{hypothesis})$ can be defined.
 
 ## Limitations & Future Work
 
-- **No Modeling of Recursive Reasoning**: The current framework handles only first-order ToM (inferring a single user's mind) and cannot handle higher-order "A thinks that B thinks..." reasoning, limiting its use in complex multi-agent collaboration.
-- **Linear Input Growth over Timesteps**: Concatenating $s_{1:t}, a_{1:t}$ into the prompt means the token count scales with time, which might exceed the context window in long-horizon tasks.
-- **Dependence on External Likelihood Evaluators**: While model-based planners work for small GridWorlds, LLM-based likelihood estimation in home domains is not cheap. Biased evaluators (e.g., an LLM unfamiliar with a specific object) could mislead the entire RL process. The SFT warmup required for Llama-3.2-3B also risks memorizing low-quality distributions, a "cold-start + bias" problem yet to be fully solved.
+- **First-order ToM Only**: Currently only models one-level ToM (user's mind) and does not handle recursive "A thinks that B thinks..." reasoning.
+- **Context Length**: The input sequence $s_{1:t}, a_{1:t}$ grows linearly with time, which may exceed context limits in long-horizon tasks.
+- **Evaluator Dependency**: Model-based planners in GridWorld are computationally cheap, but LLM-based likelihood estimation in household domains is expensive. Bias in the evaluator (e.g., unfamiliarity with objects) can propagate into the RL training.
 
 ## Related Work & Insights
 
-- **vs BIP / AutoToM / ThoughtTracing**: BIP-style methods explicitly enumerate hypotheses and call LLM evaluations per step—robust but slow. MindZero distills this deductive structure into LLM weights, achieving over an order of magnitude speedup during deployment.
-- **vs Supervised Learning ToM (Rabinowitz 2018, etc.)**: These require ground-truth mental labels and are usually restricted to controlled environments. MindZero uses "behavior itself" as the supervisory signal, liberating data collection.
-- **vs DeepSeek-R1 / GRPO in Math/Code**: While both use GRPO for post-training, MindZero rewards "likelihood of hypotheses explaining evidence" rather than "correct answer matching," systematically extending RL post-training to the "inverse inference" task family.
+- **vs. BIP / AutoToM / ThoughtTracing**: BIP methods are robust but slow due to repeated LLM calls; MindZero distills this structure into weights for real-time inference.
+- **vs. Supervised ToM (Rabinowitz 2018)**: MindZero removes the reliance on mental state labels by using "behavior as supervision."
+- **vs. DeepSeek-R1 / GRPO in Math/Code**: While most GRPO applications focus on "correct answer matching," MindZero advances the framework into the "likelihood-based inverse inference" task family.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Rewriting BIP as a self-supervised RL reward is a concise but pivotal paradigm shift.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four evaluations + two backbones + three ablations + 12-person human study; covers essential ground but lacks large-scale open-domain evaluation and higher-order ToM.
-- Writing Quality: ⭐⭐⭐⭐ Clear hierarchy in problem definition, reward derivation, and experimental design; reasoning for dual estimator selection could be more detailed.
-- Value: ⭐⭐⭐⭐⭐ Demonstrates a 4B small model reaching Gemini-3-Flash levels in proactive assistance, providing a practical blueprint for ToM in open-source assistant agents.
+- Novelty: ⭐⭐⭐⭐⭐ A clean and critical paradigm shift by treating ELBO as an RL reward.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage across environments and models; however, lacks large-scale open-domain evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definitions and derivations.
+- Value: ⭐⭐⭐⭐⭐ Enables small models to reach or exceed state-of-the-art closed-model performance in proactive assistance.
 
 <!-- RELATED:START -->
 
@@ -129,8 +142,8 @@ Four evaluations: GridWorld QA, GridWorld Proactive Assistance, Home QA (MMToM-Q
 
 - [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](../../ICLR2026/reinforcement_learning/rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
-- [\[ICML 2026\] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games](bilevel_optimization_over_saddle_points_of_zero-sum_markov_games.md)
 - [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
+- [\[ICML 2026\] Bilevel Optimization over Saddle Points of Zero-Sum Markov Games](bilevel_optimization_over_saddle_points_of_zero-sum_markov_games.md)
 - [\[ICLR 2026\] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning](../../ICLR2026/reinforcement_learning/longwriter-zero_mastering_ultra-long_text_generation_via_reinforcement_learning.md)
 
 </div>

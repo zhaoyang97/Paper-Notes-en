@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis
 description: >-
-  [ICML 2026][Medical Imaging][Brain Networks] MuHL decomposes brain ROI features into multi-resolution representations using graph wavelets with learnable scales and dynamically generates soft hyperedges via a "node embed…
+  [ICML 2026][Medical Imaging][Paper Note] MuHL decomposes brain ROI features into multi-resolution representations using graph wavelets with learnable scales, then dynamically generates soft hyperedges via a "node embedding × shared projection matrix" mechanism. This approach achieves 93.2% Acc on ADNI and 76.8% Acc on PPMI for multi-stage AD/PD classification
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Brain Networks"
-  - "Hypergraph Learning"
-  - "Graph Wavelets"
-  - "Neurodegenerative Diseases"
-  - "Multi-scale"
+  - ICML 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 71accfe60dbabcb8
+content_hash: 4409cb58fc6aa1d3
 ---
-
 # Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis
 
 **Conference**: ICML 2026  
@@ -24,108 +18,110 @@ content_hash: 71accfe60dbabcb8
 **Keywords**: Brain Networks, Hypergraph Learning, Graph Wavelets, Neurodegenerative Diseases, Multi-scale
 
 ## TL;DR
-MuHL decomposes brain ROI features into multi-resolution representations using graph wavelets with learnable scales and dynamically generates soft hyperedges via a "node embedding × shared projection matrix" mechanism. It achieves 93.2% accuracy on ADNI for 5nd-stage AD classification and 76.8% on PPMI for PD classification, while providing interpretable key ROIs and hyperedges.
+MuHL decomposes brain ROI features into multi-resolution representations using graph wavelets with learnable scales, then dynamically generates soft hyperedges via a "node embedding × shared projection matrix" mechanism. This approach achieves 93.2% Acc on ADNI and 76.8% Acc on PPMI for multi-stage AD/PD classification, while identifying interpretable key ROIs and hyperedges.
 
 ## Background & Motivation
-**Background**: The current mainstream for analyzing brain networks (DTI structural or fMRI functional networks) is the GNN family—GCN, GAT, GCNII, and specialized models like BrainGNN, BrainGB, BrainNetTF, and ALTER. These models perform pairwise message passing between nodes (ROIs) and model high-order relationships indirectly by stacking layers.
+**Background**: Current mainstream brain network analysis (DTI structural networks / fMRI functional networks) is dominated by the GNN family—GCN, GAT, GCNII, and specialized models like BrainGNN, BrainGB, BrainNetTF, and ALTER. These models perform pairwise message passing between nodes (ROIs) and indirectly model high-order relationships by stacking multiple layers.
 
-**Limitations of Prior Work**: Abnormalities in brain function or structure are often group-wise phenomena where "multiple ROIs coexist in a state of coordinated dysfunction." Pairwise adjacency matrices cannot inherently express group-wise dependencies where 3 or more ROIs are connected simultaneously. Approximating high-order relationships by stacking GCN layers often triggers oversmoothing. Hypergraph models (HGNN, dwHGCN, HyBRiD, etc.) can explicitly represent "one hyperedge connecting a group of nodes," but most use **pre-defined** hyperedges (e.g., via KNN) or **only learn hyperedge weights** with a fixed topology, lacking flexibility.
+**Limitations of Prior Work**: Abnormalities in brain function or structure are often group-wise phenomena involving multiple ROIs co-dysfunctioning. Pairwise adjacency matrices cannot inherently express group-wise dependencies among three or more ROIs. Stacking GCN layers to approximate high-order relationships often triggers oversmoothing. While hypergraph models (HGNN, dwHGCN, HyBRiD, etc.) can explicitly represent group-wise connections, most rely on **predefined** hyperedges (e.g., via KNN) or **only learn hyperedge weights** with a fixed topology, lacking flexibility.
 
-**Key Challenge**: High-order interactions in the brain require both **learnable structures** (not pre-defined) and **multi-scale capability** (capturing both local clusters and global communities). Existing hypergraph methods fail to satisfy both requirements.
+**Key Challenge**: High-order interactions in the brain require both **learnable structures** (not predefined) and **multi-scale capabilities** (covering both local clusters and global populations). Existing hypergraph methods fail to satisfy both simultaneously.
 
-**Goal**: Without relying on manual hyperedge priors, the goal is to (i) directly learn continuous, sparse soft hyperedges and (ii) ensure ROI features at different resolutions correspond to hyperedges of different scales (small scales → compact hyperedges, large scales → inter-regional hyperedges).
+**Goal**: To simultaneously achieve (i) direct learning of continuous, sparse soft hyperedges and (ii) multi-scale hyperedge mapping corresponding to different ROI feature resolutions (small scale $\to$ compact hyperedges, large scale $\to$ cross-regional hyperedges), without relying on any handcrafted hyperedge priors.
 
-**Key Insight**: Inspiration is drawn from the Spectral Graph Wavelet Transform (SGWT). The same graph signal is smoothed into versions with different receptive fields under different wavelet scales. As the scale increases, node features become more similar and naturally group into larger "sets." By treating this scale as a **learnable parameter**, the model can autonomously determine the neighborhood size each hierarchy should observe.
+**Key Insight**: The authors draw inspiration from the Spectral Graph Wavelet Transform (SGWT). The same graph signal, under different wavelet scales, is smoothed into versions with different receptive fields. Larger scales cause node features to become more similar, naturally grouping them into larger sets. By treating these scales as **learnable parameters**, the model can autonomously determine the optimal ROI neighborhood size for each hierarchy.
 
-**Core Idea**: The pipeline consists of "learnable-scale graph wavelet decomposition → multi-scale soft hyperedge generation via a shared projection matrix $\Phi$ → multi-scale fusion via Transformer." This upgrades pairwise brain networks into learnable, cross-resolution hypergraphs for the staging and classification of neurodegenerative diseases.
+**Core Idea**: The pipeline integrates "learnable-scale graph wavelet decomposition $\to$ multi-scale soft hyperedge generation via a shared projection matrix $\Phi \to$ cross-scale fusion via a Multi-scale Transformer." This upgrades pairwise brain networks into learnable, multi-resolution hypergraphs for the staging and classification of neurodegenerative diseases.
 
 ## Method
 
 ### Overall Architecture
-The input is a brain subject graph $\mathcal{G}$ (nodes = ROIs, edges = structural/functional connectivity) and node features $X \in \mathbb{R}^{N\times D}$ (e.g., SUVR, β-amyloid, tau, cortical thickness, or BOLD signals). The output is the disease stage label (5 classes for ADNI: CN/SMC/EMCI/LMCI/AD; 3 classes for PPMI: CN/Prodromal/PD).
+MuHL addresses the inability of pairwise matrices to express group-wise relations and the inflexibility of predefined hyperedges. The core idea is to upgrade a subject's brain graph into a set of **learnable, multi-resolution soft hypergraphs**, which are then fused via a Transformer for disease stage classification. The input consists of the subject's graph $\mathcal{G}$ (nodes = ROIs, edges = structural/functional connectivity) and node features $X \in \mathbb{R}^{N\times D}$ (e.g., SUVR, β-amyloid, tau, cortical thickness, or BOLD signals). Output is the disease stage label (5 classes for ADNI: CN/SMC/EMCI/LMCI/AD; 3 classes for PPMI: CN/Prodromal/PD).
 
-The pipeline consists of three stages:
+The end-to-end pipeline consists of three stages: first, the MSF module uses learnable-scale graph wavelets to decompose $X$ into $J$ multi-resolution representations $\{X_{s_j}\}$. Second, the HSL module applies a shared learnable projection matrix $\Phi$ to directly learn soft hyperedge structures $\bar{H}_{s_j}$ for each scale. Finally, the MST module performs hypergraph convolution per scale and uses a Transformer, where each head focuses on a specific scale, to aggregate local-to-global semantic information for the classification head. All parameters, including scale scalars $s_j$ and the projection matrix $\Phi$, are learned via backpropagation from the classification loss.
 
-1.  **Adaptive Multi-Scale Feature Filtering (MSF)**: $X$ is decomposed into $\{X_{s_j}\}$ using a set of **learnable** scales $\{s_j\}_{j=1}^J$ via SGWT. Each $X_{s_j}$ represents ROI features at a specific receptive field.
-2.  **Multi-Scale Hypergraph Structure Learning (HSL)**: For each scale $X_{s_j}$, a shared learnable projection matrix $\Phi$ calculates the incidence matrix $H_{s_j}$. Scale-specific soft hyperedges $\bar{H}_{s_j}$ are then obtained through ReLU + SoftMax + TopK sparsification.
-3.  **Multi-Scale Transformer (MST)**: Hypergraph convolution is performed for each scale to obtain $F_{s_j}^{(Z)}$. These are fed into Scale-Wise Self-Attention (SWSA), where each attention head focuses on a single scale. The outputs are concatenated and passed through FFN + LN to produce $B^{(P)}$ for the classification head.
-
-All parameters, including scales $s_j$ and projection $\Phi$, are learned end-to-end.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Subject brain graph 𝒢 (nodes=ROI)<br/>+ Node features X (SUVR/tau/thickness...)"] --> B["Learnable-Scale Graph Wavelet decomposition (MSF)<br/>Spectral decomposition + J learnable scales s_j smoothing<br/>→ J multi-resolution representations {X_sj}"]
+    B --> C["Soft Hyperedge Structure Learning (HSL)<br/>Shared projection Φ generates affinity matrix<br/>SoftMax(ReLU(·)) followed by TopK sparsification"]
+    C --> D["Multi-Scale Transformer (MST)<br/>Scale-wise hypergraph convolution + SWSA<br/>Each head focuses on one scale"]
+    D --> E["Disease Stage Classification<br/>ADNI 5-class / PPMI 3-class"]
+```
 
 ### Key Designs
 
-1.  **Multi-Resolution Decomposition via Learnable Graph Wavelets**:
-    - **Function**: Extracts various ROI representations $X_{s_j} = U g^2(s_j \Lambda) U^T X$ from the same graph $\mathcal{G}$ and node features based on $J$ **learnable** scales, where $U, \Lambda$ are from the spectral decomposition of the normalized Laplacian.
-    - **Mechanism**: Traditional multi-resolution analysis uses multiple atlases or manual scales. Here, $s_j$ is a trainable scalar determined by backpropagation from the classification loss. Small $s$ results in slight smoothing where node differences are preserved, leading HSL to form compact hyperedges. Large $s$ spreads smoothing across more neighbors, making distant nodes similar and grouping them into larger hyperedges.
-    - **Design Motivation**: To avoid the engineering burden of multiple parcellations and allow the "neighborhood size" to be a learnable hyperparameter aligned with the downstream classification task.
+**1. Learnable-Scale Graph Wavelet Decomposition: Autonomous ROI Neighborhood Selection**
 
-2.  **Soft Hyperedge Generation via Shared Projection Matrix Φ + TopK Sparsification**:
-    - **Function**: Multiplies node embeddings $\bar{X}_{s_j} = X_{s_j} W$ with a learnable projection $\Phi \in \mathbb{R}^{d_h \times M}$ to obtain the incidence matrix $H_{s_j} = \bar{X}_{s_j}\Phi$. After $\tilde{H}_{s_j} = \mathrm{SoftMax}(\mathrm{ReLU}(\bar{X}_{s_j}\Phi))$, each node retains only top-$\eta$ hyperedges to form sparse $\bar{H}_{s_j}$.
-    - **Mechanism**: Sharing $\Phi$ across all scales ensures a **correspondence** between the $M$ hyperedges across different resolutions—a single hyperedge might cover a compact set of nodes at a small scale but expand to a cross-regional group at a large scale. The authors prove two propositions: (1) calculating $H_s$ is equivalent to projecting $W_X(s)$ in the wavelet domain; (2) at least one hyperedge exists whose assigned node set size increases monotonically with $s$, approaching $N$ as $s \to \infty$. 
-    - **Design Motivation**: Existing methods either use fixed KNN hyperedges or fixed topologies. This design allows the topology to be learned end-to-end while ensuring cross-scale semantic correspondence and sparsity through shared $\Phi$ and TopK operations.
+Traditional multi-resolution methods either require multiple atlases or manually selected discrete scales. This work leverages the SGWT property where graph signals are smoothed into different receptive fields based on the wavelet scale $s$. Scales are treated as trainable scalars. Specifically, spectral decomposition of the normalized Laplacian yields $U, \Lambda$. The representation at each scale is $X_{s_j} = U g^2(s_j \Lambda) U^T X$. The $J$ scale parameters $s_j$ are trained via backpropagation, allowing the model to decide the level of "blurring." Small $s$ maintains node differences for compact hyperedges, while large $s$ facilitates the formation of cross-regional hyperedges.
 
-3.  **Multi-Scale Fusion via Scale-Wise Self-Attention (SWSA)**:
-    - **Function**: After hypergraph convolution (formula: $F_{s_j}^{(z)} = \sigma(\mathcal{D}_v^{-1/2}\bar{H}_{s_j} W_e \mathcal{D}_e^{-1} \bar{H}_{s_j}^T \mathcal{D}_v^{-1/2} F_{s_j}^{(z-1)} \Theta^{(z)})$), each scale is assigned an exclusive attention head to compute $A_{s_j} = \mathrm{Softmax}(Q_{s_j} K_{s_j}^T / \sqrt{d_k})$. The $J$ heads are concatenated and projected by $W_O$ followed by FFN and LN.
-    - **Mechanism**: While traditional multi-head attention looks at different subspaces of the same feature, SWSA maps each head to a specific "resolution." Each head models long-range dependencies within its scale's graph before unified aggregation, explicitly embedding the "local-global" semantic hierarchy into the attention topology.
-    - **Design Motivation**: Hypergraph convolution propagates messages within a scale, but cross-scale global dependencies require a dedicated fusion mechanism. SWSA makes this interaction learnable and decoupled.
+**2. Soft Hyperedge Learning via Shared Projection $\Phi$ + TopK Sparsification: Learnable Topologies**
+
+To avoid the pitfalls of fixed topologies, the authors allow hyperedges to emerge end-to-end. Node embeddings $\bar{X}_{s_j} = X_{s_j} W$ are multiplied by a learnable projection $\Phi \in \mathbb{R}^{d_h \times M}$ to obtain the affinity matrix $H_{s_j} = \bar{X}_{s_j}\Phi$. After applying $\tilde{H}_{s_j} = \mathrm{SoftMax}(\mathrm{ReLU}(\bar{X}_{s_j}\Phi))$, Top-$\eta$ sparsification is performed to form $\bar{H}_{s_j}$. A crucial design is sharing $\Phi$ across all scales, ensuring a **correspondence** between hyperedges across resolutions: the same hyperedge index $M$ might cover a small cluster at a fine scale and expand to a large group at a coarse scale.
+
+**3. Multi-Scale Transformer (MST): Scale-Wise Self-Attention (SWSA)**
+
+Within each scale, hypergraph convolutions propagate messages locally. To model cross-scale dependencies, the MST module employs SWSA. After hypergraph convolution yields $F_{s_j}^{(Z)}$:
+
+$$F_{s_j}^{(z)} = \sigma\left(\mathcal{D}_v^{-1/2}\bar{H}_{s_j} W_e \mathcal{D}_e^{-1} \bar{H}_{s_j}^T \mathcal{D}_v^{-1/2} F_{s_j}^{(z-1)} \Theta^{(z)}\right)$$
+
+Multi-head attention binds each "head" to a specific "resolution." Each head independently computes $A_{s_j} = \mathrm{Softmax}(Q_{s_j} K_{s_j}^T / \sqrt{d_k})$ for its scale. This SWSA architecture embeds the local-global semantic hierarchy directly into the attention topology.
 
 ### Loss & Training
-The model is trained end-to-end using Cross-Entropy plus an L1 penalty on **negative** scales to ensure $s_j > 0$:
+The model is trained end-to-end using cross-entropy with an L1 penalty on negative scales to ensure $s_j > 0$:
 
 $$L = -\frac{1}{T}\sum_t\sum_c Y_{tc}\log\hat{Y}_{tc} + \alpha \frac{1}{J}\sum_j \mathbf{1}_{s<0}|s_j|$$
 
-Default parameters: $J=3, M=16, \eta=3, d_h=16$. Evaluation is performed via 5-fold cross-validation with Adam optimization.
+Default parameters: $J=3, M=16, \eta=3, d_h=16$. Evaluation uses 5-fold cross-validation with the Adam optimizer.
 
 ## Key Experimental Results
 
 ### Main Results
-Two benchmarks were used: ADNI (650 subjects, 160 ROIs, 5 classes) and PPMI (181 subjects, 116 ROIs, 3 classes). MuHL was compared against 19 baselines including GNNs (GCN, BrainGNN, BrainNetTF, ALTER) and hypergraph models (HGNN, UniGCNII, HyBRiD).
+Testing on ADNI (650 subjects, 160 ROIs, 5 classes) and PPMI (181 subjects, 116 ROIs, 3 classes) against 19 baselines (standard GNNs, brain-specific GNNs, and hypergraph models).
 
-| Dataset | Metric | MuHL | Prev. SOTA | Gain |
+| Dataset | Metric | Ours | Prev. SOTA | Gain |
 |--------|------|------|----------|------|
-| ADNI (5 classes) | Acc | **93.2** | 90.8 (ALTER) | +2.4 |
+| ADNI (5-class) | Acc | **93.2** | 90.8 (ALTER) | +2.4 |
 | ADNI | F1 | **94.7** | 90.9 (ALTER) | +3.8 |
-| PPMI (3 classes) | Acc | **76.8** | 72.9 (GAT) | +3.9 |
+| PPMI (3-class) | Acc | **76.8** | 72.9 (GAT) | +3.9 |
 | PPMI | F1 | **62.4** | 56.4 (BQN) | +6.0 |
 
-MuHL also leads in zero-shot cross-dataset/cross-stage tasks: ADNI-2 → ADNI-1/3/GO (Acc 56.0 vs. 52.8) and PPMI → TaoWu (Acc 60.5 vs. 57.0), indicating the learned hypergraph structures possess transferability.
+Ours also leads in zero-shot cross-dataset transfer (e.g., ADNI-2 to ADNI-1/3/GO), indicating that the learned hypergraph structures generalize well.
 
 ### Ablation Study
 | Configuration | ADNI Acc | PPMI Acc | Description |
 |------|---------|---------|------|
 | Full (MSF+HSL+MST) | **93.2** | **76.8** | Complete MuHL |
-| w/o MSF | 90.0 | 72.9 | No multi-scale decomposition; single resolution only |
-| w/o HSL | 76.8 | 67.4 | No hypergraph structure learning (used pre-defined); **largest drop** |
-| w/o MST | 86.9 | 64.1 | No multi-scale Transformer; hypergraph convolution only |
+| w/o MSF | 90.0 | 72.9 | No multi-scale decomposition |
+| w/o HSL | 76.8 | 67.4 | No structure learning (predefined), **largest drop** |
+| w/o MST | 86.9 | 64.1 | No Transformer, only hypergraph convolutions |
 
 ### Key Findings
-- **HSL is critical**: Removing HSL results in a 16.4% drop on ADNI and 9.4% on PPMI, proving that "making hyperedge topology learnable" is more central than multi-scale or Transformer fusion. This suggests the bottleneck of existing "weight-only" hypergraph methods.
-- **Optimal Hyperedge Count M**: Performance peaks at $M=16$. Exceeding 20 introduces redundancy/noise. $d_h$ similarly saturates after 16, with larger values showing signs of overfitting.
-- **Hub ROIs align with clinical priors**: On ADNI, top-10 ROIs include the bilateral globus pallidus, putamen, hippocampus, and thalamus (subcortical nuclei strongly associated with AD). On PPMI, they include the amygdala, thalamus, and supramarginal gyrus. These ROIs often appear in symmetric pairs, consistent with the bilateral spread of neurodegenerative diseases.
+- **HSL is critical**: Removing HSL resulted in a 16.4% drop on ADNI, proving that learnable topologies are more vital than scaling or fusion mechanisms.
+- **Optimal Hyperedge Count $M$**: Performance peaks at $M=16$. Too many hyperedges introduce noise/redundancy.
+- **Hub ROI Identification**: The identified top-10 ROIs on ADNI include the bilateral globus pallidus, putamen, hippocampus, and thalamus, which correlate strongly with clinical AD progression. PPMI highlights the amygdala and thalamus, consistent with PD symptoms.
 
 ## Highlights & Insights
-- **Scales as Learnable Continuous Variables**: Unlike previous work using fixed or discrete scales, MuHL uses $s_j$ in backpropagation, allowing the model to choose the optimal neighborhood size. This technique can be transferred to any task requiring multi-resolution graph signals (molecules, social networks, point clouds).
-- **Cross-Scale Hyperedge Construction via Shared $\Phi$**: This approach simultaneously achieves cross-scale semantic correspondence and monotonic hyperedge expansion, both backed by formal proofs. It is more elegant than KNN-based or independent matrix learning.
-- **Intrinsic Interpretability**: Hyperedge activation directly reflects ROI importance, and aggregated activity ranks hub ROIs. Interpretability is a natural structural product rather than an external module added after training.
+- **Continuous Learnable Scales**: Unlike fixed or discrete scale approaches, $s_j$ is integrated into backpropagation, allowing the model to choose its own neighborhood size.
+- **Shared $\Phi$ for Cross-Scale Correspondence**: This elegantly ensures hyperedge semantic consistency while allowing monotonic expansion across scales, as backed by formal proofs in the paper.
+- **Inherent Interpretability**: Importance is derived directly from hyperedge activation levels, providing hub ROI rankings as a natural byproduct of the architecture rather than a post-hoc addition.
 
 ## Limitations & Future Work
-- **Severe Class Imbalance**: The AD group in ADNI has only 12 subjects compared to 226 in the CN group. The overall 5-class accuracy might be overly optimistic, and predictions for minority classes may be unstable.
-- **No Public Code**: The lack of a GitHub link makes reproduction difficult, particularly regarding $\Phi$ initialization and training dynamics.
-- **Coupling of M and ROI Count**: $M=16$ was optimal for both $N=160$ and $N=116$. It is unclear if this holds for denser atlases (e.g., Schaefer 400/1000) without re-tuning.
-- **Spectral Decomposition Complexity**: SGWT requires $O(N^3)$ for the Laplacian decomposition. While manageable for 160 ROIs, it may fail for voxel-level graphs. Chebyshev polynomial approximation could be a solution.
-- **Static Connectivity**: Only static functional connectivity matrices were used, ignoring the temporal dynamics of fMRI. Future work could introduce temporal scales or time-evolving hyperedges.
+- **Severe Class Imbalance**: In ADNI, the AD group (n=12) is significantly smaller than the CN group (n=226), which may bias overall accuracy metrics.
+- **Absence of Public Code**: No GitHub link is provided, hindering reproducibility regarding $\Phi$ initialization and training dynamics.
+- **Efficiency at Scale**: Dependency on spectral decomposition ($O(N^3)$) is manageable for 160 ROIs but would become a bottleneck for higher-resolution atlases (e.g., Schaefer 1000).
+- **Static Connectivity**: The model uses static connectivity matrices from fMRI, ignoring temporal dynamics.
 
 ## Related Work & Insights
-- **vs. HGNN / HNHN / UniGCNII**: Classic hypergraph GNNs require a pre-defined incidence $H$. MuHL learns $H$ end-to-end, bypassing the "hypergraph prior" problem.
-- **vs. dwHGCN / HyBRiD**: These methods assume fixed topologies (learning only weights or masks). MuHL's continuous soft topology provides a higher level of flexibility, evidenced by the 16% drop when HSL is removed.
-- **vs. BrainNetTF / ALTER**: Transformer-based methods typically model pairwise attention. MuHL uses hypergraphs to explicitly capture group-wise relationships, outperforming ALTER (93.2% vs 90.8% on ADNI).
-- **vs. Original SGWT**: Traditional SGWT is used for denoising with fixed scales. MuHL treats it as a learnable feature pyramid connected to hypergraph learning, representing a novel application in GNNs.
+- **vs. HGNN/HNHN**: These require a predefined incidence matrix $H$, whereas MuHL learns $H$ end-to-end.
+- **vs. BrainNetTF/ALTER**: While these use pairwise attention, MuHL uses hypergraphs to capture group-wise interactions, leading to better performance (93.2% vs 90.8% on ADNI).
+- **vs. Traditional SGWT**: While SGWT is typically used for denoising with fixed scales, this work employs it as a learnable feature pyramid for hypergraph learning.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ End-to-end learnable scale wavelets combined with shared-projection soft hypergraphs is a clean and original approach.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers major benchmarks, 19 baselines, zero-shot transfer, and sensitivity analysis. Loses one star due to class imbalance and lack of a third fMRI dataset.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation, well-supported propositions, and coherent explanations.
-- **Value**: ⭐⭐⭐⭐ Provides a strong baseline for learnable multi-resolution hypergraphs in brain analysis; however, the lack of code limits its immediate engineering utility.
+- Novelty: ⭐⭐⭐⭐ Combines learnable-scale wavelets with shared projection soft hyperedges in an end-to-end fashion with theoretical support.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad benchmarking and zero-shot tests, though limited by extreme class imbalance.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and consistent notation.
+- Value: ⭐⭐⭐⭐ Provides a clean baseline for learnable multi-resolution hypergraphs.
 
 <!-- RELATED:START -->
 
@@ -134,10 +130,10 @@ MuHL also leads in zero-shot cross-dataset/cross-stage tasks: ADNI-2 → ADNI-1/
 ## Related Papers
 
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
-- [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](../../CVPR2026/medical_imaging/modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
+- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
 - [\[ICML 2026\] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution](the_double_dilemma_in_multi-task_radiology_report_generation_a_gradient_dynamics.md)
 - [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](../../NeurIPS2025/medical_imaging/riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
-- [\[ICML 2026\] PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning](thinking_in_scales_accelerating_gigapixel_pathology_image_analysis_via_adaptive_.md)
+- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](../../CVPR2026/medical_imaging/pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 
 </div>
 

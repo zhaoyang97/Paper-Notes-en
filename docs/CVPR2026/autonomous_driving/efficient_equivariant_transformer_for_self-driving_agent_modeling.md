@@ -2,80 +2,92 @@
 title: >-
   [Paper Note] Efficient Equivariant Transformer for Self-Driving Agent Modeling
 description: >-
-  [CVPR 2026][Autonomous Driving][SE(2)-equivariance] This paper proposes DriveGATr, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA) that achieves SE(2)-equivariance without explicit…
+  [CVPR 2026][Autonomous Driving][Transformer] DriveGATr is proposed, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA). It achieves SE(2)-equivariance without explicit pairwise relative position encoding, reaching SOTA performance in traffic simulation tasks while significantly reducing computational costs.
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "SE(2)-equivariance"
-  - "Geometric Algebra"
-  - "Transformer"
-  - "Traffic Simulation"
+  - CVPR 2026
+  - Autonomous Driving
+  - Transformer
 date: 2026-05-08
-content_hash: 0bf7c7acb653462f
+content_hash: 810e4c86a9c2f573
 ---
-
 # Efficient Equivariant Transformer for Self-Driving Agent Modeling
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.01466](https://arxiv.org/abs/2604.01466)  
-**Code**: N/A  
-**Area**: Autonomous Driving
-**Keywords**: SE(2)-equivariance, Geometric Algebra, Transformer, Traffic Simulation, Autonomous Driving
+**Code**: None  
+**Area**: Autonomous Driving  
+**Keywords**: SE(2)-Equivariance, Geometric Algebra, Transformer, Traffic Simulation, Autonomous Driving
 
 ## TL;DR
 
-This paper proposes DriveGATr, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA) that achieves SE(2)-equivariance without explicit pairwise relative position encoding (RPE), attaining state-of-the-art performance on traffic simulation tasks while substantially reducing computational cost.
+DriveGATr is proposed, an equivariant Transformer architecture based on 2D Projective Geometric Algebra (PGA). It achieves SE(2)-equivariance without explicit pairwise relative position encoding, reaching SOTA performance in traffic simulation tasks while significantly reducing computational costs.
 
 ## Background & Motivation
 
-Modeling agent behavior in traffic scenes is a critical task for autonomous driving. The task exhibits natural SE(2) symmetry: applying any 2D rotation and translation to the entire scene should produce correspondingly transformed outputs for each agent.
+Agent behavior modeling in traffic scenarios is a critical task for autonomous driving. This task possesses inherent SE(2) symmetry: after performing any arbitrary 2D rotation and translation on the entire scene, the outputs of each agent should transform accordingly.
 
-The dominant approach for achieving SE(2)-equivariance is **explicit pairwise relative position encoding (RPE)**: computing the relative pose for every pair of agents or map elements and embedding it into the attention mechanism. This introduces $O(N^2)$ additional computational overhead, limiting scalability to larger scenes and batch sizes, and precluding the use of efficient attention kernels such as FlashAttention.
+The current mainstream method for achieving SE(2) equivariance is **explicit pairwise relative position encoding (RPE)**: calculating relative poses for every pair of agent/map elements and embedding them into the attention mechanism. This introduces an additional $O(N^2)$ computational overhead, limiting model scalability to larger scenes and batch sizes, and prevents the use of efficient attention kernels like FlashAttention.
 
-An alternative approach, DRoPE (2D Rotary PE), avoids scalability issues but lacks expressiveness (encoding no geometric information) and achieves only translation equivariance rather than full rotation equivariance.
+Another approach, DRoPE (2D Rotary PE), avoids scalability issues but lacks expressivity (it does not encode geometric information) and only provides translation equivariance rather than rotation equivariance.
 
 ## Method
 
 ### Overall Architecture
 
-DriveGATr encodes all scene elements (agents and map nodes) as 8-dimensional **multivectors** in the 2D projective geometric algebra $\mathbb{R}^*_{2,0,1}$, and processes them through a series of equivariant Transformer blocks. The core innovation is that equivariant attention is realized via invariant inner products between multivectors, eliminating the need for explicit RPE and enabling standard dot-product attention.
+In traffic scenarios, the outputs of each agent should transform synchronously with any arbitrary 2D rotation and translation of the entire scene—DriveGATr aims to make this SE(2) symmetry an "inherent" property of the architecture rather than an approximation learned from data. It encodes each element in the scene (agents and map nodes) as an 8-dimensional **multivector** in the 2D Projective Geometric Algebra $\mathbb{R}^*_{2,0,1}$, processed layer-by-layer by $N$ equivariant Transformer blocks. The key lies in the fact that the invariant inner product between multivectors can be directly used as attention scores, eliminating the need for explicit pairwise relative position encoding (RPE) and allowing the use of standard dot-product attention (including FlashAttention). Each block updates features via agent-map cross-attention, agent-agent self-attention, and temporal causal self-attention (the first two per timestep, the latter per agent), followed by an equivariant MLP and an invariant adapter.
 
-The architecture consists of $N$ factorized attention blocks, each comprising:
-- Agent–Map cross-attention (per timestep)
-- Agent–Agent self-attention (per timestep)
-- Temporal causal self-attention (per agent)
-- Equivariant MLP
-- Invariant adapter
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Agent states + Map nodes"] --> B["Multivector Encoding<br/>Pose (x,y,θ) → 8D Multivector (PGA)"]
+    B --> BLK
+    subgraph BLK["Equivariant Transformer block ×N"]
+        direction TB
+        C1["Agent-map Cross-attention<br/>per timestep"] --> C2["Agent-agent Self-attention<br/>per timestep"]
+        C2 --> C3["Temporal Causal Self-attention<br/>per agent"]
+        C3 --> C4["Equivariant MLP"]
+        C4 --> C5["Invariant Adapter<br/>Multivector → Local Coords → Invariant Scalar"]
+        DA["Distance-aware Attention<br/>φ(q)·ψ(k) ∝ −dist²"] -.Augment.-> C1
+    end
+    BLK --> E["Action Decoding<br/>2048 action tokens per class + Cross-entropy"]
+```
 
 ### Key Designs
 
-1. **Multivector Encoding**: A 2D pose $(x, y, \theta)$ is encoded as a single multivector in $\mathbb{R}^*_{2,0,1}$. Specifically, the bivector components encode the point $(x, y)$, while the vector components encode the oriented line passing through that point. Invariant features such as velocity and bounding box dimensions are encoded in auxiliary scalars. This representation supports SE(2) transformations—rotations and translations—via the sandwich product of the geometric product.
+**1. Multivector Encoding: Embedding poses into geometric algebra for constructive SE(2) symmetry**
 
-2. **Equivariant Network Primitives**:
+Previous methods relied on hand-crafted relative position features to express symmetry, which is memory-intensive and approximate. This approach encodes the entire 2D pose $(x, y, \theta)$ as a single multivector in $\mathbb{R}^*_{2,0,1}$ using bivector components for the point $(x,y)$ and vector components for the directional line passing through that point. Invariant features like velocity and bounding boxes are placed in auxiliary scalars. Consequently, SE(2) transformations (rotations/translations) are realized through the "sandwich product" of the geometric product. Symmetry is guaranteed by the mathematical structure rather than training.
 
-    - **Linear layer**: Learns weights across projected components of each $k$-blade to guarantee equivariance.
-    - **Geometric bilinear layer**: Enhances expressiveness via the geometric product and Join operator.
-    - **Activation function**: GatedRELU, which gates the entire multivector using its scalar component.
-    - **Normalization**: LayerNorm based on invariant inner products.
-    - **Scaled dot-product attention**: Invariant inner products of multivectors, augmented with distance-aware expanded features, are concatenated and passed to standard dot-product attention.
+**2. Equivariant Network Primitives: Maintaining equivariance across every operator**
 
-3. **Distance-Aware Attention**: Additional invariant features $\phi(q), \psi(k)$ are computed from the query/key multivectors. When the bivector components represent points, $\phi(q) \cdot \psi(k)$ is proportional to the negative squared Euclidean distance between the two points. Concatenating these features to the standard Q/K vectors yields distance-sensitive attention.
+Equivariant encoding alone is insufficient; every layer must be equivariant to prevent breaking symmetry. The paper replaces standard Transformer components with multivector versions:
+- **Linear Layer**: Learns weights across k-blade projection components to ensure equivariance.
+- **Geometric Bilinear Layer**: Uses geometric products and Join operators to enhance expressivity.
+- **Activation Function**: GatedRELU, using scalar components to gate the entire multivector.
+- **Normalization**: LayerNorm based on invariant inner products.
+- **Scaled Dot-Product Attention**: Uses invariant inner products of multivectors augmented with distance-aware features for standard dot-product attention.
 
-4. **Invariant Adapter**: Agent actions are ultimately invariant quantities, yet the multivector features carry important geometric information. By transforming the global multivector features into each agent's local coordinate frame (an invariant operation) and then mapping them to auxiliary scalars via an MLP, the equivariant geometric information is effectively converted into an invariant representation suitable for action decoding.
+**3. Distance-Aware Attention: Enabling "proximity sensing" in orientation-based inner products**
+
+Using only the invariant inner product of multivectors reflects orientation similarity but is insensitive to spatial distance. Therefore, additional invariant features $\phi(q)$ and $\psi(k)$ are computed for query/key multivectors. When bivector components represent points, $\phi(q) \cdot \psi(k)$ is proportional to the negative squared distance between two points. Concatenating these features to standard Q/K allows the attention mechanism to gain distance sensitivity while maintaining equivariance.
+
+**4. Invariant Adapter: Bridging equivariant features and invariant actions**
+
+The final actions output by an agent are invariants, but the intermediate multivector features carry essential geometric information. The adapter transforms global multivector features into each agent's local coordinate system (an invariant operation) and maps them to auxiliary scalars via MLP. Thus, equivariant geometric information is cleanly converted into invariant representations for downstream action decoding.
 
 ### Loss & Training
 
-- The action space is discretized via clustering (2048 action tokens per agent class).
-- Cross-entropy loss is used to predict the next action.
-- The 3M model uses 128-dimensional auxiliary features; the 30M model uses 512-dimensional features.
-- Models are trained for 250K steps with a learning rate of $10^{-3}$ and cosine annealing.
+- Discrete action space using clustering (2048 tokens per agent category).
+- Cross-entropy loss for next-step action prediction.
+- 3M model uses 128-dimensional auxiliary features; 30M model uses 512-dimensional.
+- Trained for 250K steps, learning rate $10^{-3}$, cosine annealing.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Params | RMM ↑ | Kinematic ↑ | Interactive ↑ | Map-based ↑ | minADE ↓ |
-|--------|--------|-------|-------------|---------------|-------------|----------|
+|------|--------|-------|-------------|---------------|-------------|----------|
 | DriveGATr-30M | 30M | **0.7636** | 0.4890 | 0.7272 | 0.8120 | 1.3682 |
 | SMART-7M | 7M | 0.7678 | 0.4894 | 0.7306 | 0.8163 | 1.3532 |
 | BehaviorGPT | 3M | 0.7438 | 0.4254 | 0.7233 | 0.7976 | 1.3804 |
@@ -84,52 +96,48 @@ The architecture consists of $N$ factorized attention blocks, each comprising:
 
 ### Ablation Study
 
-| Configuration | RMM ↑ | minADE ↓ | Notes |
-|---------------|-------|----------|-------|
+| Config | RMM ↑ | minADE ↓ | Description |
+|------|-------|----------|------|
 | IA + DA | 0.7478 | 1.5798 | Base configuration |
-| Map Attn k=4 | 0.7478 | 1.5798 | Attend to 4 nearest map tokens |
-| Map Attn k=8 | 0.7528 | 1.5293 | Attend to 8 nearest |
-| Map Attn All | **0.7617** | **1.4174** | Attend to all map tokens (best) |
+| Map Attn k=4 | 0.7478 | 1.5798 | Attend to nearest 4 map tokens |
+| Map Attn k=8 | 0.7528 | 1.5293 | Attend to nearest 8 |
+| Map Attn All | **0.7617** | **1.4174** | Attend to all map tokens (Best) |
 
 ### Key Findings
 
-1. **DriveGATr-3M achieves the best performance among models of equal parameter count**: RMM is 2 percentage points higher than BehaviorGPT at the same scale and significantly outperforms all non-equivariant baselines. The 30M variant matches SMART-7M on realism metrics.
-
-2. **Full map attention is critical**: Expanding agent map context from $k=4$ to all map tokens improves RMM by 1.4 percentage points and reduces minADE by 1.6. This is a key advantage of DriveGATr over RPE-based methods, which are constrained by memory to attend only to a small neighborhood.
-
-3. **Substantial computational efficiency gains**: As the number of agents increases, the FLOP growth of DriveGATr is substantially slower than that of Transformer+RPE, since the latter's RPE computation introduces $O(N^2)$ additional overhead.
-
-4. **Sample efficiency**: Benefiting from SE(2)-equivariance as an inductive bias, DriveGATr consistently outperforms non-equivariant methods across varying training set sizes (1%/10%/50%/100%).
-
-5. **True rotation and translation invariance**: In experiments where the scene is rotated by 90° and translated by 100m, DriveGATr produces consistent trajectory predictions, whereas non-equivariant Transformers and the translation-only-equivariant DRoPE exhibit substantial prediction drift.
+1. **DriveGATr-3M is optimal among models with similar parameters**: RMM is 2% higher than BehaviorGPT and significantly leads all non-equivariant baselines. The 30M version matches the realism metrics of SMART-7M.
+2. **Full map attention is crucial**: Expanding an agent's map context from k=4 to all tokens improves RMM by 1.4 percentage points and reduces minADE by 1.6. This is a core advantage of DriveGATr over RPE methods, which are often limited to small neighborhoods due to memory constraints.
+3. **Significant computational efficiency**: As the number of agents grows, DriveGATr's FLOPs increase much slower than Transformer+RPE, as the latter's RPE computation introduces $O(N^2)$ overhead.
+4. **Sample efficiency**: Benefiting from SE(2) equivariance as an inductive bias, DriveGATr outperforms non-equivariant methods across different training set sizes (1%/10%/50%/100%).
+5. **True rotation and translation invariance**: In experiments with 90° rotation and 100m translation, DriveGATr produces consistent trajectory predictions, whereas predictions from non-equivariant Transformers and DRoPE (translation-only) change significantly.
 
 ## Highlights & Insights
 
-- The core contribution is adapting GATr (E(3)-equivariant) to a SE(2)-equivariant version for 2D driving scenarios, reducing the multivector dimension from 16 to 8 for improved computational efficiency.
-- The design philosophy encodes symmetry naturally through mathematical structure (geometric algebra) rather than handcrafted relative position features, making equivariance a constructive guarantee rather than an approximation.
-- The invariant adapter is an elegant design: it bridges equivariant features and invariant outputs by transforming features into each agent's local coordinate frame.
-- Compatibility with efficient attention kernels such as FlashAttention is an important practical advantage for deployment.
+- The core contribution is adapting GATr (E(3)-equivariant) to a 2D SE(2)-equivariant version for driving scenes, reducing dimensionality from 16 to 8 for higher efficiency.
+- Design Philosophy: Naturally encoding symmetry via mathematical structures (geometric algebra) rather than hand-crafted relative position features. This makes equivariance a constructive guarantee rather than an approximation.
+- The Invariant Adapter is a clever design: a bridge from equivariant features to invariant outputs achieved by transforming to local coordinates.
+- Supports direct use of efficient attention kernels like FlashAttention, a major advantage for practical deployment.
 
 ## Limitations & Future Work
 
-- Equivariance is only established in the 2D plane; real-world driving is a 3D problem (height could be incorporated via auxiliary scalars for a 2.5D extension).
-- Evaluation is limited to traffic simulation; performance on related tasks such as motion forecasting and planning has not been validated.
-- Techniques that could further improve performance, such as closed-loop fine-tuning and top-$k$ sampling, remain unexplored.
-- Discretization of the action space may limit trajectory precision.
+- Currently only implements SE(2) equivariance on a 2D plane; real driving is a 3D problem (could be extended to 2.5D via auxiliary scalars for height).
+- Evaluated only on traffic simulation; performance on motion prediction and planning remains unverified.
+- Closed-loop fine-tuning and top-k sampling techniques were not explored.
+- Discretization of the action space might limit trajectory precision.
 
 ## Related Work & Insights
 
-- GATr (NeurIPS'23) introduced the E(3)-equivariant geometric algebra Transformer; this work efficiently adapts it to 2D.
-- SMART achieves equivariance via RPE and holds the top position on the WOSAC leaderboard, but incurs high computational cost.
-- DRoPE extends RoPE to 2D but achieves only translation equivariance without rotation equivariance.
-- VN-Transformer achieves SO(3)-equivariance via Vector Neurons but must sacrifice strict equivariance for numerical stability.
+- GATr (NeurIPS'23) introduced the E(3) equivariant geometric algebra Transformer; this work adapts it for 2D.
+- SMART uses RPE for equivariance and leads WOSAC leaderboards but has high computational costs.
+- DRoPE extends RoPE to 2D but provides only translation equivariance.
+- VN-Transformer uses Vector Neurons for SO(3) equivariance but sacrifices true equivariance for numerical stability.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Novel combination of 2D geometric algebra encoding and equivariant Transformer)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (WOSAC benchmark evaluation, scalability analysis, and ablation studies are comprehensive)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Mathematical derivations are clear; architectural descriptions are thorough)
-- Value: ⭐⭐⭐⭐⭐ (Addresses the efficiency bottleneck of equivariant agent modeling with strong application prospects)
+- Novelty: ⭐⭐⭐⭐⭐ (Innovative combination of 2D PGA encoding and equivariant Transformers)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive evaluation on WOSAC, scalability analysis, and ablations)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear mathematical derivation and detailed architecture description)
+- Value: ⭐⭐⭐⭐⭐ (Addresses efficiency bottlenecks in equivariant agent modeling with strong application potential)
 
 <!-- RELATED:START -->
 
@@ -137,11 +145,11 @@ The architecture consists of $N$ factorized attention blocks, each comprising:
 
 ## Related Papers
 
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
 - [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
-- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](../../AAAI2026/autonomous_driving/catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
-- [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](../../AAAI2026/autonomous_driving/unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
-- [\[CVPR 2026\] LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction](lr-sgs_robust_lidar-reflectance-guided_salient_gaussian_splatting_for_self-drivi.md)
-- [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
+- [\[CVPR 2026\] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views](unsupervised_multi-agent_and_single-agent_perception_from_cooperative_views.md)
+- [\[ECCV 2024\] Equivariant Spatio-Temporal Self-Supervision for LiDAR Object Detection](../../ECCV2024/autonomous_driving/equivariant_spatio-temporal_self-supervision_for_lidar_object_detection.md)
+- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 
 </div>
 

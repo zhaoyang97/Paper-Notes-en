@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation
 description: >-
-  [ACL2026][Model Compression][Large Language Model Distillation] MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories according to network depth." It alig…
+  [ACL 2026][Model Compression][Paper Note] MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories based on network depth": lower layers align word-level information, while higher layers align phrase-level relationship geometry. As a plug-in, it consistently improves the ROUGE-L performance of FDD,
 tags:
-  - "ACL2026"
-  - "Model Compression"
-  - "Large Language Model Distillation"
-  - "Trajectory Alignment"
-  - "Hierarchical Semantics"
-  - "Structural Distillation"
-  - "Hidden State Alignment"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 6c9542c98686cadb
+content_hash: f1b1e56a00f21bc7
 ---
-
 # MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation
 
 **Conference**: ACL2026  
@@ -24,63 +18,76 @@ content_hash: 6c9542c98686cadb
 **Keywords**: Large Language Model Distillation, Trajectory Alignment, Hierarchical Semantics, Structural Distillation, Hidden State Alignment
 
 ## TL;DR
-MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories according to network depth." It aligns word-level information at lower layers and phrase-level relational geometry at higher layers. As a plug-in, it consistently improves ROUGE-L performance in instruction-following tasks for FDD, DistiLLM, and DistiLLM-2.
+MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories based on network depth": lower layers align word-level information, while higher layers align phrase-level relationship geometry. As a plug-in, it consistently improves the ROUGE-L performance of FDD, DistiLLM, and DistiLLM-2 on instruction-following tasks.
 
 ## Background & Motivation
-**Background**: In LLM compression, knowledge distillation (KD) remains a primary approach. Typical methods involve matching the student model's output distribution to the teacher's, such as token-level KL divergence. Advanced methods align intermediate hidden states, attention maps, or inter-layer feature dynamics, encouraging the student to learn internal representations rather than just final answers.
+**Background**: In LLM compression, knowledge distillation (KD) remains a primary approach. Typical methods involve matching the student model's output distribution to the teacher's, such as token-level KL divergence. Advanced methods align intermediate hidden states, attention maps, or feature dynamics between layers, allowing the student to learn internal representations rather than just final answers.
 
-**Limitations of Prior Work**: Existing intermediate layer distillation methods often default to a "uniform alignment granularity for all layers." They typically perform hidden-state alignment at the token level or align prediction distributions after mapping selected layers to the vocabulary space. This approach is simplistic and ignores the functional division of Transformer layers: lower layers act as lexical and local pattern processors, while higher layers lean toward abstract semantics and compositional reasoning.
+**Limitations of Prior Work**: Many intermediate distillation methods default to using a single alignment granularity across all layers. They typically perform hidden-state alignment at the token level or align prediction distributions after mapping selected layers to the vocabulary space. While simple, this ignores the functional specialization of Transformer layers: lower layers act as lexical and local pattern processors, while higher layers focus on abstract semantics and compositional reasoning.
 
-**Key Challenge**: The student model needs to inherit teacher's internal knowledge, which is not a set of independent layer snapshots but a representation trajectory that evolves with depth. Enforcing a uniform token-level target across all layers results in the compression of low-level lexical foundations and high-level phrase relations into the same supervisory signal, leading to imprecise knowledge transfer.
+**Key Challenge**: Student models must inherit internal teacher knowledge. However, teacher knowledge is not a set of independent layer snapshots but a representation trajectory that evolves with depth. Constraints using a uniform token-level target force both low-level lexical foundations and high-level phrase composition into the same supervisory signal, leading to imprecise knowledge transfer.
 
-**Goal**: The paper aims to address three specific issues: first, enabling the student to learn the teacher's hierarchical evolution from vocabulary to semantic composition; second, selecting a small set of key layers for alignment across different parameter scales and model families; and third, integrating this alignment as a module into existing distillation frameworks rather than redesigning the entire KD process.
+**Goal**: The paper aims to address three specific issues: first, enabling the student to learn the teacher's hierarchical evolution from lexis to semantic composition; second, selecting a small number of key layers for alignment across different parameter scales and model families; and third, integrating this alignment as a module into existing distillation frameworks without redesigning the entire KD process.
 
-**Key Insight**: The authors leverage conclusions from linguistic hierarchical compositionality and Transformer interpretability research: language is composed of words forming phrases; lower layers focus on lexical and factual memory, while higher layers focus on abstract semantics and complex sub-tasks. Therefore, distillation should change semantic units according to layer depth rather than relying solely on tokens.
+**Key Insight**: The authors draw on the hierarchical compositionality of language and findings from Transformer interpretability studies: language is composed of words forming phrases, where lower layers favor lexical and factual memory, and higher layers favor abstract semantics and complex subtasks. Consequently, distillation should adapt semantic units according to layer depth rather than relying solely on tokens.
 
-**Core Idea**: Utilize layer-adaptive multi-granular span relationship alignment—aligning word spans at lower layers and noun/verb phrase spans at higher layers—allowing the student to replicate the teacher's trajectory of "how representation geometry changes with depth."
+**Core Idea**: Use layer-adaptive multi-granular span relationship alignment, where lower layers align word spans and higher layers align noun/verb phrase spans, allowing the student to replicate the teacher's trajectory of "how representation geometry changes with depth."
 
 ## Method
-MTA is a module designed to augment existing LLM distillation methods. It does not replace original logit KD, FDD, or DistiLLM objectives but adds two extra constraints: Dynamic Structural Alignment (DSA) for aligning the relative geometric structure between spans, and Hidden Representation Alignment (Hid) for pulling the student's key token hidden states closer to the teacher's.
+MTA is a module designed to augment existing LLM distillation methods. It does not replace original logit KD, FDD, or DistiLLM objectives but adds two additional constraints: Dynamic Structural Alignment (DSA) for aligning the relative geometric structure between spans, and Hidden Representation Alignment (Hid) for pulling student hidden states of key tokens closer to the teacher's.
 
 ### Overall Architecture
-Given a teacher model and a smaller student model, MTA first selects a set of key layers based on student depth and uses proportional mapping to find corresponding teacher layers. For GPT-2 120M, the paper selects the 6th layer for word-level alignment and the 9th and 12th layers for phrase-level alignment. For Qwen1.5-0.5B and OPT-1.3B, more key layers are selected at greater depths.
+Given a teacher model and a smaller student model, MTA first selects a set of key layers based on the student's depth and identifies corresponding teacher layers using proportional mapping. For GPT-2 120M, the paper selects the 6th layer for word-level alignment and the 9th and 12th layers for phrase-level alignment; for Qwen1.5-0.5B and OPT-1.3B, more key layers are selected at greater depths.
 
-At each selected layer, MTA extracts semantic spans from input-output sequences. Lower-level spans are full words to preserve lexical grounding, while higher-level spans consist of noun and verb phrases to represent more abstract compositional semantics. Syntactic parsing tools like spaCy are used for extraction.
+At each selected layer, MTA extracts semantic spans from input-output sequences. Lower-layer spans are full words to preserve lexical grounding, while higher-layer spans are noun and verb phrases representing abstract compositional semantics, obtained via syntactic parsers like spaCy.
 
-Next, MTA calculates importance weights for tokens. Since causal attention in autoregressive models naturally favors earlier tokens, the authors re-estimate "to what extent each token is attended by others" using a normalized pairwise self-attention without self-loops. These teacher-side token weights are then used for span aggregation and pairwise span weighting.
+Next, MTA calculates importance weights for tokens. Since causal attention in auto-regressive models naturally biases towards early tokens, the authors estimate "to what extent each token is attended to by others" using normalized pairwise self-attention without self-loops. These teacher-side token weights are used for span aggregation and pairwise span weighting.
 
-The total training objective is the base distillation loss plus two MTA terms: $L_{Total}=L_{Base}+\lambda_{DSA}L_{DSA}+\lambda_{Hid}L_{Hid}$. Here, $L_{Base}$ can be FDD, DistiLLM, or DistiLLM-2. $\lambda_{DSA}$ and $\lambda_{Hid}$ are typically set to 2/0.2 or 3/0.3.
+Finally, the total training objective combines the base distillation loss with two MTA terms: $L_{Total}=L_{Base}+\lambda_{DSA}L_{DSA}+\lambda_{Hid}L_{Hid}$. Here, $L_{Base}$ can be derived from FDD, DistiLLM, or DistiLLM-2, with $\lambda_{DSA}$ and $\lambda_{Hid}$ typically set to 2/0.2 or 3/0.3 in experiments.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Teacher + Student Models<br/>Input-Output Sequences"] --> SPAN
+    subgraph SPAN["Layer-Adaptive Multi-Granular Span Alignment"]
+        direction TB
+        B["Select key layers by student depth<br/>Proportional mapping to teacher layers"] --> C["Extract semantic spans<br/>Low: word / High: phrase (spaCy)"]
+    end
+    SPAN --> D["Token Importance Weighting<br/>Normalized pairwise self-attention (no self-loops)"]
+    D --> E["Dynamic Structural Alignment (DSA)<br/>Span pair cosine distance matching"]
+    D --> F["Importance-weighted Hidden Alignment (Hid)<br/>Weighted cosine of key tokens after projection W_l"]
+    E --> G["Total Loss<br/>L = L_Base + λ_DSA·L_DSA + λ_Hid·L_Hid"]
+    F --> G
+```
 
 ### Key Designs
-1.  **Layer-adaptive Multi-granular Span Alignment**:
-    -   **Function**: Aligns different semantic units at varying depths: lower layers handle word spans, and higher layers handle noun/verb phrase spans.
-    -   **Mechanism**: The paper views Transformer depth as a representation trajectory from lexical foundations to compositional semantics. Using phrase alignment at low layers might lose fine-grained lexical info, while using only word alignment at high layers might over-constrain the abstract semantic space.
-    -   **Design Motivation**: This design introduces linguistic compositionality into distillation, matching supervisory signals with hierarchical layer functions. Mixing word and phrase strategies consistently outperforms single-granularity strategies.
 
-2.  **Dynamic Structural Alignment (DSA)**:
-    -   **Function**: Aligns the relative geometric structure between different spans within the same layer, rather than just point-to-point token alignment.
-    -   **Mechanism**: For each selected layer, token hidden states within a span are weighted-averaged into a span representation $U_{k,l}$ based on importance. Then, cosine distances for all span pairs are calculated. DSA minimizes the squared error between student and teacher span pair distances, weighted by the product of teacher-side span salience.
-    -   **Design Motivation**: Relative geometry describes "how the teacher organizes semantic units" better than individual representation values. Even with smaller hidden dimensions, students can better retain compositional semantics by learning similar span relationship structures.
+**1. Layer-Adaptive Multi-Granular Span Alignment: Switching supervision granularity with network depth to match Transformer functional specialization.**
 
-3.  **Importance-weighted Hidden Representation Alignment (Hid)**:
-    -   **Function**: Directly constrains key student token hidden states to be close to teacher hidden states.
-    -   **Mechanism**: Since student and teacher hidden dimensions may differ, MTA learns a linear projection $W_l$ for each key layer to map student states into the teacher's space. It then calculates weighted cosine distance using teacher token weights, targeting only tokens covered by extracted spans.
-    -   **Design Motivation**: While DSA manages span relationships, Hid focuses on individual feature values. Ablations show both contribute independently, with the combination performing best across baselines.
+Many intermediate distillation methods use a uniform alignment granularity, either token-level throughout or mapping every layer to the vocabulary space. However, Transformer layers have specialized roles: lower layers process lexical/local patterns, whereas higher layers handle abstract semantics/reasoning. MTA treats network depth as a trajectory from "lexical foundation to compositional semantics." It aligns lower layers with word spans (preserving lexical grounding) and higher layers with noun/verb phrase spans (representing abstract composition), extracted via syntactic parsers. Ablations show that mixed strategies outperform word-only or phrase-only strategies, proving the benefits of switching granularity.
+
+**2. Dynamic Structural Alignment (DSA): Aligning relative geometry between spans rather than point-wise representation replication.**
+
+Student and teacher hidden dimensions often differ, making direct vector matching difficult and unnecessary. DSA aligns **relational structures**: in each selected layer, span representations $U_{k,l}$ are computed via importance-weighted averaging of constituent token hidden states. The cosine distances between all span pairs in a layer are calculated. The objective minimizes the squared difference between student and teacher span-pair distances, weighted by the product of teacher-side span salience. This relative geometry better captures how the teacher organizes relations between semantic units, making DSA robust across teachers and students with different widths.
+
+**3. Importance-weighted Hidden Representation Alignment (Hid): Directly pulling specific key token features closer, complementary to structure.**
+
+While DSA manages relations between spans, it does not constrain specific feature values. MTA uses a complementary Hid term to align key token hidden states directly. To handle dimension mismatch, a linear projection $W_l$ is learned for each key layer to project student hidden states into the teacher's space. Weighted cosine distance is calculated only for tokens covered by extracted spans, using teacher-side token importance weights. This focuses the model on high-information tokens rather than low-contribution tokens like stop words or padding.
 
 ### Loss & Training
-The core of DSA is intra-layer pairwise distance matching. For student layer $l$ and mapped teacher layer $\phi(l)$, the loss for each span pair $(i,j)$ is $w_{ij}^{sp}(d(U^S_{i,l},U^S_{j,l})-d(U^T_{i,\phi(l)},U^T_{j,\phi(l)}))^2$, where $d$ is cosine distance and $w_{ij}^{sp}$ is the teacher-side span weight.
+DSA focuses on intra-layer pairwise distance matching. For student layer $l$ and mapped teacher layer $\phi(l)$, the loss for span pair $(i,j)$ is $w_{ij}^{sp}(d(U^S_{i,l},U^S_{j,l})-d(U^T_{i,\phi(l)},U^T_{j,\phi(l)}))^2$, where $d$ is cosine distance and $w_{ij}^{sp}$ is the teacher-side span weight.
 
-HID focuses on projected token hidden-state cosine alignment. Student representations $H^S_{t,l}$ are projected via $W_l$ to the teacher dimension and compared via weighted cosine distance with $H^T_{t,l}$. Weights are derived from teacher-side token importance, prioritizing high-information tokens over stop words or padding.
+Hid performs weighted cosine alignment of projected token hidden states. Student representation $H^S_{t,l}$ is projected via $W_l$ to the teacher dimension and aligned with $H^T_{t,l}$. Weights are derived from teacher-side token importance, prioritizing high-information tokens.
 
-Training is conducted on Dolly-15k, with evaluation on Dolly, SelfInst, VicunaEval, and Super-Natural Instructions. GPT-2 and Qwen1.5 use full-parameter fine-tuning, while OPT uses LoRA. Generative evaluation reports average ROUGE-L across 5 random seeds. MTA increases training cost but requires no extra modules during inference.
+Training is conducted on Dolly-15k, with evaluations on Dolly, SelfInst, VicunaEval, and Super-Natural Instructions. GPT-2 and Qwen1.5 undergo full-parameter fine-tuning, while OPT uses LoRA. Generation evaluation reports average ROUGE-L across 5 random seeds. MTA only adds cost during training; no syntactic parsing or extra modules are required during inference.
 
 ## Key Experimental Results
 
 ### Main Results
-MTA was integrated into FDD, DistiLLM, and DistiLLM-2 across three teacher-student pairs: GPT-2 1.5B → 120M, Qwen1.5 1.8B → 0.5B, and OPT 6.7B → 1.3B. The metric is the average ROUGE-L across four instruction-following datasets.
+MTA is applied to FDD, DistiLLM, and DistiLLM-2 across three model families: GPT-2 1.5B → 120M, Qwen1.5 1.8B → 0.5B, and OPT 6.7B → 1.3B. The metric is the average ROUGE-L across four instruction-following datasets.
 
 | Model Pair | Base Method | Avg. ROUGE-L | With MTA | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+|:---|:---|:---|:---|:---|
 | GPT-2 1.5B → 120M | FDD | 19.48 | 20.50 | +1.02 |
 | GPT-2 1.5B → 120M | DistiLLM | 20.21 | 21.45 | +1.24 |
 | GPT-2 1.5B → 120M | DistiLLM-2 | 18.59 | 19.94 | +1.35 |
@@ -91,67 +98,69 @@ MTA was integrated into FDD, DistiLLM, and DistiLLM-2 across three teacher-stude
 | OPT 6.7B → 1.3B | DistiLLM | 22.98 | 23.97 | +0.99 |
 | OPT 6.7B → 1.3B | DistiLLM-2 | 22.96 | 23.22 | +0.26 |
 
-MTA is consistently effective across architectures and frameworks. Gains are particularly notable for small students, such as Qwen1.5-0.5B + FDD, suggesting internal trajectory supervision is especially beneficial for capacity-constrained students.
+MTA is consistently effective across architectures and distillation frameworks. Significant gains occur with smaller student models, such as Qwen1.5-0.5B + FDD (+1.65), indicating that internal trajectory supervision is particularly helpful for capacity-constrained students.
 
 ### Ablation Study
-Ablations were conducted using the GPT-2 1.5B → 120M setup to verify DSA, Hid, multi-granularity, span weighting, and layer selection.
+Ablations on GPT-2 1.5B → 120M validate DSA, Hid, multi-granularity strategy, span weighting, and layer selection.
 
-| Config | Dolly | SelfInst | Vicuna | S-NI | Avg. | Note |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Configuration | Dolly | SelfInst | Vicuna | S-NI | Avg. | Description |
+|:---|:---|:---|:---|:---|:---|:---|
 | DistiLLM | 25.65 | 13.39 | 16.50 | 25.28 | 20.21 | Baseline |
-| + Hid | 25.89 | 13.68 | 16.86 | 25.77 | 20.55 | Hidden only |
-| + DSA | 25.77 | 14.24 | 16.27 | 27.40 | 20.92 | Geometry only |
-| + Full MTA | 25.77 | 14.19 | 16.67 | 29.18 | 21.45 | Best combo |
-| DistiLLM + Word Only | 25.82 | 13.54 | 16.67 | 27.16 | 20.80 | All Word spans |
-| DistiLLM + Phrase Only | 25.96 | 14.25 | 17.03 | 27.42 | 21.17 | All Phrase spans |
-| DistiLLM + MTA | 25.77 | 14.19 | 16.67 | 29.18 | 21.45 | Word (low) + Phrase (high) |
-| MTA w/o weight | 25.95 | 14.10 | 16.38 | 26.21 | 20.66 | No importance weight |
+| + Hid | 25.89 | 13.68 | 16.86 | 25.77 | 20.55 | Hidden set alignment only |
+| + DSA | 25.77 | 14.24 | 16.27 | 27.40 | 20.92 | Structural geometry only |
+| + Full MTA | 25.77 | 14.19 | 16.67 | 29.18 | 21.45 | Best loss combination |
+| DistiLLM + All Word | 25.82 | 13.54 | 16.67 | 27.16 | 20.80 | Word spans for all layers |
+| DistiLLM + All Phrase | 25.96 | 14.25 | 17.03 | 27.42 | 21.17 | Phrase spans for all layers |
+| DistiLLM + MTA | 25.77 | 14.19 | 16.67 | 29.18 | 21.45 | 1 Word + 2 Phrase layers |
+| DistiLLM + MTA w/o weight | 25.95 | 14.10 | 16.38 | 26.21 | 20.66 | Without importance weights |
+| DistiLLM + MTA w/ weight | 25.77 | 14.19 | 16.67 | 29.18 | 21.45 | With teacher span/token weights |
 
 ### Key Findings
-- DSA typically contributes more than Hid, especially on S-NI, suggesting that maintaining span relationship structures enhances generalization more than matching single-point hidden states.
-- Full MTA outperforms individual losses, indicating "relational geometry" and "feature reconstruction" are complementary: the former manages structure, while the latter manages local precision.
-- Word-only and phrase-only strategies are inferior to the layer-adaptive approach, supporting the hypothesis that low layers need lexical grounding while high layers need compositional semantics.
-- Span weighting is critical. Without weights, DistiLLM's average dropped from 21.45 to 20.66, highlighting the importance of filtering low-value tokens.
-- Increasing the number of intermediate layers has diminishing returns. In GPT-2, accuracy improved as layers increased from 0 to 3 but stagnated or dropped with more, likely due to redundancy.
-- MTA adds training overhead (DistiLLM+MTA: ~0.48s/step vs 0.26s/step) but incurs zero cost during inference.
+- DSA generally contributes more than Hid, particularly on S-NI, suggesting that maintaining relational structures between spans enhances generalization better than point-wise matching.
+- Full MTA outperforms individual terms, showing "relational geometry" and "feature reconstruction" are complementary.
+- Mixed granularity strategies outperform word-only or phrase-only strategies.
+- Span weighting is critical. Removing weights reduces the average score from 21.45 to 20.66 in the DistiLLM setting, indicating teacher-side salience filtering is essential.
+- Accuracy does not scale linearly with the number of layers; returns diminish or turn negative beyond a certain count (e.g., 3 layers for GPT-2) due to redundancy.
+- Training costs increase (e.g., DistiLLM increases from 0.26s to 0.48s per step), but inference remains cost-free.
 
 ## Highlights & Insights
-- **From Point Alignment to Trajectory Alignment**: The paper shifts focus from "which layer matches which" to "whether the student follows the teacher's evolution from lexical to semantic."
-- **Span Relations as Distillation Targets**: DSA aligns relative distances between span pairs, which is more robust for teacher-student pairs with different hidden widths.
-- **Hierarchical Function Mapping**: Multi-granularity is not just complexity; it aligns supervisory signals with actual layer functions (low-level word, high-level phrase).
-- **Plug-and-play Compatibility**: Ability to integrate with FDD and DistiLLM demonstrates its utility as a representation regularizer with low integration effort.
-- **Honest Efficiency Analysis**: The authors acknowledge the cost of span extraction and use time-matched baselines to prove gains aren't just from longer training.
+- **From Point to Trajectory Alignment**: Rather than simply matching specific layers, the paper asks if the student follows the teacher's evolution from lexical to semantic representations.
+- **Span Relationships as Distillation Targets**: DSA aligns relative distances between span pairs rather than raw values, making relational supervision robust for differing hidden dimensions.
+- **Multi-granularity Grounded in Layer Function**: Distinguishing lower-layer words and higher-layer phrases matches Transformer architecture findings.
+- **Plugin Architecture**: MTA functions as an additional representation regularizer for existing frameworks like FDD and DistiLLM.
+- **Honest Efficiency Analysis**: The paper addresses the overhead of spaCy extraction and uses time-matched baselines to prove gains exceed those from simply longer training.
 
 ## Limitations & Future Work
-- **Dependency on External Parsers**: Requires noun/verb phrase extraction, introducing spaCy chain costs and potential issues with low-quality parsing in code or math domains.
-- **Instruction-following Focus**: Evaluation is centered on ROUGE-L and LLM-as-a-judge; performance in reasoning, factuality, or long-context tasks remains unverified.
-- **Tokenizer Constraints**: Baselines rely on shared tokenizers. Differing tokenizers would require more complex mapping between spans and hidden states.
-- **Empirical Layer Selection**: While rules were provided, layer and granularity assignments still rely on empirical heuristics.
-- **Computational Complexity of Structural Alignment**: DSA is $O(N^2)$ relative to the number of spans, which might be costly for very long sequences.
+- **Dependency on External Parsers**: Syntactic parsing (noun/verb phrases) adds overhead and may impact quality in multi-lingual or specialized domains (e.g., code).
+- **Task Scope**: Evaluation focuses on instruction-following generation; performance on reasoning, factuality, or long context is unverified.
+- **Tokenizer Constraints**: Current settings prefer shared tokenizers between teacher and student. Cross-tokenizer settings would require additional alignment.
+- **Heuristic Layer Selection**: Layer and granularity assignments rely on empirical rules rather than automated selection.
+- **Computational Complexity**: Pairwise distances in DSA may scale poorly with sequence length or span count.
 
 ## Related Work & Insights
-- **vs FDD**: FDD views Transformer depth as a dynamic system and aligns prediction trajectories. MTA focuses on the internal relational geometry of spans rather than just the LM-head output.
-- **vs DistiLLM / DistiLLM-2**: These focus on KL form and data efficiency. MTA is complementary, adding representation trajectory constraints.
-- **vs Traditional Intermediate KD (e.g., TinyBERT)**: Traditional methods use uniform token-level targets; MTA introduces word/phrase granularity.
-- **Interpretability**: Inspired by research showing Transformers follow a surface-to-semantic hierarchy, MTA converts these analytical findings into trainable loss functions.
+- **vs FDD**: FDD focuses on aligning intermediate prediction trajectories via finite differences, whereas MTA aligns the relationship geometry of internal span representations.
+- **vs DistiLLM / DistiLLM-2**: These methods improve KL forms and data efficiency. MTA complements them by adding internal representation constraints.
+- **vs TinyBERT / MiniLM**: Traditional methods use fixed-granularity alignment of hidden states or attention. MTA adapts granularity by layer depth.
+- **Inspiration**: Findings that Transformer layers evolve from surface to semantic features are translated into a trainable loss function for model compression.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Combines hierarchical linguistic structure with feature trajectory distillation effectively.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple families and baselines; could benefit from more diverse task types.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and logic.
-- Value: ⭐⭐⭐⭐☆ Highly practical for enhancing existing KD frameworks during training.
+- Novelty: ⭐⭐⭐⭐☆ Combining hierarchical linguistics with feature trajectory distillation is natural; DSA relations are distinctive.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Strong baselines and ablations, though task variety is slightly limited.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and logic; implementation details could be further expanded.
+- Value: ⭐⭐⭐⭐☆ Practical as an enhancement module for KD, though training overhead is a factor.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] SRA: Span Representation Alignment for Large Language Model Distillation](sra_span_representation_alignment_for_large_language_model_distillation.md)
 - [\[ACL 2026\] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)
-- [\[CVPR 2026\] Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment](../../CVPR2026/model_compression/beyond_loss_values_robust_dynamic_pruning_via_loss_trajectory_alignment.md)
-- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
+- [\[CVPR 2025\] Multi-modal Knowledge Distillation-based Human Trajectory Forecasting](../../CVPR2025/model_compression/multi-modal_knowledge_distillation-based_human_trajectory_forecasting.md)
+- [\[ACL 2025\] Quantification of Large Language Model Distillation](../../ACL2025/model_compression/quantification_of_large_language_model_distillation.md)
+- [\[ACL 2025\] AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](../../ACL2025/model_compression/aligndistil_token_level_alignment.md)
 
 </div>
 

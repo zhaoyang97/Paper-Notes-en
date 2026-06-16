@@ -2,68 +2,57 @@
 title: >-
   [Paper Note] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 description: >-
-  [ACL 2026][Causal Inference][Contextual Entrainment] This paper establishes scaling laws for "contextual entrainment" for the first time…
+  [ACL 2026][Causal Inference][Paper Note] This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing a divergence in the s
 tags:
-  - "ACL 2026"
-  - "Causal Inference"
-  - "Contextual Entrainment"
-  - "Scaling Laws"
-  - "Semantic Filtering"
-  - "Pattern Copying"
-  - "Robustness"
+  - ACL 2026
+  - Causal Inference
 date: 2026-05-08
-content_hash: bc6630de9cc48fb2
+content_hash: 81aaa0fa8a57c875
 ---
-
 # Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.13275](https://arxiv.org/abs/2604.13275)  
 **Code**: None  
 **Area**: Causal Inference  
-**Keywords**: Contextual Entrainment, Scaling Laws, Semantic Filtering, Pattern Copying, Robustness
+**Keywords**: Contextual Entrainment Effect, Scaling Laws, Semantic Filtering, Pattern Copying, Robustness
 
 ## TL;DR
-This paper establishes scaling laws for "contextual entrainment" for the first time, finding that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing the opposing scaling behaviors of semantic filtering and mechanical copying functions.
+This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing a divergence in the scaling of semantic filtering versus mechanical copying functions.
 
 ## Background & Motivation
 
-**Background**: LLMs increasingly rely on external contexts (RAG, user-provided documents), but contextual information can be noisy, irrelevant, or incorrect. Niu et al. (2025) formalized "contextual entrainment"—the tendency for models to boost the probability of tokens appearing in the context, regardless of their semantic relevance.
+**Background**: LLMs increasingly rely on external context (e.g., RAG, user-provided documents), but contextual information may be noisy, irrelevant, or incorrect. Niu et al. (2025) formalized "contextual entrainment"—the tendency of models to increase the probability of tokens appearing in the context regardless of their semantic relevance.
 
-**Limitations of Prior Work**: Entrainment effects have been observed at single model scales, but their relationship with model size remains unknown. Traditional scaling laws describe aggregate loss, masking the evolution of specific behavioral mechanisms.
+**Limitations of Prior Work**: Entrainment has been observed at single model scales, but its relationship with model size remains unknown. Traditional scaling laws describe aggregate loss, which masks the evolution of specific behavioral mechanisms.
 
-**Key Challenge**: Intuitively, larger models are "smarter" and should be more robust, but they are also "stronger pattern matchers" and might be more prone to copying context—which of these trends dominates?
+**Key Challenge**: Intuitively, larger models should be "smarter" and thus more robust. However, larger models are also "stronger pattern matchers," which might make them more prone to copying context. Which of these two trends dominates?
 
-**Goal**: Quantify how contextual entrainment changes with model size and establish behavioral scaling laws.
+**Goal**: Quantify how the contextual entrainment effect changes with model size and establish behavioral scaling laws.
 
-**Key Insight**: Categorize context into four types (Counterfactual, Related, Irrelevant, Random) and fit power laws $E(N) = a \cdot N^b$ separately to observe the divergence in exponent signs.
+**Key Insight**: Categorize context into four types (Counterfactual, Related, Irrelevant, Random) and fit power laws $E(N) = a \cdot N^b$ separately to observe the split in the exponent signs.
 
-**Core Idea**: Entrainment effects in semantic and non-semantic contexts follow scaling laws in opposite directions—larger models are simultaneously "better" and "worse."
+**Core Idea**: Entrainment effects for semantic and non-semantic contexts follow scaling laws in opposite directions—larger models simultaneously become "better" and "worse."
 
 ## Method
 
 ### Overall Architecture
-Using the LRE (Linear Relational Embedding) dataset across two model families, Cerebras-GPT (111M-13B) and Pythia (410M-12B), the logit shift $\Delta_t = \text{logit}(t|\text{ctx}) - \text{logit}(t|\varnothing)$ is measured under four context conditions. Distractor and gold tokens are analyzed separately to fit power-law scaling relationships.
+
+This study is a pure measurement work aimed at answering whether the contextual entrainment effect strengthens or weakens as models scale. The approach involves using the LRE (Linear Relational Embedding) factual query dataset, where each query is paired with four types of context with different semantic properties. Logits for each token are extracted from two complete model families, Cerebras-GPT (111M–13B) and Pythia (410M–12B). The shift in logit with and without context is computed as $\Delta_t = \text{logit}(t|\text{ctx}) - \text{logit}(t|\varnothing)$. Statistics are collected for both distractor and gold tokens. Finally, these behavioral metrics are fitted against model size $N$ using power laws to observe how exponent signs split by context type.
 
 ### Key Designs
 
-1.  **Systematic Design of Four Context Conditions**:
-    - **Function**: Isolate semantic-driven and mechanically-driven entrainment mechanisms.
-    - **Mechanism**: For the same query (e.g., "The capital of Germany is ___", gold=Berlin), four contexts are constructed: Related ("The Eiffel Tower is in Paris", d=Paris), Irrelevant ("The water is warm", d=warm), Random ("Calculator", d=Calculator), and Counterfactual ("The capital of Germany is Munich", d=Munich), measuring $\Delta_d$ and $\Delta_g$ under each.
-    - **Design Motivation**: Distinguish between "being influenced due to semantic understanding" and "copying because it was seen" by controlling contextual semantic relevance.
+**1. Four Context Conditions: Decoupling Semantic Drive from Mechanical Copying**
 
-2.  **Power Law Scaling Fitting**:
-    - **Function**: Quantify the exact relationship between entrainment effects and model size.
-    - **Mechanism**: Perform linear regression in log-log space for each metric to fit $E(N) = a \cdot N^b$, reporting the exponent $b$, 95% confidence intervals, $R^2$, and p-values. Strong evidence is defined as $R^2 > 0.8$ and $p < 0.01$.
-    - **Design Motivation**: Power laws are the standard form for neural scaling; using them for behavioral metrics enables quantitative prediction.
+Entrainment may stem from two distinct mechanisms: the model being biased "because it understands the semantics" or "simply because it copies what it sees." To isolate these, semantic relevance must be controlled. For the same query (e.g., "The capital of Germany is ___", gold=Berlin), four contexts are constructed: Counterfactual ("The capital of Germany is Munich", d=Munich, direct semantic conflict), Related ("The Eiffel Tower is in Paris", d=Paris, semantically related but non-conflicting), Irrelevant ("The water is warm", d=warm, semantically unrelated), and Random ("Calculator", d=Calculator, purely random token). Metrics $\Delta_d$ for distractors and $\Delta_g$ for gold tokens are measured under each condition. This spectrum from "strong semantics" to "no semantics" serves as the experimental lever for observing the sign split.
 
-3.  **Baseline Verification and Control**:
-    - **Function**: Exclude dataset spurious correlations and ensure observed trends stem from context manipulation.
-    - **Mechanism**: Verify that gold token logits without context scale consistently across all four question subsets ($b \in [+0.129, +0.134]$, $R^2 > 0.93$), while distractor logits without context show no consistent scaling ($R^2 < 0.25$).
-    - **Design Motivation**: If different question subsets had different baselines, scaling differences could not be attributed to context conditions.
+**2. Power Law Fitting: Quantifying Behavior as Scaling Laws**
 
-### Loss & Training
-This work is purely analytical and does not involve training.
+To precisely characterize the relationship between entrainment and model size, this paper adopts the standard neural scaling form. Linear regression is performed in log-log space for each behavioral metric to fit $E(N) = a \cdot N^b$, reporting the exponent $b$, 95% confidence intervals, $R^2$, and p-values. A threshold of $R^2 > 0.8$ and $p < 0.01$ is used as "strong evidence." The sign of the exponent $b$ itself constitutes the conclusion: $b < 0$ indicates the effect decays as the model grows, while $b > 0$ indicates it strengthens.
+
+**3. Baseline Validation and Control: Excluding Dataset Spurious Correlations**
+
+To attribute observed scaling trends to context manipulation, it must be shown that these trends are not inherent to data subset differences. The paper validates that without context, gold token logits scale consistently across all four subsets ($b \in [+0.129, +0.134]$, $R^2 > 0.93$), whereas distractor tokens without context show no consistent scaling ($R^2 < 0.25$). This ensures that the baselines for all subsets are aligned and that distractor scaling is purely introduced by the context.
 
 ## Key Experimental Results
 
@@ -71,49 +60,49 @@ This work is purely analytical and does not involve training.
 
 | Context Type | Exponent $b$ ($\Delta_d$) | 95% CI | $R^2$ | Implication |
 | :--- | :--- | :--- | :--- | :--- |
-| Counterfactual | -0.330 | [-0.44, -0.22] | 0.926 | Larger models more resistant to false info |
-| Related | -0.135 | [-0.16, -0.11] | 0.977 | Larger models more resistant to semantic interference |
-| Irrelevant | +0.091 | [+0.05, +0.13] | 0.879 | Larger models more prone to irrelevant token influence |
-| Random | +0.217 | [+0.14, +0.30] | 0.905 | Larger models more prone to copying random tokens |
+| Counterfactual | -0.330 | [-0.44, -0.22] | 0.926 | Larger models resist misinformation better |
+| Related | -0.135 | [-0.16, -0.11] | 0.977 | Larger models resist semantic interference better |
+| Irrelevant | +0.091 | [+0.05, +0.13] | 0.879 | Larger models are more easily influenced by irrelevant tokens |
+| Random | +0.217 | [+0.14, +0.30] | 0.905 | Larger models copy random tokens more easily |
 
 ### Ablation Study
 
 | Metric | 111M → 13B Change | Description |
 | :--- | :--- | :--- |
-| Counterfactual $\Delta_d$ | 9.69 → 2.30 | 4x decrease, enhanced semantic filtering |
-| Random $\Delta_d$ | 0.82 → 1.97 | 2.4x increase, enhanced copying mechanism |
-| Related gap ($\Delta_g - \Delta_d$) | 5.71 → 0.55 | 10.3× convergence, improved semantic differentiation |
-| Random gap | 0.73 → 2.18 | 3.0× divergence, intensified noise sensitivity |
+| Counterfactual $\Delta_d$ | 9.69 → 2.30 | 4x decrease; enhanced semantic filtering |
+| Random $\Delta_d$ | 0.82 → 1.97 | 2.4x increase; enhanced copying mechanism |
+| Related gap ($\Delta_g - \Delta_d$) | 5.71 → 0.55 | 10.3× convergence; improved semantic differentiation |
+| Random gap | 0.73 → 2.18 | 3.0× divergence; heightened noise sensitivity |
 
 ### Key Findings
-- The divergence of exponent signs between semantic and non-semantic contexts is replicated across both Cerebras-GPT and Pythia model families, indicating this is an inherent property of Transformer scaling.
-- This represents a gradient rather than a binary split: from counterfactual (strongest negative scaling) to random (strongest positive scaling), aligning with semantic coherence.
+- The sign split in exponents between semantic and non-semantic contexts is replicated across two independently trained model families (Cerebras-GPT and Pythia), suggesting it is an inherent property of Transformer scaling.
+- This is a gradient rather than a binary split: from Counterfactual (strongest negative scaling) to Random (strongest positive scaling), aligning with semantic coherence.
 - The convergence-divergence split implies that larger models are more sensitive to context quality—they benefit more from good context but are harmed more by poor context.
 
 ## Highlights & Insights
-- **The core insight is exceptionally elegant**: The same phenomenon (contextual entrainment) exhibits opposite scaling behaviors depending on the semantic nature of the content, moving beyond the simple "bigger is better" narrative. The implication for RAG systems is that context curation becomes more, not less, important as models scale.
-- **The opposing explanations for the two mechanisms** are compelling—pattern matching and semantic filtering are independently scaling functional modules, the former resembling induction heads and the latter resembling reasoning capabilities.
-- This analytical method can be transferred to any research question regarding "how behavior changes with model size."
+- **The core insight is remarkably elegant**: The same phenomenon (contextual entrainment) exhibits opposite scaling behaviors depending on the semantic nature of the content, moving beyond the simple narrative that "larger models are better." The implication for RAG systems is that as models scale, context curation becomes more important, not less.
+- **The dual-mechanism explanation** is compelling: Pattern matching and semantic filtering act as independent functional modules that scale differently, with the former resembling induction heads and the latter reflecting reasoning capabilities.
+- The analysis method is transferable to any research question regarding how specific behaviors change with model size.
 
 ## Limitations & Future Work
-- Studied only decoder-only Transformers; encoder-only and encoder-decoder architectures may have different entrainment dynamics.
-- Scaling is analyzed only at the behavioral level without mechanistic decomposition (e.g., identifying specific attention heads responsible for each behavior).
-- The LRE dataset primarily contains factual queries; entrainment effects may differ in more complex reasoning tasks.
-- The impact of instruction tuning or RLHF on entrainment scaling was not explored.
+- Focuses only on decoder-only Transformers; encoder-only or encoder-decoder architectures may exhibit different entrainment dynamics.
+- Conducts scaling at the behavioral level without mechanistic decomposition (e.g., identifying which specific attention heads are responsible for which behavior).
+- The LRE dataset primarily contains factual queries; entrainment effects may differ in complex reasoning tasks.
+- Does not explore the impact of instruction tuning or RLHF on entrainment scaling.
 
 ## Related Work & Insights
-- **vs Niu et al. (2025)**: They found entrainment effects to be pervasive at fixed scales; this paper extends this to the scaling dimension and discovers the sign split.
-- **vs Kaplan et al. (2020)**: Traditional scaling laws describe the monotonic decrease of aggregate loss; this paper reveals that behavioral metrics can scale in opposite directions.
-- **vs Wei et al. (2022)**: The emergent abilities paper focuses on "which abilities suddenly appear"; this paper quantifies "how existing behaviors change continuously."
+- **vs. Niu et al. (2025)**: They identified the prevalence of entrainment at a fixed scale; this work extends it to the scaling dimension and discovers the sign split.
+- **vs. Kaplan et al. (2020)**: Traditional scaling laws describe the monotonic decrease of aggregate loss; this work reveals that behaviors can scale in opposite directions.
+- **vs. Wei et al. (2022)**: While the emergent abilities paper focuses on "which abilities suddenly appear," this work quantifies "how existing behaviors change continuously."
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First scaling law for contextual entrainment; the sign split discovery is highly novel and counter-intuitive.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across two model families with complete statistical significance, though lacks instruction-tuned models.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Concise and elegant narrative structure; the "better and worse" contrast is maintained throughout.
+- Novelty: ⭐⭐⭐⭐⭐ First scaling law for contextual entrainment; the sign split discovery is highly novel and counter-intuitive.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across two model families with full statistical significance, though lacks instruction-tuned models.
+- Writing Quality: ⭐⭐⭐⭐⭐ The narrative structure is refined and elegant, with the "better and worse" contrast well-integrated throughout.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 

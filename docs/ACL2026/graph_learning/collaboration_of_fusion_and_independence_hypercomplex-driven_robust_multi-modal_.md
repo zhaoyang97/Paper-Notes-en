@@ -2,75 +2,93 @@
 title: >-
   [Paper Note] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion
 description: >-
-  [ACL 2026][Graph Learning][Multi-modal Knowledge Graphs] M-Hyper encodes multi-modal knowledge graph (MMKG) entities as four orthogonal bases of a biquaternion, carrying three independent modalities (structural, visual…
+  [ACL 2026][Graph Learning][Paper Note] M-Hyper encodes multi-modal knowledge graph entities into the four orthogonal bases of a biquaternion, carrying structural, visual, and textual modalities separately alongside a fused modality. Through the Hamilton product, it simultaneously achieves "modality independence preservation" and "sufficient pairwise interac
 tags:
-  - "ACL 2026"
-  - "Graph Learning"
-  - "Multi-modal Knowledge Graphs"
-  - "Hypercomplex Space"
-  - "Biquaternion"
-  - "Modal Fusion"
-  - "Link Prediction"
+  - ACL 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: ddec34ad1ab909e4
+content_hash: 05cc30925dce008b
 ---
-
 # Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion
 
 **Conference**: ACL 2026  
 **arXiv**: [2509.23714](https://arxiv.org/abs/2509.23714)  
 **Code**: https://github.com/zjukg/M-Hyper (Available)  
 **Area**: Multi-modal Fusion / Knowledge Graph Completion / Representation Learning  
-**Keywords**: Multi-modal Knowledge Graphs, Hypercomplex Space, Biquaternion, Modal Fusion, Link Prediction
+**Keywords**: Multi-modal Knowledge Graph, Hypercomplex Space, Biquaternion, Modality Fusion, Link Prediction
 
 ## TL;DR
-M-Hyper encodes multi-modal knowledge graph (MMKG) entities as four orthogonal bases of a biquaternion, carrying three independent modalities (structural, visual, and textual) along with one fused modality. Through the Hamilton product, it simultaneously achieves "modal independence preservation" and "sufficient pairwise interaction," outperforming 18 baselines on DB15K, MKG-W, and MKG-Y datasets with the lowest VRAM usage and shortest training time.
+M-Hyper encodes multi-modal knowledge graph entities into the four orthogonal bases of a biquaternion, carrying structural, visual, and textual modalities separately alongside a fused modality. Through the Hamilton product, it simultaneously achieves "modality independence preservation" and "sufficient pairwise interaction," outperforming 18 baselines with minimal GPU memory and the shortest training time across DB15K, MKG-W, and MKG-Y datasets.
 
 ## Background & Motivation
-**Background**: Current Multi-modal Knowledge Graph Completion (MMKGC) follows two main routes: fusion-based (e.g., IKRL, OTKGE, AdaMF, MyGO), which compresses multi-modal features into a unified representation via explicit fusion modules or cross-modal losses; and ensemble-based (e.g., MoSE, IMF, MoMoK), which trains independent sub-models for each modality and performs joint decision-making.
+**Background**: Multi-modal Knowledge Graph Completion (MMKGC) currently follows two mainstream paths: fusion-based (IKRL, OTKGE, AdaMF, MyGO, etc.), which use explicit fusion modules or cross-modal losses to compress multi-modal info into a unified representation; and ensemble-based (MoSE, IMF, MoMoK, etc.), which train independent sub-models for each modality and make joint decisions.
 
-**Limitations of Prior Work**: Fusion-based methods rely on fixed strategies, inevitably losing modality-specific information and failing to dynamically adjust modal weights for different relations. Ensemble-based methods preserve independence but lack deep cross-modal interaction mechanisms, making it difficult to capture subtle dependencies under complex relations.
+**Limitations of Prior Work**: Fusion-based methods rely on fixed strategies, inevitably losing modality-unique information and failing to dynamically adjust modality weights based on different relations. Ensemble-based methods retain independence but lack deep cross-modal interaction mechanisms, making it difficult to model nuanced dependencies under complex relations.
 
-**Key Challenge**: Modal contributions in MMKGs are dynamic, context-aware, and task-dependent. It is necessary to both maintain modal independence (to avoid information loss) and ensure sufficient interaction (to capture synergy). Satisfying both requirements simultaneously in traditional Euclidean vector spaces is nearly impossible.
+**Key Challenge**: Modality contributions in MMKGs are dynamic, context-dependent, and task-related—requiring both modality independence (to avoid fusion loss) and sufficient cross-modal interaction (to capture synergy). Satisfying these two requirements simultaneously is nearly impossible in traditional Euclidean vector spaces.
 
-**Goal**: Design a representation space where "independent modalities" and "fused modalities" coexist, naturally supporting pairwise interaction while possessing translation and rotation capabilities for relation modeling.
+**Goal**: Design a representation space where "independent modalities" and a "fused modality" coexist, natively supporting pairwise modality interaction while possessing translation and rotation capabilities for relationship modeling.
 
-**Key Insight**: The authors observe that quaternion algebra consists of four linearly independent orthogonal bases $\{\mathbf{1}, \mathbf{i}, \mathbf{j}, \mathbf{k}\}$, and the Hamilton product naturally generates all pairwise cross-terms. This perfectly accommodates "3 independent modalities + 1 fused modality." Furthermore, using biquaternions (quaternions with complex coefficients) allows for the simultaneous modeling of both translation and rotation transformations.
+**Key Insight**: The authors observe that quaternion algebra has four linearly independent orthogonal bases $\{\mathbf{1}, \mathbf{i}, \mathbf{j}, \mathbf{k}\}$, and the Hamilton product naturally generates all pairwise cross-terms—perfect for carrying "3 independent modalities + 1 fused modality." Furthermore, using biquaternions (quaternions with complex coefficients) allows the simultaneous modeling of translation and rotation relation transformations.
 
-**Core Idea**: Map structural, visual, textual, and fused modalities to the four orthogonal bases of a biquaternion and use the Hamilton product as the scoring function. Independence is guaranteed by the orthogonality of the bases, while interaction is provided by the cross-terms of the product.
+**Core Idea**: Map structural, visual, textual, and fused modalities onto the four orthogonal bases of a biquaternion. Use the Hamilton product as the scoring function, where independence is guaranteed by the orthogonality of bases and interaction is provided by the cross-terms of the product.
 
 ## Method
 
 ### Overall Architecture
-Input: A triplet $(h, r, t)$ along with structural embeddings $\mathbf{e}^s$, visual embeddings $\mathbf{e}^v$ (VGG), and textual embeddings $\mathbf{e}^t$ (BERT) for entities $h$ and $t$. The process consists of four steps: (1) The **FERF module** decomposes each independent modality into "modality-specific" and "task-specific" subspaces to obtain robust $\hat{\mathbf{e}}^s, \hat{\mathbf{e}}^v, \hat{\mathbf{e}}^t$; (2) The **R2MF module** uses relation-aware gated fusion to obtain the fused representation $\hat{\mathbf{e}}^j$, incorporating noise self-distillation for robustness; (3) The four modalities are mapped to the four orthogonal bases of a biquaternion $Q = \hat{\mathbf{e}}^j + \hat{\mathbf{e}}^s \mathbf{i} + \hat{\mathbf{e}}^v \mathbf{j} + \hat{\mathbf{e}}^t \mathbf{k}$; (4) The **Biquaternion Scoring Function** $\phi(h,r,t) = \langle (Q_h \oplus Q_r^T) \otimes Q_r^R, Q_t \rangle$ simultaneously models translation (addition $\oplus$) and rotation (Hamilton product $\otimes$).
+M-Hyper seeks a representation space where "independent" and "fused" modalities coexist with natural pairwise interaction—avoiding the loss of unique information seen in fusion methods and the lack of deep interaction in ensemble methods. Recognizing that quaternion algebra provides four linearly independent orthogonal bases, it maps structural, visual, and textual modalities, along with one fused modality, onto the four bases of a biquaternion. Inputting triples $(h,r,t)$ with structural embeddings $\mathbf{e}^s$, visual embeddings $\mathbf{e}^v$ (VGG), and textual embeddings $\mathbf{e}^t$ (BERT), FERF first decomposes each modality into robust representations. Then, R2MF performs relation-aware fusion to obtain the fused modality $\hat{\mathbf{e}}^j$. These are combined into $Q = \hat{\mathbf{e}}^j + \hat{\mathbf{e}}^s \mathbf{i} + \hat{\mathbf{e}}^v \mathbf{j} + \hat{\mathbf{e}}^t \mathbf{k}$, scored via a biquaternion function incorporating both translation and rotation. Orthogonality ensures modality independence, while Hamilton product cross-terms facilitate interaction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Triple (h,r,t) + Structural / Visual (VGG) / Textual (BERT) Pre-trained Embeddings"]
+    subgraph FERF["FERF: Robust Modality Decomposition"]
+        direction TB
+        F1["Split per modality: Modality-specific (Pre-trained via MLP) + Task-specific (Learnable, PCA init)"]
+        F2["Reconstruction Loss: Task embedding + other modalities' original info must reconstruct current original info"]
+        F1 --> F2
+    end
+    IN --> FERF
+    FERF --> IND["Independent Modality Representations: Structural / Visual / Textual"]
+    subgraph R2MF["R2MF: Relation-aware Fusion"]
+        direction TB
+        R1["Relation Gating: Modality weights per relation + relation-level temperature softmax weighting"]
+        R2["Noise Self-distillation: Align noisy student representation with noise-free teacher"]
+        R1 --> R2
+    end
+    IND --> R2MF
+    R2MF --> FUS["Fused Modality"]
+    BIQ["Biquaternion Score Function<br/>Q = Fused·1 + Structural·i + Visual·j + Textual·k"]
+    IND --> BIQ
+    FUS --> BIQ
+    BIQ --> SCORE["Scoring after Translation ⊕ Rotation (Hamilton Product)<br/>Orthogonal bases ensure independence · Cross-terms ensure interaction"]
+    SCORE --> OUT["Triple Score → Link Prediction"]
+```
 
 ### Key Designs
 
-1.  **FERF: Fine-grained Entity Representation Decomposition**:
-    *   **Function**: Resolves noise caused by missing modalities and cross-modal semantic ambiguity to obtain robust independent representations.
-    *   **Mechanism**: For each modality $m$, the representation is decomposed into modality-specific $\mathbf{e}^m_m$ (capturing raw info via pretrained encoders + MLP) and task-specific $\mathbf{e}^m_t$ (learnable embeddings initialized with PCA). A reconstruction loss $\mathcal{L}_{recon} = \sum_m \|\mathcal{E}^m(\mathbf{e}^m_t; \{\mathbf{e}^{\hat{m}}_m: \hat{m} \neq m\}) - \mathbf{e}^m_m\|^2$ is introduced, requiring "task embedding + raw embeddings of other modalities" to reconstruct the original information, forcing the task embedding to preserve modal characteristics while collaborating. Finally, $\hat{\mathbf{e}}^m = \mathbf{e}^m_m + \mathbf{e}^m_t$.
-    *   **Design Motivation**: Using only pretrained encoder outputs is susceptible to noise; using only learned embeddings loses pretrained semantics. Adding both pathways with reconstruction constraints denoises while preserving semantics.
+**1. FERF: Decomposing modalities into "Modality-specific + Task-specific" to denoise without losing pre-trained semantics**
 
-2.  **R2MF: Relation-aware Gated Fusion + Noise Self-distillation**:
-    *   **Function**: Obtains a fused modality representation $\hat{\mathbf{e}}^j$ that is sensitive to relation context and robust to noise.
-    *   **Mechanism**: (a) Relation-aware gating—uses a 1-layer MLP based on $[\hat{\mathbf{e}}^m; \mathbf{r}^T; \mathbf{r}^R]$ to calculate modal weights $w^m$, followed by a relation-level learnable temperature $\tau_r$ in a softmax to get $\hat{w}^m(e,r) = \exp(w^m/\tau_r) / \sum_i \exp(w^i/\tau_r)$. (b) Noise self-distillation—adds Gaussian noise $\tilde{\mathbf{e}}^m \sim \mathcal{N}(\bm{\varphi}^m, \bm{\mu}^m)$ to get student fused representations $\hat{\mathbf{e}}^{j'}$, using the noise-free $\hat{\mathbf{e}}^j$ as a teacher to enforce consistency via $\mathcal{L}_{distill} = \frac{1}{n}\sum \|\hat{\mathbf{e}}^j_i - \hat{\mathbf{e}}^{j'}_i\|^2$.
-    *   **Design Motivation**: Fixed fusion cannot adapt to the fact that different relations require different modalities. Noise distillation makes the gating robust to missing or perturbed modalities.
+Using only pre-trained encoder outputs risks contamination by modality noise and semantic ambiguity, while using only learnable embeddings loses pre-trained semantics. FERF splits each modality $m$ into two paths: modality-specific $\mathbf{e}^m_m$ (MLP-processed pre-trained output) and task-specific $\mathbf{e}^m_t$ (learnable embedding initialized via PCA from visual/textual features). The final representation is $\hat{\mathbf{e}}^m = \mathbf{e}^m_m + \mathbf{e}^m_t$. A reconstruction loss $\mathcal{L}_{recon} = \sum_m \|\mathcal{E}^m(\mathbf{e}^m_t; \{\mathbf{e}^{\hat{m}}_m: \hat{m} \neq m\}) - \mathbf{e}^m_m\|^2$ constrains the model: the "task embedding + other modalities' original embeddings" must reconstruct the original info of the current modality. This forces task embeddings to retain modality characteristics while collaborating with others, resulting in denoised, semantically complete independent representations.
 
-3.  **Biquaternion Scoring Function**:
-    *   **Function**: Implements "independent modality preservation + pairwise interaction + relation translation + relation rotation" within a unified algebraic structure.
-    *   **Mechanism**: $\hat{\mathbf{e}}^j, \hat{\mathbf{e}}^s, \hat{\mathbf{e}}^v, \hat{\mathbf{e}}^t$ are placed on the $\mathbf{1}, \mathbf{i}, \mathbf{j}, \mathbf{k}$ bases of a biquaternion. Relations learn two sets of embeddings $Q_r^T$ (translation) and $Q_r^R$ (rotation). The score is calculated as $Q_{h'} = Q_h \oplus Q_r^T$ followed by $Q_{h''} = Q_{h'} \otimes Q_r^R$, finally taking the inner product with $Q_t$. The Hamilton product expansion naturally produces all pairwise cross-terms $\hat{\mathbf{e}}^m_h \cdot \hat{\mathbf{e}}^{m'}_t$ (Theorem 2).
-    *   **Design Motivation**: Mathematically provides an "independent yet interactive" structure. Theorem 1 uses the Information Bottleneck framework to prove this representation is strictly superior to pure fusion $T_f$ and pure ensemble $T_{ens}$: $\mathcal{L}_{IB}(Q) < \min(\mathcal{L}_{IB}(T_f), \mathcal{L}_{IB}(T_{ens}))$.
+**2. R2MF: Relation-aware Gating Fusion + Noise Self-distillation for adaptive and robust fusion**
+
+Fixed fusion cannot adapt to the reality that different relations depend on different modalities (e.g., *born_in* relies on text, *has_color* on vision). R2MF first performs relation-aware gating: an MLP calculates weights $w^m$ for each modality based on $[\hat{\mathbf{e}}^m; \mathbf{r}^T; \mathbf{r}^R]$. Relation-level learnable temperatures $\tau_r$ produce $\hat{w}^m(e,r) = \exp(w^m/\tau_r) / \sum_i \exp(w^i/\tau_r)$, followed by weighted summation and a fusion-specific task embedding $\mathbf{e}^j_t$. Noise self-distillation is then applied: Gaussian noise $\tilde{\mathbf{e}}^m \sim \mathcal{N}(\bm{\varphi}^m, \bm{\mu}^m)$ creates a student fused representation $\hat{\mathbf{e}}^{j'}$. The noise-free $\hat{\mathbf{e}}^j$ acts as a teacher via $\mathcal{L}_{distill} = \frac{1}{n}\sum \|\hat{\mathbf{e}}^j_i - \hat{\mathbf{e}}^{j'}_i\|^2$.
+
+**3. Biquaternion Score Function: Unifying "Independence + Interaction + Translation + Rotation"**
+
+M-Hyper places $\hat{\mathbf{e}}^j, \hat{\mathbf{e}}^s, \hat{\mathbf{e}}^v, \hat{\mathbf{e}}^t$ onto the $\mathbf{1}, \mathbf{i}, \mathbf{j}, \mathbf{k}$ bases of a biquaternion (coefficients remain complex). Relations learn two sets of embeddings $Q_r^T$ and $Q_r^R$. Scoring involves translation $Q_{h'} = Q_h \oplus Q_r^T$ followed by rotation via Hamilton product $Q_{h''} = Q_{h'} \otimes Q_r^R$. The inner product with $Q_t$ yields the score: $\phi(h,r,t) = \langle (Q_h \oplus Q_r^T) \otimes Q_r^R, Q_t \rangle$. The Hamilton product expansion naturally produces all pairwise cross-terms $\hat{\mathbf{e}}^m_h \cdot \hat{\mathbf{e}}^{m'}_t$ (algebraically proven in Theorem 2), ensuring interaction, while base orthogonality preserves independence. Theorem 1 further proves from an Information Bottleneck perspective that this representation is strictly superior to pure fusion $T_f$ or ensemble $T_{ens}$: $\mathcal{L}_{IB}(Q) < \min(\mathcal{L}_{IB}(T_f), \mathcal{L}_{IB}(T_{ens}))$.
 
 ### Loss & Training
-Total loss: $\mathcal{L}_{total} = \mathcal{L}_{recon} + \mathcal{L}_{distill} + \mathcal{L}_{triple} + \mathcal{L}_{reg}$, where $\mathcal{L}_{triple}$ is cross-entropy (with 1-vs-all candidates) and $\mathcal{L}_{reg}$ is N3 regularization. Optimizer: Adagrad, batch size: 1000, key hyperparameters: $d=128$, $\lambda=0.005$, noise rate $\beta=0.2$, learning rate $\alpha=0.1$. Training includes reverse triplets $(t, r^{-1}, h)$.
+Total loss is $\mathcal{L}_{total} = \mathcal{L}_{recon} + \mathcal{L}_{distill} + \mathcal{L}_{triple} + \mathcal{L}_{reg}$, where $\mathcal{L}_{triple}$ is standard cross-entropy (with 1-vs-all candidates) and $\mathcal{L}_{reg}$ is $N3$ regularization. Using the Adagrad optimizer, batch size 1000, key hyperparameters $d=128$, $\lambda=0.005$, noise rate $\beta=0.2$, and learning rate $\alpha=0.1$. Training includes inverse triples $(t, r^{-1}, h)$.
 
 ## Key Experimental Results
 
 ### Main Results
-Compared against 18 baselines (6 Uni-modal KGE and 12 MMKGC methods) on DB15K, MKG-W, and MKG-Y:
+Performance on DB15K, MKG-W, and MKG-Y benchmarks compared to 18 baselines:
 
-| Dataset | Metric | M-Hyper | Prev. SOTA (MoMoK) | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Metric | M-Hyper (Ours) | Prev. SOTA (MoMoK) | Gain |
+|--------|------|---------|-------------------|------|
 | DB15K | MRR | **41.25** | 39.57 | +1.68 |
 | DB15K | Hit@10 | **56.09** | 54.14 | +1.95 |
 | MKG-W | MRR | **37.02** | 36.10 (MyGO) | +0.92 |
@@ -78,52 +96,52 @@ Compared against 18 baselines (6 Uni-modal KGE and 12 MMKGC methods) on DB15K, M
 | MKG-Y | MRR | **39.46** | 38.44 (MyGO) | +1.02 |
 | MKG-Y | Hit@10 | 45.22 | 45.48 (AdaMF) | -0.26 |
 
-Average MRR increased by ~4.25% and Hit@10 by ~3.89%. Efficiency analysis shows M-Hyper has the **shortest training time per epoch and near-optimal memory usage** among compared methods.
+Average MRR increased by approx. 4.25%, and Hit@10 by approx. 3.89%. Efficiency analysis shows M-Hyper has the **shortest training time per epoch and near-optimal GPU memory usage** among 6 compared methods—reaching 40.75% MRR in just 1160 seconds.
 
 ### Ablation Study
 
-| Configuration | DB15K MRR | MKG-W MRR | MKG-Y MRR | Description |
-| :--- | :--- | :--- | :--- | :--- |
+| Configuration | DB15K MRR | MKG-W MRR | MKG-Y MRR | Note |
+|------|-----------|-----------|-----------|------|
 | M-Hyper (Full) | **41.25** | **37.02** | **39.46** | — |
-| w/o fused modality $\hat{\mathbf{e}}^j$ | 36.36 | 35.09 | 36.71 | Most significant drop |
-| w/o visual $\hat{\mathbf{e}}^v$ | 35.09 | 36.46 | 37.95 | Visual info critical for DB15K |
-| w/o structural $\hat{\mathbf{e}}^s$ | 39.77 | 34.62 | 38.03 | Structural info critical for MKG-W |
-| w/o FERF | 39.24 | 35.93 | 37.93 | Robust decomp. contribution |
-| w/o Noise Distill | 39.64 | 36.10 | 38.16 | Distillation helps ~1.6 MRR |
-| w/o Relation Gating | 40.18 | 36.18 | 38.21 | Dynamic fusion contribution |
-| w/o Rotation $\mathbf{r}^R$ | 38.91 | 36.46 | 37.78 | Biquaternion degrades to quaternion |
-| M-Hyper-fusion variant | 39.23 | 35.54 | 37.52 | Pure fusion loss |
-| M-Hyper-ensemble variant | 39.31 | 34.75 | 37.58 | Pure ensemble loss |
+| w/o Fused Modality $\hat{\mathbf{e}}^j$ | 36.36 | 35.09 | 36.71 | Most significant drop; fusion is core |
+| w/o Visual $\hat{\mathbf{e}}^v$ | 35.09 | 36.46 | 37.95 | Visual info crucial for DB15K |
+| w/o Structural $\hat{\mathbf{e}}^s$ | 39.77 | 34.62 | 38.03 | Structural info crucial for MKG-W |
+| w/o FERF | 39.24 | 35.93 | 37.93 | Robust decomposition contributes significantly |
+| w/o Distillation | 39.64 | 36.10 | 38.16 | Distillation helps ~1.6 MRR |
+| w/o Relation Gating | 40.18 | 36.18 | 38.21 | Dynamic fusion contributes moderately |
+| w/o Rotation $\mathbf{r}^R$ | 38.91 | 36.46 | 37.78 | Drop after degrading to quaternion; proves rotation power |
+| M-Hyper-fusion variant | 39.23 | 35.54 | 37.52 | Significant loss with pure fusion |
+| M-Hyper-ensemble variant | 39.31 | 34.75 | 37.58 | Significant loss with pure ensemble |
 
 ### Key Findings
-- Removing the **fused modality $\hat{\mathbf{e}}^j$** causes the largest drop (DB15K -4.89 MRR), proving the real part of the biquaternion carries essential cross-modal synergy.
-- Removing **rotation $\mathbf{r}^R$** (falling back to quaternion) leads to performance loss across all datasets, validating the expressive power of complex-domain rotation.
-- In scenarios involving missing modalities, noise, or sparse links, M-Hyper outperforms AdaMF and MoMoK.
-- t-SNE visualization shows the fused modality provides the highest discriminative power for city-country relations.
+- Removing the **fused modality $\hat{\mathbf{e}}^j$** caused the steepest performance drop (DB15K -4.89 MRR), proving that the real part of the biquaternion carries essential cross-modal synergistic signals.
+- Removing **rotation $\mathbf{r}^R$** (degrading from biquaternion to quaternion) led to drops across all datasets, indicating that rotation in the complex domain genuinely increases expressive power.
+- M-Hyper outperformed AdaMF and MoMoK in scenarios involving missing modalities, noise, and sparse links, showing that the combination of task embeddings and self-distillation is more stable than pure noise augmentation.
+- t-SNE visualization indicated that the fused modality provided the highest discriminative power for city-country relations.
 
 ## Highlights & Insights
-- **Algebraic Structure as Representation Constraint**: Using the four orthogonal bases of a biquaternion to encode "3 independent + 1 fused" is an elegant design. Orthogonality ensures independence, and the Hamilton product generates interactions without extra regularization.
-- **FERF Decomposition**: Uses reconstruction loss to separate "information that must be contributed by this modality" from "collaborative cross-modal information," providing finer grain than pure decoupling.
-- **Unified Triple Scoring**: Combining DualE’s bi-directional transformations with BiQUE’s biquaternion algebra while layering multi-modal semantics represents a culmination of KGE scoring function evolution.
-- The theoretical proof via Information Bottleneck (Theorem 1) provides a formal explanation for why biquaternions outperform standard fusion/ensemble approaches.
+- **Algebraic Structure as Representation Constraint**: Using the four orthogonal bases of a biquaternion to encode "3 Independent + 1 Fused" is an elegant design. Orthogonality automatically ensures independence, and the Hamilton product automatically ensures interaction, removing the need for extra regularization terms.
+- **FERF's Modality/Task-specific Decomposition**: This uses reconstruction loss to explicitly separate information that *must* come from its own modality from information that *can* be collaborated across modalities.
+- **Unified Score Function**: Combining dual-direction transformations with biquaternion algebra while layering multi-modal semantics represents a pinnacle in the evolution of KGE scoring functions.
+- Information Bottleneck theoretical proofs provide a formal explanation for why biquaternions excel over pure fusion or ensemble methods.
 
 ## Limitations & Future Work
-- The study is limited to **transductive** static MMKGC and cannot handle dynamic scenarios with new entities or relations.
-- The 8d dimensionality of the biquaternion space naturally doubles the parameter count compared to quaternions; advantages may diminish as $d$ increases.
-- Robustness experiments only considered random noise/omission, not adversarial perturbations.
-- Potential exists to transfer the "coexistence and collaboration" idea to entity alignment, KGQA, and NER.
+- The study is limited to **transductive** static MMKGC and cannot handle dynamic scenarios such as new entities or modalities.
+- The 8d dimensionality of biquaternion space doubles parameter size compared to quaternions; while efficient due to design simplicity, this advantage may diminish as $d$ increases.
+- Robustness was tested against random noise/omission but not adversarial perturbations.
+- Future work includes extending "coexistence and collaboration" to entity alignment, KGQA, and NER.
 
 ## Related Work & Insights
-- **vs MoMoK (ICLR 2025)**: MoMoK uses MoE to decouple modalities and minimizes mutual information, but lacks explicit interaction between sub-models. M-Hyper uses biquaternion algebra to handle both.
-- **vs MyGO (AAAI 2025)**: MyGO uses fine-grained tokenization for fusion, losing modal independence. M-Hyper preserves independent modalities as imaginary parts.
-- **vs BiQUE (EMNLP 2021)**: BiQUE embeds uni-modal KGs in biquaternion space for rotation and translation. M-Hyper is the first to extend this to multi-modal scenarios.
-- **vs AdaMF (LREC-COLING 2024)**: AdaMF uses adversarial training for noise enhancement; M-Hyper utilizes self-distillation and task embeddings for more stable robustification.
+- **vs MoMoK (ICLR 2025)**: MoMoK uses MoE for decoupling with MI minimization for independence but lacks explicit interaction between sub-models. M-Hyper uses biquaternion structure for both.
+- **vs MyGO (AAAI 2025)**: MyGO uses fine-grained multi-modal tokenization but loses modality independence after fusion.
+- **vs BiQUE (EMNLP 2021)**: BiQUE embeds single-modal KGs in biquaternion space for rotation and translation; M-Hyper is the first to extend this to multi-modal contexts.
+- **vs AdaMF (LREC-COLING 2024)**: AdaMF uses adversarial training for noise enhancement; M-Hyper employs self-distillation for more stable robustness.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to introduce biquaternions to MMKGC with a "bases carry modalities" design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 datasets, 18 baselines, 3D ablation, and robustness/efficiency/visualization analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear methodology, though algebraic derivations may be challenging for some readers.
-- Value: ⭐⭐⭐⭐ New SOTA for MMKGC; strategies for algebraic representation constraints are insightful for the multi-modal field.
+- **Novelty**: ⭐⭐⭐⭐⭐ High originality in using algebraic bases to carry modalities.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive benchmarks, baselines, and three-dimensional ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ Method and theory are clear, though biquaternion derivation is dense.
+- **Value**: ⭐⭐⭐⭐ New SOTA for MMKGC with a strong conceptual framework for multi-view learning.
 
 <!-- RELATED:START -->
 
@@ -132,8 +150,8 @@ Average MRR increased by ~4.25% and Hit@10 by ~3.89%. Efficiency analysis shows 
 ## Related Papers
 
 - [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
-- [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 - [\[AAAI 2026\] MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment](../../AAAI2026/graph_learning/mygram_modality-aware_graph_transformer_with_global_distribution_for_multi-modal.md)
+- [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 - [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](../../NeurIPS2025/graph_learning/rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
 - [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/graph_learning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
 

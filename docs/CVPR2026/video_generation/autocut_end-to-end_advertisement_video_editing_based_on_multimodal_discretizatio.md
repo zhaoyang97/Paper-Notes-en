@@ -2,92 +2,96 @@
 title: >-
   [Paper Note] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation
 description: >-
-  [CVPR 2026][Video Generation][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio…
+  [CVPR 2026][Video Generation][video editing] AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE). By performing multimodal alignment and supervised fine-tuning on Qwen3-8B, it achieves unified processing of four tasks—video selection, o
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "video editing"
-  - "Multimodal LLM"
-  - "Residual VQ"
-  - "Advertisement"
-  - "Controllable Generation"
+  - CVPR 2026
+  - Video Generation
+  - video editing
+  - Multimodal LLM
+  - Residual VQ
+  - Advertisement
+  - Controllable Generation
 date: 2026-05-08
-content_hash: e8521f6102daecfa
+content_hash: da23ee73764dc6ee
 ---
-
 # AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.28366](https://arxiv.org/abs/2603.28366)  
 **Code**: [https://github.com/AdAutoCut/Autocut](https://github.com/AdAutoCut/Autocut)  
-**Area**: Video Understanding / Video Editing
+**Area**: Video Understanding / Video Editing  
 **Keywords**: video editing, Multimodal LLM, Residual VQ, Advertisement, Controllable Generation
 
 ## TL;DR
-AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE), performs multimodal alignment and supervised fine-tuning on Qwen3-8B, and enables four tasks—clip selection, ordering, script generation, and background music selection—within a single unified model, surpassing GPT-4o baselines across multiple metrics.
+AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE). By performing multimodal alignment and supervised fine-tuning on Qwen3-8B, it achieves unified processing of four tasks—video selection, ordering, script generation, and background music (BGM) selection—outperforming GPT-4o baselines on multiple metrics.
 
 ## Background & Motivation
 
-**Background**: Short-form video has become the dominant medium for digital advertising, yet the production pipeline—covering scripting, shooting, editing, and post-processing—remains costly and technically demanding.
+**Background**: Short videos have become the primary medium for digital advertising, but the production pipeline—involving scriptwriting, footage shooting, editing, and post-production—is costly and has high entry barriers.
 
-**Three Major Obstacles in Prior Work**:
-   - **Loose multimodal coupling**: Weak alignment among video, audio, and text representations prevents unified reasoning.
-   - **Lack of interpretable control**: Models provide no structured or discrete representations, making it difficult to adjust narrative pacing and content emphasis.
-   - **Disconnected understanding and generation**: Multimodal understanding and generation are treated as separate processes with inconsistent optimization objectives.
+**Limitations of Prior Work**:
+   - **Loose Multimodal Coupling**: Representations of video, audio, and text are weakly aligned, preventing unified reasoning.
+   - **Lack of Interpretable Control**: Models do not provide structured or discrete representations, making it difficult to adjust narrative rhythm and content focus.
+   - **Fragmented Understanding and Generation**: Multimodal understanding and generation are treated as independent processes, leading to inconsistent optimization.
 
-**Opportunities and Limitations of MLLMs**: Multimodal large language models hold promise for unifying perception, understanding, and creation, but are **constrained by context window length**, making large-scale video retrieval and editing difficult.
+**Key Challenge**: While Multimodal Large Language Models (MLLMs) have the potential to unify perception, understanding, and creation, they are **constrained by context window lengths**, making it difficult to directly process large-scale video retrieval and editing.
 
-**Core Idea**: Video and audio features are discretized into tokens via RQVAE and unified with text tokens into a shared vocabulary, enabling the LLM to perform multimodal reasoning and generation within a single token space.
+**Core Idea**: Video and audio features are discretized into tokens via RQVAE and unified with text tokens to construct a shared vocabulary, allowing the LLM to perform multimodal reasoning and generation within a unified token space.
 
 ## Method
 
 ### Overall Architecture
-Two-stage training:
-1. **Multimodal Alignment**: The LLM backbone is frozen; only the newly introduced multimodal embedding layers are updated (~700K samples).
-2. **Supervised Fine-Tuning (SFT)**: Full-parameter fine-tuning for task-specific behavior learning (~100K curated samples).
+AutoCut addresses the challenge of automatically editing raw advertisement assets (video clips, audio, voiceover scripts) into a final video. The difficulty lies in the weak alignment between different modalities and the LLM's inability to fit massive retrieval candidates into its context window. The proposed solution is to "compress everything into tokens": video frames and audio segments are encoded into continuous embeddings and then quantized into discrete tokens via RQVAE, which are then integrated into an extended shared vocabulary with text tokens. Consequently, "clip selection, ordering, scriptwriting, and BGM selection" are reduced to next-token prediction by the LLM on a unified sequence.
 
-At inference: The LLM generates a token sequence → video tokens retrieve nearest-neighbor clips; audio tokens are decoded; text is output directly → ffmpeg compositing produces the final video.
+The training follows a two-step approach: first, the Qwen3-8B backbone is frozen while only the new multimodal embedding layers are trained for alignment (~700K samples); second, full-parameter SFT is performed to learn specific task behaviors (~100K planning samples). During inference, the LLM outputs a hybrid token sequence where video tokens are used for nearest-neighbor retrieval of actual clips, audio tokens are decoded into BGM, and text tokens serve as the script. Finally, ffmpeg is used to assemble these into an MP4.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Original Ad Assets<br/>Video Clips + Audio + Voiceover Scripts"]
+    subgraph ENC["Multimodal Encoding & Discretization"]
+        direction TB
+        B["Video: ResNet-50 · Audio: PANNs<br/>Continuous Embedding Extraction"] --> C["RQVAE Residual Quantization<br/>256×8 Codebook → 8 Discrete Tokens per Frame/Segment"]
+    end
+    A --> ENC
+    ENC --> D["Unified Token Space<br/>Shared Extended Vocab for Video/Audio/Text"]
+    D --> E["Unified Modeling of 4 Tasks<br/>Qwen3-8B Auto-regression: Select / Sort / Script / BGM"]
+    subgraph REN["Retrieval & Rendering"]
+        direction TB
+        F["Video Tokens → FAISS Retrieval<br/>Audio Tokens → BGM · Text Tokens → Script"] --> G["ffmpeg Splicing + Transitions + Subtitles"]
+    end
+    E --> REN
+    REN --> H["Final MP4 Video"]
+```
 
 ### Key Designs
 
-1. **Multimodal Encoding and Discretization**:
+**1. Multimodal Encoding and Discretization: Compressing continuous video/audio into LLM-compatible discrete tokens**
 
-    - **Video Encoder**: ResNet-50 (pretrained with contrastive learning), extracting frame-level semantic embeddings.
-    - **Audio Encoder**: PANNs (Wavegram-Logmel-CNN), pretrained on AudioSet.
-    - **RQVAE Discretization**: Residual vector quantization compresses continuous embeddings into discrete tokens.
-        - Codebook size: $256 \times 8$ (each frame/audio segment encoded as 8 tokens).
-        - Reconstruction quality: video cosine similarity 0.89, audio 0.96.
-        - Training loss: $\mathcal{L}_{rec} = 1 - \cos(\hat{f}, f)$
-    - **Design Motivation**: RQVAE achieves efficient compression through successive residual approximation; the 8-token configuration strikes a favorable balance between reconstruction quality and sequence length.
+Video frames utilize ResNet-50 pretrained via contrastive learning to extract frame-level semantic embeddings, while audio segments use PANNs (Wavegram-Logmel-CNN) pretrained on AudioSet. Since continuous embeddings cannot directly enter the LLM's discrete vocabulary, RQVAE (Residual Vector Quantization) acts as a "translator." It uses a $256 \times 8$ codebook to approximate the original embedding level-by-level using residuals, encoding each frame or audio segment into 8 discrete tokens. The advantage of residual quantization is that coarse codebooks capture structural information while subsequent ones add detail. This allows 8 tokens to achieve reconstruction cosine similarities of 0.89 for video and 0.96 for audio, using a reconstruction loss $\mathcal{L}_{rec} = 1 - \cos(\hat{f}, f)$. The choice of 8 tokens represents a trade-off between reconstruction quality and sequence length.
 
-2. **Unified Token Space**:
+**2. Unified Token Space: Reducing cross-modal reasoning to sequence modeling**
 
-    - Video tokens, audio tokens, and text tokens share an expanded vocabulary.
-    - The multimodal alignment stage is trained with standard NTP loss: $\mathcal{L}_{NTP} = -\sum_t \log P(x_t | x_{<t})$
-    - The LLM backbone is frozen during alignment; only the new embedding layers are updated, ensuring stable training.
-    - **Design Motivation**: A unified token space reduces cross-modal reasoning to a sequence modeling problem.
+Video, audio, and text tokens share an extended vocabulary. To the LLM, they are indistinguishable discrete symbols. The alignment phase is trained using the standard NTP loss:
 
-3. **Unified Modeling of Four Tasks**:
+$$\mathcal{L}_{NTP} = -\sum_t \log P(x_t \mid x_{<t})$$
 
-    - **Clip Selection**: Selecting relevant segments from a candidate pool (CSA metric).
-    - **Clip Ordering**: Arranging segments into a coherent temporal sequence (CRA metric).
-    - **Script Generation**: Generating advertisement copy aligned with visual content (SQ + WCD metrics).
-    - **Background Music Selection**: Retrieving BGM matching the multimodal context (MSS metric).
+Crucially, only the newly introduced multimodal embedding layers are updated during this phase while the LLM backbone is frozen. This ensures that new modality embeddings align with the LLM's existing semantic space without disrupting the pretrained weights. With a unified vocabulary, cross-modal tasks such as "video-to-script" or "scoring" no longer require specialized fusion modules; they become simple auto-regressive generation over a single token sequence.
 
-4. **Retrieval and Rendering**:
+**3. Unified Modeling of Four Tasks: A single model and token sequence for the entire pipeline**
 
-    - Video tokens → FAISS nearest-neighbor search to match clips in the asset library.
-    - Audio tokens → decoded or retrieved.
-    - ffmpeg splicing, transitions, and subtitle overlay → final MP4 output.
+Advertisement editing is decomposed into four sub-tasks that share the same token sequence and model: video selection picks relevant clips from a candidate pool (measured by CSA), video ordering arranges clips into a coherent temporal sequence (CRA), script generation produces aligned text (SQ quality + WCD temporal consistency), and BGM selection retrieves matching background music (MSS). Because all inputs and outputs are tokens from the same vocabulary, the model "sees" the script and music tokens while ordering clips, and "sees" visual tokens while writing the script. The tasks provide mutual context rather than running as independent pipelines.
 
-### Training Data
-- **Alignment Data**: ~700K filtered advertisement videos (high engagement, with voiceover).
-- **SFT Data**: ~100K high-quality curated samples (duration <120s, clips 2–60s, high visual-text relevance assessed by Qwen-VL).
-- Data processing: ASR extraction of aligned timestamps, 1fps frame sampling, pydub audio separation.
+**4. Retrieval and Rendering: Reverting generated tokens to real assets and final video**
+
+LLM-generated video tokens are discrete symbols that cannot be played directly. Therefore, the system returns to the asset library: FAISS performs nearest-neighbor search based on generated video tokens to match actual clips. Audio tokens are decoded or retrieved as real BGM, and text tokens are treated as subtitles or scripts. Finally, ffmpeg concatenates the retrieved clips in the order specified by the LLM, adding transitions and subtitles to output the final MP4. This dual-track approach—using low-frame-rate tokens for LLM reasoning and high-frame-rate frames for retrieval—ensures both efficiency and matching precision.
+
+### Loss & Training
+The alignment phase uses ~700K filtered advertisement videos (preferring high-interaction samples with speech). The SFT phase uses ~100K high-quality planning samples (duration <120s, segments 2-60s, filtered by Qwen-VL for visual-text relevance). Preprocessing involves ASR for timestamp extraction, video sampling at 1fps, and audio separation using pydub. The strategy emphasizes quality over quantity, which explains why an extra pre-training stage was found to be detrimental in ablation studies.
 
 ## Key Experimental Results
 
-### Main Results (364 test videos)
+### Main Results (364 Test Videos)
 
 | Method | CSA↑ | CRA↑ | VSC↑ | SQ↑ | WCD↓ | MSS↑ |
 |------|------|------|------|-----|------|------|
@@ -103,38 +107,38 @@ At inference: The LLM generates a token sequence → video tokens retrieve neare
 |------|------|------|------|-----|------|
 | SFT only | 0.478 | 0.082 | 1.004 | 83.2 | 4.43 |
 | emb+full+sft | **0.717** | 0.058 | 0.967 | 79.0 | 4.50 |
-| **emb+sft (Ours)** | 0.659 | **0.107** | **1.036** | **84.6** | **3.02** |
+| **emb+sft (ours)** | 0.659 | **0.107** | **1.036** | **84.6** | **3.02** |
 
 ### Key Findings
-- AutoCut achieves substantially higher CRA (clip ordering accuracy) than all baselines (0.107 vs. 0.078), demonstrating that tokenized multimodal representations better capture temporal structure.
-- WCD (script–video temporal consistency) of 3.02 far outperforms GPT-4o's 7.75, reflecting the temporal alignment advantage of joint multimodal modeling.
-- In human evaluation, AutoCut outperforms GPT-4o on all 5 dimensions (88% overall win rate).
-- Adding an extra pretraining stage (emb+full+sft) degrades CRA and SQ, indicating that limited-quality pretraining corpora introduce noise.
-- Significant cost advantage: processing 100 videos costs AutoCut ~$0.015 vs. GPT-4o ~$2.5.
+- AutoCut's CRA (Clip Retrieval Accuracy for ordering) significantly leads all baselines (0.107 vs 0.078), suggesting tokenized multimodal representations better capture temporal structures.
+- WCD (Word-Clip Distance) of 3.02 is far superior to GPT-4o's 7.75, demonstrating the advantage of joint multimodal modeling for temporal alignment.
+- Human evaluation shows AutoCut outperforms GPT-4o across all 5 dimensions (88% overall win rate).
+- The additional pre-training phase (emb+full+sft) actually degraded CRA and SQ, indicating that pre-training corpora of limited quality can introduce noise.
+- Significant cost advantage: Processing 100 videos costs AutoCut ~$0.015 versus ~$2.5 for GPT-4o.
 
 ## Highlights & Insights
-- **"Discretization as unification"**: By mapping all modalities into a shared token space via RQVAE, the problem reduces elegantly to next-token prediction.
-- The two-stage training strategy (alignment + SFT) outperforms the three-stage variant (alignment + pretraining + SFT), confirming that data quality matters more than data quantity.
-- The dual-track design—low-frame-rate tokens for reasoning and high-frame-rate frames for retrieval—balances efficiency and precision.
-- The inclusion of BGM selection is a notable contribution, as audio selection has long been neglected in video editing research.
+- **"Discretization is Unification"**: By using RQVAE to unify all modalities into a token space, the problem is simplified to Next-Token Prediction (NTP), which is elegant and concise.
+- **Two-stage training (Alignment + SFT)** is superior to three-stage training, proving that data quality outweighs data quantity.
+- The dual-track design—using low-frame-rate tokens for inference and high-frame-rate frames for retrieval—balances efficiency and accuracy.
+- The inclusion of BGM selection is a highlight, as audio selection is often neglected in video editing research.
 
 ## Limitations & Future Work
-- Fine-grained synchronization between video motion and audio rhythm remains imperfect, with occasional desynchronization.
-- Control granularity is limited to the clip level; frame-level or emotion-level editing is not supported.
-- Although RQVAE achieves high cosine similarity in reconstruction, the effect of information loss may be amplified in downstream tasks.
-- Evaluation relies on GPT-4o as a judge (VSC, SQ metrics), introducing potential assessment bias.
+- Fine-grained synchronization between video actions and audio rhythms is still insufficient (occasional desync).
+- Control granularity is limited to the clip level; it does not support frame-level or emotion-level editing.
+- Although RQVAE reconstruction has high cosine similarity, the impact of information loss may be amplified in downstream tasks.
+- Evaluation relies on GPT-4o as a judge (for VSC and SQ metrics), risking evaluation bias.
 
 ## Related Work & Insights
-- VC-LLM also employs MLLMs for advertisement video generation but relies on multi-resolution spatiotemporal reasoning.
-- MGSV is the only baseline with audio matching capability.
-- Compared to "any-modality" LLMs such as NExT-GPT, AutoCut is more focused on the practical constraints of editing scenarios.
-- The discretization + retrieval paradigm is generalizable to other video creation contexts (short dramas, vlogs, etc.).
+- VC-LLM also uses MLLMs for ad video generation but relies on multi-resolution spatio-temporal reasoning.
+- MGSV is the only baseline with audio matching capabilities.
+- Compared to "any-to-any" LLMs like NExT-GPT, AutoCut focuses specifically on the practical constraints of editing scenarios.
+- The discretization-plus-retrieval approach can be generalized to other video creation scenarios such as short dramas and vlogs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The unified multimodal discretization framework is a novel approach to advertisement editing, though the core components are relatively mature.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Automatic metrics + human evaluation + ablation study, though the test set comprises only 364 videos.
-- Writing Quality: ⭐⭐⭐⭐ The framework is described clearly, but definitions of evaluation metrics are somewhat scattered.
-- Value: ⭐⭐⭐⭐ The work has direct practical value for automated advertisement video production, with a significant cost advantage.
+- Novelty: ⭐⭐⭐⭐ The multimodal discretization unified framework is a new solution for the ad editing domain, though core components are relatively mature.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Automatic metrics + human eval + ablation, though the test set is limited to 364 videos.
+- Writing Quality: ⭐⭐⭐⭐ The framework description is clear, but definitions of evaluation metrics are somewhat scattered.
+- Value: ⭐⭐⭐⭐ Directly practical for automated ad video production with significant cost benefits.
 
 <!-- RELATED:START -->
 
@@ -142,11 +146,11 @@ At inference: The LLM generates a token sequence → video tokens retrieve neare
 
 ## Related Papers
 
-- [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
+- [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
+- [\[CVPR 2026\] MoCha: End-to-End Video Character Replacement without Structural Guidance](mocha_end-to-end_video_character_replacement_without_structural_guidance.md)
+- [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
+- [\[CVPR 2026\] Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](thinking_with_video_video_generation_as_a_promising_multimodal_reasoning_paradig.md)
+- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
 
 </div>
 

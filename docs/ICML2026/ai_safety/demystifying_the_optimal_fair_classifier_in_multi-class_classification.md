@@ -2,135 +2,130 @@
 title: >-
   [Paper Note] Demystifying the Optimal Fair Classifier in Multi-Class Classification
 description: >-
-  [ICML 2026][AI Safety][Fair classification] This paper provides an analytically tractable form (a closed-form solution with entropy regularization) of the Bayes optimal classifier for multi-class fair classification prob…
+  [ICML 2026][AI Safety][In-processing] This paper provides an analytically tractable form (a closed-form solution with entropy regularization) for the Bayes optimal classifier in multi-class fairness problems. Based on this, it derives a unified algorithmic framework called OptFair: during the training phase, it uses reduction to transform the problem into
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Fair classification"
-  - "Multi-class"
-  - "Pareto frontier"
-  - "In-processing"
-  - "Post-processing"
+  - ICML 2026
+  - AI Safety
+  - In-processing
+  - Post-processing
 date: 2026-05-08
-content_hash: 1af336f006c2e940
+content_hash: 3f8d63e2b9f70338
 ---
-
 # Demystifying the Optimal Fair Classifier in Multi-Class Classification
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00656](https://arxiv.org/abs/2606.00656)  
 **Code**: None  
-**Area**: AI Safety / Fairness / Multi-Class Classification  
-**Keywords**: Fair classification, Multi-class, Pareto frontier, In-processing, Post-processing
+**Area**: AI Safety / Fairness / Multi-class Classification  
+**Keywords**: Fair classification, multi-class classification, Pareto frontier, In-processing, Post-processing
 
 ## TL;DR
-This paper provides an analytically tractable form (a closed-form solution with entropy regularization) of the Bayes optimal classifier for multi-class fair classification problems. Based on this, it derives a unified pair of algorithms, OptFair: during the training phase, it uses a reduction to transform the problem into a saddle-point optimization of cost-sensitive cross-entropy; during the deployment phase, it uses plug-in estimation to solve a convex proximal gradient problem. Both are theoretically proven to converge to the accuracy-fairness Pareto frontier.
+This paper provides an analytically tractable form (a closed-form solution with entropy regularization) for the Bayes optimal classifier in multi-class fairness problems. Based on this, it derives a unified algorithmic framework called OptFair: during the training phase, it uses reduction to transform the problem into a saddle-point optimization of cost-sensitive cross-entropy; during the deployment phase, it uses a plug-in estimator to solve a convex proximal gradient problem. Both methods theoretically converge to the accuracy-fairness Pareto frontier.
 
 ## Background & Motivation
 
-**Background**: Group fairness (DP, EOP, EO) has become a standard constraint in high-stakes decision-making (healthcare, credit, judiciary). Existing methods either modify the objective during training (in-processing) or adjust the output after inference (post-processing), but these are typically designed independently.
+**Background**: Group fairness (DP, EOP, EO) has become a standard constraint in high-stakes decision-making (e.g., healthcare, credit, judiciary). Existing methods either modify the objective during training (in-processing) or adjust the output after inference (post-processing), and these are typically designed independently.
 
-**Limitations of Prior Work**: (1) Fairness metrics are inherently **non-decomposable and non-differentiable**; in multi-class settings, the output changes from a scalar to a vector on a simplex, making direct adaptations of binary classification approaches clumsy. (2) In-processing mostly relies on **surrogate metrics** (hinge/Adv loss), leading to uncontrollable surrogate gaps and unstable convergence. (3) Post-processing methods either serve a single fairness criterion or lack an explicit characterization of "what the optimal classifier looks like," leaving the performance upper bound unclear. (4) The entire field of multi-class fair learning **lacks an analytical characterization of the Pareto frontier**, making it impossible to determine whether a drop in performance is due to algorithmic weakness or the problem's inherent nature.
+**Limitations of Prior Work**: (1) Fairness metrics are inherently **non-decomposable and non-differentiable**. In multi-class settings, the output shifts from a scalar to a vector on a simplex, making direct adaptations of binary classification approaches clumsy. (2) In-processing mostly relies on **surrogate metrics** (e.g., hinge or Adv loss), which suffer from uncontrollable surrogate gaps and unstable convergence. (3) Post-processing often serves only a single fairness criterion or lacks an explicit characterization of "what the optimal classifier looks like," leaving the performance upper bound unclear. (4) The multi-class fair learning field **lacks an analytical characterization of the Pareto frontier**, making it impossible to determine whether performance drops are due to algorithmic weakness or the inherent nature of the problem.
 
-**Key Challenge**: To be "universal across multiple fairness criteria and both in/post phases, while approaching optimality," one must first have a **Bayes optimal analytical form that holds for multi-class and various DP/EOP/EO definitions**. Otherwise, various implementations can only perform local approximations blindly.
+**Key Challenge**: To achieve a solution that is "general across multiple fairness criteria, compatible with both in/post stages, and capable of approaching the optimum," one must first establish a **Bayes optimal analytical form valid for multi-class classification and multiple DP/EOP/EO constraints**. Otherwise, various implementations can only perform local approximations in the dark.
 
-**Goal**: Solve this in two steps: first, answer the theoretical question "what is the form of the optimal multi-class fair classifier"; second, provide corresponding in-processing and post-processing algorithms and prove they both converge to the aforementioned optimal solution.
+**Goal**: The paper addresses this in two steps: first, it answers the theoretical question of what the form of the optimal multi-class fair classifier is; then, it provides corresponding in-processing and post-processing algorithms, proving that both converge to the aforementioned optimal solution.
 
-**Key Insight**: Express DP/EOP/EO as **linear constraints of the group-specific confusion matrix $C^a$**: $|\sum_a \langle D^{a,k}, C^a(h) \rangle| \le \xi$. Then, use a Lagrangian to incorporate constraints into the objective. To address analytical intractability, borrow insights from entropic OT to add **entropy regularization** $E(h) = -\mathbb{E}_X [\sum_i h_i \log h_i]$, convexifying the argmax into a softmax to obtain a closed-form expression.
+**Key Insight**: DP, EOP, and EO are all formulated as **linear constraints on group-specific confusion matrices $C^a$**, expressed as $|\sum_a \langle D^{a,k}, C^a(h) \rangle| \le \xi$. The constraints are then incorporated into the objective using a Lagrangian. To address analytical intractability, the authors draw inspiration from entropic Optimal Transport (OT) and introduce **entropy regularization** $E(h) = -\mathbb{E}_X [\sum_i h_i \log h_i]$, convexifying the argmax into a softmax to obtain a closed-form solution.
 
-**Core Idea**: Use the entropy-regularized Lagrangian saddle-point formulation to provide a softmax closed-from solution for the multi-class fair optimal classifier, $h^{\lambda^*}_i(x) \propto \exp(\beta^{\lambda^*}_i(x)/\tau)$. Further reduce "training fitting" and "inference calibration" to cost-sensitive classification and convex proximal optimization, respectively, unifying them under the OptFair framework.
+**Core Idea**: A closed-form softmax solution $h^{\lambda^*}_i(x) \propto \exp(\beta^{\lambda^*}_i(x)/\tau)$ for the optimal multi-class fair classifier is derived using the entropy-regularized Lagrangian saddle-point formulation. "Training fitting" and "inference calibration" are reduced to cost-sensitive classification and convex proximal optimization, respectively, unified under the OptFair framework.
 
 ## Method
 
 ### Overall Architecture
 
-The entire pipeline revolves around a **unified Lagrangian saddle-point problem**:
+The paper tackles the dual theoretical and algorithmic problem of how to find and approximate the accuracy-fairness optimal classifier in multi-class settings. The approach involves writing the original constrained optimization $\min_h R(h)$ s.t. $|D_k(h)| \le \xi$ as a unified Lagrangian saddle point $L(h, \lambda) = R(h) + \lambda^\top D(h) - \xi \|\lambda\|_1$. It first analytically characterizes the appearance of the optimal classifier and then pursues two paths—training (in-processing) and deployment (post-processing)—to approximate it, proving both converge to the same Pareto frontier. The input is a finite sample $(X, A, Y)$ and a fairness threshold $\xi$, and the output is an attribute-blind randomized classifier $h: \mathcal{X} \to \Delta_m$.
 
-The input consists of finite samples $(X, A, Y)$ and a fairness threshold $\xi$; the output is an attribute-blind randomized classifier $h: \mathcal{X} \to \Delta_m$.
-
-Step 1 (Theoretical Characterization): Formulate the original problem $\min_h R(h)$ s.t. $|D_k(h)| \le \xi$ as a Lagrangian $L(h, \lambda) = R(h) + \lambda^\top D(h) - \xi \|\lambda\|_1$, and prove strong duality holds. Theorem 4.2 shows that the optimal solution without entropy regularization takes the form $h^*(x) \in \mathrm{conv}\{e_y : y \in \arg\max_j \beta^{\lambda^*}_j(x)\}$, where $\beta^{\lambda}(x) = \sum_a p_a(x)\, M(a,\lambda)^\top \eta(x,a)$ and $M(a,\lambda) = I - \frac{1}{\omega_a}\sum_k \lambda_k D^{a,k}$.
-
-Step 2 (Analytical Formulation): Direct dual optimization on $\arg\max$ is non-differentiable, so entropy regularization $-\tau E(h)$ is added to the primal objective. Theorem 4.3 provides the closed-form softmax solution $h^{\lambda^*}_i(x) = \exp(\beta^{\lambda^*}_i(x)/\tau) / \sum_j \exp(\beta^{\lambda^*}_j(x)/\tau)$. The dual objective becomes $\min_\lambda \tau \mathbb{E}_X [\log \sum_j \exp(\beta^\lambda_j(X)/\tau)] + \xi\|\lambda\|_1$, which is a convex-smooth + L1 problem solvable by standard proximal methods.
-
-Step 3 (Implementation): Since $\eta, p_a$ are unknown during training, reduction-based in-processing is used (Algorithm 1). During deployment, with pre-trained scores $\hat\eta$ available, plug-in estimation is used for post-processing (Algorithm 2). Both paths theoretically converge to the same Pareto frontier.
+```mermaid
+graph TD
+    A["Input: Finite samples (X,A,Y) + fairness threshold ξ"] --> B["Unified Linear Constraints + Entropy Regularization<br/>DP/EOP/EO written as confusion matrix linear constraints,<br/>Lagrangian saddle point + entropy regularization → softmax closed-form h^λ"]
+    B --> C["In-processing<br/>Cost-sensitive cross-entropy saddle point, primal-dual training fitting"]
+    B --> D["Post-processing<br/>Plug-in estimation of η, q_a + convex proximal, calibrating pre-trained models"]
+    C --> E["Convergence to the same accuracy-fairness Pareto frontier"]
+    D --> E
+```
 
 ### Key Designs
 
-1.  **Unified Characterization of Multi-class Fairness + Entropy-Regularized Closed-Form Bayes Optimal Classifier**:
-    - **Function**: Unifies fairness criteria like DP/EOP/EO into linear constraints $|\sum_a \langle D^{a,k}, C^a(h)\rangle| \le \xi$ on group-specific confusion matrices $C^a$. It then uses entropy regularization to convexify the argmax-based optimal solution into a softmax, making it **analytically tractable**.
-    - **Mechanism**: In the decision vector $\beta^\lambda(x) = \sum_a p_a(x)\, M(a,\lambda)^\top \eta(x,a)$, $M(a,\lambda)$ represents "how each ground truth-prediction pair should be reweighted for group $a$ to satisfy fairness constraints." The softmax temperature $\tau$ controls stochasticity; $\tau \to 0$ recovers the hard $\arg\max$ (Theorem 4.2), while a moderate $\tau$ ensures near-determinism during inference and smooth gradients during training.
-    - **Design Motivation**: (1) Linear constraints allow multiple criteria to share a single theory. (2) Entropy regularization bypasses the non-differentiability of $\arg\max$ and makes $\hat H(\lambda) = \hat f(\lambda) + \xi\|\lambda\|_1$ naturally convex + L1, facilitating proximal gradient solving. (3) The form reduces to classical threshold rules in the binary case (Menon & Williamson 2018), ensuring theoretical consistency.
+**1. Unified Linear Constraints + Entropy Regularization: Convexifying the $\arg\max$ optimal solution into a softmax closed-form**
 
-2.  **In-processing: Reducing Fair Training to a Cost-Sensitive Cross-Entropy Saddle-Point**:
-    - **Function**: Reduces the "$\min_h L(h,\lambda)$" step into a **classification problem with an explicit calibrated loss** when $\eta, p_a$ are unknown, enabling direct training with SGD.
-    - **Mechanism**: Defines a cost-sensitive loss $\ell_{\mathrm{cal}}(y, f(x;\theta), a, \lambda) = -\sum_i [M'(a,\lambda)]_{y,i}\, \log \mathrm{softmax}_i(f(x;\theta))$, where $M'(a,\lambda) = M(a,\lambda) + \kappa \mathbf{1}_{m\times m}$, with a constant term ensuring strictly positive entries. Theorem 5.1 proves that $h^*(x;f)$ from $\arg\min_f \mathbb{E}[\ell_{\mathrm{cal}}]$ is equivalent to the optimal $h^*(x;\beta^\lambda)$, meaning the loss is calibrated for the inner min. Algorithm 1 uses standard primal-dual: $R$ steps of $\theta$ gradients per round, followed by a proximal $\lambda$ update $\lambda_{t+1} = \mathrm{prox}_{\eta_\lambda(\xi\|\cdot\|_1 + I_{\Lambda})}(\lambda_t + \eta_\lambda D(h_{t+1}))$.
-    - **Design Motivation**: Previous in-processing methods used surrogate objectives with uncontrollable gaps. This method provides a **calibrated loss for the original saddle problem**. Combined with mixed Nash convergence analysis (Theorem 5.2), the strategy $(\bar h_T, \bar \lambda_T)$ converges to an approximate equilibrium as $T \to \infty$. Theorem 5.3 further provides a generalization bound of $O(\gamma_d(N, m^2/\delta))$, quantifying the distance to the Pareto frontier relative to training and data scale.
+The most difficult aspect of multi-class fairness is that metrics are non-decomposable and non-differentiable, and outputs are vectors on a simplex. This paper first unifies criteria like DP, EOP, and EO as linear constraints on group-specific confusion matrices $C^a$: $|\sum_a \langle D^{a,k}, C^a(h)\rangle| \le \xi$. This allows multi-class and multi-criterion problems to share a single theory. After dualization, Theorem 4.2 provides the optimal solution without regularization: $h^*(x) \in \mathrm{conv}\{e_y : y \in \arg\max_j \beta^{\lambda^*}_j(x)\}$, where the decision vector is $\beta^{\lambda}(x) = \sum_a p_a(x)\, M(a,\lambda)^\top \eta(x,a)$. Here, the reweighting matrix $M(a,\lambda) = I - \frac{1}{\omega_a}\sum_k \lambda_k D^{a,k}$ indicates how each true-prediction pair should be weighted to satisfy fairness constraints if a sample belongs to group $a$.
 
-3.  **Post-processing: Solving the Convex Proximal Problem via Plug-in Estimation**:
-    - **Function**: Outputs a fairness-calibrated probabilistic classifier given any pre-trained model $\hat\eta$ and an auxiliary model $\hat q_a(x) \approx P(A|X, Y)$ without retraining.
-    - **Mechanism**: Substitute the sample estimate $\hat\beta^\lambda(x) = [\sum_a \mathrm{Diag}(\hat q_a(x))\, \hat M(a, \lambda)]^\top \hat\eta(x)$ into the closed-form softmax (Eq. 15). The optimal $\hat\lambda^*$ is obtained by solving the empirical dual $\hat H(\lambda) = \hat f(\lambda) + \xi\|\lambda\|_1$. Proposition 5.5 proves $\hat f(\lambda)$ is **convex and L-smooth**, allowing Algorithm 2 to converge quickly via proximal gradient descent.
-    - **Design Motivation**: Traditional post-processing is often attribute-aware (requiring sensitive attributes at inference) or only valid for a single criterion. The auxiliary model $\hat q_a$ decouples the "attribute-blind" requirement, while the convex + L1 structure guarantees global optimality. Theorem 5.6 decomposes error into three terms: $\epsilon_1$ (auxiliary model bias), $\epsilon_2$ (finite samples), and $\epsilon_3$ (frequency estimation bias), proving a worst-case bound of order $O(\sqrt\epsilon)$ with a tuned $\tau$.
+Since this solution contains an $\arg\max$, the dual optimization is non-differentiable. Borrowing from entropic OT, entropy regularization $-\tau E(h)$ is added to the primal problem, convexifying $\arg\max$ into softmax. Theorem 4.3 provides the closed-form solution $h^{\lambda^*}_i(x) = \exp(\beta^{\lambda^*}_i(x)/\tau) / \sum_j \exp(\beta^{\lambda^*}_j(x)/\tau)$. The dual objective then becomes a convex smooth + L1 structure: $\min_\lambda \tau \mathbb{E}_X [\log \sum_j \exp(\beta^\lambda_j(X)/\tau)] + \xi\|\lambda\|_1$, solvable via standard proximal methods. The temperature $\tau$ controls stochasticity: as $\tau \to 0$, it reverts to a hard $\arg\max$ (consistent with Theorem 4.2), while a moderate $\tau$ ensures near-deterministic inference and smooth training gradients.
+
+**2. In-processing: Reducing fair training to a cost-sensitive cross-entropy saddle-point problem**
+
+During training, $\eta$ and $p_a$ are unknown, so the step "minimize $L(h,\lambda)$" must be reduced to a differentiable classification problem with an explicit calibrated loss for SGD. The paper defines a cost-sensitive loss $\ell_{\mathrm{cal}}(y, f(x;\theta), a, \lambda) = -\sum_i [M'(a,\lambda)]_{y,i}\, \log \mathrm{softmax}_i(f(x;\theta))$, where $M'(a,\lambda) = M(a,\lambda) + \kappa \mathbf{1}_{m\times m}$ includes a constant term to ensure strictly positive entries, making it a valid cost matrix. Theorem 5.1 proves that $h^*(x;f)$ induced by $\arg\min_f \mathbb{E}[\ell_{\mathrm{cal}}]$ is equivalent to the optimal $h^*(x;\beta^\lambda)$, meaning the loss is calibrated for the inner minimization. This addresses the limitation of prior in-processing methods using hinge/adversary surrogates with uncontrollable gaps. Algorithm 1 uses standard primal-dual: $R$ steps of $\theta$ gradients followed by one proximal update for $\lambda$: $\lambda_{t+1} = \mathrm{prox}_{\eta_\lambda(\xi\|\cdot\|_1 + I_{\Lambda})}(\lambda_t + \eta_\lambda D(h_{t+1}))$. Convergence is guaranteed by mixed Nash analysis (Theorem 5.2).
+
+**3. Post-processing: Plug-in estimation + convex proximal for calibrating any pre-trained model**
+
+During deployment, pre-trained scores $\hat\eta$ are available, and the goal is to output a fairly calibrated probabilistic classifier without retraining. The paper trains an auxiliary model $\hat q_a(x) \approx P(A|X, Y)$ and substitutes the sample estimate $\hat\beta^\lambda(x) = [\sum_a \mathrm{Diag}(\hat q_a(x))\, \hat M(a, \lambda)]^\top \hat\eta(x)$ back into the closed-form softmax. The optimal $\hat\lambda^*$ is obtained by solving the empirical dual $\hat H(\lambda) = \hat f(\lambda) + \xi\|\lambda\|_1$. A key benefit is that $\hat q_a$ decouples "attribute-blindness"—traditional post-processing often requires sensitive attributes at inference or only serves a single criterion, whereas this approach does not require true attributes at inference. Proposition 5.5 proves $\hat f(\lambda)$ is convex and L-smooth, so Algorithm 2 converges quickly to the global optimum using proximal gradient descent.
 
 ### Loss & Training
 
-In-processing uses $\ell_{\mathrm{cal}}$ (cost-sensitive cross-entropy) + primal-dual optimization: the inner loop learns $\theta$ with $\eta_\theta$, while the outer loop updates $\lambda$ with $\eta_\lambda = B_\Lambda / (u\sqrt{KT})$ using a prox move to satisfy $\|\lambda\|_1 \le B_\Lambda$. Post-processing solves $\hat H(\lambda)$ via proximal gradient. For a deterministic classifier: in-processing runs $\ell_{\mathrm{cal}}$ to convergence with fixed $\bar\lambda$; post-processing uses $\arg\max h(x)$ directly. A small temperature $\tau$ makes the softmax output nearly one-hot.
+In-processing uses $\ell_{\mathrm{cal}}$ (cost-sensitive cross-entropy) + primal-dual optimization. The inner loop updates $\theta$ with step $\eta_\theta$, and the outer loop updates $\lambda$ with $\eta_\lambda = B_\Lambda / (u\sqrt{KT})$ using a prox operator to satisfy $\|\lambda\|_1 \le B_\Lambda$. Post-processing uses proximal gradient to solve $\hat H(\lambda)$. For a deterministic classifier, one can either rerun $\ell_{\mathrm{cal}}$ until convergence with a fixed $\bar\lambda$ (in-processing) or simply take $\arg\max h(x)$ (post-processing). A low temperature $\tau$ ensures the softmax output is nearly one-hot.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on four standard fairness benchmarks (Adult / ENEM / ACSIncome / CelebA, where the latter three are multi-class with $\ge 4$ classes), scanning $\xi$ under DP and EO to plot accuracy-fairness Pareto curves (closer to top-left is better).
+Evaluations on four standard fairness benchmarks (Adult / ENEM / ACSIncome / CelebA; the latter three are multi-class with $\ge 4$ classes) were conducted, scanning $\xi$ for DP and EO criteria to plot accuracy-fairness Pareto curves.
 
-| Stage | Dataset / Criterion | OptFair Performance | Main Baselines |
-| :--- | :--- | :--- | :--- |
-| In-proc | ENEM / DP | Pareto frontier clearly shifted outward; DP ~30% lower than next-best at same accuracy | ERM / AdvDebias / Weight-ERM / FairBatch / F-divergence |
-| In-proc | ACSIncome / EO | Significantly higher accuracy (~0.47) than baselines (~0.42–0.44) at EO ≈ 0.1 | Same as above |
-| Post-proc | CelebA / DP | Accuracy ~0.74–0.76 at same DP, better than FairProjection, LinearPost, FRAPPÉ | Same as above |
-| Post-proc | Adult / EO | Stays consistently on the outer edge of the frontier across trade-off regions | Same as above |
+| Phase | Dataset / Criterion | OptFair Performance | Primary Baselines |
+|-------|----------------------|---------------------|-------------------|
+| In-proc | ENEM / DP | Pareto frontier shifted significantly; DP ~30% lower than sub-optimal at same accuracy | ERM / AdvDebias / Weight-ERM / FairBatch / F-divergence |
+| In-proc | ACSIncome / EO | Accuracy ~0.47 at EO ≈ 0.1, significantly higher than baselines (~0.42–0.44) | Same as above |
+| Post-proc | CelebA / DP | Accuracy ~0.74–0.76 at same DP; outperforms FairProjection, LinearPost, FRAPPÉ | Same as above |
+| Post-proc | Adult / EO | Stable on the outer edge of the frontier across trade-off intervals | Same as above |
 
-Qualitative Conclusion: (1) In-processing advantages are more pronounced as it directly approaches the theoretical Pareto frontier; (2) In Adult/EO, fairness constraints actually **improve** accuracy by reducing inherent bias.
+Qualitative conclusions: (1) In-processing shows a more pronounced advantage as it directly approximates the theoretical Pareto frontier. (2) On Adult/EO, fairness constraints actually **improved** accuracy, likely by reducing inherent bias.
 
 ### Ablation Study
 
-On ENEM/ACSIncome, in-processing was trained to a fairness threshold, followed by post-processing (In-Post-1 / In-Post-2 with different thresholds) and compared to single-stage versions:
+On ENEM/ACSIncome, in-processing was trained to a certain fairness threshold and then followed by post-processing (In-Post-1 / In-Post-2 with different thresholds):
 
 | Configuration | Description | Result |
-| :--- | :--- | :--- |
+|---------------|-------------|--------|
 | OptFair-in (only) | In-processing only | Upper bound, closest to Pareto frontier |
-| OptFair-post (only) | Post-processing only | Close to in-only, slightly lower |
-| In-Post-1 / In-Post-2 | In-processing to threshold then Post-calibration | Falls between the two; **no additive gain** |
+| OptFair-post (only) | Post-processing only | Close to in-only, slightly inferior |
+| In-Post-1 / In-Post-2 | In-proc training followed by post-proc calibration | Falls between the two; **no additive gain** |
 
 ### Key Findings
 
-- In + Post are not additive: In-processing debiases at the representation layer, while post-processing modifies the output distribution. They act on **different domains**, and serializing them typically does not yield further improvements, merely interpolating between the two curves.
-- In scenarios like Adult/EO, adding fairness constraints **actually improves accuracy**, suggesting ERM learns suboptimal boundaries due to data bias; fairness constraints act as a form of regularization.
-- A smaller entropy regularization temperature $\tau$ results in more deterministic outputs and higher accuracy upper bounds but less stable gradients. Theorem 5.6 provides the optimal order for $\tau$ to balance the $\tau \log m$ and $1/\tau$ terms.
+- **Non-additivity of In + Post**: In-processing debiases at the representation level, while post-processing modifies the output distribution. Since they operate on different scopes, cascading them usually does not yield further improvements but rather interpolates the two curves.
+- In scenarios like Adult/EO, adding fairness constraints **increases accuracy**, suggesting that data bias causes ERM to learn sub-optimal decision boundaries; fairness constraints act as a regularizer.
+- A smaller entropy regularization temperature $\tau$ results in outputs closer to deterministic and higher accuracy ceilings, but at the cost of less stable gradients. Theorem 5.6 provides the optimal order for $\tau$ to balance the $\tau \log m$ and $1/\tau$ terms.
 
 ## Highlights & Insights
 
-- **Dual Role of Entropy Regularization + Lagrangian**: This approach transforms the "optimal fair classifier" from a convex hull containing $\arg\max$ into a closed-form softmax (analytical) and makes the dual problem convex + L-smooth + L1 (optimizable). This framework can be migrated to any discrete output problem with linear constraints and non-differentiable decisions (e.g., ranking or segmentation fairness).
-- **Unified $\beta^\lambda, M(a,\lambda)$ for both In/Post**: This means in deployment, one can use in-processing for a warm-start $\bar\lambda$ during training and then use post-processing for fine-tuning. This is engineering-elegant even if accuracy isn't strictly additive.
-- **Cost-Sensitive Loss**: Transforming fairness constraints into calibrated cross-entropy offers a cleaner paradigm for in-processing than surrogate-based losses. The dual variable $\lambda$ naturally provides cost weights for $(a, y, \hat y)$, which is more intuitive than manual reweighting.
+- **Dual Role of Entropy Regularization + Lagrangian**: This allows the "optimal fair classifier" to transition from a convex hull containing an $\arg\max$ to a closed-form softmax (analytical), and transforms the dual problem into a convex + L-smooth + L1 problem (convex optimization). This logic can be migrated to any discrete output problem involving linear constraints and non-differentiable decisions (e.g., ranking or segmentation fairness).
+- **Unification via $\beta^\lambda$ and $M(a,\lambda)$**: Both in-processing and post-processing algorithms are linked by the same components. This means an in-processing warm-start $\bar\lambda$ can be used during training, followed by post-processing fine-tuning during deployment, which is architecturally elegant.
+- **Cost-Sensitive Loss**: Converting fairness constraints into a calibrated cross-entropy provides a cleaner paradigm for the in-processing community than surrogate-based losses. The dual variable $\lambda$ naturally provides cost weights for each $(a, y, \hat y)$ triplet.
 
 ## Limitations & Future Work
 
-- **Dependence on auxiliary model $\hat q_a$**: The post-processing upper bound depends on the quality of $\hat q_a$. Theorem 5.6's $\epsilon_1$ includes $\|q_a - \hat q_a\|_1$; when groups are imbalanced or attributes are hard to predict, the worst-case bound is dominated by this term. This was not specifically stress-tested.
-- **Joint In + Post Ablation on Image Data**: The authors admit sensitive attributes are hard to feed into image data directly, so ablation was limited to tabular data. CelebA could have been used for this, but the paper avoided it.
-- **Automation of Temperature $\tau$**: In experiments, $\tau$ was chosen empirically without a cross-validation process or analysis of whether the optimal $\tau$ differs across fairness criteria.
-- **Practical Controllability for Multiple Criteria $K \ge 2$**: While theory supports $K$ simultaneous linear constraints, experiments only demonstrate single-criterion trade-offs. The Pareto surface under DP+EO constraints remains unexplored.
+- **Quality of the auxiliary model $\hat q_a$**: The performance of post-processing is limited by the error in $\hat q_a$. Theorem 5.6's $\epsilon_1$ term includes $\|q_a - \hat q_a\|_1$. When groups are imbalanced or attributes are hard to predict, this term dominates the worst-case bound.
+- **Missing In + Post joint ablation on vision data**: The authors note that sensitive attributes are difficult to feed directly into image data; thus, ablation was only performed on tabular data.
+- **Lack of automated temperature $\tau$ selection**: In experiments, $\tau$ was chosen empirically. There is no cross-validation procedure or analysis on whether the optimal $\tau$ varies across different fairness criteria.
+- **Practical controllability with joint multiple criteria ($K \ge 2$)**: While theory supports multiple simultaneous constraints, experiments only demonstrate single-criterion trade-offs. The nature of the Pareto surface under simultaneous DP and EO constraints remains unexplored.
 
 ## Related Work & Insights
 
-- **vs Agarwal et al. 2018 (Reductions for binary fairness)**: This is the multi-class version. The inner loop calibrated loss evolved from 0/1 importance-weighted to a **cost-sensitive softmax form** (Theorem 5.1), with entropy regularization added to ensure dual solvability.
-- **vs Xian & Zhao 2024 / Denis et al. 2024 (Multi-class post-processing)**: Those assume **continuous** output distributions and are mostly attribute-aware. This paper uses entropic relaxation to remove the continuity assumption and achieves attribute-blind inference via $\hat q_a$.
-- **vs FairProjection (Alghamdi et al. 2022) / LinearPost / FRAPPÉ**: These are either single-criterion or lack a characterization of the optimal classifier. OptFair-post expresses the "optimal solution" as a closed-form softmax, making the objective "approaching optimality" rather than "heuristic calibration."
-- **Insight**: Using "linear-constrained Bayes optimal + entropic relaxation" as a general template can be applied to other scenarios like ranking fairness or retrieval fairness. The calibrated cost-sensitive loss could also replace reward shaping in LLM alignment.
+- **vs. Agarwal et al. 2018 (Reductions for binary fairness)**: This work is the multi-class extension. However, the inner loop's calibrated loss evolves from 0/1 importance-weighting to a **cost-sensitive softmax form** (Theorem 5.1), with entropy regularization added to ensure solvability.
+- **vs. Xian & Zhao 2024 / Denis et al. 2024 (Multi-class post-processing)**: These assume continuous output distributions and are mostly attribute-aware. This paper uses entropic relaxation to remove the continuity assumption and achieves attribute-blind inference via the auxiliary model $\hat q_a$.
+- **vs. FairProjection / LinearPost / FRAPPÉ**: These either target specific criteria or lack a characterization of the "optimal classifier." OptFair-post writes the optimal solution as a closed-form softmax, making its optimization goal "approaching the optimum" rather than "heuristic calibration."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Fills a theoretical gap by introducing entropy regularization (OT-style) to multi-class Bayes optimal fair characterizations and unifying in/post stages.
-- Experimental Thoroughness: ⭐⭐⭐ Comprehensive datasets and baselines, but lacks joint multi-criteria experiments and avoids joint ablation on image data.
-- Writing Quality: ⭐⭐⭐⭐ Clear Theorem-Algorithm-Experiment alignment; consistent notation; self-contained Appendix.
-- Value: ⭐⭐⭐⭐ The fair ML community can directly reuse this calibrated loss and plug-in framework; very deployment-friendly.
+- **Novelty**: ⭐⭐⭐⭐ Introducing entropic regularization (OT-style) to characterize the multi-class fair Bayes optimum and unifying in/post stages fills a significant theoretical gap.
+- **Experimental Thoroughness**: ⭐⭐⭐ Dataset and baseline selection are complete, but it lacks joint multi-criterion experiments and joint ablation on image data.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear correspondence between Theorems, Algorithms, and Experiments; consistent notation.
+- **Value**: ⭐⭐⭐⭐ The fairness ML community can directly reuse this calibrated loss and plug-in framework.
 
 <!-- RELATED:START -->
 
@@ -140,9 +135,9 @@ On ENEM/ACSIncome, in-processing was trained to a fairness threshold, followed b
 
 - [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
 - [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](../../CVPR2026/ai_safety/your_classifier_can_do_more_towards_balancing_the.md)
-- [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](../../NeurIPS2025/ai_safety/multi-class_support_vector_machine_with_differential_privacy.md)
 - [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
-- [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](optimal_transport_under_group_fairness_constraints.md)
+- [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
+- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
 
 </div>
 

@@ -150,11 +150,11 @@ The idea of exploiting historical information (via $g_{k-1}$) within the regular
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)
 - [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/physics/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
 - [\[ICML 2026\] Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization](../../ICML2026/physics/unveiling_multi-regime_patterns_in_sciml_distinct_failure_modes_and_regime-speci.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 - [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
-- [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
 
 </div>
 

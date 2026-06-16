@@ -2,135 +2,137 @@
 title: >-
   [Paper Note] ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 description: >-
-  [CVPR 2026][LLM Safety][Machine Unlearning] This work identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer phenome…
+  [CVPR 2026][LLM Safety][Paper Note] This paper identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer). It proposes the SCADA-UL framework, which concurrently performs class unlearning during domain adaptation by adversarially generating forgotten samp
 tags:
-  - "CVPR 2026"
-  - "LLM Safety"
-  - "Machine Unlearning"
-  - "Source Domain Privacy Leakage"
-  - "Source-Free Domain Adaptation"
-  - "Adversarial Optimization"
-  - "Zero-Shot Transfer"
+  - CVPR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 925ce3efafeef799
+content_hash: 97b9ece3aad94779
 ---
-
 # ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.08238](https://arxiv.org/abs/2604.08238)  
 **Code**: [https://github.com/D-Arnav/SCADA](https://github.com/D-Arnav/SCADA)  
-**Area**: Machine Unlearning / Domain Adaptation / Privacy Preservation
-**Keywords**: Machine Unlearning, Source Domain Privacy Leakage, Source-Free Domain Adaptation, Adversarial Optimization, Zero-Shot Transfer
+**Area**: Machine Unlearning / Domain Adaptation / Privacy  
+**Keywords**: Machine Unlearning, Source Privacy Leakage, Source-Free Domain Adaptation (SFDA), Adversarial Optimization, Zero-Shot Transfer
 
 ## TL;DR
 
-This work identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer phenomenon), and proposes the SCADA-UL framework, which performs category unlearning simultaneously with domain adaptation through adversarial generation of forget samples and a rescaled labeling strategy, achieving unlearning quality approaching that of retraining from scratch.
+This paper identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer). It proposes the SCADA-UL framework, which concurrently performs class unlearning during domain adaptation by adversarially generating forgotten samples and employing a rescaled labeling strategy, achieving unlearning performance comparable to training from scratch.
 
 ## Background & Motivation
 
-**Background**: Visual models are increasingly deployed across domains (e.g., from natural images to satellite imagery or medical scans), with domain adaptation being a key enabler. Source-Free Domain Adaptation (SFDA) is particularly appealing in privacy-sensitive scenarios, as it requires no access to source domain data—only the pretrained source model is exposed to the target domain, while the source data itself remains protected.
+**Background**: Vision models are increasingly applied across domains (e.g., from natural images to satellite imagery or medical scans). Domain adaptation is a key support for this process. Source-Free Domain Adaptation (SFDA) is particularly popular in privacy-sensitive scenarios because it does not require access to source domain data; only the pre-trained source model is exposed to the target domain.
 
-**Limitations of Prior Work**: Although the source data is protected, the source model still encodes source domain knowledge. Through empirical investigation, the authors uncover an alarming phenomenon: existing SFDA methods exhibit strong zero-shot classification capability on **source-exclusive classes** (classes present only in the source domain but absent from the target domain) after adaptation. This means that even without any target-domain samples from these categories, the adapted model still "remembers" them—source domain private information leaks into the target domain through the model.
+**Limitations of Prior Work**: Although the source data itself is protected, the source model still encodes knowledge of the source domain. The authors discovered an alarming phenomenon through experiments: existing SFDA methods exhibit strong zero-shot classification capabilities on **source-exclusive classes** (classes that exist only in the source domain and not the target domain). This implies that even if the target domain contains no samples of these classes, the model still "remembers" them after SFDA, leading to the leakage of source domain private information through the model.
 
-**Key Challenge**: The original intent of SFDA is to protect source domain privacy, yet the model itself becomes the carrier of privacy leakage. Existing Machine Unlearning (MU) methods were not designed to handle distribution shift (domain shift) and therefore cannot be directly applied to the SFDA setting—unlearning operations degrade or fail under domain shift, harming normal target-domain performance.
+**Key Challenge**: The original intent of SFDA is to protect source privacy, yet the model itself becomes a carrier for privacy leakage. Existing Machine Unlearning (MU) methods are not designed for domain shift, making them ineffective or detrimental to target domain performance when applied directly to SFDA scenarios.
 
-**Goal**: (1) Formally define the source category unlearning problem in SFDA (SCADA-UL); (2) Design a method that performs unlearning concurrently with domain adaptation; (3) Extend the framework to a continual unlearning variant and a variant where the forget categories are unknown.
+**Goal**: (1) Formally define the Source Class Unlearning problem in SFDA (SCADA-UL); (2) Design a method to perform unlearning synchronously during domain adaptation; (3) Extend to continual unlearning versions and variants where forgotten classes are unknown.
 
-**Key Insight**: The authors observe that the zero-shot capability of SFDA-adapted models on source-exclusive classes stems from discriminative features encoded in the source model weights. If synthetic samples for the forget categories can be generated during adaptation, the model can be actively made to "forget" the corresponding knowledge without accessing any real source data.
+**Key Insight**: The authors observe that the zero-shot capability of the post-SFDA model regarding source-exclusive classes stems from the discriminative features encoded in the source model weights. By generating synthetic samples of "forgotten classes" during adaptation and actively inducing the model to "forget" the corresponding knowledge, unlearning can be achieved without accessing real source data.
 
-**Core Idea**: Adversarial optimization is used to generate samples for the forget categories, combined with a rescaled labeling strategy, so that domain adaptation and category unlearning are performed jointly throughout the SFDA process.
+**Core Idea**: Generate samples of forgotten classes via adversarial optimization and use a rescaled labeling strategy to concurrently complete domain adaptation and class unlearning within the SFDA process.
 
 ## Method
 
 ### Overall Architecture
 
-The SCADA-UL pipeline takes as input a source-pretrained classification model, unlabeled target-domain data, and a specification of the categories to be forgotten (or, in the variant setting, the forget categories are unknown). The framework jointly performs domain adaptation on the target domain via three coordinated mechanisms: (1) an adversarial sample generator synthesizes proxy samples for the forget categories in feature space; (2) a rescaled labeling strategy redistributes predicted probability mass from forget categories to retained categories, guiding the model to lose discriminative ability on the specified categories; (3) an adversarial optimization objective balances maximizing the unlearning effect against minimizing degradation on retained categories. The resulting model both adapts to the target domain and successfully forgets source-exclusive category knowledge.
+SCADA-UL operates under a challenging setting: only the source pre-trained classification model and unlabeled target domain data are available. The goal is to erase the memory of "source-exclusive classes" while adapting the model to the target domain. The difficulty lies in the fact that the forgotten objects (source-exclusive classes) have no samples in the target domain, making it impossible to train with a real forgotten set as in conventional unlearning.
+
+The methodology follows a clear logic: since real samples are unavailable, **proxy samples of forgotten classes are inversely generated using the discriminative information encoded in the source model** (Adversarial Forgotten Sample Generation). These proxy samples are then assigned **soft labels where the forgotten class probability is set to zero and the remaining mass is redistributed to retained classes** (Rescaled Labeling Strategy), ensuring stable and targeted unlearning gradients. Finally, the conflicting goals of "adapting to the target domain" and "forgetting source classes" are integrated into a **minimax adversarial framework** for alternating optimization. Starting from $w^T\leftarrow w^S$, the proxy samples are re-optimized each round to keep pace with the model, resulting in an adapted model that classifies target data correctly while remaining "amnesic" toward source-exclusive classes.
+
+```mermaid
+graph TD
+    S["Source Model wS<br/>(Weights only, no source data)"] --> INIT["Initialize wT ← wS"]
+    N["Random Noise"] --> G["Adversarial Forgotten Sample Generation<br/>min L_ADV: Optimize noise into<br/>proxy samples maximizing forgotten classes"]
+    INIT --> G
+    G --> L["Rescaled Labeling Strategy<br/>Calculate soft labels from wT: Set forgotten class to 0,<br/>redistribute probability to retained classes"]
+    L --> OPT["Adversarial Minimax Optimization<br/>φ = L_SFDA (Adaptation) + α·L_MU (Unlearning)"]
+    DT["Unlabeled Target Data DT"] --> OPT
+    OPT -->|Re-optimize proxy samples per round| G
+    OPT --> OUT["Unlearned Adapted Model wT_u<br/>Normal target classification, amnesic to forgotten classes"]
+```
 
 ### Key Designs
 
-1. **Adversarial Forget Sample Generation**:
+**1. Adversarial Forgotten Sample Generation: Extracting Knowledge from the Model Without Source Data**
 
-    - *Function*: Synthesizes proxy samples for the forget categories to be used in unlearning training, without access to real source data.
-    - *Mechanism*: Class prototype information encoded in the source model is leveraged to generate samples via gradient ascent in input space, maximizing activation of the forget-category classification head. Concretely, a random noise image $x_{\text{syn}}$ is initialized and optimized via $\max_{x_{\text{syn}}} p(y_{\text{forget}} | x_{\text{syn}}; \theta)$ to produce synthetic samples for the forget categories. Although these samples are not visually realistic, they occupy the decision regions of the forget categories in feature space, which is sufficient to guide the unlearning process.
-    - *Design Motivation*: Real source data is inaccessible in the SFDA setting, but the source model weights already encode sufficient categorical discriminative information. Adversarial generation "reverse-extracts" this information for unlearning purposes—an elegant strategy of using the model's own knowledge to erase its knowledge.
+Under the SFDA setting, real source samples are inaccessible, but the source model weights already encode the discriminative features of each class. The method treats a random noise image $x_{\text{syn}}$ as an optimizable variable and solves $\max_{x_{\text{syn}}} p(y_{\text{forget}} \mid x_{\text{syn}}; \theta)$ via gradient ascent until it maximally activates the classification head of the forgotten class. While these generated samples do not look like real images visually, they fall into the decision region of the forgotten class in feature space, serving as a "forgotten training set." 
 
-2. **Rescaled Labeling Strategy**:
+**2. Rescaled Labeling Strategy: Zeroing Forgotten Classes and Proportional Redistribution**
 
-    - *Function*: Generates appropriate "forget labels" for the synthetic samples, guiding the model to redistribute forget-category probability mass onto retained categories.
-    - *Mechanism*: Rather than naively zeroing out forget-category labels (which leads to training instability), the probability mass of categories in the forget set $\mathcal{F}$ is redistributed to the retained set $\mathcal{R}$ in proportion to the relative weights of retained categories. The model thereby learns that "these features do not belong to any forget category, but should be distributed across the retained categories."
-    - *Design Motivation*: Hard unlearning (suppressing forget-category probabilities to zero) disrupts the smoothness of the softmax distribution, causing gradient vanishing or training oscillation. Rescaled labeling preserves the integrity of the probability distribution, ensuring stable and correctly directed gradient signals throughout unlearning.
+After obtaining proxy samples, a supervision signal is required. Simply using uniform distributions or random labels either destroys retained classes (catastrophic forgetting) or fails both unlearning and adaptation. The rescaled labeling approach takes the current softmax output $y$, sets the forgotten class $c_{\mathcal{F}}$ dimension to 0, and redistributes the remaining probability mass **according to the model's own predicted proportions across retained classes**: $\hat{y}_i = 0$ if $i=c_{\mathcal{F}}$, otherwise $\hat{y}_i = y_i / \sum_{j\neq c_{\mathcal{F}}} y_j$. This soft label represents the ideal answer: "If this sample does not belong to the forgotten class, which retained class should it most likely belong to?"
 
-3. **Adversarial Optimization Framework**:
+**3. Adversarial Optimization Framework: Balancing Adaptation and Unlearning via Minimax**
 
-    - *Function*: Establishes an adversarial game between domain adaptation and unlearning, automatically balancing the two objectives.
-    - *Mechanism*: Training involves two competing objectives—(1) the domain adaptation objective, which applies entropy minimization or pseudo-label learning to adapt the model to target-domain data; (2) the unlearning objective, which maximizes prediction uncertainty on the forget categories (or minimizes their predicted probability) to erase source-exclusive knowledge. The two objectives are balanced through alternating optimization: the model takes one adaptation step on target-domain data, followed by one unlearning step on the generated forget samples. This minimax optimization ensures that unlearning does not excessively harm adaptation performance.
-    - *Design Motivation*: Domain adaptation and unlearning are inherently in tension—adaptation relies on the representational capacity of the source model, while unlearning removes part of it. Adversarial optimization provides a natural mechanism to find a Pareto-optimal solution between these two goals.
+Adaptation requires preserving the feature representation capabilities of the source model, while unlearning requires deleting a portion of those features. SCADA-UL uses alternating optimization: the domain adaptation objective pulls the model toward the target distribution via entropy minimization or pseudo-labeling, while the unlearning objective maximizes the prediction uncertainty of forgotten classes. The training alternates between an adaptation update on target data and an unlearning update on generated samples, reaching a Pareto-optimal point.
 
 ### Loss & Training
 
-The total loss consists of three components: (1) the domain adaptation loss $\mathcal{L}_{\text{adapt}}$—a standard SFDA loss (e.g., information entropy minimization or neighborhood consistency) to adapt the model to the target domain distribution; (2) the forget loss $\mathcal{L}_{\text{forget}}$—cross-entropy computed on the generated forget samples using rescaled labels, directing the model to lose competence on forget categories; (3) the retain loss $\mathcal{L}_{\text{retain}}$—ensuring that model performance on retained categories is not harmed by the unlearning operation. Training alternates between two phases: adaptation on target-domain data, and unlearning updates on synthetic forget samples.
+The training optimizes the weighted sum of two objectives: $\varphi = \mathcal{L}_{\text{SFDA}} + \alpha\,\mathcal{L}_{\text{MU}}$. The domain adaptation loss $\mathcal{L}_{\text{SFDA}}$ is a standard SFDA term (e.g., neighborhood clustering in SF(DA)² or entropy minimization in SHOT) applied to target domain data $\mathcal{D}^{\mathcal{T}}_r$. The unlearning loss $\mathcal{L}_{\text{MU}}$ calculates cross-entropy on generated proxy samples using rescaled soft labels $\hat{y}$. The process follows Algorithm 1: in each step, the model $w^{\mathcal{T}}$ is updated using the gradient of $\varphi$, and then the proxy samples $\hat{x}$ are re-optimized using the gradient of the adversarial loss $\mathcal{L}_{\text{ADV}}$, corresponding to the $\min_{w^{\mathcal{T}}}/\max_{\hat{x}}$ alternating optimization in the adversarial framework.
 
-Two important variants are further introduced: (1) **Continual unlearning variant**—when new forget requests arrive sequentially, the model must unlearn new categories without forgetting previously unlearned categories or degrading previously retained performance; (2) **Unknown forget categories variant**—when the specific source-exclusive categories to be forgotten are not known in advance, the method automatically detects them by identifying inconsistencies between the target-domain data distribution and the model's predictions.
+Two extensions are provided: the **Continual Unlearning version** handles sequentially arriving unlearning requests, ensuring the model does not "recover" previously forgotten classes; the **Unknown Forgotten Class version** automatically detects which source classes need to be forgotten based on inconsistencies between the target data distribution and model predictions.
 
 ## Key Experimental Results
 
 ### Main Results (OfficeHome Dataset)
 
-| Domain Pair | Method | Retained Class Acc ↑ | Forget Class Acc ↓ | Unlearning Score |
-|---|---|---|---|---|
-| Art → Product | Existing SFDA (SHOT) | High | High (leakage) | Poor |
+| Domain Pair | Method | Retained Class Acc ↑ | Forgotten Class Acc ↓ | Unlearning Score |
+|------|------|----------------|----------------|-------------|
+| Art → Product | Existing SFDA (SHOT) | High | High (Leakage) | Poor |
 | Art → Product | Existing MU + SFDA | Moderate | Moderate | Insufficient |
-| Art → Product | **SCADA-UL (Ours)** | **High** | **Low (near random)** | **Near retraining** |
-| Clipart → Real | Existing SFDA (SHOT) | High | High (leakage) | Poor |
-| Clipart → Real | **SCADA-UL (Ours)** | **High** | **Low** | **Best** |
+| Art → Product | **SCADA-UL (Ours)** | **High** | **Low (Near Random)** | **Near Retraining** |
+| Clipart → Real | Existing SFDA (SHOT) | High | High (Leakage) | Poor |
+| Clipart → Real | **SCADA-UL (Ours)** | **High** | **Low** | **Optimal** |
 
-*Note: Experiments are conducted on all 12 domain pairs of OfficeHome. SCADA-UL consistently outperforms all baselines across all domain pairs.*
+Note: Experiments were conducted across all 12 domain pairs in OfficeHome; SCADA-UL consistently outperformed all baselines.
 
 ### Ablation Study
 
-| Configuration | Retained Class Acc | Forget Class Acc (↓ better) | Notes |
-|---|---|---|---|
+| Configuration | Retained Acc | Forgotten Acc (↓ Better) | Description |
+|------|------------|-------------------|------|
 | Full SCADA-UL | Highest | Lowest | Complete model |
-| w/o adversarial sample generation | Degraded | Higher | Cannot effectively target forget-category decision regions |
-| w/o rescaled labeling | Noticeably degraded | Moderate | Unstable unlearning process, damages retained categories |
-| w/o adversarial optimization | Degraded | Moderate | Conflict between adaptation and unlearning unresolved |
-| Random noise instead of adversarial samples | Degraded | Higher | Random samples fail to activate forget-category features effectively |
+| w/o Adv. Sample Gen. | Decrease | Higher | Fails to effectively locate decision regions |
+| w/o Rescaled Labels | Significant Decrease | Moderate | Unstable unlearning, harms retained classes |
+| w/o Adv. Optimization | Decrease | Moderate | Conflict between adaptation and unlearning unresolved |
+| Random Noise instead of Adv. Samples | Decrease | Higher | Random samples fail to trigger specific features |
 
 ### Key Findings
 
-- **Zero-shot leakage is real and severe**: Standard SFDA methods (e.g., SHOT, NRC) achieve zero-shot accuracy of 30–50% on source-exclusive categories, far above chance level, confirming the privacy leakage risk.
-- **Adversarial sample generation is critical**: Compared to random noise, adversarially generated forget samples improve unlearning efficiency by approximately $2\times$, as they precisely target the decision regions of forget categories.
-- **SCADA-UL achieves unlearning quality approaching "retraining from scratch"**: Forget-category accuracy is reduced to near-random-guess level while retained-category performance is almost entirely preserved.
-- In the continual unlearning variant, the method demonstrates stable retention of previously unlearned knowledge—newly arriving forget tasks do not cause the model to "recall" already-forgotten categories.
+- **Zero-shot leakage is real and severe**: Standard SFDA methods (SHOT, NRC, etc.) show zero-shot accuracy of 30-50% on source-exclusive classes, confirming privacy risks.
+- **Adversarial sample generation is critical**: Compared to random noise, adversarially generated samples improve unlearning efficiency by ~2x due to precise decision region targeting.
+- **SCADA-UL achieves near "retraining" levels**: Accuracy for forgotten classes drops to near-random levels while performance on retained classes remains largely unaffected.
+- In the continual unlearning variant, the method demonstrates stable memory retention for previously forgotten tasks.
 
 ## Highlights & Insights
 
-- **A critical privacy blind spot is identified**: SFDA has been regarded as a source-privacy-preserving paradigm, yet this work reveals that the model itself is a privacy leakage channel. This observation is independently valuable—it demonstrates that "not accessing data" does not equate to "not leaking data information."
-- **Using the model's knowledge to erase its knowledge**: The adversarial sample generation strategy is elegant. In the absence of real source data, the class prototypes encoded in the model itself are exploited to generate unlearning targets. This self-referential design principle is transferable to other privacy-protection scenarios.
-- **Theory meets practice**: Beyond empirical validation, the paper provides theoretical analysis—framing source domain information leakage and the information-theoretic guarantees of the unlearning operation from an information-theoretic perspective.
+- **Identification of a significant privacy blind spot**: While SFDA is considered privacy-preserving for source data, this paper reveals that the model itself is a leakage channel. This highlights that "no data access" $\neq$ "no information leakage."
+- **Utilizing the model's own knowledge to eliminate its knowledge**: The adversarial generation strategy is clever—using the model's encoded prototypes to generate unlearning targets in the absence of source data.
+- **Integration of Theory and Practice**: The paper provides both experimental validation and theoretical analysis (from an information-theoretic perspective) regarding why SFDA models leak information and the guarantees provided by the unlearning operation.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to classification tasks; applicability to more complex visual tasks such as object detection and semantic segmentation remains to be explored.
-- The quality of adversarial sample generation depends on the source model's discriminative strength—if the source model is weak on certain forget categories, the generated samples may not adequately cover the decision boundary.
-- The unknown-forget-categories variant's detection accuracy is sensitive to the class distribution of the target domain; highly imbalanced distributions may lead to false positives.
-- Experiments are primarily conducted on medium-scale datasets such as OfficeHome; large-scale (e.g., ImageNet-scale) domain adaptation unlearning requires further validation.
-- The method assumes forget categories are independent, but some categories may share feature subspaces—unlearning one may inadvertently affect related categories.
+- Currently validated only on classification tasks; applicability to object detection or semantic segmentation remains to be explored.
+- The quality of adversarial samples depends on the discriminative capability of the source model.
+- The detection accuracy of the "Unknown Forgotten Class" variant is sensitive to the target domain's class distribution.
+- Experiments focused on medium-scale datasets like OfficeHome; large-scale (e.g., ImageNet-scale) validation is required.
+- The method assumes independence between forgotten classes, whereas shared feature subspaces might lead to inter-class interference.
 
 ## Related Work & Insights
 
-- **vs SHOT (Liang et al. 2020)**: SHOT is a classic SFDA method that performs domain adaptation via information entropy minimization and pseudo-labeling, with no consideration of source domain information unlearning.
-- **vs Machine Unlearning methods (e.g., SCRUB, Bad Teaching)**: Conventional MU methods assume a fixed data distribution; under domain shift, their unlearning effectiveness degrades significantly—unlearning operations may inadvertently remove useful target-domain knowledge as well.
-- **vs Differential Privacy**: Differential privacy adds noise during training as a forward-protection mechanism; SCADA-UL provides backward protection—performing unlearning on an already-trained model.
-- *Inspiration*: Analogous privacy leakage risks may exist in other model-sharing settings such as knowledge distillation and federated learning.
+- **vs SHOT (Liang et al. 2020)**: SHOT is a classic SFDA method using entropy minimization, but it completely ignores the source information unlearning problem.
+- **vs Machine Unlearning (e.g., SCRUB, Bad Teaching)**: Traditional MU methods assume static data distributions and fail under domain shift, where unlearning operations might inadvertently delete target domain knowledge.
+- **vs Differential Privacy (DP)**: DP adds noise during training (forward protection); SCADA-UL provides backward protection for already trained models.
+- **Insight**: Similar privacy leakage issues likely exist in model distillation and federated learning scenarios.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Identifying and formally defining the zero-shot leakage problem in SFDA (SCADA-UL) is a significant contribution; the method design (adversarial generation + rescaled labeling + minimax optimization) is natural yet effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers all 12 domain pairs, three variant settings, and multiple baselines, with comprehensive ablation and theoretical analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clearly articulated; the logical chain from empirical observation to method design is complete.
-- **Value**: ⭐⭐⭐⭐ Reveals a privacy blind spot in SFDA with direct implications for security-sensitive domains (medical and military imagery).
+- **Novelty**: ⭐⭐⭐⭐ Identifying the zero-shot leakage in SFDA is a significant contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive coverage of 12 domain pairs, three variants, and extensive ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and a logical transition from observations to design.
+- **Value**: ⭐⭐⭐⭐ Directly relevant to security-sensitive scenarios like medical or military imaging.
 
 <!-- RELATED:START -->
 
@@ -139,10 +141,10 @@ Two important variants are further introduced: (1) **Continual unlearning varian
 ## Related Papers
 
 - [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](vlm_model_inversion_adaptive_token_weight.md)
-- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
+- [\[ICML 2025\] Visual Language Models as Zero-Shot Deepfake Detectors](../../ICML2025/llm_safety/visual_language_models_as_zero-shot_deepfake_detectors.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](../../NeurIPS2025/llm_safety/zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
-- [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 
 </div>
 

@@ -2,135 +2,147 @@
 title: >-
   [Paper Note] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 description: >-
-  [CVPR 2026][3D Vision][Progressive 3D representation] This paper proposes ProgressiveAvatars, a progressive avatar representation that constructs hierarchical 3DGS via adaptive implicit subdivision on a template mesh…
+  [CVPR 2026][3D Vision][Paper Note] Proposes ProgressiveAvatars, a progressive avatar representation based on adaptive implicit subdivision of template meshes to construct hierarchical 3DGS. It supports progressive transmission and rendering under varying bandwidth and computation constraints—obtaining a usable avatar with only 5% of the data (2.6MB), wi
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Progressive 3D representation"
-  - "animatable head avatars"
-  - "3D Gaussian splatting"
-  - "streaming"
-  - "adaptive subdivision"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 043a923721c56f2b
+content_hash: 089929d7d372ef6e
 ---
-
 # ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.16447](https://arxiv.org/abs/2603.16447)  
 **Code**: [GitHub](https://ustc3dv/ProgressiveAvatars)  
-**Area**: 3D Vision
-**Keywords**: Progressive 3D representation, animatable head avatars, 3D Gaussian splatting, streaming, adaptive subdivision
+**Area**: 3D Vision  
+**Keywords**: Progressive 3D representation, animatable head avatars, 3D Gaussian Splatting, streaming, adaptive subdivision
 
 ## TL;DR
-This paper proposes ProgressiveAvatars, a progressive avatar representation that constructs hierarchical 3DGS via adaptive implicit subdivision on a template mesh, enabling progressive transmission and rendering under varying bandwidth and compute constraints. With only 5% of the data (2.6 MB), a usable avatar is immediately renderable, and incremental loading smoothly improves quality to a level comparable with state-of-the-art methods.
+Proposes ProgressiveAvatars, a progressive avatar representation based on adaptive implicit subdivision of template meshes to construct hierarchical 3DGS. It supports progressive transmission and rendering under varying bandwidth and computation constraints—obtaining a usable avatar with only 5% of the data (2.6MB), with subsequent incremental loading smoothly improving quality to levels comparable with SOTA methods.
 
 ## Background & Motivation
-**Background**: High-fidelity real-time head avatars are a critical technology for immersive interaction. 3DGS has become the dominant explicit representation due to its efficient rendering. Methods such as GaussianAvatars, FlashAvatar, and MeGA have achieved high-quality animatable avatars.
+**Background**: High-fidelity real-time head avatars are key technologies for immersive interaction. 3DGS has become the mainstream explicit representation due to its efficient rendering. Methods like GaussianAvatars, FlashAvatar, and MeGA have achieved high-quality animatable avatars.
 
 **Limitations of Prior Work**:
-- In multi-user dynamic scenarios such as social VR, transmitting high-fidelity avatars as traditional static assets causes severe startup latency and bandwidth spikes; users must wait for the complete download before any rendering is possible.
-- Existing 3DGS avatars lack incremental loading mechanisms and cannot smoothly accumulate detail during transmission.
-- Existing LOD methods (LoDAvatar, ArchitectHead) rely on a discrete LOD switching paradigm, requiring multiple independent model copies, which introduces significant storage redundancy and resource-switching latency.
-- Uniform subdivision (e.g., LoDAvatar) over-refines smooth regions while under-refining high-frequency regions, wasting resources.
+   - In dynamic multi-user scenarios like social VR, transmitting high-fidelity avatars as traditional static assets leads to severe startup latency and bandwidth spikes; users must wait for the full download to see any rendering.
+   - Existing 3DGS avatars lack an incremental loading mechanism, preventing the smooth accumulation of details during transmission.
+   - Existing LOD methods (LoDAvatar, ArchitectHead) rely on discrete LOD switching paradigms, requiring storage of multiple independent model copies, leading to significant storage redundancy and resource switching latency.
+   - Uniform subdivision (LoDAvatar) over-refines smooth regions while under-refining high-frequency areas, wasting resources.
 
-**Key Challenge**: How to achieve progressive transmission and rendering within a single unified asset—supporting immediately animatable rendering at arbitrary transmission ratios—without introducing discrete asset switching or storage redundancy.
+**Key Challenge**: How to achieve progressive transmission and rendering within a unified asset, supporting immediate animatable rendering at any transmission ratio without introducing discrete asset switching or storage redundancy.
 
-**Key Insight**: Construct hierarchical 3DGS using face-local coordinate systems on the FLAME template mesh, with adaptive implicit subdivision for on-demand detail growth and importance-ordered sorting for continuous streaming.
+**Key Insight**: Construct hierarchical 3DGS in face-local coordinate systems on the FLAME template mesh, growing details on demand via adaptive implicit subdivision and implementing continuous streaming prioritized by importance scores.
 
-**Core Idea**: Build a hierarchical forest via adaptive implicit subdivision on FLAME mesh faces, and leverage per-face importance scores to enable progressive transmission and rendering through incremental loading.
+**Core Idea**: Construct a hierarchical forest through adaptive implicit subdivision on template mesh faces, utilizing importance scores for each face to achieve progressive transmission and rendering via incremental loading.
 
 ## Method
 
 ### Overall Architecture
-Input: head video → FLAME mesh tracking. Training: bind 3D Gaussians to FLAME faces, drive implicit subdivision via screen-space gradients to construct a multi-level hierarchy. Inference: precompute importance scores, transmit Gaussians in descending importance order, and incrementally add and render on the receiver side.
+This paper addresses how to turn a high-fidelity 3DGS avatar into a "streamable" asset, allowing users to render a usable avatar after receiving only a small portion of the data, which then smoothly gains clarity as more data flows in. The pipeline starts with a head video, using FLAME to track per-frame template meshes. During training, 3D Gaussians are bound to FLAME triangular faces, and hierarchical trees are grown recursively on each face based on screen-space gradients. During inference/transmission, Gaussians are assigned importance scores and sent in descending order; the receiver incrementally adds each batch to the scene for immediate re-rendering. Consequently, a single asset supports all intermediate states from a "5% coarse version" to a "100% fine version."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Head Video"] --> B["FLAME Tracking<br/>Per-frame template mesh, fixed topology"]
+    subgraph TREE["Hierarchical Forest Construction (Growth during training)"]
+        direction TB
+        C["Implicit Subdivision<br/>Learnable barycentric coordinates grow child faces within parent"] --> D["Face-local Gaussian Binding<br/>Gaussian anchors in local face coordinates, deform with face"]
+        D --> E["Adaptive Growth<br/>Subdivide only leaf faces with large screen-space gradients"]
+        E -->|"Depth < L"| C
+    end
+    B --> TREE
+    TREE --> F["Importance Ranking<br/>Order Gaussians by rendering contribution Wi"]
+    F --> G["Progressive Transmission & Rendering<br/>Incremental rendering, quality monotonically approaches full version"]
+```
 
 ### Key Designs
 
-1. **Implicit Subdivision**
+**1. Implicit Subdivision: Growing child faces inside parents via learnable barycentric coordinates instead of explicit vertices**
 
-    - Function: Recursively generate child faces on each triangular face of the FLAME template mesh, forming a per-face hierarchical tree structure.
-    - Mechanism: For a parent face $f = (i,j,k)$, new vertices are created via barycentric interpolation: $\mathbf{p} = \beta_1 \mathbf{v}_i + \beta_2 \mathbf{v}_j + \beta_3 \mathbf{v}_k$. Barycentric coordinates are initialized to $(1/3, 1/3, 1/3)$ and optimized under simplex constraints during training. Subdivision point positions under different expressions and poses are recomputed via the same barycentric mapping.
-    - Meaning of "Implicit": Rather than explicitly creating new vertices and topology for child faces, new points are implicitly defined within the parent face via learnable barycentric coordinates, allowing them to move freely within the triangle to adapt to the optimal position for different facial regions.
-    - Design Motivation: Compared with explicit uniform subdivision, implicit subdivision adapts to different effective scales and shapes across facial regions of varying sizes and structures through learnable barycentric coordinates.
+Uniform subdivision is problematic because it unconditionally splits every triangular face into fixed shapes, regardless of where refinement is needed or the geometry of different facial regions. This work adopts implicit subdivision: for a parent face $f=(i,j,k)$, new vertices are not placed at edge midpoints but interpolated using barycentric coordinates $\mathbf{p}=\beta_1\mathbf{v}_i+\beta_2\mathbf{v}_j+\beta_3\mathbf{v}_k$. The weights are initialized to $(1/3,1/3,1/3)$ and optimized under simplex constraints (non-negative and summing to 1). "Implicit" refers to the fact that it does not create new fixed vertices/topologies; instead, it allows learnable barycentric points to slide within the parent face to optimal detail locations. When expressions or poses change, the same barycentric mapping calculates new positions on the deformed mesh, naturally following the face.
 
-2. **Face-Local Gaussian Binding**
+**2. Face-local Gaussian Binding: Anchoring Gaussians in face-local coordinates to deform with the face**
 
-    - Function: Bind 3D Gaussians to the local coordinate system of each face in the hierarchy.
-    - Mechanism: Each Gaussian's rotation $\mathbf{R} = \Delta\mathbf{R}\mathbf{r}$, scale $\mathbf{S} = \Delta\mathbf{S} s$, and center $\boldsymbol{\mu} = s\mathbf{r}\Delta\boldsymbol{\mu} + \mathbf{t}$, where $\mathbf{r}$ is the rotation aligned with the face normal, $\mathbf{t}$ is the face centroid, $s$ is the mean edge length, and $\Delta\mathbf{R}, \Delta\mathbf{S}, \Delta\boldsymbol{\mu}$ are trainable residuals.
-    - Design Motivation: Face-local parameterization ensures that Gaussians deform jointly with the face (expressions/head motion), maintaining consistent appearance across different levels of the hierarchy.
+To ensure the avatar is animatable at any transmission stage, Gaussians cannot be hard-coded in world coordinates. This work treats each face in the hierarchy as a local coordinate system. Gaussian rotation, scale, and center are defined relative to the face: $\mathbf{R}=\Delta\mathbf{R}\,\mathbf{r}$, $\mathbf{S}=\Delta\mathbf{S}\,s$, $\boldsymbol{\mu}=s\,\mathbf{r}\,\Delta\boldsymbol{\mu}+\mathbf{t}$, where $\mathbf{r}$ is the face-normal aligned rotation, $\mathbf{t}$ is the face centroid, and $s$ is the mean edge length. $\Delta\mathbf{R}, \Delta\mathbf{S}, \Delta\boldsymbol{\mu}$ are trainable residuals. As faces deform with FLAME, $\mathbf{r}, \mathbf{t}, s$ update, and attached Gaussians transform automatically, maintaining a consistent appearance across levels—a prerequisite for progressive transmission where coarse and fine layers share the same binding logic.
 
-3. **Adaptive Growing**
+**3. Adaptive Growth: Subdividing only leaf faces with high screen-space gradients to focus budget on high-frequency regions**
 
-    - Function: Expand the hierarchy on demand during training, concentrating detail in regions that need it most.
-    - Mechanism: Screen-space gradients $g_i$ are accumulated only at the current finest level $\ell_{\max}$. Every $k$ iterations, leaf faces satisfying $g_i > \varepsilon$ are selected for subdivision and new Gaussians are bound to child faces. This process repeats until the maximum depth $L$ is reached.
-    - Design Motivation: Uniform subdivision expands all regions indiscriminately, wasting computation and storage. The adaptive strategy focuses limited resources on high-frequency regions such as facial features and hair, while smooth regions (forehead, cheeks) require fewer Gaussians.
+Subdividing all faces uniformly wastes Gaussians on smooth areas like cheeks. Adaptive growth accumulates screen-space gradients $g_i$ for each face at the current maximum level $\ell_{\max}$ during training. Every $k$ iterations, leaf faces with $g_i>\varepsilon$ are subdivided to grow new children with bound Gaussians, repeating until a maximum depth $L$ is reached. High gradients indicate high reconstruction error and information density, causing the tree to grow deeper in high-frequency regions (eyes, mouth) and remain shallow in smooth areas, achieving a better quality-cost trade-off.
 
-4. **Importance Scoring and Progressive Transmission**
+**4. Importance Ranking and Progressive Transmission: Ordering Gaussians by rendering contribution for monotonic quality improvement**
 
-    - Function: Determine the transmission priority of Gaussians within each level.
-    - Mechanism: The importance score of each face is defined as the total rendering contribution of its bound Gaussians across all pixels: $W_i = \sum_{j \in \mathcal{G}_i} \sum_p \alpha_{j,p} T_{j,p}$. Gaussians are transmitted in descending order of score, so high-contribution Gaussians arrive first.
-    - Design Motivation: Transmitting high-importance Gaussians first minimizes color drift between partial and complete renders. Experiments (Fig. 3) demonstrate that importance-first transmission significantly outperforms random transmission.
+While the hierarchy determines *where* details grow, streaming requires knowing *what to send first*. This work calculates an importance score for each face as the sum of its bound Gaussians' rendering contributions across all pixels: $W_i=\sum_{j\in\mathcal{G}_i}\sum_p \alpha_{j,p}T_{j,p}$ (where $\alpha$ is opacity and $T$ is transmittance). Gaussians are transmitted from highest to lowest $W_i$. This minimizes color drift between partial and full renders—the most impactful points arrive first, ensuring that every received increment monotonically improves quality.
 
 ### Loss & Training
-- Multi-level joint supervision: $\mathcal{L}_{\text{rgb}} = \sum_{\ell \in \mathcal{S}} w_\ell [(1-\lambda_s)\mathcal{L}_1 + \lambda_s \mathcal{L}_{\text{ssim}}]$
-- Coarse-to-fine optimization: depth limit initialized to 1, increased every 50k iterations to trigger adaptive subdivision.
-- Regularization: $\mathcal{L}_{\text{scale}}$ (scale constraint) + $\mathcal{L}_{\text{pos}}$ (position constraint), preventing Gaussians from deviating from their bound faces.
-- Total loss: $\mathcal{L} = \mathcal{L}_{\text{rgb}} + \lambda_{\text{scale}}\mathcal{L}_{\text{scale}} + \lambda_{\text{pos}}\mathcal{L}_{\text{pos}}$
+- Multi-level Joint Supervision: $\mathcal{L}_{\text{rgb}} = \sum_{\ell \in \mathcal{S}} w_\ell [(1-\lambda_s)\mathcal{L}_1 + \lambda_s \mathcal{L}_{\text{ssim}}]$
+- Coarse-to-fine Optimization: Initialize max depth to 1, increase depth and trigger adaptive subdivision every 50k iterations.
+- Regularization: $\mathcal{L}_{\text{scale}}$ (scale constraint) + $\mathcal{L}_{\text{pos}}$ (position constraint) to prevent Gaussians from deviating too far from their bound faces.
+- Total Loss: $\mathcal{L} = \mathcal{L}_{\text{rgb}} + \lambda_{\text{scale}}\mathcal{L}_{\text{scale}} + \lambda_{\text{pos}}\mathcal{L}_{\text{pos}}$
 - Adam optimizer, 60k iterations, adaptive expansion every 2k iterations.
 
 ## Key Experimental Results
 
-### Main Results (NeRSemble dataset, varying transmission budgets)
+### Main Results (NeRSemble Dataset, varying transmission budgets)
 
-| Transmission Ratio | NVS PSNR↑ | NVS SSIM↑ | NVS LPIPS↓ | #Gaussians | Data Size | FPS |
-|--------------------|-----------|-----------|-----------|------------|-----------|-----|
-| 5% (Base) | 27.89 | 0.851 | 0.186 | 10,144 | 2.60 MB | 291 |
-| 25% | 29.14 | 0.892 | 0.080 | 37,302 | 9.56 MB | 278 |
-| 50% | 30.03 | 0.904 | 0.073 | 84,132 | 21.56 MB | 258 |
-| 100% | 31.47 | 0.929 | 0.068 | 169,438 | 43.42 MB | 260 |
-| GaussianAvatars | 31.10 | 0.937 | 0.064 | 163,829 | 41.90 MB | 271 |
+| Transm. Ratio | NVS PSNR↑ | NVS SSIM↑ | NVS LPIPS↓ | #Gaussians | Data Size | FPS |
+|---------------|-----------|-----------|------------|------------|-----------|-----|
+| 5% (Base)     | 27.89     | 0.851     | 0.186      | 10,144     | 2.60MB    | 291 |
+| 25%           | 29.14     | 0.892     | 0.080      | 37,302     | 9.56MB    | 278 |
+| 50%           | 30.03     | 0.904     | 0.073      | 84,132     | 21.56MB   | 258 |
+| 100%          | 31.47     | 0.929     | 0.068      | 169,438    | 43.42MB   | 260 |
+| GaussianAvatars| 31.10    | 0.937     | 0.064      | 163,829    | 41.90MB   | 271 |
 
 ### Comparison with SOTA
 
-| Method | NVS PSNR↑ | NVS LPIPS↓ | NES PSNR↑ | NES LPIPS↓ |
-|--------|-----------|-----------|-----------|-----------|
-| PointAvatar | 25.8 | 0.097 | 23.4 | 0.102 |
-| GaussianAvatars | 31.1 | 0.064 | 25.8 | 0.076 |
-| Ours (5%) | 27.9 | 0.186 | 25.1 | 0.176 |
-| **Ours (100%)** | **31.5** | 0.068 | **25.9** | 0.080 |
+| Method          | NVS PSNR↑ | NVS LPIPS↓ | NES PSNR↑ | NES LPIPS↓ |
+|-----------------|-----------|------------|-----------|------------|
+| PointAvatar     | 25.8      | 0.097      | 23.4      | 0.102      |
+| GaussianAvatars | 31.1      | 0.064      | 25.8      | 0.076      |
+| Ours (5%)       | 27.9      | 0.186      | 25.1      | 0.176      |
+| **Ours (100%)** | **31.5**  | 0.068      | **25.9**  | 0.080      |
 
 ### Key Findings
-- Only 5% of the data (2.6 MB) yields a usable avatar (PSNR 27.89), whereas GaussianAvatars requires nearly all data before any rendering is possible.
-- At 100% transmission, PSNR 31.47 surpasses GaussianAvatars (31.10); novel expression synthesis (NES) is also marginally better.
-- Frame rate is consistently maintained at 258–291 FPS (RTX 4090, 550×802); increasing the number of Gaussians does not cause a notable frame rate drop.
-- Adaptive subdivision outperforms uniform subdivision: reconstruction quality is higher at the same Gaussian count (Fig. 6), and high-frequency regions (e.g., beard) receive deeper subdivision.
-- Multi-level supervision is critical for progressive transmission: when only the finest level is supervised, coarser levels fail to learn a complete avatar (Tab. 3 shows PSNR dropping from 29.87 to 20.06 at 35% budget without multi-level supervision).
+- Only 5% of the data (2.6MB) provides a usable avatar (PSNR 27.89), whereas GaussianAvatars must wait for nearly all data to render.
+- PSNR at 100% transmission (31.47) exceeds GaussianAvatars (31.10), with slightly better NES (New Expression Synthesis) results.
+- Framerate remains consistently between 258-291 FPS (RTX 4090, 550×802); the increase in Gaussians does not cause significant FPS drops.
+- Adaptive subdivision outperforms uniform subdivision: higher reconstruction quality given the same Gaussian count, with deeper subdivision in high-frequency regions like beards.
+- Multi-level supervision is vital for progressive transmission: supervising only the finest level leads to low levels failing to learn the full avatar (PSNR drops from 29.87 to 20.06 at 35% budget without it).
 
 ## Highlights & Insights
-- **From discrete LOD to continuous progressive streaming**: a fundamental paradigm shift. Traditional LOD requires multiple independent models and incurs switching latency, whereas ProgressiveAvatars' single continuous asset supports immediate rendering at any transmission ratio—directly valuable for latency-sensitive scenarios such as social VR.
-- **Adaptive implicit subdivision is substantially more efficient than uniform subdivision**: high-frequency regions (eyes, mouth, beard) receive deeper subdivision while smooth regions remain at shallow levels, achieving a better quality–cost trade-off.
-- **Importance-based ordering guarantees monotonic quality improvement during progressive streaming**: transmitting high-contribution Gaussians first ensures each incremental step maximally improves rendering quality.
-- **Face-local binding combined with barycentric mapping** ensures that the avatar is animatable at any transmission stage, which is a key consequence of the technical design choices.
+- **From Discrete LOD to Continuous Progressive Stream**: A core paradigm shift. Unlike traditional LOD requiring multiple independent models and switching latencies, ProgressiveAvatars uses a single continuous asset supporting immediate rendering at any ratio. This is directly valuable for latency-sensitive Social VR.
+- **Adaptive Implicit Subdivision is Significantly More Efficient**: Better quality-cost trade-offs are achieved by growing deeper trees in high-frequency regions (eyes, mouth, beard) while keeping smooth regions shallow.
+- **Importance Ranking Ensures Monotonic Quality Improvement**: Transmitting high-contribution Gaussians first ensures that each increment maximizes rendering quality improvement.
+- **Face-local Binding + Barycentric Mapping**: Guaranteed animatability at any transmission stage, which is the key technical differentiator.
 
 ## Limitations & Future Work
-- LPIPS at 100% transmission (0.068) is slightly worse than GaussianAvatars (0.064), leaving a small perceptual quality gap.
-- The maximum subdivision depth $D=4$ limits the finest detail achievable.
-- Validation is conducted only on the NeRSemble dataset; generalization to more subjects and more complex scenes remains unknown.
-- Importance scores are precomputed at training time and fixed, precluding dynamic adjustment based on runtime viewpoint.
-- Priority strategies for progressive transmission of multiple simultaneous avatars in multi-user scenes are not discussed.
+- LPIPS at 100% transmission (0.068) is slightly inferior to GaussianAvatars (0.064), indicating a small gap in perceived quality.
+- Max hierarchy depth $D=4$ limits the ultimate attainable granularity.
+- Validated only on the NeRSemble dataset; generalization to more characters or complex scenes remains unknown.
+- Importance scores are pre-computed and fixed during training, preventing dynamic adjustment based on the runtime viewpoint.
+- Progressive transmission priority strategies for multiple avatars in a shared scene are not discussed.
 
 ## Related Work & Insights
-- **vs. GaussianAvatars**: Both share a similar face-binding Gaussian design, but GaussianAvatars lacks hierarchical structure and progressive transmission capability. ProgressiveAvatars delivers a comparable-quality progressive experience starting from just 2.6 MB.
-- **vs. LoDAvatar**: LoDAvatar also builds LOD on a template mesh but uses uniform subdivision with hand-crafted masks for selective densification. ProgressiveAvatars' adaptive growing is more principled and achieves higher quality.
-- **vs. GA+LightGaussian (discrete compression)**: GA+LG requires 227.2 MB to store 10 discrete LOD levels, whereas ProgressiveAvatars uses a single 43.4 MB asset supporting continuous rendering at arbitrary transmission ratios.
+- **vs GaussianAvatars**: Both share face-bound Gaussian designs, but GaussianAvatars lacks hierarchical structure and progressive transmission. ProgressiveAvatars achieves comparable quality with a 2.6MB-ready progressive experience.
+- **vs LoDAvatar**: LoDAvatar also uses LOD on template meshes but employs uniform subdivision with manual masks. ProgressiveAvatars' adaptive growth is more elegant and higher quality.
+- **vs GA+LightGaussian (discrete compression)**: GA+LG requires 227.2MB to store 10 LOD levels, whereas ProgressiveAvatars requires only a 43.4MB single asset supporting continuous rendering at any scale.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The paradigm shift from discrete LOD to continuous progressive streaming is innovative, and the adaptive implicit subdivision is elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Progressive transmission simulation and ablations are thorough, though validation is limited to a single dataset.
-- Writing Quality: ⭐⭐⭐⭐ — Problem motivation is clearly articulated and the method is described in detail.
-- Value: ⭐⭐⭐⭐ — Significant practical value for latency-sensitive 3D avatar transmission scenarios such as VR and telepresence.
+- Novelty: ⭐⭐⭐⭐ Innovative paradigm shift from discrete LOD to continuous progressive streaming; elegant adaptive subdivision design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive progressive transmission simulations and ablations, though validated on limited datasets.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and detailed methodology.
+- Value: ⭐⭐⭐⭐ Significant practical value for latency-sensitive 3D avatar transmission in VR/Telepresence.
+
+## Related Papers
+
+- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -138,11 +150,11 @@ Input: head video → FLAME mesh tracking. Training: bind 3D Gaussians to FLAME 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
 - [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
-- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 - [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
-- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
+- [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] Routing on Demand: DSNet for Efficient Progressive Point Cloud Denoising](routing_on_demand_dsnet_for_efficient_progressive_point_cloud_denoising.md)
+- [\[CVPR 2026\] MeshLAM: Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](meshlam_feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
 
 </div>
 

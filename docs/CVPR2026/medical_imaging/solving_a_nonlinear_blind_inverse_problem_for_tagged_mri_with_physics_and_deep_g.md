@@ -2,132 +2,149 @@
 title: >-
   [Paper Note] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 description: >-
-  [CVPR 2026][Medical Imaging][Tagged MRI] This paper proposes InvTag, a framework that, for the first time, integrates a physics-based MR forward model with a pretrained diffusion generative prior to jointly solve three s…
+  [CVPR 2026][Medical Imaging][Tagged MRI] The InvTag framework is proposed, which for the first time combines an MR physics forward model with a pre-trained diffusion generative prior to unifiedly solve three sub-tasks of 3D Tagged MRI: anatomical recovery, Cine synthesis, and motion estimation, without requiring any additional training data.
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Tagged MRI"
-  - "Inverse Problem"
-  - "Diffusion Prior"
-  - "Motion Estimation"
-  - "Image Super-Resolution"
+  - CVPR 2026
+  - Medical Imaging
+  - Tagged MRI
 date: 2026-05-08
-content_hash: f70924eb7219a1fb
+content_hash: 4098f49a6118781a
 ---
-
 # Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00882](https://arxiv.org/abs/2603.00882)  
 **Code**: None  
-**Area**: Medical Imaging
-**Keywords**: Tagged MRI, Inverse Problem, Diffusion Prior, Motion Estimation, Image Super-Resolution
+**Area**: Medical Imaging  
+**Keywords**: Tagged MRI, Inverse Problem, Diffusion Prior, Motion Estimation, Image Super-resolution
 
 ## TL;DR
 
-This paper proposes InvTag, a framework that, for the first time, integrates a physics-based MR forward model with a pretrained diffusion generative prior to jointly solve three sub-tasks in 3D Tagged MRI—anatomical recovery, Cine synthesis, and motion estimation—without requiring any additional training data.
+The InvTag framework is proposed, which for the first time combines an MR physics forward model with a pre-trained diffusion generative prior to unifiedly solve three sub-tasks of 3D Tagged MRI: anatomical recovery, Cine synthesis, and motion estimation, without requiring any additional training data.
 
 ## Background & Motivation
 
-Tagged MRI applies periodic tags to tissue to track internal motion, and is widely used in cardiac motion analysis and brain biomechanics research. However, its post-processing faces three major challenges:
+Tagged MRI tracks internal motion by applying periodic tags to tissue, widely used in cardiac motion analysis and brain biomechanics research. However, its post-processing faces three major challenges:
 
-**Tag interference**: The presence of tags prevents conventional anatomical segmentation methods from being applied directly.
+**Tag Interference**: The presence of tags prevents the direct application of conventional anatomical segmentation methods.
 
-**Tag Fading**: Due to T1 relaxation, tag contrast degrades sharply over time, violating the brightness constancy assumption of optical flow methods.
+**Tag Fading**: Due to T1 relaxation, tag contrast decreases sharply over time, violating the brightness constancy assumption of optical flow methods.
 
-**Low resolution**: To accelerate acquisition, the spatial resolution of Tagged MRI is typically lower than that of standard structural MRI.
+**Low Resolution**: To accelerate acquisition, the spatial resolution of Tagged MRI is typically lower than that of standard structural MRI.
 
-Traditional methods treat motion tracking, Cine synthesis, and super-resolution as independent tasks. However, these three tasks are inherently coupled: reliable motion tracking requires handling tag fading and spectral overlap, while resolving spectral overlap requires separating anatomical structures from tag patterns. The authors argue that a unified framework for joint estimation is necessary.
+Traditional methods treat motion tracking, Cine synthesis, and super-resolution as independent tasks, but these are inherently coupled: reliable motion tracking requires handling tag fading and spectral overlap, while resolving spectral overlap requires separating anatomical structures from tag patterns. The authors propose a unified framework to solve these jointly.
 
 ## Method
 
 ### Overall Architecture
 
-InvTag formulates Tagged MRI analysis as a **nonlinear blind inverse problem**. Given a low-resolution Tagged MRI time series, the framework jointly recovers: (1) a high-resolution anatomical image $a$; (2) a tag-free Cine sequence; (3) 3D diffeomorphic motion fields $\{\phi_t\}$; and (4) the anisotropic point spread function (PSF) of the imaging system. The nonlinearity arises from deformable spatial transformations, and the blindness arises from the unknown PSF and fading parameters.
+InvTag formulates Tagged MRI analysis as a **nonlinear blind inverse problem**: given a low-resolution Tagged MRI time series, it simultaneously recovers four components—high-resolution anatomical image $a$, a tag-free Cine sequence, 3D diffeomorphic motion fields $\{\phi_t\}$, and the unknown anisotropic point spread function (PSF) of the imaging system. It is "nonlinear" because deformable spatial transformations are inherently nonlinear, and "blind" because the PSF and tag fading parameters are unknown a priori. The framework consists of three components: a **physics forward model** mapping unknowns to observations (hard constraint), a **diffusion generative prior** providing anatomical priors (soft constraint), and a **CDDP coordinate descent optimizer** solving between them.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Low-resolution Tagged MRI Time Series"] --> B["Physics Forward Model<br/>Formulates imaging chain as differentiable hard constraints<br/>Tags · Fading · Anisotropic PSF · Diffeomorphic Motion Field"]
+    B --> C["CDDP Coordinate Descent Optimization<br/>Alternating L=4 rounds until convergence"]
+    C -->|"Step A: Fix Forward Parameters"| D["Diffusion Generative Prior<br/>Update anatomy a via DPS posterior sampling"]
+    C -->|"Step B: Fix Anatomy a"| E["Forward Parameter Estimation<br/>Est. PSF/Tag/Fading via Diff. Evolution · Est. Motion via Adam"]
+    D --> C
+    E --> C
+    C -->|Convergence| F["High-res Anatomy · Tag-free Cine · 3D Motion Field · PSF"]
+```
 
 ### Key Designs
 
-1. **Physics-based forward model**: The observed Tagged image is modeled as
-   $$g_t^{\Box} = h_\gamma^{\Box} * \phi_{\theta_t}^* [a \cdot f_{\beta_t}(q_\alpha^{\Box})] + n_t^{\Box}$$
-   where $a$ is the reference-frame anatomy, $q_\alpha^{\Box}$ is the SPAMM-parameterized sinusoidal tag pattern, $f_{\beta_t}$ is an affine fading model, $h_\gamma^{\Box}$ is an anisotropic Gaussian PSF, and $\phi_{\theta_t}$ is a PINN-based diffeomorphic deformation field (diffeomorphism is guaranteed via the exponential map $\phi_t = \exp\{v_t\}$). All time frames share the same anatomy $a$, with geometric variation produced solely through $\phi_t$, naturally enforcing temporal consistency.
+**1. Physics-based Forward Model: Differentiable Hard Constraints**
 
-2. **Diffusion generative prior**: A diffusion model pretrained on 80,000+ 1mm isotropic T1w 3D brain volumes is used as an anatomical prior. The data fidelity term is incorporated into the reverse diffusion SDE via DPS (Diffusion Posterior Sampling):
-   $$da_\tau = -\eta_\tau \Big[\frac{1}{2}a_\tau + s_\vartheta(a_\tau, \tau) - \rho \nabla_{a_\tau} \mathcal{L}_{\text{rec}}(\hat{a}_0(a_\tau))\Big] d\tau + \sqrt{\eta_\tau} d\bar{w}$$
-   The diffusion score $s_\vartheta$ pulls samples toward the anatomical manifold, while the data fidelity term enforces consistency with observations.
+Traditional methods treat motion tracking, Cine synthesis, and super-resolution as independent, yet they are intertwined—reliable motion tracking requires handling fading and spectral overlap, while resolving overlap requires separating anatomy from tags. InvTag explicitly models the imaging chain:
 
-3. **Coordinate Descent with Diffusion Prior (CDDP)**: Two steps are alternated: (A) fix the forward model parameters and update anatomy $a$ via diffusion posterior sampling; (B) fix $a$ and estimate forward model parameters via maximum likelihood. Low-dimensional parameters ($\gamma, \alpha, \beta_t$) are optimized with a bounded differential evolution optimizer (to handle the highly non-convex landscape), while high-dimensional motion parameters $\theta_t$ are updated with Adam. The first frame jointly estimates $(a^\star, \alpha^\star, \gamma^\star)$, which are then fixed; subsequent frames update only the fading and motion parameters.
+$$g_t^{\Box} = h_\gamma^{\Box} * \phi_{\theta_t}^* [a \cdot f_{\beta_t}(q_\alpha^{\Box})] + n_t^{\Box}$$
+
+where $a$ is the reference anatomy, $q_\alpha^{\Box}$ is the sinusoidal tag pattern parameterized by SPAMM physics, $f_{\beta_t}$ is the affine fading model, $h_\gamma^{\Box}$ is the anisotropic Gaussian PSF, and $\phi_{\theta_t}$ is the PINN-based diffeomorphic deformation field (ensured by exponential mapping $\phi_t = \exp\{v_t\}$ to avoid folding). Crucially, all frames share the same anatomy $a$, with inter-frame differences generated solely by $\phi_t$, naturally constraining temporal consistency without extra regularization.
+
+**2. Diffusion Generative Prior: Manifold Constraints for Undetermined Problems**
+
+The blind inverse problem is inherently underdetermined; relying solely on data fidelity may lead to divergence. InvTag utilizes a diffusion model pre-trained on 80,000+ 1mm isotropic T1w 3D head volumes as an anatomical prior. Through DPS (Diffusion Posterior Sampling), the data fidelity term is integrated into the reverse diffusion SDE:
+
+$$da_\tau = -\eta_\tau \Big[\frac{1}{2}a_\tau + s_\vartheta(a_\tau, \tau) - \rho \nabla_{a_\tau} \mathcal{L}_{\text{rec}}(\hat{a}_0(a_\tau))\Big] d\tau + \sqrt{\eta_\tau} d\bar{w}$$
+
+The score term $s_\vartheta$ pulls the sample toward the anatomical manifold, while the data fidelity gradient ensures the reconstruction matches observations. This avoids the need for paired Tagged/Cine data while leveraging generative priors to compensate for resolution and missing information.
+
+**3. Coordinate Descent with Diffusion Prior (CDDP): Alternating Convergence**
+
+Anatomy $a$ and forward model parameters are interdependent, making simultaneous optimization highly non-convex. CDDP splits this into two steps: (A) fix forward parameters and update $a$ via diffusion posterior sampling; (B) fix $a$ and perform maximum likelihood estimation for the forward model. Low-dimensional parameters ($\gamma, \alpha, \beta_t$) are optimized via a bounded Differential Evolution optimizer due to the non-convex landscape, while high-dimensional motion parameters $\theta_t$ use Adam. The first frame jointly estimates $(a^\star, \alpha^\star, \gamma^\star)$, which are then fixed; subsequent frames update only fading and motion, saving computation and avoiding tag phase ambiguity.
 
 ### Loss & Training
 
-- **Data reconstruction loss**: $\mathcal{L}_{\text{rec}}(a) = \sum_t \sum_{\Box} \|g_t^{\Box} - \mathcal{A}_t^{\Box}(a)\|_2^2$
-- **Diffusion prior**: Pretrained weights are frozen; 256-step DDIM sampling is used.
-- **CDDP iterations**: $L=4$ rounds of coordinate descent; motion is initialized from the previous time step (to avoid periodic tag matching ambiguity).
-- No external Tagged or Cine training data is required; no paired supervision or fine-tuning.
+- **Data Reconstruction Loss**: $\mathcal{L}_{\text{rec}}(a) = \sum_t \sum_{\Box} \|g_t^{\Box} - \mathcal{A}_t^{\Box}(a)\|_2^2$
+- **Diffusion Prior**: Pre-trained weights are frozen, using 256 DDIM sampling steps.
+- **CDDP Iteration**: $L=4$ rounds of coordinate descent; motion is initialized from the previous time step.
+- No external Tagged or Cine training data, paired supervision, or fine-tuning required.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Tag-to-Cine synthesis** (160 test cases: 20 AIBL + 20 Sleep subjects × 4 imaging configurations):
+**Tag-to-Cine Synthesis** (160 test cases, 20 AIBL + 20 Sleep subjects × 4 settings):
 
 | Method | PSNR ↑ (t=1) | SSIM ↑ (t=1) | PSNR ↑ (t=6) | SSIM ↑ (t=6) |
-|---|---|---|---|---|
+|------|-------------|-------------|-------------|-------------|
 | LowpassFuse | 26.43 | 0.62 | 26.68 | 0.66 |
 | HARP Demod. | 24.28 | 0.52 | 23.93 | 0.54 |
-| **InvTag (Ours)** | **28.38** | **0.83** | **28.41** | **0.84** |
+| **Ours (InvTag)** | **28.38** | **0.83** | **28.41** | **0.84** |
 
-**Motion estimation**:
+**Motion Estimation**:
 
 | Method | EPE ↓ | EPE@95 ↓ | NegDet(%) ↓ |
-|---|---|---|---|
+|------|-------|----------|-------------|
 | LKUnet | 1.35 | 2.94 | 0.043 |
 | DeepTag | 1.27 | 2.97 | 0.060 |
 | SyN | 1.06 | 2.41 | <0.001 |
 | DRIMET | 0.79 | 1.61 | <0.001 |
-| **InvTag (Ours)** | **0.60** | **1.31** | **<0.001** |
+| **Ours (InvTag)** | **0.60** | **1.31** | **<0.001** |
 
 ### Ablation Study
 
 | Configuration | PSNR ↑ | SSIM ↑ | EPE ↓ | EPE@95 ↓ |
-|---|---|---|---|---|
-| w/o PSF estimation | 27.27 | 0.69 | 0.62 | 1.41 |
-| w/o fading estimation | 28.21 | 0.80 | 0.71 | 1.56 |
-| w/o CDDP (joint optimization) | 22.05 | 0.46 | 1.57 | 2.73 |
-| **Full model** | **28.40** | **0.83** | **0.60** | **1.31** |
+|------|--------|--------|-------|----------|
+| w/o PSF Estimation | 27.27 | 0.69 | 0.62 | 1.41 |
+| w/o Fading Estimation | 28.21 | 0.80 | 0.71 | 1.56 |
+| w/o CDDP (Joint Opt.) | 22.05 | 0.46 | 1.57 | 2.73 |
+| **Full Model** | **28.40** | **0.83** | **0.60** | **1.31** |
 
 ### Key Findings
 
-- Replacing CDDP with joint optimization causes severe degradation (PSNR drops by 6.35), confirming that alternating optimization is critical for blind inverse problem solving.
+- Removing CDDP in favor of joint optimization leads to significant failure (PSNR drop of 6.35), indicating alternating optimization is critical for solving blind inverse problems.
 - PSF estimation contributes significantly to synthesis quality, while fading estimation is more critical for motion tracking.
-- On real rotating gel phantom data—where the diffusion prior is trained only on synthetic ellipsoids—the framework still successfully recovers anatomy and motion.
-- Variance in estimated PSF/tag parameters across 5 random initializations is negligible, confirming reliable convergence of CDDP.
+- The model successfully recovers anatomy and motion on real rotating gel phantom data, even though the diffusion prior was trained only on synthetic ellipses.
+- Negligible variance in PSF/tag parameters across 5 random initializations confirms the reliability of CDDP convergence.
 
 ## Highlights & Insights
 
-- **First unified framework**: Jointly addresses three core tasks in Tagged MRI analysis, leveraging inter-task coupling for mutual reinforcement.
-- **Nonlinear blind inverse problem**: Treats MR physics as hard constraints and the diffusion prior as a soft constraint, overcoming the limitations of prior diffusion-based inverse problem solvers that assume linear or known forward operators.
-- **Zero-shot generalization**: Requires no Tagged/Cine training data whatsoever, relying solely on a T1w diffusion prior.
-- The CDDP strategy demonstrates strong stability and convergence robustness in non-convex optimization.
+- **First Unified Framework**: Simultaneously addresses the three core tasks of Tagged MRI, leveraging task coupling for mutual enhancement.
+- **Nonlinear Blind Inverse Problem**: Successfully utilizes MR physics as hard constraints and diffusion priors as soft constraints, overcoming the limitation of previous diffusion solvers that assumed linear or known forward operators.
+- **Zero-shot Generalization**: Requires no Tagged/Cine training data, relying exclusively on a T1w diffusion prior.
+- The CDDP strategy demonstrates excellent stability and robust convergence in non-convex optimization landscapes.
 
 ## Limitations & Future Work
 
-- **Long runtime**: Processing a single frame takes 1.2 hours on a single A40 GPU; repeated diffusion sampling and PINN optimization are the bottlenecks.
-- Only sinusoidal tags are assumed; grid tags and higher-order tag patterns are not supported.
-- Validation is limited to brain Tagged MRI; extension to broader applications such as cardiac MR tagging has not been explored.
-- Uncertainty quantification is absent, which may limit clinical trustworthiness.
+- **Long Runtime**: Requires 1.2 hours per frame (on a single A40 GPU); repeated diffusion sampling and PINN optimization are bottlenecks.
+- Only assumes sinusoidal tags; grid tags or higher-order tag patterns are not yet supported.
+- Validated only on brain Tagged MRI, not yet extended to cardiac applications.
+- Lacks uncertainty quantification, which may impact clinical confidence.
 
 ## Related Work & Insights
 
-- Compared to classical frequency-domain methods such as HARP and SinMod, InvTag does not require a predefined tag frequency and estimates it automatically.
-- Compared to general-purpose diffusion inverse problem solvers such as DPS, InvTag handles the more challenging nonlinear and blind setting.
-- The CDDP alternating optimization strategy is generalizable to other medical imaging inverse problems involving unknown forward models.
+- Compared to traditional frequency-domain methods like HARP/SinMod, InvTag estimates tag frequencies automatically rather than requiring presets.
+- Unlike general diffusion inverse solvers like DPS, InvTag handles a more complex nonlinear + blind setting.
+- The CDDP alternating optimization strategy can be generalized to other medical imaging inverse problems involving unknown forward models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First to combine MR physics with a diffusion prior for nonlinear blind inverse problems.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 160 test cases + real data validation + comprehensive ablation, but cardiac data is absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Mathematical derivations are clear and rigorous; physical modeling is complete.
-- Value: ⭐⭐⭐⭐ — Elegant methodology, though runtime efficiency limits practical clinical deployment.
+- Novelty: ⭐⭐⭐⭐⭐ — First to combine MR physics with diffusion priors for nonlinear blind inverse problems.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — 160 cases + real data + full ablation, though cardiac data is missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear mathematical derivation and comprehensive physical modeling.
+- Value: ⭐⭐⭐⭐ — Elegant methodology, though runtime efficiency limits immediate clinical deployment.
 
 <!-- RELATED:START -->
 
@@ -135,11 +152,11 @@ InvTag formulates Tagged MRI analysis as a **nonlinear blind inverse problem**. 
 
 ## Related Papers
 
+- [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
 - [\[AAAI 2026\] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT](../../AAAI2026/medical_imaging/unsupervised_multi-parameter_inverse_solving_for_reducing_ring_artifacts_in_3d_x.md)
-- [\[AAAI 2026\] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI](../../AAAI2026/medical_imaging/pings-x_physics-informed_normalized_gaussian_splatting_with_axes_alignment_for_e.md)
-- [\[ICML 2026\] Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions](../../ICML2026/medical_imaging/auditing_sybil_explaining_deep_lung_cancer_risk_prediction_through_generative_in.md)
-- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
-- [\[CVPR 2026\] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization](neuroseg_meets_dinov3_transferring_2d_self-supervised_visual_priors_to_3d_neuron.md)
+- [\[CVPR 2026\] GenTract: Generative Global Tractography](gentract_generative_global_tractography.md)
+- [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
+- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 
 </div>
 

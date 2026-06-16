@@ -2,122 +2,136 @@
 title: >-
   [Paper Note] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 description: >-
-  [CVPR 2026][Remote Sensing][Remote sensing image fusion] This paper proposes PanScale, the first cross-scale pansharpening dataset, along with the PanScale-Bench evaluation benchmark…
+  [CVPR 2026][Remote Sensing][Transformer] This paper proposes PanScale, the first cross-scale pansharpening dataset and evaluation benchmark (PanScale-Bench), along with the ScaleFormer framework. The method reinterprets resolution changes as sequence length variations, achieving cross-scale generalization through Scale-Aware Patchify bucketed sampling, decoup
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "Remote sensing image fusion"
-  - "cross-scale generalization"
-  - "Transformer"
-  - "rotary position encoding"
-  - "pansharpening"
+  - CVPR 2026
+  - Remote Sensing
+  - Transformer
+  - Pansharpening
 date: 2026-05-08
-content_hash: 329015a8241aad6e
+content_hash: fccad6d5fb8d627b
 ---
-
 # Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.00543](https://arxiv.org/abs/2603.00543)  
 **Code**: [GitHub](https://github.com/caoke-963/ScaleFormer)  
-**Area**: LLM Evaluation
-**Keywords**: Remote sensing image fusion, cross-scale generalization, Transformer, rotary position encoding, pansharpening
+**Area**: Remote Sensing  
+**Keywords**: Remote sensing image fusion, cross-scale generalization, Transformer, Rotary Position Embedding, Pansharpening
 
 ## TL;DR
-This paper proposes PanScale, the first cross-scale pansharpening dataset, along with the PanScale-Bench evaluation benchmark, and the ScaleFormer framework — which reinterprets resolution variation as sequence length variation, achieving cross-scale generalization via Scale-Aware Patchify bucketed sampling, decoupled spatial-sequence modeling, and RoPE.
+This paper proposes PanScale, the first cross-scale pansharpening dataset and evaluation benchmark (PanScale-Bench), along with the ScaleFormer framework. The method reinterprets resolution changes as sequence length variations, achieving cross-scale generalization through Scale-Aware Patchify bucketed sampling, decoupled spatial-sequence modeling, and RoPE.
 
 ## Background & Motivation
-**Background**: Pansharpening fuses high-resolution panchromatic (PAN) images with low-resolution multispectral (LRMS) images to produce high-resolution multispectral (HRMS) images, a core task in remote sensing image processing. CNN/Transformer-based methods (MSDCNN, HFIN, ARConv, etc.) have achieved substantial progress.
+**Background**: Pansharpening utilizes high-resolution panchromatic (PAN) images and low-resolution multispectral (LRMS) images to generate high-resolution multispectral (HRMS) images, serving as a core task in remote sensing. CNN and Transformer-based methods (MSDCNN, HFIN, ARConv, etc.) have made significant progress.
 
-**Limitations of Prior Work**: (i) **Computational and memory bottlenecks** — scaling from training crop sizes (200–256 px) to inference at 800/1600/2000 px causes Transformer memory to explode, with standard GPUs frequently running out of memory at 800 px; (ii) **Patch inference artifacts** — forced patch-based inference introduces boundary discontinuities and visible block artifacts; (iii) **Weak cross-scale generalization** — training at a single low resolution induces scale-induced distribution shift, with brightness distributions shifting noticeably as resolution increases.
+**Limitations of Prior Work**: (i) **Computational and Memory Bottlenecks**—when transitioning from training crop sizes (200-256px) to inference at 800/1600/2000px, Transformer memory usage surges, often causing OOM on standard GPUs at 800px; (ii) **Tiling Artifacts**—forced tiled inference introduces boundary discontinuities and obvious blocky artifacts; (iii) **Weak Cross-Scale Generalization**—training on a single low resolution leads to scale-induced distribution shifts, where luminance distributions shift significantly as resolution increases.
 
-**Key Challenge**: Existing datasets (PanCollection, NBU, PAirMax) provide only limited scale diversity and resolution range, lacking a standardized multi-scale, high-resolution evaluation protocol.
+**Key Challenge**: Existing datasets (PanCollection, NBU, PAirMax) provide limited scale diversity and resolution, lacking a standardized multi-scale and high-resolution evaluation protocol.
 
-**Goal**: Systematically address the challenges of cross-scale pansharpening across three dimensions: data, algorithm, and computation.
+**Goal**: To systematically address cross-scale pansharpening challenges across data, algorithms, and computation.
 
-**Key Insight**: Reframe resolution variation as sequence length variation — spatial patch size is fixed, so only the sequence length grows linearly with image scale.
+**Key Insight**: Reformulate resolution changes as sequence length changes—using fixed spatial size patches as tokens, where only the sequence length grows linearly with the image scale.
 
-**Core Idea**: Introduce a sequence axis via Scale-Aware Patchify, decouple spatial modeling from scale modeling, and leverage RoPE to extrapolate to unseen scales.
+**Core Idea**: Introduce a sequence axis using Scale-Aware Patchify, decoupling spatial modeling from scale modeling, and employ RoPE to achieve extrapolation generalization to unseen scales.
 
 ## Method
 
 ### Overall Architecture
-ScaleFormer consists of three core components:
-1. **Scale-Aware Patchify (SAP)**: A bucketed window sampling strategy.
-2. **Single Transformer module**: Spatial Transformer (spatial-domain modeling) + Sequence Transformer (sequence/scale-domain modeling).
-3. **Cross Transformer module**: Spatial-Cross + Sequence-Cross Transformer for cross-modal feature fusion.
+ScaleFormer addresses the cross-scale generalization problem of training on small 200–256px images while performing inference on large 800–2000px images. Its core mechanism reinterprets resolution changes as sequence length variations: by fixing the spatial size of each patch, an increase in image size only results in a longer token sequence. Given a PAN image $\mathbf{P} \in \mathbb{R}^{H \times W \times 1}$ and an upsampled MS image $\mathbf{L} \in \mathbb{R}^{H \times W \times C}$, they are first processed by Scale-Aware Patchify into a 5D tensor $\mathbf{P}_{5d} \in \mathbb{R}^{B \times T \times C \times h \times w}$ (where $T$ is the sequence length). The data then passes through a Single Transformer (decoupled spatial and sequence modeling) and a Cross Transformer (PAN-MS cross-modal fusion), finally regressing the HRMS image.
 
-Given input PAN image $\mathbf{P} \in \mathbb{R}^{H \times W \times 1}$ and upsampled MS image $\mathbf{L} \in \mathbb{R}^{H \times W \times C}$, SAP converts them into 5D tensors $\mathbf{P}_{5d} \in \mathbb{R}^{B \times T \times C \times h \times w}$, where $T$ is the sequence length.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["PAN 图 P (H×W×1)"] --> SAP
+    L["上采样 MS 图 L (H×W×C)"] --> SAP
+    SAP["Scale-Aware Patchify<br/>分桶采样切成 5D token 序列 (B×T×C×h×w)"] --> ST
+    subgraph ST["解耦空间-序列建模（Single Transformer）"]
+        direction TB
+        SPA["Spatial 自注意力<br/>patch 内建模空间关系"] --> SEQ["Sequence 自注意力 + RoPE<br/>跨 patch 建模、向未见序列长度外推"]
+    end
+    ST --> CT["Cross Transformer<br/>MS 交叉查询 PAN，注入高频空间细节"]
+    CT --> HEAD["回归头"]
+    HEAD --> OUT["HRMS 高分辨率多光谱图"]
+```
 
 ### Key Designs
-1. **Scale-Aware Patchify (SAP)**: During training, a bucket index $t$ is randomly sampled to determine window size $w(t)$; a Patch-to-Sequence Tokenizer partitions the input into token sequences of varying lengths, exposing the model to a range of effective sequence lengths. At inference, a fixed window size is used, and higher resolutions are handled solely by extending the sequence. The key effect is to prevent mean and variance drift, stabilizing per-token statistics.
 
-2. **Decoupled Spatial-Sequence Modeling**: The Spatial Transformer models intra-patch spatial relationships:
+**1. Scale-Aware Patchify: Transforming Resolution Generalization into Sequence Length Generalization**
+
+Directly training on small images and inferring on large images encounters scale-induced distribution shifts—luminance statistics drift with resolution, causing models to fail on unseen scales. SAP addresses this by randomly sampling bucket indices $t$ during training to determine the window size $w(t)$. Using a Patch-to-Sequence Tokenizer, the input is cut into token sequences of varying lengths, exposing the model to multiple effective sequence lengths during training. During inference, the window size is fixed, and high resolution is handled simply by extending the sequence. Since the spatial size of each token remains constant, its mean and variance stabilize and do not drift with the full image size, which is the prerequisite for cross-scale extrapolation.
+
+**2. Decoupled Spatial-Sequence Modeling: Independent Scale and Spatial Modeling**
+
+If spatial relationships and scale variations are coupled in the same attention mechanism, generalization becomes difficult as sequences lengthen. This approach separates the two: the Spatial Transformer only models spatial relationships within each patch:
 $$\mathbf{f}_{i,1} = \mathbf{f}_i + SA_{spa}(LN(\mathbf{f}_i))$$
 The Sequence Transformer models cross-patch correlations along the sequence dimension:
 $$\mathbf{f}_{i+1,1} = \mathbf{f}_{i+1} + SA_{seq}(LN(\mathbf{f}_{i+1}))$$
-where $SA_{seq}$ merges the batch and spatial dimensions during operation, and injects **RoPE** to encode continuous relative position information, enhancing scale extrapolation capability.
+In $SA_{seq}$, the batch and spatial dimensions are merged, and **RoPE** is injected to encode continuous relative positions. The advantage of RoPE is that relative positions can smoothly extrapolate to sequence lengths not seen during training, allowing the model to remain position-aware even on long sequences such as 1600/2000px.
 
-3. **Cross Transformer module**: A similar architecture using cross-attention to enable PAN–MS cross-modal interaction:
+**3. Cross Transformer: PAN-MS Fusion via Cross-Attention**
+
+PAN provides high-frequency spatial details while MS provides spectral information; the two must be fused rather than simply added. The Cross Transformer uses the same decoupled structure but replaces self-attention with cross-attention, allowing MS features to query PAN features:
 $$\mathbf{f}_{i,1}^{ms} = \mathbf{f}_i^{ms} + CA_{spa}(LN(\mathbf{f}_i^{ms}), LN(\mathbf{f}^{pan}))$$
+This injects spatial details from PAN into MS while maintaining the patch-by-patch, variable-length sequence processing, thus ensuring cross-scale consistency.
 
 ### Loss & Training
-An L1 loss $\mathbf{L} = \|\mathbf{H}_{out} - \mathbf{G}\|_1$ is used. The model is trained with the Adam optimizer, initial learning rate $5 \times 10^{-4}$, cosine annealing decay to $5 \times 10^{-8}$, for 500 epochs on an NVIDIA 3090, with 32 channels.
+The L1 loss is used: $\mathbf{L} = \|\mathbf{H}_{out} - \mathbf{G}\|_1$. Optimization uses the Adam optimizer with an initial learning rate of $5 \times 10^{-4}$, decaying to $5 \times 10^{-8}$ via cosine annealing over 500 epochs on an NVIDIA 3090 with 32 channels.
 
 ## Key Experimental Results
 
-### Main Results: Averaged Results Across Three PanScale Subsets
+### Main Results: Average Results Across Three Subsets of PanScale
 
 | Method | Jilin PSNR/SSIM | Landsat PSNR/SSIM | Skysat PSNR/SSIM |
 |------|-----------------|-------------------|-------------------|
 | HFIN | 38.00/0.9698 | 40.21/0.9666 | 43.96/0.9658 |
 | ARConv | 38.23/0.9697 | 39.66/0.9638 | 43.40/0.9797 |
 | Pan-mamba | 35.55/0.9480 | 36.73/0.9206 | 41.39/0.9493 |
-| **ScaleFormer** | **39.29/0.9761** | **41.04/0.9711** | **44.65/0.9827** |
+| **Ours** | **39.29/0.9761** | **41.04/0.9711** | **44.65/0.9827** |
 
-ScaleFormer outperforms all SOTA methods across all datasets, with stable performance as resolution increases.
+ScaleFormer leads SOTA across all datasets and maintains stable performance as resolution increases.
 
 ### Ablation Study: Landsat Dataset
 
-| Configuration | 200px PSNR | 400px PSNR | 800px PSNR | 1600px PSNR |
+| Ablation Config | 200px PSNR | 400px PSNR | 800px PSNR | 1600px PSNR |
 |---------|-----------|-----------|-----------|------------|
 | w/o RoPE | 40.46 | 40.95 | 40.76 | 40.69 |
 | SeqT→SpaT | 40.91 | 41.30 | 40.72 | 40.51 |
 | w/o SAP | 40.53 | 40.93 | 40.62 | 40.39 |
 | **Full Model** | **40.61** | **41.37** | **41.13** | **41.03** |
 
-All ablated variants exhibit noticeable performance degradation at higher resolutions, confirming that each component is indispensable for cross-scale generalization.
+All ablation variants show significant performance degradation at large resolutions, confirming each component's necessity for cross-scale generalization.
 
 ### Key Findings
-- ScaleFormer has only 0.52M parameters (1/4 of HFIN, 1/9 of ARConv), with a significant computational efficiency advantage.
-- GFLOPs and memory usage of ScaleFormer grow substantially more slowly than those of HFIN/ARConv as resolution increases.
-- ARConv exhibits severe block artifacts under patch-based inference (significant drop in DDC-IoU).
-- ScaleFormer remains competitive in full-resolution real-world scene evaluation (without ground truth).
+- Model parameters are only 0.52M (1/4 of HFIN, 1/9 of ARConv), showing a significant efficiency advantage.
+- As resolution increases, ScaleFormer's GFLOPs and memory growth are much slower than HFIN/ARConv.
+- ARConv exhibits severe block artifacts (significant DDC-IoU drop) during tiled inference.
+- ScaleFormer remains competitive in full-resolution real-world scene evaluations (without GT).
 
 ## Highlights & Insights
-- **Elegant problem reformulation**: Recasting resolution generalization as sequence length generalization draws on sequence modeling ideas from NLP and video models.
-- **Outstanding computational efficiency**: Substantially fewer parameters and GFLOPs than SOTA methods, with advantages widening at higher resolutions.
-- **Dataset contribution**: PanScale is the first cross-scale pansharpening dataset covering three satellite platforms (0.5–15 m resolution).
-- **Novel application of RoPE**: Adapts RoPE from text/video domains to remote sensing fusion tasks for scale extrapolation.
+- **Clever Problem Reformulation**: Generalizing resolution is transformed into generalizing sequence length, borrowing ideas from sequence modeling in NLP/video models.
+- **Outstanding Computational Efficiency**: Leads SOTA significantly in parameters and GFLOPs, with the advantage widening as resolution increases.
+- **Dataset Contribution**: PanScale is the first cross-scale pansharpening dataset covering three satellite platforms (0.5~15m resolution).
+- **Innovative RoPE Application**: Introduces RoPE from text/video domains into remote sensing fusion to achieve scale extrapolation.
 
 ## Limitations & Future Work
-- The approach focuses solely on pansharpening; generalization to other remote sensing fusion tasks (hyperspectral fusion, SAR–optical fusion) remains unvalidated.
-- The bucketing strategy in SAP uses a predefined fixed set of window sizes; an adaptive strategy may be more effective.
-- Only L1 loss is employed; perceptual losses or GAN losses may further improve visual quality.
-- The self-attention in the Sequence Transformer remains $O(T^2)$, which may become a bottleneck for extremely large-scale inputs.
+- Focuses only on pansharpening; generalization to other remote sensing fusion tasks (hyperspectral, SAR-optical) is unverified.
+- The SAP bucket strategy uses a predefined set of fixed window sizes; an adaptive strategy might be superior.
+- Only uses L1 loss; perceptual or GAN losses might further improve visual quality.
+- Self-attention in the Sequence Transformer remains $O(T^2)$, presenting bottlenecks for ultra-large inputs.
 
 ## Related Work & Insights
-- Traditional methods (GS, IHS, GFPCA) perform poorly in cross-scale settings (PSNR over 10 dB lower).
-- CNN-based methods (MSDCNN, SFINet, MSDDN) offer limited cross-scale generalization.
-- HFIN/ARConv represent the current SOTA but suffer from severe memory and computational bottlenecks.
-- Pan-mamba adopts the Mamba architecture but underperforms Transformer-based approaches.
-- FlexViT's multi-resolution training and bucketed training strategies in video generation inspired the design of SAP.
+- Traditional methods (GS, IHS, GFPCA) perform poorly in cross-scale scenarios (PSNR lower by 10+dB).
+- CNN methods (MSDCNN, SFINet, MSDDN) have limited cross-scale generalization.
+- HFIN/ARConv are current SOTA but suffer from severe memory and computational bottlenecks.
+- Pan-mamba uses the Mamba architecture but performs worse than Transformer-based solutions.
+- SAP is inspired by the multi-resolution training of FlexViT and the bucketed training strategies in video generation.
 
 ## PanScale Dataset Details
-- **Three sub-datasets**: Jilin (Jilin-1 satellite, 0.5–1 m resolution), Landsat (Landsat-8, 15 m resolution), and Skysat (Planet SkySat, ~1 m resolution).
-- **Test set design**: Each sub-dataset includes both reduced-resolution (200×200 to 2000×2000) and full-resolution multi-scale test sets.
-- **Data source**: Acquired and preprocessed via Google Earth Engine (GEE).
-- **Evaluation metrics**: PanScale-Bench integrates reference metrics (PSNR/SSIM/ERGAS/Q) and no-reference metrics ($D_\lambda$/$D_S$/QNR).
+- **Three Sub-datasets**: Jilin (Jilin-1, 0.5~1m resolution), Landsat (Landsat-8, 15m resolution), Skysat (Planet SkySat, ~1m resolution).
+- **Test Set Design**: Each sub-dataset includes reduced-resolution (200×200 to 2000×2000) and full-resolution multi-scale test sets.
+- **Data Source**: Acquired and preprocessed via the Google Earth Engine (GEE) system.
+- **Evaluation Metrics**: PanScale-Bench integrates reference metrics (PSNR/SSIM/ERGAS/Q) and no-reference metrics ($D_\lambda$/$D_S$/QNR).
 
 ## Efficiency Comparison
 
@@ -125,13 +139,13 @@ All ablated variants exhibit noticeable performance degradation at higher resolu
 |------|-----------|----------|
 | ARConv | 4.4147 | 38.32 |
 | HFIN | 1.9836 | 46.21 |
-| **ScaleFormer** | **0.5151** | **20.57** |
+| **Ours** | **0.5151** | **20.57** |
 
 ## Rating ⭐
-- **Novelty**: ⭐⭐⭐⭐ — The resolution-to-sequence-length reformulation is original; the SAP + RoPE combination is effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive coverage across three datasets, multiple scales, full-resolution evaluation, ablation studies, efficiency analysis, and visualization.
-- **Writing Quality**: ⭐⭐⭐⭐ — Excellent figure and table design; Fig. 1/2 clearly illustrate the problem and compare solutions.
-- **Value**: ⭐⭐⭐⭐⭐ — A unified contribution of dataset, benchmark, and method, advancing the remote sensing fusion field.
+- Novelty: ⭐⭐⭐⭐ — The resolution-to-sequence reformulation is novel; the SAP+RoPE combination is effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive coverage of three datasets, multi-scale, full-resolution, ablation, efficiency, and visualization.
+- Writing Quality: ⭐⭐⭐⭐ — Excellent diagram design; Fig 1/2 clearly contrast the problem and solution.
+- Value: ⭐⭐⭐⭐⭐ — A triple contribution of dataset, benchmark, and method, advancing the field of remote sensing fusion.
 
 <!-- RELATED:START -->
 
@@ -140,10 +154,10 @@ All ablated variants exhibit noticeable performance degradation at higher resolu
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[CVPR 2026\] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction](geoflow_real-time_fine-grained_cross-view_geolocalization.md)
-- [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
+- [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)
+- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
+- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 
 </div>
 

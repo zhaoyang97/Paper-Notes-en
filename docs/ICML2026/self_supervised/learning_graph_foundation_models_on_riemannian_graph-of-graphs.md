@@ -2,19 +2,17 @@
 title: >-
   [Paper Note] Learning Graph Foundation Models on Riemannian Graph-of-Graphs
 description: >-
-  [ICML 2026][Self-Supervised Learning][Graph Foundation Model] R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG). A dynamic MoE router distributes each GoG to Riemannian man…
+  [ICML 2026][Self-Supervised Learning][Graph Foundation Model] R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG), utilizing a dynamic MoE router to assign each GoG to the most curvature-matching Riemannian manifold (Hyperbolic / Euclidean / Spherical). This addresses two inherent flaws in existing graph foundation models: fixed recep
 tags:
-  - "ICML 2026"
-  - "Self-Supervised Learning"
-  - "Graph Foundation Model"
-  - "Graph-of-Graphs"
-  - "Riemannian MoE"
-  - "adaptive-hop"
-  - "Domain Generalization"
+  - ICML 2026
+  - Self-Supervised Learning
+  - Graph Foundation Model
+  - Graph-of-Graphs
+  - Riemannian MoE
+  - adaptive-hop
 date: 2026-05-08
-content_hash: a770c54eea9e43f9
+content_hash: cdec35fb6ffcbdbd
 ---
-
 # Learning Graph Foundation Models on Riemannian Graph-of-Graphs
 
 **Conference**: ICML 2026  
@@ -24,48 +22,57 @@ content_hash: a770c54eea9e43f9
 **Keywords**: Graph Foundation Model, Graph-of-Graphs, Riemannian MoE, adaptive-hop, Domain Generalization
 
 ## TL;DR
-R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG). A dynamic MoE router distributes each GoG to Riemannian manifolds (Hyperbolic / Euclidean / Spherical) that best match its curvature. This simultaneously addresses two inherent limitations of existing graph foundation models—fixed receptive fields and single Euclidean embeddings—yielding relative improvements of up to 49% in downstream tasks.
+R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG), utilizing a dynamic MoE router to assign each GoG to the most curvature-matching Riemannian manifold (Hyperbolic / Euclidean / Spherical). This addresses two inherent flaws in existing graph foundation models: fixed receptive fields and single Euclidean embeddings, achieving up to a 49% relative improvement in downstream tasks.
 
 ## Background & Motivation
-**Background**: Graph Foundation Models (GFMs, such as OFA, Prodigy, and MDGFM) represent a breakthrough in pre-training on massive graphs to achieve cross-task and cross-domain transfer, marking the "foundation model era" of graph ML.
+**Background**: Graph Foundation Models (GFM, such as OFA, Prodigy, MDGFM) enable cross-task and cross-domain migration through pre-training on massive datasets, representing the "foundation model era" of graph ML.
 
-**Limitations of Prior Work**: (1) Existing GFMs use **fixed-hop subgraph sampling** (e.g., 1-hop or 2-hop neighbors) as the receptive field. However, downstream requirements vary significantly: homophilous citation networks require 1-2 hops, whereas e-commerce fraud detection often requires $\geq 4$ hops to uncover long-chain collusion. Fixed-hop schemes inevitably lead to underfitting or noise saturation. (2) Existing methods embed all subgraphs into a single Euclidean space, despite the vast structural differences across hops (local density vs. global hierarchical sparsity), which distorts representations.
+**Limitations of Prior Work**: (1) Existing GFMs use **fixed-hop subgraph sampling** (e.g., 1-hop or 2-hop) as the receptive field. However, downstream requirements vary significantly—homophilic citation networks need only 1-2 hops, while e-commerce fraud detection requires $\geq 4$ hops to uncover long-chain collusion. Fixed-hop sampling inevitably leads to underfitting or noise saturation. (2) Existing methods embed all subgraphs into a single Euclidean space, despite the vast structural differences across hops (locally dense vs. globally sparse/hierarchical), leading to representation distortion.
 
-**Key Challenge**: The conflict between fixed-structure receptive fields and heterogeneous hop requirements of downstream tasks, and the conflict between single geometry and multi-scale structural heterogeneity.
+**Key Challenge**: The conflict between fixed structural receptive fields and the heterogeneous hop requirements of downstream tasks; the conflict between a single geometry and multi-scale structural heterogeneity.
 
-**Goal**: (1) Design a pre-training paradigm capable of adaptively capturing multi-hop structures; (2) Enable the model to dynamically switch between Riemannian manifolds within the representation space.
+**Goal**: (1) Design a pre-training paradigm capable of adaptively capturing multi-hop structures; (2) Enable the model to dynamically switch between Riemannian manifolds in the representation space.
 
-**Key Insight**: Elevate "subgraphs of different hops" to nodes within a Graph-of-Graphs (GoG), allowing the model to reason explicitly over scales; then use Mixture-of-Experts (MoE) to route each GoG to experts that match the geometric curvature.
+**Key Insight**: Elevate "subgraphs of different hops" to nodes in a Graph-of-Graphs (GoG) to allow explicit reasoning over scales, then use an MoE to route each GoG to an expert with the matching geometric curvature.
 
-**Core Idea**: **"Structural scale as a first-class citizen"**—adaptive-hop GoG handles scale mismatch, while confidence-aware dynamic Riemannian MoE addresses geometric mismatch.
+**Core Idea**: **"Structural scale as a first-class citizen"**—adaptive-hop GoGs address scale mismatch, while confidence-aware dynamic Riemannian MoE addresses geometric mismatch.
 
 ## Method
 
 ### Overall Architecture
-R-GFM is composed of four stages: (A) Deciding the Riemannian expert candidate set via the coefficient of variation (CV) of node degree distributions and sampling subgraphs $\{G_v^{(i)}\}_{i=1}^K$ for hops $1, 2, \ldots, K$ for each node $v$; (B) Using a contrastive pre-trained subgraph encoder to encode each subgraph into embedding $\mathbf{X}_{\text{sub}}$; (C) Constructing sparse GoGs $\mathcal{G}$ based on subgraph similarity and encoding them via dynamic MoE-based Riemannian routing; (D) Aggregating expert outputs into a fused embedding for downstream node classification or link prediction.
+R-GFM consists of four stages: (A) Calculate the CV coefficient of node degree distributions to determine the Riemannian expert candidate set and sample a set of $1, 2, \ldots, K$ hop subgraphs $\{G_v^{(i)}\}_{i=1}^K$ for each training node $v$; (B) Pre-train a subgraph encoder via contrastive learning to encode each subgraph into embedding $\mathbf{X}_{\text{sub}}$; (C) Construct a sparse GoG $\mathcal{G}$ based on subgraph similarity and encode it using dynamic MoE-based Riemannian routing; (D) Aggregate expert outputs into a fused embedding for downstream node classification or link prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Training Graph + Target Node v"] --> B["Stage A: CV Determines Candidates<br/>+ Adaptive-hop Sampling 1~K (OOM Fallback)"]
+    B --> C["Stage B: Subgraph Encoder Pre-training (NT-Xent)<br/>→ Subgraph Embedding X_sub"]
+    C --> D["Stage C: Similarity-based Sparse GoG Construction<br/>Sampling 0.6·K(K−1)/2 Edges via Cosine Sim"]
+    D --> E["Dynamic MoE Riemannian Routing<br/>Dynamic Candidate Set + Confidence-aware Top-m"]
+    E --> F["Stage D: Aggregate Expert Outputs → Fused Embedding"]
+    F --> G["Downstream: Node Classification / Link Prediction"]
+```
 
 ### Key Designs
 
-1. **Adaptive-hop GoG Construction (Adaptive Hops + Similarity Sparsification)**:
+**1. Adaptive-hop GoG Construction: Adaptive Hops + Similarity Sparsification**
 
-    - **Function**: Avoids fixed receptive fields while controlling GPU memory consumption.
-    - **Mechanism**: For each training node $v$, the hop count $K$ is incrementally increased using an "online greedy + memory test" approach, retreating to the last viable $K$ if an out-of-memory (OOM) error occurs, ensuring $K \leq \mathcal{B}_{\text{GPU}}$. Subgraph embeddings are pre-trained using NT-Xent contrastive learning. GoG edges are constructed by sampling $\mathcal{B}_{\text{edge}} = 0.6 \cdot K(K-1)/2$ edges without replacement from a distribution $\text{Prob}(i,j) = e^{\mathbf{S}[i,j]} / \sum_{u,v} e^{\mathbf{S}[u,v]}$ based on cosine similarity $\mathbf{S}$. Theoretically, Thm 3.2 proves that the noise in multi-hop embeddings $\|\boldsymbol\sigma_V\|_2 \leq \|\boldsymbol\sigma_F\|_2$ is strictly lower than fixed hops, and Thm 3.3 shows similarity-sparse GoGs yield smaller errors than "edgeless" or "fully-connected" GoGs.
-    - **Design Motivation**: Fixed hops lose long-range information or drown local details. Dense GoGs introduce noise, while random sparse GoGs lack structural priors; similarity-based sparsification balances these factors.
+Fixed receptive fields are a primary limitation of GFMs. R-GFM employs an "online greedy + memory test" strategy to gradually increase the hop count $K$ for each training node $v$, falling back to the last viable $K$ upon OOM (ensuring $K \leq \mathcal{B}_{\text{GPU}}$). This allows flexible receptive fields without exceeding memory limits. Subgraph embeddings are pre-trained using the NT-Xent loss.
 
-2. **Dynamic MoE-based Riemannian Routing (Dual Dynamics: Candidates + Top-m)**:
+GoG edges are constructed using a sampling distribution based on subgraph cosine similarity: $\text{Prob}(i,j) = e^{\mathbf{S}[i,j]} / \sum_{u,v} e^{\mathbf{S}[u,v]}$. The model samples $\mathcal{B}_{\text{edge}} = 0.6 \cdot K(K-1)/2$ edges without replacement. This balances noise reduction and structural priors. Theoretically, multi-hop sampling noise $\|\boldsymbol\sigma_V\|_2 \leq \|\boldsymbol\sigma_F\|_2$ is strictly lower than fixed-hop sampling (Thm 3.2), and similarity-sparse GoGs yield smaller errors than empty or fully connected GoGs (Thm 3.3).
 
-    - **Function**: Adaptively determines the number of Riemannian experts and the activation frequency based on structural heterogeneity.
-    - **Mechanism**: Structural heterogeneity of each training set is quantified using the coefficient of variation $\text{CV}(\mathcal{D}_i) = \text{std}(\deg)/\text{mean}(\deg)$. The candidate expert set size is determined by $\lceil \mathcal{S}_i \cdot \zeta \rceil$ with curvatures alternating through $0, -1, +1, -2, +2, \ldots$ (including hyperbolic, Euclidean, and spherical). Routing scores $\boldsymbol\alpha_{\mathcal{G}} = \text{softmax}(g(\mathcal{G})/\tau)$ are generated by a GCN encoder. As the confidence $\text{conf} = (1/\psi) \sum_i \max \alpha^{(i)}$ increases during training, the number of activated experts $m$ is dynamically reduced via $m \leftarrow \max(1, m - \text{conf})$.
-    - **Design Motivation**: Fixed expert counts lead to either insufficient capacity or overfitting. Leveraging the pattern where a router becomes more confident over time allows for a natural reduction in active experts, improving generalization (Thm 3.5 provides an excess risk bound $\mathcal{R}(\psi_D) \leq \mathcal{R}(\psi_F)$).
+**2. Dynamic MoE-based Riemannian Routing: Dual Dynamics of Candidate Set and Top-m**
 
-3. **Theoretical Support for Domain Generalization**:
+To address the limitations of single Euclidean geometry, R-GFM routes each GoG to the manifold with the best-matching curvature. The candidate expert set size $\lceil \mathcal{S}_i \cdot \zeta \rceil$ is determined by the coefficient of variation $\text{CV}(\mathcal{D}_i) = \text{std}(\deg)/\text{mean}(\deg)$ of the node degree distribution, with curvatures expanding across $0, -1, +1, -2, +2, \ldots$ (covering Hyperbolic, Euclidean, and Spherical). 
 
-    - **Function**: Proves that the error bound for R-GFM on unseen domains is strictly lower than that of the SOTA MDGFM.
-    - **Mechanism**: The encoder classes $\Phi_R$ and $\Phi_M$ are introduced into the domain generalization error bound. Since R-GFM expands the expressiveness of the encoder via multi-hop GoGs and Riemannian MoE, while controlling capacity through sparsification and dynamic top-$m$, Thm 3.5 demonstrates $\epsilon_{\text{R-GFM}} < \epsilon_{\text{MDGFM}}$.
-    - **Design Motivation**: The core evaluation for GFMs is "zero-shot" or "few-shot" transfer to unseen graphs, necessitating formal guarantees beyond empirical gains.
+The number of activated experts $m$ is also dynamic. Routing scores $\boldsymbol\alpha_{\mathcal{G}} = \text{softmax}(g(\mathcal{G})/\tau)$ are generated by a GCN encoder. As the confidence $\text{conf} = (1/\psi) \sum_i \max \alpha^{(i)}$ increases during training, the number of activated experts shrinks: $m \leftarrow \max(1, m - \text{conf})$. This serves as implicit regularization, resulting in a tighter excess risk bound $\mathcal{R}(\psi_D) \leq \mathcal{R}(\psi_F)$ and better generalization (Thm 3.5).
+
+**3. Theoretical Support for Domain Generalization**
+
+The core challenge for GFMs is performance on unseen graphs. By substituting the encoder classes $\Phi_R$ and $\Phi_M$ (for R-GFM and MDGFM, respectively) into the domain generalization error bound, Thm 3.5 demonstrates that $\epsilon_{\text{R-GFM}} < \epsilon_{\text{MDGFM}}$. R-GFM improves expressive power through GoG and Riemannian MoE while controlling capacity via sparsification and dynamic top-$m$, leading to lower cross-domain error.
 
 ### Loss & Training
-The pre-training phase uses NT-Xent contrastive loss for the subgraph encoder. The GoG encoding phase employs downstream task losses (CE for node classification, BCE for link prediction) combined with standard MoE load-balancing losses. A leave-one-dataset-out strategy is used: pre-training on other graphs and fine-tuning on the target (1-shot for node classification, 5-shot for link prediction).
+The pre-training phase uses the NT-Xent contrastive loss for the subgraph encoder. The GoG encoding phase employs downstream task losses (CE for node classification, BCE for link prediction) combined with a standard MoE load balancing loss. Evaluation is conducted via leave-one-dataset-out migration: pre-training on other graphs and fine-tuning on the target graph (1-shot for node classification, 5-shot for link prediction).
 
 ## Key Experimental Results
 
@@ -75,47 +82,47 @@ The pre-training phase uses NT-Xent contrastive loss for the subgraph encoder. T
 |---|---|---|---|---|---|---|---|---|
 | GCN | 17.46 | 19.53 | 26.89 | 31.98 | 44.29 | 39.43 | 50.39 | 18.48 |
 | GAT | 16.86 | 16.51 | 25.27 | 26.81 | 45.11 | 38.05 | 56.51 | 18.36 |
-| GFM (e.g., MDGFM) | (Lower) | — | — | — | — | — | — | — |
-| **R-GFM** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** |
+| GFM (MDGFM, etc.) | (Lower) | — | — | — | — | — | — | — |
+| **Ours (R-GFM)** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** |
 
-R-GFM consistently achieves SOTA performance across 18 real-world graphs; relative improvements on some datasets reach 49%.
+R-GFM achieves consistent SOTA across 18 real-world graphs, with relative improvements reaching up to 49% on some datasets.
 
 ### Ablation Study
 
 | Configuration | Impact |
 |---|---|
-| Fixed 1-hop subgraphs only | Performance drops, proving the necessity of adaptive-hop |
-| Fully-connected / Edgeless GoG | Both underperform similarity-sparse GoG, aligning with Thm 3.3 |
-| Fixed top-$m$ routing | Underperforms confidence-aware dynamic top-$m$ |
-| Single Euclidean expert | Significant performance loss on high-heterogeneity datasets |
-| Edge budget $\mathcal{B}_{\text{edge}} = 0.6$ | Performance degrades if made sparser or denser |
+| Fixed 1-hop subgraphs only | Performance drops, validating the necessity of adaptive-hop. |
+| Fully connected / no-edge GoG | Both underperform compared to similarity-sparse GoG (consistent with Thm 3.3). |
+| Fixed top-$m$ routing | Underperforms compared to confidence-aware dynamic top-$m$. |
+| Single Euclidean expert | Significant performance drop on highly heterogeneous datasets. |
+| Edge budget variation | Performance degrades if significantly sparser or denser than $0.6 \cdot K(K-1)/2$. |
 
 ### Key Findings
-- The maximum gain of 49% occurs on datasets with high structural heterogeneity, supporting the expectation that dynamic geometric selection primarily benefits heterogeneous graphs.
-- In robustness tests against graph perturbations, R-GFM shows the smallest decline under 30% random edge perturbations compared to baselines, attributed to the redundant information in multi-hop GoGs.
-- Cross-scale generalization: After pre-training on ArXiv_2023, ogbn-ArXiv, Reddit, and PubMed, the model remains robust on Cora, Ele-Computers, Books-History, and Instagram test sets.
+- The maximum improvement of 49% occurs on datasets with high structural heterogeneity, confirming that dynamic geometric selection primarily benefits heterogeneous graphs.
+- R-GFM exhibits the smallest performance drop under 30% random edge perturbation compared to baselines, attributed to the redundant information in multi-hop GoGs.
+- Robust cross-scale generalization: Stable performance on Cora / Ele-Computers / Books-History / Instagram after pre-training on ArXiv_2023 + ogbn-Arxiv + Reddit + PubMed.
 
 ## Highlights & Insights
-- While "Graph of Graphs" is not a new concept, combining it with adaptive hops and Riemannian MoE for GFMs is a first, addressing the long-standing issues of hop count and geometry.
-- The "Router confidence increase $\rightarrow$ automatic $m$ shrinkage" mechanism is an elegant utilization of training dynamics, allowing MoE capacity to self-regulate for better generalization—a concept applicable to LLM MoE training.
-- Using node degree CV to pre-determine expert counts avoids the pain of trial-and-error; this "prediction of capacity via statistics" can be extended to other MoE scenarios.
+- While "Graph of Graphs" is not a new concept, integrating it with adaptive-hop and Riemannian MoE within a GFM framework is novel, solving two long-standing issues in GFM.
+- The mechanism of "increasing router confidence → automatic shrinkage of top-$m$" is an elegant utilization of training dynamics, allowing the MoE capacity to self-regularize.
+- Using the CV coefficient of node degrees to pre-determine the number of experts eliminates the need for trial-and-error, a principle applicable to other MoE scenarios.
 
 ## Limitations & Future Work
-- GoG construction requires traversing multi-hop subgraphs, leading to higher time and memory complexity than fixed-hop GFMs; adaptation for million-node graphs requires further acceleration.
+- GoG construction involves traversing multi-hop subgraphs, leading to higher time and memory complexity than fixed-hop GFMs; adaptation for million-node graphs requires further optimization.
 - Currently, only three classes of constant-curvature Riemannian manifolds are considered; mixed-curvature or learnable curvature spaces remain unexplored.
-- The similarity thresholds and edge budget of 0.6 are empirical values lacking a task-adaptive mechanism.
-- Transfer effectiveness on data with stronger domain priors (e.g., molecular graphs, knowledge graphs) has not been fully verified.
+- The similarity threshold and edge budget are empirical; a task-adaptive mechanism is needed.
+- Transfer performance on datasets with strong domain priors (e.g., molecular graphs, knowledge graphs) requires further validation.
 
 ## Related Work & Insights
-- **vs. MDGFM**: MDGFM also provides theoretical analysis for GFMs but relies on a single receptive field and single geometric space; R-GFM introduces dynamism in both dimensions.
-- **vs. Graph MoE (e.g., GMoE)**: Existing Graph MoEs use fixed top-$m$ and lack geometric priors; R-GFM introduces curvature as an inductive bias.
-- **vs. Hyperbolic GNNs (HGNN/HGCN)**: Hyperbolic methods use only a single negative curvature space; R-GFM adaptively mixes curvatures to cover more diverse structures.
+- **vs. MDGFM**: MDGFM uses a single receptive field and single geometric space; R-GFM introduces dynamics in both dimensions.
+- **vs. Graph MoE (e.g., GMoE)**: Existing Graph MoEs use fixed top-$m$ and lack geometric priors; R-GFM utilizes curvature as an inductive bias.
+- **vs. Hyperbolic GNNs (HGNN / HGCN)**: These methods are limited to a single negative curvature space; R-GFM adaptively mixes multiple curvatures via MoE.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of adaptive-hop GoG and Riemannian MoE is fresh, though individual components have precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 18 datasets, cross-domain transfer, perturbation robustness, and theoretical guarantees provide comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, theory and methodology are tightly aligned, and illustrations are intuitive.
-- Value: ⭐⭐⭐⭐ Provides actionable solutions to two major pain points in GFM research; open-source code helps lower the barrier to reproduction.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -124,10 +131,10 @@ R-GFM consistently achieves SOTA performance across 18 real-world graphs; relati
 ## Related Papers
 
 - [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](../../CVPR2026/self_supervised/global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
+- [\[ICML 2025\] Griffin: Towards a Graph-Centric Relational Database Foundation Model](../../ICML2025/self_supervised/griffin_towards_a_graph-centric_relational_database_foundation_model.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
-- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](../../AAAI2026/self_supervised/hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
 - [\[ICML 2026\] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models](numleak_public_numeric_benchmarks_as_latent_labels_in_foundation_models.md)
-- [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
 
 </div>
 

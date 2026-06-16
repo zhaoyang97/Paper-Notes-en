@@ -50,7 +50,7 @@ item_list:
   - u: "task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c/"
     t: "Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios"
   - u: "the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ/"
-    t: "The Hallucination of Specialization: Revealing the \"Standing Committee\" in Mixture-of-Experts Models"
+    t: "The Illusion of Specialization: Revealing the \"Standing Committee\" in Mixture-of-Experts Models"
   - u: "threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l/"
     t: "Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention"
   - u: "tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_/"
@@ -65,94 +65,94 @@ item_total: 22
 
 **💬 ACL2026** · **22** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/llm_efficiency/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (34)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/llm_efficiency/index.md) · [🧪 ICML2026 (32)](../../ICML2026/llm_efficiency/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (34)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
 
 🔥 **Top topics:** LLM ×7 · Reasoning ×2 · Diffusion Models ×2 · Alignment/RLHF ×2
 
 **[Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)**
 
-:   This paper abstracts "activated expert counts" in MoE inference into a global budget $B$. It employs dynamic programming for optimal layer-wise Top-K allocation (Alloc-L), followed by token-level redistribution using global Top-(K·T) selection (Alloc-T). Applied to DeepSeek-V2-Lite, it reduces the activation budget by half while maintaining accuracy, achieving 1.15× prefill speedup and 1.34× decode speedup.
+:   The "number of activated experts" in MoE inference is abstracted as a global budget $B$. Optimal Top-K allocation is performed across layers via dynamic programming (Alloc-L), followed by token-level redistribution using global Top-$(K \cdot T)$ selection (Alloc-T). This approach halves the activation budget of DeepSeek-V2-Lite while maintaining accuracy, achieving a 1.15× speedup in prefill and a 1.34× speedup in decode.
 
 **[Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)**
 
-:   Ours proposes the Edge-Eval framework to evaluate LLMs across their full lifecycle on traditional T4 GPUs using five deployment metrics (Economic Break-even, Intelligence-per-Watt, System Density, Cold Start Tax, and Quantization Fidelity). It reveals that <2B small models outperform 7B models across economic and ecological dimensions and identifies an anomaly where QLoRA reduces memory but increases energy consumption by up to 7x.
+:   The Edge-Eval framework is proposed to evaluate the full life cycle of LLMs on traditional T4 GPUs through five deployment metrics (Economic Break-even, Intelligence-Power Ratio, System Density, Cold Start Tax, and Quantization Fidelity). It reveals that small models (<2B) are comprehensively superior to 7B models in economic and ecological dimensions and identifies an anomalous phenomenon where QLoRA increases energy consumption by up to 7x despite reducing memory usage.
 
 **[Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning](beyond_accuracy_unveiling_inefficiency_patterns_in_tool-integrated_reasoning.md)**
 
-:   The paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external tool usage. Through large-scale experiments, it reveals four TIR inefficiency patterns: confirmatory tool use, tool mixing, lack of tool priors, and tool format collapse.
+:   This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning that unifies the costs of internal reasoning and external tool usage. Through large-scale experiments, it reveals four TIR inefficiency patterns: confirmatory tool usage, tool mixing, lack of tool priors, and tool format collapse.
 
 **[BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)**
 
-:   Ours proposes BOSCH, a training-free attention-head level SWA hybridization method. It models SWA head selection as a Large Neighborhood Search problem and decomposes it into a three-stage optimization (Layer Sensitivity Probing → Adaptive Ratio Allocation → Grouped Head Selection), systematically outperforming layer-wise heuristics and six static head-level methods across four models and four ratio settings.
+:   The authors propose BOSCH, a training-free mixture-of-SWA method at the attention-head level. It models the SWA head selection as a Large Neighborhood Search (LNS) problem and decomposes it into a three-stage optimization (Layer Importance Probing → Adaptive Rate Assignment → Grouped Head Selection). It systematically outperforms layer-level heuristics and six static head-level methods across four models and four ratio settings.
 
 **[Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)**
 
-:   Ours proposes AHD (Anchor-based History-stable Decoding), a training-free plug-and-play dynamic decoding strategy. By backtracking historical trajectories via dynamic anchors to identify cross-block stable tokens in diffusion LLMs, it achieves early unlocking, reducing decoding steps by 80% on BBH while improving performance by 3.67%.
+:   This paper proposes AHD (Anchor-based History-stable Decoding), a training-free, plug-and-play dynamic decoding strategy. By utilizing dynamic anchors to backtrack historical trajectories and identify cross-block stable tokens in diffusion LLMs, AHD achieves early unlocking. It reduces decoding steps by 80% on BBH while simultaneously improving performance by 3.67%.
 
 **[CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)**
 
-:   CoMeT introduces a "global memory + FIFO temporary memory" dual-memory plugin for existing LLMs. By processing inputs in chunks, it achieves constant memory and linear time complexity. After fine-tuning on only 32k context, it achieves accurate password retrieval at any position within 1M tokens. It also proposes layer-level pipeline parallelism, enabling the fine-tuning of 128k context on 16×80GB GPUs.
+:   CoMeT introduces a "Global Memory + FIFO Temporary Memory" dual-memory plugin for existing LLMs. By processing inputs in chunks, it achieves constant memory usage and linear time complexity. Fine-tuned on only 32k context, it enables precise retrieval at any position within a 1M token range. It also proposes hierarchical pipeline parallelism, enabling 128k context fine-tuning on 16×80GB GPUs.
 
 **[CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)**
 
-:   This paper proposes CreditDecoding, a training-free parallel decoding acceleration method that enhances correct but under-confident tokens by accumulating token-level historical evidence (Trace Credit), achieving up to a 5.48× speedup on LLaDA-8B-Instruct with an accuracy gain of 0.48.
+:   This paper proposes CreditDecoding, a training-free parallel decoding acceleration method. By accumulating token-level historical evidence (trace credit) to enhance correct but under-confident tokens, it achieves up to a 5.48x speedup with a 0.48 accuracy improvement on LLaDA-8B-Instruct.
 
 **[Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)**
 
-:   Lizard replaces the softmax attention of pretrained Transformers with a hybrid subquadratic attention consisting of "Gated Linear Attention (global compression) + Anchor Window Attention (local precision) + learnable gate instead of RoPE." With only 0.04B tokens of distillation, it outperforms existing linearization methods by 9.4–24.5 points on 5-shot MMLU and incorporates a tensor-core-friendly training algorithm that increases throughput by 32%.
+:   Lizard replaces the softmax attention of pretrained Transformers with a hybrid subquadratic attention module (Gated Linear Attention for global compression + Anchor Window Attention for local precision + learnable gates replacing RoPE). Using only 0.04B tokens for distillation, it outperforms existing linearization methods by 9.4–24.5 points on 5-shot MMLU and achieves a 32% throughput increase via a tensor-core-friendly training algorithm.
 
 **[MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)**
 
-:   MTRouter models the decision of "which LLM to call at each turn" in multi-turn agents as a step-by-step routing problem under cost constraints. By using history-model joint embeddings to predict the contribution of candidate models to final task outcomes, it improves task performance on ScienceWorld and HLE while significantly reducing total invocation costs.
+:   MTRouter models the decision of "which LLM to call for each turn" in multi-turn Agents as a turn-by-turn routing problem under cost constraints. By utilizing history-model joint embeddings to predict the contribution of candidate models to the final task outcome, it simultaneously improves task performance and significantly reduces total invocation costs on ScienceWorld and HLE.
 
 **[Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)**
 
-:   This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. It models drafter selection as a Multi-Armed Bandit (MAB) problem and dynamically selects the drafter best aligned with the target LLM using a Block Divergence reward signal. MetaSD consistently outperforms single-drafter methods in both black-box and white-box configurations.
+:   This paper proposes MetaSD, a unified framework that integrates multiple heterogeneous drafters into speculative decoding. By modeling drafter selection as a Multi-Armed Bandit (MAB) problem and using Block Divergence as a reward signal, MetaSD dynamically selects the drafter most aligned with the target LLM. It consistently outperforms single-drafter methods in both black-box and white-box configurations.
 
 **[Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)**
 
-:   This paper proposes Native Hybrid Attention (NHA), which unifies the long-term memory slots of linear RNNs with short-term precise tokens from sliding windows through a single unified softmax attention. It achieves native unification both within and across layers—dynamically allocating long- and short-term attention weights without additional fusion parameters. NHA outperforms Transformer and other hybrid baselines on recall-intensive and common-sense reasoning tasks.
+:   Ours proposes Native Hybrid Attention (NHA), which unifies the long-term memory slots of linear RNNs and the short-term precise tokens of sliding windows through a single softmax attention operation. This achieves a native unification of intra-layer and inter-layer hybridization—dynamically allocating attention weights between long and short terms without extra fusion parameters—surpassing Transformer and other hybrid baselines in recall-intensive and commonsense reasoning tasks.
 
 **[RACER: Retrieval-Augmented Contextual Rapid Speculative Decoding](racer_retrieval-augmented_contextual_rapid_speculative_decoding.md)**
 
-:   RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over $2\times$ inference acceleration across several benchmarks.
+:   RACER proposes a training-free speculative decoding method that unifies retrieval-based exact pattern matching with logit-based future prediction. By constructing a Logits Tree via a copy-logit strategy and a Retrieval Tree via an LRU-evicted AC automaton, it achieves over 2x inference acceleration across multiple benchmarks.
 
 **[Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs](saber_an_efficient_sampling_with_adaptive_acceleration_and_backtracking_enhanced.md)**
 
-:   This paper proposes Saber, a training-free sampling algorithm for Diffusion Language Models (DLMs). By employing adaptive acceleration (dynamically adjusting parallel decoding based on established context) and backtracking enhanced remasking (undoing tokens invalidated by new context), it achieves a 251.4% inference acceleration while improving Pass@1 by an average of 1.9% in code generation.
+:   This paper proposes Saber, a training-free sampling algorithm for Diffusion Language Models (DLMs). By utilizing adaptive acceleration (dynamically adjusting parallel decoding based on the established context) and backtracking-enhanced remasking (undoing tokens invalidated by new context), Saber achieves an average improvement of 1.9% in Pass@1 on code generation while providing an inference speedup of 251.4%.
 
 **[SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration](specbound_adaptive_bounded_self-speculation_with_layer-wise_confidence_calibrati.md)**
 
-:   The SpecBound self-drafting speculative decoding framework is proposed, which suppresses false high-confidence predictions in shallow layers through layer-wise temperature annealing and designs a bounded speculation algorithm to adaptively control draft depth and width, achieving up to 2.33× inference speedup while maintaining lossless output.
+:   The authors propose SpecBound, a self-speculative decoding framework that suppresses spurious high-confidence predictions in shallow layers through layer-wise temperature annealing. By designing a bounded speculation algorithm to adaptively control the depth and width of drafts, the framework achieves up to 2.33× inference acceleration while maintaining lossless output.
 
 **[Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)**
 
-:   Ours proposes Speculative Verification (SV), which introduces a companion model of equivalent size to the draft model. By leveraging the distributional similarity between the draft and companion models to predict speculation accuracy, it dynamically adjusts verification lengths to maximize effective throughput. This achieves an average speedup of 1.4$\times$ and up to 1.9$\times$ compared to standard speculative decoding in large-batch inference.
+:   Proposes Speculative Verification (SV), which introduces a companion model of the same scale as the draft model to predict speculative accuracy by leveraging the similarity between draft and companion distributions. By dynamically adjusting verification length to maximize effective throughput, it achieves an average speedup of 1.4× and up to 1.9× compared to standard Speculative Decoding in large-batch inference scenarios.
 
 **[StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference](structkv_preserving_the_structural_skeleton_for_scalable_long-context_inference.md)**
 
-:   This paper proposes StructKV, a structure-aware KV cache compression framework. It identifies global information hubs by accumulating cross-layer attention patterns via Global In-Degree Centrality, adaptively locates the optimal compression layer through Dynamic Pivot Detection, and separates computation from storage budgets via Structural Propagation & Decoupling. StructKV achieves near full-context performance on LongBench and RULER with only 60% prefill and 10% KV cache.
+:   This paper proposes StructKV, a structure-aware KV Cache compression framework. It identifies global information hubs through cross-layer accumulated attention patterns (Global In-Degree Centrality), adaptively locates the optimal compression layer via Dynamic Pivot Detection, and separates computation from storage budgets using Structural Propagation & Decoupling. On LongBench and RULER, it achieves near full-context performance with 60% prefill + 10% KV retention.
 
 **[Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)**
 
-:   Tandem enables LLMs to generate only four types of short reasoning clues (Goal, Planning, Retrieval, Action), while SLMs judge clue sufficiency via perplexity and entropy to complete the answer. It achieves or exceeds standalone LLM performance on MATH, GSM8K, and HumanEval with approximately 60% of the computational cost.
+:   Tandem allows a large model to generate only four types of short reasoning clues—Goal, Planning, Retrieval, and Action—while a small model uses perplexity and entropy to judge clue sufficiency and complete the answer. On MATH, GSM8K, and HumanEval, it achieves or exceeds the performance of a standalone large model using approximately 60% of the computational cost.
 
 **[Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)**
 
-:   This paper proposes a multi-level task-profile-guided data synthesis framework to address the cold-start problem in LLM routing. It designs TRouter—a routing method that treats task types as latent variables and models the query-cost-performance relationship through variational inference, achieving effective routing in both cold-start and in-domain settings.
+:   A multi-level task-profile-guided data synthesis framework is proposed to address the cold-start problem in LLM routing. The study designs TRouter—a routing method treating task types as latent variables. By modeling query-cost-performance relationships through variational inference, it achieves effective routing in both cold-start and in-domain settings.
 
-**[The Hallucination of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)**
+**[The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)**
 
-:   By introducing the CommitteeAudit framework, the authors discover a "Standing Committee" in MoE models—a compact, persistent ensemble of experts that are consistently activated across different domains and occupy the majority of routing weights. This stands in sharp contrast to the widely assumed domain-specific specialization, revealing an inherent centralized structure in sparse computation.
+:   By introducing the CommitteeAudit framework, the authors discover a "Standing Committee" in MoE models—a compact, persistent set of experts consistently activated and dominating routing weights across different domains. This contrasts with the widely assumed domain-specific specialization, revealing an inherent centralized structure in sparse computation.
 
 **[Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)**
 
-:   TDA achieves sink-free, 99% precise sparse, and competitively performing long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
+:   TDA achieves sink-free, 99% precise sparsity, and competitive performance in long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
 
 **[TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)**
 
-:   TokenTiming re-encodes token sequences generated by a draft model into the target tokenizer space and constructs many-to-many token alignment using Dynamic Time Warping. This allows off-the-shelf small models with heterogeneous vocabularies to serve as speculative decoding draft models, achieving up to 1.57x acceleration across multiple 14B-70B target models.
+:   TokenTiming re-encodes the token sequences generated by draft models into the target tokenizer space and constructs many-to-many token alignments using Dynamic Time Warping (DTW). This allows off-the-shelf small models with different vocabularies to serve as draft models for speculative decoding, achieving up to 1.57x acceleration in heterogeneous speculative decoding across several 14B-70B target models.
 
 **[Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length](understanding_llm_performance_degradation_in_multi-instance_processing_the_roles.md)**
 
-:   This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It discovers that performance decline is not solely caused by context length; the number of instances itself has a stronger impact on success rates. Specifically, at over 1,000 instances, almost all models collapse and rarely proactively alert the user.
+:   This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It finds that performance decline is not solely caused by increasing context length; the instance count itself exerts a stronger influence on success rates. Specifically, almost all models collapse when processing over 1,000 instances and rarely proactively alert the user.

@@ -2,138 +2,145 @@
 title: >-
   [Paper Note] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation
 description: >-
-  [ICML 2026][LLM Agent][Mobile GUI Navigation] The Xiaomi team proposes a systematic "Data-Evaluation-Reasoning" study for VLM mobile GUI agents: releasing the HyperTrack dataset (16k tasks / 674 Chinese Apps) and the GUI…
+  [ICML 2026][LLM Agent][VLM Agent] The Xiaomi team presents a systematic "Data-Evaluation-Reasoning" study for VLM mobile GUI agents: releasing the HyperTrack dataset (16k tasks / 674 Chinese Apps) and the GUIEvalKit tool (supporting 30+ models). They demonstrate that DAPO-style RL significantly outperforms SFT in OOD scenarios and reveal the core trade
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Mobile GUI Navigation"
-  - "VLM Agent"
-  - "Data Scaling"
-  - "DAPO-RL"
-  - "Semi-online Evaluation"
+  - ICML 2026
+  - LLM Agent
+  - VLM Agent
+  - DAPO-RL
 date: 2026-05-08
-content_hash: 8022ffe7479219e2
+content_hash: 6be6072a997c2421
 ---
-
 # Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.27134](https://arxiv.org/abs/2605.27134)  
 **Code**: https://github.com/xiaomi-research/guievalkit (Available)  
 **Area**: Agent / Multimodal VLM  
-**Keywords**: Mobile GUI Navigation, VLM Agent, Data Scaling, DAPO-RL, Semi-online Evaluation
+**Keywords**: Mobile GUI Navigation, VLM Agent, Data Scaling, DAPO-RL, Semi-online Evaluation  
 
 ## TL;DR
-The Xiaomi team proposes a systematic "Data-Evaluation-Reasoning" study for VLM mobile GUI agents: releasing the HyperTrack dataset (16k tasks / 674 Chinese Apps) and the GUIEvalKit evaluation tool supporting 30+ models. They demonstrate that DAPO-style RL significantly outperforms SFT in OOD scenarios and utilize semi-online evaluation (SOEval) to reveal the core trade-off where "explicit reasoning sacrifices PASS@1 stability but enhances PASS@n diversity."
+The Xiaomi team presents a systematic "Data-Evaluation-Reasoning" study for VLM mobile GUI agents: releasing the HyperTrack dataset (16k tasks / 674 Chinese Apps) and the GUIEvalKit tool (supporting 30+ models). They demonstrate that DAPO-style RL significantly outperforms SFT in OOD scenarios and reveal the core trade-off via SOEval: "explicit reasoning sacrifices PASS@1 stability but enhances PASS@n diversity."
 
 ## Background & Motivation
 
-**Background**: GUI Agents driven by VLMs (UI-TARS, AgentCPM-GUI, GUI-Owl, etc.) have become the mainstream solution for mobile automation. Training paradigms concentrate on SFT + preference alignment (DPO) + recent GRPO/DAPO-style RL.
+**Background**: VLM-driven GUI Agents (UI-TARS, AgentCPM-GUI, GUI-Owl, etc.) have become the mainstream solution for mobile automation. Training paradigms focus on SFT + Preference Alignment (DPO) + recent GRPO/DAPO-style RL.
 
-**Limitations of Prior Work**: (1) Data side — Mainstream benchmarks (AITW, AndroidControl, AMEX, GUI Odyssey) are almost exclusively English apps; CAGUI, the largest Chinese dataset, contains only 600 tasks across 22 apps, failing to cover long-tail applications. (2) Evaluation side — Inconsistent scripts, action spaces, and conflicting definitions of step-level/episode-level metrics make horizontal comparisons difficult. (3) Training side — The scaling laws for SFT vs. RL in GUI scenarios have not been systematically mapped. (4) Inference side — Conclusions regarding whether "thinking mode is useful" are contradictory across multiple benchmarks, lacking decision-level (rather than step-level) analysis tools.
+**Limitations of Prior Work**: (1) Data—Mainstream benchmarks (AITW, AndroidControl, AMEX, GUI Odyssey) are almost entirely English-based. The largest Chinese dataset, CAGUI, contains only 600 tasks across 22 apps, failing to cover long-tail applications. (2) Evaluation—Different teams use inconsistent scripts, action spaces, and conflicting definitions for step-level/episode-level metrics, making cross-model comparison difficult. (3) Training—The scaling law of SFT vs. RL in GUI scenarios has not been systematically explored. (4) Reasoning—Conclusions on the utility of "thinking mode" are contradictory across benchmarks, lacking decision-level (rather than step-level) analysis tools.
 
-**Key Challenge**: GUI navigation is essentially a combination of long-horizon tasks, multimodal perception, and sequential decision-making. A significant gap exists between offline metrics (using ground-truth history) and real online execution, while fully online evaluation is too costly for large-scale use. An evaluation protocol is needed that reflects on-policy behavior while reusing static data.
+**Key Challenge**: GUI navigation is essentially a combination of long-horizon tasks, multimodal perception, and sequential decision-making. There is a large gap between offline metrics (using ground-truth history) and real online execution, while full online evaluation is too costly to scale. An evaluation protocol is needed that reflects on-policy behavior while reusing static data.
 
-**Goal**: Decomposition into four sub-problems — (a) Construct large-scale data covering Chinese long-tail apps; (b) Provide a unified evaluation tool for multiple models and benchmarks; (c) Clarify in-domain vs. OOD performance of SFT/RL across different data scales; (d) Use decision-level metrics to explain when "explicit reasoning backfires."
+**Goal**: Decomposition into four sub-problems: (a) Constructing large-scale data covering Chinese long-tail apps; (b) Providing unified evaluation tools for multiple models and benchmarks; (c) Clarifying in-domain vs. OOD performance of SFT/RL at different data scales; (d) Explaining the "cost of explicit reasoning" using decision-level metrics.
 
-**Key Insight**: The authors observe that the disconnect between offline evaluation and online performance stems from feeding the model reference trajectories, whereas in real deployment, the model only sees its own prior decisions. By "switching" to the model's own decision artifacts on correct steps and falling back to the reference on errors, one can approximate the on-policy distribution without sacrificing the reproducibility of static data.
+**Key Insight**: The authors observe that offline evaluation disconnects from online reality because the model is fed reference trajectories (ground-truth history), whereas in deployment, it sees its own previous decisions. By "switching" to the model's own decision artifacts when its predictions are correct and falling back to reference actions only upon error, one can approximate the real on-policy distribution without losing the reproducibility of static data.
 
-**Core Idea**: A quad-set linkage of "Data-Tool-Training-Evaluation" — HyperTrack providing 16k Chinese tasks, GUIEvalKit unifying interfaces, DAPO-RL outperforming SFT on OOD, and SOEval + decision-level diversity/stability quantifying the real cost of reasoning.
+**Core Idea**: A synergy of "Data-Tool-Training-Evaluation"—HyperTrack provides 16k Chinese tasks, GUIEvalKit offers a unified interface, DAPO-RL outperforms SFT on OOD tasks, and SOEval + decision-level diversity/stability metrics quantify the true cost of reasoning.
 
 ## Method
 
 ### Overall Architecture
-Four modules serve a single analytical goal: HyperTrack dataset (Input: 16,080 real tasks, each step containing screenshots, text instructions, low-level action descriptions, bboxes) → UI-TARS-1.5-7B / Qwen3-VL-8B undergo SFT and DAPO-RL on 10 data subsets (16 to 8,192 episodes) → GUIEvalKit handles inference and evaluation across 5 benchmarks (AndroidControl, AiTZ, GUI Odyssey, CAGUI, HyperTrack) with a unified action space and 4 metrics (step type/exact match, episode progress/success) → SOEval further bridges offline evaluation to on-policy reality → Decision-level Diversity/Stability decomposes the impact of reasoning.
+This paper does not release a new model but integrates "Data-Training-Evaluation" into an analysis chain to address industry debates: "SFT or RL?" and "To think or not to think?". The chain starts with the HyperTrack dataset (16,080 Chinese tasks with screenshots, textual instructions, low-level action descriptions, and bboxes). Models like UI-TARS-1.5-7B and Qwen3-VL-8B are trained using SFT and DAPO-RL on 10 scale-based subsets (16 to 8,192 episodes). Models are then evaluated via GUIEvalKit across 5 benchmarks (AndroidControl, AiTZ, GUI Odyssey, CAGUI, HyperTrack) using step-type/exact-match and episode-progress/success metrics. Finally, SOEval bridges the gap to on-policy distributions, while decision-level Diversity/Stability metrics quantify the reasoning trade-off.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["HyperTrack Dataset + 4-way OOD Split"]
+        direction TB
+        A["16k Chinese Tasks<br/>674 Apps + bbox + Dual-layer Instructions"] --> B["4-way OOD Grid<br/>in-domain / unseen-app / unseen-device / both"]
+    end
+    subgraph TRAIN["DAPO-style RL + Composite Binary Reward (SFT vs RL scaling)"]
+        direction TB
+        C["10 Scale Subsets (16 to 8192 episodes)"] --> D["SFT Baseline<br/>Cross-entropy"]
+        C --> E["DAPO-RL<br/>Clip-Higher + Dynamic Sampling + Token-Level Loss<br/>Reward R_type + R_params"]
+    end
+    subgraph EVAL["GUIEvalKit + SOEval + Decision-level Metrics"]
+        direction TB
+        F["GUIEvalKit Unified Interface (30+ VLMs)"] --> G["SOEval Semi-online<br/>Correct step -> self-decision artifact · Error -> fallback to reference"]
+        G --> H["Decision-level Diversity / Stability<br/>Quantifying reasoning trade-offs"]
+    end
+    DATA --> TRAIN
+    TRAIN --> F
+```
 
 ### Key Designs
 
-1.  **HyperTrack Dataset + 4-way OOD Partition**:
-    - **Function**: Fills the gap in Chinese GUI data and provides rigorous test sets across four dimensions: in-domain, unseen app, unseen device, and unseen app & device.
-    - **Mechanism**: 16,080 episodes were collected from 674 Chinese Android Apps across 17 categories (including long-tail and tablet-exclusive), averaging 5.1 steps. Each step is annotated with high-level task descriptions + screenshots + low-level action descriptions + ground-truth bboxes for all clickable actions. The action space includes OPEN/CLICK/SCROLL/TYPE/STOP. Since the training set only contains phone data, the unseen-device test set (tablets) naturally evaluates device-level OOD.
-    - **Design Motivation**: Compared to AITW (no bboxes), AndroidControl (English), and CAGUI (only 600 tasks), HyperTrack is the first large-scale collection to feature "hierarchical UI docs + bbox + screen descriptions + Chinese + dual-level instructions," enabling scaling law experiments and fine-grained reward design.
+**1. HyperTrack Dataset + 4-way OOD Split: Large-scale data with bboxes for Chinese long-tail apps**
 
-2.  **DAPO-style RL + Binary Reward + Data Scaling Experiments**:
-    - **Function**: Systematically compares the scaling behavior of SFT and RL across 16 to 8,192 episodes.
-    - **Mechanism**: Adopts the GRPO framework with three DAPO enhancements: Clip-Higher to raise the upper clipping bound, Dynamic Sampling to replace zero-advantage samples for gradient signal preservation, and Token-Level Policy Gradient Loss for equal token contribution. The objective function is $\mathbb{E}_{q,o_i}\frac{1}{\sum|o_i|}\sum_{i,t}\min(r_{i,t}\hat A_{i,t}, \text{clip}(r_{i,t},1-\epsilon_{\text{low}},1+\epsilon_{\text{high}})\hat A_{i,t})$ with group size $G=16$, $\epsilon_{\text{low}}=0.2, \epsilon_{\text{high}}=0.3$, and $\beta=0$ (no reference model to save VRAM). Reward $R = R_{\text{action-type}} + R_{\text{params}}$, where parameters are judged only if the action type is correct (click within bbox, correct scroll direction, exact text match).
-    - **Design Motivation**: Performance grows approximately log-linearly with the number of training episodes. Crucially, the lead of RL over SFT is far greater in OOD (unseen app) than in-domain—a key empirical finding of the paper. This elevates the justification for RL in GUI Agents from intuition to a quantifiable scaling phenomenon, holding true even when switching backbones (Qwen3-VL-8B).
+HyperTrack collects 16,080 episodes from 674 Chinese Android apps across 17 categories (including long-tail and tablet-exclusive apps), with an average of 5.1 steps. The action space is unified as OPEN/CLICK/SCROLL/TYPE/STOP. Each step includes high-level task descriptions, screenshots, low-level action descriptions, and ground-truth bboxes for all clickable elements. The split strategy is crucial: the training set contains only phone data, making tablets a natural unseen-device test set. Combining this with unseen-apps creates a 4-way OOD grid (in-domain / unseen-app / unseen-device / unseen-app&device).
 
-3.  **GUIEvalKit + SOEval + Decision-level Metrics**:
-    - **Function**: Unifies inference interfaces, provides a semi-online evaluation protocol, and quantifies the impact of reasoning on decision behavior.
-    - **Mechanism**: (i) The `ABCModel` triad (`prepare_input / generate / parse_response`) adapts to 30+ VLMs, supporting vLLM backends and `enable_thinking` toggles. (ii) SOEval uses a history selection operator at each step $i$: $\psi(o_t,a_t,\hat a_t,\hat\tau_t) = \phi(o_t,\hat a_t,\hat\tau_t)$ if $\hat a_t = a_t$, otherwise defaulting to $\phi(o_t,a_t)$. This uses the model's own artifacts when correct and reverts to reference when wrong, allowing the evaluation context to progressively approach on-policy distributions. (iii) Decision-level analysis maps $n=512$ rollouts to a decision space $\mathcal{D}$ via density clustering. Diversity is defined as $\text{Div} = H(p(d|M,S,s))$ and Stability as $\hat\theta = p(d^*|M,S,s)$, quantifying the diversity↑/stability↓ trade-off caused by reasoning.
-    - **Design Motivation**: Validated against AndroidWorld online success rates as the "gold standard," SOEval's step exact match achieved Spearman $\rho=0.771$ ($R^2=0.624$), significantly higher than offline metrics ($\rho=0.657, R^2=0.482$). Decision-level metrics explain why thinking mode loses to instruct on PASS@1 but overtakes it on PASS@8—they are different points on the same stability vs. diversity trade-off curve.
+**2. DAPO-RL + Composite Binary Reward: Quantifying SFT vs. RL scaling behavior**
+
+The authors run parallel training routes from 16 to 8,192 episodes. RL utilizes the GRPO framework with three DAPO components: Clip-Higher (raising the upper clip bound to allow low-probability correct actions to be amplified), Dynamic Sampling (replacing zero-advantage samples to maintain gradient signals), and Token-Level Policy Gradient Loss (equal weighting for tokens in varying sequence lengths). The objective is $\mathbb{E}_{q,o_i}\frac{1}{\sum|o_i|}\sum_{i,t}\min(r_{i,t}\hat A_{i,t}, \text{clip}(r_{i,t},1-\epsilon_{\text{low}},1+\epsilon_{\text{high}})\hat A_{i,t})$ with $G=16, \epsilon_{\text{low}}=0.2, \epsilon_{\text{high}}=0.3, \beta=0$. The reward is a composite binary: $R = R_{\text{action-type}} + R_{\text{params}}$. Performance grows log-linearly with training episodes, and RL's lead over SFT is significantly larger on unseen-apps than in-domain.
+
+**3. GUIEvalKit + SOEval + Decision-level Metrics: Bridging evaluation gaps and quantifying the cost of thinking**
+
+SOEval implements a history selection operator: when the model predicts correctly at step $t$ ($\hat a_t = a_t$), it switches to its own artifact $\psi=\phi(o_t,\hat a_t,\hat\tau_t)$; if incorrect, it falls back to the reference $\phi(o_t,a_t)$. This allows the context to approach on-policy distributions while maintaining reproducibility. Decision-level analysis maps $n=512$ rollouts to a decision space $\mathcal D$ via density clustering. Two metrics are defined: Diversity $\text{Div} = H(p(d|M,S,s))$, representing distribution entropy, and Stability $\hat\theta = p(d^*|M,S,s)$, the probability of hitting the dominant decision. 
 
 ### Loss & Training
-SFT: Standard cross-entropy; RL: DAPO-GRPO ($G=16, \epsilon_{\text{low}}=0.2, \epsilon_{\text{high}}=0.3, \beta=0$), primarily using binary rewards with an ablation on Gaussian spatial rewards. The primary backbone is UI-TARS-1.5-7B, with Qwen3-VL-8B-Thinking used to verify the universality of scaling trends.
+SFT uses standard cross-entropy. RL uses DAPO-GRPO ($G=16, \epsilon_{\text{low}}=0.2, \epsilon_{\text{high}}=0.3, \beta=0$). The primary reward is a composite binary based on action-type and parameters, with Gaussian spatial rewards used in ablation. UI-TARS-1.5-7B is the primary backbone, with Qwen3-VL-8B-Thinking used to verify cross-model scaling trends.
 
 ## Key Experimental Results
 
-### Main Results: Cross-benchmark Offline Evaluation (Step Type / Exact Match, Selected)
+### Main Results: Cross-benchmark Offline Evaluation (Step Type / Exact Match)
 
 | Model | AndroidControl-low | GUI-Odyssey | AiTZ | CAGUI | HyperTrack |
 |-------|--------------------|-------------|------|-------|-----------|
 | Qwen3-VL-8B-Thinking | 81.08 / 71.10 | 74.01 / 46.98 | 66.90 / 47.27 | 78.37 / 56.89 | 77.03 / 59.35 |
 | Qwen3-VL-8B-Instruct | 82.36 / 72.20 | 77.85 / 51.78 | 72.77 / 52.64 | 83.83 / 63.94 | 81.48 / 66.28 |
-| MiMo-VL-7B-RL (w/o thinking) | 94.03 / 90.23 | 85.64 / 67.08 | 79.38 / 66.91 | 79.27 / 61.60 | 92.56 / 76.41 |
+| MiMo-VL-7B-RL (w/o thinking)| 94.03 / 90.23 | 85.64 / 67.08 | 79.38 / 66.91 | 79.27 / 61.60 | 92.56 / 76.41 |
 | UI-TARS-7B-SFT | 98.08 / 94.81 | 86.94 / 68.82 | 82.92 / 67.34 | 89.99 / 70.62 | 90.40 / 75.40 |
-| UI-TARS-72B-SFT | 98.17 / 95.05 | 89.80 / 72.27 | 84.27 / 69.83 | 91.08 / 74.53 | 90.16 / 75.20 |
 | AgentCPM-GUI-8B | 92.80 / 88.60 | 90.82 / 74.84 | 85.46 / 76.08 | **96.88 / 91.32** | 82.80 / 54.26 |
 
-Findings: (a) Specialized GUI Agents generally outperform general VLMs; (b) UI-TARS shows continuous improvement from 2B to 72B; (c) **Thinking mode actually degrades performance across multiple models** (Qwen3-VL series, MiMo-VL, and GUI-Owl all scored higher without thinking).
+**Key Findings**: (a) Specialized GUI Agents generally outperform general VLMs. (b) UI-TARS scores increase from 2B to 72B. (c) **Thinking mode actually degrades performance** across several models (Qwen3-VL series, MiMo-VL, GUI-Owl).
 
-### Key Comparison: SOEval vs. Offline (5-benchmark Average Exact Match)
+### Gain: SOEval vs. Offline (5-benchmark Average Exact Match)
 
 | Model | Offline | SOEval | Gain |
 |-------|---------|--------|---|
-| Qwen3-VL-4B-Instruct | 59.39 | 63.05 | +3.66 |
 | Qwen3-VL-8B-Instruct | 60.39 | 62.84 | +2.45 |
 | GUI-Owl-7B | 65.49 | 67.37 | +1.88 |
 | UI-Venus-Navi-72B | 74.09 | 76.16 | +2.07 |
 
-SOEval consistently raises PASS@1 and correlates more strongly with AndroidWorld online success rates (Spearman 0.771) than offline evaluation (0.657).
+SOEval consistently raises PASS@1 and shows stronger Spearman correlation ($\rho=0.771$) with real online success rates than offline evaluation ($\rho=0.657$).
 
 ### Decision-level Analysis (Reasoning vs. Instruct-only)
-- **Stability shift** (SOEval vs. offline): For GUI-Owl-7B, the rising group gained +0.4500 while the falling group lost −0.3882. SOEval primarily rescues unstable samples at the cost of slight harm to previously stable ones.
-- **Reasoning–execution consistency** (GUI-Owl-7B): R-E consistent samples have a 73.70% success rate, while inconsistent ones have only 18.29% (absolute difference of 55.4 pp, $\chi^2 = 2389.58$, $\phi = 0.489$). Alignment between reasoning and execution is critical.
-- **Failure Analysis**: Action-type mismatch accounts for 61.1% of failures (high-level decision errors), followed by action-target mismatch (grounding errors). This suggests the main drawback of thinking mode is selecting the wrong action type despite extensive "thought."
-
-### Key Findings
-- Performance grows approximately log-linearly with training episodes, and **RL consistently exhibits a steeper slope and higher OOD gains than SFT**.
-- Thinking mode is not a free lunch: it increases decision diversity and rescues low-stability samples but destabilizes high-stability ones, leading to a net loss in PASS@1. It only outperforms instruct at PASS@8, indicating that the choice of evaluation protocol determines the perceived utility of "thinking."
-- SOEval reveals that current models lack a mechanism to balance recent on-policy context with stable decision-making. Increasing on-policy history (OSR) monotonically improves EM, but excessive history can interfere with otherwise stable decisions.
+- **Stability shift**: SOEval mainly recovers unstable offline samples but slightly harms high-stability samples.
+- **Reasoning–Execution Consistency**: Successful reasoning-execution alignment corresponds to a 73.70% success rate, whereas inconsistency drops success to 18.29% ($\phi = 0.489$).
+- **Failure Breakdown**: Action-type mismatch (high-level error) accounts for 61.1% of failures in thinking mode, suggesting reasoning's primary harm is picking the wrong action category.
 
 ## Highlights & Insights
-- **SOEval is an ingenious design**: By using the $\psi$ operator to switch between on-policy artifacts for correct steps and reference data for errors, it maintains reproducibility while approaching real deployment distributions. This can be transferred to any long-horizon agent scenario.
-- **Framing "thinking utility" as a stability-diversity trade-off**: The authors use 512-rollout clustering to show that reasoning moves the model's operating point toward higher diversity and lower stability, providing a foundation for designing adaptive thinking gates.
-- **DAPO's OOD advantage over SFT**: This empirical evidence provides a clear mandate for using RL in agent projects where training data is limited and deployment environments are diverse.
+- **SOEval Design**: The $\psi$ operator seamlessly switches between on-policy and reference history, providing a low-cost proxy for real deployment that is transferable to web or code agents.
+- **Stability-Diversity Trade-off**: Thinking mode shifts models toward "high diversity / low stability." While this hurts PASS@1, it allows reasoning models to eventually surpass instruct-only models at PASS@8.
+- **DAPO Advantage in OOD**: RL's scaling slope and OOD performance gains are consistently higher than SFT's, providing strong evidence for adopting RL in GUI agent training.
 
 ## Limitations & Future Work
-- Only a preview subset of HyperTrack is released; the full 16k data is unavailable, making the scaling experiments difficult to replicate.
-- Decision-level clustering relies on density methods and requires 512 rollouts, which is computationally expensive and unsuitable for real-time monitoring.
-- SOEval still relies on an "on-track" assumption—it reverts to ground truth as soon as a model deviates, which may be unfair to agents capable of self-correction.
-- Experiments are restricted to Android and Chinese apps; cross-platform (Desktop/Web) and cross-language generalization remain unverified.
+- The full 16k HyperTrack dataset is not entirely public (only a preview subset), hindering full external reproduction of scaling experiments.
+- Decision-level clustering requires 512 rollouts, making it computationally expensive and unsuitable for real-time monitoring.
+- SOEval remains an "on-track" assumption—falling back to ground truth upon error does not reward agents capable of self-correction.
+- Experiments are restricted to Android and Chinese apps; cross-platform (Desktop/Web) and cross-lingual generalization remains unverified.
 
 ## Related Work & Insights
-- **vs. UI-TARS / AgentCPM-GUI**: These are the models evaluated. Ours contributes "data + tools + methodology," positioning itself as a benchmark foundation similar to HELM for GUI Agents.
-- **vs. DAPO (Yu et al. 2025)**: While the original DAPO targeted reasoning tasks, Ours adapts it to GUI action prediction with tripartite enhancements and composite binary rewards, proving is applicability to multimodal sequential decision-making.
-- **vs. AndroidWorld**: AndroidWorld is the gold standard but expensive; Ours provides a cheaper proxy (SOEval) with high correlation ($\rho=0.77$).
+- **vs. UI-TARS / AgentCPM-GUI**: These are the evaluation targets. This paper focuses on "Data + Tooling + Methodology," acting as a HELM/Big-Bench for the GUI Agent field.
+- **vs. DAPO (Yu et al. 2025)**: While the original DAPO was for reasoning, this study successfully migrates the components to multimodal sequential decision-making.
+- **vs. AndroidWorld**: SOEval provides a cheaper proxy with 0.77 correlation to AndroidWorld's online success rates, benefiting resource-constrained research groups.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The dataset and tools are solid, but the combination of SOEval and decision-level metrics is a unique contribution to the GUI Agent field.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluates 5 benchmarks, 30+ models, and 10 data scales across multiple backbones.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, though some decision-level joint distribution plots require appendix consultation.
-- Value: ⭐⭐⭐⭐⭐ Provides a comprehensive "data + evaluation + training" baseline for the Chinese GUI Agent community.
+- Novelty: ⭐⭐⭐⭐ SOEval and decision-level metrics are pioneering for GUI agents.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Massive scale across 5 benchmarks, 30+ models, and 10 data scales.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, though complex joint-distribution plots require appendix context.
+- Value: ⭐⭐⭐⭐⭐ Establishes a massive "Data + Eval + Training" baseline for the Chinese GUI Agent community.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
 - [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
 - [\[ICML 2026\] Scaling Small Agents Through Strategy Auctions](scaling_small_agents_through_strategy_auctions.md)
-- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
+- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](../../CVPR2026/llm_agent/sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 
 </div>
 

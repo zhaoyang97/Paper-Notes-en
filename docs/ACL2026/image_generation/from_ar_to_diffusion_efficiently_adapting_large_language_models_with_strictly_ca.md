@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons
 description: >-
-  [ACL2026][Image Generation][Diffusion Language Models] This paper proposes FLUID, which effectively adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attent…
+  [ACL 2026][Image Generation][Diffusion Language Model] This paper proposes FLUID, which efficiently adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves inference and code generation performance close to strong AR models a
 tags:
-  - "ACL2026"
-  - "Image Generation"
-  - "Diffusion Language Models"
-  - "Autoregressive Adaptation"
-  - "Causal Attention"
-  - "Dynamic Stride"
-  - "Parallel Generation"
+  - ACL 2026
+  - Image Generation
+  - Diffusion Language Model
 date: 2026-05-08
-content_hash: f1ff1d1b81d9dc20
+content_hash: 9d26b93bf0ce0b8d
 ---
-
 # From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons
 
 **Conference**: ACL2026  
@@ -24,99 +19,110 @@ content_hash: f1ff1d1b81d9dc20
 **Keywords**: Diffusion Language Models, Autoregressive Adaptation, Causal Attention, Dynamic Stride, Parallel Generation  
 
 ## TL;DR
-This paper proposes FLUID, which effectively adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves performance in reasoning and code generation close to strong AR models and superior to existing diffusion baselines.
+This paper proposes FLUID, which efficiently adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves inference and code generation performance close to strong AR models and superior to existing diffusion baselines.
 
 ## Background & Motivation
-**Background**: Mainstream LLMs are based on autoregressive (AR) next-token prediction, generating one token at a time. While logically stable and mature in training, their latency during long-sequence reasoning and deployment grows linearly with length. Discrete diffusion language models attempt to break this serial bottleneck by iteratively denoising and generating multiple tokens in parallel.
+**Background**: Mainstream LLMs are based on autoregressive (AR) next-token prediction, where each step generates only the next token. This approach is logically stable and mature in training, but the inference and deployment latency grows linearly with sequence length. Discrete diffusion language models attempt to break the serial decoding bottleneck by generating multiple tokens in parallel via iterative denoising.
 
-**Limitations of Prior Work**: Standard diffusion language models mostly employ bidirectional attention to utilize global noisy contexts, which contradicts the causal priors of pre-trained AR backbones like GPT or LLaMA. Consequently, developing high-quality diffusion LMs often requires expensive large-scale pre-training from scratch. Existing "block diffusion" methods use fixed-size blocks as a compromise, but these cannot adapt to variations in local entropy within natural language.
+**Limitations of Prior Work**: Standard diffusion language models often employ bidirectional attention to utilize global noisy context, which mismatches the causal prior of pre-trained AR backbones like GPT or LLaMA. Consequently, developing high-quality diffusion LMs often requires large-scale pre-training from scratch, which is highly expensive. Existing block diffusion methods use fixed chunks as a compromise, but fixed blocks cannot adapt to the varying local entropy in natural language.
 
-**Key Challenge**: The strength of AR models stems from strictly causal dependencies, whereas the advantage of diffusion models lies in parallel denoising. Direct application of bidirectional diffusion breaks the AR prior. Conversely, using fixed blocks leads to over-aggression in high-entropy reasoning segments and over-conservatism in low-entropy template segments.
+**Key Challenge**: The strength of AR models lies in strictly causal dependencies, while the strength of diffusion models lies in parallel denoising. Applying bidirectional diffusion directly destroys the AR prior, while using fixed blocks leads to over-aggressiveness in high-entropy reasoning segments and over-conservatism in low-entropy template segments.
 
-**Goal**: The authors aim to adapt existing AR checkpoints into parallel-generative diffusion models at a low cost while maintaining causal consistency, reasoning capabilities, and structural integrity for code generation.
+**Goal**: The authors aim to reuse existing AR checkpoints and adapt them into parallel-generative diffusion models at low cost, while maintaining causal consistency, reasoning capability, and structural integrity in code.
 
-**Key Insight**: The paper decomposes the problem into two types of mismatch: a structural mismatch between bidirectional diffusion and AR causal priors, and a dynamic mismatch between fixed generation windows and local information density. FLUID addresses these via Strictly Causal Alignment and Elastic Horizons, respectively.
+**Key Insight**: The paper decomposes the problem into two mismatches: a structural mismatch stemming from the conflict between bidirectional diffusion and AR causal priors, and a dynamic mismatch stemming from the conflict between fixed generation windows and local information density. FLUID addresses these through Strictly Causal Alignment and Elastic Horizon modeling.
 
-**Core Idea**: Restrict diffusion denoising under strictly causal attention and enable the model to predict a "safe" parallel denoising horizon based on hidden states, rather than using a fixed block size.
+**Core Idea**: Denoising is restricted to strictly causal attention, and the model predicts the safe parallel denoising horizon based on hidden states instead of using a fixed block size.
 
 ## Method
-FLUID stands for Flexible Unidirectional Inference Diffusion. Rather than training a diffusion LM from scratch, it performs parameter-efficient adaptation on AR backbones such as openPangu-Embedded-7B. Overall, it retains the AR structure (looking only at history) while introducing a variable-length mask span after the current position for parallel recovery via diffusion.
+FLUID stands for Flexible Unidirectional Inference Diffusion. Rather than training a diffusion LM from scratch, it performs parameter-efficient adaptation on existing AR backbones like openPangu-Embedded-7B. Overall, it preserves the AR structure where only history is visible, while introducing a variable-length mask span at the current position to allow the model to recover these tokens in parallel via diffusion.
 
 ### Overall Architecture
-Given a prefix, FLUID uses a causal Transformer to obtain the current hidden state, which is then used by a K-Head to predict a horizon $K_t$. The model places masks at the next $K_t$ positions and performs parallel denoising under strictly causal constraints. After prediction, the immediate next token is always accepted, while subsequent tokens are accepted only if their confidence exceeds a threshold $\gamma$. If a low-confidence token is encountered, the cursor stops and replans. Thus, FLUID takes multiple steps in low-entropy segments and automatically reverts to fine-grained generation in high-entropy reasoning segments.
+Given a prefix, FLUID first uses a causal Transformer to obtain current hidden states, followed by a K-Head that predicts a horizon $K_t$. The model then places masks at the next $K_t$ positions and performs parallel denoising under strictly causal constraints. After prediction, the immediate next token is always accepted, while subsequent tokens are accepted sequentially only if their confidence exceeds a threshold $\gamma$; once a low-confidence token is encountered, the cursor stops and replans. This allows FLUID to take multiple steps in low-entropy segments and automatically revert to finer-grained generation in high-entropy reasoning segments.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Two-stage Adaptation and Dynamic Causal Decoding (Offline)"]
+        direction TB
+        T1["Stage I: Freeze K-Head<br/>Jointly train backbone with AR loss + diffusion loss<br/>Inject 10% stochastic restoration noise in mask span"]
+        T2["Stage II: Freeze backbone<br/>Train K-Head (two-layer MLP) only<br/>Match Gaussian soft target centered at K_t*"]
+        T1 --> T2
+    end
+    A["Input prefix"] --> B["Strictly Causal Diffusion Backbone<br/>Lower-triangular mask, initialized from AR checkpoint<br/>Obtain hidden state h_t"]
+    B --> C["Elastic Horizon Modeling<br/>K-Head predicts horizon K_t"]
+    C --> D["Place K_t masks<br/>Parallel denoising under strictly causal constraints"]
+    D --> E["Confidence-gated decoding<br/>First token accepted, subsequent accepted if conf > γ"]
+    E -->|Low-confidence token| F["Stop cursor<br/>Replan next horizon"]
+    F --> C
+    E -->|All tokens exceed γ| G["Cursor advances multiple steps"]
+    G --> H["Output"]
+    TRAIN -.Offline training produces backbone and K-Head.-> B
+```
 
 ### Key Designs
-1. **Strictly Causal Diffusion Backbone**:
-    - **Function**: Aligns the diffusion denoising process with the causal priors of pre-trained AR models.
-    - **Mechanism**: Injects a lower triangular attention mask into the Transformer, where position $i$ can only access tokens $j \le i$, and future positions are set to $-\infty$. Recovering token $x_i$ depends only on the noisy history $\mathbf{x}_{t,<i}$, preventing any "peeking" at future noisy tokens.
-    - **Design Motivation**: Standard bidirectional diffusion injects noisy future context into current predictions during inference, which can break deductive chains. Strictly causal constraints allow for smooth initialization from GPT-style checkpoints.
 
-2. **Elastic Horizon Modeling**:
-    - **Function**: Dynamically determines the parallel generation distance based on local uncertainty.
-    - **Mechanism**: A lightweight K-Head is added to map the final hidden state $h_t$ to a categorical distribution $k \in \{1, \dots, K_{max}\}$. The oracle horizon $K_t^*$ is determined by the future loss sequence and a competence boundary $\tau$: the model is considered capable of safe parallel recovery within the maximum span where the average loss is below $\tau$.
-    - **Design Motivation**: Natural language information density is non-uniform. The model can move aggressively through function boilerplate or simple arithmetic but should shorten its stride during complex mathematical reasoning. Fixed blocks cannot capture this variance.
+**1. Strictly Causal Diffusion Backbone: Constraining diffusion to strictly causal attention for smooth initialization from AR checkpoints**
 
-3. **Two-stage Adaptation and Dynamic Causal Decoding**:
-    - **Function**: Enables the backbone to learn causal diffusion denoising first, followed by the K-Head learning to reliably plan the horizon.
-    - **Mechanism**: Stage I freezes the K-Head and trains the backbone using a joint AR and diffusion denoising loss, with 10% stochastic restoration noise injected into the mask span. Stage II freezes the backbone and trains the two-layer MLP K-Head to match the predicted distribution to a Gaussian soft target centered at $K_t^*$. During inference, a confidence gate decides the actual number of tokens accepted.
-    - **Design Motivation**: Training the backbone and horizon planner simultaneously can be unstable. Decoupling "what to generate" from "how far to generate" by calibrating generation capability before learning its boundaries is more effective.
+Standard diffusion LMs use bidirectional attention to see the global noisy context, which conflicts with the causal priors of GPT/LLaMA. FLUID injects a lower-triangular attention mask into the Transformer, where position $i$ can only access tokens at $j \le i$. When recovering token $x_i$, the model relies only on the noisy history $\mathbf{x}_{t,<i}$ and cannot peek at future noisy tokens. This preserves the AR deductive chain and allows direct initialization from GPT-style checkpoints without extensive retraining.
 
-### Loss & Training
-The goal of Stage I is to mix AR and diffusion: $\mathcal{L}_{Stage1} = \mathcal{L}_{AR} + \mathcal{L}_{Diff}$. $\mathcal{L}_{AR}$ maintains the next-token language prior of the prefix, while $\mathcal{L}_{Diff}$ recovers the mask span under strictly causal constraints. During training, $K \sim U[1, K_{max}]$ is sampled, and 10% noise is injected into the mask span to improve robustness against imperfect intermediate states.
+**2. Elastic Horizon Modeling: Predicting safe parallel limits instead of using fixed block sizes**
 
-The goal of Stage II is horizon distribution matching: $\mathcal{L}_{Stage2} = D_{KL}(\mathcal{Q} \| P_\phi(\cdot|h_t))$. $\mathcal{Q}$ is a Gaussian soft target centered at $K_t^*$ derived from the competence boundary. In experiments, $K_{max}=16$ and $\tau=2.8$. Stage I runs for 32,000 iterations, and Stage II for 2,000 steps. The backbone uses Rank-16 LoRA with an input length of 1024, a global batch size of 80, and a learning rate of $2 \times 10^{-4}$.
+Information density in natural language is non-uniform: models can safely take many steps in boilerplate code or simple arithmetic but should shorten the stride in complex mathematical reasoning. FLUID adds a lightweight K-Head that maps the final hidden state $h_t$ to a categorical distribution over $k \in \{1, \ldots, K_{max}\}$. Its supervision signal, the oracle horizon $K_t^*$, is determined by the future loss sequence and a competence boundary $\tau$—the maximum span where the average loss remains below $\tau$. Consequently, the same model automatically adopts different strides for GSM8K and MMLU.
 
-## Key Experimental Results
+**3. Two-stage Adaptation and Dynamic Causal Decoding: Calibrating "what to generate" before learning "how far to generate"**
 
-### Main Results
-| Model / Method | Type | Adaptation/Training Tokens | MMLU | IFEval | GSM8K | MATH500 | HumanEval | MBPP |
-|----------------|------|---------------------------|------|--------|-------|---------|-----------|------|
+Simultaneously training the backbone and horizon planner can be unstable. FLUID splits this into two steps. Stage I freezes the K-Head and jointly trains the backbone with AR and diffusion denoising losses, injecting 10% stochastic restoration noise in the mask span to improve robustness against imperfect intermediate states. Stage II freezes the backbone and trains only the two-layer MLP K-Head to match a Gaussian soft target centered at $K_t^*$. Inference incorporates a confidence-gated mechanism: the K-Head provides a plan, but tokens are accepted only if they individually exceed the threshold $\gamma$, decoupling planning from execution.
+
+### Key Experimental Results
+
+#### Main Results
+| Model / Method | Type | Adaptation tokens | MMLU | IFEval | GSM8K | MATH500 | HumanEval | MBPP |
+|----------------|------|-------------------|------|--------|-------|---------|-----------|------|
 | FLUID-7B | Diff | 2.7B | 67.8 | 57.7 | 91.9 | 61.8 | 60.4 | 53.6 |
 | Qwen-2.5-7B | AR | - | - | - | 91.6 | - | - | - |
 | Dream-7B | Diff | - | - | - | 81.0 | - | - | - |
 | LLaDA-8B | Diff | - | - | - | 78.6 | - | - | - |
 
-### Ablation Study
+#### Ablation Study
 | Configuration | Causal | Elastic | GSM8K | MATH500 | HumanEval | Note |
 |---------------|--------|---------|-------|---------|-----------|------|
 | Baseline | ✗ | ✗ | 82.0 | 51.2 | 42.2 | Bidirectional fixed-block baseline |
-| Baseline + Elastic | ✗ | ✓ | 82.5 | 53.6 | 42.8 | Dynamic horizon only; still suffers from acausal future interference |
-| Baseline + Causal | ✓ | ✗ | 90.6 | 59.2 | 54.9 | Causal constraint restores reasoning chain, but fixed blocks truncate structure |
-| FLUID | ✓ | ✓ | 91.9 | 61.8 | 60.4 | Strictly causal and dynamic horizon are complementary |
+| Baseline + Elastic | ✗ | ✓ | 82.5 | 53.6 | 42.8 | Dynamic horizon with acausal future interference |
+| Baseline + Causal | ✓ | ✗ | 90.6 | 59.2 | 54.9 | Causal reasoning chain preserved, but fixed blocks truncate structure |
+| FLUID | ✓ | ✓ | 91.9 | 61.8 | 60.4 | Strictly causal and dynamic horizons are complementary |
 
 ### Key Findings
-- FLUID reaches 91.9 on GSM8K, which is 10.9 points higher than Dream-7B, 13.3 points higher than LLaDA-8B, and comparable to Qwen-2.5-7B (91.6).
-- Elastic Horizon is crucial for code tasks. A fixed $K=16$ causes semantic fracture; full FLUID is 5.5 points higher than the causal-only fixed-block version on HumanEval.
-- A 10% stochastic restoration noise ratio is optimal: GSM8K / MATH500 / HumanEval scores are 91.9 / 61.8 / 60.4 respectively, compared to 91.0 / 60.8 / 59.8 at 0% and 91.1 / 61.5 / 60.0 at 15%.
-- The competence boundary $\tau=2.8$ performs best. Smaller values are too conservative, while larger values lead to over-expansion of the horizon.
-- Regarding inference efficiency, FLUID achieves approximately $2\times$ speedup over standard diffusion baselines. On MMLU, the average stride is 6.5, reaching 18.82 tokens/s, higher than the 17.52 tokens/s of fixed $K=16$. On GSM8K, the average stride can expand to 13.1.
-- Training cost is approximately 320 GPU-hours, with Stage I accounting for the vast majority. Stage II trains only the lightweight K-Head, with negligible overhead.
+- FLUID achieves 91.9 on GSM8K, outperforming Dream-7B by 10.9 points and LLaDA-8B by 13.3 points, approaching Qwen-2.5-7B (91.6).
+- Elastic Horizon is critical for coding tasks; using a fixed $K=16$ causes semantic fractures. FLUID improves HumanEval by 5.5 points over causal-only fixed-block versions.
+- A stochastic restoration noise ratio of 10% is optimal for robustness compared to 0% or 15%.
+- In terms of efficiency, FLUID achieves a $2\times$ speedup relative to standard diffusion baselines. In GSM8K, the average stride reaches 13.1.
+- Training cost is approximately 320 GPU-hours, which is significantly lower than training diffusion LMs from scratch.
 
 ## Highlights & Insights
-- The most ingenious aspect of the paper is not treating "bidirectional" as a prerequisite for diffusion, but rather redefining causal diffusion: parallel recovery of a future span while each position remains restricted to historical context.
-- Elastic Horizon transforms parallel decoding from a fixed engineering hyperparameter into a model-predicted problem. This is more natural than tuning a block size and explains why a single model should use different strides for GSM8K versus MMLU.
-- Confidence gating ensures that horizon prediction is not a "hard" commitment. The K-Head proposes a plan, but tokens are vetted by a confidence check, reducing the risk of a single miscalculation contaminating the sequence.
-- From an engineering perspective, 2.7B adaptation tokens and 320 GPU-hours are very low compared to training a diffusion LM from scratch, demonstrating that AR-to-diffusion adaptation is a viable practical path.
+- The paper redefines causal diffusion by allowing parallel recovery of a future span while ensuring each position only attends to its history, avoiding the assumption that diffusion must be bidirectional.
+- Elastic Horizon transforms parallel decoding from a fixed engineering hyperparameter into a model prediction problem, explaining why different strides are needed for different tasks (e.g., GSM8K vs. MMLU).
+- Confidence gating ensures that horizon predictions are not hard commitments, reducing the risk of error propagation from poor planning.
+- The use of 2.7B tokens and 320 GPU-hours suggests that AR-to-diffusion adaptation is a practical pathway for low-latency generation.
 
 ## Limitations & Future Work
-- The performance ceiling of FLUID is constrained by the source AR backbone. If the source model (e.g., openPangu) has inherent hallucinations or reasoning flaws, strictly causal diffusion will not automatically fix those gaps.
-- Current experiments focus on general LLM tasks, math, code, and instructions. Specialized domains like medicine, law, and specific structured generation have not yet been fully validated.
-- It remains to be seen if MoE architectures, multimodal LLMs, or longer context scenarios are equally compatible with this adaptation method.
-- Elastic Horizon relies on the calibration of the K-Head and competence boundary. Future work could explore fine-grained uncertainty estimation, online adaptive thresholds, and integration with KV caching or speculative decoding.
+- The performance upper bound is limited by the source AR backbone; diffusion adaptation does not automatically fix hallucinations or reasoning flaws inherent in the base model.
+- Experiments are primarily focused on general LLM tasks, math, and code; specialized domains like medicine or law have not been fully validated.
+- Whether this adapts equally well to MoE architectures, multimodal LLMs, or extremely long contexts remains to be explored.
+- Future work could investigate fine-grained uncertainty estimation and online adaptive thresholds.
 
 ## Related Work & Insights
-- **vs. LLaDA / Dream**: These diffusion language models show potential for parallel generation but typically rely on bidirectional attention and massive pre-training. FLUID focuses on reusing AR checkpoints and avoiding future noise interference via strictly causal mechanisms.
-- **vs. Block Diffusion / semi-AR methods**: Fixed-block methods compromise between quality and speed, but the block size cannot adapt to local entropy. FLUID uses a K-Head to dynamically set the horizon and utilizes confidence gating for actual truncation.
-- **vs. Fast-DLLM style inference acceleration**: Training-free acceleration is often an inference trick; FLUID changes the adaptation objective and structural constraints. While the cost is higher, it systematically improves reasoning, code, and semantic quality.
+- **vs LLaDA / Dream**: These models show the potential of parallel text generation but rely on bidirectional attention and massive pre-training. FLUID reuses AR checkpoints and employs causal mechanisms.
+- **vs Block Diffusion / semi-AR**: Fixed-block methods compromise between quality and speed but cannot adapt to local entropy. FLUID uses the K-Head for dynamic decision-making.
+- **vs Fast-DLLM**: While training-free acceleration acts as an inference trick, FLUID modifies the adaptation objective and structural constraints for systematic improvements in reasoning and code quality.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The combination of strictly causal diffusion and Elastic Horizon addresses the core contradictions of AR-to-diffusion adaptation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Covers general, math, code, efficiency, and multiple ablations, though specialized domains and larger scale models are still to be validated.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Clear explanation of structural mismatch and the entropy-horizon dilemma. Some main tables in the source are slightly difficult to parse.
-- **Value**: ⭐⭐⭐⭐⭐ Highly insightful for low-cost parallel LLM generation, particularly for converting AR checkpoints into lower-latency generators.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of strictly causal diffusion and Elastic Horizon addresses the core conflicts in AR-to-diffusion adaptation.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers general, math, and code tasks with extensive ablations, though specialized domains and larger scales are pending.
+- Writing Quality: ⭐⭐⭐⭐☆ The structural mismatch and entropy-horizon dilemma are explained clearly.
+- Value: ⭐⭐⭐⭐⭐ Highly insightful for low-cost parallel LLM generation and converting AR checkpoints into low-latency generators.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -124,7 +130,7 @@ The goal of Stage II is horizon distribution matching: $\mathcal{L}_{Stage2} = D
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](../../NeurIPS2025/image_generation/non-markovian_discrete_diffusion_with_causal_language_models.md)
 - [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](../../AAAI2026/image_generation/unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
+- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](../../NeurIPS2025/image_generation/scaling_diffusion_transformers_efficiently_via_μp.md)
 - [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](../../CVPR2026/image_generation/causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 
 </div>

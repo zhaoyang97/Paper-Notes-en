@@ -170,8 +170,8 @@ The entire framework requires no backpropagation training; all steps have closed
 - [\[ICLR 2026\] How to Make the Most of Your Masked Language Model for Protein Engineering](how_to_make_the_most_of_your_masked_language_model_for_protein_engineering.md)
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](protein_as_a_second_language_for_llms.md)
 - [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](../../ICML2026/computational_biology/protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
-- [\[ICLR 2026\] CORDS: Continuous Representations of Discrete Structures](cords_continuous_representations_of_discrete_structures.md)
 - [\[ICLR 2026\] Controlling Repetition in Protein Language Models](controlling_repetition_in_protein_language_models.md)
+- [\[ICLR 2026\] CORDS: Continuous Representations of Discrete Structures](cords_continuous_representations_of_discrete_structures.md)
 
 </div>
 

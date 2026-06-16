@@ -41,7 +41,7 @@ item_list:
   - u: "temporalvlm_video_llms_for_temporal_reasoning_in_long_videos/"
     t: "TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos"
   - u: "trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera/"
-    t: "TRACE: Evidence Localization-based Multi-Video Event Understanding and Statement Generation"
+    t: "TRACE: Evidence-Based Localization for Multi-Video Event Understanding and Claim Generation"
   - u: "vill-e_video_llm_embeddings_for_retrieval/"
     t: "ViLL-E: Video LLM Embeddings for Retrieval"
   - u: "vista_verification_in_sequential_turn-based_assessment/"
@@ -54,70 +54,70 @@ item_total: 16
 
 **💬 ACL2026** · **16** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [📷 CVPR2026 (73)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (179)](../../CVPR2026/video_understanding/index.md) · [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×2 · Compression ×2
 
 **[APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention](apb-v_accelerating_long-video_understanding_via_sequence-parallelism-aware_appro.md)**
 
-:   APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While retaining full visual embeddings, it achieves 12.72×, 1.70×, and 1.18× speedups relative to FlashAttn, ZigZagRing, and APB, respectively, under a 64-frame 1440p setting without significant performance loss.
+:   APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While retaining full visual embeddings, it achieves 12.72$\times$, 1.70$\times$, and 1.18$\times$ speedups relative to FlashAttn, ZigZagRing, and APB respectively under 64-frame 1440p settings, without significant performance loss.
 
 **[ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)**
 
-:   ArrowGEV is proposed, a reinforcement learning framework inspired by the "arrow of time" in physics, which models temporal directionality in videos by distinguishing between time-sensitive and time-insensitive events to improve the event grounding accuracy and temporal understanding of VLMs.
+:   Proposes ArrowGEV, a reinforcement learning framework inspired by the physics concept "Arrow of Time," which models temporal directionality in videos by distinguishing between time-sensitive and time-insensitive events, enhancing the grounding accuracy and temporal understanding of VLMs.
 
 **[Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems](automated_knowledge_component_generation_for_interpretable_knowledge_tracing_in_.md)**
 
-:   This paper utilizes LLMs to automatically generate and cluster Knowledge Components (KCs) for open-ended programming problems. It proposes KCGen-KT, which converts student mastery levels for each KC into soft tokens as input for Llama 3, simultaneously improving correctness prediction and student code generation on CodeWorkout and FalconCode datasets.
+:   This paper utilizes LLMs to automatically generate and cluster Knowledge Components (KCs) for open-ended programming problems. It proposes KCGen-KT, which converts student mastery levels for each KC into soft tokens for Llama 3 input, improving both correctness prediction and student code generation on CodeWorkout and FalconCode.
 
 **[Confidence Estimation for LLMs in Multi-turn Interactions](confidence_estimation_for_llms_in_multi-turn_interactions.md)**
 
-:   This paper presents the first systematic study of LLM confidence estimation in multi-turn dialogue scenarios. It proposes two core desiderata—per-turn calibration and monotonicity as information increases—along with the corresponding InfoECE metric and Kendall's $\tau$ evaluation. It introduces the Hinter-Guesser data construction paradigm and a novel P(SUFFICIENT) logit probe. Results indicate that existing methods (verbalized / SC / P(TRUE)) exhibit poor calibration and monotonicity in multi-turn settings, while P(SUFFICIENT) reduces InfoECE to 5.27 on GUESS (vs. 79.97 for P(TRUE)) and achieves a $\tau$ of 81.51, although the task remains far from solved.
+:   This paper presents the first systematic study of LLM confidence estimation in multi-turn dialogue scenarios. It proposes two core desiderata (per-turn calibration + monotonicity as information increases), the corresponding InfoECE metric and Kendall's $\tau$ evaluation, and the Hinter-Guesser dataset construction paradigm. The authors introduce a novel P(SUFFICIENT) logit probe—finding that existing methods (verbalized / SC / P(TRUE)) exhibit poor calibration and monotonicity in multi-turn settings, while P(SUFFICIENT) reduces InfoECE to 5.27 on GUESS (vs. 79.97 for P(TRUE)) and achieves a $\tau$ of 81.51, although the task remains far from solved.
 
 **[CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering](craft_critic-refined_adaptive_key-frame_targeting_for_multimodal_video_question_.md)**
 
-:   CRAFT is a claim-centric pipeline for multi-video QA of news events. By combining dynamic key-frame selection, ASR transcription, iterative refinement via UNLI/MNLI/LLM critics, and citation merging, it achieves 0.739 macro average, 0.810 reference recall, and 0.635 citation F1 on MAGMaR-Test.
+:   CRAFT is a claim-centric pipeline for news event multi-video question answering. It combines dynamic key-frame selection, ASR transcription, iterative refinement via UNLI/MNLI/LLM critics, and citation consolidation, achieving a 0.739 macro average, 0.810 reference recall, and 0.635 citation F1 on MAGMaR-Test.
 
 **[DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)**
 
-:   The authors decompose the factual evaluation of procedural video captions (e.g., cooking, furniture making) into **dual-layer facts**: conceptual facts (abstract roles like Action/Ingredient/Tool/Location) and contextual facts (observable predicate–argument relations in video, e.g., stir(soup, pot)). They construct two benchmarks, YouCook3-Fact and CraftBench-Fact, which annotate Video-Implicit Arguments (VIA) and contrastive facts. They propose MultiFactScore, which uses multimodal/textual NLI to verify facts at the role level, further subdividing errors into Hallucination, Saliency, and Omission. Experiments reveal that SOTA MLLM captions are "fluent but factually incomplete"; evaluating captions in isolation overestimates Hallucinations by approximately half, and only video-grounded evaluation can distinguish between saliency and true hallucination.
+:   Authors decompose the factual evaluation of procedural video captions (e.g., "cooking," "furniture assembly") into **dual-layer facts**: conceptual facts (abstract roles such as Action/Ingredient/Tool/Location) + contextual facts (observable predicate–argument relations in video, e.g., stir(soup, pot)). They construct two benchmarks, YouCook3-Fact and CraftBench-Fact, which annotate Video Implicit Argument (VIA) completion and contrastive facts. The proposed MultiFactScore utilizes multimodal/textual NLI to verify facts at the role level, further categorizing errors into Hallucination / Saliency / Omission. Experiments reveal that SOTA MLLM captions are "fluent but factually incomplete"; evaluating captions in isolation overestimates Hallucination by approximately half, while only video-grounded evaluation can effectively distinguish saliency from true hallucination.
 
 **[GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)**
 
-:   GameplayQA is proposed, an end-to-end benchmarking framework based on multiplayer 3D game videos. Through dense timeline annotations (1.22 labels/sec) and a structured distractor taxonomy, the framework systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense, multi-view synchronized scenarios, revealing a significant gap between frontier models and human performance.
+:   GameplayQA is proposed as an end-to-end benchmarking framework based on multi-player 3D game videos. Through dense timeline annotations (1.22 labels/second) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense, multi-POV synchronized scenarios, revealing a significant gap between frontier models and human performance.
 
 **[HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)**
 
-:   This paper proposes HERMES, based on a mechanistic analysis of hierarchical attention preferences in MLLM decoders. It conceptualizes the KV cache as a hierarchical memory framework (shallow layers = sensory memory, middle layers = working memory, deep layers = long-term memory). It achieves training-free efficient streaming video understanding, maintaining or improving accuracy while reducing video tokens by 68%. The TTFT latency is <30ms, which is 10 times faster than the previous SOTA.
+:   This paper proposes HERMES, which conceptualizes the KV cache as a hierarchical memory framework (Shallow = Sensory, Middle = Working, Deep = Long-term) based on a mechanistic analysis of the hierarchical attention preferences in MLLM decoders. HERMES achieves training-free, efficient streaming video understanding, maintaining or improving accuracy while reducing video tokens by 68%, with a TTFT latency under 30ms—10 times faster than previous SOTA.
 
 **[NSF-SciFy: Mining the NSF Awards Database for Scientific Claims](nsf-scify_mining_the_nsf_awards_database_for_scientific_claims.md)**
 
-:   NSF-SciFy extracts 2.8M scientific claims and investigation proposals from NSF award abstracts, constructing a resource several orders of magnitude larger than existing scientific claim datasets, and demonstrates that it significantly enhances claim/proposal extraction models.
+:   NSF-SciFy extracts 2.8M scientific claims and investigation proposals from NSF award abstracts, constructing a resource orders of magnitude larger than existing scientific claim datasets and demonstrating significant performance gains for claim/proposal extraction models.
 
 **[Probing for Reading Times](probing_for_reading_times.md)**
 
-:   This paper probes the ability of language model representations across different layers to predict reading times, finding that early layer representations outperform surprisal in predicting early fixation metrics, while surprisal performs better on late metrics, with the best predictor varying by language and metric.
+:   This paper probes the ability of various language model layer representations to predict reading times, discovering that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal excels in later metrics. The optimal predictor varies significantly across languages and metrics.
 
 **[Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)**
 
-:   Response-G1 uses query-guided online scene graphs, historical scene graph retrieval, and timestamped trigger prompts to explicitly align visual evidence with the response conditions of user queries, significantly improving the ability of Video-LLMs to judge "whether to answer now" without fine-tuning.
+:   Response-G1 utilizes query-guided online scene graphs, historical scene graph retrieval, and timestamped trigger prompts to explicitly align visual evidence in streaming video with the response conditions of user queries. This approach significantly improves the ability of Video-LLMs to determine "whether to answer now" without requiring fine-tuning.
 
 **[Rethinking the Idiomaticity Decomposability Hypothesis: Evidence from Distributional Learning](rethinking_the_idiomaticity_decomposability_hypothesis_evidence_from_distributio.md)**
 
-:   This paper re-examines the Idiom Decomposability Hypothesis (IDH) using contextualized language models as "controlled distributional learners." It finds that model-derived decomposability is only weakly correlated with human judgments and exhibits a small but stable negative correlation with syntactic flexibility. This suggests that idiomatic behavior is better explained as being shaped by distributional experience, surprisal, and representation stabilization processes.
+:   This paper re-examines the Idiom Decomposability Hypothesis (IDH) by using contextualized language models as "controlled distributional learners." It finds that model-derived decomposability is only weakly correlated with human judgments and exhibits a small but stable negative correlation with syntactic flexibility. This suggests that idiomatic behavior is more likely shaped by distributional experience, surprisal, and representation stabilization processes.
 
 **[TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)**
 
-:   This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a temporal-aware segment encoder (overlapping sliding Video Q-Former + fusion module) and aggregates global long-range dependencies using BiLSTM. It is the first to introduce LSTM into Video LLMs, outperforming previous methods in dense video captioning, temporal localization, highlight detection, and action segmentation.
+:   This paper proposes TemporalVLM, which extracts local fine-grained temporal features through a time-aware segment encoder (overlapping sliding Video Q-Former + fusion module) and aggregates global long-range dependencies using a BiLSTM. This marks the first introduction of LSTM into Video LLMs, outperforming previous methods across four tasks: dense video captioning, temporal localization, highlight detection, and action segmentation.
 
-**[TRACE: Evidence Localization-based Multi-Video Event Understanding and Statement Generation](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)**
+**[TRACE: Evidence-Based Localization for Multi-Video Event Understanding and Claim Generation](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)**
 
-:   TRACE achieves SOTA on multi-video event understanding tasks by adopting a "locate-then-reason" pipeline. It first constructs a text-searchable video timeline using OCR and object detection, then utilizes a text LLM for query-conditioned evidence localization, and finally employs an LVLM to generate cited claims. This approach improves the F1 score from 0.705 to 0.811.
+:   TRACE achieves SOTA on multi-video event understanding (improving F1 from 0.705 to 0.811) through a "localization-then-reasoning" pipeline. It first builds text-searchable video timelines using OCR and object detection, performs query-conditioned evidence localization using a text LLM, and finally generates cited claims via an LVLM.
 
 **[ViLL-E: Video LLM Embeddings for Retrieval](vill-e_video_llm_embeddings_for_retrieval.md)**
 
-:   This paper proposes ViLL-E, the first unified Video LLM architecture that simultaneously supports text generation and embedding generation. Through a three-stage generative-contrastive joint training strategy and an adaptive KV-Former embedding head, it approaches the performance of expert models in video retrieval and temporal localization while maintaining competitive VideoQA capabilities.
+:   The paper proposes ViLL-E, the first unified Video LLM architecture that supports both text and embedding generation. Through a three-stage generative-contrastive joint training and an adaptive KV-Former embedding head, it achieves performance close to expert models in video retrieval and temporal grounding while maintaining competitive VideoQA capabilities.
 
 **[VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)**
 
-:   VISTA proposes a multi-turn dialogue factuality assessment framework based on claim-level decomposition and sequential consistency tracking. It subdivides unverifiable content into four categories—subjective, contradicted, lacking evidence, and abstention—significantly outperforming FActScore and LLM-as-judge baselines across four dialogue benchmarks and eight LLMs.
+:   VISTA proposes a multi-turn dialogue factuality assessment framework based on claim-level decomposition and sequential consistency tracking. It subdivides unverifiable content into four categories: subjective, contradicted, lacking evidence, and abstention, significantly outperforming FActScore and LLM-as-Judge baselines across four dialogue benchmarks and eight LLMs.

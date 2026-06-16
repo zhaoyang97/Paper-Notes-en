@@ -2,172 +2,143 @@
 title: >-
   [Paper Note] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 description: >-
-  [CVPR 2026][Image Generation][high-resolution image generation] This paper proposes PixelRush, a training-free high-resolution image generation framework that combines four components — partial inversion…
+  [CVPR 2026][Image Generation][Paper Note] The first method to bring training-free high-resolution generation into the practical stage—by employing a partial inversion strategy to make few-step diffusion models viable for patch refinement, it generates 4K images in 20 seconds, representing a $10 \times$ to $35 \times$ speedup over existing methods with superior
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "high-resolution image generation"
-  - "training-free"
-  - "diffusion models"
-  - "few-step diffusion"
-  - "patch-based inference"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: c7cb6e4960214efc
+content_hash: 126a8b6b7fd49fa1
 ---
-
 # PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.12769](https://arxiv.org/abs/2602.12769)  
 **Code**: None  
-**Area**: Image Generation
-**Keywords**: high-resolution image generation, training-free, diffusion models, few-step diffusion, patch-based inference
+**Area**: Image Generation / Diffusion Model Acceleration  
+**Keywords**: Training-free high-resolution generation, patch-based inference, partial inversion, few-step diffusion, Gaussian mixture  
 
 ## TL;DR
 
-This paper proposes PixelRush, a training-free high-resolution image generation framework that combines four components — partial inversion, few-step diffusion models, Gaussian filter blending, and noise injection — to compress 4K image generation time from several minutes to approximately 20 seconds (10×–35× speedup), while surpassing existing SOTA methods on FID/IS metrics.
+The first method to bring training-free high-resolution generation into the practical stage—by employing a partial inversion strategy to make few-step diffusion models viable for patch refinement, it generates 4K images in 20 seconds, representing a $10 \times$ to $35 \times$ speedup over existing methods with superior quality.
 
 ## Background & Motivation
 
-Pre-trained diffusion models such as SDXL excel at generating high-quality images, but are constrained by fixed training resolutions (1024×1024 for SDXL). Direct inference at resolutions beyond the training distribution leads to severe structural artifacts and quality degradation. Fine-tuning to target resolutions faces three major obstacles: scarcity of high-resolution data, prohibitive training costs, and model lock-in to specific resolutions.
+**Background**: Pre-trained diffusion models (e.g., SDXL) can only generate high-quality images at their native resolution; super-resolution inference leads to severe object repetition and texture artifacts. Training-free high-resolution methods (DemoFusion, FreeScale, etc.) address this via patch-based or frequency-domain interventions.
 
-Existing training-free high-resolution generation methods fall into two categories:
+**Limitations of Prior Work**: Existing solutions rely on complete 50-step reverse diffusion—making the generation of a 4K image take 5–10 minutes, which is entirely impractical.
 
-**Direct inference methods** (e.g., ScaleCrafter, FreeScale): These operate on full high-resolution latents, mitigating object repetition through modified convolution dilation rates or frequency-domain interventions. However, frequency-domain operations introduce unnatural textures, and memory consumption scales with latent size, typically limiting applicability to below 8K.
+**Key Challenge**: The root of the speed bottleneck is the redundant "full-noise to full-reverse" design. The authors observed that the reverse process of high-resolution refinement also follows frequency-hierarchical reconstruction: low-frequency global structures form early, while high-frequency details are synthesized late. Since a coarse upsampled image already contains complete low-frequency structures, starting reconstruction from pure noise is computationally redundant.
 
-**Patch-based methods** (e.g., DemoFusion, MultiDiffusion): These divide high-resolution latents into overlapping patches matching the model's native resolution, bypassing memory bottlenecks. However, like direct inference methods, they rely on full multi-step reverse diffusion (e.g., 50 steps), causing 4K generation to take several minutes and 8K to exceed one hour.
-
-Existing acceleration attempts have achieved limited gains: CutDiffusion achieves marginal speedup by reducing patch count at the cost of quality; LSNR requires training additional plugin modules and only reduces steps from 50 to 30. **The root cause is that existing methods are incompatible with fast few-step sampling**, which constitutes the primary obstacle to practical deployment.
-
-PixelRush's core insight is: since the reverse diffusion process reconstructs images in a frequency-hierarchical manner — recovering low-frequency global structure first, then high-frequency details — and since a coarsely upsampled image already contains low-frequency information, **perturbing the latent to full Gaussian noise and denoising from scratch is redundant**. It suffices to begin from a shallow intermediate noise level and focus solely on high-frequency detail synthesis.
+**Key Insight**: Directly truncating steps introduces new problems: the massive updates of few-step models lead to severe patch boundary artifacts and over-smoothing. Therefore, a complete suite of solutions is needed to overcome these side effects.
 
 ## Method
 
 ### Overall Architecture
 
-PixelRush adopts a classic two-stage pipeline: base generation followed by cascaded upsampling.
+PixelRush addresses the pain point that training-free high-resolution generation is too slow. Its overall workflow consists of two stages—first generating a base image at native resolution using SDXL, then performing cascaded upsampling, doubling the resolution at each level. Each level involves a fixed cycle: upsampling the image in pixel space, encoding it into latent space via VAE, refining it with PixelRush, and decoding it back to pixels as input for the next level.
 
-**Base generation stage**: Given a text prompt and target resolution, a multi-step diffusion model (e.g., SDXL) generates a base image at native resolution.
+The innovation is focused on the "refinement" stage, utilizing few-step (or even 1-step) diffusion models. The following three designs are coupled sequentially to suppress boundary artifacts and over-smoothing.
 
-**Cascaded upsampling stage**: Resolution is doubled at each stage (4× area increase), following the pipeline: pixel-space upsampling → VAE encoding to obtain a coarse latent → **Refinement Stage** for high-frequency detail synthesis → VAE decoding. Multiple cascades yield target resolutions such as 4K and 8K.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["SDXL generates 1K base image"] --> B["Pixel-space upsampling ×2<br/>VAE encoding into latent"]
+    B --> C["Partial Inversion<br/>DDIM-Inv to t=249, retaining low-frequency structure"]
+    C --> D["Partition into overlapping patches"]
+    D --> E["Few-step diffusion denoising refinement"]
+    E -->|Predict noise per step| F["Noise Injection<br/>slerp with random noise for high freq"]
+    G["Gaussian-filtered Patch Blending<br/>Smooth weighted reassembly"] --> H["VAE decoding back to pixels"]
+    F --> G
+    H -->|Not reached target, next level| B
+    H -->|Reached 4K| I["Output 4K image"]
+```
 
-The refinement stage constitutes the core contribution of PixelRush, consisting of four key components:
+### Key Designs
 
-### Key Design 1: Partial Inversion
+**1. Partial Inversion: The Prerequisite for Few-step Refinement**
 
-**Core problem**: Existing methods perturb coarse latents to full Gaussian noise $\mathbf{z}_T$ ($t=T$) and perform complete 50-step reverse diffusion. However, since reverse diffusion reconstructs frequency content hierarchically — early steps primarily recover low-frequency global structure, while later steps synthesize high-frequency details — the early denoising steps are redundant for latents that already possess global structure.
+To eliminate redundancy in the 50 steps, the authors utilize the observation that low-frequency structures are already present in the upsampled latent. PixelRush uses DDIM inversion to perturb the coarse latent only to an intermediate timestep $t=249$, preserving existing structures, before starting denoising:
 
-**Solution**: The coarse latent is mapped via DDIM inversion only to a shallow intermediate noise level $\mathbf{z}_K$ ($K \ll T$), rather than to full Gaussian noise. For example, truncating at $t=259$ (rather than 999) saves approximately 75% of computation. Experiments confirm (Table 3) that replacing 50-step denoising with 15-step partial inversion reduces inference time from 67 seconds to 18 seconds (3.7× speedup) while improving FID from 54.70 to 52.90.
+$$z_t = \text{DDIM-Inv}(z_0,\, t=249), \quad t \ll 999$$
 
-### Key Design 2: Few-Step Model Acceleration
+This truncation reduces computation by approximately 75%. Crucially, the "large update" characteristic of few-step models, normally a disadvantage, becomes suitable for this short trajectory where only high-frequency details remain to be filled.
 
-The short truncated reverse trajectory formed by partial inversion is naturally compatible with few-step diffusion models (e.g., SDXL-Turbo), since such models produce large updates per step and can synthesize the required high-frequency details within a very short trajectory.
+**2. Gaussian-filtered Patch Blending: Eliminating Few-step Seams**
 
-Concretely, both forward perturbation and reverse refinement are performed in a **single step**. The intermediate timestep $K$ corresponding to the few-step model's schedule (e.g., $K=249$ in SDXL-Turbo's 4-step schedule) is selected, and one-step DDIM inversion followed by one-step reverse denoising is applied. Deterministic DDIM inversion is used rather than stochastic $q$-sampling, in order to preserve the structural information of the base image.
+High-resolution images must be processed as overlapping patches. In many-step refinement, discrepancies in overlap regions are minimal; however, with few-step models, large updates cause irreconcilable differences, leading to checkerboard artifacts. PixelRush applies Gaussian blurring to the binary masks of overlapping regions to create a continuous weight map that decays from the center. Patches are blended using these soft weights in latent space, smoothing hard boundaries into gradients.
 
-This design achieves approximately 10×–35× speedup, but introduces two new problems: checkerboard artifacts at patch boundaries and over-smoothing.
+**3. Noise Injection: Compensating for Over-smoothing**
 
-### Key Design 3: Gaussian Filter Blending
+Few-step models inherently tend to output over-smoothed results. PixelRush counteracts this by injecting random noise into each predicted noise component using spherical linear interpolation (slerp):
 
-**Root cause**: Conventional patch blending (e.g., average blending in MultiDiffusion) performs adequately under multi-step denoising but fails in few-step or single-step settings, where the reverse process produces drastic, sharp updates within each patch. Simple averaging merely blurs the discrepancies without reconciling them, resulting in visible seams.
+$$\epsilon' = \text{slerp}(\epsilon_\theta,\, \epsilon_{rand},\, 0.95)$$
 
-**Solution**: Inspired by image feathering, the hard binary overlap mask is convolved with a Gaussian blur kernel to produce a smoothly varying weight mask. During blending, pixels closer to the center of a given patch contribute more of that patch's value, achieving smooth gradual transitions. This completely eliminates boundary artifacts even in the single-step setting.
-
-### Key Design 4: Noise Injection
-
-**Root cause**: The large denoising step size of few-step models may be insufficient to fully recover high-frequency details, resulting in over-smoothed outputs.
-
-**Solution**: During the reverse denoising step, the model-predicted noise $\epsilon_\gamma(\mathbf{x},t)$ is spherically interpolated (slerp) with random noise $\epsilon_{\text{rand}}$ using coefficient $\lambda=0.95$:
-
-$$\epsilon'_\gamma(\mathbf{x},t) = \text{slerp}(\epsilon_\gamma(\mathbf{x},t),\, \epsilon_{\text{rand}},\, \lambda)$$
-
-Injecting stochasticity helps flatten the data distribution and promotes synthesis of high-frequency components. Slerp is preferred over lerp because the operation is performed in latent space.
-
-**Note**: This technique is specifically designed for the over-smoothing problem in few-step patch pipelines. Applying it in multi-step pipelines leads to quality degradation due to error accumulation.
+This random component "flattens" the data distribution, forcing the model to synthesize more high-frequency details and resulting in sharper textures. This technique is specifically effective for few-step models, as noise accumulation would degrade multi-step models.
 
 ### Loss & Training
 
-PixelRush is a **completely training-free** method, involving no loss functions or training procedures. All components intervene solely in the inference process. The only hyperparameters to be specified are: the partial inversion timestep $K$ (recommended: 249), the noise injection interpolation coefficient $\lambda$ (fixed at 0.95), and the patch overlap ratio.
+Ours is entirely training-free. It uses pre-trained SDXL for base generation and distilled SDXL-Turbo for few-step refinement during inference.
 
 ## Key Experimental Results
 
-### Main Results: Quantitative Comparison with SOTA
+### Main Results
 
-| Method | 2K FID↓ | 2K IS↑ | 2K Time (s) | 4K FID↓ | 4K IS↑ | 4K Time (s) |
-|--------|---------|--------|-------------|---------|--------|-------------|
-| SDXL-DI | 73.34 | 10.93 | 28 | 153.53 | 7.32 | 247 |
-| FouriScale | 72.65 | 12.31 | 87 | 98.97 | 8.54 | 680 |
-| DemoFusion | 68.46 | 13.15 | 75 | 74.75 | 12.57 | 507 |
-| FreeScale | 52.87 | 13.56 | 53 | 58.28 | 13.35 | 323 |
-| **PixelRush** | **50.13** | **14.32** | **4** | **54.67** | **13.75** | **20** |
+| Method | 2K FID↓ | 2K Time | 4K FID↓ | 4K Time |
+|------|---------|--------|---------|--------|
+| SDXL-DI | 73.34 | 28s | 153.53 | 247s |
+| DemoFusion | 68.46 | 75s | 74.75 | 507s |
+| FreeScale | 52.87 | 53s | 58.28 | 323s |
+| **PixelRush** | **50.13** | **4s** | **54.67** | **20s** |
 
-PixelRush outperforms SOTA across all metrics, generating 2K images in just 4 seconds (13× faster than FreeScale) and 4K images in 20 seconds (16× faster than FreeScale, 34× faster than FouriScale).
+### Ablation Study
 
-### Ablation Study: Contribution of Each Component
-
-| Configuration | Denoising Steps | FID↓ | IS↑ | Time (s) |
-|---------------|----------------|------|-----|----------|
-| Baseline (50-step DDIM) | 50 | 54.70 | 13.92 | 67 |
-| + Partial Inversion | 15 | 52.90 | 13.89 | 18 |
-| + Few-step Model | 1 | 57.23 | 13.65 | 4 |
-| + Gaussian Blend | 1 | 56.16 | 13.77 | 4 |
-| + Noise Injection (PixelRush) | 1 | **50.13** | **14.32** | **4** |
-
-- Partial inversion: 3.7× speedup with quality improvement (FID 54.70→52.90)
-- Few-step model: further acceleration to 4 seconds, but FID degrades to 57.23
-- Gaussian blending: eliminates checkerboard artifacts, FID improves to 56.16
-- Noise injection: resolves over-smoothing, FID drops substantially to 50.13, surpassing the baseline comprehensively
+| Configuration | FID | Time | Description |
+|------|-----|------|------|
+| Full noise + 50 steps | 54.70 | 49s | Baseline |
+| Partial Inversion + 15 steps | 52.90 | 13s | $3.7\times$ speedup, quality improves |
+| + Few-step model (1 step) | 57.23 | 4s | Ultra-fast but introduces artifacts |
+| + Gaussian Blending | 56.16 | 4s | Eliminates checkerboard artifacts |
+| + Noise Injection | 50.13 | 4s | Eliminates smoothing, optimal quality |
 
 ### Key Findings
 
-1. **The choice of partial inversion timestep is critical**: $K=249$ (shallowest level) achieves the best FID of 50.13; as $K$ increases (499→749→999), performance degrades monotonically (FID 66.24→72.34→79.45), due to incompatibility between multi-step DDIM inversion and few-step models.
-2. **Robustness to model selection**: Consistent performance is observed across different base/refinement model combinations (SDXL+SDXL-Turbo, SDXL+SD-Turbo, SANA+SDXL-Turbo, SDXL+Pixart-δ), demonstrating the generality of the approach.
-3. **Qualitative analysis**: SDXL-DI produces severe object repetition and unnatural textures; DemoFusion exhibits structural artifacts (e.g., duplicated dragon heads); FouriScale/FreeScale introduce grid/noise textures; PixelRush maintains sharp, natural details with intact global structure.
+- The four techniques sequentially address artifacts introduced by the step before, achieving optimal speed and quality simultaneously.
+- An inversion depth of $K=249$ is optimal; larger $K$ values degrade FID.
+- 25% versus 50% overlap shows negligible quality difference but allows for a reduction in patch count for further acceleration.
 
 ## Highlights & Insights
 
-1. **High-value core insight**: The frequency-hierarchical reconstruction property of diffusion models implies that refinement tasks do not require a complete reverse process — this observation, while conceptually simple, was overlooked by all prior methods, and yields an order-of-magnitude speedup.
-2. **Targeted component design**: Each component precisely addresses one specific problem (partial inversion → redundant computation; few-step model → further acceleration; Gaussian blending → boundary artifacts; noise injection → over-smoothing), forming a clear and logically progressive solution.
-3. **Breaking the speed-quality tradeoff**: PixelRush improves generation quality while dramatically accelerating inference (FID reduced from 52.87 to 50.13), challenging the conventional assumption that acceleration necessarily sacrifices quality.
-4. **Practical breakthrough**: For the first time, 8K image generation on a single A100 GPU within 100 seconds is demonstrated, transforming high-resolution generation from an offline task into a practically deployable real-time tool.
+- The core insight is remarkably clear: coarse images already possess low-frequency structures $\rightarrow$ no need for full-noise reconstruction $\rightarrow$ partial inversion naturally adapts to few-step models. The logic chain of the four components is complete, with each serving as a necessary fix for the former to create a closed loop.
 
 ## Limitations & Future Work
 
-1. **Dependence on distilled models**: The acceleration capability relies on the availability of few-step distilled models (e.g., SDXL-Turbo); compatibility with newer model architectures lacking distilled variants (e.g., DiT-based models) remains to be verified.
-2. **Fixed hyperparameters**: The noise injection coefficient $\lambda=0.95$ is fixed across all experiments; adaptive tuning may be beneficial for different content types and styles.
-3. **Limited evaluation metrics**: Only FID and IS are used; evaluation of text alignment (e.g., CLIP score) and human preference is absent.
-4. **Global structural consistency**: Patch-based methods are inherently challenged by global consistency; edge cases such as geometric continuity in panoramic images may still be problematic.
-5. **Extension to video**: The current framework targets image generation only; extending analogous strategies to high-resolution video generation represents a valuable future direction.
+- Dependency on the distillation quality of SDXL-Turbo.
+- Lack of temporal consistency guarantees for frame-by-frame video application.
+- Compatibility with Transformer-based diffusion architectures is not yet verified.
+- Fixed noise injection coefficients; different content might benefit from adaptive values.
 
 ## Related Work & Insights
 
-- **MultiDiffusion / DemoFusion**: Established the patch-based high-resolution generation paradigm, but are bottlenecked by multi-step denoising costs. PixelRush preserves the patch-based framework while achieving qualitative acceleration through partial inversion and few-step models.
-- **FreeScale / FouriScale**: Address object repetition via frequency-domain intervention, but introduce texture artifacts. PixelRush uses DDIM-inverted latents as structural priors, naturally avoiding object repetition.
-- **SDXL-Turbo / consistency distillation**: The development of few-step diffusion models provides the infrastructure underpinning PixelRush, demonstrating that distilled models can be effectively integrated into high-resolution refinement pipelines beyond their original use case.
-- **HiWave**: Proposes replacing random Gaussian noise with DDIM-inverted noise to preserve structural information — a concept inherited and extended by PixelRush to the few-step extreme.
+- **vs DemoFusion**: DemoFusion uses full noise and 50 steps, often leading to object repetition. PixelRush uses DDIM inversion and 1-step refinement, being faster and higher quality.
+- **vs FreeScale**: Frequency-domain operations often introduce unnatural textures; PixelRush operates purely in the spatial/latent domain.
 
 ## Rating
 
-| Dimension | Score (1–10) | Notes |
-|-----------|-------------|-------|
-| Novelty | 8 | The combination of partial inversion and few-step models is novel; the insight is concise and profound |
-| Technical Depth | 7 | Each component has clear design objectives and solid analysis, though individual techniques are not highly complex |
-| Experimental Thoroughness | 8 | Main experiments, multi-dimensional ablations, model robustness analysis, and qualitative comparisons provide comprehensive coverage |
-| Practical Value | 9 | 10×–35× speedup with quality improvement directly addresses real-world deployment bottlenecks |
-| Writing Quality | 8 | Motivation is clear, logic is progressive, and figures and tables are informative |
-| **Overall** | **8.0** | A highly practical contribution that resolves the speed bottleneck in high-resolution generation in a concise and elegant manner |
+- Novelty: ⭐⭐⭐⭐ The combination of partial inversion and few-step models is novel; components are simple but combined elegantly.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Dual resolutions, multiple metrics, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Fluent narrative that guides the reader through the necessity of each component.
+- Value: ⭐⭐⭐⭐⭐ $10 \times$ to $35 \times$ acceleration, achieving practical usability for the first time.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[CVPR 2026\] Low-Resolution Editing is All You Need for High-Resolution Editing](low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)
-- [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
-- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
+- [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
+- [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
+- [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
+- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
+- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
 
 </div>
 

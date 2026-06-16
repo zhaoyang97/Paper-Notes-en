@@ -2,83 +2,87 @@
 title: >-
   [Paper Note] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Video QA] This paper introduces MINERVA-Cultural, a benchmark comprising 2,400 manually annotated video reasoning questions spanning 18 language/region locales…
+  [CVPR 2026][Video Understanding][Paper Note] The MINERVA-Cultural benchmark is introduced, featuring 2,400 human-annotated video reasoning questions across 18 languages/regions. Through evidence graphs and an iterative error isolation strategy, it reveals severe deficiencies in the cultural visual perception of current SOTA Video-LLMs (the strongest model, Gemini
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video QA"
-  - "cross-cultural understanding"
-  - "multilingual reasoning"
-  - "long video"
-  - "evidence graph error analysis"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 8eca431c3c9fb9ee
+content_hash: c3c01f10af43b9e6
 ---
-
 # MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.10649](https://arxiv.org/abs/2601.10649)  
-**Code**: Coming soon  
-**Area**: Video Understanding / Multicultural Benchmarking
-**Keywords**: Video QA, cross-cultural understanding, multilingual reasoning, long video, evidence graph error analysis
+**Code**: To be released  
+**Area**: Video Understanding / Multicultural Benchmark  
+**Keywords**: Video Question Answering, Multicultural Understanding, Multilingual Reasoning, Long Video, Evidence Graph Error Analysis
 
 ## TL;DR
 
-This paper introduces MINERVA-Cultural, a benchmark comprising 2,400 manually annotated video reasoning questions spanning 18 language/region locales, and reveals severe deficiencies in cultural visual perception among state-of-the-art Video-LLMs through evidence graphs and an iterative error isolation strategy (best model Gemini-2.5-Pro: 45.07% vs. human: 95.22%).
+The MINERVA-Cultural benchmark is introduced, featuring 2,400 human-annotated video reasoning questions across 18 languages/regions. Through evidence graphs and an iterative error isolation strategy, it reveals severe deficiencies in the cultural visual perception of current SOTA Video-LLMs (the strongest model, Gemini-2.5-Pro, achieves only 45.07% vs. 95.22% for humans).
 
 ## Background & Motivation
 
-1. **Background**: Video understanding has advanced substantially, with long video comprehension emerging as a focal research area. Benchmarks such as EgoSchema, LongVideoBench, and MLVU have driven model progress, and frontier models including GPT-5 and Gemini-2.5 achieve strong performance on standard benchmarks.
+1. **Background**: Significant progress has been made in video understanding, with long video understanding becoming a focal point. Benchmarks like EgoSchema, LongVideoBench, and MLVU have driven model development. Frontier models such as GPT-5 and Gemini-2.5 demonstrate strong performance on standard benchmarks.
 
-2. **Limitations of Prior Work**: (a) Existing video benchmarks are dominated by Western content and English, introducing significant evaluation bias; (b) cross-cultural benchmarks such as ViMUL-Bench rely on automatic translation while their visual content still centers on Western concepts; (c) evaluation focuses solely on final answer correctness, ignoring specific failure modes within the reasoning process.
+2. **Limitations of Prior Work**: (a) Existing video benchmarks are dominated by Western content and English, introducing severe evaluation bias; (b) Cross-cultural benchmarks like ViMUL-Bench rely on automatic translation, and their visual content remains tied to Western concepts; (c) Most focus only on final answer accuracy, ignoring specific failure modes in the reasoning process.
 
-3. **Key Challenge**: Training data for current models is dominated by Euro-American and English content, leading to severely inadequate understanding of low-resource languages and cultures (e.g., Tamil, Telugu). Moreover, simple accuracy metrics cannot reveal precisely where in the reasoning chain a model fails.
+3. **Key Challenge**: The dominance of Western/English content in training data leads to a severe lack of understanding of low-resource languages and cultures (e.g., Tamil, Telugu). Simple accuracy metrics fail to reveal "exactly at which step the model failed."
 
-4. **Goal**: (a) Construct a genuinely multicultural, multilingual video reasoning benchmark annotated entirely by local experts; (b) provide human reasoning chains as diagnostic tools; (c) develop fine-grained error analysis methods to localize the root causes of model failures.
+4. **Goal**: (a) Construct a multicultural and multilingual video reasoning benchmark annotated by local experts; (b) Provide human reasoning chains as diagnostic tools; (c) Develop a fine-grained error analysis method to locate the causes of model failure.
 
-5. **Key Insight**: Every question is required to demand "visual-cultural understanding" as a skill, tightly coupling perception with cultural knowledge. Human reasoning processes are modeled as directed acyclic graphs (DAGs), enabling iterative isolation and classification of errors.
+5. **Key Insight**: Each question is designed to require "visual cultural understanding" skills, tightly binding perception with culture. Human reasoning processes are modeled via Directed Acyclic Graphs (DAGs) to iteratively isolate and classify errors.
 
-6. **Core Idea**: Expose and quantify systemic deficiencies of Video-LLMs in cultural visual perception through a long-video reasoning benchmark fully annotated by local experts from 18 regions (with no reliance on translation), combined with an evidence-graph-based iterative analysis methodology.
+6. **Core Idea**: By using a long video reasoning benchmark fully annotated by local experts in 18 regions (non-translated) combined with an evidence graph iterative analysis method, the systematic deficiencies of Video-LLMs in cultural visual perception are exposed and quantified.
 
 ## Method
 
 ### Overall Architecture
 
-MINERVA-Cultural consists of two components: (1) a benchmark dataset — 540 videos and 2,400 questions covering 18 language/region locales across 6 cultural domains, each question accompanied by a manually authored multi-step reasoning chain; and (2) a diagnostic methodology — reasoning chains are formalized as evidence graphs, and iterative error isolation is applied to precisely localize model failure points.
+This work addresses a question often avoided by existing video benchmarks: to what extent can current Video-LLMs reason about "non-Western, non-English" cultural videos, and at which step do they fail? To this end, two components are provided. First is the benchmark itself—540 videos and 2,400 questions covering 18 languages/regions and 6 cultural domains. Each question is accompanied by a multi-step reasoning chain written by local experts rather than just a ground-truth answer. Second is the diagnostic method: the human reasoning chain is compiled into an evidence graph (DAG). The model's reasoning is then aligned node-by-node with the human evidence along this graph, using iterative error isolation to identify and categorize every failure. The former ensures that "tasks truly require understanding cultural visuals," while the latter ensures "failures can be attributed to either perception or reasoning."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph ANNO["Culture-Centric Annotation Process (Design 1)"]
+        direction TB
+        A1["Local auditors select videos<br/>Local language + Cultural scenes + >1 min"] --> A2["10% Sample calibration<br/>Difficulty + Correctness"]
+        A2 --> A3["Formal annotation + Continuous auditing"]
+    end
+    ANNO --> B["Benchmark Output<br/>540 Videos / 2400 Qs + Human Reasoning Chains"]
+    B --> C["Evidence Graph (Design 2)<br/>LLM compiles reasoning chain into DAG"]
+    C --> D["Iterative Error Isolation (Design 3)<br/>Node-by-node alignment of model reasoning"]
+    D -->|Missing evidence| E["Labeling<br/>Divergence 2% / Error (Perception/Knowledge/Reasoning)"]
+    E -->|Correction prompt + Pruning, max 5 rounds| D
+    D -->|All nodes covered| F["Error Logs<br/>75% are cultural visual perception errors"]
+```
 
 ### Key Designs
 
-1. **Culture-Centric Curation**:
+**1. Culture-Centric Annotation Process: Making "Cultural Visual Understanding" a Hard Constraint**
 
-    - **Function**: Ensures that every question genuinely requires deep understanding of visual-cultural content to answer correctly.
-    - **Mechanism**: A four-stage pipeline — (1) *Cultural video selection*: local reviewers filter YouTube videos according to a cultural taxonomy, requiring native-language audio, culturally salient scenes, and duration exceeding one minute; (2) *Difficulty calibration*: 10% of samples are annotated first to verify that questions are sufficiently challenging for LLMs (not answerable from a single frame, audio alone, or common sense); (3) *Correctness calibration*: an independent reviewer answers each question without access to the reference answer; disagreements are resolved through revision until consensus is reached; (4) *Final annotation and audit*.
-    - **Design Motivation**: Avoids the pseudo-multiculturalism prevalent in other benchmarks that combine automatic translation with Western imagery. Each question must require at least two reasoning skills, one of which must be visual-cultural understanding.
+Many so-called cross-cultural benchmarks are "pseudo-multicultural," consisting of automatically translated English questions paired with Western imagery. Models can often guess the answer using common sense or audio, bypassing cultural visual understanding. This work uses a four-stage pipeline to block these shortcuts: local auditors select YouTube videos based on a cultural taxonomy, requiring local language, cultural scenes, and a duration of over 1 minute. Next is difficulty calibration, where 10% of samples are pre-labeled to ensure the questions are sufficiently difficult for LLMs—they must not be solvable by single frames, audio alone, or common sense. Correctness calibration follows, where independent auditors re-answer the questions blindly; disagreement triggers revisions until consensus is reached. Finally, official annotation and auditing occur. Each question is forced to require at least two reasoning skills, one of which must be "visual cultural understanding."
 
-2. **Evidence Graph**:
+**2. Evidence Graph: Compiling Human Reasoning into Localizable DAGs**
 
-    - **Function**: Formalizes unstructured human reasoning chains into directed acyclic graphs to precisely localize reasoning failure points.
-    - **Mechanism**: An LLM decomposes each human reasoning chain into atomic evidence nodes — including visual observations (with timestamps), external knowledge retrieval, and logical inference steps. Prerequisite dependency edges are established between nodes, such that an error at a given node blocks all downstream reasoning. On average, each question requires 5.0 atomic evidence nodes, and 63% of evidence nodes are anchored to specific video timestamps.
-    - **Design Motivation**: Simple accuracy cannot distinguish between "failure to perceive cultural elements" and "logical reasoning errors." The graph structure captures causal dependencies as well as spatiotemporal relationships.
+Relying solely on final accuracy makes it impossible to distinguish between a model "not seeing a cultural garment" and "seeing it but reasoning incorrectly." The evidence graph decouples these errors. An LLM compiles the human-written reasoning chain into atomic evidence nodes—categorized into timestamped visual observations, external knowledge retrieval, and logical reasoning—connected by prerequisite dependency edges. If upstream evidence is incorrect, downstream reasoning is blocked. A linear human reasoning chain thus becomes a DAG representing causal dependencies and spatio-temporal relationships. Statistically, each question requires an average of 5.0 atomic nodes, with 63% tied to specific video timestamps, indicating that the tasks are heavily grounded in visual evidence.
 
-3. **Iterative Error Isolation**:
+**3. Iterative Error Isolation: Preventing Early Errors from Masking Subsequent Failures**
 
-    - **Function**: Exhaustively identifies all model failure modes, preventing early errors from masking subsequent failures.
-    - **Mechanism**: A three-stage loop — (1) *Traversal*: the model's reasoning is compared against human evidence along the evidence graph; traversal halts upon encountering a missing evidence node; (2) *Error labeling*: "divergences" (where the model takes a reasonable alternative path, occurring in only 2% of cases) are distinguished from "errors" (labeled according to a taxonomy: temporal localization, spatial localization, attribute misidentification, hallucination, etc.); (3) *Prompted correction and re-evaluation*: the model receives a corrective prompt, evaluated nodes are pruned from the graph, and unevaluated nodes are re-assessed. This loop continues until all nodes are evaluated (99.7% of cases are resolved within 5 iterations).
-    - **Design Motivation**: A single-pass error analysis can only detect the first error, causing subsequent reasoning errors to be masked. The iterative approach uncovers an additional 22% of errors, including 78 reasoning errors that were originally obscured by perception errors.
+One-shot error analysis has a fatal flaw: if a model fails early, all subsequent reasoning is based on a false premise. You only see the first error, while actual reasoning deficits are "covered" by earlier perceptual failures. Iterative Error Isolation uses a three-phase loop: alignment of model reasoning with human evidence node-by-node; stopping at missing evidence; labeling the error (distinguishing "divergence" (~2%) from "errors" like temporal/spatial localization or attribute misrecognition); and finally providing a targeted correction prompt to the model, pruning the evaluated node, and allowing the model to continue on the corrected premise. This continues for up to 5 rounds, covering 99.7% of cases. This iterative approach uncovers 22% more errors compared to one-shot analysis, specifically surfacing 78 reasoning errors previously masked by perceptual failures.
 
 ### Loss & Training
 
-This is a benchmark paper; no model training is involved. Evaluation employs an LLM Judge (Gemini-2.5-Flash), scoring open-ended responses on a 0–2 three-point scale.
+As this is a benchmark paper, no model training is involved. Evaluation utilizes an LLM Judge (Gemini-2.5-Flash) to score open-ended responses on a 0–2 scale, using majority voting to mitigate evaluation bias.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Model performance across 18 regions (accuracy %):**
+**Model Performance across 18 Regions (Accuracy %):**
 
 | Model | Aggregate | Highest Region | Lowest Region |
-|-------|-----------|---------------|---------------|
+|------|-----------|---------|---------|
 | Qwen-2.5-VL | 12.75 | en-GB (25.70) | ta-IN (3.60) |
 | Qwen-3-VL | 21.50 | en-GB (34.58) | te-IN (12.40) |
 | Claude-Sonnet-4 | 23.36 | en-GB (29.91) | te-IN (14.40) |
@@ -90,47 +94,47 @@ This is a benchmark paper; no model training is involved. Evaluation employs an 
 
 ### Ablation Study
 
-| Analysis Dimension | Key Finding |
-|-------------------|-------------|
-| Audio vs. video-only | Adding audio yields an average gain of 4.32% (zh-TW: +8.15%, id-ID: +7.09%) |
-| Thinking budget (tokens) | Accuracy increases from 35.9% to 45.9% as budget grows from 128 to 2k tokens, then saturates |
-| Frame count (1→512) | Monotonically increasing with diminishing returns, indicating temporal reasoning is required |
-| Error type analysis | 75% of errors are attributable to cultural visual perception (temporal localization + spatial localization + attribute misidentification + hallucination) |
+| Analysis Dimension | Key Findings |
+|---------|---------|
+| Audio vs. Video-only | Adding audio improves performance by 4.32% on average (zh-TW +8.15%, id-ID +7.09%) |
+| Reasoning Budget (token) | Accuracy increases from 35.9% to 45.9% as budget goes from 128 to 2k tokens, then saturates |
+| Frame Count (1→512) | Performance increases monotonically but with diminishing returns, indicating a need for temporal reasoning |
+| Error Type Analysis | 75% of errors are attributed to cultural visual perception (Time/Space localization, attribute misrecognition, hallucination) |
 
 ### Key Findings
 
-- **Large human–machine gap**: The strongest model, Gemini-2.5-Pro (45.07%), lags behind human performance (95.22%) by approximately 50 percentage points.
-- **Pronounced cultural disparity**: The same model shows a 36-percentage-point gap between Korean (ko-KR: 64.29%) and Telugu (te-IN: 28.00%), revealing severe cultural bias.
-- **South Indian languages are the weakest**: ta-IN (31.60%), te-IN (28.00%), and mr-IN (38.72%) all fall far below English-locale performance.
-- **75% of errors stem from cultural visual perception**: Models fail not due to insufficient reasoning ability but because they cannot "see" or "interpret" culturally specific visual elements (attire, rituals, symbols, etc.).
-- **Iterative error analysis is essential**: 22% of errors are missed in a single-pass analysis, particularly reasoning errors masked by perception errors.
-- **Perception errors in low-resource languages are 1.4× those in high-resource languages**: Cultural perception errors in ar-EG and ta-IN exceed those in en-GB and ja-JP by approximately 40%.
+- **Huge Human-AI Gap**: Even the strongest Gemini-2.5-Pro (45.07%) lags behind humans (95.22%) by 50 percentage points.
+- **Significant Cultural Disparity**: The gap in performance for the same model between Korean (ko-KR, 64.29%) and Telugu (te-IN, 28.00%) is 36 percentage points, exposing severe cultural bias.
+- **South Indian Languages are Hardest**: Performance in ta-IN (31.60%), te-IN (28.00%), and mr-IN (38.72%) is significantly lower than in English-speaking regions.
+- **75% of Errors are Cultural Visual Perception**: The issue is not necessarily a lack of reasoning capability, but rather that models "cannot see" or "cannot understand" culture-specific visual elements (garments, rituals, symbols).
+- **Iterative Error Analysis is Crucial**: 22% of errors are missed in one-shot analysis, particularly reasoning errors masked by perceptual failures.
+- **Low-resource Perception Errors are 1.4x Higher**: Cultural perception errors in ar-EG and ta-IN are 40% more frequent than in en-GB or ja-JP.
 
 ## Highlights & Insights
 
-- **Key finding that "cultural understanding is a visual perception problem"**: Models do not fail because they lack reasoning capability; they fail because they cannot perceive culturally specific visual elements. This pinpoints the direction for improvement — diversifying pretraining data culturally rather than merely enhancing reasoning capacity.
-- **Evidence graph + iterative error isolation as a diagnostic methodology**: This approach provides substantially deeper analytical insight than simple accuracy metrics and is transferable to any benchmark involving multi-step reasoning (e.g., mathematical reasoning, code generation).
-- **High-standard fully manual annotation**: Every question is annotated by a local cultural expert and calibrated by an independent reviewer, eliminating translation artifacts. This is a resource-intensive but highly valuable contribution to the research community.
+- **Cultural Understanding as a Visual Perception Problem**: A key finding is that models often fail not because they cannot reason, but because they cannot perceive culture-specific visual elements. This suggests that increasing cultural diversity in pre-training data is more critical than merely enhancing reasoning logic.
+- **Evidence Graph + Iterative Error Isolation Methodology**: This diagnostic approach offers depth far beyond simple accuracy. It is transferable to any benchmark requiring multi-step reasoning (e.g., mathematical reasoning, code generation).
+- **High Standard of Human Annotation**: Every question is annotated by local cultural experts and calibrated by independent auditors, avoiding translation artifacts. This is a resource-intensive but highly valuable contribution to the community.
 
 ## Limitations & Future Work
 
-- **Limited scale**: 2,400 questions across 18 regions yield approximately 130 questions per region, which may be insufficient to cover all cultural scenarios.
-- **Dependence on LLM Judge**: Although majority voting mitigates the issue, LLM-based evaluation may itself carry biases toward certain languages.
-- **Incomplete cultural coverage**: Parts of Africa, South America, and Southeast Asian minority language communities are not included.
-- **Future directions**: (a) Expansion to additional regions and languages; (b) development of culturally aware visual pretraining data strategies; (c) open-sourcing automated diagnostic tools based on evidence graphs; (d) exploration of strategies to balance cultural distributions in pretraining data.
+- **Limited Scale**: With 2,400 questions across 18 regions (~130 per region), the coverage of all cultural scenarios may be insufficient.
+- **Reliance on LLM Judge**: Although majority voting is used, LLM evaluation itself may carry biases toward certain languages.
+- **Geographic Coverage**: Parts of Africa, South America, and smaller Southeast Asian linguistic groups are not yet included.
+- **Future Directions**: (a) Expansion to more regions and languages; (b) Developing strategies for culture-aware visual pre-training data; (c) Open-sourcing automated diagnostic tools based on evidence graphs; (d) Exploring strategies to balance cultural distribution in pre-training data.
 
 ## Related Work & Insights
 
-- **vs. ViMUL-Bench**: ViMUL-Bench covers 14 languages but incorporates non-cultural videos and partially translated annotations. MINERVA-Cultural is annotated entirely in native languages by local experts, with video content that is uniformly culturally specific.
-- **vs. MINERVA**: MINERVA provides reasoning chains and error taxonomies; MINERVA-Cultural extends this foundation by adding a multicultural dimension and an evidence-graph-based analysis methodology, enabling finer-grained diagnosis.
-- **vs. LongVideoBench / MLVU**: These benchmarks target general video understanding without addressing cultural or multilingual dimensions; MINERVA-Cultural fills this gap.
+- **vs. ViMUL-Bench**: While ViMUL-Bench covers 14 languages, it uses a mix of non-cultural videos and some translated annotations. MINERVA-Cultural uses only original annotations by local experts and culture-specific video content.
+- **vs. MINERVA**: While the original MINERVA provides reasoning chains and error classification, MINERVA-Cultural adds the multicultural dimension and the evidence graph analysis for finer diagnostics.
+- **vs. LongVideoBench/MLVU**: These focus on general video understanding. MINERVA-Cultural fills the gap in cultural and multilingual reasoning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First large-scale, fully manual multicultural multilingual video reasoning benchmark; evidence graph analysis methodology is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 7 models, 18 regions, multi-dimensional analysis (audio, frame count, thinking budget, error types), and human baseline.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Motivation is well-grounded; annotation pipeline is described in detail; analysis is deep and insightful.
-- **Value**: ⭐⭐⭐⭐⭐ — Exposes cultural bias in AI systems, defines a critical direction for model improvement, and carries significant implications for fair AI and global deployment.
+- Novelty: ⭐⭐⭐⭐ First large-scale, fully human-annotated multicultural video reasoning benchmark with a novel evidence graph analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluates 7 models across 18 regions with multi-dimensional analysis (audio/frames/budget/error types) and human baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ Strong motivation, detailed annotation process, and insightful analysis.
+- Value: ⭐⭐⭐⭐⭐ Exposes cultural biases in AI, defines key directions for improvement, and is significant for equitable AI and global deployment.
 
 <!-- RELATED:START -->
 
@@ -138,11 +142,11 @@ This is a benchmark paper; no model training is involved. Evaluation employs an 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
 - [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
-- [\[CVPR 2026\] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding](adaspark_adaptive_sparsity_for_efficient_long_video_understanding.md)
-- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
-- [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
 
 </div>
 

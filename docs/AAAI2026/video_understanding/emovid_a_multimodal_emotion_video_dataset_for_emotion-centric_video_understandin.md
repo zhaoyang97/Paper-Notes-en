@@ -154,8 +154,8 @@ EmoVid's construction and application consists of three components:
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
 - [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
 - [\[ACL 2026\] TRACE: Evidence Localization-based Multi-Video Event Understanding and Statement Generation](../../ACL2026/video_understanding/trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
-- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](../../ACL2026/video_understanding/dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
 - [\[AAAI 2026\] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)
+- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](../../ACL2026/video_understanding/dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
 
 </div>
 

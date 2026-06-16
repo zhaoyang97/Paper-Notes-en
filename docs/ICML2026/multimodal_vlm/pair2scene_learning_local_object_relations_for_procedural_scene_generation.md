@@ -2,79 +2,94 @@
 title: >-
   [Paper Note] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation
 description: >-
-  [ICML 2026][Multimodal VLM][3D scene generation] Pair2Scene transforms 3D indoor scene generation from "directly fitting a global joint distribution" into "learning one-to-one local object relations (support + functional…
+  [ICML 2026][Multimodal VLM][Paper Note] Pair2Scene reformulates 3D indoor scene generation from "directly fitting a global joint distribution" to "learning one-to-one local object relations (support + functional) and recursively assembling them via a hierarchical scene tree." Combined with point cloud geometric encoding, a Mixture-of-Logistics probability he
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "3D scene generation"
-  - "local object relations"
-  - "support relations"
-  - "functional relations"
-  - "MoL distribution"
-  - "rejection sampling"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 7c04ede8c8b82399
+content_hash: 6bce34497f714b34
 ---
-
 # Pair2Scene: Learning Local Object Relations for Procedural Scene Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.11808](https://arxiv.org/abs/2604.11808)  
 **Code**: None (Project Page only)  
 **Area**: 3D Scene Generation / Procedural Generation  
-**Keywords**: 3D scene generation, local object relations, support relations, functional relations, MoL distribution, rejection sampling  
+**Keywords**: 3D Scene Generation, Local Object Relations, Support Relations, Functional Relations, MoL Distribution, Rejection Sampling  
 
 ## TL;DR
-Pair2Scene transforms 3D indoor scene generation from "directly fitting a global joint distribution" into "learning one-to-one local object relations (support + functional) and recursively assembling them via a scene hierarchy tree." Combined with point cloud geometric encoding, Mixture-of-Logistics probability heads, and collision-aware rejection sampling, it enables the complexity of generated scenes to leap from ~4 to ~14 objects when trained only on 3D-Front, outperforming baselines like ATISS, DiffuScene, and LayoutVLM in FID and user studies.
+Pair2Scene reformulates 3D indoor scene generation from "directly fitting a global joint distribution" to "learning one-to-one local object relations (support + functional) and recursively assembling them via a hierarchical scene tree." Combined with point cloud geometric encoding, a Mixture-of-Logistics probability head, and collision-aware rejection sampling, it empowers complex scene generation where the object count jumps from approximately 4 (as seen in 3D-Front training data) to around 14. FID and user studies demonstrate its superiority over baselines such as ATISS, DiffuScene, and LayoutVLM.
 
 ## Background & Motivation
 
-**Background**: High-fidelity 3D indoor scene generation followed two main paths: (i) **Learning-based** (ATISS, DiffuScene, LayoutVLM, FactoredScenes) end-to-end fitting of the joint distribution of scenes on a single dataset; (ii) **LLM/VLM-based** (GALA3D, I-Design, HoloDeck, HSM) using commonsense knowledge from language models for global layout reasoning.
+**Background**: High-fidelity 3D indoor scene generation primarily follows two trajectories: (i) **Learning-based methods** (ATISS, DiffuScene, LayoutVLM, FactoredScenes) that end-to-end fit the joint distribution of scenes on single datasets; (ii) **LLM/VLM-based methods** (GALA3D, I-Design, HoloDeck, HSM) that utilize the common-sense knowledge of language models for global layout reasoning.
 
-**Limitations of Prior Work**: Learning-based methods are severely restricted by training set capacity—3D-Front averages only 4.07 furniture items per scene, so learned distributions never reach the density of "dozens of items in real apartments." When the number of objects increases, modeling global pairwise dependencies triggers an $O(N^2)$ complexity surge, making learning infeasible. LLM/VLM methods are semantically rich but lack spatial reasoning, often resulting in physical implausibility like collisions and floating objects.
+**Limitations of Prior Work**: Learning-based methods are severely constrained by the capacity of training sets—3D-Front averages only 4.07 furniture items per scene. Consequently, the learned distribution never reaches the density of "dozens of items in a real apartment." As the number of objects increases, modeling global dependencies between every pair of objects leads to an $O(N^2)$ complexity explosion, making effective learning impossible. LLM/VLM-based methods offer rich semantics but possess poor spatial reasoning, often resulting in physically implausible layouts with interpenetrations or floating objects.
 
-**Key Challenge**: The "global joint distribution" assumes the position of every object depends on all other objects in the scene. However, the authors observe that **the placement of real objects is almost exclusively influenced by a few neighboring support or functional partners**; global dependencies are largely redundant. Forcing the model to fit an extremely high-dimensional manifold under data scarcity inevitably leads to underfitting.
+**Key Challenge**: The "global joint distribution" assumes every object's position depends on all other objects in the scene. However, the authors observe that **the placement of real-world objects is almost exclusively influenced by a few proximal support or functional partners**; global dependencies are largely redundant. Forcing the model to learn global relations under data scarcity requires fitting an ultra-high-dimensional manifold, which inevitably leads to underfitting.
 
-**Goal**: (a) Reconstruct the problem through a **local relations** perspective so that "relation samples" can be accumulated across multiple datasets without being limited by single-scene capacity; (b) physically guarantee the stability of support relations and semantically ensure the rationality of functional relations; (c) allow the generated complexity to exceed the training distribution.
+**Goal**: (a) Reconstruct the problem from a **local relationship** perspective to allow the "number of relation samples" to accumulate across multiple datasets, bypassing single-scene capacity limits; (b) ensure physical stability of support relations and semantic rationality of functional relations; (c) enable generated complexity to exceed the training distribution.
 
-**Key Insight**: Decompose scenes into relation quadruplets $\mathcal{T}_i = \langle\mathcal{O}_{dep,i}, \mathcal{O}_{sup,i}, \{\mathcal{O}_{fnc,i}\}_{opt}\rangle$ (dependent object + required support anchor + optional functional anchor). Learn the conditional density of "the dependent object's position distribution given the anchor's geometry and position," then assemble local rules into global scenes using hierarchy trees and rejection sampling.
+**Key Insight**: Decompose scenes into relationship quadruplets $\mathcal{T}_i = \langle\mathcal{O}_{dep,i}, \mathcal{O}_{sup,i}, \{\mathcal{O}_{fnc,i}\}_{opt}\rangle$ (dependent object + mandatory support anchor + optional functional anchor). The model learns the conditional density of the dependent object's position given the anchor's geometry and location, then assembles global scenes using hierarchical trees and rejection sampling.
 
-**Core Idea**: Replace global joint distribution modeling with "local relation learning + procedural hierarchical assembly."
+**Core Idea**: Replace global joint distribution modeling with "local relationship learning + procedural hierarchical assembly."
 
 ## Method
 
 ### Overall Architecture
-Pair2Scene works through three collaborative modules: (1) **Data pipeline**—extracts ~140k relation quadruplets from heterogeneous sources (3D-Front, MesaTask, InternScenes) via physical simulation, geometric heuristics, and LLM distillation to form the 3D-Pairs dataset; (2) **Pair2Scene model**—uses Point-MAE to encode geometric features $z^{geo}$ of object point clouds and an MLP to encode spatial embeddings $e^{bbox}$ of anchor object OBBs $B$. These are fused via cascaded Transformer blocks (relational self-attention + geometric cross-attention). Finally, an MLP outputs Mixture-of-Logistics (MoL) distribution parameters $\Theta$ to provide a multi-modal conditional density $P(B_{dep}\mid\Theta)$ for the 12-dimensional OBB of the dependent object; (3) **Procedural assembly**—automatically constructs support trees $\mathbb{T}_s$ and functional trees $\mathbb{T}_f$ based on text or room types. It follows a BFS(support) + DFS(functional) hybrid traversal to obtain relation sequences, samples positions from the model distribution at each step, performs rejection sampling for collisions, and applies minor gravity simulation for alignment.
+Pair2Scene operates through three collaborative modules: (1) **Data Construction Pipeline**—Extracts approximately 140k relationship quadruplets from heterogeneous sources (3D-Front, MesaTask, InternScenes) via physical simulation, geometric heuristics, and LLM distillation to form the 3D-Pairs dataset; (2) **Pair2Scene Model**—Encodes geometric features $z^{geo}$ using Point-MAE and spatial embeddings $e^{bbox}$ of anchor OBBs $B$ via MLPs. These are fused through cascaded Transformer blocks (relational self-attention + geometric cross-attention). Finally, an MLP outputs Mixture-of-Logistics (MoL) distribution parameters $\Theta$ to provide a multimodal conditional density $P(B_{dep}\mid\Theta)$ for the 12D OBB of the dependent object; (3) **Procedural Assembly**—Automatically constructs a support tree $\mathbb{T}_s$ and functional tree $\mathbb{T}_f$ based on text or floor plans. It traverses these using a hybrid BFS (support) + DFS (functional) approach to obtain a relationship sequence, sampling positions from the model's distribution at each step while applying collision-aware rejection sampling and minor gravity simulation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    REL["Local Relation Decomposition: Support + Functional<br/>Relationship Quadruplets (Dep + Support Anchor + Opt. Functional Anchor)"]
+    subgraph CURATE["Data Construction Pipeline"]
+        direction TB
+        SRC["Heterogeneous Sources: 3D-Front / MesaTask / InternScenes"] --> PV["Physical Verification & Filtering → Heuristic Support Extraction<br/>→ LLM Functional Relation Distillation"]
+    end
+    REL --> CURATE
+    CURATE --> PAIRS["3D-Pairs: ~140k Relation Quadruplets"]
+    PAIRS -->|Training| MODEL
+    subgraph MODEL["Geometry + Relation Dual-Attention Layout Predictor"]
+        direction TB
+        PE["Point-MAE Encoding Object Point Clouds<br/>+ Anchor OBB Positional Embeddings"] --> ATT["Relational Self-Attention + Geometric Cross-Attention"]
+        ATT --> MOL["MLP Head → MoL Multimodal Distribution Parameters Θ"]
+    end
+    INPUT["Text / Room Shape"] --> TREE["Hierarchical Tree Assembly: Support Tree + Functional Tree<br/>BFS (Support) + DFS (Functional) Serialization"]
+    TREE -->|Per-Quadruplet Query| MODEL
+    MODEL -->|Dependent Object Local Position Distribution| RS["Collision-Aware Rejection Sampling + Gravity Simulation"]
+    RS --> OUT["Globally Consistent 3D Scene"]
+```
 
 ### Key Designs
 
-1. **Support/Functional Relations + Mixture-of-Logistics Multi-modal Distribution**:
+**1. Support/Functional Relations + Mixture-of-Logistics Distribution**
 
-    - **Function**: Formalizes the core conditional density of scene generation as a multi-modal distribution predicting "dependent object OBB given anchor information," avoiding the inability of unimodal regression to express natural multi-solution scenarios (e.g., "a chair can be placed on any side of a table").
-    - **Mechanism**: Support relations $R_s$ are gravity-dominated (computer on table), while functional relations $R_f$ are semantic-neighbor-dominated (keyboard and mouse). The model predicts $K$ Logistic components for $B_{dep}\in\mathbb{R}^{12}$ (center + size + 6D rotation): $P(B_{dep}\mid\Theta) = \sum_{k=1}^K \pi_k\prod_{d=1}^{12} L(B_{dep,d}\mid\mu_{k,d}, s_{k,d})$. The training target is NLL plus entropy regularization: $\mathcal{L}_{total} = \mathcal{L}_{nll} + \lambda\mathcal{L}_{ent}$, where $\mathcal{L}_{ent} = \sum_k \hat\pi_k\log\hat\pi_k$ encourages high entropy in mixture coefficients to prevent mode collapse.
-    - **Design Motivation**: Explicitly separating support (physical) and functional (semantic) relations aligns with human intuition of "furniture arrangement." MoL is chosen over Gaussian mixtures because the Logistic distribution has a closed-form CDF, high sampling efficiency, and has been proven in PixelRNN/PixelCNN++ to effectively represent multi-modal structured distributions.
+The core of scene generation is formalized as a conditional density: predicting the OBB of a dependent object given anchor information. A critical detail is handling natural multi-modality (e.g., "a chair can be placed on any side of a table"), which unimodal regression cannot express. The model categorizes relations into two types: support relations $R_s$ (governed by gravity, e.g., a laptop on a desk) and functional relations $R_f$ (governed by semantic proximity, e.g., a keyboard paired with a mouse). It predicts a mixture of $K$ Logistic components for the 12D OBB (center + size + 6D rotation):
+$$P(B_{dep}\mid\Theta) = \sum_{k=1}^K \pi_k\prod_{d=1}^{12} L(B_{dep,d}\mid\mu_{k,d}, s_{k,d})$$
+Training uses NLL plus an entropy regularization term $\mathcal{L}_{total} = \mathcal{L}_{nll} + \lambda\mathcal{L}_{ent}$, where $\mathcal{L}_{ent} = \sum_k \hat\pi_k\log\hat\pi_k$ encourages higher entropy in mixture coefficients to prevent collapse to a single mode. MoL is chosen over Gaussian mixtures because its CDF is closed-form, sampling is efficient, and it effectively captures multimodal structural distributions.
 
-2. **Geometry + Relation Dual-Attention Layout Predictor**:
+**2. Data Construction Pipeline: Refining Heterogeneous Data into 3D-Pairs**
 
-    - **Function**: Enables the model to simultaneously perceive object geometry (non-planar support surfaces, irregular orientations) and relational topology (which is the anchor, which is the dependent).
-    - **Mechanism**: Each role $m\in\{dep, sup, fnc\}$ is represented by a learnable query token $x_m$. Anchor position embeddings $e_m^{bbox} = \mathrm{MLP}_{pos}(B_m)$ are only added to self-attention keys/values (the dependent object searches for its own geometry but not its bbox, as it is unknown). Relational Self-Attention is defined as $X = \mathrm{SelfAttn}(X, X+E^{bbox}, X+E^{bbox})$, allowing $dep$ to attend to the spatial presence of $sup/fnc$. Geometry-Aware Cross-Attention is $x_m = \mathrm{CrossAttn}(x_m, z_m^{geo}, z_m^{geo})$; each role token only interacts with its own point cloud features to prevent geometric information crosstalk. Finally, $x_{dep}$ passes through an MLP head to output $\Theta$.
-    - **Design Motivation**: Support surface judgment based solely on semantic categories (e.g., "table") fails because many tables have non-flat tops or chairs have curved backs. Using point clouds with Point-MAE pre-training allows the model to "see" the actual shape. Adding position embeddings to anchor tokens but not the $dep$ token structurally ensures that the model predicts the $dep$ position without leaking ground-truth.
+To enable local relationship learning, "one-to-one relations" must be extracted from noisy raw data. The authors designed a three-stage pipeline to unify 3D-Front (large furniture), MesaTask (tabletops), and InternScenes Real-to-Sim (open scenes). Stage one is **Physical Verification**: running rigid-body simulations with gravity to discard unstable layouts. Stage two is **Heuristic Support Extraction**: using geometric rules to identify $R_s$—checking if the bottom OBB provides a stable surface or horizontally encloses the top object. It intentionally excludes "floor-only anchors" to avoid scale contamination from noisy datasets. Stage three is **LLM Functional Distillation**: for objects sharing a support surface, an LLM determines $R_f$ and provides a proximity coefficient $k$. The anchor OBB is expanded by $k$, and the relation is recorded only if the dependent object's centroid falls within the expanded volume. This allows local relations to be aggregated across datasets, bypassing the ceiling of single-dataset capacities.
 
-3. **Hierarchical Tree Assembly + Rejection Sampling for Global Scaling**:
+**3. Geometry + Relation Dual-Attention Layout Predictor**
 
-    - **Function**: Assembles globally consistent, collision-free, and physically reasonable scenes without learning a global distribution.
-    - **Mechanism**: Represents the scene as a support tree $\mathbb{T}_s$ (root is the floor) with a functional tree $\mathbb{T}_f$ attached to each non-leaf node (semantic dependencies between objects sharing a support surface). Generation follows a BFS through $\mathbb{T}_s$ (ensuring support surfaces are placed first) and then a DFS through $\mathbb{T}_f$ for each node, yielding a relation sequence $\mathcal{S} = \{\mathcal{T}_1, \ldots, \mathcal{T}_N\}$. At each step, a candidate position is sampled from the local distribution $p_{\text{local}}(x)$. The feasible set $\mathcal{F}$ is defined as "no collision with existing objects or scene boundaries." The target global distribution $p_{\text{global}}(x)$ is $p_{\text{local}}(x)/Z$ when $x\in\mathcal{F}$ and 0 otherwise, approximated via rejection sampling. A brief gravity simulation follows successful sampling. Tree construction supports both "statistical synthesis" (procedural expansion based on frequency/co-occurrence) and "LLM-guided" (converting text descriptions to hierarchy trees) modes.
-    - **Design Motivation**: Rejection sampling naturally upgrades "local conditional density" to a "global collision-constrained distribution" without retraining. BFS+DFS traversal enforces a causal sequence—any $dep$ has its anchors already in place during prediction, avoiding "chicken-and-egg" problems. LLMs are used only for generating tree structures (a natural language strength) rather than directly predicting coordinates (a weakness), achieving a functional division between LLM and geometric models.
+Relying solely on semantic categories for support surfaces is insufficient as many surfaces (e.g., curved chair backs) are irregular. The model must perceive both true geometry and relational topology. Each role $m\in\{dep, sup, fnc\}$ is represented by a learnable query token $x_m$. Anchor positional embeddings $e_m^{bbox} = \mathrm{MLP}_{pos}(B_m)$ are added only to the self-attention keys/values. Relational Self-Attention is formulated as $X = \mathrm{SelfAttn}(X, X+E^{bbox}, X+E^{bbox})$, allowing the dependent token to attend to the spatial presence of anchors. Geometry-Aware Cross-Attention is $x_m = \mathrm{CrossAttn}(x_m, z_m^{geo}, z_m^{geo})$, where each role token interacts only with its own Point-MAE features to prevent geometric "leakage." Notably, the dependent token does not receive a positional embedding to avoid leaking ground-truth coordinates.
+
+**4. Tree Assembly + Rejection Sampling: Scaling Local Rules to Global Scenes**
+
+To ensure the global scene is collision-free and physically sound, the authors use procedural assembly. The scene is represented as a support tree $\mathbb{T}_s$ (root is the floor), with functional trees $\mathbb{T}_f$ branching from non-leaf nodes. Generation follows BFS on $\mathbb{T}_s$ to ensure support surfaces are placed first, followed by DFS on $\mathbb{T}_f$. At each step, a candidate position is sampled from $p_{\text{local}}(x)$. The feasible set $\mathcal{F}$ is defined by non-collision with existing objects or boundaries. The global distribution becomes $p_{\text{global}}(x) = p_{\text{local}}(x)/Z$ for $x\in\mathcal{F}$, approximated via rejection sampling. This causal ordering (BFS+DFS) ensures that when a dependent object is predicted, its anchors already exist.
 
 ### Loss & Training
-The training target is $\mathcal{L}_{total} = \mathcal{L}_{nll} + \lambda\mathcal{L}_{ent}$, where NLL fits the MoL distribution and entropy regularization prevents mode collapse. Point-MAE is pre-trained on aggregated 3D asset libraries as the geometric encoder. Data comes from 3D-Pairs with ~140k relation quadruplets extracted from 3D-Front (furniture), MesaTask (tabletop), and InternScenes Real-to-Sim subsets (open scenes).
+The objective is $\mathcal{L}_{total} = \mathcal{L}_{nll} + \lambda\mathcal{L}_{ent}$. Point-MAE is pre-trained on a synthesized 3D asset library. The training set consists of the 140k relation quadruplets in 3D-Pairs.
 
 ## Key Experimental Results
 
 ### Main Results
-Two evaluation settings: (A) **3D-Front only**—trained only on 3D-Front, compared against ATISS / DiffuScene / LayoutVLM / FactoredScenes; (B) **multi-source**—trained on the full 3D-Pairs, compared with procedural / LLM-based systems (Holodeck, Infinigen-Indoors, LayoutVLM, FactoredScenes).
+Two evaluation settings: (A) **3D-Front only**—Trained only on 3D-Front; (B) **Multi-source**—Trained on the full 3D-Pairs dataset.
 
-| Method (3D-Front only) | FID ↓ | KID×1e-3 ↓ | Avg. Objects |
+| Method (3D-Front only) | FID ↓ | KID×1e-3 ↓ | Avg. Object Count |
 |---|---|---|---|
 | ATISS | 71.24 | 42.18 | 7.65 |
 | DiffuScene | 67.45 | 31.72 | 6.75 |
@@ -83,42 +98,40 @@ Two evaluation settings: (A) **3D-Front only**—trained only on 3D-Front, compa
 | **Ours-Fit** | **65.92** | **22.14** | 6.98 |
 | **Ours-Beyond** | 75.88 | 69.05 | **14.15** |
 
-In a 22-person user study on the 3D-Front setting, Ours-Beyond scored SA 5.23 / PP 5.00 / SC 5.23 / MQ 5.12 / CFS 4.46, leading in almost all categories. In the multi-source setting, Ours achieved SA 4.55 / PP 4.32 / SC 4.73, with its CFS of 4.20 far exceeding the second-place LayoutVLM (1.72).
+In a user study with 22 participants, Ours-Beyond ranked first in almost all categories (SA 5.23, PP 5.00). In the multi-source setting, Ours achieved a CFS of 4.20, significantly outperforming LayoutVLM's 1.72.
 
 ### Ablation Study
 
 | Variant | FID ↓ | KID×1e-3 ↓ | Description |
 |---|---|---|---|
-| w/o relation | 92.34 | 82.74 | Relational decomposition is necessary |
-| w/o pretrain | 81.14 | 73.91 | Geometric priors are critical |
-| Full Model (**Ours-Fit**) | 65.92 | 22.14 | Complete design |
+| w/o relation | 92.34 | 82.74 | Necessity of decomposition |
+| w/o pretrain | 81.14 | 73.91 | Importance of geometric priors |
+| Full Model (Ours-Fit) | 65.92 | 22.14 | Complete design |
 
 ### Key Findings
-- The KID of Ours-Fit is only 22.14, significantly better than DiffuScene's 31.72, showing it surpasses all baselines within the dataset distribution. Ours-Beyond pushes the object count from 6.98 to 14.15, proving it can escape the density cap of the training distribution.
-- In user studies, LayoutVLM scored high on Scene Complexity but extremely poor on Physical Plausibility (2.14), confirming the "rich but chaotic" pain point of LLM/VLM methods. Pair2Scene scores high on both SC and PP, representing a structural advantage.
-- Relational decomposition (w/o relation ablation) had the largest impact, meaning "support/functional" is the core inductive bias of this method rather than just engineering wrapping.
+- Ours-Fit achieves a KID of 22.14, significantly lower than DiffuScene's 31.72, showing superior performance within the dataset distribution. Ours-Beyond pushes the object count to 14.15, proving the ability to exceed the training density.
+- While LayoutVLM scores high on Scene Complexity, its Physical Plausibility is poor (2.14). Pair2Scene scores high on both, demonstrating a structural advantage.
+- Relational decomposition is the most critical inductive bias; removing it leads to the largest performance drop.
 
 ## Highlights & Insights
-- The observation that "global joint distribution is redundant and object placement is primarily driven by local dependencies" directly challenges the mainstream modeling assumptions of recent years and proves that it can be converted into more scalable local learning.
-- The three data sources (curated furniture, tabletop, real-to-sim open scenes) are highly heterogeneous. The authors used the "relation quadruplet" as a unified interface, essentially designing a scalable protocol across datasets, which has methodological significance for the scene dataset ecosystem.
-- The division of labor where LLM is used for "generating hierarchy trees" rather than "directly generating coordinates" is an elegant example of the LLM-as-controller and geometric-model-as-executor paradigm.
+- The observation that "global joint distribution is redundant" directly challenges the mainstream modeling assumption of the past few years, proving that local learning is more scalable.
+- The use of "relationship quadruplets" as a unified interface for heterogeneous data sources acts as a scalable protocol for 3D scene datasets.
+- The division of labor—LLM for tree generation and the geometric model for coordinate prediction—is an elegant example of the "LLM-as-controller, model-as-executor" paradigm.
 
 ## Limitations & Future Work
-- The relation quadruplet is limited to "single sup + single opt fnc," which restricts expressiveness for complex multi-party dependencies (e.g., triangular table-chair geometric constraints).
-- Rejection sampling efficiency decreases in high-density scenes, and global aesthetics (symmetry, style consistency) are not considered; these could be integrated with global priors in the future.
-- Tree construction via statistical synthesis still relies on dataset statistics; it remains unclear if it can generate room types never seen in the dataset (e.g., circular studies). LLM-guided mode is affected by LLM commonsense blind spots.
-- The code has not been released, making the reproduction threshold high.
+- The relationship quadruplet is limited to "single support + single optional functional anchor," which may limit expressiveness for complex multi-party dependencies (e.g., triangular geometric constraints).
+- Rejection sampling efficiency may decrease in ultra-dense scenes and does not currently account for global aesthetics like symmetry.
+- Tree construction (statistical synthesis) still relies on dataset statistics; its ability to generate entirely unseen room types (e.g., circular rooms) remains unverified.
 
 ## Related Work & Insights
-- **vs ATISS / DiffuScene**: They treat scenes as sequences and use Transformer/Diffusion to fit global distributions, limited by dataset scale. Pair2Scene uses local learning + procedural assembly to accumulate samples across datasets.
-- **vs HoloDeck / GALA3D / HSM**: LLM/VLM methods rely on commonsense for layout but lack spatial precision. Pair2Scene lets the LLM create hierarchies while the geometric model handles precise layout, significantly improving physical feasibility.
-- **vs Infinigen-Indoors**: Purely procedural generation relies on manual rules. Pair2Scene learns these rules, allowing the number and diversity of rules to grow with data.
+- **vs. ATISS / DiffuScene**: These methods treat scenes as sequences for global distribution fitting, constrained by dataset size. Pair2Scene uses local learning + procedural assembly, allowing cross-dataset sample accumulation.
+- **vs. HoloDeck / GALA3D**: LLM-based methods lack spatial precision. Pair2Scene uses LLMs only for hierarchy, letting the geometric model handle precision, which significantly improves physical feasibility.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The perspective shift of "rejecting global distribution" + relation quadruplet protocol are original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Dual settings + 22-person user study + critical ablations are complete.
-- Writing Quality: ⭐⭐⭐⭐ Clear mathematical definitions, intuitive pipeline diagrams, and smooth narrative logic.
-- Value: ⭐⭐⭐⭐⭐ Simultaneously addresses data scarcity and global complexity explosion, with significant implications for downstream applications.
+- Novelty: ⭐⭐⭐⭐⭐ (Rejection of global distribution + Relation quadruplet protocol)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Dual settings + user study + ablations)
+- Writing Quality: ⭐⭐⭐⭐ (Clear definitions and intuitive pipeline)
+- Value: ⭐⭐⭐⭐⭐ (Address both data scarcity and complexity explosion)
 
 <!-- RELATED:START -->
 
@@ -126,11 +139,11 @@ In a 22-person user study on the 3D-Front setting, Ours-Beyond scored SA 5.23 / 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Global-Local Tree Search in VLMs for 3D Indoor Scene Generation](../../CVPR2025/multimodal_vlm/global-local_tree_search_in_vlms_for_3d_indoor_scene_generation.md)
 - [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
+- [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](../../CVPR2026/multimodal_vlm/can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](../../CVPR2026/multimodal_vlm/hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[ICCV 2025\] Global and Local Entailment Learning for Natural World Imagery](../../ICCV2025/multimodal_vlm/global_and_local_entailment_learning_for_natural_world_imagery.md)
-- [\[ICLR 2026\] Procedural Mistake Detection via Action Effect Modeling](../../ICLR2026/multimodal_vlm/procedural_mistake_detection_via_action_effect_modeling.md)
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](../../CVPR2026/multimodal_vlm/scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
+- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 
 </div>
 

@@ -2,136 +2,127 @@
 title: >-
   [Paper Note] Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions
 description: >-
-  [ICML 2026 (EIML Workshop)][AI Safety][Annotator Distribution] By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling per vote / SLS resampling per epoch)…
+  [ICML 2026][AI Safety][Paper Note] By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling by votes / SLS resampling per epoch), this work proves these methods are equivalent to the soft label cross-entropy expectation goal but converge to flatter basins, perform better under sparse annotations, and slightly excel
 tags:
-  - "ICML 2026 (EIML Workshop)"
-  - "AI Safety"
-  - "Annotator Distribution"
-  - "Hard vs. Soft Labels"
-  - "Loss Landscape"
-  - "OOD Detection"
-  - "Calibration"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 5ccf6f2fe982eea0
+content_hash: fab418bdd5ea3d78
 ---
-
 # Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions
 
 **Conference**: ICML 2026 (EIML Workshop)  
 **arXiv**: [2605.20642](https://arxiv.org/abs/2605.20642)  
 **Code**: None  
 **Area**: AI Safety / Uncertainty Estimation / Training Methodology  
-**Keywords**: Annotator Distribution, Hard vs. Soft Labels, Loss Landscape, OOD Detection, Calibration
+**Keywords**: Annotator distributions, Hard and soft labels, Loss landscape, OOD detection, Calibration
 
 ## TL;DR
-By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling per vote / SLS resampling per epoch), this work proves equivalence to the soft-label cross-entropy expected target, but demonstrates convergence to flatter basins, superior performance under sparse annotations, and slightly better OOD detection.
+By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling by votes / SLS resampling per epoch), this work proves these methods are equivalent to the soft label cross-entropy expectation goal but converge to flatter basins, perform better under sparse annotations, and slightly excel in OOD detection.
 
 ## Background & Motivation
-**Background**: The mainstream approach for multi-annotator datasets (CIFAR-10H, ChaosNLI, LeWiDi) is either to collapse votes into a single hard label or to perform cross-entropy directly on the empirical soft-label distribution of each instance. Peterson et al. (2019) demonstrated that soft-label training preserves "ambiguity/subjectivity" information, significantly outperforming hard voting.
+**Background**: The mainstream approach for multi-annotator datasets (CIFAR-10H, ChaosNLI, LeWiDi) is either to collapse votes into a single majority label or to directly perform cross-entropy on the empirical soft label distribution of each instance. Peterson et al. (2019) demonstrated that soft label training preserves "ambiguity/subjectivity" information, significantly outperforming hard voting.
 
-**Limitations of Prior Work**: Training with soft labels by "keeping the distribution in the loss" is an assumption—it defaults to the empirical distribution $p_i$ as the ideal training target. However: (a) when each instance has only 5–10 annotations, $p_i$ is a sparse estimation distant from the true distribution; (b) it couples "what the target is" with "how the target is delivered," preventing the study of the optimization path's impact.
+**Limitations of Prior Work**: Treating soft label training as "leaving the distribution in the loss" is an assumption—it defaults to the empirical distribution $p_i$ being a good training target. However, (a) when each instance has only 5–10 annotations, $p_i$ is a sparse estimate distant from the true distribution; (b) it couples "what the target is" with "how the target is delivered," preventing decoupled research into the impact of optimization paths.
 
-**Key Challenge**: To retain annotator information, must the distribution enter the loss at every step? If changed to "sampling hard labels according to the distribution," can different optimization paths be taken under the same expected target, leading to solutions with different geometric properties?
+**Key Challenge**: To retain annotator information, must the distribution enter the loss at every step? If changed to "hard label sampling based on the distribution," can different optimization paths lead to solutions with different geometric properties under the same expectation goal?
 
-**Goal**: While fixing the annotator distribution target for each instance, vary only the "delivery format" (hard vs. soft) to systematically compare endpoint performance, basin geometry, and OOD behavior under both sparse and sufficient annotation budgets.
+**Goal**: Given a fixed annotator distribution target for each instance, this work systematically compares two delivery formats (hard vs. soft) across sparse and sufficient annotation budgets, examining endpoint performance, basin geometry, and OOD behavior.
 
-**Key Insight**: The authors formally compare SLS (sampling one hard label from $p_i$ per epoch) with soft cross-entropy, proving they share the **same expected gradient**. The difference lies only in sampling variance, which is highly correlated with annotator disagreement—meaning hard label delivery is equivalent to "injecting structured noise into samples with high disagreement."
+**Key Insight**: The authors formalize the comparison between SLS (sampling one hard label from $p_i$ per epoch) and soft cross-entropy, proving that they share the **same expected gradient**. The difference lies only in the sampling variance, which is highly correlated with annotator disagreement—meaning hard label delivery is equivalent to "injecting structured noise on high-disagreement samples."
 
-**Core Idea**: Treat the delivery format as an independent variable while fixing the annotator distribution as the target. Use multipass (cycling through votes) and SLS (resampling by distribution) to replace soft-label CE. Theoretically, the expected targets are equivalent; experimentally, this leads to flatter basins and better soft NLL under sparse annotations.
+**Core Idea**: While fixing the annotator distribution as the target, delivery format is treated as an independent variable. Multipass (cycling through votes) and SLS (resampling by distribution) replace soft label CE. Theoretically, the expectation goals are equivalent; experimentally, these yield flatter basins and better soft NLL under sparse annotations.
 
 ## Method
 
 ### Overall Architecture
-Let the dataset be $\mathcal{D}=\{(x_i, p_i)\}_{i=1}^N$, where $p_i \in \Delta^{K-1}$ is the empirical annotator distribution for the $i$-th sample and $q_\theta(x) = \mathrm{softmax}(z_\theta(x))$ is the model prediction. The control group is soft-label CE $\mathcal{L}_{\mathrm{soft}} = \sum_i H(p_i, q_\theta(x_i))$. This work designs two hard-label delivery methods (multipass, SLS) plus two controls (deterministic control, shuffled SLS). Each epoch uses standard hard-label CE, but the hard label for each instance varies by epoch or sampling. All methods are run on CIFAR-adapted ResNet-18 for 200 epochs with cosine annealing.
+Each sample $x_i$ is paired with an empirical annotator distribution $p_i \in \Delta^{K-1}$ (derived from $m_i$ human votes), and the model predicts $q_\theta(x) = \mathrm{softmax}(z_\theta(x))$. The baseline utilizes soft label cross-entropy $\mathcal{L}_{\mathrm{soft}} = \sum_i H(p_i, q_\theta(x_i))$. This work investigates the impact of changing the delivery format by fixing the per-example target and isolating the format as an independent variable: replacing soft labels with multipass (cycling through real votes for hard labels) and SLS (resampling a hard label per epoch according to $p_i$). Two control experiments are included to isolate "sampling randomness" and "sample-distribution pairing." All methods use a CIFAR-adapted ResNet-18 trained for 200 epochs with cosine annealing.
 
 ### Key Designs
 
-1.  **Multipass (Count-preserving hard labels via vote cycling)**:
-    *   **Function**: When original vote counts $\{c_{ik}\}_k$ are available, expand each instance's votes into a "label multiset," shuffle once with a fixed seed, and feed them across epochs via $\texttt{epoch} \bmod m_i$ (where $m_i$ is the total votes for that instance). Each epoch still contains $N$ samples; the dataset cardinality remains unchanged.
-    *   **Mechanism**: Unlike Sheng et al. (2008), which expands repeated annotations into multiple samples, multipass maintains dataset size but changes "label identity" within epochs. If an instance has 50 votes, it completes one cycle every 50 epochs, with every observed vote appearing exactly once.
-    *   **Design Motivation**: Carry distribution information using a deterministic, reproducible sequence of hard labels—avoiding SLS sampling variance while verifying if "label changes between epochs" are sufficient. It is the default choice when raw counts exist.
+**1. Multipass: Deterministically cycling hard labels with real vote counts to eliminate sampling variance**
 
-2.  **Stochastic Label Sampling (SLS) + Expected Target Equivalence**:
-    *   **Function**: At the start of each epoch, independently sample $y_i^{(t)} \sim \mathrm{Categorical}(p_i)$ for each instance, then train that epoch with standard hard-label CE. It only requires $p_i$, not raw counts, serving as a lightweight alternative to multipass.
-    *   **Mechanism**: Proposition 1 proves $\mathbb{E}_{y\sim p}[-\log q_y] = H(p,q)$, $\mathbb{E}_{y\sim p}[\nabla_z\ell] = q-p$, and $\mathrm{Cov}_{y\sim p}[\nabla_z\ell] = \mathrm{Diag}(p)-pp^\top$. Thus, SLS and soft-label CE are equivalent in expected target; the difference is the additional gradient variance $\mathbb{E}\|q-e_y\|^2 - \|q-p\|^2 = 1 - \|p\|_2^2$, which increases with disagreement.
-    *   **Design Motivation**: Strictly decouple "target" from "optimization path." Since targets are identical, endpoint performance differences must stem from the optimization path and noise covariance structure ($\mathrm{Diag}(p)-pp^\top$), attributable to basin geometry.
+When original vote counts $\{c_{ik}\}_k$ are available, a drawback of soft labels is that they compress disagreement into a fixed vector, hiding the specific votes that constitute the disagreement. Multipass expands the votes of each instance into a "label multiset," shuffles them once with a fixed seed, and cycles through them across epochs using $\texttt{epoch} \bmod m_i$. If an instance has 50 votes, it completes one cycle every 50 epochs, with each observed vote appearing exactly once. Unlike Sheng et al. (2008), which expands repeated annotations into multiple samples, the number of samples per epoch remains $N$; only the "label identity" per instance changes. Because the sequence is deterministic and reproducible, it avoids the sampling variance of SLS while verifying if changing labels between epochs is sufficient.
 
-3.  **Deterministic / Shuffled Double Controls**:
-    *   **Function**: Deterministic control is an ablation of multipass traversal order using a different fixed shuffle seed; Shuffled SLS permutes each instance's $p_i$ across the dataset before SLS, breaking "sample-distribution" pairing while preserving global disagreement statistics.
-    *   **Mechanism**: Each control answers a confounder—the former verifies that "cycle order" is irrelevant, while the latter confirms that "pairing each instance with its own distribution" is critical. If shuffled SLS still worked, SLS benefits would be merely "noise regularization."
-    *   **Design Motivation**: Separate the interpretations of "distribution as label structural information" vs. "distribution as a generic noise source." Shuffled SLS degraded to 12% accuracy, confirming pairing as a first-order factor.
+**2. SLS: Resampling hard labels according to the distribution and proving expectation equivalence**
+
+When only $p_i$ is available without raw counts, SLS independently samples $y_i^{(t)} \sim \mathrm{Categorical}(p_i)$ for each instance at the start of every epoch, followed by standard hard label CE training. This is a lightweight alternative to multipass. Its success despite "appearing like noise" is explained by Proposition 1, which proves its equivalence to the soft label CE expectation goal: $\mathbb{E}_{y \sim p}[-\log q_y] = H(p, q)$, with the expected gradient $\mathbb{E}_{y \sim p}[\nabla_z \ell] = q - p$, identical to the soft label gradient. The only difference is the additional gradient variance from sampling $\mathbb{E}\|q-e_y\|^2 - \|q-p\|^2 = 1 - \|p\|_2^2$, where the covariance is exactly $\mathrm{Cov}_{y \sim p}[\nabla_z \ell] = \mathrm{Diag}(p) - pp^\top$—greater disagreement (flatter $p$) leads to higher variance. This strictly decouples "what the target is" from "how the optimization path proceeds."
+
+**3. Deterministic / Shuffled Dual Controls: Separating "pairing information" from "general noise"**
+
+To determine if SLS benefits stem from more than just noise, two controls were added. The **deterministic control** is a traversal-order ablation for multipass—changing only the fixed shuffle seed to confirm that the cycle order itself is irrelevant. **Shuffled SLS** permutes the $p_i$ across samples before performing SLS, preserving global disagreement statistics but breaking the "sample-distribution" pairing. If it still works, SLS gains are just "general noise regularization"; if it fails, "matching each instance to its own distribution" is the key. In experiments, shuffled SLS degraded to 12% accuracy, confirming that pairing is a first-order factor.
 
 ### Loss & Training
-*   Soft label: $\mathcal{L}_{\mathrm{soft}} = -\sum_i \sum_k p_{ik} \log q_{\theta,k}(x_i)$; hard methods use standard hard-label CE.
-*   Optimizer: SGD, lr=0.1, momentum=0.9, weight_decay=$5\times 10^{-4}$, cosine annealing for 200 epochs, batch=128, random crop + horizontal flip.
-*   Evaluation follows the proper-scoring-rule perspective: Soft NLL as primary; KL-to-annotator and soft Brier as secondary; hard_acc / equal-mass ECE / Spearman entropy correlation as tertiary. Hessian $\lambda_{\max}$ (power iteration) and trace (Hutchinson) are calculated at the best-soft-NLL checkpoint in eval mode with BN frozen.
+- Soft label: $\mathcal{L}_{\mathrm{soft}} = -\sum_i \sum_k p_{ik} \log q_{\theta, k}(x_i)$; hard methods use standard hard-label CE.
+- Optimizer: SGD, lr=0.1, momentum=0.9, weight_decay=$5 \times 10^{-4}$, cosine annealing for 200 epochs, batch=128, with random cropping and horizontal flipping.
+- Evaluation follows the proper-scoring-rule perspective: Primary metrics are soft NLL, secondarily KL-to-annotator and soft Brier, followed by hard_acc, equal-mass ECE, and Spearman entropy correlation. Hessian $\lambda_{\max}$ is estimated via power iteration, and trace via Hutchinson, calculated in eval mode with BN frozen at the best-soft-NLL checkpoint.
 
 ## Key Experimental Results
 
 ### Main Results
-CIFAR-10H (10,000 images), 80/20 stratified split, 10 seeds for the main control / 5 paired seeds for the hard-delivery family and sparse scanning.
+CIFAR-10H with 10,000 images, 80/20 stratified split, 10 seeds for main comparison / 5 paired seeds for the hard-delivery family and sparse scanning.
 
 | Method | Soft NLL ↓ | Hard Acc ↑ | ECE_eqmass ↓ | EntCorr ↑ |
-| :--- | :--- | :--- | :--- | :--- |
+|------|-----------|-----------|-------------|-----------|
 | Majority vote | 0.7284 | 0.8570 | 0.0704 | 0.2902 |
 | Label smoothing | 0.6263 | 0.8590 | 0.0598 | 0.2117 |
 | Mixup | 0.5526 | **0.8824** | 0.0977 | 0.2499 |
 | Soft labels | 0.5096 | 0.8687 | 0.0185 | 0.3909 |
 | **SLS** | **0.5052** | 0.8695 | 0.0186 | **0.3946** |
 
-With the full distribution, SLS and soft labels show no significant difference across 4 metrics ($p \in [0.38, 0.92]$); Mixup has the highest accuracy but ECE is nearly 5 times worse.
+With the full distribution, SLS and soft labels show no significant differences across 4 metrics ($p \in [0.38, 0.92]$); mixup has the highest accuracy but nearly 5x worse ECE.
 
-Sparse annotation scan (Soft NLL for $K \in \{5, 10, 25, 50\}$, mean of 5 paired seeds):
+Sparse annotation scan (Soft NLL for K∈{5, 10, 25, 50}, 5 paired seeds per cell):
 
 | Method | K=5 | K=10 | K=25 | K=50 |
-| :--- | :--- | :--- | :--- | :--- |
+|------|-----|------|------|------|
 | Soft labels | 0.5860 | 0.5785 | 0.5388 | 0.5628 |
 | SLS | 0.5599 (p=.031) | 0.5485 (.031) | 0.5169 (.063) | 0.5291 (.094) |
 | Multipass | 0.5649 (.063) | 0.5371 (.031) | 0.5117 (.031) | 0.5241 (.031) |
 | Det. control | **0.5555** (.031) | **0.5388** (.031) | **0.5077** (.031) | **0.5231** (.031) |
 
-All 12/12 cells numerically outperformed soft labels; in 9/12, all 5 seeds were consistent. Gains are larger as $K$ decreases. The improvement correlates with the JS distance between empirical $p_i$ and the true distribution (Spearman 0.05–0.16).
+In 12/12 cells, hard methods outperform soft labels directionally, with 9/12 cells consistent across all 5 seeds. Improvements are greater when K is smaller and are positively correlated with the JS distance between empirical $p_i$ and the true distribution (Spearman 0.05–0.16).
 
 ### Ablation Study
 
 | Configuration | Soft NLL | Hard Acc | EntCorr | $\lambda_{\max}$ (full) | Trace (full) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|----------|----------|---------|-------------------------|--------------|
 | Soft labels | 0.5096 | 0.8687 | 0.3909 | 242.2 | 4946.0 |
 | SLS | 0.5052 | 0.8695 | 0.3946 | **104.9** | **1633.9** |
 | Multipass | 0.4942 | 0.8714 | 0.4000 | 103.8 | 1571.4 |
 | Det. control | 0.4921 | 0.8724 | 0.3963 | 101.6 | 1581.6 |
 | Shuffled SLS | 2.2973 | 0.1199 | -0.006 | 18.4 | 33.9 |
 
-Multipass / SLS / Det. control are geometrically nearly identical ($\lambda_{\max} \sim 100$, 2.4× smaller than soft labels). Shuffled SLS is functionally the "flattest" but behaves like a random classifier—indicating that "flatness" must be interpreted while maintaining pairing. Stale-target probe: fixing sampled labels for 1/5/10/50 epochs caused Soft NLL to deteriorate monotonically from 0.5027 to 0.6689.
+Multipass / SLS / Det. control are geometrically almost identical ($\lambda_{\max} \sim 100$, 2.4x smaller than soft). Shuffled SLS is the "flattest" but approaches random classification—indicating that "flatness" must be interpreted while maintaining pairing. Stale-target probe: fixing sampled labels for 1/5/10/50 epochs monotonically worsened soft NLL from 0.5027 to 0.6689.
 
 ### Key Findings
-*   **Pairing is First-order**: Shuffled SLS has the flattest geometry but 12% accuracy, proving that hard delivery's benefit is not "generic noise regularization" but "per-instance distribution matching" with noise covariance reshaped by disagreement.
-*   **Structured Gradient Noise**: The Spearman correlation between last-layer gradient variance and annotator entropy averaged 0.939 across seeds—extra variance injected by SLS is precisely concentrated on high-disagreement samples, consistent with Proposition 1's $\mathrm{Diag}(p)-pp^\top$.
-*   **Same Target, Different Basins**: The mean loss barrier between SLS and soft checkpoints is 2.05 (much greater than 0); CKA 0.920 vs. 0.887; Grad-CAM cross-seed stability 0.901 vs. 0.804. While endpoint losses are nearly identical, they occupy different basins; hard delivery representations are more reproducible.
-*   **OOD Endpoint Gains**: Hard delivery outperformed soft labels in 5 out of 6 detectors on SVHN. On CIFAR-100, SLS outperformed soft labels in AUROC across all scores (Energy/ODIN paired $p=0.0186$).
+- **Pairing is first-order**: Shuffled SLS has the flattest geometry but only 12% accuracy, proving that hard delivery benefits are not from "general noise regularization" but from "per-example distribution matching" and noise covariance reshaped by disagreement.
+- **Structured gradient noise**: The Spearman correlation between last-layer gradient variance and annotator entropy averaged 0.939 across seeds—additional variance from SLS is concentrated on high-disagreement samples, consistent with $\mathrm{Diag}(p) - pp^\top$.
+- **Same target, different basins**: The mean loss barrier between SLS and soft checkpoints is 2.05 (significantly > 0). With CKA at 0.920 vs 0.887 and Grad-CAM cross-seed stability at 0.901 vs 0.804, endpoint losses are similar but occupy different basins; hard delivery representations are more reproducible.
+- **OOD endpoint gains**: Hard delivery outperformed soft in 5 out of 6 detectors on SVHN. On CIFAR-100, SLS outperformed soft labels in AUROC across all scores, with Energy/ODIN paired $p = 0.0186$.
 
 ## Highlights & Insights
-*   **Delivery as an Independent Variable**: Previous works on "training with annotator distributions" typically change both target and delivery. This paper mathematically decouples them via Proposition 1 and further decouples "sampling randomness" via deterministic control—a three-layer ablation design applicable to any stochastic vs. deterministic optimization comparison.
-*   **Multipass is an Overlooked Practical Baseline**: When raw vote counts are available, cycling through the multiset is deterministic, reproducible, avoids SLS variance, and doesn't change dataset size unlike Sheng 2008. It is the "cheapest hard-label delivery."
-*   **New Evidence for "Flat Basin via Structured Label Noise"**: Traditional flat-minima literature uses SGD noise or symmetric label noise (Keskar, Smith, Damian). This work proves "hard labels sampled from the true distribution" can drive the model into basins ~2.4× flatter, with a variance structure strictly corresponding to $\mathrm{Diag}(p)-pp^\top$, providing a concretely interpretable example of "covariance-Hessian alignment" (HaoChen/Wu).
+- **Treating delivery as an independent variable is an elegant research paradigm**: Previous works on training with annotator distributions often changed targets and delivery simultaneously. This paper mathematically decouples them via Proposition 1 and further decouples "sampling randomness" via deterministic control—a three-tier ablation design applicable to any stochastic vs. deterministic optimization comparison.
+- **Multipass is an overlooked practical baseline**: When raw vote counts are available, cycling through the multiset is deterministic, reproducible, avoids SLS variance, and maintains the dataset size (unlike Sheng 2008). It is the "cheapest hard label delivery."
+- **New evidence for "flat basins via structured label noise"**: While literature often uses SGD noise or symmetric label noise (Keskar, Smith, Damian), this work proves "hard labels sampled from the true distribution" drive the model into a ~2.4x flatter basin. The variance structure strictly corresponds to $\mathrm{Diag}(p) - pp^\top$, providing a concrete, interpretable example for "covariance-Hessian alignment" (HaoChen/Wu).
 
 ## Limitations & Future Work
-*   The authors acknowledge limited scope: single dataset (CIFAR-10H) and single architecture (ResNet-18 with CIFAR stem). The sparse scan's 12 cells were numerically superior but lacked single-cell significance after Holm correction (smallest raw $p=0.03125$). OOD comparisons were treated as descriptive evidence.
-*   The sparse $K$ was simulated by resampling dense CIFAR-10H; real sparse datasets might involve "annotator selection bias" or task-specific disagreement structures where the relative benefit of hard delivery remains unverified. The causal link from basin geometry to endpoint metrics remains observational.
-*   Future directions: Extend multipass to high-disagreement NLP data like ChaosNLI/SBIC; compare with explicit flatness optimizers (SAM) to see if "structured label noise" can replace explicit sharpness regularization; study the interaction between cycle length $m_i$ and LR schedules.
+- The authors acknowledge limitations: Single dataset (CIFAR-10H) and single architecture (ResNet-18 with CIFAR stem); not yet verified on ChaosNLI, LeWiDi, or larger vision models. In the sparse scan, though 12/12 cells were directionally superior, no single cell remained significant after Holm correction (minimum raw $p=0.03125$ for 5 paired seeds). OOD comparisons mixed the 10-seed main table and 5-seed ablation table and are treated as descriptive evidence.
+- This note observes: Sparse K is simulated by resampling the dense CIFAR-10H; real sparse datasets may include "annotator selection bias" and task-specific disagreement structures. Proposition 1 only provides per-step variance; the causal link from basin geometry to endpoint metrics remains observational.
+- Future directions: Applying multipass to high-disagreement NLP data like ChaosNLI/SBIC; comparing with explicit flatness optimizers like SAM to see if "structured label noise" can replace explicit sharpness regularization.
 
 ## Related Work & Insights
-*   **vs. Peterson et al. (2019)**: They introduced CIFAR-10H and proved soft-label CE > majority vote; this work takes a finer causal slice by fixing the target and changing only delivery.
-*   **vs. Sheng et al. (2008) Repeat Label Expansion**: Sheng expands datasets from $N \to \sum m_i$; multipass keeps $N$ constant and cycles through votes—a cardinality-preserving version of the same idea.
-*   **vs. DisturbLabel (Xie et al., 2016)**: DisturbLabel uses uniform noise to perturb labels; SLS samples from the true $p_i$, aligning noise structure with the target distribution—making it "information-preserving noise" rather than destructive.
-*   **vs. Label Smoothing / Mixup**: LS uses uniform soft targets; Mixup interpolates inputs and targets. Neither preserves per-instance epistemic structure. Table 2 shows their ECE is significantly worse than SLS/soft, confirming the necessity of preserving example-to-distribution pairing.
-*   **vs. Flat-minima Literature (Keskar 2017, Smith 2021, HaoChen 2021)**: This work provides a new mechanism for how hard-label delivery flattens basins, with an exact analytical form for the noise covariance.
+- **vs. Peterson et al. (2019)**: They introduced CIFAR-10H and proved soft-label CE > majority vote; this work fixes the target distribution and varies Only the delivery, providing a finer causal slice.
+- **vs. Sheng et al. (2008) Repeated Labeling**: Sheng expands the dataset $N \to \sum m_i$; multipass keeps $N$ constant and cycles the labels—a cardinality-preserving version of the same idea.
+- **vs. DisturbLabel (Xie et al., 2016)**: DisturbLabel uses uniform noise to perturb labels; SLS samples from the true $p_i$, aligning noise structure with the target distribution. This makes it "information-preserving noise" rather than destructive.
+- **vs. Label smoothing / Mixup**: LS uses a uniform soft target, and mixup uses input-target interpolation; neither preserves per-instance epistemic structure. Table 2 shows their ECE is significantly worse than SLS/soft, validating the need for example-to-distribution pairing.
+- **vs. Flat-minima literature (Keskar 2017, Smith 2021, HaoChen 2021)**: This work provides a new mechanism for how hard-label delivery flattens basins, with a precise analytical form for the variance covariance.
 
 ## Rating
-*   **Novelty**: ⭐⭐⭐⭐ Treating delivery as an independent variable and decoupling it via expected equivalence is a rare causal slice in annotator-disagreement research; however, the sampling idea was nascent in Peterson 2019.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes three main methods + two controls + sparse scanning + Hessian + loss barriers + CKA + Grad-CAM + OOD; though limited by the single dataset/architecture.
-*   **Writing Quality**: ⭐⭐⭐⭐ Clear organization; the "regime split" narrative is consistent; Proposition and control roles are well-explained. Tables require careful reading.
-*   **Value**: ⭐⭐⭐⭐ Provides multipass as a practical default for annotator-distribution tasks and builds a verifiable bridge between flat-minima and structured label noise.
+- Novelty: ⭐⭐⭐⭐ Treating delivery as an independent variable and decoupling it via expectation equivalence is a rare causal slice in the annotator-disagreement field; however, the sampling idea in SLS was nascent in Peterson 2019.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes 3 main methods, 2 controls, sparse scanning, Hessian, loss barriers, CKA, Grad-CAM, and OOD; however, limited by single dataset/architecture.
+- Writing Quality: ⭐⭐⭐⭐ Clear organization, consistent "regime split" narrative, and well-explained roles for propositions and controls.
+- Value: ⭐⭐⭐⭐ Provides multipass as a practical default for annotator distribution tasks and builds a concrete, verifiable bridge between flat-minima and structured label noise.
 
 <!-- RELATED:START -->
 
@@ -139,11 +130,11 @@ Multipass / SLS / Det. control are geometrically nearly identical ($\lambda_{\ma
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](../../NeurIPS2025/ai_safety/revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
+- [\[ICML 2025\] Retraining with Predicted Hard Labels Provably Increases Model Accuracy](../../ICML2025/ai_safety/retraining_with_predicted_hard_labels_provably_increases_model_accuracy.md)
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 - [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
 - [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
+- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](../../CVPR2026/ai_safety/decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
 
 </div>
 

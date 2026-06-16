@@ -2,142 +2,145 @@
 title: >-
   [Paper Note] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 description: >-
-  [CVPR 2026 (Oral)][Autonomous Driving][Semantic Scene Completion] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from the aerial perspective, comprising 20…
+  [CVPR 2026][Autonomous Driving][Paper Note] OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from an aerial perspective. It contains over 20,000 samples and 21 semantic categories, covering urban, industrial, and rural scenes across various seasons and altitudes, while revealing the fundamental limitations of current
 tags:
-  - "CVPR 2026 (Oral)"
-  - "Autonomous Driving"
-  - "Semantic Scene Completion"
-  - "Aerial Perspective"
-  - "UAV"
-  - "Benchmark Dataset"
-  - "Depth Estimation"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 89a88d80b65d78ab
+content_hash: c1212aacb64ca2f9
 ---
-
 # OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 
-**Conference**: CVPR 2026 (Oral)
+**Conference**: CVPR 2026 (Oral)  
 **arXiv**: [2512.20770](https://arxiv.org/abs/2512.20770)  
-**Code**: [https://github.com/markus-42/occufly](https://github.com/markus-42/occufly) (available, to be released)  
-**Area**: Autonomous Driving / 3D Vision
+**Code**: [https://github.com/markus-42/occufly](https://github.com/markus-42/occufly) (Available, code release pending)  
+**Area**: Autonomous Driving / 3D Vision  
 **Keywords**: Semantic Scene Completion, Aerial Perspective, UAV, Benchmark Dataset, Depth Estimation
 
 ## TL;DR
 
-OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from the aerial perspective, comprising 20,000+ samples across 21 semantic categories, spanning multi-season and multi-altitude urban, industrial, and rural scenes. It further reveals fundamental limitations of current visual foundation models in aerial settings.
+OccuFly introduces the first real-world camera-based Semantic Scene Completion (SSC) benchmark from an aerial perspective. It contains over 20,000 samples and 21 semantic categories, covering urban, industrial, and rural scenes across various seasons and altitudes, while revealing the fundamental limitations of current vision foundation models in aerial environments.
 
 ## Background & Motivation
 
-**Background**: Semantic Scene Completion (SSC) is a core task in 3D perception, aiming to jointly estimate the occupancy state and semantic category of dense voxels from partial observations. SSC has been extensively studied in ground-level autonomous driving, with benchmarks such as SemanticKITTI and nuScenes-Occ driving substantial methodological progress.
+**Background**: Semantic Scene Completion (SSC) is a critical task for 3D perception, aiming to jointly estimate dense voxel occupancy and semantic categories from partial observations. SSC has been extensively studied in ground-based autonomous driving, driven by benchmarks like SemanticKITTI and nuScenes-Occ.
 
-**Limitations of Prior Work**: (1) SSC research has been almost exclusively focused on ground-vehicle perspectives, leaving aerial (UAV) scenarios largely unexplored and limiting progress on downstream UAV tasks such as obstacle avoidance, path planning, and 3D mapping. (2) Acquiring aerial SSC data faces unique challenges: most UAVs cannot carry LiDAR due to flight regulations and payload constraints, and high-altitude LiDAR point clouds are extremely sparse. (3) Existing SSC datasets rely heavily on LiDAR and cannot be directly adapted to camera-only aerial settings.
+**Limitations of Prior Work**: (1) SSC research is almost exclusively focused on ground vehicle perspectives, leaving aerial (UAV) scenarios largely unexplored. This limits the development of downstream UAV tasks like obstacle avoidance, path planning, and 3D mapping; (2) Acquiring aerial SSC data faces unique challenges: most UAVs cannot carry LiDAR due to flight regulations and payload limits, and high-altitude LiDAR point clouds are extremely sparse; (3) Existing SSC dataset generation relies heavily on LiDAR sensors, making it difficult to transfer directly to camera-only aerial scenarios.
 
-**Key Challenge**: Autonomous UAVs require 3D scene understanding for self-navigation, yet no suitable SSC benchmark or methodology exists for aerial perspectives. The large viewpoint discrepancy between aerial (top-down) and ground-level (forward-facing) views renders direct transfer of ground-based SSC data and models infeasible.
+**Key Challenge**: Aerial UAVs require 3D scene understanding for autonomous flight, yet they lack adapted SSC benchmarks and methods. SSC data and models from ground perspectives cannot be directly transferred due to massive perspective differences (top-down vs. eye-level).
 
-**Goal**: (1) Design a LiDAR-free, camera-only data generation pipeline for automated aerial SSC annotation. (2) Release the first aerial SSC benchmark, OccuFly, based on this pipeline. (3) Benchmark existing SSC and depth estimation methods on OccuFly to expose the unique challenges of aerial scenes.
+**Goal**: (1) Design a LiDAR-free, camera-based data generation framework for automated aerial SSC data construction; (2) Release OccuFly as the first aerial SSC benchmark based on this framework; (3) Benchmark existing SSC and depth estimation methods on OccuFly to reveal unique challenges in aerial scenarios.
 
-**Key Insight**: The authors propose leveraging classical 3D reconstruction (SfM + MVS) to obtain dense point clouds from aerial image sequences, then lifting semantic labels from sparsely annotated images (<10%) into 3D point clouds via projection, thereby automatically generating semantic voxel annotations without any LiDAR dependency.
+**Key Insight**: The authors propose using classical 3D reconstruction (SfM + MVS) to obtain dense point clouds from aerial image sequences, then "lifting" semantic labels from a small subset of annotated images (<10%) into the 3D point cloud by projection. This bypasses the reliance on LiDAR.
 
-**Core Idea**: Replace LiDAR with camera-based 3D reconstruction for SSC annotation generation, combined with a sparse label propagation strategy, to construct the first aerial SSC benchmark and systematically evaluate existing methods in aerial scenarios.
+**Core Idea**: Replace LiDAR with camera-based 3D reconstruction for SSC annotation data generation, combined with a sparse annotation propagation strategy to build the first aerial SSC benchmark and systematically evaluate current performance.
 
 ## Method
 
 ### Overall Architecture
 
-The OccuFly construction pipeline consists of three stages: (1) **Data Acquisition** — UAVs capture image sequences across low, medium, and high altitudes, all four seasons, and urban, industrial, and rural environments. (2) **3D Reconstruction and Annotation** — SfM and MVS reconstruct dense point clouds from the image sequences; pixel-level semantic annotations are provided for fewer than 10% of images, which are then projected to lift 2D labels into 3D point clouds and voxelized into semantic occupancy grids. (3) **Benchmarking** — Multiple SSC and monocular depth estimation methods are evaluated on OccuFly.
+The construction process of OccuFly is divided into three steps: (1) Data Collection—using UAVs to capture image sequences at different altitudes (low/medium/high) and across different seasons (Spring, Summer, Autumn, Winter) in urban, industrial, and rural environments; (2) 3D Reconstruction and Annotation—utilizing SfM and MVS to reconstruct dense point clouds from image sequences, performing pixel-level semantic annotation on less than 10% of the images, and projecting these 2D annotations into 3D space. The resulting 3D cloud is then densified and voxelized into semantic occupancy grids; (3) Benchmarking—evaluating various SSC and monocular depth estimation methods on OccuFly.
+
+```mermaid
+graph TD
+    A["Multi-altitude & Multi-season Collection<br/>Low/Med/High Alt × 4 Seasons × Urban/Industrial/Rural"]
+    A --> GEN
+    subgraph GEN["LiDAR-free Camera-based Data Generation Framework"]
+        direction TB
+        B["SfM for Camera Pose Estimation"] --> C["MVS for Dense Point Cloud Reconstruction"]
+        C --> D["2D Pixel-level Semantic Labeling on <10% Images<br/>Projected to 3D via Intrinsic/Extrinsic Parameters"]
+        D --> E["Majority Voting per 3D Point for Semantics<br/>Densification and Voxelization into Occupancy Grid"]
+    end
+    GEN --> H["Compatible Data Organization and Evaluation Protocol<br/>SemanticKITTI Format · IoU/mIoU · Depth AbsRel/RMSE/δ"]
+```
 
 ### Key Designs
 
-1. **LiDAR-Free Camera-Based Data Generation Framework**:
+**1. Multi-altitude and Multi-season Collection: Encoding "Aerial-Specific Difficulty" into the data distribution**
 
-    - **Function**: Automatically generates SSC annotation data from aerial images without LiDAR.
-    - **Mechanism**: Structure-from-Motion (SfM) estimates camera poses, and Multi-View Stereo (MVS) produces dense point clouds. The key innovation lies in semantic label propagation: 2D semantic segmentation annotations are provided for fewer than 10% of images, and pixel labels are back-projected into 3D point clouds using known intrinsic and extrinsic camera parameters. For each 3D point, the final semantic label is determined by majority voting over all projected labels. The annotated semantic point cloud is then voxelized into a standard occupancy grid.
-    - **Design Motivation**: Full 3D annotation is prohibitively expensive, whereas mature and efficient 2D annotation tools are widely available. The sparse label propagation strategy achieves complete 3D semantic coverage with less than one-tenth of the annotation effort, substantially reducing dataset construction cost.
+The fundamental difference between aerial and ground perspectives is that observation distance and coverage area change drastically with flight altitude. The same object occupies different pixel counts and geometric details at low versus high altitudes. OccuFly collects data at low, medium, and high altitudes to create a gradient of FOV and ground resolution. It also spans four seasons to include drastic appearance changes such as vegetation, lighting, and snow cover across three typical environment types. The resulting dataset of 20k+ samples and 21 categories is designed to measure robustness through diversity.
 
-2. **Multi-Altitude, Multi-Season Data Collection Strategy**:
+**2. LiDAR-free Camera-based Data Generation: Replacing expensive LiDAR labels with 3D reconstruction and annotation propagation**
 
-    - **Function**: Ensures that the dataset captures the diversity of challenges inherent to aerial scenes.
-    - **Mechanism**: Data are collected at three flight altitudes (low, medium, high), covering different viewing ranges and ground resolutions. All four seasons are represented, capturing variations in vegetation, illumination, and weather. Three typical environment types—urban, industrial, and rural—are included. The resulting dataset contains 20,000+ samples across 21 semantic categories.
-    - **Design Motivation**: The most critical distinction between aerial and ground-level perspectives is the dramatic change in observation distance and coverage area with altitude. Seasonal variations cause significant appearance changes (e.g., winter snow, dense summer vegetation), which are essential for evaluating model robustness.
+The primary hurdle for aerial SSC is the inability to acquire dense point clouds via LiDAR as ground vehicles do—UAVs are often restricted by weight and regulations, and high-altitude LiDAR provides extremely sparse data. OccuFly bypasses LiDAR entirely: it uses Structure-from-Motion (SfM) for pose estimation and Multi-View Stereo (MVS) for dense reconstruction, deriving geometry solely from cameras. To reduce costs, only <10% of images are pixel-labeled. By using known camera parameters, these 2D labels are back-projected to the 3D point cloud. Each 3D point determines its semantic category via majority voting of all hitting projections. This strategy builds a full 3D semantic set with minimal manual labeling.
 
-3. **Standardized Data Organization and Evaluation Protocol**:
+**3. Compatible Data Organization and Evaluation Protocol: Ensuring plug-and-play usability**
 
-    - **Function**: Ensures seamless integration with the existing SSC research ecosystem.
-    - **Mechanism**: OccuFly adopts a data organization format compatible with SemanticKITTI, providing standardized image–voxel–depth triplets. Unified evaluation metrics are defined for SSC (IoU, mIoU) and depth estimation (AbsRel, RMSE, $\delta$ thresholds), along with official train/val/test splits.
-    - **Design Motivation**: Compatibility with existing formats allows researchers to directly evaluate and train on OccuFly using established codebases, minimizing the migration barrier.
+To lower the barrier for adoption, OccuFly adopts a data format compatible with SemanticKITTI, providing standardized image-voxel-depth triplets and fixed train/val/test splits. Metric alignment with the community includes geometric IoU and semantic mIoU for SSC, and AbsRel, RMSE, and $\delta$ thresholds for depth estimation. This allows researchers to migrate existing models to aerial scenarios with minimal code changes.
 
 ### Loss & Training
 
-OccuFly is a benchmark dataset and does not propose new training methods. In benchmark experiments, SSC models are trained with per-voxel cross-entropy loss, and depth estimation models are trained with the standard scale-invariant logarithmic loss.
+OccuFly serves as a benchmark dataset and does not propose a new training method. In benchmark experiments, SSC models were trained using cross-voxel Cross-Entropy (CE) loss, while depth estimation models used standard Scale-Invariant Log Loss.
 
 ## Key Experimental Results
 
-### Main Results (SSC Benchmark)
+### Main Results (SSC Benchmarking)
 
 | Method | Type | Geometric IoU | Semantic mIoU | Notes |
-|--------|------|--------------|--------------|-------|
-| MonoScene | Monocular SSC | ~15 | ~5 | Large drop when directly transferred from ground to aerial |
+|------|------|---------|----------|------|
+| MonoScene | Monocular SSC | ~15 | ~5 | Ground method performance drops significantly |
 | VoxFormer | Monocular SSC | ~18 | ~6 | Slightly better than MonoScene |
-| TPVFormer | Multi-view SSC | ~20 | ~7 | Multi-view input provides modest gains |
-| OccFormer | Multi-view SSC | ~22 | ~8 | Best performance on aerial benchmark |
+| TPVFormer | Multi-view SSC | ~20 | ~7 | Multi-view helps slightly |
+| OccFormer | Multi-view SSC | ~22 | ~8 | Current SOTA on aerial scenes |
 
-### Depth Estimation Benchmark
+### Depth Estimation Benchmarking
 
-| Method | AbsRel ↓ | RMSE ↓ | δ<1.25 ↑ | Notes |
-|--------|---------|------|---------|-------|
-| Depth Anything v2 | ~0.25 | ~8.5 | ~65% | Visual foundation model degrades significantly in aerial settings |
-| Metric3D v2 | ~0.22 | ~7.8 | ~70% | Metric depth model slightly better |
-| ZoeDepth | ~0.28 | ~9.2 | ~60% | Poor transfer from indoor pretraining |
-| Ground-truth upper bound | 0 | 0 | 100% | Reference |
+| Method | AbsRel ↓ | RMSE ↓ | $\delta < 1.25$ ↑ | Notes |
+|------|---------|------|---------|------|
+| Depth Anything v2 | ~0.25 | ~8.5 | ~65% | Significant degradation of VFM on aerial images |
+| Metric3D v2 | ~0.22 | ~7.8 | ~70% | Metric depth models perform slightly better |
+| ZoeDepth | ~0.28 | ~9.2 | ~60% | Poor transfer from indoor pre-training |
+| Ground-truth Upper Bound | 0 | 0 | 100% | Reference |
 
 ### Key Findings
 
-- All SSC methods that perform well on ground-level data suffer large performance drops in aerial scenarios, with mIoU consistently below 10%.
-- Current visual foundation models (e.g., Depth Anything v2) perform substantially worse on aerial depth estimation than in ground-level settings, with AbsRel increasing approximately 2–3×.
-- Data collected at high altitude is more challenging than at low altitude, due to smaller ground targets and larger depth ranges.
-- Seasonal variation—particularly winter snow cover—has a significant impact on both SSC and depth estimation methods.
-- OccuFly reveals a critical gap: existing methods have severely insufficient capacity for modeling top-down aerial geometry.
+- All SSC methods excelling on ground data show a substantial performance drop in aerial scenarios, with mIoU generally below 10%.
+- Current vision foundation models (e.g., Depth Anything v2) underperform in aerial depth estimation compared to ground scenes, with AbsRel increasing by approximately 2-3x.
+- High-altitude data is more challenging than low-altitude data due to smaller ground targets and larger depth ranges.
+- Seasonal variations, particularly winter snow, significantly impact both SSC and depth estimation methods.
+- OccuFly reveals a critical gap: existing methods are severely insufficient at modeling top-down geometry.
 
 ## Highlights & Insights
 
-- **Filling the data gap in aerial 3D perception**: OccuFly is the first aerial SSC benchmark, with major implications for UAV autonomous flight, urban mapping, and related applications. The dataset construction methodology is itself a contribution—enabling SSC annotation from pure camera imagery without LiDAR.
-- **The sparse label propagation strategy** is highly practical: annotating fewer than 10% of images yields complete 3D semantic labels. This idea generalizes to 3D annotated dataset construction in any new domain.
-- Systematic benchmarking reveals the fundamental limitations of current methods and charts a clear research agenda for aerial 3D perception. Its CVPR 2026 Oral recognition reflects the community's appreciation for its pioneering role in opening a new research area.
+- **Filling the data gap in aerial 3D perception**: OccuFly is the first aerial SSC benchmark, crucial for UAV autonomous flight and urban mapping. The construction method itself—LiDAR-free camera-only generation—is a major contribution.
+- **Sparse annotation propagation is practical**: Achieving full 3D annotation by labeling only <10% of images is a scalable approach for building 3D datasets in new domains.
+- Systemic benchmarking identifies fundamental limitations in current methods, providing a roadmap for aerial 3D perception research. The CVPR 2026 Oral recognition highlights its value in pioneering a new domain.
 
 ## Limitations & Future Work
 
-- Code and data are not yet fully publicly available, limiting community validation and extension.
-- The SfM+MVS-based annotation generation relies on high-quality multi-view reconstruction, which may introduce annotation noise in texture-poor or repetitively textured regions (e.g., farmland, water surfaces).
-- The 21 semantic categories may lack sufficient granularity; for instance, different building types or vehicle classes are not distinguished.
-- The dataset covers a geographically limited set of scenes; generalization to different climate zones and urban morphologies remains to be validated.
-- Annotation quality for dynamic objects (pedestrians, vehicles) may be affected by motion blur and reconstruction failures.
+- Code and data are not yet fully public, limiting community verification.
+- SfM+MVS-based annotation relies on high-quality reconstruction; noise may occur in textureless or repetitive regions like farmlands or water.
+- 21 semantic categories may lack granularity (e.g., no subdivision of building or vehicle types).
+- Limited geographic coverage; generalization across different climates and urban morphologies requires further validation.
+- Annotation of dynamic targets (pedestrians, cars) may be affected by motion blur and reconstruction failures.
 
 ## Related Work & Insights
 
-- **vs. SemanticKITTI**: SemanticKITTI is the de facto ground-level SSC benchmark but is entirely LiDAR-driven and ground-perspective. OccuFly extends SSC to the aerial perspective without LiDAR.
-- **vs. nuScenes-Occ**: Also a ground-level benchmark with a surround-camera configuration. OccuFly's cameras are mounted on UAVs, resulting in entirely different viewpoints and scene characteristics.
-- **vs. ScanNet / Matterport3D**: Indoor 3D reconstruction benchmarks using RGB-D sensors. OccuFly's pure-RGB reconstruction faces substantially greater challenges in large-scale outdoor environments.
-- The LiDAR-free data generation framework presented in this paper is also applicable to satellite remote sensing 3D reconstruction, robotic exploration, and related domains.
+- **vs. SemanticKITTI**: SemanticKITTI is the gold standard for ground SSC but is LiDAR-driven and limited to ground viewpoints. OccuFly extends SSC to aerial views without LiDAR.
+- **vs. nuScenes-Occ**: Also ground-based with surround cameras. OccuFly uses UAV-mounted cameras with entirely different perspectives and scenes.
+- **vs. ScanNet / Matterport3D**: Indoor 3D benchmarks using RGB-D. OccuFly’s pure RGB reconstruction faces higher challenges in large-scale outdoor scenes.
+- The LiDAR-free generation framework serves as a reference for satellite remote sensing and robotic exploration.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First aerial SSC benchmark; a pioneering work in this research direction (Oral).
-- Experimental Thoroughness: ⭐⭐⭐⭐ Benchmarks cover both SSC and depth estimation tasks with multi-method comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Dataset construction pipeline is clearly presented; challenge analysis is thorough.
-- Value: ⭐⭐⭐⭐⭐ Establishes a benchmark for aerial 3D perception; highly valuable to the UAV research community.
+- Novelty: ⭐⭐⭐⭐⭐ First aerial SSC benchmark, pioneering research direction (Oral).
+- Experimental Thoroughness: ⭐⭐⭐⭐ Benchmarked across both SSC and depth estimation tasks with multiple methods.
+- Writing Quality: ⭐⭐⭐⭐ Clear construction pipeline and insightful challenge analysis.
+- Value: ⭐⭐⭐⭐⭐ Establishes a baseline for aerial 3D perception, highly valuable for the UAV community.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](../../AAAI2026/autonomous_driving/unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
-- [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](../../AAAI2026/autonomous_driving/hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
-- [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](../../NeurIPS2025/autonomous_driving/learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
+- [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
+- [\[ECCV 2024\] GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](../../ECCV2024/autonomous_driving/gaussianformer_scene_as_gaussians_for_vision-based_3d_semantic_occupancy_predict.md)
 
 </div>
 

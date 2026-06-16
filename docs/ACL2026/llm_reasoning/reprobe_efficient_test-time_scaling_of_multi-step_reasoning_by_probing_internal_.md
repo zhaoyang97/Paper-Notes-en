@@ -2,86 +2,100 @@
 title: >-
   [Paper Note] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models
 description: >-
-  [ACL2026][LLM Reasoning][Test-time scaling] This paper proposes ReProbe, which utilizes a lightweight transformer probe with fewer than 10M parameters to read the hidden states, attention…
+  [ACL 2026][LLM Reasoning][PRM] This paper proposes ReProbe, which uses lightweight transformer probes with fewer than 10M parameters to read the hidden states, attention, and logits of frozen LLMs to judge the reliability of each reasoning step. It approaches or exceeds the performance of PRMs that are 750–810 times larger on math, planning, and QA
 tags:
-  - "ACL2026"
-  - "LLM Reasoning"
-  - "Test-time scaling"
-  - "process verification"
-  - "internal state probing"
-  - "PRM"
-  - "Chain-of-Thought"
+  - ACL 2026
+  - LLM Reasoning
+  - PRM
+  - Chain-of-Thought
 date: 2026-05-08
-content_hash: 5d653edaa68da858
+content_hash: 3ebe284b89133fe4
 ---
-
 # ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models
 
 **Conference**: ACL2026  
 **arXiv**: [2511.06209](https://arxiv.org/abs/2511.06209)  
 **Code**: https://reprobe.github.io/  
-**Area**: llm_reasoning  
-**Keywords**: Test-time scaling, process verification, internal state probing, PRM, Chain-of-Thought
+**Area**: LLM Reasoning  
+**Keywords**: Test-time scaling, process verification, internal state probe, PRM, Chain-of-Thought
 
 ## TL;DR
-This paper proposes ReProbe, which utilizes a lightweight transformer probe with fewer than 10M parameters to read the hidden states, attention, and logits of a frozen LLM to judge the credibility of each reasoning step. It approaches or exceeds the performance of PRMs that are 750-810 times larger on mathematics, planning, and QA tasks, serving as an efficient step verifier for Best-of-N and beam search.
+This paper proposes ReProbe, which uses lightweight transformer probes with fewer than 10M parameters to read the hidden states, attention, and logits of frozen LLMs to judge the reliability of each reasoning step. It approaches or exceeds the performance of PRMs that are 750–810 times larger on math, planning, and QA tasks, serving as an efficient step verifier for Best-of-N and beam search.
 
 ## Background & Motivation
-**Background**: Chain-of-Thought and large reasoning models enable LLMs to generate long reasoning chains; however, any single error within the chain can lead the final answer astray. Test-time scaling enhances accuracy by sampling multiple candidate reasoning paths and filtering for more reliable intermediate steps or complete trajectories, commonly through formats like Best-of-N and beam search.
+**Background**: Chain-of-Thought and large reasoning models enable LLMs to generate long reasoning chains, but any single error in a long chain can derail the final answer. Test-time scaling improves accuracy by sampling multiple candidate reasonings and filtering for reliable intermediate steps or complete trajectories, commonly implemented as Best-of-N and beam search.
 
-**Limitations of Prior Work**: Currently, the mainstream step verifier is the Process Reward Model (PRM). PRMs are typically independent LLMs with 1.5B to 8B parameters, requiring extensive step-level annotations, Monte-Carlo rollouts, or expensive human/LLM judgments. During inference, running an additional large model consumes significant VRAM and increases latency. Furthermore, many PRMs are trained heavily on mathematics but show limited generalization on out-of-distribution (OOD) tasks such as planning and general QA.
+**Limitations of Prior Work**: Current mainstream step verifiers are Process Reward Models (PRMs). PRMs are typically independent LLMs with 1.5B to 8B parameters, requiring massive step-level annotations, Monte-Carlo rollouts, or expensive human/LLM judgments. During inference, running an additional large model leads to high VRAM usage and latency. Furthermore, many PRMs trained heavily on mathematics exhibit limited generalization to out-of-distribution (OOD) tasks like planning and QA.
 
-**Key Challenge**: Test-time scaling requires a reliable scorer, yet stronger scorers are typically larger, more expensive, and domain-specific. Simple uncertainty metrics are inexpensive but insufficiently accurate. An ideal solution should judge process quality like a PRM while remaining as lightweight as an uncertainty probe.
+**Key Challenge**: Test-time scaling requires a reliable scorer, but stronger scorers are usually larger, more expensive, and domain-specific; simple uncertainty metrics are cheap but inaccurate. An ideal solution should judge process quality like a PRM while remaining as lightweight as an uncertainty probe.
 
-**Goal**: The authors aim to validate a hypothesis: when an LLM generates reasoning steps, its internal states already encode signals regarding "whether this step is credible." A small probe can extract these signals to replace or supplement a PRM.
+**Goal**: The authors aim to validate a hypothesis: when an LLM generates reasoning steps, its internal states already encode signals indicating whether a step is reliable. By using a small probe to extract these signals, one can replace or supplement a PRM.
 
-**Key Insight**: Prior research on hallucination detection indicates that hidden states, attention distributions, and logits contain intrinsic self-knowledge signals. ReProbe migrates this introspection approach from factual hallucination detection to multi-step reasoning verification.
+**Key Insight**: Previous research on hallucination detection has shown that hidden states, attention distributions, and logits contain "self-knowledge" signals. ReProbe migrates this introspection approach from factual hallucination detection to multi-step reasoning verification.
 
-**Core Idea**: Instead of using another large model to read text for scoring, a small probe is employed to directly read the internal states already generated by the target LLM during inference, outputting the probability that the current reasoning step is correct.
+**Core Idea**: Instead of using another large model to evaluate external text, a small probe directly reads the internal states already produced by the target LLM during generation and outputs the probability that the current reasoning step is correct.
 
 ## Method
-ReProbe is a plug-and-play step verifier. It does not modify the supervised LLM nor does it generate new reasoning text; it merely extracts internal features when the target model generates each reasoning step to provide a correctness score. This score can be used like a PRM reward for Best-of-N trajectory selection or for selecting the next batch of partial trajectories in beam search.
+ReProbe is a plug-and-play step verifier. It does not modify the supervised LLM nor generate new reasoning text; it only extracts internal features as the target model generates each reasoning step to provide a correctness score. This score can be used like a PRM reward for Best-of-N trajectory selection or to retain the next batch of partial trajectories in beam search.
 
 ### Overall Architecture
-During the training phase, 10.8K math problems are sampled from the PRM800K training set. The target LLM generates multiple CoT trajectories, which are then labeled as correct/incorrect at each step by DeepSeek-R1 or the target model itself. Subsequently, the target LLM is frozen, internal features for each step are extracted, and the ReProbe is trained for binary classification. During inference, the target LLM generates candidate steps; ReProbe reads the internal states in real-time and outputs step scores, while TTS strategies retain the most credible steps or full trajectories based on these scores.
+During the training phase, 10.8K math problems are sampled from the PRM800K training set. The target LLM generates multiple CoT trajectories, and each step is labeled as correct or incorrect by DeepSeek-R1 or the target model itself. The target LLM is then frozen, internal features corresponding to each step are extracted, and a ReProbe is trained for binary classification. During the inference phase, the target LLM generates candidate steps; ReProbe reads the internal states in real-time to output step scores, and TTS strategies retain the most reliable steps or complete trajectories based on these scores.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Training Phase (Target LLM remains frozen)"]
+        direction TB
+        A["Sample 10.8K math problems from PRM800K<br/>Generate multiple CoT trajectories"] --> B["Low-cost step annotation<br/>DeepSeek-R1 labeling / Self-annotation"]
+        B --> C["Extract internal states<br/>Hidden States or Attn+Logit"]
+        C --> D["Step-level transformer probe<br/>Linear projection → Transformer → Mean pooling → MLP"]
+    end
+    D --> E["Result: <10M plug-and-play step verifier"]
+    subgraph INFER["Inference Phase (Plug-and-play TTS integration)"]
+        direction TB
+        F["Target LLM generates candidate steps"] --> G["Probe reads internal states<br/>Outputs step correctness probability"]
+        G --> H["Best-of-N trajectory selection / Beam search top-B"]
+    end
+    E --> G
+```
 
 ### Key Designs
-1.  **Internal State Features Instead of External Text Review**:
-    - **Function**: Utilizes the target model's own generation signals to judge the credibility of reasoning steps.
-    - **Mechanism**: The authors compare two types of features. One is Attn+Logit, including attention weights across all layers for the top 5 tokens and logits for top-K candidate generations. The other is hidden states from all layers. The features for each token are derived from the context of the current problem, historical reasoning steps, and the newly generated step.
-    - **Design Motivation**: While a PRM can only see the generated text, ReProbe observes the "internal hesitation" and representational states of the model during generation, potentially capturing confidence levels not explicitly expressed in the surface text.
 
-2.  **Step-Level Transformer Probe Architecture**:
-    - **Function**: Aggregates token-level internal features into a step-level correctness score.
-    - **Mechanism**: ReProbe first uses a linear layer to project features into a unified dimension, followed by several transformer layers to model intra-step token dependencies. Mean pooling is then applied to the current step's tokens to obtain a step vector, and a two-layer MLP finally outputs the correctness logit.
-    - **Design Motivation**: Simple linear probes only observe local token features and struggle to understand the compositional structure within a reasoning step. A lightweight transformer is small enough yet capable of modeling context within the scope of a step.
+**1. Reading internal states instead of reviewing external text: Extracting verification signals from "internal hesitation"**
 
-3.  **Low-Cost Annotation and TTS Integration**:
-    - **Function**: Reduces the cost of PRM-style training data construction and inference deployment.
-    - **Mechanism**: Training data can be labeled by DeepSeek-R1 or self-labeled by the target model. In non-thinking mode, the model is prompted to output each CoT step on a separate line; in native thinking mode, each sentence is treated as a reasoning step. For TTS, Best-of-N performs aggregate scoring on full trajectories, while beam search uses ReProbe scores to retain the top-B continuations at each step.
-    - **Design Motivation**: Many tasks lack automatically verifiable final answers and are unsuitable for large-scale Monte-Carlo process labeling. Probe training compresses expensive supervision into a small model, and inference requires no additional large LLM.
+A fundamental limitation of PRMs is that they are merely another language model, observing only the reasoning text the target model has already written—surface-level fluency does not guarantee the model was actually confident. ReProbe changes the entry point: it directly reads internal signals produced by the target LLM during the generation of the step. The authors compare two types of features: "Attn+Logit," which includes attention weights for the top 5 tokens across all layers and top-K candidate generation logits; and "Hidden States" from all layers. Each token's features are built upon the full context of the current problem, historical steps, and the newly generated step.
+
+This approach captures confidence not explicitly written in text: a model may write a seemingly plausible sentence, but its attention distribution and hidden representations may reveal it is wavering between multiple continuations. In experiments, Hidden States features performed best overall, suggesting that "representation-level confidence" reflects step quality better than attention/logits.
+
+**2. Step-level transformer probe: Aggregating scattered token features into a step-level correctness judgment**
+
+A reasoning step is composed of multiple tokens. Simple linear probes only look at local features of individual tokens and fail to discern whether "the logic of the step as a whole holds." ReProbe first uses a linear layer to project extracted features into a unified dimension, applies several transformer layers to model dependencies between tokens within a step, and then performs mean pooling on the current step's tokens to obtain a step vector. Finally, a two-layer MLP outputs the logit for the step's correctness. Though the entire probe has fewer than 10M parameters, it is sufficient to model the contextual compositional structure within the scope of "one step," enabling more accurate classification of correct vs. incorrect steps than a linear probe.
+
+**3. Low-cost annotation + Plug-and-play TTS integration: Compressing expensive supervision into a small model**
+
+PRM training typically relies on large-scale step-level manual annotation or Monte-Carlo rollouts, and many tasks lack automatically verifiable final answers, making process annotation extremely costly. ReProbe's training labels can be provided by DeepSeek-R1 or through self-annotation (self-anno) by the target model—prompting the model to output one CoT step per line in non-thinking mode, or treating each sentence as a step in native thinking mode, thus avoiding heavy reliance on prompt engineering. Once trained, it acts as a plug-and-play verifier for test-time scaling: in Best-of-N, step scores are aggregated to select trajectories; in beam search, it utilizes ReProbe scores at each step to retain top-B continuations. Since expensive supervision is compressed into a <10M probe, there is no need to run an additional large PRM during inference, significantly reducing VRAM and latency.
 
 ### Loss & Training
-ReProbe is trained using standard binary cross-entropy, with class weighting applied to mitigate the imbalance between correct and incorrect steps. The target LLM remains frozen throughout, with only probe parameters being updated. Main experiments are conducted on Qwen3-8B in non-thinking CoT mode and extended to Qwen3-1.7B, Qwen3-32B in native thinking mode, and Phi-4. Training data consists of approximately 32K reasoning trajectory samples from 10.8K PRM800K problems (3 trajectories per problem), generated using top-k 50, top-p 0.95, and temperature 1.0. The authors also provide a vLLM pipeline to accelerate hidden-state extraction and training.
+ReProbe is trained using standard binary cross-entropy with class weighting to mitigate the imbalance between correct and incorrect steps. The target LLM is frozen throughout, and only probe parameters are updated. Main experiments were conducted on Qwen3-8B in non-thinking CoT mode, with extensions to native thinking modes of Qwen3-1.7B, Qwen3-32B, and Phi-4. Training data consists of ~32K reasoning trajectories sampled from 10.8K PRM800K problems (3 trajectories per problem); generation uses top-k 50, top-p 0.95, and temperature 1.0. The authors also provide a vLLM pipeline to accelerate hidden-state extraction and training.
 
 ## Key Experimental Results
 
 ### Main Results
-Step-level error detection is evaluated using PR-AUC. ReProbe is close to the strongest PRMs on in-domain mathematics and shows advantages in OOD planning and QA. Specifically, Hidden States + Self-anno achieved an overall PR-AUC of 0.604, higher than the 0.565 of Qwen2.5-Math-PRM-7B.
+PR-AUC is used for step-level error detection. ReProbe approaches the strongest PRMs in in-domain (ID) mathematics and shows an advantage in OOD planning and QA; specifically, Hidden States + Self-anno achieved an overall PR-AUC of 0.604, higher than the 0.565 of Qwen2.5-Math-PRM-7B.
 
-| Method | Params/Samples | ID Avg PR-AUC↑ | OOD Avg PR-AUC↑ | Overall PR-AUC↑ | Conclusion |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Semantic Entropy | No training | 0.182 | 0.409 | 0.324 | Uncertainty signals are useful but insufficient |
-| Skywork-PRM-1.5B | 1.5B, samples unknown | 0.281 | 0.426 | 0.371 | Small PRM generalization is limited |
-| Qwen2.5-Math-PRM-7B | 7B, 860K | 0.514 | 0.595 | 0.565 | Strong math PRM; OOD matched by probe |
-| ReProbe Attn+Logit Self-anno | <10M, 32K | 0.461 | 0.618 | 0.559 | Self-supervised nearly matches strong PRM |
-| ReProbe Hidden States Self-anno | <10M, 32K | 0.498 | 0.667 | 0.604 | Best overall, clear OOD advantage |
-| ReProbe Hidden States DeepSeek-anno | <10M, 32K | 0.488 | 0.639 | 0.582 | External annotation also stable and effective |
+| Method | Parameters/Sample Scale | ID Avg PR-AUC↑ | OOD Avg PR-AUC↑ | Overall PR-AUC↑ | Conclusion |
+|------|---------------|----------------|-----------------|-----------------|------|
+| Semantic Entropy | No training | 0.182 | 0.409 | 0.324 | Uncertainty signals are useful but not strong enough |
+| Skywork-PRM-1.5B | 1.5B, samples unknown | 0.281 | 0.426 | 0.371 | Small PRMs have limited generalization |
+| Qwen2.5-Math-PRM-7B | 7B, 860K | 0.514 | 0.595 | 0.565 | Strong Math PRM, but caught by probes in OOD |
+| ReProbe Attn+Logit Self-anno | <10M, 32K | 0.461 | 0.618 | 0.559 | Self-supervision approaches strong PRMs |
+| ReProbe Hidden States Self-anno | <10M, 32K | 0.498 | 0.667 | 0.604 | Best overall with significant OOD advantage |
+| ReProbe Hidden States DeepSeek-anno | <10M, 32K | 0.488 | 0.639 | 0.582 | External annotation is also stable and effective |
 
-In test-time scaling, ReProbe can directly replace a PRM as a scorer. In beam search, Hidden States + DeepSeek-anno achieved an overall accuracy of 76.6, exceeding both types of Qwen2.5-Math PRMs.
+For test-time scaling, ReProbe can directly replace a PRM as a scorer. In beam search, the overall accuracy of Hidden States + DeepSeek-anno was 76.6, higher than both Qwen2.5-Math PRMs.
 
 | Method | MATH↑ | GSM8K↑ | ProofNet↑ | ID Avg↑ | OOD Avg↑ | Overall↑ |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|-------|--------|-----------|---------|----------|----------|
 | Qwen2.5-Math-7B-PRM800K | 89.8 | 80.4 | 95.2 | 88.5 | 59.0 | 71.6 |
 | Qwen2.5-Math-PRM-7B | 88.1 | 95.4 | 93.6 | 92.4 | 54.4 | 70.7 |
 | ReProbe Attn+Logit Self-anno | 90.3 | 95.4 | 95.1 | 93.6 | 61.9 | 75.5 |
@@ -89,47 +103,47 @@ In test-time scaling, ReProbe can directly replace a PRM as a scorer. In beam se
 | ReProbe Hidden States DeepSeek-anno | 86.8 | 98.8 | 95.6 | 93.7 | 63.7 | 76.6 |
 
 ### Ablation Study
-The paper analyzes data diversity, PRM complementarity, and architectural choices. A richer problem distribution significantly improves the probe's overall PR-AUC. Combining ReProbe scores with PRM scores via simple logistic regression further enhances performance on certain math datasets.
+The paper analyzes data diversity, PRM complementarity, and architectural choices. A richer problem distribution significantly improves the overall PR-AUC of the probe. Fusing ReProbe scores with PRM scores via simple logistic regression further improves performance on several math datasets.
 
 | Ablation/Combination | MATH PR-AUC↑ | GSM8K PR-AUC↑ | ProofNet PR-AUC↑ | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| ReProbe Attn+Logit, homogeneous 6K | 0.308 | 0.549 | 0.205 | Limited generalization due to similar training problems |
+|-----------|--------------|---------------|------------------|------|
+| ReProbe Attn+Logit, homogeneous 6K | 0.308 | 0.549 | 0.205 | Homogeneous training problems limit generalization |
 | ReProbe Attn+Logit, diverse 6K | 0.409 | 0.575 | 0.180 | Diversity improves overall performance, especially OOD |
-| PRM1 (Qwen2.5-Math-7B-PRM800K) | 0.586 | 0.613 | 0.301 | Strong textual process reward model |
-| ReProbe + PRM1 | 0.613 | 0.674 | 0.318 | Internal confidence signals complement external text review |
+| PRM1 (Qwen2.5-Math-7B-PRM800K) | 0.586 | 0.613 | 0.301 | Strong text-based process reward model |
+| ReProbe + PRM1 | 0.613 | 0.674 | 0.318 | Internal signals complement external text review |
 | PRM2 (Qwen2.5-Math-7B) | 0.531 | 0.702 | 0.310 | Another strong PRM |
-| ReProbe + PRM2 | 0.573 | 0.710 | 0.327 | Continued improvement after fusion |
+| ReProbe + PRM2 | 0.573 | 0.710 | 0.327 | Improvement continues after fusion |
 
 ### Key Findings
-- The advantage of ReProbe primarily stems from OOD generalization. PRMs are strong in the math domain, but because the probe reads internal signals directly, it is less prone to over-fitting textual distributions of specific math datasets.
-- Self-supervised annotation is not weak. Self-anno ReProbe approaches or exceeds DeepSeek-anno across several average metrics, suggesting that the target model itself can provide useful process supervision.
-- ReProbe is not just a PRM alternative but also a complement. Fusion experiments show they focus on different information: PRMs act like external reviewers, while ReProb acts as the model's own internal confidence reading.
-- Operational efficiency is significant. The current implementation reports a 2.6× to 25× speedup compared to state-of-the-art PRMs, and the parameter count is small enough to serve as a dedicated plugin for every target model.
+- ReProbe's advantage primarily comes from OOD generalization. PRMs are strong in the math domain, but probes directly read the target model's internal signals and are less prone to over-fitting the distribution of mathematical text.
+- Self-supervised annotation is not weak. Self-anno ReProbe matches or exceeds DeepSeek-anno across multiple average metrics, indicating that the target model itself can provide useful process supervision.
+- ReProbe can supplement PRMs rather than just replacing them. Fusion experiments show that they focus on different information: PRMs act like external reviewers, while ReProbe acts as the model's own confidence reading.
+- Operational efficiency is practically significant. The current implementation reports speedups of 2.6× to 25× compared to state-of-the-art PRMs, with parameter counts small enough to serve as a dedicated plugin for every target model.
 
 ## Highlights & Insights
-- The most inspiring aspect of this paper is the transition of "process rewards" from the text space to the latent state space. Reasoning quality need not be judged solely by generated text; hidden representations during generation are supervision signals in themselves.
-- ReProbe provides finer-grained cost control for TTS. Compared to "heavy sampling + large PRM scoring," it is better suited for resource-constrained systems that still require reasoning search.
-- Experiments in native thinking mode are crucial: even if a model does not output structured step-by-step CoT, treating sentences as steps allows for probe training, indicating the method does not rely purely on prompt engineering.
-- For engineering deployment, ReProbe can be cascaded with a PRM: the probe filters most candidates, and only uncertain samples are passed to the PRM, maintaining quality while reducing costs.
+- The most inspiring aspect of this paper is the transition of "process rewards" from the text space to the latent state space. Reasoning quality does not necessarily have to be judged by generated text; hidden representations during generation are themselves supervisory signals.
+- ReProbe provides finer cost control for TTS. Compared to "heavy sampling + large PRM scoring," it is better suited for resource-constrained systems that still require reasoning search.
+- Experiments in native thinking mode are crucial: even if a model does not output neatly formatted step-by-step CoT, treating sentences as steps still allows for probe training, showing that the method is not entirely dependent on prompt formatting.
+- For engineering deployment, ReProbe can be cascaded with PRMs: use the probe to filter the bulk of candidates, delegating only uncertain samples to the PRM to maintain quality while reducing costs.
 
 ## Limitations & Future Work
-- ReProbe is model-specific. Because it reads internal states, different models, layer structures, or even fine-tuned versions may require re-training or adaptation.
-- Performance still scales with training data size; curves for tasks like StrategyQA have not yet saturated. Larger, more cross-domain problem sets are needed beyond PRM800K-derived data.
-- Using DeepSeek-R1 as an evaluation/annotation judge still carries API costs and non-determinism. While the paper provides labels for reproducibility, zero-start replications may be affected by judge drift.
+- ReProbe is model-specific. Because it reads internal states, different models, layer structures, or even fine-tuned models may require retraining or adaptation.
+- Performance still grows with training data scale; curves for tasks like StrategyQA have not yet saturated. Future work requires larger, more cross-domain problem sets beyond PRM800K-derived data.
+- Using DeepSeek-R1 as a judge for evaluation/annotation still incurs API costs and non-determinism. The paper provides annotations for reproducibility, but zero-shot replication of experimental figures may be affected by judge drift.
 - For extremely long reasoning chains, both PRMs and ReProbe degrade slightly. Stable step segmentation and historical error aggregation in long contexts remain challenges for future TTS systems.
-- Currently, experiments primarily validate step correctness and final answer accuracy; there is no in-depth analysis of whether the probe prefers short steps, conservative steps, or specific stylistic expressions.
+- Currently, mainly step correctness and final answer accuracy have been verified; further analysis is needed on whether the probe favors short steps, conservative steps, or specific expression styles.
 
 ## Related Work & Insights
-- **vs PRM**: PRMs use another language model to read reasoning text and provide process scores; ReProbe uses a small model to read the target LLM's internal states, resulting in lower costs and better OOD generalization, albeit with higher model specificity.
-- **vs unsupervised UQ**: Metrics like MaxProb, entropy, and perplexity require no training but have limited efficacy. ReProbe maintains lightweight advantages while extracting complex credibility patterns through supervised learning.
-- **vs self-consistency / majority voting**: Majority voting aggregates only at the final answer level and cannot correct intermediate errors; ReProbe intervenes at the step level during search, making it more suitable for beam search.
-- **vs formal verification**: Formal verification is reliable but domain-specific and dependent on auto-formalization. ReProbe is more general, covering math, planning, and QA, though it does not provide rigorous proofs.
+- **vs PRM**: PRMs use another language model to read reasoning text and provide process rewards; ReProbe uses a small model to read target LLM internal states, offering lower cost and better OOD generalization but higher model specificity.
+- **vs unsupervised UQ**: MaxProb, entropy, and perplexity require no training but have limited effectiveness; ReProbe retains the lightweight advantage while extracting more complex reliability patterns through supervised learning.
+- **vs self-consistency / majority voting**: Majority voting aggregates only at the final answer level and cannot correct intermediate errors; ReProbe intervenes at the step level during search, making it better suited for beam search.
+- **vs formal verification**: Formal verification is reliable but domain-specific and dependent on autoformalization; ReProbe is more general, covering math, planning, and QA, though it does not provide rigorous proofs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Systematizing internal state probing for reasoning step verification provides a clear complement to the PRM path.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across step PR-AUC, Best-of-N, beam search, multi-model support, native thinking, efficiency, and fusion.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and information-dense tables. The description of training costs across various settings is slightly complex and requires careful reading.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for low-cost test-time scaling and deployable reasoning systems, particularly as a lightweight replacement or pre-filter for PRMs.
+- Novelty: ⭐⭐⭐⭐⭐ Systematically applies internal state probing to reasoning step verification, forming a clear complement to the PRM path.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers step PR-AUC, Best-of-N, beam search, multiple models, native thinking, efficiency, and fusion analysis; very solid.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with information-dense tables; the training cost section in the main text and limitations is slightly complex and requires careful distinction between annotation settings.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for low-cost test-time scaling and deployable reasoning systems, especially as a lightweight alternative or pre-filter for PRMs.
 
 <!-- RELATED:START -->
 
@@ -137,11 +151,11 @@ The paper analyzes data diversity, PRM complementarity, and architectural choice
 
 ## Related Papers
 
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
 - [\[CVPR 2026\] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models](../../CVPR2026/llm_reasoning/visref_visual_refocusing_test_time_scaling.md)
-- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](../../ICML2026/llm_reasoning/prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
+- [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
 
 </div>
 

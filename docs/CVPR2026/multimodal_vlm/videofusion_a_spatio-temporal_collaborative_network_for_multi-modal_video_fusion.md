@@ -2,117 +2,113 @@
 title: >-
   [Paper Note] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 description: >-
-  [CVPR2026][Multimodal VLM][Multi-modal video fusion] This paper proposes VideoFusion, the first large-scale infrared-visible video fusion framework…
+  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes VideoFusion, the first large-scale infrared-visible video fusion framework. By integrating Cross-modal Differential Representation Enhancement (CmDRM), Complete Modality Guided Fusion (CMGF), and Bidirectional Temporal Collaborative Attention Mechanisms (BiCAM), it jointly models cross-modal complementari
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Multi-modal video fusion"
-  - "infrared-visible fusion"
-  - "temporal consistency"
-  - "cross-modal attention"
-  - "video dataset"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: a278884b07083dff
+content_hash: 2ad26d6acff3327c
 ---
-
 # VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2503.23359](https://arxiv.org/abs/2503.23359)  
 **Code**: [https://github.com/Linfeng-Tang/VideoFusion](https://github.com/Linfeng-Tang/VideoFusion)  
-**Area**: Multi-modal VLM
-**Keywords**: Multi-modal video fusion, infrared-visible fusion, temporal consistency, cross-modal attention, video dataset
+**Area**: Multi-modal VLM  
+**Keywords**: multi-modal video fusion, infrared-visible fusion, temporal consistency, cross-modal attention, video dataset
 
 ## TL;DR
 
-This paper proposes VideoFusion, the first large-scale infrared-visible video fusion framework, which jointly models cross-modal complementarity and temporal dynamics via cross-modal differential reinforcement, complete-modality guided fusion, and bidirectional temporal collaborative attention, generating spatiotemporally consistent high-quality fusion videos. The authors also construct the M3SVD dataset comprising 220 videos and 153,797 frames.
+Ours proposes VideoFusion, the first large-scale infrared-visible video fusion framework. By integrating Cross-modal Differential Representation Enhancement (CmDRM), Complete Modality Guided Fusion (CMGF), and Bidirectional Temporal Collaborative Attention Mechanisms (BiCAM), it jointly models cross-modal complementarity and temporal dynamics to generate spatio-temporally consistent high-quality fused videos. Additionally, the M3SVD dataset consisting of 220 videos/154,000 frames is constructed.
 
 ## Background & Motivation
 
-### Existing Problems
+### Limitations of Prior Work
 
-Multi-sensor fusion—particularly infrared and visible light fusion—is an important direction in computer vision with broad applications in military detection, security surveillance, and assisted driving. However, virtually all existing research focuses on **static image fusion**, overlooking the critical fact that sensors in real-world applications **typically capture continuous video sequences** rather than independent static frames.
+Multi-sensor fusion (especially infrared and visible fusion) is a critical direction in computer vision with extensive applications in military detection, security monitoring, and assisted driving. However, existing research focuses almost entirely on **static image fusion**, neglecting the key fact that sensors in practical applications **usually collect continuous video sequences** rather than independent static frames.
 
 This problem stems from two core bottlenecks:
 
-**Data scarcity**: Large-scale, temporally synchronized, and spatially aligned multi-modal video datasets are lacking. Existing video datasets (e.g., TNO with only 3 video clips, INO with low resolution, HDO with poor imaging quality) are small in scale and limited in scene diversity.
+**Data Scarcity**: Lack of large-scale, time-synchronized, and spatially aligned multi-modal video datasets. Existing video datasets (e.g., TNO with only 3 videos, INO with low resolution, HDO with poor imaging quality) are small in scale and limited in scenarios.
 
-**Modeling difficulty**: Jointly modeling spatial and temporal dependencies within a unified framework is inherently challenging.
+**Key Challenge**: Jointly modeling spatial and temporal dependencies within a unified framework is inherently challenging.
 
-### Limitations of Naive Approaches
+### Limitations of Naive Solutions
 
-Applying image fusion methods frame-by-frame to video **ignores inter-frame complementarity**, resulting in temporal incoherence and inter-frame flickering artifacts. Contemporary video fusion works (e.g., TemCoCo, UniVF) rely on DCN or optical flow networks for inter-frame compensation, but DCN's unsupervised offset estimation is unstable, and optical flow networks—typically trained on single-modality visible data—generalize poorly to multi-modal data.
+Applying image fusion methods frame-by-frame **ignores inter-frame complementarity**, leading to temporal incoherence and flickering artifacts. Contemporary video fusion works (e.g., TemCoCo, UniVF) rely on DCN or optical flow networks for inter-frame information compensation; however, unsupervised offset estimation in DCN is unstable, and optical flow networks are typically trained on single-mode visible light, making them difficult to generalize to multi-modal data.
 
-### Paper Goals
+### Goal
 
-The authors address the problem from two dimensions: (1) constructing a large-scale benchmark dataset to fill the data gap; and (2) proposing an attention-based spatio-temporal collaborative fusion network that adaptively aggregates cross-modal and temporal complementary information.
+The authors address these issues from two dimensions: (1) constructing a large-scale benchmark dataset to fill the data gap; (2) proposing a spatio-temporal collaborative fusion network based on attention mechanisms to adaptively aggregate cross-modal and temporal complementary information.
 
 ## Method
 
 ### Overall Architecture
 
-VideoFusion adopts an encoder-decoder architecture that processes infrared video $\{\tilde{V}_{ir}^i\}_{i=1}^T$ and visible video $\{\tilde{V}_{vi}^i\}_{i=1}^T$, outputting high-quality fused video $\{V_f^i\}_{i=1}^T$ along with de-degraded infrared/visible reconstructed videos.
+VideoFusion adopts an encoder-decoder architecture to process infrared videos $\{\tilde{V}_{ir}^i\}_{i=1}^T$ and visible videos $\{\tilde{V}_{vi}^i\}_{i=1}^T$, outputting high-quality fused videos $\{V_f^i\}_{i=1}^T$ along with de-degraded infrared/visible reconstruction videos.
 
-The overall pipeline proceeds as follows:
+Process Pipeline:
 
-1. **Encoding stage**: 3D convolutions (Conv3D) extract shallow temporal features, followed by downsampling + Conv3D + ResBlock + CmDRM to extract multi-scale temporal features $\mathcal{F}_x^n$ ($n \in \{1,2,3\}$).
-2. **Fusion stage**: CMGF modules aggregate cross-modal context at three scales to produce fused features $\mathcal{F}_f^n$.
-3. **Enhancement stage**: A Restormer-based Transformer enhancement block is introduced.
-4. **Decoding stage**: BiCAM establishes dynamic temporal dependencies; the fusion decoder reconstructs the fused video, while a modality disentanglement module with independent decoders reconstructs the infrared/visible videos.
+1.  **Encoding Phase**: Extracts shallow temporal features using 3D Convolution (Conv3D), followed by downsampling + Conv3D + ResBlock + CmDRM to extract multi-scale temporal features $\mathcal{F}_x^n$ ($n \in \{1,2,3\}$).
+2.  **Fusion Phase**: Uses CMGF modules at three scales to aggregate cross-modal context, generating fused features $\mathcal{F}_f^n$.
+3.  **Enhancement Phase**: Introduces a Transformer enhancement block based on Restormer.
+4.  **Decoding Phase**: Establishes dynamic temporal dependencies through BiCAM, reconstructing the fused video via the fusion decoder. Simultaneously, it reconstructs infrared/visible videos through modality unmixing modules and independent decoders.
+
+The three core modules (CmDRM, CMGF, BiCAM) function in the encoding, fusion, and decoding stages respectively, sequentially handling "complementary extraction," "scene assembly," and "temporal preservation." The decoding stage splits into "fusion" and "modality reconstruction" branches, where the latter provides feedback to the main path via scene fidelity loss during training only.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Infrared Video + Visible Video<br/>(Degraded Input)"] --> B["Encoding: Conv3D Shallow Features<br/>+ Downsampling / ResBlock"]
+    B --> C["Cross-modal Differential Enhancement (CmDRM)<br/>Difference before Attention to extract complementarity without redundancy"]
+    C --> D["Complete Modality Guided Fusion (CMGF)<br/>Summation as Query to retrieve modality specificity"]
+    D --> E["Transformer Enhancement Block (Restormer)"]
+    E --> F["Bidirectional Temporal Collaborative Attention (BiCAM)<br/>Multiplication and normalization of forward/backward attention maps"]
+    F --> G["Fusion Decoder → Fused Video"]
+    F -->|Training Only| H["Modality Unmixing + Decoders<br/>→ Reconstructed IR/VI Videos"]
+```
 
 ### Key Designs
 
-#### 1. Cross-modal Differential Reinforcement Module (CmDRM)
+**1. Cross-modal Differential Representation Enhancement Module (CmDRM): Extracting Complementarity via Difference-before-Attention**
 
-**Core Idea**: Features from different modalities contain both complementary and redundant information. The key is to extract the "differential"—the **exclusive complementary information** present in the auxiliary modality but absent in the primary modality.
+Infrared and visible features contain both overlapping common information and unique components. Directly applying cross-modal attention results in redundant transportation of common information. CmDRM first calculates differential features $\mathcal{F}_d^t = \mathcal{F}_{ir}^t - \mathcal{F}_{vi}^t$ to explicitly isolate unique complementary information of the auxiliary modality. These differential features are projected into keys and values, while the primary modality features are projected into queries, selectively aggregating complementary information via cross-attention. A **learnable contribution measurement** using convolution and average pooling calculates a weight pair $(w, \tilde{w})$ to adaptively weight the original and differentially enhanced features, followed by refinement through Channel Attention (CA) and Spatial Attention (SA).
 
-- A differential feature $\mathcal{F}_d^t = \mathcal{F}_{ir}^t - \mathcal{F}_{vi}^t$ is computed to capture exclusive information from the auxiliary modality.
-- The differential feature is projected into keys and values; the primary modality feature is projected into queries; cross-attention aggregates the information.
-- A **learnable contribution measurement** is designed—using convolution and average pooling to compute weights $(w, \tilde{w})$—to adaptively balance the original feature and the differentially reinforced feature.
-- Channel attention (CA) and spatial attention (SA) further refine the weighted features.
+**2. Complete Modality Guided Fusion Module (CMGF): Retrieving Modality Specificity via Coarse Complete Features**
 
-Key insight: Direct cross-modal attention introduces redundancy, whereas "difference-then-attention" precisely targets complementary information.
+CmDRM enhances unimodal representations, but scene assembly requires more. Simply adding features $\mathcal{F}_c^t = \hat{\mathcal{F}}_{ir}^t + \hat{\mathcal{F}}_{vi}^t$ covers content but loses modality specificity. CMGF projects this "coarse complete feature" into a common query $q_c$ and uses it to retrieve modality-specific information from infrared and visible features (serving as keys/values). Two-way cross-attention with residual connections re-aggregates these into the final fused feature, using the "sum" as a coarse anchor to "fish back" details smoothed over by simple addition.
 
-#### 2. Complete Modality Guided Fusion Module (CMGF)
+**3. Bidirectional Temporal Collaborative Attention (BiCAM): Accessing Long-range Context via Neighbors**
 
-CmDRM enhances single-modality representations but is insufficient for constructing a complete scene representation. The core assumption of CMGF is that **naively summing the two modality features yields a "coarse complete feature"** that lacks modality specificity.
+Conv3D alone is insufficient for mining inter-frame temporal cues. BiCAM establishes multi-head cross-attention for the current frame $\mathcal{F}_f^t$ with the previous frame $\mathcal{F}_f^{t-1}$ (forward) and the next frame $\mathcal{F}_f^{t+1}$ (backward). "Collaboration" occurs by element-wise multiplication of forward and backward attention maps before softmax:
 
-- The complete feature $\mathcal{F}_c^t = \hat{\mathcal{F}}_{ir}^t + \hat{\mathcal{F}}_{vi}^t$ is projected into a shared query $q_c$.
-- $q_c$ queries modality-specific information from both infrared and visible features (each serving as key/value) via two separate cross-attention branches.
-- The outputs are aggregated via residual connections to produce the final fused feature.
+$$\mathcal{A}_{co} = \text{softmax}(\mathcal{A}^{t-1} * \mathcal{A}^{t+1})$$
 
-#### 3. Bidirectional Temporal Collaborative Attention Mechanism (BiCAM)
-
-This is the paper's core temporal modeling component, as Conv3D alone is insufficient to fully exploit temporal cues.
-
-- For the current frame feature $\mathcal{F}_f^t$, multi-head cross-attention is applied with the previous frame $\mathcal{F}_f^{t-1}$ (forward) and the next frame $\mathcal{F}_f^{t+1}$ (backward) respectively.
-- Boundary frames are padded by replicating the current frame as the neighbor.
-- **Collaborative attention** is introduced: $\mathcal{A}_{co} = \text{softmax}(\mathcal{A}^{t-1} * \mathcal{A}^{t+1})$, where forward and backward attention maps are multiplied and then normalized via softmax to enable bidirectional dynamic interaction.
-- Stacking $N$ consecutive BiCAMs—analogous to the shifted window mechanism in Swin Transformer—allows each frame to access long-range temporal context through neighboring frames as intermediaries.
+A position receives high weight only if both neighboring frames attend to it. By stacking $N$ BiCAM modules, each frame can access distant temporal context via neighboring frames as intermediaries, maintaining temporal consistency over long sequences.
 
 ### Loss & Training
 
-The total loss consists of five components:
+Total loss consists of five components:
 
-| Loss Term | Role | Formulation |
+| Loss Item | Function | Formula Logic |
 |:---|:---|:---|
-| $\mathcal{L}_{int}$ (Intensity Loss) | Preserve salient targets | L1 distance between Y channel of fused output and max of source images |
-| $\mathcal{L}_{grad}$ (Gradient Loss) | Preserve texture details | L1 distance between Sobel gradients of output and max of source gradients |
-| $\mathcal{L}_{color}$ (Color Loss) | Maintain color consistency | L1 distance between CbCr channels and visible input |
-| $\mathcal{L}_{sf}$ (Scene Fidelity Loss) | Leverage modality disentanglement | Pixel + gradient L1 between reconstructed IR/Vis videos and ground truth |
-| $\mathcal{L}_{var}$ (Variational Consistency Loss) | Suppress temporal flickering | Align inter-frame differences of fused/reconstructed videos with source videos |
+| $\mathcal{L}_{int}$ (Intensity) | Preserve salient targets | L1 distance between fused Y channel and max of source maps |
+| $\mathcal{L}_{grad}$ (Gradient) | Preserve texture details | L1 distance between Sobel gradients and max of source gradients |
+| $\mathcal{L}_{color}$ (Color) | Maintain color consistency | L1 distance between CbCr channels and visible source |
+| $\mathcal{L}_{sf}$ (Scene Fidelity)| Modal unmixing potential | Pixel + Gradient L1 between reconstructed IR/VI and ground truth |
+| $\mathcal{L}_{var}$ (Variational) | Suppress temporal flickering | Alignment of inter-frame differences between fused/source videos |
 
-The variational consistency loss $\mathcal{L}_{var}$ is grounded in the assumption that inter-frame variations of static backgrounds should approach zero, while those of dynamic objects should align with high-quality source videos. Loss weights: $\lambda_{int}=15$, $\lambda_{grad}=1$, $\lambda_{color}=100$, $\lambda_{sf}=10$, $\lambda_{var}=100$.
+Variational Consistency Loss $\mathcal{L}_{var}$ assumes that inter-frame changes in static backgrounds should approach zero, while those in dynamic objects should align with high-quality sources. Weights: $\lambda_{int}=15, \lambda_{grad}=1, \lambda_{color}=100, \lambda_{sf}=10, \lambda_{var}=100$.
 
-Training configuration: AdamW optimizer, initial learning rate $1 \times 10^{-4}$ with cosine annealing to $1 \times 10^{-5}$, 20 epochs, $T=7$ frames during training, $T=25$ frames during testing, multi-scale channel dimensions $[C_1,C_2,C_3]=[32,64,128]$.
+Training config: AdamW optimizer, initial LR $1 \times 10^{-4}$ with cosine annealing to $1 \times 10^{-5}$, 20 epochs, $T=7$ frames during training, $T=25$ frames during testing, multi-scale channels $[32,64,128]$.
 
 ### M3SVD Dataset
 
-A large-scale benchmark comprising 220 temporally synchronized and spatially aligned infrared-visible video pairs (153,797 frames total) is constructed, covering challenging scenarios including daytime, nighttime, camouflage, occlusion, low illumination, and overexposure, across 100 diverse scenes such as parks, lakes, sports fields, and intersections. Resolution: 640×480 at 30 FPS.
+Constructed a large-scale benchmark of 220 time-synchronized and spatially aligned IR-VI video pairs (153,797 frames). It covers challenges like day, night, camouflage, occlusion, low light, and overexposure across 100 scenes (parks, lakes, sports fields, intersections). Resolution: 640×480, 30 FPS.
 
 ## Key Experimental Results
 
-### Main Results: Quantitative Comparison under Degraded Scenarios (M3SVD)
+### Main Results: Quantitative Comparison under Degradation (M3SVD)
 
 | Method | EN↑ | MI↑ | SD↑ | SSIM↑ | VIF↑ | flowD↓ |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -124,11 +120,11 @@ A large-scale benchmark comprising 220 temporally synchronized and spatially ali
 | TemCoCo | 7.174 | 3.548 | 50.421 | 0.597 | 0.490 | 4.378 |
 | **VideoFusion** | **7.167** | **4.008** | **52.465** | **0.632** | **0.526** | **3.294** |
 
-VideoFusion achieves the best performance on MI, SSIM, VIF, and flowD. The flowD metric is reduced by approximately 25% compared to the second-best method TemCoCo (4.378→3.294).
+VideoFusion achieves best performance on MI, SSIM, VIF, and flowD. Notably, flowD is reduced by ~25% compared to the runner-up TemCoCo (4.378 $\rightarrow$ 3.294).
 
 ### Ablation Study
 
-| Configuration | EN↑ | MI↑ | SD↑ | SSIM↑ | VIF↑ | flowD↓ |
+| Config | EN↑ | MI↑ | SD↑ | SSIM↑ | VIF↑ | flowD↓ |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | w/o BiCAM | 7.250 | 3.439 | 52.194 | 0.601 | 0.472 | 4.747 |
 | w/o CmDRM | 6.953 | 3.557 | 48.439 | 0.612 | 0.510 | 3.728 |
@@ -141,46 +137,46 @@ VideoFusion achieves the best performance on MI, SSIM, VIF, and flowD. The flowD
 
 ### Key Findings
 
-1. **BiCAM is central to temporal consistency**: Removing BiCAM degrades flowD from 3.294 to 4.747 (+44%) and also impairs $\mathcal{L}_{var}$ convergence.
-2. **CMGF is irreplaceable**: Replacing CMGF with simple summation yields the highest SD but causes SSIM to collapse to 0.366 and VIF to 0.233, producing severe artifacts and distortions.
-3. **$\mathcal{L}_{var}$ is critical for temporal stability**: Its removal degrades flowD from 3.294 to 6.056, nearly doubling it.
-4. **$\mathcal{L}_{color}$ is essential for color quality**: Its removal reduces SD from 52.465 to 39.854 and VIF from 0.526 to 0.240.
-5. **Computational efficiency**: VideoFusion has only 6.743M parameters, 267.78G FLOPs, and an inference time of 0.067s/frame, comparable to image fusion methods.
-6. **Downstream extension**: Object tracking experiments based on YOLO v11 demonstrate that VideoFusion's fused results enable detection of more targets with smoother trajectories.
+1.  **BiCAM is Core to Temporal Consistency**: Removing BiCAM degrades flowD from 3.294 to 4.747 (+44%) and impacts $\mathcal{L}_{var}$ convergence.
+2.  **CMGF is Irreplaceable**: Replacing CMGF with simple addition causes SSIM to plummet to 0.366 and VIF to 0.233, resulting in severe artifacts.
+3.  **$\mathcal{L}_{var}$ is Vital for Temporal Stability**: Its removal nearly doubles flowD (3.294 $\rightarrow$ 6.056).
+4.  **$\mathcal{L}_{color}$ Targets Color Quality**: Its removal significantly drops SD (52.465 $\rightarrow$ 39.854) and VIF (0.526 $\rightarrow$ 0.240).
+5.  **Computational Efficiency**: VideoFusion has only 6.743M parameters, 267.78G FLOPs, and an inference time of 0.067s/frame, comparable to image fusion methods.
+6.  **Downstream Extension**: Object tracking experiments based on YOLO v11 show that VideoFusion results detect more targets with smoother trajectories.
 
 ## Highlights & Insights
 
-1. **"Difference-then-attention" paradigm**: CmDRM computes cross-modal differences before applying attention rather than directly performing cross-modal attention, precisely extracting complementary rather than redundant information—a principle transferable to any multi-source information fusion scenario.
-2. **Elegant collaborative attention design**: BiCAM multiplies forward and backward attention maps before normalization, coupling bidirectional temporal information with minimal computational overhead.
-3. **Variational consistency loss**: The intuition that "inter-frame variation of static backgrounds should be zero, while that of dynamic objects should align with the source" is formalized as a loss function, effectively suppressing flickering.
-4. **Dataset contribution**: M3SVD (220 videos / 153,797 frames) substantially surpasses existing multi-modal video datasets in scale and covers challenging scenarios such as camouflage and occlusion, positioning it as a potential standard benchmark for the field.
-5. **Modality disentanglement design**: Simultaneously outputting fused video and per-modality reconstructed videos with mutual reinforcement via $\mathcal{L}_{sf}$ presents a "decompose-and-fuse" training strategy worth adopting in future work.
+1.  **"Differential-before-Attention" Paradigm**: CmDRM precisely extracts complementary rather than redundant information. This concept is generalizable to any multi-source information fusion scenario.
+2.  **Elegant Collaborative Attention**: BiCAM achieves bidirectional temporal coupling with minimal computational overhead by multiplying and normalizing attention maps.
+3.  **Variational Consistency Loss**: Formalizing the intuition that static backgrounds should have zero inter-frame change while dynamic objects align with sources effectively suppresses flickering.
+4.  **Dataset Contribution**: M3SVD (220 videos/154k frames) far exceeds existing datasets and is poised to become a standard benchmark for multi-modal video fusion.
+5.  **Modality Unmixing Design**: The "split-merge parallel" training strategy, where fusion and reconstruction tasks facilitate each other through $\mathcal{L}_{sf}$, is a valuable architectural insight.
 
 ## Limitations & Future Work
 
-1. **Limited temporal window**: Training uses $T=7$ frames; although stacking BiCAMs extends the receptive field, large-motion sequences may still be inadequately handled.
-2. **Limited to infrared-visible modality pair**: Generalizability to other modality combinations (e.g., depth+RGB, SAR+optical) has not been validated.
-3. **Coarse boundary frame handling**: The strategy of replicating the current frame as a neighbor at boundaries may introduce bias.
-4. **Lack of semantic-level evaluation**: Although object tracking is validated, evaluation on additional downstream tasks such as semantic segmentation and action recognition is absent.
-5. **Fixed degradation model**: Training degradations (Gaussian blur + stripe noise) are predefined; robustness to more complex real-world degradations (e.g., rain, fog, motion blur) is not fully validated.
+1.  **Limited Temporal Window**: Training uses $T=7$; although stacking BiCAM expands the receptive field, it may still be insufficient for large movements in long sequences.
+2.  **Modality Generalization**: Generalization to other modality combinations (e.g., Depth+RGB, SAR+Optical) has not been verified.
+3.  **Boundary Frame Handling**: The strategy of copying current frames for boundary neighbors might introduce bias.
+4.  **Missing Semantic Evaluation**: While object tracking was verified, evaluations on downstream tasks like semantic segmentation or action recognition are missing.
+5.  **Fixed Degradation Model**: Robustness to complex real-world degradations (e.g., rain, fog, motion blur) beyond the predefined Gaussian/stripe noise requires further validation.
 
 ## Related Work & Insights
 
-- **Image fusion baselines**: U2Fusion, LRRNet, DDFM, and TIMFusion serve as the primary image-level comparison methods.
-- **Video fusion predecessors**: TemCoCo is the strongest baseline, using DCN for inter-frame compensation but with limited stability; RCVS adopts a frame-by-frame strategy with limited effectiveness.
-- **Video restoration inspiration**: The design of BiCAM is inspired by works on video deblurring (DSTNet) and video denoising (MDIVDNet), leveraging temporal cues to combat degradation.
-- **General inspiration**: The cross-modal differential reinforcement + attention paradigm is transferable to the fusion of projected features from different modalities in multi-modal large models.
+-   **Image Fusion Baselines**: U2Fusion, LRRNet, DDFM, and TIMFusion serve as primary image-level comparison points.
+-   **Video Fusion Antecedents**: TemCoCo is the strongest baseline but suffers from instability in DCN; RCVS uses frame-by-frame strategies with limited effectiveness.
+-   **Video Restoration Inspiration**: BiCAM design is inspired by video deblurring (DSTNet) and denoising (MDIVDNet), adapting temporal cues to combat degradation.
+-   **General Insight**: The paradigm of cross-modal differential enhancement + attention can be transferred to multi-modal large model feature projection.
 
 ## Rating
 
-| Dimension | Score (1–5) | Notes |
+| Dimension | Score (1-5) | Description |
 |:---|:---:|:---|
-| Novelty | 4 | First systematic video fusion framework with a large-scale dataset; differential reinforcement and bidirectional collaborative attention are novel designs |
-| Technical Depth | 4 | Multi-module design is well-reasoned and mutually reinforcing; loss functions are grounded in clear physical intuition |
-| Experimental Thoroughness | 4.5 | Multi-dataset, multi-metric evaluation with comprehensive ablations, temporal consistency metrics, and downstream tracking validation |
-| Writing Quality | 4 | Clear structure with rich figures and tables |
-| Value | 4 | Dataset and code are open-sourced; inference is efficient; directly applicable to security surveillance and related scenarios |
-| **Overall** | **4** | Fills the gap in multi-modal video fusion with a solid methodology, thorough experiments, and a significant dataset contribution |
+| Novelty | 4 | First systematic video fusion framework + large-scale dataset; differential enhancement and collaborative attention are novel. |
+| Technical Depth | 4 | Multi-module design is rational and synergistic; loss functions have clear physical intuition. |
+| Experimental Thoroughness | 4.5 | Comprehensive metrics across multiple datasets; includes temporal consistency and downstream tracking validation. |
+| Writing Quality | 4 | Clear structure with rich visualizations. |
+| Value | 4 | Open-source code/dataset with efficient inference, directly applicable to security and surveillance. |
+| **Overall** | **4** | Fills a significant gap in multi-modal video fusion with solid design and outstanding dataset contributions. |
 
 <!-- RELATED:START -->
 
@@ -188,11 +184,11 @@ VideoFusion achieves the best performance on MI, SSIM, VIF, and flowD. The flowD
 
 ## Related Papers
 
+- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 - [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs](sparrow_learning_spatial_precision_and_temporal_referential_consistency_in_pixel.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
 - [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
-- [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>
 

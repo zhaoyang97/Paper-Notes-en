@@ -2,129 +2,126 @@
 title: >-
   [Paper Note] Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces
 description: >-
-  [ICML 2026][Text Generation][MCMC] SRMC uses a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is transformed via exponential score-til…
+  [ICML 2026][Text Generation][MCMC] SRMC utilizes a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is then incorporated into an exponential score-tilt to construct a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MC
 tags:
-  - "ICML 2026"
-  - "Text Generation"
-  - "MCMC"
-  - "Non-Markovian sampling"
-  - "score-tilt"
-  - "self-repulsion"
-  - "stochastic approximation CLT"
+  - ICML 2026
+  - Text Generation
+  - MCMC
+  - score-tilt
 date: 2026-05-08
-content_hash: 107c85bbfac1e759
+content_hash: 17db46f15a3c8f72
 ---
-
 # Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2604.22948](https://arxiv.org/abs/2604.22948)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Scientific Computing / MCMC / Probabilistic Inference  
-**Keywords**: MCMC, Non-Markovian sampling, score-tilt, self-repulsion, stochastic approximation CLT  
+**Keywords**: MCMC, non-Markovian sampling, score-tilt, self-repulsion, stochastic approximation CLT  
 
 ## TL;DR
-SRMC uses a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is transformed via exponential score-tilt into a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MCMC kernel, SRMC achieves a non-Markovian, low-variance, normalization-free sampler with constant memory in general state spaces.
+SRMC utilizes a $d$-dimensional running score average (rather than an $|\mathcal{X}|$-dimensional empirical measure) to record history. This history is then incorporated into an exponential score-tilt to construct a surrogate target $\pi_\theta$ that "repels already visited regions." By wrapping this around any base MCMC kernel, the authors implement a non-Markovian, low-variance, normalization-free sampler with constant memory in general state spaces.
 
 ## Background & Motivation
-**Background**: MCMC is a cornerstone for everything from Bayesian inference to EBM sampling. However, for complex targets (multimodal posteriors, rugged energy landscapes, large discrete configuration spaces), chains often fall into the trap of being "ergodic in theory but stuck in practice," oscillating repeatedly in the same region, leading to highly correlated samples and unreliable estimates. Recent work on improving sampling efficiency mostly refines the Markov kernel itself—using locally informed proposal/balancing in discrete domains (Zanella, GWG) or Langevin/HMC and non-reversible samplers in continuous domains.
+**Background**: MCMC is a cornerstone tool for everything from Bayesian inference to EBM sampling. However, complex targets (multi-modal posteriors, rugged energy landscapes, large discrete configuration spaces) often lead to "theoretical ergodicity but practical entrapment": the chain oscillates repeatedly in the same region, leading to strongly correlated samples and unreliable estimates. Recent work on sampling efficiency has primarily focused on refining the Markov kernel itself—using locally informed proposals/balancing (Zanella, GWG) in discrete domains, and Langevin, HMC, or non-reversible samplers in continuous domains.
 
-**Limitations of Prior Work**: These methods are memoryless—the kernel does not "remember" that it has already visited a location 100 times. Non-Markovian approaches have clean theory in finite state spaces: SRRW and HDT feed the empirical measure $\hat{\delta}_n = \frac{1}{n+1}\sum_i \delta_{X_i}$ back into the kernel, achieving near-zero variance as the repulsion strength $\alpha$ increases while remaining normalization-free. However, $\hat{\delta}_n$ is an $|\mathcal{X}|$-dimensional object: exponentially large in $\{0,1\}^d$ and an infinite-dimensional measure in continuous domains, making it impossible to store.
+**Limitations of Prior Work**: The aforementioned approaches are memoryless—the kernel does not "remember" having visited a location 100 times already. Non-Markovian routes have clean theory in finite state spaces: SRRW and HDT use the empirical measure $\hat{\delta}_n = \frac{1}{n+1}\sum_i \delta_{X_i}$ to feedback into the kernel, achieving near-zero variance as the repulsion strength $\alpha$ increases while remaining normalization-free. However, $\hat{\delta}_n$ is an $|\mathcal{X}|$-dimensional object: exponentially large on $\{0,1\}^d$ and an infinite-dimensional measure in continuous domains, making it impossible to store.
 
-**Key Challenge**: To trade "remembering history" for variance reduction, one must store information; for it to be storable, it must be $O(\text{const})$ in size. Since history is essentially a distribution over the entire state space, how can it be compressed into constant dimensions while maintaining theoretical properties like asymptotic unbiasedness and variance decay? Existing compromises either require large buffers (Stein self-repulsive stores historical samples) or importance reweighting (adaptive biasing potentials), losing the simplicity of being normalization-free.
+**Key Challenge**: To trade "remembering history" for variance reduction, one must store information; for it to be storable, it must be $O(\text{const})$. Yet, history is essentially a distribution over the entire state space—how can it be compressed into constant dimensions while maintaining theoretical properties (asymptotic unbiasedness + diminishing variance)? Existing compromises either require large buffers (Stein self-repulsive requires storing historical samples) or importance reweighting (adaptive biasing potentials), losing the simplicity of being normalization-free.
 
-**Goal**: Construct a generic wrapper that (i) maintains constant $O(d)$ memory; (ii) is compatible with any base MCMC (MH, Langevin, HMC, GWG); (iii) remains normalization-free; and (iv) provides CLT and $\alpha$-scaling theoretical guarantees, extending the near-zero-variance properties of SRRW/HDT to general state spaces.
+**Goal**: Construct a generic wrapper that (i) maintains $O(d)$ memory; (ii) is compatible with any base MCMC (MH, Langevin, HMC, GWG); (iii) remains normalization-free; and (iv) provides theoretical guarantees for CLT and $\alpha$-scaling, extending the near-zero-variance properties of SRRW/HDT to general state spaces.
 
-**Key Insight**: The Stein identity tells us that $\mathbb{E}_{X\sim\pi}[s(X)] = 0$ (where $s = \nabla\log\pi$), implying that for a well-exploring chain, the time average of the score should be near zero. If a chain lingers in a certain region, the score directions in that region will accumulate bias. The running score average $\theta_n$ thus becomes a "detector of the chain's deviation from the true distribution." This immediately reduces an $|\mathcal{X}|$-dimensional statistic to $d$ dimensions.
+**Key Insight**: The Stein identity states that $\mathbb{E}_{X\sim\pi}[s(X)] = 0$ (where $s = \nabla\log\pi$), meaning "for a well-explored chain, the time average of the score should be close to 0." If a chain constantly dwells in a certain region, the score directions in that region will accumulate a bias—the running average of the score, $\theta_n$, serves as a "detector for the chain's deviation from the true distribution." This immediately collapses an $|\mathcal{X}|$-dimensional statistic into $d$ dimensions.
 
-**Core Idea**: Use $\theta_n \in \mathbb{R}^d$ (score time average) as a history summary, then use an exponential tilt $\pi_\theta(x) \propto \pi(x)\exp\{-\alpha \theta^\top s(x)\}$ to penalize "directions that were over-visited in the past" to obtain a surrogate target. The base kernel performs one step on $\pi_{\theta_n}$, and then $\theta_{n+1}$ is updated iteratively.
+**Core Idea**: Use $\theta_n \in \mathbb{R}^d$ (running average of the score) as the history summary, then use an exponential tilt $\pi_\theta(x) \propto \pi(x)\exp\{-\alpha \theta^\top s(x)\}$ to penalize "directions over-visited in the past" to obtain a surrogate target. The base kernel runs one step on $\pi_{\theta_n}$, and then $\theta_{n+1}$ is updated, repeating the cycle.
 
 ## Method
 
 ### Overall Architecture
-SRMC is a thin wrapper. Given a target $\pi(x)\propto e^{-U(x)}$, score $s(x) = -\nabla U(x)$, repulsion strength $\alpha \geq 0$, step size sequence $\gamma_n = (n+1)^{-\rho}$ ($\rho \in (1/2, 1]$, Robbins-Monro conditions), and any base kernel $P_q$ (MH/MALA/HMC/GWG). At iteration $n$: (1) use the current history $\theta_n$ to construct the surrogate $\pi_{\theta_n}(x) \propto \pi(x)\exp\{-\alpha\theta_n^\top s(x)\}$; (2) sample $X_{n+1}$ using $P_{\pi_{\theta_n}}$; (3) update history via a first-order recursion $\theta_{n+1} = \theta_n + \gamma_{n+1}(s(X_{n+1}) - \theta_n)$. This mechanism only adds $d$-dimensional memory ($\theta_n$) and one additional score evaluation.
+SRMC acts as a thin wrapper. Given a target $\pi(x)\propto e^{-U(x)}$, score $s(x) = -\nabla U(x)$, repulsion strength $\alpha \geq 0$, step size sequence $\gamma_n = (n+1)^{-\rho}$ ($\rho \in (1/2, 1]$, Robbins-Monro conditions), and any base kernel $P_q$ (MH/MALA/HMC/GWG are all viable). In iteration $n$: (1) Construct the surrogate $\pi_{\theta_n}(x) \propto \pi(x)\exp\{-\alpha\theta_n^\top s(x)\}$ using the current history $\theta_n$; (2) Sample $X_{n+1}$ using $P_{\pi_{\theta_n}}$; (3) Update history using a first-order recurrence $\theta_{n+1} = \theta_n + \gamma_{n+1}(s(X_{n+1}) - \theta_n)$. This mechanism only adds $d$-dimensional memory ($\theta_n$) and one score evaluation. The entire pipeline is a **non-Markovian feedback loop**: new scores from sampling are fed back into the history $\theta$, which in turn reshapes the next surrogate target, pushing the chain away from visited regions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Target π, score s=∇log π<br/>Repulsion α, step size γ, any base kernel"] --> B["Initialize X₀, history θ₀"]
+    B --> C["Exponential score-tilt surrogate target<br/>πθ(x) ∝ π(x)·exp{−α·θᵀs(x)}"]
+    C --> D["Base kernel takes one step on πθ<br/>Sample X (MH / MALA / HMC / GWG)"]
+    D --> E["Constant memory score history update<br/>θ ← θ + γ(s(X) − θ)"]
+    E -->|Feedback history to next step| C
+    E --> F["Output: Trajectory {X} and estimate μ"]
+```
 
 ### Key Designs
 
-1.  **Running Score History with Constant Memory $\theta_n$**:
-    *   **Function**: Replaces the $|\mathcal{X}|$-dimensional empirical measure with a $d$-dimensional vector as the "history summary."
-    *   **Mechanism**: $\theta_n \in \mathbb{R}^d$ is a weighted moving average of past scores $\{s(X_i)\}_{i\leq n}$. When $\rho=1$, it reduces to a simple time average; when $\rho<1$, it favors recent samples, making it more sensitive to temporary trapping. Its physical meaning can be expressed as $\theta_n - \mathbb{E}_\pi[s(X)] = \int_\mathcal{X}[\frac{1}{n+1}\sum_i\delta_{X_i}(x) - \pi(x)]s(x)dx$—it is precisely the "deviation between the chain's empirical distribution and $\pi$ under the score projection," essentially acting as a low-dimensional imbalance detector.
-    *   **Design Motivation**: The limitation of SRRW/HDT to finite spaces stems from the need to store $\hat\delta_n$. By projecting "distributional differences" into $d$ dimensions via the score, storage and computational complexity collapse to constants. Furthermore, the Stein identity $\mathbb{E}_\pi[s] = 0$ automatically ensures that $\theta^\star = 0$ is the equilibrium point, naturally calibrating the estimation.
+**1. Constant memory score-running history $\theta_n$: Replacing $|\mathcal{X}|$-dimensional empirical measures with $d$-dimensional vectors**
 
-2.  **Exponential Score-Tilt Surrogate Target $\pi_\theta$**:
-    *   **Function**: Converts "historical bias" into a modified target that "penalizes biased directions" for the base kernel.
-    *   **Mechanism**: $\pi_\theta(x)\propto \pi(x)\exp\{-\alpha \theta^\top s(x)\}$. When the chain stays in a metastable basin, $\theta$ points towards the concentrated "cone direction" of that basin's scores. Thus, $x$ values where $\theta^\top s(x) > 0$ (still inside the basin) are down-weighted by $\exp\{-\alpha\theta^\top s(x)\} < 1$. For MH, this only requires multiplying the acceptance rate by an $e^{-\alpha\theta^\top[s(y)-s(x)]}$ factor; the normalization $Z_\theta$ cancels out in the ratio. For Langevin/HMC, the score is replaced by the surrogate score $s_\theta(x) = s(x) - \alpha\nabla_x s(x)\theta = -\nabla U(x) + \alpha \nabla^2 U(x)\theta$, where Hessian-vector products are computed cheaply via autodiff or finite differences $(\nabla U(x+\epsilon\theta) - \nabla U(x))/\epsilon$.
-    *   **Design Motivation**: (i) Exponential tilt is the most natural form for an "exponential family of linear score perturbations" and preserves non-negativity; (ii) it makes the mechanism normalization-free ($Z_\theta$ always cancels or is unnecessary), preserving the usability of classical MCMC; (iii) it is plug-and-play: no internal logic of the base kernel is modified, and any kernel effective for $\pi$ can be substituted with $\pi_{\theta_n}$. The "arrow flipping" visualization in Figure 1 shows how it dynamically lowers the "effective energy barrier" around metastable basins.
+SRRW/HDT were confined to finite state spaces because they required storing the $|\mathcal{X}|$-dimensional empirical measure $\hat\delta_n$. The breakthrough in SRMC comes from the Stein identity $\mathbb{E}_\pi[s]=0$: for a well-explored chain, the score's time average should converge to 0. Thus, the running average $\theta_n\in\mathbb{R}^d$ is a natural detector of deviation. $\theta_n$ is a weighted moving average of past scores $\{s(X_i)\}_{i\leq n}$; $\rho=1$ yields a simple time average, while $\rho<1$ weights recent samples more heavily, being more sensitive to temporary entrapment. It satisfies $\theta_n - \mathbb{E}_\pi[s(X)] = \int_\mathcal{X}[\frac{1}{n+1}\sum_i\delta_{X_i}(x) - \pi(x)]s(x)dx$, essentially the projection of the deviation between the empirical distribution and $\pi$ onto the score space. This collapses storage and computation from exponential/infinite dimensions to constant dimensions, while the Stein identity ensures $\theta^\star=0$ is the equilibrium, naturally calibrating the estimate.
 
-3.  **Coupled SA + CLT with $O(1/\alpha)$ Variance Decay**:
-    *   **Function**: Proves almost sure convergence and joint CLT in general $\mathcal{X} = \mathbb{R}^d$ spaces and quantifies variance scaling as $\alpha$ increases.
-    *   **Mechanism**: Define $\vartheta_n = (\theta_n, \mu_n)$ (where $\mu_n$ estimates $\mathbb{E}_\pi[f(X)]$) as a Stochastic Approximation (SA) process $\vartheta_{n+1} = \vartheta_n + \gamma_{n+1} H(\vartheta_n, X_{n+1})$. Under Assumption 1 ($L$-Lipschitz score, super-linear tail growth of $U$, asymptotically normal Hessian) and Assumption 2 (uniform drift of the kernel, Lipschitz in $\theta$), Theorem 3.3 shows $\vartheta_n \to (0, \mu)$ a.s. and $\gamma_n^{-1/2}(\vartheta_n - \vartheta^\star) \xrightarrow{d} \mathcal{N}(0, \Sigma_\vartheta)$, where $\Sigma_\vartheta$ satisfies a Lyapunov equation. The key Jacobian $A^\star$ shows $\alpha$ appearing in the covariance blocks. Proposition 3.4 proves the $\theta$-block $\Sigma_{\theta\theta}(\alpha) = O(1/\alpha)$ and is monotonically non-increasing in $\alpha$. For Gaussian targets, this scaling passes directly to $\Sigma_X(\alpha) = V\Sigma_{\theta\theta}(\alpha)V^\top$, reaching near-zero variance.
-    *   **Design Motivation**: Extending near-zero variance to general spaces requires translating generic SA conditions into verifiable drift and kernel-Lipschitz conditions for MCMC. The technical contribution includes providing verifiable conditions for MH/MALA and upgrading "stability" from an assumption to a provable conclusion.
+**2. Exponential score-tilt surrogate target $\pi_\theta$: Folding historical deviation into a "repulsive" surrogate**
+
+Once the deviation detector $\theta$ is defined, it must be converted into a force that drives the sampler away from old regions. The authors use an exponential tilt $\pi_\theta(x)\propto\pi(x)\exp\{-\alpha\theta^\top s(x)\}$. When the chain repeatedly visits a metastable basin, $\theta$ aligns with the concentrated score direction of that basin. Points $x$ inside the basin ($\theta^\top s(x)>0$) are down-weighted by $\exp\{-\alpha\theta^\top s(x)\}<1$, while points outside are relatively lifted. For MH, this only requires multiplying the acceptance ratio by $e^{-\alpha\theta^\top[s(y)-s(x)]}$; the normalization constant $Z_\theta$ cancels out. For Langevin/HMC, the score is replaced by the surrogate score $s_\theta(x)=s(x)-\alpha\nabla_x s(x)\theta=-\nabla U(x)+\alpha\nabla^2 U(x)\theta$, where the Hessian-vector product can be cheaply approximated via autodiff or finite differences $(\nabla U(x+\epsilon\theta)-\nabla U(x))/\epsilon$. This choice is normalization-free, naturally generalizes score-based exponential families, and is plug-and-play with existing kernels.
+
+**3. Coupled SA analysis + CLT & $O(1/\alpha)$ variance decay: Extending zero-variance to general state spaces**
+
+To provide theoretical grounding, the authors prove convergence and a joint CLT on $\mathcal{X}=\mathbb{R}^d$ and quantify variance scaling with $\alpha$. They frame $\vartheta_n=(\theta_n,\mu_n)$ (where $\mu_n$ is the running estimate of $\mathbb{E}_\pi[f(X)]$) as a stochastic approximation $\vartheta_{n+1}=\vartheta_n+\gamma_{n+1}H(\vartheta_n,X_{n+1})$, where $H$ is controlled Markovian noise. Under Assumption 1 ($L$-Lipschitz score + superlinear tail growth of $U$ + asymptotically normal Hessian) and Assumption 2 (uniform drift of the kernel + Lipschitz continuity in $\theta$), Theorem 3.3 shows $\vartheta_n\to(0,\mu)$ a.s. and $\gamma_n^{-1/2}(\vartheta_n-\vartheta^\star)\xrightarrow{d}\mathcal{N}(0,\Sigma_\vartheta)$. Crucially, Proposition 3.4 proves $\Sigma_{\theta\theta}(\alpha)=O(1/\alpha)$ and is non-increasing in $\alpha$. For Gaussian targets, this scaling transfers directly to the sample mean, yielding near-zero variance. This upgrades stability from a mere assumption (as in earlier SRRW work) to a provable conclusion for MH/MALA.
 
 ### Loss & Training
-There is no training loss—SRMC is a sampling algorithm. Practical hyperparameters include: $\rho \in \{0.6, 0.8\}$ (to prevent $\gamma_n$ from dropping too fast), $\epsilon \approx \alpha$ (scale for finite differences to avoid numerical instability), and $\alpha$ chosen such that $\alpha|\theta_n^\top s(X_n)|$ is moderate to avoid over-tilting. For complex targets, an adaptive-$\alpha$ heuristic is used: small early on and larger later. In discrete domains, the discrete Stein operator $s_i(x) = \pi(x^{(i,K-x_i)})/\pi(x) - 1$ is used to maintain $\mathbb{E}_\pi[s] = 0$. For high-dimensional EBMs (e.g., Static MNIST), a relaxed gradient is used as a score proxy; while less theoretically rigorous, it remains effective in practice.
+There is no training loss—SRMC is a sampling algorithm. Practical hyperparameters include: $\rho \in \{0.6, 0.8\}$ (to prevent $\gamma_n$ from decaying too quickly), $\epsilon \approx \alpha$ (finite difference scale), and $\alpha$ chosen such that $\alpha|\theta_n^\top s(X_n)|$ is moderate to avoid over-tilting. In discrete domains, the discrete Stein operator $s_i(x) = \pi(x^{(i,K-x_i)})/\pi(x) - 1$ is used to maintain $\mathbb{E}_\pi[s] = 0$. For high-dimensional EBMs (e.g., Static MNIST), a relaxed gradient is used as a score proxy.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of MSE for SR-MALA / SR-HMC vs. baselines on a 10D continuous target (sample mean estimation, 100 independent trials, selecting $\alpha \in \{0, 0.01, 0.1, 1, 2, 5\}$):
+MSE comparison for sample mean estimation on a 10D continuous target (100 independent trials, $\alpha \in \{0,0.01,0.1,1,2,5\}$):
 
 | Target | Sampler | Best $\alpha$ | MSE Gain vs Baseline | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| Correlated Gaussian (10D, ill-conditioned) | MALA → SR-MALA | $\alpha=2{-}5$ | Moderate reduction | Consistent across steps and CPU views |
-| Correlated Gaussian | HMC → SR-HMC | $\alpha=2{-}5$ | Significant reduction, lowest MSE | $\alpha=5$ is optimal |
-| Bayesian Logistic Regression (10D, 100 obs) | MALA → SR-MALA | $\alpha=1{-}2$ | ~5× MSE reduction | $\alpha=5$ too aggressive, high rejection |
-| Bayesian Logistic Regression | HMC → SR-HMC | $\alpha \approx 1{-}2$ | Fastest MSE decay | $\alpha=5$ over-tilted and performed worse |
+|------|---------|--------------|---------------------|------|
+| Correlated Gaussian (10D) | MALA → SR-MALA | $\alpha=2{-}5$ | Moderate reduction | Holds for both step and CPU time |
+| Correlated Gaussian | HMC → SR-HMC | $\alpha=2{-}5$ | Significant reduction, lowest MSE | $\alpha=5$ optimal |
+| Bayesian Logistic Regression | MALA → SR-MALA | $\alpha=1{-}2$ | ~5× MSE reduction | $\alpha=5$ too aggressive |
+| Bayesian Logistic Regression | HMC → SR-HMC | $\alpha \approx 1{-}2$ | Fastest MSE decay | $\alpha=5$ over-tilted |
 
-Discrete EBM (Static MNIST, $\{0,1\}^{784}$, 100 parallel chains initialized at digit '7', 10,000 steps):
+Discrete EBM (Static MNIST, $\{0,1\}^{784}$, 100 parallel chains initialized from a '7'):
 
 | Metric | Baseline GWG | SR-GWG ($\alpha=10^{-4}$) | Relative Change |
-| :--- | :--- | :--- | :--- |
+|------|--------------|---------------------------|---------|
 | Cumulative KL (↓) | 4.16 | 0.68 | **−84%** |
 | Batch Vendi Score (↑) | 2.6 | 6.4 | **+146%** |
-| Escape Step from Initial Mode | Never escaped | ~2500 steps | — |
-| Chain Diversity (at 10k steps) | Mostly '7' | Covers multiple digit classes | Significant mode exploration |
-
-CIFAR-10 Gaussian mixture mode-coverage (Appendix D.2): SR-ULA achieved 100% mode coverage by 1035 steps, while ULA only reached 2.8%. With 10 parallel chains, SR-ULA covered 7/10 classes compared to 5/10 for ULA.
+| Mode Escape (Steps) | Never escaped | ~2500 steps | — |
+| Diversity (10k steps) | Mostly '7' | Covers multiple digit classes | Significant exploration |
 
 ### Ablation Study
 
-| Config | Key Observation | Explanation |
-| :--- | :--- | :--- |
-| $\alpha = 0$ | Reduces to base sampler | Confirms SRMC is a true wrapper layer |
-| Moderate $\alpha \uparrow$ | Monotonic MSE / KL decrease | Consistent with the $O(1/\alpha)$ theory in Prop 3.4 |
-| Very large $\alpha$ (e.g., 5) | Rejection rate spikes or over-tilt | Optimal $\alpha$ is usually moderate, not maximal for nonlinear targets |
-| $\rho = 1$ vs. $\rho \in \{0.6, 0.8\}$ | Latter is more stable during transients | $\rho=1$ drops step size too fast for $\theta_n$ to adapt |
-| $\epsilon$ too small | Poor Hessian-vec approximation | $\epsilon \sim \alpha$ provides the best stability |
-| Adaptive $\alpha$ | Robust fallback | Useful when the optimal fixed $\alpha$ is unknown |
-| Discrete: relaxed proxy vs. exact score | Proxy is necessary in high dimensions | Theory requires exact $s$ for $\mathbb{E}_\pi[s]=0$, yet proxy works on MNIST |
+| Configuration | Key Observation |
+|------|---------|
+| $\alpha = 0$ | Recovers base sampler, verifying the wrapper structure. |
+| Moderate $\alpha \uparrow$ | MSE/KL decreases monotonically, matching $O(1/\alpha)$ theory. |
+| $\alpha$ too large | Rejection rates spike; the optimal $\alpha$ is usually moderate, not maximal. |
+| $\rho = 1$ vs $\rho < 1$ | $\rho < 1$ is more stable during transients; $\rho = 1$ adapts too slowly. |
+| $\epsilon$ scale | $\epsilon \sim \alpha$ is stablest for finite-difference Hessian-vector products. |
 
 ### Key Findings
-*   The theoretical $\Sigma_{\theta\theta}(\alpha) = O(1/\alpha)$ scaling matches the MSE behavior in correlated Gaussian experiments.
-*   For nonlinear targets (e.g., logistic regression), there is a "sweet spot" for $\alpha$; excessive tilting leads to extreme rejection rates.
-*   The mode-mixing improvement in discrete EBMs is significant (84% KL reduction), demonstrating that SRMC's primary strength is "systematic forced exploration."
-*   SR-ULA's advantage is more pronounced as the number of parallel chains decreases, suggesting SRMC as an alternative to increasing chain count under compute constraints.
+- Theoretically, $\Sigma_{\theta\theta}(\alpha) = O(1/\alpha)$ translates to the same scaling for $\Sigma_X(\alpha)$ in Gaussian targets; experiments confirm MSE decreases with $\alpha$ until saturation.
+- For non-linear targets, there is an "optimal working zone" for $\alpha$; over-tilting leads to high rejection rates.
+- On discrete EBMs, the improvement in mode-mixing (84% KL reduction) is a victory of mode coverage rather than local estimation precision.
+- SRMC advantages are more pronounced with fewer parallel chains, suggesting it can replace massive parallelization when compute is limited.
 
 ## Highlights & Insights
-*   **The idea of "using score time average as a proxy for visit counts" is elegant**: The insight that the score's expected value is zero allows a $d$-dimensional vector to act as a "deviation detector" for distribution. This paradigm of "summarizing distributions via low-dimensional statistics" could be applied beyond MCMC to RL exploration or adaptive optimization.
-*   **Engineering value of the plug-and-play wrapper**: MH, MALA, HMC, ULA, and GWG are all easily adapted while maintaining normalization-free properties. SRMC serves as a general-purpose layer in the MCMC toolbox.
-*   **Efficient Hessian-vector products**: By using $\nabla^2 U(x)\theta \approx (\nabla U(x+\epsilon\theta) - \nabla U(x))/\epsilon$, SRMC adds only one additional score evaluation, resulting in an overhead of roughly 2×.
-*   **Solid theoretical contribution**: Translating Borkar’s SA theorems into verifiable MCMC conditions and proving stability without assuming bounded iterates is a substantial upgrade over SRRW/HDT analyses.
+- **"Using score time-average instead of visit counts" is the paper's most elegant idea**: Collapsing $|\mathcal{X}|$ to $d$ via the Stein identity is a powerful insight. This paradigm of using low-dimensional statistics to track distribution deviation could transition to adaptive optimization or RL.
+- **Engineering value of the plug-and-play wrapper**: MH, MALA, HMC, ULA, and GWG are all compatible without modifying their internal logic or losing their normalization-free property.
+- **Efficiency of Hessian-vector products**: The use of finite differences $(\nabla U(x+\epsilon\theta) - \nabla U(x))/\epsilon$ makes it possible to apply SRMC to models without analytical Hessians with only one extra score evaluation.
+- **Solid Theoretical Contribution**: Translating general SA theorems into verifiable MCMC drift conditions and proving stability without assuming bounded iterates is a substantial upgrade over prior non-Markovian theory.
 
 ## Limitations & Future Work
-*   For general non-Gaussian targets or arbitrary kernels, $\Sigma_{\mu\mu}(\alpha)$ lacks a closed-form $\alpha$ dependence, requiring empirical tuning of $\alpha$.
-*   Optimal $\alpha$ values for nonlinear targets are often moderate; there is currently no fully automated $\alpha$ scheduler.
-*   The discrete theory requires the discrete Stein score $\mathbb{E}_\pi[s] = 0$, but high-dimensional tasks like MNIST require relaxed gradients, leaving a gap between theory and practice.
-*   Additional score evaluations: For samplers like HMC with many leapfrog steps, the overhead of finite-difference scores may offset variance gains in terms of raw CPU time.
-*   Current framework focuses on single-chain; combinations with Parallel Tempering or Replica Exchange have not been systematically studied.
+- For general non-Gaussian targets, there is no closed-form dependence for $\Sigma_{\mu\mu}(\alpha)$, requiring empirical tuning.
+- "Moderate $\alpha$ is best" phenomenon for non-linear targets lacks a fully automated scheduling mechanism.
+- Discrete domain theory requires an exact Stein score, but high-dimensional practice (MNIST) relies on a relaxed gradient proxy; there is a gap between theory and practice here.
+- Per-step overhead: For HMC with many leapfrog steps, the extra score evaluation for the tilt may diminish the variance gains when viewed in terms of CPU time.
 
 ## Related Work & Insights
-*   **vs. SRRW (Doshi 2023) / HDT-MCMC (Hu 2025)**: Both target non-Markovian self-repulsion, but SRRW/HDT are restricted to finite state spaces. SRMC uses $d$-dimensional score averages to extend these near-zero-variance properties to general spaces.
-*   **vs. Stein self-repulsive dynamics (Ye 2020)**: The latter uses a sample buffer for pairwise repulsion; SRMC achieved unbiasedness with constant memory and finite $\alpha$.
-*   **vs. Adaptive Biasing Potentials / Metadynamics**: These use density accumulation and reweighting; SRMC remains normalization-free.
-*   **vs. Wang-Landau / Contour SGLD (Deng 2020)**: Those methods flatten the energy landscape but are tied to Langevin frameworks and stratification; SRMC is a general wrapper.
-*   **vs. Adam-style SGLD (Kim 2022)**: While similar in modifying drift with running averages, SRMC modifies the target itself, making it universal for any sampler with a CLT.
-*   **Insight**: Score-based history compression could be valuable for Variational Inference, Normalizing Flows, Diffusion guidance, and RL exploration—any scenario requiring a low-dimensional summary of history without breaking normalization.
+- **vs SRRW/HDT-MCMC**: These are limited to finite spaces due to $|\mathcal{X}|$-dimensional storage. SRMC is the "continuous/high-dimensional discrete" successor.
+- **vs Stein self-repulsive**: The latter requires a sample buffer and is only unbiased with an infinite buffer. SRMC has constant memory and is unbiased for finite $\alpha$.
+- **vs Metadynamics**: Those methods require density accumulation and reweighting; SRMC is inherently normalization-free.
+- **vs Adam-style SGLD**: While both modify drift with running averages, SRMC modifies the *target* rather than just the dynamics, making it applicable to any base sampler.
 
 <!-- RELATED:START -->
 

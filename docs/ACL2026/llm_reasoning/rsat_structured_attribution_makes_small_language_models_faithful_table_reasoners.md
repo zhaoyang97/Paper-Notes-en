@@ -2,77 +2,95 @@
 title: >-
   [Paper Note] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners
 description: >-
-  [ACL2026][LLM Reasoning][Table Reasoning] RSAT trains 1B-8B Small Language Models (SLMs) using "SFT with structured citation format + GRPO with NLI faithfulness as the core reward." This enables table QA to not only prov…
+  [ACL 2026][LLM Reasoning][GRPO] RSAT utilizes "SFT in structured citation format + GRPO with NLI faithfulness as the core reward" to train 1B-8B small language models. This approach enables table QA to not only provide answers but also bind each reasoning step to specific table cells, increasing average faithfulness from 0.224 in SFT to 0.826.
 tags:
-  - "ACL2026"
-  - "LLM Reasoning"
-  - "Table Reasoning"
-  - "Cell-level Citation"
-  - "GRPO"
-  - "Faithfulness"
-  - "Small Language Models"
+  - ACL 2026
+  - LLM Reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: 8157535d0bd8f044
+content_hash: c1af68f76f7341df
 ---
-
 # RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners
 
 **Conference**: ACL2026  
 **arXiv**: [2605.00199](https://arxiv.org/abs/2605.00199)  
 **Code**: https://github.com/JugalGajjar/RSAT  
-**Area**: LLM Reasoning / Table QA / Interpretable Attribution  
+**Area**: LLM Reasoning / Table QA / Explainable Attribution  
 **Keywords**: Table Reasoning, Cell-level Citation, GRPO, Faithfulness, Small Language Models
 
 ## TL;DR
-RSAT trains 1B-8B Small Language Models (SLMs) using "SFT with structured citation format + GRPO with NLI faithfulness as the core reward." This enables table QA to not only provide answers but also bind each reasoning step to specific table cells, improving average faithfulness from 0.224 in SFT to 0.826.
+RSAT utilizes "SFT in structured citation format + GRPO with NLI faithfulness as the core reward" to train 1B-8B small language models. This approach enables table QA to not only provide answers but also bind each reasoning step to specific table cells, increasing average faithfulness from 0.224 in SFT to 0.826.
 
 ## Background & Motivation
-**Background**: Table question answering and fact verification have explored various paths such as TAPAS, TAPEX, TaBERT, Binder, Chain-of-Table, and TaPERA. The primary objective has been improving answer accuracy or enabling models to perform table operations. Recent LLM-based methods generate chain-of-thought sequences, but these typically yield natural language reasoning processes without explicit grounding.
+**Background**: Table QA and table fact verification have established pathways such as TAPAS, TAPEX, TaBERT, Binder, Chain-of-Table, and TaPERA. The mainstream objective is to improve answer accuracy or enable the model to perform table operations. Recent LLM methods generate chain-of-thought, but usually provide only natural language reasoning processes.
 
-**Limitations of Prior Work**: When presented with an answer, users find it difficult to discern which specific cells the model relied upon. Table reasoning is frequently applied in audit-required scenarios like finance, news, and medicine, where "correct answers" alone are insufficient. If reasoning steps cannot be mapped to evidence cells, it remains impossible to determine whether the model reasoned correctly, succeeded by chance, or fabricated explanations post-hoc.
+**Limitations of Prior Work**: When users see an answer, it is difficult to know which cells the model relied upon. Table reasoning is often used in scenarios requiring auditing, such as finance, news, and medicine, where "correct answers" are insufficient. If reasoning steps cannot correspond to evidence cells, it is impossible to determine if the model performed correct reasoning, hit high by chance, or fabricated an explanation post-hoc.
 
-**Key Challenge**: While structured formats are easily imitated through supervised learning, ensuring that "cited cells truly support the reasoning step" is a matter of semantic faithfulness rather than formatting. Experimental results in the paper show that while SFT achieves a format success rate of nearly 99%, the average faithfulness remains around 22%.
+**Key Challenge**: Structural formats are easy to mimic through supervised learning, but whether the "cited cells actually support the reasoning step" is a matter of semantic faithfulness rather than format. Experiments in the paper demonstrate that SFT can achieve nearly 99% format success, but the average faithfulness remains around 22%.
 
-**Goal**: The authors aim to enable small models to generate auditable cell-level citations directly during reasoning generation, rather than appending citations after the answer is produced. Specifically, the model must simultaneously satisfy answer quality, JSON formatting, coordinate validity, evidence faithfulness, and citation conciseness.
+**Goal**: This work aims to enable small models to generate auditable cell-level citations directly during reasoning generation, rather than generating answers first and adding citations post-hoc. Specifically, it seeks to satisfy answer quality, JSON format, valid citation coordinates, faithful citation evidence, and citation conciseness simultaneously.
 
-**Key Insight**: RSAT treats "citation faithfulness" as a training objective. The authors first use a small set of verified structured traces to teach the model output formats, then utilize GRPO to optimize a composite reward on large-scale table QA data without traces, where NLI entailment directly measures whether cited cells support the reasoning step.
+**Key Insight**: RSAT designs "citation faithfulness" as a training objective. The authors first use a small number of validated structural traces to teach the model the output format, and then use GRPO to optimize a composite reward on large-scale table QA data without traces, where NLI entailment directly measures whether cited cells support the reasoning step.
 
-**Core Idea**: Attribution in table reasoning is transformed from a post-processing task into a reinforcement learning objective during generation. A computable faithfulness reward compels the small model to ground every reasoning step in actual cell evidence.
+**Core Idea**: Transform attribution in table reasoning from a post-processing task into a reinforcement learning objective during generation, using calculable faithfulness rewards to force small models to ground every reasoning step in real cell evidence.
 
 ## Method
-The methodology of RSAT is logically structured: first, fix the output space into a verifiable structure, and then use rewards to make this structure trustworthy. Instead of redesigning table encoders, it fine-tunes existing instruction models into "small reasoners capable of citing table evidence" via LoRA.
+The Mechanism of RSAT is straightforward: first fix the output space into a verifiable structure, and then use rewards to make this structure trustworthy. It does not seek to redesign the table encoder but trains existing instruction models via LoRA into "small reasoners capable of citing table evidence."
 
 ### Overall Architecture
-The input consists of a serialized table and a natural language question. The table is flattened into text with markers like `[HEADER]` and `[ROW 0]`, allowing the model to map `[row, col]` coordinates in the output back to the original cells. The output is a JSON object containing a set of `reasoning_steps`, where each step includes a natural language claim and a list of `cited_cells` coordinates, followed by a `final_answer`.
+The input consists of a serialized table and a natural language question. The table is flattened with markers like `[HEADER]` and `[ROW 0]`, allowing the model to map `[row, col]` coordinates in the output back to original cells. The output is a JSON object: a set of `reasoning_steps`, where each step contains a natural language claim and a list of `cited_cells` coordinates, followed by a `final_answer`.
 
-Training is split into two stages. The first stage is SFT, using 1,000 structured reasoning traces generated by Claude Opus 4.5 and verified by scripts to teach the model the required format. The second stage is GRPO, where the model samples 8 candidate outputs for the same question, scores them using a composite reward, and updates the policy based on relative advantages within the group. Evaluation covers Qwen 2.5 Instruct (1.5B/3B/7B) and Llama 3 Instruct (1B/3B/8B) using datasets from WTQ, FeTaQA, and TabFact.
+Training is divided into two stages. The first stage is SFT, using 1,000 structural reasoning traces generated by Claude Opus 4.5 and programmatically verified to teach the model the format. The second stage is GRPO, where the model samples 8 candidate outputs for the same question, scores them using a composite reward, and updates the policy based on relative advantages within the group. Evaluation covers Qwen 2.5 Instruct (1.5B/3B/7B) and Llama 3 Instruct (1B/3B/8B), with data from WTQ, FeTaQA, and TabFact.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Serialized table ([HEADER]/[ROW] markers) + Natural language question"]
+    A --> B["Structured cell-level reasoning output<br/>JSON: Claim per step + [row, col] citations + final_answer"]
+    subgraph T["Two-stage training (SFT for format + GRPO for quality)"]
+        direction TB
+        C["Stage 1 SFT<br/>1000 program-verified traces to stabilize JSON format and valid coordinates"]
+        C --> D["Stage 2 GRPO<br/>Sample 8 candidates per question → Update policy via relative group advantage"]
+    end
+    B --> C
+    subgraph R["NLI Faithfulness Composite Reward"]
+        direction TB
+        E["Composite Reward R = R_ans + 0.3·R_cite + 0.5·R_faith + 0.2·R_pars + R_fmt"]
+        E --> F["Core Term R_faith: DeBERTa-v3 NLI judges if cited cell evidence entails the step claim"]
+    end
+    D --> E
+    F -->|Reward feedback via group ranking| D
+    D --> G["Output: Auditable reasoning with each step bound to real cell evidence"]
+```
 
 ### Key Designs
-1.  **Structured Cell-level Reasoning Output**:
-    - **Function**: Consolidates answers, reasoning steps, and evidence coordinates into a parsable JSON, allowing each claim to be traced back to specific cells by humans or programs.
-    - **Mechanism**: Table serialization explicitly preserves row numbers and column positions; each reasoning step in the output must provide `[row, col]` coordinates. Consequently, citations are not at the paragraph or passage level but targeting the smallest auditable units in the table structure.
-    - **Design Motivation**: Errors in table reasoning often stem from selecting the wrong row or column or misinterpreting relationships between cells. Cell-level citations expose these errors and make "correct answer but incorrect evidence" visible.
 
-2.  **SFT for Format, GRPO for Quality**:
-    - **Function**: Decouples "output capability" from "output credibility" to avoid over-reliance on a small number of human or teacher traces.
-    - **Mechanism**: SFT traces only need to pass JSON, coordinate boundary, and step count checks to stabilize format learning. The GRPO stage requires no traces, using only the gold answer and reward functions to evaluate model-generated candidates.
-    - **Design Motivation**: The authors found that after SFT, format success and citation validity reached nearly 99%, but faithfulness was only 0.224, indicating that surface-level imitation of traces is insufficient for true grounding.
+**1. Structured cell-level reasoning output: Grounding evidence in the smallest auditable units**
 
-3.  **Composite Reward Centered on NLI Faithfulness**:
-    - **Function**: Simultaneously optimizes for answer accuracy, citation validity, faithfulness, conciseness, and format constraints.
-    - **Mechanism**: The reward is defined as $R=R_{ans}+0.3R_{cite}+0.5R_{faith}+0.2R_{pars}+R_{fmt}$. Specifically, $R_{faith}$ concatenates the values of cited cells into an evidence string and uses DeBERTa-v3-base NLI to determine if it entails the reasoning text; $R_{pars}$ penalizes excessive citations per step; and JSON parsing failures trigger a hard format penalty.
-    - **Design Motivation**: Rewarding only the answer leads the model to ignore citations, while rewarding only valid coordinates leads to random citations of real cells. NLI faithfulness transforms "whether citations support the claim" into an optimizable signal, representing the core design of the paper.
+When table reasoning fails, the root cause is often selecting the wrong row, the wrong column, or misinterpreting the relationship between several cells; however, if the answer is correct, these issues are masked. RSAT explicitly preserves row and column positions (using `[HEADER]`, `[ROW 0]`, etc.) during table serialization and requires each reasoning step in the output to include several `[row, col]` coordinates. Consequently, citation is no longer at the paragraph or passage level but at the smallest auditable unit in the table structure—each claim can be traced back to specific cells by a human or a program, exposing cases where the "answer is correct but evidence is wrong."
+
+**2. SFT for format, GRPO for quality: Decoupling "output capability" from "output trustworthiness"**
+
+Relying solely on a small number of human or teacher traces for all capabilities often results in the model performing only superficial imitation. RSAT therefore splits the process: the SFT phase uses 1,000 program-verified traces (valid JSON, valid coordinates, reasonable number of steps) to stabilize the format; the GRPO phase does not rely on traces at all, using only the gold answer and reward functions to evaluate candidates sampled by the model itself. The basis for this separation comes from a telling phenomenon—after SFT, the format success rate and citation validity already approach 99%, but the average faithfulness is only 0.224, indicating that "writing beautiful JSON" and "citations actually supporting reasoning" are two different capabilities, the latter of which cannot be achieved through supervised imitation.
+
+**3. Composite reward centered on NLI faithfulness: Transforming "supportive citations" into an optimizable signal**
+
+If only the answer is rewarded, the model may ignore citations; if only valid coordinates are rewarded, the model may randomly cite real but irrelevant cells. RSAT's composite reward simultaneously constrains the answer, citation validity, faithfulness, conciseness, and format:
+
+$$R=R_{ans}+0.3R_{cite}+0.5R_{faith}+0.2R_{pars}+R_{fmt}$$
+
+The most critical term with the highest weight is $R_{faith}$—it concatenates all cited cell values of a step into an evidence string and uses DeBERTa-v3-base NLI to determine if this evidence entails the natural language claim of that step. This quantifies "faithfulness" into a gradient signal that can be backpropagated. $R_{pars}$ penalizes citing too many cells at once (avoiding "shotgun" citations), and JSON parsing failures trigger a hard format penalty. It is this NLI term that closes the loop between table evidence, reasoning text, and RL objectives, forcing the small model to ground every reasoning step in real evidence.
 
 ### Loss & Training
-SFT employs LoRA on linear layers including Q/K/V/O, gate, up, and down, training for 3 epochs with a learning rate of approximately $2\times 10^{-4}$. For GRPO, a new LoRA is applied after merging SFT weights, training for 500 samples in 1 epoch. For each question, $G=8$ candidates are generated with a learning rate of $5\times 10^{-5}$ and a temperature of 0.9. The authors emphasize that GRPO is more efficient than PPO as it eliminates the critic, making it suitable for single-card H100 training; total training for the six main models and ablations was approximately 36.8 GPU-hours.
+SFT uses LoRA applied to linear layers including Q/K/V/O, gate, up, and down, training for 3 epochs with a learning rate of approximately $2\times 10^{-4}$. For GRPO, new LoRA weights are applied after merging SFT weights, training on 500 samples for 1 epoch. Each question generates $G=8$ candidates with a learning rate of $5\times 10^{-5}$ and a temperature of 0.9. The authors emphasize that GRPO is more suitable for single H100 GPU training as it eliminates the critic compared to PPO; total training for the six main models and ablations was approximately 36.8 GPU-hours.
 
 ## Key Experimental Results
 
 ### Main Results
-RSAT outperformed zero-shot, SFT-only, and post-hoc baselines across all six models. A key observation is that SFT nearly solves the formatting issue, but faithfulness remains low; GRPO significantly boosts faithfulness without sacrificing answer F1.
+RSAT outperformed zero-shot, SFT-only, and post-hoc baselines across all six models. The most significant finding is that while SFT almost solves the format issue, faithfulness remains low; GRPO significantly boosts faithfulness without sacrificing Answer F1.
 
 | Model | Method | Answer F1 | Citation Validity | Faithfulness | Conciseness | Format Success |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|------|-----------|------------|--------|--------|------------|
 | Qwen 1.5B | SFT | 0.371 | 0.995 | 0.149 | 0.918 | 0.998 |
 | Qwen 1.5B | RSAT | 0.524 | 0.996 | 0.847 | 0.990 | 0.998 |
 | Qwen 3B | SFT | 0.531 | 0.996 | 0.213 | 0.848 | 0.998 |
@@ -82,48 +100,48 @@ RSAT outperformed zero-shot, SFT-only, and post-hoc baselines across all six mod
 | Llama 8B | SFT | 0.555 | 0.996 | 0.288 | 0.830 | 0.998 |
 | Llama 8B | RSAT | 0.647 | 1.000 | 0.972 | 1.000 | 1.000 |
 
-The contributions of training stages are compelling. SFT improves format success by +0.61, citation validity by +0.64, and F1 by +0.34 over zero-shot, but only increases faithfulness by +0.19. From SFT to RSAT, formatting remains stable while faithfulness increases by another +0.60 and F1 by +0.09.
+The contributions of the training stages are also compelling. SFT brings an average of +0.61 format success, +0.64 citation validity, and +0.34 F1 over zero-shot, but only +0.19 faithfulness. From SFT to RSAT, the format remains nearly unchanged, while faithfulness improves by +0.60 and F1 by +0.09.
 
 ### Ablation Study
 
 | Configuration | F1 | Faithfulness | Conciseness | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Qwen 7B Full | 0.619 | 0.977 | 0.992 | Complete RSAT |
-| Qwen 7B w/o Faithfulness Reward | 0.635 | 0.117 | 1.000 | F1 rises slightly, but grounding collapses |
-| Qwen 7B w/o Conciseness Reward | 0.612 | 0.952 | 0.604 | Tends to over-cite (5-6 cells) |
-| Qwen 7B w/o Citation Validity Reward | 0.605 | 0.934 | 0.993 | Minor impact due to SFT learning coordinates |
-| Llama 8B Full | 0.647 | 0.972 | 1.000 | Complete RSAT |
-| Llama 8B w/o Faithfulness Reward | 0.638 | 0.031 | 0.996 | Faithfulness drops from near perfect to zero |
+|------|----|--------|--------|------|
+| Qwen 7B full | 0.619 | 0.977 | 0.992 | Full RSAT |
+| Qwen 7B w/o Faithfulness Reward | 0.635 | 0.117 | 1.000 | F1 increases slightly, but evidence grounding collapses |
+| Qwen 7B w/o Conciseness Reward | 0.612 | 0.952 | 0.604 | Tends to over-cite 5-6 cells |
+| Qwen 7B w/o Citation Validity Reward | 0.605 | 0.934 | 0.993 | Minor impact since SFT already learned coordinate validity |
+| Llama 8B full | 0.647 | 0.972 | 1.000 | Full RSAT |
+| Llama 8B w/o Faithfulness Reward | 0.638 | 0.031 | 0.996 | Faithfulness drops from near perfect to almost invalid |
 
 ### Key Findings
-- **Post-hoc attribution** is largely unusable for small models, with an average format success rate of only 12.7% (Qwen 3B at 0.4%). This suggests that "free reasoning followed by coordinate filling" places excessive demands on working memory and table look-up capabilities.
-- **Qwen** significantly outperforms Llama at smaller scales: at ~3B, Qwen reaches 0.946 faithfulness compared to Llama 3B's 0.735; they converge at the 7B/8B scale.
-- **Faithfulness reward** is the only irreplaceable signal. Without it, the model still generates structured JSON and valid coordinates, but these citations no longer support the reasoning.
+- Post-hoc attribution is nearly unusable on small models, with an average format success rate of only 12.7% and only 0.4% for Qwen 3B. This indicates that "reasoning freely before patching coordinates" places excessive demand on working memory and table look-back capabilities.
+- Qwen significantly outperforms Llama at smaller scales: at approx 3B, Qwen reaches 0.946 faithfulness, whereas Llama 3B is at 0.735; they converge at 7B/8B.
+- The faithfulness reward is the only irreplaceable signal. Without it, models still output clean JSON and valid coordinates, but these citations no longer truly support the reasoning.
 
 ## Highlights & Insights
-- This paper converts attribution from "explaining generated results" into a "training objective during generation," which is a clean conceptual shift. It serves as a reminder that format constraints and evidence faithfulness are distinct capabilities; format success cannot substitute for grounding quality.
-- Using NLI as a step-level reward is highly practical. despite potential proxy bias, it creates a computable closed loop between table evidence, reasoning text, and RL targets suitable for SLM training.
-- The failure of the post-hoc baseline is a significant negative result. While many interpretability systems assume "citing after answering" is feasible, RSAT demonstrates that in SLMs and structured table scenarios, citations must be intrinsic to the generation process.
-- This paradigm is transferable to other structured evidence scenarios like knowledge graphs, code execution results, or tool-call logs: define an auditable output structure, then optimize with task-specific rewards.
+- This paper concisely transforms attribution from "explaining generation results" into a "training objective during generation." It reminds us that format constraints and evidence faithfulness are two different capabilities—format success cannot substitute for grounding quality.
+- Using NLI as a step-level reward is practical. Although proxy bias exists, it establishes a calculable closed loop between table evidence, reasoning text, and RL objectives, suitable for training small models.
+- The failure of the post-hoc baseline is a significant negative result. Many interpretability systems assume "adding citations after the answer" is feasible, but RSAT shows that in small models and structured table scenarios, citations must be endogenous to the generation process.
+- This paradigm is transferable to other structured evidence scenarios like knowledge graphs, code execution results, and tool call logs: first define an auditable output structure, then use task-specific rewards to optimize output quality.
 
 ## Limitations & Future Work
-- The primary limitation is that both the training reward and the main evaluation metric rely on the same DeBERTa NLI scorer, creating a train-eval circularity. The model might learn to satisfy the scorer's linguistic preferences rather than human judgments of faithfulness.
-- Evaluation is limited to WTQ, FeTaQA, and TabFact, leaving generalization to complex schemas like financial statements or clinical tables unverified.
-- Exact Match (EM) is very low (0.000-0.018), suggesting instability in matching gold strings. The paper relies on F1, which complicates direct comparisons with traditional table QA systems.
-- The conciseness reward may lead to overly short outputs or excessive compression of reasoning steps. Balancing "succinctness" and "explanatory power" requires further study.
-- Human evaluation is a necessary next step, particularly to verify if NLI-deemed faithful citations are acceptable to human auditors.
+- The primary limitation is that both the training reward and the main evaluation metric rely on the same DeBERTa NLI scorer, creating a train-eval circularity. Models might learn to cater to the linguistic preferences of that scorer rather than perfectly corresponding to human judgments of faithfulness.
+- Evaluation covers only WTQ, FeTaQA, and TabFact, and has not yet verified generalization across more complex schemas like financial statements, clinical tables, or scientific datasets.
+- EM (Exact Match) ranges only from 0.000 to 0.018, indicating that the mapping between answer expressions and gold strings remains unstable. The paper relies mainly on F1, which affects direct comparison with traditional table QA systems.
+- The conciseness reward made some models significantly shorter, potentially over-compressing reasoning steps. Future research is needed on the balance between being "sufficiently concise" and "sufficiently explanatory."
+- Human evaluation is a necessary next step, especially to verify whether citations deemed faithful by NLI are truly acceptable to human auditors.
 
 ## Related Work & Insights
-- **vs TAPAS / TAPEX / TaBERT**: These focus on table understanding and accuracy, whereas RSAT focuses on the step-level evidence behind the answer. RSAT complements rather than replaces table encoders by adding an auditable output layer.
-- **vs Chain-of-Table / TaPERA**: These emphasize reasoning via table transformations or program decomposition. RSAT emphasizes citing original cells for every step, providing finer granularity.
-- **vs Self-RAG / ALCE / RARR**: These textual attribution methods typically handle passage-level evidence. RSAT extends attribution to cell-level structured evidence via direct RL training.
-- **vs Post-hoc Attribution**: Post-hoc methods require a second pass to map text to coordinates. RSAT generates them synchronously in the first pass, making it more suitable for small models.
+- **vs TAPAS / TAPEX / TaBERT**: These methods focus on table understanding and answer accuracy; RSAT focuses on the step-level evidence behind those answers. It supplements rather than replaces the table encoder with an auditable output layer.
+- **vs Chain-of-Table / TaPERA**: The latter emphasize reasoning through table transformations or program decomposition; RSAT emphasizes that every reasoning step must cite original cells, providing finer explanation granularity.
+- **vs Self-RAG / ALCE / RARR**: These text attribution methods typically handle passage-level evidence; RSAT extends attribution to cell-level structured evidence and directly trains small models via RL.
+- **vs post-hoc attribution**: Post-hoc requires the model to map free text back to table coordinates in a second pass, whereas RSAT produces citations synchronously during the first pass of generation, making it better suited for small models.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ Combines GRPO and cell-level faithful attribution naturally; the core value is target design rather than a totally new algorithm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Solid results across six models and three datasets with post-hoc controls and reward ablations, though lacking human evaluation and cross-domain validation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear problem definitions, stage-wise contributions, and ablation conclusions; negative results are well-explained.
-- **Value**: ⭐⭐⭐⭐⭐ Highly insightful for deploying SLMs in auditable table reasoning, especially regarding grounded reasoning design in high-stakes domains.
+- Novelty: ⭐⭐⭐⭐☆ Combines GRPO and cell-level faithful attribution naturally; the core is not a brand-new algorithm but a precisely designed objective.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Six models, three data sources, post-hoc controls, and reward ablations are solid, but lacks human faithfulness evaluation and cross-domain table validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Problem definition, stage contributions, and ablation conclusions are very clear; negative results are well-explained.
+- Value: ⭐⭐⭐⭐⭐ Highly instructive for deploying small models requiring auditable table reasoning, especially suitable for grounded reasoning design in high-risk domains.
 
 <!-- RELATED:START -->
 
@@ -134,8 +152,8 @@ The contributions of training stages are compelling. SFT improves format success
 - [\[AAAI 2026\] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger](../../AAAI2026/llm_reasoning/sapo_self-adaptive_process_optimization_makes_small_reasoners_stronger.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
-- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 - [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
+- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 
 </div>
 

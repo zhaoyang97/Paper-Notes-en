@@ -2,177 +2,175 @@
 title: >-
   [Paper Note] All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
 description: >-
-  [CVPR2026][Human Understanding][deepfake detection] This paper proposes LIDMark, the first proactive forensics framework that unifies deepfake detection, tampering localization…
+  [CVPR 2026][Human Understanding][deepfake detection] This paper proposes LIDMark, the first framework to unify deepfake detection, tampering localization, and source tracing into a single proactive forensics system. By embedding a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID), it utilizes intrinsic/extrinsic consistency to achieve th
 tags:
-  - "CVPR2026"
-  - "Human Understanding"
-  - "deepfake detection"
-  - "watermarking"
-  - "tampering localization"
-  - "source tracing"
-  - "proactive forensics"
-  - "facial landmark"
+  - CVPR 2026
+  - Human Understanding
+  - deepfake detection
+  - watermarking
+  - tampering localization
+  - source tracing
+  - proactive forensics
+  - facial landmark
 date: 2026-05-08
-content_hash: 8584c9c212f8b791
+content_hash: ffaf3a38b4b550ef
 ---
-
 # All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.23523](https://arxiv.org/abs/2602.23523)  
 **Code**: [GitHub](https://github.com/vpsg-research/LIDMark)  
-**Area**: Human Understanding
+**Area**: Human Understanding  
 **Keywords**: deepfake detection, watermarking, tampering localization, source tracing, proactive forensics, facial landmark
 
 ## TL;DR
 
-This paper proposes LIDMark, the first proactive forensics framework that unifies deepfake detection, tampering localization, and source tracing within a single watermarking scheme. By embedding a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID) and leveraging intrinsic/extrinsic consistency, LIDMark achieves three-in-one forensics while surpassing existing methods in both PSNR/SSIM and detection accuracy.
+This paper proposes LIDMark, the first framework to unify deepfake detection, tampering localization, and source tracing into a single proactive forensics system. By embedding a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID), it utilizes intrinsic/extrinsic consistency to achieve three-in-one forensics, outperforming existing methods in both PSNR/SSIM and detection accuracy.
 
 ## Background & Motivation
 
-The rapid advancement of deepfake technology poses severe security threats. Existing forensic methods fall into two broad categories:
+The rapid development of Deepfake technology poses serious security threats. Existing forensic methods fall into two categories:
 
-**Passive forensics**: Forgery traces are extracted directly from images for detection. Key limitations include: (a) only binary classification (real/fake) is supported, with no ability to localize tampered regions or trace sources; (b) poor generalization, with performance degrading sharply on unseen forgery methods.
+**Passive Forensics**: Directly extracts forgery traces from images for detection. Problems include: (a) Only supports binary classification (real/fake), failing to localize tampered regions or trace sources; (b) Poor generalization, with performance dropping sharply on unseen forgery methods.
 
-**Proactive forensics (watermarking)**: Watermarks are embedded in images in advance, and forensic analysis is performed by monitoring watermark preservation or destruction. Limitations of existing watermarking methods (e.g., FaceSigns, MBRS, PIMoG) include:
-   - Most support detection only, without tampering localization
-   - Limited watermark capacity (typically 30 bits), insufficient for encoding multiple types of information simultaneously
-   - Detection and localization require different watermark designs, making unification difficult
+**Proactive Forensics (Watermarking)**: Embeds a watermark into the image beforehand and performs forensics by analyzing the destruction or retention of the watermark. Limitations of current methods (e.g., FaceSigns, MBRS, PIMoG):
+   - Most only support detection, not tampering localization.
+   - Limited watermark capacity (usually 30 bits) makes it difficult to encode multiple types of information simultaneously.
+   - Detection and localization require different watermark designs, making unification difficult.
 
-**Core Insight**: Facial landmarks inherently possess two complementary properties — (1) sensitivity to tampering (landmark distributions shift after face swapping), making them suitable for localization; and (2) the source identity ID needs to be robust against forgery, making it suitable for source tracing. Encoding both into a unified watermark simultaneously addresses all three forensic tasks.
+**Key Insight**: Facial landmarks naturally possess two complementary properties: (1) Sensitivity to tampering (landmark distribution changes after a face swap), making them suitable for localization; (2) Identity (ID) components that need to be robust to forgery, making them suitable for source tracing. Encoding both as a unified watermark addresses all three forensic tasks.
 
 ## Core Problem
 
-How to design a unified proactive forensics framework that achieves the following within a single watermark:
-- **Deepfake Detection**: Determining whether an image has been tampered with
-- **Tampering Localization**: Precisely identifying the tampered facial regions
-- **Source Tracing**: Tracing the original source identity of the image
+How to design a unified proactive forensic framework that achieves the following within a single watermark:
+- **Deepfake Detection**: Determining if an image has been tampered with.
+- **Tampering Localization**: Precisely localizing the tampered facial regions.
+- **Source Tracing**: Tracing the original source identity of the image.
 
 ## Method
 
-### LIDMark Watermark Design (152-dimensional)
+### Overall Architecture
 
-The watermark consists of two components:
+LIDMark is a proactive forensic framework: before an image is released, an encoder embeds a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID) into the face image, resulting in a watermarked image $I_w = E(I, m)$. When this image is face-swapped or tampered with, the decoder recovers the originally embedded watermark and compares it with the landmarks re-detected from the current image. The discrepancy between "intrinsic vs. extrinsic" data simultaneously supports authenticity judgment, tampering localization, and source tracing, consolidating previously separate tasks into a single pipeline.
 
-- **Landmark Component (136D)**: The $(x, y)$ coordinates of 68 facial landmarks, normalized to $[0,1]$. This component is sensitive to tampering — after face swapping, the recovered watermark landmarks become inconsistent with those detected on the current image.
-- **Identity Component (16D)**: Binary encoding of the source identity ID. This component is designed to be robust against various forgery operations and is used for source tracing.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Original Image I + 152D Landmark-Identity Watermark<br/>(136D Landmarks + 16D Source ID)"] --> ENC
+    subgraph ENC["Dual-Stream Encoder"]
+        direction TB
+        B["Image Stream: SEResNet Content Extraction"] --> D["Fusion + Skip Connection"]
+        C["Watermark Stream: DiffusionNet Feature Expansion"] --> D
+    end
+    ENC --> E["Watermarked Image I_w"]
+    E -->|"Face Swap / Tamper Attack"| F["Tampered Image"]
+    subgraph FHD["FHD Factorized Decoder"]
+        direction TB
+        G["Shared Backbone"] --> H["Regression Head: Intrinsic Landmarks"]
+        G --> I["Classification Head: 16D Identity"]
+    end
+    F --> FHD
+    F -->|"dlib On-site Detection"| J["Extrinsic Landmarks"]
+    H --> K["Intrinsic-Extrinsic Consistency Detection<br/>AED Comparison"]
+    J --> K
+    K -->|"AED > Threshold"| L["Deepfake Detection: Authenticity Judgment"]
+    K -->|"Large Point-wise Offset"| M["Tampering Localization: Offset Area"]
+    I --> N["Source Tracing: Recovered 16D Identity"]
+```
 
-### Encoder: Dual-Stream Fusion Network
+### Key Designs
 
-The encoder adopts a dual-stream architecture to embed the watermark into the image:
+**1. 152D Landmark-Identity Watermark: Upgrading Watermarks to Semantic Encoding**
 
-- **Image Stream**: SEResNet-based feature extraction capturing image content features
-- **Watermark Stream**: DiffusionNet-based watermark processing, mapping the 152-dimensional vector to a feature map of the same spatial size as the image
-- **Fusion Mechanism**: Features from both streams are fused via concatenation, with skip connections added to preserve image quality
+Traditional proactive forensics treats watermarks as arbitrary bitstrings (usually 30 bits), which are insufficient for multi-source information or localization. LIDMark uses 136 dimensions for $(x, y)$ coordinates of 68 facial landmarks (normalized to $[0, 1]$) and 16 dimensions for binary source identity encoding. These two parts are complementary: landmarks are sensitive to tampering (recovered landmarks will mismatch the current face after swapping, aiding localization), while identity codes are designed to be robust (aiding source tracing). This semantic watermark allows a single image to encode both appearance and identity.
 
-The embedding process is formulated as: $I_w = E(I, m)$, where $I$ is the original image and $m = [m_{\text{land}}, m_{\text{id}}]$ is the 152-dimensional watermark.
+**2. Dual-Stream Encoder + FHD Factorized Decoder: Efficient Embedding and Extraction**
 
-### FHD: Factorized-Head Decoder
+The encoder uses a dual-stream architecture: an image stream (SEResNet) for content features and a watermark stream (DiffusionNet) to expand the 152D vector into a feature map. These are fused with skip connections to preserve quality, such that $I_w = E(I, m)$, where $m = [m_{\text{land}}, m_{\text{id}}]$. The Factorized Head Decoder (FHD) uses a shared backbone to extract features, branching into a regression head for landmarks $\hat{m}_{\text{land}}$ (L1 loss) and a classification head for identity $\hat{m}_{\text{id}}$ (BCE loss). This sharing enables task synergy and parameter efficiency.
 
-The decoder adopts a unified Factorized-Head Decoder (FHD) design:
+**3. Intrinsic-Extrinsic Consistency Detection: The Forensic Pivot**
 
-- **Shared Backbone**: Extracts common feature representations from the watermarked image
-- **Regression Head**: Outputs 136-dimensional landmark coordinates $\hat{m}_{\text{land}}$, trained with L1 loss
-- **Classification Head**: Outputs 16-dimensional source ID $\hat{m}_{\text{id}}$, trained with BCE loss
-
-FHD is more unified and parameter-efficient than a dual-decoder design, and the shared backbone enables mutual benefit between the two tasks.
-
-### Intrinsic–Extrinsic Consistency Detection
-
-This is the key mechanism enabling three-in-one forensics:
-
-1. **Intrinsic Landmarks**: Landmarks $\hat{m}_{\text{land}}$ recovered by FHD from the watermarked image (i.e., the original landmarks embedded at encoding time)
-2. **Extrinsic Landmarks**: Landmarks $m_{\text{ext}}$ re-detected on the current image using an external facial landmark detector (e.g., dlib)
-
-**Detection Logic**:
-
-- **Global Detection**: The Average Euclidean Distance (AED) is computed as $\text{AED} = \frac{1}{68}\sum_{i=1}^{68} \| \hat{p}_i - p_i^{\text{ext}} \|_2$. If AED exceeds threshold $\tau$, the image is classified as forged.
-- **Region-Level Localization**: Spatial analysis of per-landmark displacement identifies regions with large deviations as tampered areas.
-- **Source Tracing**: The 16D ID decoded by the classification head identifies the original source.
-
-### Two-Stage Training Strategy
-
-- **Stage 1 – Pre-training**: The encoder–decoder is trained with standard image distortions (JPEG compression, Gaussian noise, cropping, etc.) to establish basic watermark embedding and extraction capabilities.
-- **Stage 2 – Fine-tuning**: The model is fine-tuned using forged images generated by deepfake methods (SimSwap, UniFace, CSCS, StarGAN-v2) to enhance robustness in deepfake scenarios.
+With a recoverable semantic watermark, detection becomes a consistency check. Intrinsic landmarks $\hat{m}_{\text{land}}$ are recovered from the watermark (representing the original face), while extrinsic landmarks $m_{\text{ext}}$ are detected from the current image (e.g., via dlib).
+- **Detection**: Calculated via Average Euclidean Distance $\text{AED} = \frac{1}{68}\sum_{i=1}^{68} \| \hat{p}_i - p_i^{\text{ext}} \|_2$; if $\text{AED} > \tau$, the image is forged.
+- **Localization**: High-offset points indicate the tampered region.
+- **Tracing**: Derived directly from the classification head's 16D identity output.
 
 ### Loss & Training
 
-The total training loss is:
+Training follows two stages: Stage 1 pre-trains the encoder-decoder using conventional distortions (JPEG, noise, cropping). Stage 2 fine-tunes the model on forged images from SimSwap, UniFace, CSCS, and StarGAN-v2 to strengthen deepfake robustness. The total loss is:
 
 $$\mathcal{L} = \lambda_1 \mathcal{L}_{\text{image}} + \lambda_2 \mathcal{L}_{\text{land}} + \lambda_3 \mathcal{L}_{\text{id}}$$
 
-where $\mathcal{L}_{\text{image}}$ is the image quality loss (L2 + LPIPS), $\mathcal{L}_{\text{land}}$ is the L1 regression loss for landmarks, and $\mathcal{L}_{\text{id}}$ is the BCE classification loss for the identity component.
+Where $\mathcal{L}_{\text{image}}$ is the quality loss (L2 + LPIPS), $\mathcal{L}_{\text{land}}$ is the landmark regression L1 loss, and $\mathcal{L}_{\text{id}}$ is the ID classification BCE loss.
 
 ## Key Experimental Results
 
-### Main Results
-
-#### Image Quality
+### Image Quality
 
 | Resolution | PSNR ↑ | SSIM ↑ | Capacity |
 |------------|--------|--------|----------|
-| 128×128 | **40.22** | **0.98** | 152 bits |
-| 256×256 | **44.31** | **0.99** | 152 bits |
-| Best Baseline (MBRS) | 38.76 | 0.97 | 30 bits |
+| 128×128    | **40.22** | **0.98** | 152 bits |
+| 256×256    | **44.31** | **0.99** | 152 bits |
+| Best Baseline (MBRS)| 38.76 | 0.97 | 30 bits |
 
-Despite substantially higher capacity (152 bits vs. 30 bits), LIDMark achieves superior image quality compared to all baselines.
+Even with higher capacity, LIDMark outperforms all baselines in image quality.
 
-#### Deepfake Detection Performance
+### Deepfake Detection Performance
 
-| Dataset | Method | AUC ↑ |
-|---------|--------|-------|
-| CelebA-HQ | LIDMark | **Best** |
-| LFW | LIDMark | **Best** |
+| Dataset    | Method  | AUC ↑ |
+|------------|---------|-------|
+| CelebA-HQ  | LIDMark | **Best** |
+| LFW        | LIDMark | **Best** |
 
-LIDMark achieves the best detection AUC on both CelebA-HQ and LFW compared to existing proactive forensics methods.
+LIDMark achieves superior AUC compared to existing proactive forensic methods on CelebA-HQ and LFW.
 
-#### Tampering Localization Accuracy
+### Tampering Localization Accuracy
 
-Through region-level landmark displacement analysis, LIDMark generates tampering heatmaps that closely correspond to face-swapped regions, with IoU significantly outperforming methods based on global watermark differences.
+LIDMark produces tampering heatmaps highly consistent with face-swapped regions through point-wise offset analysis, outperforming methods based on global watermark discrepancies.
 
-#### Source Tracing Accuracy
+### Source Tracing Accuracy
 
-The 16D identity component achieves over 95% recovery accuracy after various forgery attacks, validating the effectiveness of the robustness design for the ID component.
+The 16D ID recovery accuracy remains above 95% after various forgery attacks, proving the robustness of the identity component.
 
 ### Ablation Study
 
-| Component | PSNR | Detection AUC | Notes |
-|-----------|------|---------------|-------|
+| Component | PSNR | Detection AUC | Description |
+|-----------|------|---------------|-------------|
 | Full LIDMark | 40.22 | Best | — |
-| w/o skip connection | 38.5 | Degraded | Significant image quality drop |
-| Dual decoder instead of FHD | 39.8 | Comparable | More parameters, slightly lower quality |
-| Stage 1 training only | 40.1 | Degraded | Not robust to deepfakes |
+| No skip connection | 38.5 | Lower | Significant drop in image quality |
+| Dual Decoders instead of FHD | 39.8 | Comparable | More parameters, slight quality drop |
+| Stage 1 Training Only | 40.1 | Lower | Not robust to deepfake attacks |
 
 ## Highlights & Insights
 
-1. **Three-in-One Unified Framework**: For the first time, detection, localization, and tracing are unified within a single watermarking scheme, eliminating the need for separate watermark designs per task.
-2. **The 152-Dimensional Watermark Design is Highly Elegant**: It exploits the natural dual properties of facial landmarks (tamper-sensitivity + semantic richness), elevating watermarking from "bit encoding" to "semantic encoding."
-3. **Intrinsic–Extrinsic Consistency** is the core innovation — reformulating watermark recovery as a consistency verification problem naturally extends detection to localization.
-4. **FHD Factorized Decoding**: A shared backbone with task-specific heads is more efficient than a decoupled design and enables mutual task reinforcement.
-5. **High Image Quality at High Capacity**: At 152 bits — far exceeding existing methods (30 bits) — LIDMark still achieves superior PSNR/SSIM.
+1. **Unified Framework**: First to unify detection, localization, and tracing into a single watermark scheme.
+2. **Ingenious Watermark Design**: Exploits the dual attributes of landmarks (tamper-sensitivity + semantic richness) to move from "bit encoding" to "semantic encoding."
+3. **Intrinsic-Extrinsic Consistency**: The core innovation that transforms forensics into a consistency check, naturally extending detection to localization.
+4. **FHD Factorized Decoding**: A shared backbone with task-specific heads is more efficient than separate designs.
+5. **High Capacity with High Quality**: Achieves 152 bits capacity—far exceeding the 30 bits of prior work—while maintaining superior PSNR/SSIM.
 
 ## Limitations & Future Work
 
-1. **Fundamental Constraint of Proactive Forensics**: Watermarks must be embedded before image distribution; the framework is inapplicable to existing un-watermarked images.
-2. **Resolution Limitation**: Experiments are conducted only at 128×128 and 256×256; scalability to high resolutions (1024+) remains unclear.
-3. **Coverage of Forgery Methods**: Fine-tuning uses only four deepfake methods; generalization to emerging forgery techniques (e.g., diffusion model-based generation) warrants further investigation.
-4. **Dependency on Landmark Detectors**: Extrinsic consistency relies on the accuracy of detectors such as dlib; detector failures adversely affect the framework.
-5. **Adversarial Robustness**: Robustness against adversarial watermark removal attacks is not discussed.
+1. **Proactive Nature**: Requires embedding before image release; ineffective for existing legacy images.
+2. **Resolution Constraints**: Experiments only cover 128×128 and 256×256; high-resolution (1024+) scalability is unverified.
+3. **Forgery Coverage**: Fine-tuning used 4 methods; generalization to newer generative techniques (e.g., Diffusion Models) requires further study.
+4. **Detector Dependency**: Accuracy depends on the extrinsic landmark detector (e.g., dlib); failures in detection affect the framework.
+5. **Adversarial Robustness**: Robustness against targeted adversarial watermark removal attacks was not extensively discussed.
 
 ## Related Work & Insights
 
-- Compared to **FaceSigns** (Neekhara et al., 2022): FaceSigns supports detection only (watermark present/absent), whereas LIDMark extends to localization and tracing.
-- Compared to **MBRS** (Jia et al., 2021): MBRS has only 30-bit capacity and no tampering localization; LIDMark provides 152 bits with localization.
-- Compared to passive methods (**Xception**, **Face X-ray**): Passive methods require no preprocessing but generalize poorly; LIDMark trades deployment convenience for reliable three-in-one capability.
-- **Insight**: Watermarks need not be arbitrary bit strings — encoding watermarks using domain semantics (e.g., landmarks) can achieve functionality far beyond conventional watermarking. This idea is transferable to other domains (e.g., anatomical keypoints in medical imaging, landmark encoding in remote sensing).
+- Compared to **FaceSigns** (2022): FaceSigns only handles detection; LIDMark extends to localization and tracing.
+- Compared to **MBRS** (2021): MBRS lacks localization and has low capacity (30 bits); LIDMark provides 152 bits and localization.
+- Compared to passive methods (**Xception**, **Face X-ray**): Passive methods generalize poorly; LIDMark trades deployment convenience for reliable three-in-one capabilities.
+- **Insight**: Watermarks do not have to be arbitrary bits. Utilizing domain semantics (landmarks) allows for functionality far beyond traditional watermarking, a concept that could be applied to medical or satellite imagery.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First three-in-one proactive forensics framework with an elegant watermark design
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dataset, multi-baseline comparisons are thorough, but high-resolution and broader forgery method evaluations are lacking
-- **Value**: ⭐⭐⭐⭐ — Clear practical value for proactive forensics scenarios, contingent on pre-embedding requirements
-- **Writing Quality**: ⭐⭐⭐⭐ — Framework is described clearly with well-motivated rationale
-- **Overall**: ⭐⭐⭐⭐ (4.0/5)
+- **Novelty**: ⭐⭐⭐⭐⭐ — First three-in-one proactive framework with ingenious watermark design.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Strong baseline comparisons, though lacks verification on ultra-high-resolution models.
+- **Value**: ⭐⭐⭐⭐ — High practical value for proactive forensics.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear framework description and logical motivation.
+- **Overall Rating**: ⭐⭐⭐⭐ (4.0/5)
 
 <!-- RELATED:START -->
 
@@ -181,10 +179,10 @@ The 16D identity component achieves over 95% recovery accuracy after various for
 ## Related Papers
 
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[CVPR 2026\] Face Time Traveller: Travel Through Ages Without Losing Identity](face_time_traveller_travel_through_ages_without_losing_identity.md)
-- [\[CVPR 2026\] A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_hete.md)
-- [\[CVPR 2026\] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis](openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_.md)
-- [\[CVPR 2026\] Beyond the Fold: Quantifying Split-Level Noise and the Case for Leave-One-Dataset-Out AU Evaluation](beyond_the_fold_quantifying_split-level_noise_and_the_case_for_leave-one-dataset.md)
+- [\[CVPR 2026\] BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition](barbiegait_an_identity-consistent_synthetic_human_dataset_with_versatile_cloth-c.md)
+- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
+- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
+- [\[CVPR 2025\] Two is Better than One: Efficient Ensemble Defense for Robust and Compact Models](../../CVPR2025/human_understanding/two_is_better_than_one_efficient_ensemble_defense_for_robust_and_compact_models.md)
 
 </div>
 

@@ -2,81 +2,77 @@
 title: >-
   [Paper Note] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation
 description: >-
-  [ICML 2026][Multi-Agent][Multi-agent collaboration] RADAR reformulates the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a g…
+  [ICML 2026][Multi-Agent][effective size] RADAR models the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a guidance signal to incrementally generate query-adaptive collaboration graphs, it achieves higher accuracy, lower token consumption, and stronger robustness ac
 tags:
-  - "ICML 2026"
-  - "Multi-Agent"
-  - "Multi-agent collaboration"
-  - "Graph diffusion"
-  - "Communication topology"
-  - "effective size"
-  - "redundancy-aware"
+  - ICML 2026
+  - Multi-Agent
+  - effective size
 date: 2026-05-08
-content_hash: d95edd3cc0a254a2
+content_hash: d0984fb8d4114d4b
 ---
-
 # RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.09907](https://arxiv.org/abs/2605.09907)  
 **Code**: https://github.com/cszhangzhen/RADAR  
-**Area**: Multi-Agent Systems / Graph Diffusion Models / LLM Agent  
-**Keywords**: Multi-agent collaboration, Graph diffusion, Communication topology, effective size, redundancy-aware
+**Area**: Multi-Agent Systems / Graph Diffusion Models / LLM Agents  
+**Keywords**: Multi-agent collaboration, graph diffusion, communication topology, effective size, redundancy-aware
 
 ## TL;DR
-RADAR reformulates the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a guiding signal, it incrementally generates query-adaptive collaboration graphs, achieving higher accuracy, lower token consumption, and stronger robustness across 6 benchmarks.
+RADAR models the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a guidance signal to incrementally generate query-adaptive collaboration graphs, it achieves higher accuracy, lower token consumption, and stronger robustness across six benchmarks.
 
 ## Background & Motivation
 
-**Background**: Multi-LLM-Agent systems (LLM-Debate, MetaGPT, AutoGen, etc.) have proven significantly more capable than single agents. However, their critical bottleneck lies in the "communication topology"—who talks to whom and in what order. Early methods utilized fixed manual structures like chain, star, tree, or fully-connected. Works from the past year (GPTSwarm, G-Designer, MaAS, ARG-Designer, GTD) have shifted toward "automated topology design."
+**Background**: LLM-Agent multi-agent systems (e.g., LLM-Debate, MetaGPT, AutoGen) have proven far more capable than single agents. However, their critical bottleneck lies in the "communication topology"—who talks to whom and in what order. Early methods relied on fixed manual structures like chain, star, tree, or fully-connected. In the past year, research (GPTSwarm, G-Designer, MaAS, ARG-Designer, GTD) has shifted toward "automated topology design."
 
-**Limitations of Prior Work**: Automated approaches fall into three categories, each with issues. First, agentic profiling (coordinated by a meta-agent) suffers from single-point bottlenecks. Second, search-based methods (heuristic search in topology space) are computationally expensive and not scalable. Third, graph learning (using VAEs to predict the whole graph at once) produces coarse generation that fails to capture detailed dependencies. Moreover, increased structural complexity leads to excessive token consumption—cited data shows complex topologies can consume $2 \sim 11.8\times$ more tokens than chains. AgentPrune and others mitigate this via pruning, but these "post hoc" fixes only modify fixed agent sets and cannot design from scratch under efficiency constraints.
+**Limitations of Prior Work**: Automated approaches generally follow three paths, each with flaws: 1) Agentic profiling (coordination via a meta-agent), which suffers from single-point bottlenecks; 2) Search-based (heuristic search of the topology space), which is computationally expensive and non-scalable; 3) Graph learning (one-shot prediction via VAEs, etc.), where generation is too coarse to capture detailed dependencies. More critically, structural complexity causes token explosion—cited data shows complex topologies consume $2 \sim 11.8\times$ more tokens than chain structures. Methods like AgentPrune or Wang et al. perform pruning as a "post-hoc" patch on fixed agent sets, failing to design from scratch under efficiency constraints.
 
-**Key Challenge**: The contradiction between expressiveness (topologies must be complex enough for hard problems) and efficiency (token costs cannot explode). Existing methods either sacrifice one or treat them as independent sub-problems.
+**Key Challenge**: The contradiction between expressiveness (topology must be complex enough for hard problems) and efficiency (tokens cannot explode). Existing methods either sacrifice one or treat them as independent sub-problems.
 
-**Goal**: Explicitly model "redundancy" during the communication graph generation process, allowing structural formation and redundancy control to proceed jointly while supporting query-adaptivity (sparse for easy tasks, dense for hard tasks).
+**Goal**: To explicitly model "redundancy" during the communication graph generation process, performing structure formation and redundancy control jointly; and to support query-adaptivity, using sparse structures for simple queries and dense structures for hard ones.
 
-**Key Insight**: The authors borrow "effective size" from social network analysis (Burt 1992), which measures the proportion of non-redundant information in a node's ego network. If two neighbors are highly interconnected, the information they provide overlaps, resulting in low effective size. Integrating this into the graph diffusion process provides a natural "redundancy metric" as a guiding signal.
+**Key Insight**: Borrowing "effective size" (Burt 1992) from social network analysis—the proportion of non-redundant information in a node's ego network. If two neighbors are themselves highly connected, the information they provide overlaps, resulting in a low effective size. Inserting this concept into the graph diffusion process provides a natural "redundancy metric" as a guidance signal for generation.
 
-**Core Idea**: Reformulate multi-agent communication topology design as an "effective size-guided + query-conditioned" discrete graph diffusion problem, denoising the final topology step-by-step from an empty graph.
+**Core Idea**: Reformulate multi-agent communication topology design as an "effective size-guided + query-conditioned" discrete graph diffusion problem, denoising from an empty graph to the final topology step-by-step.
 
 ## Method
 
 ### Overall Architecture
 
-Input: Task query $\mathcal{Q}$, candidate agent set (with Role / State / Plugin).  
-Output: A directed graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where $A_{ij} = 1$ indicates agent $v_i$ sends information to $v_j$. Agents are activated according to the topological sort of $\mathcal{G}$, and a final answer is provided by an Aggregate function (majority vote / concatenation / last agent output).
+RADAR treats "designing a multi-agent communication topology for a task query" as a conditional graph diffusion problem. Input includes a task query $\mathcal{Q}$ and a set of candidate agents (each with Role/State/Plugin). The output is a directed graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where $A_{ij} = 1$ indicates agent $v_i$ sends information to $v_j$. Agents are activated sequentially according to a topological sort, and outputs are synthesized via an Aggregate function (majority vote, concatenation, or the last agent's output). During training, baseline topologies (fully connected, mesh, star, layered, random; $N=3,4$) are run on 50 training queries to build "topology $\leftrightarrow$ performance" samples. At inference, the denoising network iterates from an empty graph, growing a collaboration graph tailored to the specific query.
 
-The training pipeline uses various baseline topologies (fully connected / mesh / star / layered / random with 3 or 4 agents) on 50 training queries to obtain "topology $\to$ task performance" samples for training the graph diffusion model. During inference, for a new query, the denoising network iteratively denoises from an empty graph to produce a query-tailored collaboration topology.
+```mermaid
+graph TD
+    Q["Input: task query 𝒬<br/>+ Candidate agents (Role/State/Plugin)"]
+    Q --> BASE["Training Data Construction<br/>Baseline topologies → Perf. samples"]
+    BASE --> ES["effective size φ<br/>Quantifies non-redundancy"]
+    ES --> FWD["Redundancy-Aware Forward Diffusion<br/>Ordering network masks by φ"]
+    FWD --> REV["Conditional Denoising Network<br/>GAT + φ bias + query condition<br/>MLP predicts role & edges"]
+    REV -->|Inference: Iterative denoising| TOPO["Query-adaptive topology 𝒢"]
+    TOPO --> RUN["Topological sort activation → Aggregation"]
+    RUN --> ANS["Final Answer"]
+```
 
 ### Key Designs
 
-1.  **Effective Size as Redundancy Metric**:
-    - **Function**: Calculates a scalar for each agent in the current graph reflecting the non-redundancy of its in/out-neighborhood, serving as a guidance signal for the diffusion process.
-    - **Mechanism**: Inward effective size is defined as $\varphi^i(v_k) = |\mathcal{N}_i(v_k)| - \frac{\sum_{j,q \in \mathcal{N}_i(v_k)} A_{jq} \mathbb{I}[r(j) = r(q)]}{|\mathcal{N}_i(v_k)|}$, where the numerator is the number of in-neighbors and the denominator penalizes redundant neighbor pairs with the same role and mutual connections. Outward $\varphi^o(v_k)$ is defined symmetrically, and they are merged via $\varphi(v_k) = (1-\beta) \varphi^i(v_k) + \beta \varphi^o(v_k)$. High $\varphi$ implies the agent receives diverse inputs and distributes information through non-overlapping paths.
-    - **Design Motivation**: Previous methods relied on black-box signals like task accuracy, which are sparse and delayed. Effective size is a local, differentiable (structurally), and redundancy-related geometric quantity that provides fine-grained structural guidance at every diffusion step.
+**1. Effective size: Converting redundancy into a geometric quantity**
+Automated design often relies solely on task accuracy, which is a sparse and delayed black-box signal. RADAR adopts "effective size" (Burt 1992) to quantify the non-redundant degree of each agent's local structure. The incoming metric is defined as $\varphi^i(v_k) = |\mathcal{N}_i(v_k)| - \frac{\sum_{j,q \in \mathcal{N}_i(v_k)} A_{jq} \mathbb{I}[r(j) = r(q)]}{|\mathcal{N}_i(v_k)|}$: the numerator is the count of in-neighbors, while the denominator penalizes neighbor pairs that have the same role and are interconnected. The outgoing metric $\varphi^o(v_k)$ is defined symmetrically, and they are merged via $\varphi(v_k) = (1-\beta) \varphi^i(v_k) + \beta \varphi^o(v_k)$. A high $\varphi$ means the agent receives diverse inputs and distributes info across non-overlapping paths.
 
-2.  **Redundancy-Aware Forward Diffusion (with ordering network)**:
-    - **Function**: Progressively masks nodes and their edges from the training graph $\mathcal{G}_0$ in a meaningful order to obtain partially masked intermediate graphs $\mathcal{G}_1, \mathcal{G}_2, \dots$ for denoising supervision.
-    - **Mechanism**: Defines an ordering network $q_\psi(\pi | \mathcal{G}_0, \varphi) = \prod_t q_\psi(\pi_t | \mathcal{G}_0, \varphi, \pi_{(<t)})$ to sample which node to mask. Specifically, GNN + positional encodings yield node embeddings $h_t$, and sampling follows $q_\psi(\pi_t | \cdot) \propto \exp(h_t + \varphi(v_t))$—nodes with higher effective size are masked first. The intuition is that graphs with high effective size decompose into weakly overlapping sub-structures, facilitating incremental generation learning.
-    - **Design Motivation**: General graph diffusion uses random or fixed ordering, losing structural regularity. The effective size-guided sequence makes the reverse denoising task more "structured"—simple sub-structures are restored first, followed by complex dependencies.
+**2. Redundancy-aware forward diffusion: Ordering noise by effective size**
+Standard graph diffusion (Kong et al., Chen et al.) masks nodes in random or fixed orders. RADAR uses effective size to determine the masking order: training graphs $\mathcal{G}_0$ are incrementally masked to produce $\mathcal{G}_1, \mathcal{G}_2, \dots$. The ordering network $q_\psi(\pi | \mathcal{G}_0, \varphi) = \prod_t q_\psi(\pi_t | \mathcal{G}_0, \varphi, \pi_{(<t)})$ uses GNN-derived node embeddings $h_t$ to sample node $\pi_t$ with weight $q_\psi \propto \exp(h_t + \varphi(v_t))$. Consequently, nodes with higher effective size are masked earlier. This ensures simple sub-structures are reconstructed first during reverse denoising.
 
-3.  **Conditional Reverse Denoising Network**:
-    - **Function**: Starting from an empty graph, it restores nodes and their connections to previously generated nodes given query $\mathcal{Q}$ to obtain a task-adaptive topology.
-    - **Mechanism**: The denoising network $p_\theta(\mathcal{G}_t | \mathcal{G}_{t+1}, \mathcal{Q})$ uses GAT-style attention at each layer $\alpha_{i,j} = \frac{\exp(\text{ReLU}(\mathbf{a}^\top [\mathbf{W h}_i^l \| \mathbf{W h}_j^l]))}{\sum_k \exp(\cdot)}$ to obtain node embeddings. The final layer adds an effective size bias $\mathbf{h}_i^L \leftarrow \mathbf{h}_i^L + \varphi(v_i) \mathbf{1}$. An MLP then predicts the new node's role and its connections to all denoised nodes simultaneously. Crucially, connections are inferred jointly using a "mixture of multinomial distributions" (rather than autoregressively), reducing generation steps to $\mathcal{O}(N)$ and significantly improving efficiency.
-    - **Design Motivation**: Query conditioning ensures task-adaptivity; joint edge prediction avoids the $\mathcal{O}(N^2)$ steps of ARG-Designer; the effective size bias implicitly favors low redundancy in every generation step.
+**3. Conditional reverse denoising network: Joint role and edge prediction**
+The reverse process starts from an empty graph, reconstructing nodes and their connections under condition $\mathcal{Q}$. The denoising network $p_\theta(\mathcal{G}_t | \mathcal{G}_{t+1}, \mathcal{Q})$ uses GAT-style attention $\alpha_{i,j}$ and explicitly adds effective size as a bias in the final layer: $\mathbf{h}_i^L \leftarrow \mathbf{h}_i^L + \varphi(v_i) \mathbf{1}$. An MLP then jointly predicts the new node's role and all edges using a "mixture of multinomial distributions." This reduces the generation complexity from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$.
 
 ### Loss & Training
 
-The denoising network is trained using a weighted NLL loss $\nabla_\theta \mathcal{G} = \sum_{m,t} \sum_{k \in \pi(\leq t)} w_k^m \nabla \log p_\theta(\mathcal{G}_{v_k}^{\pi(>t)} | \mathcal{G}_{t+1}^m, \mathcal{Q})$, where $w_k^m$ represent probability weights from the ordering network. Since the ordering network's output is discrete, it is trained via REINFORCE with a reward set to the negative NLL: $R^m = -\sum_t \sum_k w_k^m \log p_\theta(\cdot)$.
-
-Additionally, a task-utility policy gradient term $\nabla_\theta \mathbb{E}[\mathcal{G}] \approx \frac{1}{\mathcal{B}} \sum_k u(\mathcal{G}^{(k)}(\mathcal{Q})) \nabla_\theta \log p_\theta(\mathcal{G}^{(k)} | \mathcal{Q})$ is included, using task accuracy as a black-box reward. In practice, utility is only evaluated periodically on a subset of generated graphs to save API costs.
+The denoising network is trained using a weighted NLL loss $\nabla_\theta \mathcal{G} = \sum_{m,t} \sum_{k \in \pi(\leq t)} w_k^m \nabla \log p_\theta(\mathcal{G}_{v_k}^{\pi(>t)} | \mathcal{G}_{t+1}^m, \mathcal{Q})$, where $w_k^m$ are probabilities from the ordering network. The ordering network is trained via REINFORCE with reward $R^m = -\sum_t \sum_k w_k^m \log p_\theta(\cdot)$. Additionally, a task-utility policy gradient term $\nabla_\theta \mathbb{E}[\mathcal{G}] \approx \frac{1}{\mathcal{B}} \sum_k u(\mathcal{G}^{(k)}(\mathcal{Q})) \nabla_\theta \log p_\theta(\mathcal{G}^{(k)} | \mathcal{Q})$ uses task accuracy as a black-box reward.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Compared 20+ baselines across 6 benchmarks (MMLU, GSM8K, MultiArith, SVAMP, AQuA, HumanEval) using gpt-4o-mini as the base LLM and 5 agents.
+Evaluated on 6 benchmarks with gpt-4o-mini as the base LLM and 5 agents.
 
 | Method | MMLU | GSM8K | HumanEval | Average |
 | :--- | :---: | :---: | :---: | :---: |
@@ -87,62 +83,57 @@ Compared 20+ baselines across 6 benchmarks (MMLU, GSM8K, MultiArith, SVAMP, AQuA
 | ARG-Designer | 79.10 | 91.25 | 89.19 | 88.57 |
 | **RADAR** | **83.66** | **92.51** | **91.28** | **90.32** |
 
-RADAR outperforms the strongest learning-based baseline (ARG-Designer) by an average of 1.75% and single agents by 1.96%~6.59%.
+RADAR outperforms the strongest learning-based baseline (ARG-Designer) by 1.75% on average.
 
 ### Ablation Study
 
-| Configuration | MMLU | GSM8K | MultiArith | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| Full RADAR | 83.66 | 92.51 | 98.81 | Full model |
-| w/o ES | 81.05 | 91.22 | 98.31 | Removed effective size from both ordering and denoising |
-| w/o utility | 82.96 | 92.02 | 98.47 | Removed task-utility policy gradient |
-| w/o query | 79.08 | 91.82 | 97.81 | Denoising ignores query (largest drop) |
-| non-diffusion | 79.10 | 91.25 | 98.55 | Replaced with ARG-Designer style autoregression |
+| Configuration | MMLU | GSM8K | MultiArith |
+| :--- | :---: | :---: | :---: |
+| Full RADAR | 83.66 | 92.51 | 98.81 |
+| w/o ES | 81.05 | 91.22 | 98.31 |
+| w/o utility | 82.96 | 92.02 | 98.47 |
+| w/o query | 79.08 | 91.82 | 97.81 |
+| non-diffusion | 79.10 | 91.25 | 98.55 |
 
 ### Key Findings
-- **Query conditioning** has the largest impact (MMLU drops 4.58), indicating task-adaptivity is the core gain source.
-- **Effective size** systematically impacts performance; its removal drops MMLU by 2.61, validating the effectiveness of redundancy awareness.
-- **Token consumption**: On GSM8K, RADAR uses $4.2 \times 10^6$ tokens, half of G-Designer's usage with higher accuracy. Compared to AFlow's $1.4 \times 10^7$ and AgentPrune's $1.1 \times 10^7$, RADAR's $6.5 \times 10^6$ demonstrates significant token economy.
-- **Robustness**: Injecting "liar prompt attacks" into 2/5 agents on MMLU caused a 4.47% drop for complete graphs and 1.05% for ARG-Designer, while RADAR barely dropped.
-- **Graph Statistics**: RADAR's effective size (0.92) is much higher than G-Designer (0.73) and ARG-Designer (0.68), while its density (0.289) is slightly lower, indicating "fewer but better" connections.
-- **Transferability**: Trained on gpt-4o-mini, RADAR transfers well to DeepSeek-R1 / Qwen3-32B. On DeepSeek-R1, single agent score is 90.81 vs. RADAR's 92.16.
+- **Goal Dependency**: "w/o query" results in a 4.58 drop on MMLU, identifying task-adaptive selection as the primary performance driver.
+- **Redundancy Control**: Removing "effective size" (ES) drops MMLU by 2.61, validating the redundancy-aware design.
+- **Token Economy**: On GSM8K, RADAR uses $4.2 \times 10^6$ tokens, half that of G-Designer, and less than AgentPrune ($1.1 \times 10^7$).
+- **Robustness**: Against "liar prompt attacks," full connectivity accuracy drops 4.47%, while RADAR is nearly unaffected.
+- **Transferability**: Models trained on gpt-4o-mini transfer effectively to DeepSeek-R1 and Qwen architectures.
 
 ## Highlights & Insights
-- **Applying social network effective size to LLM multi-agent communication graphs** is a clean interdisciplinary adaptation. Burt's 1992 concept for "structural holes" in human networks is seamlessly migrated to agent networks as a differentiable guidance signal.
-- **Iterative graph diffusion instead of one-step generation** marks a critical paradigm shift relative to G-Designer / MaAS / ARG-Designer, allowing the model to "reflect on redundancy during generation."
-- **Joint edge prediction (mixture of multinomial)** reduces generation steps from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$, a significant improvement over ARG-Designer's autoregressive scheme, introducing minimal overhead compared to single workflows while remaining query-adaptive.
-- Halving token costs while achieving peak accuracy strongly suggests "complex topology $\neq$ good topology"; structural sparsification is a first-class concern in the LLM multi-agent era.
+- **Interdisciplinary Translation**: Bringing "effective size" (Burt 1992) from human social network analysis to LLM agents is a clean, effective bridge.
+- **Process Shift**: Moving from one-shot generation to an iterative diffusion process allows the model to "reflect" on redundancy during growth.
+- **Efficiency**: The joint edge prediction via mixture multinomials keeps inference overhead at $\mathcal{O}(N)$, making query-adaptive topology practical.
 
 ## Limitations & Future Work
-- Training requires "baseline topologies + performance" as an initial dataset, entailing a non-trivial startup cost. New tasks require 50 sample queries run on baselines for initialization.
-- Every inference query requires full multi-step denoising. Compared to AFlow's static learned workflow, this presents a latency disadvantage (17.55min vs 7.32min on GSM8K).
-- Experiments were limited to 5 agents; the scaling behavior for $N \gg 5$ is unexplored, and the $\mathcal{O}(N^2)$ calculation of effective size may become a bottleneck.
-- Agent roles are selected from a fixed candidate pool. Dynamic role generation is deferred to future work.
-- Effective size assumes discrete role categories, which might not apply to continuous prompt-based roles.
+- **Initialization Cost**: Requires sampling 50 queries across baseline topologies to initialize the dataset for new tasks.
+- **Latency**: Iterative denoising per query is slower than static workflow methods (e.g., 17.55min vs 7.32min on GSM8K).
+- **Scale**: Experiments used only 5 agents; the $\mathcal{O}(N^2)$ calculation of effective size may bottleneck larger networks.
+- **Role Search**: Agents are selected from a fixed pool; dynamic role prompt generation is reserved for future work.
 
 ## Related Work & Insights
-- **vs ARG-Designer**: Both are generative topology designs, but ARG-Designer uses autoregressive edge generation. RADAR uses diffusion for joint edge generation and explicit redundancy modeling, leading to superior efficiency and quality.
-- **vs GTD**: GTD also uses conditional discrete graph diffusion but lacks structural metrics like effective size for guidance, potentially lacking clear goals for redundancy control.
-- **vs AgentPrune**: AgentPrune performs post-hoc pruning on fixed topologies. RADAR generates from scratch; the former is capped by the initial topology, while the latter can produce entirely new structures.
-- **vs MaAS**: MaAS learns a continuous architecture distribution for sampling but remains essentially one-step. RADAR's step-by-step approach enables fine-grained exploration.
+- **vs ARG-Designer**: Both are generative, but RADAR uses diffusion and explicit redundancy modeling for better efficiency and quality.
+- **vs GTD**: GTD also uses conditional discrete diffusion but lacks structural metrics like effective size to guide redundancy suppression.
+- **vs AgentPrune**: AgentPrune is a post-hoc modification limited by the initial topology; RADAR generates optimized structures from scratch.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Introducing effective size to graph diffusion is an elegant cross-domain idea, though the underlying framework draws from Kong et al.'s discrete graph diffusion.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 datasets + 20+ baselines + token economy + robustness + transferability + ablation; very comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Reasonable formula density and clear diagrams; however, details of the ordering and denoising networks are fast-paced and require appendix consultation.
-- Value: ⭐⭐⭐⭐ Token cost and robustness are genuine pain points in multi-agent LLM research; RADAR provides a practical and reproducible solution.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
-- [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](../../AAAI2026/multi_agent/bamas_structuring_budget-aware_multi-agent_systems.md)
 - [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](../../ACL2026/multi_agent/bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
+- [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](../../AAAI2026/multi_agent/bamas_structuring_budget-aware_multi-agent_systems.md)
 - [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](../../NeurIPS2025/multi_agent/gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
-- [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](../../ACL2026/multi_agent/posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
+- [\[NeurIPS 2025\] Thought Communication in Multiagent Collaboration](../../NeurIPS2025/multi_agent/thought_communication_in_multiagent_collaboration.md)
 
 </div>
 

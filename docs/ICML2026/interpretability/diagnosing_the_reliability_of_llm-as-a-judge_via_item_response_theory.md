@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory
 description: >-
-  [ICML 2026][Interpretability][Item Response Theory] This paper applies the Graded Response Model (GRM) from Item Response Theory (IRT) in psychometrics to LLM-as-a-Judge. It decomposes "judgment scores" into judge attrib…
+  [ICML 2026][Interpretability][Item Response Theory] This paper applies the Graded Response Model (GRM) from psychometric Item Response Theory (IRT) to LLM-as-a-Judge. It decomposes "judgment scores" into judge attributes $(\alpha, \beta)$ and latent sample quality $\theta$. Using four interpretable metrics, it systematically diagnoses whether 7 mainstream LLMs across 11
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Item Response Theory"
-  - "Graded Response Model"
-  - "Judge Consistency"
-  - "Human Alignment"
-  - "Latent Quality"
+  - ICML 2026
+  - Interpretability
+  - Item Response Theory
+  - Graded Response Model
 date: 2026-05-08
-content_hash: f4803a2268076e66
+content_hash: 5620c13430b4bc3f
 ---
-
 # Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory
 
 **Conference**: ICML 2026  
@@ -24,122 +20,130 @@ content_hash: f4803a2268076e66
 **Keywords**: Item Response Theory, Graded Response Model, Judge Consistency, Human Alignment, Latent Quality  
 
 ## TL;DR
-This paper applies the Graded Response Model (GRM) from Item Response Theory (IRT) in psychometrics to LLM-as-a-Judge. It decomposes "judgment scores" into judge attributes $(\alpha, \beta)$ and latent sample quality $\theta$. Four interpretable metrics are utilized in a two-stage diagnosis (intrinsic consistency + human alignment) to systematically evaluate whether seven mainstream LLMs serve as stable measurement instruments across 11 evaluation criteria.
+This paper applies the Graded Response Model (GRM) from psychometric Item Response Theory (IRT) to LLM-as-a-Judge. It decomposes "judgment scores" into judge attributes $(\alpha, \beta)$ and latent sample quality $\theta$. Using four interpretable metrics, it systematically diagnoses whether 7 mainstream LLMs across 11 evaluation criteria act as "stable measurement instruments" through a two-stage process (intrinsic consistency + human alignment).
 
 ## Background & Motivation
-**Background**: LLM-as-a-Judge has become pervasive in scenarios such as summarization, dialogue evaluation, visual generation assessment, and RLHF reward modeling, providing a scalable and cost-effective alternative to human annotation. Reliability is typically verified through two paths: *intrinsic consistency* (whether the same sample receives the same score with prompt variations) and *human alignment* (consistency with human ratings).
+**Background**: LLM-as-a-Judge has permeated scenarios such as summarization evaluation, dialogue evaluation, visual generation evaluation, and RLHF reward modeling because it is cheaper and more scalable than human annotation. Validating its reliability primarily follows two paths: *intrinsic consistency* (whether the same sample receives the same score with a different prompt) and *human alignment* (whether it matches human scoring).
 
-**Limitations of Prior Work**: These two paths are usually treated separately and remain at the "output level." Consistency is measured via inter-rater agreement, multi-seed reruns, McDonald's $\omega$, or token probability uncertainty. However, these metrics fail to decouple the "measurement characteristics of the judge" from the "inherent variance in sample quality." Alignment metrics like Pearson/Spearman/Kendall correlations or Cohen's $\kappa$ only reflect result similarity without identifying whether a judge is systematically strict/lenient or lacks discriminative power.
+**Limitations of Prior Work**: These two paths are usually executed separately and remain at the "output level." Consistency is often measured via inter-rater agreement, re-running with different seeds, McDonald's $\omega$, or token probability uncertainty. However, these metrics only consider the final discrete scores and cannot separate the "judge's measurement characteristics" from the "inherent variance in sample quality." Alignment is measured using aggregated metrics like Pearson/Spearman/Kendall correlation, Cohen's $\kappa$, or Krippendorff's $\alpha$, which only indicate how similar results are without revealing whether the judge is "systematically strict/lenient" or "lacks discrimination."
 
-**Key Challenge**: Existing methods conflate measurement error with inherent sample differences. Consequently, even when instability is detected, it is unclear whether it stems from prompt sensitivity, poor model discrimination, or the inherent difficulty of the evaluation dimension. A statistical framework is needed to separate the characteristics of the measurement instrument from those of the objects being measured.
+**Key Challenge**: Existing methods conflate "measurement error" with "sample variance." Consequently, even if an LLM judge is found to be unstable, it is unclear if the root cause is prompt sensitivity, poor model discrimination, or the inherent difficulty of the evaluation dimension. A statistical framework is needed to disentangle instrument characteristics from object characteristics.
 
-**Goal**: To establish a unified framework that simultaneously addresses: (1) Is the LLM judge stable as a "measurement instrument"? (2) Is its "measurement result" aligned with humans? Furthermore, the diagnostic signals for these questions must be interpretable and factor-attributable.
+**Goal**: Establish a unified framework to simultaneously answer two questions: (1) Is the LLM judge stable as a "measurement instrument"? (2) Is its "measurement result" aligned with humans? Furthermore, the diagnostic signals for these questions must be interpretable and attributable to specific factors.
 
-**Key Insight**: The authors draw from Item Response Theory, accumulated over a century in psychometrics. Just as IRT is used in educational testing to evaluate if questions reliably measure student ability, it can evaluate if an LLM judge reliably measures sample quality. Specifically, the Graded Response Model (GRM) is selected because judgment scores are typically Likert-style ordered discrete categories.
+**Key Insight**: The authors draw inspiration from a century of Item Response Theory in psychometrics. Just as IRT in educational testing evaluates whether "test items can reliably measure student ability," it can be used to evaluate whether "LLM judges can reliably measure sample quality." Specifically, the Graded Response Model (GRM) is selected because judgment scores are typically Likert-style ordered discrete categories.
 
-**Core Idea**: Model "LLM Judgment Score = Judge Characteristics $(\alpha, \beta) \times$ Latent Sample Quality $\theta$" as a generative probabilistic model. Using Bayesian inference, the framework estimates all three components. Four diagnostic metrics are then extracted from the estimated $\theta$ distribution and $(\alpha, \beta)$ to attribute measurement instability to specific causes like "prompt sensitivity vs. lack of discrimination vs. systematic bias vs. range mismatch."
+**Core Idea**: Model "LLM judgment score = judge characteristics $(\alpha, \beta)$ × latent quality $\theta$" as a generative probabilistic model and estimate all three via Bayesian inference. Four diagnostic metrics are then extracted from the estimated $\theta$ distribution and $(\alpha, \beta)$ to attribute "measurement instability" to "prompt sensitivity vs. lack of discrimination vs. systematic bias vs. range mismatch."
 
 ## Method
 
 ### Overall Architecture
-The framework consists of three stages: **(1) Prompt perturbation generation**—generating three semantically invariant versions (typo / newline / paraphrase) for each original evaluation prompt, totaling four variants; **(2) GRM fitting**—feeding scores from 7 LLMs × each prompt variant × each sample into the GRM, using the NUTS sampler (4 chains, 1000 warmup + 1000 sampling, target acceptance 0.95) with PyMC + NumPyro backends to simultaneously estimate $(\alpha_p, \boldsymbol{\beta}_p)$ for each variant and a shared $\theta_j$ for each sample; **(3) Two-stage diagnosis**—Phase 1 utilizes $C_V$ and $\rho$ to judge "intrinsic consistency." Only judges that pass ( $C_V \le 0.10$ and $\rho \ge 0.70$ ) enter Phase 2, which uses $\theta_{\text{ratio}}$ and $D_W$ to compare latent quality distributions against humans.
+This framework addresses the issue where existing methods conflate measurement error with true sample variance, making it impossible to identify why an LLM judge is unstable. The approach treats the judgment process as a psychometric measurement, using GRM to infer three types of latent variables for detailed diagnosis. The process follows three steps: first, generate three semantically invariant perturbations (typo, newline, paraphrase) for each original prompt (4 variants total); then, feed scores from "7 LLMs × each prompt variant × each sample" into the GRM to simultaneously estimate discrimination and thresholds $(\alpha_p, \boldsymbol{\beta}_p)$ for each prompt variant and a shared latent quality $\theta_j$ for each sample; finally, perform a two-stage diagnosis—Phase 1 uses consistency metrics to filter out "unstable instruments," and only those that pass proceed to Phase 2 for comparison with human latent quality distributions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: 7 LLM Judges<br/>× Eval Prompts × Sample Scores"] --> B["Prompt Perturbation<br/>Original + Typo + Newline + Paraphrase (4 Variants)"]
+    B --> C["GRM Decoupling<br/>Bayesian Sampling to Estimate (α_p, β_p) and Latent Quality θ_j"]
+    C --> D["Phase 1: Consistency Screening<br/>C_V for Prompt Consistency; ρ for Marginal Reliability"]
+    D -->|"C_V ≤ 0.10 and ρ ≥ 0.70 to Pass"| E["Phase 2: Alignment Attribution<br/>θ_ratio for Range Mismatch; D_W for Distributional Shift"]
+    D -->|Unqualified| F["Identified as Unreliable Instrument, Eliminated"]
+```
 
 ### Key Designs
 
-1. **GRM Decoupling "Prompt Effects" from "True Quality"**:
-    - **Function**: For $K$ rating levels, the model defines the probability of judge $p$ scoring sample $j$ as $\ge k$ as $P(Y_{pj} \ge k \mid \theta_j) = \sigma(\alpha_p (\theta_j - \beta_{pk}))$, where $\theta_j$ is the latent quality of the sample (shared across prompt variants), $\alpha_p$ is the "discrimination" of the prompt (slope), and $\boldsymbol{\beta}_p$ is the sequence of "thresholds" between adjacent levels (enforced as monotonically increasing).
-    - **Mechanism**: Priors are set as $\theta_j \sim \mathcal{N}(0,1)$, $\alpha_p \sim \text{LogNormal}(0, 0.5)$, and $\beta_{pk} \sim \mathcal{N}(0,1)$. NUTS samples all parameters simultaneously. Since four variants share the same $\theta_j$, score differences caused by wording sensitivity are absorbed into $(\alpha, \boldsymbol{\beta})$, while true quality variance is captured by $\theta$. This allows for direct comparison of $\theta$ distributions across models, avoiding issues where different models use different label ranges.
-    - **Design Motivation**: To solve the fundamental pain point of inseparable measurement noise and signal. GRM is the standard model for ordered discrete responses; Ours avoids NRM (which ignores order) and PCM (which assumes a shared $\alpha$ across items, which is too restrictive for varying prompt sensitivities).
+**1. GRM Decoupling: Extracting Prompt Effects from True Sample Quality**
 
-2. **Phase 1: Differential Diagnosis using $C_V$ + $\rho$**:
-    - **Function**: $C_V$ measures "prompt consistency." For each prompt variant $p$, the mean variance of $\theta_j$ within the same score level $\bar V_p$ is calculated, and the coefficient of variation across prompts is derived as $C_V = \sigma_V / \mu_V$. $\rho$ measures "marginal reliability"—$\rho = \text{Var}(\hat\theta_j) / (\text{Var}(\hat\theta_j) + \mathbb{E}[\sigma_j^2])$, where the numerator represents true quality variance and the denominator includes expected posterior variance (measurement uncertainty).
-    - **Mechanism**: Thresholds are borrowed from psychometric conventions: $C_V < 0.10$ (ensuring 75% of samples stay within $\pm 20\%$ of the mean) and $\rho > 0.70$ (Nunnally’s threshold). The combination allows for "differential diagnosis": High $C_V$ + High $\rho$ indicates prompt sensitivity; Low $\rho$ suggests insufficient model discrimination regardless of $C_V$.
-    - **Design Motivation**: To decompose evaluation instability into two independent, orthogonal, and actionable dimensions. Phase 1 also acts as a "gatekeeper," preventing alignment calculations for inherently unstable judges.
+Existing consistency and alignment metrics only focus on final discrete scores, failing to answer whether a score difference stems from true sample quality or prompt sensitivity. GRM intervenes at the generative model level: for $K$ scoring levels, the probability that judge $p$ gives sample $j$ a score $\ge k$ is modeled as $P(Y_{pj} \ge k \mid \theta_j) = \sigma(\alpha_p (\theta_j - \beta_{pk}))$, where $\theta_j$ is the latent quality shared by all prompt variants, $\alpha_p$ is the discrimination (steepness of the response curve), and $\boldsymbol{\beta}_p$ is the sequence of thresholds between adjacent levels (enforced to be monotonically increasing). Priors are set as $\theta_j \sim \mathcal{N}(0,1)$, $\alpha_p \sim \text{LogNormal}(0, 0.5)$, and $\beta_{pk} \sim \mathcal{N}(0,1)$, with NUTS used to sample all parameters. The ingenuity lies in the 4 variants sharing the same $\theta_j$: score differences caused by "judge sensitivity to wording" are absorbed into $(\alpha, \boldsymbol{\beta})$, while "true sample quality variance" is absorbed into $\theta$. This natural decoupling allows model comparison using only $\theta$ distributions, bypassing the difficulty of comparing models that use different numbers of scoring levels. GRM was chosen over Nominal Response Models (which lose order info) or Partial Credit Models (which force a shared $\alpha$) because judgment scores are ordered Likert scales.
 
-3. **Phase 2: Alignment Attribution using $\theta_{\text{ratio}}$ + $D_W$**:
-    - **Function**: $\theta_{\text{ratio}} = \theta_{\text{range}}^{(\text{LLM})} / \theta_{\text{range}}^{(\text{Human})}$, where $\theta_{\text{range}}$ is defined as the difference between the median $\theta$ of the highest and lowest score categories. $D_W = W_1(\hat\theta^{(\text{LLM})}, \hat\theta^{(\text{Human})})$ is the 1-Wasserstein distance between the LLM and human $\theta$ distributions.
-    - **Mechanism**: Wasserstein distance is preferred over correlation or KL divergence because it captures both "location shift" and "distribution shape difference" while being well-defined for non-overlapping supports. $\theta_{\text{ratio}} < 1$ implies the LLM is "over-sensitive" (compressing the range), while $> 1$ implies the LLM is "numb" (exaggerating differences humans find negligible).
-    - **Design Motivation**: Traditional metrics only answer "yes/no" regarding alignment. $(\theta_{\text{ratio}}, D_W)$ decomposes misalignment into "range mismatch" and "distribution drift," providing direct guidance for prompt and scale design.
+**2. Phase 1 Consistency Screening: Differential Diagnosis via $C_V$ and $\rho$**
+
+The term "unstable judgment" is vague; this paper decomposes it using two orthogonal metrics. $C_V$ measures prompt consistency: first calculate $\bar V_p$, the "mean variance of $\theta_j$ within the same scoring category" for each variant $p$, then calculate the coefficient of variation $C_V = \sigma_V / \mu_V$ across all $\bar V_p$. $\rho$ measures marginal reliability: $\rho = \text{Var}(\hat\theta_j) / (\text{Var}(\hat\theta_j) + \mathbb{E}[\sigma_j^2])$, where the numerator is the variance of the posterior mean of $\theta$ (true quality variance) and the denominator adds the expectation of the NUTS posterior variance (measurement uncertainty). Thus, $\rho$ represents the proportion of $\theta$ variance derived from true quality. Thresholds follow psychometric conventions—$C_V < 0.10$ is derived from Chebyshev's inequality (ensuring 75% of samples fall within mean ±20%) and analytical chemistry standards, while $\rho > 0.70$ is Nunnally's classic threshold. Combining them allows for differential attribution: high $C_V$ + high $\rho$ suggests the issue is prompt sensitivity, while low $\rho$ indicates insufficient discrimination regardless of $C_V$. This phase also acts as a gatekeeper—only judges with $C_V \le 0.10$ and $\rho \ge 0.70$ proceed to Phase 2, avoiding meaningless human alignment calculations on broken instruments.
+
+**3. Phase 2 Alignment Attribution: Decomposing Human Gaps via $\theta_{\text{ratio}}$ and $D_W$**
+
+Traditional Spearman/Kendall correlations only provide a yes/no on alignment without revealing if a judge is systematically strict or has a discrimination mismatch. This paper uses two metrics for decomposition. $\theta_{\text{ratio}} = \theta_{\text{range}}^{(\text{LLM})} / \theta_{\text{range}}^{(\text{Human})}$, where $\theta_{\text{range}}$ is defined as the "median $\theta$ of high-score samples minus the median $\theta$ of low-score samples." $\theta_{\text{ratio}} < 1$ indicates the LLM compresses the quality range (hypersensitive, cannot separate samples humans see as different), while $> 1$ indicates range expansion (numb, exaggerating differences humans see as negligible). $D_W = W_1(\hat\theta^{(\text{LLM})}, \hat\theta^{(\text{Human})})$ measures the 1-Wasserstein distance between LLM and human $\theta$ distributions. Wasserstein is used instead of correlation (which ignores distribution shape) or KL divergence (which is asymmetric and undefined for non-overlapping supports) because it captures both "position shift" and "shape difference" with physical meaning. Interpretation is clear: $\theta_{\text{ratio}} \approx 1$ but high $D_W$ implies equivalent discrimination but systematic bias; $\theta_{\text{ratio}} \ne 1$ but low $D_W$ implies overall alignment but different sensitivity. Failure in both suggests a fundamental disagreement on the definition of "quality."
 
 ### Loss & Training
-There is no end-to-end training. The framework performs posterior inference. The GRM probabilistic model is implemented in PyMC, with Bayesian sampling conducted via NUTS (4 chains, 1000 warmup, 1000 sampling, target acceptance 0.95). For binary scores, a 2-PL logistic model replaces GRM. Prompt perturbations include character-level typos via AugLy on the top-5 attention tokens of Qwen3-8B, random insertions of three newlines, and paraphrase substitutions of five verbs/adjectives using NLTK POS tagging and GPT-4o-mini.
+The framework does not involve end-to-end training but is a posterior inference process. The GRM probabilistic model is implemented in PyMC, using NUTS (NumPyro backend, 4 chains, 1000 warmup + 1000 samples, target acceptance 0.95) for Bayesian sampling. For binary ratings (e.g., Understandability in TopicalChat), a 2-PL logistic model replaces the GRM. Prompt perturbations were implemented as follows: typos via AugLy on the 5 tokens with highest attention in Qwen3-8B's last layer, newlines via 3 random insertions, and paraphrasing by extracting 5 verbs/adjectives via NLTK and replacing them with synonyms using GPT-4o-mini.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation of 7 models (Gemini 2.5 Flash, GPT-4o, GPT-4o-mini, Qwen3-30B-A3B, Qwen3-235B-A22B, Llama-4-Maverick, Llama-4-Scout; Qwen3-VL for vision) across 3 text benchmarks (SummEval, TopicalChat, HelpSteer-2) and 1 vision benchmark (VIEScore).
+Evaluated across 7 models (Gemini 2.5 Flash, GPT-4o, GPT-4o-mini, Qwen3-30B-A3B, Qwen3-235B-A22B, Llama-4-Maverick, Llama-4-Scout; Qwen3-VL for vision) on 3 NLP benchmarks (SummEval, TopicalChat, HelpSteer-2) and 1 vision benchmark (VIEScore).
 
-**Phase 1 Key Results** ($C_V \le 0.10$ and $\rho \ge 0.70$ as passing):
+**Phase 1 Key Results** ($C_V \le 0.10$ and $\rho \ge 0.70$ required for qualification):
 
 | Task / Model | $C_V$ | $\rho$ | Qualified? | Interpretation |
-|------------|-------|--------|-------|------|
-| SummEval Relevance / GPT-4o | 0.05 | 0.92 | ✓ | Most stable summarization judge |
+| :--- | :--- | :--- | :--- | :--- |
+| SummEval Relevance / GPT-4o | 0.05 | 0.92 | ✓ | Most stable summarization eval |
 | SummEval Consistency / GPT-4o-mini | 0.92 | 0.88 | ✗ | High $\rho$ but extreme $C_V$ → Prompt sensitive |
-| TopicalChat Understandability / Qwen3-235B | 0.27 | 0.34 | ✗ | Very low $\rho$ → Poor discrimination |
-| HelpSteer-2 Helpfulness / Gemini-2.5 | 0.03 | 0.86 | ✓ | Best performance |
-| VIEScore CIG-SC / Gemini-2.5 | 1.32 | 0.94 | ✗ | Typical high $C_V$ prompt sensitivity |
+| TopicalChat Understandability / Qwen3-235B| 0.27 | 0.34 | ✗ | Low $\rho$ → Insufficient discrimination |
+| HelpSteer-2 Helpfulness / Gemini-2.5 | 0.03 | 0.86 | ✓ | Best performer |
+| VIEScore CIG-SC / Gemini-2.5 | 1.32 | 0.94 | ✗ | High $\rho$ but extreme $C_V$ → Typical prompt sensitivity |
 
 **Phase 2 Key Results** ($\theta_{\text{ratio}}$, $D_W$):
 
 | Task / Model | $\theta_{\text{ratio}}$ | $D_W$ | Interpretation |
-|------------|------------------------|-------|------|
-| SummEval Relevance / Gemini-2.5 | 0.96 | 0.30 | Matched range, mild drift |
-| TopicalChat Understandability / GPT-4o | 2.59 | 0.33 | Severe "numbness," quality stretched 2.6× |
-| VIEScore TIE-PQ / GPT-4o | 4.40 | 0.60 | Range magnified 4×, significant drift |
-| HelpSteer-2 Coherence / Qwen3-30b | 1.03 | 0.16 | Rare "matched range + high alignment" |
+| :--- | :--- | :--- | :--- |
+| SummEval Relevance / Gemini-2.5 | 0.96 | 0.30 | Range matched, slight drift |
+| TopicalChat Understandability / GPT-4o | 2.59 | 0.33 | High "numbness," quality range stretched 2.6× |
+| VIEScore TIE-PQ / GPT-4o | 4.40 | 0.60 | Range expanded 4×, significant drift |
+| HelpSteer-2 Coherence / Qwen3-30B | 1.03 | 0.16 | Rare "range match + high alignment" |
 
-### Ablation Study
+### Ablation Study (Prompt detail / CoT / Score scales on TopicalChat)
 
-| Configuration | Key Findings |
-|------|---------|
-| Simple prompt → Detailed prompt | $C_V$ significantly decreases. Detailed instructions stabilize prompt consistency. |
-| Detailed prompt + CoT | $C_V$ decreases further (e.g., GPT-4o Naturalness $C_V = 0.01$). |
-| 3-point → 5-point scale | $\rho$ slightly increases (e.g., Naturalness 0.91 → 0.95). Increased granularity improves reliability. |
-| 5-point → 7-point scale | $\rho$ may actually decrease. More points are not always better. |
-| Impact on $\rho$ | Reliability $\rho$ is only marginally improved by prompts; detailed instructions primarily stabilize $C_V$. |
+| Configuration | Key Finding | Description |
+| :--- | :--- | :--- |
+| Simple → Detailed Prompt | $C_V$ drops significantly | Detailed instructions stabilize prompt consistency |
+| Detailed + CoT | $C_V$ drops further | CoT provides additional stability (e.g., GPT-4o $C_V = 0.01$) |
+| 3-level → 5-level Score | $\rho$ increases slightly | Moderate increases in levels improve reliability |
+| 3-level → 7-level Score | $\rho$ may decrease | Diminishing returns; more levels are not always better |
+| Any configuration → $\rho$ | Marginal gains | Detailed instructions fix $C_V$, but help $\rho$ very little |
 
 ### Key Findings
-- **No Free Lunch**: None of the 7 LLMs satisfy $C_V \le 0.10$ and $\rho \ge 0.70$ across all 11 criteria, suggesting a universally reliable LLM judge does not yet exist.
-- **Vision vs. Text**: VIEScore (vision) $C_V$ values (0.16-1.32) are much higher than NLP (0.03-0.30), indicating extreme sensitivity to wording. However, vision $\rho$ (0.80-0.96) is often higher, meaning rankings are stable once the prompt is fixed.
-- **Split Scaling Effects**: In NLP, larger models consistently yield lower $C_V$ and higher $\rho$. This does not hold for vision tasks, where scale does not guarantee stability.
-- **Prevalent "Numbness"**: Almost all LLMs have $\theta_{\text{ratio}} > 1$, exaggerating quality differences compared to humans. This systematic over-separation is invisible to traditional correlation metrics.
-- **Remedy Guidelines**: Detailed prompts and CoT address $C_V$; optimal scale selection (e.g., 5-point) addresses $\rho$.
+- **No Free Lunch**: None of the 7 LLMs met the $C_V \le 0.10$ and $\rho \ge 0.70$ criteria across all 11 evaluation dimensions, indicating that a "universally reliable LLM judge" does not yet exist.
+- **Vision vs. Text**: VIEScore (visual eval) $C_V$ values (0.16-1.32) are much higher than NLP (0.03-0.30), meaning visual eval is extremely prompt-sensitive. However, VIEScore $\rho$ values (0.80-0.96) are often higher than NLP—internal ranking is stable once the prompt is fixed.
+- **Divergent Scaling Laws**: In NLP, larger models consistently yield lower $C_V$ and higher $\rho$. In VIEScore, this trend disappears—scale does not guarantee stability in visual evaluation.
+- **Universal $\theta_{\text{ratio}} > 1$**: Almost all LLMs are more "numb" than humans, exaggerating quality differences. This is particularly severe in TopicalChat (2-3×) and VIEScore (up to 4×), a systematic pattern invisible to traditional correlation metrics.
+- **Prompt detail for $C_V$, Scale for $\rho$**: Detailed instructions + CoT are the primary cure for $C_V$; discrimination $\rho$ is better addressed by tuning scoring scales (5-level is generally better than 3).
 
 ## Highlights & Insights
-- **Introducing IRT to LLM Evaluation**: This is the first systematic attempt to use GRM to diagnose LLM-as-a-Judge. IRT provides a generative probabilistic model, interpretable parameters, and established thresholds, offering advantages over simple correlation coefficients.
-- **Gated Two-Stage Design**: By validating the "instrument" before measuring alignment, the framework avoids meaningless alignment scores on unstable judges—a common pitfall in existing literature.
-- **Revealing Hidden Mismatches**: $\theta_{\text{ratio}}$ exposes systematic defects like "range mismatch" even when correlations look decent.
-- **Generalizability**: The framework is model-agnostic and tasks-agnostic, provided the output is ordered and discrete. It provides a standardized reliability verification process for new evaluation criteria.
+- **Adopting IRT for LLM Evaluation**: Leverages 70+ years of psychometric maturity. This is the first systematic attempt to use GRM to diagnose LLM-as-a-Judge, treating the judge as an instrument to be calibrated. IRT offers a generative model, interpretable parameters, and established threshold conventions.
+- **Gated Two-Stage Design**: Screening via Phase 1 before calculating Phase 2 avoids the common pitfall of reporting "human alignment" numbers on measurement instruments that are inherently noisy—numbers that are often meaningless in such contexts.
+- **Revealing Hidden Mismatches**: $\theta_{\text{ratio}}$ exposes that many LLMs with decent Spearman correlations are actually "numb" to human-perceived quality levels, a finding that the traditional correlation framework fails to capture.
+- **Strong Transferability**: The framework is model-agnostic and task-agnostic, requiring only ordered discrete outputs. Open-sourced code provides a standardized process for validating new evaluation criteria.
 
 ## Limitations & Future Work
-- **GRM Assumptions**: Requires ordinal scoring and a shared latent trait $\theta$. It is inapplicable to categorical judgments (e.g., win/lose/tie without intrinsic order).
-- **Computational Overhead**: NUTS sampling for large chains across many models/benchmarks requires engineering optimization to scale.
-- **Limited Perturbation Scope**: Only surface-level perturbations (typo, newline, paraphrase) were tested. Structural changes (reordering rubrics) should be treated as "new instruments" for independent validation.
-- **Human Baseline**: Human scores are treated as "ground truth" to solve for $\theta^{(\text{Human})}$, but inter-annotator disagreement in humans is not explicitly modeled.
-- **Prescriptive Gap**: While the framework diagnoses unreliability (e.g., "low $\rho$"), it does not yet provide definitive prescriptions on whether to change the model, the prompt, or the task definition.
+- **Strong GRM Assumptions**: Requires ordered categories and a shared latent trait $\theta$; if judgment is categorical (e.g., win/lose/tie without intrinsic order), GRM is inapplicable.
+- **NUTS Computational Cost**: Sampling for 7 models across 11 criteria with 4 variants each is computationally expensive and requires engineering optimization for larger benchmarks.
+- **Limited Prompt Perturbations**: Only surface-level perturbations (typo, newline, paraphrase) were tested. Structural changes (reordering rubrics, framing changes) should likely be treated as "new instruments" in Phase 1.
+- **Human Baseline Reliability**: Human scores were treated as the "gold standard" to estimate $\theta^{(\text{Human})}$, but human inter-annotator disagreement was not explicitly modeled.
+- **No "Prescription" for Fixes**: After diagnosing low $\rho$ or high $C_V$, the framework does not yet prescribe whether to change the model, modify the prompt, or redefine the task.
 
 ## Related Work & Insights
-- **vs. Inter-rater Agreement / McDonald's $\omega$**: These only observe output consistency. Ours decouples prompt sensitivity from sample variance using the generative model.
-- **vs. Uncertainty Quantification**: Probability-based uncertainty measures confidence for single outputs but misses the structural stability across prompts. $C_V$ aggregates this consistency.
-- **vs. Correlation Coefficients / Cohen's $\kappa$**: These fail to detect systematic bias or range mismatch. $\theta_{\text{ratio}}$ and $D_W$ decompose alignment failure into specific, actionable components.
+- **vs. Traditional Inter-rater Agreement**: Traditional methods fail to separate prompt sensitivity from sample variance; Ours uses GRM at the generative level to enable differential diagnosis.
+- **vs. Uncertainty Quantification**: Uncertainty based on token probabilities only looks at single outputs; $C_V$ captures the structural stability across prompts.
+- **vs. Correlation / Cohens's $\kappa$**: These aggregate metrics are blind to systematic strictness or range mismatch; $\theta_{\text{ratio}}$ + $D_W$ decompose alignment failures into actionable dimensions.
+- **vs. Selective Evaluation / Statistical Replacement**: Those works decide *when* an LLM can replace a human; Ours performs the upstream diagnosis of whether the judge is a qualified measurement instrument.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Solid interdisciplinary transfer of IRT/GRM to LLM evaluation with a complete framework.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Extensive coverage across NLP and Vision with clear ablation on prompts and scales.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear definitions and actionable diagnostic interpretations, though high terminology density for non-IRT readers.
-- **Value**: ⭐⭐⭐⭐ Provides the first theoretically grounded, standardized calibration process for LLM judges with open-source code.
+- Novelty: ⭐⭐⭐⭐ Clear cross-disciplinary transfer of IRT/GRM to LLM eval with a complete framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage of NLP and Vision across 7 models.
+- Writing Quality: ⭐⭐⭐⭐ Clear definitions and practical "differential diagnosis" guides, though terminology density is high.
+- Value: ⭐⭐⭐⭐ Provides the first theoretically grounded, standardized calibration process for LLM judges.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ACL 2025\] IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory](../../ACL2025/interpretability/irt_router_multi_llm.md)
 - [\[ICML 2026\] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets](from_rashomon_theory_to_praxis_efficient_decision_tree_rashomon_sets.md)
 - [\[ICML 2026\] Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems](prompt_optimization_is_a_coin_flip_diagnosing_when_it_helps_in_compound_ai_syste.md)
-- [\[ICLR 2026\] PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions](../../ICLR2026/interpretability/posh_using_scene_graphs_to_guide_llms-as-a-judge_for_detailed_image_descriptions.md)
-- [\[AAAI 2026\] CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution](../../AAAI2026/interpretability/crosscheck-bench_diagnosing_compositional_failures_in_multim.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
+- [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
 
 </div>
 

@@ -2,73 +2,76 @@
 title: >-
   [Paper Note] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling
 description: >-
-  [ICML 2026][Computational Biology][Biomolecular Co-design] The authors remodel the co-generation problem of heterogeneous modalities—"sequence + 3D structure"—as a **Temporal Optimal Transport (TOT)** problem. Using bi-l…
+  [ICML 2026][Computational Biology][Flow Matching] The authors model the co-generation of heterogeneous modalities (sequence + 3D structure) as a **Temporal Optimal Transport (TOT)** problem. By using bi-level optimization with a Gaussian Process surrogate (GeoCoupling), they automatically learn **off-diagonal temporal coupling curves** during training, allowing struct
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "Biomolecular Co-design"
-  - "Temporal Coupling"
-  - "Optimal Transport"
-  - "Bayesian Optimization"
-  - "Flow Matching"
+  - ICML 2026
+  - Computational Biology
+  - Flow Matching
 date: 2026-05-08
-content_hash: c49a21cdf215fdd5
+content_hash: 8ac8faeb71908625
 ---
-
 # Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.01628](https://arxiv.org/abs/2606.01628)  
 **Code**: TBD  
 **Area**: Scientific Computing / Biomolecular Co-design / Multimodal Generation / Optimal Transport  
-**Keywords**: Biomolecular Co-design, Temporal Coupling, Optimal Transport, Bayesian Optimization, Flow Matching
+**Keywords**: Biomolecular co-design, temporal coupling, optimal transport, Bayesian optimization, flow matching
 
 ## TL;DR
-The authors remodel the co-generation problem of heterogeneous modalities—"sequence + 3D structure"—as a **Temporal Optimal Transport (TOT)** problem. Using bi-level optimization and a Gaussian Process surrogate (GeoCoupling), the model **automatically learns non-diagonal temporal coupling curves** during training (i.e., allowing structure and sequence to be denoised at their respective optimal paces). This approach outperforms both "synchronous coupling" and "random coupling" baselines in SBDD and unconditional protein co-design tasks, revealing a universal "structure-leading" law where geometry precedes semantics in generation.
+The authors model the co-generation of heterogeneous modalities (sequence + 3D structure) as a **Temporal Optimal Transport (TOT)** problem. By using bi-level optimization with a Gaussian Process surrogate (GeoCoupling), they automatically learn **off-diagonal temporal coupling curves** during training, allowing structure and sequence to denoise at their respective optimal paces. This method outperforms "synchronous" and "random" coupling baselines in SBDD and unconditional protein co-design tasks, uncovering a universal "structure-leading" principle where geometric convergence precedes semantic determination.
 
 ## Background & Motivation
-**Background**: The function of biomolecules (proteins, ligands) is determined by the coupling of sequence and 3D structure. Consequently, **co-design** (joint structural and sequential generation) has become the mainstream paradigm for de novo drug and protein design. Representative methods include MultiFlow, DPLM-2, La-Proteina (proteins), as well as TargetDiff, MolCRAFT, MolPilot, and DrugFlow (SBDD). These methods essentially perform diffusion or flow matching on a **heterogeneous product manifold** $\mathbb{R}^{N\times 3} \times \mathbb{R}^{N\times K}$.
+**Background**: The biological function of molecules (proteins, ligands) is determined by the coupling of sequence and 3D structure. Thus, structure + sequence **joint generation (co-design)** has become the mainstream paradigm for de novo drug and protein design. Representative methods include MultiFlow, DPLM-2, La-Proteina, TargetDiff, MolCRAFT, MolPilot, and DrugFlow, which essentially perform diffusion or flow matching on a **heterogeneous product manifold** $\mathbb{R}^{N\times 3} \times \mathbb{R}^{N\times K}$.
 
-**Limitations of Prior Work**: Almost all co-design models **implicitly adopt synchronous coupling**, where all modalities share the same timestep $t$ and evolve from noise to data at equal speeds. This is a strong implicit inductive bias, assuming identical denoising difficulty and convergence rates for all modalities. Recent works like Campbell et al. 2024 attempted to alleviate this with **random coupling**—sampling $(t_r, t_h) \sim [0,1]^2$ independently during training—but this introduces **training-inference inconsistency** (as inference usually follows a specific curve) and **high-variance supervision**.
+**Limitations of Prior Work**: Almost all co-design models implicitly adopt **synchronous coupling**, forcing all modalities to share the same timestep $t$ and evolve at the same rate. This assumes that different modalities share identical denoising difficulties and convergence speeds. While **random coupling** (e.g., Campbell et al. 2024) samples $(t_r, t_h) \sim [0,1]^2$ independently during training to alleviate this, it introduces **training-inference inconsistency** and **high-variance supervision**.
 
-**Key Challenge**: By observing SBDD training dynamics (Paper Fig. 1C), the authors found that under synchronous coupling, structural MSE remains high for most of the trajectory, dropping only very late. Switching to an asynchronous coupling allows structural error to drop earlier and improves validity. This indicates that the **optimal generation trajectory is not the diagonal of the product manifold**, but a **geometrically curved geodesic** where different modalities should be allocated time budgets based on their "learning complexity."
+**Key Challenge**: Observations of SBDD training dynamics (Fig. 1C) reveal that under synchronous coupling, structural MSE stays high until the very end of the trajectory. Switching to asynchronous coupling allows structural errors to drop earlier, improving validity. This indicates that the optimal generation trajectory is not a diagonal line on the product manifold but a **geometric geodesic**, where time budgets should be allocated based on the "learning complexity" of each modality.
 
-**Goal**: Elevate "how inter-modal time is coupled" from a hard-coded design choice to a **learnable first-order design variable** with controllable computational overhead.
+**Goal**: To elevate "inter-modal temporal coupling" from a hard-coded design choice to a **learnable first-order design variable** with controllable computational overhead.
 
-**Key Insight**: Treat the training loss $\mathcal{L}_\text{MSE}(\theta, \gamma)$ of multimodal generation as the **transport cost in the temporal domain**. The entire scheduling curve $\gamma:[0,1] \to [0,1]^2$ corresponds to a **coupling measure** $\pi_\gamma \in \mathcal{P}([0,1]^2)$. This translates "finding the optimal coupling" into "finding the lowest energy geodesic on the product manifold."
+**Key Insight**: The training loss $\mathcal{L}_\text{MSE}(\theta, \gamma)$ can be viewed as the **transport cost in the temporal domain**. The scheduling curve $\gamma:[0,1] \to [0,1]^2$ corresponds to a **coupling measure** $\pi_\gamma \in \mathcal{P}([0,1]^2)$. Finding the optimal coupling is thus equivalent to finding the minimum-energy geodesic on the product manifold.
 
-**Core Idea**: Use **bi-level optimization + GP surrogate + Bayesian Optimization** to learn this geodesic $\gamma^*$ online within the training loop. The inner loop trains $\theta$ with a fixed $\gamma$, while the outer loop searches for a better $\gamma$ on the loss surface provided by $\theta^*$. The GP surrogate amortizes the cost of retraining required for each $\gamma$ update.
+**Core Idea**: Utilize **bi-level optimization + Gaussian Process (GP) surrogate + Bayesian Optimization (BO)** to learn the geodesic $\gamma^*$ online during the training loop. The inner loop trains $\theta$ using the current $\gamma$, while the outer loop searches for an improved $\gamma$ on the loss surface provided by $\theta^*$.
 
 ## Method
 
 ### Overall Architecture
-GeoCoupling abstracts multimodal generation as finding a **monotonic curve** $\gamma$ on a 2D time square $[0,1]^2$ (Structure time $t_r$ × Sequence time $t_h$) such that the transfer energy of the flow model trained along this curve is minimized. The framework follows a nested loop:
+GeoCoupling determines the denoising rhythm for sequence and structural modalities. This is abstracted as finding a monotonic curve $\gamma$ in the 2D temporal square $[0,1]^2$ ($t_r$ for structure × $t_h$ for sequence) that minimizes the transfer energy of the flow model. It employs a nested loop: the inner loop trains the vector field, and the outer loop updates the schedule based on a GP surrogate that fits the observed training cost surface.
 
-- **Inner Loop (MSE Training)**: Train the vector field $v_\theta$ using standard flow matching/BFN/diffusion objectives under the current schedule $\gamma$, where $\theta^* = \arg\min_\theta \mathcal{L}_\text{MSE}(\theta, \gamma)$.
-- **Outer Loop (Coupling Search)**: Store $(t_r, t_h, \mathcal{L})$ triplets observed during training into a rolling buffer $\mathcal{B}$ with capacity $N_\max = 1000$. Fit a cost surface $c(t_r, t_h)$ using a Gaussian Process (GP), then find a new low-energy geodesic $\gamma^*$ using Bayesian Optimization on the GP.
-- **EMA Smoothing**: Apply Exponential Moving Average (EMA) to the learned schedules to prevent sudden outer-loop changes from destabilizing the inner-loop training.
-
-Input: Heterogeneous modal priors $\pi_0 = p(\boldsymbol r) \otimes p(\boldsymbol h)$; Output: A coupled flow from $\pi_0$ to the joint data distribution $\pi_1 = p_\text{data}(\boldsymbol r, \boldsymbol h)$, along with the learned temporal coupling curve $\gamma^*$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Heterogeneous Prior π0 = p(r) ⊗ p(h)"] --> B
+    subgraph IN["Inner Loop (Bi-level Optimization · Training)"]
+        direction TB
+        B["Fix schedule γ, sample (t_r, t_h)<br/>Train vector field θ via Flow Matching MSE"] --> C["Push (t_r, t_h, L) to rolling buffer"]
+    end
+    C --> D
+    subgraph OUT["Outer Loop (Bi-level Optimization · Search)"]
+        direction TB
+        D["GP surrogate fits cost surface<br/>c(t_r,t_h) = Avg training loss (Temporal OT)"] --> E["BO picks candidates + Shortest path solves new geodesic γ"]
+        E --> F["EMA smoothing for new schedule"]
+    end
+    F -->|"Feedback to Inner"| B
+    F --> G["Output: Coupled Flow + Optimal Curve γ* (Structure-leading)"]
+```
 
 ### Key Designs
 
-1.  **Temporal Optimal Transport Formulation (TOT)**:
-    - **Function**: Transitions the traditional OT perspective of "pairing $x_0, x_1$ in sample space" to the **temporal domain**. It treats the scheduling curve $\gamma$ as a push-forward measure $\pi_\gamma := \gamma_\# \lambda \in \mathcal{P}([0,1]^2)$, with transport cost $\mathcal{E}(\gamma) = \int c(t_r, t_h)\, d\pi_\gamma$, where $c(t_r, t_h) := \mathbb{E}_x[\mathcal{L}_\text{MSE}(x, (t_r, t_h))]$.
-    - **Mechanism**: The authors prove (Prop. 3.2) that training loss integrated along $\gamma$ decomposes into $\mathcal{E}(\gamma) = \int [\,\underbrace{\|v_\theta - u^\gamma\|^2}_\text{Bias} + \underbrace{\mathrm{Var}(\mathbf{u}_t^\gamma \mid \mathbf{x}_t)}_\text{Variance}\,]\, dt$. Synchronous coupling is "high Bias, low Variance," while random coupling is "low Bias, high Variance." The geometric optimal $\gamma^*$ seeks the minimum point between them.
-    - **Design Motivation**: Provides a clean geometric and statistical explanation for why coupling needs to be learned—it is not an engineering trick, but a real optimal geodesic on the product manifold.
+**1. Temporal Optimal Transport: Translating "Optimal Coupling" into "Minimum Energy Geodesics"**
+Traditional OT views concern sample pairing between $x_0$ and $x_1$. This work shifts the perspective to the temporal domain. A scheduling curve $\gamma$ is viewed as a push-forward measure $\pi_\gamma := \gamma_\# \lambda \in \mathcal{P}([0,1]^2)$. The quality of a schedule is evaluated by the transport cost $\mathcal{E}(\gamma) = \int c(t_r, t_h)\, d\pi_\gamma$, where the cost surface $c(t_r, t_h) := \mathbb{E}_x[\mathcal{L}_\text{MSE}(x, (t_r, t_h))]$ represents the average training loss. Proposition 3.2 proves that the integrated loss along $\gamma$ decomposes into:
+$$\mathcal{E}(\gamma) = \int [\,\underbrace{\|v_\theta - u^\gamma\|^2}_\text{Bias} + \underbrace{\mathrm{Var}(\mathbf{u}_t^\gamma \mid \mathbf{x}_t)}_\text{Variance}\,]\, dt$$
+Synchronous coupling represents "high bias, low variance," while random coupling represents "low bias, high variance." The geometric optimal $\gamma^*$ lies between them.
 
-2.  **Bi-level Optimization Target**:
-    - **Function**: Decouples finding $\gamma$ from training $\theta$, avoiding the computationally infeasible requirement of calculating hypergradients over the entire training trajectory.
-    - **Mechanism**: Outer loop $\min_{\gamma\in\Gamma} \mathcal{J}(\gamma) = \mathbb{E}_x[\int_0^1 \mathcal{L}_{\theta^*}(x, \gamma(t))\, dt]$, inner loop $\theta^* = \arg\min_\theta \mathcal{L}_\text{MSE}(\theta, \gamma)$. Prop. 3.3 states that once bias is reduced by the inner loop, the optimal coupling is $\gamma^* = \arg\min_\gamma \mathbb{E}_{t,x}[\mathrm{Var}(u_t^\gamma \mid \mathbf{x}_t)]$, giving the outer loop a **clear, estimable target**.
-    - **Design Motivation**: Directly backpropagating through long inner-loop training is neither differentiable nor affordable; the bi-level variance perspective allows the outer loop to provide gradient signals just by "observing training loss."
+**2. Bi-level Optimization: Using Training Loss as a Search Signal**
+Since calculating the hypergradient for the entire training trajectory is infeasible, the authors decouple the search for $\gamma$ and the training of $\theta$. Inner loop: $\theta^* = \arg\min_\theta \mathcal{L}_\text{MSE}(\theta, \gamma)$. Outer loop: $\min_{\gamma\in\Gamma} \mathcal{J}(\gamma) = \mathbb{E}_x[\int_0^1 \mathcal{L}_{\theta^*}(x, \gamma(t))\, dt]$. Proposition 3.3 suggests that once the inner loop reduces bias, the optimal coupling reduces to minimizing the intrinsic supervision variance along the path, allowing for black-box optimization.
 
-3.  **GP-BO Outer Loop**:
-    - **Function**: Solves the outer loop $\gamma^*$ online and cheaply, allowing inner and outer loops to advance alternately.
-    - **Mechanism**: Models the cost surface as a GP: $c(\mathbf{t}) \sim \mathcal{GP}(\mu(\mathbf{t}), k(\mathbf{t},\mathbf{t}') + \sigma_n^2 \delta)$. A rolling buffer $\mathcal{B}$ keeps only the most recent training observations to ensure the GP reflects the **current capacity** of the model. The outer loop uses acquisition functions from Bayesian Optimization to select candidate time pairs and applies a shortest-path algorithm on the GP surface to find a monotonic geodesic for the new $\gamma$.
-    - **Design Motivation**: A brute-force discrete grid search would require $O(N^K)$ cost evaluations (measured at 1213.6s per update). GP-BO reduces this to 21.5s (**56x speedup**), enabling high-frequency outer-loop integration.
+**3. GP Surrogate + Bayesian Optimization: Efficiency and Speedup**
+A brute-force grid search for $K$ modalities would require $O(N^K)$ evaluations (~1213.6s per update). Instead, a GP fits the cost surface $c(\mathbf{t}) \sim \mathcal{GP}(\mu(\mathbf{t}), k(\mathbf{t},\mathbf{t}') + \sigma_n^2 \delta)$ using a rolling buffer $\mathcal{B}$ ($N_\max = 1000$) of recent training observations. BO selects candidate time-pairs to update the GP, and a shortest-path algorithm solves for the new geodesic. This reduces the update time to 21.5s (a 56× speedup).
 
 ### Loss & Training
-The inner loop uses the native training objectives of the underlying models (Flow Matching / Diffusion MSE / BFN ELBO, etc.). The only change is sampling $(t_r, t_h)$ along the current $\gamma$ instead of independent or synchronous sampling. Rolling buffer updates and EMA smoothing of the learned $\gamma$ stabilize the training. The total training steps are roughly the same as the original models.
+The inner loop uses the native objectives of the underlying models (Flow Matching, Diffusion MSE, or BFN ELBO). The primary modification is sampling $(t_r, t_h)$ according to the current $\gamma$ instead of independent or diagonal sampling. The outer loop uses EMA to stabilize the learned $ \gamma $ before feeding it back to the inner loop.
 
 ## Key Experimental Results
 
@@ -79,83 +82,69 @@ The inner loop uses the native training objectives of the underlying models (Flo
 | Category | Method | PB-Valid↑ | Vina Score↓ (avg) | Vina Dock↓ (avg) | scRMSD<2Å↑ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Reference | - | 95.0% | -6.36 | -7.45 | 34.0% |
-| Sync | MolCRAFT | 84.6% | -6.55 | -7.67 | 46.8% |
+| Sync | MolCRAFT | 84.6% | -6.55 | -7.67 | **46.8%** |
 | Sync | DrugFlow | 79.6% | -5.12 | -6.99 | 23.1% |
-| Random | MolPilot | 95.9% | -6.88 | -7.92 | 41.1% |
-| Learned | **GeoCoupling** | 94.3% | **-7.16** | **-8.32** | 43.1% |
-
-GeoCoupling leads comprehensively in binding affinity (Vina Score / Min / Dock), with PB-Valid comparable to MolPilot.
+| Random | MolPilot | **95.9%** | -6.88 | -7.92 | 41.1% |
+| Learnable | **GeoCoupling** | 94.3% | **-7.16** | **-8.32** | 43.1% |
 
 **Unconditional Protein Co-design (Length 100-500, N=100)**:
 
 | Method | Co-design↑ | pLDDT↑ | 1 - Pairwise TM↑ | FS Clusters↑ | Max TM↓ |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | MultiFlow | 0.72 | 79.39 | 0.63 | 0.56 | 0.83 |
-| La-Proteina (tri) | 0.77 | 85.32 | 0.59 | 0.36 | 0.85 |
+| La-Proteina | 0.77 | **85.32** | 0.59 | 0.36 | 0.85 |
 | DPLM2 | 0.31 | 83.69 | 0.63 | 0.49 | 0.96 |
-| **Ours** | **0.79** | 80.15 | 0.63 | 0.48 | 0.83 |
-| **Ours** (post-hoc → MultiFlow) | 0.74 | 79.23 | 0.64 | **0.73** | 0.83 |
-
-GeoCoupling achieves the highest co-designability. Its learned coupling also works as a **plug-and-play** component on MultiFlow checkpoints, increasing FS Clusters from 0.56 to 0.73.
+| **GeoCoupling** | **0.79** | 80.15 | 0.63 | 0.48 | 0.83 |
+| GeoCoupling (post-hoc) | 0.74 | 79.23 | **0.64** | **0.73** | 0.83 |
 
 ### Ablation Study
 
-| Configuration | Connected↑ | Vina Score↓ (mean) | Vina Min↓ (mean) | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Full (**Ours**) | **93.5%** | **-7.12** | **-7.57** | Bi-level + EMA |
-| Fixed $\gamma^*$ | 91.1% | -6.97 | -7.45 | Fixed schedule before training |
-| w/o EMA | 91.9% | -6.50 | -7.24 | No smoothing for outer schedule |
+| Configuration | Connected↑ | Vina Score↓ (mean) | Vina Min↓ (mean) |
+| :--- | :--- | :--- | :--- |
+| Full (**Ours**) | **93.5%** | **-7.12** | **-7.57** |
+| Fixed $\gamma^*$ | 91.1% | -6.97 | -7.45 |
+| w/o EMA | 91.9% | -6.50 | -7.24 |
 
 ### Key Findings
-- **Structure-leading is a universal law**: For both SBDD (small molecules) and proteins, the learned $\gamma^*$ shows a shape where "structure $t_r$ advances fast early, and sequence $t_h$ denoises rapidly only after structure stabilizes." This suggests geometric context is a necessary prior for sequence decoding.
-- **Advantage in OOD lengths**: When protein length $\geq 400$, MultiFlow co-designability drops below 0.3, while GeoCoupling maintains $> 0.6$, proving the coupling is a robust transport plan rather than an overfitted trick.
-- **BO is indispensable**: Dense-grid search takes 1213.6s per update vs. 21.5s for GP-BO (56x speedup), allowing the outer loop to run in real-time.
-- **MolPilot is a special case**: It is equivalent to running the outer loop once after training convergence. GeoCoupling achieves better results with 1x training steps.
+*   **"Structure-leading" is a universal law**: In both SBDD and protein tasks, the learned $\gamma^*$ indicates structure $t_r$ should advance faster early on, with sequence $t_h$ denoising rapidly only after the geometry stabilizes.
+*   **Advantage in OOD lengths**: For proteins with length $\ge 400$, MultiFlow co-designability drops below 0.3, while GeoCoupling maintains $> 0.6$.
+*   **Plug-and-play capability**: The learned $\gamma^*$ can be applied post-hoc to existing checkpoints (e.g., MultiFlow), improving performance without retraining.
 
 ## Highlights & Insights
-- **Elevating inter-modal temporal coupling to a learnable variable** is the cleanest contribution. Previous work used either diagonal (sync) or uniform random sampling. This paper systematically shows both are extreme ends of a Bias-Variance trade-off, with the optimal solution lying on a geometric curve.
-- **Unified Transport Perspective**: Placing "sample space OT" and "temporal schedule OT" in a single framework. The former optimizes spatial coupling $\pi(x_0, x_1)$, the latter optimizes temporal coupling $\pi_\gamma(t_r, t_h)$. This duality bridges two major research lines in diffusion/flow matching.
-- **Physical Interpretability of Structure-Leading**: The automatically learned coupling confirms biological priors like induced fit—"build the scaffold before deciding the sequence."
-- **Post-hoc Plug-and-Play**: The learned $\gamma^*$ can be transferred to existing checkpoints (like MultiFlow) without retraining, illustrating excellent engineering utility.
+*   **Elevating inter-modal coupling to a learnable variable** is a significant contribution, providing a systematic explanation for the Bias-Variance trade-off between synchronous and random coupling.
+*   **Unified Transport Perspective**: The framework connects "Spatial OT" (sample pairing) and "Temporal OT" (time scheduling), providing a mathematical foundation for complex multimodal co-design.
+*   **Physical Interpretability**: The "structure-leading" curve validates biological priors like induced fit—establishing a skeleton before deciding the sequence.
 
 ## Limitations & Future Work
-- The authors acknowledge that GP-BO is a **noisy approximate outer search** without global optimality guarantees. The curse of dimensionality remains for $K > 2$ modalities.
-- The learned coupling is optimal in the **aggregate sense**—using the same $\gamma$ for all samples. Future work could introduce amortized conditional coupling $\gamma(x)$.
-- Experiments did not cover all-atom proteins or protein-protein docking, and SBDD evaluation relies on Vina without wet-lab or rigorous physical simulation verification.
+*   GP-BO remains a noisy approximation and lacks global optimality guarantees. High-dimensional modalities ($K > 2$) may suffer from the curse of dimensionality.
+*   The learned coupling is an **average optimal** across the dataset; it does not yet account for sample-specific conditional coupling.
+*   Evaluation relies heavily on Vina scores; further validation via wet-lab experiments or high-fidelity simulations is needed.
 
 ## Related Work & Insights
-- **vs. MolPilot (Qiu et al., 2025)**: MolPilot performs a one-time search (VOS) **after training**, which is a degenerate version of the bi-level framework. GeoCoupling's co-evolution of coupling and model capacity allows it to outperform MolPilot with fewer training steps.
-- **vs. MultiFlow / DPLM-2**: These represent random coupling. This paper explains their training-inference inconsistency as "high-variance supervision."
-- **vs. Classic OT Flow Matching**: Previous works focused on sample space OT (straightening $x_0 \to x_1$). This work focuses on time domain OT (straightening the $t_r \to t_h$ coupling). The two are **orthogonal and additive**.
+*   **vs. MolPilot**: MolPilot performs scheduling search (VOS) only **after** training. GeoCoupling evolves the schedule **during** training, achieving better results in significantly fewer training steps (1× vs 2×).
+*   **vs. MultiFlow / DPLM-2**: These methods use random coupling (high-variance supervision); GeoCoupling provides a "diagnostic" to fix their training-inference gap.
+*   **vs. Classical OT Flow Matching**: While previous works focus on straightening the $x_0 \to x_1$ path in sample space, this work straightens the $t_r \to t_h$ coupling in time space.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Elevating temporal coupling to a learnable variable with a TOT framework is a significant conceptual innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covering SBDD and proteins for both ID and OOD scenarios, though lacking wet-lab validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear propositions; Fig. 1 explains motivation, method, and phenomena lucidly.
-- Value: ⭐⭐⭐⭐⭐ The learned $\gamma^*$ is plug-and-play for existing models, and the "structure-leading" discovery provides universal design guidance for AI for Science.
+*   Novelty: ⭐⭐⭐⭐⭐ 
+*   Experimental Thoroughness: ⭐⭐⭐⭐
+*   Writing Quality: ⭐⭐⭐⭐⭐
+*   Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
-- [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/computational_biology/intrinsic_lorentz_neural_network.md)
-- [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
-- [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](../../ICLR2026/computational_biology/unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
-- [\[ICML 2026\] Learning the Neighborhood: Contrast-Free Multimodal Self-Supervised Molecular Graph Pretraining](learning_the_neighborhood_contrast-free_multimodal_self-supervised_molecular_gra.md)
-
+- **MolPilot**: Unified multimodal sampling for co-designing molecules.
+- **MultiFlow**: Multimodal Flow Matching for protein design.
 </div>
-
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
 - [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/computational_biology/intrinsic_lorentz_neural_network.md)
 - [\[ICML 2025\] Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](../../ICML2025/computational_biology/compositional_flows_for_3d_molecule_and_synthesis_pathway_co-design.md)
 - [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](../../ICLR2026/computational_biology/unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
-- [\[ICML 2025\] Elucidating the Design Space of Multimodal Protein Language Models](../../ICML2025/computational_biology/elucidating_the_design_space_of_multimodal_protein_language_models.md)
+- [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
 
 </div>
 

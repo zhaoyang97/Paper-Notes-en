@@ -2,88 +2,96 @@
 title: >-
   [Paper Note] Physical Simulator In-the-Loop Video Generation
 description: >-
-  [CVPR 2026][Video Generation][physical simulator in-the-loop] This paper proposes PSIVG — the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It rec…
+  [CVPR 2026][Video Generation][Paper Note] PSIVG is proposed as the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs 4D scenes and object meshes from a template video, generates physically consistent trajectories in an MPM simulator, guides video generation with optical flow,
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "physical simulator in-the-loop"
-  - "video diffusion model"
-  - "MPM simulation"
-  - "test-time optimization"
-  - "physically consistent generation"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: a726a98c0373f0f1
+content_hash: 91048637440b090b
 ---
-
 # Physical Simulator In-the-Loop Video Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.06408](https://arxiv.org/abs/2603.06408)  
 **Code**: [https://vcai.mpi-inf.mpg.de/projects/PSIVG](https://vcai.mpi-inf.mpg.de/projects/PSIVG)  
-**Area**: Video Generation / Physical Consistency
-**Keywords**: physical simulator in-the-loop, video diffusion model, MPM simulation, test-time optimization, physically consistent generation
+**Area**: Video Generation / Physical Consistency  
+**Keywords**: Physical Simulator In-the-Loop, Video Diffusion Model, MPM Simulation, Test-Time Optimization, Physically Consistent Generation
 
 ## TL;DR
-This paper proposes PSIVG — the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs a 4D scene and object meshes from a template video, generates physically consistent trajectories via an MPM simulator, guides video generation using optical flow, and enforces texture consistency of moving objects through Test-Time Consistency Optimization (TTCO), achieving a user preference rate of 82.3%.
+PSIVG is proposed as the first training-free inference-time framework that embeds a physical simulator into the video diffusion generation loop. It reconstructs 4D scenes and object meshes from a template video, generates physically consistent trajectories in an MPM simulator, guides video generation with optical flow, and ensures texture consistency of moving objects via Test-Time Consistency Optimization (TTCO), achieving a user preference rate of 82.3%.
 
 ## Background & Motivation
 
-**Background**: Diffusion-based video generation models (e.g., CogVideoX, HunyuanVideo) have achieved impressive visual realism, yet frequently violate fundamental physical laws such as gravity, inertia, and collision — objects disappear arbitrarily, motion trajectories are unreasonable, and physical interactions are implausible.
+**Background**: Diffusion video generation models (such as CogVideoX and HunyuanVideo) have achieved outstanding visual realism. However, generated videos frequently violate fundamental laws of physics like gravity, inertia, and collision—objects disappear, movement trajectories are illogical, and physical interactions are unrealistic.
 
-**Limitations of Prior Work**: (1) Modern video generation models are trained on denoising/reconstruction objectives, which optimize pixel- or patch-level reconstruction and lack explicit physical constraint mechanisms. (2) Early physics-aware methods couple 2D rigid-body simulators with image generators but are constrained by simplified 2D assumptions. (3) Methods such as PhysAnimator focus on 2D mesh simulation for cartoon animation, while PhysGen3D requires an input image for 3D reconstruction. (4) LLM-based prompting approaches are orthogonal explorations that do not directly impose physical constraints within the generator.
+**Limitations of Prior Work**: (1) Modern video generation models are trained on denoising/reconstruction objectives, essentially optimizing pixel/patch-wise reconstruction without explicit physical constraints. (2) Early physics-aware methods coupled 2D rigid body simulators with image generators but were limited by simplified 2D assumptions. (3) Methods like PhysAnimator focus on 2D mesh simulation for cartoon animations, while PhysGen3D requires input images for 3D reconstruction. (4) LLM-based prompting methods are orthogonal explorations but do not directly impose physical constraints within the generator.
 
-**Key Challenge**: The training objectives of video diffusion models (denoising/reconstruction) contain no physical constraints and provide no mechanism to enforce the learning of physical laws. Achieving physical consistency while preserving visual quality requires introducing physics-based guidance into the generation process.
+**Key Challenge**: The training objectives of video diffusion models (denoising/reconstruction) do not contain physical constraints, providing no mechanism to force the learning of physical laws. To achieve physical consistency while maintaining visual quality, physical guidance must be introduced during the generation process.
 
-**Goal**: How can information from a physical simulator be effectively integrated into the video diffusion process to achieve physically consistent video generation?
+**Goal**: How to effectively integrate information from physical simulators into the video diffusion process to achieve physically consistent video generation?
 
-**Key Insight**: The paper proposes a *simulation-in-the-loop* paradigm, in which a physical simulator acts as a physics-aware constraint that guides the model to maintain spatiotemporal consistency within the diffusion generation loop.
+**Key Insight**: The authors propose a "simulation-in-the-loop" paradigm where a physical simulator acts as a physics-aware constraint to guide the model in maintaining spatiotemporal consistency during the diffusion generation loop.
 
-**Core Idea**: A pretrained video model first generates a template video; a 4D scene and object meshes are then reconstructed from it and fed into a physical simulator; the physically consistent trajectories output by the simulator guide video re-generation; and test-time optimization further improves texture consistency of moving objects.
+**Core Idea**: First, a pre-trained video model generates a template video. From this, 4D scenes and object meshes are reconstructed and placed into a physical simulator. The physically consistent trajectories output by the simulator guide video regeneration, and texture consistency is enhanced through test-time optimization.
 
 ## Method
 
 ### Overall Architecture
-PSIVG is a multi-stage pipeline: (1) A pretrained video generator produces a **template video** from a text prompt, providing scene composition, camera motion, and object appearance, albeit with physical inconsistencies. (2) A **perception pipeline** extracts 3D foreground object meshes, a 4D background scene reconstruction, and camera trajectories from the template video. (3) The scene is initialized in an **MPM physical simulator** for forward simulation to obtain physically consistent trajectories. (4) The simulator's rendered outputs (RGB, segmentation masks, pixel correspondences) serve as guidance signals to condition video generation via optical flow. (5) Optionally, **Test-Time Consistency Optimization (TTCO)** further improves texture consistency of moving objects.
+PSIVG addresses the contradiction where video diffusion models produce high-quality visuals that fail to follow physics by embedding an actual physical simulator into the generation loop as a "judge," without training any parameters. The pipeline starts from a "physically inconsistent but compositionally complete" template video. A pre-trained video model generates this template from text; a perception pipeline then decomposes it into 3D foreground meshes, 4D background scenes, and camera trajectories—assets readable by the simulator. These are processed by an MPM physical simulator for forward simulation to obtain trajectories consistent with gravity, inertia, and collisions. Finally, the simulated motion is converted into optical flow to re-condition the video diffusion model for regeneration. When necessary, TTCO is used during test-time to fine-tune and align the textures of moving objects across frames. The template video determines "appearance," while the simulator determines "movement," stitched together by optical flow.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Text Prompt → Pre-trained Video Model<br/>Generate Template Video (Physically Inconsistent)"]
+    subgraph PERC["Perception Pipeline: 2D Video → Simulator 3D Assets"]
+        direction TB
+        B1["Foreground Geometry<br/>SAM Segmentation → First-frame InstantMesh Reconstruction"]
+        B2["Background Geometry<br/>ViPE 4D Reconstruction → Camera Trajectory + Background Point Cloud"]
+        B3["Foreground Dynamics<br/>Estimate Initial Velocity/Rotation from Keyframes"]
+    end
+    A --> PERC
+    PERC --> C["Simulator Scene Initialization<br/>Bounding Box [0,2]³ + GPT-5 Layered Physical Attributes"]
+    C --> D["MPM Forward Simulation → Mitsuba Rendering<br/>Physically Consistent Particle Trajectories"]
+    D --> E["Physically Consistent Video Generation<br/>Hybrid Flow (FG from Simulation, BG from Template) → GwtF Warp Latent"]
+    E --> F["TTCO Test-Time Consistency Optimization<br/>First-frame Warp as Supervision, Optimize FG Text Token Embeddings"]
+    F --> G["Output: Visually Realistic and Physically Consistent Video"]
+```
 
 ### Key Designs
 
-1. **Perception Pipeline (from Template Video to Simulator Assets)**
+**1. Perception Pipeline: Translating 2D Generated Videos into 3D Simulator Assets**
 
-    - **Function**: Converts the 2D generated video into 3D assets usable by the simulator.
-    - **Mechanism**: Information is extracted through three parallel branches. (a) *Foreground object geometry*: SAM/GroundedSAM detects and segments dynamic objects; a cropped object image from the first frame is fed into InstantMesh for single-image 3D mesh reconstruction (more reliable than multi-frame reconstruction due to geometric inconsistencies across generated video frames). (b) *Background scene geometry*: ViPE (with foreground masked out) performs 4D reconstruction; bundle adjustment recovers camera trajectories; per-frame metric depth point maps are aggregated into a global 3D background point cloud. (c) *Foreground object dynamics*: Two keyframes are selected; linear velocity is computed as 3D displacement divided by $\Delta t$; rotational velocity is estimated from 2D flow fields relative to the object centroid via SuperGlue feature matching.
-    - **Design Motivation**: Although the template video is physically inconsistent, it encodes the overall scene composition. The perception pipeline bridges generated video and the physical simulator, serving as the critical link for realizing the simulation-in-the-loop paradigm.
+Since template videos are 2D and physically inconsistent while simulators requires 3D geometry and initial velocities, the perception pipeline bridges this gap across three paths. For foreground geometry, SAM/GroundedSAM segments dynamic objects, and the **first frame**'s local object image is sent to InstantMesh for single-image 3D mesh reconstruction. A single frame is used because the generated video's inter-frame geometry is often inconsistent. For background geometry, the foreground is masked, and ViPE performs 4D reconstruction to solve for camera trajectories using bundle adjustment, aggregating per-frame metric depth maps into a global 3D background point cloud. For foreground dynamics, initial linear velocity is derived from 3D displacement over $\Delta t$ between keyframes, while rotational velocity is estimated by back-calculating 2D flow fields from SuperGlue feature matching relative to the center of mass.
 
-2. **Physical Simulator Scene Initialization**
+**2. Physical Simulator Scene Initialization: Replicating the Template Scene in MPM**
 
-    - **Function**: Reproduces the template video's scene within the MPM simulator.
-    - **Mechanism**: (a) *Simulation domain definition*: The simulation cube $[0,2]^3$ is determined by enclosing the foreground dynamics and background geometry using a spatial offset factor, establishing the metric-to-simulation scaling ratio. (b) *Physical property estimation*: GPT-4 infers physical properties such as density and Young's modulus from the first frame of the template video, using a hierarchical prompting strategy — first querying material composition, elastic characteristics, and surface roughness, then mapping these to numerical physical parameters, which is more reliable than directly estimating numerical values. (c) *Simulation and rendering*: MPM forward simulation yields high-resolution particle trajectories, which are rendered by Mitsuba into RGB frames, segmentation masks, and pixel correspondences.
-    - **Design Motivation**: Although simulator renderings lack photorealism (artificial style, missing lighting, potential mesh artifacts), they faithfully encode physically correct motion information, which is sufficient as a guidance signal.
+After obtaining assets, the simulator must be informed of the scene scale and material properties. The simulation domain is determined by a bounding box encompassing the foreground motion and background geometry, shrunk via spatial offset coefficients into a standard $[0,2]^3$ cube, establishing a scaling factor between real and simulation scales. For physical attributes, GPT-5 is used with layered prompting: first identifying semantic descriptions like material composition, elasticity, and surface roughness, then mapping these to numerical parameters such as density and Young's modulus.
 
-3. **Physically Consistent Video Generation (Optical Flow Conditioning)**
+> ⚠️ The paper uses GPT-5 to estimate physical properties; the model version is based on the original text.
 
-    - **Function**: Uses simulator outputs to guide the video diffusion model toward physically consistent generation.
-    - **Mechanism**: Go-with-the-Flow (GwtF) is used for optical-flow-conditioned video generation. A blended optical flow is computed: foreground flow is derived from simulator-rendered RGB (ensuring physically consistent motion), while background flow is taken from the template video (preserving scene motion and camera dynamics); the two are fused via segmentation masks. The optical flow is used to warp noise latents as model input.
-    - **Design Motivation**: Directly conditioning on simulator outputs is insufficient due to poor visual quality. Optical flow conditioning jointly encodes trajectory and rotation information and facilitates straightforward modeling of camera motion.
+Following scene setup, MPM forward simulation generates high-resolution particle trajectories, which Mitsuba renders into RGB frames, segmentation masks, and pixel correspondences. While the rendered visuals may be artificial, their physics are faithful and serve as guidance signals.
 
-4. **TTCO: Test-Time Consistency Optimization**
+**3. Physically Consistent Video Generation: Conditioning Diffusion Models with Flow rather than Pixels**
 
-    - **Function**: Optimizes learnable parameters at test time to enforce inter-frame texture consistency of moving objects in the generated video.
-    - **Mechanism**: The first frame of the template video $\hat{I}_1$ is warped to each subsequent frame using pixel-to-pixel correspondences from the simulator, serving as a texture-consistent target. Learnable zero-initialized embeddings — added to text tokens corresponding to foreground objects and used for feature modulation in DiT layers — are optimized so that generated video pixels follow the simulator's foreground motion:
+If the simulator's raw RGB output were used as a condition, visual quality would be degraded by its artificial style. Instead, only **motion** is passed using Go-with-the-Flow (GwtF) for optical flow conditioning. A hybrid optical flow is constructed: the foreground flow is taken from the simulator to ensure physical trajectories, while the background flow is taken from the original template video to preserve scene motion and camera dynamics. These are stitched together using the foreground mask and used to warp the noisy latent.
 
-$$\mathcal{L}_{\text{TTCO}} = \sum_t \sum_j \|[De(h_0(\hat{L}_\tau))]_{q_{t,j}} - [W_t(\hat{I}_1)]_{q_{t,j}}\|_2^2$$
+**4. TTCO Test-Time Consistency Optimization: Preventing Texture Flickering**
 
-Optimization focuses on earlier (noisier) diffusion timesteps (700–1000) to guide texture generation and converges within 50 iterations.
-    - **Design Motivation**: Optical flow conditioning only guides motion direction and does not guarantee texture consistency (flickering may occur under rotation or occlusion). Optimizing foreground text tokens achieves localized adaptation — affecting only foreground objects without degrading the background.
+Optical flow manages movement but cannot guarantee texture consistency over time, especially during rotation or occlusion. TTCO warps the first frame of the template video $\hat{I}_1$ to every frame using simulation-derived pixel-pixel correspondences to serve as a supervision target. During test-time, a set of zero-initialized learnable embeddings (added to text tokens corresponding to foreground objects) are optimized to force the generated pixels to follow the simulated foreground motion:
+
+$$\mathcal{L}_{\text{TTCO}} = \sum_t \sum_j \big\|\,[De(h_0(\hat{L}_\tau))]_{q_{t,j}} - [W_t(\hat{I}_1)]_{q_{t,j}}\,\big\|_2^2$$
+
+Optimization focuses on early, noisier diffusion steps (700–1000) where the general texture is established, converging in 50 iterations. Modifying the foreground text token ensures locality, affecting only the foreground object without disturbing the background.
 
 ### Loss & Training
-PSIVG requires no additional training data. TTCO uses the AdamW optimizer at test time with a learning rate of 2e-4 for 50 iterations. Template videos are generated using SD3 for image synthesis followed by CogVideoX-I2V-5B or HunyuanVideo-I2V for video generation.
+PSIVG requires no additional training data. TTCO uses AdamW at test-time with a learning rate of $2 \times 10^{-4}$ for 50 iterations. Template videos are generated by CogVideoX-I2V-5B or HunyuanVideo-I2V following image generation via SD3.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method Type | Method | SAM mIoU↑ | Corr. Pixel MSE↓ | CLIP Text↑ | Subj. Consis.↑ |
-|-------------|--------|-----------|-----------------|------------|----------------|
+| Method Type | Method | SAM mIoU↑ | Corr.Pixel MSE↓ | CLIP Text↑ | Subj. Consis.↑ |
+|----------|------|-----------|----------------|------------|----------------|
 | Text-based | CogVideoX | 0.47 | 0.032 | 0.34 | 0.93 |
 | Text-based | HunyuanVideo | 0.46 | 0.017 | 0.35 | 0.95 |
 | Physics | PISA-Seg | 0.50 | 0.012 | 0.35 | 0.95 |
@@ -91,58 +99,34 @@ PSIVG requires no additional training data. TTCO uses the AdamW optimizer at tes
 | Controllable | MotionClone | 0.68 | 0.019 | 0.35 | 0.87 |
 | **Ours** | **PSIVG** | **0.84** | **0.007** | **0.35** | **0.95** |
 
-### User Study
-
-| Method | Preference Rate (%) |
-|--------|---------------------|
-| CogVideoX | 7.2 |
-| HunyuanVideo | 4.5 |
-| PISA-Seg | 2.6 |
-| SG-I2V | 2.5 |
-| MotionClone | 0.9 |
-| **PSIVG (Ours)** | **82.3** |
-
-32 participants unanimously rated PSIVG-generated videos as the most physically plausible.
-
-### Ablation Study
-
-| Configuration | SAM mIoU↑ | Corr. Pixel MSE↓ | Subj. Consis.↑ |
-|---------------|-----------|-----------------|----------------|
-| w/o TTCO | 0.82 | 0.009 | 0.93 |
-| **w/ TTCO** | **0.84** | **0.007** | **0.95** |
-
 ### Key Findings
-- **PSIVG achieves top performance across all motion controllability metrics** — SAM mIoU of 0.84 (0.09 above the second-best, SG-I2V) and Corr. Pixel MSE of only 0.007 (lowest among all methods).
-- Methods such as PISA-Seg exhibit high temporal stability metrics but generate nearly static videos (minimal inter-frame variation), lacking genuine motion.
-- **The benefit of TTCO is primarily reflected in texture consistency** — Corr. Pixel MSE decreases from 0.009 to 0.007, and Subject Consistency improves from 0.93 to 0.95.
-- Prompt-based optimization outperforms LoRA-based designs — LoRA frequently degrades background quality and introduces artifacts, whereas prompt optimization is more lightweight and spatially localized.
-- Directly optimizing spatio-temporal tokens (rather than text tokens) introduces grid-like artifacts.
+- **PSIVG leads in motion controllability metrics**: It achieves a SAM mIoU of 0.84 (0.09 higher than SG-I2V) and the lowest Corr. Pixel MSE of 0.007.
+- While methods like PISA-Seg show high temporal stability, they often produce nearly static videos, whereas PSIVG captures authentic motion.
+- **TTCO significantly improves texture consistency**: Corr. Pixel MSE drops from 0.009 to 0.007, and Subject Consistency rises from 0.93 to 0.95.
+- Prompt-based optimization is superior to LoRA-based designs; LoRA often degrades background quality with artifacts, while prompt optimization is lightweight and localized.
 
 ## Highlights & Insights
-- The **simulation-in-the-loop paradigm** is the primary contribution — physical constraints are introduced at inference time without modifying the generation model or requiring additional training. This decoupled design enables plug-and-play integration with arbitrary video generation models.
-- **The perception pipeline's design is noteworthy**: single-frame 3D reconstruction via InstantMesh (rather than multi-frame reconstruction) is adopted because geometric inconsistencies across generated video frames make multi-frame reconstruction unreliable — reflecting a deep understanding of the characteristics of generated video.
-- **GPT-based hierarchical physical property estimation** — inferring material descriptions (composition, elasticity, roughness) before mapping to numerical physical parameters — is more reliable than directly prompting LLMs for numerical values. This coarse-to-fine LLM usage paradigm generalizes to other scenarios requiring visual estimation of physical quantities.
-- **The finding that "text tokens = object control"**: modifying the text embeddings corresponding to foreground objects primarily affects object appearance without disrupting the background, consistent with findings from other diffusion research and further confirming the spatial correspondence of text tokens.
+- The **"Simulation-in-the-loop" paradigm** is the primary contribution. It introduces physical constraints during inference without modifying the generation model or requiring additional training, making it plug-and-play.
+- **Perception Pipeline Insight**: Using InstantMesh for single-frame reconstruction (rather than multi-frame) acknowledges the inter-frame geometric inconsistency inherent in current video models.
+- **Layered Physical Property Estimation with GPT-5**: Mapping semantic material descriptions to numerical parameters is more reliable than direct numerical estimation by LLMs.
+- **Text Token Spatial Correspondence**: The finding that modifying text embeddings primarily affects foreground appearance confirms the spatial mapping capabilities of text tokens in diffusion models.
 
 ## Limitations & Future Work
-- Reliance on the MPM simulator precludes handling of complex agents (humans, vehicles) and articulated structures.
-- The quality of initial object reconstruction in the perception pipeline directly impacts downstream stages — reconstruction errors propagate into simulation and generation.
-- The method inherits limitations of the GwtF video model, making it difficult to generate very small or thin objects.
-- The overall pipeline is substantially more complex than end-to-end approaches (template video → perception → simulation → re-generation → TTCO), resulting in higher latency.
-- Only object interactions describable by rigid bodies or material point models are supported; complex materials such as fluids and cloth are not handled.
+- Dependency on the MPM simulator limits handling of complex agents (humans, vehicles) and articulated structures.
+- The quality of the initial reconstruction in the perception pipeline directly impacts downstream simulation and generation.
+- It inherits the limitations of the GwtF model, such as difficulty in generating very small or thin objects.
+- The pipeline is significantly more complex than end-to-end approaches, leading to higher latency.
 
 ## Related Work & Insights
-- **vs. PhysAnimator**: PhysAnimator targets 2D cartoon animation using 2D mesh simulation; PSIVG operates in 3D and enables training-free open-vocabulary video generation.
-- **vs. PhysGen3D**: PhysGen3D obtains a 3D representation from an input image, runs MPM simulation, and renders directly; PSIVG additionally employs a video diffusion model to compensate for the visual shortcomings of simulator rendering (low resolution, absent lighting, unnatural style).
-- **vs. WonderPlay**: WonderPlay first generates a 3DGS surfel scene and then updates it with video supervision; PSIVG directly performs video refinement via TTCO, which is simpler and more efficient.
-- **vs. PISA**: PISA fine-tunes a diffusion model to learn physical interactions, requiring large amounts of training data; PSIVG is entirely training-free.
-- **vs. Phantom**: Phantom internalizes physical reasoning into the model (requiring training), whereas PSIVG injects physical constraints externally at inference time (requiring no training); the two approaches are complementary.
+- **vs. PhysAnimator**: PhysAnimator focuses on 2D cartoon animation with 2D meshes/simulators; PSIVG is a 3D, training-free, open-vocabulary framework.
+- **vs. PhysGen3D**: PhysGen3D renders directly from MPM simulations; PSIVG uses video diffusion to compensate for the simulator's rendering deficiencies (e.g., lighting, resolution).
+- **vs. PISA**: PISA learns interactions by fine-tuning on large datasets; PSIVG is entirely training-free.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — The first training-free framework to embed a 3D physical simulator into a text-to-video diffusion pipeline; the TTCO design is also creative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive quantitative comparisons; the user study (82.3% preference rate) is highly convincing; ablations cover key components.
-- **Writing Quality**: ⭐⭐⭐⭐ — The method pipeline is clearly described and easy to follow, with intuitive illustrations.
-- **Value**: ⭐⭐⭐⭐ — Proposes a general paradigm that can be plugged into any video generation model; practical applicability is nonetheless limited by pipeline complexity and MPM constraints.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -150,11 +134,11 @@ PSIVG requires no additional training data. TTCO uses the AdamW optimizer at tes
 
 ## Related Papers
 
+- [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
+- [\[CVPR 2026\] ProPhy: Progressive Physical Alignment for Dynamic World Simulation](prophy_progressive_physical_alignment_for_dynamic_world_simulation.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
-- [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](generative_neural_video_compression_via_video_diffusion_prior.md)
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
+- [\[ICML 2025\] How Far is Video Generation from World Model: A Physical Law Perspective](../../ICML2025/video_generation/how_far_is_video_generation_from_world_model_a_physical_law_perspective.md)
+- [\[CVPR 2026\] EgoX: Egocentric Video Generation from a Single Exocentric Video](egox_egocentric_video_generation_from_a_single_exocentric_video.md)
 
 </div>
 

@@ -2,95 +2,104 @@
 title: >-
   [Paper Note] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 description: >-
-  [CVPR2026][Autonomous Driving][Perception evaluation metrics] This paper proposes the Perception Characteristics Distance (PCD), a novel metric that quantifies the maximum reliable detection range of a perception system…
+  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes Perception Characteristics Distance (PCD), a new metric to quantify the reliable detection capability of perception systems at different distances. By statistically modeling the changes in mean and variance of detection confidence relative to distance, PCD defines the maximum reliable detection distance o
 tags:
-  - "CVPR2026"
-  - "Autonomous Driving"
-  - "Perception evaluation metrics"
-  - "detection range reliability"
-  - "uncertainty modeling"
-  - "variance change-point detection"
-  - "autonomous driving safety"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: e8953a4fcd985b0f
+content_hash: dd408e7047bfd0f5
 ---
-
 # Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2506.09217](https://arxiv.org/abs/2506.09217)  
 **Code**: [datadrivenwheels/PCD_Python](https://github.com/datadrivenwheels/PCD_Python)  
-**Area**: Autonomous Driving / Perception Evaluation
-**Keywords**: Perception evaluation metrics, detection range reliability, uncertainty modeling, variance change-point detection, autonomous driving safety
+**Area**: Autonomous Driving / Perception Evaluation  
+**Keywords**: Perception evaluation metrics, distance reliability, uncertainty modeling, variance change-point detection, autonomous driving safety
 
 ## TL;DR
 
-This paper proposes the Perception Characteristics Distance (PCD), a novel metric that quantifies the maximum reliable detection range of a perception system by statistically modeling how the mean and variance of detection confidence evolve with distance. Given a detection quality threshold $y^{thres}$ and a probability threshold $p^{thres}$, PCD identifies the furthest distance at which reliability requirements are satisfied, addressing the inability of conventional static metrics such as AP and IoU to capture distance-dependent behavior and stochastic variation.
+Ours proposes Perception Characteristics Distance (PCD), a new metric to quantify the reliable detection capability of perception systems at different distances. By statistically modeling the changes in mean and variance of detection confidence relative to distance, PCD defines the maximum reliable detection distance of a perception system, addressing the limitations of traditional static metrics like AP/IoU that fail to reflect distance dependency and stochasticity.
 
 ## Background & Motivation
 
-1. **Limitations of traditional metrics**: Classical evaluation metrics such as AP, IoU, and F1 are based on static, per-frame assessment and ignore the temporal and spatial continuity of real driving scenarios, making them insensitive to stability differences across detection ranges.
-2. **Instability at long range**: Detectors such as YOLOX produce stable confidence scores (≥0.90) at short range (<30 m), but exhibit severe fluctuations at long range (≥70 m, potentially as low as 0.24), making fixed-threshold classification prone to significant errors.
-3. **Fragility of threshold-based decisions**: Control logic in ADAS/ADS typically applies a confidence threshold to produce binary detection decisions, a paradigm that fails to capture the stochasticity and distance-dependent variability inherent in perception outputs.
-4. **Safety requirements**: Autonomous driving safety depends on accurate estimation of the maximum reliable detection range; decision systems must know beyond what distance perception outputs can no longer be trusted.
-5. **Lack of controlled benchmark datasets**: Existing driving datasets (nuScenes, KITTI, BDD100K) are collected in naturalistic environments and lack the controlled conditions necessary for systematic evaluation of perception robustness.
-6. **Insensitivity of existing metrics to condition variation**: Conventional metrics such as AP show limited sensitivity to changes in weather or illumination, and thus cannot effectively characterize perception degradation under adverse conditions.
+1.  **Limitations of Prior Work**: Classical evaluation metrics such as AP, IoU, and F1 are based on static frame-by-frame evaluation, ignoring temporal and spatial continuity in real driving scenarios and failing to reflect stability differences across various distances.
+2.  **Instability in Long-Range Detection**: Detectors like YOLOX maintain stable confidence $\ge 0.90$ at short ranges ($<30$m), but confidence fluctuates drastically (as low as $0.24$) at long ranges ($\ge 70$m), where fixed-threshold discrimination poses a severe risk of misjudgment.
+3.  **Vulnerability of Thresholding Decisions**: Control logic in ADAS/ADS typically relies on confidence thresholds for binary decisions (detected/not detected). This approach fails to capture the stochasticity and distance-related variability of perception outputs.
+4.  **Goal**: Accurate estimation of the maximum reliable detection distance is critical for autonomous driving safety; decision systems need to know the range within which perception results can be trusted.
+5.  **Lack of Controlled Benchmarks**: Existing driving datasets (nuScenes, KITTI, BDD100K) are collected in natural environments, lacking data in controlled settings for systematic evaluation of perception robustness.
+6.  **Key Challenge**: Traditional metrics like AP are insensitive to condition changes (weather/lighting) and cannot effectively reveal the degradation characteristics of perception systems under adverse conditions.
 
 ## Method
 
 ### Overall Architecture
 
-The core mechanism of PCD is to model the perception output (IoU × Confidence) as a function of distance $x$, statistically estimate its mean and variance, and identify the maximum distance at which reliability requirements are met under a given detection quality threshold $y^{thres}$ and probability threshold $p^{thres}$.
+PCD aims to answer a question traditional metrics cannot: within what distance is this perception system still trustworthy? It treats the perception output (IoU $\times$ confidence) as a function of distance $x$. First, it statistically estimates how its mean and variance change with distance. Then, given a detection quality threshold $y^{thres}$ and a probability threshold $p^{thres}$, it derives the maximum distance that still satisfies reliability requirements. IoU $\times$ confidence is used instead of confidence alone because confidence only reflects model certainty, while IoU reflects localization accuracy; multiplying them compresses "detectability" and "accuracy" into a single measure. The calculation follows two steps: variance change-point detection to segment the heteroscedastic curve into piecewise homoscedastic intervals, followed by distribution modeling in each interval to derive the maximum reliable distance.
 
-**Rationale for IoU × Confidence**: Confidence alone reflects only model certainty, while IoU captures only localization accuracy. Their product simultaneously encodes detection quality and certainty, making it more suitable for evaluating perceptual stability.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Perception Output<br/>IoU×Confidence as a function of distance x"]
+    subgraph S1["Variance Change-Point Detection"]
+        direction TB
+        B["Penalized Spline Regression<br/>Fitting mean function f(x)"]
+        C["Construct Test Statistic via SIC<br/>Detecting residual variance mutations"]
+        D["Sequential Hypothesis Testing<br/>Recursive partitioning to find all change-points"]
+        B --> C --> D
+    end
+    subgraph S2["PCD Calculation"]
+        direction TB
+        F["Within each piecewise homoscedastic interval<br/>y ~ N(μ, σ²)"]
+        G["PCD = Max distance satisfying<br/>P(y > y_thres) > p_thres"]
+        H["aPCD<br/>Average PCD across multiple threshold sets"]
+        F --> G --> H
+    end
+    A --> S1
+    S1 -->|Piecewise Homoscedastic Intervals| S2
+    S2 --> I["Safety Operation Envelope<br/>Guided Decision Distance (Downstream)"]
+```
 
 ### Key Designs
 
-**Variance Change-Point Detection**:
+**1. Variance Change-Point Detection: Identifying the Reliability "Gaps"**
 
-1. Penalized B-spline regression (Penalized B-spline, $K=10$, cubic order) is used to fit the mean function $f(x)$ of IoU×Confidence over distance.
-2. A test statistic based on the Schwarz Information Criterion (SIC) is constructed to detect significant change points in residual variance.
-3. A sequential hypothesis testing strategy is adopted: the first change point $x_{\tau_1}$ is detected on the full dataset, followed by recursive detection of subsequent change points on each partitioned subset.
-4. Change points divide the distance range into segments within which variance is approximately constant.
+Perception quality does not decay uniformly with distance; variance often spikes at specific distances (e.g., confidence dropping from $\ge 0.90$ to $0.24$ far away). Fixed thresholds fail because of these mutations. Rather than assuming constant variance, this method explicitly identifies these breakpoints. First, a Penalized B-spline regression ($K=10$, 3nd order) fits the mean function $f(x)$ of IoU $\times$ confidence. Then, a test statistic based on the Schwarz Information Criterion (SIC) is constructed to detect significant changes in residual variance. Sequential hypothesis testing is used—finding the first change-point $x_{\tau_1}$ in the full set, then recursively finding subsequent points in the resulting sub-segments.
 
-**PCD Computation**:
+These change-points partition the distance range into intervals where variance is approximately constant, simplifying heteroscedastic curves into "piecewise homoscedastic" segments for valid probabilistic calculation.
 
-- Within each segment, IoU×Confidence follows a normal distribution $y_i \sim \mathcal{N}(\mu_i, \sigma_i^2)$.
-- PCD is defined as the maximum distance $x_i$ satisfying $P_Y(y_i > y^{thres}) > p^{thres}$.
-- The aggregate metric aPCD averages over multiple combinations of $(p^{thres}, y^{thres})$, summarizing overall perceptual capability in a manner analogous to AUC.
+**2. Mechanism: Translating Reliability into a Readable Maximum Distance**
+
+Given the piecewise homoscedastic structure, IoU $\times$ confidence within each interval can be modeled as a normal distribution $y_i \sim \mathcal{N}(\mu_i, \sigma_i^2)$. PCD is defined as the maximum distance $x_i$ where $P_Y(y_i > y^{thres}) > p^{thres}$—meaning "within which distance the probability of detection quality exceeding $y^{thres}$ remains higher than $p^{thres}$." While a single threshold pair provides one slice, the comprehensive metric aPCD averages across multiple sets of $(p^{thres}, y^{thres})$, summarizing overall perception capability much like AUC summarizes a PR curve.
 
 ### Loss & Training
 
-This paper presents an evaluation metric rather than a learned model; no training loss is involved. The computation of PCD relies on:
-
-- Penalized spline regression with regularization: $\sum_{i=1}^n [y_i - \sum_j \beta_j B_j(x_i)]^2 + \lambda \sum_{j=3}^K (\Delta^2 \beta_j)^2$, where $\lambda=0.6$
-- Change-point hypothesis testing based on log-likelihood ratios and the SIC criterion.
+Ours is an evaluation metric paper and does not involve training losses. The only optimization used is the regularization term for the penalized spline regression: $\sum_{i=1}^n [y_i - \sum_j \beta_j B_j(x_i)]^2 + \lambda \sum_{j=3}^K (\Delta^2 \beta_j)^2$ ($\lambda=0.6$). Change-point hypothesis testing is based on log-likelihood ratios and the SIC criterion.
 
 ## Key Experimental Results
 
 ### SensorRainFall Dataset
 
-- Collected at the Virginia Smart Road facility under controlled rainfall intensity of 64 mm/h.
-- Four environmental conditions: sunny daytime, rainy daytime, rainy nighttime, rainy nighttime with streetlights.
-- 1,231 front-view images at 1920×1080, covering distances from 4 m to 250 m.
-- Two target types: a red sedan and a pedestrian mannequin, with ground-truth bounding boxes, segmentation masks, and precise distance annotations.
+- Collected at Virginia Smart Road facilities with controlled rainfall intensity of $64$ mm/h.
+- 4 environmental conditions: Clear Day, Rainy Day, Rainy Night, Rainy Night with Streetlights.
+- 1,231 images at $1920\times1080$ resolution, covering distances from $4$m to $250$m.
+- Two target types: red sedan and human pedestrian, providing GT bounding boxes, segmentation masks, and precise distances.
 
-### Main Results (representative results from 16 experimental groups)
+### Main Results (Representative values from 16 sets of experiments)
 
-**Instance Segmentation — Vehicle — Sunny Daytime**:
+**Instance Segmentation - Vehicle - Clear Day**:
 
 | Model | aPCD (m) | AP50:95 | AP50 | AR | F1_50 |
-|-------|----------|---------|------|----|-------|
+|------|----------|---------|------|------|-------|
 | Mask2Former | **107.1** | **0.423** | **0.633** | **0.427** | **0.778** |
 | Mask R-CNN | 89.8 | 0.376 | 0.579 | 0.381 | 0.736 |
 | ConvNeXt-V2 | 89.5 | 0.395 | 0.553 | 0.399 | 0.715 |
 | RTMDet | 43.5 | 0.349 | 0.593 | 0.353 | 0.747 |
 | SOLOv2 | 36.6 | 0.233 | 0.276 | 0.237 | 0.438 |
 
-**Object Detection — Vehicle — Rainy Nighttime** (a representative case where aPCD and traditional metric rankings diverge):
+**Object Detection - Vehicle - Rainy Night** (A typical case where aPCD rankings differ from traditional metrics):
 
 | Model | aPCD (m) | AP50:95 | AP50 | AR | F1_50 |
-|-------|----------|---------|------|----|-------|
+|------|----------|---------|------|------|-------|
 | GLIP | **37.3** | 0.133 | 0.288 | 0.136 | 0.451 |
 | Grounding DINO | 29.6 | 0.125 | 0.297 | 0.128 | 0.461 |
 | YOLOX | 23.8 | 0.106 | 0.212 | 0.109 | 0.353 |
@@ -99,44 +108,44 @@ This paper presents an evaluation metric rather than a learned model; no trainin
 
 ### Ablation Study
 
-- **Effect of sample size**: Change-point detection achieves good accuracy and stability when the number of detected change points is fewer than 4; larger sample sizes yield more precise variance change-point estimation.
-- **Effect of effect size**: Under a 50-50 sample split, a variance ratio of approximately 3× is sufficient for reliable detection.
-- **Threshold sensitivity**: PCD varies smoothly with threshold under sunny and rainy daytime conditions; under rainy nighttime conditions, PCD exhibits sharp fluctuations, indicating greater threshold sensitivity.
+- **Impact of Sample Size**: Performance is stable when the number of change-points $<4$; larger sample sizes lead to more precise variance change-point detection.
+- **Impact of Effect Size**: In a 50-50 sample split, a variance change of approximately $3\times$ can be significantly detected.
+- **Threshold Sensitivity**: PCD changes smoothly with thresholds in Clear/Rainy Day conditions, but fluctuates sharply in Rainy Night conditions, indicating the system is more sensitive to thresholds in bad weather.
 
 ## Highlights & Insights
 
-1. **Filling a metric gap**: This is the first probabilistic, distance-aware perception evaluation metric that directly links detection reliability to physical distance.
-2. **Revealing blind spots of traditional metrics**: In the rainy nighttime scenario, GLIP achieves the highest aPCD despite not ranking first in AP, demonstrating that AP ordering fails to reflect distance-dimensional stability (DyHead exhibits larger variance at long range).
-3. **Safety envelope definition**: PCD can be directly used to define the safety operational envelope of ADS, informing decision-making distances under varying environmental conditions.
-4. **Controlled dataset**: SensorRainFall is the only publicly available perception evaluation dataset collected in a highly controlled environment, eliminating confounding variables.
-5. **Methodological rigor**: The combination of penalized splines and sequential variance change-point detection provides theoretically grounded heteroscedastic modeling.
+1.  **Novelty**: Ours is the first to propose a distance-aware probabilistic perception evaluation metric, directly linking detection reliability to physical distance.
+2.  **Revealing Blind Spots of Traditional Metrics**: In the Rainy Night scenario, GLIP exhibits the highest aPCD even though its AP is not the highest, indicating AP rankings cannot reflect stability in the distance dimension (DyHead has higher fluctuations at long range).
+3.  **Safety Envelope Definition**: PCD can be directly used to define the safety operation envelope of ADS, guiding decision distances under different environmental conditions.
+4.  **Experimental Thoroughness**: SensorRainFall is a unique publicly available dataset collected in highly controlled environments to eliminate confounding variables.
+5.  **Statistical Rigor**: Heteroscedasticity is modeled using penalized splines and sequential variance change-point detection, providing a solid theoretical foundation.
 
 ## Limitations & Future Work
 
-1. **Limited dataset scale**: SensorRainFall contains only 1,231 images and 2 object categories, limiting scene diversity.
-2. **Validation confined to proprietary dataset**: PCD has not been validated on mainstream benchmarks such as nuScenes or KITTI.
-3. **Narrow task coverage**: Evaluation is restricted to object detection and instance segmentation, without extension to 3D detection, depth estimation, or semantic segmentation.
-4. **Normality assumption**: The assumption that IoU×Confidence follows a normal distribution within each segment may not hold under extreme conditions.
-5. **Static target evaluation**: Target objects are stationary; evaluation of moving targets with varying speeds and poses is absent.
-6. **Single-sensor scope**: Experiments are based solely on camera imagery, without PCD evaluation for LiDAR, Radar, or multi-sensor fusion systems.
+1.  **Limited Dataset Scale**: SensorRainFall contains only 1,231 images and 2 target classes, lacking scene diversity.
+2.  **Evaluation Scope**: The PCD generalization has not yet been validated on mainstream datasets like nuScenes or KITTI.
+3.  **Narrow Task Coverage**: Restricted to object detection and instance segmentation; not yet extended to 3D detection, depth estimation, or semantic segmentation.
+4.  **Normality Assumption**: The assumption that IoU $\times$ Confidence follows a normal distribution within intervals may not hold under extreme conditions.
+5.  **Static Target Evaluation**: Target objects were stationary; evaluation of moving targets (varying speed/pose) is missing.
+6.  **Single Sensor**: Experiments were based solely on camera images, excluding PCD evaluation for LiDAR, Radar, or multi-sensor fusion.
 
 ## Related Work & Insights
 
-| Method | Characteristics | Limitations |
-|--------|----------------|-------------|
-| AP / mAP | Precision-recall summary based on IoU thresholds | Ignores distance dimension and detection stability |
-| PDQ (Hall et al.) | Joint spatial and semantic uncertainty | Does not account for distance dependence |
-| LRP (Oksuz et al.) | Simultaneously considers localization, FP, and FN | Remains a static frame-level metric |
-| AD (Mao et al.) | Introduces temporal delay evaluation | Does not model the distance-reliability relationship |
-| GIoU (Rezatofighi et al.) | Addresses IoU for non-overlapping boxes | Unrelated to distance and stability |
-| **PCD (Ours)** | **Distance-dependent + uncertainty-aware + dual adjustable thresholds** | **Limited dataset scope and task coverage** |
+| Method | Features | Limitations |
+|------|------|------|
+| AP / mAP | Summary of Precision-Recall based on IoU thresholds | Ignores distance dimension and detection stability |
+| PDQ (Hall et al.) | Joint spatial and semantic uncertainty | Does not consider distance dependency |
+| LRP (Oksuz et al.) | Considers localization, FP, and FN simultaneously | Remains a static frame-level metric |
+| AD (Mao et al.) | Introduces temporal latency evaluation | Does not model distance-reliability relationships |
+| GIoU (Rezatofighi et al.) | Addresses IoU issues for non-overlapping boxes | Unrelated to distance and stability |
+| **PCD (Ours)** | **Distance-dependent + Uncertainty-aware + Dual thresholds** | **Limited dataset and task scope** |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Defines perception evaluation from a novel distance-uncertainty perspective with a distinctive viewpoint.
-- Experimental Thoroughness: ⭐⭐⭐ — Systematic evaluation across multiple models and conditions, but confined to the authors' own dataset with no validation on mainstream benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical formulations are clear, examples are intuitive, and figures are well designed.
-- Value: ⭐⭐⭐⭐ — Practically meaningful for ADS safety assessment and complementary to existing evaluation frameworks, though broader empirical validation is needed.
+- Novelty: ⭐⭐⭐⭐ — Defines perception evaluation from a unique distance-uncertainty perspective.
+- Experimental Thoroughness: ⭐⭐⭐ — Systematic evaluation across multiple models and conditions, but limited to a proprietary dataset.
+- Writing Quality: ⭐⭐⭐⭐ — Clear mathematical formulation, intuitive examples, and well-designed visuals.
+- Value: ⭐⭐⭐⭐ — Significant for ADS safety evaluation and complements existing systems, though requires broader empirical validation.
 
 <!-- RELATED:START -->
 
@@ -144,11 +153,11 @@ This paper presents an evaluation metric rather than a learned model; no trainin
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
+- [\[CVPR 2026\] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception](lidas_lighting-driven_dynamic_active_sensing_for_nighttime_perception.md)
 - [\[CVPR 2026\] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks](mind_the_hitch_dynamic_calibration_and_articulated_perception_for_autonomous_tru.md)
 - [\[AAAI 2026\] RoadSceneVQA: Benchmarking Visual Question Answering in Roadside Perception Systems for Intelligent Transportation System](../../AAAI2026/autonomous_driving/roadscenevqa_benchmarking_visual_question_answering_in_roadside_perception_syste.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
-- [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](../../AAAI2026/autonomous_driving/tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
 
 </div>
 

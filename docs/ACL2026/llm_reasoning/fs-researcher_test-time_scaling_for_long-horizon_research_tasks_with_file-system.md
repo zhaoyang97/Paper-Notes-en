@@ -2,77 +2,94 @@
 title: >-
   [Paper Note] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Deep Research] This paper proposes FS-Researcher, a dual-agent deep research framework based on a file system. Through a Context Builder to construct a hierarchical knowledge base and a Report W…
+  [ACL 2026][LLM Reasoning][Paper Note] This paper introduces FS-Researcher, a file-system-based dual-agent framework for deep research. By utilizing a Context Builder to construct a hierarchical knowledge base and a Report Writer for sectional reporting within a persistent workspace, it overcomes context window limitations. FS-Researcher achieves 53.94 RACE
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Deep Research"
-  - "File System"
-  - "Test-Time Scaling"
-  - "Knowledge Base Construction"
-  - "Dual-Agent Framework"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 4260c2b098bd4f86
+content_hash: 8eb037866b68d6f7
 ---
-
 # FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 
 **Conference**: ACL 2026  
 **arXiv**: [2602.01566](https://arxiv.org/abs/2602.01566)  
 **Code**: [https://github.com/Ignoramus0817/FS-Researcher](https://github.com/Ignoramus0817/FS-Researcher)  
 **Area**: LLM Reasoning  
-**Keywords**: Deep Research, File System, Test-Time Scaling, Knowledge Base Construction, Dual-Agent Framework
+**Keywords**: Deep Research, File System, Test-time Scaling, Knowledge Base Construction, Dual-Agent Framework
 
 ## TL;DR
 
-This paper proposes FS-Researcher, a dual-agent deep research framework based on a file system. Through a Context Builder to construct a hierarchical knowledge base and a Report Writer to compose reports by section, it utilizes a persistent workspace to bypass context window limitations. It achieves 53.94 RACE (SOTA) on the DeepResearch Bench and demonstrates a positive test-time scaling effect between context-building computation and report quality.
+This paper introduces FS-Researcher, a file-system-based dual-agent framework for deep research. By utilizing a Context Builder to construct a hierarchical knowledge base and a Report Writer for sectional reporting within a persistent workspace, it overcomes context window limitations. FS-Researcher achieves 53.94 RACE (SOTA) on the DeepResearch Bench and demonstrates a positive test-time scaling effect between context construction computation and report quality.
 
 ## Background & Motivation
 
-**Background**: Deep Research is a frontier representative task for LLM Agents, requiring agents to systematically gather evidence from the internet and synthesize it into long-form reports. Commercial deep research products from OpenAI, Google, and Anthropic have demonstrated human-level performance.
+**Background**: Deep research is a representative frontier task for LLM agents, requiring them to systematically collect evidence from the internet and synthesize it into long-form reports. Commercial products from OpenAI, Google, and Anthropic have demonstrated human-level performance in this domain.
 
-**Limitations of Prior Work**: (1) Limited model context lengths cause long-trajectory deep research tasks to easily exceed context capacity, leading to agent execution failure; (2) In existing methods (static pipelines, single-agent workflows), thoughts, tool observations, and report drafts compete for a limited token budget, resulting in incomplete coverage and premature synthesis; (3) Current compression strategies (e.g., summarizing tool observations) extend trajectories but introduce lossy bottlenecks—fine-grained evidence and sources may be lost, and hard context limits still remain.
+**Limitations of Prior Work**: (1) Models have limited context lengths, and long-trajectory research tasks easily exceed this capacity, leading to execution interruptions. (2) Existing methods (static pipelines, single-agent flows) force thoughts, tool observations, and report drafts to compete for a limited token budget, resulting in incomplete coverage and premature synthesis. (3) Current compression strategies (e.g., summarizing tool observations) extend trajectories at the cost of lossy bottlenecks, where fine-grained evidence and sources may be lost.
 
-**Key Challenge**: There is a fundamental contradiction between the volume of information required for deep research tasks (hundreds of webpages, reports with tens of thousands of tokens) and the capacity of the model's context window. Existing methods either truncate information or use lossy compression, failing to truly achieve test-time scaling (allocating more computation to improve quality).
+**Key Challenge**: A fundamental contradiction exists between the volume of information required for deep research (hundreds of webpages, reports with tens of thousands of tokens) and the capacity of the model's context window. Existing methods either truncate information or use lossy compression, failing to achieve true test-time scaling (allocating more computation to improve quality).
 
-**Goal**: (1) Design a deep research framework scalable beyond the context window; (2) Verify whether the framework can continuously improve report quality by increasing computation; (3) Outperform both closed-source and open-source SOTA on multiple benchmarks.
+**Goal**: (1) Design a deep research framework capable of scaling beyond the context window. (2) Verify whether the framework can consistently improve report quality by increasing computation. (3) Surpass closed-source and open-source SOTA on multiple benchmarks.
 
 **Key Insight**: Inspired by programming agents and AI IDEs (Cursor, Claude Code), file-system workspaces serve as effective infrastructure for long-duration tool use and iterative development. This paradigm is migrated to deep research, using the file system as persistent external memory.
 
-**Core Idea**: Replace the context window with a file system as the agent's memory infrastructure—storing information in files rather than retaining it in context, loading as needed, and supporting infinite expansion and cross-session iterative optimization.
+**Core Idea**: Replace the context window with a file system as the agent's memory infrastructure. Information is written to files rather than kept in context, loaded on demand, and supports infinite scaling and cross-session iterative optimization.
 
 ## Method
 
 ### Overall Architecture
 
-FS-Researcher is a dual-agent framework divided into two stages: (1) The Context Builder receives a research topic, browses the internet like a librarian, writes structured notes, and archives raw webpages to build a hierarchical knowledge base; (2) The Report Writer uses the knowledge base as the sole source of truth to write reports section by section. Both agents share the same file-system workspace and support independent iterative optimization. The workspace includes deliverables (knowledge base/reports) and control files (TODO, Checklist, Log).
+The core contradiction FS-Researcher seeks to resolve is that deep research requires digesting hundreds of webpages and producing massive reports, far exceeding the context window. The solution is to move memory from the context to the file system—writing information to files and loading it as needed to break the window limit. The framework consists of a dual-agent, two-stage process: the Context Builder acts as a librarian to browse the internet, write structured notes, and archive raw pages to build a hierarchical knowledge base; the Report Writer then uses this knowledge base as the sole source of truth to write the report section by section. Both agents share a file-system workspace containing deliverables (KB, report) and control files (TODO, Checklist, Log), allowing each to iterate and optimize independently.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Research Topic"] --> CB
+    subgraph CB["Context Builder: Collect → Distill → Archive"]
+        direction TB
+        C1["Web Search<br/>search_web / read_webpage"] --> C2["Write KB Notes with Citations<br/>Archive Original Pages"]
+        C2 --> C3["Session-end Self-check<br/>Mark Gaps / Conflicts"]
+        C3 -->|Audit Failed, Iterate| C1
+    end
+    CB --> FS
+    FS["File System Workspace (Shared Persistent Memory)<br/>index.md · knowledge_base/ · sources/ · report.md<br/>TODO · Checklist · Log"]
+    FS --> RW
+    subgraph RW["Report Writer: Read-only KB · Sectional Writing"]
+        direction TB
+        R1["First Session Creates Outline<br/>(Chapter TODOs)"] --> R2["Write One Chapter Per Session"]
+        R2 --> R3["Section/Report Level Audit"]
+        R3 -->|Not Standard, Remark IN-PROGRESS for Rework| R2
+    end
+    RW --> OUT["Final Research Report report.md"]
+```
 
 ### Key Designs
 
-1. **File-System Workspace**:
-    - **Function**: Provides persistent external memory to bypass context window limitations.
-    - **Mechanism**: The workspace contains two types of files: deliverables (index.md, knowledge_base/, sources/, report.md) and control files (todos, checklist, logs). All files are stored in Markdown format. The agent checks the workspace state at the start of each session, formulates a plan, and executes it. At the end of the session, it reviews status according to the checklist, marking incomplete items as [IN-PROGRESS]. The toolset includes file-system tools (ls, grep, read_file, insert/delete/replace) and web browsing tools (search_web, read_webpage).
-    - **Design Motivation**: The file system offers three advantages: (a) mirroring the native environment humans use for complex tasks; (b) storage capacity far exceeding the context window with on-demand access without overflow; (c) persistent and traceable intermediate products, supporting iterative optimization across sessions.
+**1. File System Workspace: Replacing context windows with persistent external memory to remove token budget constraints**
 
-2. **Context Builder**:
-    - **Function**: Systematically collects, distills, and archives information into a knowledge base.
-    - **Mechanism**: Deliverables include index.md (table of contents with topic breakdown and KB structure), knowledge_base/ (tree-structured directory of notes, each statement cited back to sources/), and sources/ (archived raw webpages). The workflow is non-linear—index.md and knowledge_base/ update dynamically during browsing. Self-checks at the end of each session identify errors, gaps, or conflicts in the knowledge base, marking them for processing. It can run iteratively until the session budget is reached or it passes review.
-    - **Design Motivation**: Unlike accumulating facts directly in the context, externalizing information to the file system allows the knowledge base to grow beyond context capacity, while structured organization facilitates on-demand retrieval by the Report Writer.
+In long trajectories of deep research, thoughts, tool observations, and report drafts compete for the limited token budget, resulting in incomplete coverage. FS-Researcher externalizes everything into Markdown files: deliverables include `index.md`, `knowledge_base/`, `sources/`, and `report.md`, while control files include todos, checklists, and logs. At the start of each session, the agent inspects the workspace state to plan; at the end, it audits against a checklist and marks unfinished items as `[IN-PROGRESS]` for subsequent sessions. The toolset is divided into file system tools (`ls`, `grep`, `read_file`, `insert`/`delete`/`replace`) and web browsing tools (`search_web`, `read_webpage`). This approach mirrors how humans handle complex tasks, provides storage far exceeding the context window, and ensures intermediate products are persistent and traceable.
 
-3. **Report Writer**:
-    - **Function**: Writes high-quality research reports section by section based on the knowledge base.
-    - **Mechanism**: Web browsing tools are removed, allowing facts to be read only from the knowledge base. It adopts a multi-session writing process: the first session creates an outline (serving as TODOs), and each subsequent session focuses on one section. Section-level reviews (per checklist) occur after each section, followed by a report-level review once completed. Issues result in re-marking sections as [IN-PROGRESS]. There is no session budget limit.
-    - **Design Motivation**: Generating an entire report at once often results in a list of facts lacking deep analysis. Sectional writing provides frequent re-anchoring opportunities, combining the knowledge base for local planning and self-correction.
+**2. Context Builder: Systematically collecting, distilling, and archiving information into a structured KB**
+
+Directly accumulating facts in the context quickly exhausts the window and leads to disorganized structures. The Context Builder produces three components: `index.md` (directory with topic decomposition), `knowledge_base/` (tree-like notes with citations to `sources/`), and `sources/` (archived raw pages). The workflow is non-linear: `index.md` and `knowledge_base/` are updated dynamically during browsing. Each session concludes with a self-audit to identify errors, gaps, or conflicts in the KB, which can iterate until the session budget is exhausted or the audit passes. Externalizing information allows the KB to grow far beyond context capacity, while structured organization enables precise retrieval by the Report Writer.
+
+**3. Report Writer: Disabling web access for read-only KB use, employing multi-session sectional writing for depth and self-correction**
+
+Generating an entire report at once often degrades into a list of facts lacking depth. The Report Writer is restricted to reading facts from the KB (web tools removed) and utilizes a multi-session sectional process. The first session creates an outline (acting as a TODO), and each subsequent session focuses on one chapter. Section-level audits (against checklists) follow each chapter, and a final report-level audit is conducted upon completion. If issues are found, chapters are remarked as `[IN-PROGRESS]` for rework. Sectional writing provides frequent "re-anchoring" opportunities, allowing the agent to return to the KB for local planning and self-correction.
 
 ### Loss & Training
 
-As a framework-oriented work, this paper does not involve model training. Standard ReAct architectures are used to drive the two agents: $T_i, A_i = M_\theta(T_{j<i}, A_{j<i}, O_{j<i}, P)$, $O_i = Execute(A_i)$. Various backbone models like GPT-5, Claude-Sonnet-4.5, and Gemini-2.5-Pro are supported. File I/O latency is negligible (<0.03% of total time).
+This work focuses on the framework and does not involve model training. Both agents are driven by a standard ReAct architecture:
+
+$$T_i, A_i = M_\theta(T_{j<i}, A_{j<i}, O_{j<i}, P), \quad O_i = \mathrm{Execute}(A_i)$$
+
+Where $T_i$, $A_i$, and $O_i$ represent the thought, action, and observation at step $i$, and $P$ is the prompt. The framework supports various backbones such as GPT-5, Claude-Sonnet-4.5, and Gemini-2.5-Pro.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**DeepResearch Bench Performance Comparison**
+**Performance Comparison on DeepResearch Bench**
 
 | Method | Backbone | Comp. | Insight | Instr. | Read. | RACE |
 |------|---------|-------|---------|--------|-------|------|
@@ -83,7 +100,7 @@ As a framework-oriented work, this paper does not involve model training. Standa
 | **FS-Researcher** | Claude-Sonnet-4.5 | **54.25** | **55.85** | **52.47** | **51.54** | **53.94** |
 | **FS-Researcher** | GPT-5 | 51.96 | 54.44 | 52.14 | 51.26 | 52.76 |
 
-**DeepConsult Performance Comparison**
+**Performance Comparison on DeepConsult**
 
 | Method | Win% | Tie% | Lose% | Avg Score |
 |------|------|------|-------|-----------|
@@ -91,58 +108,49 @@ As a framework-oriented work, this paper does not involve model training. Standa
 | WebWeaver | 66.16 | 12.14 | 21.68 | 6.94 |
 | **FS-Researcher** (Claude) | **80.00** | 10.42 | 9.58 | **8.33** |
 
-**BrowseComp Accuracy**
-
-| Method | Accuracy |
-|------|-------|
-| Claude-Sonnet-4.5 (Official) | 43.9% |
-| FS-Researcher (Claude) | **55.0%** |
-| GPT-5 (Official) | 54.9% |
-| FS-Researcher (GPT-5) | **68.0%** |
-
 ### Ablation Study
 
-**Module Ablation (GPT-5 Backbone, 10 Sample Queries)**
+**Module Ablation (GPT-5 Backbone, 10 sample queries)**
 
 | Configuration | Comp. | Insight | Instr. | Read. | RACE |
 |------|-------|---------|--------|-------|------|
 | FS-Researcher (Full) | 51.96 | 54.44 | 52.14 | 51.26 | 52.76 |
 | - Persistent Workspace | 48.38(-3.58) | 46.49(-7.95) | 50.78 | 49.92 | 48.69(-4.07) |
-| - Dual-Agent→Single-Agent | 40.90(-11.06) | 37.55(-16.89) | 46.30 | 44.78 | 42.41(-10.35) |
-| - Section-writing→One-shot | 47.06(-4.90) | 45.64(-8.80) | 50.50 | 46.46 | 47.63(-5.13) |
+| - Dual-Agent $\rightarrow$ Single-Agent | 40.90(-11.06) | 37.55(-16.89) | 46.30 | 44.78 | 42.41(-10.35) |
+| - Sectional $\rightarrow$ One-shot | 47.06(-4.90) | 45.64(-8.80) | 50.50 | 46.46 | 47.63(-5.13) |
 
-### Key Findings
+## Key Findings
 
-- FS-Researcher consistently outperforms closed-source and open-source SOTA across three benchmarks, proving that the framework-level advantages of the file-system paradigm are independent of the backbone model.
-- The dual-agent ablation has the largest impact (RACE -10.35), indicating that the separation of evidence collection and report writing is a core design choice.
-- Increasing Context Builder turns (3→5→10) continuously improves report quality (Insight from 49.48 to 55.88), though readability slightly declines after 5 turns as increased information density results in a more technical writing style.
-- Persistent workspace has the greatest impact on Insight (-7.95), showing that a structured knowledge base is critical for deep analysis.
-- Using smaller summarization models to compress context reduces Context Builder costs by 47% with negligible quality loss.
+- FS-Researcher consistently outperforms closed-source and open-source SOTA across three benchmarks, proving that the file-system paradigm's advantages are independent of the backbone model.
+- The dual-agent ablation shows the largest impact (RACE -10.35), indicating that separating evidence collection from report writing is a core design requirement.
+- Increasing Context Builder rounds (3 $\rightarrow$ 5 $\rightarrow$ 10) consistently improves report quality (Insight from 49.48 to 55.88), though readability slightly decreases after 5 rounds as increased information density leads to a more technical style.
+- Persistent workspaces have the greatest impact on Insight (-7.95), suggesting that a structured KB is crucial for in-depth analysis.
+- Compressing context with a smaller summarization model reduces Context Builder costs by 47% with negligible quality loss.
 
 ## Highlights & Insights
 
-- The paradigm shift of utilizing a file system as agent external memory—from "putting information in context" to "putting information in files and loading as needed"—is a simple yet profound architectural innovation.
-- Dual-agent separation solves a fundamental problem: information gathering and report writing require different cognitive modes; mixing them leads to premature synthesis and shallow exploration.
-- Successful verification of the test-time scaling effect (more computation → better reports) provides preliminary evidence for scaling laws in agent systems.
+- The paradigm shift of using a file system as an agent's external memory—moving from "information in context" to "information in files loaded on demand"—is a simple yet profound architectural innovation.
+- The dual-agent separation solves a fundamental problem: information gathering and report writing require different cognitive modes; mixing them leads to premature synthesis and shallow exploration.
+- The successful verification of the test-time scaling effect (more computation $\rightarrow$ better reports) provides preliminary evidence for scaling laws in agentic systems.
 
 ## Limitations & Future Work
 
-- The framework relies on strong backbone models—it requires robust multi-turn planning, web search, and long-form writing capabilities; smaller models may suffer from frequent premature termination.
-- There is a trade-off between readability and comprehensiveness—richer knowledge bases lead to more technical writing styles.
-- Multi-agent collaboration (e.g., multiple Context Builders searching different sub-topics in parallel) has not been studied.
-- Storing raw webpages may involve copyright and privacy concerns.
+- The framework depends on strong backbone models—it requires robust multi-turn planning, web searching, and long-form writing capabilities; smaller models may terminate early.
+- There is a trade-off between readability and comprehensiveness, as richer KBs lead to more technical writing styles.
+- Multi-agent collaboration (e.g., multiple Context Builders searching different sub-topics in parallel) was not explored.
+- Archiving raw webpages may involve copyright and privacy concerns.
 
 ## Related Work & Insights
 
-- **vs OpenAI/Google Deep Research**: Commercial product technologies are opaque; FS-Researcher serves as a reproducible open-source alternative and outperforms them on multiple benchmarks.
-- **vs LangChain Open Deep Research**: Under the same GPT-5 backbone, FS-Researcher improves RACE by +2.16, proving framework contributions are independent of the model.
-- **vs Summarization/Compression Methods**: Summarization is lossy and still context-constrained; the file-system approach is lossless and has no upper bound.
+- **vs OpenAI/Google Deep Research**: While commercial product internals are opaque, FS-Researcher provides a reproducible open-source alternative that surpasses them on multiple benchmarks.
+- **vs LangChain Open Deep Research**: Using the same GPT-5 backbone, FS-Researcher improves RACE by +2.16, proving the framework's contribution is independent of the model.
+- **vs Summarization Compression**: Summarization is lossy and still context-constrained; the file system approach is lossless and has no upper limit.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The paradigm innovation of using a file system as agent memory is simple and effective; the validation of the test-time scaling effect is valuable.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three benchmarks, three backbone models, three ablation sets, scaling analysis, and case studies.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, detailed methodological description, and logical ablation design.
+- Novelty: ⭐⭐⭐⭐⭐ The paradigm of using a file system for agent memory is simple and effective; the validation of test-time scaling is valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Conducted across three benchmarks, three backbones, three ablation studies, scaling analysis, and case studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, detailed method descriptions, and logical ablation designs.
 - Value: ⭐⭐⭐⭐⭐ Provides a reproducible SOTA framework and design principles for deep research agents.
 
 <!-- RELATED:START -->
@@ -153,9 +161,9 @@ As a framework-oriented work, this paper does not involve model training. Standa
 
 - [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
 - [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](../../ICLR2026/llm_reasoning/atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
+- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
+- [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
 
 </div>
 

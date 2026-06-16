@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 description: >-
-  [Image Generation] This paper proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts in multi-category aggregatio…
+  [CVPR 2026][Image Generation][Paper Note] Ours proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts when aggregating multiple categories. It dynamically identifies the harmful category most aligned with the current generation state and applies safety gu
 tags:
-  - "Image Generation"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 0384582b2676f8ce
+content_hash: 71c7dda2ba2cd34e
 ---
-
 # When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 
 ## Basic Information
@@ -17,82 +17,59 @@ content_hash: 0384582b2676f8ce
 - **arXiv**: [2602.20880](https://arxiv.org/abs/2602.20880)
 - **Code**: [GitHub](https://github.com/tmllab/2026_CVPR_CASG)
 - **Area**: Image Generation / T2I Safety
-- **Keywords**: Diffusion model safety, harmful content mitigation, safety guidance, multi-category conflict, training-free framework
+- **Keywords**: Diffusion Model Safety, Harmful Content Mitigation, Safety Guidance, Multi-category Conflict, Training-free Framework
 
 ## TL;DR
 
-This paper proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts in multi-category aggregation. CASG dynamically identifies the harmful category most aligned with the current generation state and applies safety guidance exclusively along that direction.
+Ours proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts when aggregating multiple categories. It dynamically identifies the harmful category most aligned with the current generation state and applies safety guidance only along that direction.
 
 ## Background & Motivation
 
-Text-to-image (T2I) diffusion models (e.g., Stable Diffusion, Hunyuan-DiT) have achieved remarkable progress in high-quality image generation, but simultaneously introduce safety risks regarding harmful content generation (hate, pornography, violence, illegal content, etc.). Existing safety guidance methods (e.g., SLD, SAFREE) steer generation away from harmful regions by imposing safety directions in latent or text space, serving as lightweight safety solutions that require no model modification.
+Text-to-Image (T2I) diffusion models (e.g., Stable Diffusion, Hunyuan-DiT) have made significant progress in generating high-quality images but also pose safety risks by generating harmful content (hate, pornography, violence, illegal acts, etc.). Existing safety guidance methods (e.g., SLD, SAFREE) are lightweight, training-free solutions that guide generation away from harmful regions by applying safety directions in latent or text spaces.
 
-**Core Problem**: Existing safety guidance methods handle multi-category harmful content by naively concatenating all harmful keywords into an aggregated set and deriving a single unified safety direction. This category-agnostic design implicitly assumes that different types of harm are compatible. Through extensive experiments, however, the authors demonstrate that this assumption does not hold — different harmful categories define distinct and often incompatible safety directions, and forced aggregation produces **Harmful Conflicts** that actually degrade safety performance.
+**Core Problem**: Prior safety guidance methods handle multi-category harmful content by simply concatenating all harmful keywords into an aggregate set to derive a unified safety direction. This category-agnostic design implicitly assumes that different types of harm are compatible. However, extensive experiments reveal that this assumption is flawed—different harmful categories define unique and often incompatible safety directions. Forcing aggregation leads to **Harmful Conflict**, which paradoxically degrades safety performance.
 
 Harmful conflicts manifest in two forms:
 
-**Directional Inconsistency** → Safety Misalignment Degradation: Safety directions from different categories point toward incompatible or even opposing directions. For example, applying a "hate" safety direction to pornographic prompts increases the harmful rate from 67.2% to 72.4%, far worse than correctly applying the "pornography" direction, which achieves 3.2%.
+**Directional Inconsistency** $\rightarrow$ Safety Misalignment Degradation: Safety directions of different categories point in incompatible or even opposite directions. For example, applying "hate" category safety guidance to a pornographic prompt increases the harmful rate from 67.2% to 72.4%, significantly higher than the 3.2% achieved by correctly using the "pornography" direction.
 
-**Directional Attenuation** → Safety Averaging Degradation: Multi-category aggregation causes heterogeneous directions to partially cancel, weakening the net safety signal. Applying the "pornography" direction alone yields a harmful rate of 3.2%, which rises to 5.8% when "hate" is added, and further to 48.8% when all categories are aggregated.
+**Directional Attenuation** $\rightarrow$ Safety Averaging Degradation: Aggregating multiple categories causes heterogeneous directions to partially cancel each other out, weakening the net safety signal. While the "pornography" direction alone yields a 3.2% harmful rate, adding "hate" increases it to 5.8%, and aggregating all categories spikes it to 48.8%.
 
 ## Method
 
 ### Overall Architecture
 
-CASG is a plug-and-play safety correction framework consisting of two core components:
+CASG addresses a specific issue: when a prompt potentially triggers multiple harmful categories, existing methods concatenate keywords into one set to find a unified "safety direction," resulting in conflicting directions and reduced safety. The Mechanism of CASG avoids aggregate directions. Instead, at each denoising timestep, it first determines which harmful category the current generation trajectory most closely resembles, then applies safety correction only along that dominant category. This process consists of two steps—Conflict-aware Category Identification (CaCI) to select the dominant category, followed by Conflict-resolving Guidance Application (CrGA) to apply the correction. This mechanism is plug-and-play for both latent space (CASG+SLD) and text space (CASG+SAFREE) safety mechanisms.
 
-- **CaCI (Conflict-aware Category Identification)**: Dynamically identifies the harmful category most aligned with the current generation state.
-- **CrGA (Conflict-resolving Guidance Application)**: Applies safety correction exclusively along the identified dominant category direction.
+```mermaid
+graph TD
+    A["Prompt + Predefined Harmful Categories"] --> B["Denoising Timestep t<br/>Current Latent z_t"]
+    B --> C{"Safety Mechanism Type"}
+    C -->|Latent Space SLD| D["Conflict-aware Category Identification CaCI<br/>Cosine similarity between guidance directions and prompt direction, take argmax"]
+    C -->|Text Space SAFREE| E["Conflict-aware Category Identification CaCI<br/>Residual norm of orthogonal complements of subspaces, take argmin"]
+    D --> F["Dominant Category h*"]
+    E --> F
+    F --> G["Conflict-resolving Guidance Application CrGA<br/>Apply safety correction only along h*, others remain unchanged"]
+    G --> H["Update z_(t−1)"]
+    H -->|"t > 0: Dynamic re-selection"| B
+    H -->|"t = 0"| I["Safe Image Output"]
+```
 
-CASG can be instantiated with both latent-space safety mechanisms (CASG+SLD) and text-space safety mechanisms (CASG+SAFREE).
+### Key Designs
 
-### Latent-Space Method: Conflict-aware Safety Steering (CASG+SLD)
+**1. Conflict-aware Category Identification (CaCI): Locking onto the best-aligned harmful category at each timestep**
 
-**Step 1: Harmful Guidance Computation.** For each category $h_i$ in the predefined harmful keyword set $\mathcal{H}$, the harmful guidance in latent space is computed. Following the classifier-free guidance principle, the noise prediction under harmful conditioning is obtained:
+Aggregating all categories mixes incompatible safety directions. The first step identifies which harmful category is currently being generated. In the latent space, CASG calculates the harmful guidance direction $g_i = \epsilon_\theta(z_t, c_{h_i}) - \epsilon_\theta(z_t)$ for each category $h_i$, and the prompt's own guidance direction $g_p = \epsilon_\theta(z_t, c_p) - \epsilon_\theta(z_t)$. It uses cosine similarity $\cos\theta_i = \frac{g_i \cdot g_p}{\|g_i\|\|g_p\|}$ to measure which category fits the current trajectory, selecting $h^* = h_{\arg\max_i \cos\theta_i}$ as the dominant category. In text space, SAFREE represents harmful concepts using subspace projection matrices $P_{h_i}$. CASG calculates the residual of the prompt embedding on the orthogonal complement of each subspace: $p_{h_i}^\perp = (I - P_{h_i})p$. A smaller residual norm $\|p_{h_i}^\perp\|$ indicates higher alignment, choosing $h^* = h_{\arg\min_i \|p_{h_i}^\perp\|}$. Both implementations use "alignment" to isolate the single most relevant category.
 
-$$\hat{\epsilon}_i = \epsilon_\theta(z_t, c_{h_i})$$
+**2. Conflict-resolving Guidance Application (CrGA): Correcting only along the dominant category**
 
-The harmful guidance direction is then derived by subtracting the unconditional noise prediction:
+The second pain point is directional attenuation—averaging multiple categories dilutes the net safety signal. CrGA takes a restrained approach: once $h^*$ is identified, the latent space version applies only the direction of $h^*$ for the original SLD correction, and the text space version uses only $P_{h^*}$ for orthogonal projection. All original mechanisms and hyperparameters of SLD/SAFREE remain unchanged. By excluding irrelevant directions, the safety signal is not averaged out, preventing the degradation where the "wrong direction" pushes the harmful rate higher.
 
-$$g_i = \hat{\epsilon}_i - \epsilon_\theta(z_t)$$
+**3. Step-wise Dynamic Identification vs. One-time Text Pre-classification**
 
-This yields the harmful guidance set $G = \{g_1, \ldots, g_k\}$.
+A natural alternative would be using an LLM to classify prompts before applying safety guidance. However, harmful semantics evolve dynamically during the denoising process. A fixed category chosen at the start cannot track these changes, and LLMs often struggle with hybrid or ambiguous prompts. By placing the identification on the generation trajectory and re-updating the dominant category at every timestep, CASG tracks dynamic conflicts—explaining why it significantly outperforms static pre-classification schemes like GPT-4o+SLD or QwenGuard+SLD.
 
-**Step 2: Aligned Category Identification (CaCI).** The prompt guidance is computed analogously:
-
-$$g_p = \epsilon_\theta(z_t, c_p) - \epsilon_\theta(z_t)$$
-
-The alignment between each harmful guidance $g_i$ and the prompt guidance $g_p$ is measured via cosine similarity:
-
-$$\cos\theta_i = \frac{g_i \cdot g_p}{\|g_i\| \|g_p\|}$$
-
-A higher cosine similarity indicates greater alignment between that harmful category and the current generation trajectory. The category with maximum cosine similarity is selected as the dominant harmful direction:
-
-$$h^* = h_{\arg\max_i \cos\theta_i}$$
-
-**Step 3: Aligned Category Application (CrGA).** SLD safety correction is applied exclusively along the dominant harmful category $h^*$, replacing the original multi-category aggregated direction. All other SLD mechanisms and hyperparameters remain unchanged.
-
-### Text-Space Method: Conflict-aware Orthogonal Projection (CASG+SAFREE)
-
-**Step 1: Projection Residual Computation.** For each harmful category $h_i$, SAFREE represents its harmful concept via a subspace projection matrix $P_{h_i}$. The projection of the prompt embedding onto the orthogonal complement of the harmful subspace is computed:
-
-$$p_{h_i}^\perp = (I - P_{h_i}) p$$
-
-where $p_{h_i}^\perp$ denotes the residual prompt embedding after removing components aligned with harmful category $h_i$.
-
-**Step 2: Aligned Category Identification (CaCI).** A smaller residual norm $\|p_{h_i}^\perp\|$ indicates higher alignment between the prompt and the corresponding harmful category. The category with minimum residual norm is selected:
-
-$$h^* = h_{\arg\min_i \|p_{h_i}^\perp\|}$$
-
-**Step 3: Aligned Category Application (CrGA).** Orthogonal projection is performed using only the subspace $P_{h^*}$ of the dominant harmful category, avoiding cross-category interference.
-
-### Key Design Highlights
-
-1. **Training-free and plug-and-play**: No additional training or external API calls are required; CASG is directly embedded into existing safety mechanisms.
-2. **Dynamic step-wise adaptation**: The dominant category identification is updated at every denoising timestep, capturing the dynamic evolution of harmful semantics throughout the generation process.
-3. **Generation-state-based rather than text-classification-based**: Unlike LLM-based pre-classification approaches (e.g., GPT+SLD), CASG makes decisions based on the actual generation trajectory, more accurately tracking the dynamic variation of harmful conflicts.
-
-## Experiments
+## Key Experimental Results
 
 ### Main Results
 
@@ -108,9 +85,9 @@ $$h^* = h_{\arg\min_i \|p_{h_i}^\perp\|}$$
 | SLD | ✗ | 12.7 | 25.2 | 15.7 | 7.1 | 52.11 | 29.22 |
 | **CASG+SLD** | ✓ | **10.2** | **9.8** | **9.8** | **3.9** | 52.00 | 29.36 |
 
-CASG+SLD achieves state-of-the-art performance on all four benchmarks, reducing harmful rates by up to 15.4% (from 25.2% to 9.8% on T2VSafetyBench). FID and CLIP scores remain virtually unchanged, indicating no degradation in generation quality.
+CASG+SLD achieves SOTA across all four benchmarks, reducing the harmful rate by up to 15.4% (from 25.2% to 9.8% on T2VSafetyBench). Meanwhile, FID and CLIP scores remain nearly constant, indicating no loss in generation quality.
 
-### LLM-Assisted vs. CASG Ablation
+### Ablation Study: LLM-Assisted vs. CASG
 
 | Method | I2P ↓ | T2VSafetyBench ↓ | UD ↓ |
 |:---|:---:|:---:|:---:|
@@ -119,38 +96,38 @@ CASG+SLD achieves state-of-the-art performance on all four benchmarks, reducing 
 | QwenGuard+SLD | 14.0 | 21.1 | 23.3 |
 | **CASG+SLD** | **10.2** | **9.8** | **9.8** |
 
-LLM-assisted approaches (GPT-4o or QwenGuard pre-classification followed by SLD) show limited or even negative effect for two reasons: (1) LLMs misclassify mixed or ambiguous prompts; (2) the assigned category is fixed at the start of generation and cannot adapt to conflicts that evolve dynamically during denoising. CASG updates at every timestep, substantially outperforming LLM-assisted alternatives.
+LLM-assisted schemes (GPT-4o/QwenGuard pre-classification followed by SLD) show limited or even negative effects for two reasons: (1) LLMs misclassify hybrid/ambiguous prompts; (2) fixed categories cannot adapt to evolving conflicts during denoising. CASG dynamically updates at each timestep, significantly outperforming LLM-assisted methods.
 
 ### Key Findings
 
-1. **Multi-category aggregation does not imply greater safety**: This is the paper's most central finding. Aggregating more harmful categories may actually weaken safety (e.g., full-category aggregation yields a harmful rate of 48.8% on pornographic prompts, far exceeding 3.2% for the single correct category).
-2. **Conflicts are systematic**: Consistent degradation patterns are observed across different base models, safety mechanisms, and harmful keyword definitions.
-3. **Dynamic identification outperforms static classification**: Step-wise identification based on generation trajectory is more effective than one-shot text classification by LLMs.
-4. **Plug-and-play improvements are substantial**: CASG consistently improves both SLD and SAFREE without introducing any additional training cost.
+1. **Category Aggregation $\neq$ Increased Safety**: The core finding is that aggregating more harmful categories can weaken safety.
+2. **Conflicts are Systemic**: Consistent degradation patterns exist across different base models, safety mechanisms, and harmful keyword definitions.
+3. **Dynamic Identification > Static Classification**: Trajectory-based step-wise identification is more effective than LLM-based one-time text classification.
+4. **Plug-and-play Gain**: CASG brings consistent Gain to both SLD and SAFREE without additional training costs.
 
 ## Highlights & Insights
 
-- The paper identifies a widely overlooked yet consequential problem — multi-category harmful conflicts — and provides the first systematic characterization of directional inconsistency among safety guidance directions.
-- The method design is remarkably elegant: dominant category selection relies solely on cosine similarity or residual norm, requiring no training and no external models.
-- Strong generality: the framework applies to both latent-space (SLD) and text-space (SAFREE) safety mechanisms.
-- Rigorous and comprehensive experiments: four safety benchmarks, benign generation quality evaluation, LLM-assisted comparisons, and multi-model validation.
+- Identifies a widely overlooked yet impactful problem—multi-category harmful conflicts—systematically revealing inconsistencies between safety guidance directions.
+- Elegant and simple Design Motivation: Selects the dominant category via cosine similarity or residual norms, requiring no training or external models.
+- High versatility: Applicable to both latent space (SLD) and text space (SAFREE) safety mechanisms.
+- Experimental Thoroughness: Evaluation across four safety benchmarks, benign generation quality assessment, LLM-assisted comparison, and multi-model validation.
 
 ## Limitations & Future Work
 
-- Computing noise predictions or projection residuals separately for each harmful category at every timestep incurs computational overhead that scales linearly with the number of categories.
-- Validation is limited to SD v1.5; applicability to newer architectures (e.g., DiT, FLUX variants) has not been thoroughly verified.
-- The method relies on a predefined harmful keyword set; incomplete or improperly defined keyword coverage may cause certain harmful types to be overlooked.
-- Selecting only one dominant category per timestep may result in missed harmful semantics for prompts containing multiple simultaneous harmful concepts.
+- Computational overhead scales linearly with the number of categories as noise predictions/residual norms must be calculated for each category per timestep.
+- Validation is primarily on SD v1.5; applicability to newer architectures (e.g., DiT, FLUX) is not fully explored.
+- Relies on a predefined set of harmful keywords; incomplete definitions may lead to misses.
+- Selecting only one dominant category per step might overlook prompts containing multiple simultaneous harmful semantics.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The identification of "harmful conflicts" is highly valuable and challenges the prevailing intuition that aggregating more categories yields greater safety.
-- **Technical Depth**: ⭐⭐⭐⭐ — The analysis of conflict mechanisms (directional inconsistency + directional attenuation) is systematic and thorough; the CDRR analysis is convincing.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Four benchmarks, multiple baselines, LLM comparisons, and ablation analysis constitute a very comprehensive evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Problem motivation is clearly presented; PCA direction visualizations and CDRR heatmaps are highly persuasive.
-- **Value**: ⭐⭐⭐⭐ — A practical plug-and-play enhancement for the T2I safety domain with high utility, though the application scope is relatively focused.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The discovery of the "harmful conflict" problem is highly valuable, challenging the intuition that "more categories = safer."
+- **Technical Depth**: ⭐⭐⭐⭐ — Analysis of conflict mechanisms (inconsistency + attenuation) is systematic, and CDRR analysis is convincing.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation over benchmarks, baselines, and LLM comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Problem introduction is clear; PCA visualizations and CDRR heatmaps are highly persuasive.
+- **Value**: ⭐⭐⭐⭐ — A practical plug-and-play enhancement for T2I safety, though the application scenario is relatively vertical.
 
 <!-- RELATED:START -->
 
@@ -159,9 +136,9 @@ LLM-assisted approaches (GPT-4o or QwenGuard pre-classification followed by SLD)
 ## Related Papers
 
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
 - [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
-- [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](../../ICCV2025/image_generation/dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
-- [\[ICCV 2025\] FlowTok: Flowing Seamlessly Across Text and Image Tokens](../../ICCV2025/image_generation/flowtok_flowing_seamlessly_across_text_and_image_tokens.md)
 - [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](../../AAAI2026/image_generation/hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
 
 </div>

@@ -26,22 +26,22 @@ item_total: 4
 
 **💬 ACL2026** · **4** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [📷 CVPR2026 (63)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/video_generation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (180)](../../CVPR2026/video_generation/index.md) · [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/video_generation/index.md)
 
 🔥 **Top topics:** Video Generation ×3
 
 **[Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity](accelerating_training_of_autoregressive_video_generation_models_via_local_optimi.md)**
 
-:   The authors propose a training strategy combining Local Optimization and Representation Continuity (ReCo). By optimizing within local windows and constraining the smooth transition of hidden states, it achieves a 2x acceleration in training for autoregressive video generation models without compromising generation quality.
+:   The authors propose the Local Optimization + Representation Continuity (ReCo) training strategy. By optimizing within local windows and constraining smooth transitions of hidden states, they achieve a 2x acceleration in training autoregressive video generation models without sacrificing generation quality.
 
 **[OSCBench: Benchmarking Object State Change in Text-to-Video Generation](oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)**
 
-:   This paper proposes OSCBench, the first benchmark specifically designed to evaluate the Object State Change (OSC) capabilities of Text-to-Video (T2V) models. Based on cooking scenarios, it constructs 1,120 prompts across regular, novel, and compositional categories, revealing that even the strongest T2V models achieve only 0.786 in OSC accuracy.
+:   This paper proposes OSCBench—the first benchmark specifically evaluating Object State Change (OSC) capabilities in text-to-video models. Built on cooking scenes with 1,120 prompts covering common, novel, and compositional scenarios, it reveals that even the strongest T2V models achieve an OSC accuracy of only 0.786.
 
 **[Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](self-correcting_text-to-video_generation_with_misalignment_detection_and_localiz.md)**
 
-:   Proposes VideoRepair, the first training-free and model-agnostic text-to-video self-correction framework. It employs MLLMs to detect fine-grained text-video misalignments, preserves correctly generated regions, and selectively refines problematic areas, consistently improving alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
+:   VideoRepair is proposed as the first training-free, model-agnostic self-correction framework for text-to-video (T2V) generation. It utilizes MLLMs to detect fine-grained text-video misalignments, preserves correctly generated regions, and selectively refines problematic areas. The method consistently improves alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
 
 **[TeachMaster: Generative Teaching via Code](teachmaster_generative_teaching_via_code.md)**
 
-:   TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It enables the collaboration of planning, code generation, narration, debugging, synchronization, and layout agents to generate complete course videos, achieving near-human quality while reducing the production cost of a 45-hour course to approximately 0.3% of traditional methods.
+:   TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It employs a collaboration of planning, code generation, narration, debugging, synchronization, and layout agents to generate complete course videos, achieving near-human quality while reducing the production cost of a 45-hour course to approximately 0.3% of traditional methods.

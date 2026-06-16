@@ -2,68 +2,81 @@
 title: >-
   [Paper Note] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations
 description: >-
-  [ACL 2026][Multimodal VLM][UI Animation] The authors construct AniMINT, the first UI animation evaluation benchmark containing 300 densely annotated animation videos with labels from 3 experts and 300 users. Systematic t…
+  [ACL 2026][Multimodal VLM][AniMINT] This work constructs the first UI animation evaluation dataset, AniMINT (300 densely annotated animation videos + 3 experts + 300 user annotations). Systematic testing of 9 SOTA VLMs reveals that while basic motion effects can be identified, there is a massive gap between models and humans in animation purpose classifi
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "UI Animation"
-  - "VLM Evaluation"
-  - "AniMINT"
-  - "Rhetorical Structure"
-  - "Motion Blending"
+  - ACL 2026
+  - Multimodal VLM
+  - AniMINT
+  - motion blending
 date: 2026-05-08
-content_hash: e9829c3c220302f1
+content_hash: 99fa60ddd913024b
 ---
-
 # Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.26148](https://arxiv.org/abs/2604.26148)  
 **Code**: <https://github.com/publicationacc/AniMINT>  
 **Area**: Multimodal VLM / UI Understanding / Evaluation  
-**Keywords**: UI Animation, VLM Evaluation, AniMINT, Rhetorical Structure, Motion Blending
+**Keywords**: UI Animation, VLM Evaluation, AniMINT, Rhetorical Structure, motion blending
 
 ## TL;DR
-The authors construct AniMINT, the first UI animation evaluation benchmark containing 300 densely annotated animation videos with labels from 3 experts and 300 users. Systematic testing of 9 SOTA VLMs reveals that while basic motion effects can be identified, a significant gap remains between VLMs and humans in categorizing animation purposes and high-level semantic interpretation. Enhancing Gemini-2.5-Flash with the Motion-Context-Perceptual Cue (MCPC) framework simultaneously improves performance in both classification and interpretation.
+This work constructs the first UI animation evaluation dataset, AniMINT (300 densely annotated animation videos + 3 experts + 300 user annotations). Systematic testing of 9 SOTA VLMs reveals that while basic motion effects can be identified, there is a massive gap between models and humans in animation purpose classification and high-level semantic interpretation. Furthermore, enhancement using the Motion-Context-Perceptual Cue (MCPC) concurrently improves both classification and interpretation performance on Gemini-2.5-Flash.
 
 ## Background & Motivation
 
-**Background**: UI agents (e.g., GPT-Operator, Mind2Web) require holistic perception of user interfaces. However, existing VLM research on UI understanding focuses almost exclusively on static screenshots, such as button identification, layout parsing, and UI semantics.
+**Background**: UI agents (GPT-Operator, Mind2Web, etc.) need to perceive user interfaces comprehensively. However, existing VLM research on UI understanding focuses almost exclusively on static screenshots—button recognition, layout parsing, and UI semantics.
 
-**Limitations of Prior Work**: In modern UIs, animations serve core communicative functions rather than mere decoration—such as a bouncing MacOS dock icon conveying notifications, a shaking password field indicating input errors, or loading animations suggesting status progress. This information is often captured only in motion and is completely missed by static frames. If VLM agents only perceive screenshots, they lose approximately 30-50% of the feedback channels between the user and the system.
+**Limitations of Prior Work**: Animations in modern UIs serve as core communication functions rather than mere decoration; for instance, the macOS dock bounce conveys notifications, a shaking password box indicates input errors, and loading animations suggest status progress. This information is often contained only within the animation and cannot be captured by static frames. If VLM agents only see screenshots, they miss approximately 30-50% of the feedback channels between the user and the system.
 
-**Key Challenge**: "The meaning of animation is in the motion, not the frames" ("motion that is drawn, not drawings that move"). However, VLM inputs are typically either single frames or sparsely sampled videos, a structure that inherently struggles to capture brief, spatially localized, and semantically abstract UI motions.
+**Key Challenge**: "The meaning of animation is in the motion, not in the frames" ("motion that is drawn, not drawings that move"). However, VLM inputs are typically single frames or sparsely sampled videos, which are structurally ill-suited to capture transient, spatially localized, and semantically abstract UI motions.
 
-**Goal**: (1) Provide the first UI animation evaluation set covering mobile, web, and desktop platforms with three levels of annotation: motion effects, functional purpose, and semantic interpretation. (2) Systematically benchmark the performance limits of 9 mainstream VLMs. (3) Explore which signal enhancements (motion blending, context, or captions) significantly improve performance.
+**Goal**: (1) Provide the first UI animation evaluation dataset covering mobile, web, and desktop platforms with three levels of annotation: motion effects, functional purposes, and semantic interpretations; (2) Systematically measure the capability ceiling of 9 mainstream VLMs; (3) Explore which signal enhancements (motion blending, context, or captions) can significantly improve performance.
 
-**Key Insight**: Leveraging existing UI/UX taxonomies (7 purposes $\times$ 7 basic motion effects) to build multi-level annotations. By recruiting 3 experts for purpose labels and 300 Prolific users to provide 10 independent natural language interpretations per animation, the work creates a dual expert-crowd perspective.
+**Key Insight**: Building on existing UI/UX taxonomies (7 categories of purposes × 7 types of basic motion effects), this work constructs multi-level annotations. It recruits 3 experts for purpose labeling and 300 Prolific users to provide 10 independent natural language interpretations for each animation, forming a dual expert-crowd perspective.
 
-**Core Idea**: Designing the evaluation to align directly with the linguistic framework of the UI design community allows for testing both whether a VLM can perceive motion and whether it can understand why the animation exists as a human would.
+**Core Idea**: The evaluation design aligns directly with the linguistic framework of the UI design community, allowing for measurements of both "whether VLMs can perceive motion" and "whether VLMs can understand why the animation exists like a human."
 
 ## Method
 
 ### Overall Architecture
-The work proceeds in two stages: (1) **AniMINT Dataset Construction**—300 UI animation videos (primarily mobile, sourced from Top 100 App Store/Google Play apps) with multi-level annotations (timestamp, ROI, interaction context, purpose category, and 10 independent semantic interpretations). (2) **VLM Systematic Evaluation & Enhancement Exploration**—Testing 9 VLMs across three RQs: identifying basic motion effects (RQ1), categorizing animation purposes (RQ2), and interpreting animation semantics (RQ3). Subsequently, the MCPC three-factor probe is used to locate bottlenecks and verify enhancement effects.
+This work proceeds in two stages: (1) **AniMINT Dataset Construction**—300 UI animation videos (primarily mobile: Top 100 App Store/Google Play apps) with multi-level annotations (temporal range, ROI, interaction context, purpose category, and 10 independent semantic interpretations); (2) **Systematic VLM Evaluation + Enhancement Exploration**—investigating 9 VLMs across three RQs: identifying basic motion effects (RQ1), classifying animation purposes (RQ2), and interpreting animation semantics (RQ3). Subsequently, the MCPC three-factor probe is used to locate bottlenecks and verify enhancement effects.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["300 UI Animation Videos<br/>mobile / web / desktop"] --> SUB1
+    subgraph SUB1["Three-level AniMINT Annotation Protocol"]
+        direction TB
+        B["Unified 480px + 10fps resampling<br/>Green bbox marking animation ROI"] --> C["3 Experts Voting<br/>7 Purpose Categories (α=0.78)"]
+        C --> D["300 User Crowdsourcing<br/>10 Interpretations per segment"]
+    end
+    SUB1 --> DS["AniMINT Dataset<br/>Motion / Purpose / Semantics Tiers"]
+    DS --> SUB2
+    subgraph SUB2["Three Progressive RQs + GPT-judge Protocol"]
+        direction TB
+        E["RQ1 Perception: 7 basic motion effects"] --> F["RQ2 Purpose Classification: Acc / Macro F1"]
+        F --> G["RQ3 Semantic Interpretation: GPT-judge 0–5 similarity"]
+    end
+    SUB2 -->|Locating the bottleneck layer| SUB3
+    SUB3["MCPC Enhancement Probe (Gemini-2.5-Flash)<br/>Motion blending + Context + Perceptual caption"] --> I["Attribution: Perception / Context / Semantic Bottleneck<br/>Joint signals yield optimal results"]
+```
 
 ### Key Designs
 
-1.  **Three-Tier AniMINT Annotation Protocol**:
-    - **Function**: Supports evaluation at three granularities using the same animation segments: low-level motion recognition, mid-level purpose classification, and high-level semantic interpretation to identify VLM bottlenecks.
-    - **Mechanism**: Each animation is standardized to 480p resolution with 10 fps resampling, using green bboxes to mark animation ROIs to reduce interference. Three UI/UX experts used majority voting to label one of 7 purposes (Transition, Demonstration, Guidance, Feedback, Visualization, Highlight, Aesthetic; consensus reached after discussion with Krippendorff $\alpha=0.78$). 300 Prolific users each labeled 10 videos, resulting in 10 independent semantic interpretations per video (3,000 total user responses). Videos were manually screened for harmful content before upload.
-    - **Design Motivation**: A single label cannot capture the rich semantics of animation. Combining the expert perspective for purpose with the crowd perspective for semantics preserves professional judgment while reflecting the diversity of actual user understanding. 10 independent interpretations also allow for evaluating "semantic alignment distribution" rather than single-point comparisons.
+**1. Three-level AniMINT Annotation Protocol: Supporting low/medium/high granularity evaluation to identify exact bottlenecks.**
 
-2.  **Three Progressive RQs + GPT-judge Evaluation Protocol**:
-    - **Function**: Decomposes the abstract question of "whether VLMs understand animation" into three independently quantifiable sub-problems. RQ1 tests perception using 7 categories of pure geometric motion effects (move, rotate, size, color, fade, blur, morph). RQ2 tests 7 purpose categories (reporting accuracy and macro F1). RQ3 tasks VLMs with generating free-text interpretations, compared against human responses for 0-5 semantic similarity.
-    - **Mechanism**: RQ1 uses a stationary square with a single motion as a controlled stimulus, averaging results over 10 randomized option orderings per model. For RQ2/RQ3, VLMs receive animations accompanied by context (application/task), user input (action type), and green bbox ROI markers. RQ3 uses GPT-5-mini as a judge with a prompt that avoids length bias, comparing VLM output against a "consensus response" summarized from the 10 human responses.
-    - **Design Motivation**: VLMs may differ drastically in their ability to "see motion," "classify purpose," and "write semantics." Separating these allows for precise bottleneck identification. GPT-judge with a standardized rubric (5=fully equivalent / 0=unrelated) is a best practice for capturing semantic alignment better than surface metrics like BLEU.
+A single purpose label cannot express the rich semantics of an animation, nor can it answer whether a VLM "cannot see the motion" or "sees it but does not understand the meaning." The protocol thus attaches three layers of annotation to each animation. All videos are first unified to 480px resolution at 10 fps, with a green bbox marking the ROI to reduce interference. Subsequently, 3 UI/UX experts selected one of 7 purposes (Transition, Demonstration, Guidance, Feedback, Visualization, Highlight, Aesthetic) via majority vote ($\alpha=0.78$), with discussions to reach consensus. Simultaneously, 300 Prolific users labeled 10 videos each, resulting in 10 independent natural language interpretations per video (3,000 total user responses). This dual "expert purpose + crowd semantics" perspective preserves fine-grained professional judgment while reflecting the natural diversity of user understanding.
 
-3.  **Motion-Context-Perceptual Cue (MCPC) Probes**:
-    - **Function**: Decomposes "VLM animation perception" into three complementary signals: Motion blending (stacking the last 6 frames with decreasing opacity, inspired by Phosphor afterglow), Context (interaction context and user input), and Perceptual caption (textual description of the animation), testing their combinations on RQ2/RQ3.
-    - **Mechanism**: Using Gemini-2.5-Flash as the backbone. The base setting provides only sampled frames. Combinations of M, C, and P are added incrementally, re-running RQ2 and RQ3 for each. Motion blending explicitly "draws" the trajectory into a single image to bypass inter-frame reasoning bottlenecks; context provides interaction scenarios; perceptual captions describe exactly what happened.
-    - **Design Motivation**: Categorizes failure into three possibilities: "unseen motion," "seen but contextually misunderstood," or "unseen high-level semantics." Effective individual enhancements identify specific bottlenecks, while a combined optimal result suggests synergy between perception, context, and semantics.
+**2. Three Progressive RQs + GPT-judge Evaluation Protocol: Decomposing "animation understanding" into quantifiable questions.**
+
+General "animation understanding" is too broad, so the protocol sets three sub-questions. RQ1 measures perception using a static square with a single motion as a controlled stimulus, covering 7 geometric effects (move, rotate, size, color, fade, blur, morph). RQ2 measures classification by feeding the animation alongside context (app/task), user input (action type), and the green bbox to the model. RQ3 measures interpretation by having VLMs generate free text, which is compared to human responses via a 0–5 semantic similarity score judged by GPT-5-mini. The judge uses a unified rubric (5=equivalent, 0=irrelevant) to capture semantic alignment better than surface metrics like BLEU.
+
+**3. Motion-Context-Perceptual Cue (MCPC) Enhancement Probe: Using supplementary signals to reverse-engineer failures.**
+
+To determine if a model fails because it cannot "see motion," "understand context," or "grasp semantics," signals are injected for attribution. MCPC decomposes VLM animation viewing into: **Motion blending** (stacking the last 6 frames with decreasing opacity into one image, inspired by Phosphor afterglow, effectively drawing the trajectory to bypass inter-frame reasoning bottlenecks); **Context** (interaction context and user input); and **Perceptual captions** (textual descriptions of what happens in the animation). Experiments used Gemini-2.5-Flash as the backbone, starting with a base sampling and incrementally adding combinations of M/C/P.
 
 ### Loss & Training
-This is a zero-shot evaluation paper and does not involve training models. All 9 VLMs were called via OpenRouter for closed-source models or local inference for open-source models using default temperatures. Context lengths varied from 64K (GLM-4.5V) to 1M (Gemini-2.5-Pro).
+This is a zero-shot evaluation paper; no models were trained. All 9 VLMs were used with default temperature settings. Closed-source models were called via OpenRouter; open-source models were run locally. Context lengths ranged from 64K (GLM-4.5V) to 1M (Gemini-2.5-Pro).
 
 ## Key Experimental Results
 
@@ -81,9 +94,9 @@ This is a zero-shot evaluation paper and does not involve training models. All 9
 | GLM-4.5V | 0.45 | 0.40 |
 | Qwen2.5-VL-72B | 0.39 | 0.32 |
 
-The strongest model only reached 0.64, showing a significant gap from human performance. Per-category recall: Feedback (0.69), Visualization (0.69), and Guidance (0.59) were high, while Highlight (0.24) and Aesthetic (0.16) performed poorly. VLMs excel at animations with strong functionality or clear text feedback but struggle with "subtle" animations meant for emotional or brand emphasis.
+The strongest model only reached 0.64, showing a significant gap from human levels. Per-category recall was high for Feedback (0.69) and Visualization (0.69), but very low for Highlight (0.24) and Aesthetic (0.16), suggesting VLMs struggle with "subtle" animations focused on emotion or branding.
 
-### RQ3 Semantic Interpretation Similarity (vs. Crowd Consensus, 0-5)
+### Interpretation Similarity (RQ3 vs. Consensus, 0-5)
 
 | Model | Mean | Std |
 |------|------|-----|
@@ -101,49 +114,48 @@ Most models scored around 3, capturing the gist but often missing key details or
 ### Ablation Study: MCPC (Gemini-2.5-Flash)
 
 | Enhancement | RQ2 Acc | RQ2 F1 | RQ3 Mean | RQ3 Std |
-|-------------|---------|--------|----------|---------|
-| Base        | 0.59    | 0.47   | 3.15     | 1.09    |
-| + Motion    | 0.52    | 0.41   | 3.08     | 1.07    |
-| + Context   | 0.58    | 0.48   | 3.30     | 0.95    |
-| + Perceptual| 0.57    | 0.45   | 3.50     | 0.89    |
-| + M+P       | 0.53    | 0.40   | 3.48     | 0.86    |
-| + C+P       | 0.55    | 0.46   | 3.48     | 0.77    |
-| **+ M+C+P** | **0.61**| **0.52**| **3.52†**| **0.73**|
+|------|---------|--------|----------|---------|
+| Base | 0.59 | 0.47 | 3.15 | 1.09 |
+| + Motion | 0.52 | 0.41 | 3.08 | 1.07 |
+| + Context | 0.58 | 0.48 | 3.30 | 0.95 |
+| + Perceptual | 0.57 | 0.45 | 3.50 | 0.89 |
+| + M+P | 0.53 | 0.40 | 3.48 | 0.86 |
+| + C+P | 0.55 | 0.46 | 3.48 | 0.77 |
+| **+ M+C+P** | **0.61** | **0.52** | **3.52†** | **0.73** |
 
-The combination of all three signals significantly outperformed any single or dual signal combination, confirming strong synergy between perception, context, and semantics.
+The combination of all three signals significantly outperformed any single or double signal combination, confirming strong synergy between perception, context, and semantics.
 
 ### Key Findings
-- **VLMs can see motion but cannot interpret it**: In RQ1, 5/9 models perfectly identified all 7 basic motion effects, but performance dropped significantly in RQ2/RQ3, indicating the bottleneck is not low-level perception.
-- **Error Pattern 1: Over-reliance on the final static frame**: In a McDonald's animation (Aesthetic: logo bounce + "ba da ba"), 6 models misclassified it as Feedback because the final frame included the text "Your order is confirmed."
-- **Error Pattern 2: Small ROI failures**: Average animation ROI was 24.3% in correct cases vs. 14.1% in incorrect ones (Mann-Whitney $p=0.03$). Models are frequently distracted by large surrounding elements when the ROI is small.
-- **Error Pattern 3: Ignoring interaction context**: When a user's repeated failed swipes triggered a demonstration animation for the correct gesture, 8/9 models misclassified it as a Transition, failing to link the "failed action → instructional animation" sequence.
-- **Subtle, fast animations are entirely missed**: 5/9 models reported "no animation" or hallucinated non-existent progress bars for password field "shake" animations.
-- **Gemini-2.5-Pro exhibits hallucinations**: Occasionally concocts details like "translucent rounded objects" that do not exist, consistent with known VLM hallucination literature.
+- **VLMs see motion but fail to interpret**: In RQ1, 5/9 models answered all 7 basic motions correctly, but performance dropped significantly in RQ2/RQ3, suggesting the bottleneck is not in low-level perception.
+- **Error Pattern 1: Over-reliance on static end frames**: In a McDonald's animation (Aesthetic bounce), models misjudged it as Feedback because the final frame contained "order confirmed" text.
+- **Error Pattern 2: Small ROI failures**: The animation ROI significantly affected success (average size 24.3% for correct vs 14.1% for incorrect, Mann-Whitney $p=0.03$). Models are easily distracted by surrounding large elements.
+- **Error Pattern 3: Ignoring interaction context**: When repeated swipe failures triggered a demonstration animation, 8/9 models misjudged it as a Transition, failing to link the "failed action" to the "instructional animation."
+- **Subtle/Fast animations are missed**: Quick shaking animations were often reported as "no animation" or caused hallucinations of non-existent progress bars.
+- **Gemini-2.5-Pro exhibits hallucination**: It sometimes fabricated descriptions of "translucent rounded objects" not present in the video.
 
 ## Highlights & Insights
-- The definition "motion that is drawn, not drawings that move" is precise—it explains why frames are insufficient and why video-level evaluation is a necessity for UI agents.
-- The three-tier evaluation (motion effects → purpose → semantics) precisely locates bottlenecks. This methodology is exemplary; any "Does VLM understand X" question could follow this perception $\rightarrow$ classification $\rightarrow$ interpretation hierarchy.
-- Motion blending, using the old "Phosphor afterglow" trick of stacking 6 frames with transparency, is a clever prompt engineering technique to compress dynamic video into a single image, bypassing VLM inter-frame reasoning limits.
-- The "shallow persona detection" finding (models perceive the existence of animation but fail to distinguish purposes) mirrors findings in psychology-related VLM papers, suggesting a common failure mode in fine-grained distinction tasks.
-- The dual expert-crowd annotation design is excellent—experts ensure taxonomic rigor while the crowd ensures semantic diversity (admitting multiple valid interpretations for one animation).
+- The definition of "motion that is drawn, not drawings that move" is poignant, justifying why video-level evaluation is essential.
+- The three-level evaluation (Motion → Purpose → Semantics) provides a reusable methodology for locating bottlenecks in any VLM-based perception task.
+- Motion blending—using the "Phosphor afterglow" trick—is a clever prompt engineering technique to compress dynamics into a single image.
+- The dual-perspective annotation (experts for taxonomy, crowd for diversity) ensures both rigor and a reflection of real-world user variability.
 
 ## Limitations & Future Work
-- Data sources are primarily US-based apps with English interfaces, failing to cover cultural or linguistic differences (e.g., Arabic RTL, Asian stock market color conventions).
-- Annotators were all native English speakers from the US, potentially biasing certain cross-cultural semantics.
-- Only 9 SOTA VLMs were evaluated; small models (7-14B) were almost entirely incapable of handling UI animation tasks (due to context length or single-image limits) and were excluded from the main tables.
-- MCPC probes were only tested on Gemini-2.5-Flash; transferability to other models remains unverified.
-- ROIs were pre-defined with green bboxes; requiring VLMs to localize ROIs themselves in real-world deployments would be significantly more challenging.
+- Data is primarily from US-based apps with English interfaces, missing cultural/linguistic variations (e.g., RTL layouts or regional color conventions).
+- Annotators were all native English speakers, introducing potential bias.
+- Small models (7-14B) were excluded as they largely failed the task due to context length or image processing limits.
+- MCPC probes were only validated on Gemini-2.5-Flash.
+- ROI was provided via green bboxes; real-world deployment would require models to perform ROI localization themselves.
 
 ## Related Work & Insights
-- **vs. Rico / MONDAY / GUI World**: Those datasets contain UI screenshots or interaction recordings but were not designed for animation understanding. AniMINT is the first multi-level annotated set specifically focused on animation semantics.
-- **vs. Mackamul 2025 / Dessart 2011**: Those UX studies primarily measure human perception of animation; this work introduces that taxonomy to VLM evaluation, bridging HCI and NLP.
-- **vs. General VLM agent benchmarks (OSWorld / WebWalker)**: Those benchmarks test end-to-end task completion. This work tests fine-grained perception of UI elements. They are complementary—if an agent cannot understand animation feedback, end-to-end tasks are likely to fail without a diagnosable cause.
+- **vs. Rico / MONDAY / GUI World**: While those datasets contain UI screenshots or recordings, AniMINT is the first specifically annotated for multi-level animation semantics.
+- **vs. HCI Research**: This work bridges the gap between HCI/UX taxonomies and VLM evaluation.
+- **vs. OSWorld / WebWalker**: While generic benchmarks measure end-to-end task completion, this work measures fine-grained perception, providing diagnostic utility for why an agent might fail to understand system feedback.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic focus on UI animation understanding. New designs from taxonomy to motion blending and MCPC probes fill the evaluation gap between static screenshots and dynamic interactions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluates 9 SOTA VLMs across 3 RQs + MCPC ablation with 8 cue combinations. Detailed quantitative analysis of failure modes (e.g., Mann-Whitney tests for ROI).
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Uses vivid examples throughout (McDonald's logo, password shake, Android swipe guidance) to make abstract failure modes intuitive. The 3-RQ structure is exceptionally clear.
-- **Value**: ⭐⭐⭐⭐⭐ Directly addresses a major blind spot for the UI agent era. The resource of 3,000 human interpretations and dual-perspective annotations is rare and will drive research in dynamic UI agents, accessibility, and animation generation.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic focus on UI animation understanding with novel MCPC probes and afterglow techniques.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing across 9 VLMs, 3 RQs, and 8 combinations of cues with statistical validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent use of concrete examples (McDonald’s, password shake) to explain abstract failure modes.
+- Value: ⭐⭐⭐⭐⭐ Vital for the era of UI agents; the 3,000 human interpretations are a rare and valuable resource for dynamic UI research.
 
 <!-- RELATED:START -->
 
@@ -151,11 +163,11 @@ The combination of all three signals significantly outperformed any single or du
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models](../../CVPR2026/multimodal_vlm/beyond_recognition_evaluating_visual_perspective_taking_in_vision_language_model.md)
 - [\[ACL 2026\] Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity (MM-Eval)](measuring_what_matters_beyond_text_evaluating_multimodal_summaries_by_quality_al.md)
-- [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
-- [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](../../CVPR2026/multimodal_vlm/think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
 - [\[ACL 2026\] Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs](long_story_short_disentangling_compositionality_and_long-caption_understanding_i.md)
+- [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](../../CVPR2026/multimodal_vlm/think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
+- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/multimodal_vlm/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
+- [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
 
 </div>
 

@@ -2,83 +2,85 @@
 title: >-
   [Paper Note] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Video QA benchmark] HERBench is a video question answering benchmark specifically designed for multi-evidence integration, comprising 26,806 five-choice questions…
+  [CVPR 2026][Video Understanding][Paper Note] HERBench is a VideoQA benchmark specifically designed for multi-evidence integration, consisting of 26,806 five-choice multiple-choice questions. Each question structurally necessitates the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric,
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Video QA benchmark"
-  - "multi-evidence integration"
-  - "frame selection"
-  - "long video understanding"
-  - "temporal reasoning"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 5fc6caca1623ce21
+content_hash: 46352df57f5bc315
 ---
-
 # HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.14870](https://arxiv.org/abs/2512.14870)  
 **Code**: None  
-**Area**: Video Understanding / Multimodal VLM
-**Keywords**: Video QA benchmark, multi-evidence integration, frame selection, long video understanding, temporal reasoning
+**Area**: Video Understanding / Multimodal VLM  
+**Keywords**: VideoQA Benchmark, Multi-evidence Integration, Frame Selection, Long Video Understanding, Temporal Reasoning
 
 ## TL;DR
 
-HERBench is a video question answering benchmark specifically designed for multi-evidence integration, comprising 26,806 five-choice questions, each structurally requiring the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric, the benchmark exposes two critical bottlenecks in current Video-LLMs: insufficient frame retrieval and evidence fusion failure.
+HERBench is a VideoQA benchmark specifically designed for multi-evidence integration, consisting of 26,806 five-choice multiple-choice questions. Each question structurally necessitates the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric, it identifies two critical bottlenecks in current Video-LLMs: insufficient frame retrieval and evidence fusion failure.
 
 ## Background & Motivation
 
-1. **Background**: Video-LLMs (e.g., GPT-4o, Gemini, Qwen2.5-VL) have achieved strong scores on existing VideoQA benchmarks, suggesting rapid progress in video understanding capabilities.
+1. **Background**: Video-LLMs (e.g., GPT-4o, Gemini, Qwen2.5-VL) have achieved high scores on existing VideoQA benchmarks, suggesting rapid progress in video understanding capabilities.
 
-2. **Limitations of Prior Work**: Recent auditing studies reveal that high scores often stem from language priors or single-cue shortcuts rather than genuine temporal reasoning. Models can answer questions by observing a single frame or exploiting linguistic bias, and existing benchmarks fail to distinguish "true video understanding" from "shortcut exploitation."
+2. **Limitations of Prior Work**: Recent audit studies reveal that these high scores often stem from language priors or single-cue shortcuts rather than genuine temporal reasoning. Models can answer questions correctly by viewing a single frame or exploiting linguistic biases; existing benchmarks fail to distinguish "true video understanding" from "shortcut exploitation."
 
-3. **Key Challenge**: Existing VideoQA benchmarks permit single-cue shortcuts—one key frame or textual common sense suffices to answer the question—making it impossible to determine whether models genuinely possess the ability to integrate multiple pieces of evidence across time.
+3. **Key Challenge**: The problem design of existing VideoQA benchmarks allows for single-cue shortcuts—a single keyframe or textual common sense is often sufficient. Consequently, it remains uncertain whether models actually possess the ability to integrate multiple pieces of evidence across time.
 
-4. **Goal**: (1) Design a benchmark that structurally requires multi-evidence integration ($\ge 3$ dispersed cues); (2) Propose the quantitative MRFS metric to measure "evidential demand"; (3) Diagnose specific failure modes of current Video-LLMs—distinguishing frame selection failures from evidence fusion failures.
+4. **Goal**: (1) Design a benchmark that structurally requires multi-evidence integration ($\ge 3$ dispersed cues); (2) Propose the MRFS quantitative metric to measure "evidential requirements"; (3) Diagnose specific failure modes in current Video-LLMs—distinguishing between frame selection issues and information fusion failures.
 
-5. **Key Insight**: The authors define the concept of *Evidential Requirement* (ER)—the minimum number of non-redundant visual evidence pieces needed to answer a question. By enforcing $\text{ER} \ge 3$, single-cue shortcuts are fundamentally eliminated, making multi-evidence reasoning an unavoidable requirement.
+5. **Key Insight**: The authors define the concept of "Evidential Requirement" (ER)—the minimum number of non-redundant visual evidences required to answer a question. By enforcing $ER \ge 3$, single-cue shortcuts are fundamentally eliminated, making multi-evidence reasoning an unavoidable requirement.
 
-6. **Core Idea**: Through structural design, each question requires at least three temporally dispersed visual cues. Combined with the MRFS metric for quantifying frame-fusion difficulty, the benchmark systematically exposes Video-LLMs' dual deficiencies in frame retrieval and evidence fusion.
+6. **Core Idea**: Through structural design, each question is guaranteed to require at least 3 temporally dispersed visual cues. Combined with the MRFS metric to quantify frame fusion difficulty, the benchmark systematically reveals the dual shortcomings of Video-LLMs in frame retrieval and evidence fusion.
 
 ## Method
 
 ### Overall Architecture
 
-HERBench is an evaluation benchmark rather than a model. Its core components are: (1) a taxonomy of 12 compositional reasoning task types organized into 4 reasoning families; (2) a three-channel data construction pipeline (object tracking + shot segmentation + manual annotation integration); and (3) the MRFS metric for cross-benchmark comparison of evidential demand. The benchmark comprises 336 long videos (average 395 seconds) and 26,806 five-choice questions.
+HERBench is not a new model but an evaluation benchmark designed to "force out" genuine video understanding capabilities. It seeks to answer whether modern Video-LLMs can perform when a question structurally requires at least 3 dispersed cues. The construction follows four steps: first, a taxonomy of 12 sub-tasks across 4 reasoning families embeds the "$\ge 3$ dispersed cues" requirement into the question structure; second, a three-channel data pipeline extracts spatio-temporal information at the trajectory, shot, and manual log granularities; third, oriented task programming synthesizes five-choice questions; fourth, a quality control stage filters card leakage and linguistic shortcuts to ensure answers depend on visual evidence; finally, the MRFS metric quantifies the "evidence demand" of each question. The final benchmark comprises 336 long videos (average 395 seconds) and 26,806 questions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T["Four Reasoning Families · 12 Sub-task System<br/>Mandatory ≥3 Dispersed Cues per Question"]
+    subgraph PIPE["Three-Channel Data Construction Pipeline"]
+        direction TB
+        P1["Channel I: Tracking & Trajectories<br/>RF-DETR+DeepSORT → Card A/Card B"]
+        P2["Channel II: Shot Segmentation<br/>MLLM Scene Descriptions"]
+        P3["Channel III: Manual Log Integration<br/>Narration Events → Temporal/Count Anchors"]
+    end
+    T --> S["Oriented Task Programming<br/>Synthesize 5-choice Questions"]
+    PIPE --> S
+    S --> Q["Quality Control<br/>Card Leakage + Blind LLM De-biasing + Expert Verification"]
+    Q --> B["Final Benchmark<br/>336 Videos / 26806 Questions"]
+    B -->|MRFS Quantifies Difficulty| M["Minimum Required Frame Set (MRFS)<br/>Binary Search for Min Successful Frames"]
+```
 
 ### Key Designs
 
-1. **Four Reasoning Families and 12 Sub-tasks**:
+**1. Four Reasoning Families and 12 Sub-tasks: Embedding "Multi-evidence" into Structure**
 
-    - **Function**: Covers diverse multi-evidence reasoning patterns, ensuring no question can be answered via a single frame or language prior.
-    - **Mechanism**: (a) **Temporal Reasoning & Chronology (TR&C)**: Includes shot temporal ordering (TSO), multi-person duration reasoning (MPDR), and action sequence integrity identification (ASII)—requiring understanding of event order, temporal overlap, and duration comparison. (b) **Reference & Tracking (R&T)**: Includes appearance-grounded behavior interaction (AGBI), appearance-grounded attribute recognition (AGAR), and appearance-grounded localization trajectory (AGLT)—requiring maintenance of target identity binding across time. (c) **Global Consistency & Verification (GC&V)**: Includes false action memory (FAM), scene verification arrangement (SVA), and false object memory (FOM)—requiring full-video scanning to verify existence and detect absence. (d) **Multi-Entity Aggregation & Counting (MEA&N)**: Includes multi-entity grounding and localization (MEGL), action counting (AC), and region-limited people counting (RLPC)—requiring cross-temporal deduplication and set-level aggregation.
-    - **Design Motivation**: These tasks reformulate existing VideoQA categories (temporal ordering, counting, etc.), but the critical distinction is that each question structurally enforces $k \ge 3$: answers must be derived from the combination of cues at multiple distinct temporal moments, precluding solutions from a single frame or local window.
+A critical weakness of existing VideoQA benchmarks is the single-cue shortcut. HERBench addresses this by redesigning tasks to structurally enforce $k \ge 3$: the correct answer must be assembled from multiple cues at different timestamps. The 12 sub-tasks are grouped into four families: Temporal Reasoning & Chaining (TR&C, including Temporal Sequence Ordering TSO, Multi-Person Duration Reasoning MPDR, Action Sequence Integrity Identification ASII) requires understanding event order and duration; Referencing & Tracking (R&T, including Appearance-Grounded Behavior Interaction AGBI, Appearance-Grounded Attribute Recognition AGAR, Appearance-Grounded Localization Trajectory AGLT) forces identity binding across time; Global Consistency & Verification (GC&V, including False Action Memory FAM, Scene Verification Arrangement SVA, False Object Memory FOM) requires scanning the full video for verification; Multi-Entity Aggregation & Navigation (MEA&N, including Multi-Entity Grounded Localization MEGL, Action Counting AC, Region-Limited People Counting RLPC) requires cross-time de-duplication and aggregation.
 
-2. **Three-Channel Data Construction Pipeline**:
+**2. Three-Channel Data Construction Pipeline: Multi-granular Information Extraction**
 
-    - **Function**: Extracts spatiotemporal information from videos at different granularities to construct high-quality multi-evidence questions.
-    - **Mechanism**: **Pipeline I (Object Tracking & Trajectory Analysis)**: Employs RF-DETR + DeepSORT to obtain entity trajectories, retains the top 20% of entities by TrackRank score, and generates non-overlapping A-cards (appearance descriptions) and B-cards (behavior/trajectory descriptions) for each tracklet, deliberately separating appearance identification from behavior queries across different temporal frames. **Pipeline II (Shot Segmentation)**: Applies shot boundary detection to discretize videos into semantic segments, then uses an MLLM to generate scene cards for each segment. **Pipeline III (Manual Annotation Integration)**: Integrates human-verified narrative event logs to establish ground-truth event chronology and counts.
-    - **Design Motivation**: The three channels are complementary—Pipeline I provides continuous micro-level entity dynamics, Pipeline II provides macro-level scene structure, and Pipeline III provides human-verified factual anchors. The A/B-card separation design ensures that identity-binding tasks cannot be resolved through local attribute lookup.
+To generate "mandatory multi-frame" questions at scale, three complementary pipelines are used. Channel I performs object tracking and trajectory analysis: using RF-DETR + DeepSORT to obtain trajectories, and generating non-overlapping A-cards (appearance) and B-cards (behavior/trajectory) for each track. Crucially, "appearance" and "behavior" are placed at different timestamps—the model must locate the person via A-card appearance and then track them to the B-card behavior timestamp, making identity binding an unavoidable multi-frame reasoning task. Channel II performs shot segmentation and uses MLLMs to generate scene cards for macro-structure. Channel III integrates manually verified narration logs to provide factual anchors for temporal sequences and counts.
 
-3. **Minimum Required Frame Set (MRFS) Metric**:
+**3. Quality Control: Blocking Information Leakage and Linguistic Shortcuts**
 
-    - **Function**: Quantifies the minimum number of frames a model must integrate to answer a question, enabling fair cross-benchmark comparison.
-    - **Mechanism**: Given a fixed MLLM $f$, frame selector $r$, and frame budget $x$, MRFS is defined as the minimum frame count $k$ at which the model transitions from incorrect to correct. Questions solvable from text alone ($E(f(q, \varnothing), y) = 0$) are excluded, and an adaptive binary search over $k \in [1, x]$ identifies the minimum successful index, requiring only $O(\log x)$ model calls per question.
-    - **Design Motivation**: Existing metrics (Temporal Indispensability, Certificate Length) either only contrast single-frame vs. multi-frame performance or rely on manual annotation. MRFS is an automated, model-centric metric that directly quantifies the multi-evidence aggregation challenge.
+To ensure the validity of the "mandatory multi-frame" design, two shortcuts are blocked. First, card leakage: if A/B cards use similar phrasing, models might infer answers from text alone; token-level similarity checks and manual reviews eliminate such overlaps. Second, linguistic bias: questions answered correctly by $\ge 3/4$ "blind" (text-only) LLMs are discarded. Furthermore, 15% of questions undergo expert verification to confirm $k \ge 3$ compliance and answer uniqueness. Human performance (88.8% on full videos, 95.7% with oracle frames) confirms the benchmark is solvable but challenging.
 
-### Quality Control
+**4. Minimum Required Frame Set (MRFS) Metric: Quantifying Evidential Requirements**
 
-- Token-level similarity checks and manual review ensure A/B-cards do not leak information across channels.
-- Questions answered correctly by $\ge 3/4$ blind LLMs are discarded to remove language bias.
-- Stratified sampling of 15% undergoes expert verification to confirm $k \ge 3$ compliance and answer uniqueness.
-- Human annotators achieve 88.8% accuracy under full video access and 95.7% accuracy under oracle frames.
+To quantify difficulty, MRFS is introduced. Given an MLLM $f$, a frame selector $r$, and a frame budget $x$, the "minimum number of frames $k$ required for the model to transition from incorrect to correct" is defined as the MRFS size. In implementation, text-solvable questions are excluded (where $E(f(q, \varnothing), y) = 0$), and an adaptive binary search is performed over $k \in [1, x]$ to find the minimum frames for success. Unlike existing metrics, MRFS is automated, model-centric, and directly measures the difficulty of multi-evidence integration.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Thirteen SOTA Video-LLMs are evaluated; overall accuracy ranges from only 31–42% (random chance: 20%):
+Evaluation of 13 SOTA Video-LLMs shows an overall accuracy of only 31-42% (random guessing is 20%):
 
 | Model | TR&C Avg. | R&T Avg. | GC&V Avg. | MEA&N Avg. | Overall |
 |-------|-----------|----------|-----------|------------|---------|
@@ -88,10 +90,10 @@ Thirteen SOTA Video-LLMs are evaluated; overall accuracy ranges from only 31–4
 | Ovis-2.5-9B | 18.9 | 73.5 | 46.8 | 29.2 | **42.1** |
 | InternVL3.5-8B | 33.6 | 70.2 | 29.7 | 30.8 | 41.1 |
 
-### Cross-Benchmark MRFS Comparison
+### Across-Benchmark MRFS Comparison
 
-| Benchmark | # Videos | # Questions | MRFS↑ | Language Debiasing | Forced Fusion |
-|-----------|----------|-------------|-------|--------------------|---------------|
+| Benchmark | Videos | Questions | MRFS↑ | Language De-biasing | Mandatory Fusion |
+|-----------|--------|-----------|-------|---------------------|-----------------|
 | MVBench | 4,000 | 4,000 | 3.52 | ✗ | ✗ |
 | Video-MME | 900 | 2,700 | 5.31 | ✗ | ✗ |
 | MINERVA | 223 | 1,515 | 5.14 | ✓ | ✗ |
@@ -99,37 +101,37 @@ Thirteen SOTA Video-LLMs are evaluated; overall accuracy ranges from only 31–4
 
 ### Key Findings
 
-- **Frame Retrieval Bottleneck (Finding 1)**: Although adaptive frame selectors outperform uniform sampling, they fall significantly short of oracle keyframes—models simply fail to locate the critical evidence frames.
-- **Fusion Bottleneck (Finding 2)**: Even when oracle frames are provided, model accuracy improves only modestly, indicating that models cannot correctly allocate attention across all key frames and integrate the information.
-- The R&T family achieves relatively higher scores (~60–73%), as appearance descriptions in these tasks provide strong visual anchors; TR&C and MEA&N families score the lowest (<30%), reflecting severe deficiencies in temporal reasoning and multi-entity aggregation.
-- Smaller models (e.g., Ovis-2.5-9B) outperform larger models (e.g., GPT-4.1) on certain tasks, suggesting that model scale alone does not explain the performance gap.
+- **Frame Retrieval Bottleneck (Finding 1)**: Although adaptive frame selectors outperform uniform sampling, a significant gap remains compared to oracle keyframes—models fundamentally fail to retrieve the critical evidence frames.
+- **Fusion Bottleneck (Finding 2)**: Even when provided with oracle frames, models show only modest accuracy gains, indicating an inability to correctly allocate attention across all keyframes and integrate the information.
+- The R&T family scores relatively high (~60-73%) because appearance descriptions provide strong visual anchors; the TR&C and MEA&N families score lowest (<30%), reflecting severe deficiencies in temporal reasoning and multi-entity aggregation.
+- Smaller models (e.g., Ovis-2.5-9B) sometimes outperform larger ones (GPT-4.1), suggesting the problem is not purely a matter of model scale.
 
 ## Highlights & Insights
 
-- **Elegance of the MRFS Metric**: Rather than naively counting the number of required frames, MRFS fixes a frame selector and uses binary search to find the minimum successful frame count, while excluding text-only-solvable questions—making cross-benchmark comparisons both fair and computationally efficient.
-- **A/B-Card Separation Design**: Appearance descriptions and behavior queries are deliberately placed at different temporal frames, compelling the model to first localize the target via appearance description and then track it to the moment of action occurrence. This design elegantly transforms identity binding into an unavoidable multi-frame reasoning requirement.
-- **Dual-Bottleneck Diagnostic Framework**: By decoupling frame selection from fusion reasoning through oracle-frame experiments, the benchmark clearly identifies "finding the frames" and "effectively using the frames" as two independent challenges, providing clear directions for future research.
+- **Elegant Design of the MRFS Metric**: It isn't just a simple frame count; by using binary search with a fixed selector and excluding text-solvable cases, it provides a fair and computationally efficient measurement across benchmarks.
+- **A/B Card Separation**: Deliberately placing appearance descriptions and behavior queries in different timeframes forces the model to perform identity binding through temporal tracking, turning it into a mandatory multi-frame task.
+- **Dual Bottleneck Diagnostic Framework**: Decoupling frame selection from fusion reasoning via oracle experiments clearly identifies that "finding frames" and "using frames" are distinct challenges, providing a roadmap for future research.
 
 ## Limitations & Future Work
 
-- Portions of the benchmark are generated through automated pipelines, potentially introducing residual systematic biases.
-- With only 336 videos, scene diversity may be insufficient to represent all real-world scenarios.
-- MRFS depends on a specific frame selector and model; different combinations may yield different orderings.
-- The benchmark diagnoses model failures without proposing concrete remedies (it is purely diagnostic in nature).
-- The relatively high accuracy on R&T tasks may indicate that the ER design for this family is not sufficiently strict.
+- Parts of the benchmark are generated via automated pipelines, which may contain residual systematic biases.
+- With only 336 videos, the scene diversity may not represent all real-world scenarios.
+- MRFS depends on specific frame selectors and models; different combinations might yield different rankings.
+- The focus is on diagnosing current failures rather than providing specific architectural solutions.
+- High accuracy in R&T tasks may suggest that the ER requirements for these tasks could be stricter.
 
 ## Related Work & Insights
 
-- **vs. Video-MME**: Video-MME emphasizes longer contexts but does not control evidential demand; HERBench ensures high ER through structural design, positioning evidence density—rather than video length—as the source of difficulty.
-- **vs. MINERVA**: MINERVA also applies language debiasing and achieves a relatively high MRFS, but focuses on multi-step reasoning and reasoning-chain auditing rather than enforced multi-frame evidence aggregation.
-- **vs. MVBench**: MVBench covers diverse temporal reasoning tasks but uses short videos, and its questions can often be answered from a single frame.
+- **vs Video-MME**: Video-MME focuses on longer contexts but does not control evidential requirement; HERBench ensures high ER through structural design, making evidence density rather than duration the primary difficulty.
+- **vs MINERVA**: MINERVA also uses language de-biasing and has high MRFS but focuses on multi-step reasoning and reasoning chain auditing rather than mandatory multi-frame integration.
+- **vs MVBench**: MVBench covers various temporal tasks but uses short videos, and questions can often be solved via single frames.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The first VideoQA benchmark centered on evidential requirement as a core design principle; the MRFS metric is a genuine innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Evaluates 13 models, performs cross-benchmark MRFS comparison, and conducts multi-dimensional diagnostic analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Framework is clear and the task taxonomy is comprehensive, though the paper is lengthy.
-- Value: ⭐⭐⭐⭐ — Diagnoses critical deficiencies in Video-LLMs and provides an important reference for future progress in the field.
+- Novelty: ⭐⭐⭐⭐ First VideoQA benchmark centered on evidential requirement; innovative MRFS metric.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluation of 13 models, cross-benchmark MRFS comparison, multi-dimensional diagnostic analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework and comprehensive task taxonomy, though the paper is extensive.
+- Value: ⭐⭐⭐⭐ Provides a critical diagnostic of Video-LLM shortfalls, offering significant reference for field advancement.
 
 <!-- RELATED:START -->
 
@@ -138,10 +140,10 @@ Thirteen SOTA Video-LLMs are evaluated; overall accuracy ranges from only 31–4
 ## Related Papers
 
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
-- [\[CVPR 2026\] VSI: Visual-Subtitle Integration for Keyframe Selection to Enhance Long Video Understanding](vsi_visual-subtitle_integration_for_keyframe_selection_to_enhance_long_video_un.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
-- [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](../../NeurIPS2025/video_understanding/egogazevqa_egocentric_gaze_guided_video_question_answering.md)
-- [\[ICLR 2026\] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering](../../ICLR2026/video_understanding/air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 
 </div>
 

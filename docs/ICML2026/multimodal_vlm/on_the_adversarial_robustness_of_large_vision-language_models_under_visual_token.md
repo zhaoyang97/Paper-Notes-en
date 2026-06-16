@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression
 description: >-
-  [ICML 2026][Multimodal VLM][Visual Token Compression] This paper presents the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) under visual token compression. It identifies an…
+  [ICML 2026][Multimodal VLM][Robustness Evaluation] This paper provides the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) with visual token compression. It identifies the "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack. By utilizing Expected Feature Disturbance (EFD) and Rank
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Visual Token Compression"
-  - "Adversarial Attack"
-  - "Robustness Evaluation"
-  - "LVLM"
-  - "Encoder Attack"
+  - ICML 2026
+  - Multimodal VLM
+  - Robustness Evaluation
+  - LVLM
 date: 2026-05-08
-content_hash: 6d2e330b8fd8d655
+content_hash: 16a7822908778b00
 ---
-
 # On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression
 
 **Conference**: ICML 2026  
@@ -24,120 +20,121 @@ content_hash: 6d2e330b8fd8d655
 **Keywords**: Visual Token Compression, Adversarial Attack, Robustness Evaluation, LVLM, Encoder Attack
 
 ## TL;DR
-This paper presents the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) under visual token compression. It identifies an "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack, which utilizes Expected Feature Disturbance (EFD) and Ranking-Disturbance Alignment (RDA) to significantly reduce the robust accuracy of compressed LVLMs under unknown compression mechanisms and token budgets.
+This paper provides the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) with visual token compression. It identifies the "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack. By utilizing Expected Feature Disturbance (EFD) and Ranking-Disturbance Alignment (RDA), CAGE significantly reduces the robust accuracy of compressed LVLMs under conditions where the compression mechanism and token budget are unknown.
 
 ## Background & Motivation
 
-**Background**: Mainstream LVLMs such as LLaVA-NeXT and InternVL process hundreds to thousands of visual tokens per image, leading to extremely high deployment costs. Consequently, "plug-and-play" visual token compression methods like VisionZip, VisPruner, DivPrune, FlowCut, and PruMerge have become standard for deployment. These methods use attention scores to select the Top-K most informative tokens and optionally merge secondary tokens, reducing the visual sequence length from $N=576$ to $K \ll N$ to achieve significant speedups with minimal performance degradation.
+**Background**: Leading LVLMs like LLaVA-NeXT and InternVL process hundreds to thousands of visual tokens per image, leading to high deployment costs. Consequently, "plug-and-play" visual token compression methods (e.g., VisionZip, VisPruner, DivPrune, FlowCut, PruMerge) have become standard for deployment. These methods select Top-K informative tokens based on attention scores and optionally merge minor tokens, reducing the visual sequence length from $N=576$ to $K \ll N$ to accelerate inference with minimal performance loss.
 
-**Limitations of Prior Work**: While compressed LVLMs are increasingly deployed in safety-critical scenarios like autonomous driving and robotics, there has been almost no academic evaluation of their adversarial robustness "after compression." Existing evaluations typically follow encoder attack paradigms (e.g., VEAttack) that optimize perturbations in the full $N$-token representation space and apply them to the compressed model, which may lead to severely distorted results.
+**Limitations of Prior Work**: While compressed LVLMs are increasingly deployed in safety-critical scenarios like autonomous driving and robotics, their adversarial robustness after compression remains largely unevaluated. Current evaluations typically employ encoder attacks (e.g., VEAttack) that optimize perturbations in the full $N$ token representation space. Applying these perturbations to compressed models can result in severely distorted evaluations.
 
-**Key Challenge**: Perturbations are optimized on "full token representations," but inference only processes "compressed representations." Two specific failure paths exist: (i) **Budget Dilution**: A significant portion of the optimization signal is assigned to tokens that are pruned and do not participate in inference. (ii) **Dependency Rupture**: Compression prunes context/background tokens, breaking the cross-token interactions that the attack relies on during global optimization. Combined, these factors lead to a significant overestimation of robust accuracy.
+**Key Challenge**: Perturbations are optimized on "full token representations," but inference occurs only on "compressed representations." This leads to two failure paths: (i) **Budget Dilution**: A significant portion of the optimization signal is allocated to tokens that are pruned and do not participate in inference. (ii) **Dependence Break**: Compression removes context/background tokens, breaking the cross-token interactions that the attack relied on during global optimization. Combined, these factors lead to a significant overestimation of robust accuracy.
 
-**Goal**: (1) Establish the "robustness of compressed LVLMs" as an independent research problem. (2) Design an attack that aligns with compression bottlenecks under grey-box conditions where the deployment budget $K_{\text{model}}$ and the specific compression mechanism $\mathcal{C}$ are unknown.
+**Goal**: (1) Establish the robustness of compressed LVLMs as an independent research problem. (2) Design a grey-box attack that aligns with the compression bottleneck even when the deployment budget $K_{\text{model}}$ and specific compression mechanism $\mathcal{C}$ are unknown.
 
-**Key Insight**: The authors observe two complementary phenomena: ① After sorting tokens by attention, the cosine shift of perturbed features decreases monotonically as $K$ increases, indicating that perturbations naturally concentrate on high-importance tokens that are likely to "survive." ② The attack is strongest when $K_{\text{attack}} = K_{\text{model}}$ (e.g., in a 16-token deployment, the robust accuracy of a full-token attack is 49.7%, which drops to 44.4% when aligned to 16 tokens).
+**Key Insight**: The authors observe two complementary phenomena: ① After sorting tokens by attention, the cosine shift of perturbed features monotonically decreases as $K$ increases—indicating that perturbations naturally concentrate on high-importance tokens that are likely to "survive" compression. ② The attack is strongest when $K_{\text{attack}} = K_{\text{model}}$ (e.g., for a 16-token deployment, a full-token attack yields 49.7% robust accuracy, while aligning to 16 tokens reduces it to 44.4%).
 
-**Core Idea**: Instead of distributing perturbations across all tokens, use a probabilistic framework to concentrate perturbation energy on tokens that "survive across multiple possible budgets," while actively pushing the attention scores of these tokens higher to ensure they are actually selected.
+**Core Idea**: Instead of distributing perturbations across all tokens, CAGE uses a probabilistic framework to concentrate perturbation energy on tokens likely to survive across various possible budgets. Simultaneously, it actively pushes the attention scores of these tokens higher to ensure they are selected.
 
 ## Method
 
 ### Overall Architecture
-CAGE maintains the grey-box premise of encoder attacks (white-box access to the visual encoder $\mathcal{E}$, black-box access to the compression module $\mathcal{C}$ and LLM $\mathcal{F}$, with $K_{\text{model}}$ unknown). A single PGD iteration in the optimization pipeline is as follows: (1) The input image $\mathbf{x}+\boldsymbol{\delta}$ passes through the encoder to obtain perturbed features $\mathbf{H}'$ and perturbed attention scores $s_i^{\mathrm{adv}}$. (2) Tokens are ranked as $r_i$ based on $s_i^{\mathrm{adv}}$, and the survival probability $\pi_i$ for each token is calculated according to a prior distribution $P(K_{\text{model}})$. (3) The cosine distance $d_i$ is weighted by $\pi_i$ to obtain the EFD loss. (4) $d_i$ and $s_i^{\mathrm{adv}}$ are converted into distributions via softmax to maximize the RDA alignment term. (5) Joint backpropagation updates $\boldsymbol{\delta}$, followed by projection onto the $\ell_\infty$ ball $\|\boldsymbol{\delta}\|_\infty \le \epsilon$. The attack target is always the encoder, independent of text prompts and without assuming knowledge of $K_{\text{model}}$ or $\mathcal{C}$.
+CAGE maintains a grey-box assumption for encoder attacks (white-box access to the visual encoder $\mathcal{E}$, black-box access to the compression module $\mathcal{C}$ and LLM $\mathcal{F}$, with $K_{\text{model}}$ unknown). A single PGD iteration in the optimization pipeline is as follows: (1) The input image $\mathbf{x}+\boldsymbol{\delta}$ passes through the encoder to obtain perturbed features $\mathbf{H}'$ and perturbed attention scores $s_i^{\mathrm{adv}}$. (2) Survival probabilities $\pi_i$ for each token are calculated based on the ranking $r_i$ of $s_i^{\mathrm{adv}}$ and a prior distribution $P(K_{\text{model}})$. (3) EFD loss is calculated via a $\pi_i$-weighted cosine distance $d_i$. (4) RDA alignment is maximized by treating $d_i$ and $s_i^{\mathrm{adv}}$ as softmax distributions. (5) The perturbation $\boldsymbol{\delta}$ is updated via joint backpropagation and projected onto the $\ell_\infty$ sphere $\|\boldsymbol{\delta}\|_\infty \le \epsilon$. The attack targets the encoder and does not rely on text prompts or knowledge of $K_{\text{model}}$ or $\mathcal{C}$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image x + δ"] --> B["Visual Encoder ℰ (White-box)<br/>Output perturbed features H′ and attention scores s_adv"]
+    subgraph EFD["Expected Feature Disturbance (EFD)"]
+        direction TB
+        C["Rank r_i by s_adv<br/>Uniform prior → Survival probability π_i"] --> D["Cosine distance d_i<br/>π_i weighted average → L_EFD"]
+    end
+    subgraph RDA["Ranking-Disturbance Alignment (RDA)"]
+        direction TB
+        E2["Softmax d_i and s_adv into distributions"] --> F["Distribution matching (stop-grad on d_i)<br/>Push up ranking of perturbed tokens → L_RDA"]
+    end
+    B --> C
+    B --> E2
+    D --> G["Joint Optimization and Encoder Attack<br/>L_total = L_EFD + λ·L_RDA"]
+    F --> G
+    G --> H["PGD update δ, project to ℓ∞ ball<br/>‖δ‖∞ ≤ ε"]
+    H -->|Next PGD iteration| A
+```
 
 ### Key Designs
 
-1.  **Expected Feature Disturbance (EFD) (Aligning with Unknown Token Budgets)**:
-    - **Function**: Concentrates perturbation energy on tokens likely to survive across various budgets to avoid budget dilution and dependency rupture.
-    - **Mechanism**: Treats the deployment budget $K_{\text{model}}$ as an unknown discrete random variable with a prior $K_{\text{model}} \sim \mathcal{U}[K_{\min}, K_{\max}]$. The survival probability of token $i$ is defined as $\pi_i = P(K_{\text{model}} > r_i)$, forming a soft mask that decays with rank (1 for high rank, gradually decreasing, 0 for low rank). Perturbation intensity is measured by cosine distance $d_i = 1 - \mathcal{S}(\mathbf{z}_i^{\mathrm{adv}}, \mathbf{z}_i^{\mathrm{cln}})$, and the loss is $\mathcal{L}_{\text{EFD}} = \sum_i \pi_i d_i / \sum_i \pi_i$.
-    - **Design Motivation**: Direct weighting by attention scores $s_i$ concentrates too heavily on a few top tokens (due to sharp softmax), leaving middle-rank tokens with almost no gradient. Since middle-rank tokens have a non-trivial probability of being selected under moderate/unknown budgets, $\pi_i$ derived from cross-budget integration serves as a weights that are truly "aligned with the compression bottleneck."
+**1. Expected Feature Disturbance (EFD): Concentrating perturbation energy on tokens likely to survive across multiple budgets.**
 
-2.  **Ranking-Disturbance Alignment (RDA) (Ensuring Perturbed Tokens are Selected)**:
-    - **Function**: Actively pushes high-perturbation tokens into the top attention ranks to increase the probability that they pass through the compression bottleneck and affect LLM input.
-    - **Mechanism**: Softmaxes $d_i$ and $s_i^{\mathrm{adv}}$ into distributions $p_i^{(d)}$ and $p_i^{(s)}$, respectively, to maximize $\mathcal{L}_{\text{RDA}} = \sum_i p_i^{(d)} \log p_i^{(s)}$ (fitting the selection distribution to the perturbation distribution). A stop-gradient is applied to $p^{(d)}$ during optimization to avoid degradation from simultaneous shifting.
-    - **Design Motivation**: Theoretically, the gradient of $\mathcal{L}_{\text{EFD}}$ decomposes into $\sum_i \pi_i \nabla d_i$ (perturbing already selected tokens) and $\sum_i d_i \nabla \pi_i$ (pushing high-perturbation tokens up the rank). However, the second term has sparse and ill-conditioned gradients at switching points due to the piecewise constant nature of Top-K selection. RDA explicitly recovers this "buried" gradient path through differentiable distribution matching.
+Budget dilution and dependence breaks stem from the attacker's ignorance of which tokens are retained. EFD addresses this by treating the deployment budget $K_{\text{model}}$ as an unknown discrete random variable with a uniform prior $K_{\text{model}} \sim \mathcal{U}[K_{\min}, K_{\max}]$. The survival probability of token $i$ is $\pi_i = P(K_{\text{model}} > r_i)$, acting as a soft mask that decays with rank. The loss is the weighted average perturbation: $\mathcal{L}_{\text{EFD}} = \sum_i \pi_i d_i / \sum_i \pi_i$, where $d_i = 1 - \mathcal{S}(\mathbf{z}_i^{\mathrm{adv}}, \mathbf{z}_i^{\mathrm{cln}})$. Unlike using raw attention scores $s_i$, which are often too sparse due to softmax, $\pi_i$ provides a stable weight that aligns with the compression bottleneck.
 
-3.  **Joint Optimization and Encoder Attack Form**:
-    - **Function**: Fuses both objectives under the PGD framework while remaining decoupled from specific compression mechanisms.
-    - **Mechanism**: Total loss $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{EFD}} + \lambda \cdot \mathcal{L}_{\text{RDA}}$ subject to $\|\boldsymbol{\delta}\|_\infty \le \epsilon$. EFD creates the "payload" within the "survival set," while RDA handles the "delivery" of high-perturbation tokens into the survival set.
-    - **Design Motivation**: Nearly all mainstream compression methods start with Top-K selection (either pure selection like DivPrune or selection followed by merging like VisionZip). Targeting this step provides a unified interface that naturally covers diverse downstream merging mechanisms. The joint terms give the attack control over both "who is selected" and "how much they are perturbed."
+**2. Ranking-Disturbance Alignment (RDA): Restoring the missing gradient path.**
+
+Concentrating perturbations is insufficient if the heavily perturbed tokens are not selected by the compression module. The gradient of $\mathcal{L}_{\text{EFD}}$ effectively splits into "perturbing already selected tokens" ($\sum_i \pi_i \nabla d_i$) and "pushing perturbed tokens into the selection" ($\sum_i d_i \nabla \pi_i$). The latter is often ineffective because the Top-K selection is a piecewise constant function with sparse gradients. RDA explicitly restores this path using differentiable distribution matching: $\mathcal{L}_{\text{RDA}} = \sum_i p_i^{(d)} \log p_i^{(s)}$, where $p_i^{(d)}$ and $p_i^{(s)}$ are softmax distributions of $d_i$ and $s_i^{\mathrm{adv}}$. By applying a stop-gradient to $p^{(d)}$, the model forces the attention scores to align with high-perturbation tokens.
+
+**3. Joint Optimization and Encoder Attack: Targeting the Universal Top-K Interface.**
+
+The total loss $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{EFD}} + \lambda \cdot \mathcal{L}_{\text{RDA}}$ ensures that EFD creates the "payload" within the survival set, while RDA handles the "delivery." This approach decouples the attack from specific compression mechanisms because almost all leading methods rely on Top-K selection as their initial step.
 
 ### Loss & Training
-The attack remains an encoder attack (no text or LLM forward pass required) using PGD iterations + $\ell_\infty$ projection. The survival probability $\pi_i$ is recalculated at each step using current adversarial attention scores. A stop-gradient is applied to $p^{(d)}$, and $\lambda$ and $\epsilon$ are the primary hyperparameters. The prior distribution is chosen as a uniform distribution $[K_{\min}, K_{\max}]$, covering a reasonable range without needing to guess the exact deployment budget.
+The attack remains an encoder-only attack (no text, no LLM forward pass), utilizing PGD iterations with $\ell_\infty$ projection. Survival probabilities $\pi_i$ are recalculated at each step. A uniform prior $[K_{\min}, K_{\max}]$ is chosen to cover a reasonable range without needing the exact deployment budget.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation is conducted on LLaVA against 5 representative compression methods (VisionZip / VisPruner / DivPrune / FlowCut / PruMerge) across 3 datasets (GQA / TextVQA / VQA-v2). The table below compares average robust accuracy at $K_{\text{model}}=192$ (lower is stronger).
+Evaluations were conducted using LLaVA across 5 compression methods and 3 datasets. Average robust accuracy at $K_{\text{model}}=192$ is shown below (lower is stronger).
 
-| Dataset | Clean | Robust (Base Baseline) | Robust (CAGE) | Robust Accuracy Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Clean | Robust (Base) | Robust (CAGE) | Gain |
+|--------|-------|------------------------|----------------|--------------|
 | GQA | 56.1 | 40.8 | 36.2 | ↓11.3% |
 | TextVQA | 56.7 | 33.5 | 23.4 | ↓30.1% |
 | VQA-v2 | 73.4 | 55.4 | 47.2 | ↓14.8% |
-| Upper Bound (576 Tokens, No Compression) | 60.3 / 57.5 / 74.5 | 42.3 / 34.7 / 55.8 | 39.4 / 26.5 / 49.4 | ↓6.9 / 23.6 / 11.4% |
+| Upper Bound (576 Tokens) | 60.3 / 57.5 / 74.5 | 42.3 / 34.7 / 55.8 | 39.4 / 26.5 / 49.4 | ↓6.9 / 23.6 / 11.4% |
 
-Observations: (1) CAGE consistently drives robust accuracy lower than the baseline across all compression methods, with the largest impact on TextVQA (an OCR-VQA task sensitive to token loss due to its reliance on fine-grained visual evidence). (2) Even in the "upper bound" setting without compression, CAGE outperforms the baseline, suggesting that the EFD/RDA mechanism of "concentration + attention boosting" is inherently a stronger encoder attack.
+CAGE consistently outperforms the baseline, particularly on TextVQA, which is more sensitive to token loss. Even in the uncompressed "Upper Bound" setting, CAGE is superior, showing that its mechanism is a fundamentally stronger encoder attack.
 
 ### Ablation Study
-| Configuration | Robust Accuracy at $K_{\text{model}}=16$ (%, ↓) | Conclusion |
-| :--- | :--- | :--- |
-| $K_{\text{attack}}=576$ (Full token, VEAttack default) | 49.7 | Weak due to space mismatch |
-| $K_{\text{attack}}=192$ | 45.3 | Strengthens as it nears budget |
-| $K_{\text{attack}}=64$ | 44.7 | Further alignment |
-| $K_{\text{attack}}=16$ (Exact alignment) | 44.4 | Strongest, but requires known $K_{\text{model}}$ |
-| CAGE (EFD only) | Between the rows above | Concentration alone is insufficient |
-| CAGE (EFD + RDA, Full) | Outperforms fixed $K_{\text{attack}}$ across budgets | More robust across budgets |
+| Configuration | Robust Acc at $K_{\text{model}}=16$ (%, ↓) | Conclusion |
+|------|-----------------------------------------------|------|
+| $K_{\text{attack}}=576$ (Default VEAttack) | 49.7 | Mismatch leads to weak attack |
+| $K_{\text{attack}}=192$ | 45.3 | Strengthening via approximation |
+| $K_{\text{attack}}=16$ (Exact alignment) | 44.4 | Strongest, but requires $K_{\text{model}}$ |
+| CAGE (Full) | Better than fixed $K_{\text{attack}}$ | Robust across budgets |
 
 ### Key Findings
--   **Compression inherently "retains" heavily perturbed tokens**: The monotonic decrease of cosine shift under attention ranking implies that perturbations naturally concentrate on Top tokens. Since compression retains these tokens, it does not provide "automatic immunity" but rather preserves the "dirtiest" evidence.
--   **Budget Alignment Effect**: Under a fixed attack budget, the strongest attack occurs when the budget aligns with $K_{\text{model}}$, explaining why traditional full-token attacks overestimate robustness.
--   **Preliminary Defense**: Potential defense strategies provide some mitigation but are insufficient to close the vulnerability, highlighting the need for safety-aware compression research.
+- **Compression "Retains" Perturbations**: Since compression typically preserves Top tokens and perturbations naturally focus on them, compression does not provide "automatic immunity."
+- **Budget Alignment Effect**: Attacks are most effective when the attack budget aligns with the deployment budget; traditional full-token attacks overestimate robustness.
 
 ## Highlights & Insights
--   **Centers "Compression" in LVLM Safety Evaluation**: Reframes an engineering acceleration trick as a safety attack surface. The method is elegant, requiring only a prior and a KL-style alignment term with low migration costs.
--   **Probabilistic Handling of Unknown Budgets**: Uses a uniform prior to marginalize out $K_{\text{model}}$, allowing attacks without prior knowledge of deployment configurations. This is highly practical for grey-box environments and transferable to any "invisible inference path with Top-K selection" (e.g., MoE routing or sparse attention).
--   **Gradient Analysis Driven RDA**: Identifies that the "distribution boosting term" fails due to discrete Top-K selection and recovers it via differentiable KL matching. This methodology can be applied to many modules containing Top-K operations.
+- **Compression as an Attack Surface**: Successfully identifies a standard engineering trick as a security vulnerability.
+- **Probabilistic Handling of Unknowns**: The use of a uniform prior to marginalize $K_{\text{model}}$ is a practical solution for grey-box environments.
+- **Gradient-Driven RDA**: Deriving the RDA from the failure of $\nabla \pi_i$ provides a strong theoretical basis for the distribution matching approach.
 
 ## Limitations & Future Work
--   Evaluations are limited to LLaVA and 5 plug-and-play methods, excluding compression introduced during training (e.g., Token Merging), cross-modal compression, or multi-image agent settings which are critical for deployment.
--   The attack remains an encoder-based attack and has not been compared against end-to-end LLM backpropagation attacks; being prompt-agnostic also means it cannot utilize task-specific clues.
--   Defensive research is thin. Future work should explore "compression-aware" defenses like randomized $K$, attention reshuffling, or compression-robust training.
--   The uniform prior is an engineering simplification. If deployment budgets are skewed, EFD weights may be sub-optimal; online prior adjustment based on success feedback could be considered.
+- The scope is limited to plug-and-play compression; it does not cover training-time merging or cross-modal compression.
+- As an encoder attack, it does not utilize text prompt-specific cues for fine-grained attacks.
+- Defense strategies require more depth, specifically focusing on "compression-aware" defenses like randomized budgets or robust training.
 
 ## Related Work & Insights
--   **vs. VEAttack (Mei et al., 2026)**: VEAttack maximizes cosine shift on full tokens, which this paper shows systematically underestimtes attack strength in compressed LVLMs. CAGE strengthens this significantly via $\pi_i$ weighting and RDA alignment.
--   **vs. Cui et al., 2024 / Wang et al., 2024c, etc.**: While using similar grey-box encoder premises, this work explicitly models "inference-time compression bottlenecks" into the optimization objective.
--   **vs. Compression Methods (VisionZip, etc.)**: These focus on "performance-efficiency" trade-offs. This paper treats them as attack targets, revealing that more aggressive compression leads to more severe robustness evaluation distortion.
+- **vs VEAttack**: Highlights the systemic underestimation of attack strength in compressed LVLMs.
+- **vs Compression Methods**: Suggests that future compression research must include compression-aware robustness evaluations.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐⭐ First work to systematically reveal the mismatch between token compression and robustness evaluation.
--   Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 methods × 3 datasets × multiple budgets with stable conclusions, though limited to one LVLM backbone.
--   Writing Quality: ⭐⭐⭐⭐ Clear narrative with two key insights and gradient derivations for RDA; high information density in figures.
--   Value: ⭐⭐⭐⭐⭐ Explicitly concludes that compressed LVLM deployment requires safety re-evaluation, impacting industrial deployment.
+- **Novelty**: ⭐⭐⭐⭐⭐ First work to define the "Token Compression vs Robustness Evaluation" mismatch.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid coverage of methods and datasets, though limited to one LVLM backbone.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear narrative driven by gradient analysis.
+- **Value**: ⭐⭐⭐⭐⭐ Directly impacts industrial deployment strategies for LVLMs.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](../../CVPR2026/multimodal_vlm/evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 - [\[ICML 2026\] Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing](certified_robustness_under_heterogeneous_perturbations_via_hybrid_randomized_smo.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](../../CVPR2026/multimodal_vlm/unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](../../CVPR2026/multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ICML 2026\] Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing](certified_robustness_under_heterogeneous_perturbations_via_hybrid_randomized_smo.md)
-- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](../../CVPR2026/multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
-- [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](../../ICCV2025/multimodal_vlm/dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
 
 </div>
 

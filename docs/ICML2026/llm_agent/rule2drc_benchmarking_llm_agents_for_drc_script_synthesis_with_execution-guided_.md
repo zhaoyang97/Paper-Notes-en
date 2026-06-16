@@ -2,77 +2,87 @@
 title: >-
   [Paper Note] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation
 description: >-
-  [ICML 2026][LLM Agent][DRC script synthesis] The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13…
+  [ICML 2026][LLM Agent][KLayout] The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13,921 evaluation layouts. It utilizes the KLayout engine for execution-level scoring instead of code similarity. They propose SplitTester: a method that clusters $N$ candidate DRC scripts based on "output con
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "DRC script synthesis"
-  - "KLayout"
-  - "Best-of-N selection"
-  - "test-driven clustering"
-  - "chip design automation"
+  - ICML 2026
+  - LLM Agent
+  - KLayout
 date: 2026-05-08
-content_hash: 6feeb194ba776402
+content_hash: 90108c9b5569ad14
 ---
-
 # Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.15669](https://arxiv.org/abs/2605.15669)  
 **Code**: https://github.com/snu-mllab/Rule2DRC (Available)  
 **Area**: LLM Agent / Code Generation / EDA / Test Generation  
-**Keywords**: DRC script synthesis, KLayout, Best-of-N selection, test-driven clustering, chip design automation
+**Keywords**: DRC Script Synthesis, KLayout, Best-of-N Selection, Test-Driven Clustering, Electronic Design Automation
 
 ## TL;DR
-The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13,921 evaluation layouts. Scoring is performed via the KLayout engine at the execution level rather than through code similarity. They propose SplitTester: a method that clusters $N$ candidate DRC scripts based on output consistency under current tests, selects the cluster with the maximum "score $\times$ cluster size" to generate new layouts for further differentiation, and finally lets a judge LLM select the optimal candidate based on differentiated tests from the Top-3.
+The authors construct Rule2DRC, a large-scale EDA benchmark containing 1,000 natural language design rules and 13,921 evaluation layouts. It utilizes the KLayout engine for execution-level scoring instead of code similarity. They propose SplitTester: a method that clusters $N$ candidate DRC scripts based on "output consistency under current tests," iteratively generates new layouts to split the cluster with the largest "Score $\times$ Cluster Size," and finally allows a judge LLM to select the optimal candidate using the Top-3 candidates and their differentiating tests.
 
 ## Background & Motivation
 
-**Background**: Before tape-out, chips must satisfy thousands of geometric Design Rule Checking (DRC) constraints. Each rule is typically released by foundries in two formats: natural language (NL) descriptions and executable DRC scripts. DRC engines (KLayout, SVRF, etc.) determine layout violations by executing these scripts. Recent works have begun using LLMs to translate NL rules into executable DRC scripts, such as keyword extraction based on BERT (DRC-SG), fine-tuning based on AST retrieval augmentation (AST-Guided SVRF), and multimodal approaches like DRC-Coder.
+**Background**: Before tape-out, chips must satisfy thousands of geometric Design Rule Checking (DRC) constraints. Each rule is typically released by foundries in two forms: Natural Language (NL) instructions and executable DRC scripts. DRC engines (e.g., KLayout, SVRF) execute these scripts to determine if a layout violates rules. Recent work has begun using LLMs to translate NL rules into executable DRC scripts, such as BERT-based keyword extraction (DRC-SG), AST-retrieval-augmented fine-tuning (AST-Guided SVRF), and multimodal approaches like DRC-Coder.
 
-**Limitations of Prior Work**: The authors identify two independent but critical issues. First, existing benchmarks are small (DRC-SG has only 200 rules, AST-Guided has 74, DRC-Coder has 7) and mostly rely on "code similarity" for scoring. However, the same rule can be written using various semantically equivalent but syntactically different KLayout operations (e.g., `separation`, `sized` additions/subtractions, or `interacting`), leading code similarity metrics to penalize correct solutions. Second, current methods either fail to utilize execution feedback (DRC-SG, AST-Guided) or require evaluation layouts with ground-truth labels as input (DRC-Coder), which is unrealistic in practical scenarios where these labels themselves are the goal.
+**Limitations of Prior Work**: The authors identify two independent but critical issues. First, benchmark limitations: existing evaluation sets are generally small (DRC-SG has 200 rules, AST-Guided has 74, DRC-Coder has 7), and most rely on "code similarity" for scoring. However, the same rule can be written using various semantically equivalent but string-distinct KLayout syntaxes (e.g., `separation`, `sized` addition/subtraction, `interacting`), leading code similarity metrics to misclassify correct solutions (illustrated in Figure 3 of the paper). Second, methodological limitations: existing methods either fail to utilize execution feedback from the DRC engine (DRC-SG, AST-Guided) or require evaluation layouts with ground-truth violation labels as agent input (DRC-Coder), which is nearly impossible in real-world scenarios since these labels themselves require ground-truth scripts or expert manual generation.
 
-**Key Challenge**: The DRC task is naturally suited for Best-of-N (BoN) sampling — selecting the best among $N$ candidate scripts using execution results. However, generating corner-case layouts that effectively differentiate candidates is difficult, and "expected output labels" generated by models are often erroneous. Existing selection-based tester agents have weaknesses: CodeMonkey aggressively prunes the pool to Top-3 before generating tests, potentially discarding correct solutions prematurely; S* focuses test generation on already-differentiated candidates, failing to invest in high-quality candidates that remain clustered.
+**Key Challenge**: The DRC task is naturally suited for Best-of-N (BoN)—sampling $N$ candidate scripts and selecting the best based on execution. However, generating corner-case layouts that can truly differentiate candidates is difficult, and the "expected output labels" generated by models themselves are often erroneous. Existing selection-based tester agents have weaknesses on corner cases: CodeMonkey aggressively prunes to the Top-3 before generating tests, potentially discarding the correct solution before a discriminative test is created; S* focuses test generation on "already differentiated candidates," failing to invest in high-quality candidates that remain entangled.
 
-**Goal**: (1) Provide a sufficiently large benchmark that scores strictly by execution and does not expose evaluation layouts to the agent; (2) design a BoN selector specifically targeted at differentiating candidate groups that currently cannot be distinguished by existing tests.
+**Goal**: (1) Provide a sufficiently large benchmark that is strictly scored by execution results and does not expose evaluation layouts to the agent; (2) Design a BoN selector specifically aimed at generating new tests for groups of candidates that "cannot yet be differentiated by any existing tests."
 
-**Key Insight**: The bottleneck in LLM test generation is not the quantity of tests, but their lack of discriminative power over the current candidate pool. By clustering $N$ candidates based on their "output vectors" on existing tests, scripts within a cluster become indistinguishable. By continuously splitting the most "dangerous" clusters (those with both large size and high average scores), the resulting differentiated tests provide sufficient evidence for a judge LLM.
+**Key Insight**: It is observed that the real bottleneck in LLM test generation is not the "quantity of tests" but the "lack of discriminative power of the test set for the current candidate pool." If the $N$ candidates are clustered by their "output vectors on existing tests," scripts within the same cluster are indistinguishable. By iteratively splitting the most "dangerous" clusters (those both large and high-scoring), the resulting differentiated tests become sufficient for the judge LLM to make a decision.
 
 **Core Idea**: Replace code similarity with execution-level scoring as the evaluation metric, and replace "supplementing tests between differentiated candidates" with "targeted splitting of indistinguishable high-score clusters" as the BoN selection strategy.
 
 ## Method
 
-The paper combines a benchmark and a BoN selection algorithm.
-
 ### Overall Architecture
-**Rule2DRC Task Format**: Each task is a quadruple $\langle r_i, c_i, \{x_{ij}\}_{j=1}^{m_i}, \{\phi(x_{ij}, c_i)\}\rangle$, where $r_i$ is the NL rule, $c_i$ is the ground-truth DRC script, $\{x_{ij}\}$ are private evaluation layouts, and $\phi(\cdot, \cdot) \in \{0,1\}$ is the DRC engine's violation judgment. The Agent $f(\cdot)$ only accesses the NL rule $r_i$, KLayout API documentation, and self-generated artifacts to output a script $f(r_i)$. Selection success is defined as the ratio of tasks where $\forall j: \phi(x_{ij}, f(r_i)) = \phi(x_{ij}, c_i)$.
+This paper combines a benchmark with a BoN selection algorithm. On the benchmark side (Rule2DRC), the NL design rule to executable DRC script task is defined as a mission where evaluation layouts are private to the agent and scoring is based solely on execution. On the algorithm side (SplitTester), after sampling $N$ candidate scripts, it generates test layouts, executes all candidates, clusters them, and purposefully splits the most dangerous clusters before a judge LLM selects the optimal script from a narrow evidence set. To understand SplitTester, one must consider its input-output protocol: each task is a quadruple $\langle r_i, c_i, \{x_{ij}\}_{j=1}^{m_i}, \{\phi(x_{ij}, c_i)\}\rangle$, where $r_i$ is the NL rule, $c_i$ is the ground-truth DRC script, $\{x_{ij}\}$ are private evaluation layouts, and $\phi(\cdot, \cdot) \in \{0,1\}$ is the DRC engine's binary violation function. The agent $f(\cdot)$ only sees $r_i$, KLayout API documentation, and its own generated intermediates, outputting script $f(r_i)$. Success rate is the ratio of tasks where $\phi(x_{ij}, f(r_i)) = \phi(x_{ij}, c_i)$ for all evaluation layouts. SplitTester selects $c^*$ from candidates $\mathcal{C} = \{c_1, \dots, c_N\}$ where $N \in \{10, 15, 20\}$ without touching ground-truth labels or private layouts.
 
-**Role of SplitTester in BoN**: A sampler first draws $N$ candidate scripts $\mathcal{C} = \{c_1, \dots, c_N\}$. SplitTester generates test layouts, executes all candidates, and selects $c^* \in \mathcal{C}$ without access to ground-truth labels or private evaluation layouts.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["NL Rule r_i + KLayout API Docs<br/>(~60K tokens resident context)"] --> B["Sample N candidate DRC scripts"]
+    B --> C["Generate B₀=8 initial (Layout, Expected Output) pairs"]
+    C --> D["Execute all candidates → Cluster by output vectors<br/>Score each candidate s(c)"]
+    D --> E["Select most dangerous cluster argmax s_i·|C_i|<br/>Sample K=3 representatives to generate new discriminative test"]
+    E -->|"Execute new test → Rescore and re-cluster all"| D
+    E -->|"Early stop after P=1 failed split"| F["Top-3 candidates + Differentiating tests X_Δ<br/>Sent to judge LLM for final decision"]
+    F --> G["Output optimal script c*"]
+```
 
 ### Key Designs
 
-1.  **Three-part Composition and Execution-level Evaluation of Rule2DRC**:
-    - **Function**: Provides 1,000 translation tasks and 13,921 layouts without exposing them to the agent.
-    - **Mechanism**: 310 rules are taken from the SkyWater130 PDK. To cover multi-layer constraints for sub-7nm nodes, 490 additional rules were drafted by GPT-5.2 and manually audited. Another 200 rules were added to cover rare KLayout DSL syntax (frequency <5). Each task requires layouts to include both "pass" and "fail" cases, including hard negatives near the threshold. Scoring uses $\text{SuccessRate}(f) = \frac{1}{n}\sum_i s_i$, where $s_i = 1$ iff $\forall j: \phi(x_{ij}, f(r_i)) = \phi(x_{ij}, c_i)$.
-    - **Design Motivation**: Traditional similarity metrics misjudge equivalent scripts (see Figure 3). Unlike DRC-Coder, keeping evaluation layouts private prevents over-fitting to fixed samples.
+**1. Rule2DRC Benchmark: Execution-level Scoring + Private Evaluation Layouts**
 
-2.  **SplitTester: Targeted Test Generation for Indistinguishable Clusters**:
-    - **Function**: Given $N$ candidates and test budgets $B_0, B$, outputs the selected script $c^*$.
-    - **Mechanism**: An LLM generates $B_0$ initial (layout, expected output) pairs. Candidates are clustered $\{C_i\}$ based on output vectors. The score is $s(c) = \frac{1}{|T|}\sum_{(x,\phi^*) \in T} \mathbb{1}[\phi(x, c) = \phi^*]$. In each iteration, the cluster $i^* = \arg\max_i s_i |C_i|$ is selected. $K=3$ representatives from this cluster are sent to the test generator to create a layout that differentiates them. The process repeats until a budget is met or a cluster cannot be split ($P=1$).
-    - **Design Motivation**: Focusing on the "most dangerous" cluster (high $s_i$ suggests proximity to the correct solution; large $|C_i|$ suggests a mix of incorrect scripts) maximizes the marginal information of each new test.
+This addresses the inaccuracy and small scale of existing DRC benchmarks. Rule2DRC includes 310 rules from the open-source SkyWater130 PDK. To cover multi-layer cascading constraints for sub-7nm nodes, 490 additional multi-layer rules were drafted by GPT-5.2 and manually verified. An extra 200 rules were added to trigger syntax constructs appearing fewer than 5 times, ensuring full coverage of the KLayout DSL spectrum. This results in 1,000 translation tasks and 13,921 evaluation layouts. Each task includes both "pass" and "fail" layout samples, with hard negative samples where violations are at the threshold edge. Scoring uses $\text{SuccessRate}(f) = \frac{1}{n}\sum_i s_i$, where $s_i = 1$ if and only if $\forall j: \phi(x_{ij}, f(r_i)) = \phi(x_{ij}, c_i)$. This is the first implementation in this field to combine execution-level scoring with private layouts, preventing both misclassification of equivalent code and label-based cheating.
 
-3.  **Two-stage Decision with Expected Labels and Final Judge LLM**:
-    - **Function**: Robust selection despite potential noise in self-generated labels.
-    - **Mechanism**: LLM-generated tests include an "expected" output $\phi^*(x)$ used for clustering. The final decision does not simply take the Top-1 by score; instead, the Top-3 candidates and their differentiating tests $X_\Delta = \{x : \exists c_a, c_b \in C_3, \phi(x, c_a) \neq \phi(x, c_b)\}$ are provided to a judge LLM for the final choice. Furthermore, 60K tokens of KLayout API documentation are included in the prompt context.
-    - **Design Motivation**: Ablations show the final judge and expected labels are complementary. Storing API docs in the context compensates for the niche nature of DRC DSL.
+> ⚠️ Model names like GPT-5.2 are as per the original text.
+
+**2. SplitTester: Targeting Test Budgets at Indistinguishable High-Score Clusters**
+
+The bottleneck in BoN for DRC is generating discriminative corner-case layouts. SplitTester observes that the limitation is the lack of discriminative power in the test set. It first generates $B_0$ initial (layout, expected output) pairs. After execution, candidates are clustered into $\{C_i\}$ based on identical output vectors. Each candidate is scored by $s(c) = \frac{1}{|T|}\sum_{(x,\phi^*) \in T} \mathbb{1}[\phi(x, c) = \phi^*]$, the ratio of consistency with expected outputs across all tests. It then iteratively selects:
+
+$$i^* = \arg\max_i s_i |C_i|$$
+
+This targeted cluster is "high-scoring and large." $s_i$ being large suggests the cluster likely contains the correct solution, while a large $|C_i|$ indicates a higher probability of containing incorrect solutions. Directing the test budget here maximizes the marginal information gain per new test. $K=3$ representatives are used to control prompt length. If a cluster cannot be split after $P=1$ attempt, the process early-stops to save budget.
+
+**3. Two-Stage Decision with Expected Labels + Judge LLM, and Long-Context API Docs**
+
+The "expected output" $\phi^*(x)$ used for clustering is LLM-generated and potentially noisy. SplitTester treats decision-making as a two-stage process: expected labels provide directional signals for clustering, but the final judgment is made by feeding the Top-3 candidates and the differentiating tests 
+
+$$X_\Delta = \{x : \exists c_a, c_b \in C_3, \phi(x, c_a) \neq \phi(x, c_b)\}$$
+
+to a judge LLM. Ablations show these stages are complementary: removing the final judge drops success rate from 58.0% to 55.5%, while removing expected labels drops it to 57.1%. Additionally, Crawler-processed KLayout API documentation (~60K tokens) is included in the context of all LLM calls. This alone improved GPT-OSS-120B’s pass@1 by 20+ percentage points, acknowledging that DRC DSL is too niche for purely parametric memory.
 
 ### Loss & Training
-This work does not involve training. Off-the-shelf checkpoints are used (Qwen3-30B-A3B-Instruct-2507, GPT-OSS-20B, GPT-OSS-120B). SplitTester hyper-parameters: $B_0 = 8, B = 8, K = 3, P = 1$.
+This work involves no training; all LLMs are accessed via existing checkpoints (Qwen3-30B-A3B-Instruct-2507, GPT-OSS-20B, GPT-OSS-120B). SplitTester has no learnable parameters. Hyperparameters: initial test budget $B_0 = 8$, additional budget $B = 8$, cluster representatives $K = 3$, early stopping threshold $P = 1$.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation conducted on all 1,000 Rule2DRC tasks. BoN-N selects 1 script from $N$ candidates.
+Evaluated on the full 1,000 tasks of Rule2DRC. BoN-N indicates selecting 1 from $N$ candidates. Results are averaged over three runs.
 
 | Model | Setting | LLM-as-Judge | Generated Tests (8) | CodeMonkey | SplitTester (Ours) | Oracle@N |
 |------|------|--------------|---------------------|------------|---------------------|----------|
@@ -83,44 +93,48 @@ Evaluation conducted on all 1,000 Rule2DRC tasks. BoN-N selects 1 script from $N
 | Qwen3-30B-A3B | BoN-20 Success Rate | 16.0 | 17.3 | 17.2 | **18.0** | 23.7 |
 | Qwen3-30B-A3B | BoN-20 Error Rate | 65.2 | 38.5 | 38.6 | **35.1** | 29.5 |
 
+The single-sample baseline for GPT-OSS-120B is 32.5%; BoN-20 + SplitTester increases this to 63.8%. The largest absolute gain over CodeMonkey (+3.3pp) was observed on GPT-OSS-20B.
+
 ### Ablation Study (GPT-OSS-120B, BoN-10)
 | Configuration | Success Rate (%) | Error Rate (%) | Description |
 |------|-----------|-----------|------|
-| SplitTester Full | **58.0** | 9.1 | Complete method |
-| - Final judge LLM | 55.5 | 9.1 | Top-1 by score → -2.5pp |
-| - Expected labels | 57.1 | 9.1 | Top-3 cluster polling → -0.9pp |
-| - Only Top-3 candidates | 57.4 | 9.1 | Pruning like CodeMonkey → -0.6pp |
-| Sample-1 | 32.5 | 48.5 | No BoN |
-| Oracle@10 | 63.0 | 8.5 | Theoretical upper bound |
+| SplitTester (Full) | **58.0** | 9.1 | Full Method |
+| - w/o final judge LLM | 55.5 | 9.1 | Top-1 by score only → -2.5pp |
+| - w/o expected labels | 57.1 | 9.1 | Cluster polling instead of scoring → -0.9pp |
+| - Top-3 candidates only | 57.4 | 9.1 | CodeMonkey-style but with SplitTester testing → -0.6pp |
+| Sample-1 (Single) | 32.5 | 48.5 | No BoN |
+| Oracle@10 | 63.0 | 8.5 | Theoretical upper bound for BoN-10 |
 
 ### Key Findings
-- **Context engineering provides massive gains**: Including the KLayout API documentation improves GPT-OSS-120B pass@1 by 20+ pp and pass@20 by 40+ pp.
-- **Retaining the full candidate pool is superior to pruning**: Restricting selection to the Top-3 early (as in CodeMonkey) discards correct solutions that only differentiate later.
-- **Expected labels and judge LLMs are complementary**: While both contribute, the judge LLM provides a larger boost by handling noise in self-generated labels.
-- **Pareto gains converge with model size**: As models strengthen, the gap between selection algorithms narrows, though the Oracle gap suggests BoN selection is not yet saturated.
+- **Context engineering provides massive gains**: Including 60K tokens of KLayout API documentation improves GPT-OSS-120B pass@1 by 20+ pp and pass@20 by 40+ pp. This far outweighs any BoN algorithm gains, proving that niche syntax requires documentation as external memory.
+- **Maintaining the full candidate pool is crucial**: Restricting the pool to Top-3 early (similar to CodeMonkey) drops performance by 0.6pp, indicating that early pruning discards candidates that might excel under later tests.
+- **Expected labels and judge LLM are complementary**: Removing either reduces performance, but the judge LLM has a larger impact. This suggests that the noise in self-generated expected labels must be mitigated by a second LLM reviewing specific evidence.
+- **Pareto front advantage converges with scale**: On GPT-OSS-120B, SplitTester outperforms CodeMonkey by only 1.1pp. While stronger models leave less room for selection algorithms, the Oracle gap (72.1%) shows selection is still far from saturated.
 
 ## Highlights & Insights
-- **"Splitting indistinguishable clusters" is an elegant objective**: The metric $\arg\max_i s_i |C_i|$ effectively targets high-probability clusters that likely contain the correct solution but still harbor incorrect ones.
-- **Execution-level evaluation + Private layouts**: This setup prevents the leakage/overfitting issues found in prior work like DRC-Coder, mirroring real-world conditions.
-- **Early stopping (parameter $P$)**: Recognizing when a cluster cannot be split saves significant computation, placing the method on the Pareto frontier of cost-effectiveness.
+- **"Splitting indistinguishable clusters" is a clean objective function**: The $\arg\max_i s_i |C_i|$ heuristic efficiently targets high-scoring clusters that likely contain the answer but require further differentiation. This can be adapted to any code selection scenario where outputs are enumerable.
+- **Execution-level evaluation + Private layouts** is a robust protocol: It eliminates the risk of overfitting to fixed labels seen in DRC-Coder and mirrors the real-world engineering task of translating NL to scripts.
+- **The early stopping parameter $P$ is a valuable engineering detail**: The discovery that budget is wasted once a cluster can no longer be split keeps the method on the Pareto frontier of cost-efficiency.
+- **API Docs = Handbook**: This highlights that failures in niche domains are often knowledge-based rather than capability-based. Contextual documentation is more effective than many prompt engineering tricks.
 
 ## Limitations & Future Work
-- Evaluation is limited to KLayout DSL; industrial Calibre SVRF was not tested due to licensing and toolchain constraints.
-- Multi-layer rules were drafted by GPT-5.2, potentially introducing a system bias favoring similar LLMs.
-- SplitTester lacks a code-edit phase. Future work could use the "split" signal to guide iterative script correction.
-- For top-tier models, failures are often "hard cases" where all $N$ candidates share the same error, requiring diversified sampling or self-repair.
+- Only KLayout was evaluated; industrial standard Calibre SVRF was not used due to toolchain/licensing constraints. Migrating to SVRF would require new benchmarks and documentation.
+- Using GPT-5.2 to draft 690 rules might introduce a "systematic bias" that implicitly favors similar LLMs during the generation phase.
+- SplitTester lacks a code-editing phase (unlike CodeMonkey or DRC-Coder). Using the split signals to guide script refinement (e.g., as critique for next-iteration fixes) could provide further gains.
+- For the strongest model (GPT-OSS-120B), the error rate is flat at 4–9%, suggesting remaining failures are hard cases where all $N$ candidates are incorrect. This requires better samplers or self-repair tools.
 
 ## Related Work & Insights
-- **vs DRC-SG / AST-Guided SVRF**: These use 1-stage translation and code similarity. This paper proves similarity overestimates accuracy and provides an agentic alternative.
-- **vs DRC-Coder**: DRC-Coder uses violation labels as input; this paper enforces zero-shot access to evaluation layouts to test true synthesis ability.
-- **vs CodeMonkey**: While CodeMonkey prunes to Top-3, this work maintains the pool to avoid discarding correct solutions.
-- **vs S***: S* differentiates already-split clusters; this work focuses on splitting the largest indistinguishable high-score clusters to maximize information gain.
+- **vs DRC-SG / AST-Guided SVRF (Zhu et al. 2022/2023; Abdelmalak et al. 2025)**: These use keyword extraction or AST retrieval without execution feedback and evaluate via code similarity. This paper proves code similarity overestimates accuracy and pushes the task into an LLM agent framework.
+- **vs DRC-Coder (Chang et al. 2025)**: They use VLM+LLM but require labeled violation layouts as input. This paper enforces a setup where the agent cannot see evaluation layouts, testing true translation ability.
+- **vs CodeMonkey (Ehrlich et al. 2025)**: CodeMonkey prunes candidates early; this paper shows that maintaining the full pool combined with cluster-based splitting is superior.
+- **vs S\* (Li et al. 2025)**: S* focuses on tests between already split clusters; this paper focuses on unsplit high-score clusters to maximize the marginal information of each test.
+- **vs CodeT (Chen et al. 2023) / Dynamic Scaling (Ma et al. 2025)**: While they explore consistency and scaling, this work directs test generation based on candidate cluster topology.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The cluster-topology-guided BoN strategy is a clean design for code selection.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Diverse models, BoN scales, and cost curves are provided.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and well-structured algorithms.
-- Value: ⭐⭐⭐⭐ Provides a reproducible SOTA benchmark for EDA automation.
+- Novelty: ⭐⭐⭐⭐ The "split on indistinguishable clusters" strategy for BoN selection is a clean design; the benchmark is the first to combine execution-level scoring with private layouts in DRC.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three models, multiple BoN scales, strong baselines, Pareto curves, and Oracle bounds are provided, though limited to the KLayout engine.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow is excellent; Algorithm 1 is clear, and the argument against code similarity is well-supported.
+- Value: ⭐⭐⭐⭐ Provides a reproducible, open-source benchmark for the EDA $\times$ LLM field and introduces selection techniques applicable to broader code generation tasks.
 
 <!-- RELATED:START -->
 
@@ -129,9 +143,9 @@ Evaluation conducted on all 1,000 Rule2DRC tasks. BoN-N selects 1 script from $N
 ## Related Papers
 
 - [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
-- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
-- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
+- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
+- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
 
 </div>

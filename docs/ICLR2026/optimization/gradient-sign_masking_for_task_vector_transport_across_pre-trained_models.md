@@ -147,8 +147,8 @@ GradFix involves no training in the conventional sense—it is a single-step tra
 - [\[ICCV 2025\] Addressing Representation Collapse in Vector Quantized Models with One Linear Layer](../../ICCV2025/optimization/addressing_representation_collapse_in_vector_quantized_models_with_one_linear_la.md)
 - [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
 - [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](../../CVPR2026/optimization/label-free_cross-task_lora_merging_with_null-space_compression.md)
-- [\[CVPR 2026\] OTPrune: Distribution-Aligned Visual Token Pruning via Optimal Transport](../../CVPR2026/optimization/otprune_distribution-aligned_visual_token_pruning_via_optimal_transport.md)
 - [\[NeurIPS 2025\] Natural Gradient VI: Guarantees for Non-Conjugate Models](../../NeurIPS2025/optimization/natural_gradient_vi_guarantees_for_non-conjugate_models.md)
+- [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](../../CVPR2026/optimization/the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
 
 </div>
 

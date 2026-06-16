@@ -1,164 +1,163 @@
 ---
 title: >-
-  [Paper Note] Why LLM Web Agents Fail: A Hierarchical Planning Perspective
+  [Paper Note] 为什么 LLM 网络代理失败：一个分层规划视角
 description: >-
-  [ACL 2026][LLM Agent][Web agent failure analysis] This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution…
+  [ACL 2026][LLM Agent][Paper Note] This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution, and replanning). It discovers that PDDL representations outperform natural language planning, but low-level execution and perceptual grounding are the primary bott
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Web agent failure analysis"
-  - "hierarchical planning"
-  - "natural language vs PDDL"
-  - "execution bottlenecks"
+  - ACL 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 6bfbeb715a5ea8ae
+content_hash: 809f4b7147757c15
 ---
-
 # Why LLM Web Agents Fail: A Hierarchical Planning Perspective
 
 **Conference**: ACL 2026  
 **arXiv**: [2603.14248](https://arxiv.org/abs/2603.14248)  
 **Code**: https://github.com/Ziyu-Yao-NLP-Lab/llm-hierarchical-web-agents  
 **Area**: LLM Agent / Web Navigation  
-**Keywords**: Web agent failure analysis, hierarchical planning, natural language vs PDDL, execution bottlenecks
+**Keywords**: Web agent failure analysis, hierarchical planning, natural language vs PDDL, execution bottleneck
 
 ## TL;DR
 
-This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution, and replanning). It finds that PDDL representation outperforms natural language planning, but low-level execution and perceptual grounding are the primary bottlenecks.
+This paper systematically analyzes the failure causes of LLM web agents through a hierarchical planning framework (high-level planning, low-level execution, and replanning). It discovers that PDDL representations outperform natural language planning, but low-level execution and perceptual grounding are the primary bottlenecks.
 
 ## Background & Motivation
 
-**Background**: The performance of LLM web agents on long-horizon tasks remains significantly lower than human levels. However, existing evaluations focus primarily on end-to-end success rates, offering limited understanding of specific failure sources.
+**Background**: LLM web agents' performance on long-horizon tasks is significantly lower than human levels, yet existing evaluations focus primarily on end-to-end success rates, providing limited understanding of failure sources.
 
-**Limitations of Prior Work**: End-to-end evaluation metrics (e.g., task success rate) mask the real issues—they cannot distinguish whether a failure stems from high-level planning errors, insufficient low-level execution, or the failure of replanning mechanisms.
+**Limitations of Prior Work**: End-to-end evaluation metrics (e.g., task success rate) obscure real issues—failing to distinguish between high-level planning errors, insufficient low-level execution, or failure of replanning mechanisms.
 
-**Key Challenge**: Different components have distinct bottlenecks, but existing methods optimize overall performance indiscriminately, leading to obscure improvement directions.
+**Key Challenge**: Different components have different bottlenecks, but existing methods optimize overall performance indiscriminately, leading to vague directions for improvement.
 
-**Goal**: To establish a systematic hierarchical evaluation framework that decomposes web agent capabilities into three independent dimensions for diagnosis.
+**Goal**: To establish a systematic hierarchical evaluation framework to diagnose web agent capabilities by decomposing them into three independent dimensions.
 
-**Key Insight**: Inspired by automated planning (e.g., HTN planning), humans solve complex tasks via a three-layer process: "abstract strategy $\rightarrow$ concrete execution $\rightarrow$ dynamic replanning." LLM agents should be decomposable using the same logic.
+**Key Insight**: Inspired by automated planning (e.g., HTN planning), humans solve complex tasks using a three-level process: "abstract strategy $\rightarrow$ concrete execution $\rightarrow$ dynamic replanning." LLM agents should be decomposable similarly.
 
-**Core Idea**: Utilize a hierarchical planning framework instead of black-box end-to-end evaluation to precisely locate the failure causes of LLM agents.
+**Core Idea**: Use a hierarchical planning framework instead of black-box end-to-end evaluation to accurately locate the failure causes of LLM agents.
 
 ## Method
 
 ### Overall Architecture
 
-The proposed hierarchical planning evaluation framework consists of a four-stage process:
+The framework decomposes web agent capabilities into three layers for diagnosis, making the failure sources behind "end-to-end success rates" locatable. Given a natural language instruction, the LLM first performs high-level planning to decompose an abstract subgoal sequence $P = [g_1, g_2, \ldots, g_n]$. For each subgoal $g_i$, the agent generates executable actions $a_t \in \mathcal{A}$ at the low level and produces an execution trajectory $\tau_i = (o_t, a_t, o_{t+1}, \ldots, o_{t+k})$. Subsequently, an LLM-based judge performs post-condition checks to verify if the execution result satisfies the expected effect of the subgoal $\Phi(g_i, s') = 1$. If a subgoal fails or hits a dead end, replanning is triggered to decide whether to resume locally from the last successful subgoal or perform global replanning from scratch. The output consists of independent diagnostic metrics for each layer, allowing the questions of whether the problem lies in planning, execution, or replanning to be answered separately.
 
-1.  **High-level Planning**: The LLM decomposes a natural language instruction into a sequence of high-level subgoals $P = [g_1, g_2, \ldots, g_n]$, where each $g_i$ represents an abstract, meaningful step.
-2.  **Low-level Execution**: For each subgoal $g_i$, the agent generates a series of executable low-level actions $a_t \in \mathcal{A}$, producing an execution trajectory $\tau_i = (o_t, a_t, o_{t+1}, \ldots, o_{t+k})$.
-3.  **Post-condition Check**: An LLM is used as a judge to verify if the execution result satisfies the intended effect of the subgoal, formulated as $\Phi(g_i, s') = 1$.
-4.  **Replanning**: If a subgoal fails or hits a dead end, the agent decides between local adjustment (continuing from the last successful subgoal) or global replanning (generating a new plan from scratch).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Natural Language Instruction"] --> B["High-level Planning: PDDL vs. NL Representation<br/>Decompose into subgoal sequence g₁…gₙ"]
+    B --> C["Low-level Execution<br/>Generate actions and trajectories for each subgoal"]
+    C --> D["LLM Judge (Post-condition Check)<br/>gpt-5-nano determines subgoal/task achievement"]
+    D -->|"Failure or Deadlock"| E["Replanning<br/>Local resumption vs. Global replanning"]
+    E --> C
+    D -->|"Success"| F["Multi-dimensional Failure Mode Analysis<br/>Quantification of High-level (6 metrics), Low-level, and Replanning"]
+    F --> G["Locate Failure Sources: Planning vs. Execution vs. Replanning"]
+```
 
 ### Key Designs
 
-1.  **PDDL vs Natural Language Representation**:
-    *   Function: Compares the impact of two high-level planning representations on plan quality.
-    *   Mechanism: Natural language (NL) is flexible but prone to over-specification (implicit requirements) or over-decomposition. PDDL enforces clear plan semantics via formal structures (preconditions, effects).
-    *   Design Motivation: NL plans often incorporate low-level details. This design tests whether PDDL can generate more abstract and executable plans through symbolic constraints.
+**1. PDDL vs. Natural Language Representation: Using formal constraints to suppress plan over-specification**
 
-2.  **Multi-dimensional Failure Mode Analysis**:
-    *   Function: Measures performance across three dimensions: planning alignment, execution reliability, and replanning effectiveness.
-    *   Mechanism: Defines six alignment metrics (Perfect Match / Partial / Missing / Decomposed / Unmatched / Matched Rate) to quantify the deviation of high-level plans from human reference plans. It also defines low-level execution metrics (subgoal completion rate / plan completion rate / task success rate / action efficiency) and evaluates performance changes before and after replanning.
-    *   Design Motivation: Isolating capabilities allows for clearer improvement directions—for example, if low-level execution is poor despite high-quality planning, the focus should be on perception grounding rather than planning capacity.
+Natural language (NL) planning is flexible but often mixes in low-level details, resulting in over-specification or over-decomposition, which causes high-level plans to lose abstraction. This paper compares NL and PDDL representations for the same high-level planning: PDDL enforces clear plan semantics through formal structures like *preconditions* and *effects*, constraining the model to describe "what to do" rather than "how to click." The core question is whether symbolic constraints yield more abstract, less redundant, and more executable plans, thereby isolating the high-level planning contribution from mixed end-to-end metrics.
 
-3.  **LLM as a Judge for Verification**:
-    *   Function: Automatically judges subgoal completion and overall task success.
-    *   Mechanism: Uses gpt-5-nano as a judge to determine goal achievement based on execution trajectories and final webpage states. Human verification on 50 samples showed an accuracy of 82%-86%.
-    *   Design Motivation: In real web environments, rule-based success judgment is fragile; LLMs can understand semantics rather than relying on mechanical matching.
+**2. LLM as Judge: Semantic-level determination in fragile web environments**
+
+In real web environments, rule-based success judgment is fragile; mechanical string matching cannot determine if a subgoal is truly achieved. The framework therefore uses gpt-5-nano as a judge to determine subgoal completion and overall task success based on execution trajectories and final web states; it understands semantics rather than surface matching. Manual verification of 50 samples shows the judge has 82%–86% accuracy, sufficient for large-scale hierarchical diagnosis.
+
+**3. Multi-dimensional Failure Mode Analysis: Quantifying capabilities across three layers**
+
+To provide clear improvement directions, a total score is not used to summarize all layers. This paper defines metrics for each layer: High-level uses 6 alignment metrics (Perfect Match / Partial / Missing / Decomposed / Unmatched / Matched Rate) to quantify deviations from human reference plans; low-level uses subgoal success rate, plan completion rate, task success rate, and action efficiency to characterize execution reliability; the replanning layer compares performance changes before and after execution. This separation allows for actionable conclusions—for instance, if low-level execution is poor but the high-level plan is good, optimization should focus on perceptual grounding rather than reasoning.
 
 ## Key Experimental Results
 
-### High-level Planning: Natural Language vs PDDL
+### High-level Planning: Natural Language vs. PDDL
 
 | Metric | NL (Pre-replan) | PDDL (Pre-replan) | NL (Post-replan) | PDDL (Post-replan) |
-| :--- | :--- | :--- | :--- | :--- |
+|------|------------|------------|------------|------------|
 | Perfect Match | 60.6% | 67.7% | 56.1% | 59.0% |
 | Partial | 5.7% | 7.4% | 6.1% | 6.9% |
 | Missing | 4.2% | 2.2% | 4.0% | 14.5% |
 | Decomposed | 29.5% | 22.7% | 33.8% | 19.6% |
 | Unmatched | 29.4% | 15.4% | 35.0% | 15.4% |
-| Matched (Effective steps) | 70.6% | 84.6% | 65.0% | 84.6% |
+| Matched (Effective Steps) | 70.6% | 84.6% | 65.0% | 84.6% |
 
-**Key Findings**: PDDL plans achieve a higher Perfect Match rate (67.7% vs 60.6%) and fewer Unmatched steps (15.4% vs 29.4%). NL plans tend toward over-decomposition (29.5%), leading to redundant steps.
+**Key Findings**: PDDL plans achieve a higher Perfect Match rate (67.7% vs. 60.6%) and fewer Unmatched steps (15.4% vs. 29.4%). NL plans tend toward over-decomposition (29.5%), generating redundant steps.
 
-### Low-level Execution: Identifying the True Bottleneck
+### Low-level Execution: Identifying True Bottlenecks
 
 | Dataset Metric | gpt-5-nano (human plan) | gpt-5-nano (NL plan) | gpt-5-nano (PDDL plan) |
-| :--- | :--- | :--- | :--- |
-| Subgoal Completion Rate | 38.5% | 26.8% | 32.1% |
+|---------|------|------|------|
+| Subgoal Success Rate | 38.5% | 26.8% | 32.1% |
 | Plan Completion Rate | 38.5% | - | - |
 | Final Task Success Rate | 36.4% | 18.5% | 24.7% |
 
 **Low-level Execution Failure Modes**:
 
-| Failure Mode | Incidence | Root Cause |
-| :--- | :--- | :--- |
-| Hallucinated links (goto action) | 32.0% | LLM invents non-existent URLs |
-| Redundant actions | 34.2% | Insufficient environment understanding; invalid operations |
-| Out-of-domain links | 16.7% | Navigating away from target site (e.g., to Wikipedia via search) |
-| Repetitive execution | 10.4% | Failure to learn from feedback; getting stuck in loops |
+| Failure Mode | Rate | Root Cause |
+|--------|-------|---------|
+| Hallucinated links (goto action) | 32.0% | LLM fabricates non-existent URLs |
+| Redundant actions | 34.2% | Insufficient understanding of environmental state |
+| Out-of-domain links | 16.7% | Navigating away from target site (e.g., search results to Wikipedia) |
+| Repeated execution | 10.4% | Failure to learn from feedback, getting stuck in loops |
 
-**Key Findings**: Even when provided with perfect human-annotated high-level plans, the LLM executor success rate is only 36.4%, indicating that **low-level execution and perceptual grounding are the true bottlenecks**.
+**Key Findings**: Even given a perfect human-annotated high-level plan, the LLM executor success rate is only 36.4%, indicating that **low-level execution and perceptual grounding are the true bottlenecks**.
 
 ### Effect of Replanning
 
-| Configuration | Subgoal Completion | Task Success | Gain |
-| :--- | :--- | :--- | :--- |
-| Pre-replan (NL) | 26.8% | 18.5% | Base |
+| Configuration | Subgoal Success Rate | Task Success Rate | Gain |
+|-----|----------|---------|--------|
+| Pre-replan (NL) | 26.8% | 18.5% | Baseline |
 | Post-replan (NL) | 31.2% | 22.3% | +4.4pp |
-| Pre-replan (PDDL) | 32.1% | 24.7% | Base |
+| Pre-replan (PDDL) | 32.1% | 24.7% | Baseline |
 | Post-replan (PDDL) | 35.5% | 28.9% | +3.4pp |
 
-Single-turn replanning improves success rates by 4-5 percentage points, suggesting that while the replanning mechanism is effective, its impact is limited.
+Single-round replanning improves success rate by 4-5 percentage points, showing that replanning mechanisms are effective but limited in magnitude.
 
-### Comparison Across LLMs
+### Comparison of Different LLMs
 
-*   **gpt-5-nano**: Strongest performance, 36.4% task success rate (human plan).
-*   **claude-haiku-4.5**: 29.2% success rate; highest rate of repetitive failures (16.7%), indicating weak feedback utilization.
-*   **gemini-flash-2.5**: 17.3% success rate; worst low-level execution with the highest redundant action rate (41.2%), despite compact planning.
+- **gpt-5-nano**: strongest performance, 36.4% task success rate (human plan).
+- **claude-haiku-4.5**: 29.2% success rate, highest repeated failure rate (16.7%), weak feedback utilization.
+- **gemini-flash-2.5**: 17.3% success rate, worst low-level execution, highest redundant action rate (41.2%), but most compact plans.
 
 ## Highlights & Insights
 
-*   **Innovation in Hierarchical Diagnostic Framework**: Rather than aiming for incremental end-to-end gains, the paper provides a systematic method to isolate and evaluate three layers of capability. This approach, borrowed from automated planning, is applied to LLM web agent failure analysis for the first time.
-*   **Quantitative Advantage of PDDL**: The paper quantitatively proves that formal representations outperform natural language. Although PDDL has a higher learning curve, it yields more precise plans with less redundancy and higher executability.
-*   **Low-level Execution as the Core Issue**: The study challenges the common assumption that "improving LLM reasoning will automatically improve web agents." Evidence shows that even with perfect high-level planning, execution fails at a rate of 63.6%, shifting the focus toward perceptual grounding.
-*   **Fine-grained Classification of Failure Modes**: Categorizing execution failures into hallucinated links, redundant actions, out-of-domain jumps, and repetitive loops (each accounting for 16-34%) provides a concrete roadmap for optimization.
-*   **Limited Utility of Simple Replanning**: Gains from single-turn replanning are modest (+4-5pp), indicating a need for more sophisticated adaptation mechanisms beyond simple retries.
+- **Innovation in Hierarchical Diagnostics**: Instead of improving end-to-end performance, the framework systematically isolates the evaluation of three layers, making improvement directions more precise. This approach is introduced from automated planning but applied to LLM web agent failure analysis for the first time.
+- **Quantitative Advantage of PDDL**: The paper quantitatively proves that formal representation is superior to natural language—while PDDL has higher learning costs, it yields more precise plans with less redundancy and higher executability.
+- **Low-level Execution is the Core Issue**: The study breaks the common assumption that "improving LLM reasoning will improve web agents." It demonstrates that even with perfect high-level planning, a 36.4% success rate in low-level execution suggests the problem lies in perceptual grounding rather than reasoning.
+- **Fine-grained Classification of Failure Modes**: Categorizing execution failures into hallucinated links, redundant actions, out-of-domain jumps, and repetitive loops provides a roadmap for targeted optimization.
+- **Limitations of Replanning**: Single-round replanning only improves success by 4-5pp, suggesting the need for more complex adaptation mechanisms rather than simple retries.
 
 ## Limitations & Future Work
 
-**Author-acknowledged Limitations**:
-*   Experiments focused on a limited set of high-level representations (NL and PDDL), action spaces (3 types), and agent configurations.
-*   Does not account for multimodal settings (visual information).
-*   High-level plan evaluation requires human-annotated reference plans, which limits flexibility.
+**Limitations acknowledged by the authors**:
+- Experiments were conducted on limited high-level representations (NL and PDDL), action spaces (3 types), and agent configurations.
+- Multi-modal settings (visual information) were not considered.
+- High-level plan evaluation requires human-annotated reference plans, reducing flexibility.
 
-**Self-identified Limitations**:
-*   Evaluation is restricted to 104 tasks from Mind2Web-Live, which is a relatively small sample size.
-*   While LLM-as-a-Judge has 82%-86% accuracy, it may still misjudge edge cases in highly complex web pages.
-*   Replanning was explored for only one round; multi-round iterative convergence remains unstudied.
-*   The potential of hybrid options (e.g., PDDL planning combined with neural network low-level executors) was not explored.
+**Self-identified limitations**:
+- Evaluation is limited to 104 tasks from Mind2Web-Live, which is a small sample size.
+- While LLM-as-Judge has 82%-86% accuracy, it may still misjudge edge cases in complex web pages.
+- Replanning was only explored for 1 round; the convergence characteristics of multi-round iterations were not studied.
+- Hybrid solutions (e.g., PDDL planning + neural network low-level executor) were not explored.
 
-**Specific Improvement Directions**:
-1.  **Perceptual Grounding**: Incorporate visual features or structured page representations (e.g., symbolic DOM trees) to mitigate link hallucinations.
-2.  **Action Space Design**: Allow agents to explicitly express "uncertainty" or "need for clarification" rather than forced guessing.
-3.  **Distributed Execution**: Decouple the planning module (using PDDL) from the execution module (using specialized tools or neural nets) to optimize each independently.
-4.  **Multi-round Replanning Strategies**: Design adaptive feedback mechanisms that teach the agent when to backtrack versus when to proceed.
+**Specific improvement ideas**:
+1. **Perceptual Grounding**: Introduce visual features or structured page representations (e.g., symbolic DOM trees) to mitigate link hallucination.
+2. **Action Space Design**: Allow agents to explicitly express "uncertainty" or "need for clarification" rather than blindly guessing.
+3. **Distributed Execution**: Decouple the planning module (using PDDL) from the execution module (using specialized tools or neural networks) for independent optimization.
+4. **Multi-round Replanning Strategies**: Design adaptive feedback mechanisms so agents learn when to backtrack versus proceed.
 
 ## Related Work & Insights
 
-*   **vs. WebArena/Mind2Web (End-to-End Evaluation)**: These benchmarks only measure success rates without diagnosing the source of failure. This work redefines evaluation through a diagnostic lens rather than pure performance testing.
-*   **vs. Prior PDDL Planning Work (Silver et al.)**: Previous research applied PDDL+LLM to classical planning; this paper introduces it to web agents with quantitative comparisons, finding formal representations maintain advantages in open-world web environments.
-*   **vs. Low-level Execution Improvements (e.g., WALT tool calling)**: While those methods improve execution using APIs, they do not diagnose *why* execution fails. This framework is orthogonally compatible with those directions.
-*   **vs. Adaptive Agents (e.g., Reflexion)**: While these methods use feedback for improvement, this paper quantifies the specific gain of single-round replanning (+4-5pp) and highlights the need for multi-layered feedback.
+- **vs. WebArena/Mind2Web (End-to-End Evaluation)**: These benchmarks only measure task success rates. This paper introduces procedural evaluation, redefining assessment from a diagnostic perspective rather than pure performance testing.
+- **vs. Prior PDDL Planning (Silver et al.)**: Previous research used PDDL+LLM in classical planning; this paper is the first to introduce it to web agents with quantitative comparisons, finding formal representations still advantageous in open-world web environments.
+- **vs. Low-level Execution Improvements (WALT, etc.)**: These methods use tools or site-specific APIs to improve execution but do not diagnose why execution fails. The framework in this paper can be orthogonally combined with these approaches.
+- **vs. Adaptive Agents (Reflexion, etc.)**: While these methods use feedback, this paper quantifies the specific gains of single-round replanning (+4-5pp) and points out the need for multi-layer feedback mechanisms.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ Applying hierarchical planning to web agent diagnostics is a fresh perspective. The quantitative PDDL vs. NL comparison is a significant contribution.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Rigorous design covering multiple LLMs and multi-dimensional metrics, though the task count (104) is somewhat low. Excellent failure mode analysis.
-*   Writing Quality: ⭐⭐⭐⭐⭐ Extremely logical flow from motivation through framework to experiments and recommendations. High readability.
-*   Value: ⭐⭐⭐⭐ Highly practical, providing clear guidance to the community by identifying low-level execution as the primary bottleneck over planning.
+- **Novelty**: ⭐⭐⭐⭐ Applying a hierarchical planning framework systematically to web agent diagnostics is a new perspective, though hierarchical planning itself is not new. The PDDL vs. NL comparison is also a fresh contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ The experimental design is rigorous, covering multiple LLM models and multi-dimensional metrics, though the dataset of 104 tasks is somewhat thin. The failure mode analysis is detailed.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logic, moving from motivation to framework to experiments and suggestions; excellent readability.
+- **Value**: ⭐⭐⭐⭐ Highly practical, providing clear improvement directions (focusing on low-level execution rather than planning) with significant guidance for the web agent community.
 
 <!-- RELATED:START -->
 
@@ -166,11 +165,11 @@ Single-turn replanning improves success rates by 4-5 percentage points, suggesti
 
 ## Related Papers
 
-- [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
-- [\[AAAI 2026\] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents](../../AAAI2026/llm_agent/when_refusals_fail_unstable_safety_mechanisms_in_long-context_llm_agents.md)
-- [\[ICML 2026\] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling](../../ICML2026/llm_agent/agent_jit_compilation_for_latency-optimizing_web_agent_planning_and_scheduling.md)
-- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
+- [\[ACL 2026\] 拓扑重要：多智能体 LLM 中的内存泄露测量](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
+- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
+- [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
 
 </div>
 

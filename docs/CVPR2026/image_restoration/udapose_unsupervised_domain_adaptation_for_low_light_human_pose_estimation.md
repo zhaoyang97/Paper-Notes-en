@@ -2,136 +2,149 @@
 title: >-
   [Paper Note] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 description: >-
-  [CVPR 2026][Image Restoration][Low-light pose estimation] UDAPose achieves a 56.4% AP improvement on the low-light hard set by combining stable diffusion-based low-light image synthesis (with preserved high-frequency low…
+  [CVPR 2026][Image Restoration][Paper Note] UDAPose achieves a 56.4% AP improvement on low-light hard sets through Stable Diffusion-based low-light image synthesis (preserving high-frequency low-light features) and a Dynamic Attention Control module (adaptively balancing visual cues with pose priors).
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Low-light pose estimation"
-  - "domain adaptation"
-  - "stable diffusion"
-  - "attention control"
-  - "high-frequency injection"
+  - CVPR 2026
+  - Image Restoration
 date: 2026-05-08
-content_hash: 712abb8a1113f792
+content_hash: 9325644a827e102b
 ---
-
 # UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.10485](https://arxiv.org/abs/2604.10485)  
 **Code**: VMIL/UDAPose  
-**Area**: Image Restoration
-**Keywords**: Low-light pose estimation, domain adaptation, stable diffusion, attention control, high-frequency injection
+**Area**: Image Restoration  
+**Keywords**: Low-light human pose estimation, Domain adaptation, Stable Diffusion, Attention control, High-frequency injection
 
 ## TL;DR
 
-UDAPose achieves a 56.4% AP improvement on the low-light hard set by combining stable diffusion-based low-light image synthesis (with preserved high-frequency low-light characteristics) and a dynamic attention control module (adaptively balancing visual cues and pose priors).
+UDAPose achieves a 56.4% AP improvement on low-light hard sets through Stable Diffusion-based low-light image synthesis (preserving high-frequency low-light features) and a Dynamic Attention Control module (adaptively balancing visual cues with pose priors).
 
 ## Background & Motivation
 
-**Background**: Human pose estimation performs well under normal lighting but degrades significantly in low-light conditions. Annotating low-light datasets is extremely costly, making domain adaptation an appealing alternative.
+**Background**: Human pose estimation performs excellently under good lighting but suffers significant performance degradation in low-light conditions. Annotating low-light datasets is extremely difficult, making domain adaptation a viable alternative.
 
-**Limitations of Prior Work**: (1) Manual augmentations (e.g., Gaussian noise) oversimplify real low-light noise, which comprises complex components such as photon noise, thermal noise, and quantization noise; (2) Learning-based image translation methods (CycleGAN/StyleID) fail to preserve high-frequency low-light characteristics; (3) Modern one-stage pose estimators query image features via cross-attention but continue to over-rely on image features even when visual cues are unreliable under low-light conditions.
+**Limitations of Prior Work**: (1) Manual enhancement (e.g., Gaussian noise) oversimplifies real low-light noise (comprising complex photon, thermal, and quantization noise); (2) Learning-based image translation (CycleGAN/StyleID) fails to preserve high-frequency low-light features; (3) Modern one-stage pose estimators query image features via cross-attention but over-rely on visual cues even when they are unreliable in low light.
 
-**Key Challenge**: The effectiveness of domain adaptation depends on the fidelity of synthesized low-light images, yet existing methods are either overly simplistic or discard critical high-frequency low-light features. Furthermore, pose models themselves lack the ability to fall back on pose priors when visual information degrades.
+**Key Challenge**: The effectiveness of domain adaptation depends on the realism of synthetic low-light images, whereas existing methods either oversimplify noise or lose critical high-frequency features. Simultaneously, pose models lack the ability to switch to pose priors when visual information is degraded.
 
-**Goal**: (1) Synthesize training data that preserves high-frequency low-light characteristics; (2) Enable pose models to adaptively balance visual cues and pose priors.
+**Goal**: (1) Synthesize training data that preserves high-frequency low-light features; (2) Enable pose models to adaptively balance visual cues and pose priors.
 
-**Key Insight**: Use stable diffusion as the generative backbone to extract and inject high-frequency features from unannotated low-light reference images; modify the fusion mechanism of DETR-like pose estimators.
+**Key Insight**: Using Stable Diffusion as a generative backbone to extract and inject high-frequency features from unlabeled low-light reference images, while modifying the fusion mechanism of DETR-like pose estimators.
 
-**Core Idea**: DHF preserves high-frequency low-light features → LCIM injects them at multiple scales → DCA adaptively controls the balance between visual cues and pose priors.
+**Core Idea**: DHF preserves high-frequency low-light features → LCIM multiscale injection → DCA adaptively controls visual/prior weights.
 
 ## Method
 
 ### Overall Architecture
 
-During training, a stable diffusion model converts annotated normal-light images into low-light versions (inheriting their annotations), with DHF and LCIM injecting realistic low-light features. The DCA module replaces the rigid summation in the pose estimator. At inference, the model is applied directly to real low-light images.
+UDAPose addresses the contradiction of "lacking labels in low light while synthetic data is unrealistic." The pipeline is divided into data synthesis and pose estimation. During training, annotated normal-light images are fed into a Stable Diffusion (SD) model to generate corresponding low-light versions, inheriting the original labels. The DHF and LCIM modules ensure these synthetic images carry realistic high-frequency noise rather than simple darkening. On the pose estimator side, the DCA module replaces the rigid summation of "visual cues + pose priors" in DETR-like architectures, allowing the model to decide which to trust when the image is degraded. During inference, SD is no longer required, and the trained pose model is applied directly to real low-light images.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Normal-light Image + Labels"] --> SD["Stable Diffusion (SD)<br/>Generate low-light version (Inherit labels)"]
+    B["Unlabeled Low-light Reference"] --> C["DHF Direct High-pass Filter<br/>Extract high-frequency after mean alignment"]
+    C --> D["LCIM Low-light Feature Injection<br/>VAE 4-scale feature injection to SD decoder"]
+    D --> SD
+    SD --> E["Annotated Synthetic Low-light Image"]
+    E --> F["DETR-like Pose Estimator<br/>Fusion of pose priors and visual cues"]
+    F --> G["DCA Dynamic Attention Control<br/>Sigmoid gating per-query to balance visual/prior"]
+    G --> H["Low-light Human Pose Prediction"]
+```
 
 ### Key Designs
 
-1. **DC High-Pass Filter (DHF)**:
+**1. Direct High-pass Filter (DHF): Preventing cropping from losing dark high-frequency components**
 
-    - Function: Extracts and preserves high-frequency information from low-light images.
-    - Mechanism: The high-pass filtered image $I_{HP}$ has a mean close to zero; directly clipping it to $[0,1]$ discards negative dark-region information. DHF resolves this by realigning the mean: $I_{DHF} = I_{HP} + (mean(I_{LL}) - mean(I_{HP}))$, ensuring $mean(I_{DHF}) = mean(I_{LL})$ and reducing information loss during clipping.
-    - Design Motivation: The SD encoder expects inputs in the $[0,1]$ range; directly clipping negative high-frequency values discards critical dark-region noise patterns.
+Real low-light noise (photon, thermal, and quantization noise) resides heavily in high frequencies. However, applying a standard high-pass filter yields $I_{HP}$ with a mean near zero and many negative values. Since the SD VAE encoder only accepts inputs in the range $[0, 1]$, negative values representing dark details are clipped. DHF shifts the mean back to the original image level before clipping:
 
-2. **Low-light Characteristic Injection Module (LCIM)**:
+$$I_{DHF} = I_{HP} + \big(\mathrm{mean}(I_{LL}) - \mathrm{mean}(I_{HP})\big)$$
 
-    - Function: Injects high-frequency low-light features into the decoding process at multiple scales.
-    - Mechanism: Features $\{z_1,...,z_4\}$ are extracted at different scales of the VAE encoder from the DHF-processed high-frequency image, then processed by lightweight convolutions and injected additively at corresponding decoder scales: $\hat{I}'_{LL} \leftarrow d_{final}(d_4(d_3(d_2(d_1(z_0)+f_1)+f_2)+f_3)+f_4)$. Channel statistics are aligned at the end.
-    - Design Motivation: Multi-scale injection ensures fine-grained low-light noise is rendered at appropriate spatial resolutions. LCIM is trained under a reconstruction objective but captures transferable noise patterns.
+By ensuring $\mathrm{mean}(I_{DHF}) = \mathrm{mean}(I_{LL})$, high-frequency details are lifted into a positive range, significantly reducing information loss during clipping. This mean alignment provides the basis for injecting realistic noise patterns.
 
-3. **Dynamic Attention Control (DCA) Module**:
+**2. Low-light Characteristic Injection Module (LCIM): Multi-scale injection of noise patterns**
 
-    - Function: Adaptively balances image visual cues and pose priors.
-    - Mechanism: In DETR-like pose estimators, $\mathbf{Q}_{pose}$ (pose priors) and $\mathbf{Q}_{image}$ (visual cues) are typically summed directly. Analysis reveals that under low-light conditions the ratio $\|\mathbf{Q}_{image}\|_2/\|\mathbf{Q}_{pose}\|_2$ remains approximately constant (≈1.7) even when keypoints are invisible. DCA implements adaptive weighting via concatenation → lightweight network → sigmoid gating.
-    - Design Motivation: Rigid summation causes visual cues to persistently dominate; unreliable visual features under low-light conditions lead to erroneous predictions.
+Preserving high frequencies is insufficient; these features must land at the correct spatial resolutions—fine-grained noise at fine scales and overall darkening at coarse scales. LCIM extracts features $\{z_1, \dots, z_4\}$ at four scales from the high-frequency map through the VAE encoder. After processing these into $\{f_1, \dots, f_4\}$ via lightweight convolutions, they are injected into the decoder via addition:
+
+$$\hat{I}'_{LL} \leftarrow d_{final}\big(d_4(d_3(d_2(d_1(z_0)+f_1)+f_2)+f_3)+f_4\big)$$
+
+Finally, channel statistics are aligned. Although trained under a reconstruction objective, it learns transferable noise patterns rather than a specific image, enabling generalization to real low-light scenes.
+
+**3. Dynamic Attention Control (DCA): Allowing the model to distrust the image during degradation**
+
+In DETR-like pose estimators, the pose prior $\mathbf{Q}_{pose}$ and visual cue $\mathbf{Q}_{image}$ are typically summed, implying fixed weights. The authors quantified the relative strength using the Frobenius norm ratio $\|\mathbf{Q}_{image}\|_2/\|\mathbf{Q}_{pose}\|_2$ and found it remains stable at approximately 1.7 regardless of lighting quality. This means visual cues always dominate, even when they are unreliable in low light. DCA replaces the rigid sum with adaptive gating: it concatenates $\mathbf{Q}_{pose}$ and $\mathbf{Q}_{image}$, passes them through a lightweight network with a sigmoid output to calculate a $[0, 1]$ gate weight. This allows the model to decide per-query whether to rely on vision or priors.
 
 ### Loss & Training
 
-LCIM is trained with MSE and a frequency-domain loss: $\mathcal{L}_\mathcal{D} = \mathcal{L}_{MSE}(I, \hat{I}) + \lambda\mathcal{L}_{freq}(I, \hat{I})$, where the frequency-domain loss uses sinusoidal weighting to emphasize mid-to-high frequencies. The pose model is trained on synthesized low-light data with normal-light annotations.
+LCIM is trained using a combination of MSE and frequency domain loss:
+
+$$\mathcal{L}_\mathcal{D} = \mathcal{L}_{MSE}(I, \hat{I}) + \lambda\,\mathcal{L}_{freq}(I, \hat{I})$$
+
+The frequency domain loss uses sine weighting to emphasize mid-to-high frequencies, forcing the model to render noise patterns rather than just aligning global brightness. The pose model is then trained using the synthetic low-light data and inherited labels.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | UDAPose | Prev. SOTA | Gain |
+| Dataset | Metric | UDAPose (Ours) | Prev. SOTA | Gain |
 |--------|------|---------|----------|------|
-| ExLPose-test LL-H | AP | +10.1 | Previous best | 56.4% |
-| EHPT-XC (cross-dataset) | AP | +7.4 | Previous best | 31.4% |
+| ExLPose-test LL-H | AP | +10.1 | Best Prev. | 56.4% |
+| EHPT-XC (Cross-dataset) | AP | +7.4 | Best Prev. | 31.4% |
 
 ### Ablation Study
 
-| Configuration | AP | Note |
+| Configuration | AP | Description |
 |------|-----|------|
-| w/o DHF | Drops | High-frequency information lost |
-| w/o LCIM | Drops | Low-light features not injected |
-| w/o DCA | Drops | Visual cues persistently dominate |
-| Gaussian noise substitute | Much lower | Manual augmentation insufficiently realistic |
-| CycleGAN substitute | Lower | Over-darkening and lighting artifacts |
-| Full UDAPose | Best | All three components work synergistically |
+| w/o DHF | Drop | Loss of high-frequency information |
+| w/o LCIM | Drop | Low-light features not injected |
+| w/o DCA | Drop | Visual cues dominate continuously |
+| Gaussian Noise sub. | Much Lower | Manual augmentation is unrealistic |
+| CycleGAN sub. | Lower | Over-darkening + lighting artifacts |
+| Full UDAPose | **Optimal** | Synergy of all three components |
 
 ### Key Findings
 
-- DHF's mean alignment is simple yet critical — omitting it causes substantial loss of dark-region high-frequency information.
-- DCA enables the model to automatically fall back on pose priors when keypoints are invisible, significantly improving prediction of difficult keypoints.
-- Cross-dataset evaluation (EHPT-XC) validates the generalization capability of the synthesized data.
+- DHF’s mean alignment is simple but critical—without it, significant dark high-frequency information is lost.
+- DCA allows the model to automatically switch to pose priors when keypoints are invisible, significantly improving predictions for difficult joints.
+- Cross-dataset evaluation (EHPT-XC) validates the generalization capability of the synthetic data.
 
 ## Highlights & Insights
 
-- **Simplicity of DHF**: A single mean-alignment operation resolves the high-frequency information preservation problem — minimal yet highly effective.
-- **DCA exposes a design flaw in DETR-like architectures**: The fragility of rigid summation under degraded conditions is a general issue.
-- **No low-light annotations required**: Noise patterns are extracted solely from unannotated low-light reference images, lowering the barrier for practical deployment.
+- **Simplicity of DHF**: A single mean alignment operation solves the high-frequency preservation problem, proving minimal yet effective.
+- **DCA exposes architectural flaws**: The vulnerability of rigid summation in DETR-like architectures under degradation is a general issue.
+- **No low-light labels required**: Extracting noise patterns from unlabeled low-light references lowers the deployment barrier.
 
 ## Limitations & Future Work
 
-- Relies on stable diffusion as the generative backbone; SD weights are not needed at inference but are required during training.
+- It relies on Stable Diffusion as a generative backbone; while not needed for inference, SD weights are required during training.
 - LCIM may lack sufficient low-light references in extremely dark scenarios.
-- The gating mechanism of DCA may require adaptation for different pose estimator architectures.
+- The DCA gating mechanism might require adjustment for different pose estimator architectures.
 
 ## Related Work & Insights
 
-- **vs. ELLA**: ELLA simulates low-light conditions with Gaussian white noise, oversimplifying real noise patterns.
-- **vs. CycleGAN/StyleID**: Learning-based translation methods alter global appearance but discard high-frequency low-light details.
+- **vs ELLA**: ELLA uses Gaussian white noise, which oversimplifies real-world noise patterns.
+- **vs CycleGAN/StyleID**: Learning-based translation methods change global appearance but lose high-frequency low-light details.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The DHF+LCIM+DCA three-component design offers targeted and well-motivated innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ The 56.4% AP improvement is highly convincing.
-- Writing Quality: ⭐⭐⭐⭐ Problem analysis (e.g., Frobenius norm ratio analysis) is rigorous and in-depth.
-- Value: ⭐⭐⭐⭐ Directly applicable to real-world low-light scenarios such as security surveillance.
+- Novelty: ⭐⭐⭐⭐ Targeted innovation with DHF+LCIM+DCA.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Convincing 56.4% AP improvement.
+- Writing Quality: ⭐⭐⭐⭐ In-depth problem analysis (e.g., Frobenius norm ratio).
+- Value: ⭐⭐⭐⭐ Directly valuable for real-world scenarios like security surveillance.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
 - [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
-- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
-- [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)
-- [\[CVPR 2026\] IA-CLAHE: Image-Adaptive Clip Limit Estimation for CLAHE](ia_clahe_image_adaptive_clip_limit.md)
-- [\[AAAI 2026\] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement](../../AAAI2026/image_restoration/iclr_inter-chrominance_and_luminance_interaction_for_natural_color_restoration_i.md)
+- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
+- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
 
 </div>
 

@@ -1,71 +1,76 @@
 ---
 title: >-
-  [Paper Note] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning
+  [Paper Note] VisionPulse：多模态推理中的动态视觉稀疏化
 description: >-
-  [ICML 2026][Multimodal VLM][Visual token pruning] VisionPulse proposes a training-free step-level dynamic visual token pruning framework—adaptively adjusting the number of retained tokens according to shifting visual dep…
+  [ICML 2026][Multimodal VLM][Paper Note] VisionPulse proposes a training-free step-level dynamic visual token pruning framework. By adaptively adjusting the number of retained tokens based on evolving visual dependencies at each decoding step, it maintains inference accuracy while keeping only 5% of visual tokens, effectively reducing reasoning length by 11.2
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Visual token pruning"
-  - "inference efficiency"
-  - "dynamic budget allocation"
-  - "multimodal reasoning"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: adc3014a2765c6f0
+content_hash: d1e66ccd7a4ecdfd
 ---
-
 # VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31457](https://arxiv.org/abs/2605.31457)  
 **Code**: TBD  
 **Area**: Multimodal VLM  
-**Keywords**: Visual token pruning, inference efficiency, dynamic budget allocation, multimodal reasoning
+**Keywords**: Visual token pruning, Inference efficiency, Dynamic budget allocation, Multimodal reasoning
 
 ## TL;DR
-VisionPulse proposes a training-free step-level dynamic visual token pruning framework—adaptively adjusting the number of retained tokens according to shifting visual dependencies at each decoding step. It maintains inference accuracy while retaining only 5% of visual tokens and shortening the inference length by 11.2%.
+VisionPulse proposes a training-free step-level dynamic visual token pruning framework. By adaptively adjusting the number of retained tokens based on evolving visual dependencies at each decoding step, it maintains inference accuracy while keeping only 5% of visual tokens, effectively reducing reasoning length by 11.2%.
 
 ## Background & Motivation
 
-**Background**: Large multimodal models excel in multi-step reasoning tasks, yet inference latency has become a critical bottleneck. Existing visual token compression methods primarily perform a single-pass pruning during the prefilling stage.
+**Background**: Large Multimodal Models (LMMs) perform exceptionally in multi-step reasoning tasks, yet inference latency remains a critical bottleneck. Existing visual token compression methods primarily perform a single pruning operation during the pre-filling stage.
 
-**Limitations of Prior Work**: This "static pruning" assumes that the relevance of selected visual tokens remains constant throughout the entire reasoning process. During the prefilling stage, the model's attention to visual information is typically low; a fixed subset chosen at this stage may discard tokens that become crucial in subsequent reasoning steps, while retaining redundant visual context during text-dominant steps.
+**Limitations of Prior Work**: This "static pruning" assumes that the relevance of selected visual tokens remains unchanged throughout the reasoning process. During the pre-filling stage, the model's attention to visual input is often low; a fixed subset selected at this stage might discard tokens that become crucial in subsequent reasoning steps while retaining redundant visual context during text-dominant steps.
 
-**Key Challenge**: The demand for visual evidence is highly dependent on the current reasoning state rather than remaining constant. Certain steps require extensive visual evidence, while others are primarily driven by linguistic reasoning.
+**Key Challenge**: The demand for visual evidence is highly dependent on the current reasoning state rather than remaining constant. Some steps require extensive visual evidence, while others are primarily driven by linguistic reasoning.
 
-**Goal**: To design a step-level dynamic visual token pruning framework capable of adjusting the set of retained tokens at each decoding step based on current visual dependencies.
+**Goal**: Design a step-level dynamic visual token pruning framework capable of adjusting the set of retained tokens at each decoding step based on current visual dependencies.
 
-**Key Insight**: Empirical analysis reveals a strong positive correlation between the visual attention quality of the model at each decoding step and the number of effectively activated visual tokens. This lightweight signal can be utilized to predict the optimal budget for each step.
+**Key Insight**: Empirical analysis reveals a strong positive correlation between the quality of visual attention at each decoding step and the number of effectively activated visual tokens. This lightweight signal can be used to predict the optimal budget for each step.
 
-**Core Idea**: Transition visual token pruning from a "one-time prefilling decision" to "step-wise dynamic selection," utilizing visual attention quality to calculate the token retention budget for each step.
+**Core Idea**: Shift visual token pruning from a "pre-filling one-time decision" to "step-wise dynamic selection," utilizing visual attention quality to calculate the token retention budget for each step.
 
 ## Method
 
 ### Overall Architecture
-A training-free framework that performs adaptive visual token selection for each generation step during the decoding phase. At each decoding step $t$, it calculates the visual attention quality $M_{\mathrm{vis}}^{t}$, converts it into a token retention budget $K_t$, and selects the top-$K_t$ most critical tokens based on the attention scores between the current query token and visual tokens.
+VisionPulse is a training-free framework that transforms visual token selection from a "one-time decision during pre-filling" to a "gradual re-selection during decoding." Visual tokens $X_v$ are encoded normally during pre-filling. Subsequently, for every generated token, a re-selection occurs: at the $t$-th decoding step, the attention of the current query token $q_t$ toward various visual tokens is captured at a specific **anchor layer** $l_a$. This information is used on one path to calculate the **importance score** $S_i^t$ for each visual token (step-level dynamic pruning) and on another path to convert the overall **visual attention quality** $M_{\mathrm{vis}}^{t}$ into a **dynamic budget** $K_t$, representing how many tokens should be retained (visual quality guidance). Finally, the top-$K_t$ most critical tokens are selected to form the pruned visual context for decoding the current token before proceeding to the next iteration. The entire process reuses existing model attention statistics without any additional training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Visual tokens X_v (Pre-fill encoding) <br/>+ Query token q_t at step t"]
+    A --> B["Anchor layer l_a: Extract multi-head attention of q_t over visual tokens"]
+    B --> C["Step-level Dynamic Visual Token Pruning<br/>Step-wise recalculation of importance scores S_i^t"]
+    B --> D["Visual Quality Guided Dynamic Budget<br/>Visual attention quality M_vis^t → Budget K_t"]
+    C --> E["Select top-K_t key tokens based on budget K_t<br/>Form pruned visual context"]
+    D --> E
+    E --> F["Decode and generate t-th token"]
+    F -->|Next decoding step t+1| A
+```
 
 ### Key Designs
 
-1. **Step-level Dynamic Visual Token Pruning**:
-    - **Function**: Performs visual token selection at every decoding step rather than exclusively during the prefilling stage.
-    - **Mechanism**: For the visual token set $X_v = \{v_1, ..., v_N\}$, importance $S_i^t = \frac{1}{H}\sum_{h=1}^{H}A_{t,h}^{(l_a)}(q_t, v_i)$ is calculated at step $t$. The top $K_t$ tokens with the highest scores are selected from $N$ tokens: $X_v^t = \{v_i \mid i \in \text{Top-}K_t(\{S_i^t\}_{i=1}^N)\}$. The critical distinction is that $K_t$ is not a fixed value.
-    - **Design Motivation**: Different reasoning steps have vastly different requirements for visual information; static pruning ignores this variance, whereas step-level pruning precisely tracks the fine-grained "when and how much" visual demand.
+**1. Step-level dynamic visual token pruning: Re-selecting at each decoding step instead of once during pre-filling**
 
-2. **Visual Attention Quality Guided Dynamic Budget Allocation**:
-    - **Function**: Automatically calculates the token retention budget based on the degree of visual dependency at each step.
-    - **Mechanism**: Visual attention quality is defined as $M_{\mathrm{vis}}^{t} = \frac{1}{H}\sum_{h=1}^{H}m_{t,h}^{\mathrm{vis}}$, where $m_{t,h}^{\mathrm{vis}} = \sum_{i=1}^{N_v}A_{t,h}^{(l_a)}(q_t, v_i)$. Empirically, $M_{\mathrm{vis}}^{t}$ shows a strong positive correlation (0.82-0.95) with the number of activated tokens. $M_{\mathrm{vis}}^{t}$ is directly transformed into the budget $K_t = M_{\mathrm{vis,max}}^t \cdot N_v$. A temperature scaling factor $\tau < 1$ controls pruning aggressiveness.
-    - **Design Motivation**: Utilizing the lightweight signal of attention quality avoids complex token importance predictors; the dynamic budget adaptively retains more tokens in high-demand steps and applies aggressive pruning in low-demand steps.
+The risk of static pruning is the assumption that visual tokens selected during pre-filling remain relevant throughout reasoning. However, initial visual attention is often low, and fixed subsets may miss tokens that only become critical later. VisionPulse moves selection to every decoding step: for the visual token set $X_v = \{v_1, ..., v_N\}$, at an **anchor layer** $l_a$ (where pruning begins), the importance is calculated at step $t$ as $S_i^t = \frac{1}{H}\sum_{h=1}^{H}A_{t,h}^{(l_a)}(q_t, v_i)$ (multi-head average attention of the current query token over visual tokens). The top $K_t$ tokens are then selected: $X_v^t = \{v_i \mid i \in \text{Top-}K_t(\{S_i^t\}_{i=1}^N)\}$. Unlike static schemes, $K_t$ is not fixed—it precisely tracks "how many tokens are needed for this step," mapping fine-grained needs to each step.
 
-3. **Inference Computation Cost Analysis and Coupling Bottleneck Identification**:
-    - **Function**: Quantifies the dual costs of visual redundancy in multimodal reasoning.
-    - **Mechanism**: Total FLOPs are estimated as $\mathcal{F}_{\text{total}} \approx L \cdot [(p+v)(8d^2+4md)+4d(p+v)^2]_{\text{prefill}} + L \cdot \sum_{t=1}^{g}[(8d^2+4md)+4d(p+v+t)]_{\text{decoding}}$. The decoding phase cost exhibits quadratic complexity relative to both generation length $g$ and initial context $(p+v)$; visual tokens dominate in multimodal scenarios where $v \gg p$.
-    - **Design Motivation**: Retaining the full visual context not only increases computation but also induces the model to be influenced by query-irrelevant visual cues at each step, leading to unnecessary reasoning steps or even erroneous reasoning paths.
+**2. Dynamic budget guided by visual attention quality: Using a lightweight signal to determine retention**
+
+To determine $K_t$, this work identifies an empirical signal: the visual attention quality $M_{\mathrm{vis}}^{t} = \frac{1}{H}\sum_{h=1}^{H}m_{t,h}^{\mathrm{vis}}$ (where $m_{t,h}^{\mathrm{vis}} = \sum_{i=1}^{N_v}A_{t,h}^{(l_a)}(q_t, v_i)$ is the sum of attention for that head over all visual tokens) has a strong positive correlation (0.82-0.95) with the number of actually activated visual tokens. It is converted into a budget $K_t = M_{\mathrm{vis,max}}^t \cdot N_v$, with temperature $\tau < 1$ controlling pruning aggressiveness. Steps with high visual demand automatically retain more tokens, while text-dominant steps are pruned aggressively, driven by existing attention statistics without requiring a complex importance predictor.
+
+**3. Coupled bottleneck: Why on-demand pruning saves computation and shortens reasoning**
+
+This is the core insight distinguishing this work from pure efficiency research: redundant visual context carries a **dual cost**. The first is computational: the total cost $\mathcal{F}_{\text{total}} \approx L \cdot [(p+v)(8d^2+4md)+4d(p+v)^2]_{\text{prefill}} + L \cdot \sum_{t=1}^{g}[(8d^2+4md)+4d(p+v+t)]_{\text{decoding}}$ has quadratic complexity regarding generation length $g$ and initial context $(p+v)$. In multimodal scenarios where $v \gg p$, visual tokens are the dominant term. The second, more critical cost is that full visual context introduces irrelevant visual cues at every step, distracting the model and inducing unnecessary reasoning steps or even incorrect paths. VisionPulse's on-demand pruning achieves a "dual win": removing irrelevant tokens saves computation and naturally shortens the reasoning chain. This explains the counter-intuitive phenomenon where incorrect pruning strategies simultaneously degrade accuracy and prolong reasoning due to increased interference.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Retention Ratio | CharXiv Length ↓ | Accuracy ↑ | InfoVQA Length ↓ | Accuracy ↑ | ChartQA Length ↓ | Accuracy ↑ | Avg Length Change | Avg Accuracy |
+| Method | Visual Token Ratio | CharXiv Gen Length ↓ | Accuracy ↑ | InfoVQA Gen Length ↓ | Accuracy ↑ | ChartQA Gen Length ↓ | Accuracy ↑ | Avg Length Change | Avg Acc |
 |------|-------------------|------------------------|--------|------------------|--------|------------------|--------|---------------------|---------|
 | Baseline (Full) | 100% | 4068.0 | 47.60% | 623.1 | 84.37% | 510.0 | 77.12% | - | - |
 | VisionZip | ≤10% | 4986.2 | 13.90% | 2533.3 | 22.66% | 2039.7 | 30.24% | +54.2% | -39.7% |
@@ -76,7 +81,7 @@ A training-free framework that performs adaptive visual token selection for each
 
 ### Ablation Study
 
-| Config | Avg Retention | RealWorld QA Acc | MMVet Acc | MIA-Bench Acc | Avg Gen Length Reduction | Avg Acc Change |
+| Config | Avg Visual Ratio | RealWorld QA Acc | MMVet Acc | MIA-Bench Acc | Avg Length Reduction | Avg Acc Change |
 |-----------|------------------|--------|--------|--------|---------------------|------------|
 | Full Model | 100% | 72.81% | 60.96% | 93.44% | - | - |
 | FastV Static | 5.0% | 54.12% | 24.27% | 75.03% | +22.2% | -32.5% |
@@ -86,35 +91,35 @@ A training-free framework that performs adaptive visual token selection for each
 | **VisionPulse Dynamic** | **1.9%** | **72.54%** | **59.00%** | **95.09%** | **-16.6%** | **-0.3%** |
 
 ### Key Findings
-- Under the extreme pruning setting of ≤5% visual token retention, VisionPulse almost entirely preserves original performance (accuracy drop of only 0.3-1.8%), whereas existing static pruning methods experience accuracy drops of 24.5%-50.9%.
-- By removing truly irrelevant visual information based on the actual demand of each step, VisionPulse reduces the average reasoning length by 11.2%-12.3%.
-- Incorrect pruning strategies lead to a paradoxical phenomenon: they simultaneously reduce accuracy and increase inference costs (e.g., LOOK-M with 5% retention results in a 108% increase in generation length while accuracy still drops by 38.6%).
+- Under extreme pruning (≤5% token retention), VisionPulse almost fully preserves original performance (accuracy drop of only 0.3-1.8%), whereas existing static methods drop by 24.5-50.9%.
+- By removing irrelevant visual information based on actual step-wise demand, VisionPulse shortens average reasoning length by 11.2-12.3%.
+- Incorrect pruning strategies exhibit a paradoxical phenomenon: reducing accuracy while increasing inference costs (LOOK-M at 5% retention saw length increase by 108% while accuracy dropped by 38.6%).
 - The dynamic budget maintains accuracy with only a 0.3% drop at an average retention rate of 1.9%.
 
 ## Highlights & Insights
-- **Empirical Support for Key Insights**: Figure 1 visualizes the dynamic changes in visual attention quality, deriving method design from empirical phenomena.
-- **Computationally Elegant Budget Allocation**: Uses visual attention quality as a lightweight signal to predict the retention count per step, avoiding complex learners.
-- **Discovery and Resolution of Coupling Bottlenecks**: Reveals that redundant visual information not only adds computation but also induces erroneous reasoning.
-- **Generality and Transferability**: Built upon FastV's importance calculation but can theoretically adapt to any other token scoring scheme.
+- **Empirical Support for Key Insights**: Figure 1 visualizes the dynamic changes in visual attention quality, deriving method design from observed phenomena.
+- **Computationally Elegant Budgeting**: Uses visual attention quality as a lightweight signal to predict token retention per step, avoiding complex learners.
+- **Discovery and Solution of Coupled Bottlenecks**: Reveals that redundant visual information not only adds computation but also induces erroneous reasoning.
+- **Generality and Transferability**: Built upon FastV's importance calculation but theoretically adaptable to any other token scoring scheme.
 
 ## Limitations & Future Work
-- Effective only at inference time and cannot be further optimized through joint learning.
-- Temperature parameters required manual tuning.
+- Only effective at inference time; cannot be further optimized via joint learning.
+- Temperature parameters require manual tuning.
 - Simplification of computational cost analysis (assuming uniform complexity distribution across layers).
 - Primarily tested on CoT reasoning tasks; effectiveness on other multimodal tasks requires validation.
-- Potential improvements: multi-level pruning, adaptive temperature schedulers, and integration into the multimodal instruction-tuning phase.
+- Improvements: Multi-level pruning; adaptive temperature schedulers; integration into multimodal instruction fine-tuning stages.
 
 ## Related Work & Insights
-- **vs VisionZip**: Single-pass pruning; this work uses step-wise pruning in intermediate layers to capture changing demands.
-- **vs FastV**: Upgrades the one-time decision to multi-step adaptation; accuracy retention improved from 60%-70% to 98%+.
-- **vs LOOK-M**: Surpasses LOOK-M at a finer granularity (every generation step) and a more dynamic dimension.
-- **Insight**: The perspective of "step-level multimodal demand" can be extended to dynamic text token selection or joint multimodal budget allocation.
+- **vs VisionZip**: Single-shot pruning; Ours uses step-wise pruning in intermediate layers to capture changing demands.
+- **vs FastV**: Upgrades one-time decisions to step-wise adaptation; improves accuracy retention from 60-70% to 98%+.
+- **vs LOOK-M**: Ours goes beyond at a finer granularity (every generation step) and a more dynamic dimension.
+- **Insight**: The perspective of "step-level multimodal demand" can be extended to dynamic selection of text tokens or joint multimodal budget allocation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Fundamental concept shift from "fixed pruning" to "step-level dynamic pruning."
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks + 7 baseline methods + comprehensive ablations + cross-LMM backbone validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain, with key findings presented in high-contrast tables.
-- Value: ⭐⭐⭐⭐⭐ Directly reduces inference cost and enhances reasoning reliability; training-free and easy to deploy.
+- Novelty: ⭐⭐⭐⭐⭐ Fundamental shift from "fixed pruning" to "step-wise dynamic pruning."
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks + 7 comparison methods + comprehensive ablation + cross-LMM backbone validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain; key findings presented with contrasting tables.
+- Value: ⭐⭐⭐⭐⭐ Directly reduces inference cost and improves reasoning reliability; training-free and easy to deploy.
 
 <!-- RELATED:START -->
 
@@ -122,11 +127,11 @@ A training-free framework that performs adaptive visual token selection for each
 
 ## Related Papers
 
-- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
-- [\[CVPR 2026\] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning](../../CVPR2026/multimodal_vlm/codedance_a_dynamic_tool-integrated_mllm_for_executable_visual_reasoning.md)
 - [\[ICML 2026\] CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning](look_on_demand_a_cognitive_scheduling_framework_for_visual_evidence_acquisition_.md)
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](../../CVPR2026/multimodal_vlm/unbiased_dynamic_multimodal_fusion.md)
 - [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
+- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](../../CVPR2026/multimodal_vlm/reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
+- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
+- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
 
 </div>
 

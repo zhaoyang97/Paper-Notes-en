@@ -2,122 +2,131 @@
 title: >-
   [Paper Note] Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 description: >-
-  [CVPR 2026][Multimodal VLM][Data-efficient learning] This paper proposes the PROGRESS framework, which dynamically selects the most informative training samples by tracking a VLM's learning progress across automatically…
+  [CVPR 2026][Multimodal VLM][Paper Note] The PROGRESS framework is proposed to dynamically select the most informative training samples by tracking the VLM's learning progress on automatically discovered multimodal concept clusters. Using only 16-20% of labeled data, it achieves 99-100% of full-data performance with a shorter total training time.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Data-efficient learning"
-  - "instruction tuning"
-  - "curriculum learning"
-  - "VLM training"
-  - "sample selection"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 2ce5b2680b800caa
+content_hash: 7081587a879b2d56
 ---
-
 # Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2506.01085](https://arxiv.org/abs/2506.01085)  
 **Code**: [https://mylittlechange.github.io/PROGRESS_web/](https://mylittlechange.github.io/PROGRESS_web/)  
-**Area**: Multimodal VLM
-**Keywords**: Data-efficient learning, instruction tuning, curriculum learning, VLM training, sample selection
+**Area**: Multimodal VLM  
+**Keywords**: Data-efficient learning, Instruction tuning, Curriculum learning, VLM training, Sample selection
 
 ## TL;DR
-This paper proposes the PROGRESS framework, which dynamically selects the most informative training samples by tracking a VLM's learning progress across automatically discovered multimodal concept clusters. Using only 16–20% of annotated data, PROGRESS achieves 99–100% of full-data performance with shorter total training time.
+The PROGRESS framework is proposed to dynamically select the most informative training samples by tracking the VLM's learning progress on automatically discovered multimodal concept clusters. Using only 16-20% of labeled data, it achieves 99-100% of full-data performance with a shorter total training time.
 
 ## Background & Motivation
-**Background**: Instruction tuning of VLMs relies on large-scale, high-quality annotated data and substantial compute, leading to increasingly high costs.
+**Background**: Instruction tuning for VLMs relies on large-scale high-quality labeled data and significant computational power, making the process increasingly expensive.
 
-**Limitations of Prior Work**: (a) Static selection methods (CLIP-Score, EL2N, Perplexity, etc.) select data once and cannot adapt to the model's learning progress; (b) gradient-based methods (ICONS) incur prohibitive computational cost (hundreds of GPU hours), defeating the purpose of efficient training; (c) COINCIDE requires a separately trained auxiliary VLM, full-dataset annotation, and manual inspection of activations.
+**Limitations of Prior Work**: (a) Static selection methods (CLIP-Score, EL2N, Perplexity, etc.) cannot adapt to the model's learning progress after the initial selection; (b) Gradient-based methods (ICONS) involve enormous computational overhead (hundreds of GPU hours), contradicting the goal of efficient training; (c) COINCIDE requires additional pre-trained auxiliary VLMs, labels for the entire dataset, and manual inspection of activations.
 
-**Key Challenge**: A large fraction of training samples are redundant or uninformative, yet static methods cannot identify this dynamically during training.
+**Key Challenge**: A large number of training samples are redundant or uninformative, but static methods cannot identify this during the training process.
 
-**Goal**: Can a VLM dynamically determine "what to learn next" based on its own learning state, acquiring annotations only when necessary?
+**Goal**: Can a VLM dynamically determine "what to learn next" based on its own learning state and acquire labels only when necessary?
 
-**Key Insight**: Inspired by curriculum learning and self-paced learning — a model should focus on skills that are "not yet mastered but rapidly improving," avoiding wasted budget on already-learned or excessively difficult samples.
+**Key Insight**: Inspired by curriculum learning and self-paced learning—the model should learn skills that are "not yet mastered but are progressing rapidly," avoiding budget waste on mastered or overly difficult samples.
 
-**Core Idea**: Track the relative rate of change in learning progress $\Delta_k$ and prioritize sampling from concept clusters exhibiting the fastest improvement.
+**Core Idea**: Track the relative rate of change in learning progress $\Delta_k$ and prioritize sampling from concept clusters that show the fastest improvement.
 
 ## Method
 
 ### Overall Architecture
-**Two stages**: (1) Multimodal concept categorization — DINO and BERT features are used to perform spherical k-means clustering on an unannotated data pool, yielding $K$ concept clusters; (2) Prioritized concept learning — periodic self-evaluation computes per-cluster learning progress, samples are drawn preferentially from the fastest-improving clusters, and annotations are acquired only for selected samples.
+PROGRESS aims to solve the problem of "allowing the VLM to decide which samples to learn next without pre-labeling the entire data pool." The pipeline consists of two stages: first, partitioning the unlabeled data pool into semantic concept clusters, and then allowing the model to periodically evaluate itself during training to identify "rapidly progressing" clusters. Sampling distributions are updated based on these signals, and labels are queried only for sampled data. Unlike static methods, PROGRESS updates its sampling distribution according to the model's state, delegating the "easy-to-hard" curriculum to the model's own progress signals. This "evaluation → progress calculation → sampling → labeling → training" loop repeats every $\gamma$ steps until the budget is exhausted.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    U["Unlabeled Data Pool (I,Q), No Answer Labels"] --> C1["Multimodal Concept Categorization<br/>DINO Visual Features + BERT Text Features<br/>→ Spherical k-means → K Concept Clusters"]
+    C1 --> W["Warm-up Sampling<br/>Initial Skill Estimation for Clusters"]
+    W --> EV
+    subgraph S2["Prioritized Concept Learning"]
+        direction TB
+        EV["Evaluate Accuracy for each Cluster every γ steps<br/>→ Relative Progress Rate Δk"] --> SM["Temperature Softmax → Sampling Probability p_k<br/>+ δ% Random Exploration"]
+    end
+    SM --> Q["On-demand Annotation<br/>Query Answer A only for sampled (I,Q)"]
+    Q --> T["Train VLM"]
+    T -->|Next self-evaluation round| EV
+```
 
 ### Key Designs
 
-1. **Multimodal Concept Categorization**:
+**1. Multimodal Concept Categorization: Partitioning data into semantic clusters without labels**
 
-    - Function: Automatically partitions the unannotated data pool into semantically coherent concept clusters.
-    - Mechanism: For each $(I, Q)$ pair, DINO visual features and BERT text features are extracted, concatenated, normalized, and clustered via spherical k-means. No annotations, auxiliary models, or manual inspection are required.
-    - Design Motivation: Multimodal features yield purer clusters than unimodal features and naturally correspond to capabilities such as object localization, OCR, coding, and multilingual understanding.
+To perform "prioritized learning by concept," one must first identify the concepts within the data pool while it is still unlabeled. PROGRESS extracts DINO visual features and BERT text features for each image-query pair $(I,Q)$, concatenates and normalizes them, and applies spherical k-means to obtain $K$ concept clusters. This process requires no labels, no auxiliary models, and no manual intervention. Using bimodal features ensures purer clusters that correspond to interpretable capabilities like "object localization," "OCR," "coding," or "multilingualism," making progress tracking meaningful.
 
-2. **Prioritized Concept Learning**:
+**2. Prioritized Concept Learning: Sampling weights based on "relative progress" rather than absolute difficulty**
 
-    - Function: Dynamically selects the next training batch based on the model's own learning progress.
-    - Mechanism: Every $\gamma$ steps, per-cluster accuracy $\text{Acc}_k^{(t)}$ is evaluated; relative progress is computed as $\Delta_k = \frac{\text{Acc}_k^{(t)} - \text{Acc}_k^{(t-\gamma)}}{\text{Acc}_k^{(t-\gamma)} + \epsilon}$; a temperature-controlled softmax converts $\Delta_k$ into sampling probabilities $p_k = \frac{\exp(\Delta_k/\tau)}{\sum_j \exp(\Delta_j/\tau)}$.
-    - Design Motivation: Samples from high-$\Delta_k$ clusters represent the most effective learning targets — skills not yet mastered but actively improving. The temperature $\tau$ balances informativeness and diversity.
+Static methods fail to perceive the model's current learning stage. PROGRESS evaluates the current accuracy $\text{Acc}_k^{(t)}$ for each cluster every $\gamma$ steps. Instead of absolute accuracy, it calculates the improvement relative to the previous evaluation:
 
-3. **Need-based Annotation**:
+$$\Delta_k = \frac{\text{Acc}_k^{(t)} - \text{Acc}_k^{(t-\gamma)}}{\text{Acc}_k^{(t-\gamma)} + \epsilon}$$
 
-    - Function: Acquires annotations only for selected samples.
-    - Mechanism: The data pool is initially unannotated; an answer $A$ is queried only when an $(I, Q)$ pair is sampled.
-    - Design Motivation: This stands in stark contrast to methods such as COINCIDE that require full-dataset annotation, substantially reducing annotation cost.
+A higher $\Delta_k$ indicates a cluster that is "not yet mastered but is improving rapidly," representing the highest marginal gain. Mastered clusters (zero improvement) and currently unattainable clusters are automatically down-weighted. Sampling probabilities are derived via temperature-scaled softmax:
 
-### Loss & Training
-- A warm-up phase uses a simple sampler to select a small number of samples, providing reliable initial skill estimates.
-- An exploration mechanism randomly samples $\delta\%$ of data to prevent complete neglect of low-progress clusters.
-- Both loss and accuracy can serve as the progress signal.
+$$p_k = \frac{\exp(\Delta_k/\tau)}{\sum_j \exp(\Delta_j/\tau)}$$
+
+The temperature $\tau$ balances informativeness and diversity: a low $\tau$ concentrates sampling on the fastest-improving clusters, while a high $\tau$ approaches uniform sampling. This mechanism delegates "what to learn" and "when to learn" to the model's internal feedback.
+
+**3. On-demand Annotation: Spending budget only on sampled instances**
+
+The data pool starts completely unlabeled. An answer $A$ is queried only when a pair $(I,Q)$ is selected by the sampler. This distinguishes PROGRESS from methods like COINCIDE, which require annotating the entire dataset beforehand. PROGRESS reduces annotation costs to cover only the 16-20% of samples actually used for training, providing significant cost savings.
+
+### Training Strategy
+The process begins with a warm-up phase using a simple sampler to establish reliable initial skill estimates for each cluster, preventing noise in the first $\Delta_k$ calculation. During formal sampling, a $\delta\%$ random exploration mechanism is maintained to prevent low-progress clusters from being completely ignored. The progress signal can be based on either accuracy or loss; both show similar performance in main experiments.
 
 ## Key Experimental Results
 
-### Main Results (LLaVA-v1.5-7B, LLaVA-665K, 20% sampling)
+### Main Results (LLaVA-v1.5-7B, LLaVA-665K, 20% Sampling)
 
-| Method | Auxiliary VLM? | VQAv2 | GQA | TextVQA | POPE | MMBench | Relative Score |
-|--------|---------------|-------|-----|---------|------|---------|---------------|
-| Full-data fine-tuning | — | 79.1 | 63.0 | 58.2 | 86.4 | 66.1 | 100% |
+| Method | Requires Aux VLM? | VQAv2 | GQA | TextVQA | POPE | MMBench | Relative Score |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Full-data Tuning | - | 79.1 | 63.0 | 58.2 | 86.4 | 66.1 | 100% |
 | Random | ✗ | 75.7 | 58.9 | 55.3 | 84.7 | 62.2 | 95.0% |
 | COINCIDE | ✓ | 76.5 | 59.8 | 55.6 | 86.1 | 63.1 | 97.8% |
 | **PROGRESS (Acc)** | **✗** | **75.2** | **58.8** | **55.1** | **85.9** | **61.1** | **98.4%** |
 | **PROGRESS (Loss)** | **✗** | **75.7** | **58.6** | **55.1** | **86.3** | **62.5** | **98.4%** |
 
-### Generalization Across Architectures and Scales
+### Cross-architecture/Scale Generalization
 
-| Model | Data Ratio | Relative Performance vs. Full Data |
-|-------|-----------|-----------------------------------|
-| LLaVA-v1.5-7B | 20% | 98–99% |
+| Model | Data Ratio | Relative Performance |
+| :--- | :---: | :---: |
+| LLaVA-v1.5-7B | 20% | 98-99% |
 | LLaVA-v1.5-13B | 20% | Similar |
-| Qwen2-VL | 16% | 99–100% |
+| Qwen2-VL | 16% | 99-100% |
 
 ### Key Findings
-- PROGRESS with 20% of data outperforms COINCIDE (98.4% vs. 97.8%), which requires an auxiliary VLM and full-dataset annotation.
-- Total training time, including self-evaluation overhead, remains shorter than full-data training.
-- Learning progress curves reveal an emergent curriculum effect: the model first masters simple concepts (single-object recognition) before progressing to complex ones (OCR, reasoning).
-- The choice of temperature $\tau$ is critical: too low causes mode collapse (the model trains on only one cluster); too high degenerates to random sampling.
+- PROGRESS outperforms COINCIDE (which requires auxiliary VLMs and full labels) using only 20% data (98.4% vs 97.8%).
+- Total training time (including self-evaluation overhead) remains shorter than full-data training.
+- Learning curves show an emergent curriculum effect: the model learns simple concepts (single object recognition) before complex ones (OCR, reasoning).
+- Choice of temperature $\tau$ is critical: too low leads to mode collapse, while too high becomes equivalent to random sampling.
 
 ## Highlights & Insights
-- **No auxiliary model, no full-dataset annotation, no gradient computation** — these three freedoms make PROGRESS particularly accessible to resource-constrained academic labs.
-- Progress-driven sampling combines the strengths of curriculum learning and active learning, automatically determining *what* to learn and *when* to learn it.
-- The temperature-softmax sampling design elegantly balances informativeness and diversity.
-- The visualized concept learning order provides a new perspective for understanding VLM training dynamics.
+- **No auxiliary models, no full annotation, no gradient computation required**: These features make PROGRESS exceptionally friendly for academic labs.
+- Learning-progress-driven sampling combines the advantages of curriculum learning and active learning by automatically deciding "what" and "when" to learn.
+- The temperature-softmax sampling strategy is a simple and elegant way to balance informativeness and diversity.
+- Visualization of concept learning sequences provides new perspectives on VLM training dynamics.
 
 ## Limitations & Future Work
-- The number of clusters $K$ must be specified in advance and may require tuning across datasets.
-- The self-evaluation frequency $\gamma$ introduces an additional hyperparameter.
-- The progress signal is based on training-set performance, which may not perfectly align with validation-set performance.
-- The method has only been validated during the instruction tuning stage; its effectiveness during pre-training remains unexplored.
+- The number of clusters $K$ must be predefined; different datasets may require different values.
+- The self-evaluation frequency $\gamma$ is an additional hyperparameter.
+- Progress signals are based on training set performance, which may not perfectly align with validation performance.
+- Effectiveness has only been verified for instruction tuning; its impact on pre-training is unknown.
 
 ## Related Work & Insights
-- **vs. COINCIDE**: COINCIDE requires a pre-trained auxiliary VLM, full-dataset annotation, and manual inspection of activations; PROGRESS is entirely self-contained.
-- **vs. ICONS**: ICONS uses gradient information for sample selection, requiring hundreds of GPU hours; PROGRESS uses the rate of change in model accuracy at near-zero additional cost.
-- **vs. Curriculum Learning**: Classical curriculum learning relies on externally defined difficulty rankings; PROGRESS is driven by the model's own learning feedback.
-- The progress-driven sampling strategy is generalizable to data mixture control in LLM pre-training.
+- **vs COINCIDE**: COINCIDE requires a pre-trained auxiliary VLM, full labels, and manual activation checks; PROGRESS is entirely self-sufficient.
+- **vs ICONS**: ICONS uses gradient information requiring hundreds of GPU hours; PROGRESS uses internal accuracy change rates with nearly zero extra cost.
+- **vs Curriculum Learning**: Traditional curriculum learning uses external difficulty rankings; PROGRESS uses the model's own feedback to drive the curriculum.
+- This strategy could potentially be generalized to data mixture control in LLM pre-training.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Progress-driven dynamic sampling constitutes an effective new paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple datasets, architectures, scales, comprehensive ablations, and visualization analyses.
-- Writing Quality: ⭐⭐⭐⭐ Comparison figures are clear; advantages and disadvantages relative to prior methods are intuitive.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for resource-constrained researchers; directly applicable to reducing training costs.
+- Novelty: ⭐⭐⭐⭐ Progress-driven dynamic sampling is an effective new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple datasets, architectures, and scales, with detailed ablations and visualizations.
+- Writing Quality: ⭐⭐⭐⭐ Clear comparisons and intuitive visualizations relative to prior methods.
+- Value: ⭐⭐⭐⭐⭐ Extremely practical for resource-constrained researchers, directly reducing training costs.
 
 <!-- RELATED:START -->
 
@@ -125,11 +134,11 @@ This paper proposes the PROGRESS framework, which dynamically selects the most i
 
 ## Related Papers
 
+- [\[CVPR 2026\] Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection](ramen_robust_test-time_adaptation_of_vision-language_models_with_active_sample_s.md)
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](../../ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
+- [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
 - [\[CVPR 2026\] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models](no_hard_negatives_required_concept_centric_learning_leads_to_compositionality_wi.md)
 - [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[CVPR 2026\] LFPC: Learning to Focus and Precise Cropping for MLLMs](lfpc_learning_to_focus_and_precise_cropping_for_mllms.md)
 
 </div>
 

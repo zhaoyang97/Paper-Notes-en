@@ -2,133 +2,167 @@
 title: >-
   [Paper Note] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation
 description: >-
-  [ACL2026][Multi-Agent][Scientific poster generation] PosterForest utilizes a Poster Tree as an intermediate representation that simultaneously encodes paper hierarchical semantics and poster spatial layout. Content…
+  [ACL 2026][Multi-Agent][Poster Tree] PosterForest utilizes a Poster Tree as an intermediate representation that simultaneously encodes the hierarchical semantics of the paper and the spatial layout of the poster. Through recursive collaborative optimization by Content, Layout, and Feedback Agents, it generates scientific posters in a training-free manner,
 tags:
-  - "ACL2026"
-  - "Multi-Agent"
-  - "Scientific poster generation"
-  - "hierarchical document understanding"
-  - "multi-agent collaboration"
-  - "layout planning"
-  - "Poster Tree"
+  - ACL 2026
+  - Multi-Agent
+  - Poster Tree
 date: 2026-05-08
-content_hash: 502a3bd91d5cb018
+content_hash: 22a5af1d12731c6c
 ---
-
 # PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation
 
 **Conference**: ACL2026  
 **arXiv**: [2508.21720](https://arxiv.org/abs/2508.21720)  
 **Code**: https://github.com/kaist-cvml/poster-forest  
-**Area**: nlp_generation  
-**Keywords**: Scientific poster generation, hierarchical document understanding, multi-agent collaboration, layout planning, Poster Tree
+**Area**: Text Generation  
+**Keywords**: Scientific Poster Generation, Hierarchical Document Understanding, Multi-Agent Collaboration, Layout Planning, Poster Tree
 
 ## TL;DR
-PosterForest utilizes a Poster Tree as an intermediate representation that simultaneously encodes paper hierarchical semantics and poster spatial layout. Content, Layout, and Feedback Agents recursively collaborate to optimize the generation in a training-free manner. It achieves a 59.2% overall preference in human evaluations, significantly outperforming P2P and Paper2Poster.
+PosterForest utilizes a Poster Tree as an intermediate representation that simultaneously encodes the hierarchical semantics of the paper and the spatial layout of the poster. Through recursive collaborative optimization by Content, Layout, and Feedback Agents, it generates scientific posters in a training-free manner, achieving a 59.2% overall preference in human evaluations—significantly outperforming P2P and Paper2Poster.
 
 ## Background & Motivation
-**Background**: Scientific papers are becoming increasingly long and complex, making posters an essential medium for rapid technical communication. Early automated poster generation methods relied on rule-based extraction and heuristic typesetting, while recent methods like P2P and Paper2Poster introduced LLM/MLLM multi-agent pipelines for parsing, summarization, layout, and rendering.
+**Background**: As scientific papers grow longer and more complex in structure, posters serve as a vital medium for the rapid dissemination of technical content. Early automated poster generation methods relied heavily on rule-based extraction and heuristic typesetting. Recent approaches like P2P and Paper2Poster have introduced LLM/MLLM multi-agent pipelines for parsing, summarization, layout, and rendering.
 
-**Limitations of Prior Work**: Existing SPG methods often treat papers as linear text or fixed section-to-panel mappings, lacking hierarchical modeling of reference relationships between sections, subsections, paragraphs, and figures/tables. Content and layout are frequently optimized separately—panels are determined before filling text and images—leading to misplaced tables, excessively long paragraphs, improper image scaling, or fractured logical flow.
+**Limitations of Prior Work**: Existing scientific poster generation (SPG) methods often treat papers as linear text or fixed section-to-panel mappings, lacking hierarchical modeling of the relationships between sections, subsections, paragraphs, and figure/table citations. Furthermore, content and layout are frequently optimized separately: panels are determined first, and then text and images are stuffed in. This lead to tables being placed in incorrect sections, excessively long paragraphs, inappropriate image sizes, or fractured logical flows.
 
-**Key Challenge**: Scientific poster generation must compress information without destroying paper logic while achieving visual balance without losing key experimental figures. A single agent or sequential pipeline struggles to simultaneously handle the competing goals of content fidelity, layout efficiency, and visual coherence.
+**Key Challenge**: Scientific poster generation must compress information without destroying the paper's logic, and achieve visual balance without losing key experimental figures. A single agent or a sequential pipeline struggles to simultaneously handle the competing goals of content fidelity, layout efficiency, and visual coherence.
 
-**Goal**: The authors aim to construct a framework that requires no additional training, preserves the document's hierarchical structure, and jointly optimizes content and layout, ensuring generated posters are both informative and visually organized.
+**Goal**: The authors aim to build a framework that requires no additional training, preserves the hierarchical structure of the paper, and jointly optimizes content and layout, ensuring that generated posters are both information-complete and visually organized.
 
-**Key Insight**: The paper proposes the Poster Tree as a unified intermediate representation: each node possesses both semantic and spatial attributes. The tree structure is inherited from the paper's hierarchy and mapped to the poster canvas via a layout tree. In this way, when an agent modifies a node, it considers parent constraints, child content, and global feedback.
+**Key Insight**: The paper proposes the Poster Tree as a unified intermediate representation: each node possesses both semantic and spatial attributes. The tree structure is inherited from the paper's hierarchy and mapped to the poster canvas via a layout tree. In this way, when an agent modifies a node, it is aware of parent constraints, child content, and global feedback.
 
-**Core Idea**: Transform scientific poster generation from "linear summarization followed by typesetting" to "recursive collaborative optimization on a hierarchical semantic-spatial tree."
+**Core Idea**: Transforming scientific poster generation from "linear summarization followed by typesetting" to "recursive collaborative optimization on a hierarchical semantic-spatial tree."
 
 ## Method
-The core of PosterForest is to construct a tree and then refine it. Instead of forcing an LLM to output HTML or images in one shot, it first parses the paper into a Raw Doc Tree, followed by pruning, merging, and asset matching to obtain a Content Tree. A Layout Tree is then initialized based on content hierarchy and merged with the Content Tree to form the Poster Tree. Finally, multiple agents perform both local and global refinement for a maximum of `K=2` iterations before final rendering.
+The core of PosterForest is to create a tree and then refine it. Instead of having the LLM output HTML or images in one go, the system first parses the paper into a Raw Doc Tree, which is then processed via pruning, merging, and asset matching to obtain a Content Tree. Subsequently, a Layout Tree is initialized based on the content hierarchy, and the two are merged into a Poster Tree. Finally, multiple agents perform local and global refinement on the tree until the final poster is obtained.
 
 ### Overall Architecture
-The input is a paper PDF or document. The Parser Agent extracts nodes such as title, section, subsection, paragraph, figure, and table to form the Raw Doc Tree. An MLLM acts as the Refinement Agent to prune the tree, merge redundant nodes, compress long text, and preserve figure references to generate the Content Tree. Layout initialization divides the canvas into row/column/panel hierarchies based on content statistics, creating the Layout Tree. A Merge operation aligns semantic nodes with spatial nodes to form the Poster Tree. The system then performs refined rendering through tree-level iterations.
+The input is a paper PDF or document. The Parser Agent first extracts nodes such as title, section, subsection, paragraph, figure, and table to form a Raw Doc Tree. An MLLM acting as a Refinement Agent prunes the tree, merges redundant nodes, compresses long text, and preserves citations to figures and tables to obtain the Content Tree. Layout initialization partitions the canvas into row/column/panel layers based on content statistics to produce the Layout Tree. A Merge operation aligns semantic nodes with spatial nodes to form the Poster Tree. The system then performs refined rendering using a maximum of `K=2` rounds of tree-level iterations.
+
+```mermaid
+graph TD
+    A["Paper PDF / Document"] --> B["Parser Agent Parsing<br/>title/section/figure/table → Raw Doc Tree"]
+    subgraph S1["Poster Tree Unified Representation"]
+        direction TB
+        C["Refinement Agent Pruning & Merging → Content Tree"]
+        D["Layout Init (row/column/panel) → Layout Tree"]
+        E["Merge (Semantic & Spatial Alignment) → Poster Tree"]
+        C --> E
+        D --> E
+    end
+    B --> C
+    B --> D
+    subgraph S2["Node-level Content/Layout Collaboration"]
+        direction TB
+        F["Layout Agent (Region Ratio / Alignment)"]
+        G["Content Agent (Text Abstraction / Redundancy)"]
+        F <--> G
+    end
+    E --> F
+    subgraph S3["Global Feedback Driven Tree Iteration"]
+        direction TB
+        H["Render Current Poster Tree"]
+        I["Feedback Agent (Visual Org / Balance)"]
+        H --> I
+    end
+    G --> H
+    I -->|"Continue (≤ K=2 rounds)"| F
+    I -->|"Stop"| J["Final Poster"]
+```
 
 ### Key Designs
-1.  **Poster Tree Unified Representation**:
-    - **Function**: Merges "what to display" and "where to place it" into a single hierarchical structure.
-    - **Mechanism**: The Raw Doc Tree records the original structure, the Content Tree retains refined semantic nodes $c=(t,s)$ (where $t$ is the type and $s$ is the content/asset), and the Layout Tree records spatial nodes $l=(r,x)$ (where $r$ is the spatial type and $x$ is attributes like position and scale). The Poster Tree merges these so each node contains both content and layout.
-    - **Design Motivation**: Poster errors often stem from the decoupling of content and spatial structures. The unified tree ensures the system knows that "Table 1 belongs to the Experiments subtree" and its current panel allocation, reducing misplacements.
 
-2.  **Node-level Content/Layout Collaboration**:
-    - **Function**: Simultaneously adjusts text density and spatial proportions at local nodes.
-    - **Mechanism**: The tree is traversed from root to leaves. The Layout Agent optimizes region ratio, alignment, and spatial distribution for layout nodes based on parent information and descendants. The Content Agent adjusts text abstraction and redundancy for content nodes based on parent layout constraints. This can be formalized as $l_i^{t+1}=A_{layout}(l_i^t, P(l_i^t), D(l_i^t))$ and $c_i^{t+1}=A_{content}(c_i^t, P(c_i^t), D(P(c_i^t)))$.
-    - **Design Motivation**: Modifying only content leads to unbalanced layouts, while modifying only layout results in text overflow or improper image scaling. Synchronous read-write operations enable integrated content compression and spatial allocation.
+**1. Poster Tree Unified Representation: Encoding "what to display" and "where to put it" into a single hierarchical tree**
 
-3.  **Global Feedback-Driven Tree-level Iteration**:
-    - **Function**: Subjects local modifications to a global visual quality check.
-    - **Mechanism**: After each node-level traversal, the system renders the current Poster Tree. An MLLM Feedback Agent evaluates visual organization, structure, and balance, outputting structured feedback and a binary signal to continue or stop. If continuing, the next traversal incorporates this global feedback.
-    - **Design Motivation**: Local nodes lack a global aesthetic perspective. The Feedback Agent acts as a poster reviewer, preventing the poster from becoming crowded or fragmented despite local rationality.
+Poster errors often stem from the disconnection between content structure and spatial structure—fixing panels before inserting text results in tables in wrong sections or text overflow. PosterForest merges both structures into one tree. The Raw Doc Tree records the original hierarchy; the Content Tree retains refined semantic nodes $c=(t,s)$, where $t$ is the type (paragraph/figure/table) and $s$ is the summary text or asset; the Layout Tree records spatial nodes $l=(r,x)$, where $r$ is the type (row/column/panel) and $x$ denotes attributes like position and ratio. Merging aligns these to ensure every poster node carries both content and layout.
+
+This allows the system to know both that "this table belongs to the Experiments subtree" and its current panel occupancy, preventing misplacement and truncation—parent constraints and spatial positions are visible to agents during node modification.
+
+**2. Node-level Content/Layout Collaboration: Enabling specialized agents to jointly adjust text density and spatial ratios**
+
+Changing only content causes layout imbalance, while changing only layout causes text overflow. PosterForest allows the Content Agent and Layout Agent to traverse the Poster Tree from root to leaves, managing their respective tasks while sharing context. The Layout Agent optimizes the region ratio and alignment of layout nodes based on parent and descendant info; the Content Agent adjusts text abstraction based on layout constraints. The updates can be formulated as:
+
+$$l_i^{t+1}=A_\text{layout}(l_i^t,\, P(l_i^t),\, D(l_i^t)),\qquad c_i^{t+1}=A_\text{content}(c_i^t,\, P(c_i^t),\, D(P(c_i^t)))$$
+
+Since they operate on the same tree, text compression and spatial allocation are linked, avoiding the imbalances typical of "summarize then typeset" pipelines.
+
+**3. Global Feedback Driven Tree Iteration: Providing a holistic aesthetic check for local modifications**
+
+Node-by-node optimization may lack global perspective—individually reasonable nodes might result in a crowded or fragmented poster. After each node-level traversal, the system renders the Poster Tree for the MLLM Feedback Agent to evaluate visual organization and balance. It outputs structured feedback and a binary signal to continue or stop. The process iterates for a maximum of $K=2$ rounds.
+
+### Key Designs Walkthrough: From Paper to Poster
+
+Given a CVPR paper PDF, the Parser Agent extracts nodes to build a Raw Doc Tree. The Refinement Agent prunes redundant work and compresses method descriptions while maintaining table-section links to form the Content Tree. After layout initialization and merging into a Poster Tree, the first traversal begins: the Layout Agent finds the Experiments column too crowded and adjusts ratios; the Content Agent simultaneously abstracts the text further. After rendering, the Feedback Agent notes the method figure is too small and the layout is unbalanced, triggering a second round. The method figure is then enlarged, and the visual quality is finalized.
 
 ### Loss & Training
-PosterForest is a training-free framework with no gradient-based objectives. It relies on Docling, MLLM, and APIs for parsing, summarization, and evaluation. "Optimization" occurs via prompt-driven iterative modifications. GPT-4o is used to ensure baseline consistency. To avoid aesthetic bias from color or fonts, these elements are unified across methods. Tree-level iterations are capped at `K=2`.
+PosterForest is a training-free framework without gradient-based targets. It relies on Docling, MLLM APIs for parsing, summarization, and evaluation. "Optimization" is driven by prompt-based iterative modifications. Experiments use GPT-4o for consistency; colors and fonts are unified across methods to avoid evaluation bias. The maximum tree iteration is set to `K=2`.
 
 ## Key Experimental Results
 
 ### Main Results
-Quantitative evaluation was conducted on 100 paper-poster pairs from the Paper2Poster benchmark; qualitative and user studies were conducted on 15 additional pairs from AI conferences (NeurIPS, CVPR, ACL). MLLM-as-a-Judge scored aspects from 1-5.
+Quantitative evaluation was conducted on 100 paper-poster pairs from the Paper2Poster benchmark; qualitative studies used 15 additional pairs from AI conferences (NeurIPS, CVPR, ACL). MLLM-as-a-Judge scored 1-5 across six dimensions.
 
 | Method | Training-free | Aesthetic Avg.↑ | Information Avg.↑ | Overall↑ | Key Observation |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|------|---------------|-----------------|-------------------|----------|----------|
 | Original Paper | - | 3.58 | 4.22 | 3.90 | Most complete but not a poster |
-| GT Poster | - | 3.56 | 3.98 | 3.77 | Human quality upper bound |
-| 4o-HTML | Yes | 3.36 | 3.68 | 3.52 | End-to-end HTML is functional but lacks structure |
+| GT Poster | - | 3.56 | 3.98 | 3.77 | Upper bound for manual quality |
+| 4o-HTML | Yes | 3.36 | 3.68 | 3.52 | Functional but weak structure |
 | P2P-4o | No | 3.91 | 3.94 | 3.72 | Strong aesthetics, limited flow |
 | PosterAgent-4o | No | 3.58 | 3.86 | 3.72 | Stable specialized agent baseline |
-| PosterForest-Qwen | Yes | 3.62 | 3.82 | 3.72 | Comparable to strong baselines with open-weights |
-| PosterForest-4o | Yes | 3.65 | 3.87 | 3.76 | Best training-free performance, near GT |
+| PosterForest-Qwen | Yes | 3.62 | 3.82 | 3.72 | Close to strong baselines with OS model |
+| PosterForest-4o | Yes | 3.65 | 3.87 | 3.76 | Best training-free method, near GT |
 
-Human evaluations showed a stronger preference for PosterForest across 25 AI graduate students.
+Human evaluations (25 AI graduate students) showed a stronger preference for PosterForest.
 
 | Method | Content preference↑ | Aesthetics preference↑ | Structure preference↑ | Overall preference↑ |
-| :--- | :--- | :--- | :--- | :--- |
+|------|---------------------|-----------------------|------------------------|---------------------|
 | 4o-HTML | 2.0% | 1.6% | 2.4% | 1.6% |
 | P2P | 9.2% | 21.2% | 13.2% | 12.0% |
 | Paper2Poster | 32.8% | 24.0% | 24.8% | 27.2% |
 | PosterForest | 56.0% | 53.2% | 59.6% | 59.2% |
 
 ### Ablation Study
-Ablations focused on the hierarchical Content Tree and the joint application of Content/Layout Agents.
+Ablations focused on the hierarchical Content Tree and the simultaneous use of Content/Layout Agents.
 
-| Configuration | Key Phenomenon | Description |
-| :--- | :--- | :--- |
-| w/o Hierarchical Content Tree | Disorder in sections/subsections | Results tables might appear in Introduction |
-| w/ Hierarchical Content Tree | Better logical/spatial coherence | Related content is grouped; clear reader path |
-| Only Content Agent | Reduced redundancy | Better fit for panels, but layout remains unbalanced |
-| Only Layout Agent | Neater spatial organization | Image scaling and text overflow issues persist |
-| Both Agents | Simultaneous improvement | Appropriate info density and visual harmony |
+| Configuration | Key Phenomenon | Explanation |
+|------|----------|------|
+| w/o Hierarchical Content Tree | Disorganized section/subsections | Tables misplaced in Introduction |
+| w/ Hierarchical Content Tree | Better logical/spatial coherence | Related content grouped together |
+| Only Content Agent | Reduced redundancy | Layout imbalance remains |
+| Only Layout Agent | Organized spatial structure | Text overflow and scaling issues |
+| Both Agents | Improvement in density and layout | Harmonious information density |
 
 ### Key Findings
-- PosterForest's primary advantage is not just a marginal score lead, but a significant human preference, indicating structure and completeness are vital for real readers.
-- The gap between MLLM judge and human preference suggests automated metrics still struggle to fully capture the reading experience.
-- Hierarchical structure is critical for scientific documents to prevent mislabeling experimental tables or conclusion text.
-- Being training-free is a practical highlight, allowing deployment to new domains without retraining instruction models.
+- PosterForest's primary advantage is the significant human preference, indicating that structural clarity and completeness matter more to readers than single metric scores.
+- The gap in MLLM judged scores is small, but human preference is large, suggesting automated metrics still struggle to capture the full reading experience.
+- Hierarchical structure is critical for scientific documents to prevent misaligning figures and tables.
+- The training-free nature is a practical highlight, allowing deployment across new paper types without model retraining.
 
 ## Highlights & Insights
-- The Poster Tree is a natural yet effective intermediate representation that combines tree-like info compression with 2D layout.
-- The multi-agent setup matches the real design workflow: content editor, layout designer, and reviewer. This role decomposition is more valid than general "agent discussion."
-- Training-free approaches eliminate maintenance costs for tasks where styles and data distributions shift rapidly.
-- Jointly optimizing visual harmony and content fidelity in the same loop—rather than a "summarize then typeset" pipeline—could benefit slides or technical report generation.
+- The Poster Tree is a natural and effective intermediate representation that aligns the tree-like information of a paper with 2D layout.
+- Multi-agent collaboration reflects real design roles: editor, layout designer, and reviewer.
+- Training-free practicality reduces maintenance costs for rapidly changing styles and domains.
+- Jointly optimizing visual harmony and content fidelity in a single loop is superior to sequential "summarize then typeset" approaches.
 
 ## Limitations & Future Work
-- Content density is not always optimal; some areas may have underutilized space or insufficient detail.
-- Quantitative evaluation still relies on MLLM judges, which don't perfectly align with human preference.
-- System performance is bound by the accuracy of the parser and asset matching.
-- Unified styling limits the diversity of design for different brandings or specific conference templates.
-- The Feedback Agent does not yet model fine-grained design preferences like visual focus points or audience-specific emphasis.
+- Content density is not yet optimal; some areas may have insufficient information or wasted space.
+- Qualitative evaluation still relies on GPT-4o, highlighting the need for more robust, specialized metrics.
+- Reliance on the accuracy of parsers and asset matching; failures in PDF parsing propagate through the tree.
+- Fixed fonts and colors limit stylistic diversity and conference-specific branding.
+- The Feedback Agent does not yet model fine-grained human preferences like reading paths or audience-specific emphasis.
 
 ## Related Work & Insights
-- **vs P2P**: P2P uses instruction tuning for collaboration; PosterForest uses a tree structure and iterations to inject hierarchy.
-- **vs Paper2Poster**: Paper2Poster follows a more sequential process, whereas PosterForest emphasizes joint content/layout modification on a unified tree.
-- **vs Generic GPT-4o-HTML**: Direct generation is simpler but often ignores the specific hierarchical structure of scientific documents.
-- **Insights for Doc Gen**: For slides or posters, constructing "Semantic Tree + Layout Tree" as an intermediate state for agent editing is a robust strategy.
+- **vs P2P**: P2P relies on instruction tuning; PosterForest remains training-free by injecting hierarchy via tree structures.
+- **vs Paper2Poster**: Paper2Poster uses sequential modules; PosterForest emphasizes joint modification on a unified tree.
+- **vs GPT-4o-HTML**: End-to-end HTML often ignores scientific document structures which PosterForest restores through explicit representation.
+- **Insights**: For any document generation (slides, knowledge cards), building a "semantic-spatial tree" intermediate representation for node-level editing is a promising direction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The combination of Poster Tree and hierarchical multi-agent collaboration is highly suited for this task.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Includes automated/human evaluation and ablations, though more quantitative ablation stats would be better.
-- Writing Quality: ⭐⭐⭐⭐☆ Visuals are clear and the mechanism is easy to follow.
-- Value: ⭐⭐⭐⭐☆ Extremely practical for academic communication and training-free deployment scenarios.
+- Novelty: ⭐⭐⭐⭐☆ Effective combination of Poster Tree and hierarchical multi-agent collaboration.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid human and automated evaluations; quantitative ablation could be more granular.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear diagrams and logical flow.
+- Value: ⭐⭐⭐⭐☆ Highly practical for scientific communication and training-free deployment scenarios.
 
 <!-- RELATED:START -->
 
@@ -137,9 +171,9 @@ Ablations focused on the hierarchical Content Tree and the joint application of 
 ## Related Papers
 
 - [\[ACL 2026\] EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery](evosci_a_bio-inspired_multi-agent_framework_for_the_evolution_of_scientific_disc.md)
-- [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](consensus_multi-agent_collaboration_for_multimodal_sensing.md)
+- [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](../../CVPR2026/multi_agent/scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
 - [\[ICLR 2026\] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre](../../ICLR2026/multi_agent/hamlet_a_hierarchical_and_adaptive_multi-agent_framework_for_live_embodied_theat.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
+- [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](consensus_multi-agent_collaboration_for_multimodal_sensing.md)
 - [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
 
 </div>

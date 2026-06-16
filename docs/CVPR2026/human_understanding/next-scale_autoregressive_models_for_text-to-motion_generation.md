@@ -2,81 +2,80 @@
 title: >-
   [Paper Note] Next-Scale Autoregressive Models for Text-to-Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][text-to-motion generation] MoScale proposes a next-scale autoregressive motion generation framework that replaces conventional next-token prediction. By performing hierarchical causal gen…
+  [CVPR 2026][Human Understanding][Paper Note] MoScale proposes a next-scale autoregressive motion generation framework that replaces traditional next-token prediction. By employing coarse-to-fine hierarchical causal generation to capture global semantic structures, and introducing cross-scale hierarchical refinement alongside intra-scale temporal refinement, it ac
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "text-to-motion generation"
-  - "autoregressive models"
-  - "multi-scale prediction"
-  - "hierarchical generation"
-  - "motion synthesis"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: b5973b899aab0190
+content_hash: 572a9c735cd85820
 ---
-
 # Next-Scale Autoregressive Models for Text-to-Motion Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.03799](https://arxiv.org/abs/2604.03799)  
 **Code**: See project homepage  
-**Area**: Other
-**Keywords**: text-to-motion generation, autoregressive models, multi-scale prediction, hierarchical generation, motion synthesis
+**Area**: Human Understanding  
+**Keywords**: Text-to-motion generation, autoregressive models, multi-scale prediction, hierarchical generation, motion synthesis
 
 ## TL;DR
 
-MoScale proposes a next-scale autoregressive motion generation framework that replaces conventional next-token prediction. By performing hierarchical causal generation from coarse to fine, the model captures global semantic structure and introduces cross-scale hierarchical refinement and in-scale temporal refinement, achieving state-of-the-art performance on HumanML3D and KIT-ML (Top-1 0.540, FID 0.046).
+MoScale proposes a next-scale autoregressive motion generation framework that replaces traditional next-token prediction. By employing coarse-to-fine hierarchical causal generation to capture global semantic structures, and introducing cross-scale hierarchical refinement alongside intra-scale temporal refinement, it achieves SOTA results on HumanML3D and KIT-ML (Top-1 0.540, FID 0.046).
 
 ## Background & Motivation
 
-1. **Background**: Text-to-motion generation aims to synthesize human motion sequences that faithfully reflect the intent of textual descriptions. Current approaches fall into three main categories: next-token autoregressive models (T2M-GPT, AttT2M), diffusion models (MDM, ReMoDiffuse), and masked Transformers (MoMask, MoMask++).
+1. **Background**: Text-to-motion generation aims to synthesize human motion sequences that faithfully reflect text descriptions. Current methods primarily fall into three categories: next-token autoregressive (T2M-GPT, AttT2M), diffusion models (MDM, ReMoDiffuse), and masked Transformers (MoMask, MoMask++).
 
 2. **Limitations of Prior Work**:
-    - **Diffusion models and masked Transformers**: These methods generate a full-resolution sequence draft and then iteratively refine it. The initial global semantics are often inaccurate, and subsequent refinement primarily improves local consistency rather than global structure.
-    - **Next-token AR**: Human motion exhibits strong short-term predictability (future poses can be inferred from a brief history), causing AR models to exploit short-range shortcuts during training to minimize loss without learning long-range semantic structure. Temporal convolutions in VQ-VAE further amplify local correlations.
-    - **Shared limitation**: Both paradigms struggle to capture repetition counts (e.g., "two jumping jacks") and sequence-level action patterns (e.g., "turn around, pick something up, then turn back").
+    - **Diffusion and Masked Transformers**: These models generate a draft of the full-resolution sequence before iterative refinement; however, initial global semantics are often inaccurate, and subsequent refinements primarily improve local consistency rather than global structure.
+    - **Next-token AR**: Human motion exhibits extreme short-term predictability (future poses can be inferred from a brief history). Consequently, AR models during training exploit "short-horizon shortcuts" to minimize loss without learning long-range semantic structures. Temporal convolutions in VQ-VAE further exacerbate these local correlations.
+    - **Common Issue**: Difficulty in capturing repetition counts (e.g., "two jumping jacks") and sequence-level action patterns (e.g., "turn around, pick something up, then turn around again").
 
-3. **Key Challenge**: The causal direction of next-token prediction (frame-by-frame along the temporal axis) coincides with the high short-term predictability of human motion, creating a shortcut that impedes global semantic reasoning.
+3. **Key Challenge**: The causal direction of next-token modeling (frame-by-frame along the time dimension) and the high short-term predictability of human motion constitute a shortcut that hinders global semantic reasoning.
 
-4. **Goal**: Design a causal hierarchical structure that commits to a global semantic layout at the earliest stage of generation, thereby eliminating short-range shortcuts.
+4. **Goal**: Design a causal hierarchy that forces the model to commit to a global semantic layout at the earliest stages of generation, thereby avoiding short-horizon shortcuts.
 
-5. **Key Insight**: Inspired by next-scale modeling in image generation (VAR), the method organizes motion sequences into hierarchical discrete token groups at increasing temporal resolutions, generating autoregressively from the coarsest scale (global semantics) to the finest scale (local details).
+5. **Key Insight**: Inspired by next-scale modeling in the image domain (VAR), motion sequences are organized into hierarchical discrete token groups by temporal resolution, generated autoregressively from the coarsest scale (global semantics) to the finest scale (local details).
 
-6. **Core Idea**: Replace next-token with next-scale prediction — determine the global motion structure at the coarsest scale and progressively refine it toward high temporal resolution.
+6. **Core Idea**: Replace next-token with next-scale to determine the global motion structure at the coarsest scale and refine it layer-by-layer toward high temporal resolution.
 
 ## Method
 
 ### Overall Architecture
 
-(1) **Multi-scale motion representation**: A residual VQ-VAE encodes motion into discrete token groups at $K$ scales (e.g., 6→12→24→49), where coarse scales capture global structure and fine scales encode residual details. (2) **Next-scale causal Transformer**: Starting from a text condition, tokens are generated autoregressively scale by scale, with bidirectional attention applied within each scale. (3) **Two refinement mechanisms**: cross-scale hierarchical refinement to correct error accumulation, and in-scale temporal refinement to improve local consistency.
+MoScale addresses the chronic issue where next-token autoregressive models learn only local dynamics instead of global semantics. The solution involves changing the generation order from "frame-by-frame over time" to "coarse-to-fine across resolutions." The pipeline consists of three steps: first, a residual VQ-VAE encodes the motion sequence into $K$ discrete token groups with increasing temporal resolutions (e.g., 6→12→24→49). The coarsest group (only 6 tokens) is forced to represent the "global structure of the entire sequence," while the finest group provides frame-by-frame local details. Next, a causal Transformer, conditioned on text, generates tokens scale-by-scale starting from the coarsest level, using bidirectional attention within each scale to produce all tokens at once. During generation, two refinement mechanisms are applied: one for cross-scale error accumulation and another for intra-scale temporal consistency. The key is that the model is forced to establish the global semantic layout at the very first step (coarsest scale), preventing it from relying on the shortcut of "predicting the next frame by looking at previous ones."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Motion Sequence m + Text Condition"] --> B["Multi-scale Residual Quantization<br/>Residual VQ-VAE encoded into K<br/>increasing resolution token groups (6→12→24→49)"]
+    B --> C["Causal Transformer<br/>Text-conditioned, scale-by-scale AR starting from coarsest"]
+    C --> D["Cross-scale Hierarchical Refinement<br/>Corrupt previous layer inputs during training to learn error correction"]
+    D --> E["Intra-scale Temporal Refinement<br/>Mask-and-repredict for low-confidence tokens"]
+    E -->|Next scale| C
+    E -->|Reached finest scale 49| F["Full High-resolution Motion Sequence"]
+```
 
 ### Key Designs
 
-1. **Hierarchical Motion Representation (Multi-Scale Residual Quantization)**:
+**1. Multi-scale Residual Quantization: Mapping different layers to different temporal resolutions rather than residuals of the same resolution**
 
-    - **Function**: Encodes the motion sequence into multi-level discrete tokens from coarse to fine.
-    - **Mechanism**: The encoder maps motion $\mathbf{m} \in \mathbb{R}^{T \times D_m}$ to a latent representation $\mathbf{f}$, which is then quantized layer by layer at $K$ increasing lengths $(L_1, ..., L_K)$. At scale $k$, the residual $\mathbf{f} - \hat{\mathbf{f}}_{:k-1}$ not captured by the preceding $k{-}1$ scales is downsampled to length $L_k$ and vector-quantized. All scales share a single codebook $\mathbf{Z} \in \mathbb{R}^{V \times D_e}$.
-    - **Design Motivation**: Unlike conventional residual VQ, which quantizes residuals at the same resolution across layers, each layer here corresponds to a distinct temporal resolution. This naturally enables coarse scales to capture global structure and fine scales to capture local details.
+The root cause of laziness in traditional next-token AR lies in the "frame-by-frame" granularity—human poses are highly predictable in the short term, allowing models to lower loss by simply observing the previous frame. MoScale's first modification is at the representation layer: the encoder compresses motion $\mathbf{m} \in \mathbb{R}^{T \times D_m}$ into latent variables $\mathbf{f}$, which are then quantized layer-by-layer according to $K$ increasing lengths $(L_1, ..., L_K)$. The $k$-th layer quantizes the residual $\mathbf{f} - \hat{\mathbf{f}}_{:k-1}$ not captured by previous layers after downsampling it to length $L_k$. All scales share a single codebook $\mathbf{Z} \in \mathbb{R}^{V \times D_e}$. This differs fundamentally from standard residual VQ where every layer operates at the same temporal resolution; here research ensures that "coarse scale = global structure" and "fine scale = local details" through the representation structure itself.
 
-2. **Cross-Scale Hierarchical Refinement**:
+**2. Cross-scale Hierarchical Refinement: Forcing error correction through intentional input corruption**
 
-    - **Function**: Strengthens the model's ability to correct prediction errors propagated from coarser scales.
-    - **Mechanism**: During training, a random subset of tokens from scale $k{-}1$ is replaced with randomly sampled codebook entries (corruption rate $\gamma_k \sim U[0, \gamma_{max}]$), and scale $k$ learns to predict the correct residual targets from the corrupted input. Crucially, the corruption affects only the input to scale $k$ and does not alter the learning target of scale $k{-}1$. The optimal corruption rate is $\gamma_{max} = 0.6$.
-    - **Design Motivation**: Under standard teacher forcing, each scale receives perfect inputs during training, so errors accumulate at inference time. By exposing the model to perturbed intermediate states during training, it learns to recover correct outputs from imperfect conditions, thereby reducing exposure bias.
+Next-scale modeling shifts error accumulation from the time dimension to the scale dimension—if the coarse scale prediction is incorrect, fine scales will merely add details to a flawed skeleton, leading to divergence. This stems from standard teacher forcing: during training, each layer sees perfect inputs from the previous scale, but during inference, it consumes its own noisy intermediate results (exposure bias). MoScale fixes this by actively introducing imperfections during training: tokens from scale $k-1$ are randomly replaced with random codebook tokens at a corruption rate $\gamma_k \sim U[0, \gamma_{max}]$. The model then predicts the correct residual target for scale $k$ based on this contaminated input. Crucially, corruption only affects the input seen by scale $k$ and does not alter the learning target of scale $k-1$ to avoid polluting its supervision signal. Experiments show $\gamma_{max}=0.6$ is optimal: too low fails to expose errors, while too high introduces excessive noise.
 
-3. **In-Scale Temporal Refinement**:
+**3. Intra-scale Temporal Refinement: Mask-and-repredict for low-confidence tokens to ensure consistency**
 
-    - **Function**: Leverages bidirectional context to improve temporal consistency within each scale.
-    - **Mechanism**: Within each scale, a mask-and-repredict operation is applied to low-confidence tokens. A binary mask $\mathbf{m}_k^i$ is constructed to replace uncertain tokens with [MASK]; these are concatenated with accumulated features from preceding scales and fed into the Transformer for re-prediction. A cosine re-masking schedule is adopted, with refinement steps set to $(1, 2, 5, 10)$ per scale.
-    - **Design Motivation**: Text-motion datasets are far smaller than language corpora, and prior work has shown that diffusion-style iterative refinement and bidirectional context benefit low-data regimes. This mechanism also enables MoScale to natively support zero-shot tasks such as motion editing, completion, and continuation.
+While scale-by-scale causal generation ensures global structure, producing all tokens within a single scale simultaneously can lead to temporal incoherence. This step adds an "iterative refinement" pass within each scale: low-confidence tokens are identified and replaced by a [MASK] via a binary mask $\mathbf{m}_k^i$, then concatenated with features from previous scales and fed back into the Transformer for re-prediction. This follows a cosine re-masking schedule over several rounds (refinement steps are set to $(1, 2, 5, 10)$ for each scale, with more refinement for finer resolutions). This approach is effective because text-to-motion datasets are much smaller than language corpora, where iterative refinement and bidirectional context have proven advantageous. An additional benefit is that this mask-and-repredict mechanism functions as conditional completion, allowing MoScale to support zero-shot motion editing, completion, and continuation without structural changes.
 
 ### Loss & Training
 
-- VQ-VAE training: reconstruction loss + joint position loss + commitment loss
-- Transformer training: teacher forcing + cross-entropy loss; text condition dropped with 10% probability (CFG)
-- HumanML3D: 120 training epochs, learning rate $3 \times 10^{-4}$; KIT-ML: 60 training epochs
-- Inference CFG scale: 5 (HumanML3D) / 3 (KIT-ML)
-- Codebook size: 512; 4 hierarchical scales; sequence lengths: (6, 12, 24, 49)
+- **VQ-VAE Training**: Reconstruction loss + joint position loss + commitment loss.
+- **Transformer Training**: Teacher forcing + cross-entropy loss, with a 10% probability of dropping text conditions (Classifier-Free Guidance).
+- **Hyperparameters**: HumanML3D trained for 120 epochs with a learning rate of $3 \times 10^{-4}$; KIT-ML trained for 60 epochs.
+- **Inference**: CFG scale set to 5 for HumanML3D and 3 for KIT-ML.
+- **Architecture**: Codebook size 512, 4 hierarchical scales, sequence lengths (6, 12, 24, 49).
 
 ## Key Experimental Results
 
@@ -85,73 +84,73 @@ MoScale proposes a next-scale autoregressive motion generation framework that re
 HumanML3D:
 
 | Method | Type | Top-1↑ | FID↓ | MM-Dist↓ | Diversity |
-|--------|------|--------|------|----------|-----------|
+|------|------|--------|------|----------|-----------|
 | T2M-GPT | Next-token | 0.492 | 0.141 | 3.121 | 9.722 |
 | ParCo | Next-token | 0.515 | 0.109 | 2.927 | 9.576 |
 | ReMoDiffuse | Diffusion | 0.510 | 0.103 | 2.974 | 9.018 |
-| MoMask++ | MaskedTrans | 0.528 | 0.072 | 2.912 | — |
-| **MoScale (S=18)** | **Next-scale** | **0.540** | **0.046** | **2.830** | 9.525 |
+| MoMask++ | MaskedTrans | 0.528 | 0.072 | 2.912 | - |
+| **Ours (S=18)** | **Next-scale** | **0.540** | **0.046** | **2.830** | 9.525 |
 
 KIT-ML:
 
 | Method | Top-1↑ | FID↓ | MM-Dist↓ |
-|--------|--------|------|----------|
+|------|--------|------|----------|
 | ParCo | 0.430 | 0.453 | 2.820 |
 | MoMask | 0.433 | 0.204 | 2.779 |
-| **MoScale (S=18)** | **0.442** | 0.173 | **2.717** |
+| **Ours (S=18)** | **0.442** | 0.173 | **2.717** |
 
 ### Ablation Study
 
 | Configuration | Top-1↑ | FID↓ | MM-Dist↓ |
-|---------------|--------|------|----------|
-| Base (no refinement) | 0.481 | 0.176 | 3.136 |
+|------|--------|------|----------|
+| Base (No refinement) | 0.481 | 0.176 | 3.136 |
 | + Hierarchical Refinement (HR) | 0.534 | 0.090 | 2.853 |
 | + Temporal Refinement (TR) | 0.497 | 0.129 | 3.043 |
-| + HR & TR (full model) | **0.540** | **0.046** | **2.830** |
+| + HR & TR (Full) | **0.540** | **0.046** | **2.830** |
 
-Text complexity analysis (Top-3):
+Text Complexity Analysis (Top-3):
 
 | Method | FULL | MEDIUM+HIGH | HIGH |
-|--------|------|-------------|------|
+|------|------|-------------|------|
 | ParCo | 0.801 | 0.778 | 0.709 |
 | MoMask++ | 0.811 | 0.802 | 0.762 |
-| **MoScale** | **0.817** | **0.812** | **0.775** |
+| **Ours** | **0.817** | **0.812** | **0.775** |
 
 ### Key Findings
 
-- **Hierarchical refinement is the primary driver of text alignment improvement**: HR accounts for the substantial Top-1 gain from 0.481 to 0.534, while TR primarily improves local temporal consistency.
-- **MoScale's advantage grows with text complexity**: On the high-complexity subset, MoScale outperforms ParCo by 0.066 (6.6 percentage points), far exceeding the overall margin of 0.016.
-- **Optimal corruption rate $\gamma_{max} = 0.6$**: A lower value insufficiently exposes the model to errors; a higher value introduces excessive noise.
-- **Scalable model capacity**: Performance improves consistently as the Transformer depth increases from 4 to 16 layers, with high training efficiency.
+- **Hierarchical refinement is the primary driver for text alignment**: HR contributes significantly to the Top-1 improvement from 0.481 to 0.534, while TR mainly improves local temporal consistency.
+- **Superiority increases with text complexity**: On the high-complexity subset, MoScale improves Top-1 by 0.066 over ParCo, significantly higher than the 0.016 overall gain.
+- **Optimal corruption rate $\gamma_{max} = 0.6$**: Rates that are too low do not expose enough errors, while those that are too high introduce excessive noise.
+- **Model Scalability**: Performance continues to improve as the Transformer scales from 4 to 16 layers, maintaining training efficiency.
 
 ## Highlights & Insights
 
-- **The short-range shortcut of next-token prediction** is a profound insight: the high short-term predictability of human motion allows AR models to "take the easy path," learning local dynamics while ignoring global semantics. Next-scale prediction breaks this shortcut by enforcing global structure encoding at the coarsest scale.
-- **Cross-scale refinement** is elegantly designed: by corrupting the preceding scale's input to train the current scale, the method simulates inference-time error accumulation while maintaining single-pass forward training efficiency.
-- **Unified zero-shot capability**: The same mask-and-repredict mechanism supports motion editing, completion, continuation, and other tasks, achieving 78–82% user preference in a user study.
-- The method exhibits superior training efficiency compared to baselines and demonstrates scalable model capacity, making it practically valuable.
+- The **short-horizon shortcut of next-token AR** is a profound insight: the short-term predictability of human motion causes AR models to "cheat" by learning local dynamics while ignoring global semantics. Next-scale breaks this shortcut by forcing the encoding of global structure at the coarsest scale.
+- The **Cross-scale Refinement** design is clever: training the current layer by corrupting previous layer inputs simulates inference-time error accumulation while maintaining single-forward-pass training efficiency.
+- **Unified Zero-shot Capabilities**: The same mask-and-repredict mechanism naturally supports motion editing, completion, and continuation, achieving a 78-82% preference rate in user studies.
+- Training efficiency is superior to baseline methods, and the model is highly scalable, making it practical for real-world applications.
 
 ## Limitations & Future Work
 
-- Quantization error in the VQ-VAE remains a bottleneck, potentially causing information loss for fine-grained motions.
-- The current design uses only T5 text features; the potential of stronger text representations (e.g., LLM embeddings) for further semantic alignment has not been explored.
-- The MModality score (0.873) is relatively low, indicating reduced generation diversity.
-- The choice of scale count and sequence lengths relies on empirical tuning rather than an adaptive mechanism.
-- Inference speed at S=18 (0.28s) is acceptable but significantly slower than at S=4 (0.08s); the trade-off between refinement steps and quality warrants further investigation.
+- VQ-VAE quantization error remains a bottleneck, potentially causing information loss in fine-grained actions.
+- Currently, only T5 text features are used; exploring stronger text representations (e.g., LLM embeddings) for improved semantic alignment remains a future direction.
+- The Multimodality metric is relatively low (0.873), indicating a potential decrease in generation diversity.
+- The number of scales and sequence lengths are determined empirically rather than through an adaptive mechanism.
+- While inference speed (0.28s at S=18) is acceptable, it is slower than S=4 (0.08s); the trade-off between refinement steps and quality warrants further exploration.
 
 ## Related Work & Insights
 
-- **vs. MoMask++**: MoMask++ employs a shared codebook, a unified Transformer, and random token perturbation, but the perturbation breaks hierarchical causality. MoScale strictly maintains coarse-to-fine causal structure and achieves a Top-1 improvement of 0.012.
-- **vs. ParCo**: ParCo extends the standard next-token AR paradigm with additional modules but yields limited gains. MoScale changes the generation direction (scale vs. time), achieving greater improvements under more efficient training.
-- **vs. VAR (image generation)**: MoScale borrows the next-scale concept from VAR but introduces key adaptations — cross-scale hierarchical refinement and in-scale temporal refinement — to address the low-data challenges unique to motion data.
-- This work demonstrates that **generation order** is critical in sequence modeling, offering insights applicable to other temporal generation tasks.
+- **vs MoMask++**: MoMask++ uses a shared codebook, unified Transformer, and random token perturbation, but the perturbations disrupt hierarchical causality. MoScale strictly maintains a coarse-to-fine causal structure, outperforming it by 0.012 in Top-1.
+- **vs ParCo**: ParCo improves standard next-token AR by introducing complex modules with limited gains. MoScale changes the generation dimension (scale vs. time), achieving better results with more efficient training.
+- **vs VAR (Image)**: MoScale adopts the next-scale philosophy from VAR but introduces critical adaptations—Cross-scale Refinement and Intra-scale Temporal Refinement—to handle the low-data challenges unique to motion datasets.
+- This work validates that the "generation order" is vital for sequence modeling, offering insights for other temporal generation tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Introduces next-scale prediction to motion generation and provides deep analysis of the short-range shortcut problem in next-token AR models.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks, a user study, text complexity analysis, and detailed ablations — comprehensive and convincing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation is clear, method presentation is fluent, and experimental analysis is thorough.
-- Value: ⭐⭐⭐⭐ Significant contribution to the motion generation field; the cross-scale autoregressive paradigm has broad applicability.
+- Novelty: ⭐⭐⭐⭐⭐ Introduces next-scale to motion generation with a deep analysis of next-token short-horizon shortcuts.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across two benchmarks, user studies, complexity analysis, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivations, fluent methodology, and insightful analysis.
+- Value: ⭐⭐⭐⭐ Significant contribution to the motion generation field with a generalized hierarchical AR approach.
 
 <!-- RELATED:START -->
 
@@ -159,11 +158,11 @@ Text complexity analysis (Top-3):
 
 ## Related Papers
 
+- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
+- [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
+- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](../../AAAI2026/human_understanding/realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
-- [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
-- [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
+- [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
 
 </div>
 

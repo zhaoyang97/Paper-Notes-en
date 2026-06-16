@@ -36,38 +36,38 @@ item_total: 8
 
 **🧪 ICML2026** · **8** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (43)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (12)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/social_computing/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/social_computing/index.md) · [💬 ACL2026 (43)](../../ACL2026/social_computing/index.md) · [🔬 ICLR2026 (12)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/social_computing/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
 
 🔥 **Top topics:** Alignment/RLHF ×2 · Multimodal/VLM ×2 · LLM ×2
 
 **[Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases](alignment_tampering_how_reinforcement_learning_from_human_feedback_is_exploited_.md)**
 
-:   This paper proposes alignment tampering: when the model to be aligned generates "high-quality but biased" and "low-quality but unbiased" responses, the pairwise preference labels in RLHF conflate quality with bias. This leads the reward model, PPO/DPO, and Best-of-N sampling to further amplify the undesired original biases.
+:   This paper proposes alignment tampering: when the model-to-be-aligned generates "high-quality but biased" and "low-quality but unbiased" responses, the pairwise preference labels in RLHF conflate quality with bias. This causes the reward model, PPO/DPO, and Best-of-N sampling to further amplify undesirable biases.
 
 **[FLIPS: Instance-Fingerprinting for LLMs via Pseudo-Random Sequences](flips_instance-fingerprinting_for_llms_via_pseudo-random_sequences.md)**
 
-:   FLIPS generates unique model "fingerprint responses" by designing **pseudo-random seed sequences** (seeds known only to the model owner). Even if an attacker fine-tunes or prunes the model, the fingerprint cannot be eliminated, achieving a detection rate $> 99\%$ and a false positive rate $< 1\%$ in black-box query scenarios.
+:   FLIPS generates unique "fingerprint responses" for models by designing **pseudo-random seed sequences** (known only to the model owner). In black-box query scenarios, it achieves a detection rate > 99% and a false positive rate < 1%, even when attackers fine-tune or prune the model.
 
 **[IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)**
 
-:   IDO significantly improves F1 by 3-7% over SOTA on Weibo / Twitter / Fakeddit and enhances generalization to unseen fake news by **explicitly modeling inter-modal incongruity** as a learnable distribution optimization objective—simultaneously pulling multimodal embeddings of real news closer and enlarging the incongruity of fake news.
+:   IDO achieves an F1 gain of 3-7% over Prev. SOTA on Weibo / Twitter / Fakeddit and significantly improves generalization to unseen fake news by **explicitly modeling inter-modal incongruity** as a learnable distribution optimization objective—simultaneously pulling multimodal embeddings of real news closer and expanding the incongruity of fake news.
 
 **[MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)**
 
-:   MIND provides an explainable and robust discriminative framework for fake news detection through **multi-view rationale generation + cross-rationale discriminative reasoning**. By simultaneously utilizing three types of LLM-generated rationales—fact-checking, modal consistency, and semantic plausibility—it achieves a 4-8% F1 improvement over SOTA on Weibo, Twitter, and Fakeddit.
+:   MIND provides an explainable and robust discriminative framework for fake news detection through **multi-view rationale generation + cross-rationale discriminative reasoning**. By simultaneously leveraging three types of LLM-generated rationales—fact-checking, modal consistency, and semantic plausibility—it achieves a 4-8% F1 improvement over SOTA on Weibo, Twitter, and Fakeddit.
 
 **[ObjEmbed: Towards Universal Multimodal Object Embeddings](objembed_towards_universal_multimodal_object_embeddings.md)**
 
-:   ObjEmbed trains a **universal object embedding model**—aligning multimodal object representations by combining tasks such as detection, segmentation, retrieval, captioning, and classification. A single embedding outperforms or matches task-specific SOTA on 11 tasks, including OVD / OVS / Text2Image-Object / Open-Caption-Eval.
+:   ObjEmbed trains a **universal object embedding model** by aligning multimodal object representations through a combination of tasks including detection, segmentation, retrieval, captioning, and classification. A single embedding surpasses or matches task-specific SOTAs across 11 tasks such as OVD, OVS, Text2Image-Object, and Open-Caption-Eval.
 
 **[SCOPE: Selective Conformal Optimized Pairwise LLM Judging](scope_selective_conformal_optimized_pairwise_llm_judging.md)**
 
-:   SCOPE eliminates positional bias in LLM judging via **Bidirectional Preference Entropy (BPE)** and combines it with **Conformal Risk Control** to achieve finite-sample FDR control—providing statistically valid risk guarantees while maintaining high coverage (e.g., FDR of only 0.099 at 0.583 coverage vs. Vanilla FDR of 0.198 at 1.000 coverage).
+:   SCOPE eliminates position bias in LLM judging through **Bidirectional Preference Entropy (BPE)** and implements finite-sample FDR control via **Conformal Risk Control**—providing statistically valid risk guarantees while maintaining high coverage (FDR is only 0.099 at 0.583 coverage vs. Vanilla FDR of 0.198 at 1.000 coverage).
 
 **[Self-Debias: Self-correcting for Debiasing Large Language Models](self-debias_self-correcting_for_debiasing_large_language_models.md)**
 
-:   Self-Debias reshapes the LLM debiasing problem as "fair resource allocation of probability mass on autoregressive reasoning chains." Using trajectory-level suffix margins as resource units, it employs Jain's fairness index to prevent resource collapse on easy samples. Combined with cold-start SFT and consistency-filtering-driven online self-training, it improves Qwen3-8B's average score across 8 fairness/utility benchmarks from 77.5 to 81.7 with only 20k labeled seeds, reversing the "self-correction collapse" of base models into a stable +0.4 improvement.
+:   Self-Debias reframes the LLM debiasing problem as "fair resource allocation of probability mass over autoregressive reasoning chains." Using trajectory-level suffix margins as resource units and the Jain Fairness Index to prevent budget collapse on easy samples, combined with cold-start SFT and consistency-filtered online self-training, the method improves Qwen3-8B's average score across 8 fairness/utility benchmarks from 77.5 to 81.7 using only 20k labeled seeds. It flips the base model's tendency to "correct toward bias" (collapse) into a stable +0.4 gain.
 
 **[The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence](the_geometric_mechanics_of_contrastive_representation_learning_alignment_potenti.md)**
 
-:   This paper elevates the InfoNCE loss to a deterministic "population energy" over representation distributions using a measure-theoretic framework, proving that the unimodal case is convex and converges to a unique Gibbs equilibrium, while the symmetric multimodal case exhibits persistent negative symmetric KL coupling, which geometrically and inevitably induces a modality gap.
+:   This paper employs a measure-theoretic framework to elevate the InfoNCE loss to a deterministic "population energy" over representation distributions. It demonstrates that the unimodal case is convex and converges to a unique Gibbs equilibrium, whereas the symmetric multimodal case exhibits a persistent negative symmetric KL coupling, showing that a modality gap is a geometric necessity.

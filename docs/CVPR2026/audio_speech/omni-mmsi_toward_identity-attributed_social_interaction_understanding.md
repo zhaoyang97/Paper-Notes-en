@@ -2,90 +2,87 @@
 title: >-
   [Paper Note] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 description: >-
-  [CVPR 2026][Audio & Speech][Social Interaction Understanding] This paper introduces the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs (rather than pre-processed oracle social…
+  [CVPR 2026][Audio & Speech][Paper Note] Ours proposes the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs rather than pre-processed oracle social cues. It designs the Omni-MMSI-R reference-guided pipeline, achieving accurate social interaction understanding through tool-generated identity-attributed social cues comb
 tags:
-  - "CVPR 2026"
-  - "Audio & Speech"
-  - "Social Interaction Understanding"
-  - "Identity Attribution"
-  - "Multimodal Reasoning"
-  - "Chain-of-Thought Reasoning"
-  - "Reference Guidance"
+  - CVPR 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: f087cc03abfd4631
+content_hash: dd54be8d21d45383
 ---
-
 # Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.00267](https://arxiv.org/abs/2604.00267)  
 **Code**: [Project Page](https://sampson-lee.github.io/omni-mmsi-project-page)  
-**Area**: Audio & Speech / Social Understanding
-**Keywords**: Social Interaction Understanding, Identity Attribution, Multimodal Reasoning, Chain-of-Thought Reasoning, Reference Guidance
+**Area**: Audio-Speech / Social Understanding  
+**Keywords**: Social Interaction Understanding, Identity Attribution, Multimodal Reasoning, Chain-of-Thought, Reference-guided  
 
 ## TL;DR
 
-This paper introduces the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs (rather than pre-processed oracle social cues)—and proposes Omni-MMSI-R, a reference-guided pipeline that achieves accurate social interaction understanding via tool-generated identity-attributed social cues combined with chain-of-thought reasoning.
+Ours proposes the Omni-MMSI task—understanding multi-person social interactions from raw audio-visual inputs rather than pre-processed oracle social cues. It designs the Omni-MMSI-R reference-guided pipeline, achieving accurate social interaction understanding through tool-generated identity-attributed social cues combined with Chain-of-Thought (CoT) reasoning.
 
 ## Background & Motivation
 
-Multimodal multi-person social interaction (MMSI) understanding aims to interpret human behaviors in social scenes and is foundational for building socially intelligent AI systems. Prior work (e.g., speaking target identification STI, pronoun coreference resolution PCR) has made notable progress, but rests on a fundamental assumption: **identity-attributed social cues are provided in perfect oracle form** (e.g., "who says what" and "where each person is" are given as known inputs).
+Multimodal Multi-person Social Interaction (MMSI) understanding aims to interpret human behavior in social scenes, forming the foundation for social intelligent AI systems. While existing research (e.g., Speaker Target Identification STI, Pronominal Coreference Resolution PCR) has made significant progress, a fundamental assumption exists: **identity-attributed social cues are perfectly provided as oracle inputs**, meaning "who is saying what" and "where everyone is" are known a priori.
 
-In real-world deployment, however, AI assistants must perceive and reason from raw audio-visual data. Switching from oracle to raw inputs yields:
-- An average accuracy drop of **28.1%** for prior pipelines (Lee et al., Li et al.)
-- A drop of **9.52%** for human annotators and state-of-the-art Omni-LLMs (Qwen2.5 Omni, Gemini 2.5 Pro)
+However, in real-world deployment, AI assistants must perceive and reason from raw audio-visual data. When switching from oracle inputs to raw inputs:
+- Performance of previous pipelines (Lee et al., Li et al.) drops by an average of **28.1%**.
+- Performance of human annotators and advanced Omni-LLMs (Qwen2.5 Omni, Gemini 2.5 Pro) also decreases by **9.52%**.
 
-**The core bottleneck is identity attribution**:
-- **Visual attribution**: Existing detectors are prone to identity swaps in multi-person scenes under occlusion or overlap (e.g., Gemini assigns identities by left-to-right spatial order and fails when detection breaks down)
-- **Speech attribution**: Transcribed speech cannot be reliably matched to the correct speaker (recognized content is frequently attributed to the wrong person)
+**Key Challenge is Identity Attribution**:
+- **Visual Attribution**: Existing detectors are prone to identity swaps during occlusion or overlap in multi-person scenes (e.g., Gemini assigns identities based on left-to-right spatial order, leading to errors when detection fails).
+- **Speech Attribution**: Post-ASR systems often fail to correctly match utterances with speakers (the recognized content is frequently attributed to the wrong person).
 
 ## Method
 
 ### Overall Architecture
 
-Omni-MMSI-R is a reference-guided LLM pipeline:
+Omni-MMSI shifts multi-person social interaction understanding from assuming "perfect oracle identity-attributed cues" to "perception from raw audio-visual data," where the bottleneck is identity attribution—identifying who is speaking and where they are. Omni-MMSI-R is a reference-guided LLM pipeline, formally defined as:
 
 $$f: (P, I_{AV}, \mathcal{R}) \rightarrow X_{answer}$$
 
-The input consists of a system prompt $P$, raw audio-visual content $I_{AV}$, and a reference set $\mathcal{R} = \{(a_i, v_i)\}_{i=1}^N$ comprising representative voice and appearance samples for each participant.
+The input consists of a system prompt $P$, raw audio-visual data $I_{AV}$, and a reference set $\mathcal{R} = \{(a_i, v_i)\}_{i=1}^N$ (representative voice and appearance for each participant). The **Mechanism** involves: loading references $\rightarrow$ generating identity-attributed cues using specialized tools $\rightarrow$ performing CoT reasoning via Omni-LLM $\rightarrow$ outputting the answer. The core idea is to delegate "identity" to reliable specialized tools before performing social reasoning on attributed cues.
 
-Pipeline: Reference Loading → Tool-Based Identity-Attributed Cue Generation → Omni-LLM Chain-of-Thought Reasoning → Answer Output
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    AV["Raw Audio-Visual I_AV"] --> TOOL
+    REF["Reference Guidance<br/>(Voice, Appearance) database per person"] --> TOOL
+    subgraph TOOL["Tool-based Social Cue Extraction"]
+        direction TB
+        A1["Whisper Transcription<br/>Timestamped utterances"] --> A2["SpeechBrain Speaker Verification<br/>Utterance ↔ Ref Voice cosine similarity"]
+        V1["YOLO Detection<br/>Participant boxes in final frame"] --> V2["OSNet Re-ID<br/>Detection box ↔ Ref Image matching"]
+    end
+    TOOL --> CUE["Verbal Cues (Who said what)<br/>+ Non-verbal Cues (Where everyone is)"]
+    CUE --> COT
+    subgraph COT["Omni-LLM 2-step CoT Reasoning"]
+        direction TB
+        S1["Speaker Confirmation<br/>Voice matching + Lip motion"] --> S2["Referential Reasoning<br/>Dialogue context + Gaze / Finger direction"]
+    end
+    COT --> OUT["Social Interaction Answer<br/>(STI / PCR)"]
+```
 
 ### Key Designs
 
-1. **Reference Guidance**:
+**1. Reference Guidance: Profiling participants like acquaintances**
 
-    - Core insight: Humans recognize acquaintances by their appearance and voice, leveraging such memory for identity association when interpreting social interactions
-    - Upper-body images and speech clips are manually cropped/extracted per participant to construct reference pairs
-    - A total of 69 audio-visual reference profiles are constructed across participants
-    - In practice, such references can be collected via device registration or verification workflows
+General LLMs frequently misattribute identities in multi-person occlusion scenarios. Omni-MMSI-R draws inspiration from the human ability to "associate after remembering appearance and voice." It constructs a reference pair for each participant by manually cropping upper-body images and extracting speech segments, totaling 69 audio-visual profiles. In deployment, these can be collected via device registration/verification, providing a baseline identity database for social reasoning.
 
-2. **Tool-Based Social Cue Extraction**:
+**2. Tool-based Social Cue Extraction: Identifying via specialized models instead of LLMs**
 
-    - **Audio tools**:
-        - Whisper transcribes audio into timestamped utterance sequences
-        - SpeechBrain performs speaker verification for each utterance: utterances and reference voice clips are encoded into embeddings, and cosine similarity is computed; the reference with the highest similarity is assigned as the predicted speaker identity
-    - **Visual tools**:
-        - YOLO detects bounding boxes of all visible participants in the last video frame
-        - OSNet performs person re-identification on each detection: cropped detections and reference images are encoded into visual embeddings, and the reference with the highest similarity is assigned as the predicted visual identity
-    - Output: identity-attributed verbal cues (who said what) + identity-attributed non-verbal cues (where each person is)
+Accurate identity attribution relies on task-specific tools. On the audio side, Whisper converts audio into timestamped utterance sequences, and SpeechBrain performs speaker verification by encoding utterances and references into embeddings to calculate cosine similarity. On the visual side, YOLO detects bounding boxes in the final frame, and OSNet performs Person Re-ID by matching boxes to reference images. These outputs form identity-attributed verbal and non-verbal cues for downstream reasoning.
 
-3. **CoT Social Reasoning**:
+**3. CoT Social Reasoning: Mapping cues to references via a two-step chain**
 
-    - A structured two-step chain-of-thought reasoning process is designed:
-        - **Speaker confirmation**: The last speaker is jointly confirmed via voice matching and visible lip motion
-        - **Reference reasoning**: The referent of the speaker's utterance is inferred by combining verbal cues (dialogue context, utterance matching) with non-verbal interaction signals (mutual gaze, pointing direction)
-    - CoT data construction: generated by Gemini 2.5 Pro → rejection sampling (retaining only correctly answered instances) → lightweight human review
+With attributed cues, the model must infer "who is talking to whom." Reasoning is designed as a two-step structured chain: first, Speaker Confirmation, which fuses voice matching and visible lip motion to lock the final speaker; second, Referential Reasoning, which combines verbal cues (context) and non-verbal signals (gaze, pointing) to infer the targeted object. CoT training data is generated via Gemini 2.5 Pro, followed by rejection sampling and manual review.
 
-4. **Model Training**:
+**4. Loss & Training: Lightweight fine-tuning on Qwen2.5-Omni**
 
-    - Fine-tuned from Qwen2.5-Omni-7B using LoRA (rank=8)
-    - LLaMA-Factory framework, cross-entropy loss, cosine learning rate schedule
-    - Learning rate $1\times10^{-4}$, 3 epochs, 16384-token context length
+The base model is Qwen2.5-Omni-7B, fine-tuned using LoRA (rank=8) via the LLaMA-Factory framework. It uses cross-entropy loss with a cosine learning rate scheduler, a learning rate of $1\times10^{-4}$, for 3 epochs with a 16,384 token context length. This allows the model to learn the two-step reasoning chain while preserving base multimodal perception.
 
 ### Loss & Training
 
-Standard cross-entropy loss is used to train the model to jointly generate the reasoning process $X_{think}$ and the final answer $X_{answer}$:
+Standard cross-entropy loss is used to train the model to generate both the reasoning process $X_{think}$ and the final answer $X_{answer}$:
 
 $$X_{answer}, X_{think} = f_\theta^{\text{Omni-LLM}}(P, I_{AV}, \mathcal{R}, \mathcal{S})$$
 
@@ -96,85 +93,85 @@ $$X_{answer}, X_{think} = f_\theta^{\text{Omni-LLM}}(P, I_{AV}, \mathcal{R}, \ma
 **Social Interaction Understanding (Ego4D + YouTube)**:
 
 | Method | Ego4D STI | Ego4D PCR | Ego4D Avg. | YouTube STI | YouTube PCR | YouTube Avg. |
-|--------|-----------|-----------|------------|-------------|-------------|--------------|
+|------|-----------|-----------|------------|-------------|-------------|--------------|
 | Qwen2.5 Omni 7B | 26.29 | 28.57 | 27.43 | 14.00 | 26.18 | 20.09 |
 | Gemini 2.5 Pro | 36.12 | 39.28 | 37.70 | 36.13 | 53.47 | 44.80 |
 | Lee et al. | 28.98 | 32.14 | 30.56 | 29.01 | 34.80 | 31.91 |
 | Li et al. | 29.73 | 32.27 | 31.00 | 26.30 | 30.14 | 28.22 |
 | **Omni-MMSI-R** | **40.57** | **45.54** | **43.06** | **37.46** | **56.62** | **47.04** |
 
-Omni-MMSI-R surpasses prior pipelines by 12%+ on Ego4D and 15%+ on YouTube.
+Omni-MMSI-R outperforms prior pipelines by over 12% on Ego4D and over 15% on YouTube.
 
 **Identity Attribution Accuracy**:
 
-| Method | Ego4D Verbal Attr. | Ego4D Non-verbal Attr. | Ego4D Avg. | YouTube Avg. |
-|--------|-------------------|----------------------|-----------|-------------|
+| Method | Ego4D Verbal | Ego4D Non-verbal | Ego4D Avg. | YouTube Avg. |
+|------|--------------|----------------|-----------|-------------|
 | Gemini 2.5 Pro | 44.75 | 26.52 | 35.64 | 58.04 |
 | Qwen3 Omni 30B | 52.61 | 57.61 | 55.11 | 55.14 |
 | **Omni-MMSI-R** | **71.09** | **86.48** | **78.79** | **76.95** |
 
-Omni-MMSI-R outperforms Omni-LLMs by approximately 23.7% on Ego4D and 18.9% on YouTube in identity attribution.
+Omni-MMSI-R surpasses Omni-LLMs in identity attribution by approximately 23.7% (Ego4D) and 18.9% (YouTube).
 
 ### Ablation Study
 
-**Reference Guidance Input Configurations (Ego4D)**:
+**Reference-guided Input Configuration (Ego4D)**:
 
-| Reference Audio | Reference Visual | Verbal Cues | Non-verbal Cues | Avg. Accuracy |
-|----------------|-----------------|-------------|----------------|---------------|
+| Ref Audio | Ref Visual | Verbal Cue | Non-verbal Cue | Avg. Acc |
+|----------|----------|----------|-----------|-----------|
 | ✗ | ✗ | ✗ | ✗ | 33.97% |
 | ✓ | ✓ | ✗ | ✗ | 35.98% |
 | ✗ | ✗ | ✓ | ✓ | 39.44% |
 | ✓ | ✓ | ✓ | ✓ | **43.06%** |
 
-Raw references and tool-extracted cues are complementary; their combination yields the best performance.
+Raw references and tool-extracted cues are complementary; joint usage yields optimal performance.
 
 **CoT Reasoning Granularity**:
 
-| Configuration | Reasoning Steps | Avg. Accuracy |
-|---------------|----------------|---------------|
-| With reference | None | 39.41% |
-| With reference | 1-step (reference reasoning) | 39.70% |
-| With reference | 2-step (speaker confirmation + reference reasoning) | **43.06%** |
-| With reference | 3-step (+ cue extraction) | 34.43% |
+| Config | Reasoning Steps | Avg. Acc |
+|------|---------|-----------|
+| W/ Ref | None | 39.41% |
+| W/ Ref | 1-step (Referential) | 39.70% |
+| W/ Ref | 2-step (Speaker + Referential) | **43.06%** |
+| W/ Ref | 3-step (+ Extraction) | 34.43% |
 
-**2-step CoT is optimal**; the 3-step variant yields a substantial drop—overly long reasoning chains distract the model and exceed its capacity given the available training data.
+**2-step CoT is optimal**. The 3-step approach causes a significant drop, as excessive reasoning chains distract the model and exceed its capacity.
 
 ### Key Findings
 
-1. **Identity attribution is the core bottleneck** when transitioning from oracle to raw inputs: state-of-the-art Omni-LLMs perform reasonably at cue extraction but fail significantly at correctly associating cues with individuals
-2. Reference guidance is more critical for smaller models (7B) than larger ones: smaller Omni-LLMs show performance degradation when provided with references (possibly failing to leverage reference information effectively), underscoring the necessity of tool assistance
-3. LLMs do not blindly trust tool-extracted cues: by jointly leveraging raw audio-visual evidence and extracted cues, the model can self-correct inaccurate cues during CoT reasoning
-4. Moderate reasoning granularity (2-step) is optimal; over-decomposing reasoning steps is harmful
-5. Audio and visual modalities contribute complementarily: audio attribution alone yields +5.87%, visual attribution alone +4.59%, and their combination +9.09%
+1. **Identity attribution is the core bottleneck** when moving from oracle to raw inputs: advanced Omni-LLMs are competent at extracting cues but fail significantly at associating them with specific individuals.
+2. Reference guidance is more critical for smaller models (7B) than large ones. Small Omni-LLMs might drop in performance if they cannot effectively utilize raw reference info, highlighting the necessity of tool assistance.
+3. LLMs do not blindly trust tools: by combining raw audio-visual evidence with extracted cues, the model can self-correct inaccurate cues during CoT reasoning.
+4. Moderate reasoning granularity (2-step) is optimal; excessive decomposition is detrimental.
+5. Audio and visual modalities are complementary: adding audio attribution alone gives +5.87%, visual alone gives +4.59%, and both give +9.09%.
 
 ## Highlights & Insights
 
-- **The problem formulation itself is highly valuable**: advancing MMSI from oracle inputs to raw inputs represents a critical step from academic research toward real-world deployment
-- The **reference guidance** design is practically motivated: analogous to face unlock or voiceprint registration workflows, collecting references in deployment scenarios is feasible
-- The combination of **tools + LLM reasoning** is more reliable than purely end-to-end LLMs—lightweight task-specific tools (Whisper/YOLO/SpeechBrain/OSNet) substantially outperform general-purpose LLMs for identity attribution
-- The CoT granularity experiment (3-step performing worse) carries meaningful practical implications: reasoning chain design must be calibrated to match model capacity and training data volume
+- **The problem definition itself is valuable**: Advancing MMSI from oracle to raw input is a critical step toward real-world deployment.
+- **Reference Guidance** is a practical design: Borrowing from face-unlock/voiceprint registration, it is feasible to collect references in deployment scenarios.
+- **Tool + LLM Reasoning** is more reliable than pure end-to-end LLMs—task-specific tools (Whisper/YOLO/SpeechBrain/OSNet) far outperform general LLMs in identity attribution.
+- The CoT granularity experiment provides practical insights: reasoning chain design must match model capacity and data volume.
 
 ## Limitations & Future Work
 
-1. Reference pairs require manual construction (upper-body images + speech clips per participant); automated reference acquisition is an important future direction
-2. Overall accuracy remains modest (43% on Ego4D, 47% on YouTube), indicating a gap before practical deployment
-3. CoT data is generated by Gemini 2.5 Pro, potentially introducing biases from automated generation
-4. Validation is limited to a Werewolf game dataset, restricting scenario diversity
-5. Errors in the current tool chain propagate to downstream reasoning; more robust error-handling mechanisms are needed
+1. Reference pairs currently require manual construction; automated reference acquisition is an important future direction.
+2. Overall accuracy remains relatively low (43% Ego4D, 47% YouTube), indicating a gap before real-world deployment.
+3. CoT data generated via Gemini 2.5 Pro may introduce automated generation bias.
+4. Validation is limited to Werewolf game datasets, lacking scene diversity.
+5. Current toolchain errors propagate to downstream reasoning, necessitating more robust error-handling mechanisms.
 
 ## Related Work & Insights
 
-- Directly extends prior MMSI work by Lee et al. and Li et al.—representing a paradigm shift from oracle to raw inputs
-- Represents the first systematic exploration of LLM tool use in social understanding, bridging MMSI and LLM agents
-- The application of CoT reasoning in social scenarios demonstrates the value of structured reasoning for fine-grained multimodal understanding
-- Implications for practical AI assistants: in multi-person interaction settings, identity tracking and attribution capabilities are a prerequisite for understanding social dynamics
+- Direct extension of Lee et al. and Li et al. MMSI research—a paradigm shift from oracle to raw.
+- First systematic exploration of LLM tool usage in social understanding, bridging MMSI and LLM agents.
+- Demonstrates the value of structured reasoning for fine-grained multimodal understanding in social contexts.
+- Insight for AI assistants: Identity tracking/attribution is a prerequisite for understanding social dynamics in multi-person scenarios.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Novel task formulation and practical reference guidance design; methodologically an engineering integration rather than a fundamentally new architecture)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Multiple baselines, multi-LLM comparisons, extensive ablations, and qualitative analysis)
-- Writing Quality: ⭐⭐⭐⭐ (Problem motivation is clear; quantitative evidence effectively demonstrates the oracle-to-raw performance gap)
-- Value: ⭐⭐⭐⭐ (Advances the MMSI field toward more realistic deployment scenarios)
+- Novelty: ⭐⭐⭐⭐ (Novel task definition, practical reference-guided design, though methodology leverages engineering integration over architecture).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Multiple baselines, LLM comparisons, detailed ablation, qualitative analysis).
+- Writing Quality: ⭐⭐⭐⭐ (Clear motivation, quantitative evidence effectively demonstrates the oracle-raw gap).
+- Value: ⭐⭐⭐⭐ (Drives the MMSI field toward more realistic scenarios).
 
 <!-- RELATED:START -->
 
@@ -182,11 +179,11 @@ Raw references and tool-extracted cues are complementary; their combination yiel
 
 ## Related Papers
 
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](../../ICLR2026/audio_speech/human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
-- [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](../../ICML2026/audio_speech/towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
 - [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
-- [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](../../ICLR2026/audio_speech/query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
-- [\[ICML 2026\] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition of Single-Source Audio](../../ICML2026/audio_speech/vocsim_a_training-free_benchmark_for_zero-shot_content_identity_in_single-source.md)
+- [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](../../ICML2026/audio_speech/towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 
 </div>
 

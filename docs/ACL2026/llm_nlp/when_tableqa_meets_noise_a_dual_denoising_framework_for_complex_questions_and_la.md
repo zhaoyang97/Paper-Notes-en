@@ -1,47 +1,42 @@
 ---
 title: >-
-  [Paper Note] When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables
+  [Paper Note] 当 TableQA 遇到噪声：复杂问题与大表的双重去噪框架
 description: >-
-  [ACL 2026][LLM/NLP][TableQA] By decomposing semantic units in questions and constructing evidence trees for transparent table pruning…
+  [ACL 2026][LLM (Other)][LLM Reasoning] By decomposing semantic units in questions and constructing evidence trees for transparent table pruning, the EnoTab framework achieves significant performance gains when processing complex questions and ultra-large tables, effectively mitigating the negative impact of noisy data on reasoning through a dual denoising m
 tags:
-  - "ACL 2026"
-  - "LLM/NLP"
-  - "TableQA"
-  - "Data Denoising"
-  - "LLM Reasoning"
-  - "Evidence Filtering"
-  - "Table Pruning"
+  - ACL 2026
+  - LLM (Other)
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: f9534e0cc8354288
+content_hash: bad51edfd2e6907d
 ---
-
 # When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables
 
 **Conference**: ACL 2026  
 **arXiv**: [2509.17680](https://arxiv.org/abs/2509.17680)  
 **Code**: Not provided  
-**Area**: LLM / NLP / TableQA  
-**Keywords**: TableQA, Data Denoising, LLM Reasoning, Evidence Filtering, Table Pruning
+**Area**: LLM / NLP / Table Question Answering  
+**Keywords**: Table Question Answering, Data Denoising, LLM Reasoning, Evidence Filtering, Table Pruning
 
 ## TL;DR
-By decomposing semantic units in questions and constructing evidence trees for transparent table pruning, the EnoTab framework achieves significant performance gains when handling complex questions and ultra-large tables, effectively mitigating the negative impact of noisy data on reasoning through a dual denoising mechanism.
+By decomposing semantic units in questions and constructing evidence trees for transparent table pruning, the EnoTab framework achieves significant performance gains when processing complex questions and ultra-large tables, effectively mitigating the negative impact of noisy data on reasoning through a dual denoising mechanism.
 
 ## Background & Motivation
 
-**Background**: With advancements in LLM reasoning capabilities, Table Question Answering (TableQA) has become a core task in NLP. However, in practical applications (such as finance and healthcare), question complexity and table scale have increased significantly, leading to a substantial rise in data noise.
+**Background**: With the advancement of LLM reasoning capabilities, Table Question Answering (TableQA) has become a core task in NLP. However, in practical applications (e.g., finance, healthcare), question complexity and table scale continue to increase, leading to a significant growth in data noise.
 
-**Limitations of Prior Work**: Two core problems exist:
+**Limitations of Prior Work**: There are two core issues:
 
-- Complex questions contain spurious correlations (e.g., "in Vienna" when such data is absent from the table), which easily mislead LLMs.
-- In ultra-large tables, only 1-2% of rows are relevant to the answer, while the remaining data acts as noise that interferes with reasoning.
+- Complex questions contain spurious correlations (e.g., "in Vienna" when no such data exists in the table), which easily mislead LLMs.
+- In ultra-large tables, only 1-2% of rows are relevant to the answer, while the remaining data acts as noise interfering with reasoning.
 
-**Key Challenge**: Existing methods struggle to balance "accurate denoising" and "retaining necessary information." Program-generator-based table pruning methods often rely on black-box decisions; once an error occurs in deletion, the process must be entirely restarted. Question decomposition methods are prone to misjudging spurious correlations.
+**Key Challenge**: Existing methods struggle with the trade-off between "accurate denoising" and "retaining necessary information." Program-generation-based table pruning methods often employ black-box decision-making, where a single incorrect deletion requires a complete restart; question decomposition methods are prone to errors in judging spurious correlations.
 
-**Goal**: Propose a framework that can effectively identify irrelevant parts of a question while making the table pruning process transparent.
+**Goal**: To propose a framework that can effectively identify irrelevant parts of a question while making the table pruning process transparent.
 
-**Key Insight**: The authors observe that effective TableQA requires two capabilities: (1) Relevance filtering—identifying and ignoring spurious correlations in questions; (2) Table pruning—removing irrelevant data while retaining all information required for the answer. These two capabilities are independent yet complementary.
+**Key Insight**: The authors observe that effective TableQA requires two capabilities: (1) Relevance filtering—identifying and ignoring spurious correlations in the question; (2) Table pruning—removing irrelevant data while retaining all information required for the answer. These two capabilities are independent yet complementary.
 
-**Core Idea**: Through the explicit extraction and evaluation of "evidence"—the minimum semantic unit—question denoising and table denoising are implemented separately. In the table pruning stage, an Evidence Tree is introduced as an observable execution path, making every step verifiable and reversible.
+**Core Idea**: Through the explicit extraction and evaluation of "evidence" as the minimal semantic unit, question denoising and table denoising are implemented separately. An Evidence Tree is introduced in the table pruning phase as an observable execution path, making every step verifiable and reversible.
 
 ## Method
 
@@ -49,29 +44,51 @@ By decomposing semantic units in questions and constructing evidence trees for t
 
 EnoTab operates in three stages:
 
-1. **Evidence Generation and Evaluation**: The LLM decomposes complex questions into minimum semantic units (evidence), where each evidence $e=(area, condition, action)$ represents an attribute constraint in the question. For example, "cities in Tel Aviv" corresponds to $(District\ \text{column}, Tel\ Aviv, \text{string match})$. Reliability is filtered through multi-round consistency checks and usability tests.
-2. **Evidence Tree Construction and Execution**: A binary tree is constructed based on the reliable evidence set, where leaf nodes are evidence (executing a single filter) and internal nodes are logical relations (AND/OR). The pruned sub-table is obtained through post-order traversal. If an AND node produces an empty table, a rollback mechanism is triggered.
-3. **Answer Generation**: The cleaned evidence and sub-tables are sent to the LLM to generate the final answer.
+1.  **Evidence Generation & Evaluation**: First, a two-stage retrieval (LSH coarse screening + semantic/lexical reranking) selects $k=10$ representative rows from the ultra-large table as context. Then, the LLM decomposes the complex question into minimal semantic units (evidence), where each evidence $e=(area, condition, action)$ represents an attribute constraint in the question. For example, "City of Tel Aviv" corresponds to $(District\ \text{column}, Tel\ Aviv, \text{string match})$. A reliable evidence set is filtered through multi-round consistency tests and usability tests.
+2.  **Evidence Tree Construction & Execution**: A binary tree is constructed based on the reliable evidence set, where leaf nodes are evidence (executing a single filter) and internal nodes represent logical relations (AND/OR). The pruned sub-table is obtained step-by-step through a post-order traversal of the tree. If an AND node produces an empty table, a rollback mechanism is triggered.
+3.  **Answer Generation**: The cleaned evidence and sub-table are sent to the LLM to generate the final answer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Complex Question Q + Ultra-large Table T"] --> B
+    subgraph RET["Two-stage Retrieval"]
+        direction TB
+        B["LSH Keyword Coarse Screening"] --> C["Semantic + Lexical Reranking<br/>→ top-k=10 representative rows"]
+    end
+    C --> E
+    subgraph EQD["Evidence Generation & Dual Evaluation of Consistency/Usability"]
+        direction TB
+        E["Evidence Generation<br/>Question decomposition into (column, condition, action) triples"] --> F["Consistency Test: 5 rounds S≥0.8"]
+        F --> G["Usability Test: Toolbox table matching"]
+    end
+    G -->|"Reliable Evidence Set E_r"| I
+    subgraph ETD["Evidence Tree Construction & Post-order Rollback"]
+        direction TB
+        I["Build Binary Evidence Tree<br/>Leaf=Evidence, Internal=AND/OR"] --> J["Post-order Traversal for Step-wise Pruning"]
+        J -->|"AND node produces empty table"| K["And2Or Conversion to Union + Validator Rollback"]
+        K --> J
+    end
+    J --> L["Answer Generation<br/>E_r + Sub-table → LLM → Answer"]
+```
 
 ### Key Designs
 
-1. **Dual Evaluation of Evidence Consistency and Usability**:
+**1. Two-stage Retrieval: Coarse screening followed by reranking to feed high-quality few-shot samples for evidence generation**
 
-    - **Function**: Determine if each decomposed semantic unit is truly relevant to the answer reasoning.
-    - **Mechanism**: Instead of relying directly on LLM scores, two objective criteria are used. Consistency is checked via 5 rounds of generation—evidence appearing stably ($S \geq 0.8$) is considered important. Usability is checked via a toolkit $\mathcal{P}$ to see if the evidence matches actual data in the table. Only evidence passing both tests is retained.
-    - **Design Motivation**: Addressing the "spurious correlation" pain point in question decomposition. Consistency mimics the stability of human reasoning, while usability ensures evidence is supported by table data, preventing hallucinations.
+Useful rows in ultra-large tables often account for only 1-2%. Using the full table for evidence generation is computationally expensive and easily biased by noise. This paper uses two-stage retrieval to select $k=10$ representative rows as context: the first stage uses LSH (Locality Sensitive Hashing) for fast but coarse keyword filtering; the second stage calculates the relevance of each row to the question:
 
-2. **Post-order Rollback Mechanism of Evidence Tree**:
+$$Score(r,Q) = 0.7 \cdot S_{sem}(r,Q) + 0.3 \cdot S_{lex}(r,Q),$$
 
-    - **Function**: Detect and repair abnormal states (e.g., empty tables) during pruning to prevent accidental deletion of key data.
-    - **Mechanism**: During post-order traversal, if an AND node results in an empty table, an And2Or operation is executed: changing AND to OR to obtain a broader superset. If it remains empty or the validator $M_i$ determines the information is incomplete, the system rolls back to the previous node's result and retries (up to 2 times).
-    - **Design Motivation**: Unlike black-box SQL methods that require a full restart upon error, every step in an Evidence Tree is observable. The key insight of And2Or is that for TableQA, recall is more important than precision (missing evidence cannot be recovered, but extra rows can be filtered later).
+where $S_{sem}$ is provided by a pre-trained embedding model and $S_{lex}$ is measured by edit distance. The top rows are selected after a 7:3 weighted fusion. Using these ~10 representative samples instead of the full table for subsequent evidence generation maintains evidence quality while reducing costs.
 
-3. **Two-stage Retrieval to Optimize Evidence Generation Efficiency**:
+**2. Dual Evaluation of Evidence Consistency and Usability: Replacing LLM "one-shot" decisions with two objective metrics**
 
-    - **Function**: Efficiently select k=10 representative rows from ultra-large tables as context for evidence generation.
-    - **Mechanism**: Stage one uses LSH for coarse keyword filtering. Stage two calculates the semantic similarity between candidate rows and the question: $Score(r,Q) = 0.7 \cdot S_{sem}(r,Q) + 0.3 \cdot S_{lex}(r,Q)$, where $S_{sem}$ uses pre-trained embedding models and $S_{lex}$ uses edit distance.
-    - **Design Motivation**: Direct evidence generation on a full table is computationally expensive and error-prone; using representative samples maintains quality while significantly reducing costs.
+Question decomposition methods are most likely to fail on spurious correlations—sentences might mention "in Vienna" when the table has no such entry, yet the LLM might take it as truth. Instead of letting the LLM directly score evidence, this paper decomposes questions into evidence triples and applies two objective tests. The consistency test verifies stability through repetition: independent decomposition is performed for 5 rounds; if an evidence appears stably with a consistency score $S \ge 0.8$, it is considered important, mimicking a human judgment that remains valid after repeated scrutiny. The usability test verifies execution via tools: a toolbox $\mathcal{P}$ checks if the evidence can find matching data in the table, preventing the inclusion of fabricated constraints. Only evidence passing both tests enters the reliable evidence set $E_r$—consistency blocks unstable pseudo-correlations, while usability blocks hallucinations not found in the table.
+
+**3. Post-order Rollback Mechanism in Evidence Trees: Transforming black-box pruning into observable, reversible execution**
+
+Once the reliable evidence set is obtained, irrelevant rows must be deleted. SQL/program-based table pruning is a black box; if a step deletes incorrectly, the entire process must restart. This paper organizes reliable evidence into a binary tree—leaves are evidence and internal nodes are AND/OR logic—and performs a post-order traversal to gradually shrink the sub-table. Crucially, it allows on-the-spot remediation: if an AND node produces an empty table after intersection, an "And2Or" operation is triggered to change the AND to an OR, adopting a more relaxed union/superset. If it remains empty after the change, or if a validator $M_i$ judges the information incomplete, it rolls back to the result of the previous node to retry (up to 2 times). The insight behind And2Or is that in TableQA, recall is more valuable than precision—missing evidence can never be recovered, but extra rows can be filtered later.
 
 ### Loss & Training
 
@@ -81,7 +98,7 @@ This method is entirely training-free, utilizing off-the-shelf LLMs (GPT-4o/4o-m
 
 ### Main Results
 
-Evaluated on two large-scale table datasets (STQA-L for natural ultra-large tables, STQA-N for noise-injected tables) against several baselines:
+Compared with various baselines on two large-scale table datasets (STQA-L for natural ultra-large tables, STQA-N for tables with injected noise):
 
 | Method | STQA-N (GPT-4o) | STQA-N (GPT-4o-mini) | STQA-L (GPT-4o) | STQA-L (GPT-4o-mini) | Average Gain |
 |------|---------|---------|---------|---------|---------|
@@ -94,71 +111,59 @@ Evaluated on two large-scale table datasets (STQA-L for natural ultra-large tabl
 | Configuration | STQA-N Drop | STQA-L Drop | Description |
 |------|---------|---------|---------|
 | Full Model | - | - | - |
-| W/O Consistency Eval | -6.3% | -5.6% | Spurious evidence is retained |
-| W/O Usability Eval | -8.2% | -6.8% | Evidence not in the table is applied |
-| W/O And2Or Rollback | -4.2% | -3.8% | Empty tables cannot recover; data loss |
-| W/O Table Validator | -4.2% | -2.5% | No integrity check; may miss answer data |
+| w/o Consistency Eval | -6.3% | -5.6% | Spurious evidence is retained |
+| w/o Usability Eval | -8.2% | -6.8% | Evidence not in table is applied |
+| w/o And2Or Rollback | -4.2% | -3.8% | Empty tables cannot recover; data lost |
+| w/o Table Validator | -4.2% | -2.5% | Possible omission of answer data |
 
-Conclusion: Consistency and usability evaluations contribute the most (5-8% drops each), indicating that the two-stage question denoising is the core of the framework.
-
-### Standard Benchmark Results
-
-Performance on WikiTQ and TabFact:
-
-| Method | WikiTQ | TabFact | Average |
-|------|--------|---------|------|
-| Chain-of-Table | 67.1 | 84.2 | 75.7 |
-| TabLaP | 72.8 | 86.9 | 79.9 |
-| **EnoTab (Ours)** | **74.6** | **89.2** | **81.9** |
-| Relative Gain | +1.8% | +2.3% | +2.0% |
-
-Table compression analysis: EnoTab achieves significant compression while maintaining accuracy. STQA-L dropped from an average of 8,967 tokens to 2,176 (75.7% compression), and STQA-N dropped from 26,742 tokens to 2,893 (89.2% compression).
+Conclusion: Consistency and usability evaluations contribute the most (5-8% drop each), indicating that the two-stage question denoising design is the core of the framework.
 
 ### Key Findings
 
-- **Adaptability to Complex Questions**: In WikiTQ, categorized by GPT-4o difficulty levels (Easy/Medium/Hard/ExtraHard), EnoTab maintains a clear advantage in ExtraHard scenarios.
-- **Cross-model Robustness**: Comparing closed-source (GPT-4o/4o-mini) and open-source models (LLaMA-2-70B/Qwen-1.5-70B), end-to-end QA dropped 15% from closed to open-source, while EnoTab only dropped 3-5%.
-- **Noise Resistance**: After injecting distracting content into WikiTQ, end-to-end QA dropped by over 20%, while EnoTab remained stable.
+- **Adaptability to Complex Questions**: In the WikiTQ dataset, categorized by GPT-4o's multi-round accuracy (Easy/Medium/Hard/ExtraHard), EnoTab maintains a significant advantage in ExtraHard scenarios.
+- **Cross-model Robustness**: Comparing closed-source (GPT-4o/4o-mini) and open-source models (LLaMA-2-70B/Qwen-1.5-70B), End-to-End QA performance drops by 15% from closed to open source, whereas EnoTab drops only 3-5%.
+- **Noise Resistance**: When interfering content is injected into WikiTQ, End-to-End QA drops by 20%+, while EnoTab remains stable.
+- **Table Compression**: EnoTab achieves significant compression while ensuring correctness. STQA-L tokens dropped from 8,967 to 2,176 (75.7% compression), and STQA-N from 26,742 to 2,893 (89.2% compression).
 
 ## Highlights & Insights
 
-- **Innovation of Evidence as Minimum Unit**: Unlike traditional decomposition that breaks down a question into sub-questions, this paper decomposes it into $(column, condition, action)$ triples. This fine-grained abstraction significantly reduces judgment complexity.
-- **Observable Table Pruning Path**: The Evidence Tree transforms a black-box pruning process into explicit binary tree execution, where every node is verifiable and every step is reversible. Combined with the And2Or rollback, it finds a practical balance between precision and recall.
-- **Training-free Plug-and-play Solution**: Based entirely on off-the-shelf LLMs and tool combinations, it requires no fine-tuning or new parameters, greatly reducing deployment costs.
+- **Innovation of Evidence as Minimal Units**: Unlike traditional decomposition methods that break down the whole question, this paper decomposes it into $(column, condition, action)$ triples. Assessing each unit independently reduces judgment complexity.
+- **Observable Table Pruning Paths**: The Evidence Tree transforms the black-box pruning process into explicit binary tree execution, where every node is verifiable and reversible. Combined with the And2Or rollback mechanism, it finds a practical balance between "precision" and "recall."
+- **Training-free Plug-and-play Solution**: Built entirely on existing LLMs and tools without the need for fine-tuning or new parameters, significantly reducing deployment costs.
 
 ## Limitations & Future Work
 
-- **Limitations in Handling Composite Values**: Insufficient handling of special formats like "1-1" (win-loss records) or "251-32=189" (composite calculations).
-- **Single Table Assumption**: Currently focused on single-table QA. Performance on multi-table relational questions remains unclear.
-- **Validator Limitations**: The integrity validator $M_i$ sees performance degradation on certain structured data, and rollback attempts are limited.
-- **Future Directions**: (1) Enhance AND node discrimination to reduce reliance on And2Or; (2) Extend to joint reasoning in multi-table scenarios; (3) Develop structured handling for composite value types.
+- **Composite Value Processing**: Insufficient handling of special formats like "1-1" (win-loss records) or "251-32=189" (composite calculations).
+- **Single Table Assumption**: Currently evaluates single-table QA. Performance on multi-table cross-referencing remains unclear.
+- **Validator Limitations**: The table integrity validator $M_i$ shows performance degradation on some structured data, and the number of rollbacks is limited.
+- **Future Directions**: (1) Enhance the discrimination of AND nodes to reduce reliance on And2Or; (2) Extend to joint reasoning in multi-table scenarios; (3) Develop structured processing for composite value types.
 
 ## Related Work & Insights
 
-**vs. Question Decomposition Methods** (Dater/Chain-of-Table): These methods also decompose questions but at a coarser granularity (sub-questions), making it difficult to identify spurious correlations. EnoTab avoids this via fine-grained evidence units (triplets) and objective consistency evaluation.
+**vs. Question Decomposition Methods** (Dater/Chain-of-Table): These methods also decompose questions but at a coarser granularity (sub-questions), making spurious correlations hard to identify. EnoTab avoids this via fine-grained evidence units and objective consistency assessments.
 
-**vs. Table Pruning Methods** (H-Star/TabSQLify): These methods prune via SQL/Python programs, where black-box characteristics make errors hard to detect or correct. EnoTab's Evidence Tree makes the pruning logic explicit, observable, and verifiable.
+**vs. Table Pruning Methods** (H-Star/TabSQLify): These methods prune via SQL/Python programs, where black-box characteristics make errors hard to detect and correct. EnoTab's Evidence Tree makes pruning logic explicit, observable, and verifiable.
 
-**Insights**: The triangular combination of fine-grained decomposition + objective evaluation + observable execution is highly relevant for other tasks involving structured data and complex reasoning, such as code generation and knowledge graph queries.
+**Insight**: The triangular combination of fine-grained decomposition + objective evaluation + observable execution is a valuable reference for other tasks involving structured data and complex reasoning (e.g., code generation, KG queries).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The design of evidence as the minimum unit is innovative and addresses transparency pain points.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive analysis across 4 datasets, 3 classes of baselines, full ablation, and cross-model adaptation.
-- **Writing Quality**: ⭐⭐⭐⭐ Logical and detailed, though some sections are slightly verbose.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses real pain points in practical applications (complex questions + large tables + noise) with no training required and easy deployment.
+- Novelty: ⭐⭐⭐⭐⭐ The design of evidence as the minimal unit is novel and addresses the "transparency" pain point in decomposition and pruning.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across 4 datasets, 3 types of baselines, full ablation, and cross-model adaptation.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and sufficient detail, though some sections are slightly verbose.
+- Value: ⭐⭐⭐⭐⭐ Addresses real pain points in practical applications (complex questions + large tables + noise) with a training-free, easily deployable solution.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
-- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
-- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
-- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
-- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ACL 2026\] 等等，还有出路：一个对话脱轨预测的决策机制](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
+- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
+- [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
+- [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
+- [\[ACL 2026\] Hot-Start from Pixels: Low-Resolution Visual Tokens for Chinese Language Modeling](hot-start_from_pixels_low-resolution_visual_tokens_for_chinese_language_modeling.md)
 
 </div>
 

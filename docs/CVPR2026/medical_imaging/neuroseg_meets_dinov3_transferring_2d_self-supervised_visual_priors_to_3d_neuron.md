@@ -2,82 +2,89 @@
 title: >-
   [Paper Note] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 description: >-
-  [CVPR 2026][Medical Imaging][Neuron segmentation] NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv3 pretrained 2D convolutional kernels into 3D operators…
+  [CVPR 2026][Medical Imaging][DINOv3] NeurINO proposes to initialize 3D neuron segmentation models by inflating 2D kernels pre-trained by DINOv3 into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. It achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Neuron segmentation"
-  - "DINOv3"
-  - "2D-to-3D transfer"
-  - "topology-aware loss"
-  - "data-efficient learning"
+  - CVPR 2026
+  - Medical Imaging
+  - DINOv3
 date: 2026-05-08
-content_hash: ae9c0eb363e6f91d
+content_hash: 7efa1964ffd4addc
 ---
-
 # NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.23104](https://arxiv.org/abs/2603.23104)  
 **Code**: [https://github.com/yy0007/NeurINO](https://github.com/yy0007/NeurINO)  
-**Area**: Medical Imaging / 3D Segmentation
-**Keywords**: Neuron segmentation, DINOv3, 2D-to-3D transfer, topology-aware loss, data-efficient learning
+**Area**: Medical Imaging / 3D Segmentation  
+**Keywords**: Neuron Segmentation, DINOv3, 2D-3D Transfer, Topology-Aware Loss, Data-Efficient Learning
 
 ## TL;DR
 
-NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv3 pretrained 2D convolutional kernels into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. The method achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS across four neuroimaging datasets.
+NeurINO proposes to initialize 3D neuron segmentation models by inflating 2D kernels pre-trained by DINOv3 into 3D operators, while introducing a Topology-Aware Skeleton Loss (TASL) to explicitly supervise skeleton-level structural fidelity. It achieves average improvements of 2.9% in ESA, 2.8% in DSA, and 3.8% in PDS across four neuroimaging datasets.
 
 ## Background & Motivation
 
-1. **Background**: Accurate reconstruction of neuronal morphology from volumetric optical microscopy images is critical for brain connectomics, requiring the tracking of axons and dendrites over long-range projections across multiple brain regions. Deep learning methods such as 3D U-Net and V-Net have substantially improved segmentation quality.
+1. **Background**: Accurate reconstruction of neuronal morphology from volumetric optical microscopy images is vital for brain connectomics, requiring the tracing of long-distance projections of axons and dendrites across multiple brain regions. Deep learning methods (3D U-Net, V-Net, etc.) have significantly improved segmentation quality.
 
 2. **Limitations of Prior Work**:
-    - **Data scarcity**: Acquiring and annotating 3D neuroimaging data is costly and laborious, limiting the performance of data-driven approaches;
-    - **Lack of structural supervision**: Existing methods typically optimize voxel-level accuracy (Dice/CE loss) without explicit supervision of branching topology or connectivity integrity, leading to results that may perform well on voxel metrics yet be topologically unfaithful (broken or merged structures);
-    - **Absence of 3D foundation models**: 2D visual foundation models (DINO, SAM, etc.) excel on natural images, but no analogous general-purpose foundation model exists for 3D biomedical volumetric data.
+    - **Data Scarcity**: 3D neuroimaging data is difficult to acquire and extremely costly to annotate, limiting the performance of data-driven methods;
+    - **Lack of Structural Supervision**: Existing methods typically optimize voxel-level accuracy (Dice/CE loss), lacking explicit supervision for branch topology and connection integrity. This leads to results that may perform well on voxel metrics but lack topological fidelity (e.g., breaks or merge errors);
+    - **Lack of 3D Foundation Models**: 2D vision foundation models (DINO, SAM, etc.) perform exceptionally on natural images, but no similar general-purpose foundation models exist in the 3D biomedical field.
 
-3. **Key Challenge**: 2D foundation models possess rich semantic priors but cannot be directly applied to 3D volumetric data, while the scarcity of 3D data precludes training strong feature representations from scratch.
+3. **Key Challenge**: 2D foundation models possess rich semantic priors but cannot be directly applied to 3D volumetric data, while 3D data is insufficient to train powerful feature representations from scratch.
 
-4. **Goal**: To efficiently transfer the visual priors of 2D foundation models to 3D neuron segmentation while ensuring morphological topological fidelity.
+4. **Goal**: To efficiently transfer visual priors from 2D foundation models to 3D neuron segmentation tasks while ensuring morphological topological fidelity.
 
-5. **Key Insight**: Decompose 3D volumetric learning into intra-slice feature extraction (exploiting DINOv3 priors) and inter-slice aggregation (requiring additional learning), while employing a topology-aware loss to guide cross-slice structural learning.
+5. **Key Insight**: Decompose 3D volumetric learning into intra-slice feature extraction (utilizing DINOv3 priors) and inter-slice aggregation (requiring additional learning), while guiding cross-slice structural learning with a topology-aware loss.
 
-6. **Core Idea**: Transfer DINOv3's 2D weights to a 3D encoder via an inflation strategy, allowing the model to focus solely on learning inter-slice correlations, and enforce morphological fidelity through a skeleton-level topological loss.
+6. **Core Idea**: Use an inflation strategy to transfer DINOv3 2D weights to a 3D encoder, allowing the model to focus on learning inter-slice correlations, and ensure morphological fidelity using a skeleton-level topological loss.
 
 ## Method
 
 ### Overall Architecture
 
-A 3D neuroimaging patch is fed into a 3D encoder initialized by inflating DINOv3 ConvNeXt weights, which extracts multi-scale features. A symmetric MedNeXt-style decoder then recovers fine-grained neuronal morphology. Multi-level outputs are jointly supervised by Dice + CE + TASL with deep supervision.
+This paper addresses a practical dilemma: 3D neuroimaging data is scarce and expensive, preventing 3D segmentation models trained from scratch from learning strong features, while the "well-informed" DINOv3 is pre-trained only on 2D natural images and cannot be directly moved to volumetric data. The overall approach of NeurINO is to decouple this transfer—leaving intra-slice semantic extraction to the off-the-shelf DINOv3 priors and inter-slice structural continuity to be learned by the model.
+
+Specifically, a 3D neuroimaging patch is fed into a 3D encoder to extract multi-scale features. The convolutional kernels in this encoder are not randomly initialized but are "inflated" from DINOv3's 2D ConvNeXt weights. Subsequently, a symmetric MedNeXt-style decoder performs step-by-step upsampling to recover fine neuronal morphology. Each level of output is supervised by Dice + CE for voxel accuracy, overlaid with a Topology-Aware Skeleton Loss (TASL) to monitor the fidelity of branch connections.
+
+```mermaid
+graph TD
+    A["3D Neuroimaging Patch"] --> B["Inflation Adaptation Strategy<br/>DINOv3 2D Kernels Inflated to 3D Encoder"]
+    B --> C["MedNeXt-style Decoder<br/>Step-by-step Upsampling for Morphology"]
+    C --> D["Multi-scale Outputs (Supervision at each level)"]
+    D --> E["Dice + CE<br/>Voxel-level Accuracy Supervision"]
+    D --> F["Topology-Aware Skeleton Loss (TASL)<br/>Skeletonization -> Graph -> Node/Edge/Path Comparison"]
+    E --> G["Deep Supervision & Multiplicative Modulation<br/>(1+β·TASL)·(Dice+CE) Multi-scale Summation"]
+    F --> G
+    G --> H["Neuron Segmentation Results"]
+```
 
 ### Key Designs
 
-1. **Inflation-Based Adaptation**:
+**1. Inflation Adaptation Strategy: Lossless Elevation of DINOv3 2D Kernels to 3D**
 
-    - **Function**: Losslessly elevates DINOv3 pretrained 2D convolutional kernels into 3D convolutional kernels.
-    - **Mechanism**: Given a 2D convolutional kernel $W_{2D} \in \mathbb{R}^{C_{out} \times C_{in} \times k_h \times k_w}$, it is inflated to $W_{3D} \in \mathbb{R}^{C_{out} \times C_{in} \times k_d \times k_h \times k_w}$. Two schemes are proposed: **center inflation** places the 2D kernel at the central slice of the 3D kernel ($W_{3D}[:,:,c,:,:] = W_{2D}$, all other slices set to zero); **average inflation** uniformly copies the 2D kernel to all depth slices and divides by $k_d$. Experiments verify that center inflation is superior, as it preserves the spatial alignment between the 2D receptive field and its 3D extension.
-    - **Design Motivation**: Training 3D models from scratch under data-scarce conditions yields poor results, while freezing the pretrained encoder prevents adaptation to the neuronal data distribution. The inflation strategy allows the model to inherit DINOv3's intra-slice semantic priors (edges, textures, spatial patterns) and focus learning exclusively on inter-slice structural continuity.
+The pain point of data scarcity makes it impossible to train a 3D model from scratch, but freezing the pre-trained encoder fails to adapt to the slender and sparse distribution of neurons. The inflation strategy strikes a compromise: preserve the intra-slice semantic priors (edges, textures, spatial patterns) learned by DINOv3, and focus the model on learning the unseen inter-slice structural relationships. This is done by expanding the 2D kernel $W_{2D} \in \mathbb{R}^{C_{out} \times C_{in} \times k_h \times k_w}$ along a new depth dimension to $W_{3D} \in \mathbb{R}^{C_{out} \times C_{in} \times k_d \times k_h \times k_w}$. The paper proposes two expansion methods: **Center Inflation** places the 2D kernel in the center depth slice of the 3D kernel and pads other slices with zeros ($W_{3D}[:,:,c,:,:] = W_{2D}$), while **Average Inflation** replicates the 2D weights across all depth slices and divides by $k_d$. In experiments, Center Inflation performed better because it strictly aligns the center of the 3D receptive field with the original 2D receptive field without diluting depth-wise semantics; Average Inflation thins weights across every depth, potentially blurring sharp 2D responses.
 
-2. **Topology-Aware Skeleton Loss (TASL)**:
+**2. Topology-Aware Skeleton Loss (TASL): Explicitly Penalizing Breaks and Misconnections on Skeleton Graphs**
 
-    - **Function**: Explicitly penalizes morphological discontinuities and topological errors at the skeleton-graph level.
-    - **Mechanism**: Binary segmentations of the prediction and ground truth are skeletonized via operator $\mathcal{S}(\cdot)$ and converted to graphs $G=(V,E)$. TASL consists of three complementary terms: (a) **node-level discrepancy** $L_{node}$—symmetric nearest-neighbor distance between predicted and ground-truth skeleton node sets, penalizing bifurcation misalignment and missing endpoints; (b) **edge-level discrepancy** $L_{edge}$—compares the proportional difference in edge counts between predicted and ground-truth graphs, capturing over- and under-connectivity errors; (c) **path-level discrepancy** $L_{path}$—compares the difference in mean connected-component size, emphasizing long-range structural continuity.
-    - **Design Motivation**: Standard voxel-level losses (Dice, CE) are topology-agnostic and cannot penalize breaks or merges. TASL serves as a regularizer that guides segmentation learning toward topologically consistent volumetric representations.
+Voxel-level losses like Dice and CE are "topology-unaware"—even if an axon is broken in the middle, the voxel overlap might decrease only slightly, but for connectomics, this is a fatal structural error. TASL uses a skeletonization operator $\mathcal{S}(\cdot)$ to extract centerline skeletons from both the prediction and the ground truth binary segmentations, converts them into graphs $G=(V,E)$, and compares them at three complementary granularities: Node-level $L_{node}$ calculates the symmetric nearest neighbor distance of skeleton node sets to penalize bifurcation displacement and missing endpoints; Edge-level $L_{edge}$ compares the ratio of edge count differences to capture over-connections (erroneously merging two neurons) and under-connections (missing branches); Path-level $L_{path}$ compares the average size difference of connected components to emphasize long-distance structural continuity. Combined, $\mathcal{L}_{TASL} = \lambda_{node}L_{node} + \lambda_{edge}L_{edge} + \lambda_{path}L_{path}$ transforms "morphological similarity of neuronal trees" into an optimizable regularizer.
 
-3. **Deep Supervision**:
+**3. Deep Supervision and Multiplicative Modulation: Enabling Stable Optimization of Non-differentiable Skeleton Loss**
 
-    - **Function**: Improves gradient flow and refines multi-scale features.
-    - **Mechanism**: Dice + CE + TASL are jointly applied at each output branch. The total loss is defined as $\mathcal{L}_{total} = \sum_s \lambda_s (1 + \beta \mathcal{L}_{TASL}^s)(\mathcal{L}_{Dice}^s + \mathcal{L}_{CE}^s)$. TASL modulates the standard losses multiplicatively, amplifying the learning signal at locations with large topological errors.
-    - **Design Motivation**: The skeletonization operation in TASL is non-differentiable; propagating its signal indirectly as a multiplicative modulation factor is more stable than direct backpropagation.
+The skeletonization operation $\mathcal{S}(\cdot)$ is inherently non-differentiable; using TASL as a direct gradient source causes training instability. The paper treats it as a modulation factor rather than an independent loss term: at each scale's output branch, the total loss is formulated as:
+
+$$\mathcal{L}_{total} = \sum_s \lambda_s \, (1 + \beta \mathcal{L}_{TASL}^s)\,(\mathcal{L}_{Dice}^s + \mathcal{L}_{CE}^s)$$
+
+Thus, TASL does not backpropagate directly but multiplicatively amplifies the weights of Dice/CE at locations with large topological errors—wherever there is a break or misconnection, the voxel learning signal is strengthened. Multi-scale deep supervision also improves gradient flow and refines features at different resolutions. This strategy gains the benefits of topological supervision while bypassing the instability of non-differentiable skeletonization.
 
 ### Loss & Training
 
-- TASL composite loss: $\mathcal{L}_{TASL} = \lambda_{node}L_{node} + \lambda_{edge}L_{edge} + \lambda_{path}L_{path}$
-- Total loss is jointly optimized across multiple scales via deep supervision.
-- Training for 110 epochs with AdamW optimizer, learning rate 0.001, and AMP mixed-precision training.
-- Sliding window inference strategy for large volumetric data.
+- TASL combined loss: $\mathcal{L}_{TASL} = \lambda_{node}L_{node} + \lambda_{edge}L_{edge} + \lambda_{path}L_{path}$
+- Total loss is optimized jointly across multiple scales via deep supervision.
+- Training: 110 epochs, AdamW optimizer, learning rate 0.001, AMP mixed-precision training.
+- Inference: Sliding window strategy for large volumetric data.
 - Decoder normalization layers replaced with Batch Renormalization to mitigate tiling artifacts.
-- All experiments conducted on two NVIDIA RTX 4060 Ti GPUs (16 GB each).
+- All experiments conducted on two NVIDIA RTX 4060 Ti (16GB) GPUs.
 
 ## Key Experimental Results
 
@@ -102,49 +109,49 @@ Reconstruction metrics (Drosophila + SmartTracing):
 
 | Configuration | F1(%) | SmartTracing ESA/DSA/PDS |
 |------|-------|--------------------------|
-| Average inflation | 49.64 | 1.71/4.34/0.21 |
-| Center inflation (default) | **50.06** | **1.62/4.29/0.20** |
+| Average Inflation | 49.64 | 1.71/4.34/0.21 |
+| Center Inflation (Default) | **50.06** | **1.62/4.29/0.20** |
 | w/o TASL | 50.59 | 1.68/4.41/0.21 |
 | with TASL | 50.06 | **1.62/4.29/0.20** |
-| Frozen encoder | 47.22 | 1.78/4.49/0.23 |
-| Training from scratch | 48.56 | 1.76/4.37/0.23 |
-| Fine-tuning (default) | **50.06** | **1.62/4.29/0.20** |
+| Frozen Encoder | 47.22 | 1.78/4.49/0.23 |
+| Training From Scratch | 48.56 | 1.76/4.37/0.23 |
+| Fine-tuning (Default) | **50.06** | **1.62/4.29/0.20** |
 
 ### Key Findings
 
-- **Center inflation outperforms average inflation**: Center inflation preserves the spatial anchoring of the 2D receptive field, whereas average inflation dilutes depth-wise semantics.
-- **TASL trades a marginal F1 drop for substantial reconstruction gains**: Removing TASL yields a slightly higher F1 (50.59 vs. 50.06) but causes significant degradation in reconstruction metrics, indicating that TASL guides the network to prioritize global connectivity.
-- **Full fine-tuning substantially outperforms both freezing and training from scratch**: DINOv3 priors provide critical intra-slice semantics, but fine-tuning is necessary to adapt to the target distribution.
-- NeurINO-T frequently surpasses NeurINO-S on reconstruction metrics, suggesting that a smaller encoder combined with the inflation strategy may generalize better.
+- **Center Inflation outperforms Average Inflation**: Center inflation maintains the spatial anchoring of the 2D receptive field, whereas average inflation dilutes depth semantics.
+- **TASL sacrifices minor F1 for significant reconstruction gains**: Removing TASL results in a slightly higher F1 (50.59 vs 50.06), but reconstruction metrics degrade significantly, indicating TASL guides the network to prioritize global connectivity.
+- **Full fine-tuning is superior to freezing or training from scratch**: DINOv3 priors provide critical intra-slice semantics, but fine-tuning is necessary to adapt to the target distribution.
+- NeurINO-T often outperforms NeurINO-S on reconstruction metrics, suggesting smaller encoders combined with inflation might generalize better.
 
 ## Highlights & Insights
 
-- **2D-to-3D transfer paradigm**: Decomposing volumetric learning into "intra-slice 2D" and "inter-slice 3D" components and leveraging the inflation strategy to obtain intra-slice priors at no additional cost is a transferable idea applicable to other 3D medical tasks (e.g., organ segmentation, vessel tracing).
-- **The multiplicative modulation design of TASL** elegantly circumvents the non-differentiability of skeletonization—TASL does not serve as a direct gradient source but instead modulates the weights of Dice/CE losses.
-- **The trade-off between F1 and topological fidelity** is an important insight: voxel-level optimality does not imply structural optimality, a finding broadly relevant to the segmentation of tubular and network-like structures.
-- All experiments are completed on only two RTX 4060 Ti GPUs, imposing minimal hardware requirements.
+- **2D→3D Transfer Strategy**: Decomposing volumetric learning into "2D intra-slice + 3D inter-slice" and obtaining intra-slice priors for free via inflation is a strategy transferable to other 3D medical tasks (e.g., organ segmentation, vessel tracking).
+- **Multiplicative Modulation of TASL**: This design cleverly bypasses the non-differentiability of skeletonization—TASL acts as a weight modulator for Dice/CE rather than a direct gradient source.
+- **The Trade-off between F1 and Topological Fidelity**: A key insight is that voxel-level optimality does not equate to structural optimality, which serves as a reference for all tubular or network-like structure segmentation tasks.
+- Experiments were completed using only two 4060 Ti GPUs, demonstrating low hardware requirements.
 
 ## Limitations & Future Work
 
-- The skeletonization operation in TASL is non-differentiable and can only serve as an indirect regularizer, limiting gradient propagation of topological information.
-- The inflation strategy is a static initialization method and cannot dynamically adapt to the anisotropic resolution of different imaging modalities.
-- Only the ConvNeXt architecture is evaluated; inflation-based transfer for ViT-style architectures remains unexplored.
-- Dataset scale is relatively small (up to 245 volumes); performance on large-scale data has yet to be validated.
-- Comparisons with recent 3D general segmentation methods such as SAM3D and UniverSeg are absent.
+- The skeletonization operation in TASL is non-differentiable and currently only serves as an indirect regularizer, limiting the gradient flow of topological information.
+- The inflation strategy is a static initialization method and cannot dynamically adapt to the anisotropic resolution of different modalities.
+- Only the ConvNeXt architecture was validated; inflation transfer for ViT-like architectures has not been explored.
+- The dataset size remains small (maximum 245 volumes); performance on large-scale data requires further validation.
+- No comparison was made with recent 3D general segmentation methods like SAM3D or UniverSeg.
 
 ## Related Work & Insights
 
-- **vs. nnUNet**: nnUNet is an adaptive general-purpose segmentation framework trained from scratch; NeurINO significantly outperforms it in data-scarce settings by transferring 2D priors (F1 improvement of 2–3%).
-- **vs. MedNeXt**: MedNeXt has a larger parameter count (62M vs. 39M) yet achieves lower performance, demonstrating that larger models do not necessarily hold an advantage on small datasets.
-- **vs. Skeleton Recall Loss**: Previous skeleton-based losses focus solely on centerline coverage, whereas TASL models node, edge, and path consistency at the graph level, providing finer-grained topological supervision.
-- The inflation strategy is inspired by I3D but is simplified and adapted for the segmentation task.
+- **vs nnUNet**: nnUNet is an adaptive general segmentation framework trained from scratch, whereas NeurINO significantly outperforms it when data is scarce (2-3% F1 gain) by transferring 2D priors.
+- **vs MedNeXt**: MedNeXt has more parameters (62M vs 39M) but performs worse, suggesting large models do not necessarily hold an advantage on small datasets.
+- **vs Skeleton Recall Loss**: Prior skeleton losses focused only on centerline coverage; TASL models node, edge, and path consistency at the graph level, providing finer-grained topological supervision.
+- The inflation strategy draws inspiration from I3D but is simplified and improved for segmentation tasks.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Inflation-based transfer from DINOv3 to 3D is novel in the context of neuron segmentation; the three-level topological loss design in TASL is creative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Four datasets, two tracing algorithms, and detailed ablations are provided, though comparisons with a broader range of 3D pretrained methods are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ The paper is clearly structured with well-motivated arguments and intuitive illustrations.
-- **Value**: ⭐⭐⭐⭐ Provides a practical, low-cost solution for resource-constrained 3D biomedical segmentation.
+- Novelty: ⭐⭐⭐⭐ Inflation transfer from DINOv3 to 3D is new in neuron segmentation; the three-level topological loss of TASL is creative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Four datasets + two tracing algorithms + detailed ablations, though it lacks comparison with more 3D pre-training methods.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-reasoned motivation, and intuitive illustrations.
+- Value: ⭐⭐⭐⭐ Provides a practical, low-cost solution for resource-constrained 3D biomedical segmentation.
 
 <!-- RELATED:START -->
 
@@ -152,11 +159,11 @@ Reconstruction metrics (Drosophila + SmartTracing):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)
-- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
+- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
+- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](../../AAAI2026/medical_imaging/neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
-- [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](../../ICCV2025/medical_imaging/an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
+- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
+- [\[CVPR 2026\] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities](uni-encoder_meets_multi-encoders_representation_before_fusion_for_brain_tumor_se.md)
 
 </div>
 

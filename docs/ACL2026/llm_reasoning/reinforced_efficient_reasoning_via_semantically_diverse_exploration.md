@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Reinforced Efficient Reasoning via Semantically Diverse Exploration
 description: >-
-  [ACL 2026][LLM Reasoning][MCTS] ROSE proposes an MCTS branching strategy guided by semantic entropy and length-aware segment-level advantage estimation. Such design addresses the insufficient exploration diversity and lo…
+  [ACL 2026][LLM Reasoning][MCTS] ROSE proposes a semantic entropy-guided MCTS branching strategy and length-aware segment-level advantage estimation. This addresses insufficient exploration diversity and low inference efficiency in existing MCTS-based RLVR methods, achieving state-of-the-art pass@8 performance across multiple mathematical reasoning be
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "MCTS"
-  - "Semantic Entropy"
-  - "GRPO"
-  - "Efficient Inference"
-  - "Branching Strategy"
+  - ACL 2026
+  - LLM Reasoning
+  - MCTS
+  - GRPO
 date: 2026-05-08
-content_hash: da5d0b4d668686fc
+content_hash: 065292ce06dc70c3
 ---
-
 # Reinforced Efficient Reasoning via Semantically Diverse Exploration
 
 **Conference**: ACL 2026  
@@ -25,56 +21,72 @@ content_hash: da5d0b4d668686fc
 
 ## TL;DR
 
-ROSE proposes an MCTS branching strategy guided by semantic entropy and length-aware segment-level advantage estimation. Such design addresses the insufficient exploration diversity and low inference efficiency in existing MCTS-based RLVR methods, achieving state-of-the-art pass@8 performance on multiple mathematical reasoning benchmarks.
+ROSE proposes a semantic entropy-guided MCTS branching strategy and length-aware segment-level advantage estimation. This addresses insufficient exploration diversity and low inference efficiency in existing MCTS-based RLVR methods, achieving state-of-the-art pass@8 performance across multiple mathematical reasoning benchmarks.
 
 ## Background & Motivation
 
-**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the mainstream approach to enhance the reasoning capabilities of LLMs. GRPO and its variants optimize policies by sampling multiple independent reasoning chains and using binary rewards. MCTS-based methods further introduce tree-structured reasoning, allowing different chains to share prefixes for more granular segment-level credit assignment.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become a mainstream method for enhancing LLM reasoning capabilities. GRPO and its variants optimize policies by sampling multiple independent reasoning chains and using binary rewards. MCTS-based methods further introduce tree-structured reasoning, allowing different chains to share prefixes for more granular segment-level credit assignment.
 
-**Limitations of Prior Work**: (1) Insufficient exploration diversity—existing methods use generation entropy to determine branching points, yet positions with high generation entropy do not necessarily correspond to semantic divergence. A case in Figure 1 shows that "can" and "need" differ significantly in generation entropy but are semantically equivalent, resulting in identical reasoning paths after branching; (2) Low inference efficiency—existing MCTS methods fail to handle the "overthinking" problem, where correct but verbose reasoning chains receive the same reward as concise ones.
+**Limitations of Prior Work**: (1) Insufficient exploration diversity—existing methods use generation entropy to determine branch points, but high generation entropy does not necessarily correspond to semantic divergence. Figure 1 shows that "can" and "need" differ significantly in generation entropy but are semantically equivalent, leading to identical reasoning paths after branching; (2) Low inference efficiency—existing MCTS methods fail to handle "overthinking," as correct but verbose reasoning chains receive the same reward as concise ones.
 
-**Key Challenge**: Generation entropy measures token-level lexical uncertainty, but many high-entropy choices in language generation are semantically equivalent (e.g., synonyms or functional word variants). This causes branching strategies to produce reasoning paths that are superficially different but essentially identical.
+**Key Challenge**: Generation entropy measures token-level lexical uncertainty, but many high-entropy choices in language generation are semantically equivalent (synonyms, functional word variants). This causes branching strategies to produce reasoning paths that are superficially different but essentially identical.
 
-**Goal**: (1) Design a branching strategy capable of generating truly semantically diverse reasoning paths; (2) Encourage more efficient reasoning while maintaining or even improving performance.
+**Goal**: (1) Design a branching strategy capable of generating truly semantically diverse reasoning paths; (2) Encourage more efficient reasoning while maintaining or improving performance.
 
-**Key Insight**: Use the cosine similarity of token embeddings to measure the semantic difference between candidate tokens. Multiplying this with generation entropy yields "Semantic Entropy," ensuring that branching points possess both high uncertainty and high semantic divergence.
+**Key Insight**: Measure semantic differences between candidate tokens using cosine similarity of token embeddings. Multiply this with generation entropy to obtain "semantic entropy," ensuring branch points possess both high uncertainty and high semantic divergence.
 
-**Core Idea**: Replace generation entropy with semantic entropy (= generation entropy × semantic divergence) for branching, incorporate $\varepsilon$-exploration to prevent localized searching, and apply length-aware calibration to penalize redundant correct reasoning chains, thereby achieving "more diverse + more efficient" reasoning exploration.
+**Core Idea**: Replace generation entropy with semantic entropy (= generation entropy × semantic divergence) for branch point selection. Combine this with $\varepsilon$-exploration to prevent localized searching and use length-aware calibration to penalize verbose correct chains, achieving "more diverse + more efficient" reasoning exploration.
 
 ## Method
 
 ### Overall Architecture
 
-Given a problem $q$, a complete reasoning chain is first generated. The semantic entropy at each position is calculated, and the position with the highest semantic entropy is selected for branching and regeneration. With probability $\varepsilon$, a new chain is generated from scratch to prevent localization. After obtaining the tree structure, node value assignment, segment-level advantage estimation, and length-aware calibration are performed. Finally, the model is trained using the Dr.GRPO loss function.
+ROSE addresses two persistent issues in MCTS-based RLVR: branching that is "numerous but not truly diverse" and the lack of penalties for verbose correct reasoning. An exploration round proceeds as follows: given a question $q$, a complete reasoning chain is sampled. The semantic entropy is calculated per position. The chain is truncated at the position with the highest semantic entropy to re-sample downwards, growing a shared-prefix reasoning tree. To prevent the tree from clustering, a new chain is sampled independently from scratch with a certain probability during each expansion. Once the tree is built, node values and segment-level advantage estimations are computed. Verbose correct chains are discounted based on length, and the data is fed into Dr.GRPO to update the policy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Question q"] --> B["Sample a complete reasoning chain"]
+    B --> C["Semantic entropy-guided branching<br/>Calculate SE = Gen Entropy × Semantic Divergence"]
+    C -->|"Prob 1−ε: Truncate and re-sample at highest SE"| E["Shared-prefix reasoning tree"]
+    C -->|"Prob ε"| D["ε-exploration mechanism<br/>Sample independent new chain from scratch"]
+    D --> E
+    E --> F["Length-aware segment-level advantage estimation<br/>Segment advantage via node mean reward + Discount long correct chains"]
+    F --> G["Update policy via Dr.GRPO"]
+```
 
 ### Key Designs
 
-1.  **Semantic-Entropy Guided Branching**:
-    - **Function**: Select branching points that produce truly semantically diverse reasoning paths.
-    - **Mechanism**: For position $k$, the top-20 high-probability token set $\mathcal{V}_k$ is extracted. The semantic divergence $SD_k = -\sum_{v_i, v_j} p(v_i) p(v_j) \cdot \cos\langle \mathbf{e}_{v_i}, \mathbf{e}_{v_j} \rangle$ is calculated using LLM embeddings and then multiplied by generation entropy to obtain semantic entropy $SE_k = SD_k \cdot \mathcal{H}_k$. High semantic entropy indicates high uncertainty combined with large semantic differences among candidate tokens.
-    - **Design Motivation**: Generation entropy only measures lexical uncertainty, while semantic divergence measures whether different choices actually lead to different meanings. Their product ensures that branching points represent substantial divergence.
+**1. Semantic Entropy-Guided Branching: Forcing branches toward truly different semantics instead of synonym replacement**
 
-2.  **$\varepsilon$-Exploration Mechanism**:
-    - **Function**: Prevent the search from becoming too localized and balance exploration depth and breadth.
-    - **Mechanism**: Before generating each new reasoning chain, an independent generation from scratch is performed with probability $\varepsilon$ (default 0.5); otherwise, branching occurs based on semantic entropy. This is analogous to the $\varepsilon$-greedy strategy in RL.
-    - **Design Motivation**: Pure branching strategies may restrict the search to the vicinity of existing paths. Generation from scratch provides entirely new starting points.
+Existing methods (e.g., FR3E) use generation entropy to select branch points. However, high generation entropy only indicates uncertainty in token selection, not divergence in meaning. ROSE adds a semantic dimension: for position $k$, the top-20 high-probability tokens $\mathcal{V}_k$ are taken, and the semantic divergence among candidates is calculated using LLM embeddings:
 
-3.  **Length-aware Segment-level Advantage Estimation**:
-    - **Function**: Penalize verbose correct reasoning to encourage efficiency based on segment-level credit assignment.
-    - **Mechanism**: The node value $\hat{V}(b_j)$ is defined as the average reward of all reasoning chains passing through that node. The segment-level advantage is the difference between adjacent node values $\hat{A}_{i,t} = \hat{V}(b_j) - \hat{V}(b_{j-1})$. For correct reasoning that is longer than the shortest correct chain, the advantage is reduced proportionally after the divergence node:
-      $$\hat{A}_{i,t} \leftarrow \hat{A}_{i,t} - |\hat{A}_{i,t}| \cdot (1 - \frac{|o_s| - b_c}{|o_c| - b_c})^\alpha$$
-    - **Design Motivation**: In tree structures, different correct paths branching from the same node can be compared directly by length. This preserves the precision of segment-level credit assignment while guiding the model toward concise reasoning.
+$$SD_k = -\sum_{v_i, v_j} p(v_i)\, p(v_j) \cdot \cos\langle \mathbf{e}_{v_i}, \mathbf{e}_{v_j} \rangle,$$
+
+This is multiplied by generation entropy $\mathcal{H}_k$ to get semantic entropy $SE_k = SD_k \cdot \mathcal{H}_k$. This multiplicative approach ensures that $SE_k$ is high only when the step is both uncertain and semantically divergent, naturally placing branch points at critical junctions that change reasoning trajectories. Computational overhead is minimal, requiring only embedding lookups and cosine similarity.
+
+**2. $\varepsilon$-Exploration Mechanism: Preventing the tree from sticking to existing paths**
+
+Relying solely on branching presents a risk: all new chains are truncated and re-sampled from existing reasoning, potentially anchoring the search in the neighborhood of the first chain. Borrowing from $\varepsilon$-greedy in classic RL, ROSE samples a completely independent reasoning chain with probability $\varepsilon$ (default 0.5) when expanding, and uses semantic entropy branching otherwise. This provides independent starting points and balances exploration depth (refining good prefixes) with breadth (new starting points).
+
+**3. Length-aware Segment-level Advantage Estimation: Penalizing verbose chains via fine-grained credit assignment**
+
+The tree structure enables segment-level credit assignment: the node value $\hat{V}(b_j)$ is the average reward of all chains passing through that node. The difference between adjacent nodes defines the segment advantage $\hat{A}_{i,t} = \hat{V}(b_j) - \hat{V}(b_{j-1})$. To distinguish length, ROSE utilizes the tree to compare correct chains branching from the same node. For correct reasoning paths longer than the shortest correct path, advantages are discounted based on the length ratio:
+
+$$\hat{A}_{i,t} \leftarrow \hat{A}_{i,t} - |\hat{A}_{i,t}| \cdot \Big(1 - \tfrac{|o_s| - b_c}{|o_c| - b_c}\Big)^{\alpha},$$
+
+where $|o_s|$ and $|o_c|$ are the lengths of the current and shortest correct chains, and $b_c$ is the branching position. This maintains granular credit assignment while actively penalizing "verbose correctness," guiding the model toward concise reasoning.
 
 ### Loss & Training
 
-The Dr.GRPO objective function (excluding variance and length normalization) is used. The batch size is 512, with 8 reasoning chains per problem ($G=8$). The learning rate is $1 \times 10^{-6}$, clip ratio is 0.2, KL coefficient is 0.001, and training lasts up to 8 epochs. Training data consists of 7,500 problems from MATH. Parameters are set to $\varepsilon=0.5$, and $\alpha$ is searched from $\{0.5, 1, 2, 3\}$. Training is conducted on $8 \times \text{A800}$ GPUs.
+The Dr.GRPO objective function is used (excluding variance and length normalization). Batch size 512, 8 reasoning chains per question (G=8), learning rate $1 \times 10^{-6}$, clip ratio 0.2, KL coefficient 0.001, maximum 8 epochs. Training data consists of 7,500 MATH problems. $\varepsilon=0.5$, $\alpha$ searched in {0.5, 1, 2, 3}. 8×A800 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results (pass@8)
 
-| Model | Method | AIME24 | AIME25 | MATH500 | AMC23 | Average |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Method | AIME24 | AIME25 | MATH500 | AMC23 | Avg. |
+|------|------|--------|--------|---------|-------|------|
 | Qwen3-4B | GRPO | 16.67 | 20.00 | 79.80 | 77.50 | 48.49 |
 | Qwen3-4B | FR3E | 16.67 | 13.33 | 80.00 | 75.00 | 47.92 |
 | Qwen3-4B | **ROSE** | **23.33** | **23.33** | 80.80 | **77.50** | **51.24** |
@@ -85,44 +97,44 @@ The Dr.GRPO objective function (excluding variance and length normalization) is 
 
 ### Ablation Study
 
-| Branching Strategy | AIME24 | AIME25 | Average |
-| :--- | :--- | :--- | :--- |
-| Generation Entropy Branching (FR3E) | 16.67 | 6.67 | 30.26 |
-| Semantic Divergence Branching | 20.00 | 6.67 | - |
-| **Semantic Entropy Branching (ROSE)** | **20.00** | **6.67** | **31.67** |
+| Branching Strategy | AIME24 | AIME25 | Avg. |
+|---------|--------|--------|------|
+| Gen Entropy (FR3E) | 16.67 | 6.67 | 30.26 |
+| Semantic Divergence | 20.00 | 6.67 | - |
+| **Semantic Entropy (ROSE)** | **20.00** | **6.67** | **31.67** |
 
 ### Key Findings
 
--   ROSE achieves the largest gains on difficult tasks (AIME24/25) (+6.67), suggesting that semantically diverse exploration is more valuable for high-difficulty problems.
--   On Qwen3-8B, ROSE shows an average gain of +4.65 (vs. GRPO), which is the highest among all compared methods.
--   TreePO improves significantly on in-domain datasets (MATH500) but generalizes poorly to out-of-domain tasks, indicating that fixed-length branching strategies lack adaptability.
--   Length-aware calibration reduces the length of reasoning chains without compromising performance.
--   The method remains effective on Llama models (+2.86), ruling out potential interference from Qwen data leakage.
+- ROSE shows the largest gain on difficult tasks (AIME24/25) (+6.67), indicating that semantically diverse exploration is more valuable for complex problems.
+- On Qwen3-8B, ROSE improves the average by +4.65 (vs. GRPO), the highest among all methods.
+- TreePO improves significantly on in-domain data (MATH500) but generalizes poorly out-of-domain, suggesting fixed-length branching lacks adaptability.
+- Length-aware calibration reduces reasoning chain length without degrading performance.
+- Effectiveness on Llama models (+2.86) rules out interference from Qwen data leakage.
 
 ## Highlights & Insights
 
--   The design of Semantic Entropy = Generation Entropy × Semantic Divergence is simple yet elegant. By measuring semantic differences through the cosine similarity of token embeddings, it incurs minimal computational overhead (merely embedding table lookups) while effectively distinguishing "lexical uncertainty" from "semantic uncertainty."
--   $\varepsilon$-exploration introduces a classic RL exploration strategy into MCTS branching. Its simplicity is critical for preventing the search from being anchored to existing reasoning paths.
--   Length-aware calibration cleverly utilizes the natural structure of trees: different reasoning chains emerging from the same divergence point can be compared fairly by length.
+- The design of Semantic Entropy = Generation Entropy × Semantic Divergence is simple and elegant. Using cosine similarity of token embeddings to measure semantic difference incurs minimal overhead but effectively distinguishes "lexical uncertainty" from "semantic uncertainty."
+- $\varepsilon$-exploration introduces classic RL exploration into MCTS branching, which is simple but critical for preventing the search from becoming anchored to existing paths.
+- Length-aware calibration cleverly exploits the tree structure: reasoning chains branching from the same point can be compared fairly regarding length.
 
 ## Limitations & Future Work
 
--   The evaluation is limited to mathematical reasoning; verification for code generation and logical reasoning is still required.
--   The pass@8 metric focuses on "solvability" rather than "average accuracy"; advantages from a mean@8 perspective might be more modest.
--   Semantic divergence utilizes static token embeddings and does not account for the impact of context on token semantics.
--   $\varepsilon=0.5$ is currently a fixed value; adaptive adjustment might provide further performance improvements.
+- Evaluated only on mathematical reasoning; code generation and logical reasoning scenarios remain to be verified.
+- The pass@8 metric focuses on "solvability" rather than "average accuracy"; gains might be smaller from a mean@1 perspective.
+- Semantic divergence uses static token embeddings, failing to account for the impact of context on token semantics.
+- $\varepsilon=0.5$ is a fixed value; adaptive adjustment might yield further improvements.
 
 ## Related Work & Insights
 
--   **vs FR3E**: FR3E branches based on generation entropy, which wastes branches on semantically equivalent tokens. ROSE uses semantic entropy to ensure each branch leads to truly distinct reasoning paths.
--   **vs Dr.GRPO**: Dr.GRPO improves the loss function but does not enhance the exploration process. ROSE improves exploration and is compatible with Dr.GRPO.
+- **vs FR3E**: FR3E uses generation entropy branching, wasting branches on semantically equivalent tokens. ROSE uses semantic entropy to ensure each branch produces a truly different reasoning path.
+- **vs Dr.GRPO**: Dr.GRPO improves the loss function but not the exploration. ROSE improves exploration and is compatible with Dr.GRPO.
 
 ## Rating
 
--   **Novelty**: ⭐⭐⭐⭐ The concept of semantic entropy is novel, and the distinction between generation entropy and semantic entropy is convincing.
--   **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers three models and four benchmarks with complete ablations, though it lacks non-mathematical tasks.
--   **Writing Quality**: ⭐⭐⭐⭐ Case studies are intuitive and the methodology is clearly described.
--   **Value**: ⭐⭐⭐⭐ Provides an improved, plug-and-play branching strategy for MCTS-based RLVR.
+- Novelty: ⭐⭐⭐⭐ The semantic entropy concept is novel; the distinction between generation entropy and semantic entropy is convincing.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three models, four benchmarks, and a full ablation, though it lacks non-math tasks.
+- Writing Quality: ⭐⭐⭐⭐ Intuitive case analysis and clear method description.
+- Value: ⭐⭐⭐⭐ Provides a superior, plug-and-play branching strategy for MCTS-based RLVR.
 
 <!-- RELATED:START -->
 
@@ -130,10 +142,10 @@ The Dr.GRPO objective function (excluding variance and length normalization) is 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Efficient Thought Space Exploration Through Strategic Intervention](../../AAAI2026/llm_reasoning/efficient_thought_space_exploration_through_strategic_intervention.md)
-- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](../../ICLR2026/llm_reasoning/continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
-- [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
+- [\[AAAI 2026\] Efficient Thought Space Exploration Through Strategic Intervention](../../AAAI2026/llm_reasoning/efficient_thought_space_exploration_through_strategic_intervention.md)
+- [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
+- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](../../ICLR2026/llm_reasoning/continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
 - [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
 
 </div>

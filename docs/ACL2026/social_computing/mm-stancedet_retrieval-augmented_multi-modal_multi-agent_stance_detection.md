@@ -2,75 +2,89 @@
 title: >-
   [Paper Note] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection
 description: >-
-  [ACL 2026][Social Computing][Multi-modal Stance Detection] The authors reformulate multi-modal stance detection as a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT…
+  [ACL 2026][Social Computing][Paper Note] The authors reconstruct multimodal stance detection into a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT, three expert agents (text/image/cross-modal conflict) for analysis, three debater agents (pro/con/neutral) for debating, and a final adjudicator agent for self-reflection an
 tags:
-  - "ACL 2026"
-  - "Social Computing"
-  - "Multi-modal Stance Detection"
-  - "Retrieval Augmentation"
-  - "Multi-agent Debate"
-  - "Self-reflection"
-  - "Cross-modal Conflict"
+  - ACL 2026
+  - Social Computing
 date: 2026-05-08
-content_hash: ede2fad7475d6c54
+content_hash: c757e3e13434da0b
 ---
-
 # MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.27934](https://arxiv.org/abs/2604.27934)  
 **Code**: https://github.com/luweihai/MM-StanceDet  
-**Area**: Multi-modal Stance Detection / Multi-agent / RAG  
-**Keywords**: Multi-modal Stance Detection, Retrieval Augmentation, Multi-agent Debate, Self-reflection, Cross-modal Conflict
+**Area**: Multimodal Stance Detection / Multi-agent / RAG  
+**Keywords**: Multimodal Stance Detection, Retrieval-Augmented Generation, Multi-agent Debate, Self-reflection, Cross-modal Conflict  
 
 ## TL;DR
-The authors reformulate multi-modal stance detection as a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT, three expert agents (text/image/cross-modal conflict) for analysis, three debater agents (pro/con/neutral) for multi-perspective argumentation, and a final adjudicator agent performing self-reflection to output the label. This approach outperforms strong baselines including GPT-4V, TMPT, and MV-Debate in both in-target and zero-shot settings across five datasets.
+The authors reconstruct multimodal stance detection into a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT, three expert agents (text/image/cross-modal conflict) for analysis, three debater agents (pro/con/neutral) for debating, and a final adjudicator agent for self-reflection and labeling. Across five datasets, it outperforms strong baselines including GPT-4V, TMPT, and MV-Debate in both in-target and zero-shot settings.
 
 ## Background & Motivation
 
-**Background**: Stance detection has evolved from text-only (BERT/RoBERTa) to multi-modal (MSD). Existing work mainly falls into two categories: (1) simple feature fusion of independent encoders like BERT+ViT; (2) using prompt tuning (TMPT) to adapt pre-trained VLMs for stance feature extraction. Recently, using MLLMs like GPT-4V/Qwen-VL as zero-shot judges has emerged as a new direction.
+**Background**: Stance detection has evolved from pure text (BERT/RoBERTa) to multimodal stance detection (MSD). Existing work mainly falls into two categories: (1) simple feature fusion of independent encoders like BERT+ViT; (2) using prompt tuning (TMPT) to adapt pretrained VLMs for capturing stance features. Recently, using MLLMs like GPT-4V/Qwen-VL as zero-shot judges has emerged as a new direction.
 
-**Limitations of Prior Work**: The authors identify three core bottlenecks: (1) **Contextual Grounding Void**: MLLMs tend to misjudge nuanced multi-modal signals when lacking concrete in-domain samples; (2) **Cross-Modal Interpretation Ambiguity**: When image and text signals conflict or complement each other, MLLMs often hallucinate or ignore the conflict (Zhang et al. 2024c empirically showed GPT-4V's defects in cross-modal consistency); (3) **Single-Pass Reasoning Fragility**: Directly prompting an LLM for a stance in a single-shot manner lacks a structured process for exploring alternative interpretations, leading to persistent errors.
+**Limitations of Prior Work**: The authors identify three core bottlenecks: (1) **Contextual Grounding Void**: MLLMs often misjudge nuanced multimodal signals when lacking concrete in-domain samples; (2) **Cross-Modal Interpretation Ambiguity**: When image and text signals conflict or complement each other, MLLMs frequently hallucinate or ignore the conflict (Zhang et al. 2024c empirically showed GPT-4V's significant defects in cross-modal consistency); (3) **Single-Pass Reasoning Fragility**: Directly prompting an LLM for a stance in a single shot lacks a structured process for exploring alternative interpretations, leading to irreversible errors.
 
-**Key Challenge**: While single-pass "emergent reasoning" works in simple scenarios, it has low fault tolerance for sarcasm, conflict, and cross-modal nuances. Achieving stability requires explicitly modeling human-like decision processes involving "analysis-debate-reflection."
+**Key Challenge**: While single-model single-pass "emergent reasoning" works in simple scenarios, it has low error tolerance when encountering sarcasm, conflict, or cross-modal nuances. To achieve stability, the human decision-making process of "analysis-debate-reflection" must be explicitly modeled.
 
-**Goal**: To construct a stance detection framework capable of robustly handling conflicting multi-modal signals purely through prompt orchestration, without fine-tuning any models.
+**Goal**: To construct a stance detection framework capable of stably processing conflicting multimodal signals through prompt orchestration without fine-tuning any models.
 
-**Key Insight**: Combine RAG (providing concrete examples), specialized agents (focusing on individual modalities), debate (forcing exploration of three stances), and self-reflection (preventing single-pass errors) into a holistic framework to address each bottleneck.
+**Key Insight**: Combine RAG (providing concrete examples) + specialized agents (focusing on each modality) + debate (forcing the exploration of three stances) + self-reflection (preventing single-pass errors) to address each pain point individually.
 
-**Core Idea**: Transform "stance judgment" from a single-shot decision into a structured reasoning process via a 4-stage pipeline of multi-agent + RAG + debate + reflection.
+**Core Idea**: Transform "stance judgment" from a single-shot decision into a structured reasoning process using a 4-stage pipeline of multi-agent collaboration, RAG, debate, and reflection.
 
 ## Method
 
 ### Overall Architecture
-MM-StanceDet processes each input $x = (I, T, K)$ (image/text/target) through four sequential stages: (1) **Retrieval Augmentation** retrieves top-$k$ similar samples and their pre-generated CoT from a vector database $\mathcal{D}$; (2) **Multimodal Analysis** where Text-Agent, Image-Agent, and Modality-Conflict-Agent respectively output $A_{\text{text}}$, $A_{\text{image}}$, and $A_{\text{conflict}}$; (3) **Reasoning-Enhanced Debate** where three debater agents (support/oppose/neutral) receive all analyses and construct arguments for their respective stances; (4) **Self-Reflection and Adjudication** where a judge agent synthesizes the three arguments, original analyses, and critical reflection to produce the final label $\hat{y} \in \{-1, 0, 1\}$ and justification $J_{\text{final}}$. All agents use GPT-4o-mini by default; retrieval utilizes a CLIP encoder with ANN, with default $k=3$ and 3 rounds of debate.
+For each input $x = (I, T, K)$ (image/text/target), MM-StanceDet executes four sequential stages: (1) **Retrieval Augmentation**: Retrieves top-$k$ similar samples and their pre-generated CoTs from a vector database $\mathcal{D}$; (2) **Multimodal Analysis**: Text-Agent, Image-Agent, and Modality-Conflict-Agent experts output $A_\text{text}$, $A_\text{image}$, and $A_\text{conflict}$ respectively; (3) **Reasoning-Enhanced Debate**: Three debater agents (Support/Oppose/Neutral) receive all analyses and construct arguments for their respective stances; (4) **Self-Reflection and Adjudication**: A judge agent synthesizes the three arguments, the original analyses, and critical reflection to produce the final label $\hat{y} \in \{-1, 0, 1\}$ and justification $J_\text{final}$. All agents use GPT-4o-mini by default; retrieval uses a CLIP encoder + ANN with default $k=3$ and 3 rounds of debate.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input x = (Image I, Text T, Target K)"] --> RA
+    subgraph RA["Retrieval Augmentation with Pre-generated CoT"]
+        direction TB
+        R1["CLIP encodes joint image-text vector v"] --> R2["ANN retrieves top-k similar samples<br/>(Default k=3, each with pre-generated CoT)"]
+    end
+    RA --> MA
+    subgraph MA["Three-Expert Multimodal Analysis"]
+        direction TB
+        M1["Text-Agent<br/>Keywords / Sentiment / Implicit Sarcasm / Topic Relevance"]
+        M2["Image-Agent<br/>Visual Objects / Scene / Emotion / Symbolic Meaning"]
+        M3["Modality-Conflict-Agent<br/>Explicitly determine Conflict / Complementarity / Synergy"]
+    end
+    MA --> DEB
+    subgraph DEB["Debate + Self-Reflection Adjudication"]
+        direction TB
+        D1["3-Debater Roleplay<br/>Pro / Con / Neutral arguing individually (Default 3 rounds)"] --> D2["Judge Agent Self-Reflection Adjudication<br/>Checking consistency / Overlooked conflicts / Weak reasoning"]
+    end
+    DEB --> OUT["Output Stance ŷ ∈ {−1, 0, 1} + Justification J_final"]
+```
 
 ### Key Designs
 
-1.  **Retrieval Augmentation with Pre-generated CoT**:
-    *   **Function**: Provides "concrete and comparable" few-shot samples for subsequent reasoning, mitigating LLM blind spots regarding domain-specific cues.
-    *   **Mechanism**: CLIP encodes training samples $(I_j, T_j)$ into vectors $\mathbf{v}_j$ stored in a database. Each entry includes the label $y_j$ and an offline MLLM-generated CoT reasoning $C_j$ (explaining "why this sample holds this stance, focusing on image-text alignment and target relationship"). At query time, ANN retrieves $\mathcal{E}_{\text{retrieved}} = \text{ANN}(\mathbf{v}, \mathcal{D}, k)$.
-    *   **Design Motivation**: Unlike traditional RAG retrieving raw text, CoT provides both "similar contexts" and "reasoning paradigms." CLIP's joint embedding leverages both modalities for retrieval, aligning closer to "multi-modal contextual similarity" than text-only search.
+**1. Retrieval Augmentation with Pre-generated CoT: Providing Reasoning Paradigms, Not Just Context**
 
-2.  **Three Expert Multimodal Analysis Agents**:
-    *   **Function**: Decomposes multi-modal input into three complementary perspectives to prevent single-shot MLLMs from conflating information.
-    *   **Mechanism**: Text-Agent $\mathcal{A}_{\text{text}}(T, K) \to A_{\text{text}}$ extracts keywords, sentiment, implicit sarcasm, and relevance to $K$; Image-Agent $\mathcal{A}_{\text{image}}(I, K) \to A_{\text{image}}$ describes visual objects, context, emotions, color symbolism, and symbolic elements; Modality-Conflict-Agent $\mathcal{A}_{\text{conflict}}(I, T, K, \mathcal{E}_{\text{retrieved}}) \to A_{\text{conflict}}$ specifically detects image-text conflict/complementarity, explicitly referencing retrieved CoT samples.
-    *   **Design Motivation**: Assigning specific tasks to each agent avoids prompt overload. The Modality-Conflict-Agent is crucial—it transforms "cross-modal consistency" from an implicit assumption into an explicit output, significantly improving detection of sarcasm and cross-modal inconsistencies.
+This step targets the grounding void. The authors use CLIP to encode each training sample $(I_j, T_j)$ into a joint vector $\mathbf{v}_j$ stored in a vector database. Each entry contains the label $y_j$ and an offline MLLM-generated CoT reasoning $C_j$ (explaining the stance logic based on image-text alignment and target relationship). During inference, the query is encoded as $\mathbf{v}$, and ANN retrieves $\mathcal{E}_\text{retrieved} = \text{ANN}(\mathbf{v}, \mathcal{D}, k)$. This differs from traditional RAG by providing the "how to reason" paradigm as knowledge to downstream agents.
 
-3.  **Debate + Self-Reflection Adjudication**:
-    *   **Function**: Explores all stance possibilities through role-playing debate and identifies hidden flaws via self-reflection.
-    *   **Mechanism**: Three debater agents representing support/oppose/neutral construct arguments $\text{Arg}_s = \mathcal{A}_s(I, T, K, A_{\text{text}}, A_{\text{image}}, A_{\text{conflict}})$. The judge agent then performs "critical self-assessment," checking for internal consistency and missed signals from $A_{\text{conflict}}$, drawing on ideas from Self-Refine and Reflexion. Output: $\hat{y}, J_{\text{final}} = \mathcal{A}_{\text{judge}}(\text{Arg}_{\text{support}}, \text{Arg}_{\text{oppose}}, \text{Arg}_{\text{neutral}}, x, A_{\text{text}}, A_{\text{image}}, A_{\text{conflict}})$.
-    *   **Design Motivation**: Forced debate prevents the LLM from committing to a high-confidence incorrect stance. Self-reflection acts as a safety net, allowing the judge to transcend the trap where the "most persuasive" argument might not be the "most accurate."
+**2. Three-Expert Multimodal Analysis: Decomposing Unified MLLM Perception into Complementary Perspectives**
+
+Single-shot MLLMs often suffer from information interference and miss conflict signals when processing text, images, and relationships simultaneously. The authors deploy three specialized agents: Text-Agent $\mathcal{A}_\text{text}(T, K) \to A_\text{text}$ for linguistic features; Image-Agent $\mathcal{A}_\text{image}(I, K) \to A_\text{image}$ for visual semantics; and Modality-Conflict-Agent $\mathcal{A}_\text{conflict}(I, T, K, \mathcal{E}_\text{retrieved}) \to A_\text{conflict}$ to explicitly judge cross-modal consistency. This ensures that capturing sarcasm and irony becomes an explicit output rather than an implicit assumption.
+
+**3. Debate + Self-Reflection Adjudication: Forced Exploration and Hidden Flaw Detection**
+
+To prevent "starting on the wrong foot," three debaters are forced to argue for Pro, Con, and Neutral stances, generating $\text{Arg}_s = \mathcal{A}_s(I, T, K, A_\text{text}, A_\text{image}, A_\text{conflict})$. The final judge agent performs critical self-assessment (inspired by Self-Refine) to check for internal consistency and missed signals from $A_\text{conflict}$, outputting $\hat{y}, J_\text{final} = \mathcal{A}_\text{judge}(\text{Arg}_\text{support}, \text{Arg}_\text{oppose}, \text{Arg}_\text{neutral}, x, A_\text{text}, A_\text{image}, A_\text{conflict})$.
 
 ### Loss & Training
-This is a purely prompt-based framework. **It involves no model training**, only the orchestration of agents (prompt design, retrieval parameters, and debate rounds). All agents share a single LLM backbone (GPT-4o-mini by default; robustness experiments with other MLLMs confirm consistency).
+This is a fully prompt-based framework that **requires no model training**. Efficiency is optimized through agent prompt design, retrieval parameters, and debate rounds. GPT-4o-mini is the default backbone.
 
 ## Key Experimental Results
 
-### Main Results: In-target Macro F1 (%) Excerpts (5 datasets × 12 targets)
+### Main Results: In-target Macro F1 (%) Excerpt (5 datasets × 12 targets)
 
 | Method | MTSE-DT | MWTWT-AC | MWTWT-AH | MRUC-RUS | MRUC-UKR | MTWQ-MOC |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|---------|----------|----------|----------|----------|----------|
 | BERT | 48.25 | 63.05 | 59.24 | 41.25 | 46.80 | 57.77 |
 | TMPT | 55.41 | 67.25 | 62.92 | 43.56 | 59.24 | 55.68 |
 | GPT-4 + CoT | 69.12 | 70.10 | 72.05 | 42.03 | 54.21 | 58.48 |
@@ -79,64 +93,57 @@ This is a purely prompt-based framework. **It involves no model training**, only
 | BridgeTower | 68.53 | 67.92 | 65.44 | 43.26 | 58.19 | 68.06 |
 | **Ours** | **70.12** | **71.93** | 66.50 | **48.34** | **64.02** | **68.13** |
 
-Zero-shot gains are more significant: on MRUC-RUS, performance increases from GPT-4V's 42.09 to 45.37 (+3.3); on MRUC-UKR, from 47.00 to 55.25 (+8.2).
+Zero-shot improvements are more significant: gain of +3.3 on MRUC-RUS and +8.2 on MRUC-UKR compared to GPT-4V.
 
-### Ablation Study and Agent Contribution Analysis
+### Ablation Study
 
 | Configuration | MTSE-DT | MWTWT-AC |
-| :--- | :--- | :--- |
+|------|---------|----------|
 | Text Analysis Agent only | 67.52 | 63.30 |
 | Image Analysis Agent only | 42.34 | 57.09 |
 | Modality Conflict Agent only | 55.10 | 63.51 |
 | Text + Image Analysis | 68.91 | 68.37 |
 | Full MM-StanceDet | **70.12** | **71.93** |
-| w/o Retrieval Augmentation (RA) | Significant drop | Significant drop |
-| w/o Multimodal Analysis (MA) | **Largest drop** | **Largest drop** |
-| w/o Reasoning-Enhanced Debate (RED)| Moderate drop | Moderate drop |
-| w/o Self-Reflection (SRA) | Small drop | Small drop |
-
-Noise robustness: Replacing 50% of top-3 retrieved samples with random ones on MTSE-DT only dropped performance from 70.12 to 68.92 (-1.2), proving debate and reflection can mitigate noise.
+| w/o Retrieval Augmentation (RA) | Significant Drop | Significant Drop |
+| w/o Multimodal Analysis (MA) | **Largest Drop** | **Largest Drop** |
+| w/o Reasoning-Enhanced Debate (RED) | Moderate Drop | Moderate Drop |
+| w/o Self-Reflection (SRA) | Minor Drop | Minor Drop |
 
 ### Key Findings
-*   **Multimodal Analysis is the largest contributor**: Removing the MA stage caused the sharpest decline, suggesting "expert specialization" is significantly stronger than letting a single LLM process all modalities at once.
-*   **Strong Robustness in Retrieval Augmentation**: 50% retrieval noise only resulted in a 1.2 F1 point drop, due to the debate stage actively questioning relevance and self-reflection filtering errors.
-*   **Significant Advantage in Zero-shot**: The +8.2 point Gain over GPT-4V on MRUC-UKR highlights that structured reasoning is particularly effective for OOD/low-resource scenarios.
-*   **Highest Gains on Small, High-Conflict Datasets**: MRUC, with the highest cross-modal conflict rate (15%) and small sample size, saw the most significant improvement with MM-StanceDet.
-*   **Backbone Agnostic**: The framework performs consistently across different MLLMs, indicating the multi-agent orchestration itself is effective.
+- **Multimodal Analysis is the core contributor**: The largest drop occurs when MA is removed, proving that specialized division of labor is superior to unified MLLM perception.
+- **Robustness to Retrieval Noise**: Replacing 50% of top-3 retrieved samples with random ones only reduces F1 by 1.2 points on MTSE-DT, as the debate and reflection stages filter out irrelevant noise.
+- **Significant Zero-shot Advantages**: The structured reasoning is particularly effective in OOD and low-resource scenarios (e.g., MRUC-UKR).
+- **Higher gains on datasets with high cross-modal conflict**: Performance improvements are most pronounced on MRUC (15% conflict rate).
 
 ## Highlights & Insights
-*   **Clear Mapping of Components to Bottlenecks**: RA addresses grounding void, MA addresses modality ambiguity, and Debate+Reflection addresses single-pass fragility. This "problem-driven modularity" makes the method highly interpretable.
-*   **Pre-generated CoT as Retrieval Units**: Unlike traditional RAG, entries include CoT reasoning templates, transferring "how to reason" as knowledge. This "analyist notes + case file" approach is reusable for complex judgment tasks (e.g., medical diagnosis).
-*   **Explicit Output of Conflict Signals**: Making "modality consistency" a first-class output rather than an implicit judgment allows downstream modules to reason explicitly about it, a design directly applicable to fake news or meme detection.
-*   **3-Round Debate is the Sweet Spot**: Beyond 3 rounds, gains diminish while costs double. Empirical sensitivity analysis provides clear engineering guidance.
+- **Clear problem-driven modularity**: RA addresses grounding, MA addresses ambiguity, and Debate+Reflection addresses single-pass fragility.
+- **CoT as a retrieval unit**: Treating reasoning templates as knowledge (like "analyst notes") is a transferable concept for complex judgment tasks.
+- **Explicit conflict signaling**: Making cross-modal consistency a first-class output ensures that downstream logic revolves around these signals, which is highly applicable to fake news detection.
 
 ## Limitations & Future Work
-*   (1) High overhead: 4 stages × multi-agent reasoning costs ~4.8K tokens and 27s latency per sample, suitable for offline moderation rather than real-time processing. (2) Reliance on backbone: Biases or hallucinations in the backbone propagate to the final judgment. (3) Vector DB quality: Maintaining high-quality CoT libraries for low-resource languages or new domains is challenging.
-*   **Observation**: Agents sharing the same backbone might create an "echo chamber." Using different models for different debaters could enhance robustness. Similarly, the judge's self-evaluation might suffer from self-bias.
-*   **Future Directions**: Replace retrieval with a mixture (CoT-retrieval + counterfactual samples); introduce process reward models for real-time scoring of agent outputs.
+- **Limitations**: (1) High latency (~27s per sample) and token cost (~4.8K tokens), unsuitable for real-time applications; (2) Dependency on backbone LLM biases; (3) Reliance on vector database quality for new domains.
+- **Future Work**: Exploring mixture retrieval (combining CoT and counterfactual samples) and implementing process reward models for real-time agent scoring.
 
 ## Related Work & Insights
-*   **vs TMPT**: TMPT uses prompt tuning requiring parameter training; MM-StanceDet is training-free and significantly outperforms it (70.12 vs 55.41 on MTSE-DT).
-*   **vs GPT-4 Vision + CoT**: Single MLLM with CoT is competitive in-target but fails in zero-shot settings; structured debate + reflection ensures stability.
-*   **vs MV-Debate**: MV-Debate focuses on text; this work proves multi-agent debate combined with multi-modal analysis provides significant incremental value.
-*   **Insight**: Any task requiring "cross-modal consistency judgment" (fake news, memes, sentiment) can adopt this 4-stage template. Trading 27s of latency for stability is a worthwhile trade-off for many offline analysis scenarios.
+- **vs TMPT**: Ours is training-free and significantly outperforms TMPT's prompt tuning (70.12 vs 55.41 on MTSE-DT).
+- **vs GPT-4V + CoT**: Single-pass models perform poorly in zero-shot settings, whereas structured debate maintains stability.
+- **vs MV-Debate**: While MV-Debate uses multi-view text debate, ours proves that incorporating multimodal analysis provides a substantial performance boost.
 
 ## Rating
-*   Novelty: ⭐⭐⭐ (Combining existing multi-agent/RAG/debate patterns into MSD; Modality-Conflict-Agent is the distinct detail).
-*   Experimental Thoroughness: ⭐⭐⭐⭐ (5 datasets, in-target/zero-shot, ablation, noise, and sensitivity analyses).
-*   Writing Quality: ⭐⭐⭐⭐ (Clear mapping between problems and designs; insightful appendix on conflict rates).
-*   Value: ⭐⭐⭐⭐ (Provides a strong training-free baseline for MSD; immediately applicable to social media monitoring/moderation).
+- Novelty: ⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition](../../AAAI2026/social_computing/cross-modal_prompting_for_balanced_incomplete_multi-modal_emotion_recognition.md)
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
-- [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
 - [\[AAAI 2026\] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering](../../AAAI2026/social_computing/multi-modal_dynamic_proxy_learning_for_personalized_multiple_clustering.md)
+- [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
 - [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
 
 </div>

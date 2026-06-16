@@ -2,77 +2,88 @@
 title: >-
   [Paper Note] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Open-Vocabulary Object Detection] NoOVD proposes a framework that, during frozen-VLM-based OVD training, employs a parameter-free K-FPN to preserve CLIP knowledge for discovering potential n…
+  [CVPR 2026][Object Detection][K-FPN] The NoOVD framework is proposed to discover potential novel category objects during frozen VLM-based OVD training by preserving CLIP knowledge with a parameter-free K-FPN. It embeds novel category knowledge into the detector via self-distillation and enhances the recall of novel categories during inference using R-RPN,
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Open-Vocabulary Object Detection"
-  - "Novel Category Discovery"
-  - "Self-Distillation"
-  - "K-FPN"
-  - "Frozen VLM"
+  - CVPR 2026
+  - Object Detection
+  - K-FPN
 date: 2026-05-08
-content_hash: fc2273a8b598bda5
+content_hash: 14ae7184507132fa
 ---
-
 # NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.21069](https://arxiv.org/abs/2603.21069)  
-**Code**: N/A  
-**Area**: Object Detection
-**Keywords**: Open-Vocabulary Object Detection, Novel Category Discovery, Self-Distillation, K-FPN, Frozen VLM
+**Code**: None  
+**Area**: Object Detection  
+**Keywords**: Open-vocabulary object detection, Novel category discovery, Self-distillation, K-FPN, Frozen VLM
 
 ## TL;DR
-NoOVD proposes a framework that, during frozen-VLM-based OVD training, employs a parameter-free K-FPN to preserve CLIP knowledge for discovering potential novel-category objects, applies self-distillation to embed novel-category knowledge into the detector, and introduces R-RPN at inference to improve novel-category recall, achieving SOTA on OV-LVIS, OV-COCO, and Objects365.
+The NoOVD framework is proposed to discover potential novel category objects during frozen VLM-based OVD training by preserving CLIP knowledge with a parameter-free K-FPN. It embeds novel category knowledge into the detector via self-distillation and enhances the recall of novel categories during inference using R-RPN, achieving SOTA results on OV-LVIS, OV-COCO, and Objects365.
 
 ## Background & Motivation
 
-1. **Background**: Open-vocabulary object detection (OVD) aims to enable detectors to recognize novel categories unseen during training. Dominant approaches build on frozen VLMs (e.g., CLIP), training only the detection modules (FPN, RPN, RoI head) and leveraging zero-shot transfer for novel category recognition.
-2. **Limitations of Prior Work**: A significant train-test gap exists — during training, only base-category annotations are available, forcing all unannotated novel-category objects to be treated as background. Novel-category proposals receive low RPN scores and are filtered out; at the RoI stage, their features are forced to align with background text embeddings. At test time, these proposals similarly score low and are removed during post-processing, substantially reducing novel-category recall.
-3. **Key Challenge**: Without novel-category annotations during training, the model is compelled to learn novel categories as background; yet at test time it is expected to recognize them. Existing remedies either rely on large-scale additional data (high cost) or use pseudo-labels (introducing noise).
-4. **Goal**: (1) Discover potential novel-category objects without extra data or pseudo-label noise; (2) embed novel-category knowledge into the detector; (3) improve novel-category recall at inference.
-5. **Key Insight**: Exploit the zero-shot recognition capability of the frozen CLIP itself to discover foreground objects, using category-agnostic generic foreground/background text descriptions instead of specific class names — enabling foreground–background discrimination without knowing novel category names.
-6. **Core Idea**: Use frozen CLIP's zero-shot capability for category-agnostic foreground discovery, then inject novel-category knowledge into the detector via self-distillation, preventing novel-category features from being incorrectly aligned to background.
+1. **Background**: Open-vocabulary object detection (OVD) aims to enable detectors to recognize novel categories not seen during training. Mainstream methods are built on frozen VLMs (e.g., CLIP), training only the detection modules (FPN, RPN, RoI head) to leverage the zero-shot transfer capabilities of the VLM for novel categories.
+2. **Limitations of Prior Work**: A significant gap exists between training and testing. During training, only base-class annotations are available, and all unannotated novel category objects are forced to be treated as background. Consequently, novel proposals receive low scores and are filtered out during the RPN stage, while novel features are forced to align with background text embeddings in the RoI stage. These proposals are similarly removed during post-processing at test time, leading to a sharp decline in novel category recall.
+3. **Key Challenge**: During training, there are no novel category annotations, forcing the model to learn novel categories as background; however, at test time, the model is required to recognize these categories. Existing solutions either rely on large-scale external data (high cost) or use pseudo-labels (introducing noise).
+4. **Goal**: (1) Discover potential novel category objects without introducing extra data or pseudo-label noise; (2) Embed novel category knowledge into the detector; (3) Enhance the recall rate of novel categories during inference.
+5. **Key Insight**: Leverage the zero-shot recognition capability of frozen CLIP itself to discover foreground objects. Use class-agnostic general foreground/background text descriptions instead of specific category names to distinguish foreground from background without knowing the names of the novel categories.
+6. **Core Idea**: Utilize the zero-shot capability of frozen CLIP for class-agnostic foreground discovery, then inject novel category knowledge into the detector through self-distillation to prevent novel category features from being erroneously aligned with the background.
 
 ## Method
 
 ### Overall Architecture
-A two-stage detection framework built on a frozen CLIP. During training: (1) K-FPN constructs a parameter-free feature pyramid from frozen CLIP multi-layer features to retain CLIP's novel-category knowledge; (2) category-agnostic foreground/background text descriptions combined with CLIP zero-shot capability are used to discover potential novel-category proposals; (3) self-distillation aligns CLIP features with RoI features for discovered novel-category proposals. At inference: (4) R-RPN applies the same discovery strategy to boost novel-category proposal confidence scores.
+NoOVD addresses the "train-test gap" in open-vocabulary detection. During training, the lack of novel annotations causes these objects to be suppressed as background. The framework, built on a two-stage detector with frozen CLIP, integrates CLIP's zero-shot foreground recognition throughout both training and inference. During training, a parameter-free K-FPN constructs a feature pyramid from multi-layer frozen CLIP features to prevent base-class training from polluting CLIP's original novel category knowledge. Class-agnostic "foreground/background" descriptions are used to retrieve potential novel proposals. These are then injected into the RoI head via self-distillation of CLIP region features. During inference, R-RPN reuses this discovery strategy to re-weight scores for novel proposals suppressed by the RPN, recovering them for the RoI head.
+
+```mermaid
+graph TD
+    A["Input Image → Frozen CLIP Image Encoder"] --> B["K-FPN: Parameter-free Knowledge Preservation Pyramid<br/>Interpolation+Concat+Pooling, 5 layers of 512-dim features"]
+    B --> C["RPN generates proposals"]
+    subgraph DISC["Novel Category Discovery & Embedding"]
+        direction TB
+        D["Project to K-FPN for features<br/>Cosine similarity with FG/BG text"] --> E["Keep foreground, remove base GT boxes<br/>Obtain potential novel proposals"]
+        E -->|Training| F["Crop original image for Frozen CLIP<br/>L2 Self-distillation into RoI head"]
+    end
+    C --> D
+    E -->|Inference (Strategy Reuse)| G["R-RPN: Repropose Score Weighting<br/>α·RPN score + (1−α)·K-FPN FG score"]
+    G --> H["Re-rank top-1000 → RoI head → OVD Output"]
+```
 
 ### Key Designs
 
-1. **K-FPN (Knowledge-retentive FPN)**:
+**1. K-FPN: Protecting CLIP Novel Knowledge with a Parameter-Free Pyramid**
 
-    - **Function**: Construct a feature pyramid from frozen CLIP that retains its original knowledge.
-    - **Mechanism**: Using CLIP ViT-B/16 as an example, features from layers [5, 7, 11] are extracted as {P2, P3, P4} and fused top-down in FPN style. A frozen CLIPSelf projection head reduces the dimensionality from 768 to 512 (aligned with text embedding dimension) to obtain {C2, C3, C4}. The high-level C4 is upsampled and concatenated with C3 and C2 to produce high-resolution feature maps {F2, F3, F4}; two max-pooling operations on C4 yield {F5, F6}. The entire process contains no learnable parameters.
-    - **Design Motivation**: Standard FPN has learnable parameters; training exclusively on base-category data causes CLIP features to drift after passing through FPN, losing novel-category knowledge. K-FPN employs entirely parameter-free operations to maximally preserve CLIP's original representational capability, providing a reliable feature basis for subsequent novel-category discovery.
+Standard FPNs contain learnable parameters. Since training only involves base-class data, gradients pull CLIP features towards base classes, causing drift and loss of novel category representations. K-FPN eliminates all learnable parameters. Using CLIP ViT-B/16 as an example, features from layers [5, 7, 11] are taken as $\{P_2, P_3, P_4\}$. After top-down fusion, the frozen CLIPSelf dimensionality reduction head compresses the 768-dim features to 512-dim to align with text embeddings, resulting in $\{C_2, C_3, C_4\}$. High-resolution $\{F_2, F_3, F_4\}$ are formed by upsampling and concatenating, while $\{F_5, F_6\}$ are generated via max pooling. This path relies solely on interpolation, concatenation, and pooling, ensuring the original zero-shot discriminative power of CLIP remains intact.
 
-2. **Novel Category Discovery and Embedding**:
+**2. Novel Category Discovery and Embedding: Retrieving Novel Classes via "Foreground vs. Background"**
 
-    - **Function**: Discover potential novel-category objects during training and inject the corresponding knowledge into the detector.
-    - **Mechanism**: (1) ChatGPT-o1 is used to generate 30 category-agnostic foreground descriptions (e.g., "This is an object, specifically a plant") and 30 background descriptions (e.g., "This is a background area"), from which frozen CLIP text embeddings are extracted. (2) RPN proposals are mapped onto K-FPN for RoI Align feature extraction; cosine similarities with foreground/background text embeddings are computed; proposals with higher foreground than background scores are retained, and those with high IoU overlap with GT bounding boxes are excluded, leaving potential novel-category objects. (3) These proposals are cropped from the original image and fed into frozen CLIP for feature extraction, then self-distillation is applied via an L2 loss between the CLIP features and the RoI head output features: $\mathcal{L}_{kd} = \|F_{proposals+}^{RoI} - F_{proposals+}^{Image}\|_2^2$.
-    - **Design Motivation**: Novel-category objects can be discovered using generic "foreground vs. background" descriptions without relying on specific class names. Self-distillation enables the detector to learn novel-category knowledge during training rather than treating them as background. No additional data or pseudo image-text pairs are required, eliminating pseudo-label noise at the source.
+Since novel category names are unavailable during training, the strategy focuses on whether a region is "foreground." The authors generate 30 class-agnostic foreground descriptions (e.g., "This is an object, specifically a plant") and 30 background descriptions (e.g., "This is a background area") via ChatGPT. RoI Align is performed on K-FPN using RPN proposals to calculate cosine similarity with these embeddings. Proposals with foreground scores higher than background scores that do not overlap with base-class ground truths are identified as potential novel objects. These are cropped from the original image, passed through frozen CLIP, and the resulting features are used for L2 self-distillation with the RoI head output:
 
-3. **R-RPN (Re-weighted RPN)**:
+$$\mathcal{L}_{kd} = \|F_{proposals+}^{RoI} - F_{proposals+}^{Image}\|_2^2$$
 
-    - **Function**: Improve novel-category proposal recall at inference.
-    - **Mechanism**: Prior to RPN post-processing, the same foreground discovery strategy used during training is applied to classify NMS-filtered proposals as foreground. The K-FPN foreground score is then fused with the original RPN score via weighted combination: $S_{R-RPN} = \alpha \cdot S_{RPN} + (1-\alpha) \cdot S_{K-FPN}$, with $\alpha=0.5$. Proposals are re-ranked by the fused score, and the top-1000 are forwarded to the RoI head.
-    - **Design Motivation**: Novel-category proposals receive low RPN scores (having been treated as background during training) and are filtered out during post-processing — a primary cause of novel-category detection failure. R-RPN rescues these overlooked proposals by injecting CLIP's foreground knowledge.
+This forces the detector to learn novel categories during training rather than treating them as background, without external data or noisy pseudo-labels.
+
+**3. R-RPN: Recovering Suppressed Novel Proposals at Inference**
+
+Even with knowledge injection, RPN scores remain biased towards base classes, causing novel proposals to be ranked low or filtered by NMS. R-RPN re-evaluates proposals after NMS using the same foreground discovery strategy. The final score is a weighted fusion of the K-FPN foreground score and the original RPN score:
+
+$$S_{R-RPN} = \alpha \cdot S_{RPN} + (1-\alpha) \cdot S_{K-FPN}, \quad \alpha=0.5$$
+
+Re-ranking by this fusion score ensures that novel boxes, previously at the bottom, are elevated to the top-1000 sent to the RoI head.
 
 ### Loss & Training
 - Total loss: $\mathcal{L}_{total} = \mathcal{L}_{cls-RPN} + \mathcal{L}_{reg-RPN} + \mathcal{L}_{reg-RoI} + \mathcal{L}_{cons} + \mathcal{L}_{kd}$
-- $\mathcal{L}_{cons}$ is the contrastive loss for the RoI head; $\mathcal{L}_{kd}$ is the novel-category self-distillation L2 loss (weight = 1).
-- The CLIP image/text encoder is frozen; only FPN, RPN, and RoI head are trained.
-- Training: 5 epochs on OV-COCO, 50 epochs on OV-LVIS.
-- Hardware: 16 NVIDIA 3090 GPUs, batch size 10/GPU, AdamW lr = $10^{-4}$.
+- $\mathcal{L}_{cons}$ is the RoI head contrastive loss; $\mathcal{L}_{kd}$ is the novel category self-distillation L2 loss (weight = 1).
+- Frozen CLIP image/text encoder; training only FPN, RPN, and RoI head.
+- OV-COCO trained for 5 epochs; OV-LVIS for 50 epochs.
+- 16x NVIDIA 3090, batch size 10/GPU, AdamW lr=$10^{-4}$.
 
 ## Key Experimental Results
 
-### Main Results — OV-LVIS
+### Main Results - OV-LVIS
 
-| Method | Backbone | AP_r (rare/novel) | AP (overall) |
-|--------|----------|-------------------|--------------|
+| Method | Backbone | AP_r (rare/novel) | AP (Total) |
+|------|----------|---------------|---------|
 | CLIPSelf + F-ViT | ViT-L/14 | 34.9 | 35.1 |
 | DeCLIP + F-ViT | ViT-L/14 | 37.2 | 36.0 |
 | **DeCLIP + NoOVD** | **ViT-L/14** | **39.2 (+2.0)** | **37.7 (+1.7)** |
@@ -80,10 +91,10 @@ A two-stage detection framework built on a frozen CLIP. During training: (1) K-F
 | YOLOE | YOLOv11-L | 29.1 | 35.2 |
 | RO-ViT | ViT-H/16 | 34.1 | 35.1 |
 
-### Main Results — OV-COCO
+### Main Results - OV-COCO
 
 | Method | Backbone | AP_novel^50 | AP^50 |
-|--------|----------|-------------|-------|
+|------|----------|-------------|-------|
 | DeCLIP + F-ViT | ViT-L/14 | 46.2 | 60.3 |
 | **DeCLIP + NoOVD** | **ViT-L/14** | **47.5 (+1.3)** | **61.0 (+0.7)** |
 | CORA+ | RN50x4 | 43.1 | 56.2 |
@@ -91,47 +102,47 @@ A two-stage detection framework built on a frozen CLIP. During training: (1) K-F
 ### Ablation Study
 
 | Configuration | AP_r | AP |
-|---------------|------|----|
+|------|------|-----|
 | Baseline (F-ViT) | 25.4 | 25.4 |
-| + CLIP-top (simple top-layer features) | 26.4 | 26.1 |
+| + CLIP-top (Simple Top Layer) | 26.4 | 26.1 |
 | + K-FPN | 27.5 | 26.4 |
 | + R-RPN | 26.7 | 25.9 |
-| + K-FPN + R-RPN (full) | **28.3** | **26.7** |
+| + K-FPN + R-RPN (Full) | **28.3** | **26.7** |
 
-### Cross-Dataset Transfer (LVIS → Objects365)
+### Cross-Dataset Transfer (LVIS→Objects365)
 
 | Method | Backbone | AP_r | AP50 |
-|--------|----------|------|------|
+|------|----------|------|------|
 | CLIPSelf + F-ViT | ViT-L/14 | 21.7 | 39.2 |
 | CLIPSelf + NoOVD | ViT-L/14 | **22.8 (+1.1)** | **40.2 (+1.0)** |
 
 ### Key Findings
-- **K-FPN vs. simple CLIP top-layer features**: K-FPN's multi-scale feature pyramid outperforms single-layer features by 1.1% on novel category detection, demonstrating that multi-scale representations are crucial for discovering novel objects of varying sizes.
-- **K-FPN and R-RPN are complementary**: K-FPN addresses knowledge retention and injection during training, while R-RPN addresses recall at inference; their combination yields the best performance.
-- **OV-LVIS gains are more consistent than OV-COCO**: OV-COCO annotations are incomplete; novel-category objects correctly detected by NoOVD during training are counted as false positives at test time, causing the gains to be underestimated.
-- **Fusion weight W = 0.3 is optimal**: Balancing high-level semantics and low-level details in K-FPN feature fusion is important; deviations in either direction degrade performance.
+- **K-FPN vs. Simple CLIP Top-layer Features**: The multi-scale feature pyramid of K-FPN provides a 1.1% higher gain in novel category detection than single-layer features, highlighting the importance of multi-scale discovery.
+- **Complementarity**: K-FPN resolves knowledge preservation and injection during training, while R-RPN resolves recall during inference; the combination is optimal.
+- **Dataset Stability**: OV-COCO annotations are incomplete; objects correctly detected by NoOVD during training might be counted as false positives during testing, potentially underestimating gains.
+- **Fusion Weight**: A weight of $\alpha=0.3$ is optimal for K-FPN feature fusion; balancing high-level semantics and low-level details is crucial.
 
 ## Highlights & Insights
-- **Novel category discovery without extra data or pseudo-labels**: Generic foreground/background text descriptions combined with frozen CLIP's zero-shot capability enable novel category discovery without knowing specific class names or constructing image-text pseudo-pairs. This "category-agnostic yet foreground-aware" strategy is both elegant and concise.
-- **Fully parameter-free K-FPN design**: A feature pyramid is constructed from frozen CLIP features using only interpolation, concatenation, and pooling, maximally preventing base-category training from corrupting novel-category knowledge. Despite its simplicity, the design directly addresses the root cause.
-- **Consistent discovery strategy across training and inference**: Foreground discovery drives self-distillation during training and re-weights R-RPN scores at inference, yielding a logically coherent framework.
+- **Novel Category Discovery without Extra Data or Pseudo-labels**: The use of general foreground/background descriptions and frozen CLIP's zero-shot capability to discover novel items without knowing category names is a concise and elegant strategy.
+- **Fully Parameter-Free K-FPN**: Constructing a feature pyramid solely through interpolation, concatenation, and pooling prevents base-class training from corrupting novel category knowledge.
+- **Consistent Discovery Strategy**: Reusing the discovery logic for both self-distillation during training and score re-weighting in R-RPN during inference ensures consistency.
 
 ## Limitations & Future Work
-- The foreground/background text descriptions are a fixed set of 30+30 sentences generated by ChatGPT, which may fail to cover all scene semantics; automated or adaptive prompt design could be more effective.
-- Novel-category proposal selection for self-distillation relies on thresholds, potentially missing novel objects that are visually similar to background (e.g., manhole covers on roads).
-- The fixed $\alpha=0.5$ in R-RPN may not be optimal across different datasets or varying novel-to-base category ratios.
-- The current framework is a two-stage detector; integration with one-stage or DETR-based detectors remains unexplored.
+- Foreground/background descriptions are fixed (30+30) from ChatGPT; automated or adaptive prompt designs might improve coverage.
+- Selection of novel proposals for distillation depends on a threshold, which might miss novel objects visually similar to the background (e.g., manhole covers on a road).
+- The fixed value of $\alpha=0.5$ in R-RPN might not be optimal for all datasets or different base/novel ratios.
+- The framework is currently based on two-stage detectors; integration with one-stage or DETR-based detectors remains unexplored.
 
 ## Related Work & Insights
-- **vs. Detic**: Detic extends category coverage using ImageNet image-level labels, requiring large-scale additional data; NoOVD requires no extra data and relies solely on CLIP's inherent capability.
-- **vs. CLIPSelf/DeCLIP**: These methods improve CLIP's region-level representations but still treat novel categories as background during training; NoOVD corrects this at the level of the training procedure itself.
-- **vs. F-VLM**: F-VLM similarly builds on a frozen VLM but lacks a mechanism for actively discovering novel categories; NoOVD proactively mines and learns novel-category knowledge via K-FPN and self-distillation.
+- **vs. Detic**: Detic uses ImageNet image-level labels to expand categories, relying on massive data. NoOVD uses only CLIP's intrinsic capabilities.
+- **vs. CLIPSelf/DeCLIP**: These optimize CLIP's region-level representation but still treat novel categories as background during training. NoOVD corrects the training flow itself.
+- **vs. F-VLM**: While also based on frozen VLMs, F-VLM lacks an active mechanism to discover novel categories, whereas NoOVD actively mines and learns them via K-FPN and self-distillation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Category-agnostic novel category discovery and parameter-free K-FPN design are conceptually novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluated on OV-LVIS, OV-COCO, and Objects365 with multiple backbones, cross-dataset transfer, and detailed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem formulation is clear, method description is thorough, and figures are informative.
-- **Value**: ⭐⭐⭐⭐ Offers a new OVD paradigm requiring no additional data, providing a valuable reference for the open-vocabulary detection community.
+- Novelty: ⭐⭐⭐⭐ The approach of category-agnostic discovery combined with parameter-free K-FPN is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive validation across OV-LVIS, OV-COCO, and Objects365 with multiple backbones and cross-dataset testing.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and detailed methodological explanation.
+- Value: ⭐⭐⭐⭐ Provides a new OVD paradigm without requiring external data, offering significant reference for the community.
 
 <!-- RELATED:START -->
 
@@ -139,11 +150,11 @@ A two-stage detection framework built on a frozen CLIP. During training: (1) K-F
 
 ## Related Papers
 
+- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
-- [\[CVPR 2026\] ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection](abra_teleporting_fine-tuned_knowledge_across_domains_for_open-vocabulary_object_.md)
-- [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/object_detection/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
-- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
-- [\[NeurIPS 2025\] CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection](../../NeurIPS2025/object_detection/cq-dino_mitigating_gradient_dilution_via_category_queries_for_vast_vocabulary_ob.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
+- [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 
 </div>
 

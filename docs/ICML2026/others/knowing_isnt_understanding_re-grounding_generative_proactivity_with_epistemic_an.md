@@ -2,139 +2,125 @@
 title: >-
   [Paper Note] Knowing Isn't Understanding: Re-Grounding Generative Proactivity with Epistemic and Behavioral Insight
 description: >-
-  [ICML2026 (Position Paper)][Generative Proactivity] This ICML 2026 Position paper argues that the "proactivity" of generative agents should not be evaluated solely by how early, autonomously…
+  [ICML 2026][Others][Paper Note] This ICML 2026 position paper argues that the "proactivity" of generative agents should not merely be judged by whether they act earlier, more autonomously, or more persistently. Instead, it must be regulated by two joint constraints: epistemic legitimacy (whether the agent truly "understands" the context) and behavior
 tags:
-  - "ICML2026 (Position Paper)"
-  - "Generative Proactivity"
-  - "Epistemic-Behavioral Coupling"
-  - "Unknown Unknowns"
-  - "Commitment Calibration"
-  - "Epistemic Partnership"
+  - ICML 2026
+  - Others
 date: 2026-05-08
-content_hash: 5e635ef72889b011
+content_hash: 711a174c1a057958
 ---
-
 # Knowing Isn't Understanding: Re-Grounding Generative Proactivity with Epistemic and Behavioral Insight
 
 **Conference**: ICML2026 (Position Paper)  
 **arXiv**: [2602.15259](https://arxiv.org/abs/2602.15259)  
 **Code**: None (Position Paper)  
 **Area**: LLM Alignment / Proactive Agents / Epistemic Modeling  
-**Keywords**: Generative Proactivity, Epistemic-Behavioral Coupling, Unknown Unknowns, Commitment Calibration, Epistemic Partnership
+**Keywords**: Generative Proactivity, Epistemic-Behavioral Coupling, Unknown Unknowns, Commitment Calibration, Epistemic Partnership  
 
 ## TL;DR
-This ICML 2026 Position paper argues that the "proactivity" of generative agents should not be evaluated solely by how early, autonomously, or persistently they act. Instead, it must be regulated by dual constraints: epistemic legitimacy (whether the agent truly "understands" the context) and behavioral commitment (whether the intervention is reversible or forced to escalate). The paper reinterprets hallucinations, alignment failures, and unsafe autonomy as a "knowing/acting" mis-coupling.
+This ICML 2026 position paper argues that the "proactivity" of generative agents should not merely be judged by whether they act earlier, more autonomously, or more persistently. Instead, it must be regulated by two joint constraints: epistemic legitimacy (whether the agent truly "understands" the context) and behavioral commitment (whether the intervention is reversible or forced to escalate). The authors re-interpret hallucinations, alignment failures, and unsafe autonomy as structural "mis-coupling" between knowing and acting.
 
 ## Background & Motivation
 
-**Background**: Current research on proactive agents primarily accumulates capabilities along three paths: (i) anticipatory IR/recommendation, which extrapolates next-step needs from historical signals; (ii) autonomous planning/tool-use LLM agents, which equate "proactivity" with multi-step execution and self-reflection; and (iii) mixed-initiative systems, which treat "when and with what intensity to intervene" as explicit control variables. All these view proactivity as "action selection within a fixed task framework," where epistemic uncertainty is downgraded to confidence levels over known variables.
+**Background**: Current research on proactive agents primarily follows three paths to accumulate capabilities: (i) anticipatory IR/recommendation, which extrapolates future needs from historical signals; (ii) autonomous planning/tool-calling LLM agents, which equate "proactivity" with multi-step execution and self-reflection; and (iii) mixed-initiative systems, which treat "when and how strongly to intervene" as explicit control variables. All these views treat proactivity as "action selection within a fixed task framework," where epistemic uncertainty is relegated to a confidence score over known variables.
 
-**Limitations of Prior Work**: Collapsing ignorance into "uncertainty over known dimensions" misses three categories: (a) error-as-knowledge (fluent and confident but incorrect LLM explanations); (b) signal suppression (denial: smoothing out anomalous signals to maintain task progress); and (c) **unknown unknowns** (UU)—which are neither within the task framework nor representable by confidence scores. Table 1 classifies existing work by the highest epistemic state they can reach (KK/KU/UK/UU); the result shows that almost no mainstream methods reach UU.
+**Limitations of Prior Work**: Collapsing all ignorance into "uncertainty over known dimensions" loses three critical elements: (a) error-as-knowledge (LLM providing fluent, confident, but incorrect explanations); (b) signal denial (smoothing out anomalous signals to maintain task momentum); and (c) **Unknown Unknowns** ($UU$), which are neither within the task framework nor representable by confidence scores. Table 1 categorizes existing work by their highest reachable epistemic state ($KK / KU / UK / UU$), revealing that almost no mainstream methods reach $UU$.
 
-**Key Challenge**: Treating proactivity as "stronger initialization capability" systematically amplifies risk. The earlier and more decisively an agent intervenes, the more it rewrites the environment and erases evidence that could have exposed mis-coupling. Optimization objectives that focus solely on task completion, coherence, or speed yield "behavioral momentum" rewards while providing almost no signal for epistemic robustness.
+**Key Challenge**: Treating proactivity as "enhanced initialization capability" systematically amplifies risk. Earlier and more decisive interventions rewrite the environment itself, potentially erasing evidence that could have exposed mis-coupling. Optimization objectives focusing solely on task completion, coherence, or speed effectively reward "behavioral momentum" while providing almost no signals for epistemic robustness.
 
-**Goal**: (i) Explicitly treat the epistemic dimension (what can be legitimately claimed as understood) as the primary constraint of proactivity; (ii) provide a diagnostic framework to explain the structural roots of surface-level failures like "hallucination," "unsafe autonomy," and "alignment failure"; and (iii) propose epistemic partnership as the direction for next-generation proactive agents.
+**Goal**: (i) Explicitly establish the epistemic dimension (what can be legitimately claimed as understood) as the primary constraint of proactivity; (ii) provide a diagnostic framework to explain the common structural roots of surface-level failures like "hallucinations," "unsafe autonomy," and "alignment failure"; (iii) propose "epistemic partnership" as the direction for next-generation proactive agents.
 
-**Key Insight**: The authors borrow from Kerwin’s ignorance philosophy and Parker et al.’s "inverted doughnut" model from organizational behavior. The former deconstructs ignorance into structured forms (error/tacit/taboo/denial/UU), while the latter constrains "legitimate autonomous behavior" within a three-dimensional space of role scope, recoverability, and social feedback. These two lines address "what is known" and "at what intensity to act," respectively, but individually lack critical constraints.
+**Key Insight**: The paper borrows from Kerwin’s "ignorance philosophy" and Parker et al.’s "inverted doughnut" model from organizational behavior. The former decomposes ignorance into structured forms (error, tacit, taboo, denial, $UU$), while the latter constrains "legitimate autonomous behavior" within a three-dimensional space of role scope, recoverability, and social feedback. Used individually, both lineages miss critical constraints.
 
-**Core Idea**: Proactivity is modeled as a two-dimensional joint space of "commitment $\times$ legitimacy." The model requires these two to remain **coupled**: commitment must dynamically downshift according to epistemic legitimacy. When legitimacy declines, actions must be reversible, interruptible, and capable of amplifying uncertainty rather than smoothing it over.
+**Core Idea**: Modeling proactivity as a 2D joint space of "Commitment $\times$ Legitimacy" and requiring the two to remain **coupled**. Commitment must dynamically downshift based on epistemic legitimacy; when legitimacy declines, actions must be reversible, interruptible, and capable of amplifying uncertainty rather than smoothing it over.
 
 ## Method
 
 ### Overall Architecture
-Rather than proposing an algorithm, this paper provides a **diagnostic and design principle** framework structured in four steps: (1) Reviewing existing proactivity paradigms to locate common blind spots; (2) introducing epistemic grounding to discuss "ignorance as more than uncertainty"; (3) introducing behavioral grounding to discuss "proactivity as distinct from more initialization"; and (4) proposing an epistemic-behavioral coupling model to categorize failure modes as coupling mismatches, accompanied by five open research questions and a checklist of minimal behavioral constraints.
+The paper does not propose a specific algorithm but rather a **diagnostic + design principle** framework structured in four steps: (1) reviewing existing proactivity paradigms to locate common blind spots; (2) introducing epistemic grounding to discuss "ignorance as more than just uncertainty"; (3) introducing behavioral grounding to discuss "proactive as not equal to more initialization"; (4) proposing an epistemic-behavioral coupling model to categorize failure modes and providing five open research questions with a checklist of minimal behavioral constraints.
 
 ### Key Designs
 
-1.  **Epistemic Grounding $\rightarrow$ Deconstructing Ignorance into Structured Forms**:
+**1. Epistemic Grounding: Decomposing ignorance from "confidence in known variables" into structured forms to allow agents to explicitly represent "what I have not modeled."**
 
-    - **Function**: Allows the agent to treat "known knowns / known unknowns / unknown knowns / unknown unknowns" (KK/KU/UK/UU) as first-class objects rather than collapsing them into confidence.
-    - **Mechanism**: Drawing on Kerwin’s ignorance philosophy, ignorance is subdivided into five types: uncertainty (insufficient confidence in known variables), error (treating the wrong as right and defending it), tacit (implicitly executable but unutterable), taboo (questions forbidden by norms/incentives), and denial (active suppression of threatening information). None of these forms are captured by probabilistic modeling. Table 1 inventories seven representative paradigms (Anticipatory IR, Web/OS agents, Planning+Tool LLMs, Mixed-initiative, etc.), showing that the "epistemic ceiling" for mainstream methods peaks at UK, with UU left untouched.
-    - **Design Motivation**: The root cause of failure in current proactive agents is the equation of ignorance $\approx$ uncertainty. Consequently, when the task framework itself is wrong, confidence is self-reinforced (low uncertainty under an impoverished model) instead of acting as a warning. To break this, agents must have the capacity to explicitly represent "what I have not modeled"—a level that confidence calibration cannot fix.
+Current proactive agent failures stem from the assumption that $ignorance \approx uncertainty$. When the task framework itself is flawed, confidence is self-reinforced (low uncertainty under an impoverished model) rather than acting as a warning. Citing Kerwin’s philosophy, the authors divide ignorance into five types: uncertainty (insufficient confidence in known variables), error (defending wrong beliefs as right), tacit (implicitly executable but unexpressible), taboo (forbidden questions due to norms/incentives), and denial (active suppression of threatening information). None of these are captured by probabilistic modeling. Table 1 reviews seven representative paradigms, concluding that the "epistemic ceiling" of mainstream methods reaches only $UK$ at best, leaving $UU$ untouched. To break this, agents must have the capacity to explicitly represent "what I have not modeled," a level fundamental calibration cannot fix.
 
-2.  **Behavioral Grounding $\rightarrow$ Inverted Doughnut + Reversibility Boundaries**:
+**2. Behavioral Grounding: Constraining intervention intensity with the "Inverted Doughnut + Reversibility Boundary" to prevent behavioral overreach despite epistemic legitimacy.**
 
-    - **Function**: Constrains "at what intensity, in what scope, and with what commitment" an agent intervenes to prevent behavioral overreach despite epistemic legitimacy.
-    - **Mechanism**: The "inverted doughnut model" from Parker et al. (2010) is utilized: the center is the prescribed core (required responsibilities), the middle is the discretionary zone (encouraged proactivity), and the outer ring is overreach (boundary-crossing with high social cost). However, the authors note that this model only regulates "deviation along role scope" but **not whether the actor's understanding of the context is correct**. While humans use social feedback and institutional signals to fill this gap, agents lack these stable signals—optimization objectives rewarding task completion systematically disincentivize "letting go and downshifting."
-    - **Design Motivation**: In human organizations, "self-restraint" relies on norms and feedback. Importing behavioral proactivity to agents without these is akin to providing horsepower without brakes. Thus, a new hard constraint must be added to the behavioral side: commitment must be linked to epistemic recoverability.
+Knowing correctly is insufficient; one must also constrain "with what force, scope, and commitment to intervene." The paper adapts Parker et al.'s (2010) inverted doughnut model: the center is the "prescribed core" (mandatory responsibilities), the middle is the "discretionary zone" (encouraged proactivity), and the outer ring is "overreach" (prohibited, high social cost). The authors point out that this model only regulates "deviation along role scope" and **does not regulate whether the actor's understanding of the situation is correct**. Humans use social feedback and institutional signals to bridge this gap, but agents lack these stable signals—their optimization rewards "task completion," which systematically discourages "stepping back/disengaging." Thus, a new hard constraint must be added: commitment must be linked with epistemic recoverability.
 
-3.  **Epistemic-Behavioral Coupling $\rightarrow$ Unified Diagnosis of Failure Modes + Minimal Behavioral Constraints**:
+**3. Epistemic-Behavioral Coupling: Building proactivity in a 2D space of (Commitment, Legitimacy) to diagnose hallucinations, runaway, and signal suppression as mis-coupling.**
 
-    - **Function**: Builds proactivity within a 2D joint space of (commitment, epistemic legitimacy), reinterpreting failures like hallucination, runaway, and suppressed signals as mis-couplings.
-    - **Mechanism**: A four-quadrant model—(High Legitimacy + Low Commitment) = Observation/Clarification; (High Legitimacy + High Commitment) = Justified Intervention; (Low Legitimacy + Low Commitment) = Exploration/Probing; (Low Legitimacy + High Commitment) = **Epistemic Overreach**. Three typical failures are identified: epistemic overreach (hallucination amplified by tool invocation), suppressed epistemic signals (coherence rewards suppressing anomalous evidence), and runaway commitment under false certainty (self-reflecting agents reinforcing error as knowledge). Four minimal behavioral constraints are proposed: (i) commitment must scale with recoverability; (ii) proactive behavior must preserve rather than suppress uncertainty; (iii) commitment must be interruptible by epistemic degradation; and (iv) uncertainty must proactively modulate initialization rather than just acting as a post-hoc label.
-    - **Design Motivation**: Looking at the "degree of autonomy" alone cannot explain why well-aligned agents still overreach. The true control variable is not autonomy (who can act) but commitment (how irreversible the action is). By joining these two axes, "hallucination = high commitment/low legitimacy" and "sycophancy = low commitment/high legitimacy" are no longer isolated phenomena but different points in the same space that can be consistently evaluated and constrained.
+Proactivity is mapped into a joint space of $(\text{commitment}, \text{epistemic legitimacy})$ across four quadrants: (High Legitimacy + Low Commitment) = Observation/Clarification; (High Legitimacy + High Commitment) = Justified Intervention; (Low Legitimacy + Low Commitment) = Exploration/Probing; (Low Legitimacy + High Commitment) = **Epistemic Overreach**. Three typical failures are explained: epistemic overreach (hallucinations amplified by tool use), suppressed epistemic signals (coherence rewards suppressing anomalous evidence), and runaway commitment under false certainty (self-reflecting agents reinforcing errors into knowledge). Four minimal constraints are proposed: commitment must scale with recoverability; proactive behavior must preserve rather than suppress uncertainty; commitment must be interruptible by epistemic degradation; and uncertainty must actively modulate initialization rather than being a post-hoc label. The core judgment: the true control variable is not autonomy (who can act) but commitment (how irreversible the action is).
 
-### Loss & Training
-This paper does not provide a specific algorithm but outlines **five research agendas** (Q1-Q5): How to represent epistemic legitimacy? Which signals must be preserved during action? How to detect degradation in a timely manner? When does downshifting/abstention count as "correct proactivity"? How to evaluate coupling quality (at the time of action, not post-hoc)? Section 7 points toward epistemic partnership—three capabilities: proactively asking about UU, long-horizon thinking, and test-time proactivity (real-time initiative adjustment during deployment).
+### Loss & Training (Position Paper Guidelines)
+No specific algorithm is provided, but the paper lists **five research agendas** ($Q1$-$Q5$): How to represent epistemic legitimacy? Which signals must be preserved during action? How to detect degradation timely? When is downshifting/abstaining considered "correct proactivity"? How to evaluate coupling quality at the time of action? Section 7 points toward "epistemic partnership" with three capabilities: proactively querying $UU$, long-horizon reasoning, and test-time proactivity.
 
 ## Key Experimental Results
 
-As a position paper, there are no quantitative experiments. The following tables represent the **core qualitative analysis**—surveying the status quo and classifying failure modes.
+As a position paper, there are no quantitative experiments. The following tables represent the **core qualitative analysis**.
 
-### Main Results: Epistemic Ceilings of Existing Proactivity Paradigms (Rearranged Table 1)
+### Main Results: Epistemic Ceilings of Existing Proactivity Paradigms (Table 1)
 
-| Proactivity Paradigm | KK | KU | UK | UU | Structural Gap |
-|----------------------|----|----|----|----|----------------|
-| Anticipatory IR / Proactive Retrieval | ✓ | ✓ | ✗ | ✗ | Limited to prediction in known info space; UK/UU unreachable |
-| Sequential / Basket Recommendation | ✓ | ✗ | ✗ | ✗ | Selection on fixed catalog; does not explicitly model KU |
-| Web/OS/Embodied Agent | ✓ | ✗ | ✗ | ✗ | Benchmarks define success rigidly; no interface to redefine tasks |
-| Planning + Tool-using LLM | ✓ | ✓ | ✗ | ✗ | Optimizes actions with known tools; no reconstruction of modeling needs |
-| Proactive Conversational (human-centered) | ✓ | ✓ | ✓ | ✗ | Adjusts intervention timing but remains in preset dimensions |
-| Mixed-initiative Clarification | ✓ | ✓ | ✓ | $\sim$ | Excavates latent intent but struggles to surface "missing dimensions" |
-| **Ours: Epistemic Partnership (Vision)** | ✓ | ✓ | ✓ | ✓ | Only one explicitly treating UU as a first-order objective |
+| Proactivity Paradigm | $KK$ | $KU$ | $UK$ | $UU$ | Structural Gap |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| Anticipatory IR / Proactive Retrieval | ✓ | ✓ | ✗ | ✗ | Only predicts within known info space; $UK/UU$ unreachable. |
+| Sequential / Basket Recommendation | ✓ | ✗ | ✗ | ✗ | Chooses from fixed catalog; no explicit $KU$ modeling. |
+| Web/OS/Embodied Agent | ✓ | ✗ | ✗ | ✗ | Benchmarks define success rigidly; no interface to redefine tasks. |
+| Planning + Tool-using LLM | ✓ | ✓ | ✗ | ✗ | Optimizes actions for known tools; no reconstruction of modeling scope. |
+| Proactive Conversational (human-centered) | ✓ | ✓ | ✓ | ✗ | Adjusts timing but remains within preset dimensions. |
+| Mixed-initiative Clarification | ✓ | ✓ | ✓ | $\sim$ | Can unearth latent intent but struggles to surface "missing dimensions." |
+| **Ours: Epistemic Partnership (Vision)** | ✓ | ✓ | ✓ | ✓ | The only paradigm treating $UU$ as a first-order objective. |
 
-### Failure Mode Classification Table (Summary of Section 5)
+### Failure Mode Classification (Section 5 Summary)
 
-| Failure Mode | 2D Positioning | Typical Manifestation | Existing Mitigation | Why It Fails |
-|--------------|----------------|------------------------|---------------------|--------------|
-| Epistemic overreach | High Commitment + Low Legitimacy | LLM confidently invokes tools to change external state | Confidence calibration | "High confidence" under a wrong framework is treated as epistemic OK |
-| Suppressed signals | High Commitment + Degrading Legitimacy | Self-improve loop smooths over anomalies | Uncertainty estimation | Objectives reward coherence; confidence may rise during distribution drift |
-| Runaway commitment | Escalating Commitment + Denial | Reflection agent reinforces error as knowledge | Self-reflection | Reflection is driven by the same "completion" signals |
-| Premature steering | High Commitment + Unprocessed UK | Early decisive action erases evidence that could expose errors | Mixed-initiative coordination | Intervention has already occurred by the time coordination happens |
+| Failure Mode | 2D Mapping | Typical Manifestation | Existing Mitigation | Why It Fails |
+| :--- | :--- | :--- | :--- | :--- |
+| Epistemic overreach | High Commitment + Low Legitimacy | LLM confidently uses tools to modify external states. | Confidence calibration | "High confidence" under a wrong framework is mistaken for legitimacy. |
+| Suppressed signals | High Commitment + Degrading Legitimacy | Self-improve loop smooths out anomalies. | Uncertainty estimation | Reward for coherence suppresses evidence; confidence rises during drift. |
+| Runaway commitment | Escalating Commitment + Denial | Reflection agent solidifies error into knowledge. | Self-reflection | Reflection is driven by the same "completion" signals. |
+| Premature steering | High Commitment + Unprocessed $UK$ | Early decisive actions erase evidence that could expose errors. | Mixed-initiative coord. | Intervention happens during coordination; too late. |
 
 ### Key Findings
-- **The truly missing control variable is commitment, not autonomy**—this is the most impactful assertion of the paper. Permissioning/tool access controls autonomy; what determines harm is the magnitude by which an action rewrites future states.
-- **Current benchmarks systematically reward the "wrong person"**: Rewards for task completion/coherence/speed are equivalent to rewarding momentum, naturally selecting strategies that "proceed even if wrong"—a direct challenge to mainstream evaluation paradigms like ReAct/Reflexion.
-- **Epistemic legitimacy cannot be represented by a single confidence value**: KK/KU/UK/UU are four distinct states requiring four different proxy variables (agent representation is far from this).
-- **Proactivity and restraint are two sides of the same coin**: The criterion for an epistemic partnership is not "asking more / helping more," but "downshifting when it is appropriate to do so"—this has immediate actionable implications for evaluation protocols.
+- **The missing control variable is commitment, not autonomy.** Permissioning and tool access control autonomy, but the harm is determined by how irreversibly the action rewrites future states.
+- **Current benchmarks systematically reward "confidently wrong" behavior.** Rewards for task completion, coherence, and speed equate to rewards for momentum, naturally selecting "move forward even if wrong" strategies—challenging paradigms like ReAct/Reflexion.
+- **Epistemic legitimacy cannot be a single confidence value.** $KK/KU/UK/UU$ are distinct states requiring different proxy variables.
+- **Proactivity and restraint are two sides of the same coin.** The standard for an epistemic partner is not "how much it helps" but "whether it downshifts when it should."
 
 ## Highlights & Insights
-- **Philosophical Arsenal**: Extracting error/tacit/taboo/denial/UU from Kerwin’s ignorance philosophy provides a conceptual language to explain the true causes of hallucination; this "non-probabilistic uncertainty" can be extended to RAG, tool-use safety, and autonomous driving.
-- **Social Science Arsenal**: The Inverted Doughnut model provides a visual framework for agent design—discretionary zone vs. overreach—which is closer to corporate governance than the "reward shaping + RLHF" approach.
-- **Redefining "Alignment"**: The paper essentially expands alignment from "value alignment" to "commitment alignment"—aligning not just goals, but the ability to withdraw when legitimacy is insufficient. This opens a third path beyond RLHF/DPO/Constitutional AI.
-- **Transferable Design Principles**: The four minimal behavioral constraints (recoverability scaling, signal preservation, interruptibility, active modulation) are hard constraints that can be immediately implemented in existing agent frameworks (e.g., ReAct, AutoGen, OpenAI Assistants).
+- **Philosophical Framework**: Using Kerwin’s five types of "non-probabilistic ignorance" provides a language to explain the root causes of hallucinations in RAG and tool-use safety.
+- **Social Science Tools**: The Inverted Doughnut model provides a visualization for agent design (discretionary zone vs. overreach) that is closer to corporate governance than standard reward shaping.
+- **Redefining Alignment**: The paper extends "value alignment" to "commitment alignment"—aligning not just the goal, but the ability to withdraw when legitimacy is insufficient.
+- **Transferable Principles**: The four minimal behavioral constraints (recoverability scaling, signal preservation, interruptibility, active modulation) can be immediately applied as hard constraints in frameworks like AutoGen or OpenAI Assistants.
 
 ## Limitations & Future Work
-- **Lack of Implementation Roadmap**: How to operationalize the four minimal behavioral constraints remains open—e.g., "commitment must be interruptible by epistemic degradation" requires making "epistemic degradation" a detectable signal, which the paper admits is an open Q3 question.
-- **Scale of Multi-Agent/Society Coupling**: The coupling model is from a single-agent perspective; how legitimacy/commitment couples at a system level in an agentic society is not discussed.
-- **Missing Evaluation Protocols**: The authors argue for evaluating coupling quality at the time of action rather than post-doc, but no specific benchmarks/metrics are provided—a critical step for follow-up work.
-- **Learnability of Epistemic Categories**: Whether the philosophical categories of KK/KU/UK/UU can be learned by current LLMs, whether they generalize, and whether they are robust to poisoning remains unknown.
-- **Potential Improvements**: (i) Operationalize epistemic degradation into specific signals like OOD scores or counterfactual probing; (ii) design "abstention rewards" to teach RL agents calibrated restraint; (iii) construct explicit UU benchmarks where task descriptions deliberately omit critical variables to see if the agent asks rather than guesses.
+- **Lack of Implementation Roadmap**: Operationalizing the four constraints remains open—defining "epistemic degradation" as a detectable signal is still a research question.
+- **Multi-agent / Social Scale**: The model focuses on single-agent proactivity; system-level coupling in an agentic society is not discussed.
+- **Evaluation Protocols**: The authors argue for evaluating coupling quality *during* action, but provide no specific benchmark or metric.
+- **Learnability**: Whether the $KK/KU/UK/UU$ categories can be learned or generalized by current LLMs remains unproven.
 
 ## Related Work & Insights
-- **vs. Horvitz (Mixed-initiative) 1999/2007**: The paper acknowledges the brilliant theory of "when to intervene" but critiques its assumption that the task framework is correctly specified; this paper adds "first asking if the framework itself is legitimate."
-- **vs. ReAct / Reflexion / Planning Agents**: These are categorized as representatives of "high autonomy without explicit commitment management"—their behavioral momentum acts as a failure amplifier.
-- **vs. Hendrycks et al. (Distribution Shift)**: The paper uses the empirical finding that "calibration degrades under shift" but elevates it from "confidence is unreliable" to "confidence representing the wrong thing."
-- **vs. Recent Epistemic Agent Work (COLLABLLM, DYNA-THINK, ProPer)**: Acknowledges these move toward epistemic partnership but notes they still equate collaboration with more interaction; this paper demands collaboration = calibrated intervention.
-- **vs. Constitutional AI / RLHF**: Those focus on value alignment (what behavior should not be); this paper focuses on commitment alignment (how firm an action should be based on how solid the knowledge is), making them orthogonal.
+- **vs. Horvitz (Mixed-initiative)**: While Horvitz defined "when to intervene," the paper argues those models assume the task framework is correctly specified. Ours adds a check for frame legitimacy.
+- **vs. ReAct / Reflexion**: Categorized as paradigms with high autonomy but unmanaged commitment, where behavioral momentum acts as a failure amplifier.
+- **vs. Hendrycks et al. (Distribution Shift)**: Moves from "confidence is unreliable under shift" to "confidence itself represents the wrong things."
+- **vs. Constitutional AI / RLHF**: These manage "what behavior should be" (values); this paper manages "how committed the action should be" (calibration), making them orthogonal.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The "epistemic-behavioral coupling" framework is unprecedented in ML literature. Seriously introducing ignorance philosophy into proactive agent design is a genuine conceptual breakthrough.
-- **Experimental Thoroughness**: ⭐⭐⭐ As a position paper, there are no quantitative experiments; argumentation relies on review and conceptual deduction, though the proposed Q1-Q5 guide empirical follow-ups.
-- **Writing Quality**: ⭐⭐⭐⭐ Conceptual derivation is structured; the breakdown in Table 1 is particularly clear. Some sections (5/6) have high conceptual density that may be heavy for readers.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a corrective influence on the agent/alignment community—exposing "more proactive / more autonomous" as an optimization direction that may amplify harm, while providing a minimal constraint checklist for immediate use.
+- Novelty: ⭐⭐⭐⭐⭐ Bringing "epistemic-behavioral coupling" and ignorance philosophy to agent design is a conceptual breakthrough.
+- Experimental Thoroughness: ⭐⭐⭐ Position paper nature; heavy on synthesis and conceptual deduction without quantitative experiments.
+- Writing Quality: ⭐⭐⭐⭐ Structured conceptual derivation, though some sections are conceptually dense.
+- Value: ⭐⭐⭐⭐⭐ Corrective influence on the agentic community; provides a checklist of constraints to prevent "宁可错也要前进" (moving forward at the cost of being wrong) strategies.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2025\] Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks](../../ACL2025/others/principled_generalization_arithmetic.md)
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](../../AAAI2026/others/an_epistemic_perspective_on_agent_awareness.md)
 - [\[AAAI 2026\] Why Isn't Relational Learning Taking Over the World?](../../AAAI2026/others/why_isnt_relational_learning_taking_over_the_world.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
-- [\[AAAI 2026\] STEM Faculty Perspectives on Generative AI in Higher Education](../../AAAI2026/others/stem_faculty_perspectives_on_generative_ai_in_higher_education.md)
+- [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](../../AAAI2026/others/an_epistemic_perspective_on_agent_awareness.md)
+- [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)
 
 </div>
 

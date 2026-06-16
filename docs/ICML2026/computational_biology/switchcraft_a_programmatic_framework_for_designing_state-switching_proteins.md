@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins
 description: >-
-  [ICML 2026][Computational Biology][Multi-state protein design] SwitchCraft formalizes the "design of proteins capable of switching between multiple functional states" as a combinatorial constraint-solving optimization pr…
+  [ICML 2026][Computational Biology][Boltz-1] SwitchCraft formalizes the design of proteins capable of switching between multiple functional states as an optimization problem over combinatorial constraints. By backpropagating multiple state-dependent losses (motif, binding, conformational change, contact) through the structure prediction model Boltz-1, it directly
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "Multi-state protein design"
-  - "Boltz-1"
-  - "Differentiable structure prediction"
-  - "Allosteric regulation"
-  - "Biosensors"
+  - ICML 2026
+  - Computational Biology
+  - Boltz-1
 date: 2026-05-08
-content_hash: 429626fc2818dace
+content_hash: 99faa52996525b9a
 ---
-
 # SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins
 
 **Conference**: ICML 2026  
@@ -24,107 +19,116 @@ content_hash: 429626fc2818dace
 **Keywords**: Multi-state protein design, Boltz-1, Differentiable structure prediction, Allosteric regulation, Biosensors  
 
 ## TL;DR
-SwitchCraft formalizes the "design of proteins capable of switching between multiple functional states" as a combinatorial constraint-solving optimization problem. By backpropagating multiple state-dependent losses (motif, binding, conformational change, contact) through the structure prediction model Boltz-1 to optimize amino acid logits via gradient descent, it achieves the first general computational framework for multi-state protein design. In silico experiments demonstrate de novo design of positive/negative allostery, motif switching, induced binding, ligand modification, ligand discrimination, and cpGFP fluorescent biosensors.
+SwitchCraft formalizes the design of proteins capable of switching between multiple functional states as an optimization problem over combinatorial constraints. By backpropagating multiple state-dependent losses (motif, binding, conformational change, contact) through the structure prediction model Boltz-1, it directly optimizes amino acid logits via gradient descent. This represents the first general computational framework for multi-state protein design, demonstrated through in silico experiments including positive/negative allostery, motif switching, induced binding, ligand modification, ligand discrimination, and de novo design of cpGFP fluorescent biosensors.
 
 ## Background & Motivation
 
-**Background**: Generative protein design is currently dominated by two technical routes: 1) Protein Language Models (PLMs, e.g., ProGen, ESM3), trained on billions of natural sequences to generate new sequences based on family labels or GO terms; 2) Structural generative models (RFDiffusion, Boltz-1, BoltzDesign1), which learn structural distributions from the PDB or backpropagate through structure predictors for binder design and enzyme active site scaffolding.
+**Background**: Generative protein design is currently dominated by two technical routes: first, protein language models (PLMs, e.g., ProGen, ESM3), trained on billions of natural sequences to generate new ones based on family labels or GO terms; second, structural generative models (RFDiffusion, Boltz-1, BoltzDesign1), which learn structural distributions from the PDB or backpropagate through structure predictors for binder design and enzyme active site scaffolding.
 
-**Limitations of Prior Work**: Natural proteins are far more than "one static structure corresponding to one static function." Many critical functions (motor proteins walking along microtubules, ATP synthase rotation, polymerase information processing, hemoglobin cooperative binding) depend on **multi-state dynamics**—proteins must switch precisely between multiple conformational or binding states. PLM conditions can only reference existing labels and cannot describe unseen complex functions; structural generators are restricted to single static structures. Neither route can directly express specifications like "folding into conformation 1 in the presence of ligand A and conformation 2 in the presence of ligand B."
+**Limitations of Prior Work**: Natural proteins are far more than "one static structure for one static function." Many critical functions (motor proteins walking along microtubules, ATP synthase rotation, polymerase information processing, hemoglobin cooperative binding) depend on **multi-state dynamics**—proteins must switch precisely between multiple conformations or binding states. PLM conditioning can only reference existing labels and cannot describe unseen complex functions; structural generators are restricted to a single static structure. Neither route can directly express specifications like "fold into conformation 1 in the presence of ligand A, and conformation 2 in the presence of ligand B."
 
-**Key Challenge**: Either data-driven but lacking labels (PLM route) or physically controllable but only describing a single state (structural route). A dataset that fully expresses "multiple states + structural constraints for each state" simply does not exist, making purely data-driven paths unfeasible.
+**Key Challenge**: Either the approach is data-driven but lacks labels (PLM route), or it is physically controllable but describes only a single state (structural route). Datasets that fully express "multiple states + structural constraints for each state" simply do not exist, making pure data-driven paths unfeasible.
 
-**Goal**: Construct a **programmatic framework** that allows designers to specify arbitrary numbers of states and their respective structural constraints—similar to writing a program with branches—and let the optimizer automatically find the amino acid sequence that satisfies all states simultaneously.
+**Goal**: Construct a **programmatic framework** that allows designers to specify arbitrary states and their respective structural constraints as if writing a branched program, enabling an optimizer to automatically find amino acid sequences that satisfy all states simultaneously.
 
-**Key Insight**: The authors noted that methods like BoltzDesign1 have proven structure predictors like Boltz-1 can be backpropagated for binder design. Since this can be done for a single state, multiple states can be optimized by summing their losses and backpropagating together. Boltz-1 accepts ligand context as input, naturally supporting multiple forward passes where "the same sequence folds into different structures under different ligand environments."
+**Key Insight**: The authors noted that methods like BoltzDesign1 have proven that backpropagating through the structure predictor Boltz-1 can design binders. Since this works for a single state, the losses for multiple states can be summed and backpropagated together. Boltz-1 accepts ligand context as input, naturally supporting multiple forwards where the "same sequence folds into different structures under different ligand environments."
 
-**Core Idea**: The optimization objective is defined such that the sequence $\mathbf{z}\in\mathbb{R}^{20\times L}$, when folded by Boltz-1 under multiple contexts $\{\mathcal{C}_s\}$, simultaneously satisfies a set of losses $\{\mathcal{L}_n\}$. Gradient descent is performed directly on $\mathbf{z}$, using a straight-through estimator to make the discrete amino acid argmax problem differentiable.
+**Core Idea**: The optimization objective is formulated such that a sequence $\mathbf{z}\in\mathbb{R}^{20\times L}$, when folded by Boltz-1 under multiple contexts $\{\mathcal{C}_s\}$, simultaneously satisfies a set of losses $\{\mathcal{L}_n\}$. Gradient descent is performed directly on $\mathbf{z}$, using a straight-through estimator to make the discrete amino acid argmax problem differentiable.
 
 ## Method
 
 ### Overall Architecture
-SwitchCraft decomposes multi-state protein design into two stages:
+SwitchCraft addresses the challenge of designing a single sequence that folds into multiple specified conformations under different ligand environments—something single-state generators cannot do—by rewriting this requirement as an optimization problem. The designer first writes a **specification**: enumerating states $s=1,\ldots,N_{\text{states}}$, each with a folding context $\mathcal{C}_s$ (including small molecules, metal ions, DNA, target peptides, etc.), and a set of losses $\mathcal{L}_n:\mathbb{R}^{20\times L}\to\mathbb{R}$, each depending on one or more Boltz-1 outputs. A design mask $\mathbf{m}\in\{0,1\}^L$ and optional fixed motif sequences $\mathbf{s}$ are declared. Then, **optimization** proceeds: with the sequence $\mathbf{z}$ represented as logits as the sole variable, a 240-step annealing schedule is executed. At each step, $\mathbf{z}$ is converted into a pseudo-representation and fed into Boltz-1; all losses are aggregated to compute gradients for updating $\mathbf{z}$. This process is conceptually similar to training a deep model—losses are the design goals, the optimizer is SGD, and the "weights" being optimized are the sequence itself. The resulting multi-state sequences can be further **assembled into devices**: embedding conformational switches into circularly permuted GFP (cpGFP) yields de novo designed fluorescent biosensors.
 
-1.  **Design Specification**: Enumerate states $s=1,\ldots,N_{\text{states}}$, where each state is bound to a folding context $\mathcal{C}_s$ (including small molecules, metal ions, DNA, target peptides, etc.); enumerate losses $\mathcal{L}_n:\mathbb{R}^{20\times L}\to\mathbb{R}$ where each loss depends on the Boltz-1 output of one or more states; declare design masks $\mathbf{m}\in\{0,1\}^L$ and optional fixed motif sequences $\mathbf{s}$.
-2.  **Design Optimization**: Using sequence logits $\mathbf{z}$ as optimization variables, a 240-step four-stage schedule is executed. At each step, $\mathbf{z}$ is converted into a "hard-soft-continuous" pseudo-representation $\mathbf{z}_{\text{pseudo}}$ and fed into Boltz-1. All losses are aggregated, and gradients are calculated to update $\mathbf{z}$.
-
-The process is conceptually similar to training a deep learning model: losses are design goals, the optimizer is SGD, and the model weights are the sequence itself.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Specification: Enumerate States + Contexts + Mask / Motifs"] --> B
+    B["Loss DSL<br/>Four types of differentiable losses: Motif / Binding / Conf-Change / Contact"] --> C
+    C["Straight-Through + 4-Stage Annealing<br/>Sequence logits converted to pseudo-rep via STE"] --> D
+    D["Boltz-1 Multi-state Forward → Distogram → Loss Aggregation"] -->|"Gradients backprop to sequence, 240-step annealing"| C
+    D --> E["Converged Multi-state Switch Sequence"]
+    E --> F["Multi-motif Merging & cpGFP Sensor Assembly<br/>Dual-motif merging / Apo→Holo insertion site screening"]
+    F --> G["Functional Protein / Fluorescent Biosensor"]
+```
 
 ### Key Designs
 
-1.  **Composable State-Loss Language (Loss DSL)**:
-    - **Function**: Translates natural language specifications (e.g., "design a scaffold that presents a motif in the presence of ligand X and disrupts it otherwise") into a set of mathematically well-defined losses differentiable with respect to $\mathbf{z}$.
-    - **Mechanism**: Four basic loss primitives are derived from Boltz-1 outputs (distogram, pair representation). **Motif Loss** $\mathcal{L}_{\text{motif}}=\sum_{i,j\in m, i\neq j}\sum_k \frac{p_{ijk}}{|m|(|m|-1)}(d_k-\|\mathbf{r}_i-\mathbf{r}_j\|)^2$ minimizes the squared error of intra-motif residue pair distances weighted by distogram probabilities. The corresponding **Anti-motif Loss** $\mathcal{L}_{\text{anti-motif}}=-0.5\,\mathcal{L}_{\text{motif}}$ actively disrupts the scaffold. **Binding Loss** $\mathcal{L}_{\text{binding}}=\frac{1}{2c}\sum \min_j^{(k=c)}\min_i^{(k=2)} H_{<20\text{Å}}(D_{ij})$ uses truncated entropy from BoltzDesign1 to aggregate proximity probabilities of "top-$c$ ligand tokens and top-2 protein residues," encouraging confident contacts; **Anti-binding Loss** is defined as -0.5 times the binding loss. **Conformational Change Loss** $\mathcal{L}_{\text{conf-change}}(\mathbf{z};\mathcal{C}_1,\mathcal{C}_2)=-\frac{1}{L}\sum_i \max_j \mathrm{JSD}(D^{(1)}_{ij}\|D^{(2)}_{ij})$ maximizes the Jensen-Shannon Divergence (JSD) of the distance distributions for the same residue pairs under two states, forcing significant structural divergence. **Contact Loss** $\mathcal{L}_{\text{contact}}=\frac{1}{L}\sum_j \min_{i:|i-j|\geq 9} H_{<14\text{Å}}(D_{ij})$ ensures the structural confidence of each state.
-    - **Design Motivation**: All losses are based on continuous distograms rather than hard distances to ensure differentiability. Symmetric positive/negative designs (motif vs. anti-motif) allow explicit expression of requirements. The JSD-based conformational change loss avoids the difficulty of structural alignment by driving state differences at the distribution level.
+**1. Composable Loss DSL: Translating Natural Language Specs into Differentiable Losses**
 
-2.  **Straight-Through + Four-Stage Annealing Sequence Optimization**:
-    - **Function**: Converts the discrete 20-dimensional amino acid argmax problem into gradient descent on continuous logits $\mathbf{z}\in\mathbb{R}^{20\times L}$, transitioning smoothly from "soft continuous exploration" to "hard discrete convergence" within 240 steps.
-    - **Mechanism**: Each step calculates three representations—soft distribution $\mathbf{z}_{\text{soft}}=\mathrm{softmax}(\mathbf{z}/\tau)$, hard one-hot $\mathbf{z}_{\text{hard}}=\mathrm{onehot}(\mathrm{argmax}\,\mathbf{z})$, and raw logits $\mathbf{z}$. Using STE, $\mathbf{z}_{\text{st}}=(\mathbf{z}_{\text{hard}}-\mathbf{z}_{\text{soft}})|_{\nabla=0}+\mathbf{z}_{\text{soft}}$ appears hard in the forward pass but uses soft gradients. The input to Boltz-1 is a convex combination $\mathbf{z}_{\text{pseudo}}=\beta\mathbf{z}_{\text{hard}}+(1-\beta)(\gamma\mathbf{z}_{\text{soft}}+(1-\gamma)\mathbf{z})$. Three hyperparameters $\beta,\gamma,\tau$ follow a four-stage schedule: Stage 1 (30 steps, $\beta=0,\gamma=1,\tau=0.5$) for soft exploration; Stage 2 (100 steps, $\gamma$ annealed from 0 to 1) to squeeze out hard decisions; Stage 3 (100 steps, $\tau$ reduced from 0.5 to 0.005) to lower temperature; Stage 4 (10 steps, $\beta=1$) for pure one-hot fine-tuning. Residues at motif positions $\mathbf{m}[i]=0$ are fixed to the motif sequence.
-    - **Design Motivation**: Discrete search on a 20D simplex explodes exponentially, while pure continuous relaxation yields non-physical "mixed amino acids." STE + multi-stage annealing allows global exploration with continuous gradients followed by forced convergence to valid residues.
+Designer requirements are often branched natural language like "scaffold a motif when ligand X is present, and disrupt it when absent." SwitchCraft extracts four basic loss primitives derived from Boltz-1 continuous outputs (distogram, pair representation), ensuring differentiability with respect to $\mathbf{z}$. **Motif Loss** $\mathcal{L}_{\text{motif}}=\sum_{i,j\in m, i\neq j}\sum_k \frac{p_{ijk}}{|m|(|m|-1)}(d_k-\|\mathbf{r}_i-\mathbf{r}_j\|)^2$ uses distogram probabilities to minimize the squared error between predicted and target residue distances in a motif. The corresponding **Anti-motif Loss** $\mathcal{L}_{\text{anti-motif}}=-0.5\,\mathcal{L}_{\text{motif}}$ uses a negative sign to express "active disruption of the scaffold." **Binding Loss** $\mathcal{L}_{\text{binding}}=\frac{1}{2c}\sum \min_j^{(k=c)}\min_i^{(k=2)} H_{<20\text{Å}}(D_{ij})$ aggregates proximity probabilities of the "top-$c$ ligand tokens and top-2 protein residues" to encourage high-confidence contact; **Anti-binding Loss** is similarly defined with a $-0.5$ factor.
 
-3.  **Multi-Motif Merging and cpGFP Biosensor Assembly Workflow**:
-    - **Function**: Extends "motif switching" to scaffolding two different motifs with the same sequence and encapsulates multi-state conformational switchers as assembleable fluorescent biosensor components.
-    - **Mechanism**: When a state requires scaffolding multiple motifs, Algorithm 2 merges motif constraints at the residue index level before apply standard motif loss. In the biosensor workflow (Sec 4.6), the sensor is split into a "circularly permuted GFP (cpGFP) reporter + ligand-responsive conformational switch." A switcher is designed to have significant conformational differences between apo/holo states. Residue sites with the largest backbone dihedral angle changes are selected as cpGFP insertion points (Algorithm 3 ensures spatial diversity). The cpGFP is embedded, co-folded with Boltz-1, and designs with significant chromophore contact changes are screened.
-    - **Design Motivation**: The mechanism of natural cpGFP biosensors (e.g., nicotine sensor, PDB 7s7u/7s7v) relies on a linker glutamate quenching fluorescence in the apo state and being pulled away in the holo state. The authors reverse-engineered this into computational screening criteria (intraRMSD, crossRMSD, radius of gyration, effector iPTM), allowing de novo sensor design for arbitrary small molecules.
+The core of multi-state design lies in two other losses. **Conformational Change Loss** $\mathcal{L}_{\text{conf-change}}(\mathbf{z};\mathcal{C}_1,\mathcal{C}_2)=-\frac{1}{L}\sum_i \max_j \mathrm{JSD}(D^{(1)}_{ij}\|D^{(2)}_{ij})$ maximizes the JSD of distance distributions for the same residue pairs across states, forcing significant structural differentiation. JSD on distograms is used instead of "alignment + RMSD" because it avoids registration ambiguity and is naturally differentiable. **Contact Loss** $\mathcal{L}_{\text{contact}}=\frac{1}{L}\sum_j \min_{i:|i-j|\geq 9} H_{<14\text{Å}}(D_{ij})$ ensures each state is folded with high confidence, preventing the sacrifice of single-state plausibility for the sake of differentiation.
+
+**2. Sequence Optimization with STE + 4-Stage Annealing: Continuous Search for Discrete Assets**
+
+Optimization is difficult because amino acids are discrete. SwitchCraft uses a Straight-Through Estimator (STE) with multi-stage annealing: at each step, it calculates a soft distribution $\mathbf{z}_{\text{soft}}=\mathrm{softmax}(\mathbf{z}/\tau)$, a hard one-hot $\mathbf{z}_{\text{hard}}=\mathrm{onehot}(\mathrm{argmax}\,\mathbf{z})$, and original logits $\mathbf{z}$. It defines $\mathbf{z}_{\text{st}}=(\mathbf{z}_{\text{hard}}-\mathbf{z}_{\text{soft}})|_{\nabla=0}+\mathbf{z}_{\text{soft}}$ so the forward pass sees hard decisions while gradients flow through the soft path. The input to Boltz-1 is a convex combination $\mathbf{z}_{\text{pseudo}}=\beta\mathbf{z}_{\text{hard}}+(1-\beta)(\gamma\mathbf{z}_{\text{soft}}+(1-\gamma)\mathbf{z})$, where $\beta, \gamma, \tau$ control "hard/soft ratio," "sharpness," and "temperature."
+
+These knobs are tuned across four stages: Stage 1 (30 steps, $\beta=0, \gamma=1, \tau=0.5$) for soft exploration; Stage 2 (100 steps, $\gamma$ annealing from 0 to 1) to extract hard decisions; Stage 3 (100 steps, $\tau$ from 0.5 to 0.005) to lower temperature; Stage 4 (10 steps, $\beta=1$) for final one-hot fine-tuning.
+
+**3. Multi-motif Merging and cpGFP Assembly Workflow: Modular Device Integration**
+
+Two additional steps convert "switching proteins" into useful devices. First, when a state must scaffold two motifs, Algorithm 2 merges motif constraints at the residue index level before standard motif loss. Second, to package switches into fluorescent sensors (Sec 4.6), designers first create switchers with significant apo/holo conformational differences (ContactLoss + BindingLoss + ConfChangeLoss). They then select insertion points for cpGFP where the backbone dihedral angle change is maximal (Algorithm 3), followed by co-folding with Boltz-1 to filter for designs where the chromophore contact changes significantly.
+
+This workflow is based on reverse-engineering natural cpGFP sensors: for example, the nicotine sensor (PDB 7s7u/7s7v) relies on a glutamate on the linker that quenches fluorescence in the apo state and is pulled away by 14 Å in the holo state. The authors translate this into computational criteria (intraRMSD, crossRMSD, radius of gyration, effector iPTM), allowing the de novo generation of sensor candidates for any small molecule without requiring natural templates.
 
 ### Loss & Training
-The global loss is the sum of all state-loss terms. The optimizer is Adam, with stage-specific learning rates $\alpha\in\{0.1,0.2\}$. Initial $\mathbf{z}$ is sampled from Gumbel-softmax. Extensive independent trajectories (100 to 13,858) are run for each task, with the top sequences evaluated by 5 Boltz-1 structure predictions.
+The global loss is the sum of all state-loss terms. The optimizer is Adam, with stage-specific learning rates $\alpha\in\{0.1, 0.2\}$. Initial $\mathbf{z}$ is sampled from a Gumbel-softmax. Large batches of independent trajectories (100 to 13,858) are run per task, with final sequences evaluated using 5 Boltz-1 predictions each.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors defined 6 multi-state design primitives of increasing complexity plus 1 biosensor workflow. The table summarizes in silico success rates (percentage of designs passing structural confidence, state divergence, and low intra-state RMSD filters).
+The authors defined 6 multi-state design primitives and 1 biosensor workflow. The table summarizes in silico success rates (satisfied structural confidence + state difference + low intra-state RMSD).
 
 | Design Task | Ligand Type | Total Designs | Successful Designs | Key Findings |
 | :--- | :--- | :--- | :--- | :--- |
-| +/- Allostery (Motif ON/OFF) | 5 types × 24 motifs × 100 | 12000 | At least 1 success for 11 motifs | Motif RMSD difference often >5 Å, including fold switching |
-| Motif Switching (3IXT↔1YCR) | OQO | 100 | 3 Fully Successful | Most candidates satisfied 3 out of 4 constraints |
-| Ligand Modification (heme + O₂) | heme + $O_2$ | 558 | 10 | Oxygen displaced Histidine inducing 3.8 Å rearrangement |
-| Induced Binding (Top7 frag + Ca²⁺) | Ca²⁺ | 940 | 8 | Ca²⁺ binding induced 12.50 Å rearrangement to form interface |
-| Ligand Discrimination (3 states: apo/OQO/Ca²⁺) | OQO + Ca²⁺ | 465 | 12 | Key loop JSD RMSD ≥1.48 Å between any two states |
-| Sensor Switcher (SAM/cGMP/ATP) | 3 small molecules | 13858 | 89 stringent → 44 contact change OK | Replicated nicotine sensor mechanism (Glu74 14.7 Å shift) |
+| Pos/Neg Allostery (Motif ON/OFF) | 5 Ligands × 24 Motifs | 12,000 | 11 motifs successful | Motif RMSD diff >5 Å, including fold switching |
+| Motif Switching (3IXT↔1YCR) | OQO | 100 | 3 completely successful | Most candidates satisfied 3/4 constraints |
+| Ligand Modification (heme + O₂) | heme + O₂ | 558 | 10 | His displaced by O₂ inducing 3.8 Å rearrangement |
+| Induced Binding (Top7+Ca²⁺) | Ca²⁺ | 940 | 8 | Ca²⁺ binding induces 12.50 Å rearrangement |
+| Ligand Discrimination (3 states) | OQO + Ca²⁺ | 465 | 12 | Loop RMSD ≥1.48 Å between any two states |
+| Sensor Switcher (SAM/cGMP/ATP) | 3 small molecules | 13,858 | 89 filtered → 44 valid | Replicated nicotine sensor mechanism (Glu74) |
 
 ### Ablation Study
-| Configuration | Observation | Explanation |
+| Configuration | Phenomenon | Explanation |
 | :--- | :--- | :--- |
-| Full 4-stage schedule | Convergence to one-hot in 240 steps | Smooth soft-to-hard transition |
-| Motif Loss only (single state) | Degenerates to BoltzDesign1 style | Verifies backward compatibility |
-| Removing ConfChangeLoss | Multi-state degenerates to single-state copies | JSD term is critical for state separation |
-| Removing ContactLoss | Structural confidence of individual states collapses | Must be maintained separately for each state |
-| Anti-motif coeff from -0.5 to -1.0 | Disruption too strong, leading to folding failure | Weight balance of opposing constraints is sensitive |
+| Full 4-stage schedule | Convergence to one-hot | Smooth transition from soft to hard |
+| Motif loss only (single state) | Degenerates to BoltzDesign1 style | Confirms backward compatibility |
+| No ConfChangeLoss | Multi-state collapses to single state | JSD is key for state separation |
+| No ContactLoss | Structural confidence collapses | Required to maintain per-state plausibility |
+| Anti-motif coeff: -0.5 to -1.0 | Global folding failure | Balance of opposing constraints is sensitive |
 
 ### Key Findings
-- Absolute success rates remain low (11/24 motifs, single-digit percent yields), indicating significant room for improvement in this benchmark. The authors propose the "5 ligands × 24 motifs allostery" task as a standard benchmark for multi-state design.
-- The ligand modification task showed "physically implausible" failure modes (requiring unfolding/refolding), suggesting a need for future kinetic constraints.
-- Three-state ligand discrimination was achieved using a 50-residue miniprotein, where a key loop formed a salt bridge, a hydrophobic pocket, and a Ca²⁺ coordination site across the three states, hinting at the designability of multi-step enzymes.
-- The biosensor workflow generated 44 rational candidates for SAM/cGMP/ATP without natural templates, with the SAM design replicating the "linker glutamate displacement" mechanism.
+- While absolute success rates are low (11/24 motifs, single-digit percentages), this benchmark provides a high-quality baseline; the authors propose the "5 ligands × 24 motifs" task as a standard for multi-state design.
+- Failure modes in ligand modification included "large but unphysical conformational changes" (requiring unfolding/refolding), suggesting a need for kinetic constraints.
+- Three-state discrimination was achieved using 50-residue miniproteins, where loops formed salt bridges, hydrophobic pockets, and metal coordination across different states.
+- The biosensor workflow generated 44 plausible candidates for SAM/cGMP/ATP without templates, reproducing the quenching mechanism found in nature.
 
 ## Highlights & Insights
-- Formalizes multi-state protein design as a "constraint satisfaction problem on sequences." The specification (state + loss + mask) acts as a domain DSL for biologists to "program" functions.
-- Symmetric positive/negative losses (motif vs. anti-motif) unify "presence" and "absence" requirements within a single framework.
-- ConfChangeLoss uses JSD on distograms rather than "structural alignment + RMSD," avoiding alignment ambiguity and enabling direct differentiation.
-- Handling discrete search on a 20D simplex using STE + four-stage annealing is a clean case of pushing "inverse design on gradients" from the structural domain to the sequence domain.
+- Formalizes multi-state protein design as a constraint satisfaction problem on sequences; the notation (state + loss + mask) acts as a DSL for biologists.
+- Symmetric losses (motif/anti-motif) unify "what should be" and "what should not be" into one framework via simple negation.
+- ConfChangeLoss uses JSD on distograms rather than RMSD, avoiding registration issues and maintaining differentiability—a technique transferable to any task requiring diversity or adversarial generation.
+- Using STE + 4-stage annealing for discrete search on the sequence simplex is a clean case of extending "inverse design through gradients" from the structural domain to the sequence domain.
 
 ## Limitations & Future Work
-- Absolute success rates are low; it is currently a benchmark rather than a production-ready tool.
-- Evaluations are entirely in silico. Biases in the structure predictor are amplified; high-confidence predictions may not fold in the wet lab. Preliminary induced binding validation is only mentioned in the Appendix.
-- Losses are structural and lack kinetic/energy landscape constraints, leading to physically unreachable transitions. Transition state or kinetic terms are needed.
-- Computational cost: Boltz-1 forward passes are expensive; 240 steps across multiple states represent a non-trivial hardware and energy commitment.
+- Absolute success rates are low, indicating this is a benchmark rather than a production tool for mass-producing functional proteins yet.
+- Evaluation is entirely in silico (via Boltz-1). Bias in the structure predictor may lead to designs that fold confidently in simulation but fail in the wet lab.
+- Losses are structural; the lack of kinetic or energy surface constraints can result in physically unreachable conformational switches. Transition state or kinetic terms are needed.
+- Computational cost is high due to multiple forward/backward passes per design step.
 
 ## Related Work & Insights
-- **vs. BoltzDesign1 (Cho et al. 2025)**: Ours directly inherits its loss and optimization framework for single-state binders but extends it to multiple states, serving as a functional superset.
-- **vs. RFDiffusion (Watson et al. 2023)**: RFDiffusion generates single-state structures. Ours reuses its scaffolding tasks but upgrades them to "ligand-responsive switchable scaffolds."
-- **vs. ProteinMPNN / DynamicMPNN**: ProteinMPNN performs inverse folding for a given backbone. SwitchCraft optimizes sequence and backbone implicitly through Boltz-1, requiring no pre-defined backbone.
-- **vs. ProDiT / ProteinGenerator**: These attempt to generate sequences for multiple backbones but **do not accept ligands as input**, failing to capture "ligand-driven state switching."
+- **vs BoltzDesign1 (Cho et al. 2025)**: This work directly inherits and extends the single-state loss/optimization framework to multiple states, acting as a functional superset.
+- **vs RFDiffusion (Watson et al. 2023)**: RFDiffusion is for single-state structure generation; the 24-motif benchmark here builds upon its scaffolding tasks but elevates the difficulty to ligand-responsive switches.
+- **vs ProteinMPNN**: ProteinMPNN performs inverse folding given a fixed backbone. SwitchCraft optimizes sequence and backbone implicitly through Boltz-1, requiring no pre-defined backbone.
+- **vs ProDiT / ProteinGenerator**: These attempt multi-backbone sequence generation but do not accept ligand inputs, thus failing to express ligand-driven state switching.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First general multi-state protein design framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Good coverage across 6 task types, but success rates are low and purely in silico.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear abstraction into specification and optimization stages; loss definitions are rigorous.
-- Value: ⭐⭐⭐⭐⭐ Establishes a general benchmark and interface for next-gen functional protein design.
+- Novelty: ⭐⭐⭐⭐⭐ First general multi-state framework; single-to-multi state is a qualitative leap.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Good coverage across 6 tasks, though absolute success rates are low and purely in silico.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear abstraction into specification and optimization phases.
+- Value: ⭐⭐⭐⭐⭐ Defines the interface and benchmark for next-generation functional protein design.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -132,8 +136,8 @@ The authors defined 6 multi-state design primitives of increasing complexity plu
 - [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](../../NeurIPS2025/computational_biology/learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
 - [\[ICLR 2026\] HeurekaBench: A Benchmarking Framework for AI Co-scientist](../../ICLR2026/computational_biology/heurekabench_a_benchmarking_framework_for_ai_co-scientist.md)
 - [\[NeurIPS 2025\] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research](../../NeurIPS2025/computational_biology/barcodemamba_advancing_state-space_models_for_fungal_biodiversity_research.md)
+- [\[ICML 2025\] Designing Cyclic Peptides via Harmonic SDE with Atom-Bond Modeling](../../ICML2025/computational_biology/designing_cyclic_peptides_via_harmonic_sde_with_atom-bond_modeling.md)
 - [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](../../NeurIPS2025/computational_biology/a_unified_framework_for_variable_selection_in_modelbased_clu.md)
-- [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](../../NeurIPS2025/computational_biology/scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
 
 </div>
 

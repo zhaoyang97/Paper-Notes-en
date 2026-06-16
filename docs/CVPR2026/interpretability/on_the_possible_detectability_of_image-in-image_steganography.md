@@ -2,157 +2,140 @@
 title: >-
   [Paper Note] On the Possible Detectability of Image-in-Image Steganography
 description: >-
-  [CVPR 2026][Interpretability][Steganography] This paper exposes a fundamental security flaw in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be readi…
+  [CVPR 2026][Interpretability][Paper Note] This work reveals fundamental security flaws in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be easily separated by Independent Component Analysis (ICA). An explainable steganalysis method based on statistical moments of independent components in t
 tags:
-  - "CVPR 2026"
-  - "Interpretability"
-  - "Steganography"
-  - "Steganalysis"
-  - "Independent Component Analysis"
-  - "Wavelet Decomposition"
-  - "Image Security"
+  - CVPR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: e0c8499cd5a67f43
+content_hash: 14b0199636c898b2
 ---
-
 # On the Possible Detectability of Image-in-Image Steganography
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.11876](https://arxiv.org/abs/2603.11876)  
 **Authors**: Antoine Mallet, Patrick Bas (CRIStAL, Université de Lille)
 **Code**: Not released  
-**Area**: Interpretability
+**Area**: Explainability  
 **Keywords**: Steganography, Steganalysis, Independent Component Analysis, Wavelet Decomposition, Image Security
 
 ## TL;DR
-This paper exposes a fundamental security flaw in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be readily separated by Independent Component Analysis (ICA). The authors propose an interpretable steganalysis method based on statistical moments of wavelet-domain independent components (achieving 84.6% accuracy with only 8-dimensional features), and demonstrate that the classical SRM+SVM approach achieves detection rates exceeding 99%.
+This work reveals fundamental security flaws in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be easily separated by Independent Component Analysis (ICA). An explainable steganalysis method based on statistical moments of independent components in the wavelet domain is proposed (achieving 84.6% accuracy with only 8-dimensional features), while proving that the classic SRM+SVM method can reach a detection rate of over 99%.
 
 ## Background & Motivation
 
 ### Problem Definition
-Image-in-image steganography refers to embedding a secret image (Secret/Payload) of the same spatial dimensions as the cover image (Cover) entirely within it, producing a stego image (Stego). Compared to traditional steganography, this paradigm operates at extremely high embedding rates (approaching 1:1). Deep learning-based schemes (e.g., HiDDeN, StegaStamp, DeepSteg, RIIS) have achieved notable advances in visual quality in recent years.
+Image-in-image steganography refers to embedding a secret image (Secret/Payload) of the same size as the carrier image (Cover) entirely into the carrier to generate a stego image (Stego). Compared to traditional steganography, its embedding rate is extremely high (close to 1:1), and deep learning-based schemes (e.g., HiDDeN, StegaStamp, DeepSteg, RIIS) have achieved significant progress in visual quality.
 
-### Security Issues with Existing Methods
-Despite the visual imperceptibility of these deep steganography schemes, their security has been insufficiently analyzed:
-- **The cost of high embedding rates**: The security of traditional steganography is predicated on low embedding rates, whereas image-in-image schemes operate far beyond conventional security boundaries.
-- **Black-box security assumptions**: Most deep steganography schemes evaluate security solely through visual quality metrics (PSNR, SSIM) without systematic steganalysis testing.
-- **Key-free extraction**: Many schemes' extraction networks do not require a secret key, meaning anyone with access to the extraction network can recover the hidden information.
+### Limitations of Prior Work
+Despite being visually imperceptible, the security of these deep steganography schemes has been insufficiently analyzed:
+- **Cost of High Embedding Rate**: The security of traditional steganography is built on low embedding rates, whereas image-in-image schemes far exceed traditional security bounds.
+- **Black-box Safety Assumptions**: Most deep steganography schemes only evaluate security through visual quality metrics (PSNR, SSIM) without systematic steganalysis testing.
+- **Keyless Extraction**: Many schemes utilize extraction networks that do not rely on a secret key; anyone with access to the extraction network can recover the secret information.
 
-### Motivation
-From the perspectives of signal processing and statistical analysis, this paper systematically exposes the detectability of image-in-image steganography, providing a theoretical and experimental foundation for security evaluation in this domain.
+### Goal
+Ours systematically reveals the detectability of image-in-image steganography from the perspective of signal processing and statistical analysis, providing a theoretical and experimental foundation for security evaluation in this field.
 
 ## Method
 
-### Core Observation: Embedding as Mixing
+### Overall Architecture
 
-The embedding process of image-in-image steganography can be modeled as:
+Rather than proposing a steganographic scheme, this paper argues that image-in-image deep steganography is inherently detectable. Its starting point is a simple yet critical observation: embedding a secret image $M$ into a cover image $C$ to obtain a stego image $S$ is essentially:
 
 $$S = f_{\text{embed}}(C, M) \approx C + g(M)$$
 
-where $C$ is the cover image, $M$ is the secret image, and $S$ is the stego image. The embedding process is essentially a mixing of two independent source signals (cover content and secret content) into a single signal, which closely resembles the classical mixing model in Blind Source Separation (BSS).
+This represents the mixing of two independent signals (cover content and secret content) into one image—a classic mixing model in Blind Source Separation (BSS). Following this logic, the authors use Independent Component Analysis (ICA) to decompose the mixed structure and use the extracted statistical moments for explainable detection. Finally, classic SRM+SVM provides an "almost transparent" upper bound for detection.
 
-### Independent Component Analysis (ICA) Separation
+```mermaid
+graph TD
+    OBS["Core Observation: Embedding is Mixing<br/>S ≈ C + g(M), Mixture of two independent sources"]
+    OBS --> E1["ICA Separation<br/>Wavelet Subbands → FastICA<br/>Visualize the mixture of Cover/Secret"]
+    OBS --> E2["Explainable Detection via Statistical Moments<br/>2-level Haar → ICA → First four moments → 8D Features → SVM"]
+    OBS --> E3["Classic SRM+SVM Validation & Keyless Vulnerability<br/>34671D Rich Model + Keyless Extraction"]
+    E1 --> CONC["Conclusion: Image-in-image steganography is inherently insecure"]
+    E2 -->|"8D approx 84.6%"| CONC
+    E3 -->|"99%+ AUC≈1.0"| CONC
+```
 
-Following this mixing model, ICA can be directly applied to multi-channel/multi-scale representations of the stego image:
-1. Perform wavelet decomposition on the image to obtain multiple subband representations.
-2. Treat subband coefficients as observations of mixed signals.
-3. Apply the FastICA algorithm to estimate independent components.
-4. The separated independent components clearly reveal the respective contributions of the cover and secret images.
+### Key Designs
 
-Experiments show that ICA separation applied to stego images makes the mixing structure visually apparent, whereas no such phenomenon exists in cover images.
+**1. ICA Separation: Visualizing "Embedding = Mixing"**
 
-### Interpretable Detection via Statistical Moments
+Since the stego image is a mixture of two independent sources, it can be resolved using ICA. Specifically, wavelet decomposition is applied to the image to obtain multiple subbands, which are treated as observations of the mixed signal to estimate independent components via FastICA. The separated components clearly distinguish the contributions of the carrier and the secret; such a mixture is absent when performing the same operation on a clean Cover image.
 
-A compact steganalysis feature is proposed:
-1. **Wavelet decomposition**: Apply a 2-level Haar wavelet transform to the input image to obtain high-frequency subbands (LH, HL, HH).
-2. **ICA estimation**: Perform independent component analysis on the coefficient matrix of each subband.
-3. **Statistical moment extraction**: Compute the first four statistical moments (mean $\mu$, variance $\sigma^2$, skewness $\gamma$, kurtosis $\kappa$) for each independent component.
-4. **Feature vector construction**: Concatenate 2 independent components × 4 statistical moments = an 8-dimensional feature vector.
-5. **Classifier training**: Use a simple linear or nonlinear classifier (e.g., SVM, LDA) to distinguish Cover from Stego.
+**2. Explainable Detection via Statistical Moments: 8-D Features are Sufficient**
 
-The core intuition of this method:
-- The wavelet coefficients of cover images are already approximately independently distributed; their statistical properties change little after ICA separation.
-- Stego images, having had secret information mixed in, exhibit wavelet coefficients that deviate from independent distributions; their statistical moments shift significantly after ICA separation, particularly in kurtosis and skewness.
+To transform this intuition into a lightweight detector, an 8-dimensional feature vector was constructed: first, a 2-level Haar wavelet transform is applied to obtain LH/HL/HH high-frequency subbands. ICA is run on these subband coefficients, and the first four statistical moments (mean $\mu$, variance $\sigma^2$, skewness $\gamma$, kurtosis $\kappa$) are extracted for each of the 2 independent components ($2 \times 4 = 8$ dimensions). These are fed into simple classifiers like SVM or LDA. This works because the wavelet coefficients of a Cover image are nearly independently distributed, showing little change after ICA, whereas the Stego image contains secret information that deviates from independence, causing significant shifts in skewness and kurtosis post-ICA.
 
-### Validation with Classical Steganalysis
+**3. Classic SRM+SVM Validation & Keyless Vulnerability**
 
-In addition to the proposed method, classical steganalysis tools are used for comparative validation:
-
-**SRM (Spatial Rich Model)**:
-- Extracts 34,671-dimensional spatial rich model features.
-- Combined with an Ensemble SVM classifier.
-- Captures changes in inter-pixel statistical dependencies via co-occurrence matrices of high-pass filter residuals.
-
-**Key-free Vulnerability Analysis**:
-- Notes that extraction networks in mainstream schemes are deterministic mappings requiring no key.
-- An adversary with access to the extraction network can directly verify whether any given image contains hidden information.
+To establish a strong baseline for detectability, cross-validation was performed using classic steganalysis: SRM (Spatial Rich Model) was used to extract 34,671-dimensional spatial domain rich model features, paired with an Ensemble SVM classifier. This captures changes in statistical dependencies between pixels via co-occurrence matrices of high-pass filtered residuals—resulting in a 99%+ detection rate. Additionally, the authors point out that current extraction networks are deterministic mappings without keys; any attacker with the network can verify if an image contains hidden data.
 
 ## Key Experimental Results
 
 ### Experimental Setup
-- **Datasets**: Standard steganalysis datasets (e.g., BOSSbase, BOWS2), covering diverse image content.
-- **Steganography schemes**: Five representative image-in-image deep steganography schemes are evaluated (including HiDDeN, StegaStamp, DeepSteg, RIIS, and others).
-- **Evaluation metrics**: Detection Accuracy, AUC, False Positive Rate (FPR).
+- **Datasets**: Standard steganalysis datasets (e.g., BOSSbase, BOWS2) covering diverse image content.
+- **Steganographic Schemes**: Evaluation of 5 mainstream image-in-image deep steganography schemes (including HiDDeN, StegaStamp, DeepSteg, RIIS, etc.).
+- **Metrics**: Accuracy, AUC, False Positive Rate (FPR).
 
-### Table 1: Detection Results of ICA Moment Features (8-dimensional)
+### Table 1: ICA Moment-based Detection Results (8-D Features)
 
-| Scheme | Feature Dim. | Classifier | Accuracy (%) | Notes |
+| Scheme | Dimensions | Classifier | Accuracy (%) | Note |
 |---|---|---|---|---|
-| Scheme A (HiDDeN-type) | 8 | Linear SVM | 82.3 | Only 8 features |
-| Scheme B (StegaStamp-type) | 8 | Linear SVM | 84.6 | Best result |
-| Scheme C (DeepSteg-type) | 8 | Linear SVM | 79.5 | Harder to detect |
-| Scheme D (RIIS-type) | 8 | Linear SVM | 81.2 | Moderate difficulty |
-| Scheme E (Other) | 8 | Linear SVM | 80.8 | Highly interpretable |
+| Scheme A (HiDDeN-like) | 8 | Linear SVM | 82.3 | Only 8 features |
+| Scheme B (StegaStamp-like) | 8 | Linear SVM | 84.6 | Best result |
+| Scheme C (DeepSteg-like) | 8 | Linear SVM | 79.5 | Harder to detect |
+| Scheme D (RIIS-like) | 8 | Linear SVM | 81.2 | Medium difficulty |
+| Scheme E (Others) | 8 | Linear SVM | 80.8 | High explainability |
 
-Using only 8-dimensional features achieves detection accuracies of 79.5%–84.6%, demonstrating that ICA moment features efficiently capture embedding artifacts.
+Achieving 79.5%–84.6% accuracy with only 8 dimensions proves that ICA moments efficiently capture embedding traces.
 
-### Table 2: Detection Results of Classical SRM+SVM
+### Table 2: Classic SRM+SVM Detection Results
 
-| Scheme | Feature Dim. | Classifier | Accuracy (%) | AUC |
+| Scheme | Dimensions | Classifier | Accuracy (%) | AUC |
 |---|---|---|---|---|
-| Scheme A (HiDDeN-type) | 34,671 | Ensemble SVM | 99.2 | 0.999 |
-| Scheme B (StegaStamp-type) | 34,671 | Ensemble SVM | 99.5 | 0.999 |
-| Scheme C (DeepSteg-type) | 34,671 | Ensemble SVM | 99.1 | 0.998 |
-| Scheme D (RIIS-type) | 34,671 | Ensemble SVM | 99.4 | 0.999 |
-| Scheme E (Other) | 34,671 | Ensemble SVM | 99.3 | 0.999 |
+| Scheme A (HiDDeN-like) | 34,671 | Ensemble SVM | 99.2 | 0.999 |
+| Scheme B (StegaStamp-like) | 34,671 | Ensemble SVM | 99.5 | 0.999 |
+| Scheme C (DeepSteg-like) | 34,671 | Ensemble SVM | 99.1 | 0.998 |
+| Scheme D (RIIS-like) | 34,671 | Ensemble SVM | 99.4 | 0.999 |
+| Scheme E (Others) | 34,671 | Ensemble SVM | 99.3 | 0.999 |
 
-SRM+SVM achieves detection accuracy exceeding 99% across all tested schemes with AUC approaching 1.0, indicating that image-in-image steganography is nearly "transparent" to classical steganalysis.
+SRM+SVM exceeds 99% accuracy across all schemes with AUC near 1.0, showing these methods are nearly "transparent" to classic tools.
 
-### Key Comparisons
-- **ICA moment features (8-dim) vs. SRM (34,671-dim)**: SRM substantially outperforms the ICA moment method (99%+ vs. ~84%), yet the ICA moment method uses only 8 interpretable features, providing theoretical insight into the detection mechanism.
-- **Comparison with traditional low-rate steganography**: Classical methods such as S-UNIWARD at 0.4 bpp yield SRM detection rates of approximately 70%–80%, whereas image-in-image schemes are detected at far higher rates, confirming that the high embedding rate is a fundamental security vulnerability.
+### Key Findings
+- **ICA Moments (8-D) vs SRM (34,671-D)**: SRM accuracy is much higher, but ICA moments provide theoretical insight into the detection mechanism using only 8 explainable features.
+- **Comparison with Traditional Low-rate Steganography**: Traditional methods (e.g., S-UNIWARD) at 0.4 bpp have SRM detection rates of ~70%–80%, whereas image-in-image schemes are much higher, indicating high embedding rates are a fundamental flaw.
 
 ## Highlights & Insights
 
-- **Novel theoretical perspective**: This is the first work to explain the fundamental insecurity of image-in-image steganography through the lens of Blind Source Separation (BSS) / Independent Component Analysis (ICA), establishing the essential connection: embedding process = mixing process.
-- **Minimal yet interpretable detection**: An 8-dimensional statistical moment feature achieves effective detection, providing physically and statistically interpretable intuition for steganalysis rather than relying on black-box deep learning detectors.
-- **Triple chain of evidence**: ICA visual separation + statistical moment detection + classical SRM high detection rates cross-validate the conclusion of insecurity from complementary perspectives.
-- **Warning on key-free vulnerability**: Mainstream schemes lack key-based protection, allowing any adversary with access to the extraction network to directly verify and extract hidden information — a fundamental design flaw.
-- **A wake-up call for the deep steganography community**: There exists a fundamental tension between high embedding rates and undetectability; optimizing visual quality alone is insufficient to guarantee security.
+- **Novel Theoretical Perspective**: First to explain the inherent insecurity of image-in-image steganography from the BSS/ICA perspective, revealing the "embedding = mixing" essence.
+- **Minimalist Explainable Detection**: Effective detection with just 8 statistical moment features provides explainable physical/statistical intuition rather than black-box deep learning detection.
+- **Triple Evidence Chain**: ICA visual separation + statistical moment detection + classic SRM high detection rates cross-verify the insecurity conclusion from multiple angles.
+- **Keyless Vulnerability Warning**: Highlights a critical design flaw where mainstream schemes lack key protection, allowing any attacker with the extraction network to verify and extract data.
+- **Alert to Deep Steganography Community**: There is a fundamental contradiction between high embedding rates and undetectability; optimizing visual quality alone does not guarantee security.
 
 ## Limitations & Future Work
 
-- **Scheme coverage**: Only five representative schemes are tested; not all emerging image-in-image steganography methods are covered (e.g., diffusion model-based schemes).
-- **Absence of adaptive attacks**: Scenarios where adversaries design counter-strategies against ICA-based or SRM-based detection are not considered.
-- **Limited accuracy of ICA moment method**: A peak accuracy of 84.6% still entails non-trivial false positive/negative rates in practical deployment, making it insufficient as a standalone detector.
-- **Image type constraints**: Experiments are primarily conducted on natural images; applicability to specialized domains such as medical or satellite imagery is not verified.
-- **Variable embedding rates**: Some schemes support variable embedding rates; detection performance at lower embedding rates is not discussed in detail.
-- **Lack of defensive proposals**: The paper focuses on attack and detection analysis without exploring how steganography schemes could be improved to resist these analyses.
+- **Scheme Coverage**: Only 5 representative schemes were tested; emerging methods like those based on diffusion models were not covered.
+- **Absence of Adaptive Attacks**: Did not consider scenarios where attackers design adversarial strategies specifically against ICA or SRM detection.
+- **Limited Accuracy of ICA Moments**: The maximum accuracy of 84.6% still has relatively high false positive/negative rates for practical deployment as a standalone detector.
+- **Image Type Constraints**: Experiments were mainly based on natural images; applicability to medical or satellite imagery remains unverified.
+- **Embedding Rate Variability**: Detectability at lower embedding rates for schemes supporting variable capacity was not discussed in detail.
+- **Lack of Defense Schemes**: Ours focuses on attack/detection analysis and does not explore how to improve steganographic schemes to resist these analyses.
 
 ## Related Work & Insights
 
-- **Deep steganography**: HiDDeN (Zhu et al., 2018) pioneered the encoder-decoder framework; StegaStamp (Tancik et al., 2020) introduced robust watermarking; DeepSteg (Baluja, 2017/2019) proposed end-to-end hiding of full-size images; RIIS and subsequent schemes have continued to improve capacity and visual quality.
-- **Classical steganalysis**: SRM (Fridrich & Kodovský, 2012) proposed spatial rich model features; extensions include SPAM and maxSRMd2; Ensemble SVM classifiers have become standard tools.
-- **Deep steganalysis**: CNN-based detectors such as SRNet and Ye-Net perform strongly against traditional steganography, but this paper demonstrates that image-in-image steganography does not even require deep learning detectors to be exposed.
-- **Blind source separation and ICA**: The classical FastICA algorithm (Hyvärinen, 1999) is innovatively introduced into the steganalysis context.
-- **Positioning of this work**: This paper fills the gap in systematic security evaluation of image-in-image steganography and explains the root cause of insecurity from a signal processing theory perspective.
+- **Deep Steganography**: HiDDeN (Zhu et al., 2018) pioneered the encoder-decoder framework; StegaStamp (Tancik et al., 2020) introduced robust watermarking; DeepSteg (Baluja, 2017) hid full-size images end-to-end.
+- **Classic Steganalysis**: SRM (Fridrich & Kodovský, 2012) proposed spatial rich models; Ensemble SVM became the standard classifier.
+- **Deep Steganalysis**: CNN detectors like SRNet are effective for traditional steganography, but this work shows that even deep learning detectors are unnecessary for image-in-image cases.
+- **BSS and ICA**: The classic FastICA (Hyvärinen, 1999) method is innovatively applied to the steganalysis scenario.
+- **Positioning**: Fills the gap in systematic security evaluation of image-in-image steganography, explaining the source of insecurity via signal processing theory.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Analyzing steganographic security through the ICA/BSS lens is a novel entry point that establishes a theoretical connection between embedding and mixing.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Cross-validation across multiple schemes and methods is thorough, though adaptive adversarial experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐ — The exposition is clear, the interpretability analysis is in-depth, and theory and experiments are tightly integrated.
-- Value: ⭐⭐⭐⭐ — The work delivers an important security warning to the deep steganography community and encourages scheme design to prioritize undetectability.
+- Novelty: ⭐⭐⭐⭐ — The ICA/BSS perspective is a novel entry point that establishes a theoretical link between embedding and mixing.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Cross-validation across multiple schemes and methods, though lacking adaptive adversarial experiments.
+- Writing Quality: ⭐⭐⭐⭐ — Clear arguments, deep explainability analysis, and tight integration of theory and experiments.
+- Value: ⭐⭐⭐⭐ — Provides a critical security warning to the deep steganography community, pushing future designs to prioritize undetectability.
 
 <!-- RELATED:START -->
 
@@ -160,11 +143,11 @@ SRM+SVM achieves detection accuracy exceeding 99% across all tested schemes with
 
 ## Related Papers
 
-- [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
+- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
 - [\[CVPR 2026\] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)
-- [\[CVPR 2026\] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification](dino-qpm_adapting_visual_foundation_models_for_globally_interpretable_image_clas.md)
-- [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](../../AAAI2026/interpretability/shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
+- [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
 
 </div>
 

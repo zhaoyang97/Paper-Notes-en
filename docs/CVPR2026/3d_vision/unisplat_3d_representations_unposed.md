@@ -2,112 +2,128 @@
 title: >-
   [Paper Note] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images
 description: >-
-  [CVPR 2026][3D Vision][3D representation learning] UniSplat learns unified geometry-appearance-semantic 3D representations from unposed multi-view images via three components — dual masking…
+  [CVPR 2026][3D Vision][Self-Supervised Learning] UniSplat learns a unified geometry-appearance-semantic 3D representation from unposed multi-view images using a dual-masking strategy, coarse-to-fine Gaussian splatting, and pose-conditioned recalibration, establishing a perceptual foundation for spatial intelligence.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D representation learning"
-  - "spatial intelligence"
-  - "Gaussian splatting"
-  - "self-supervised learning"
-  - "unposed multi-view"
+  - CVPR 2026
+  - 3D Vision
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: 18a5ebbbf8a5f592
+content_hash: 52a616511a754646
 ---
-
 # UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.10573](https://arxiv.org/abs/2604.10573)  
 **Code**: [https://bobochow.github.io/UniSplat](https://bobochow.github.io/UniSplat)  
-**Area**: 3D Vision
-**Keywords**: 3D representation learning, spatial intelligence, Gaussian splatting, self-supervised learning, unposed multi-view
+**Area**: 3D Vision  
+**Keywords**: 3D Representation Learning, Spatial Intelligence, Gaussian Splatting, Self-Supervised Learning, Unposed Multi-View
 
 ## TL;DR
-UniSplat learns unified geometry-appearance-semantic 3D representations from unposed multi-view images via three components — dual masking, coarse-to-fine Gaussian splatting, and pose-conditioned recalibration — laying a perceptual foundation for spatial intelligence.
+UniSplat learns a unified geometry-appearance-semantic 3D representation from unposed multi-view images using a dual-masking strategy, coarse-to-fine Gaussian splatting, and pose-conditioned recalibration, establishing a perceptual foundation for spatial intelligence.
 
 ## Background & Motivation
 
-**Background**: 3D representation learning is transitioning from supervised methods (requiring calibrated poses) to self-supervised methods (learning directly from raw multi-view images), yet existing self-supervised approaches generally suffer from weak geometric awareness, insufficient appearance detail, and geometry-semantic inconsistency.
+**Background**: 3D representation learning is evolving from supervised methods (requiring calibrated poses) to self-supervised methods (learning directly from raw multi-view images). However, existing self-supervised methods generally suffer from weak geometric awareness, insufficient appearance detail, and geometric-semantic inconsistency.
 
-**Limitations of Prior Work**: (1) Masked autoencoding methods lack strict global 3D consistency; (2) novel view synthesis methods assume known poses or rely on dense video; (3) unposed methods jointly estimate cameras and scenes but insufficiently couple the three representation dimensions.
+**Limitations of Prior Work**: (1) Methods like Masked Autoencoders lack rigorous global 3D consistency; (2) Novel view synthesis methods assume known poses or rely on dense video; (3) Unposed methods, while jointly estimating cameras and scenes, exhibit insufficient coupling between the three dimensions.
 
-**Key Challenge**: Geometry, appearance, and semantics each demand different optimal granularities — semantics are inherently coarse-grained while appearance requires fine-grained detail — making naive joint learning lead to mutual interference.
+**Key Challenge**: Geometry, appearance, and semantics each have different optimal granularities—semantics are naturally coarse-grained while appearance requires fine details—direct unified learning leads to mutual interference.
 
-**Goal**: Design a feed-forward framework that jointly learns geometry, appearance, and semantic representations from unposed sparse multi-view images.
+**Goal**: Design a feed-forward framework to unify the learning of geometry, appearance, and semantic representations from unposed sparse multi-view images.
 
-**Core Idea**: Address geometric awareness (dual masking), appearance fidelity (coarse-to-fine splatting), and cross-task consistency (pose recalibration) through three complementary mechanisms.
+**Core Idea**: Use three complementary mechanisms to address geometric awareness (dual-masking), appearance precision (coarse-to-fine splatting), and consistency (pose recalibration) respectively.
 
 ## Method
 
 ### Overall Architecture
-Unposed multi-view images → Transformer encoder (with dual masking) → multi-head decoder → coarse-to-fine Gaussian splatting (anchor → semantic → fine Gaussians) → pose-conditioned recalibration → output 3D representations (point cloud, normals, semantics, appearance).
+UniSplat addresses a complex task: extracting consistent scene geometry, appearance, and semantics using only a few sparse multi-view images without pose calibration. The method employs a feed-forward pipeline where multi-view images are first processed by a masked Transformer encoder to extract features. A multi-head decoder then predicts point clouds, semantics, and appearance. These predictions are not output directly but are assembled into a **coarse-to-fine three-level Gaussian field** for differentiable rendering. Finally, camera parameters estimated by a pose head are used to align predictions through reprojection. Three key mechanisms drive the pipeline: dual-masking for geometric understanding, coarse-to-fine splatting to coordinate semantic and appearance granularity, and pose recalibration to anchor geometry and semantics together.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Unposed Sparse Multi-View Images"] --> ENC
+
+    subgraph DM["Dual-Masking Strategy"]
+        direction TB
+        ENC["Transformer Encoder<br/>Random Mask (Stage 1)"] --> CG["Coarse Gaussian Field<br/>Calculate Geometry Importance Map"]
+        CG --> GMASK["Geometry-Aware Mask (Stage 2)<br/>Occludes Structural Key Regions"]
+    end
+
+    GMASK --> DEC["Multi-head Decoder"]
+
+    subgraph C2F["Coarse-to-Fine Gaussian Splatting"]
+        direction TB
+        ANCHOR["Anchor Gaussians<br/>Positions + Geo/Sem Skeleton"] --> SEM["Semantic Gaussians<br/>Semantics rendered at this level"]
+        SEM --> APP["Fine Gaussians<br/>Appearance rendered at this level"]
+    end
+
+    DEC --> ANCHOR
+    DEC --> POSE["Pose Head + 3D Point Head"]
+
+    APP --> RECAL
+    POSE --> RECAL["Pose-Conditioned Recalibration<br/>Reproject 3D Points/Semantics → 2D Alignment"]
+    RECAL --> OUT["Unified Geo-App-Sem 3D Representation"]
+```
 
 ### Key Designs
 
-1. **Dual Masking Strategy**:
+**1. Dual-Masking Strategy: Forcing 3D Reasoning over Texture Interpolation**
 
-    - **Function**: Enhances the geometric awareness of the encoder.
-    - **Mechanism**: Stage 1 applies random masking to encoder tokens to extract preliminary features; Stage 2 generates geometry-aware masks from the importance map of the coarse Gaussian field, masking structurally critical regions of the decoder tokens. This compels the decoder to infer 3D structure from incomplete evidence.
-    - **Design Motivation**: Random masking may suppress unimportant regions, whereas geometry-guided masking specifically conceals structurally salient features, forcing the model to learn genuine 3D reasoning rather than local texture completion.
+Self-supervised methods often use random masking, but random masks may cover irrelevant background areas, allowing models to reconstruct pixels using local textures without learning 3D structure. UniSplat splits masking into two steps: first, a random mask is applied at the encoder to extract preliminary features and splat a coarse Gaussian field. Second, an importance map is calculated from this coarse field to identify structurally critical regions (edges, geometric transitions) for "geometry-aware masking" at the decoder. This forces the decoder to reason about missing structural components via cross-view geometric relationships rather than simply copying neighboring textures.
 
-2. **Coarse-to-Fine Gaussian Splatting Strategy**:
+**2. Coarse-to-Fine Gaussian Splatting: Rendering Semantics and Appearance at Optimal Granularities**
 
-    - **Function**: Progressively refines the radiance field to reconcile the granularity gap between semantics and appearance.
-    - **Mechanism**: A three-level hierarchy — anchor Gaussians (position + geometry/semantic features) → semantic Gaussians (offsets + coarse appearance + semantics) → fine Gaussians (high-frequency details injected by upsampling from 2D feature maps). Semantics are rendered at coarser levels; appearance is rendered at the finest level.
-    - **Design Motivation**: Semantics are coarse-grained (object-level) while appearance requires fine granularity (texture-level); hierarchical rendering prevents mutual interference between the two.
+Optimizing geometry, appearance, and semantics within a single Gaussian layer causes interference, as semantics are object-level coarse signals while appearance requires high-frequency texture details. UniSplat decouples them using a three-level hierarchical Gaussian field: the top layer consists of **Anchor Gaussians**, which define geometry and semantic skeletons; the middle layer consists of **Semantic Gaussians**, which add offsets and semantic features for rendering; the bottom layer consists of **Fine Gaussians**, which inject high-frequency details from 2D feature maps for appearance rendering. Consequently, semantics are rendered at a coarser level and appearance at the finest, preventing compromises between the two.
 
-3. **Pose-Conditioned Recalibration Mechanism**:
+**3. Pose-Conditioned Recalibration: Anchoring Geometry and Semantics via Reprojection**
 
-    - **Function**: Enforces cross-task consistency between geometric and semantic predictions.
-    - **Mechanism**: Camera parameters estimated by the pose head are used to reproject predictions from the 3D point cloud head and semantic head onto the 2D image plane, aligning them with corresponding RGB and semantic predictions. A reprojection consistency loss ensures geometry and semantics remain mutually coherent.
-    - **Design Motivation**: In conventional multi-task learning, individual heads operate independently with no explicit mechanism to guarantee cross-task consistency; reprojection provides a natural alignment signal.
+A common issue in multi-head decoding is the lack of consistency between branches—the point cloud and semantic heads may output independent results. UniSplat utilizes camera parameters from the pose head to enforce constraints: 3D point clouds and semantic predictions are reprojected back to the 2D image plane using estimated poses to align with RGB and semantic targets. The pose serves both as an estimated target and a bridge to anchor various predictions to the same coordinate system, forcing geometric and semantic alignment without additional labels.
 
 ### Loss & Training
-A combination of self-supervised learning and knowledge distillation: novel view synthesis photometric loss, 3D point cloud distillation loss (from DUSt3R/VGGT), semantic feature distillation loss (from DINOv2/SigLIP), and reprojection consistency loss.
+The model is trained using self-supervised signals and knowledge distillation: a photometric loss for novel view synthesis constrains appearance, while 3D point cloud distillation (using DUSt3R/VGGT as teachers) and semantic feature distillation (using DINOv2/SigLIP as teachers) supervise geometry and semantics. The aforementioned reprojection consistency loss further binds the different heads together.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | Dataset | Metric | UniSplat | Prev. SOTA |
-|------|---------|--------|----------|------------|
-| Novel view synthesis | RealEstate10K | PSNR | Competitive | SelfSplat |
-| Camera pose estimation | CO3Dv2 | RTE | Improved | RayZer |
-| Depth estimation | ScanNet | Abs Rel | Improved | Baseline |
+| Task | Dataset | Metric | UniSplat (Ours) | Prev. SOTA |
+|------|--------|------|----------|----------|
+| Novel View Synthesis | RealEstate10K | PSNR | Competitive | SelfSplat |
+| Camera Pose Estimation | CO3Dv2 | RTE | Improved | RayZer |
+| Depth Estimation | ScanNet | Abs Rel | Improved | Baseline |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Full model | Best | Complete model |
-| w/o dual masking | Degraded | Weakened geometric awareness |
-| w/o coarse-to-fine | Degraded | Increased appearance-semantic inconsistency |
-| w/o recalibration | Degraded | Worse cross-task consistency |
+| Configuration | Key Metrics | Note |
+|------|---------|------|
+| Full model | Optimal | Best performance |
+| w/o Dual-Masking | Decrease | Weakened geometric awareness |
+| w/o Coarse-to-Fine | Decrease | Increased app-sem inconsistency |
+| w/o Recalibration | Decrease | Poorer cross-task consistency |
 
 ### Key Findings
-- The three components are mutually complementary; removing any one leads to performance degradation.
-- Geometry-guided masking more effectively enhances 3D reasoning than random masking.
-- The unified representation generalizes well to downstream tasks (navigation, manipulation).
+- The three components are complementary; removing any leads to performance degradation.
+- Geometry-guided masking enhances 3D reasoning capability more effectively than random masking.
+- The unified representation demonstrates strong generalization on downstream tasks such as navigation and manipulation.
 
 ## Highlights & Insights
-- **Granularity Decoupling**: The coarse-to-fine strategy elegantly resolves the granularity conflict between semantics and appearance — an idea transferable to other multi-task 3D learning settings.
-- **Reprojection as Natural Alignment**: Leveraging estimated poses for cross-head consistency constraints eliminates the need for additional annotations while providing a strong supervisory signal.
+- **Granularity Decoupling**: The coarse-to-fine strategy elegantly solves the granularity conflict between semantics and appearance, a concept transferable to other multi-task 3D learning frameworks.
+- **Reprojection as Natural Alignment**: Utilizing estimated poses for cross-head consistency provides strong supervision and alignment without requiring additional annotations.
 
 ## Limitations & Future Work
-- Quality is dependent on the teacher models used for knowledge distillation.
-- Computational overhead is non-trivial (multi-head decoder + multi-level Gaussians).
-- Future work may explore lighter-weight architectures and larger-scale pretraining.
+- Dependency on the quality of teacher models for knowledge distillation.
+- High computational overhead due to multi-head decoders and hierarchical Gaussians.
+- Future work could explore more lightweight architectures and larger-scale pre-training.
 
 ## Related Work & Insights
-- **vs. RayZer**: RayZer employs an implicit renderer, whereas UniSplat uses explicit Gaussian splatting for improved interpretability.
-- **vs. SelfSplat**: SelfSplat treats depth and pose modules separately; UniSplat achieves tighter coupling through pose-conditioned recalibration.
+- **vs. RayZer**: While RayZer uses implicit renderers, UniSplat utilizes explicit Gaussian Splatting to provide better interpretability.
+- **vs. SelfSplat**: Unlike SelfSplat, which decouples depth and pose modules, UniSplat achieves tighter coupling through pose-conditioned recalibration.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The synergistic design of the three components is novel, though each individual component is not entirely new.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task evaluation is comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ The framework is described clearly.
-- Value: ⭐⭐⭐⭐ Provides a practical perceptual foundation for spatial intelligence.
+- Novelty: ⭐⭐⭐⭐ The collaborative design of the three components is innovative, though individual elements have precedents.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive multi-task evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Framework descriptions are clear.
+- Value: ⭐⭐⭐⭐ Provides a practical solution for the perceptual foundation of spatial intelligence.
 
 <!-- RELATED:START -->
 
@@ -116,10 +132,10 @@ A combination of self-supervised learning and knowledge distillation: novel view
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
-- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
-- [\[ICCV 2025\] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting](../../ICCV2025/3d_vision/towards_scalable_spatial_intelligence_via_2d-to-3d_data_lifting.md)
-- [\[NeurIPS 2025\] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](../../NeurIPS2025/3d_vision/concerto_joint_2d-3d_self-supervised_learning_emerges_spatial_representations.md)
-- [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](../../ICLR2026/3d_vision/ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
+- [\[CVPR 2026\] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization](learning_scene_coordinate_reconstruction_from_unposed_images_via_pose_graph_opti.md)
+- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[CVPR 2026\] A Survey of Spatial Memory Representations for Efficient Robot Navigation](a_survey_of_spatial_memory_representations_for_efficient_robot_navigation.md)
 
 </div>
 

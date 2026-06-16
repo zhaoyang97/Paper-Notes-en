@@ -2,80 +2,96 @@
 title: >-
   [Paper Note] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 description: >-
-  [ACL 2026][Audio & Speech][Pseudo-label correction] This paper proposes Pseudo2Real, a parameter-space correction method that computes a "correction vector" by taking the weight difference between a ground-truth model an…
+  [ACL 2026][Audio & Speech][Whisper] This paper proposes Pseudo2Real, a parameter-space correction method that computes a "correction vector" by taking the weight difference between a real-label model and a pseudo-label model in a source domain. Applying this vector to a pseudo-label fine-tuned model in the target domain corrects systematic pseudo-labelin
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Pseudo-label correction"
-  - "Task Arithmetic"
-  - "Parameter space correction"
-  - "Accent adaptation"
-  - "Whisper"
+  - ACL 2026
+  - Audio & Speech
+  - Whisper
 date: 2026-05-08
-content_hash: fe6c97b30a676631
+content_hash: 312730eadde609c8
 ---
-
 # Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.08047](https://arxiv.org/abs/2510.08047)  
 **Code**: None  
 **Area**: Speech Processing / Domain Adaptation  
-**Keywords**: Pseudo-label correction, Task Arithmetic, Parameter space correction, Accent adaptation, Whisper
+**Keywords**: Pseudo-label Correction, Task Arithmetic, Parameter Space Correction, Accent Adaptation, Whisper
 
 ## TL;DR
 
-This paper proposes Pseudo2Real, a parameter-space correction method that computes a "correction vector" by taking the weight difference between a ground-truth model and a pseudo-labeled model in the source domain. This vector is applied to a target-domain pseudo-label fine-tuned model to rectify systematic pseudo-label bias, achieving up to a 35% relative WER reduction across ten African accents in AfriSpeech-200.
+This paper proposes Pseudo2Real, a parameter-space correction method that computes a "correction vector" by taking the weight difference between a real-label model and a pseudo-label model in a source domain. Applying this vector to a pseudo-label fine-tuned model in the target domain corrects systematic pseudo-labeling biases, achieving up to a 35% relative Word Error Rate (WER) reduction across ten African accents in AfriSpeech-200.
 
 ## Background & Motivation
 
-**Background**: ASR systems often face a scarcity of labeled data when encountering new domains (e.g., new accents). Pseudo-labeling (generating labels with a teacher model) is a common domain adaptation strategy, but pseudo-labels inherit systematic biases from the teacher model.
+**Background**: ASR systems face data scarcity when encountering new domains (e.g., new accents). Pseudo-labeling (using a teacher model to generate labels) is a common domain adaptation strategy, but pseudo-labels inherit the systematic biases of the teacher model.
 
-**Limitations of Prior Work**: (1) Confidence filtering and consistency checks only suppress noise and cannot correct structured bias patterns; (2) Iterative self-training (e.g., Noisy Student) requires multiple training rounds and still propagates repetitive teacher errors; (3) Weight-space methods like EMA use training trajectory averages and do not specifically target pseudo-label bias.
+**Limitations of Prior Work**: (1) Confidence filtering and consistency checks only suppress noise but cannot correct structured bias patterns; (2) Iterative self-training (e.g., Noisy Student) requires multiple training rounds and still propagates repetitive teacher errors; (3) Weight-space methods like EMA use training trajectory averages and do not target pseudo-label bias specifically.
 
-**Key Challenge**: When the target domain lacks ground-truth annotations, how can systematic error patterns in pseudo-labels be identified and corrected?
+**Key Challenge**: When the target domain lacks ground-truth labels, how can systematic error patterns in pseudo-labels be identified and corrected?
 
-**Goal**: Design a reusable parameter-space correction method that rectifies pseudo-label bias without requiring target-domain labels.
+**Goal**: Design a reusable parameter-space correction method that corrects pseudo-label bias without requiring target domain labels.
 
 **Key Insight**: Based on Linear Mode Connectivity—models fine-tuned from the same pre-trained starting point reside in a shared low-loss region, meaning weight differences can be interpreted as meaningful directions rather than noise.
 
-**Core Idea**: The weight difference between a real-label model and a pseudo-label model in the source domain captures the direction of pseudo-label bias. Adding the scaled correction vector to the target-domain pseudo-label model corrects this bias.
+**Core Idea**: The weight difference between a real-label model and a pseudo-label model in the source domain captures the direction of pseudo-label bias. Scaling and adding this correction vector to a target domain pseudo-label model effectively corrects those biases.
 
 ## Method
 
 ### Overall Architecture
 
-Starting from a pre-trained backbone $\theta^{\text{pre}}$: (1) Fine-tune on the source domain using real and pseudo labels to obtain $\theta_s^{\text{real}}$ and $\theta_s^{\text{pseudo}}$ respectively; (2) Compute the correction vector $\tau = \theta_s^{\text{real}} - \theta_s^{\text{pseudo}}$; (3) Fine-tune on the target domain using pseudo labels to obtain $\theta_t^{\text{pseudo}}$; (4) Apply the correction: $\theta_t^{\text{corrected}} = \theta_t^{\text{pseudo}} + \lambda\tau$.
+The idea of Pseudo2Real is to transition "pseudo-label noise" from sample space to parameter space: since both a "real-label model" and a "pseudo-label model" can be trained on a source domain with ground truth, their weight difference characterizes the systematic bias direction introduced by pseudo-labels. This direction can then be migrated to correct an unlabeled target domain. Specifically, starting from the same pre-trained backbone $\theta^{\text{pre}}$, the source domain is fine-tuned with real and pseudo labels to obtain $\theta_s^{\text{real}}$ and $\theta_s^{\text{pseudo}}$, respectively. Subtracting them yields the correction vector $\tau = \theta_s^{\text{real}} - \theta_s^{\text{pseudo}}$. In the target domain where only pseudo-labels exist, a model is fine-tuned to get $\theta_t^{\text{pseudo}}$, which is then updated with the scaled correction vector: $\theta_t^{\text{corrected}} = \theta_t^{\text{pseudo}} + \lambda\tau$. This process requires no target domain ground truth or iterative training. The SC variant refines the single correction vector into multiple subgroup vectors via speaker clustering before averaging.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Pre-trained Backbone θ_pre"]
+    P --> SR["Src Real-label Fine-tuning θ_s^real"]
+    P --> SP["Src Pseudo-label Fine-tuning θ_s^pseudo"]
+    P --> TP["Tgt Pseudo-label Fine-tuning θ_t^pseudo"]
+    P -->|Src by Speaker| CL["ECAPA-TDNN Embedding + k-means Clustering"]
+
+    subgraph D1["Single Correction Vector (Pseudo2Real)"]
+        direction TB
+        SR --> TAU["Correction Vector τ = θ_s^real − θ_s^pseudo"]
+        SP --> TAU
+    end
+
+    subgraph D2["Subgroup Correction Vector (Pseudo2Real-SC)"]
+        direction TB
+        CL --> TAUC["Subgroup τ_c → Average"]
+    end
+
+    TAU --> ADD["Apply Scaled Vector θ_t^pseudo + λτ"]
+    TAUC -.SC Variant replaces τ.-> ADD
+    TP --> ADD
+    ADD --> OUT["Corrected Target Model θ_t^corrected"]
+```
 
 ### Key Designs
 
-1.  **Single Correction Vector (Pseudo2Real)**:
-    - **Function**: Captures and corrects systematic biases introduced by pseudo-labels in the source domain.
-    - **Mechanism**: The correction vector $\tau = \theta_s^{\text{real}} - \theta_s^{\text{pseudo}}$ encodes the parameter-space direction "from pseudo-labels to real labels." Scaled addition to the target-domain model achieves cross-domain correction.
-    - **Design Motivation**: Linear Mode Connectivity ensures that weight differences between models fine-tuned from the same initialization represent meaningful directions. The Task Arithmetic framework demonstrates that such directions can be composed and transferred.
+**1. Single Correction Vector (Pseudo2Real): Mapping "Pseudo→Real" bias as a transferable direction**
 
-2.  **Sub-group Correction Vectors (Pseudo2Real-SC)**:
-    - **Function**: Performs more granular correction for differentiated pseudo-label biases across different speaker sub-groups.
-    - **Mechanism**: Uses ECAPA-TDNN to extract speaker embeddings followed by k-means clustering for grouping. A correction vector $\tau_c$ is calculated for each sub-group, and the final correction is the average across all sub-groups: $\theta_t^{\text{corrected}} = \theta_t^{\text{pseudo}} + \frac{\lambda}{C}\sum_{c=1}^{C}\tau_c$.
-    - **Design Motivation**: Pseudo-label quality varies by accent, pronunciation, and recording conditions. A uniform correction vector cannot capture fine-grained bias. Sub-group clustering is fully automated and requires no domain labels.
+While confidence filtering and consistency checks only suppress noise, they fail to fix structured bias patterns. The key observation of Pseudo2Real is that the correction vector $\tau = \theta_s^{\text{real}} - \theta_s^{\text{pseudo}}$ encodes the parameter-space direction pointing from pseudo-label outcomes to real-label outcomes. Scaling and adding this vector to the target pseudo-label model completes cross-domain correction. This subtraction is meaningful because models fine-tuned from the same pre-trained starting point landing in a shared low-loss region (Linear Mode Connectivity) ensures the weight difference is a structured direction rather than random noise. The task arithmetic framework further guarantees that such directions can be scaled, combined, and transferred.
 
-3.  **Cross-Accent Cross-Validation**:
-    - **Function**: Comprehensively evaluates the cross-domain transferability of correction vectors.
-    - **Mechanism**: Splits 10 accents into two folds (spanning different language families), alternating them as source and target domains.
-    - **Design Motivation**: The 10 accents span three major language families (Niger-Congo, Afroasiatic, Indo-European), making cross-accent adaptation highly challenging.
+**2. Subgroup Correction Vector (Pseudo2Real-SC): Finer correction via speaker grouping**
+
+Pseudo-label quality varies based on accents, pronunciation habits, and recording conditions; a global correction vector may smooth over these differences. The SC variant first extracts speaker embeddings using ECAPA-TDNN and performs k-means clustering. A correction vector $\tau_c$ is estimated for each subgroup, and the final model is $\theta_t^{\text{corrected}} = \theta_t^{\text{pseudo}} + \frac{\lambda}{C}\sum_{c=1}^{C}\tau_c$. Since clustering relies solely on acoustic embeddings and no domain labels, it is entirely automated and successfully captures fine-grained biases lost by a unified vector.
 
 ### Loss & Training
 
-Standard ASR fine-tuning loss. Whisper tiny/base/small/medium/large-v2 models are used. Only one parameter $\lambda$ needs tuning during correction.
+Standard ASR losses are used during the fine-tuning phase, covering five Whisper scales (tiny/base/small/medium/large-v2). During the correction phase, only the scaling coefficient $\lambda$ needs hyperparameter tuning.
 
 ## Key Experimental Results
 
+The evaluation is intentionally challenging: the 10 accents with the most samples in AfriSpeech-200 are split into two folds by language family (spanning Niger-Congo, Afroasiatic, and Indo-European families). These folds alternate as source and target domains to test whether the correction direction can transfer between significantly different domains.
+
 ### Main Results
 
-**AfriSpeech-200 WER Comparison (Whisper tiny, average across 10 accents)**
+**AfriSpeech-200 WER Comparison (Whisper tiny, Avg. over 10 accents)**
 
-| Method | Avg WER |
-| :--- | :--- |
+| Method | Avg. WER |
+|------|---------|
 | Pre-trained $\theta^{\text{pre}}$ | 106.5 |
 | Source Real $\theta_s^{\text{real}}$ | 88.2 |
 | Pseudo-label $\theta_t^{\text{pseudo}}$ | 89.3 |
@@ -86,47 +102,47 @@ Standard ASR fine-tuning loss. Whisper tiny/base/small/medium/large-v2 models ar
 
 ### Ablation Study
 
-**Correction Effect Across Different Model Scales**
+**Correction performance across model scales**
 
 | Whisper Scale | Pseudo-label WER | +Pseudo2Real WER | Gain (Relative) |
-| :--- | :--- | :--- | :--- |
+|-------------|-----------|-----------------|---------|
 | tiny (39M) | 89.3 | ~58 | ~35% |
-| base (74M) | — | — | Consistent Improvement |
-| large-v2 (1.55B) | — | — | Diminishing Gains |
+| base (74M) | — | — | Consistent Gain |
+| large-v2 (1.55B) | — | — | Reduced Gain |
 
 ### Key Findings
 
 - Pseudo2Real achieves up to a 35% relative WER reduction on Whisper tiny.
-- Sub-group clustering (SC) further improves performance, indicating that pseudo-label bias indeed varies by speaker.
-- Correction vectors are most effective on smaller models, while larger models exhibit stronger inherent error correction capabilities.
-- The method is consistently effective across all 10 accents, even when bridging different language families.
-- The optimal value for $\lambda$ is between 0.5 and 1.0 and is relatively insensitive to selection.
+- Subgroup clustering (SC) further improves results, indicating that pseudo-label bias indeed varies by speaker.
+- The correction vector is most effective on smaller models; larger models possess stronger intrinsic error-correction capabilities.
+- The method is consistently effective across all 10 accents, even when crossing different language families.
+- The optimal value for $\lambda$ is between 0.5 and 1.0, and results are relatively insensitive to this choice.
 
 ## Highlights & Insights
 
-- Extremely simple method—requires only one vector subtraction and one vector addition, with no iterative training.
-- The insight that "pseudo-label bias can be parameterized" holds theoretical value—shifting label noise processing from sample space to parameter space.
-- Orthogonal and combinable with existing methods such as confidence filtering and iterative self-training.
+- The method is extremely simple—requiring only one vector subtraction and one vector addition, avoiding iterative training.
+- The insight that "pseudo-label bias can be parameterized" has theoretical value—shifting label noise processing from sample space to parameter space.
+- It can be combined orthogonally with existing methods like confidence filtering or iterative self-training.
 
 ## Limitations & Future Work
 
-- Requires concurrent availability of real and pseudo labels in the source domain, limiting applicability in entirely unlabeled scenarios.
-- The correction vector assumes similar pseudo-label bias patterns between source and target domains; it may fail for significantly divergent domains.
-- Evaluated only on accent adaptation; effectiveness in other domain adaptation scenarios like noisy environments or far-field speech remains unverified.
-- Linear Mode Connectivity assumptions might not hold under extreme domain shifts.
+- It requires the source domain to have both real and pseudo labels, which limits applicability in scenarios with zero annotations.
+- The correction vector assumes similar pseudo-label bias patterns between source and target domains; it may fail for highly divergent domains.
+- Evaluation was limited to accent adaptation; its effectiveness in other scenarios like noisy environments or far-field speech remains unverified.
+- The Linear Mode Connectivity assumption might not hold under extreme domain shifts.
 
 ## Related Work & Insights
 
-- **vs SYN2REAL (Su et al., 2024)**: The latter corrects the acoustic gap between synthetic and real speech, while this work corrects the annotation gap between real and pseudo labels—different problem dimensions.
-- **vs Noisy Student**: The latter requires multiple rounds of iterative training, whereas this work requires only a single vector operation.
-- **vs EMA**: EMA smoothes training trajectories without specifically targeting pseudo-label bias; this work explicitly captures the "pseudo-to-real" direction.
+- **vs SYN2REAL (Su et al., 2024)**: The latter corrects the acoustic gap between synthetic and real speech, while Ours corrects the annotation gap between real and pseudo labels—different problem dimensions.
+- **vs Noisy Student**: The latter requires multiple rounds of iterative training; Ours requires only a single vector operation.
+- **vs EMA**: EMA smoothes training trajectories but does not target pseudo-label bias; Ours explicitly captures the "Pseudo-to-Real" direction.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Novel perspective applying Task Arithmetic to pseudo-label correction.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 10 accents × 5 model scales × 6 baselines + clustering ablation.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear intuition and rigorous experimental design.
-- **Value**: ⭐⭐⭐⭐ Simple and effective, suitable for integration with existing pseudo-labeling pipelines.
+- Novelty: ⭐⭐⭐⭐ Innovative perspective applying task arithmetic to pseudo-label correction.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 10 accents × 5 model scales × 6 baselines + clustering ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological intuition and rigorous experimental design.
+- Value: ⭐⭐⭐⭐ Simple yet effective, easily combinable with existing pseudo-labeling methods.
 
 <!-- RELATED:START -->
 

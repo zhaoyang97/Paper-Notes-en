@@ -2,149 +2,154 @@
 title: >-
   [Paper Note] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation
 description: >-
-  [CVPR2026][Human Understanding][novel object pose estimation] This paper proposes COG, a framework that models cross-view correspondences as a confidence-aware optimal transport (OT) problem. By predicting per-point conf…
+  [CVPR 2026][Human Understanding][Paper Note] The COG framework is proposed to model cross-view correspondences as a confidence-aware Optimal Transport (OT) problem. By predicting point-wise confidence as transport marginal constraints, it suppresses non-overlapping regions and outliers, achieving single-reference 6DoF pose estimation for novel objects under unsup
 tags:
-  - "CVPR2026"
-  - "Human Understanding"
-  - "novel object pose estimation"
-  - "optimal transport"
-  - "confidence learning"
-  - "unsupervised learning"
-  - "point cloud registration"
-  - "visual foundation models"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: 63422d5c60435114
+content_hash: 87c47f8d0a175464
 ---
-
 # COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.00493](https://arxiv.org/abs/2603.00493)  
 **Code**: [YC-Che/COG](https://github.com/YC-Che/COG)  
-**Area**: Human Understanding / 6DoF Object Pose Estimation
-**Keywords**: novel object pose estimation, optimal transport, confidence learning, unsupervised learning, point cloud registration, visual foundation models
+**Area**: Human understanding / 6DoF object pose estimation  
+**Keywords**: Novel object pose estimation, Optimal Transport, Confidence learning, Unsupervised learning, Point cloud registration, Visual Foundation Models
 
 ## TL;DR
 
-This paper proposes COG, a framework that models cross-view correspondences as a confidence-aware optimal transport (OT) problem. By predicting per-point confidence scores as transport marginal constraints, COG suppresses contributions from non-overlapping regions and outliers, achieving unsupervised single-reference 6DoF novel object pose estimation on par with supervised methods.
+The COG framework is proposed to model cross-view correspondences as a confidence-aware Optimal Transport (OT) problem. By predicting point-wise confidence as transport marginal constraints, it suppresses non-overlapping regions and outliers, achieving single-reference 6DoF pose estimation for novel objects under unsupervised conditions that is comparable to supervised methods.
 
 ## Background & Motivation
 
-**Task Definition**: Estimating the 6DoF pose (rotation + translation) of arbitrary novel objects from a single reference RGB-D image — a fundamental task for robotics, AR, and 3D scene understanding.
+**Task Definition**: Estimating the 6DoF pose (rotation + translation) of arbitrary novel objects from a single reference RGB-D image is a fundamental task for robotics, AR, and 3D scene understanding.
 
-**Limitations of Prior Work**: Traditional methods rely on CAD models or multi-view references, limiting practical scalability. Under the single-reference setting, large viewpoint changes and partial observations make the problem severely ill-posed.
+**Limitations of Prior Work**: Traditional methods rely on CAD models or multi-view reference images, leading to poor scalability in real-world deployment. Under the single-reference setting, large viewpoint changes and partial observations make the problem highly ill-posed.
 
-**Drawbacks of Discrete Matching**: Existing methods (e.g., UnoPose) construct discrete one-to-one correspondences via argmax, which tends to collapse onto a few dominant keypoints, leaving the majority of points unused.
+**Defects of Discrete Matching**: Existing methods (e.g., UnoPose) construct discrete one-to-one matches via argmax, which easily collapse to a few dominant keypoints, leaving a large number of points underutilized.
 
-**Non-differentiability**: Discrete matching breaks the gradient flow, preventing end-to-end unsupervised training.
+**Non-differentiability**: Discrete matching breaks the gradient flow, preventing the model from being trained in an unsupervised manner.
 
-**OT Post-processing Issue**: Existing OT-based methods (RPM-Net, Robust OT) adopt uniform marginals, with confidence used only as post-hoc calibration rather than being jointly optimized with correspondences end-to-end.
+**OT Post-processing Issues**: Existing OT methods (RPM-Net, Robust OT) use uniform marginals, treating confidence only as a post-hoc calibration rather than jointly optimizing it with correspondences in an end-to-end fashion.
 
-**Semantic Ambiguity**: Pure geometric matching is ambiguous; semantic priors are needed to distinguish different object parts.
+**Key Challenge**: Pure geometric matching suffers from semantic ambiguity and requires semantic priors to distinguish different parts of an object.
 
 ## Method
 
 ### Overall Architecture
 
-COG adopts a **coarse-to-fine** two-stage architecture:
+COG treats single-reference novel object 6DoF pose estimation as a coarse-to-fine two-stage process. In the pre-processing stage, UnoSeg is used to segment object masks, depth maps are back-projected into 3D point clouds, and DINO extracts pixel-wise RGB semantic descriptors. A STEGO self-labeling strategy is employed to denoise semantic features and eliminate cross-view drift. In the coarse stage, 256 sparse points are sampled via Farthest Point Sampling (FPS), and point-wise confidence and features are predicted through a Geometric Transformer encoder-decoder. Soft correspondences are computed via Sinkhorn Optimal Transport, followed by weighted SVD for coarse pose estimation. In the fine stage, the query point cloud is aligned using the coarse pose, and 1024 points with positional encoding are used for fine-grained alignment to output the final pose. During inference, the estimated pose can be refined through iteration (default is 1 iteration).
 
-- **Preprocessing**: UnoSeg segments object masks → depth maps are back-projected into 3D point clouds → DINO extracts per-pixel RGB features as semantic descriptors.
-- **Coarse Stage**: Farthest point sampling yields sparse point clouds (256 points); a geometric Transformer encoder-decoder predicts per-point confidence and features; Sinkhorn OT computes soft correspondences; weighted SVD estimates the coarse pose.
-- **Fine Stage**: The query point cloud is transformed using the coarse pose, and the full point cloud (1024 points) with positional encodings is used for fine-grained alignment to produce the final pose.
-- **Inference Iteration**: At inference, the estimated pose is used to iteratively transform the query point cloud for refinement (default: 1 iteration).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Reference + Query RGB-D images"] --> B["UnoSeg Segmentation Mask<br/>Depth back-projection to 3D point clouds"]
+    A --> C["DINO pixel-wise semantic descriptors"]
+    C --> D["Semantic Denoising<br/>STEGO energy clustering to eliminate cross-view drift"]
+    B --> E["Coarse Stage: 256 FPS points<br/>Geometric Transformer encoder-decoder"]
+    D --> E
+    subgraph OT["Confidence-aware Optimal Transport"]
+        direction TB
+        F["Geometric × Semantic Affinity Kernel K"] --> G["MLP Confidence Head<br/>Confidence normalized as Sinkhorn non-uniform marginals"]
+        G --> H["Sinkhorn OT soft correspondence<br/>Confidence-weighted SVD (Umeyama) for pose"]
+    end
+    E --> OT
+    OT --> J["Coarse Pose"]
+    J --> K["Fine Stage: 1024 points + Positional Encoding fine alignment"]
+    K -->|"Iterative Refinement (default 1)"| K
+    K --> L["Output: 6DoF Pose"]
+```
 
-### Key Designs: Confidence-aware Optimal Transport
+### Key Designs
 
-**Core Idea**: Cross-view correspondences are modeled as an OT problem in which per-point confidence scores serve directly as the target marginal constraints of the transport plan.
+**1. Confidence-aware Optimal Transport: Treating Confidence as Transport Marginals**
 
-1. **Affinity Kernel Construction**: Geometric similarity (cosine) and semantic similarity (denoised DINO features) are fused: $\mathbf{K}_{[i,j]} = \exp(\frac{1}{\tau}\langle \mathbf{G}_{p[i]}, \mathbf{G}_{q[j]}\rangle_{\cos}) \cdot (1 + \langle \mathbf{S}_{p[i]}, \mathbf{S}_{q[j]}\rangle_{\cos})^{\lambda/\tau}$
-2. **Confidence as Marginals**: An MLP confidence head outputs $\mathbf{c}_p, \mathbf{c}_q \in [0,1]^n$, normalized to $\mathbf{w}_p = \mathbf{c}_p / \overline{\mathbf{c}_p}$, which serve as the target marginal distributions for the Sinkhorn algorithm.
-3. **Soft Correspondence Matrix**: Row-normalizing the transport plan $\Pi$ yields $\mathbf{M}_{pq}$ and $\mathbf{M}_{qp}$, which act as soft projection operators generating corresponding points via convex combination.
-4. **Pose Estimation**: Bidirectional correspondences and original point clouds are concatenated; confidence-weighted SVD (Umeyama algorithm) jointly solves for the rigid transformation.
+Previous single-reference pose estimation relied on argmax for discrete matching, which collapses to dominant points and is non-differentiable. COG integrates confidence directly into the marginal constraints of OT. First, an affinity kernel combining geometry and semantics is constructed: $\mathbf{K}_{[i,j]} = \exp(\frac{1}{\tau}\langle \mathbf{G}_{p[i]}, \mathbf{G}_{q[j]}\rangle_{\cos}) \cdot (1 + \langle \mathbf{S}_{p[i]}, \mathbf{S}_{q[j]}\rangle_{\cos})^{\lambda/\tau}$. Then, an MLP confidence head outputs $\mathbf{c}_p, \mathbf{c}_q \in [0,1]^n$, normalized as $\mathbf{w}_p = \mathbf{c}_p / \overline{\mathbf{c}_p}$ for Sinkhorn target marginals. Row normalization of the transport plan $\Pi$ yields soft correspondence matrices $\mathbf{M}_{pq}$ and $\mathbf{M}_{qp}$. Finally, bidirectional correspondences are concatenated with original points for confidence-weighted SVD (Umeyama) to solve for the rigid transformation. This automatically suppresses non-overlapping regions and outliers with low confidence while enabling end-to-end learning of both correspondences and confidence.
 
-**Semantic Denoising**: The STEGO self-label refinement strategy is applied to DINO features via energy-based clustering, reducing cross-view feature inconsistencies.
+**2. Semantic Denoising: Resolving Geometric Ambiguity**
+
+Pure geometric matching is often ambiguous across different object parts. COG utilizes the self-labeling refinement strategy from STEGO to denoise DINO features via energy clustering. This eliminates cross-view feature drift, allowing correspondences to focus on semantically consistent regions. In ablation studies, injecting semantic priors improved mAP from 73.2 to 75.9 and reduced correspondence entropy (ENT) from 23.0 to 10.5, resulting in more compact correspondences.
 
 ### Loss & Training
 
-| Loss | Role | Core Formulation |
-|------|------|-----------------|
-| $\mathcal{L}_{\text{pose}}$ | Confidence-weighted Chamfer distance for pose alignment | Gaussian RBF kernel measuring geometric distance between transformed and target point clouds |
-| $\mathcal{L}_{\text{cycl}}$ | Cycle-consistency constraint to reinforce overlap-region correspondences | Points should reconstruct their original positions after bidirectional projection |
-| $\mathcal{L}_{\text{sem}}$ | Semantic consistency constraint to prevent semantically mismatched correspondences | Penalizes correspondences assigned to semantically dissimilar points |
-| $\mathcal{L}_{\text{conf}}$ | Pseudo-label supervision for confidence learning | BCE loss; pseudo-label = product of geometry × pose × semantic RBF kernel responses (stop-gradient) |
+| Loss | Function | Formula Core |
+|------|----------|--------------|
+| $\mathcal{L}_{\text{pose}}$ | Confidence-weighted Chamfer distance to optimize alignment | Gaussian RBF kernel measuring geometric distance between transformed and target points |
+| $\mathcal{L}_{\text{cycl}}$ | Cycle-consistency constraint to reinforce overlap correspondences | Points should reconstruct their original position after bidirectional projection |
+| $\mathcal{L}_{\text{sem}}$ | Semantic consistency constraint to prevent mismatched semantics | Penalizes correspondences assigned to semantically dissimilar points |
+| $\mathcal{L}_{\text{conf}}$ | Pseudo-label supervision for confidence learning | BCE loss; pseudo-labels = product of geometric, pose, and semantic RBF kernels (stop-gradient) |
 
-Total loss: $\mathcal{L} = \gamma_{\text{pose}}\mathcal{L}_{\text{pose}} + \gamma_{\text{cycl}}\mathcal{L}_{\text{cycl}} + \gamma_{\text{sem}}\mathcal{L}_{\text{sem}} + \gamma_{\text{conf}}\mathcal{L}_{\text{conf}}$
+Total Loss: $\mathcal{L} = \gamma_{\text{pose}}\mathcal{L}_{\text{pose}} + \gamma_{\text{cycl}}\mathcal{L}_{\text{cycl}} + \gamma_{\text{sem}}\mathcal{L}_{\text{sem}} + \gamma_{\text{conf}}\mathcal{L}_{\text{conf}}$. The Key Insight for the unsupervised version is generating continuous (non-binary) pseudo-labels using geometric reconstruction, pose alignment, and semantic consistency kernels to supervise the confidence branch via BCE. The supervised variant replaces the Chamfer distance in $\mathcal{L}_{\text{pose}}$ with point-to-point distance to GT transformed points.
 
-**Unsupervised Confidence Learning**: Continuous pseudo-labels (non-binary) are generated from Gaussian RBF kernel responses measuring geometric reconstruction, pose alignment, and semantic consistency, and used to train the confidence branch via BCE loss. The supervised variant replaces the Chamfer distance in $\mathcal{L}_{\text{pose}}$ with per-point distances to GT-transformed points.
+## Main Results
 
-## Key Experimental Results
-
-### Main Results: Single-reference Novel Object Pose Estimation (BOP Benchmark)
+### Main Results: Novel Object Pose Estimation from Single Reference (BOP Benchmark)
 
 | Method | Supervision | LM-O | TUD-L | YCB-V | Mean |
-|--------|-------------|------|-------|-------|------|
+|------|------|------|-------|-------|------|
 | FreeZe | None | 45.5 | 68.3 | 65.5 | 59.8 |
 | Robust OT | None | 45.5 | 66.3 | 66.0 | 59.3 |
 | Dustbin OT | None | 50.2 | 67.6 | 65.4 | 61.1 |
-| **COG (Unsupervised)** | **None** | **56.7** | **73.8** | **75.9** | **68.8** |
+| **COG (Ours)** | **None** | **56.7** | **73.8** | **75.9** | **68.8** |
 | UnoPose | GT Pose | 58.7 | 71.0 | 83.1 | 70.9 |
-| **COG (Supervised)** | **GT Pose** | **60.8** | **80.0** | **80.5** | **73.8** |
+| **COG (Ours)** | **GT Pose** | **60.8** | **80.0** | **80.5** | **73.8** |
 
 ### Overlap Region Prediction (TUD-L IoU)
 
 | Method | Dragon | Frog | Watering Can | Mean |
-|--------|--------|------|--------------|------|
+|------|--------|------|--------------|------|
 | UnoPose (Supervised) | 70.0 | 72.2 | 59.1 | 67.1 |
 | COG (Unsupervised) | 71.2 | 64.4 | 81.2 | 72.3 |
 | COG (Supervised) | 72.9 | 68.3 | 83.9 | 75.0 |
 
 ### Ablation Study
 
-**Correspondence Mechanism Ablation** (YCB-V):
+**Ablation of Correspondence Mechanism** (YCB-V):
 
-- Argmax + all losses → Mean 73.1; Softmax → 73.0; Uniform OT → 75.2; **Confidence OT → 75.9**
-- OT-based methods outperform discrete matching by approximately 2–3%; confidence marginals provide further improvement.
+- Argmax + All Losses → Mean 73.1; Softmax → 73.0; Uniform OT → 75.2; **Confidence OT → 75.9**
+- OT methods outperform discrete matching by ~2-3%, with confidence marginals providing further gains.
 
-**OT Parameter Ablation**:
+**Ablation of OT Parameters**:
 
-- Injecting semantic priors improves mAP from 73.2 to 75.9 and reduces ENT from 23.0 to 10.5, yielding more compact correspondences.
-- More than 2 Sinkhorn iterations slightly degrades performance (correspondences become too diffuse); 2 iterations are adopted.
+- Semantic prior injection improved mAP from 73.2 to 75.9 and decreased ENT from 23.0 to 10.5, creating more compact correspondences.
+- Exceeding 2 Sinkhorn iterations slightly degraded performance (correspondences became too diffuse); 2 iterations were adopted.
 
 ### Key Findings
 
-1. Unsupervised COG lags behind the supervised SOTA UnoPose by only 2.1% on average, and surpasses it by 2.8% on TUD-L.
-2. Confidence-weighted OT marginals consistently outperform uniform marginals, validating the effectiveness of non-uniform marginals.
-3. Semantically denoised DINO features significantly reduce ENT, focusing correspondences on semantically consistent regions.
-4. A single refinement iteration improves performance by over 1%; diminishing returns thereafter, balancing accuracy and speed (~4 seconds per sample).
+1. Unsupervised COG is only 2.1% behind the SOTA supervised method UnoPose and actually outperforms it by 2.8% on TUD-L.
+2. Using confidence as an OT marginal consistently improves performance over uniform marginals, validating the effectiveness of non-uniform marginals.
+3. Denoised DINO features significantly reduce ENT, focusing correspondences on semantically consistent areas.
+4. One iterative refinement step improves performance by >1%, with diminishing returns thereafter, balancing accuracy and speed (~4s/sample).
 
 ## Highlights & Insights
 
-- **Elegant Mathematical Formulation**: Confidence scores are embedded directly into OT marginal constraints rather than used as post-processing, enabling end-to-end joint optimization of correspondences and confidence.
-- **Remarkable Unsupervised Performance**: Using only geometric, semantic, and cycle-consistency cues to generate pseudo-labels, COG matches supervised methods, demonstrating strong generality.
-- **Interpretable Confidence**: Visualizations confirm that the model accurately assigns low confidence to non-overlapping regions and outliers.
-- **Well-rounded Design**: The coarse-to-fine architecture, semantic denoising, cycle-consistency, and pseudo-label confidence learning form a complementary and complete system.
+- **Elegant Mathematical Modeling**: Embedding confidence directly into OT marginal constraints, rather than using it as post-processing, allows for end-to-end joint optimization.
+- **Impressive Unsupervised Performance**: Relying only on geometric, semantic, and cycle-consistency pseudo-labels yields results comparable to supervised methods, demonstrating strong generalization.
+- **Interpretable Confidence**: Visualizations show the model accurately identifies non-overlapping regions and outliers, assigning them low confidence.
+- **Comprehensive Design**: The coarse-to-fine architecture, semantic denoising, cycle-consistency, and pseudo-label confidence learning modules are highly complementary.
 
 ## Limitations & Future Work
 
-- In highly occluded or cluttered scenes (LM-O, YCB-V), the unsupervised variant still lags behind the supervised counterpart (4.1% gap on LM-O), indicating room for improvement in complex environments.
-- The method depends on UnoSeg for initial mask prediction; segmentation failures propagate directly to pose estimation.
-- Inference takes approximately 4 seconds per sample (including segmentation and DINO feature extraction), limiting real-time applicability.
-- An inherent trade-off exists between marginal precision and correspondence sharpness in Sinkhorn iterations, requiring manual balancing.
-- Evaluation is limited to rigid objects; extension to articulated or deformable objects remains unexplored.
+- In high-occlusion/cluttered scenes (LM-O, YCB-V), a gap remains between unsupervised and supervised versions (4.1% on LM-O), suggesting room for improvement in complex environments.
+- Dependency on the UnoSeg model for initial masks; segmentation failure leads directly to pose estimation failure.
+- Inference speed is approximately 4s/sample (including segmentation and DINO extraction), limiting real-time application.
+- There is an inherent contradiction between marginal accuracy and correspondence sharpness in Sinkhorn iterations, requiring manual balancing.
+- Only rigid object pose estimation was evaluated; not yet extended to articulated or deformable objects.
 
 ## Related Work & Insights
 
-- **Novel Object Pose Estimation**: UnoPose (SE(3)-invariant framework with discrete matching), SAM-6D (DINO + SAM segmentation), MegaPose (CAD retrieval + refinement).
-- **OT for Point Cloud Registration**: RPM-Net (uniform marginal Sinkhorn), Robust OT, Dustbin OT (dustbin row/column).
-- **Visual Foundation Models**: DINOv2 for semantic features; STEGO for semantic denoising.
+- **Novel Object Pose Estimation**: UnoPose (SE(3)-invariant framework + discrete matching), SAM-6D (DINO + SAM segmentation), MegaPose (CAD retrieval + refinement).
+- **OT for Point Cloud Registration**: RPM-Net (Uniform marginal Sinkhorn), Robust OT, Dustbin OT (Dustbin rows/columns).
+- **Visual Foundation Models**: DINOv2 for semantic features, STEGO for semantic denoising strategies.
 - **Unsupervised Pose**: Equi-Pose (SE(3)-equivariant backbone), OP-Align (articulated objects), Zero-shot Pose (semantic feature alignment).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (embedding confidence into OT marginals is a natural and original formulation)
+- Novelty: ⭐⭐⭐⭐ (Confidence embedding in OT marginals is a novel and natural approach)
 - Experimental Thoroughness: ⭐⭐⭐⭐ (3 BOP benchmarks + detailed ablations + visualizations)
-- Writing Quality: ⭐⭐⭐⭐ (clear mathematical derivations and expressive overall architecture diagrams)
-- Value: ⭐⭐⭐⭐ (unsupervised performance matching supervised methods is a practically significant direction)
+- Writing Quality: ⭐⭐⭐⭐ (Clear mathematical derivations, strong architectural diagrams)
+- Value: ⭐⭐⭐⭐ (Unsupervised performance matching supervised is a highly practical direction)
 
 <!-- RELATED:START -->
 
@@ -153,10 +158,10 @@ Total loss: $\mathcal{L} = \gamma_{\text{pose}}\mathcal{L}_{\text{pose}} + \gamm
 ## Related Papers
 
 - [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](../../ICCV2025/human_understanding/mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
+- [\[CVPR 2025\] Co-op: Correspondence-based Novel Object Pose Estimation](../../CVPR2025/human_understanding/co-op_correspondence-based_novel_object_pose_estimation.md)
+- [\[ECCV 2024\] GS-Pose: Category-Level Object Pose Estimation via Geometric and Semantic Correspondence](../../ECCV2024/human_understanding/gs-pose_category-level_object_pose_estimation_via_geometric_and_semantic_corresp.md)
+- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
 - [\[AAAI 2026\] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation](../../AAAI2026/human_understanding/coordar_one-reference_6d_pose_estimation_of_novel_objects_via_autoregressive_coo.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[CVPR 2026\] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training](rppg_vqa_video_quality_assessment.md)
-- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](../../AAAI2026/human_understanding/modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
 
 </div>
 

@@ -2,78 +2,85 @@
 title: >-
   [Paper Note] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models
 description: >-
-  [ICML 2026][Video Understanding][Omni-LLM] Ours highlights that existing Omni-LLM token compression methods are sub-optimal due to "symmetric" treatment of audio and video. Ours proposes OmniSIFT—a two-stage asymmetric c…
+  [ICML 2026][Video Understanding][Omni-LLM] This paper identifies that existing "modality-symmetric" token compression in Omni-LLMs is suboptimal. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "vision anchors," which then guide audio selection. Introducing only 4.85M ad
 tags:
-  - "ICML 2026"
-  - "Video Understanding"
-  - "Omni-LLM"
-  - "Token Compression"
-  - "Video-Audio Understanding"
-  - "Spatio-Temporal Pruning"
-  - "Vision Guidance"
+  - ICML 2026
+  - Video Understanding
+  - Omni-LLM
 date: 2026-05-08
-content_hash: 318fa33bcedcad0b
+content_hash: d9878ab6c4879a2c
 ---
-
 # OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.04804](https://arxiv.org/abs/2602.04804)  
 **Code**: https://github.com/dingyue772/OmniSIFT  
-**Area**: Multi-modal VLM / Video Understanding / Model Compression  
-**Keywords**: Omni-LLM, Token Compression, Video-Audio Understanding, Spatio-Temporal Pruning, Vision Guidance
+**Area**: Multimodal VLM / Video Understanding / Model Compression  
+**Keywords**: Omni-LLM, Token Compression, Video-Audio Understanding, Spatio-Temporal Pruning, Vision-Guided
 
 ## TL;DR
-Ours highlights that existing Omni-LLM token compression methods are sub-optimal due to "symmetric" treatment of audio and video. Ours proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "visual anchors," then uses these anchors to guide audio selection. Introducing only 4.85M additional parameters, it consistently outperforms existing compression baselines and even the original model on Qwen2.5-Omni-7B while retaining 25% of tokens.
+This paper identifies that existing "modality-symmetric" token compression in Omni-LLMs is suboptimal. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "vision anchors," which then guide audio selection. Introducing only 4.85M additional parameters, OmniSIFT consistently outperforms existing compression baselines and even the original model on Qwen2.5-Omni-7B while retaining only 25% of tokens.
 
 ## Background & Motivation
 
-**Background**: Omni-LLMs (Qwen2.5-Omni, GPT-4o, Gemini) unify video, audio, and text into autoregressive LLMs for joint reasoning. However, high-density continuous video frames and high temporal resolution audio encoding generate over 20K tokens for a 20-second multi-modal clip, causing an explosion in inference costs due to long token sequences.
+**Background**: Omni-LLMs (e.g., Qwen2.5-Omni, GPT-4o, Gemini) unify video, audio, and text into autoregressive LLMs for joint reasoning. However, high-density continuous video frames and high-temporal-resolution audio encoding generate over 20K tokens for a 20-second multimodal clip, causing inference costs to explode.
 
-**Limitations of Prior Work**: Vision-centric MLLMs have extensive token compression research (FastV, VidCom2, TimeChat-Online, etc.), but direct migration to Omni-LLMs is infeasible. Existing Omni compression methods fall into two categories: (1) modality-decoupled—independent compression of audio and video, ignoring cross-modal semantic dependencies; (2) modality-symmetric—OmniZip uses audio attention scores to guide video pruning (dependency on attention scores makes it incompatible with FlashAttention), and EchoingPixels adds 4 LLM decoding layers for global cross-modal contextualization (high cost, late compression). Both treat audio and video as information sources of equal magnitude.
+**Limitations of Prior Work**: While vision-centric MLLM token compression (FastV, VidCom2, TimeChat-Online, etc.) is well-studied, direct transfer to Omni-LLMs is ineffective. Current Omni compression methods fall into two categories: (1) modality-decoupled—compressing audio and video independently, ignoring cross-modal dependencies; (2) modality-symmetric—e.g., OmniZip uses audio attention scores to guide video pruning (hindering FlashAttention compatibility), or EchoingPixels adds 4 LLM decoder layers for global contextualization (high cost, delayed compression). Both treat video and audio as equal-scale information sources.
 
-**Key Challenge**: Human perception of audio and video is inherently asymmetric—video redundancy can be estimated from within the visual stream (intra-frame spatial redundancy + inter-frame temporal redundancy), but audio significance relies more on context, often requiring visual scenes as semantic anchors (visible speakers, visually supported events). Treating the two modalities symmetrically collapses compression into "selecting temporal positions" while ignoring modality-specific semantic cues.
+**Key Challenge**: Human perception of video and audio is inherently asymmetric—video redundancy can be estimated within the visual stream (intra-frame spatial and inter-frame temporal redundancy), but audio saliency is more context-dependent, often requiring visual scenes as semantic anchors (e.g., visible speakers or visually supported events). Treating both modalities symmetrically collapses the compression task into "temporal position selection" while ignoring modality-specific semantic cues.
 
-**Goal**: (1) Adhere to a vision-guided asymmetric paradigm for compression; (2) Maintain light weight (additional parameters $\ll$ backbone); (3) Ensure compatibility with efficient operators like FlashAttention (independent of attention scores).
+**Goal**: (1) Enable compression following a vision-guided asymmetric paradigm; (2) maintain lightweight design (extra parameters $\ll$ backbone); (3) maintain compatibility with efficient operators like FlashAttention (not dependent on attention scores).
 
-**Key Insight**: Prune video redundancy using structural signals (cosine distance) to obtain a compact set of "visual anchors," then use these anchors to guide audio token selection. This divides tasks: video uses intra-modal signals, while audio uses cross-modal conditions.
+**Key Insight**: Prune video redundancy first using purely structural signals (cosine distance) to obtain a compact set of "vision anchors," then use these anchors to guide audio token selection. This allows video compression to rely on intra-modal signals while audio compression uses cross-modal conditions.
 
-**Core Idea**: Modality-asymmetric, vision-guided two-stage compression—STVP (Spatio-Temporal Video Pruning) performs dual-axis pruning for intra-frame spatial saliency and inter-frame temporal saliency; VGAS (Vision-Guided Audio Selector) uses pruned visual anchors as conditions to select audio tokens.
+**Core Idea**: A modality-asymmetric, vision-guided two-stage compression framework—STVP (Spatio-Temporal Video Pruning) performs dual-axis pruning for intra-frame spatial and inter-frame temporal saliency, while VGAS (Vision-Guided Audio Selector) selects audio tokens conditioned on the pruned vision anchors.
 
 ## Method
 
 ### Overall Architecture
-Inputs: Video $\mathcal{V}$ and synchronized audio $\mathcal{A}$, mapped to token sequences $\mathbf{Z}_v \in \mathbb{R}^{N_v \times D}$ and $\mathbf{Z}_a \in \mathbb{R}^{N_a \times D}$ via the Qwen2.5-Omni encoder-projector. To maintain temporal alignment, audio-visual tokens are partitioned into 2-second chunks $\mathcal{C}_t = [\mathbf{Z}_v^{(t)}; \mathbf{Z}_a^{(t)}]$, each containing 2 frames of vision and corresponding audio. OmniSIFT executes two stages serially at the chunk level: (1) STVP prunes video redundancy in each chunk to obtain the compressed visual sequence $\hat{\mathbf{Z}}_v^{(t)}$; (2) VGAS uses $\hat{\mathbf{Z}}_v^{(t)}$ as a condition to select audio tokens from $\mathbf{Z}_a^{(t)}$. The framework is end-to-end differentiable (using a straight-through estimator for top-k selection), optimizing token selection to preserve downstream task performance.
+Input: Video $\mathcal{V}$ and synchronous audio $\mathcal{A}$ are mapped by the Qwen2.5-Omni encoder-projector into token sequences $\mathbf{Z}_v \in \mathbb{R}^{N_v \times D}$ and $\mathbf{Z}_a \in \mathbb{R}^{N_a \times D}$. To maintain temporal alignment, tokens are grouped into 2-second chunks $\mathcal{C}_t = [\mathbf{Z}_v^{(t)}; \mathbf{Z}_a^{(t)}]$, each containing 2 visual frames and corresponding audio. OmniSIFT executes two stages serially at the chunk level: (1) STVP prunes visual redundancy to obtain compressed visual sequences $\hat{\mathbf{Z}}_v^{(t)}$; (2) VGAS selects audio tokens from $\mathbf{Z}_a^{(t)}$ using $\hat{\mathbf{Z}}_v^{(t)}$ as a condition. The framework is end-to-end differentiable (using straight-through estimator for top-k selection), optimizing token selection to preserve downstream performance.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Video + Sync Audio<br/>Qwen2.5-Omni Encoder-Projector → Vision / Audio tokens"] --> B["2s Chunking<br/>2 frames + corresponding audio per chunk"]
+    subgraph STVP["STVP: Spatio-Temporal Saliency Pruning"]
+        direction TB
+        C1["Frame 1 · Spatial Saliency<br/>Cosine distance between token and frame mean"]
+        C2["Frame 2 · Temporal Saliency<br/>Cosine distance with co-located token in Frame 1"]
+        C1 --> C3["Top-α_v selection for vision anchors"]
+        C2 --> C3
+    end
+    B --> STVP
+    STVP --> D["VGAS: Vision-Guided Audio Selector<br/>Audio as Query, Anchors as Key/Value via lightweight cross-attention → top-k"]
+    B -->|Audio tokens| D
+    D --> E["Concatenate pruned tokens → LLM Backbone"]
+    E -.->|STE Gradient, End-to-end training of VGAS + LLM Decoder| D
+```
 
 ### Key Designs
 
-1. **STVP: Dual-axis Saliency Pruning (Spatial + Temporal)**:
+**1. STVP: Spatio-Temporal Dual-Axis Saliency Pruning**
 
-    - **Function**: Prunes two types of video token redundancy within each 2-second chunk—patches similar to the global background in the same frame (spatial redundancy) and patches unchanged relative to the previous frame in adjacent frames (temporal redundancy).
-    - **Mechanism**: Processes the two frames within a chunk separately. The first frame $\mathbf{F}_1^{(t)}$ undergoes **spatial saliency**—first mean-pooling to get the frame representation $\bar{\mathbf{v}}_1^{(t)} = \frac{1}{n_p}\sum_i \mathbf{v}_{1,i}^{(t)}$, where each token's spatial score is its cosine distance from the mean $s_{1,i}^{(t)} = 1 - \frac{\mathbf{v}_{1,i}^{(t)} \cdot \bar{\mathbf{v}}_1^{(t)}}{\|\mathbf{v}_{1,i}^{(t)}\|\|\bar{\mathbf{v}}_1^{(t)}\|}$. High scores represent patches most distinct from the background. The second frame $\mathbf{F}_2^{(t)}$ undergoes **temporal saliency**—utilizing positional encoding for one-to-one correspondence, where the score is the cosine distance from the token at the same position in the first frame $s_{2,i}^{(t)} = 1 - \frac{\mathbf{v}_{2,i}^{(t)} \cdot \mathbf{v}_{1,i}^{(t)}}{\|\mathbf{v}_{2,i}^{(t)}\|\|\mathbf{v}_{1,i}^{(t)}\|}$. High scores represent "moving" regions. For both frames, top-$\hat{n}_p = \alpha_v n_p$ are selected based on visual retention ratio $\alpha_v = 1 - \rho_v$, concatenated to form $\hat{\mathbf{Z}}_v^{(t)} = [\hat{\mathbf{F}}_1^{(t)}; \hat{\mathbf{F}}_2^{(t)}]$.
-    - **Design Motivation**: Using cosine distance for saliency avoids dependence on attention scores, ensuring FlashAttention compatibility; separate frames for spatial/temporal criteria avoid interference between dual axes—the first frame focuses on unique content, while the second focuses on changes within the second.
+Video tokens contain two types of redundancy: patches similar to the background within the same frame (spatial redundancy) and patches that remain unchanged relative to the previous frame (temporal redundancy). STVP processes the two frames in a 2-second chunk separately. For the first frame $\mathbf{F}_1^{(t)}$, spatial saliency is calculated by mean-pooling the frame representation $\bar{\mathbf{v}}_1^{(t)} = \frac{1}{n_p}\sum_i \mathbf{v}_{1,i}^{(t)}$. Each token's score is its cosine distance from the mean: $s_{1,i}^{(t)} = 1 - \frac{\mathbf{v}_{1,i}^{(t)} \cdot \bar{\mathbf{v}}_1^{(t)}}{\|\mathbf{v}_{1,i}^{(t)}\|\|\bar{\mathbf{v}}_1^{(t)}\|}$, where high scores indicate distinct content from the background. For the second frame $\mathbf{F}_2^{(t)}$, temporal saliency uses positional encoding to compute the cosine distance from the co-located token in the first frame: $s_{2,i}^{(t)} = 1 - \frac{\mathbf{v}_{2,i}^{(t)} \cdot \mathbf{v}_{1,i}^{(t)}}{\|\mathbf{v}_{2,i}^{(t)}\|\|\mathbf{v}_{1,i}^{(t)}\|}$, where high scores highlight "moving" areas. For each frame, top-$\hat{n}_p = \alpha_v n_p$ tokens are selected based on the retention ratio $\alpha_v = 1 - \rho_v$, forming $\hat{\mathbf{Z}}_v^{(t)} = [\hat{\mathbf{F}}_1^{(t)}; \hat{\mathbf{F}}_2^{(t)}]$. Using cosine distance rather than attention scores ensures compatibility with FlashAttention. Separate spatial/temporal criteria prevent interference between the two axes within a single frame.
 
-2. **VGAS: Vision-Guided Audio Selector**:
+**2. VGAS: Vision-Guided Audio Token Selection**
 
-    - **Function**: Uses visual tokens retained after STVP pruning as query conditions to select a subset of original audio tokens most relevant to the current visual scene.
-    - **Mechanism**: Treats $\hat{\mathbf{Z}}_v^{(t)}$ as a "visual anchor pool," calculating the correlation score between each audio token $\mathbf{Z}_a^{(t)}$ and all visual anchors, then selecting top-k based on ratio $\alpha_a$. This stage is the core of asymmetric design: audio saliency relies on visual scenes as conditions rather than internal audio signals (like audio attention used in OmniZip).
-    - **Design Motivation**: Ours cites evidence from psychology/perception science (Koppen 2008, Zhao 2018) proving humans process audio-visual information asymmetrically—video redundancy is estimable from within, while audio significance depends on visual anchors (visible speakers, visually supported events). This implies effective Omni-LLM token compression should be "vision-guided" rather than treating both modalities symmetrically.
+This is the core of the asymmetric design. OmniSIFT treats the STVP-pruned visual tokens $\hat{\mathbf{Z}}_v^{(t)}$ as a "pool of visual anchors." A **lightweight cross-attention** layer (8 heads, hidden dimension 512, with an MLP scoring head) computes the saliency of each audio token: audio tokens serve as query $\mathbf{Q}_a$, while visual anchors serve as key $\mathbf{K}_v$ and value $\mathbf{V}_v$. The attention output passes through the scoring head to produce $s_{a,j}^{(t)}$, and top-k tokens are selected based on $\alpha_a$. Thus, audio saliency is entirely conditioned on the visual scene rather than internal audio signals (unlike OmniZip which uses audio attention). This aligns with perceptual science (Koppen 2008, Zhao 2018), which suggests vision often serves as the semantic anchor for audio saliency.
 
-3. **STE End-to-End Fine-Tuning and Lightweight Parameter Budget**:
+**3. STE Fine-tuning & Lightweight Budget**
 
-    - **Function**: Makes top-k selection in STVP and VGAS differentiable, allowing end-to-end optimization of the compression pipeline without retraining the backbone LLM.
-    - **Mechanism**: Since top-k is discrete and non-differentiable in backpropagation, a straight-through estimator is used—forward pass handles hard selection, while the backward pass uses soft scores for gradient flow. The entire module introduces only 4.85M parameters (compared to the 7B parameters of Qwen2.5-Omni-7B). The backbone is frozen while only the compression module is trained. Latency is lower than the training-free baseline OmniZip as attention scores are unnecessary.
-    - **Design Motivation**: Compared to EchoingPixels' 4 LLM decoding layers, OmniSIFT's 4.85M parameters constitute a true "lightweight plugin" that does not extend the inference path. STE is a mature solution for discrete selection and is fully compatible with FlashAttention.
+Since top-k selection is non-differentiable, OmniSIFT utilizes a straight-through estimator (STE). During the forward pass, a binary mask $m_j$ is generated (1 if in top-k, 0 otherwise), feeding only selected tokens to the LLM. In the backward pass, an identity proxy gradient $\partial m_j/\partial s_{a,j}^{(t)}\approx 1$ allows gradients to flow back to the saliency scores. STVP involves no learnable parameters, as it only computes cosine distances. The 4.85M parameters reside entirely in the VGAS cross-attention and scoring head (less than 0.1% of a 7B backbone). During training, the **LLM decoder and VGAS module are fine-tuned** (learning rate $1\times10^{-5}$, batch size 128). This "lightweight plugin" does not extend the inference path and maintains lower latency than attention-dependent methods like OmniZip.
 
 ### Loss & Training
-Retains downstream task loss (standard next-token prediction), freezes the Qwen2.5-Omni backbone, and trains only the learnable parameters of the OmniSIFT module. Compression ratios $\rho_v, \rho_a$ are hyperparameters; the paper primarily tests 35% and 25% retention ratios.
+Standard next-token prediction loss is used. With STE handling non-differentiable top-k selection, the **LLM decoder and VGAS module are fine-tuned** (STVP has no learnable parameters) with a learning rate of $1\times10^{-5}$ and batch size of 128. Retention ratios $\rho_v, \rho_a$ are hyperparameters; the paper primarily evaluates 35% and 25% ratios.
 
 ## Key Experimental Results
 
 ### Main Results
-Performance comparison on 5 audio-visual benchmarks (WorldSense, OmniVideoBench, three subsets of VideoMME, video-SALMONN-2 testset, DailyOmni) against OmniZip, Random, and DyCoke compression baselines and the full token model. Backbone models: Qwen2.5-Omni-7B / Qwen2.5-Omni-3B.
+OmniSIFT is compared against OmniZip, Random, and DyCoke baselines and the full-token model across 5 audio-visual benchmarks: WorldSense, OmniVideoBench, VideoMME, video-SALMONN-2, and DailyOmni. Backbones include Qwen2.5-Omni-7B and 3B.
 
-Results for Qwen2.5-Omni-7B at 25% retention ratio:
+Results for Qwen2.5-Omni-7B at 25% retention:
 
 | Method | Retention | WorldSense ↑ | OmniVideoBench ↑ | VideoMME Avg ↑ | video-SALMONN-2 Total ↓ |
 |------|-------|--------------|-------------------|----------------|-------------------------|
@@ -81,53 +88,52 @@ Results for Qwen2.5-Omni-7B at 25% retention ratio:
 | OmniZip | 25% | 48.1 | 34.1 | 66.0 | 57.2 |
 | Random | 25% | 47.1 | 32.6 | 66.1 | 56.9 |
 | DyCoke | 25% | 48.1 | 34.1 | 65.9 | 56.3 |
-| **OmniSIFT** | **25%** | **49.9** | **35.4** | **68.2** | **51.2** |
+| **Ours** | **25%** | **49.9** | **35.4** | **68.2** | **51.2** |
 
-At 35% retention for Qwen2.5-Omni-7B, OmniSIFT's WorldSense (50.0), OmniVideoBench (35.6), and VideoMME Avg (68.3) meet or exceed the full token baseline (49.7 / 35.6 / 67.6).
+At 35% retention, Ours achieves WorldSense (50.0), OmniVideoBench (35.6), and VideoMME Avg (68.3), matching or exceeding the full-token baseline (49.7 / 35.6 / 67.6).
 
 ### Ablation Study
-Comparison for Qwen2.5-Omni-3B (OmniSIFT maintains its advantage on smaller models):
+Comparisons on Qwen2.5-Omni-3B confirm that the performance gains hold at smaller scales:
 
 | Method | Retention | WorldSense ↑ | OmniVideoBench ↑ | video-SALMONN-2 Total ↓ |
 |------|-------|--------------|-------------------|-------------------------|
 | Full Tokens | 100% | 45.8 | 33.5 | 53.6 |
 | OmniZip | 25% | 43.8 | 32.4 | 62.1 |
-| **OmniSIFT** | **25%** | **45.8** | **33.1** | **58.3** |
+| **Ours** | **25%** | **45.8** | **33.1** | **58.3** |
 
-Additional parameters and latency: OmniSIFT introduces only 4.85M parameters (far lower than EchoingPixels' 4 decoding layers), and inference latency is lower than training-free OmniZip due to skipping attention score calculation.
+Parameter and Latency: Ours introduces only 4.85M parameters and achieves lower inference latency than the training-free OmniZip, due to bypassing attention score computation.
 
 ### Key Findings
-- **Outperforming full token models at 25% retention**: On WorldSense and VideoMME Avg, it exceeds the Full Tokens baseline (49.9 vs 49.7, 68.2 vs 67.6), indicating that many tokens are redundant or even harmful; removing them improves the signal-to-noise ratio.
-- **Asymmetric > Symmetric**: The gap between Ours and OmniZip (Prev. SOTA in symmetric mode) is consistent across all benchmarks (+1.8 on WorldSense and -6.0 on video-SALMONN-2 Total at 25% retention), confirming vision-guided audio as the superior paradigm.
-- **Scale-invariance**: Compression Gains are maintained across 7B and 3B backbones, suggesting the method is insensitive to model scale.
-- **Hallucination improvement on video-SALMONN-2**: Total (Miss + Hal) decreased from 57.2 (OmniZip) to 51.2 (OmniSIFT), showing that retaining correct vision-audio aligned tokens reduces model hallucinations.
+- **Outperforming full-token models at 25% retention**: On WorldSense and VideoMME, Ours exceeds Full Tokens (49.9 vs 49.7, 68.2 vs 67.6), indicating that many tokens are redundant or noisy; pruning them improves the signal-to-noise ratio.
+- **Asymmetric > Symmetric**: The gap between Ours and OmniZip (SOTA symmetric method) is consistent across benchmarks, confirming that vision-guided audio is a superior paradigm.
+- **Cross-model Robustness**: Gains are maintained across 7B and 3B backbones, showing scale-invariance.
+- **Improved Hallucination Metrics**: video-SALMONN-2 Total (Miss + Hal) scores dropped from 57.2 (OmniZip) to 51.2 (Ours), suggesting that preserving correct cross-modal alignment reduces model hallucinations.
 
 ## Highlights & Insights
-- **Deriving compression paradigms from perception science**: The authors designed asymmetric compression based on the asymmetry of human audiovisual processing. This "understand human mechanisms first, then engineer" approach is highly valuable for emerging Omni-LLM directions.
-- **Avoiding attention score dependency**: Using cosine distance for saliency makes the method compatible with FlashAttention—an engineering design choice of high practical value, contrasted with OmniZip's dependency on attention scores.
-- **Lightweight 4.85M parameters + low latency**: While other methods either add decoding layers (EchoingPixels) or incur attention overhead (OmniZip), OmniSIFT provides a true "plugin-level" solution.
-- **"Less is more" outperforms "More is redundant"**: The counter-intuitive result of 25% tokens outperforming 100% tokens suggests a significant portion of Omni input sequences are noise; future work could explore even more aggressive compression ratios.
-- **Separated spatial/temporal saliency frames**: Handling spatial and temporal criteria on separate frames within a chunk avoids interference between the two axes—a simple yet effective engineering trick.
+- **Deriving compression from perceptual science**: Designing asymmetric compression based on human audio-visual processing is a highly effective approach for Omni-LLMs.
+- **Avoidance of Attention Score Dependency**: Using cosine distance for saliency ensures FlashAttention compatibility, a valuable engineering choice compared to attention-locked methods like OmniZip.
+- **4.85M parameters + Low Latency**: Unlike EchoingPixels (heavy decoder layers) or OmniZip (attention overhead), Ours provides a true "plugin-level" solution.
+- **"Less is More"**: The fact that 25% tokens can outperform 100% suggests high token noise in Omni models; future work could explore even more aggressive compression.
+- **Split Spatio-Temporal Processing**: Processing frames separately for spatial and temporal criteria is a simple yet effective technique to avoid dual-axis interference.
 
 ## Limitations & Future Work
-- **Fixed 2-second chunk granularity**: Hard-coded to the alignment granularity of Qwen2.5-Omni; porting to other Omni-LLMs with different chunk sizes would require parameter tuning.
-- **2-frame assumption per chunk**: In fast-motion long videos, 2 frames may be insufficient to capture complete dynamics; the paper does not discuss variable frame rates or adaptive chunking.
-- **VGAS cross-modal correlation details**: The abstract description of correlation computation is somewhat abstract; checking the code is necessary to confirm if it uses cosine similarity or more complex attention, leaving room for better interpretability.
-- **Audio-guided vision scenarios**: In "audio-dominant, vision-auxiliary" scenarios (e.g., listening to music while viewing an album cover), whether unidirectional vision guidance remains optimal warrants study.
-- **Training data and generalization**: The specific data used to train the OmniSIFT module is not explicitly stated; stability across new tasks or datasets requires further experimentation.
+- **Fixed 2s Chunk Granularity**: Tied to Qwen2.5-Omni’s alignment; portability to other models with different chunk sizes would require re-tuning.
+- **Fixed 2-Frame Assumption**: In fast-motion long videos, 2 frames may be insufficient; the paper does not address adaptive chunking.
+- **Query-Agnostic Budget**: VGAS uses a fixed retention ratio regardless of the query. Task-adaptive, query-guided pruning remains an unexplored but likely superior path.
+- **Audio-Guided Vision Scenarios**: In "audio-primary" scenes (e.g., music with a static album cover), whether unidirectional vision guidance remains optimal is worth investigating.
+- **Training Data and Generalization**: Stability across new domains or datasets requires further experimentation.
 
 ## Related Work & Insights
-- **vs OmniZip (modality-symmetric)**: OmniZip uses audio attention for symmetric compression, while OmniSIFT uses cosine saliency for asymmetric compression—Ours is superior across all 5 benchmarks and compatible with FlashAttention.
-- **vs EchoingPixels (modality-symmetric)**: EP adds 4 LLM decoding layers for global contextualization, which is costly and results in late compression; OmniSIFT uses 4.85M parameters for early compression, making it much more engineering-friendly.
-- **vs FASTAV / DyCoke**: These methods primarily perform audio-visual pruning during the LLM inference stage; OmniSIFT compresses before the LLM input, allowing for independent deployment.
-- **vs Vision-centric methods (VidCom2 / TimeChat-Online)**: These only process the visual stream; OmniSIFT implements insights from vision methods (spatial + temporal redundancy) and extends them to guide audio.
-- **vs General visual token compression (FastV, PruMerge, etc.)**: These works established the "pruning via structural signals" paradigm; OmniSIFT is a natural extension of this line of work for Omni-models.
+- **vs. OmniZip (Modality-Symmetric)**: Ours outperforms it on all 5 benchmarks while being FlashAttention compatible.
+- **vs. EchoingPixels (Modality-Symmetric)**: Ours uses 4.85M parameters for early compression, offering much better engineering efficiency than adding layers.
+- **vs. FASTAV / DyCoke**: These primarily prune during inference; Ours compresses before the LLM input, allowing for independent deployment.
+- **vs. Vision-Centric Methods (VidCom2 / TimeChat-Online)**: Ours extends the logic of spatial/temporal redundancy to include audio guidance.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The idea of asymmetric compression explicitly opposes the previous symmetric paradigm, and the combination of cosine saliency + vision-guided audio is a fresh design for Omni-LLMs.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 5 benchmarks + 2 model sizes + multiple compression ratios, with clear parameter and latency comparisons; however, it lacks direct comparison with EchoingPixels.
-- **Writing Quality**: ⭐⭐⭐⭐ The three-stage design principles → two-stage architecture → experimental chain is very clear, with clean mathematical notation.
-- **Value**: ⭐⭐⭐⭐ Highly practical plugin for Omni-LLM deployment—4.85M parameters + FlashAttention compatibility + no performance drop at 25% tokens offers high industrial value.
+- Novelty: ⭐⭐⭐⭐ Clear rejection of the symmetric paradigm; the combination of cosine saliency and vision-guided audio is a novel design for Omni-LLMs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple benchmarks, model sizes, and ratios; parameter/latency analysis provided.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from principles to architecture and experimental evaluation.
+- Value: ⭐⭐⭐⭐ High industrial value as a practical plugin with 25% token retention and no performance drop.
 
 <!-- RELATED:START -->
 
@@ -136,10 +142,10 @@ Additional parameters and latency: OmniSIFT introduces only 4.85M parameters (fa
 ## Related Papers
 
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](../../CVPR2026/video_understanding/token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
-- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 - [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](../../ICLR2026/video_understanding/flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
-- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4dbench_benchmarking_multimodal_large_language_models_for_4d.md)
+- [\[CVPR 2025\] VoCo-LLaMA: Towards Vision Compression with Large Language Models](../../CVPR2025/video_understanding/voco-llama_towards_vision_compression_with_large_language_models.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](../../CVPR2026/video_understanding/an_efficient_token_compression_framework_for_visual_object_tracking.md)
 
 </div>
 

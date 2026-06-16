@@ -20,8 +20,8 @@ item_total: 1
 
 **💬 ACL2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [📷 CVPR2026 (27)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (84)](../../CVPR2026/self_supervised/index.md) · [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
 **[LLMSurgeon: Diagnosing Data Mixture of Large Language Models](llmsurgeon_diagnosing_data_mixture_of_large_language_models.md)**
 
-:   LLMSurgeon formalizes the question of "what data was this LLM trained on" as Data Mixture Surgery. It utilizes the soft confusion matrix of a proxy classifier to invert the domain distribution of generated text, estimating pre-training data mixture proportions while only accessing model outputs.
+:   LLMSurgeon formalizes the question of "what data was this LLM trained on" as Data Mixture Surgery. By using the soft confusion matrix of a proxy classifier to invert the domain distribution in generated text, it estimates pre-training data mixture proportions while only requiring access to model outputs.

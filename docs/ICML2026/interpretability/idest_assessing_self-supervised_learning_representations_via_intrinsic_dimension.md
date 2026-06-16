@@ -2,75 +2,81 @@
 title: >-
   [Paper Note] IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension
 description: >-
-  [ICML2026][Interpretability][Self-Supervised Learning] Ours proposes IdEst: a Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representat…
+  [ICML 2026][Interpretability][Self-Supervised Learning] This paper introduces IdEst: utilizing the Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representations. Using this unlabeled geometric quantity as a proxy for downstream linear probe accuracy, it achieves a Spearman $\rho \approx -0.
 tags:
-  - "ICML2026"
-  - "Interpretability"
-  - "Self-Supervised Learning"
-  - "Intrinsic Dimension"
-  - "Minimum Spanning Tree"
-  - "Representation Quality Evaluation"
-  - "Unsupervised Model Selection"
+  - ICML 2026
+  - Interpretability
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: d0cb6f1bc7b6cf74
+content_hash: 815e74e3b9b042c7
 ---
-
 # IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension
 
 **Conference**: ICML2026  
 **arXiv**: [2606.03338](https://arxiv.org/abs/2606.03338)  
-**Code**: To be confirmed  
+**Code**: TBD  
 **Area**: Self-Supervised Learning / Representation Evaluation  
-**Keywords**: Self-Supervised Learning, Intrinsic Dimension, Minimum Spanning Tree, Representation Quality Evaluation, Unsupervised Model Selection
+**Keywords**: Self-Supervised Learning, Intrinsic Dimension, Minimum Spanning Tree, Representation Quality Assessment, Unsupervised Model Selection
 
 ## TL;DR
-Ours proposes IdEst: a Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representations. Using this unlabeled geometric quantity as a proxy for downstream linear probe accuracy, it achieves Spearman $\rho \approx -0.8$ across 33 SSL models and enables unlabeled hyperparameter selection.
+This paper introduces IdEst: utilizing the Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representations. Using this unlabeled geometric quantity as a proxy for downstream linear probe accuracy, it achieves a Spearman $\rho \approx -0.8$ across 33 SSL models and enables unlabeled hyperparameter selection.
 
 ## Background & Motivation
 
-**Background**: Self-supervised learning (SSL) has become the mainstream paradigm for learning representations from unlabeled data (SimCLR / DINO / I-JEPA / CLIP, etc.). However, the standard practice for evaluating these representations remains **linear probing**—training a linear classification head on a frozen feature extractor using a labeled downstream dataset (e.g., ImageNet). This protocol entails three major costs: high computational overhead, sensitivity to hyperparameters (learning rate, weight decay, epochs), and providing only a scalar score with almost no insight into the **geometric structure** of the representation.
+**Background**: Self-Supervised Learning (SSL) has become the dominant paradigm for learning representations from unlabeled data (SimCLR / DINO / I-JEPA / CLIP, etc.). However, the standard practice for evaluating these representations remains **linear probing**—training a linear classification head on frozen features using a labeled downstream dataset (e.g., ImageNet). This protocol entails three major costs: high computational overhead, sensitivity to hyperparameters (learning rate, weight decay, epochs), and providing only a scalar score with almost no insight into the **geometric structure** of the representation.
 
-**Limitations of Prior Work**: Existing "unsupervised proxy metrics" have limitations. $\alpha$-ReQ assumes the feature spectrum follows a power law and fails in cases of representation collapse (rank-deficient); RankMe calculates effective rank and is primarily designed for Joint-Embedding Architecture (JEA) methods, performing poorly on joint-predictive methods like I-JEPA; LiDAR performs well but **requires data augmentations used during SSL pre-training**, making it unfriendly to downstream users with only frozen representations.
+**Limitations of Prior Work**: Existing "unsupervised proxy metrics" have limitations. $\alpha$-ReQ assumes the feature spectrum follows a power law and fails during representation collapse (rank-deficiency); RankMe calculates the effective rank and is primarily designed for Joint-Embedding Architectures (JEA), performing weakly on joint-prediction methods like I-JEPA; LiDAR performs well but **requires the data augmentations used during SSL pre-training**, making it unfriendly to downstream users who only have access to frozen representations.
 
-**Key Challenge**: The goal is to evaluate SSL representation quality in an "unsupervised, cross-paradigm, frozen-feature-only" manner. Theoretically, existing results (Konz & Mazurowski, 2024) indicate that generalization error is approximately $\mathcal{L} \sim \mathcal{O}(K_L N_D^{-1/d})$, where $d$ is the intrinsic dimension of the representation manifold—this implies that **low ID is equivalent to high-quality representation**. However, in practical ID estimation, common methods like TwoNN and MLE rely on local isotropy + i.i.d. assumptions. These become severely unstable in SSL scenarios where $n \approx d$ is non-asymptotic and data points have strong dependencies (multiple views of the same image). Figure 2 shows that TwoNN even diverges to infinity on a simple 1D helix.
+**Key Challenge**: To evaluate SSL representation quality in an "unsupervised, cross-paradigm manner using only frozen features." Theoretically, existing results (Konz & Mazurowski, 2024) indicate that generalization error is approximately $\mathcal{L} \sim \mathcal{O}(K_L N_D^{-1/d})$, where $d$ is the intrinsic dimension of the representation manifold—suggesting that **lower ID is equivalent to higher quality representations**. However, in practice, common ID estimators like TwoNN and MLE rely on local isotropy and i.i.d. assumptions. These become severely unstable in SSL scenarios where $n \approx d$ is non-asymptotic and data points have strong dependencies (multiple views of the same image). Figure 2 shows TwoNN even diverging to infinity on a simple 1D helix.
 
-**Goal**: To find an ID estimator that remains stable under the "harsh conditions" of SSL (non-asymptotic + high-dimensional + strong dependencies) and verify if it truly reflects downstream performance.
+**Goal**: To find an ID estimator that remains stable under the "harsh conditions" of SSL (non-asymptotic, high-dimensional, strong dependencies) and verify if it truly reflects downstream performance.
 
-**Key Insight**: Starting from the **Euclidean functional theory** of Costa & Hero (2006)—the growth rate of the Minimum Spanning Tree (MST) length is asymptotically proportional to the Rényi entropy of the data distribution. This derives an ID estimator $\mathrm{dim}_{\mathrm{MST}}$ that is robust to density changes and noise while being insensitive to ambient dimension.
+**Key Insight**: Derived from the **Euclidean functional theory** of Costa & Hero (2006)—the length growth rate of a Minimum Spanning Tree (MST) is asymptotically proportional to the Rényi entropy of the data distribution. This leads to an ID estimator $\mathrm{dim}_{\mathrm{MST}}$ that is robust to data density changes and noise, and insensitive to the ambient dimension.
 
-**Core Idea**: Reverse estimate $d$ using the MST length scaling law $L(\mathrm{MST}(X_n)) \propto n^{(d-1)/d}$ and apply it to the frozen representations of any SSL model to obtain an unsupervised "representation quality meter"—IdEst.
+**Core Idea**: Utilize the scaling law of MST length $L(\mathrm{MST}(X_n)) \propto n^{(d-1)/d}$ to back-calculate $d$. Applying this to the frozen representations of any SSL model yields an unsupervised "representation quality meter"—IdEst.
 
 ## Method
 
 ### Overall Architecture
-IdEst is an **evaluation protocol** rather than a new model. Input: A pre-trained SSL encoder $g$ and an unlabeled dataset $\mathcal{X}$ (ImageNet is recommended as a reference set). Process: (i) Use $g$ to extract frozen features for all samples (using [CLS] tokens where available; otherwise, performing average pooling on patch tokens, e.g., for I-JEPA), (ii) Run the $\mathrm{dim}_{\mathrm{MST}}$ algorithm on the feature space to estimate ID, (iii) Treat this scalar as the "representation quality score"—lower is better. The output is an ID value used to rank different SSL checkpoints, track training curves, or perform hyperparameter selection.
+IdEst addresses the problem of judging the quality of representations learned by an SSL encoder without labels, retraining, or access to original augmentations. Its solution is not to design another SSL loss, but to convert "representation quality" into a pure geometric quantity—the intrinsic dimension (ID) of the representation manifold. Given a trained encoder $g$ and unlabeled data $\mathcal{X}$ (ImageNet is recommended as a reference set), frozen features are first extracted (using the [CLS] token if available; otherwise, average pooling patch tokens for methods like I-JEPA). Then, the MST dimension estimator is run on the feature point cloud to calculate an ID scalar; lower values represent more compact representations and better downstream performance. This value can be used to rank different checkpoints, track training curves, or perform unlabeled hyperparameter selection.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Frozen SSL encoder g + Unlabeled Reference Set<br/>(ImageNet recommended)"] --> B["Extract features from the layer before the classifier<br/>Use [CLS] if available, otherwise average pool patch tokens"]
+    subgraph EST["dim_MST Intrinsic Dimension Estimator (Design 1)"]
+        direction TB
+        C["Construct MST across multiple subsampling scales nᵢ"] --> D["Linear regression of log L(MST) vs log nᵢ to find slope m"]
+        D --> E["d = 1 / (1 − m) → ID scalar (Lower is better)"]
+    end
+    B --> EST
+    EST --> F["IdEst Evaluation Interface (Design 2)<br/>Intra: Correlation on same set; Inter: One ImageNet prediction for other sets"]
+    F --> G["Unsupervised Hyperparameter Selection (Design 3)<br/>Select checkpoint by min ID, reducing linear probes K→1"]
+```
 
 ### Key Designs
 
-1.  **MST Dimension Estimator $\mathrm{dim}_{\mathrm{MST}}$**:
-    -   **Function**: Estimates the intrinsic dimension of the manifold where the frozen representation point cloud resides, without relying on local i.i.d. assumptions.
-    -   **Mechanism**: Based on the Costa-Hero theorem, for $n$ points sampled i.i.d. from a compact Riemannian $d$-manifold, the total length of the MST almost surely satisfies $n^{-(d-1)/d} \cdot L(\mathrm{MST}(X_n)) \to C' \int f_X^{(d-1)/d}\,d\mathcal{H}$. In practice, different sub-sampling scales $n_i$ are taken, and a linear regression of $\log L(\mathrm{MST}(X_{n_i}))$ against $\log n_i$ is calculated; the slope $m$ yields $d = 1/(1-m)$.
-    -   **Design Motivation**: Compared to TwoNN/MLE which only use **local information** from nearest neighbors, MST encodes both **local and global** connectivity structures, making it robust to noise and density variations. It is also equivalent to 0-dimensional persistent homology dimension, benefiting from stability guarantees provided by TDA (Chazal et al., 2014). On the 1D helix in Figure 2, $\mathrm{dim}_{\mathrm{MST}}$ stably converges to $d=1$, while TwoNN diverges.
+**1. MST Dimension Estimator $\mathrm{dim}_{\mathrm{MST}}$: Replacing Fragile Local Assumptions with Global Connectivity**
 
-2.  **IdEst Application Interface**:
-    -   **Function**: Packages $\mathrm{dim}_{\mathrm{MST}}$ into a "plug-and-play" SSL evaluation metric, parallel to existing linear probe protocols.
-    -   **Mechanism**: Calculate $\mathrm{dim}_{\mathrm{MST}}$ on the feature layer just before the classifier head in each SSL method's **official evaluation protocol**, ensuring complete comparability with linear probing. Two modes are provided: **Intra-Dataset** (calculating ID and accuracy on the same target dataset) and **Inter-Dataset** (calculating ID only on ImageNet to predict accuracy on iNat/CIFAR/kNN/ImageNet-v2). The latter proves ID reflects model properties rather than dataset bias.
-    -   **Design Motivation**: To allow SSL practitioners "zero-cost" access—no re-training, no labels, and no original augmentations required; a single forward pass on frozen features is sufficient.
+The bottleneck for ID estimation in SSL is that classical estimators like TwoNN/MLE are built on "local isotropy + i.i.d. Poisson neighbors." SSL features, however, are "harsh point clouds" where $n \approx d$ and strong dependencies exist between views of the same image. Figure 2 demonstrates TwoNN diverging to infinity on a 1D helix. $\mathrm{dim}_{\mathrm{MST}}$ adopts the Costa-Hero Euclidean functional approach: for $n$ i.i.d. points sampled from a compact Riemannian $d$-manifold, the total MST length satisfies $n^{-(d-1)/d} \cdot L(\mathrm{MST}(X_n)) \to C' \int f_X^{(d-1)/d}\,d\mathcal{H}$ almost everywhere. By taking a series of subsampling scales $n_i$ and performing a 1D linear regression of $\log L(\mathrm{MST}(X_{n_i}))$ against $\log n_i$, the slope $m$ yields $d = 1/(1-m)$. Its stability stems from MST encoding both local and global connectivity rather than just nearest neighbors, making it robust to noise and density variations. Crucially, it is equivalent to the 0-dimensional Persistent Homology dimension $\mathrm{dim}_{\mathrm{PH}}^0$ (Adams et al., 2020), inheriting the stability guarantees of TDA (Chazal et al., 2014). On the 1D helix, $\mathrm{dim}_{\mathrm{MST}}$ converges stably to $d=1$.
 
-3.  **As an Unsupervised Hyperparameter Selector**:
-    -   **Function**: Uses IdEst to replace the expensive "hyperparameter sweep + linear probe" cycle for unsupervised selection of parameters like learning rate, weight decay, and teacher temperature.
-    -   **Mechanism**: Train SSL models for each candidate hyperparameter set, select the optimal checkpoint based on IdEst (minimizing ID), and perform only one final downstream evaluation on that checkpoint. Compared to using "ImageNet as an oracle," the number of linear probes is reduced from $K$ to 1.
-    -   **Design Motivation**: Linear probing is one of the most computationally expensive parts of the SSL pipeline, especially with large hyperparameter grids and multiple datasets. Replacing it with a geometric quantity derived from a forward pass + MST reduces hyperparameter search costs by an order of magnitude without requiring downstream labels.
+**2. IdEst Evaluation Interface: A "Plug-and-Play" Metric Comparable to Linear Probing**
+
+To enable zero-cost adoption for SSL practitioners, IdEst calculates $\mathrm{dim}_{\mathrm{MST}}$ on the features from the layer immediately preceding the classifier head in each SSL method's **official evaluation protocol**. The resulting ID is strictly aligned and directly comparable with the linear probe accuracy of the method. The entire process requires no retraining, labels, or original augmentations, running only a single forward pass. The interface provides two use cases: **Intra-Dataset**, calculating ID and accuracy on the same target set to check correlation; and **Inter-Dataset**, calculating ID once on ImageNet to predict performance rankings on iNat / CIFAR / kNN / ImageNet-v2. The success of the latter proves that ID reflects the properties of the model itself rather than dataset bias; in practice, a single reference set suffices.
+
+**3. Unsupervised Hyperparameter Selector: Reducing Linear Probes from $K$ to 1**
+
+Linear probing is a significant computational bottleneck in SSL pipelines, becoming prohibitively expensive with large hyperparameter grids and datasets. IdEst replaces the costly "sweep hyperparameters + run one linear probe per group" loop with "one forward pass per group + MST geometric calculation." Models are trained for different candidate hyperparameters (learning rate, weight decay, teacher-student temperature, target-context size, etc.), the optimal checkpoint is selected based on the minimum ID, and finally, a single downstream evaluation is performed only for that checkpoint. Compared to using ImageNet as an oracle for individual probing, the number of linear probes is reduced from $K$ to 1, cutting hyperparameter search costs by an order of magnitude without ever touching downstream labels.
 
 ### Loss & Training
-IdEst is a **post-hoc evaluation metric** and does not introduce new loss functions or training processes. MST construction uses classic Prim/Kruskal algorithms with $O(n^2)$ complexity or better. ID regression is a simple one-dimensional linear fit. The complete algorithm is detailed in Algorithm 1.
+IdEst is a **post-hoc evaluation metric** and does not introduce any new losses or training processes. MST construction uses classic Prim/Kruskal algorithms with complexity $O(n^2)$ or better; ID regression is a simple 1D linear fit. The complete algorithm is detailed in Algorithm 1 of the original text.
 
 ## Key Experimental Results
 
 ### Main Results: Correlation Across 33 Models
-Includes 14 methods across 4 SSL paradigms (joint-embedding / joint-predictive / combinations / vision-language), 2 architectures (ResNet / ViT), and multiple scales (ViT-S to ViT-G), totaling 33 checkpoints.
+Evaluated across 14 methods spanning 4 SSL paradigms (joint-embedding / joint-predictive / combinations / vision-language), 2 architectures (ResNet / ViT), and various scales (ViT-S to ViT-G), totaling 33 checkpoints.
 
-| Setting | Reference Dataset | Target Dataset / Protocol | Kendall $\tau$ | Spearman $\rho$ |
+| Evaluation Setting | Reference Dataset | Target Dataset / Protocol | Kendall $\tau$ | Spearman $\rho$ |
 |---------|-----------|------------------|----------------|-----------------|
 | Intra-Dataset | ImageNet | ImageNet linear probe | $\approx -0.6$ | $\approx -0.8$ |
 | Intra-Dataset | iNat-18 | iNat-18 linear probe | $\approx -0.6$ | $\approx -0.8$ |
@@ -78,44 +84,44 @@ Includes 14 methods across 4 SSL paradigms (joint-embedding / joint-predictive /
 | Inter-Dataset | ImageNet | CIFAR-10 / CIFAR-100 / iNat | Strong Negative | Strong Negative |
 | Alt. Protocol | ImageNet | kNN / ImageNet-v2 | Strong Negative | Strong Negative |
 
-The negative sign is expected: **lower ID leads to higher downstream accuracy**.
+The negative signs are expected: **Lower ID correlates with higher downstream accuracy**.
 
-### Ablation Study: Comparison with Existing Unsupervised Metrics
+### Ablation Study: Comparison with Existing Unsupervised Metrics + Robustness
 
-| Configuration / Metric | Needs Pre-training Augs | Performance on I-JEPA | Cross-Paradigm Robustness |
+| Config / Metric | Access to Pre-train Augs Needed | Performance on I-JEPA | Cross-Paradigm Robustness |
 |------------|---------------------|--------------|---------------------|
 | $\alpha$-ReQ | No | Fails when assumptions collapse | Weak |
-| RankMe | No | Weak (designed for JEA) | JEA only |
+| RankMe | No | Weak (Designed for JEA) | JEA Only |
 | LiDAR | **Yes** | Strong | Strong but dep. on augs |
-| **IdEst** | No | Strong | Strong across all four |
+| **IdEst** | No | Strong | Strong across all 4 paradigms |
 
 ### Key Findings
-- **ID is a Unified Geometric Descriptor Across SSL Paradigms**: Consistent negative correlations are observed across joint-embedding, joint-predictive, and vision-language methods, indicating it captures "how compact the representation is" rather than a fingerprint of a specific SSL loss.
-- **Strong Inter-Dataset Transferability**: Calculating IdEst solely on ImageNet can predict performance rankings on iNat / CIFAR / kNN / ImageNet-v2, meaning **one reference dataset is sufficient** in practice.
-- **Trackable Training Dynamics**: Figure 7 shows that in offline/online probing for VICReg, DINO, and I-JEPA, IdEst decreases monotonically with training epochs and closely tracks the rising linear probe accuracy (except for early stages < 10 epochs).
-- **Effective Hyperparameter Selection**: In hyperparameter grids for learning rate, weight decay, teacher-student temperature, and target-context size, the checkpoints selected by IdEst fall at the higher end of the accuracy range provided by the fine-grained ImageNet Oracle (e.g., for DINO ViT-S, IdEst selects 65.5 while Oracle's upper bound is 69.1 and lower bound is 48.4).
+- **ID is a Unified Geometric Descriptor Cross SSL Paradigms**: Consistent negative correlations are observed across radically different objectives (joint-embedding / joint-predictive / vision-language), showing it captures "how compact the representation is" rather than the signature of a specific SSL loss.
+- **Strong Inter-Dataset Transferability**: Calculating IdEst on ImageNet alone predicts performance rankings on iNat / CIFAR / kNN / ImageNet-v2, implying **a single reference dataset is sufficient** in practice.
+- **Traceable Training Dynamics**: Figure 7 shows that in offline/online probing for VICReg / DINO / I-JEPA, IdEst decreases monotonically and closely tracks the rising accuracy of linear probes (except for early fluctuations < 10 epochs).
+- **Effective Hyperparameter Selection**: In hyperparameter grids for learning rate / weight decay / temperature / context size, the checkpoint selected by IdEst falls at the upper end of the accuracy range provided by the ImageNet Oracle for fine-grained tasks. (e.g., for DINO ViT-S, IdEst selects 65.5, while the Oracle upper bound is 69.1 and lower bound is 48.4).
 
 ## Highlights & Insights
-- **Direct Bridge from Theory to Practice**: The direction "lower ID is better" is directly selected based on the Konz-Mazurowski scaling theorem $\mathcal{L} \sim N_D^{-1/d}$. The Costa-Hero MST asymptotic theorem then provides an estimator that works when $n \approx d$. The argumentation chain is clear, and the reasons for excluding failed estimators like TwoNN/MLE (reliance on local Poisson + i.i.d.) are solid.
-- **MST = 0-Dimensional Persistent Homology**: The authors explicitly cite Adams et al. (2020) to equate $\mathrm{dim}_{\mathrm{MST}}$ with $\mathrm{dim}_{\mathrm{PH}}^0$ in TDA. This connection allows ID estimation to inherit TDA stability theory (Chazal et al., 2014), providing provable stability against noise and offering a natural entry point for future extensions using other TDA quantities (e.g., higher-dimensional PH).
-- **Transferable to Other Domains**: Since the core is "estimating manifold dimension on frozen features," it can be applied to any unsupervised representations—LLM hidden states, graph embeddings, or speech encoders. Tulchinskii et al. (2023) validated similar ideas in LLMs; this work fills the gap in vision SSL.
+- **Direct Bridge from Theory to Practice**: The paper directly selects the "lower ID is better" direction from the Konz-Mazurowski $\mathcal{L} \sim N_D^{-1/d}$ scaling theorem and provides an estimator functional under $n \approx d$ via Costa-Hero’s MST asymptotic theorem. The argument chain is clear, and the reasons for excluding TwoNN/MLE (reliance on local Poisson + i.i.d.) are well-founded.
+- **MST as the Bridge to 0D Persistent Homology**: The authors explicitly cite Adams et al. (2020) to equate $\mathrm{dim}_{\mathrm{MST}}$ and $\mathrm{dim}_{\mathrm{PH}}^0$ in TDA. This bridge allows ID estimation to inherit established TDA stability theories (Chazal et al., 2014), providing provable stability against noise and a natural entry point for future extensions using higher-dimensional PH.
+- **Extensibility to Other Domains**: Core to the method is "estimating manifold dimension on frozen features," making it applicable to any unsupervised representations—LLM hidden states, graph embeddings, or speech encoders. While Tulchinskii et al. (2023) validated similar ideas for LLMs, this work fills the gap for vision SSL.
 
 ## Limitations & Future Work
-- **Ours Acknowledges**: Before 10 epochs, representations are not yet "unfolded," making IdEst less informative. MST construction on an $O(n^2)$ distance matrix remains costly for ultra-large feature sets (millions of samples).
-- **Independent Observations**: (i) Models used are mostly ImageNet pre-trained; whether the negative correlation between ID and accuracy holds under **large domain gaps** (e.g., medical/satellite imagery) is unverified. (ii) Under very high ambient dimensions (e.g., 1536-dim for ViT-G), the MST regression slope might be flattened by noise; although multiple sub-samplings $n_i$ are used, a sensitivity analysis of the sampling schedule is missing. (iii) "Lower ID is better" assumes downstream classification; whether it remains monotonic for generative, retrieval, or dense prediction tasks remains to be seen.
-- **Improvement Ideas**: Replacing MST with **kNN graph + spectral estimation** or performing lightweight dimensionality reduction (PCA / UMAP) before ID estimation might be more stable for ultra-large features like ViT-G. Furthermore, IdEst could be integrated as a **regularization term** during SSL training (minimizing ID) rather than just post-hoc evaluation to see if it directly improves performance.
+- **Author Acknowledgments**: Representations are not yet "unfolded" before 10 epochs, rendering IdEst less informative early on; MST construction on $O(n^2)$ distance matrices remains costly for massive feature sets (millions of samples).
+- **Independent Observations**: (i) Most models used are ImageNet pre-trained; sustainability of the negative correlation in cases of **large domain gaps** (e.g., medical/satellite imagery) remains unverified. (ii) In very high ambient dimensions (e.g., 1536 for ViT-G), regression slopes might be flattened by noise; the paper uses multiple subsampling $n_i$ but lacks sensitivity analysis on the sampling schedule. (iii) "Lower ID is better" assumes classification; its monotonicity for generative, retrieval, or dense prediction tasks is TBD.
+- **Potential Improvements**: Replacing MST with **kNN graphs + spectral estimation** or performing lightweight dimensionality reduction (PCA/UMAP) before ID estimation might stabilize results for ViT-G sized features. Furthermore, IdEst could be integrated as a **regularization term** (minimizing ID) during SSL training rather than just a post-hoc metric.
 
 ## Related Work & Insights
-- **vs RankMe**: RankMe measures effective rank, essentially a proxy for **linear separability**, designed for joint-embedding (to prevent collapse). IdEst measures **geometric manifold dimension**, holding across JEA / I-JEPA / CLIP with broader coverage.
-- **vs LiDAR**: LiDAR calculates the rank of the LDA matrix for SSL surrogate tasks and shows strong correlation, but **must have original augmentations**, which is unfriendly to users with only frozen models. IdEst looks exclusively at frozen features.
-- **vs TwoNN / MLE-based ID**: Previous ID estimation worked on supervised CNNs (Ansuini et al., 2019) but fails in SSL due to $n \approx d$ conditions and view dependencies, as demonstrated by the helix counter-example in Figure 2. The MST estimator represents a fundamental shift in the underlying mechanism.
-- **vs $\alpha$-ReQ**: $\alpha$-ReQ looks at spectral decay rates and fails during representation collapse; IdEst provides meaningful ID even on rank-deficient representations.
+- **vs RankMe**: RankMe measures effective rank, essentially a proxy for **linear separability** primarily for joint-embedding (to manage collapse). IdEst measures **geometric manifold dimension**, applicable across JEA / I-JEPA / CLIP.
+- **vs LiDAR**: LiDAR calculates the rank of an LDA matrix for SSL surrogate tasks and shows strong correlation, but **must have original augmentations**, which is unfriendly to users with only frozen models. IdEst looks exclusively at frozen features.
+- **vs TwoNN / MLE-based ID**: Previous ID estimators worked for supervised CNNs (Ansuini et al., 2019) but fail in SSL due to view dependencies and $n \approx d$; Figure 2 uses a 1D helix to demonstrate this failure. The MST estimator is a fundamental change in the underlying mechanism.
+- **vs $\alpha$-ReQ**: $\alpha$-ReQ looks at spectral decay rates and fails immediately during representation collapse; IdEst provides meaningful ID even on rank-deficient representations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Introducing MST dimension estimation to SSL evaluation is a well-known tool transfer, but doing so with theoretical analysis and cross-paradigm verification is a first.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 33 models × 4 paradigms × multiple datasets × multiple protocols (linear probe / kNN / ImageNet-v2 / fine-grained), with practical data for hyperparameter selection, is highly convincing.
-- Writing Quality: ⭐⭐⭐⭐ The logic chain from motivation to theory to estimator limitations to the new estimator and experiments is very smooth. Using the helix counter-example against TwoNN is a brilliant design.
-- Value: ⭐⭐⭐⭐ Provides SSL practitioners with an unlabeled, cross-paradigm, and inexpensive evaluation tool; the computational savings for hyperparameter search are tangible.
+- Novelty: ⭐⭐⭐⭐ While applying MST dimension estimation is a known tool transfer, doing so with theoretical analysis and systematic cross-paradigm validation in SSL is a first.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 33 models × 4 paradigms × multiple datasets × various protocols (Linear/kNN/ImageNet-v2/Fine-grained). The practical data for hyperparameter selection is convincing.
+- Writing Quality: ⭐⭐⭐⭐ The logic chain (Motivation—Theory—Estimator Limits—New Estimator—Experiments) is very smooth. Using the helix counter-example against TwoNN in Figure 2 is an excellent design.
+- Value: ⭐⭐⭐⭐ Provides SSL practitioners with an unlabeled, cross-paradigm, and inexpensive evaluation tool; the reduction in hyperparameter search compute is a tangible benefit.
 
 <!-- RELATED:START -->
 
@@ -124,10 +130,10 @@ The negative sign is expected: **lower ID leads to higher downstream accuracy**.
 ## Related Papers
 
 - [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
+- [\[CVPR 2025\] Probing the Mid-Level Vision Capabilities of Self-Supervised Learning](../../CVPR2025/interpretability/probing_the_mid-level_vision_capabilities_of_self-supervised_learning.md)
+- [\[ICCV 2025\] AIM: Amending Inherent Interpretability via Self-Supervised Masking](../../ICCV2025/interpretability/aim_amending_inherent_interpretability_via_self-supervised_masking.md)
 - [\[NeurIPS 2025\] Dataset Distillation for Pre-Trained Self-Supervised Vision Models](../../NeurIPS2025/interpretability/dataset_distillation_for_pre-trained_self-supervised_vision_models.md)
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[CVPR 2026\] RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation](../../CVPR2026/interpretability/riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_.md)
-- [\[ICCV 2025\] AIM: Amending Inherent Interpretability via Self-Supervised Masking](../../ICCV2025/interpretability/aim_amending_inherent_interpretability_via_self-supervised_masking.md)
 
 </div>
 

@@ -2,140 +2,148 @@
 title: >-
   [Paper Note] How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 description: >-
-  [CVPR 2026][Human Understanding][Image memorability] This paper defines a novel task of memorability feedback (MemFeed) and proposes MemCoach — a training-free…
+  [CVPR 2026][Human Understanding][MLLM] This paper defines a new task of Memorability Feedback (MemFeed) and proposes MemCoach—a training-free activation steering method for Multimodal Large Language Models (MLLMs). By injecting memorability-aware knowledge into the model's activation space using a teacher-student strategy, it enables MLLMs to generate natur
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Image memorability"
-  - "actionable feedback"
-  - "activation steering"
-  - "MLLM"
-  - "photography assistance"
+  - CVPR 2026
+  - Human Understanding
+  - MLLM
 date: 2026-05-08
-content_hash: 5195a8a3a765d145
+content_hash: d308e34ffca33182
 ---
-
 # How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 
-**Conference**: CVPR 2026
-**arXiv**: [2602.21877](https://arxiv.org/abs/2602.21877)  
+**Conference**: CVPR 2026  
+**arXiv**: [2602.21877](https://arxiv.org/abs/2102.21877)  
 **Code**: [https://laitifranz.github.io/MemCoach](https://laitifranz.github.io/MemCoach)  
-**Area**: Human-Centric Understanding
-**Keywords**: Image memorability, actionable feedback, activation steering, MLLM, photography assistance
+**Area**: Human Understanding  
+**Keywords**: Image Memorability, Actionable Feedback, Activation Steering, MLLM, Photography Assistance
 
 ## TL;DR
-This paper defines a novel task of memorability feedback (MemFeed) and proposes MemCoach — a training-free, activation-steering approach for MLLMs. Via a teacher-student strategy, memorability-aware knowledge is injected into the model's activation space, enabling the MLLM to generate natural-language actionable suggestions that improve photo memorability.
+This paper defines a new task of Memorability Feedback (MemFeed) and proposes MemCoach—a training-free activation steering method for Multimodal Large Language Models (MLLMs). By injecting memorability-aware knowledge into the model's activation space using a teacher-student strategy, it enables MLLMs to generate natural language actionable suggestions for improving photo memorability.
 
 ## Background & Motivation
-**Background**: Image memorability (the probability of being remembered) has been established as a predictable and quantifiable intrinsic property of images. Existing research follows two lines: prediction (regressing memorability scores) and generation (automatically editing images to enhance memorability).
+**Background**: Image memorability (the probability of being remembered) has been proven to be a predictable and quantifiable intrinsic property of images. Existing research is divided into two lines: prediction (regressing memorability scores) and generation (automatic editing to improve memorability).
 
-**Limitations of Prior Work**: Prediction models only report numerical scores, providing no actionable value to users; generation models directly modify images, depriving users of control. When taking photos, users need specific suggestions on "how to improve this shot," not scores or automatic edits.
+**Limitations of Prior Work**: Prediction models only report numerical scores, which offer no actionable value to users. Generation models directly modify images, causing users to lose control. When taking photos, users need specific advice on "how to improve this photo" rather than scores or automatic edits.
 
-**Key Challenge**: Even humans cannot accurately judge what makes an image memorable. Although MLLMs possess strong reasoning capabilities, experiments demonstrate that they have virtually no understanding of memorability (Spearman correlation ≈ 0).
+**Key Challenge**: Even humans cannot accurately judge what makes an image memorable. Although MLLMs possess powerful reasoning capabilities, experiments show they lack understanding of memorability (Spearman correlation coefficient near 0).
 
-**Goal**: To enable MLLMs — which inherently lack memorability understanding — to generate effective memorability-enhancing suggestions.
+**Goal**: How to enable MLLMs that do not understand memorability to generate effective suggestions for enhancing it.
 
-**Key Insight**: Exploit the differences between photos of varying memorability captured in the same scene, and distill memorability-aware activation direction vectors from a teacher model.
+**Key Insight**: Utilize the differences between photos of varying memorability within the same scene to distill memorability-aware activation direction vectors from a teacher model.
 
-**Core Idea**: Through activation steering, shift the student model's activations toward a memorability-aware feedback direction at inference time, without any training.
+**Core Idea**: During inference, shift the student model's activations toward the memorability-aware feedback direction using activation steering, without requiring training.
 
 ## Method
 
 ### Overall Architecture
-**Three-stage pipeline**: (1) Contrastive data generation — the teacher model generates memorability-aware feedback from same-scene image pairs, paired with the student model's neutral feedback; (2) Steering vector extraction — compute the mean activation difference between the student under the two types of feedback; (3) Inference-time steering — add the steering vector to the student's activations to elicit effective feedback.
+This paper addresses the fact that while MLLMs have strong reasoning abilities, they know almost nothing about "what makes a photo more memorable," leading to generic advice. MemCoach avoids training the model to understand memorability and instead "pushes" memorability knowledge into its activations during inference. The pipeline follows three steps: First, a teacher model with "privileged information" generates memorability-aware feedback from same-scene photo pairs (low vs. high memorability), while a student model generates neutral feedback for the source image. Second, both feedback types are fed into the student to collect intermediate layer activations and calculate a "memorability direction" vector. Finally, during actual inference, this vector is added to the student's activations to bias its suggestions toward improving memorability. This process requires no weight updates.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph MB["MemBench Benchmark"]
+        direction TB
+        A["PPR10K Multi-photos from same scene"] --> B["Memorability predictor scoring<br/>Paired as Low → High image pairs"]
+        B --> C["InternVL3.5 generates<br/>Low → High actionable suggestions"]
+    end
+    MB --> D["Contrastive Data Generation<br/>Teacher sees Source + Target → Mem-aware feedback f₊<br/>Student sees Source only → Neutral feedback f₋"]
+    D --> E["Steering Vector Extraction<br/>Feed f₊/f₋ back to Student to get layer l activations<br/>Mean difference of samples yields direction r"]
+    E --> F["Inference-time MLLM Steering<br/>Forward pass with activation shift α·r"]
+    G["Output actionable suggestions<br/>to improve memorability"]
+    F --> G
+```
 
 ### Key Designs
 
-1. **MemBench Benchmark**:
+**1. MemBench Benchmark: Converting an "unanswered" task into a supervised signal task**
 
-    - Function: Provides a training and evaluation platform for the memorability feedback task.
-    - Mechanism: Built upon the PPR10K dataset, where each scene contains multiple photos ranked by a memorability predictor to construct image pairs; InternVL3.5 is used to generate actionable suggestions describing transitions from low to high memorability.
-    - Scale: ~10K images, 1,570 scenes, averaging 6.5 photos per scene.
+Memorability feedback is a novel task with no existing data or evaluation protocols. Since even humans struggle to define memorability, the authors constructed MemBench based on PPR10K. This dataset contains multiple photos of the same subject across different scenes, providing natural controls. The process involves scoring photos with a memorability predictor, pairing low and high memorability images, and using InternVL3.5 to generate suggestions on "what to change to move from low to high memorability." This yields a corpus of approximately 10K images across 1,570 scenes, serving as the foundation for distilling direction vectors.
 
-2. **Contrastive Data Generation**:
+**2. Contrastive Data Generation: Defining the memorability direction via "privileged info"**
 
-    - Function: Construct paired data contrasting memorability-aware versus neutral feedback.
-    - Mechanism: The teacher model observes both the source image (low memorability) and the target image (high memorability), describing the operations needed for the transition to produce $f_+^i$; the student model observes only the source image and generates improvement suggestions by default to produce $f_-^i$.
-    - Design Motivation: The teacher exploits "privileged information" (knowing what the target image looks like), whereas the student operates without such information.
+To manifest the abstract concept of "memorability" in activations, the authors create feedback pairs differing only in this dimension. A teacher model sees both the source (low) and target (high) images to describe the necessary operations, resulting in memorability-aware feedback $f_+^i$. A student model sees only the source and generates default suggestions, resulting in neutral feedback $f_-^i$. The difference between $f_+$ and $f_-$ isolates the "memorability-aware" variable from unrelated factors like phrasing or length.
 
-3. **Memorability Steering Vector Extraction**:
+**3. Memorability Steering Vector Extraction: Averaging activation differences into a reusable direction**
 
-    - Function: Identify the memorability-aware direction in the student's activation space.
-    - Mechanism: Both types of feedback are placed in the assistant position and fed to the student model; activations at layer $l$ are collected and the mean difference is computed: $\mathbf{r}^{(l)} = \frac{1}{N}\sum_{i=1}^N h_+^{i,(l)} - h_-^{i,(l)}$
-    - Design Motivation: Based on the linear representation hypothesis, model behavior can be modulated via linear shifts in intermediate representations.
+To apply this to the student model's inference, the authors feed $f_+$ and $f_-$ as "assistant" inputs into the student model, extract the hidden states at layer $l$, and calculate the mean difference:
 
-4. **Inference-Time MLLM Steering**:
+$$\mathbf{r}^{(l)} = \frac{1}{N}\sum_{i=1}^N h_+^{i,(l)} - h_-^{i,(l)}$$
 
-    - Function: Alter the student model's behavior at inference time using the steering vector.
-    - Mechanism: $\tilde{h}^{(l)} = h^{(l)} + \alpha \cdot \mathbf{r}^{(l)}$, where $\alpha$ controls steering intensity.
-    - Design Motivation: Requires no training, is model-agnostic, and can be inserted into any MLLM that provides access to intermediate representations.
+Based on the linear representation hypothesis, this mean vector $\mathbf{r}^{(l)}$ extracts the common "memorability-aware" direction from sample noise.
 
-### Evaluation Metrics
-- **Improvement Ratio (IR)**: Proportion of edited images whose memorability exceeds that of the source image.
-- **Relative Memorability (RM)**: Relative gain in memorability.
-- **Perplexity**: Perplexity on ground-truth effective feedback.
+**4. Inference-time MLLM Steering: Shifting activations during forward propagation**
+
+During inference, the steering vector is added to the activations of the student model at layer $l$ with an intensity $\alpha$:
+
+$$\tilde{h}^{(l)} = h^{(l)} + \alpha \cdot \mathbf{r}^{(l)}$$
+
+Increasing $\alpha$ pushes the output further toward the memorability direction. As this is a weight-independent additive intervention, the method is model-agnostic and can be applied to any MLLM with accessible intermediate representations.
 
 ## Key Experimental Results
+
+Evaluation uses three metrics: **Improvement Ratio (IR)** (ratio of edited images with higher memorability), **Relative Memorability (RM%)** (relative increase), and **Perplexity** (closeness to ground-truth effective feedback).
 
 ### Main Results
 
 | Method Type | Model | IR ↑ | RM% ↑ | Perplexity ↓ |
-|-------------|-------|------|--------|--------------|
-| Editing baseline | Null instruction | 0.68 | 3.72 | - |
+| :--- | :--- | :--- | :--- | :--- |
+| Editing Baseline | Null Prompt | 0.68 | 3.72 | - |
 | Zero-shot | GPT-5 Mini | 0.75 | 7.03 | - |
 | Zero-shot | InternVL3.5 | 0.73 | 5.47 | 5.49 |
-| Aesthetic expert | AesExpert | 0.73 | 6.67 | 5.97 |
-| **MemCoach** | InternVL3.5 | **0.80** | **7.21** | **4.99** |
-| Teacher upper bound | InternVL3.5 | 0.85 | 11.92 | 2.40 |
+| Aesthetic Expert | AesExpert | 0.73 | 6.67 | 5.97 |
+| **Ours** | InternVL3.5 | **0.80** | **7.21** | **4.99** |
+| Teacher Upper Bound | InternVL3.5 | 0.85 | 11.92 | 2.40 |
 
-### Cross-Model Generalization
+### Cross-model Generalization
 
 | Model | Zero-shot IR | +MemCoach IR | Gain |
-|-------|-------------|-------------|------|
+| :--- | :--- | :--- | :--- |
 | LLaVA-OV | 0.70 | 0.73 | +4.29% |
-| Idefics3 | 0.73 | Improved | Consistent gain |
-| Qwen2.5VL | 0.68 | Improved | Largest gain |
+| Idefics3 | 0.73 | - | Consistent Gain |
+| Qwen2.5VL | 0.68 | - | Largest Gain |
 
 ### Key Findings
-- MLLMs exhibit zero predictive capability for memorability (Spearman correlation ≈ 0), confirming the necessity of external signal injection.
-- MemCoach surpasses GPT-5 Mini zero-shot by 5% IR and outperforms baseline InternVL3.5 by 31.81% in RM.
-- MemCoach exceeds training-based aesthetic expert models (AesExpert, Q-Instruct).
-- Steering vectors transfer across models, showing consistent effectiveness across four different MLLMs.
+- MLLM zero-shot memorability prediction is near zero (Spearman ~0), confirming the necessity of external signal injection.
+- MemCoach outperforms GPT-5 Mini zero-shot by 5% IR and improves the baseline InternVL3.5 by 31.81% in RM.
+- It surpasses specialized aesthetic models (AesExpert, Q-Instruct) that require training.
+- Steering vectors are transferable and consistently effective across four different MLLMs.
 
 ## Highlights & Insights
-- **Forward-looking task definition**: Advances memorability from "passive prediction" to "active guidance," offering greater practical value than score prediction.
-- **Teacher-student activation steering** represents a novel form of knowledge distillation: rather than distilling output distributions, it distills directional structure in activation space.
-- The training-free, model-agnostic design confers strong practical utility.
-- This is the first application of activation steering to a perceptual task (as opposed to safety or style control).
+- **Forward-looking task definition**: Shifts memorability from "passive prediction" to "active coaching," offering more practical value than score regression.
+- **Teacher-student activation steering** serves as a novel form of knowledge distillation: instead of distilling output distributions, it distills directions in the activation space.
+- The **training-free and model-agnostic** design ensures excellent practical utility.
+- First application of **activation steering** to perceptual tasks rather than just safety or style control.
 
 ## Limitations & Future Work
-- Relies on an editing model (FLUX.1 Kontext) to validate feedback effectiveness; editing quality introduces a confound in evaluation.
-- The accuracy of the memorability predictor constitutes the system's upper bound.
-- The steering intensity $\alpha$ and layer $l$ require hyperparameter tuning.
-- Feedback primarily addresses compositional and semantic aspects, and cannot cover technical parameter suggestions (e.g., exposure, aperture).
+- Dependency on an editing model (FLUX.1 Kontext) for verification; editing quality influences evaluation.
+- The accuracy of the memorability predictor itself acts as an upper performance bound.
+- Selection of steering strength $\alpha$ and layer $l$ requires hyperparameter tuning.
+- Feedback primarily focuses on composition and semantics, lacking advice on technical parameters like exposure or aperture.
 
 ## Related Work & Insights
-- **vs. memorability editing methods**: Editing methods directly modify images, whereas MemCoach provides natural-language suggestions that leave decision-making to the user.
-- **vs. aesthetic scoring models**: Aesthetic models produce evaluations or critiques, whereas MemCoach generates memorability-oriented actionable instructions.
-- The teacher-student activation steering paradigm is generalizable to other MLLM applications that require injecting external domain knowledge.
+- **vs. Memorability Editing**: While editing methods directly modify images, MemCoach provides natural language suggestions, leaving control to the user.
+- **vs. Aesthetic Models**: Aesthetic models offer critiques; MemCoach provides memorability-oriented actionable instructions.
+- The teacher-student activation steering paradigm can be generalized to other MLLM applications requiring the injection of external domain knowledge.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Novel task definition + innovative knowledge injection mechanism
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model validation + human evaluation + ablation study
-- Writing Quality: ⭐⭐⭐⭐ Task motivation and method overview figures are clear and well-organized
-- Value: ⭐⭐⭐⭐ Meaningful contributions to computational photography and creative AI
+- Novelty: ⭐⭐⭐⭐⭐ (New task definition + innovative knowledge injection)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Multi-model validation + human eval + ablations)
+- Writing Quality: ⭐⭐⭐⭐ (Very clear motivation and architecture diagrams)
+- Value: ⭐⭐⭐⭐ (Inspiring for computational photography and creative AI)
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)
-- [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
-- [\[CVPR 2026\] Talking Together: Synthesizing Co-Located 3D Conversations from Audio](talking_together_synthesizing_co-located_3d_conversations_from_audio.md)
-- [\[CVPR 2026\] LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics](lasca_language-conditioned_scalable_modelling_of_affective_dynamics.md)
-- [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)
+- [\[ECCV 2024\] How Video Meetings Change Your Expression](../../ECCV2024/human_understanding/how_video_meetings_change_your_expression.md)
+- [\[ICML 2025\] How to Move Your Dragon: Text-to-Motion Synthesis for Large-Vocabulary Objects](../../ICML2025/human_understanding/how_to_move_your_dragon_text-to-motion_synthesis_for_large-vocabulary_objects.md)
+- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
+- [\[CVPR 2026\] Geometric Neural Distance Fields for Learning Human Motion Priors](geometric_neural_distance_fields_for_learning_human_motion_priors.md)
 
 </div>
 

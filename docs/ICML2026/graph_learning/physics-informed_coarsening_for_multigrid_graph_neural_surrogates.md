@@ -2,80 +2,77 @@
 title: >-
   [Paper Note] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates
 description: >-
-  [ICML 2026][Graph Learning][Multigrid GNN] This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate model for finite element simulation in solid mechanics. The core innovation lies in replacing the "node se…
+  [ICML 2026][Graph Learning][Paper Note] This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate for finite element simulation in solid mechanics. The core innovation is replacing geometric heuristics (FPS) or learned attention in "coarsening (downsampling) node selection" with "TopK scoring based on the discrete residual of momentum conservati
 tags:
-  - "ICML 2026"
-  - "Graph Learning"
-  - "Multigrid GNN"
-  - "Physical Residuals"
-  - "Solid Mechanics Surrogates"
-  - "Mesh Coarsening"
-  - "Long-term Rollout"
+  - ICML 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 55c0a7dfb5208ca3
+content_hash: 622dbb54703b0e9c
 ---
-
 # Physics-Informed Coarsening for Multigrid Graph Neural Surrogates
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31013](https://arxiv.org/abs/2605.31013)  
 **Code**: [Project Page](https://sites.google.com/view/physics-informed-coarsening)  
 **Area**: Scientific Computing / Graph Neural PDE Surrogates / Solid Mechanics  
-**Keywords**: Multigrid GNN, Physical Residuals, Solid Mechanics Surrogates, Mesh Coarsening, Long-term Rollout
+**Keywords**: Multigrid GNN, Physics Residual, Solid Mechanics Surrogate, Mesh Coarsening, Long-term Rollout
 
 ## TL;DR
-This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate model for finite element simulation in solid mechanics. The core innovation lies in replacing the "node selection during coarsening (downsampling)" mechanism—typically based on geometric heuristics (FPS) or learned attention—with a "TopK scoring based on the discrete residuals of momentum conservation equations." This concentrates coarse-layer computational power on key dynamic regions such as stress concentrations, contact interfaces, and large deformations. On the DeformingPlate dataset, it reduces the rollout RMSE from the SOTA $11.46\times 10^{-3}$ to $6.5\times 10^{-3}$ (an improvement of approximately 43%).
+This paper trains an Encoder-Processor-Decoder multigrid GNN surrogate for finite element simulation in solid mechanics. The core innovation is replacing geometric heuristics (FPS) or learned attention in "coarsening (downsampling) node selection" with "TopK scoring based on the discrete residual of momentum conservation equations." This concentrates coarse-layer computational resources on dynamically critical regions like stress concentrations, contact interfaces, and large deformations, reducing rollout RMSE from the Prev. SOTA $11.46\times 10^{-3}$ to $6.5\times 10^{-3}$ (approx. 43% improvement) on the DeformingPlate dataset.
 
 ## Background & Motivation
 
-**Background**: Replacing Finite Element Methods (FEM) with neural networks for PDE simulation has achieved orders-of-magnitude acceleration in fluid mechanics (Navier-Stokes, turbulence, airfoils). The mainstream architecture consists of Encode-Process-Decode graph neural networks (MeshGraphNet series), often combined with multigrid or U-Net-style hierarchical message passing (MultiScale MeshGraphNets, BSMS-GNN, Multi-Scale GNN, HCMT, UNISOMA) to mitigate over-smoothing in deep GNNs and enhance long-range information propagation.
+**Background**: Replacing FEM with neural networks for PDE simulation has achieved orders-of-magnitude acceleration in fluid dynamics (Navier-Stokes, turbulence, airfoils). Current mainstream architectures utilize MeshGraphNet-style Encode-Process-Decode GNNs combined with multigrid/U-Net style hierarchical message passing (e.g., MultiScale MeshGraphNets, BSMS-GNN, Multi-Scale GNN, HCMT, UNISOMA) to mitigate over-smoothing in deep GNNs and improve long-range information propagation.
 
-**Limitations of Prior Work**: (i) Solid mechanics is significantly underestimated; unlike fluids, it involves strong non-linear local phenomena such as large deformations, plasticity, contact, and stress concentrations, which mainstream benchmarks (predominantly fluid-based) fail to capture. (ii) The core design of "choosing which nodes to retain during coarsening" in multigrid architectures generally relies on pure geometric heuristics like Farthest Point Sampling (FPS) or learned attention scores. The former ignores physics and distributes nodes uniformly across the domain, wasting computation on physically inactive regions, while the latter is prone to instability during training.
+**Limitations of Prior Work**: (i) Solid mechanics is significantly underestimated—unlike fluids, it involves strong nonlinear localized phenomena such as large deformations, plasticity, contact, and stress concentrations, which mainstream fluid-centric benchmarks fail to capture; (ii) The core design of "which nodes to retain during coarsening" in multigrid architectures generally relies on purely geometric heuristics like farthest point sampling (FPS) or learned attention scores. The former ignores physics and distributes nodes uniformly, wasting computation on quiet zones; the latter is prone to instability during training.
 
-**Key Challenge**: Coarse-layer nodes are limited (fixed at 50% in this study). If nodes are distributed uniformly via geometry, regions that are "dynamically critical but spatially local," such as stress concentrations and contact interfaces, receive insufficient coarse-layer resolution. During long-term rollout, errors in these regions are the first to diverge, subsequently polluting the entire solution.
+**Key Challenge**: The number of coarse-layer nodes is limited (fixed at 50% in this paper). If nodes are geometrically uniform, dynamically critical but spatially localized regions (stress concentrations, contact interfaces) receive insufficient coarse-layer computation. Consequently, errors in these regions diverge first during long-term rollout, contaminating the entire solution.
 
-**Goal**: (i) Design a coarsening criterion that prioritizes "physically important" regions for coarse-layer nodes; (ii) Ensure this criterion is applicable across quasi-static hyperelasticity, transient non-linear elasticity, and elastoplasticity with contact; (iii) Release a solid mechanics benchmark to fill the current gap in the field.
+**Goal**: (i) Design a coarsening criterion that prioritizes "physically important" regions for coarse-layer nodes; (ii) Ensure the criterion is applicable across quasi-static hyperelasticity, transient nonlinear elasticity, and elastoplasticity with contact; (iii) Release a solid mechanics benchmark to fill the existing gap.
 
-**Key Insight**: The authors borrow the classical FEM concept of "residual-based adaptive mesh refinement," where meshes are refined in areas with high PDE residuals. They transfer this strategy to GNN multigrid: nodes are scored during coarsening based on the discrete residuals of the momentum conservation equations.
+**Key Insight**: The authors borrow the intuition of "residual-based adaptive mesh refinement" from classical FEM, where meshes are refined where PDE residuals are high. Transferring this to GNN multigrid: score nodes during coarsening based on the discrete residual of the momentum conservation equation.
 
-**Core Idea**: Use the "norm of the discrete residual of the momentum conservation equation" as the node importance score and select the TopK nodes with the highest residuals to construct the coarse graph. This naturally steers the multigrid hierarchy towards stress concentrations, contact interfaces, and large deformation zones.
+**Core Idea**: Use the "norm of the discrete residual of the momentum conservation equation" as the node importance score. Select the TopK nodes with the highest residuals to construct the coarse graph, allowing the multigrid hierarchy to naturally tilt towards stress concentrations, contact interfaces, and large deformation zones.
 
 ## Method
 
 ### Overall Architecture
-Input: A 3D unstructured mesh $\mathcal{G}=(\mathcal{V},\mathcal{E})$ and node physical fields $\bm{u}^t$ (displacement, velocity, or position) at time $t$.  
-Output: The next-step increment $\bm{u}^{t+1}=\bm{u}^t+\Phi_\theta(\bm{u}^t,\mathcal{G})$, utilizing residual-style time-stepping to facilitate stable long-term rollout.
 
-The backbone is an Encoder–Processor–Decoder. The Encoder uses point-wise MLPs to lift node features to a hidden dimension $h$; the Decoder maps the final hidden features back to $\mathbb{R}^3$. The Processor alternates between three operators in the latent space:
-(i) GraphNet blocks $\mathrm{GN}$ for fine-mesh message passing (following standard MeshGraphNet update rules);
-(ii) Downsampling blocks $\mathrm{DN}$ that compress the fine graph into a coarse graph with $n_s=0.5n$ nodes;
-(iii) Upsampling blocks $\mathrm{UP}$ that use KNN to interpolate coarse-graph features back to the fine graph, fusing them with fine-layer features before further GraphNet processing. The system follows a U-Net-style schedule $\mathcal{G}\to\tilde{\mathcal{G}}\to\mathcal{G}_c\to\tilde{\mathcal{G}}$, where the coarse layer is responsible for expanding the effective receptive field and propagating global information.
+To address the challenge where stress concentrations and contact interfaces diverge first due to insufficient coarse-layer resolution, this paper replaces geometric coarsening with physical criteria. The discrete residual norm of the momentum conservation equation serves as an importance score to select nodes for the coarse graph. The backbone remains an Encoder–Processor–Decoder system: the Encoder lifts features to a latent dimension $h$, and the Processor alternates between fine-grid message passing, physics-informed downsampling, and KNN upsampling fusion to form a U-Net style hierarchy.
 
-The key innovation is inside the $\mathrm{DN}$ block: instead of geometric selection, it temporarily decodes the current hidden features into physical quantities using the main Decoder $\phi_{\mathrm{dec}}$, calculates the "momentum conservation residual" $\bm{r}_i^t$ for each node, and ranks them by $s_i^t=\|\bm{r}_i^t\|_2$ for TopK selection.
+```mermaid
+graph TD
+    A["Mesh State u^t (Input)"] --> B["Encoder: Point-wise MLP to Latent Space"]
+    B --> C["Fine-layer GraphNet Message Passing"]
+    C --> D["Physics Residual Scoring: Use main Decoder for temporary decoding, calculate momentum residual norm s_i"]
+    D --> E["TopK Selection + KNN Remeshing: Select top 50% nodes by residual, reconnect via Euclidean KNN"]
+    E --> F["Coarse-layer GraphNet Propagation → KNN Up-sampling & Fusion"]
+    F --> G["Fine-layer GraphNet Refinement → Decoder to 3D Displacement Field"]
+    G --> H["Residual Time Integration: u(t+1) = u(t) + Φ"]
+    H -->|Autoregressive Rollout| A
+```
 
 ### Key Designs
 
-1.  **Residual-based Physical Scoring**:
-    -   **Function**: Computes a scalar score $s_i^t$ for each node, characterizing the extent to which the predicted physical field violates momentum conservation, serving as an a posteriori indicator of node importance.
-    -   **Mechanism**: The main Decoder $\hat{\bm{u}}^t=\phi_{\mathrm{dec}}(\tilde{\mathcal{G}})$ is "borrowed" to map the current hidden graph to physical space (this step does not participate in the final prediction). The predicted field $\hat{\bm{u}}^t$ is used to compute stress $\hat{\bm{\sigma}}^t$. For transient cases, the residual is $\bm{r}_i^t=\rho_i\ddot{\hat{\bm{u}}}_i^t-(\nabla_h\cdot\hat{\bm{\sigma}}^t)_i-\rho_i\mathbf{b}_i^t$; for quasi-static cases, the inertial term is dropped to form the equilibrium residual $\bm{r}_i^t=-(\nabla_h\cdot\hat{\bm{\sigma}}^t)_i-\rho_i\mathbf{b}_i^t$. Divergence $\nabla_h\cdot$ is reconstructed using fixed mesh-based discrete operators, and the score is $s_i^t=\|\bm{r}_i^t\|_2$.
-    -   **Design Motivation**: In FEM, regions with high residuals are physically "hard-to-predict" or involve intense dynamics. Translating this to GNN coarsening allows the multigrid hierarchy to automatically capture stress concentrations and contact interfaces. Notably, using the **shared main Decoder** for scoring (rather than an independent one) forces the main branch to learn physically consistent representations.
+**1. Node Physical Scoring based on Momentum Residual: Replacing Geometric Criteria with Physical Criteria**
 
-2.  **TopK Physics-Guided Node Selection + KNN Remeshing**:
-    -   **Function**: Converts the score vector $\bm{s}\in\mathbb{R}^n$ into a set of $n_s$ coarse node indices $\mathcal{V}_c$ and reconstructs the coarse edge set $\mathcal{E}_c$.
-    -   **Mechanism**: Node selection employs either deterministic TopK $\mathcal{I}=\mathrm{TopK}(\bm{s}^t,n_s)$ or categorical sampling based on $p_i=s_i/\sum_j s_j$. For edge construction, the model either inherits the fine-mesh subgraph or uses Euclidean KNN to "remesh" the selected nodes. The optimal combination found is **TopK + remeshing**, which significantly outperformed categorical sampling and inherited connectivity in stability.
-    -   **Design Motivation**: TopK is more aggressive than random sampling under physical guidance, dedicating all coarse-layer capacity to the most critical regions. KNN remeshing avoids topological fragmentation, which is crucial for long-range information propagation.
+Current geometric heuristics (like FPS) ignore physics and waste resources on quiet regions. Borrowing from residual-based adaptive mesh refinement in classical FEM, nodes with high residuals represent areas where the physics is "inaccurate" or "highly dynamic." This paper calculates a scalar score $s_i^t$ for each node, characterizing the violation of the momentum conservation equation. Specifically, the downsampling block temporarily decodes the latent graph into physical space using the main Decoder $\hat{\bm{u}}^t = \phi_{\mathrm{dec}}(\tilde{\mathcal{G}})$ to calculate predicted stress $\hat{\bm{\sigma}}^t$. For transient cases, the residual is $\bm{r}_i^t = \rho_i\ddot{\hat{\bm{u}}}_i^t - (\nabla_h \cdot \hat{\bm{\sigma}}^t)_i - \rho_i\mathbf{b}_i^t$; for quasi-static cases, the inertial term is dropped to form the equilibrium residual $\bm{r}_i^t = -(\nabla_h \cdot \hat{\bm{\sigma}}^t)_i - \rho_i\mathbf{b}_i^t$. The divergence $\nabla_h \cdot$ is reconstructed using fixed mesh-based operators. The score is $s_i^t = \|\bm{r}_i^t\|_2$, recalculated at each autoregressive step.
 
-3.  **Encoder-Processor-Decoder + KNN Upsampling Fusion**:
-    -   **Function**: Returns processed global information from the coarse graph to the fine graph while maintaining fine-level local precision.
-    -   **Mechanism**: After processing in coarse GraphNet blocks to obtain $\tilde{\mathcal{G}}_c^{n_s\times h}$, $k$-NN (in physical Euclidean space) is used to interpolate features for fine nodes as a weighted sum of their $k$ nearest coarse neighbors. These are fused with original fine features before final GraphNet refinement.
-    -   **Design Motivation**: Traditional single-scale GNNs are limited by message-passing radii and cannot capture global coupling. Multigrid coarse layers bridge long distances in a single hop, while the Encoder-Processor-Decoder structure preserves local stress gradients.
+**2. TopK Physics-Informed Selection + KNN Remeshing: From Scores to Coarse Graphs**
+
+A key issue is that nodes with high residuals might be disconnected in the original mesh, leading to topological fragmentation. For node selection, the paper compares deterministic $\mathcal{I} = \mathrm{TopK}(\bm{s}^t, n_s)$ with probabilistic categorical sampling. For edge construction, it compares induced subgraphs with Euclidean KNN remeshing on selected nodes. The optimal combination is **TopK + remeshing**: TopK reduces rollout RMSE from $13.1\times 10^{-3}$ to $6.5\times 10^{-3}$, as the variance from sampling at high coarsening rates outweighs the exploration benefit.
+
+**3. Encoder-Processor-Decoder Backbone + KNN Up-sampling: Fusing Global Info without Losing Local Precision**
+
+Single-scale GNNs are limited by $k$-hop radii and fail to capture global coupling. After coarse-layer propagation yields $\tilde{\mathcal{G}}_c^{n_s \times h}$, features are interpolated back to the fine grid via $k$-NN weighted sums and fused with original fine features, followed by local refinement. Time integration uses the residual form $\bm{u}^{t+1} = \bm{u}^t + \Phi_\theta(\bm{u}^t, \mathcal{G})$, which is critical for long-term stability.
 
 ### Loss & Training
-Direct supervision of next-state prediction is performed using node-wise MSE loss. The AdamW optimizer is used, and all baselines are trained for 30 epochs (~$10^6$ steps) under the same protocol. All multigrid models use a fixed coarsening ratio of 50% to control for capacity, isolating "coarsening strategy" as the primary variable. Experiments were conducted on NVIDIA A100 GPUs.
+
+Supervision is performed directly on the next-state prediction using point-wise MSE loss. The AdamW optimizer is used for 30 epochs (approx. $10^6$ steps). All multigrid models maintain a 50% coarsening ratio (coarse nodes = half of fine nodes). Experiments utilized NVIDIA A100 GPUs.
 
 ## Key Experimental Results
 
-### Main Results: Comparison with 7 SOTA Methods on DeformingPlate
+### Main Results: Comparison on DeformingPlate
 
 | Method | Rollout RMSE ($\times 10^{-3}$) ↓ | 1-step RMSE ($\times 10^{-3}$) ↓ | #Params ↓ |
 | :--- | :--- | :--- | :--- |
@@ -88,7 +85,7 @@ Direct supervision of next-state prediction is performed using node-wise MSE los
 | UNISOMA | 11.46 | 0.16 | 2.85M |
 | **Ours (Physics-informed Multigrid)** | **6.50** | **0.095** | 2.9M |
 
-Rollout error is halved compared to UNISOMA (11.46 → 6.50, ~43% gain), and the 1-step error is the lowest among all methods, achieved without increasing parameter counts.
+Rollout error is nearly halved compared to UNISOMA (11.46 → 6.50), with the lowest 1-step error among all models at comparable parameter counts.
 
 ### Ablation Study: Sampling Strategies in Multigrid Architecture
 
@@ -98,33 +95,49 @@ Rollout error is halved compared to UNISOMA (11.46 → 6.50, ~43% gain), and the
 | FPS (No remeshing) | 15.0 | 10.31 |
 | Attention-based | 8.1 | 17.10 |
 | FPS (With remeshing) | 8.0 | 9.74 |
-| Physics-informed + Categorical | 13.1 | 11.32 |
+| Physics-informed + Stochastic Sampling | 13.1 | 11.32 |
 | **Physics-informed + TopK (Ours)** | **6.5** | **9.57** |
 
 ### Key Findings
--   **Coarsening Strategy > Architecture Capacity**: Maintaining the same backbone but replacing FPS with physics-informed TopK reduces rollout error from 8.0 to 6.5.
--   **TopK Significantly Outperforms Probabilistic Sampling** (13.1 → 6.5): At a high coarsening rate of 50%, the variance introduced by randomness outweighs the benefits of exploration.
--   **Decoder Reuse is Essential**: Using an independent scoring decoder degrades performance. Sharing the decoder forces the representation to support both prediction and residual calculation, promoting physical consistency.
--   **Include Boundary/Contact Nodes in Scoring**: Results show that scoring all nodes outperforms scoring only "normal" nodes, as reaction forces and constraints carry strong physical signals.
--   **Increased Coarse-Layer Width is Ineffective**: Increasing $h_c$ from 128 to 256 degraded performance, suggesting that the bottleneck lies in selection rather than capacity.
+- **Coarsening Strategy > Architectural Capacity**: Swapping FPS for physics-informed TopK reduces rollout error from 8.0 to 6.5 in the same backbone.
+- **TopK significantly outperforms Stochastic Sampling** ($13.1 \rightarrow 6.5$): At 50% coarsening, variance introduced by randomness outweighs exploration gains.
+- **Decoder Reuse is Crucual**: Using an independent decoder for physical scoring degrades performance. Sharing the decoder forces the representation to support both "prediction" and "residual calculation," promoting physical consistency.
+- **Connectivity vs. Semantic Relevance**: Remeshing via KNN on physically selected nodes outperforms maintaining original topological connectivity, suggesting semantic relevance is more important in multigrid GNNs.
 
 ## Highlights & Insights
--   **Translating Residual-based Adaptive Refinement to GNN Multigrid**: This analogy provides explainability ("high residual = intense physical activity") and leverages decades of numerical analysis intuition.
--   **Zero Additional Parameters for Scoring**: The physical residual is computed entirely using the main Decoder and fixed discrete operators, introducing a powerful inductive bias without new learnable modules.
--   **Decoder Sharing as a Technical Trick**: Having one decoder perform both final output and intermediate scoring naturally injects physical consistency as a regularizer.
--   **TopK + KNN Remeshing**: Prioritizing "semantic relevance" via remeshing over "topological fidelity" (preserving original connectivity) proves superior for multigrid GNNs.
+- **Bridging Classical FEM and Deep Learning**: Transferring residual-based adaptive refinement to GNN coarsening provides interpretability and leverages decades of numerical analysis intuition.
+- **Zero Extra Parameters**: The physics score is computed using the existing Decoder and fixed operators, providing a strong inductive bias without increasing model complexity.
+- **Shared Decoder Trick**: Assigning the decoder dual tasks ("final output" and "intermediate scoring") naturally injects physical consistency as a regularizer.
 
 ## Limitations & Future Work
--   **Complexity of Residual Scoring**: Implementing residual scoring for complex materials or distorted meshes requires discrete divergence reconstruction, moving away from pure "black-box" ML.
--   **Robustness in Extreme Regimes**: On the SpindleUpsetting dataset (heavy plasticity and contact), the method slightly underperformed pure FPS, suggesting residual signals may be noisy in extreme non-linear regimes.
--   **Fixed Coarsening Rate**: The study only evaluated a 50% coarsening rate and did not investigate multi-level nesting (e.g., coarse-coarser-coarsest).
--   **Future Directions**: Integrating residual scoring with gradient vector fields, implementing adaptive coarsening rates, and combining the mechanism with PINN losses for joint regularization.
+- **Complexity in Hard Cases**: Residual scoring for complex materials or distorted meshes is non-trivial and requires access to physical fields, moving away from pure black-box ML.
+- **Error Propagation**: If the primary prediction is poor, the calculated residual will be inaccurate, potentially creating a feedback loop during rollout.
+- **Future Directions**: Combining residual scoring with gradient vector fields, adaptive coarsening rates, or integrating as a PINN loss for joint regularization.
 
 ## Related Work & Insights
--   **vs MeshGraphNets**: Ours inherits the backbone and residual time-stepping from MGN but adds the multigrid hierarchy and physics-guided coarsening, improving rollout performance from 12.75 to 6.50.
--   **vs BSMS-GNN**: BSMS uses topological bi-stride pooling. Ours uses physical TopK and KNN remeshing, demonstrating that semantic focus is more effective than preserving original topology.
--   **vs FPS-based Multigrid**: Geometric uniform coverage vs. physics-guided focus. In solid mechanics, where local concentrations dictate global dynamics, physics guidance is clearly superior.
--   **vs UNISOMA**: UNISOMA uses fixed slice tokens for attention-based compression, which may lose details at sharp contact interfaces; Ours explicitly selects nodes based on residuals to mitigate this.
+- **vs. MeshGraphNets**: Inherits the E-P-D backbone and residual stepping but adds multigrid levels and physics coarsening, improving rollout from 12.75 to 6.50.
+- **vs. BSMS-GNN**: BSMS uses topological bi-stride pooling; Ours uses physics TopK + KNN remeshing. The performance jump (16.60 → 6.50) proves that physical "focus" matters more than preserving original topology.
+- **vs. UNISOMA**: UNISOMA uses fixed slice tokens; Ours explicitly selects nodes by residual, better capturing local details in stress concentrations.
+
+<div class="related-papers" markdown="1">
+
+[1] MeshGraphNets: Learning Mesh-based Simulation with Graph Networks (ICML 2021)  
+[2] BSMS-GNN: Bi-stride Multi-scale Graph Neural Network for PDE Simulation (ICLR 2023)  
+[3] UNISOMA: Unified Soft-masked Attention for Multi-scale MeshGraphNets (NeurIPS 2024)
+
+</div>
+
+## Related Papers
+
+- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
+- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
+- [\[AAAI 2026\] On Stealing Graph Neural Network Models](../../AAAI2026/graph_learning/on_stealing_graph_neural_network_models.md)
+- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -132,11 +145,11 @@ Rollout error is halved compared to UNISOMA (11.46 → 6.50, ~43% gain), and the
 
 ## Related Papers
 
-- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
+- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
 - [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
 - [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
+- [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
+- [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
 
 </div>
 

@@ -2,71 +2,77 @@
 title: >-
   [Paper Note] Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 description: >-
-  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repurposes rank-one model editing from domain adaptation to behavior rectificati…
+  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repositions rank-one model editing from domain adaptation to behavior rectification. By quantifying layer editability via Integrated Gradients to automatically locate suspect layers, it repairs three types of unreliable behaviors—backd
 tags:
-  - "CVPR 2026"
-  - "Knowledge Editing"
-  - "rank-one model editing"
-  - "attribution analysis"
-  - "backdoor defense"
-  - "spurious correlations"
-  - "model rectification"
+  - CVPR 2026
+  - Knowledge Editing
+  - rank-one model editing
 date: 2026-05-08
-content_hash: 5a8f75a16132e3b4
+content_hash: ef440fcb53a80b78
 ---
-
 # Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.15656](https://arxiv.org/abs/2603.15656)  
 **Code**: None  
-**Area**: Knowledge Editing
-**Keywords**: rank-one model editing, attribution analysis, backdoor defense, spurious correlations, model rectification
+**Area**: Knowledge Editing  
+**Keywords**: rank-one model editing, attribution analysis, backdoor defense, spurious correlation, model rectification
 
 ## TL;DR
-This paper proposes an attribution-guided dynamic model rectification framework that repurposes rank-one model editing from domain adaptation to behavior rectification. By quantifying per-layer editability via Integrated Gradients, the framework automatically localizes suspect layers and repairs three categories of unreliable behaviors—backdoor attacks, spurious correlations, and feature leakage—using as few as a single clean sample.
+This paper proposes an attribution-guided dynamic model rectification framework that repositions rank-one model editing from domain adaptation to behavior rectification. By quantifying layer editability via Integrated Gradients to automatically locate suspect layers, it repairs three types of unreliable behaviors—backdoor attacks, spurious correlations, and feature leakage—using only a single clean sample.
 
 ## Background & Motivation
 
-**Background**: Neural networks exhibit unreliable behaviors under distribution inconsistency, including neural Trojans (backdoor triggers), spurious correlations, and feature leakage, severely limiting deployment in safety-critical scenarios.
+**Background**: Neural networks exhibit unreliable behaviors when facing distribution inconsistencies, including neural Trojans (backdoor triggers), spurious correlations, and feature leakage. These issues severely hinder model deployment in safety-critical scenarios.
 
-**Limitations of Prior Work**: Mainstream repair strategies rely on data cleansing and model retraining, incurring substantial computational and human costs. Rank-one model editing has demonstrated knowledge-editing capabilities in generative and discriminative models, yet applying it for domain adaptation faces two structural bottlenecks: (1) out-of-span residuals—a new key $k^*$ outside the training key span destroys existing associations (Lemma 1); and (2) sample complexity—accurate key estimation under distribution shift requires large numbers of samples (Lemma 2).
+**Limitations of Prior Work**: Mainstream repair strategies rely on data cleaning combined with model retraining, which incurs massive computational and manual costs. While rank-one model editing has demonstrated knowledge editing capabilities in generative/discriminative models, two structural bottlenecks emerge when applied to domain adaptation: (1) out-of-span residuals—where a new key $k^*$ falls outside the training key span, disrupting existing associations (Lemma 1); (2) sample complexity—requiring a large number of samples to accurately estimate keys under distribution shifts (Lemma 2).
 
-**Key Challenge**: Existing model editing methods operate on the final feature layer by default (due to its high-level semantic encoding), yet experiments show that editability varies substantially across layers—per-layer rectification rankings on ResNet-18 differ by several-fold (Fig. 2), and no single layer is universally optimal.
+**Key Challenge**: Existing model editing methods are typically fixed to the last feature layer (assuming it encodes high-level semantics). However, experiments show that editability varies significantly across layers—ranking differences after rectifying can vary several-fold across ResNet-18 layers (Fig. 2), and no single layer is universally optimal.
 
-**Goal**: (1) Repair unreliable model behaviors under data-efficient conditions (even with a single clean sample); (2) automatically localize the most critical layer responsible for unreliable behavior, rather than manually designating a fixed layer.
+**Goal**: (1) Repair unreliable model behaviors under data-efficient conditions (even with only 1 clean sample); (2) automatically locate the most critical layers causing unreliable behaviors instead of manually specifying fixed layers.
 
-**Key Insight**: Rank-one editing is repositioned from "domain adaptation" to "behavior rectification." The structural property that the model has already observed clean–corrupted pairs during training is exploited to circumvent the theoretical bottlenecks of standard editing; attribution methods then quantify per-layer editability to guide layer selection.
+**Key Insight**: This work repositions rank-one editing from "domain adaptation" to "behavior rectification." It leverages the structural property of clean-corrupted pairs encountered during model training to bypass the theoretical bottlenecks of standard editing. Attribution methods are then used to quantify layer editability as a basis for layer selection.
 
-**Core Idea**: Integrated Gradients attributions are computed along the corrupted→clean path for each layer, projected onto the rank-one editing direction to produce a scalar editability score. The layer with the highest score is selected for editing, and the process iterates until the behavior is rectified.
+**Core Idea**: Integrated Gradients attribution is calculated on the corrupted→clean path for each layer and projected onto the rank-one editing direction to obtain a scalar editability score. The layer with the highest score is selected for editing, and the process is executed iteratively until behavior rectification is complete.
 
 ## Method
 
 ### Overall Architecture
-The framework operates as a three-step loop. **Step 1 (Attribution Computation)**: Given a corrupted sample $\tilde{x}$ and a clean sample $x$, Integrated Gradients attributions $M^l(x, \tilde{x})$ are computed for each layer using $\tilde{x}$ as the reference. **Step 2 (Layer Localization)**: Attributions are projected onto the rank-one editing direction to yield a scalar editability score $\hat{G}_l = \|M^{*,l}\|_F$, and the layer with the maximum score is selected: $l^* = \arg\max_l \hat{G}_l$. **Step 3 (Rank-One Editing)**: A rank-one weight update is applied to layer $l^*$ to establish a new corrupted key → clean value association. The dynamic framework embeds these three steps in a while loop, re-localizing and editing each round until the prediction gap $\delta^*$ falls below a threshold or the performance degradation exceeds a budget $\epsilon$.
+This paper addresses the following problem: the model is compromised—it contains backdoor triggers, learned spurious correlations, or relies on irrelevant features—but retraining or collecting massive data is not feasible, and only one or two clean samples are available. The overall approach utilizes rank-one model editing as a "behavior rectification" tool. Instead of fixing the update to the last layer, it uses attribution to identify "which layer most needs modification," updates it, and evaluates the effect, iteratively identifying the next layer if necessary.
+
+In each iteration, three steps are performed: Given a sample pair consisting of a corrupted sample $\tilde{x}$ and its clean counterpart $x$, Integrated Gradients are used to calculate the attribution $M^l(x, \tilde{x})$ for each layer relative to the transition from "bad behavior" to "good behavior." This attribution is then projected onto the rank-one editing direction and compressed into a scalar editability score $\hat{G}_l = \|M^{*,l}\|_F$. The layer with the highest score $l^* = \arg\max_l \hat{G}_l$ is identified as the "suspect layer." Finally, a rank-one weight update is performed on $l^*$ to embed the new "corrupted key → clean value" association. This process is wrapped in a while loop: re-locating and re-editing in each round until the prediction gap $\delta^*$ between corrupted and clean samples falls below a threshold, or the cumulative performance degradation reaches a budget $\epsilon$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["clean-corrupted sample pair (x, x̃)"] --> B["Attribution-Guided Layer Localization<br/>IG Attribution → Project Edit Direction → Select Suspect Layer l*"]
+    B --> C["rank-one Edit l*<br/>corrupted key → clean value (Rectification setting ensures 1 sample is sufficient)"]
+    C --> D["Evaluate Prediction Gap δ* and Performance Degradation ε*"]
+    D -->|"δ* still high and degradation within budget (Dynamic Rectification Loop)"| B
+    D -->|"δ* meets criteria"| E["Output Rectified Model"]
+    D -->|"Degradation exceeds budget"| F["Rollback, return current optimal"]
+```
 
 ### Key Designs
 
-1. **Theoretical Advantages of the Rectification Setting (Rectifiability & Span-Aligned Control)**
+**1. Theoretical Advantage of the Rectification Setting: Why "1 Sample is Enough" is not Luck (Rectifiability & Span-Aligned Control)**
 
-    - **Function**: Formally proves two structural advantages of the behavior rectification setting over domain adaptation.
-    - **Mechanism**: Because the model has observed both clean and corrupted samples during training, the corrupted key $k^*$ naturally lies within the span of training keys (Proposition 4.1, Rectifiability), eliminating out-of-span residuals and preserving existing key–value associations. Simultaneously, paired supervision drives key estimation error to zero without requiring large numbers of new-domain samples (Proposition 4.2, Span-Aligned Control).
-    - **Design Motivation**: These two properties theoretically explain why a single sample suffices for repair—the rectification setting structurally avoids both bottlenecks of domain-adaptation editing.
+Directly transferring rank-one editing to domain adaptation under distribution shift hits two walls: the new key $k^*$ falls outside the span of training keys, leading to out-of-span residuals that disrupt original key-value associations (Lemma 1); and distribution shifts require many samples to accurately estimate the key (Lemma 2). The key observation is that "behavior rectification" naturally avoids these issues. Since the model has **already seen** clean and corrupted samples during training, the corrupted key $k^*$ naturally falls within the span of training keys (Proposition 4.1, Rectifiability), eliminating out-of-span residuals and preserving existing associations. Furthermore, because of paired supervision (clean-corrupted), key estimation error tends toward zero, removing the need for high sample counts (Proposition 4.2, Span-Aligned Control). These propositions provide the structural theoretical support for "repair using only 1 clean sample"—repositioning the task as behavior rectification bypasses the standard bottlenecks fundamentally.
 
-2. **Attribution-Guided Layer Localization**
+**2. Attribution-Guided Layer Localization: Asking "Which layer is most effective to change" (Attribution-Guided Layer Localization)**
 
-    - **Function**: Automatically identifies the layer that contributes most to unreliable behavior and is most amenable to editing.
-    - **Mechanism**: IG attributions are computed with corrupted $\tilde{x}$ as the reference and clean $x$ as the input: $M^l_i(x, \tilde{x}) = (f_l(x_i) - f_l(\tilde{x}_i)) \cdot \int_0^1 \frac{\partial f(\hat{x})}{\partial f_l(\hat{x}_i)} d\alpha$. The Completeness axiom (Lemma 3: attributions across all layers sum to the output change $f(x)-f(\tilde{x})$) enables cross-layer comparability. Projecting the attribution onto the editing direction $M^{*,l} = M^l \cdot (C^{-1}k^*)^T$ and taking the Frobenius norm yields the scalar score.
-    - **Design Motivation**: Attribution magnitude alone measures only "how important is this layer to the unreliable behavior"; projecting onto the editing direction measures "how much unreliability would editing this layer reduce"—a cross signal of attribution and editing direction that directly correlates with the first-order descent coefficient $G_l$.
+Older methods fix editing to the last layer, assuming it encodes high-level semantics. However, layer-by-layer rectification on ResNet-18 reveals that editability can vary by multiples, with no universally optimal layer (Fig. 2). To automate layer selection, the first step is measuring each layer's contribution to the bad behavior: using the corrupted $\tilde{x}$ as a reference and the clean $x$ as input, the IG attribution is calculated as $M^l_i(x, \tilde{x}) = (f_l(x_i) - f_l(\tilde{x}_i)) \cdot \int_0^1 \frac{\partial f(\hat{x})}{\partial f_l(\hat{x}_i)} \, d\alpha$. The Completeness axiom (Lemma 3: the sum of attributions across layers equals the output change $f(x)-f(\tilde{x})$) allows for cross-layer comparisons. However, attribution magnitude alone only indicates "how important a layer is to the bad behavior," not the "effectiveness of editing that layer." Thus, the attribution is projected onto the actual editing direction:
 
-3. **Dynamic Model Rectification Framework (Algorithm 1)**
+$$M^{*,l} = M^l \cdot (C^{-1}k^*)^T$$
 
-    - **Function**: Iteratively localizes and edits multiple layers for adaptive repair.
-    - **Mechanism**: The while loop checks whether the prediction gap $\delta^* = f(x) - f(\tilde{x})$ exceeds target $\delta$ and whether performance degradation $\epsilon^*$ remains within budget. Each round: attribution-based localization of the suspect layer → rank-one editing for $T$ epochs → evaluation of the edited model → if degradation is acceptable, the edit is retained and the loop continues; otherwise the edit is rolled back and the procedure returns.
-    - **Design Motivation**: After editing one layer the model state changes, and a previously suboptimal layer may become the new bottleneck. The dynamic framework enables progressive exploration of multi-layer rectification paths.
+The Frobenius norm of this projection is used as the editability score. This "attribution × edit direction" intersection is the key signal—it directly corresponds to the first-order descent coefficient $G_l$, representing the rate at which the bad behavior metric decreases when moving along that edit direction. Selecting the highest score is equivalent to selecting the layer with the "maximum single-step gain."
+
+**3. Dynamic Model Rectification Framework: Surfacing Bottlenecks Layer-by-Layer (Algorithm 1)**
+
+Editing a single layer is often insufficient. After modifying one layer, the model's overall state changes, and layers previously ranked second or third may become the new primary bottlenecks. Consequently, instead of a one-time operation, localization and editing are placed in a while loop. Each round checks if the prediction gap $\delta^* = f(x) - f(\tilde{x})$ exceeds target $\delta$ and if cumulative performance degradation $\epsilon^*$ is within budget. If so, Design 2 re-locates the suspect layer, performs $T$ epochs of rank-one editing, and evaluates the result. If degradation is acceptable, the edit is kept for the next round; otherwise, it is rolled back. This allows the multi-layer repair path to be "gradually explored" rather than pre-specified. The dynamic version is more stable across all scenarios than the static version (CIFAR-10 Backdoor, $n=1$: ASR 2.57→1.34, OA 92.93→93.65).
 
 ### Loss & Training
-The optimization objective for rank-one editing is a constrained least-squares problem: $\min_\Lambda \|v^* - f_l(k^*; W')\|$, subject to $W' = W + \Lambda(C^{-1}k^*)^T$, where $k^*$ is the feature key of the corrupted sample at the target layer, $v^*$ is the output value of the clean sample at that layer, and $C = KK^T$ is the second-order moment statistics of training-sample keys. The update matrix is an outer product of two vectors (rank-one) and admits a closed-form solution. In the dynamic framework, performance degradation is assessed via a validation metric $\zeta$ after $T$ editing epochs per round.
+The individual rank-one edit targeting a constrained least-squares problem: $\min_\Lambda \|v^* - f_l(k^*; W')\|$ under the constraint $W' = W + \Lambda(C^{-1}k^*)^T$. Here $k^*$ is the feature key of the corrupted sample in that layer, $v^*$ is the desired clean output value, and $C = KK^T$ is the second-moment statistic of the training keys. The update is an outer product of two vectors, making it strictly rank-one with a closed-form solution, which is the source of its data efficiency and low overhead. In the dynamic framework, after $T$ epochs per round, the performance degradation $\zeta$ is measured to decide whether to retain or rollback the update.
 
 ## Key Experimental Results
 
@@ -74,8 +80,8 @@ The optimization objective for rank-one editing is a constrained least-squares p
 
 **Table 1: Backdoor Attack Repair (CIFAR-10 & ImageNet)**
 
-| Method | #Samples | CIFAR-10 OA↑ | CIFAR-10 ASR↓ | ImageNet OA↑ | ImageNet ASR↓ |
-|--------|:---:|:---:|:---:|:---:|:---:|
+| Method | # Samples | CIFAR-10 OA↑ | CIFAR-10 ASR↓ | ImageNet OA↑ | ImageNet ASR↓ |
+|------|:---:|:---:|:---:|:---:|:---:|
 | Trojaned model | - | 93.67 | 99.94 | 69.05 | 87.24 |
 | Fine-tune | 1 | 90.83 | 73.07 | 65.95 | 79.91 |
 | Fine-tune | 20 | 91.58 | 13.22 | 68.42 | 21.86 |
@@ -85,10 +91,10 @@ The optimization objective for rank-one editing is a constrained least-squares p
 | **Dyn. rectifying** | **1** | **93.65** | **1.34** | 66.77 | **1.61** |
 | **Dyn. rectifying** | **20** | **93.61** | **0.26** | **68.84** | **0.12** |
 
-**Table 4: Spurious Correlation Mitigation (CIFAR-10 & ImageNet; Spurious column denotes deviation relative to Clean↓)**
+**Table 4: Spurious Correlation Mitigation (CIFAR-10 & ImageNet, Spurious column represents relative bias to Clean ↓)**
 
-| Method | #Samples | CIFAR-10 Overall↑ | Clean↑ | Spurious Dev.↓ | ImageNet Overall↑ | Clean↑ | Spurious Dev.↓ |
-|--------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Method | # Samples | CIFAR-10 Overall↑ | Clean↑ | Spurious Bias↓ | ImageNet Overall↑ | Clean↑ | Spurious Bias↓ |
+|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Benign model | - | 94.00 | 94.42 | +5.58 | 69.04 | 81.25 | +10.41 |
 | A-ClArC | 20 | 92.41 | 76.77 | +2.57 | 67.01 | 75.66 | +6.59 |
 | P-ClArC | 20 | 88.29 | 16.89 | +0.23 | 66.84 | 8.32 | +2.59 |
@@ -97,81 +103,66 @@ The optimization objective for rank-one editing is a constrained least-squares p
 
 **Table 5: Feature Leakage Mitigation (BlockMNIST)**
 
-| Method | #Samples | Accuracy↑ | Feature Leakage↓ |
-|--------|:---:|:---:|:---:|
+| Method | # Samples | Accuracy↑ | Feature Leakage↓ |
+|------|:---:|:---:|:---:|
 | Benign model | - | 99.17 | 3.597 |
-| IG-SUM regularization | - | 94.14 | 3.417 |
+| IG-SUM Reg | - | 94.14 | 3.417 |
 | Fine-tune | 20 | 98.67 | 2.929 |
 | Stat. rectifying | 1 | 98.97 | 2.655 |
 | **Dyn. rectifying** | **1** | **99.03** | **2.417** |
 
 ### Ablation Study
 
-**Static vs. Dynamic Rectification (CIFAR-10 backdoor, n=1)**
+**Static vs Dynamic Rectification (CIFAR-10 Backdoor, $n=1$)**
 
-| Configuration | OA↑ | ASR↓ | Note |
-|---------------|:---:|:---:|------|
+| Config | OA↑ | ASR↓ | Description |
+|------|:---:|:---:|------|
 | Patched model (n=20) | 89.70 | 12.19 | Neuron pruning, OA loss |
-| Static rectifying (n=1) | 92.93 | 2.57 | Only the final layer edited |
-| **Dynamic rectifying (n=1)** | **93.65** | **1.34** | Attribution localization + iterative editing |
-
-**Trigger Generalization — Varying Visibility (ResNet-18, CIFAR-10, n=1, trained with φ=0.5)**
-
-| Method | OA↑ | ASR(0.3)↓ | ASR(0.5)↓ | ASR(0.7)↓ | ASR(1.0)↓ |
-|--------|:---:|:---:|:---:|:---:|:---:|
-| Patched | 89.61 | 30.84 | 26.86 | 32.42 | 37.19 |
-| **Dyn. rectifying** | **91.21** | **6.84** | **5.17** | **7.65** | **7.91** |
-
-**Trigger Generalization — Varying Position (rectified with BR sample, n=1)**
-
-| Method | OA↑ | ASR(BR)↓ | ASR(TL)↓ | ASR(C)↓ | ASR(BL)↓ |
-|--------|:---:|:---:|:---:|:---:|:---:|
-| Patched | 89.22 | 29.31 | 34.42 | 34.58 | 34.88 |
-| **Dyn. rectifying** | **90.85** | **6.36** | **9.24** | **9.47** | **8.95** |
-
-**Real-World Scenario: ISIC Skin Lesion (EfficientNet-B4, n=10)**
-
-| Method | Overall↑ | Clean↑ | Spurious Dev.↓ |
-|--------|:---:|:---:|:---:|
-| Benign model | 79.00 | 61.50 | +26.00 |
-| Fine-tune (n=20) | 80.50 | 53.00 | +11.50 |
-| A-ClArC (n=20) | 79.50 | 54.50 | +5.00 |
-| Stat. rectifying (n=10) | 79.50 | 60.00 | +4.50 |
-| **Dyn. rectifying (n=10)** | **80.00** | 61.00 | **+1.50** |
+| Static rectifying (n=1) | 92.93 | 2.57 | Edit last layer only |
+| **Dynamic rectifying (n=1)** | **93.65** | **1.34** | Attribution localization + Iterative editing |
 
 ### Key Findings
-- **Extreme Data Efficiency**: With a single clean sample, dynamic rectification reduces ASR on CIFAR-10 from 99.94% to 1.34% while leaving OA virtually unchanged (93.67→93.65).
-- **Dynamic Consistently Outperforms Static**: Across all scenarios, dynamic rectification uniformly surpasses static rectification (which edits only the final layer), validating the necessity of attribution-based layer localization.
-- **Cross-Trigger Generalization**: Rectification using a trigger sample of a specific visibility or position generalizes effectively to other visibilities (0.3–1.0) and positions (TL/C/BL/BR).
-- **Unified Effectiveness Across Three Scenarios**: The same framework performs well across backdoor attacks, spurious correlations, and feature leakage, demonstrating the generalization capability of the unified formulation.
-- **Real-World Validation**: On the ISIC skin lesion dataset, using 10 manually cleaned samples reduces the spurious deviation from +26.00 to +1.50, substantially outperforming A-ClArC and fine-tuning.
-- **The Cost of P-ClArC**: While P-ClArC narrows the spurious deviation, it does so at the cost of a dramatic collapse in clean accuracy (CIFAR-10: 94.42→16.89); the proposed method does not exhibit this problem.
+- **Extreme Data Efficiency**: With only 1 clean sample, dynamic rectification reduces ASR from 99.94% to 1.34% on CIFAR-10 while keeping OA nearly constant (93.67→93.65).
+- **Dynamic Superiority**: Dynamic rectification consistently outperforms static rectification (last-layer only) across all scenarios, validating the necessity of attribution-guided localization.
+- **Cross-Trigger Generalization**: Repairing with triggers of specific visibility/locations generalizes well to others (visibility 0.3-1.0; locations TL/C/BL/BR).
+- **Unified Effectiveness**: The same framework performs exceptionally across backdoors, spurious correlations, and feature leakage, demonstrating robust generalization.
+- **Real-world Validation**: On the ISIC skin lesion dataset, 10 manual clean samples reduced spurious bias from +26.00 to +1.50, far exceeding A-ClArC and fine-tuning.
+- **Cost of P-ClArC**: While P-ClArC reduces spurious bias, it causes Clean accuracy to collapse (94.42→16.89 on CIFAR-10), an issue absent in Ours.
 
 ## Highlights & Insights
-- **Theory–Empiricism Loop**: Propositions on Rectifiability and Span-Aligned Control rigorously explain why a single sample suffices—the corrupted key lies within the training span (no residuals) and paired supervision eliminates estimation error, making data efficiency a structural guarantee rather than a coincidence.
-- **Attribution × Editing Direction Cross-Signal**: Rather than selecting layers by attribution magnitude alone (which only measures "how important is this layer"), the attributions are projected onto the rank-one update direction to measure "how much unreliability would editing this layer reduce"—an intuitive yet theoretically grounded signal directly related to the first-order descent coefficient $G_l$.
-- **No Inference Overhead**: Unlike P-ClArC/A-ClArC, which append artifact modules, this method directly edits weights, leaving the model architecture and inference cost entirely unchanged.
-- **BlockMNIST Visualization**: IG attribution heatmaps visually demonstrate that the benign model allocates attribution to the null patch (leakage), whereas the rectified model concentrates attribution in the digit region (Fig. 5), providing interpretability evidence.
+- **Theoretical-Empirical Loop**: Propositions for Rectifiability and Span-Aligned Control rigorously prove why 1 sample is sufficient—corrupted keys exist within the training span (no residual) and paired supervision eliminates estimation error.
+- **"Attribution × Edit Direction" Signal**: Instead of using raw attribution (importance), projecting onto the rank-one direction measures "how much unreliability can be reduced by editing this layer"—aligning intuition with first-order descent coefficients.
+- **No Inference Overhead**: Unlike P-ClArC/A-ClArC which add artifact modules, this method directly edits weights, leaving model architecture and inference cost unchanged.
+- **Explainability Evidence**: IG heatmaps on BlockMNIST show that the benign model attributes to null patches (leakage), while the rectified model concentrates attribution on the digit region (Fig. 5).
 
 ## Limitations & Future Work
-- **Requires Clean–Corrupted Pairs**: Rectification presupposes knowledge of which samples are corrupted and access to their clean counterparts; in practice, an additional backdoor detection step (e.g., SpRAy, SPECTRE) may be required.
-- **Linear Association Assumption**: Rank-one editing treats each layer as a linear associative memory, which may be insufficiently precise for highly nonlinear layers.
-- **Classification Tasks Only**: Applicability to object detection, segmentation, generation, and other tasks has not been explored.
-- **Unknown Scalability to Large Models**: Experiments are based on medium-scale CNNs (ResNet-18/EfficientNet-B4); effectiveness on ViT/LLM-scale models remains to be verified. (Token-level causal analysis can aid layer localization in LLMs, but no analogous mechanism exists for vision models.)
-- **Layer Localization Cost**: Computing Integrated Gradients and estimating second-order moment statistics $C$ for all layers introduces additional computational overhead that grows with network depth.
+- **Paired Data Requirement**: Rectification assumes the corrupted sample is known and its clean version is available; practical use might require prior backdoor detection steps.
+- **Linear Association Assumption**: Rank-one editing treats layers as linear associative memories, which may be less accurate for highly nonlinear layers.
+- **Task Scope**: Applicability to object detection, segmentation, or generation has not been explored.
+- **Large Model Scale**: Experiments focus on ResNet-18/EfficientNet-B4; effectiveness on ViT/LLM scales remains to be verified.
 
 ## Related Work & Insights
-- **vs. ROME/MEMIT**: ROME edits factual knowledge in LLMs; this work adapts rank-one editing to behavior rectification in visual discriminative models. The core contributions lie in the theoretical analysis of the rectification setting and attribution-based layer selection.
-- **vs. P-ClArC/A-ClArC**: Those methods append artifact modules to patch the model; this work directly edits weights—incurring no inference overhead and requiring fewer samples. The clean-accuracy collapse observed with P-ClArC does not occur here.
-- **vs. Fine-tuning**: Fine-tuning with n=1 leaves ASR as high as 73%; with n=20, OA degrades noticeably. Rank-one editing is more precise and better preserves OA.
-- **vs. Neural Cleanse/SPECTRE**: These methods focus on detecting the presence of backdoors; this work focuses on repair—the two can be combined into a detect-then-rectify pipeline.
-- **Inspiration**: The idea of projecting attributions onto the editing direction can be generalized to automatic layer selection in LLM knowledge editing, where ROME/MEMIT also face the layer selection problem.
+- **vs ROME/MEMIT**: While ROME edits LLM factual knowledge, this work adapts rank-one editing to behavior rectification in discriminative models.
+- **vs P-ClArC/A-ClArC**: They patch models by adding artifact modules; Ours edits weights directly—removing inference overhead and requiring fewer samples.
+- **vs Fine-tuning**: Fine-tuning with $n=1$ leaves ASR at 73%; with $n=20$, OA drops significantly. Rank-one editing is more precise and preserves OA better.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The attribution-guided layer localization idea is novel, and the theoretical analysis of the rectification setting makes a substantive contribution; however, the rank-one editing framework itself is not new.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three categories of unreliable behaviors × multiple datasets × trigger variants × generalization experiments × real-world ISIC scenario; the experimental design is comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ The Lemma/Proposition chain in the theoretical sections is clear and rigorous, though the main text is somewhat lengthy.
-- **Value**: ⭐⭐⭐⭐ The practical value of single-sample backdoor repair is high, but the requirement for clean–corrupted pair priors constitutes a deployment barrier.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐
+
+## Related Papers
+
+- [\[ACL 2025\] ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains](../../ACL2025/knowledge_editing/chainedit_propagating_ripple_effects_in_llm.md)
+- [\[CVPR 2026\] SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data](same_sparse_and_anchored_model_editing_for_heterogeneous_incremental_learning_un.md)
+- [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
+- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
+- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -179,11 +170,11 @@ The optimization objective for rank-one editing is a constrained least-squares p
 
 ## Related Papers
 
+- [\[CVPR 2026\] SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data](same_sparse_and_anchored_model_editing_for_heterogeneous_incremental_learning_un.md)
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](../../ACL2026/knowledge_editing/hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
-- [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 
 </div>
 

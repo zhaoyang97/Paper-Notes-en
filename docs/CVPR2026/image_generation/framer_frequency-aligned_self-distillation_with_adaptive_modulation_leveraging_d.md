@@ -2,66 +2,79 @@
 title: >-
   [Paper Note] FRAMER: Frequency-Aligned Self-Distillation with Adaptive Modulation Leveraging Diffusion Priors for Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Generation][Real-World Image Super-Resolution] FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teacher supervision for intermediate layers.…
+  [CVPR 2026][Image Generation][Paper Note] FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teachers to supervise intermediate layers. By applying IntraCL and InterCL contrastive losses for low-frequency (LF) and high-frequency (HF) components respectively, combined with Frequency-Adaptive Weighting
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Real-World Image Super-Resolution"
-  - "Self-Distillation"
-  - "Frequency Awareness"
-  - "Diffusion Priors"
-  - "Plug-and-Play"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 716101ef114d053c
+content_hash: a789b3c4580e691e
 ---
-
 # FRAMER: Frequency-Aligned Self-Distillation with Adaptive Modulation Leveraging Diffusion Priors for Real-World Image Super-Resolution
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.01390](https://arxiv.org/abs/2512.01390)  
 **Code**: [https://cmlab-korea.github.io/FRAMER/](https://cmlab-korea.github.io/FRAMER/)  
-**Area**: Diffusion Models / Image Generation
-**Keywords**: Real-World Image Super-Resolution, Self-Distillation, Frequency Awareness, Diffusion Priors, Plug-and-Play
+**Area**: Diffusion Models / Image Generation  
+**Keywords**: Real-world Image Super-Resolution, Self-distillation, Frequency-aware, Diffusion Priors, Plug-and-play
 
 ## TL;DR
-FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teacher supervision for intermediate layers. By applying IntraCL and InterCL contrastive losses to low-frequency (LF) and high-frequency (HF) components respectively, along with Frequency-based Adaptive Weight (FAW) and Frequency-based Adaptive Modulation (FAM), FRAMER significantly improves high-frequency detail recovery in diffusion-based real-world image super-resolution without modifying the network architecture or inference pipeline.
+FRAMER proposes a frequency-aligned self-distillation training framework that uses final-layer feature maps as teachers to supervise intermediate layers. By applying IntraCL and InterCL contrastive losses for low-frequency (LF) and high-frequency (HF) components respectively, combined with Frequency-Adaptive Weighting (FAW) and Frequency-Alignment Masking (FAM), the method significantly enhances high-frequency detail restoration in diffusion models for real-world image super-resolution without altering architecture or inference workflows.
 
 ## Background & Motivation
 
-1. **Background**: Real-world image super-resolution (Real-ISR) aims to recover high-resolution images from low-resolution inputs degraded by complex unknown distortions. Diffusion models have surpassed GANs as the dominant approach, and leveraging rich priors from pretrained text-to-image models (e.g., SD2's U-Net, SD3's DiT) is a promising direction.
-2. **Limitations of Prior Work**: Diffusion models struggle to reconstruct fine high-frequency (HF) details, often producing overly smooth results. Standard noise prediction losses apply uniform supervision across all layers and frequencies, neglecting the internal frequency hierarchy of the model.
-3. **Key Challenge**: The authors trace the problem to a fundamental low-frequency (LF) bias arising from two sources: (a) the frequency distribution of natural images is LF-dominant, which is exacerbated in LR inputs, causing the noise prediction loss to favor LF components to minimize overall loss; (b) a "LF-first, HF-later" hierarchical structure exists along network depth — LF features stabilize in early layers while HF features only converge near the final layers.
-4. **Goal**: How to apply targeted supervision to LF and HF components during training, correcting the LF bias, without altering the inference architecture?
-5. **Key Insight**: Self-distillation — treating final-layer feature maps as the teacher and intermediate layers as students. Compared to external frequency-domain losses, this avoids domain mismatch since teacher and student operate in the same feature space.
-6. **Core Idea**: Decompose the self-distillation signal by frequency band, applying intra-sample contrastive learning on LF to stabilize structure and inter-sample contrastive learning on HF to sharpen details, with adaptive mechanisms that match the internal frequency hierarchy of the model.
+1. **Background**: Real-world Image Super-Resolution (Real-ISR) aims to recover high-resolution (HR) images from inputs with complex unknown degradations. Diffusion models have surpassed GANs as the mainstream approach, with leveraging pre-trained T2I priors (e.g., SD2 U-Net, SD3 DiT) being a promising direction.
+2. **Limitations of Prior Work**: Diffusion models struggle to reconstruct fine HF details, often producing over-smoothed results. Standard noise prediction losses apply uniform supervision across all layers and frequencies, ignoring the internal frequency hierarchy of the model.
+3. **Key Challenge**: The authors trace this to a fundamental Low-Frequency (LF) bias originating from two aspects: (a) natural image distributions are dominated by LF, which is exacerbated in LR inputs, causing noise prediction loss to favor LF; (b) a "LF-first, HF-later" hierarchical structure exists along the network depth—LF features stabilize in early layers, while HF features converge only near the final layers.
+4. **Goal**: How to apply targeted supervision to LF and HF during training to correct the LF bias without changing the inference architecture?
+5. **Key Insight**: Self-distillation—using final-layer feature maps as teachers and intermediate layers as students. Compared to external frequency domain losses, teacher-student alignment within the same feature space avoids domain mismatch issues.
+6. **Core Idea**: Decompose self-distillation signals by frequency. Apply intra-sample contrastive learning (IntraCL) for LF to stabilize structure and inter-sample contrastive learning (InterCL) for HF to sharpen details, using adaptive mechanisms to match internal frequency maturity.
 
 ## Method
 
 ### Overall Architecture
-FRAMER is a pure training strategy that adds auxiliary self-distillation terms to the standard noise prediction loss. At inference, the original backbone is used with no modifications. At each denoising step, the final-layer feature map serves as the teacher and all intermediate layers serve as students. Teacher and student feature maps are decomposed into LF and HF bands via FFT masking. The LF band is stabilized via IntraCL (intra-sample contrastive loss); the HF band is sharpened via InterCL (inter-sample contrastive loss). FAW and FAM adaptively modulate distillation strength per layer and per frequency band.
+FRAMER addresses the persistent "insufficient HF detail" problem in diffusion-based SR by adding auxiliary supervision during the training phase only. For each denoising step, the feature map of the final layer is treated as the "teacher" (where HF has converged most fully), directing intermediate layer "students" to align with it. Crucially, alignment is not uniform: teacher and student features are split into LF and HF bands via FFT masks. LF features undergo IntraCL to stabilize global structure, while HF features undergo InterCL to sharpen instance-specific details. Two adaptive mechanisms, FAW and FAM, scale distillation intensity according to the maturity of each layer and frequency band. All auxiliary heads are removed at test time, resulting in zero inference overhead.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Features per Denoising Step<br/>Student (Interm.) + Teacher (Final)"] --> B["FFT Mask Splitting<br/>Low Frequency (LF) / High Frequency (HF)"]
+    B -->|Low Frequency LF| C["IntraCL<br/>Intra-sample contrast for global structure"]
+    B -->|High Frequency HF| D["InterCL<br/>Inter-sample contrast for sharpening details"]
+    C --> E["FAW (Freq-Adaptive Weight)<br/>Scale based on layer maturity"]
+    D --> E
+    E --> F["FAM (Alignment Gating)<br/>Suppress distillation for immature layers"]
+    F --> G["Combine with Noise Pred Loss<br/>= Total Loss (Training Only)"]
+    G --> H["Remove Aux Heads at Test<br/>Zero Inference Overhead"]
+```
 
 ### Key Designs
 
-1. **Intra Contrastive Loss (IntraCL) — Low-Frequency Stabilization**:
+**1. IntraCL (LF Intra-sample Contrastive): Stabilizing global structure across samples to avoid "false negative" bias.**
 
-    - Function: Stabilizes globally shared structural representations in the LF band.
-    - Mechanism: For each intermediate layer $i$, the cosine similarity between its LF representation $\mathbf{F}_{LF}^{(i)}$ and the teacher's LF representation $\mathbf{F}_{LF}^{(n)}$ forms the positive pair, while the LF representation of a randomly sampled layer $j$ forms the negative pair. The loss takes a log-softmax form: $\mathcal{L}_{IntraCL}^{(i)} = -\log \frac{\exp(s_{+,LF}^{(i)})}{\exp(s_{+,LF}^{(i)}) + \exp(s_{-,LF}^{(i)})}$. Cross-sample negatives are not used, as LF features exhibit high inter-sample similarity and in-batch negatives would become false negatives.
-    - Design Motivation: LF features are highly similar across training samples (shared structural information), making in-batch negatives prone to false negatives. Intra-sample contrast is sufficient to drive student convergence toward the teacher via inter-layer discrepancies.
+Directly applying a single noise prediction loss to all frequencies causes the model to favor the dominant LF and delay HF learning. IntraCL takes over the LF component: for each intermediate layer $i$, its LF representation $\mathbf{F}_{LF}^{(i)}$ and the teacher LF representation $\mathbf{F}_{LF}^{(n)}$ form a positive pair. LF representations from a random layer $j$ of the same image form negative pairs, optimized via log-softmax:
 
-2. **Inter Contrastive Loss (InterCL) — High-Frequency Sharpening**:
+$$\mathcal{L}_{IntraCL}^{(i)} = -\log \frac{\exp(s_{+,LF}^{(i)})}{\exp(s_{+,LF}^{(i)}) + \exp(s_{-,LF}^{(i)})}$$
 
-    - Function: Sharpens instance-specific detail representations in the HF band.
-    - Mechanism: Pulls the student's HF representation closer to the teacher's while pushing away two types of negatives: (i) HF representations from randomly sampled layers of the same image (enforcing inter-layer progression); (ii) HF representations from other images in the batch (encouraging instance discrimination). $\mathcal{L}_{InterCL}^{(i)} = -\log \frac{\exp(s_{+,HF}^{(i)})}{\exp(s_{+,HF}^{(i)}) + \exp(s_{-,HF}^{(i)}) + S_{neg}^{(i)}}$.
-    - Design Motivation: HF features have low inter-sample similarity (instance-specific details), making in-batch negatives informative true negatives. This directly counteracts the LF bias by providing targeted optimization signals for the slowly converging HF components.
+Negative samples are restricted to other layers of the *same* image rather than other images in the batch. Since LF features carry global structure shared across samples, treating other images as negative pairs would push away truly similar structures (false negatives). Layer-wise intra-sample contrast is sufficient for student-to-teacher LF convergence.
 
-3. **Frequency-based Adaptive Weight (FAW) — Adaptive Weighting**:
+**2. InterCL (HF Inter-sample Contrastive): Direct sharpening signals for the slowest-to-converge HF.**
 
-    - Function: Adaptively modulates distillation weight per layer and per frequency band based on discrepancy from the teacher.
-    - Mechanism: Computes the FFT magnitude mean $E_{LF}^{(i)}$, $E_{HF}^{(i)}$ for each layer's LF/HF bands and the relative discrepancy $\Delta^{(i)}$ from the final layer. The weight follows the inverse-discrepancy formula $w^{(i)} = 1/(1+\Delta^{(i)})$. Frequency bands closer to the teacher receive higher weights; early-layer LF weights exceed HF weights.
-    - Design Motivation: Matches the "LF-first, HF-later" hierarchical structure, avoiding redundant gradients for already-converged LF layers while providing sufficient signals for immature HF layers.
+For HF, instance-specific details must be distinguished. InterCL pulls student HF closer to teacher HF while pushing away two types of negative samples: HF representations from random layers of the same image (encouraging hierarchical progression) and HF representations from other images in the batch (encouraging instance discrimination):
+
+$$\mathcal{L}_{InterCL}^{(i)} = -\log \frac{\exp(s_{+,HF}^{(i)})}{\exp(s_{+,HF}^{(i)}) + \exp(s_{-,HF}^{(i)}) + S_{neg}^{(i)}}$$
+
+Batch-wise negative samples are used here because HF carries specific details with low cross-sample similarity. Other images' HF components serve as information-rich "true negatives," providing a targeted optimization path to counteract LF bias.
+
+**3. FAW (Frequency-Adaptive Weighting): Allocating distillation strength based on hierarchical maturity.**
+
+Network depth exhibits a "LF-first, HF-later" maturity. FAW dynamically adjusts weights by calculating the mean FFT magnitudes $E_{LF}^{(i)}$, $E_{HF}^{(i)}$ for each layer and their relative difference $\Delta^{(i)}$ compared to the teacher. Weights are assigned as $w^{(i)} = 1/(1+\Delta^{(i)})$. Higher weights are given to frequency bands closer to the teacher, naturally focusing early layers on LF and deep layers on HF.
+
+**4. FAM (Frequency-Alignment Masking): Suppressing immature early layers to prevent collapse.**
+
+While FAW handles weight distribution, early layers far from the teacher risk collapsing under forced hard alignment. FAM introduces a gate based on student-teacher alignment scores (using ReLU and stop-gradient). This gate suppresses distillation signals when a layer is insufficiently aligned, gradually releasing the constraint as the layer matures.
 
 ### Loss & Training
-The final training objective is $\mathcal{L}_{total} = \mathcal{L}_{noise} + \sum_i \mathcal{L}_{FRAMER}^{(i)}$, where the FRAMER term is a weighted sum of FAW- and FAM-gated IntraCL and InterCL. FAM gates distillation strength via a student–teacher alignment score (with ReLU and stop-gradient) to prevent collapse in early layers. All auxiliary heads are removed at test time, incurring zero inference overhead.
+The final training objective augments the original noise prediction loss with FRAMER auxiliary terms: $\mathcal{L}_{total} = \mathcal{L}_{noise} + \sum_i \mathcal{L}_{FRAMER}^{(i)}$, where each layer's term is the weighted sum of IntraCL and InterCL modulated by FAW and FAM. Auxiliary heads exist only during training, ensuring no added inference cost.
 
 ## Key Experimental Results
 
@@ -77,45 +90,44 @@ The final training objective is $\mathcal{L}_{total} = \mathcal{L}_{noise} + \su
 | RealSR | MANIQA↑ | 0.484 | 0.412 | +17.5% | 0.564 | 0.459 | +22.9% |
 
 ### Ablation Study
-The paper ablates the effectiveness of the final-layer teacher and random-layer negatives (detailed data in supplementary material). Core findings:
+Ablations verified the effectiveness of the final-layer teacher and random-layer negatives. Core findings:
 
-| Configuration | Effect |
+| Configuration | Effect Description |
 |------|---------|
-| Noise prediction loss only (baseline) | Severe LF bias, insufficient HF recovery |
+| Noise Pred Loss only (Baseline) | Severe LF bias, insufficient HF recovery |
 | + IntraCL | Improved LF stability, more consistent structure |
 | + InterCL | Significant sharpening of HF details |
-| + FAW | Layer-aware weight allocation, balanced overall improvement |
-| + FAM | Prevents early-layer collapse, more stable training |
+| + FAW | Hierarchy-aware weight allocation, balanced improvement |
+| + FAM | Prevents early layer collapse, stabilizes training |
 
 ### Key Findings
-- FRAMER yields the most significant gains on perceptual metrics (MANIQA, MUSIQ), with a 21.4% MANIQA improvement on DrealSR, confirming substantially enhanced HF recovery.
-- Effective across both U-Net and DiT architectures, validating architecture-agnostic applicability.
-- Advantages are more pronounced on the more challenging RealLR200 and RealLQ250 datasets.
-- Training overhead is minimal (only auxiliary loss computation); inference overhead is zero.
+- FRAMER yields the most significant improvements in perceptual metrics (MANIQA, MUSIQ), with a 21.4% MANIQA gain on DrealSR, confirming enhanced HF restoration.
+- Effective across both U-Net and DiT backbones, validating architecture agnosticism.
+- Gains are even more pronounced on challenging datasets like RealLR200 and RealLQ250.
+- Minimal training overhead (auxiliary loss calculation only) and zero inference overhead.
 
 ## Highlights & Insights
-- **Depth of the Frequency Hierarchy Finding**: The paper not only identifies the LF bias but also reveals the "LF-first, HF-later" phenomenon through layer-wise cosine similarity analysis, providing strong empirical motivation for frequency-decomposed self-distillation.
-- **Differentiated Design for LF/HF Contrastive Learning**: LF uses intra-sample contrast (to avoid false negatives) while HF uses inter-sample contrast (to exploit true negatives) — an elegant design grounded in the analysis of inter-sample feature similarity.
-- **Practical Plug-and-Play Value**: Requiring no architectural changes and no inference overhead, FRAMER can be directly applied to SR training with any diffusion backbone, offering broad practical utility.
+- **In-depth Frequency Hierarchy Discovery**: The paper goes beyond noting LF bias by revealing the "LF-first, HF-later" maturity through hierarchical cosine similarity analysis, providing strong empirical evidence for frequency-split self-distillation.
+- **Differentiated LF/HF Contrastive Design**: Using intra-sample contrast for LF (to avoid false negatives) and inter-sample contrast for HF (to leverage true negatives) is a sophisticated design based on cross-sample similarity analysis.
+- **Plug-and-play Utility**: It does not alter architecture or increase inference cost, making it highly practical for any diffusion-based SR framework.
 
 ## Limitations & Future Work
-- Frequency decomposition relies on fixed FFT binary masks to partition LF/HF bands, which may not be optimal; learnable frequency splitting is worth exploring.
-- In U-Net, additional 1×1 convolutions and resize operations are required to align feature dimensions, increasing integration complexity.
-- The paper does not investigate generalization to other low-level vision tasks such as denoising or deblurring.
-- Hyperparameters introduced by FAW/FAM (e.g., epsilon) may require per-backbone tuning.
-- The LF/HF dichotomy may be overly coarse; three-band or continuous frequency decomposition could yield further improvements.
-- Detailed ablation data are relegated to supplementary material, leaving the main paper without explicit per-component incremental results.
+- Fixed binary FFT masks are used for LF/HF splitting; learnable frequency partitioning could be explored.
+- U-Net integration requires additional 1x1 convolutions and resizing for dimensionality alignment, increasing complexity.
+- Effectiveness on other low-level vision tasks (denoising, deblurring) has not yet been explored.
+- Hyperparameters introduced by FAW/FAM (e.g., epsilon) might require tuning for different backbones.
+- The binary LF/HF split might be too coarse; tri-band or continuous decomposition might yield better results.
 
 ## Related Work & Insights
-- **vs. SeeSR**: Methods such as SeeSR apply uniform noise prediction loss across all layers and frequencies without exploiting the internal frequency hierarchy; FRAMER directly addresses this gap through frequency-decomposed self-distillation.
-- **vs. Frequency-Aware Diffusion Methods**: Existing frequency-aware approaches (e.g., FreeU) rely on fixed inference-time modulation; FRAMER adaptively adjusts supervision during training based on each layer's actual state.
-- **vs. Self-Distillation Methods**: Conventional self-distillation aligns entire feature maps, implicitly inheriting the LF bias; FRAMER explicitly counteracts it through frequency separation.
+- **vs SeeSR**: Unlike methods that use a unified loss across all layers and frequencies, FRAMER exploits internal frequency hierarchies through split distillation.
+- **vs Frequency-aware Diffusion**: Existing methods (e.g., FreeU) rely on fixed inference-time modulation; FRAMER adaptively adjusts supervision during training based on layer states.
+- **vs Self-distillation**: Traditional self-distillation aligns entire feature maps, implicitly inheriting LF bias. FRAMER explicitly counters LF bias via frequency separation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The frequency-aligned self-distillation framework is novel in design, though individual components (contrastive learning, adaptive weighting) are relatively standard.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four datasets, six metrics, cross-architecture evaluation on U-Net and DiT, and comprehensive ablation analysis.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly derived; the logical chain from observation to method is complete and figures are intuitive.
-- Value: ⭐⭐⭐⭐ The plug-and-play training strategy is broadly applicable and can directly enhance existing SR methods.
+- Novelty: ⭐⭐⭐⭐ The framework for frequency-aligned self-distillation is novel, though individual components (contrastive learning, adaptive weighting) are standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing across four datasets, six metrics, two architectures (U-Net/DiT), and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, logical progression from observation to methodology, and intuitive visualizations.
+- Value: ⭐⭐⭐⭐ A plug-and-play training strategy with high applicability for enhancing existing SR methods without cost.
 
 <!-- RELATED:START -->
 
@@ -127,7 +139,7 @@ The paper ablates the effectiveness of the final-layer teacher and random-layer 
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](../../AAAI2026/image_generation/realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](duo-vsr_dual-stream_distillation_for_one-step_video_super-resolution.md)
 - [\[ICML 2026\] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution](../../ICML2026/image_generation/q-dit4sr_exploration_of_detail-preserving_diffusion_transformer_quantization_for.md)
-- [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](../../AAAI2026/image_generation/continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
+- [\[CVPR 2025\] Self-Supervised ControlNet with Spatio-Temporal Mamba for Real-World Video Super-Resolution](../../CVPR2025/image_generation/self-supervised_controlnet_with_spatio-temporal_mamba_for_real-world_video_super.md)
 
 </div>
 

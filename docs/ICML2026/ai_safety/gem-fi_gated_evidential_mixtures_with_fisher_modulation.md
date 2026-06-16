@@ -2,149 +2,148 @@
 title: >-
   [Paper Note] GEM-FI: Gated Evidential Mixtures with Fisher Modulation
 description: >-
-  [ICML 2026][AI Safety][Evidential Deep Learning] Addressing the issues of overconfidence on out-of-distribution (OOD) samples and the difficulty of single-head architectures to represent multimodal epistemic uncertainty…
+  [ICML 2026][AI Safety][Evidential Deep Learning] This paper addresses the issues of overconfidence in out-of-distribution (OOD) samples and the difficulty of single-head architectures in expressing multimodal epistemic uncertainty in Evidential Deep Learning (EDL). It proposes a three-component suite, GEM-Core/MIX/FI: gating evidence with learned feature energy, appr
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "Evidential Deep Learning"
-  - "Energy-based gating"
-  - "Fisher Information"
-  - "Mixture of Beliefs"
-  - "Single-pass OOD"
+  - ICML 2026
+  - AI Safety
+  - Evidential Deep Learning
+  - Energy-based gating
+  - Fisher Information
+  - Mixture of Beliefs
 date: 2026-05-08
-content_hash: 3bdbe19c43fb4cfe
+content_hash: 5bf134d8d051db5c
 ---
-
 # GEM-FI: Gated Evidential Mixtures with Fisher Modulation
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.03750](https://arxiv.org/abs/2605.03750)  
 **Code**: None  
 **Area**: Uncertainty Estimation / Evidential Deep Learning / OOD Detection  
-**Keywords**: Evidential Deep Learning, Energy-based gating, Fisher Information, Mixture of Beliefs, Single-pass OOD
+**Keywords**: Evidential Deep Learning, Energy-based gating, Fisher Information, Mixture of Beliefs, Single-pass OOD Detection
 
 ## TL;DR
-Addressing the issues of overconfidence on out-of-distribution (OOD) samples and the difficulty of single-head architectures to represent multimodal epistemic uncertainty in Evidential Deep Learning (EDL), this paper proposes a tripartite framework, GEM-Core/MIX/FI. It gates evidence using learned feature energy, approximates ensembles via single-pass inference with mixture evidence heads, and stabilizes mixture assignment through Fisher information regularization. It outperforms DAEDL on OOD detection (e.g., CIFAR-10→SVHN/CIFAR-100) while maintaining single-pass efficiency.
+This paper addresses the issues of overconfidence in out-of-distribution (OOD) samples and the difficulty of single-head architectures in expressing multimodal epistemic uncertainty in Evidential Deep Learning (EDL). It proposes a three-component suite, GEM-Core/MIX/FI: gating evidence with learned feature energy, approximating ensembles via a single-pass mixture of evidential heads, and stabilizing mixture assignments with Fisher information regularization. It outperforms DAEDL on OOD detection tasks (CIFAR-10 → SVHN/CIFAR-100) while maintaining single-pass efficiency.
 
 ## Background & Motivation
 
-**Background**: Reliable predictive uncertainty is critical for OOD and high-risk scenarios. Bayesian Neural Networks (BNNs) are theoretically optimal but computationally expensive. MC-dropout and Deep Ensembles require multiple forward passes. EDL provides epistemic uncertainty in a single pass by predicting Dirichlet concentrations $\alpha$, making it a mainstream choice for latency-constrained scenarios. Density-aware variants like DAEDL utilize offline Gaussian Discriminant Analysis (GDA) for density estimation to rescale evidence, further improving calibration.
+**Background**: Reliable predictive uncertainty is crucial for OOD and high-risk scenarios. BNNs are theoretically optimal but computationally expensive; MC-dropout and Deep Ensembles require multiple forward passes. EDL provides epistemic uncertainty in a single forward pass by predicting Dirichlet concentrations $\alpha$, making it a mainstream choice for latency-constrained scenarios. Density-aware variants like DAEDL improve calibration by using offline GDA for feature density estimation to rescale evidence.
 
-**Limitations of Prior Work**: (1) Standard EDL remains overconfident under distribution shift or OOD, even if accurate on in-distribution (ID) data. (2) Density estimation in DAEDL is offline and decoupled from training; density proxies may fail when features drift. (3) Single-head evidential models struggle to represent multimodal epistemic uncertainty near complex decision boundaries (as shown in Figure 2(a), DAEDL collapses into overconfident assignments at non-convex boundaries). (4) Energy-based ID/OOD separation is typically post-hoc and does not participate in the evidence generation process. (5) Deep Ensembles capture multimodality but violate single-pass constraints.
+**Limitations of Prior Work**: (1) Standard EDL remains overconfident under distribution shift/OOD even if accurate on ID; (2) DAEDL's density estimation is offline and decoupled from training, leading to inaccurate density proxies when features drift; (3) Single-head evidential models struggle to represent multimodal epistemic uncertainty near complex decision boundaries (Paper Figure 2(a) shows DAEDL collapsing to an overconfident assignment at non-convex boundaries); (4) Energy-based ID/OOD distinction is typically post-hoc (training first, then tuning temperature), not participating in evidence generation or enforcing local smoothness; (5) Deep Ensembles capture multimodality but violates single-pass efficiency.
 
-**Key Challenge**: Incorporating "support" signals into the evidence mechanism while maintaining single-pass inference; representing multimodal epistemic uncertainty without relying on ensembles.
+**Key Challenge**: Integrating "support" signals into the evidence mechanism while maintaining single-pass inference; expressing multimodal epistemic uncertainty without accumulating ensembles.
 
-**Goal**: (1) Design an in-model, learnable support gate acting directly on evidence. (2) Replace ensembles with a mixture of evidential heads sharing a single backbone. (3) Introduce Fisher information regularization to prevent head collapse and ensure stable mixture weights.
+**Goal**: (1) Design an in-model, learnable support gate acting directly on evidence; (2) Replace ensembles with a mixture of evidential heads sharing a single backbone; (3) Introduce Fisher information regularization to prevent head collapse and ensure stable mixture weights.
 
-**Key Insight**: Energy $E(x)$ can be viewed as an inverse indicator of representation-level support—high energy corresponds to low support and naturally maps to OOD regions. Utilizing it as an in-model gate rather than a post-hoc score allows for the direct suppression of evidence in low-support regions during training. Multimodal epistemic uncertainty is captured via multiple heads and a learned router instead of multiple forward passes.
+**Key Insight**: Treat energy $E(x)$ as an inverse indicator for representation-level support—high energy implies low support, naturally corresponding to OOD. Using it as an in-model gate rather than a post-hoc score allows for direct suppression of evidence in low-support regions during training. Multimodal epistemic uncertainty is captured not through multiple passes, but via multiple heads combined with a learned router.
 
-**Core Idea**: Feature energy $\rightarrow$ bounded gate $\rightarrow$ direct multiplication with Dirichlet evidence + router-based mixture of multiple evidential heads + Fisher regularization for mixture stability.
+**Core Idea**: Feature energy → Bounded gate → Direct multiplication into Dirichlet evidence + Router-based mixture of evidential heads + Fisher regularization for stable mixing.
 
 ## Method
 
 ### Overall Architecture
-The backbone $f_\theta:\mathcal{X}\to\mathbb{R}^d$ (constrained by spectral normalization for Lipschitz continuity) extracts features $z=f_\theta(x)$. GEM-Core adds an energy head $E_\psi(z)$, an integration gate $G_\eta$, a single evidential head $g_\phi$, and a density proxy $\rho(z)$. GEM-MIX expands the single head into $K$ evidential heads $\{g_{\phi^{(k)}}\}$ with a router $h_\omega$ providing mixture weights $\pi(x)$. GEM-FI incorporates Fisher regularization $\mathcal{L}_{FI}$ and FI modulation during training. Inference is single-pass and gradient-free, predicting the mean $\mathbb{E}_\alpha[\pi]$ and using $\alpha_0$ for epistemic uncertainty.
+The method resolves the contradiction between EDL's overconfidence in OOD and the difficulty of single-head architectures expressing multimodal uncertainty while preserving single-pass inference. The approach embeds "support" signals end-to-end into the Dirichlet evidence generation process. It uses multiple evidential heads with a shared backbone plus a router to approximate an ensemble in one forward pass, stabilized by Fisher information regularization. The three components are layered: GEM-Core for evidence gating, GEM-MIX for multimodal mixtures, and GEM-FI for stabilizing mixture weights. At inference, a single gradient-free forward pass uses the mixed Dirichlet concentration $\alpha_0$ to derive epistemic uncertainty.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image → Shared Backbone (Spectral Norm) → Feature z"] --> B["GEM-Core: Distance-Aware Evidence Modulation<br/>Energy head E_ψ → ŝ → Bounded gate s(x), GMM density ρ(z) as hard gate"]
+    B --> C["GEM-MIX: Single-pass Evidential Mixture<br/>K shared-backbone heads α^(k) + router π(x) mixture"]
+    C --> D["GEM-FI: Fisher Information Reg. + Modulation (Training only)<br/>Suppress high-sensitivity head weights to prevent collapse"]
+    D --> E["Prob. Space Gating p̂ = p⊙s / Normalization"]
+    E --> F["Single Forward Output α_0,mix<br/>Read Epistemic/Aleatoric Uncertainty"]
+```
 
 ### Key Designs
 
-1.  **Distance-aware Evidence Modulation from Energy (GEM-Core)**:
-    - **Function**: Directly modulates evidence via a bounded gate derived from representation-level support signals, forcing conservative predictions for OOD inputs.
-    - **Mechanism**: Higher energy implies lower support (inversely correlated with feature density). A lightweight MLP computes scalar energy $E(x)=E_\psi(z)$, transformed via sigmoid into $\hat s(x)=\sigma(E(x))\in(0,1)$. The pair $[z,\hat s(x)]$ is fed into the integration gate $G_\eta$ to output per-class gates $s(x)\in[s_{\min},s_{\max}]^C$. Simultaneously, a GMM fits ID training features to create a density scaler $\rho(z)=\sigma(\log p_{GMM}(z))^\gamma$ as a "hard safety rail" multiplied by evidence: $\alpha_c(x)=\rho(z)\cdot\exp(\tilde u_c(x))+\epsilon$. Finally, probability-space gating is applied: $\hat p(x)=p(x)\odot s(x)/\mathbf{1}^\top(p(x)\odot s(x))$. The loss $\mathcal{L}_{core}=\mathbb{E}[\|e_y-\hat p(x)\|_2^2 + \lambda_{KL}\mathrm{KL}[\mathrm{Dir}(\alpha)\|\mathrm{Dir}(\mathbf{1})]]$ allows end-to-end learning of the gate.
-    - **Design Motivation**: Unlike DAEDL's static density, the learnable in-model gate enables the network to identify which representation regions should suppress evidence. Multiplicative gating acts earlier than post-hoc scoring, and hard bounds $[s_{\min},s_{\max}]\subset(0,1)$ ensure Lipschitz smoothness (Proposition 3.2).
+**1. Distance-Aware Evidence Modulation (GEM-Core): Integrating Support Signals Online**
 
-2.  **Mixture of Evidential Beliefs for Single-pass Inference (GEM-MIX)**:
-    - **Function**: Uses $K$ evidential heads with a shared backbone and a learned router to represent multimodal epistemic uncertainty, achieving ensemble-level expressiveness in a single forward pass.
-    - **Mechanism**: Each head outputs logits $u^{(k)}(x)$, transformed into $\alpha^{(k)}(x)$ after clipping and $\rho(z)$ scaling. The predicted mean is $p^{(k)}_c=\alpha^{(k)}_c/\sum_j \alpha^{(k)}_j$. The router $\pi(x)=\mathrm{softmax}(h_\omega([z,\hat s(x)]))\in\Delta^{K-1}$ provides mixture weights. The mixture prediction is $p_{mix}(y=c|x)=\sum_k \pi_k(x) p^{(k)}_c(x)$, and the total mixture concentration is $\alpha_{0,mix}=\sum_k \pi_k \alpha_0^{(k)}$. Loss $\mathcal{L}_{mix}=\mathbb{E}[-\log \hat p_y(x) + \lambda_{KL}\sum_k \pi_k(x)\mathrm{KL}[\mathrm{Dir}(\alpha^{(k)})\|\mathrm{Dir}(\mathbf{1})]]$.
-    - **Design Motivation**: Single-head models often collapse to overconfident solutions near complex boundaries. Multiple heads with a router (a "mixture of beliefs") can specialize in different regions, preserving multimodal structures while backbone reuse keeps inference costs minimal.
+The limitation of DAEDL is that its density estimation is offline and decoupled from training, making density rankings inaccurate as features drift. Ours implements an in-model, learnable gate: energy is defined as the inverse of support (anti-correlated with feature density). A lightweight MLP computes scalar energy $E(x)=E_\psi(z)$, transformed via sigmoid into $\hat s(x)=\sigma(E(x))\in(0,1)$. Then $[z, \hat s(x)]$ is fed into an integration gate $G_\eta$ to output per-class bounded gates $s(x)\in[s_{\min},s_{\max}]^C$. During evidence generation, a density proxy $\rho(z)=\sigma(\log p_{GMM}(z))^\gamma$, fitted offline on ID features via GMM, acts as a "hard safety gate": $\alpha_c(x)=\rho(z)\cdot\exp(\tilde u_c(x))+\epsilon$. Finally, probability-space gating is applied: $\hat p(x)=p(x)\odot s(x)/\mathbf{1}^\top(p(x)\odot s(x))$. Training utilizes $\mathcal{L}_{core}=\mathbb{E}[\|e_y-\hat p(x)\|_2^2 + \lambda_{KL}\mathrm{KL}[\mathrm{Dir}(\alpha)\|\mathrm{Dir}(\mathbf{1})]]$, with gradients flowing back to $E_\psi$ and $G_\eta$, allowing the gate to learn which representation regions should suppress evidence. Multiplicative gating acts earlier than post-hoc scores, and the hard bounds $[s_{\min},s_{\max}]\subset(0,1)$ ensure Lipschitz smoothness (Proposition 3.2)—combining GMM hard gates with soft learned gates provides both a safety floor and adaptability.
 
-3.  **Fisher Information Regularization + Modulation (GEM-FI)**:
-    - **Function**: Uses Fisher Information (FI) to approximate the local sensitivity of each head, penalizing heads that are frequently chosen but highly sensitive to avoid head collapse and generate smoother boundary uncertainty.
-    - **Mechanism**: The FI proxy $\widehat{\mathrm{FI}}_k(x)$ is approximated by the squared norm of the gradient of log-likelihood with respect to logits. The regularization term $\mathcal{L}_{FI}=\mathbb{E}_x[\sum_k \pi_k(x)\widehat{\mathrm{FI}}_k(x)]$ penalizes the "high $\pi$ × high FI" combination. During training, the router output is modulated: $\tilde\pi_k^{mod}(x)\propto \tilde\pi_k(x)\exp(\lambda_{FI}(1-\bar{\mathrm{FI}}_k(x)))$, pushing weights toward "low-sensitivity" heads. Total loss includes energy terms $\mathcal{L}_{EBM}$ and contrastive entropy $\mathcal{L}_{UNC}$.
-    - **Design Motivation**: Routers often collapse into a single-head solution. FI measures local "sharpness." Penalizing sensitive heads ensures mixture weights are both discriminative and stable.
+**2. Single-pass Evidential Mixture (GEM-MIX): Approximating Ensembles via Router**
+
+Single-head models often collapse to overconfident solutions near complex boundaries, yet ensembles violate single-pass constraints. Ours expands the single head into $K$ evidential heads sharing a backbone: each head outputs logits $u^{(k)}(x)$, resulting in $\alpha^{(k)}(x)$ after clipping and $\rho(z)$ modulation. Predicted means are $p^{(k)}_c=\alpha^{(k)}_c/\sum_j \alpha^{(k)}_j$. A router provides mixture weights $\pi(x)=\mathrm{softmax}(h_\omega([z,\hat s(x)]))\in\Delta^{K-1}$. The mixed prediction is $p_{mix}(y=c|x)=\sum_k \pi_k(x) p^{(k)}_c(x)$, with total concentration $\alpha_{0,mix}=\sum_k \pi_k \alpha_0^{(k)}$, followed by the shared per-class gate to produce $\hat p(x)$. The loss $\mathcal{L}_{mix}=\mathbb{E}[-\log \hat p_y(x) + \lambda_{KL}\sum_k \pi_k(x)\mathrm{KL}[\mathrm{Dir}(\alpha^{(k)})\|\mathrm{Dir}(\mathbf{1})]]$ weights the KL term by $\pi_k$ to avoid over-regularizing less-active heads. Different heads specialize in different regions of the boundary ("mixture of beliefs"), preserving multimodal structures while backbone reuse ensures near-constant inference cost.
+
+**3. Fisher Information Regularization + Modulation (GEM-FI): Preventing Collapse and Smoothing Boundaries**
+
+Relying solely on the router often leads to weight collapse where one head dominates. Fisher Information (FI) measures local "sharpness"—sensitive heads react strongly to perturbations and lack stability. Ours computes an FI proxy $\widehat{\mathrm{FI}}_k(x)$ (approximated by the squared norm of the log-likelihood gradient w.r.t. logits) and penalizes the "high $\pi$ × high FI" combination via $\mathcal{L}_{FI}=\mathbb{E}_x[\sum_k \pi_k(x)\widehat{\mathrm{FI}}_k(x)]$. During training, router outputs are modulated as $\tilde\pi_k^{mod}(x)\propto \tilde\pi_k(x)\exp(\lambda_{FI}(1-\bar{\mathrm{FI}}_k(x)))$, where $\bar{\mathrm{FI}}_k=\widehat{\mathrm{FI}}_k/\sum_j\widehat{\mathrm{FI}}_j$ is the normalized sensitivity, pushing weights toward low-sensitivity heads. Two auxiliary losses sharpen boundaries: an energy term $\mathcal{L}_{EBM}=\mathbb{E}_x[\mathrm{softplus}(\mathrm{clip}(E_\psi(z),-\tau,\tau))]+\mathcal{L}_{EBM}^{neg}$ (including a margin loss on VOS synthetic negative samples), and a contrastive entropy term $\mathcal{L}_{UNC}=\beta_{id}\mathbb{E}_x[H(\hat p)]-\beta_{ood}\mathbb{E}_{x^{ood}}[H(\hat p(x^{ood}))]$ to encourage ID low entropy and OOD high entropy. The total objective is $\mathcal{L}_{GEM-FI}=\mathcal{L}_{mix}+\lambda_{FI}\mathcal{L}_{FI}+\lambda_{EBM}\mathcal{L}_{EBM}+\lambda_{UNC}\mathcal{L}_{UNC}$. Since FI modulation is training-only, stability is achieved without inference overhead. Figure 2(b) illustrates that GEM-FI preserves multimodality on non-convex boundaries where DAEDL collapses.
 
 ### Loss & Training
-Spectral normalization is applied to the backbone and gate pathways to satisfy Lipschitz assumptions. GMM is pre-fitted on ID features. The number of heads $K$ (default $\ge 2$) and hyperparameters $\lambda_{FI}, \lambda_{EBM}, \lambda_{UNC}$ are selected via a validation set. VOS is utilized for boundary sharpening in GEM-FI.
+Spectral normalization is applied to both the backbone and gate pathways to satisfy the Lipschitz assumptions in Section 3.1. GMM is pre-fitted on ID training features. The number of evidential heads $K$ (default $\ge 2$) and hyperparameters $\lambda_{FI}, \lambda_{EBM}, \lambda_{UNC}$ are selected via validation. VOS synthetic negative sampling is enabled only for GEM-FI as an auxiliary boundary sharpener.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation on 4 OOD pairs: MNIST→KMNIST/FMNIST and CIFAR-10→SVHN/CIFAR-100. AUPR (higher is better):
+4 OOD pairs: MNIST → KMNIST/FMNIST (Digit domain), CIFAR-10 → SVHN/CIFAR-100 (Natural images, far-OOD and near-OOD respectively). AUPR (Higher is better):
 
 | Method | CIFAR-10→SVHN (Alea./Epis.) | CIFAR-10→CIFAR-100 (Alea./Epis.) | MNIST→KMNIST (Epis.) |
 |--------|--------------------------|----------------------------------|----------------------|
 | EDL | 78.87 / 79.32 | 84.30 / 84.80 | 96.31 |
 | I-EDL | 86.32 / 85.92 | 85.55 / 84.84 | 98.33 |
 | DAEDL | 85.50 / 85.54 | 88.16 / 88.19 | 99.92 |
-| **GEM-FI** | **92.59 / 95.09** | **90.20 / 89.06** | ~100.0 |
+| R-EDL | 85.00 / 85.00 | – / – | 98.69 |
+| **GEM-FI (Ours)** | **92.59 / 95.09** | **90.20 / 89.06** | Near ceiling |
 
-CIFAR-10 ID Classification & Calibration:
+CIFAR-10 ID Classification + Calibration:
 
-| Metric | DAEDL | **GEM-FI** | $\Delta$ |
+| Metric | DAEDL | **GEM-FI (Ours)** | Gain |
 |------|-------|-----------|---------|
 | Acc | 91.11 | **93.75** | +2.64 |
-| Brier score ($\times 100$) | 14.27 | **6.81** | −7.46 |
+| Brier×100 | 14.27 | **6.81** | −7.46 |
 | Misclassification AUPR | 99.08 | **99.94** | +0.86 |
 
 ### Ablation Study
 
-| Configuration | CIFAR-10→SVHN AUPR | Note |
+| Configuration | CIFAR-10→SVHN AUPR | Description |
 |------|---------------------|------|
-| GEM-FI (Full) | 92.59 | Baseline |
-| GEM-Core only | Moderate | Validates in-model gating |
-| GEM-MIX (w/o FI) | Slighly lower | Mixture helps but tends to collapse |
-| w/o Spectral Norm | Significant drop | Calibration degrades without Lipschitz guarantee |
-| $K=1$ vs $K \ge 2$ | Improved $K \ge 2$ | Mixture size is a critical hyperparameter |
+| GEM-FI (full) | 92.59 | Full model |
+| GEM-Core only (No mixture/FI) | Intermediate | Outperforms EDL, validates in-model gate effectiveness |
+| GEM-MIX (No FI) | Slightly lower than full | Multi-head helps multimodality but prone to collapse |
+| No Spectral Norm | Decrease | Lost Lipschitz guarantees, worse calibration |
+| No VOS Negatives | Decrease | Boundary sharpening benefit disappears |
+| $K=1$ vs $K=2,3,4$ | Significant gain from $K=2$ | Mixture size is a key hyperparameter; saturates at $K=4$ |
 
 ### Key Findings
-- ID accuracy is improved (+2.64% on CIFAR-10), demonstrating that gating does not compromise ID performance but rather stabilizes it via a "hard safety rail + soft learnable gate" combination.
-- GEM-FI excels on near-OOD tasks (CIFAR-10→CIFAR-100), proving that FI modulation enables effective discrimination even when distributions are similar.
-- Calibration significantly improves, with the Brier score nearly halved, marking one of the strongest empirical results of the paper.
+- No sacrifice in ID accuracy (CIFAR-10 actually improved +2.64), indicating that gating does not degrade ID performance. The combination of IB-style hard safety gates and soft learned gates is robust.
+- GEM-FI excels even in near-OOD scenarios like CIFAR-10 → CIFAR-100 (90.20 vs 88.16), proving that Fisher modulation allows mixture weights to provide effective discrimination even when distributions are similar.
+- Ablations show all three components are indispensable. Fisher modulation's impact is particularly pronounced on datasets with complex boundaries and clear multimodality.
+- Calibration improves significantly, with Brier scores nearly halved (14.27 → 6.81), representing one of the strongest empirical results.
 
 ## Highlights & Insights
-- Upgrading "energy" from a post-hoc score to an in-model gate is a first for the EDL family, integrating support signals end-to-end into Bayesian parameterization.
-- Simulating ensemble multimodality in a single pass relies on router + FI modulation to prevent head collapse. This mechanism for measuring expert "sharpness" is potentially transferable to Mixture-of-Experts (MoE) load balancing.
-- The framework maintains single-pass efficiency while providing a complete pipeline: "Energy $\rightarrow$ Gate $\rightarrow$ Evidence $\rightarrow$ Mixture $\rightarrow$ Calibration," supported by Lipschitz smoothness and distance-aware monotonicity proofs.
+- Upgrading "energy" from a post-hoc OOD score to an in-model gate is a first in the EDL series for end-to-end integration of support signals into Dirichlet parameterization. This logic can be extended to any model outputting probability distributions (e.g., token-level LMs).
+- Simulating ensemble multimodality in a single pass depends on the router and Fisher modulation to prevent head collapse. Using Fisher Information to measure local sharpness of experts is highly relevant for MoE expert balancing.
+- The framework maintains single-pass inference while establishing a complete "energy → gate → evidence → mixture → calibration" pipeline, supported by formal theory on Lipschitz smoothness (Prop 3.2) and distance-aware monotonicity (Prop 3.4).
+- Probability-space gating $\hat p=p\odot s/\mathbf{1}^\top(p\odot s)$ is more stable than logit multiplication, avoiding softmax saturation—a useful trick for the calibration toolbox.
 
 ## Limitations & Future Work
-- Spectral normalization might slow convergence on large-scale models; experiments were limited to ResNet-level backbones.
-- Static GMM density estimation may fail during feature space drift; online GMM updates could be explored.
-- Sensitivity to VOS negative sample synthesis; performance on adversarial OOD or semantic shifts requires further validation.
-- The number of heads $K$ is currently a manual hyperparameter; data-driven adaptive gating (e.g., Dirichlet Process) is a future direction.
+- Spectral normalization is enforced on all backbone and gate layers, which may slow down convergence on large-scale models. Experiments were limited to ResNet-level backbones; scalability to ViT/Transformers remains unverified.
+- GMM density estimation requires a fixed pre-fitting; if the feature space drifts significantly, it may still fail. Online GMM updates could be considered.
+- Synthetic negative sampling (VOS) is sensitive to OOD assumptions; synthetic samples may not represent real-world OOD. The method has not been tested on aggressive adversarial OOD.
+- The mixture head count $K$ is a manual hyperparameter; making $K$ data-driven (e.g., via Dirichlet processes) would be beneficial.
 
 ## Related Work & Insights
-- **vs. EDL**: Solves the overconfidence and multimodality issues of standard EDL through energy gating and Fisher-stabilized mixtures.
-- **vs. DAEDL**: Replaces static, decoupled density estimation with in-model learnable gates, leading to superior calibration.
-- **vs. Deep Ensemble**: Achieves similar multimodal expressiveness in a single forward pass, providing a significant latency advantage.
-- **Transferable Insight**: The "support signal $\rightarrow$ bounded gate $\rightarrow$ probability-space modulation" pipeline serves as a general template for distance-aware confidence modeling in any probabilistic classifier.
+- **vs EDL (Sensoy 2018)**: Ours predicts Dirichlet parameters but adds energy gating, mixture heads, and Fisher regularization, fundamentally solving EDL's OOD overconfidence and multimodality issues.
+- **vs DAEDL**: DAEDL uses offline GDA decoupled from training. GEM-Core's gate is in-model and learnable, adapting to feature drift during training and outperforming in both calibration and OOD detection.
+- **vs MC-dropout / Deep Ensemble**: These rely on multiple passes. Ours uses a mixture-of-heads to approximate an ensemble in a single forward pass, providing a clear latency advantage.
+- **vs Energy-based OOD score (Liu 2020)**: While that is a post-hoc score, Ours utilizes energy during Dirichlet generation and ensures local smoothness via Lipschitz constraints.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Creative integration of energy and Fisher info into EDL).
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Solid AUPR/Brier results, though lacking ViT/ImageNet scales).
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure with theoretical propositions).
-- Value: ⭐⭐⭐⭐ (Significant progress for single-pass uncertainty in safety-critical applications).
+- Novelty: ⭐⭐⭐⭐ The GEM suite integrates existing concepts (EDL, energy, Fisher) into a functional single-pass multimodal uncertainty framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid results across 4 OOD pairs plus calibration; lacks large-scale (ImageNet-1K) and modern backbone (ViT) experiments.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with theoretical propositions; some derivations regarding FI modulation are slightly complex.
+- Value: ⭐⭐⭐⭐ Significant progress in single-pass uncertainty, highly relevant for safety-critical, latency-sensitive applications like autonomous driving.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-## Related Papers
-
-- [\[ICML 2026\] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy](mind_the_gap_mixtures_of_gaussians_in_approximate_differential_privacy.md)
-- [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
-- [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
-
 </div>
 
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy](mind_the_gap_mixtures_of_gaussians_in_approximate_differential_privacy.md)
 - [\[ECCV 2024\] Fisher Calibration for Backdoor-Robust Heterogeneous Federated Learning](../../ECCV2024/ai_safety/fisher_calibration_for_backdoor-robust_heterogeneous_federated_learning.md)
-- [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
 - [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 
 </div>
 

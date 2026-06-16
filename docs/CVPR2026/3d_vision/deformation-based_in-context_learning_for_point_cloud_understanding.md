@@ -2,128 +2,137 @@
 title: >-
   [Paper Note] Deformation-based In-Context Learning for Point Cloud Understanding
 description: >-
-  [CVPR 2026][3D Vision][point cloud in-context learning] This paper proposes DeformPIC, which reframes point cloud In-Context Learning from a "masked reconstruction" paradigm to a "deformation transfer" paradigm. A Deform…
+  [CVPR 2026][3D Vision][Paper Note] Ours proposes DeformPIC, which redefines point cloud In-Context Learning from the "mask reconstruction" paradigm to a "deformation transfer" paradigm. By utilizing a Deformation Extraction Network to extract task semantics and a Deformation Transfer Network to migrate deformations to query point clouds, it reduces CD b
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "point cloud in-context learning"
-  - "deformation network"
-  - "geometric reasoning"
-  - "masked point modeling"
-  - "multi-task general model"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 9a70d839d7fe60be
+content_hash: 7bc89e1ab288b97c
 ---
-
 # Deformation-based In-Context Learning for Point Cloud Understanding
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.02845](https://arxiv.org/abs/2604.02845)  
-**Code**: [link](https://github.com/linchengxing/DeformPIC)  
-**Area**: 3D Vision
-**Keywords**: point cloud in-context learning, deformation network, geometric reasoning, masked point modeling, multi-task general model
+**Code**: [Link](https://github.com/linchengxing/DeformPIC)  
+**Area**: 3D Vision  
+**Keywords**: Point Cloud In-Context Learning, Deformation Networks, Geometric Reasoning, Masked Point Modeling, Multi-task Generalist Model
 
 ## TL;DR
-This paper proposes DeformPIC, which reframes point cloud In-Context Learning from a "masked reconstruction" paradigm to a "deformation transfer" paradigm. A Deformation Extraction Network (DEN) extracts task-specific semantics, and a Deformation Transfer Network (DTN) applies the extracted deformation to the query point cloud, achieving CD reductions of 1.6/1.8/4.7 on reconstruction/denoising/registration respectively.
+Ours proposes DeformPIC, which redefines point cloud In-Context Learning from the "mask reconstruction" paradigm to a "deformation transfer" paradigm. By utilizing a Deformation Extraction Network to extract task semantics and a Deformation Transfer Network to migrate deformations to query point clouds, it reduces CD by 1.6, 1.8, and 4.7 in reconstruction, denoising, and registration tasks, respectively.
 
 ## Background & Motivation
-**Background**: 3D point cloud ICL aims to enable models to handle diverse tasks (reconstruction, denoising, registration, segmentation) from a small number of examples. Existing methods (PIC, PIC++) are built upon Masked Point Modeling (MPM).
+**Background**: 3D point cloud ICL aims to enable models to handle multiple tasks (reconstruction, denoising, registration, segmentation) through a few examples. Current methods (PIC, PIC++) are based on Masked Point Modeling (MPM).
 
-**Limitations of Prior Work**: (1) **Geometry-free**: MPM predicts target point clouds from geometry-free masked tokens, lacking explicit geometric reasoning; (2) **Train-inference mismatch**: during training the target is partially masked (allowing the model to exploit visible parts), whereas at inference the target is entirely unknown.
+**Limitations of Prior Work**: (1) **Geometry-free**: MPM predicts target point clouds from masked tokens without geometric information, lacking explicit geometric reasoning; (2) **Training-inference mismatch**: During training, the target is partially masked (visible parts are exploitable), whereas the target is completely unknown during inference.
 
-**Key Challenge**: Masked tokens are abstract placeholders that encode no geometric correspondence, forcing the model to implicitly infer spatial structure through self-attention alone.
+**Key Challenge**: Masked tokens act as abstract placeholders that do not encode geometric correspondences. Models can only implicitly infer spatial structures via self-attention.
 
-**Goal**: To equip ICL with explicit geometric manipulation capability and eliminate the inconsistency between training and inference objectives.
+**Goal**: To equip ICL with explicit geometric manipulation capabilities and eliminate the inconsistency between training and inference objectives.
 
-**Key Insight**: Tasks are reformulated as "deforming the query point cloud under prompt guidance," since deformation inherently preserves geometric continuity.
+**Key Insight**: Define the task as "deforming a query point cloud under prompt guidance," as deformation naturally preserves geometric continuity.
 
-**Core Idea**: Extract task-specific deformation information from the prompt pair via DEN, then transfer and apply it to the query point cloud via DTN.
+**Core Idea**: Extract task-specific deformation information from prompt pairs (DEN) and subsequently transfer this deformation to the query point cloud (DTN).
 
 ## Method
 
 ### Overall Architecture
-A dual-network architecture: DEN extracts a task token $\hat{T}_{\text{task}}$ from the prompt input→target pair; DTN deforms the query input under AdaLN-Zero modulation conditioned on $\hat{T}_{\text{task}}$.
+DeformPIC addresses how point cloud In-Context Learning interprets the specific task from a pair of prompts (input point cloud → target point cloud) and applies it to a query point cloud. The process is decomposed into two stages using two distinct networks. First, the Deformation Extraction Network (DEN) processes the prompt: it reads the prompt input and target to extract a task token $\hat{T}_{\text{task}}$ that describes the deformation between the pair. Second, the Deformation Transfer Network (DTN) uses this task token as an "operational instruction" to modulate a Transformer, applying the same deformation to the query input to output the deformed point cloud directly. This pipeline contains no masked tokens; both inputs and outputs are complete point clouds, ensuring consistent procedures for training and inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DEN["Deformation Extraction Network (DEN)"]
+        direction TB
+        A["Prompt Input + Target Point Cloud"] --> B["mini-PointNet encoding<br/>yields tokens T_Pi, T_Pt"]
+        B --> C["Concatenate learnable task token<br/>pass through Transformer"]
+    end
+    C --> D["Task token T_task<br/>encodes prompt deformation"]
+    Q["Query Input Point Cloud<br/>(Complete, no mask placeholders)"] --> E
+    D --> E["Deformation Transfer Network (DTN)<br/>AdaLN-Zero layer-wise injection of T_task"]
+    E --> F["Deformed Query Point Cloud<br/>(Complete output, identical train/inference)"]
+```
 
 ### Key Designs
-1. **Deformation Extraction Network (DEN)**: A mini-PointNet encodes the prompt input and target tokens, which are concatenated with a learnable task token and processed by a Transformer to extract $\hat{T}_{\text{task}} = \mathcal{E}([T_{\text{task}} \| T_{P_i} \| T_{P_t}])$. **Design Motivation**: PIC processes prompt and query jointly, but task-semantic extraction and geometric reconstruction are distinct objectives; decoupling them improves efficiency.
 
-2. **Deformation Transfer Network (DTN)**: AdaLN-Zero injects the task token into each Transformer layer:
-    $h^{(l+1)} = h^{(l)} + \sigma^{(l)} \cdot \mathcal{A}[(1+\eta^{(l)}) \cdot \text{LN}(h^{(l)}) + \kappa^{(l)}]$
-   where $\sigma, \eta, \kappa$ are generated from $\hat{T}_{\text{task}}$ via zero-initialized MLPs. **Design Motivation**: AdaLN-Zero, borrowed from DiT, enables fine-grained, layer-wise conditioning.
+**1. Deformation Extraction Network: Decoupling "Task Semantics" from "Geometric Computation"**
 
-3. **Train-Inference Consistency**: Both training and inference execute the same deformation process — the query point cloud is provided as input and the deformed point cloud is produced as output, with no masking operation required.
+Previous methods like PIC/PIC++ process prompts and queries together in a single network. However, extracting task semantics from prompts and performing geometric reconstruction on queries are distinct objectives. DeformPIC assigns the former to DEN: a mini-PointNet encodes the prompt input and target into tokens $T_{P_i}$ and $T_{P_t}$, which are concatenated with a learnable task token and processed by a Transformer to produce $\hat{T}_{\text{task}} = \mathcal{E}([T_{\text{task}} \| T_{P_i} \| T_{P_t}])$. This allows DEN to focus solely on identifying the deformation represented by the prompt pair.
+
+**2. Deformation Transfer Network: Layer-wise Task Token Injection via AdaLN-Zero**
+
+To allow the task token to guide the deformation of the query point cloud, DTN adopts the AdaLN-Zero conditioning method from DiT, injecting $\hat{T}_{\text{task}}$ into every Transformer layer:
+
+$$h^{(l+1)} = h^{(l)} + \sigma^{(l)} \cdot \mathcal{A}[(1+\eta^{(l)}) \cdot \text{LN}(h^{(l)}) + \kappa^{(l)}]$$
+
+The scaling/shift factors $\sigma^{(l)}, \eta^{(l)}, \kappa^{(l)}$ are calculated from the task token through zero-initialized MLPs. Zero initialization means $\sigma\approx0$ at the start of training, allowing the DTN to initially behave as an unconditional Transformer before gradually learning to use the task token for biased deformation, which stabilizes training.
+
+**3. Training-Inference Consistency: Eliminating Masks**
+
+The MPM paradigm suffers from a mismatch: during training, the model can see unmasked parts of the target, but during inference, the target is entirely hidden. By redefining the task as "deforming the query input," DeformPIC eliminates this mismatch. In both training and inference, DTN receives a complete query input and generates a complete deformed output without any masking operations.
+
+### A Complete Example: Applying a Registration Prompt to a Query
+Consider a registration task. Given a prompt pair where the input is a tilted airplane and the target is its upright version, the relationship is a rigid body rotation. DEN extracts $\hat{T}_{\text{task}}$ containing the rotation information. When a new, tilted query point cloud (e.g., a chair) is provided, DTN uses $\hat{T}_{\text{task}}$ to modulate the Transformer layers, resulting in an "upright" chair output. The query remains a complete point cloud throughout the process.
 
 ### Loss & Training
-- $L_2$ Chamfer Distance: $\mathcal{L} = \frac{1}{|\hat{R}|}\sum_{p \in \hat{R}} \min_{g \in R} \|p - g\|_2^2 + \frac{1}{|R|}\sum_{g \in R} \min_{p \in \hat{R}} \|g - p\|_2^2$
-- AdamW + cosine decay, lr warmup for 10 epochs, 300 total training epochs, batch size 128
+- $L_2$ Chamfer Distance: $$\mathcal{L} = \frac{1}{|\hat{R}|}\sum_{p \in \hat{R}} \min_{g \in R} \|p - g\|_2^2 + \frac{1}{|R|}\sum_{g \in R} \min_{p \in \hat{R}} \|g - p\|_2^2$$
+- AdamW + cosine decay, lr warmup for 10 epochs, 300 total epochs, batch size 128.
 
 ## Key Experimental Results
 
 ### Main Results (ShapeNet In-Context Dataset, Chamfer Distance ×1000 ↓)
 
-| Method | Reconstruction Avg | Denoising Avg | Registration Avg | Segmentation mIoU↑ |
-|---|---|---|---|---|
+| Method | Recon Avg | Denoise Avg | Reg Avg | Seg mIoU↑ |
+|:---|:---:|:---:|:---:|:---:|
 | PIC-Cat | 4.3 | 5.3 | 14.1 | 79.0 |
 | PIC-S-Cat | 6.9 | 6.5 | 24.1 | 83.8 |
 | PIC-S-Sep | 5.1 | 12.0 | 6.7 | 83.7 |
-| **DeformPIC** | **2.7** | **3.5** | **2.0** | **83.9** |
+| **Ours (DeformPIC)** | **2.7** | **3.5** | **2.0** | **83.9** |
 
 ### Ablation Study
 
-| Comparison | Metric Change | Remark |
-|---|---|---|
-| vs PIC-Cat (reconstruction) | 4.3→2.7 (−1.6) | Deformation outperforms masked reconstruction |
-| vs PIC-Cat (denoising) | 5.3→3.5 (−1.8) | Explicit geometric manipulation is effective |
-| vs PIC-Cat (registration) | 14.1→2.0 (−12.1) | Registration is inherently geometric; deformation is a natural fit |
-| vs task-specific PCT | 2.6/2.2/6.3 vs 2.7/3.5/2.0 | ICL greatly surpasses task-specific models on registration |
+| Comparison | Metric Change | Note |
+|:---|:---|:---|
+| vs PIC-Cat (Recon) | 4.3→2.7 (-1.6) | Deformation outperforms masked reconstruction |
+| vs PIC-Cat (Denoise) | 5.3→3.5 (-1.8) | Explicit geometric manipulation is effective |
+| vs PIC-Cat (Reg) | 14.1→2.0 (-12.1) | Registration is inherently geometric; deformation matches perfectly |
+| vs Task-specific PCT | 2.6/2.2/6.3 vs 2.7/3.5/2.0 | ICL significantly outperforms task-specific models in registration |
 
 ### Key Findings
-- **Registration shows the largest improvement** (CD 14.1→2.0), as registration is essentially rigid-body transformation, which is naturally aligned with the deformation paradigm.
-- **Segmentation performance remains at SOTA** (83.9 mIoU), demonstrating that the deformation paradigm generalizes to discrete semantic tasks.
-- SOTA results are also achieved in cross-domain evaluation on ModelNet40 and ScanObjectNN, confirming strong generalization.
-- Qualitative results show that DeformPIC produces more complete and geometrically accurate 3D shapes.
+- **Most significant improvement in registration** (CD 14.1→2.0) as it inherently involves rigid transformations.
+- **Segmentation performance maintains SOTA** (83.9 mIoU), proving the deformation paradigm handles discrete semantic tasks.
+- **Strong generalization** demonstrated in cross-domain evaluations on ModelNet40 and ScanObjectNN.
+- Qualitative results show DeformPIC generates more complete and precise 3D shapes.
 
 ## Highlights & Insights
-- **Paradigm shift**: Moving from "predicting masked content" to "deforming the input" better reflects the geometric nature of 3D data.
-- **Train-inference consistency** is critical: eliminating the mismatch yields substantial performance gains.
-- **Decoupled design** (DEN for extraction + DTN for transfer) is more effective than joint processing.
-- Successful transfer of AdaLN-Zero from DiT to point cloud ICL demonstrates the cross-domain applicability of diffusion model conditioning techniques.
-- Registration benefits from a **natural alignment** with the deformation framework, as it is intrinsically a geometric transformation, driving CD from 14.1 down to 2.0.
-- Maintaining SOTA on segmentation (a discrete semantic task) confirms the generality of the deformation framework.
-- Strong cross-domain generalization (ShapeNet→ModelNet40/ScanObjectNN) validates the robustness of the proposed method.
+- **Paradigm Shift**: Transitioning from "masked content prediction" to "input deformation" aligns better with 3D geometric nature.
+- **Importance of Consistency**: Eliminating the training-inference mismatch leads to significant gains.
+- **Decoupled Design**: Separating extraction (DEN) and transfer (DTN) is more efficient than joint processing.
+- Successful technology transfer of AdaLN-Zero from DiT to point cloud ICL.
 
 ## Limitations & Future Work
-- The deformation paradigm adapts less naturally to discrete semantic tasks such as part segmentation compared to continuous geometric tasks.
-- Primary evaluation is conducted on synthetic datasets; performance on real-world point clouds remains to be verified.
-- Larger-scale pre-training has not been explored.
-- DEN and DTN employ separate encoders; a shared encoder may yield further improvements.
-- The information from a single prompt pair may be insufficient; few-shot ICL with multiple prompts warrants exploration.
-- The method may be limited when deformation magnitude is extremely large (e.g., deforming a cup into a car).
-- Scalability of 300-epoch training to larger datasets has not been verified.
+- The deformation paradigm is less natural for discrete semantic tasks like part segmentation compared to continuous geometric tasks.
+- Primary evaluations rely on synthetic datasets; real-world performance requires further validation.
+- Scaling to larger pre-training datasets has not been explored.
+- Independent encoders are used for DEN and DTN; shared encoders might enhance performance.
+- Extreme deformations (e.g., transforming a cup into a car) may be limited.
 
 ## Related Work & Insights
-- **Core distinction from PIC/PIC++**: masked reconstruction → deformation transfer; joint processing → decoupled processing.
-- Neural deformation methods (FlowNet3D, Pixel2Mesh) have already demonstrated the effectiveness of deformation-based strategies.
-- AdaLN-Zero, originating from DiT, shows that conditioning techniques developed for diffusion models transfer effectively to other domains.
-- DG-PIC and PCoTTA employ transfer learning for adaptation to new scenarios, and are orthogonally complementary to DeformPIC.
+- Core difference from PIC/PIC++: Masked reconstruction → Deformation transfer; Joint → Decoupled.
+- Neural Deformation (FlowNet3D, Pixel2Mesh) previously validated the effectiveness of deformation strategies.
+- AdaLN-Zero from DiT demonstrates that conditioning techniques from diffusion models are effective in other domains.
 
 ## Technical Details
-- **Point cloud sampling**: 1,024 points/object, 64 patches × 32 points/patch
-- **Point Encoder**: mini-PointNet maps point patches to tokens
-- **AdaLN-Zero initialization**: $W_1, W_2, W_3$ are zero-initialized so that DTN is equivalent to an unconditional Transformer at the start of training
-- **5 difficulty levels**: L1 (slight perturbation) to L5 (high noise / large-angle rotation)
-- **vs task-specific models**: reconstruction is competitive (2.7 vs 2.5), denoising has a gap (3.5 vs 2.2), registration greatly surpasses (2.0 vs 5.9)
-- **End-to-end deformation objective**: directly predicts deformed point cloud coordinates, avoiding instabilities of displacement-field optimization
-- **Training configuration**: AdamW, lr warmup 1e-6→1e-4 (10 epochs), cosine decay, weight decay 0.05
-- **Baselines**: four categories — task-specific models (PointNet/DGCNN/PCT/ACT), multi-task models, pre-trained multi-task models, and ICL models
-- **Dataset scale**: 174,404 training samples + 43,050 test samples, covering 4 tasks × 5 difficulty levels
-- **Single-GPU training**: all experiments are completed on a single NVIDIA TITAN RTX 24 GB GPU
+- **Sampling**: 1024 points/object, 64 patches × 32 points/patch.
+- **Point Encoder**: mini-PointNet maps point patches to tokens.
+- **AdaLN-Zero Init**: $W_1, W_2, W_3$ are zero-initialized; DTN starts as an unconditional Transformer.
+- **Comparison**: Includes task-specific (PointNet/DGCNN/PCT/ACT), multi-task, and ICL categories.
+- **Dataset Size**: 174,404 training samples + 43,050 test samples, covering 4 tasks × 5 difficulty levels.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Redefines point cloud ICL from masked reconstruction to deformation transfer; paradigm-level innovation
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive evaluation on ShapeNet with cross-domain assessment, though real-world scenarios are limited
-- Writing Quality: ⭐⭐⭐⭐ — Problem analysis is clear and comparison figures are intuitive
-- Value: ⭐⭐⭐⭐ — Achieves significant progress in the emerging direction of point cloud ICL
+- Novelty: ⭐⭐⭐⭐⭐ Redefines point cloud ICL with a deformation transfer paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive on ShapeNet and cross-domain, though real-world data is limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem analysis and intuitive comparisons.
+- Value: ⭐⭐⭐⭐ Significant progress in the emerging field of point cloud ICL.
 
 <!-- RELATED:START -->
 
@@ -131,11 +140,11 @@ A dual-network architecture: DEN extracts a task token $\hat{T}_{\text{task}}$ f
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)
-- [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
 - [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
+- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
 
 </div>
 

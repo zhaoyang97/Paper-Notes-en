@@ -2,80 +2,93 @@
 title: >-
   [Paper Note] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 description: >-
-  [CVPR 2026][Image Generation][Text-to-Image Generation] This paper proposes CTCal (Cross-Timestep Self-Calibration), which leverages reliable text-image alignments (cross-attention maps) formed at small timesteps (low no…
+  [CVPR 2026][Image Generation][Diffusion Model] Proposes CTCal (Cross-Timestep Self-Calibration), which utilizes reliable text-image alignment (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise). This provide explicit cross-timestep self-supervision for text-to-image generation, outperform
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Text-to-Image Generation"
-  - "Diffusion Models"
-  - "Cross-Attention Alignment"
-  - "Self-Calibration"
-  - "Compositional Generation"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 55edff0ffd1e6afb
+content_hash: 567b3dd82beafb32
 ---
-
 # CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.20741](https://arxiv.org/abs/2603.20741)  
 **Code**: [https://github.com/xiefan-guo/ctcal](https://github.com/xiefan-guo/ctcal)  
-**Area**: Image Generation / Text-to-Image Diffusion Models
+**Area**: Image Generation / Text-to-Image Diffusion Models  
 **Keywords**: Text-to-Image Generation, Diffusion Models, Cross-Attention Alignment, Self-Calibration, Compositional Generation
 
 ## TL;DR
-This paper proposes CTCal (Cross-Timestep Self-Calibration), which leverages reliable text-image alignments (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise), providing explicit cross-timestep self-supervision for text-to-image generation. CTCal comprehensively outperforms existing methods on T2I-CompBench++ and GenEval.
+Proposes CTCal (Cross-Timestep Self-Calibration), which utilizes reliable text-image alignment (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise). This provide explicit cross-timestep self-supervision for text-to-image generation, outperforming existing methods on T2I-CompBench++ and GenEval.
 
 ## Background & Motivation
 
-**Background**: Diffusion models dominate text-to-image generation, yet precise text-image alignment—especially for compositional generation with complex prompts—remains an open challenge.
+**Background**: Diffusion models dominate text-to-image (T2I) generation, but precise text-image alignment (especially in compositional generation for complex prompts) remains an open challenge.
 
-**Limitations of Prior Work**: (1) Conventional diffusion losses provide only implicit supervision, making it difficult to capture fine-grained text-image correspondences; (2) inference-time optimization methods (e.g., Attend-and-Excite) exhibit poor generalization and do not scale; (3) at large timesteps, severe noise degrades cross-attention map quality, preventing correct alignment—a critical bottleneck for generation quality.
+**Limitations of Prior Work**: (1) Traditional diffusion loss provides only implicit supervision, making it difficult to capture fine-grained text-image correspondences; (2) Inference-time optimization methods (e.g., Attend-and-Excite) suffer from poor generalization and lack of scalability; (3) Significant noise at large timesteps causes cross-attention map degradation, preventing the establishment of correct alignment—a critical bottleneck for generation quality.
 
-**Key Challenge**: At small timesteps, text-image alignment is reliable but "too easy"; at large timesteps, alignment is poor but "critical" (determining generation quality in the early stages of inference).
+**Key Challenge**: Alignment at small timesteps is accurate but "too easy," while alignment at large timesteps is poor but "critical" (determining generation quality in the initial stages of inference).
 
-**Goal**: How to provide explicit supervision for establishing correct text-image correspondences at large timesteps in diffusion models?
+**Goal**: How to provide explicit supervision to establish correct text-image correspondences at large timesteps for diffusion models?
 
-**Key Insight**: **Key Observation**—for the same image-text-noise triplet, cross-attention maps extracted at different timesteps during training differ dramatically in quality: maps at small timesteps closely match the true image structure and semantics, while those at large timesteps are entirely degraded.
+**Key Insight**: **Key Observation**—For the same image-text-noise triplet, the quality of cross-attention maps extracted at different timesteps during training varies significantly: maps at small timesteps are highly consistent with real image structure and semantics, while those at large timesteps are completely degraded.
 
-**Core Idea**: Use reliable attention maps from small timesteps as a "teacher" to calibrate attention maps at large timesteps (the "student"), enabling the model to supervise itself.
+**Core Idea**: Use reliable attention maps from small timesteps ("teacher") to calibrate those at large timesteps ("student"), achieving a self-teaching mechanism.
 
 ## Method
 
 ### Overall Architecture
-Given an image, text, and noise, two timesteps are sampled such that $t_{\text{tea}} < t_{\text{stu}}$. Forward passes are performed separately to obtain cross-attention maps $\mathbf{A}_{\text{tea}}$ and $\mathbf{A}_{\text{stu}}$. The latter is calibrated using $\mathbf{A}_{\text{tea}}$ as the target, with only the network parameters corresponding to $t_{\text{stu}}$ being optimized.
+Given an image, text, and noise, two timesteps $t_{\text{tea}} < t_{\text{stu}}$ are sampled. Cross-attention maps $\mathbf{A}_{\text{tea}}$ and $\mathbf{A}_{\text{stu}}$ are obtained through forward passes. $\mathbf{A}_{\text{tea}}$ serves as the target to calibrate $\mathbf{A}_{\text{stu}}$, optimizing only the network parameters corresponding to $t_{\text{stu}}$. The pipeline is a "self-teaching" dual-branch structure: the same triplet produces reliable teacher alignment in the small-timestep branch and degraded student alignment in the large-timestep branch. Calibration signals are then injected into the diffusion loss through noun filtering, dual-space alignment, subject balancing, and adaptive weighting.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Image + Text + Noise"] --> B["Sample two timesteps<br/>t_tea (small), t_stu (large)"]
+    B -->|Small-timestep teacher| C["Forward to get A_tea<br/>Reliable alignment (target)"]
+    B -->|Large-timestep student| D["Forward to get A_stu<br/>Degraded alignment (to calibrate)"]
+    C --> E["Noun token filtering<br/>Keep only nouns with spatial semantics"]
+    D --> E
+    E --> F["Joint Pixel-Semantic dual-space alignment<br/>Pixel + Semantic + Recon Proxy"]
+    F --> G["Subject response alignment penalty<br/>Boost weak subject responses"]
+    G --> H["Timestep-adaptive weighting λ_t<br/>Stronger calibration at large t"]
+    H --> I["L = L_diffusion + λ_t·L_CTCal<br/>Update student parameters only"]
+```
 
 ### Key Designs
 
-1. **Part-of-Speech-based Cross-Attention Map Selection**:
+**1. Noun token selection: Calibrating only attention that carries spatial semantics**
 
-    - **Function**: Only attention maps of noun tokens are extracted for the CTCal loss; tokens without spatial semantics—such as articles ("the") and conjunctions ("and")—are ignored.
-    - **Mechanism**: POS tagging is performed using Stanza; $\mathcal{Y}_{\text{noun}}$ denotes the set of nouns, and the loss is defined as $\mathcal{L}_{\text{CTCal}} = \frac{1}{N_{\text{noun}}} \sum_{\mathbf{y}_i \in \mathcal{Y}_{\text{noun}}} \mathcal{D}(\mathbf{A}_{\text{stu},\mathbf{y}_i}, \mathbf{A}_{\text{tea},\mathbf{y}_i})$
-    - **Design Motivation**: Ablation studies show that applying constraints to all tokens actually degrades performance, since attention maps of non-noun tokens carry no meaningful spatial semantic information and introduce noise.
+Aligning large-timestep cross-attention maps directly with small-timestep versions faces a pitfall: tokens like "the", "and", and "of" do not point to specific objects. Their attention distributions are divergent and meaningless. Forcing the student to fit this noise misaligns useful object localization. CTCal uses Stanza for POS tagging to isolate the noun set $\mathcal{Y}_{\text{noun}}$, and the calibration loss is only accumulated over these tokens:
 
-2. **Pixel-Semantic Space Joint Optimization**:
+$$\mathcal{L}_{\text{CTCal}} = \frac{1}{N_{\text{noun}}} \sum_{\mathbf{y}_i \in \mathcal{Y}_{\text{noun}}} \mathcal{D}(\mathbf{A}_{\text{stu},\mathbf{y}_i}, \mathbf{A}_{\text{tea},\mathbf{y}_i})$$
 
-    - **Function**: Attention maps are aligned simultaneously in pixel space and semantic space. A lightweight autoencoder $(f_{\text{attn}}^{\text{enc}}, f_{\text{attn}}^{\text{dec}})$ is introduced, with a reconstruction auxiliary task to prevent mode collapse.
-    - **Core Formula**:
-    $$\mathcal{L}_{\text{CTCal}} = \lambda_1 \underbrace{\mathcal{D}(\mathbf{A}_{\text{stu}}, \mathbf{A}_{\text{tea}})}_{\text{Pixel}} + \lambda_2 \underbrace{\mathcal{D}(f^{\text{enc}}(\mathbf{A}_{\text{stu}}), f^{\text{enc}}(\mathbf{A}_{\text{tea}}))}_{\text{Semantic}} + \lambda_3 \underbrace{\mathcal{D}(f^{\text{dec}}(\mathbf{A}_{\text{tea}}), \mathbf{A}_{\text{tea}})}_{\text{Reconstruction}}$$
-    - **Design Motivation**: Pixel-level alignment captures spatial location information; semantic-level alignment captures high-level semantic consistency; the reconstruction task prevents encoder degeneration.
+Where $\mathcal{D}$ measures the difference between student and teacher attention maps. This filtering is crucial—ablation shows that applying constraints to all tokens (naive version) causes Color scores to drop from 0.463 to 0.629 and 2D-Spatial from 0.178 to 0.169.
 
-3. **Subject Response Alignment Regularization**:
+**2. Joint Pixel-Semantic dual-space alignment: Aligning positions, meanings, and preventing collapse**
 
-    - **Function**: Aligns the attention responses of all subjects (nouns) to that of the highest-responding subject:
-    $$\mathcal{R}_{\text{subject}} = \frac{1}{N_{\text{noun}}} \sum \text{ReLU}(\mathcal{S}_{\text{attn}} - \max(\mathbf{A}_{\text{stu},\mathbf{y}_i}) - \tau)$$
-    - **Design Motivation**: Prevents high-response subjects from suppressing low-response ones, which would cause the latter to fail to render correctly in the generated image (e.g., generating only a cat for the prompt "cat and dog").
+Pixel-level alignment catches spatial information but misses high-level semantic consistency. While a semantic encoder could map these, it risks a degenerate solution (mode collapse). CTCal employs a lightweight autoencoder $(f^{\text{enc}}, f^{\text{dec}})$ with a reconstruction proxy task:
 
-4. **Timestep-aware Adaptive Weighting**:
+$$\mathcal{L}_{\text{CTCal}} = \lambda_1 \underbrace{\mathcal{D}(\mathbf{A}_{\text{stu}}, \mathbf{A}_{\text{tea}})}_{\text{Pixel}} + \lambda_2 \underbrace{\mathcal{D}(f^{\text{enc}}(\mathbf{A}_{\text{stu}}), f^{\text{enc}}(\mathbf{A}_{\text{tea}}))}_{\text{Semantic}} + \lambda_3 \underbrace{\mathcal{D}(f^{\text{dec}}(\mathbf{A}_{\text{tea}}), \mathbf{A}_{\text{tea}})}_{\text{Reconstruction}}$$
 
-    - **Function**: $\lambda_t = t_{\text{stu}} / T_{\text{train}}$; the CTCal weight is larger at large timesteps, while the diffusion loss dominates at small timesteps.
-    - **Design Motivation**: At small timesteps, the diffusion loss alone is sufficient to establish alignment; explicit calibration from CTCal is only needed at large timesteps.
+The pixel term ensures spatial alignment, the semantic term ensures high-level consistency, and the reconstruction term forces the encoder to retain sufficient information, preventing it from mapping all inputs to a constant.
+
+**3. Subject response alignment regularization: Preventing dominant subjects from suppressing weak ones**
+
+In compositional generation, a typical failure is "cat and dog" resulting in only a "cat" because its attention response is significantly higher. Strong subjects occupy the frame during early denoising. CTCal adds a regularization term to align subject responses toward the current maximum:
+
+$$\mathcal{R}_{\text{subject}} = \frac{1}{N_{\text{noun}}} \sum \text{ReLU}\big(\mathcal{S}_{\text{attn}} - \max(\mathbf{A}_{\text{stu},\mathbf{y}_i}) - \tau\big)$$
+
+Using ReLU with a threshold $\tau$ applies a penalty only when the response gap exceeds a certain tolerance, "lifting" lagging subjects to ensure balanced representation.
+
+**4. Timestep-adaptive weighting: Focusing calibration on large timesteps**
+
+CTCal prioritizes large timesteps where alignment is degraded. At small timesteps, alignment is already sufficient and traditional diffusion loss is effective. It uses a weighting factor $\lambda_t = t_{\text{stu}} / T_{\text{train}}$ that increases linearly with the timestep, ensuring supervision is targeted at the high-noise bottleneck.
 
 ### Loss & Training
 - $\mathcal{L} = \mathcal{L}_{\text{diffusion}} + \lambda_t \mathcal{L}_{\text{CTCal}}$
-- LoRA is used to fine-tune the self-attention layers of the text encoder and the attention layers of the denoising network.
-- For SD 2.1, $t_{\text{tea}}=0$ is set; for SD 3, $t_{\text{tea}}$ is selected according to the logit-normal sampling distribution.
-- Dataset: High-quality text-image pairs are selected from generated data using a reward-driven approach.
+- Uses LoRA to fine-tune text encoder self-attention layers and denoising network attention layers.
+- Sets $t_{\text{tea}}=0$ for SD 2.1; for SD 3, $t_{\text{tea}}$ is selected based on the logit-normal sampling distribution.
+- Dataset: High-quality text-image pairs selected from generated data using reward-driven methods.
 
 ## Key Experimental Results
 
@@ -99,39 +112,39 @@ Given an image, text, and noise, two timesteps are sampled such that $t_{\text{t
 
 ### Ablation Study
 
-| Configuration | Color↑ | 2D-Spatial↑ | Note |
+| Configuration | Color↑ | 2D-Spatial↑ | Description |
 |------|--------|------------|------|
-| SD 2.1 + GORS baseline | 0.643 | 0.178 | — |
-| + naive all-token constraint (a) | 0.629 (−2.2%) | 0.169 (−4.6%) | Performance drops! |
-| + noun selection (b) | Significant gain | Significant gain | Noun selection is critical |
-| + pixel + semantic (c) | Further gain | Further gain | Joint optimization is effective |
-| + response alignment (d) | Further gain | Further gain | Subject balancing helps |
-| + adaptive weighting (e) | **Best** | **Best** | Full CTCal |
+| SD 2.1 + GORS Baseline | 0.643 | 0.178 | - |
+| + Naive full token constraint (a) | 0.629 (-2.2%) | 0.169 (-4.6%) | Performance decrease! |
+| + Noun selection (b) | Sig. Improve | Sig. Improve | Noun selection is vital |
+| + Pixel+Semantic (c) | Sig. Improve | Sig. Improve | Joint optimization works |
+| + Response alignment (d) | Sig. Improve | Sig. Improve | Subject balance helps |
+| + Adaptive weighting (e) | **Optimal** | **Optimal** | Full CTCal |
 
 ### Key Findings
-- Noun selection is the most critical design choice—indiscriminately aligning all tokens actually harms performance.
-- CTCal is effective for both the cross-attention-based SD 2.1 and the MM-DiT-based SD 3, demonstrating generality.
-- In user studies, CTCal achieves an overwhelming preference rate (SD 2.1: 76.67%, SD 3: 54.17%).
+- Noun selection is the most critical design—unconstrained alignment of all tokens harms performance.
+- CTCal is effective for both UNet-based SD 2.1 and MM-DiT-based SD 3, demonstrating universality.
+- User studies show overwhelming preference for CTCal (SD 2.1: 76.67%, SD 3: 54.17%).
 
 ## Highlights & Insights
-- **Training-stage perspective**: Unlike inference-time optimization methods, CTCal addresses text-image alignment at training time, yielding lasting improvements with no inference overhead.
-- **Self-supervised paradigm**: The model uses its own small-timestep outputs to supervise large-timestep learning, requiring no additional labels or external teacher models.
-- **Architecture-agnostic**: Applicable to both U-Net (SD 2.1) and Transformer (SD 3) architectures.
+- **Training Phase Perspective**: Unlike inference-time optimization, CTCal addresses alignment during training, providing lasting effects without inference overhead.
+- **Self-Supervised Paradigm**: The model teaches its noisier self using its own low-noise output, requiring no additional labels or teacher models.
+- **Model Agnostic**: Compatible with both U-Net (SD 2.1) and Transformer (SD 3) architectures.
 
 ## Limitations & Future Work
-- Training data construction relies on reward-driven sampling, incurring non-trivial data preparation costs.
-- Only LoRA fine-tuning is explored; the effect of full fine-tuning remains uninvestigated.
-- Noun selection depends on POS tagging tools; applicability to non-English prompts is unknown.
+- Training data construction relies on reward-driven sampling, which is computationally expensive.
+- LoRA is used for fine-tuning; the effects of full fine-tuning remain unexplored.
+- Noun selection depends on POS tagging tools, with unknown applicability to non-English prompts.
 
 ## Related Work & Insights
-- Inference-time methods such as Attend-and-Excite motivated the focus on cross-attention, but CTCal addresses the problem more elegantly at the training stage.
-- The reward-driven data selection strategy from GORS serves as the foundation for CTCal, which adds explicit alignment supervision on top of it.
+- Inference-time methods like Attend-and-Excite inspired the focus on cross-attention, but CTCal solves the problem more elegantly at the training stage.
+- GORS's reward-driven data selection provides a foundation upon which CTCal adds explicit alignment supervision.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The cross-timestep self-calibration idea is novel and elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks, SD 2.1 and SD 3, user studies, and complete ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from observation to design to validation is clear.
-- Value: ⭐⭐⭐⭐⭐ Delivers substantial improvements in text-image alignment for text-to-image generation.
+- Novelty: ⭐⭐⭐⭐⭐ Cross-timestep self-calibration is a novel and elegant idea.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validated across benchmarks, two model architectures (SD 2.1/SD 3), and user studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical flow from observation to design to verification.
+- Value: ⭐⭐⭐⭐⭐ Offers substantial improvement for T2I text-image alignment.
 
 <!-- RELATED:START -->
 
@@ -139,11 +152,11 @@ Given an image, text, and noise, two timesteps are sampled such that $t_{\text{t
 
 ## Related Papers
 
-- [\[CVPR 2026\] Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models](erasure_or_erosion_evaluating_compositional_degradation_in_unlearned_text-to-ima.md)
+- [\[CVPR 2026\] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits](rebrl_reinforcing_discrete_visual_diffusion_models_with_rebalanced_timestep_cred.md)
+- [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
-- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 
 </div>
 

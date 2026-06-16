@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] An Algebraic View of the Expressivity of Recurrent Language Models
 description: >-
-  [ICML2026][Model Compression][Recurrent Language Models] This paper unifies the formal language expressivity of RNNs/SSMs as an algebraic problem: once numerical semantics are fixed…
+  [ICML 2026][Model Compression][State Space Model] This paper unifies the formal language expressivity of RNN/SSMs into an algebraic problem: once numerical semantics are fixed, the languages a model can recognize are determined by its hierarchical transition monoids and their wreath products. Furthermore, the same architecture yields entirely different counting capabi
 tags:
-  - "ICML2026"
-  - "Model Compression"
-  - "Recurrent Language Models"
-  - "Formal Languages"
-  - "Transition Monoids"
-  - "Finite Precision"
-  - "State Space Models"
+  - ICML 2026
+  - Model Compression
+  - State Space Model
 date: 2026-05-08
-content_hash: c4e3b890ffb9b3c4
+content_hash: d2c22e468f98ab1c
 ---
-
 # An Algebraic View of the Expressivity of Recurrent Language Models
 
 **Conference**: ICML2026  
@@ -24,101 +19,121 @@ content_hash: c4e3b890ffb9b3c4
 **Keywords**: Recurrent Language Models, Formal Languages, Transition Monoids, Finite Precision, State Space Models  
 
 ## TL;DR
-This paper unifies the formal language expressivity of RNNs/SSMs as an algebraic problem: once numerical semantics are fixed, the languages a model can recognize are determined by its hierarchical transition monoid and their wreath products. Furthermore, the same architecture yields entirely different counting capabilities under floating-point versus unsigned integer semantics.
+This paper unifies the formal language expressivity of RNN/SSMs into an algebraic problem: once numerical semantics are fixed, the languages a model can recognize are determined by its hierarchical transition monoids and their wreath products. Furthermore, the same architecture yields entirely different counting capabilities under floating-point versus unsigned integer semantics.
 
 ## Background & Motivation
-**Background**: In recent years, the analysis of language model expressivity has often studied architectures like RNNs, SSMs, and Transformers as formal language recognizers. The goal is to determine whether they can implement classical computational tasks such as parenthesis matching (dyck languages), modular counting, or finite automata simulation. Theoretical results in this direction often translate into architectural heuristics, such as whether linear RNNs or Mamba-like state-space models can preserve counting information over long sequences.
+**Background**: Recent analyses of language model expressivity often treat architectures like RNNs, SSMs, and Transformers as formal language recognizers to determine if they can perform tasks such as Dyck language recognition, modulo counting, or finite automaton simulation. Theoretical results in this direction often translate into architectural insights, such as whether linear RNNs or Mamba-like state space models can maintain counting information over long sequences.
 
-**Limitations of Prior Work**: Conclusions in existing literature are inconsistent. Some works prove that RNNs possess strong computational power under exact real or rational arithmetic, even reaching Turing completeness. Others prove they can only simulate finite automata under finite-precision or resource-constrained assumptions. The issue is not that one side is "wrong," but that the default arithmetic models, rounding rules, overflow semantics, and evaluation orders differ across these proofs.
+**Limitations of Prior Work**: Conclusions in existing literature are inconsistent. Some works prove that RNNs possess strong computational power—even reaching Turing completeness—under exact real or rational arithmetic. Others demonstrate that under finite precision or resource-constrained assumptions, they can only simulate finite automata. The issue is not that one side is "wrong," but that these proofs default to different arithmetic models, rounding rules, overflow semantics, and evaluation orders.
 
-**Key Challenge**: Neural network formulas appear to be continuous real-number operations, but real-world deployment always occurs on discrete, finite numerical systems with rounding. If a theoretical proof relies on the associative law in the real field, infinite precision, or arbitrarily rearrangeable algebraic identities, it may not transfer to floating-point implementations. Conversely, stating "finite precision" without specifying exact computational semantics fails to yield reproducible expressivity conclusions.
+**Key Challenge**: Neural network formulas appear to be continuous real-number operations, but real-world deployment occurs on discrete, finite numerical systems with rounding. If a theoretical proof relies on the associative law in the real field, infinite precision, or reorderable algebraic identities, it may not transfer to floating-point implementations. Conversely, stating "finite precision" without specifying exact operational semantics fails to produce reproducible expressivity conclusions.
 
-**Goal**: The authors aim to provide a unified framework that decomposes the expressivity of recurrent language models into three replaceable components: the architecture’s state transition structure, the composition of inter-layer wiring, and the underlying arithmetic semantics. This allows researchers to pinpoint whether conflicts in conclusions arise from the architecture itself or from differing numerical semantics.
+**Goal**: **Ours** aims to provide a unified framework that decomposes the expressivity of recurrent language models into three replaceable components: the state transition structure of the architecture, the composition of inter-layer wiring, and the underlying arithmetic semantics. This allows for precise identification of whether conflicting conclusions arise from the architecture itself or from numerical semantics.
 
-**Key Insight**: Starting from monoid theory in automata theory, the paper treats each recurrent core as a finite state transition system and views the hierarchical composition of deep RNNs as the wreath product of transformation monoids. Recognizing a formal language is no longer about directly constructing network parameters, but about determining whether the syntactic monoid of the target language can divide the monoid structure implementable by the model.
+**Key Insight**: Starting from monoid theory in automata theory, the paper treats each recurrent core as a finite state transition system and the hierarchical composition of deep RNNs as the wreath product of transformation monoids. Recognizing a formal language is no longer about direct parameter construction, but about determining whether the syntactic monoid of the target language divides the monoid structure achievable by the model.
 
-**Core Idea**: Replace vague real-valued network formulas with "transition monoids under fixed arithmetic semantics," thereby reducing the expressivity of RNNs/SSMs to a divisibility problem in finite algebra.
+**Core Idea**: Replace ambiguous real-valued formulas with "transition monoids under fixed arithmetic semantics," thereby reducing RNN/SSM expressivity to a divisibility problem in finite algebra.
 
 ## Method
-Instead of proposing a new training algorithm, the paper presents an algebraic framework for analyzing the expressivity of recurrent language models. The logic is: first abstract one recurrent module layer as an algebraic core, then abstract multi-layer networks as a cascade of cores; use the wreath product to provide an upper bound on hierarchical transitions, and then use the realized input set to tighten it to transitions reachable by actual wiring; finally, connect the language recognition problem to syntactic monoids to obtain an algebraic criterion for "whether the target language can be recognized."
 
 ### Overall Architecture
-The input consists of a class of recurrent language models, a finite input alphabet, a fixed encoder, and numerical semantics; the output is not a model prediction but a structured characterization of the family of recognizable languages. The framework defines a state set $Q$, input set $X$, output set $Y$, state transition $f:Q\times X\to Q$, and readout $g:Q\times X\to Y$ for each layer. For each input $x$, the state transition $f_x:Q\to Q$ generates the transition monoid of that layer. Since multi-layer networks use a wiring map to turn the input/output of the previous layer into the input of the next, the global state space is the Cartesian product of the states of each layer.
+This paper does not propose a new training algorithm but establishes an algebraic microscope for recurrent language models: a single recurrent module is abstracted as an algebraic core, a multi-layer network is abstracted as a cascade of cores, and all possible hierarchical transitions are captured using wreath products. The "realized input set" is used to tighten the analysis to parts reachable by actual wiring. Finally, "recognizing a formal language" is reduced to a checkable algebraic criterion: "can the syntactic monoid of the target language divide the transition structure of the model?" The input is a class of recurrent models, a finite alphabet, fixed encoders, and numerical semantics; the output is a structural characterization of the recognizable language family. The reduction pipeline is shown below:
 
-Subsequently, the paper uses the wreath product to describe hierarchical dependencies: the state of a lower layer affects the input seen by the upper layer at the current timestep. Thus, a deep RNN is not a simple parallel direct product, but a cascade transition system. To avoid counting unreachable inputs as expressivity, the author further defines the reachable input set and the realized transition monoid relative to the input set $T$, retaining only the intra-layer transitions actually activated by the encoder and wiring.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Recurrent Model Family + Alphabet Σ + Encoder"]
+    SEM["Arithmetic Model 𝔐=(𝒟,𝒪,□)<br/>Fixes Range / Rounding / Eval Order"]
+    subgraph D1["Algebraic Core and Transition Monoid"]
+        direction TB
+        CORE["Abstract layer to Algebraic Core 𝔠=(Q,X,Y,f,g)<br/>Readout g excluded from dynamics"]
+        MON["Transition Monoid M_𝔠=⟨f_x⟩"]
+        CORE --> MON
+    end
+    subgraph D2["Realized Wreath Product"]
+        direction TB
+        CAS["Multi-layer Cascade → Wreath Product Upper Bound (Loose)"]
+        REAL["Tighten with Layer-Input Dependency Graph<br/>Exclude transitions unreachable by wiring"]
+        CAS --> REAL
+    end
+    JUDGE["Recognizability Criterion: Syntactic Monoid<br/>divides Model Transition Structure"]
+    OUT["Output: Characterization of Recognizable Language Family"]
 
-Finally, the author transforms the model into a language acceptor: by appending an accepting core, the acceptance condition becomes a set over the state of the final layer rather than post-processing on temporary readout values. This allows the use of Eilenberg-style algebraic language theory: if a model recognizes language $\mathcal{L}$, then the syntactic monoid of $\mathcal{L}$ must divide the realized wreath product of that model.
+    IN --> CORE
+    SEM --> MON
+    MON --> CAS
+    REAL --> JUDGE
+    JUDGE --> OUT
+```
 
 ### Key Designs
-1.  **Algebraic core and transition monoid**:
-    *   **Function**: Abstracts each recurrent layer into a finite or discrete state transitioner, preserving the core structure of "input-driven state changes."
-    *   **Mechanism**: For a core $\mathfrak{c}=(Q,X,Y,f,g)$, each input $x\in X$ induces a self-map $f_x:Q\to Q$. All such maps generate $M_{\mathfrak{c}}=\langle f_x\mid x\in X\rangle$ under function composition. Readout $g$ does not directly enter the transition monoid, as it determines how states are observed rather than the state dynamics.
-    *   **Design Motivation**: This separates "what dynamic information the model can store internally" from "how the answer is finally read out," preventing the expressivity of the decoder from being misattributed to recurrent dynamics.
 
-2.  **Realized wreath product**:
-    *   **Function**: Characterizes the global transition structure actually achievable by a multi-layer RNN given a wiring and input alphabet.
-    *   **Mechanism**: The ambient upper bound of a deep cascade is the iterated wreath product of each layer's transition monoid. However, this bound allows the upper layer to receive any input in $X_n$. The author defines the layer-input dependency map $\varphi_n^T$, which collects only inputs reaching the $n$-th layer from the first-layer input set $T$. These reachable inputs generate $M_n^T$. The final result is $\mathbb{W}_{\mathcal{R}}^T=(M_1^T,Q_1)\wr\cdots\wr(M_N^T,Q_N)$.
-    *   **Design Motivation**: This tightening avoids "phantom expressivity" that is formally allowed by the architecture but never triggered by the wiring, while also allowing local updates to the analysis when the encoder or input distribution changes.
+**1. Algebraic Core and Transition Monoid: Abstracting RNN Layers as Pure State Transition Systems**
 
-3.  **Incorporating arithmetic semantics into model definition**:
-    *   **Function**: Explains why the same RNN/SSM architecture produces contradictory expressivity conclusions in different papers.
-    *   **Mechanism**: The author defines the arithmetic model as $\mathfrak{M}=(\mathcal{D},\mathcal{O},\square)$, where $\mathcal{D}$ is the representable range, $\mathcal{O}$ is the set of operations, and $\square$ is the rounding/truncation map. Expressions must be equipped with a fixed evaluation tree, and recurrent updates must satisfy recurrence-consistent evaluation (completing time $t$ before entering $t+1$).
-    *   **Design Motivation**: Floating-point addition and multiplication are not associative; compiler or hardware reordering changes results. Without fixing these semantics, the question of "whether a language can be recognized" is not well-defined.
+Conflicting literature conclusions partly arise from mixing decoder expressivity with recurrent dynamics. To address this, the paper abstracts each recurrent layer into a core $\mathfrak{c}=(Q,X,Y,f,g)$—consisting of state set $Q$, input set $X$, output set $Y$, transition $f:Q\times X\to Q$, and readout $g:Q\times X\to Y$—retaining only the core structure of input-driven state changes. A crucial step is that each input $x\in X$ induces a self-map $f_x:Q\to Q$, and all such maps generate the transition monoid $M_{\mathfrak{c}}=\langle f_x\mid x\in X\rangle$ under function composition. The readout $g$ is intentionally excluded from this monoid because it determines how states are observed, not how they evolve. This separates "what dynamic information is stored" from "how the answer is read," avoiding the misattribution of decoder power to the recurrence.
+
+**2. Realized Wreath Product: Counting Only Hierarchically Triggered Transitions**
+
+Deep RNNs are not parallel direct products but cascaded systems where lower-layer states modify the current input of upper layers. Thus, the ambient upper bound is the iterated wreath product of each layer's transition monoid. However, this bound is too loose, as it allows upper layers to receive any input in $X_n$, including those never sent by the encoder or wiring. The paper defines a layer-input dependency map $\varphi_n^T$ to collect only reachable inputs from the initial set $T$, generating a tightened $M_n^T$ and the realized wreath product $\mathbb{W}_{\mathcal{R}}^T=(M_1^T,Q_1)\wr\cdots\wr(M_N^T,Q_N)$. This tightening eliminates "phantom" expressivity allowed by the architecture but never triggered by wiring, supporting precise non-expressibility proofs while allowing localized updates when the encoder or input distribution changes.
+
+**3. Embedding Arithmetic Semantics into Model Definitions: Explaining Conflicting Conclusions**
+
+The same RNN/SSM may appear Turing complete in one paper and equivalent to a finite automaton in another due to defaults in the arithmetic model. The paper explicitly defines the arithmetic model as $\mathfrak{M}=(\mathcal{D},\mathcal{O},\square)$, where $\mathcal{D}$ is the representable range, $\mathcal{O}$ is the operator set, and $\square$ is the rounding/truncation map. Every expression is forced to have a fixed evaluation tree, and recurrent updates must follow "recurrence-consistent evaluation" (completing time $t$ before $t+1$). This granularity is necessary because floating-point addition and multiplication are non-associative; reordering by compilers or hardware changes the single-step recurrence itself. Without fixing these semantics, the question of "recognizability" is not well-defined.
 
 ### Loss & Training
-This paper does not involve training losses or optimization strategies. It studies expressivity rather than learnability: given a family of architectures and numerical semantics, does there exist a parameterized instance that can recognize the target formal language. The author explicitly states that the framework does not guarantee that these parameters can be automatically found through gradient descent.
+This work investigates expressivity rather than learnability and does not involve training losses or optimization strategies. Given an architecture family and numerical semantics, it asks whether there **exists** a parameterized instance capable of recognizing a target formal language. The authors clarify that the framework does not guarantee these parameters can be discovered via gradient descent.
 
 ## Key Experimental Results
 
 ### Main Results
-The "main experiments" in this paper are theoretical results and case studies rather than dataset benchmarks. The core result compares the differences in expressivity under different arithmetic models within a single algebraic table.
+The "Main Results" are theoretical findings and case studies rather than dataset benchmarks. The most central result compares expressivity differences across different arithmetic models within a unified algebraic table.
 
 | Object | Criterion / Result | Conclusion | Impact |
-| :--- | :--- | :--- | :--- |
-| Single-layer algebraic core | $M_{\mathfrak{c}}=\langle f_x\rangle$ | Intra-layer dynamics are determined by the transition monoid | Transfers architectural capability to monoid problems |
-| Deep algebraic RNN | $M_{\mathcal{R}}^T\leq W_{\mathcal{R}}^T$ | Global transitions are embedded in the realized wreath product | Hierarchical composition can be analyzed via wreath products |
-| Language acceptor | $M(\mathcal{L})\prec M_{\mathcal{R}^+}^{e(\Sigma)}\leq W_{\mathcal{R}^+}^{e(\Sigma)}$ | Syntactic monoid of the target language must divide the model transition structure | Unified entry point for non-recognizability proofs and recognizable constructions |
-| Non-negative diagonal SSM + float | core monoid aperiodic | Cannot implement modular counting requiring non-trivial groups | Corrects over-strong claims that "the same architecture can count" |
-| diagonal SSM + unsigned int quantization | Can contain $\mathbb{Z}/2^k\mathbb{Z}$ | Supports structures like even modular counting | Changes in numerical semantics alter expressivity |
+|------|-------------|------|------|
+| Single-layer Algebraic Core | $M_{\mathfrak{c}}=\langle f_x\rangle$ | Intra-layer dynamics determined by transition monoid | Maps architecture capability to monoid problems |
+| Deep Algebraic RNN | $M_{\mathcal{R}}^T\leq W_{\mathcal{R}}^T$ | Global transitions embedded in realized wreath product | Allows wreath product analysis of hierarchical composition |
+| Language Acceptor | $M(\mathcal{L})\prec M_{\mathcal{R}^+}^{e(\Sigma)}\leq W_{\mathcal{R}^+}^{e(\Sigma)}$ | Syntactic monoid must divide the model transition structure | Unified entry point for non-recognizability proofs and constructions |
+| Non-negative Diagonal SSM + Float | Core monoid is aperiodic | Cannot implement modulo counting requiring non-trivial groups | Corrects overstatements about SSM counting abilities |
+| Diagonal SSM + Unsigned Int Quantization | Can contain $\mathbb{Z}/2^k\mathbb{Z}$ | Supports even modulo counting structures | Numerical semantics changes expressivity |
 
 ### Ablation Study
-The following table serves as an arithmetic semantics analysis: keeping the diagonal SSM form essentially the same while only replacing the recurrence multiplier and numerical model to observe the group structures that can appear in the core monoid.
+The following table serves as an arithmetic semantics analysis: keeping the diagonal SSM form essentially constant while replacing the recurrence multiplier and numerical model to observe the group structures that can emerge in the core monoid.
 
 | Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| Non-negative recurrence + float fp | Only trivial subgroups, core monoid is aperiodic | Non-negative floating-point affine updates are order-preserving maps on finite chains, cannot produce non-trivial cycles |
-| Signed multiplier allowed + float fp | $\mathbb{Z}/2\mathbb{Z}$ can appear, but subgroups are at most elementary abelian 2-groups | Negative multipliers bring order-reversing maps, thus at most implementing second-order flip structures |
-| Non-negative recurrence + unsigned int $\mathrm{int}^p$ | Can implement $\mathbb{Z}/2^k\mathbb{Z}$ where $k\leq p$ | Wraparound addition $q\mapsto q+1\bmod 2^p$ directly provides cyclic counters |
-| Unfixed evaluation order | Expressivity statements are no longer well-defined | Once non-associative float operations are reordered, the single-step recurrence itself may become a different function |
+|------|---------|------|
+| Non-negative Recurrence + Float (fp) | Only trivial subgroups; core monoid is aperiodic | Non-negative floating-point affine updates are order-preserving maps on a finite chain; cannot generate non-trivial cycles |
+| Signed Multiplier + Float (fp) | $\mathbb{Z}/2\mathbb{Z}$ can appear, but subgroups are at most elementary abelian 2-groups | Negative multipliers introduce order-reversing maps, allowing at most second-order flip structures |
+| Non-negative Recurrence + Unsigned Int ($\mathrm{int}^p$) | Can implement $\mathbb{Z}/2^k\mathbb{Z}$, $k\leq p$ | Wraparound addition $q\mapsto q+1\bmod 2^p$ directly provides cyclic counters |
+| Unfixed Evaluation Order | Expressivity statements become ill-defined | After reordering non-associative float operations, the single-step recurrence function itself may change |
 
 ### Key Findings
-- The greatest contribution is not a single new theorem, but the separation of "architecture, wiring, and arithmetic semantics," allowing previously conflicting conclusions to be compared within the same coordinate system.
-- For finite-precision models, all induced transition monoids are finite; thus, recognizable languages are at most regular. To discuss non-regular capabilities, one must explicitly introduce precision, depth, or external resources that grow with sequence length.
-- The diagonal SSM case study is enlightening: the same class of formal recurrence cannot perform even modular counting under non-negative floating-point semantics but can construct counters under unsigned integer wraparound semantics.
+- The primary contribution is not a single new theorem but the decoupling of "architecture, wiring, and arithmetic semantics," allowing previously conflicting conclusions to be compared within a single coordinate system.
+- For finite-precision models, all induced transition monoids are finite; thus, recognizable languages are at most regular. Discussions of non-regular capabilities must explicitly introduce precision, depth, or external resources that grow with sequence length.
+- The diagonal SSM case study is highly insightful: the same formal recurrence cannot perform even modulo counting under non-negative floating-point semantics but can construct counters under unsigned integer wraparound semantics.
 
 ## Highlights & Insights
-- The paper argues thoroughly that "numerical semantics are part of the model." Many expressivity proofs assume real algebraic identities hold, but rounding, overflow, and non-associativity in real floating-point systems change the transition function itself, which is particularly critical in long-sequence recurrence.
-- The realized wreath product is a clean abstraction. It preserves the "lower layer controls the upper layer" hierarchical structure of deep RNNs while avoiding the inclusion of phantom monoids caused by unreachable inputs, making it suitable for precise non-expressibility proofs.
-- The design of the acceptance core transforms the decoder from a temporary post-processor into a layer of the network cascade, allowing language recognition to strictly interface with the syntactic monoid. This small change makes the interface between machine-learning style RNNs and classical automata theory more natural.
-- Inspiration for practical architecture design: If a task relies on stable counting or group structures, continuous formulas that "look like recurrence" are not enough; one must also check if the deployed numerical types truly support the corresponding algebraic cycles.
+- The paper argues thoroughly that "numerical semantics are part of the model." Many expressivity proofs default to real algebraic identities, but rounding, overflow, and non-associativity in actual floating-point systems change the transition function itself, which is critical in long-sequence recurrence.
+- The realized wreath product is a clean abstraction. It retains the "lower-layer controls upper-layer" hierarchy of deep RNNs while avoiding phantom monoids caused by unreachable inputs, facilitating precise non-expressibility proofs.
+- The design of the acceptor treats the decoder as a layer in the network cascade rather than ephemeral post-processing, allowing language recognition to connect strictly to the syntactic monoid. This makes the interface between ML-style RNNs and classical automata theory more natural.
+- **Novelty**: For practical architecture design, if a task depends on stable counting or group structures, a continuous formula that "looks like a recurrence" is insufficient; one must verify if the deployed numerical types actually support the corresponding algebraic cycles.
 
 ## Limitations & Future Work
-- This paper analyzes existential expressivity rather than whether parameters can be learned. The fact that an architecture can algebraically express a language does not mean SGD will find the corresponding parameters.
-- The framework primarily covers finite-precision semantics and thus falls naturally within the scope of regular languages. For models with precision growing with sequence length, external memory, or dynamic depth, extensions to infinite monoids or resource-sensitive versions are needed.
-- The paper focuses on explicit recurrent architectures, particularly RNNs and diagonal SSMs. To incorporate Transformers into the same framework, they must first be formalized as some form of recurrent computation, which is not straightforward for all-attention models.
-- The case study mainly re-analyzes known expressivity disputes of diagonal SSMs rather than systematically covering all modern sequence models. Future work could place linear attention, RWKV, RetNet, or chunked state-space implementations into the same algebraic template for comparison.
+- **Ours** analyzes existential expressivity rather than learnability. An architecture being algebraically capable of expressing a language does not imply that SGD will find those parameters.
+- The framework primarily covers finite-precision semantics and thus naturally falls within the scope of regular languages; extensions to infinite monoids or resource-sensitive versions are needed for models with length-dependent precision or memory.
+- The paper focuses on explicit recurrent architectures, specifically RNNs and diagonal SSMs. To incorporate Transformers, they must first be formalized as recurrent computations, which is not straightforward for global attention models.
+- The case studies primarily re-analyze known controversies in diagonal SSM expressivity rather than systematically covering all modern sequence models. Future work could place linear attention, RWKV, RetNet, or chunked SSMs into the same algebraic template.
 
 ## Related Work & Insights
-- **vs Siegelmann and Sontag-style RNN Turing completeness**: Those results usually depend on exact real numbers or infinite precision assumptions. This paper emphasizes that these assumptions do not automatically transfer to finite-precision deployment; the advantage is more reproducible semantics, at the cost of more conservative conclusions.
-- **vs Merrill et al.'s analysis of finite-precision LMs**: Related work has pointed out that finite precision limits expressivity. This paper goes further by requiring the arithmetic model, evaluation order, and transition monoid to be made explicit, thereby writing limitations as checkable algebraic divisibility conditions.
-- **vs Sarrof et al.'s results on diagonal SSM counting capabilities**: This paper reproduces and refines the limitations of non-negative diagonal SSMs while demonstrating that the same recurrence family can implement even modular counting under unsigned integer semantics, showing the core of the dispute lies in numerical semantics rather than the "SSM" label.
-- **Insight**: When conducting language model theory, one should report implementation semantics with equal importance to architecture: numerical domain, rounding method, overflow, NaN handling, evaluation order, and whether compiler reordering is permitted. Otherwise, expressivity conclusions are likely to hold only for formulas on paper.
+- **vs Siegelmann & Sontag's Turing Completeness**: Those results typically rely on exact real or infinite precision assumptions. This paper emphasizes that such assumptions do not automatically migrate to finite-precision deployments; the trade-off is more reproducible semantics for more conservative conclusions.
+- **vs Merrill's Finite-Precision Analysis**: Prior work noted that finite precision limits expressivity. **Ours** goes further by requiring arithmetic models, evaluation orders, and transition monoids to be made explicit, translating limits into checkable algebraic divisibility conditions.
+- **vs Sarrof et al. on SSM Counting**: This paper replicates and refines the limitations of non-negative diagonal SSMs while demonstrating that the same recurrence family can implement modulo counting under unsigned integer semantics, showing the core of the controversy lies in numerical semantics rather than the "SSM" label.
+- **Insight**: Theoretical work on language models should report implementation semantics—numerical domain, rounding, overflow, NaN handling, eval order—with the same importance as the architecture. Otherwise, expressivity conclusions may only hold for formulas on paper.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Unifying RNN expressivity disputes using monoid divisibility and wreath products provides a very clear theoretical perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ As a theoretical paper, the case studies are sufficient to support the claims; however, it lacks instantiated analysis of more modern architectures.
-- Writing Quality: ⭐⭐⭐⭐☆ Rigorous structure and complete definitions, though the heavy algebraic background requires a certain threshold for readers unfamiliar with formal languages.
-- Value: ⭐⭐⭐⭐⭐ High long-term reference value for RNN/SSM expressivity, finite-precision theory, and reproducible architectural analysis.
+- Novelty: ⭐⭐⭐⭐⭐ Unifying RNN expressivity controversies through monoid divisibility and wreath products provides a very clear theoretical perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ As a theory paper, the case studies sufficiently support the claims, though more modern architecture instantiations could be analyzed.
+- Writing Quality: ⭐⭐⭐⭐☆ Rigorous and complete, though the heavy algebraic background may pose a barrier to readers unfamiliar with formal language theory.
+- Value: ⭐⭐⭐⭐⭐ Offers long-term reference value for RNN/SSM expressivity, finite-precision theory, and reproducible architecture analysis.
 
 <!-- RELATED:START -->
 
@@ -128,9 +143,9 @@ The following table serves as an arithmetic semantics analysis: keeping the diag
 
 - [\[ACL 2026\] Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](../../ACL2026/model_compression/why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)
 - [\[ICML 2026\] Procedural Pretraining: Warming Up Language Models with Abstract Data](procedural_pretraining_warming_up_language_models_with_abstract_data.md)
+- [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
 - [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
-- [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
 
 </div>
 

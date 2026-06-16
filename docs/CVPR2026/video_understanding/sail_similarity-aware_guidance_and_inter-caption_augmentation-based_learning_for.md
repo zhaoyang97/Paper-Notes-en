@@ -2,127 +2,137 @@
 title: >-
   [Paper Note] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
 description: >-
-  [CVPR 2026][Video Understanding][Weakly-supervised dense video captioning] This paper proposes SAIL, which achieves state-of-the-art performance on both dense video captioning and event localization on ActivityNet and Yo…
+  [CVPR 2026][Video Understanding][Paper Note] SAIL is proposed to achieve dual SOTA in dense video captioning and event localization on ActivityNet and YouCook2 under a weakly-supervised setting (captions only, no temporal boundaries). This is achieved through cross-modal similarity-guided semantic-aware mask generation and auxiliary supervision from LLM-synthesiz
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Weakly-supervised dense video captioning"
-  - "cross-modal alignment"
-  - "LLM data augmentation"
-  - "Gaussian mask"
-  - "event localization"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 82d41b4520ee9824
+content_hash: a3d92f91ae69424f
 ---
-
 # SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.05437](https://arxiv.org/abs/2603.05437)  
-**Code**: Unavailable  
-**Area**: Video Understanding
-**Keywords**: Weakly-supervised dense video captioning, cross-modal alignment, LLM data augmentation, Gaussian mask, event localization
+**Code**: None  
+**Area**: Video Understanding  
+**Keywords**: Weakly-supervised Dense Video Captioning, Cross-modal Alignment, LLM Data Augmentation, Gaussian Mask, Event Localization
 
 ## TL;DR
-This paper proposes SAIL, which achieves state-of-the-art performance on both dense video captioning and event localization on ActivityNet and YouCook2 under a weakly-supervised setting (caption annotations only, no temporal boundaries), via cross-modal similarity-guided semantic-aware mask generation and auxiliary supervision from LLM-synthesized captions.
+SAIL is proposed to achieve dual SOTA in dense video captioning and event localization on ActivityNet and YouCook2 under a weakly-supervised setting (captions only, no temporal boundaries). This is achieved through cross-modal similarity-guided semantic-aware mask generation and auxiliary supervision from LLM-synthesized captions.
 
 ## Background & Motivation
-Dense Video Captioning (DVC) requires simultaneously localizing events and generating descriptions in untrimmed videos. Fully supervised methods rely on expensive temporal boundary annotations, whereas weakly-supervised DVC (WSDVC) trains using only caption annotations.
+Dense Video Captioning (DVC) requires simultaneous event localization and description generation in untrimmed videos. Fully supervised methods rely on expensive temporal boundary annotations, while Weakly-Supervised DVC (WSDVC) uses only caption annotations for training.
 
-**Core problem with existing methods**: The current state-of-the-art method ILCACM employs a Gaussian mask strategy to achieve implicit event localization through complementary caption generation. However, its mask learning suffers from two fundamental deficiencies:
+**Limitations of Prior Work**: The current SOTA method, ILCACM, utilizes a Gaussian mask strategy to achieve implicit event localization via complementary caption generation. However, its mask learning has two fundamental flaws:
 
-**Lack of semantic alignment in masks**: The model only learns non-overlapping mask distributions without considering the semantic relationship between masks and their corresponding events. Experiments show that even fixed, non-trainable uniform-distribution masks yield performance comparable to ILCACM — indicating that existing methods merely learn to cover different temporal regions rather than capturing semantically relevant ones.
+**Mask lacks semantic alignment**: It only learns non-overlapping mask distributions without considering the semantic relationship between the mask and the corresponding event. Experiments reveal that even fixed, non-trainable uniform distribution masks achieve performance parity with ILCACM—indicating that existing methods only learn to cover different temporal regions rather than capturing semantically relevant regions.
 
-**Annotation sparsity**: Event annotations in existing datasets are extremely sparse. For example, a 235-second video in ActivityNet may have only 3 event annotations, leaving a large number of potential events unannotated. Although annotations may span the entire video duration, event density remains consistently low.
+**Annotation sparsity**: Event annotations in existing datasets are extremely sparse. For instance, a 235-second video in ActivityNet might only have 3 event annotations, leaving many potential events unannotated. Although annotations might span the entire video duration, event density remains low.
 
 ## Method
 
 ### Overall Architecture
-SAIL builds upon the Gaussian mask complementary caption generation framework of ILCACM and introduces two key components: (1) a cross-modal similarity-based mask guidance objective that encourages masks to focus on video regions semantically consistent with their corresponding captions; and (2) an LLM-generated synthetic caption augmentation mechanism with an inter-mask strategy to provide denser supervision signals.
+In WSDVC training, only "video + several captions" are available without temporal boundaries. Following the framework of ILCACM, which assigns a learnable Gaussian mask to each caption and implicitly pushes masks to different time segments via "complementary caption generation," SAIL addresses its weaknesses with two components: first, ensuring masks are semantically aligned with caption descriptions (Similarity-Aware Mask Guide); and second, using an LLM to densify sparse caption annotations and safely incorporating these synthesized captions into training (Caption Augmentation + Inter-Mask). The pipeline remains "video features → Gaussian mask per caption → masked features for complementary caption generation," with SAIL adding semantic alignment constraints to masks and denser supervision to captions.
+
+```mermaid
+graph TD
+    V["Video Features + GT Captions<br/>(Captions only, no boundaries)"] --> G["Gaussian Mask per Caption<br/>(Following ILCACM)"]
+    G --> SAM["Similarity-Aware Mask Guide<br/>Mask × Feature → Pooling → CLIP Cross-modal<br/>Margin ranking pulls positive pairs, pushes strong negatives"]
+    SAM --> LSIM["L_sim: Mask aligns with caption semantics"]
+    G --> CCG["Complementary Caption Generation (ILCACM)<br/>→ L_pos / L_neg"]
+    subgraph AUG["LLM Caption Augmentation + Inter-Mask Auxiliary Guidance"]
+        direction TB
+        LLM["LLM-Based Caption Augmentation<br/>Interpolating transition events between adjacent captions → Synthetic captions"] --> IM["Inter-Mask Auxiliary Guidance<br/>Inter-mask placed at midpoints of adjacent events"]
+        IM --> LAUG["L_aug: Augmented features align with synthetic captions"]
+    end
+    G --> AUG
+    LSIM --> TOTAL["Total Loss<br/>L_pos + L_neg + L_sim + α·L_aug"]
+    CCG --> TOTAL
+    LAUG --> TOTAL
+```
 
 ### Key Designs
 
-1. **Similarity-Aware Mask Guide**: Guides mask optimization through cross-modal alignment.
+**1. Similarity-Aware Mask Guide: Forcing mask-semantic alignment via cross-modal similarity**
 
-    - **Function**: Encourages Gaussian masks to emphasize video regions most semantically similar to their corresponding event captions.
-    - **Mechanism**: After generating mask $M_i$, it is element-wise multiplied with video features to obtain the masked feature $\boldsymbol{v}'_i = \boldsymbol{v} \cdot M_i$. Leveraging CLIP's cross-modal alignment capability, the method maximizes the cosine similarity between the average-pooled masked feature $\bar{\boldsymbol{v}}'_i$ and the corresponding caption feature $\boldsymbol{c}_i$, while minimizing similarity to other event captions within the same video. A margin ranking loss is employed:
-    $$\mathcal{L}_{\text{sim}} = \frac{1}{B}\sum_{b=1}^{B}\frac{1}{N_s}\sum_{i=1}^{N_s}\max(0, \Delta - s^+_{b,i} + s^-_{b,i})$$
-    where $s^+ = \text{sim}(\bar{\boldsymbol{v}}'_i, \boldsymbol{c}_i)$ is the positive-pair similarity and $s^- = \max_{j \neq i}\text{sim}(\bar{\boldsymbol{v}}'_i, \boldsymbol{c}_j)$ is the hard-negative similarity.
-    - **Design Motivation**: Upgrades the weak constraint of "covering different regions" to a stronger constraint of "aligning with semantic content."
+The compelling experiment where fixed uniform masks matched ILCACM performance indicates that old masks only learned to be "mutually non-overlapping" without knowing if the enclosed segment matched the caption. SAIL remedies this by connecting mask learning directly to the CLIP cross-modal space. After generating mask $M_i$, it is element-wise multiplied with video features to obtain positive mask features $\boldsymbol{v}'_i = \boldsymbol{v} \cdot M_i$, which are average-pooled into $\bar{\boldsymbol{v}}'_i$. The objective is to maximize the cosine similarity between $\bar{\boldsymbol{v}}'_i$ and its corresponding caption feature $\boldsymbol{c}_i$, while minimizing it with other captions in the same video. A margin ranking loss implements this "pull positive, push strong negative" requirement:
 
-2. **LLM-Based Caption Augmentation**: Leverages LLM world knowledge to generate transitional event descriptions.
+$$\mathcal{L}_{\text{sim}} = \frac{1}{B}\sum_{b=1}^{B}\frac{1}{N_s}\sum_{i=1}^{N_s}\max(0,\, \Delta - s^+_{b,i} + s^-_{b,i})$$
 
-    - **Function**: For each pair of adjacent ground-truth captions $(C_i, C_{i+1})$, a synthetic caption $C^{syn}_i$ is generated for the temporal interval between them, yielding $N_s - 1$ synthetic captions per video.
-    - **Mechanism**: A structured prompt is designed that defines the LLM as a "video context reasoning expert," tasked with analyzing the narrative flow between adjacent captions and inferring the most likely transitional action or state change. Qwen3-8B is used for generation.
-    - **Design Motivation**: Addresses insufficient alignment signals caused by annotation sparsity, particularly for videos with only 1–2 event annotations.
+Where $s^+ = \text{sim}(\bar{\boldsymbol{v}}'_i, \boldsymbol{c}_i)$ is the similarity of the mask feature to its own caption, and $s^- = \max_{j \neq i}\text{sim}(\bar{\boldsymbol{v}}'_i, \boldsymbol{c}_j)$ selects the most similar "other" caption in the same video as a strong negative. This upgrades masks from a weak "different regions" constraint to a strong "semantic consistency" constraint—this single addition improves CIDEr by +1.76.
 
-3. **Inter-Mask Auxiliary Guidance**: An indirect utilization strategy for synthetic captions.
+**2. LLM-Based Caption Augmentation: Mitigating sparsity by interpolating transition events**
 
-    - **Function**: Creates an "inter-mask" for each synthetic caption, localized to the temporal region between adjacent event masks.
-    - **Mechanism**: For each pair of adjacent event centers $(c_i, c_{i+1})$, the inter-mask center is defined as their average $c^{inter}_i = \frac{c_i + c_{i+1}}{2}$, with width fixed at hyperparameter $w^{inter}$. After applying the inter-mask to video features, a cosine similarity loss aligns the augmented features with the synthetic captions:
-    $$\mathcal{L}_{\text{aug}} = \frac{1}{B}\sum_{b=1}^{B}\frac{1}{N_s-1}\sum_{i=1}^{N_s-1}(1 - \text{sim}(\bar{\boldsymbol{v}}'^{inter}_{b,i}, \boldsymbol{c}^{syn}_{b,i}))$$
-    - **Design Motivation**: Directly incorporating synthetic captions as hard negatives introduces noise and degrades performance (validated in Table 6); treating them as an independent auxiliary signal is more robust.
+WSDVC datasets suffer from extremely low annotation density. SAIL uses an LLM to fill these gaps: for every pair of adjacent GT captions $(C_i, C_{i+1})$, a synthetic caption $C^{syn}_i$ is generated for the interval between them, providing $N_s - 1$ additional supervisions per video. The prompt treats the LLM as a "video context reasoning expert" to infer probable transition actions or state changes between the narrative flow of two captions (implemented using Qwen3-8B ⚠️ refer to original text). This leverages LLM world knowledge and narrative reasoning to generate alignment signals for sparsely annotated videos.
+
+**3. Inter-Mask Auxiliary Guidance: Using synthetic captions as auxiliary signals rather than strong negatives**
+
+The utilization of synthesized captions is critical—incorporating them directly into the primary loss as strong negatives can degrade performance due to noise (confirmed in Table 6). Thus, SAIL creates an "inter-mask" for each synthetic caption, specifically placed in the transition zone between adjacent event masks. For any pair of adjacent event centers $(c_i, c_{i+1})$, the inter-mask center is the mean $c^{inter}_i = \frac{c_i + c_{i+1}}{2}$ with a fixed hyperparameter width $w^{inter}$. This inter-mask is applied to video features, and the resulting augmented features are pulled closer to the synthesized caption via cosine similarity loss:
+
+$$\mathcal{L}_{\text{aug}} = \frac{1}{B}\sum_{b=1}^{B}\frac{1}{N_s-1}\sum_{i=1}^{N_s-1}\bigl(1 - \text{sim}(\bar{\boldsymbol{v}}'^{inter}_{b,i}, \boldsymbol{c}^{syn}_{b,i})\bigr)$$
+
+For example, if one caption is "the chef pours batter into the pan" and the next is "the chef flips the pancake," the LLM-inferred transition might be "the batter slowly solidifies in the pan." The inter-mask covers the time midpoint between these events. Aligning augmented features with this transition description serves as "soft narrative guidance" rather than a "hard constraint," making it more robust than a strong negative strategy.
 
 ### Loss & Training
-- Final objective: $\mathcal{L} = \mathcal{L}_{\text{pos}} + \mathcal{L}_{\text{neg}} + \mathcal{L}_{\text{sim}} + \alpha_{\text{aug}}\mathcal{L}_{\text{aug}}$
-- $\mathcal{L}_{\text{pos}}$/$\mathcal{L}_{\text{neg}}$: Positive/negative complementary caption generation losses (inherited from ILCACM).
-- Hyperparameters: $\Delta=0.1$, $w^{inter}=0.6$, $\alpha_{\text{aug}}=0.25$.
-- Caption decoder: Distilled-GPT2; optimizer: AdamW.
-- ActivityNet: lr=1e-4, 10 epochs; YouCook2: lr=5e-5, 5+15 epochs.
+- Final Objective: $\mathcal{L} = \mathcal{L}_{\text{pos}} + \mathcal{L}_{\text{neg}} + \mathcal{L}_{\text{sim}} + \alpha_{\text{aug}}\mathcal{L}_{\text{aug}}$
+- $\mathcal{L}_{\text{pos}}$/$\mathcal{L}_{\text{neg}}$: Positive/negative complementary caption generation losses (inherited from ILCACM)
+- Hyperparameters: $\Delta=0.1$, $w^{inter}=0.6$, $\alpha_{\text{aug}}=0.25$
+- Caption Decoder: Distilled-GPT2, AdamW optimizer
+- ActivityNet: lr=1e-4, 10 epochs; YouCook2: lr=5e-5, 5+15 epochs
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | SAIL | Prev. SOTA (ILCACM) | Gain |
+| Dataset | Metric | SAIL | ILCACM (Prev. SOTA) | Gain |
 |--------|------|------|-----------------|------|
 | ActivityNet | CIDEr | 35.38 | 33.42 | +1.96 |
 | ActivityNet | SODA_c | 6.29 | 6.08 | +0.21 |
-| ActivityNet | F1 (Localization) | 57.00 | 56.20 | +0.80 |
+| ActivityNet | F1 (Loc) | 57.00 | 56.20 | +0.80 |
 | YouCook2 | CIDEr | 14.61 | 13.49 | +1.12 |
-| YouCook2 | F1 (Localization) | 20.94 | 17.88 | +3.06 |
+| YouCook2 | F1 (Loc) | 20.94 | 17.88 | +3.06 |
 
-SAIL under weak supervision surpasses fully supervised methods CM2 and E2DVC on most metrics.
+SAIL weakly-supervised performance exceeds fully supervised methods CM2 and E2DVC on most metrics.
 
 ### Ablation Study
 
-| Configuration | SODA_c | CIDEr | F1 | Note |
+| Configuration | SODA_c | CIDEr | F1 | Notes |
 |------|--------|-------|-----|------|
 | Baseline (ILCACM) | 6.08 | 33.42 | 56.20 | No semantic guidance |
-| +Similarity-aware | 6.27 | 35.18 | 56.89 | Semantically aligned masks |
-| +Synthetic captions | 6.29 | 34.92 | 56.79 | LLM-augmented supervision |
-| +Both (SAIL) | 6.29 | 35.38 | 57.00 | Best combination |
+| +Similarity-aware | 6.27 | 35.18 | 56.89 | Semantic alignment mask |
+| +Synthetic captions | 6.29 | 34.92 | 56.79 | LLM augmented supervision |
+| +Both (SAIL) | 6.29 | 35.38 | 57.00 | Optimal combination |
 
 ### Key Findings
-- The similarity-aware mask alone improves CIDEr by +1.76, demonstrating the effectiveness of the alignment loss.
-- Using synthetic captions as auxiliary signals via inter-mask outperforms using them as hard negatives (+HN).
-- Performance improves monotonically as the proportion of synthetic captions increases, with gains observed even at 25% usage.
-- SAIL consistently improves performance across three mask designs — Gaussian, Hard Binary, and Cauchy — demonstrating the generality of the approach.
-- Training overhead is negligible: 1h41m vs. ILCACM's 1h38m; inference is even slightly faster (7m01s vs. 7m11s).
+- Using semantic-aware masks alone improves CIDEr by +1.76, proving the effectiveness of the alignment loss.
+- Using synthesized captions as auxiliary signals (inter-mask) is superior to using them as strong negatives (+HN).
+- Even using only 25% of synthetic captions improves performance, with monotonic gains as the ratio increases.
+- SAIL consistently improves performance across Gaussian, Hard Binary, and Cauchy mask designs, proving the method's generality.
+- Training overhead is nearly unchanged: 1h41m vs. 1h38m (ILCACM), while inference is slightly faster (7m01s vs. 7m11s).
 
 ## Highlights & Insights
-1. **Insight from fixed-mask experiments**: Non-trainable uniform-distribution masks match ILCACM's performance, revealing that the masks learned by existing methods effectively lack semantic information.
-2. **Elegant use of LLM augmentation**: Rather than mixing synthetic captions directly into the main loss (which introduces noise), the method employs inter-masks as an independent auxiliary signal — functioning as "soft narrative guidance" rather than "hard constraints."
-3. **Weak supervision surpassing full supervision**: SAIL matches fully supervised methods on ActivityNet localization F1 and outperforms them on several captioning metrics, suggesting that semantic alignment is a more essential supervisory signal than temporal boundary annotations.
+1. **Insight from fixed mask experiments**: The fact that non-trainable uniform masks match ILCACM reveals that "learned" masks in existing methods actually lack semantic information.
+2. **Elegant use of LLM augmentation**: Synthesized captions are not mixed directly into the main loss (to avoid noise) but are used via inter-masks as independent auxiliary signals—"soft narrative guidance" instead of "hard constraints."
+3. **Weakly-supervised exceeding fully-supervised**: SAIL matches fully supervised methods in localization F1 on ActivityNet and exceeds them in certain caption quality metrics, suggesting semantic alignment is a more fundamental supervision signal than temporal boundaries.
 
 ## Limitations & Future Work
-- The improvement in SODA_c is modest (+0.21), indicating limited gains in narrative coherence.
-- The quality of LLM-generated synthetic captions depends on the LLM's world knowledge and may be less accurate in specialized domains (e.g., cooking, sports).
-- The inter-mask width $w^{inter}$ is a fixed hyperparameter rather than adaptively determined.
-- Evaluation is limited to two datasets; generalization to larger-scale or more diverse datasets remains unverified.
+- The improvement in SODA_c is relatively small (+0.21), suggesting limited improvement in narrative coherence.
+- The quality of synthesized captions depends on the LLM's world knowledge, which may be imprecise in specialized domains (e.g., professional cooking, sports).
+- The inter-mask width $w^{inter}$ is a fixed hyperparameter and is not adaptively adjusted.
+- Validated only on two datasets; not yet tested on larger-scale or different types of datasets.
 
 ## Related Work & Insights
-- Built upon ILCACM (current WSDVC state-of-the-art) with minimal modifications, achieving substantial performance gains.
-- The use of CLIP's cross-modal alignment capability to guide temporal mask learning is generalizable to other weakly-supervised video understanding tasks.
-- The idea of using LLMs to generate transitional event descriptions is highly inspiring — it leverages LLMs' narrative reasoning ability to complement sparse annotations.
-- The approach offers reference value for weakly-supervised video grounding, temporal action detection, and related tasks.
+- Built upon the complementary caption generation of ILCACM (current WSDVC SOTA), achieving significant gains with minimal modifications.
+- Leverages CLIP's cross-modal alignment capability to guide temporal mask learning, an approach generalizable to other weakly-supervised video understanding tasks.
+- The idea of using LLMs to generate transition event descriptions is highly inspired—utilizing LLM narrative reasoning to complete sparse annotations.
+- Provides a reference for tasks like weakly-supervised video grounding and temporal action detection.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ — The core intuition is clear, but the technical contribution is incremental (adding losses and augmentation on top of ILCACM).
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive ablations covering mask types, data proportions, and utilization strategies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation analysis is thorough; the fixed-mask experiment provides a particularly compelling insight.
-- **Value**: ⭐⭐⭐ — Surpassing full supervision under weak supervision is practically meaningful, though the margin of improvement is modest.
-- **Value**: TBD
+- Novelty: ⭐⭐⭐ Core ideas are intuitive and clear, but technical contributions are incremental (loss + augmentation added to ILCACM).
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive ablation including mask types, data ratios, and utilization strategies.
+- Writing Quality: ⭐⭐⭐⭐ Motivation analysis is thorough, and the insight from fixed mask experiments is very persuasive.
+- Value: ⭐⭐⭐ Weakly-supervised exceeding fully-supervised has practical significance, though improvement margins are modest.
+- Value: To be evaluated.
 
 <!-- RELATED:START -->
 
@@ -130,11 +140,11 @@ SAIL under weak supervision surpasses fully supervised methods CM2 and E2DVC on 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection](the_road_less_seen_segment_exploration_for_weakly_supervised_video_anomaly_detec.md)
 - [\[CVPR 2026\] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)
 - [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
-- [\[AAAI 2026\] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](../../AAAI2026/video_understanding/learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)
-- [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](../../AAAI2026/video_understanding/explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
-- [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](../../AAAI2026/video_understanding/refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
 
 </div>
 

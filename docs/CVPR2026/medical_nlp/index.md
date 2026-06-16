@@ -25,4 +25,4 @@ item_total: 1
 
 **[Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data](towards_efficient_medical_reasoning_with_minimal_fine-tuning_data.md)**
 
-:   This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence to enable VLM language backbones to match full-data SFT performance using only 1% of curated data, and to surpass full-data training with just 10%.
+:   This paper proposes the Difficulty-Influence Quadrant (DIQ) data selection strategy, which jointly considers sample difficulty and gradient influence. This approach allows a VLM's language backbone to match full SFT performance using only 1% of curated data and exceed full-dataset training with 10% of the data.

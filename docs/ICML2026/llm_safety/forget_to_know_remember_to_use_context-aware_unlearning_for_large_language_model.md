@@ -2,132 +2,126 @@
 title: >-
   [Paper Note] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models
 description: >-
-  [ICML 2026][LLM Safety][LLM unlearning] This paper points out that existing LLM unlearning methods, while "erasing knowledge from parameters…
+  [ICML 2026][LLM Safety][LLM unlearning] This paper demonstrates that existing LLM unlearning methods, while "erasing knowledge from parameters," also destroy the model's "contextual utility"—the ability to correctly utilize that knowledge when it is re-provided in the prompt. The authors propose adding a KL regularization term to the existing unlearning loss
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "LLM unlearning"
-  - "contextual utility"
-  - "KL regularization"
-  - "TOFU"
-  - "RAG-friendly unlearning"
+  - ICML 2026
+  - LLM Safety
+  - LLM unlearning
+  - contextual utility
+  - TOFU
 date: 2026-05-08
-content_hash: a33d1424071b82d6
+content_hash: 41133ccb1cfa0a73
 ---
-
 # Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.17620](https://arxiv.org/abs/2510.17620)  
-**Code**: Not disclosed  
-**Area**: LLM Security / Machine Unlearning  
+**Code**: Not public  
+**Area**: LLM Safety / Machine Unlearning  
 **Keywords**: LLM unlearning, contextual utility, KL regularization, TOFU, RAG-friendly unlearning
 
 ## TL;DR
-This paper points out that existing LLM unlearning methods, while "erasing knowledge from parameters," also destroy the model's "contextual utility"—its ability to correctly utilize knowledge when it is re-provided by the user in the prompt. The authors propose adding a KL regularization term to existing unlearning losses. By aligning the output distribution of the unlearned model with the original model on "Question + Context" inputs, the Contextual QA LLM-Judge score is restored from 0.00–0.84 to 0.95+ with almost no loss in forgetting effectiveness or retain set utility.
+This paper demonstrates that existing LLM unlearning methods, while "erasing knowledge from parameters," also destroy the model's "contextual utility"—the ability to correctly utilize that knowledge when it is re-provided in the prompt. The authors propose adding a KL regularization term to the existing unlearning loss—aligning the unlearned model's distribution on "question + context" inputs with the original model—to restore Contextual QA LLM-Judge scores from 0.00–0.84 back to 0.95+ with almost no loss in forgetting effectiveness or retain set utility.
 
 ## Background & Motivation
 
-**Background**: LLMs are trained on web-scale corpora and inevitably ingest information that must be "deleted," such as copyrighted content or private personal information. Since full retraining is prohibitively expensive, various unlearning methods have emerged: Gradient Ascent families (GradAscent / GradDiff), preference optimization families (NPO, DPO variants), re-labeling families (UNDIAL), and representation perturbation families (RMU). Evaluation standards typically focus on two aspects: thorough forgetting on the forget set (low Direct QA score) and performance preservation on the retain set (no loss in model utility).
+**Background**: LLMs are trained on web-scale corpora and inevitably ingest copyrighted content and personal privacy that must be "deleted." Since direct retraining is cost-prohibitive, unlearning methods have emerged: Gradient Ascent family (GradAscent / GradDiff), Preference Optimization family (NPO, DPO variants), Re-labeling family (UNDIAL), and Representation Modification family (RMU). Evaluation typically relies on two pillars: cleaning the forget set (low Direct QA scores) and preserving abilities on the retain set (no drop in model utility).
 
-**Limitations of Prior Work**: The authors observe a third dimension ignored by the community—in RAG and long-prompt scenarios, models often receive "theoretically forgotten" content as input (e.g., user-uploaded documents or retrieved copyrighted segments). Using this information is legally permissible since it is provided by the user in-context rather than remembered by the model. However, existing unlearning methods fail on such "Contextual QA" tasks where the answer is explicitly provided: on Gemma-2B-IT, RMU, GradAscent, and GradDiff reduce Contextual QA scores to nearly zero, while NPO and UNDIAL show drops of over 15.5%. Case studies show outputs degrading from "hallucinated locations" to pure gibberish like "denden den den...".
+**Limitations of Prior Work**: The authors observe a third dimension ignored by the community—RAG and long-prompt scenarios where the model frequently receives "theoretically forgotten" content as input (e.g., user-uploaded documents, retrieved copyright segments). This is legally permissible because the information is provided by the user in-context rather than remembered by the model. However, existing unlearning methods fail on this "Contextual QA": RMU, GradAscent, and GradDiff drive Contextual QA scores to nearly zero on Gemma-2B-IT, while NPO and UNDIAL drop scores by over 15.5%. Case studies show output degradation ranging from "hallucinated countries" to pure gibberish like "denden den den...".
 
-**Key Challenge**: All existing losses focus on the binary trade-off between "forget vs. retain," essentially penalizing the parameter representations of $\mathcal{S}_f$. This penalty does not "only punish memory recall"—it spills over in the representation space to context conditioning during inference. When the same tokens appear in the context, the model loses its ability to ground its generation on those tokens to produce correct answers. Methods like RMU, which erase knowledge by perturbing activations, are particularly severe as they directly destroy the representation pathways of related concepts.
+**Key Challenge**: All existing losses optimize the binary trade-off between "forget vs. retain," essentially penalizing parameter representations of $\mathcal{S}_f$. This penalty does not "target memory recall alone"—it spills over in the representation space to inference-time context conditioning. When the same tokens appear as context, the model loses its ability to ground its generation on them. Methods like RMU, which erase activation perturbations, are particularly severe as they directly damage the representation pathways for relevant concepts.
 
-**Goal**: (1) Systematically quantify the side effects of 6 SOTA unlearning methods on Contextual QA; (2) Design a "plug-and-play" patch with minimal changes to original methods to recover contextual utility without compromising forgetting or general utility.
+**Goal**: (1) Systematically quantify the side effects of 6 SOTA unlearning methods on Contextual QA; (2) Design a plug-and-play patch with minimal changes to original methods to recover contextual utility without compromising forgetting or overall utility.
 
-**Key Insight**: RLHF has demonstrated that KL regularization can prevent a model from deviating from the original model in certain behavioral dimensions. Since the problem is that the unlearned model's behavior changes given $(q, c)$ inputs, one can use the original model as an anchor and apply a KL constraint on the $(q, c)$ data stream. This constraint acts on a different input distribution ($\mathcal{S}_f^{\text{ctx}}$) than the forget term ($\mathcal{S}_f$), preventing interference.
+**Key Insight**: RLHF has long proven that KL regularization can stabilize a model along certain behavioral dimensions relative to the original model. Since the problem is that the unlearned model behaves differently on $(q, c)$ inputs, one can use the original model as an anchor and apply a KL constraint on the $(q, c)$ data stream. This acts on a different distribution than the forget term ($\mathcal{S}_f$ vs. $\mathcal{S}_f^{\text{ctx}}$), preventing conflict between the objectives.
 
-**Core Idea**: Add a third term to the standard unlearning loss: $\lambda_c \cdot \mathrm{KL}(p_w(\cdot|q,c) \,\|\, p_{\text{orig}}(\cdot|q,c))$. This explicitly anchors the "contextual conditional distribution" to the original model, decoupling "parametric memory" from "contextual usage" at the loss level. The objective is: "do not recall from memory, but do use when provided."
+**Core Idea**: Add a third term $\lambda_c \cdot \mathrm{KL}(p_w(\cdot|q,c) \,\|\, p_{\text{orig}}(\cdot|q,c))$ to the standard unlearning loss. This explicitly anchors the "context-conditional distribution" to the original model, decoupling "parametric memory" from "contextual usage" at the loss level to achieve the principle of "do not recall from memory, but do use when provided."
 
 ## Method
 
 ### Overall Architecture
-The method consists of two phases. Phase one is diagnosis: evaluating 6 SOTA unlearning methods (GradAscent, GradDiff, NPO, DPO, UNDIAL, RMU) on the TOFU benchmark (fictional author profiles) with a 5% forget ratio on Gemma-2B-IT and Qwen3-8B. A new Contextual QA evaluation protocol is introduced—using the same forget set questions but providing the ground truth as context in the prompt. Performance is measured via ROUGE-L and LLM-Judge. Phase two is the patch: adding a context term $\mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w)$ to existing losses. This uses a constructed set $\mathcal{S}_f^{\text{ctx}} = \{(q, a, c)\}$ (where $c$ is the context containing the answer) to align the unlearned model's prediction distribution with the frozen original model $p_{\text{orig}}$. The total objective function becomes: $\mathcal{J}(w) = -\lambda_f L_f(\mathcal{S}_f, w) + \lambda_r L_r(\mathcal{S}_r, w) + \lambda_c \mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w)$.
+The paper presents a "diagnosis-then-repair" loop. In the diagnosis phase, 6 SOTA methods (GradAscent, GradDiff, NPO, DPO, UNDIAL, RMU) are evaluated on the TOFU benchmark (fictional author profiles) with a 5% forget ratio. Beyond standard Direct QA, a new evaluation line is added: given the same forget set questions, the ground truth is provided as context to see if the model can still answer correctly. In the repair phase, a patch is applied to all unlearning losses: a context set $\mathcal{S}_f^{\text{ctx}} = \{(q, a, c)\}$ (where $c$ contains the answer) is constructed, and a KL regularization term $\mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w)$ forces the model's predictions on this stream to align with the frozen original model $p_{\text{orig}}$. The objective function expands from two terms to three: $\mathcal{J}(w) = -\lambda_f L_f(\mathcal{S}_f, w) + \lambda_r L_r(\mathcal{S}_r, w) + \lambda_c \mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w)$.
 
 ### Key Designs
 
-1.  **Contextual QA Evaluation Protocol**:
-    *   **Function**: Complements unlearning evaluation with a third dimension, specifically measuring whether knowledge is still usable when provided in the prompt.
-    *   **Mechanism**: For every $(q, a)$ in the forget set, a context $c$ (containing the ground truth description) is paired. The prompt "Question + Provided Context" is fed to the unlearned model. ROUGE-L measures literal overlap, and LLM-Judge measures semantic correctness. The protocol also includes paraphrase and reasoning context variants to ensure the model isn't just memorizing surface patterns. An ideal model should have low Direct QA, high Contextual QA, and high model utility.
-    *   **Design Motivation**: Previous protocols only tested if the model remembered information without hints. However, as LLMs are increasingly used in RAG/long-prompt scenarios, whether a model can use legally re-provided information is the real concern for deployment. This protocol exposes neglected side effects—Table 1 shows 5 out of 6 methods produce errors or gibberish even when the answer is in the context.
+**1. Contextual QA Evaluation Protocol: Quantifying the Missing Dimension**
+Traditional evaluation only checks for forgetting (low Direct QA) and utility preservation (high retain utility). However, as LLMs are increasingly used in RAG/long-prompt scenarios, the ability to use re-provided legitimate information is critical. This protocol pairs each $(q, a)$ in the forget set with a context $c$ containing the ground truth. Performance is measured by ROUGE-L (lexical overlap) and LLM-Judge (semantic correctness). To ensure models aren't just memorizing token patterns, the protocol includes paraphrase and reasoning variants of context. This exposed that 5 out of 6 methods produce errors or gibberish even when the answer is directly in the context.
 
-2.  **Context-aware KL Regularization**:
-    *   **Function**: Acts as a pluggable loss module to anchor contextual utility at the original model's level.
-    *   **Mechanism**: $\mathcal{S}_f^{\text{ctx}} = \{(q, a, c)\}$ is constructed (where $c$ is derived from TOFU ground truth). The term is defined as $\mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w) = \frac{1}{|\mathcal{S}_f^{\text{ctx}}|} \sum_{(q,a,c)} \mathrm{KL}(p_w(\cdot|q,c) \,\|\, p_{\text{orig}}(\cdot|q,c))$. This forces the token distribution under "Question + Context" to approximate the frozen original model. This term is orthogonal to the original loss. Appendix A.6 shows results are insensitive to $\lambda_c$ (values between 0.01–2.0 work across models and methods without fine-tuning).
-    *   **Design Motivation**: The key insight is that the standard two-term loss constrains two distributions but leaves the third (contextual) distribution floating. KL-to-reference is a proven tool in RLHF. Here, the "reference" is the pre-unlearning self, and the "constrained behavior" is limited to the $(q, c)$ stream. KL is a distribution-level constraint, which is gentler than single-point distillation and avoids direct conflict with the forget term.
+**2. Context-aware KL Regularization Term: Anchoring the Unconstrained Dimension**
+The core insight is that traditional losses only constrain the $\mathcal{S}_f$ and $\mathcal{S}_r$ distributions, leaving the contextual distribution unconstrained. Consequently, the forgetting penalty spills over and collapses the model's grounding ability on $(q, c)$ inputs. The remedy anchors this stream by constructing $\mathcal{S}_f^{\text{ctx}} = \{(q, a, c)\}$ (where $c$ is derived from TOFU ground truth) and defining:
+$$\mathcal{C}(\mathcal{S}_f^{\text{ctx}}, w) = \frac{1}{|\mathcal{S}_f^{\text{ctx}}|} \sum_{(q,a,c)} \mathrm{KL}\big(p_w(\cdot|q,c) \,\|\, p_{\text{orig}}(\cdot|q,c)\big)$$
+This forces the token distribution under "question + context" prompts toward the original model. Using the pre-unlearned self as a reference eliminates the need for external teachers or extra labels. Since it does not modify the forget set loss, the forgetting strength is maintained while grounding behavior is stabilized.
 
-3.  **Plug-and-play Integration**:
-    *   **Function**: Enables different unlearning paradigms (NPO, RMU, UNDIAL) to use the same context term.
-    *   **Mechanism**: Regardless of the paradigm, most methods follow a "forget term + optional retain term" structure. The new method simply adds $+\lambda_c \mathcal{C}$, requiring one extra forward pass on the original model per step.
-    *   **Design Motivation**: The unlearning community is fragmented with many new methods. A successful proposal must be compatible with existing paradigms. This paper demonstrates that the same context term significantly improves Contextual QA across three entirely different paradigms.
+**3. Plug-and-Play Integration**
+Regardless of whether a method uses preference optimization (NPO), re-labeling (UNDIAL), or activation perturbation (RMU), they all follow a "forget term + optional retain term" structure. The new method simply appends $+\lambda_c \mathcal{C}$. This requires only one additional forward pass of the original model per step. The context term provides massive Contextual QA improvements across all paradigms (most notably RMU going from $0.00 \to 0.99$), proving that contextual suppression is a universal "disease" and the KL anchor is a universal "cure."
 
 ### Loss & Training
-Final loss: $\mathcal{J}(w) = -\lambda_f L_f + \lambda_r L_r + \lambda_c \mathcal{C}$. Training follows TOFU standards (AdamW, extended from 5 to 20 epochs for convergence). $\lambda_c$ values: for Gemma-2B-IT, NPO/RMU/UNDIAL use 2.0 / 0.01 / 0.5; for Qwen3-8B, they use 1.0 / 0.5 / 1.0.
+The final loss is $\mathcal{J}(w) = -\lambda_f L_f + \lambda_r L_r + \lambda_c \mathcal{C}$. Training follows standard TOFU settings (AdamW, extended from 5 to 20 epochs for convergence). The added hyperparameter $\lambda_c$ is stable across models (e.g., 2.0 / 0.01 / 0.5 for NPO/RMU/UNDIAL on Gemma-2B-IT). The convergence criterion is the simultaneous optimization of Direct QA, Contextual QA, and model utility.
 
 ## Key Experimental Results
 
 ### Main Results
-TOFU 5% forget ratio, comparing vanilla vs. context-aware unlearning:
+On TOFU 5% forget ratio, comparing vanilla vs. context-aware unlearning:
 
 | Model | Method | Variant | Direct ROUGE-L ↓ | Contextual ROUGE-L ↑ | Direct LLM-Judge ↓ | Contextual LLM-Judge ↑ | Utility ↑ |
-|------|------|------|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | Gemma-2B-IT | NPO | Vanilla | 0.31 | 0.55 | 0.19 | 0.81 | 0.57 |
 | Gemma-2B-IT | NPO | Context-aware | 0.36 | **0.87** (+0.32) | 0.25 | **0.98** (+0.17) | 0.57 |
 | Gemma-2B-IT | RMU | Vanilla | 0.04 | 0.01 | 0.00 | 0.00 | 0.60 |
 | Gemma-2B-IT | RMU | Context-aware | 0.13 | **0.91** (+0.90) | 0.01 | **0.99** (+0.99) | 0.57 |
+| Qwen3-8B | NPO | Vanilla | 0.27 | 0.46 | 0.14 | 0.84 | 0.60 |
 | Qwen3-8B | RMU | Vanilla | 0.10 | 0.18 | 0.00 | 0.05 | 0.59 |
 | Qwen3-8B | RMU | Context-aware | 0.13 | **0.67** (+0.49) | 0.01 | **0.97** (+0.92) | 0.57 |
 
-The most dramatic result is for RMU: the vanilla version completely fails Contextual QA (LLM-Judge $\leq 0.05$), while the context-aware version pushes it to $\geq 0.97$.
+RMU shows the most dramatic shift: failing completely on vanilla Contextual QA (LLM-Judge $\leq 0.05$) but reaching $\geq 0.97$ with the context-aware version.
 
 ### Ablation Study
 
 | Dimension | Configuration | Key Finding |
-|------|------|------|
-| Forget ratio | 1% / 5% / 10% | Vanilla consistently drops Contextual QA; context-aware reliably restores it across all ratios. |
-| Context variant | Original / Paraphrase / Reasoning | Vanilla RMU produces gibberish for all; context-aware RMU handles all correctly, proving semantic recovery. |
-| Model utility | With context term | Gemma avg -0.01, Qwen avg 0.00; almost zero cost for general capabilities. |
-| $\lambda_c$ Sensitivity | Various methods | Stable across 0.01–2.0; very easy to tune. |
-| Dataset Generalization | TOFU + PISTOL | Trends are identical across datasets. |
+|---|---|---|
+| Forget ratio | 1% / 5% / 10% | Vanilla consistently degrades Contextual QA; context-aware stabilizes it regardless of ratio. |
+| Context variants | Paraphrase / Reasoning | Vanilla RMU outputs gibberish for all; context-aware RMU recovers semantic utility, not just surfacing patterns. |
+| Direct QA Side-effect | With context term | Minor increase in Direct scores (~2-4pp), negligible compared to Contextual QA gains. |
+| Model utility | With context term | Near-zero cost to general model performance (~ -0.01). |
+| $\lambda_c$ Sensitivity | Across methods | Results are stable across a wide range (0.01–2.0), making tuning easy. |
 
 ### Key Findings
-- **Contextual suppression is a universal side effect**: 5 out of 6 SOTA methods fail Contextual QA. This failure is paradigm-agnostic.
-- **RMU performs best in standard metrics but worst in contextual metrics**: Its activation perturbation "crushes" the representation space, destroying contextual conditioning. UNDIAL (re-labeling) has the least side effects but is weaker at forgetting.
-- **KL anchor is a robust solution**: Its insensitivity to $\lambda_c$ makes it practical for deployment, and its robustness to paraphrase/reasoning context proves it isn't just shallow pattern matching.
+- **Contextual suppression is a universal side effect**: 5 out of 6 SOTA unlearning methods fail Contextual QA. This failure is paradigm-agnostic across GA, preference optimization, and activation perturbation.
+- **RMU represents a new trade-off**: It performs best on standard metrics but worst on context metrics because its "heavy-handed" representation erasing destroys grounding pathways.
+- **KL anchor is a robust solution**: Its effectiveness against paraphrased/reasoning contexts and low sensitivity to hyperparameters make it ideal for practical deployment.
 
 ## Highlights & Insights
-- **The problem discovery is half the value**: Before this paper, the community used a two-axis evaluation (Direct QA + Utility). By revealing the hidden cost of "killing a neglected capability," this paper shifts the evaluation paradigm.
-- **Elegance in "old medicine for new diseases"**: Using KL-to-reference is a textbook RLHF tool, but applying it to the specific $(q, c)$ input stream in an unlearning context is a non-trivial and elegant solution that occupies a previously empty "safety gap" in the loss topology.
-- **Transferability**: The "Diagnosis—Anchoring—Decoupling" framework can likely be applied to other tasks like model editing or concept erasure where similar tensions exist.
+- **Problem identification is half the value**: By exposing the hidden cost of unlearning with Figure 1 and "gibberish" case studies, the paper defines a critical new evaluation dimension for the community.
+- **Elegant "Old Medicine" Application**: While KL-to-reference is a classic RLHF tool, its application to unlearning—specifically choosing the pre-unlearned model as the anchor and targeting the $(q, c)$ stream—is a non-trivial and effective design choice.
+- **Paradigm-Agnostic Patch**: The ability to integrate with NPO, RMU, and UNDIAL ensures the work remains relevant as new unlearning methods emerge.
 
 ## Limitations & Future Work
-- **Limitations**: There is still a slight trade-off between "enhancing contextual utility" and "strengthening direct forgetting." Evaluation is limited to 8B scale models.
-- **In-house Observations**: Contexts are currently derived from ground truth; real RAG scenarios involving long, noisy documents deserve more study. The need for $\mathcal{S}_f^{\text{ctx}}$ data for every forget request poses a streaming construction challenge for user-driven requests.
-- **Future Directions**: (1) Extending context terms to sequence-level consistency; (2) Studying the link between contextual utility and jailbreak attacks; (3) Scaling to multi-document RAG and multi-turn dialogues.
+- **Limitations**: A slight trade-off remains between contextual utility and strict Direct QA forgetting. Testing was limited to 8B models and synthetic benchmarks (TOFU, PISTOL).
+- **In-depth limitations**: Contexts are derived from ground truths; real-world RAG involves noisier, longer documents. Constructing $\mathcal{S}_f^{\text{ctx}}$ on-the-fly for user-defined forget requests is not yet explored.
+- **Future Directions**: Extending the framework to multi-document RAG and multi-turn dialogues; investigating if restored contextual utility opens new jailbreak attack surfaces.
 
 ## Related Work & Insights
-- **vs. TOFU (Maini et al., 2024)**: This work adds a third "Contextual QA" axis to their forget+retain protocol, ensuring comparability with prior work while completing the dimension.
-- **vs. Unlearning Methods (NPO/RMU)**: This paper does not compete with them but provides a patch; the discovery of a "paradigm-level disease" is a significant insight.
-- **vs. Unlearning Reversal**: While other research uses context as an attack vector to recall knowledge, this paper treats context as a legitimate user input, aiming to preserve utility without expanding the attack surface.
+- **vs. TOFU/MUSE**: Complements existing forget+retain axes with a third Contextual QA axis.
+- **vs. Specific Methods**: Does not compete with NPO/RMU but provides a necessary patch for their inherent weaknesses.
+- **vs. In-context Unlearning**: Those works use prompts to simulate forgetting; this work studies how parameter unlearning destroys in-context recall.
+- **vs. Unlearning Reversal**: While attacks use context to elicit forgotten info, this work focuses on legitimate contextual use, though there is a natural tension between the two.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Creating the Contextual QA dimension is a real conceptual contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 6 baselines, 2 models, 3 forget ratios, and multiple context variants.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem definition is clear (Figure 1), and case studies are impactful.
-- **Value**: ⭐⭐⭐⭐⭐ A near-essential patch for RAG-based LLM deployment with compliance requirements.
+- **Novelty**: ⭐⭐⭐⭐ Creating the Contextual QA dimension is a significant conceptual contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive coverage across baselines, models, and variants.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear problem framing, impactful visuals, and well-structured loss analysis.
+- **Value**: ⭐⭐⭐⭐⭐ A near-essential patch for unlearning in RAG-centric deployment environments.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](../../CVPR2026/llm_safety/which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
-- [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](../../ACL2026/llm_safety/vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[CVPR 2026\] DAMP: Class Unlearning via Depth-Aware Removal of Forget-Specific Directions](../../CVPR2026/llm_safety/damp_class_unlearning_via_depth_aware_removal_of_forget_specific_directions.md)
+- [\[ICML 2025\] System-Aware Unlearning Algorithms: Use Lesser, Forget Faster](../../ICML2025/llm_safety/system-aware_unlearning_algorithms_use_lesser_forget_faster.md)
+- [\[ACL 2025\] Answer When Needed, Forget When Not: Language Models Pretend to Forget via In-Context Knowledge Unlearning](../../ACL2025/llm_safety/answer_when_needed_forget_when_not_language_models_pretend_to_forget_via_in-cont.md)
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
-- [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
+- [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](../../ACL2026/llm_safety/vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
+- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](../../CVPR2026/llm_safety/which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
 
 </div>
 

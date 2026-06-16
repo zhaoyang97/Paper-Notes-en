@@ -2,132 +2,141 @@
 title: >-
   [Paper Note] SWE-QA: Can Language Models Answer Repository-level Code Questions?
 description: >-
-  [ACL 2026][Code Intelligence][Repository-level Code Understanding] SWE-QA constructs a repository-level code QA benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. The benchmark uses GitHu…
+  [ACL 2026][Code Intelligence][Code QA] SWE-QA constructs a repository-level code QA benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. It derives question types from GitHub issues and validates answers via human experts. Experiments show that standalone LLMs are inadequate; only RAG and tool-integrated agents like OpenHands/
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Repository-level Code Understanding"
-  - "Code QA"
-  - "RAG"
-  - "Software Engineering Agent"
-  - "SWE-Bench"
+  - ACL 2026
+  - Code Intelligence
+  - Code QA
+  - RAG
+  - SWE-Bench
 date: 2026-05-08
-content_hash: d0087375d82c50c4
+content_hash: 093f2da62fa4283a
 ---
-
 # SWE-QA: Can Language Models Answer Repository-level Code Questions?
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2509.14635](https://arxiv.org/abs/2509.14635)  
 **Code**: https://github.com/peng-weihan/SWE-QA-Bench  
-**Area**: Code Intelligence / Repository-level Question Answering  
-**Keywords**: Repository-level Code Understanding, Code QA, RAG, Software Engineering Agent, SWE-Bench
+**Area**: Code Intelligence / Repository-level QA  
+**Keywords**: Repository-level code understanding, Code QA, RAG, Software Engineering Agent, SWE-Bench
 
 ## TL;DR
-SWE-QA constructs a repository-level code QA benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. The benchmark uses GitHub issues to induce question types and employs human verification for answers. Experiments demonstrate that vanilla LLM direct prompting is insufficient; RAG and tool-integrated agents like OpenHands or SWE-agent are required to meet real-world development QA needs.
+SWE-QA constructs a repository-level code QA benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. It derives question types from GitHub issues and validates answers via human experts. Experiments show that standalone LLMs are inadequate; only RAG and tool-integrated agents like OpenHands/SWE-agent approach the requirements of real-world development QA.
 
 ## Background & Motivation
-**Background**: Evaluation of code QA has long skewed toward localized problems such as functions, code snippets, API documentation, or StackOverflow-style queries. Benchmarks like CoSQA, CodeQA, and CodeQueries primarily test the ability to explain isolated code blocks. Although repository-level datasets like CodeRepoQA, CoreQA, and Spyder-CodeQA have recently emerged, they remain unsystematic in question coverage, cross-file dependencies, and human verification.
+**Background**: Evaluation of code QA has long trended towards functions, code snippets, API documentation, or StackOverflow-style local problems. Benchmarks such as CoSQA, CodeQA, and CodeQueries primarily test the ability to explain a given segment of code. While repository-level datasets like CodeRepoQA, CoreQA, and Spyder-CodeQA have emerged recently, they lack systematic coverage of question types, cross-file dependencies, and rigorous human validation.
 
-**Limitations of Prior Work**: In real-world software development, developers rarely ask "what does this line of code mean." Instead, they ask questions such as "where is a specific feature implemented," "why does this class access a certain attribute lazily," or "how does a test take effect across routes, configurations, and request contexts." These questions require models to navigate across multiple files, classes, functions, and control flows; relying solely on parametric memory or a single retrieved snippet frequently misses critical dependencies.
+**Limitations of Prior Work**: In real-world software engineering, developers rarely ask "what does this line mean." Instead, they ask questions like "where is this feature implemented," "why does this class lazily access a certain attribute," or "how does a test take effect across routes, configurations, and request contexts." These questions require models to navigate multiple files, classes, functions, and control flows. Relying on parametric memory or a single retrieved snippet often misses critical dependencies.
 
-**Key Challenge**: While code LLMs are increasingly proficient at writing local code, evaluation systems still do not adequately test the understanding of "the repository as a system." Snippet-level benchmarks might make models appear strong without demonstrating their capability to answer questions about system design, dependency tracking, or feature localization asked by actual maintainers.
+**Key Challenge**: While large code models are increasingly proficient at writing local code, evaluation systems still fail to adequately test the understanding of a "repository as a system." Snippet-level benchmarks can make models appear strong without demonstrating their ability to answer questions about system design, dependency tracking, and feature localization that real maintainers ask.
 
-**Goal**: The authors aim to fill this gap by providing an evaluation perspective closer to real software engineering. This involves abstracting a repository-level question taxonomy from developer issues and constructing a reusable QA generation and human verification pipeline to compare direct prompting, RAG, agents, and commercial code assistants.
+**Goal**: Ours aims to fill a evaluation gap closer to real-world software engineering. This involves abstracting a repository-level question taxonomy from developer issues and constructing a reusable QA generation and human validation pipeline to compare direct prompting, RAG, agents, and commercial code assistants.
 
-**Key Insight**: Instead of generating questions from synthetic templates, the paper crawls GitHub issues from repositories associated with SWE-Bench to observe how developers actually ask questions. These are categorized into four major types (What / Why / Where / How) across 12 fine-grained intents, ensuring the benchmark distribution resembles real-world development environments rather than a collection of academic tasks.
+**Key Insight**: Instead of creating problems from templates, the paper crawls GitHub issues from SWE-Bench repositories to observe how developers actually ask questions. These questions are categorized into four major types (What, Why, Where, How) with 12 fine-grained intents, ensuring the distribution reflects real development environments rather than synthetic academic tasks.
 
-**Core Idea**: Use a GitHub issue-driven question taxonomy combined with static code structure and human verification to construct an extensible benchmark that evaluates cross-file, multi-hop, repository-level reasoning.
+**Core Idea**: Use a GitHub issue-driven question taxonomy combined with static code structures and human validation to construct a scalable benchmark that examines cross-file, multi-hop, repository-level reasoning.
 
 ## Method
-SWE-QA serves as a benchmark study. Its methodology encompasses a complete repository-level QA production pipeline: understanding developer questions from issues, templatizing question types, parsing target repositories to instantiate questions around specific elements, generating initial answers via RAG, and finally having experienced developers revise, cross-verify, and filter the data.
+SWE-QA is a benchmark paper, but its method involves a comprehensive production pipeline for repository-level QA. The authors first analyze developer questions from real issues to template question types, then parse target repositories to instantiate questions around specific classes or modules. Initial answers are generated via RAG and subsequently revised and cross-validated by experienced developers.
 
 ### Overall Architecture
-The input consists of raw open-source Python repositories and developer questions extracted from GitHub issues. The output is 720 repository-level QA pairs, where each question is bound to a target repository, a question type, a context requiring multi-hop reasoning, and a human-verified long-form answer.
+The input consists of real-world open-source Python repositories and developer questions extracted from GitHub issues. The output is 720 repository-level QA pairs, each bound to a target repository, a question type, a context requiring multi-hop reasoning, and a human-validated long-form answer.
 
-The pipeline comprises four steps:
-1. Crawling and analyzing GitHub issues to establish a question taxonomy and seed templates.
-2. Parsing repository structures using tree-sitter to instantiate questions around focal code elements.
-3. Generating initial reference answers using Retrieval-Augmented Generation (RAG).
-4. Expert revision of answers, filtering of low-quality samples, and category balancing.
+The pipeline comprises four steps: first, crawling and analyzing GitHub issues to establish a question taxonomy and seed templates; second, parsing repository structures with tree-sitter to instantiate questions around focal code elements; third, generating initial reference answers using retrieval-augmented generation; and fourth, expert revision to filter low-quality samples and ensure category balance.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN1["Real Python Repositories"]
+    IN2["GitHub issues"]
+    IN2 --> D1["Inducing repo-level taxonomy from real issues<br/>Crawl 77k issues → Filter → LLM Extraction → Open Coding → 4 categories / 12 intents"]
+    subgraph D2["Structure-based Question Instantiation & Answer Generation"]
+        direction TB
+        A["tree-sitter parses repository<br/>Extract code subgraph around focal element & instantiate via seed templates"]
+        B["RAG retrieves relevant code / docs / architecture<br/>Strong model generates initial answers with code locations"]
+        A --> B
+    end
+    IN1 --> D2
+    D1 --> D2
+    D2 --> D3["Data Validation via Dual-Expert Revision & Balancing<br/>Factual / Completeness cross-validation → Filter → 48 questions per repo / balanced categories"]
+    D3 --> OUT["720 repo-level QA pairs"]
+```
 
 ### Key Designs
-1. **Repository-level Question Taxonomy Induced from Real Issues**:
-	- **Function**: Compresses questions raised by real developers in issues into a reusable taxonomy.
-	- **Mechanism**: The authors crawled 77,100 GitHub issues from 12 popular SWE-Bench repositories, filtered 41,955 issues with at least 1,000 characters, and used an LLM to extract 127,415 explicit code-understanding questions. 1,000 samples were manually coded to form four major categories (What, Why, Where, How) and 12 fine-grained intents, such as Architecture exploration, Dependency tracing, Design rationale, Feature Location, and Algorithm Implementation.
-	- **Design Motivation**: Subjectively designed question types often favor "easy-to-label" local issues. Inducing the taxonomy from issues preserves systemic problems found in maintenance and ensures templates align with real development scenarios.
 
-2. **Structure-Based Question Instantiation and Answer Generation**:
-	- **Function**: Converts abstract seed questions into specific, multi-hop questions within a real repository.
-	- **Mechanism**: Tree-sitter is used to parse repositories and extract classes, functions, methods, and dependencies. A compact subgraph is selected around a focal element to fill the seed template. For answer generation, a code element index is built, combining semantic similarity and structural dependencies to retrieve relevant code, documentation, and architecture info. A strong model generates initial answers based on this context, required to cite code locations and avoid hallucinations.
-	- **Design Motivation**: Repository-level context is long and sparse. Neither stuffing the entire repository into a model nor using single functions is feasible. Using structural subgraphs and retrieved contexts balances realism with cost.
+**1. Inducing repository-level question taxonomy from real issues: Aligning problem distribution with maintainer needs.**
 
-3. **Expert Revision and Data Validation**:
-	- **Function**: Ensures each QA pair is correct, comprehensive, and balanced across repositories.
-	- **Mechanism**: Two experts with at least three years of experience independently check facts, completeness, and phrasing. Disagreements are resolved by a third expert. Vague questions, factual errors, or answers unsupported by the repository are filtered. Each repository is mandated to have 48 samples, balanced across the four major categories.
-	- **Design Motivation**: Repository-level answers are long (mean 266.64 words) and involve multiple entities (mean 8.71 functions, 3.19 files). LLM generation often yields locally correct but logically incomplete answers; human cross-verification is essential for benchmark reliability.
+If question types are designed subjectively by researchers, they tend to favor "easy-to-label" local problems like "what does this line mean," missing real concerns like "where is this feature implemented." To align with real maintenance scenarios, the authors crawled 77,100 GitHub issues from 12 popular SWE-Bench repositories. After filtering for length and extracting explicit code-understanding questions via LLMs, they sampled 1,000 questions for open coding. This resulted in four categories (What, Why, Where, How) and 12 intents, such as Architecture exploration, Dependency tracing, and Design rationale, reflecting the true distribution of systemic maintenance issues.
+
+**2. Structure-based Question Instantiation & Answer Generation: Mapping seed questions to multi-hop repo problems.**
+
+Repository-level questions are difficult due to long and sparse contexts. Feeding the entire repository to a model is impractical, while single functions are insufficient for cross-file reasoning. The authors use tree-sitter to extract classes, functions, and dependencies, selecting a compact code subgraph around a focal element. This subgraph is fitted into seed templates to instantiate abstract questions into concrete problems. For answer generation, code elements are indexed, and relevant snippets are retrieved using semantic and structural similarity. A strong model then generates initial answers based on this context, constrained to cite specific code locations.
+
+**3. Dual-Expert Revision & Balancing: Ensuring credibility through human cross-validation.**
+
+Repo-level answers in SWE-QA average 266.64 words and involve 8.71 functions across 3.19 files. LLM-generated answers often suffer from being "locally correct but missing a link in the chain." Thus, two experts (3+ years experience) independently checked every answer for facts, completeness, and phrasing. Disagreements were resolved by a third expert. This process also filtered vague questions and ensured 48 samples per repository with a balanced distribution across the four question categories.
 
 ### Loss & Training
-This work does not train a new model. The evaluation strategy uses SWE-QA as a test set to compare the answer quality of six LLMs under different enhancement methods: direct prompting, Function Chunking RAG, Sliding Window RAG, SWE-agent, and OpenHands. Automated evaluation uses Claude Sonnet 4.5 as an LLM-as-Judge, scoring across five dimensions: correctness, completeness, relevance, clarity, and coherence (20 points each, 100 total). Judge bias is mitigated via system anonymization, answer randomization, and human evaluation slices.
+Ours does not train new models and thus has no traditional loss function. The evaluation strategy uses SWE-QA as a test set to compare six LLMs across different context enhancement methods: direct prompting, Function Chunking RAG, Sliding Window RAG, SWE-agent, and OpenHands. Automated evaluation uses Claude Sonnet 4.5 as an LLM-as-Judge, scoring across five dimensions (correctness, completeness, relevance, clarity, coherence), each worth 20 points for a total of 100. Bias is mitigated via system anonymization and answer randomization.
 
 ## Key Experimental Results
 
 ### Main Results
-SWE-QA includes 720 questions across 15 Python repositories, 13,300 files, 22,522 classes, 142,404 functions, and over 3.4 million lines of code. On average, each question requires 8.71 functions, 3.19 files, a reasoning chain depth of 4.72, and a dependency chain depth of 2.96. 90.9% of questions have a reasoning chain depth $> 1$, and 77.6% require cross-file knowledge.
+SWE-QA contains 720 questions across 15 Python repositories, comprising 13,300 files, 142,404 functions, and over 3.4 million lines of code. On average, each question requires 8.71 functions, 3.19 files, a reasoning chain of depth 4.72, and a dependency chain of depth 2.96. 90.9% of questions have a reasoning depth > 1, and 77.6% require cross-file knowledge.
 
-| System / Method | Overall | Key Info | Conclusion |
-|-----------------|---------|----------|------------|
-| Qwen3-Coder-30B direct | 50.80 | No repo context | Weakest performance |
-| Qwen3-Coder-30B + Sliding Window RAG | 64.86 | +14.06 Gain | Retrieval significantly improves results |
-| Qwen3-Coder-30B + OpenHands | 65.88 | +15.08 Gain | Agent use helps but is unstable for small models |
-| GLM-4.6 + OpenHands | 70.15 | Near best | Strong models with agents are highly competitive |
-| GPT-5.1 direct | 61.41 | Strongest base | Still lower than tool-augmented systems |
+| System / Method | Overall | Key Information | Conclusion |
+|:---|:---:|:---|:---|
+| Qwen3-Coder-30B direct | 50.80 | No repo context | Direct answering is weakest |
+| Qwen3-Coder-30B + Sliding Window RAG | 64.86 | +14.06 | Context retrieval significantly helps |
+| Qwen3-Coder-30B + OpenHands | 65.88 | +15.08 | Agents help small models but are unstable |
+| GLM-4.6 + OpenHands | 70.15 | Near best | Strong models with agents are competitive |
+| GPT-5.1 direct | 61.41 | Strongest base ability | Still lower than tool-based systems |
 | GPT-5.1 + OpenHands | 70.79 | Best in table | Agent framework yields highest score |
-| Cursor | 70.66 | Commercial tool | Comparable to best open combinations |
-| Tongyi Lingma | 69.07 | Commercial tool | Validates end-to-end engineering retrieval |
+| Cursor | 70.66 | Commercial tool | Approaches best open combination |
+| Tongyi Lingma | 69.07 | Commercial tool | Effective end-to-end engineering |
 
 ### Ablation Study
-The paper analyzes question types, repository sources, and evaluation protocols as a breakdown of benchmark difficulty.
+The paper analyzes question types, repository sources, and evaluation protocols rather than traditional module ablations.
 
 | Analysis Dimension | Key Results | Description |
-|--------------------|-------------|-------------|
-| Why-type questions | Avg 69.77 | Design rationale/purpose usually have comments/semantic cues, easier to answer |
-| How-type questions | Avg 69.13 | Requires process understanding but supported by structural context |
-| Where-type questions| Avg 66.76 | Requires precise localization; demanding for retrieval and cross-file tracking |
-| What-type questions | Avg 65.81 | Architecture exploration scroes only 61.84; one of the hardest subcategories |
-| SWE-Bench repos | Avg 68.59 | Easier compared to SWE-Bench-Live |
-| SWE-Bench-Live repos| Avg 64.98 | -3.61 points; likely less affected by data leakage |
-| Human Eval (GPT-5.1+OpenHands) | 82.33 | Consistent with LLM-as-Judge ranking, supports auto-eval reliability |
+|:---|:---|:---|
+| Why Questions | Avg 69.77 | Design rationales often have comments/semantic cues, making them easier |
+| How Questions | Avg 69.13 | Requires process understanding but supported by structural context |
+| Where Questions | Avg 66.76 | Requires precise localization; higher demand on recall and cross-file tracking |
+| What Questions | Avg 65.81 | Architecture exploration (61.84) is one of the hardest subcategories |
+| SWE-Bench Repos | Avg 68.59 | Easier compared to SWE-Bench-Live |
+| SWE-Bench-Live Repos | Avg 64.98 | 3.61 points lower, likely due to less data leakage in training |
+| Human Eval GPT-5.1 + OpenHands | 82.33 | Consistent with LLM-as-Judge ranking, supporting judge credibility |
 
 ### Key Findings
-- **Context acquisition determines the ceiling**: Direct prompting is insufficient for repository-level questions. RAG provides a stable boost, while agents (OpenHands/SWE-agent) further improve performance with strong models.
-- **What and Where questions are more difficult**: They require precise implementation localization and reconstruction of architectural relationships rather than general explanations of intent.
-- **Agent cost is high**: OpenHands averages ~87,045 input tokens and ~1,930 output tokens per question, with SWE-agent even higher, indicating performance gains come with significant overhead.
-- **Complexity Matters**: Large complex repositories like Pylint are significantly harder than smaller ones like Flask or Requests; repository scale and architectural complexity directly impact QA difficulty.
+- Context acquisition determines the ceiling: direct prompting is insufficient for repo-level tasks. RAG provides stable gains, and agents like OpenHands/SWE-agent offer further improvements when paired with strong models.
+- "What" and "Where" questions are harder because they require precise implementation localization and reconstruction of architectural relationships rather than general explanations of purpose.
+- Agents are expensive: OpenHands averages ~87,045 input tokens and 1,930 output tokens per question, indicating that performance gains come at a significant computational cost.
+- Complexity matters: Large repositories like Pylint are significantly harder than smaller ones like Flask or Requests; scale and architectural complexity directly correlate with QA difficulty.
 
 ## Highlights & Insights
-- The paper concretizes "repository-level understanding" into an evaluable data structure. By inducing taxonomy from issues, it shows that real-world questions are not just API lookups but involve cross-file localization, design rationale, and system behavior.
-- Data statistics are compelling: questions involving an average of 3.19 files and 8.71 functions prove that SWE-QA is at a different difficulty tier than traditional snippet-based Code QA.
-- The RAG vs. Agent comparison is practical. Results show that even GPT-5.1 direct only achieves 61.41, requiring retrieval and tool execution to reach 70+, which serves as a guide for designing code assistants.
-- This benchmark can be adapted for internal documentation QA or test failure explanation by inducing templates from private tickets and using structural parsing for local datasets.
+- The paper successfully transforms "repository-level understanding" into a concrete, evaluable data structure. By grounding taxonomy in real issues, it proves that developer questions are not just API queries but involve cross-file localization and system behavior explanation.
+- The statistics are compelling: an average question involves 3.19 files and 8.71 functions. These metrics demonstrate that SWE-QA operates at a different tier of difficulty compared to snippet-based code QA.
+- The comparison between RAG and agents is practical. GPT-5.1 direct scoring only 61.41 highlights that even the strongest models require retrieval and tool execution to reach 70+, providing a roadmap for code assistant design.
+- The benchmark methodology is transferable to internal project documentation QA or test failure explanation: induced templates combined with structural parsing and human validation can create high-quality internal evaluation sets.
 
 ## Limitations & Future Work
-- Currently covers only Python repositories primarily from SWE-Bench. The language and ecosystem coverage remain narrow; Java, TypeScript, or C++ would introduce different build systems and dependency challenges.
-- The scale of 720 QA pairs is high-quality but small. Larger-scale, continuously updated data is needed for training or fine-tuning repository-level models.
-- Automated evaluation relies on LLM-as-Judge. Despite human validation, fine-grained factual errors in complex code answers might still be missed.
-- Answers are primarily natural language. Future work could integrate QA with repository operations, such as executing tests or running static analysis to provide verifiable patches.
+- The current scope is limited to Python repositories from SWE-Bench, leaving Java, TypeScript, and C++ ecosystems unexplored.
+- The scale of 720 QA pairs is high-quality but small. Training or fine-tuning repo-level QA models would require larger, continuously updated datasets.
+- Evaluation relies on LLM-as-Judge. Despite human validation, fine-grained factual errors in complex code answers might still be missed.
+- Answers are primarily natural language. Future work could integrate QA with repository operations, such as executing tests or providing verifiable patches.
 
 ## Related Work & Insights
-- **vs CoSQA / CodeQA**: These focus on snippet/function-level QA. SWE-QA evaluates repository-level, multi-hop, and cross-file reasoning.
-- **vs CodeRepoQA / CoreQA**: These are repo-level but SWE-QA emphasizes the combination of question taxonomy, modular info, and human validation.
-- **vs SWE-Bench**: SWE-Bench focuses on issue resolution/patch generation, while SWE-QA focuses on understanding. They are complementary: one tests "can you fix it," the other "do you understand the system."
-- **Insight for Code Assistants**: Simple embedding-based retrieval of function blocks is insufficient. Robust assistants need structural indexing, cross-file dependency tracking, and iterative tool use to answer Why/Where questions.
+- **vs CoSQA / CodeQA**: These focus on snippet retrieval or function-level questions. SWE-QA specifically probes multi-hop and cross-file reasoning.
+- **vs CodeRepoQA / CoreQA**: These move into repo-level territory, but SWE-QA provides a more complete evaluation dimension through its focus on taxonomy, multi-hop reasoning, and human verification.
+- **vs SWE-Bench**: SWE-Bench emphasizes issue resolution (generating patches), while SWE-QA focuses on understanding. They are complementary: one tests "can it fix," the other "does it understand."
+- **Insight for Code Assistants**: Simple embedding-based retrieval of function blocks is insufficient. Robust assistants require structural indices, cross-file dependency tracking, and iterative tool use to answer "Why" and "Where" questions effectively.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ Inducing taxonomy from real issues is solid; more grounded in software engineering than typical Code QA.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Covers 6 LLMs, 5 enhancement types, and commercial tools, though lacks more languages and execution-based settings.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Clear pipeline and evaluation metrics; dense information in tables.
-- **Value**: ⭐⭐⭐⭐⭐ Highly relevant for code assistants, repo-level RAG, and SE agents; a directly reusable benchmark.
+- Novelty: ⭐⭐⭐⭐☆ Grounding repo-level QA taxonomy in real issues is solid.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers 6 LLMs, 5 context methods, and commercial tools, though lacks multi-language or execution setups.
+- Writing Quality: ⭐⭐⭐⭐☆ Process and metrics are clear, with dense information in tables.
+- Value: ⭐⭐⭐⭐⭐ Highly relevant for code assistants and repo-level RAG/Agent research; a directly reusable benchmark.
 
 <!-- RELATED:START -->
 
@@ -136,10 +145,10 @@ The paper analyzes question types, repository sources, and evaluation protocols 
 ## Related Papers
 
 - [\[ACL 2026\] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion](reposhapley_shapley-enhanced_context_filtering_for_repository-level_code_complet.md)
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 - [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](../../ICML2026/code_intelligence/matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
+- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 - [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
-- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](../../ICML2026/code_intelligence/swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
+- [\[ICLR 2026\] Improving Code Localization with Repository Memory](../../ICLR2026/code_intelligence/improving_code_localization_with_repository_memory.md)
 
 </div>
 

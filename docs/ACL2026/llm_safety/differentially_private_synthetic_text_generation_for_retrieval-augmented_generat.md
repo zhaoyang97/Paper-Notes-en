@@ -2,87 +2,91 @@
 title: >-
   [Paper Note] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)
 description: >-
-  [ACL 2026][LLM Safety][Differential Privacy] DP-SynRAG utilizes LLMs to distill private RAG databases into differentially private synthetic text libraries in a **one-time** process. Subsequent queries do not consume any…
+  [ACL 2026][LLM Safety][RAG] DP-SynRAG utilizes an LLM to distill a private RAG database into a differentially private synthetic text repository in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG, which typical
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Differential Privacy"
-  - "Synthetic Data"
-  - "RAG"
-  - "private prediction"
-  - "subsample-and-aggregate"
+  - ACL 2026
+  - LLM Safety
+  - RAG
+  - private prediction
+  - subsample-and-aggregate
 date: 2026-05-08
-content_hash: 39103d705e80eda3
+content_hash: 0eb88e60166f1697
 ---
-
 # Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.06719](https://arxiv.org/abs/2510.06719)  
-**Code**: Extended based on https://github.com/sarus-tech/dp-rag  
+**Code**: Extended from https://github.com/sarus-tech/dp-rag  
 **Area**: LLM Security / Differential Privacy / RAG  
 **Keywords**: Differential Privacy, Synthetic Data, RAG, private prediction, subsample-and-aggregate
 
 ## TL;DR
-DP-SynRAG utilizes LLMs to distill private RAG databases into differentially private synthetic text libraries in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG (where DP-RAG performance collapses in multi-query scenarios).
+DP-SynRAG utilizes an LLM to distill a private RAG database into a differentially private synthetic text repository in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG, which typically collapses in multi-query scenarios.
 
 ## Background & Motivation
-**Background**: RAG grounds LLMs by connecting them to external private knowledge bases. however, in medical, customer, and recommendation scenarios, databases contain highly sensitive content like PII and medical records. Research demonstrates that (a) even benign queries can cause LLMs to regurgitate private segments; (b) targeted extraction and membership inference attacks can efficiently retrieve raw records.
+**Background**: RAG grounds LLMs by connecting them to external private knowledge bases. However, in medical, customer service, or recommendation scenarios, these databases contain highly sensitive content such as PII and medical records. Studies have shown that (a) even benign queries can cause LLMs to regurgitate private fragments, and (b) targeted extraction and membership inference attacks can efficiently retrieve original records.
 
-**Limitations of Prior Work**: Existing private RAG solutions (DP-RAG / Koga 2025 / Wang 2025) rely on **query-time DP**, adding noise to the output layer of every query response. This causes the privacy budget to **accumulate linearly with the number of queries**: to maintain $\varepsilon_{\text{query}} = 10$ over 1000 queries, the total budget $\varepsilon_{\text{total}} \approx 10000$. This leads to either rapid budget depletion or noise levels that render the system unusable. Figure 3 shows that DP-RAG fails completely after 20 queries when $\varepsilon_{\text{total}}=20$.
+**Limitations of Prior Work**: Existing private RAG solutions (e.g., DP-RAG, Koga 2025, Wang 2025) rely on **query-time DP**, adding noise at the output layer for every query response. Consequently, the privacy budget **accumulates linearly with the number of queries**. To maintain $\varepsilon_{\text{query}} = 10$ over 1,000 queries, the total budget $\varepsilon_{\text{total}} \approx 10,000$. Either the budget is exhausted quickly, or the noise per query becomes too high for practical use. Figure 3 shows that DP-RAG completely fails once the query count exceeds 20 under $\varepsilon_{\text{total}}=20$.
 
-**Key Challenge**: A knowledge base is a resource that is "read repeatedly," but query-time DP assumes "every read must pay for privacy." This assumption is fundamentally mismatched for the multi-query nature of RAG. Privacy costs should be paid once during "database construction," after which all queries benefit from post-processing immunity.
+**Key Challenge**: A knowledge base is a "frequently read" resource, yet query-time DP assumes "paying for privacy per read." This assumption is fundamentally misaligned with multi-query RAG scenarios. Privacy should be a one-time cost associated with "database construction," after which all queries benefit from DP post-processing immunity.
 
-**Goal**: Construct a solution that is (1) independent of query count with a fixed privacy budget, (2) requires no DP-SGD fine-tuning of LLMs, and (3) **preserves task-critical details** (disease names, user preferences, etc.) within synthetic text rather than merely learning dataset-average styles.
+**Goal**: Construct a solution that (1) keeps the privacy budget fixed regardless of the query count, (2) does not require DP-SGD fine-tuning of the LLM, and (3) **retains task-critical details** (e.g., disease names, user preferences) in synthetic text rather than just learning dataset-average styles.
 
-**Key Insight**: Build upon the private prediction framework (subsample-and-aggregate + multi-document logit aggregation + clipping) but introduce a strategy of **keyword-based clustering followed by intra-cluster synthesis**. Prior works (Amin/Tang/Hong) utilized random subsampling of the entire database, which only captures global average features. Ours uses DP clustering to ensure each subset is thematic, thereby generating synthetic text that preserves "locality."
+**Key Insight**: Build upon the private prediction framework (subsample-and-aggregate + multi-document logit aggregation + clipping) but introduce a strategy of **keyword-based clustering followed by intra-cluster synthesis**. While previous works (Amin, Tang, Hong) used random subsampling that only captured global average features, this work uses DP clustering to ensure each subset is themed, thereby generating synthetic text that preserves "locality."
 
-**Core Idea**: Transform query-time DP into data-time DP through a five-step process: "DP keyword histogram $\rightarrow$ DP soft clustering $\rightarrow$ DP embedding reranking $\rightarrow$ intra-cluster private prediction rewriting $\rightarrow$ LLM self-filtering." This pays a one-time budget for infinite queries.
+**Core Idea**: A five-step process—"DP Keyword Histogram → DP Soft Clustering → DP Embedding Re-ranking → Intra-cluster Private Prediction rewriting → LLM Self-filtering"—converts query-time DP into data-time DP, exchanging a one-time budget for infinite queries.
 
 ## Method
 
 ### Overall Architecture
 The pipeline consists of two stages (Algorithm 1, 5 sub-steps):
 
-**Stage 1: DP Soft Clustering**
-(a) **Keyword Histogram**: The LLM extracts $K$ representative keywords from each document (limiting to $K$ yields a sensitivity of $\sqrt{K}$). A histogram is summed across the database and Gaussian noise is added: $h' = h + \mathcal{N}(0, \sigma_h^2 I)$.
-(b) **Keyword Soft Clustering**: The top-$R$ keywords $W = \{w_1, \ldots, w_R\}$ are taken from $h'$ (in descending order of frequency). The process iterates through keywords in **reverse frequency order** (to prevent high-frequency, uninformative words from dominating) to form clusters $C_r = \{d_i \mid w_r \in d_i, \text{and } d_i \text{ belongs to } <L \text{ clusters}\}$. Each document is assigned to a maximum of $L$ clusters.
-(c) **Embedding Reranking**: For each $C_r$, a noisy mean embedding is calculated via the Gaussian mechanism: $\mu(C_r) = \sum_{d_i \in C_r} \mathcal{E}(d_i) + \mathcal{N}(0, \sigma_\mu^2 I)$. The exponential mechanism is then used to select a similarity threshold $\theta_s$, retaining $S_r = \{d_i \in C_r \mid \text{sim}(\mathcal{E}(d_i), \mu(C_r)) > \theta_s\}$.
+**Stage 1: DP Soft Clustering**  
+(a) **Keyword Histogram**: The LLM extracts $K$ representative keywords from each document (limiting $K$ makes sensitivity $\sqrt{K}$). The global sum yields a histogram, perturbed with Gaussian noise $h' = h + \mathcal{N}(0, \sigma_h^2 I)$.  
+(b) **Keyword Soft Clustering**: From $h'$, the top-$R$ keywords $W = \{w_1, \ldots, w_R\}$ are selected. Documents are assigned to clusters in **reverse order of frequency** (to prevent high-frequency, non-informative words from dominating). Each document stays in at most $L$ clusters.  
+(c) **Embedding Re-ranking**: For each cluster $C_r$, a noisy mean embedding is calculated using the Gaussian mechanism $\mu(C_r) = \sum_{d_i \in C_r} \mathcal{E}(d_i) + \mathcal{N}(0, \sigma_\mu^2 I)$. An exponential mechanism then selects a similarity threshold $\theta_s$ to retain $S_r = \{d_i \in C_r \mid \text{sim}(\mathcal{E}(d_i), \mu(C_r)) > \theta_s\}$.
 
-**Stage 2: Synthetic Text Generation**
-(d) **Private Prediction**: Logit aggregation is performed in parallel for each $S_r$. Each document is paired with a rephrase prompt $p_i = (\text{"Rephrase the following text:"}, d_i)$. The logit for the $n$-th token is $z_n(S_r) = \sum_{d_i \in S_r} \text{clip}_c(\mathcal{L}(p_i, y_{r, <n}))$. Softmax sampling is equivalent to the exponential mechanism with sensitivity $c$. This is repeated for $T$ steps to obtain synthetic text $y_r$ of length $T$.
-(e) **Self-filtering**: Each $y_r$ plus a downstream task description is fed back to the LLM to verify task utility. Only "YES" entries enter the synthetic library (post-processing does not consume privacy budget).
+**Stage 2: Synthetic Text Generation**  
+(d) **Private Prediction**: Parallel logit aggregation is performed for each $S_r$. Each document is paired with a rephrase prompt $p_i$. The logit for the $n$-th token is $z_n(S_r) = \sum_{d_i \in S_r} \text{clip}_c(\mathcal{L}(p_i, y_{r, <n}))$. Softmax sampling is equivalent to an exponential mechanism with sensitivity $c$. Repeating this for $T$ steps yields synthetic text $y_r$.  
+(e) **Self-filtering**: Each $y_r$ and the downstream task description are fed back to the LLM to determine if the text is useful for the task. Only "YES" samples enter the synthetic repository (post-processing does not consume budget).
 
-**Privacy Accounting** (Theorem 1): The entire pipeline satisfies $(\varepsilon, \delta)$-DP, where $\rho = \frac{K}{2\sigma_h^2} + L \left( \frac{1}{8}\varepsilon_{\theta_s}^2 + \frac{1}{2\sigma_\mu^2} + \frac{T}{2}\left(\frac{c}{\tau}\right)^2 \right)$, converted to $\varepsilon = \rho + \sqrt{4\rho\log(1/\delta)}$. A key technique is **overlapping parallel composition**; since each document is in at most $L$ clusters, the privacy cost of parallel processing is $L \cdot \rho_{\text{cluster}}$ rather than $R \cdot \rho_{\text{cluster}}$.
+**Privacy Cost** (Theorem 1): The entire pipeline satisfies $(\varepsilon, \delta)$-DP, where $\rho = \frac{K}{2\sigma_h^2} + L \left( \frac{1}{8}\varepsilon_{\theta_s}^2 + \frac{1}{2\sigma_\mu^2} + \frac{T}{2}\left(\frac{c}{\tau}\right)^2 \right)$, converted to $\varepsilon = \rho + \sqrt{4\rho\log(1/\delta)}$. A key technique is **overlapping parallel composition**—since each document is in at most $L$ clusters, the privacy cost for parallel processing is $L \cdot \rho_{\text{cluster}}$ rather than $R \cdot \rho_{\text{cluster}}$.
+
+```mermaid
+graph TD
+    A["Private RAG Database<br/>Sensitive docs with PII"] --> S1
+    subgraph S1["DP Soft Keyword Clustering (Design 1)"]
+        direction TB
+        B["Keyword Histogram<br/>LLM extracts K keywords + Gaussian noise"] --> C["Keyword Soft Clustering<br/>Reverse freq assignment, max L per doc"]
+        C --> D["Embedding Re-ranking<br/>DP mean + Expo mechanism thresholding"]
+    end
+    S1 --> E["Token-level Private Prediction<br/>Logit clip sum + Softmax sampling ≈ Expo mechanism"]
+    E --> F["Self-filtering<br/>LLM determines task utility"]
+    F --> G["DP Synthetic Text Repository<br/>Infinite queries free of budget (Post-processing)"]
+```
 
 ### Key Designs
 
-1.  **DP Keyword Soft Clustering (vs. Random Subsets in Prior Private Prediction)**:
-    *   **Function**: Segregates the original database into thematic clusters, allowing private prediction to retain locality (specific details like disease names) instead of just global averages.
-    *   **Mechanism**: Uses LLM-extracted keywords + noisy histograms to select top-$R$ themes. Clusters are assigned in reverse frequency order (distinguishing low-frequency terms first; $L$ overlaps increase relevant theme probability). Finally, DP embedding means + thresholding remove outliers. This removal occurs within clusters and adds no budget cost.
-    *   **Design Motivation**: Amin et al.'s random subsampling only captures average characteristics, which is useless for RAG tasks requiring specific facts. Table 1 shows DP-Synth/Aug-PE achieves 0% accuracy on Medical Synth. Hard clustering ($L=1$) misallocates polysemous documents (dropping accuracy by 31.88% on Llama-3.1). Soft clustering + reranking represents a fine trade-off between locality and noise.
+**1. DP Soft Keyword Clustering: Preserving "local details" like disease names or user preferences.**  
+Standard private prediction (e.g., Amin et al.) uses random subsampling, which only learns dataset-average characteristics—useless for RAG tasks requiring specific facts. DP-SynRAG solves this by partitioning the database into themed clusters. Soft clustering ($L>1$) is the backbone; hard clustering ($L=1$) often misclassifies polysemous documents. Ablation shows that on Medical Synth with Llama-3.1, $L=1$ drops accuracy by 31.88% compared to $L=5$, which serves as the "sweet spot" for balancing locality and noise.
 
-2.  **Token-level Private Prediction via Softmax (Implicit Noise via Exponential Mechanism)**:
-    *   **Function**: Leverages the natural randomness of LLM token sampling to provide DP guarantees during document rewriting, avoiding explicit noise addition.
-    *   **Mechanism**: For each $d_i \in S_r$, logits for the $n$-th token are clipped to $[-c, c]$ and summed to form $z_n(S_r)$. Softmax sampling is then equivalent to an exponential mechanism with utility equal to clipped logits and sensitivity $c$. To improve quality, a centered clipping variant is used to preserve relative differences between high-logit tokens.
-    *   **Design Motivation**: Adding Gaussian noise directly to logits distorts distributions (small logits are overwhelmed). Using softmax randomness as the DP noise source is more "natural" and less damaging to generation quality.
+**2. Token-level Private Prediction: Using natural randomness of softmax sampling as the DP noise source.**  
+Instead of adding explicit Gaussian noise to logits (which distorts the distribution and masks small values), the method leverages the inherent stochasticity of LLM token sampling. By clipping logits to $[-c, c]$ and summing them across the cluster, the softmax sampling process becomes mathematically equivalent to an exponential mechanism with sensitivity $c$. This "free" noise allows for high-quality generation.
 
-3.  **Data-time DP + Self-filtering Post-processing**:
-    *   **Function**: Spends the entire DP budget on building the synthetic library once, making subsequent queries budget-free. LLM-based filtering then improves RAG accuracy by removing low-quality synthesis.
-    *   **Mechanism**: The construction process satisfies $(\varepsilon, \delta)$-DP. Due to post-processing immunity, all subsequent operations (indexing, retrieval, inference) are "free." Self-filtering uses public task information and synthetic text, never touching the raw database.
-    *   **Design Motivation**: Query-time DP is a fundamental mismatch in RAG. Moving the budget to construction results in a flat "query count vs. accuracy" curve (Figure 3).
+**3. Data-time DP + Self-filtering Post-processing: Paying the budget once during "construction".**  
+This is the most critical reframing. Unlike query-time DP where the budget scales with query count, DP-SynRAG's pipeline satisfies $(\varepsilon, \delta)$-DP once at the database level. Due to post-processing immunity, all subsequent embedding indexing, retrieval, and LLM inference consume zero budget. Figure 3 highlights this: DP-SynRAG maintains a horizontal accuracy line while DP-RAG's performance plummet as queries increase.
 
 ### Loss & Training
-**Training-free**. All LLMs are frozen and used for inference (extraction, rewriting, and filtering use the same model). Key parameters: $K=10$ keywords/doc, $R=500$ or $1000$, $L=5$ overlap, $k=80-100$ docs/cluster, $T=70$ tokens, $\tau=1.0$, $\varepsilon_{\text{total}}=10$.
+**Training-free**. All LLMs are used for frozen inference (keyword extraction, rephrasing, and self-filtering use the same LLM). Main parameters: $K=10$ keywords/doc, $R=500$ or $1000$ clusters, $L=5$ overlap, $k=80-100$ docs/cluster, $T=70$ tokens/synthetic, $\tau=1.0$, $\varepsilon_{\text{total}}=10$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Three datasets × three LLMs × five methods ($\varepsilon_{\text{total}}=10$ for DP-SynRAG, $\varepsilon_{\text{query}}=10$ for DP-RAG):
+Three datasets × Three LLMs × Five methods ($\varepsilon_{\text{total}}=10$ for DP-SynRAG, $\varepsilon_{\text{query}}=10$ for DP-RAG):
 
 | Dataset | Method | Phi-4-mini (3.8B) | Gemma-2-2B | Llama-3.1-8B |
-| :--- | :--- | :--- | :--- | :--- |
+|---------|--------|------------------|------------|---------------|
 | **Medical Synth** | Non-RAG | 0.00 | 0.00 | 0.00 |
 | | RAG (no DP) | 87.00 | 85.20 | 86.20 |
 | | DP-Synth (Amin'24) | 0.00 | 0.00 | 0.00 |
@@ -90,69 +94,54 @@ Three datasets × three LLMs × five methods ($\varepsilon_{\text{total}}=10$ fo
 | | **Ours** | **67.26** | **67.06** | **61.26** |
 | | DP-RAG ($\varepsilon_{\text{total}}{\approx}10\text{k}$) | 59.92 | 67.06 | 48.94 |
 | **MovieLens** | RAG (no DP) | 67.80 | 54.60 | 70.80 |
-| | DP-Synth | 37.60 | 16.64 | 46.12 |
-| | Aug-PE | 36.16 | 26.04 | 44.96 |
 | | **Ours** | **42.56** | **41.08** | 54.12 |
 | | DP-RAG ($\varepsilon_{\text{total}}{\approx}5\text{k}$) | 34.72 | 40.48 | **56.80** |
 | **SearchQA** | RAG (no DP) | 92.16 | 94.12 | 95.10 |
-| | DP-Synth | 60.20 | 20.20 | 40.00 |
 | | **Ours** | **89.61** | **85.10** | **91.18** |
 | | DP-RAG ($\varepsilon_{\text{total}}{\approx}1\text{k}$) | 85.10 | 83.14 | 84.90 |
 
-**Conclusion**: Ours significantly leads all baseline methods with the same budget (DP-Synth/Aug-PE) across all datasets and outperforms DP-RAG in most cases—despite DP-RAG using over 1000x the actual budget.
+**Conclusion**: DP-SynRAG significantly leads equivalent-budget baselines and often outperforms DP-RAG despite the latter using a 1000x larger actual budget.
 
 ### Ablation Study
 
-Impact of DP-SynRAG components (accuracy %):
+Impact of components on accuracy (%):
 
 | Dataset / Model | Full | w/o Retrieval | w/o Self-filter | Hard cluster ($L=1$) |
-| :--- | :--- | :--- | :--- | :--- |
-| Medical Synth / Phi-4 | 67.26 | 65.92 (-1.34) | 66.78 (-0.48) | 42.52 (**-24.74**) |
-| Medical Synth / Llama-3.1 | 61.26 | 57.74 (-3.52) | 52.20 (**-9.06**) | 29.38 (**-31.88**) |
-| MovieLens / Llama-3.1 | 54.12 | 53.76 (-0.36) | 45.12 (**-9.00**) | 46.56 (-7.56) |
-| SearchQA / Gemma-2 | 85.10 | 83.73 (-1.37) | (N/A) | 67.06 (**-18.04**) |
+|-----------------|------|---------------|-----------------|----------------------|
+| Medical Synth / Phi-4 | 67.26 | 65.92 | 66.78 | 42.52 |
+| Medical Synth / Llama | 61.26 | 57.74 | 52.20 | 29.38 |
 
-**Conclusion**: (1) Soft clustering ($L>1$) is the most critical component; hard clustering drops accuracy by 5–32%. (2) Self-filtering is vital for Medical/MovieLens. (3) Embedding reranking provides consistent small gains.
+**Conclusion**: (1) Soft clustering ($L>1$) is the most critical component. (2) Self-filtering improves accuracy by up to 9pp. (3) Embedding re-ranking provides consistent small gains.
 
 ### Key Findings
-*   **Fundamental Difference in Utility Curves**: Ours exhibits a horizontal line (fixed budget), while DP-RAG shows a sharp decline. At 20+ queries, DP-RAG is unusable even at high total budgets.
-*   **Failures of Global Baselines**: DP-Synth and Aug-PE fail (0% accuracy) on Medical Synth, proving that learning only global average features is a dead end for fact-retrieval RAG tasks.
-*   **DP Ceiling on Rare Themes**: Accuracy approaches 0% when the ground-truth disease appears in <30 documents. This is an inherent DP trade-off: a system that consistently answers for rare diseases is by definition leaking the presence of rare patients.
-*   **The Overlap Sweet Spot**: $L=5$ is stable across datasets, balancing polysemy handling and noise dispersion.
+- **Query Count vs Accuracy**: DP-SynRAG maintains a flat curve (fixed budget), whereas DP-RAG collapses after 20 queries even with $\varepsilon_{\text{total}}=20$.
+- **Rare Topic Limitations**: Performance drops significantly when a topic is supported by fewer than 30 documents. This is identified as an inherent DP trade-off rather than an algorithmic flaw.
+- **Privacy Leakage**: Leakage is reduced to near zero and remains unaffected by adversarial attack prompts.
 
 ## Highlights & Insights
-*   **Timing Shift as Contribution**: Shifting privacy costs from "per-query" to "one-time construction" releases massive utility in RAG's "read repeatedly" scenario.
-*   **Natural Randomness as DP Source**: Using the softmax/exponential mechanism equivalence avoids the distortion inherent in manual logit noise addition.
-*   **Overlapping Parallel Composition**: Applying zCDP to cluster overlaps ($L\rho$ budget) is a sophisticated application of DP theory with broad applicability to multi-branch DP workflows.
-*   **Honesty regarding DP Limits**: Acknowledgement that rare themes must have near-zero utility to maintain privacy provides clear boundaries for practical use.
+- **Shifting the DP Timing**: Moving privacy from "per-query" to "at construction" is the biggest contribution, unlocking high utility for frequently-read resources.
+- **Softmax as Exponential Mechanism**: Using inherent sampling randomness avoids distribution distortion from explicit noise addition.
+- **Overlapping Parallel Composition**: An elegant application of zCDP principles that allows for multi-cluster document representation with controlled privacy costs.
 
 ## Limitations & Future Work
-*   **Inapplicability to Rare Themes**: Accuracy for themes with <30 documents is almost zero due to DP constraints, limiting long-tail knowledge applications.
-*   **Static Database Constraint**: Full reconstruction is required for significant updates (e.g., ~40 minutes for 8000 docs). Incremental refresh mechanisms are needed.
-*   **Tight Budget Collapse**: Utility drops sharply at $\varepsilon < 5$. Future exploration into non-token-level locality-preserving generation is required.
-*   **Surface-form Keyword Dependency**: Clustering may fail if synonyms represent the same theme differently; synonym expansion could be a future improvement.
-
-## Related Work & Insights
-*   **vs. DP-RAG (Grislain 2025)**: Query-time DP with per-query budget vs. Ours (data-time DP with one-shot budget).
-*   **vs. DP-Synth (Amin 2024)**: Both use private prediction, but Amin's random subsampling misses locality; ours adds DP clustering to solve this.
-*   **vs. DP-OPT / Fine-tuning**: Ours is training-free and significantly more computationally efficient for database updates compared to DP-SGD.
-*   **Insight**: The timing of the DP budget spend (build-time vs. use-time) should be a primary design consideration for any DP system.
+- **Rare Topics**: Accuracy for long-tail knowledge supported by <30 docs is near 0.
+- **Database Updates**: Full regeneration is currently required for updates; incremental refresh is needed.
+- **Sensitivity to Keywords**: Clustering relies on surface-form keywords; synonym expansion could improve robustness.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐
-*   Writing Quality: ⭐⭐⭐⭐
-*   Value: ⭐⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](../../ICML2026/llm_safety/actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
-- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](../../ICML2026/llm_safety/actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
 - [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
 

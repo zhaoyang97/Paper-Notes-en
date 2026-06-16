@@ -2,80 +2,89 @@
 title: >-
   [Paper Note] Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality
 description: >-
-  [CVPR 2026][Multimodal VLM][Augmented reality security] This paper introduces ContrAR, the first benchmark for contradictory virtual content attacks in AR environments, comprising 312 real videos recorded on Meta Quest 3…
+  [CVPR 2026][Multimodal VLM][benchmark] The authors construct ContrAR, the first benchmark for contradictory virtual content attacks in AR environments (utilizing 312 real videos recorded via Meta Quest 3, verified by 10 annotators with an average Likert score of 4.66/5). They systematically evaluate the semantic contradiction detection capabilities of 11 VL
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Augmented reality security"
-  - "semantic contradiction detection"
-  - "VLM robustness"
-  - "benchmark"
-  - "AR attacks"
+  - CVPR 2026
+  - Multimodal VLM
+  - benchmark
 date: 2026-05-08
-content_hash: 69bcb663095a46e4
+content_hash: b3a868567747523d
 ---
-
 # Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2604.05510](https://arxiv.org/abs/2604.05510)  
 **Code**: [GitHub](https://github.com/YM-Xiu/ContrAR-Dataset)  
-**Area**: Multimodal / AR Security
-**Keywords**: Augmented reality security, semantic contradiction detection, VLM robustness, benchmark, AR attacks
+**Area**: Multimodal / AR Security  
+**Keywords**: Augmented reality security, semantic contradiction detection, VLM robustness, benchmark, AR attack
 
 ## TL;DR
 
-This paper introduces ContrAR, the first benchmark for contradictory virtual content attacks in AR environments, comprising 312 real videos recorded on Meta Quest 3, validated by 10 annotators with an average Likert score of 4.66/5. It systematically evaluates 11 VLMs (including GPT-5/Gemini-2.5/Grok-4) on semantic contradiction detection, finding that GPT-5 achieves the highest accuracy (88.14%) but incurs a 19s latency, while GPT-4o offers the best accuracy–latency trade-off (84.62% / 7.26s). An OCR-only text baseline reaches only 56%, demonstrating that visual reasoning is indispensable.
+The authors construct ContrAR, the first benchmark for contradictory virtual content attacks in AR environments (utilizing 312 real videos recorded via Meta Quest 3, verified by 10 annotators with an average Likert score of 4.66/5). They systematically evaluate the semantic contradiction detection capabilities of 11 VLMs (including GPT-5/Gemini-2.5/Grok-4). Findings show that GPT-5 achieves the highest accuracy (88.14%) but suffers from a 19s latency, while GPT-4o offers the best accuracy-latency balance (84.62%/7.26s). An OCR-only text baseline reaches only 56%, proving visual reasoning is indispensable.
 
 ## Background & Motivation
 
-**Background**: In AR systems such as Meta Quest 3, multiple applications simultaneously render virtual content, and users rely on this virtual information for decision-making (e.g., navigation, safety inspection). Existing AR content analysis focuses primarily on rendering quality (low-level metrics such as lighting consistency and depth alignment), leaving semantic consistency analysis largely unexplored.
+**Background**: In AR systems (e.g., Meta Quest 3), multiple applications simultaneously render virtual content, and users rely on this information for critical decisions (navigation, safety inspections, etc.). Existing AR content analysis focuses primarily on low-level rendering metrics (lighting consistency, depth alignment), while semantic consistency analysis remains largely unexplored.
 
-**Limitations of Prior Work**: (1) Malicious applications can inject information that is semantically contradictory to other virtual content (e.g., an arrow pointing left while text reads "turn right"), misleading users and potentially endangering safety. (2) VLMs perform well on general semantic reasoning but have not been systematically evaluated in AR mixed-reality scenarios. (3) No standardized benchmark dataset exists for measuring VLM detection capability against AR contradiction attacks.
+**Limitations of Prior Work**: (1) Malicious applications can inject information that semantically contradicts other virtual content (e.g., an arrow pointing left while text says "turn right"), misleading users and jeopardizing safety; (2) VLMs excel in general semantic reasoning but have not been systematically evaluated in AR mixed reality scenarios; (3) There is a lack of standardized benchmark datasets to measure VLM detection capabilities against AR contradiction attacks.
 
-**Key Challenge**: Semantic contradiction detection in AR scenes requires multimodal reasoning—recognizing both the visual and textual meaning of virtual content and inferring their logical consistency—yet existing evaluations are confined to natural images and text, leaving a significant gap with the dynamic mixed-reality environment of AR.
+**Key Challenge**: Semantic contradiction detection in AR requires multimodal reasoning capabilities—recognizing the visual and textual meanings of virtual objects while inferring logical consistencybetween them. However, current evaluations are limited to natural images/text, creating a significant gap with dynamic AR mixed reality environments.
 
-**Goal**: Formally define the threat model for contradictory virtual content attacks in AR, construct a standard benchmark dataset, and systematically evaluate the detection capability and real-time performance of mainstream VLMs.
+**Goal**: To formally define the threat model for AR contradictory virtual content attacks, construct a standardized benchmark dataset, and systematically evaluate the detection capabilities and real-time performance of mainstream VLMs.
 
-**Key Insight**: The paper models AR semantic contradiction detection as a multimodal reasoning task for VLMs, constructs a standardized evaluation benchmark from videos recorded on a real HMD device, and provides the first capability profile of VLMs in this domain.
+**Key Insight**: This work models AR semantic contradiction detection as a multimodal reasoning task for VLMs, utilizing real HMD recordings to build a standardized benchmark and provide the first capability profile of VLMs in this domain.
 
-**Core Idea**: For the first time, a real AR video benchmark is used to systematically reveal the capability boundaries of VLMs in contradictory virtual content detection and to characterize the accuracy–latency trade-off.
+**Core Idea**: For the first time, a real AR video benchmark is used to reveal the performance boundaries and accuracy-latency trade-offs of VLMs in detecting contradictory virtual content.
 
 ## Method
 
 ### Overall Architecture
 
-Threat model definition (gray-box assumption) → ContrAR dataset construction (5 AR application scenarios, recorded on Meta Quest 3) → VLM inference evaluation (single-frame / multi-frame strategies + OCR text-only baseline) → result analysis.
+This paper does not train a new model; instead, it addresses an evaluative question: Can off-the-shelf VLMs detect a new safety threat—"self-contradictory virtual content"—in AR scenarios? The workflow consists of three steps: defining the attack boundaries via a **Threat Model** (capabilities of the attacker/detector), recording the **ContrAR Dataset** using Meta Quest 3 across five AR application categories with balanced positive/negative samples, and finally applying 11 mainstream VLMs to a unified **VLM Evaluation Framework**, compared against an OCR-only baseline.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["AR Multi-app Coexistence<br/>Multi-source virtual content overlaid"] --> B["Threat Model<br/>Gray-box assumption·Detector only sees composite frame<br/>Contradiction defined at semantic level C(V)=1"]
+    B --> C
+    subgraph C["ContrAR Dataset"]
+        direction TB
+        C1["Meta Quest 3 real-world recordings<br/>IN / ON / SI / SA / SR"] --> C2["3 AR experts design contradiction forms"]
+        C2 --> C3["10 annotators verify<br/>Likert 4.66/5"]
+        C3 --> C4["312 Videos·1:1 ratio<br/>90 text-only / 222 visual+text"]
+    end
+    C --> D
+    subgraph D["VLM Evaluation Framework"]
+        direction TB
+        D1["Single-frame (middle frame)<br/>Multi-frame (first/mid/last frames)"] --> D2["Unified 4-step reasoning prompt<br/>Recognize scene→Describe content→Detect contradiction→Assess harm"]
+        D2 --> D3["11 VLMs + OCR-only Baseline<br/>EasyOCR + GPT-4o"]
+    end
+    D --> E["VLM Capability Profile<br/>Accuracy vs. Latency trade-off"]
+```
 
 ### Key Designs
 
-1. **Threat Model and Formal Definition**
+**1. Threat Model: Defining "Contradiction Attacks" at the Semantic Level via Gray-box Assumptions**
 
-    - **Function**: Establish a theoretical framework for AR contradiction attacks, specifying the capability boundaries of both attacker and detector.
-    - **Mechanism**: Gray-box assumption—the attacker is a user-level application that can only render its own virtual objects and cannot modify other applications or system-level content; the detection system, likewise a user-level process, can only observe the composited scene. The contradiction condition is formalized as: given a set of virtual contents $\mathcal{C} = \{c_1, ..., c_n\}$, if there exists $I(c_i) \perp I(c_j)$ (two virtual contents are semantically mutually exclusive), the scene contains a contradiction attack. The label is defined as $C(V)=1$ when a contradictory pair exists, and 0 otherwise.
-    - **Design Motivation**: Strictly bounding the capabilities of both attacker and detector ensures that evaluation results are practically meaningful. A semantic-level definition (rather than a visual-level one) keeps the problem focused on high-level reasoning ability.
+In AR systems, multiple apps overlay virtual content onto the same view independently. To formalize "malicious app injecting misleading information," the work defines attacker/detector boundaries. A gray-box assumption is adopted: the attacker is a standard user-level app rendering its own virtual objects without access to other apps or system layers. Similarly, the detection system operates at the user level, seeing only the final composite frame. Contradiction is defined semantically: given a set of virtual content $\mathcal{C} = \{c_1, \dots, c_n\}$ in a frame, if $I(c_i) \perp I(c_j)$ (two pieces of info are semantically mutually exclusive), the scene contains a contradiction attack ($C(V)=1$), otherwise 0. Defining the problem at the semantic level forces high-level reasoning rather than low-level rendering analysis.
 
-2. **ContrAR Dataset**
+**2. ContrAR Dataset: Real-world Recording + Human Verification**
 
-    - **Function**: Construct the first standardized evaluation dataset for contradictory virtual content attacks in AR.
-    - **Mechanism**: Videos are recorded using Meta Quest 3 across 5 AR application scenarios: Indoor Navigation (IN), Outdoor Navigation (ON), Safety Inspection (SI), Smart Apartment (SA), and Smart Retail (SR). A strict 1:1 positive-to-negative ratio (156 contradictory + 156 non-contradictory) yields 312 videos at 1920×1080 resolution, 5–15 seconds in duration, at 30 FPS. Of these, 90 contain text-only virtual content and 222 contain visual + text virtual content. Three AR experts designed attack patterns through structured brainstorming, and 10 participants independently annotated and validated the labels (average Likert score 4.66/5).
-    - **Design Motivation**: Recording on a real device ensures scene authenticity; the 1:1 ratio avoids class imbalance; multi-scenario coverage ensures comprehensiveness; human validation ensures label reliability.
+To evaluate real VLM performance in AR, the authors record data using Meta Quest 3 across five application scenarios: Indoor Navigation (IN), Outdoor Navigation (ON), Safety Inspection (SI), Smart Apartment (SA), and Smart Retail (SR). Attack patterns were designed through structured brainstorming by 3 AR experts. Videos were cross-verified by 10 independent participants, achieving an average confidence score of 4.66/5. The dataset maintains a strict 1:1 ratio (156 contradictory vs. 156 non-contradictory videos) to prevent model guessing; 90 contain only text, while 222 contain both visual and text elements.
 
-3. **VLM Evaluation Framework**
+**3. VLM Evaluation Framework: Quantifying the Necessity of Visual Reasoning**
 
-    - **Function**: Design a standardized inference-and-evaluation pipeline for fair comparison of 11 VLMs on detection performance.
-    - **Mechanism**: Two inference strategies are employed—single-frame (middle frame of the video, simulating real-time decision-making) and multi-frame (first, middle, and last frames, capturing temporal context). A unified prompt template guides four-step reasoning: ① identify the real scene → ② describe the virtual content → ③ analyze contradictions → ④ assess harm. An additional OCR text-only baseline (EasyOCR extraction → GPT-4o judgment) is established to quantify the necessity of pure visual reasoning.
-    - **Design Motivation**: Single-frame vs. multi-frame corresponds to the trade-off between real-time performance and accuracy; the OCR baseline demonstrates that visual reasoning cannot be replaced by text-only approaches.
+Two strategies are evaluated: single-frame (simulating real-time AR decisions) and multi-frame (providing temporal context via first/middle/last frames). All models use a unified prompt template to guide four-step reasoning: ① recognize physical scene → ② describe virtual content → ③ analyze contradictions → ④ judge harm level. Crucially, an OCR-only baseline is implemented (EasyOCR extraction + GPT-4o logic). If the baseline performs well, contradiction detection would be a simple text task; however, its low accuracy (56%) proves that visual semantic reasoning is necessary.
 
 ### Loss & Training
 
-No training is involved; the evaluation is purely inference-based. Commercial models are accessed via API and open-source models via HuggingFace.
+None. Pure inference evaluation. Commercial models are accessed via APIs; open-source models are run locally via HuggingFace.
 
 ## Key Experimental Results
 
-### Main Results — VLM Detection Accuracy and Latency
+### Main Results — VLM Accuracy and Latency
 
-| Model | Strategy | Overall Accuracy (%) | Latency (s) |
+| Model | Strategy | Total Acc (%) | Latency (s) |
 |------|------|------------|---------|
 | GPT-5 | Single-frame | **88.14** | 19.29 |
 | GPT-5 | Multi-frame | 85.58 | 23.78 |
@@ -90,9 +99,9 @@ No training is involved; the evaluation is purely inference-based. Commercial mo
 | Qwen-2.5-VL-72B | Multi-frame | 64.10 | 14.93 |
 | OCR-Text GPT-4o | Single-frame | 56.41 | 4.58 |
 
-### Per-Scenario Accuracy Comparison (Single-Frame Mode)
+### Accuracy by Scenario (Single-frame)
 
-| Model | Indoor Nav. | Outdoor Nav. | Safety Insp. | Smart Apt. | Smart Retail |
+| Model | IN | ON | SI | SA | SR |
 |------|---------|---------|---------|---------|---------|
 | GPT-5 | 81.48 | 91.67 | 80.95 | **94.44** | 86.36 |
 | GPT-4o | 83.33 | 86.67 | 71.43 | 77.78 | 75.76 |
@@ -101,41 +110,41 @@ No training is involved; the evaluation is purely inference-based. Commercial mo
 
 ### Key Findings
 
-- **GPT-5 achieves the highest accuracy but the greatest latency**: 88.14% single-frame accuracy vs. 19.29s latency, making it unsuitable for real-time AR detection.
-- **GPT-4o offers the best accuracy–latency trade-off**: multi-frame mode at 84.62% / 7.26s, the most practical choice for commercial deployment.
-- **The OCR text-only baseline reaches only 56.41%** (near random), demonstrating that visual semantic reasoning is the core capability for contradiction detection and cannot be replaced by text-only approaches.
-- **Multi-frame is not consistently superior to single-frame**: GPT-5 (−2.56%) and Gemini-2.5-Pro (−7.37%) both decline in multi-frame mode, possibly because additional frames introduce redundant information that interferes with reasoning.
-- **Open-source models lag significantly**: Qwen-2.5-VL-72B peaks at 64.10%, a gap of 24 percentage points behind GPT-5.
-- **Substantial cross-scenario variation**: Smart Apartment (state-indicator contradictions) is the easiest to detect, while Safety Inspection (sign contradictions) is the most challenging.
+- **GPT-5 achieves the highest accuracy but highest latency**: 88.14% accuracy vs. 19.29s latency makes it unsuitable for real-time AR.
+- **GPT-4o represents the optimal balance**: 84.62% accuracy at 7.26s in multi-frame mode is most practical for commercial deployment.
+- **OCR baseline fails (56.41%)**: The near-random performance demonstrates that visual semantic reasoning is the core capability that cannot be replaced by text-only solutions.
+- **Multi-frame is not always superior**: GPT-5 (-2.56%) and Gemini-2.5-Pro (-7.37%) showed decreased accuracy with multi-frames, likely due to redundant information interfering with reasoning.
+- **Significant gap in open-source models**: Qwen-2.5-VL-72B (64.10%) lags 24% behind GPT-5.
+- **Scenario sensitivity**: State-indicator contradictions (Smart Apartment) are easiest to detect, while sign contradictions (Safety Inspection) are most difficult.
 
 ## Highlights & Insights
 
-1. **The problem definition has real-world significance**: AR contradiction attacks are an emerging security threat, and as the AR application ecosystem becomes more open (with multiple co-existing apps), the practical risk of such attacks is growing. This paper is the first to formally define the problem and provide an evaluation tool.
-2. **The OCR baseline is elegantly designed**: The result of only 56% powerfully demonstrates that "visual reasoning cannot be replaced by text," providing clear technical direction for future research.
-3. **The accuracy–latency trade-off has engineering value**: The paper provides first-hand data for selecting AR security system components—GPT-4o is recommended when real-time detection requires latency below 10s, while GPT-5 is preferred when maximum accuracy is the priority.
+1. **Practical Value**: AR contradiction attacks are an emerging security threat. As AR ecosystems open up to multi-application coexistence, the risk of misleading content grows. This work provides the first formal definition and evaluation tool.
+2. **Effective OCR Baseline**: The 56% result strongly validates that "visual reasoning cannot be replaced by text," providing clear guidance for technical directions.
+3. **Engineering Trade-offs**: Provides first-hand data for AR security selection—GPT-4o for latency < 10s, GPT-5 for maximum accuracy.
 
 ## Limitations & Future Work
 
-1. **Limited data scale**: 312 videos across 5 scenarios offer insufficient diversity to cover all AR attack patterns.
-2. **Video models not utilized**: Evaluation is frame-based only, without leveraging the temporal modeling capabilities of video VLMs (the authors attribute this to API limitations and computational constraints).
-3. **A unified Unity app simulates attacks**: Using a single application to simultaneously simulate both victim and attacker diverges from real multi-application scenarios.
-4. **Evaluation only, no defense proposed**: A natural limitation of benchmark papers; future work should develop efficient lightweight detection models.
-5. **Adversarial evasion not considered**: Attackers may design more subtle contradictions to fool VLMs.
+1. **Limited Data Scale**: 312 videos across 5 scenarios are insufficient to cover all possible AR attack patterns.
+2. **Underutilization of Video Models**: Frame-based evaluation was used instead of native video VLMs due to API limits and computational costs.
+3. **Unity Simulation**: A single application simulated both victim and attacker, which deviates slightly from real multi-app isolation scenarios.
+4. **Lack of Defense Schemes**: As a benchmark paper, it identifies the problem but does not yet propose a lightweight detection model.
+5. **Adversarial Evasion**: Attackers may design more subtle contradictions to deceive VLMs.
 
 ## Related Work & Insights
 
-- **vs. BoardgameQA / Pan et al.**: These address purely textual contradiction detection; ContrAR extends the problem to visual–textual multimodal mixed scenarios, increasing the complexity by one dimension.
-- **vs. MMIR**: MMIR studies visual–text inconsistencies within documents; ContrAR focuses on security threats in real-time AR scenes, with more clearly defined application value.
-- **vs. AR quality evaluation** (lighting / depth alignment): Advancing from low-level visual metrics to high-level semantic reasoning represents a qualitative shift in AR security research.
+- **vs. BoardgameQA/Pan et al.**: Previous works focused on text-only contradiction detection; ContrAR extends this to multimodal AR scenarios, increasing complexity.
+- **vs. MMIR**: MMIR studies visual-text inconsistencies in documents; ContrAR focuses on security threats in real-time mixed reality.
+- **vs. AR Quality Assessment**: Moves beyond low-level rendering metrics (lighting/depth) to high-level semantic reasoning, representing a qualitative shift in AR security research.
 
 ## Rating
 
 ⭐⭐⭐⭐
 
-- **Novelty** ⭐⭐⭐⭐: First to formally define AR contradiction attacks and construct an evaluation benchmark; the problem definition is valuable.
-- **Experimental Thoroughness** ⭐⭐⭐⭐: Comprehensive evaluation covering 11 VLMs, 2 strategies, an OCR baseline, and 5-scenario analysis.
-- **Writing Quality** ⭐⭐⭐⭐: Threat model definition is rigorous; experimental design is clearly presented.
-- **Value** ⭐⭐⭐⭐: Provides the first standardized evaluation tool for the AR security domain, filling a research gap.
+- **Novelty** ⭐⭐⭐⭐: First to formalize AR contradiction attacks and build an evaluation benchmark.
+- **Experimental Thoroughness** ⭐⭐⭐⭐: Comprehensive evaluation of 11 VLMs, 2 strategies, OCR baselines, and 5 scenarios.
+- **Writing Quality** ⭐⭐⭐⭐: Well-defined threat model and clear experimental design.
+- **Value** ⭐⭐⭐⭐: Fills a research gap by providing a standardized tool for the AR security community.
 
 <!-- RELATED:START -->
 
@@ -143,11 +152,11 @@ No training is involved; the evaluation is purely inference-based. Commercial mo
 
 ## Related Papers
 
+- [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
-- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
-- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/multimodal_vlm/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
-- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/multimodal_vlm/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
+- [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
 
 </div>
 

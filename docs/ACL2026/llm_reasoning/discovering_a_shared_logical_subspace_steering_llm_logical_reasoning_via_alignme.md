@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 description: >-
-  [ACL 2026][LLM Reasoning][Logical Reasoning] This paper discovers a shared logical subspace within LLMs that aligns natural language and symbolic logic representations. By steering activations along this subspace at infe…
+  [ACL 2026][LLM Reasoning][Paper Note] Ours discovers a shared logical subspace within LLMs that aligns both natural language and symbolic logic reasoning representations. By steering activations along this subspace during inference, logical reasoning accuracy is improved by up to 11 percentage points without any training.
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Logical Reasoning"
-  - "Multi-view Subspace"
-  - "Activation Steering"
-  - "CCA Alignment"
-  - "Training-free Inference"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: a5a5ce6577987994
+content_hash: b6d372b124185a9e
 ---
-
 # Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 
 **Conference**: ACL 2026  
@@ -25,48 +19,65 @@ content_hash: a5a5ce6577987994
 
 ## TL;DR
 
-This paper discovers a shared logical subspace within LLMs that aligns natural language and symbolic logic representations. By steering activations along this subspace at inference time, logical reasoning accuracy is improved by up to 11 percentage points without requiring additional training.
+Ours discovers a shared logical subspace within LLMs that aligns both natural language and symbolic logic reasoning representations. By steering activations along this subspace during inference, logical reasoning accuracy is improved by up to 11 percentage points without any training.
 
 ## Background & Motivation
 
-**Background**: LLMs still struggle with complex multi-step logical reasoning. Existing methods fall into two categories: (1) natural language-dependent methods—optimizing Chain-of-Thought (CoT) reasoning via prompting or training; (2) neuro-symbolic methods—attaching external symbolic solvers or verifiers.
+**Background**: LLMs still perform poorly on complex multi-step logical reasoning. Existing methods fall into two categories: (1) natural language-dependent methods—optimizing Chain-of-Thought reasoning through prompting or training; (2) neuro-symbolic methods—attaching external symbolic solvers or verifiers.
 
-**Limitations of Prior Work**: The first category optimizes reasoning chains only in natural language without utilizing the structured information of symbolic logic; the second category relies on external symbolic components, increasing system complexity and maintenance costs. Neither explores whether a unified internal representation for logical reasoning exists within LLMs.
+**Limitations of Prior Work**: The first category only optimizes reasoning chains in natural language form, failing to utilize the structured information of symbolic logic. The second category depends on external symbolic components, increasing system complexity and maintenance costs. Neither explores whether a unified representation of logical reasoning capability exists within LLMs.
 
-**Key Challenge**: The same logical reasoning problem can be described using two complementary representations—natural language proofs and symbolic proofs. However, existing methods either focus on a single representation or require external tools to bridge the two.
+**Key Challenge**: The same logical reasoning problem can be described via two complementary representations—natural language proofs and symbolic proofs. However, existing methods either focus on only one representation or require external tools to bridge the two.
 
-**Goal**: To discover whether a shared logical subspace exists within LLMs that aligns natural language and symbolic views, and to utilize it to enhance reasoning capabilities.
+**Goal**: To discover whether a shared logical subspace that aligns both natural language (NL) and symbolic views exists within LLMs, and to utilize it to enhance reasoning capabilities.
 
-**Key Insight**: Leveraging the residual activations of paired natural language and symbolic proofs to learn a low-dimensional shared subspace via Canonical Correlation Analysis (CCA).
+**Key Insight**: Utilize the residual activations of paired natural language proofs and symbolic proofs to learn a low-dimensional shared subspace via Canonical Correlation Analysis (CCA).
 
-**Core Idea**: A low-dimensional logical subspace exists in the residual stream of LLMs, capturing logical reasoning abilities shared across natural language and symbolic representations. Amplifying the projection of activations along this subspace during inference enhances reasoning without modifying model weights.
+**Core Idea**: A low-dimensional logical subspace exists within the residual flow of LLMs, capturing logical reasoning abilities shared across NL and symbolic representations. Amplifying activation projections along this subspace during inference enhances reasoning without modifying model weights.
 
 ## Method
 
 ### Overall Architecture
 
-The framework consists of two stages: (1) Learning the multi-view logical subspace—collecting residual activations from paired NL/symbolic reasoning chains and using PCA+CCA to learn a low-dimensional subspace that maximizes cross-view correlation; (2) Inference-time steering—amplifying the activation projection of each token along the learned subspace during the model's forward pass to bias generation toward logical reasoning.
+The framework consists of two phases: (1) Multi-view logical subspace learning—collecting residual activations from paired NL/symbolic reasoning chains and learning a low-dimensional subspace that maximizes cross-view correlation via PCA+CCA; (2) Inference-time steering—amplifying the activation projection of each token along the learned subspace during the model forward pass to steer generation toward logical reasoning. This steering scheme, termed LSS (Logical Subspace Steering), occurs at the activation level and is orthogonal to prompting or sampling-level reasoning techniques.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Paired NL Proofs + Symbolic Proofs"] --> B
+    subgraph S1["PCA+CCA Subspace Learning (One-time Offline Estimation)"]
+        direction TB
+        B["Collect Residual Activations Layer-wise"] --> C["PCA Noise Reduction<br/>Retain 98% Variance"]
+        C --> D["CCA Extracts k=32 Directions with Max Cross-view Correlation"]
+        D --> E["QR Decomposition for Orthogonal Basis U⁽ℓ⁾"]
+    end
+    E --> F["Inference-time Activation Steering<br/>Normalized Projection at Layer ℓ* added via λ"]
+    F --> G["Logically Enhanced Generation"]
+    F -.Orthogonal Overlay.-> H["Compatibility with Reasoning Schemes<br/>few-shot CoT / self-consistency"]
+    H -.-> G
+```
 
 ### Key Designs
 
-1.  **PCA+CCA Subspace Learning**:
-    - **Function**: Learn a shared logical subspace from paired NL and symbolic reasoning activations.
-    - **Mechanism**: First use PCA for noise reduction and compression (retaining 98% variance), then use CCA to find the $k=32$ directions with the highest correlation between NL and symbolic spaces. Orthogonal bases $U^{(\ell)} \in \mathbb{R}^{D \times k}$ are obtained via QR decomposition.
-    - **Design Motivation**: CCA maximizes cross-view correlation, ensuring the subspace captures logical structures shared across surface forms rather than information specific to a particular language format.
+**1. PCA+CCA Subspace Learning: Extracting a shared logical skeleton from different surface forms**
 
-2.  **Inference-time Activation Steering**:
-    - **Function**: Enhance CoT reasoning without modifying model weights.
-    - **Mechanism**: At a selected layer $\ell^*$, replace the residual vector with $\tilde{h}^{(\ell^*)}_t = h^{(\ell^*)}_t + \lambda \frac{P^{(\ell^*)} h^{(\ell^*)}_t}{\|P^{(\ell^*)} h^{(\ell^*)}_t\|_2} \|h^{(\ell^*)}_t\|_2$, effectively adding a normalized perturbation along the subspace projection.
-    - **Design Motivation**: The approach requires only one-time subspace estimation and one matrix-vector multiplication per token, resulting in negligible inference overhead (179 → 176 tok/s).
+The challenge lies in the fact that NL and symbolic proofs of the same logical problem have residual activations in high-dimensional spaces contaminated by their respective linguistic styles. Direct alignment would be dominated by surface noise. Ours first performs PCA on each layer's activations for noise reduction, retaining 98% of the variance. Then, CCA is used to find $k=32$ directions with maximum correlation between the compressed NL and symbolic spaces. Finally, orthogonal bases $U^{(\ell)} \in \mathbb{R}^{D \times k}$ are obtained via QR decomposition. Since CCA maximizes cross-view correlation, the selected directions represent logical structures shared across surface forms rather than style information unique to one language format, ensuring stable steering.
 
-3.  **Compatibility with Reasoning Schemes**:
-    - **Function**: Compatible with few-shot CoT and self-consistency.
-    - **Mechanism**: Directly reuse the same subspace, steering layer, and $\lambda$ without re-tuning parameters.
-    - **Design Motivation**: LSS is an activation-level intervention, which is orthogonal to and can be combined with prompt-level and sampling-level methods.
+**2. Inference-time Activation Steering: Correcting reasoning by amplifying projections without weight changes**
+
+After learning the subspace, the second problem is influencing generation. A steering layer $\ell^*$ is selected, and the residual vector of each token at this layer is replaced:
+
+$$\tilde{h}^{(\ell^*)}_t = h^{(\ell^*)}_t + \lambda \frac{P^{(\ell^*)} h^{(\ell^*)}_t}{\|P^{(\ell^*)} h^{(\ell^*)}_t\|_2} \|h^{(\ell^*)}_t\|_2$$
+
+The projection $P^{(\ell^*)} h^{(\ell^*)}_t$ on the subspace is normalized and added back according to the original vector norm and intensity $\lambda$. This applies a controllable perturbation along the logical direction. The intervention requires only a one-time subspace estimation and one matrix-vector multiplication per token. Inference throughput remains almost constant (179 → 176 tok/s) while shifting generation toward being "more logical."
+
+**3. Compatibility: Orthogonal to prompting and sampling techniques**
+
+LSS intervention occurs at the activation level, while few-shot CoT modifies prompts and self-consistency (SC) modifies sampling/voting. Since they act at different levels, LSS can be applied on top of 3-shot CoT or SC-3. Experimental results show that the accuracy gains from LSS persist on top of these methods (approx. 2% additional gain), indicating that the benefits of these three classes of methods do not cancel out.
 
 ### Loss & Training
 
-This is a training-free method. Subspace learning only requires a single PCA+CCA estimation on gold-standard proofs. The steering intensity $\lambda$ and steering layer $\ell^*$ are selected using a validation set.
+Ours is a training-free method. Subspace learning requires only a one-time PCA+CCA estimation on gold-standard proofs. The steering intensity $\lambda$ and steering layer $\ell^*$ are selected using a validation set.
 
 ## Key Experimental Results
 
@@ -80,7 +91,7 @@ This is a training-free method. Subspace learning only requires a single PCA+CCA
 | Gemma-2-9B | PrOntoQA (5-hop) | 87.4% | 90.2% | +2.8 |
 | Gemma-2-9B | PW-CWA (3-hop) | 71.4% | 73.8% | +2.4 |
 
-### Integration with Reasoning Schemes (Llama-3.1-8B, PrOntoQA)
+### Compatibility with Reasoning Schemes (Llama-3.1-8B, PrOntoQA)
 
 | Method | Accuracy |
 |------|--------|
@@ -92,37 +103,37 @@ This is a training-free method. Subspace learning only requires a single PCA+CCA
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Steering along random orthogonal directions | No gain/Performance drop | Proves gains come from the learned logical subspace, not arbitrary activation amplification. |
-| $\lambda$ sensitivity | Optimal $\lambda$ varies by model | Gains from the logical subspace direction are robust; random directions show no stable improvement. |
-| Qwen3-4B (Reasoning-specialized model) | 87.2 → 93.2 (+6.0) | Even strong base models benefit from LSS. |
+| Random Orthogonal Steering | No Gain/Degradation | Improvement comes from learned subspace, not arbitrary amplification. |
+| $\lambda$ Sensitivity | Optimal $\lambda$ varies | Logical subspace direction provides robust gains; random directions do not. |
+| Qwen3-4B (Reasoning-specialized) | 87.2 → 93.2 (+6.0) | Strong base models also benefit from LSS. |
 
 ### Key Findings
 - The logical subspace encodes both semantic and logical structural information.
-- The alignment between NL and symbolic views is stronger in the higher layers of LLMs.
-- Projection energy $E^{(\ell)}(r)$ is positively correlated with reasoning correctness.
-- Steering encourages the model to use more logical connectives (e.g., *since*, *so*) and fewer vague reasoning verbs (e.g., *think*, *know*, *assume*).
-- LSS acts as a stabilizer for weaker models: on Llama-3.2-3B, SC-3 even reduces performance, while LSS provides stable improvements.
+- Alignment between NL and symbolic views is stronger in higher LLM layers.
+- Projection energy $E^{(\ell)}(r)$ correlates positively with reasoning correctness.
+- Steering leads the model to use more logical connectors (*since*, *so*) and fewer vague reasoning verbs (*think*, *know*, *assume*).
+- LSS acts as a stabilizer for small models: on Llama-3.2-3B, SC-3 sometimes degrades performance, but LSS provides a steady gain.
 
 ## Highlights & Insights
-- First to discover a shared logical subspace between natural and symbolic languages within LLMs, representing a significant exploration of the internal mechanisms of reasoning.
-- Highly lightweight method: training-free, no external tools, and negligible inference overhead, requiring only one matrix-vector multiplication per token.
-- Proposes a third path for enhancing LLM reasoning: instead of extending context length or sampling budgets, it directly aligns internal representations at the activation level.
-- Orthogonal to and combinable with few-shot CoT and self-consistency, demonstrating excellent methodological compatibility.
+- First discovery of a shared logical subspace within LLMs for NL and symbolic logic, providing important insight into the internal mechanisms of LLM reasoning.
+- Highly lightweight: No training, no external tools, and negligible inference overhead (one matrix-vector multiplication per token).
+- Proposes a third path for enhancing LLM reasoning: Instead of extending context length or sampling budgets, it directly aligns internal representations at the activation level.
+- Orthogonal and additive with few-shot CoT and self-consistency, demonstrating excellent compatibility.
 
 ## Limitations & Future Work
-- Requires paired NL and symbolic proofs to learn the subspace, limiting applicability to tasks without symbolic formalization (though FOLIO uses NL/FOL alignment as a substitute).
-- The optimal steering layer and intensity vary per model-task pair, requiring validation set tuning.
-- The subspace dimension $k=32$ is fixed; adaptive dimension selection has not been explored.
-- Future work could explore cross-task transfer, integration with reasoning-focused training, and broader types of reasoning.
+- Requires paired NL and symbolic proofs for subspace learning; limited applicability to tasks without symbolic formalization (though FOLIO utilized NL and FOL alignment).
+- Optimal steering layers and intensities vary by model-task pairs, requiring validation set tuning.
+- Subspace dimension $k=32$ is fixed; adaptive dimension selection was not explored.
+- Future work could explore cross-task transfer, integration with reasoning training, and broader reasoning types.
 
 ## Related Work & Insights
-- **vs RepE/Activation Engineering**: While these are general activation steering methods, this paper specifically targets logical reasoning by learning precise steering directions via NL-symbolic alignment.
-- **vs Neuro-Symbolic Methods**: Traditional methods attach external symbolic solvers; this paper fuses the two views directly within internal representations.
-- **vs Self-Consistency**: While SC improves reasoning through multiple sampling and voting, this method achieves similar effects with a single steered pass and much lower computational cost.
+- **vs RepE/Activation Engineering**: While these are general activation steering methods, ours specifically targets logical reasoning by leveraging NL-symbolic alignment for more precise steering directions.
+- **vs Neuro-Symbolic Methods**: Traditional methods attach external symbolic solvers; ours fuses the two views directly within internal representations.
+- **vs Self-Consistency**: SC improves reasoning via multiple sampling/voting; ours achieves similar effects via single-pass steering with lower computational cost.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ First discovery and utilization of internal multi-view logical subspaces in LLMs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 4 benchmarks and 5 models with extensive ablation and analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested on 4 benchmarks and 5 models with extensive ablation and analysis.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous mathematical derivation, and in-depth analysis.
 - Value: ⭐⭐⭐⭐ Provides a new paradigm for enhancing LLM reasoning with theoretical and practical significance.
 

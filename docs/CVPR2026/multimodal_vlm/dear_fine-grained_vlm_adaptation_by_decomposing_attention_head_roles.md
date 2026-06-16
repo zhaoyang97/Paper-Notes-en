@@ -2,80 +2,95 @@
 title: >-
   [Paper Note] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 description: >-
-  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which uses a Concept Entropy metric to decompose the deep-layer attention heads of ViT into three functional roles—attribute heads…
+  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which decomposes deep attention heads in ViT into three functional roles—attribute, generalization, and mixed heads—using a Concept Entropy metric. By designing a role-based attention mask mechanism to precisely control information flow, it achieves an optimal balance between task adaptation a
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Prompt Learning"
-  - "VLM Adaptation"
-  - "Attention Head Role Decomposition"
-  - "CLIP"
-  - "Zero-shot Generalization"
+  - CVPR 2026
+  - Multimodal VLM
+  - Prompt Learning
+  - CLIP
 date: 2026-05-08
-content_hash: 31303db4b6c6548a
+content_hash: 1046179fb9546e66
 ---
-
 # DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.01111](https://arxiv.org/abs/2603.01111)  
 **Code**: [GitHub](https://github.com/wellsssssss/DeAR)  
-**Area**: Multimodal VLM
+**Area**: Multi-modal VLM  
 **Keywords**: Prompt Learning, VLM Adaptation, Attention Head Role Decomposition, CLIP, Zero-shot Generalization
 
 ## TL;DR
 
-This paper proposes DeAR, which uses a Concept Entropy metric to decompose the deep-layer attention heads of ViT into three functional roles—attribute heads, generalization heads, and mixed heads—and designs a role-based attention masking mechanism to precisely control information flow, achieving the best balance between task adaptation and zero-shot generalization across 15 datasets.
+This paper proposes DeAR, which decomposes deep attention heads in ViT into three functional roles—attribute, generalization, and mixed heads—using a Concept Entropy metric. By designing a role-based attention mask mechanism to precisely control information flow, it achieves an optimal balance between task adaptation and zero-shot generalization across 15 datasets.
 
 ## Background & Motivation
 
-**Core challenge of CLIP adaptation**: Pre-trained VLMs must be adapted to downstream tasks, but full fine-tuning causes catastrophic forgetting and sacrifices strong zero-shot generalization.
+**Key Challenge in CLIP Adaptation**: Pre-trained VLMs require adaptation to downstream tasks, but full fine-tuning leads to catastrophic forgetting, compromising robust zero-shot generalization.
 
-**Limitations of Prior Work — oversimplified layer-level view in prompt learning**: Existing methods assume that shallow layers capture general features and deep layers handle task-specific knowledge, but this layer-level perspective overlooks the functional diversity among attention heads within a single layer.
+**Limitations of Prior Work in Prompt Learning**: Existing methods assume a simple hierarchical view where shallow layers capture general features and deep layers process task-specific knowledge. This perspective ignores the functional diversity among individual attention heads within the same layer.
 
-**Uncontrolled token interactions**: Due to the self-attention mechanism, inserted learnable tokens interact indiscriminately with original tokens, and task-specific knowledge may corrupt the generalization core.
+**Indiscriminate Token Interaction**: Due to the self-attention mechanism, inserted learnable tokens interact indiscriminately with original tokens, potentially allowing task-specific knowledge to disrupt the core representation responsible for generalization.
 
-**Contradictions in layer-level strategies**: MaPLe injects prompts into early layers while MMRL injects into deep layers—conflicting strategies reveal the absence of fine-grained injection principles.
+**Contradictory Hierarchical Strategies**: MaPLe injects prompts into early layers, while MMRL targets deep layers—conflicting strategies that reveal a lack of fine-grained injection principles.
 
-**Insights from interpretability research**: VLM interpretability studies have found functional specialization among attention heads, providing a theoretical basis for fine-grained control.
+**Key Insight from Interpretability**: Research on VLM interpretability finds functional specialization among attention heads, providing a theoretical basis for fine-grained control.
 
-**Core hypothesis**: Functional specialization within VLMs resides not between layers, but among attention heads within deep layers.
+**Core Idea**: Functional specialization within VLMs exists primarily among deep attention heads rather than between layers.
 
 ## Method
 
 ### Overall Architecture
 
-DeAR consists of three components: (1) attention head functional role identification based on Concept Entropy; (2) multimodal attribute-aware prompt learning with role-based attention masking; and (3) task-adaptive fusion inference.
+DeAR addresses the problem of indiscriminate interaction between learnable tokens and original visual tokens during CLIP adaptation. The core strategy is to determine which representations should be preserved or modified at the **individual attention head** granularity. The pipeline consists of four steps: 1) Performing a "diagnosis" of each attention head in the deep layers (layers 9–12) of the ViT to categorize them as attribute, generalization, or mixed heads using Concept Entropy; 2) Symmetrically injecting learnable attribute tokens into both visual and textual branches starting from layer 9; 3) Customizing an attention mask based on each head's role, ensuring attribute tokens only refine the appropriate attribute heads while bypassing protected generalization heads; 4) During inference, adaptively fusing the logits calculated from the generalization-preserving class features ([CLS]) and task-specific attribute features using learnable weights.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph ROLE["Concept Entropy Functional Classification (Offline)"]
+        direction TB
+        A["Attention Heads in ViT Layers 9–12"] --> B["Generate Top-N descriptions via TEXTSPAN<br/>→ SBERT Encoding → HDBSCAN Clustering"]
+        B --> C["Classification via Concept Entropy<br/>Attribute / Generalization / Mixed Heads"]
+    end
+    C --> D["Multi-modal Attribute Token Injection<br/>5 visual tokens + K textual tokens<br/>β controls inter-layer mixing"]
+    D --> E["Role-Based Attention Mask<br/>Generalization Isolation / Attribute Routing / Mixed Open"]
+    E --> F["Class features f_cls (Generalization) + Attribute features f_attr"]
+    F --> G["Task-Adaptive Fusion Inference<br/>Weighted sum of dual-path logits"]
+    G --> H["Final Prediction"]
+```
 
 ### Key Designs
 
-#### Concept Entropy-Based Functional Role Classification
+**1. Concept Entropy Functional Role Classification: A data-driven metric for head specialization**
 
-For each attention head in the last four layers (layers 9–12) of ViT-B/16, TEXTSPAN is used to generate top-N descriptive texts, which are then encoded via SBERT and clustered with HDBSCAN to automatically discover concept clusters (five core attribute categories: color, shape, texture, object, and position). Concept Entropy is defined to quantify the degree of functional specialization of each head:
+Instead of assuming a "shallow-to-deep" hierarchy, DeAR identifies functional differences within the same layer. For each head in the last four layers (9–12) of ViT-B/16, the method uses TEXTSPAN to generate top-N descriptive texts, followed by SBERT encoding and HDBSCAN clustering to automatically emerge 12 conceptual clusters. Five core attributes—color, shape, texture, object, and position—are selected. The functional focus of a head is characterized by its Shannon entropy over the probability distribution $P_{(l,h)}$ across these clusters:
 
 $$H(P_{(l,h)}) = -\sum_j P_{(l,h)}(c_j) \log_2 P_{(l,h)}(c_j)$$
 
-Low entropy → attribute head (focused on a single attribute); high entropy → generalization head (general-purpose function); intermediate → mixed head.
+Low entropy indicates a head responds to a single attribute (**attribute head**), whereas high entropy suggests responses are spread across concepts (**generalization head**). Heads in between are labeled as **mixed heads**.
 
-#### Role-Based Attention Mask
+**2. Multi-modal Attribute Tokens: Symmetrical injection and cross-modal alignment**
 
-- **Generalization heads & other specialist heads**: Strict isolation — attribute tokens and original tokens are fully blocked from each other ($\mathbf{M}[i,j] = -\infty$), preserving generalization capacity.
-- **Core attribute heads**: Corresponding attribute tokens are routed to dedicated expert heads, with other attribute tokens masked out, enabling focused learning.
-- **Mixed heads**: All tokens are allowed to interact freely ($\mathbf{M}[i,j] = 0$).
+DeAR injects 5 learnable attribute tokens into the visual branch starting from layer $J=9$. A $\beta$ parameter controls the mixture of original tokens and contextualized outputs: $\beta\,\mathbf{r}_{\text{attr}}+(1-\beta)\tilde{\mathbf{r}}_{\text{attr}}$. This maintains attribute semantics while allowing for images-specific adaptation. Textual tokens are injected symmetrically to ensure that visual attribute representations remain aligned with text in the same semantic space.
 
-#### Multimodal Attribute Tokens
+**3. Role-Based Attention Mask: Surgical control of information flow**
 
-On the visual side, five learnable attribute tokens are injected starting from layer $J=9$, with a $\beta$ parameter controlling inter-layer information retention. On the text side, $K$ learnable tokens are symmetrically injected to ensure cross-modal alignment.
+DeAR applies three types of masks $\mathbf{M}$ based on head roles. For generalization heads, it implements **strict isolation**: attention between attribute tokens and original tokens is set to $\mathbf{M}[i,j]=-\infty$, preventing task knowledge from contaminating generalization nodes. For specific core attribute heads, the corresponding attribute token is **routed to its expert head** while others are masked. Mixed heads remain open ($\mathbf{M}[i,j]=0$) for free interaction. This fine-grained control distinguishes DeAR from the "layer-wise" injection found in MaPLe or MMRL.
+
+**4. Task-Adaptive Fusion Inference: Balancing preservation and adaptation**
+
+The model produces two types of features: the protected class feature $\mathbf{f}_{\text{cls}}$ (from the [CLS] token) and five attribute-specific features $\mathbf{f}_{\text{attr}}$. Predictions are made using a weighted sum of logits from both paths, where weights $\alpha_k$ are learnable and normalized via softmax. A fusion regularization term $\mathcal{L}_{\text{fusion}}=-\log(\alpha_{\text{cls}})$ explicitly encourages higher weights for class features to prevent over-reliance on new attribute features at the cost of generalization.
 
 ### Loss & Training
 
+The total objective is defined by three components:
+
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CE}} + \lambda_{\text{reg}} \mathcal{L}_{\text{reg}} + \lambda_{\text{fusion}} \mathcal{L}_{\text{fusion}}$$
 
-This includes a classification loss, a self-regularization loss (constraining features to remain close to the frozen CLIP representations), and a fusion weight regularization loss (encouraging the primary features to maintain high weights).
+Where $\mathcal{L}_{\text{CE}}$ is the standard cross-entropy loss, $\mathcal{L}_{\text{reg}}$ is a self-regularization term constraining adapted features from drifting too far from frozen CLIP features, and $\mathcal{L}_{\text{fusion}}$ regularizes weights to maintain the importance of the primary features.
 
 ## Key Experimental Results
 
-### Main Results: Base-to-Novel Generalization (Average over 11 Datasets)
+### Main Results: Base-to-Novel Generalization (Average of 11 Datasets)
 
 | Method | Base Acc | Novel Acc | HM |
 |------|----------|-----------|-----|
@@ -89,37 +104,37 @@ This includes a classification loss, a self-regularization loss (constraining fe
 
 | Component | Contribution |
 |------|------|
-| Remove Role-Based Mask | Significant drop in Novel accuracy |
-| Remove attribute tokens | Drop in both Base and Novel accuracy |
-| Remove fusion regularization | Over-reliance on attribute features |
-| Apply mask to generalization heads only | Effectively protects generalization |
+| Remove Role-Based Mask | Significant drop in Novel Acc |
+| Remove Attribute tokens | Drop in both Base and Novel Acc |
+| Remove Fusion Regularization | Over-reliance on attribute features |
+| Generalization head mask only | Effectively protects generalization |
 
 ### Key Findings
 
-- Attribute-conditioned image retrieval validates that attribute tokens genuinely capture corresponding semantic concepts (e.g., color retrieval returns images of the same color).
-- Comprehensive validation across 15 datasets, including domain generalization and cross-dataset transfer settings.
-- The method substantially improves Novel class generalization while maintaining Base performance.
+- Attribute-conditioned image retrieval confirms that attribute tokens capture corresponding semantic concepts (e.g., color-based retrieval).
+- Comprehensive validation across 15 datasets, including domain generalization and cross-dataset transfer.
+- The method significantly improves Novel class generalization while maintaining high Base performance.
 
 ## Highlights & Insights
 
-- Concept Entropy is proposed to quantify attention head functional specialization from a data-driven perspective, avoiding subjective categorization.
-- The Role-Based Attention Mask design is highly precise, achieving for the first time "surgical-level" control over VLM information flow.
-- Attribute-conditioned retrieval experiments intuitively validate the effectiveness of the design.
-- The work combines theoretical innovation (head-level functional decomposition) with engineering practicality (plug-and-play usability).
+- Introduces Concept Entropy to quantify functional specialization of attention heads in a data-driven manner.
+- The Role-Based Attention Mask design enables "surgical" control over VLM information flow for the first time.
+- Attribute-conditioned retrieval experiments provide intuitive evidence for the effectiveness of the design.
+- Combines theoretical innovation (head-level decomposition) with engineering practicality (plug-and-play).
 
 ## Limitations & Future Work
 
-- The analysis targets ViT-B/16 only; generalizability to other architectures (e.g., ViT-L/14) remains to be verified.
-- The five attribute categories are manually selected; different tasks may require different attribute definitions.
-- The role-based attention masking introduces additional computational overhead at inference time.
-- Validation is limited to classification tasks; extension to detection and segmentation has not been explored.
+- Analysis is focused on ViT-B/16; generalization to other architectures (e.g., ViT-L/14) requires further validation.
+- Attribute categories (5 types) are manually selected; different tasks may require different attributes.
+- Introducing attention masks increases computational overhead during inference.
+- Validation is limited to classification; extension to detection or segmentation is yet to be explored.
 
 ## Related Work & Insights
 
-- Compared to multimodal prompt learning methods such as MaPLe and MMRL, DeAR is the first to introduce head-level functional analysis.
-- There is conceptual overlap with the attribute structure in ATPrompt, but DeAR achieves finer-grained control through attention masking.
-- Skip Tuning is conceptually related but operates at a different granularity (layer-level vs. head-level).
-- The analysis of VLM internal mechanisms provides a new perspective for subsequent interpretability research.
+- Compared to multimodal prompt learning methods like MaPLe and MMRL, DeAR is the first to introduce head-level functional analysis.
+- Shares commonality with the attribute structure of ATPrompt but achieves finer control through attention masking.
+- Related to Skip Tuning in spirit but operates at a different granularity (head-level vs. layer-level).
+- Provides a new perspective for VLM internal mechanism analysis and interpretability.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -131,13 +146,19 @@ This includes a classification loss, a self-regularization loss (constraining fe
 
 <div class="related-papers" markdown="1">
 
+No related papers cited in this section.
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
-- [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
 - [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
+- [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 - [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
 
 </div>
 

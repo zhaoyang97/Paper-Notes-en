@@ -2,96 +2,117 @@
 title: >-
   [Paper Note] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 description: >-
-  [CVPR 2026][Remote Sensing][Video stabilization] This paper proposes LightStab, an unsupervised online video stabilization framework built upon the classical three-stage pipeline (motion estimation → motion propagation →…
+  [CVPR 2026][Remote Sensing][Paper Note] The authors propose LightStab, an unsupervised online video stabilization framework. By combining a classical three-stage pipeline (motion estimation → motion propagation → motion compensation) with multi-threaded asynchronous buffering, it achieves performance comparable to offline SOTA for the first time across five
 tags:
-  - "CVPR 2026"
-  - "Remote Sensing"
-  - "Video stabilization"
-  - "unsupervised"
-  - "online processing"
-  - "optical flow estimation"
-  - "UAV"
+  - CVPR 2026
+  - Remote Sensing
 date: 2026-05-08
-content_hash: 9afe53c7915799a6
+content_hash: c3e66ddd7ac2052f
 ---
-
 # No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.23141](https://arxiv.org/abs/2602.23141)  
 **Code**: [GitHub](https://github.com/liutao23/LightStab.git)  
-**Area**: Remote Sensing
-**Keywords**: Video stabilization, unsupervised, online processing, optical flow estimation, UAV
+**Area**: Remote Sensing  
+**Keywords**: Video Stabilization, Unsupervised, Online Processing, Optical Flow Estimation, UAV
 
 ## TL;DR
 
-This paper proposes LightStab, an unsupervised online video stabilization framework built upon the classical three-stage pipeline (motion estimation → motion propagation → motion compensation) augmented with multi-threaded asynchronous buffering. LightStab is the first online method to comprehensively match offline SOTA across 5 benchmark datasets, and introduces UAV-Test, the first multimodal UAV aerial stabilization benchmark covering both visible-light and infrared imagery.
+The authors propose LightStab, an unsupervised online video stabilization framework. By combining a classical three-stage pipeline (motion estimation → motion propagation → motion compensation) with multi-threaded asynchronous buffering, it achieves performance comparable to offline SOTA for the first time across five benchmarks. Additionally, the first multi-modal UAV aerial stabilization dataset, UAV-Test (including visible and infrared light), is released.
 
 ## Background & Motivation
 
-**Background**: Video stabilization aims to suppress camera shake and improve visual quality. Classical approaches follow a three-stage pipeline of motion estimation → motion smoothing → frame compensation, and are categorized by motion model dimensionality into 2D (affine/homography/optical flow), 2.5D (limited 3D cues), and 3D (depth + point cloud) methods. Deep learning methods (DUT, NNDVS, RStab, etc.) generate stabilized frames directly via end-to-end learning.
+**Background**: Video stabilization aims to suppress camera jitter and improve visual quality. Classical methods follow a three-stage pipeline: motion estimation → motion smoothing → frame compensation. Based on the motion model dimension, these are categorized into 2D (affine/homography/optical flow), 2.5D (limited 3D cues), and 3D (depth + point clouds) methods. Deep learning methods (DUT, NNDVS, RStab, etc.) directly generate stabilized frames through end-to-end learning.
 
 **Limitations of Prior Work**:
-- **Perception limitations**: Classical methods rely on hand-crafted feature detectors (SIFT, ORB, etc.), which are not robust under weak texture, occlusion, and large motion, and non-uniform keypoint distributions introduce bias in motion estimation.
-- **Smoothing limitations**: Fixed smoothing strategies fail to generalize, resulting in residual jitter; learned smoothing lacks geometric interpretability and may over-smooth or introduce distortion.
-- **Online processing limitations**: Most high-quality stabilizers (classical and learned) rely on offline batch processing or future frames, introducing latency. Learned methods also require large amounts of paired labeled data and substantial computational resources.
+   - **Perceptual Limitations**: Classical methods rely on handcrafted feature detectors (SIFT, ORB), which are not robust in weakly textured, occluded, or large-motion scenarios. Uneven keypoint distribution leads to biased motion estimation.
+   - **Smoothing Limitations**: Fixed smoothing strategies fail to generalize, resulting in residual jitter. Learning-based smoothing lacks geometric interpretability and may cause over-smoothing or distortion.
+   - **Online Processing Limitations**: Most high-quality stabilizers (both classical and learning-based) rely on offline batch processing or future frames, introducing latency. Learning-based methods also require large amounts of paired labeled data and computational resources.
 
-**Key Challenge**: It is inherently difficult to simultaneously achieve unsupervised training, online (causal) processing, and high stabilization quality. The best existing online method (NNDVS) still shows notable gaps in certain scenarios, and existing benchmarks primarily consist of handheld visible-light videos, failing to cover practical settings such as nighttime UAV remote sensing.
+**Key Challenge**: It is difficult to simultaneously achieve unsupervised, online, and high-quality results. The best existing online method (NNDVS) still shows significant gaps in certain scenarios, and current benchmarks primarily focus on handheld visible-light videos, failing to cover practical needs like nighttime UAV remote sensing.
 
-**Goal**: Design a fully unsupervised, strictly causal (no future frames) online video stabilization framework that achieves quality comparable to or exceeding offline SOTA, and generalizes to multimodal UAV scenarios.
+**Goal**: Design a completely unsupervised, strictly causal (no future frames used) online video stabilization framework that matches or exceeds offline SOTA in quality while extending to multi-modal UAV scenarios.
 
-**Key Insight**: Rather than pursuing an end-to-end approach, the authors return to the classical three-stage pipeline while equipping each stage with modern components—replacing single hand-crafted detectors with multi-detector collaboration and optical flow, replacing fixed filtering with a lightweight self-supervised network, and eliminating serial latency bottlenecks via multi-threaded parallelism.
+**Key Insight**: Instead of an end-to-end approach, the authors return to the classical three-stage pipeline but strengthen each stage with modern components—using multi-detector collaboration and optical flow instead of single handcrafted features, a lightweight self-supervised network instead of fixed filters, and multi-threaded parallelism to eliminate serial latency bottlenecks.
 
-**Core Idea**: Classical three-stage pipeline + modern components (multi-detector collaboration, causal optical flow fusion, self-supervised motion propagation network, dynamic-kernel online smoothing) + system-level multi-threading optimization = unsupervised, online, high-quality stabilization.
+**Core Idea**: Classical three-stage pipeline + modern components (multi-detector collaboration, causal optical flow fusion, self-supervised motion propagation network, online smoothing with dynamic kernels) + system-level multi-threaded optimization = high-quality unsupervised online stabilization.
 
 ## Method
 
 ### Overall Architecture
 
-A strictly causal three-stage pipeline in which all operations depend only on past frames:
+LightStab avoids the end-to-end black box, returning to the "motion estimation → motion propagation → motion compensation" framework. Each step is strictly causal, utilizing only current and past frames. For an incoming frame, the **motion estimation** stage uses multi-detector collaboration for uniform keypoint distribution, followed by causal optical flow from MemFlow to supplement sparse keypoints with dense cues, outputting a motion feature vector $\mathbf{m}_t = [x_{kp}; y_{kp}; u; v]$. Next, in the **motion propagation** stage, EfficientMotionPro diffuses these sparse motions into a grid-based motion field $\Delta g_t$ covering the entire frame. Finally, in the **motion compensation** stage, OnlineSmoother uses a set of learnable causal kernels to smooth the grid trajectories, calculating compensation displacement and rendering the stabilized frame.
 
-1. **Motion Estimation**: Multi-detector collaboration for keypoint detection → SSC-based spatial uniformization → MemFlow causal optical flow estimation → sparse keypoint-guided flow field fusion → output motion feature vector $\mathbf{m}_t = [x_{kp}; y_{kp}; u; v]$
-2. **Motion Propagation**: EfficientMotionPro network propagates sparse keypoint motion to a dense grid motion field $\Delta g_t$, based on multi-homography priors and residual learning.
-3. **Motion Compensation**: OnlineSmoother network applies learnable causal kernels to smooth grid trajectories, generating a compensation displacement field and rendering the stabilized frame.
+To ensure causality without being hindered by serial latency, the three stages are split into three independent threads (TME/TMP/TMC) for asynchronous pipelining, with intermediate results passed via FIFO shared queues. This reduces the total pipeline latency from "serial accumulation of three stages" to "governed by the slowest stage"—a system-level design critical for real-time execution on edge devices.
 
-The three stages are executed in parallel via a multi-threaded asynchronous pipeline (TME/TMP/TMC) communicating through FIFO shared queues. Throughput is determined by the slowest stage, with theoretical speedup $S = (t_{est} + t_{prop} + t_{smooth}) / \max\{t_{est}, t_{prop}, t_{smooth}\}$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input Frame (Strictly Causal: Current + Past Only)"] --> A
+    subgraph S1["Motion Estimation · TME Thread"]
+        direction TB
+        A["Multi-detector Collaboration + Keypoint Uniformization<br/>Heterogeneous Detector NMS Fusion → SSC Grid Uniformization"] --> B["Causal Optical Flow Fusion<br/>MemFlow Dense Flow + Sparse Keypoint Guidance"]
+    end
+    B -->|Motion Features| C
+    subgraph S2["Motion Propagation · TMP Thread"]
+        direction TB
+        C["EfficientMotionPro<br/>Multi-homography Prior + Lightweight Residual Network"]
+    end
+    C -->|Grid Motion Field| D
+    subgraph S3["Motion Compensation · TMC Thread"]
+        direction TB
+        D["OnlineSmoother<br/>Learnable Causal Kernels for Dynamic Smoothing"] --> E["Grid Deformation Rendering + Boundary Outpainting"]
+    end
+    E --> OUT["Stabilized Frame Output"]
+```
 
 ### Key Designs
 
-1. **Multi-Detector Collaboration + Keypoint Uniformization**:
+**1. Multi-detector Collaboration + Keypoint Uniformization: Correcting Motion Estimation Bias**
 
-    - **Function**: Fuses keypoints from multiple heterogeneous feature detectors and ensures uniform spatial distribution via spatially selective clustering.
-    - **Mechanism**: A detector ensemble $\mathcal{D} = \{D_m^{trad}\} \cup \{D_n^{deep}\}$ extracts keypoints independently; after confidence normalization, they are merged via NMS: $\tilde{K}_t = \text{NMS}(\bigcup_j w_j \cdot \tilde{K}_t^{(j)})$. SSC then partitions the image into a $G_x \times G_y$ grid, selecting the top-$k$ highest-confidence points per cell while enforcing a minimum spacing $\tau$.
-    - **Design Motivation**: Single detectors tend to cluster in texture-rich regions (e.g., SIFT, SuperPoint), biasing motion estimation toward local areas. Visualizations confirm that multi-detector collaboration achieves more uniform spatial coverage.
+Classical methods use a single handcrafted detector (e.g., SIFT, ORB), causing keypoints to cluster in texture-rich areas. This results in biased motion estimation insensitive to global jitter. This framework employs a heterogeneous detector set $\mathcal{D} = \{D_m^{trad}\} \cup \{D_n^{deep}\}$. Traditional and deep detectors extract keypoints, which are fused via NMS after confidence normalization: $\tilde{K}_t = \text{NMS}(\bigcup_j w_j \cdot \tilde{K}_t^{(j)})$. 
 
-2. **EfficientMotionPro Self-Supervised Motion Propagation Network**:
+To further prevent clustering, SSC (Spatial Selective Clustering) partitions the image into $G_x \times G_y$ grids, keeping only the top-$k$ points per grid and enforcing a minimum distance $\tau$ between points. This ensures uniform spatial coverage, correcting the motion estimation bias. Causal dense flow from MemFlow (relying only on $\{I_{t-1}, I_t\}$) is then fused using the keypoint neighborhood mask $M_t$, resulting in a re-weighted flow field $\hat{\mathbf{f}}_{t\leftarrow t-1}$ and motion features $\mathbf{m}_t$.
 
-    - **Function**: Propagates sparse keypoint motion into a dense grid motion field.
-    - **Mechanism**: A multi-homography prior (K-means clustering + RANSAC estimation of $K_{homo}$ homographies, soft-weight blending) establishes a base displacement $\Delta g_{base,t}$; a lightweight Ghost+ECA backbone then predicts a residual $\Delta g_{res,t}$. The total loss comprises: keypoint consistency loss $\mathcal{L}_{kp}$ (Charbonnier penalty + adaptive confidence weighting), homography projection consistency loss $\mathcal{L}_{proj}$, and grid structure preservation loss $\mathcal{L}_{struct}$ (orthogonality constraint to prevent shear distortion). The model has only ~22.9K parameters, with computational cost linear in the number of keypoints.
-    - **Design Motivation**: Decomposing motion propagation into "multi-homography prior + non-rigid residual" constrains the network to learn only deviations from the rigid model, reducing learning difficulty. Multi-homography modeling handles complex scenes containing dynamic objects.
+**2. EfficientMotionPro: Diffusing Sparse Motion via "Rigid Prior + Non-rigid Residual"**
 
-3. **OnlineSmoother Dynamic-Kernel Online Smoothing**:
+The challenge in generating a dense grid motion field from sparse keypoints is fitting complex dynamic scenes with a lightweight network. The approach follows two steps: first, generating a base displacement via **multi-homography priors** (clustering keypoints via K-means and estimating per-cluster homographies via RANSAC); second, using a lightweight Ghost+ECA backbone to predict the non-rigid residual $\Delta g_{res,t}$ relative to the base $\Delta g_{base,t}$. 
 
-    - **Function**: Smooths grid trajectories online to suppress high-frequency jitter while preserving intentional motion.
-    - **Mechanism**: A Lite LS-3D encoder extracts spatiotemporal features, and a Star-gated decoder predicts 3-tap causal kernels (3 kernel coefficients each for $x$ and $y$ directions). The smoothing formula is: $S_t^x = \frac{\lambda \sum_r k_{t,r}^x S_{t-r}^x + O_t^x}{1 + \lambda \sum_r |k_{t,r}^x|}$ ($\lambda=100$), with an effective temporal window of $L=7$ frames. Training losses include: temporally adaptive second-order penalty $\mathcal{L}_{time}$ (with motion-magnitude adaptive decay $\beta$), frequency-domain high-frequency suppression $\mathcal{L}_{freq}$ (DFT frequency weighting), spatial distortion constraint $\mathcal{L}_{spatial}$ (triangular mesh edge ratio + angle preservation), and keypoint projection consistency $\mathcal{L}_{proj}$.
-    - **Design Motivation**: Fixed filters (Gaussian, mean) cannot adapt to varying motion, leading to over-smoothing or insufficient suppression. Learnable causal kernels dynamically adjust smoothing strength based on current motion, while the frequency-domain loss explicitly suppresses high-frequency oscillations.
+This reduces the learning task to "non-rigid residuals relative to a rigid model," significantly lowering training difficulty. The module has only ~22.9K parameters. Multi-homography allows for inconsistent motion patterns (foreground vs. background). Training uses three self-supervised losses: keypoint consistency $\mathcal{L}_{kp}$ (Charbonnier penalty with adaptive weights), projection consistency $\mathcal{L}_{proj}$, and grid structure preservation $\mathcal{L}_{struct}$.
+
+**3. OnlineSmoother: Learnable Causal Kernels for Adaptive Smoothing**
+
+This module eliminates high-frequency jitter while preserving intentional camera motion. Unlike fixed filters (Gaussian or Mean) that over-smooth large motions, this uses a Lite LS-3D encoder for spatio-temporal features and a Star-gated decoder to predict 3-tap causal kernels ($k^x, k^y$). Smoothing is applied recursively:
+
+$$S_t^x = \frac{\lambda \sum_r k_{t,r}^x S_{t-r}^x + O_t^x}{1 + \lambda \sum_r |k_{t,r}^x|}$$
+
+where $\lambda=100$ controls intensity and $L=7$ frames is the causal window. Kernels are calculated in real-time, allowing adaptive smoothing. A frequency domain loss $\mathcal{L}_{freq}$ (DFT weighted) suppresses high-frequency oscillations. Training also includes time-adaptive second-order penalties $\mathcal{L}_{time}$, spatial distortion constraints $\mathcal{L}_{spatial}$, and projection consistency $\mathcal{L}_{proj}$.
+
+**4. Multi-threaded Asynchronous Pipeline: Optimizing for Edge Real-time Execution**
+
+The causal constraint typically forces serial execution. LightStab binds the three stages to independent threads (TME/TMP/TMC) using FIFO shared queues. This allows different frames to be processed at different stages simultaneously. The steady-state throughput is determined by the slowest stage:
+
+$$S = \frac{t_{est} + t_{prop} + t_{smooth}}{\max\{t_{est}, t_{prop}, t_{smooth}\}}$$
+
+A back-pressure mechanism prevents memory overflow by blocking upstream threads if a downstream stage slows down. This design enables ~13 FPS (78.94ms/frame) on Jetson AGX Orin, over 4x faster than NNDVS (2.94 FPS).
 
 ### Loss & Training
 
-**EfficientMotionPro**: $\mathcal{L} = 10\mathcal{L}_{kp} + 40\mathcal{L}_{proj} + 40\mathcal{L}_{struct}$, Adam optimizer, OneCycleLR (peak lr $2\times10^{-4}$), 100 epochs, batch=64, ~12h on a single RTX 4090.
+**EfficientMotionPro**: $\mathcal{L} = 10\mathcal{L}_{kp} + 40\mathcal{L}_{proj} + 40\mathcal{L}_{struct}$, Adam optimizer, OneCycleLR (peak lr $2\times10^{-4}$), 100 epochs, batch=64, ~12h on RTX 4090.
 
-**OnlineSmoother**: $\mathcal{L}_{total} = \mathcal{L}_{temp} + 10\mathcal{L}_{spatial} + 5\mathcal{L}_{proj}$, where $\mathcal{L}_{temp} = 20\mathcal{L}_{time} + \mathcal{L}_{freq}$. batch=1 to preserve causality, gradient clipping threshold 5.0, ~2.5h.
+**OnlineSmoother**: $\mathcal{L}_{total} = \mathcal{L}_{temp} + 10\mathcal{L}_{spatial} + 5\mathcal{L}_{proj}$, where $\mathcal{L}_{temp} = 20\mathcal{L}_{time} + \mathcal{L}_{freq}$. Batch=1 to maintain causality, gradient clipping threshold 5.0, ~2.5h.
 
-Frame-boundary black borders are filled via ProPainter outpainting as a post-processing step.
+Black frame boundaries are filled using ProPainter as a post-processing outpainting step.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison across 5 datasets using Cropping Ratio (C), Distortion Value (D), and Stability Score (S), all higher is better:
+Comparison across 5 datasets using Cropping Ratio (C), Distortion Value (D), and Stability Score (S) (higher is better):
 
 | Method | Type | NUS (C/D/S) | DeepStab (C/D/S) | Selfie (C/D/S) | GyRo (C/D/S) | UAV-Test (C/D/S) |
-|--------|------|------------|-----------------|---------------|-------------|-----------------|
+|------|------|------------|-----------------|---------------|-------------|-----------------|
 | DUT | Offline | 0.98/0.88/0.85 | 0.99/0.95/0.95 | 0.99/0.98/0.93 | 0.99/0.98/0.89 | 0.95/0.89/0.94 |
 | RStab | Offline | 1.00/0.99/0.94 | 1.00/0.98/0.96 | 1.00/0.92/0.95 | 1.00/0.95/0.92 | 1.00/0.96/0.94 |
 | NNDVS | Online | 0.92/0.98/0.87 | 0.93/0.91/0.84 | 0.97/0.92/0.91 | 0.99/0.93/0.88 | 0.89/0.87/0.84 |
@@ -101,48 +122,48 @@ Comparison across 5 datasets using Cropping Ratio (C), Distortion Value (D), and
 ### Ablation Study
 
 | Configuration | Description |
-|---------------|-------------|
-| w/o MP (A1) | Removing motion propagation degrades D and PSNR, weakening global motion modeling. |
-| w/o TS (A2) | Removing trajectory smoothing reduces structural stability and worsens D. |
-| w/o MP&TS (A3) | Removing both causes the largest performance drop, demonstrating their complementarity. |
-| w/o Loss_kp (A4) | Removing keypoint consistency loss weakens motion supervision. |
-| w/o Homo (A6) | Replacing multi-homography with a single homography introduces jitter and local distortion. |
-| w/o KPC (A7) | Disabling collaborative detection yields non-uniform keypoints and lower D. |
-| Window L=5/7/9 | L=5 improves stability but reduces fidelity; L=9 increases cost without consistent gain; L=7 is optimal. |
-| Full model (A10) | All modules + L=7 achieves the highest overall score. |
+|------|------|
+| w/o MP (A1) | Removing motion propagation reduces D and PSNR; global motion modeling degrades |
+| w/o TS (A2) | Removing smoothing reduces structural stability and hurts D |
+| w/o MP&TS (A3) | Removing both leads to the worst performance, proving complementarity |
+| w/o Loss_kp (A4) | Removing keypoint consistency weakens motion supervision |
+| w/o Homo (A6) | Replacing multi-homography with single homography causes jitter/distortion |
+| w/o KPC (A7) | Excluding collaborative detection results in uneven keypoints and lower D |
+| Window L=5/7/9 | L=5 improves stability but lowers fidelity; L=7 is optimal |
+| Full model (A10) | All modules + L=7 achieves the highest composite score |
 
 ### Key Findings
 
-- **Online first matches offline**: On the GyRo dataset (C=0.99, D=0.96, S=0.93), the proposed online method is competitive with the strongest offline method Gavs (C=1.00, D=0.99, S=0.93).
-- **Clear advantage on UAV-Test**: The method comprehensively outperforms existing online approaches on the new UAV dataset (vs. NNDVS: +0.05 C, +0.03 D, +0.05 S).
-- **Embedded platform feasibility**: Achieves ~13 FPS (78.94 ms/frame) on Jetson AGX Orin, more than 4× faster than NNDVS (2.94 FPS).
-- **High complementarity of motion propagation and trajectory smoothing**: Removing either component individually yields limited degradation, but removing both (A3) causes the largest performance drop.
+- **Online Rivals Offline**: On the GyRo dataset (C=0.99, D=0.96, S=0.93), the proposed online performance competes with the strongest offline method, Gavs.
+- **Superiority on UAV-Test**: Significant improvements over existing online methods (vs NNDVS: +0.05 C, +0.03 D, +0.05 S) on the new UAV dataset.
+- **Edge Deployment Ready**: Achieves ~13 FPS (78.94ms/frame) on Jetson AGX Orin, over 4x faster than NNDVS.
+- **Complementary Components**: Motion propagation and trajectory smoothing are highly complementary; removing both (A3) results in the most significant degradation.
 
 ## Highlights & Insights
 
-- **Hybrid strategy of classical pipeline + modern components**: Rather than adopting an end-to-end black-box approach, the method preserves the interpretability and controllability of the three-stage pipeline while replacing the weakest link in each stage with learned components. This principled engineering hybrid is more suitable for real-world deployment than pure end-to-end methods.
-- **Self-supervised training eliminates data dependency**: Both core networks (EfficientMotionPro and OnlineSmoother) are trained with self-supervised objectives, completely avoiding the need for paired stable/unstable video data, which is critical for practical applicability.
-- **Elegant engineering of the multi-threaded asynchronous pipeline**: Serial latency $t_1+t_2+t_3$ is reduced to $\max(t_1,t_2,t_3)$ through a FIFO queue back-pressure mechanism that ensures resource safety.
+- **Hybrid Strategy of Classical Pipeline + Modern Components**: Retains the interpretability and controllability of the three-stage pipeline while replacing weak links with learning-based components. This "principled engineering hybrid" is better suited for deployment than pure end-to-end black boxes.
+- **Data Independence via Self-Supervised Training**: Both core networks (EfficientMotionPro and OnlineSmoother) are trained with self-supervised objectives, eliminating the need for paired stable/unstable video data.
+- **Sophisticated Multi-threaded Design**: Reduces serial latency from $t_1+t_2+t_3$ to $\max(t_1,t_2,t_3)$, ensuring resource safety via back-pressure.
 
 ## Limitations & Future Work
 
-- **Dependence on an external optical flow estimator**: MemFlow is used for causal optical flow; its accuracy may be insufficient in complex scenes. Exploring more accurate and efficient optical flow models is a promising direction.
-- **Frame outpainting is not online**: Black-border inpainting via ProPainter is a computationally expensive post-processing step that is not integrated into the online pipeline. Developing more lightweight, online-friendly outpainting techniques is needed.
-- **Lambertian camera model limitation**: The simple 2D motion model may fail under large parallax and significant 3D structural variation.
-- **UAV-Test is limited in scale**: With only 92 sequences and limited scene diversity, it serves as a starting point for a larger-scale UAV stabilization benchmark.
+- **Dependence on External Optical Flow**: Relies on MemFlow for causal flow; its accuracy in complex scenes may be limited. Investigating more efficient flow models is a future direction.
+- **Non-Online Outpainting**: Frame boundary filling uses ProPainter as post-processing. A lighter, online-friendly outpainting technology is needed.
+- **Lambertian Camera Model**: Uses a simple 2D motion model, which may fail in scenes with extreme parallax or 3D structural changes.
+- **Limited UAV-Test Scale**: With only 92 sequences, the dataset is small and lacks scene diversity; it serves as a starting point for larger UAV benchmarks.
 
 ## Related Work & Insights
 
-- **vs. DUT**: DUT also combines a classical pipeline with neural networks but operates offline and relies on a global smoothing strategy. The key distinction of this work is its online causal design (no access to future frames), with motion propagation and smoothing trained independently.
-- **vs. NNDVS**: NNDVS achieves online stabilization using existing motion estimation frameworks but lacks open-source motion estimators and exhibits insufficient robustness in complex scenes. This work significantly improves motion perception robustness through multi-detector collaboration and keypoint uniformization.
-- **vs. RStab**: RStab is the strongest offline method, achieving very high quality via neural rendering and adaptive modules, but requires future frames. The proposed method achieves comparable performance under online constraints while being substantially faster at inference.
+- **vs DUT**: DUT also combines classical pipelines with neural networks but is an offline method relying on global smoothing. LightStab's causal design (no future frames) is the key differentiator.
+- **vs NNDVS**: NNDVS lacks robustness in complex scenes and relies on inaccessible motion estimation frameworks. LightStab significantly enhances perception robustness via multi-detector collaboration.
+- **vs RStab**: RStab is a powerful offline method using neural rendering; LightStab achieves comparable quality under online constraints with much faster inference.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The component-level designs (multi-detector collaboration, multi-homography prior, causal dynamic kernels) reflect systematic innovation, though the core concept remains a modernization of the classical pipeline.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Five datasets, full ablation, user study, embedded platform evaluation, and extensive visualizations; exceptionally comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete derivations, and highly detailed supplementary material.
-- Value: ⭐⭐⭐⭐ — First online method to match offline performance, unsupervised training, new benchmark dataset; strong practical impact.
+- Novelty: ⭐⭐⭐⭐ Systematic innovation in component design (multi-detector, multi-homography, causal kernels), though the core idea is a modernization of classical pipelines.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive: 5 datasets, full ablation, user study, edge device testing, and rich visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, complete derivations, and very detailed supplementary materials.
+- Value: ⭐⭐⭐⭐ Strong practical value: first online method rivaling offline performance, unsupervised training, and a new dataset.
 
 <!-- RELATED:START -->
 
@@ -150,11 +171,11 @@ Comparison across 5 datasets using Cropping Ratio (C), Distortion Value (D), and
 
 ## Related Papers
 
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
 - [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 - [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](../../ICLR2026/remote_sensing/spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
-- [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
+- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 
 </div>
 

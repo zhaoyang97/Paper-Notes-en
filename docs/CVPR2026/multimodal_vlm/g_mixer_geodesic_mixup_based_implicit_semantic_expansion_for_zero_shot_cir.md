@@ -2,99 +2,118 @@
 title: >-
   [Paper Note] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][composed image retrieval] This paper proposes G-MIXER, a training-free zero-shot composed image retrieval method that achieves state-of-the-art performance via geodesic mixup-based implicit se…
+  [CVPR 2026][Multimodal VLM][composed image retrieval] Ours proposes G-MIXER, which achieves training-free state-of-the-art (SOTA) performance in zero-shot composed image retrieval. It utilizes Geodesic Mixup for implicit semantic expansion (expanding the retrieval range along a hypersphere with varying mixup ratios) and Explicit Semantic Re-ranking (filtering noisy candid
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "composed image retrieval"
-  - "zero-shot"
-  - "geodesic mixup"
-  - "semantic expansion"
-  - "re-ranking"
+  - CVPR 2026
+  - Multimodal VLM
+  - composed image retrieval
+  - zero-shot
+  - geodesic mixup
+  - semantic expansion
+  - re-ranking
 date: 2026-05-08
-content_hash: aa0b163a07498da3
+content_hash: cb7b55d903f35d7f
 ---
-
 # G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.14710](https://arxiv.org/abs/2604.14710)  
 **Code**: [github.com/maya0395/gmixer](https://github.com/maya0395/gmixer)  
-**Area**: Multimodal / Vision-Language Models
+**Area**: Multimodal/Vision-Language Models  
 **Keywords**: composed image retrieval, zero-shot, geodesic mixup, semantic expansion, re-ranking
 
 ## TL;DR
 
-This paper proposes G-MIXER, a training-free zero-shot composed image retrieval method that achieves state-of-the-art performance via geodesic mixup-based implicit semantic expansion (expanding the retrieval scope along multiple interpolation ratios on the hypersphere) and explicit semantic re-ranking (filtering noisy candidates using MLLM-generated attributes).
+Ours proposes G-MIXER, which achieves training-free state-of-the-art (SOTA) performance in zero-shot composed image retrieval. It utilizes Geodesic Mixup for implicit semantic expansion (expanding the retrieval range along a hypersphere with varying mixup ratios) and Explicit Semantic Re-ranking (filtering noisy candidates using MLLM-generated attributes).
 
 ## Background & Motivation
 
-Composed Image Retrieval (CIR) retrieves target images given a reference image paired with modification text. A query carries both explicit information (modifications explicitly stated in the text) and implicit information (visual elements present in the reference image but not mentioned in the text, e.g., a cat or a basket). Existing MLLM-based methods convert implicit information into explicit form by generating target descriptions, yet they over-rely on the text modality and fail to address the inherently ambiguous nature of retrieval—which requires considering a diverse range of candidate combinations—leading to degraded diversity and accuracy in retrieved results.
+Composed Image Retrieval (CIR) retrieves a target image using a reference image and a modification text. A query includes explicit information (clear modifications in text) and implicit information (visual elements in the image not mentioned in text, e.g., a cat and a basket). Existing MLLM methods convert implicit information into explicit text by generating target descriptions. However, they rely excessively on the text modality and fail to address the inherently ambiguous nature of retrieval (the need to consider diverse candidate combinations), leading to decreased diversity and accuracy in retrieval results.
 
 ## Method
 
 ### Overall Architecture
 
-The proposed framework consists of two stages: (1) **Geodesic Mixup-based Implicit Semantic Expansion (G-MIX)**, which constructs composite query features at multiple mixing ratios along the geodesic path between image and text representations to broaden the retrieval scope; and (2) **Explicit Semantic Re-ranking (ER)**, which filters noisy candidates using include/exclude attributes defined by an MLLM.
+G-MIXER addresses a neglected Key Challenge in Zero-Shot CIR (ZS-CIR): a query contains both explicit modifications and implicit visual elements that should be preserved. Existing MLLM methods' tendency to convert everything to text loses the necessary retrieval diversity. Ours is training-free and follows a three-step Mechanism: first, an MLLM generates a target description $T_t$ and two sets of re-ranking attributes ("Include"/"Exclude") from the query pair. Second, **Geodesic Mixup (G-MIX)** encodes the target description and reference image onto the CLIP hypersphere, sampling a cluster of queries along various mixup ratios to expand the recall range into a unioned diverse candidate set. Finally, **Explicit Semantic Re-ranking (ER)** employs the attribute sets to filter noisy candidates and restore precision. While MLLM generation serves as scaffolding, the Core Ideas are G-MIX and ER; ER modifies the ranking without altering the candidate set size.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Reference Image + Modification Text"] --> M["MLLM Preprocessing<br/>Generate target description + Include/Exclude attributes"]
+    M --> E["CLIP Encoding<br/>Obtain image features and target description text features"]
+    subgraph GMIX["G-MIX: Geodesic Mixup Implicit Semantic Expansion"]
+        direction TB
+        E --> G1["Spherical Geodesic Mixup<br/>Sample composed queries along multiple mixup ratios λ"]
+        G1 --> G2["Union top-K of each query<br/>Form diverse candidate set"]
+    end
+    subgraph ER["ER: Explicit Semantic Re-ranking"]
+        direction TB
+        G2 --> R1["Calculate similarity difference Δ via Include/Exclude attributes"]
+        R1 --> R2["Final Score = Sm + Sλ + Δ<br/>Modify ranking only"]
+    end
+    R2 --> O["Re-ranked Retrieval Results"]
+```
 
 ### Key Designs
 
-1. **Geodesic Mixup (G-MIX)**: On the unit hypersphere of the CLIP representation space, multiple composite query features are generated at varying mixing ratios $\lambda$ along the geodesic path between the reference image feature and the target description feature. Different ratios capture different balances between implicit and explicit information, thereby constructing a diverse candidate set.
+**1. Geodesic Mixup (G-MIX): Constructing Diversified Implicit Semantic Queries on the Hypersphere**
 
-2. **Explicit Semantic Re-ranking (ER)**: An MLLM is employed to extract *Include* and *Exclude* attributes from the modification text. These attributes are applied to re-rank the candidate set produced by G-MIX: candidates are scored up for matching include attributes and scored down for matching exclude attributes, effectively filtering noise and improving precision.
+Converting implicit information solely into text biases the results toward the text modality and erases the potential candidate combinations inherent in ambiguous retrieval. G-MIX avoids linear interpolation in Euclidean space and instead samples along the **geodesic path** on the CLIP unit hypersphere between the reference image feature $f_i$ and the target text feature $f_t$: $m_\lambda = f_t\frac{\sin(\lambda\theta)}{\sin\theta} + f_i\frac{\sin((1-\lambda)\theta)}{\sin\theta}$, where $\theta$ is the angle between the features and $\lambda$ is the mixup ratio. A larger $\lambda$ emphasizes text-specified attributes, while a smaller $\lambda$ preserves more image structure and background. By taking a set of ratios (e.g., $\lambda \in \{0.7, 0.8, 0.9, 1.0\}$, $N{=}4$), a single retrieval is expanded into a cluster of queries along the sphere. Each ratio retrieves the top-$K$ candidates, which are then normalized via min-max and unioned (taking the maximum score for candidates appearing in multiple ratios) to form the initial candidate set $\mathcal{R}_{\text{union}}$. Using the geodesic path instead of a straight line ensures that interpolation points remain on the hypersphere, preserving the geometric structure of the CLIP representation space.
 
-3. **Training-free Zero-shot Design**: The method relies entirely on pretrained CLIP encoders and an MLLM, requiring no triplet-annotated data or additional training. Retrieval is achieved by jointly leveraging the alignment capability of VLP models and the reasoning capability of MLLMs.
+**2. Explicit Semantic Re-ranking (ER): Filtering Noise with MLLM-extracted Attributes**
+
+While multi-ratio mixup expands recall, it introduces noisy candidates. ER moves away from entire captions (which might contain messy implicit info) and uses MLLM to produce two sets of explicit attributes: "Should Include $T_{in}$" and "Should Exclude $T_{ex}$". For every candidate in the set, the similarity is calculated with the composed query $S_\lambda$, $T_{in}$ ($S_{in}$), and $T_{ex}$ ($S_{ex}$). The degree of attribute compliance is measured by $\Delta = \mathrm{ReLU}(S_\lambda - S_{ex}) - \mathrm{ReLU}(S_\lambda - S_{in})$, leading to the final re-ranked score: $\text{Score} = S_m + S_\lambda + \Delta$. This step refines the ranking without changing the candidate set size, acting as a precision filter atop high-recall results to recover accuracy lost to diversity expansion.
 
 ### Loss & Training
 
-As a training-free method, no additional training is required. The union of retrieval results across all mixing ratios in G-MIX forms the initial candidate set; the ER stage modifies only the ranking without changing the candidate set size.
+Ours is a training-free method and requires no additional training. The union of results from G-MIX multi-ratio queries forms the initial candidate set, and the ER stage only modifies the ranking.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | CIReVL | OSrCIR | G-MIXER |
-|---------|--------|--------|--------|---------|
+| Dataset | Metric | CIReVL | OSrCIR | Ours (G-MIXER) |
+|--------|------|--------|--------|---------|
 | CIRCO | mAP@5 | 14.94 | 18.04 | **New SOTA** |
 | CIRCO | mAP@25 | 17.00 | 20.94 | **New SOTA** |
 | CIRR | R@1 | 23.94 | 25.42 | **New SOTA** |
 | CIRR | R_Subset@1 | 60.17 | 62.31 | **New SOTA** |
 
-G-MIXER achieves state-of-the-art performance across multiple ZS-CIR benchmarks.
+Ours achieves SOTA on multiple ZS-CIR benchmarks.
 
 ### Ablation Study
 
-- Multi-ratio mixing in G-MIX substantially improves diversity over a single fixed ratio.
-- ER re-ranking effectively removes noisy candidates and improves precision metrics.
-- Geodesic interpolation outperforms linear interpolation by preserving the hypersphere constraint.
+- G-MIX multi-ratio mixup significantly improves diversity compared to a single ratio.
+- ER re-ranking effectively removes noisy candidates, improving precision metrics.
+- Geodesic paths outperform linear interpolation by maintaining hypersphere constraints.
 
 ### Key Findings
 
-- Diversity of implicit semantics is critical for retrieval coverage.
-- Jointly handling explicit and implicit semantics outperforms focusing on either alone.
-- Geodesic mixup better preserves the geometric structure of the representation space compared to Euclidean-space interpolation.
+- Implicit semantic diversity is crucial for retrieval coverage.
+- Joint processing of explicit and implicit semantics is superior to focusing on either one alone.
+- Geodesic mixup preserves the geometry of the representation space better than Euclidean mixup.
 
 ## Highlights & Insights
 
-- The approach clearly decouples and separately handles implicit and explicit information in CIR.
-- The consideration of maintaining the hypersphere constraint via geodesic mixing is methodologically rigorous.
-- The competitiveness of a training-free method at the SOTA level validates the effectiveness of the overall design.
+- The separation and individual processing of implicit/explicit information in CIR is logically sound.
+- The use of geodesic mixup to maintain hypersphere constraints is a meticulous Design Motivation.
+- The competitiveness of this training-free method on SOTA benchmarks proves the overall Design Effectiveness.
 
 ## Limitations & Future Work
 
-- The number of retrieval operations grows linearly with the number of mixing ratios.
-- The method depends on the quality of attribute extraction by the MLLM.
-- Cross-lingual applicability to non-English scenarios remains unexplored.
+- Retrieval latency increases linearly with the number of mixup ratios.
+- Performance depends on the quality of attribute extraction by the MLLM.
+- Cross-lingual applicability for non-English scenarios has not yet been explored.
 
 ## Related Work & Insights
 
-- Geodesic path interpolation can be applied to other tasks requiring manipulation of spherical representations.
-- The explicit/implicit separation paradigm offers general reference value for multimodal retrieval research.
-- The success of the training-free approach suggests that the alignment capability of VLP models still has substantial untapped potential.
+- Geodesic path interpolation can be applied to other tasks requiring spherical representation manipulation.
+- The explicit/implicit separation strategy provides a general reference for multimodal retrieval.
+- Success in training-free methods suggests significant untapped potential in the alignment capabilities of VLP models.
 
 ## Rating
 
-7/10 — The method is elegantly designed and its training-free achievement of SOTA is convincing; however, retrieval efficiency and scalability warrant further optimization.
+7/10 — The design is elegant, and achieving SOTA without training is persuasive, though retrieval efficiency and scalability require further optimization.
 
 <!-- RELATED:START -->
 
@@ -102,11 +121,11 @@ G-MIXER achieves state-of-the-art performance across multiple ZS-CIR benchmarks.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
+- [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
+- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
-- [\[CVPR 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semanticsensitive_underwater_image_enha.md)
-- [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](../../ACL2026/multimodal_vlm/tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
-- [\[AAAI 2026\] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](../../AAAI2026/multimodal_vlm/heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)
 
 </div>
 

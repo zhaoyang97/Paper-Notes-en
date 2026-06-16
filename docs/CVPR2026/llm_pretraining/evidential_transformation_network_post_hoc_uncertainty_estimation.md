@@ -2,120 +2,126 @@
 title: >-
   [Paper Note] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 description: >-
-  [CVPR 2026][LLM Pretraining][Uncertainty Estimation] This paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that learns sample-dependent affine transformations in logit space to co…
+  [CVPR 2026][Pretraining][Paper Note] The paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that transforms pretrained classifiers or LLMs into evidential models by learning sample-dependent affine transformations in the logit space, achieving reliable uncertainty estimation with minimal computational overhead.
 tags:
-  - "CVPR 2026"
-  - "LLM Pretraining"
-  - "Uncertainty Estimation"
-  - "Evidential Deep Learning"
-  - "Post-hoc Method"
-  - "Dirichlet Distribution"
-  - "Large Language Models"
+  - CVPR 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: 3f76353398ea8017
+content_hash: 3bc7a9181e01d3fb
 ---
-
 # Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 
 **Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.08627](https://arxiv.org/abs/2604.08627)  
 **Code**: [GitHub](https://github.com/cyc9805/Evidential-Transformation-Network)  
 **Area**: LLM Pretraining  
-**Keywords**: Uncertainty Estimation, Evidential Deep Learning, Post-hoc Method, Dirichlet Distribution, Large Language Models
+**Keywords**: Uncertainty Estimation, Evidential Deep Learning, Post-hoc Method, Dirichlet Distribution, LLMs
 
 ## TL;DR
-This paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that learns sample-dependent affine transformations in logit space to convert pretrained classifiers or LLMs into evidential models, achieving reliable uncertainty estimation with minimal computational overhead.
+The paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that transforms pretrained classifiers or LLMs into evidential models by learning sample-dependent affine transformations in the logit space, achieving reliable uncertainty estimation with minimal computational overhead.
 
 ## Background & Motivation
 
-1. **Current Landscape**: Pretrained models have become the standard in both vision and language domains, yet they typically do not provide reliable confidence measures. Existing uncertainty estimation methods include Deep Ensembles, MC Dropout, and Laplace approximation, among others. Evidential Deep Learning (EDL) offers a more efficient alternative by modeling Dirichlet distributions.
-2. **Existing Pain Points**: Deep Ensembles require training multiple models, MC Dropout requires multiple forward passes, and Laplace approximation requires computing the Hessian—all prohibitively expensive for large-scale pretrained models. Although EDL is efficient, it requires training from scratch to output evidence quantities, which is inapplicable to existing pretrained networks.
-3. **Core Tension**: Pretrained models are universally trained with cross-entropy loss, but cross-entropy does not constrain the scale of logits (Proposition 1 proves this), making it impossible to directly extract meaningful uncertainty. Naive fine-tuning risks overfitting and feature degradation due to limited data.
-4. **Objective**: Design a lightweight module that converts pretrained models into evidential models capable of outputting Dirichlet distribution parameters, without modifying pretrained parameters or compromising prediction accuracy.
-5. **Approach**: Operate in logit space—apply affine transformations to logits and interpret the transformed logits as Dirichlet distribution parameters. The key innovation is that transformation parameters must be sample-dependent (since logit scales vary arbitrarily across samples under cross-entropy training).
-6. **Core Idea**: A lightweight MLP predicts sample-dependent Gamma distribution parameters from the pretrained model's last hidden-layer representation, samples transformation parameters to scale logits, and optimizes via ELBO so that the transformed Dirichlet distribution approximates the target evidential distribution.
+1.  **Background**: Pretrained models have become standard in vision and language fields but typically do not provide reliable confidence measures. Existing uncertainty estimation methods include Deep Ensembles, MC Dropout, and Laplace approximation. Evidential Deep Learning (EDL) offers an efficient alternative by modeling the Dirichlet distribution.
+2.  **Limitations of Prior Work**: Deep Ensembles require training multiple models, MC Dropout requires multiple forward passes, and Laplace approximation requires Hessian computation—these methods are computationally expensive for large-scale pretrained models. While EDL is efficient, it requires training models from scratch to output evidence, which is inapplicable to existing pretrained networks.
+3.  **Key Challenge**: Pretrained models are commonly trained with cross-entropy loss, which does not constrain the scale of logits (proven in Proposition 1), making it impossible to directly extract meaningful uncertainty. Simple fine-tuning often leads to overfitting and feature degradation due to small data regimes.
+4.  **Goal**: Design a lightweight module to transform pretrained models into evidential models that output Dirichlet parameters without modifying original parameters or compromising prediction accuracy.
+5.  **Key Insight**: Operates in the logit space by applying an affine transformation to logits and interpreting the transformed logits as Dirichlet parameters. The crucial innovation is that transformation parameters must be sample-dependent (since logit scales vary arbitrarily across samples under cross-entropy).
+6.  **Core Idea**: A lightweight MLP predicts sample-dependent Gamma distribution parameters from the final hidden states of the pretrained model. Transformation parameters are sampled to scale the logits, and optimization is performed via ELBO to align the transformed Dirichlet distribution with the target evidence distribution.
 
 ## Method
 
 ### Overall Architecture
-An input sample is passed through the frozen pretrained model to obtain the logit vector $\mathbf{z}$ and the last hidden-layer representation. The ETN (a lightweight MLP) takes the hidden representation as input and predicts the variational distribution $q_{\theta_{ETN}}(A|x)$ of transformation parameters $A$. Sampling $A$ yields affine-transformed logits $\mathbf{z}' = A\mathbf{z}$, which are mapped through softplus to obtain Dirichlet parameters $\boldsymbol{\alpha}' = \text{softplus}(\mathbf{z}') + \mathbf{b}$, producing the final uncertainty estimate.
+The problem ETN aims to solve is: given a classifier or LLM already trained with cross-entropy, how to output reliable uncertainty without modifying the model or increasing inference costs. The approach appends a lightweight post-hoc module in the logit space. Specifically, an input sample passes through a frozen pretrained backbone to obtain the logit vector $\mathbf{z}$ and the last hidden state. ETN is a small MLP that reads this hidden state and predicts sample-dependent affine transformation parameters $A$. These parameters $A$ scale the logit to $\mathbf{z}' = A\mathbf{z}$, which is then converted into positive Dirichlet parameters $\boldsymbol{\alpha}' = \text{softplus}(\mathbf{z}') + \mathbf{b}$. This preserves the original prediction probabilities (maintaining accuracy) while reinterpreting $\boldsymbol{\alpha}'$ as a Dirichlet posterior. A smaller total concentration $\alpha_0 = \sum_k \alpha'_k$ indicates higher uncertainty, enabling the direct use of EDL uncertainty measures.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Sample"] --> B["Frozen Pretrained Backbone<br/>Output logit z + last hidden state"]
+    B --> C["ETN (Lightweight MLP)<br/>Predicts Gamma distribution for sample-dependent A from hidden state"]
+    C --> D["Sample M A's, scale logit: z′ = Az"]
+    D --> E["softplus(z′) + learnable prior b<br/>Get Dirichlet parameters α′"]
+    E --> F["Concentration α₀ = Σ α′ → EDL uncertainty measures"]
+```
 
 ### Key Designs
 
-1. **Theoretical Necessity of Sample-Dependent Transformation Parameters**:
-    - Purpose: Prove why transformation parameters cannot be globally static
-    - Core Reasoning: Proposition 1 shows that under separable data and infinite capacity assumptions, there exist logits $\tilde{\mathbf{z}}$ with cross-entropy loss approaching 0 but finite total concentration $\tilde{\alpha}_0$, and also $\hat{\mathbf{z}}$ with loss approaching 0 but $\hat{\alpha}_0 \to \infty$. That is, cross-entropy minimization does not determine the magnitude of $\alpha_0$, and logit scales differ arbitrarily across samples. From a Bayesian perspective, EDL models a per-sample posterior Dirichlet distribution, whereas cross-entropy only yields a single categorical probability vector. Therefore, $A$ must be sample-dependent.
-    - Design Rationale: This is not simply "making $A$ sample-dependent is better"—the theory proves that globally static transformations cannot work
+**1. Transformation parameters must be sample-dependent: Proof that global static transformations fail**
 
-2. **Variational Inference Framework**:
-    - Purpose: Learn the distribution of transformation parameters using a probabilistic framework
-    - Core Reasoning: A variational distribution $q_{\theta_{ETN}}(A|x)$ approximates the true posterior, modeled as a Gamma distribution (positive reals, ensuring monotonic logit scaling). The ELBO-derived training objective includes: a reconstruction term requiring the transformed Dirichlet distribution to approximate the target distribution $p^{(\nu)}(\boldsymbol{\pi}|y)$ (determined by labels), and a KL term regularizing the variational distribution toward a prior $p(A)$. At inference, Monte Carlo sampling of $M$ instances $A^{(m)}$ performs marginalization. The prior $\mathbf{b}$ is a learnable parameter (relaxing the fixed prior assumption in Subjective Logic).
-    - Design Rationale: Probabilistic modeling is more flexible than deterministic transformations (e.g., AdaTS), capturing per-sample uncertainty distributions rather than single values
+A natural idea is to use shared scaling parameters for all samples, but Proposition 1 invalidates this approach. It proves that under the assumptions of separable data and infinite capacity, cross-entropy loss is completely insensitive to logit scale—there exists a logit $\tilde{\mathbf{z}}$ where cross-entropy approaches 0 while the total concentration $\tilde{\alpha}_0$ remains finite, alongside another $\hat{\mathbf{z}}$ where the loss also approaches 0 but $\hat{\alpha}_0 \to \infty$. In other words, cross-entropy minimization only fixes the direction of the probability vector, not the magnitude of $\alpha_0$. Consequently, the logit scale for each sample is arbitrary. From a Bayesian perspective, EDL requires per-sample posterior Dirichlet distributions, while cross-entropy provides only a single probability vector—the information is inherently mismatched. This explains why $A$ cannot be global constants and must be determined per-sample from hidden states.
 
-3. **Softplus Activation Choice and Margin Analysis**:
-    - Purpose: Ensure numerical stability and theoretical interpretability
-    - Core Reasoning: ReLU has a zero-evidence dead zone; the exponential function causes $\alpha_0$ explosion under large logit values from pretrained models (lacking log-sum-exp stabilization). Softplus guarantees positivity while growing only linearly for large positive inputs, naturally bounding $\alpha_0$. Theorem 1 further proves that under equal-loss conditions, the classification margin of EDL models is probabilistically larger than that of cross-entropy models, with better margin guarantees under softplus.
-    - Design Rationale: An engineering detail but critical for usability—improper choice of $f$ leads to completely unstable training
+**2. Variational Inference Framework: Learning $A$ as a distribution**
 
-### Loss Function / Training Strategy
-ETN loss (Eq. 5) = Reconstruction term (expected KL divergence of the transformed Dirichlet, approximated by Monte Carlo) + $\lambda$ × KL regularization term (variational distribution vs. prior). Only the ETN MLP parameters and prior $\mathbf{b}$ are trained; the backbone model is completely frozen. Training data volume is far smaller than pretraining data.
+Since the optimal scale varies per sample, ETN introduces a variational distribution $q_{\theta_{ETN}}(A|x)$ to approximate the true posterior rather than regressing a deterministic value. $A$ is modeled using a Gamma distribution, which supports positive real numbers to ensure monotonic scaling of logits. The training objective is derived from the ELBO, comprising two terms: a reconstruction term requiring the transformed Dirichlet distribution to approximate the target distribution $p^{(\nu)}(\boldsymbol{\pi}|y)$ determined by the label, and a KL term regularizing the variational distribution toward a prior $p(A)$. During inference, $M$ samples $A^{(m)}$ are drawn for Monte Carlo marginalization to obtain robust uncertainty estimates. The prior $\mathbf{b}$ is treated as a learnable parameter, relaxing the fixed prior assumption in Subjective Logic. Compared to deterministic temperature scaling like AdaTS, this probabilistic modeling characterizes the uncertainty distribution of each sample rather than collapsing it into a scalar.
+
+**3. Using softplus instead of ReLU/exp: Ensuring stability and margin guarantees**
+
+Converting $\mathbf{z}'$ into positive Dirichlet parameters requires an activation function $f$, but the choice is critical. ReLU creates "zero-evidence dead zones"—once a logit is negative, it is truncated to zero, losing information. The exponential function causes $\alpha_0$ to explode given the large logits common in pretrained models (where log-sum-exp stabilization is unavailable). softplus avoids both: it ensures positive output and grows linearly for large positive inputs, naturally constraining $\alpha_0$ to a reasonable range. Furthermore, Theorem 1 proves that under equal loss conditions, the classification margin of an EDL model is probabilistically larger than that of a cross-entropy model; this margin relationship is better guaranteed under softplus. This choice ensures both training stability and theoretical margin alignment.
+
+### Loss & Training
+The training target is the ELBO (Eq. 5): the reconstruction term is the expected KL divergence between the transformed Dirichlet and the target distribution, approximated via Monte Carlo, plus $\lambda$ times the KL regularization term to keep the variational distribution close to the prior. Only the parameters of the ETN MLP and the learnable prior $\mathbf{b}$ are updated; the backbone model remains frozen throughout. The required training data volume is significantly smaller than that used for pretraining.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Image Classification Uncertainty Estimation (ID + OOD Average AUPR)**:
+**Uncertainty Estimation for Image Classification (ID + OOD Mean AUPR)**:
 
-| Method | Uncertainty Performance | Accuracy Retention | Inference Overhead |
-|--------|----------------------|-------------------|-------------------|
+| Method | Uncertainty Performance | Accuracy Maintenance | Inference Overhead |
+|------|-----------|-----------|---------|
 | Deep Ensemble (5x) | High | ✓ | 5x inference time |
 | MC Dropout (10x) | Medium | ✓ | 10x forward passes |
 | Laplace Approx. | Medium | ✓ | Hessian computation |
 | DMM | Medium-High | ✓ | Requires original training data |
-| **ETN** | **Highest** | ✓ | **~1x (nearly no extra overhead)** |
+| **Ours (ETN)** | **Highest** | **✓** | **~1x (Almost no overhead)** |
 
-**LLM QA Uncertainty Estimation**:
+**Uncertainty Estimation for LLM Question Answering**:
 
 | Method | ID AUPR | OOD AUPR | Inference Overhead |
-|--------|---------|----------|-------------------|
+|------|---------|----------|---------|
 | Vanilla LLM | Low | Low | 1x |
 | Ensemble | High | High | Nx |
-| **ETN** | **Highest** | **High** | **~1x** |
+| **Ours (ETN)** | **Highest** | **High** | **~1x** |
 
 ### Ablation Study
 
-| Configuration | Uncertainty Performance | Notes |
-|--------------|----------------------|-------|
-| ETN (Gamma, softplus) | Best | Full method |
+| Configuration | Uncertainty Performance | Description |
+|------|-----------|------|
+| ETN (Gamma, softplus) | Best | Full Method |
 | Scalar A | Poor | Insufficient information |
-| Vector A | Good | Per-class independent scaling |
+| Vector A | Good | Independent scaling per class |
 | Matrix A | Best | Inter-class interaction |
 | Using ReLU | Poor | Zero-evidence dead zone |
 | Using exp | Unstable | Numerical overflow |
-| Fixed b=1 | Poor | Overly strong prior |
+| Fixed b=1 | Poor | Prior too strong |
 
 ### Key Findings
-- **ETN achieves the best uncertainty estimation with nearly zero extra inference overhead** (upper-right in Figure 1: high performance + low cost)
-- **Transformation parameter dimensionality matters**: matrix form > vector form > scalar form (Figure 2), as matrices allow inter-class interaction
-- **Learnable prior b consistently improves performance**: relaxing the fixed prior assumption in EDL is important
+- **ETN achieves the best uncertainty estimation with almost zero additional inference overhead** (positioned top-right in Figure 1: high performance + low cost).
+- **Influence of transformation parameter dimensions**: Matrix form > Vector form > Scalar form (Figure 2), as matrices allow for inter-class interactions.
+- **Learnable prior b consistently improves performance**: Relaxing the fixed prior assumption of EDL is significant.
 
 ## Highlights & Insights
-- **The insight from Proposition 1** is critical: cross-entropy loss does not determine logit scale, so meaningful uncertainty cannot be directly extracted from pretrained models. This concise theoretical result clearly explains "why sample-dependent transformations are needed"
-- **Logit-space operation** is the most elegant design choice: it does not modify the feature space (protecting pretrained representations), adds no inference overhead (transformations are nearly free), and naturally interfaces with EDL's Dirichlet parameterization
-- **Unified applicability from vision to LLMs** is highly valuable: the same framework simultaneously improves uncertainty estimation for image classifiers and large language models, demonstrating the generality of logit-space transformations
+- **The insight from Proposition 1** is crucial: cross-entropy loss does not determine logit scale, hence meaningful uncertainty cannot be directly extracted from pretrained models. This concise theoretical result clearly explains "why sample-dependent transformation is necessary."
+- **Operating in logit space** is a clever design choice: it avoids modifying the feature space (protecting pretrained representations), adds negligible inference cost (transformation is nearly free), and naturally interfaces with EDL’s Dirichlet parameterization.
+- **Unified applicability from Vision to LLMs** is highly valuable: the same framework improves uncertainty estimation for both image classifiers and large language models, demonstrating the universality of logit-space transformations.
 
 ## Limitations & Future Work
-- Depends on the quality of pretrained model logits—if the pretrained model's logits are uninformative, transformations cannot compensate
-- Monte Carlo sampling ($M$ times) in the variational inference, while lightweight, still incurs minor overhead
-- Only validated on classification and QA tasks; experiments on regression, segmentation, and other tasks are missing
-- The choice of prior distribution (Gamma) is heuristic, with insufficient exploration of other distribution families
-- Future work could explore combining ETN with retrieval-augmented methods, leveraging retrieval results to further calibrate uncertainty
+- Dependent on the logit quality of the pretrained model—if the logits themselves are uninformative, the transformation cannot recover them.
+- Monte Carlo sampling ($M$ times) in variational inference, while lightweight, still introduces a small additional overhead.
+- Validated only on classification and QA tasks; lacking experiments on regression, segmentation, and other tasks.
+- The choice of prior distribution (Gamma) is heuristic; other distribution families have not been fully explored.
+- Future work could explore combining ETN with retrieval-augmented methods to further calibrate uncertainty using retrieval results.
+
+## Related Work & Insights
+- **vs Deep Ensembles**: Deep Ensembles estimate uncertainty via multi-model averaging, which is effective but costs $N \times$ computation. ETN requires only one lightweight module, costs approximately $1 \times$, and outperforms them on most metrics.
+- **vs DMM (Dirichlet Meta Model)**: DMM requires access to original training data, and model size grows with the base model depth. ETN only needs small datasets to train a lightweight MLP, making it more suitable for large-scale pretrained models.
+- **vs R-EDL**: R-EDL relaxes the strict EDL loss but still requires training from scratch. ETN is entirely post-hoc and applicable to any existing pretrained model.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Novel approach of sample-dependent transformation in logit space with clear theoretical motivation
-- Experimental Rigor: ⭐⭐⭐⭐ Covers vision and LLM settings, ID and OOD, with multiple baselines
-- Writing Quality: ⭐⭐⭐⭐⭐ Exceptionally clear logical chain from motivation to method to experiments
-- Significance: ⭐⭐⭐⭐⭐ Provides a practical uncertainty estimation solution for large-scale pretrained models with broad applicability
+- Novelty: ⭐⭐⭐⭐ The idea of sample-dependent transformations in logit space is novel with clear theoretical motivation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers Vision and LLMs, ID and OOD settings, and compares against multiple baselines.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logical flow from motivation to method and then to experiments is very clear.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical uncertainty estimation solution for large-scale pretrained models with broad application prospects.
 
 <!-- RELATED:START -->
 
@@ -125,9 +131,9 @@ ETN loss (Eq. 5) = Reconstruction term (expected KL divergence of the transforme
 
 - [\[NeurIPS 2025\] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models](../../NeurIPS2025/llm_pretraining/one_prompt_fits_all_universal_graph_adaptation_for_pretrained_models.md)
 - [\[ICML 2026\] Annotations Mitigate Post-Training Mode Collapse](../../ICML2026/llm_pretraining/annotations_mitigate_post-training_mode_collapse.md)
+- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](../../ICLR2026/llm_pretraining/identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 - [\[ACL 2026\] Compact Example-Based Explanations for Language Models](../../ACL2026/llm_pretraining/compact_example-based_explanations_for_language_models.md)
 - [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](../../ICLR2026/llm_pretraining/steering_language_models_with_weight_arithmetic.md)
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](../../ICLR2026/llm_pretraining/identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 
 </div>
 

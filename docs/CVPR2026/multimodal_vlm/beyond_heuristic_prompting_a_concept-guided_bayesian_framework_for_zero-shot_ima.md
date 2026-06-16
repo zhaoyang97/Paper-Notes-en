@@ -2,110 +2,133 @@
 title: >-
   [Paper Note] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 description: >-
-  [CVPR2026][Multimodal VLM][zero-shot classification] This paper reformulates VLM zero-shot image recognition as a Bayesian framework, constructs a concept proposal distribution via an LLM-driven multi-stage concept synth…
+  [CVPR 2026][Multimodal VLM][CLIP] Reformulates VLM zero-shot image recognition as a Bayesian framework. It constructs a concept proposal distribution through an LLM-driven multi-stage concept synthesis pipeline and utilizes an adaptive soft-trim likelihood function to suppress the influence of outlier concepts, outperforming SOTA methods across 11 clas
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "zero-shot classification"
-  - "CLIP"
-  - "Bayesian inference"
-  - "concept guidance"
-  - "prompt engineering"
-  - "robust estimation"
+  - CVPR 2026
+  - Multimodal VLM
+  - CLIP
 date: 2026-05-08
-content_hash: 038213ed3f2d13a8
+content_hash: 5fc6d42115940eb1
 ---
-
 # Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 
 **Conference**: CVPR2026  
 **arXiv**: [2603.07911](https://arxiv.org/abs/2603.07911)  
 **Code**: [github.com/less-and-less-bugs/CGBC](https://github.com/less-and-less-bugs/CGBC)  
 **Area**: Multimodal VLM  
-**Keywords**: zero-shot classification, CLIP, Bayesian inference, concept guidance, prompt engineering, robust estimation
+**Keywords**: Zero-shot classification, CLIP, Bayesian inference, Concept guidance, Prompt engineering, Robust estimation
 
 ## TL;DR
-This paper reformulates VLM zero-shot image recognition as a Bayesian framework, constructs a concept proposal distribution via an LLM-driven multi-stage concept synthesis pipeline, and employs an adaptive soft-trim likelihood to suppress the influence of outlier concepts, achieving state-of-the-art performance across 11 classification benchmarks.
+Reformulates VLM zero-shot image recognition as a Bayesian framework. It constructs a concept proposal distribution through an LLM-driven multi-stage concept synthesis pipeline and utilizes an adaptive soft-trim likelihood function to suppress the influence of outlier concepts, outperforming SOTA methods across 11 classification benchmarks.
 
 ## Background & Motivation
-1. VLMs such as CLIP enable zero-shot classification via simple prompt templates (e.g., "A photo of {class}"), yet performance remains constrained by the heuristic nature of prompt engineering.
-2. Existing prompt augmentation methods (e.g., CuPL, which uses LLMs to generate class descriptions) exhibit limited adaptability in fine-grained classification tasks (e.g., "2000 AM General Hummer SUV").
-3. Prior methods lack a theoretical foundation — directly averaging similarity scores over all augmented prompts offers no principled justification.
-4. The distribution of similarity scores between augmented prompts and test images is often skewed or heavy-tailed, introducing the risk of outlier prompts degrading accuracy.
-5. Test-time augmentation methods (e.g., TPT, MTA) incur significant computational overhead.
-6. A zero-shot classification framework with theoretical guarantees and computational efficiency is needed.
+1. VLMs such as CLIP achieve zero-shot classification via simple prompt templates (e.g., "A photo of {class}"), but performance is constrained by the heuristic design of prompt engineering.
+2. Existing prompt enhancement methods (e.g., CuPL using LLMs to generate class descriptions) lack adaptability in fine-grained classification tasks (e.g., "2000 AM General Hummer SUV").
+3. Prior methods lack a theoretical foundation—averaging the similarities of all enhanced prompts lacks a principled framework.
+4. The similarity distribution between enhanced prompts and test images often exhibits skewness or heavy tails, posing a risk where outlier prompts can degrade accuracy.
+5. Test-time augmentation methods (e.g., TPT, MTA) introduce significant computational overhead.
+6. There is a need for a zero-shot classification framework that provides both theoretical guarantees and computational efficiency.
 
 ## Method
 
-### Overall Architecture (CGBC)
-Zero-shot classification is formulated as Bayesian marginalization over a concept space:
+### Overall Architecture
+
+CGBC reformulates zero-shot classification from ad-hoc prompt design into Bayesian marginalization over a concept space: the posterior of class $Y_i$ is weighted by a set of concepts $C_{i,j}$,
+
 $$p(Y_i|X) \approx \sum_{C_{i,j} \in \mathcal{C}_i} p(Y_i|X, C_{i,j}) \cdot p(X|C_{i,j})$$
-where $p(Y_i|X, C_{i,j})$ is computed via CLIP similarity and $p(X|C_{i,j})$ is the adaptive soft-trim likelihood.
+
+where $p(Y_i|X, C_{i,j})$ is derived from CLIP similarity, and $p(X|C_{i,j})$ is an adaptive soft-trim likelihood (acting as the concept weight). Consequently, the methodology is divided into two parts: one for **Concept Synthesis**—using an LLM to offline synthesize a set of high-quality, discriminative concepts as the concept proposal distribution; and another for **Concept Utilization**—suppressing outlier concepts that do not align with the image during Bayesian weighting. Once both are executed, inference involves only a single weighted sum with zero extra computation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Class Name + Test Image"]
+    subgraph SYN["LLM Multi-stage Concept Synthesis (Offline · Synthesis)"]
+        direction TB
+        S1["① Construct Hard-negative Neighborhood<br/>Encode class names with CLIP, take top-H neighbors"]
+        S2["② Contrastive Prompting for Atomic Concepts<br/>GPT-4.1 distinguishes target class from hard negatives"]
+        S3["③ Compositional Concept Construction<br/>Atomic concepts grouped by 3 using 'or'"]
+        S4["④ DPP Subset Selection<br/>Select 16/50 most diverse concepts"]
+        S1 --> S2 --> S3 --> S4
+    end
+    IN --> SYN
+    SYN -->|Concept Proposal Distribution| SIM["CLIP computes similarity set<br/>Match each concept with image sequentially"]
+    SIM --> TRIM["Adaptive Soft-Trim Likelihood<br/>Est. contamination via Median/MAD, then Logistic weighting"]
+    TRIM -->|Outlier Concept Downweighting| AGG["Bayesian Weighted Sum<br/>Σ similarity × concept weight"]
+    AGG --> OUT["Output: Predicted Class"]
+```
 
 ### Key Designs
 
-**LLM-Driven Multi-Stage Concept Synthesis Pipeline** (satisfying three properties: discriminability, compositionality, and diversity):
+**1. LLM-driven Multi-stage Concept Synthesis: Generating Distinguishable, Compositional, and Diverse Concepts**
 
-1. **Step 1 — Hard Negative Neighborhood Construction**: Class names are encoded with the CLIP text encoder to identify the $H$ most similar classes for each target class.
-2. **Step 2 — Contrastive Prompt Generation of Atomic Concepts**: GPT-4.1 Turbo generates atomic concepts (50 per class) that discriminate the target class from its hard negatives; concepts with pairwise similarity > 0.9 are deduplicated.
-3. **Step 3 — Compositional Concept Construction**: Atomic concepts are randomly sampled and combined (3 per group, joined with "or") to produce 500 candidate compositional concepts.
-4. **Step 4 — DPP Subset Selection**: A Determinantal Point Process selects 16 or 50 diversity-optimal concepts from the 500 candidates.
+Simple prompts ("A photo of {class}") and heuristic descriptions lack sufficient discriminative power for fine-grained categories (e.g., "2000 AM General Hummer SUV"). CGBC uses a four-step pipeline to enable an LLM to synthesize concepts that satisfy distinguishability, compositionality, and diversity:
 
-**Adaptive Soft-Trim Likelihood** (for outlier concept suppression):
+1.  **Construct Hard-negative Neighborhood**: Use the CLIP text encoder to encode class names and identify the $H$ most similar classes for each target class.
+2.  **Contrastive Prompting for Atomic Concepts**: Use GPT-4.1 Turbo to generate atomic concepts (50 per class) that can differentiate the target class from these hard negatives; deduplicate those with similarity > 0.9.
+3.  **Compositional Concept Construction**: Randomly sample from the atomic concept pool and connect every 3 concepts using "or" to create 500 candidate compositional concepts.
+4.  **DPP Subset Selection**: Use a Determinantal Point Process to select the 16 or 50 most diverse concepts from the 500 candidates.
 
-- Compute the median $m_i$ and MAD of the similarity set $\mathcal{S}_i$.
-- Estimate the contamination rate: $\hat{\rho}_i = \frac{1}{M_i}\sum \mathbb{I}[|S_{i,j} - m_i| > \lambda \cdot \text{MAD}_i]$
-- Compute weights via a logistic form: $w_{i,j} = \sigma(-\log\frac{1-\hat{\rho}_i}{\hat{\rho}_i} \cdot \frac{|S_{i,j}-m_i| \cdot k}{\text{MAD}_i})$
+The Key Insight in step 2 is using "contrastive hard negatives" rather than isolated descriptions, which forces the extraction of truly discriminative features; step 4 uses DPP instead of random selection to ensure that the remaining concepts are non-redundant.
 
-### Theoretical Guarantees
-A robustness guarantee (Theorem 1) and a multi-class excess risk bound (Corollary 1) are provided, demonstrating that the estimation error is controlled by the contamination rate $\rho$, the number of concepts $M$, and the sigmoid slope $k$.
+**2. Adaptive Soft-Trim Likelihood: Automatic Downweighting of Outlier Concepts**
+
+The similarity distribution between enhanced concepts and test images is often skewed or heavy-tailed. Outlier concepts can degrade accuracy—direct averaging (as in CuPL) suffers from this. The soft-trim likelihood robustly estimates the distribution center and dispersion, then assigns weights to each concept: calculate the median $m_i$ and MAD of the similarity set $\mathcal{S}_i$, estimate the contamination rate $\hat{\rho}_i = \frac{1}{M_i}\sum \mathbb{I}[|S_{i,j} - m_i| > \lambda \cdot \text{MAD}_i]$, and assign weights using a logistic form:
+
+$$w_{i,j} = \sigma\left(-\log\frac{1-\hat{\rho}_i}{\hat{\rho}_i} \cdot \frac{|S_{i,j}-m_i| \cdot k}{\text{MAD}_i}\right)$$
+
+Concepts further from the center receive lower weights, effectively "soft-cropping" outliers rather than hard-discarding them. This step is supported by theoretical foundations: the paper provides robustness guarantees (Theorem 1) and multi-class excess risk bounds (Corollary 1), proving that the estimation error is constrained by the contamination rate $\rho$, the number of concepts $M$, and the sigmoid slope $k$—meaning the influence of outlier concepts is provably controlled.
+
+### Loss & Training
+
+This method is training-free and requires no training: concepts are generated offline by an LLM and encoded by CLIP. Only a Bayesian weighted sum is performed during inference, resulting in no additional computational overhead.
 
 ## Key Experimental Results
 
 ### Main Results: Performance on 11 Zero-Shot Classification Datasets
 
 | Method | SUN397 | Aircraft | EuroSAT | Cars | ImageNet | Avg. | Auxiliary |
-|--------|--------|----------|---------|------|----------|------|-----------|
+|------|--------|----------|---------|------|----------|------|------|
 | CLIP | 62.3 | 23.9 | 42.2 | 65.5 | 66.7 | 63.5 | (1,1) |
 | CLIP+E | 65.1 | 23.7 | 47.7 | 66.3 | 68.4 | 64.4 | (1,80) |
 | TPT | 65.4 | 23.1 | 42.9 | 66.4 | 68.9 | 65.1 | (64,1) |
 | CuPL | — | — | — | — | — | ~65 | (1,~50) |
-| **CGBC (M=16)** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | (1,16) |
+| **CGBC (M=16)** | **Ours** | **Ours** | **Ours** | **Ours** | **Ours** | **Ours** | (1,16) |
 
 ### Ablation Study
 
-| Component | Impact upon Removal |
-|-----------|-------------------|
-| Contrastive prompts (vs. independent prompts) | Average drop of 1–2%; larger impact on fine-grained datasets |
-| Compositional concepts (vs. atomic concepts only) | Average drop of ~1% |
-| DPP selection (vs. random selection) | Average drop of ~0.5–1% |
-| Soft-trim likelihood (vs. uniform averaging) | Average drop of 1–3%; largest impact on datasets with skewed distributions |
+| Component | Impact after removal |
+|------|-----------|
+| Contrastive Prompting (vs. Independent) | Avg. decrease of 1-2%, higher impact on fine-grained datasets |
+| Compositional Concepts (vs. Atomic only) | Avg. decrease of approx. 1% |
+| DPP Selection (vs. Random) | Avg. decrease of approx. 0.5-1% |
+| Soft-trim Likelihood (vs. Uniform Average) | Avg. decrease of 1-3%, highest impact on skewed distribution datasets |
 
 ### Key Findings
-- CGBC consistently outperforms all zero-shot methods across 11 benchmarks without requiring test-time data augmentation.
-- $M=16$ concepts are already sufficient; $M=50$ yields further gains with diminishing returns.
-- The soft-trim likelihood provides the greatest benefit on datasets where outlier concepts are prominent.
+- CGBC consistently outperforms all zero-shot methods across 11 benchmarks without requiring test-time augmentation.
+- A concept count of $M=16$ is already effective; $M=50$ provides further Gain but with diminishing marginal returns.
+- Soft-trim likelihood provides the most significant improvement on datasets where obvious outlier concepts are present.
 
 ## Highlights & Insights
-- The paper systematically grounds VLM zero-shot classification in a Bayesian perspective, elegantly unifying the prompt augmentation paradigm by treating concepts as latent variables.
-- The three properties of the concept proposal distribution (discriminability, compositionality, diversity) are rooted in cognitive science rather than ad hoc design.
-- The framework is training-free; concepts are generated and encoded offline, incurring no additional computational cost at inference.
+- Systematizes zero-shot classification for VLMs from a Bayesian perspective, elegantly unifying the prompt enhancement paradigm by treating concepts as latent variables.
+- The three properties of the concept proposal distribution (distinguishability, compositionality, diversity) are rooted in cognitive science rather than ad-hoc design.
+- Training-free; requires only offline concept generation and encoding, with zero extra computational overhead during inference.
 
 ## Limitations & Future Work
-- Concept generation relies on the GPT-4.1 Turbo API, imposing an upper bound on concept quality.
-- Theoretical assumptions (sub-Gaussian distributions, known contamination rate) may not be fully satisfied in practice.
-- Evaluation is limited to the ViT-B/16 backbone; performance with larger visual encoders remains to be confirmed.
+- Concept generation depends on the GPT-4.1 Turbo API, which poses a ceiling on concept quality.
+- Theoretical assumptions (sub-Gaussianity, known contamination rate) may not be fully satisfied in practice.
+- Only the ViT-B/16 backbone was validated; performance on larger vision encoders remains to be confirmed.
 
 ## Related Work & Insights
-- Key distinction from CuPL: CuPL heuristically averages all descriptions, whereas CGBC achieves adaptive weighting through Bayesian inference.
-- Key distinction from TPT/MTA: the latter compute augmentations at test time, whereas CGBC relies on offline concept preparation with zero inference overhead.
-- The use of DPP for concept selection is transferable to other scenarios requiring diversity-aware sampling.
+- Key difference from CuPL: CuPL heuristically averages all descriptions, while CGBC achieves adaptivity through Bayesian weighting.
+- Difference from TPT/MTA: Real-time computational augmentation vs. CGBC's offline concepts and zero-overhead inference.
+- The strategy of using DPP for concept selection is transferable to other scenarios requiring diverse sampling.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Bayesian framework with theoretical guarantees; complete concept synthesis pipeline)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (11 datasets, but limited to ViT-B/16)
-- Writing Quality: ⭐⭐⭐⭐⭐ (rigorous theoretical derivations; tightly motivated methodology)
-- Value: ⭐⭐⭐⭐ (training-free with theoretical guarantees; strong practical utility)
+- Novelty: ⭐⭐⭐⭐⭐ (Bayesian framework with theoretical guarantees, comprehensive concept synthesis pipeline)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (11 datasets, but only ViT-B/16)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Rigorous theoretical derivation, well-connected methodological motivation)
+- Value: ⭐⭐⭐⭐ (Training-free with theoretical guarantees, high practicality)
 
 <!-- RELATED:START -->
 
@@ -113,11 +136,11 @@ A robustness guarantee (Theorem 1) and a multi-class excess risk bound (Corollar
 
 ## Related Papers
 
-- [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](../../ICLR2026/multimodal_vlm/zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
+- [\[ECCV 2024\] Meta-Prompting for Automating Zero-Shot Visual Recognition with LLMs](../../ECCV2024/multimodal_vlm/meta-prompting_for_automating_zero-shot_visual_recognition_with_llms.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
+- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
 - [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
-- [\[CVPR 2026\] No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models](no_hard_negatives_required_concept_centric_learning_leads_to_compositionality_wi.md)
 
 </div>
 

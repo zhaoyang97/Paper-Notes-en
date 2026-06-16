@@ -2,91 +2,98 @@
 title: >-
   [Paper Note] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][occupancy prediction] This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framework. It introduces a Depth-guided Dual-projection View Former (D2-VFormer) that levera…
+  [CVPR 2026][Autonomous Driving][occupancy prediction] Dr.Occ is proposed as a unified vision-only 3D occupancy prediction framework. It leverages high-quality depth priors from MoGe-2 for precise geometric alignment via a Depth-guided Dual-projected View Transformer (D2-VFormer). Furthermore, it introduces region-guided MoE/MoR expert Transformers (R-EFormer / R2-EFormer)
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "occupancy prediction"
-  - "depth guidance"
-  - "MoGe-2"
-  - "Mixture-of-Experts"
-  - "region-guided"
-  - "view transformation"
+  - CVPR 2026
+  - Autonomous Driving
+  - occupancy prediction
+  - depth guidance
+  - MoGe-2
+  - Mixture-of-Experts
+  - region-guided
+  - view transformation
 date: 2026-05-08
-content_hash: 059d2887bea99f69
+content_hash: 0b44bcfa92918300
 ---
-
 # Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.01007](https://arxiv.org/abs/2603.01007)  
-**Code**: N/A  
-**Area**: Autonomous Driving / 3D Occupancy Prediction
+**Code**: None  
+**Area**: Autonomous Driving / 3D Occupancy Prediction  
 **Keywords**: occupancy prediction, depth guidance, MoGe-2, Mixture-of-Experts, region-guided, view transformation
 
 ## TL;DR
 
-This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framework. It introduces a Depth-guided Dual-projection View Former (D2-VFormer) that leverages high-quality depth priors from MoGe-2 for accurate geometric alignment, and a Region-guided Expert Transformer (R-EFormer / R2-EFormer) that adaptively assigns spatial region experts to address semantic imbalance. Dr.Occ improves the BEVDet4D baseline by 7.43% mIoU on Occ3D-nuScenes.
+Dr.Occ is proposed as a unified vision-only 3D occupancy prediction framework. It leverages high-quality depth priors from MoGe-2 for precise geometric alignment via a Depth-guided Dual-projected View Transformer (D2-VFormer). Furthermore, it introduces region-guided MoE/MoR expert Transformers (R-EFormer / R2-EFormer) to adaptively assign experts to specific spatial regions, addressing spatial-semantic imbalance. It improves the BEVDet4D baseline by 7.43% mIoU on Occ3D-nuScenes.
 
 ## Background & Motivation
 
-**Background**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to produce dense voxel-level scene representations that provide geometric and semantic information for motion planning and obstacle avoidance. Camera-only approaches (LSS, BEVFormer, COTR, etc.) that perform 2D-to-3D view transformation represent the dominant paradigm.
+**Background**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to generate dense voxel-level representations of scenes to provide geometric and semantic information for motion planning and obstacle avoidance. Vision-only solutions are the mainstream direction (LSS, BEVFormer, COTR, etc.), achieved through 2D-to-3D view transformation.
 
 **Limitations of Prior Work**:
-1. **Geometric misalignment**: Existing forward-projection methods (LSS, BEVDepth) rely on low-resolution, noisy depth estimates for 2D→3D feature transformation, limiting projection accuracy.
-2. **Spatial semantic imbalance**: Different semantic categories exhibit strong spatial preferences in 3D space — pedestrians concentrate near road edges, vehicles in the center lane, and buildings at higher elevations — yet existing methods model all regions uniformly.
-3. Approximately 90% of voxels are empty, making direct fitting over all voxels inefficient.
-4. Naively concatenating MoGe depth maps with images or converting them to pseudo point clouds for forward projection actually degrades performance.
+1. **Inaccurate Geometric Alignment**: Existing forward projection methods (LSS, BEVDepth) rely on low-resolution, noisy depth estimation for 2D→3D feature transformation, resulting in limited projection accuracy.
+2. **Spatial-Semantic Imbalance**: Different semantic categories exhibit strong spatial preferences in 3D space (e.g., pedestrians are concentrated on road edges, vehicles in the center, and buildings at higher altitudes), yet existing methods model all regions uniformly.
+3. Approximately 90% of voxels are empty, making direct fitting of all voxels inefficient.
+4. Simply concatenating MoGe depth maps with images or converting them to pseudo-point clouds for forward projection can actually degrade performance.
 
-**Key Challenge**: How to exploit high-quality geometric priors from advanced depth estimation models to improve occupancy prediction, while simultaneously addressing the severe spatial imbalance in semantic category distributions.
+**Key Challenge**: How to utilize high-quality geometric priors provided by advanced depth estimation models to improve occupancy prediction while addressing the severe spatial distribution imbalance of semantic categories.
 
-**Goal**: Jointly address the two core challenges in camera-only occupancy prediction: inaccurate geometric reconstruction and imbalanced semantic learning.
+**Goal**: Simultaneously address the two major challenges of inaccurate geometric reconstruction and imbalanced semantic learning in vision-only occupancy prediction.
 
-**Key Insight**: Depth guidance ensures geometric alignment; region-guided experts enhance semantic learning — the two are complementary by design.
+**Key Insight**: Using depth guidance to ensure geometric alignment and region experts to enhance semantic learning, with the two components being complementary.
 
-**Core Idea**: Use MoGe-2 depth to generate occupancy masks that guide non-empty voxel refinement, and apply MoE-style spatial region routing to handle semantic heterogeneity.
+**Core Idea**: Generate occupancy masks from MoGe-2 depth to guide the refinement of non-empty voxels, and utilize MoE concepts to assign experts by spatial regions to handle semantic heterogeneity.
 
 ## Method
 
 ### Overall Architecture
 
-Dr.Occ introduces two modifications to the standard occupancy prediction pipeline:
-1. **D2-VFormer** replaces the original view transformer, constructing 3D voxel features via depth-guided dual projection using MoGe-2 priors.
-2. **R2-EFormer** is inserted during the 3D feature refinement stage for region-guided recursive semantic enhancement.
+Dr.Occ introduces two improvements to the existing occupancy prediction pipeline:
+1. Replaces the original view transformer with **D2-VFormer**, utilizing MoGe-2 depth priors to implement depth-guided dual-projection feature construction.
+2. Inserts a **Region-guided Expert Transformer (R-EFormer / recursive variant R2-EFormer)** during the 3D feature refinement stage to assign experts by physical space for semantic enhancement.
 
-The pipeline is: $T$-frame surround-view images → image encoder → D2-VFormer (3D voxel features) → R2-EFormer (semantic refinement) → OCC decoder → $\hat{\mathbf{O}} \in \mathbb{R}^{X \times Y \times Z \times C}$.
+The input consists of $T$ frames of surround-view images → Image Encoder → D2-VFormer for 3D voxel feature construction → R-EFormer / R2-EFormer for semantic refinement → OCC Decoder outputting $\hat{\mathbf{O}} \in \mathbb{R}^{X \times Y \times Z \times C}$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["T-frame Surround Images"] --> B["Image Encoder<br/>ResNet-50 Features"]
+    A --> M["MoGe-2 Depth Estimation<br/>Geometry-aware Occupancy Mask"]
+    subgraph D2["D2-VFormer (Depth-guided Dual-projected VFormer)"]
+        direction TB
+        S1["Stage 1: Forward Projection<br/>Multi-frame Fusion + λ Downsampling"]
+        S2["Stage 2: Deformable Cross-Attention<br/>Backward Projection Densification"]
+        S3["Stage 3: Non-empty Voxel Refinement<br/>Geo + Semantic Enhancement"]
+        S1 --> S2 --> S3
+    end
+    B --> S1
+    M --> S3
+    S3 --> R["R-EFormer / R2-EFormer<br/>Region-guided Expert Refinement"]
+    R --> O["OCC Decoder<br/>Output Occupancy Voxel Ô"]
+```
 
 ### Key Designs
 
-1. **Depth-Guided 2D-to-3D View Former (D2-VFormer)**:
-    - **Geometry-aware occupancy mask**: The depth map $\mathbf{D}_i$ estimated by MoGe-2 is used to generate a pseudo point cloud $\mathcal{P}$, which is projected and voxelized to produce a binary mask $M(\mathbf{v})$ marking non-empty voxel locations.
-    - Projection formulae: $\mathbf{x}_{\text{cam}}^T = d \cdot \mathbf{K}_i^{-1}[u, v, 1]^T$, $\mathbf{p}_i = \mathbf{R}_i^\top(\mathbf{x}_{\text{cam}} - \mathbf{t}_i)$, $M(\mathbf{v}) = \mathbf{1}[\mathbf{v} \in \text{Voxelize}(\mathcal{P}, r)]$
-    - **Three-stage progressive refinement**:
-        - Stage 1 (forward projection + downsampling): Multi-frame image features are projected into voxel space via depth, then downsampled by factor $\lambda$ to improve computational efficiency and depth robustness.
-        - Stage 2 (backward projection densification): Deformable Cross-Attention (DCA) aggregates multi-view image features: $\mathbf{F}_{\text{dense}} = \text{DCA}(\mathbf{F}_{\text{down}}, \mathbf{F}^{(I)})$.
-        - Stage 3 (depth-guided non-empty voxel refinement): Only mask-identified non-empty voxels undergo two-step refinement — geometric refinement (fusing depth features $\mathbf{F}^{(D)}$) followed by semantic enhancement (fusing image features $\mathbf{F}^{(I)}$); empty voxels are filled with a learnable embedding $\mathbf{e}_{\text{empty}}$.
-    - Key insight: Rather than using MoGe depth directly for forward projection (which degrades feature quality by removing implicit depth constraints), the depth is used to generate masks that guide attention toward meaningful regions.
+**1. Depth-guided Dual-projected View Transformer (D2-VFormer): Depth as an "Attention Map" instead of "Hard Projection"**
 
-2. **Region-guided Expert Transformer (R-EFormer)**:
-    - **Spatial semantic analysis**: Statistical analysis reveals that different semantic categories exhibit strong anisotropic distributions along distance and height dimensions — road surfaces cluster at low elevations near range, vegetation/buildings appear at higher elevations mid-range, and dynamic objects occupy narrow spatial bands.
-    - The 3D space is partitioned into $3 \times 3 = 9$ regions along distance (near 0–10 m / mid 10–30 m / far 30+ m) and height (low −1.0–0.2 m / mid 0.2–2.2 m / high 2.2–5.4 m).
-    - A routing network computes per-region importance scores $s_m = \text{Router}(\mathbf{F}_{\text{out}})$, and the top-$K$ most relevant regions activate their corresponding experts.
-    - Each expert $E_m$ applies DCA restricted to its region mask $\mathcal{M}_m$: $E_m(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m) = \text{DCA}(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m)$
-    - Final output is a weighted fusion: $\mathbf{F}_{\text{final}} = \sum_{m \in \mathcal{S}} w_m \cdot E_m(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m)$
+Existing forward projections (LSS, BEVDepth) rely on low-resolution, noisy depth for 2D→3D transformation, leading to poor alignment. The authors found that directly concatenating MoGe depth or converting it to point clouds for forward projection performed worse because image features lost their implicit depth constraints. D2-VFormer uses depth to generate a geometry-aware occupancy mask to guide attention: first, MoGe-2 depth maps $\mathbf{D}_i$ generate pseudo-point clouds $\mathcal{P}$ via camera projection $\mathbf{x}_{\text{cam}}^T = d \cdot \mathbf{K}_i^{-1}[u, v, 1]^T$, $\mathbf{p}_i = \mathbf{R}_i^\top(\mathbf{x}_{\text{cam}} - \mathbf{t}_i)$, and voxelization gives a binary mask $M(\mathbf{v}) = \mathbf{1}[\mathbf{v} \in \text{Voxelize}(\mathcal{P}, r)]$ marking non-empty voxels. Refinement proceeds in three stages: Stage 1 fuses multi-frame features and downsamples by $\lambda$ for efficiency; Stage 2 uses Deformable Cross-Attention (DCA) for backward densification $\mathbf{F}_{\text{dense}} = \text{DCA}(\mathbf{F}_{\text{down}}, \mathbf{F}^{(I)})$; Stage 3 performs geometric refinement (fusing depth features $\mathbf{F}^{(D)}$) and semantic enhancement (fusing image features $\mathbf{F}^{(I)}$) only for masked non-empty voxels. Empty voxels are filled with a learnable embedding $\mathbf{e}_{\text{empty}}$. Since ~90% of voxels are empty, focusing attention on the ~10% meaningful voxels improves both efficiency and accuracy.
 
-3. **Recursive Variant R2-EFormer**:
-    - Inspired by Mixture-of-Recursions (MoR), a single shared expert is applied iteratively for $n$ steps, with the router generating progressively shrinking spatial masks at each iteration.
-    - The mask sequence satisfies $\mathcal{M}^{(t)} \subset \mathcal{M}^{(t-1)}$ with decreasing coverage (100% → 75% → 50%).
-    - Each iteration: $\mathbf{F}^{(t)} = \text{DCA}(\mathbf{F}^{(t-1)}, \mathbf{F}^{(I)}; \mathcal{M}^{(t)})$
-    - Advantages: fewer parameters via weight sharing, no need for manual region boundary definition, and progressive focus on hard-to-classify voxels.
+**2. Region-guided Expert Transformer (R-EFormer): Spatial Experts for Semantic Imbalance**
+
+Semantic categories are highly anisotropic in 3D space—roads are at low altitudes nearby, vegetation/buildings are at higher altitudes mid-range, and dynamic objects are crowded in narrow bands. R-EFormer moves MoE from token space to physical space: the space is sliced into $3 \times 3 = 9$ regions based on distance (Near 0-10m / Mid 10-30m / Far 30m+) and height (Low -1.0-0.2m / Mid 0.2-2.2m / High 2.2-5.4m). A router network calculates region importance $s_m = \text{Router}(\mathbf{F}_{\text{out}})$ and selects top-$K$ experts. Each expert $E_m$ uses DCA but only within its region mask $\mathcal{M}_m$, calculated as $E_m(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m) = \text{DCA}(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m)$. The final feature is a weighted fusion $\mathbf{F}_{\text{final}} = \sum_{m \in \mathcal{S}} w_m \cdot E_m(\mathbf{F}_{\text{out}}, \mathbf{F}^{(I)}; \mathcal{M}_m)$. Aligning experts with spatial semantic distribution is the key to performance gains.
+
+**3. Recursive Variant R2-EFormer: Iterative Contraction with a Shared Expert**
+
+The 9-region grid of R-EFormer is manually set and may not fit all scenes. Inspired by Mixture-of-Recursions (MoR), R2-EFormer uses a single shared expert that iteratively refines the volume $n$ times. Each iteration, the router generates a progressively shrinking spatial mask where $\mathcal{M}^{(t)} \subset \mathcal{M}^{(t-1)}$ (coverage decreasing from 100% → 75% → 50%). Each round is $\mathbf{F}^{(t)} = \text{DCA}(\mathbf{F}^{(t-1)}, \mathbf{F}^{(I)}; \mathcal{M}^{(t)})$. This design uses fewer parameters, requires no manual partitioning, and progressively focuses on hard-to-classify voxels. In experiments, it yielded the highest mIoU (43.43%) as recursive refinement benefits rare classes.
 
 ### Loss & Training
 
-- AdamW optimizer, learning rate $1 \times 10^{-4}$, weight decay $1 \times 10^{-2}$
-- 24 training epochs, batch size = 2/GPU × 8 GPUs (NVIDIA L20)
-- Image encoder: ResNet-50; depth estimation: moge-2-vits-normal
-- Forward projection voxel channels $C=32$, resolution $200 \times 200 \times 16$, covering $80 \times 80 \times 6.4$ m
-- Multi-head attention: 8 heads, $N_{\text{ref}} = 4$ reference points
+- Optimizer: AdamW, learning rate $1 \times 10^{-4}$, weight decay $1 \times 10^{-2}$.
+- Training: 24 epochs, batch size = 2/GPU × 8 GPUs (NVIDIA L20).
+- Backbone: ResNet-50; Depth estimation: moge-2-vits-normal.
+- Forward projection voxel dimensions: $C=32$, resolution $200 \times 200 \times 16$, covering $80 \times 80 \times 6.4$ m.
+- Attention: 8 heads, $N_{\text{ref}} = 4$ reference points.
 
 ## Key Experimental Results
 
@@ -95,7 +102,7 @@ The pipeline is: $T$-frame surround-view images → image encoder → D2-VFormer
 Occ3D-nuScenes benchmark (mIoU / IoU %):
 
 | Method | Backbone | mIoU | IoU |
-|--------|----------|---:|---:|
+|------|----------|---:|---:|
 | BEVFormer | R101 | 26.9 | — |
 | TPVFormer | R101 | 27.8 | — |
 | SparseOcc | R50 | 30.9 | — |
@@ -107,11 +114,11 @@ Occ3D-nuScenes benchmark (mIoU / IoU %):
 | **BEVDet4D + Dr.Occ** | R50 | **43.4** (+7.43) | (+3.09) |
 | **COTR + Dr.Occ** | R50 | **44.1** (+1.0) | — |
 
-Dr.Occ achieves substantial foreground class IoU improvements over BEVDet4D (e.g., bicycle +20.4, pedestrian +13.4, motorcycle +6.9), with consistent gains on background classes as well.
+Dr.Occ significantly improves foreground class IoU (e.g., bicycle +20.4, pedestrian +13.4, motorcycle +6.9) compared to BEVDet4D, with stable growth in background classes.
 
 ### Ablation Study
 
-Contribution of individual modules:
+Contribution of each module:
 
 | D2-VFormer | R-EFormer | R2-EFormer | IoU (%) | mIoU (%) |
 |:---:|:---:|:---:|---:|---:|
@@ -120,49 +127,49 @@ Contribution of individual modules:
 | ✔ | ✔ | | **73.45** (+2.16) | 43.03 (+1.58) |
 | ✔ | | ✔ | 72.87 | **43.43** (+1.98) |
 
-Key observations:
-- D2-VFormer alone contributes +5.44% mIoU, validating the importance of depth guidance for geometric completeness and semantics.
-- R-EFormer on top of D2-VFormer adds a further +1.58% mIoU and achieves the highest IoU.
-- Replacing R-EFormer with R2-EFormer yields a slightly lower IoU but the highest mIoU (43.43%), as recursive refinement more effectively handles rare and hard-to-classify categories.
+Key Observations:
+- D2-VFormer alone contributes +5.44% mIoU, validating depth guidance for geometric integrity and semantics.
+- R-EFormer further adds +1.58% mIoU over D2-VFormer, achieving the highest IoU.
+- R2-EFormer achieves the highest mIoU (43.43%), as recursive refinement is more beneficial for rare and difficult classes.
 
 ### Key Findings
 
-1. Directly applying MoGe depth for forward projection degrades performance, as image features lose implicit depth constraints; using depth to generate masks is a superior strategy.
-2. With ~90% of voxels being empty, geometry-aware masking focuses the model on the meaningful ~10% of voxels, substantially improving both efficiency and accuracy.
-3. The spatial anisotropy of semantic categories (road surfaces at the bottom, buildings at higher elevations) is an objective phenomenon; MoE-style region experts effectively exploit this prior.
-4. The recursive mask shrinkage strategy of R2-EFormer (100% → 75% → 50%) automatically focuses on hard voxels without requiring manually defined region boundaries.
-5. As a plug-and-play module, Dr.Occ further improves the current state-of-the-art COTR by 1.0% mIoU, demonstrating generalizability.
+1. Directly using MoGe depth for forward projection decreases performance because image features lose implicit depth constraints; using depth to generate masks is a superior strategy.
+2. Approximately 90% of voxels are empty. Geometry-aware masks allow the model to focus on the meaningful ~10% of voxels, significantly improving both efficiency and accuracy.
+3. Spatial anisotropy of semantic categories is inherent (roads at the bottom, buildings at the top); MoE-style region experts effectively exploit this prior.
+4. The recursive mask contraction strategy of R2-EFormer (100% → 75% → 50%) automatically focuses on difficult voxels without manual region boundary definitions.
+5. As a plug-and-play module, Dr.Occ further improves COTR (current SOTA) by 1.0% mIoU, proving its generalizability.
 
 ## Highlights & Insights
 
-1. **Elegant use of depth priors**: Rather than applying depth directly for projection (which can introduce domain bias), depth is used to generate occupancy masks for attention guidance — a conceptually novel strategy.
-2. **MoE localized to 3D physical space**: The expert routing concept from MoE is transferred from token space to physically defined spatial regions, aligning well with the spatial semantic structure of autonomous driving scenes.
-3. **MoR-inspired recursive variant** reduces parameters via weight sharing while adaptively discovering important regions, avoiding sensitivity to manually defined region boundaries.
-4. The geometric and semantic modules are decoupled by design and can be independently inserted into different baselines.
+1. **Clever Utilization of Depth Priors**: Instead of direct projection (prone to domain bias), depth is used to generate occupancy masks for attention guidance, offering a novel perspective.
+2. **Localization of MoE in 3D Space**: Migrates the MoE expert routing concept from token space to physical region partitioning, highly matching the spatial-semantic distribution in autonomous driving.
+3. **Recursive MoR Variant**: Reduces parameters while adaptively discovering important regions, avoiding sensitivity to manual region boundaries.
+4. **Decoupled Design**: Geometric and semantic modules are decoupled and can be independently integrated into different baselines.
 
 ## Limitations & Future Work
 
-1. The framework depends on an external depth estimation model (MoGe-2), increasing inference latency and deployment complexity.
-2. The region partition in R-EFormer (3×3 grid) is a manually defined hyperparameter that may require tuning for different scenes.
-3. Evaluation is limited to Occ3D-nuScenes; other benchmarks (e.g., OpenOccupancy, SurroundOcc) are not tested.
-4. Only ResNet-50 backbone is used; stronger backbones (e.g., InternImage, ViT) are not explored.
-5. In-depth optimization of temporal fusion is not investigated; only the basic multi-frame fusion from BEVDet4D is adopted.
+1. Dependence on external depth models (MoGe-2) increases inference latency and deployment complexity.
+2. The region partitioning of R-EFormer (3x3 grid) is a manual hyperparameter; different scenarios might require different partitions.
+3. Evaluation is limited to Occ3D-nuScenes; other datasets (e.g., OpenOccupancy, SurroundOcc) were not tested.
+4. Use of ResNet-50 backbone; stronger backbones (e.g., InternImage, ViT) have not been explored.
+5. In-depth optimization of temporal fusion was not discussed (basic multi-frame fusion from BEVDet4D was used).
 
 ## Related Work & Insights
 
-- **LSS / BEVDepth / BEVStereo**: Classical forward-projection methods; D2-VFormer builds upon these by introducing externally guided depth priors.
-- **BEVFormer**: Classical backward-projection approach that samples image features via transformer queries.
+- **LSS / BEVDepth / BEVStereo**: Classic forward projection methods; Dr.Occ’s D2-VFormer introduces external depth guidance to this framework.
+- **BEVFormer**: Classic backward projection sampling features from images via transformer queries.
 - **COTR**: Dual-projection design; D2-VFormer further introduces depth mask guidance.
-- **MoGe-2**: High-quality monocular depth estimation model that supplies geometric priors to Dr.Occ.
-- **Mixture-of-Recursions (MoR)**: An efficient design that replaces multiple experts with a single recursively applied shared expert.
-- **Insight**: As foundation models (e.g., MoGe, Depth Anything) continue to advance, effectively leveraging these off-the-shelf tools to provide strong priors for downstream tasks is a direction worth deeper exploration.
+- **MoGe-2**: High-quality monocular depth estimation model providing geometric priors for Dr.Occ.
+- **Mixture-of-Recursions (MoR)**: Efficient design using a single recursive expert instead of multiple experts.
+- **Insight**: With the advancement of foundation models (e.g., MoGe, Depth Anything), exploring how to leverage these tools as strong priors for downstream tasks is a promising direction.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Novelty | ⭐⭐⭐⭐ |
-| Practicality | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
 | Overall | ⭐⭐⭐⭐ |
@@ -173,11 +180,11 @@ Key observations:
 
 ## Related Papers
 
+- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
 - [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
-- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
-- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
 
 </div>
 

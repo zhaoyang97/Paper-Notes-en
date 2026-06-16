@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels
 description: >-
-  [ACL 2026][Code Intelligence][CUDA] The authors transform the unreliable task of "using LLMs to directly modify FlashAttention CUDA code" into a three-stage workflow: "lifting to an executable IR (CuIR) → transferring ac…
+  [ACL 2026][Code Intelligence][CUDA] The authors transform the unreliable task of "modifying FlashAttention CUDA code directly via LLMs" into a three-stage workflow: "lifting to an executable IR (CuIR) → transferring according to PyTorch reference → differential lowering back to CUDA." This approach maintains 100% accuracy for 8 classes of attention varia
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "CUDA"
-  - "Attention Kernel"
-  - "LLM Code Generation"
-  - "Intermediate Representation"
-  - "Lift-Transfer-Lower"
+  - ACL 2026
+  - Code Intelligence
+  - CUDA
+  - Attention Kernel
+  - LLM Code Generation
+  - Intermediate Representation
+  - Lift-Transfer-Lower
 date: 2026-05-08
-content_hash: 67db2bbc49573584
+content_hash: 4c69fe4d41eb1668
 ---
-
 # CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels
 
 **Conference**: ACL 2026  
@@ -24,121 +23,122 @@ content_hash: 67db2bbc49573584
 **Keywords**: CUDA, Attention Kernel, LLM Code Generation, Intermediate Representation, Lift-Transfer-Lower
 
 ## TL;DR
-The authors transform the unreliable task of "using LLMs to directly modify FlashAttention CUDA code" into a three-stage workflow: "lifting to an executable IR (CuIR) → transferring according to a PyTorch reference → differentially lowering back to CUDA." This approach achieves 100% accuracy across 8 types of attention variants on A100/H100, with average speedups of 16.03× relative to PyTorch, 1.39× relative to FlexAttention, and 3.33× relative to the previous LLM-based method Qimeng-Attention.
+The authors transform the unreliable task of "modifying FlashAttention CUDA code directly via LLMs" into a three-stage workflow: "lifting to an executable IR (CuIR) → transferring according to PyTorch reference → differential lowering back to CUDA." This approach maintains 100% accuracy for 8 classes of attention variants on A100/H100, achieving an average speedup of 16.03× over PyTorch, 1.39× over FlexAttention, and 3.33× over the previous LLM-based method Qimeng-Attention.
 
 ## Background & Motivation
-**Background**: The performance lifeline of modern deep learning is hand-written CUDA attention kernels on GPUs (FlashAttention series, cuBLAS, CUTLASS). However, as model architectures evolve, new forms of attention constantly emerge—PrefixLM, Sliding Window, Sigmoid Attention, Softcap, and combinations like Sliding+Softcap.
+**Background**: The performance of modern deep learning relies on hand-written CUDA attention kernels (FlashAttention series, cuBLAS, CUTLASS). As model architectures evolve, new forms of attention continuously emerge, such as PrefixLM, Sliding Window, Sigmoid Attention, Softcap, and combinations like Sliding+Softcap.
 
-**Limitations of Prior Work**: Existing paths have significant drawbacks: (1) High-level frameworks like PyTorch are flexible but slow, decomposing operations into multiple fine-grained kernels with frequent launches and repeated global memory access; (2) Template-based compilers such as FlexAttention allow limited customization but are constrained by templates and do not support non-standard variants; (3) Expert libraries like FlashAttention offer top-tier performance but require senior engineers to rewrite each variant; (4) Direct end-to-end generation or rewriting of CUDA kernels by LLMs is unstable on complex operators like attention, with performance lags of up to 34.9× compared to expert versions (Ouyang et al. 2025).
+**Limitations of Prior Work**: Existing paths have significant drawbacks: (1) High-level frameworks like PyTorch are flexible but slow due to fine-grained kernel launches and repeated global memory access; (2) Template-based compilers like FlexAttention allow limited customization but are constrained by templates and do not support non-standard variants; (3) Expert libraries like FlashAttention provide top-tier performance but require senior engineers to rewrite each variant; (4) Direct end-to-end generation or rewriting of CUDA kernels by LLMs (e.g., KernelBench) shows unstable accuracy and performance up to 34.9× slower than expert versions for complex operators like attention (Ouyang et al. 2025).
 
-**Key Challenge**: Expert CUDA kernels hard-code "correct and efficient execution orchestration" within low-level PTX and asynchronous primitives. When an LLM faces such code, it struggles to identify "what each segment does" and distinguish "which warp a segment belongs to"—semantic modifications and syntax operations are entangled, causing the kernel to fail even with single-line changes.
+**Key Challenge**: Expert CUDA kernels hardcode correct and efficient "execution orchestration" within low-level PTX and asynchronous primitives. When LLMs face such code, they cannot distinguish semantic logic from execution orchestration—semantic modifications and syntax operations are entangled, causing the kernel to fail even with single-line changes.
 
-**Goal**: To enable LLMs to accurately adapt existing expert kernels to new attention semantics while preserving all hardware-specific execution orchestration, without relying on end-to-end generation.
+**Goal**: To enable LLMs to accurately adapt existing expert kernels to new attention semantics while preserving all hardware-specific execution orchestrations without end-to-end generation.
 
-**Key Insight**: Rather than forcing LLMs to deal with the complex syntax of PTX/CuTe, it is better to "lift" CUDA into an executable IR where execution orchestration is made explicit. This allows the LLM to perform semantic modifications at an abstract level before "lowering" back to CUDA.
+**Key Insight**: Rather than forcing LLMs to handle complex PTX/CuTe syntax, CUDA should first be "lifted" into an executable IR where execution orchestration is made explicit. This allows the LLM to perform semantic modifications at an abstract level before "lowering" back to CUDA.
 
-**Core Idea**: The authors design a Pythonic executable IR—CuIR—that exposes execution orchestration (tile shape, memory hierarchy, instruction selection, dependencies, parallelism granularity) through memory, compute, synchronization, and control primitives. By utilizing a "lift-transfer-lower" pipeline combined with IR-level execution verification at each stage, the process of "LLM writing CUDA" is transformed into a reliable collaboration between "LLM writing IR" and automated lifting/lowering tools.
+**Core Idea**: Design a Pythonic executable IR—CuIR—that exposes execution orchestration (tile shapes, memory hierarchy, instruction selection, dependencies, and parallelism granularity) through four primitive categories: memory, compute, sync, and control. This implements a lift-transfer-lower pipeline with IR-level execution validation at each stage, turning "LLM CUDA programming" into a reliable collaboration between "LLM IR authoring" and "automated lifting/lowering tools."
 
 ## Method
 
 ### Overall Architecture
-CuBridge takes two inputs: (1) A high-performance source CUDA kernel (default is FlashAttention v2.8.0); (2) The user's target PyTorch semantic reference (e.g., PrefixLM mask). It outputs a high-performance CUDA kernel for the target variant. The workflow consists of:
+CuBridge solves the problem of automatically producing a high-performance CUDA kernel for a target variant, given a manual source CUDA kernel (default: FlashAttention v2.8.0) and a PyTorch reference describing the target semantics (e.g., PrefixLM mask). Instead of exposing PTX to the LLM, it splits the adaptation into a three-stage pipeline: "lifting" the source CUDA into CuIR (an executable intermediate representation where execution orchestration is explicit), having the LLM "transfer" it into a Target CuIR based on target semantics, and finally "lowering" it back using IR diff to locate differences and apply minimal patches. A core guarantee is that each stage's CuIR can produce numerical results on a backend executor—validated against source CUDA after lifting (fp16 tolerance $10^{-2}$) and against PyTorch reference after transfer—bringing every LLM output back to a "provably equivalent" track.
 
-1.  **Lift**: A single LLM call with structured CoT translates Source CUDA into Source CuIR. The CuIR program is immediately executed on a backend executor to verify numerical consistency with the source CUDA (fp16 tolerance $10^{-2}$), iterating until correct.
-2.  **Transfer**: Another LLM agent reads the PyTorch reference and Source CuIR to generate Target CuIR, performing semantic alignment and performance-aware transformations (e.g., loop splitting to restrict mask checks to boundary tiles). Target CuIR is verified against the PyTorch reference.
-3.  **Lower**: Through IR-diff and region mapping, the system identifies the specific Source CUDA segments requiring modification. It translates the Target CuIR back to Target CUDA following the source implementation style, using a ReAct workflow for line-level editing (insert/delete/modify) to patch the code.
-
-The core guarantee of high accuracy is the executability of the intermediate IR and verification at every stage.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Source CUDA kernel (FlashAttention v2.8.0)<br/>+ Target semantics PyTorch reference"]
+    IN --> LIFT
+    subgraph CUIR["CuIR · Executable IR (Abstract semantic modification + Numerical validation)"]
+        direction TB
+        LIFT["Semantic Lifting<br/>Annotation → worker mapping → primitive lifting (CoT)"]
+        LIFT --> SCU["Source CuIR: Verified against source CUDA<br/>(fp16 tolerance 1e−2, iterative refinement if failed)"]
+        SCU --> TR["Semantic Transfer<br/>Alignment + Performance-aware loop splitting"]
+        TR --> TCU["Target CuIR: Verified against PyTorch reference"]
+    end
+    CUIR --> LOW["Reference-guided Lowering<br/>Source/Target IR diff localization + ReAct line-by-line patching"]
+    LOW --> OUT["Output: Target CUDA kernel<br/>Inherits optimizations like warp specialization"]
+```
 
 ### Key Designs
 
-1.  **CuIR: An Executable Intermediate Representation that Explicates Execution Orchestration**:
-    *   **Function**: Uses Python syntax and four primitive categories (Memory: `alloc / copy / copy_async`; Compute: `gemm / gemm_async`; Sync: `barrier.wait / arrive`; Control: `bind / commit`) to expose the elements that determine performance in high-performance CUDA kernels: tile shapes, memory hierarchy, instruction variants, data dependencies, and parallelism granularity. It abstracts away low-level syntax noise like thread-level indexing.
-    *   **Mechanism**: CuIR programs operate on tile-level data using PyTorch tensors and can be run by a backend executor. Independent parallel tasks are executed serially (without affecting correctness), while dependent tasks follow strict synchronization constraints, aligning with true CUDA behavior. CuIR is an artifact that can be verified immediately after an LLM generates it.
-    *   **Design Motivation**: Previous failure modes of LLMs modifying CUDA stemmed from "failing to understand complex syntax + failing to locate modification points." CuIR addresses this by extracting execution orchestration from complex syntax, turning "what / who / in what order" into an LLM-readable primitive sequence.
+**1. CuIR: An Executable IR with Explicit Execution Orchestration**
 
-2.  **Semantic Lifting: Three-step CoT for Syntax Annotation → Worker Mapping → Primitive Lifting**:
-    *   **Function**: Automatically recovers the corresponding Source CuIR program from an expert CUDA kernel filled with PTX intrinsics and CuTe APIs, ensuring numerical equivalence.
-    *   **Mechanism**: (1) Syntax Annotation—The lifter uses documentation to add semantic comments to each low-level intrinsic; (2) Code-to-Worker Mapping—Analyzes `threadIdx` control flow predicates to attribute code segments to specific warp groups or warps; (3) Primitive Lifting—Translates each worker-aligned region into a CuIR sequence, recovering parameters like tile shape and synchronization scope.
-    *   **Design Motivation**: Warp specialization in expert kernels is asynchronous and implicit. Mapping warps to code blocks is difficult because it is hidden in conditional branches. The three-step CoT explicitly separates identification, attribution, and translation.
+The failure mode of LLMs modifying CUDA code is typically "inability to understand complex syntax while failing to locate target positions"—where semantics and PTX-level syntax are entangled. CuIR solves this by using Python syntax with a minimal set of primitives to extract performance-critical execution orchestration from syntactic noise: Memory primitives (`alloc / copy / copy_async`) expose tile shapes and hierarchy; Compute primitives (`gemm / gemm_async`) expose instruction variants; Sync primitives (`barrier.wait / arrive`) expose synchronization scopes; and Control primitives (`bind / commit`) expose parallelism granularity and dependencies. Details irrelevant to execution structure, like thread-level indexing, are abstracted away.
 
-3.  **Reference-guided Lowering with IR Diff + ReAct Patch**:
-    *   **Function**: Instead of rewriting the entire kernel, the system performs minimal patches on code segments affected by semantic changes when translating Target CuIR back to CUDA.
-    *   **Mechanism**: (1) Differential Analysis—Compares Source/Target CuIR to find semantic differences and maps them to specific CUDA segments; (2) Reference-Guided Lowering—Uses Source CUDA as a style guide to lower abstract primitives (like `copy_async`) to PTX intrinsics (like `cp.async.ca`); (3) Iterative Patching—Uses the ReAct framework for line-level edits (`Edit_Line`), providing complete error feedback to the LLM for refinement.
-    *   **Design Motivation**: LLMs often fail when rewriting long CUDA kernels due to context length and style drift. Minimal patching and style preservation allow the target kernel to inherit all hardware-specific optimizations (like tensor core overlap) from the original kernel.
+Crucially, CuIR is an executable artifact: its programs operate on tile-level data via PyTorch tensors and can be run by a backend executor. Independent parallel tasks are executed serially (without affecting correctness), and dependent tasks follow synchronization constraints, aligning with true CUDA behavior. This makes the "what / who / when" explicit for LLMs, and semantic equivalence can be verified through closed-loop numerical execution.
 
-### Loss & Training
-The framework does not train new models; it is a purely inference-time pipeline. LLM parameters: generation temperature = 0, best-of-$k$ ($k=10$) reported. Numerical tolerance for verification: fp16 = $10^{-2}$. The default source kernel is FlashAttention v2.8.0.
+**2. Semantic Lifting: Annotation → Worker Mapping → Primitive Lifting (CoT)**
+
+Expert kernels often use implicit warp specialization. The mapping between warps and code blocks is hidden behind `threadIdx`-based branches. If an LLM misattributes a code segment to the wrong worker, the subsequent transfer will fail. Lifting breaks the recovery into three Chain-of-Thought steps: Syntax Annotation (using documentation to comment low-level intrinsics), Code-to-Worker Mapping (analyzing predicates like `if (threadIdx.x < 128)` to attribute code to specific warp groups), and Primitive Lifting (translating worker-aligned code regions into CuIR primitives). This structured approach ensures the Source CuIR is numerically equivalent to the source CUDA before proceeding.
+
+**3. Semantic Transformation: Correct Semantics with Performance-Awareness**
+
+IR Transfer adapts the Source CuIR to the new variant at the abstract level. It performs Semantic Alignment by identifying differences between the source IR and target operator, mapping missing semantics to CuIR primitives. Furthermore, it performs Performance-Aware Transformation; for example, in PrefixLM, masks are only needed for boundary tiles. Transfer automatically performs loop splitting, creating a check-free Full Loop and a masked Partial Loop, avoiding unnecessary element-wise checks in the full-loop region.
+
+**4. Reference-guided Lowering: IR Diff Localization + ReAct Minimal Patching**
+
+Lowering follows a minimal-change strategy to avoid the brittleness of rewriting entire kernels. It performs Differential Analysis between Source and Target CuIR to find semantic differences and maps them back to specific CUDA regions. It then uses Reference-Guided Lowering, treating the Source CUDA as a style guide for implementing primitives (e.g., expanding abstract `copy_async` to PTX `cp.async.ca`). Finally, a ReAct framework applies line-level `Edit_Line` patches. Because only necessary lines are modified, the target kernel inherits nearly all hardware-specific optimizations from the source.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing involved A100 and H100 platforms, 8 attention variants (PrefixLM, Sliding Window, etc.), 3 model configurations (Llama2-7B, Qwen2.5-72B, Llama3.1-405B), and sequence lengths up to 8k.
+Testing on A100 and H100 with 8 attention variants (PrefixLM, Sliding Window, etc.) across various model configurations.
 
 | Platform | vs PyTorch | vs FlexAttention | vs Qimeng-Attention |
-| :--- | :--- | :--- | :--- |
+|------|-----------|------------------|---------------------|
 | A100 Avg | 12.69× | 1.18× | 2.54× |
 | H100 Avg | 19.82× | 1.62× | 4.35× |
-| **Total Avg** | **16.03×** | **1.39×** | **3.33×** |
+| Overall Avg | **16.03×** | **1.39×** | **3.33×** |
 
-All variants achieved 100% correctness. Compared to FlashInfer, CuBridge matched performance (1.07×) on natively supported variants and outperformed it (3.49×) on unsupported ones.
+Ours achieved 100% accuracy across all variants. Comparisons with FlashInfer showed 1.07× performance on supported variants and a 3.49× lead on variants not natively supported by FlashInfer.
 
 ### Ablation Study
-Comparison of CuIR inclusion on 96 cases (8 variants × 12 seq lengths) on H100:
+Evaluation of CuIR impact on H100 (96 cases):
 
-| Method | Pass@1 | Pass@3 | Pass@5 | Normalized Speedup |
-| :--- | :--- | :--- | :--- | :--- |
-| Vanilla GPT-5 (Single rewrite) | 0.21 | 0.33 | 0.38 | 1.00× |
+| Method | Pass@1 | Pass@3 | Pass@5 | Normalized Speedup (vs Vanilla GPT-5) |
+|------|--------|--------|--------|----------------------------------|
+| Vanilla GPT-5 (Direct rewrite) | 0.21 | 0.33 | 0.38 | 1.00× |
 | GPT-5 + ReAct (Iterative, no CuIR) | 0.41 | 0.54 | 0.58 | 1.23× |
-| **GPT-5 + CuBridge** | **0.70** | **0.85** | **1.00** | **4.19×** |
-
-Generalization across LLM backends (TFLOPS on H100):
-
-| Backend | Seq=1k | Seq=2k | Seq=4k | Seq=8k |
-| :--- | :--- | :--- | :--- | :--- |
-| GPT-5 | 304.35 | 426.82 | 577.03 | 551.73 |
-| Claude | 292.87 | 428.64 | 562.91 | 569.02 |
-| DeepSeek-V3 | 294.12 | 424.05 | 557.03 | 549.73 |
-| Qwen-3-235B | 295.04 | 421.63 | 558.74 | 542.61 |
+| **GPT-5 + CuBridge (Ours)** | **0.70** | **0.85** | **1.00** | **4.19×** |
 
 ### Key Findings
-- **CuIR is the key to accuracy**: Without CuIR, even with ReAct, the LLM struggles to find the correct logic to modify.
-- **Ability threshold vs. Model choice**: High-end models (GPT-5, Claude, DeepSeek-V3, Qwen-3-235B) show <5% performance variance, indicating the workflow is the primary driver. However, smaller models (Qwen-3-32B) fail the baseline CUDA reasoning.
-- **Hardware complexity increases the advantage**: The performance gap over FlexAttention and Qimeng-Attention grows from A100 to H100 because CuBridge successfully inherits H100-specific optimizations (warp specialization) that other methods lose or fail to generate.
-- **Performance-aware Transformation**: Transformations like loop splitting, which limits mask checks to boundary tiles, are safely performed at the IR level.
+- **CuIR is the Root of Accuracy**: Vanilla GPT-5 plateaus at Pass@5 = 0.38 while CuBridge reaches 1.00. This indicates that the problem is the lack of reasoning structure, not insufficient sampling.
+- **Capacity Threshold**: Performance for GPT-5, Claude, and DeepSeek-V3 is within 5%. However, smaller models like Qwen-3-32B failed, indicating a minimum capability threshold for the "LLM system programmer" role.
+- **Hardware Complexity Advantage**: The performance gap vs. FlexAttention and Qimeng-Attention increases from A100 to H100. CuBridge excels at preserving H100-specific optimizations that are difficult for LLMs to generate from scratch.
+- **Value of Loop Splitting**: Higher efficiency is achieved by performing performance-aware transformations at the IR level compared to manual CUDA modifications.
 
 ## Highlights & Insights
-- **"Do not let the LLM face CUDA directly"**: CuIR serves as a bridge, abstracting what the LLM should handle while leaving error-prone details like PTX intrinsics to deterministic lowering.
-- **Executable IR with Numerical Verification**: Turning LLM outputs into verifiable artifacts (rather than just text) is essential for industrial-grade reliability.
-- **Differential Editing over Redesign**: Patching instead of rewriting ensures that the final kernel retains all non-obvious engineering optimizations from the source.
+- **Wisdom of "Not Facing CUDA Directly"**: CuIR acts similarly to MLIR or Triton—abstracting complexity to a level manageable for LLMs while delegating thread-level indexing and PTX to deterministic lowering.
+- **Executable IR with Numerical Validation**: Every step is verifiable against reference data, converting unreliable LLM inference into a reliable engineering pipeline.
+- **Minimal Patching vs. Rewriting**: By focusing on differences, the system inherits optimizations that were never explicitly explained to the LLM.
+- **Mimicking Style (Reference-Guided)**: Mimicking the source kernel's implementation style is a transferable pattern for ISA-specific intrinsics or platform porting.
 
 ## Limitations & Future Work
-- **Reliance on expert source kernels**: Highly dependent on the availability of high-quality reference kernels (e.g., FlashAttention for NVIDIA), which may not exist for all platforms (FPGA, TPU, etc.).
-- **Primitive set scope**: The current 11 primitives are tailored for attention and may need expansion for convolution or sparse operators.
-- **Cost**: The best-of-10 approach and multiple rounds of verification incur high LLM API costs.
+- **Limitations**: (1) Strong dependency on high-quality source kernels; (2) Evaluation limited to attention-related operators; (3) High inference costs due to multiple validation steps; (4) Lowering may fail during massive restructuring (e.g., swapping nested loops).
+- **Future Work**: Extending CuIR for general HPC operators (conv, scan); introducing partial-lift fallbacks; distilling CuIR capabilities into smaller models (7-32B); and integrating with reinforcement learning for automated schedule search.
 
 ## Related Work & Insights
-- **vs. FlashAttention**: CuBridge acts as an intelligent extender rather than a replacement.
-- **vs. FlexAttention**: CuBridge breaks through template limitations but requires LLM inference.
-- **vs. Triton/TVM/MLIR**: While traditional IRs are designed for compilers, CuIR is specialized for LLM reasoning and high-performance kernel optimization.
+- Unlike **FlexAttention**, CuBridge breaks template constraints via IR-level rewriting.
+- Unlike **Qimeng-Attention** or **Kevin**, it avoids end-to-end generation, narrowing the search space from unstructured CUDA to structured CuIR.
+- **Insight**: The paradigm of "LLM writing executable IR + automated lowering" is applicable to SQL optimization, hardware design (HDL), and kernel porting.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The "lift-transfer-lower" pipeline combined with an executable IR is a clear methodological contribution to LLM-for-systems.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive cross-platform and cross-variant evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Logical progression and clear visualizations.
-- **Value**: ⭐⭐⭐⭐⭐ Transforms LLM-driven CUDA generation into a reliable engineering system.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
-- [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](../../NeurIPS2025/code_intelligence/a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
 - [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
+- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 
 </div>
 

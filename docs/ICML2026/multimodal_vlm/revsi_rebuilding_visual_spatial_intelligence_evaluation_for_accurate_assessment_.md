@@ -2,138 +2,132 @@
 title: >-
   [Paper Note] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning
 description: >-
-  [ICML 2026][Multimodal VLM][VSI-Bench] This paper systematically reveals that the widely used VSI-Bench suffers from structural failures due to 3D annotation drift and frame sampling inconsistency. By re-annotating 381 s…
+  [ICML 2026][Multimodal VLM][VSI-Bench] This paper systematically reveals structural failures in the widely used VSI-Bench due to 3D label drift and frame sampling inconsistency. The authors re-label 381 scenes and 5365 objects, design frame-budget adaptive QA and "dummy video" (removing query object frames) stress tests to construct ReVSI, a high-fidelity s
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "VSI-Bench"
-  - "Spatial Reasoning"
-  - "Frame Budget"
-  - "Virtual Video"
-  - "hallucination"
+  - ICML 2026
+  - Multimodal VLM
+  - VSI-Bench
+  - hallucination
 date: 2026-05-08
-content_hash: 1dcabcef277e40f0
+content_hash: 273c9566fa5de1ab
 ---
-
 # ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.24300](https://arxiv.org/abs/2604.24300)  
 **Code**: Available (Project Page + GitHub + HuggingFace)  
-**Area**: Multimodal VLM / Evaluation Benchmark / Visual Spatial Intelligence  
-**Keywords**: VSI-Bench, Spatial Reasoning, Frame Budget, Virtual Video, hallucination
+**Area**: Multimodal VLM / Evaluation Benchmarks / Visual Spatial Intelligence  
+**Keywords**: VSI-Bench, Spatial Reasoning, Frame Budget, Virtual Video, Hallucination
 
 ## TL;DR
-This paper systematically reveals that the widely used VSI-Bench suffers from structural failures due to 3D annotation drift and frame sampling inconsistency. By re-annotating 381 scenes and 5,365 objects and designing frame-budget adaptive QA and "queried-object-removed" dummy video stress tests, the authors construct a high-fidelity spatial intelligence benchmark named ReVSI. Evaluations show that open-source VLMs experience performance drops of up to 40% on ReVSI and maintain high hallucination rates on dummy videos, exposing a systemic overestimation of existing spatial reasoning capabilities by VSI-Bench.
+This paper systematically reveals structural failures in the widely used VSI-Bench due to 3D label drift and frame sampling inconsistency. The authors re-label 381 scenes and 5365 objects, design frame-budget adaptive QA and "dummy video" (removing query object frames) stress tests to construct ReVSI, a high-fidelity spatial intelligence benchmark. Evaluations show that open-source VLMs drop by up to 40% on ReVSI and maintain high hallucination rates on dummy videos, exposing a systematic overestimation of existing spatial reasoning capabilities.
 
 ## Background & Motivation
 
-**Background**: As VLMs expand toward embodied and 3D perception, VSI evaluation benchmarks such as VSI-Bench, SPAR-Bench, and VSI-SUPER have become mainstream. These use 3D datasets like ScanNet/ARKitScenes to automatically generate QA to test model spatial reasoning on tasks such as object counting, relative direction, and room area. VLM training (SpatialVLM, Cambrian-S, SpaceR) is also optimized around these benchmarks.
+**Background**: As VLMs expand toward embodied AI and 3D perception, VSI evaluation benchmarks like VSI-Bench, SPAR-Bench, and VSI-SUPER have become mainstream. These use 3D datasets such as ScanNet/ARKitScenes to automatically generate QA for testing spatial reasoning in object counting, relative orientation, and room area. VLM training (SpatialVLM, Cambrian-S, SpaceR) also optimizes around these benchmarks.
 
-**Limitations of Prior Work**: The authors use manual audits to reveal two core defects. First, **Annotation-Video Drift**: VSI-Bench ground truth (GT) is derived from point-cloud-based 3D reconstruction annotations (designed for traditional 3D perception). However, objects clearly visible in raw videos may be omitted due to incomplete reconstruction, and object categories are often mislabeled (e.g., a cup labeled as a notebook). Room areas are calculated based on noisy Alpha Shapes, resulting in many QA pairs that are incorrect or semantically ambiguous under video evidence—out of 565 Object Counting samples, 27% were wrong and 11% were ambiguous. Second, **Unobservable Frame Sampling**: In practice, VLMs can only process 16/32/64 frames, yet VSI-Bench GT is labeled based on all frames. Figure 3 shows that under a 16-frame constraint, GT correctness drops to 67%, meaning a significant portion of questions are unanswerable given the actual model input.
+**Limitations of Prior Work**: Manual audits reveal two core defects. First, **Label-Video Drift**: VSI-Bench ground truth (GT) comes from point-cloud-based 3D reconstruction labels (intended for traditional 3D perception), but objects clearly visible in raw videos may be missing due to incomplete reconstruction, or mislabeled (e.g., a cup labeled as a notebook). Room areas are calculated via noisy Alpha Shapes, leading to many QA pairs that are incorrect or semantically ambiguous under video evidence—among 565 Object Counting questions, 27% were wrong and 11% were ambiguous. Second, **Frame Sampling Unobservability**: VLMs can only observe 16/32/64 frames, but VSI-Bench GT is labeled based on all frames. Figure 3 shows that at 16 frames, GT correctness drops to 67%, meaning many questions are unanswerable given the model's actual input.
 
-**Key Challenge**: Benchmarks default to the assumption that "what the model sees matches what was seen during annotation." However, the sparse-frame input of modern VLMs breaks this assumption, making it impossible to distinguish whether an error is due to weak spatial reasoning or missing evidence. Furthermore, skewed answer distributions in VSI-Bench (e.g., "2" accounting for 53% of Object Counting and distances being mostly 0–2m) allow models to achieve high scores via priors rather than visual evidence.
+**Key Challenge**: Benchmarks assume "full scene seen by the model = full scene seen during labeling." Modern VLM sparse-frame input breaks this assumption, making it impossible to distinguish whether an error stems from weak spatial reasoning or missing evidence. Furthermore, skewed answer distributions (e.g., "2" accounting for 53% of Object Counting) allow models to score high using priors rather than visual evidence.
 
-**Goal**: While retaining the VSI-Bench task paradigm, the goal is to ensure that (i) annotations are strictly consistent with the original video; (ii) QA is answerable and correct under every frame budget; and (iii) controllable diagnostic tools are provided to decouple "visual evidence" from "reasoning capability."
+**Goal**: While maintaining the VSI-Bench task paradigm, ensure (i) labels are strictly consistent with raw videos; (ii) QA is answerable and correct at every frame budget; (iii) provide controllable diagnostics to decouple visual evidence from reasoning ability.
 
-**Key Insight**: Instead of training another model, it is more effective to fix the evaluation—strictly aligning "what the benchmark asks" with "what the model actually sees" to give the benchmark diagnostic value.
+**Key Insight**: Rather than training a new model, fix the evaluation—aligning "what the benchmark asks" strictly with "what the model sees" to restore diagnostic value.
 
-**Core Idea**: By implementing video-aligned manual 3D re-annotation, frame-budget adaptive QA, and dummy video stress testing, the authors rebuild the first input-consistent VSI benchmark, ReVSI.
+**Core Idea**: Rebuild the first input-consistent VSI benchmark, ReVSI, through three components: video-aligned manual 3D re-labeling, frame-budget adaptive QA, and dummy video stress tests.
 
 ## Method
 
 ### Overall Architecture
-The ReVSI pipeline consists of three stages: (1) Using a self-developed 3D web annotation interface, the original VSI-Bench is expanded from 288 scenes and 65 categories to 381 scenes and 504 categories (open-set) across ScanNetv2/ScanNet++/ARKitScenes/3RScan/MultiScan, with 5,365 3D bounding boxes redrawn. (2) QA is regenerated for 6 tasks (object counting, object size, absolute distance, room size, relative distance, and relative direction; Object Appearance Order is removed as it focuses more on temporal reasoning) using stricter template rules, with each pair manually verified. (3) GT is constructed for four frame budgets (16/32/64/all-frame) for the same video, and "dummy videos" (deleting all frames containing queried objects) are generated for visibility-guided control experiments.
+The ReVSI pipeline consists of three stages: (1) Using a proprietary 3D web labeling interface to expand from 288 scenes/65 categories to 381 scenes/504 open-vocabulary categories across ScanNetv2/ScanNet++/ARKitScenes/3RScan/MultiScan, redrawing 5365 3D boxes; (2) Regenerating QA for 6 task types (object counting, size, absolute distance, room size, relative distance, and relative direction) using stricter templates and manual verification; (3) Constructing GT for the same video under 16/32/64/all-frame sampling budgets, and generating "dummy videos" by removing all frames containing the query object for visibility-guided control experiments.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw Video + VSI-Bench Labels<br/>(ScanNet/ARKitScenes etc., 5 3D datasets)"] --> B
+    B["Video-aligned Open-vocabulary 3D Re-labeling<br/>Filter mislabels, tighten 3D boxes, add missing objects, manual room polygons<br/>288→381 scenes, 65→504 classes, 3185→5365 objects"] --> C
+    C["Debiased + Human-verified QA Regeneration<br/>Rewrite templates for 6 tasks, eliminate distribution bias, manual verification"] --> D
+    subgraph D["Frame-budget Adaptive Evaluation + Dummy Video Control Experiments"]
+        direction TB
+        D1["Rasterization via GT camera poses to determine visibility (coverage >5%)<br/>Construct GT(frames) for 16/32/64/all budgets"]
+        D2["Dummy Video: Delete all frames containing query objects<br/>GT is fixed (e.g., count=0), testing reliance on visual evidence"]
+    end
+    D --> E["ReVSI Benchmark<br/>MCQ via Acc · NQ via MRA → Diagnostic Evaluation"]
+```
 
 ### Key Designs
 
-1.  **Video-Aligned Open-Vocabulary 3D Re-annotation**:
-    - **Function**: Replaces 3D GT based on "noisy reconstruction meshes" with "manual high-fidelity annotations anchored to original video," increasing object scale from 3,185 to 5,365 and categories from 65 to 504.
-    - **Mechanism**: A web annotator was developed where the author (a 3D domain expert) started with original VSI-Bench annotations, filtered mislabels, tightened 3D boxes, recovered objects visible in video but missing in reconstruction, and extrapolated true physical sizes for geometrically damaged objects using adjacent frames. Open-set labels (e.g., "Sony PlayStation", "Coca-Cola box") were manually written, with GPT-5.2 used only for verification. Room areas moved from Alpha Shape to human-drawn polygons from a top-down view to exclude ambiguous boundaries.
-    - **Design Motivation**: The root issue of old GT was that the annotation target was the mesh rather than the video. Changing the annotation target solves downstream issues; open-vocabulary and finer categories prevent models from relying on narrow 65-category priors.
+**1. Video-aligned Open-vocabulary 3D Re-labeling: Anchoring GT to raw video rather than noisy meshes**
 
-2.  **Debiased and Manually Verified QA Regeneration**:
-    - **Function**: Rewrites templates while retaining task definitions to eliminate distribution biases in VSI-Bench (where guessing "2" yielded 62% accuracy).
-    - **Mechanism**: For Object Counting, single-instance queries (e.g., "How many black office chairs") and "two-category sum" templates are introduced, and "this room" is changed to "the scene" to match multi-room videos. For Object Size, fixed-size categories like toilets/beds are removed, and OOD sampling is used for items like refrigerators. For Absolute Distance, <1m questions (answerable via 2D cues) are replaced with long-range pairs. For Relative Direction, positioning objects must have a footprint $\le 1\text{ m}^2$ and spacing $\ge 1\text{m}$, with "facing towards/away" templates added. Every question underwent manual verification.
-    - **Design Motivation**: Original benchmarks behaved like multiple-choice questions with concentrated answers, allowing models to collapse to high-frequency modes; statistical debiasing and template diversification block this shortcut, ensuring metrics reflect spatial reasoning.
+ReVSI addresses the misalignment where GT was based on reconstructed meshes rather than raw video. Using a custom web labeler, the authors filtered mislabels, tightened 3D boxes, and added objects visible in video but missing in reconstruction. Physical sizes were extrapolated for geometrically broken objects using neighboring frames. Room areas were manually drawn via top-down polygons instead of using Alpha Shapes. Open-vocabulary labels (e.g., "Sony PlayStation") were manually written and verified by GPT-5.2. This expansion (381 scenes, 504 categories) prevents models from exploiting narrow category priors.
 
-3.  **Frame-Budget Adaptive Evaluation and Dummy Video Control Experiments**:
-    - **Function**: Constructs GT for 16/32/64/all frame budgets and creates dummy videos (deleting queried frames) to test whether models truly depend on visual evidence.
-    - **Mechanism**: Each sampled frame is rasterized using GT camera poses to determine object visibility (occupying >5% area); invisible cases are manually labeled. Room Size and Route Planning are excluded from the 16-frame setting due to information scarcity. Dummy videos retain scene context but remove target object frames; they are "unanswerable" for humans, but GT is deterministic (e.g., counting must be 0). Metrics: Acc for MCQ; Mean Relative Accuracy $\text{MRA}=\frac{1}{|C|}\sum_{\theta\in C}\mathbb{1}[|\hat y-y|/y<1-\theta]$ with $C=\{0.5,0.55,\dots,0.95\}$ for NQ.
-    - **Design Motivation**: Aligning "model input" with the "benchmark evaluation target" is essential for reliable assessment. Dummy videos expose the implicit assumption of whether an object was actually seen before answering—if a model answers correctly without evidence, the output is driven by prior rather than vision, which is the definition of hallucination.
+**2. Debiased + Human-verified QA Regeneration: Eliminating answer distribution bias**
+
+VSI-Bench's skewed distribution (guessing "2" yields 62% in Counting) allows models to ignore visual evidence. ReVSI rewrites templates for all tasks: Object Counting introduces single-instance queries and "two-category sum" templates; Object Size removes categories with fixed sizes (like toilets) and performs OOD sampling for refrigerators; Absolute Distance replaces <1m samples with long-range pairs; Relative Direction adds "facing/backing" templates. Manual verification ensures every question is answerable, forcing the metric to reflect true spatial reasoning.
+
+**3. Frame-budget Adaptive Evaluation + Dummy Video Experiments: Aligning observation and evaluation**
+
+Modern VLMs typically process 16/32/64 frames, whereas old GT assumed all frames. ReVSI uses GT camera poses to rasterize sampled frames and determine object visibility (area > 5%). GT becomes a function $\text{GT}(\text{frames})$ tailored to the specific budget. Dummy videos—where evidence frames are deleted—provide a definitive GT (e.g., count is 0). For metrics, MCQ uses Accuracy, and NQ uses Mean Relative Accuracy:
+$$\text{MRA}=\frac{1}{|C|}\sum_{\theta\in C}\mathbb{1}[|\hat y-y|/y<1-\theta]$$
+where $C=\{0.5,0.55,\dots,0.95\}$. If a model answers correctly without visual evidence, it defines hallucination driven by priors.
 
 ### Loss & Training
-ReVSI is an evaluation benchmark and does not involve model training; assessments follow MRA (NQ) and Acc (MCQ).
+ReVSI is an evaluation benchmark; no specific training is performed. Evaluation follows MRA (NQ) and Acc (MCQ).
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation includes general VLMs (Qwen3-VL, InternVL-3.5, LLaVA-Video, GPT-5.2, Gemini 3) and 3D expert models (SpatialVLM, Cambrian-S, SpaceR, VLM-3R, Spatial-MLLM) on both ReVSI and VSI-Bench.
+Evaluations include general VLMs (Qwen3-VL, InternVL-3.5, LLaVA-Video, GPT-5.2, Gemini 3) and 3D expert models (SpatialVLM, Cambrian-S, SpaceR, VLM-3R, Spatial-MLLM).
 
 | Dataset Statistics | VSI-Bench | ReVSI |
-| :--- | :--- | :--- |
+|--------------------|-----------|-------|
 | Scenes | 288 | 381 |
 | Objects | 3185 | 5365 |
 | Categories | 65 | 504 |
-| Open-Vocabulary | ✗ | ✓ |
-| Frame-Adaptive GT | ✗ (All-frame only) | ✓ (16/32/64/all) |
+| Open Vocabulary | ✗ | ✓ |
+| Frame-adaptive GT | ✗ (All-frame only) | ✓ (16/32/64/all) |
 
-| Model Type | VSI-Bench Perf | ReVSI Perf | Conclusion |
-| :--- | :--- | :--- | :--- |
-| Closed-source (GPT-5.2, Gemini 3) | Lower than open-source | Significantly outperforms open-source | VSI-Bench systematically underestimates closed-source models |
-| Open-source (Qwen3-VL, InternVL-3.5) | High | Dropped by up to 40% | VSI-Bench overestimates open-source VLMs |
-| 3D Finetuned Experts (SpaceR, 3D-R1) | Much higher than base | Gains drop significantly | Finetuning gains were amplified by benchmark bias |
+| Model Category | VSI-Bench Performance | ReVSI Performance | Conclusion |
+|----------------|-----------------------|-------------------|------------|
+| Closed-source (GPT-5.2, Gemini 3) | Lower than open-source | Significantly outperforms open-source | VSI-Bench underestimates closed-source |
+| Open-source VLM (Qwen3-VL, InternVL-3.5) | High | Drops up to 40% (Counting/Rel-Dist) | VSI-Bench overestimates open-source |
+| 3D Finetuned Experts (SpaceR, 3D-R1) | Much higher than base | Gains sharply reduced | Gains were amplified by benchmark bias |
 
 ### Ablation Study
 
 | Diagnostic Setting | Key Findings |
-| :--- | :--- |
-| Object Counting (Predicting "2") | 62% on VSI-Bench, <20% on ReVSI; verifies successful debiasing. |
-| Absolute Distance | Most models scored higher on ReVSI → MRA is more tolerant for long distances; removing <1m samples highlighted Qwen3-VL's long-range strength. |
-| Dummy Video Object Counting | InternVL-3.5 still outputs mid-range numbers → Non-zero hallucination rate proves indoor priors drive output. |
-| Object Size (All-black frames) | Some expert models still hit "typical category sizes," revealing size estimation relies heavily on category priors. |
-| Frame Budget Scan | GT correctness rose from 67% → 92% (16 → 64 frames), proving the necessity of frame-aware design. |
+|--------------------|--------------|
+| Guessing "2" in Counting | 62% on VSI-Bench vs <20% on ReVSI; verifies successful debiasing. |
+| Absolute Distance | Some scores improved due to MRA's tolerance for long distances after removing "easy" <1m samples. |
+| Dummy Video Counting | InternVL-3.5 still gives non-zero counts; proves output is driven by indoor priors. |
+| Object Size (Black Frames) | Expert models still hit typical sizes, revealing reliance on category priors. |
+| Frame Budget Sweep | GT correctness improved from 67% to 92% when going from 16 to 64 frames. |
 
 ### Key Findings
-- The "Open Source > Closed Source" conclusion on VSI-Bench is reversed on ReVSI, suggesting previous "Expert SOTA" conclusions were likely benchmark artifacts.
-- 3D finetuned experts show diminishing returns on clean ReVSI data; post-training data scale is decoupled from performance, indicating current 3D instruction tuning primarily overfits noisy GT.
-- Dummy videos expose that multiple SOTA open-source VLMs are almost insensitive to whether visual evidence exists—this is a true bottleneck in spatial reasoning.
-- Frame sampling empirical threshold: Single-room scenes require at least 64 frames, and benchmarks should provide localized GT based on frame budgets.
+- The "Open > Closed source" conclusion from VSI-Bench is reversed on ReVSI, indicating previous SOTA claims were likely benchmark artifacts.
+- Gains from 3D instruction finetuning diminish on a cleaner benchmark, suggesting current 3D experts are largely "overfitting noisy GT."
+- Dummy videos expose that SOTA open-source VLM outputs are insensitive to the presence of visual evidence—a major bottleneck in spatial reasoning.
 
 ## Highlights & Insights
-- **Empirical example of "Evaluation maintenance being more important than model modification"**: The author identified 27% error + 11% ambiguity in VSI-Bench and overturned most SOTA assertions, showing evaluation hygiene is a high-ROI direction for spatial AI research.
-- **Dummy video protocol**: This can be extended to any video QA without cost by "automatically removing evidence frames to see if the model still answers." This visibility-controlled stress test systematically quantifies hallucination and has high transfer value.
-- **Frame-budget-aware GT**: For the first time, "GT is not a constant, but a function $\text{GT}(\text{frames})$" was implemented in a large-scale benchmark; future long-video benchmarks should adopt this.
+- **The importance of evaluation hygiene**: Auditing the 27% error rate in VSI-Bench demonstrates that fixing the evaluation is higher ROI than model architectural changes in current spatial AI research.
+- **Dummy video protocol**: This visibility-controlled stress test can be extended to any video QA task to systematically quantify hallucination.
+- **Frame-budget-aware GT**: GT is no longer treated as a constant but as a function $\text{GT}(\text{frames})$, a standard that future long-video benchmarks should adopt.
 
 ## Limitations & Future Work
-- While large-scale, re-annotation remains manual and difficult to scale to in-the-wild videos; future work could use GPT-5.2 for semi-automation with manual checks.
-- Object Appearance Order was removed to avoid temporal reasoning, but joint spatial-temporal understanding is still not covered.
-- Dummy videos treat "no evidence → answer 0/unknown" as GT; while intuitive, this does not fully align with "refuse to answer" behaviors in certain models, and confidence calibration could be added.
-- ReVSI shares task definitions with VSI-Bench, meaning it has not expanded into completely new 3D reasoning tasks like multi-view registration or 6DoF manipulation.
+- Re-labeling is high-quality but manually intensive, making it difficult to scale to in-the-wild videos without automation.
+- Temporal reasoning was excluded by removing Object Appearance Order; spatial-temporal joint reasoning remains a future target.
+- ReVSI retains the task definitions of VSI-Bench; future work should include new 3D tasks like multi-view registration or 6DoF manipulation.
 
 ## Related Work & Insights
-- **vs VSI-Bench (Yang 2025a)**: Directly audited by this work; ReVSI serves as a more trustworthy successor correcting its flaws.
-- **vs SPAR-Bench / VSI-SUPER**: These also suffer from GT drift and frame mismatch; the "input-consistent" principle of ReVSI can be applied to them.
-- **vs 3D Finetuned VLMs (SpatialVLM, Cambrian-S, SpaceR)**: ReVSI reveals their gains diminish on clean benchmarks, urging researchers to prioritize evaluation rigor.
-- **Cross-task insights**: The dummy video / visibility-controlled QA protocol can be generalized to medical VQA (removing critical anatomical regions) or robot perception (deleting key frames).
+- **vs VSI-Bench (Yang 2025a)**: Directly audited and corrected by this work; ReVSI is its more credible successor.
+- **vs 3D Finetuned VLMs**: ReVSI reveals that post-training data scale is somewhat decoupled from performance on clean benchmarks, urging more rigorous evaluation.
+- **Cross-task Inspiration**: The dummy video protocol can be generalized to medical VQA (removing critical anatomical areas) or robot perception tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Reconstruction and new protocols for benchmarks; significant impact even without entirely new tasks.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 10+ models across open/closed/expert categories with multi-frame budget and dummy video diagnostics; sufficient audit data.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain of problem diagnosis → solution → empirical validation; Figures 1, 3, and 5 effectively summarize core issues.
-- Value: ⭐⭐⭐⭐⭐ directly challenges the credibility of a widely cited benchmark and may shift the direction of VLM spatial reasoning research.
-
-## Related Papers
-
-- [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](../../CVPR2026/multimodal_vlm/spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
-- [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICML 2026\] Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)
-- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/multimodal_vlm/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐ Significant protocol innovation despite maintaining existing task archetypes.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of 10+ models across closed/open/expert categories with multi-dimensional diagnostics.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear argumentation from diagnosis to solution to verification.
+- Value: ⭐⭐⭐⭐⭐ Strongly challenges existing SOTA claims and provides the standard for future spatial reasoning evaluation.
 
 <!-- RELATED:START -->
 
@@ -144,8 +138,8 @@ Evaluation includes general VLMs (Qwen3-VL, InternVL-3.5, LLaVA-Video, GPT-5.2, 
 - [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](../../CVPR2026/multimodal_vlm/spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
 - [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICML 2026\] Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)
-- [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/multimodal_vlm/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](../../CVPR2026/multimodal_vlm/abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
+- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](../../CVPR2026/multimodal_vlm/g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
 
 </div>
 

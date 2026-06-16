@@ -1,148 +1,131 @@
 ---
 title: >-
-  [Paper Note] Accelerating Diffusion Model Training under Minimal Budgets: A Condensation-Based Perspective
+  [Paper Note] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation
 description: >-
-  [CVPR 2026][Image Generation][Dataset Condensation] This paper proposes D2C (Diffusion Dataset Condensation)—the first dataset condensation framework for diffusion models—which achieves 100–233× training speedup while ma…
+  [CVPR 2026][Image Generation][Paper Note] This work is the first to apply Dataset Condensation (DC) to diffusion model training, proposing the two-stage D2C framework. The Select stage uses a diffusion difficulty score and interval sampling to select a compact subset, while the Attach stage appends textual and visual representations to each sample. Using only
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Dataset Condensation"
-  - "Diffusion Model"
-  - "Training Acceleration"
-  - "Data-Centric"
-  - "Efficient Training"
-date: 2025-07-08
-content_hash: 137f2b6dc3a944cd
+  - CVPR 2026
+  - Image Generation
+date: 2026-05-08
+content_hash: 2839168b429a7338
 ---
-
-# Accelerating Diffusion Model Training under Minimal Budgets: A Condensation-Based Perspective
+# D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation
 
 **Conference**: CVPR 2026  
 **arXiv**: [2507.05914](https://arxiv.org/abs/2507.05914)  
-**Code**: TBD  
-**Area**: Image Generation  
-**Keywords**: Dataset Condensation, Diffusion Model, Training Acceleration, Data-Centric, Efficient Training
+**Code**: None (but method is fully reproducible)  
+**Area**: Image Generation / Efficient Training / Dataset Distillation  
+**Keywords**: Diffusion model training, Dataset Condensation, Difficulty Scoring, Interval Sampling, REPA acceleration  
 
 ## TL;DR
-
-This paper proposes D2C (Diffusion Dataset Condensation)—the first dataset condensation framework for diffusion models—which achieves 100–233× training speedup while maintaining high-quality image generation by using only 0.8–8% of ImageNet data through a two-stage "Select + Attach" pipeline.
+This work is the first to apply Dataset Condensation (DC) to diffusion model training, proposing the two-stage D2C framework. The Select stage uses a diffusion difficulty score and interval sampling to select a compact subset, while the Attach stage appends textual and visual representations to each sample. Using only 0.8% of ImageNet (10K images), it achieves an FID of 4.3 in 40K steps, which is 100× faster than REPA and 233× faster than vanilla SiT.
 
 ## Background & Motivation
+Training diffusion models is extremely resource-intensive—SiT-XL/2 requires 7 million steps on 1.28 million images. While methods like REPA optimize from the model side (representation alignment), the possibility of reducing the training set from the data side remains unexplored. Dataset Condensation (DC) is well-studied for discriminative models, but directly applying existing DC methods (e.g., SRe2L, RDED) to diffusion training leads to collapse. This occurs because DC methods optimize for class-discriminative features rather than true image distributions, resulting in synthetic images with poor structural and semantic fidelity.
 
-**Background**: Current diffusion models (DiT, SiT, etc.) typically require millions of images and millions of training iterations; for instance, SiT-XL/2 on ImageNet needs 7M steps, and REPA still requires 4M steps, consuming hundreds of GPU·hours.
-
-**Limitations of Prior Work**: Existing dataset distillation/condensation methods (e.g., SRe2L, RDED, Herding, K-Center) are almost exclusively designed for discriminative tasks such as classification, and perform extremely poorly when directly transferred to diffusion model training (RDED yields FID of 166.2 on DiT-L/2).
-
-**Key Challenge**: Pixel-level distillation methods synthesize images biased toward category-discriminative features while lacking preservation of distributional diversity and semantic structure, leading to generation quality collapse and unstable convergence. Discriminative features ≠ generative features.
-
-**Goal**: Systematically construct a compact, information-rich data subset tailored for diffusion model training from the data perspective, a direction that has been largely unexplored.
-
-**Key Insight**: Simple pruning strategies (random sampling, geometric methods like K-Center/Herding) cannot perform difficulty-aware selection suited to diffusion denoising characteristics.
-
-**Core Idea**: A two-stage pipeline—**Select** (difficulty-aware interval sampling) + **Attach** (dual semantic and visual information injection)—to build a compact yet maximally informative training subset for diffusion models.
+## Core Problem
+Can dataset condensation reduce training data to 0.8–8% of its original size while maintaining the generation quality of diffusion models and significantly accelerating training convergence?
 
 ## Method
 
 ### Overall Architecture
 
-D2C adopts a two-stage pipeline: the **Select** stage filters a compact, diverse, and learnable subset from the full training set; the **Attach** stage enriches each selected image with semantic and visual representations. The diffusion model is then trained from scratch on this augmented condensed dataset with a joint denoising and representation alignment objective.
+D2C aims to address whether training data can be reduced to 0.8–8% while preserving generation quality and substantially accelerating convergence. It is a two-stage framework: the Select stage uses a pre-trained diffusion model to calculate a denoising difficulty score for each sample and selects a compact subset via interval sampling $k$ after sorting by difficulty; the Attach stage then appends two types of information to the selected samples (DC-Embedding for text+class and DINOv2 visual features for REPA-style alignment), enabling high-quality model training on minimal data.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Full Dataset<br/>ImageNet 1.28M"] --> B
+    subgraph SEL["Select Stage: Selecting Compact Subsets"]
+        direction TB
+        B["Diffusion Difficulty Score<br/>Denoising loss of pre-trained model"] --> C["Interval Sampling<br/>Intra-class sort by difficulty, take one every k"]
+    end
+    SEL --> D["Compact Subset (10K, 0.8%)"]
+    subgraph ATT["Attach Stage: Enriching Conditional Signals"]
+        direction TB
+        E["DC-Embedding Dual Condition<br/>T5 Text Embedding + Class Embedding"]
+        F["Visual Information Injection<br/>DINOv2 patch features"]
+    end
+    D --> E
+    D --> F
+    E --> G["Enriched Condensed Dataset"]
+    F --> G
+    G --> H["Diffusion Model Training<br/>Denoising loss + 0.5·REPA alignment loss"]
+```
 
 ### Key Designs
 
-1. **Diffusion Difficulty Score + Interval Sampling (Select Stage)**:
+**1. Diffusion Difficulty Score: Measuring Sample Complexity via Denoising Loss**
 
-    - Function: Computes a "diffusion difficulty score" for each training image, then performs uniform interval sampling over the sorted list
-    - Mechanism: A pre-trained diffusion model's class-conditional posterior probability $p_\theta(\mathbf{c}|\mathbf{x})$ is used to rank sample difficulty. Via Bayes' rule, the difficulty score reduces to the negative conditional likelihood (i.e., the denoising loss): $s_{\text{diff}}(\mathbf{x}) = -\mathbb{E}_{\epsilon,t}[\|\epsilon - \epsilon_\theta(\mathbf{x}_t, t, \mathbf{c})\|_2^2]$. Higher scores indicate more difficult samples. Within each class, samples are sorted by difficulty in ascending order and sampled at fixed interval $k$, balancing learnability of easy samples and diversity of hard samples
-    - Design Motivation: Selecting only the easiest samples (Min) yields fast convergence but insufficient diversity; selecting only the hardest (Max) introduces too much noise. Interval sampling achieves uniform coverage across the difficulty distribution—$k=96$ at 0.8% budget and $k=16$ at 4% budget yield optimal results
+To select samples, a difficulty metric is required. The authors use the average denoising loss of samples on a pre-trained diffusion model as the difficulty score: $s_{diff}(x) = -p_\theta(x|c) \propto -\mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t, c)\|^2]$. A high loss implies the model finds the sample hard to predict (complex or blurry). Through Bayesian derivation $p_\theta(c|x) \propto p_\theta(x|c)$, the denoising loss directly reflects the confidence of a sample belonging to a certain class. A key finding is that neither the easiest (Min) nor the hardest (Max) samples are optimal—Min samples lack diversity, while Max samples are too noisy to learn; medium-difficulty samples exhibit the smallest distribution discrepancy (U-shaped curve, Fig. 8 Right).
 
-2. **Dual Conditional Embedding (DC-Embedding, Attach Stage—Semantic Information)**:
+**2. Interval Sampling: Taking One Every k Samples by Difficulty**
 
-    - Function: Fuses pre-trained text encoder (T5-encoder) class description embeddings with learnable class embeddings as the diffusion model's conditional input
-    - Mechanism: For each class, a descriptive prompt (e.g., "a photo of a cat") is generated and encoded by the text encoder to produce text embedding $t_c$ and text mask $t_{\text{mask}}$, which are then fused with learnable class embedding $e_c$ via 1D convolution + residual MLP: $y_{\text{text}} = \text{MLP}(\tilde{t}_c) + \tilde{t}_c + e_c$. Text embeddings are pre-computed and stored on disk
-    - Design Motivation: Learnable class embeddings trained from scratch lack semantic information under data-limited settings; incorporating rich pre-trained text encoder semantics (especially inter-class discriminability) significantly improves conditional generation quality while retaining the flexibility of learnable embeddings
+Given the difficulty scores, samples must be selected uniformly. Within each class, samples are sorted by difficulty and one is taken every $k$ samples, where $k$ is proportional to the dataset size (e.g., $k=96$ for a 10K subset). This naturally covers the range from easy to medium-hard while avoiding extremely difficult samples. This performs better than "picking only the middle" (Medium) because skipping easy samples entirely results in a loss of base distribution coverage.
 
-3. **Visual Information Injection (Attach Stage—Visual Information)**:
+**3. DC-Embedding: Restoring Inter-class Semantic Relations via Text Embeddings**
 
-    - Function: Extracts instance-level visual representations for each selected image using a pre-trained visual encoder (DINOv2), stored on disk and injected via a representation alignment loss during training
-    - Mechanism: DINOv2 extracts patch-level semantic features $y_{\text{vis}} \in \mathbb{R}^{N \times d}$ for each image, truncated to the first $h$ tokens as a compact representation. During training, token features $\{h_i\}$ from an intermediate diffusion model layer are projected and aligned with visual representations via cosine alignment loss: $\mathcal{L}_{\text{proj}} = -\frac{1}{h}\sum_i \langle \frac{\phi(h_i)}{\|\phi(h_i)\|}, \frac{v_i}{\|v_i\|} \rangle$
-    - Design Motivation: Semantic embeddings primarily provide inter-class structural discrimination, but intra-class diversity (texture, pose, etc.) requires instance-level visual information. Inspired by REPA's representation alignment strategy, this injects spatial consistency priors into the diffusion model, which is especially critical under extremely small datasets
+This is the first type of additional information in the Attach stage. Pure class embeddings lose semantic relationships between classes (e.g., cats and dogs are just two unrelated one-hot vectors). The authors use a T5 encoder to encode class names (e.g., "a photo of a cat") into text embeddings, which are then fused with learnable class embeddings via 1D convolution and a residual MLP. This significantly outperforms pure class embeddings (FID 9.01 vs 14.96) because text embeddings naturally encode semantic relationships—similar dog breeds naturally cluster in T-SNE (Fig. 9).
 
-## Loss & Training
+**4. Visual Information Injection: Restoring Intra-class Details via DINOv2 Features**
 
-The total training objective consists of two components:
+This is the second type of additional information in the Attach stage. While text embeddings solve inter-class relations, they fail to capture intra-class instance differences (e.g., textures or poses of different individuals in the same class), which is critical for high-fidelity generation. For each selected image, a pre-trained visual encoder (DINOv2) extracts patch-level features $y_{vis} \in \mathbb{R}^{N \times d}$. Only the first $h$ tokens (where $h$ is the number of tokens in the diffusion transformer) are retained as a compact representation. Like text embeddings, these are pre-computed and stored as metadata. During training, following the REPA approach, the output of an intermediate layer of the diffusion backbone is aligned with $y_{vis}$ through a projection head $\phi$, injecting semantic priors of local realism and spatial consistency. Ablations show that visual injection alone reduces FID from 37.07 to 10.37, and combined with DC-Embedding, it drops further to 7.62. This remains effective across CLIP, MoCov3, or MAE (DINOv2 is best).
 
-$$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{diff}} + \lambda \cdot \mathcal{L}_{\text{proj}}$$
-
-- **Denoising loss** $\mathcal{L}_{\text{diff}}$: Standard diffusion model noise prediction MSE, conditioned on class label $y$ and text information $y_{\text{text}}$
-- **Representation alignment loss** $\mathcal{L}_{\text{proj}}$: Cosine similarity alignment between intermediate diffusion model tokens and DINOv2 visual representations
-- Balancing weight $\lambda = 0.5$
+### Loss & Training
+$\mathcal{L}_{total} = \mathcal{L}_{diff} + 0.5 \mathcal{L}_{proj}$, where $\mathcal{L}_{diff}$ is the standard denoising loss (conditioned on DC-Embedding) and $\mathcal{L}_{proj}$ is the DINOv2 feature alignment (REPA-style). Adam optimizer is used with lr=1e-4 on 8×A800/4090. Training on the 10K subset takes only 7.4 hours (101× less than the 750 hours required for REPA).
 
 ## Key Experimental Results
+**ImageNet 256² (SiT-XL/2, CFG=1.5):**
 
-### Main Results (ImageNet 256×256, different data budgets, gFID-50K with CFG=1.5)
+| Method | Data Size | Training Steps | gFID-50K |
+|--------|------|------|------|
+| Vanilla SiT | 1.28M | 7M | 8.3 |
+| + REPA | 1.28M | 4M | 5.9 |
+| + REPA-E | 1.28M | 235K | 5.9 |
+| + REG | 1.28M | 200K | 5.0 |
+| **D2C** | **10K (0.8%)** | **40K** | **4.3** |
+| **D2C** | **50K (4%)** | **180K** | **2.78** |
 
-| Data Budget | Steps | DiT-L/2 Random | DiT-L/2 D2C | SiT-L/2 Random | SiT-L/2 D2C |
-|------------|-------|----------------|-------------|----------------|-------------|
-| 0.8% (10K) | 100k | 35.86 | **4.20** | 4.35 | **3.98** |
-| 0.8% (10K) | 300k | 4.19 | **4.13** | 4.33 | **3.98** |
-| 4.0% (50K) | 100k | 36.78 | **14.81** | 31.13 | **11.21** |
-| 4.0% (50K) | 300k | 11.55 | **5.99** | 14.18 | **5.66** |
-| 8.0% (100K) | 100k | 41.02 | **22.55** | 36.64 | **15.01** |
-| 8.0% (100K) | 300k | 11.49 | **6.49** | 12.56 | **5.65** |
+SRe2L/RDED completely collapse in diffusion training (FID > 80)—confirming that discriminative DC methods are unsuitable for generative tasks.
 
-D2C substantially outperforms Random, K-Center, Herding, and other baselines across all budget and architecture settings. Notably, at 0.8% budget, D2C at 100k steps matches Random at 300k steps.
-
-### Comparison with SRe2L / RDED (0.8% data, DiT-L/2)
-
-| Method | gFID↓ | sFID↓ | IS↑ | Precision↑ |
-|--------|-------|-------|-----|-----------|
-| RDED | 166.2 | 60.1 | 10.8 | 0.09 |
-| SRe2L | 104.2 | 20.2 | 14.1 | 0.20 |
-| **D2C** | **4.2** | **11.0** | **283.6** | **0.72** |
-
-Condensation methods designed for discriminative tasks completely fail in diffusion training, with FID 1–2 orders of magnitude worse than D2C.
-
-### Acceleration Results
-
-Using SiT-XL/2, D2C achieves FID 4.3 with only 0.8% data (10K images) at 40k steps, representing **100×** speedup over REPA (4M steps) and **233×** over vanilla SiT (7M steps). At 4% data (50K) + CFG=1.5, it achieves FID 2.78 at 180k steps.
+D2C also works on 512² and CIFAR-10: CIFAR-10 gFID 3.95 (vs. random 9.72).
 
 ### Ablation Study
+- **Select is effective independently**: Selection alone (without Attach) reduces FID from 37.07 to 14.96.
+- **DC-Embedding provides the largest contribution**: Select+DC Emb=9.01, Select+Visual=10.37, Select+Both=7.62.
+- **All visual encoders help**: DINOv2-L(7.62) > CLIP-L(8.59) > MoCov3-L(8.78) > MAE-L(9.23) >> None(37.07).
+- **Optimal $k$ scales with data size**: 10K → k=96, 50K → k=16 (approximately equal to data size/classes × ratio).
+- **Pre-trained scorer is not mandatory**: Training a scorer from scratch (FID 4.9) still far outperforms random selection (37.07).
 
-- **Select stage alone**: Reduces gFID from 37.07 to 14.96
-- **Attach stage**: DC-Embedding alone reduces to 9.01; visual representation alone to 10.37; both combined achieve **7.62**
-- **Interval $k$ selection**: Optimal $k$ is roughly inversely proportional to data budget (10K→$k$=96, 50K→$k$=16)
-- **Wall-clock**: Attach-only mode requires only 7.4h (0.99% of REPA); the full pipeline takes 9.5h (1.27% of REPA)
-
-## Highlights & Insights
-
-1. **First dataset condensation framework for diffusion models**: Fills the gap in generative task dataset condensation and reveals the critical finding that discriminative condensation methods cannot be directly transferred
-2. **Strong performance under extreme compression**: Achieving FID 3.98 with SiT-L/2 using only 0.8% data demonstrates massive data redundancy in diffusion model training
-3. **Clean modular design**: Select and Attach stages can be used independently; even Attach-only surpasses REPA
-4. **Cross-architecture and cross-resolution generalization**: Comprehensively validated across DiT/SiT × L/XL × 256/512
-5. **Significant practical speedup**: End-to-end wall-clock time is ~1% of REPA, demonstrating real-world deployment viability
+## Highlights
+- **233× acceleration** is a staggering figure—meaning training that previously took weeks can now be completed in hours.
+- First work to introduce dataset condensation to diffusion training—filling a significant literature gap.
+- Elegant information-theoretic derivation of the "diffusion difficulty score"—showing equivalence between $p(c|x) \propto p(x|c)$ and denoising loss.
+- Interval sampling outperforms K-Center/Herding/random in diffusion training—indicating that difficulty ordering is more important than geometric or feature diversity.
+- Extremely low overhead—Select takes only 2h, and Attach is pre-computed and stored on disk.
 
 ## Limitations & Future Work
-
-1. **Dependence on pre-trained models**: Requires a pre-trained diffusion model for difficulty scoring + T5 encoder + DINOv2 encoder; the method's independence is limited and cold-start costs are hidden
-2. **Only C2I verified**: All main experiments use class-conditional ImageNet generation; T2I (text-to-image) is only briefly mentioned in the appendix, leaving large-scale T2I effectiveness unverified
-3. **Interval hyperparameter tuning**: The optimal interval $k$ depends on the data budget in a non-trivial way, requiring additional experiments
-4. **Resolution ceiling**: Experiments cap at 512×512; mainstream 1024+ resolution generation remains unexplored
-5. **Diminishing returns at scale**: Performance gaps narrow from 0.8% to 8%; whether marginal benefits diminish at larger data scales is unclear
+- Relies on a pre-trained diffusion model for difficulty scoring—requires an extra step in cold-start scenarios.
+- Validated primarily on C2I (Class-to-Image); T2I (Text-to-Image) has only preliminary exploration (Appendix G).
+- The interval $k$ requires manual selection—while there are rules of thumb, it is not fully automated.
+- Category coverage in the 10K subset (10 samples/class) may limit intra-class diversity.
+- Lack of direct comparison with T2I data efficiency methods (e.g., PixArt data curation).
 
 ## Related Work & Insights
+- **vs REPA (Model-side acceleration)**: REPA accelerates but still uses the full dataset (1.28M). D2C uses only 0.8% data (10K) + REPA's visual alignment, achieving better results (4.3 vs 5.9) and 100× faster.
+- **vs SRe2L/RDED (Discriminative DC)**: These fail in diffusion training (FID > 80) because their objective is discriminative features rather than pixel distributions.
+- **vs Data Pruning (Pruning then Reweighting)**: Recent methods like Li et al. perform data selection but lack the Attach stage and are only validated at small scales.
+- **vs HoneyBee (CVPR'26 VLM Data)**: HoneyBee studies data curation for VLM inference; D2C focuses on diffusion training—similar logic, different domains.
 
-- **REPA** (Yu et al.): Accelerates training by aligning diffusion model intermediate representations with a pre-trained visual encoder; D2C's visual injection module draws inspiration but further combines it with data selection
-- **SRe2L / RDED**: Representative pixel-level/image-level dataset distillation methods for classification; this paper experimentally demonstrates their unsuitability for diffusion training
-- **InfoBatch / Patch-based methods**: An alternative data-side efficient training approach via re-sampling/patching, but without constructing condensed subsets
-- **Li et al. (2025)**: Studies diffusion training data pruning from a coreset selection perspective, but without attaching additional information and only validated at smaller scales
-- **DiT / SiT**: Primary experimental backbone architectures; D2C serves as an orthogonal data-side strategy that can be freely combined
+## Related Work & Insights
+- The concept of "diffusion difficulty score" can be generalized to data selection for other generative models—such as autoregressive models or VAEs.
+- **Potential Idea**: Apply D2C's Select strategy to **Continual Learning**—when new data arrives, select only the most informative samples to incrementally update the diffusion model.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ — First systematic study of dataset condensation for diffusion models; the Select+Attach framework is well-designed
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-architecture, multi-resolution, multi-budget comprehensive comparisons + detailed ablations + transparent wall-clock analysis
-- Writing Quality: ⭐⭐⭐⭐ — Clear motivation, rigorous formulations, information-dense figures and tables, easy to follow
-- Value: ⭐⭐⭐⭐ — 100×+ practical speedup with significant engineering impact; opens a new direction for data-model co-optimization
+- Novelty: ⭐⭐⭐⭐⭐ First to introduce DC to diffusion training; the combination of difficulty scoring and interval sampling is an original contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 data ratios, 2 resolutions, 2 architectures (DiT/SiT), 5 baselines, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, theoretical derivation well-aligned with experiments, and extremely detailed appendix.
+- Value: ⭐⭐⭐⭐⭐ 233× acceleration + extreme data condensation—sets a new benchmark for diffusion training efficiency.
 
 <!-- RELATED:START -->
 
@@ -150,11 +133,11 @@ Using SiT-XL/2, D2C achieves FID 4.3 with only 0.8% data (10K images) at 40k ste
 
 ## Related Papers
 
+- [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
+- [\[CVPR 2026\] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation](vde_training-free_accelerating_rectified_flow_model_via_velocity_decomposition_a.md)
+- [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
 - [\[CVPR 2026\] One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers](one_model_many_budgets_elastic_latent_interfaces_for_diffusion_transformers.md)
 - [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
-- [\[CVPR 2026\] TAUE: Training-free Noise Transplant and Cultivation Diffusion Model](taue_training-free_noise_transplant_and_cultivation_diffusion_model.md)
-- [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](../../ICCV2025/image_generation/ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
-- [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](../../NeurIPS2025/image_generation/accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
 
 </div>
 

@@ -2,92 +2,95 @@
 title: >-
   [Paper Note] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FluidGaussian, which guides active view selection in 3D reconstruction using uncertainty metrics propagated through fluid simulation…
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] FluidGaussian is proposed to guide active view selection in 3D reconstruction through uncertainty metrics propagated via fluid simulation, ensuring that reconstruction results are not only visually realistic but also physically plausible for interactions.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "physics-aware reconstruction"
-  - "fluid simulation"
-  - "active view selection"
-  - "uncertainty quantification"
+  - CVPR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: d897df8bd077556e
+content_hash: 3244d220f0330d24
 ---
-
 # FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.21356](https://arxiv.org/abs/2603.21356)  
 **Code**: [GitHub](https://github.com/delta-lab-ai/FluidGaussian)  
-**Area**: 3D Vision / 3D Reconstruction
-**Keywords**: 3D Gaussian Splatting, physics-aware reconstruction, fluid simulation, active view selection, uncertainty quantification
+**Area**: 3D Vision / 3D Reconstruction  
+**Keywords**: 3D Gaussian Splatting, Physics-aware Reconstruction, Fluid Simulation, Active View Selection, Uncertainty Quantification
 
 ## TL;DR
 
-This paper proposes FluidGaussian, which guides active view selection in 3D reconstruction using uncertainty metrics propagated through fluid simulation, yielding reconstructions that are not only visually faithful but also physically plausible under interactive simulation.
+FluidGaussian is proposed to guide active view selection in 3D reconstruction through uncertainty metrics propagated via fluid simulation, ensuring that reconstruction results are not only visually realistic but also physically plausible for interactions.
 
 ## Background & Motivation
 
-**Background**: Current 3D reconstruction methods (NeRF, 3DGS) primarily optimize visual fidelity via photometric losses, achieving photorealistic rendering. Active next-best-view (NBV) methods such as ActiveNeRF and FisherRF select optimal viewpoints through variance reduction or Fisher information.
+**Background**: Current 3D reconstruction methods (NeRF, 3DGS) primarily optimize visual fidelity using photometric losses, achieving realistic rendering. Active view selection methods (e.g., ActiveNeRF, FisherRF) select optimal views through variance reduction or Fisher information.
 
-**Limitations of Prior Work**: These methods focus solely on appearance and neglect physical interaction plausibility. A reconstructed 3D model may be visually perfect yet perform poorly under physical simulation—for example, exhibiting excessive velocity field divergence in fluid simulation, indicating that the underlying geometry is physically unreliable.
+**Limitations of Prior Work**: These methods focus exclusively on appearance, ignoring the plausibility of physical interactions. Reconstructed 3D models may be visually perfect but perform poorly in physical simulations—for instance, producing excessive velocity field divergence in fluid simulations, indicating that the geometry is physically unreliable.
 
-**Key Challenge**: A fundamental gap exists between visual fidelity in pixel space (PSNR) and physical interaction fidelity. A model with high PSNR may fail as a digital twin when subjected to forces, fluid coupling, or other physical interactions.
+**Key Challenge**: A gap exists between visual fidelity (PSNR) in pixel space and physical interaction fidelity. A model with high PSNR may be an inadequate digital twin, failing in scenarios involving force or fluid coupling.
 
-**Goal**: To enable 3D reconstruction to go beyond purely visual cues and capture the physical interactions and functional properties of real-world objects.
+**Goal**: How can 3D reconstruction transcend pure visual cues to perceive real-world physical interactions and functionality?
 
-**Key Insight**: Fluid simulation is used as a "probe" to expose deficiencies in reconstructed geometry. Fluid–object surface coupling provides dense, surface-wide quality feedback signals.
+**Key Insight**: Fluid simulation is utilized as a "probe" to expose defects in reconstructed geometry. The coupling between the fluid and the object surface covers the entire surface, providing dense feedback signals of quality.
 
-**Core Idea**: Define a fluid simulation–based uncertainty metric, couple it with existing visual-driven NBV strategies, and select viewpoints that jointly improve visual and physical fidelity.
+**Core Idea**: A fluid simulation-based uncertainty measure is defined and coupled with existing vision-driven NBV strategies to select optimal views that simultaneously improve visual and physical fidelity.
 
 ## Method
 
 ### Overall Architecture
 
-FluidGaussian is a plug-and-play module that operates in two stages:
-- **Step 1**: An existing visual NBV method (ActiveNeRF / FisherRF) proposes Top-K candidate camera poses.
-- **Step 2**: FluidGaussian computes a physical uncertainty score for each candidate pose and selects the viewpoint with the worst physical quality (i.e., the one most in need of improvement).
+To address the limitation that existing Next-Best-View (NBV) methods only consider "what is unclear" rather than "what is physically incorrect," FluidGaussian attaches a fluid simulation probe as a posterior process to existing NBV pipelines. It specifically identifies views where the geometry is most physically untenable for additional capture. The process consists of two steps: first, an existing visual NBV (ActiveNeRF / FisherRF) proposes Top-K candidate camera poses; second, FluidGaussian calculates a physical uncertainty score for each candidate pose to select the view with the poorest physical quality. The scoring algorithm follows three layers: exposing geometric defects via fluid divergence $\rightarrow$ aggregating particle divergence to each Gaussian $\rightarrow$ converting Gaussian scores into camera scores based on visibility. Furthermore, the same fluid simulation produces a functional key region metric—identifying critical surfaces (e.g., aerodynamic/hydrodynamic) by fluid collision frequency—serving as an evaluation dimension more pertinent than global PSNR. This workflow requires no changes to training or architecture; it simply inserts a re-ranking layer during view selection, making it plug-and-play.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Reconstructed 3DGS Model"] --> B["Visual NBV (ActiveNeRF / FisherRF)<br/>Proposes Top-K Candidates via Visual Criteria"]
+    B --> C["Fluid Simulation Uncertainty Metric<br/>DFSPH Flushing from 5 Directions, Estimating Velocity Divergence"]
+    C --> D["Per-Gaussian Physical Score Aggregation<br/>Divergence Averaged to Gaussians, Max over 5 ICs"]
+    D --> E["Physically-aware View Scoring<br/>Weighted Accumulation by Screen Projection Area"]
+    E -->|"Select View with Max Physical Uncertainty"| F["Capture View → Retrain 3DGS"]
+    C --> G["Functional Key Region Quantification<br/>Identify Surfaces via Collision Counts"]
+    G -.->|"Evaluation Dimension"| H["Functional Region Quality Evaluation"]
+```
 
 ### Key Designs
 
-1. **Simulation-Induced Uncertainty**:
+**1. Simulation Uncertainty Metric: Exposing Geometric Defects via Fluid Divergence**
 
-    - A DFSPH (Divergence-Free SPH) simulator "flushes" the reconstructed object from 5 directions (4 horizontal + 1 top).
-    - The velocity divergence of fluid particles is computed as $D_i = |(\nabla \cdot \mathbf{v})_i|$, estimated via SPH-weighted summation:
-    $(\nabla \cdot \mathbf{v})_i \approx \sum_{j \in \mathcal{N}_{h_r}(i)} V_j \cdot (\mathbf{v}_j - \mathbf{v}_i) \cdot \nabla W(\mathbf{x}_i - \mathbf{x}_j, h_k)$
-    - **Rationale**: DFSPH enforces divergence-free flow by design; numerical errors thus arise primarily at fluid–structure interfaces. Geometrically inaccurate surfaces produce larger interface divergence, making this metric a natural indicator of surface quality.
+Photometric loss cannot determine physical correctness—a surface with small self-intersections or gaps might render well but fail during simulation. FluidGaussian uses a DFSPH (Divergence-Free SPH) simulator to "flush" the reconstructed object from five directions (4 horizontal + 1 top) and monitors the velocity divergence of fluid particles $D_i = |(\nabla \cdot \mathbf{v})_i|$, estimated via SPH kernel weighted summation:
 
-2. **Per-Gaussian Physical Score Aggregation**:
+$$(\nabla \cdot \mathbf{v})_i \approx \sum_{j \in \mathcal{N}_{h_r}(i)} V_j \cdot (\mathbf{v}_j - \mathbf{v}_i) \cdot \nabla W(\mathbf{x}_i - \mathbf{x}_j, h_k)$$
 
-    - Fluid particle divergence values are aggregated onto nearby 3D Gaussians: $D_g^{(IC)} = \frac{1}{|\mathcal{P}_g^{(IC)}|} \sum_{i \in \mathcal{P}_g^{(IC)}} D_i^{(IC)}$
-    - The maximum over all 5 initial conditions is taken: $D_g = \max_{IC} D_g^{(IC)}$
-    - **Design Motivation**: Multi-directional flushing eliminates directional bias; the max operator ensures worst-case physical defects are captured.
+The effectiveness of this metric stems from DFSPH theoretically enforcing zero divergence. Numerical errors emerge only at the interface where fluid hits the structure; less accurate or rougher surfaces lead to larger interface divergence. Thus, divergence naturally serves as a heatmap for surface defects without requiring extra ground-truth supervision.
 
-3. **Physics-Aware View Scoring**:
+**2. Per-Gaussian Physical Score Aggregation: Mapping Particle Divergence to Gaussians**
 
-    - For a candidate camera $\mathbf{T}$, per-Gaussian scores are accumulated with visibility weighting:
-    $S(\mathbf{T}) = \sum_{g \in \mathcal{G}_\mathbf{T}} w_g(\mathbf{T}) D_g$
-    - The weight $w_g(\mathbf{T}) = \frac{\pi R_g(\mathbf{T})^2}{HW}$ is based on the screen-space projected area.
-    - The viewpoint with the highest score (maximum physical uncertainty) is selected as the next acquisition target.
-    - **Design Motivation**: This effectively prioritizes reconstruction resources toward regions with the most severe physical defects.
+Divergence is defined on fluid particles, but guiding view selection requires identifying problematic geometry (Gaussians). Divergence from nearby fluid particles is averaged to obtain a Gaussian's score under a specific initial condition (IC) $D_g^{(IC)} = \frac{1}{|\mathcal{P}_g^{(IC)}|} \sum_{i \in \mathcal{P}_g^{(IC)}} D_i^{(IC)}$, followed by taking the maximum across five initial conditions $D_g = \max_{IC} D_g^{(IC)}$. Multi-directional flushing eliminates bias from single directions—where defects on the back might be missed—while taking the maximum captures the worst-case scenario: if any direction exposes a geometric issue, it is marked as high uncertainty.
 
-4. **Functionally Critical Region Quantification**:
+**3. Physically-aware View Scoring: Converting Gaussian Defects to Camera Scores**
 
-    - Functionally critical regions (e.g., the aerodynamically important front surface of a vehicle) are identified by counting fluid collision events $|\mathcal{P}_g|$.
-    - These regions are used for fine-grained evaluation of reconstruction quality in physically relevant areas.
+Given physical scores for each Gaussian, the next step is determining which camera view to capture. For a candidate camera $\mathbf{T}$, visible Gaussians are accumulated using visibility weights:
+
+$$S(\mathbf{T}) = \sum_{g \in \mathcal{G}_\mathbf{T}} w_g(\mathbf{T}) D_g$$
+
+The weight $w_g(\mathbf{T}) = \frac{\pi R_g(\mathbf{T})^2}{HW}$ is the projection area of the Gaussian in screen space. Larger Gaussians contribute more to the view's score. The view with the highest score (maximum physical uncertainty) is selected as the next acquisition target, prioritizing the budget on regions with serious physical defects.
+
+**4. Functional Key Region Quantification: Identifying Critical Surfaces via Collision Counts**
+
+Not all surfaces are of equal importance—the aerodynamic front of a vehicle is critical, whereas leeward corners may be less significant. FluidGaussian uses the collision count $|\mathcal{P}_g|$ of fluid particles per Gaussian to mark functional key regions. Frequent collisions indicate higher importance in real physical interactions. This provides a more relevant evaluation dimension than global PSNR, allowing for the isolation of reconstruction quality on surfaces that simulation actually depends upon.
 
 ### Loss & Training
 
-- Base training follows the standard 3DGS photometric loss (L1 + SSIM).
-- FluidGaussian does not modify the training loss or model architecture; it only alters the view selection strategy, making it fully plug-and-play.
-- Reconstruction begins from 2 initial biased views, with a total budget of 10 views.
+- Basic training still employs standard 3DGS photometric losses (L1 + SSIM).
+- FluidGaussian does not modify the training loss but only alters the view selection strategy, maintaining its plug-and-play nature.
+- Starting from 2 initial offset views with a total budget of 10 views.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Method | PSNR↑ | SSIM↑ | LPIPS↓ |
+| Method | Method | PSNR↑ | SSIM↑ | LPIPS↓ |
 |--------|------|-------|-------|--------|
 | Blender | FisherRF | 23.42 | 0.876 | 0.107 |
 | Blender | +FluidGaussian | **24.74** | **0.891** | **0.092** |
@@ -96,48 +99,48 @@ FluidGaussian is a plug-and-play module that operates in two stages:
 | MipNeRF360 | FisherRF | 15.32 | 0.471 | 0.456 |
 | MipNeRF360 | +FluidGaussian | **15.55** | **0.472** | **0.452** |
 
-Visual PSNR improves by up to +8.6%; velocity field divergence is reduced by up to −62.3%.
+Visual PSNR achieved a maximum Gain of +8.6%, while velocity field divergence was reduced by up to -62.3%.
 
 ### Ablation Study
 
-| Configuration | Observation |
+| Configuration | Description |
 |------|------|
-| 5 initial conditions vs. single direction | Multi-directional flushing eliminates bias; a single direction may miss defects in certain regions |
-| Functionally critical region PSNR | +7.7% PSNR improvement in fluid-interacting regions |
-| High / low Reynolds number | Physical defects are more pronounced under high turbulence, where FluidGaussian yields larger gains |
+| 5 ICs vs. Single Direction | Multi-directional flushing eliminates bias; single directions may miss defects in certain areas. |
+| Functional Region PSNR | A +7.7% PSNR Gain was observed in fluid interaction regions. |
+| High/Low Reynolds Numbers | Physical defects are more apparent under high turbulence, where FluidGaussian shows greater advantages. |
 
 ### Key Findings
 
-- Optimizing for visual fidelity alone systematically underestimates physical quality—visually appealing reconstructions are not necessarily physically plausible.
-- Fluid simulation as a probe can expose geometric defects (gaps, self-intersections, thin structures) at fine granularity.
-- Improving physical fidelity simultaneously improves visual quality, demonstrating that the two objectives are not in conflict.
+- Optimizing only for visual fidelity systematically underestimates physical quality—visual appeal does not equal physical plausibility.
+- Fluid simulation as a "probe" exposes geometric defects (gaps, self-intersections, thin structures) at a fine-grained level.
+- Improving physical fidelity also enhances visual quality, suggesting the two are not contradictory.
 
 ## Highlights & Insights
 
-- This work is the first to incorporate fluid simulation into uncertainty quantification for 3D reconstruction, pioneering a "functionally intelligent" reconstruction paradigm.
-- The plug-and-play design requires no architectural changes, no modification of training objectives, and only alters view selection.
-- The metric design is general—divergence can be replaced by other physical quantities such as vorticity.
-- The work opens a new direction toward "simulation-ready" reconstruction for digital twin applications.
+- First to introduce fluid simulation into 3D reconstruction uncertainty quantification, initiating a "functionally intelligent" reconstruction paradigm.
+- Plug-and-play design—no changes to architecture or training, only to view selection.
+- Metric design is versatile—divergence can be replaced by other physical quantities like vorticity.
+- Provides a new direction for "simulation-ready" reconstruction in digital twin applications.
 
 ## Limitations & Future Work
 
-- Fluid simulation incurs non-trivial computational overhead, requiring 5 SPH runs per NBV evaluation.
-- The current formulation considers only incompressible fluids and does not extend to compressible or multiphase scenarios.
-- The view budget is fixed at 10; adaptive budget strategies are not explored.
-- Only rigid boundary conditions are supported; deformable objects are not addressed.
+- High computational overhead for fluid simulation; each NBV evaluation requires running SPH five times.
+- Currently considers only incompressible fluids; not yet extended to compressible or multi-phase scenarios.
+- View budget is fixed at 10; adaptive budget strategies were not explored.
+- Supports only rigid boundaries; flexible objects are not handled.
 
 ## Related Work & Insights
 
-- This work bridges two communities: 3D reconstruction (3DGS / NeRF) and physics simulation (SPH fluid dynamics).
-- It provides a new perspective for digital twins in engineering and scientific domains—reconstructions must not only "look correct" but also "function correctly."
-- The approach suggests that other physical interactions (collision, deformation) could similarly serve as quality signals for reconstruction evaluation.
+- Bridges the gap between 3D reconstruction (3DGS/NeRF) and physical simulation (SPH fluid mechanics).
+- Offers new insights for digital twins in engineering and scientific fields—reconstructions must not only "look right" but also "work right."
+- Insight: Other physical interactions (collisions, deformations) can also serve as signals for reconstruction quality evaluation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Pioneering introduction of fluid simulation–based uncertainty into 3D reconstruction, defining a new "physics-aware" reconstruction paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Three datasets covering synthetic, real-world, and scientific scenarios; large-scale validation is lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation, coherent methodology, and complete physical derivations.
-- Value: ⭐⭐⭐⭐ — Significant practical value for digital twin construction and simulation-ready asset creation.
+- Novelty: ⭐⭐⭐⭐⭐ Introduces fluid simulation uncertainty into 3D reconstruction, pioneer defining "physics-aware" reconstruction.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets cover synthetic, real, and scientific scenarios, though large-scale data validation is lacking.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, coherent logic, and complete physical derivations.
+- Value: ⭐⭐⭐⭐ High application value for digital twins and simulation-ready assets.
 
 <!-- RELATED:START -->
 
@@ -145,11 +148,11 @@ Visual PSNR improves by up to +8.6%; velocity field divergence is reduced by up 
 
 ## Related Papers
 
-- [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](../../ICML2026/3d_vision/trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
-- [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
-- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
-- [\[ICLR 2026\] Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction](../../ICLR2026/3d_vision/peering_into_the_unknown_active_view_selection_with_neural_uncertainty_maps_for_.md)
-- [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
+- [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
+- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
+- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
 
 </div>
 

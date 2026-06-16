@@ -2,161 +2,154 @@
 title: >-
   [Paper Note] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 description: >-
-  [CVPR2026][AI Safety][Zero-watermarking] This paper proposes TIACam, a framework that simulates camera distortions via a learnable auto-augmentor…
+  [CVPR 2026][AI Safety][CLIP] Ours proposes the TIACam framework, which achieves a camera-robust zero-watermarking scheme without modifying image pixels. By employing a learnable auto-augmentor to simulate camera distortions, text-anchored cross-modal adversarial training to learn invariant features, and a zero-watermarking head to bind messages in
 tags:
-  - "CVPR2026"
-  - "AI Safety"
-  - "Zero-watermarking"
-  - "cross-modal alignment"
-  - "learnable data augmentation"
-  - "camera robustness"
-  - "CLIP"
-  - "adversarial training"
-  - "invariant feature learning"
+  - CVPR 2026
+  - AI Safety
+  - CLIP
 date: 2026-05-08
-content_hash: e375c640f2d72cad
+content_hash: cd19f4bd8a588cf1
 ---
-
 # TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.18863](https://arxiv.org/abs/2602.18863)  
 **Code**: To be confirmed  
-**Area**: Object Detection (actually Multimedia Security / Watermarking)
+**Area**: Object Detection (Actual: Multimedia Security/Watermarking)  
 **Keywords**: Zero-watermarking, cross-modal alignment, learnable data augmentation, camera robustness, CLIP, adversarial training, invariant feature learning
 
 ## TL;DR
 
-This paper proposes TIACam, a framework that simulates camera distortions via a learnable auto-augmentor, learns invariant features through text-anchored cross-modal adversarial training, and binds binary messages to features via a zero-watermarking head—achieving camera-robust zero-watermarking without modifying any image pixels. TIACam attains state-of-the-art bit accuracy across three real-world scenarios: screen recapture, print-and-scan, and screenshot.
+Ours proposes the TIACam framework, which achieves a camera-robust zero-watermarking scheme without modifying image pixels. By employing a learnable auto-augmentor to simulate camera distortions, text-anchored cross-modal adversarial training to learn invariant features, and a zero-watermarking head to bind messages in the feature space, the method achieves SOTA extraction accuracy in three real-world scenarios: screen re-shooting, print re-shooting, and screenshots.
 
 ## Background & Motivation
 
-1. **Zero-watermarking paradigm**: Conventional watermarking modifies images in the spatial or transform domain; zero-watermarking instead associates the watermark with intrinsic image features without altering pixels, balancing invisibility with verification reliability.
-2. **Camera recapture challenge**: Camera recapture introduces compound, spatially coupled degradations—perspective distortion, illumination variation, sensor noise, and Moiré patterns—making it one of the most challenging scenarios for watermark extraction.
-3. **Limitations of handcrafted noise layers**: Methods such as StegaStamp and PIMoG manually design camera noise layers, but real optical distortions vary with environment and are nonlinearly coupled, making fixed augmentations insufficient.
-4. **Suboptimal pretrained features**: The robustness of features from self-supervised models such as DINO is a byproduct of pretraining, not explicitly optimized for watermarking tasks.
-5. **Insufficient single-source invariance**: Invariance learning based solely on text guidance or solely on distortion adversarial training cannot simultaneously guarantee semantic consistency and distortion robustness.
-6. **Lack of a unified framework**: Existing methods treat augmentation, feature learning, and watermark binding as separate stages, lacking an end-to-end joint optimization mechanism.
+1.  **Zero-Watermarking Paradigm**: Traditional watermarking modifies images in the spatial or transform domain. Zero-watermarking, however, does not modify pixels but associates the watermark with inherent image features, balancing invisibility with verification reliability.
+2.  **Camera Re-shooting Challenge**: Re-shooting with a camera introduces complex and spatially coupled degradations such as perspective distortion, illumination changes, sensor noise, and moiré patterns, representing one of the most difficult scenarios for watermark extraction.
+3.  **Limitations of Prior Work (Manual Noise Layers)**: Methods like StegaStamp and PIMoG use manually designed camera noise layers. However, real optical distortions vary by environment and are non-linearly coupled; fixed augmentations struggle to cover these cases.
+4.  **Non-optimal Pre-trained Features**: Feature robustness in self-supervised models like DINO is a byproduct and not explicitly optimized for watermarking tasks.
+5.  **Insufficiency of Single Invariance**: Learning invariance through either text guidance alone or distortion-adversarial training alone cannot simultaneously guarantee semantic consistency and distortion robustness.
+6.  **Key Challenge (Lack of Unified Framework)**: Existing methods separate augmentation, feature learning, and watermark binding, lacking an end-to-end joint optimization mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-TIACam consists of three modules trained jointly in a tripartite adversarial loop:
+TIACam addresses zero-watermarking for camera re-shooting scenarios. Since camera re-shooting introduces complex, coupled degradations that manual noise layers cannot fully cover, the core idea is to integrate "distortion simulation—invariant feature learning—message binding" into a tripartite adversarial loop for joint training. The Auto-Augmentor continuously generates more challenging camera distortions, the Text-Anchored Invariant Feature Learner learns features in the CLIP cross-modal space that are resistant to these distortions while maintaining semantic consistency, and the Zero-Watermarking Head binds binary messages within this invariant feature space. The three modules mutually exert pressure to evolve a robust and verifiable feature representation.
 
-- **Auto-Augmentor**: A differentiable camera distortion simulation pipeline.
-- **Text-Anchored Invariant Feature Learner**: Cross-modal adversarial alignment based on CLIP.
-- **Zero-Watermarking Head**: Binding binary messages in the invariant feature space.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Input image x"] --> AUG["Learnable Auto-Augmentor<br/>6 serial differentiable modules simulating camera distortion"]
+    AUG --> XH["Distorted image x̂"]
+    X --> ENC["CLIP Image Encoder (frozen)<br/>+ Invariant Feature Extractor f_θ"]
+    XH --> ENC
+    T["Pos/Neg Text Anchors T+/T−<br/>CLIP Text Encoder"] --> DISC
+    ENC --> DISC["Text-Anchored Invariant Feature Learning<br/>Discriminator D_ψ judges semantic match"]
+    DISC -->|"Tripartite Adversarial: Augmentor creates harder distortions;<br/>Extractor aligns with T+ and resists distortion"| AUG
+    ENC --> ZW["Zero-Watermarking Head<br/>Invariant Feature · Reference Matrix C dot product + sigmoid"]
+    ZW --> OUT["Binary Message W (Threshold 0.5 recovery)"]
+```
 
-### Learnable Auto-Augmentor
+### Key Designs
 
-Six differentiable modules are cascaded:
+**1. Learnable Auto-Augmentor: Training "Camera Distortion" as an Adversary**
 
-| Module | Function | Key Parameters |
-|--------|----------|----------------|
-| Geometric | Perspective/rotation/scaling transforms | Learnable 3×3 perspective matrix $A$ |
-| Photometric | Brightness/contrast/gamma | Learnable $\alpha, \gamma, \beta$ |
-| Additive Noise | Sensor noise | Reparameterized $\sigma \cdot z,\ z \sim \mathcal{N}(0,1)$ |
-| Filtering | Optical blur/lens smear | Learnable convolution kernel $K$ |
-| Compression | JPEG quantization & frequency masking | Smooth quantization + trainable mask $M$ |
-| Moiré | Sensor–display interference fringes | Learnable frequency $(f_x, f_y)$ and amplitude $\alpha$ |
+Manual noise layers are static, whereas real optical distortions are environment-dependent and non-linearly coupled. The Auto-Augmentor decomposes camera degradation into 6 serial differentiable modules. Each module's distortion parameters are learnable, allowing the entire pipeline to be optimized via gradients to evolve toward the "hardest to resist" direction:
 
-The composition formula is:
-$$\hat{x} = \mathcal{T}_{\text{aug}}(x;\Theta) = \mathcal{T}_{\text{comp}} \circ \mathcal{T}_{\text{filter}} \circ \mathcal{T}_{\text{add}} \circ \mathcal{T}_{\text{photo}} \circ \mathcal{T}_{\text{geo}} \circ \mathcal{T}_{\text{moire}}(x)$$
+| Module | Function | Key Parameter |
+|------|------|----------|
+| Geometric | Perspective/Rotation/Scaling | Learnable 3×3 perspective matrix $A$ |
+| Photometric | Brightness/Contrast/Gamma | Learnable $\alpha, \gamma, \beta$ |
+| Additive Noise | Sensor noise | Reparameterization $\sigma \cdot z, z \sim \mathcal{N}(0,1)$ |
+| Filtering | Optical blur/Lens smudge | Learnable convolution kernel $K$ |
+| Compression | JPEG quantization & freq. mask | Smooth quantization + trainable mask $M$ |
+| Moiré | Sensor-display interference | Learnable frequency $(f_x, f_y)$ and amplitude $\alpha$ |
 
-Each module is pretrained on 10k samples of its corresponding distortion type using MSE+SSIM loss, then fine-tuned during overall adversarial training.
+The six modules are combined as $\hat{x} = \mathcal{T}_{\text{aug}}(x;\Theta) = \mathcal{T}_{\text{comp}} \circ \mathcal{T}_{\text{filter}} \circ \mathcal{T}_{\text{add}} \circ \mathcal{T}_{\text{photo}} \circ \mathcal{T}_{\text{geo}} \circ \mathcal{T}_{\text{moire}}(x)$. Each module is pre-trained on 10k samples using MSE+SSIM for its specific distortion type before being fine-tuned in the overall adversarial training, ensuring realistic yet controllable distortions.
 
-### Text-Anchored Invariant Feature Learner
+**2. Text-Anchored Invariant Feature Learning: Simultaneous Robustness and Discriminability**
 
-- **Feature extractor $f_\theta$**: Frozen CLIP image encoder + trainable invariant feature extractor (3 residual blocks + projection head → 1024-dim).
-- **Discriminator $D_\psi$**: 4-layer Transformer (8-head attention, hidden dim 512), receiving image–text feature pairs and judging semantic match.
-- **Training objective**: Image $x$ and its augmented version $\hat{x}$ are paired with positive/negative text anchors $T^+/T^-$ to form real/fake pairs; the discriminator loss is $\mathcal{L}_{\text{disc}}$ and the generator loss is $\mathcal{L}_{\text{adv}}$.
-- **Augmentor–extractor adversarial dynamic**: The augmentor maximizes $\mathcal{L}_{\text{inv}} - \lambda_{\text{sem}}\mathcal{L}_{\text{sem}}$; the extractor minimizes $\mathcal{L}_{\text{inv}}$, where semantic fidelity is measured by cosine similarity from a frozen ViT.
+Solely relying on distortion-adversarial learning can lead to semantic collapse (homogenization), while relying only on text guidance lacks distortion resistance. TIACam anchors both. The feature side uses a frozen CLIP image encoder plus a trainable invariant feature extractor $f_\theta$ (3 residual blocks + projection head $\to$ 1024D). The discriminator $D_\psi$ is a 4-layer Transformer (8-head attention, hidden dim 512) that evaluates image-text pairs. During training, $x$ and its augmented version $\hat{x}$ form pairs with positive/negative text anchors $T^+/T^-$. The discriminator optimizes $\mathcal{L}_{\text{disc}}$ and the generator optimizes $\mathcal{L}_{\text{adv}}$. The augmentor maximizes $\mathcal{L}_{\text{inv}} - \lambda_{\text{sem}}\mathcal{L}_{\text{sem}}$ (where semantic fidelity $\mathcal{L}_{\text{sem}}$ uses cosine similarity from a frozen ViT), and the extractor minimizes $\mathcal{L}_{\text{inv}}$. Updates alternate: ① Update $D_\psi$ to improve pairing discrimination $\to$ ② Update $\Theta$ to generate stronger distortions $\to$ ③ Update $f_\theta$ to align with positive text anchors and resist distortions.
 
-Three-way alternating updates: ① Update $D_\psi$ to improve paired discrimination → ② Update $\Theta$ to generate stronger distortions → ③ Update $f_\theta$ to align with positive text anchors while resisting distortions.
+**3. Zero-Watermarking Head: Binding Messages via Dot Product in Invariant Feature Space**
 
-### Zero-Watermarking Head
-
-- Extract invariant features $\tilde{F} = \Psi(f_\theta(x))$, where $\Psi$ denotes global average pooling followed by linear projection.
-- Maintain a learnable reference matrix $C \in \mathbb{R}^{k \times d}$, where the $i$-th row is the direction code for bit $i$.
-- Prediction: $\hat{W}_i = \sigma(\tilde{F} \cdot C_i)$
-- **Registration phase**: For each image–message pair, optimize $C$ and $\Psi$ (BCE + L2 regularization) with $f_\theta$ frozen.
-- **Extraction phase**: For a distorted image $x'$, compute $\tilde{F}' = \Psi(f_\theta(x'))$ and recover the binary message by thresholding at 0.5.
+Once features are robust, message binding is lightweight. The zero-watermarking head takes the invariant feature $\tilde{F} = \Psi(f_\theta(x))$ ($\Psi$ is global average pooling + linear projection) and maintains a learnable reference matrix $C \in \mathbb{R}^{k \times d}$, where the $i$-th row is the directional code for the $i$-th bit. Prediction is a dot product plus sigmoid: $\hat{W}_i = \sigma(\tilde{F} \cdot C_i)$. During registration, $C$ and $\Psi$ are optimized (BCE + L2 regularization) for each image-message pair while $f_\theta$ is frozen. Extraction calculates $\tilde{F}' = \Psi(f_\theta(x'))$ for the distorted image $x'$ and recovers the binary message with a threshold of 0.5. This process requires no pixel modification or localization.
 
 ## Key Experimental Results
 
-### Feature Invariance (Cosine Similarity, Original vs. Distorted Images)
+### Feature Invariance (Cosine Similarity, Original vs. Distorted Image)
 
-| Distortion Type | SimCLR | BYOL | Barlow | VICReg | VIbCReg | **TIACam** |
-|-----------------|--------|------|--------|--------|---------|------------|
+| Distortion Type | SimCLR | BYOL | Barlow | VICReg | VIbCReg | **Ours** |
+|----------|--------|------|--------|--------|---------|------------|
 | Additive Noise | 0.82 | 0.88 | 0.79 | 0.83 | 0.89 | **0.97** |
-| Photometric Change | 0.84 | 0.84 | 0.81 | 0.76 | 0.88 | **0.93** |
-| Perspective Transform | 0.87 | 0.85 | 0.87 | 0.83 | 0.88 | **0.95** |
+| Photometric | 0.84 | 0.84 | 0.81 | 0.76 | 0.88 | **0.93** |
+| Perspective | 0.87 | 0.85 | 0.87 | 0.83 | 0.88 | **0.95** |
 | JPEG Compression | 0.79 | 0.80 | 0.87 | 0.81 | 0.73 | **0.98** |
-| Moiré Pattern | 0.85 | 0.83 | 0.84 | 0.89 | 0.87 | **0.97** |
+| Moiré Patterns | 0.85 | 0.83 | 0.84 | 0.89 | 0.87 | **0.97** |
 | Filtering Blur | 0.88 | 0.88 | 0.89 | 0.87 | 0.88 | **0.98** |
 | All Combined | 0.74 | 0.71 | 0.74 | 0.77 | 0.77 | **0.94** |
 
-### Watermark Extraction Accuracy in Real-World Scenarios (Bit Accuracy %)
+### Main Results: Watermark Extraction Accuracy (Bit Accuracy %)
 
 | Method | Screen 30b | Screen 100b | Print 30b | Print 100b | Screenshot 30b | Screenshot 100b |
-|--------|:----------:|:-----------:|:---------:|:----------:|:--------------:|:---------------:|
+|------|:-----------:|:------------:|:-----------:|:------------:|:-------:|:--------:|
 | HiDDeN | 70.6 | 68.8 | 67.1 | 65.7 | 74.5 | 70.6 |
 | PIMoG | 82.3 | 80.1 | 75.7 | 72.3 | 79.7 | 78.6 |
 | StegaStamp | 93.8 | 91.2 | 92.2 | 91.3 | 93.7 | 93.9 |
-| **TIACam** | **99.1** | **98.2** | **96.6** | **95.1** | **97.4** | **95.2** |
+| **Ours** | **99.1** | **98.2** | **96.6** | **95.1** | **97.4** | **95.2** |
 
-### Ablation Study: Contribution of the Invariant Feature Extractor
+### Ablation Study: Contribution of Invariant Feature Extractor
 
-| Dataset | CLIP Only | CLIP + TIACam |
-|---------|:---------:|:-------------:|
+| Dataset | CLIP Only | CLIP + Ours |
+|--------|:---------:|:-------------:|
 | Visual Genome | 0.78 | **0.92** |
 | Flickr | 0.84 | **0.93** |
 | MSCOCO | 0.76 | **0.89** |
 | ImageNet | 0.82 | **0.93** |
 
-The feature extractor improves cosine similarity by approximately 13–15%, demonstrating that the robustness gains stem from the proposed framework rather than CLIP pretraining alone.
+The feature extractor improves cosine similarity by approximately 13-15%, proving that robustness stems from the framework rather than CLIP pre-training alone.
 
-### Feature Discriminability Test
+### Key Findings: Feature Discriminability Test
 
-Across 200 image pairs generated from identical captions: only the registered image achieves 100% watermark recovery; the cosine similarity of another image's features averages 0.73, with extraction accuracy dropping to ~84%, indicating that the framework preserves inter-instance visual discriminability alongside invariance.
+For 200 pairs of distinct images generated with the same caption: only the registered image allows 100% watermark recovery. The accuracy for the other image with identical text features drops to ~84% with an average cosine similarity of 0.73, indicating the framework maintains visual instance discriminability while achieving invariance.
 
 ## Highlights & Insights
 
-- **Tripartite adversarial unified framework**: The augmentor, feature extractor, and discriminator are jointly optimized, representing the first unification of distortion simulation and cross-modal alignment into a single training loop.
-- **Fully differentiable augmentation pipeline**: Six differentiable modules cover geometric, photometric, noise, filtering, compression, and Moiré distortions, enabling gradient backpropagation to optimize augmentation strategies.
-- **No pixel modification required**: The zero-watermarking paradigm leaves images entirely unaltered; message extraction relies solely on dot products and thresholding in the feature space.
-- **Thorough real-world validation**: TIACam substantially outperforms prior SOTA under three physically realistic degradation scenarios: screen recapture, print-and-scan, and screenshot.
-- **No localization step required**: The strong robustness of the invariant feature space enables direct watermark extraction from the full image without prior detection of watermark regions.
+- **Tripartite Adversarial Framework**: Harmonizes the augmentor, extractor, and discriminator, unifying distortion simulation and cross-modal alignment into a single loop.
+- **Fully Differentiable Augmentation Pipeline**: 6 modules cover geometry, photometry, noise, filtering, compression, and moiré, allowing gradients to optimize the augmentation strategy.
+- **No Pixel Modification**: The zero-watermarking paradigm avoids modifying the image, extracting messages via dot product in the feature space.
+- **Excellent Camera Robustness**: Significantly outperforms SOTA under real physical degradations (screen/print re-shooting).
+- **No Localization Required**: Directly extracts watermarks from the entire image using robust feature spaces without a separate detection step.
 
 ## Limitations & Future Work
 
-- The area label is classified as object detection but the actual domain is multimedia security/watermarking; the classification requires correction.
-- Images are uniformly resized to 128×128; the framework's ability to preserve local features in high-resolution images is not thoroughly discussed.
-- Zero-watermark registration requires individually optimizing $C$ and $\Psi$ for each image–message pair; batch registration efficiency may be a deployment bottleneck.
-- Experiments are conducted solely on an RTX 4090; inference latency and feasibility of deployment on mobile or embedded devices are not discussed.
-- Semantically similar but visually distinct images still achieve ~84% accuracy (ideally this should be lower), raising concerns about cross-instance feature leakage in the feature space.
-- Acquiring text anchors (captions) in practice requires additional modules or manual provision.
+- Area labeled as object_detection in metadata; classification needs correction to multimedia security.
+- Images are unified to 128x128; local feature preservation for high-resolution images is not fully discussed.
+- Zero-watermarking registration requires per-pair optimization of $C$ and $\Psi$, which may be a bottleneck for large-scale batch registration.
+- Experiments limited to RTX 4090; inference latency and mobile/embedded feasibility are not addressed.
+- Images with similar semantics but different visuals still show 84% accuracy (ideally lower); cross-instance leakage in feature space warrants attention.
+- Dependency on text anchors (captions) requires an extra module or manual input in practical use.
 
 ## Related Work & Insights
 
 | Method | Type | Augmentation Strategy | Feature Source | Camera Robustness |
-|--------|------|-----------------------|----------------|:-----------------:|
-| HiDDeN | Embedding | Fixed noise layer | Self-trained CNN | Low |
-| StegaStamp | Embedding | Handcrafted camera noise layer | Self-trained CNN | Medium-High |
-| PIMoG | Embedding | Handcrafted projection noise | Self-trained CNN | Medium |
-| InvZW | Zero-watermark | Distortion adversarial | Adversarial training | Medium |
-| DINO-based | Zero-watermark | None | Pretrained SSL | Medium |
-| **TIACam** | **Zero-watermark** | **Learnable auto-augmentation** | **CLIP + adversarial training** | **High** |
+|------|------|----------|----------|:----------:|
+| HiDDeN | Embedded | Fixed noise layer | Self-trained CNN | Low |
+| StegaStamp | Embedded | Manual camera noise | Self-trained CNN | Med-High |
+| PIMoG | Embedded | Manual projection noise | Self-trained CNN | Med |
+| InvZW | Zero-Watermark | Distortion adversarial | Adversarial training | Med |
+| DINO-based | Zero-Watermark | None | Pre-trained SSL | Med |
+| **Ours** | **Zero-Watermark**| **Learnable Auto-Aug.** | **CLIP+Adv. Training** | **High** |
 
-Core distinction: TIACam is the first method to unify a learnable augmentor, cross-modal text anchoring, and zero-watermarking within a single adversarial training framework.
+**Novelty**: TIACam is the first method to unify learnable augmentation, cross-modal text anchoring, and zero-watermarking into an adversarial training framework.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The tripartite adversarial training framework and differentiable augmentation pipeline design are novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Synthetic and real-world scenarios, ablation studies, and discriminability tests are relatively comprehensive, though runtime efficiency analysis is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Structure is clear, mathematical derivations are complete, and illustrations are intuitive.
-- **Value**: ⭐⭐⭐⭐ — Represents significant progress in camera-robust zero-watermarking, though practical deployment feasibility warrants further validation.
+- Novelty: ⭐⭐⭐⭐ — Tripartite adversarial framework and differentiable pipeline are innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive real-world and ablation tests, though missing efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete derivations, and intuitive diagrams.
+- Value: ⭐⭐⭐⭐ — Significant progress in camera-robust zero-watermarking; deployment feasibility requires further study.
 
 <!-- RELATED:START -->
 
@@ -164,11 +157,11 @@ Core distinction: TIACam is the first method to unify a learnable augmentor, cro
 
 ## Related Papers
 
+- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 - [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](decoupling_defense_strategies_for_robust_image_watermarking.md)
-- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
-- [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
-- [\[ICML 2026\] Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling](../../ICML2026/ai_safety/rotation-invariant_spherical_watermarking_via_third-order_so3_representation_cou.md)
-- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
+- [\[CVPR 2026\] FeatureFool: Zero-Query Fooling of Video Models via Feature Map](featurefool_zero-query_fooling_of_video_models_via_feature_map.md)
+- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
 
 </div>
 

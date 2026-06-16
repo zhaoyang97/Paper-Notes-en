@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks
 description: >-
-  [ICML 2026][LLM Agent][Skill Induction] NSI "lifts" LLM agent interaction traces into neuro-symbolic workflow graphs with explicit conditional branches and dynamic variable binding. This evolves skills from stateless scr…
+  [ICML 2026][LLM Agent][ALFWorld] NSI "lifts" interaction traces of LLM agents into neuro-symbolic workflow graphs with explicit conditional branching and dynamic variable binding. This evolves skills from stateless scripts into state-aware logical programs, achieving success rates of 98.0 / 76.5 / 95.2 on ALFWorld / WebShop / TextCraft, significantly
 tags:
-  - "ICML 2026"
-  - "LLM Agent"
-  - "Skill Induction"
-  - "First-Order Logic"
-  - "Workflow Graph"
-  - "Reflective Planning"
-  - "ALFWorld"
+  - ICML 2026
+  - LLM Agent
+  - ALFWorld
 date: 2026-05-08
-content_hash: fadd8f67e7b3d980
+content_hash: cb4b31ea50da2d4b
 ---
-
 # Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks
 
 **Conference**: ICML 2026  
@@ -24,53 +19,68 @@ content_hash: fadd8f67e7b3d980
 **Keywords**: Skill Induction, First-Order Logic, Workflow Graph, Reflective Planning, ALFWorld
 
 ## TL;DR
-NSI "lifts" LLM agent interaction traces into neuro-symbolic workflow graphs with explicit conditional branches and dynamic variable binding. This evolves skills from stateless scripts into state-aware logical programs, achieving success rates of 98.0 / 76.5 / 95.2 on ALFWorld / WebShop / TextCraft respectively, significantly outperforming programmatic skill baselines such as ASI and AWM.
+NSI "lifts" interaction traces of LLM agents into neuro-symbolic workflow graphs with explicit conditional branching and dynamic variable binding. This evolves skills from stateless scripts into state-aware logical programs, achieving success rates of 98.0 / 76.5 / 95.2 on ALFWorld / WebShop / TextCraft, significantly outperforming programmatic skill baselines like ASI and AWM.
 
 ## Background & Motivation
 
-**Background**: Foundation model-driven agents in long-horizon tasks increasingly rely on "skill induction"—distilling past successful trajectories into reusable Python functions (e.g., ASI, AWM) to expand the action space and avoid redundant reasoning. This is equivalent to fossilizing System-2 thinking into System-1 muscle memory.
+**Background**: Foundation model-driven agents increasingly rely on "skill induction" in long-horizon tasks—distilling past successful traces into reusable Python functions (e.g., ASI, AWM) to expand the action space and avoid redundant reasoning. This is equivalent to solidifying System-2 thinking into System-1 muscle memory.
 
-**Limitations of Prior Work**: Current skills are either textual workflows (AWM, non-executable) or stateless parameterized scripts (ASI, e.g., `Open(Receptacle) → Pick(Object)`). These scripts fail when minor environment deviations occur—for instance, if an "apple" is missing from the refrigerator, the script blindly executes Pick without querying the state to re-evaluate.
+**Limitations of Prior Work**: Current skills are either text-based workflows (AWM, non-executable) or stateless parameterized scripts (ASI, e.g., `Open(Receptacle) → Pick(Object)`). These scripts fail immediately when minor environmental deviations occur—for instance, if there is no "apple" in the refrigerator, the script still mechanically executes `Pick` without querying the state first.
 
-**Key Challenge**: There is a mismatch between programmatic skills and the "conditionality" of real environments. During code synthesis, LLMs only observe a linear trajectory, leading them to hardcode all actions into sequential structures. This lacks the expressivity for branching logic such as "if the apple exists after opening the fridge, take it; otherwise, search other locations." This lack of expressivity results in ASI scoring only 7.7 on WebShop (well below AWM's 49.2).
+**Key Challenge**: The mismatch between programmatic skills and the "conditionality" of real-world environments. LLMs synthesize code based on linear traces, leading to hardcoded sequential structures that lack the expressive power for branching logic, such as "if an apple exists after opening the fridge, take it; otherwise, search elsewhere." This lack of expressiveness causes ASI to score only 7.7 on WebShop (far below AWM's 49.2).
 
-**Goal**: To upgrade skills from linear scripts to graph-based programs with explicit control flow and dynamic variable binding; to enable agents to induce highly generalized logic from minimal demonstrations (a single trajectory) and continuously patch them through reflection during deployment.
+**Goal**: Upgrade skills from linear scripts to graph programs with explicit control flow and dynamic variable binding; enable agents to induce logic with strong generalization from minimal demonstrations (even a single trace) and continuously patch them through reflection during deployment.
 
-**Key Insight**: The authors adopt a neuro-symbolic perspective—LLMs excel at mapping perception to semantic predicates (System-1 like), while symbolic interpreters excel at executing precise if/loop logic (System-2 like). Decoupling these allows for the flexibility of LLM perception alongside the verifiability of programs.
+**Key Insight**: From a neuro-symbolic perspective, LLMs excel at mapping perception to semantic predicates (System-1 like), while symbolic interpreters excel at executing precise if/loop logic (System-2 like). Decoupling these two preserves the flexible perception of LLMs while gaining the verifiability of programs.
 
-**Core Idea**: A "trace-to-logic" lifting mechanism abstracts demonstrations into first-order logic + workflow graphs. A two-stage algorithm involving intra-trajectory consistency and inter-trajectory merging induces global skills. At runtime, reflective planning grafts failed subgraphs onto failure nodes to allow for skill self-evolution.
+**Core Idea**: Use a "trace-to-logic" lifting mechanism to abstract demonstrations into first-order logic and workflow graphs; induce global skills via a two-stage algorithm involving intra-trajectory consistency and inter-trajectory merging. During runtime, use reflective planning to graft failed subgraphs into failure nodes for skill self-evolution.
 
 ## Method
 
 ### Overall Architecture
-A skill is defined as $\pi_\omega = (\theta_\omega, \phi_\omega, G_\omega)$, comprising call parameters $\theta_\omega$, a neuro-perception module $\phi_\omega$ (where the LLM acts as a semantic parser to convert raw observations into symbolic states $Z_t$), and a symbolic execution graph $G_\omega$ (executed node-by-node by an interpreter). The pipeline follows three phases: (1) NeSy Grounding maps environment perception to FOL predicate space; (2) Offline Induction induces modular skills from successful trajectories and populates a library; (3) Online Evolution uses reflective planning to patch the feasibility regions and logical branches of skills via runtime feedback.
+NSI lifts interaction traces into logical programs with conditional branches and state-dependent decision-making. A skill is defined as a triplet $\pi_\omega = (\theta_\omega, \phi_\omega, G_\omega)$, comprising call parameters $\theta_\omega$, a neural perception module $\phi_\omega$ (using an LLM as a semantic parser to translate raw observations into symbolic states $Z_t$), and a symbolic execution graph $G_\omega$ (executed node-by-node by a deterministic interpreter). The pipeline involves three steps: first, NeSy Grounding maps environmental perception to a first-order logic predicate space; second, Offline Induction distills successful traces into modular skills; finally, Online Evolution uses reflective planning during deployment to patch logical branches based on runtime feedback.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Successful Traces (few-shot demonstrations)"] --> B["NeSy Grounding<br/>LLM parses observation s_t into symbolic state Z_t"]
+    B --> S2
+    subgraph S2["Offline Induction: Two-stage Progressive Induction"]
+        direction TB
+        C["Stage 1: Per-trace Expertization<br/>Insert CheckOp branches via Branching for counterexamples"] --> D["Stage 2: Greedy Merging<br/>Crossover / Lifting / LoopFold"]
+    end
+    S2 -->|Empirical Consistency + MDL Complexity Penalty| E["Neuro-Symbolic Workflow Graph Skill<br/>Four node types: DataOp / Check·LoopOp / Primitive / TerminalOp"]
+    E --> F["Online Evolution: Reflective Planning<br/>Failure → corrective trace → graft into graph"]
+    F -->|tentative → solidify| E
+```
 
 ### Key Designs
 
-1.  **Neuro-Symbolic Workflow Representation with Four Node Types**:
-    - Function: Expands skills from linear scripts to graph programs. Nodes are categorized as DataOp (dynamic variable binding), CheckOp/LoopOp (control flow), PrimitiveOp (atomic actions), and TerminalOp (success/failure termination).
-    - Mechanism: DataOp synthesizes a program $f_v: \mathcal{C} \times \mathcal{Z} \to \mathcal{C}$, such as `target = select_one(x, is_type(x, 'apple') ∧ contains(loc, x))`; CheckOp synthesizes a Boolean discriminant like `is_closed(y) ∧ locates('agent', y)`; PrimitiveOp references variables bound by upstream DataOps as arguments; TerminalOp automatically generates diagnostic info like "$\nexists x, \text{is\_type}(x, \text{apple})$" upon failure.
-    - Design Motivation: Modularity enables local patching—agents can rewrite a specific CheckOp without regenerating the entire skill. Explicit logical nodes force the LLM to formalize "why" and "when," preventing the unconditional skipping of state checks.
+**1. Four Node Types for Neuro-Symbolic Workflow Representation: Transforming Stateless Scripts into State-Aware Graphs**
 
-2.  **Induction Objective Driven by Empirical Programmatic Consistency**:
-    - Function: Replaces online verification with historical trajectory consistency in partially observable environments.
-    - Mechanism: A skill $\pi_\omega$ is "consistent" with a trajectory $\tau$ at state $s_h$ if and only if all non-empty actions $\hat{a}_k$ produced starting from $s_h$ match the expert actions $a^\ast_{h+m(k)}$. The objective $\max_{\pi_\omega} \sum_\tau |\widehat{\mathcal{R}}_{\pi_\omega}^\tau| - \lambda |\pi_\omega|$ simultaneously maximizes the empirical coverage area and minimizes program complexity (MDL principle).
-    - Design Motivation: Embodied/web environments often cannot be perfectly reset, making online verification infeasible. Trajectory consistency provides a strong constraint of "faithful reproduction" without environment restarts, while the MDL penalty suppresses overfitting.
+Linear scripts like ASI collapse under environmental deviations because they hardcode actions into a sequential flow. NSI reformulates skills as directed graphs with four specialized node types: **DataOp** handles dynamic variable binding, synthesizing a program $f_v: \mathcal{C} \times \mathcal{Z} \to \mathcal{C}$ (e.g., `target = select_one(x, is_type(x, 'apple') ∧ contains(loc, x))`); **CheckOp/LoopOp** manage control flow, with the former synthesizing boolean discriminants like `is_closed(y) ∧ locates('agent', y)` to determine branches, and the latter folding repetitive structures into loops; **PrimitiveOp** represents atomic actions with parameters referencing variables bound by upstream DataOps; **TerminalOp** terminates execution upon success or failure, outputting diagnostic info like "$\nexists x, \text{is\_type}(x, \text{apple})$" on failure. This modularity allows the agent to rewrite specific CheckOps without regenerating the entire skill and forces the LLM to formalize "why" and "when" actions occur.
 
-3.  **Two-Stage Progressive Induction + Four Structural Operators**:
-    - Function: Splits skill synthesis into "local expert fitting" followed by "global merging," searching the program space using Branching, Crossover, Lifting, and LoopFold operators.
-    - Mechanism: Stage 1 synthesizes a local $\pi_\tau$ for each trajectory, inserting CheckOp branches at each counterexample $s_{\text{err}}$ via the Branching operator. Stage 2 uses a greedy algorithm for iterative merging—finding $\pi_{\text{hard}}$ for the currently worst-covered trajectory and performing $\mathtt{Consolidate}(\pi_{\text{glb}}, \pi_{\text{hard}})$, accepting the merge only if it strictly expands the feasibility region. Crossover grafts subgraphs; Lifting upgrades constants to parameters for cross-instance generalization; LoopFold abstracts repetitive structures into LoopOps.
-    - Design Motivation: Direct optimization of the global objective leads to combinatorial explosion in the program space. Specializing before generalizing allows the LLM to resolve one local conflict at a time, ensuring efficiency and interpretability.
+**2. Empirical Programmatic Consistency: Replacing Online Rollouts with Historical Trace Consistency**
+
+Embodied or web environments are often difficult to reset perfectly, making it infeasible to validate candidate skills through repeated online rollouts. NSI establishes the induction goal based on trajectory consistency: a skill $\pi_\omega$ is "consistent" with a state $s_h$ in trace $\tau$ if and only if all non-empty actions $\hat{a}_k$ produced by it starting from $s_h$ match the expert actions $a^\ast_{h+m(k)}$. The optimization objective is:
+
+$$\max_{\pi_\omega} \sum_\tau \big|\widehat{\mathcal{R}}_{\pi_\omega}^\tau\big| - \lambda |\pi_\omega|$$
+
+This maximizes the empirical coverage while penalizing program complexity $|\pi_\omega|$ based on the MDL principle. This approach avoids environment restarts, maintains the constraint of reproducing expert behavior, and prevents overfitting.
+
+**3. Two-Stage Progressive Induction + Four Structural Operators: Expertization followed by Greedy Merging**
+
+Optimizing the global objective in program space leads to combinatorial explosion. NSI uses a "divide and conquer" strategy. **Stage 1** synthesizes a local skill $\pi_\tau$ for each trace. Whenever a counterexample state $s_{\text{err}}$ is encountered, the **Branching** operator inserts a CheckOp branch to satisfy the specific trace. **Stage 2** performs greedy merging: it identifies the trace skill $\pi_{\text{hard}}$ with the poorest current coverage and executes $\mathtt{Consolidate}(\pi_{\text{glb}}, \pi_{\text{hard}})$, accepting the merge only if it strictly expands the feasible region. Three operators are used: **Crossover** grafts subgraphs, **Lifting** promotes constants to parameters for cross-instance generalization, and **LoopFold** abstracts repetitive structures.
 
 ### Loss & Training
-NSI does not update LLM parameters; all "training" occurs in the program space. Stage 1 employs iterative consistency detection + LLM-based program synthesis. Stage 2 uses greedy feasibility dominance verification for updates. During the online phase, Reflective Planning detects failures and calls the LLM to generate a corrective trajectory, which is then merged into the skill graph using the same structural operators. New branches are initially tentative and solidify only after repeated successes. GPT-4o is used as the backbone with temperature set to 0 to ensure reproducibility.
+NSI does not update LLM parameters; all "training" occurs in the program space. Stage 1 relies on iterative consistency checks and LLM program synthesis. Stage 2 uses greedy feasibility dominance verification. During the online phase, Reflective Planning generates a corrective trajectory upon failure and merges it into the skill graph using the same structural operators. New branches exist as "tentative" and are only "solidified" after repeated successes to prevent corrupted skills. The backbone is GPT-4o with temperature set to 0.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | ALFWorld SR (%) | WebShop Score | WebShop SR (%) | TextCraft SR (%) |
-| :--- | :--- | :--- | :--- | :--- |
+|------|-----------------|---------------|-----------------|--------------------|
 | ReAct | 85.8 | 44.0 | 20.0 | 62.0 |
 | Reflexion | 84.3 | 40.8 | 23.0 | 59.0 |
 | AWM | 91.3 | 49.2 | 30.0 | 92.5 |
@@ -81,50 +91,50 @@ NSI does not update LLM parameters; all "training" occurs in the program space. 
 ### Ablation Study
 
 | Configuration | Observation | Interpretation |
-| :--- | :--- | :--- |
-| ASI (No logic branches) | WebShop Score only 7.7 | Linear scripts are completely unable to express conditional logic. |
-| NSI offline only | Already exceeds all baselines | The logical representation induced offline is inherently powerful. |
-| NSI full (inc. online honing) | SOTA across all three benchmarks | Reflective planning converts runtime failures into permanent capabilities. |
-| Avg. atomic steps / skill | NSI $\approx 7.4$ vs lower for ASI | NSI compresses 7+ steps of logic into a single skill. |
+|------|------|------|
+| ASI (No logic branches) | WebShop Score only 7.7 | Linear scripts cannot express conditional logic. |
+| NSI offline only | Outperforms all baselines | Logical programmatic representation is inherently powerful. |
+| NSI full (with online honing) | SOTA across all benchmarks | Reflective planning converts failures into permanent capabilities. |
+| Avg atomic steps / skill | NSI $\approx 7.4$ vs lower for ASI | NSI compresses 7+ steps of logic into one skill. |
 
 ### Key Findings
-- ASI's formalization of experience into scripts actually performed worse than AWM's pure text workflows, suggesting that "expressively restricted programs" are worse than "non-executable text," thus validating the necessity of logical branching.
-- "Long-horizon collapse" in ALFWorld: Baselines see success rates drop to 0 beyond 22 steps, whereas NSI maintains performance at 53+ steps because it compresses 7.4 atomic actions into a single skill, thereby "compressing" the planning horizon.
-- The performance gain of Reflexion's textual memory over ReAct is nearly negligible, further indicating that the bottleneck for long-horizon tasks is "stable execution" rather than "memory retrieval."
+- Formalizing experience into scripts (ASI) can be worse than pure text workflows (AWM) if the program lacks expressiveness—demonstrating that "insufficient programs" are worse than "non-executable text."
+- "Long-horizon collapse" in ALFWorld: Baselines see success rates drop to 0 at $>22$ steps, while NSI maintains performance at 53+ steps by compressing the planning horizon.
+- The gain of text-based memory (Reflexion) over ReAct is negligible, suggesting the bottleneck in long-horizon tasks is "consistent execution" rather than "recall."
 
 ## Highlights & Insights
-- The concept of "trace-to-logic lifting" is highly generalizable—any LLM agent can use this method to upgrade demonstrations into verifiable programs, transferable to more complex scenarios such as SWE-bench or robotic manipulation.
-- Reflective Planning converts failure signals into "local subgraph grafting," serving as a programmatic version of continual learning that avoids catastrophic forgetting (the skill graph grows monotonically).
-- The combination of the MDL penalty and four structural operators provides the LLM with clear preferences (coverage vs. simplicity) when searching the program space, providing a reusable template for future "program synthesis + LLM" methodologies.
+- The "trace-to-logic lifting" concept is highly general—any LLM agent can upgrade demonstrations into verifiable programs, transferable to complex scenarios like SWE-bench or robotics.
+- Reflective Planning transforms failure signals into "local subgraph grafting," acting as a programmatic version of continuous learning while avoiding catastrophic forgetting.
+- The combination of MDL penalty and structural operators provides a clear preference (coverage vs. simplicity) for LLMs searching the program space.
 
 ## Limitations & Future Work
-- All experiments rely on the assumption that the "environment provides an enumerable predicate vocabulary" (both ALFWorld and WebShop provide structured feedback); for real-world open environments, predicate discovery itself remains a challenge.
-- Using GPT-4o as a synthesizer is costly; the authors did not explore whether smaller models could drive this synthesis framework.
-- Online honing depends on the LLM proposing its own corrective trajectory. If the LLM provides an incorrect recovery plan, grafting it into the graph might pollute the skill; the paper uses a "tentative → solidify" cycle to mitigate this but does not quantify failure rates.
-- The improvement in TextCraft was relatively minimal (95.2 vs. AWM's 92.5), suggesting that for tasks where "recursive decomposition" is sufficient, the marginal value of logical branching is limited.
+- Assumes the environment provides an enumerable vocabulary of predicates (structured feedback in ALFWorld/WebShop); predicate discovery remains a challenge for open worlds.
+- High cost of using GPT-4o as the synthesizer; the feasibility of smaller models as synthesizers is not explored.
+- Online honing depends on the LLM proposing correct trajectories; incorrect recovery paths could pollute the skill graph, managed but not fully quantified by "tentative → solidify" cycles.
+- Minimal improvement in TextCraft (95.2 vs AWM 92.5) suggests the marginal value of logical branching is lower in tasks where "recursive decomposition" is sufficient.
 
 ## Related Work & Insights
-- **vs ASI**: ASI synthesizes skills into parameterized scripts without explicit control flows like CheckOp/LoopOp; NSI actively synthesizes branch discriminants through predicate invention, raising WebShop scores from 7.7 to 76.5.
-- **vs AWM**: AWM's skills are textual templates and are non-executable; NSI's skills are symbolic graph programs that can be verified and precisely executed by an interpreter.
-- **vs Agentic Workflow Generation (AFlow, GPTSwarm)**: These assemble predefined nodes (e.g., Debate, Voting); NSI's nodes are "invented" internal logic, providing finer granularity and stronger generalization.
-- **vs Classic RL Options (Sutton 1999)**: Traditional options are black-box neural policies requiring extensive parameter optimization; NSI skills are readable Python-like code, naturally aligned with LLM generation capabilities.
+- **vs ASI**: ASI synthesizes parameterized scripts without explicit control flow like CheckOp; NSI uses predicate invention to synthesize branches, improving WebShop scores from 7.7 to 76.5.
+- **vs AWM**: AWM uses text templates; NSI uses symbolic graph programs that are verifiable and precisely executable.
+- **vs Agentic Workflow Generation (AFlow, GPTSwarm)**: Those methods assemble predefined nodes; NSI "invents" internal logic at a finer granularity.
+- **vs Classical RL Options (Sutton 1999)**: Traditional options are black-box neural policies needing massive optimization; NSI skills are readable Python-adjacent code naturally aligned with LLM generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Implements the neuro-symbolic idea of "lifting traces to logical programs" using LLMs within an agent framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three major agent benchmarks + comprehensive ablations + long-horizon analysis.
-- Writing Quality: ⭐⭐⭐⭐ Algorithms and node definitions are clear, though some formalization is dense.
-- Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for increasing the expressivity of skill learning for LLM agents.
+- Novelty: ⭐⭐⭐⭐⭐ Realizing the neuro-symbolic "trace lifting" idea through LLMs for agent frameworks.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three major benchmarks with solid ablation and horizon analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear algorithm and node definitions, though some formalization is dense.
+- Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for expressive skill learning in LLM agents.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
+- [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](../../CVPR2026/llm_agent/webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
-- [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 - [\[ACL 2026\] FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction](../../ACL2026/llm_agent/fregelogic_at_semeval_2026_task_11_a_hybrid_neuro-symbolic_architecture_for_cont.md)
 
 </div>

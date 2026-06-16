@@ -2,152 +2,149 @@
 title: >-
   [Paper Note] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 description: >-
-  [CVPR 2026][Segmentation][Spherical convolution] USF proposes a modular, lens-agnostic spherical vision frontend that projects arbitrarily calibrated camera images onto the unit sphere and performs spatial-domain spheric…
+  [CVPR 2026][Segmentation][Paper Note] USF proposes a modular, lens-agnostic spherical vision frontend. By projecting arbitrary calibrated camera images onto a unit sphere and performing spatial-domain spherical resampling, convolution, and pooling, it naturally guarantees rotation equivariance using only distance-weighted kernels. It demonstrates zero-shot
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Spherical convolution"
-  - "rotation equivariance"
-  - "wide-angle camera"
-  - "panoramic image"
-  - "lens-agnostic"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: f9ed1335e665496b
+content_hash: a76a46c17e780d43
 ---
-
 # Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.18174](https://arxiv.org/abs/2511.18174)  
-**Code**: [https://tomnotch.com/USF](https://tomnotch.com/USF) (project page)  
-**Area**: Image Segmentation
-**Keywords**: Spherical convolution, rotation equivariance, wide-angle camera, panoramic image, lens-agnostic
+**Code**: [https://tomnotch.com/USF](https://tomnotch.com/USF) (Project Page)  
+**Area**: Image Segmentation  
+**Keywords**: Spherical Convolution, Rotation Equivariance, Wide-angle Cameras, Panoramic Images, Lens-agnostic
 
 ## TL;DR
-USF proposes a modular, lens-agnostic spherical vision frontend that projects arbitrarily calibrated camera images onto the unit sphere and performs spatial-domain spherical resampling, convolution, and pooling operations. Using only distance-weighted kernels, the framework inherently guarantees rotation equivariance, and demonstrates zero-shot generalization robustness to random rotations and cross-lens transfer on classification, detection, and segmentation tasks.
+USF proposes a modular, lens-agnostic spherical vision frontend. By projecting arbitrary calibrated camera images onto a unit sphere and performing spatial-domain spherical resampling, convolution, and pooling, it naturally guarantees rotation equivariance using only distance-weighted kernels. It demonstrates zero-shot generalization robustness to random rotations and cross-lens scenarios in classification, detection, and segmentation tasks.
 
 ## Background & Motivation
 
-1. **Background**: Modern perception systems increasingly employ wide-angle cameras such as fisheye and panoramic lenses, yet mainstream CNN pipelines still assume the pinhole camera model and perform convolution on 2D image grids.
+1. **Background**: Modern perception systems increasingly use wide-angle cameras like fisheye and panoramic lenses. However, mainstream CNN pipelines still assume the pinhole camera model, performing convolutions on 2D image grids.
 
-2. **Limitations of Prior Work**: (a) Feeding wide-angle images directly into planar CNNs results in adjacent pixels in image space that do not reflect physical adjacency—e.g., pixels near the poles in equirectangular projection are far apart in image space but physically neighboring—causing the spatial assumptions of convolutional kernels to break down. (b) Planar convolutional kernels are fixed to the image coordinate frame and are sensitive to global rotations. (c) Traditional spherical CNNs (e.g., S2CNN) require expensive spherical harmonic transforms, limiting resolution and efficiency.
+2. **Limitations of Prior Work**: (a) When wide-angle images are fed directly into planar CNNs, adjacent pixels in image space do not reflect physical adjacency (e.g., pixels near poles in equirectangular projections are distant on the image but physically adjacent), causing the spatial assumptions of convolution kernels to fail. (b) Planar kernels are fixed to the image coordinate system and are sensitive to global rotations. (c) Traditional spherical CNNs (e.g., S2CNN) require expensive spherical harmonic transforms, limiting resolution and efficiency.
 
-3. **Key Challenge**: By Gauss's Theorema Egregium, no 2D projection can preserve the intrinsic curvature of the sphere—any planar representation necessarily introduces distortion. Operations must therefore be performed directly on the sphere, yet existing spherical CNNs either depend on specific grid/connectivity structures (e.g., polyhedron subdivisions, HEALPix) or require computationally expensive spectral-domain transforms.
+3. **Key Challenge**: According to the *Theorema Egregium*, no 2D projection can preserve the intrinsic curvature of a sphere—any planar representation inevitably introduces distortion. Thus, it is necessary to operate directly on the sphere. However, existing spherical CNNs either rely on specific grids/topologies (e.g., polyhedral subdivision, HEALPix) or require computationally intensive spherical harmonic domain transforms.
 
-4. **Goal**: (a) How to obtain a distortion-free spherical signal from an arbitrarily calibrated camera? (b) How to perform efficient spherical convolution without spherical harmonic transforms? (c) How to guarantee rotation equivariance? (d) How to make the framework plug-and-play compatible with existing architectures (YOLO, DeepLab, UNet)?
+4. **Goal**: (a) How to obtain distortion-free spherical signals from arbitrary calibrated cameras? (b) How to perform efficient spherical convolutions without spherical harmonic transforms? (c) How to ensure rotation equivariance? (d) How to make the solution plug-and-play with existing architectures (YOLO, DeepLab, UNet)?
 
-5. **Key Insight**: Treating spherical pixels as an unordered point set rather than a structured grid; decoupling position sampling from value interpolation to handle non-uniform density; and enforcing rotation equivariance through weight functions that depend solely on geodesic distance.
+5. **Key Insight**: Pixels on the sphere are treated as unordered point sets rather than structured grids. Non-uniform density is handled by decoupling position sampling and value interpolation, and rotation equivariance is guaranteed through weight functions solely dependent on geodesic distance.
 
-6. **Core Idea**: Project arbitrary camera images onto the sphere → perform uniform resampling → apply purely distance-weighted kernels in the spatial domain for spherical convolution—naturally equivariant, lens-agnostic, and plug-and-play.
+6. **Core Idea**: Project arbitrary camera images to the sphere $\rightarrow$ Uniform resampling $\rightarrow$ Perform spherical convolution in the spatial domain with pure distance-weighted kernels. This is naturally equivariant, lens-agnostic, and plug-and-play.
 
 ## Method
 
 ### Overall Architecture
-The USF pipeline consists of six stages: (i) combining a planar image with a lens normal map to form a spherical image; (ii) different lenses yielding pixels with varying density distributions on the sphere; (iii) spherical resampling to unify the distribution; (iv) feeding the result into a backbone composed of spherical convolution and pooling layers; (v) optionally resampling back to the original spherical pixel positions; and (vi) back-projecting to the planar image. Each stage is fully decoupled and independently configurable.
+The USF pipeline consists of six stages: (i) Combining planar images with lens normal maps to form spherical images; (ii) Handling varying pixel densities on the sphere produced by different lenses; (iii) Uniform spherical resampling; (iv) Feeding into a backbone composed of spherical convolution and pooling layers; (v) Optionally resampling back to original spherical pixel positions; (vi) Back-projecting to planar images. Each stage is fully decoupled and independently configurable.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Any Calibrated Camera Image + Lens Normal Map"] --> B["Spherical Projection<br/>Pixels → Unit Sphere Ray Directions"]
+    subgraph RES["Spherical Projection & Resampling"]
+        direction TB
+        B --> C["Position Sampling<br/>Icosahedral/HEALPix Quasi-uniform Points"]
+        C --> D["Value Interpolation<br/>Nearest Neighbor RBF/MLS Regression for Features"]
+    end
+    subgraph BB["Spherical Backbone (Layer-wise replacement for YOLO/DeepLab/UNet)"]
+        direction TB
+        E["Universal Spherical Convolution Kernel<br/>Geodesic Spherical Cap Neighborhood Distance-weighted Aggregation"] --> F["Spherical Pooling & Res. Control<br/>Same Neighborhood + Res. Factor for Multi-scale Pyramid"]
+    end
+    D --> E
+    F --> G["Optional Resampling to Original Pixels → Back-projection to Planar Output"]
+```
 
 ### Key Designs
 
-1. **Spherical Projection and Resampling**:
+**1. Spherical Projection & Resampling: Converting arbitrary camera images into quasi-uniform unordered point sets on the sphere**
 
-    - **Function**: Converts arbitrary calibrated camera images into a nearly uniformly distributed signal on the sphere without distortion.
-    - **Mechanism**: Each image coordinate $\mathbf{u} \in \mathbb{R}^2$ is mapped to a ray direction $\mathbf{p}_\mathbf{u} \in \mathbb{S}^2$ on the unit sphere via the lens normal map. The projected spherical pixel density is non-uniform (e.g., dense near the poles for fisheye lenses), necessitating resampling. **Position sampling**: Multiple schemes are supported—icosahedral Goldberg polyhedra, HEALPix, Fibonacci lattices, quasi-random sampling—all generating nearly uniform point sets on the sphere. The input pixel density is matched via the lower 75th percentile mean of Voronoi cell areas; a geodesic distance threshold determines whether a sampling point falls within the FoV. **Value interpolation**: Aggregation is performed over $N$-nearest neighbors or spherical cap neighborhoods, using RBF radial basis weights or spherical harmonic MLS regression. The geometric relationships of the entire resampling pipeline are deterministic for a given camera and can be cached for reuse.
-    - **Design Motivation**: Treating spherical data as an unordered point set rather than a grid frees the method from dependence on specific grid structures found in prior approaches, and supports partial spherical coverage with arbitrary FoV.
+The fundamental issue with feeding wide-angle images directly into planar CNNs is that adjacent pixels on the image grid may not be physically adjacent (especially near poles in equirectangular projections). USF first maps each image coordinate $\mathbf{u} \in \mathbb{R}^2$ via a lens normal map to a ray direction $\mathbf{p}_\mathbf{u} \in \mathbb{S}^2$, returning pixels to their true spherical positions. Since projection density is non-uniform (e.g., fisheyes are dense at poles), a layer of quasi-uniform sampling points is placed on the sphere. "Position" and "Value" are decoupled: position sampling places uniform points (using Icosahedral Goldberg polyhedra, HEALPix, Fibonacci grids, or quasi-random sampling), while value interpolation aggregates features from $N$-nearest neighbors or spherical cap neighborhoods using RBF kernels or MLS regression. Using "unordered point sets" instead of fixed grid structures allows the method to handle partial FoV coverage—common in real wide-angle cameras—without being tied to specific topologies.
 
-2. **General Spherical Convolution Kernel**:
+**2. Universal Spherical Convolution Kernel: Achieving natural rotation equivariance via geodesic distance**
 
-    - **Function**: Implements spherical convolution in the spatial domain, equivalent to spectral-domain filtering but avoiding the high cost of harmonic transforms.
-    - **Mechanism**: Spherical convolution is defined as a weighted aggregation over a local spherical cap neighborhood: $x_o = \frac{1}{|\mathcal{N}(\mathbf{p}_o)|}\sum_{k \in \mathcal{N}(\mathbf{p}_o)} x_k \prod_m f_{weight}^{(m)}(\mathcal{M}_m(\mathbf{p}_k, \mathbf{p}_o))$, where the neighborhood contains all input points satisfying $d(\mathbf{p}_k, \mathbf{p}_o) \leq r$. The weight function is decomposed into a product of distance and directional components, each parameterized by an independent weight function (piecewise constant PWC, MLP, or grid interpolation). **Key insight**: Using only the distance component (removing the directional component) degrades the kernel to a zonal/radial filter; since geodesic distance is invariant under rotation, the convolution is naturally $SO(3)$-equivariant. Incorporating the directional component introduces gauge dependence, breaking equivariance but increasing expressiveness (e.g., distinguishing "6" from "9"). Mean reduction rather than summation is used to handle non-uniform sampling density.
-    - **Design Motivation**: Spatial-domain spherical convolution entirely avoids the computational bottleneck of spherical harmonic transforms (which scale as $O(\ell^3)$ for bandwidth $\ell$) and supports arbitrary resolution. The distance–direction decomposition allows users to trade off equivariance against expressiveness according to task requirements.
+To avoid the $O(\ell^3)$ complexity of spherical harmonic transforms in traditional spherical CNNs, USF defines spherical convolution as weighted aggregation over local spherical cap neighborhoods:
 
-3. **Spherical Pooling and Resolution Control**:
+$$x_o = \frac{1}{|\mathcal{N}(\mathbf{p}_o)|}\sum_{k \in \mathcal{N}(\mathbf{p}_o)} x_k \prod_m f_{weight}^{(m)}(\mathcal{M}_m(\mathbf{p}_k, \mathbf{p}_o))$$
 
-    - **Function**: Performs downsampling and upsampling operations on the sphere.
-    - **Mechanism**: Spherical pooling is defined over the same geodesic spherical cap neighborhoods: $x_o = f_{pool}(x_k: k \in \mathcal{N}(\mathbf{p}_o))$, where $f_{pool}$ can be min/max/avg or more complex local statistics. Output point positions are controlled by a configurable position sampler with a resolution factor, supporting multi-scale processing. Since coordinates are fixed per layer, all geometric computations can be cached after the first forward pass.
-    - **Design Motivation**: Sharing the neighborhood definition with spherical convolution maintains consistent geometric operation semantics, while enabling plug-and-play replacement in multi-scale architectures such as YOLO and UNet.
+The neighborhood $\mathcal{N}(\mathbf{p}_o)$ includes all points within a geodesic distance $d(\mathbf{p}_k, \mathbf{p}_o) \leq r$. The weights are decoupled into distance and direction components. If only the distance component is used (zonal/radial filter), the kernel is **naturally** rotation-equivariant because geodesic distance is invariant under $SO(3)$ rotations. Adding the direction component introduces gauge dependence and breaks equivariance but increases expressive power (e.g., distinguishing "6" from "9"). This decoupling serves as a "knob" to balance rotation robustness and expressivity.
+
+**3. Spherical Pooling & Resolution Control: Multi-scale processing on the sphere**
+
+To replace multi-scale backbones like YOLO or UNet, USF implements spherical pooling using the same geodesic neighborhood: $x_o = f_{pool}(x_k: k \in \mathcal{N}(\mathbf{p}_o))$. Output point positions are controlled by a resolution factor in the position sampler to build a multi-scale pyramid. Since coordinates are fixed per layer for a given camera, all neighborhood structures and geometric measurements are cached after the first forward pass, ensuring zero additional geometric overhead during inference.
 
 ### Loss & Training
-No custom loss functions are introduced—each downstream task uses its standard loss. The key strategy is to directly replace planar layers with spherical layers while keeping all other training settings identical for fair comparison. Rotation testing is implemented by rotating spherical vectors and resampling to canonical positions.
+Standard loss functions are used for each downstream task. The core strategy is to replace planar layers with spherical layers while keeping all other training settings identical for fair comparison. Rotation testing is implemented by rotating spherical vectors and resampling.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Task | Model | Training | NR (No Rotation) | RR (Random Rotation) |
-|------|-------|----------|-------------------|----------------------|
+|------|------|------|-------------|--------------|
 | MNIST Classification | Planar CNN | NR | 98.45% | 41.08% |
-| | S2CNN (Spherical Harmonics) | NR | 96% | 94% |
-| | SO(3) CNN (Spherical Harmonics) | NR | 98.7% | 98.1% |
+| | S2CNN (Harmonic) | NR | 96% | 94% |
+| | SO(3) CNN (Harmonic) | NR | 98.7% | 98.1% |
 | | **Spherical Dis PWC×3** | **NR** | 87.18% | **85.43%** |
 | | Spherical Dis×Dir MLP | NR | 98.28% | 43.54% |
 | Object Detection (PANDORA) | Planar YOLOv11 | NR | mAP10=39.65% | mAP10=12.71% |
 | | Planar YOLOv11 | RR | mAP10=27.76% | mAP10=28.01% |
-| | **Spherical YOLOv11** | **NR** | mAP10=29.54% | **mAP10=29.59%** |
-| Semantic Segmentation (Stanford 2D-3D-S) | Planar DeepLab v3 | NR | mIoU=35.01% | mIoU=12.11% |
+| | **Spherical YOLOv11** | **NR** | mAP10=29.54% | **29.59%** |
+| Sem. Seg. (Stanford 2D-3D-S) | Planar DeepLab v3 | NR | mIoU=35.01% | mIoU=12.11% |
 | | Planar DeepLab v3 | RR | mIoU=32.29% | mIoU=38.30% |
-| | **Spherical DeepLab v3** | **NR** | mIoU=28.78% | **mIoU=28.09%** |
+| | **Spherical DeepLab v3** | **NR** | mIoU=28.78% | **28.09%** |
 
-### Ablation Study (Semantic Segmentation, DeepLab v3)
+### Ablation Study (Semantic Segmentation DeepLab v3)
 
-| Position Sampler | Distance Bins | NR mIoU | RR mIoU | Notes |
-|-----------------|---------------|---------|---------|-------|
+| Position Sampler | Distance Bins | NR mIoU | RR mIoU | Description |
+|-----------|---------|---------|---------|------|
 | **Icosahedron** | **3** | 28.78% | **28.09%** | Best equivariance preservation |
-| Icosahedron | 4 | 27.99% | 23.50% | More bins → overfitting |
-| Icosahedron | 5 | 29.66% | 22.82% | Higher NR but large RR drop |
-| Fibonacci | 3 | 31.69% | 12.60% | Non-uniform sampling breaks equivariance |
-| HEALPix | 3 | 29.59% | 13.87% | Same issue |
-| Quasi-random | 3 | 29.85% | 8.70% | Worst equivariance |
-| Equirectangular | 3 | 30.25% | 12.87% | Severe polar distortion |
-
-### Cross-Lens Zero-Shot Generalization (DeepLab v3, Single-Batch Overfitting)
-
-| Training Lens | Planar Pinhole mIoU | Spherical Pinhole mIoU | Planar Panoramic mIoU | Spherical Panoramic mIoU |
-|--------------|---------------------|----------------------|-----------------------|--------------------------|
-| Pinhole | 53.75% | 48.71% | 19.57% | **35.62%** |
-| Fisheye | 67.95% | 40.27% | 57.46% | **48.04%** |
-| Panoramic | 51.56% | 36.54% | 71.20% | **65.71%** |
+| Icosahedron | 4 | 27.99% | 23.50% | Overfitting with more bins |
+| Icosahedron | 5 | 29.66% | 22.82% | NR increases, RR drops significantly |
+| Fibonacci | 3 | 31.69% | 12.60% | Non-uniformity breaks equivariance |
+| HEALPix | 3 | 29.59% | 13.87% | Similar to Fibonacci |
+| Equirectangular | 3 | 30.25% | 12.87% | Severe distortion at poles |
 
 ### Key Findings
-- **Distance-only kernels guarantee rotation robustness**: The spherical model trained without rotation augmentation degrades by less than 1% under random rotation testing (e.g., MNIST 87.18%→85.43%), whereas the planar model collapses (98.45%→41.08%).
-- **Trade-off between equivariance and expressiveness**: Adding directional weights brings NR performance close to the planar CNN but causes comparable RR degradation (98.28%→43.54%), confirming that the directional component introduces gauge dependence.
-- **Uniformity of position sampler determines equivariance quality**: Icosahedron sampling is most stable under RR testing; Fibonacci/HEALPix achieve slightly higher NR scores but collapse under RR.
-- **More distance bins are not always better**: Three bins is optimal; more bins cause overfitting due to too few samples per bin.
-- **Spherical models generalize significantly better across lenses**: When trained on pinhole and tested on panoramic, the spherical model achieves mIoU 35.62% vs. 19.57% for the planar baseline.
+- **Distance-only kernels ensure rotation robustness**: Without rotation augmentation, spherical models show <1% performance drop under random rotation (e.g., MNIST 87.18%$\rightarrow$85.43%), whereas planar models collapse (98.45%$\rightarrow$41.08%).
+- **Equivariance vs. Expressivity Trade-off**: Adding directional weights achieves NR performance close to planar CNNs but reduces RR performance, indicating introduced gauge dependence.
+- **Sampler uniformity is critical**: Icosahedron is the most stable in RR tests; samplers like Fibonacci/HEALPix show higher NR but significantly lower RR.
+- **Cross-lens generalization**: Spherical models significantly outperform planar models when transferring from Pinhole training to Panoramic testing (mIoU 35.62% vs 19.57%).
 
 ## Highlights & Insights
-- **The insight that "distance alone suffices for rotation equivariance" is the central contribution**: Because geodesic distance is an $SO(3)$ invariant, distance-based weight functions are naturally equivariant. This is considerably more elegant than spectral-domain methods (computationally expensive) or group-equivariant networks (structurally complex).
-- **Fully decoupled modular design**: Projection, position sampling, value interpolation, and resolution control are mutually independent, enabling plug-and-play replacement of convolution and pooling layers in any planar CNN. This design philosophy generalizes naturally to other signal domains (e.g., hyperbolic space, learning on manifolds).
-- **Geometric caching strategy**: Neighborhood structures and weight coefficients for resampling and convolution need to be computed only once for a given camera, incurring zero overhead during subsequent inference—highly advantageous for real-time deployment.
-- **The experimental design of direct replacement without pretraining is convincing**: Plug-and-play compatibility is uniformly demonstrated across three distinct architectures: YOLOv11, DeepLab v3, and UNet.
+- **Distance-only Equivariance**: The insight that geodesic distance-based weights provide natural $SO(3)$ invariance is the core contribution. This is simpler than harmonic or group-equivariant methods.
+- **Decoupled Modularity**: The projection, sampling, interpolation, and backbone are independent, allowing plug-and-play replacement for any planar CNN.
+- **Geometric Caching**: Neighborhood structures are calculated once for a specific camera, enabling efficient real-time deployment.
+- **Generalized Evidence**: Demonstration across YOLO, DeepLab, and UNet proves the architectural versatility.
 
 ## Limitations & Future Work
-- Distance-only kernels entail an inherent trade-off between rotation robustness and raw accuracy—in NR settings, spherical models underperform planar models.
-- Prediction targets that depend on angle or orientation (e.g., rotated bounding box directions) cannot be addressed by an equivariant architecture alone; gauge-equivariant methods or data augmentation are required.
-- Validation is currently limited to CNNs; extension to Vision Transformers remains unexplored—how patch embedding and positional encoding adapt to the sphere is an open problem.
-- Neighborhood search (spherical KNN or spherical cap queries) at high input resolutions may become a computational bottleneck.
-- Evaluation is conducted primarily on synthetic and indoor datasets; validation in more complex outdoor scenarios such as autonomous driving is insufficient.
+- Pure distance kernels present a trade-off between robustness and absolute accuracy (NR performance is slightly lower than planar models).
+- Orientation-dependent targets (e.g., rotated bounding box angles) require gauge-equivariant methods.
+- Not yet extended to Vision Transformers—adapting patch embeddings and positional encodings to spheres remains an open problem.
+- Scalability of neighborhood searches (KNN/radius search) for very high resolutions may become a bottleneck.
 
 ## Related Work & Insights
-- **vs. S2CNN/SO(3) CNN**: These spectral-domain methods achieve higher accuracy at low resolution (MNIST, 98.1%) but incur sharply increasing computational costs as resolution grows. USF operates in the spatial domain and scales efficiently to high-resolution panoramic images.
-- **vs. SphereNet**: SphereNet samples features on tangent planes and still relies on predefined sampling schemes. USF treats spherical data as an unordered point set, offering greater flexibility.
-- **vs. DISCO**: DISCO employs learnable radial–directional kernels but targets dense signals on the full sphere with fixed discretization and does not support partial FoV coverage. USF supports arbitrary FoV.
+- **vs S2CNN/SO(3) CNN**: Harmonic methods are more accurate at low resolutions but computational costs scale poorly ($O(\ell^3)$). USF operates in the spatial domain for high-resolution scalability.
+- **vs SphereNet**: SphereNet samples features on tangent planes and depends on predefined sampling. USF treats data as unordered point sets, providing more flexibility.
+- **vs DISCO**: DISCO uses radial-directional kernels but assumes full spherical coverage and fixed discretization. USF supports arbitrary FoV.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The core insight (distance-only equivariance + spatial-domain convolution) is concise and elegant, though several components (spherical projection, resampling) have precedents in prior work.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Three tasks, three backbones, and detailed ablations are provided; however, absolute performance on detection and segmentation is relatively low.
-- **Writing Quality**: ⭐⭐⭐⭐ Mathematical derivations are complete and the modular presentation is clear, though the paper is somewhat lengthy.
-- **Value**: ⭐⭐⭐⭐ Practically significant for robotic perception and AR/VR wide-angle vision; the plug-and-play design lowers the barrier to adoption.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting](fov-net_rotation-invariant_cad_b-rep_learning_via_field-of-view_ray_casting.md)
-- [\[CVPR 2026\] SAP: Segment Any 4K Panorama](sap_segment_any_4k_panorama.md)
+- [\[CVPR 2026\] SAMTok: Representing Any Mask with Two Words](samtok_representing_any_mask_with_two_words.md)
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
 - [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
-- [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)
 
 </div>
 

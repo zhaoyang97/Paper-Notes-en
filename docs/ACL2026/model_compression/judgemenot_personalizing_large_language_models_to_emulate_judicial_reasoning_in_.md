@@ -2,75 +2,87 @@
 title: >-
   [Paper Note] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 description: >-
-  [ACL 2026][Model Compression][LLM Personalization] The study proposes a synthetic-organic supervision pipeline that transforms raw judicial decisions into reasoning instruction tuning data. Using a Chain-of-LoRA strategy…
+  [ACL 2026][Model Compression][Paper Note] This paper proposes a synthetic-organic supervision pipeline to transform raw judicial rulings into reasoning instruction tuning data. It achieves high-fidelity simulation of individual judges' reasoning styles through a "Chain-of-LoRA" strategy (CLM → Instruction Tuning). In Hebrew low-resource scenarios, the generate
 tags:
-  - "ACL 2026"
-  - "Model Compression"
-  - "LLM Personalization"
-  - "Judicial Reasoning"
-  - "Low-resource Languages"
-  - "Parameter-Efficient Fine-Tuning"
-  - "Synthetic Instruction Data"
+  - ACL 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: c637c0de8aef7c1f
+content_hash: 97d2f9a89b029a97
 ---
-
 # JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18041](https://arxiv.org/abs/2604.18041)  
 **Code**: [GitHub](https://github.com/Socially-Embedded-Lab/JudgeMeNot)  
 **Area**: Model Compression  
-**Keywords**: LLM Personalization, Judicial Reasoning, Low-resource Languages, Parameter-Efficient Fine-Tuning, Synthetic Instruction Data
+**Keywords**: LLM Personalization, Judicial Reasoning, Low-resource language, PEFT, Synthetic instruction data
 
 ## TL;DR
-The study proposes a synthetic-organic supervision pipeline that transforms raw judicial decisions into reasoning instruction tuning data. Using a Chain-of-LoRA strategy (CLM→Instruction Tuning), the approach achieves high-fidelity emulation of individual judges' reasoning styles, producing content indistinguishable from real judgments in low-resource Hebrew scenarios.
+This paper proposes a synthetic-organic supervision pipeline to transform raw judicial rulings into reasoning instruction tuning data. It achieves high-fidelity simulation of individual judges' reasoning styles through a "Chain-of-LoRA" strategy (CLM → Instruction Tuning). In Hebrew low-resource scenarios, the generated content is indistinguishable from real judicial writing.
 
 ## Background & Motivation
 
-**Background**: Research on LLM personalization has grown rapidly, yet most focus on user preferences (style, recommendations) rather than modeling the reasoning processes of specific decision-makers. In the legal domain, a judge's ruling is not a mechanical application of laws but reflects individual reasoning patterns, argumentative focus, and rhetorical structures.
+**Background**: LLM personalization research has grown rapidly in recent years, but mostly focuses on user preferences (style, recommendation) rather than modeling the reasoning processes of specific decision-makers. In the legal domain, judicial rulings are not mechanical applications of laws but reflect individual reasoning patterns, argumentative focus, and rhetorical structures.
 
-**Limitations of Prior Work**: (1) Raw judicial decisions are unstructured long-form texts where reasoning is intertwined with procedural templates and factual statements, making them difficult to use directly for training; (2) Judicial reasoning is "unprompted" in the text—there are no explicit trigger questions; (3) Data for individual judges is limited, making it a core challenge to learn strong individual signals while maintaining computational efficiency.
+**Limitations of Prior Work**: (1) Raw judicial rulings are unstructured long texts where reasoning is intertwined with procedural templates and factual statements, making them difficult to use directly for training; (2) Judicial reasoning in text is "unprompted"—there are no explicit trigger questions; (3) Data for individual judges is limited, making it a challenge to capture strong individual signals efficiently.
 
-**Key Challenge**: Personalization requires sufficient reasoning supervision signals, but these are diluted by large amounts of non-reasoning text in legal judgments. Direct Causal Language Modeling (CLM) on raw text is inefficient.
+**Key Challenge**: Personalization requires sufficient reasoning supervision signals, but judicial reasoning signals are heavily diluted by non-reasoning text. Direct Causal Language Modeling (CLM) on raw text is inefficient.
 
-**Goal**: Design a non-human-annotated, scalable framework for large numbers of judges that enables LLMs to faithfully emulate specific judicial reasoning styles and content.
+**Goal**: Design a framework that requires no human annotation and scales to many judges, allowing LLMs to faithfully simulate specific judicial styles and logic.
 
-**Key Insight**: The legal domain naturally provides decomposable reasoning traces—judges regularly process complex decisions and write detailed arguments. By decomposing judgments into fine-grained reasoning statements (rather than just final rulings), rich reasoning training signals can be obtained.
+**Key Insight**: The legal domain naturally provides decomposable reasoning traces—judges regularly process complex decisions and write detailed arguments. By decomposing rulings into fine-grained reasoning statements (rather than just final verdicts), rich reasoning training signals can be obtained.
 
-**Core Idea**: Use an agentic workflow to automatically extract reasoning statements from judgments and generate synthetic questions to construct a reasoning instruction set. This is followed by a two-stage Chain-of-LoRA (CLM→Instruction Tuning) for efficient personalization.
+**Core Idea**: Use an agentic workflow to automatically extract reasoning statements from rulings and generate synthetic questions to construct instruction sets. High-efficiency personalization is then achieved via a two-stage Chain-of-LoRA (CLM → Instruction Tuning).
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two phases: The first phase is data generation—using multi-LLM agents to extract reasoning statements and generate synthetic Q&A pairs from raw judgments. The second phase is model training—comparing personalization schemes like CLM, instruction tuning, Chain-of-LoRA (CLM→Instruction Tuning), and RAG.
+
+This paper addresses how to make an LLM faithfully mimic a specific judge's thinking and writing when raw materials consist only of unstructured rulings. The pipeline is divided into two parts: "purifying" rulings into trainable reasoning signals and injecting these signals into the model using a lightweight two-stage LoRA system. The first part uses multiple LLM agents to extract reasoning sentences and back-generate synthetic questions to create a QA-style instruction set. The second part first learns stylistic features through CLM on all rulings and then learns logic via the instruction set. Finally, personalization is verified through multi-dimensional metrics, including author identification tests.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw Judicial Rulings<br/>(Unstructured Long Text)"]
+    subgraph PIPE["Synthetic-Organic Alignment Pipeline (Design 1)"]
+        direction TB
+        B["Extract Reasoning Statements<br/>GPT-4.1-mini"] --> C["Verify Extraction Quality<br/>GPT-4o-mini"]
+        C --> D["Back-generate Synthetic Questions<br/>+ Verify Fidelity"]
+    end
+    A --> PIPE
+    PIPE --> E["Reasoning Instruction Set<br/>62,051 QA Pairs"]
+    subgraph COLA["Chain-of-LoRA Two-stage Training (Design 2)"]
+        direction TB
+        F["Stage 1: QLoRA + CLM<br/>Learn Style → Merge adapter to base"] --> G["Stage 2: QLoRA Instruction Tuning<br/>Learn Reasoning Logic"]
+    end
+    A --> F
+    E --> G
+    COLA --> H["Personalized Judge Model"]
+    subgraph EVAL["Multi-dimensional Evaluation (Design 3)"]
+        direction TB
+        I["Lexical/Semantic/Stylistic Similarity<br/>BLEU · BERTScore · POS-JSD"]
+        J["Author Identification Test<br/>Classifier Accuracy → 50%"]
+    end
+    H --> EVAL
+```
 
 ### Key Designs
 
-1. **Synthetic-Organic Alignment Pipeline**:
+**1. Synthetic-Organic Alignment Pipeline: Purifying rulings into QA-style reasoning supervision**
+Directly using raw rulings for CLM faces a fatal issue: sentences reflecting reasoning are diluted by procedural templates and facts. Human annotation is not scalable. This pipeline uses multiple LLM agents in a multi-round agentic workflow: GPT-4.1-mini (temp=0.3) extracts reasoning statements, GPT-4o-mini (temp=0.1) verifies quality, and synthetic questions are generated for each statement. The "synthetic question" is a key design: reasoning in rulings is "unprompted," but since models are used in QA formats, back-generating a question aligns the training distribution with the inference distribution.
 
-    - **Function**: Transforms unstructured judicial documents into high-quality reasoning instruction pairs.
-    - **Mechanism**: Employs GPT-4.1-mini for reasoning extraction (temperature=0.3) and GPT-4o-mini for verification (temperature=0.1). Through a multi-round agentic workflow, it extracts reasoning statements → verifies extraction quality → generates synthetic questions → verifies question fidelity. This resulted in 62,051 reasoning sentences and corresponding synthetic questions.
-    - **Design Motivation**: Training directly on raw judgments dilutes reasoning signals, while human annotation is not scalable. Synthetic questions compensate for the missing "implicit trigger questions" in judgments, allowing models to learn reasoning in a Q&A format.
+**2. Chain-of-LoRA (CoLA) Two-stage Training: Separating "how to write" from "how to think"**
+To learn strong individual signals within computational constraints, CoLA splits the process into two steps. Step one uses QLoRA on all raw rulings for CLM to capture stylistic features (vocabulary, syntax, rhetoric), then merges the adapter weights back into the base. Step two performs another round of QLoRA on the purified synthetic reasoning instruction set to learn logic. Separating style from reasoning prevents the gradients of the two different objectives (surface distribution vs. argumentative structure) from interfering.
 
-2. **Chain-of-LoRA (CoLA) Two-Stage Training**:
-
-    - **Function**: Integrates general writing style adaptation with reasoning specialization.
-    - **Mechanism**: The first step uses QLoRA for CLM on all of a judge's raw judgments (learning writing style), merging adapter weights back into the base model. The second step performs another round of QLoRA fine-tuning on the synthetic reasoning instruction set (learning reasoning patterns). This follows the Chain of LoRA concept.
-    - **Design Motivation**: The CLM stage familiarizes the model with the judge's vocabulary and stylistic features, while the instruction tuning stage focuses on reasoning logic. This separation allows the model to learn "how to write" and "how to think" independently.
-
-3. **Multi-dimensional Evaluation System**:
-
-    - **Function**: Comprehensively measures personalization quality.
-    - **Mechanism**: Includes lexical similarity (BLEU, ROUGE), semantic similarity (BERTScore), stylistic similarity (JSD of POS distributions), and an authorship identification test (training a binary classifier to distinguish real vs. generated text).
-    - **Design Motivation**: A single metric cannot capture the multi-faceted nature of personalization—surface style and deep reasoning require different measures.
+**3. Multi-dimensional Evaluation: Quantifying style and reasoning separately**
+Personalization quality is multi-faceted. The evaluation covers lexical similarity (BLEU, ROUGE), semantic similarity (BERTScore), stylistic similarity (JSD of Part-of-Speech distributions), and a binary author identification test. If a classifier's accuracy in distinguishing model-generated text from real judicial text approaches 50%, the personalization is considered successful.
 
 ### Loss & Training
-Gemma 3 (4B) is used as the base with a QLoRA configuration (rank=8). A separate LoRA adapter is trained for each judge, with base weights frozen. The CLM stage uses standard causal language modeling loss, while the instruction tuning stage uses standard SFT loss.
+Gemma 3 (4B) is used as the base with QLoRA configuration (rank=8). Each judge has an individual LoRA adapter, while base weights remain frozen. Standard Causal Language Modeling loss is used for the CLM stage, and standard SFT loss is used for the instruction tuning stage.
 
 ## Key Experimental Results
 
-### Main Results (Q&A Task, Delta improvement of CoLA relative to baselines)
+### Main Results (QA Task, CoLA improvement relative to baselines)
 
 | Method | BLEU↑ | BS-F↑ | R-L↑ | POS-JSD↓ |
 |------|-------|-------|------|----------|
@@ -80,45 +92,45 @@ Gemma 3 (4B) is used as the base with a QLoRA configuration (rank=8). A separate
 | Pers-IT | -7.02 | -0.09 | -0.15 | +0.02 |
 | **CoLA (Ours)** | **Best** | **Best** | **Best** | **Best** |
 
-### Authorship Identification Test
+### Author Identification Test
 
-| Method | Accuracy | Description |
+| Method | Accuracy | Note |
 |------|--------|------|
 | Random Guess | 50.0% | Baseline |
-| Human vs. Human | 84.3% | Differences exist between judges |
-| Vanilla-Gemma | 70.3% | Easily identified |
+| Human vs. Human | 84.3% | Judges do have distinct differences |
+| Vanilla-Gemma | 70.3% | Easily distinguishable |
 | CLM-only | 56.2% | Still distinguishable |
 | **CoLA** | **49.8%** | Indistinguishable from random |
 | **IT-only** | **49.6%** | Indistinguishable from random |
 
 ### Key Findings
-- **CoLA-generated text is indistinguishable from real judges**: The authorship identification classifier's accuracy dropped to random levels (49.8%), indicating extremely high generation quality.
-- **Data quantity is more important than model size**: Ablations show doubling data yields a +2.68 BLEU gain, while doubling LoRA rank only yields +0.77 BLEU.
-- **The CLM+IT combination outperforms standalone use**: Cross-judge specificity tests confirmed that personalization effects are judge-specific rather than general improvements.
-- **RAG excels at surface style but fails at reasoning**: RAG performed well on POS-JSD but lagged in semantic metrics, suggesting that parameter adaptation is necessary to capture reasoning.
+- **CoLA generation is indistinguishable from real judges**: The author identification classifier accuracy dropped to the random level (49.8%), indicating extremely high generation quality.
+- **Data volume is more important than model size**: Ablation shows doubling data leads to a +2.68 BLEU gain, while doubling LoRA rank only yields +0.77 BLEU.
+- **CLM+IT synergy**: Cross-judge specificity tests confirm that personalization is judge-specific rather than a general improvement.
+- **RAG excels at surface style but fails at reasoning**: RAG performed well on POS-JSD but lagged in semantic metrics, proving that parameter adaptation is necessary to capture reasoning.
 
 ## Highlights & Insights
-- The decomposition of **"persona = style layer + reasoning layer"** is insightful: RAG captures surface style but not reasoning, while parameter fine-tuning does the opposite. This suggests personalization may require combining both paths.
-- The **synthetic supervision pipeline** is highly practical: The pattern of extracting reasoning and generating questions via multi-agents from unstructured documents can be migrated to any field requiring expert decision-making extraction (e.g., medicine, education).
-- Achieving high-fidelity personalization on a **4B parameter model** challenges the notion that "reasoning requires large models and huge data"—the key lies in the structural organization of supervision signals.
+- The decomposition of **"persona = style layer + reasoning layer"** is insightful: RAG captures surface style but not reasoning logic, whereas parameter tuning is the opposite. This suggests personalization requires a combination of both paths.
+- The **Synthetic Supervision Pipeline** is highly practical: The pattern of using multi-agent workflows to extract reasoning and generate questions from unstructured documents can be transferred to medicine, education, or any field requiring expert decision-making simulation.
+- Achieving high-fidelity personalization on a **4B parameter model** challenges the notion that reasoning requires massive models and data—the key lies in the structure of the supervision signals.
 
 ## Limitations & Future Work
-- Focuses only on fine-grained reasoning statements without modeling the global case-level reasoning chain.
-- Does not consider the temporal drift of a judge's reasoning style over time.
-- Validated only within the Hebrew legal system; cross-language/cross-jurisdiction generalization remains unknown.
-- Model weights are intentionally not released (to prevent misuse), which limits reproducibility.
-- Future work could explore explicit modeling of reasoning chain dependencies and reasoning enhancement combined with factual grounding.
+- Focuses only on fine-grained reasoning statements and does not model the overall reasoning chain at the case level.
+- Does not account for the drift of judicial reasoning style over time.
+- Validated only in the Hebrew legal system; cross-lingual/cross-jurisdictional generalization is unknown.
+- Model weights are not released to prevent misuse, which limits reproducibility.
+- Future work could explore explicit dependency modeling in reasoning chains and incorporate factual grounding.
 
 ## Related Work & Insights
-- **vs OnePeFTPerUser**: The latter combines PEFT and retrieval for user personalization but targets labeled tasks (classification/tagging) rather than reasoning.
-- **vs DRAFT**: DRAFT improves tool documentation through trial-and-error, similar to this synthetic data pipeline, but with different goals (tool use vs. reasoning emulation).
-- **vs General Reasoning Models (e.g., o3)**: Reasoning models typically require verifiable steps (math/code), whereas legal reasoning lacks such objective verification signals. This work substitutes correctness with emulation fidelity as the optimization objective.
+- **vs OnePeFTPerUser**: The latter combines PEFT and retrieval for personalization but focuses on labeled tasks (classification/tagging) rather than reasoning modeling.
+- **vs DRAFT**: DRAFT improves tool documentation through trial and error, similar to this paper's synthetic pipeline, but targets tool use rather than reasoning simulation.
+- **vs General Reasoning Models (e.g., o3)**: Reasoning models typically require verifiable steps (Math/Code), whereas legal reasoning lacks such objective signals. This work uses simulation fidelity instead of "correctness" as the optimization goal.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The synthetic-organic pipeline and CoLA strategy are innovative, though individual components are relatively mature.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive with three tasks, multiple baselines, ablation studies, cross-judge validation, and robustness tests.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, thorough ethical discussion, and smooth motivation derivation.
-- Value: ⭐⭐⭐⭐ Important insights for personalized LLM reasoning, though the application scenario is niche.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive with multiple tasks, baselines, ablations, cross-judge validation, and robustness tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, thorough ethical discussion, and logical motivation.
+- Value: ⭐⭐⭐⭐ Provides significant insights for LLM reasoning personalization, despite the niche application domain.
 
 <!-- RELATED:START -->
 
@@ -129,8 +141,8 @@ Gemma 3 (4B) is used as the base with a QLoRA configuration (rank=8). A separate
 - [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](../../AAAI2026/model_compression/efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](../../ICLR2026/model_compression/landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
-- [\[ACL 2026\] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models](grasprune_global_gating_for_budgeted_structured_pruning_of_large_language_models.md)
 - [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](training-free_test-time_contrastive_learning_for_large_language_models.md)
+- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
 
 </div>
 

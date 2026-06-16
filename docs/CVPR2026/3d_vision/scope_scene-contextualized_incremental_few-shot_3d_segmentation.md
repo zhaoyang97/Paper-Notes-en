@@ -2,191 +2,169 @@
 title: >-
   [Paper Note] SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Incremental Few-Shot] SCOPE proposes a plug-and-play background-guided prototype enrichment framework that mines pseudo-instances from background regions of base-training scenes to build a prototyp…
+  [CVPR 2026][3D Vision][Incremental Few-Shot] SCOPE proposes a plug-and-play background-guided prototype enrichment framework that utilizes pseudo-instances from background regions in base training scenes to construct a prototype bank. During the incremental stage, few-shot prototypes are enhanced via retrieval and attention-based fusion, significantly improving n
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Incremental Few-Shot"
-  - "3D Point Cloud Segmentation"
-  - "Prototype Enrichment"
-  - "Background Mining"
-  - "Class-Agnostic Segmentation"
+  - CVPR 2026
+  - 3D Vision
+  - Incremental Few-Shot
+  - 3D Point Cloud Segmentation
+  - Prototype Enrichment
+  - Background Mining
+  - Class-Agnostic Segmentation
 date: 2026-05-08
-content_hash: 22c162365dbc5438
+content_hash: d381b9c9f4a7a771
 ---
-
 # SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.06572](https://arxiv.org/abs/2603.06572)  
-**Code**: N/A  
-**Area**: 3D Vision / 3D Point Cloud Segmentation  
+**Code**: None  
+**Area**: 3D Vision / Point Cloud Semantic Segmentation  
 **Keywords**: Incremental Few-Shot, 3D Point Cloud Segmentation, Prototype Enrichment, Background Mining, Class-Agnostic Segmentation
 
 ## TL;DR
 
-SCOPE proposes a plug-and-play background-guided prototype enrichment framework that mines pseudo-instances from background regions of base-training scenes to build a prototype bank. At incremental stages, it enriches few-shot prototypes via retrieval + attention fusion — without retraining the backbone or adding parameters, it raises novel-class IoU on ScanNet / S3DIS by up to +6.98% while keeping forgetting low.
+SCOPE proposes a plug-and-play background-guided prototype enrichment framework that utilizes pseudo-instances from background regions in base training scenes to construct a prototype bank. During the incremental stage, few-shot prototypes are enhanced via retrieval and attention-based fusion, significantly improving new class IoU (up to +6.98%) on ScanNet/S3DIS without retraining the backbone or adding parameters, while maintaining low forgetting.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: 3D point cloud semantic segmentation is fundamental for embodied perception tasks like robotics, autonomous driving, and AR/VR. Fully supervised methods (PointNet, PointNet++, DGCNN, Point Transformer, etc.) perform well with sufficient labels, but real-world deployment faces two constraints: (1) new categories emerge continuously as environments change; (2) only very few labels are available when new classes appear.
 
-3D point cloud semantic segmentation underpins embodied perception in robotics, autonomous driving, and AR/VR. Fully supervised methods (PointNet, PointNet++, DGCNN, Point Transformer, etc.) excel given abundant labels, but real-world deployment faces two constraints: (1) novel categories continually emerge as the environment changes; (2) only very few labels are available when novel classes appear.
+Existing paradigms have limitations:
 
-Existing paradigms each have their limits:
+- **Few-Shot Segmentation** (AttMPTI, etc.): Learns from few samples but cannot retain previously learned knowledge.
+- **Generalized Few-Shot 3D Segmentation** (CAPL, GW): Recognizes both base and new classes simultaneously but only allows a single update and assumes prior knowledge of future categories.
+- **Class-Incremental 3D Segmentation** (LwF, EWC, CLIMB-3D, GUA): Supports multiple updates but requires large-scale annotations and degrades severely in few-shot scenarios.
+- **Incremental Few-Shot 3D Segmentation** (HIPO): The closest setting, yet performance remains lower than strong generalized few-shot baselines.
 
-- **Few-Shot Segmentation** (e.g. AttMPTI): can learn from a handful of samples but cannot retain previously learned knowledge.
-- **Generalized Few-Shot 3D Segmentation** (CAPL, GW): jointly recognize base and novel classes, but only allow a single update and assume future classes are known in advance.
-- **Class-Incremental 3D Segmentation** (LwF, EWC, CLIMB-3D, GUA): support multiple updates but require many labels — they degrade severely in the few-shot regime.
-- **Incremental Few-Shot 3D Segmentation** (HIPO): the closest setting, but performance still trails the strongest generalized few-shot baselines.
+**Limitations of Prior Work**: Directly applying these methods to incremental few-shot scenarios is ineffective—incremental methods overfit in few-shot settings causing catastrophic forgetting, while few-shot methods lack multi-stage progression capabilities. **The key overlooked clue is that background regions in base training scenes often contain unlabeled object structures that likely correspond to future new categories.**
 
-### Root Cause
-
-Naively transplanting these methods into the incremental few-shot setting fails — incremental methods overfit and catastrophically forget under few-shot supervision, while few-shot methods lack the ability to incorporate multiple stages. **The crucial overlooked cue is that background regions of base-training scenes often contain unlabeled object structures that very likely correspond to future novel classes.**
-
-### Starting Point
-
-The authors observe that background regions are crudely collapsed into a single label, leaving the encoder unable to distinguish object boundaries within them — yet these regions carry rich geometric and semantic signals. SCOPE's core idea is therefore to **use a class-agnostic segmentation model to mine high-confidence pseudo-instances from the background, build a reusable prototype bank, and at the arrival of novel classes retrieve and fuse relevant background prototypes to enrich few-shot representations** — without modifying the backbone, introducing extra parameters, or requiring retraining.
+**Key Insight**: The authors observe that background regions are crudely compressed into a single label, preventing encoders from distinguishing object boundaries despite these areas containing rich geometric and semantic signals. The core idea of SCOPE is to use a class-agnostic segmentation model to mine high-confidence pseudo-instances from the background to build a reusable prototype bank. When new classes arrive, relevant background prototypes are retrieved and fused to enhance few-shot representations—without modifying the backbone, introducing extra parameters, or retraining.
 
 ## Method
 
 ### Overall Architecture
 
-SCOPE is a three-stage framework:
+SCOPE addresses the "Incremental Few-Shot 3D Segmentation" setting: new categories appear incrementally with few annotations, where existing methods either suffer from forgetting or lack multi-stage support. Its key observation is that background areas in base training scenes contain many unlabeled structures likely to be future classes. SCOPE is designed as a plug-and-play three-stage framework: the base training stage trains an encoder $\Phi = \mathcal{H} \circ \Phi'$ (backbone + projection head) on annotated base classes and learns base prototypes $\mathbf{P}^b$; the scene contextualization stage uses a class-agnostic model to mine pseudo-instances from the background to build an Instance Prototype Bank (IPB); the incremental registration stage retrieves relevant background prototypes for each new class and performs attention-based fusion to obtain enhanced prototypes. The entire process requires no backbone changes, no learnable parameters, and no retraining, making it compatible with any prototype-based 3D segmentation method.
 
-1. **Base Training**: train the encoder $\Phi = \mathcal{H} \circ \Phi'$ (backbone + projection head) on fully labeled base-class data, learn base prototypes $\mathbf{P}^b$, and classify by similarity between point features and prototypes.
-2. **Scene Contextualisation**: apply a class-agnostic segmentation model $\Theta$ to the background regions of base-class scenes, extract pseudo-instances, and build the Instance Prototype Bank (IPB).
-3. **Incremental Class Registration**: when a novel class arrives, build an initial prototype from the few-shot support set, retrieve relevant background prototypes from the IPB via the CPR module, and obtain an enriched prototype via attention fusion in the APE module.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Fully Annotated Base Scenes"] --> B["Base Training<br/>Train Encoder Φ → Base Prototypes Pᵇ"]
+    subgraph IPB["Instance Prototype Bank IPB (Contextualization, Frozen)"]
+        direction TB
+        C["Class-Agnostic Model Θ<br/>Generate Pseudo-instance Mask + Confidence"] --> D["Background Filtering<br/>Within Background & s &gt; τ"]
+        D --> E["Masked Average Pooling<br/>Yields Instance Prototype μ"]
+    end
+    B --> IPB
+    F["New Class c: K Support Samples"] --> G["Few-Shot Prototype pᶜ<br/>Masked Average Pooling"]
+    G --> H["Contextual Prototype Retrieval CPR<br/>Top-R Background Prototypes via Cosine Sim"]
+    IPB --> H
+    H --> I["Attentional Prototype Enrichment APE<br/>Non-parametric Cross-attention + Interp → p̃ᶜ"]
+    I --> J["Unified Classifier<br/>Point-wise Prediction via Dot Product"]
+```
 
-The whole framework is plug-and-play — it can be embedded into any prototype-based 3D segmentation method without altering the backbone or training pipeline.
+### Key Designs
 
-### Key Design 1: Instance Prototype Bank (IPB)
+**1. Instance Prototype Bank (IPB): Recovering and Storing Object Structures from the Background**
 
-**Motivation**: After base training, the encoder collapses every unknown region into background and cannot distinguish objects within. Directly extracting background features from such an encoder yields only coarse, non-discriminative embeddings.
-
-**Solution**: Introduce an off-the-shelf class-agnostic segmentation model (e.g. Mask3D) and produce, for each base-class scene, pseudo-instance masks together with confidence scores:
-
-$$\Theta(\mathbf{X}_i) = \{(\hat{\mathbf{M}}_{i,j}, s_{i,j})\}_{j=1}^{Q_i}$$
-
-Keep only masks that fall in background regions and exceed a confidence threshold $\tau$:
+After base training, the encoder compresses all unknown regions into the background; extracting background features directly yields only coarse, non-discriminative embeddings. SCOPE uses an off-the-shelf class-agnostic segmentation model $\Theta$ (e.g., Mask3D) to generate pseudo-instance masks and confidence scores $\Theta(\mathbf{X}_i) = \{(\hat{\mathbf{M}}_{i,j}, s_{i,j})\}_{j=1}^{Q_i}$ for each base scene, retaining only masks within background regions with confidence above threshold $\tau$:
 
 $$\mathbf{M}_i^{bg} = \{\hat{\mathbf{M}}_{i,j} \mid \hat{\mathbf{M}}_{i,j} \subseteq \mathbf{X}_i[y_i^b = -1],\; s_{i,j} > \tau\}$$
 
-For every retained pseudo-mask, extract point features with the encoder and apply masked average pooling to obtain an instance prototype $\mu_{i,j} \in \mathbb{R}^D$. Aggregating pseudo-instance prototypes from all scenes yields the IPB:
+Each retained pseudo-mask produces an instance prototype $\mu_{i,j} \in \mathbb{R}^D$ via masked average pooling of point features. Aggregating these across all scenes forms the IPB: $\mathcal{P} = \bigcup_i \bigcup_j \{\mu_{i,j}\}$. The IPB is constructed once after base training and remains frozen; the class-agnostic model is used only offline, incurring no extra optimization or memory overhead.
 
-$$\mathcal{P} = \bigcup_i \bigcup_j \{\mu_{i,j}\}$$
+**2. Contextual Prototype Retrieval (CPR): Retrieving Semantically Aligned Background Clues**
 
-The IPB is built **once** after base training and frozen thereafter — no extra optimization or memory burden. The class-agnostic model is used offline a single time and then discarded.
-
-### Key Design 2: Contextual Prototype Retrieval (CPR)
-
-When incremental stage $t$ introduces novel class $c$, first apply masked average pooling on the labeled points of the $K$ support samples to obtain an initial few-shot prototype $p^c$.
-
-The CPR module computes the cosine similarity between $p^c$ and every background prototype $\mu_b$ in the IPB:
+When a new class $c$ arrives in incremental stage $t$, an initial few-shot prototype $p^c$ is computed from $K$ support samples. CPR calculates the cosine similarity between $p^c$ and each background prototype $\mu_b$ in the IPB:
 
 $$\sigma_b^c = \frac{(p^c)^\top \mu_b}{\|p^c\|_2 \|\mu_b\|_2}$$
 
-The top-$R$ most similar prototypes form a class-specific contextual pool $\mathcal{B}^c = \{\mu_r^c\}_{r=1}^R$. This step provides each novel class with semantically aligned auxiliary structural cues.
+The top-$R$ prototypes form a class-specific context pool $\mathcal{B}^c = \{\mu_r^c\}_{r=1}^R$. Since few-shot prototypes are unstable due to sparse samples, this step supplements them with aligned clues from similar structures in base background regions.
 
-### Key Design 3: Attentive Prototype Enrichment (APE)
+**3. Attentional Prototype Enrichment (APE): Selecting Useful Clues via Non-parametric Attention**
 
-The retrieved background prototypes are not equally useful — some may be noisy or weakly object-like. APE performs selective fusion via parameter-free cross-attention:
-
-1. $\ell_2$-normalize the few-shot prototype and the retrieved prototypes.
-2. Use the few-shot prototype as the query and the background prototypes as keys / values in scaled dot-product cross-attention (no learnable parameters / projection heads), yielding attention weights for each retrieved prototype.
-3. Weighted-sum the values to obtain the context-enriched representation $h^c$.
-4. The final enriched prototype is produced by linear interpolation:
+Not all retrieved background prototypes are useful; some contain noise or weak objectness. APE uses non-parametric cross-attention for selective fusion. After $\ell_2$ normalizing $p^c$ and retrieved prototypes, it uses $p^c$ as the query and background prototypes as key/value pairs for scaled dot-product cross-attention (without learnable projections) to compute weights and a weighted sum $h^c$. The final enhanced prototype is a linear interpolation:
 
 $$\tilde{p}^c = \lambda \cdot p^c + (1 - \lambda) \cdot h^c, \quad \lambda \in [0, 1]$$
 
-Prototypes of all known classes are concatenated into a unified classifier $\tilde{\mathbf{P}}^{\leq t} = [\mathbf{P}^b, \ldots, \tilde{\mathbf{P}}^t]$ and predictions are made point-wise via the inner product between point features and the prototype matrix.
+Non-parametric attention is used to avoid violating the "minimal adaptation" principle of few-shot learning, suppressing retrieval noise without requiring training. The final unified classifier $\tilde{\mathbf{P}}^{\leq t} = [\mathbf{P}^b, \ldots, \tilde{\mathbf{P}}^t]$ performs point-wise prediction.
 
-### Training Strategy
+### Loss & Training
 
-- Base stage: standard fully-supervised training of the backbone + prototypes.
-- Incremental stage: **the backbone is fully frozen**; only class prototypes are constructed / enriched from the few-shot support set, with no fine-tuning or extra training.
-- The class-agnostic segmentation model is run offline once and then discarded.
-- The IPB is built once and frozen throughout.
-- Both CPR and APE are non-parametric operations and require no gradient updates.
+The base stage follows standard supervised training for the backbone and prototypes. In incremental stages, the backbone is fully frozen, and prototypes are constructed/enhanced from the few-shot support set without fine-tuning. The class-agnostic model is discarded after offline processing, and both the IPB and APE mechanisms require no gradient updates.
 
 ## Key Experimental Results
 
-### Experimental Setup
-
-- **Datasets**: ScanNet (1513 scenes, 20 classes) and S3DIS (272 scenes, 13 classes).
-- **Split**: the 6 least-frequent classes serve as novel classes and the rest as base classes, reflecting a long-tail distribution.
-- **Setting**: incremental few-shot (IFS-PCS) with $K=5$ and $K=1$, over 3 incremental stages.
-- **Metrics**: mIoU (all classes), mIoU-B (base classes), mIoU-N (novel classes), HM (harmonic mean of base and novel), mIoU-I (per-stage average mIoU), and FPP (forgetting percentage points; lower is better).
-
 ### Main Results: ScanNet (IFS-PCS)
 
-| Method | Venue | K=5 mIoU | K=5 mIoU-N | K=5 HM | K=5 mIoU-I | K=5 FPP↓ | K=1 mIoU | K=1 mIoU-N | K=1 HM |
+| Method | Conference | K=5 mIoU | K=5 mIoU-N | K=5 HM | K=5 mIoU-I | K=5 FPP↓ | K=1 mIoU | K=1 mIoU-N | K=1 HM |
 |------|-------|----------|-----------|--------|-----------|---------|----------|-----------|--------|
 | GW | ICCV'23 | 34.27 | 16.88 | 23.94 | 37.67 | 1.49 | 33.53 | 14.11 | 20.99 |
 | CAPL | CVPR'22 | 31.73 | 14.75 | 21.36 | 34.55 | -0.65 | 30.48 | 10.38 | 16.28 |
 | HIPO | CVPR'25 | 14.95 | 7.44 | 11.50 | 27.63 | 17.60 | 11.94 | 2.91 | 4.86 |
-| **SCOPE** | — | **36.52** | **23.86** | **30.38** | **38.91** | **1.27** | **34.78** | **18.09** | **25.12** |
+| **Ours** | — | **36.52** | **23.86** | **30.38** | **38.91** | **1.27** | **34.78** | **18.09** | **25.12** |
 
 ### Main Results: S3DIS (IFS-PCS)
 
-| Method | Venue | K=5 mIoU | K=5 mIoU-N | K=5 HM | K=5 mIoU-I | K=5 FPP↓ | K=1 mIoU | K=1 mIoU-N | K=1 HM |
+| Method | Conference | K=5 mIoU | K=5 mIoU-N | K=5 HM | K=5 mIoU-I | K=5 FPP↓ | K=1 mIoU | K=1 mIoU-N | K=1 HM |
 |------|-------|----------|-----------|--------|-----------|---------|----------|-----------|--------|
 | GW | ICCV'23 | 57.71 | 39.42 | 51.29 | 63.69 | 0.04 | 51.73 | 26.62 | 39.02 |
 | CAPL | CVPR'22 | 55.52 | 35.01 | 47.27 | 63.69 | 0.64 | 49.16 | 21.25 | 32.79 |
 | HIPO | CVPR'25 | 27.73 | 18.36 | 24.76 | 42.01 | 35.96 | 23.34 | 16.34 | 21.25 |
-| **SCOPE** | — | **59.41** | **43.03** | **54.25** | **65.24** | **-0.03** | **55.36** | **34.32** | **46.73** |
+| **Ours** | — | **59.41** | **43.03** | **54.25** | **65.24** | **-0.03** | **55.36** | **34.32** | **46.73** |
 
 ### Ablation Study (ScanNet, K=5)
 
 | Variant | mIoU | mIoU-N | HM | mIoU-I | FPP↓ |
 |------|------|--------|-----|--------|------|
-| GW baseline (support set only) | 34.27 | 16.88 | 23.94 | 37.67 | 1.49 |
-| + CPR (mean aggregation) | 35.68 | 22.12 | 28.91 | 38.02 | 1.50 |
-| + APE (full framework) | **36.52** | **23.86** | **30.38** | **38.91** | **1.27** |
+| GW Baseline (Support only) | 34.27 | 16.88 | 23.94 | 37.67 | 1.49 |
+| + CPR (Mean Aggregation) | 35.68 | 22.12 | 28.91 | 38.02 | 1.50 |
+| + APE (Full Framework) | **36.52** | **23.86** | **30.38** | **38.91** | **1.27** |
 
 ### Key Findings
 
-1. **Significant gains on novel classes**: on ScanNet K=5, SCOPE improves mIoU-N over the strongest baseline GW by +6.98 and HM by +6.44; on S3DIS K=5, mIoU-N improves by +3.61.
-2. **Very low forgetting**: FPP is only -0.03 on S3DIS (a slight improvement, in fact) and 1.27 on ScanNet, lower than most baselines.
-3. **CPR contributes the most**: in the ablation CPR alone delivers +5.24 mIoU-N, with APE adding another +1.74.
-4. **Small gap between pseudo-masks and GT masks**: building the IPB from GT masks (24.77 mIoU-N) is only 0.91 above pseudo-masks (23.86), showing that confidence filtering and APE effectively suppress noise.
-5. **Zero compute overhead**: incremental-stage runtime is essentially identical to the GW baseline (18.60s vs 18.58s) and IPB storage is <1MB.
-6. **Robust to hyper-parameters**: $\tau$, $R$, $\lambda$ are stable in their reasonable ranges, with the best choices being $\tau=0.8$, $R=40$, and a small $\lambda$.
+1. **Significant New Class Gain**: On ScanNet K=5, SCOPE improves mIoU-N by +6.98% and HM by +6.44% over the strong GW baseline.
+2. **Low Forgetting**: FPP is only -0.03 on S3DIS (indicating slight improvement) and 1.27 on ScanNet, which is lower than most baselines.
+3. **CPR is Critical**: CPR alone contributes +5.24 mIoU-N, while APE adds another +1.74.
+4. **Pseudo vs. GT Masks**: Using ground truth masks for IPB (24.77 mIoU-N) only slightly outperforms pseudo masks (23.86), showing that confidence filtering and APE effectively handle noise.
+5. **Zero Computational Overhead**: Incremental stage runtime is nearly identical to the GW baseline, and IPB storage is $< 1$MB.
+6. **Robust Hyperparameters**: Performance is stable across ranges of $\tau, R, \lambda$, with optimal values at $\tau=0.8$ and $R=40$.
 
 ## Highlights & Insights
 
-1. **Background as treasure**: the central insight — base-training-scene backgrounds carry object structures of future novel classes, a signal that conventional methods completely ignore. By mining these pseudo-instances with a class-agnostic segmentation model, one can build useful, transferable prototypes without ever knowing the future classes.
-2. **Plug-and-play design**: SCOPE does not modify the backbone, introduce learnable parameters, or require extra training; it can be seamlessly embedded into any prototype-based segmentation method, making it highly practical.
-3. **Clever use of parameter-free attention**: APE performs selective fusion via parameter-free cross-attention, avoiding modules that require training (which would violate the minimal-adaptation principle of few-shot learning) while still suppressing noisy retrievals effectively.
-4. **Clear problem definition**: the paper systematically organizes the relations among the FS / GFS / CI / IFS paradigms and identifies the gap of IFS-PCS in the 3D domain — the motivation is well argued.
+1. **Background as a Treasure**: The core insight is that background regions in base scenes contain structures of future classes, which are ignored by traditional methods. Mining these allows for transferable prototypes without future class knowledge.
+2. **Plug-and-Play Design**: SCOPE requires no backbone modifications, no learnable parameters, and no additional training, making it highly practical for prototype-based segmentation.
+3. **Smart Non-parametric Attention**: APE uses non-parametric cross-attention to selectively fuse information, avoiding trainable modules that might violate few-shot learning principles while suppressing retrieval noise.
+4. **Clear Problem Formulation**: The paper systematically organizes the relationships between FS, GFS, CI, and IFS paradigms, filling a gap in the 3D domain.
 
 ## Limitations & Future Work
 
-1. **Dependence on the class-agnostic segmentation quality**: the IPB quality hinges on the pseudo-mask quality of models like Mask3D; the experiments show limited impact, but performance may degrade in complex scenes or non-indoor environments.
-2. **Validated only on indoor scenes**: experiments cover only ScanNet and S3DIS; generalization to large-scale outdoor scenes (e.g. autonomous driving) is not validated.
-3. **IPB construction relies on the full base-class data**: it requires walking through every base-class training scene to build the prototype bank, which may inflate storage and retrieval costs on larger datasets.
-4. **Retrieval strategy is simple**: CPR uses only top-$R$ cosine-similarity retrieval; more sophisticated retrieval (graph-based or hierarchical) could push performance further.
-5. **No interaction between novel classes**: each novel class is retrieved and enriched independently, leaving relations between multiple novel classes within an incremental stage unmodelled.
-6. **$\lambda$ is a fixed hyper-parameter**: the fusion weight is global; adaptively choosing different fusion ratios per class could be better.
+1. **Dependence on Class-Agnostic Model Quality**: IPB quality depends on models like Mask3D; while current impact is small, performance may degrade in non-indoor environments.
+2. **Indoor Focus**: Validated only on ScanNet and S3DIS; outdoor generalization (e.g., autonomous driving) remains unexplored.
+3. **Base Data Dependency for IPB**: Building the prototype bank requires traversing all base scenes, which might scale poorly with massive datasets.
+4. **Simple Retrieval Strategy**: CPR relies on basic cosine similarity; graph-based or hierarchical retrieval could be more effective.
+5. **Lack of New Class Interaction**: New classes are processed independently without modeling relationships between multiple incremental classes.
+6. **Fixed $\lambda$**: The fusion weight is globally fixed; adaptive per-class fusion might be superior.
 
 ## Related Work & Insights
 
-- **GW** (ICCV 2023): the strongest generalized few-shot 3D segmentation baseline, on top of which SCOPE acts as a plug-and-play module.
-- **CAPL** (CVPR 2022): a generalized few-shot method that introduces a co-occurrence prior.
-- **HIPO** (CVPR 2025): hyperbolic prototypes for incremental few-shot 3D segmentation — the most direct competitor in this setting.
-- **Mask3D**: a class-agnostic 3D instance segmentation model, used by SCOPE for offline pseudo-mask generation.
-- **Insight**: background mining can be transferred to 2D scene understanding, video segmentation, open-vocabulary segmentation, and other settings — any scenario where "unknown classes hide in the background" can borrow the idea.
+- **GW** (ICCV 2023): Strongest baseline for generalized few-shot 3D segmentation.
+- **CAPL** (CVPR 2022): Introduces co-occurrence priors.
+- **HIPO** (CVPR 2025): Hyperbolic prototypes for incremental few-shot 3D segmentation, the direct competitor.
+- **Mask3D**: Used for offline pseudo-mask generation.
+- **Insight**: Background mining can be generalized to 2D, video segmentation, and open-vocabulary tasks where unknown classes are hidden in the background.
 
 ## Rating
 
-| Dimension | Score (1-10) | Note |
+| Dimension | Score (1-10) | Explanation |
 |------|:-----------:|------|
-| Novelty | 7 | The background-prototype-mining insight is fresh, but the sub-modules (prototype retrieval, attention weighting) are themselves rather standard. |
-| Technical Depth | 6 | The method is concise and effective but not technically deep; the core contribution lies in problem discovery and system design. |
-| Experimental Thoroughness | 8 | Two datasets, two shot settings, multiple baselines, complete ablations and hyper-parameter analysis — fairly comprehensive. |
-| Writing Quality | 8 | Clear problem definition, well-argued motivation, clean framework figures, and well-organized experiments. |
-| Practical Value | 8 | Plug-and-play, zero extra compute / parameters, code expected — strong landability. |
-| **Overall** | **7.5** | A novel angle, a concise and effective method, and comprehensive experiments — a solid contribution to incremental few-shot 3D segmentation. |
+| Novelty | 7 | Background prototype mining is a novel insight; sub-modules are standard. |
+| Technical Depth | 6 | Simple but effective; contribution lies in problem observation and design. |
+| Experimental Thoroughness | 8 | Comprehensive datasets, shots, baselines, and ablations provided. |
+| Writing Quality | 8 | Clear problem definition, well-organized experiments, and logical flow. |
+| Value | 8 | Plug-and-play, zero overhead, and high practical utility. |
+| **Comprehensive** | **7.5** | A solid work in incremental few-shot 3D segmentation with a novel perspective. |
 
 <!-- RELATED:START -->
 
@@ -195,10 +173,10 @@ Prototypes of all known classes are concatenated into a unified classifier $\til
 ## Related Papers
 
 - [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] PP-Brep: Few-Shot B-rep Classification with Hybrid Graph Representation](pp-brep_few-shot_b-rep_classification_with_hybrid_graph_representation.md)
 - [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
-- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
 
 </div>
 

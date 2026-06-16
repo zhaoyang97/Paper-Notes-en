@@ -2,137 +2,146 @@
 title: >-
   [Paper Note] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models
 description: >-
-  [CVPR 2026][Self-Supervised Learning][model chain] This paper proposes Chain-of-Models Pre-Training (CoM-PT), which arranges vision foundation models in a size-ordered "model chain" and progressively accelerates training…
+  [CVPR 2026][Self-Supervised Learning][CLIP] Ours proposes Chain-of-Models Pre-Training (CoM-PT), which arranges Vision Foundation Models (VFMs) by size into a "model chain." It achieves lossless pre-training acceleration through small-to-large inverse knowledge transfer (weight initialization + feature distillation), where training efficiency improves as the sca
 tags:
-  - "CVPR 2026"
-  - "Self-Supervised Learning"
-  - "model chain"
-  - "pre-training acceleration"
-  - "inverse knowledge transfer"
-  - "CLIP"
-  - "vision foundation models"
+  - CVPR 2026
+  - Self-Supervised Learning
+  - CLIP
 date: 2026-05-08
-content_hash: 73701941f067130c
+content_hash: 96e5a34c1e515207
 ---
-
 # Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.12391](https://arxiv.org/abs/2604.12391)  
 **Code**: [https://github.com/deep-optimization/CoM-PT](https://github.com/deep-optimization/CoM-PT)  
-**Area**: Self-Supervised Learning / Training Acceleration
-**Keywords**: model chain, pre-training acceleration, inverse knowledge transfer, CLIP, vision foundation models
+**Area**: Self-Supervised Learning / Training Acceleration  
+**Keywords**: Model Chain, Pre-training Acceleration, Inverse Knowledge Transfer, CLIP, Vision Foundation Models
 
 ## TL;DR
 
-This paper proposes Chain-of-Models Pre-Training (CoM-PT), which arranges vision foundation models in a size-ordered "model chain" and progressively accelerates training via inverse knowledge transfer (weight initialization + feature distillation) from smaller to larger models, achieving lossless training acceleration whose efficiency improves as the model family grows.
+Ours proposes Chain-of-Models Pre-Training (CoM-PT), which arranges Vision Foundation Models (VFMs) by size into a "model chain." It achieves lossless pre-training acceleration through small-to-large inverse knowledge transfer (weight initialization + feature distillation), where training efficiency improves as the scale of the model family grows.
 
 ## Background & Motivation
 
-**Background**: Pre-training vision foundation models (VFMs) is extremely costly (e.g., ViT-L/14 on LAION-2B requires $1.2 \times 10^5$ A100 GPU hours). Existing acceleration methods—mixed precision, masked modeling, data-efficient approaches, etc.—optimize within a single-model dimension.
+**Background**: The costs of pre-training Vision Foundation Models (VFMs) are exceedingly high (e.g., ViT-L/14 requires $1.2 \times 10^5$ A100 GPU hours on LAION-2B). Existing acceleration methods (mixed precision, masked modeling, data-efficient methods) focus on single-model optimization.
 
-**Limitations of Prior Work**: VFMs are typically pre-trained as model families (varying sizes to satisfy different deployment scenarios), yet the standard practice of independent training is highly redundant—models share the same optimization objective, dataset, and training protocol, causing common knowledge to be repeatedly learned.
+**Limitations of Prior Work**: VFMs are typically pre-trained as a model family (different sizes for various deployment scenarios). However, standard independent training is highly redundant, as models share the same optimization objectives, datasets, and training protocols, causing common knowledge to be learned repeatedly.
 
-**Key Challenge**: As model families continue to grow (more specialized model sizes and larger model ranges), the total cost of independent training scales linearly, creating a dilemma between bearing escalating pre-training costs and sacrificing deployment flexibility.
+**Key Challenge**: As the scale of model families grows (more specialized sizes + larger model ranges), the total cost of independent training increases linearly, creating a dilemma between escalating pre-training costs and sacrificing deployment flexibility.
 
-**Goal**: Achieve pre-training acceleration that scales efficiently with model family size.
+**Goal**: To achieve pre-training acceleration that scales efficiently with the size of the model family.
 
-**Key Insight**: At the micro level, the training cost of large models is the dominant source of overhead; at the macro level, the redundancy of independent training is the root cause of inefficiency. The key to addressing both bottlenecks simultaneously lies in enabling intra-family knowledge reuse from small to large models.
+**Key Insight**: Microscopically, the cost of large models is the primary bottleneck; macroscopically, the redundancy of independent training is the root of inefficiency. The key to solving both is implementing small-to-large knowledge reuse within the family.
 
-**Core Idea**: Arrange the model family in size order to form a model chain; the smallest model is trained from scratch, and each subsequent model is accelerated via inverse knowledge transfer (small → large).
+**Core Idea**: Arrange the model family by size to form a model chain. The smallest model undergoes standard training, while subsequent models accelerate their pre-training through inverse knowledge transfer (Small $\rightarrow$ Large).
 
 ## Method
 
 ### Overall Architecture
 
-The model chain $C_M: m_1 \rightarrow m_2 \rightarrow \cdots \rightarrow m_n$ is ordered by increasing model size. $m_1$ is pre-trained independently from scratch; each subsequent model $m_{i+1}$ is accelerated via inverse knowledge transfer from $m_i$. Inverse knowledge transfer consists of two components: weight initialization in parameter space and feature distillation in feature space.
+Ours addresses the total cost problem of model family pre-training. Given the same data and objective, training multiple VFMs of different sizes is standard but involves redundant learning of shared "common knowledge." CoM-PT breaks this by chaining models from small to large: $C_M: m_1 \rightarrow m_2 \rightarrow \cdots \rightarrow m_n$. Only the smallest $m_1$ is trained from scratch. Each successor $m_{i+1}$ builds upon its predecessor $m_i$ by "inversely" transferring learned knowledge as a starting point. This transfer occurs through two parallel channels: weight initialization in the parameter space and feature distillation in the feature space.
+
+```mermaid
+graph TD
+    A["Model Chain Construction<br/>m₁→m₂→…→mₙ by size, define min model/ratio/epoch decay"] --> B["Smallest Model m₁<br/>Standard training from scratch"]
+    B --> C["Select successor mᵢ₊₁ with mᵢ as small teacher"]
+    subgraph T["Inverse Knowledge Transfer (Small→Large)"]
+        direction TB
+        D["Inverse Weight Initialization<br/>Function-preserving width/depth expansion"]
+        E["Inverse Feature Distillation<br/>Align features with teacher throughout training"]
+    end
+    C --> D
+    C --> E
+    D --> F["mᵢ₊₁ trains for fewer steps to reach target"]
+    E --> F
+    F -->|Propagate along the chain| C
+    F --> G["Output Model Family<br/>Total cost decreases as family scale grows"]
+```
 
 ### Key Designs
 
-1. **Inverse Weight Initialization**:
+**1. Inverse Weight Initialization: Transferring weights as a starting point**
 
-    - **Function**: Reuses the knowledge of smaller models to initialize larger models in parameter space.
-    - **Mechanism**: (i) Width expansion: directly embeds the smaller teacher's parameters into the corresponding positions of the larger student, with remaining parameters randomly initialized; (ii) Depth expansion: copies each layer's weights as the successor layer. A straightforward function-preserving initialization strategy.
-    - **Design Motivation**: Leverages the already-trained smaller model's knowledge to provide a better starting point, accelerating convergence of the larger model.
+Large models are expensive primarily due to slow convergence from random weights. CoM-PT reuses trained weights from smaller models as initial values for larger models using two "function-preserving" expansion operations. For width expansion, parameters from the small teacher are embedded into corresponding positions in the larger student, with extra dimensions initialized randomly. For depth expansion, weights of each layer are duplicated to serve as successor layers. "Function-preserving" ensures the output of the large model initially matches the small model, allowing it to start from a state of "existing competence" rather than from zero. This captures **static** knowledge.
 
-2. **Inverse Feature Distillation**:
+**2. Inverse Feature Distillation: Capturing dynamic knowledge**
 
-    - **Function**: Reuses the dynamic knowledge of smaller models in feature space.
-    - **Mechanism**: $\mathcal{L}_{IFD}(F^t, F^s) = \alpha \| F^t - \mathbf{T}(F^s) \|_2^2$, projecting student features into the teacher feature space via transformation $\mathbf{T}(\cdot)$. In CLIP, distillation is applied to both visual and text features: $\hat{\mathcal{L}}_{IFD} = (\mathcal{L}_{IFD}(v^t,v^s) + \mathcal{L}_{IFD}(t^t,t^s))/2$.
-    - **Design Motivation**: Weight initialization transfers static knowledge, while feature distillation captures dynamic cross-sample knowledge; the two components work synergistically to ensure effective knowledge transfer relay.
+Weight initialization alone is insufficient as snapshots do not capture response patterns across different samples. Inverse feature distillation continuously aligns student features with teacher features during training:
 
-3. **Three Principles for Model Chain Design**:
+$$\mathcal{L}_{IFD}(F^t, F^s) = \alpha \| F^t - \mathbf{T}(F^s) \|_2^2$$
 
-    - **Function**: Guides the construction of an optimal model chain.
-    - **Mechanism**: (i) Optimal smallest model: selected based on data scale—small enough to maximize efficiency yet with sufficient capacity to fit the data distribution; (ii) Intermediate model variants: use expansion ratios of 2×–4×, with larger ratios optimizing cost and smaller ratios maximizing speedup; (iii) Training epoch allocation: decreases linearly along the model chain.
-    - **Design Motivation**: A counterintuitive phenomenon emerges—the ViT-T→S→B→L chain trains two additional models compared to ViT-B→L yet incurs 20% lower total cost.
+where the transformation $\mathbf{T}(\cdot)$ projects student features into the teacher's space to align dimensions. In dual-tower structures like CLIP, both vision and text features are distilled: $\hat{\mathcal{L}}_{IFD} = (\mathcal{L}_{IFD}(v^t,v^s) + \mathcal{L}_{IFD}(t^t,t^s))/2$. Weight initialization provides a static starting point, while distillation provides dynamic cross-sample knowledge; the two channels are complementary.
+
+**3. Three Principles of Model Chain Design**
+
+To determine the chain configurations, three empirical principles are proposed: (i) The smallest model is selected based on data scale to ensure sufficient capacity to fit the distribution. (ii) The expansion ratio between adjacent models is set to $2\times$–$4\times$. (iii) Training epochs decrease linearly along the chain, as larger models with better starting points require less subsequent training. This leads to the counter-intuitive result that a ViT-T→S→B→L chain is cheaper than a ViT-B→L chain because intermediate small models are inexpensive to train and significantly accelerate the convergence of larger ones.
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_{task} + \hat{\mathcal{L}}_{IFD}$, where the task loss is the contrastive loss of LaCLIP (with text augmentation). It is enforced that $\mathcal{L}_{IFD} < \mathcal{L}_{task}$.
+The total loss is $\mathcal{L} = \mathcal{L}_{task} + \hat{\mathcal{L}}_{IFD}$. The task loss utilizes the contrastive loss from LaCLIP (with text augmentation). During training, it is ensured that $\mathcal{L}_{IFD} < \mathcal{L}_{task}$ to keep distillation as an auxiliary role.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model Chain | ImageNet Top-1 | Training MACs | Speedup |
-|-------------|---------------|---------------|---------|
-| ViT-L (independent) | 38.2% | 100% | 1.0× |
+| Model Chain | ImageNet Top-1 | Training MACs | Gain (Speedup) |
+|-------------|----------------|---------------|----------------|
+| ViT-L Independent | 38.2% | 100% | 1.0× |
 | ViT-B→L | 38.0% | 48% | 2.1× |
 | ViT-S→B→L | 38.1% | 36% | 2.8× |
 | ViT-T→S→B→L | **38.3%** | **28%** | **3.6×** |
 
 ### Ablation Study
 
-| Configuration | ImageNet Top-1 | Notes |
-|---------------|---------------|-------|
-| Full CoM-PT | 38.3% | Weight init + feature distillation |
-| Weight init only | 37.8% | No distillation |
-| Feature distillation only | 37.5% | Random initialization |
-| Independent training | 38.2% | Baseline |
+| Configuration | ImageNet Top-1 | Description |
+|---------------|----------------|-------------|
+| Full CoM-PT | 38.3% | Weight Init + Feature Distill |
+| Weight Init Only | 37.8% | No distillation |
+| Feature Distill Only | 37.5% | Random initialization |
+| Independent | 38.2% | Baseline |
 
 ### Key Findings
 
-- Counterintuitive phenomenon: training more models yields higher efficiency—extending the chain from 3 → 4 → 7 models raises the speedup from 4.13× to 5.68× and 7.09×.
-- The model chain structure itself drives the primary efficiency gains; weight initialization and distillation each contribute modestly but synergize well.
-- Performance is validated as lossless (<0.5% accuracy degradation) across 45 downstream datasets.
+- **Counter-intuitive phenomenon**: Training more models is more efficient—speedup jumps from 4.13× to 5.68× and 7.09× when chaining 3, 4, and 7 models respectively.
+- The model chain structure drives the primary efficiency gains, while weight initialization and distillation provide necessary synergy.
+- Performance is preserved across 45 downstream datasets (accuracy loss <0.5%).
 
 ## Highlights & Insights
 
-- "Training more models leads to higher efficiency" is a highly insightful finding: intermediate models in an extended chain converge rapidly thanks to their predecessors, such that the total overhead can be lower than directly training the large model alone.
-- The method is agnostic to the pre-training paradigm and can be generalized to more compute-intensive settings such as LLM pre-training.
-- Inverse knowledge transfer (small → large) forms a dual counterpart to conventional knowledge distillation (large → small), offering a novel perspective.
+- The discovery that "training more models is more efficient" is highly insightful: because intermediate models in the chain converge rapidly, the total overhead can be lower than training a single large model directly.
+- The method is agnostic to pre-training paradigms and can potentially scale to even more compute-intensive scenarios like LLM pre-training.
+- Inverse knowledge transfer (Small $\rightarrow$ Large) acts as a novel dual to traditional knowledge distillation (Large $\rightarrow$ Small).
 
 ## Limitations & Future Work
 
-- Validation is primarily conducted on CLIP; large-scale testing on LLM pre-training has not yet been performed.
-- Model chain design still requires manual tuning; an automated search method is lacking.
-- Width and depth expansion rely on simple copy/insertion strategies; more principled alternatives may exist.
-- Cross-architecture model chains (e.g., ViT → Swin) remain unexplored.
+- Verification has primarily focused on CLIP; large-scale testing on LLM pre-training is yet to be conducted.
+- Model chain design still requires manual adjustment; an automated method is lacking.
+- Simple duplication/insertion strategies for expansion may have more optimal alternatives.
+- Cross-architecture model chains (e.g., ViT $\rightarrow$ Swin) have not been explored.
 
 ## Related Work & Insights
 
-- **vs. Net2Net**: Net2Net first proposed function-preserving transformations for model expansion; CoM-PT extends this idea into a systematic training pipeline.
-- **vs. FLIP/DeCLIP**: These methods accelerate training along the single-model dimension, whereas CoM-PT accelerates along the model-family dimension—the two approaches are orthogonal and complementary.
+- **vs. Net2Net**: Net2Net first proposed function-preserving transformations for expansion; CoM-PT extends this into a systematic training pipeline.
+- **vs. FLIP/DeCLIP**: These methods accelerate at the single-model level, while CoM-PT accelerates at the model-family level, making them orthogonally complementary.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Model-family-level training acceleration represents an entirely new perspective.
+- Novelty: ⭐⭐⭐⭐⭐ A fresh perspective on model-family level acceleration.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive validation across 45 downstream datasets.
-- Writing Quality: ⭐⭐⭐⭐⭐ Micro/macro-level analysis is thorough and well-structured.
+- Writing Quality: ⭐⭐⭐⭐⭐ Thorough analysis from both micro and macro perspectives.
 - Value: ⭐⭐⭐⭐⭐ Significant practical implications for large-scale pre-training.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)
-- [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
-- [\[ICML 2026\] NITP: Next Implicit Token Prediction for LLM Pre-training](../../ICML2026/self_supervised/nitp_next_implicit_token_prediction_for_llm_pre-training.md)
-- [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](../../NeurIPS2025/self_supervised/implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
-- [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](../../ICCV2025/self_supervised/loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
+- [\[CVPR 2026\] JetViT: Efficient High-Resolution Vision Transformer with Post-Training Attention Search](jetvit_efficient_high-resolution_vision_transformer_with_post-training_attention.md)
+- [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
+- [\[CVPR 2026\] Harnessing the Power of Foundation Models for Accurate Material Classification](harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)
 
 </div>
 

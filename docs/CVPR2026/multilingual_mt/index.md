@@ -27,8 +27,8 @@ item_total: 2
 
 **[MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)**
 
-:   This paper constructs MMTIT-Bench, a multilingual multi-scenario text-image translation benchmark covering 14 non-English non-Chinese languages, and proposes the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning). The approach significantly improves end-to-end translation quality on 3B and 7B models, with the 7B model achieving performance competitive with a 235B model.
+:   Constructed MMTIT-Bench, a multilingual and multi-scenario text-image machine translation benchmark covering 14 non-English and non-Chinese languages. Proposed the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning), which significantly improves end-to-end translation quality on 3B and 7B models, with the 7B model achieving performance competitive with a 235B model.
 
 **[SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)**
 
-:   This paper introduces SEA-Vision, a benchmark that unifies evaluation of document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. A re-rendering strategy eliminates visual–textual misalignment in multilingual VQA, revealing severe performance degradation of 3–7× for MLLMs on low-resource SEA languages.
+:   The authors introduce the SEA-Vision benchmark, which provides a unified evaluation for document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. By employing a re-rendering strategy to eliminate visual-text misalignment in multilingual VQA, the study reveals a 3–7x performance degradation in MLLMs when handling low-resource Southeast Asian languages.

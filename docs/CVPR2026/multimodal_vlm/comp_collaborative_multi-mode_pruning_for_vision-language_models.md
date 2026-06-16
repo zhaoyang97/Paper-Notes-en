@@ -2,132 +2,138 @@
 title: >-
   [Paper Note] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Pruning] CoMP proposes a collaborative multi-mode pruning framework that eliminates inconsistencies between parameter and token pruning metrics via a Collaborative Importance Metric (CIM…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] CoMP proposes a collaborative multi-mode pruning framework that eliminates the inconsistency between parameter and token pruning metrics through Collaborative Importance Measure (CIM) and adaptively selects the optimal pruning mode for each stage through Multi-Mode Pruning Strategy (MPS), significantly outperforming si
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Model Pruning"
-  - "Vision-Language Models"
-  - "Parameter Pruning"
-  - "Token Pruning"
-  - "Collaborative Compression"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: f2d5c87876788de1
+content_hash: df378baf1f94bd62
 ---
-
 # CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.02956](https://arxiv.org/abs/2604.02956)  
 **Code**: [https://github.com/Wuzimeng/CoMP.git](https://github.com/Wuzimeng/CoMP.git)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Model Pruning, Vision-Language Models, Parameter Pruning, Token Pruning, Collaborative Compression
 
 ## TL;DR
 
-CoMP proposes a collaborative multi-mode pruning framework that eliminates inconsistencies between parameter and token pruning metrics via a Collaborative Importance Metric (CIM), and adaptively selects the optimal pruning mode at each stage through a Multi-mode Pruning Strategy (MPS), achieving significant improvements over single-mode and naive joint pruning approaches at high pruning ratios.
+CoMP proposes a collaborative multi-mode pruning framework that eliminates the inconsistency between parameter and token pruning metrics through Collaborative Importance Measure (CIM) and adaptively selects the optimal pruning mode for each stage through Multi-Mode Pruning Strategy (MPS), significantly outperforming single-mode and simple joint pruning schemes at high pruning ratios.
 
 ## Background & Motivation
 
-VLMs are built on Transformer architectures with computational complexity $O(N^2D + ND^2)$, where $N$ is the sequence length and $D$ is the feature dimension. Parameter pruning reduces $D$, while token pruning reduces $N$, making the two approaches complementary.
+VLMs based on the Transformer architecture have a computational complexity of $O(N^2D + ND^2)$, where $N$ is the sequence length and $D$ is the feature dimension. Parameter pruning reduces $D$ while token pruning reduces $N$, making them complementary.
 
-**Two core challenges**: (1) **Inconsistent importance metrics** — parameter importance is computed using all tokens, but token pruning removes some tokens, causing parameter importance to be dominated by unimportant tokens. Conversely, token importance depends on all parameters, but parameter pruning removes some parameters, leading to distorted token importance scores. (2) **Fixed pruning mode application** — progressive pruning applies the same mode ordering at every stage, whereas the optimal pruning mode varies across stages.
+**Two core challenges**: (1) **Inconsistent importance measurement**—the calculation of parameter importance depends on all tokens, but token pruning removes some tokens, leading to parameter importance being dominated by unimportant tokens. Conversely, token importance depends on all parameters, but parameter pruning removes some parameters, leading to distorted token importance. (2) **Fixed application of pruning modes**—in progressive pruning, each stage typically prunes parameters and tokens in the same fixed order, but the optimal pruning mode varies across different stages.
 
 ## Method
 
 ### Overall Architecture
 
-A nested-loop structure: the outer loop uses MPS to periodically select the optimal pruning mode, while the inner loop applies CIM to compute collaborative parameter and token importance scores and executes pruning under the selected mode.
+CoMP addresses the conflict between the two sets of importance metrics when performing parameter and token pruning simultaneously on the same VLM. It organizes pruning into a nested loop: the outer loop periodically determines what to prune in the current stage through the Multi-Mode Pruning Strategy (MPS)—selecting one from five modes: vision parameters, language parameters, cross-modal parameters, vision tokens, and language tokens; the inner loop calculates the respective importance scores for parameters and tokens via the Collaborative Importance Measure (CIM) and executes a single pruning step according to the mode selected by the outer loop. The two loops alternate: each mode switch is interspersed with several training steps to progressively approach the target FLOPs; once the target is reached, the pruning configuration is fixed, followed by fine-tuning to recover performance—thus, CoMP is not a training-free method but integrates pruning into the fine-tuning process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: VLM to be compressed<br/>Vision Encoder + Language Model"] --> B
+    subgraph MPS["Multi-Mode Pruning Strategy MPS (Outer Loop)"]
+        direction TB
+        B["Estimate pruning costs for 5 modes<br/>Vision/Language/Cross-modal params + Vision/Language tokens"] --> C["Select mode with lowest cost<br/>+ Random exploration + Historical cost EMA"]
+        C --> D["Raise pruning threshold for this mode"]
+    end
+    D --> CIM
+    subgraph CIM["Collaborative Importance Measure CIM (Inner Loop)"]
+        direction TB
+        E["Token-weighted param importance"] <--> F["Param mask corrected token importance"]
+        F --> G["Execute pruning step per mode<br/>+ Interspersed fine-tuning steps"]
+    end
+    CIM -->|Target FLOPs not reached| B
+    CIM -->|Target FLOPs reached| H["Fixed configuration fine-tuning<br/>→ Compressed VLM"]
+```
 
 ### Key Designs
 
-1. **Collaborative Importance Metric (CIM)**:
+**1. Collaborative Importance Measure (CIM): Preventing importance metrics from contaminating each other**
 
-    - **Function**: Eliminates mutual interference between parameter and token importance computation.
-    - **Mechanism**: When computing parameter importance, token-weighted input norms are introduced — parameter importance computation is weighted by token importance scores to reduce the influence of unimportant tokens. When computing token importance, parameter pruning masks are propagated into the attention weight matrices to suppress the influence of parameters already marked as unimportant.
-    - **Design Motivation**: Experiments show that the most critical tokens in parameter importance computation overlap with token importance rankings by less than 30%, indicating severe inconsistency between the two metrics.
+Parameter and token pruning are mature individually, but interfere when combined. Parameter importance is accumulated across all tokens; once a batch of tokens is pruned, this accumulation is dominated by tokens that should not have participated, leading to distorted parameter importance. Conversely, token importance depends on all parameters; if parameters are pruned, the token ranking also shifts. Empirical tests with CoMP show that the tokens contributing most to parameter importance overlap by less than 30% with the top-ranked tokens for token importance, indicating the two metrics are largely inconsistent. CIM's approach is to have both sides "inform" each other: when calculating parameter importance, a token-weighted input norm is introduced where input is weighted by the current importance of the token, reducing the contribution of unimportant tokens. When calculating token importance, the parameter side's pruning mask is passed into the attention weight matrix, so pruned parameters no longer affect token ranking. Both metrics are calculated based on the "post-pruning true state" of the other side, eliminating mutual contamination at the source.
 
-2. **Multi-mode Pruning Strategy (MPS)**:
+**2. Multi-Mode Pruning Strategy (MPS): Dynamically selecting the most efficient pruning mode at each stage to compress vision and language according to their respective redundancy**
 
-    - **Function**: Adaptively selects the optimal pruning mode at each stage of progressive pruning.
-    - **Mechanism**: The pruning process is divided into multiple stages; at each stage, the "pruning cost" of different modes (visual parameters / language parameters / visual tokens / language tokens) is estimated, and the mode with the lowest cost is executed. Historical costs (for stability) and random exploration (to avoid local optima) are jointly incorporated.
-    - **Design Motivation**: The optimal mode differs across stages — parameter pruning may be preferable early on, while token pruning may be more effective later. A fixed ordering cannot adapt to such variation.
+A common practice in progressive pruning is to prune parameters and then tokens in a fixed order at each stage. However, the optimal mode changes over time—early in the process, model redundancy is high and primarily concentrated in tokens, making token pruning low-cost. In later stages, parameter and token redundancy become comparable, and mutual interference intensifies, causing the optimal mode to shift. Fixed sequences fail to adapt. MPS divides pruning into multiple stages and subdivides options into five modes: vision parameters, language parameters, cross-modal parameters, vision tokens, and language tokens. Each stage estimates a "pruning cost" $r$ for these five modes—the accuracy loss per unit of FLOPs reduction on the validation set—and executes the mode with the lowest cost. To avoid being misled by step-wise noise, an Exponential Moving Average (EMA) of costs is maintained for each mode to integrate historical information, and random exploration is performed with probability $\rho$ (using weighted softmax sampling based on the interval since the last execution) to avoid getting trapped in local optima by greedily selecting the same mode.
 
-3. **Cross-modal Collaborative Pruning**:
-
-    - **Function**: Adaptively prunes both visual and language modalities simultaneously.
-    - **Mechanism**: CIM and MPS are applied independently to the visual encoder and the language model, with pruning ratios across modalities adaptively allocated by MPS, allowing the visual and language components to be compressed at different rates.
-    - **Design Motivation**: The degree of redundancy differs between visual and language components, making uniform pruning suboptimal.
+Breaking down modes by modality is the key benefit here: since the five modes are modality-specific, MPS's cost comparison naturally allows vision and language to be compressed at different rates—whichever is currently "cheaper" to prune is pruned more. This leads to a non-uniform but superior compression ratio without requiring manual specification of pruning rates for each modality. This scheduling logic of "estimate cost—select optimal—with exploration" essentially applies the Multi-Armed Bandit concept to pruning scheduling.
 
 ### Loss & Training
 
-Structured pruning based on importance scores is employed without retraining. Pruning costs are estimated based on model performance changes on a validation set.
+CoMP embeds pruning into the fine-tuning process rather than being training-free. Training steps are interspersed between mode switches. Pruning thresholds are raised progressively, importance scores are accumulated, and masks are smoothly decayed (following the UPop approach) until the model reaches target FLOPs. After that, the pruning configuration is fixed, and the compressed model undergoes a final round of fine-tuning for recovery. The "pruning cost" used by MPS is estimated directly from the precision change per unit FLOPs on the validation set.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | NLVR2 (50% pruning) | NLVR2 (70% pruning) | VQA | Image-Text Retrieval |
-|--------|---------------------|---------------------|-----|----------------------|
-| Parameter pruning only | Medium | Poor | Medium | Medium |
-| Token pruning only | Medium | Poor | Medium | Medium |
-| Naive joint pruning | Medium | Poor | Medium | Medium |
-| **CoMP** | **Best** | **Significantly better** | **Best** | **Best** |
+| Method | NLVR2 (50% Pruning) | NLVR2 (70% Pruning) | VQA | Image-Text Retrieval |
+|------|----------------|----------------|-----|---------|
+| Parameter pruning only | Moderate | Poor | Moderate | Moderate |
+| Token pruning only | Moderate | Poor | Moderate | Moderate |
+| Simple Joint | Moderate | Poor | Moderate | Moderate |
+| **CoMP** | **Best** | **Significantly Better** | **Best** | **Best** |
 
-The advantage is particularly pronounced at high pruning ratios (70%+).
+The advantage is particularly significant at high pruning ratios (70%+).
 
 ### Ablation Study
 
-| Configuration | High-pruning Performance | Notes |
-|---------------|--------------------------|-------|
-| w/o CIM (independent metrics) | Noticeable drop | Inconsistent metrics cause erroneous pruning |
-| w/o MPS (fixed mode) | Drop | Suboptimal mode ordering |
-| w/o random exploration | Slight drop | Susceptible to local optima |
+| Configuration | High Pruning Ratio Performance | Description |
+|------|--------------|------|
+| w/o CIM (Independent measures) | Significant drop | Inconsistent measures lead to incorrect pruning |
+| w/o MPS (Fixed mode) | Drop | Non-optimal mode sequence |
+| w/o Random exploration | Slight drop | Trapped in local optima |
 | Full CoMP | Best | All components are necessary |
 
 ### Key Findings
 
-- The contribution of CIM becomes more pronounced at higher pruning ratios — at low pruning ratios, the impact of metric inconsistency is relatively minor.
-- The adaptive mode selection of MPS eliminates the need for manual tuning — the optimal strategy varies across tasks and models.
-- The optimal pruning ratios for visual and language components are indeed different, making uniform pruning suboptimal.
+- The contribution of CIM is more pronounced at high pruning ratios—the impact of metric inconsistency is smaller at low pruning ratios.
+- MPS adaptive mode selection avoids manual hyperparameter tuning—the optimal strategy varies across tasks and models.
+- The optimal pruning ratios for vision and language components are indeed different; uniform pruning is suboptimal.
 
 ## Highlights & Insights
 
-- **Discovery of metric inconsistency**: The mutual interference between parameter and token importance metrics had been previously overlooked; CIM's collaborative design addresses this problem elegantly.
-- **Adaptive mode selection**: Drawing inspiration from multi-armed bandit approaches (cost estimation + exploration), CoMP enables automated strategy selection during pruning.
-- **Advantage at high pruning ratios**: The gains are largest precisely in the high-compression regime most relevant to practical deployment.
+- **Discovery of Metric Inconsistency**: The interference between parameter and token importance measures was previously overlooked; the collaborative design of CIM elegantly solves this.
+- **Adaptive Mode Selection**: Borrows ideas from Multi-Armed Bandits (cost estimation + exploration) to achieve automated strategy selection in pruning.
+- **High Pruning Ratio Advantage**: The greatest advantage is observed in high compression rate scenarios most needed for actual deployment.
 
 ## Limitations & Future Work
 
-- The mode selection mechanism of MPS introduces additional computational overhead during pruning.
-- Validation is currently limited to the BLIP model family; applicability to architectures such as LLaVA requires further investigation.
-- Dynamic token pruning at inference time necessitates dedicated inference optimization.
-- Future work may explore joint compression with quantization.
+- Mode selection in MPS increases the computational overhead of the pruning process.
+- Currently only validated on the BLIP family; applicability to architectures like LLaVA needs further testing.
+- The dynamic nature of token pruning at inference requires specialized inference optimization.
+- Future work could explore joint compression with quantization.
 
 ## Related Work & Insights
 
-- **vs. UPop/EViT**: Single-mode pruning methods that suffer steep performance degradation at high compression ratios.
-- **vs. Naive joint pruning**: Does not address metric inconsistency and underperforms even individual single-mode pruning methods.
-- **vs. DepGraph/PLATON**: Parameter-pruning-specific methods that lack compression along the token dimension.
+- **vs UPop/EViT**: Single-mode pruning methods; performance drops sharply at high compression rates.
+- **vs Simple Joint Pruning**: Does not handle metric inconsistency; results are inferior to individual single-mode pruning.
+- **vs DepGraph/PLATON**: Dedicated parameter pruning methods; lack compression in the token dimension.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The identification of the metric inconsistency problem and the CIM design are genuinely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across multiple tasks and pruning ratios.
-- Writing Quality: ⭐⭐⭐⭐ Problem analysis is clear and figures are intuitive.
-- Value: ⭐⭐⭐⭐ Directly applicable to practical VLM deployment.
+- Novelty: ⭐⭐⭐⭐ The discovery of the metric inconsistency problem and the CIM design are innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive testing across multiple tasks and pruning ratios.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem analysis and intuitive illustrations.
+- Value: ⭐⭐⭐⭐ Direct practical value for VLM deployment.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](../../ICCV2025/multimodal_vlm/meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
 - [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
-- [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](simpact_simulation-enabled_action_planning_using_vision-language_models.md)
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
 
 </div>
 

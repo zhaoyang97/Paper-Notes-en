@@ -2,128 +2,137 @@
 title: >-
   [Paper Note] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL
 description: >-
-  [CVPR 2026][multi-agent reinforcement learning] The first multi-agent RL framework that performs contact-rich human-human assistive motion imitation in physics simulation…
+  [CVPR 2026][Human Understanding][Paper Note] The first Multi-Agent RL (MARL) framework for imitation learning of contact-rich human-human assistive behaviors in physics simulation. It makes MARL viable in high-contact settings through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards.
 tags:
-  - "CVPR 2026"
-  - "multi-agent reinforcement learning"
-  - "physics simulation"
-  - "assistive behavior"
-  - "motion imitation"
-  - "contact-rich interaction"
+  - CVPR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: 4b75219f6aa27c9e
+content_hash: 65a32206a20981c2
 ---
-
 # AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.11346](https://arxiv.org/abs/2603.11346)  
 **Code**: [Project Page](https://yutoshibata07.github.io/AssistMimic/)  
-**Area**: Other
-**Keywords**: multi-agent reinforcement learning, physics simulation, assistive behavior, motion imitation, contact-rich interaction
+**Area**: Others  
+**Keywords**: Multi-Agent Reinforcement Learning, Physics Simulation, Assistive Behavior, Motion Mimicry, Contact-rich Interaction  
 
 ## TL;DR
 
-The first multi-agent RL framework that performs contact-rich human-human assistive motion imitation in physics simulation, enabling MARL in high-contact settings via motion prior initialization, dynamic reference redirection, and contact facilitation rewards.
+The first Multi-Agent RL (MARL) framework for imitation learning of contact-rich human-human assistive behaviors in physics simulation. It makes MARL viable in high-contact settings through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards.
 
 ## Background & Motivation
 
-### Starting Point
+**Background**: Single-person motion tracking (e.g., PHC, DeepMimic) can successfully imitate a wide range of human actions but is primarily limited to non-contact social interactions or isolated movements. Assistive scenarios (e.g., helping a fallen person up, caring for bedridden patients) require continuous perception of a partner and adaptation to their dynamic changes, involving tight contact and force exchange—significantly more challenging than non-contact social interactions like high-fives.
 
-**Goal**: **Background**: **Single-person motion tracking methods (PHC, DeepMimic) can already imitate a wide range of human motions**, but are largely limited to non-contact social or isolated movements. Assistive scenarios—such as helping a fallen person rise or caring for a bedridden individual—require continuously perceiving a partner and adapting to their dynamic state, involving close physical contact and force exchange, which is substantially more challenging than non-contact social interactions like high-fives.
+**Limitations of Prior Work**: Previous methods utilized "kinematic playback" strategies—generating the movement of the assisted person independently before training the supporter's response. However, in assistive scenarios, the recipient is physically incapable of completing the movement independently (e.g., a person with muscle weakness cannot stand up alone); this paradigm is fundamentally inapplicable. Decoupling the learning of the two agents breaks physical consistency.
 
-**Limitations of Prior Work**: Prior methods adopt a *kinematic replay* strategy—generating the recipient's motion independently and then training the supporter to react. However, in assistive scenarios, **the recipient is physically incapable of completing the motion independently** (e.g., a person with muscle weakness cannot stand up alone), making this paradigm fundamentally inapplicable. Decoupling the learning of two agents breaks physical consistency.
-
-**Key Challenge**: RL training for contact-rich assistive motion is highly unstable—small errors in contact location and force can cause the recipient to lose balance, and severe occlusion in motion capture data introduces significant noise into reference trajectories. A comprehensive set of technical components is therefore required to make MARL viable in physically coupled settings.
+**Key Challenge**: RL training for contact-rich assistive motion is extremely unstable—minute errors in contact position and force can cause the recipient to lose balance. Furthermore, severe occlusion in MoCap data leads to highly noisy reference trajectories. Consequently, a comprehensive set of technical components is needed to make MARL viable in physically tight-coupling scenarios.
 
 ## Method
 
 ### Overall Architecture
 
-The assistive motion imitation problem is formulated as an asymmetric multi-agent MDP: the Supporter and Recipient each maintain independent policies while sharing a physics environment. The Recipient's PD gains and maximum joint torques are explicitly reduced (lower limbs 0.5×, upper limbs 0.5×) to simulate physical impairment. Both policies are jointly optimized with PPO.
+This paper aims to enable a simulated humanoid (Supporter) to "assist" another weakened person (Recipient) in a physics simulation—such as lifting a fallen person or turning over a bedridden person—rather than just mimicking movements in the air. To achieve this, the task is formulated as an **asymmetric multi-agent MDP**: two agents have independent policies but share the same physics engine, jointly optimized via PPO. The key lies in the "asymmetry": the Recipient is artificially weakened to simulate physical impairment—its PD control gains and maximum joint torques are reduced to $0.5\times$ (both lower and upper limbs). Thus, the Recipient cannot stand up alone and must rely on real contact forces applied by the Supporter. This approach eliminates the fallback of the old paradigm "generate recipient motion first, then train supporter response," forcing both policies to learn together in a physically tight-coupled manner. This introduces significant difficulty: small errors in contact can lead to failure, and noisy MoCap references make direct MARL convergence nearly impossible. The following three designs are introduced to transform the training from "unfeasible" to viable: **Single-person motion prior initialization** provides a stable starting point, **dynamic reference retargeting** ensures precise assistance, and **contact-promoting rewards** ensure firm support. These are sequentially integrated into the "initialization → proximity rollout → contact" data flow.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Paired MoCap Reference Trajectories<br/>Supporter + Recipient"] --> B["Asymmetric Multi-Agent MDP<br/>Recipient PD Gain/Torque reduced to 0.5×"]
+    B --> C["Single-person Motion Prior Initialization<br/>PHC weight transfer, zero-padding for new dimensions"]
+    C --> D["Two policies rollout in shared physics engine"]
+    D -->|Distance is close enough| E["Dynamic Reference Retargeting<br/>Hand reference anchors to Recipient's real-time pose"]
+    E -->|Hand touches upper body| F["Contact-Promoting Rewards<br/>Suppress kinematic penalty, activate contact + force saturation rewards"]
+    F --> G["PPO Joint Optimization<br/>Altruistic reward mixing 0.5 Self + 0.5 Partner"]
+    G -->|Coordinated agent updates| D
+    G --> H["Physically consistent contact-rich assistive motion"]
+```
 
 ### Key Designs
 
-1. **Single-Person Motion Prior Initialization**:
+**1. Motion Prior Initialization: Providing a stable starting point for tight-coupled MARL**
 
-    - Function: Provides a reliable starting point for MARL exploration.
-    - Mechanism: Pre-trained PHC single-person tracking controllers are used to initialize the shared parameters of both policies. Additional input dimensions for assistive state are zero-padded, mathematically guaranteeing that initial behavior is preserved: $\mathbf{W}_{new} = [\mathbf{W}_{prior} | \mathbf{0}]$
-    - Design Motivation: Without initialization, success rate drops to 0% or reward hacking occurs. The single-person prior provides basic standing/locomotion ability, and policies only need to learn contact coordination on top of this foundation.
+When training from scratch, both agents must simultaneously learn to stand, walk, and contact each other, resulting in a search space that is too vast—experiments show 0% success rates or reward hacking. The approach here uses a pre-trained PHC single-person tracking controller to initialize **shared network parameters** for both policies. This grants them basic standing and walking capabilities from the start, allowing them to focus on learning contact coordination. A challenge is that the assistive task includes "partner state" as additional input, causing a dimension mismatch. The solution is to zero-pad the new input dimensions and define the weights as $\mathbf{W}_{new} = [\mathbf{W}_{prior} \mid \mathbf{0}]$. This ensures the initial output matches the single-person prior, preventing the model from being derailed by random new parameters.
 
-2. **Dynamic Reference Redirection**:
+**2. Dynamic Reference Retargeting: Anchoring the supporter's hands to the partner**
 
-    - Function: Causes the supporter's hand targets to follow the recipient's real-time pose changes.
-    - Mechanism: When the two agents are sufficiently close, the supporter's hand reference switches from a fixed reference trajectory to an offset relative to the recipient's current pose—keeping the hands anchored to the correct location on the partner's body.
-    - Design Motivation: Reference trajectories are noisy due to occlusion; fixed tracking leads to hand position drift → loss of contact → recipient falls.
+Where the supporter's hands should be placed is originally guided by a MoCap reference trajectory. However, these trajectories are noisy due to occlusion; strictly following them might cause the hands to deviate from the recipient's actual body position. If contact is lost, the weakened recipient immediately falls. The retargeting mechanism switches the supporter's hand reference from a "fixed world-frame reference" to an "offset relative to the recipient's current pose" when the agents are close. Thus, the target for the hands is no longer a point in space but a specific body part of the partner, moving with their real-time pose. Ablation studies show that removing this leads to a $-10.3\%$ performance drop in bed-care scenarios (HHI), indicating that movements with significant partner pose changes rely heavily on this design.
 
-3. **Contact Facilitation Reward**:
+**3. Contact-Promoting Rewards: Changing rewards during contact**
 
-    - Function: Encourages the supporter to establish and maintain physical contact at close range.
-    - Mechanism: When the hands approach the recipient's upper body, the kinematic tracking penalty is suppressed and replaced by distance- and contact-force-based rewards. This includes a sparse contact reward (whether contact occurs) and a force-saturating aggregation function (quality of contact force), encouraging genuine physical support rather than spurious contact.
-    - Design Motivation: Pure kinematic tracking rewards penalize correct contact behavior under noisy reference trajectories.
+Pure kinematic tracking rewards have an inherent contradiction: under noisy references, performing "correct physical support" might be penalized for deviating from the reference, leading the policy to avoid contact. This method switches rewards based on distance—when the supporter's hand nears the recipient's upper body, kinematic tracking penalties are suppressed, and contact-based rewards are activated. These include a **sparse contact reward** for successful contact and a **force saturation aggregation function** to score the quality of contact force (forces too small don't count, and rewards cap after saturation). This retargets the reward signal from "staying on the reference trajectory" to "actually supporting the person."
+
+### A Complete Example: Helping a person stand up
+
+Integrated, the three designs handle different stages of the assisting process:
+
+- **Start (Prior Init)**: Policies start with PHC weights; the supporter stands and approaches stably, while the recipient (PD gain $0.5\times$) tries but fails to rise alone. Without the prior, this step usually results in a 0% success rate.
+- **Approach (Retargeting Trigger)**: Once the supporter is close, hand references anchor to the recipient's pose. Even if the MoCap reference jitters, the supporter's hands remain aimed at the partner's torso/arms.
+- **Contact (Promotion Reward)**: Upon touching the recipient's upper body, kinematic penalties are suppressed and contact rewards activate. The force saturation function drives the supporter to apply sufficient force to lift the recipient.
+- **Result**: The recipient stands using the external force. These designs ensure the supporter "can move," "targets precisely," and "supports firmly."
 
 ### Loss & Training
 
-Total reward = 0.5 × task reward + 0.5 × AMP adversarial reward. Supporter's final reward = 0.5 × self + 0.5 × recipient (to encourage altruistic behavior). Expert policies are first trained per motion clip, then distilled into a general policy via DAgger.
+Each agent's total reward is an equal mix of task reward and AMP adversarial reward: $r = 0.5\,r_{task} + 0.5\,r_{AMP}$. To encourage altruism, the supporter's final reward is a blend of its own and the recipient's: $r_{sup} = 0.5\,r_{sup}^{self} + 0.5\,r_{rec}$. This links the supporter's gains to the recipient's success. Training involves two stages: training expert policies on individual motion clips, then distilling these via DAgger into a generalist policy (improving success from $39.8\%$ to $64.7\%$).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | AssistMimic | No Init. | No Contact Reward |
-|---------|--------|-------------|----------|-------------------|
+| Dataset | Metric | AssistMimic | w/o Init | w/o Contact Reward |
+|---------|------|-------------|---------|-----------|
 | Inter-X | SR | 83.3% | 0% | 77.1% |
 | HHI-Assist | SR | 73.2% | hacking | 27.7% |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Joint vs. sequential training | 72.8% vs. 50.5% | Joint optimization is critical for physical consistency |
-| General policy (DAgger) | SR = 64.7% | Direct training achieves only 39.8%; DAgger distillation is effective |
-| No dynamic redirection | −10.3% (HHI) | Critical for bed-care scenarios |
-| 1.5× body weight / 0.5× PD | Still succeeds | Validates zero-shot robustness |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Joint vs. Sequential | 72.8% vs 50.5% | Joint optimization is crucial for physical consistency |
+| Generalist Policy (DAgger) | SR=64.7% | Direct training yielded only 39.8% |
+| w/o Dynamic Retargeting | -10.3% (HHI) | Critical for scenarios like bed care |
+| 1.5× Weight / 0.5× PD | Still Succeeds | Zero-shot robustness verification |
 
 ### Key Findings
 
-- Motion prior initialization is absolutely indispensable: without it, success rate is 0% on Inter-X and reward hacking emerges on HHI-Assist.
-- The framework successfully tracks interaction trajectories generated by diffusion models, demonstrating generalization to unseen motions.
-- The primary failure mode is insufficient hand dexterity: fine manipulation such as gripping arms to lift remains challenging.
+- Motion prior initialization is indispensable: results in 0% SR on Inter-X and reward hacking on HHI-Assist without it.
+- Successful tracking of trajectories generated by diffusion models demonstrates generalization to unseen motions.
+- Failure modes are primarily due to insufficient hand dexterity for fine-grained tasks like grasping and lifting.
 
 ## Highlights & Insights
 
-- This work is the first to achieve multi-agent imitation learning for contact-rich assistive behavior in physics simulation, bridging the important gap between "non-contact social interaction" and "force-exchange assistance." The experimental design of isolating the assistive contribution by reducing the recipient's physical parameters is particularly elegant.
+- Achieved the first multi-agent imitation learning of contact-rich assistive behavior in physics simulation, filling the gap between "social interaction" and "force-exchange assistance." The experimental design of isolating assistance contribution by reducing recipient physical parameters is highly ingenious.
 
 ## Limitations & Future Work
 
-- Insufficient hand dexterity is the primary failure mode, requiring more refined hand modeling.
+- Hand dexterity remains a major bottleneck, requiring more detailed hand modeling.
 - Policies rely on privileged physical state information and lack visual observations.
-- Sim-to-real transfer has not been validated.
-- Tight coupling between the motion planner and tracking controller is absent.
+- Sim-to-real transfer has not yet been verified.
+- Lack of tight coupling between the motion planner and tracking controller.
 
 ## Related Work & Insights
 
-- **vs. Human-X**: Uses kinematic replay + reactive policy; in assistive scenarios the recipient "stands up on their own," leading to physical inconsistency.
-- **vs. PHC**: AssistMimic builds upon PHC and extends it to a dual-agent, partner-aware architecture.
+- **vs Human-X**: Uses kinematic playback + reactive strategies, leading to physical inconsistency in assistive scenarios where the recipient "stands up on their own."
+- **vs PHC**: AssistMimic builds upon PHC, extending it to a dual-person partner-aware architecture.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First work to address assistive motion imitation; both problem formulation and technical approach are highly innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two datasets, multiple scenarios, comprehensive ablations, generalization to generated trajectories.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with complete technical details.
+- Novelty: ⭐⭐⭐⭐⭐ First to solve assistive motion mimicry; innovative formalization and technical solutions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two datasets, multiple scenarios, detailed ablations, and generalization tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and complete technical details.
 - Value: ⭐⭐⭐⭐⭐ Opens a new direction for assistive robot control.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](../../AAAI2026/others/local_guidance_for_configuration-based_multi-agent_pathfinding.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](../../AAAI2026/others/area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
-- [\[ICML 2026\] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](../../ICML2026/others/nonzero_interaction-guided_exploration_for_multi-agent_monte_carlo_tree_search.md)
-- [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](../../AAAI2026/others/symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
+- [\[CVPR 2026\] InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs](interagent_physics-based_multi-agent_command_execution_via_diffusion_on_interaction_graphs.md)
+- [\[CVPR 2026\] PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](phase-net_physics-grounded_harmonic_attention_system_for_efficient_remote_photop.md)
+- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
+- [\[CVPR 2026\] Push-and-Step: From RL-Based Balance Recovery to Physical Simulation of Dense Crowds](push-and-step_from_rl-based_balance_recovery_to_physical_simulation_of_dense_cro.md)
+- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
 
 </div>
 

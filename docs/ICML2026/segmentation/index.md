@@ -48,58 +48,58 @@ item_total: 13
 
 **🧪 ICML2026** · **13** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (69)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (162)](../../CVPR2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
 
 🔥 **Top topics:** Segmentation ×6
 
 **[Activation-Free Backbones for Image Recognition: Polynomial Alternatives within MetaFormer-Style Vision Models](activation-free_backbones_for_image_recognition_polynomial_alternatives_within_m.md)**
 
-:   This paper constructs PolyMLP, PolyConv, and PolyAttn using Hadamard products to replace point-wise activations and softmax in MLP, convolution, and attention mechanisms. Within MetaFormer-style backbones, these activation-free models match or exceed activation-based models in ImageNet classification, robustness, and ADE20K segmentation.
+:   This paper constructs PolyMLP, PolyConv, and PolyAttn using Hadamard products to replace point-wise activations or softmax in MLPs, convolutions, and attention mechanisms. Without conventional activation functions, these MetaFormer-style backbones match or outperform activation-based models on ImageNet, robustness benchmarks, and ADE20K segmentation.
 
 **[Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)**
 
-:   Ours proposes SymTrack, a detection-free dual-branch scene text tracking framework. It addresses feature bottlenecks caused by perspective distortion through Predictive Token Rectification (PTR), eliminates visual ambiguity between text instances via Cross-Expert Calibration (CEC), and stabilizes fine-grained localization with an Adaptive Inference Engine (AIE). It significantly outperforms SOTA across three benchmarks (up to +12.32% AUC).
+:   SymTrack is proposed as a detection-free dual-branch scene text tracking framework. It addresses feature bottlenecks caused by perspective distortion through Predictive Token Rectification (PTR), eliminates high visual ambiguity between text instances via Cross-Expert Calibration (CEC), and stabilizes fine-grained localization using an Adaptive Inference Engine (AIE). It significantly advances the SOTA across three benchmarks (up to +12.32% AUC).
 
 **[FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation](flowseg_dynamic_semantic_guidance_for_llm-conditioned_segmentation.md)**
 
-:   This paper argues that current query-based LLM-conditioned segmentation follows a "propose-then-select" paradigm—candidate masks are often accurate, but the model fails to select the correct one. FlowSeg is proposed to integrate LLM condition embeddings into every decoder layer for query refinement, continuously updating them with new visual evidence. Combined with a lightweight boundary refinement module, it achieves consistent performance gains on RefCOCO/+/g and ReasonSeg.
+:   This paper points out that current query-based LLM-conditioned segmentation follows a "propose-then-select" paradigm—candidate masks are often accurate enough, but errors occur due to incorrect selection. To address this, FlowSeg is proposed, which incorporates LLM condition embeddings into every decoder layer for query refinement and allows them to be continuously updated by new visual evidence. Combined with a lightweight boundary refinement module, it achieves consistent performance gains on RefCOCO/+/g and ReasonSeg.
 
 **[Functional Attention: From Pairwise Affinities to Functional Correspondences](functional_attention_from_pairwise_affinities_to_functional_correspondences.md)**
 
-:   This paper reinterprets the softmax attention in Transformers as a "least-squares linear operator between two learnable functional bases." Borrowing the functional maps concept from shape matching, it compresses the $n\times n$ pairwise affinity matrix into a compact $k\times k$ spectral operator, achieving SOTA performance in PDE solving, 3D point cloud segmentation, and OOD generalization simultaneously.
+:   This paper reinterprets softmax attention in Transformers as a "least-squares linear operator between two learned functional bases." Borrowing the idea of functional maps from shape matching, it compresses the $n \times n$ pairwise affinity matrix into a $k \times k$ compact spectral operator, achieving SOTA performance in PDE solving, 3D point cloud segmentation, and OOD generalization simultaneously.
 
 **[Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models](geometry-preserving_unsupervised_alignment_for_heterogeneous_foundation_models.md)**
 
-:   GPUA treats VLMs (e.g., CLIP), which possess strong semantics but lack local precision, and VFMs (e.g., DINOv3), which have fine-grained details but lack semantics, as two different "visual languages." It uses Optimal Transport to mine soft correspondences and solves an Orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFMs into the VLM space. The process is entirely unsupervised, requires no updates to pre-trained parameters, and achieves an average gain of 11.8% in zero-shot classification.
+:   GPUA treats VLMs like CLIP (rich semantics, low local precision) and VFMs like DINOv3 (fine-grained, lacking semantics) as two "visual languages." It uses optimal transport to mine soft correspondences and solves an orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFM features into the VLM space. This process is entirely unsupervised, requires no updates to pre-trained parameters, and achieves an average gain of 11.8% in zero-shot classification.
 
 **[LightAVSeg: Lightweight Audio-Visual Segmentation](lightavseg_lightweight_audio-visual_segmentation.md)**
 
-:   LightAVSeg decouples "semantic selection (what)" and "spatial localization (where)", replacing $\mathcal{O}(N^2)$ cross-modal attention with global channel modulation. This enables the AVS model to achieve 50.4 mIoU (MS3) with only 20.5M parameters and 163.4 ms on Snapdragon 8 Elite, about $8\times$ faster than AVSegFormer-R50.
+:   LightAVSeg decouples "semantic filtering (what)" and "spatial localization (where)" by replacing $\mathcal{O}(N^2)$ cross-modal attention with global channel modulation. This allows the AVS model to achieve 50.4 mIoU (MS3) with only 20.5M parameters and reach an on-device latency of 163.4 ms on Snapdragon 8 Elite, which is approximately $8\times$ faster than AVSegFormer-R50.
 
 **[MVR-cache: Optimizing Semantic Caching via Multi-Vector Retrieval and Learned Prompt Segmentation](mvr-cache_optimizing_semantic_caching_via_multi-vector_retrieval_and_learned_pro.md)**
 
-:   MVR-cache upgrades the similarity metric for LLM semantic caching from "single-vector cosine similarity" to "multi-vector MaxSim after learned segmentation." It employs REINFORCE to train a lightweight segmentation model, increasing the cache hit rate by up to 37% while maintaining the same error rate upper bound $\delta$.
+:   MVR-cache upgrades the similarity metric for LLM semantic caching from "single-vector cosine" to "multi-vector MaxSim after learned segmentation." By training a lightweight segmentation model using REINFORCE, it increases the cache hit rate by up to 37% while maintaining the same error rate upper bound $\delta$.
 
 **[Refining Context-Entangled Content Segmentation via Curriculum Selection and Anti-Curriculum Promotion](refining_context-entangled_content_segmentation_via_curriculum_selection_and_ant.md)**
 
-:   CurriSeg does not modify the segmentation network architecture but replaces the training schedule: it first uses a robust curriculum of "temporal loss statistics + pixel entropy weighting" to stabilize the model, followed by an anti-curriculum "spectral-blindness" fine-tuning (removing high frequencies to force structural semantic understanding). This consistently improves FEDER / FSEL / RUN by 2–4% on camouflaged/polyp segmentation benchmarks like CHAMELEON / CAMO / COD10K / NC4K with zero additional parameters and shorter training times.
+:   CurriSeg keeps the segmentation network architecture unchanged and modifies only the training schedule: it first pushes the model to a stable state using a robust curriculum based on "temporal loss statistics + pixel entropy weighting," and then performs anti-curriculum "spectral blindness" fine-tuning (removing high frequencies to force the model to capture structural semantics). This approach consistently improves FEDER / FSEL / RUN by 2–4% on camouflaged/polyp segmentation benchmarks such as CHAMELEON / CAMO / COD10K / NC4K with zero additional parameters and shorter training time.
 
 **[Segment Anything with Robust Uncertainty-Accuracy Correlation](segment_anything_with_robust_uncertainty-accuracy_correlation.md)**
 
-:   To address the issue that the SAM series only outputs a single mask-level confidence and suffers from "Mask-level Confidence Confusion" under domain shift, this work equips SAM2 with a Weibull dual-granularity Bayesian mask decoder for pixel-level epistemic estimation. Inspired by human vision, a style + deformation collaborative adversarial perturbation and calibration loss are introduced, ensuring that uncertainty remains aligned with error across 23 zero-shot target domains. The average J&F reaches 79.87, and the uncertainty maps become significantly more reliable.
+:   Addressing the issue where the SAM series outputs only a single mask-level confidence and suffers from "Mask-level Confidence Confusion" under domain shift, this paper equips SAM2 with a dual-granularity Weibull Bayesian mask decoder for pixel-level epistemic estimation. Combined with human-vision-inspired collaborative style + deformation adversarial perturbations and a calibration loss, the uncertainty remains aligned with errors across 23 zero-shot target domains, achieving an average J&F of 79.87 with significantly more reliable uncertainty maps.
 
 **[SPROUT: Supervise Less, See More — Training-free Nuclear Instance Segmentation with Prototype-Guided Prompting](supervise_less_see_more_training-free_nuclear_instance_segmentation_with_prototy.md)**
 
-:   SPROUT is the first completely training-free and zero-annotation framework for pathology nuclear segmentation. It leverages H&E staining priors to self-construct high-confidence foreground/background regions on each slide → extracts prototypes → performs feature-prototype soft alignment via Partial Optimal Transport (POT) → outputs positive/negative point prompts for SAM. It achieves an AJI 8.2% higher than training-based methods on benchmarks like MoNuSeg.
+:   SPROUT is the first fully training-free, zero-annotation framework for pathological nuclear instance segmentation. It utilizes H&E staining priors to self-construct high-confidence foreground/background regions on each slide → extracts prototypes → performs feature-prototype soft alignment via Partial Optimal Transport (POT) → outputs positive/negative point prompts for SAM. On benchmarks such as MoNuSeg, its AJI is 8.2% higher than training-based methods.
 
 **[UGround: Towards Unified Visual Grounding with Unrolled Transformers](uground_towards_unified_visual_grounding_with_unrolled_transformers.md)**
 
-:   UGround shifts the LMM-based visual grounding paradigm from "using the last-layer $\langle\text{SEG}\rangle$ token as a prompt" to "using dynamically selected intermediate-layer similarity maps as prompts." By employing a Reinforcement Learning policy (SSC), $\langle\text{SEG}\rangle$ traverses all transformer layers, treating similarity maps as both soft logit masks for SAM and backward supervision signals. It is the first framework to unify five visual grounding tasks (RES / RS / FP-RES / gRES / Multi-RS) within a single architecture, achieving a $+9.0\%$ gain in cIoU on ReasonSeg test and $+12.1\%$ N-acc on gRefCOCO val.
+:   UGround shifts the LMM-based visual grounding paradigm from "using the last layer's $\langle\text{SEG}\rangle$ token as a prompt" to "using dynamically selected intermediate layer similarity maps as prompts." Through the reinforcement learning strategy SSC, the $\langle\text{SEG}\rangle$ token traverses all transformer layers, utilizing similarity maps as both soft logit masks for SAM and backward supervision signals. It is the first framework to unify five visual grounding tasks (RES, RS, FP-RES, gRES, and Multi-RS) within a single architecture, achieving +9.0% cIoU on ReasonSeg test and +12.1% N-acc on gRefCOCO val.
 
 **[Unsupervised Hierarchical Skill Discovery](unsupervised_hierarchical_skill_discovery.md)**
 
-:   HiSD starts from unlabeled observation trajectories—performing skill segmentation via optimal transport and discovering multi-level skill hierarchies using Sequitur grammar induction, requiring no action labels or reward signals.
+:   HiSD starts from unlabeled observation trajectories—performing skill segmentation via optimal transport and then discovering multi-level skill hierarchies using Sequitur grammar induction, without requiring action labels or reward signals.
 
 **[What Makes Synthetic Data Effective in Image Segmentation](what_makes_synthetic_data_effective_in_image_segmentation.md)**
 
-:   This paper systematically analyzes two key factors making synthetic images effective for semantic segmentation: complex scene composition and high instance fidelity. It proposes SENSE, which leverages Optimal Transport (OT) to stabilize pseudo-label assignment for synthetic images, achieving consistent improvements for DPT and Mask2Former on Cityscapes, COCO, and ADE20K.
+:   This paper systematically analyzes two key factors for the effectiveness of synthetic images in semantic segmentation: dense scene composition and fine instance fidelity. It proposes SENSE, which utilizes Optimal Transport (OT) to stabilize pseudo-label assignment for synthetic images, achieving consistent improvements for DPT and Mask2Former on Cityscapes, COCO, and ADE20K.

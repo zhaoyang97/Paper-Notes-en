@@ -2,103 +2,123 @@
 title: >-
   [Paper Note] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][few-shot segmentation] This paper proposes SD-FSMIS, a framework that adapts pretrained Stable Diffusion for few-shot medical image segmentation (FSMIS). Through a Support-Query Interaction m…
+  [CVPR 2026][Medical Imaging][few-shot segmentation] Proposes SD-FSMIS, a framework that adapts pre-trained Stable Diffusion to few-shot medical image segmentation. Through a support-query interaction module and a visual-to-text condition transformer, it achieves efficient adaptation and demonstrates particularly outstanding performance in cross-domain scenarios.
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "few-shot segmentation"
-  - "stable diffusion"
-  - "cross-domain"
-  - "foundation model"
+  - CVPR 2026
+  - Medical Imaging
+  - few-shot segmentation
+  - stable diffusion
+  - cross-domain
+  - foundation model
 date: 2026-05-08
-content_hash: 57bed5e2fca4e9c7
+content_hash: a371ff2770b8cd62
 ---
-
 # SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.03134](https://arxiv.org/abs/2604.03134)  
-**Code**: N/A  
-**Area**: Medical Image Segmentation
+**Code**: None  
+**Area**: Medical Image Segmentation  
 **Keywords**: few-shot segmentation, medical imaging, stable diffusion, cross-domain, foundation model
 
 ## TL;DR
 
-This paper proposes SD-FSMIS, a framework that adapts pretrained Stable Diffusion for few-shot medical image segmentation (FSMIS). Through a Support-Query Interaction module and a Visual-to-Text Conditioning Transformer, the framework achieves efficient adaptation, with particularly strong performance in cross-domain scenarios.
+Proposes SD-FSMIS, a framework that adapts pre-trained Stable Diffusion to few-shot medical image segmentation. Through a support-query interaction module and a visual-to-text condition transformer, it achieves efficient adaptation and demonstrates particularly outstanding performance in cross-domain scenarios.
 
 ## Background & Motivation
 
-Few-shot medical image segmentation (FSMIS) aims to segment novel categories from only a handful of annotated samples, addressing the core challenges of data scarcity and domain shift in medical imaging. Existing methods primarily focus on designing more sophisticated matching networks, such as prototype networks and attention mechanisms; however, these architectures trained from scratch exhibit fragile performance in cross-domain settings.
+Few-shot medical image segmentation (FSMIS) aims to segment new categories using only a minimal number of annotated samples, addressing core challenges of data scarcity and domain shift in medical imaging. Existing methods primarily focus on designing more sophisticated matching networks, such as prototype networks and attention mechanisms; however, these architectures trained from scratch remain fragile in cross-domain scenarios.
 
-The authors propose a paradigm shift: rather than designing increasingly complex task-specific architectures, they leverage the rich visual priors embedded in large-scale pretrained generative models such as Stable Diffusion. Diffusion models learn rich texture, shape, and contextual representations from massive datasets (e.g., LAION-5B), offering substantial potential for dense prediction tasks — potential that remains largely unexplored in FSMIS.
+The authors propose a paradigm shift: instead of designing increasingly complex task-specific architectures, they leverage the rich visual priors inherent in large-scale pre-trained generative models (e.g., Stable Diffusion). Diffusion models learn extensive texture, shape, and contextual representations from massive datasets (e.g., LAION-5B). These priors hold significant potential for dense prediction tasks but remain under-explored in FSMIS.
 
-**Core Problem**: How to efficiently and directly adapt the general visual priors of Stable Diffusion to the FSMIS task?
+**Core Problem**: How to efficiently and directly adapt the general visual priors of SD to the FSMIS task?
 
 ## Method
 
 ### Overall Architecture
 
-SD-FSMIS repurposes the conditional generation architecture of Stable Diffusion to handle support–query interactions in latent space. Both the support set and query set are first encoded into the latent space via a frozen VAE, and the U-Net generates the query segmentation mask conditioned on text embeddings.
+The core proposition of SD-FSMIS is a paradigm shift: rather than stacking more complex matching networks from scratch, it is better to directly borrow the general visual priors learned by Stable Diffusion on LAION-5B. The framework reuses the conditional generative architecture of SD, encoding both support and query sets into latent space using a frozen VAE (grayscale channels are replicated to pseudo-RGB). The U-Net then performs a single-step generation of the query mask latent representation under "textual conditions translated from the support set" before decoding back to pixels. Three designs solve specific issues: enabling the query to see the support (SQI, consisting of Support Information Injection (SII) and Query Enhancement (QE)), converting visual cues into conditions understandable by SD (VTCT), and achieving non-iterative results (single-step inference).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Support set (images + masks)<br/>+ Query image"] --> VAE["Frozen VAE Encoder<br/>Grayscale duplicated to pseudo-RGB"]
+    VAE --> ZS["Support latent z^s<br/>Image latent + mask latent concatenation"]
+    VAE --> ZQI["Query image latent z^qi"]
+    ZQI --> QE["Query Enhancement QE (part of SQI)<br/>Support prototype -> cosine similarity filtering -> concatenation"]
+    VAE --> VTCT["VTCT: Visual-to-Text Condition Transformer<br/>Frozen image encoder -> masked avg pooling -> MLP -> implicit text embedding E"]
+    QE --> UNET["U-Net + Support Information Injection SII (part of SQI)<br/>Cross-attention with support z^s after self-attn, then cross-attn with E"]
+    ZS --> UNET
+    VTCT --> UNET
+    UNET --> INFER["Single-step Inference<br/>One-step generation of query mask latent ẑ^qm"]
+    INFER --> OUT["VAE Decoder -> Three-channel average<br/>Segmentation Mask M^q"]
+```
 
 ### Key Designs
 
-1. **Support-Query Interaction Module (SQI)**: Adapts SD's U-Net self-attention layers for few-shot learning with minimal modifications. An additional cross-attention layer is inserted after the standard self-attention, allowing query features to attend to support features (as Keys and Values), followed by the original text cross-attention. A Query Enhancement (QE) strategy is also incorporated, leveraging support prototype features and cosine similarity to enrich query representations.
+**1. Support-Query Interaction Module (SQI): Enabling Few-Shot Matching in SD's Self-Attention with Minimal Changes**
 
-2. **Visual-to-Text Conditioning Transformer (VTCT)**: Converts visual cues from the support set into "text-like" embeddings to condition the diffusion model. A frozen image encoder extracts support image features; masked average pooling yields class prototypes, which are then projected into the text embedding space via a learnable MLP. This enables the model to be guided in the "language" that SD understands.
+SD is natively unaware of the "support-query" relationship, and attaching a complex matching head would revert to traditional approaches. SQI chooses to modify the U-Net minimally: an additional cross-attention layer (Support Information Injection, SII) is inserted after the standard self-attention, allowing query features to attend to support features as Keys and Values. This is followed by the original text cross-attention. The entire block operation is defined as $\hat{z}^q = \text{FFN}(\text{CAttn}(\text{CAttn}(\text{SAttn}(z^q), z^s), E))$. Parallelly, Query Enhancement (QE) is employed: a foreground prototype is obtained via masked average pooling of the support set, and its cosine similarity with the query latent representation is calculated. Locations exceeding a similarity threshold (0.7) are averaged to form a query prototype, which is concatenated back to the query latent to strengthen the matching signal. This reuses the representational power of SD’s pre-trained attention while injecting few-shot matching capabilities at minimal cost.
 
-3. **Single-Step Inference**: During inference, the framework does not require an iterative diffusion process. Instead, it generates the query mask latent representation in a single step, which is decoded back to pixel space via the VAE decoder; the final segmentation mask is obtained by averaging across the three channels.
+**2. Visual-to-Text Condition Transformer (VTCT): Translating Support Images into "Language Understood" by SD**
+
+The condition interface of SD is text embeddings, whereas the support set provides visual cues, creating a misalignment. VTCT uses a frozen image encoder to extract support image features. After masked average pooling to obtain class prototypes, a learnable MLP projects these prototypes into the text embedding space to serve as conditions for the diffusion model. Ablation studies show that "visual conditions" significantly outperform "null text," indicating that this "visual-to-textual condition" carries much more category guidance than an empty prompt.
+
+**3. Single-step Inference Design: Iteration-Free Diffusion for One-Step Mask Generation**
+
+Diagnostic segmentation does not require the diversity of step-by-step sampling used in diffusion; iteration instead slows down inference. SD-FSMIS skips the iterative diffusion process during inference, generating the latent representation of the query mask in a single step. This is mapped back to pixel space via the VAE decoder and averaged across three channels to obtain the final segmentation mask, compressing inference to one step while maintaining accuracy.
 
 ### Loss & Training
 
-The model is trained using MSE loss between the predicted and ground-truth query mask latent representations. An episode-based meta-learning strategy is adopted under a 1-way 1-shot setting. Pseudo-labels generated via supervoxel clustering serve as training annotations, requiring no explicit manual labeling. VAE weights are frozen, and only the newly introduced parameters are trained.
+The model is trained using an MSE loss between the predicted and ground truth query mask latent representations. It employs an episode-based meta-learning strategy (1-way 1-shot). Pseudo-labels generated by superpixel clustering are used as training annotations, requiring no explicit manual labeling. VAE weights remain frozen throughout, and only a small number of new parameters are trained.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric (Dice %) | Ours | Prev. SOTA (DIFD) | Gain |
-|---------|----------------|------|-------------------|------|
-| Abd-MRI Setting 1 | Mean Dice | 83.16 | 84.12 | Competitive |
+|--------|-------------|------|-----------------|------|
+| Abd-MRI Setting 1 | Mean Dice | 83.16 | 84.12 | Comparable |
 | Abd-CT Setting 1 | Mean Dice | 83.66 | 80.19 | +3.47 |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
-|---------------|-----------|-------------|
-| w/o SQI | Dice drops | Support-query interaction is critical for adaptation |
-| w/o VTCT (null text) | Dice drops | Visual conditioning is more informative than empty text embeddings |
-| w/o QE | Dice drops | Query enhancement provides beneficial prototype matching signals |
+|------|---------|------|
+| Without SQI | Dice Decrease | Support-Query interaction is vital for adaptation |
+| Without VTCT (null text) | Dice Decrease | Visual conditions provide more information than null embeddings |
+| Without QE | Dice Decrease | Query enhancement provides beneficial prototype matching signals |
 
 ### Key Findings
 
 - Achieves competitive results under standard FSMIS settings.
-- Substantially outperforms SOTA methods in more challenging cross-domain scenarios, demonstrating strong generalization capability.
+- Significantly outperforms SOTA methods in more challenging cross-domain scenarios, demonstrating superior generalization capabilities.
 - Validates the significant potential of visual priors from large-scale generative models for data-efficient medical segmentation.
 
 ## Highlights & Insights
 
-- **Paradigm innovation**: Shifting from task-specific network design to adapting pretrained foundation models represents an important transition in the FSMIS field.
-- The framework design is minimalist yet effective, achieving FSMIS adaptation through only minimal modifications to SD.
-- The VTCT module's approach of translating visual cues into the "language" that SD understands is elegant and well-motivated.
-- The outstanding cross-domain generalization ability confirms the practical value of SD's general visual priors in the medical domain.
+- **Paradigm Innovation**: Shifting from designing task-specific networks to adapting pre-trained foundation models marks a significant transition in the FSMIS field.
+- The framework design is minimalist yet effective, achieving FSMIS adaptation with only minor modifications to SD.
+- The VTCT module's approach of translating visual cues into a "language SD understands" is clever.
+- Outstanding cross-domain generalization suggests that SD's general visual priors are indeed valuable in the medical domain.
 
 ## Limitations & Future Work
 
-- Relies on channel replication to adapt SD for grayscale medical images, which may not be an elegant solution.
-- Validation is currently limited to abdominal MRI/CT data; broader evaluation across more organs and modalities is needed.
-- Single-step inference, while efficient, may forego the refinement benefits of iterative diffusion.
+- Reliance on adapting SD to grayscale medical images (via channel replication) might lack elegance.
+- Currently validated only on abdominal MRI/CT data; requires verification across more organs and modalities.
+- While efficient, single-step inference might sacrifice opportunities for iterative refinement.
 
 ## Related Work & Insights
 
-- Similar in spirit to DiffewS in leveraging diffusion models for few-shot segmentation, but DiffewS targets natural images whereas SD-FSMIS is specifically adapted to the medical domain.
-- Offers valuable insights for other dense prediction tasks requiring cross-domain generalization.
+- Similar to DiffewS in utilizing diffusion models for few-shot segmentation, but SD-FSMIS is specifically adapted for medical scenarios whereas DiffewS targets natural images.
+- Provides heuristic value for other dense prediction tasks requiring cross-domain generalization.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — First systematic exploration of Stable Diffusion for FSMIS.
-- **Technical Depth**: ⭐⭐⭐⭐ — SQI and VTCT are well-motivated and soundly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Dataset coverage could be broader.
-- **Value**: ⭐⭐⭐⭐ — Cross-domain generalization capability has practical application value.
+- **Novelty**: ⭐⭐⭐⭐ — First systematic exploration of SD in FSMIS.
+- **Technical Depth**: ⭐⭐⭐⭐ — Rational design of SQI and VTCT.
+- **Experimental Thoroughness**: ⭐⭐⭐ — Dataset range could be broader.
+- **Value**: ⭐⭐⭐⭐ — Cross-domain generalization has practical application value.
 
 <!-- RELATED:START -->
 
@@ -106,11 +126,11 @@ The model is trained using MSE loss between the predicted and ground-truth query
 
 ## Related Papers
 
-- [\[CVPR 2026\] Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification](parameter-efficient_prompt_tuning_and_hierarchical_textual_guidance_for_few-shot.md)
-- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
+- [\[CVPR 2026\] Focus on Background: Exploring SAM's Potential in Few-shot Medical Image Segmentation with Background-centric Prompting](focus_on_background_exploring_sams_potential_in_few-shot_medical_image_segmentat.md)
+- [\[CVPR 2026\] Few-Shot Synthetic Data Generation with Diffusion Models for Downstream Vision Tasks](few-shot_synthetic_data_generation_with_diffusion_models_for_downstream_vision_t.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
-- [\[CVPR 2026\] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical.md)
-- [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
+- [\[CVPR 2025\] Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation](../../CVPR2025/medical_imaging/noise-consistent_siamese-diffusion_for_medical_image_synthesis_and_segmentation.md)
 
 </div>
 

@@ -2,108 +2,107 @@
 title: >-
   [Paper Note] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents
 description: >-
-  [ICML 2026][LLM Safety][De-anonymization] The paper demonstrates that LLM agents can cross-reference fragmented, individually non-identifiable cues with public evidence to re-link anonymized data to specific real-world i…
+  [ICML 2026][LLM Safety][LLM Agent] The paper demonstrates that LLM agents can cross-reference fragmented, non-identifiable cues with public evidence to re-link anonymized data to specific real identities. This "inference-driven de-anonymization" risk is systematically quantified across three scenarios: classic case reproductions, a controlled benchmark
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "De-anonymization"
-  - "LLM Agent"
-  - "Inference-driven Linkage"
-  - "Privacy-Utility Trade-off"
-  - "Benchmark"
+  - ICML 2026
+  - LLM Safety
+  - LLM Agent
 date: 2026-05-08
-content_hash: 19a2f12d5eaa436b
+content_hash: fa38144289bf8b0d
 ---
-
 # From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.18382](https://arxiv.org/abs/2603.18382)  
 **Code**: https://github.com/jihyun-jeong-854/InferLink (Available)  
-**Area**: LLM Security / Privacy / De-anonymization  
-**Keywords**: De-anonymization, LLM Agent, Inference-driven Linkage, Privacy-Utility Trade-off, Benchmark  
+**Area**: LLM Safety / Privacy / De-anonymization  
+**Keywords**: De-anonymization, LLM Agent, Inference-driven linkage, Privacy-utility trade-off, Benchmarking  
 
 ## TL;DR
-The paper demonstrates that LLM agents can cross-reference fragmented, individually non-identifiable cues with public evidence to re-link anonymized data to specific real-world identities. This "inference-driven de-anonymization" risk is systematically quantified across three scenarios: classic case replication, the controlled InferLink benchmark, and real human-computer dialogue logs.
+The paper demonstrates that LLM agents can cross-reference fragmented, non-identifiable cues with public evidence to re-link anonymized data to specific real identities. This "inference-driven de-anonymization" risk is systematically quantified across three scenarios: classic case reproductions, a controlled benchmark InferLink, and real human-computer dialogue logs.
 
 ## Background & Motivation
 
-**Background**: Industry and regulatory bodies generally consider "removing direct identifiers like names, emails, or ID numbers" as a sufficiently strong defensive line for privacy. Historically, de-anonymization events like the Netflix Prize and AOL search logs were significant because they required experts, custom algorithms, and extensive manual reconciliation—high costs that themselves constituted a practical privacy barrier.
+**Background**: The industry and regulators generally view the removal of direct identifiers (e.g., names, emails, ID numbers) as a sufficiently strong defensive line for privacy. Historically, de-anonymization events like the Netflix Prize and AOL search logs were shocking because they required experts, custom algorithms, and extensive manual reconciliation; this "high cost" itself constituted a practical privacy barrier.
 
-**Limitations of Prior Work**: In the age of LLM agents, tool calls, web search, and multi-step reasoning reduce these "expert costs" to nearly zero. However, existing agent privacy evaluations (e.g., PrivacyLens, AgentDAM) focus on explicit access, leakage, or disclosure, rarely testing whether an agent can synthesize multiple non-identifiable cues into an identity hypothesis. Additionally, a few recent works related to de-anonymization (Li 2026, Lermen et al. 2026) mostly stop at demonstrating the existence of risk without systematic variable control.
+**Limitations of Prior Work**: In the era of LLM agents, tool calls, web retrieval, and multi-step reasoning have compressed "expert costs" to almost zero. However, existing agent privacy evaluations (PrivacyLens, AgentDAM, etc.) typically measure explicit access, leakage, or disclosure, rarely testing if an agent can "assemble multiple non-identifiable cues into an identity hypothesis." Concurrently, recent work related to de-anonymization (Li 2026, Lermen et al. 2026) mostly remains at the level of demonstrating that risks exist without systematic variable control.
 
-**Key Challenge**: Real-world threats are **inference-driven** (identity linkage as a byproduct of agents performing benign tasks), whereas current evaluations assume threats involve **explicit disclosure**. This misalignment leads to a serious underestimation of actual risks.
+**Key Challenge**: Real-world threats are **inference-driven** (where identity linkage occurs as a byproduct of agents performing benign tasks), whereas current evaluations assume threats are **explicit disclosures**. This misalignment lead to a serious underestimation of actual risks.
 
-**Goal**: (1) Formalize the "inference-driven linkage" failure mode; (2) Provide a reproducible benchmark with controlled variables (cue types, task intents, attacker priors); (3) Systematically evaluate across classic cases, controlled benchmarks, and real human-computer traces to quantify the privacy-utility trade-off.
+**Goal**: (1) Formalize "inference-driven linkage" as a failure mode; (2) Provide a reproducible benchmark with controlled variables (cue types, task intent, attacker priors); (3) Systematically evaluate across complementary scenarios—classic cases, controlled benchmarks, and real interaction traces—to quantify the privacy-utility trade-off.
 
-**Key Insight**: The paper decomposes linkage attacks into a unified interface: "anonymized artifact $D_{\text{anon}}$ + auxiliary context $D_{\text{aux}} \to$ identity hypothesis $\hat{\imath}$ + evidence $\mathcal{E}$," and designs three types of evaluations around this interface.
-
-**Core Idea**: "Identity risk $\neq$ explicit disclosure"; rather, it is the agent's ability to aggregate weak cues into $\hat{\imath}$. This aggregation occurs spontaneously as a byproduct of "helpfulness," even when the user does not explicitly request de-anonymization.
+**Key Insight**: Recognition risk is not equivalent to explicit disclosure; rather, it is the agent's ability to aggregate weak cues into an identity hypothesis $\hat{\imath}$. Furthermore, this aggregation can emerge spontaneously as a byproduct of "helpfulness," even when the user has not requested de-anonymization.
 
 ## Method
 
 ### Overall Architecture
-The paper proposes a unified interface:
+This paper does not train new models but designs an evaluation protocol for de-anonymization risks in LLM agents. All attacks are reduced to a unified interface $\Pi:(D_{\text{anon}}, D_{\text{aux}}) \mapsto (\hat{\imath}, \mathcal{E})$: the agent is provided with anonymized data $D_{\text{anon}}$ (direct identifiers removed) and auxiliary context $D_{\text{aux}}$, and required to output an identity hypothesis $\hat{\imath}$ with supporting evidence $\mathcal{E}$. $D_{\text{aux}}$ can be pre-defined reference data (Netflix setting) or a set of evidence retrieved by the agent (AOL / dialogue settings). Based on this interface, the paper instantiates three complementary evaluations: Reproducing classic cases (fixed-pool matching for Netflix; open-web triangulation for AOL), the controlled benchmark InferLink (synthetic paired data with a unique overlapping individual), and real human-computer interaction traces (de-identified scientific interviews from Anthropic and ChatGPT dialogue logs, using a web-enabled Gemini agent).
 
-$$\Pi:(D_{\text{anon}}, D_{\text{aux}}) \mapsto (\hat{\imath}, \mathcal{E})$$
-
-(written inline as $\Pi:(D_{\text{anon}}, D_{\text{aux}}) \mapsto (\hat{\imath}, \mathcal{E})$), where $D_{\text{anon}}$ is anonymized data with direct identifiers removed, and $D_{\text{aux}}$ can either be pre-provided control data (Netflix setting) or a set of evidence retrieved by the agent from the open web (AOL/dialogue setting). Based on this interface, the paper instantiates evaluations in three scenarios:
-
-- **Scenario 1 (Classic Case Replication)**: Netflix Prize (matching sparse behavioral fingerprints within a fixed candidate pool) and AOL search logs (open retrieval + triangulation without a candidate pool).
-- **Scenario 2 (Controlled Benchmark InferLink)**: Synthesized paired data where each instance contains only one true overlapping individual, systematically varying three factors and measuring LSR + Utility.
-- **Scenario 3 (Real Human-Computer Interaction Traces)**: De-identified interviews of researchers from the Anthropic Interviewer dataset (Scientists subset) + a set of anonymized multi-turn ChatGPT dialogue logs, verified by a web-enabled Gemini agent via search.
-
-Evaluation metrics consist of two categories: Linkage Success Rate $\mathrm{LSR}=\frac{1}{N}\sum_j \mathbb{I}(\mathcal{S}_j)$ for scenarios with unique ground truth (Netflix, InferLink); and Confirmed Linkage Count (CLC) for scenarios where ground truth is not fully available (AOL, interaction traces), counting only successful cases independently verified by public evidence.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Pi["Unified Linkage Interface Π<br/>(Anon Data D_anon + Aux Context D_aux)<br/>→ Identity Hypothesis î + Evidence E"]
+    Pi --> S1["Scenario 1: Classic Cases<br/>Netflix Pool Matching + AOL Open Retrieval Triangulation"]
+    Pi --> S2["Scenario 2: InferLink Controlled Benchmark"]
+    Pi --> S3["Scenario 3: Real Interaction Traces<br/>De-id Interviews / ChatGPT Logs via Web-enabled Agents"]
+    subgraph IL["InferLink 3-Factor Benchmark + 5-Phase Pipeline"]
+        direction TB
+        P1["Phase 1: Seed Sampling<br/>Fingerprint f × Intent ι × Attacker Knowledge κ"]
+        P2["Phase 2: Scenario Generation<br/>Task Context + 3-Role Attribute Schema"]
+        P3["Phase 3: Synthetic Paired Data<br/>Two tables, 10x9, unique overlapping individual"]
+        P4["Phase 4: Multi-turn Dialogue for Linkage"]
+        P5["Phase 5: Evaluation of LSR↓ and Utility↑"]
+        P1 --> P2 -->|"Validation: Dual-source necessity / Single-source unsolvability"| P3 --> P4 --> P5
+    end
+    S2 --> IL
+```
 
 ### Key Designs
 
-1.  **Unified Inference-Driven Linkage Interface $\Pi$**:
-    - **Function**: Bridges "classic fixed-pool matching" and "open-web retrieval de-anonymization," which were historically studied separately, into a single formal framework to facilitate cross-scenario model comparison.
-    - **Mechanism**: All scenarios are reduced to "providing $D_{\text{anon}}$ and $D_{\text{aux}}$ to the agent and requiring $(\hat{\imath}, \mathcal{E})$." Whether $D_{\text{aux}}$ is pre-provided or retrieved depends on the scenario, but the evaluation protocol remains consistent. The CLC strategy is **conservative**: vague profiles or narrowing down to a small candidate set do not count; a success is only recorded if $\hat{\imath}$ is doubly supported by cues in $D_{\text{anon}}$ and external evidence in $D_{\text{aux}}$.
-    - **Design Motivation**: To allow "classic case replication" and "real trace studies" to yield comparable conclusions, while elevating "whether the agent generates an identity hypothesis" to a primary metric, addressing the blind spot of only measuring "explicit leakage."
+**1. Unified Inference-Driven Linkage Interface $\Pi$: Integrating "Fixed Pool Matching" and "Open Web De-anonymization"**
 
-2.  **InferLink Three-Factor Controlled Benchmark (fingerprint × intent × knowledge)**:
-    - **Function**: Examines the impact of three variables on linkage success rate while keeping the paired data structure constant, identifying "when" linkage is most likely to occur.
-    - **Mechanism**: Each instance is determined by a seed $(f, \iota, \kappa)$—fingerprint type $f \in \{\textsc{Intrinsic}, \textsc{Coordinate}, \textsc{Hybrid}\}$ (intrinsic attributes / spatio-temporal coordinates / hybrid), task intent $\iota \in \{\textsc{Implicit}, \textsc{Explicit}\}$ (benign analysis / obvious de-anonymization), and attacker knowledge $\kappa \in \{\textsc{ZK}, \textsc{MK}\}$ (no named target / given named target). Each data pair consists of two 10-row × 9-column structured tables, where 5 shared attributes are roles as "contextual features / sparse anchors / one-sided exclusives," with **only one** individual overlapping between tables.
-    - **Design Motivation**: While classic cases are impactful, they conflate various factors; InferLink decouples "cue structure" from "user phrasing," upgrading the evaluation from "does the risk exist" to "how does the risk shift with conditions." It also allows reporting metrics independently for each fingerprint type.
+Historically, matching sparse behavioral fingerprints in a known candidate pool (Netflix) and open-retrieval triangulation without a pool (AOL) have been separate research lines. The paper unifies them: given $D_{\text{anon}}$ and $D_{\text{aux}}$, produce $(\hat{\imath}, \mathcal{E})$. Whether $D_{\text{aux}}$ is provided or retrieved depends on the scenario, but the metrics remain consistent. For open scenarios where ground truth is not fully available, the CLC (Confirmed Linkage Count) strategy is deliberately conservative; rough profiles do not count. Only when $\hat{\imath}$ is supported by both internal cues in $D_{\text{anon}}$ and external evidence in $D_{\text{aux}}$ is it counted as 1. For scenarios with a unique ground truth (Netflix, InferLink), the Linkage Success Rate is used: $\mathrm{LSR}=\frac{1}{N}\sum_j \mathbb{I}(\mathcal{S}_j)$.
 
-3.  **End-to-end Pipeline for Generation-Validation-Synthesis-Dialogue-Evaluation**:
-    - **Function**: Mass-produces InferLink instances in a reproducible, low-noise manner and embeds the evaluation into a "multi-turn interaction" to simulate real-world usage.
-    - **Mechanism**: Phase 1 samples seeds; Phase 2 generates candidate scenarios based on $f$ (task context + $D_{\text{anon}}/D_{\text{aux}}$ patterns + attribute schema); Phase 3 synthesizes paired data and ensures a globally unique linkage. A validation checklist must be passed between Phase 2 and 3 (task must require both sources, single source must be unsolvable, dependence on quasi-identifiers rather than direct identifiers). Phase 4 presents both sources via multi-turn dialogue to elicit identity hypotheses. Phase 5 reports LSR↓ and Utility↑. It also evaluates "privacy-aware system prompts" to quantify $\Delta U$ (Utility cost) and $\Delta \mathrm{LSR}$ (Privacy gain).
-    - **Design Motivation**: Validation-before-synthesis ensures each instance "requires cross-source reasoning" rather than accidental identification. Multi-turn dialogue aligns with actual agent usage, making spontaneous identity linkage an observable phenomenon.
+**2. InferLink Three-Factor Benchmark (Fingerprint × Intent × Knowledge): Analyzing the Drivers of Risk**
+
+Classic cases often conflate cue structure, user phrasing, and attacker priors. InferLink manipulates these variables while keeping the data structure constant: fingerprint types $f \in \{\textsc{Intrinsic}, \textsc{Coordinate}, \textsc{Hybrid}\}$, task intent $\iota \in \{\textsc{Implicit}, \textsc{Explicit}\}$ (benign analysis vs. explicit de-anonymization), and attacker knowledge $\kappa \in \{\textsc{ZK}, \textsc{MK}\}$ (Zero Knowledge vs. Managed Knowledge). Each instance consists of two 10x9 structured tables where 5 shared attributes function as "contextual features," "sparse anchors," or "one-sided exclusives," ensuring **only one** individual overlaps. Critically, the same data is reused across different $(\iota, \kappa)$ settings, cleanly decoupling "model guardrail behavior" from "cue linkability."
+
+**3. Five-Phase Pipeline (Generate-Verify-Synthesize-Dialogue-Evaluate): Ensuring Cross-Source Necessity**
+
+To generate InferLink instances at scale without noise, the pipeline prevents data from being "accidentally" identifiable through a single source. Phase 1 samples seeds $(f, \iota, \kappa)$; Phase 2 generates candidate scenarios; Phase 3 synthesizes paired data ensuring a unique link. A validation step exists between Phase 2 and 3: the task must require both sources, remain unsolvable using a single source, and rely only on quasi-identifiers. Phase 4 presents these sources in multi-turn dialogues to observe if linkage emerges spontaneously during helpful interactions. Phase 5 reports both LSR↓ and Utility↑, comparing the effects of "privacy-aware system prompts."
 
 ### Loss & Training
-The paper does not train models but evaluates existing LLM agents (GPT-5, Claude 4.5, o4-mini running within the OpenHands framework; web-enabled Gemini 3 Pro for AOL and interaction cases). The only intervention at the "training level" is the inclusion of privacy-aware system prompts as a defensive baseline for comparison.
+Ours does not train models. It evaluates existing LLM agents (GPT-5, Claude 4.5, o4-mini) within the OpenHands framework, utilizing a web-enabled Gemini 3 Pro for AOL and interaction cases. The only intervention is the addition of privacy-aware system prompts as a defense baseline for comparison.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Netflix Prize De-anonymization (Scenario 1)**: Sampling a 1000-user candidate pool from 1 million users, providing $m \in \{2,4,6,8\}$ ratings for the target user (rating perturbation $\pm 1$ star with 0.5 probability, date perturbation $\pm 21$ days), and requiring the agent to identify the user.
+**Netflix Prize De-anonymization (Scenario 1)**: From 1 million users, a 1000-person candidate pool is sampled. The goal is to identify a target user given $m \in \{2,4,6,8\}$ ratings (rating perturbation $\pm 1$ star with $p=0.5$, date perturbation $\pm 21$ days).
 
-| Setting ($m$) | Classic baseline $T{=}14$ | Classic baseline $T{=}21$ | GPT-5 | Claude 4.5 |
+| Setting ($m$) | Classic Baseline $T{=}14$ | Classic Baseline $T{=}21$ | GPT-5 | Claude 4.5 |
 |---|---|---|---|---|
 | 8 | 98.3 | 98.8 | **99.00 ± 0.72** | 97.30 ± 3.50 |
 | 6 | 96.7 | 97.1 | **97.43 ± 3.76** | 93.13 ± 8.39 |
 | 4 | 90.5 | 91.8 | 94.83 ± 2.22 | **97.27 ± 2.78** |
-| 2 (Sparse extreme) | 56.0 | 60.2 | **79.17 ± 4.97** | 53.30 ± 19.21 |
+| 2 (Extreme Sparse) | 56.0 | 60.2 | **79.17 ± 4.97** | 53.30 ± 19.21 |
 
-GPT-5 increases the LSR from 56% (classic method) to 79% in the sparsest $m=2$ range, which historically required heavy manual tuning. Claude 4.5 shows high variance in the sparse range (±19.21), indicating that the ability to perform tie-breaking with weak cues is a significant performance gap between models.
+GPT-5 increases LSR from 56% to 79% in the sparsest $m=2$ range—a region that historically required heavy manual tuning.
 
-**InferLink Three-Factor Controlled Evaluation (Scenario 2)**: 3 fingerprints × 3 (intent, knowledge) × 20 instances = 180 instances, comparing three models. Selected data:
+**InferLink Controlled Evaluation (Scenario 2)**: 180 total instances (3 fingerprints × 3 settings × 20 instances).
 
 | Setting | Fingerprint | o4-mini LSR | GPT-5 LSR | Claude 4.5 LSR |
 |---|---|---|---|---|
-| Implicit (**No user request for de-anon**) | Intrinsic | 0.450 | 0.150 | **0.800** |
+| Implicit (Benign Task) | Intrinsic | 0.450 | 0.150 | **0.800** |
 | Implicit | Hybrid | 0.500 | 0.000 | **0.800** |
-| Explicit-ZK (Required but no name target) | Hybrid | 0.400 | 0.850 | **1.000** |
-| Explicit-MK (Named target provided) | Hybrid | 0.800 | 0.950 | **1.000** |
+| Explicit-ZK (No Target) | Hybrid | 0.400 | 0.850 | **1.000** |
+| Explicit-MK (Named Target) | Hybrid | 0.800 | 0.950 | **1.000** |
 
-The most notable finding is: **Claude 4.5 maintains a stable LSR of 0.70–0.80 under the Implicit setting**, meaning the agent spontaneously provides specific identity hypotheses even when the user asks benign analysis questions. GPT-5 is much more conservative under Implicit (0.00–0.25) with almost no loss in Utility. This indicates that "silent risk" is the hardest part to evaluate.
+**Key Finding**: Claude 4.5 maintains an LSR of 0.70–0.80 even in **Implicit** settings. This indicates that agents may provide specific identity hypotheses spontaneously when a user asks benign analytical questions.
 
 ### Ablation Study
 
-**Privacy-Aware System Prompts (Aggregated by Fingerprint)**:
+**Privacy-Aware System Prompt (Aggregated by Fingerprint)**:
 
 | Intent | Metric | o4-mini | GPT-5 | Claude 4.5 |
 |---|---|---|---|---|
@@ -114,43 +113,48 @@ The most notable finding is: **Claude 4.5 maintains a stable LSR of 0.70–0.80 
 | Explicit-MK | After LSR | 0.20 | 0.02 | 0.03 |
 | Explicit-MK | $\Delta$ Utility | -0.17 | -0.05 | **-0.54** |
 
-Defense prompts can suppress LSR to nearly 0 under Explicit-MK, but Claude 4.5 suffers a 0.54 utility loss—meaning "anti-linkage" instructions cause severe over-refusal, blocking even legitimate cross-source analysis. GPT-5 provides a better trade-off (LSR ≈ 0 with $\Delta U$ only -0.05).
-
-**Human-Computer Interaction Traces (Scenario 3)**: CLC = 6 for the Anthropic Interviewer Scientists subset (matching Li 2026); CLC = 1 for 30 privacy-related ChatGPT dialogue logs, where the case was **specifically verified** within the authors' internal group of ≤12 people.
+Defensive prompts suppress LSR to near 0, but Claude 4.5 suffers a utility loss of 0.54, indicating severe over-refusal where legitimate cross-source analysis is also blocked. GPT-5 offers a more balanced trade-off.
 
 ### Key Findings
-- **Silent Risk**: Identity hypotheses are frequently generated even when intent is Implicit; traditional evaluations that ask agents if they leaked privacy would miss all of these.
-- **Fingerprint-Specific Vulnerability**: GPT-5 is relatively robust under Coordinate (LSR=0.65) but near the upper limit under Intrinsic/Hybrid—"looking safe on average" masks high vulnerability to specific cue types.
-- **Privacy-Utility Trade-off is Real**: Prompts that suppress linkage harm compliant tasks, and the loss is highly asymmetrical across models (Claude 4.5 is far more prone to over-refusal than GPT-5).
-- **Linkage Stems from Synthesis, Not Single Cues**: Successful identification generally occurs only after cross-referencing multiple weak signals like rough location + role + research field + temporal events.
+- **Silent Risk**: Identity hypotheses are generated frequently even when intent is Implicit, a factor missed by traditional "explicit disclosure" evaluations.
+- **Fingerprint Sensitivity**: While GPT-5 is relatively robust under Coordinate (LSR=0.65), it reaches near-ceiling performance under Intrinsic/Hybrid. Average metrics mask high vulnerability to specific cue types.
+- **Privacy-Utility Trade-off**: Effective defensive prompts significantly harm compliant tasks, with asymmetric costs across models.
+- **Combinatorial Linkage**: Success relies on the cross-validation of multiple weak signals (location, role, research field, time events) to converge on an individual.
 
 ## Highlights & Insights
-- Reintroduces "de-anonymization" as a **standard agent evaluation topic** from the realm of "expert-level SP papers," providing a reusable unified interface $\Pi$. Future work on RAG/Memory/Tool-use can directly report linkage risks using this interface.
-- The design of reusing the same data pair across three intents in InferLink is ingenious: since the underlying data is identical, any LSR difference is **solely attributable** to "user phrasing + whether a named target is provided," cleanly decoupling model guardrail behavior from cue linkability.
-- Reporting CLC instead of LSR for AOL and interaction cases is an examplar of responsible evaluation: when total ground truth is missing, it is better to underestimate than report inflated metrics.
-- Introduces an important transferable perspective for LLM privacy research: the **"Silent Leakage" metric** (whether an agent spontaneously links identities when not requested) should be a standard evaluation dimension for any agent benchmark.
+- Re-introduces de-anonymization as a **standard agent evaluation topic** from the realm of specialized security research, providing a unified interface $\Pi$ applicable to future RAG and tool-use benchmarking.
+- The design of InferLink re-using the same data for different intents cleanly decouples model guardrails from cue linkability.
+- The use of CLC for AOL and interaction scenarios provides a model for responsible evaluation; when ground truth is partially missing, underestimating risk is preferable to reporting inflated metrics.
+- Introduces the concept of **"Silent Disclosure" indicators** (linkage occurring without user request), which should be a standard dimension for any agent benchmark.
 
 ## Limitations & Future Work
-- InferLink currently features one overlapping individual per instance with fixed schemas; harder settings like near-duplicate individuals, multiple ground truth candidates, and dynamic schemas are left for the future.
-- Publicly verifiable interaction traces are scarce; CLC proves "it happens" but cannot estimate "frequency." The base rate of such risks in daily dialogue remains unknown.
-- Utility is only measured by "task completion"; it does not granularly differentiate "completion quality." The trade-off curve might be under- or over-estimated.
-- Defense experiments only evaluated simple system prompts. More sophisticated methods (e.g., retrieval-stage intervention, identity-unlinkability constraints during generation) are obvious next steps.
+- InferLink currently features one unique overlapping individual per instance with fixed schemas; near-repeats and dynamic schemas are left for future work.
+- The scarcity of public interaction traces means CLC proves danger exists but cannot estimate widespread base rates.
+- Utility is measured by task completion; finer-grained utility metrics are needed to design more precise defenses.
+- Defensive experiments only tested system prompts; sophisticated interventions in retrieval and generation stages remain unexplored.
 
 ## Related Work & Insights
-- **vs Staab et al. 2023 (Inferring Sensitive Attributes with LLMs)**: They focus on inferring single attributes from text; this paper requires **identity-level** hypotheses with cross-verification, a more end-to-end and difficult task.
-- **vs Li 2026 and Lermen et al. 2026 (Recent LLM De-anonymization Demos)**: They are case-driven demonstrations of feasibility; this paper provides a controlled benchmark and unified interface, moving research from "demo" to "systematic risk characterization."
-- **vs PrivacyLens (Shao 2024) / AgentDAM (Zharmagambetov 2025)**: They measure explicit access/disclosure; this paper measures **inference-driven linkage**, a failure mode missed by existing benchmarks.
-- **vs Classic Narayanan & Shmatikov 2008**: Classic work requires manual tuning of rarity-weighted similarity and temporal tolerance $T$; this paper proves LLM agents can replicate or exceed these results using natural language, significantly weakening "expert cost" as a privacy barrier.
+- **vs. Staab et al. 2023**: While prior work focused on single sensitive attributes (location/gender), ours targets **identity-level** hypotheses through cross-referencing.
+- **vs. Li 2026 & Lermen et al. 2026**: Moving beyond demonstration, this work provides a framework for systematic characterization of risk factors.
+- **vs. PrivacyLens / AgentDAM**: Ours complements these by focusing on **inference-driven linkage** rather than just explicit access or disclosure.
+- **vs. Narayanan & Shmatikov 2008**: While classic work required tuning similarity and time tolerance, modern agents achieve superior results via natural language, effectively eroding the "expert cost" barrier.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Formalizes "inference-driven linkage" and releases a controlled benchmark; a conceptual upgrade for agent privacy evaluation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Complementary three-scenario setup + three models + three factors + defense comparison; comprehensive, though lacking open-source models and complex defenses.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation, formalization, and experimental organization are extremely clear; ethics and reporting constraints are handled diligently.
-- Value: ⭐⭐⭐⭐⭐ Provides evaluation protocols and mitigation-utility baselines directly applicable by agent deployers, auditors, and regulators.
+- Novelty: ⭐⭐⭐⭐⭐ Formalizes inference-driven linkage and provides a controlled benchmark.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complements three scenarios with robust factor analysis, though lacks extensive open-source model testing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear motivation, formalization, and ethical reporting.
+- Value: ⭐⭐⭐⭐⭐ Provides a standard evaluation protocol for deployers, auditors, and regulators.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+- **Rethinking Privacy-Utility Trade-offs in LLM Agents** (ICLR 2026)
+- **Measuring Sparse Identity Fingerprints in the Era of Generative AI** (NeurIPS 2025)
+
+</div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 
@@ -158,7 +162,7 @@ Defense prompts can suppress LSR to nearly 0 under Explicit-MK, but Claude 4.5 s
 - [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](../../ACL2026/llm_safety/on_safety_risks_in_experience-driven_self-evolving_agents.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](../../ACL2026/llm_safety/subject-level_inference_for_realistic_text_anonymization_evaluation.md)
 - [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
-- [\[ICML 2026\] Position: Stop Chasing the C-index when Evaluating Survival Analysis Models](position_stop_chasing_the_c-index_when_evaluating_survival_analysis_models.md)
+- [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](../../AAAI2026/llm_safety/agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
 
 </div>
 

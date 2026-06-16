@@ -2,123 +2,136 @@
 title: >-
   [Paper Note] Private and Stable Test-Time Adaptation with Differential Privacy
 description: >-
-  [ICML 2026][Test-Time Adaptation] This paper is the first to indicate that Test-Time Adaptation (TTA) causes model parameters to leak private information about test data. It systematically transforms five mainstream TTA…
+  [ICML 2026][Others][Test-Time Adaptation] This paper is the first to indicate that Test-Time Adaptation (TTA) can leak private information from test data through model parameters. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, COME) into Differential Privacy (DP) versions using per-sample gradient clipping and Gaussian noise.
 tags:
-  - "ICML 2026"
-  - "Test-Time Adaptation"
-  - "Differential Privacy"
-  - "DP-SGD"
-  - "Per-Sample Clipping"
-  - "ImageNet-C"
+  - ICML 2026
+  - Others
+  - Test-Time Adaptation
+  - Differential Privacy
+  - DP-SGD
+  - Per-Sample Clipping
+  - ImageNet-C
 date: 2026-05-08
-content_hash: 683b8e77a38937a7
+content_hash: d63881aed2dbcecc
 ---
-
 # Private and Stable Test-Time Adaptation with Differential Privacy
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.01908](https://arxiv.org/abs/2606.01908)  
-**Code**: None  
-**Area**: AI Security / Differential Privacy / Test-Time Adaptation  
+**Code**: N/A  
+**Area**: AI Safety / Differential Privacy / Test-Time Adaptation  
 **Keywords**: Test-Time Adaptation, Differential Privacy, DP-SGD, Per-Sample Clipping, ImageNet-C  
 
 ## TL;DR
-This paper is the first to indicate that Test-Time Adaptation (TTA) causes model parameters to leak private information about test data. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, and COME) into Differential Privacy (DP) versions using per-sample gradient clipping and Gaussian noise. On ImageNet-C, the method provides provable $(\epsilon,\delta)$-DP guarantees and unexpectedly discovers that "clipping itself" enhances TTA accuracy by $0.1\%$–$4.1\%$.
+This paper is the first to indicate that Test-Time Adaptation (TTA) can leak private information from test data through model parameters. It systematically transforms five mainstream TTA methods (Tent, EATA, SAR, DeYO, COME) into Differential Privacy (DP) versions using per-sample gradient clipping and Gaussian noise. On ImageNet-C, it provides provable $(\epsilon,\delta)$-DP guarantees and unexpectedly finds that "clipping itself" improves TTA accuracy by $0.1\%$–$4.1\%$.
 
 ## Background & Motivation
 
-**Background**: TTA continues to update model parameters during the deployment phase using unlabeled test samples (typically updating only the affine parameters of normalization layers) to combat distribution shifts through entropy minimization, filtering, or reweighting. Tent represents entropy minimization; EATA adds reliability filtering and Fisher regularization; SAR employs sharpness-aware optimization; DeYO utilizes patch shuffle to calculate Pseudo-Label Probability Difference (PLPD); and COME replaces entropy with Dirichlet uncertainty.
+**Background**: TTA updates models during the deployment phase using unlabeled test samples (typically only updating the affine parameters of normalization layers) to combat distribution shifts through entropy minimization, filtering, and reweighting. Tent represents entropy minimization; EATA adds reliability filtering and Fisher regularization; SAR employs sharpness-aware optimization; DeYO uses patch shuffle to calculate Pseudo-Label Prediction Difference (PLPD); COME replaces entropy with Dirichlet uncertainty.
 
-**Limitations of Prior Work**: All existing methods implicitly assume that test data does not require protection. However, test images may contain sensitive information such as medical imaging, faces, or location trajectories. TTA "welds" the information of these samples into the model parameters. Once the model or its outputs are queried or shared, attackers can launch membership inference or reconstruction attacks to recover individual test samples from the updates.
+**Limitations of Prior Work**: All these methods rely on an implicit assumption: test data does not require protection. However, test images may involve medical records, faces, or location traces. TTA "bakes" these samples into the parameters. Once the model or its outputs are queried or shared, an attacker can launch membership inference or reconstruction attacks, just as they would against training data, to reverse-engineer individual test samples from the updates.
 
-**Key Challenge**: Directly applying DP-SGD to TTA faces several issues: (1) TTA batches are often as small as 1, causing DP noise to be amplified relative to the signal; (2) TTA methods rely heavily on data-dependent filtering/reweighting, which are essentially "queries" in a privacy sense that break DP and stability if implemented naively; (3) Traditional DP-SGD analysis is built on sampling and leave-one-out adjacency, whereas TTA is a single-epoch stream where each sample is seen only once, requiring a different accounting framework.
+**Key Challenge**: Directly applying DP-SGD to TTA does not solve the problem: (1) TTA batches are often as small as 1, causing DP noise to be amplified relative to the signal; (2) TTA methods rely heavily on data-dependent filtering/reweighting, deciding dynamically at each step which samples to use and their weights—these are effectively "queries" in a privacy sense. Naive implementations break both DP and stability; (3) Classic DP-SGD analysis is built on sampling and leave-one-out adjacency, whereas TTA is single-epoch streaming where each sample is seen only once, requiring a different accounting framework.
 
-**Goal**: (a) Provide a general recipe for DP-TTA; (b) Implement it across five representative TTA methods; (c) Systematically characterize the "privacy budget vs. adaptation accuracy" curve and identify which TTA designs are naturally more DP-friendly.
+**Goal**: (a) Provide a universal DP recipe for TTA; (b) Implement it across five representative TTA methods; (c) Systematically characterize the "privacy budget vs. adaptation accuracy" curve and identify which TTA designs are naturally more DP-friendly.
 
-**Key Insight**: The authors realize that the streaming nature of TTA actually allows for cleaner DP analysis—each sample is processed only once in a single step. Therefore, no composition is required across steps; as long as the sensitivity of a single step is controlled, the global privacy is closed by post-processing.
+**Key Insight**: The authors realized that the streaming nature of TTA allows for cleaner DP analysis—each sample is processed only once in a single step. Consequently, there is no composition across steps; as long as the sensitivity of a single step is controlled, the global guarantee follows by the post-processing property.
 
-**Core Idea**: Use "per-sample gradient clipping + Gaussian noise" as a mandatory privacy interface for TTA. Non-DP-friendly filtering/reweighting operators are either removed or converted into DP post-processing forms. Simultaneously, per-sample clipping is discovered to be a "free lunch" for improving TTA accuracy even with zero noise.
+**Core Idea**: Treat "per-sample gradient clipping + Gaussian noise" as the mandatory privacy interface for TTA. Non-DP-friendly filtering/reweighting operations are either removed or converted into DP-post-processing forms. Simultaneously, it was discovered that per-sample clipping serves as a "free lunch" for TTA accuracy even with zero noise.
 
 ## Method
 
 ### Overall Architecture
 
-Let the source model be $f_{\theta_0}$, the test stream be $\{B_t\}_{t=1}^T$, and the adaptable parameters be the affine subset of normalization layers $\theta^a \subset \theta$. The standard TTA update is $\theta_{t+1} = \theta_t - \eta \Delta_t$, where $\Delta_t = \frac{1}{|B_t|}\sum_{x_i \in B_t} w_t^i g_t(x_i)$ and $g_t(x_i) = \nabla_\theta \ell_\text{tta}(x_i,\theta_t)$. DP-TTA replaces this by first performing $L_2$ clipping on each sample gradient: $\bar g_t(x_i) = g_t(x_i)/\max(1,\|g_t(x_i)\|_2/C)$, and then injecting Gaussian noise: $\Delta_t^{DP} = \frac{1}{|B_t|}(\sum_i \bar g_t(x_i) + \mathcal{N}(0,C^2\sigma^2 I_d))$. BatchNorm is disabled at the architectural level (as cross-sample coupling violates the per-sample sensitivity assumption), and ViT-Base/16 with LayerNorm is used uniformly.
+Let the source model be $f_{\theta_0}$, the test stream be $\{B_t\}_{t=1}^T$, and the adaptable parameters be the affine subset of normalization layers $\theta^a \subset \theta$. The standard TTA update is $\theta_{t+1} = \theta_t - \eta \Delta_t$, where $\Delta_t = \frac{1}{|B_t|}\sum_{x_i \in B_t} w_t^i g_t(x_i)$ and $g_t(x_i) = \nabla_\theta \ell_\text{tta}(x_i,\theta_t)$. DP-TTA replaces this by first performing $L_2$ clipping on per-sample gradients $\bar g_t(x_i) = g_t(x_i)/\max(1,\|g_t(x_i)\|_2/C)$, then injecting Gaussian noise $\Delta_t^{DP} = \frac{1}{|B_t|}(\sum_i \bar g_t(x_i) + \mathcal{N}(0,C^2\sigma^2 I_d))$. At the architectural level, BatchNorm is disabled (as inter-sample gradient coupling violates the per-sample sensitivity assumption), and ViT-Base/16 with LayerNorm is used. The pipeline is shown below: each test batch constructs per-sample loss and gradients (defiltered), followed by per-sample clipping, aggregation with noise, and updating LayerNorm affine parameters. The privacy accounting for streaming + change-one adjacency is closed at the noise injection step.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Test stream batch (unlabeled, single-epoch streaming)"] --> G2
+    subgraph G2["Defiltering / Post-processing (Constructing gradients)"]
+        direction TB
+        B["Define per-sample loss per method<br/>Tent Entropy / EATA Fisher / Private SAM / DeYO PLPD / COME"] --> C["Per-sample Gradients"]
+    end
+    G2 --> D["Per-sample clipping to norm C<br/>Compresses norm, preserves direction"]
+    D --> E["Aggregation + Gaussian Noise N(0, C²σ²I)"]
+    E --> F["Update LayerNorm affine parameters<br/>(Disable BatchNorm, use ViT)"]
+    F -->|Next batch, no resampling| A
+    E -.->|Single-step μ=2/σ GDP, closed via post-processing| P["DP Privacy Accounting<br/>change-one adjacency, no composition loss"]
+```
 
 ### Key Designs
 
-1. **DP-TTA Privacy Analysis (Streaming + Change-one Adjacency)**:
+**1. DP-TTA Privacy Analysis: Avoiding Composition Loss with Streaming + Change-one Adjacency**
 
-    - **Function**: Provides a tight $(\epsilon,\delta)$ guarantee for each DP-TTA method without needing multi-epoch sub-sampling composition used in DP-SGD.
-    - **Mechanism**: Since TTA is single-epoch and each sample is seen once, once a single step guarantees $\mu$-GDP, all subsequent steps are post-processing of DP results, requiring no composition across steps. "Change-one" (replacing one sample) adjacency is used instead of "leave-one-out" (as batch sizes are fixed in streaming), which doubles sensitivity from $C$ to $2C$. Thus, DP-Tent satisfies $\mu$-GDP with $\mu = 2/\sigma$, leading to $\delta(\epsilon) = \Phi(-\sigma\epsilon/2 + 1/\sigma) - e^\epsilon \Phi(-\sigma\epsilon/2 - 1/\sigma)$.
-    - **Design Motivation**: Align the analysis with the actual usage of TTA rather than forcing DP-SGD training assumptions; convert the "streaming without resampling" disadvantage into an advantage by eliminating expensive composition losses.
+Directly adopting DP-SGD accounting is inefficient as it assumes multi-epoch training with sub-sampling and leave-one-out adjacency, leading to heavy composition loss. This paper leverages a structural fact of TTA: it is single-epoch and streaming, where each sample is processed exactly once. Thus, once $\mu$-GDP is guaranteed for a single step, all subsequent steps are post-processing of DP results, requiring no composition across steps. Adjacency is changed to "change-one" (replacing one sample) instead of "leave-one-out"—since streaming batch sizes are fixed, deleting a sample is unnatural. This doubles the sensitivity from $C$ to $2C$. Consequently, DP-Tent satisfies $\mu=2/\sigma$ $\mu$-GDP, and:
 
-2. **De-filtering / Post-processing (DP-EATA / DP-SAR / DP-DeYO / DP-COME)**:
+$$\delta(\epsilon)=\Phi(-\sigma\epsilon/2+1/\sigma)-e^\epsilon\Phi(-\sigma\epsilon/2-1/\sigma)$$
 
-    - **Function**: Ensures that data-dependent operators in non-trivial TTA methods satisfy DP by either internalizing them into clipping or moving them outside the privacy boundary.
-    - **Mechanism**: Entropy threshold filtering and diversity filtering in EATA are removed because they cause effective batch size drift and require private statistics. However, Fisher regularization $\mathcal{R}(\theta_t,\theta_0)$ is retained as it is DP post-processing. In SAR, the two-point sharpness update consumes double the privacy budget; this is replaced by a private SAM variant using the previous step's private gradient $\tilde g_{t-1}$ to construct the perturbation $\tilde \epsilon_t = \rho \tilde g_{t-1}/\|\tilde g_{t-1}\|_2$. DeYO's PLPD term $e^{\text{PLPD}_\theta(x_i,x_i')}$ is integrated into the loss to pass through the per-sample clipping channel. COME uses Dirichlet uncertainty $\ell_\text{COME} = -\sum_k b_k\log b_k - u\log u$, requiring no additional modification.
-    - **Design Motivation**: Every TTA method has operators that "query the test set unauthorized." It is necessary to identify which can be moved after DP results (free), which must be absorbed into clipping (increasing noise), and which are too costly and should be removed.
+This analysis aligns with the real-world usage of TTA and turns "streaming without resampling" into an advantage by eliminating composition overhead, which is why $\epsilon=10$ is effectively free.
 
-3. **Per-sample clipping as a Free Stabilizer for TTA**:
+**2. Defiltering / Post-processing: Moving Data-Dependent Operators Outside the Privacy Boundary**
 
-    - **Function**: Using per-sample gradient clipping alone can stabilize and improve TTA accuracy even without adding noise ($\sigma=0$).
-    - **Mechanism**: While per-batch clipping was previously though to be ineffective for TTA, per-sample clipping preserves the individual direction of each sample while capping its norm. Applying per-sample clipping without DP noise to EATA/SAR/DeYO/COME results in an average adaptation gain increase from $0.1\%$ to $4.1\%$, with up to a $14\%$ boost on ImageNet-R.
-    - **Design Motivation**: Pseudo-label gradients in TTA are high-variance and easily dominated by outliers. Per-sample clipping acts as a "hard" directional sparsification and outlier suppression, preventing bad samples from causing model collapse in continual streams.
+Each non-trivial TTA method has operators that "query the test set." The core of DP-ification is identifying which can be moved after the DP result (free), which must be inside the clipping (increasing noise), and which should be removed. EATA's entropy and diversity filters cause effective batch size drift and require private statistics; the authors remove these filters but keep the Fisher regularization $\mathcal{R}(\theta_t,\theta_0)$, which only depends on parameters (DP post-processing). SAR's two-point sharpness update consumes double the privacy budget; it is replaced with a private SAM variant using the previous private gradient $\tilde g_{t-1}$ to construct the perturbation $\tilde\epsilon_t=\rho\tilde g_{t-1}/\|\tilde g_{t-1}\|_2$, requiring only one gradient evaluation. DeYO embeds the PLPD term $e^{\text{PLPD}_\theta(x_i,x_i')}$ into the loss per-sample. COME, using Dirichlet uncertainty $\ell_\text{COME}=-\sum_k b_k\log b_k-u\log u$, naturally fits without major modification.
+
+**3. Per-sample Clipping as a Free Stabilizer for TTA: Clipping Alone Boosts Performance**
+
+Previous research suggested per-batch clipping was ineffective for TTA (Niu et al., 2023), so clipping was viewed solely as a privacy cost. By refining the granularity to per-sample—preserving individual directions while compressing norms—this work finds that even at zero noise ($\sigma=0$), clipping alone improves average adaptation gains from $0.1\%$ to $4.1\%$, and up to $14\%$ on ImageNet-R. This is because TTA pseudo-label gradients are high-variance and easily dominated by outliers; per-sample clipping acts as a form of directional sparsification and outlier suppression, preventing model collapse in continual streams.
 
 ### Loss & Training
 
-Only affine parameters of normalization layers are updated. DP-EATA retains the $\lambda \nabla_\theta \mathcal{R}(\theta_t,\theta_0)$ term (Fisher regularization does not enter the clipping channel). Hyperparameters are selected via cross-validation with $\eta \in \{10^{-4}, 5\cdot 10^{-4}, \dots, 1\}$ and $C \in \{1,5,10,15\}$. The batch size is fixed at 64. Noise levels $\sigma \in \{8.594,1.966,1.084,0.777,0.619\}$ correspond to $\epsilon = 1,5,10,15,20$ at $\delta=10^{-6}$.
+Only affine parameters of normalization layers are updated. DP-EATA retains the $\lambda \nabla_\theta \mathcal{R}(\theta_t,\theta_0)$ term (Fisher regularization is not clipped). Hyperparameters $\eta \in \{10^{-4}, 5\cdot 10^{-4}, \dots, 1\}$ and $C \in \{1,5,10,15\}$ are selected via cross-validation. Batch size is fixed at 64. Noise levels $\sigma \in \{8.594,1.966,1.084,0.777,0.619\}$ correspond to $\epsilon = 1,5,10,15,20$ ($\delta=10^{-6}$).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Accuracy of DP-Tent under different privacy budgets on ImageNet-C (severity 5, continual setup, ViT-B/16, average of 5 seeds):
+Accuracy of DP-Tent across different privacy budgets on ImageNet-C (severity 5, continual setting, ViT-B/16, average of 5 seeds):
 
-| Setup | $\epsilon$ | Avg Top-1 (%) | Description |
+| Setting | $\epsilon$ | Avg Top-1 (%) | Notes |
 |------|------------|----------------|------|
 | Non-private Tent | $\infty$ | 60.8 | Original baseline |
-| DP-Tent | 20 | 62.9 | 2.1% higher than non-private |
+| DP-Tent | 20 | 62.9 | Outperforms non-private by 2.1% |
 | DP-Tent | 15 | 62.6 | Still exceeds non-private |
 | DP-Tent | 10 | 62.1 | Still exceeds non-private |
 | DP-Tent | 1 | 58.5 | Only 2.3% drop under strong privacy |
 
-Accuracy gap compared to non-private versions for other methods at $\epsilon=20$: DP-EATA $-2.9\%$, DP-SAR $-1.2\%$, DP-DeYO $-2.4\%$, DP-DeYO-COME $-1.7\%$. These losses are significantly smaller than the accuracy drops typically seen in DP-SGD training.
+For other methods at $\epsilon=20$, the gap compared to non-private is: DP-EATA $-2.9\%$, DP-SAR $-1.2\%$, DP-DeYO $-2.4\%$, and DP-DeYO-COME $-1.7\%$, much smaller than typical losses in DP-SGD training.
 
-### Ablation Study: Contribution of Per-sample Clipping Alone
+### Ablation Study: Contribution of Per-Sample Clipping Alone
 
-Comparison of "with vs. without per-sample clipping" (no DP noise) on ImageNet-C (continual, ViT-B/16):
+ImageNet-C continual, ViT-B/16, comparing "with vs. without per-sample clipping" (no DP noise):
 
-| Configuration | Avg Gain | Key Findings |
+| Configuration | Avg Gain | Key Finding |
 |------|----------|----------|
-| Original TTA (No clip) | $+0.1\%$ | Average of 5 methods relative to source model |
-| Original TTA + per-sample clip | $+4.1\%$ | 4 methods improved, only 1 slight decrease of $-0.3\%$ |
-| DeYO-COME + clip | $67.5\%$ | Highest absolute accuracy in continual setup |
-| Tent / EATA + clip (ConvNeXt) | $+1\%$ to $+5\%$ | Consistent across continual & episodic setups |
-| ImageNet-R + clip | Up to $+14\%$ | Larger gains on more challenging data |
+| Original TTA (no clip) | $+0.1\%$ | Average of five methods relative to source |
+| Original TTA + per-sample clip | $+4.1\%$ | 4 methods improved, only 1 dropped slightly ($-0.3\%$) |
+| DeYO-COME + clip | $67.5\%$ Abs Acc | Highest performance in continual setting |
+| Tent / EATA + clip (ConvNeXt) | $+1\%$ to $+5\%$ | Consistent across continual & episodic |
+| ImageNet-R + clip | Up to $+14\%$ | Larger gains on more difficult data |
 
 ### Key Findings
 
-- **Per-sample clipping is a free lunch for TTA**: Even without privacy requirements, clipping alone stabilizes continual TTA and prevents collapse—a granularity previously overlooked by studies using per-batch clipping.
-- **Streaming TTA makes DP costs exceptionally cheap**: Due to the single-epoch nature, change-one adjacency, and post-processing closure, there is no composition loss. This makes "moderate privacy" like $\epsilon=10$ almost free on ImageNet-C, sometimes outperforming non-private baselines.
-- **More filtering correlates with less DP-friendliness**: Elaborate filters in EATA/SAR/DeYO mostly need to be removed during DP conversion (as they break sensitivity bounds or require expensive private statistics). Surprisingly, the simplest method, Tent, is the most resilient to DP conversion.
-- **Architectural constraints are rigid**: BatchNorm violates sensitivity independence under per-sample clipping. Deployment requires switching to LayerNorm-based models (like ViT), meaning the architecture choice itself becomes a privacy decision.
+- **Per-sample clipping is a free lunch for TTA**: Even without privacy requirements, clipping stabilizes continual TTA and suppresses collapse— a level of granularity missed by previous work using per-batch clipping.
+- **Streaming TTA makes DP overhead exceptionally low**: Due to single-epoch + change-one adjacency + post-processing closure, there is no composition loss, making "medium privacy" ($\epsilon=10$) almost free on ImageNet-C.
+- **More filters mean less DP-friendliness**: Sophisticated filters in EATA / SAR / DeYO often must be removed to avoid breaking sensitivity bounds. Ironically, the simplest method, Tent, is the most resilient to DP-ification.
+- **Architectural constraints are rigid**: BatchNorm violates sensitivity independence under per-sample clipping, necessitating LayerNorm-based models like ViTs.
 
 ## Highlights & Insights
-- **Shifting the "threat model" to TTA is a critical paradigm shift**: Previous TTA research focused solely on accuracy and stability. This paper demonstrates that parameter updates during deployment constitute a privacy surface and provides a provable solution, completing the spectrum from DP-SGD to DP fine-tuning.
-- **The "Remove, Preserve, Internalize" classification is reusable**: The framework for handling data-dependent operators based on their sensitivity cost provides a clear engineering template for making any new TTA method DP-compliant.
-- **Independent value of per-sample clipping**: This finding can be cited by non-privacy TTA works as a "near-zero cost" trick to stabilize continual TTA, potentially gaining wider community adoption than the DP contribution itself.
+- **Shifting the threat model to TTA fills a paradigm gap**: While previous TTA papers focused only on accuracy, this work demonstrates that parameter updates during deployment are a privacy surface and provides a provable solution.
+- **The "defiltering, regularization preservation, weighting internalization" taxonomy is reusable**: This provides a clear engineering template for DP-ifying any new TTA method.
+- **The discovery regarding per-sample clipping is valuable independently**: It can be adopted by non-privacy TTA research as a nearly zero-cost trick to stabilize continual TTA.
 
 ## Limitations & Future Work
-- **Cost of removing filters**: Removing reliability filters from EATA/DeYO only drops accuracy by 1–3% in these experiments, but their long-term stability contributions in longer sequences or extreme OOD scenarios might be undervalued.
-- **Batch=1 remains unresolved**: While the authors claim DP-TTA is robust to batch size, experiments were fixed at 64. The trade-off between strong privacy and the extreme $B=1$ case common in edge deployment requires further quantification.
-- **Lack of empirical privacy auditing**: DP provides an upper bound. This paper does not use membership inference attacks to verify the lower bound, leaving it unclear if the actual leakage is significantly lower than $\epsilon$ suggests.
-- **Architecture limited to LayerNorm**: Excluding BatchNorm models limits the scope. Future research into ghost normalization or private BN estimation is needed to relax this constraint.
+- **The cost of removing filters**: Replacing EATA / DeYO filters with DP causes minor drops ($1-3\%$), but their long-term contribution to stability in longer sequences might be underestimated.
+- **Batch=1 remains an open challenge**: While robust to batch size, experiments used 64. The trade-off for the common $batch=1$ deployment scenario under strong privacy is not fully quantified.
+- **Lack of empirical privacy auditing**: DP provides an upper bound; the paper does not use membership inference attacks to verify if the actual leakage is significantly lower than $\epsilon$.
+- **Restricted to LayerNorm models**: Excluding BatchNorm models limits applicability; future work is needed on ghost normalization or private BN estimation.
 
 ## Related Work & Insights
-- **vs DP-SGD (Abadi et al., 2016)**: DP-SGD assumes training phases, multi-epoch, sub-sampling, and leave-one-out adjacency. This work proves streaming single-epoch TTA avoids composition losses but requires change-one adjacency (sensitivity $2C$).
-- **vs Original Tent / EATA / SAR / DeYO / COME**: These works treat accuracy and stability as the only goals; this paper adds a privacy dimension and finds that the simplest method (Tent) is the most robust under DP.
-- **vs DP-SAM (Park et al., 2023)**: This work adapts the technique of using the previous private gradient as a perturbation direction to reduce DP-SAR from two gradient evaluations to one.
+- **vs. DP-SGD (Abadi et al., 2016)**: DP-SGD assumes training, multi-epoch, and leave-one-out; this work proves streaming TTA avoids composition and requires change-one adjacency (sensitivity $2C$).
+- **vs. Original TTA methods**: While those methods prioritize accuracy, this work adds a privacy dimension and finds simple structures (Tent) are more robust to privacy constraints.
+- **vs. DP-SAM (Park et al., 2023)**: Borrowing the technique of using previous private gradients for perturbation directions allows DP-SAR to reduce gradient evaluations.
 
 <!-- RELATED:START -->
 
@@ -127,10 +140,10 @@ Comparison of "with vs. without per-sample clipping" (no DP noise) on ImageNet-C
 ## Related Papers
 
 - [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
+- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](../../CVPR2026/others/towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
-- [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
 - [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](test-time_training_with_kv_binding_is_secretly_linear_attention.md)
-- [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](../../NeurIPS2025/others/space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
+- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](../../CVPR2026/others/witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
 
 </div>
 

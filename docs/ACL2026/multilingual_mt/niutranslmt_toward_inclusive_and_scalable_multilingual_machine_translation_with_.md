@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs
 description: >-
-  [ACL 2026][Multilingual & Machine Translation][Multilingual Machine Translation] This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 translation directions cente…
+  [ACL 2026][Multilingual & Translation][Strategic Downsampling] This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 Chinese-English dual-centric translation directions across four scales (0.6B/1.7B/4B/8B). It identifies that multi-way parallel data causes X→Zh/En directional degeneration in symmetric SFT and restores qualit
 tags:
-  - "ACL 2026"
-  - "Multilingual & Machine Translation"
-  - "Multilingual Machine Translation"
-  - "Directional Degeneration"
-  - "Strategic Downsampling"
-  - "Parallel Multilingual Prompting"
-  - "GRPO"
+  - ACL 2026
+  - Multilingual & Translation
+  - Strategic Downsampling
+  - Parallel Multilingual Prompting
+  - GRPO
 date: 2026-05-08
-content_hash: be6a6b19d2ac1b4c
+content_hash: 6d66b3b0b3873c96
 ---
-
 # NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs
 
 **Conference**: ACL 2026  
@@ -24,54 +21,72 @@ content_hash: be6a6b19d2ac1b4c
 **Keywords**: Multilingual Machine Translation, Directional Degeneration, Strategic Downsampling, Parallel Multilingual Prompting, GRPO
 
 ## TL;DR
-This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 translation directions centered on Chinese and English, across four scales: 0.6B, 1.7B, 4B, and 8B. It identifies that multi-way parallel data in symmetric SFT causes "Directional Degeneration" in the X→En/Zh direction. The performance is restored to the level of strong open-source MMT systems using Strategic Downsampling, Parallel Multilingual Prompting, and GRPO with COMET rewards.
+This paper introduces NiuTrans.LMT, an open-source LLM machine translation suite covering 60 languages and 234 Chinese-English dual-centric translation directions across four scales (0.6B/1.7B/4B/8B). It identifies that multi-way parallel data causes X→Zh/En directional degeneration in symmetric SFT and restores quality to the level of strong open-source MMT systems using Strategic Downsampling, Parallel Multilingual Prompting, and GRPO with COMET rewards.
 
 ## Background & Motivation
 
-**Background**: LLM machine translation has shifted from "training a standalone encoder-decoder MT model" to "CPT + SFT + preference optimization on a general base LLM." Systems like ALMA, TowerInstruct, X-ALMA, GemmaX2, Hunyuan-MT, and Seed-X have proven this path effective. However, most systems either have limited language coverage, are English-centric, or fail to fully resolve bidirectional quality issues for long-tail languages beyond Chinese and English.
+**Background**: LLM machine translation has shifted from "training independent encoder-decoder MT models" to "CPT + SFT + preference optimization on general base LLMs." Systems like ALMA, TowerInstruct, X-ALMA, GemmaX2, Hunyuan-MT, and Seed-X have proven this effective. However, most systems either have limited language coverage, are primarily English-centric, or fail to adequately address bidirectional quality for long-tail languages beyond Chinese and English.
 
-**Limitations of Prior Work**: High-quality human parallel corpora are the most desired data for multilingual SFT, but such data is extremely scarce for low-resource languages. Consequently, multi-way corpora like FLORES-200 and NTREX-128 are repeatedly reused. Intuitively, multi-way data can construct many directions from a small set of corpora; the problem is that when the same English or Chinese sentence is repeatedly mapped as the target from dozens of source languages, the model may learn a "shortcut" to memorize the target sentence upon seeing certain training patterns, rather than carefully reading the source semantics.
+**Limitations of Prior Work**: Multilingual SFT ideally utilizes high-quality human parallel corpora, which are extremely scarce for low-resource languages. Consequently, multi-way corpora like FLORES-200 and NTREX-128 are repeatedly reused. Intuitively, multi-way corpora can construct many directions from a small set of sentences; the problem is that when the same English or Chinese sentence is repeatedly mapped as a target by dozens of source languages, the model may learn a shortcut to "memorize the target sentence" upon seeing certain training patterns, rather than processing the source semantics.
 
-**Key Challenge**: On one hand, multi-way parallel data is the most reliable source of high-quality supervision for long-tail languages; on the other hand, symmetrical reuse creates massive many-to-one target repetitions. While the model benefits when generating multiple target languages in the pivot→X direction, it exhibits "Directional Degeneration"—fluent but unfaithful hallucinations—in the X→pivot direction.
+**Key Challenge**: On one hand, multi-way parallel data is the most reliable source of high-quality supervision for long-tail languages. On the other hand, symmetric reuse creates massive many-to-one target duplication. While the model benefits when generating multiple target languages in the pivot→X direction, it exhibits fluent but unfaithful hallucinations in the X→pivot direction, termed "Directional Degeneration" in this paper.
 
-**Goal**: The authors aim to solve three problems simultaneously: (i) explain why large-scale multilingual SFT collapses in the reverse direction; (ii) fix this issue without relying on additional new SFT data; and (iii) train and release a family of multilingual translation models that are Chinese-English dual-centric, sufficiently broad in coverage, and available at different parameter scales.
+**Goal**: The authors aim to simultaneously address three issues: (i) explain why large-scale multilingual SFT collapses in the reverse direction; (ii) fix this issue without relying on additional SFT data; and (iii) train and release a Chinese-English dual-centric multilingual translation model family covering a wide range of parameters and languages.
 
-**Key Insight**: Instead of inventing complex architectures, the paper attributes the problem to data usage: the same pivot target is symmetrically reused too many times, causing source semantics to be overridden by shortcuts. This perspective is practical because if the root cause lies in data distribution, a simple sampling strategy might be more stable and cost-effective than model-level interventions.
+**Key Insight**: The paper attributes the problem to data utilization rather than complex architectures: the same pivot target is symmetrically reused too many times, causing source semantics to be overridden by shortcuts. This perspective is practical because if the root cause lies in data distribution, a simple sampling strategy may be more stable and cost-effective than model-level interventions.
 
-**Core Idea**: Use "Strategic Downsampling" (retaining only a small amount of reverse data while fully retaining forward data) to break many-to-one target repetition. Then, use "Parallel Multilingual Prompting" with auxiliary parallel sentences to explicitly provide cross-lingual semantic anchors. Finally, integrate both into a complete LMT training pipeline consisting of 90B-token CPT + high-quality SFT + GRPO.
+**Core Idea**: Strategic Downsampling is used to break many-to-one target repetition by "retaining a small portion of reverse data while keeping forward data intact." Furthermore, Parallel Multilingual Prompting with auxiliary parallel sentences explicitly provides cross-lingual semantic anchors. Both are integrated into a complete LMT training pipeline involving 90B-token CPT, high-quality SFT, and GRPO.
 
 ## Method
 
 ### Overall Architecture
-LMT uses Qwen3 as the base and trains four models (0.6B, 1.7B, 4B, 8B), covering English ↔ 59 languages and Chinese ↔ 58 languages, totaling 234 translation directions. The overall pipeline consists of three stages: 1) Continued Pre-training (CPT), reinforcing multilingual capabilities with 90B tokens of mixed corpora (one-third each of monolingual, English-centric bilingual, and Chinese-centric bilingual data); 2) SFT, performing instruction-style translation supervision on high-quality corpora such as FLORES/NTREX/SMol/WMT/IWSLT while incorporating SD and PMP; 3) GRPO, sampling multiple candidate translations using the same SFT prompts and using COMET-22 as a reference-based reward for preference optimization, without constructing additional human preference data.
+LMT uses Qwen3 as the base to train four models (0.6B, 1.7B, 4B, 8B), covering English ↔ 59 languages and Chinese ↔ 58 languages, totaling 234 directions. The pipeline consists of three stages: the first is Continued Pre-training (CPT) using a 90B token mix of monolingual, English-centric bilingual, and Chinese-centric bilingual data (one-third each); the second is SFT, involving instruction-style translation supervision on high-quality corpora like FLORES/NTREX/SMol/WMT/IWSLT, incorporating SD and PMP; the third is GRPO, which samples multiple candidate translations using the same SFT prompts and performs preference optimization using COMET-22 as a reference-based reward without additional human preference data.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Qwen3 Base<br/>0.6B / 1.7B / 4B / 8B"] --> B["Continued Pre-training (CPT)<br/>90B token: 1/3 Monolingual / En-centric / Zh-centric each"]
+    B --> SFT
+    subgraph SFT["Supervised Fine-tuning (SFT) (High-quality parallel corpora + Instructional translation)"]
+        direction TB
+        C["Strategic Downsampling<br/>Full retention for En/Zh→X, 5% for X→En/Zh"]
+        D["Parallel Multilingual Prompting (PMP)<br/>Source + Auxiliary sentence as cross-lingual anchor"]
+        C --> D
+    end
+    SFT --> E["GRPO Preference Optimization<br/>8 rollouts + COMET-22 reference reward"]
+    E --> F["NiuTrans.LMT<br/>60 Languages / 234 Chinese-English Dual-centric Directions"]
+```
 
 ### Key Designs
 
-1.  **Directional Degeneration Diagnosis and Strategic Downsampling**:
-    - **Function**: Identify and mitigate the collapse of reverse translation (especially X→En/Zh) caused by symmetric reuse of multi-way parallel data.
-    - **Mechanism**: The authors first perform standard bidirectional SFT with Qwen3-4B-Base and find that while En/Zh→X improves significantly, X→En/Zh performance falls below the base model, characterized by grammatical fluency but factual unfaithfulness. Further experiments were conducted across three axes: replacing reverse data with non-overlapping bilingual CPT subsets to break symmetry; gradually increasing the retention rate of reverse multi-way samples from 0% to 100%; and repeating this across Qwen3 (0.6B/1.7B/4B/8B), Llama-3.1-8B, Gemma-2-9B, and scales of 10-50 languages. Results show an inverted V-shape performance curve relative to the retention rate, peaking at approximately $p=5\%$ and collapsing most obviously at 100%. The final SD approach retains all En/Zh→X samples and independently samples X→En/Zh samples from multi-way corpora at $p=5\%$.
-    - **Design Motivation**: This decomposes the "curse of multilinguality" into specific many-to-one data reuse issues. Compared to model-level solutions like direction-aware training or model merging, SD is a data-level fix: it does not change the architecture, introduce additional inference overhead, or sacrifice supervision density for pivot→X directions.
+**1. Directional Degeneration Diagnosis & Strategic Downsampling: Identifying the collapse in reverse directions caused by symmetric multi-way data reuse and applying sampling to mitigate it.**
 
-2.  **Parallel Multilingual Prompting (PMP)**:
-    - **Function**: Provide the model with an auxiliary parallel sentence during SFT and optional inference stages, serving as a second linguistic perspective to anchor source semantics.
-    - **Mechanism**: Standard translation prompts train $P_\theta(T\mid S;\tau_{L_S\to L_T})$; PMP extends the input to include the source sentence $S$ and an auxiliary language sentence $A$, training $P_\theta(T\mid S,A;\tau_{L_S\to L_A\to L_T})$. Auxiliary languages are selected strategically: for En↔X, a neighboring language of a similar type that the model masters well is chosen (e.g., Dutch for German, Czech for Polish); for Zh↔X, English is consistently used as a stable semantic anchor since it is usually the model's strongest and most easily self-generated intermediate language. SFT uses a mix of STP/PMP training; ordinary STP can still be used for default inference, switching to PMP prompts if external or self-generated auxiliary translations are available.
-    - **Design Motivation**: Multi-way data brings not only many-to-one risks but also contains cross-lingual alignment value. The ingenuity of PMP lies in transforming "multi-way parallel" from an implicit data structure into an explicit prompt condition, teaching the model when to utilize another linguistic perspective rather than blindly expanding all directions symmetrically during training.
+The authors initially performed standard bidirectional SFT with Qwen3-4B-Base and encountered a counter-intuitive phenomenon: while En/Zh→X improved significantly, X→En/Zh performance dropped below the base model. The error patterns were grammatically correct but factually unfaithful—this is "Directional Degeneration." The cause is that when multi-way corpora are reused symmetrically, the same pivot target sentence is mapped by dozens of source languages, leading the model to memorize the target sentence rather than reading source semantics. To verify this, the authors conducted controlled experiments: replacing reverse data with non-overlapping bilingual CPT subsets, gradually increasing the retention rate of multi-way reverse samples from 0% to 100%, and reproducing this across Qwen3 scales, Llama-3.1-8B, Gemma-2-9B, and varied language counts. Performance followed an inverted V-shape, peaking at approximately $p=5\%$, with the heaviest collapse occurring at 100% symmetric reuse.
 
-3.  **Scalable Training Pipeline for Chinese-English Dual-Centric MMT**:
-    - **Function**: Implement the above strategies into a releasable, comparable model family covering long-tail languages rather than just performing a single ablation.
-    - **Mechanism**: CPT data is collected from SlimPajama, Skywork, CulturaX, OpenDataLab, Wikimedia, OPUS, etc., and then pseudo-parallel expansion is performed using open-source MT systems, particularly to fill the gap in Chinese-centric corpora. The filtering chain includes OpusFilter for length and mismatch cleaning, FastText LID for hierarchical thresholds, and CometKiwi for quality scoring. This results in approximately 2.1B English-centric and 2.9B Chinese-centric sentence pairs. CPT adopts explicit direction tags and target language separators. SFT data includes 567K high-quality pairs covering 117 pivot language pairs; positive STP/PMP each 50%, reverse total retention 5% with STP 2.5% and PMP 2.5%. GRPO uses 8 rollouts, temperature 1.0, KL coefficient 0.001, and selects better candidates based on COMET-22 rewards.
-    - **Design Motivation**: Low-resource translation cannot be solved by a single prompt trick; the real bottlenecks are data scale, quality, directional balance, and the connection between training stages. The systematic value of LMT lies in engineering these steps and training four sizes with the same recipe, proving the strategy's independence from specific model scales.
+Strategic Downsampling is thus straightforward: all En/Zh→X samples are retained, while X→En/Zh samples in multi-way corpora are independently sampled at $p=5\%$. Compared to model-level modifications like direction-aware training or model merging, SD is a pure data-level fix—it requires no architectural changes, adds no inference overhead, and does not sacrifice pivot→X supervision density, yet it addresses the specific cause of the "curse of multilinguality."
+
+**2. Parallel Multilingual Prompting (PMP): Using an auxiliary parallel sentence to provide an additional linguistic perspective as a semantic anchor.**
+
+Multi-way data carries cross-lingual alignment value beyond many-to-one risks; the key is how to leverage it explicitly. Standard translation prompts learn $P_\theta(T\mid S;\tau_{L_S\to L_T})$; PMP expands input to include source $S$ and an auxiliary language sentence $A$, learning $P_\theta(T\mid S,A;\tau_{L_S\to L_A\to L_T})$. The auxiliary language is not random: for En↔X, a language linguistically close to X that the model handles well is chosen (e.g., Dutch for German, Czech for Polish); for Zh↔X, English is used as a stable semantic anchor since it is usually the model's strongest intermediate language.
+
+PMP's ingenuity lies in transforming "multi-way parallelism" from an implicit data structure into an explicit prompt condition. During SFT, Standard Prompting (STP) and PMP are mixed. Default inference can still use STP, but can switch to PMP if external or self-generated auxiliary translations are available. Consequently, the model learns "when to use another linguistic perspective" rather than blindly expanding all directions symmetrically. It also provides LMT with a test-time enhancement interface—capable of integrating external high-quality MT, retrieved translation memories, or self-generated English anchors.
+
+**3. Scalable Chinese-English Dual-centric Training Pipeline: Integrating two strategies into a deployable, comparable, and comprehensive recipe for long-tail languages.**
+
+Low-resource translation requires more than prompt tricks; the real bottlenecks are data scale, quality, directional balance, and training stage transition. LMT engineering scales the entire pipeline. CPT data is collected from SlimPajama, Skywork, CulturaX, OpenDataLab, Wikimedia, and OPUS, with pseudo-parallel expansion using open-source MT to fill Chinese-centric gaps. The filter chain includes OpusFilter for length/mismatch, FastText LID thresholds, and CometKiwi scoring, resulting in ~2.1B English-centric and ~2.9B Chinese-centric pairs. SFT uses ~567K high-quality pairs across 117 pivot pairs, with 50% STP/PMP for forward directions and a 5% total retention for reverse directions after SD.
+
+The final stage is GRPO: using SFT prompts, 8 rollouts per prompt are sampled with temperature 1.0 and KL coefficient 0.001. COMET-22 serves as a reference-based reward to select better translations without creating manual preference data. Training across four sizes proves the strategy is independent of specific model scales and provides a reusable data/prompt recipe.
 
 ### Loss & Training
-Both CPT and SFT use standard language model objectives, with the difference being that CPT primarily learns multilingual text and bilingual formats, while SFT only calculates loss on the target translation part. SFT forward directions use 50% STP + 50% PMP; reverse directions use only 5% after SD, consisting of 2.5% STP and 2.5% PMP. The GRPO stage follows SFT prompts; the model samples candidate translations, and COMET-22 assigns rewards based on the reference, effectively converting an automatic MT quality evaluator into a preference optimization signal, yielding an additional gain of approximately 0.3-0.8 COMET.
+Both CPT and SFT use standard language modeling objectives. CPT focuses on multilingual text and bilingual formats, while SFT only calculates loss on the target translation. Forward SFT directions use 50% STP + 50% PMP; reverse directions use 5% total retention (2.5% STP, 2.5% PMP) after SD. The GRPO stage uses SFT prompts for candidate sampling, with COMET-22 providing rewards based on references. This effectively converts an automatic MT evaluator into a preference optimization signal, yielding an additional 0.3-0.8 COMET improvement.
 
 ## Key Experimental Results
 
 ### Main Results
-The first table shows COMET-22 as training components are incrementally enabled, focusing on the 4B model's most illustrative directions. It is evident that standard SFT provides massive gains for low-resource En/Zh→X but leads to a total collapse in X→Zh; adding SD immediately restores and exceeds the base model performance in reverse directions, and CPT continues to provide the largest gains for low-resource directions.
+Table 1 shows COMET-22 scores as components are added, highlighting the 4B model's performance. Standard SFT yields huge gains in low-resource En/Zh→X but causes a total collapse in X→Zh. Adding SD immediately restores and surpasses base performance in reverse directions, while CPT provides the largest gains for low-resource directions.
 
-| 4B Configuration | High-resource X→Zh | Mid-resource X→Zh | Low-resource X→Zh | Low-resource En→X | Low-resource Zh→X |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| 4B Config | High-res X→Zh | Med-res X→Zh | Low-res X→Zh | Low-res En→X | Low-res Zh→X |
+| :--- | :---: | :---: | :---: | :---: | :---: |
 | Qwen3-4B-Base | 85.44 | 84.55 | 75.35 | 56.81 | 53.33 |
 | SFT | 73.60 | 72.18 | 67.94 | 77.51 | 73.68 |
 | + SD | 86.55 | 85.87 | 79.13 | 78.68 | 75.15 |
@@ -79,60 +94,60 @@ The first table shows COMET-22 as training components are incrementally enabled,
 | + PMP | 87.53 | 87.20 | 84.90 | 87.06 | 84.08 |
 | + GRPO | **88.19** | **87.97** | **85.81** | **87.85** | **84.92** |
 
-The second table compares LMT with existing MMT/Multilingual LLMs on overlapping language average scores. LMT-60-4B often matches or exceeds 7B-54B class systems, and the 8B version shows only small improvements over the 4B, indicating the high parameter efficiency of this recipe.
+Table 2 compares LMT with existing MMT/LLM systems on overlapping language averages. LMT-60-4B often matches or exceeds 7B-54B systems, and the 8B model offers only marginal gains over 4B, demonstrating high parameter efficiency.
 
-| Comparative System | Overlapping Langs | Baseline Avg. | LMT-60-4B Avg. | LMT-60-8B Avg. | Conclusion |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Comparison System | Overlap Langs | Baseline Avg. | LMT-60-4B Avg. | LMT-60-8B Avg. | Conclusion |
+| :--- | :---: | :---: | :---: | :---: | :--- |
 | TowerInstruct-13B | 10 | 87.63 | 88.34 | **88.43** | LMT small model beats 13B |
-| Aya-expanse-8B | 23 | 87.36 | 88.26 | **88.36** | LMT leads stably |
+| Aya-expanse-8B | 23 | 87.36 | 88.26 | **88.36** | LMT leads consistently |
 | Seed-X-PPO-7B | 27 | **89.07** | 88.86 | 88.94 | LMT close to strong PPO system |
-| GemmaX2-28-9B | 28 | 87.57 | 87.73 | **87.83** | LMT broader & slightly better |
-| Hunyuan-MT-7B | 35 | 85.71 | 87.50 | **87.63** | LMT leads significantly |
-| X-ALMA-13B | 40 | 88.92 | 88.96 | **89.06** | LMT 4B basically on par |
-| Aya-101-13B | 54 | 83.85 | 87.42 | **87.55** | Significant long-tail advantage |
-| NLLB-54B | 59 | 84.79 | 87.43 | **87.56** | Leads clearly despite much smaller size |
+| GemmaX2-28-9B | 28 | 87.57 | 87.73 | **87.83** | LMT leads slightly/broader cover |
+| Hunyuan-MT-7B | 35 | 85.71 | 87.50 | **87.63** | LMT significantly ahead |
+| X-ALMA-13B | 40 | 88.92 | 88.96 | **89.06** | LMT 4B is roughly equal |
+| Aya-101-13B | 54 | 83.85 | 87.42 | **87.55** | Strong long-tail advantage |
+| NLLB-54B | 59 | 84.79 | 87.43 | **87.56** | LMT 4B leads 54B model |
 
 ### Ablation Study
 
-| Analysis Target | Setting | Key Findings | Notes |
+| Analysis Target | Setup | Key Result | Description |
 | :--- | :--- | :--- | :--- |
-| Directional Degeneration | Reverse multi-way retention from 0% to 100% | Peaks near $p=5\%$; 100% symmetric reuse causes clear decline | More reverse samples aren't always better; repeating pivot targets induces shortcuts |
-| Symmetry-breaking | Replace X→En/Zh with non-overlapping bilingual CPT subsets | Dashed setting avoids collapse seen in full symmetric reuse | Degeneration stems from data reuse structure, not X→pivot difficulty |
-| PMP inference | DT vs PMP-S vs PMP-O | Self-generated anchors often reach/surpass oracle on X→En/Zh; Zh→X relies more on oracle anchors | Translating into high-resource pivots is more tolerant of anchor noise |
-| PMP zero-shot | In-Group directions without vs. with PMP | COMET increases from 85.20 to 86.11 | PMP training improves cross-lingual transfer, not just explicit anchor pairs |
-| GRPO | Reusing SFT pairs, no new preference data | Avg. Gain across all resource layers approx. 0.3-0.8 COMET | Automatic rewards still extract additional quality from candidate generation |
+| Directional Degeneration | Reverse multi-way retention 0% to 100% | Peaks at $p=5\%$; sharp drop at 100% | More reverse samples aren't better; excessive repetition induces shortcuts |
+| Symmetry-breaking | Replace X→En/Zh with non-overlapping bilingual CPT | Collapse avoided in dashed setup | Degradation stems from reuse structure, not translation difficulty |
+| PMP inference | DT vs PMP-S vs PMP-O | Self-generated anchors match/beat oracle on X→En/Zh | Higher noise tolerance when translating to pivot; anchor quality vital for En→X |
+| PMP zero-shot | In-Group directions w/ vs w/o PMP | COMET increases 85.20 to 86.11 | PMP improves cross-lingual transfer, not just explicit pairs |
+| GRPO | Reuse SFT pairs, no new preference data | ~0.3-0.8 COMET gain across tiers | Automatic rewards extract extra quality from candidate generation |
 
 ### Key Findings
--   **Directional Degeneration is a systemic issue**: Similar asymmetric degradation occurs across multiple Qwen3 sizes, Llama-3.1-8B, Gemma-2-9B, and different language scales, indicating it is not an accidental bug of a specific base or language pair.
--   **SD gains are concentrated but critical**: It barely changes the supervision density for En/Zh→X while pulling the most affected directions like X→Zh from 67-73 COMET after SFT back to the 79-87 COMET range, acting as a "hemostatic valve" for the pipeline.
--   **CPT is most important for low-resource languages**: From +SD to +CPT, low-resource En→X rises from 78.68 to 87.14 and Zh→X from 75.15 to 84.17, showing that base LLM original low-resource knowledge is insufficient; SFT only teaches format and direction, while CPT supplements linguistic capability.
--   **PMP is not the main gain source but provides transfer capability**: Direct improvement from PMP in the main table is small, primarily appearing in X→En/Zh and zero-shot transfer; it acts more as a functional switch enabling the model to read auxiliary anchors.
--   **Document-level translation is still a weakness**: LMT remains competitive in many directions on WMT24++, but lags behind Hunyuan-MT in several subsets; the authors note that sentence-level SFT lacks discourse signals, affecting cross-sentence consistency.
+- **Directional Degeneration is a systemic issue**: Similar asymmetric degradation appears across Qwen3 scales, Llama-3.1-8B, and Gemma-2-9B, proving it is not isolated to one base model or language pair.
+- **SD provides concentrated yet critical benefits**: It maintains supervision density for En/Zh→X while pulling the most affected X→Zh directions from 67-73 COMET up to 79-87, acting as a "hemostatic valve."
+- **CPT is vital for low-resource languages**: Low-resource En→X improves from 78.68 to 87.14 with CPT, indicating base LLMs lack sufficient raw low-resource knowledge; SFT only teaches format, whereas CPT builds linguistic capability.
+- **PMP provides transferability rather than direct gain**: PMP's direct improvement in the main table is small; its value lies in X→En/Zh and zero-shot transfer, functioning as a capability switch for auxiliary anchors.
+- **Document-level translation remains a weakness**: While LMT is competitive on WMT24++, it lags behind Hunyuan-MT in some subsets. Sentence-level SFT lacks discourse signals, affecting cross-sentence consistency.
 
 ## Highlights & Insights
--   **Defining the "Curse of Multilinguality" as a data-reuse etiology**: The most valuable part of the paper is not just releasing a large model but discovering that the symmetric expansion of multi-way SFT creates many-to-one target repetition. This diagnosis directly informs other multilingual instruction tuning tasks, such as cross-lingual summarization, QA, and speech translation.
--   **SD as a low-cost, high-reward engineering strategy**: When encountering degradation in reverse low-resource directions, many multilingual systems first consider model structures or MoE routing; this paper shows that checking data directional ratios is often more effective. The 5% retention rate also provides a strong default starting point for future work.
--   **PMP transforms multi-way data from "training set structure" to "controllable inference interface"**: Once the model learns to use auxiliary parallel sentences, inference can integrate high-quality MT, retrieved translation memory, or self-translate into an English anchor before translating to the target language. This makes LMT not just a static model but an interface for test-time enhancement.
--   **Pragmatic Chinese-English dual-centricity**: Many open-source MMT models perform well in English directions but have obvious gaps in Chinese-centric directions. LMT specifically supplements Zh↔X directions with Chinese-centric pseudo-parallel expansion and filtering, meeting the real needs of Chinese users and the Asian language community.
+- **Defining the "Curse of Multilinguality" as a data reuse pathology**: The paper's value lies in diagnosing that symmetric multi-way SFT creates many-to-one target repetition. This diagnosis can guide other multilingual tasks like cross-lingual summarization or QA.
+- **SD as a high-ROI engineering strategy**: Instead of complex model structures or MoE for reverse direction collapse, this work shows that addressing data directional ratios is more effective. The $5\%$ retention rate provides a strong default for future work.
+- **PMP as a controllable inference interface**: By teaching the model to use auxiliary parallel sentences, LMT can integrate external MT or translation memories during inference. This makes LMT a dynamic system with test-time enhancement capabilities.
+- **Chinese-English dual-centricity is practical**: While many MMT models handle English directions well, gaps in Chinese-centric directions are common. LMT specifically addresses Zh↔X with targeted pseudo-parallel expansion, meeting the needs of Chinese and Asian language communities.
 
 ## Limitations & Future Work
--   Evaluation still centers on FLORES-200 Devtest and COMET-22. While broad, sentence-level benchmarks cannot fully represent domain transfer, terminology consistency, long-document coherence, and user preferences in real-world scenarios.
--   Chinese-English-centric is a step forward from English-only, but still not a truly multi-centric translation architecture. For regional pivot languages like Arabic, Spanish, French, and Hindi, a tri-centric or more general multi-centric design may be needed.
--   60 languages is Large for open-source LLM-MT, but still very limited compared to global linguistic diversity. Extremely low-resource languages lack not just data but often suffer from scarce writing resources, poor LID/QE model calibration, and difficulties in evaluating synthetic data.
--   The test-time effect of PMP depends on anchor quality; self-generated anchors in the Zh→X direction are not always reliable. Practical deployment may require external MT, retrieved translation memory, or confidence gating.
--   GRPO uses COMET-22 as a reward, which may inherit COMET's biases against low-resource and non-English-centric directions. Future work could consider multi-metric rewards, human preference calibration, or hybrid reference-free + reference-based optimization.
+- Evaluation primarily relies on FLORES-200 and COMET-22. While broad, sentence-level benchmarks do not fully capture domain shift, terminology consistency, or document-level coherence.
+- Chinese-English-centric is a step beyond English-only but is not a truly multi-centric architecture. Regional hubs like Arabic, Spanish, or Hindi may require tri-centric or general multi-centric designs.
+- While 60 languages are significant for LLM-MT, it represents a fraction of global diversity. Extremely low-resource languages suffer from poor LID/QE calibration and evaluation difficulties.
+- PMP test-time effectiveness depends on anchor quality; self-generated anchors in Zh→X may be unreliable. Real-world deployment may need confidence gating or external MT.
+- GRPO uses COMET-22, which may inherit biases against low-resource or non-English-centric directions. Future work should consider multi-metric rewards or human preference calibration.
 
 ## Related Work & Insights
--   **vs NLLB / M2M-100**: NLLB and M2M-100 represent traditional encoder-decoder large-scale multilingual MT. They have strong coverage but lack the unified instruction-following interface of LLMs. LMT uses decoder-only Qwen3 for Chinese-English dual-centric adaptation and significantly outperforms NLLB-54B's average COMET on 59 overlapping languages using 4B/8B models.
--   **vs ALMA / TowerInstruct / X-ALMA**: These works prove that LLM post-training enables high-quality MT, but language counts and pivot directions are more English-biased. LMT's unique contribution is systematically studying directional degeneration in multi-way SFT and setting 60 languages/234 directions as a release goal.
--   **vs GemmaX2 / Hunyuan-MT / Seed-X**: These are more recent Chinese or multilingual LLM-MT systems. LMT is comparable to Seed-X-PPO and outperforms most GemmaX2 and Hunyuan-MT combinations; more importantly, it discloses reusable recipes like SD/PMP rather than just reporting model performance.
--   **vs Multi-way parallel data and auxiliary translation prompt research**: Previous work mostly proved multi-way/auxiliary translation is helpful on the CPT or inference side. This paper advances this into SFT design: warning that symmetric reuse harms the reverse direction while incorporating auxiliary sentences into trainable prompt behavior via PMP.
+- **vs NLLB / M2M-100**: Conventional encoder-decoder MMT models like NLLB are broad but lack the LLM instruction interface. LMT's 4B/8B models outperform NLLB-54B in average COMET across overlapping languages.
+- **vs ALMA / TowerInstruct / X-ALMA**: These show LLM post-training yields high-quality MT but are more English-centric. LMT systematically studies directional degeneration across 60 languages and 234 directions.
+- **vs GemmaX2 / Hunyuan-MT / Seed-X**: LMT matches Seed-X-PPO and outperforms most GemmaX2/Hunyuan-MT configurations. Crucially, it provides a reusable recipe (SD/PMP) rather than just reporting results.
+- **vs Multi-way / Auxiliary Prompt Research**: Previous work demonstrated benefits in CPT or inference. This work moves it to SFT, warning against symmetric expansion while using PMP to incorporate auxiliary sentences into trainable behavior.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Data-level attribution and SD for Directional Degeneration are very insightful; PMP is conceptually simple but innovative in bridging SFT and inference interfaces. The model suite itself is a strong system engineering innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers 4 model sizes, 60 languages, 234 directions, FLORES/WMT24++, multiple strong baselines, directional degeneration diagnosis, and PMP analysis. The evidence chain is very robust.
-- **Writing Quality**: ⭐⭐⭐⭐ The main narrative is clear, starting with failure modes followed by mitigation and system release; however, with many tables and dense information in the appendix, readers need to navigate between the main text and appendix for details.
-- **Value**: ⭐⭐⭐⭐⭐ Highly practical for the open-source multilingual MT community: providing models, data ratios, and prompt training recipes, particularly suitable as a strong baseline for Chinese-centric and low-resource directions.
+- Novelty: ⭐⭐⭐⭐ The data-level attribution of Directional Degeneration and SD are insightful; PMP is simple but effective as an SFT+inference interface.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Solid evidence across 4 scales, 60 languages, 234 directions, multiple benchmarks, and detailed ablation of failure modes.
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from failure mode to mitigation; however, the high density of tables and appendix cross-referencing requires careful reading.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for the open-source MMT community, providing both models and a recipe for Chinese-centric and low-resource directions.
 
 <!-- RELATED:START -->
 
@@ -144,7 +159,7 @@ The second table compares LMT with existing MMT/Multilingual LLMs on overlapping
 - [\[ACL 2026\] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation](evaluating_the_impact_of_verbal_multiword_expressions_on_machine_translation.md)
 - [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
 - [\[ACL 2026\] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](lqm_linguistically_motivated_multidimensional_quality_metrics_for_machine_transl.md)
-- [\[ACL 2026\] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs](no_one_fits_all_from_fixed_prompting_to_learned_routing_in_multilingual_llms.md)
+- [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
 
 </div>
 

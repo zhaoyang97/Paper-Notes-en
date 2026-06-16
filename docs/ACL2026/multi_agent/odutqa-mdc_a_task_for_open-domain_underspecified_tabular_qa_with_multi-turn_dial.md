@@ -2,78 +2,89 @@
 title: >-
   [Paper Note] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification
 description: >-
-  [ACL 2026][Multi-Agent][Tabular Question Answering] This paper introduces the ODUTQA-MDC task and benchmark, the first systematic study of underspecified query detection and multi-turn dialogue-based clarification in ope…
+  [ACL 2026][Multi-Agent][Text-to-SQL] This paper proposes the ODUTQA-MDC task and benchmark, systematically investigating the detection and multi-turn dialogue clarification of user query ambiguity in open-domain scenarios for the first time. It constructs a large-scale dataset containing 25,105 QA pairs and designs the MAIC-TQA multi-agent framework to pe
 tags:
-  - "ACL 2026"
-  - "Multi-Agent"
-  - "Tabular Question Answering"
-  - "Ambiguous Query Clarification"
-  - "Multi-turn Dialogue"
-  - "Multi-agent Framework"
-  - "Text-to-SQL"
+  - ACL 2026
+  - Multi-Agent
+  - Text-to-SQL
 date: 2026-05-08
-content_hash: d0b3882512027a38
+content_hash: 22a89de5fe7f7400
 ---
-
 # ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification
 
-**Conference**: ACL 2026
+**Conference**: ACL 2026  
 **arXiv**: [2604.10159](https://arxiv.org/abs/2604.10159)  
 **Code**: [GitHub](https://github.com/jensenw1/ODUTQA-MDC)  
-**Area**: LLM Evaluation
-**Keywords**: Tabular Question Answering, Ambiguous Query Clarification, Multi-turn Dialogue, Multi-agent Framework, Text-to-SQL
+**Area**: LLM Evaluation  
+**Keywords**: Tabular QA, Ambiguous Query Clarification, Multi-turn Dialogue, Multi-agent Framework, Text-to-SQL
 
 ## TL;DR
-This paper introduces the ODUTQA-MDC task and benchmark, the first systematic study of underspecified query detection and multi-turn dialogue-based clarification in open-domain tabular QA. The authors construct a large-scale dataset of 25,105 QA pairs and propose the MAIC-TQA multi-agent framework to perform end-to-end "detect–clarify–reason" tabular question answering.
+This paper proposes the ODUTQA-MDC task and benchmark, systematically investigating the detection and multi-turn dialogue clarification of user query ambiguity in open-domain scenarios for the first time. It constructs a large-scale dataset containing 25,105 QA pairs and designs the MAIC-TQA multi-agent framework to perform end-to-end "detection-clarification-reasoning" tabular QA.
 
 ## Background & Motivation
 
-**Background**: Large language models have driven advances in Tabular QA, with existing Text-to-SQL methods achieving strong performance on standard benchmarks such as Spider. Open-domain tabular QA further increases difficulty by requiring autonomous retrieval of relevant tables from large-scale databases.
+**Background**: Large Language Models (LLMs) have advanced the development of Tabular QA. Existing Text-to-SQL methods perform exceptionally well on standard datasets such as Spider. Open-domain tabular QA requires autonomous retrieval of relevant tables from large-scale databases, which further increases the difficulty.
 
-**Limitations of Prior Work**: In real-world scenarios, user queries are frequently underspecified—containing spelling errors, vague expressions, or incomplete information. For example, a user may omit a city name (missing FROM clause), replace a precise column name with a vague description (ambiguous SELECT intent), or use abbreviations instead of full names (mismatched WHERE conditions). Such underspecification fundamentally impedes correct SQL generation.
+**Limitations of Prior Work**: In real-world scenarios, user queries are often underspecified—containing spelling errors, unclear expressions, or incomplete information. For example, a user might omit a city name (missing FROM clause), use vague expressions instead of precise column names (unclear SELECT intent), or use abbreviations instead of full names (WHERE condition mismatch). These ambiguities fundamentally hinder the generation of correct SQL.
 
-**Key Challenge**: Existing studies either detect underspecification only in closed-domain settings without resolving it, or rely on statically pre-scripted dialogues (e.g., PRACTIQ), failing to capture the dynamic and unpredictable nature of real user interactions. There is a lack of appropriate datasets and evaluation frameworks for systematically studying the complete "detect–clarify–answer" pipeline.
+**Key Challenge**: Existing research either only detects ambiguity in closed domains (without resolving it) or uses static preset dialogues (PRACTIQ), which cannot capture the dynamic and unpredictable nature of real user interactions. There is a lack of appropriate datasets and evaluation frameworks to systematically study the complete "detect-clarify-QA" process.
 
-**Goal**: Define the ODUTQA-MDC task, construct the first comprehensive benchmark—including a large-scale dataset, fine-grained annotation scheme, and dynamic clarification interface—and propose a baseline system.
+**Goal**: To define the ODUTQA-MDC task and construct the first comprehensive benchmark, including a large-scale dataset, a fine-grained annotation scheme, and a dynamic clarification interface, while proposing a baseline system.
 
-**Key Insight**: Underspecification is categorized according to SQL clause structure: table-scope ambiguity (FROM), query-intent ambiguity (SELECT), query-condition ambiguity (WHERE), and mixed types. This taxonomy naturally corresponds to different stages of the Text-to-SQL pipeline.
+**Key Insight**: Categorize ambiguity according to the SQL structure—table scope ambiguity (FROM), query intent ambiguity (SELECT), query condition ambiguity (WHERE), and mixed types. This classification naturally corresponds to different stages of the Text-to-SQL pipeline.
 
-**Core Idea**: Construct a closed-loop evaluation pipeline of "detect–clarify–re-detect," enabling scalable multi-turn interaction evaluation through a dynamic user simulator, alongside the proposed MAIC-TQA multi-agent framework as a baseline.
+**Core Idea**: Construct a "detection-clarification-redetection" closed-loop evaluation process. Achieve scalable multi-turn interaction evaluation through a dynamic user simulator, while proposing the MAIC-TQA multi-agent framework as a baseline.
 
 ## Method
 
 ### Overall Architecture
-MAIC-TQA adopts a modular multi-agent architecture with the following pipeline: an SLU module extracts user intent and slot information → a Scope Validation (SV) Agent verifies and clarifies table-scope information → a Table Retrieval (TR) Agent integrates the original query and clarification information to identify the target table → a SQL Generation and Verification (SGV) Agent generates, executes, and validates SQL queries. Each agent can dynamically trigger clarification dialogues with the user simulator during the pipeline.
+MAIC-TQA adopts a modular multi-agent architecture. The process is as follows: The SLU module extracts user intent and slot information $\rightarrow$ The Scope Validation (SV) Agent validates and clarifies table scope information $\rightarrow$ The Table Retrieval (TR) Agent integrates the original query and clarification information to determine the target table $\rightarrow$ The SQL Generation and Verification (SGV) Agent generates, executes, and verifies the SQL query. Each agent can dynamically trigger clarification dialogues with the user simulator during the process. Whether this dialogue yields effective clarification depends on whether the ambiguity was correctly identified in the previous step.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Underspecified Query<br/>Typos / Unclear Expression / Missing Info"] --> SLU["SLU Module<br/>BERT Joint Intent Detection + Slot Filling (SELECT)"]
+    SLU --> SV["SV Agent Scope Validation<br/>Detect FROM Slot Missing/Invalid"]
+    SV --> TR["TR Agent Table Retrieval<br/>Integrate Clarification → Table Summary → BM25 Retrieval"]
+    TR --> SGV["SGV Agent SQL Gen & Verify<br/>5-shot ICL Gen → Exec → Verify WHERE"]
+    SGV --> OUT["Executable SQL"]
+    SV -->|Detect FROM Ambiguity| SIM
+    SGV -->|Empty Result / WHERE Ambiguity| SIM
+    SIM["Dynamic Clarification User Simulator<br/>Gated by Detection Accuracy · LLM Paraphrasing"] -.Clarification.-> SV
+    SIM -.Clarification.-> SGV
+```
+
+> The three types of detection (SELECT / FROM / WHERE) in the figure correspond exactly to the "Fine-grained Ambiguity Classification and Annotation System" (Design 1): the classification determines which clause each agent should check and what clarification to request from the simulator (Design 2); the backbone formed by the four agents is the MAIC-TQA framework (Design 3).
 
 ### Key Designs
 
-1. **Fine-grained Underspecification Taxonomy and Annotation Scheme**:
+**1. Fine-grained Ambiguity Classification and Annotation System: Decomposing ambiguity by SQL clauses so that "what is detected" directly informs the system "what to clarify"**
 
-    - Function: Supports precise detection and classification of different types of underspecification in user queries.
-    - Mechanism: Three underspecification labels are defined: intent ambiguity (binary classification), scope ambiguity (triplet annotation [slot_content, slot_type, error_type], where error_type ∈ {Missing, Error, Unmatch}), and condition ambiguity (triplet annotation [slot_content, slot_type, "not exist"]). Labels correspond one-to-one with SQL clauses.
-    - Design Motivation: Existing datasets address only a single type of underspecification and do not support mixed ambiguity. Fine-grained annotation precisely localizes the source of ambiguity, guiding the system to generate targeted clarification questions.
+Existing datasets often label only one type of ambiguity and treat it as a generic binary label. Even if the system knows a "query is ambiguous," it does not know where the ambiguity lies or what to ask. This paper aligns ambiguity with SQL structures into three categories: intent ambiguity corresponds to SELECT and is labeled with binary classification; scope ambiguity corresponds to FROM and is labeled with a triplet $[\text{slot\_content}, \text{slot\_type}, \text{error\_type}]$, where $\text{error\_type} \in \{\text{Missing}, \text{Error}, \text{Unmatch}\}$ distinguishes between "omitted city name," "misspelled city name," and "abbreviation mismatch"; condition ambiguity corresponds to WHERE and is labeled with the triplet $[\text{slot\_content}, \text{slot\_type}, \text{"not exist"}]$. Co-occurrence of multiple types constitutes a Mixed type.
 
-2. **Dynamic Clarification User Simulator**:
+This "label as localization" design allows detection results to directly drive clarification: once the system determines a FROM slot is Missing, it knows to ask the user to supplement the city name rather than giving a vague response like "your question is unclear."
 
-    - Function: Simulates the process by which real users provide clarification information across multiple dialogue turns.
-    - Mechanism: Implemented as a callable Python interface with strict gating on detection accuracy—clarification information is provided only when the system correctly identifies the type of underspecification. An LLM is used to paraphrase standard response templates into natural, colloquial expressions, with verification that key information is preserved. Both a dynamic mode (diversified responses) and a fixed mode (standardized responses for reproducibility) are provided.
-    - Design Motivation: Human interaction is costly and lacks consistency and reproducibility. The automated simulator enables scalable evaluation while maintaining linguistic authenticity. The gating mechanism ensures that evaluation reflects the system's true detection capability.
+**2. Dynamic Clarification User Simulator: An automated user gated by detection accuracy to replace expensive and irreproducible human interaction**
 
-3. **Multi-agent Collaborative Framework (MAIC-TQA)**:
+The difficulty of multi-turn clarification evaluation lies in the "user" side—human interaction is costly, responses are inconsistent, and results are irreproducible. This paper implements the user as a callable Python interface and strictly gates it by detection accuracy: the simulator only returns corresponding clarification information when the system correctly identifies the type of ambiguity; if the detection is wrong, no hint is provided. To make responses human-like, the simulator uses an LLM to paraphrase standard templates into colloquial expressions while ensuring key information like city names and column names are not lost. It also provides a dynamic mode (diverse responses) and a fixed mode (standardized responses for reproducibility).
 
-    - Function: Performs end-to-end detection, clarification, and answering of underspecified queries.
-    - Mechanism: Four agents collaborate with distinct roles: the SLU module uses a BERT classifier for intent detection and slot filling; the SV Agent checks whether required slots are missing or invalid and invokes database validation functions; the TR Agent integrates dialogue history to generate table summaries and retrieves target tables via exact matching or BM25; the SGV Agent generates SQL using 5-shot ICL, executes the query, checks result validity, and triggers condition clarification when necessary.
-    - Design Motivation: Decomposing the complex end-to-end task into multiple focused sub-modules—each handling a specific type of underspecification—reduces the burden on any individual model.
+Gating is the key to this design: it blocks the "leakage" path where the system might guess the clarification correctly, ensuring that multi-turn scores truly reflect the system's detection capability rather than the simulator's generosity.
+
+**3. Multi-agent Collaboration Framework (MAIC-TQA): Four agents, each managing one SQL clause, serializing "detection-clarification-reasoning" into an end-to-end loop**
+
+Ambiguity is scattered across different SQL clauses. Forcing a single model to simultaneously detect, clarify, and generate at once is too burdensome and makes it difficult to locate errors. MAIC-TQA decomposes the task among four focused agents: the SLU module uses a BERT classifier to jointly perform intent detection and slot filling; the SV Agent (Scope Validation) checks if essential slots are missing or invalid and uses database validation functions; the TR Agent (Table Retrieval) integrates dialogue history to generate table summaries and retrieves target tables using exact matching or BM25; the SGV Agent (SQL Generation and Verification) uses 5-shot ICL to generate SQL, executes it to check result validity, and triggers condition clarification if necessary. Each agent can dynamically initiate dialogues with the user simulator during its respective phase.
+
+This labor division allows each module to handle only one type of ambiguity corresponding to one segment of the SQL process. The detection-clarification-redetection loop is completed locally at the relevant stage rather than piling all uncertainty into the final SQL generation.
 
 ### Loss & Training
-The SLU module employs joint training of BERT for intent classification and slot filling. Other agents use in-context learning with LLMs and require no additional training. Multiple LLM backends are supported (Qwen3 32B/30B, Kimi K2, GLM 4, etc.).
+The SLU module uses BERT for joint training of intent classification and slot filling. Other agents utilize LLM in-context learning and do not require additional training. Multiple LLM backends are supported (Qwen3 32B/30B, Kimi K2, GLM 4, etc.).
 
 ## Key Experimental Results
 
-### Main Results (Underspecification Detection)
+### Main Results (Ambiguity Detection)
 
 | Model | FROM Acc. | FROM F1 | WHERE Acc. | WHERE F1 | Mixed Acc. |
-|-------|-----------|---------|------------|----------|------------|
+|------|-----------|---------|------------|----------|------------|
 | Qwen3 32B | 77.66 | 82.82 | 69.59 | 66.02 | 54.96 |
 | Qwen3 30B | 75.17 | 85.10 | 75.67 | 78.99 | 58.55 |
 | Kimi K2 | 82.60 | 87.95 | 69.02 | 65.54 | 55.51 |
@@ -81,43 +92,44 @@ The SLU module employs joint training of BERT for intent classification and slot
 
 ### Ablation Study (MAIC-TQA vs. SLUTQA Baseline)
 
-| Configuration | Description |
-|---------------|-------------|
-| SLUTQA (no clarification) | Answers directly from underspecified queries; serves as the no-clarification baseline |
+| Configuration | Function |
+|------|------|
+| SLUTQA (No Clarification) | Answers directly from underspecified queries as a no-clarification baseline |
 | MAIC-TQA Fixed | Uses standardized clarification responses |
-| MAIC-TQA Dynamic | Uses LLM-paraphrased diversified clarification responses |
+| MAIC-TQA Dynamic | Uses diverse clarification responses paraphrased by LLM |
 
 ### Key Findings
-- SELECT ambiguity is the easiest to detect (BERT achieves 99%+ F1), while FROM and WHERE are more challenging; Mixed types are the hardest (~55% accuracy).
-- Multi-turn dialogue clarification substantially improves QA accuracy, validating the value of the dynamic clarification mechanism.
-- Performance under dynamic mode is slightly lower than under fixed mode, reflecting the challenges introduced by natural language variation.
-- All models perform poorly on Mixed types, indicating that jointly handling multiple types of underspecification remains an open problem.
+- SELECT ambiguity is the easiest to detect (BERT reaches 99%+ F1), while FROM and WHERE are more difficult, and Mixed types are the hardest (~55% accuracy).
+- Multi-turn dialogue clarification significantly improves QA accuracy, verifying the value of the dynamic clarification mechanism.
+- Performance in dynamic mode is slightly lower than in fixed mode, reflecting the challenges posed by natural language variation.
+- All models perform poorly on Mixed types, indicating that handling multiple ambiguities simultaneously remains an open problem.
 
 ## Highlights & Insights
-- The task definition is comprehensive: from dataset construction and annotation scheme to evaluation framework (including a dynamic user simulator), forming a reproducible closed-loop research paradigm.
-- Categorizing underspecification by SQL clause is both intuitive and practical, allowing detection results to directly guide subsequent SQL generation.
-- The gating mechanism of the dynamic clarification simulator is elegantly designed—the system receives clarification information only upon correctly detecting the underspecification, avoiding information leakage.
+- The task definition is highly comprehensive: from dataset construction and annotation schemes to the evaluation framework (including the dynamic user simulator), it forms a reproducible closed-loop research paradigm.
+- The design of categorizing ambiguity by SQL clauses is intuitive and practical, allowing detection results to directly guide subsequent SQL generation.
+- The gating mechanism of the dynamic clarification simulator is cleverly designed—the system only obtains clarification information if it correctly detects the ambiguity, effectively avoiding "leakage" issues.
 
 ## Limitations & Future Work
-- Dataset coverage is limited to specific domains (real estate, land auction, finance); generalization to other domains requires further validation.
-- Template-based data generation may introduce a distributional gap between generated queries and real user queries.
-- Clarification is limited to a single round, which may be insufficient for complex underspecification.
-- Performance on Mixed types remains low, necessitating better methods for jointly handling multiple types of underspecification.
-- Future directions include expanding to more domains and languages, enabling multi-round iterative clarification, and incorporating user satisfaction evaluation.
+- The dataset covers limited domains (Real Estate, Land Auction, Finance); generalization to other domains needs verification.
+- Template-based data generation may result in a query distribution that differs from real user queries.
+- Clarification is limited to a single turn, which may be insufficient for complex ambiguities.
+- Performance on Mixed types is low, requiring better methods for joint handling of multiple ambiguities.
+- Future directions: Expanding to more domains and languages, allowing multi-turn iterative clarification, and introducing user satisfaction evaluations.
 
 ## Related Work & Insights
-- **vs. PRACTIQ**: PRACTIQ relies on statically pre-scripted dialogues and does not support dynamic interaction evaluation. The dynamic simulator proposed in this paper more closely approximates real-world scenarios.
-- **vs. AmbiQT/Ambrosia**: These works introduce underspecification but lack systematic clarification mechanisms and QA evaluation.
+- **vs. PRACTIQ**: PRACTIQ uses static preset dialogues and does not support dynamic interaction evaluation. The dynamic simulator in this paper is closer to real-world scenarios.
+- **vs. AmbiQT/Ambrosia**: These works introduce ambiguity but lack a systematic clarification mechanism and QA evaluation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic definition of the complete task of open-domain underspecified tabular QA with multi-turn clarification.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Large-scale dataset, fine-grained annotations, and multi-model comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Task definition is clear and method descriptions are thorough.
-- Value: ⭐⭐⭐⭐ Fills a gap in datasets and evaluation frameworks for this research direction, providing infrastructural value to the community.
+- Novelty: ⭐⭐⭐⭐ First to systematically define the complete task of open-domain underspecified tabular QA + multi-turn clarification.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Large dataset scale, fine-grained annotation, and comparison across multiple models.
+- Writing Quality: ⭐⭐⭐⭐ Clear task definition and detailed methodology.
+- Value: ⭐⭐⭐⭐ Fills a gap in datasets and evaluation frameworks for this direction, providing infrastructural value to the community.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

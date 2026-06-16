@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs
 description: >-
-  [ICML 2026 (Position Paper)][LLM/NLP][token logprob] This position paper argues that **using the token softmax probabilities (logprob) of LLMs as "world event probabilities" is theoretically incorrect**—because distribut…
+  [ICML 2026][LLM (Other)][token logprob] This is a position paper arguing that **treating the token softmax probabilities (logprobs) of an LLM as "world event probabilities" is theoretically flawed**. This is because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each corresponding to a different ide
 tags:
-  - "ICML 2026 (Position Paper)"
-  - "LLM/NLP"
-  - "token logprob"
-  - "world modeling"
-  - "second-order prediction"
-  - "calibration"
-  - "surface-form competition"
+  - ICML 2026
+  - LLM (Other)
+  - token logprob
+  - calibration
+  - surface-form competition
 date: 2026-05-08
-content_hash: 90b5704bbde119d9
+content_hash: 85ee85012fa9b296
 ---
-
 # Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -24,113 +21,87 @@ content_hash: 90b5704bbde119d9
 **Keywords**: token logprob, world modeling, second-order prediction, calibration, surface-form competition
 
 ## TL;DR
-This position paper argues that **using the token softmax probabilities (logprob) of LLMs as "world event probabilities" is theoretically incorrect**—because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each with a different ideal output distribution. The correct approach to obtaining world probabilities is **second-order prediction**—having the LLM **explicitly write out** its probability estimate for an event (numerically or with linguistic hedges) in its output, rather than computing "the probability it says X".
+This is a position paper arguing that **treating the token softmax probabilities (logprobs) of an LLM as "world event probabilities" is theoretically flawed**. This is because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each corresponding to a different ideal output distribution. The correct approach to obtaining world probabilities is **second-order prediction**—tasking the LLM to **explicitly output** its probability for an event (using numerical values or verbal qualifiers) rather than calculating "the probability of it generating X."
 
 ## Background & Motivation
 
-**Background**: Early language models (Shannon, Bahl) were defined as "distributions over strings", and logprob represented this distribution. However, modern LLMs have undergone two fundamental shifts: (1) **the task has shifted from distribution estimation to response prediction** (outputting the "correct answer" rather than "imitating the data distribution"); (2) **the learning objective has shifted from words to the world** (facts/events rather than linguistic patterns). Nevertheless, much subsequent work still uses token softmax as "model confidence" or "event probability".
+**Background**: The early definition of language models (Shannon, Bahl) was a "distribution over strings," and logprobs were exactly that distribution. However, modern LLMs have undergone two fundamental shifts: (1) **The task has shifted from distribution estimation to response prediction** (outputting a "correct answer" rather than "mimicking the data distribution"); (2) **The learning target has shifted from words to the world** (facts/events rather than linguistic patterns). Despite this, many subsequent works still treat token softmax as "model confidence" or "event probability."
 
-**Limitations of Prior Work**: Treating softmax logprob as event probability leads to systematically erroneous conclusions. For example, Yona et al. 2024 measured whether LLMs "honestly express uncertainty" by treating "the probability of generating an answer" as "confidence"—finding a large gap and attributing it to LLM "dishonesty". Hu & Levy 2023 compared the next-word probabilities for prompt (a) "The keys to the cabinet" and prompt (b) "What word is most likely to follow?", arguing that an ideal LLM should give the same distribution—yet one is completion (distribution estimation), the other is instruction-following (prediction), so their target distributions should differ. Many such "calibration failures" are **category errors**, not model flaws.
+**Limitations of Prior Work**: Treating softmax logprobs as event probabilities leads to systematically erroneous conclusions. For instance, Yona et al. 2024 measured whether LLMs "honestly express uncertainty" by treating the "probability of generating an answer" as "confidence"—finding a massive gap and blaming LLM "dishonesty." Hu & Levy 2023 compared next-word probabilities between prompt (a) "The keys to the cabinet" and prompt (b) "What word is most likely to follow?", arguing that an ideal LLM should yield the same distribution. In reality, one is completion (distribution estimation) and the other is instruction-following (prediction), and their target distributions should naturally differ. Many such "calibration failures" are **category errors**, not model deficiencies.
 
-**Key Challenge**: The traditional definition of language modeling (data distribution) and prediction (maximizing accuracy) yield **contradictory optimal distributions**. For example: for a biased coin with $p(H)>0.5$, a traditional LM should output H/T proportionally; but as a predictor, it should always output H (maximizing accuracy, collapsing the distribution to the mode). If event probability $p(H)$ is desired, neither is correct—the former has reporting bias, the latter only gives the mode.
+**Key Challenge**: The traditional definition of language modeling (data distribution) and prediction (maximizing accuracy) produce **conflicting optimal distributions**. In an extreme example of a biased coin $p(H)>0.5$, a traditional LM should output H/T proportionally to the data; however, as a predictor, it should always output H (maximizing accuracy, causing the distribution to collapse to the mode). To obtain the event probability $p(H)$, neither is correct—the former contains reporting bias, while the latter retains only the mode.
 
-**Goal**: (1) Formally distinguish the three tasks; (2) Map LLM training (pretrain / SFT / RLHF) and inference (naïve completion / zero-shot / few-shot / second-order prediction) to these tasks; (3) Use a Bayesian agent framework to explain why different prompt forms should yield different ideal output distributions; (4) Systematically review conceptual confusions in the literature and propose feasible improvements.
+**Goal**: (1) Formalize the distinction between the three tasks; (2) Map LLM training (pretrain / SFT / RLHF) and inference (naïve completion / zero-shot / few-shot / second-order prediction) to these three tasks; (3) Use a Bayesian agent framework to explain why different prompt formats should yield different ideal output distributions; (4) Systematically review conceptual confusions in literature and provide actionable improvement directions.
 
-**Key Insight**: The authors use the belief-desire-intention (BDI) agent framework—text is generated by an agent with belief $b$ and desire $d$ (a function from belief to string); the prompt $\mathbf{w^x}$ sets the ground, determining the agent's belief and desire distributions. Changing the prompt is equivalent to changing the agent's state, so the ideal output distribution also changes.
+**Key Insight**: The authors utilize a belief-desire-intention (BDI) agent framework—text is generated by an agent possessing a "belief $b$ and a desire $d$ (a function from belief to strings)." The prompt $\mathbf{w^x}$ sets the ground, determining the agent's belief and desire distribution. Changing the prompt is equivalent to changing the agent's state, which in turn changes the ideal output distribution.
 
-**Core Idea**: **Second-order prediction**—since event probability $p(y|x)$ is desired, have the LLM directly write the probability as part of its output (e.g., "I am 70% sure X"), rather than softmaxing token "X"; thus, unbiased belief plus "truthful reporting of probability" aligns the output distribution with the world distribution.
+**Core Idea**: **Second-order prediction**—if the event probability $p(y|x)$ is required, the LLM should be prompted to explicitly write out the probability as part of its output (e.g., "I am 70% sure of X"), rather than calculating the softmax for token "X." By combining an unbiased belief with "truthful reporting," the output distribution can align with the world distribution.
 
 ## Method
 
 ### Overall Architecture
-The paper does not propose algorithms, but constructs a **four-layer conceptual mapping of task–training–inference–use case**:
-
-- **Task Layer**: source distribution estimation / target distribution estimation / response prediction.
-- **Training Layer**: T1 pretrain (distribution estimation on $p_{LM}$), T2a SFT (instruction–response pairs, target distribution $p_{\text{res}}$), T2b RLHF (reward maximization, distribution collapses toward the mode).
-- **Inference Layer**: I1 softmax probabilities (subdivided into naïve description $p_{\text{ND}}$, zero-shot $p_{\text{ZS}}$, few-shot $p_{\text{FS}}$); I2 second-order prediction (model explicitly outputs probability).
-- **Use Case Layer**: word completion (needs source distribution), world responses (needs prediction), world modeling (needs target distribution = event distribution).
-
-The main argument is developed by "deriving three cases using a Bayesian agent".
+This position paper does not propose an algorithm but constructs a four-layer mapping of **Task—Training—Inference—Use Case** to clarify the nature of "LLM logprobs." The task layer decomposes language modeling into three distinct activities: source distribution estimation (estimating the true string distribution in the data), response prediction (providing a single optimal answer), and target distribution estimation (estimating a target distribution distinct from the data distribution, such as world event probabilities). The training layer maps pretraining to distribution estimation (learning $p_{LM}$), SFT to the target response distribution $p_{\text{res}}$, and RLHF to mode-seeking reward maximization. The inference layer categorizes standard softmax usage as I1 and "explicit probability reporting" as I2 (second-order prediction). The core argument uses a Bayesian agent framework to derive three cases, showing that the same LLM performs different tasks under different prompts.
 
 ### Key Designs
 
-1. **Formal Distinction of Three Tasks**:
+**1. Formal distinction of three tasks: Separating "estimation" from "prediction" to resolve conceptual conflation.**
 
-    - **Function**: Uses unified notation to separate "distribution estimation" and "response prediction", avoiding their interchangeable use in the literature.
-    - **Mechanism**: Distribution estimator $p_\theta:\mathcal{X}\to\Delta^{|\mathcal{Y}|-1}$ learns $p_S(y|x)$; predictor $f_\theta:\mathcal{X}\to\mathcal{Y}$ learns a single optimal response; target distribution estimation estimates another distribution $p_T\ne p_S$ (with transfer learning properties). When the output space is $\Delta^{|\mathcal{Y}|-1}$ (i.e., "the probability distribution itself"), target estimation reduces to prediction over the "distribution space"—termed **second-order prediction** by the authors.
-    - **Design Motivation**: Much confusion in the literature stems from not distinguishing $p_\theta$ and $f_\theta$, e.g., using SFT-trained LLMs as distribution estimators via token logprob, even though they have been trained as predictors (mode-seeking).
+Many calibration papers conclude that "LLMs are dishonest/uncalibrated" because they conflate two mathematical objects. This paper distinguishes them using unified notation: a distribution estimator $p_\theta:\mathcal{X}\to\Delta^{|\mathcal{Y}|-1}$ learns the source distribution $p_S(y|x)$, a predictor $f_\theta:\mathcal{X}\to\mathcal{Y}$ learns the single best response, and target distribution estimation estimates $p_T\ne p_S$. A crucial insight is that when the target output space is the probability simplex $\Delta^{|\mathcal{Y}|-1}$ (i.e., the goal is to output "a distribution"), target estimation reduces to making a prediction in the "distribution space"—which the authors name **second-order prediction**. This distinction clarifies that reading token logprobs from an LLM after SFT is an incorrect application—the model has been trained as a mode-seeking predictor $f_\theta$, and its logprobs no longer correspond to any data distribution.
 
-2. **BDI Three-Case Analysis**:
+**2. BDI Case Analysis: Explaining distribution shifts via the belief-desire framework.**
 
-    - **Function**: Explains why the ideal LM probability for the same event $y$ differs under different prompts.
-    - **Mechanism**:
-        - **Case 1 (Multiple Expressions for the Same Outcome)**: Prompt has no instruction, agent can phrase freely; output probability reflects **frequency of language use**, and its relation to event distribution depends on reporting bias.
-        - **Case 2 (Agent Observes the Outcome)**: Prompt includes instruction, agent sees the event; ideally $p_{LM}(\mathbf{w^y}|\mathbf{w^x})=p_E(y|x)$, but only if the agent always reports truthfully—which is not guaranteed (e.g., default color "banana is yellow").
-        - **Case 3 (Agent Unobserved, Must Predict)**: Written as $p(\mathbf{w^y}|\mathbf{w^x})=\sum_{f\in D^y}p(f|\mathbf{w^x})\cdot p(f(b^y)=y)$; to match $p(y|x)$ requires both "correct belief" and "truthful reporting", but under prediction, the agent should put all mass on the mode, so correct belief and accuracy-optimizing cannot coexist.
-    - **Design Motivation**: Uses agent abstraction to unify different inference settings—pretrain corresponds to Case 1 (data frequency), SFT/RLHF to Case 3 (predicting optimal response); the same LLM plays different agents under different prompts, naturally yielding different distributions.
+To explain why the ideal LM probability for the same event $y$ differs across prompts, the authors view text as generated by an agent with belief $b$ and desire $d$ (a mapping from belief to strings). Under this framework:
+- **Case 1**: "Multiple ways to phrase the same result." The prompt lacks instructions, and the agent chooses phrasing freely. The output probability reflects **linguistic frequency**, which is separated from the event distribution by reporting bias.
+- **Case 2**: "The agent has observed the result." The prompt contains instructions and the agent has seen the event. Ideally, $p_{LM}(\mathbf{w^y}|\mathbf{w^x})=p_E(y|x)$, but this assumes the agent always reports truthfully (ignoring defaults like not mentioning "bananas are yellow").
+- **Case 3**: "The agent predicts without observation." This is formulated as $p(\mathbf{w^y}|\mathbf{w^x})=\sum_{f\in D^y}p(f|\mathbf{w^x})\cdot p(f(b^y)=y)$. Matching the true $p(y|x)$ requires both "correct belief + truthful reporting." However, in a prediction task, the agent should place all probability mass on the mode—meaning "correct belief" and "optimal accuracy" are mathematically incompatible. This abstraction shows that pretraining (Case 1) and SFT/RLHF (Case 3) naturally produce different distributions for the same LLM.
 
-3. **Second-Order Prediction as Escape Hatch**:
+**3. Second-order prediction as a solution: Moving "event probability" into the output to avoid softmax deadlock.**
 
-    - **Function**: Breaks the "prediction vs probability" deadlock in Case 3.
-    - **Mechanism**: When the prompt explicitly asks the agent to **report the probability itself** (rather than an option), the agent's "rational choice" is to write out the probability from its belief—because "outputting the probability value from belief" is both truthful and maximizes brier-like scores; thus, output distribution can align with world distribution. Concrete approach: prompt specifies "output format: A: probability p, B: probability q, ..." or allows verbal hedging ("likely a but maybe b"), with external parser validation or semantic reading.
-    - **Design Motivation**: Softmax logprob is affected by surface-form competition ("heads" vs "the coin landed on heads" splitting probability) and tokenizer artifacts; second-order prediction moves "events" directly into the output space, bypassing surface-form competition, and naturally supports arbitrary granularity (numbers / hedges / intervals).
+Case 3 reveals a deadlock where the desire for correct probabilities is suppressed by the prediction task's push toward mode collapse. Second-order prediction breaks this. When a prompt explicitly requires the agent to **report the probability itself** (rather than selecting an option), the rational choice for the agent is to faithfully write the probability value from its belief—as this is both truthful and maximizes Brier-style scores. This makes alignment between the output distribution and the world distribution possible again. Implementation involves specifying output formats ("A: probability p, B: probability q...") or allowing verbal hedging ("likely a but maybe b"), which are then read by a parser. This is more robust than softmax logprobs because it avoids surface-form competition (where "heads" and "the coin landed on heads" compete for mass) and tokenizer artifacts.
 
 ### Loss & Training
-
-As a position paper, **no new training objectives are proposed**. However, the authors suggest future directions: to make second-order prediction truly reliable, (a) training data should include corpora with "events + explicit probability annotations"; (b) use calibration-aware scoring (Brier / log score) for fine-tuning, rather than token-level cross-entropy; (c) distinguish "what to say" from "how confident", possibly requiring a dual-head architecture.
+As a position paper, **no new training objectives are proposed**, but directional suggestions are provided: (a) training corpora should include "events + explicit probability annotations"; (b) fine-tuning should use calibration-aware scores (Brier / log score) instead of token-level cross-entropy; (c) "what to say" should be separated from "how confident," potentially using a dual-head architecture.
 
 ## Key Experimental Results
 
-This paper **contains no experiments**, relying on conceptual analysis. However, the authors support their arguments with counterexamples reproduced from the literature:
+The paper contains **no new experiments** and relies on conceptual analysis. However, the authors use counterexamples from the literature to support their arguments:
 
-| Reference | Experimental Conclusion | Author's Reinterpretation |
-|-----------|------------------------|--------------------------|
-| Hu & Levy 2023 | Next-word probabilities for prompt (a) and (b) differ → LLM fails meta-linguistic task | The two prompts trigger different tasks (estimation vs prediction), so distributions should differ; not an LLM flaw |
-| Yona et al. 2024 | LLM's probability for "confident" answers does not reflect accuracy → unfaithful hedging | Generation probability ≠ confidence; category error |
-| Liu et al. 2023 | Gap between internal probing probability and output probability | Same as above, response prediction is necessarily mode-seeking |
-| Gupta et al. 2025 | LLM prefers heads even when told the coin is fair | Confirms reporting bias in case 1 is real |
-| Paik et al. 2021 | LLM describes bananas as green more than yellow | Also reporting bias (yellow bananas' color is omitted by default) |
+| Reference | Experimental Conclusion | Author's Interpretation |
+|------|---------|-------------|
+| Hu & Levy 2023 | Next-word probabilities of prompt (a) & (b) are inconsistent → LLMs fail meta-linguistic tasks | The two prompts trigger different tasks (estimation vs prediction); distributions *should* be inconsistent. |
+| Yona et al. 2024 | Generation probability of "confident" answers does not reflect accuracy → unfaithful hedging | Generation probability ≠ confidence; this is a category error. |
+| Liu et al. 2023 | Gap between internal probing and output probabilities | Expected; response prediction is naturally mode-seeking. |
+| Gupta et al. 2025 | LLMs favor "heads" even when told the coin is fair | Reporting bias from Case 1 is real and persistent. |
+| Paik et al. 2021 | LLM describes bananas as green more often than yellow | Another reporting bias (yellow bananas are the default and rarely mentioned). |
 
-These "calibration failures" are seen as LLM flaws from the traditional perspective; under this paper's framework, most are due to researchers misusing probabilities.
+These findings, often viewed as LLM deficiencies, are mostly interpreted as researchers misusing probabilities within this framework.
 
 ### Key Findings
-- **"Calibration" almost inevitably fails on instruction-tuned LMs**, because the target distribution is mode-seeking, which is mathematically incompatible with the "match accuracy" definition of calibration.
-- **Second-order prediction works in simple settings** (e.g., "coin biased 0.7", LLM explicitly says "I estimate 70%"), but semantic parsing is hard to automate in large output spaces (thousands of classes, continuous).
-- **Surface-form competition** is a severely underestimated confound—LLM gives "heads" 0.3, "the coin landed on heads" 0.2, which together constitute the true event probability, but researchers often only count the former.
+- **"Calibration" on instruction-tuned LMs is almost guaranteed to fail** because the target distribution is mode-seeking and mathematically incompatible with matching accuracy.
+- **Second-order prediction works in simple settings** (e.g., explicitly stating 70% probability), but semantic parsing for large output spaces (thousands of classes, continuous) is difficult to automate.
+- **Surface-form competition** is a significantly underestimated confound—researchers often only calculate the logprob of a single string, ignoring equivalent semantic formulations.
 
 ## Highlights & Insights
-- **Formal distinction of three tasks** is the most valuable conceptual contribution: once it is clear whether one wants source frequency, prediction mode, or event probability, many design choices in calibration papers become obvious.
-- **The BDI framework elegantly unifies different prompt forms**—explaining "prompt rewriting yields different distributions" as "ground changes alter the agent's belief/desire", which is deeper than simply saying "prompt affects prior".
-- **Second-order prediction** is not a new concept (probabilistic supervised learning has long existed), but the authors revive it in the LLM context, providing a theoretically sound path for "how to get LLMs to output event probabilities".
+- The **formal distinction of three tasks** is the most valuable conceptual contribution: clarifying whether one seeks source frequency, a prediction mode, or event probability renders previous design choices transparent.
+- The **BDI framework unifying prompt formats** is an elegant abstraction—explaining shifting distributions as changes in the agent's belief/desire grounded by the prompt.
+- **Second-order prediction** is not a new concept, but placing it within the LLM context provides a theoretically sound path for how LLMs should output event probabilities.
 
 ## Limitations & Future Work
-- The paper is almost purely conceptual, **lacking any comparative experiments** to demonstrate that second-order prediction actually outperforms softmax logprob on real tasks; this weakens its persuasiveness, and at least a toy benchmark demonstration is needed.
-- Practical implementation of second-order prediction is very challenging: (a) Do LLMs actually have well-calibrated beliefs? Existing evidence does not support this; (b) How to standardize parsing and evaluation of output formats (numbers / natural language)? The paper offers no solution.
-- Criticism of RLHF training objectives is qualitative, without analysis of how the KL regularization specifically affects the sharpness of output distributions.
-- The article repeatedly claims token logprob is inadequate, but overlooks some practical scenarios (e.g., sentence-level generation likelihood for ranking, document scoring in retrieval-augmented systems), where logprob remains useful and need not be entirely dismissed.
+- The paper is almost purely conceptual with **no comparative experiments** to prove that second-order prediction actually outperforms softmax logprobs in practice.
+- Implementation of second-order prediction is difficult: (a) It is unclear if LLMs possess well-calibrated internal beliefs; (b) there is no standardized scheme for parsing and evaluating output formats (numbers vs. natural language).
+- The critique of RLHF is qualitative and lacks analysis on how the KL regularization term specifically affects distribution sharpness.
+- While the paper argues against token logprobs, it overlooks scenarios where they remain useful (e.g., sentence-level likelihood for ranking or RAG document scoring).
 
 ## Related Work & Insights
-- **vs Holtzman 2021 (surface-form competition)**: Holtzman pointed out that logprob is affected by expression form and proposed PMI correction; this paper incorporates it into a broader "task mismatch" framework, arguing that PMI is only a local fix, while second-order prediction is the fundamental solution.
-- **vs Kadavath 2022 (Language Models Mostly Know What They Know)**: Kadavath used "P(True)" for LLM self-assessment—this is essentially an early form of second-order prediction, and this paper provides its theoretical justification.
-- **vs Farquhar 2024 (semantic uncertainty)**: Farquhar attempted to aggregate probabilities for "same semantics, different surface forms"; this paper argues that such aggregation is still a stopgap, and the root problem is the wrong task type—one should directly ask for the probability.
+- **vs Holtzman 2021 (surface-form competition)**: Holtzman identifies logprobs are affected by phrasing and proposes PMI; this paper places that within a larger "task mismatch" framework, suggesting PMI is only a local patch while second-order prediction is the root solution.
+- **vs Kadavath 2022 (Language Models Mostly Know What They Know)**: Kadavath uses "P(True)" for self-evaluation—this is essentially a prototype of second-order prediction, which this paper gives a theoretical foundation.
+- **vs Farquhar 2024 (semantic uncertainty)**: Farquhar attempts to aggregate probabilities across semantically equivalent surfaces; this paper argues that while helpful, the fundamental issue is the task type, necessitating direct probability queries.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The distinction of three tasks + BDI framework for LLM probabilistic semantics is highly original
-- Experimental Thoroughness: ⭐⭐ Position paper, zero experiments; persuasiveness relies on argument quality, not data
-- Writing Quality: ⭐⭐⭐⭐ Clean formalization, clear derivation of three cases, comprehensive literature review
-- Value: ⭐⭐⭐⭐ Essential "foundational" reading for anyone working on LLM calibration / probing / hallucination
-
-## Related Papers
-
-- [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
-- [\[ACL 2026\] StressTest: Can YOUR Speech LM Handle the Stress?](../../ACL2026/audio_speech/stresstest_can_your_speech_lm_handle_the_stress.md)
-- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
-- [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](../../ACL2026/audio_speech/do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐ The task distinction and BDI framework are highly original.
+- Experimental Thoroughness: ⭐⭐ Zero experiments; relies on the strength of the argument.
+- Writing Quality: ⭐⭐⭐⭐ Clean formalization and clear derivation of cases.
+- Value: ⭐⭐⭐⭐ Essential conceptual grounding for researchers in LLM calibration, probing, and hallucinations.
 
 <!-- RELATED:START -->
 
@@ -138,11 +109,11 @@ These "calibration failures" are seen as LLM flaws from the traditional perspect
 
 ## Related Papers
 
+- [\[ICML 2026\] 结构化广义线性 token mixing：用 SND + Kronecker 在复杂度与表达力之间换挡](trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
+- [\[ACL 2025\] Can You Share Your Story? Modeling Clients' Metacognition and Openness for LLM Therapist Evaluation](../../ACL2025/llm_nlp/can_you_share_your_story_modeling_clients_metacognition_and_openness_for_llm_the.md)
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
-- [\[ACL 2026\] C-World: A Computer Use Agent Environment Creator](../../ACL2026/llm_nlp/c-world_a_computer_use_agent_environment_creator.md)
 - [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
-- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
-- [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risk in Conversation](../../ICLR2026/llm_nlp/how_catastrophic_is_your_llm_certifying_risk_in_conversation.md)
+- [\[ACL 2026\] C-World: A Computer Use Agent Environment Creator](../../ACL2026/llm_nlp/c-world_a_computer_use_agent_environment_creator.md)
 
 </div>
 

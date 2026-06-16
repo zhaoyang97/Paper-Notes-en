@@ -2,134 +2,115 @@
 title: >-
   [Paper Note] How Many Different Outputs Can a Transformer Generate?
 description: >-
-  [ICML 2026][LLM/NLP][Accessible sequences] Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any transformer can only generate a finite number of "acc…
+  [ICML 2026][LLM (Other)][packing number] Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any Transformer can only generate a finite number of "accessible sequences." It provides a tight upper bound where the length of accessible sequences grows linearly with prompt length, after which the
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "Accessible sequences"
-  - "packing number"
-  - "embedding space geometry"
-  - "copying / cramming"
-  - "finite precision"
+  - ICML 2026
+  - LLM (Other)
+  - packing number
+  - copying / cramming
 date: 2026-05-08
-content_hash: e6f718c25adc8dd5
+content_hash: dad5a585f524f04d
 ---
-
 # How Many Different Outputs Can a Transformer Generate?
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2605.22223](https://arxiv.org/abs/2605.22223)  
 **Code**: https://github.com/mario-michelessa/transformers_accessibility (Available)  
 **Area**: LLM / NLP Theoretical Analysis  
-**Keywords**: Accessible sequences, packing number, embedding space geometry, copying / cramming, finite precision  
+**Keywords**: accessible sequences, packing number, embedding space geometry, copying / cramming, finite precision  
 
 ## TL;DR
-Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any transformer can only generate a finite number of "accessible sequences." It provides tight upper bounds showing that the length of accessible sequences grows linearly with prompt length, while the proportion of accessible sequences decays exponentially as $1/|V|^n$ beyond a threshold. Theoretical slopes are verified on Pythia, Qwen, Llama, and Gemma using cramming and copying experiments, with empirical results differing from theory by only 5–10x.
+Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any Transformer can only generate a finite number of "accessible sequences." It provides a tight upper bound where the length of accessible sequences grows linearly with prompt length, after which the proportion of accessible sequences decays exponentially at a rate of $1/|V|^n$. Experiments on Pythia, Qwen, Llama, and Gemma verify that the theoretical slope differs from the measured value by only 5–10x.
 
 ## Background & Motivation
-**Background**: Transformers are the dominant architecture in both NLP and CV. Extensive "approximation theory" work has proven them to be universal approximators (Yun 2020a/b, Edelman 2022, Kratsios 2022), capable of simulating Turing machines and arbitrary programs (Wei 2022, Giannou 2023). With Chain-of-Thought (CoT), their expressivity is further enhanced. **These theories seem to suggest that transformers can compute almost "anything."**
+**Background**: Transformers are the dominant architecture in both NLP and CV. Extensive work on "approximation theory" has proven them to be universal approximators (Yun 2020a/b, Edelman 2022, Kratsios 2022), capable of simulating Turing machines and arbitrary programs (Wei 2022, Giannou 2023). Their expressivity is further enhanced with Chain-of-Thought (CoT). **These theories suggest that Transformers can compute almost anything.**
 
-**Limitations of Prior Work**: However, counter-intuitive failures are repeatedly observed in practice for "elementary" tasks like long-sequence **copying** (Jelassi 2024), **repetition** (Barbero 2024), and **cramming** (Kuratov 2025). Once the input length exceeds a critical threshold, neither larger models nor more training data can resolve the failure. Moreover, the failure is not gradual but **abrupt (cliff-like)**—success is nearly 100% before the threshold and drops almost to 0 after it.
+**Limitations of Prior Work**: However, counter-intuitive failures are frequently observed in practice: "elementary-level" tasks such as long-sequence **copying** (Jelassi 2024), **repetition** (Barbero 2024), and **cramming** (Kuratov 2025) fail once the input length exceeds a critical threshold. These failures are not gradual but **cliff-like**—dropping from near 100% accuracy to 0% past the threshold, regardless of model size or training data.
 
-**Key Challenge**: Universal approximation is an asymptotic result under "continuous space + infinite precision." Real transformers operate on **finite floating-point precision**, and their internal representations are empirically constrained to **bounded and highly anisotropic** subspaces (Brody 2023, Rudman 2022). These two limitations imply that the set of distinguishable inputs and output sequences must be a **finite set**, creating a structural gap against the exponential growth of $|V|^n$.
+**Key Challenge**: Universal approximation is an asymptotic result under "continuous space + infinite precision." Real Transformers operate on **finite floating-point precision**, and their internal representations are constrained within **bounded and highly anisotropic** subspaces (Brody 2023, Rudman 2022). These two finitenesses imply that the sets of distinguishable inputs and outputtable sequences must be **finite**, creating a structural gap with the exponential growth of $|V|^n$.
 
-**Goal**: To formalize this gap and answer three specific questions: (i) Given a prompt length $m$, what is the maximum length of different sequences that can be output? (ii) Is there a prompt-independent hard upper bound? (iii) Can this bound be written in a closed-form using only architectural parameters (embedding dimension $d$, radius $r$, precision $\varepsilon$, vocabulary size $|V|$) to **predict** failure lengths for copying/cramming in new models?
+**Goal**: To formalize this gap and answer three specific questions: (i) Given prompt length $m$, what is the maximum length of distinct sequences that can be generated? (ii) Does a prompt-independent hard upper bound exist? (iii) Can this bound be written in a closed form using only architectural parameters (embedding dimension $d$, radius $r$, precision $\varepsilon$, vocabulary $|V|$) to **predict** failure lengths for copying/cramming?
 
-**Key Insight**: By partitioning the last-layer embedding space into $|V|$ argmax cells based on the "most likely next token" (Fig 1), generating a sequence of length $n$ is equivalent to finding a prompt embedding such that greedy decoding for $n$ consecutive steps consistently falls into the correct cells. **Gnerability ⟺ Falling into a sufficiently small feasible region.** The number of distinguishable inputs for a finite-precision transformer is governed by the **packing number**.
+**Key Insight**: By partitioning the last-layer embedding space into $|V|$ argmax cells based on the "most likely next token" (Fig 1), generating a sequence of length $n$ is equivalent to finding a prompt embedding such that greedy decoding falls into the correct cells for $n$ consecutive steps. **Generatability $\iff$ hitting a sufficiently small feasible region.** The number of inputs distinguishable by a finite-precision Transformer is controlled by the **packing number**.
 
-**Core Idea**: Theoremize that the "number of accessible sequences" is bounded by the "packing number of the embedding support." This converts the upper bound of transformer generation capability into a purely geometric quantity, using mean-field theory and Wasserstein distance to extend the framework to infinite prompt lengths.
+**Core Idea**: Establish the theorem that "number of accessible sequences" $\leq$ "packing number of the embedding support." This converts the upper bound of Transformer generation capacity into a pure geometric quantity. The framework is then extended to infinite prompt lengths using mean-field theory and Wasserstein distance.
 
 ## Method
 
 ### Overall Architecture
-The analytical chain of the paper follows a straight line: "**Architectural facts → Embedding geometry → Packing bound → Accessible sequence bound → Threshold prediction → Experimental validation**":
+The paper uses a concise logical chain to answer how many different sequences a Transformer can output: by viewing the Transformer as a mapping under finite precision, the number of inputs it can distinguish is finite, and thus its output sequences must also be finite. The analysis starts from architectural facts, translates generation behavior into a geometric problem in embedding space, constrains the total number of accessible sequences using the packing number, derives closed-form formulas for length thresholds, and finally validates these predictions on cramming and copying tasks.
 
-1. Formalize the transformer as a mapping $\tau:\bigcup_m \mathbb{R}^{d\times m}\to\Delta_{|V|}$ (soft prompt version, including hard prompts as a special case).
-2. Assume the last-layer embedding support $E\subset B_d(0,r)$ is partitioned by the unembedding matrix $F$ into $E_i=\{x: (Fx)_i\geq (Fx)_j\,\forall j\}$ (Fig 1 shows a 2D slice visualization on Qwen-2-0.5B).
-3. Define **Accessible Sequence**: A sequence $t$ is accessible under precision $\varepsilon$ and prompt length $m$ if there exists $X\in\mathbb{R}^{d\times m}$ such that $B(X,\varepsilon/2)\subset E_t^m$ (i.e., an entire precision ball is mapped to $t$).
-4. Prove packing-type upper bounds under two routes: "**finite prompt length**" and "**arbitrary prompt length (mean-field)**."
-5. Conduct complementary experiments using cramming (short $m$, measuring linear thresholds) and copying (arbitrary $m$, measuring asymptotic thresholds). Refine crude geometric assumptions into empirical measurements through support refinement and cell volume distribution analysis to reduce the theory/empirical ratio from ~20x to ~5–10x.
+Specifically, the Transformer is formalized as a mapping $\tau:\bigcup_m \mathbb{R}^{d\times m}\to\Delta_{|V|}$. Assuming the last-layer embedding support lies within a ball $E\subset B_d(0,r)$, the space $E$ is partitioned into $|V|$ argmax cells $E_i=\{x:(Fx)_i\geq (Fx)_j\,\forall j\}$ according to the unembedding matrix $F$. The task is to count how many sequences can be hit consecutively by greedy decoding within this partition.
 
 ### Key Designs
 
-1. **Geometric Definition of Accessible Sequences**:
-    - **Function**: Translates the discrete problem of "whether a transformer can output sequence $t$" into a geometric problem of "whether there is an $\varepsilon/2$-neighborhood in the embedding space falling entirely within cell $E_t^m$," allowing the direct application of packing-number tools.
-    - **Mechanism**: The last-layer embedding is partitioned into $|V|$ cells $E_i$ based on the argmax of the next token (Definition in Section 3.1, Fig 1 for 2D visualization). For a target sequence of length $n$, the conditions for $n$ consecutive greedy decoding steps are concatenated to form $E_t^m\subset B_{d\times m}(0,r)$. Introducing precision $\varepsilon$ (Assumption 4.3: the transformer is a constant function within each $\varepsilon$-cube), sequence $t$ is accessible iff $E_t^m$ contains a ball of radius $\varepsilon/2$ (Definition 4.1).
-    - **Design Motivation**: Previous "universal approximation" results were continuous and failed to explain discrete output failures. This work geometrizes "output = falling into a cell" and "distinguishability = accommodating a precision ball," so the number of accessible sequences is naturally bounded by the packing number. Remark 3.2 extends this to stochastic decoding: greedy inaccessibility implies any stochastic strategy has a success rate $< 50\%$.
+**1. Geometrized definition of accessible sequences: Mapping "outputting sequence $t$" to "fitting an epsilon-ball in embedding space"**
 
-2. **Dual-track Packing-number Bounds (finite-m / arbitrary-m)**:
-    - **Function**: Provides closed-form upper bounds for the number of accessible sequences and threshold lengths, covering both short prompts and arbitrarily long prompts.
-    - **Mechanism**:
-        - **Finite prompt length (Thm 4.5 + Cor 4.6)**: $\tau$ distinguishes at most $P(B_{d\times m}(0,r),\|\cdot\|,\varepsilon)\leq (1+2r/\varepsilon)^{dm}$ inputs; thus, the number of accessible sequences is $\leq (1+2r/\varepsilon)^{dm}$. Comparing this to $|V|^n$ yields: once $n > C\cdot m$, where $C = d\ln(1+2r/\varepsilon)/\ln|V|$, inaccessible sequences must exist, and the proportion of accessible sequences decays exponentially as $O(1/|V|^n)$.
-        - **Arbitrary prompt length (Thm 4.9 + Cor 4.10)**: Treat transformers as mappings **between probability measures** (mean-field, Sander 2022; attention is permutation equivariant and $L([X,X])_{:,i}=L(X)_{:,i}$). Each prompt $X$ is replaced by an empirical measure $M(X)=\frac1m\sum_i \delta_{X_{:,i}}$. Introducing Wasserstein precision (Assumption 4.8) results in a prompt-independent upper bound $(e+e(2r)^q/\varepsilon^q)^{(1+2r/\varepsilon)^d}$. Here, no "hard length limit" exists, but accessibility still decays as $O(1/|V|^n)$.
-    - **Design Motivation**: The first bound explains the linear threshold growth with short prompts, while the second explains why extra-long prompts cannot save copying. Together, they describe the **sigmoid shape** observed in cramming and copying: nearly complete accessibility before the critical length, followed by a $1/|V|^n$ crash. All conclusions are architecture-level properties, agnostic to prompts, training, or compute.
+Previous universal approximation results were based on continuity and infinite precision, failing to explain discrete output failures. The first step here is a change of language: partition the last-layer embedding into $|V|$ cells based on the next-token argmax (Section 3.1, Fig 1). Generating a target sequence $t$ of length $n$ is equivalent to falling into the correct cells for $n$ steps. Stacking these conditions yields $E_t^m\subset B_{d\times m}(0,r)$. Introducing finite precision (Assumption 4.3) requires the Transformer to be constant within any hypercube of side length $\varepsilon$. Thus, "sequence $t$ is accessible" $\iff$ $E_t^m$ contains a ball of radius $\varepsilon/2$ (Definition 4.1). This translates the discrete generation problem into a geometric one—the total number of accessible sequences is bounded by the packing number of the embedding support. Remark 3.2 extends this to stochastic decoding: if greedy is inaccessible, the success rate of any sampling strategy is $<50\%$.
 
-3. **Support Support Refinement + Non-uniform Cell Volume Correction**:
-    - **Function**: Replaces two "worst-case" assumptions—(a) embedding support is a full ball $B_d(0,r)$, and (b) each cell $E_t$ has equal volume—with tighter empirical approximations, reducing the theoretical/empirical slope ratio from 14–20x to 5–10x.
-    - **Mechanism**:
-        - **Support Approximation (Section 5.2)**: Empirical embeddings are small, anisotropic subsets (Rudman 2022). The full ball is replaced with an axis-aligned ellipsoid (radius $r_i$ per dimension) and a cone (minimum opening angle). The packing number is recalculated (Appendix F). Shape parameters are stably estimated using 10K random prompts with length $\ell\approx 1000$ (Fig 9).
-        - **Cell Volume Distribution (Section 5.3)**: Frequent tokens occupy larger cells, while rare ones occupy smaller ones. The volume distribution $D=\{|E_t|/|E|\}$ of the next token is measured. An $n$-fold product convolution $D^{\otimes n}$ mimics the volume distribution for sequences of length $n$. The threshold is found where the median of $D^{\otimes n}$ falls below $1/P(E,\|\cdot\|,\varepsilon)$, meaning over half of the sequences are inaccessible (Fig 3). Note that if $D$ is a Dirac delta at $1/|V|$, this reverts to Cor 4.6.
-    - **Design Motivation**: The original Cor 4.6 bound relied on worst-case geometry, overestimating slopes. By using "shape + density" corrections from real embeddings, the theoretical values become tight enough to serve as a predictive model—Table 1 shows "Ellipsoid + non-uniform cell" reduces ratios for all 7 models to 5–11x.
+**2. Dual-track packing-number bounds: Constraining "short prompts" and "arbitrarily long prompts"**
+
+With the geometric definition, the number of accessible sequences equals the number of non-overlapping precision balls that fit in the support (the packing number). For short prompts (Thm 4.5 + Cor 4.6), the Transformer $\tau$ can distinguish at most $P(B_{d\times m}(0,r),\|\cdot\|,\varepsilon)\leq (1+2r/\varepsilon)^{dm}$ inputs. Comparing this to the total possible sequences $|V|^n$, it follows that when $n>C\cdot m$ (where $C=d\ln(1+2r/\varepsilon)/\ln|V|$), inaccessible sequences must exist, with the ratio decaying as $O(1/|V|^n)$. This explains why the threshold grows linearly with $m$. To address whether infinite prompts could copy any sequence, the second track (Thm 4.9 + Cor 4.10) uses mean-field theory (Sander 2022) to treat the Transformer as a mapping between probability measures. Under a Wasserstein-based precision assumption (Assumption 4.8), a prompt-independent bound $(e+e(2r)^q/\varepsilon^q)^{(1+2r/\varepsilon)^d}$ is derived. While there is no "hard length limit," the accessible ratio still decays as $O(1/|V|^n)$, meaning long prompts cannot save the copying task. Together, these bounds characterize the **sigmoid shape** observed in cramming/copying: near-total accessibility before a critical length, followed by a sharp drop.
+
+**3. Support refinement + Non-uniform cell volume correction: Tightening worst-case bounds**
+
+The original Cor 4.6 assumes a full ball $B_d(0,r)$ and uniform cell volumes, leading to theoretical slopes 14–20x larger than observed. Two refinement steps reduce this to 5–10x. First, **Support Approximation** (Section 5.2): Since embeddings are highly anisotropic (Rudman 2022), the full ball is replaced with an axis-aligned ellipsoid and a cone. The packing number is recalculated (Appendix F), requiring only 10K random prompts to estimate the shape (Fig 9). Second, **Non-uniform Cell Volumes** (Section 5.3): Common tokens occupy large cells while rare ones occupy small ones. The volume distribution $D=\{|E_t|/|E|\}$ is measured via Monte-Carlo sampling. An $n$-fold product convolution $D^{\otimes n}$ simulates the volume distribution of length-$n$ sequences. The threshold is defined as the point where the median of $D^{\otimes n}$ falls below $1/P(E,\|\cdot\|,\varepsilon)$. Table 1 shows that combining the ellipsoid and non-uniform cell corrections reduces the gap to 5–11x across all 7 models.
 
 ### Loss & Training
-The paper is purely theoretical with black-box probing; no new models are trained. The cramming experiment only optimizes a soft prompt $Y\in\mathbb{R}^{d\times m}$ of length $m$ using teacher-forcing $\mathcal{L}(Y;x_{1:n})=-\sum_{i=1}^n\log p_\tau(x_i\mid[Y,x_{1:i-1}])$ with frozen weights. The copying experiment fine-tunes on synthetic $x_{1:n}|x_{1:n}$ strings (length $\leq 50$) until 100% accuracy or 10K steps, then tests exact-match on longer strings.
+The paper uses pure theory and black-box probing without training new models. Cramming experiments optimize a soft prompt $Y\in\mathbb{R}^{d\times m}$ using teacher-forcing: $\mathcal{L}(Y;x_{1:n})=-\sum_{i=1}^n\log p_\tau(x_i\mid[Y,x_{1:i-1}])$ with frozen weights. Copying experiments fine-tune models on synthetic strings $x_{1:n}|x_{1:n}$ ($n \leq 50$) until 100% training accuracy or 10K steps, then test exact-match on longer strings.
 
 ## Key Experimental Results
 
 ### Main Results
-Models tested include Pythia (160M–2.8B), Qwen-2.5 (0.5B / 1.5B), Llama-3.2 (1B / 3B), and Gemma-3 (270M / 1B). For cramming, 20 targets per $(n,m)$ pair are used to estimate the mean, with targets sourced from PG19 natural text and uniformly sampled random token strings.
+Models include Pythia (160M–2.8B), Qwen-2.5 (0.5B / 1.5B), Llama-3.2 (1B / 3B), and Gemma-3 (270M / 1B). Cramming used 20 targets per $(n,m)$ from PG19 text and random tokens.
 
 | Experiment / Model | Key Observation | Value |
 |------------|---------|------|
-| Cramming (Qwen-2.5-1.5B), fixed $m$ | Sigmoid fit for "Accuracy vs Length $n$" | Min $R^2=0.88$ |
-| $n_{50}(m)$ Linearity (PG19) | $n_{50} \approx Cm$ | $R^2_{\text{PG19}}=0.999$ |
-| $n_{50}(m)$ Linearity (random) | Same as above, smaller slope | $R^2_{\text{rand}}=0.995$ |
-| Copying task, 7 models | Training length $\leq 50$, cliff-like drop on longer strings | Median Sigmoid $R^2=0.95$ |
-| Theoretical Slope (Ball) / Empirical Slope | Avg $\approx 12\times$ across 7 models | See Ablation |
+| Cramming (Qwen-2.5-1.5B), fixed m | Sigmoid fit for "Accuracy vs. Length n" | Min $R^2=0.88$ |
+| n50(m) Linearity (PG19) | n50 ≈ Cm | $R^2_{\text{PG19}}=0.999$ |
+| n50(m) Linearity (Random) | As above, smaller slope | $R^2_{\text{rand}}=0.995$ |
+| Copying task, 7 models | Sigmoid-like drop past training length | Median $R^2=0.95$ |
+| Theoretical (Ball) / Empirical Slope | Average ratio ≈ 12× | See Ablation |
 
-### Ablation Study (Table 1: Ratio of Theoretical Upper Bound to Empirical Slope)
+### Ablation Study (Table 1: Ratio of Theoretical Bound to Empirical Slope)
 
-| Geometric Assumption | Pythia-160M | Pythia-410M | Pythia-1B | Qwen-0.5B | Qwen-1.5B | Llama-1B | Gemma-270M |
-|---------|------------|------------|-----------|-----------|-----------|----------|-----------|
-| Ball (Original Cor 4.6) | 9.24 | 9.79 | 7.77 | 14.1 | 20.4 | 14.3 | 11.52 |
-| Cone (Min opening angle) | 9.10 | 9.60 | 7.70 | 14.01 | 20.34 | 13.98 | 11.24 |
-| Ellipsoid (Anisotropic) | 7.92 | 8.15 | 6.12 | 10.96 | 15.30 | 11.86 | 11.12 |
-| **Ellipsoid + Non-uniform cell** | **6.66** | **5.99** | **4.56** | **7.92** | **10.82** | **10.71** | **8.79** |
-| Ellipsoid + variable $\varepsilon$ | 8.65 | 9.83 | 7.71 | 12.32 | 18.81 | 14.63 | 13.42 |
+| Geometric Assumption | Pythia-160M | Pythia-1B | Qwen-0.5B | Qwen-1.5B | Llama-1B | Gemma-270M |
+|---------|------------|-----------|-----------|-----------|----------|-----------|
+| Ball (Original Cor 4.6) | 9.24 | 7.77 | 14.1 | 20.4 | 14.3 | 11.52 |
+| Cone (Minimal Opening) | 9.10 | 7.70 | 14.01 | 20.34 | 13.98 | 11.24 |
+| Ellipsoid (Anisotropic) | 7.92 | 6.12 | 10.96 | 15.30 | 11.86 | 11.12 |
+| **Ellipsoid + Non-uniform cell** | **6.66** | **4.56** | **7.92** | **10.82** | **10.71** | **8.79** |
 
 ### Key Findings
-- **The slope is indeed linear**: $n_{50}(m)$ shows linear fits with $R^2 \geq 0.995$ for both PG19 and random strings, directly validating the $n^\star(m)=Cm$ prediction from Cor 4.6.
-- **PG19 slope > random string slope**: Natural text has stronger structure and less effective information, allowing "more" length for the same $m$, consistent with Kuratov 2025.
-- **Geometric corrections progressively reduce error**: Shifting from Ball → Cone yields little gain, but Ellipsoid captures anisotropy to reduce the ratio by 1–4x. Adding non-uniform cell volumes further tightens the ratio to 4.5–10.8x. Qwen-2.5-1.5B remains an outlier, suggesting its support shape is more complex.
-- **Cliff-like drops in copying**: Long-string accuracy behaves like a step function after 100% training accuracy (median Sigmoid $R^2 = 0.95$), validating the exponential decay beyond prompt-independent thresholds in Cor 4.10.
-- **Universal conclusions**: Remark 1.1 notes that any architecture with bounded representations and finite precision (including SSMs like Mamba) is subject to these same bounds; memory vector length $h$ in test-time training can also be predicted.
+- **Linearity of Slopes**: n50(m) shows a linear fit $R^2 \geq 0.995$ for both PG19 and random strings, validating the $n^\star(m)=Cm$ prediction of Cor 4.6.
+- **PG19 vs. Random**: Natural text has more structure and less information density, allowing longer sequences to be "crammed" for the same $m$, consistent with Kuratov 2025.
+- **Geometric Refinement**: Moving from a ball to an ellipsoid captures anisotropy, reducing the error ratio by 1–4x. Adding non-uniform cell volumes brings all models within 4.5–10.8x.
+- **Copying Cliff**: Accuracy on long strings behaves like a step function (Median $R^2 = 0.95$), validating the exponential decay predicted by Cor 4.10.
+- **Generalizability**: Remark 1.1 notes that any architecture with bounded representations and finite precision (e.g., Mamba/SSMs) is subject to the same upper bounds.
 
 ## Highlights & Insights
-- **Geometric translation of capacity**: Representing generation upper bounds as the packing number of embedding space is the most natural formal language for these problems. Transformer "capability" is now equivalent to "whether enough non-overlapping precision balls can fit in the embedding support."
-- **Highly explanatory corollaries**: Cor 4.6 explains linear threshold growth for short prompts; Cor 4.10 explains why long prompts don't save copying. These two cover almost all empirical findings on copying/cramming from the last three years.
-- **Infinite prompts via mean-field + Wasserstein**: Replacing prompts with empirical measures $M(X)$ allows limits of "infinite length" to gain an analytical precision concept (Wasserstein-$\varepsilon$), extending fixed-$m$ results.
-- **Transferable trick**: Using the "unembedding matrix + Monte-Carlo sampling" to measure cell volume distribution $D$ and estimating critical $n$ via $n$-fold convolution is a "data-driven geometric estimation" applicable to any transformer.
-- **Agnostic to architecture specifics**: Bounds depend only on $d, r, \varepsilon, |V|$, making them applicable to Pythia and Mamba alike. With closed-form theories, the cost of predicting failure thresholds for new models is essentially zero.
+- **Clean Translation**: Mapping generation capacity to the packing number of embedding space provides a natural formal language for these limits.
+- **Explanatory Power**: Cor 4.6 and Cor 4.10 provide the first rigorous theoretical explanations for empirical observations in copying/cramming over the past three years.
+- **Mean-field Integration**: Replacing discrete prompts with empirical measures $M(X)$ allows the analysis of infinite-length limits via Wasserstein-ε precision.
+- **Predictive Utility**: The "geometry + density" correction method can be used as a low-cost tool to estimate the accessibility limits of any fixed Transformer on new tasks.
 
 ## Limitations & Future Work
-- Upper bounds are still loose by 5–10x: Even with ellipsoid and non-uniform corrections, Qwen-1.5B has a 10.8x error, suggesting last-layer embeddings have more complex structures (potential low-dimensional manifolds) than ellipsoids.
-- Assumption 4.8 (Wasserstein precision) is significantly stronger than $\ell_\infty$ precision; the "elementary operations" alternative in Appendix E has poor readability, limiting the intuitive appeal of Thm 4.9.
-- Experimental focus on "mechanical" tasks (cramming/copying) without touching reasoning tasks, where target sequences might cluster in small subspaces, potentially making accessibility less of a bottleneck.
-- Analysis limited to models $\leq 3$B parameters; whether 70B+ models follow the same proportions is unverified. There's also no fine-grained alignment with actual floating-point (FP16/BF16) $\varepsilon$ values.
-- Only upper bounds are provided: More restrictive capacity limits than packing might exist, especially if cell shapes are highly irregular.
+- The upper bound remains 5–10x loose, suggesting that last-layer embeddings may reside on more complex low-dimensional manifolds rather than simple ellipsoids.
+- Assumption 4.8 (Wasserstein precision) is stronger than $\ell_\infty$ precision; the alternative "elementary operations" assumption in Appendix E is less intuitive.
+- The study focuses on "mechanical" tasks (copying/cramming); reasoning tasks might be limited by different bottlenecks as their target sequences might cluster in smaller subspaces.
+- The theory only provides an upper bound; tighter capacity limits may exist depending on cell regularity.
 
 ## Related Work & Insights
-- **vs. Kuratov et al. 2025 (Cramming empirical study)**: They first used cramming as an operational definition of accessibility and reported the PG19/random gap; this paper provides the first rigorous theoretical explanation and extends experiments to multiple model families.
-- **vs. Jelassi et al. 2024 ("Transformers can't copy")**: They showed empirical copying failure; this paper proves it is an inevitable consequence of embedding geometry, independent of training or size.
-- **vs. Huang et al. 2025 (Length generalization framework)**: Huang et al. proved copying impossibility under absolute positional encoding with idealized assumptions; this paper removes those assumptions and quantifies "impossibility" as a predictable threshold.
-- **vs. Meyer et al. 2025 (Memory limits)**: Also uses packing number but focuses on memory; this paper pushes the tool to generation capability.
-- **vs. Chiang 2025, Strobl et al. 2024 (Formal languages)**: While they analyze which language classes transformers can represent (TC⁰, etc.), this paper is a **counting version** of expressivity—it tells you "how many sequences" can be output rather than just whether a class is possible.
+- **vs Kuratov et al. 2025**: Provides the first rigorous theoretical explanation for their empirical cramming findings.
+- **vs Jelassi et al. 2024**: Proves that the failure to copy long sequences is an inevitable consequence of embedding geometry.
+- **vs Huang et al. 2025**: Quantifies the "impossibility" of length generalization as a predictable critical length, removing idealized assumptions.
+- **vs Chiang 2025 / Strobl et al. 2024**: While those works focus on complexity classes (what can be expressed), this work provides the **counting version**—how many different outputs can be generated.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to frame transformer accessible sequence counts as a closed-form packing-number bound.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 11 sizes across 4 model families + 2 tasks + 2 target distributions, but restricted to mechanical tasks and below 10B scale.
-- Writing Quality: ⭐⭐⭐⭐ Clear correspondence between theorems and experiments; geometric intuition is very accessible; Wasserstein assumptions in the mean-field section are a bit abrupt.
-- Value: ⭐⭐⭐⭐⭐ Provides the first architecture-agnostic theory for "why transformers can't copy," with direct implications for SSMs and test-time training.
+- Novelty: ⭐⭐⭐⭐⭐ First closed-form packing-number bound for Transformer accessibility.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive model coverage, though focused on mechanical tasks and sub-10B scales.
+- Writing Quality: ⭐⭐⭐⭐ Clear mapping between theory and experiment; intuitive geometric figures.
+- Value: ⭐⭐⭐⭐⭐ Provides an architecture-agnostic theory for fundamental Transformer limitations.
 
 <!-- RELATED:START -->
 
@@ -138,9 +119,9 @@ Models tested include Pythia (160M–2.8B), Qwen-2.5 (0.5B / 1.5B), Llama-3.2 (1
 ## Related Papers
 
 - [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM and Human Writing Diversity via Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
-- [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](../../ACL2026/llm_nlp/big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
-- [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](../../ICLR2026/llm_nlp/assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
+- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
+- [\[ACL 2025\] Can Large Language Models Accurately Generate Answer Keys for Health-related Questions?](../../ACL2025/llm_nlp/can_large_language_models_accurately_generate_answer_keys_for_health-related_que.md)
+- [\[ACL 2025\] LLM Meets Scene Graph: Can Large Language Models Understand and Generate Scene Graphs?](../../ACL2025/llm_nlp/llm_meets_scene_graph_can_large_language_models_understand_and_generate_scene_gr.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
 
 </div>

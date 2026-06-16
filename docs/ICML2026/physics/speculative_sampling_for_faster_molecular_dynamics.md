@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Speculative Sampling for Faster Molecular Dynamics
 description: >-
-  [ICML2026][Physics & Scientific Computing][Speculative Sampling] This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics…
+  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics and proposes LSD: serial extrapolation using a fast draft potential function and parallel verification using a slow target potential function. By ensuring the trajectory distribution is strictly consistent with th
 tags:
-  - "ICML2026"
-  - "Physics & Scientific Computing"
-  - "Speculative Sampling"
-  - "Langevin Dynamics"
-  - "MLIP Acceleration"
-  - "Reflection-Maximal Coupling"
-  - "Parallel Verification"
+  - ICML 2026
+  - Physics & Scientific Computing
 date: 2026-05-08
-content_hash: 2c793f109926ef8d
+content_hash: b76ff105af703777
 ---
-
 # Speculative Sampling for Faster Molecular Dynamics
 
 **Conference**: ICML2026  
@@ -24,21 +18,21 @@ content_hash: 2c793f109926ef8d
 **Keywords**: Speculative Sampling, Langevin Dynamics, MLIP Acceleration, Reflection-Maximal Coupling, Parallel Verification
 
 ## TL;DR
-This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics, proposing LSD: using a fast draft potential for serial extrapolation and a slow target potential for parallel verification. By ensuring strict trajectory distribution consistency through reflection-maximal coupling, it achieves 3–9× lossless acceleration on systems such as FCC copper.
+This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics and proposes LSD: serial extrapolation using a fast draft potential function and parallel verification using a slow target potential function. By ensuring the trajectory distribution is strictly consistent with the target model via reflection-maximal coupling, it achieves a 3–9× lossless speedup on systems such as FCC copper.
 
 ## Background & Motivation
 
-**Background**: Molecular dynamics (MD) is the standard tool for simulating time evolution at the atomic scale. Recently emerged Machine Learning Interatomic Potentials (MLIP) achieve linear complexity with DFT-level quantum accuracy, representing the core computational bottleneck of MD simulations.
+**Background**: Molecular dynamics (MD) is a standard tool for simulating time evolution at the atomic scale. Machine learning interatomic potentials (MLIP) developed recently achieve linear complexity with DFT-level quantum accuracy, representing a core computational bottleneck in MD simulations.
 
-**Limitations of Prior Work**: Numerical integration in MD requires time steps $\Delta t \sim 0.5\text{–}1$ fs, while many target physical processes occur at the 100+ ns scale, necessitating approximately $10^8$ serial integration steps. MLIPs are several orders of magnitude more expensive per step than classical force fields, making long-timescale simulations practically infeasible. MD is inherently serial—the force at the next step depends on the current position—preventing throughput improvements for a single trajectory via standard data parallelism.
+**Limitations of Prior Work**: Numerical integration in MD requires time steps $\Delta t \sim 0.5\text{–}1$ fs, whereas many target physical processes occur at $100+$ ns scales, requiring $10^8$ serial integration steps. MLIPs are several orders of magnitude more expensive per step than classical force fields, rendering long-timescale simulations practically infeasible. MD is inherently serial—the force at the next step depends on the current position—preventing single-trajectory throughput increases via data parallelism across multiple GPUs.
 
-**Key Challenge**: MLIPs exhibit a natural "accuracy vs. speed" trade-off on the Pareto frontier, providing many "fast but coarse" and "slow but accurate" model pairs. However, existing acceleration schemes (large time-step extrapolation, embedding reuse, distillation, multi-timescale methods) are almost all *lossy*, introducing unknown trajectory distribution biases that are unsafe for physical observables.
+**Key Challenge**: MLIPs exhibit a natural "accuracy vs. speed" trade-off on the Pareto frontier, with many "fast but crude" and "slow but accurate" model pairs. However, existing acceleration schemes (large-step extrapolation, embedding reuse, distillation, multi-time-stepping) are almost all *lossy*, introducing unknown trajectory distribution biases that are unsafe for physical observables.
 
-**Goal**: To transfer the "fast draft + slow target" parallel verification paradigm from LLMs/diffusion models to MD without introducing any relative error, such that acceleration stems from cross-step parallelism rather than sacrificing precision.
+**Goal**: Transfer the "fast draft + slow target" parallel verification paradigm from LLMs/diffusion models to MD without introducing any relative error, ensuring acceleration comes from cross-time-step parallelism rather than sacrificed precision.
 
-**Key Insight**: The authors observe that both LLM speculative sampling and MD share a "serial Markov chain + expensive transition kernel" structure. However, two key differences exist: (1) MD state space is continuous $\mathbb{R}^{6N}$; (2) the transition kernel is a second-order Langevin SDE numerical integrator (e.g., ABOBA splitting) rather than first-order Euler-Maruyama. These differences prevent direct application of discrete/first-order speculative algorithms (prior work like De Bortoli et al. 2025 only covers first-order Langevin).
+**Key Insight**: The authors observe that both LLM speculative sampling and MD share a structure of "serial Markov chains + expensive transition kernels." However, two key differences exist: (1) the state space in MD is continuous $\mathbb{R}^{6N}$; (2) the transition kernel is a second-order Langevin SDE numerical integrator (e.g., ABOBA splitting) rather than first-order Euler-Maruyama. Neither allows for the direct application of discrete/first-order speculative algorithms used in LLMs or diffusion (the work by De Bortoli et al. 2025 only covers first-order Langevin).
 
-**Core Idea**: Graft the "accept/reject-rollback" mechanism of speculative sampling and **reflection-maximal coupling** from HMC literature onto ABOBA-type splitting integrators. Perform coupling verification on the momentum updates (BOB) and prove that the full-step coupling remains optimal under reversible position updates (A).
+**Core Idea**: Graft the "accept/reject-rollback" mechanism of speculative sampling and **reflection-maximal coupling** from HMC literature onto ABOBA-type splitting integrators. Perform coupling verification for the (BOB) momentum updates of the integrator and prove that the full-step coupling still achieves optimal acceptance rates under reversible position updates (A).
 
 ## Method
 
@@ -46,88 +40,107 @@ This paper transfers speculative sampling from language models to second-order L
 
 The LSD (Langevin Speculative Dynamics) runtime is a pipelined asynchronous system:
 
-1.  **Draft Model** $Q(\cdot|\cdot)$ continuously produces serial draft steps $y_n = (\tilde{\mathbf{q}}_n, \tilde{\mathbf{p}}_n)$ on one GPU. Each step executes an ABOBA integration using a cheap force field $\tilde{\mathbf{F}}$ (e.g., EMT classical force field or Orb-v3-direct small MLIP).
-2.  **Target Model Instance Pool** $\{P^{(i)}\}_{i=1}^{N_T}$ asynchronously consumes draft steps on another $N_T$ GPUs. Each instance takes a draft step $y_{n-1}$ and re-calculates ABOBA using the expensive force field $\mathbf{F}$ to obtain the mean momentum $\langle \mathbf{p}_n \rangle$ the target model would have produced.
-3.  **Verification Protocol**: When the target returns, the reflection-maximal coupling determines whether to accept $x_n = y_n$ or reject and reflect to a new $x_n$. If rejected, all draft steps newer than the current step and unfinished verifications are "flushed," and the draft restarts from $x_n$. The resulting sequence $\{x_n\}$ is distributionally identical to serial sampling with the pure target model.
+1.  **Draft model** $Q(\cdot|\cdot)$ continuously produces serial draft steps $y_n = (\tilde{\mathbf{q}}_n, \tilde{\mathbf{p}}_n)$ on a single GPU. Each step performs an ABOBA integration using a cheap force field $\tilde{\mathbf{F}}$ (e.g., EMT classical force field or Orb-v3-direct small MLIP).
+2.  **Target model instance pool** $\{P^{(i)}\}_{i=1}^{N_T}$ asynchronously consumes draft steps across $N_T$ additional GPUs. Each instance takes a draft step $y_{n-1}$ and recomputes the ABOBA step with the expensive force field $\mathbf{F}$ to obtain the mean momentum $\langle \mathbf{p}_n \rangle$ that the target model would have produced.
+3.  **Verification Protocol**: When a target result returns, the reflection-maximal coupling determines whether to accept $x_n = y_n$ or reject it and reflect a new $x_n$. Upon rejection, all drafts newer than the current step and unfinished verifications are "flushed," and the draft model restarts from $x_n$. The resulting $\{x_n\}$ sequence is identical in distribution to a serial sampling of the pure target model.
 
-The system does not require a pre-specified lookahead length $L$, making it easier to analyze than synchronous algorithms like Leviathan et al. (2023). Optimal resource allocation requires $N_T \geq \lceil 1/c \rceil$ (where $c$ is the draft/target compute ratio).
+The system does not require a pre-specified lookahead length $L$, making it easier to analyze than synchronous algorithms (e.g., Leviathan et al. 2023). Optimal resource allocation requires $N_T \geq \lceil 1/c \rceil$, where $c$ is the draft/target time ratio.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Initial state x₀"]
+    subgraph PIPE["Pipeline + Error Correction (EC)"]
+        direction TB
+        B["Draft Model Q (Fast Force Field F̃): Serial ABOBA extrapolation steps yₙ<br/>EC: Patch drafts using historical error ΔFₙ₋ₖ to minimize rejection rate"]
+        C["Target Model Pool: N_T GPUs asynchronously recompute draft steps using expensive force field F"]
+    end
+    subgraph V["Pre/Post-processing Theorem (Reduce full ABOBA to BOB verification)"]
+        direction TB
+        D["(A) Half-step Position"] --> E["Reflection-Maximal Coupling Verification for BOB Momentum<br/>Accept based on Target/Draft likelihood ratio; reject via mirror reflection along equi-likelihood surface"]
+        E --> F["(A) Half-step Position"]
+    end
+    A --> B
+    B --> C
+    C --> D
+    F -->|"Accept xₙ = yₙ"| G["Retain verification sequence {xₙ}<br/>Distribution strictly identical to target serial sampling"]
+    F -->|"Reject: Get new xₙ, flush newer drafts/verifications, restart draft from xₙ"| B
+```
 
 ### Key Designs
 
-1.  **Reflection-Maximal Coupling for BOB Momentum Updates**:
-    *   **Function**: In ABOBA splitting integrators, only the middle (BOB) step is affected by the force field, generating a Gaussian momentum update $\mathcal{N}(\cdot; \langle\mathbf{p}_n\rangle, \boldsymbol{\Sigma})$, where $\boldsymbol{\Sigma}=\mathbf{M} k_B T (1-e^{-2\gamma\Delta t})$ is independent of the force field. The draft and target differ only in their means.
-    *   **Mechanism**: Let $\mathbf{z} = \boldsymbol{\Sigma}^{-1/2}(\tilde{\mathbf{p}}_n - \langle\tilde{\mathbf{p}}_n\rangle)$. Acceptance is decided by the draft/target likelihood ratio $\min\{1, \mathcal{N}(\tilde{\mathbf{p}}_n; \langle\mathbf{p}_n\rangle, \boldsymbol{\Sigma}) / \mathcal{N}(\tilde{\mathbf{p}}_n; \langle\tilde{\mathbf{p}}_n\rangle, \boldsymbol{\Sigma})\}$. If rejected, $\mathbf{z}$ is specularly reflected across the equal-likelihood hyperplane (normal $\boldsymbol{\delta}=\boldsymbol{\Sigma}^{-1/2}(\langle\tilde{\mathbf{p}}_n\rangle - \langle\mathbf{p}_n\rangle)$) and added back to the target mean $\langle\mathbf{p}_n\rangle$. Bou-Rabee et al. (2020) proved this is *maximal coupling*, maximizing $\mathbb{P}(x_n = y_n)$ among all couplings satisfying the target distribution constraint.
-    *   **Design Motivation**: Choosing maximal coupling directly minimizes the rejection rate, which determines the pipeline's effective average acceptance length $\mathbb{E}(L)$. The theoretical rejection rate has a closed form $\beta_n = \mathrm{erf}(\|\boldsymbol{\delta}\|/\sqrt{8})$, allowing analytical modeling of system size, temperature, and friction.
+**1. Reflection-Maximal Coupling for BOB Momentum: Minimizing Rejection via Maximal Coupling**
 
-2.  **Pre/Post-processing Theorem Reducing Full-step ABOBA Verification to BOB**:
-    *   **Function**: A complete ABOBA step is $(A)\cdot(BOB)\cdot(A)$, requiring coupling on $\mathbb{R}^{6N}$. The authors prove coupling on the middle BOB is sufficient.
-    *   **Mechanism**: Thm 3.1 formalizes that "if target and draft distributions can be decomposed as $P = g_* P'(\cdot \mid f(y_{n-1}))$, then a coupling performed on $P', Q'$ followed by deterministic transformations $f$ and $g$ yields a coupling on $P, Q$. If $g$ is invertible, maximality is inherited." By setting $f=g=(A)$, the full-step ABOBA verification reduces to "execute (A) → reflection verification BOB → execute (A)."
-    *   **Design Motivation**: To avoid designing complex couplings on the $6N$-dimensional position-momentum space while ensuring the optimal acceptance rate does not degrade due to position updates. This theorem generalizes LSD to other splitting schemes like OBABO and is compatible with non-invertible post-processing like fixed center-of-mass or constraint projections.
+In the ABOBA splitting integrator, only the middle (BOB) steps are affected by the force field. It produces a Gaussian momentum update $\mathcal{N}(\cdot;\langle\mathbf{p}_n\rangle,\boldsymbol{\Sigma})$, where the covariance $\boldsymbol{\Sigma}=\mathbf{M}k_BT(1-e^{-2\gamma\Delta t})$ is independent of the force field—draft and target differ only in the mean. During verification, let $\mathbf{z}=\boldsymbol{\Sigma}^{-1/2}(\tilde{\mathbf{p}}_n-\langle\tilde{\mathbf{p}}_n\rangle)$. Acceptance is decided by the draft/target likelihood ratio $\min\{1,\mathcal{N}(\tilde{\mathbf{p}}_n;\langle\mathbf{p}_n\rangle,\boldsymbol{\Sigma})/\mathcal{N}(\tilde{\mathbf{p}}_n;\langle\tilde{\mathbf{p}}_n\rangle,\boldsymbol{\Sigma})\}$. If rejected, $\mathbf{z}$ is specularly reflected across the equi-likelihood hyperplane (normal $\boldsymbol{\delta}=\boldsymbol{\Sigma}^{-1/2}(\langle\tilde{\mathbf{p}}_n\rangle-\langle\mathbf{p}_n\rangle)$) and added back to the target mean. Bou-Rabee et al. proved this is maximal coupling—maximizing $\mathbb{P}(x_n=y_n)$ among all couplings satisfying the target distribution. Choosing maximal coupling directly minimizes the rejection rate, which determines the effective average acceptance length of the pipeline. The theoretical rejection rate has a closed form $\beta_n=\mathrm{erf}(\|\boldsymbol{\delta}\|/\sqrt8)$, allowing for analytical analysis of system size, temperature, and friction.
 
-3.  **Pipelining + Speculative Error Correction (EC) Maximizing Throughput and Acceptance**:
-    *   **Function**: Replaces the synchronous "batch verify after $L$ drafts" paradigm with an asynchronous target pool + instant rollback, ensuring the draft GPU never idles, while using historical errors to patch the draft and lower rejection rates.
-    *   **Mechanism**: (a) Pipelining simplifies the speedup upper bound to $\text{speedup} \lesssim 1/(c + \langle\beta\rangle)$, where $c$ is the cost ratio and $\langle\beta\rangle$ is the mean rejection rate. (b) EC assumes the draft-target force error $\Delta\mathbf{F}_{n-k} = \mathbf{F}_{n-k} - \tilde{\mathbf{F}}_{n-k}$ changes slowly, thus replacing the current draft force with $\mathbf{F}_n \approx \tilde{\mathbf{F}}_n + \Delta\mathbf{F}_{n-k}$.
-    *   **Design Motivation**: The authors derive a semi-empirical rejection rate model $\langle\beta\rangle(N, \tau, \Delta t, T) \approx \mathrm{erf}((N\tau\Delta t)^{1/2} T^{-1/2} \varepsilon)$. As atom count $N$ or friction $\tau$ increases, $\langle\beta\rangle$ is pushed toward 1, nullifying acceleration. EC reduces the effective per-atom error constant $\varepsilon$ by converting the draft into a "draft + history" ensemble, lowering rejection rates by up to 75%.
+**2. Pre/Post-processing Theorem: Reducing Full ABOBA Verification to BOB Verification**
+
+A complete ABOBA step is $(A)\cdot(BOB)\cdot(A)$. Designing a coupling directly in the $6N$-dimensional joint position-momentum space is complex and potentially sub-optimal. Thm 3.1 formalizes a reduction: if target and draft distributions can be decomposed as $P=g_*P'(\cdot\mid f(y_{n-1}))$, then coupling on $P', Q'$ followed by deterministic transformations $f$ and $g$ yields a coupling on $P, Q$. If $g$ is reversible, maximality is inherited. By substituting $f=g=(A)$, full-step verification reduces to "Performing (A) → Reflection verification of BOB → Performing (A)." This avoids high-dimensional joint coupling while ensuring the optimal acceptance rate does not degrade due to the additional position updates. The theorem also extends LSD to other splitting schemes like OBABO and remains compatible with non-reversible post-processing such as center-of-mass fixing or constraint projection.
+
+**3. Pipeline + Error Correction (EC): Maximizing Throughput and Minimizing Rejection**
+
+Synchronous "accumulate $L$ drafts then batch verify" schemes leave the draft GPU idle. LSD adopts an asynchronous pool of target instances and immediate rollback upon rejection, keeping the draft GPU running indefinitely. The speedup upper bound simplifies to $\text{speedup}\lesssim1/(c+\langle\beta\rangle)$ (where $c$ is the draft/target time ratio and $\langle\beta\rangle$ is the average rejection rate). However, the semi-empirical rejection rate model $\langle\beta\rangle\approx\mathrm{erf}((N\tau\Delta t)^{1/2}T^{-1/2}\varepsilon)$ shows that as atom count $N$ or friction time $\tau$ increases, $\langle\beta\rangle$ is pushed toward 1 by the erf function, zeroing out speedup. EC assumes the draft-target force error $\Delta\mathbf{F}_{n-k}$ changes slowly physically. It patches the current draft using the error from the most recent verified step $\mathbf{F}_n\approx\tilde{\mathbf{F}_n}+\Delta\mathbf{F}_{n-k}$. This effectively upgrades the draft into a "draft + historical error" combined model, reducing the per-atom error constant $\varepsilon$. Rejection rates drop by up to 75%, making the system viable for high-friction or large-scale scenarios.
 
 ### Loss & Training
-LSD is an *inference-time* algorithm and requires no additional training. The MLIPs used (UMA-S, UMA-M, UMA-tiny-direct, Orb-v3-direct) are off-the-shelf pretrained potentials. Overhead stems mainly from cross-GPU communication and $\mathcal{O}(N)$ matrix-vector operations, which are negligible compared to MLIP force calls.
+LSD is an *inference-time* algorithm and requires no additional training. The MLIPs used (UMA-S, UMA-M, UMA-tiny-direct, Orb-v3-direct) are off-the-shelf pretrained general-purpose potentials. The actual overhead of the pipeline comes primarily from cross-GPU communication and the $\mathcal{O}(N)$ matrix-vector operations of the reflection verification itself, which are negligible compared to a single MLIP force call.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Real speedup ratios for various draft-target combinations on FCC Copper ($T=1500$ K, $\Delta t=1$ fs, $\tau=1$ ps). Targets are UMA-S and UMA-M; drafts include EMT, Orb-v3-direct, and UMA-tiny-direct.
+Real speedup for different draft-target combinations on FCC copper ($T=1500$ K, $\Delta t=1$ fs, $\tau=1$ ps). Target models are UMA-S and the slower UMA-M; draft models include EMT (classical), Orb-v3-direct, and UMA-tiny-direct.
 
-| Draft / Target | Atoms N | Time Ratio c | Mean Rejection ⟨β⟩ | Real Speedup |
+| Draft / Target | Atom Count N | Time Ratio c | Avg Rejection Rate ⟨β⟩ | Real Speedup |
 | :--- | :--- | :--- | :--- | :--- |
 | EMT / UMA-S | 32 | Negligible | ≈0.20 | ≈4.3× |
 | Orb-v3 / UMA-S | 32 | ≈0.18 | ≈0.10 | ≈3.5× |
 | Orb-v3 / UMA-M | 128 | ≈0.08 | ≈0.18 | ≈4× |
 | UMA-tiny / UMA-M | 256 | ≈0.10 | ≈0.10 | ≈6× |
-| UMA-tiny / UMA-M | Large | ≈0.10 | ≈0.07 | Up to 9× |
+| UMA-tiny / UMA-M | Large system | ≈0.10 | ≈0.07 | Up to 9× |
 
-Correctness verification: Bulk water under non-conservative UMA-tiny-direct deviated from 300 K by $42.8 \pm 0.7$ K (excess heating). LSD with UMA-S as target reduced this to $1.1 \pm 0.8$ K, statistically indistinguishable from pure UMA-S ($1.0 \pm 0.9$ K).
+Correctness Verification: In bulk water, the non-conservative UMA-tiny-direct deviates from the set 300 K temperature by $42.8 \pm 0.7$ K (excess heating). The LSD combination with UMA-S as the target suppresses this deviation to $1.1 \pm 0.8$ K, statistically indistinguishable from the $1.0 \pm 0.9$ K of pure UMA-S.
 
 ### Ablation Study
 
-Comparison of rejection rates for Copper under high friction $\tau=1$ ps and different atom counts:
+Comparison of rejection rates for a copper system under high friction $\tau=1$ ps at different atom counts:
 
-| Configuration | N=32 | N=500 | N=2048 | Remarks |
+| Config | N=32 | N=500 | N=2048 | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| Naive LSD | 0.08 | 0.35 | ≈0.85 | Matches erf prediction; almost total rejection at large N |
-| LSD + EC | 0.02 | 0.10 | 0.30 | Rejection rate reduced by up to 75% |
-| Theoretical $\mathrm{erf}((N\tau\Delta t)^{1/2}T^{-1/2}\varepsilon)$ | 0.08 | 0.35 | 0.84 | Highly consistent with Naive LSD |
+| Naive LSD | 0.08 | 0.35 | ≈0.85 | Consistent with erf formula; large N leads to near total rejection |
+| LSD + EC | 0.02 | 0.10 | 0.30 | Rejection rate falls by up to 75% after historical error substitution |
+| Theoretical $\mathrm{erf}((N\tau\Delta t)^{1/2}T^{-1/2}\varepsilon)$ | 0.08 | 0.35 | 0.84 | Highly consistent with Naive LSD measurements |
 
-LGPS Lithium-ion diffusivity: The Arrhenius fit slopes and 95% CI for UMA-S and LSD overlap perfectly across 650–1400 K. In high-dimensional MMD tests, LSD vs. UMA-S MMD is on par with UMA-S internal variance, while standalone Orb shows significantly larger MMD.
+LGPS Lithium-Ion Diffusivity: The Arrhenius fit slopes and 95% CI for the UMA-S and LSD combination overlap completely in the 650–1400 K range. In high-dimensional MMD tests, the MMD of LSD vs. UMA-S is of the same order as the MMD between different random seeds of UMA-S, whereas Orb used alone shows a significantly larger MMD.
 
 ### Key Findings
-- **Speedup is entirely determined by $1/(c+\langle\beta\rangle)$**: Plotting all combinations on the $(c, \langle\beta\rangle)$ plane shows measured speedups align perfectly with theoretical contours. The saturation point depends on whichever is larger between $c$ and $\langle\beta\rangle$, necessitating a balanced draft choice.
-- **Graph Parallelism vs. LSD Crossover**: For UMA-S, LSD is an order of magnitude faster than spatial graph parallelism at small $N$. GP takes over when $N > 10^3$ as LSD's rejection rate hits the erf ceiling. The two are orthogonal and combinable.
-- **EC is a "Lifeline" for High Friction/Large Systems**: Without EC, simulations fail at a few hundred atoms when $\tau=1$ ps. EC extends the usability window to $\sim 2000$ atoms.
+- **Speedup is entirely determined by $1/(c+\langle\beta\rangle)$**: The authors plot all (Draft, Target, N) combinations on the $(c, \langle\beta\rangle)$ plane; measured speedups closely fit the theoretical contours. The saturation point of improvement depends on whichever is larger, $c$ or $\langle\beta\rangle$, providing an engineering guideline for balancing draft selection.
+- **Crossover Point of Graph Parallelism vs. LSD**: For UMA-S, LSD is an order of magnitude faster than spatial graph parallelism for small atom counts. Once $N$ exceeds approximately $10^3$, GP overtakes LSD as the latter's rejection rate is pushed to its upper limit. The two are orthogonal and can be combined.
+- **EC is the "lifeline" for high-friction/large systems**: Without EC, $\tau=1$ ps crashes at a few hundred atoms; EC pushes the usability window to $\sim 2000$ atoms.
 
 ## Highlights & Insights
-- **First work on second-order Langevin speculative sampling**: While De Bortoli et al. (2025) applied it to first-order Langevin for diffusion, this work extends it to the second-order SDE required for MD and completes the coupling analysis for splitting schemes like ABOBA/OBABO.
-- **Thm 3.1 "Reversible transformation inherits maximality" as a transferable tool**: Any scenario splitting a transition kernel into "fixed preprocessing → coupling block → invertible post-processing" (e.g., token generation with norm layers, conditioned diffusion) can apply this pattern to avoid designing couplings in full state space.
-- **Physical intuition of $\mathrm{erf}((N\tau\Delta t/T)^{1/2}\varepsilon)$**: Explains why large systems/steps cause failure—fundamentally the Mahalanobis distance between two Gaussian means. This provides a budget tool for draft selection and parameter scheduling.
-- **EC as "Online Model Distillation"**: Treating historical target-draft differences as a stale residual cache could migrate to LLM speculative decoding, using logit residuals from accepted tokens to calibrate draft logits.
+- **First work on speculative sampling for second-order Langevin**: While De Bortoli et al. (2025) generalized speculative sampling to first-order Langevin for diffusion sampling, this work extends it to the second-order SDE required for MD. It completes the coupling analysis for splitting schemes like ABOBA/OBABO, acting as a bridge between "speculative sampling × physical simulation."
+- **Theorem 3.1's "inherited maximality under reversible pre/post-transformations" is a transferable tool**: Any scenario that splits a transition kernel into "fixed preprocessing → coupling block → reversible post-processing" (e.g., token generation with normalization layers, diffusion with conditional normalization) can utilize this pattern to avoid designing coupling in full state spaces.
+- **The physical intuition of the semi-empirical rejection rate formula $\mathrm{erf}((N\tau\Delta t/T)^{1/2}\varepsilon)$ is strong**: It explains why large systems or long steps cause spec-sampling failure—it is essentially the "Mahalanobis distance between two Gaussian means." This provides a budget tool for draft selection and parameter scheduling that is extrinsically predictable from a single experiment.
+- **EC as a form of "online model distillation"**: Using historical target-draft differences as a stale residual cache could be transferred back to LLM speculative decoding, where logit residuals from recently accepted tokens calibrate draft logits.
 
 ## Limitations & Future Work
-- **The $N\tau\Delta t$ wall in rejection rate**: Rejection rate dominates for $N > \mathcal{O}(10^3)$, collapsing acceleration. Future work needs target→draft online distillation to push back this wall for large systems like proteins.
-- **Requirement for sufficient parallel compute**: Optimality requires $\lceil 1/c \rceil$ target GPUs to be always online, which is difficult on single-card machines or clusters with tight quotas.
-- **Coupling assumes shared integrator and thermostat parameters**: Draft and target must share $\gamma, \Delta t, \boldsymbol{\Sigma}$, preventing LSD from using larger draft time steps.
-- **EC physical assumptions may drift**: "Historical error approximates current error" may fail during phase transitions or chemical reactions. The paper lacks diagnostic metrics for these non-stationary scenarios.
+- **The $N\tau\Delta t$ in the erf rejection rate is a "hard wall"**: The authors honestly note that for $N > \mathcal{O}(10^3)$, the rejection rate dominates and acceleration collapses, which is unfriendly toward large systems like proteins. Future target→draft online distillation or specialized drafts are needed to push back this wall.
+- **Dependency on sufficient parallel computing resources**: The pipeline optimally requires $\lceil 1/c \rceil$ target GPUs to be always online. Significant speedups may be unattainable on single-card machines or clusters with tight quotas.
+- **Coupling assumptions require shared integrator/thermostat parameters**: Draft and target must share the same $\gamma, \Delta t, \boldsymbol{\Sigma}$. Consequently, LSD cannot use larger draft steps to increase draft speed, as this would lock the $\Delta t$ in the rejection rate formula.
+- **Physical assumption drift in EC**: Historical error approximations may fail during phase transitions, chemical reactions, or long-range slow structural changes. No diagnostic indicators are provided for such non-stationary scenarios.
+- **Future Directions**: (a) Adaptive EC, using small GNNs to fit $\Delta\mathbf{F}_{n-k}$ online instead of direct reuse; (b) Multi-level drafts (draft-of-draft) to further compress $c$; (c) Combining domain decomposition + LSD for long-range interaction systems to leverage both spatial and temporal parallelism.
 
 ## Related Work & Insights
-- **vs. De Bortoli et al. (2025) First-order Langevin Speculative Diffusion**: They use speculative sampling for Euler-Maruyama SDEs in diffusion. This work proves second-order ABOBA requires the pre/post-processing theorem and derives analytical dependence on MD parameters.
-- **vs. Leviathan / Chen et al. (2023) LLM Speculative Decoding**: LLMs use synchronous lookahead $L$ and token-level likelihood ratios. LSD uses asynchronous pipelining + reflection-maximal coupling on $\mathbb{R}^{6N}$. The acceleration formula $1/(c+\beta)$ is a cross-modal constant.
-- **vs. Hybrid Monte Carlo (Duane et al., 1987) / Nagai et al. (2020)**: HMC uses Metropolis-Hastings on energy, requiring potentials to provide Hamiltonians. LSD uses forces only, allows non-conservative draft MLIPs, and guarantees the product distribution of the target kernel rather than just asymptotic Boltzmann.
-- **vs. FlashMD / Large-step extrapolation**: Those are lossy and require hyperparameter tuning. LSD is lossless and complementary (FlashMD could serve as a draft).
+- **vs. De Bortoli et al. (2025) First-order Langevin Speculative Diffusion**: They use speculative sampling for Euler-Maruyama first-order SDEs in diffusion models. Ours proves that second-order ABOBA requires additional pre/post-processing theorems for optimization and derives analytical dependencies of rejection rates on MD physical parameters, yielding more engineerable conclusions.
+- **vs. Leviathan / Chen et al. (2023) LLM Speculative Decoding**: LLMs use synchronous lookahead $L$ and token-level likelihood ratios. LSD uses an asynchronous pipeline + reflection-maximal coupling in a continuous $\mathbb{R}^{6N}$ state space. Although the analysis frameworks differ, the speedup formula form $1/(c+\beta)$ is similar, suggesting that the "speedup upper bound depends only on draft/target time ratio and divergence" is a cross-modal law.
+- **vs. Hybrid Monte Carlo (Duane et al., 1987) / Nagai et al. (2020) DFT-MLIP HMC**: HMC utilizes Metropolis-Hastings on energy, requiring a potential that provides a Hamiltonian. LSD only requires forces, allowing non-conservative MLIPs as drafts and guaranteeing the "target transition kernel product distribution" rather than asymptotic Boltzmann, which is more engineering-flexible.
+- **vs. FlashMD / Long-step Extrapolation (Bigi et al., 2025; Klein et al., 2023)**: Those methods are lossy and require hyperparameters. LSD provides lossless acceleration, and the two can be stacked (using FlashMD as a draft for a slow MLIP target).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First rigorous extension to second-order Langevin MD with closed-form rejection analysis.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covered thermodynamics, kinetics, and high-dimensional distributions across three systems, though lacking large biomolecules.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations; appendix covers OBABO and optimization well.
-- Value: ⭐⭐⭐⭐⭐ Provides a "free" acceleration path for MLIP MD and will likely trigger a wave of "specialized draft model" research.
+- Novelty: ⭐⭐⭐⭐⭐ First rigorous extension of speculative sampling to second-order Langevin MD with a closed-form rejection rate.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers thermodynamics, kinetics, and high-dimensional distributions across three systems (Cu, water, LGPS), though lacks large biomolecules.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mathematical derivations; appendix complements OBABO consistency and optimizations well. High reproducibility.
+- Value: ⭐⭐⭐⭐⭐ Provides a "free" acceleration path for MLIP MD and is likely to spark a wave of research into "specialized draft models."
 
 <!-- RELATED:START -->
 
@@ -138,19 +151,8 @@ LGPS Lithium-ion diffusivity: The Arrhenius fit slopes and 95% CI for UMA-S and 
 - [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
 - [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](../../NeurIPS2025/physics/flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
+- [\[CVPR 2026\] Δynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](../../CVPR2026/physics/δynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)
 - [\[NeurIPS 2025\] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](../../NeurIPS2025/physics/adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/physics/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
-- [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/physics/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
-- [\[ICML 2026\] Score-Based Error Correcting Code Decoder](score_based_error_correcting_code_decoder.md)
-- [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
 
 </div>
 

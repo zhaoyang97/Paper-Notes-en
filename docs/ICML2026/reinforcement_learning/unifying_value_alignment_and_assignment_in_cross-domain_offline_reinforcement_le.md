@@ -1,19 +1,14 @@
 ---
 title: >-
-  [Paper Note] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning
+  [Paper Note] 跨域离线强化学习中统一值对齐与值分配
 description: >-
-  [ICML 2026][Reinforcement Learning][Offline Reinforcement Learning] This paper reveals the "value misassignment" problem in heterogeneous cross-domain offline RL settings—where source data comes from multiple domains and…
+  [ICML 2026][Reinforcement Learning][Paper Note] This paper reveals the "value misassignment" problem under heterogeneous cross-domain offline RL settings—where source data originates from multiple domains and policies, leading to inaccurate advantage evaluations that cause data filtering failure. The proposed V2A framework addresses value alignment and assignment is
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Offline Reinforcement Learning"
-  - "Cross-Domain Transfer"
-  - "Value Alignment"
-  - "Heterogeneous Datasets"
+  - ICML 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: d91adf1fd8639a50
+content_hash: a3805d8a000e8db4
 ---
-
 # Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -23,46 +18,50 @@ content_hash: d91adf1fd8639a50
 **Keywords**: Offline Reinforcement Learning, Cross-Domain Transfer, Value Alignment, Heterogeneous Datasets
 
 ## TL;DR
-This paper reveals the "value misassignment" problem in heterogeneous cross-domain offline RL settings—where source data comes from multiple domains and policies, inaccurate advantage function estimation leads to the failure of data filtering. The proposed V2A framework addresses value alignment and assignment in a unified manner through temporally consistent modality representation learning and modality-aware advantage learning, improving performance by 21.4% over DVDF.
+This paper reveals the "value misassignment" problem under heterogeneous cross-domain offline RL settings—where source data originates from multiple domains and policies, leading to inaccurate advantage evaluations that cause data filtering failure. The proposed V2A framework addresses value alignment and assignment issues through time-consistent modal representation learning and modal-aware advantage learning, outperforming DVDF by 21.4%.
 
 ## Background & Motivation
 
-**Background**: Cross-domain offline RL addresses data scarcity by combining sufficient source domain data with limited target domain data. Recent methods perform data filtering from the perspectives of dynamics alignment (IGDF/OTDF) or value alignment (DVDF).
+**Background**: Cross-domain offline RL addresses data scarcity by combining abundant source domain data with limited target domain data. Recent methods filter data through dynamics alignment (IGDF/OTDF) or value alignment (DVDF).
 
-**Limitations of Prior Work**: Existing methods assume source data originates from a single environment and single policy (unimodal). However, in real-world scenarios (e.g., robotics), source data often comprises multiple source domains and diverse behavioral policies (multimodal mixture), where existing methods suffer significant performance degradation.
+**Limitations of Prior Work**: These methods assume source data originates from a single environment and a single policy (unimodal). However, in practical scenarios (e.g., robotics), source data often comes from multiple source domains and behavior policies (multimodal mixtures), significantly degrading the performance of existing methods.
 
-**Key Challenge**: When source data is heterogeneous, DVDF uses a global advantage function $A_{\text{insrc}}^{\star}(s,a)$ to evaluate sample quality across sub-datasets. However, the same advantage value represents different relative qualities under different dynamics, leading to "value misassignment"—erroneously scoring low-quality samples as high-quality.
+**Key Challenge**: With heterogeneous source data, DVDF uses a global advantage function $A_{\text{insrc}}^{\star}(s,a)$ to evaluate sample quality across sub-datasets. However, the same advantage value represents different relative qualities under different dynamics, leading to "value misassignment"—incorrectly rating low-quality samples as high-quality.
 
-**Goal**: In the heterogeneous cross-domain offline RL setting, the objective is to align dynamics, align values, and correctly assign values simultaneously.
+**Goal**: In the heterogeneous cross-domain offline RL setting, the objective is to align dynamics, align values, and ensure correct value assignment simultaneously.
 
-**Key Insight**: The critical insight is to differentiate distinct dynamics modalities within the source data through clustering and learn separate advantage functions for each modality to ensure accurate value estimation.
+**Key Insight**: The key insight is to distinguish different dynamics modes in source data through clustering and learn separate advantage functions for each mode to ensure accurate value evaluation.
 
-**Core Idea**: An end-to-end V2A framework is developed using EM methods to learn temporally consistent modality representations, followed by modality-aware advantage learning and subsequent data filtering.
+**Core Idea**: Use an EM approach to learn time-consistent modal representations, followed by modal-aware advantage learning and data filtering—forming the end-to-end V2A framework.
 
 ## Method
 
 ### Overall Architecture
-V2A consists of three stages: (1) extracting dynamics modalities from source data; (2) relabeling data based on modalities and learning accurate advantage functions; (3) filtering source samples using modality-aware scores.
+V2A consists of three stages—(1) Extracting dynamics modes from source data; (2) Relabeling data based on modes and learning accurate advantage functions; (3) Filtering source samples using modal-aware scoring.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Heterogeneous source dataset<br/>Multiple source domains × Multiple behavior policies"] --> B["Time-consistent modal representation learning<br/>EM: Trajectory-level encoding → Transition-level decoding<br/>Entire trajectory shares mode z"]
+    B --> C["Modal-aware advantage learning<br/>Relabel data by z, Sparse-QL learns Q(s,a,z), V(s,z)<br/>A(s,a,z)=Q−V"]
+    C --> D["Modal-aware data filtering<br/>f=λ·h(Dynamics alignment)+(1−λ)·Norm(A)<br/>Select top ξ quantile"]
+    T["Small target domain data"] --> D
+    D --> E["Filtered source samples ∪ Target data<br/>Train target domain policy"]
+```
 
 ### Key Designs
 
-1. **Temporally Consistent Modality Representation Learning**:
+**1. Time-consistent modal representation learning: Extracting latent dynamics mode $z$ for each trajectory from heterogeneous source data.**
 
-    - **Function**: Extracts a latent dynamics modality representation $z$ for each trajectory from heterogeneous source data.
-    - **Mechanism**: Standard ELBO encodes $z$ separately for each transition in the same trajectory, causing temporal inconsistency. V2A improves this with trajectory-level encoding and transition-level decoding, optimized alternatingly via EM—the E-step fixes the decoder to optimize the encoder, and the M-step fixes the encoder to optimize the decoder. The loss is $\mathsf{TC\text{-}ELBO} = \mathbb{E}_{\tau,z}[\sum_t \log p_\theta(s_{t+1}|s_t,a_t,z) - D_{KL}(q_\psi(\cdot|\tau),p(\cdot))]$.
-    - **Design Motivation**: Ensures all transitions within the same trajectory share a single $z$ reflecting a unified dynamics environment, preventing modality identification failure due to random fluctuations.
+Source data mixes multiple domains and behavior policies. Correct value assignment requires identifying which dynamics mode each trajectory belongs to. Standard ELBO encodes $z$ for each transition independently, causing $z$ to fluctuate randomly within a trajectory, leading to inconsistent mode identification. V2A adopts trajectory-level encoding and transition-level decoding with EM alternating optimization. In the E-step, the encoder is optimized while fixing the decoder; in the M-step, the decoder is optimized while fixing the encoder. The loss is $\mathsf{TC\text{-}ELBO} = \mathbb{E}_{\tau,z}[\sum_t \log p_\theta(s_{t+1}|s_t,a_t,z) - D_{KL}(q_\psi(\cdot|\tau),p(\cdot))]$. This ensures an entire trajectory shares a single $z$ reflecting a unified dynamics environment, preventing trajectories from the same domain from being fragmented.
 
-2. **Modality-aware Advantage Learning**:
+**2. Modal-aware advantage learning: Scoring each dynamics mode separately to rectify DVDF's "value misassignment".**
 
-    - **Function**: Trains modality-conditional advantage functions $A(s,a,z)$ using relabeled data based on the learned modality representations.
-    - **Mechanism**: Modality $z$ is input into Q and V functions. Sparse-QL is used to learn $Q(s,a,z)$ and $V(s,z)$, defining the advantage as $A(s,a,z) = Q(s,a,z) - V(s,z)$. The same $(s,a)$ pair receives different advantage values under different modalities, accurately reflecting relative quality.
-    - **Design Motivation**: Corrects the fundamental flaw of DVDF—where a global advantage function cannot distinguish modality differences; the modality-aware version "scores" each dynamics environment individually.
+DVDF evaluates sample quality across all sub-datasets using a single global advantage function $A_{\text{insrc}}^{\star}(s,a)$. However, the relative quality represented by the same advantage value differs across dynamics, leading to the misclassification of low-quality samples as high-quality. V2A feeds the learned mode $z$ directly into Q and V functions, using Sparse-QL to learn $Q(s,a,z)$ and $V(s,z)$, defining the advantage as $A(s,a,z) = Q(s,a,z) - V(s,z)$. This allows the same $(s,a)$ pair to receive different advantage values under different modes, accurately reflecting relative quality within their respective dynamics environments and eliminating the global advantage's inability to distinguish modal differences.
 
-3. **Modality-aware Data Filtering**:
+**3. Modal-aware data filtering: Selecting source samples that are both dynamics-aligned and high-quality.**
 
-    - **Function**: Performs data filtering based on modality-aware scores, selecting source samples in the top $\xi$ quantile.
-    - **Mechanism**: The score $f(s,a,s',z) = \lambda \cdot h(s,a,s') + (1-\lambda) \cdot \text{Norm}(A(s,a,z))$ integrates dynamics alignment $h$ and modality-aware advantage $A$, with the weight $\lambda$ (fixed at 0.6 in experiments).
-    - **Design Motivation**: Guarantees that selected samples are both dynamics-consistent with the target and high in quality; modality awareness prevents the filtering process from being "deceived."
+Dynamics alignment alone is insufficient; quality must also be guaranteed. The filtering score combines both factors: $f(s,a,s',z) = \lambda \cdot h(s,a,s') + (1-\lambda) \cdot \text{Norm}(A(s,a,z))$, where $h$ represents dynamics alignment and $A$ denotes modal-aware advantage. The weight $\lambda$ is fixed at 0.6 in experiments, and samples in the top $\xi$ quantile are selected. If $\lambda$ is too small, dynamics alignment is ignored; if too large, quality variance is neglected. With modal awareness, filtering is no longer deceived by samples "overestimated under the wrong mode."
 
 ## Key Experimental Results
 
@@ -73,37 +72,37 @@ V2A consists of three stages: (1) extracting dynamics modalities from source dat
 | Total Score | 1286.7 | 1374.7 | **1562.5** | 1319.5 | 1395.9 | **1612.9** |
 | Gain | — | +6.8% | +21.4% | — | +5.5% | +22.2% |
 
-Tests were conducted across 4 tasks (HalfCheetah / Hopper / Walker2d / Ant) × 6 source-target combinations. V2A outperformed IGDF in 20/24 tasks and OTDF in 21/24 tasks.
+Tested on 4 tasks (HalfCheetah / Hopper / Walker2d / Ant) × 6 source-target combinations. V2A outperformed IGDF in 20/24 tasks and OTDF in 21/24 tasks.
 
 ### Ablation Study
 
-| Analysis Dimension | Result | Explanation |
+| Analysis Dimension | Result | Description |
 |---------|------|------|
-| Modality Quality | Fig 2(a) t-SNE | Trajectories from the same source domain cluster tightly, while different shift types are separated. |
-| Advantage Distribution | Fig 2(b) Density | V2A advantage distribution is sharper; the flat distribution of DVDF indicates misestimated sample quality. |
-| Hyperparameter $\lambda$ | Fig 3(a) | $\lambda=0.6$ is optimal; too small ignores dynamics alignment, too large ignores quality differences. |
-| Selection Ratio $\xi$ | Fig 3(b) | $\xi \in [0.5, 0.75]$ performs well; performance drops if too small or too large. |
+| Modal Representation Quality | Fig 2(a) t-SNE | Trajectories from the same source domain cluster tightly; different shift types are separated. |
+| Advantage Distribution | Fig 2(b) Density | V2A advantage distribution is sharper; DVDF's flat distribution indicates misestimated sample quality. |
+| Hyperparameter $\lambda$ | Fig 3(a) | $\lambda=0.6$ is optimal; too small ignores dynamics alignment, too large ignores quality. |
+| Data Selection Ratio $\xi$ | Fig 3(b) | $\xi \in [0.5, 0.75]$ is preferred; both extremes degrade performance. |
 
 ## Highlights & Insights
-- **Precise Problem Definition**: Value misassignment is a genuine issue in multimodal heterogeneous data, formally characterized by Definition 4.6 in the paper.
-- **Concise Framework Design**: Each of the three modules serves a specific purpose—EM for representation, modality-conditional advantage, and data filtering.
-- **Strong Experimental Evidence**: Motivating experiments intuitively demonstrate the failure of DVDF; qualitative analysis (modality visualization, advantage distribution) verifies the internal logic.
+- **Precise Problem Definition**: Value misassignment is a genuine issue in multimodal heterogeneous data, formally characterized by Definition 4.6.
+- **Concise Method Design**: The framework uses three modules with distinct roles—EM for representation learning, modal-conditional advantages, and joint data filtering.
+- **Strong Experimental Evidence**: Motivational experiments intuitively demonstrate DVDF's failure; qualitative analysis (modal visualization, advantage distribution) validates the internal logic.
 
 ## Limitations & Future Work
-- Computational Cost: Iterative EM learning for modality representations increases training overhead.
+- Computational Cost: Iterative EM learning for modal representation increases training overhead.
 - Theoretical Assumptions: Suboptimality bounds depend on "mild assumptions" that might not hold in highly non-stationary environments.
-- Dynamics-centric Heterogeneity: The paper focuses on dynamics shifts but does not explore other source-specific differences like rewards or initial distributions.
+- Dynamics-centric Heterogeneity: The paper focuses on dynamics shifts but does not explore other source-specific discrepancies like rewards or initial distributions.
 
 ## Related Work & Insights
-- **vs. DVDF**: Both consider value alignment, but DVDF uses a global advantage function while V2A incorporates modality decomposition.
-- **vs. IGDF/OTDF**: The former two only consider dynamics alignment, whereas V2A additionally accounts for quality.
-- **Insights**: The modality decomposition approach can be generalized to other multi-source transfer tasks (e.g., multi-source domain adaptation).
+- **vs. DVDF**: Both consider value alignment, but DVDF uses a global advantage function whereas V2A incorporates modal decomposition.
+- **vs. IGDF/OTDF**: The former only consider dynamics alignment, while V2A additionally incorporates quality considerations.
+- **Insight**: The modal decomposition approach can be generalized to other multi-source transfer tasks, such as multi-source domain adaptation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Heterogeneous data setting is a significant gap; the value misassignment problem is identified for the first time.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Systematic task design plus comprehensive ablation and visualization analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic with powerful motivating examples.
-- Value: ⭐⭐⭐⭐⭐ Addresses practical challenges in offline RL; the framework is generalizable and can be integrated with multiple base algorithms.
+- Novelty: ⭐⭐⭐⭐⭐ The heterogeneous data setting is a significant gap, and the value misassignment problem is identified for the first time.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Systematic task design combined with comprehensive ablation and visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic with compelling motivational examples.
+- Value: ⭐⭐⭐⭐⭐ Resolves practical challenges in offline RL; the framework is general and can combine with various base algorithms.
 
 <!-- RELATED:START -->
 
@@ -112,10 +111,10 @@ Tests were conducted across 4 tasks (HalfCheetah / Hopper / Walker2d / Ant) × 6
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](../../ICLR2026/reinforcement_learning/dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
-- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
-- [\[ICML 2026\] Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning](hista_and_numca_estimate_state_value_effectively_for_llm_reinforcement_learning.md)
-- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](../../ICLR2026/reinforcement_learning/less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
+- [\[ICML 2026\] 视觉工具使用强化学习究竟学到了什么？](what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
+- [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
+- [\[ICML 2026\] Probing RLVR Training Instability through the Lens of Objective-Level Hacking](probing_rlvr_training_instability_through_the_lens_of_objective-level_hacking.md)
+- [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
 
 </div>
 

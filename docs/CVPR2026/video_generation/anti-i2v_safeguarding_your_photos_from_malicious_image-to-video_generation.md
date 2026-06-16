@@ -2,87 +2,93 @@
 title: >-
   [Paper Note] Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 description: >-
-  [CVPR 2026][Video Generation][Adversarial Attack] Anti-I2V proposes a defense method against malicious image-to-video generation. By optimizing perturbations in both L\*a\*b\* color space and the frequency domain…
+  [CVPR 2026][Video Generation][Paper Note] Anti-I2V proposes a defense method against malicious image-to-video generation by optimizing perturbations in the L\*a\*b\* and frequency dual-spaces and designing Internal Representation Collapse (IRC) and Anchoring (IRA) losses to disrupt semantic feature propagation in denoising networks, achieving SOTA protection a
 tags:
-  - "CVPR 2026"
-  - "Video Generation"
-  - "Adversarial Attack"
-  - "Video Diffusion Models"
-  - "Image Protection"
-  - "Dual-Space Perturbation"
-  - "Deep Feature Collapse"
+  - CVPR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 64181637317e10c6
+content_hash: bdf5bce541b93599
 ---
-
 # Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24570](https://arxiv.org/abs/2603.24570)  
 **Code**: None  
-**Area**: Video Generation
-**Keywords**: Adversarial Attack, Video Diffusion Models, Image Protection, Dual-Space Perturbation, Deep Feature Collapse
+**Area**: Video Generation  
+**Keywords**: Adversarial Attack, Video Diffusion Model, Image Protection, Dual-space Perturbation, Deep Feature Collapse
 
 ## TL;DR
-Anti-I2V proposes a defense method against malicious image-to-video generation. By optimizing perturbations in both L\*a\*b\* color space and the frequency domain, and designing Internal Representation Collapse (IRC) and Anchor (IRA) losses to disrupt semantic feature propagation within the denoising network, the method achieves state-of-the-art protection across three architecturally distinct models: CogVideoX, DynamiCrafter, and Open-Sora.
+Anti-I2V proposes a defense method against malicious image-to-video generation by optimizing perturbations in the L\*a\*b\* and frequency dual-spaces and designing Internal Representation Collapse (IRC) and Anchoring (IRA) losses to disrupt semantic feature propagation in denoising networks, achieving SOTA protection across CogVideoX, DynamiCrafter, and Open-Sora.
 
 ## Background & Motivation
-**Background**: Video diffusion models (VDMs) are advancing rapidly. Models such as CogVideoX and Open-Sora can generate realistic videos from a single image and a text prompt, introducing severe risks of deepfake misuse.
+**Background**: Video Diffusion Models (VDMs) are evolving rapidly. Models like CogVideoX and Open-Sora can generate realistic videos from a single photo and text, posing a serious risk of deepfake abuse.
 
 **Limitations of Prior Work**:
-   - Existing defenses primarily target text-to-image generation or specific architectures (e.g., SVD), with limited validation on large-scale DiT/MMDiT models;
-   - RGB-space perturbations are easily eliminated during multi-step denoising, resulting in insufficient robustness;
-   - Most methods only attack the final output (VAE encoding or the tail of the denoising network), neglecting intermediate feature propagation.
+   - Existing defenses mainly target text-to-image generation or specific architectures (e.g., SVD); effectiveness on large DiT/MMDiT architectures remains unverified.
+   - RGB space perturbations are easily eliminated during the denoising process, leading to insufficient robustness.
+   - Most methods only attack the final output (VAE encoding or the end of the denoising network), ignoring intermediate feature propagation.
 
-**Key Challenge**: VDMs possess larger capacity and stronger temporal modeling; conventional perturbation strategies struggle to effectively interfere with them—necessitating deeper disruption strategies.
+**Key Challenge**: Since VDMs have larger capacities and stronger temporal modeling, traditional perturbation methods fail to provide effective interference—how can one design deeper interference strategies?
 
-**Key Insight**: A two-pronged approach—optimizing perturbations in a more robust non-RGB space, while identifying semantically rich layers within the network and selectively disrupting their feature propagation.
+**Key Insight**: A two-pronged approach—optimizing perturbations in more robust non-RGB spaces and identifying semantic-rich layers within the network to specifically disrupt feature propagation.
 
-**Core Idea**: L\*a\*b\* + frequency-domain dual-space perturbation + deep-to-shallow feature collapse + cross-layer semantic anchoring = effective attack against large-scale VDMs.
+**Core Idea**: L\*a\*b\* + frequency domain dual-space perturbation + deep-to-shallow feature collapse + cross-layer semantic anchoring = effective attack against large-scale VDMs.
 
 ## Method
 
 ### Overall Architecture
-Input image $x$ → caption generation via LVLM → reference video → dual-space perturbation optimization (L\*a\*b\* + DCT) → IRC and IRA losses + diffusion loss + auxiliary loss → output protected image $x_\xi$, causing severe degradation of VDM-generated video quality.
+Anti-I2V aims to add a protective perturbation to an image $x$ that is nearly imperceptible to the human eye but causes image-to-video models to fail. The pipeline revolves around the image $x$: first, an LVLM generates a caption and a reference video to fulfill the conditional input requirements for VDM inference. Then, the core perturbation optimization loop begins—instead of modifying RGB pixels directly, it iteratively updates noise in the L\*a\*b\* color space and the DCT frequency domain. The optimization objective is driven by two types of internal losses: IRC degrades semantic features from the deep layers of the denoising network to shallow layers, while IRA actively pulls these features toward an unrelated image. When combined with auxiliary CLIP/LPIPS losses and a negative diffusion loss, the perturbation is projected back to RGB to obtain the protected image $x_\xi$. Photos produced this way appear virtually unchanged to the eye but generate severely degraded videos when fed into models like CogVideoX, DynamiCrafter, or Open-Sora.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Protected Image x"] --> COND["LVLM generates caption + reference video<br/>Fill VDM conditional inputs"]
+    COND --> DSP["Dual-Space Perturbation DSP<br/>L*a*b* chrominance + DCT low-freq perturbation"]
+    DSP --> DENOISE["Feed into denoising network ε_θ<br/>Extract layer-wise features"]
+    DENOISE --> IRC["Internal Representation Collapse IRC<br/>Align last 3 layers to layer 3 whiteboard"]
+    DENOISE --> IRA["Internal Representation Anchoring IRA<br/>Pull features toward unrelated image z_ψ"]
+    IRC --> LOSS["Total Loss<br/>IRC + IRA + auxiliary CLIP/LPIPS − Diffusion Loss"]
+    IRA --> LOSS
+    LOSS -->|PGD backward update| DSP
+    LOSS --> PROJ["Project back to RGB and constrain within Δ_RGB<br/>Obtain protected image x_ξ"]
+    PROJ --> OUT["Feed to CogVideoX / DynamiCrafter / Open-Sora<br/>Generate degraded video"]
+```
 
 ### Key Designs
-1. **Dual-Space Perturbation (DSP)**:
 
-    - **Function**: Optimizes adversarial noise in two non-RGB spaces: the L\*a\*b\* color space and the DCT frequency domain.
-    - **Mechanism**:
-        - L\*a\*b\* stage: Only the $a^*$ and $b^*$ channels (chrominance) are perturbed, leaving the $L^*$ luminance channel intact, making perturbations less perceptible to human observers.
-        - DCT stage: Noise is injected into low-frequency DCT coefficients (which encode structural and textural information), disrupting deeper representations via frequency-domain perturbation.
-        - The two stages alternate updates, with the final perturbation projected within the $\Delta_{RGB}$ constraint in RGB space.
-    - **Design Motivation**: Pixel-level RGB perturbations are prone to being "washed away" during multi-step denoising. L\*a\*b\* is more perceptually uniform; low-frequency DCT coefficients correspond to core image structure, yielding more persistent perturbation effects.
+**1. Dual-Space Perturbation (DSP): Preventing perturbation removal by denoising**
 
-2. **Internal Representation Collapse (IRC)**:
+RGB pixel-level adversarial noise suffers from a weakness: the multi-step denoising of diffusion models acts as a denoiser itself, easily smoothing out high-frequency per-pixel noise during sampling. Anti-I2V addresses this by operating in more robust spaces. The L\*a\*b\* stage modifies only the chrominance channels $a^*$ and $b^*$ while leaving lightness $L^*$ untouched. Because L\*a\*b\* is more perceptually uniform, chrominance perturbations are less visible to humans and avoid attenuation by lightness-focused denoising. The DCT stage injects noise into low-frequency coefficients, which carry structural and textural "skeleton" information. Perturbing these is more persistent than perturbing high-frequency details and better affects deep network representations.
 
-    - **Function**: Forces deep (semantically rich) layer features to degenerate toward shallow (low-semantic) layer features.
-    - **Mechanism**:
-        - PCA visualization reveals that high-level semantic features emerge after layer 19 in Open-Sora and after layer 27 in CogVideoX, while layer 3 exhibits almost no semantics.
-        - Loss: $\mathcal{L}_{IRC}^{i,j} = \mathbb{E}\|\epsilon_\theta^j(z_t, z_\xi, t, y) - \epsilon_\theta^i(z_t, z_\xi, t, y)\|_2^2$
-        - Features from the last 3 layers are aligned to those of layer 3.
-    - **Design Motivation**: By collapsing deep semantic features, the denoising process loses the ability to reconstruct meaningful structure; the effect cascades to all frames via the attention mechanism.
+**2. Internal Representation Collapse (IRC): Forcing deep semantics back to a shallow "whiteboard" state**
 
-3. **Internal Representation Anchor (IRA)**:
+Most existing defenses only attack final outputs, allowing intermediate layers to silently reconstruct meaningful structures. By visualizing features across layers using PCA, the authors found that semantics emerge hierarchically: high-level semantics appear after layer 19 in Open-Sora and after layer 27 in CogVideoX, while layer 3 remains a "whiteboard" with little semantic content. IRC forces early-to-late feature alignment:
 
-    - **Function**: At each layer of both the denoising module and the VAE, anchors the protected image's features to those of an unrelated target image.
-    - **Mechanism**:
-    $\mathcal{L}_{IRA} = \mathcal{L}_{IRA,\epsilon_\theta} + \mathcal{L}_{IRA,E}$
-        - Denoising module level: $\|\epsilon_\theta^m(z_t, z_\xi, t, y) - \epsilon_\theta^m(z_t, z_\psi, t, y)\|_2^2$
-        - VAE level: $\|E^n(z_\xi) - E^n(z_\psi)\|_2^2$
-    - **Design Motivation**: Rather than merely collapsing semantics (IRC), IRA actively steers features toward an incorrect direction, providing a complementary and more effective dual disruption.
+$$\mathcal{L}_{IRC}^{i,j} = \mathbb{E}\big\|\epsilon_\theta^j(z_t, z_\xi, t, y) - \epsilon_\theta^i(z_t, z_\xi, t, y)\big\|_2^2$$
 
-### Final Objective
+where $i$ is layer 3 and $j$ are the final 3 layers. Once deep semantics are flattened, the denoising process loses the ability to reconstruct structures. The attention mechanism in VDMs cascades this collapse across the temporal dimension, contaminating all frames of the generated video.
+
+**3. Internal Representation Anchoring (IRA): Misleading semantics toward incorrect targets**
+
+While IRC "destroys" semantics by flattening them, IRA "misleads" them by pointing features in an incorrect direction. It anchors the features of the protected image $z_\xi$ to the corresponding features of an unrelated target image $z_\psi$ across the denoising module and VAE:
+
+$$\mathcal{L}_{IRA} = \underbrace{\big\|\epsilon_\theta^m(z_t, z_\xi, t, y) - \epsilon_\theta^m(z_t, z_\psi, t, y)\big\|_2^2}_{\text{Denoising Module Layer-wise}} + \underbrace{\big\|E^n(z_\xi) - E^n(z_\psi)\big\|_2^2}_{\text{VAE Layer-wise}}$$
+
+This dual approach of "flattening + misleading" makes recovery harder; the network cannot find the original structure and is continuously steered toward irrelevant content.
+
+### Loss & Training
+Four items comprise the total objective:
+
 $$\mathcal{L}_{Anti-I2V} = \mathcal{L}_{IRC} + \mathcal{L}_{IRA} + \mathcal{L}_{auxiliary} - \mathcal{L}_{DM}$$
-- Auxiliary loss: CLIP feature distance maximization + LPIPS perceptual distance maximization
+
+The auxiliary loss $\mathcal{L}_{auxiliary}$ maximizes CLIP feature distance and LPIPS perceptual distance. The negative diffusion loss $-\mathcal{L}_{DM}$ performs reverse optimization of the denoising target, pushing the perturbation toward a state that is harder to denoise correctly. The entire suite is solved using PGD-style iterative optimization.
 
 ## Key Experimental Results
 
 ### Main Results (CelebV-Text Dataset)
 
 | Model | Method | ISM↓ | C-FIQA↓ | Q-A(F)↓ | Q-A(V)↓ | DINO↓ |
-|------|------|------|---------|---------|---------|-------|
+|-------|--------|------|---------|---------|---------|-------|
 | CogVideoX | Clean | 0.721 | 0.522 | 0.746 | 0.802 | 0.828 |
 | CogVideoX | MIST | 0.561 | 0.463 | 0.476 | 0.577 | 0.750 |
 | CogVideoX | **Anti-I2V** | **0.448** | **0.433** | **0.447** | **0.532** | **0.722** |
@@ -92,39 +98,39 @@ $$\mathcal{L}_{Anti-I2V} = \mathcal{L}_{IRC} + \mathcal{L}_{IRA} + \mathcal{L}_{
 
 ### Ablation Study
 
-| Configuration | ISM↓ | Q-A(V)↓ | Note |
-|------|------|---------|------|
-| RGB perturbation only | 0.583 | 0.543 | Baseline (similar to AdvDM) |
-| + L\*a\*b\* | 0.521 | 0.511 | Color-space perturbation more effective |
-| + DCT | 0.498 | 0.496 | Frequency domain further improves results |
+| Configuration | ISM↓ | Q-A(V)↓ | Description |
+|---------------|------|---------|-------------|
+| RGB Perturbation only | 0.583 | 0.543 | Baseline (similar to AdvDM) |
+| + L\*a\*b\* | 0.521 | 0.511 | Color space perturbation is more effective |
+| + DCT | 0.498 | 0.496 | Frequency domain provides further gain |
 | + IRC | 0.472 | 0.558 | Semantic collapse is effective |
-| + IRA | 0.460 | 0.540 | Anchor loss provides complementary gains |
-| Full Anti-I2V | **0.448** | **0.532** | All components synergize optimally |
+| + IRA | 0.460 | 0.540 | Anchoring loss adds value |
+| Full Anti-I2V | **0.448** | **0.532** | All components achieve optimal synergy |
 
 ### Key Findings
-- The method achieves the most significant results on DynamiCrafter (UNet architecture), reducing Q-A(V) from 0.794 to 0.047.
-- It also proves effective on CogVideoX (DiT architecture), validating cross-architecture generalization.
-- A simple layer selection strategy (last 3 layers → layer 3) generalizes across different architectures.
+- Effectiveness is most significant on DynamiCrafter (UNet architecture), where Q-A(V) dropped from 0.794 to 0.047.
+- It is equally effective on CogVideoX (DiT architecture), verifying cross-architecture generalization.
+- Simple layer selection strategies (last 3 layers → layer 3) are universal across different architectures.
 
 ## Highlights & Insights
-- **First systematic study of adversarial perturbation optimization in non-RGB spaces**; the L\*a\*b\* + frequency-domain combination represents a promising new direction.
-- The IRC loss is theoretically grounded in PCA analysis of layer-wise features in the denoising network.
-- Applicable to three mainstream architectures (UNet, DiT, MMDiT), demonstrating strong practical utility.
+- **The first systemic study of adversarial perturbation optimization in non-RGB spaces**, identifying the L\*a\*b\* + frequency combination as a robust new direction.
+- The IRC loss is theoretically supported by PCA analysis of denoising network layer features.
+- Applicable to UNet, DiT, and MMDiT architectures, demonstrating strong practical utility.
 
 ## Limitations & Future Work
-- Perturbation optimization still requires white-box access to the target model; black-box transferability has not been sufficiently validated.
-- Robustness against image preprocessing (JPEG compression, blurring) warrants further analysis.
-- Computational efficiency: PGD-based iterative perturbation optimization incurs significant computational overhead.
+- Perturbation optimization still requires white-box access to the target model; black-box transferability is not fully explored.
+- Robustness against image preprocessing (JPEG compression, blurring) requires further analysis.
+- Operational efficiency: The computational cost of PGD iterative optimization for perturbations is high.
 
 ## Related Work & Insights
-- The text-level loss shares conceptual similarities with MIST but extends the disruption to the layer level.
-- The DSP approach can be generalized to other adversarial attack and defense scenarios.
+- Similar to MIST's textual loss but extended to the layer level.
+- DSP concepts can be generalized to other adversarial attack/defense scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of dual-space perturbation and layer-wise feature collapse is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three VDM architectures × two datasets with comprehensive ablation.
-- Writing Quality: ⭐⭐⭐⭐ Technical details are thorough; PCA analysis is intuitive.
-- Value: ⭐⭐⭐⭐ Significant practical implications for AI safety and privacy protection.
+- Novelty: ⭐⭐⭐⭐ Innovative combination of dual-space perturbation and hierarchical feature collapse.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers three VDM architectures across two datasets with thorough ablation.
+- Writing Quality: ⭐⭐⭐⭐ Detailed technical explanations with intuitive PCA analysis.
+- Value: ⭐⭐⭐⭐ Highly significant for AI security and privacy protection.
 
 <!-- RELATED:START -->
 
@@ -133,10 +139,10 @@ $$\mathcal{L}_{Anti-I2V} = \mathcal{L}_{IRC} + \mathcal{L}_{IRA} + \mathcal{L}_{
 ## Related Papers
 
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](../../ICCV2025/video_generation/tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
-- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
+- [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](are_image-to-video_models_good_zero-shot_image_editors.md)
 
 </div>
 

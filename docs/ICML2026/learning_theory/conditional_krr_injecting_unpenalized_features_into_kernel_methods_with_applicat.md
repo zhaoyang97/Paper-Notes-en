@@ -2,114 +2,113 @@
 title: >-
   [Paper Note] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding
 description: >-
-  [ICML2026][Machine Learning Theory][Conditional Kernel Ridge Regression] This paper proposes the Conditional Kernel Ridge Regression (Conditional KRR) framework…
+  [ICML 2026][learning_theory][Paper Note] This paper proposes the Conditional Kernel Ridge Regression (Conditional KRR) framework, which injects a set of unpenalized features into kernel methods. By reducing it to standard KRR via a residual kernel, the authors prove a reduction cost of $\mathcal{O}(1/\sqrt{N})$. They further verify sufficient conditions for C
 tags:
-  - "ICML2026"
-  - "Machine Learning Theory"
-  - "Conditional Kernel Ridge Regression"
-  - "Conditionally Positive Definite Kernels"
-  - "Residual Kernels"
-  - "Kernel Thresholding"
-  - "Unpenalized Features"
+  - ICML 2026
+  - learning_theory
 date: 2026-05-08
-content_hash: e1a448b5cbaf1ac9
+content_hash: 55f8c712fe503f23
 ---
-
 # Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding
 
 **Conference**: ICML2026  
 **arXiv**: [2605.26067](https://arxiv.org/abs/2605.26067)  
 **Code**: None  
 **Area**: Machine Learning Theory  
-**Keywords**: Conditional Kernel Ridge Regression, Conditionally Positive Definite Kernels, Residual Kernels, Kernel Thresholding, Unpenalized Features  
+**Keywords**: Conditional Kernel Ridge Regression, Conditionally Positive Definite Kernel, Residual Kernel, Kernel Thresholding, Unpenalized Features  
 
 ## TL;DR
 
-This paper proposes the Conditional Kernel Ridge Regression (Conditional KRR) framework, which injects a set of unpenalized features into kernel methods. By reducing it to standard KRR via a residual kernel, the authors prove that the reduction cost is $\mathcal{O}(1/\sqrt{N})$. Furthermore, the study identifies sufficient conditions for Conditional KRR to outperform standard KRR under both hard thresholding (top-k eigenfunctions) and soft thresholding (random Gaussian features) settings.
+This paper proposes the Conditional Kernel Ridge Regression (Conditional KRR) framework, which injects a set of unpenalized features into kernel methods. By reducing it to standard KRR via a residual kernel, the authors prove a reduction cost of $\mathcal{O}(1/\sqrt{N})$. They further verify sufficient conditions for Conditional KRR to outperform standard KRR under both hard thresholding (top-k eigenfunctions) and soft thresholding (random Gaussian features) settings.
 
 ## Background & Motivation
 
-**Background**: Kernel Ridge Regression (KRR) is a classic supervised learning method, recently seeing broad application in areas like Neural Tangent Kernels, operator approximation, and reinforcement learning. Using KRR requires specifying a positive definite (PD) kernel $K(x,y)$. However, the positivity requirement can be relaxed to conditionally positive definite (CPD), where the quadratic form $\sum_{ij} K(x_i, x_j) \zeta_i \zeta_j$ only needs to be non-negative when $\zeta$ is orthogonal to a specific function class $\mathcal{F}$.
+**Background**: Kernel Ridge Regression (KRR) is a classic supervised learning method widely used in Neural Tangent Kernels, operator approximation, and reinforcement learning. Using KRR requires a positive definite (PD) kernel function $K(x,y)$, but the positive definiteness condition can be relaxed to conditionally positive definite (CPD), meaning the quadratic form $\sum_{ij} K(x_i, x_j) \zeta_i \zeta_j$ only needs to be non-negative when $\zeta$ is orthogonal to a certain function class $\mathcal{F}$.
 
-**Limitations of Prior Work**: Existing research on CPD kernels focus almost exclusively on cases where $\mathcal{F}$ is a polynomial subspace, leaving a statistical theory vacuum for general function classes $\mathcal{F}$. Crucially, even when the original kernel $K$ is PD, treating it as a CPD kernel relative to a general $\mathcal{F}$ naturally leads to a two-stage learning framework—"linear regression first, then kernel regression on residuals"—which lacks rigorous statistical guarantees.
+**Limitations of Prior Work**: Existing research on CPD kernels focus almost entirely on cases where $\mathcal{F}$ is a polynomial subspace, leaving the statistical theory for general function classes $\mathcal{F}$ nearly blank. More importantly, even if the original kernel $K$ is PD, treating it as a CPD kernel with respect to a general $\mathcal{F}$ naturally leads to a two-stage learning framework ("linear regression first, then kernel regression on residuals"), but such a framework lacks rigorous statistical guarantees.
 
-**Key Challenge**: The optimization of conditional KRR can be decomposed into linear regression plus residual kernel KRR, but this decomposition relies on exact knowledge of the $\mathcal{F}$-component. In practice, the learner does not know the true projection of the regression function onto $\mathcal{F}$, necessitating the quantification of the "conditioning cost"—the price paid for not knowing $f_\parallel$.
+**Key Challenge**: The optimization problem of Conditional KRR can be decomposed into linear regression plus residual kernel KRR, but this decomposition depends on precise knowledge of the $\mathcal{F}$-component. In practice, the learner does not know the projection of the true regression function onto $\mathcal{F}$. Therefore, it is necessary to quantify the cost paid for "not knowing $f_\parallel$"—the conditioning cost.
 
-**Goal**: (1) Establish a rigorous reduction theory from Conditional KRR to standard KRR; (2) Provide high-probability upper bounds for the conditioning cost; (3) Apply the theory to practical hard/soft thresholding settings to derive sufficient conditions for Conditional KRR superiority.
+**Goal**: (1) Establish a rigorous reduction theory from Conditional KRR to standard KRR; (2) Provide high-probability upper bounds for the conditioning cost; (3) Apply the theory to hard and soft thresholding settings to derive sufficient conditions for Conditional KRR outperforming standard KRR.
 
-**Key Insight**: The authors introduce the "residual kernel" $K_P = ((I - \Pi_P) \otimes (I - \Pi_P))[K]$ and prove its positive definiteness. They demonstrate that the native space of Conditional KRR is isomorphic to the RKHS of the residual kernel plus $\mathcal{F}$. This allows Conditional KRR to be interpreted as standard KRR applied to the residuals after performing linear regression on the target variables.
+**Key Insight**: The authors introduce the "residual kernel" $K_P = ((I - \Pi_P) \otimes (I - \Pi_P))[K]$, prove its positive definiteness, and establish that the native space of Conditional KRR is equivalent to the RKHS of the residual kernel plus $\mathcal{F}$. This allows Conditional KRR to be understood as performing linear regression on the target variable followed by standard KRR on the residuals.
 
-**Core Idea**: The study rigorously reduces Conditional KRR to standard KRR on a residual kernel with a cost of only $\mathcal{O}(\log k / \sqrt{N})$, enabling the direct application of existing KRR statistical theories to analyze convergence and generalization.
+**Core Idea**: By strictly reducing Conditional KRR to standard KRR on the residual kernel with a cost of only $\mathcal{O}(\log k / \sqrt{N})$, existing KRR statistical theory can be directly reused to analyze its convergence and generalization.
 
 ## Method
 
 ### Overall Architecture
 
-Given a training set $\{(x_i, y_i)\}_{i=1}^N$ and a set of unpenalized features $\mathcal{F} = \text{span}\{f_1, \ldots, f_k\}$, Conditional KRR solves the optimization problem $\min_{f \in \mathcal{H}_K^{\mathcal{F}}} \frac{1}{N}\sum_i (f(x_i) - y_i)^2 + \lambda \|f\|_{\mathcal{H}_K^{\mathcal{F}}}^2$, where the semi-norm $\|f\|_{\mathcal{H}_K^{\mathcal{F}}}$ only penalizes components orthogonal to $\mathcal{F}$. Equivalently, the process decomposes into: (1) performing linear regression on $y$ using features in $\mathcal{F}$ to obtain residuals $r$; (2) applying standard KRR to the residuals $r$ using the residual kernel $K_P$.
+Given a training set $\{(x_i, y_i)\}_{i=1}^N$ and a set of unpenalized features $\mathcal{F} = \text{span}\{f_1, \ldots, f_k\}$, Conditional KRR solves the optimization problem $\min_{f \in \mathcal{H}_K^{\mathcal{F}}} \frac{1}{N}\sum_i (f(x_i) - y_i)^2 + \lambda \|f\|_{\mathcal{H}_K^{\mathcal{F}}}^2$, where the semi-norm $\|f\|_{\mathcal{H}_K^{\mathcal{F}}}$ only penalizes the component of $f$ in the orthogonal complement of $\mathcal{F}$. Equivalently, this process can be decomposed into: (1) linear regression of $y$ using features in $\mathcal{F}$ to obtain residuals $r$; (2) standard KRR on the residuals $r$ using the residual kernel $K_P$.
 
 ### Key Designs
 
-1.  **Residual Kernel Construction and Native Space Equivalence**:
-    *   Function: Converts the conditional learning problem of a CPD kernel into a standard learning problem of a PD kernel.
-    *   Mechanism: For a CPD kernel $K$ and input distribution $P$, the residual kernel is defined as $K_P(x,y) = ((I - \Pi_P) \otimes (I - \Pi_P))[K]$, where $\Pi_P$ is the projection operator onto $\mathcal{F}$ in $L_2(\mathcal{X}, P)$. Theorem 2.1 proves $K_P$ is a PD kernel; Theorem 3.1 proves that the native space $\mathcal{H}_K^{\mathcal{F}}$ is isomorphic to $\mathcal{H}_{K_P} \oplus \mathcal{F}$. Theorem 3.2 further shows that Conditional KRR is equivalent to linear regression followed by $K_P$-based KRR.
-    *   Design Motivation: This equivalence serves as the theoretical pillar, allowing existing KRR statistical results to be transferred directly to Conditional KRR.
+**1. Residual Kernel Construction and Native Space Equivalence: Translating CPD Kernel Learning to Standard PD Kernel Problems**
 
-2.  **High-Probability Bound for Conditioning Cost**:
-    *   Function: Quantifies the gap between Conditional KRR and an "ideal learner" that knows $f_\parallel$.
-    *   Mechanism: Defining the conditioning cost as $c_{\text{con}} = \mathbb{E}[(\hat{f}(X) - f_\parallel(X) - h(X))^2]$, Theorem 4.2 proves that with probability $\geq 1 - \delta$, $\mathbb{E}_\varepsilon[c_{\text{con}}] \leq C \cdot \|f\|_{\mathcal{H}_K^{\mathcal{F}}}^2 \cdot \frac{k \log^{1/2}(2k/\delta)}{\sqrt{N}} + \frac{c_2 \sigma^2}{N}$. When the signal lies entirely within $\mathcal{F}$ ($f_\perp = 0$), the first term vanishes, and the cost becomes $\mathcal{O}(\sigma^2 k / N)$.
-    *   Design Motivation: This bound decouples the contributions of signal components and noise, facilitating precise determination of when Conditional KRR outperforms standard KRR.
+The difficulty of Conditional KRR lies in the fact that kernel $K$ is only conditionally positive definite with respect to $\mathcal{F}$, and the semi-norm only penalizes components in the orthogonal complement, making standard KRR theory inapplicable. The breakthrough lies in constructing the residual kernel:
 
-3.  **Unified Analysis of Hard/Soft Thresholding**:
-    *   Function: Applies the theory to practical settings to reveal the U-shaped dependence of test error on $k$.
-    *   Mechanism: Hard thresholding sets $\mathcal{F}$ as the top-$k$ Mercer eigenfunctions of $K$, making the residual kernel the spectral tail $\sum_{i>k} \lambda_i \phi_i(x) \phi_i(y)$. Soft thresholding sets $\mathcal{F}$ as $k$ Gaussian random features. Theorem 5.2 proves the expected eigenvalues of the residual kernel satisfy $\mu_i/\lambda_i \approx c\varkappa^2 / (\lambda_i + \varkappa)^2$, effectively "soft-suppressing" large eigenvalues. Both settings exhibit a U-shaped curve: small $k$ fails to utilize unpenalized features, while large $k$ increases conditioning cost.
-    *   Design Motivation: Unified analysis links spectral truncation methods with random feature methods.
+$$K_P(x,y) = \big((I-\Pi_P)\otimes(I-\Pi_P)\big)[K],$$
+
+where $\Pi_P$ is the projection operator onto $\mathcal{F}$ in $L_2(\mathcal{X},P)$. Theorem 2.1 proves that $K_P$ is a valid PD kernel. Theorem 3.1 proves that the native space $\mathcal{H}_K^{\mathcal{F}}$ is isomorphic to $\mathcal{H}_{K_P}\oplus\mathcal{F}$. Theorem 3.2 further shows that Conditional KRR is equivalent to "performing linear regression with $\mathcal{F}$ features first, then standard KRR on the residuals with $K_P$." This equivalence is the foundation of the theory—it allows all existing KRR statistical results (convergence rates, generalization bounds) to be transferred directly.
+
+**2. High-Probability Upper Bound for Conditioning Cost: Quantifying the Penalty of Unknown $\mathcal{F}$-Projection**
+
+Since actual learners do not know the projection $f_\parallel$ of the true regression function onto $\mathcal{F}$, the gap between the actual learner and an "ideal learner with known $f_\parallel$" must be characterized. The authors define the conditioning cost $c_{\text{con}}=\mathbb{E}[(\hat f(X)-f_\parallel(X)-h(X))^2]$. Theorem 4.2 proves that with probability $\ge 1-\delta$:
+
+$$\mathbb{E}_\varepsilon[c_{\text{con}}] \le C\cdot\|f\|_{\mathcal{H}_K^{\mathcal{F}}}^2\cdot\frac{k\log^{1/2}(2k/\delta)}{\sqrt N}+\frac{c_2\sigma^2}{N}.$$
+
+The key to this bound is decoupling the contributions of the signal component and the noise: when the signal lies entirely within $\mathcal{F}$ ($f_\perp=0$), the first term vanishes, and the cost shrinks to $\mathcal{O}(\sigma^2 k/N)$. This decoupling allows for precise determination of when injecting unpenalized features is beneficial versus detrimental.
+
+**3. Unified Analysis of Hard/Soft Thresholding: Revealing Equivalence between Spectral Truncation and Random Features at the Residual Kernel Level**
+
+Applying the theory to practical settings reveals a U-shaped condition for test error regarding $k$. For hard thresholding, $\mathcal{F}$ is the set of top-$k$ Mercer eigenfunctions of $K$, where the residual kernel is exactly the tail of the kernel spectrum $K_P(x,y)=\sum_{i>k}\lambda_i\phi_i(x)\phi_i(y)$. For soft thresholding, $\mathcal{F}$ consists of $k$ Gaussian random features. Theorem 5.2 proves that the expected eigenvalues of the residual kernel satisfy $\mu_i/\lambda_i\approx c\varkappa^2/(\lambda_i+\varkappa)^2$, meaning large eigenvalues are "softly suppressed." Both settings exhibit the same U-shaped curve—too small a $k$ fails to utilize unpenalized features, while too large a $k$ increases the conditioning cost. This unified perspective clarifies that spectral truncation and random feature methods, though seemingly different, are qualitatively equivalent at the residual kernel level.
 
 ## Key Experimental Results
 
-### Main Results: Conditioning Cost Verification
+### Main Results: Conditioning Cost Validation
 
-| Parameter Change | Experimental Observation | Theoretical Prediction |
-|------------------|--------------------------|------------------------|
-| $N$ increases    | $\hat{c}_{\text{con}} \sim 1/N$ | $\mathcal{O}(1/\sqrt{N})$ (Looser) |
-| $k$ increases    | Linear growth            | $\mathcal{O}(k)$       |
-| $\sigma^2$ increases | Linear growth        | $\mathcal{O}(\sigma^2)$|
-| $f \in \mathcal{F}$ | Remains $\mathcal{O}(\sigma^2 k / N)$ | Consistent with theory |
+| Parameter Variation | Experimental Observation | Theoretical Prediction |
+|----------|----------|----------|
+| $N$ increases | $\hat{c}_{\text{con}} \sim 1/N$ | $\mathcal{O}(1/\sqrt{N})$ (Looser) |
+| $k$ increases | Linear growth | $\mathcal{O}(k)$ |
+| $\sigma^2$ increases | Linear growth | $\mathcal{O}(\sigma^2)$ |
+| $f \in \mathcal{F}$ case | Only $\mathcal{O}(\sigma^2 k / N)$ remains | Consistent with theory |
 
-### U-Shaped Test Error (Hard Thresholding)
+### U-shaped Test Error (Hard Thresholding)
 
-| Dataset / Kernel | Standard KRR (k=0) | Best Conditional KRR | Optimal k | U-shape Present |
-|------------------|--------------------|----------------------|-----------|-----------------|
-| Synthetic ($s=2$) | Baseline           | Significantly lower  | $k=5$     | Yes             |
-| MNIST 7-vs-9 / Gaussian | Baseline      | Lower                | Medium $k$| Yes             |
-| MNIST 7-vs-9 / NNGP-erf | Baseline      | Slight improvement   | Overfitting near $N$ | Yes (Mild) |
-| MNIST 7-vs-9 / Laplace | Baseline       | No improvement       | —         | No              |
+| Dataset / Kernel | Standard KRR (k=0) | Optimal Conditional KRR | Optimal k | U-shape Present |
+|-------------|----------------|-------------|--------|----------|
+| Synthetic Data ($s=2$) | Baseline | Significantly lower | $k=5$ | Yes |
+| MNIST 7-vs-9 / Gaussian | Baseline | Lower | Moderate $k$ | Yes |
+| MNIST 7-vs-9 / NNGP-erf | Baseline | Slight improvement | Overfits near $N$ | Yes (Mild) |
+| MNIST 7-vs-9 / Laplace | Baseline | No improvement | — | No |
 
 ### Key Findings
 
-- **Actual decay rate of conditioning cost** is $\sim 1/N$, which is faster than the theoretical bound of $1/\sqrt{N}$, suggesting room for tighter theoretical bounds.
-- **Sufficient conditions for U-shaped behavior** (Eq. 3): Conditional KRR outperforms standard KRR when the signal projection onto the top-$k$ eigenfunctions is sufficiently strong. For pure noise ($f=0$), MSE increases monotonically with $k$.
-- **Equivalence of soft and hard thresholding**: Residual kernels generated by random Gaussian features are equivalent in expectation to "softly truncating" the kernel spectrum, where large eigenvalues are suppressed and small ones are amplified.
-- **Absence of overfitting in Laplace kernels**: Because the first 11,000 empirical eigenfunctions all contribute to the prediction, a much larger sample size is required to observe the U-shaped curve.
+- **Actual decay rate of conditioning cost** is $\sim 1/N$, faster than the theoretical upper bound $1/\sqrt{N}$, suggesting room for tightening the theory.
+- **Sufficient condition for U-shaped behavior** (Eq. 3): Conditional KRR outperforms standard KRR when the signal projection on the first $k$ eigenfunctions is sufficiently strong. For pure noise ($f=0$), the test MSE increases monotonically with $k$, with no U-shape.
+- **Equivalence of soft and hard thresholding**: Residual kernels generated by random Gaussian features are equivalent in expectation to "soft truncation" of the kernel spectrum, where large eigenvalues are suppressed and small ones are amplified—qualitatively consistent with hard truncation.
+- **Laplace kernel lacks overfitting**: Since the first 11,000 empirical eigenfunctions all contribute to prediction, a much larger sample size is required to observe the U-shape.
 
 ## Highlights & Insights
 
-- **Rigorous foundation for two-stage decomposition**: While the strategy of "regressing the main signal first, then learning residuals with kernels" is common in boosting and ResNets, this work provides the first comprehensive statistical theory for this strategy within the kernel framework.
-- **Unified perspective on thresholding**: By treating top-$k$ eigenfunction truncation and random feature injection as instances of Conditional KRR, Theorem 5.2 reveals their asymptotic equivalence at the residual kernel level.
-- **Characterization of weakly benign overfitting**: When the signal is entirely within $\mathcal{F}$, noise can only be memorized in the orthogonal complement, which does not impede signal recovery. This suggests a new mode of overfitting between benign and catastrophic.
+- **Rigorous theoretical foundation for two-stage decomposition**: While the strategy of "regressing the main signal first, then learning residuals" is widely used in boosting and ResNets, this work provides the first complete statistical theory for this strategy within kernel methods. The derivation techniques for the conditioning cost (using matrix perturbation and random matrix concentration inequalities) are of general value.
+- **Unified perspective on hard/soft thresholding**: By framing top-k eigenfunction truncation and random feature injection as two instances of Conditional KRR, Theorem 5.2 reveals their asymptotic equivalence at the residual kernel level. This perspective can be extended to analyze random features in neural networks.
+- **Characterization of weak benign overfitting**: When the signal is entirely in $\mathcal{F}$, noise can only be memorized in the orthogonal complement, which does not affect signal recovery accuracy. This provides a new overfitting mode between benign and catastrophic overfitting.
 
 ## Limitations & Future Work
 
-- **Theory limited to $\lambda > 0$**: The current theory fails when $\lambda = 0$ (perfect memorization), yet the interpolating regime of overparameterized models is of significant practical interest.
-- **Loose conditioning cost upper bound**: Experiments show $1/N$ decay, but the theory only guarantees $1/\sqrt{N}$. Tightening this bound remains an open problem.
-- **Estimation of Mercer eigenfunctions**: Hard thresholding relies on precise eigenfunctions, while practitioners must use empirical eigenfunctions $\hat{\phi}_k$, introducing additional errors not analyzed in detail.
-- **Lack of comparison with deep learning**: As a purely kernel-theoretic work, it lacks empirical comparison with modern two-stage neural network methods (e.g., residual learning).
+- **Theory only covers $\lambda > 0$**: When the regularization parameter $\lambda = 0$ (perfect interpolation), the existing theory fails, yet unregularized overparameterized scenarios are a major focus in practice.
+- **Loose conditioning cost upper bound**: Experiments observe $\sim 1/N$ decay, but the theory only provides $\sim 1/\sqrt{N}$. Tightening this bound remains an open problem.
+- **Estimation of Mercer eigenfunctions**: Hard thresholding relies on precise eigenfunction estimates. In practice, empirical eigenfunctions $\hat{\phi}_k$ are used, introducing additional errors not analyzed in detail here.
+- **Lack of comparison with deep learning**: As a theoretical work on pure kernel methods, it lacks empirical comparison with modern neural network two-stage methods like residual learning.
 
 ## Related Work & Insights
 
-- KRR Statistical Theory: Caponnetto & De Vito 2007 (convergence rates); Simon et al. 2023 (eigenlearning framework).
-- CPD Kernel Theory: Duchon 1977 (polynomial CPD kernels); Meinguet 1979 (native space construction).
-- Two-stage Learning: Yang et al. 2023 (basis networks + residual learning); Freund & Schapire 1997 (Boosting).
-- Insight: The logic of Conditional KRR can be extended to deep kernel learning—injecting neural network features as unpenalized components into kernel methods may theoretically explain the advantages of "pre-training + kernel fine-tuning."
+- KRR Statistical Theory: Caponnetto & De Vito 2007 (Convergence rates), Simon et al. 2023 (Eigenlearning framework).
+- CPD Kernel Theory: Duchon 1977 (Polynomial CPD kernels), Meinguet 1979 (Native space construction).
+- Two-stage Learning: Yang et al. 2023 (Base network + Residual learning), Freund & Schapire 1997 (Boosting).
+- Insights: The logic of Conditional KRR can be generalized to Deep Kernel Learning—injecting neural network features as unpenalized components into kernel methods might theoretically explain the advantages of "pre-training + kernel fine-tuning" paradigms.
 
 <!-- RELATED:START -->
 

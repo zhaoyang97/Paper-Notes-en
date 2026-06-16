@@ -2,80 +2,86 @@
 title: >-
   [Paper Note] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity
 description: >-
-  [ACL 2026][Multimodal VLM][Chinese art] This paper constructs CArtBench, a multi-task benchmark based on collections from the Palace Museum…
+  [ACL 2026][Multimodal VLM][Vision-Language Model] Ours constructs CArtBench—a multi-task benchmark based on collections from The Palace Museum—to evaluate four capabilities of VLMs in Chinese art understanding (Evidence QA, Structured Appreciation, Defensible Reinterpretation, and Authenticity Discrimination). It is found that even the strongest models show significan
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Chinese art"
-  - "museum benchmark"
-  - "vision-language models"
-  - "appreciation capability"
-  - "authenticity discrimination"
+  - ACL 2026
+  - Multimodal VLM
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 8bb39cfe5f240c60
+content_hash: 97ebde8e91c4beac
 ---
-
 # CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.11632](https://arxiv.org/abs/2604.11632)  
 **Code**: [https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark](https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark)  
-**Area**: Multimodal VLM/Cultural Understanding  
-**Keywords**: Chinese art, museum benchmark, vision-language models, appreciation capability, authenticity discrimination
+**Area**: Multi-modal VLM/Cultural Understanding  
+**Keywords**: Chinese Art, Museum Benchmark, Vision-Language Model, Appreciation Ability, Authenticity Discrimination
 
 ## TL;DR
 
-This paper constructs CArtBench, a multi-task benchmark based on collections from the Palace Museum, to evaluate four capabilities of VLMs in Chinese art understanding (evidentiary QA, structured appreciation, defensible re-interpretation, and authenticity discrimination). It finds that even the strongest models exhibit significant performance degradation in evidence association and style-period reasoning, while authenticity discrimination remains near random levels.
+Ours constructs CArtBench—a multi-task benchmark based on collections from The Palace Museum—to evaluate four capabilities of VLMs in Chinese art understanding (Evidence QA, Structured Appreciation, Defensible Reinterpretation, and Authenticity Discrimination). It is found that even the strongest models show significant performance drops in evidence grounding and style-period reasoning, while authenticity discrimination remains near random levels.
 
 ## Background & Motivation
 
-**Background**: VLMs are increasingly utilized as general-purpose multimodal assistants, yet their evaluation is largely dominated by web images and Western-centric concepts. Although Chinese and culture-focused benchmarks have expanded, they primarily focus on short-text recognition and basic QA.
+**Background**: VLMs are increasingly utilized as general-purpose multimodal assistants, but their evaluation is primarily dominated by web images and Western-centric concepts. While Chinese and culture-focused benchmarks have expanded, they mainly focus on short-text recognition and question answering.
 
-**Limitations of Prior Work**: (1) Existing benchmarks lack assessments of expert-oriented explanation capabilities—deep understanding that requires cultural anchoring and explicit support from visual evidence; (2) Many visual conventions in Chinese art are era-sensitive, and curation-level understanding requires linking observable clues to historical contexts; (3) Authenticity judgment is a core workflow of cultural heritage, yet current VLM capabilities in this area have never been evaluated.
+**Limitations of Prior Work**: (1) Existing benchmarks lack expert-oriented interpretative evaluations that require depth of understanding supported by cultural anchoring and explicit visual evidence; (2) Many visual conventions in Chinese art are era-sensitive, and curation-level understanding requires linking observable cues with historical context; (3) Authenticity judgment is a core workflow in cultural heritage, yet current VLM capabilities in this area remain unassessed.
 
-**Key Challenge**: VLMs may perform well on short-text QA, but high accuracy might mask severe deficiencies in deep capabilities such as evidence association, structured appreciation, and authenticity verification.
+**Key Challenge**: VLMs may perform well on short-text QA, but high accuracy might mask severe deficiencies in deep capabilities such as evidence grounding, structured appreciation, and authenticity identification.
 
-**Goal**: Construct a unified benchmark to comprehensively evaluate the curation-level capabilities of VLMs in Chinese art understanding.
+**Goal**: To build a unified benchmark for comprehensively evaluating the curation-level capabilities of VLMs in Chinese art understanding.
 
-**Key Insight**: Aligning Wikidata entities of the Palace Museum collections with authoritative catalog pages to build a museum benchmark spanning multiple dynasties and five major art categories.
+**Key Insight**: Aligning Wikidata entities of The Palace Museum collections with authoritative catalog pages to construct a museum benchmark spanning multiple dynasties and five major art categories.
 
-**Core Idea**: Expanding from short-text QA to four progressive task levels (evidence-anchored QA, structured appreciation, defensible interpretation, and authenticity discrimination) to reveal systematic failure modes of VLMs in cultural understanding.
+**Core Idea**: Expanding from short-text QA to four progressive task levels: evidence-anchored QA, structured appreciation, defensible interpretation, and authenticity discrimination, to reveal systematic failure modes of VLMs in cultural understanding.
 
 ## Method
 
 ### Overall Architecture
 
-CArtBench is constructed through a three-stage pipeline: (1) Retrieving image collections of the Palace Museum from Wikidata; (2) Aligning collections with official catalog descriptions; (3) Expert-guided filtering and classification. Four complementary tasks are instantiated based on the constructed data.
+CArtBench is constructed through a three-stage pipeline: (1) Retrieving image collections of The Palace Museum from Wikidata; (2) Aligning collections with official catalog descriptions; (3) Expert-guided filtering and classification. Based on the constructed data, four complementary tasks are instantiated.
 
 ### Key Designs
 
-1.  **CuratorQA (Curation-level QA)**:
-    *   **Function**: Evaluates the evidence-anchored identification and reasoning capabilities of VLMs.
-    *   **Mechanism**: Includes 14,421 questions covering 1,589 artworks, categorized into P1 (visual evidence only) and P2 (integration with art knowledge required). Six question types include subject identification, scene classification, composition format, technique style, iconographic detection, and style-period reasoning. QA pairs were generated using GPT-5.2, with an expert-verified error rate of only 0.47% across 1,000 samples.
-    *   **Design Motivation**: The stratification of P1/P2 difficulty and the classification of six question types allow the evaluation to precisely pinpoint the capability bottlenecks of the models.
+**1. CuratorQA: Using difficulty hierarchy + question classification to dissect "high accuracy" and identify model bottlenecks.**
 
-2.  **CatalogCaption (Structured Appreciation)**:
-    *   **Function**: Evaluates the ability of VLMs to generate four-paragraph expert-level appreciation texts.
-    *   **Mechanism**: For 86 artworks, models are required to generate structured appreciation texts containing basic information, technical analysis, historical background, and aesthetic evaluation, which are compared against authoritative catalog descriptions.
-    *   **Design Motivation**: Long-text generation is a more challenging task than QA, requiring the model to synthesize visual understanding with cultural knowledge.
+Overall scores of general VLMs on Chinese art are often not low, but total accuracy alone cannot distinguish between genuine understanding and surface pattern recognition. CuratorQA thus splits 14,421 questions (covering 1,589 artworks) across two axes: difficulty levels P1 (answerable by visual evidence alone) and P2 (requires integrating art knowledge for reasoning), and six question types: subject identification, scene classification, compositional format, technique/style, iconographic detection, and style-period reasoning.
 
-3.  **ConnoisseurPairs (Authenticity Discrimination)**:
-    *   **Function**: Evaluates the ability of VLMs to discriminate between visually similar authentic-fake pairs.
-    *   **Mechanism**: 10 pairs of visually similar authentic artworks and imitations are used, requiring the model to judge which is authentic based on global consistency and subtle clues. This serves as a diagnostic stress test.
-    *   **Design Motivation**: Authenticity discrimination is a core skill of connoisseurs, testing whether VLMs can move beyond superficial recognition to deep reasoning.
+This two-dimensional split allows each failure to be precisely located—whether it is a lack of visual evidence grounding (loss in P1) or a lack of cultural background reasoning (loss in P2/style-period). Q&A pairs were generated by GPT-5.2 and reviewed by experts; a spot check of 1,000 entries showed an error rate of only 0.47%, ensuring annotation reliability at scale.
+
+> ⚠️ The original text labels the generative model as GPT-5.2; the translation follows the source.
+
+**2. CatalogCaption (Structured Appreciation): Using four-paragraph long text to elicit comprehensive capabilities beyond QA.**
+
+Evidence QA only tests "point-wise" recognition, but curation-level understanding is better reflected in the ability to weave visual observations, techniques, history, and aesthetics into a coherent narrative. CatalogCaption selects 86 artworks, requiring models to generate structured appreciation texts containing basic info, technical analysis, historical background, and aesthetic evaluation, which are then scored against authoritative catalog descriptions.
+
+Long-text generation is much harder than multiple-choice—it requires the model to simultaneously mobilize visual understanding and cultural knowledge while organizing them into expert-acceptable expressions, thus exposing weaknesses hidden by total accuracy.
+
+**3. ReInterpret (Defensible Reinterpretation): Using classic works as anchors to test whether models can provide "novel yet reasonable" insights.**
+
+While QA and appreciation test the "restatement of existing knowledge," ReInterpret tests a more difficult step—whether the model can provide novel interpretations that transcend conventions while respecting the image and cultural background. It selects 25 classic Chinese works as anchors: these works have mature discussions and established interpretations, serving to test whether models can step outside standard narratives without deviating from visual evidence.
+
+The evaluation utilizes a two-stage questionnaire inspired by the Torrance Tests of Creative Thinking (TTCT): the "plausibility gate" filters out misinterpretations or fabrications, while the second stage involves human scoring on five dimensions: novelty, integration, evidence reasoning, expressiveness, and creative insight.
+
+**4. ConnoisseurPairs (Authenticity Discrimination): Using visually similar true-false pairs for diagnostic stress testing.**
+
+Authenticity judgment is a core part of cultural heritage work and the ultimate test of deep reasoning beyond surface recognition. ConnoisseurPairs constructs 10 pairs of visually similar authentic-fake artworks, requiring models to judge based on global consistency and subtle clues.
+
+While small in scale, this task serves as a diagnostic stress test, directly probing whether models can infer authenticity from weak signals like brushwork or material. Experiments show all models perform near random levels here, exposing blind spots in current VLM reasoning.
 
 ### Loss & Training
 
-No model training is involved. Evaluation employs a unified protocol combining automatic metrics, format compliance checks, and expert scoring.
+No model training is involved. Evaluation uses a unified protocol combining automated metrics, format compliance checks, and expert scoring.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Overall Accuracy on CuratorQA (9 VLMs)**
+**CuratorQA Overall Accuracy (9 VLMs)**
 
 | Model | Overall Accuracy | QA6 (Style-Period Reasoning) |
-| :--- | :--- | :--- |
+| :--- | :---: | :---: |
 | Qwen3-VL-235B | 0.84 | 0.56 |
 | Qwen3-VL-30B | 0.80 | 0.42 |
 | Qwen2.5-VL-72B | 0.81 | 0.53 |
@@ -83,42 +89,42 @@ No model training is involved. Evaluation employs a unified protocol combining a
 
 ### Ablation Study
 
-*   High overall accuracy masks significant performance drops in evidence association (QA5) and style-period reasoning (QA6).
-*   Long-text appreciation (CatalogCaption) remains far below the level of expert references.
-*   Authenticity discrimination (ConnoisseurPairs) is near random levels for all models, highlighting the extreme difficulty of connoisseur-level reasoning.
+- High overall accuracy hides significant performance drops in evidence grounding (QA5) and style-period reasoning (QA6).
+- Long-text appreciation (CatalogCaption) remains far from reaching expert reference levels.
+- Authenticity discrimination (ConnoisseurPairs) is near random for all models, highlighting the extreme difficulty of connoisseur-level reasoning.
 
 ### Key Findings
 
-*   High scores in short-text recognition by VLMs may mask severe deficiencies in evidence association and cultural reasoning.
-*   Style-period reasoning is the most difficult sub-task, with the strongest model achieving only 56%.
-*   The near-random performance in authenticity discrimination indicates that current VLMs lack connoisseur-level visual reasoning capabilities.
-*   Significant performance differences exist across different art categories.
+- High scores in short-text recognition can mask deficiencies in evidence grounding and cultural reasoning.
+- Style-period reasoning is the most difficult subtask, with the strongest model reaching only 56%.
+- Authenticity discrimination near random suggests a lack of connoisseur-level visual reasoning in current VLMs.
+- Performance varies significantly across different art categories.
 
 ## Highlights & Insights
 
-*   The first museum-grade Chinese art VLM benchmark, spanning four levels: recognition, appreciation, interpretation, and authenticity verification.
-*   Alignment with authoritative Palace Museum catalogs ensures data authenticity and authority.
-*   The unique design of the authenticity discrimination task directly targets the blind spots of deep reasoning in VLMs.
-*   The evaluation protocol is rigorously designed, combining automatic metrics and expert scoring.
+- First museum-level Chinese art VLM benchmark spanning recognition, appreciation, interpretation, and authentication.
+- Alignment with authoritative catalogs from The Palace Museum ensures the authority of the data.
+- Unique authenticity discrimination task design targets the blind spots of VLM deep reasoning.
+- Rigorous evaluation protocol combining automated metrics and expert scoring.
 
 ## Limitations & Future Work
 
-*   The scales of ReInterpret and ConnoisseurPairs are relatively small (25/10), serving primarily as diagnostic evaluations.
-*   Data is primarily sourced from the Palace Museum, which may introduce collection bias.
-*   The cost of expert annotation for authenticity discrimination is extremely high, making large-scale expansion difficult.
-*   Future work could expand to involve more museums and diverse artistic traditions.
+- ReInterpret and ConnoisseurPairs are small in scale (25/10), serving as diagnostic evaluations.
+- Data are primarily from The Palace Museum, which may contain collection bias.
+- High expert annotation costs for authenticity tasks limit large-scale extension.
+- Future work may expand to more museums and diverse art traditions.
 
 ## Related Work & Insights
 
-*   Complements cultural-aware benchmarks like CVLUE and CulturalVQA, but probes deeper into expert-level evaluation.
-*   Forms task complementarity with ArtEmis (emotion) and MuseumQA (fact-based).
-*   Provides more rigorous evaluation standards for AI applications in the field of cultural heritage.
+- Complements culture-aware benchmarks like CVLUE and CulturalVQA, but advances to expert-level evaluation.
+- Complements ArtEmis (emotion) and MuseumQA (facts) in terms of task coverage.
+- Provides stricter evaluation standards for AI applications in the cultural heritage sector.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐⭐ The first museum-grade Chinese art VLM benchmark covering authenticity.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation of 9 VLMs across four tasks.
-*   Writing Quality: ⭐⭐⭐⭐ Clear structure with well-justified task design motivations.
+- Novelty: ⭐⭐⭐⭐⭐ First museum-level Chinese art VLM benchmark including authenticity.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation of 9 VLMs across four tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-motivated task design.
 
 <!-- RELATED:START -->
 
@@ -127,10 +133,10 @@ No model training is involved. Evaluation employs a unified protocol combining a
 ## Related Papers
 
 - [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
-- [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
+- [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
+- [\[ACL 2025\] AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models](../../ACL2025/multimodal_vlm/alignmmbench_evaluating_chinese_multimodal_alignment_in_large_vision-language_mo.md)
 - [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[ACL 2026\] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations](beyond_screenshots_evaluating_vlms_understanding_of_ui_animations.md)
 
 </div>
 

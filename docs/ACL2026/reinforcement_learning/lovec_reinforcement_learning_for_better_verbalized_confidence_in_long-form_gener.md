@@ -2,70 +2,88 @@
 title: >-
   [Paper Note] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations
 description: >-
-  [ACL 2026][Reinforcement Learning][Long-form generation] LoVeC trains LLMs to append a numerical `<confidence>` label (0–10) after each sentence during long-form generation. Using GRPO (online with an oracle fact-checker…
+  [ACL 2026][Reinforcement Learning][GRPO] LoVeC trains LLMs to append a numerical `<confidence>` tag (0–10) after each sentence during long-form generation. Using GRPO (online, requiring an oracle fact-checker) or DPO (offline preference pairs), the model aligns these tags with factuality determined by GPT-4o. This enables single-pass decoding to output calibr
 tags:
-  - "ACL 2026"
-  - "Reinforcement Learning"
-  - "Long-form generation"
-  - "Verbalized confidence"
-  - "GRPO"
-  - "DPO"
-  - "Factuality calibration"
+  - ACL 2026
+  - Reinforcement Learning
+  - GRPO
+  - DPO
 date: 2026-05-08
-content_hash: 16c1f92d86bbc55e
+content_hash: 9ec486b4448cc863
 ---
-
 # LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.23912](https://arxiv.org/abs/2505.23912)  
 **Code**: https://github.com/caiqizh/LoVeC (Available)  
 **Area**: LLM Calibration / RLHF / Hallucination Detection  
-**Keywords**: Long-form generation, Verbalized confidence, GRPO, DPO, Factuality calibration
+**Keywords**: Long-form Generation, Verbalized Confidence, GRPO, DPO, Factuality Calibration
 
 ## TL;DR
-LoVeC trains LLMs to append a numerical `<confidence>` label (0–10) after each sentence during long-form generation. Using GRPO (online with an oracle fact-checker) or DPO (offline preference pairs), the model aligns these labels with GPT-4o-determined factuality. This allows for calibrated, machine-parsable confidence in a single decoding pass, outperforming the SOTA LUQ across Brier/ECE/Spearman metrics while being 20x faster at inference.
+LoVeC trains LLMs to append a numerical `<confidence>` tag (0–10) after each sentence during long-form generation. Using GRPO (online, requiring an oracle fact-checker) or DPO (offline preference pairs), the model aligns these tags with factuality determined by GPT-4o. This enables single-pass decoding to output calibratable, machine-parseable confidence scores, outperforming the Prev. SOTA LUQ across Brier/ECE/Spearman metrics and achieving a 20x inference speedup.
 
 ## Background & Motivation
 
-**Background**: Mainstream hallucination detection for long-form QA falls into two categories: sampling-based consistency methods (e.g., LUQ, SelfCheckGPT, requiring multiple samples + similarity comparison) and atomic-claim-based scoring (Fadeeva 2024, Liu 2024). Both are post-processing steps and rely on external models, leading to high single-inference costs.
+**Background**: Mainstream hallucination detection for long-form QA falls into two categories: sampling-based consistency methods (e.g., LUQ, SelfCheckGPT, requiring multiple samples and similarity comparisons) and GPT-based atomic claim scoring (Fadeeva 2024, Liu 2024). Both are post-processing methods dependent on external models, leading to high single-inference costs.
 
-**Limitations of Prior Work**: ① Consistency methods require resampling 5–10 times per query; running the 792-item WildHallu test set on an A100 takes over 1500 seconds. ② Atomic-claim deconstruction requires GPT-4 API calls, incurring high cost and latency. ③ While verbalized confidence is cheaper, existing methods (e.g., LoGU, Linguistic Calibration) output natural language phrases like "I believe" or "70% uncertain," which are difficult for machines to parse or use with direct thresholds. ④ Existing verbalized confidence research focuses almost entirely on short-form QA, with no systematic study at the sentence-level in long-form generation.
+**Limitations of Prior Work**: 
+1. Consistency methods require resampling 5–10 times per query, taking 1500+ seconds to process 792 items in the WildHallu test set on an A100.
+2. Atomic-claim deconstruction relies on GPT-4 APIs, incurring high cost and latency.
+3. While verbalized confidence is cheap, existing methods (e.g., LoGU, Linguistic Calibration) output natural language phrases like "I believe" or "70% uncertain," which are difficult for machines to parse or use for thresholding.
+4. Most existing verbalized confidence work focuses on short-form QA, with a lack of systematic study at the sentence-level in long-form generation.
 
-**Key Challenge**: A paragraph in long-form text contains multiple factual statements, and confidence should vary per sentence. However, SFT only learns token-level likelihood and cannot jointly optimize "sentence content" and "confidence digits" as a combined action. Furthermore, SFT lacks feedback for negative examples, failing to learn asymmetric costs like "it is better to say 'I don't know' than to be confidently wrong."
+**Key Challenge**: A paragraph in long-form text contains multiple factual statements, and confidence should vary per sentence. However, SFT only learns token-level likelihood and cannot jointly optimize "sentence content" and "confidence digits" as a unified action. Furthermore, SFT lacks feedback for negative examples, failing to learn asymmetric costs like "preferring to say 'I don't know' over being confidently wrong."
 
-**Goal**: Enable models to generate `<confidence> N </confidence>` numerical labels that align with factuality while writing sentences in a single decoding pass, ensuring robustness across in-domain (WildHallu) and out-of-domain (Bios / PopQA) tasks.
+**Goal**: To enable models to generate `<confidence> N </confidence>` numerical tags aligned with factuality while writing sentences in a single decoding pass, ensuring robustness across both in-domain (WildHallu) and out-of-domain (Bios / PopQA) settings.
 
-**Key Insight**: Treat "writing sentences + labeling confidence" as a sequential decision process. Use RL to perform credit assignment directly on the $(sentence, confidence)$ joint action—rewarding the degree of alignment between confidence and fact-checker factuality, while using a log-base reward to heavily penalize overconfident errors.
+**Key Insight**: Treat "writing a sentence + labeling confidence" as a sequential decision process. Use RL to perform credit assignment directly on the joint action (sentence, confidence) by rewarding the alignment between confidence and factuality, while using a log-base reward to heavily penalize overconfident errors.
 
-**Core Idea**: Jointly optimize $(s_i, c_i)$ using RL (GRPO + DPO) with a binary-cross-entropy log reward to produce both text and parsable numerical confidence in a single decoding pass.
+**Core Idea**: Jointly optimize (s_i, c_i) using RL (GRPO + DPO) with a binary-cross-entropy log reward, producing both text and parseable numerical confidence in a single decoding pass.
 
 ## Method
 
 ### Overall Architecture
 
-Given a query $q$, the policy $\pi_\theta$ outputs sentence-confidence pairs $y=\{(s_1,c_1),\dots,(s_n,c_n)\}$, where $c_i\in\{0,1,\dots,10\}$. Training involves two steps: (1) 1 epoch of SFT on winning samples $y_w$ to teach the model the `<confidence>N</confidence>` format; (2) 1 epoch of RL using GRPO (when an oracle fact-checker is available) or DPO (using offline preference pairs without an oracle), with LoRA fine-tuning on q/k/v/o_proj (< 1% of parameters). Two evaluation protocols are established: free-form tagging (model outputs answer and confidence simultaneously) and iterative tagging (model predicts confidence sentence-by-sentence for fixed text to allow fair comparison).
+Given a query $q$, the policy $\pi_\theta$ outputs sentence-confidence pairs $y=\{(s_1,c_1),\dots,(s_n,c_n)\}$, where $c_i\in\{0,1,\dots,10\}$. Training involves two steps: (1) 1 epoch of SFT on winning samples $y_w$ to teach the `<confidence>N</confidence>` format; (2) 1 epoch of RL using GRPO (with a fact-checker oracle) or DPO (with offline preference pairs). LoRA is used to fine-tune q/k/v/o_proj (< 1% parameters). Two evaluation protocols are established: free-form tagging (simultaneous output of answer and confidence) and iterative tagging (predicting confidence for fixed sentences for fair comparison).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Query q"] --> B["SFT for Output Format<br/>Learning confidence tags on winning samples"]
+    B -->|"Online fact-checker oracle available"| C["GRPO + log-base Calibration Reward<br/>Group relative advantage, BCE approximates proper scoring"]
+    B -->|"No oracle, offline preference pairs only"| D["DPO + Synthetic Preference Pairs<br/>Identical sentences, shifted confidence digits"]
+    C --> E["Policy πθ: Single Decoding Pass<br/>Outputs (sentence, 0–10 confidence) pairs"]
+    D --> E
+    E --> F["Free-form / Iterative Tagging Protocols<br/>Decoupling content quality from scoring quality"]
+```
 
 ### Key Designs
 
-1.  **GRPO + log-base calibration reward**:
-    - **Function**: Represents confidence-factuality alignment as a differentiable group-relative advantage signal for online policy optimization.
-    - **Mechanism**: Normalizing $c_i, f_i$ to $[0,1]$, the confidence reward is defined as $r_{\mathrm{conf}} = \lambda\cdot \frac{1}{n}\mathbf{1}^\top\left(1+\frac{f\odot\log c + (1-f)\odot\log(1-c)}{R_{\max}}\right)$, essentially the negative BCE, plus informativeness and format sub-rewards. For each query, $G$ trajectories $\{y_j\}_{j=1}^G$ are sampled to calculate group-mean normalized advantages $\hat A_j = \frac{r_j - \mathrm{mean}(r)}{\mathrm{std}(r)}$. The GRPO loss is $L_{\mathrm{GRPO}}(\theta) = -\mathbb{E}\big[\frac{1}{G}\sum_j(\hat A_j(\pi_\theta,\pi_{\mathrm{old}}) - \beta D_{\mathrm{KL}}[\pi_\theta\|\pi_{\mathrm{ref}}])\big]$. The reward is stretched using $\gamma=1.5$ via $r\leftarrow \mathrm{sign}(r)|r|^\gamma$ to amplify differences between samples.
-    - **Design Motivation**: Unlike linear or quadratic losses, the log reward heavily penalizes "high confidence but factually wrong" outputs (approaching $-\infty$). It is a proper scoring rule that forces the model to calibrate rather than just learn ranking. Group-relative advantage removes the need for a separate critic, saving VRAM.
+**1. GRPO + log-base Calibration Reward: Formulating confidence as group relative advantage for proper scoring**
 
-2.  **DPO + Synthetic Preference Pairs (Algorithm 1)**:
-    - **Function**: Achieves the same goal through preference learning in offline scenarios without an online fact-checker.
-    - **Mechanism**: For each query $(q,E)$, the base model generates plain text $y_{\mathrm{base}}=\{s_1,\dots,s_n\}$. Using GPT-4o + retrieved evidence, fact labels $f_j$ are calculated. A winning set $y_w=\{(s_j,f_j)\}$ (using ground truth as confidence) and a losing set $y_l=\{(s_j,c'_j)\}$ are constructed, where $c'_j$ is sampled uniformly from $\{0,\dots,10\}\setminus\{f_j\}$. This keeps the sentence identical while deviating the confidence digit from the truth. Optimization uses standard DPO loss: $L_{\mathrm{DPO}}=-\mathbb{E}\log\sigma\big(\beta\log\frac{\pi_\theta(y_w|q)}{\pi_{\mathrm{SFT}}(y_w|q)} - \beta\log\frac{\pi_\theta(y_l|q)}{\pi_{\mathrm{SFT}}(y_l|q)}\big)$.
-    - **Design Motivation**: DPO avoids expensive GPT-4o calls during RL training by concentrating oracle calls in the data construction phase. By keeping sentences identical and only perturbing confidence, the model focuses on learning "how to score" rather than "how to write."
+For numerical confidence to reflect factuality, the reward function must be a proper scoring rule; otherwise, the model only learns ranking without calibration. LoVeC normalizes $c_i, f_i$ to $[0,1]$ and defines the confidence reward as:
 
-3.  **Free-form vs. Iterative Tagging Dual Protocol**:
-    - **Function**: Decouples the evaluation of "content generation quality" and "scoring quality."
-    - **Mechanism**: Free-form allows the model to generate $y_t = \arg\max_{y_t}\pi_\theta(y_t|y_{<t},q)$, outputting the answer and `<confidence>` together. Iterative tagging fixes base-model-generated sentences $\{s_1,\dots,s_n\}$, and the model only predicts $c_i = \arg\max_c \pi_\theta(\{q,(s_1,c_1),\dots,(s_{i-1},c_{i-1}),s_i\},c)$ sentence-by-sentence.
-    - **Design Motivation**: Since different verbalized methods generate different content, metrics like BS/ECE are hard to compare directly. Iterative tagging provides an apples-to-apples baseline on identical text, while free-form preserves the real-world usage scenario.
+$$r_{\mathrm{conf}} = \lambda\cdot \frac{1}{n}\mathbf{1}^\top\left(1+\frac{f\odot\log c + (1-f)\odot\log(1-c)}{R_{\max}}\right)$$
+
+This is essentially the negative BCE, combined with informativeness and format sub-rewards. It penalizes "high confidence but factual error" with values approaching $-\infty$, forcing calibration. GRPO is used for optimization: $G$ trajectories $\{y_j\}$ are sampled per query, and group-mean normalized advantages $\hat A_j=\frac{r_j-\mathrm{mean}(r)}{\mathrm{std}(r)}$ are calculated (eliminating the critic and saving memory). The objective is:
+
+$$L_{\mathrm{GRPO}}(\theta) = -\mathbb{E}\Big[\tfrac{1}{G}\textstyle\sum_j\big(\hat A_j(\pi_\theta,\pi_{\mathrm{old}}) - \beta D_{\mathrm{KL}}[\pi_\theta\|\pi_{\mathrm{ref}}]\big)\Big]$$
+
+A reward stretching factor $\gamma=1.5$ ($r\leftarrow\mathrm{sign}(r)|r|^\gamma$) is applied to amplify the difference between samples.
+
+**2. DPO + Synthetic Preference Pairs: Offline preference learning without an online fact-checker**
+
+Since GRPO requires frequent fact-checker calls during training, offline scenarios necessitate moving oracle calls to the data construction phase. For each query $(q,E)$, a base model generates plain text $y_{\mathrm{base}}=\{s_1,\dots,s_n\}$, and fact labels $f_j$ are calculated via GPT-4o + retrieval. Winning sets $y_w=\{(s_j,f_j)\}$ and losing sets $y_l=\{(s_j,c'_j)\}$ are constructed, where $c'_j$ is sampled uniformly from $\{0,\dots,10\}\setminus\{f_j\}$. By keeping sentences identical and only varying confidence, the model is forced to focus on "how to score" rather than "how to write," preventing language ability degradation. The standard DPO loss is used:
+
+$$L_{\mathrm{DPO}}=-\mathbb{E}\log\sigma\Big(\beta\log\tfrac{\pi_\theta(y_w|q)}{\pi_{\mathrm{SFT}}(y_w|q)} - \beta\log\tfrac{\pi_\theta(y_l|q)}{\pi_{\mathrm{SFT}}(y_l|q)}\Big)$$
+
+**3. Free-form vs. Iterative Tagging Protocols: Separating content quality from scoring accuracy**
+
+Existing verbalized methods generate varying content, making BS/ECE comparisons difficult. Free-form tagging allows the model to generate $y_t=\arg\max_{y_t}\pi_\theta(y_t|y_{<t},q)$ along with `<confidence>`, reflecting real-world use. Iterative tagging fixes the sentences $\{s_1,\dots,s_n\}$ from a base model, and the policy only predicts $c_i=\arg\max_c\pi_\theta(\{q,(s_1,c_1),\dots,(s_{i-1},c_{i-1}),s_i\},c)$. Decoupling content variation allows for a pure comparison of scoring accuracy.
 
 ### Loss & Training
-- SFT is done for one epoch on $y_w$ only for format; GRPO/DPO are followed by one epoch each of LoRA fine-tuning (q/k/v/o_proj), AdamW; Total 1500 GPU hours on 8x A100. GRPO reward stretching $\gamma=1.5$, with a $0.15\times \mathrm{correctness}$ small reward to prevent "always saying I don't know."
-- Backbone: Llama-3-8B-Instruct and Gemma-2-9B-It. Evaluation metrics: Brier Score (BS), ECE-M (soft label version), and Spearman Correlation (SC) to cover both calibration and ranking.
+- SFT is performed on $y_w$ for formatting. GRPO/DPO uses LoRA (default rank, q/k/v/o_proj) with AdamW. Total training time was 1500 GPU hours on 8×A100s. GRPO uses reward stretching ($\gamma=1.5$) and a $0.15\times$ correctness bonus to prevent the model from always saying "I don't know."
+- Backbones: Llama-3-8B-Instruct and Gemma-2-9B-It. Metrics include Brier Score (BS), ECE-M (soft label version), and Spearman Correlation (SC) to cover both calibration and ranking.
 
 ## Key Experimental Results
 
@@ -73,7 +91,7 @@ Given a query $q$, the policy $\pi_\theta$ outputs sentence-confidence pairs $y=
 
 | Dataset | Method | BS↓ | ECE-M↓ | SC↑ |
 |---|---|---|---|---|
-| WildHallu | LUQ (prev SOTA) | 14.5 | 21.5 | 56.8 |
+| WildHallu | LUQ (Prev. SOTA) | 14.5 | 21.5 | 56.8 |
 | WildHallu | LoVeC-GRPO (iter) | **5.7** | **2.5** | 57.0 |
 | WildHallu | LoVeC-DPO (iter) | 6.0 | 5.0 | **60.4** |
 | Bios | LUQ | 20.0 | 29.5 | 63.8 |
@@ -82,55 +100,55 @@ Given a query $q$, the policy $\pi_\theta$ outputs sentence-confidence pairs $y=
 | PopQA | LUQ | 16.7 | 23.2 | 62.5 |
 | PopQA | LoVeC-DPO (iter) | **9.6** | **1.7** | **63.1** |
 
-BS and ECE-M were roughly halved across three datasets, while Spearman Correlation also saw slight gains. Free-form trends matched iterative (GRPO BS 5.7–10.1, ECE-M 5.1–11.1). Inference time for 792 WildHallu samples: LUQ took 1525s vs. LoVeC-iterative 64s (**~24× speedup**) and LoVeC-freeform 139s (~11× speedup).
+BS / ECE-M were halved across all datasets, with SC showing slight gains. Free-form trends were consistent with iterative results. For 792 items in WildHallu, LUQ took 1525s vs. LoVeC-iterative 64s (**~24× speedup**) and LoVeC-freeform 139s (~11× speedup).
 
 ### Ablation Study
 
 | Configuration | BS↓ | ECE-M↓ | SC↑ | Note |
 |---|---|---|---|---|
 | LoVeC-GRPO Full (WildHallu) | 5.7 | 2.5 | 57.0 | Base |
-| Using Log Reward | 5.7 | 2.5 | 57.0 | Proper scoring rule |
-| Using Linear/Quadratic Reward | ↑ | ↑ | ↓ | Calibration degraded significantly |
-| DPO using GPT-4o Oracle | 6.0 | 5.0 | 60.4 | Default |
-| DPO using Self-label (frozen self) | Slightly worse | Slightly worse | Slightly worse | Still outperforms LUQ baseline |
-| SFT using Regression Loss vs. CE | ↑ | ↑ | ↓ | All metrics worsened |
-| Iterative without seeing previous scores | ↑ | ↑ | ↓ | Removing "local calibration anchors" drops score |
+| Log reward | 5.7 | 2.5 | 57.0 | Proper scoring rule |
+| Linear/quadratic reward | ↑ | ↑ | ↓ | Calibration significantly worsens |
+| DPO with GPT-4o oracle | 6.0 | 5.0 | 60.4 | Default |
+| DPO with self-label | Slightly worse | Slightly worse | Slightly worse | Still superior to LUQ |
+| SFT with regression loss | ↑ | ↑ | ↓ | All metrics degraded |
+| Iterative without score context | ↑ | ↑ | ↓ | Removing local calibration anchors drops performance |
 
-GRPO training dynamics: Mean reward 13.86 → 29.83 (5667 steps / 1 epoch), ECE-M dropped from 15.2 to 2.5 simultaneously without reward collapse.
+GRPO dynamics: Mean reward improved from 13.86 to 29.83 (5667 steps / 1 epoch), while ECE-M dropped from 15.2 to 2.5, indicating no reward collapse.
 
 ### Key Findings
-- The critical advantage of RL over SFT is not the surface score but the token ranking structure: in GRPO next-token prediction, top-15 candidates are monotonic `10, 9, 8, ..., 0` (when factually correct) or `2, 3, 4, ...` (ordered around the true score when incorrect). DPO is partially ordered, while SFT is completely unordered—this "probability distribution reflecting the confidence ladder" is the inductive bias RL truly injects.
-- Removing the expensive oracle (using self-label DPO) still beats LUQ, suggesting the method is not overly sensitive to oracle strength and can be deployed in industrial scenarios without GPT-4o.
-- Complementary to LUQ: Simple averaging of LoVeC-DPO + LUQ scores gains another +5 points in Spearman, indicating that verbalized signals and sampling signals act as orthogonal evidence.
-- Zero-shot transfer to short-form TriviaQA remains competitive, approaching RewardingDoubt (designed specifically for short-form), showing RL learns a general skill of "reflecting likelihood as digits."
+- The advantage of RL over SFT is not just the surface score but the token ranking structure: In GRPO next-token prediction, top-15 tokens are monotonic (e.g., `10,9,8...` for correct facts or `2,3,4...` for errors), while SFT is disordered. This "calibrated probability distribution" is the inductive bias RL injected.
+- Removing the GPT-4o oracle (using self-labeled DPO) still beats LUQ, suggesting robustness to oracle strength.
+- Complementarity: Simple averaging of LoVeC-DPO and LUQ increases Spearman Correlation by +5 points, indicating verbalized and sampling signals are orthogonal.
+- Competitive zero-shot transfer on short-form TriviaQA, suggesting RL learns the general skill of mapping likelihood to digits.
 
 ## Highlights & Insights
-- Redefining "long-form confidence" as "sentence-level digits + RL joint optimization" avoids GPT calls for atomic-claim extraction and multiple decodings for consistency sampling. It is the most practical form for engineering.
-- Log reward turns calibration into proper scoring, and the combination of reward stretching and small correctness bonuses ("asymmetric + anti-hacking" reward engineering) is a valuable reference for those working on RLHF calibration.
-- The DPO preference pair construction keeps the sentence identical and only varies confidence. This "controlled variable" approach ensures the model learns the scoring task without polluting its linguistic capabilities.
-- The dual protocol evaluation decouples content quality from scoring quality, providing a template for evaluating trustworthy AI in long-form contexts—subsequent verbalized confidence work should include the iterative tagging benchmark.
+- Redefining long-form confidence as sentence-level digits optimized via RL avoids expensive atomic-claim extraction and multiple decoding passes, making it highly practical.
+- Log reward transforms calibration into proper scoring; combined with reward stretching and correctness bonuses, it provides a "non-symmetric + anti-hacking" reward engineering paradigm.
+- The DPO preference pair construction (matching sentences, varying confidence) isolates the scoring task, preventing degradation of language capabilities.
+- The dual-protocol evaluation (Free-form vs. Iterative) decouples content and scoring quality, serving as a template for evaluating trustworthy AI in long-form text.
 
 ## Limitations & Future Work
-- Only applicable to white-box models (requires LoRA + RL); cannot be deployed on pure API models like OpenAI or Anthropic.
-- Evaluation is limited to factuality; it does not cover other calibratable dimensions like consistency, harmlessness, or creative writing.
-- Sentence-level granularity still lacks precision for sentences containing multiple contradictory facts; future work could push to sub-sentence or atomic-claim levels.
-- Training rewards depend on GPT-4o fact-checking, inheriting its factual judgment biases; self-labeling is feasible but remains slightly weaker.
-- Not yet verified on other long-form tasks like code generation or translation; real-world performance in high-risk domains (medical/legal) is unknown.
+- Only applicable to white-box models (requires LoRA + RL); cannot be easily deployed for closed API-only models.
+- Only accounts for factuality, not covering consistency, toxicity, or creativity calibration.
+- Sentence-level granularity may be too coarse when a sentence contains conflicting facts; future work could explore sub-sentence or atomic-claim levels.
+- Reward training relies on GPT-4o fact-checks, potentially inheriting its biases.
+- Has not been verified in other long-form tasks like code generation or translation; effectiveness in high-stakes fields (Medical/Legal) is unknown.
 
 ## Related Work & Insights
-- **vs LUQ (Zhang 2024a)**: LUQ relies on 5–10 samples + sentence-level consistency; this work is verbalized in a single decoding pass. LoVeC moves the judgment burden to the training phase, resulting in zero additional inference overhead at the same granularity.
-- **vs LoGU (Yang 2025a) / Linguistic Calibration (Band 2024)**: They use RL for phrases like "I believe" or "I'm uncertain," which are hard to parse. LoVeC uses `0–10` tags for machine interpretability, enabling direct thresholds or ranking.
-- **vs RewardingDoubt / SaySelf**: These are RL calibration methods but limited to short-form. LoVeC is the first to achieve RL calibration for long-form, providing both GRPO and DPO solutions.
+- **vs LUQ (Zhang 2024a)**: LUQ relies on 5–10 samples and consistency aggregation; LoVeC is a single-pass verbalized method. LoVeC shifts the computational burden to the training phase, resulting in zero extra inference overhead.
+- **vs LoGU (Yang 2025a) / Linguistic Calibration (Band 2024)**: These use natural language phrases which are hard to parse. LoVeC uses `0–10` tags for direct machine interpretability and thresholding.
+- **vs RewardingDoubt / SaySelf**: These use RL but are limited to short-form tasks; LoVeC is the first to scale RL calibration to long-form with both GRPO and DPO solutions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic RL solution for sentence-level verbalized confidence in long-form text; original dual protocol evaluation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets + Llama/Gemma + multiple RL algorithms + reward forms + oracle types + 6+ ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Detailed motivation; case studies using token ranking to prove the internalization effects of RL are very vivid.
-- Value: ⭐⭐⭐⭐ 20× speedup + significant calibration improvement is highly attractive for production; reward design and preference pair paradigms are reusable.
+- **Novelty**: ⭐⭐⭐⭐ First systematic RL-based sentence-level verbalized confidence for long-form text; original dual-protocol evaluation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ 3 datasets, multiple models, multiple RL algorithms, and 6+ ablation studies on reward forms and oracles.
+- **Writing Quality**: ⭐⭐⭐⭐ Detailed motivation and vivid analysis of the RL normalization effect via token ranking.
+- **Value**: ⭐⭐⭐⭐ 20× speedup with significant calibration gains is highly attractive for production; the reward design and preference construction are reusable paradigms.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

@@ -2,78 +2,74 @@
 title: >-
   [Paper Note] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization
 description: >-
-  [ICML 2026][Optimization][Stochastic Polyak step size] SPSsafe extends the Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or knowledge of optimal value…
+  [ICML 2026][Optimization & Theory][Stochastic Polyak step size] SPSsafe extends the Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or prior knowledge of optimal values. Combined with momentum (IMA, an equivalent form of SHB), it maintains rigorous convergence guarantees. It demonstrates superior robustness over ex
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Stochastic Polyak step size"
-  - "non-smooth optimization"
-  - "stochastic subgradient"
-  - "momentum"
-  - "robust training"
+  - ICML 2026
+  - Optimization & Theory
+  - Stochastic Polyak step size
 date: 2026-05-08
-content_hash: a2111507894be02e
+content_hash: 572fee5eae988965
 ---
-
 # SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization
 
 **Conference**: ICML 2026  
 **arXiv**: [2512.02342](https://arxiv.org/abs/2512.02342)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Optimization / Adaptive Step Sizes / Non-smooth Optimization  
 **Keywords**: Stochastic Polyak step size, non-smooth optimization, stochastic subgradient, momentum, robust training
 
 ## TL;DR
-SPSsafe extends the Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or knowledge of optimal values. Combined with momentum (IMA, an equivalent form of SHB), it maintains rigorous convergence guarantees. It demonstrates greater robustness than existing adaptive methods (AdaGrad, Adam, DecSPS) in DNN training and prevents gradient norm collapse (anti-gradient vanishing).
+SPSsafe extends the Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or prior knowledge of optimal values. Combined with momentum (IMA, an equivalent form of SHB), it maintains rigorous convergence guarantees. It demonstrates superior robustness over existing adaptive methods (AdaGrad, Adam, DecSPS) in DNN training and prevents gradient norm collapse (resisting gradient vanishing).
 
 ## Background & Motivation
 
-**Background**: Adaptive optimization is standard in modern ML, with AdaGrad and Adam being defaults. The Polyak step size approach has seen a recent resurgence (e.g., Loizou 2021), utilizing function values rather than just gradients to determine step size, showing strong performance on overparameterized models. It has been extended to SGD, Mirror Descent, Local SGD, and SHB.
+**Background**: Adaptive optimization is a staple in modern ML, with AdaGrad and Adam being the defaults. The Polyak step size approach has seen a recent resurgence (e.g., Loizou 2021), using function values rather than just gradients to determine step sizes, showing strong performance on overparameterized models. It has been extended to SGD, Mirror Descent, Local SGD, and SHB.
 
-**Limitations of Prior Work**: (1) Existing SPS analyses mostly assume convexity and smoothness; guarantees for the non-smooth regime (common with ReLU, L1 regularization, ranking loss) are scarce. (2) Existing SPS variants under non-smoothness either require interpolation assumptions (requiring some $x^* \in X^*$ such that $f_i(x^*) = f_i^*$ for all $i$, which is too strong) or knowledge of $f_i(x^*)$ (practically unavailable). (3) Momentum combined with SPS is further underexplored in non-smooth settings.
+**Limitations of Prior Work**: (1) Existing SPS analyses almost exclusively assume convexity and smoothness; guarantees for non-smooth regimes (common with ReLU in DNNs, L1 regularization, or ranking losses) are scarce. (2) Existing non-smooth SPS variants either require an interpolation assumption (requiring $x^* \in X^*$ such that $f_i(x^*) = f_i^*$ for all $i$, which is overly strong) or require oracle knowledge of $f_i(x^*)$ (unavailable in practice). (3) The combination of momentum and SPS remains largely underexplored in non-smooth settings.
 
-**Key Challenge**: Achieving the adaptive advantages of Polyak step sizes with convergence guarantees under non-smoothness, without interpolation assumptions or oracle optimal values—no existing SPS variant satisfies all three.
+**Key Challenge**: To satisfy three conditions simultaneously—the adaptive advantages of Polyak step sizes, convergence guarantees for non-smooth functions, and the absence of interpolation or oracle optimal value assumptions—no existing SPS variant succeeds.
 
-**Goal**: (1) Propose SPSsafe for the stochastic subgradient method (SSM), ensuring rigorous convergence in non-smooth convex optimization without interpolation or optimal values; (2) Integrate momentum (IMA equivalent to SHB) while maintaining theory; (3) Empirically demonstrate robustness in DNN training and the prevention of gradient vanishing.
+**Goal**: (1) Propose SPSsafe for the stochastic subgradient method (SSM), providing rigorous convergence in non-smooth convex optimization without interpolation or oracle values; (2) Incorporate momentum (IMA, equivalent to SHB) while maintaining theoretical guarantees; (3) Empirically demonstrate robustness in DNN training and the prevention of gradient vanishing.
 
-**Key Insight**: The root cause of classical SPS failure in non-smooth settings is subgradient jumps. While $f_i(x_t) - f_i^*$ is a good proxy for "distance to opt," $\|g_t^i\|^2$ is not guaranteed to behave well in non-smooth regimes. This work introduces a "safeguard"—capping the step size at a fixed upper bound $\gamma_{\max}$ to prevent explosion while retaining Polyak's adaptivity.
+**Key Insight**: The root cause of classical SPS failure in non-smooth regimes is that the denominator of the naive Polyak step size $(f_i(x_t)-f_i^*)/\|g_t^i\|^2$ is the squared subgradient norm. When subgradients become small (common in non-smooth regimes and late-stage DNN training), $\|g_t^i\|^2 \to 0$ causes $1/\|g_t^i\|^2$ to pull the step size toward infinity, leading to divergence. However, the numerator $f_i(x_t)-f_i^*$ remains a good proxy for "distance to optimality." This paper’s safeguard thus only modifies the denominator—setting a lower bound $M$ for $\|g_t^i\|^2$ to block explosions caused by small subgradients while keeping the numerator intact to preserve Polyak adaptivity.
 
-**Core Idea**: The safeguard $\gamma_t = \min\{(f_i(x_t) - \ell_i^*)_+/(\|g_t^i\|^2 + \epsilon), \gamma_{\max}\}$, where $\ell_i^* \leq \inf f_i$ is a known lower bound (often 0 for non-negative losses). The IMA momentum framework is used to maintain theoretical consistency.
+**Core Idea**: The SPSsafe step size is $\gamma_t = \dfrac{f_i(x_t) - \ell_i^*}{\max\{\|g_t^i\|^2,\,M\}}$, where $\ell_i^* \leq \inf f_i$ is a known lower bound (e.g., 0 for non-negative losses like cross-entropy) and $M>0$ is the unique safeguard constant. Notably, this is **not** like the older SPSmax that caps the overall step size $\min\{\text{Polyak},\gamma_b\}$ (which can degrade the step size to a constant); instead, it floors the denominator. A single hyperparameter $M$ replaces both the capping constant $\gamma_b$ in SPSmax and the oracle value $f_i(x^*)$ required by SPS\*. This is then integrated into the IMA momentum framework to maintain theoretical properties.
 
 ## Method
 
 ### Overall Architecture
 
-Consider $\min_x f(x) = \tfrac{1}{n}\sum_i f_i(x)$, where $f_i$ is convex, Lipschitz, non-smooth, with lower bound $\ell_i^*$ (e.g., cross-entropy = 0).
+Consider $\min_x f(x) = \tfrac{1}{n}\sum_i f_i(x)$, where $f_i$ is convex, Lipschitz, non-smooth, and has a lower bound $\ell_i^*$ (e.g., cross-entropy = 0).
 
-Two algorithms:
-- **SSM with SPSsafe**: $x_{t+1} = x_t - \gamma_t g_t^i$, where $g_t^i \in \partial f_i(x_t)$
-- **IMA with SPSsafe** (Momentum, equivalent to SHB): $z_{t+1} = z_t - \eta_t g_t^i$; $x_{t+1} = \tfrac{\lambda_{t+1}}{\lambda_{t+1}+1} x_t + \tfrac{1}{\lambda_{t+1}+1} z_{t+1}$
+Both algorithms use the same family of SPSsafe step sizes (flooring the denominator at $\max\{\|g_t^i\|^2,\,M\}$):
+- **SSM with SPSsafe**: $x_{t+1} = x_t - \gamma_t g_t^i$, $g_t^i \in \partial f_i(x_t)$, with step size $\gamma_t = \dfrac{f_i(x_t) - \ell_i^*}{\max\{\|g_t^i\|^2,\,M\}}$.
+- **IMA with SPSsafe** (Momentum, equivalent to SHB): $z_{t+1} = z_t - \eta_t g_t^i$, $x_{t+1} = \tfrac{\lambda_{t+1}}{\lambda_{t+1}+1} x_t + \tfrac{1}{\lambda_{t+1}+1} z_{t+1}$, with step size $\eta_t = \dfrac{[f_i(x_t) - \ell_i^* + \lambda_t\langle g_t^i,\, x_t - x_{t-1}\rangle]_+}{\max\{\|g_t^i\|^2,\,M\}}$.
 
-SPSsafe step size: $\gamma_t = \min\left\{\frac{(f_i(x_t) - \ell_i^*)_+}{\|g_t^i\|^2 + \epsilon}, \gamma_{\max}\right\}$
+The safeguard constant $M>0$ floors the denominator to prevent step size explosion when subgradients are small. Both variants achieve $O(1/\sqrt{T}+\sigma^2)$ convergence to an optimal neighborhood under convex non-smooth (Lipschitz) conditions. The IMA version additionally provides a last-iterate guarantee, all without requiring interpolation or knowledge of $f_i(x^*)$.
 
 ### Key Designs
 
-1. **Safeguard Upper Bound $\gamma_{\max}$ (Core Innovation)**:
-    - **Function**: Caps the Polyak step size at a fixed bound to prevent explosion in non-smooth settings.
-    - **Mechanism**: In non-smooth cases, $\|g_t^i\|^2$ can be small even if $f_i(x_t) - \ell_i^*$ is not, potentially causing naive Polyak step sizes to become arbitrarily large. Adding the $\gamma_{\max}$ cap ensures bounded step sizes, making Hoeffding-type bounds in convergence analysis applicable.
-    - **Design Motivation**: Classical SPS is naturally bounded in smooth settings (gradient Lipschitz ensures $\|g\|^2$ is not too small), but this is not guaranteed in non-smooth settings. The safeguard is a minimal fix to preserve theory.
+**1. Flooring the subgradient norm $\max\{\|g_t^i\|^2, M\}$ (Core Innovation): Preventing step size explosion from small subgradients**
 
-2. **$\ell_i^*$ as a Lower Bound Substitute for $f_i^*$**:
-    - **Function**: Removes the need for an oracle $f_i^*$, using a known lower bound instead.
-    - **Mechanism**: $\ell_i^* \leq \inf f_i$ is typically known (e.g., 0 for non-negative losses); it is substituted into $\gamma_t = (f_i(x_t) - \ell_i^*)_+/\|g_t^i\|^2$, with $(\cdot)_+$ truncation to avoid negative values.
-    - **Design Motivation**: Previous SPS* required $f_i(x^*)$ (oracle-dependent). Using a lower bound provides a "known SPS" without extra information requirements.
+In smooth settings, classical SPS is naturally bounded—Lipschitz gradients ensure $\|g_t^i\|^2$ does not become arbitrarily small relative to the numerator, keeping step sizes controlled. In non-smooth regimes or late-stage DNN training, subgradients can become extremely small. The denominator in naive Polyak step sizes $(f_i(x_t)-\ell_i^*)/\|g_t^i\|^2$ approaches 0, causing the step size to diverge. SPSsafe fixes this by **flooring the denominator without touching the numerator**:
 
-3. **IMA Momentum Framework equivalent to SHB**:
-    - **Function**: Incorporates momentum into SPSsafe without breaking theoretical proofs.
-    - **Mechanism**: The dual-sequence IMA (averaging $z$ and $x$) is equivalent to SHB: $x_{t+1} = x_t - \hat\gamma_t g_t^i + \beta(x_t - x_{t-1})$. Using $\hat\gamma_t = \gamma_t$ from SPSsafe, analysis holds because the IMA form is better suited for Lyapunov-based analysis.
-    - **Design Motivation**: Momentum is practically useful but theoretically difficult to analyze. The IMA equivalence provides a cleaner framework.
+$$\gamma_t=\frac{f_i(x_t)-\ell_i^*}{\max\{\|g_t^i\|^2,\,M\}}.$$
+
+This is the opposite of SPSmax, which caps the entire step size $\min\{\text{Polyak},\gamma_b\}$. If $\gamma_b$ is too small, SPSmax degrades to a constant step size, losing Polyak adaptivity. By flooring the denominator, SPSsafe **never degrades to a constant**, preserving adaptivity. This floor is also key to the convergence proof, as $M$ allows the step size to be controlled, enabling the $O(1/\sqrt{T}+\sigma^2)$ bound. The paper notes this can be interpreted as adaptive gradient clipping, providing the first theoretical guarantee for "Polyak-style clipped SSM."
+
+**2. Using $\ell_i^*$ as a lower bound instead of $f_i^*$: Bypassing oracle assumptions**
+
+Previous non-smooth SPS variants (like SPS\*) required either interpolation or the exact value of each $f_i(x^*)$, which is unattainable in practice. SPSsafe utilizes the fact that lower bounds $\ell_i^*\le\inf f_i$ are often known (e.g., 0 for most loss functions). For SSM, since $\ell_i^*\le\inf f_i\le f_i(x_t)$, the numerator is naturally non-negative. For the momentum version (IMA), the term $\lambda_t\langle g_t^i,x_t-x_{t-1}\rangle$ can be negative, so the numerator is truncated with $[\cdot]_+$. This converts an "oracle-dependent SPS" into a "lower-bound-dependent SPS," leaving only $\ell_i^*$ and $M$ as configurable parameters.
+
+**3. IMA Momentum Framework equivalent to SHB: Integrating momentum without compromising theory**
+
+Momentum is crucial in practice, but its non-smooth analysis is often difficult. SPSsafe uses the dual-sequence form of IMA (a $z$ sequence for subgradient updates and an $x$ sequence for averaging), which is equivalent to SHB with momentum: $x_{t+1}=x_t-\hat\gamma_t g_t^i+\beta(x_t-x_{t-1})$. Substituting the SPSsafe step size into this framework makes the Lyapunov analysis cleaner. The momentum version achieves both Cesàro mean convergence and last-iterate guarantees without ever needing $f_i(x^*)$, a feat previously impossible for adaptive momentum methods.
 
 ## Key Experimental Results
 
 ### Convex Non-smooth Benchmark
 
-| Method | Logistic + L1 | SVM hinge loss | ranking loss |
+| Method | Logistic + L1 | SVM hinge loss | Ranking loss |
 |------|----------|----------|----------|
 | AdaGrad | 0.083 | 0.142 | 0.295 |
 | Adam | 0.076 | 0.135 | 0.281 |
@@ -81,7 +77,7 @@ SPSsafe step size: $\gamma_t = \min\left\{\frac{(f_i(x_t) - \ell_i^*)_+}{\|g_t^i
 | **SPSsafe (SSM)** | **0.069** | **0.121** | **0.258** |
 | **SPSsafe (IMA)** | **0.063** | **0.114** | **0.247** |
 
-SPSsafe consistently leads across three non-smooth convex benchmarks, with the IMA version (momentum) performing best.
+SPSsafe consistently leads across three non-smooth convex benchmarks, with the IMA version performing best.
 
 ### DNN Training (CIFAR-10 + ResNet-18)
 
@@ -93,49 +89,49 @@ SPSsafe consistently leads across three non-smooth convex benchmarks, with the I
 | **SPSsafe** | **94.5** | **High (no tuning)** |
 | **SPSsafe + IMA** | **95.1** | **High** |
 
-SPSsafe + IMA reaches 95.1% on ResNet (without manual LR tuning), matching or slightly exceeding fine-tuned SGD.
+SPSsafe + IMA reaches 95.1% on ResNet-18 without manual tuning of the learning rate, matching or slightly exceeding fine-tuned SGD.
 
-### Gradient Norm Tracking (Anti-gradient Vanishing)
+### Gradient Norm Tracking (Anti-Gradient Vanishing)
 
-| Method | Late-stage Gradient Norm | Gradient Vanishing? |
+| Method | Late-stage Grad Norm | Gradient Vanishing? |
 |------|-------------|----------|
 | Adam | Near 0 | ✓ Severe |
 | AdaGrad | Near 0 | ✓ Severe |
 | **SPSsafe** | Maintains $\sim 10^{-2}$ | ✗ No |
 
-The gradient norm in SPSsafe does not collapse in late training stages—meaning the model remains in active learning, which is beneficial for continued fine-tuning or adversarial robustness.
+The gradient norm in SPSsafe does not collapse in late training stages, meaning the model remains in "active learning," which is beneficial for fine-tuning or adversarial robustness.
 
 ### Key Findings
-- **Safeguard is essential for theoretical guarantees under non-smoothness**: Without it, Polyak step sizes may explode or diverge in non-smooth regimes.
-- **Consistency across convex non-smooth and DNN tasks**: Achieves SOTA on both convex benchmarks and ResNet.
-- **Anti-gradient vanishing is an unexpected benefit**: SPSsafe prevents gradient collapse, which is friendly for fine-tuning and adversarial training.
-- **No LR tuning required**: Polyak-style step sizes are naturally adaptive, saving the cost of LR sweeps.
+- **Safeguarding is essential for theory**: Removing the denominator floor ($M\to0$) causes Polyak step sizes to explode or diverge as subgradients vanish.
+- **Consistent across Convex and DNN settings**: SOTA performance on three convex benchmarks and ResNet.
+- **Anti-gradient vanishing is a byproduct**: Stable late-stage gradients are favorable for fine-tuning and adversarial training.
+- **No LR tuning required**: Polyak-style step sizes are naturally adaptive, eliminating the need for LR sweeps.
 
 ## Highlights & Insights
-- **Safeguard is a minimum-viable fix**: The most concise way to fix SPS failure in non-smooth optimization, without complicating theory or practice.
-- **Eliminating interpolation or oracle requirements is a key contribution**: Previous non-smooth SPS analyses required strong assumptions; this work makes the method truly practical.
-- **Side effect of anti-gradient vanishing**: Traditional adaptive optimizers shrink late-stage gradients (often as a noise floor byproduct); SPSsafe does not, implying it may make deep networks more trainable.
-- **Analytical convenience of IMA/SHB equivalence**: Providing a dual-sequence framework makes momentum analysis cleaner and more useful.
+- **Flooring the denominator vs. capping the step size**: Unlike SPSmax, which caps the step size and risks degrading to a constant, SPSsafe floors the denominator, ensuring adaptivity is preserved. This can be interpreted as adaptive gradient clipping.
+- **Removal of interpolation/oracle assumptions**: Eliminating these strong assumptions makes the method truly practical for non-smooth optimization.
+- **Gradient vanishing mitigation**: Traditional adaptive optimizers tend to reduce late-stage gradients (a noise floor effect); SPSsafe avoids this collapse, potentially making deeper networks more trainable.
+- **Analytical convenience of IMA-SHB equivalence**: Using dual-sequence equivalence makes momentum analysis cleaner and provides tighter guarantees.
 
 ## Limitations & Future Work
-- $\gamma_{\max}$ and $\ell_i^*$ still require manual setting; an adaptive $\gamma_{\max}$ could be more robust.
-- Convergence is proven for convex non-smooth cases; non-convex guarantees are not strictly provided (though experiments work).
-- Not fully validated on large-scale LLM/Transformer training; integration with Adam-style second-moment estimation might be necessary later.
-- Computing $f_i(x_t)$ requires a forward pass per step, making it slightly more expensive than pure gradient methods.
-- Distributed/communication-compressed scenarios were not explored.
+- The safeguard constant $M$ and lower bound $\ell_i^*$ still require manual setting; an adaptive $M$ might be more robust.
+- Convergence is only proved for convex non-smooth cases; non-convex guarantees remain open theoretically despite empirical success.
+- Lack of extensive verification on large-scale LLMs/Transformers; may eventually require combination with Adam-style second-moment estimates.
+- Computing $f_i(x_t)$ requires a forward pass at each step, making it slightly more expensive than pure gradient methods (though same complexity as SGD).
+- Distributed or communication-compressed scenarios were not explored.
 
 ## Related Work & Insights
-- **vs Loizou 2021 (classical SPS)**: Classical SPS requires interpolation; this work does not.
-- **vs Garrigos 2023 (SPS*)**: SPS* requires $f_i(x^*)$ oracle; this work uses a lower bound.
-- **vs AdaGrad / Adam**: Traditional adaptive routes use second moments; SPS uses function values, offering a complementary approach.
-- **vs DecSPS, SPSL, Oikonomou-Loizou 2025**: Previous momentum versions still rely on partial assumptions; this is the first complete theory + momentum version for non-smooth settings.
-- **Insight**: The safeguard concept (capping adaptive quantities) can be generalized to other non-smooth extensions of adaptive algorithms; the technique of using lower bounds $\ell_i^*$ instead of oracles is applicable to all Polyak-style methods.
+- **vs. Loizou 2021 (Classical SPS)**: Classical SPS needs interpolation; this does not.
+- **vs. Garrigos 2023 (SPS*)**: SPS\* needs an $f_i(x^*)$ oracle; this uses a lower bound.
+- **vs. AdaGrad / Adam**: These follow the adaptive second-moment route; SPS uses function values, offering a complementary approach.
+- **vs. DecSPS, SPSL, Oikonomou-Loizou 2025**: Previous momentum versions still rely on partial assumptions; this provides the first complete theory for non-smooth momentum.
+- **Insight**: The safeguard idea (capping the adaptive denominator) can be extended to other adaptive algorithms for non-smooth extensions; using $\ell_i^*$ instead of oracle values is applicable to all Polyak-style methods.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Simple safeguard but the first to provide rigorous non-smooth guarantees for SPS; the momentum + non-smooth combination is also new.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple convex non-smooth benchmarks + DNN training + gradient norm analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear algorithms with direct theoretical and experimental correspondence; solid derivations.
-- Value: ⭐⭐⭐⭐ Non-smooth optimization is ubiquitous in ML (ReLU, sparse regularization); SPSsafe provides a plug-in adaptive solution that avoids LR tuning.
+- Novelty: ⭐⭐⭐⭐ Simple safeguard but provides the first rigorous non-smooth guarantee for SPS; momentum + non-smooth combination is also new.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers convex benchmarks, DNN training, and gradient norm analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear algorithms, solid theoretical grounding, and alignment with experiments.
+- Value: ⭐⭐⭐⭐ Non-smooth optimization is ubiquitous in ML; SPSsafe offers a plug-in adaptive solution without LR tuning.
 
 <!-- RELATED:START -->
 

@@ -2,134 +2,129 @@
 title: >-
   [Paper Note] Ekka: Automated Diagnosis of Silent Errors in LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][Silent Errors] Ekka reformulates the diagnosis of "silent errors"—where LLM serving frameworks produce degraded outputs without throwing errors—into a differential debugging task using referen…
+  [ICML 2026][LLM Efficiency][Paper Note] Ekka models the diagnosis of silent errors in LLM serving frameworks—where outputs degrade without explicit errors—as a differential debugging task using reference implementations like HuggingFace as an oracle. By employing an agentic pipeline of "component mapping $\rightarrow$ activation alignment $\rightarrow$ chang
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "Silent Errors"
-  - "Differential Debugging"
-  - "LLM Inference Frameworks"
-  - "Agent Debugging"
-  - "Activation Alignment"
+  - ICML 2026
+  - LLM Efficiency
 date: 2026-05-08
-content_hash: 3188deb9a0a0ddfa
+content_hash: a85c6e80a10d2a59
 ---
-
 # Ekka: Automated Diagnosis of Silent Errors in LLM Inference
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.04594](https://arxiv.org/abs/2606.04594)  
-**Code**: TBC  
+**Code**: TBD  
 **Area**: LLM Efficiency / LLM Serving Systems / Automated Debugging  
-**Keywords**: Silent Errors, Differential Debugging, LLM Inference Frameworks, Agent Debugging, Activation Alignment
+**Keywords**: Silent Errors, Differential Debugging, LLM Inference Frameworks, Agentic Debugging, Activation Alignment
 
 ## TL;DR
-Ekka reformulates the diagnosis of "silent errors"—where LLM serving frameworks produce degraded outputs without throwing errors—into a differential debugging task using reference implementations like HuggingFace as an oracle. By utilizing an agentic pipeline of "component mapping $\rightarrow$ activation alignment $\rightarrow$ change-point analysis," Ekka automatically locates specific faulty modules. It achieves 80% pass@1 and 88% pass@5 accuracy across 17 real-world vLLM/SGLang issues and discovered 4 new hidden bugs confirmed by developers.
+Ekka models the diagnosis of silent errors in LLM serving frameworks—where outputs degrade without explicit errors—as a differential debugging task using reference implementations like HuggingFace as an oracle. By employing an agentic pipeline of "component mapping $\rightarrow$ activation alignment $\rightarrow$ change-point analysis," it automatically localizes problematic modules. Ekka achieves a diagnosis accuracy of 80% pass@1 / 88% pass@5 across 17 real-world vLLM/SGLang issues and discovered 4 hidden bugs confirmed by developers.
 
 ## Background & Motivation
 
-**Background**: Specialized LLM serving frameworks such as vLLM, SGLang, NanoFlow, and KTransformers have become industry standards. These systems are packed with deep optimizations like paged attention, radix attention, custom CUDA kernels, and CUDA graph compilation. The codebases are massive and iterate rapidly, with releases occurring every few days.
+**Background**: Specialized LLM serving frameworks such as vLLM, SGLang, NanoFlow, and KTransformers have become standard for production environments. These frameworks are heavily optimized with techniques like paged attention, radix attention, custom CUDA kernels, and CUDA graph compilation. The codebases are large and iterate rapidly, with releases occurring every few days.
 
-**Limitations of Prior Work**: This combination of high optimization and rapid iteration breeds a particularly troublesome type of bug: **silent errors**. In these cases, the framework neither crashes nor logs warnings, and it does not drop requests, yet the output quality silently degrades. A representative case cited is when vLLM Gemma 3 suddenly dropped nearly 30 points on HellaSwag; it took developers months to identify that sliding window attention was being used incorrectly. Among 90 real-world issues collected by the authors, 43.8% manifested as "accuracy regression," where outputs remain readable but areFactually incorrect.
+**Limitations of Prior Work**: This combination of high optimization and rapid iteration breeds a particularly troublesome type of bug: **silent errors**. In these cases, the framework does not crash, raise alarms, or drop requests, but the output quality silently degrades. A representative case cited is vLLM's Gemma 3, which suddenly dropped nearly 30 points on HellaSwag; it took developers months to identify that sliding window attention was being used incorrectly. Among 90 real-world issues collected by the authors, 43.8% manifested as "accuracy regression," where outputs remained readable but the answers were incorrect.
 
-**Key Challenge**: There is a massive semantic gap between the symptoms (end-to-end benchmark regression) and the root cause (implementation details of a specific kernel or module). Existing methods are inadequate:
-- Traditional fault localization relies on pass/fail signals, which are absent in silent errors.
+**Key Challenge**: There is a massive semantic gap between the symptoms (end-to-end benchmark drops) and the root cause (implementation details of a specific kernel or module). Existing methods are ineffective:
+- Traditional fault localization depends on pass/fail signals, which silent errors lack.
 - Deep learning testing tools either treat models as black boxes or only compare API layers, failing to penetrate optimized serving engines.
-- General agentic debuggers lack the specialized scaffolding for the LLM inference domain, leading to inefficient trial-and-error.
+- General agentic debuggers lack the "scaffolding" required for the LLM inference domain, leading to inefficient trial-and-error.
 
-The empirical practice for developers is to use HuggingFace Transformers as a reference for **differential debugging** (used in approximately 50% of issues), but manually aligning intermediate tensors across frameworks is extremely laborious. For example, vLLM merges Q/K/V projections into a single `QKVProjection` class while HuggingFace uses three independent modules; writing the glue code just to align them is non-trivial.
+The empirical approach used by developers is **differential debugging** using HuggingFace Transformers as a reference implementation (used in approximately 50% of issues). However, manually aligning intermediate tensors across frameworks is extremely laborious—for instance, vLLM merges Q/K/V projections into a single `QKVProjection` class while HuggingFace uses three independent modules, requiring significant glue code to align them.
 
-**Goal**: To automatically provide a ranked report of "most likely buggy components" without requiring the oracle to provide pass/fail labels, allowing humans to review only the top-K candidates instead of dumping tensors layer-by-layer from scratch.
+**Goal**: To automatically provide a ranked report of the most likely buggy components without requiring oracle-provided pass/fail labels, allowing humans to only review the top-K modules.
 
-**Key Insight**: The authors observe that almost all mainstream models have a "slow but correct" reference implementation on HuggingFace. Thus, differential debugging is naturally viable for LLM serving; the missing piece is an LLM agent that can replace humans in "identifying corresponding modules + writing alignment code + determining the point of divergence."
+**Key Insight**: The authors observe that almost all mainstream models have a "slow but correct" reference implementation on HuggingFace, making differential debugging naturally feasible for LLM serving. The missing piece is an LLM agent to replace human effort in "finding corresponding modules + writing alignment code + determining the point of divergence."
 
-**Core Idea**: Reframe silent error diagnosis as differential debugging between two implementations. Use an agent to automate component mapping and activation alignment, followed by a noise-robust error ratio and change-point detection to pinpoint the point of divergence.
+**Core Idea**: Reformulate silent error diagnosis as differential debugging between two implementations. Use an agent to automate component mapping and activation alignment, followed by change-point detection on a noise-robust error ratio to localize the divergence point.
 
 ## Method
 
 ### Overall Architecture
-Ekka takes as input: a suspected target framework (vLLM or SGLang), a reference framework (HuggingFace Transformers), the model, and the prompt/configuration that triggers the bug. The output is a root-cause report ranked by suspicion.
+Ekka takes as input a suspected target framework (vLLM or SGLang), a reference framework (HuggingFace Transformers), the model, and a bug-triggering prompt and configuration. It outputs a root-cause report ranked by suspiciousness. It first performs **diagnostic information collection**—parsing code and model architectures from both frameworks, reproducing the bug, and logging the execution trace (activations and calling sequences). This provides the "comparable facts" for the subsequent **three-step agent diagnosis**: component mapping $\rightarrow$ activation alignment $\rightarrow$ error analysis. This pipeline automates the most tedious tasks in manual differential debugging.
 
-The system is divided into two main stages:
-1. **Diagnosis Information Collection**: Parses the code and model architectures of both frameworks, reproduces the bug, and records the execution trace (activations and calling sequences for each layer) to disk. This provides the agent with "comparable facts."
-2. **Agent-based Bug Diagnosis**: A three-step pipeline—Component Mapping $\rightarrow$ Activation Alignment $\rightarrow$ Error Analysis. Ekka explicitly restricts the diagnosis scope to the **model stack layers (model implementation + kernel backend)** and avoids high-level orchestration (e.g., schedulers, async engines), as the latter is better suited for traditional logging/trace tools.
+Notably, Ekka focuses its diagnosis on the **model stack layer (model implementation + kernel backend)** and excludes high-level orchestration like schedulers or async engines, as silent errors in the latter are better suited for traditional logging/tracing.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Target Framework (vLLM/SGLang)<br/>+ Reference Framework (HuggingFace) + Model<br/>+ Bug-triggering prompt & config"] --> B["Diagnostic Information Collection<br/>Parse code/arch, reproduce bug,<br/>log activations + call sequences"]
+    B --> C
+    subgraph AG["Agent Diagnosis (Three Steps)"]
+        direction TB
+        C["Component Mapping<br/>Model Tree node matching, supports 1:N/N:1"] --> D["Activation Alignment<br/>Agent writes one-off glue code for shape/dtype/KV layout"]
+        E["Error Analysis<br/>Robust error ratio + change-point detection to catch first jump"]
+        D --> E
+    end
+    E --> F["Ranked Root-Cause Report of Components"]
+```
 
 ### Key Designs
 
-1. **Component Mapping via Model Tree**:
-    - **Function**: Identifies "semantically equivalent" sub-module pairs between frameworks with vastly different implementations.
-    - **Mechanism**: Static analysis compresses each framework's `nn.Module` structure into a concise **Model Tree** (retaining hierarchy and naming while removing redundant wrappers). The agent then performs node matching across the two trees, allowing for one-to-many or many-to-one outputs (e.g., vLLM's fused QKV vs. HF's three independent Linears). For ambiguous names, the agent uses a `get_class_definition` tool to inspect source code. Unmapped modules (e.g., SGLang’s logit processor) are explicitly labeled with rationale.
-    - **Design Motivation**: Class name matching almost always fails in LLM serving because modules are fused or split for performance. Abstracting structure into a tree leverages the LLM's strength in identifying variants and compositional logic while avoiding confusion from full codebase complexity.
+**1. Component Mapping: Aligning frameworks using Model Trees**
+Differential debugging first stalls on "which module corresponds to which." Frameworks fuse or split modules for performance. Ekka uses static analysis to compress each framework's `nn.Module` structure into a concise **Model Tree** (preserving hierarchy and naming while stripping redundant wrappers). An agent matches nodes across these trees, allowing one-to-many or many-to-one mappings (e.g., QKV fusion). For naming ambiguities, the agent uses a `get_class_definition` tool to inspect source code. Unmapped modules are explicitly labeled with reasons, ensuring both correctness and completeness.
 
-2. **Activation Alignment via Agent-Generated Glue Code**:
-    - **Function**: Unifies dumped tensors from mapped module pairs into the same shape, dtype, and memory layout for element-wise comparison.
-    - **Mechanism**: Instead of a fixed rule set, the agent generates ad-hoc Python code for each mapping pair to handle differences like reordering paged KV-caches into dense tensors, casting BF16 back to FP32, slicing batch dimensions, or reordering tokens. The agent also generates self-checking code to verify shape consistency before comparison.
-    - **Design Motivation**: Layout differences across frameworks are subject to combinatorial explosion (attention backend $\times$ dtype $\times$ KV layout $\times$ TP, etc.). Using an agent to generate "one-time translators" based on code definitions is extensible and turns alignment failures into explicit exceptions rather than silent errors in comparison results.
+**2. Activation Alignment: Generating one-off translators**
+Even when modules are matched, dumped tensors often differ in shape, dtype, and memory layout. Since layout differences are combinatorially diverse (attention backend $\times$ dtype $\times$ KV layout, etc.), manual rules are insufficient. Ekka has the agent **generate one-off Python glue code** for each mapping. This code handles tasks like rearranging paged KV-caches into dense tensors, reverting BF16 to FP32, and reordering tokens. Self-checking code ensures shape consistency before comparison, preventing alignment failures from misleading the diagnosis.
 
-3. **Error Analysis: Robust Error Ratio and Change-Point Detection**:
-    - **Function**: Determines whether a mapping pair contains a bug and locates where the bug first appeared in the sequence or layers.
-    - **Mechanism**: Rather than using absolute difference or cosine similarity, it defines a **robust error ratio** indicator—a relative measure of abnormality that tolerates small drifts from BF16 accumulation but spikes significantly during real logical deviations. **Change-point analysis** is then applied along the layers or token sequences to locate the first significant jump, which is identified as the root cause. All mapped pairs are finally ranked by divergence intensity.
-    - **Design Motivation**: Empirical study shows ~19.4% of symptom-level bugs are just floating-point noise. Common thresholds produce high false positives. However, true bugs always exhibit a "breakout" point during cross-layer propagation, which is the exact strength of change-point detection.
+**3. Error Analysis: Robust error ratio + change-point detection**
+To distinguish between logic bugs and floating-point noise (found in 19.4% of cases), Ekka uses a **robust error ratio** metric. This measures the relative magnitude of anomalies, tolerating small drifts from BF16 accumulation while surging during true logical deviations. It then treats the error ratio across layers/tokens as a time series and applies **change-point detection** to identify the first significant jump. The component preceding this jump is identified as the root cause. This approach is superior to finding the maximum error, as errors accumulate and propagate once a bug occurs.
 
 ### Loss & Training
-Ekka is an LLM agent-based system and does not train new models. It uses general closed-source LLMs as agents; the average cost per case is approximately \$30 (primarily token fees and reproduction execution).
+Ekka is an LLM-agent-based diagnostic system and does not require training. It uses general-purpose closed-source LLMs as agents. The average cost per case is approximately \$30 (primarily token costs and reproduction execution).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Dataset: A self-constructed silent-error benchmark containing 90 real-world silent errors from vLLM and SGLang. 70 are fixed (for empirical study), and 20 are open (for evaluation). 4 undisclosed new bugs were used for discovery testing. HuggingFace Transformers served as the reference.
+Dataset: A self-constructed silent-error benchmark consisting of 90 real-world issues from vLLM and SGLang (70 fixed for empirical study, 20 open for evaluation), plus 4 undisclosed new bugs for discovery testing.
 
-| Dataset | Metric | Ekka | Strongest Baseline | Gain |
+| Dataset | Metric | Ours (Ekka) | Best Baseline | Gain |
 |--------|------|------|---------------|------|
-| 17 real vLLM/SGLang silent errors | pass@1 Diagnosis Accuracy | 80% | ~46-56% (SOTA Agentic Debugging) | +24%~+34% |
-| 17 real vLLM/SGLang silent errors | pass@5 Diagnosis Accuracy | 88% | Below Ekka | Significant |
-| In-the-wild discovery | New silent errors confirmed by devs | 4 | — | All New |
-| Diagnosis cost | Average USD per case | ~\$30 | — | Economical for agents |
+| 17 Real vLLM/SGLang silent errors | pass@1 Diagnosis Accuracy | 80% | ~46-56% (SOTA agentic debug) | +24%~+34% |
+| Same as above | pass@5 Diagnosis Accuracy | 88% | Lower than Ekka | Significant |
+| New Bug Discovery | Confirmed new silent errors | 4 | — | All New |
+| Cost per Case | Average USD | ~\$30 | — | Feasible for agents |
 
-Main Conclusion: Given an oracle reference, differential debugging combined with agent automation improves diagnosis accuracy from ~50% to 80% (pass@1) and successfully identifies new bugs previously unnoticed by developers.
+Main Conclusion: Given an oracle reference, automated differential debugging via agents improves diagnosis accuracy from ~50% to 80% (pass@1) and can proactively discover new bugs missed by developers.
 
 ### Ablation Study
-
-The qualitative trends of removing key Ekka capabilities:
 
 | Configuration | Metric Trend | Description |
 |------|---------------|------|
 | Full Ekka | 80% pass@1 | Full three-step pipeline |
-| w/o Model Tree mapping | Sharp Decrease | Failed to find corresponding modules for fused QKV, etc. |
-| w/o Agent-generated alignment | Sharp Decrease | Layout/dtype mismatches caused crashes or false comparisons |
-| w/o Robust error ratio (fixed threshold) | Significant Decrease | BF16 noise led to massive false positives |
-| w/o Change-point analysis (max error point) | Decrease | Error accumulates in later layers; max point $\neq$ origin point |
+| w/o Model Tree (Matching by name) | Significant Drop | Fails on QKV fusion and other structural differences |
+| w/o Agent-generated Alignment | Significant Drop | Layout/dtype mismatches cause errors or false positives |
+| w/o Robust Error Ratio (Using MSE/Fixed Threshold) | Significant Decrease | High false positives due to BF16 noise |
+| w/o Change-point Analysis (Using Max Error) | Decrease | Max error often occurs late due to error propagation |
 
 ### Key Findings
-- **Deep root-cause distribution**: Empirical research shows only 30.6% of bugs stem from framework orchestration, while ~50% originate from model implementation/backend and 19.4% from pure numerical instability. This justifies the need to "open the model stack" and inspect activations.
-- **Differential debugging is the natural paradigm**: Developers manually used HF for comparison in ~50% of real issues. Ekka automates existing expert workflows rather than inventing a new one.
-- **Change-point analysis is crucial**: Since errors propagate and amplify, looking at the maximum error point is often misleading. Change-point analysis on the full sequence is necessary to catch the first jump.
-- **\$30/case is a viable threshold**: Compared to weeks of manual developer effort, this represents an order-of-magnitude cost saving.
+- **Root causes are often "low-level"**: Only 30.6% of silent errors stem from orchestration logic; ~50% originate from model implementations or kernel backends. 19.4% are pure numerical instability.
+- **Expert workflow alignment**: Developers naturally use differential debugging; Ekka succeeds by automating this existing expert workflow rather than inventing a new one.
+- **Change-point detection is critical**: Because errors propagate, the layer with the maximum error is rarely the source. Identifying the first divergence point is essential for accuracy.
 
 ## Highlights & Insights
-- **Problem formulation as a major contribution**: Reframing "LLM serving silent errors" from a manual experience-based task into an automated differential debugging task with an oracle opens a new design space. This paradigm can extend to compiler optimizations, quantization, and distributed training.
-- **Model Tree as an "IR for LLMs"**: Directly feeding full code to an agent causes information overload. Structural compression plus tree alignment allows the agent to focus on semantic matching while retaining the ability to "double-click" into source code.
-- **Decoupling Detection and Localization**: Using robust error ratios for "if" and change-point detection for "where" allows the system to utilize mature statistical techniques for each sub-problem respectively.
-- **Real-world Value**: The discovery of 4 confirmed new bugs demonstrates that Ekka is not just a benchmark exercise but provides actual utility for industrial serving frameworks.
+- **Problem Reformulation**: The core contribution is reformulating an ad-hoc manual process into a structured differential debugging task with an oracle. This paradigm can be extended to compilers, quantization, and distributed training.
+- **Model Tree as Agent-IR**: Instead of overwhelming the agent with raw code, the Model Tree provides a structured abstraction that leverages the agent's strengths in semantic matching while providing an "escape hatch" to source code.
+- **Decoupling Detection and Localization**: Using the robust error ratio for detection and change-point analysis for localization leverages mature statistical techniques where LLMs might struggle.
 
 ## Limitations & Future Work
-- **Dependency on Reference Implementation**: Ekka fails for entirely new architectures not yet supported by HuggingFace or for custom fused kernels without equivalent HF implementations.
-- **Model Stack Scope**: It does not handle silent errors in high-level orchestration (schedulers, etc.), which account for roughly 30.6% of the bugs studied.
-- **Cost Scalability**: The \$30/case cost may scale linearly with model size or sequence length due to token usage and dump overhead.
-- **Framework Generalization**: Mapping validation was focused on vLLM and SGLang; performance on closed-source or non-Python frameworks (e.g., TensorRT-LLM) is unverified.
-- **Future Directions**: Integration with version bisecting (finding the specific commit), trace caching to share snapshots between issues, and introducing finer-grained oracles like PyTorch eager mode.
+- **Reference Dependency**: Ekka fails for brand-new architectures not yet supported by HuggingFace or for custom fused kernels without equivalent reference implementations.
+- **Scope Restriction**: It does not handle silent errors in high-level orchestration (e.g., async engines), which account for ~30% of real-world cases.
+- **Cost Scaling**: While \$30/case is acceptable, costs might scale linearly with model size and sequence length for exceptionally complex models like MoE.
+- **Future Directions**: Integration with version bisecting to identify the specific commit introducing the bug; caching traces to reduce costs for repeated issues.
 
 ## Related Work & Insights
-- **vs. Traditional Fault Localization**: Methods like SBFL require pass/fail labels. Ekka uses a reference implementation to bypass the need for explicit failure signals.
-- **vs. Deep Learning Testing**: Tools like CRADLE treat frameworks as black boxes. Ekka improves the granularity from "operator equivalence" to "component-level root cause" inside the engine.
-- **vs. General Agentic Debugging**: General agents lack domain-specific scaffolding for LLM inference (KV-cache, attention backends). Ekka provides "domain scaffolding" (Model Tree, alignment, etc.) to guide the agent.
+- **vs. Fault Localization**: Traditional SBFL requires pass/fail test cases; Ekka uses a reference implementation to provide this signal.
+- **vs. Deep Learning Testing**: Previous tools often focus on operator-level equivalence; Ekka localizes bugs at the component level within complex serving engines.
+- **vs. General Agents**: Ekka provides domain-specific "scaffolding" (Model Tree, alignment logic) that generic agents lack.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ Formulates "LLM serving silent errors" as a distinct problem with an automated differential debugging solution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid benchmark and discovery of new bugs, though focused on two frameworks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure and strong motivation backed by empirical data.
+- Value: ⭐⭐⭐⭐⭐ Highly practical; directly impacts industry-standard frameworks and saves significant human effort.
 
 <!-- RELATED:START -->
 
@@ -139,9 +134,9 @@ The qualitative trends of removing key Ekka capabilities:
 
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[NeurIPS 2025\] DISC: Dynamic Decomposition Improves LLM Inference Scaling](../../NeurIPS2025/llm_efficiency/disc_dynamic_decomposition_improves_llm_inference_scaling.md)
+- [\[NeurIPS 2025\] Silent Tokens, Loud Effects: Padding in LLMs](../../NeurIPS2025/llm_efficiency/silent_tokens_loud_effects_padding_in_llms.md)
 
 </div>
 

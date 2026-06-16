@@ -2,126 +2,126 @@
 title: >-
   [Paper Note] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 description: >-
-  [CVPR 2026][Signal & Communication][Test-time adaptation] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing conventional fixed activation fun…
+  [CVPR 2026][Signal & Communications][Paper Note] This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing traditional fixed activation functions into a learnable form—incorporating activation center shifts and asymmetric gradient slopes—the model adaptively adjusts activation behavior during infe
 tags:
-  - "CVPR 2026"
-  - "Signal & Communication"
-  - "Test-time adaptation"
-  - "activation function"
-  - "distribution shift"
-  - "normalization layer"
-  - "dynamic activation"
+  - CVPR 2026
+  - Signal & Communications
 date: 2026-05-08
-content_hash: 706849a7b548233c
+content_hash: d612cda538a58c8a
 ---
-
 # AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.26096](https://arxiv.org/abs/2603.26096)  
 **Code**: [https://hyeongyu-kim.github.io/actta/](https://hyeongyu-kim.github.io/actta/)  
-**Area**: Signal & Communication / Test-Time Adaptation
-**Keywords**: Test-time adaptation, activation function, distribution shift, normalization layer, dynamic activation
+**Area**: Signal & Communication / Test-Time Adaptation  
+**Keywords**: Test-Time Adaptation, Activation Function, Distribution Shift, Normalization Layer, Dynamic Activation
 
 ## TL;DR
-This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing conventional fixed activation functions into a learnable form—incorporating an activation center shift and asymmetric gradient slopes—AcTTA adaptively adjusts activation behavior during inference to address distribution shift, consistently outperforming normalization-layer-based TTA methods on CIFAR10-C, CIFAR100-C, and ImageNet-C.
+This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing traditional fixed activation functions into a learnable form—incorporating activation center shifts and asymmetric gradient slopes—the model adaptively adjusts activation behavior during inference to handle distribution shifts. AcTTA consistently outperforms normalization-based TTA methods on CIFAR10-C, CIFAR100-C, and ImageNet-C.
 
 ## Background & Motivation
 
-1. **Background**: Test-time adaptation (TTA) is an important paradigm for addressing the mismatch between deployment environments and training distributions. Existing TTA methods primarily focus on adjusting affine parameters and recalibrating running statistics of normalization layers; methods such as TENT, EATA, and SAR all center their adaptation mechanisms on normalization layers.
+1. **Background**: Test-time adaptation (TTA) is a crucial paradigm for dealing with discrepancies between deployment environments and training distributions. Existing TTA methods primarily focus on adjusting affine parameters of normalization layers and recalibrating running statistics, with methods like TENT, EATA, and SAR using normalization layers as the primary adaptation mechanism.
 
-2. **Limitations of Prior Work**: This normalization-centric perspective overlooks a critical component—the activation function. As the nonlinear core of a network, activation functions fundamentally shape the geometry of the feature space and determine how the model responds to input variations. Yet in TTA, activation functions have consistently been treated as fixed nonlinear mappings and have never been incorporated into the adaptation process.
+2. **Limitations of Prior Work**: This normalization-centric perspective overlooks a critical component: the activation function. As the core of nonlinearity, activation functions fundamentally shape the geometry of the feature space and determine how the model responds to input changes. However, in TTA, activation functions have been treated as fixed nonlinear mappings and have never been incorporated into the scope of adaptation.
 
-3. **Key Challenge**: Under distribution shift, the source-domain statistics stored in BN layers no longer align with target-domain features, producing biased feature representations. When these biased features pass through zero-centered activation functions (e.g., ReLU, GELU), useful signals may be suppressed below the activation boundary, leading to information loss and vanishing gradients. This "zero-center rigidity" is a key factor limiting adaptation effectiveness.
+3. **Key Challenge**: Under distribution shifts, the source domain statistics in Batch Normalization (BN) layers no longer align with target features, resulting in biased feature representations. When these biased features pass through zero-centered activation functions (e.g., ReLU, GELU), useful signals may be suppressed below the activation threshold, leading to information loss and gradient vanishing. This "zero-centered rigidity" is a key factor limiting adaptation effectiveness.
 
-4. **Goal**: The paper seeks to make activation functions themselves adaptable components within TTA by: (1) adjusting gradient behavior to maintain learning flow; (2) shifting activation boundaries to align with new feature centers; and (3) preserving compatibility with source-domain pretrained representations.
+4. **Goal**: To make the activation function itself an adaptable component in TTA by: (1) adjusting gradient behavior to maintain learning flow; (2) shifting activation boundaries to align with new feature centers; and (3) maintaining compatibility with source domain pre-trained representations.
 
-5. **Key Insight**: The authors observe that outside of TTA, learnable or modulatable activation functions (e.g., PReLU, ACON, PAU) have demonstrated that even subtle modifications to activation behavior can improve performance and training stability—indicating that activation functions possess inherent learnable flexibility.
+5. **Key Insight**: Authors observe that outside the TTA context, learnable/modulated activation functions (such as PReLU, ACON, PAU) have demonstrated that even subtle modifications to activation behavior can improve performance and training stability, indicating that activation functions possess inherent learnable flexibility.
 
-6. **Core Idea**: Transform activation functions from fixed components into adaptive participants—by parameterizing the activation center and asymmetric slopes, enabling the network to self-correct internal biases at inference time.
+6. **Core Idea**: Transform activation functions from fixed components into adaptive participants. By parameterizing the activation center and asymmetric slopes, the network can self-correct internal biases during inference.
 
 ## Method
 
 ### Overall Architecture
-AcTTA is a modular, objective-agnostic activation adaptation framework. Given a pretrained model and target-domain test data, AcTTA inserts a learnable dynamic activation module at each activation function location, updating only the activation parameters ($\lambda_{pos}$, $\lambda_{neg}$, $c$) without modifying network weights or requiring source-domain data. The framework integrates seamlessly with any existing TTA objective (e.g., entropy minimization, consistency regularization).
+AcTTA aims to solve the problem where BN source statistics misalign with target features under distribution shift, causing biased features to be suppressed by zero-centered activations. The mechanism transforms each activation function into a test-time learnable module by inserting a dynamic activation unit at the original activation position. During inference, only three activation parameters—$\lambda_{pos}$, $\lambda_{neg}$, and $c$—are updated, while network weights remain frozen and no source data is required. This mechanism is objective-agnostic; it does not introduce its own loss function but instead incorporates these parameters into the learnable set of any existing TTA method (e.g., entropy minimization, consistency regularization), allowing it to serve as a plug-and-play module for TENT, ETA, SAR, etc.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Target domain test batch"] --> B["Forward: Features pass through BN<br/>(Source stats biased, zero-center suppresses signals)"]
+    B --> C["Dynamic Activation Reparameterization<br/>g(x)=φ(x−c)+learnable slope·(x−c)"]
+    C --> D["Asymmetric Gradient Modulation<br/>λ_pos / λ_neg partition gradient scaling, keeping negative zone active"]
+    D --> E["Integrate into host TTA objective<br/>(Entropy min / consistency, e.g., TENT, ETA, SAR)"]
+    E --> F["Architecture-adaptive parameter selection<br/>BN-CNN: Freeze γ,β, tune activation only; LN-ViT: Joint tuning"]
+    F -->|"Backward: Update λ_pos, λ_neg, c only"| C
+    F --> G["Output: Adapted predictions"]
+```
 
 ### Key Designs
 
-1. **Dynamic Activation Reparameterization**:
+**1. Dynamic Activation Reparameterization: Converting fixed activations into inference-tuneable parameterized forms**
 
-    - **Function**: Transforms fixed activation functions into a parameterized form adjustable at inference time.
-    - **Mechanism**: Modern activation functions can be approximated as $\phi(x) = x \cdot \sigma(\beta x)$, whose derivative is an input-dependent slope function. AcTTA explicitly exposes this slope as a learnable function $\lambda(x) = \lambda_{neg} + (\lambda_{pos} - \lambda_{neg}) \sigma(\beta x)$, where $\lambda_{neg}$ and $\lambda_{pos}$ control the asymptotic slopes in the negative and positive regions, respectively. A learnable center parameter $c$ is also introduced to relocate the activation boundary. The resulting activation is:
-      $$g(x) = \phi(x-c) + [\lambda_{neg} + (\lambda_{pos} - \lambda_{neg})\sigma(\beta(x-c))](x-c)$$
-    - **Design Motivation**: Slope adaptation alone cannot correct feature bias; introducing the center shift $c$ allows the activation function to dynamically recenter according to target-domain statistics. When initialized with $\lambda_{neg}=\lambda_{pos}=0$ and $c=0$, $g(x)$ exactly recovers the original $\phi(x)$, ensuring compatibility with pretrained models.
+A major pain point is that activation functions are treated as immutable nonlinear mappings. AcTTA notes that modern activations can be approximated as $\phi(x) = x \cdot \sigma(\beta x)$, where the derivative is essentially an input-dependent slope function. It explicitly exposes this implicit slope as a learnable form $\lambda(x) = \lambda_{neg} + (\lambda_{pos} - \lambda_{neg}) \sigma(\beta x)$, where $\lambda_{neg}$ and $\lambda_{pos}$ control the asymptotic slopes of the negative and positive regions, respectively. A learnable center parameter $c$ is also introduced to shift the activation boundary. The final activation is formulated as:
 
-2. **Asymmetric Gradient Modulation**:
+$$g(x) = \phi(x-c) + \big[\lambda_{neg} + (\lambda_{pos} - \lambda_{neg})\sigma(\beta(x-c))\big](x-c)$$
 
-    - **Function**: Independently controls gradient scaling in the positive and negative regions to stabilize gradient propagation.
-    - **Mechanism**: By learning $\lambda_{pos}$ and $\lambda_{neg}$ separately, the activation function maintains nonzero gradients in the negative region (avoiding dead gradient problems) and flexibly adjusts response strength in the positive region. This preserves effective gradient flow even when feature distributions are skewed under distribution shift.
-    - **Design Motivation**: Conventional zero-centered activation functions produce gradient imbalance or biased updates under distribution shift. AcTTA's asymmetric design allows the model to maintain stable optimization at learning rates up to 10× those used in conventional methods.
+Crucially, slope adaptation alone cannot correct feature center shifts; the parameter $c$ allows the activation boundary to re-center based on target domain statistics, "retrieving" useful signals pushed below the boundary. This reparameterization also provides a zero-risk starting point: when $\lambda_{neg}=\lambda_{pos}=0$ and $c=0$, $g(x)$ precisely reverts to the original $\phi(x)$, ensuring full compatibility with the pre-trained model.
 
-3. **Architecture-Adaptive Trainable Parameter Selection**:
+**2. Asymmetric Gradient Modulation: Scaling gradients in positive/negative regions to maintain learning flow**
 
-    - **Function**: Selects the optimal set of trainable parameters according to the backbone architecture.
-    - **Mechanism**: For BN-based CNNs (e.g., WRN), freezing BN affine parameters $(\gamma, \beta)$ and adapting only activation parameters $(\lambda_{pos}, \lambda_{neg}, c)$ yields the best results. For LN-based ViTs, jointly adapting normalization and activation parameters is optimal.
-    - **Design Motivation**: BN relies on perturbed running statistics, so further modifying $(\gamma, \beta)$ may amplify distribution noise. LN performs per-sample normalization independently of source-domain statistics, so its $(\gamma, \beta)$ provides degrees of freedom complementary to the activation parameters.
+Traditional zero-centered activations under distribution shift cause imbalanced gradients and biased updates; once features shift, the negative half-plane easily falls into a dead zone. By learning $\lambda_{pos}$ and $\lambda_{neg}$ separately, AcTTA preserves non-zero gradients in the negative region to prevent dead gradients and flexibly adjusts response intensity in the positive region. This ensures stable gradient propagation even under skewed feature distributions. A direct benefit of this stability is that AcTTA can be optimized at learning rates approximately 10 times higher than conventional ones ($10^{-2}$ vs $10^{-3}$), whereas TENT would collapse under similar conditions.
 
-### Loss & Training
-AcTTA is objective-agnostic—it does not define its own loss function but instead incorporates activation parameters into the learnable parameter set of any existing TTA method. In practice, learning rates approximately 10× higher than conventional methods are used (e.g., $10^{-2}$ vs. $10^{-3}$), as the asymmetric gradient design guarantees stability. The default depth configuration is 50% (i.e., activation functions in the first half of layers are made learnable).
+**3. Architecture-adaptive Trainable Parameter Selection: Selecting parameters based on backbone type**
+
+The optimal components for adaptation differ across normalization mechanisms. For BN-based CNNs (e.g., WRN), freezing BN affine parameters $(\gamma, \beta)$ and only adapting activation parameters $(\lambda_{pos}, \lambda_{neg}, c)$ yields the best results. This is because BN relies on disturbed running statistics, and modifying $(\gamma, \beta)$ may amplify distribution noise, which activation adaptation bypasses. For LN-based ViTs, joint adaptation of normalization and activation parameters is optimal; LN normalizes per-sample and does not rely on source statistics, so its $(\gamma, \beta)$ and activation parameters provide complementary degrees of freedom. A depth configuration is also applied: only a portion of layers' activations are made learnable, with a default of 50% (optimal depth varies: WRN ~50%, ResNet ~75%, ViT ~25%).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset / Backbone | Metric (Err%) | AcTTA_TENT | TENT | Gain |
-|--------------------|--------------|------------|------|------|
-| CIFAR10-C / WRN-28 | Error | 17.03 | 18.51 | −1.48 |
-| CIFAR10-C / ResNeXt | Error | 9.53 | 10.28 | −0.75 |
-| CIFAR100-C / WRN-40 | Error | 33.81 | 35.25 | −1.44 |
-| ImageNet-C / ResNet50 (BN) | Error | 64.95 | 66.50 | −1.55 |
-| ImageNet-C / ResNet50 (GN) | Error | 66.84 | 69.60 | −2.76 |
-| ImageNet-C / ViT-B/16 | Error | 51.79 | 53.85 | −2.06 |
+| Dataset/Backbone | Metric(Err%) | AcTTA_TENT | TENT | Gain |
+|-------------|-----------|------------|------|------|
+| CIFAR10-C / WRN-28 | Error | 17.03 | 18.51 | -1.48 |
+| CIFAR10-C / ResNeXt | Error | 9.53 | 10.28 | -0.75 |
+| CIFAR100-C / WRN-40 | Error | 33.81 | 35.25 | -1.44 |
+| ImageNet-C / ResNet50(BN) | Error | 64.95 | 66.50 | -1.55 |
+| ImageNet-C / ResNet50(GN) | Error | 66.84 | 69.60 | -2.76 |
+| ImageNet-C / ViT-B/16 | Error | 51.79 | 53.85 | -2.06 |
 
-Combining AcTTA with other TTA baselines (ETA, SAR, DeYO, ROID, CMF) also yields consistent improvements, demonstrating strong modular compatibility.
+The combination of AcTTA with other TTA baselines (ETA, SAR, DeYO, ROID, CMF) also brought consistent improvements, demonstrating excellent modular compatibility.
 
 ### Ablation Study
 
-| Configuration | WRN-28 Err% | ViT-B/16 Err% | Note |
-|---------------|-------------|--------------|------|
-| TENT (γ, β only) | 18.51 | 53.85 | Baseline |
-| AcTTA (γ, β, λ+, λ−, c) | 18.06 | 52.37 | Full parameters |
-| AcTTA* (λ+, λ−, c only) | 17.03 | 55.30 | Frozen BN; optimal for CNN |
+| Configuration | WRN-28 Err% | ViT-B/16 Err% | Description |
+|------|------------|--------------|------|
+| TENT (γ,β only) | 18.51 | 53.85 | Baseline |
+| AcTTA (γ,β,λ+,λ-,c) | 18.06 | 52.37 | Full parameters |
+| AcTTA* (λ+,λ-,c only) | 17.03 | 55.30 | Frozen BN, CNN optimal |
 | AcTTA* (c only) | 17.50 | 61.56 | Center shift only |
 | No adaptation | 43.52 | 62.10 | Original model |
 
 ### Key Findings
-- **Activation parameters > normalization parameters on BN-CNNs**: Freezing BN affine parameters and adapting only activation parameters (AcTTA*) achieves the lowest error rate of 17.03% on WRN-28, indicating that BN and activation adaptation play overlapping roles.
-- **Center shift $c$ contributes substantially**: Adapting $c$ alone yields a notable improvement on CNNs (18.51→17.50), suggesting that residual bias induced by source-domain running statistics can be compensated by shifting the activation boundary.
-- **Stability at high learning rates**: AcTTA remains stable at 10× the learning rate (34.56% on CIFAR100-C at LR=1e-2), whereas TENT collapses entirely under equivalent conditions (51.57%).
-- **Comparison with other learnable activation functions**: PReLU and PAU perform poorly in TTA settings (PAU reaches 99.96% error on ViT), demonstrating that TTA requires not merely parameterized slopes but joint center-shift and asymmetric slope modulation.
-- **Optimal adaptation depth is architecture-dependent**: WRN peaks at ~50%, ViT at ~25%, and ResNet at ~75%.
+- **Activation params > Normalization params on BN-CNN**: Freezing BN affine parameters and only adapting activation parameters (AcTTA*) achieved the lowest error rate of 17.03% on WRN-28, suggesting overlapping roles between BN and activation adaptation.
+- **Significant contribution of center shift $c$**: Adapting only $c$ yielded significant improvements on CNNs (18.51→17.50), indicating that residual bias from source domain running statistics can be compensated for by adjusting activation boundaries.
+- **Stability at high learning rates**: AcTTA remained stable at 10x the learning rate (34.56% @ LR=1e-2 on CIFAR100-C), whereas TENT collapsed completely under the same conditions (51.57%).
+- **Comparison with other learnable activations**: PReLU and PAU performed poorly in TTA scenarios (PAU reached 99.96% error on ViT), indicating that TTA requires joint center-shift and asymmetric slope modulation rather than generic function approximation.
+- **Architecture-specific optimal depth**: The optimal adaptation depth is ~50% for WRN, ~25% for ViT, and ~75% for ResNet.
 
 ## Highlights & Insights
-- **Activation functions as a new dimension for TTA**: This is the first work to systematically incorporate activation functions into the TTA framework, extending the traditional normalization-centric perspective. This idea is transferable to other online adaptation scenarios such as continual learning and domain generalization.
-- **Compatibility-by-design initialization**: The design that exactly recovers the original activation function when $\lambda=0, c=0$ is elegant—it guarantees a lossless, zero-risk starting point. This "additive module" design is a reusable architectural trick.
-- **Stability at high learning rates**: By maintaining nonzero gradients in the negative region, AcTTA intrinsically addresses vanishing gradients under distribution shift, enabling more aggressive learning rates. This finding has significant implications for real-time TTA deployment.
+- **Activation function as a new TTA dimension**: This is the first work to systematically incorporate activation functions into the TTA framework, expanding the traditional normalization-centric view. This approach can be transferred to other online adaptation scenarios like continual learning or domain generalization.
+- **Initialization compatibility**: The design where $\lambda=0, c=0$ fully restores the original activation function is clever, ensuring a zero-risk, lossless start. This "additive" module design is a reusable trick.
+- **High learning rate stability**: By maintaining non-zero gradients in the negative region, AcTTA essentially solves the gradient vanishing problem under distribution shift, enabling more aggressive learning rates which is vital for real-time TTA deployment.
 
 ## Limitations & Future Work
-- **Optimal depth requires prior knowledge**: The optimal adaptation depth varies by architecture (10%–75%); the paper adopts 50% as a compromise, which is not necessarily optimal.
-- **Limited effectiveness in small-batch settings**: At batch size 4, certain combinations (e.g., AcTTA_SAR on ViT) underperform the baseline, suggesting that activation adaptation retains some dependence on batch statistics.
-- **Validation limited to corruption benchmarks**: More complex distribution shift scenarios (e.g., natural domain shifts, cross-modal shifts) are not evaluated.
-- **Computational overhead not quantified**: The number of additional learnable parameters and the extra forward/backward computation time are not analyzed in detail.
+- **Optimal depth requires prior knowledge**: The optimal adaptation depth varies significantly across architectures (10% to 75%), and while the paper uses 50% as a compromise, it may not be optimal for all cases.
+- **Limited effectiveness in small batch scenarios**: At batch=4, some combinations (e.g., AcTTA_SAR on ViT) performed worse than the baseline, suggesting activation adaptation still relies on batch statistics.
+- **Evaluation limited to corruption benchmarks**: The method has not been tested on more complex shifts such as natural domain shifts or cross-modal shifts.
+- **Lack of detailed computational analysis**: The increase in learnable parameters and additional forward/backward computation time are not quantitatively compared.
 
 ## Related Work & Insights
-- **vs. TENT**: TENT adapts only BN layer parameters $(\gamma, \beta)$. AcTTA demonstrates that on CNNs, freezing BN parameters and adapting only activation functions yields better results, indicating overlapping roles among different adaptable components.
-- **vs. ACON**: ACON introduces a learnable gate but still assumes a zero-centered boundary and cannot handle shifted feature distributions. AcTTA's center-shift design directly addresses this limitation.
-- **vs. PAU**: PAU is effective as a general learnable activation during training but collapses in TTA settings (99.96% error on ViT), demonstrating that TTA requires targeted shift–slope modulation rather than general function approximation.
+- **vs TENT**: TENT only adapts BN layers $(\gamma, \beta)$. AcTTA shows that freezing BN parameters and adapting only activation functions is better for CNNs, implying functional overlap between these components.
+- **vs ACON**: ACON introduces learnable gating but still assumes a zero-centered boundary, failing to handle shifted feature distributions. AcTTA's center shift design directly addresses this.
+- **vs PAU**: While PAU is effective as a general learnable activation during training, it collapses in TTA (99.96% error on ViT), proving that TTA requires targeted shift-slope modulation rather than general function approximation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The activation-function perspective is genuinely novel in TTA, though the reparameterization form is relatively straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers multiple datasets, architectures, and TTA baselines; ablation studies are comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Logic is clear, with a coherent progression from motivation to method to experiments.
-- **Value**: ⭐⭐⭐⭐ — Opens a new research direction for TTA, though the practical gains are modest (1–3% error reduction).
+- Novelty: ⭐⭐⭐⭐ The activation function perspective in TTA is fresh, though the reparameterization form is relatively simple.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple datasets, architectures, and TTA baselines with comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, progressing naturally from motivation to method and experiments.
+- Value: ⭐⭐⭐⭐ Opens a new research direction for TTA, though the practical gain (1-3% error reduction) is incremental.
 
 <!-- RELATED:START -->
 
@@ -130,10 +130,10 @@ Combining AcTTA with other TTA baselines (ETA, SAR, DeYO, ROID, CMF) also yields
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/signal_comm/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
+- [\[ECCV 2024\] PYRA: Parallel Yielding Re-Activation for Training-Inference Efficient Task Adaptation](../../ECCV2024/signal_comm/pyra_parallel_yielding_re-activation_for_training-inference_efficient_task_adapt.md)
+- [\[CVPR 2025\] Continuous Space-Time Video Resampling with Invertible Motion Steganography](../../CVPR2025/signal_comm/continuous_space-time_video_resampling_with_invertible_motion_steganography.md)
 - [\[NeurIPS 2025\] Angular Steering: Behavior Control via Rotation in Activation Space](../../NeurIPS2025/signal_comm/angular_steering_behavior_control_via_rotation_in_activation_space.md)
-- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
-- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
-- [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](clay_conditional_visual_similarity.md)
+- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
 
 </div>
 

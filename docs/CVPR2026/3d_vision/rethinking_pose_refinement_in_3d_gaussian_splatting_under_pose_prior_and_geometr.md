@@ -2,133 +2,155 @@
 title: >-
   [Paper Note] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes UGS-Loc, a framework that jointly models pose prior uncertainty and geometric uncertainty via Monte Carlo pose sampling and Fisher information-guided PnP o…
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] The UGS-Loc framework is proposed to jointly model pose prior uncertainty and geometric uncertainty through Monte Carlo pose sampling and Fisher information-guided PnP optimization, significantly enhancing the robustness of camera pose refinement in 3DGS scenes without requiring retraining.
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "visual localization"
-  - "pose refinement"
-  - "Monte Carlo sampling"
-  - "Fisher information"
-  - "uncertainty modeling"
+  - CVPR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: 3a55c1d931c4de4a
+content_hash: cb3558421a987471
 ---
-
 # Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.16538](https://arxiv.org/abs/2603.16538)  
-**Code**: [Project Page](https://arxiv.org/abs/2603.16538) (code available)  
-**Area**: 3D Vision
-**Keywords**: 3D Gaussian Splatting, visual localization, pose refinement, Monte Carlo sampling, Fisher information, uncertainty modeling
+**Code**: [Project Page](https://arxiv.org/abs/2603.16538) (Code released)  
+**Area**: 3D Vision  
+**Keywords**: 3D Gaussian Splatting, Visual Localization, Pose Refinement, Monte Carlo Sampling, Fisher Information, Uncertainty Modeling
 
 ## TL;DR
 
-This paper proposes UGS-Loc, a framework that jointly models pose prior uncertainty and geometric uncertainty via Monte Carlo pose sampling and Fisher information-guided PnP optimization, achieving significantly improved robustness in camera pose refinement within 3DGS scenes without requiring retraining.
+The UGS-Loc framework is proposed to jointly model pose prior uncertainty and geometric uncertainty through Monte Carlo pose sampling and Fisher information-guided PnP optimization, significantly enhancing the robustness of camera pose refinement in 3DGS scenes without requiring retraining.
 
 ## Background & Motivation
 
-- **Background**: 3D Gaussian Splatting has become a powerful scene representation for visual localization, with render-and-compare pose refinement methods achieving state-of-the-art accuracy.
-- **Limitations of Prior Work**: Existing methods rely on a single deterministic pose estimate (from APR/SCR); when the initial pose has large errors or severe occlusion, the alignment quality between rendered views and query images degrades sharply. Additionally, the ellipsoidal primitives in 3DGS only approximate geometry, and depth rendered from sparse training viewpoints or regions contaminated by dynamic objects is unreliable — yet existing methods treat all depth values equally.
-- **Key Challenge**: Unreliable depth is used to lift 2D–2D correspondences to 2D–3D correspondences, injecting erroneous geometric information directly into the PnP solver and causing unstable pose estimation. Methods such as GS-CPR are highly sensitive to the initial pose, as illustrated in Figure 2.
-- **Goal**: To develop a training-free, plug-and-play, uncertainty-aware refinement scheme suitable for AR/VR, autonomous driving, and robotics applications that demand robust pose estimation.
+- **Current State of 3DGS Pose Refinement**: 3D Gaussian Splatting has become a powerful scene representation in visual localization. Pose refinement methods based on the "render-and-compare" strategy have achieved SOTA accuracy.
+- **Neglected Pose Prior Uncertainty**: Existing methods rely on a single deterministic pose estimate from APR/SCR. When the initial pose bias is large or occlusion is severe, the matching quality between the rendered view and the query image degrades sharply.
+- **Neglected Geometric Uncertainty**: 3DGS ellipsoidal primitives are only approximate geometries. Depth rendering in regions with sparse training views or dynamic object contamination is not uniformly reliable, yet existing methods treat all depths equally.
+- **Error Propagation Chain**: Unreliable depths are used to lift 2D-2D correspondences to 2D-3D correspondences. Erroneous geometric information is directly passed to the PnP solver, leading to unstable pose estimation.
+- **Fragility of Deterministic Pipelines**: Methods like GS-CPR are highly sensitive to initial poses. Figure 2 demonstrates erroneous correspondences and unstable refinement originating from biased poses.
+- **Goal**: AR/VR, autonomous driving, and robotics applications have strict requirements for pose refinement robustness. A general uncertainty-aware solution that does not require retraining is needed.
 
 ## Method
 
-### Overall Architecture (UGS-Loc)
+### Overall Architecture
 
-UGS-Loc comprises two core modules: (1) **Monte Carlo Refinement** to address pose prior uncertainty, and (2) **Fisher information-guided PnP optimization** to address geometric uncertainty. The entire framework requires no retraining or additional supervision and completes refinement in only 2 iterations with 8 particles.
+UGS-Loc revisits "render-and-compare" camera pose refinement in 3DGS, pointing out that two components have been treated as deterministic: the initial pose prior from APR/SCR and the depth geometry rendered by 3DGS. Both are reformulated as explicitly modeled uncertainties—Monte Carlo refinement handles pose prior uncertainty, and Fisher information-guided PnP handles geometric uncertainty. The entire framework is an inference-time pipeline requiring no retraining or additional supervision, completing in 2 iterations with 8 particles.
 
-### Monte Carlo Pose Refinement
+```mermaid
+graph TD
+    Q["Query Image I_q"]
+    P["Pose Prior T_prior<br/>(APR/SCR, e.g., ACE / DFNet)"]
+    G3["Scaffold-GS Scene"]
 
-- The pose prior is represented as a weighted particle set $\mathcal{P}=\{(\mathbf{T}^{(m)}, w^{(m)})\}_{m=1}^{M}$, where each particle $\mathbf{T}^{(m)} \in SE(3)$.
-- Local optimization replaces the random perturbation prediction step of conventional MCL, guiding each particle toward nearby modes of the likelihood distribution and substantially reducing the required number of particles.
-- Importance weights incorporate two metrics: matching confidence $S_m$ and geometric uncertainty $U_m$:
+    subgraph FISHER["Fisher-Guided Geometric Uncertainty"]
+        direction TB
+        F1["Compute Fisher Info for anchor features + local offsets<br/>Aggregate into global matrix G"]
+        F2["Render and project into pixel-wise 2D geometric uncertainty map U"]
+        F1 --> F2
+    end
+
+    subgraph MC["Monte Carlo Pose Refinement"]
+        direction TB
+        M1["Sample M=8 weighted particles from prior"]
+        M2["Local optimization for each particle<br/>(Directional pre-correction instead of MCL random perturbation)"]
+        M3["Render view + match query<br/>Obtain 2D-2D correspondences (confidence S_m), lift via depth to 2D-3D"]
+        M4["Uncertainty-weighted PnP-RANSAC<br/>Sampling weights s_i=e^(−βU), solve via EPnP"]
+        M5["Particle weight w=ΣS·(1−U)<br/>Importance resampling for max weight / weighted average"]
+        M1 --> M2 --> M3 --> M4 --> M5
+    end
+
+    G3 --> F1
+    Q --> M3
+    P --> M1
+    F2 -->|PnP sampling weights| M4
+    F2 -->|Particle weights| M5
+    M5 -->|N=2 iterations, tighten perturbation| M1
+    M5 --> OUT["Refined Pose T_refined"]
+```
+
+### Key Designs
+
+**1. Monte Carlo Pose Refinement: Replacing a Single Deterministic Pose with Weighted Particles**
+
+**Mechanism**: Existing methods trust a single deterministic pose from APR/SCR. When initial bias or occlusion is high, matching quality collapses. UGS-Loc uses a weighted particle set $\mathcal{P}=\{(\mathbf{T}^{(m)}, w^{(m)})\}_{m=1}^{M}$ to represent the pose prior, where $\mathbf{T}^{(m)} \in SE(3)$. It replaces traditional MCL random perturbations with local optimization to guide particles toward local modes of the likelihood distribution, reducing the required particle count. The importance weight of each particle combines matching confidence $S_m$ and geometric uncertainty $U_m$:
 
 $$w^{(m)} = \frac{\sum_i S_m(r_i) \cdot (1 - U_m(r_i))}{\sum_j \sum_i S_j(r_i) \cdot (1 - U_j(r_i))}$$
 
-- The final pose is obtained by selecting the highest-weight particle via importance resampling, or by weighted averaging.
+The final pose is obtained via importance resampling of the highest-weight particle or a weighted average, allowing multiple hypotheses to compete rather than relying on a single guess.
 
-### Fisher Information-Guided Geometric Uncertainty
+**2. Fisher Information-Guided Geometric Uncertainty: Biasing PnP towards Reliable Geometric Sampling**
 
-- Fisher information is extended to anchor-based GS (Scaffold-GS), parameterized by anchor features and local Gaussian offsets.
-- The diagonal Hessian under a Laplace approximation enables efficient computation:
-
-$$\mathrm{H}'' \simeq \mathrm{diag}((\nabla_\theta f)^\top (\nabla_\theta f)) + \lambda I$$
-
-- Fisher information is aggregated across all training views into a global matrix $\mathrm{G}$, then projected into a per-pixel 2D uncertainty map via the 3DGS rendering equation.
-- RANSAC sampling weights are defined as $s_i = e^{-\beta \bar{U}(r_i)} + \epsilon$, biasing sampling toward geometrically reliable regions. Consensus scoring also employs this weighting, and the final pose is selected by maximizing the weighted consensus $\sum s_i$.
+**Design Motivation**: 3DGS ellipsoidal rendered depth is not universally reliable. Errors in sparse or dynamic regions can feed incorrect 2D-3D correspondences into the PnP solver. UGS-Loc extends Fisher information to the anchor-based Scaffold-GS representation (parameterized by anchor features and local offsets). It uses the diagonal Hessian of a Laplace approximation, $\mathrm{H}'' \simeq \mathrm{diag}((\nabla_\theta f)^\top (\nabla_\theta f)) + \lambda I$, aggregated from all training views into a global matrix $\mathrm{G}$. This is projected via the 3DGS rendering formula into a pixel-wise 2D uncertainty map. This map is converted into sampling weights $s_i = e^{-\beta \bar{U}(r_i)} + \epsilon$, biasing RANSAC toward geometrically reliable regions. Consensus evaluation is similarly weighted. This naturally integrates geometric uncertainty into sampling without modifying the PnP solver itself.
 
 ### Loss & Training
 
-- No explicit loss function is used for training — the framework operates entirely as an inference-time refinement pipeline.
-- PnP is solved via EPnP with uncertainty-weighted RANSAC.
-- First iteration: uniform sampling with translation perturbation of 10 cm and rotation perturbation of 0.01°; subsequent iterations: 1 cm / 0.01°.
+The framework is an inference-time refinement pipeline with no explicit loss function for training. PnP is solved using the EPnP algorithm with uncertainty-weighted RANSAC. Perturbation ranges are tightened across iterations—the first iteration samples from a uniform distribution of 10cm translation and 0.01° rotation, while subsequent iterations are reduced to 1cm / 0.01°.
 
 ## Key Experimental Results
 
-### Indoor Benchmark (7Scenes)
+### Main Results
+
+**Indoor Benchmark (7Scenes)**
 
 | Method | Chess | Fire | Heads | Office | Pumpkin | RedKitchen | Stairs | Avg (cm/°) |
-|--------|-------|------|-------|--------|---------|------------|--------|------------|
+|------|-------|------|-------|--------|---------|------------|--------|------------|
 | ACE + GS-CPR | 0.5/0.15 | 0.6/0.25 | 0.4/0.28 | 0.9/0.26 | 1.0/0.23 | 0.7/0.17 | 1.4/0.42 | 0.8/0.25 |
 | ACE + UGS-Loc | **0.37/0.12** | **0.47/0.20** | **0.36/0.25** | **0.77/0.22** | **0.79/0.18** | **0.58/0.15** | **1.11/0.33** | **0.64/0.21** |
 
 - ACE + UGS-Loc reduces average error by approximately 20% compared to ACE + GS-CPR.
-- Accuracy reaches 95.6% under the strict threshold [2 cm, 2°] (vs. 93.1% for GS-CPR and its iterative variant GS-CPR²).
+- Accuracy reaches 95.6% under a strict [2cm, 2°] threshold (compared to 93.1% for GS-CPR and its iterative variant GS-CPR²).
 
-### Outdoor Benchmark (Cambridge Landmarks)
+**Outdoor Benchmark (Cambridge Landmarks)**
 
 | Method | Kings | Hospital | Shop | Church | Avg (cm/°) |
-|--------|-------|----------|------|--------|------------|
+|------|-------|----------|------|--------|------------|
 | DFNet + GS-CPR | 23/0.32 | 42/0.74 | 10/0.36 | 27/0.62 | 26/0.51 |
 | DFNet + UGS-Loc | **18.7/0.19** | **14.5/0.29** | **3.9/0.15** | **5.5/0.17** | **10.7/0.20** |
 | ACE + GS-CPR | 20/0.29 | 21/0.40 | 5/0.24 | 13/0.40 | 15/0.33 |
 | ACE + UGS-Loc | **17.8/0.18** | **13.8/0.30** | **4.2/0.16** | **6.3/0.20** | **10.5/0.21** |
 
-- UGS-Loc reduces the median translation error of GS-CPR by approximately 30% on Cambridge Landmarks.
-- With the weaker DFNet prior, UGS-Loc even surpasses the ACE + GS-CPR combination after refinement.
+- **Gain**: UGS-Loc reduces the median translation error of GS-CPR by approximately 30% on Cambridge.
+- When using DFNet as a weaker prior, UGS-Loc refinement can even surpass the ACE+GS-CPR combination.
 
 ### Ablation Study
 
-- **Number of particles**: Increasing from 2 to 16 particles monotonically reduces the Cambridge average error from 11.8/0.24 to 10.3/0.20 (DFNet prior).
-- **Iterative refinement**: Simple iteration of GS-CPR saturates quickly after the first pass, whereas UGS-Loc continues to converge to lower error within 2 iterations.
-- **Matching module**: MASt3r slightly outperforms SuperPoint+LightGlue (11/0.22 vs. 13/0.26), but uncertainty-aware refinement enables even lightweight matchers to approach high accuracy.
-- **Runtime**: The standard configuration (m=8) achieves end-to-end inference at 1.1 s/iteration, substantially faster than MCLoc at 2.4 s/query.
+- **Number of Particles**: As particles increase from 2 to 16, the Cambridge average error drops from 11.8/0.24 to 10.3/0.20 (DFNet prior), showing monotonic improvement.
+- **Iterative Refinement**: Simple iteration in GS-CPR saturates quickly after the first pass, whereas UGS-Loc continues to converge to lower errors within 2 iterations.
+- **Matching Modules**: MASt3r is slightly superior to SuperPoint+LightGlue (11/0.22 vs 13/0.26), but uncertainty-aware refinement allows lightweight matchers to achieve near-SOTA accuracy.
+- **Efficiency**: The standard configuration (m=8) achieves end-to-end inference at 1.1s/iteration, significantly faster than MCLoc's 2.4s/query.
 
 ## Highlights & Insights
 
-- **Dual uncertainty modeling**: UGS-Loc is the first work to jointly address both pose prior uncertainty and geometric uncertainty in 3DGS-based pose refinement.
-- **Training-free**: The entire framework operates at inference time and is plug-and-play compatible with different pose estimators and matching modules.
-- **Efficient Monte Carlo**: By substituting local optimization for the random prediction step of conventional MCL, only 8 particles and 2 iterations are needed to reach state-of-the-art performance.
-- **Elegant integration of Fisher information and PnP**: Geometric uncertainty is naturally incorporated into RANSAC via sampling weights without modifying the PnP solver itself.
-- **Cross-prior robustness**: A weak prior (DFNet) refined by UGS-Loc can approach the results of a strong prior (ACE).
+- **Dual Uncertainty Modeling**: First to jointly consider pose prior and geometric uncertainty in 3DGS pose refinement.
+- **Novelty**: A plug-and-play inference-time solution adaptable to different pose estimators and matching modules without retraining.
+- **Efficient Monte Carlo**: Replaces traditional MCL random predictions with local optimization, achieving SOTA with only 8 particles and 2 iterations.
+- **Mechanism**: Geometric uncertainty integrates naturally into RANSAC via sampling weights, requiring no modification to the PnP solver.
+- **Robustness**: Weak priors (DFNet) refined via UGS-Loc can approach results from strong priors (ACE).
 
 ## Limitations & Future Work
 
-- Inference time scales linearly with the number of particles (16 particles ≈ 2× latency), limiting real-time applicability.
-- Fisher information must be precomputed and aggregated from all training views; scene updates require recomputation.
-- Geometric uncertainty is validated only on Scaffold-GS and has not been extended to other 3DGS variants (vanilla 3DGS, 2DGS, etc.).
-- Improvements in rotation error on the outdoor Cambridge scenes are less pronounced than those in translation error.
-- Uncertainty modeling under dynamic scenes or extreme illumination changes is not explored.
-- The perturbation range for Monte Carlo sampling is a manually set hyperparameter.
+- Increasing the number of particles linearly increases inference time (16 particles ≈ 2× time), limiting real-time performance.
+- Fisher information requires pre-computation and aggregation from all training views, necessitating re-computation upon scene updates.
+- Geometric uncertainty was only validated on Scaffold-GS and not extended to other 3DGS variants (vanilla 3DGS, 2DGS, etc.).
+- Rotation error improvement in Cambridge outdoor scenes is less significant than translation error improvement.
+- Uncertainty modeling under dynamic scenes or extreme lighting changes was not explored.
+- The perturbation range for Monte Carlo sampling remains a manually set hyperparameter.
 
 ## Related Work & Insights
 
-- **vs. GS-CPR**: GS-CPR is a deterministic refinement method; UGS-Loc introduces a probabilistic framework, achieving approximately 20–30% improvement.
-- **vs. MCLoc**: Both adopt Monte Carlo strategies, but MCLoc is NeRF-based and requires 80 iterations at 2.4 s; UGS-Loc converges in 2 iterations at 1.1 s with higher accuracy.
-- **vs. STDLoc**: STDLoc achieves results close to UGS-Loc on 7Scenes (0.76 vs. 0.64 cm), but UGS-Loc generalizes more robustly across different priors.
-- **vs. Bayes' Rays / FisherRF**: These methods quantify uncertainty for reconstruction quality rather than localization; UGS-Loc is the first to apply Fisher information to pose refinement.
-- **vs. HR-APR / NeFeS**: These methods require additional training and achieve 35/0.78 on Cambridge, whereas UGS-Loc reaches 10.5/0.21 without any training.
+- **vs GS-CPR**: GS-CPR is deterministic; UGS-Loc introduces a probabilistic framework, improving performance by 20-30%.
+- **vs MCLoc**: Both are Monte Carlo-based, but MCLoc is NeRF-based and requires 80 iterations (2.4s), whereas UGS-Loc needs only 2 iterations (1.1s) with higher accuracy.
+- **vs STDLoc**: STDLoc is close to UGS-Loc on 7Scenes (0.76 vs 0.64 cm), but UGS-Loc shows stronger cross-prior generalization.
+- **vs Bayes' Rays / FisherRF**: These quantify uncertainty for reconstruction quality rather than localization; UGS-Loc is the first to use Fisher information for pose refinement.
+- **vs HR-APR / NeFeS**: These methods requiring extra training reach 35/0.78 on Cambridge, while UGS-Loc reaches 10.5/0.21 without training.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The dual uncertainty modeling concept is clearly motivated and systematically introduced to 3DGS-based localization for the first time.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Three benchmarks, multiple priors, and detailed ablations; testing on more 3DGS variants would further strengthen the work.
-- Writing Quality: ⭐⭐⭐⭐ — Figures are clear, motivation is well-articulated, and mathematical derivations are complete.
-- Value: ⭐⭐⭐⭐ — A plug-and-play inference-time solution with strong practicality and direct impact on the 3DGS localization community.
+- **Novelty**: ⭐⭐⭐⭐ Clear dual uncertainty modeling systematically introduced to 3DGS localization.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Three benchmarks, multiple priors, and detailed ablations, though more 3DGS variants could be tested.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear diagrams, well-motivated, and complete derivations.
+- **Value**: ⭐⭐⭐⭐ A practical, plug-and-play inference-time solution that directly advances the 3DGS localization community.
 
 <!-- RELATED:START -->
 
@@ -136,11 +158,11 @@ $$\mathrm{H}'' \simeq \mathrm{diag}((\nabla_\theta f)^\top (\nabla_\theta f)) + 
 
 ## Related Papers
 
+- [\[CVPR 2026\] UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation](ust-hand_an_uncertainty-aware_spatiotemporal_point_cloud_interaction_network_for.md)
 - [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
-- [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](../../ICCV2025/3d_vision/no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
+- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
+- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
+- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
 
 </div>
 

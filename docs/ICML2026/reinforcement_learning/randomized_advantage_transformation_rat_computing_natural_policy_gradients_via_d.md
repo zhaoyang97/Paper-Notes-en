@@ -2,84 +2,97 @@
 title: >-
   [Paper Note] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation
 description: >-
-  [ICML2026][Reinforcement Learning][Natural Policy Gradient] By using the Woodbury identity, Tikhonov-regularized Natural Policy Gradient (NPG) is rewritten as a "standard policy gradient with transformed advantages." Thi…
+  [ICML 2026][Reinforcement Learning][on-policy RL] This work rewrites the Tikhonov-regularized Natural Policy Gradient (NPG) as a "vanilla policy gradient with transformed advantages" via the Woodbury identity. By solving this advantage transformation using Randomized Block Kaczmarz iterations on mini-batches, the method completely bypasses explicit Fisher matrix const
 tags:
-  - "ICML2026"
-  - "Reinforcement Learning"
-  - "Natural Policy Gradient"
-  - "Woodbury identity"
-  - "Kaczmarz iteration"
-  - "advantage transformation"
-  - "on-policy RL"
+  - ICML 2026
+  - Reinforcement Learning
+  - on-policy RL
 date: 2026-05-08
-content_hash: 6083af0274e2ac4c
+content_hash: 01a5f7586f0aeda2
 ---
-
 # Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation
 
 **Conference**: ICML2026  
 **arXiv**: [2605.18591](https://arxiv.org/abs/2605.18591)  
 **Code**: https://github.com/agent-lab/ICML2026-RAT  
-**Area**: reinforcement_learning  
-**Keywords**: Natural Policy Gradient, Woodbury identity, Kaczmarz iteration, advantage transformation, on-policy RL  
+**Area**: Reinforcement Learning  
+**Keywords**: Natural Policy Gradient, Woodbury formula, Kaczmarz iteration, Advantage Transformation, on-policy RL  
 
 ## TL;DR
-By using the Woodbury identity, Tikhonov-regularized Natural Policy Gradient (NPG) is rewritten as a "standard policy gradient with transformed advantages." This transformation is solved over mini-batches using randomized block Kaczmarz iterations, completely bypassing explicit Fisher matrix construction, conjugate gradient inner loops, and architecture-dependent curvature approximations like KFAC. It achieves natural policy gradients through a single standard backpropagation, matching or exceeding the performance of TRPO/ACKTR/KFAC on MuJoCo and Procgen.
+This work rewrites the Tikhonov-regularized Natural Policy Gradient (NPG) as a "vanilla policy gradient with transformed advantages" via the Woodbury identity. By solving this advantage transformation using Randomized Block Kaczmarz iterations on mini-batches, the method completely bypasses explicit Fisher matrix construction, Conjugate Gradient (CG) inner loops, and architecture-dependent curvature approximations like KFAC. It obtains the natural policy gradient direction using only a single standard backpropagation, matching or exceeding the performance of TRPO/ACKTR/KFAC on MuJoCo and Procgen.
 
 ## Background & Motivation
 
-**Background**: Natural Policy Gradient (NPG) provides parameterization-invariant update directions by left-multiplying the standard policy gradient $\nabla^{\text{PG}}_{\bm{\theta}} J$ by the inverse Fisher matrix $\bm{F}^{-1}$. It serves as the theoretical foundation for TRPO, ACKTR, Natural Actor-Critic, and PPO-style updates. Theoretical analysis indicates that this "geometric correction" significantly improves convergence properties.
+**Background**: Natural Policy Gradient (NPG) achieves parameter-invariant update directions by left-multiplying the vanilla policy gradient $\nabla^{\text{PG}}_{\bm{\theta}} J$ by the inverse Fisher information matrix $\bm{F}^{-1}$. It serves as the theoretical foundation for TRPO, ACKTR, Natural Actor-Critic, and PPO-style updates. Theoretical analyses also indicate that this "geometric correction" significantly improves convergence properties.
 
-**Limitations of Prior Work**: However, the Fisher matrix $\bm{F}\in\mathbb{R}^{p\times p}$ scales with the number of parameters $p$ (often millions in deep policies), making explicit construction and inversion impractical. Two main workarounds exist:
-- **Hessian-Free + CG** (e.g., TRPO): Converts inversion into Fisher-vector products solved via Conjugate Gradient iterations. Each step requires dozens of CG inner loops, which is computationally expensive and difficult to apply to shared actor-critic networks.
-- **Structured Approximations** (e.g., KFAC): Assumes Fisher can be decomposed as layer-wise Kronecker products. This is faster but sacrifices accuracy and relies heavily on gradient independence assumptions, requiring re-derivation for different architectures.
+**Limitations of Prior Work**: However, the scale of the Fisher matrix $\bm{F}\in\mathbb{R}^{p\times p}$ is proportional to the number of parameters $p$ (millions in deep policies), making explicit construction and inversion impractical. Mainstream workarounds follow two paths:
 
-**Key Challenge**: The benefit of NPG comes from "reshaping gradient directions with Fisher," but all existing implementations either spend excessive time precisely calculating $\bm{F}^{-1}\bm{g}$ or sacrifice accuracy for architecture-dependent approximations. Can natural gradients be computed using only "standard backpropagation" without explicit Fisher operations?
+- **Hessian-Free + CG** (e.g., TRPO): Converts inversion into Fisher-vector products solved via Conjugate Gradient iterations. Each step requires dozens of CG loops, causing high overhead and difficulty in applying to shared actor-critic networks.
+- **Structural Approximation** (e.g., KFAC): Assumes the Fisher matrix can be decomposed into layer-wise Kronecker products. This is faster but sacrifices accuracy and relies heavily on gradient independence assumptions, requiring manual re-derivation for different architectures.
 
-**Goal**: (1) Find a rewriting method such that NPG formally reduces to a standard policy gradient; (2) Provide a scalable finite-sample estimation algorithm for this rewriting; (3) Offer convergence guarantees and validation on large-scale benchmarks.
+**Key Challenge**: The benefits of NPG stem from "re-normalizing gradient directions using the Fisher matrix," yet all existing implementations either spend significant time calculating $\bm{F}^{-1}\bm{g}$ accurately or sacrifice precision for architecture-dependent approximations. Is it possible to completely skip explicit operations on the Fisher matrix and compute the natural gradient using only "standard backpropagation"?
 
-**Key Insight**: The authors noted a fact occasionally mentioned in literature—Tikhonov-regularized NPG is equivalent to a weighted least squares problem. Using the Woodbury identity $(\bm{I}+\bm{U}\bm{V})^{-1}\bm{U}=\bm{U}(\bm{I}+\bm{V}\bm{U})^{-1}$, the matrix inverse can be shifted from the "parameter dimension $p\times p$" to the "sample dimension $n\times n$." In batch RL settings where $B\ll p$, shifting inversion to sample space opens a new solution path.
+**Goal**: (1) Find a rewriting method such that NPG formally reduces to a vanilla policy gradient; (2) Provide a scalable finite-sample estimation algorithm for this rewriting; (3) Offer convergence guarantees and validation on large-scale benchmarks.
 
-**Core Idea**: Completely "absorb" $\bm{F}^{-1}$ into the transformation of the advantage function $A_\pi(s,a)$. NPG is written as $\bm{H}^\top\bm{\Sigma}\tilde{\bm{y}}$, where the only difference from standard PG is the advantage $\tilde{\bm{y}}=(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}$. This transformation is then iteratively approximated on on-policy mini-batches using randomized block Kaczmarz.
+**Key Insight**: The authors noted a fact occasionally mentioned in literature—Tikhonov-regularized NPG is equivalent to a weighted least squares problem. By applying the Woodbury identity $(\bm{I}+\bm{U}\bm{V})^{-1}\bm{U}=\bm{U}(\bm{I}+\bm{V}\bm{U})^{-1}$, the matrix inverse can be moved from the "parameter dimension $p\times p$" to the "sample dimension $n\times n$." In the batch RL setting where $B\ll p$, shifting the inversion from parameter space to sample space opens a new pathway for computation.
+
+**Core Idea**: Completely "absorb" $\bm{F}^{-1}$ into the transformation of the advantage function $A_\pi(s,a)$. NPG is rewritten as $\bm{H}^\top\bm{\Sigma}\tilde{\bm{y}}$, where the only difference from vanilla PG is the advantage $\tilde{\bm{y}}=(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}$. A Randomized Block Kaczmarz iteration is then used to approximate this transformation on on-policy mini-batches.
 
 ## Method
 
 ### Overall Architecture
 
-Let $n=|\mathcal{S}||\mathcal{A}|$ denote the "sample space dimension" and $p=|\bm{\theta}|$ the "parameter dimension." The rows of $\bm{H}\in\mathbb{R}^{n\times p}$ are $\partial_{\bm{\theta}}\log\pi$, $\bm{y}\in\mathbb{R}^n$ is the advantage vector, and $\bm{\Sigma}$ is the diagonal weighting matrix for $d_\pi(s)\pi(a|s)$. The pipeline follows three steps:
+Let $n=|\mathcal{S}||\mathcal{A}|$ denote the "sample space dimension" and $p=|\bm{\theta}|$ the "parameter dimension." Rows of $\bm{H}\in\mathbb{R}^{n\times p}$ are $\partial_{\bm{\theta}}\log\pi$, $\bm{y}\in\mathbb{R}^n$ is the advantage vector, and $\bm{\Sigma}$ is a diagonal weighting matrix for $d_\pi(s)\pi(a|s)$. The pipeline consists of three steps:
 
-1.  **Rewriting**: Through two Woodbury transformations, Tikhonov-regularized NPG $\nabla^{\text{T-NPG}}=(\lambda\bm{I}_p+\bm{H}^\top\bm{\Sigma}\bm{H})^{-1}\bm{H}^\top\bm{\Sigma}\bm{y}$ is proven equivalent to $\bm{H}^\top\bm{\Sigma}\tilde{\bm{y}}$, where $\tilde{\bm{y}}=(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}$. The matrix to be inverted shrinks from $p\times p$ to $n\times n$.
-2.  **Approximation**: Since $n$ remains large in continuous action spaces, the $\bm{\Sigma}$ weighting is approximated via Monte Carlo sampling. Solving for $\tilde{\bm{y}}$ is rewritten as a regularized least squares problem: $\min_{\bm{g}}\|\bm{y}-\bm{H}\bm{g}\|_{\bm{\Sigma}}^2+\lambda\|\bm{g}\|_2^2$.
-3.  **Solving**: Randomized block Kaczmarz iterations are used. Each step takes a mini-batch $\tau_j$, performs a $B\times B$ inversion, and after $K$ iterations, the resulting $\tilde{A}_j(s,a)$ is plugged into a PPO-style surrogate objective $J_{\text{RAT}}(\bm{\theta})=\mathbb{E}[\frac{\pi(a|s;\bm{\theta})}{\pi_{\text{old}}(a|s)}\tilde{A}_j(s,a)]$. A standard backpropagation on this target yields the natural policy gradient direction.
+1. **Rewriting**: Tikhonov-regularized NPG $\nabla^{\text{T-NPG}}=(\lambda\bm{I}_p+\bm{H}^\top\bm{\Sigma}\bm{H})^{-1}\bm{H}^\top\bm{\Sigma}\bm{y}$ is shown via Woodbury deformations to be equivalent to $\bm{H}^\top\bm{\Sigma}\tilde{\bm{y}}$, where $\tilde{\bm{y}}=(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}$—shrinking the inverse from $p\times p$ to $n\times n$.
+2. **Approximation**: Since $n$ remains large in continuous action spaces, $\bm{\Sigma}$ is approximated via Monte Carlo sampling, and the solution for $\tilde{\bm{y}}$ is rewritten as a regularized least squares problem $\min_{\bm{g}}\|\bm{y}-\bm{H}\bm{g}\|_{\bm{\Sigma}}^2+\lambda\|\bm{g}\|_2^2$.
+3. **Mechanism**: Use Randomized Block Kaczmarz iterations—each step takes a mini-batch $\tau_j$, performs a $B\times B$ inversion, and after $K$ iterations, the resulting $\tilde{A}_j(s,a)$ is plugged into a PPO-style surrogate objective $J_{\text{RAT}}(\bm{\theta})=\mathbb{E}[\frac{\pi(a|s;\bm{\theta})}{\pi_{\text{old}}(a|s)}\tilde{A}_j(s,a)]$. A standard backpropagation then yields the natural policy gradient direction. For shared networks, a critic pseudo-advantage is introduced to unify actor and critic updates.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: on-policy mini-batch<br/>Policy advantage y + per-sample gradient Hτ"]
+    A -->|Shared Backbones| D["Shared actor-critic adaptation (pseudo-advantage)<br/>Concatenate actor advantage + critic all-ones pseudo-advantage"]
+    A --> B["Advantage rewriting in Woodbury form<br/>Move inverse Fisher from p×p to sample dimension n×n"]
+    D --> B
+    B --> C["Randomized Block Kaczmarz iteration<br/>K iterations of B×B inversion → Transformed advantage Ã"]
+    C --> E["PPO-style surrogate objective J_RAT"]
+    E --> F["One standard backpropagation<br/>= Natural Policy Gradient direction"]
+```
 
 ### Key Designs
 
-1.  **Woodbury-form Advantage Rewriting**:
-    - **Function**: Rewrites "Inverse Fisher × Standard Gradient" as "Standard Gradient form × Transformed Advantage," making NPG structurally identical to PG in code.
-    - **Mechanism**: Applying the Woodbury identity $(\bm{I}+\bm{U}\bm{V})^{-1}\bm{U}=\bm{U}(\bm{I}+\bm{V}\bm{U})^{-1}$ twice to $(\lambda\bm{I}_p+\bm{H}^\top\bm{\Sigma}\bm{H})^{-1}\bm{H}^\top\bm{\Sigma}$ yields $\nabla^{\text{T-NPG}}_{\bm{\theta}} J=\bm{H}^\top\bm{\Sigma}(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}$. This is interpreted as "standard policy gradient, but the advantage $A_\pi$ is replaced by $\bar{A}_\pi=[(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}]_{(s,a)}$."
-    - **Design Motivation**: Originally, inversion was required on $p\times p$ (crashing with millions of parameters); it is now moved to $n\times n$. As long as the batch size is smaller than the parameter count, the cost is manageable. All curvature information is compressed into a single scalar "advantage," leaving downstream optimizers and loss structures untouched.
+**1. Woodbury-form Advantage Rewriting: From "Inverse Fisher × Gradient" to "Vanilla Gradient × Transformed Advantage"**
 
-2.  **Randomized Block Kaczmarz for Advantage Transformation**:
-    - **Function**: Decomposes the $n\times n$ inversion for $\tilde{\bm{y}}$ into $K$ iterations of $B\times B$ inversions (where mini-batch size $B\ll p$), using only standard backpropagation.
-    - **Mechanism**: Starting from $\bm{g}_0$, a mini-batch $\tau_j$ is randomly sampled for a regularized projection: $\bm{g}_j\leftarrow\arg\min_{\bm{g}}\|\bm{y}_{\tau_j}-\bm{H}_{\tau_j}\bm{g}\|_2^2+\lambda\|\bm{g}-\bm{g}_{j-1}\|_2^2$. This proximal subproblem has a closed-form update: $\bm{g}_j=\bm{g}_{j-1}+\bm{H}_{\tau_j}^\top\,[(\lambda\bm{I}+\bm{H}_{\tau_j}\bm{H}_{\tau_j}^\top)^{-1}(\bm{y}_{\tau_j}-\bm{H}_{\tau_j}\bm{g}_{j-1})]$. The $B\times B$ inversion in brackets is the "randomized advantage transformation" $\tilde{A}_j$. The paper uses `torch.linalg.solve` for numerical stability; $\bm{H}_{\tau}$ is obtained via PyTorch per-sample gradients.
-    - **Design Motivation**: Hard constraint projections in classic Kaczmarz are unstable with batch noise and rank-deficient $\bm{H}_\tau$. The regularized Tikhonov proximal form ensures $(\lambda\bm{I}+\bm{H}_\tau\bm{H}_\tau^\top)$ is always invertible and keeps each step close to $\bm{g}_{j-1}$, gradually "seeping" curvature info into $\bm{g}$. Unlike SPRING, RAT refines within a single on-policy data batch to avoid stale gradients.
+Efficiency improvements for NPG often stall at the same point—how to invert the $p\times p$ (million-dimensional) Fisher matrix. The breakthrough in RAT applies the Woodbury identity $(\bm{I}+\bm{U}\bm{V})^{-1}\bm{U}=\bm{U}(\bm{I}+\bm{V}\bm{U})^{-1}$ twice to $(\lambda\bm{I}_p+\bm{H}^\top\bm{\Sigma}\bm{H})^{-1}\bm{H}^\top\bm{\Sigma}$ to move the inversion to the sample dimension:
 
-3.  **Architecture-Agnostic Shared Actor-Critic Adaptation (Pseudo-advantages)**:
-    - **Function**: Enables RAT to use a unified target for actor and critic when they share a backbone (a scenario difficult for KFAC or Guzmán-Cordero).
-    - **Mechanism**: Following ACKTR, the critic is treated as a Gaussian likelihood. An additional "pseudo-advantage" (e.g., an all-ones vector) is introduced for the critic. The actor advantage $\bm{y}^\pi$ and critic pseudo-advantage $\bm{y}^V$ are concatenated for RAT iterations to obtain shared surrogate losses. Gradients are handled via autograd without manual partitioning or weighting. Stability is ensured via $\ell_2$-norm gradient clipping $\alpha_j=\min(\eta,\nu/\|\bm{g}_j\|_2)$.
-    - **Design Motivation**: KFAC-style methods typically calculate separate curvatures for each head, which is architecture-dependent. RAT places both actor and critic into the Woodbury-transformed "standard PG framework," making curvature handling via autograd "free."
+$$\nabla^{\text{T-NPG}}_{\bm{\theta}} J=\bm{H}^\top\bm{\Sigma}\,(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}.$$
+
+This equation implies NPG is simply vanilla policy gradient where the advantage is transformed from $A_\pi$ to $\bar{A}_\pi=[(\lambda\bm{I}_n+\bm{H}\bm{H}^\top\bm{\Sigma})^{-1}\bm{y}]_{(s,a)}$. This is effective because the inversion scale shrinks to $n \times n$, which is controllable if the batch size is smaller than the parameter count. Moreover, all curvature information is compressed into the scalar "advantage," making it naturally compatible with any advantage-based algorithm (PPO, A2C, GAE).
+
+**2. Randomized Block Kaczmarz Iteration: Splitting $n\times n$ Inversion into $K$ $B\times B$ Inversions**
+
+To handle large $n$ in continuous spaces, solving for $\tilde{\bm y}$ is treated as a regularized least squares problem $\min_{\bm g}\|\bm y-\bm H\bm g\|_{\bm\Sigma}^2+\lambda\|\bm g\|_2^2$, approximated via Randomized Block Kaczmarz iterations on mini-batches. Each step samples a mini-batch $\tau_j$ for a regularized projection, where the proximal sub-problem has a closed-form solution:
+
+$$\bm{g}_j=\bm{g}_{j-1}+\bm{H}_{\tau_j}^\top\big[(\lambda\bm{I}+\bm{H}_{\tau_j}\bm{H}_{\tau_j}^\top)^{-1}(\bm{y}_{\tau_j}-\bm{H}_{\tau_j}\bm{g}_{j-1})\big].$$
+
+The $B\times B$ inversion in parentheses represents the "randomized advantage transformation" $\tilde A_j$. In practice, `torch.linalg.solve` is used instead of explicit inversion for stability, $\bm H_\tau$ is obtained via PyTorch per-sample gradients, and $\bm H\bm H^\top$ relates to the Neural Tangent Kernel (NTK). The Tikhonov term ensures $(\lambda\bm I+\bm H_\tau\bm H_\tau^\top)$ is always invertible and keeps updates close to $\bm g_{j-1}$, gradually incorporating curvature. Unlike momentum-based Kaczmarz methods like SPRING, RAT refines $\bm g_j$ within a single on-policy rollout to avoid stale gradients.
+
+**3. Architecture-agnostic Shared Actor-Critic Adaptation (Pseudo-advantage)**
+
+Methods like KFAC typically calculate curvature for each head separately and merge them manually, which is difficult for shared backbones. Since RAT reduces NPG to a PG-like form, shared backbones and unified losses become natural. Following ACKTR, the critic is treated as a Gaussian likelihood, and a "pseudo-advantage" (e.g., an all-ones vector) is introduced for the critic. By concatenating actor advantages $\bm y^\pi$ and critic pseudo-advantages $\bm y^V$ into a single RAT iteration, a shared surrogate loss is obtained. Gradients are handled by autograd without manual layer-wise partitioning. Combined with $\ell_2$ gradient clipping $\alpha_j=\min(\eta,\nu/\|\bm g_j\|_2)$, this ensures training stability, allowing RAT to outperform KFAC in shared-network scenarios.
 
 ### Loss & Training
 
-The total objective is $J_{\text{RAT}}(\bm{\theta})=\mathbb{E}_{(s,a)\sim\mathcal{D}_k}\!\left[\frac{\pi(a|s;\bm{\theta})}{\pi_{\text{old}}(a|s)}\tilde{A}_j(s,a)\right]$, sharing PPO's importance sampling ratio structure. Within each on-policy rollout, $K$ inner Kaczmarz iterations refresh $\tilde{A}_j$, each corresponding to one standard backprop. The Tikhonov coefficient $\lambda$ ensures invertibility and controls convergence speed.
+The objective is $J_{\text{RAT}}(\bm{\theta})=\mathbb{E}_{(s,a)\sim\mathcal{D}_k}\!\left[\frac{\pi(a|s;\bm{\theta})}{\pi_{\text{old}}(a|s)}\tilde{A}_j(s,a)\right]$, sharing the importance sampling ratio format with PPO. Within each on-policy rollout, $K$ inner Kaczmarz iterations refresh $\tilde{A}_j$, each corresponding to one standard backpropagation. The Tikhonov coefficient $\lambda$ ensures invertibility of $(\lambda\bm{I}+\bm{H}_\tau\bm{H}_\tau^\top)$ and controls convergence speed.
 
-Theoretical results include: Under the "compatible advantage" assumption, $\mathbb{E}\|\bm{g}_j-\bm{g}^*\|_2^2\le(1-\mu)^j\|\bm{g}_0-\bm{g}^*\|_2^2$ (linear convergence, Theorem 1). With noise, an $\eta^2/\mu$ error floor exists (Theorem 2), justifying the use of gradient norm clipping.
+Theoretically, under the "compatible advantage" assumption, $\mathbb{E}\|\bm{g}_j-\bm{g}^*\|_2^2\le(1-\mu)^j\|\bm{g}_0-\bm{g}^*\|_2^2$ (Theorem 1, linear convergence). With noise, an error floor of $\eta^2/\mu$ appears (Theorem 2), justifying the use of gradient norm clipping in practice.
 
 ## Key Experimental Results
 
 ### Main Results
 
-MuJoCo continuous control (separate actor-critic) final rewards mean ± stderr (5 seeds, 10M steps), comparing PPO, TRPO/FVP+CG, KFAC, and Sophia. Key results for shared actor-critic are shown below:
+Evaluations on MuJoCo continuous control (separate actor-critic) using final return (mean ± stderr, 5 seeds, 10M steps) comparing PPO, TRPO/FVP+CG, KFAC, and Sophia. Key results for shared actor-critic scenarios:
 
 | Task | State×Action | RAT (Ours) | ACKTR | PPO | Sophia |
 |------|-----------|-----------|-------|------|--------|
@@ -89,49 +102,49 @@ MuJoCo continuous control (separate actor-critic) final rewards mean ± stderr (
 | Humanoid | 376×17 | **5382.7 ± 117.3** | 2571.7 ± 838.7 | 5357.9 ± 150.9 | 669.4 ± 56.2 |
 | HumanoidStandup | 376×17 | **146529.7 ± 2317.6** | 127928.5 ± 5433.7 | 130014.2 ± 6463.7 | 111212.6 ± 13449.9 |
 
-On high-dimensional Procgen (ResNet policy, 8 discrete tasks), RAT matches or exceeds baselines in all tasks. In low-dimensional parameter estimation visualizations, RAT's gradient directions nearly overlap with analytical natural gradients, whereas vanilla PG remains perpendicular to contours.
+On high-dimensional Procgen (ResNet policies), RAT matches or exceeds baselines across all tasks. Visualization of Gaussian parameter estimation shows RAT's gradient direction almost perfectly aligns with the analytical natural gradient, while vanilla PG deviates significantly.
 
-### Ablation Study (Wallclock time per step in ms)
+### Ablation Study (per-step wall-clock time in ms)
 
 | Method (HalfCheetah / Ant / Humanoid) | Separate Mode | Shared Mode | Description |
 |--------|---------------|--------------|------|
-| RAT (Ours) | 9.83 / 10.04 / 18.17 | 11.53 / 11.66 / 19.85 | ~2× faster than FVP+CG; supports shared backbone |
-| FVP+CG (TRPO) | 19.86 / 19.95 / 19.81 | N/A | High CG inner loop overhead |
-| KFAC / ACKTR | 5.60 / 5.61 / 6.57 | 6.92 / 6.85 / 7.87 | Fast but precision depends on architecture |
-| Sophia (diag Fisher) | 3.92 / 3.98 / 5.71 | 5.97 / 6.03 / 7.58 | Fastest but worst rewards |
-| PPO (vanilla) | 3.12 / 3.18 / 3.22 | 3.70 / 3.70 / 3.72 | Speed upper bound reference |
+| RAT (Ours) | 9.83 / 10.04 / 18.17 | 11.53 / 11.66 / 19.85 | ~2× faster than FVP+CG; supports shared backbones |
+| FVP+CG (TRPO) | 19.86 / 19.95 / 19.81 | N/A | High overhead from CG loops |
+| KFAC / ACKTR | 5.60 / 5.61 / 6.57 | 6.92 / 6.85 / 7.87 | Fast but precision depends on architecture assumptions |
+| Sophia (diag Fisher) | 3.92 / 3.98 / 5.71 | 5.97 / 6.03 / 7.58 | Fastest but worst returns |
+| PPO (vanilla) | 3.12 / 3.18 / 3.22 | 3.70 / 3.70 / 3.72 | Reference for speed upper bound |
 
 ### Key Findings
 
-- **Balance of Precision and Overhead**: RAT step time is roughly half of FVP+CG and twice that of KFAC, but it outperforms both in terms of reward. Sophia's diagonal approximation is fastest but collapses on Ant/Humanoid, proving that discarding off-diagonal curvature is unacceptable.
-- **Significant Gains in Large Action Spaces**: In high-dimensional scenarios like Ant (105×8) and Humanoid (376×17), where ACKTR often plateaus or regresses, RAT shows stable improvement. This confirms the Theorem 1 analysis where $\mu$ governs convergence—RAT remains effective even as matrices become ill-conditioned.
-- **Shared Actor-Critic is a Killer Feature**: While KFAC requires manual Fisher partitioning for shared networks, RAT's pseudo-advantage makes shared configurations "free" and at least as strong as separate ones in all tasks.
+- **Balance of Precision and Overhead**: RAT is approximately half as slow as FVP+CG and twice as slow as KFAC per step, but it outperforms both in returns. Diagonal approximations like Sophia are fastest but collapse on Ant/Humanoid, suggesting that non-diagonal curvature is indispensable.
+- **Significant Gains in Large Action Spaces**: In high-dimensional tasks like Ant and Humanoid, baselines like ACKTR often struggle or regress. RAT provides stable improvements, validating the Theorem 1 analysis where $\mu$ dominates convergence—RAT's advantage is most pronounced in ill-conditioned problems.
+- **Shared Actor-Critic is a Killer Feature**: While KFAC requires manual splitting of the Fisher matrix for shared networks, Ours uses pseudo-advantages to enable shared training "for free," performing at least as well as separate configurations.
 
 ## Highlights & Insights
 
-- **"Inversion Relocation" is the True Insight**: While most NPG improvements focus on *how* to solve $\bm{F}^{-1}$, this paper uses Woodbury to move inversion from the parameter dimension to the sample dimension. This is not just a math trick but a framework shift: Curvature info need not reside in a matrix; it can be stored in "transformed scalar advantages," making it naturally compatible with advantage-based interfaces (PPO, A2C, GAE).
-- **Underestimated "Engineering-Friendliness" of Hiding Curvature in Advantages**: Modern RL frameworks (Stable-Baselines, CleanRL) are built around "calculate advantage → backprop." KFAC needs optimizer changes; TRPO needs CG loops; ACKTR needs manual head splits. RAT only modifies the advantage calculation function, allowing nearly zero-intrusion updates to any PPO implementation.
-- **Reuse via Per-sample Gradient × NTK Perspective**: The authors identify $\bm{H}\bm{H}^\top$ as the Neural Tangent Kernel (NTK). This means NTK approximations (Random Features, Nyström) can directly reduce RAT's inner inversion cost, leaving a clear optimization path for scaling to LLM-level actor-critic training (e.g., RLHF).
+- **"Matrix Inversion Relocation" is the Critical Insight**: While most NPG improvements focus on *how* to calculate $\bm{F}^{-1}$, Ours uses the Woodbury identity to move inversion from parameter space to sample space. This mathematical shift ensures curvature information is stored in "transformed scalar advantages," making RAT naturally compatible with modern RL frameworks (PPO, A2C, GAE) that use "advantage" as an interface.
+- **Underestimated "Engineering Friendliness" of Curvature in Advantages**: Modern RL libraries are built around the "calculate advantage → backprop" workflow. KFAC requires optimizer modification, and TRPO requires CG loops. RAT only requires modifying the advantage calculation function, allowing it to be integrated into any PPO implementation with near-zero friction.
+- **Synergy with NTK Perspectives**: The observation that $\bm{H}\bm{H}^\top$ is the NTK implies that NTK approximations (Random Features, Nyström) can directly reduce RAT's internal inversion costs. This provides a clear optimization path for scaling RAT to LLM-scale actor-critic training (e.g., RLHF).
 
 ## Limitations & Future Work
 
-- **Sample vs. Parameter Relationship**: The method assumes efficiency gains only when $B\ll p$. If future models use tiny parameters with massive batches, $B\times B$ inversion could become a bottleneck.
-- **Off-policy and Replay Buffer Adaptation**: Randomized Kaczmarz convergence relies on the on-policy distribution $d_\pi(s,a)$. Scaling to SAC or IMPALA requires addressing $\bm{\Sigma}$ re-weighting and sampling bias.
-- **Realism of Theoretical Assumptions**: Theorem 1 assumes $\bm{H}$ is full rank ($p\ll n$), which is often violated with large policies and finite batches. Theorem 2's "error floor" addresses this partially, but more analysis of the $\eta^2/\mu$ magnitude and its relation to clipping threshold $\nu$ is needed.
-- **Future Directions**: (1) Replacing inner Kaczmarz with variance reduction methods like SVRG/SARAH; (2) Adaptive $\lambda$ based on Fisher spectra; (3) Fusion with momentum variants like SPRING for ill-conditioned tasks.
+- **Sample vs. Parameter Dimensions**: The efficiency advantage assumes $B \ll p$. If extremely small policies are trained with massive batches in the future, $B \times B$ inversion could become a bottleneck.
+- **Off-policy and Replay Buffer Adaptation**: The convergence analysis of Randomized Block Kaczmarz relies on the on-policy distribution $d_\pi(s,a)$. Extending this to off-policy algorithms like SAC or IMPALA remains an open question regarding $\bm{\Sigma}$ re-weighting.
+- **Realism of Theoretical Assumptions**: Theorem 1 assumes $\bm{H}$ is full rank, which may fail with large policies and small batches. While Theorem 2 addresses this via an "error floor," more granular analysis of the relationship between the floor and the gradient clipping threshold $\nu$ is needed.
+- **Potential Improvements**: (1) Replacing inner Kaczmarz with variance reduction methods like SVRG/SARAH; (2) Adapting $\lambda$ based on the Fisher spectrum within a batch; (3) Fusing with momentum variants of Kaczmarz (like SPRING) to accelerate convergence on ill-conditioned tasks.
 
 ## Related Work & Insights
 
-- **vs FVP+CG (TRPO, Schulman 2015)**: Neither construct Fisher explicitly, but FVP+CG solves inversion in "parameter space CG" with dozens of loops. RAT uses "sample space Kaczmarz" with one $B\times B$ inversion + backprop, natively supporting shared actor-critic.
-- **vs KFAC / ACKTR (Wu 2017)**: KFAC assumes layer-wise Kronecker decomposition and statistical independence. RAT makes no structural assumptions about $\bm{F}$, allowing easy migration to Transformer or CNN policies by changing only the per-sample gradient implementation.
-- **vs Guzmán-Cordero et al. 2025**: Also uses Woodbury for NPG but approximates the Fisher inverse directly and requires manual gradient merging. RAT delegates the solution to a randomized iterator and unified autograd via pseudo-advantages.
-- **vs SPRING (Goldshlager 2024)**: Both use Kaczmarz, but SPRING uses momentum, updates once per batch, and accumulates $\bm{g}$ across rollouts. RAT iterates multiple times within a single rollout without momentum, avoiding stale gradients in on-policy RL.
+- **vs FVP+CG (TRPO, Schulman 2015)**: Neither explicitly constructs the Fisher matrix, but FVP+CG performs CG in "parameter space" with dozens of loops. RAT performs Kaczmarz in "sample space" with one $B \times B$ inversion plus one backprop, naturally supporting shared architectures.
+- **vs KFAC / ACKTR (Wu 2017)**: KFAC relies on layer-wise Kronecker decompositions and strong gradient independence assumptions. RAT makes no structural assumptions on $\bm{F}$ and can migrate to Transformer or CNN policies by simply changing the per-sample gradient implementation.
+- **vs Guzmán-Cordero et al. 2025**: Also uses Woodbury for NPG but directly approximates the inverse Fisher and requires manual merging of actor/critic gradients. RAT leaves solving to a randomized iterator and uses pseudo-advantages to let autograd handle curvature merging, resulting in cleaner engineering.
+- **vs SPRING (Goldshlager 2024)**: Both use Kaczmarz, but SPRING uses momentum and updates once per batch, accumulating $\bm{g}$ across rollouts. RAT iterates multiple times within a single rollout without momentum, avoiding stale gradients and proving friendlier for on-policy RL.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of Woodbury, randomized Kaczmarz, and advantage transformation is novel and elegantly reduces NPG to standard PG form.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers MuJoCo, Procgen, and low-dim Gaussian; however, lacks validation on LLM-level RLHF.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear step-by-step derivation, two convergence theorems, and explicit comparisons with KFAC/FVP/SPRING make it easily reproducible.
-- Value: ⭐⭐⭐⭐⭐ Provides a nearly zero-intrusion natural gradient scheme for existing PPO codebases, opening doors for natural gradients in large-scale RL/RLHF.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of Woodbury, Randomized Kaczmarz, and Advantage Transformation is unique and elegantly reduces NPG to a vanilla gradient form.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers MuJoCo, Procgen, and Gaussian visualizations; however, lacks validation on LLM-level RLHF.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear derivations, two solid theorems, and explicit comparisons with KFAC/FVP+CG/SPRING make it highly reproducible.
+- Value: ⭐⭐⭐⭐⭐ Provides a natural gradient solution that can be plugged into existing PPO code with virtually no friction, opening doors for NPG in large-scale RL/RLHF.
 
 <!-- RELATED:START -->
 
@@ -142,8 +155,8 @@ On high-dimensional Procgen (ResNet policy, 8 discrete tasks), RAT matches or ex
 - [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
 - [\[ICLR 2026\] Learning to Orchestrate Agents in Natural Language with the Conductor](../../ICLR2026/reinforcement_learning/learning_to_orchestrate_agents_in_natural_language_with_the_conductor.md)
 - [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
+- [\[CVPR 2026\] Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes](../../CVPR2026/reinforcement_learning/talk2move_reinforcement_learning_for_text-instructed_object-level_geometric_tran.md)
 - [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](../../ACL2026/reinforcement_learning/free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
-- [\[ICML 2026\] ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation](prorl_effective_reinforcement_learning_for_proactive_recommendation_via_rectifie.md)
 
 </div>
 

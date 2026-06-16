@@ -2,132 +2,134 @@
 title: >-
   [Paper Note] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 description: >-
-  [CVPR 2026][Interpretability][CLIP interpretability] This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully data-free and training-free interpretability framework for CLIP. SITH applies SVD directly…
+  [CVPR 2026][Interpretability][Paper Note] This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semant
 tags:
-  - "CVPR 2026"
-  - "Interpretability"
-  - "CLIP interpretability"
-  - "singular value decomposition"
-  - "attention head analysis"
-  - "weight-space editing"
-  - "data-free"
+  - CVPR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: c4ed1d40e09c49e0
+content_hash: 317528d0ebf814ed
 ---
-
 # From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24653](https://arxiv.org/abs/2603.24653)  
 **Code**: [https://frangente.github.io/SITH](https://frangente.github.io/SITH)  
-**Area**: Multimodal VLM / Model Interpretability
-**Keywords**: CLIP interpretability, singular value decomposition, attention head analysis, weight-space editing, data-free
+**Area**: Multimodal VLM / Model Interpretability  
+**Keywords**: CLIP interpretability, SVD, attention head analysis, weight space editing, data-free
 
 ## TL;DR
-This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully data-free and training-free interpretability framework for CLIP. SITH applies SVD directly to the Value-Output weight matrices of attention heads, then leverages a novel COMP algorithm to interpret each singular vector as a sparse combination of semantically coherent concepts. This achieves finer-grained intra-head interpretability than existing methods and enables precise weight editing to improve downstream performance.
+This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semantically coherent concepts, SITH achieves significantly finer intra-head interpretability compared to existing methods and supports precise weight editing to enhance downstream performance.
 
 ## Background & Motivation
 
-1. **Background**: Vision-language models (VLMs) such as CLIP have been widely adopted across downstream tasks. Mechanistic interpretability seeks to understand how such models internally represent and process concepts. Existing approaches fall into two categories: (1) activation-based methods (e.g., Sparse Autoencoders) rely on dataset-computed activations; (2) TextSpan aligns attention head output activations with textual concepts but only yields coarse-grained head-level explanations.
+1. **Background**: Vision-Language Models (VLMs) like CLIP are widely used across downstream tasks. Mechanistic interpretability seeks to understand how these models internally represent and process concepts. Existing methods fall into two categories: (1) activation-based methods (e.g., Sparse Autoencoders) that rely on dataset activations; (2) TextSpan, which aligns attention head activations with text concepts but provides only coarse, head-level explanations.
 
-2. **Limitations of Prior Work**: (1) Activation-based methods depend on large-scale datasets and are susceptible to data bias; (2) SAEs suffer from significant instability—dictionaries learned from different data differ substantially; (3) TextSpan only explains at the level of "this head attends to color," without distinguishing which sub-structures encode red versus green; (4) No existing method can directly interpret CLIP's internal mechanisms from weights alone, without observing any data.
+2. **Limitations of Prior Work**: (1) Activation-based methods depend on large-scale datasets, making their interpretations susceptible to data bias; (2) SAEs exhibit severe instability, yielding different dictionaries with different training data; (3) TextSpan can only state "this head focuses on color" without distinguishing which sub-structures within the head encode red versus green; (4) No existing method can directly interpret CLIP's internal mechanisms from weights without data.
 
-3. **Key Challenge**: Existing interpretability methods either require data (and thus inherit data bias), or only provide coarse head-level explanations—there is no framework that is simultaneously data-free and fine-grained.
+3. **Key Challenge**: Existing interpretability methods either require data (subject to bias) or provide only coarse explanations (head-level)—there is no framework that is inherently data-free and fine-grained.
 
-4. **Goal**: (1) Can CLIP attention heads be understood directly from weights, without observing any data? (2) Can such understanding reach the level of individual features within a head? (3) Can the resulting understanding enable precise model editing?
+4. **Goal**: (1) Can we understand CLIP attention head functions directly from weights without any data? (2) Can this understanding reach the level of individual features within a head? (3) Can we perform precise model editing based on this understanding?
 
-5. **Key Insight**: Building on the insight from Elhage et al.—that attention head computation can be expressed as a weighted combination of input patch transformations through the Value-Output (VO) matrix—analyzing the VO matrix reveals what features a head "reads and writes," entirely independent of input data.
+5. **Key Insight**: Based on observations by Elhage et al., attention head computation can be represented as a weighted combination of input patches transformed by the Value-Output (VO) matrix. Analyzing the VO matrix allows one to understand what features a head "can extract and write," completely independent of input data.
 
-6. **Core Idea**: Apply SVD to the VO matrices of CLIP attention heads, then use a semantically coherent sparse coding algorithm (COMP) to map each singular vector to a human-interpretable combination of concepts, achieving data-free, fine-grained weight-space interpretability.
+6. **Core Idea**: Perform SVD on the VO matrices of CLIP attention heads and use a semantically coherent sparse coding algorithm (COMP) to map each singular vector to a human-understandable combination of concepts, enabling fine-grained, weight-space interpretability without data.
 
 ## Method
 
 ### Overall Architecture
-SITH operates in three steps: (1) isolate the VO matrix of each attention head, $\mathbf{W}_{VO}^{l,h} = \mathbf{W}_V^h \mathbf{W}_O^h$; (2) apply SVD, $\mathbf{W}_{VO} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^T$, yielding right singular vectors (output directions) and corresponding singular values (importance); (3) project each singular vector into CLIP's multimodal space and apply the COMP algorithm to represent it as a sparse non-negative combination of $K$ semantically coherent concepts from a concept pool. This produces human-interpretable explanations for each principal computational direction within every attention head.
+SITH addresses a core question: Can "what each attention head encodes" be read directly from CLIP weights without looking at images? It relies on the observation that a head's output is the weighted sum of patches transformed by the Value-Output (VO) matrix $\mathbf{W}_{VO}^{l,h} = \mathbf{W}_V^h \mathbf{W}_O^h$. While attention weights determine "routing," the VO matrix determines "content." Since content is embedded in the VO matrix, analysis of this matrix yields data-independent insights. The workflow is: isolate VO matrices per head; perform SVD to identify primary computational directions; project these directions into the CLIP multimodal space; translate directions into concepts via COMP; and finally, guide weight editing by magnifying or suppressing specific directions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["CLIP Weights<br/>Attention Head Value-Output (VO) Matrix"] --> B["Isolate VO matrix per head"]
+    B --> C["SVD of VO matrix<br/>Decompose into orthogonal directions σ_i"]
+    C --> D["Project to CLIP Multimodal Space"]
+    D --> E["COMP Concept Translation<br/>Sparse non-negative coding + Coherence regularization"]
+    E --> F["LLM labels each direction:<br/>Task-related / Harmful"]
+    F --> G["SITH-based Weight Editing<br/>Amplify useful σ_i, suppress harmful σ_i"]
+    G --> H["Improved Downstream Performance"]
+```
 
 ### Key Designs
 
-1. **SVD Decomposition of the VO Matrix**
+**1. SVD of the VO Matrix: Decomposing a Head into Independent "Information Channels"**
 
-    - **Function**: Identifies the most important information flow directions within each attention head.
-    - **Mechanism**: The VO matrix $\mathbf{W}_{VO}$ is a linear transformation; SVD decomposes it into reading directions ($\mathbf{u}_i$, where the head reads from), writing directions ($\mathbf{v}_i$, where the head writes to), and amplification factors ($\sigma_i$, the importance of each direction). Sorting by descending singular values reveals the head's most critical computational directions. The entire process is weight-based and requires no input data.
-    - **Design Motivation**: The attention matrix $\mathbf{A}^h$ governs "which patch routes information to which patch" (routing), while the VO matrix governs "what information flows" (content). Analyzing the VO matrix thus yields an input-independent understanding.
+Methods like TextSpan provide coarse labels like "this head focuses on color," failing to distinguish internal components. SITH performs Singular Value Decomposition $\mathbf{W}_{VO} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^T$, breaking the linear transformation into orthogonal directions: the right singular vector $\mathbf{v}_i$ is the "write" direction (content written to the residual stream), the left singular vector $\mathbf{u}_i$ is the "read" direction, and the singular value $\sigma_i$ quantifies the importance of that channel. Sorting by $\sigma_i$ decomposes a head into distinct information channels, refining the granularity from the "head" to the "singular vector." This weight-only decomposition avoids data bias and the instability of activation-based SAEs.
 
-2. **COMP (Coherent Orthogonal Matching Pursuit)**
+**2. COMP (Coherent Orthogonal Matching Pursuit): Accurate and Coherent Concept Interpretation**
 
-    - **Function**: Interprets each singular vector as a sparse, semantically coherent combination of concepts.
-    - **Mechanism**: Given a singular vector $\hat{\mathbf{v}}$ and a concept embedding matrix $\hat{\mathbf{\Gamma}}$, COMP seeks sparse non-negative coefficients $\mathbf{c}$ such that $\hat{\mathbf{v}} \approx \hat{\mathbf{\Gamma}}^T \mathbf{c}$. Standard NNOMP greedily selects the concept with the highest correlation but may yield semantically incoherent sets. COMP modifies the scoring function to $\text{score}(\hat{\gamma}_i) = \langle \mathbf{r}_{k-1}, \hat{\gamma}_i \rangle + \frac{\lambda}{|S_{k-1}|}\sum_{j \in S_{k-1}} \langle \hat{\gamma}_i, \hat{\gamma}_j \rangle$, where the second term encourages new concepts to be semantically similar to already-selected ones; hyperparameter $\lambda$ controls the trade-off between reconstruction fidelity and semantic coherence.
-    - **Design Motivation**: Simple top-$k$ similarity selection captures only local semantics of a singular vector, while NNOMP yields good reconstruction but incoherent concepts. COMP strikes an optimal balance between the two.
+To translate a singular vector into human-readable concepts, SITH finds a sparse non-negative coefficient vector $\mathbf{c}$ such that $\hat{\mathbf{v}} \approx \hat{\mathbf{\Gamma}}^T \mathbf{c}$, where $\hat{\mathbf{\Gamma}}$ is a concept embedding matrix. While standard NNOMP greedily selects concepts correlated with the residual, it often produces semantically disjoint sets (e.g., "apple + red"). COMP adds a coherence term to the greedy score:
 
-3. **Weight Editing via SITH**
+$$\text{score}(\hat{\gamma}_i) = \langle \mathbf{r}_{k-1}, \hat{\gamma}_i \rangle + \frac{\lambda}{|S_{k-1}|}\sum_{j \in S_{k-1}} \langle \hat{\gamma}_i, \hat{\gamma}_j \rangle$$
 
-    - **Function**: Enables precise concept-level model intervention by adjusting singular values.
-    - **Mechanism**: Using SITH's concept interpretations, an LLM evaluates the relevance of each singular vector's concept set to a downstream task; singular values of relevant directions are amplified while irrelevant ones are suppressed. No training data or gradient updates are required.
-    - **Design Motivation**: Compared to TextSpan's approach of ablating entire heads, SITH operates at the granularity of individual singular vectors within a head, enabling more precise "surgical" editing.
+The first term measures explanatory power for the residual $\mathbf{r}_{k-1}$, while the second rewards similarity to concepts already in the set $S_{k-1}$, balanced by $\lambda$. This results in coherent interpretations (e.g., "pink red + scarlet reds + red background").
+
+**3. SITH-based Weight Editing: Singular Values as Concept "Volume Knobs"**
+
+With the concepts identified, SITH uses an LLM to judge if a singular vector is task-relevant or harmful. Editing is performed by directly adjusting $\sigma_i$—amplifying useful directions and suppressing harmful ones before reconstructing the VO matrix. This provides "surgical" precision compared to head-level removal in TextSpan, which often eliminates useful features alongside harmful ones.
 
 ### Loss & Training
-- SITH requires no training. The COMP algorithm is a deterministic iterative procedure with two hyperparameters: number of concepts $K$ (default 5) and coherence coefficient $\lambda$ (default 0.3).
-- The concept pool uses ConceptNet 5.5.
-- Analysis focuses on the last 4 layers of OpenCLIP ViT-L/14 ($L=24, H=16, r=64$).
+SITH is training-free. COMP is a deterministic iterative process with two hyperparameters: the number of concepts $K$ (default 5) and the coherence coefficient $\lambda$ (default 0.3). The concept pool is derived from ConceptNet 5.5, focusing on the last 4 layers of OpenCLIP ViT-L/14 ($L=24, H=16, r=64$).
 
 ## Key Experimental Results
 
-### Main Results — Interpretability vs. Fidelity
+### Main Results—Interpretability vs. Fidelity
 
 COMP achieves the best balance at $\lambda=0.3, K=5$:
-- Interpretability (LLM score, 5-point scale): COMP ≈ 3.8, NNOMP ≈ 3.0, top-$k$ ≈ 4.2
-- Reconstruction fidelity (cosine similarity): COMP ≈ 0.6, NNOMP ≈ 0.65, top-$k$ ≈ 0.35
-- Replacing original singular vectors with SITH-reconstructed ones causes virtually no drop in zero-shot classification accuracy.
+- Interpretability (LLM 5-point scale): COMP ≈ 3.8, NNOMP ≈ 3.0, top-k ≈ 4.2
+- Reconstruction Fidelity (Cosine Sim): COMP ≈ 0.6, NNOMP ≈ 0.65, top-k ≈ 0.35
+- Zero-shot classification accuracy remains steady when replacing original vectors with SITH-reconstructed versions.
 
 ### Weight Editing Applications
 
 | Task | Original OpenCLIP | TextSpan Editing | SITH Editing |
-|------|-------------------|------------------|--------------|
+|------|-------------|------------|---------|
 | Waterbirds (Overall Acc) | 73.5 | 81.8 | **82.7** |
 | Waterbirds (Worst-group Acc) | 47.9 | 68.0 | **70.6** |
 | Flowers 102 (Zero-shot) | 76.5 | - | **77.5** |
 | FGVC-Aircraft (Zero-shot) | 36.6 | - | **36.9** |
 | DTD (Zero-shot) | 50.1 | - | **50.9** |
 
-### Ablation Study — NSFW Content Suppression
+### Ablation Study—NSFW Content Suppression
 
-| Method | Safe query → Retrieval | Unsafe query → Retrieval |
-|--------|------------------------|--------------------------|
-| Safe-CLIP (trained) | T→V: 69.2 | T*→V: 46.3 |
-| OpenCLIP (original) | T→V: 75.1 | T*→V: 29.3 |
-| **SITH (training-free)** | T→V: **74.5** | T*→V: 29.5 |
+| Method | Safe Query Retrieval | Unsafe Query Retrieval |
+|------|-------------|--------------|
+| Safe-CLIP (Training-based) | T→V: 69.2 | T*→V: 46.3 |
+| OpenCLIP (Original) | T→V: 75.1 | T*→V: 29.3 |
+| **SITH (No Training)** | T→V: **74.5** | T*→V: 29.5 |
 
 SITH suppresses NSFW concepts via weight editing without sacrificing performance on safe queries.
 
 ### Key Findings
-- Individual singular vectors correspond to human-interpretable semantic concepts (e.g., "pink," "winter clothing," "ocean beach," "two objects"), validating the effectiveness of weight-space analysis.
-- Fine-tuning (both full FT and LoRA) primarily re-weights existing semantic bases rather than learning entirely new features—the singular vector space remains highly stable.
-- The weight change $\Delta \mathbf{W}$ induced by fine-tuning exhibits singular vectors strongly aligned with the fine-tuning task (e.g., "alpine flowers" emerges after Flowers 102 fine-tuning).
-- SITH's surgical editing outperforms TextSpan's head-level ablation, as the latter may inadvertently suppress useful features co-located within the same head.
+- Individual singular vectors correspond to understandable semantics (e.g., "pink," "winter wear," "two objects"), validating weight-space analysis.
+- Fine-tuning (Full FT or LoRA) primarily reweights existing semantic bases rather than learning entirely new features; the singular vector space is highly stable.
+- Weight changes $\Delta \mathbf{W}$ from fine-tuning align with the target task (e.g., "alpine flowers" appearing after Flowers 102 fine-tuning).
+- SITH’s surgical editing outperforms TextSpan's head ablation by avoiding collateral damage to useful features within the same head.
 
 ## Highlights & Insights
-- **Fully data-free interpretability**: Understanding CLIP's internals without observing any images fundamentally eliminates data bias. This direction is highly valuable given the growing importance of large model transparency.
-- **Elegant design of the COMP algorithm**: Incorporating a semantic coherence regularizer into the greedy selection of sparse coding is a simple yet effective idea, transforming incoherent explanations such as "apple + red" into coherent ones such as "pink red + scarlet reds + red background."
-- **Closed loop from interpretability to intervention**: SITH not only explains the model but also enables precise editing based on that understanding (suppressing spurious correlations, removing NSFW content, improving classification performance), forming a complete "understand → intervene" pipeline.
-- **New understanding of fine-tuning mechanisms**: Fine-tuning does not learn new features but redistributes weight over existing semantic bases—a finding with implications for understanding methods such as LoRA.
+- **Completely Data-Free Interpretability**: Understanding CLIP internally without images avoids data bias and is crucial for model transparency.
+- **Clever COMP Algorithm**: Adding semantic coherence to sparse coding improves the human-readability of the resulting concept sets.
+- **Interpretability-to-Intervention Loop**: Moving beyond passive observation to active, precise model editing (spurious correlation suppression, NSFW removal) creates a complete pipeline.
+- **New Understanding of Fine-tuning**: Fine-tuning effectively re-allocates importance among existing semantic bases, providing insights into mechanisms like LoRA.
 
 ## Limitations & Future Work
-- Only the right singular vectors (writing directions) of the VO matrix are analyzed; QK matrices and attention routing patterns are not examined.
-- FFN layers, which also store substantial knowledge, are excluded from the analysis.
-- The quality of explanations depends on concept pool coverage; ConceptNet may be insufficient for certain specialized domains.
-- Weight editing improvements are consistent but modest (typically 1–2 percentage points), and may need to be combined with other methods for practical deployment.
-- Validation is currently limited to CLIP ViT; applicability to decoder-only VLMs or other architectures remains to be verified.
+- Focuses only on the VO matrix (write directions), leaving QK matrices and attention routing patterns for future study.
+- FFN layers, which house significant knowledge, were not analyzed.
+- Quality remains dependent on the concept pool coverage (e.g., ConceptNet).
+- Performance gains from editing are consistent but modest (typically 1-2%).
+- Currently verified only on CLIP ViT; applicability to decoder-only VLMs remains a subject for future validation.
 
 ## Related Work & Insights
-- **vs. TextSpan**: TextSpan requires ImageNet-scale data to compute activations and explains at head-level granularity; SITH is fully data-free and operates at the intra-head singular vector level, offering finer granularity and immunity to data bias.
-- **vs. Sparse Autoencoders (SAE)**: SAEs require training, suffer from instability across datasets, and provide sample-level explanations; SITH is a deterministic analysis that yields global, model-level explanations.
-- **vs. unimodal weight analysis**: Prior SVD-based weight analyses are limited to language models and use simple nearest-neighbor search for interpretation; SITH's COMP algorithm provides more comprehensive semantic coverage.
+- **vs. TextSpan**: TextSpan requires ImageNet-scale data and provides head-level labels; SITH is data-free and provides fine-grained intra-head labels.
+- **vs. Sparse Autoencoders (SAE)**: SAEs require training and are unstable across data batches; SITH is deterministic and provides aggregate model-level explanations.
+- **vs. Unimodal Weight Analysis**: Previous SVD analyses were limited to LLMs and used simple nearest-neighbor searches; COMP provides superior semantic coverage.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First data-free intra-head interpretability framework for CLIP.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers interpretability validation, weight editing applications, and fine-tuning analysis comprehensively.
-- Writing Quality: ⭐⭐⭐⭐⭐ Well-structured figures, clear concepts, and a logical progression from method to applications.
-- Value: ⭐⭐⭐⭐ Significant contribution to understanding VLM internals; weight editing applications are practically motivated but yield modest improvements in magnitude.
+- Novelty: ⭐⭐⭐⭐⭐ (First data-free intra-head interpretability for CLIP)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Interpretability + Editing + Fine-tuning analysis)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear progression from method to application)
+- Value: ⭐⭐⭐⭐ (Important for VLM mechanics, though editing gains are incremental)
 
 <!-- RELATED:START -->
 
@@ -135,11 +137,11 @@ SITH suppresses NSFW concepts via weight editing without sacrificing performance
 
 ## Related Papers
 
-- [\[CVPR 2026\] U-F²-CBM: CLIP-Free, Label Free, Unsupervised Concept Bottleneck Models](clipfree_label_free_unsupervised_concept_bottlenec.md)
 - [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
-- [\[CVPR 2026\] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)
 - [\[ICLR 2026\] STRIDE: Subset-Free Functional Decomposition for XAI in Tabular Settings](../../ICLR2026/interpretability/stride_subset-free_functional_decomposition_for_xai_in_tabular_settings.md)
 - [\[CVPR 2026\] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)
+- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
+- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
 
 </div>
 

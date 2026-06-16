@@ -2,112 +2,116 @@
 title: >-
   [Paper Note] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 description: >-
-  [CVPR 2026][3D Vision][Scene Change Detection] This paper presents the first scene change detection (SCD) method that simultaneously achieves online inference, pose-agnosticism, label-free operation…
+  [CVPR 2026][3D Vision][Paper Note] Ours proposes the first scene change detection (SCD) method that is simultaneously online, pose-agnostic, label-free, and multi-view consistent. By integrating pixel-level and feature-level change cues into a 3DGS change representation via a self-supervised fusion loss, it surpasses the detection accuracy of all existi
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Scene Change Detection"
-  - "3D Gaussian Splatting"
-  - "Online Inference"
-  - "Self-Supervised Fusion"
-  - "Scene Update"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 32a33ffdf8aa8a46
+content_hash: 3a1d2c6f4a36c935
 ---
-
 # Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.12370](https://arxiv.org/abs/2511.12370)  
 **Code**: [https://chumsy0725.github.io/O-SCD/](https://chumsy0725.github.io/O-SCD/)  
-**Area**: 3D Vision
-**Keywords**: Scene Change Detection, 3D Gaussian Splatting, Online Inference, Self-Supervised Fusion, Scene Update
+**Area**: 3D Vision  
+**Keywords**: Scene Change Detection, 3D Gaussian Splatting, Online Inference, Self-supervised Fusion, Scene Update
 
 ## TL;DR
 
-This paper presents the first scene change detection (SCD) method that simultaneously achieves online inference, pose-agnosticism, label-free operation, and multi-view consistency. By replacing hard-threshold heuristics with a self-supervised fusion (SSF) loss that integrates pixel-level and feature-level change cues into a 3DGS change representation, the proposed approach surpasses all existing offline methods in detection accuracy while operating in real time at over 10 FPS.
+Ours proposes the first scene change detection (SCD) method that is simultaneously online, pose-agnostic, label-free, and multi-view consistent. By integrating pixel-level and feature-level change cues into a 3DGS change representation via a self-supervised fusion loss, it surpasses the detection accuracy of all existing offline methods while operating at a real-time rate exceeding 10 FPS.
 
 ## Background & Motivation
 
-**Background**: Scene change detection (SCD) is a core task in scene understanding, with applications in environmental monitoring, infrastructure inspection, and damage assessment. Recent methods leverage NeRF and 3DGS to build 3D scene representations for pose-agnostic SCD.
+**Background**: Scene change detection (SCD) is a core task in scene understanding, applied in environmental monitoring, infrastructure inspection, and damage assessment. Recent methods utilize NeRF and 3DGS to construct 3D representations for pose-agnostic SCD.
 
 **Limitations of Prior Work**:
-   - The strongest SCD methods (e.g., MV3DCD, GeSCD) are **offline** — they require all pre- and post-event observations to be collected before inference, making them unsuitable for real-time decision-making scenarios.
-   - Existing online methods achieve substantially lower accuracy than offline counterparts, and most fail to maintain real-time performance (<1 FPS).
-   - MV3DCD relies on hard thresholds and intersection-based heuristics to fuse change cues, which tends to discard subtle yet important change signals.
+   - Leading SCD methods (e.g., MV3DCD, GeSCD) are **offline**, requiring all pre- and post-change observations before inference, which is unsuitable for real-time decision-making.
+   - Existing online methods have significantly lower accuracy than offline counterparts, and most fail to maintain real-time performance (<1 FPS).
+   - MV3DCD uses hard thresholds and intersection-based heuristics to fuse change cues, which easily loses subtle but critical change signals.
 
-**Key Challenge**: Online settings demand real-time, frame-by-frame change detection with cross-view consistency, yet existing methods sacrifice either accuracy (online methods) or real-time capability (offline methods).
+**Key Challenge**: The need for real-time, frame-by-frame change detection in online scenarios while maintaining cross-view consistency, whereas existing methods sacrifice either accuracy (online) or real-time performance (offline).
 
-**Goal**: (a) How to perform online, real-time change inference? (b) How to avoid information loss caused by hard thresholding? (c) How to update scene representations efficiently?
+**Goal**: (a) Achievement of real-time online change inference; (b) Prevention of information loss caused by hard thresholds; (c) Efficient updating of scene representations.
 
-**Key Insight**: A 3DGS-based change representation serves as a persistent cross-view memory, coupled with a self-supervised loss that automatically learns to fuse multi-view change cues. This is complemented by a lightweight PnP-based pose estimator and change-guided selective scene updating.
+**Key Insight**: Utilizing 3DGS change representation as cross-view "persistent memory," combined with a self-supervised loss to automatically learn the fusion of multi-view change cues, while designing PnP-based lightweight pose estimation and change-guided selective scene updates.
 
-**Core Idea**: A self-supervised fusion loss replaces hard-threshold heuristics, allowing change information to accumulate and propagate naturally within the 3DGS representation. Scene updates are further accelerated by reconstructing only the changed regions.
+**Core Idea**: Replacing hard-threshold heuristics with a self-supervised fusion loss allows change information to naturally accumulate and propagate within the 3DGS representation, while reconstructing only changed regions to achieve scene updates in seconds.
 
 ## Method
 
 ### Overall Architecture
 
-The system comprises three stages: (1) offline construction of a 3DGS reference scene representation; (2) online processing — for each query frame, estimate camera pose → extract change cues → fuse into the change representation → infer change mask; (3) after all observations are collected, selectively update the scene representation.
+The system addresses the problem of a robot performing on-site inspections while **identifying changes in real-time** relative to a reference state, avoiding the need for full batch processing. In the offline phase, a standard 3DGS representation is built for the reference scene as a "negative." During the online phase, each incoming inference frame follows a pipeline: registration to the reference coordinate system (pose estimation), rendering of the reference image from the same viewpoint, extraction of pixel-level and feature-level change cues, fusion of these cues into a dedicated "change representation," and solving for the current frame's change mask. After the inspection, the accumulated change masks guide selective reconstruction of only the changed areas to update the reference scene.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    REF["Offline Phase: Reference Scene 3DGS<br/>(Reference 'Negative')"] --> POSE["Lightweight PnP Pose Estimation<br/>Align inference image to reference (O(1) drift-free)"]
+    POSE --> RENDER["Render Reference Image"]
+    subgraph CUE["Pixel + Feature Change Cue Extraction"]
+        direction TB
+        PIX["Pixel Cue C_pixel<br/>L1 + D-SSIM comparison"]
+        FEAT["Feature Cue C_feature<br/>SAM2-Tiny point-wise difference"]
+        PIX --> ADD["Summation C = C_pixel + C_feature"]
+        FEAT --> ADD
+    end
+    RENDER --> CUE
+    CUE --> SSF["Self-Supervised Fusion Loss (SSF Loss)<br/>16-step optimization for change mask"]
+    SSF -->|Frame accumulation + recent frame bias| SSF
+    SSF --> UPDATE["Change-Guided Selective Scene Update<br/>Reconstruct changed areas + reuse static Gaussians"]
+    UPDATE --> OUT["Updated Scene Representation"]
+```
 
 ### Key Designs
 
-1. **Lightweight PnP Pose Estimation**
+**1. Lightweight PnP Pose Estimation: Fast, drift-free alignment of each inference frame**
 
-    - **Function**: Registers each query frame into the reference scene coordinate system.
-    - **Mechanism**: XFeat is used to extract keypoints and descriptors from reference images, which are pre-triangulated into a 3D point set. For each query frame, descriptors are extracted and matched against the top-4 reference frames; camera pose is estimated via PnP+RANSAC from 2D–3D correspondences and refined with GPU-parallelized miniBA.
-    - **Design Motivation**: Pose estimation operates over a fixed-size reference frame set, achieving $O(1)$ complexity with no drift accumulation — significantly faster than methods such as SplatPose that optimize pose directly against the 3DGS representation.
+The first barrier for online SCD is localization. Unlike SplatPose, which optimizes camera poses against 3DGS and runs at <1 FPS, this method uses pure geometric matching. During the offline phase, XFeat extracts keypoints from reference images, which are pre-triangulated into 3D points. Online, descriptors are extracted for each frame, matched against the top-4 nearest reference frames, and solved via PnP + RANSAC followed by GPU-parallel miniBA. Since pose estimation is performed against a **fixed-size** reference set, the per-frame cost is $O(1)$ and avoids the drift typical of odometry.
 
-2. **Pixel-Level and Feature-Level Change Cue Extraction**
+**2. Pixel-level + Feature-level Change Cue Extraction: Complementary signals**
 
-    - **Function**: Extracts complementary change signals from query–render image pairs.
-    - **Mechanism**:
-        - Pixel-level cue: $C_{\text{pixel}}^k = (1-\lambda)L_1 + \lambda L_{\text{D-SSIM}}$, capturing fine-grained appearance differences but sensitive to illumination, reflections, and shadows.
-        - Feature-level cue: dense feature maps extracted via SAM2-Tiny, $C_{\text{feature}}^k = \sum_i |f_{\text{inf}}^{k,i} - f_{\text{ren}}^{k,i}|$, more robust to distractors but may miss subtle changes between semantically similar objects.
-        - Final combination: $C^k = C_{\text{pixel}}^k + C_{\text{feature}}^k$, preserving the complementary strengths of both cues through simple addition.
-    - **Design Motivation**: MV3DCD hard-thresholds each cue separately and takes their intersection, discarding valid change evidence captured by only one cue. Simple addition followed by the SSF loss enables more effective information integration.
+Pixel-level cues $C_{\text{pixel}}^k = (1-\lambda)L_1 + \lambda L_{\text{D-SSIM}}$ capture fine-grained texture changes but are sensitive to lighting and shadows. Feature-level cues $C_{\text{feature}}^k = \sum_i |f_{\text{inf}}^{k,i} - f_{\text{ren}}^{k,i}|$ using SAM2-Tiny are robust to such interference but may miss subtle changes between semantically similar objects. These are summed $C^k = C_{\text{pixel}}^k + C_{\text{feature}}^k$. This avoids the hard-threshold intersection used in MV3DCD, which tends to discard valid changes if one cue fails to detect them; here, all evidence is preserved for the self-supervised loss to weigh.
 
-3. **Self-Supervised Fusion (SSF) Loss**
+**3. Self-Supervised Fusion Loss (SSF Loss): 3DGS as persistent memory for cross-view fusion**
 
-    - **Function**: Fuses multi-view change cues into the 3DGS change representation and infers a multi-view-consistent change mask.
-    - **Mechanism**: The change representation $\mathcal{R}_{\text{change}}$ is initialized from the reference 3DGS (color parameters discarded; learnable change parameter $c$ introduced). For each query frame, the SSF loss optimizes $\mathcal{R}_{\text{change}}$ for $n=16$ steps:
-    $$L_{\text{SSF}} = C^i \odot (1 - \tilde{M}^i) + \log(1 + \text{mean}(\tilde{M}^i)^2)$$
-    The first term encourages high predicted change probability in regions with strong change cues; the second term regularizes against the trivial solution $\tilde{M}=1$. At each step, a historical frame $i$ is randomly sampled, with 1/3 probability biased toward the latest frame $k$.
-    - **Design Motivation**: $\mathcal{R}_{\text{change}}$ acts as persistent memory, automatically accumulating change information from all observed viewpoints while enforcing 3D consistency — avoiding the information loss inherent in hard thresholding and intersection operations.
+To aggregate multi-view cues into a 3D-consistent judgment, a change representation $\mathcal{R}_{\text{change}}$ is initialized from the reference 3DGS by replacing color parameters with a learnable change parameter $c$. For each inference frame, the SSF loss is optimized for $n=16$ steps:
 
-4. **Change-Guided Selective Scene Update**
+$$L_{\text{SSF}} = C^i \odot (1 - \tilde{M}^i) + \log(1 + \text{mean}(\tilde{M}^i)^2)$$
 
-    - **Function**: Efficiently updates the reference scene representation to reflect the current scene state.
-    - **Mechanism**: The refined change mask is used to reconstruct only the changed regions: $\hat{I}_{\text{inf}}^k = I_{\text{inf}}^k \odot M_{\text{refined}}^k$. The reconstructed change-region Gaussians $\mathcal{R}_{\text{change}}^*$ are merged with the unchanged reference Gaussians $\mathcal{R}_{\text{ref}}^*$, followed by one round of constrained global optimization with adaptive density control applied only to Gaussians corresponding to changed pixels.
-    - **Design Motivation**: This avoids full scene reconstruction after each inspection by reusing high-quality Gaussians from unchanged regions, achieving rendering speeds exceeding 400 FPS and completing the overall update in tens of seconds — 8–13× faster than reconstruction from scratch.
+The first term is a "data term" penalizing low predicted change probability $\tilde{M}^i$ where cues are strong. The second is a regularization term suppressing the mask mean to avoid trivial solutions where $\tilde{M}=1$. By randomly sampling historical frames (with a 1/3 bias toward the current frame $k$), $\mathcal{R}_{\text{change}}$ accumulates evidence into a single 3D representation, ensuring multi-view consistency and bypassing information loss.
+
+**4. Change-Guided Selective Scene Update: Reconstructing only what changed**
+
+After inspection, the reference scene is refreshed. Rather than full reconstruction, unchanged pixels are masked out $\hat{I}_{\text{inf}}^k = I_{\text{inf}}^k \odot M_{\text{refined}}^k$. A new set of Gaussians $\mathcal{R}_{\text{change}}^*$ is reconstructed only for changed regions and merged with reused reference Gaussians $\mathcal{R}_{\text{ref}}^*$. A final constrained global optimization is performed where adaptive density control only affects Gaussians corresponding to changed pixels. This reduces the number of Gaussians optimized, reaching rendering speeds >400 FPS and completing updates in tens of seconds (8–13x faster than full reconstruction).
 
 ### Loss & Training
 
 - **SSF Loss**: $L_{\text{SSF}} = C^i \odot (1 - \tilde{M}^i) + \log(1 + \text{mean}(\tilde{M}^i)^2)$
-- Reference scene construction: standard 3DGS (accelerated via Speedy-Splat) with SfM-based pose estimation.
-- Online inference: 16-step optimization of the change representation per frame, with sampling biased toward the latest frame.
-- Scene update: standard 3DGS optimization pipeline with constrained adaptive density control.
+- Reference Scene: Standard 3DGS (via Speedy-Splat) + SfM pose estimation.
+- Online Inference: 16-step optimization per frame, sampling biased toward recent frames.
+- Scene Update: Standard 3DGS optimization pipeline + restricted density control.
 
 ## Key Experimental Results
 
 ### Main Results
 
-SCD results on the PASLCD dataset (10 indoor/outdoor room-scale scenes, 20 instances):
+SCD results on the PASLCD dataset (10 indoor/outdoor scenes):
 
-| Method | Label-Free | Pose-Agnostic | Multi-View | Online | mIoU ↑ | F1 ↑ | Speed |
-|--------|-----------|--------------|-----------|--------|--------|------|-------|
-| GeSCD (offline) | ✓ | ✗ | ✗ | ✗ | 0.477 | 0.611 | 298s |
-| MV3DCD (offline) | ✓ | ✓ | ✓ | ✗ | 0.478 | 0.628 | 479s |
-| **Ours (offline)** | ✓ | ✓ | ✓ | ✗ | **0.552** | **0.694** | 156s |
-| SplatPose+ (online) | ✓ | ✓ | ✗ | ✓ | 0.237 | 0.358 | <1 FPS |
-| CS+CYWS2D (online) | ✗ | ✗ | ✗ | ✓ | 0.243 | 0.360 | 8.2 FPS |
-| **Ours (online)** | ✓ | ✓ | ✓ | ✓ | **0.486** | **0.638** | 11.2 FPS |
+| Method | Label-free | Pose-agnostic | Multi-view | Online | mIoU ↑ | F1 ↑ | Speed |
+|------|--------|---------|--------|------|--------|------|------|
+| GeSCD (Offline) | ✓ | ✗ | ✗ | ✗ | 0.477 | 0.611 | 298s |
+| MV3DCD (Offline) | ✓ | ✓ | ✓ | ✗ | 0.478 | 0.628 | 479s |
+| **Ours (Offline)** | ✓ | ✓ | ✓ | ✗ | **0.552** | **0.694** | 156s |
+| SplatPose+ (Online) | ✓ | ✓ | ✗ | ✓ | 0.237 | 0.358 | <1 FPS |
+| CS+CYWS2D (Online) | ✗ | ✗ | ✗ | ✓ | 0.243 | 0.360 | 8.2 FPS |
+| **Ours (Online)** | ✓ | ✓ | ✓ | ✓ | **0.486** | **0.638** | 11.2 FPS |
 
-Scene representation update (PASLCD + CL-Splats):
+Scene representation updates (PASLCD + CL-Splats):
 
-| Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ | Time (s) ↓ |
-|--------|--------|--------|---------|-----------|
-| 3DGS (from scratch) | 22.21 | 0.756 | 0.243 | 550 |
+| Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ | Time(s) ↓ |
+|------|--------|--------|---------|-----------|
+| 3DGS (Scratch) | 22.21 | 0.756 | 0.243 | 550 |
 | 3DGS-LM | 22.26 | 0.756 | 0.242 | 340 |
 | CLNeRF | 22.27 | 0.624 | 0.391 | 451 |
 | **Ours** | **23.70** | **0.787** | **0.249** | **42** |
@@ -115,48 +119,48 @@ Scene representation update (PASLCD + CL-Splats):
 ### Ablation Study
 
 | Variant | mIoU ↑ | F1 ↑ |
-|---------|--------|------|
+|------|--------|------|
 | Full model | 0.486 | 0.638 |
 | w/o $L_1$ | 0.320 | 0.464 |
 | w/o $L_{\text{D-SSIM}}$ | 0.447 | 0.620 |
-| $C_{\text{pixel}}$ only | ✗ (no convergence) | ✗ |
-| $C_{\text{feature}}$ only | ✗ (no convergence) | ✗ |
-| w/o regularization term | ✗ (trivial solution) | ✗ |
-| MV3DCD hard threshold + intersection | 0.350 | 0.495 |
+| $C_{\text{pixel}}$ only | ✗ (No conv.) | ✗ |
+| $C_{\text{feature}}$ only | ✗ (No conv.) | ✗ |
+| w/o Regularization | ✗ (Trivial) | ✗ |
+| MV3DCD Threshold/Int. | 0.350 | 0.495 |
 
 ### Key Findings
 
-- **Both pixel-level and feature-level cues are indispensable**: Using either cue alone prevents the SSF loss from converging, confirming that the two modalities provide complementary supervision signals.
-- **SSF Loss vs. hard thresholding**: Replacing the SSF loss with MV3DCD's hard-threshold intersection strategy reduces F1 from 0.638 to 0.495, demonstrating the clear advantage of learned fusion over heuristic aggregation.
-- **Online model surpasses offline SOTA**: The online variant achieves mIoU of 0.486, exceeding the strongest offline competitor MV3DCD (0.478) — a particularly noteworthy result.
-- **Speed–accuracy trade-off**: Reducing the number of fusion iterations allows throughput to be tuned between 11 and 20 FPS, with only a 3.6% drop in F1.
-- **Scene update is 8–13× faster than reconstruction from scratch**: Reusing Gaussians from unchanged regions is the key enabler, while also yielding superior PSNR.
+- **Pixel and Feature Cues are Indispensable**: SSF loss fails to converge if either is removed, confirming they provide complementary supervision.
+- **SSF Loss vs. Hard Thresholds**: Replacing SSF loss with MV3DCD’s heuristic dropped F1 from 0.638 to 0.495, proving self-supervised fusion is superior.
+- **Online Model Surpasses Offline SOTA**: The online version (0.486 mIoU) already outperforms the strongest offline competitor, MV3DCD (0.478).
+- **Speed-Accuracy Trade-off**: Reducing iterations allows adjustment between 11-20 FPS with only a 3.6% F1 drop.
+- **Update Speed**: Reusing static Gaussians makes scene updates 8-13x faster than training from scratch while achieving higher PSNR.
 
 ## Highlights & Insights
 
-- **3DGS as persistent change memory**: Embedding change parameters into 3DGS primitives allows multi-view change information to accumulate and propagate naturally in 3D space. This design is both elegant and effective, and is transferable to any task requiring temporal information fusion within 3DGS.
-- **Elegant SSF loss design**: A two-term loss achieves end-to-end multi-modal cue fusion, multi-view consistency, and trivial-solution prevention — all without any manual annotation. The key insight is to let the loss function *learn* to fuse, rather than relying on hand-crafted aggregation rules.
-- **Selective reconstruction and merging for scene update**: Changed regions require only a small number of Gaussians to model, enabling rendering at >400 FPS and greatly accelerating optimization. This provides a practical solution for long-term scene monitoring.
+- **3DGS as Persistent Memory**: Embedding change parameters into 3DGS primitives allows multi-view change information to accumulate and propagate naturally in 3D space.
+- **Elegant SSF Loss**: A simple two-term loss achieves end-to-end multi-modal fusion and consistency without any labels. The core insight is "learning to fuse" rather than "manual fusion."
+- **Selective Reconstruction**: Since changed areas require fewer Gaussians, rendering exceeds 400 FPS, significantly accelerating optimization for long-term monitoring.
 
 ## Limitations & Future Work
 
-- XFeat matching may fail under extreme appearance changes (e.g., seasonal variation), adversely affecting pose estimation.
-- The current approach uses only SAM2-Tiny features as semantic cues; stronger vision foundation models may further improve detection accuracy.
-- The scene update strategy assumes changes within a single inspection are static, making it unsuitable for continuously dynamic scenes.
-- Detection of small-object-level changes remains an area for further improvement.
+- XFeat may fail under extreme appearance changes (e.g., seasonal variations), affecting pose estimation.
+- Currently relies on SAM2-Tiny; stronger vision foundation models could improve detection accuracy.
+- Strategy assumes changes are static within a single inspection pass.
+- Detection of very small object changes still has room for improvement.
 
 ## Related Work & Insights
 
-- **vs. MV3DCD**: The most direct competitor. MV3DCD fuses cues via hard thresholds and intersection heuristics; this work replaces that with a learnable SSF loss, improving mIoU by approximately 15%, with the online variant also surpassing MV3DCD's offline performance.
-- **vs. SplatPose/SplatPose+**: These methods optimize camera pose directly against the 3DGS representation, resulting in very low throughput (<1 FPS). The proposed PnP-based approach operates at $O(1)$ complexity with no drift accumulation.
-- **vs. CL-Splats/GaussianUpdate**: Competing approaches for scene updating that require substantially longer training times. The proposed selective reconstruction strategy is simpler and more efficient.
+- **vs MV3DCD**: Direct competitor. Ours replaces heuristic fusion with learnable SSF loss, improving mIoU by ~15% even in the online version.
+- **vs SplatPose/SplatPose+**: These optimize poses per frame (<1 FPS). Ours uses a PnP scheme for $O(1)$ complexity and no drift.
+- **vs CL-Splats/GaussianUpdate**: These require longer update times. Ours uses selective reconstruction for high efficiency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First method integrating online inference, pose-agnosticism, label-free operation, and multi-view consistency for SCD.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive comparisons against online and offline baselines, detailed ablations, and thorough speed analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical structure, rich figures and tables, with explicit problem–solution correspondence throughout.
-- Value: ⭐⭐⭐⭐⭐ Directly applicable to robotic inspection and long-term scene monitoring scenarios.
+- Novelty: ⭐⭐⭐⭐⭐ First to integrate online + pose-agnostic + label-free + multi-view consistency.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive online/offline baselines and speed analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic with well-defined problem-solution mapping.
+- Value: ⭐⭐⭐⭐⭐ Directly practical for robotic inspection and long-term monitoring.
 
 <!-- RELATED:START -->
 
@@ -164,11 +168,11 @@ Scene representation update (PASLCD + CL-Splats):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar_camera_fusion_3d_detection.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
+- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[AAAI 2026\] Real-Time 3D Object Detection with Inference-Aligned Learning](../../AAAI2026/3d_vision/real-time_3d_object_detection_with_inference-aligned_learning.md)
-- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
+- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
 
 </div>
 

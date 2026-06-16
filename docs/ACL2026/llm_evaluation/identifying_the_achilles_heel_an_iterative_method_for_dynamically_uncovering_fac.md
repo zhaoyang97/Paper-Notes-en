@@ -2,81 +2,90 @@
 title: >-
   [Paper Note] Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Knowledge Graph Testing] HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triplets from Wikidata…
+  [ACL 2026][LLM Evaluation][Paper Note] HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triples from Wikidata, generates three question types (Yes/No, Multiple Choice, and WH-questions) using rule-based methods, and supports multi-hop reasoning. Through an "adaptive iterative algorithm"
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Knowledge Graph Testing"
-  - "Factual Error Detection"
-  - "Adaptive Question Generation"
-  - "Multi-hop Reasoning"
-  - "Data Contamination"
+  - ACL 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 17a1698b29478d7b
+content_hash: 7eb9bd85cf724992
 ---
-
+<!-- Generated automatically by src/gen_stubs.py -->
 # Identifying the Achilles' Heel: An Iterative Method for Dynamically Uncovering Factual Errors in Large Language Models
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2401.00761](https://arxiv.org/abs/2401.00761)  
 **Code**: <https://github.com/Mysterchan/HalluHunter>  
 **Area**: LLM Evaluation / Factuality / Automated Testing  
-**Keywords**: Knowledge Graph Testing, Factual Error Detection, Adaptive Question Generation, Multi-hop Reasoning, Data Contamination
+**Keywords**: Knowledge Graph testing, Factual error detection, Adaptive question generation, Multi-hop reasoning, Data contamination  
 
 ## TL;DR
-HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triplets from Wikidata, generates three types of questions (Yes/No, Multiple Choice, and Question Answering) using rule-based templates, and supports multi-hop reasoning. Using an "Adaptive Iterative Algorithm" to select the next batch of difficult questions based on entity similarity and relationship accuracy from previous rounds, it reduces the accuracy of 9 mainstream LLMs by 32-42% over 5 iterations, triggering errors in up to 55% of questions and significantly outperforming static benchmarks.
+HalluHunter is a fully automated LLM factual error testing framework based on Knowledge Graphs (KG). It extracts factual triples from Wikidata, generates three question types (Yes/No, Multiple Choice, and WH-questions) using rule-based methods, and supports multi-hop reasoning. Through an "adaptive iterative algorithm" that selects the next batch of difficult questions based on entity similarity and relationship accuracy from previous incorrect responses, it reduces the accuracy of nine mainstream LLMs by 32–42% after five iterations, triggers errors in up to 55% of items, and significantly outperforms static benchmarks.
 
 ## Background & Motivation
 
-**Background**: Current mainstream LLM factuality evaluation paths include: (1) Static benchmarks (TruthfulQA, SimpleQA, LAMA, PopQA) with manual design or human annotation; (2) Semi-automatic QA generation (PAQ, KQA Pro); (3) Small-scale automatic KG-based evaluation (Head-to-Tail, DyKnow).
+**Background**: Current mainstream paths for LLM factuality evaluation include: (1) Static benchmarks (TruthfulQA, SimpleQA, LAMA, PopQA) designed or annotated manually; (2) Semi-automated QA generation (PAQ, KQA Pro); (3) Small-scale automated evaluation based on KGs (Head-to-Tail, DyKnow).
 
 **Limitations of Prior Work** (summarized into four points in Table 1):
-- **High manual cost**: Benchmarks like TruthfulQA and CommonsenseQA rely on manual design and annotation.
-- **Data contamination**: Static evaluation sets are likely to have been included in LLM training data (OpenAI 2023 reports acknowledge GPT-4 was trained on web data), making evaluation results unreliable.
-- **Limited coverage**: The LAMA series only tests a limited set of relations like "place of birth"; most benchmarks use only MC (Multiple Choice) formats and are biased toward specific topics.
-- **Weak error exposure mechanisms**: Existing benchmarks are "one-shot," lacking mechanisms to target specific model weaknesses based on error patterns.
+- **High Manual Cost**: Benchmarks like TruthfulQA and CommonsenseQA rely on human design and annotation.
+- **Data Contamination**: Static evaluation sets are likely included in the training data of LLMs (OpenAI's 2023 report admitted GPT-4 training data came from the entire web), making results unreliable.
+- **Limited Coverage**: The LAMA series only tests a few relations like "place of birth"; most benchmarks use only MC questions and lean toward specific topics.
+- **Weak Error Exposure**: Existing benchmarks are "single-round," lacking mechanisms to target specific model weaknesses based on error patterns.
 
-**Key Challenge**: To thoroughly test LLM factual weaknesses, a framework must simultaneously satisfy: (a) dynamic generation to avoid contamination, (b) extensive coverage across question types, and (c) the ability to locate weak areas based on model feedback. Blind random sampling on KGs addresses (a) and (b) but fails to hit specific weaknesses effectively.
+**Key Challenge**: To thoroughly test LLM factual weaknesses, one must simultaneously achieve: (a) dynamic generation to avoid contamination, (b) broad coverage and diverse question types, and (c) the ability to locate weak areas based on model feedback. Random sampling on KGs solves (a) and (b) but fails to pinpoint specific weaknesses efficiently.
 
-**Goal**: Construct an automated framework to address these four limitations and verify its effectiveness in exposing LLM weaknesses compared to random sampling and existing benchmarks.
+**Goal**: Construct an automated framework to solve the four limitations above and verify its effectiveness in exposing LLM weaknesses compared to random sampling and existing benchmarks.
 
-**Key Insight**: Treat "finding LLM factual errors" as a **search problem**—the KG is the search space, and weak relations or difficult entities are high-reward areas. Start with a random seed batch of questions and use LLM feedback to adaptively narrow down to "frequently failed relations + structurally similar entities."
+**Key Insight**: Treat "finding LLM factual errors" as a **search problem** where the KG is the search space, and weak relations or difficult entities are high-reward regions. The system starts with seed questions and adaptively narrows down to "frequently failed relations + structurally similar entities."
 
-**Core Idea**: KG-grounded rule-based generation combined with an adaptive iterative algorithm (selecting the next batch of triplets based on relation accuracy and entity embedding similarity). There is zero LLM intervention in question generation to prevent contamination.
+**Core Idea**: KG-grounded rule-based generation combined with an adaptive iterative algorithm (selecting triples based on relationship accuracy and entity embedding similarity). The process involves zero LLM intervention in question generation to avoid contamination.
 
 ## Method
 
 ### Overall Architecture
-A four-stage pipeline:
 
-1. **KG Construction**: User provides a topic (e.g., "occupation: emperor") → SPARQL query on Wikidata → Extract (SUBJECT, relation, OBJECT) triplets → Build directed graph $G = (V, E)$. Approx. 500k-600k triplets and 10k-12k entities per domain.
-2. **Rule-based Question Generation** (No LLM involvement): Converts triplets into Yes/No, MC, and WH questions using POS + NER. Multi-hop questions are formed by chaining adjacent triplets, e.g., (Michelle Obama, spouse, Barack Obama) + (Barack Obama, educated at, Harvard) → "Where was Michelle Obama's spouse educated at?"
-3. **Answer Evaluation**: Yes/No and MC use exact match; WH use sentence-transformer similarity (Table 8 shows this method achieves F1=87% and the highest recall at 97.9% among five methods).
-4. **Adaptive Iterative Generation** (Algorithm 1): The core innovation. Calculates a rolling accuracy $R^{(l+1)}$ for each relation based on previous (question, answer, triplet). For each new question, use probability $e=0.2$ to explore (select low-accuracy relations where $R < a=0.4$), or exploit—if the previous answer was wrong, use QuatE embeddings to find top-$k=10$ similar entities for the same relation; if correct, select a new random triplet.
+HalluHunter treats factual error detection as a feedback-driven search over a Knowledge Graph. The KG serves as the search space, while relations and entities frequently answered incorrectly by the model are high-reward areas. The framework avoids using LLMs to generate questions to prevent data contamination. Given a topic (e.g., "occupation: emperor"), the system uses SPARQL to extract (SUBJECT, relation, OBJECT) triples from Wikidata to build a directed graph $G=(V,E)$ (approx. 500k–600k triples and 10k+ entities per domain). Triples are converted into Yes/No, MC, and WH questions via pure rules. Multi-hop questions are constructed by chaining adjacent triples (e.g., (Michelle Obama, spouse, Barack Obama) and (Barack Obama, educated at, Harvard) become "Where was Michelle Obama's spouse educated at?"). After the model responds, Yes/No and MC are scored via exact match, and WH via sentence-transformer similarity. Scores are fed back into the adaptive iteration algorithm, which selects more difficult triples based on rolling accuracy and similar neighbors for up to five rounds.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Topic (e.g., occupation: emperor)"] --> B["SPARQL extracts triples from Wikidata<br/>Build directed graph G=(V,E)"]
+    B --> C["Rule-based non-LLM Question Generation<br/>Yes/No · MC · WH types + multi-hop chaining"]
+    C --> D["Target LLM Response"]
+    D --> E["Scoring<br/>Exact match for Yes/No·MC, sentence vector similarity for WH"]
+    E --> F["Adaptive Iterative Generation Algorithm<br/>Explore low accuracy relations / Exploit similar entities via QuatE"]
+    F -->|"Select next batch of harder triples (≤5 rounds)"| C
+    E --> G["Weighted Coverage Metric<br/>Group degree centrality verifies coverage maintains breadth"]
+```
 
 ### Key Designs
 
-1. **Rule-based No-LLM Question Generation (Avoids Contamination + Bias)**:
-    - **Function**: Deterministically converts KG triplets into 3 question types (Yes/No, MC, WH), ensuring unique verifiable answers.
-    - **Mechanism**: Yes/No questions use POS analysis to select auxiliary verbs ("is" for nouns, "does" for verbs) and create balanced "No" samples by replacing the object with an incorrect entity. MC uses NER to select interrogative words, with 1 correct and 3 incorrect options (from the same relation). WH questions strictly use triplets with a "single outgoing edge for the relation" (e.g., (China, capital, Beijing)) to ensure uniqueness. Multi-hop questions use $(s, \{r_1, r_2\}, o)$ chains.
-    - **Design Motivation**: (a) Using LLMs for generation introduces self-bias, increases API costs, and risks duplicating training data. (b) Rule-based methods ensure reproducibility and controllability (98.5% semantic accuracy vs. 13% deviation in ChatGPT-generated questions). (c) Balanced Yes/No samples prevent sycophancy bias.
+**1. Rule-based non-LLM Question Generation: Verifiability and Contamination Resistance**
 
-2. **Adaptive Iterative Generation Algorithm (Algorithm 1)**:
-    - **Function**: Dynamically focuses on weak relations and similar entities based on LLM feedback, shifting from "broad sampling" to "precision targeting."
-    - **Mechanism**: Maintains a relation-accuracy map $R^{(l)}(r)$ and used triplet set $T^{(l)}$. For the next batch: (i) Explore ($e=0.2$): Pick triplets from relations with $R(r) < 0.4$. (ii) Exploit: If the previous answer was incorrect ($c_i = \text{False}$), use QuatE-trained KG embeddings to find the top-10 similar entity set $C$ and query the same relation for subject $\in C$. (iii) If correct, pick a random new triplet.
-    - **Design Motivation**: Factual errors are often clustered—if a model misses the atomic mass of Hydrogen, it likely misses Oxygen. Probing similar entities is more efficient than random sampling. Exploration constant $e=0.2$ prevents getting stuck in local minima.
+Generating questions with LLMs introduces bias, API costs, and potential overlap with training data. HalluHunter deterministically maps triples to three question types: Yes/No questions select auxiliary verbs based on POS tags (e.g., "is" for nouns, "does" for verbs) and generate balanced "No" questions by replacing objects with incorrect entities to suppress sycophancy. MC questions use NER for interrogative words, with one correct and three incorrect options from the same relation. WH questions strictly use triples with a "unique outgoing edge" (e.g., (China, capital, Beijing)) to ensure unique answers. 
 
-3. **Weighted Coverage Metric (Group Degree Centrality)**:
-    - **Function**: Measures whether the algorithm maintains KG coverage while increasing difficulty.
-    - **Mechanism**: Treats the "queried entity set" $S$ as a node subset. Calculates normalized group degree centrality $\widehat{C}_{\deg}(S) = |N(S)| / (|V| - |S|) \in [0,1]$, where $N(S)$ is the open neighborhood. Higher values indicate better coverage of KG "hubs."
-    - **Design Motivation**: Accuracy drops must not come at the cost of budget concentration in obscure corners. Trial 5 coverage (0.473) outperformed random sampling (0.406), confirming adaptive selection does not sacrifice coverage.
+Multi-hop questions use a chain format $(s, \{r_1, r_2\}, o)$. This rule-based approach ensures reproducible, controllable questions with certain answers. Appendix G.2 shows 98.5% of questions are semantically correct, whereas 26 out of 200 ChatGPT-generated questions deviated from instructions.
+
+**2. Adaptive Iterative Generation Algorithm (Algorithm 1): From Random Sampling to Precision Guidance**
+
+The authors assume factual errors are not isolated; if a model does not know the atomic mass of Hydrogen (1.008), it likely does not know that of Oxygen. Errors cluster around knowledge points. The algorithm maintains the rolling accuracy $R^{(l)}(r)$ of each relation and the set of used triples $T^{(l)}$. It switches between explore and exploit: with probability $e=0.2$, it explores by selecting relations where $R(r) < a=0.4$. Otherwise, it exploits: if the previous answer was wrong ($c_i = \text{False}$), it uses QuatE-trained KG embeddings to find the top $k=10$ similar entities $C$ to the subject and asks questions about the same relation. If correct, it picks a new random triple.
+
+Searching around similar entities helps hit weaknesses faster than random sampling, while the $e=0.2$ exploration rate prevents the algorithm from getting stuck in local regions. 
+
+**3. Weighted Coverage Metric (Group Degree Centrality): Breadth remains high**
+
+To ensure the algorithm doesn't focus solely on obscure corners, the authors use the set of queried entities $S$ as a node subset. They calculate the open neighborhood $N(S)=\{v\in V\setminus S:\exists u\in S,(u,v)\in E\}$ and compute the normalized group degree centrality:
+
+$$\widehat{C}_{\deg}(S) = \frac{|N(S)|}{|V| - |S|} \in [0,1]$$
+
+Higher values indicate that queried entities are closer to KG hubs, representing broader coverage. Average coverage in Trial 5 (0.473) was higher than random sampling (0.406), addressing concerns about the algorithm becoming too narrow.
 
 ### Loss & Training
-This is a **testing framework rather than a training method**; no LLM parameters are updated. The only "training" involves KG embeddings $\mathcal{M}$: QuatE is trained using the PyKEEN framework to generate entity embeddings for similarity search. Hyperparameters: $e=0.2$, $a=0.4$, $k=10$. Each domain and type undergoes 5 iterations of 1000 questions each. Total API cost was approximately $400 USD.
+
+This is a testing framework, not a training method; no LLM parameters are updated. The only "training" involves the KG embedding $\mathcal{M}$ using QuatE via PyKEEN to facilitate similar entity retrieval. Key hyperparameters include exploration constant $e=0.2$, low-accuracy threshold $a=0.4$, and $k=10$ similar entities. The process involves 1,000 questions per domain/type per round for five iterations.
 
 ## Key Experimental Results
 
-### Main Results (Median Accuracy after 5 Iterations for 9 LLMs across 3 Domains)
+### Main Results (Median Accuracy of 9 LLMs after 5 iterations across 3 domains)
 
 | Trial | Humanity Median Acc | Social Science | STEM |
 |-------|---------------------|----------------|------|
@@ -86,9 +95,9 @@ This is a **testing framework rather than a training method**; no LLM parameters
 | Trial 3 | 0.492 (−29.2%) | 0.439 (−37.5%) | 0.406 (−36.1%) |
 | Trial 5 | **0.462 (−32.7%)** | **0.384 (−40.2%)** | **0.373 (−41.8%)** |
 
-By model: GPT-4o's accuracy in Humanity Yes/No dropped from 84.4% to 65.8%, and MC from 82.9% to 54.1%. WH questions consistently proved most difficult, with all models averaging just 37.4% in Trial 0. Multi-hop: Accuracy drops sharply from 1 to 2 hops (GPT-4o STEM MC dropped from 72.6% to 49.6%) and stabilizes/gradually declines up to 4 hops.
+GPT-4o dropped from 84.4% to 65.8% in Humanity Yes/No and from 82.9% to 54.1% in MC. WH questions generally dropped to ~10%. WH questions remained the most difficult, with an overall average of 37.4% (Trial 0). Multi-hop: Accuracy dropped sharply from 1→2 hops (GPT-4o STEM MC from 72.6% to 49.6%), with a slower but continuous decline from 2→4 hops.
 
-### Ablation Study (Sensitivity of Key Hyperparameters)
+### Ablation Study (Hyperparameter Sensitivity)
 
 | Configuration | Trial 5 Accuracy | Trial 5 Coverage |
 |------|------------------|-------------------|
@@ -98,53 +107,54 @@ By model: GPT-4o's accuracy in Humanity Yes/No dropped from 84.4% to 65.8%, and 
 | $e=0.1, a=0.4$ (Less Explore) | 0.430 | 0.460 |
 | $e=0.3, a=0.4$ (More Explore) | 0.412 | 0.472 |
 
-**Trial 5 Coverage Comparison**: HalluHunter (0.473) > Random (0.406), proving that the iterative algorithm does not sacrifice KG coverage.
+**Trial 5 Coverage Comparison**: HalluHunter (0.473) > Random (0.406), proving the iterative algorithm does not sacrifice KG coverage.
 
 ### Key Findings
-- **Significant Iterative Effect**: Accuracy in the STEM domain dropped by 41.8% over 5 rounds, exposing far more errors than random sampling; linear regression results (p-value 0.031 for 1-hop, 0.01 for multi-hop) are statistically significant.
-- **Difficulty Ranking (STEM > Social Science > Humanity)**: STEM showed the largest drop (−41.8%), while Humanity was the most stable (−32.7%), indicating LLMs are more fragile regarding precise technical knowledge.
-- **GPT-4o Blind Spots**: Accuracy for "binding energy" was only 0.258, and "mass excess" 0.237, whereas "genetic association" reached 0.778, suggesting training data bias toward biomedicine.
-- **Claude-3.5-Haiku Weakness**: Performance on "prime factor" was only 0.313, while Gemini-2.0 and GPT-4o both exceeded 0.60 on the same subject.
-- **WH Questions are the Hardest**: Average accuracy across models was 37.4%; open-ended generation places higher demands on parametric knowledge than selection.
-- **Multi-hop Amplification**: The sharpest drop occurs from 1 to 2 hops, suggesting that the initial reasoning step is the primary bottleneck.
-- **Coverage Improvement**: Trial 5 coverage (0.473) exceeded Random (0.406), validating the $e=0.2$ exploration mechanism.
+- **Adaptive Iteration is Highly Effective**: Accuracy in the STEM domain dropped by 41.8% after five rounds, exposing significantly more errors than random questions.
+- **Difficulty Ranking: STEM > Social Science > Humanity**: STEM accuracy dropped the most (−41.8%), while Humanity remained the most stable (−32.7%), showing LLMs are more fragile regarding precise knowledge (atomic mass, prime factors) than cultural memory.
+- **GPT-4o Blind Spots - Physics**: "binding energy" accuracy was only 0.258, and "mass excess" only 0.237, while biological "genetic association" reached 0.778.
+- **Claude-3.5-Haiku Blind Spots - Number Theory**: "prime factor" accuracy was only 0.313, whereas Gemini-2.0 and GPT-4o reached ~0.60 on the same topic.
+- **WH Questions are the Hardest**: Averaging 37.4% across all models, consistent with findings in SimpleQA that open generation puts higher demands on parametric knowledge than selection.
+- **Multi-hop Amplification**: The drop from 1 to 2 hops is the steepest (GPT-4o STEM MC −31.7%), suggesting the initial step of multi-step reasoning is the primary bottleneck.
+- **Coverage Improvement**: Trial 5 coverage (0.473) outperformed Random (0.406), confirming that the exploration mechanism ($e=0.2$) prevents localization.
 
 ## Highlights & Insights
-- **Application of Exploit-Explore**: Using KG embeddings to find similar entities for adaptive probing is a brilliant application of search paradigms to LLM testing. It treats "incorrect responses" as a reward signal and KG embeddings as a structural similarity metric.
-- **Bypassing the LLM-loop Trap**: Unlike many recent "LLM-as-a-judge" or LLM-generation works that suffer from self-bias, HalluHunter uses rule-based KG generation to ensure results are credible.
-- **Error Pattern Analysis**: Locating model-domain weaknesses (e.g., GPT-4o's biological vs. physical knowledge) provides fine-grained diagnostic data for model vendors to improve training sets.
-- **Weighted Coverage**: Using group degree centrality offers a more logical measure of coverage than raw entity counts by reflecting real knowledge distribution hubs.
-- **Engineering Detail**: The single-outgoing-edge constraint for multi-hop questions is crucial for enabling automated exact-match evaluation for WH questions.
+- **Applying Exploit-Explore via KG Embeddings**: Treating "LLM incorrect answers" as a reward signal and KG embeddings as a structural similarity metric is a clever adaptation of active testing to Knowledge Graphs.
+- **Avoiding the LLM Bias Loop**: By using rule-based KG generation rather than LLM-based generation, HalluHunter avoids self-bias and contamination, making the results more credible.
+- **Fine-grained Diagnosis**: The error pattern analysis identifies model-domain level weaknesses (e.g., GPT-4o's biological vs. physical knowledge), providing high-value data for model refinement.
+- **Sophisticated Coverage Metrics**: Using group degree centrality to measure breadth is more robust than simple entity counts, reflecting the real knowledge distribution around hubs.
+- **Engineering Precision**: Using a single-outgoing-edge constraint for multi-hop questions ensures unique answers for automated exact-match scoring, a critical detail for scalability.
 
 ## Limitations & Future Work
-- **KG Dependency**: Relies entirely on Wikidata; errors or missing data in the KG propagate to the tests.
-- **Diagnostic Only**: Provides no new mitigation methods for the identified hallucinations.
-- **Simplistic Multi-hop**: Restricted to 2-4 hop "chains" rather than tree-like or circular structures found in real-world reasoning.
-- **Evaluation Noise**: Sentence Transformer F1 (87%) implies some noise in judging WH questions.
-- **Embedding Dependency**: Effectiveness relies on QuatE embedding quality; dynamic KGs would require frequent retraining.
+- The framework relies on a single KG (Wikidate), meaning KG errors or incompleteness propagate to the results.
+- No new mitigation methods are proposed; the focus is purely diagnostic.
+- Multi-hop reasoning is limited to 2–4 chain-like hops, without considering tree or cycle-like structures.
+- Sentence Transformer F1 for WH evaluation is only 87%, introducing some noise compared to manual or LLM-as-judge scoring.
+- The adaptive algorithm depends on QuatE embeddings; dynamic KGs with frequent updates would require re-training.
+- No strict numerical comparison was made with LLM-driven adversarial probing (e.g., AutoDetect).
 
 ## Related Work & Insights
-- **vs. Head-to-Tail (2023)**: HalluHunter extends KG factuality testing from single-cloze formats to three question types and multi-hop reasoning, pushing GPT-4o WH accuracy from ~40% down to 10% in Trial 5.
-- **vs. AutoDetect / Self-Challenge**: Unlike these LLM-driven adversarial probing methods, HalluHunter remains outside the LLM loop by using structured KGs.
-- **Inspiration**: The "Adaptive Iteration + Structured Search + Reward-driven Exploit" paradigm can be transferred to other "Evaluation as Search" scenarios like code bug detection or safety testing.
+- **vs. Head-to-Tail (2023)**: Both use KG factuality testing, but Head-to-Tail uses only one question type (cloze) and lacks multi-hop or iterative features.
+- **vs. AutoDetect / Self-Challenge**: These rely on LLMs to find LLM weaknesses (self-bias), while HalluHunter breaks the loop using KGs.
+- **vs. DyKnow**: DyKnow focuses on temporal staleness of facts; HalluHunter focuses on general facts and iterative attacks.
+- **Insight**: The combination of adaptive iteration, structured search, and reward-driven exploitation can be migrated to other domains like code bug detection (CodeKG) or safety testing (adversarial prompt trees).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ KG-grounded automation + adaptive iteration is a strong combination, though individual components (KG QA, QuatE) are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Massive scale (9 LLMs × 3 domains × 3 types × 6 trials) with detailed sensitivity and coverage analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative; Table 1 effectively highlights the limitations of 14 related works.
-- Value: ⭐⭐⭐⭐ Fully automated and repeatable framework that avoids contamination; provides long-term value for LLM evaluation.
+- Novelty: ⭐⭐⭐⭐ (KG-grounded automated + adaptive iteration is a strong combination).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (massive scale across 9 LLMs, multiple domains, and 5 rounds).
+- Writing Quality: ⭐⭐⭐⭐ (Clear narrative, excellent comparative tables).
+- Value: ⭐⭐⭐⭐ (Open-source, avoids contamination, long-term utility for evaluation).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2025\] Correlated Errors in Large Language Models](../../ICML2025/llm_evaluation/correlated_errors_in_large_language_models.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
-- [\[ACL 2026\] E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task](e2edev_benchmarking_large_language_models_in_end-to-end_software_development_tas.md)
-- [\[ACL 2026\] Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](challenging_the_boundaries_of_reasoning_an_olympiad-level_math_benchmark_for_lar.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
+- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
+- [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
+- [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
 
 </div>
 

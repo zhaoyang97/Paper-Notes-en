@@ -2,66 +2,94 @@
 title: >-
   [Paper Note] Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search
 description: >-
-  [ACL2026][Model Compression][TableQA] This paper proposes TabTrim, which transforms table pruning from error-prone single-path sequential revisions into a framework comprising a "SQL trajectory-supervised pruner + loss-a…
+  [ACL 2026][Model Compression][TableQA] This paper proposes TabTrim, which transforms table pruning from error-prone single-path sequential revisions to a framework consisting of an "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search." It achieves an average accuracy of 73.5% on WikiTQ, TabFact, and TableBench, outperforming
 tags:
-  - "ACL2026"
-  - "Model Compression"
-  - "TableQA"
-  - "table pruning"
-  - "gold trajectory"
-  - "verifier"
-  - "beam search"
+  - ACL 2026
+  - Model Compression
+  - TableQA
+  - table pruning
+  - gold trajectory
+  - verifier
+  - beam search
 date: 2026-05-08
-content_hash: f47bed53ff827d94
+content_hash: aa45a6fe8dccee8d
 ---
-
 # Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search
 
 **Conference**: ACL2026 Oral  
 **arXiv**: [2601.03851](https://arxiv.org/abs/2601.03851)  
 **Code**: None  
-**Area**: TableQA / Table Pruning / LLM Reasoning  
+**Area**: Table Question Answering / Table Pruning / LLM Reasoning  
 **Keywords**: TableQA, table pruning, gold trajectory, verifier, beam search
 
 ## TL;DR
-This paper proposes TabTrim, which transforms table pruning from error-prone single-path sequential revisions into a framework comprising a "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search." It achieves an average accuracy of 73.5% on WikiTQ, TabFact, and TableBench, outperforming the strongest baseline by 3.2 points.
+This paper proposes TabTrim, which transforms table pruning from error-prone single-path sequential revisions to a framework consisting of an "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search." It achieves an average accuracy of 73.5% on WikiTQ, TabFact, and TableBench, outperforming the strongest baseline by 3.2 percentage points.
 
 ## Background & Motivation
-**Background**: TableQA and complex table reasoning often require identifying a small number of relevant rows and columns within large tables. Directly serializing the original table for an LLM introduces significant noise and high long-context costs. Consequently, table pruning is used to remove redundant cells, retaining only a task-relevant sub-table before passing it to a downstream reasoner.
+**Background**: TableQA and complex table reasoning often require locating a small number of relevant rows and columns within large tables. Directly serializing the original table for an LLM introduces significant noise and high long-context costs. Consequently, table pruning is used to remove redundant cells, retaining only the sub-tables useful for the question before passing them to a downstream reasoner.
 
-**Limitations of Prior Work**: Existing table pruning methods are generally categorized into program-based and LLM-based approaches. The former relies on the execution of programs like SQL or Python, while the latter depends on CoT or multi-agent planning. Both are prone to pruning critical information. Furthermore, subsequent critique signals are often unreliable: successful program execution does not guarantee semantic correctness, and LLM-as-a-Judge may rationalize incorrect reasoning or excessively reject correct steps.
+**Limitations of Prior Work**: Existing table pruning methods are generally categorized into program-based and LLM-based approaches. The former relies on the execution of programs like SQL/Python, while the latter depends on Chain-of-Thought (CoT) or multi-agent planning. Both suffer from pruning critical rows or columns, and subsequent critique signals are often unreliable: successful program execution does not guarantee semantic correctness, and LLM-as-a-Judge may justify incorrect reasoning or excessively negate correct steps.
 
-**Key Challenge**: The primary risk in table pruning is over-pruning, as the downstream reasoner can rarely recover once answer-critical cells are deleted. Conversely, overly conservative pruning retains too much noise. Existing methods typically follow a single trajectory for sequential revision, where early errors become irreversible due to the lack of backtrackable or comparable candidate branches.
+**Key Challenge**: The primary risk in table pruning is over-pruning; once answer-critical cells are deleted, downstream reasoning can rarely recover. Conversely, conservative pruning retains too much noise. Existing methods typically follow a single-trajectory sequential revision, where early errors become locked in, lacking backtrackable or comparable candidate branches.
 
-**Goal**: The authors aim to provide verifiable intermediate supervision for table pruning, allowing the model to recognize which critical cells should be retained at each step. Additionally, they seek to explore multiple pruning trajectories during inference instead of relying on a single sequential revision.
+**Goal**: The authors aim to provide verifiable intermediate supervision for table pruning, informing the model which critical cells to retain at each step, while exploring multiple pruning trajectories during inference instead of relying on a single sequential revision.
 
-**Key Insight**: Text-to-SQL datasets contain gold SQL queries. The authors observe that the clause-level execution of a SQL query naturally generates a sequence of intermediate sub-tables. These sub-tables, constrained by the final correct answer, can serve as a gold pruning trajectory without requiring manual annotation.
+**Key Insight**: Text-to-SQL datasets contain gold SQL. The authors observe that the clause-level execution process of SQL naturally generates a sequence of intermediate sub-tables. These sub-tables are constrained by the final correct answer and can serve as gold pruning trajectories without requiring manual annotation.
 
-**Core Idea**: Use gold SQL execution trajectories to train a pruner and a verifier, then employ a beam-search-style parallel trajectory search during inference to maintain multiple candidate sub-tables, thereby avoiding the local optima inherent in single-path pruning.
+**Core Idea**: Train a pruner and a verifier using gold SQL execution trajectories, and employ a beam-search style parallel trajectory search during inference to maintain multiple candidate sub-tables, avoiding local optima inherent in single-path pruning.
 
 ## Method
 
 ### Overall Architecture
-The input to TabTrim consists of a question $Q$, the original table $T_0$, and the current sub-table $T_{t-1}$, with the output being a more compact sub-table. During the training phase, a gold sub-table trajectory is constructed from Text-to-SQL data by decomposing gold SQL into clause-level operations (e.g., row filtering and column projection) ordered by execution to obtain $T_0, T_1^+, ..., T_n^+$. Two components are then trained: the pruner learns to generate the next gold sub-table from the current state, and the verifier learns to predict a quality score for any sub-table relative to the final gold sub-table. During inference, starting from the original table, the pruner generates multiple candidates at each step, which are then scored by the verifier to keep the top-$k$. Finally, the sub-table with the highest score across all beams is selected for downstream reasoning.
+TabTrim addresses the most fatal failure mode of table pruning: the inability to recover once answer-critical cells are deleted during single-path sequential revisions. It introduces "process supervision + parallel search." Given a question $Q$, original table $T_0$, and current sub-table $T_{t-1}$, it outputs a more compact sub-table. During training, gold SQL from Text-to-SQL data is decomposed by clause-level execution order (row filtering, column projection, etc.) to produce gold sub-tables $T_0, T_1^+, \dots, T_n^+$. These train two components: the pruner learns to move from the current sub-table to the next gold step, and the verifier learns to score any sub-table based on its alignment with the final gold sub-table. During inference, starting from the original table, the pruner generates multiple candidates per step, and the verifier scores and retains the top-$k$, finally selecting the highest-scoring sub-table for the downstream reasoner.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Input: Question Q + Original Table T₀"]
+    subgraph GT["Gold Trajectory Construction"]
+        direction TB
+        S1["Execute gold SQL by clause order<br/>Step-wise generation of gold sub-tables T₁⁺…Tₙ⁺"] --> S2["Corrupt gold operations to create<br/>off-trajectory negative samples Tₜ⁻"]
+        S2 --> S3["Progression dataset (following correct path)<br/>+ Correction dataset (recovery from errors)"]
+    end
+    subgraph PR["Trajectory-supervised Pruner & DPO"]
+        direction TB
+        P1["SFT: Learning from both progression + correction"] --> P2["DPO: Ranking Tₜ⁺ over Tₜ⁻"]
+    end
+    subgraph SR["Loss-aware Verifier & Parallel Trajectory Search"]
+        direction TB
+        B1["Pruner generates multiple candidates per step"] --> B2["Verifier scores via Recall-biased F-score (α=1.5)"]
+        B2 -->|Retain top-k; continue if step < D_max| B1
+    end
+    OUT["Select highest-scored beam sub-table → Downstream LLM QA"]
+    Q --> GT --> PR --> SR --> OUT
+```
 
 ### Key Designs
-1.  **Gold trajectory construction**:
-    - **Function**: Automatically generate step-by-step pruning supervision using existing Text-to-SQL annotations, avoiding the need for additional manual annotation of intermediate sub-tables.
-    - **Mechanism**: For each sample $(Q, SQL_{gold}, T_{raw})$, the SQL is decomposed into clause-level operations based on execution logic; each step yields a gold sub-table $T_t^+$. The authors also construct off-trajectory negative sub-tables $T_t^-$ by modifying gold operations to create progression and correction datasets.
-    - **Design Motivation**: Final answers only provide supervision on terminal correctness, making it difficult to identify where a pruner failed. SQL intermediate states provide alignable procedural supervision, while negative trajectories train the model to recover from erroneous states.
 
-2.  **Trajectory-supervised Pruner and DPO**:
-    - **Function**: Generate the next sub-table to align with the gold trajectory and learn to rectify errors from incorrect intermediate states.
-    - **Mechanism**: The first phase uses SFT to optimize for both progression and correction samples, summarized by the loss: $L_{SFT}=-\log P_\theta(T_t^+|Q,T_0,T_{t-1}^+)-\lambda\log P_\theta(T_t^+|Q,T_0,T_{t-1}^-)$. The second phase uses DPO to favor the gold next sub-table $T_t^+$ over incorrect sub-tables $T_t^-$, reducing fine-grained semantic pruning errors.
-    - **Design Motivation**: Learning only the gold path prevents the model from recovering when it deviates during inference. Correction samples and DPO ensure the pruner can both advance correctly and return to the proper path from erroneous candidates.
+**1. Gold Trajectory Construction: Turning SQL Intermediate States into Annotation-free Supervision**
 
-3.  **Loss-aware Verifier and Parallel Trajectory Search**:
-    - **Function**: Score candidate sub-tables and select paths during inference that are most likely to retain answer-critical cells.
-    - **Mechanism**: Sub-tables are represented as canonical cell sets to calculate precision and recall against the final gold sub-table $T_n^+$. An $F$-score with a recall bias is used as the quality score $S(T_t)$. A default $\alpha=1.5$ is used to emphasize the retention of answer-critical cells. Inference utilizes beam search with width $k$, branch factor $b$, and maximum depth $D_{max}$. At each step, a generate-score-select cycle is performed, ultimately choosing the sub-table with the highest verifier score across all beams.
-    - **Design Motivation**: Likelihood does not necessarily reflect sub-table quality, particularly in penalizing the omission of critical cells. The loss-aware score explicitly biases toward recall, while parallel search allows the system to abandon early erroneous branches.
+The pain point is that the final answer only indicates whether the model was "correct," but not where it failed during pruning steps. The authors note that gold SQL in Text-to-SQL data naturally possesses a clause-level execution order. For each sample $(Q, SQL_{gold}, T_{raw})$, the SQL is decomposed into logical steps, where each step results in a gold sub-table $T_t^+$, constrained by the final answer without additional manual labeling.
+
+Positive paths alone are insufficient; the pruner will inevitably deviate during inference. Thus, the authors construct off-trajectory negative sub-tables $T_t^-$ by corrupting gold operations, organizing data into a "progression dataset" (advancing along the correct path) and a "correction dataset" (recovering from erroneous states). Intermediate SQL states provide alignable process supervision, while negative trajectories teach the model how to recover.
+
+**2. Trajectory-supervised Pruner and DPO: Advancing and Correcting from Deviated Sub-tables**
+
+If trained only via imitation learning on gold paths, the pruner becomes helpless when encountering slightly deviated sub-tables it generated during inference. The authors use a two-stage training approach. The first stage, SFT, uses both progression and correction samples with the loss:
+
+$$L_{SFT}=-\log P_\theta(T_t^+\mid Q,T_0,T_{t-1}^+)-\lambda\log P_\theta(T_t^+\mid Q,T_0,T_{t-1}^-)$$
+
+The first term encourages moving toward the next gold step from a correct sub-table, while the second requires a transition to the correct $T_t^+$ even if the precursor $T_{t-1}^-$ is incorrect. The second stage uses DPO to rank the gold next sub-table $T_t^+$ over the incorrect $T_t^-$, further suppressing fine-grained semantic pruning errors. Consequently, the pruner can both advance along the trajectory and correct its direction.
+
+**3. Loss-aware Verifier and Parallel Trajectory Search: Path Selection via Recall-biased Scoring**
+
+High generation probability does not equate to sub-table quality—lethal errors like missing answer-critical cells are rarely penalized by likelihood. The authors represent candidate sub-tables as canonical cell sets and calculate precision and recall relative to the final gold sub-table $T_n^+$. An $F$-score with a recall bias ($\alpha=1.5$ by default) serves as the quality score $S(T_t)$, favoring the retention of answer-critical cells over aggressive pruning. During inference, beam search with width $k$, branch factor $b$, and maximum depth $D_{max}$ is performed using this score. This transforms pruning from "fixing one path" to "exploring multiple paths and discarding poor early branches."
+
+### Mechanism: How Beam Search Recovers a Mis-pruned Row
+Assume $k=b=2, D_{max}=4$. The original table $T_0$ has dozens of rows. At Step 1, the pruner generates 2 candidates. After verifier scoring, the top 2 enter the beam. Suppose one branch incorrectly removes a column required for the answer due to aggressive projection; it may still look good in terms of precision. At Step 2, each beam generates 2 candidates (4 total). The verifier uses the recall-biased score ($\alpha=1.5$); the branch that deleted the critical column receives a significantly lower score due to the drop in recall and is dropped from the top-2, while the branch retaining the critical column continues to prune redundant rows. After 3-4 steps, the system selects the sub-table with the highest recall from the parallel candidates rather than being stuck on a single erroneous path.
 
 ### Loss & Training
-TabTrim utilizes WikiSQL and SQUALL to construct over 80K training samples. The pruner is trained using Qwen3-4B and Qwen3-8B, while the verifier uses Qwen3-0.6B with a default $\alpha=1.5$. Default inference parameters are $k=b=2$ and $D_{max}=4$, resulting in an upper bound of $O(k\cdot b\cdot D_{max})$ pruner/verifier calls per sample. GPT-4o-mini is employed for final answer generation to ensure consistency with baseline downstream reasoner setups.
+TabTrim uses WikiSQL and SQUALL to construct over 80K training samples. The pruner is trained using Qwen3-4B and Qwen3-8B, while the verifier uses Qwen3-0.6B with $\alpha=1.5$. During inference, $k=b=2$ and $D_{max}=4$ are used. The upper bound for pruner/verifier calls per sample is $O(k\cdot b\cdot D_{max})$. Final answer generation is performed via GPT-4o-mini to ensure consistency with baseline reasoner settings.
 
 ## Key Experimental Results
 
@@ -80,42 +108,42 @@ TabTrim utilizes WikiSQL and SQUALL to construct over 80K training samples. The 
 | Configuration | WikiTQ | TableBench | Description |
 |------|--------|------------|------|
 | TabTrim | 79.4 | 61.2 | Full model |
-| w/o DPO | 78.1 | 58.6 | Without preference optimization, fine-grained errors are harder to correct |
-| w/o Correction Samples | 74.8 | 55.4 | Without off-trajectory recovery, robustness significantly decreases |
-| w/o Training | 54.7 | 49.6 | Without trajectory-supervised training, performance reverts to base model capability |
-| Balanced score | 77.8 | 58.3 | Changing $\alpha$ to 1 reduces recall bias and decreases performance |
-| Rank by Likelihood | 74.2 | 56.7 | Ranking by generation probability is inferior to the verifier score |
-| Sequential Revisions | 72.9 | 55.1 | Performance drops significantly without parallel search |
+| w/o DPO | 78.1 | 58.6 | Removing preference optimization makes fine-grained errors harder to correct |
+| w/o Correction Samples | 74.8 | 55.4 | Significant robustness drop without off-trajectory recovery |
+| w/o Training | 54.7 | 49.6 | Performance reverts to base model capability |
+| Balanced score | 77.8 | 58.3 | Performance drops after removing recall bias ($\alpha=1$) |
+| Rank by Likelihood | 74.2 | 56.7 | Generation probability is less effective than verifier score |
+| Sequential Revisions | 72.9 | 55.1 | Significant drop when parallel search is disabled |
 
 ### Key Findings
-- TabTrim-8B achieves an average accuracy of 73.5%, which is 3.2 points higher than the strongest non-TabTrim baseline, Table-Critic (70.3%); on WikiTQ, it reaches 79.4%, a 6.8-point improvement over Table-Critic.
-- Correction samples are one of the most critical elements in pruner training; removing them results in a 4.6-point drop on WikiTQ and a 5.8-point drop on TableBench, demonstrating the importance of recovery capabilities after deviating from the gold trajectory.
-- Both parallel search and verifier ranking are irreplaceable: sequential revision causes a 6.5-point drop on WikiTQ, while likelihood ranking causes a 5.2-point drop.
-- As a plug-and-play front-end, TabTrim provides a +25.9 Gain for Qwen3 on WikiTQ and +10.8 on TableBench; it provides +7.4 and +8.8 Gain for Table-R1 respectively.
-- Regarding token costs, TabTrim's total token usage is approximately 0.56x to 0.66x that of Table-Critic, indicating it does not rely on brute-force large contexts for its performance.
+- TabTrim-8B achieves an average accuracy of 73.5%, 3.2 points higher than the strongest non-TabTrim baseline, Table-Critic (70.3%). On WikiTQ, it reaches 79.4%, a 6.8 point lead.
+- Correction samples are critical; removing them drops WikiTQ by 4.6 and TableBench by 5.8 points, demonstrating the importance of recovery from deviations.
+- Parallel search and verifier ranking are irreplaceable: sequential revision drops WikiTQ by 6.5 points, while ranking by likelihood drops it by 5.2 points.
+- As a plug-and-play front-end, TabTrim provides +25.9 points for Qwen3 on WikiTQ and +7.4 points for Table-R1.
+- In terms of token cost, TabTrim consumes approximately 0.56x to 0.66x the tokens of Table-Critic, indicating it does not rely on context brute-forcing.
 
 ## Highlights & Insights
-- The most ingenious aspect is converting the gold SQL execution process into pruning trajectory supervision. Since many tabular tasks have programmatic annotations or executable queries, these "intermediate execution states" can be leveraged as procedural supervision rather than relying solely on final answer supervision.
-- The loss-aware verifier explicitly prioritizes recall, aligning with the risk structure of table pruning: while redundancy adds noise, the loss of answer-critical cells is often irreversible.
-- Parallel trajectory search shifts table pruning from "revising a single path" to "simultaneously evaluating multiple paths." This is consistent with search/rerank strategies in complex reasoning and can be effectively transferred to document compression, evidence selection, and multi-hop retrieval tasks.
+- The most clever aspect is transforming SQL execution into trajectory supervision for pruning. Many table tasks have programmatic labels; these intermediate states can be converted into process supervision rather than just final answer labels.
+- The loss-aware verifier explicitly prioritizes recall, aligning with the risk structure of table pruning: while redundancy adds noise, missing answer-critical cells is typically irreversible.
+- Parallel trajectory search changes table pruning from "fixing a single path" to "exploring multiple paths," a strategy consistent with search/rerank methods in complex reasoning, applicable to document compression and multi-hop retrieval.
 
 ## Limitations & Future Work
-- The authors acknowledge that experiments were limited by compute resources, covering only 4B and 8B pruners, without exploring scaling laws or performance ceilings for larger models.
-- The gold trajectories are derived from Text-to-SQL processes. For TableQA or open-table reasoning tasks without program annotations, constructing equally reliable procedural supervision remains an open question.
-- The current verifier's quality score depends on cell-set overlap with the gold final sub-table. While clear during training, real-world tasks where multiple reasonable pruning paths exist might result in the verifier unfairly penalizing valid alternatives.
-- Future work could investigate lighter verifiers, dynamic search budgets, and integrating TabTrim with weak-supervision trajectory generation methods that do not rely on SQL annotations.
+- Due to compute constraints, experiments were limited to 4B and 8B pruners; scaling laws for larger models were not explored.
+- Gold trajectories are derived from SQL execution; how to construct equivalent process supervision for tasks without program annotations remains open.
+- The verifier score currently depends on cell-set overlap with a specific gold sub-table; if multiple valid pruning paths exist, it might unfairly penalize legitimate alternatives.
+- Future work could explore lighter verifiers, dynamic search budgets, and weak-supervision for trajectory generation.
 
 ## Related Work & Insights
-- **vs Binder / TabSQLify**: These program-based methods rely on executable programs for pruning, which may mistake successful execution for semantic correctness; TabTrim uses gold trajectories and a verifier for direct sub-table quality supervision.
-- **vs Chain-of-Table / Dater**: LLM-based methods prune through multi-step reasoning, but their critiques are often subjective; TabTrim’s critique is more objective, derived from SQL trajectories and cell overlap.
-- **vs Table-Critic / TALON**: These also attempt critique or revision but remain largely sequential; the key differentiator for TabTrim is the maintenance of multiple candidate trajectories combined with verifier-led search.
-- **Insight**: For any system that "compresses context before reasoning," procedural supervision and search are more reliable than one-shot compression. Particularly in tasks where evidence is sparse and the cost of missing data is high, priority should be given to optimizing recall-aware compression objectives.
+- **vs Binder / TabSQLify**: These program-based methods rely on executable programs, which might mistake execution success for semantic correctness. TabTrim uses gold trajectories and a verifier to monitor sub-table quality directly.
+- **vs Chain-of-Table / Dater**: LLM-based methods use multi-step reasoning, but critiques are often subjective. TabTrim's critiques are based on SQL trajectories and cell overlap, making them more objective.
+- **vs Table-Critic / TALON**: These also attempt critiques or revisions but still follow sequential paths. TabTrim's key differentiator is maintaining multiple candidate trajectories via verifier-led search.
+- **Insight**: For any "compress-then-reason" system, process supervision and search are more reliable than one-shot compression, especially where evidence is sparse and the cost of missing evidence is high.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of SQL gold trajectory + loss-aware verifier + parallel search is a complete solution that addresses the fundamental issues of table pruning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Main results, ablations, difficulty stratification, scaling, plug-and-play, and cost analyses are all comprehensive.
-- Writing Quality: ⭐⭐⭐⭐☆ Despite the heavy mathematical notation, the main narrative is clear and the tables directly support the conclusions.
-- Value: ⭐⭐⭐⭐⭐ This work has high reuse value for TableQA, RAG compression, and evidence selection, making it a strong baseline for future research.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of SQL gold trajectories, loss-aware verifier, and parallel search is highly effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes main results, ablations, difficulty stratification, scaling, and cost analysis.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology and well-organized tables that directly support the conclusions.
+- Value: ⭐⭐⭐⭐⭐ Highly reusable for TableQA, RAG compression, and evidence selection.
 
 <!-- RELATED:START -->
 
@@ -123,11 +151,11 @@ TabTrim utilizes WikiSQL and SQUALL to construct over 80K training samples. The 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment](../../CVPR2026/model_compression/beyond_loss_values_robust_dynamic_pruning_via_loss_trajectory_alignment.md)
-- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 - [\[ACL 2026\] DeepPrune: Parallel Scaling without Inter-Trace Redundancy](deepprune_parallel_scaling_without_inter-trace_redundancy.md)
-- [\[ACL 2026\] Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs](rethinking_parameter_sharing_for_llm_fine-tuning_with_multiple_loras.md)
 - [\[ICLR 2026\] Parallel Token Prediction for Language Models](../../ICLR2026/model_compression/parallel_token_prediction_for_language_models.md)
+- [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
+- [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
+- [\[ICML 2026\] Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes](../../ICML2026/model_compression/detecting_fluent_optimization-based_adversarial_prompts_via_sequential_entropy_c.md)
 
 </div>
 

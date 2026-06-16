@@ -2,106 +2,101 @@
 title: >-
   [Paper Note] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 description: >-
-  [CVPR 2026][3D Vision][stereo matching] This paper systematically ablates the design space of synthetic stereo matching training data—covering floating objects, backgrounds, materials, baselines…
+  [CVPR 2026][3D Vision][procedural generation] This paper systematically ablates the design space of synthetic training data for stereo matching (including floating objects, backgrounds, materials, and baselines). It finds that the combination of "realistic indoor scenes + dense floating objects + wide baselines" is optimal. Based on these findings, WMGStereo-150k
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "stereo matching"
-  - "synthetic data"
-  - "procedural generation"
-  - "zero-shot generalization"
-  - "dataset design"
-  - "Infinigen"
+  - CVPR 2026
+  - 3D Vision
+  - procedural generation
+  - dataset design
+  - Infinigen
 date: 2026-05-08
-content_hash: 7b3549509c2aad60
+content_hash: 1bc16e4f62503c95
 ---
-
 # What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2504.16930](https://arxiv.org/abs/2504.16930)  
-**Code**: Not available (the paper mentions that the procedural generation code will be open-sourced, but no specific link is included in the cache)  
-**Area**: 3D Vision
-**Keywords**: stereo matching, synthetic data, procedural generation, zero-shot generalization, dataset design, Infinigen
+**Code**: None (The paper mentions that procedural generation code will be open-sourced, but no specific link is provided in the cache)  
+**Area**: 3D Vision  
+**Keywords**: Stereo matching, synthetic data, procedural generation, zero-shot generalization, dataset design, Infinigen
 
 ## TL;DR
 
-This paper systematically ablates the design space of synthetic stereo matching training data—covering floating objects, backgrounds, materials, baselines, and more—and finds that "realistic indoor scenes + dense floating objects + wide baseline" is the optimal combination. The resulting WMGStereo-150k dataset, trained on a single source, outperforms the mixture of four classical datasets.
+This paper systematically ablates the design space of synthetic training data for stereo matching (including floating objects, backgrounds, materials, and baselines). It finds that the combination of "realistic indoor scenes + dense floating objects + wide baselines" is optimal. Based on these findings, WMGStereo-150k is constructed, which outperforms hybrid training using four classic datasets while using only a single dataset.
 
 ## Background & Motivation
 
-**Problem Definition**: Stereo matching estimates per-pixel disparity from binocular RGB images. Synthetic data, which provides precise depth annotations, is central to training. However, the critical question of *what constitutes effective synthetic data design* has never been systematically studied.
+**Problem Definition**: Stereo matching estimates pixel-wise disparity from binocular RGB images. Synthetic data is a core resource for training due to its precise depth annotations. However, the critical question of **what constitutes an effective synthetic data design** has lacked systematic research.
 
 **Limitations of Prior Work**:
 
-**Entangled design variables**: Existing synthetic datasets vary enormously—from the random flying objects of FlyingThings3D to the photorealistic simulators of TartanAir—yet each new dataset simultaneously changes multiple factors (object types, materials, scene layout, camera parameters, etc.), making it impossible to attribute the contribution of any single design choice. For instance, FoundationStereo introduces both a new architecture and new data, and the relative importance of individual data factors (floating objects, random lighting, physical simulation, etc.) cannot be disentangled.
+**Entangled Design Variables**: Existing synthetic datasets range significantly from random flying objects (FlyingThings3D) to realistic scene simulators (TartanAir). Each new dataset changes multiple factors simultaneously (object types, materials, scene layouts, camera parameters), making it impossible to attribute gains to a single design choice. For instance, FoundationStereo introduced a new architecture alongside new data, leaving the relative importance of individual data factors (floating objects, random lighting, physics simulation) inseparable.
 
-**Non-reproducible generation pipelines**: Classical datasets such as TartanAir and IRS do not release generation code or assets, creating a hard barrier to ablations such as "what if only the materials are changed?"
+**Irreproducible Generation Pipelines**: Classic datasets like TartanAir and IRS do not open-source their generation code or assets, creating a barrier for ablation studies such as "what if only the materials were changed."
 
-**Limitations of prior analysis**: The seminal analysis of Mayer et al. concluded that "realism is overrated," but their experiments were based solely on 2D-warp FlyingChairs-style datasets without covering modern 3D-rendered datasets, limiting the generalizability of that conclusion.
+**Limitations of Existing Analysis**: A classic study by Mayer et al. concluded that "realism is overrated." However, their experiments were based on 2D-warp FlyingChairs-style datasets and did not involve modern 3D rendering datasets, making the applicability of the conclusion questionable.
 
-**Core Motivation**: Leveraging the controllability of the open-source procedural generation platform Infinigen, this work isolates and ablates each design dimension of synthetic stereo data one at a time, identifies the factors that truly govern zero-shot generalization performance, and constructs a superior dataset accordingly.
+**Goal**: To leverage the controllability of the open-source procedural generation platform Infinigen to isolate and ablate each design dimension of synthetic stereo data, identifying key factors for zero-shot generalization and constructing a superior dataset based on these insights.
 
 ## Method
 
 ### Overall Architecture
 
-The authors build a configurable procedural stereo data generation system on top of Infinigen and the Blender Python API. The core contribution is not a new stereo matching network, but rather a parameterizable data production pipeline coupled with systematic ablation experiments.
+The authors constructed a configurable procedural stereo data generation system based on Infinigen and the Blender Python API. The core contribution is not a new stereo matching network, but rather a parameter-controlled data production pipeline and a systematic ablation study.
 
 The system supports three scene types:
 
-1. **Indoor Floating Objects**: Objects are randomly placed inside rooms generated by Infinigen Indoors via ray casting. This combines scene realism (furniture, walls, floors, etc.) with geometric diversity (additional suspended objects).
-2. **Dense Floating Objects**: A large number of objects (~200) are densely placed within the camera frustum against a blank sky background, maximizing geometric diversity in the spirit of the classical FlyingThings3D design.
-3. **Nature**: Outdoor natural scenes are generated directly using Infinigen Nature.
+1.  **Indoor Floating Objects**: Random objects are placed within realistic indoor scenes generated by Infinigen Indoors using raycasting. This balances scene realism (furniture, walls, floors) with geometric diversity (extra suspended objects).
+2.  **Dense Floating Objects**: Similar to the classic FlyingThings3D design, a large number of objects (approximately 200) are placed densely within the camera's field of view against a blank sky background to maximize geometric diversity.
+3.  **Nature**: Outdoor natural scenes are generated directly using Infinigen Nature.
 
-Key engineering designs:
-- **Floating object placement interface**: Supports ray-casting-based placement (within the camera frustum) or bounding-box constraints, with controllable intersection with existing scene geometry.
-- **Material management tools**: Automatically detects and removes glass materials from object sub-parts (to avoid ill-posed problems caused by fully transparent surfaces); exterior windows are handled specially—rather than replacing the glass material (which would corrupt scene lighting), the window geometry is deleted entirely.
-- **Automatic removal of high-error objects/materials**: Per-object and per-pixel error statistics are used to identify and discard problematic objects such as cacti, sea urchins (extremely fine needle-like structures), and shelves (tiny holes), as well as extreme materials that are fully transparent or fully reflective.
+Key Engineering Designs:
+-   **Floating Object Placement Interface**: Supports both raycasting (placement within the camera view) and bounding box constraints, allowing control over intersections with existing scene geometry.
+-   **Material Management**: Automatically detects and removes glass materials from object sub-parts (to avoid ill-posed problems from fully transparent surfaces). External windows are treated specially - geometry is deleted rather than replacing glass to avoid breaking scene lighting.
+-   **Automatic Removal of High-Error Objects/Materials**: Difficult objects such as cacti, sea urchins (extremely fine needle structures), and shelves (tiny holes) are identified and excluded via per-object and per-pixel error statistics, along with extreme transparent or reflective materials.
 
-### Key Designs — Parametric Ablation Study
+### Key Designs
 
-**Experimental setup**: For each parameter variant, 5,000 stereo pairs are generated using the indoor floating objects scene type. RAFT-Stereo is trained from random initialization for 75k steps and evaluated zero-shot on six benchmarks: Middlebury 2014/2021, ETH3D, KITTI-12/15, and Booster.
+Experimental Setup: For each parameter variant, 5000 stereo image pairs are generated using the Indoor Floating Objects scene type. RAFT-Stereo is trained from scratch for 75k steps and evaluated on 6 benchmarks (Middlebury 2014/2021, ETH3D, KITTI-12/15, Booster) for zero-shot performance. The following six dimensions are isolated.
 
-**① Floating object density** — one of the most critical design choices:
-- No floating objects → Middlebury 2014(H) 2px error: 12.52
-- 0–10 floating objects → 7.78 (↓38%)
-- 10–30 floating objects → 6.60 (↓47%)
-- **Finding**: Floating objects, despite reducing scene realism, greatly increase geometric diversity and are crucial for zero-shot generalization. The final dataset places ~200 objects in dense scenes.
+**1. Floating Object Density: Geometric Diversity is the Primary Switch**
 
-**② Background objects** — realism does help:
-- Removing background objects such as furniture degrades performance across all benchmarks (e.g., Middlebury(H) rises from 6.60 to 8.35).
-- **Finding**: This refutes the classical claim that "realism is overrated." **A certain degree of scene realism provides significant benefit for zero-shot generalization.**
+The zero-shot capability of stereo networks relies heavily on the geometric diversity encountered during training. Real-world scenes offer limited geometric variation. Increasing floating objects from zero to dense reduces the 2px error on Middlebury 2014(H) from 12.52 to 7.78 (0-10 objects, ↓38%) and finally to 6.60 (10-30 objects, ↓47%). While floating objects reduce realism, the resulting geometric diversity is overwhelmingly important for zero-shot generalization. Thus, 200 objects are placed in dense scenes.
 
-**③ Object types** — diversity over specialization:
-- Individual object categories perform best on specific benchmarks (chairs help Middlebury; shrubs help ETH3D/KITTI) but yield the worst cross-benchmark robustness.
-- Using all object generators produces the most balanced performance across all benchmarks.
+**2. Background Objects: Realism is Not "Overrated"**
 
-**④ Object materials** — a hard bottleneck for existing networks:
-- Metal + glass only → best on KITTI-15/Booster but catastrophic on ETH3D (4.95 vs. 2.77)
-- Diffuse only → best on ETH3D but severe degradation on Booster (12.73 vs. 9.80)
-- **Core finding**: Existing stereo matching networks cannot learn non-Lambertian materials without degrading performance on diffuse regions, motivating co-design of architecture and data.
+The classic argument that "realism is overrated" stems from 2D-warp datasets like FlyingChairs and may not apply to modern 3D rendering. Removing background objects like furniture led to performance drops across all benchmarks (Middlebury(H) error rose from 6.60 to 8.35). This indicates that **a certain level of scene realism significantly aids zero-shot generalization**, refuting the old conclusion.
 
-**⑤ Camera baseline randomization** — an underappreciated critical factor:
-- Narrow baseline only [0.04, 0.1 m] → Middlebury(H) degrades from 6.60 to 9.60; Booster from 10.60 to 17.03.
-- Wide range [0.04, 0.4 m] achieves the best results across all benchmarks.
+**3. Object Types: Diversity Over Specialization**
 
-**⑥ Lighting augmentation**: Minimal impact, but retained to cover diverse in-the-wild conditions.
+Single object types might perform better on specific benchmarks (e.g., chairs for Middlebury, bushes for ETH3D/KITTI), but they exhibit the poorest cross-benchmark robustness. Using the full set of object generators produced the most balanced results across all benchmarks. The conclusion is to use a wide variety of objects rather than tuning for a specific benchmark.
+
+**4. Object Materials: A Hard Bottleneck for Current Networks**
+
+Materials expose a problem that data alone cannot bypass. Using only metal and glass yielded optimal results on KITTI-15/Booster but caused ETH3D to fail (4.95 vs 2.77). Conversely, using only diffuse materials was optimal for ETH3D but severely degraded Booster performance (12.73 vs 9.80). **Current stereo matching networks cannot learn non-Lambertian materials without harming performance in diffuse regions.** The authors suggest this requires co-design of architecture and data.
+
+**5. Camera Baseline Randomization: An Underestimated Factor**
+
+The baseline range directly determines the disparity distribution. Using only a narrow baseline [0.04, 0.1m] degraded performance on Middlebury(H) from 6.60 to 9.60 and Booster from 10.60 to 17.03. Expanding to [0.04, 0.4m] was globally optimal. Wide baselines expose the network to a larger range of disparities, leading to more stable generalization.
+
+**6. Lighting Augmentation: Minimal Impact but Retained**
+
+Lighting randomization had limited impact on benchmarks but was retained to cover diverse outdoor conditions as a low-cost robustness measure.
 
 ### Loss & Training
 
-- **Training protocol**: The original training procedures and hyperparameters of RAFT-Stereo, DLNR, and Selective-IGEV are followed respectively. All models are trained from random initialization for 200k steps. No new loss functions or training tricks are introduced.
-- **Balanced scene type sampling**: The three scene types are sampled with equal weight (33%–33%–33%) during training; ablations confirm this ratio is optimal.
-- **Masking strategy**: Sky regions and untextured exterior room areas are masked out.
-- **Cost optimization (6× speedup)**:
-    - Solver steps reduced from 550 to 60 (greedy mode, only adding/not removing objects); indoor scene generation time reduced from 51 to 13 minutes.
-    - Render samples reduced from 8,192 to 1,024, with Blender OptiX denoising; rendering time reduced to 27 seconds per frame.
-    - Scene reuse: 20 independent camera placements per indoor scene; 200 randomizations (object poses, lighting, baseline) per dense scene.
-    - Under a fixed compute budget, the low-cost configuration (30k samples) outperforms the high-cost configuration (5k samples).
+-   **Training Strategy**: Follows the original training pipelines and hyperparameters of RAFT-Stereo / DLNR / Selective-IGEV, training for 200k steps from scratch without new loss functions.
+-   **Scene Sampling**: Equal weighting (33%-33%-33%) across the three scene types was found to be optimal.
+-   **Masking Strategy**: Masks out the sky and untextured regions outside the rooms.
+-   **Cost Optimization (6x Acceleration)**:
+    -   Reduced solver steps from 550 to 60 (greedy mode), reducing indoor scene generation time from 51 to 13 minutes.
+    -   Reduced rendering samples from 8192 to 1024 with Blender OptiX denoising, bringing rendering time down to 27 seconds per frame.
+    -   Scene reuse: 20 independent camera positions per indoor scene and 200 randomizations (pose, light, baseline) per dense scene.
+    -   Under a fixed compute budget, the low-cost setting (30k samples) outperformed the high-cost setting (5k samples).
 
 ## Key Experimental Results
 
-### Main Results: Zero-Shot Stereo Matching (Table 2, 200k training steps)
+### Main Results: Zero-Shot Stereo Matching (Table 2, 200k steps)
 
 | Model | Midd 2014(H) | Midd 2021 | ETH3D | KITTI-12 | KITTI-15 | Booster(Q) |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -113,24 +108,24 @@ Key engineering designs:
 | **Sel-IGEV-WMGStereo-150k** | **3.61** | **7.62** | 2.47 | **3.26** | **4.55** | **8.84** |
 | FoundationStereo | **1.10** | **4.17** | **0.50** | **2.30** | **2.80** | **4.16** |
 
-- DLNR-WMGStereo-150k vs. DLNR-Mixed: Middlebury **reduced by 28%**, Booster **reduced by 25%**.
-- RAFT trained solely on WMGStereo-150k surpasses StereoAnywhere—which leverages large-scale monocular priors—on Middlebury 2014.
+- DLNR-WMGStereo-150k vs DLNR-Mixed: Middlebury **reduced by 28%**, Booster **reduced by 25%**
+- RAFT trained only on WMGStereo-150k outperforms StereoAnywhere (which uses large-scale monocular priors) on Middlebury 2014.
 
-### Ablation Study: Design Dimension Comparison (Table 1, 5k pairs + RAFT-Stereo 75k steps)
+### Ablation Study: Design Dimension Comparisons (Table 1, 5k pairs + RAFT-Stereo 75k steps)
 
 | Design Choice | Midd 2014(H) | ETH3D | KITTI-15 | Booster(Q) |
 |------|:---:|:---:|:---:|:---:|
-| No floating objects | 12.52 | 4.47 | 6.19 | 16.40 |
-| 10–30 floating objects | **6.60** | 3.92 | **5.11** | **10.60** |
-| No background objects | 8.35 | 4.39 | 6.28 | 12.72 |
-| With background objects | **6.60** | **3.92** | **5.11** | **10.60** |
-| Diffuse materials only | 7.21 | **2.77** | 5.41 | 12.73 |
-| Metal + glass only | 8.37 | 4.95 | **4.97** | **9.80** |
-| All materials | 6.60 | 3.92 | 5.11 | 10.60 |
-| Narrow baseline [0.04, 0.1] | 9.60 | **2.89** | 6.64 | 17.03 |
-| Wide baseline [0.04, 0.4] | **6.60** | 3.92 | **5.11** | **10.60** |
+| No Floating Objects | 12.52 | 4.47 | 6.19 | 16.40 |
+| 10-30 Floating Objects | **6.60** | 3.92 | **5.11** | **10.60** |
+| No Background Objects | 8.35 | 4.39 | 6.28 | 12.72 |
+| With Background Objects | **6.60** | **3.92** | **5.11** | **10.60** |
+| Diffuse Only | 7.21 | **2.77** | 5.41 | 12.73 |
+| Metal + Glass Only | 8.37 | 4.95 | **4.97** | **9.80** |
+| All Materials | 6.60 | 3.92 | 5.11 | 10.60 |
+| Narrow Baseline [0.04, 0.1] | 9.60 | **2.89** | 6.64 | 17.03 |
+| Wide Baseline [0.04, 0.4] | **6.60** | 3.92 | **5.11** | **10.60** |
 
-### Dataset Comparison (Table 5, DLNR 200k steps)
+### Comparison of Datasets (Table 5, DLNR 200k steps)
 
 | Training Data | Midd 2014(H) | Midd 2021 | ETH3D | KITTI-12 | KITTI-15 | Booster(Q) |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -144,42 +139,42 @@ Key engineering designs:
 
 ### Key Findings
 
-1. **Exceptional sample efficiency**: Only 500 WMGStereo-150k samples on Middlebury outperform 100,000 CREStereo samples, demonstrating that the data "recipe" matters more than quantity.
-2. **Cross-architecture generalization**: Consistent improvements are observed across RAFT-Stereo, DLNR, and Selective-IGEV, indicating that the gains are not overfitted to any specific network.
-3. **Generalization to held-out benchmarks**: On DrivingStereo (not used for parameter selection), the method reduces the 3px error by 27% relative to FSD.
-4. **Data complementarity**: Mixing FSD + WMGStereo-150k outperforms either dataset alone on Middlebury(H), ETH3D, and Booster.
-5. **Mixed scene types are optimal**: Equal mixture of the three scene types (33%–33%–33%) substantially outperforms any single scene type.
+1.  **Extreme Sample Efficiency**: Only 500 WMGStereo-150k samples outperform 100,000 CREStereo samples on Middlebury, proving the data "recipe" is more critical than quantity.
+2.  **Cross-Architecture Generalization**: Consistent improvements were observed across RAFT-Stereo, DLNR, and Selective-IGEV, showing gains are not network-specific.
+3.  **Generalization to Unseen Benchmarks**: On DrivingStereo (not used for parameter selection), 3px error was reduced by 27% compared to FSD.
+4.  **Dataset Complementarity**: Hybrid training with FSD + WMGStereo-150k outperformed either dataset alone on Middlebury(H), ETH3D, and Booster.
+5.  **Scene Type Mixing**: An equal mix of the three scene types (33/33/33) significantly outperformed any single scene type.
 
 ## Highlights & Insights
 
-1. **First systematic study of the synthetic stereo data design space**: The contributions of six dimensions—floating object density, background objects, object types, materials, baseline, and lighting—are isolated and quantified individually, providing actionable data engineering guidelines.
-2. **Realism and diversity are both indispensable**: The optimal configuration—realistic indoor scenes with floating objects—simultaneously refutes "realism is overrated" (removing background objects degrades performance) and confirms the diversity value of random floating objects.
-3. **Non-Lambertian materials remain an open problem**: Existing networks cannot simultaneously handle reflective/transparent materials and diffuse regions. This cannot be resolved through data alone and requires **co-design of data and architecture**, representing a valuable direction for future work.
-4. **More lower-quality data outperforms fewer higher-quality samples**: Reducing rendering quality and solver precision while achieving a 6× speedup yields better performance under a fixed compute budget.
-5. **Methodological value of procedural generation**: The parametric ablation methodology is transferable to dataset design for other vision tasks such as optical flow, depth completion, and semantic segmentation.
+1.  **First Systematic Study of Synthetic Stereo Data Design Space**: By isolating the effects of 6 dimensions (density, background, object types, materials, baseline, lighting), the paper provides an actionable data engineering guide.
+2.  **"Realism + Diversity" are Indispensable**: The optimal solution is "realistic indoor scenes + floating objects," refuting "realism is overrated" (removing background drops performance) while affirming the value of diversity from random objects.
+3.  **Non-Lambertian Materials are an Open Problem**: Current networks struggle to handle both reflective/transparent and diffuse areas simultaneously. This is not purely a data issue—it requires **co-design of data and architecture**.
+4.  **"More Low-Quality Data > Less High-Quality Data"**: Lowering rendering quality and solver precision (allowing 6x speedup) resulted in better performance under a fixed compute budget.
+5.  **Methodological Value of Procedural Generation**: The parameter ablation methodology can be generalized to data design for other vision tasks like optical flow, depth completion, and semantic segmentation.
 
 ## Limitations & Future Work
 
-1. **Significant gap remains relative to FoundationStereo**: 3.76 vs. 1.10 on Middlebury 2014(H); FSD employs larger-scale data and physical simulation.
-2. **Absence of driving scenes**: No CARLA/VirtualKITTI-style road scenes are included; the advantage on KITTI stems primarily from material and baseline settings rather than in-domain scene distribution.
-3. **Non-Lambertian materials are circumvented rather than solved**: Removing extreme materials is a workaround; the ideal solution is to design new architectures capable of handling such materials.
-4. **Only existing architectures are validated**: The interaction between data design and modern Transformer-based stereo architectures remains unexplored.
-5. **Nature scenes are underrepresented** (~21k/163k, approximately 13%), which may limit generalization to outdoor environments.
+1.  **Gap vs. FoundationStereo**: Still trails FoundationStereo (3.76 vs 1.10 on Middlebury 14(H)) which uses larger scale data and physics simulations.
+2.  **Lack of Driving Scenes**: Does not include CARLA/VirtualKITTI style road scenes. Gains on KITTI originate mostly from material/baseline settings rather than in-domain scene distribution.
+3.  **Avoiding vs. Solving Non-Lambertian Materials**: Removing extreme materials is a temporary workaround. A better solution would involve designing architectures capable of handling these materials.
+4.  **Limited to Existing Architectures**: The interaction between data design and newer architectures like Transformer-based stereo remains unexplored.
+5.  **Low Ratio of Nature Scenes**: Natural scenes account for only ~13% (21k/163k), which may limit generalization in diverse outdoor scenarios.
 
 ## Related Work & Insights
 
-- **SceneFlow / FlyingThings3D**: The seminal approach using random flying objects. This paper demonstrates that this design alone is suboptimal on most benchmarks, yet its core idea of geometric diversity remains valid.
-- **FoundationStereo**: The current state of the art. The parametric analysis in this paper helps explain FoundationStereo's success as the result of multiple synergistic factors (floating objects + realistic backgrounds + wide baseline + diverse materials) rather than any single innovation.
-- **Mayer et al. (IJCV 2018)**: The classical "realism is overrated" conclusion applies only to 2D-warp datasets; this paper provides a more nuanced finding for 3D-rendered datasets—realism and diversity must be balanced.
-- **Infinigen**: An open-source procedural 3D generation platform; this paper demonstrates its effective extension and application to stereo matching data.
-- **Broader implication**: The methodology of procedural data generation combined with parametric ablation is generalizable to any vision task requiring synthetic training data.
+-   **SceneFlow / FlyingThings3D**: The pioneering approach using random flying objects. This paper proves such designs are sub-optimal on most benchmarks alone, but their core idea (geometric diversity) remains valid.
+-   **FoundationStereo**: Current SOTA. This parameter study helps explain FSD's success as a result of multi-factor synergy (floating objects + realistic background + wide baseline + diverse materials) rather than a single innovation.
+-   **Mayer et al. (IJCV 2018)**: The conclusion "realism is overrated" applies to 2D-warp datasets. This paper provides a more nuanced conclusion for 3D rendered data—realism and diversity must be balanced.
+-   **Infinigen**: An open-source procedural 3D generation platform. This paper demonstrates its effective extension and application for stereo matching data.
+-   **Insights**: The methodology of procedural data generation combined with parameter ablation can be extended to any vision task requiring synthetic data.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — No new architecture, but the perspective of systematically ablating the data design space is distinctive and practically valuable.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Ablations span 6 design dimensions, 6+ benchmarks, and 3 architectures, with cost analysis and sample efficiency curves.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear structure, rich tables, actionable conclusions, and straightforward reproducibility.
-- **Value**: ⭐⭐⭐⭐ — Directly guides data engineering practices in the stereo matching community; open-sourced code further amplifies impact.
+-   **Novelty**: ⭐⭐⭐⭐ — No new architecture, but the "systematic ablation of data design space" perspective is unique and practical.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Ablation covers 6 dimensions, 6+ benchmarks, 3 architectures, including cost analysis and sample efficiency curves.
+-   **Writing Quality**: ⭐⭐⭐⭐⭐ — Clearly structured, rich tables, and actionable conclusions easy to reproduce.
+-   **Value**: ⭐⭐⭐⭐ — Direct guidance for data engineering in the stereo matching community, amplified by open-source code.
 
 <!-- RELATED:START -->
 
@@ -188,10 +183,10 @@ Key engineering designs:
 ## Related Papers
 
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
-- [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](../../ICCV2025/3d_vision/zerostereo_zero-shot_stereo_matching_from_single_images.md)
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](../../ICCV2025/3d_vision/robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
 
 </div>
 

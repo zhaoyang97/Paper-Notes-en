@@ -2,128 +2,116 @@
 title: >-
   [Paper Note] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG
 description: >-
-  [CVPR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes M4-RAG, the first large-scale multilingual, multicultural, multimodal RAG evaluation framework…
+  [CVPR 2026][Information Retrieval & RAG][Paper Note] Ours proposes M4-RAG, the first large-scale multilingual, multicultural, and multimodal RAG evaluation framework. Covering 42 languages and 80K+ cultural VQA instances from 189 countries, it systematically reveals that RAG is effective for small models but fails to scale positively with model size, while showing severe
 tags:
-  - "CVPR 2026"
-  - "Information Retrieval & RAG"
-  - "Retrieval-Augmented Generation"
-  - "Multilingual"
-  - "Multicultural"
-  - "Visual Question Answering"
-  - "Multimodal Retrieval"
+  - CVPR 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: c0787257ab86d675
+content_hash: e332501eeec8ac0f
 ---
-
 # M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.05959](https://arxiv.org/abs/2512.05959)  
 **Code**: [https://github.com/davidanugraha/M4-RAG](https://github.com/davidanugraha/M4-RAG)  
-**Area**: Information Retrieval
+**Area**: Information Retrieval  
 **Keywords**: Retrieval-Augmented Generation, Multilingual, Multicultural, Visual Question Answering, Multimodal Retrieval
 
 ## TL;DR
 
-This paper proposes M4-RAG, the first large-scale multilingual, multicultural, multimodal RAG evaluation framework, covering 42 languages and 189 countries with 80K+ cultural VQA instances. It systematically reveals two key findings: RAG is effective for smaller models but does not scale positively with model size, and cross-lingual retrieval suffers from severe performance degradation.
+Ours proposes M4-RAG, the first large-scale multilingual, multicultural, and multimodal RAG evaluation framework. Covering 42 languages and 80K+ cultural VQA instances from 189 countries, it systematically reveals that RAG is effective for small models but fails to scale positively with model size, while showing severe performance degradation in cross-lingual retrieval.
 
 ## Background & Motivation
 
-1. **Background**: RAG has been widely adopted in LLMs and VLMs to enhance generation quality through external knowledge retrieval. Progress has been made in multilingual RAG and multimodal RAG separately, but their intersection—multilingual multimodal RAG—remains largely unexplored.
-2. **Limitations of Prior Work**: Existing RAG evaluation benchmarks either cover only the text modality or support only English, lacking a large-scale framework that simultaneously addresses multilingual and multimodal settings. Cultural knowledge is inherently long-tailed and region-specific, making it difficult for even large models to encode reliably.
+1. **Background**: RAG technology is widely used in LLMs/VLMs to enhance generation quality via external knowledge. While multilingual RAG and multimodal RAG have progressed independently, their intersection—multilingual multimodal RAG—remains largely unexplored.
+2. **Limitations of Prior Work**: Existing RAG benchmarks either cover only the text modality or support only English, lacking a large-scale evaluation framework that simultaneously addresses multilingual and multimodal requirements. Cultural knowledge is inherently long-tail and region-specific, making it difficult for models to encode reliably.
 3. **Key Challenge**: In the real world, knowledge access is inherently both multilingual and multimodal, yet existing RAG evaluations fail to reflect this complexity.
-4. **Goal**: (1) Construct a multimodal RAG evaluation benchmark covering 42 languages and 56 dialects; (2) Systematically study the effect of different retrieval strategies on VLMs of varying scales; (3) Quantify RAG performance degradation under cross-lingual conditions.
-5. **Key Insight**: Cultural knowledge is selected as the test scenario—being naturally long-tailed and region-specific, it is well-suited for assessing RAG effectiveness.
-6. **Core Idea**: Construct the first multilingual multimodal RAG benchmark and reveal an inverse relationship between RAG utility and model scale.
+4. **Goal**: (1) Construct a multimodal RAG benchmark covering 42 languages and 56 dialects; (2) Systematically study the impact of different retrieval strategies on VLMs of varying scales; (3) Quantify RAG performance degradation under cross-lingual conditions.
+5. **Key Insight**: Cultural knowledge is selected as the test scenario because it is long-tail and region-specific, making it ideal for detecting RAG effectiveness.
+6. **Core Idea**: Build the first multilingual multimodal RAG benchmark to reveal the inverse relationship between RAG utility and model scale.
 
 ## Method
 
 ### Overall Architecture
 
-The M4-RAG evaluation framework comprises four configurations: (a) No-RAG baseline: VLM directly processes the question and image; (b) No-RAG with Oracle context: an upper bound providing perfectly relevant knowledge; (c) Text RAG: retrieves text documents via a text encoder; (d) Multimodal RAG: jointly leverages textual and visual signals for retrieval. The retrieval system employs a top-5 strategy over a million-scale multilingual document corpus.
+M4-RAG does not train new models but establishes a "controlled experimental platform" to disassemble the utility of RAG in multilingual multimodal cultural VQA. For a given cultural VQA instance (one image + one question), the framework requires the same VLM to respond under four supply conditions: (a) No RAG—VLM relies solely on parametric cultural knowledge; (b) Oracle Context—human-verified relevant standard knowledge is provided as a performance upper bound for "perfect retrieval"; (c) Text RAG—images are converted to captions, and text encoders retrieve documents; (d) Multimodal RAG—multimodal retrievers (e.g., mmE5, B3) use both image and text signals. Retrieval consistently takes the top-5 results from a million-scale multilingual Wikipedia corpus. Comparing scores across these configurations quantifies the real gain of RAG, the gap between text vs. multimodal retrieval, and the distance to the Oracle bound.
 
 ### Key Designs
 
-1. **Multilingual Multicultural VQA Benchmark Construction**:
+**1. Multilingual Multicultural VQA Benchmark: Cultural Long-tail Knowledge as a Touchstone**
 
-    - Function: Provides 80K+ culturally diverse image–question–answer pairs spanning 42 languages and 56 dialects.
-    - Mechanism: Integrates two complementary datasets—CVQA (30 countries, 31 languages, 10 cultural categories) and WorldCuisines (30 languages, 60K global cuisine VQA instances)—to achieve comprehensive linguistic and cultural coverage. WorldCuisines provides cross-lingual parallelism; CVQA provides domain diversity.
-    - Design Motivation: Cultural knowledge is long-tailed and region-specific, making reliable encoding by large models difficult and thus serving as a natural testbed for RAG.
+To test RAG effectiveness, a set of questions likely absent from model parameters is required. M4-RAG merges two complementary datasets to cover 42 languages, 56 dialects, and 80K+ VQA pairs: CVQA provides domain diversity (30 countries, 31 languages, 10 cultural categories), while WorldCuisines provides cross-lingual parallelism (30 languages, 60K global food VQA with aligned multilingual versions). The former ensures cultural complexity, while the latter allows for clean "language-switching" control experiments.
 
-2. **Controlled Retrieval Environment**:
+**2. Controllable Retrieval Environment: Reproducible yet Realistic**
 
-    - Function: Provides reproducible retrieval conditions that balance authenticity and controllability.
-    - Mechanism: Constructs a large-scale multilingual knowledge corpus from a April 2025 Wikipedia snapshot, using multiple query types (question-only, answer-only, culturally augmented queries) to maximize coverage. Top-25 articles are retrieved independently in both English and the target language, then cleaned and deduplicated, yielding 307K articles for CVQA and 223K for WorldCuisines.
-    - Design Motivation: Ensures non-English passages reflect culturally accurate terminology rather than direct translations, improving retrieval authenticity.
+To ensure RAG gains are attributable, M4-RAG freezes a large-scale multilingual knowledge corpus from a April 2025 Wikipedia snapshot. Multiple query methods (question-only, answer-only, culture-enhanced) are used to maximize recall. Crucially, **English and target languages retrieve top-25 results independently** rather than translating English results, ensuring non-English passages retain authentic terminology rather than machine-translated artifacts. After cleaning, CVQA yields 307,000 articles and WorldCuisines yields 223,000, forming a fixed retrieval pool.
 
-3. **Cross-Lingual Evaluation Design**:
+**3. Cross-lingual Evaluation Design: Decoupling Instruction Understanding from Evidence Utilization**
 
-    - Function: Quantifies the impact of language switching on VLM performance.
-    - Mechanism: Instruction prompts and Oracle contexts are each translated into target languages using Gemini-2.5-Flash, with human annotation for quality verification. The effects of "multilingual prompts" and "multilingual context" on performance are measured independently.
-    - Design Motivation: Isolates the model's ability to perform cultural reasoning under different language conditions, distinguishing instruction comprehension from evidence integration.
+Performance drops in non-English RAG could stem from either a failure to understand target-language instructions or an inability to integrate target-language evidence. M4-RAG translates instruction prompts and Oracle contexts **separately** into target languages (Gemini-2.5-Flash translation + manual validation). This allows independent observation of "multilingual prompt" vs. "multilingual context" variables. This disassembly reveals that switching prompt language causes only a 1–2% drop, while switching evidence language causes drops up to -32.4% in low-resource settings, suggesting that instruction understanding is rarely the bottleneck compared to cross-lingual evidence integration.
 
 ### Loss & Training
 
-This paper presents an evaluation framework and does not involve model training. Evaluation uses macro-averaged accuracy over multiple-choice answers. Annotation quality is assessed via a VLM-as-a-judge approach, with retrieval relevance scored against a reasoning-based rubric.
+As a pure evaluation framework, no model training is involved. Scoring utilizes macro-average accuracy for multiple-choice answers. Retrieval relevance quality is assessed via VLM-as-a-judge, where a VLM scores each result based on reasoning criteria to analyze the impact of high vs. low-quality retrieval.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Metric | Best No-RAG | Best RAG | Best Oracle |
-|---------|--------|-------------|----------|-------------|
-| CVQA | Accuracy | Gemma3-27B: 74.34% | mmE5 multimodal RAG shows the largest gain | Gemma3-27B achieves the highest score |
-| WorldCuisines | Accuracy | Gemma3-27B: 66.20% | Qwen2.5-VL-72B (Oracle) | Significantly outperforms baseline |
+|--------|------|-----------|---------|------------|
+| CVQA | Accuracy | Gemma3-27B: 74.34% | mmE5 Multimodal RAG significant gain | Gemma3-27B Max |
+| WorldCuisines | Accuracy | Gemma3-27B: 66.20% | Qwen2.5-VL-72B (Oracle) | Significantly superior to baseline |
 
-**Retrieval Strategy Comparison**:
+**Comparison of RAG Strategies**:
 
 | Retrieval Method | Effect |
-|-----------------|--------|
-| Text RAG (Caption-Query) | Worst; even underperforms the no-RAG baseline |
-| Multimodal RAG (mmE5) | Best; consistently outperforms text RAG |
-| Multimodal RAG (B3) | Second best; smaller gains than mmE5 |
-| Oracle-Query RAG | Moderate; limited by text-based querying |
+|---------|------|
+| Text RAG (Caption-Query) | Worst, often lower than No-RAG baseline |
+| Multimodal RAG (mmE5) | Best, consistently superior to Text RAG |
+| Multimodal RAG (B3) | Second best, smaller gain than mmE5 |
+| Oracle-Query RAG | Moderate, limited by text-only queries |
 
 ### Ablation Study
 
-| Configuration | Key Finding | Explanation |
-|--------------|-------------|-------------|
-| Small model + RAG vs. large model without RAG | Small model + RAG can match or exceed large model without RAG | External knowledge is more effective than parameter scaling |
-| High retrieval quality (>4) | Correct-answer retention 95–100%, correction rate 80–90% | High-quality retrieval reliably enhances performance |
-| Low retrieval quality (<2) | Correct-answer retention drops to 40–60% | Irrelevant context actively misleads the model |
-| Large model correction rate | Lower than small models | Strong parametric knowledge inertia resists adopting external evidence |
+| Configuration | Key Finding | Description |
+|------|---------|------|
+| Small Model + RAG vs. Large Model No-RAG | Small Model + RAG can match or exceed Large Models | External knowledge is more effective than parameter scaling |
+| High Retrieval Quality (>4 points) | Correctness persistence 95-100%, Correction rate 80-90% | High-quality retrieval reliably enhances performance |
+| Low Retrieval Quality (<2 points) | Correctness persistence drops to 40-60% | Irrelevant context actively misleads the model |
+| Large Model Correction Rate | Lower than small models | Large models have strong parametric knowledge inertia |
 
 ### Key Findings
 
-- **Inverse Relationship Between RAG and Model Scale**: RAG consistently benefits smaller VLMs, but returns diminish as model scale increases. In larger models, parametric knowledge competes with rather than complements retrieved evidence. Reasoning-oriented VLMs (e.g., Qwen3-VL) exhibit greater robustness under RAG settings compared to non-reasoning models.
-- **Severe Cross-Lingual Degradation**: Switching prompts from English to target languages incurs only a 1–2% drop, but switching Oracle context to target languages causes a sharp performance collapse, with low-resource languages dropping by up to −32.4% (Qwen2.5-VL-32B on CVQA). Pangea, despite being specifically trained on multilingual data, is still severely affected.
-- **Text RAG Worse Than No RAG**: Naive text RAG—converting images to captions before retrieval—introduces noise and can underperform the no-RAG baseline. Multimodal RAG is more reliable but not universally effective.
+- **Inverse Relationship between RAG and Model Scale**: RAG is consistently effective for small VLMs, but returns diminish as model size increases. Parametric knowledge in large models competes with rather than complements retrieved evidence. Reasoning-focused VLMs (e.g., Qwen3-VL) are more robust under RAG settings than non-reasoning counterparts.
+- **Severe Cross-lingual Degradation**: Switching prompts from English to target languages results in only a 1-2% drop, but switching Oracle context to target languages causes performance to plummet, with drops up to -32.4% for low-resource languages (Qwen2.5-VL-32B on CVQA). Even models trained on multilingual data, like Pangea, are severely affected.
+- **Text RAG is Counterproductive**: Naive text RAG (converting images to captions before retrieval) introduces noise and often performs worse than the No-RAG baseline. Multimodal RAG is more reliable but not a universal solution.
 
 ## Highlights & Insights
 
-- **Asymmetry Between Correction Rate and Retention Rate**: Under high-quality retrieval, retaining correct answers is easy (95–100%), but correcting wrong answers is harder (80–90% with large inter-model variance). This reveals a fundamental bottleneck in how current VLMs integrate external evidence—convincing a model it is wrong is far harder than confirming it is right.
-- **Larger Models Exhibit Stronger Prior Inertia**: Large models are less susceptible to misleading by low-quality retrieval (high retention) but also less receptive to correction from high-quality retrieval (low correction rate), exhibiting a double-edged effect. This is an important finding regarding diminishing returns on RAG investment.
-- **Code-Switching in Small Models**: Small models tend to code-switch to English when given non-English prompts, resulting in paradoxically smaller multilingual performance drops. Large models attempt to respond entirely in the target language and fail more severely.
+- **Asymmetry in Correction vs. Persistence**: It is easy to maintain a correct answer with high-quality retrieval (95-100%), but difficult to correct a wrong one (80-90% with large inter-model variance). This reveals a fundamental bottleneck in VLM evidence integration: persuading a model "you are wrong" is much harder than confirming "you are right."
+- **Model Scale Increases Inertial Priors**: Large models are less likely to be misled by low-quality retrieval (high persistence) but are also less likely to be corrected by valid retrieval (low correction), showing a "double-edged sword" effect. This points to diminishing returns on RAG investment as models grow.
+- **Code-Switching in Small Models**: Smaller models tend to code-switch to English answers under non-English prompts, resulting in smaller perceived multilingual performance drops. Large models attempt to answer strictly in the target language, leading to more frequent failures.
 
 ## Limitations & Future Work
 
-- Evaluation is limited to cultural VQA scenarios and may not fully generalize to RAG performance on other knowledge-intensive tasks.
-- Only open-source VLMs are evaluated; the latest closed-source models (e.g., GPT-4o's multimodal RAG capability) are excluded.
-- The knowledge base is drawn from Wikipedia, introducing coverage bias—Wikipedia content for certain cultures and languages may be incomplete.
-- **Future Directions**: (1) Model-aware retrieval strategies that dynamically adjust retrieval depth and modality based on model capability; (2) Joint retriever–VLM post-training; (3) Test-time adaptation enabling models to autonomously determine whether and how to leverage retrieved results.
+- Evaluation is limited to cultural VQA, which may not represent RAG performance in other knowledge-intensive tasks.
+- Only open-source VLMs were evaluated; latest closed-source models (e.g., GPT-4o) were not included.
+- The knowledge base from Wikipedia contains coverage bias; some cultures/languages may be underrepresented.
+- **Future Directions**: (1) Model-aware retrieval strategies—dynamically adjusting retrieval depth based on model capability; (2) Joint retriever-VLM post-training; (3) Test-time adaptation—enabling models to autonomously decide whether to retrieve and how to utilize results.
 
 ## Related Work & Insights
 
-- **vs. MRAG-Bench**: MRAG-Bench contains only 1,353 English samples; M4-RAG covers 42 languages with 80K+ samples, far surpassing it in scale and multilingual coverage.
+- **vs. MRAG-Bench**: MRAG-Bench contains only 1,353 English samples; M4-RAG covers 42 languages and 80K samples, vastly exceeding it in scale and diversity.
 - **vs. MIRACL**: MIRACL is a text-only multilingual retrieval benchmark lacking multimodal evaluation. M4-RAG covers both text and image modalities.
-- **vs. ICQ (multimodal composed retrieval)**: ICQ focuses on retrieval effectiveness itself, whereas M4-RAG evaluates end-to-end RAG impact on generation quality, more closely reflecting real-world application scenarios.
+- **vs. ICQ (multimodal composed retrieval)**: While ICQ focuses on retrieval performance itself, M4-RAG focuses on the end-to-end impact of RAG on generation quality, closer to real-world applications.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The first large-scale multilingual multimodal RAG evaluation framework, filling an important gap; however, the core contribution is evaluation rather than methodological innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Systematic evaluation across 11 models, 6 retrieval configurations, and 42 languages is comprehensive, with in-depth analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, precise articulation of findings, and highly informative figures and tables.
-- Value: ⭐⭐⭐⭐⭐ The revealed inverse relationship between RAG and model scale, and the identified bottleneck in cross-lingual evidence integration, offer important guidance for the community.
+- Novelty: ⭐⭐⭐⭐ First large-scale multilingual multimodal RAG evaluation framework, filling a significant gap, though focused on evaluation rather than method.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive systematic evaluation of 11 models, 6 retrieval configurations, and 42 languages with deep analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure, precise findings, and highly informative visualizations.
+- Value: ⭐⭐⭐⭐⭐ The revealed inverse relationship between RAG and model scale and the cross-lingual integration bottleneck provide important guidance for the community.
 
 <!-- RELATED:START -->
 
@@ -131,11 +119,11 @@ This paper presents an evaluation framework and does not involve model training.
 
 ## Related Papers
 
-- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
-- [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](../../ACL2026/information_retrieval/coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
 - [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
-- [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](../../ACL2026/information_retrieval/all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
+- [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](../../ACL2026/information_retrieval/coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
 - [\[CVPR 2026\] Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval](beyond_global_similarity_towards_fine-grained_multi-condition_multimodal_retriev.md)
+- [\[ACL 2026\] 生物医学 RAG 中检索何时无效：大规模实证研究](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
+- [\[ACL 2025\] REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](../../ACL2025/information_retrieval/real-mm-rag_a_real-world_multi-modal_retrieval_benchmark.md)
 
 </div>
 

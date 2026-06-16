@@ -2,67 +2,81 @@
 title: >-
   [Paper Note] Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 description: >-
-  [ACL 2026][LLM Pretraining][Working Memory] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay…
+  [ACL 2026][Pretraining][Paper Note] This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, primacy-recency effects) into the GPT-2 attention mechanism. By training from scratch on developmentally plausible small-scale corpora (10M/100M words), it finds that these constraints significantly improve syntacti
 tags:
-  - "ACL 2026"
-  - "LLM Pretraining"
-  - "Working Memory"
-  - "Attention Constraints"
-  - "Inductive Bias"
-  - "Data Scarcity"
-  - "Cognitive Alignment"
+  - ACL 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: ae6f8c1684d80e84
+content_hash: c90b55d6f97fd3bd
 ---
-
 # Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20789](https://arxiv.org/abs/2604.20789)  
 **Code**: None  
-**Area**: Cognitive Modeling / LLM Pre-training  
+**Area**: Cognitive Modeling / LM Pre-training  
 **Keywords**: Working Memory, Attention Constraints, Inductive Bias, Data Scarcity, Cognitive Alignment
 
 ## TL;DR
 
-This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, and primacy-recency effects) into the GPT-2 attention mechanism. By training from scratch on developmentally plausible small-scale corpora (10M/100M words), the authors find that these constraints significantly improve grammatical accuracy and the predictability of human reading times under data scarcity, while also promoting functional specialization of attention heads.
+This paper integrates human working memory constraints (fixed window, exponential decay, logistic decay, primacy-recency effects) into the GPT-2 attention mechanism. By training from scratch on developmentally plausible small-scale corpora (10M/100M words), it finds that these constraints significantly improve syntactic accuracy and the predictability of human reading times under data scarcity, while promoting functional specialization of attention heads.
 
 ## Background & Motivation
 
-**Background**: The self-attention mechanism in standard Transformers allows for nearly uniform access to all tokens within the context window, lacking intrinsic structural biases that reflect human cognitive limitations. While models like GPT-2 correlate well with human reading times and neural activity, this may occur "in spite of" rather than "because of" their architecture.
+**Background**: The self-attention mechanism of standard Transformers allows near-uniform access to all tokens within the context window, lacking intrinsic structural biases that reflect human cognitive limitations. While models like GPT-2 correlate well with human reading times and neural activity, this might be "in spite of" rather than "because of" their architecture.
 
-**Limitations of Prior Work**: Existing efforts to introduce cognitive constraints into Transformers are often post-hoc modifications (e.g., imposing decay biases on pre-trained models), involve truncating context during inference, or rely on soft constraints (e.g., ALiBi). None of these methods allow the constraints to shape representation learning from the onset of training.
+**Limitations of Prior Work**: Existing work introducing cognitive constraints into Transformers either involves post-hoc modifications (e.g., applying decay biases to pre-trained models), context truncation during inference, or soft constraints (e.g., ALiBi). These methods do not allow constraints to shape representation learning from the start of training.
 
-**Key Challenge**: The field of NLP tends toward longer contexts and weaker inductive biases, yet human language processing is strictly constrained by limited working memory capacity. Does this constraint actually facilitate learning?
+**Key Challenge**: The NLP field trends toward longer contexts and weaker inductive biases, yet human language processing is strongly constrained by limited working memory capacity—could such constraints actually aid learning?
 
-**Goal**: (1) Systematically compare four cognitively-inspired attention constraints during training from scratch; (2) Evaluate their impact on grammatical competence and cognitive alignment in data-scarce scenarios.
+**Goal**: (1) Systematically compare four cognitive-inspired attention constraints during training from scratch; (2) Evaluate their impact on syntactic ability and cognitive alignment in data-scarce scenarios.
 
-**Key Insight**: By utilizing developmentally plausible datasets from the BabyLM Challenge (10M/100M words) and training at a scale comparable to human language acquisition, the cognitive constraint hypothesis becomes more comparable.
+**Key Insight**: By using developmentally plausible datasets from the BabyLM Challenge (10M/100M words) and training on a scale comparable to human language acquisition, the cognitive constraint hypothesis becomes more testable.
 
-**Core Idea**: Rigid cognitive constraints (especially fixed-window attention) act as inductive biases that actively "scaffold" learning during data scarcity, rather than hindering it.
+**Core Idea**: Hard cognitive constraints (especially fixed window attention) act as inductive biases that actively "scaffold" learning during data scarcity rather than hindering it.
 
 ## Method
 
 ### Overall Architecture
 
-Four attention variants are implemented on the GPT-2-small architecture and trained from scratch on BabyLM's 10M and 100M word corpora. Grammatical ability is evaluated using BLiMP, and alignment with human processing data is assessed using psychometric benchmarks.
+The paper investigates whether imposing human working memory limits on attention helps or hinders learning when training data is scarce. The approach is restrained: no changes to training objectives or new modules. It solely modifies the self-attention of GPT-2-small to implement four cognitive-inspired variants, training them from scratch on BabyLM corpora. Evaluation includes syntactic ability via BLiMP, psychometric alignment with human reading times, and attention visualization to observe functional specialization.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["BabyLM Developmentally Plausible Corpora<br/>10M / 100M words"] --> B["GPT-2-small Self-Attention<br/>Modified attention, same objective"]
+    B --> C["Fixed Window Attention<br/>External −∞, W∈{4,5,7,9}"]
+    B --> D["Exponential / Logistic Decay<br/>Soft discounting by distance"]
+    B --> E["Primacy-Recency Attention<br/>Trainable start/end biases"]
+    C --> F["Training from Scratch<br/>LM Loss + AdamW"]
+    D --> F
+    E --> F
+    F --> G["BLiMP Syntactic Accuracy"]
+    F --> H["Psychometrics: Reading Time Alignment"]
+    F --> I["Attention Visualization: Functional Specialization"]
+```
 
 ### Key Designs
 
-1.  **Fixed Window Attention**:
-    - **Function**: Simulates the limited capacity of working memory.
-    - **Mechanism**: Attention for each token is only calculated over the preceding $W$ tokens; positions outside the window are set to $-\infty$ (vanishing to zero after softmax). Window sizes $W \in \{4, 5, 7, 9\}$ correspond to Cowan’s 4-chunk theory and Miller’s $7 \pm 2$ theory.
-    - **Design Motivation**: Forces the model to operate within a strictly local context to isolate the learning effects of local dependencies.
+**1. Fixed Window Attention: Imposing discrete capacity limits via a hard wall**
 
-2.  **Exponential/Logistic Decay Attention**:
-    - **Function**: Simulates the recency effect—recent information is highly accessible, while distal information gradually fades.
-    - **Mechanism**: Exponential decay mixes raw attention weights with a distance decay factor: $a'_{ij} = (1-\alpha)a_{ij} + \alpha e^{-|i-j| \cdot \lambda}$. Logistic decay uses a sigmoid curve to maintain information before a sharp drop: $w_{ij} = 1/(1 + e^{k(d_{ij} - m)})$.
-    - **Design Motivation**: Exponential decay provides a continuous decline, while logistic decay offers a "hold-then-drop" pattern closer to discrete capacity models.
+Standard self-attention allows uniform access across the window, unlike human cognition where working memory holds only a few chunks. This method restricts each token to attending only to the previous $W$ tokens. Positions outside the window are set to $-\infty$ before softmax, ensuring zero weight. Window sizes $W \in \{4, 5, 7, 9\}$ correspond to Cowan’s 4-chunk theory and Miller’s $7 \pm 2$ limit. Forcing the model into local contexts isolates how much can be learned from local dependencies. Unexpectedly, these local models perform well even on non-local phenomena like Binding and Argument Structure.
 
-3.  **Primacy-Recency Attention**:
-    - **Function**: Simulates memory advantages for the beginning and end of sequences.
-    - **Mechanism**: Two trainable parameters $w_{\text{primacy}}$ and $w_{\text{recency}}$ are learned to control exponential decay biases at the start and end of sequences, which are then superimposed onto standard attention weights.
-    - **Design Motivation**: Humans exhibit higher recall rates for the first and last items in a list compared to middle items.
+**2. Exponential / Logistic Decay: Softly modeling recency effects**
+
+Unlike the hard cut-off of fixed windows, human memory decays gradually. These variants discount attention based on distance. Exponential decay mixes the original weight with a factor that decreases exponentially:
+
+$$a'_{ij} = (1-\alpha)a_{ij} + \alpha e^{-|i-j| \cdot \lambda}$$
+
+This creates a smooth, continuous decline. Logistic decay uses an S-curve, maintaining high accessibility for a certain distance before dropping sharply:
+
+$$w_{ij} = 1/(1 + e^{k(d_{ij} - m)})$$
+
+Exponential decay models "constant forgetting," while logistic decay models a "stable-then-cliff" pattern, closer to discrete capacity but differentiable.
+
+**3. Primacy-Recency Attention: Trainable biases for sequence boundaries**
+
+Human memory exhibits advantages for both the beginning (primacy) and end (recency) of lists. This design learns two parameters $w_{\text{primacy}}$ and $w_{\text{recency}}$ to control exponential decay biases at the start and end of sequences, allowing the model to determine the importance of boundary information.
 
 ### Loss & Training
 
@@ -72,7 +86,7 @@ Standard language modeling loss (next-token prediction). AdamW optimizer, lr=5e-
 
 ### Main Results
 
-**BLiMP Average Accuracy**
+**Average BLiMP Accuracy**
 
 | Model | 10M Data | 100M Data |
 |------|---------|----------|
@@ -86,41 +100,41 @@ Standard language modeling loss (next-token prediction). AdamW optimizer, lr=5e-
 
 | Model | 10M | 100M |
 |------|-----|------|
-| Baseline | ~3.2 | Slightly higher |
-| Fixed Window 7/9 | **~6.0** | Lower |
+| Baseline | ~3.2 | Higher |
+| Fixed Window 7/9 | **~6.0** | Decreased |
 
 ### Key Findings
 
--   **Constraints are most effective under data scarcity**: With 10M words, Fixed Window 5 outperforms the baseline by approximately 7 percentage points; at 100M words, the gap narrows to 1-2 percentage points.
--   Constrained models perform exceptionally well on Argument Structure, with Fixed Window 5 nearly reaching the level of pre-trained GPT-2-large.
--   **Counter-intuitive Finding**: Extremely local models (window of only 5 tokens) perform well even on non-local linguistic phenomena (e.g., Binding, Argument Structure).
--   Psychometric alignment actually decreases at 100M—all models (including the baseline) show lower alignment with human processing as data increases, supporting the hypothesis that language modeling objectives do not asymptotically converge with human understanding.
--   Attention visualization shows that constrained models develop functional specialization in attention heads (e.g., subject-verb-object heads, verb-specific heads, noun-specific heads), whereas the baseline attention distribution remains diffuse and unspecialized.
+- **Constraints are most effective under data scarcity**: At 10M words, Fixed Window 5 outperforms the baseline by ~7%, while the gap narrows to 1-2% at 100M.
+- Constrained models excel in Argument Structure; Fixed Window 5 nearly matches pre-trained GPT-2-large levels.
+- **Counter-intuitive finding**: Highly local models (window of 5) perform well on non-local linguistic phenomena (e.g., Binding).
+- Psychometric alignment decreases at 100M—all models (including baseline) align less with human processing as data increases, supporting the hypothesis that LM objectives do not asymptotically converge with human understanding.
+- Attention visualization shows that constrained models develop functional specialization (e.g., subject-verb-object heads), whereas baseline attention remains diffuse.
 
 ## Highlights & Insights
 
--   The core argument that "cognitive constraints are a scaffold, not a hindrance" is powerful, challenging the mainstream NLP trend of pursuing ever-longer contexts.
--   The finding that Fixed Window models perform well even on non-local tasks is surprising, suggesting that local constraints force the model to develop more explicit syntactic encodings.
--   The observation that more data reduces psychometric alignment provides new evidence for discussions regarding whether large models truly "understand" language.
+- The core argument that "cognitive constraints are scaffolds, not obstacles" is powerful, challenging the trend for longer contexts in NLP.
+- The success of fixed-window models on non-local tasks suggests that local constraints force the model to develop more explicit syntactic encodings.
+- The finding that more data can reduce psychometric alignment provides new evidence for debates on whether LLMs truly "understand" language like humans.
 
 ## Limitations & Future Work
 
--   Experiments were limited to GPT-2-small; it is unknown if the conclusions scale to larger models.
--   Validations were only conducted in English; free word order or head-final languages might yield different results.
--   The implementation of working memory (fixed window) is significantly simpler than the actual human cognitive system.
--   Phenomena like Island Effects remain unimproved, indicating that architectural constraints cannot solve all linguistic phenomena.
+- Experiments were limited to GPT-2-small; scalability to larger models is unknown.
+- Only verified on English; free-word-order or verb-final languages may differ.
+- The implementation of working memory (fixed window) is far simpler than real cognitive systems.
+- Certain phenomena like Island Effects remain unresolved, indicating architectural constraints cannot fix all linguistic gaps.
 
 ## Related Work & Insights
 
--   **vs ALiBi**: ALiBi uses soft biases to discourage but not prohibit long-range attention, whereas this work uses hard constraints to block it entirely.
--   **vs De Varda & Marelli (2024)**: They applied post-hoc decay to pre-trained models; this work trains from scratch to allow constraints to shape the learning process.
+- **vs ALiBi**: ALiBi discourages but does not forbid long-distance attention; this work uses hard constraints to block it entirely.
+- **vs De Varda & Marelli (2024)**: They apply post-hoc decay to pre-trained models; this work trains from scratch to let constraints shape learning.
 
 ## Rating
 
--   Novelty: ⭐⭐⭐⭐ The interdisciplinary bridge from cognitive science to computational linguistics is valuable, though the individual components are not entirely new.
--   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive validation via BLiMP, psychometrics, attention visualization, and syntactic probing.
--   Writing Quality: ⭐⭐⭐⭐⭐ Strong argumentation, in-depth experimental analysis, and honest discussion of limitations.
--   Value: ⭐⭐⭐⭐ Provides important insights for cognitively-inspired model design and data-efficient learning.
+- Novelty: ⭐⭐⭐⭐ Interdisciplinary bridge between cognitive science and NLP is valuable.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple evaluations via BLiMP, psychometrics, visualization, and probing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Strong argumentation and honest discussion of limitations.
+- Value: ⭐⭐⭐⭐ Significant implications for cognitive-inspired design and data-efficient learning.
 
 <!-- RELATED:START -->
 
@@ -130,9 +144,9 @@ Standard language modeling loss (next-token prediction). AdamW optimizer, lr=5e-
 
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 - [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
-- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
-- [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](../../NeurIPS2025/llm_pretraining/neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 - [\[NeurIPS 2025\] Memory Mosaics at Scale](../../NeurIPS2025/llm_pretraining/memory_mosaics_at_scale.md)
+- [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](../../NeurIPS2025/llm_pretraining/neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
+- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 
 </div>
 

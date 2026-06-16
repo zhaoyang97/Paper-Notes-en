@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation
 description: >-
-  [ICML 2026][Multi-Agent][Multi-Agent System] BPD reconstructs multi-round interactions of LLM multi-agent systems (MAS) into a "signed Directed Acyclic Graph (DAG)," assigning $\{-1, 0, 1\}$ scores representing agreement…
+  [ICML 2026][Multi-Agent][Multi-Agent System] BPD reconfigures multi-round interactions in LLM Multi-Agent Systems (MAS) into a "signed temporal Directed Acyclic Graph (DAG)," scoring each message as $\{-1, 0, 1\}$ (disagree / indifferent / agree). It then utilizes a PageRank-style single-pass reverse topological propagation to compute each agent's contribution to
 tags:
-  - "ICML 2026"
-  - "Multi-Agent"
-  - "Multi-Agent System"
-  - "Corruption Attack"
-  - "Signed DAG"
-  - "Backpropagation"
-  - "PageRank"
+  - ICML 2026
+  - Multi-Agent
+  - Multi-Agent System
+  - PageRank
 date: 2026-05-08
-content_hash: 9e6d5a206c39ec11
+content_hash: 0c78d49d221f187d
 ---
-
 # Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation
 
 **Conference**: ICML 2026  
@@ -24,112 +20,123 @@ content_hash: 9e6d5a206c39ec11
 **Keywords**: Multi-Agent System, Corruption Attack, Signed DAG, Backpropagation, PageRank
 
 ## TL;DR
-BPD reconstructs multi-round interactions of LLM multi-agent systems (MAS) into a "signed Directed Acyclic Graph (DAG)," assigning $\{-1, 0, 1\}$ scores representing agreement, indifference, or opposition to each message. It then employs a PageRank-style single-pass backward topological propagation to calculate the contribution score of each agent to the final answer. Agents with outlier scores are identified as malicious and their outgoing edges are pruned. The method is training-free, operates on a per-query basis, and is inherently robust to dynamic topologies.
+BPD reconfigures multi-round interactions in LLM Multi-Agent Systems (MAS) into a "signed temporal Directed Acyclic Graph (DAG)," scoring each message as $\{-1, 0, 1\}$ (disagree / indifferent / agree). It then utilizes a PageRank-style single-pass reverse topological propagation to compute each agent's contribution to the final answer. Outliers are identified as malicious agents and their outgoing edges are pruned—making it training-free, query-time ready, and naturally robust to dynamic topologies.
 
 ## Background & Motivation
-**Background**: LLM agents have evolved from monolithic entities to Multi-Agent Systems (MAS), applied in fields such as software engineering, market analysis, and web automation. Common topologies include Flat (equal discussion) and Hierarchical (respondents + reviewers).
+**Background**: LLM Agents have evolved from single-entity systems to Multi-Agent Systems (MAS), applied in software engineering, market analysis, and web automation. Common topologies include Flat (equal discussion) and Hierarchical (Respondent + Reviewer).
 
-**Limitations of Prior Work**: MAS are more fragile than single LLMs because information flows "infectiously"—harmful content from a hijacked agent can cascade through the dialogue topology to contaminate all downstream agents (corruption attack). Existing defenses fall into three categories, each with critical weaknesses:
-- Output Supervision (BlockAgents, AgentForest): Rely on multi-round debates or similarity comparisons, but are vulnerable to subtle text perturbations or direct attacks on the evaluator.
-- Static Graph Approaches (Huang et al.): Evaluate topological robustness as fixed GNN configurations, but fail when the topology changes.
-- Dynamic Training (G-Safeguard): Train classifiers to read internal agent states but rely on local signals, failing to capture how "corrupt information flows to the final decision."
+**Limitations of Prior Work**: MAS is more fragile than individual LLMs because information flows "contagiously"—harmful content from a hijacked agent can propagate through the dialogue topology to contaminate all downstream agents (corruption attack). Existing defenses fall into three main categories, each with critical flaws:
+- Output-supervision (BlockAgents, AgentForest): Rely on multi-round debates or similarity comparisons but are vulnerable to subtle text perturbations or direct attacks on the evaluator;
+- Static-graph (Huang et al.): Based on fixed topology robustness but fail when the topology changes;
+- Dynamic-training (G-Safeguard): Train classifiers to read agent internal states but rely only on local signals, failing to see how "corrupted information flows to the final decision."
 
-**Key Challenge**: Existing defenses are either "global but static" or "dynamic but local." No current method performs "global influence tracing" per query to quantify each agent's actual contribution to the final answer without retraining.
+**Key Challenge**: Existing defenses are either "global but static" or "dynamic but local." No method exists to perform "global influence traceability" for each query without retraining to quantify an agent's true contribution to the final answer.
 
-**Goal**: (i) Establish a unified graph representation for MAS communication capable of describing arbitrary topologies, agent counts, and rounds; (ii) Design a training-free influence evaluation operator using single-pass backpropagation to make "agent contribution to final decision" a computable metric; (iii) Utilize statistical outlier detection to identify malicious agents and repair the graph, ensuring immunity to dynamic topologies and attacker identity switching.
+**Goal**: (i) Establish a unified graph representation for MAS communication across arbitrary topologies, agent counts, and rounds; (ii) Design a training-free, single-pass backpropagation influence operator to make "per-agent contribution to decision" a computable quantity; (iii) Use statistical outlier detection to identify malicious agents and repair the graph, ensuring immunity to dynamic topology and attacker identity switching.
 
-**Key Insight**: Multi-round MAS dialogues naturally form a DAG when expanded by "time + agent"—edges only cross adjacent rounds, and no cycles exist. This provides a perfect closed-form solution for backward recursion. Drawing from PageRank's concept of "influence aggregation from downstream," the $\{-1, 0, +1\}$ agreement signs are treated as "signed transition probabilities." A single backward pass from the final answer retrieves the accumulated signed influence for each node.
+**Key Insight**: A multi-round MAS dialogue expanded by "time + agent" is naturally a DAG—edges only cross adjacent rounds with no cycles, allowing a perfect closed-form solution for reverse recursion. Borrowing the PageRank concept where "influence aggregates downstream," the signed transfer probability $\{-1, 0, +1\}$ is used to backpropagate influence from the final answer to compute the cumulative signed influence of each node.
 
-**Core Idea**: MAS = signed temporal DAG; Agent contribution = signed PageRank backward propagation; Malicious agent = intra-group deviation outlier; Defense = prune all outgoing edges of outlier agents.
+**Core Idea**: MAS = signed temporal DAG; agent contribution = signed PageRank reverse topological propagation; malicious agent = intra-group contribution deviation outlier; defense = delete all outgoing edges of outlier agents.
 
 ## Method
 
 ### Overall Architecture
-Given a MAS dialogue with $T$ rounds and $n$ agents, BPD processes in four steps: (1) Reconstruct the session into a signed DAG $G = (V, E)$; (2) Utilize an independent LLM scorer to assign $g_{ij} \in \{-1, 0, +1\}$ (oppose/ignore/agree) to each message; (3) Use backward recursion from the terminal answer to calculate node contribution scores $S(C_i)$ layer by layer; (4) Identify the set of malicious agents $\mathcal{M}$ based on outlier scores and prune their outgoing edges to obtain a repaired $G'$. This process occurs during the inference phase of each query, is training-free, requires a single backward topological pass, and is highly interpretable.
+BPD addresses the issue where a hijacked agent contaminates all downstream agents via the dialogue topology. It treats the entire MAS session as a "signed computation graph" for influence traceability. The conversation is reconfigured into a signed DAG across $T$ rounds and $n$ agents. An independent LLM scores each message as $\{-1, 0, +1\}$. A single reverse topological pass from the final answer computes the cumulative contribution of each agent. Outliers are identified as malicious and pruned. The process is training-free, single-pass, and interpretable.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: T-round n-agent MAS dialogue"] --> B["MAS → Signed Temporal DAG<br/>Expand agents into temporal nodes<br/>Independent LLM scores edges −1/0/+1"]
+    B --> C["Reverse Contribution Propagation<br/>Initialize boundary with final answer<br/>Multiply back by P⁽ᵗ⁾ along DAG to compute S"]
+    C --> D["Outlier Detection + Communication Pruning<br/>Calculate deviation Δ(i) by averaging agents<br/>Classify malicious if Δ(i) ≥ ε and prune outgoing edges"]
+    D --> E["Output: Re-aggregate clean answer on repaired graph G′"]
+```
 
 ### Key Designs
 
-1.  **MAS → Signed Temporal DAG**:
-    - **Function**: Unifies complex multi-round MAS communication into an acyclic graph, enabling a closed-form solution for backpropagation.
-    - **Mechanism**: Agent $A(i)$ at round $t$ is expanded into a temporal node $A_t(i)$, with the node set $V = \{A_t(i) | t=1..T, i=1..n\}$ and size $N = nT$. A message $A(i) \to A(j)$ at round $t$ is denoted as a directed edge $e_t(i,j): A_t(i) \to A_{t+1}(j)$. Since edges only cross adjacent time steps, the graph is inherently acyclic. An independent LLM evaluator rates each edge $e_{ij}$: when receiver $C_j$ produces $s_j$ based on $s_i$ from $C_i$, the scorer computes $g_{ij} = f(s_i, s_j) \in \{-1, 0, +1\}$, where positive indicates agreement/adoption, zero indicates low contribution, and negative indicates opposition/refutation.
-    - **Design Motivation**: The DAG structure ensures a unique topological order for "influence propagation," avoiding iterative convergence issues. The signing mechanism allows both "successful attacks" and "exposed attacks" to leave computable traces (the former amplifies positive scores, the latter amplifies negative scores), triggering outlier signals in either direction.
+**1. MAS → Signed Temporal DAG: Mapping arbitrary topologies into an acyclic graph**
 
-2.  **Backward Score Propagation Operator**:
-    - **Function**: Calculates the cumulative signed contribution of each agent node to the final decision via a single topological backward pass.
-    - **Mechanism**: Defining the signed adjacency matrix $\mathbf{G} \in \mathbb{R}^{N \times N}$ and the out-degree matrix $\mathbf{D} = \text{diag}(k_1, \ldots, k_N)$, the row-normalized signed propagation operator is $\mathbf{B} = \mathbf{D}^{-1} \mathbf{G}$. The terminal layer is initialized using the final answer: $S(A_T(i)) = +1$ if $A(i)$'s answer matches the MAS final answer $y_{\text{final}}$, otherwise $-1$. The backward recursion is $S(C_i) = \frac{1}{k_i} \sum_{C_j \in \mathcal{N}^+(C_i)} g_{ij} S(C_j) = \sum_j B_{ij} S(C_j)$. In vector form: $\mathbf{S}^{(t)} = \mathbf{P}^{(t)} \mathbf{S}^{(t+1)}$, where $\mathbf{P}^{(t)}_{ij} = g_{t,i \to j} / k_{t,i}$. Since $G$ is a DAG, a single backward multiplication yields a unique closed-form solution $\mathbf{S}^{(t)} = \mathbf{P}^{(t)} \mathbf{P}^{(t+1)} \cdots \mathbf{P}^{(T-1)} \mathbf{S}^{(T)}$. This is a signed, layer-wise DAG generalization of classic PageRank $\mathbf{r}^{(\ell+1)} = (1-d)\mathbf{1}/N + d\, \mathbf{W}^\top \mathbf{r}^{(\ell)}$, where $\mathbf{P}^{(t)}$ replaces $\mathbf{W}^\top$, signs are introduced, and boundary initialization replaces damping/teleportation.
-    - **Design Motivation**: PageRank directly quantifies "node influence on the final result," but traditional versions assume strong connectivity and steady states. MAS as finite DAGs are more efficient—calculated in one pass with complexity linear to the number of edges, keeping overhead $<10\%$.
+MAS topologies vary (Flat, Hierarchical), and rounds/agent counts are not fixed. BPD expands agent $A(i)$ at round $t$ into a temporal node $A_t(i)$. The node set $V = \{A_t(i) \mid t=1..T,\, i=1..n\}$ has size $N = nT$. A message $A(i) \to A(j)$ at round $t$ is a directed edge $e_t(i,j): A_t(i) \to A_{t+1}(j)$. Since edges only move from $t$ to $t{+}1$, the graph is inherently acyclic, enabling a single-pass closed-form solution. An independent LLM assigns "stances" $g_{ij} = f(s_i, s_j) \in \{-1, 0, +1\}$ to edges, where positive indicates agreement/adoption and negative indicates rejection/rebuttal. This signature mechanism ensures that both successful and failed attacks leave computable traces.
 
-3.  **Outlier Detection & Communication Pruning**:
-    - **Function**: Aggregates node scores to the agent level, identifies agents whose scores deviate significantly from the group as malicious, and repairs the MAS by deleting their outgoing edges.
-    - **Mechanism**: Agent scores are averaged as $\hat{S}(A(i)) = \frac{1}{|\mathcal{T}(i)|} \sum_{t \in \mathcal{T}(i)} S(A_t(i))$, followed by calculating the mean of pairwise differences: $\Delta(i) = \frac{1}{n-1} \sum_{j \ne i} |\hat{S}(A(i)) - \hat{S}(A(j))|$. The malicious set $\mathcal{M} = \{A(i) | \Delta(i) \ge \epsilon\}$ is identified (empirically $\epsilon = 1.5$). Pruning defines $E_\mathcal{M} = \{e_{t, i \to j} | A(i) \in \mathcal{M}\}$, leading to the repaired graph $G' = (V, E \setminus E_\mathcal{M})$, which silences malicious agents without collapsing the MAS structure.
-    - **Design Motivation**: Whether an attack succeeds or fails, malicious agents exhibit deviance in signed PageRank. Success amplifies positive contribution through "infection," while failure leads to refutation and significant negative scores. This dual-direction deviation makes detection insensitive to the specific attack morphology.
+**2. Reverse Contribution Propagation Operator: Trace influence from the final answer**
+
+To quantify an agent's contribution, BPD adapts the PageRank logic in reverse. Given the signed adjacency matrix $\mathbf{G} \in \mathbb{R}^{N \times N}$ and degree matrix $\mathbf{D} = \text{diag}(k_1, \ldots, k_N)$, the row-normalized propagation operator is $\mathbf{B} = \mathbf{D}^{-1}\mathbf{G}$. The terminal layer is initialized by consistency with the final answer $y_{\text{final}}$: $S(A_T(i)) = +1$ if consistent, else $-1$. The reverse recursion is:
+
+$$S(C_i) = \frac{1}{k_i} \sum_{C_j \in \mathcal{N}^+(C_i)} g_{ij}\, S(C_j) = \sum_j B_{ij}\, S(C_j),$$
+
+In vector form: $\mathbf{S}^{(t)} = \mathbf{P}^{(t)} \mathbf{S}^{(t+1)}$, where $\mathbf{P}^{(t)}_{ij} = g_{t,i \to j} / k_{t,i}$. Because it is a DAG, a single pass gives a unique closed-form solution $\mathbf{S}^{(t)} = \mathbf{P}^{(t)} \mathbf{P}^{(t+1)} \cdots \mathbf{P}^{(T-1)} \mathbf{S}^{(T)}$ without power iteration. This generalizes PageRank to a signed, layer-wise DAG context.
+
+**3. Outlier Detection + Communication Pruning: Identifying and silencing anomalous agents**
+
+Temporal node scores are averaged per agent: $\hat{S}(A(i)) = \frac{1}{|\mathcal{T}(i)|} \sum_{t \in \mathcal{T}(i)} S(A_t(i))$. The mean absolute deviation is $\Delta(i) = \frac{1}{n-1} \sum_{j \ne i} |\hat{S}(A(i)) - \hat{S}(A(j))|$. Agents with $\Delta(i) \ge \epsilon$ (empirically $\epsilon = 1.5$) are classified as malicious. Pairwise deviation is more robust than z-scores for small agent populations ($n \le 5$). Pruning removes all outgoing edges of malicious agents $E_\mathcal{M} = \{e_{t,i\to j} \mid A(i) \in \mathcal{M}\}$ to create repaired graph $G'$, silencing them from the decision path without collapsing the topology.
+
+### Mechanism Example
+Consider a 5-agent Flat session where agent #3 is hijacked. After DAG expansion, the scorer marks edges. If #3 successfully convinces #1 and #4, those edges get $g = +1$; if #2 and #5 reject it, those edges get $g = -1$. Backpropagation starts at the terminal layer and propagates these signs backward. In the outlier detection phase, if #3 was either highly persuasive (amplified positive) or highly rejected (amplified negative), its $\hat{S}$ will deviate significantly from the group, triggering $\Delta(3) \ge 1.5$. Its influence is then pruned.
 
 ### Loss & Training
-BPD is **training-free**. The scorer $f$ can be any third-party LLM, and backpropagation is reduced to matrix multiplication. The only hyperparameter is the outlier threshold $\epsilon$, set to $1.5$ based on ablation studies. The complexity of a backward pass and scoring is $O(|E|)$ LLM calls/multiplications, with total time overhead $<10\%$.
+BPD is **training-free**. The scorer $f$ can be any third-party LLM, and backpropagation is simple matrix multiplication. The only hyperparameter is $\epsilon = 1.5$. Complexity is $O(|E|)$ for backpropagation and LLM scoring, with overall overhead under 10%.
 
 ## Key Experimental Results
 
 ### Main Results
-Using GPT-4o as the base LLM, with 5-agent Flat/Hierarchy topologies across five MMLU subdomains. The default attack is the corruption attack by Amayuelas et al. (2024). Results are means of 3 runs $\pm$ 1 std.
+Using GPT-4o as the base LLM, 5 agents in Flat/Hierarchy topologies, evaluated on MMLU sub-domains.
 
 | Structure | Method | Algebra | Math | Chemistry | Computer | Security | Avg |
 |------|------|---------|------|-----------|----------|----------|-----|
 | Flat | No Attack | 95.0 | 94.7 | 75.3 | 92.0 | 85.0 | 88.4 |
-| Flat | Attack (None) | 78.7 | 74.7 | 64.7 | 82.3 | 81.0 | 76.3 |
+| Flat | Attack (No Defense) | 78.7 | 74.7 | 64.7 | 82.3 | 81.0 | 76.3 |
 | Flat | G-Safeguard | 88.3 | 88.7 | 71.0 | 87.7 | 83.0 | 83.7 |
 | Flat | AGENTXPOSED | 90.0 | 79.0 | 67.0 | 89.0 | 87.3 | 82.5 |
 | Flat | Challenger | 88.7 | 87.3 | 68.3 | 84.0 | 75.3 | 80.7 |
 | Flat | Inspector | 84.0 | 89.0 | 65.7 | 80.7 | 75.7 | 79.0 |
 | Flat | **BPD (Ours)** | 92.3 | 93.0 | 73.3 | 87.3 | 81.0 | **85.4** |
-| Hier | Attack (None) | 81.7 | 81.7 | 66.7 | 84.7 | 78.0 | 78.6 |
+| Hier | Attack (No Defense) | 81.7 | 81.7 | 66.7 | 84.7 | 78.0 | 78.6 |
 | Hier | G-Safeguard | 92.0 | 91.7 | 71.3 | 90.3 | 82.3 | 85.5 |
 | Hier | **BPD (Ours)** | 93.3 | 95.7 | 73.7 | 91.0 | 83.7 | **87.5** |
 
-BPD improves performance by 9–10 percentage points over no defense, outperforming G-Safeguard by 1.7% on Flat and 2% on Hier topologies. Monitoring Accuracy (Monitor ACC) reaches 90.7% on Flat.
+BPD gains 9–10% over no-defense, outperforming G-Safeguard by 1.7% in Flat and 2% in Hierarchical topologies.
 
 ### Ablation Study
 
-| Configuration | Monitor ACC | Task ACC | Key Finding |
+| Configuration | Monitor ACC | Task ACC | Key Insight |
 |------|----------|----------|----------|
-| Full BPD | 90%+ | 85–88% | Complete signed DAG + Backprop + Pruning |
-| No Signs ($\{0, 1\}$) | ↓↓ | ↓↓ | Loss of "refutation signals"; failed attackers undetected |
-| No Backprop (Local $g_{ij}$) | ↓↓ | ↓ | Degenerates to local signals; fails on deep infection |
-| $\epsilon = 1.0$ | High Rec. | ↓ | Over-killing normal agents |
-| $\epsilon = 1.5$ (Default) | Balanced | Optimal | Selected for the paper |
-| $\epsilon = 2.0$ | Low Rec. | ↓ | Missing stealthy attacks |
-| Dynamic Topology | Stable | -0% | Baseline average drop of 3% |
-| Semantic Perturbation | Gain ↑ | +~10% | Output supervision methods fail |
+| BPD Full | 90%+ | 85–88% | Signed DAG + Backprop + Pruning |
+| No Signature (Only $\{0, 1\}$) | ↓↓ | ↓↓ | Cannot detect rejected malicious agents |
+| No Backprop (Local $g_{ij}$) | ↓↓ | ↓ | Fails on deep contagion |
+| $\epsilon = 1.0$ | High Rec / Low Prec | ↓ | False positives (pruning clean agents) |
+| $\epsilon = 1.5$ (Default) | Balanced | Optimal | Selected setting |
+| $\epsilon = 2.0$ | Low Recall | ↓ | Misses latent attacks |
 
 ### Key Findings
-- The global perspective of backpropagation is stronger than local signals: In Flat topologies with deep infection, BPD outperforms G-Safeguard by ~1.7%. Gains are more pronounced in Hierarchy topologies (~2%) as the infection chain lengthens.
-- BPD excels in dynamic MAS scenarios (changing structures and attacker identities per query). Competitors drop by 3% while BPD sees almost zero loss, validating the "training-free + per-query calculation" design.
-- The largest advantage appears in semantic perturbation attacks (~+10%), which deceive output supervision but leave clear traces in "contribution score deviation."
-- Time overhead is $<10\%$, primarily from the LLM scorer; the backward multiplication is negligible.
+- Global backpropagation is stronger than local signals, especially in topologies with deep contagion (Flat/Hier).
+- BPD excels in dynamic MAS scenarios where baselines drop ~3% while BPD remains stable due to its per-query computation.
+- Superiority in semantic perturbation attacks (~+10% gain) where output-supervision often fails but contribution anomalies remain visible.
+- Latency overhead is <10%, primarily from LLM scoring calls.
 
 ## Highlights & Insights
-- The abstraction of "multi-round dialogue = temporal DAG" is elegant—it applies to any MAS topology and ensures closed-form solutions, avoiding the iterative complexity of standard PageRank. This can extend to multi-tool agents or debate-based reasoning.
-- The sign mechanism $\{-1, 0, +1\}$ is critical—standard PageRank only identifies "influence by majority agreement." Signs allow "refutation" to become a signal, expanding detection to "failed attack" scenarios.
-- Using the mean of pairwise differences $\Delta(i)$ for outlier detection is robust even for small groups ($n \le 5$) without requiring normality assumptions.
-- The isomorphism between backward PageRank and neural network backpropagation—propagating "error signals" through a calculation graph—is a sophisticated cross-domain adaptation for MAS security.
+- The "MAS dialogue = temporal DAG" abstraction is clean and applicable to any topology, providing a closed-form solution without iterative convergence issues.
+- The signed $\{-1, 0, +1\}$ logic is crucial—it enables the detection of "rejected influence," preventing attackers from evading detection by failing on purpose.
+- Pairwise deviation $\Delta(i)$ is robust for small groups ($n \le 5$) where normal distribution assumptions (z-score) fail.
+- The structural similarity between reverse PageRank and neural network backpropagation (propagating signals back through a graph) is an elegant cross-domain analogy.
 
 ## Limitations & Future Work
-- Scorer $f$ is an external LLM; its reliability determines $g_{ij}$. If the scorer is compromised (e.g., via prompt injection), BPD fails.
-- The DAG assumption requires strict "round-based" progression. It is not directly applicable to asynchronous or cyclic dialogues without temporal expansion.
-- The threshold $\epsilon = 1.5$ is empirical and may requires tuning across different tasks or topologies; it lacks an adaptive mechanism.
-- In "Byzantine" scenarios where malicious agents are the majority (>50%), the outlier assumption collapses, and BPD may misidentify normal agents.
-- Coordinated attacks where multiple attackers create a "consistent but wrong" consensus would produce positive signs, making them indistinguishable from the normal majority without an external ground-truth arbiter.
+- Scorer $f$ reliability: If the external LLM is compromised (e.g., prompt injection), BPD fails.
+- DAG constraint: Does not directly support asynchronous or cyclic tool-calling without first performing temporal expansion.
+- Static threshold: $\epsilon = 1.5$ is empirical and may require adjustment for different tasks or scales.
+- Byzantine scenarios: If malicious agents exceed 50%, the outlier assumption collapses.
+- Coordinated attacks: If multiple attackers coordinate a consistent but false solution, backpropagation may categorize them as a "correct" majority.
 
 ## Related Work & Insights
-- **vs G-Safeguard**: Both are dynamic, but G-Safeguard relies on trained GNNs and local signals. BPD is global and training-free, outperforming it by 1.7%–2.0%.
-- **vs Output Supervision (BlockAgents/AgentForest)**: These rely on debate/similarity and fail against text perturbations. BPD relies on contribution deviation and maintains a ~10% lead on such attacks.
-- **vs Static Topology (Huang et al. 2025)**: Their fixed searching fails in dynamic environments, where BPD remains robust.
-- **vs Collaborative Defense (Challenger/Inspector)**: These rely on dedicated reviewer agents; if reviewers are breached, they fail. BPD has no centralized "attackable" node.
+- **vs G-Safeguard**: Both are dynamic, but G-Safeguard relies on GNN classifiers and local signals; BPD is training-free and global.
+- **vs BlockAgents / AgentForest**: These rely on output similarity and fail under semantic perturbations; BPD relies on contribution deviation.
+- **vs Huang et al. 2025**: Their static topology search fails when the environment changes; BPD adapts query-by-query.
+- **vs Challenger / Inspector**: These rely on specific reviewer agents which become single points of failure; BPD has no centralized vulnerability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Elegantly injects PageRank into MAS security via signed layer-wise DAGs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various topologies, LLMs, and tasks, including dynamic scenarios and temporal overhead.
-- Writing Quality: ⭐⭐⭐⭐ Clear derivation from MAS to DAG to backpropagation.
-- Value: ⭐⭐⭐⭐ Provides the first "training-free + global + dynamic" MAS defense, readily deployable for any agent system.
+- Novelty: ⭐⭐⭐⭐ Mapping PageRank into a signed layer-wise DAG for MAS security is a mathematically elegant application.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various topologies, LLMs, task domains, and baselines including dynamic scenarios.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivation from MAS to DAG to backprop; well-argued connections to classical graph algorithms.
+- Value: ⭐⭐⭐⭐ Provides a training-free, global-view, dynamically adaptive defense for immediate deployment in agent systems.
 
 <!-- RELATED:START -->
 

@@ -2,153 +2,152 @@
 title: >-
   [Paper Note] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 description: >-
-  [CVPR2026][Image Generation][face retouching] This paper proposes BeautyGRPO, a reinforcement learning-based face retouching framework that constructs a fine-grained preference dataset FRPref-10K to train a dedicated rew…
+  [CVPR 2026][Image Generation][Reinforcement Learning] Ours proposes BeautyGRPO, a reinforcement learning-based face retouching framework. By constructing a fine-grained preference dataset FRPref-10K to train a specialized reward model and designing a Dynamic Path Guidance (DPG) mechanism to balance random exploration and high fidelity, the framework achieves natural retou
 tags:
-  - "CVPR2026"
-  - "Image Generation"
-  - "face retouching"
-  - "reinforcement learning"
-  - "aesthetic alignment"
-  - "flow matching"
-  - "preference modeling"
-  - "GRPO"
-  - "dynamic path guidance"
+  - CVPR 2026
+  - Image Generation
+  - Reinforcement Learning
+  - Flow Matching
+  - GRPO
 date: 2026-05-08
-content_hash: 731fcef2f878b9ec
+content_hash: a2e75ab68081d4f8
 ---
-
 # BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.01163](https://arxiv.org/abs/2603.01163)  
-**Code**: TBD (Project Page available)  
-**Area**: Image Generation / Face Restoration
-**Keywords**: face retouching, reinforcement learning, aesthetic alignment, flow matching, preference modeling, GRPO, dynamic path guidance
+**Code**: TBD (Project Page Available)  
+**Area**: Image Generation/Face Restoration  
+**Keywords**: Face Retouching, Reinforcement Learning, Aesthetic Alignment, Flow Matching, Preference Modeling, GRPO, Dynamic Path Guidance
 
 ## TL;DR
 
-This paper proposes BeautyGRPO, a reinforcement learning-based face retouching framework that constructs a fine-grained preference dataset FRPref-10K to train a dedicated reward model, and introduces a Dynamic Path Guidance (DPG) mechanism to balance stochastic exploration and high fidelity, achieving natural retouching results aligned with human aesthetic preferences.
+Ours proposes BeautyGRPO, a reinforcement learning-based face retouching framework. By constructing a fine-grained preference dataset FRPref-10K to train a specialized reward model and designing a Dynamic Path Guidance (DPG) mechanism to balance random exploration and high fidelity, the framework achieves natural retouching results aligned with human aesthetic preferences.
 
 ## Background & Motivation
 
-**Growing demand for face retouching**: The proliferation of social media and photography devices drives increasing demand for high-quality face retouching, requiring the removal of blemishes and acne while preserving identity-related features such as moles and pores.
+**High Demand for Face Retouching**: The popularity of social media and photography devices drives a growing demand for high-quality face retouching. Tasks require removing defects like acne and blemishes while preserving identity features such as moles and pores.
 
-**Fundamental limitations of supervised learning**: Existing methods (CNN-based and Transformer-based) rely on pixel-level supervised training, which can only imitate annotated images and fails to capture complex subjective aesthetic preferences, producing visually rigid and unnatural results.
+**Fundamental Limitations of Supervised Learning**: Existing methods (CNN-based, Transformer-based) rely on pixel-level supervised training, which can only mimic annotated images and fails to capture complex subjective aesthetic preferences, resulting in visually stiff and unnatural outputs.
 
-**Performance ceiling of supervised learning**: Pixel-level reconstruction objectives cause models to overfit specific retouching styles, preventing discovery of aesthetic solutions that surpass the quality of training data.
+**Supervision Ceiling Problem**: Pixel-level reconstruction targets lead models to overfit specific retouching styles, preventing them from discovering solutions that surpass the aesthetic quality of the training data.
 
-**Inadequacy of general-purpose image editing models**: Large models such as NanoBanana and SeedDream can perform retouching operations but frequently produce unnatural effects including identity alterations, overly smooth plastic-like skin, and artifacts.
+**Deficiencies of General Image Editing Models**: Large models like NanoBanana and SeedDream can perform retouching but often produce unnatural effects such as identity changes, oily/plastic skin textures, and artifacts.
 
-**Fidelity conflict in online RL**: T2I-RL frameworks such as FlowGRPO achieve exploration by injecting stochastic noise (SDE), but the accumulated random drift severely compromises the high fidelity required for face retouching, introducing conspicuous noise artifacts.
+**Fidelity Conflict in Online RL**: T2I-RL frameworks like FlowGRPO achieve exploration by injecting random noise (SDE), but accumulated random drift severely damages the high fidelity required for face retouching, introducing obvious noise artifacts.
 
-**Insufficient granularity of reward models**: Existing T2I reward models (ImageReward, HPSv2) primarily focus on global aesthetics or text–image consistency, and lack the capability to evaluate fine-grained perceptual dimensions such as skin smoothness, blemish removal, and texture preservation.
+**Insufficiency of Reward Models**: Existing T2I reward models (ImageReward, HPSv2) mainly focus on global aesthetics or text-image consistency, lacking the ability to evaluate fine-grained perceptual dimensions such as skin smoothness, blemish removal, and texture preservation.
 
 ## Method
 
 ### Overall Architecture
 
-BeautyGRPO consists of three major components: (1) the fine-grained preference dataset FRPref-10K; (2) a dedicated multi-dimensional reward model; and (3) the Dynamic Path Guidance (DPG) algorithm. The framework is built upon FluxKontext-LoRA as the backbone, with LoRA fine-tuning performed prior to RL training.
+BeautyGRPO aims to break the "supervision ceiling where models only mimic annotations to produce plastic faces" by using reinforcement learning to align face retouching with human aesthetic preferences. It consists of three components: a fine-grained preference dataset FRPref-10K providing training signals, a multi-dimensional reward model quantizing "aesthetics" into optimizable returns, and a Dynamic Path Guidance (DPG) algorithm to pull trajectories back to the high-fidelity manifold during RL exploration. The backbone is FluxKontext-LoRA, first fine-tuned with LoRA and then trained via RL.
 
-### Key Design 1: FRPref-10K Preference Dataset
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph D1["FRPref-10K Preference Dataset"]
+        direction TB
+        A["Source Portraits<br/>FFHQR + Private HD Set"] --> B["Multi-model Multi-seed<br/>Generate Retouching Candidates"]
+        B --> C["VLM 5-Dimension Labeling<br/>+ Human Review → 10K Preference Pairs"]
+    end
+    C --> D2["Three-stage Reward Model Training<br/>SFT → Self-training Filter → GRPO"]
+    D2 --> RM["Multi-dimensional Reward Model<br/>Evaluation + Reasoning"]
+    E["FluxKontext-LoRA Backbone"] --> F["Dynamic Path Guidance DPG Sampling<br/>Anchor Correction + Controlled Exploration"]
+    F --> G["Retouching Results"]
+    G --> RM
+    RM -->|Preference Return| H["GRPO Policy Update"]
+    H --> F
+```
 
-- **Data sources**: Source portraits are sampled from FFHQR and a private high-resolution collection to ensure diverse demographics and shooting conditions.
-- **Candidate generation**: Multiple models — NanoBanana, FluxKontext, RetouchFormer — with varied random seeds generate retouching candidates for each input image.
-- **Preference pair construction**: 10,000 high-resolution preference pairs are constructed via inter-model comparisons (output vs. output) and output-versus-label comparisons.
-- **Hybrid annotation pipeline**: (1) Multiple VLMs (GPT-4o, Qwen2.5-VL-72B, Gemini 2.5 Pro) evaluate images along five dimensions (skin smoothness, blemish removal, texture quality, sharpness, and identity preservation) and provide structured reasoning; (2) human reviewers audit under the same criteria; (3) disagreements are resolved by senior experts.
+### Key Designs
 
-### Key Design 2: Three-Stage Reward Model Training
+**1. FRPref-10K Preference Dataset: Constructing Fine-grained Aesthetic Labels**
 
-Initialized from Qwen2.5-VL-7B and trained under the UnifiedReward-Thinking paradigm:
+General reward models only understand global aesthetics or image-text consistency and cannot measure retouching-critical dimensions like skin smoothness, blemish removal, and texture preservation. FRPref-10K samples source portraits from FFHQR and private high-resolution sets (ensuring diversity in demographics and shooting conditions). For each image, retouching candidates are generated using multiple models (NanoBanana, FluxKontext, RetouchFormer) under different random seeds. 10,000 preference pairs are constructed through inter-model (output vs. output) and output-label comparisons. The labeling follows a hybrid process: multiple VLMs (GPT-4o, Qwen2.5-VL-72B, Gemini 2.5 Pro) provide structured reasoning across five dimensions (skin smoothness, blemish removal, texture quality, clarity, identity preservation). Human auditors review samples under the same standards, with senior experts resolving disagreements.
 
-- **Stage 1 (Structured reasoning initialization)**: SFT on a 2K subset trains the model to generate five-dimensional structured reasoning within `<think>` blocks and produce final preference decisions within `<answer>` blocks.
-- **Stage 2 (Self-training with consistency filtering)**: The Stage 1 model generates multiple reasoning trajectories for the remaining 8K samples; consistent trajectories are filtered by both preference correctness and reasoning coherence, followed by another round of SFT.
-- **Stage 3 (GRPO robustness enhancement)**: GRPO is applied to inconsistent samples to explore diverse reasoning paths, supervised jointly by an outcome reward (preference accuracy) and a process reward (reasoning coherence evaluated by DeBERTa-V3).
+**2. Three-stage Reward Model Training: From Structured Reasoning to GRPO Robustification**
 
-### Key Design 3: Dynamic Path Guidance (DPG)
+The reward model is based on Qwen2.5-VL-7B and adopts the UnifiedReward-Thinking paradigm in three steps: Stage 1 involves SFT on a 2K subset, enabling the model to write five-dimension structured reasoning in the `<think>` block and provide preference decisions in the `<answer>` block; Stage 2 uses the Stage 1 model to generate multiple reasoning trajectories for the remaining 8K samples, filtering for consistent trajectories based on preference correctness and reasoning coherence before further SFT; Stage 3 applies GRPO to samples that remain inconsistent, encouraging the exploration of diverse reasoning paths, supervised jointly by outcome rewards (preference accuracy) and process rewards (DeBERTa-V3 evaluating reasoning coherence). The resulting reward model can both judge quality and provide justifications.
 
-**Problem**: FlowGRPO converts the ODE to an SDE (injecting noise $\sigma_t d\omega$) to enable exploration, but cumulative stochastic drift causes trajectories to deviate from the high-fidelity manifold.
+**3. Dynamic Path Guidance (DPG): Ensuring RL Exploration without Compromising Realism**
 
-**Core Idea of DPG**: At each sampling timestep, the guidance trajectory is dynamically re-planned to pull the current state back toward the high-fidelity manifold near an anchor point while preserving controlled exploration.
-
-- **Stable anchor**: High-preference samples $x_0^{\text{anchor}}$ from FRPref-10K are selected as anchors — introduced only during sampling (not as a supervision target) — to constrain trajectories near the high-fidelity manifold.
-- **Dynamic trajectory re-planning**: A straight-line ODE trajectory is re-planned between the current state $x_t$ and the anchor, computing the target state at the next timestep as $x_{t-\Delta t}^* = (\Delta t/t) x_0^{\text{anchor}} + (1 - \Delta t/t) x_t$.
-- **Guided correction vector**: $z_t^{\text{anchor}} = (x_{t-\Delta t}^* - \mu_t) / \sigma_{\text{step}}$, indicating the direction that pulls the trajectory back toward the anchor path.
-- **Mixed noise**: $z_t^{\text{mix}} = \lambda(t) z_t^{\text{anchor}} + (1-\lambda(t)) z_t^{\text{std}}$, where $\lambda(t) = t / \max(1, T-1)$ is a time-dependent coefficient — stronger anchor guidance at early timesteps corrects structural deviations, while greater reliance on stochastic noise at later timesteps encourages fine-grained exploration.
-- **Efficiency optimization**: The full sampling trajectory is divided into $K=3$ segments; DPG updates are applied at one randomly selected timestep per segment, with ODE updates applied at the remaining steps.
+FlowGRPO converts ODEs to SDEs and explores by injecting noise $\sigma_t d\omega$; however, cumulative random drift shifts trajectories away from the high-fidelity manifold, introducing artifacts. DPG re-plans the guidance trajectory at each sampling step to pull the current state back toward the high-fidelity manifold near an anchor while maintaining controlled exploration. First, high-preference samples from FRPref-10K are used as stable anchors $x_0^{\text{anchor}}$ (introduced only during sampling, not as supervision targets). A linear ODE trajectory is re-planned between the current state $x_t$ and the anchor to calculate the next target $x_{t-\Delta t}^* = (\Delta t/t) x_0^{\text{anchor}} + (1 - \Delta t/t) x_t$. This yields a correction vector $z_t^{\text{anchor}} = (x_{t-\Delta t}^* - \mu_t) / \sigma_{\text{step}}$ to pull the trajectory toward the anchor. This is mixed with standard noise: $z_t^{\text{mix}} = \lambda(t) z_t^{\text{anchor}} + (1-\lambda(t)) z_t^{\text{std}}$, where $\lambda(t) = t / \max(1, T-1)$ ensures early steps use anchor guidance to correct structure while later steps use random noise for fine-grained exploration. To save computation, the full trajectory is divided into $K=3$ segments; in each segment, only one random time step performs a DPG update while others follow the ODE.
 
 ### Loss & Training
 
-The GRPO objective (clipped surrogate objective) is adopted with normalized advantages $\hat{A}^i$. Under DPG, transition probabilities follow a Gaussian distribution $\mathcal{N}(\mu_{\text{new}}, \sigma_{\text{new}}^2 I)$, where $\mu_{\text{new}} = (1-\lambda)\mu_t + \lambda x_{t-\Delta t}^*$ and $\sigma_{\text{new}} = (1-\lambda)\sigma_{\text{step}}$, used to compute the stepwise likelihood ratio $r_t(\theta)$ for policy updates.
+A GRPO objective (clipped surrogate objective) is used alongside normalized advantages $\hat{A}^i$. Under DPG, transition probabilities follow a Gaussian distribution $\mathcal{N}(\mu_{\text{new}}, \sigma_{\text{new}}^2 I)$, where $\mu_{\text{new}} = (1-\lambda)\mu_t + \lambda x_{t-\Delta t}^*$ and $\sigma_{\text{new}} = (1-\lambda)\sigma_{\text{step}}$, used to compute the stepwise likelihood ratio $r_t(\theta)$ for policy updates.
 
 ## Key Experimental Results
 
-### Experimental Setup
+### Experimental Setting
 
 - **Backbone**: FluxKontext + LoRA fine-tuning
-- **Data**: FFHQR test set (1,000 images) + in-the-wild internet portraits (1,000 images)
-- **Evaluation metrics**: No-reference perceptual/aesthetic metrics (NIQE↓, NIMA↑, MUSIQ↑, MANIQA↑, NRQM↑, TOPIQ↑) + ArcFace identity preservation + FID
+- **Data**: 1,000 images from FFHQR test set + 1,000 in-the-wild internet portraits
+- **Metrics**: No-reference perceptual/aesthetic metrics (NIQE↓, NIMA↑, MUSIQ↑, MANIQA↑, NRQM↑, TOPIQ↑) + ArcFace identity preservation + FID
 - **Hardware**: 8×H20 GPUs
 
 ### Main Results
 
 | Method | Category | NIQE↓ | NIMA↑ | MUSIQ↑ | MANIQA↑ | TOPIQ↑ | ArcFace↑ |
-|--------|----------|-------|-------|--------|---------|--------|----------|
+|------|------|-------|-------|--------|---------|--------|----------|
 | RetouchFormer | Specialized | 11.153 | 4.723 | 4.465 | 1.036 | 0.605 | 0.986 |
-| NanoBanana | General editing | 11.301 | 4.919 | 4.681 | 1.009 | 0.621 | 0.889 |
+| NanoBanana | Gen. Editing | 11.301 | 4.919 | 4.681 | 1.009 | 0.621 | 0.889 |
 | FluxKontext+LoRA | Baseline | 12.913 | 4.694 | 4.459 | 1.035 | 0.601 | 0.973 |
-| FlowGRPO | RL baseline | 15.024 | 4.573 | 4.271 | 0.935 | 0.571 | 0.882 |
+| FlowGRPO | RL Baseline | 15.024 | 4.573 | 4.271 | 0.935 | 0.571 | 0.882 |
 | **BeautyGRPO (Ours)** | **RL** | **10.831** | **5.123** | **4.906** | **1.079** | **0.676** | 0.952 |
 
 ### User Study
 
 | Method | VRetouchEr | RetouchFormer | NanoBanana | Kontext LoRA | **Ours** |
-|--------|-----------|---------------|------------|-------------|---------|
+|------|-----------|---------------|------------|-------------|---------|
 | Win Rate | 6.50% | 8.50% | 9.75% | 12.00% | **63.25%** |
 
-100 participants voted on 20 test sample groups; BeautyGRPO achieves a win rate of 63.25%, substantially outperforming all baselines.
+100 participants voted on preferences for 20 sets of test samples; BeautyGRPO significantly outperformed all baselines with a 63.25% win rate.
 
 ### Ablation Study
 
-**Reward model comparison**: When replacing the editing reward model with alternatives, the proposed reward model outperforms EditReward, EditScore, and UnifiedReward-Edit across all metrics: NIMA (5.123), MUSIQ (4.906), MANIQA (1.079), and TOPIQ (0.676).
+**Reward Model Comparison**: Replacing the reward model with different editing reward models shows that the proposed RM surpasses EditReward, EditScore, and UnifiedReward-Edit across NIMA (5.123), MUSIQ (4.906), MANIQA (1.079), and TOPIQ (0.676).
 
-**Backbone generalizability**: Applying BeautyGRPO to Qwen-Image-Edit improves NIMA from 4.571 (original) / 4.824 (+LoRA) to 5.351 (+BeautyGRPO), and TOPIQ from 0.563 to 0.664.
+**Backbone Generalization**: Applying BeautyGRPO to Qwen-Image-Edit improved NIMA from 4.571 (original)/4.824 (+LoRA) to 5.351 (+BeautyGRPO), and TOPIQ from 0.563 to 0.664.
 
-**Effect of DPG step count $K$**: $K=3$ achieves performance comparable to $K=5$ with faster sampling and is adopted as the default.
+**Impact of DPG Steps K**: $K=3$ and $K=5$ showed similar performance, but $K=3$ was faster and thus chosen as the default.
 
 ### Key Findings
 
-- Directly applying FlowGRPO to face retouching leads to severe degradation (NIQE 15.024 vs. BeautyGRPO 10.831), validating the necessity of DPG.
-- Although BeautyGRPO's FID is slightly higher than the best supervised baseline (4.054 vs. 2.229), this reflects the model exploring aesthetic solutions beyond the training label distribution.
-- ArcFace scores remain high (0.952 / 0.944), demonstrating robust identity preservation alongside aesthetic enhancement.
+- Applying FlowGRPO directly to face retouching leads to severe degradation (NIQE 15.024 vs. 10.831), validating the necessity of DPG.
+- Although BeautyGRPO's FID is slightly higher than the best supervised baseline (4.054 vs. 2.229), this is because the model explores superior aesthetic solutions beyond the training label distribution.
+- ArcFace scores remain high (0.952/0.944), indicating identity remains robust during aesthetic enhancement.
 
 ## Highlights & Insights
 
-- This is the first work to introduce RL alignment based on human aesthetic preferences into face retouching, breaking through the performance ceiling of supervised learning.
-- The DPG mechanism is elegantly designed: anchor guidance combined with a time-dependent mixing coefficient achieves a graceful balance between fidelity and exploration.
-- The three-stage reward model training pipeline (SFT → self-training → GRPO), combined with a five-dimensional evaluation framework, constructs fine-grained feedback signals tailored to retouching.
-- A 63.25% user study win rate — far exceeding the runner-up at 12% — provides compelling qualitative evidence of effectiveness.
+- First to introduce RL alignment based on human aesthetic preferences to the face retouching task, breaking the supervised learning ceiling.
+- Sophisticated DPG mechanism: anchor guidance combined with time-dependent mixing coefficients achieves an elegant balance between fidelity and exploration.
+- Three-stage reward model training (SFT → Self-training → GRPO) combined with a five-dimension evaluation system provides fine-grained feedback for retouching.
+- User study win rate of 63.25%, far exceeding the second best at 12%, provides convincing qualitative evidence.
 
 ## Limitations & Future Work
 
-- Although large, FRPref-10K relies on a specific set of VLMs for annotation; annotation biases may propagate into the reward model.
-- The impact of the anchor selection strategy on output quality is insufficiently analyzed, and the matching scheme between anchors and input images is not clearly specified.
-- Evaluation is primarily conducted on FFHQR and internet portraits; robustness under challenging conditions such as extreme lighting, large head poses, and heavy occlusion is not explored.
-- ArcFace scores are slightly lower than some supervised methods (0.952 vs. 0.986); the trade-off between identity preservation and aesthetic enhancement warrants further optimization.
-- Computational costs are not thoroughly discussed (training on 8×H20 GPUs; DPG introduces additional overhead at inference).
+- While large, the FRPref-10K dataset relies on specific VLM sets for labeling; annotation bias might propagate to the reward model.
+- The impact of the anchor selection strategy on result quality is not fully analyzed; the method for matching anchors to input images is unclear.
+- Evaluation was mainly on FFHQR and internet portraits; robustness in difficult scenarios (extreme lighting, large angles, severe occlusion) was not explored.
+- ArcFace scores are slightly lower than some supervised methods (0.952 vs. 0.986); the trade-off between identity preservation and aesthetic enhancement can be further optimized.
+- Computational costs were not fully discussed (8×H20 training, DPG introduces overhead during inference).
 
 ## Related Work & Insights
 
-- **Specialized retouching models**: ABPN, RestoreFormer(++), VRetouchEr, RetouchFormer — rely on supervised learning and are constrained by pixel-level objectives.
-- **General-purpose editing models**: NanoBanana, ICEdit, SeedDream4.0, FluxKontext — capable but insufficiently precise and natural for retouching.
-- **RL alignment for diffusion models**: DDPO, DPOK (policy gradient), DiffusionDPO (offline), FlowGRPO (online SDE exploration) — BeautyGRPO builds on FlowGRPO and introduces DPG to address fidelity degradation.
-- **Reward modeling**: ImageReward, HPSv2, EditScore, EditReward, UnifiedReward — lack fine-grained dimensions specific to retouching.
+- **Specialized Retouching Models**: ABPN, RestoreFormer(++), VRetouchEr, RetouchFormer — rely on supervised learning, limited by pixel-level targets.
+- **General Editing Models**: NanoBanana, ICEdit, SeedDream4.0, FluxKontext — powerful but lack fine-grained naturalness for retouching.
+- **RL Alignment for Diffusion Models**: DDPO, DPOK (Policy Gradient), DiffusionDPO (Offline), FlowGRPO (Online SDE Exploration) — BeautyGRPO adds DPG to FlowGRPO to solve fidelity issues.
+- **Reward Modeling**: ImageReward, HPSv2, EditScore, EditReward, UnifiedReward — lack fine-grained dimensions for retouching.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The DPG mechanism and retouching-oriented preference alignment constitute a novel combination, though the core GRPO framework is adapted from FlowGRPO.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive coverage via quantitative results, qualitative analysis, user study, multiple ablations, and cross-backbone validation.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, well-motivated problem formulation, and complete mathematical derivations.
-- Value: ⭐⭐⭐⭐ — The first work to systematically introduce RL preference alignment into face retouching, opening a new research direction.
+- Novelty: ⭐⭐⭐⭐ — The DPG mechanism and retouching-oriented preference alignment are a novel combination, though the core GRPO framework is inspired by FlowGRPO.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Quantitative + Qualitative + User Study + multiple ablations + cross-backbone validation covering comprehensive metrics.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure, well-argued motivation, and complete mathematical derivations.
+- Value: ⭐⭐⭐⭐ — The first work to systematically introduce RL preference alignment to face retouching, opening a new direction.
 
 <!-- RELATED:START -->
 
@@ -156,11 +155,11 @@ The GRPO objective (clipped surrogate objective) is adopted with normalized adva
 
 ## Related Papers
 
-- [\[ICCV 2025\] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration](../../ICCV2025/image_generation/mofrr_mixture_of_diffusion_models_for_face_retouching_restoration.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
-- [\[ICCV 2025\] CharaConsist: Fine-Grained Consistent Character Generation](../../ICCV2025/image_generation/characonsist_fine-grained_consistent_character_generation.md)
-- [\[CVPR 2026\] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning](taming_preference_mode_collapse_via_directional_decoupling_alignment_in_diffusio.md)
-- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](../../AAAI2026/image_generation/multi-metric_preference_alignment_for_generative_speech_restoration.md)
+- [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
+- [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
+- [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
+- [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
 
 </div>
 

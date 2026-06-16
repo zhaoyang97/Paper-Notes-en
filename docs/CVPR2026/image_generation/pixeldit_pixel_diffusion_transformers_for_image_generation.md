@@ -2,106 +2,114 @@
 title: >-
   [Paper Note] PixelDiT: Pixel Diffusion Transformers for Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Pixel diffusion] PixelDiT proposes a fully Transformer-based dual-level pixel-space diffusion model: a patch-level DiT captures global semantics while a pixel-level DiT refines textural deta…
+  [CVPR 2026][Image Generation][Text-to-Image] PixelDiT proposes a dual-layer pixel-space diffusion model based entirely on Transformers: a patch-level DiT captures global semantics and a pixel-level DiT refines texture details. Without a VAE, it achieves 1.61 FID on ImageNet and allows direct training of text-to-image models in 1024 resolution pixel space.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Pixel diffusion"
-  - "dual-level Transformer"
-  - "end-to-end generation"
-  - "pixel modeling"
-  - "text-to-image"
+  - CVPR 2026
+  - Image Generation
+  - Text-to-Image
 date: 2026-05-08
-content_hash: b793ee0f16a6a6a9
+content_hash: 287a649bc4a5924a
 ---
-
 # PixelDiT: Pixel Diffusion Transformers for Image Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.20645](https://arxiv.org/abs/2511.20645)  
 **Code**: [https://github.com/](https://github.com/)  
-**Area**: Image Generation
-**Keywords**: Pixel diffusion, dual-level Transformer, end-to-end generation, pixel modeling, text-to-image
+**Area**: Image Generation  
+**Keywords**: Pixel Diffusion, Dual-layer Transformer, End-to-end Generation, Pixel Modeling, Text-to-Image
 
 ## TL;DR
-PixelDiT proposes a fully Transformer-based dual-level pixel-space diffusion model: a patch-level DiT captures global semantics while a pixel-level DiT refines textural details, achieving an FID of 1.61 on ImageNet without any VAE, and enabling direct text-to-image training at 1024-resolution in pixel space.
+PixelDiT proposes a dual-layer pixel-space diffusion model based entirely on Transformers: a patch-level DiT captures global semantics and a pixel-level DiT refines texture details. Without a VAE, it achieves 1.61 FID on ImageNet and allows direct training of text-to-image models in 1024 resolution pixel space.
 
 ## Background & Motivation
-1. **Background**: Latent-space diffusion is the dominant paradigm for DiT-based models; however, reliance on pretrained autoencoders introduces lossy reconstruction, limiting sampling fidelity and precluding joint optimization.
-2. **Limitations of Prior Work**: Pixel-space diffusion faces a fundamental challenge: models must simultaneously handle global semantics and high-frequency details. Aggressive patchification loses fine details, whereas small patches or long sequences lead to computational explosion.
-3. **Key Challenge**: No efficient pixel modeling mechanism exists that can jointly capture global semantics and perform per-pixel updates.
-4. **Goal**: Design a pure Transformer pixel-space diffusion model with explicitly structured pixel modeling.
-5. **Key Insight**: Decouple semantic learning from pixel-level updating into two hierarchical levels, each processed by Transformers operating at different granularities.
-6. **Core Idea**: A patch-level pathway performs long-range semantic attention (coarse granularity), while a pixel-level pathway performs dense per-pixel modeling (fine granularity), connected via pixel-wise AdaLN and token compaction.
+1. **Background**: Latent diffusion is the standard paradigm for DiTs, but it relies on pre-trained autoencoders which introduce lossy reconstruction, limiting sampling fidelity and hindering joint optimization.
+2. **Limitations of Prior Work**: Pixel-space diffusion faces the core challenge of pixel modeling—the need to simultaneously handle global semantics and high-frequency details. Aggressive patchification loses details, while small patches or long sequences lead to computational explosion.
+3. **Key Challenge**: Lack of an efficient pixel modeling mechanism capable of capturing both global semantics and pixel-wise updates.
+4. **Goal**: Design a pure Transformer pixel-space diffusion model with explicit structured pixel modeling.
+5. **Key Insight**: Decouple semantic learning and pixel-level updates into two levels, processed by Transformers of different granularities.
+6. **Core Idea**: A patch-level pathway performs long-range semantic attention (coarse-grained), while a pixel-level pathway performs dense pixel-wise modeling (fine-grained), connected via pixel-wise AdaLN and token compaction.
 
 ## Method
 
 ### Overall Architecture
-The dual-level architecture comprises a patch-level DiT that processes short token sequences with an aggressive patch size to capture global layout, and a pixel-level DiT (PiT blocks) that refines textures at pixel granularity. Pixel-wise AdaLN modulates each pixel token with semantic tokens; pixel token compaction compresses pixel tokens before global attention and decompresses them afterwards.
+PixelDiT aims to perform diffusion directly in pixel space without the aid of a VAE. The difficulty lies in requiring a single Transformer to both perceive global semantics and characterize pixel-wise high-frequency textures, two tasks with opposing requirements for token granularity. The solution decouples these tasks into two independent pathways: first, a patch-level DiT pathway segments the image into large patches and compresses them into short sequences to perform long-range attention on a low-resolution grid, specializing in global layout and semantics; second, a pixel-level DiT (referred to as a PiT block) returns to pixel-wise granularity, using the semantic output from the first pathway as a condition to refine textures and predict the final pixel-wise velocity field. The two pathways are linked through pixel-wise AdaLN (allowing semantics to modulate each pixel by spatial position) and token compaction (making pixel-level global attention computationally feasible).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Noisy Image (Pixel space, no VAE)"]
+    subgraph DUAL["Dual-layer Pathway Fusion (Cascaded semantics-to-pixels)"]
+        direction TB
+        B["patch-level DiT pathway<br/>Large patches compressed to short sequences, RMSNorm + 2D RoPE for long-range semantic attention"]
+        C["Pixel-wise AdaLN<br/>Semantic tokens generate scale / shift per pixel based on spatial position"]
+        D["pixel-level DiT (PiT block)<br/>Return to pixel-wise granularity for texture refinement"]
+        E["Pixel Token Compaction<br/>Compress channel dimension to d′ for full-resolution global attention then decompress"]
+        B --> C --> D --> E
+    end
+    A --> B
+    E --> F["Pixel-wise velocity field<br/>conditional flow matching regression"]
+```
 
 ### Key Designs
 
-1. **Pixel-wise AdaLN Modulation**
-    - **Function**: Injects patch-level semantic information into the processing of each individual pixel token.
-    - **Mechanism**: Unlike standard AdaLN, which conditions on a single global signal (e.g., timestep), PixelDiT uses patch-level semantic tokens to generate independent modulation parameters for each pixel token. Each pixel token receives spatially corresponding scale and shift values derived from its associated semantic token.
-    - **Design Motivation**: A global condition treats all pixels uniformly, yet different spatial locations require distinct semantic guidance. Pixel-level modulation enables spatially adaptive conditioning.
+**1. Pixel-wise AdaLN: Spatially adaptive semantic modulation per pixel**
 
-2. **Pixel Token Compaction**
-    - **Function**: Makes global attention over per-pixel tokens computationally tractable while preserving full spatial resolution.
-    - **Mechanism**: Before global attention, each pixel token is projected to a lower-dimensional representation via a linear projection; after attention, it is decompressed back to its original dimensionality. This allows the pixel-level pathway to perform global attention over the full-resolution token sequence without incurring computational explosion.
-    - **Design Motivation**: The number of pixel-level tokens is prohibitively large (e.g., 65,536 tokens at 256×256 resolution), making direct full attention infeasible. Compaction reduces dimensionality rather than spatial count, thereby preserving spatial resolution.
+Standard DiT AdaLN uses a global condition (e.g., timestep) to generate a uniform scale/shift for the entire image. However, in pixel space, different locations require entirely different semantic guidance—modulation for sky regions should differ from that of a face. PixelDiT generates modulation parameters from the semantic tokens output by the patch-level pathway: each pixel token receives a unique scale and shift based on its corresponding spatial semantic token, followed by a LayerNorm affine transformation. Consequently, semantic information is injected adaptively by space rather than broadcast as a global bias, allowing the patch-level layout to "land" accurately on corresponding pixels.
 
-3. **Dual-Level Pathway Fusion**
-    - **Function**: Architecturally separates semantic learning from texture refinement.
-    - **Mechanism**: The patch-level pathway consists of $N$ enhanced DiT blocks using RMSNorm and 2D RoPE. The pixel-level pathway's PiT blocks receive patch-level outputs as semantic conditioning and produce the final per-pixel velocity predictions via pixel-wise AdaLN and compaction attention.
-    - **Design Motivation**: Concentrating the majority of semantic reasoning on a low-resolution grid alleviates the burden on the pixel-level pathway and accelerates learning.
+**2. Pixel Token Compaction: Dimensional compression instead of quantity reduction for feasible pixel-wise attention**
+
+The challenge of pixel-wise modeling is the sheer volume of tokens—a $256 \times 256$ resolution results in 65,536 pixel tokens. Applying global attention directly causes complexity to explode quadratically with sequence length. Common practices use downsampling to reduce token count, but this loses spatial resolution, contradicting the purpose of pixel modeling. PixelDiT compromises by compressing the dimension rather than the count: before entering global attention, a linear projection compresses the channel dimension of each pixel token to a lower $d'$. After computing attention on low-dimensional tokens, another linear layer restores them to the original dimension. The number of tokens (spatial resolution) remains intact, saving computation by reducing feature width and making full-resolution global attention feasible for the first time.
+
+**3. Dual-layer pathway fusion: Concentrating semantic reasoning at low resolution to reduce pixel-level load**
+
+The two pathways are not parallel but cascaded (semantics first, pixels second). The patch-level pathway consists of $N$ enhanced DiT blocks using RMSNorm and 2D RoPE to complete most semantic reasoning on short sequences. The PiT blocks in the pixel-level pathway take its output as a semantic condition, utilizing the two mechanisms above (pixel-wise AdaLN for semantic injection + compaction attention for global interaction) to generate pixel-wise velocity predictions. This design ensures expensive global semantic reasoning runs only once on a low-resolution grid, while the pixel-level pathway merely supplements texture onto the existing semantic skeleton, leading to better overall overhead and convergence speed compared to a single pathway handling both tasks.
 
 ### Loss & Training
-Standard conditional flow matching loss applied directly in pixel space. Multi-modal DiT blocks are used for text-to-image generation.
+The training objective is the standard conditional flow matching loss, regressing the velocity field directly in pixel space without any latent space. The text-to-image version replaces the patch-level pathway with multi-modal DiT blocks to incorporate text conditions; the rest of the architecture remains unchanged, enabling end-to-end training of T2I models directly at 1024 resolution pixels.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Type | FID↓ (256) | FID↓ (512) | Notes |
-|--------|------|-----------|-----------|-------|
-| PixelDiT | Pixel | 1.61 | 1.81 | Pixel-space SOTA |
-| DeCo | Pixel | 1.62 | 2.22 | Frequency decoupling |
-| DiT-XL/2 | Latent | 2.27 | — | Requires VAE |
-| PixelFlow | Pixel | — | — | Hierarchical method |
+|------|------|-----------|-----------|------|
+| PixelDiT | Pixel | 1.61 | 1.81 | Pixel space SOTA |
+| DeCo | Pixel | 1.62 | 2.22 | Frequency decoupling method |
+| DiT-XL/2 | Latent | 2.27 | - | Requires VAE |
+| PixelFlow | Pixel | - | - | Hierarchical method |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Pixel-wise AdaLN | Outperforms global AdaLN | Spatially adaptive modulation is effective |
-| Token Compaction | Outperforms no compaction | Enables global attention |
-| Dual-level vs. single-level | Dual-level substantially better | Decoupled design is critical |
+| Config | Key Metric | Notes |
+|------|---------|------|
+| Pixel-wise AdaLN | Better than global AdaLN | Spatially adaptive modulation is effective |
+| Token Compaction | Better than no compression | Makes global attention feasible |
+| Dual-layer vs Single-layer | Dual-layer significantly better | Decoupled design is crucial |
 
 ### Key Findings
-- PixelDiT achieves the lowest FID among pixel-space models, demonstrating that a pure Transformer architecture can operate efficiently in pixel space.
-- Pixel-space models naturally avoid VAE reconstruction artifacts in image editing tasks, yielding better background preservation.
-- The model can be trained directly for T2I generation at 1024 resolution in pixel space, achieving 0.74 on GenEval and 83.5 on DPG-Bench.
+- PixelDiT achieves the lowest FID among pixel-space models, proving that pure Transformer architectures work efficiently in pixel space.
+- Pixel-space models naturally avoid VAE reconstruction artifacts in image editing tasks, maintaining backgrounds more effectively.
+- T2I models can be trained directly at 1024 resolution in pixel space, achieving 0.74 on GenEval and 83.5 on DPG-Bench.
 
 ## Highlights & Insights
-- **Fully end-to-end**: A VAE-free pure Transformer architecture represents the simplest possible generative pipeline.
-- **Token Compaction** is a pragmatic engineering innovation: compressing in the channel dimension rather than reducing spatial tokens preserves full spatial resolution.
-- The work demonstrates that pixel-space diffusion can approach or surpass latent-space diffusion across all metrics.
+- **Complete End-to-End**: A pure Transformer architecture without VAE is the most concise generation pipeline.
+- **Token Compaction** is a practical engineering innovation: dimensional compression rather than spatial downsampling preserves full spatial resolution.
+- Proved that pixel-space diffusion can approach or even surpass latent-space diffusion across all metrics.
 
 ## Limitations & Future Work
-- Training cost remains higher than that of LDM-based approaches.
-- Text-to-image benchmark scores are slightly below the best LDM-based models (e.g., FLUX).
-- Future work may incorporate more advanced training techniques to further close this gap.
+- Training costs remain higher compared to LDMs.
+- Text-to-image benchmark scores are slightly lower than those of the best LDMs (e.g., FLUX).
+- Future work could incorporate more advanced training techniques to further close the gap.
 
 ## Related Work & Insights
-- **vs. DeCo**: DeCo employs an attention-free linear decoder, whereas PixelDiT uses attention-equipped PiT blocks. The two approaches share a similar motivation but differ substantially in implementation.
-- **vs. PixNerd**: PixNerd uses neural field layers to predict pixel-level velocity; PixelDiT adopts a pure Transformer design, making it more architecturally standard.
+- **vs DeCo**: DeCo uses an attention-free linear decoder, while PixelDiT uses PiT blocks with attention. The logic is similar, but implementation differs.
+- **vs PixNerd**: Uses Neural Field layers to predict pixel velocity; PixelDiT follows a more standard pure Transformer approach.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Dual-level pixel Transformer design is novel, though concurrent with DeCo.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Validated across ImageNet, T2I, and editing tasks.
-- **Writing Quality**: ⭐⭐⭐⭐ — Architecture description is detailed and clear.
-- **Value**: ⭐⭐⭐⭐ — Revives pixel-space diffusion as a viable paradigm.
+- Novelty: ⭐⭐⭐⭐ Dual-layer pixel Transformer design is novel but parallel to DeCo.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validated across ImageNet, T2I, and editing tasks.
+- Writing Quality: ⭐⭐⭐⭐ Detailed and clear architectural descriptions.
+- Value: ⭐⭐⭐⭐ Promotes pixel diffusion as a viable paradigm again.
 
 <!-- RELATED:START -->
 
@@ -110,10 +118,10 @@ Standard conditional flow matching loss applied directly in pixel space. Multi-m
 ## Related Papers
 
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
-- [\[CVPR 2026\] EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation](edgedit_hardware-aware_diffusion_transformers_for_efficient_on-device_image_gene.md)
+- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
 - [\[CVPR 2026\] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers](circuit_mechanisms_for_spatial_relation_generation_in_diffusion_models.md)
-- [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
+- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 
 </div>
 

@@ -2,43 +2,38 @@
 title: >-
   [Paper Note] Retriever Portfolios: A Principled Approach to Adaptive RAG
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] Ours reformulates the "retriever selection" problem in RAG as a best-of-$k$ combinatorial optimization problem. A complementary size-$k$ portfolio…
+  [ICML 2026][Information Retrieval & RAG][best-of-k] This paper reformulates the "which retriever to choose" problem in RAG as a best-of-$k$ combinatorial optimization problem. By greedily selecting a complementary size-$k$ portfolio from 360 candidates offline and training a lightweight contrastive router to dispatch queries to the top-$\ell$ members online, this approa
 tags:
-  - "ICML 2026"
-  - "Information Retrieval & RAG"
-  - "Retrieval-Augmented Generation"
-  - "Retriever Selection"
-  - "Submodular Optimization"
-  - "Query Routing"
-  - "best-of-k"
+  - ICML 2026
+  - Information Retrieval & RAG
+  - best-of-k
 date: 2026-05-08
-content_hash: ff177c59829ad542
+content_hash: 4fb2a741e8f8f407
 ---
-
 # Retriever Portfolios: A Principled Approach to Adaptive RAG
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31176](https://arxiv.org/abs/2605.31176)  
 **Code**: None  
 **Area**: Information Retrieval / Adaptive RAG  
-**Keywords**: Retrieval-Augmented Generation, Retriever Selection, Submodular Optimization, Query Routing, best-of-k
+**Keywords**: Retrieval-Augmented Generation, Retriever Ensemble, Submodular Optimization, Query Routing, best-of-k
 
 ## TL;DR
-Ours reformulates the "retriever selection" problem in RAG as a best-of-$k$ combinatorial optimization problem. A complementary size-$k$ portfolio is selected from 360 candidates offline using a greedy approach, and a lightweight contrastive router is trained to distribute each query to the top-$\ell$ members in the portfolio online. This approach outperforms single retrievers and inference-time tuning methods like Vendi-RAG across 4 QA benchmarks while significantly reducing token and latency costs.
+This paper reformulates the "which retriever to choose" problem in RAG as a best-of-$k$ combinatorial optimization problem. By greedily selecting a complementary size-$k$ portfolio from 360 candidates offline and training a lightweight contrastive router to dispatch queries to the top-$\ell$ members online, this approach outperforms both single-retriever baselines and inference-time tuning methods (like Vendi-RAG) across four QA benchmarks, while significantly reducing token and latency costs.
 
 ## Background & Motivation
 
-**Background**: Mainstream RAG systems almost exclusively adopt a "one-size-fits-all" paradigm, selecting a single retriever and a fixed set of hyperparameters (Lewis 2020; Karpukhin 2020; Shuster 2021), ranging from early DPR and FiD to Self-RAG.
+**Background**: Mainstream RAG systems typically adopt a "single retriever + fixed hyperparameters" paradigm, following a one-size-fits-all approach from early DPR and FiD to Self-RAG (Lewis 2020; Karpukhin 2020; Shuster 2021).
 
-**Limitations of Prior Work**: The distribution of QA queries is highly heterogeneous—some are single-hop factoid questions (lexical match suffices), some are multi-hop reasoning tasks (requiring diverse multi-document aggregation), and others involve domain-specific terminology. Ample evidence suggests no single fixed retriever is optimal across all queries (Karpukhin 2020; Jeong 2024; Kalra 2025a). Even for a specific parameterized retriever, the optimal hyperparameters drift per query (Rezaei & Dieng 2025).
+**Limitations of Prior Work**: The distribution of QA queries is highly heterogeneous—some are single-hop factoids (lexical match suffices), others are multi-hop reasoning tasks (requiring diverse multi-document aggregation), and some involve domain-specific terminology. Substantial evidence suggests that no fixed retriever is optimal for all queries (Karpukhin 2020; Jeong 2024; Kalra 2025a). Even for the same parameterized retriever, the optimal hyperparameters drift per query (Rezaei & Dieng 2025).
 
-**Key Challenge**: Existing adaptive solutions either follow a "few preset strategies + classifier" route (e.g., Adaptive-RAG choosing among "no retrieval / single-step / multi-step") or an "online per-query hyperparameter search" route (e.g., Vendi-RAG iteratively executing retrieve-generate-judge to tune diversity parameter $s$). The former lacks expressive power, while the latter suffers from explosive inference costs and cannot be parallelized.
+**Key Challenge**: Existing adaptive solutions either follow a "few preset strategies + classifier" route (Adaptive-RAG selects between "no retrieval / single-step / multi-step") or a "per-query online hyperparameter search" route (Vendi-RAG iteratively executes retrieve-generate-judge to tune the diversity parameter $s$). The former lacks expressiveness, while the latter suffers from explosive inference costs and serial execution.
 
-**Goal**: To select a small, behaviorally complementary subset from a **large** pool of candidate retrievers that covers different regions of the query distribution in expectation, without performing online search per query.
+**Goal**: To select a small, complementary subset from a **large** pool of retriever candidates that covers different regions of the query distribution in expectation, without performing per-query online searches.
 
-**Key Insight**: Reframe the retriever choice as an "algorithm selection" problem where each retriever is a "candidate algorithm" and each query is a "problem instance." Thus, the RAG retriever selection problem = a data-driven solution portfolio problem (Drygala 2025) / catalogue problem (Kleinberg 2004). Once mapped to this framework, the objective function $F(S)=\mathbb{E}_{q}[\max_{r\in S} s(q,r)]$ naturally satisfies non-negativity, monotonicity, and submodularity, allowing the classic greedy algorithm to achieve a $(1-1/e)$ approximation.
+**Key Insight**: Treat each retriever as a "candidate algorithm" in an algorithm selection problem and each query as a "problem instance." Thus, the RAG retriever selection problem becomes a data-driven solution portfolio problem (Drygala 2025) or a catalogue problem (Kleinberg 2004). Within this framework, the objective function $F(S)=\mathbb{E}_{q}[\max_{r\in S} s(q,r)]$ is naturally non-negative, monotonic, and submodular, allowing a classical greedy algorithm to achieve a $(1-1/e)$ approximation.
 
-**Core Idea**: Replace the average objective with a best-of-$k$ portfolio objective + offline greedy portfolio selection + online contrastive routing, amortizing the cost of "adaptation" to the offline phase.
+**Core Idea**: Replace the average performance objective with a best-of-$k$ portfolio objective, select the portfolio via offline greedy selection, and use an online contrastive router to amortize the "adaptation" cost into the offline phase.
 
 ## Method
 
@@ -46,41 +41,57 @@ Ours reformulates the "retriever selection" problem in RAG as a best-of-$k$ comb
 
 The pipeline consists of two stages:
 
-**Offline Stage**: Evaluate and score all candidate retrievers on a training query set to obtain a score matrix $s(q,r)\in[0,1]$ (using Recall@$k$ as $s$). Then, use Algorithm 1 to greedily select $k$ retrievers to form a portfolio $S$. Simultaneously, train a contrastive router based on retrieval supervision.
+**Offline Phase**: All candidate retrievers are evaluated on a training query set to obtain a score matrix $s(q,r)\in[0,1]$ (using Recall@$k$ as $s$ in the paper). Algorithm 1 then greedily selects $k$ retrievers to form portfolio $S$. Simultaneously, a contrastive router is trained using retrieval supervision.
 
-**Online Stage**: For a given query $\mathbf{q}$, the router encodes it and calculates similarity with $k$ "retriever embeddings." The top-$\ell$ members of the portfolio are selected to **parallelly** perform retrieval + LLM generation, and finally, a selector aggregates the candidate answers. Crucially, $\ell\le k$ are **fixed** small constants, ensuring predictable latency and parallelizable calls.
+**Online Phase**: For a given query $\mathbf{q}$, the router encodes it and computes similarity with $k$ "retriever embeddings," selecting the top-$\ell$ portfolio members to perform retrieval and LLM generation **in parallel**. Finally, a selector aggregates candidate answers. Crucially, $\ell \le k$ are small **fixed** constants, ensuring predictable latency and parallelizable calls.
+
+```mermaid
+graph TD
+    subgraph OFF["Offline Phase"]
+        direction TB
+        P["360D Candidate Pool<br/>Cross-family + Dual backbone<br/>DS / Vendi / GraphDense × MPNet / E5"] --> SC["Score Matrix s(q,r) = Recall@k"]
+        SC --> GR["Best-of-k Portfolio Objective<br/>Greedy selection of size-k portfolio"]
+        SC --> RT["Train Contrastive Router"]
+    end
+    GR --> RO
+    RT --> RO
+    subgraph ON["Online Phase: Offline Portfolio + Online Router"]
+        direction TB
+        QQ["Query q"] --> RO["Router selects top-ℓ members"]
+        RO --> PA["ℓ members parallel retrieval + LLM generation"]
+        PA --> SE["Selector aggregates candidate answers"]
+    end
+    SE --> OUT["Final Answer"]
+```
 
 ### Key Designs
 
-1.  **Best-of-$k$ Portfolio Objective + Submodular Approximation Guarantee**:
-    - **Function**: Rewrites the "retriever selection" as a provable combinatorial optimization problem.
-    - **Mechanism**: Defines the score of a portfolio $S\subseteq\mathcal{R}$ as $\mathrm{score}(q,S)=\max_{r\in S} s(q,r)$, with the overall objective $F(S)=\mathbb{E}_{q\sim\mathcal{D}}[\max_{r\in S} s(q,r)]$. This $\max$ form inherently rewards members that "cover different query subgroups" (redundant retrievers with similar behavior contribute little to the maximum). Algorithm 1 runs greedy selection after sampling $N$ queries: each step adds $r$ that maximizes marginal gain $\frac{1}{N}\sum_{q\in Q}\max(0,s(q,r)-V[q])$, where $V[q]$ is the current best score for $q$ in $S$. The complexity is $\mathcal{O}(|\mathcal{R}|N)$ per step. Theorem 3.1 provides a theoretical guarantee: with $N=\mathcal{O}((k\log|\mathcal{R}|+\log(1/\delta))/\epsilon^2)$ samples, $F(S)\ge (1-1/e)\mathrm{OPT}-\epsilon$ holds with probability $1-\delta$.
-    - **Design Motivation**: Previous methods like Adaptive-RAG / Vendi-RAG relied on heuristics. By formalizing "covering heterogeneous query distributions" via a best-of-$k$ submodular objective with Hoeffding bounds, greedy selection is **theoretically guaranteed** to be near-optimal. The sample complexity scales with $\log|\mathcal{R}|$ rather than query distribution support size, enabling the use of a large pool of 360 candidates.
+**1. Best-of-$k$ Portfolio Objective: Reframing retriever selection as a provable combinatorial optimization problem**
 
-2.  **360-Dimensional Candidate Pool (Cross-family + Dual Backbone)**:
-    - **Function**: Provides a **truly heterogeneous** candidate set for the portfolio selection algorithm to choose from.
-    - **Mechanism**: The pool combines three retriever families with two embedding backbones (MPNet and E5). ① **DiscountedSimilarity (DS)**: Greedily selects $n=4$ chunks from FAISS top-$M=1000$ candidates; hyperparameters $(\gamma, r)$ control similarity penalties, resulting in 140 configurations + 1 dense baseline per backbone (141 total). ② **Vendi**: Balances relevance and intra-set diversity using Vendi-score; diversity parameter $s\in[0,1]$ with step 0.05 yields 21 configurations. ③ **GraphDense**: performs BFS expansion on an "entity-chunk bipartite graph" using query entities, followed by re-ranking with MPNet/E5; vary hop counts and max document frequency for 36 configurations. The total pool $|\mathcal{R}|=360$. Scores are pre-cached for efficiency.
-    - **Design Motivation**: The gains of a portfolio depend on whether members are complementary. If the pool only contained variations of DS, best-of-$k$ would collapse to a single retriever. Empirical results show size-5 portfolios contain diverse members like GraphDense/E5, Vendi/E5, and GraphDense/MPNet (Table 2), confirming that cross-family and cross-backbone diversity allows the greedy algorithm to outperform "top-$k$ by average score" baselines.
+Previous methods like Adaptive-RAG or Vendi-RAG relied on heuristics without formalizing the coverage of heterogeneous query distributions. This work defines the score for a portfolio $S\subseteq\mathcal{R}$ as $\mathrm{score}(q,S)=\max_{r\in S} s(q,r)$, with the overall objective $F(S)=\mathbb{E}_{q\sim\mathcal{D}}[\max_{r\in S} s(q,r)]$. The $\max$ operator naturally rewards members that cover different query subgroups—redundant retrievers with similar behavior contribute little to the maximum, forcing the portfolio to be complementary. Algorithm 1 runs greedy selection on $N$ sampled queries: in each step, it adds the retriever $r$ that maximizes the marginal gain $\frac{1}{N}\sum_{q\in Q}\max(0,s(q,r)-V[q])$, where $V[q]$ tracks the current best score for query $q$. Each step costs $\mathcal{O}(|\mathcal{R}|N)$. Since $F$ is non-negative, monotonic, and submodular, the greedy approach provides a $(1-1/e)$ approximation. Theorem 3.1 further specifies the sample complexity: with $N=\mathcal{O}((k\log|\mathcal{R}|+\log(1/\delta))/\epsilon^2)$ queries, $F(S)\ge (1-1/e)\mathrm{OPT}-\epsilon$ holds with probability $1-\delta$. The logarithmic dependence on $|\mathcal{R}|$ allows the system to scale to hundreds of candidates.
 
-3.  **Two-stage Pipeline (Offline Portfolio + Online Contrastive Router)**:
-    - **Function**: Avoids high latency of online per-query hyperparameter search by compressing routing into a lightweight forward pass.
-    - **Mechanism**: The router takes raw query text + cached MPNet/E5 query embeddings, passes them through a frozen Flan-T5-Large encoder, and fuses them with backbone-specific embeddings to output similarity scores for each portfolio member. The training objective is a multi-positive contrastive loss (Chen et al. 2024), where "retrievers achieving the highest Recall@$k$ for the query" are treated as positives. At inference, the top-$\ell$ members ($\ell\in\{2,3\}$) are executed in **parallel**, followed by LLM-based answer selection.
-    - **Design Motivation**: Unlike Vendi-RAG's serial "retrieve $\to$ generate $\to$ LLM judge $\to$ tune $s \to$ retrieve" loop, the router makes a decision in one forward pass. All $\ell$ branches run in parallel. Token cost and wall-clock time scale linearly with $\ell$ and are independent of $k$. A configuration like $(k=4,\ell=2)$ maintains high accuracy with predictable costs, outperforming Vendi-RAG on the cost-accuracy curve (Figure 4).
+**2. 360D Heterogeneous Candidate Pool: Providing diverse targets for the $\max$ operator**
+
+The benefit of the portfolio approach depends on the complementarity of candidates. A pool containing only variations of the same algorithm would offer no gain over a single retriever. Thus, the pool is constructed from three families across two embedding backbones (MPNet and E5). **DiscountedSimilarity (DS)** greedily selects $n=4$ chunks from FAISS top-1000 candidates with $(\gamma, r)$ controlling similarity penalties (141 configurations per backbone). **Vendi** balances relevance and intra-set diversity using parameter $s\in[0,1]$, yielding 21 configurations. **GraphDense** performs BFS expansion on an "entity-chunk bipartite graph" followed by reranking, yielding 36 configurations. The total pool size $|\mathcal{R}|=360$. Score tables are precomputed by caching candidate sets for both backbones, making the $360\times|Q|$ evaluation feasible offline. Empirical results show that a size-5 portfolio often includes diverse members like GraphDense/E5, varied Vendi/E5 configs, and GraphDense/MPNet (Table 2).
+
+**3. Offline Portfolio + Online Contrastive Router: Amortizing adaptive costs**
+
+To avoid the serial online search of Vendi-RAG ("retrieve → generate → LLM judge → tune $s$ → re-retrieve"), this work compresses retriever selection into a single lightweight forward pass. The router takes the query text and cached MPNet/E5 embeddings, processes them through a frozen Flan-T5-Large encoder, and fuses them with backbone-specific embeddings to output similarity scores for portfolio members. The training follows a multi-positive contrastive loss (Chen et al. 2024), treating retrievers that achieve the highest Recall@$k$ for a given query as positives. At inference, top-$\ell$ members ($\ell \in \{2,3\}$) are selected for parallel execution. Costs scale linearly with $\ell$ and are independent of $k$, allowing configurations like $(k=4, \ell=2)$ to maintain high accuracy with predictable service costs (Figure 4).
 
 ### Loss & Training
 
-- **Offline Portfolio**: Uses Recall@$k$ as $s(q,r)$ (calculated using ground-truth documents). Algorithm 1 is run on a union training set pooled from 4 benchmarks. Main results use $k=4$ or $5$.
-- **Router**: Multi-positive contrastive loss; positives = retrievers with max Recall@$k$ for the query. Details in Appendix B.9.
-- **Answer Model**: Gemma-3-27B-It and Llama-3.1-70B-Instruct; fixed prompt templates ensure fairness.
+- **Offline Portfolio**: Evaluation uses Recall@$k$ (calculated using ground-truth supporting documents). Algorithm 1 is run on a union training set of queries from four benchmarks, typically with $k=4$ or $5$.
+- **Router**: Multi-positive contrastive loss. Positives are retrievers with the maximum Recall@$k$ for the query.
+- **Answer Model**: Gemma-3-27B-It and Llama-3.1-70B-Instruct. Fixed prompt templates are used to ensure fair comparison.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on four QA benchmarks (HotpotQA / MusiQue / TriviaQA / 2WikiMultiHopQA) with two LLMs. end-to-end Exact Match (Subset of Table 3, best in bold):
+End-to-end Exact Match (EM) across four benchmarks (extracted from Table 3, best in bold):
 
 | Method | HotpotQA (Gemma) | MusiQue (Gemma) | 2Wiki (Gemma) | HotpotQA (Llama) | MusiQue (Llama) | 2Wiki (Llama) |
-|------|------------------|------------------|----------------|-------------------|------------------|----------------|
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | No retrieval | 0.326 | 0.061 | 0.226 | 0.348 | 0.059 | 0.192 |
 | NN retrieval (MPNet) | 0.395 | 0.129 | 0.241 | 0.476 | 0.139 | 0.292 |
 | Best DS retriever | 0.513 | 0.139 | 0.354 | 0.435 | 0.109 | 0.244 |
@@ -89,57 +100,59 @@ Evaluated on four QA benchmarks (HotpotQA / MusiQue / TriviaQA / 2WikiMultiHopQA
 | **All-pool portfolio** $(k{=}4,\ell{=}2)$ | 0.552 | 0.173 | 0.405 | **0.590** | 0.182 | 0.414 |
 | **All-pool portfolio** $(k{=}4,\ell{=}3)$ | **0.558** | **0.195** | **0.414** | 0.583 | **0.209** | **0.419** |
 
-Retrieval-only performance (Figure 3, average across 4 datasets): Size-5 learned portfolio achieves Support Recall 0.594 / F1 0.500, while the "top-5 by average score" baseline only reaches 0.492 / 0.432, a ~10% gap.
+For retrieval-only metrics (Figure 3), a size-5 learned portfolio achieves 0.594 Support Recall / 0.500 F1, while the "top-5 by average score" baseline only reaches 0.492 / 0.432.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-|------|---------|------|
-| Top-$k$ by avg score | Recall 0.492 @ $k=5$ | Selecting by avg score leads to repetitive GraphDense/E5 dominance, lacking complementarity. |
-| Single retriever × 4$k$ docs | F1 drops from 0.32 $\to$ 0.11 ($k{=}1\to 5$) | Increasing chunks for a single retriever hurts F1 by introducing excessive noise. |
-| Portfolio $k=2$ | Better than single retriever with 20 docs | Gain comes from retriever complementarity, not just more context. |
-| Vendi-only portfolio $(k{=}5,\ell{=}2)$ | Avg EM significantly lower than all-pool | Portfolio advantage shrinks when limited to a single family/backbone. |
-| Routing budget $\ell=2 \to 3$ | Visible EM gain on MusiQue / 2Wiki | $\ell$ acts as a cost-accuracy knob; $\ell{=}2$ is sufficient for easy tasks like TriviaQA. |
+| Configuration | Key Metric | Observation |
+| :--- | :--- | :--- |
+| Top-$k$ by avg score | Recall 0.492 @ $k=5$ | Selecting by average score leads to redundancy (GraphDense/E5 dominates); lacks complementarity. |
+| Single retriever × 4$k$ docs | F1 drops 0.32 → 0.11 | Increasing chunk count for a single retriever hurts F1 due to noise injection. |
+| Portfolio $k=2$ | Outperforms single $\times$ 20 docs | Gains come from retriever complementarity, not context length. |
+| Vendi-only portfolio | Lower EM vs all-pool | Restricting to one family reduces the value of the portfolio. |
+| Routing budget $\ell=2 \to 3$ | Higher EM on MusiQue/2Wiki | $\ell$ acts as a cost-accuracy knob; $\ell=2$ suffices for simpler TriviaQA. |
 
 ### Key Findings
 
-- **Complementarity > Average Score**: The 2nd and 3rd members of the portfolio are often not the ones with the highest average scores, but those that "cover failed queries" for previous members. This is the fundamental difference between best-of-$k$ and average-best selection.
-- **More Chunks $\neq$ Complementarity**: Doubling chunks for a single retriever cannot replace a portfolio; Recall may increase, but F1 plummets, indicating extra chunks are noise rather than signal.
-- **Offline Portfolio crushes Vendi-RAG**: In controlled comparisons within the same Vendi/MPNet search space, fixed portfolios achieve or exceed Vendi-RAG's EM with fewer tokens and lower wall-clock time.
-- **Cross-dataset Generalization**: A union-trained portfolio outperforms the best specific retriever family on all 4 datasets, proving that the retriever complementarity learned via best-of-$k$ is transferable across tasks.
+- **Complementarity > Average Score**: The 2nd and 3rd members of the portfolio are often not the highest-scoring retrievers on average, but those that succeed where others fail.
+- **More Chunks $\neq$ Complementarity**: Doubling the returned chunks for a single retriever cannot replace a portfolio; while Recall increases, F1 drops significantly, indicating that extra chunks are noise rather than signal.
+- **Offline Portfolios Outperform Vendi-RAG**: In controlled comparisons within the same search space, the fixed portfolio matches or exceeds Vendi-RAG's EM with fewer tokens and lower latency.
+- **Cross-dataset Generalization**: A union-trained portfolio outperforms individual best retrievers on all four datasets, suggesting that retriever complementarity learned from a diverse query set is transferable.
 
 ## Highlights & Insights
 
-- **Mapping RAG selection to the solution portfolio framework**: Recognizing $\max_{r\in S}s(q,r)$ as a coverage function on the query dimension allows the use of combinatorial optimization tools (submodularity, tight approximations).
-- **Offline Amortization = Parallel Inference**: Unlike inference-time tuning (Vendi-RAG / Self-RAG), portfolios use online routing + parallel execution. There are **no serial dependencies on previous outputs**, which is a major selling point for latency-sensitive production systems.
-- **Contrastive Router Design**: Using "best Recall@$k$ retriever" as a multi-positive contrastive target transforms the selection problem into a standard contrastive learning task. This approach translates well to expert LLM routing or tool-use agents.
-- **RETRIEVER Agnostic**: Sparse, graph, and generative retrievers can all be included in $\mathcal{R}$. Future extensions to BM25 or LLM-as-retriever require no algorithmic changes.
+- **Framing RAG as a Solution Portfolio Problem**: Recognizing $\max_{r\in S}s(q,r)$ as a coverage function allows the application of classical results like submodularity and $(1-1/e)$ approximation.
+- **Offline Amortization = Parallel Inference**: Unlike inference-time tuning (Vendi-RAG, Self-RAG), the portfolio approach uses online routing + parallel execution, avoiding serial dependencies.
+- **Router Objective Design**: Using the retriever that achieves the highest Recall@$k$ as the contrastive positive effectively converts retriever selection into a standard contrastive embedding learning problem.
+- **Algorithm-Agnostic Paradigm**: Any retriever (sparse, graph, generative) can be included in $\mathcal{R}$. Future extensions to BM25 or LLM-as-retriever are straightforward.
 
 ## Limitations & Future Work
 
-- **Dependence on Ground-Truth Support Documents**: Scoring $s(q,r)$ requires Recall@$k$, which depends on annotated supporting documents. Proxies for open-domain or unlabeled production queries (e.g., LLM judges, click-through data) are not explored.
-- **Objective limited to $|S|\le k$ rather than cost-weighted**: Real-world retrievers have varying costs (dense vs. graph BFS). Currently, only quantity is controlled, not unit cost, which might lead to expensive portfolios.
-- **Robustness under Distribution Shift**: The router's performance in real-world domains (medical/legal) with distribution shift relative to the academic QA training pool is not empirically tested.
-- **Lack of comparison with joint retriever-LLM training**: Whether joint fine-tuning of retrievers and LLMs reduces the portfolio advantage remains an open question.
-- **Future Directions**: Changing $|S|\le k$ to a knapsack constraint ($\sum_{r\in S} c(r)\le B$) for heterogeneous costs or end-to-end joint training of portfolios and routers.
+- **Dependence on Ground-Truth Support**: $s(q,r)$ calculation (Recall@k) requires labeled supporting documents. Proxies for unlabeled production queries (e.g., LLM judges) remain unexplored.
+- **Unweighted Cost Objective**: The objective function limits quantity $|S|\le k$ but doesn't account for varying costs between retriever types (dense vs. graph).
+- **Distribution Shift Robustness**: The router was trained on academic QA datasets; its performance on significant domain shifts (e.g., medical or legal) is not yet verified.
+- **Comparison with Joint LLM Training**: It remains to be seen how the portfolio advantage holds up against schemes where retriever embeddings and LLMs are fine-tuned jointly.
 
 ## Related Work & Insights
 
-- **vs. Adaptive-RAG (Jeong 2024)**: Adaptive-RAG uses query complexity classifiers for 3 manual strategies; ours performs combinatorial optimization over 360 fine-grained retrievers with theoretical guarantees.
-- **vs. Vendi-RAG (Rezaei & Dieng 2025)**: Vendi-RAG tunes diversity $s$ per-query online via serial loops; ours compresses this search space offline, lowering token usage and enabling parallel execution.
-- **vs. MoR (Kalra 2025b)**: MoR focuses on score-level fusion for a **given** set; ours solves **how to select the small set** from a large pool. They are orthogonal and can be combined.
-- **vs. RouterDC (Chen 2024)**: borrows the multi-positive contrastive routing paradigm but shifts the target from expert LLMs to retrievers, with a focus on portfolio selection theory.
-- **vs. Drygala 2025 / Kleinberg 2004**: Theoretical ancestors. Ours is a precise instantiation in the RAG domain, leveraging a $(1-1/e)$ approximation for submodular segmentation problems.
+- **vs. Adaptive-RAG (Jeong 2024)**: Adaptive-RAG uses a coarse classifier for three manual strategies; this work optimizes over 360 fine-grained configurations with theoretical guarantees.
+- **vs. Vendi-RAG (Rezaei & Dieng 2025)**: Vendi-RAG tunes diversity online through serial iterations; this work compresses that search space into a fixed offline portfolio for lower cost.
+- **vs. MoR (Kalra 2025b)**: MoR performs score-level fusion on a given set; this work solves the selection of that set.
+- **vs. RouterDC (Chen 2024)**: While RouterDC routes expert LLMs using dual contrastive learning, this work applies similar routing logic to retrievers while contributing a separate portfolio selection theory.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Reformulates RAG retriever selection as a provable best-of-$k$ portfolio problem, a rare formalization in the field.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 QA benchmarks × 2 LLMs × 360 retrievers, covering main results, ablations, and cost-accuracy; lacks real-world production data.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, theoretical guarantees, and pipeline structure; includes full pseudocode and formulas.
-- Value: ⭐⭐⭐⭐ Provides an immediately applicable "offline portfolio + online routing" paradigm for existing RAG systems, highly industrial-friendly.
+- Novelty: ⭐⭐⭐⭐ Reformulates retriever selection as a provable best-of-k portfolio problem.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and candidates, though lacks production-scale unlabeled query tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, theoretical grounding, and structure.
+- Value: ⭐⭐⭐⭐ Highly practical for industrial deployment due to parallelizability and token efficiency.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+- **DPR**: Dense Passage Retrieval for Open-Domain Question Answering (Karpukhin et al., 2020)
+- **Vendi-RAG**: On-the-fly Adaptation of Retrieved Content Diversity (Rezaei & Dieng, 2025)
+- **Adaptive-RAG**: Learning to Adapt Retrieval-Augmented Generation (Jeong et al., 2024)
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 

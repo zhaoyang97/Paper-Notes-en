@@ -2,106 +2,106 @@
 title: >-
   [Paper Note] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics][fisheye camera] This paper presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. Centered on three core res…
+  [CVPR 2026][Robotics & Embodied AI][Generalizability] This work presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. It addresses three core questions regarding spatial localization, scene generalization, and hardware generalization, revealing the advantages and limitations of wide
 tags:
-  - "CVPR 2026"
-  - "Robotics"
-  - "fisheye camera"
-  - "robotic manipulation"
-  - "imitation learning"
-  - "field of view"
-  - "generalization"
+  - CVPR 2026
+  - Robotics & Embodied AI
+  - Generalizability
 date: 2026-05-08
-content_hash: 19c42f34db8dfc00
+content_hash: 6381584009921105
 ---
-
 # Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.02139](https://arxiv.org/abs/2603.02139)  
-**Authors**: Han Xue, Min Nan, Xiaotong Liu, Wendi Chen, Yuan Fang, Jun Lv, Cewu Lu, Chuan Wen (Shanghai Jiao Tong University, Southeast University, USTC, et al.)
+**Authors**: Han Xue, Min Nan, Xiaotong Liu, Wendi Chen, Yuan Fang, Jun Lv, Cewu Lu, Chuan Wen (Shanghai Jiao Tong University, Southeast University, USTC, etc.)
 **Project Page**: [robo-fisheye.github.io](https://robo-fisheye.github.io/)
-**Area**: Reinforcement Learning
-**Keywords**: fisheye camera, robotic manipulation, imitation learning, field of view, generalization
+**Area**: Robotics
+**Keywords**: Fisheye Camera, Robotic Manipulation, Imitation Learning, Field of View (FoV), Generalization
 
 ## TL;DR
 
-This paper presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. Centered on three core research questions—spatial localization, scene generalization, and hardware generalization—it reveals both the advantages and limitations of wide field-of-view (FoV) imaging, and proposes Random Scale Augmentation (RSA) to address scale overfitting in cross-camera transfer.
+This work presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. It addresses three core questions regarding spatial localization, scene generalization, and hardware generalization, revealing the advantages and limitations of wide field-of-view (FoV). Furthermore, it proposes Random Scale Augmentation (RSA) to mitigate the scale overfitting issue during cross-camera transfer.
 
 ## Background & Motivation
 
-Fisheye cameras, with their ultra-wide FoV (> 180°), are increasingly adopted in robotic manipulation, yet the academic understanding of how they affect policy learning lags far behind their practical deployment.
+The application of fisheye cameras with ultra-wide FoV ($FoV > 180^\circ$) in robotic manipulation is growing rapidly. However, the academic understanding of how fisheye cameras affect policy learning lags behind their practical deployment.
 
-**Existing Problems**:
-- The effect of strong radial distortion introduced by fisheye cameras on visual encoders remains unclear
-- The practical benefit of wide FoV across scenes of varying complexity lacks quantitative analysis
-- Policy transfer between different fisheye lenses (hardware generalization) exhibits systematic failures whose root causes are unknown
-- No systematic benchmark spanning simulation and the real world exists to guide large-scale fisheye dataset collection
+**Limitations of Prior Work**:
+- The impact of strong radial distortion introduced by fisheye cameras on visual encoders remains unclear.
+- There is a lack of quantitative analysis regarding the actual benefits of wide FoV under various scene complexities.
+- Policy transfer across different fisheye lenses (hardware generalization) suffers from systematic failures, and the root cause is unexplored.
+- A systematic benchmark encompassing both simulation and reality to guide large-scale fisheye data collection is missing.
 
-**Core Motivation**: Establish the first systematic empirical research framework to answer three key research questions:
+**Goal**: To establish the first systematic empirical research framework to answer three key research questions:
 
-**RQ1 – Spatial Localization**: Can wide FoV enhance the spatial localization capability of policies?
+**RQ1 - Spatial Localization**: Can wide FoV enhance the spatial localization capability of policies?
 
-**RQ2 – Scene Generalization**: How does a fisheye camera affect generalization to novel backgrounds?
+**RQ2 - Scene Generalization**: How do fisheye cameras affect generalization to novel backgrounds?
 
-**RQ3 – Hardware Generalization**: Can policies transfer across different fisheye lenses?
+**RQ3 - Hardware Generalization**: Can policies be transferred across different fisheye lenses?
 
 ## Method
 
-### Experimental Platform
-- **Real World**: Flexiv Rizon 4 seven-axis robotic arm + DH AG-160-95 adaptive gripper; demonstration data collected via teleoperation using a Meta Quest 3 headset
-- **Simulation**: A two-stage projection pipeline implemented in MuJoCo (first rendering a panoramic image, then projecting it to a fisheye view) with precise control over lens parameters
-- **Task Design**: 3 real-world tasks (Pick Cup, Fold Towel, Hang Chinese Knot) + 6 simulation tasks adapted from Robomimic/MimicGen
-- **Evaluation Metric**: Multi-stage normalized score, which provides finer granularity than binary success rate
+### Overall Architecture
 
-### RQ1: Spatial Localization Analysis
-**Hypothesis**: The wide FoV of fisheye cameras enhances policy localization by capturing more static environmental features as visual anchors; thus performance should strongly depend on scene visual complexity.
+Rather than proposing a new model, this paper systematically validates the engineering choice of using fisheye versus pinhole cameras for wrist mounts. The authors developed a dual simulation-reality platform to conduct controlled experiments. They examine whether wide FoV enhances spatial localization (RQ1), how it affects generalization to new scenes (RQ2), and the feasibility of cross-lens transfer (RQ3). The root cause of failure in RQ3 was identified as scale overfitting, which is addressed using the Random Scale Augmentation (RSA) strategy.
 
-**Experimental Design**: Compare policy performance in feature-poor (plain background) vs. feature-rich (textured cloth/clutter) environments using state-free policies to isolate visual localization capability.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph PLAT["Simulation-Real Dual-Track Platform"]
+        direction TB
+        S["Sim: Two-stage Projection<br/>Cubemap → Equirectangular → Fisheye"]
+        R["Real: Flexiv Arm<br/>+ Quest3 Teleoperation"]
+        P["State-free Diffusion Policy<br/>Vision-only · Normalized Score"]
+    end
+    PLAT --> C["Fisheye vs Pinhole Strict Control<br/>Four Core Variables Controlled Individually"]
+    C --> Q1["RQ1 Spatial Localization<br/>Scene Complexity: Sparse vs Rich"]
+    C --> Q2["RQ2 Scene Generalization<br/>Scene Diversity N: 1→8 Zero-shot"]
+    C --> Q3["RQ3 Hardware Generalization<br/>Lens Change: FoV / Distortion Variations"]
+    Q3 -->|Diagnose Root Cause: Scale Overfitting| RSA["RSA: Random Scale Augmentation<br/>Random Scaling + Black Padding"]
+```
 
-**Key Finding**: The fisheye + rich scene combination enables policies to complete high-precision manipulation relying solely on visual input, implicitly encoding the spatial relationship between the robot and its environment, rendering explicit proprioception redundant.
+### Key Designs
 
-### RQ2: Scaling Law for Scene Generalization
-**Hypothesis**: Fisheye policies exploit scene diversity more effectively, exhibiting a steeper performance improvement curve as the number of training scenes $N$ increases.
+**1. Simulation-Real Dual-Track Platform: Controlling Camera Variables**
+The challenge in isolating camera effects is that changing hardware often introduces confounding variables. For the real-world setup, a Flexiv Rizon 4 arm with a DH AG-160-95 gripper was used with Meta Quest 3 for teleoperation. In simulation (MuJoCo), a two-stage projection pipeline was implemented: rendering six virtual cameras into a cubemap, expanding to an equirectangular panorama, and finally projecting into a fisheye view. A state-free Diffusion Policy (ResNet-18 for sim, CLIP ViT for real) was employed to decouple camera effects from proprioception.
 
-**Experimental Design**: Fix total data volume (e.g., 200 trajectories) and vary only the number of independent training scenes $N$ (from 1 to 8); evaluate zero-shot on completely unseen test backgrounds. 32 distinct background textures are used.
+**2. RQ1 Spatial Localization: Linking FoV to Scene Complexity**
+**Key Insight**: The value of a fisheye camera lies in capturing more static environment features as visual anchors. To test this, the authors compared performance in sparse (solid background) and rich (textured cloth/clutter) environments. Using a state-free policy forced reliance on visual localization. Results showed that the fisheye camera plus a rich scene allows high-precision manipulation via vision alone, effectively encoding spatial relationships implicitly. In sparse scenes, the advantage of wide FoV disappears as there are no anchors to reference.
 
-**Key Finding**: The wide FoV of the fisheye camera acts as implicit data augmentation, enabling policies to better leverage scene diversity. In the real world, fisheye policies achieve a near-perfect score (0.988) with only 8 diverse training scenes.
+**3. RQ2 Scene Generalization: FoV as Implicit Data Augmentation**
+**Mechanism**: Fisheye cameras provide a wider field of view that changes more significantly as the wrist moves. This acts as an implicit scene-level data augmentation. Fixing the total data (e.g., 200 trajectories) and increasing the number of training scenes $N$ (from 1 to 8), the fisheye policy achieved near-perfect zero-shot generalization ($0.988$) on unseen backgrounds at $N=8$, whereas pinhole performance significantly lagged or even degraded.
 
-### RQ3: Hardware Generalization and RSA
-**Key Challenge**: Policies overfit to the absolute pixel scale of a specific lens (Scale Overfitting). When deployed on a new lens, the change in object scale within the image causes the policy to misestimate depth—magnification leads to undershoot (object perceived as closer), and minification leads to overshoot (object perceived as farther).
-
-**Random Scale Augmentation (RSA)**:
-- During training, a scale factor $s$ (e.g., 0.7–1.3) is sampled uniformly at random
-- When $s > 1$, the image is shrunk and padded with black borders (zoom-out effect)
-- This forces the network to learn relative spatial relationships (e.g., target scale relative to the gripper) rather than absolute pixel size
-- Simple and plug-and-play; no architectural modifications required
+**4. RQ3 Hardware Generalization and RSA: Addressing Scale Overfitting**
+**Design Motivation**: Policies tend to memorize the absolute pixel scale of objects under a specific lens. When the lens is changed, objects appear larger or smaller, leading the policy to misinterpret scale as depth (e.g., larger scale interpreted as closer, leading to undershooting). **RSA (Random Scale Augmentation)** sampled a scale factor $s$ (e.g., $0.7 \sim 1.3$) during training. If $s > 1$, the image is downscaled and padded with black borders (zoom-out effect), forcing the network to learn relative spatial relationships (e.g., target relative to gripper) rather than absolute pixel sizes.
 
 ## Key Experimental Results
 
-### Table 1: RQ1 – Real-World Spatial Localization (Normalized Score, State-Free Policy)
+### Table 1: RQ1 - Real-World Spatial Localization (Normalized Score, State-free Policy)
 
-| Task | Camera Type | Feature-Poor Scene | Feature-Rich Scene | Gain |
+| Task | Camera Type | Sparse Scene | Rich Scene | Gain |
 |---|---|---|---|---|
 | Pick Cup | Fisheye (State-free) | 0.525 | 0.800 | **+0.275** |
 | Fold Towel | Fisheye (State-free) | 0.100 | 0.700 | **+0.600** |
 | Hang Chinese Knot | Fisheye (State-free) | 0.200 | 0.500 | **+0.300** |
 
-Fisheye + rich scene substantially outperforms the feature-poor condition across all tasks, with Fold Towel showing the largest gain of **+0.600**. In simulation, fisheye achieves a success rate of 0.66 in feature-rich scenes, compared to 0.34 for pinhole (**+0.32**).
+Fisheye cameras in rich scenes significantly outperformed those in sparse scenes across all tasks, with a maximum gain of **+0.600** in "Fold Towel". In simulation, the Success Rate (SR) for fisheye in rich scenes was 0.66, compared to 0.34 for pinhole (Gain: **+0.32**).
 
-### Table 2: RQ3 – RSA Scale Sensitivity Analysis (Simulation, Normalized Score)
+### Table 2: RQ3 - RSA Scale Sensitivity Analysis (Sim, Normalized Score)
 
 | Scale Factor $S$ | Effect | Baseline | RSA |
 |---|---|---|---|
-| 0.70 | Strong zoom-in | 0.000 | **0.900** |
-| 0.85 | Moderate zoom-in | 0.950 | **1.000** |
-| 1.00 | Training scale | 1.000 | 1.000 |
-| 1.15 | Moderate zoom-out | 0.750 | **0.975** |
-| 1.30 | Strong zoom-out | 0.650 | **1.000** |
+| 0.70 | Extreme Zoom-in | 0.000 | **0.900** |
+| 0.85 | Moderate Zoom-in | 0.950 | **1.000** |
+| 1.00 | Training Scale | 1.000 | 1.000 |
+| 1.15 | Moderate Zoom-out | 0.750 | **0.975** |
+| 1.30 | Extreme Zoom-out | 0.650 | **1.000** |
 
-The baseline degrades sharply in an inverted-V pattern under scale shift (dropping to 0 at $S=0.70$), while RSA maintains robust performance above 0.9 across the full scale range.
+The baseline performance decays sharply in a "V-shape" when the scale shifts, dropping to zero at $S=0.70$. RSA maintains a robust performance above 0.9 across the entire scale range.
 
-### Supplementary Results
+### Key Findings
 
 **RQ2 Scene Generalization (Real-World Pick Cup)**:
 
@@ -111,59 +111,58 @@ The baseline degrades sharply in an inverted-V pattern under scale shift (droppi
 | 4 | 0.238 | 0.869 |
 | 8 | 0.181 | **0.988** |
 
-The fisheye scaling curve is far steeper than that of pinhole; fisheye reaches near-perfect performance at $N=8$, while pinhole degrades.
+The scaling curve for fisheye is much steeper than pinhole, reaching near perfection at $N=8$.
 
-**RQ3 Real-World Cross-Camera Transfer**:
+**RQ3 Real-World Hardware Transfer**:
 
 | Lens | FoV | Scale Change | Baseline | RSA |
 |---|---|---|---|---|
-| Training lens | 180° | 1.0× | 1.000 | 1.000 |
-| Narrow lens | 150° | ~1.2× (zoom-in) | 0.500 | **0.950** |
-| Wide-angle lens | 220° | ~0.8× (zoom-out) | 0.003 | **0.600** |
+| Training Lens | 180° | 1.0x | 1.000 | 1.000 |
+| Narrow Lens | 150° | ~1.2x (Zoom-in) | 0.500 | **0.950** |
+| Wide Lens | 220° | ~0.8x (Zoom-out) | 0.003 | **0.600** |
 
-The baseline nearly completely fails on the wide-angle lens (0.003); RSA raises it to 0.600.
+The baseline fails almost completely (0.003) on the wide lens, while RSA recovers performance to 0.600.
 
 ## Highlights & Insights
 
-- **First Systematic Empirical Study**: Fills the gap in systematic analysis of fisheye cameras in robot manipulation policy learning; the three research questions build progressively, and the conclusions offer actionable guidance
-- **Critical Role of Scene Complexity**: Reveals the prerequisite for "fisheye being useful"—the wide FoV localization advantage is fully realized only in visually feature-rich environments; improvement is limited on plain backgrounds
-- **Implicit Data Augmentation Effect**: The wide FoV of the wrist-mounted fisheye camera naturally introduces larger viewpoint variation during arm movement, equivalent to scene-level data augmentation, which is the fundamental source of its generalization advantage
-- **Diagnosis and Remedy of Scale Overfitting**: Precisely identifies scale overfitting as the root cause of cross-camera transfer failure; the proposed RSA strategy is extremely simple (random scaling + black-border padding) yet highly effective
-- **Practical Guidelines**: Provides three concrete recommendations for large-scale fisheye dataset collection: collect in feature-rich environments, maximize scene diversity, and train with RSA
+- **First Systematic Empirical Study**: Fills the gap in systematic analysis regarding the impact of fisheye cameras on robotic manipulation policy learning.
+- **Role of Scene Complexity**: Reveals that the "fisheye advantage" is contingent on visually rich environments where wide FoV can leverage static anchors for localization.
+- **Implicit Data Augmentation**: Wide FoV naturally introduces significant viewpoint variations during wrist movement, providing a form of scene-level implicit augmentation.
+- **Diagnosis of Scale Overfitting**: Identifies scale overfitting as the root cause for cross-camera transfer failure and provides the RSA strategy as a simple, drop-in solution.
+- **Practical Guidelines**: Provides actionable advice for large-scale fisheye data collection: collect in rich environments, maximize scene diversity, and use RSA during training.
 
 ## Limitations & Future Work
 
-- **Wrist-Mounted Perspective Only**: All experiments are based on wrist-mounted fisheye cameras; third-person or multi-view fusion scenarios are not explored
-- **Limited Task Scope**: 3 real-world tasks + 6 simulation tasks; more complex scenarios such as dexterous manipulation, long-horizon tasks, or high-precision assembly are not covered
-- **Limitations of RSA**: Cross-camera transfer to the 220° wide-angle lens reaches only 0.600, still far from perfect; under extreme focal length changes, simulation performance is only 0.06, indicating that RSA cannot fully resolve all hardware discrepancies
-- **Distortion Correction Not Considered**: The approach of first applying geometric correction before training policies is not explored, which may be a more direct path for cross-camera transfer
-- **Imitation Learning Only**: Reinforcement learning and online adaptation are not addressed; the effectiveness of RSA under an RL paradigm remains unknown
+- **Wrist-view Only**: Experiments were confined to wrist-mounted cameras; third-person or multi-view setups were not explored.
+- **Task Scope**: Limited to 3 real and 6 simulation tasks; complex scenarios like multi-stage dexterous manipulation or high-precision assembly were not covered.
+- **RSA Constraints**: Transfer to high-FoV (220°) lenses only reached 0.600, suggesting that focal length differences aren't fully solved.
+- **Distortion Correction**: Geometric rectification prior to training was not explored as a potential path for hardware generalization.
+- **Imitation Learning Focus**: The study focused on IL; the efficacy of RSA in reinforcement learning (RL) or online adaptation paradigms remains unknown.
 
 ## Related Work & Insights
 
-- **Fisheye Cameras in Robotics**: FisheyeStereoNet (fisheye depth estimation), BiFuse/OmniFusion (omnidirectional depth) → focus on the perception layer, lacking systematic analysis of policy learning
-- **Camera Selection in Robotic Manipulation**: UMI/ALOHA (wrist-camera setups), RoVi-Aug/MimicGen (visual augmentation) → all use pinhole cameras without considering the effect of FoV
-- **Domain Adaptation and Generalization**: Domain Randomization, Random Crop Augmentation → RSA can be viewed as domain randomization along the scale dimension, but with more targeted design
-- **Paper Positioning**: First systematic study of the impact of camera model selection from a policy learning perspective, filling the gap at the camera-selection node in the "camera → perception → policy" pipeline
+- **Fisheye Cameras in Robotics**: Previous works like FisheyeStereoNet and OmniFusion focused on perception (depth estimation), lacking systematic analysis of policy learning.
+- **Camera Choice in Manipulation**: Systems like UMI/ALOHA or augmentations like RoVi-Aug primarily use pinhole models.
+- **Domain Adaptation**: RSA can be viewed as domain randomization in the scale dimension, specifically tuned for hardware lens variations.
+- **Positioning**: This work bridges the gap in the "Camera -> Perception -> Policy" chain by being the first to study the choice of camera model from a policy performance perspective.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — As an empirical study, methodological innovation is limited, but the research questions raised and the RSA finding carry genuine practical value
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Dual-track validation in simulation and the real world, 6+3 tasks, rigorous ablation design with clear variable control
-- Writing Quality: ⭐⭐⭐⭐ — The three-RQ structure is clear; the hypothesis–validation–conclusion organization is easy to follow
-- Value: ⭐⭐⭐⭐ — Provides directly actionable guidelines for large-scale fisheye dataset collection; RSA is concise and practical
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness](../../AAAI2026/robotics/sim-to-real_an_unsupervised_noise_layer_for_screen-camera_watermarking_robustnes.md)
-- [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
+- [\[CVPR 2026\] Rethinking Intermediate Representation for VLM-based Robot Manipulation](rethinking_intermediate_representation_for_vlm-based_robot_manipulation.md)
+- [\[CVPR 2026\] INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic Manipulation](insight_bench_towards_grounded_in-situ_guidance_for_robotic_manipulation.md)
+- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
+- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
 
 </div>
 

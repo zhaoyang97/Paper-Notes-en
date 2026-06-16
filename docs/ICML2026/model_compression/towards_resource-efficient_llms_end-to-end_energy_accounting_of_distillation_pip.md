@@ -2,126 +2,133 @@
 title: >-
   [Paper Note] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines
 description: >-
-  [ICML 2026][Model Compression][Distillation Energy Consumption] The authors built a staged GPU energy measurement framework based on NVML, decomposing the distillation pipeline into "teacher side + student side + evaluat…
+  [ICML 2026][Model Compression][Paper Note] The authors developed a multi-stage GPU energy collection framework based on NVML, decomposing the distillation pipeline into "Teacher-side + Student-side + Evaluation" for segmented measurement. They found that in one-off runs, teacher logit caching or synthetic data generation constitutes the majority of the cost, ca
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Distillation Energy Consumption"
-  - "End-to-End Accounting"
-  - "Teacher-Side Cost"
-  - "Pareto Frontier"
-  - "Teacher Reuse"
+  - ICML 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: cff8291f0ce8d867
+content_hash: 6b22eddde103adcf
 ---
-
 # Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.13981](https://arxiv.org/abs/2605.13981)  
-**Code**: https://github.com/StellarLuminosity/Energy (available)  
+**Code**: https://github.com/StellarLuminosity/Energy (Available)  
 **Area**: LLM Efficiency / Green AI / Knowledge Distillation  
 **Keywords**: Distillation Energy Consumption, End-to-End Accounting, Teacher-Side Cost, Pareto Frontier, Teacher Reuse
 
 ## TL;DR
-The authors built a staged GPU energy measurement framework based on NVML, decomposing the distillation pipeline into "teacher side + student side + evaluation" for segment-wise accounting. They found that one-off teacher logit caching/synthetic data generation dominates energy use, causing KD and synthetic SFT to consume about $2.4\times$ more energy than direct SFT for 1B–13B OLMo-2 students. They provide a closed-form break-even formula, showing distillation is only truly "energy-saving" when teacher outputs are reused more than $N^*$ times.
+The authors developed a multi-stage GPU energy collection framework based on NVML, decomposing the distillation pipeline into "Teacher-side + Student-side + Evaluation" for segmented measurement. They found that in one-off runs, teacher logit caching or synthetic data generation constitutes the majority of the cost, causing KD and synthetic SFT on 1B–13B OLMo-2 students to consume approximately $2.4\times$ more energy than direct SFT. A closed-form break-even formula is provided to demonstrate that distillation is only truly "energy-efficient" when teacher outputs are reused $N^*$ times or more.
 
 ## Background & Motivation
 
-**Background**: The surge in LLM deployment has driven up GPU and electricity demand, and the "Green AI" movement calls for energy consumption to be evaluated alongside accuracy. In this context, knowledge distillation is widely regarded as a "cheaper, greener" pipeline for producing small models, with papers typically reporting student-side FLOPs/training time/inference energy as evidence of greenness.
+**Background**: The surge in LLM deployments has increased GPU and electricity demand, leading the "Green AI" movement to advocate for evaluating energy consumption alongside accuracy. In this context, knowledge distillation (KD) is widely regarded as a "cheaper and greener" production line for small models. Papers typically report student-side FLOPs, training duration, or inference energy as evidence of greenness.
 
-**Limitations of Prior Work**: Existing reports almost exclusively account for the student side, treating teacher logit generation, synthetic data creation, and hyperparameter sweeps as "sunk costs." Once the cost of a 32B teacher generating billions of tokens for a 1B student is included, the claim that "distillation saves energy" becomes untenable. However, the community lacks a unified, reproducible, stage-wise energy protocol to expose or support this issue.
+**Limitations of Prior Work**: Existing reports almost exclusively calculate student-side costs, treating teacher-side costs—such as generating logits, synthetic data, and hyperparameter sweeps—as "sunk costs." Once the cost of a 32B teacher generating billions of tokens for a 1B student is included, the claim that "distillation is more energy-efficient" becomes questionable. However, the community lacks a unified, reproducible, and stage-decomposed energy protocol to either debunk or support this claim.
 
-**Key Challenge**: The teacher side is a nearly fixed, large expense that can only be diluted by sharing across multiple students or hyperparameter sweeps, while the student side is a linearly scaling variable cost. Their relative magnitudes determine where the entire pipeline falls on the energy-quality plane, a point rarely quantified in prior work.
+**Key Challenge**: Teacher-side cost is a nearly fixed, large-scale expenditure that can only be diluted when amortized across multiple students or hyperparameter sweeps. In contrast, student-side cost is a variable expenditure that scales linearly with model size. The relative magnitude of these two determines where the entire pipeline falls on the energy-quality plane—a factor that has rarely been quantified in previous work.
 
-**Goal**: (a) Identify when KD/synthetic SFT achieves a better energy-quality trade-off than a strong SFT baseline under a fixed budget; (b) Quantify the teacher-side cost relative to student training and when it dominates; (c) Determine, across student scale, sequence length, teacher reuse, and quality targets, when distillation is truly "energy-saving."
+**Goal**: (a) Determine when KD/synthetic SFT achieves a better energy-quality trade-off than a strong SFT baseline under a fixed budget; (b) Quantify the teacher-side cost relative to student training and identify when it dominates; (c) Establish when distillation is "truly energy-efficient" across dimensions of student scale, sequence length, teacher reuse, and quality targets.
 
-**Key Insight**: Formalize the distillation pipeline into five non-overlapping stages: "prerun / data preprocessing / teacher forward / student training / evaluation." Each stage is numerically integrated using NVML 0.5 s-sampled GPU power time series; CPU-side energy is estimated with CodeCarbon. All results are normalized to Joule/token, and Pareto frontiers are plotted.
+**Key Insight**: Distillation is not inherently "green"; its energy efficiency is entirely a **workflow** issue. By measuring the pipeline in stages, one can derive a closed-form break-even reuse frequency formula and prescribe actionable design guidelines for when to employ distillation.
 
-**Core Idea**: Distillation is not inherently "green"; whether it saves energy is a **workflow** issue. By segmenting and measuring the pipeline, a closed-form break-even reuse formula can be derived, providing actionable design guidelines for "when to distill."
+**Core Idea**: Energy efficiency depends on the workflow. By decomposing the pipeline and measuring segments, authors provide a break-even formula to guide practical decisions.
 
 ## Method
 
 ### Overall Architecture
-The full pipeline is split into three comparative regimes: baseline SFT, logit-based KD, and synthetic SFT. All run on the same dedicated H100 80 GB node, using a fixed OLMo-2 tokenizer, Adafactor optimizer, bf16, sequence length 1024, effective batch 4, cosine LR + 100-step warmup, and early stopping with tolerance $\epsilon = 2\times 10^{-3}$. The teacher is always 32B OLMo-2-SFT; students are 1B/7B/13B. Tasks use TULU-3 instructions, OpenR1-Math, and Open-R1 Codeforces supervised datasets. The pipeline is structured so each stage is timestamped and token-counted; GPU power series are integrated as $E_{\text{GPU}} \approx \int_{t_s}^{t_e} P_{\text{GPU}}(t)\,dt$ to yield stage energy, which are summed for end-to-end kWh. CO₂e is estimated as $E_{\text{total}} \cdot \text{PUE} \cdot g_{\text{region}}$. Three Pareto frontiers are output: energy-quality, stage breakdown, and reuse amortization curves.
+This work does not propose a new algorithm but rather answers whether distillation is energy-efficient. It decomposes the same distillation pipeline into non-overlapping segments, measures energy per segment, and uses a closed-form formula to calculate the break-even point. Specifically, three comparative regimes (baseline SFT, logit-based KD, and synthetic SFT) were run on an identical H100 80 GB exclusive node, using a fixed OLMo-2 tokenizer, Adafactor optimizer, bf16 precision, sequence length of 1024, effective batch size of 4, and early stopping with a tolerance of $\epsilon = 2\times 10^{-3}$. The teacher was a 32B OLMo-2-SFT, with students ranging from 1B to 13B. Datasets included TULU-3 instructions, OpenR1-Math, and Open-R1 Codeforces. Each stage was timestamped and token-counted. GPU energy was calculated via numerical integration of power time series from NVML: $E_{\text{GPU}} \approx \int_{t_s}^{t_e} P_{\text{GPU}}(t)\,dt$. CPU energy was estimated using CodeCarbon. All values were normalized to Joules/token to plot the Pareto frontier.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Three Regimes: Baseline SFT / KD / Synthetic SFT<br/>H100 Node + OLMo-2 32B Teacher"]
+    subgraph ACC["Stage-wise End-to-End Energy Accounting (Design 1)"]
+        direction TB
+        B["Prerun Warmup"] --> C["Data Preprocessing"]
+        C --> D["Teacher Forward Pass"]
+        D -->|KD| E1["Logit Caching E_logit"]
+        D -->|Synthetic SFT| E2["Synthetic Data Generation E_gen"]
+        E1 --> F["Student Training E_student"]
+        E2 --> F
+        F --> G["Evaluation E_eval"]
+    end
+    A --> ACC
+    ACC --> H["NVML 0.5s Power Integration<br/>Segmented → J/token, E2E kWh"]
+    H --> I["Energy-Quality Pareto Frontier (Design 2)<br/>x = kWh, y = Relative Retention Q"]
+    H --> J["Teacher Amortization Break-even (Design 3)<br/>Training Threshold N* / Inference Threshold T*"]
+```
 
 ### Key Designs
 
-1. **Stage-wise End-to-End Energy Accounting Protocol**:
+**1. Stage-wise End-to-End Energy Accounting Protocol: Making "Teacher Sunk Cost" Explicit**
 
-    - **Function**: Hard-partitions total distillation energy into $E_{\text{prerun}} + E_{\text{teacher}} + E_{\text{student}} + E_{\text{eval}}$, with $E_{\text{teacher}}$ further split into logit caching $E_{\text{logit}}$ or synthetic generation $E_{\text{gen}}$. Each segment has explicit start/end boundaries, token counts, and GPU/CPU power sampling.
-    - **Mechanism**: NVML samples GPU power at 0.5 s intervals as ground truth; CodeCarbon in process-tracking mode estimates CPU. All units are unified as $1\,\text{kWh}=3.6\times 10^{6}\,\text{J}$. To enable cross-scale/pipeline comparison, stage energy is divided by processed tokens to yield $\text{J/token}=E^{(\text{stage})}_{\text{total}}/N_{\text{tokens}}$. CO₂e, being deployment-dependent, is explicitly marked as a derived metric; main analysis focuses on measured energy.
-    - **Design Motivation**: Previous Green AI work often used GPU-hours or FLOPs as proxies, which are not directly comparable across pipelines. Stage-wise breakdown immediately pinpoints whether the bottleneck is teacher or student, guiding which lever to adjust.
+Previous Green AI reports almost exclusively calculated student-side costs, treating logit generation or synthetic data creation as sunk costs. This work decomposes total energy into $E_{\text{prerun}} + E_{\text{teacher}} + E_{\text{student}} + E_{\text{eval}}$, where the teacher stage is further divided into logit caching $E_{\text{logit}}$ or synthetic generation $E_{\text{gen}}$, with explicit start/end boundaries and token counts. NVML power sampling every 0.5s served as the ground truth for GPU energy, while CodeCarbon estimated CPU energy in process-tracking mode. All units were unified to $1\,\text{kWh}=3.6\times 10^{6}\,\text{J}$. To allow comparison across scales, energy was normalized to $\text{J/token}=E^{(\text{stage})}_{\text{total}}/N_{\text{tokens}}$. CO₂e was treated as a derived metric based on deployment assumptions.
 
-2. **Energy-Quality Pareto Frontier and Unified Quality Score**:
+**2. Energy-Quality Pareto Frontier and Unified Quality Metrics**
 
-    - **Function**: Compresses five benchmark scores into a single cross-student comparable scalar, then plots energy vs. quality Pareto scatterplots to identify dominated pipeline-scale combinations.
-    - **Mechanism**: Quality score is defined as the relative retention rate to the 32B teacher: $Q_i = \frac{1}{B}\sum_{b=1}^{B}\frac{s_{i,b}}{s_{\text{teacher},b}}$, where $B=5$ and benchmarks include AlpacaEval 2, IFEval, MT-Bench-101, GSM8K, and MMLU. The $x$-axis is total pipeline kWh (sum of stages), $y$-axis is $Q$, and each configuration is run 2–3 times with mean reported. Since CO₂e is linearly proportional to kWh under fixed grid factors, the same plot can be read as an emissions-quality frontier.
-    - **Design Motivation**: Benchmark tables alone do not reveal which (pipeline, scale) combinations are strictly dominated in the energy-quality plane. Explicit Pareto plots directly inform practitioners which configurations are "obviously suboptimal" and wasteful.
+To identify which (pipeline, scale) combinations are dominated in the energy-quality plane, the authors consolidated five benchmarks into a scalar—a relative retention rate $Q_i = \frac{1}{B}\sum_{b=1}^{B}\frac{s_{i,b}}{s_{\text{teacher},b}}$ (where $B=5$, including AlpacaEval 2, IFEval, MT-Bench-101, GSM8K, and MMLU). Pareto scatter plots were generated with total kWh as the $x$-axis and $Q$ as the $y$-axis. This visualization clearly identifies "suboptimal" configurations where electricity is wasted for negligible or negative quality gains.
 
-3. **Teacher Amortization and Closed-Form Break-Even Threshold**:
+**3. Teacher Amortization and Closed-form Break-even Thresholds**
 
-    - **Function**: Quantifies when distillation overtakes baseline SFT in end-to-end energy, as teacher outputs (cached logits/synthetic datasets) are reused by $N$ students/hyperparameter seeds.
-    - **Mechanism**: For each KD/synthetic SFT curve, per-student average energy is $E_{\text{teacher}}/N + E_{\text{student}}^{\text{distill}}$. The break-even point with baseline is $N^* = \dfrac{E_{\text{teacher}}}{E_{\text{student}}^{\text{baseline}}-E_{\text{student}}^{\text{distill}}}$. Similarly, for inference, $T^* = \dfrac{E_{\text{extra-train,kWh}}\cdot 3{,}600{,}000}{j_{\text{ref}}-j_{\text{student}}}$ tells users how many inference tokens are needed to recoup the extra training energy.
-    - **Design Motivation**: Whether distillation "saves energy" is not an intrinsic property of KD or synthetic SFT, but a workflow issue determined by reuse count. Expressing it as a simple fraction with the denominator as "baseline minus distillation student training energy" allows threshold recalculation for new hardware/model families, providing a reuse-before-regenerate design rule.
+Whether distillation saves energy is a workflow issue determined by the reuse frequency of teacher outputs. The average energy per student is expressed as $E_{\text{teacher}}/N + E_{\text{student}}^{\text{distill}}$. The critical reuse count $N^*$ to break even with the baseline is $N^* = \dfrac{E_{\text{teacher}}}{E_{\text{student}}^{\text{baseline}}-E_{\text{student}}^{\text{distill}}}$. The denominator represents the training energy savings of the distilled student; breakeven only occurs if the distilled student trains more efficiently and is reused enough times. For the inference side, the threshold is $T^* = \dfrac{E_{\text{extra-train,kWh}}\cdot 3{,}600{,}000}{j_{\text{ref}}-j_{\text{student}}}$, indicating how many inference tokens must be served to offset the extra training energy.
 
 ### Loss & Training
-
-The KD objective is the classic Hinton-style mixture: $\mathcal{L}_{\text{KD}}(\theta_s) = \alpha\,\mathrm{CE}(y_{\mathrm{hard}}, p_s) + (1-\alpha)\,T^2\,\mathrm{KL}(p_t^{(T)} \,\|\, p_s^{(T)})$, with default $\alpha=0.5$, $T=1$; sensitivity sweeps $T \in \{1, 2, 4\}$, $\alpha \in \{0.3, 0.5, 0.8\}$. Synthetic SFT uses pure autoregressive $\mathcal{L}_{\text{SFT}}(\theta_s; x, y) = -\sum_{t=1}^s \log p_{\theta_s}(y_t \mid x, y_{<t})$, with teacher outputs generated once via nucleus sampling and reused across students. Sweeps include max_new_tokens $\in \{256, 512, 1024\}$ and prompt counts 7000 vs 3500. All regimes share the same batch/scheduler/early stopping rules to ensure energy differences are attributable solely to pipeline structure and teacher presence.
+The objective for KD is the classic Hinton-style mixture: $\mathcal{L}_{\text{KD}}(\theta_s) = \alpha\,\mathrm{CE}(y_{\mathrm{hard}}, p_s) + (1-\alpha)\,T^2\,\mathrm{KL}(p_t^{(T)} \,\|\, p_s^{(T)})$, with default $\alpha=0.5$ and $T=1$. SFT uses pure autoregressive loss $\mathcal{L}_{\text{SFT}}(\theta_s; x, y) = -\sum_{t=1}^s \log p_{\theta_s}(y_t \mid x, y_{<t})$. Synthetic SFT utilizes teacher generation via nucleus sampling once, then reuses it. Hyperparameter sweeps include $T \in \{1, 2, 4\}$, $\alpha \in \{0.3, 0.5, 0.8\}$, and variations in prompt count and max tokens.
 
 ## Key Experimental Results
 
 ### Main Results
-Teacher 32B → students 1B/7B/13B; end-to-end energy, Joule/token, and relative teacher quality retention $Q$ are averaged across three datasets, repeated 2–3 times.
+Comparison of 32B Teacher → 1B/7B/13B Students across three datasets.
 
 | Pipeline | Scale | $E$ (kWh) | J/token | $Q$ | Notes |
 |---|---|---|---|---|---|
 | Baseline SFT | 1B | 7.00 | 0.84 | 0.69 | Lowest energy |
-| Baseline SFT | 7B | 19.50 | 2.34 | 0.90 | Pareto-optimal for 7B/13B |
+| Baseline SFT | 7B | 19.50 | 2.34 | 0.90 | Pareto dominant at 7B/13B |
 | Baseline SFT | 13B | 34.60 | 4.15 | 0.99 | Highest quality |
-| KD | 1B | 16.90 | 2.03 | 0.70 | $\sim 2.4\times$ more energy than 1B SFT |
+| KD | 1B | 16.90 | 2.03 | 0.70 | $\sim 2.4\times$ energy of 1B SFT |
 | KD | 13B | 42.50 | 5.10 | 0.82 | Dominated by baseline 13B |
 | Synthetic SFT | 13B | 40.70 | 4.88 | 0.85 | Teacher generation dominates |
 
 ### Ablation Study
-Stage-wise (kWh) breakdown of key amortization:
+Key energy distribution (kWh) by stage:
 
 | Pipeline | Student Scale | Data Preprocessing | Teacher Side | Student Training | Evaluation |
 |---|---|---|---|---|---|
 | Baseline SFT | 1B / 13B | 0.37 / 0.37 | – | 6.30 / 33.15 | 0.33 / 1.08 |
-| KD | 1B / 13B | 0.37 / 0.37 | 11.00 (logit cache) | 5.20 / 30.05 | 0.33 / 1.08 |
-| Synthetic SFT | 1B / 13B | 0.37 / 0.37 | 10.60 (synthetic gen) | 5.35 / 28.65 | 0.33 / 1.08 |
+| KD | 1B / 13B | 0.37 / 0.37 | 11.00 (Logit Caching)| 5.20 / 30.05 | 0.33 / 1.08 |
+| Synthetic SFT | 1B / 13B | 0.37 / 0.37 | 10.60 (Generation) | 5.35 / 28.65 | 0.33 / 1.08 |
 
-Reuse thresholds: For KD, $N^*$ is about 10 / 5–6 / 4 for 1B/7B/13B; for synthetic SFT, about 11 / 6 / 2–3.
+Reuse thresholds: $N^*$ for KD at 1B/7B/13B is approximately 10 / 5–6 / 4, respectively.
 
 ### Key Findings
-- Teacher-side cost is the "invisible hand" shifting the distillation curve rightward—when run once, it causes KD/synthetic SFT to be strictly Pareto-dominated by baseline SFT at 7B/13B.
-- The smaller the student, the harder it is to amortize the teacher; larger students break even faster, making "reuse-before-regenerate" most critical for small students.
-- Distillation student training kWh is always lower than baseline of the same size, due to faster convergence (soft label supervision → earlier stopping), not because "distillation runs more energy-efficiently on GPU."
-- In KD hyperparameters, $T$ is a secondary knob, while $\alpha$ dominates the energy-quality trade-off; some $(T,\alpha)$ combinations are Pareto-dominated, consuming more energy for negative returns.
-- In synthetic SFT, max_new_tokens is the main driver of nonlinear energy growth; beyond moderate lengths, marginal returns diminish, so prompt count and length should be reduced before expanding generation.
+- Teacher-side costs shift the distillation curve to the right; in one-off runs, KD/synthetic SFT is strictly Pareto-dominated by baseline SFT at 7B/13B scales.
+- Smaller students find it harder to amortize teacher costs. Conversely, larger students break even faster, making "reuse-before-regenerate" critical for small-scale deployments.
+- Training energy (kWh) for distilled students is lower than same-sized baselines due to faster convergence (early stopping) under soft-label supervision, not because the GPU runs more efficiently.
+- In KD, temperature $T$ is a secondary factor, while $\alpha$ dominates the energy-quality trade-off. Some $(T, \alpha)$ combinations are Pareto-dominated.
+- In synthetic SFT, `max_new_tokens` is the largest driver of non-linear energy growth. Reducing prompt count and length should be prioritized over expanding generation volume.
 
 ## Highlights & Insights
-- Transforms the marketing claim "is distillation really energy-saving" into actionable engineering math: a one-line break-even formula $N^* = E_{\text{teacher}}/(E^{\text{baseline}}_{\text{student}} - E^{\text{distill}}_{\text{student}})$ tells teams "we need to distill for at least 6 students to break even."
-- True greenness is not "using a smaller model" but "versioning and registering teacher outputs as shared infrastructure"—a directly actionable workflow recommendation for enterprise R&D.
-- The combination of NVML time-series integration + CodeCarbon CPU estimation provides an open-source harness for future research, reusable for energy auditing in quantization, pruning, LoRA, and other post-training tasks.
+- Transforms the "distillation is green" marketing narrative into actionable engineering mathematics: the break-even formula $N^* = E_{\text{teacher}}/(E^{\text{baseline}}_{\text{student}} - E^{\text{distill}}_{\text{student}})$ informs teams exactly how many students are needed to recoup the cost.
+- True "greenness" comes from treating teacher outputs as shared, versioned infrastructure rather than just switching to smaller models.
+- The combination of NVML integration and CodeCarbon provides an open-source harness for "energy auditing" other post-training techniques like quantization or pruning.
 
 ## Limitations & Future Work
-- All experiments use a single H100 card and OLMo-2 model family; J/token will likely drift significantly on multi-GPU/TPU/A100, requiring break-even thresholds to be recalculated.
-- Teacher is fixed at 32B; teacher scale is not swept—smaller teachers may significantly lower the break-even, allowing KD to break even with fewer reuses.
-- Task coverage is limited to instruction/math/code supervised tasks; does not address safety alignment, multilingual, or long-context deployment targets. CO₂e absolute values will vary greatly under different PUE/grid assumptions.
-- The $T^*$ formula for inference amortization is still at the "same scale" level; only when distilled small models can truly replace large models at equal quality will the formula provide practical guidance for inference energy savings.
+- Experiments were limited to H100 single-node and the OLMo-2 model family; J/token values may shift significantly on TPU or A100.
+- The teacher size was fixed at 32B; smaller teachers might lower the break-even threshold.
+- Task coverage excluded safety alignment, multi-linguality, and long-context scenarios.
+- The $T^*$ formula for inference amortization currently assumes same-scale comparisons; future work should address cases where small models replace larger ones.
 
 ## Related Work & Insights
-- **vs Schwartz et al. Green AI**: While they advocated for energy as an evaluation metric, this work implements that philosophy in the concrete post-training subfield of distillation, providing a reproducible protocol rather than a position paper.
-- **vs Rafat et al. 2023 / Yuan et al. 2024**: The former focuses on carbon cost of CNN KD, the latter compares inference energy of pre-distilled NLP models—both treat teacher as sunk cost. This work explicitly treats teacher forward as a first-class cost, reaching the opposite conclusion that "distillation is more energy-consuming for small students."
-- **vs CodeCarbon / Experiment Impact Tracker**: These are general-purpose estimators; this work layers NVML direct sampling + explicit stage boundaries on top, absorbing estimation error and enabling pipeline-level Pareto plotting.
+- **vs Schwartz et al. (Green AI)**: While they called for energy as an evaluation metric, this paper implements that philosophy for distillation specifically, providing a protocol rather than just a manifesto.
+- **vs Rafat et al. (2023) / Yuan et al. (2024)**: Previous works treated teachers as sunk costs or focused only on inference. This study treats teacher forward passes as first-class costs, leading to the new insight that distillation is often more energy-intensive for small student scenarios.
+- **vs CodeCarbon**: This work overlays direct NVML sampling on top of process-tracking estimators to reduce error and allow pipeline-level Pareto analysis.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Not a new algorithm, but the first to make the "teacher-side sunk cost" of distillation quantifiable and reproducible as a break-even framework; novel perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 3 pipelines × 3 student scales × 3 datasets + KD/synthetic SFT hyperparameter sweeps; solid 2000 GPU-hours investment.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-integrated formulas, tables, and Pareto plots; practical recommendations are directly actionable.
-- Value: ⭐⭐⭐⭐⭐ Debunks the common "distillation is greener" narrative and provides an open-source harness for ongoing industry energy audits, useful for both policy and engineering.
+- **Novelty**: ⭐⭐⭐⭐ Not a new algorithm, but the first to establish a reproducible break-even framework for distillation's hidden costs.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid coverage across 3 pipelines, 3 scales, and 3 datasets, involving 2,000 GPU-hours.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with well-integrated formulas and Pareto charts.
+- **Value**: ⭐⭐⭐⭐⭐ Debunks popular narratives and provides an open-source harness for industry-wide energy auditing.
 
 <!-- RELATED:START -->
 

@@ -2,79 +2,113 @@
 title: >-
   [Paper Note] Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion-based SR] This paper proposes DTPSR, which disentangles textual priors along two orthogonal dimensions — spatial hierarchy (global/local) and frequency semantics (low-frequency/hi…
+  [CVPR 2026][Image Restoration][Paper Note] DTPSR is proposed to achieve superior perceptual quality in diffusion-based super-resolution by disentangling textual priors across two dimensions: spatial hierarchy (global/local) and frequency semantics (low/high), integrated through a decoupled cross-attention pipeline and a multi-branch CFG strategy.
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Diffusion-based SR"
-  - "text guidance"
-  - "disentangled priors"
-  - "frequency-awareness"
-  - "semantic control"
+  - CVPR 2026
+  - Image Restoration
 date: 2026-05-08
-content_hash: b6229cb5454da576
+content_hash: 4f35414c15ccf041
 ---
-
 # Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.07430](https://arxiv.org/abs/2603.07430)  
 **Code**: [GitHub](https://github.com/JL6666JL/DTPSR)  
-**Area**: Image Super-Resolution
-**Keywords**: Diffusion-based SR, text guidance, disentangled priors, frequency-awareness, semantic control
+**Area**: Image Super-Resolution  
+**Keywords**: Diffusion-based SR, Text-guided, Disentangled Priors, Frequency-aware, Semantic Control
 
 ## TL;DR
 
-This paper proposes DTPSR, which disentangles textual priors along two orthogonal dimensions — spatial hierarchy (global/local) and frequency semantics (low-frequency/high-frequency) — and constructs a disentangled cross-attention injection pipeline along with a multi-branch CFG strategy, achieving superior perceptual quality in diffusion-based image super-resolution.
+DTPSR is proposed to achieve superior perceptual quality in diffusion-based super-resolution by disentangling textual priors across two dimensions: spatial hierarchy (global/local) and frequency semantics (low/high), integrated through a decoupled cross-attention pipeline and a multi-branch CFG strategy.
 
 ## Background & Motivation
 
-Diffusion models (e.g., Stable Diffusion) have demonstrated strong generative capabilities in image super-resolution, yet their performance critically depends on how semantic priors are constructed and injected. Existing methods exhibit two categories of limitations:
+Diffusion models (e.g., Stable Diffusion) demonstrate powerful generative capabilities in image super-resolution (SR), but their performance heavily relies on how semantic priors are constructed and injected. Existing methods face two categories of limitations:
 
-**Insufficient semantic granularity**: Local-tag methods (SeeSR) focus on fine details but lack global consistency; global-description methods (SUPIR, PASD) capture global structure but neglect fine-grained details.
+**Insufficient Semantic Granularity**: Local-label methods (e.g., SeeSR) focus on details but lack global consistency; global description methods (e.g., SUPIR, PASD) capture the overall scene but ignore fine-grained details.
 
-**Entangled frequency information**: Existing methods embed structural information (low-frequency: shape, layout) and texture information (high-frequency: edges, material) within the same representation, leading to insufficient semantic controllability and interpretability.
+**Entangled Frequency Information**: Current approaches mix structural information (low-frequency: shape, layout) and textural information (high-frequency: edges, materials) within the same embeddings, leading to insufficient semantic controllability and interpretability.
 
-**Hallucination under severe degradation**: Without disentangled semantic guidance, diffusion models are prone to hallucinations, such as misinterpreting a wall as an ocean texture.
+**Hallucination under Severe Degradation**: Without disentangled semantic guidance, diffusion models are prone to hallucinations, such as misinterpreting wall textures as ocean waves.
 
-Core insight: Disentangling textual priors along two orthogonal dimensions — **spatial hierarchy** and **frequency semantics** — enables the model to simultaneously capture scene-level structure and object-level detail.
+**Key Insight**: Disentangle textual priors along two orthogonal dimensions—**spatial hierarchy** and **frequency semantics**—to enable the model to simultaneously capture scene-level structures and object-level details.
 
 ## Method
 
 ### Overall Architecture
 
-Given a low-resolution image $x_{lr}$, the DTPSR pipeline proceeds as follows:
-1. A VAE encoder maps $x_{lr}$ to the latent space $z_0$.
-2. Forward diffusion adds noise to obtain $z_t$.
-3. During reverse denoising, semantic injection is performed sequentially through four dedicated cross-attention modules:
+DTPSR addresses the core problem: "How should textual priors be fed into diffusion-based SR models?" Instead of injecting a vague global description into cross-attention, it decomposes textual priors into four streams: "Global Structure / Local Low-Freq / Local High-Freq / Input Anchoring," which are injected into the denoising process sequentially according to semantic levels.
+
+Specifically, the low-resolution image $x_{lr}$ is encoded by a VAE into the latent space as $z_0$ and forward-noised to $z_t$. In each reverse denoising step, latent variables pass through four specialized cross-attention modules like a pipeline: first, GTCA injects global structure; next, LFCA adds object-level low-frequency shapes; then, HFCA overlays high-frequency textures; finally, LRCA uses original image features to anchor identity consistency:
 
 $$z_t \xrightarrow{\text{GTCA}} z_t^g \xrightarrow{\text{LFCA}} z_t^{lf} \xrightarrow{\text{HFCA}} z_t^{hf} \xrightarrow{\text{LRCA}} z_{t-1}$$
 
+This "coarse-to-fine, structure-to-texture" injection sequence is intentional: establishing the global skeleton first before adding layers of detail avoids conflicts between different semantic sources.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Low-res image x_lr<br/>VAE encoding z_0 → Noise z_t"] --> B["GTCA (Global Textual Cross-Attention)<br/>Injects global descriptions, sets scene skeleton"]
+    B --> C["LFCA (Low-frequency Cross-Attention)<br/>Low-freq local descriptions, anchors object shapes/layout"]
+    C --> D["HFCA (High-frequency Cross-Attention)<br/>High-freq descriptions, overlays realistic textures"]
+    D --> E["LRCA (LR Feature Cross-Attention)<br/>DAPE features anchor identity consistency"]
+    E -->|Loop T denoising steps| B
+    E --> F["Output z_t−1 → VAE Decoded High-res image"]
+    G["Multi-branch CFG<br/>Three independent negative prompts suppress hallucinations"] -.->|Applied to three semantic branches| B
+    G -.-> C
+    G -.-> D
+```
+
 ### Key Designs
 
-1. **Global Text Cross-Attention (GTCA)**: The global description $c_g$ is encoded by CLIP into $e_g$ and injected into the latent variable via cross-attention to establish scene-level structural foundations. Design motivation: establishing global layout first (e.g., "an indoor scene with 3 objects") before progressive refinement.
+**1. GTCA (Global Textual Cross-Attention): Establishing the Scene Skeleton**
 
-2. **Low-Frequency Cross-Attention (LFCA)**: A set of low-frequency local descriptions $\{c_{lf}^{(i)}\}$ (shape, size, spatial arrangement) is encoded and injected into $z_t^g$ for object-level structural enhancement:
+Methods relying solely on global descriptions capture the big picture but fail at details, while local methods lack global consistency. GTCA serves as the foundation. It encodes a global description $c_g$ (e.g., "Indoor scene with 3 objects") via CLIP into $e_g$ and injects it into latent $z_t$ through cross-attention to establish scene-level structure and layout. Subsequent modules perform incremental refinement on this global skeleton.
+
+**2. LFCA (Low-frequency Cross-Attention): Anchoring Object Shapes and Layout**
+
+Low-frequency information (shape, size, spatial arrangement) determines structural fidelity. When mixed with high-frequency textures in the same embedding, interference occurs. DTPSR assigns a dedicated path for this. LFCA encodes a set of low-frequency local descriptions $\{c_{lf}^{(i)}\}$ via CLIP and concatenates them into a matrix:
+
 $$E_{lf} = [\text{CLIP\_TextEnc}(c_{lf}^{(1)}), \dots, \text{CLIP\_TextEnc}(c_{lf}^{(n)})]$$
-Design motivation: low-frequency information governs structural fidelity; separating it from high-frequency texture prevents mutual interference.
 
-3. **High-Frequency Cross-Attention (HFCA)**: High-frequency descriptions $\{c_{hf}^{(j)}\}$ (texture, edges, surface details) are encoded and injected on top of the LFCA output:
+This is injected into the GTCA output $z_t^g$ for object-level structural enhancement. By focusing only on low frequencies, it anchors layouts (e.g., "L-shaped sofa against the wall") without being distracted by texture details.
+
+**3. HFCA (High-frequency Cross-Attention): Overlaying Realistic Textures on Structure**
+
+High-frequency information (texture, edges, surface material) controls visual realism. DTPSR isolates this as the third injection path to refine textures without altering the established structure. HFCA encodes high-frequency descriptions $\{c_{hf}^{(j)}\}$ and injects them onto the LFCA output:
+
 $$z_t^{hf} = \text{HFCA}(z_t^{lf}, E_{hf})$$
-Design motivation: high-frequency information governs visual realism; independent injection enables precise control over texture generation.
 
-4. **Low-Resolution Feature Cross-Attention (LRCA)**: A frozen DAPE encoder extracts visual features $f_{lr}$ from $x_{lr}$, which are injected via cross-attention to anchor identity consistency with the input image and prevent semantic drift.
+This division of labor ensures that "correctness of shape" and "realism of texture" are handled independently, which is key to preventing hallucinations like misinterpreting walls as waves.
 
-5. **Multi-branch Classifier-Free Guidance (Multi-branch CFG)**: Independent negative prompts $c_g^{\text{neg}}, c_{lf}^{\text{neg}}, c_{hf}^{\text{neg}}$ are designed for the global, low-frequency, and high-frequency branches respectively, enabling disentangled semantic suppression:
+**4. LRCA (Low-resolution Feature Cross-Attention): Anchoring Results to the Input**
+
+Even rich textual priors can lead to generation drift away from the input content. LRCA uses a frozen DAPE encoder to extract visual features $f_{lr}$ from $x_{lr}$, injecting them via cross-attention as identity anchors to constrain the denoising output from drifting. Placed at the end of the chain, it serves as an "alignment correction."
+
+**5. Multi-branch Classifier-Free Guidance (CFG): Individual "Brakes" for Each Semantic Source**
+
+Standard CFG utilizes a single negative prompt, which is insufficient for DTPSR's multiple semantic sources (global, low-freq, high-freq). Thus, independent negative prompts $c_g^{\text{neg}}, c_{lf}^{\text{neg}}, c_{hf}^{\text{neg}}$ are assigned to the three branches for semantic suppression following:
+
 $$\tilde{\epsilon} = \hat{\epsilon} + \lambda_s(\hat{\epsilon} - \hat{\epsilon}_{\text{neg}})$$
-Design motivation: a single negative prompt cannot simultaneously address hallucinations from multiple semantic sources.
+
+This allows for frequency-aware precision control over hallucinations without requiring additional training.
+
+### A Complete Example
+
+For a heavily degraded indoor photo:
+- **GTCA**: Receives "Living room with sofa, table, wall." It defines general positions and skeleton in latent space (blurred blocks).
+- **LFCA**: Receives "L-shaped sofa on the left, rectangular table in center." It anchors the shape and layout of each object (clear outlines).
+- **HFCA**: Receives "Linen sofa texture, wooden table grain, matte wall paint." It overlays textures onto established shapes (wall texture is preserved correctly).
+- **LRCA**: Uses original features to ensure the room remains the specific one from the input.
+- **Multi-branch CFG**: Suppresses potential hallucinations at each frequency level independently during denoising.
 
 ### Loss & Training
 
-- **Training loss**: Standard noise prediction MSE loss
+- **Training Loss**: Standard noise prediction MSE loss.
 $$\mathcal{L} = \mathbb{E}[\|\epsilon - \epsilon_\theta(z_t, z_{lr}, t, c_g, c_{lf}, c_{hf})\|_2^2]$$
-- **Dataset DisText-SR**: ~95K image-text pairs built on LSDIR + the first 10K images from FFHQ, with disentangled descriptions generated via Mask2Former segmentation + LLaVA captioning.
-- **Backbone**: SD-2-base; DAPE encoder for LR embedding extraction.
-- **Training configuration**: AdamW optimizer, lr $5 \times 10^{-5}$, batch size 32, 110K iterations, 4× A800 GPUs.
+- **DisText-SR Dataset**: ~95K image-text pairs based on LSDIR + first 10K FFHQ images. Decoupled descriptions generated via Mask2Former segmentation + LLaVA.
+- **Base Model**: SD-2-base; DAPE encoder for LR embeddings.
+- **Training Config**: AdamW, lr $5 \times 10^{-5}$, batch 32, 110K iterations, 4× A800.
 - **Inference**: DDPM 50 steps, guidance scale $\lambda_s = 7.0$.
 
 ## Key Experimental Results
@@ -90,55 +124,55 @@ $$\mathcal{L} = \mathbb{E}[\|\epsilon - \epsilon_\theta(z_t, z_{lr}, t, c_g, c_{
 | RealSR | MANIQA↑ | **0.6021** | 0.4644 | 0.4429 | +0.0432 |
 | DRealSR | CLIPIQA↑ | **0.7640** | 0.6335 | 0.6307 | +0.0729 |
 
-Note: DTPSR achieves state-of-the-art performance on all no-reference perceptual metrics, though PSNR/SSIM are lower than GAN-based methods (perception–distortion tradeoff).
+Note: DTPSR achieves SOTA on all no-reference perceptual metrics, though PSNR/SSIM are lower than GAN-based methods (perception-distortion trade-off).
 
 ### Ablation Study
 
-| Configuration | MANIQA↑ | CLIPIQA↑ | MUSIQ↑ | Note |
+| Config | MANIQA↑ | CLIPIQA↑ | MUSIQ↑ | Note |
 |------|---------|----------|--------|------|
-| No prior | 0.5271 | 0.7064 | 67.48 | Baseline |
-| Local only | 0.5851 | 0.7471 | 68.86 | Local prior contributes more |
-| Global only | 0.5394 | 0.7211 | 67.80 | Global provides moderate gain |
-| Global + Local | **0.6011** | **0.7640** | **69.24** | Complementary effect is optimal |
-| Frequency entangled | 0.5947 | 0.7527 | 69.05 | Disentangled outperforms entangled |
-| Frequency disentangled | **0.6011** | **0.7640** | **69.24** | Separate injection is more effective |
+| w/o Prior | 0.5271 | 0.7064 | 67.48 | Baseline |
+| Local Only | 0.5851 | 0.7471 | 68.86 | Local prior contributes more |
+| Global Only | 0.5394 | 0.7211 | 67.80 | Global gain is moderate |
+| Global + Local | **0.6011** | **0.7640** | **69.24** | Best complementarity |
+| Freq Mixed | 0.5947 | 0.7527 | 69.05 | Disentangled > Mixed |
+| Freq Disentangled | **0.6011** | **0.7640** | **69.24** | Separated injection is effective |
 
 ### Key Findings
 
-- Local priors contribute substantially more than global priors (MANIQA gain: 0.0580 vs. 0.0123).
+- Local prior contribution significantly outweighs global prior (MANIQA gain 0.0580 vs. 0.0123).
 - Frequency disentanglement consistently outperforms frequency mixing across all metrics.
-- Multi-branch CFG significantly improves perceptual quality over single or no CFG (MUSIQ: 66.73→69.24).
-- Even when text descriptions are randomly corrupted (replaced with "None"), DTPSR still outperforms competing methods, demonstrating robustness.
-- With 10.5B parameters and 14.94s/image inference time, DTPSR is more efficient than SUPIR (17.8B) and FaithDiff (15.6B).
+- Multi-branch CFG significantly improves perceptual quality over single/no CFG (MUSIQ 66.73→69.24).
+- DTPSR exhibits robustness, outperforming other methods even when text descriptions are corrupted (replaced with "None").
+- 10.5B parameters, inference at 14.94s/image, showing better efficiency compared to SUPIR (17.8B) and FaithDiff (15.6B).
 
 ## Highlights & Insights
 
-1. **Elegant disentanglement design**: Decomposing textual priors along spatial hierarchy × frequency semantics as two orthogonal dimensions is conceptually clear and empirically effective.
-2. **DisText-SR dataset**: The first large-scale SR dataset with combined global–local and low-frequency–high-frequency textual annotations, providing a foundation for controllable super-resolution research.
-3. **Multi-branch CFG strategy**: Achieves fine-grained hallucination suppression via frequency-aware negative prompts without additional training.
-4. **Robustness experiments**: The system remains functional even when upstream modules (segmentation, captioning) produce imperfect outputs.
+1.  **Elegant Disentangled Design**: Disentangling textual priors across spatial hierarchy × frequency semantics is conceptually clear and effective.
+2.  **DisText-SR Dataset**: The first large-scale SR dataset combining global-local + low-high frequency text annotations, providing a foundation for controllable SR.
+3.  **Multi-branch CFG Strategy**: Suppresses hallucinations without extra training, enabling fine-grained control via frequency-aware negative prompts.
+4.  **Robustness**: The system functions effectively even if upstream modules (segmentation, captioning) produce imperfect outputs.
 
 ## Limitations & Future Work
 
-1. Full-reference metrics such as PSNR/SSIM fall short of GAN-based methods, reflecting the inherent perception–distortion tradeoff.
-2. The framework depends on the quality of upstream segmentation (Mask2Former) and captioning (LLaVA) models.
-3. Running segmentation and caption generation at inference time introduces additional end-to-end latency.
-4. Only the top-3 largest segmentation regions are processed, potentially missing small but semantically important regions.
-5. Future directions include adaptive prompt correction, tighter integration with upstream modules, and more efficient diffusion backbones.
+1.  Full-reference metrics like PSNR/SSIM are inferior to GAN methods, indicating a perception-distortion trade-off.
+2.  Performance depends on the quality of upstream segmentation (Mask2Former) and captioning (LLaVA) models.
+3.  Inference requires running segmentation and captioning pipelines, increasing end-to-end latency.
+4.  Only the top-3 largest segments are processed, potentially missing small but important detail regions.
+5.  Future directions: Adaptive prompt correction, closer integration with upstream modules, and more efficient diffusion backbones.
 
 ## Related Work & Insights
 
-- **SeeSR**: Employs local semantic tags but focuses solely on details, lacking global consistency.
-- **SUPIR/PASD/FaithDiff**: Utilize global descriptions but neglect frequency separation.
-- **StableSR/DiffBIR**: Do not leverage textual semantics, thus failing to fully exploit diffusion priors.
-- Insight: The disentangled textual prior paradigm is potentially generalizable to other conditional generation tasks such as image editing and inpainting.
+- **SeeSR**: Uses local semantic labels but lacks global consistency.
+- **SUPIR/PASD/FaithDiff**: Uses global descriptions but ignores frequency separation.
+- **StableSR/DiffBIR**: Does not utilize textual semantics, missing the full potential of diffusion priors.
+- Insight: The concept of disentangled textual priors can be generalized to other conditional generation tasks (e.g., editing, inpainting).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The spatial–frequency dual disentanglement design for textual priors is novel; the multi-branch CFG strategy is creative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset, multi-metric evaluation with comprehensive ablations (global/local, frequency, CFG, robustness).
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, architectural diagrams are informative, and experiments are well-organized.
-- Value: ⭐⭐⭐⭐ Establishes a new paradigm for text-guided diffusion super-resolution; the DisText-SR dataset offers practical utility.
+- Novelty: ⭐⭐⭐⭐ Innovative spatial-frequency dual-disentangled prior and multi-branch CFG.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple datasets, wide metrics, and extensive ablations (global/local, frequency, CFG, robustness).
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, framework diagrams, and logical experimental organization.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm for text-guided diffusion SR; DisText-SR dataset is highly practical.
 
 <!-- RELATED:START -->
 
@@ -146,11 +180,11 @@ Note: DTPSR achieves state-of-the-art performance on all no-reference perceptual
 
 ## Related Papers
 
-- [\[CVPR 2026\] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors](phasr_generalized_image_shadow_removal_with_physically_aligned_priors.md)
+- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
+- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
-- [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](sat_selective_aggregation_transformer_for_image_super_resolution.md)
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
+- [\[CVPR 2026\] TUDSR: Twice Upsampling-Diffusion for Higher Super-Resolution](tudsr_twice_upsampling-diffusion_for_higher_super-resolution.md)
 
 </div>
 

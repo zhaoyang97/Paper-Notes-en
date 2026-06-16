@@ -2,80 +2,84 @@
 title: >-
   [Paper Note] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap
 description: >-
-  [ACL 2026][Robotics][Map2Seq] GROKE proposes evaluating navigation instructions **entirely without vision**—by serializing OSM maps into JSON and having Gemini-3 Pro act as a follower agent to execute instructions along…
+  [ACL 2026][Robotics & Embodied AI][Map2Seq] GROKE proposes evaluating navigation instructions **without any visual input**. By serializing OpenStreetMap (OSM) data into JSON, it utilizes Gemini-3 Pro as a follower agent to execute instructions along the graph. Performance metrics like Navigation Error (NE), Success Rate (SR), and SDTW are used as proxies for ins
 tags:
-  - "ACL 2026"
-  - "Robotics"
-  - "Map2Seq"
-  - "OpenStreetMap"
-  - "LLM agent"
-  - "graph reasoning"
-  - "agent-as-judge"
+  - ACL 2026
+  - Robotics & Embodied AI
+  - Map2Seq
+  - OpenStreetMap
+  - LLM agent
+  - graph reasoning
+  - agent-as-judge
 date: 2026-05-08
-content_hash: a2c9ea67d812c394
+content_hash: d43996b3562dfdbd
 ---
-
 # GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap
 
 **Conference**: ACL 2026  
 **arXiv**: [2601.07375](https://arxiv.org/abs/2601.07375)  
 **Code**: https://anonymous.4open.science/r/groke (Anonymous)  
 **Area**: Robotics / VLN Instruction Evaluation  
-**Keywords**: Map2Seq, OpenStreetMap, LLM agent, graph reasoning, agent-as-judge
+**Keywords**: Map2Seq, OpenStreetMap, LLM agent, graph reasoning, agent-as-judge  
 
 ## TL;DR
-GROKE proposes evaluating navigation instructions **entirely without vision**—by serializing OSM maps into JSON and having Gemini-3 Pro act as a follower agent to execute instructions along the graph. Navigation Error (NE), Success Rate (SR), and SDTW are utilized as proxies for instruction quality. Compared to heuristic baselines, GROKE reduces navigation error by 68.5% on Map2Seq, and NE correlates significantly with human judgment of "instruction clarity" ($r = -0.31, p < 0.01$).
+GROKE proposes evaluating navigation instructions **without any visual input**. By serializing OpenStreetMap (OSM) data into JSON, it utilizes Gemini-3 Pro as a follower agent to execute instructions along the graph. Performance metrics like Navigation Error (NE), Success Rate (SR), and SDTW are used as proxies for instruction quality. Compared to heuristic baselines on Map2Seq, GROKE reduces NE by 68.5%, and its NE scores correlate significantly with human judgments of "instruction clarity" ($r = -0.31, p < 0.01$).
 
 ## Background & Motivation
 
-**Background**: Traditional evaluation of navigation instructions ("how good is this instruction") relies on machine translation metrics like BLEU, ROUGE, METEOR, or CIDEr. The VLN community increasingly favors "agent-as-judge"—training a follower agent to follow instructions in high-fidelity visual simulators like Matterport3D or Touchdown, using success rate to determine instruction quality.
+**Background**: Traditional navigation instruction evaluation (i.e., "how good is this instruction?") relies on machine translation metrics like BLEU, ROUGE, METEOR, or CIDEr. The Vision-and-Language Navigation (VLN) community increasingly favors "agent-as-judge" approaches—training a follower agent to follow instructions in high-fidelity visual simulators (e.g., Matterport3D, Touchdown) and judging quality based on success rates.
 
-**Limitations of Prior Work**: (1) **Fatal flaws in n-gram metrics**—"Turn left at the bank" and "Turn right at the bank" yield high BLEU scores but are functionally opposite; conversely, "Turn left after seeing the red building" and "Pass the brick structure and head west" have zero BLEU but describe the same action. (2) **Visual followers conflate language quality with visual recognition**—it remains unclear if an agent failure is due to ambiguous instructions or a failure to distinguish "stucco walls" from "brick walls." (3) High barriers to entry—Google Street View and Matterport3D involve licensing issues, terabytes of data, and high compute requirements.
+**Limitations of Prior Work**: (1) **Fatal flaws of n-gram metrics**: "Turn left at the bank" and "Turn right at the bank" receive near-perfect BLEU scores despite having opposite functions. Conversely, "Turn left after the red building" and "Head west past the brick structure" may have a BLEU of 0 while describing the same action. (2) **Visual followers confound language quality with visual recognition**: Does an agent fail because the instruction is ambiguous or because it misidentified a "stucco wall" as a "brick wall"? (3) **Accessibility**: High-end simulators like Google Street View or Matterport3D require licenses, terabytes of data, and significant compute, making evaluation inaccessible to many researchers.
 
-**Key Challenge**: The "meaning" of an instruction is defined by its **compliance condition** (the set of physical trajectories satisfying the instruction), which is independent of vision. However, all existing pragmatic evaluations couple visual perception, introducing both NLG and CV noise into the metrics.
+**Key Challenge**: The "meaning" of an instruction is defined by its **compliance condition** (the set of physical trajectories that satisfy the instruction), which is independent of visual modality. However, current pragmatic evaluations couple visual perception, introducing both NLG and CV noise into the metrics.
 
-**Goal**: (1) Develop a follower agent that executes instructions solely using symbolic OSM information without vision; (2) Compare various spatial representations (textual, JSON, graphviz, grid) to find the most suitable for LLM reasoning; (3) Use agent metrics (SR/NE) as proxies for instruction navigability and validate them against human judgment.
+**Goal**: (1) Develop a vision-free agent capable of following instructions using only symbolic OSM information. (2) Determine which spatial representation (textual, JSON, Graphviz, or grid) best supports LLM reasoning. (3) Validate the agent's SR/NE as a proxy for instruction navigability against human judgment.
 
-**Key Insight**: The Map2Seq dataset is unique as its instructions are aligned with OSM nodes, edges, and POIs, allowing for the **decoupling of the visual modality**. A purely symbolic follower agent can be constructed to specifically test the "structural/semantic executability" of instructions.
+**Key Insight**: The Map2Seq dataset is unique because its instructions are aligned with OSM nodes, edges, and POIs, allowing for the **decoupling of visual modalities**. A purely symbolic follower agent can be constructed to specifically measure the "structural and semantic navigability" of instructions.
 
-**Core Idea**: Use an LLM as a follower, serialize the OSM map into a **JSON local view**, and execute navigation using a hierarchical two-agent architecture (Sub-instruction Agent + Navigator Agent). The agent's trajectory metrics serve as "instruction quality scores," requiring zero vision and zero training.
+**Core Idea**: Use an LLM as a follower, feeding it serialized **JSON local views** of the OSM map. A hierarchical two-agent architecture (Sub-instruction Agent + Navigator Agent) executes the navigation. The agent’s trajectory metrics serve as the "instruction quality score" without training or visual input.
 
 ## Method
 
 ### Overall Architecture
-GROKE is a **training-free and vision-free** hierarchical system consisting of two agents (Figure 2):
-1. **Sub-instruction Agent**: Decomposes the full instruction $I$ into $K$ atomic sub-goals $\{g_1,\dots,g_K\}$ (MOVE_FORWARD / TURN_LEFT / TURN_RIGHT with NL descriptions). It also extracts all landmarks $\mathcal{L}$ and maps them to OSM POIs using fuzzy string matching (RapidFuzz partial_ratio).
-2. **Navigator Agent**: Iteratively executes the current sub-goal $g_k$. At each step, it constructs a visible area $\mathcal{G}_t$ (traveling $u$ nodes toward the next intersection along the current heading plus a 3-node lookahead). The tuple $(I, v_t, h_t, \mathcal{G}_t)$ is fed into the LLM to output $(\text{status}_k, v_{t+1})$. If $\text{status}_k = \text{COMPLETED}$, the agent proceeds to the next sub-goal.
-3. **Termination Conditions**: (i) All sub-goals completed; (ii) Total steps > 100; (iii) Single sub-goal retries > 15.
-4. **Evaluation Inversion**: While traditional VLN measures "how good the agent is," GROKE fixes the agent (Gemini-3 Pro) and interprets NE, SR, SDTW, and nDTW as measures of "**how navigable the instruction is**."
+
+GROKE aims to solve the problem of evaluating navigation instructions. Rather than using n-gram metrics (which fail on functional opposites) or visual simulators (which confound vision and language), it fixes a vision-free LLM follower (Gemini-3 Pro). This agent follows instructions using purely symbolic OSM information. The resulting Navigation Error (NE), SR, and SDTW are interpreted as proxies for "how executable the instruction is." The system follows a training-free two-agent hierarchical architecture: a Sub-instruction Agent decomposes the full instruction $I$ into $K$ atomic sub-goals $\{g_1,\dots,g_K\}$ (e.g., MOVE_FORWARD, TURN_LEFT with natural language descriptions) and maps landmarks to OSM POIs using fuzzy matching. In the execution loop, the "visible area" is truncated at the next intersection, and the local subgraph is serialized into a JSON view $\mathcal{G}_t$. The Navigator Agent then processes $(I, v_t, h_t, \mathcal{G}_t)$ to output $(\text{status}_k, v_{t+1})$. A "COMPLETED" status advances the system to the next sub-goal. Termination occurs when all sub-goals are finished, total steps exceed 100, or a single sub-goal retry count exceeds 15.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Nav Instruction I + OSM Map"] --> B["Sub-instruction Agent<br/>Parsing into K goals + landmark→POI fuzzy match"]
+    B --> C["Select next sub-goal g_k"]
+    subgraph STEP["Step Execution (Navigator Agent Loop)"]
+        direction TB
+        C --> D["Visible area truncation<br/>Local subgraph along h_t to next intersection"]
+        D --> E["JSON Spatial Serialization<br/>nodes + POI → Local View G_t"]
+        E --> F["Navigator Agent<br/>(I, v_t, h_t, G_t) → (status, v_t+1)"]
+    end
+    F -->|"status=COMPLETED & remaining goals"| C
+    F -->|"Incomplete, continue"| D
+    F -->|"Termination triggered"| G["Trajectory → NE / SR / SDTW<br/>Instruction quality proxy"]
+```
 
 ### Key Designs
 
-1. **Vision-free JSON Spatial Serialization**:
-    - **Function**: Converts the local OSM subgraph (nodes, edges, POIs) into a structured format optimized for LLM readability.
-    - **Mechanism**: Organized into two sections—Nodes (containing ID, type like intersection/waypoint, heading $h \in [0,360)$, and connection list with target IDs and relative bearings) and POIs (containing landmark IDs, nearest node references, discretized relative directions like Forward/Left/Right/Back using $\delta = (h_{v\to p} - h_{\text{curr}} + 180) \mod 360 - 180$, and Haversine distance). Relative bearings are calculated using the spherical bearing formula $h = \text{atan2}(\sin\Delta\lambda \cos\phi_2, \cos\phi_1\sin\phi_2 - \sin\phi_1\cos\phi_2\cos\Delta\lambda)$.
-    - **Design Motivation**: The authors compared four representations—textual narrative, JSON, Graphviz DOT, and ASCII grid matrix. Table 5 shows striking results: JSON achieved 63% SR / 68m NE, Textual 61% / 70m, Graphviz 40% / 96m, and Grid only 10% / 175m. **LLMs often treated '0' in the grid as a valid path, leading to failure**. JSON's hierarchical structure enhances the model's ability to "recover" from local deviations (OSR 74% vs Textual 67%). On "Hard" tasks, JSON SR (53.8%) outperformed Textual (38.5%) by 15 points, proving structured data is critical for long-range reasoning.
+**1. Sub-instruction Agent: A state machine for decomposing long instructions**
 
-2. **Sub-instruction Agent for Instruction Decomposition**:
-    - **Function**: Breaks a complex instruction (e.g., 53 tokens) into $K$ state-machine-like sub-goals.
-    - **Mechanism**: The LLM acts as a parser $I \xrightarrow{\text{parse}} \{g_1,\dots,g_K\}$, where each $g_k$ follows the pattern `("MOVE_FORWARD", "Go straight to the bank", TODO)`. The Navigator focuses on the current $g_k$ rather than the full instruction, transforming "long-range planning" into "short-range execution and state progression."
-    - **Design Motivation**: This relieves the LLM from the dual burden of remembering five instruction steps and spatial reasoning simultaneously. Ablation studies (Appendix A.2) show that removing the sub-instruction phase leads to a significant drop in SR.
+Instructions often contain over 50 tokens and require multi-step spatial reasoning. Feeding the entire instruction to a navigator often leads to the model getting lost. The Sub-instruction Agent acts as a parser: $I \xrightarrow{\text{parse}} \{g_1,\dots,g_K\}$, where each goal is formatted as `("MOVE_FORWARD", "Go straight to the bank", TODO)`. This allows the Navigator to focus only on the current $g_k$, reducing the dual burden of "long-range planning" and "spatial reasoning." Ablations (Appendix A.2) show that removing this stage leads to a significant drop in SR.
 
-3. **Intersection-based Visible Area Truncation**:
-    - **Function**: Simulates a human field of view by only showing the local subgraph from the current position toward the next "fork in the road," preventing token explosion and hallucinations.
-    - **Mechanism**: (Algorithm 1) Starting from $v_t$ along $h_t$, the system selects the neighbor with the minimum $\Delta h(h_{\text{curr}}, h_{v'})$ where $\Delta h < 100^\circ$. It continues until it passes $u$ intersections (where $\text{degree}(v) > 2$) plus a 3-node lookahead. POI proximity mapping uses a 50m threshold.
-    - **Design Motivation**: This ensures the "map" seen by the LLM is comparable to what a human sees at a crossing, retaining necessary decision-making information while ignoring irrelevant distant streets.
+**2. Intersection-based visible area truncation: Limiting scope to the next junction**
 
-### Loss & Training
-- **Training-free**: Uses Gemini-3 Pro with default temperature 1.0 and high reasoning settings; no fine-tuning.
-- Average trajectory: 5.91 steps / 44k total tokens / 23k thinking tokens.
-- Implemented using the Google Agent Development Kit (ADK) and batch APIs.
+To prevent the LLM from being overwhelmed by irrelevant distant nodes and hallucinating, GROKE simulates a junction-based field of view (Algorithm 1). Starting from $v_t$ in direction $h_t$, it selects neighbors by $\arg\min_{v'} \Delta h(h_{\text{curr}}, h_{v'})$ while $\Delta h < 100^\circ$. It proceeds until it encounters a specific number of intersections ($\text{degree}(v) > 2$), plus a 3-node lookahead. POIs are attached to path nodes using a 50m threshold and Haversine distance. This captures all necessary decision-making information while compressing the token count.
+
+**3. Vision-free JSON Spatial Serialization: LLM-friendly local map formats**
+
+The serialization format of the local subgraph is critical. GROKE organizes the graph into two parts: "nodes" (ID, type, heading, and adjacency lists with relative bearings calculate via the bearing formula) and "POIs" (landmark ID, node reference, distance, and discretized relative direction: Forward/Left/Right/Back). A systematic comparison of representations—Textual, JSON, Graphviz DOT, and ASCII grid—revealed significant performance gaps: JSON (SR 63% / NE 68m) vs. Textual (SR 61% / NE 70m) vs. Graphviz (SR 40% / NE 96m) vs. Grid (SR 10% / NE 175m). The "0" cells in ASCII grids were often misinterpreted by the LLM as valid paths. JSON’s hierarchical structure proved most robust for recovering from local deviations (OSR 74% vs. Textual 67%).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Overall performance on two Map2Seq splits (700 instances/split):
+Performance on two Map2Seq splits (700 trajectories per split):
 
 | Method | TestSetA NE↓ | TestSetA SR↑ | TestSetA OSR↑ | TestSetA SDTW↑ | TestSetB NE↓ | TestSetB SR↑ | TestSetB OSR↑ | TestSetB SDTW↑ |
 |---|---|---|---|---|---|---|---|---|
@@ -84,9 +88,9 @@ Overall performance on two Map2Seq splits (700 instances/split):
 | Heuristic Agent (Regex+Angle) | 180.6 | 18.0% | 18.9% | 0.155 | 173.0 | 17.9% | 19.1% | 0.159 |
 | **GROKE (Ours)** | **56.8** | **66.4%** | **78.4%** | **0.634** | **59.8** | **63.3%** | **78.0%** | **0.609** |
 
-Human baseline SR is approximately 0.86 / 0.84 (in Street View environments). Vision-free GROKE reaches ~74-77% of human performance.
+Human baseline SR is 0.86 / 0.84 (in Street View). GROKE's vision-free approach reaches ~74-77% of human performance.
 
-Human correlation analysis (n=100, manual navigability labeling):
+Human correlation analysis (n=100, manual binary navigability labels):
 
 | Metric | Pearson $r$ | $p$ | Spearman $\rho$ | $p$ |
 |---|---|---|---|---|
@@ -100,68 +104,64 @@ NE is the metric most strongly correlated with human judgment.
 
 ### Ablation Study
 
-Comparison of four spatial representations across difficulties (n=100 Map2Seq seen val):
+Comparison of four spatial representations across difficulty levels (n=100 Map2Seq seen val):
 
 | Representation | Easy NE | Easy SR | Medium NE | Medium SR | Hard NE | Hard SR | Overall |
 |---|---|---|---|---|---|---|---|
-| **JSON** | 62.1 | 61.2% | 61.2 | 68.4% | **112.9** | **53.8%** | Best; significant lead on hard tasks |
-| Textual | 71.3 | 61.2% | **56.6** | 68.4% | 110.6 | 38.5% | Good for simple; fails on hard |
+| **JSON** | 62.1 | 61.2% | 61.2 | 68.4% | **112.9** | **53.8%** | Best for Hard tasks |
+| Textual | 71.3 | 61.2% | **56.6** | 68.4% | 110.6 | 38.5% | Good for simple tasks |
 | Graphviz DOT | 90.4 | 40.8% | 87.8 | 47.4% | 146.5 | 15.4% | High parsing overhead |
-| ASCII Grid | 186.7 | 6.1% | 160.3 | 13.2% | 176.6 | 15.4% | Disaster; LLM hallucinates paths |
-| Optimized Repr. | **35.6** | **77.6%** | **30.9** | **76.3%** | 93.3 | 53.8% | Theoretical upper bound with prompt engineering |
+| ASCII Grid | 186.7 | 6.1% | 160.3 | 13.2% | 176.6 | 15.4% | Failed (misinterpreted '0') |
+| Optimized Repr. | **35.6** | **77.6%** | **30.9** | **76.3%** | 93.3 | 53.8% | Upper bound with Prompt Eng. |
 
 ### Key Findings
-- **JSON ≫ ASCII grid is a disruptive finding**: Grid representations are popular in LLM vision-reasoning papers, but the 10% SR here reveals that text-based grid maps are nearly unusable for LLMs due to noise.
-- **JSON advantages amplify on Hard tasks**: While JSON and Textual performed similarly on Easy/Medium tasks, JSON SR (53.8%) far exceeded Textual (38.5%) on Hard tasks, indicating the hierarchical structure is a more scalable scaffold.
-- **NE is the best human-aligned metric**: With $r = -0.31, p < 0.01$, NE outperforms SR/OSR as an evaluation priority.
-- **Vision-free performance is competitive**: The 12-point gap between human (86%) and GROKE (74%) suggests that many navigation tasks are predominantly determined by topology and landmarks rather than visual details.
-- **High Cost**: The production cost of Gemini-3 Pro with high reasoning and large token counts is a barrier; future work will focus on distillation into smaller models.
+- **JSON ≫ ASCII grid**: While grid representations are popular in visual LLM reasoning research, they failed here (10% SR). "0" padding confused the model into selecting empty space as valid paths.
+- **Scalability of JSON**: While Textual and JSON perform similarly on Easy/Medium tasks, JSON significantly outperforms on Hard tasks (SR 53.8% vs. 38.5%). Structural hierarchy acts as better "scaffolding" for long-range planning.
+- **NE as the Best Metric**: $r = -0.31, p < 0.01$, significantly better than OSR. Evaluation should prioritize NE over SR.
+- **Vision is not always mandatory**: Map-only GROKE (SR 74%) trails humans in Street View (SR 86%) by only 12%, proving that navigation relies heavily on topology and landmarks rather than fine-grained visual details.
+- **Cost Considerations**: Each trajectory averages 44k tokens, presenting a barrier for massive-scale deployment.
 
 ## Highlights & Insights
-- **Inversion of the task definition**: By fixing the agent, traditional agent metrics (SR/NE/SDTW) transform into instruction quality scores. This "frame inversion" allows the reuse of VLN benchmarks and metrics to solve a different problem.
-- **Systematic comparison of LLM spatial representations**: This study provides rare evidence for picking spatial data structures (Textual/JSON/Graphviz/Grid), valuable for any work using LLMs for graph or map reasoning.
-- **Relative direction discretization**: Converting continuous angles into four categories (Forward/Left/Right/Back) avoids the precision loss common when LLMs handle raw numerical coordinates.
-- **Anti-intuitive "Vision-free" sufficiency**: The ability to reach 56m NE purely via JSON suggests that for blind-assistance technologies or smart glasses, topological reasoning might be as critical as computer vision.
+- **Task Inversion**: GROKE re-frames "agent evaluation" as "instruction evaluation." By fixing the agent, existing VLN metrics (SR/NE/SDTW) effectively measure the quality of the linguistic input.
+- **Systematic Spatial Representation Comparison**: The discovery that "hierarchical JSON" is superior to textual or grid formats has implications for any LLM task involving graph reasoning (e.g., path planning, social networks).
+- **Relative Direction Discretization**: Using discretization (Forward/Left/Right/Back) instead of raw angular values prevents precision-loss errors common in LLM numeric processing.
+- **Counter-intuitive Insight**: A mission-critical insight for assistive technologies (like smart glasses for the visually impaired) is that symbolic topology + landmark descriptions are often sufficient for navigation, even without visual perception.
 
 ## Limitations & Future Work
-- **Inability to evaluate visual-anchor instructions**: Instructions like "Turn left at the house with the red door" cannot be evaluated by GROKE and are systematically undervalued.
-- **Model bias**: Results are tied to Gemini-3 Pro and lack cross-validation with other LLMs (GPT-4o, Claude, Llama).
-- **Scale constraints**: The high per-trajectory cost prevents large-scale repetitive evaluations.
-- **Fuzzy matching dependence**: Grounding "the bank" depends on OSM tags; if tags are missing or brand-specific (e.g., "bank_of_america"), valid instructions may be incorrectly marked as failures.
+- **Lack of Visual Anchors**: Instructions relying on specific visual attributes (e.g., "the house with the red door") will fail in GROKE, meaning such instructions are systematically undervalued.
+- **Model Bias**: Conclusions are currently tied to Gemini-3 Pro and have not been cross-validated with GPT-4o or Claude.
+- **Computational Cost**: High token consumption per trajectory necessitates distillation into smaller models for large-scale use.
+- **Fuzzy Grounding**: If instructions say "the bank" but OSM only maps "Bank of America," matching may fail, leading to false negatives.
 
 ## Related Work & Insights
-- **Vs. Traditional Followers (Speaker-Follower/LANA)**: These agents couple vision and language in environments like Matterport3D. GROKE strips vision, offering a "pure linguistic diagnostic" complementary to existing followers.
-- **Vs. VELMA/NavGPT**: While these are LLM-based VLN agents, they utilize visual perception. GROKE demonstrates that structured OSM maps are sufficient to support instruction execution without visual descriptions.
-- **Vs. BLEU/ROUGE**: GROKE's Spearman correlation with humans (0.29-0.32) far exceeds BLEU, which is often uncorrelated with human judgment in navigation contexts.
+- **Comparison with Vision-based Followers**: Unlike VELMA or NavGPT which verbalize visual observations, GROKE uses structured OSM data directly, proving that map schemas alone can support robust navigation reasoning.
+- **Comparison with BLEU/ROUGE**: While traditional metrics show near-zero correlation with human navigability judgment, GROKE’s NE metric provides a statistically significant correlation ($r \approx 0.3$), offering a superior diagnostic for NLG.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ "Vision-free agent-as-judge" is a clear new proposal, supported by a systematic representation comparison.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 4 baselines, 4 representations, difficulty stratification, human correlation, and error analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ The motivation is clear, particularly the counter-examples for BLEU. Methods are explicit.
-- **Value**: ⭐⭐⭐⭐ Provides a zero-barrier, reproducible outdoor instruction evaluation tool for the VLN community.
+- Novelty: ⭐⭐⭐⭐ Vision-free agent-as-judge is a clever reversal of the standard paradigm; JSON vs. Grid comparison is a solid contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 baselines, 4 representations, difficulty stratification, and human correlation; the n=100 subset for correlation is somewhat small.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is clear (especially the BLEU counter-examples); Algorithm and grounding details are explicit.
+- Value: ⭐⭐⭐⭐ Provides a reproducible, low-barrier tool for the VLN community and insights for blind-assistive technologies.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-## Related Papers
-
-- [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
-- [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](../../CVPR2026/robotics/profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](../../CVPR2026/robotics/decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
-- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
-- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
+1. **Map2Seq**: "Learning to Map for Sequence-to-Sequence Navigation Instruction Generation," Chen et al., 2019.
+2. **NavGPT**: "Explicit Reasoning in Vision-and-Language Navigation with Large Language Models," Zhou et al., 2023.
+3. **VELMA**: "Verbalized Experience for Large Language Model based Agents," Schumann et al., 2023.
 
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
+- [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](../../CVPR2026/robotics/parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](../../CVPR2026/robotics/profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[AAAI 2026\] Neural Graph Navigation for Intelligent Subgraph Matching](../../AAAI2026/robotics/neural_graph_navigation_for_intelligent_subgraph_matching.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](../../CVPR2026/robotics/decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
-- [\[CVPR 2026\] ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation](../../CVPR2026/robotics/maniparena_comprehensive_real-world_evaluation_of_reasoning-oriented_generalist_.md)
 
 </div>
 

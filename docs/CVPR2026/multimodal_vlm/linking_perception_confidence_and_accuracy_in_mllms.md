@@ -2,79 +2,89 @@
 title: >-
   [Paper Note] Linking Perception, Confidence and Accuracy in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] This paper reveals a severe confidence miscalibration problem in MLLMs—accuracy drops sharply when visual inputs are degraded while confidence remains unchang…
+  [CVPR 2026][Multimodal VLM][Reinforcement Learning] The study reveals severe confidence miscalibration in MLLMs (where accuracy plunges during visual input degradation but confidence remains unchanged). It proposes CDRL (Confidence-Driven RL based on original-noise image pairs) for perception sensitivity training and utilizes the calibrated confidence to implement Adapt
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Multimodal Large Language Models"
-  - "Confidence Calibration"
-  - "Reinforcement Learning"
-  - "Test-Time Scaling"
-  - "Visual Perception"
+  - CVPR 2026
+  - Multimodal VLM
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 2bccda9ba54e2cc9
+content_hash: f93680115274a666
 ---
-
 # Linking Perception, Confidence and Accuracy in MLLMs
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12149](https://arxiv.org/abs/2603.12149)  
 **Code**: [https://github.com/anotherbricki/CA-TTS](https://github.com/anotherbricki/CA-TTS)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Multimodal Large Language Models, Confidence Calibration, Reinforcement Learning, Test-Time Scaling, Visual Perception
 
 ## TL;DR
-This paper reveals a severe confidence miscalibration problem in MLLMs—accuracy drops sharply when visual inputs are degraded while confidence remains unchanged—and proposes CDRL (Confidence-Driven Reinforcement Learning with clean-noisy image pairs) for perception-sensitive training. The calibrated confidence is then leveraged for adaptive test-time scaling via CA-TTS, achieving an average improvement of 8.8% across four benchmarks.
+The study reveals severe confidence miscalibration in MLLMs (where accuracy plunges during visual input degradation but confidence remains unchanged). It proposes CDRL (Confidence-Driven RL based on original-noise image pairs) for perception sensitivity training and utilizes the calibrated confidence to implement Adaptive Test-Time Scaling (CA-TTS), achieving an average improvement of 8.8% across four benchmarks.
 
 ## Background & Motivation
-Recent MLLM research has focused primarily on enhancing visual perception to improve accuracy, while a critical question has been overlooked: **does the model know when it does not know?**
+In recent years, MLLM research has primarily focused on enhancing visual perception to improve accuracy, yet a critical question remains overlooked: **Does the model know when it does not know?**
 
-The authors design a probing experiment in which noise is progressively added to key visual evidence while simultaneously monitoring model confidence and accuracy. The results reveal that confidence remains nearly unchanged while accuracy drops substantially, exposing a severe confidence miscalibration in MLLMs—models maintain high confidence even when visual perception degrades significantly.
+The authors designed a probing experiment by incrementally adding noise to key visual evidence while observing changes in model confidence and accuracy. The results revealed that while accuracy dropped significantly, confidence remained nearly unchanged. This exposes a severe confidence miscalibration in MLLMs—models maintain high confidence even when visual perception is severely degraded.
 
-Existing confidence calibration methods for LLMs operate at the token level, whereas visual perception in MLLMs is global in nature (spanning the entire response), creating a granularity mismatch. Furthermore, LLM calibration methods do not account for the influence of the visual component on calibration.
+Existing confidence calibration methods for LLMs operate at the token level, whereas MLLM visual perception is global (persisting throughout the response), resulting in a granularity mismatch. Furthermore, LLM calibration methods do not account for the influence of visual components.
 
-The core ideas are: (1) train with RL on clean-noisy image pairs, rewarding confidence discrepancy to enhance perceptual sensitivity while aligning accuracy with confidence for calibration; (2) the resulting calibrated confidence naturally serves as a routing signal for test-time scaling—a "free lunch," since calibration itself endows the model with TTS capability.
+Core ideas: (1) Train RL using original-noise image pairs, enhancing perception sensitivity via confidence difference rewards while achieving calibration through accuracy-confidence alignment rewards. (2) The calibrated confidence naturally serves as a routing signal for test-time scaling—a "free lunch," as calibration itself provides TTS capabilities.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two stages: (1) **CDRL training**—the model is trained with GRPO on clean-noisy image pairs to enhance perceptual sensitivity and calibrate confidence; (2) **CA-TTS inference**—the calibrated confidence signal is used to adaptively schedule three decoupled reasoning modules (Self-Consistency, Self-Reflection, and Self-Check), coordinated by an Expert Model serving as Planner, Voter, and Critic.
+This paper addresses the miscalibration problem where MLLMs remain confident despite "not seeing clearly," turning the calibrated confidence into a scheduling signal during inference. The framework consists of two stages: training via CDRL to make the model sensitive to visual degradation and highly confident only when correct; and inference via CA-TTS, which treats the calibrated confidence as a routing signal to adaptively schedule three decoupled verification modules. Specifically, CDRL first uses GRPO on "original-noise" image pairs to ensure confidence fluctuates based on the quality of visual evidence. During inference, the base model samples multiple responses, and three modules—Self-Consistency, Self-Reflection, and Self-Check—each produce votes, which are finally aggregated into the answer, coordinated by an Expert Model acting as Planner, Voter, and Critic.
+
+```mermaid
+graph TD
+    subgraph CDRL["CDRL: Perception Sensitivity Calibration Training (Design 1)"]
+        direction TB
+        A["Original Image i + Question q"] --> B["CLIP attention locates key regions<br/>Add noise to generate paired image i′"]
+        B --> C["GRPO Training<br/>Reward = Confidence Calibration + Correctness + Format"]
+    end
+    CDRL --> D["Calibrated Base Model<br/>Confidence drops when vision is unclear; high only when correct"]
+    D --> E["Sample n responses<br/>Each with CoT / Answer / Confidence"]
+    E --> F["Expert Planner Scheduling<br/>Three decoupled modules run once (scaffolding)"]
+    F --> G["Self-Consistency<br/>Conf-weighted voting + Expert Voter external vote"]
+    F --> H["Self-Reflection<br/>Expert Critic feedback → Base Re-answering"]
+    F --> I["Self-Check<br/>Original/Noised VCD Contrastive Decoding"]
+    G --> J["Shared Voting Dictionary V_final"]
+    H --> J
+    I --> J
+    J --> K["Final Answer"]
+```
 
 ### Key Designs
 
-1. **Confidence-Driven Reinforcement Learning (CDRL)**:
+**1. Confidence-Driven Reinforcement Learning (CDRL): Teaching the model "don't be confident if you can't see"**
 
-    - **Function**: Enhance the perceptual sensitivity of MLLMs (i.e., responsiveness to visual degradation) and calibrate confidence (high confidence when correct, low confidence when incorrect).
-    - **Mechanism**: CLIP attention maps are used to identify key visual regions, which are then corrupted to generate image pairs $(i, i')$. Confidence is defined as the Negative Mean Log-Probability: $C = \frac{1}{T}\sum_{t=1}^T \text{Conf}_{\text{token}_t}$, $\text{Conf}_{\text{token}} = -\frac{1}{k}\sum_{i=1}^k \log p_{(i)}$. The confidence calibration reward is: $R_{\text{Conf},j} = \underbrace{\alpha \tanh(\beta \cdot \Delta C)}_{\text{Perception Term}} + \underbrace{(2 \cdot R_{\text{Output},j} - 1) \cdot C_j^{norm}}_{\text{Calibration Term}}$
-    - **Design Motivation**: The Perception Term rewards confidence discrepancy between the clean and noisy images ($\Delta C = C_j - C_j'$), encouraging the model to be sensitive to visual degradation. The Calibration Term rewards high confidence when the answer is correct (+$C_j$) and penalizes high confidence when incorrect (−$C_j$), achieving accuracy-confidence alignment.
+The probing experiment identified a "blindness" to visual degradation. CDRL uses CLIP attention maps to find key visual regions and adds noise to generate paired images $(i, i')$, running the same question on both "clean" and "degraded" versions. Confidence is measured via Negative Mean Log-Probability of the full sequence: $C = \frac{1}{T}\sum_{t=1}^T \text{Conf}_{\text{token}_t}$, where $\text{Conf}_{\text{token}} = -\frac{1}{k}\sum_{i=1}^k \log p_{(i)}$, where lower values indicate higher certainty. The reward is split into two terms:
 
-2. **Self-Consistency**:
+$$R_{\text{Conf},j} = \underbrace{\alpha \tanh(\beta \cdot \Delta C)}_{\text{Perception Term}} + \underbrace{(2 \cdot R_{\text{Output},j} - 1) \cdot C_j^{norm}}_{\text{Calibration Term}}$$
 
-    - **Function**: Sample multiple responses, then obtain a robust answer via confidence-weighted voting combined with external calibration from an Expert Model.
-    - **Mechanism**: $V_{internal}[k] = \sum_{i=1}^n C_i \cdot \mathbb{I}(A_i = k)$ computes the internal confidence-weighted vote. The Expert Model (Voter) provides external confidence $C_{expert}$ for each candidate, and the final vote is $V_{final}[k] = V_{internal}^{norm}[k] + \tau_1 \cdot c_k$.
-    - **Design Motivation**: Compared to plain majority voting, confidence-weighted voting gives greater weight to high-confidence correct answers, while the Expert Model provides independent external verification.
+The Perception Term rewards the confidence gap $\Delta C = C_j - C_j'$ between the original and noise images, forcing the model to be sensitive to visual degradation. The Calibration Term aligns confidence with correctness—rewarding high confidence for correct answers ($+C_j$) and penalizing high confidence for incorrect ones ($-C_j$).
 
-3. **Self-Reflection**:
+**2. Self-Consistency: Allowing "confidently correct answers" to have higher weight**
 
-    - **Function**: The Expert Model acts as a Critic to generate critiques of the question, guiding the base model to reconsider its response.
-    - **Mechanism**: $Crit = M_{expert}^{Critic}(i, q, P_{critique})$, $(CoT_{reflect}, A_{reflect}) = M_{base}(i, q, Crit)$; the reflected answer is incorporated into the final vote with weight $\tau_2$.
-    - **Design Motivation**: Low-confidence predictions can be corrected through externally guided reflection.
+Once calibrated, confidence is used as a voting weight. After sampling $n$ responses, internal votes are accumulated based on confidence: $V_{internal}[k] = \sum_{i=1}^n C_i \cdot \mathbb{I}(A_i = k)$. Additionally, an Expert Model acts as a Voter to provide an independent external confidence $C_{expert}$, which is combined with internal votes: $V_{final}[k] = V_{internal}^{norm}[k] + \tau_1 \cdot c_k$.
 
-4. **Self-Check**:
+**3. Self-Reflection: Using external criticism to correct low-confidence predictions**
 
-    - **Function**: Perform self-checking at the visual level using Visual Contrastive Decoding (VCD) to contrast outputs from clean and noisy images.
-    - **Mechanism**: $\log P_{VCD}(y|i,q) = (1+\alpha) \cdot \log P_\theta(y|i,q) - \alpha \cdot \log P_\theta(y|i',q)$; the contrastively decoded answer is incorporated into the final vote with weight $\tau_3$.
-    - **Design Motivation**: Visual-level verification exploits the contrast between "spurious confidence" on noisy images and "true signal" from clean images to highlight reliable visual reasoning.
+If a prediction has low confidence, it suggests the model is uncertain. An Expert Model acts as a Critic to generate a critique $Crit = M_{expert}^{Critic}(i, q, P_{critique})$, which is fed back into the base model to re-answer: $(CoT_{reflect}, A_{reflect}) = M_{base}(i, q, Crit)$. The reflected answer is added to the vote with weight $\tau_2$.
+
+**4. Self-Check: Debunking "false confidence" at the visual level**
+
+This step uses Visual Contrastive Decoding (VCD) to compare outputs from the original and noise images: $\log P_{VCD}(y|i,q) = (1+\alpha) \cdot \log P_\theta(y|i,q) - \alpha \cdot \log P_\theta(y|i',q)$. This amplifies real visual signals while suppressing "hallucinated confidence" that persists even in noised images. The resulting answer is added to the vote with weight $\tau_3$.
 
 ### Loss & Training
-GRPO training is employed with total reward $r_j = R_{\text{Conf},j} + R_{\text{Output},j} + R_{\text{Format},j}$. The base model is Qwen2.5-VL-7B-Instruct, fine-tuned with full parameters on 8×H100 GPUs using 1,936 training samples. The Expert Model is Gemini-2.5-Pro.
+Using GRPO training, the total reward is $r_j = R_{\text{Conf},j} + R_{\text{Output},j} + R_{\text{Format},j}$. The base model is Qwen2.5-VL-7B-Instruct, fine-tuned on 8×H100 GPUs with 1,936 samples. The Expert Model is Gemini-2.5-Pro, with inference weights set to $\tau_1=\tau_2=\tau_3=0.5$.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Math-Vista | Math-Vision | MMStar | MMMU |
-|--------|-----------|------------|--------|------|
+|------|-----------|------------|--------|------|
 | Pass@1 (base) | 64.7 | 23.0 | 60.2 | 48.8 |
 | Majority Voting | 69.8 | 30.1 | 69.0 | 57.5 |
 | VL-Rethinker | 74.1 | 30.7 | 63.4 | 55.6 |
@@ -83,47 +93,47 @@ GRPO training is employed with total reward $r_j = R_{\text{Conf},j} + R_{\text{
 
 ### Ablation Study
 
-| Configuration | Math-Vision ALL | Note |
-|---------------|----------------|------|
+| Configuration | Math-Vision ALL | Description |
+|------|----------------|------|
 | Training-Free (Pass@1) | 22.96 | Baseline |
-| CDRL only | 26.38 | Better model state after calibration |
-| CA-TTS only | 37.99 | TTS framework yields significant gains |
-| CDRL + CA-TTS | **42.35** | Synergistic combination, best performance |
+| CDRL only | 26.38 | Better calibrated state |
+| CA-TTS only | 37.99 | Significant TTS improvement |
+| CDRL + CA-TTS | **42.35** | Optimal synergy |
 
 ### Key Findings
-- After CDRL training, the model's confidence drop under visual perturbation increases by 4–8× (e.g., Noised: −0.32 → −1.39), demonstrating that the model genuinely "knows when it does not know."
-- The CA-TTS scaling slope $\beta_1 = 3.65$ is 2.2× that of Majority Voting (1.64) and 3.1× that of DeepConf (1.19), confirming that calibrated confidence enables more efficient TTS.
-- Using Qwen2.5-VL-7B itself as the Expert Model still yields substantial gains over Majority Voting, demonstrating that the approach does not depend on an exceptionally strong Expert.
-- On MMMU, the proposed method achieves 66.3% vs. VL-Rethinker's 55.6%, a gain of 10.7 percentage points.
+- After CDRL training, the model's confidence drop during visual perturbation increased by 4-8x (e.g., Noised: -0.32 → -1.39), showing it truly "knows what it doesn't know."
+- The scaling slope of CA-TTS ($\beta_1 = 3.65$) is 2.2x that of Majority Voting (1.64), indicating that calibrated confidence makes TTS more efficient.
+- Even using Qwen2.5-VL-7B itself as the Expert provides significantly better results than Majority Voting.
+- On MMMU, the model achieved 66.3% vs. VL-Rethinker's 55.6%, a gain of 10.7 percentage points.
 
 ## Highlights & Insights
-- The probing experiment ("does the model know when it does not know?") intuitively and powerfully exposes a fundamental deficiency in MLLMs.
-- The dual-term reward design in CDRL is elegant: the Perception Term uses image pairs to enhance sensitivity, while the Calibration Term aligns confidence with accuracy.
-- "Calibrated confidence as a free lunch"—calibration training directly translates into TTS capability at inference time, with no additional cost.
-- The three CA-TTS modules are fully decoupled and order-agnostic, each contributing only votes, yielding a flexible and robust architecture.
+- The probing experiment regarding "knowing when it doesn't know" provides a powerful and intuitive revelation of core MLLM flaws.
+- The dual-reward design of CDRL is elegant: the Perception Term uses image pairs to enhance sensitivity, while the Calibration Term aligns confidence with accuracy.
+- "Calibrated confidence is a free lunch"—training-time calibration translates directly into inference-time TTS capability without extra cost.
+- The three modules of CA-TTS are fully decoupled and order-independent, making the architecture flexible and robust.
 
 ## Limitations & Future Work
 - CA-TTS relies on an Expert Model (e.g., Gemini-2.5-Pro), introducing external API costs and latency.
-- The training set consists of only 1,936 samples; scaling up may further improve calibration quality.
-- The VCD in Self-Check requires additional inference over noisy images, increasing inference overhead.
-- The voting weights for the three modules are fixed at $\tau_1 = \tau_2 = \tau_3 = 0.5$; adaptive weight assignment may yield better performance.
+- Training data was limited to 1,936 samples; scaling this up could further improve calibration quality.
+- Self-Check's VCD requires additional inference on noise images, increasing computational overhead.
+- The voting weights $\tau_1, \tau_2, \tau_3$ are currently fixed; adaptive weighting might be superior.
 
 ## Related Work & Insights
-- DeepConf applies confidence for TTS but is limited to mathematical reasoning and lacks calibration training; this paper complements it by incorporating the training phase.
-- VCD was originally proposed to mitigate hallucinations; this paper integrates it into the TTS framework as a visual self-check module.
-- Compared to tree-search methods such as ToT, CA-TTS's decoupled multi-stage verification is more robust and avoids single-point failures.
+- DeepConf uses confidence for TTS but only for mathematical reasoning and lacks calibration training; this work completes the training loop.
+- VCD, originally for mitigating hallucination, is integrated into the TTS framework as a visual self-check module.
+- Compared to tree-search methods like ToT, the decoupled multi-stage verification in CA-TTS is more robust against single points of failure.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic study of visual perception–confidence calibration in MLLMs; the CDRL+CA-TTS framework is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Four benchmarks, extensive ablations, scaling curve analysis, sensitivity experiments, and case studies are all well-executed.
-- **Writing Quality**: ⭐⭐⭐⭐ The probing experiment provides a compelling introduction; the framework description is clear and well-organized.
-- **Value**: ⭐⭐⭐⭐⭐ Identifies a fundamental problem in MLLMs and provides a systematic solution; the average 8.8% improvement is highly significant.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of MLLM visual perception-confidence calibration; CDRL+CA-TTS framework is highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across four benchmarks, multiple ablations, scaling curve analysis, and sensitivity experiments.
+- Writing Quality: ⭐⭐⭐⭐ Engaging introduction via probing experiments; framework descriptions are clear.
+- Value: ⭐⭐⭐⭐⭐ Addresses fundamental MLLM issues with a systematic solution, yielding a major 8.8% average improvement.
 
-## Key Terminology
-- **NMLP (Negative Mean Log-Probability)**: A sequence-level confidence measure; lower values indicate higher certainty.
-- **Perceptual Bluntness**: The phenomenon in which a model is insensitive to degradation of visual inputs.
-- **VCD (Visual Contrastive Decoding)**: Decoding that exploits the logit difference between clean and noisy images.
-- **Free Lunch**: The TTS capability gain obtained at no additional cost as a byproduct of calibration training.
+## Key Terms
+- **NMLP (Negative Mean Log-Probability)**: A sequence-level confidence measure; lower values mean higher certainty.
+- **Perceptual Bluntness**: The phenomenon where a model is insensitive to the degradation of visual input.
+- **VCD (Visual Contrastive Decoding)**: Decoding by contrasting logit differences between original and noised images.
+- **Free Lunch**: The inherent improvement in TTS capability gained "for free" through calibration training.
 
 <!-- RELATED:START -->
 
@@ -131,11 +141,11 @@ GRPO training is employed with total reward $r_j = R_{\text{Conf},j} + R_{\text{
 
 ## Related Papers
 
+- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
 - [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](codepercept_code-grounded_visual_stem_perception_for_mllms.md)
-- [\[CVPR 2026\] LFPC: Learning to Focus and Precise Cropping for MLLMs](lfpc_learning_to_focus_and_precise_cropping_for_mllms.md)
-- [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[ACL 2026\] VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning](../../ACL2026/multimodal_vlm/vl-calibration_decoupled_confidence_calibration_for_large_vision-language_models.md)
+- [\[CVPR 2026\] CICA: Coupling Confidence-Aware Pretraining with Confidence-Informed Attention for Robust Multimodal Sentiment Analysis](cica_coupling_confidence-aware_pretraining_with_confidence-informed_attention_fo.md)
+- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

@@ -2,143 +2,154 @@
 title: >-
   [Paper Note] RACO: Reward-free Alignment for Conflicting Objectives
 description: >-
-  [ICML 2026][Optimization][Multi-objective Alignment] RACO frames multi-objective LLM preference alignment as a multi-objective optimization problem—applying individual DPO losses for each objective and resolving gradient…
+  [ICML 2026][Optimization & Theory][CAGrad-Clip] RACO reframes multi-objective LLM preference alignment as a multi-objective optimization problem—where each objective follows its own DPO loss. Gradient conflicts are resolved using clipped CAGrad (CAGrad combined with user-weight-based coefficient clipping). The authors theoretically prove convergence to a Pareto-crit
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Multi-objective Alignment"
-  - "Gradient Conflict"
-  - "CAGrad-Clip"
-  - "Pareto-critical point"
-  - "DPO"
+  - ICML 2026
+  - Optimization & Theory
+  - CAGrad-Clip
+  - DPO
 date: 2026-05-08
-content_hash: fbe1af518ef5e4c5
+content_hash: 7659938af5e9c8b9
 ---
-
 # RACO: Reward-free Alignment for Conflicting Objectives
 
 **Conference**: ICML 2026 Oral  
 **arXiv**: [2602.02495](https://arxiv.org/abs/2602.02495)  
-**Code**: TBD  
-**Area**: Optimization / LLM Alignment / Multi-objective Optimization  
-**Keywords**: Multi-objective Alignment, Gradient Conflict, CAGrad-Clip, Pareto-critical point, DPO
+**Code**: To be confirmed  
+**Area**: Optimization / LLM Alignment / Multi-Objective Optimization  
+**Keywords**: Multi-objective alignment, Gradient conflict, CAGrad-Clip, Pareto-critical point, DPO
 
 ## TL;DR
-RACO frames multi-objective LLM preference alignment as a multi-objective optimization problem—applying individual DPO losses for each objective and resolving gradient conflicts via clipped CAGrad (CAGrad with coefficients clipped by user weights). It provides theoretical guarantees for convergence to Pareto-critical points respecting user-specified weights (with strict acceleration in two-objective scenarios) and empirically achieves superior Pareto trade-offs across Qwen 3, Llama 3, and Gemma 3 model families.
+RACO reframes multi-objective LLM preference alignment as a multi-objective optimization problem—where each objective follows its own DPO loss. Gradient conflicts are resolved using clipped CAGrad (CAGrad combined with user-weight-based coefficient clipping). The authors theoretically prove convergence to a Pareto-critical point that respects user-specified weights (with strict acceleration for clipping in two-objective scenarios), and empirically demonstrate consistently better Pareto trade-offs across Qwen 3, Llama 3, and Gemma 3 model families.
 
 ## Background & Motivation
 
-**Background**: Mainstream LLM alignment relies on RLHF (reward modeling + RL). Recently, reward-free routes (DPO, SimPO, IPO, KTO, etc.) optimize directly on preference pairs offline. however, most are single-objective, whereas human alignment is inherently multi-objective (helpful, harmless, faithful, concise).
+**Background**: Mainstream LLM alignment follows RLHF (reward modeling + RL), while recent reward-free DPO routes (DPO, SimPO, IPO, KTO, etc.) optimize directly on preference pairs offline. However, these are almost exclusively single-objective, whereas human alignment is inherently multi-objective (e.g., helpful, harmless, faithful, and concise).
 
-**Limitations of Prior Work**: (1) Linear weighting for multi-objective aggregation fails to find directions that improve all objectives simultaneously when gradients conflict, inevitably sacrificing certain goals; (2) Existing multi-objective RL approaches (e.g., MODPO, Rame 2023) require training multiple reward models or weight-conditioned policies, which are complex and prone to reward model distortion; (3) AMoPO is reward-free but does not explicitly handle conflicts; (4) The "alignment tax" (drop in helpfulness as safety increases) and jailbreak phenomena reported by OpenAI are concrete manifestations of multi-objective conflicts.
+**Limitations of Prior Work**: (1) Linear scalarization for multi-objective aggregation fails when gradients conflict, as no single direction can improve all objectives simultaneously, inevitably sacrificing some. (2) Existing multi-objective RL alignment methods (e.g., MODPO, Rame 2023) require training multiple reward models or weight-conditioned policies, which increases complexity and introduces reward model distortion. (3) AMoPO is reward-free but does not explicitly handle conflicts. (4) The "alignment tax" (where safety gains cause helpfulness to drop) and jailbreak phenomena reported by OpenAI are specific manifestations of multi-objective conflict.
 
-**Key Challenge**: A solution that simultaneously satisfies reward-free pipeline simplification, explicit gradient conflict handling, and respect for user-specified weights does not exist. While CAGrad resolves conflicts in multi-task learning, its conflict-correction may be too aggressive in high-dimensional LLM fine-tuning, pushing updates toward less-preferred objectives.
+**Key Challenge**: A solution that simultaneously offers reward-free pipeline simplification, explicit gradient conflict handling, and respect for user-specified weights does not currently exist. While CAGrad addresses conflict in multi-task learning, its conflict-correction may be overly aggressive in high-dimensional LLM fine-tuning, pushing updates toward less-preferred objectives.
 
-**Goal**: (1) Reward-free multi-objective alignment; (2) Explicit handling of gradient conflicts; (3) Respect for user-specified weights; (4) Pareto convergence guarantees.
+**Goal**: (1) Reward-free multi-objective alignment; (2) Explicit gradient conflict handling; (3) Respect for user-specified weights; (4) Pareto convergence guarantees.
 
-**Key Insight**: Treat multi-objective preference alignment as a multi-objective optimization problem—one DPO-style preference loss per objective, each with its own gradient. CAGrad serves as a natural primitive for a reward-free framework, but requires clipping to address over-correction in high-dimensional spaces.
+**Key Insight**: Treat multi-objective preference alignment as multi-objective optimization—one DPO-style preference loss per objective, yielding individual gradients. CAGrad serves as a natural primitive for a reward-free framework; however, clipping is introduced to address the over-correction problem in high-dimensional spaces.
 
-**Core Idea**: CAGrad-Clip — The correction coefficients $p^*$ solved by CAGrad are clipped element-wise by the user weight $w$, such that $\tilde p = \min(p^*, w)$. This prevents the correction from pushing any objective weight beyond the user's specification, maintaining the user trade-off while benefiting from conflict mitigation.
+**Core Idea**: CAGrad-Clip—The correction coefficients $p^*$ derived from CAGrad are element-wise clipped by the user weights $w$, specifically $\tilde p = \min(p^*, w)$. This prevents correction from pushing any objective weight beyond the user-specified limit, preserving user trade-offs while benefiting from conflict mitigation.
 
 ## Method
 
 ### Overall Architecture
 
-The DPO loss for each objective $i$ is: $\mathcal{L}_i(\theta) = -\mathbb{E}[\log \sigma(\beta(\log \pi_\theta(y_i^+|x)/\pi_{\text{ref}} - \log \pi_\theta(y_i^-|x)/\pi_{\text{ref}}))]$
+The DPO loss for each objective $i$ is defined as: $\mathcal{L}_i(\theta) = -\mathbb{E}[\log \sigma(\beta(\log \pi_\theta(y_i^+|x)/\pi_{\text{ref}} - \log \pi_\theta(y_i^-|x)/\pi_{\text{ref}}))]$
 
-Per step:
-1. Compute $g_i = \nabla_\theta \mathcal{L}_i$ and weighted $g_0 = \sum_i w_i g_i$.
-2. Solve $p^* \in \arg\min_p \{G_p^\top g_0 + c\|g_0\|\|G_p\|\}$ (CAGrad dual problem, $G_p = \sum_i p_i g_i$).
+At each step:
+1. Compute $g_i = \nabla_\theta \mathcal{L}_i$ and the weighted gradient $g_0 = \sum_i w_i g_i$.
+2. Solve $p^* \in \arg\min_p \{G_p^\top g_0 + c\|g_0\|\|G_p\|\}$ (the CAGrad dual problem, where $G_p = \sum_i p_i g_i$).
 3. **Clip**: $\tilde p_i = \min(p_i^*, w_i)$.
-4. $\tilde G_p = \sum_i \tilde p_i g_i$.
-5. $G_0 = g_0 + c\|g_0\|\tilde G_p / \|\tilde G_p\|$ (if $\|\tilde G_p\| > 0$, else $G_0 = g_0$).
-6. $\theta \leftarrow \theta - \eta G_0$.
+4. Compute $\tilde G_p = \sum_i \tilde p_i g_i$.
+5. Compute $G_0 = g_0 + c\|g_0\|\tilde G_p / \|\tilde G_p\|$ (if $\|\tilde G_p\| > 0$, otherwise $G_0 = g_0$).
+6. Update parameters: $\theta \leftarrow \theta - \eta G_0$.
+
+In summary, RACO maintains the standard DPO loss form but recombines individual gradients into a single update direction at each step. The core mechanism is the CAGrad-Clip sequence: solving for coefficients to mitigate conflict, capping them based on user weights, and synthesizing the final descent direction. Theorems 3.1 and 3.2 guarantee the convergence of this iterative process (see Key Designs 2 and 3).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Step: Compute objective gradients g_i<br/>Weighted gradient g_0 = Σ w_i·g_i"]
+    subgraph CC["CAGrad-Clip: Conflict Resolution + User Weight Capping"]
+        direction TB
+        B["Solve CAGrad Dual Problem<br/>to find correction coefficients p*"] --> C["Element-wise Clipping<br/>p̃_i = min(p*_i, w_i)"]
+        C --> D["Synthesize Correction Direction<br/>G̃_p = Σ p̃_i·g_i"]
+    end
+    A --> B
+    D --> E["Final Update Direction<br/>G_0 = g_0 + c·‖g_0‖·G̃_p / ‖G̃_p‖"]
+    E --> F["Parameter Update<br/>θ ← θ − η·G_0"]
+    F -->|Next Iteration| A
+```
 
 ### Key Designs
 
-1. **CAGrad-Clip: User-Specified Weight Constraint on Correction**:
-    - **Function**: Prevents CAGrad correction from pushing the update in a direction more biased than the user weight.
-    - **Mechanism**: The $p^*$ solved by vanilla CAGrad may cause an objective's proportion to exceed $w_i$ (due to noise and over-correction in high dimensions). Clipping $\tilde p_i = \min(p_i^*, w_i)$ ensures the correction does not exceed user authorization.
-    - **Design Motivation**: In the high-dimensional parameter space of LLM fine-tuning, CAGrad's trust-region search is noisy. Clipping acts as a trade-off-preserving hard constraint that is simple yet effective.
+**1. CAGrad-Clip: Capping conflict correction with user weights to prevent over-correction**
 
-2. **Pareto Convergence Guarantee (Theorem 3.1)**:
-    - **Function**: Theoretically proves that clipped updates still converge to Pareto-critical points.
-    - **Mechanism**: Defines weighted loss $\mathcal{L}_w = \sum_i w_i \mathcal{L}_i$. Proves any limit point is simultaneously a critical point of $\mathcal{L}_w$ and a Pareto-critical point of $(\mathcal{L}_1, \dots, \mathcal{L}_m)$. Convergence rate: $\min_t \mathcal{M}(\theta_t)^2 \leq 2\mathcal{L}_w(\theta_0) / (\eta(1-c^2)T)$.
-    - **Design Motivation**: Clipping alters the original CAGrad convergence analysis, necessitating a new proof to ensure theoretical completeness in converging to user-respecting Pareto points.
+By framing alignment as multi-objective optimization, CAGrad becomes a natural primitive for resolving conflicts as it seeks a correction direction that ensures no objective is sacrificed. However, in the extremely high-dimensional parameter space of LLM fine-tuning with noisy gradients, CAGrad’s trust-region search can be overly aggressive, pushing updates toward objectives the user favors less and disrupting the intended trade-off. RACO introduces a simple yet critical fix: the dual problem coefficients $p^*$ are clipped element-wise by user weights $w$, resulting in $\tilde p_i=\min(p_i^*, w_i)$. The final update $G_0$ is synthesized using these clipped weights. This clipping acts as a trade-off-preserving hard constraint, ensuring no objective's influence is boosted beyond the authorized limit, thereby achieving conflict mitigation without deviating from user-specified priorities.
 
-3. **Strict Acceleration in Two-Objective Scenarios (Theorem 3.2)**:
-    - **Function**: Proves that clipping is strictly superior to no clipping in two-objective scenarios.
-    - **Mechanism**: For two objectives, clipping allows the correction direction to more accurately reflect user weights, resulting in a strictly better convergence rate coefficient.
-    - **Design Motivation**: Two-objective scenarios are the most common in LLM alignment (helpful vs harmless); a strict acceleration conclusion is highly persuasive.
+**2. Pareto Convergence Guarantee (Theorem 3.1): Proving clipped updates reach user-weight-respecting Pareto points**
+
+Since clipping modifies the original CAGrad direction, the original convergence analysis no longer applies. The authors prove that any limit point of the clipped updates is simultaneously a critical point of the weighted loss $\mathcal{L}_w=\sum_i w_i\mathcal{L}_i$ and a Pareto-critical point of the vector-valued loss $(\mathcal{L}_1,\dots,\mathcal{L}_m)$. They establish the convergence rate as:
+
+$$\min_t \mathcal{M}(\theta_t)^2\le\frac{2\,\mathcal{L}_w(\theta_0)}{\eta(1-c^2)T}.$$
+
+This theorem elevates clipping from a mere engineering trick to a theoretically sound component, ensuring the algorithm converges to a point that respects user-given weights rather than an arbitrary Pareto point.
+
+**3. Strict Acceleration in Two-Objective Scenarios (Theorem 3.2): Proving clipping is faster for helpful vs. harmless settings**
+
+Beyond preserving convergence, the authors demonstrate that clipping is strictly superior to vanilla CAGrad in two-objective scenarios. The intuition is that clipping allows the correction direction to align more precisely with user weights, leading to a strictly better constant in the convergence rate. This conclusion is particularly significant as most LLM alignment tasks involve two objectives (e.g., helpfulness vs. harmlessness, capability vs. safety). Experimental results quantify this acceleration, showing that CAGrad-Clip reaches the same Pareto distance approximately 25% faster than vanilla CAGrad.
 
 ## Key Experimental Results
 
-### Multi-objective Summarization (Helpfulness vs Harmlessness)
+### Main Results: Multi-objective Summarization (Helpfulness vs. Harmlessness)
 
 | Method | Helpful (↑) | Harmless (↑) | Pareto Distance (↓) |
 |------|--------|--------|----------|
 | Weighted DPO (Linear) | 6.8 | 7.2 | 0.41 |
 | MODPO (with reward model) | 7.1 | 7.4 | 0.32 |
 | AMoPO (reward-free) | 7.3 | 7.6 | 0.28 |
-| **RACO (CAGrad-Clip)** | **7.6** | **7.9** | **0.18** |
+| **Ours (RACO)** | **7.6** | **7.9** | **0.18** |
 
-Ours consistently leads across multiple model families (Qwen 3-7B, Llama 3-8B, Gemma 3-9B).
+RACO consistently leads across multiple model families (Qwen 3-7B, Llama 3-8B, Gemma 3-9B).
 
-### Safety Alignment (Safety vs Capability)
+### Main Results: Safety Alignment (Safety vs. Capability)
 
 | Method | Capability MMLU | Safety Score | Tax (% Decrease) |
 |------|----------|----------|----|
 | Single-obj DPO (safety only) | 62.4 | 89.5 | -8.3% |
 | Linear-weight multi-obj | 65.8 | 84.2 | -3.5% |
 | AMoPO | 66.7 | 85.7 | -2.6% |
-| **RACO** | **67.9** | **87.1** | **-1.4%** |
+| **Ours (RACO)** | **67.9** | **87.1** | **-1.4%** |
 
-RACO significantly reduces the alignment tax (1.4% capability drop vs. 8.3% for single-objective DPO) while maintaining safety scores close to the single-objective safety baseline.
+RACO significantly reduces the alignment tax (1.4% capability drop vs. 8.3% for single-objective DPO) while maintaining safety scores near those of pure safety training.
 
 ### Ablation Study
 
 | Configuration | Helpful | Harmless | Pareto Distance |
 |------|------|------|----|
 | Full RACO (CAGrad-Clip) | 7.6 | 7.9 | 0.18 |
-| Without clipping (vanilla CAGrad) | 7.4 | 7.5 | 0.27 |
-| Without CAGrad (Pure weighted DPO) | 6.8 | 7.2 | 0.41 |
-| MGDA Replacement | 6.9 | 7.3 | 0.36 |
+| w/o clipping (vanilla CAGrad) | 7.4 | 7.5 | 0.27 |
+| w/o CAGrad (pure weighted DPO) | 6.8 | 7.2 | 0.41 |
+| Replace with MGDA | 6.9 | 7.3 | 0.36 |
 
-The clipping component alone improves Pareto distance by +0.09, though CAGrad itself provides the largest contribution.
-
-### Convergence Speed
-In two-objective scenarios, CAGrad-Clip reaches the same Pareto distance approximately 25% faster than vanilla CAGrad (experimentally validating Theorem 3.2).
+Clipping alone improves the Pareto distance by 0.09, while CAGrad provides the largest individual contribution.
 
 ### Key Findings
-- **Clipping is a critical fix for high-dimensional friendliness**: Vanilla CAGrad over-corrects on LLMs; clipping provides significant improvement.
-- **Reward-free + Conflict Handling**: RACO is the first method to satisfy both requirements.
-- **Significant reduction in alignment tax**: RACO preserves capability while achieving safety.
-- **Generalization across model families**: Benefits seen in Qwen, Llama, and Gemma regardless of model architecture.
+- **Clipping is essential for high-dimensional stability**: Vanilla CAGrad over-corrects in LLMs, whereas clipping provides stabilization.
+- **Reward-free + Conflict Resolution**: RACO is the first method to successfully combine both features.
+- **Significant reduction in alignment tax**: RACO allows capability to remain nearly static while achieving safety alignment.
+- **Universal across model families**: Benefits were observed across Qwen, Llama, and Gemma regardless of model architecture.
 
 ## Highlights & Insights
-- **Reframing preference alignment as multi-objective optimization**: Instead of incremental changes to RLHF/DPO frameworks, this work brings tools from gradient conflict literature, offering a fresh perspective.
-- **Clipping as a simple but key fix**: Vanilla CAGrad is unstable on LLMs; clipping stabilizes it. This combination of "simple engineering fix + rigorous theory" is highly practical.
-- **Full cycle of theory and empirics**: Provides both convergence guarantees (Theorem 3.1) and acceleration conclusions (Theorem 3.2), validated across multiple model families.
-- **Extensibility**: CAGrad-Clip is not limited to LLM alignment; it is applicable to any high-dimensional multi-objective optimization scenario (e.g., multi-task learning, multimodal training).
+- **Reframing Alignment**: Reframes multi-objective preference alignment into the established domain of multi-objective optimization, transferring powerful tools from gradient conflict literature to LLM alignment.
+- **Simple yet critical optimization**: Clipping is a simple engineering fix with profound impacts on stability in high-dim spaces, grounded in rigorous theoretical analysis.
+- **Theoretical-Empirical Harmony**: Provides both convergence guarantees (Theorem 3.1) and practical acceleration proofs (Theorem 3.2), validated across multiple model families.
+- **Generalizability**: The CAGrad-Clip mechanism is not limited to LLM alignment and can be applied to any high-dimensional multi-objective scenario, such as multi-task or multi-modal learning.
 
 ## Limitations & Future Work
-- Only validated on 2-3 objectives; as dimensions of the CAGrad subproblem increase (5+), it may remain noisy.
-- $c$ (trust region radius) is a manual hyperparameter; adaptive methods might be more robust.
-- Evaluated only on summarization and safety; other alignment scenarios like code, math, and reasoning are untested.
-- Clipping is a hard constraint $\tilde p = \min(p, w)$; soft clipping (e.g., sigmoid) might be smoother.
-- Online settings (streaming new preference pairs) were not explored.
+- Validation was restricted to 2-3 objectives; higher counts (5+) may increase CAGrad sub-problem dimensionality and noise.
+- The trust region radius $c$ is a manual hyperparameter; adaptive mechanisms might be more robust.
+- Evaluation focused on summarization and safety; other domains like coding, math, or reasoning were not tested.
+- Clipping is implemented as a hard constraint; soft clipping (e.g., sigmoid-based) could offer smoother optimization.
+- The online setting (streaming preference pairs) remains unexplored.
 
 ## Related Work & Insights
-- **vs MODPO**: MODPO requires a reward model; RACO is reward-free.
-- **vs AMoPO**: AMoPO is reward-free but does not handle conflicts; RACO does so explicitly.
-- **vs MGDA / vanilla CAGrad**: MGDA ignores user weights; CAGrad over-corrects in LLMs; RACO addresses both.
-- **Insight**: The clipping idea is applicable to all "multi-objective + high-dimensional + user preference" scenarios; the combination of reward-free + multi-objective is also relevant to many designs in RL.
+- **vs. MODPO**: MODPO requires a reward model; RACO is reward-free.
+- **vs. AMoPO**: AMoPO is reward-free but lacks conflict handling; RACO explicitly manages gradient conflict.
+- **vs. MGDA / vanilla CAGrad**: MGDA ignores user weights, and CAGrad over-corrects in LLMs; RACO resolves both issues.
+- **Insight**: The "reward-free + multi-objective" combination provides a blueprint for adapting RL designs to more efficient LLM alignment frameworks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ CAGrad-Clip is a simple but effective fix; innovative framing.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Cross-model family × multi-task + detailed ablation + convergence verification.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical and algorithmic chain; intuitive comparison in the capability matrix.
-- Value: ⭐⭐⭐⭐⭐ Alignment tax is a major pain point in LLM deployment; RACO provides an efficient reward-free solution.
+- Novelty: ⭐⭐⭐⭐ CAGrad-Clip is a simple but effective innovation with a strong conceptual framing.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive cross-model validation with detailed ablations and convergence analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical flow between theory and empirical results.
+- Value: ⭐⭐⭐⭐⭐ Directly addresses the alignment tax, one of the most significant pain points in LLM deployment.
 
 <!-- RELATED:START -->
 
@@ -147,10 +158,10 @@ In two-objective scenarios, CAGrad-Clip reaches the same Pareto distance approxi
 ## Related Papers
 
 - [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
-- [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
-- [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/optimization/lca_local_classifier_alignment_for_continual_learning.md)
-- [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](../../NeurIPS2025/optimization/doubly_robust_alignment_for_large_language_models.md)
 - [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](../../ICLR2026/optimization/celo2_towards_learned_optimization_free_lunch.md)
+- [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
+- [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](../../NeurIPS2025/optimization/covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
+- [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/optimization/lca_local_classifier_alignment_for_continual_learning.md)
 
 </div>
 

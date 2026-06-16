@@ -2,90 +2,89 @@
 title: >-
   [Paper Note] Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 description: >-
-  [CVPR 2026][Segmentation][AI-generated image detection] This paper proposes IFA-Net, which detects AI-generated forgeries from the perspective of "modeling what is real" rather than "learning what is fake." A frozen MAE…
+  [CVPR 2026][Segmentation][Paper Note] The authors propose IFA-Net, which detects AI forgeries from the perspective of "modeling what is real" rather than "learning what is fake". By utilizing a frozen MAE to reconstruct inputs, the method produces residuals that expose regions deviating from the natural image manifold. Through a two-stage closed loop—coars
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "AI-generated image detection"
-  - "manifold deviation"
-  - "MAE reconstruction"
-  - "iterative amplification"
-  - "image forgery localization"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 9d8979be65b322d5
+content_hash: 6fd1a14493a70062
 ---
-
 # Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.18842](https://arxiv.org/abs/2602.18842)  
 **Code**: To be confirmed  
-**Area**: Image Segmentation / AI Forgery Detection
-**Keywords**: AI-generated image detection, manifold deviation, MAE reconstruction, iterative amplification, image forgery localization
+**Area**: Image Segmentation / AI Forgery Detection  
+**Keywords**: AI-generated image detection, Manifold deviation, MAE reconstruction, Iterative amplification, Image forgery localization
 
 ## TL;DR
-This paper proposes IFA-Net, which detects AI-generated forgeries from the perspective of "modeling what is real" rather than "learning what is fake." A frozen MAE reconstructs the input to produce residuals that expose regions deviating from the natural image manifold. A two-stage closed-loop pipeline—coarse detection → task-adaptive prior injection → residual amplification → refinement—iteratively amplifies manifold deviation, achieving state-of-the-art performance on both diffusion inpainting and traditional image tampering detection.
+The authors propose IFA-Net, which detects AI forgeries from the perspective of "modeling what is real" rather than "learning what is fake". By utilizing a frozen MAE to reconstruct inputs, the method produces residuals that expose regions deviating from the natural image manifold. Through a two-stage closed loop—coarse detection → task-adaptive prior injection → residual amplification → refinement—manifold deviations are iteratively amplified. The model achieves SOTA performance on both diffusion inpainting and traditional tampering detection.
 
 ## Background & Motivation
-With the rapid proliferation of AI image generation technologies such as Stable Diffusion and DALL-E, detecting and localizing AI-generated content (AIGC) forgeries has become critically important. Most existing methods follow the paradigm of "learning what is fake," extracting forgery-specific artifacts (e.g., spectral anomalies, GAN fingerprints) from forged samples. However, such methods suffer from fundamental limitations:
+With the explosion of AI image generation technologies like Stable Diffusion and DALL-E, the detection and localization of AI-generated content (AIGC) forgeries have become critical. Most existing methods follow the "learning what is fake" paradigm by extracting forgery-specific artifacts (e.g., spectral anomalies, GAN fingerprints). However, these methods face fundamental issues:
 
-**Poor generalization**: Detectors trained on specific generators struggle to generalize to unseen generators.
+**Limitations of Prior Work**: Detectors trained on specific generators struggle to generalize to unseen generators.
 
-**Adversarial fragility**: Forgers can bypass artifact-based detection by simply fine-tuning the generation process.
+**Adversarial Vulnerability**: Forgers can bypass artifact-based detection by fine-tuning the generation process.
 
-**Data dependency**: Large amounts of annotated real-fake paired data are required.
+**Data Dependency**: Large-scale annotated "real-fake" paired data is required.
 
-Core shift: **Rather than learning "what fake images look like," if we precisely model "what real images should look like," any region deviating from the real image manifold becomes suspicious.** This approach inherently generalizes across generators, as it models the statistical regularities of natural images rather than the artifacts of specific forgery methods.
+**Key Insight**: Instead of learning "what a fake image looks like," one should precisely model "what a real image should look like." Any region deviating from the natural image manifold is deemed suspicious. This approach possesses inherent cross-generator generalization capabilities because it models the statistical regularities of natural images rather than the artifacts of specific forgery methods.
 
-Pre-trained MAEs (Masked Autoencoders), having learned powerful natural image manifold priors from massive real image datasets, produce large reconstruction residuals for forged regions (which deviate from the manifold) while accurately reconstructing authentic regions (which lie on the manifold). **The residual map thus serves as a natural "spotlight" for forged regions.**
+Pre-trained MAE (Masked Autoencoder) learns powerful natural image manifold priors from massive amounts of real data. When an MAE attempts to reconstruct a partially forged image, real regions are reconstructed well (as they lie on the manifold), while forged regions produce larger reconstruction residuals (as they deviate from the manifold). **The residual map naturally serves as a "searchlight" for forged regions.**
 
 ## Method
 
 ### Overall Architecture
-IFA-Net adopts a two-stage closed-loop architecture:
-- **Stage 1**: Frozen MAE reconstruction → residual map → DSSN dual-stream segmentation → coarse mask $M_{\text{crs}}$
-- **Stage 2**: Coarse mask injected into MAE via TAPI → amplified residual → shared DSSN refinement → final mask $M_{\text{ref}}$
+IFA-Net adopts a novel perspective for AI forgery detection: instead of learning "fake patterns," it uses an MAE pre-trained on massive real data to model "real patterns." Regions deviating from the natural image manifold are identified as suspicious. The framework is a two-stage closed loop: Stage 1 reconstructs the input using a frozen MAE, exposing suspicious areas via a residual map which is processed by a Dual-stream Segmentation Network (DSSN) to produce a coarse mask $M_{\text{crs}}$. Stage 2 injects the coarse mask as a prior into the MAE to amplify the reconstruction residuals of those regions, followed by the same DSSN to refine the final mask $M_{\text{ref}}$. This "detection → focus → amplification → refinement" loop ensures that residuals in suspicious areas are increasingly emphasized.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    I["Input Image I (potentially tampered)"]
+    subgraph S1["Stage 1 · Coarse Detection"]
+        direction TB
+        MAE1["MAE Reconstruction Residual<br/>Frozen MAE reconstructs Î, residual R=|I−Î| acts as searchlight"]
+        DSSN1["Dual-stream Segmentation Network DSSN<br/>Content Stream (I) + Artifact Stream (R) Cross-attention"]
+        MAE1 --> DSSN1
+    end
+    I --> MAE1
+    DSSN1 --> Mcrs["Coarse mask M_crs"]
+    subgraph S2["Stage 2 · TAPI Iterative Amplification Loop"]
+        direction TB
+        PE["Prompt Encoder<br/>Coarse mask → Global context vector"]
+        FILM["FiLM Modulation on Frozen MAE Encoder<br/>Z̃=γ⊙Z+β, focusing on suspicious regions"]
+        DEC["Trainable MAE Decoder<br/>Amplifies residual R_amp=|I−Î_amp|"]
+        DSSN2["Shared DSSN Refinement"]
+        PE --> FILM --> DEC --> DSSN2
+    end
+    Mcrs --> PE
+    I --> FILM
+    DSSN2 --> Mref["Fine mask M_ref"]
+```
 
 ### Key Designs
 
-1. **Stage 1 — MAE Residual-Based Coarse Detection**:
+**1. MAE Reconstruction Residuals: Turning "Manifold Deviation" into a Searchlight**
 
-    - Frozen MAE reconstruction: The potentially tampered image $I$ is reconstructed as $\hat{I}$ through a frozen MAE encoder-decoder.
-    - Residual map computation: $R = |I - \hat{I}|$; authentic regions yield small residuals (accurate MAE reconstruction), while forged regions yield large residuals (manifold deviation).
-    - DSSN (Dual-Stream Segmentation Network):
-        - Content Stream: encodes semantic content of the original image (SegFormer backbone).
-        - Artifact Stream: encodes forgery cues from the residual map.
-        - Cross-Attention Fusion: the two streams exchange information via cross-attention; the content stream provides "where to look" and the artifact stream provides "what anomaly is observed."
-    - Output: coarse mask $M_{\text{crs}}$.
+The generalization challenge in forgery detection stems from artifact-based methods recognizing only specific generator fingerprints. IFA-Net utilizes the natural image manifold prior of a frozen MAE. Given a potentially tampered image $I$, the MAE reconstructs $\hat{I}$. Real regions lie on the manifold and are accurately reconstructed, while forged regions deviate from the manifold, leading to large reconstruction errors. Thus, the residual map $R = |I - \hat{I}|$ naturally highlights forgeries. Since it models natural image statistics rather than specific traces, it generalizes across generators and does not rely on "real-fake" paired labels.
 
-2. **Stage 2 — TAPI (Task-Adaptive Prior Injection) Iterative Amplification**:
+**2. Dual-stream Segmentation Network (DSSN): Content and Artifact Guidance**
 
-    - Motivation: Stage 1 residuals may be insufficiently prominent (higher generation quality yields weaker residuals), necessitating amplification.
-    - Prompt Encoder: encodes the coarse mask $M_{\text{crs}}$ into a global context vector via convolutional downsampling and linear projection.
-    - FiLM Modulation: the global context modulates intermediate features of the frozen MAE encoder via Feature-wise Linear Modulation:
-    $$\tilde{Z} = \gamma \odot Z + \beta$$
-      where $\gamma$ and $\beta$ are generated from the context vector produced by the Prompt Encoder, and $Z$ denotes intermediate features of the frozen MAE encoder.
-    - Core effect: TAPI directs the MAE to "focus on these regions," enabling it to allocate more reconstruction capacity to suspected areas and produce larger residual deviations.
-    - Trainable MAE Decoder: the MAE decoder in Stage 2 is trainable (unlike the frozen decoder in Stage 1), further amplifying reconstruction error in forged regions.
-    - The amplified residual $R_{\text{amp}} = |I - \hat{I}_{\text{amp}}|$ is fed into the shared DSSN to obtain the refined mask $M_{\text{ref}}$.
+Relying solely on residuals can be misleading due to texture noise, while the original image lack clear forgery cues. DSSN, based on SegFormer, employs a dual-stream design: the Content Stream encodes the semantic content of the original image $I$ ("where to look"), and the Artifact Stream encodes forgery cues within the residual map $R$ (or amplified residual $R_{\text{amp}}$ in Stage 2) ("what anomalies are seen"). The two streams exchange information via cross-attention after each SegFormer stage. Sharing DSSN weights across both stages reduces parameters and allows Stage 1 gradients to assist the Shared DSSN learning for Stage 2.
 
-3. **DSSN Architecture Details**:
+**3. TAPI Iterative Amplification Loop: Pushing and Refining Weak Residuals**
 
-    - Based on the SegFormer architecture with a dual-stream design.
-    - Content Stream input: original image $I$.
-    - Artifact Stream input: residual map $R$ (Stage 1) or amplified residual map $R_{\text{amp}}$ (Stage 2).
-    - Cross-attention fusion modules are applied after each SegFormer stage.
-    - DSSN weights are shared across both stages (parameter-efficient, and Stage 1 gradients also benefit Stage 2 learning).
+Higher generation quality results in weaker residuals in Stage 1, necessitating active amplification. TAPI (Task-Adaptive Prior Injection) uses a Prompt Encoder to compress the coarse mask $M_{\text{crs}}$ into a global context vector via convolutional downsampling and linear projection. This vector performs FiLM modulation $\tilde{Z} = \gamma \odot Z + \beta$ on the intermediate features $Z$ of the frozen MAE encoder, effectively instructing the MAE to "focus on these regions." Coupled with a trainable MAE decoder in Stage 2, reconstruction errors in suspicious areas are further pushed. The amplified residual $R_{\text{amp}} = |I - \hat{I}_{\text{amp}}|$ is fed back into the shared DSSN to obtain the refined mask $M_{\text{ref}}$. The MAE encoder remains frozen to preserve the manifold prior, using only FiLM for task-specific injection, ensuring parameter efficiency.
 
 ### Loss & Training
+The total loss is a weighted sum of both stages, with the refined mask weighted at 1.0 and the coarse mask at 0.5 to prioritize final output optimization:
+
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{ref}} + 0.5 \cdot \mathcal{L}_{\text{crs}}$$
 
-Each stage loss comprises:
-$$\mathcal{L}_{\text{stage}} = \mathcal{L}_{\text{BCE}} + \mathcal{L}_{\text{Dice}}$$
+Each stage uses a combination of BCE for pixel-level classification and Dice loss to mitigate the class imbalance where forged regions are much smaller than real ones:
 
-- BCE loss handles pixel-level classification.
-- Dice loss addresses class imbalance (forged regions are typically far smaller than authentic regions).
-- The refined mask $M_{\text{ref}}$ is weighted at 1.0 and the coarse mask $M_{\text{crs}}$ at 0.5, guiding the network to prioritize optimization of the final output.
+$$\mathcal{L}_{\text{stage}} = \mathcal{L}_{\text{BCE}} + \mathcal{L}_{\text{Dice}}$$
 
 ## Key Experimental Results
 
@@ -100,12 +99,12 @@ Average results across four diffusion inpainting benchmarks:
 | UnionFormer | 49.1 | 61.3 |
 | **IFA-Net (Ours)** | **55.6 (+6.5)** | **69.4 (+8.1)** |
 
-Key Findings:
+**Key Findings**:
 - IFA-Net outperforms the best baseline by an average of +6.5% in IoU and +8.1% in F1.
-- The most significant gains are observed on Stable Diffusion v2 inpainting, indicating that the manifold deviation approach is more effective against higher-quality generation.
+- The Gain is most significant on Stable Diffusion v2 inpainting, suggesting that the manifold deviation approach is more effective for high-quality generation.
 
-### Generalization — Traditional Image Tampering Detection
-Results on CASIA, Columbia, NIST, and other traditional copy-move/splicing datasets:
+### Key Experimental Results — Traditional Tampering Detection
+On traditional copy-move/splicing datasets such as CASIA, Columbia, and NIST:
 
 | Method | CASIA F1 | Columbia F1 | NIST F1 |
 |------|----------|-------------|---------|
@@ -113,45 +112,45 @@ Results on CASIA, Columbia, NIST, and other traditional copy-move/splicing datas
 | SPAN | 52.1 | 76.3 | 39.2 |
 | **IFA-Net** | **56.8** | **79.1** | **43.7** |
 
-Key Finding: **IFA-Net surpasses dedicated tampering detection methods in a zero-shot setting without any training on traditional tampering data**, validating the generalization advantage of the "model real rather than learn fake" paradigm.
+**Key Findings**: **IFA-Net outperforms specialized tampering detection methods via zero-shot generalization** without training on traditional tampering data, verifying the generalization advantage of the "modeling real instead of learning fake" paradigm.
 
 ### Ablation Study
 
-| Configuration | MAE Residual | TAPI Amplification | Dual-Stream DSSN | IoU (%) |
+| Configuration | MAE Residual | TAPI Amp | Dual-stream DSSN | IoU (%) |
 |------|---------|----------|----------|---------|
-| Content stream only | ✗ | ✗ | ✗ | 38.5 |
-| + MAE residual | ✓ | ✗ | ✗ | 46.2 |
-| + Dual-stream fusion | ✓ | ✗ | ✓ | 50.8 |
-| **+ TAPI (full model)** | ✓ | ✓ | ✓ | **55.6** |
+| Content Stream only | ✗ | ✗ | ✗ | 38.5 |
+| + MAE Residual | ✓ | ✗ | ✗ | 46.2 |
+| + Dual-stream Fusion | ✓ | ✗ | ✓ | 50.8 |
+| **+ TAPI (Full)** | ✓ | ✓ | ✓ | **55.6** |
 
-- Introducing MAE residuals yields +7.7% IoU, confirming the effectiveness of the manifold deviation signal.
-- Dual-stream DSSN contributes an additional +4.6%, demonstrating complementarity between content and artifact information.
-- TAPI iterative amplification adds a further +4.8%, establishing the critical role of the residual amplification mechanism.
+- MAE residuals introduce a +7.7% IoU Gain, confirming the validity of the manifold deviation signal.
+- Dual-stream DSSN adds another +4.6%, showing complementarity between content and artifact information.
+- TAPI iterative amplification provides an additional +4.8%, proving the residual amplification mechanism is crucial.
 
 ## Highlights & Insights
-- **Paradigm shift**: Moving from "learning fake" to "modeling real," the approach leverages pre-trained MAE manifold priors to achieve natural cross-generator generalization.
-- **Closed-loop amplification design**: The pipeline of coarse mask → MAE injection → residual amplification → refined mask forms an elegant "detect → focus → amplify → refine" closed loop.
-- **Frozen encoder + modulation**: The MAE encoder remains frozen to preserve manifold priors, with task information injected solely through FiLM modulation, achieving parameter efficiency.
-- **Zero-shot generalization**: Training on diffusion inpainting and zero-shot transfer to traditional copy-move/splicing demonstrates that manifold deviation serves as a unified forgery indicator.
+- **Paradigm Shift**: Moves from "learning fake" to "modeling real," leveraging pre-trained MAE manifold priors for inherent cross-generator generalization.
+- **Closed-loop Amplification Design**: Coarse mask → MAE injection → amplified residual → fine mask, creating an elegant "detect → focus → amplify → refine" loop.
+- **Frozen + Modulation**: The MAE encoder remains frozen to preserve manifold priors, while FiLM modulation injects task information efficiently.
+- **Zero-shot Generalization**: Trained on diffusion inpainting and transferred zero-shot to traditional copy-move/splicing, indicating manifold deviation is a unified forgery metric.
 
 ## Limitations & Future Work
-- The MAE's reconstruction capacity is limited; residuals for very small forged regions (<32×32 pixels) may not be sufficiently prominent.
-- Two-stage sequential inference increases latency; efficiency optimization is needed for real-time video forgery detection.
-- TAPI performs only one iteration (Stage 1 → Stage 2); whether multiple iterations could yield further improvements remains unexplored.
-- Detection capability for fully AI-generated images (as opposed to local inpainting) has not been thoroughly validated.
-- Shared DSSN weights may introduce optimization conflicts between the two stages.
+- MAE reconstruction capability is limited; residuals for extremely small regions (<32×32 pixels) might not be significant.
+- Two-stage serial inference increases latency; real-time video forgery detection would require efficiency optimization.
+- TAPI iterates only once (Stage 1 → Stage 2); whether multiple iterations yield further gains remains unexplored.
+- Detection capability for full-image AI generation (rather than local inpainting) is not fully verified.
+- Shared DSSN weights might face optimization conflicts between the two stages.
 
 ## Related Work & Insights
-- Compared to ObjectFormer (which learns object-level artifacts): IFA-Net does not learn specific artifacts but instead models manifold deviation.
-- The MAE reconstruction residual approach shares theoretical grounding with anomaly detection methods (e.g., PatchCore)—both follow the paradigm of "learn normal → identify anomaly."
-- The FiLM modulation in TAPI likely draws inspiration from the prompt encoder in SAM (Segment Anything Model).
-- Insight: The manifold deviation amplification paradigm is extensible to deepfake video detection (temporal manifold deviation) and AI-generated text detection.
+- Difference from ObjectFormer (which learns object-level artifacts): IFA-Net models manifold deviations instead of specific artifacts.
+- The concept of MAE reconstruction residuals shares theoretical similarities with anomaly detection (e.g., PatchCore)—both follow the "learn normal → find abnormal" logic.
+- TAPI's FiLM modulation is likely inspired by prompt encoders in models like SAM (Segment Anything Model).
+- Insight: The manifold deviation amplification approach could be extended to deepfake video detection (temporal manifold deviation) and AI-generated text detection.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The paradigm shift of "modeling real rather than learning fake" combined with closed-loop residual amplification is original within the forgery detection domain.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers diffusion inpainting, traditional tampering, and comprehensive ablations, but lacks evaluation on deepfake face scenarios.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated; the concept of "manifold deviation" is intuitively presented.
-- Value: ⭐⭐⭐⭐⭐ Cross-generator generalization makes the method practically deployable; the paradigm is broadly extensible.
+- Novelty: ⭐⭐⭐⭐⭐ The "modeling real" paradigm shift and closed-loop residual amplification are highly original in forgery detection.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing on diffusion inpainting and traditional tampering with complete ablations, though deepfake face scenarios are missing.
+- Writing Quality: ⭐⭐⭐⭐ Excellent motivation and clear presentation of the "manifold deviation" concept.
+- Value: ⭐⭐⭐⭐⭐ Cross-generator generalization makes the method highly practical for deployment; the paradigm is highly extensible.
 
 <!-- RELATED:START -->
 
@@ -160,10 +159,10 @@ Key Finding: **IFA-Net surpasses dedicated tampering detection methods in a zero
 ## Related Papers
 
 - [\[ICCV 2025\] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes](../../ICCV2025/segmentation/rethinking_detecting_salient_and_camouflaged_objects_in_unconstrained_scenes.md)
-- [\[CVPR 2026\] Seeing Through the Tool: A Controlled Benchmark for Occlusion Robustness in Foundation Segmentation Models](occsam_bench_occlusion_robustness_segmentation.md)
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime](dsflash_panoptic_scene_graph_realtime.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
+- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
+- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+- [\[CVPR 2026\] Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding](joint_spectral_image_reconstruction_and_semantic_segmentation_with_cooperative_u.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
 
 </div>
 

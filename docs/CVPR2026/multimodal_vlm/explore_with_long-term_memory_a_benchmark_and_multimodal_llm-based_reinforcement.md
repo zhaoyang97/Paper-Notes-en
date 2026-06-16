@@ -2,75 +2,95 @@
 title: >-
   [Paper Note] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 description: >-
-  [CVPR 2026][Multimodal VLM][Embodied Exploration] This paper proposes the LMEE benchmark and the MemoryExplorer framework, which jointly evaluate the process and outcome of embodied exploration by unifying multi-object n…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces the LMEE benchmark and the MemoryExplorer framework, which unify the evaluation of embodied exploration processes and outcomes by combining multi-target navigation with memory-based question answering. By fine-tuning MLLMs with reinforcement learning to actively invoke memory retrieval tools, the
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Embodied Exploration"
-  - "Long-term Memory"
-  - "Multi-object Navigation"
-  - "Reinforcement Learning Fine-tuning"
-  - "Memory Retrieval"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 25c316cc50dc0a3b
+content_hash: 3c727cbe3734705f
 ---
-
 # Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.10744](https://arxiv.org/abs/2601.10744)  
 **Code**: [https://wangsen99.github.io/papers/lmee/](https://wangsen99.github.io/papers/lmee/)  
-**Area**: Multimodal VLM / Embodied AI / Agent
-**Keywords**: Embodied Exploration, Long-term Memory, Multi-object Navigation, Reinforcement Learning Fine-tuning, Memory Retrieval
+**Area**: Multimodal VLM / Embodied AI / Agent  
+**Keywords**: Embodied Exploration, Long-term Memory, Multi-target Navigation, Reinforcement Learning Fine-tuning, Memory Retrieval
 
 ## TL;DR
-This paper proposes the LMEE benchmark and the MemoryExplorer framework, which jointly evaluate the process and outcome of embodied exploration by unifying multi-object navigation with memory-based question answering. By fine-tuning an MLLM via reinforcement learning to actively invoke memory retrieval tools, the method achieves an SR of 23.53% on LMEE-Bench (surpassing 3D-Mem's 16.91%) and an SR of 46.40% on GOAT-Bench.
+This paper introduces the LMEE benchmark and the MemoryExplorer framework, which unify the evaluation of embodied exploration processes and outcomes by combining multi-target navigation with memory-based question answering. By fine-tuning MLLMs with reinforcement learning to actively invoke memory retrieval tools, the method achieves a 23.53% SR on LMEE-Bench (surpassing 3D-Mem's 16.91%) and a 46.40% SR on GOAT-Bench.
 
 ## Background & Motivation
 
-1. **Background**: Embodied exploration aims to enable agents to actively explore unknown environments. Dominant task paradigms include Object Navigation (ObjectNav) and Embodied Question Answering (EQA), but these are typically evaluated independently as one-shot tasks—navigation focuses solely on whether a target is found, while QA focuses solely on answer correctness.
+1.  **Background**: Embodied exploration aims to enable agents to actively explore unknown environments. Current mainstream task paradigms include Object Navigation (ObjectNav) and Embodied Question Answering (EQA), but these are usually evaluated as independent, one-off tasks—navigation focuses only on whether the target is found, while EQA focuses only on the correctness of the answer.
 
-2. **Limitations of Prior Work**: (a) Existing benchmarks overlook the accumulation and utilization of memory during exploration—an ideal embodied agent should accumulate environmental knowledge during exploration and leverage it in subsequent tasks. (b) Existing MLLM-based exploration methods use memory passively: imitation learning approaches (e.g., MTU3D) constrain the development of autonomous exploration strategies, and memory snapshot methods (e.g., 3D-Mem) handle context window limitations via pre-filtering but fail to fully exploit the active querying capability of MLLMs. (c) There is no unified framework that simultaneously evaluates cognitive understanding and decision-making ability.
+2.  **Limitations of Prior Work**: (a) Existing benchmarks neglect the accumulation and utilization of memory during exploration—an ideal embodied agent should accumulate environmental knowledge during exploration and use it for subsequent tasks; (b) Existing MLLM exploration methods use memory passively—imitation learning methods (e.g., MTU3D) limit the development of autonomous exploration strategies, while memory snapshot methods (e.g., 3D-Mem) use pre-filtering strategies to handle context window limits but fail to fully leverage the active querying capabilities of MLLMs; (c) There is a lack of a unified framework to evaluate both cognitive understanding and decision-making capabilities.
 
-3. **Key Challenge**: Long-horizon tasks require agents to simultaneously possess efficient exploration capability and long-term memory utilization ability, yet current methods either optimize only navigation success rate or focus only on QA accuracy, and cannot jointly optimize both.
+3.  **Key Challenge**: Long-horizon tasks require agents to possess both efficient exploration capabilities and long-term memory utilization skills. However, current methods either optimize only for navigation success rate or only for question-answering accuracy, failing to optimize both in a unified manner.
 
-4. **Goal**: (1) Design a benchmark that uniformly evaluates both the process (memory) and outcome (navigation success) of exploration; (2) Train an MLLM-based agent capable of actively retrieving memory to assist exploration and decision-making.
+4.  **Goal**: (1) Design a benchmark that unifiedly evaluates the exploration process (memory) and the results (navigation success); (2) Train an MLLM agent capable of actively retrieving memory to assist in exploration and decision-making.
 
-5. **Key Insight**: Episodic memory accumulated during exploration is not merely a by-product but should serve as a core resource driving subsequent decisions. Memory-based QA is used to evaluate and train memory utilization ability.
+5.  **Key Insight**: Episodic memory accumulated during exploration is not just a byproduct; it should be the core resource driving subsequent decisions. Memory-based QA is used to evaluate and train memory utilization.
 
-6. **Core Idea**: Reinforcement learning is used to fine-tune an MLLM so that it actively invokes memory retrieval tools to query episodic memory during multi-object navigation, while a multi-task reward function jointly optimizes action prediction, frontier selection, and memory-based QA.
+6.  **Core Idea**: Fine-tune MLLMs using reinforcement learning to enable them to actively call memory retrieval tools to query episodic memory during multi-target navigation. Simultaneously, optimize action prediction, frontier selection, and memory QA unifiedly through a multi-task reward function.
 
 ## Method
 
 ### Overall Architecture
-MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Inputs include: a task instruction $I$ (e.g., "Check the Christmas tree, the dryer, then the bedroom nightstand"), multi-view observations $O$ (images from three directions), and a goal-oriented question $Q$. The agent retrieves from an external long-term memory $M$ via tool calls, and outputs a single-step action $S$ (move forward / turn left / turn right), a frontier selection $F$, and an answer $A$. The entire system is fine-tuned using GRPO reinforcement learning.
+This paper addresses the problem of enabling an embodied agent to build long-term memory while exploring an unknown environment and actively retrieving these memories for subsequent decision-making. The work is structured into two layers: offline construction of the "LMEE Dataset and Benchmark" involving tasks, trajectories, and memory QA; and the online "MemoryExplorer"—an end-to-end MLLM-based framework. At each step, the input includes the task instruction $I$ (e.g., "Check the Christmas tree, dryer, then the bedroom nightstand"), multi-view observations $O$ from three directions, and a goal-oriented question $Q$. Observations along the way are continuously written into a "Multimodal Memory Bank." The model generates tool-calling code to actively retrieve from this memory bank, feeding top-k relevant memories back into the context to output the discrete action $S$ (Move Ahead/Turn Left/Right), the next frontier $F$, and the answer $A$. The agent is fine-tuned using "Multi-task Reward + GRPO" reinforcement learning, integrating "correct pathing" and "correct answering" into a single reward to update the policy in a closed loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["LMEE Dataset & Benchmark"]
+        direction TB
+        D1["LLM generates multi-target task instructions"] --> D2["Habitat-Sim plans trajectories<br/>Step-wise recording of actions/obs/pos"]
+        D2 --> D3["VLM generates 5 types of Memory QA<br/>Attribute/Count/Location/Relation/State"]
+    end
+    DATA --> IN["Per-step Input: Instruction I + Multi-view Obs O + Goal Question Q"]
+    IN -->|Obs recorded along the way| MB
+    IN --> MLLM["MemoryExplorer (based on MLLM)"]
+    MLLM -->|Generates tool-calling code| RET
+    subgraph MEM["Multimodal Memory Bank & Active Retrieval"]
+        direction TB
+        MB[("Memory Bank M<br/>Position p / Text feat f / Image feat o")]
+        RET["Three-way similarity scoring for top-k<br/>Text + Visual + Spatial Distance"]
+        MB --> RET
+    end
+    RET -->|top-k memory feedback| MLLM
+    MLLM --> OUT["Output: Action S / Frontier F / Answer A"]
+    OUT --> RW["Multi-task Reward & GRPO Training<br/>Action×Consistency + Frontier×Consistency + QA + Format"]
+    RW -->|GRPO Policy Update| MLLM
+```
 
 ### Key Designs
 
-1. **LMEE Dataset and Benchmark Construction**:
+**1. LMEE Dataset and Benchmark: Integrating the "Exploration Process" into Evaluation**
 
-    - **Function**: Provides a unified benchmark for evaluating both the process (memory utilization) and outcome (navigation success) of exploration.
-    - **Mechanism**: Built upon HM3DSem (145 training + 36 testing scenes), multi-object task instructions are generated by an LLM, and exploration trajectories are planned using Habitat-Sim to produce step-level data (including actions, observations, and positions). During exploration, an image tagging model annotates object information to construct a multimodal memory store. A key innovation is the inclusion of VLM-generated goal-oriented QA pairs (5 categories: attribute, counting, location, relation, and state), with questions targeting navigation goals rather than arbitrary objects. Dataset statistics: 1,982 tasks, 9,286 questions, 377,311 records.
-    - **Design Motivation**: Focusing questions on navigation targets ensures that evaluation reflects what the agent has actually observed; three difficulty levels (easy / medium / hard) are defined based on the number of regions, number of targets, and distance.
+Previous ObjectNav only checked if the target was found, and EQA only checked the answer's correctness, while the memory accumulated during exploration was treated as a disposable byproduct. LMEE fills this gap based on HM3DSem (145 training scenes + 36 test scenes). It first uses an LLM to generate multi-target instructions, then plans exploration trajectories using Habitat-Sim to record step-wise data. Observations are annotated using an image tagging model to form a multimodal memory bank. Crucially, a VLM generates QA pairs around the navigation goals across five categories: attribute, count, location, relation, and state. Questions only pertain to target objects the agent actually passed and observed; thus, "answering correctly" truly reflects memory utilization rather than common-sense guessing. The final dataset comprises 1,982 tasks, 9,286 questions, and 377,311 records, categorized into Easy, Medium, and Hard based on the number of areas, targets, and distance.
 
-2. **Multimodal Memory Store and Active Retrieval**:
+**2. Multimodal Memory Bank & Active Retrieval: Letting the Model Decide What and When to Query**
 
-    - **Function**: Stores and retrieves episodic memory accumulated during exploration.
-    - **Mechanism**: The memory store $\mathcal{M} = \{(p_i, f_i, o_i)\}$ records the position, text feature, and image feature (encoded with CLIP) at each step. Retrieval integrates text similarity, visual similarity, and distance similarity: $s_i = \omega_f(f_c^\top f_i) + \omega_o(o_c^\top o_i) + \omega_p \text{dist}(p_c, p_i)$. Critically, the model actively queries memory by generating tool-call code (rather than passively receiving pre-filtered results), retrieving the top-$k$ most relevant memory entries as reasoning context.
-    - **Design Motivation**: Passive memory filtering (e.g., 3D-Mem) limits the autonomy of MLLMs; active retrieval allows the model to decide when and how to query memory, which better aligns with the principle of autonomous agent decision-making.
+The memory bank is defined as $\mathcal{M} = \{(p_i, f_i, o_i)\}$, storing position $p_i$, text features $f_i$, and image features $o_i$ (encoded by CLIP) at each step. Retrieval involves a triple-stream scoring mechanism combining text similarity, visual similarity, and spatial distance:
 
-3. **Multi-task Reward Function and GRPO Training**:
+$$s_i = \omega_f(f_c^\top f_i) + \omega_o(o_c^\top o_i) + \omega_p\,\text{dist}(p_c, p_i)$$
 
-    - **Function**: Jointly optimizes action prediction, frontier selection, and memory-based QA capability.
-    - **Mechanism**: The total reward is $r_{\text{total}} = w_{act} \cdot r_{\text{action}} \cdot c + w_{front} \cdot r_{\text{frontier}} \cdot c + w_{ans} \cdot r_{\text{answer}} + w_{fmt} \cdot r_{\text{format}}$, where $c$ is an action–frontier consistency coefficient that penalizes logical inconsistencies, and $r_{\text{format}}$ encourages structured output. A scaling factor $\alpha$ is introduced: sub-rewards are amplified when tool calls succeed ($\alpha=1.2$) and reduced when tool calls fail, incentivizing the model to learn correct tool usage. Policy optimization is performed using GRPO (Group Relative Policy Optimization).
-    - **Design Motivation**: Single-task rewards cannot simultaneously optimize exploration and cognitive capability. The multi-task reward enables the model to balance spatial reasoning (actions), path planning (frontiers), and memory utilization (QA). The tool-use incentive ensures the model learns to actively invoke memory retrieval.
+where subscript $c$ represents the current query features. The top-k memories are fed into the inference context. The fundamental difference here is "activity": whereas methods like 3D-Mem provide a pre-filtered set of memories (passive), MemoryExplorer lets the model generate tool-calling code to query, deciding if and what to search. This aligns better with autonomous agent settings, transforming memory from static snapshots into a dynamic resource.
+
+**3. Multi-task Reward & GRPO Training: Unifying Movement, Frontier Selection, and Answering**
+
+A single reward often leads to neglecting certain objectives. This paper uses a total multi-task reward:
+
+$$r_{\text{total}} = w_{act}\cdot r_{\text{action}}\cdot c + w_{front}\cdot r_{\text{frontier}}\cdot c + w_{ans}\cdot r_{\text{answer}} + w_{fmt}\cdot r_{\text{format}}$$
+
+Action reward $r_{\text{action}}$ and frontier reward $r_{\text{frontier}}$ are multiplied by a consistency coefficient $c$, which penalizes logical contradictions between the chosen action and frontier. $r_{\text{format}}$ encourages structured output. To force the model to learn tool usage, a scaling factor $\alpha$ is introduced: the sub-reward is amplified ($\alpha=1.2$) upon successful memory retrieval and reduced upon failure. This difference tells the model that "correctly using tools yields rewards." Policy optimization is performed using GRPO (Group Relative Policy Optimization).
 
 ### Loss & Training
 - Based on Qwen2.5-VL-7B-Instruct, using the EasyR1 (simplified VERL) framework.
 - Learning rate 1e-6, KL penalty coefficient 0.1.
-- 8 NVIDIA H200 GPUs, trained for 160 steps, global batch size 128.
-- Consecutive action window sampling: sequences of identical consecutive actions are sampled as a single training instance to reduce redundancy.
-- Intermediate responses from tool calls are not optimized; tool usage effectiveness is assessed solely via final reward feedback.
+- 8 NVIDIA H200 GPUs, 160 steps, global batch size 128.
+- Continuous action window sampling: Samples continuous identical actions as a single training data point to reduce redundancy.
+- Intermediate tool-calling responses are not optimized; only the final reward feedback evaluates tool-use effectiveness.
 
 ## Key Experimental Results
 
@@ -79,7 +99,7 @@ MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Input
 **LMEE-Bench Results**:
 
 | Method | SR ↑ | SPL ↑ | QA Score ↑ | QA Acc ↑ |
-|--------|------|-------|------------|----------|
+|------|------|-------|------------|----------|
 | Explore-EQA | 13.24 | 7.66 | - | - |
 | 3D-Mem | 16.91 | 6.86 | 32.59 | 41.38 |
 | RA-Mem | 20.96 | 12.18 | 35.52 | 58.62 |
@@ -88,7 +108,7 @@ MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Input
 **GOAT-Bench Results**:
 
 | Method | Success Rate ↑ | SPL ↑ |
-|--------|---------------|-------|
+|------|---------------|-------|
 | SenseAct-NN Skill Chain | 29.5 | 11.3 |
 | 3D-Mem | 37.05 | 20.26 |
 | RA-Mem | 42.81 | 21.95 |
@@ -97,53 +117,54 @@ MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Input
 ### Ablation Study
 
 | Question Type Setting | LMEE SR | LMEE SPL | LMEE Score | GOAT SR | GOAT SPL |
-|----------------------|---------|----------|------------|---------|----------|
-| Baseline (no RFT) | 20.96 | 12.18 | 35.52 | 42.81 | 21.95 |
-| Simple (task progress) | 20.80 | 12.49 | 41.33 | 44.24 | 27.29 |
+|------------|---------|----------|------------|---------|----------|
+| Baseline (No RFT) | 20.96 | 12.18 | 35.52 | 42.81 | 21.95 |
+| Simple (Task Progress) | 20.80 | 12.49 | 41.33 | 44.24 | 27.29 |
 | Multiple-choice | 23.53 | 14.99 | 43.62 | 46.40 | 28.03 |
-| All (all types) | 22.06 | 15.13 | 43.28 | 48.20 | 29.36 |
+| All | 22.06 | 15.13 | 43.28 | 48.20 | 29.36 |
 
 ### Key Findings
-- **The gain of RA-Mem over 3D-Mem confirms that active retrieval outperforms passive filtering**: Simply switching from passive filtering to active retrieval query raises GOAT-Bench SR from 37.05% to 42.81%.
-- **The core value of RL fine-tuning lies in the acquisition of tool-use capability**: Training curves show that the model progressively learns to invoke memory retrieval tools more accurately, with tool usage rate and answer accuracy improving in tandem.
-- **Multi-type questions outperform single-type questions**: Using all question types achieves the highest GOAT SR (48.20%), while multiple-choice questions alone perform best on LMEE SR (23.53%), indicating a nonlinear relationship between question type and task characteristics.
-- **Misalignment between cognition and decision-making**: Different MLLMs show inconsistent performance on open-ended versus multiple-choice questions (Qwen2.5-VL excels at open-ended; Qwen3-VL excels at multiple-choice), suggesting a potential misalignment between cognitive understanding and action decision-making capabilities.
+- **RA-Mem vs. 3D-Mem shows active retrieval is superior to passive filtering**: Merely switching from passive filtering to active retrieval improved GOAT-Bench SR from 37.05% to 42.81%.
+- **The core value of RL fine-tuning lies in acquiring tool-use capabilities**: Training curves show the model gradually learns to call memory retrieval tools more accurately, with tool-use rates and answer accuracy improving simultaneously.
+- **Multiple question types are more effective than a single type**: Using all question types achieved the highest GOAT SR (48.20%), though single multiple-choice questions performed best on LMEE SR (23.53%), suggesting a non-linear correlation between question types and task characteristics.
+- **Alignment issues between cognition and decision-making**: Different MLLMs performed inconsistently on open-ended vs. multiple-choice questions (Qwen2.5-VL excels at open-ended, Qwen3-VL at multiple-choice), hinting at a potential mismatch between cognitive understanding and action decision-making.
 
 ## Highlights & Insights
-- **Unification via the LMEE paradigm**: By integrating navigation and QA into the same exploration process, this work is the first to fuse the evaluation of "process" and "outcome" at the dataset level, avoiding the capability fragmentation caused by separate evaluation.
-- **Tool-use incentive mechanism**: By differentiating successful and failed tool calls via the reward scaling factor $\alpha$, the model autonomously learns when to invoke memory retrieval. This design is transferable to the training of other LLM agents that require tool use.
-- **Progressive memory-augmented understanding**: The agent incrementally accumulates memory during exploration and retrieves relevant memory for reasoning when faced with a question, effectively simulating the human cognitive process of "reasoning from experience."
+- **Unity of the LMEE Paradigm**: By unifying navigation and QA into a single exploration process, this work merges the evaluation of "process" and "outcome" at the dataset level for the first time, avoiding the capability fragmentation caused by separate evaluations.
+- **Incentive Mechanism for Tool Use**: Differentiating between successful and failed tool calls through the reward scaling factor $\alpha$ allows the model to autonomously learn when to use memory retrieval. This design is transferable to other LLM Agent training scenarios requiring tool use.
+- **Incremental Understanding via Memory Enhancement**: The agent accumulates memory during exploration and retrieves it for reasoning when faced with questions, effectively simulating the human cognitive process of "thinking based on experience."
 
 ## Limitations & Future Work
-- **Single-round tool calls only**: Due to multi-image input constraints, the current system supports only one memory retrieval per step; multi-round iterative retrieval could yield more accurate results.
-- **Limited evaluation subset**: Due to resource constraints, evaluation is conducted on only 58 of 166 test tasks, which may introduce selection bias.
-- **Simplified action space**: Only three discrete actions are supported—move forward (0.25 m) and turn left/right (30°)—which is far from real robotic manipulation.
-- **Memory store construction relies on predefined tagging models**: The quality of object annotation by the image tagging model directly affects memory quality.
-- **Future directions**: Introducing multi-round memory retrieval, extending to continuous action spaces, and validating the approach in real-robot scenarios.
+- **Support for Only Single-turn Tool Calls**: Due to multi-image input constraints, only one memory retrieval is currently supported; multi-turn iterative retrieval might provide more accurate results.
+- **Limited Evaluation Subset**: Due to resource constraints, evaluation was performed only on 58/166 test tasks, potentially leading to selection bias.
+- **Simple Action Space**: Includes only three discrete actions (Move Ahead 0.25m, Turn Left/Right 30°), which is far from real-world robotic manipulation.
+- **Memory Bank Dependency**: The quality of memory depends directly on the pre-defined image tagging model used for labeling objects.
+- **Future Directions**: Introducing multi-turn memory retrieval, extending to continuous action spaces, and validating in real-world robotic scenarios.
 
 ## Related Work & Insights
-- **vs. 3D-Mem**: 3D-Mem employs memory snapshots and pre-filtering, representing passive memory utilization; MemoryExplorer trains active memory retrieval via RL, improving GOAT SR from 37.05% to 46.40%.
-- **vs. MTU3D**: MTU3D trains trajectory replication via imitation learning, limiting generalization; MemoryExplorer uses RL to encourage autonomous exploration strategies.
-- **vs. GOAT-Bench**: GOAT-Bench focuses on multi-object navigation but ignores memory utilization; LMEE adds a memory QA dimension for a more comprehensive evaluation of embodied intelligence.
-- The multi-task reward design and tool-use incentive mechanism proposed in this work offer broadly applicable reference value for training LLM-based agents.
+- **vs. 3D-Mem**: 3D-Mem uses memory snapshots and pre-filtering (passive); MemoryExplorer uses RL for active memory retrieval, improving GOAT SR from 37.05% to 46.40%.
+- **vs. MTU3D**: MTU3D uses imitation learning for trajectory replication, limiting generalization; MemoryExplorer uses RL to encourage autonomous exploration strategies.
+- **vs. GOAT-Bench**: GOAT-Bench focuses on multi-target navigation but ignores memory utilization; LMEE adds a memory QA dimension for more comprehensive embodied AI evaluation.
+- The multi-task reward design and tool-use incentive mechanism provide general reference value for training LLM Agents.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The paradigm of unifying exploration process and memory evaluation is novel; RL-trained active memory retrieval is creative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation on both the self-constructed benchmark and GOAT-Bench with sufficient ablations, though the evaluation subset is small.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear and motivation is well-articulated, though some details (e.g., consecutive action window sampling) are insufficiently described.
-- Value: ⭐⭐⭐⭐ Provides a valuable benchmark and method for the lifelong learning direction in embodied AI, though real-world validation is absent.
+- Novelty: ⭐⭐⭐⭐ The paradigm of unifying exploration process and memory evaluation is relatively new; RL training for active memory retrieval is creative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on both the self-built benchmark and GOAT-Bench with thorough ablations, though the evaluation subset is small.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-explained motivation, though some details (e.g., continuous action windows) lack depth.
+- Value: ⭐⭐⭐⭐ Provides a valuable benchmark and method for lifelong learning in embodied AI, though real-world verification is missing.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
-- [\[CVPR 2026\] HIVE: Query, Hypothesize, Verify — An LLM Framework for Multimodal Reasoning-Intensive Retrieval](hive_query_hypothesize_verify_an_llm_framework_for_multimodal_reasoning-intensiv.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
-- [\[CVPR 2026\] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation](training_high-level_schedulers_with_execution-feedback_reinforcement_learning_fo.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
+- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[CVPR 2026\] WeaveTime: Streaming from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_from_earlier_frames_into_emergent_memory_in_videollms.md)
 
 </div>
 

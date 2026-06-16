@@ -2,147 +2,151 @@
 title: >-
   [Paper Note] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][CAD reconstruction] BRepGaussian is the first method to reconstruct complete B-rep CAD models directly from multi-view images. It employs a two-stage 2D Gaussian splatting framework to learn edge a…
+  [CVPR 2026][3D Vision][B-rep] BRepGaussian achieves for the first time the direct reconstruction of complete B-rep CAD models from multi-view images. It learns edge and patch features through two-stage 2D Gaussian Splatting, followed by parametric fitting to generate watertight boundary representations without requiring point cloud supervision.
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "CAD reconstruction"
-  - "B-rep"
-  - "Gaussian splatting"
-  - "parametric surface fitting"
-  - "contrastive learning"
+  - CVPR 2026
+  - 3D Vision
+  - B-rep
 date: 2026-05-08
-content_hash: 960b4d57c3194965
+content_hash: ae9a251a52d4e137
 ---
-
 # BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.21105](https://arxiv.org/abs/2602.21105)  
-**Code**: Coming soon (to be released upon acceptance)  
-**Area**: 3D Vision
-**Keywords**: CAD reconstruction, B-rep, Gaussian splatting, parametric surface fitting, contrastive learning
+**Code**: Coming soon (to be released after acceptance)  
+**Area**: 3D Vision  
+**Keywords**: CAD reconstruction, B-rep, Gaussian Splatting, Parametric surface fitting, Contrastive learning
 
 ## TL;DR
 
-BRepGaussian is the first method to reconstruct complete B-rep CAD models directly from multi-view images. It employs a two-stage 2D Gaussian splatting framework to learn edge and patch features, followed by parametric fitting to produce watertight boundary representations, without requiring point cloud supervision.
+BRepGaussian achieves for the first time the direct reconstruction of complete B-rep CAD models from multi-view images. It learns edge and patch features through two-stage 2D Gaussian Splatting, followed by parametric fitting to generate watertight boundary representations without requiring point cloud supervision.
 
 ## Background & Motivation
 
-**Background**: CAD reconstruction (reverse engineering) is a classical problem in computer vision and graphics. Conventional methods primarily take high-quality point clouds as input, perform semantic segmentation to obtain patch labels, and then fit parametric primitives. Learning-based methods such as SPFN and ParSeNet have achieved considerable success.
+**Background**: CAD reconstruction (reverse engineering) is a classic problem in computer vision and graphics. Traditional methods primarily take high-quality point clouds as input, performing semantic segmentation to obtain patch labels before fitting parametric primitives. Learning-based methods such as SPFN and ParSeNet have achieved significant results.
 
-**Limitations of Prior Work**: Acquiring high-quality point clouds is costly and requires specialized equipment. Existing methods demand extensive manual annotation and exhibit limited generalization to novel shapes, heavily relying on dataset-specific network designs.
+**Limitations of Prior Work**: The acquisition of high-quality point clouds is expensive and relies on professional equipment. Existing methods require extensive manual labeling and exhibit limited generalization to new shapes, often relying heavily on dataset-specific network designs.
 
-**Key Challenge**: Image data is far more accessible and scalable than point clouds, yet a significant gap exists between images and parametric 3D modeling. All prior methods require high-quality point clouds as an intermediate step that cannot be bypassed.
+**Key Challenge**: Image data is much easier to obtain and scale than point clouds, but a huge gap exists between images and parametric 3D modeling—existing methods cannot bypass the step of "obtaining high-quality point clouds first."
 
-**Goal**: To recover a complete B-rep representation—including parametric faces, edges, vertices, and their topological connections—directly from multi-view RGB images.
+**Goal**: How to directly recover the complete B-rep representation (parametric faces, edges, corners, and their topological connections) from multi-view RGB images?
 
-**Key Insight**: 2D Gaussian Splatting (2DGS) is used as an intermediate representation. Its flat, disk-shaped primitives are naturally aligned with the planar and low-curvature surfaces prevalent in CAD models, and each Gaussian can carry learnable semantic features.
+**Key Insight**: Utilize 2D Gaussian Splatting (2DGS) as an intermediate representation—its flat disk-like primitives naturally fit the planar or low-curvature surfaces in CAD models, and each Gaussian can carry learnable semantic features.
 
-**Core Idea**: 2DGS is extended into an edge- and patch-aware representation. A two-stage training scheme decouples geometry/edge learning from patch instance learning, after which parametric fitting on the labeled point cloud yields the final B-rep model.
+**Core Idea**: Extend 2DGS into an edge- and patch-aware representation. Use two-stage training to decouple geometry/edge learning from patch instance learning, then perform parametric fitting from labeled point clouds to obtain the B-rep model.
 
 ## Method
 
 ### Overall Architecture
 
-The input consists of multi-view RGB images of a CAD object. The full pipeline comprises four steps: (1) extracting edge masks and patch masks from 2D images using an edge detector and SAM; (2) two-stage 2DGS training—first learning geometry and edge features, then learning patch instance features; (3) converting Gaussian primitives into a dense labeled point cloud; and (4) a constraint-guided parametric fitting module that assembles the point cloud into a watertight B-rep model. The output is a complete B-rep CAD model containing parametric faces (planes/cylinders/spheres), edges (lines/curves), and vertices.
+The input consists of multi-view RGB images of the CAD object. The pipeline consists of four steps: (1) extracting edge and patch masks from 2D images using an edge detector and SAM; (2) two-stage 2DGS training—first learning geometry and edge features, then learning patch instance features; (3) converting Gaussian primitives into labeled dense point clouds; (4) a constraint-guided parametric fitting module to assemble the point clouds into a watertight B-rep model. The output is a complete B-rep CAD model containing parametric faces (planes/cylinders/spheres), edges (lines/curves), and corners.
+
+```mermaid
+graph TD
+    A["Multi-view RGB Images"] --> B["Edge Detector + SAM<br/>Extract edge and patch masks"]
+    subgraph TS["Two-stage Gaussian Splatting Training"]
+        direction TB
+        C["Stage 1: Geometry + Edge<br/>Each Gaussian has scalar edge value under alpha-blending supervision"] --> D["Stage 2: Patch Instance Contrastive Learning<br/>Freeze geometry, train 16D features + triplet loss"]
+    end
+    B --> TS
+    TS --> E["Gaussian-to-Point-Cloud Adaptive Sampling<br/>Dense at edges, sparse at planes"]
+    E --> F["Constraint-guided Parametric Fitting<br/>RANSAC Primitives → Intersections → Edge Segments → Corners → Assembly"]
+    F --> G["Watertight B-rep CAD Model<br/>Parametric Faces / Edges / Corners + Topology"]
+```
 
 ### Key Designs
 
-1. **Two-Stage Gaussian Splatting Training**
+**1. Two-stage Gaussian Splatting Training: Decoupling geometric reconstruction and patch identification**
 
-    - **Function**: Decouples geometry/edge learning and patch instance learning into two independent stages.
-    - **Mechanism**: In Stage 1, each 2DGS Gaussian is augmented with a scalar edge value $e_i \in [0,1]$. An edge map $E(u) = \sum_i w_i e_i$ is rendered via alpha compositing and supervised against 2D edge detection results using an L2 loss. In Stage 2, all geometric parameters (position xyz, spherical harmonic coefficients, etc.) are frozen, and only a 16-dimensional feature vector $\mathbf{f}_i \in \mathbb{R}^{16}$ per Gaussian is trained.
-    - **Design Motivation**: In joint training, the complex gradients from patch contrastive learning disrupt geometry reconstruction quality. Freezing geometric parameters allows each stage to focus on a single learning objective, which experiments confirm to be the most stable and accurate strategy.
+The simplest approach would be to let a single network learn geometry, edges, and patch labels simultaneously. However, it was found that the complex gradients from patch contrastive learning tend to degrade the geometric reconstruction quality. Thus, training is split into two stages. Stage 1 focuses on geometry and edges: each 2DGS primitive is assigned a scalar edge value $e_i \in [0,1]$. During rendering, it undergoes alpha-blending similar to color to produce an edge map $E(u) = \sum_i w_i e_i$, which is supervised by the 2D edge detector's output using L2 loss. Stage 2 freezes all geometric parameters (position xyz, spherical harmonics, etc.) and only trains a 16D feature vector $\mathbf{f}_i \in \mathbb{R}^{16}$ for each Gaussian to encode patch membership.
 
-2. **Contrastive Learning for Patch Instances**
+**2. Contrastive Learning of Patch Instances: Clustering Gaussians of the same patch without cross-view correspondence**
 
-    - **Function**: Learns cross-view consistent 3D patch instance labels in the absence of cross-view mask correspondences.
-    - **Mechanism**: A triplet loss is employed. For each mask region $\mathcal{M}_k$, an anchor $\mathbf{p}_a$, a positive sample $\mathbf{p}_p$ (within the same mask), and the hardest negative sample $\mathbf{p}_n$ (the pixel with the smallest feature distance from other masks) are sampled. The triplet loss is constructed using cosine distance $d(\mathbf{p}_i, \mathbf{p}_j) = 1 - \tilde{\mathbf{f}}_{\mathbf{p}_i} \cdot \tilde{\mathbf{f}}_{\mathbf{p}_j}$: $\mathcal{L}_{\text{tri}} = \max(0, d(\mathbf{p}_a, \mathbf{p}_p) - d(\mathbf{p}_a, \mathbf{p}_n) + m)$.
-    - **Design Motivation**: Patches carry instance-level rather than semantic-category labels, and SAM masks across different views cannot be directly matched in a one-to-one manner. Contrastive learning enables automatic cross-view patch clustering in feature space.
+The difficulty lies in patch labels being instance-level rather than semantic classes—mask IDs from SAM across different views are independent (e.g., "patch 3" in view 1 is not the same as "patch 3" in view 2). Contrastive learning is used to achieve automatic clustering in the feature space using a triplet loss. For each mask region $\mathcal{M}_k$, an anchor $\mathbf{p}_a$ and a positive sample $\mathbf{p}_p$ are selected, while the feature-wise closest (most confusing) pixel from other masks is chosen as the hardest negative sample $\mathbf{p}_n$. Distance is measured by cosine similarity $d(\mathbf{p}_i, \mathbf{p}_j) = 1 - \tilde{\mathbf{f}}_{\mathbf{p}_i} \cdot \tilde{\mathbf{f}}_{\mathbf{p}_j}$:
 
-3. **Adaptive Sampling from Gaussians to Point Cloud**
+$$\mathcal{L}_{\text{tri}} = \max\big(0,\; d(\mathbf{p}_a, \mathbf{p}_p) - d(\mathbf{p}_a, \mathbf{p}_n) + m\big).$$
 
-    - **Function**: Converts trained Gaussian primitives into a dense point cloud with edge and patch labels.
-    - **Mechanism**: Edge regions require many elongated ellipsoidal Gaussians, while flat regions require only a few near-spherical ones. The center of each Gaussian is sampled; for ellipsoidal Gaussians whose major-to-minor axis ratio is not extreme, four additional points are sampled along the ellipse, ensuring that the sampled points align with the true surface distribution.
-    - **Design Motivation**: Using only Gaussian centers leads to undersampling in edge regions, which degrades subsequent parametric fitting accuracy.
+This forces features of the same physical patch to converge even if their mask IDs across views are unrelated.
 
-4. **Constraint-Guided Parametric Fitting**
+**3. Gaussian-to-Point-Cloud Adaptive Sampling: Aligning sampling density with geometry**
 
-    - **Function**: Fits parametric primitives (planes/cylinders/spheres) from the labeled point cloud and assembles them into a watertight B-rep.
-    - **Mechanism**: A five-step procedure is followed: (a) RANSAC is applied to fit three primitive types for each patch; (b) intersection lines/curves between primitive pairs are computed; (c) edge point clouds constrain the valid parameter range of line/curve segments; (d) three-plane and two-line intersection point clustering yields vertices; (e) bottom-up assembly with Boolean operations produces a clean watertight B-rep.
-    - **Design Motivation**: The hierarchical extraction (face → edge → vertex → assembly) fully exploits the patch and edge label information obtained from Gaussian training.
+Trained Gaussians must be converted to labeled dense point clouds. Simply taking Gaussian centers causes under-sampling at edges, where many elongated Gaussians exist, compared to flat areas with fewer spherical ones. The method uses shape-adaptive sampling: the center of each Gaussian is sampled, and for elongated Gaussians, four additional points are sampled along the principal axes. This ensures the point density aligns with curvature, providing enough support for edge fitting.
+
+**4. Constraint-guided Parametric Fitting: Bottom-up assembly of labeled point clouds into watertight B-reps**
+
+This step converts labeled point clouds into a parametric CAD model through five stages: (1) fitting planes, cylinders, or spheres to each patch using RANSAC and selecting the best fit; (2) computing intersections between primitive pairs; (3) using edge point clouds to constrain the valid parameter range of these intersection curves; (4) clustering intersection points of three planes or two curves to define corners; (5) bottom-up assembly (faces → edges → corners) with boolean operations to finalize a watertight B-rep. The edge labels are critical for determining segment boundaries.
 
 ### Loss & Training
 
 - **Stage 1**: $\mathcal{L}_{\text{stage1}} = \mathcal{L}_{\text{geo}} + 0.1 \mathcal{L}_{\text{edge}}$, where $\mathcal{L}_{\text{geo}} = (1-\lambda)\mathcal{L}_1 + \lambda\mathcal{L}_{\text{D-SSIM}}$
-- **Stage 2**: Triplet loss $\mathcal{L}_{\text{tri}}$ with hard negative mining and margin hyperparameter $m$
+- **Stage 2**: Triplet loss $\mathcal{L}_{\text{tri}}$ using hard negative mining and a margin hyperparameter $m$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Patch segmentation evaluation (Precision/Recall/F1) on the ABC-NEF dataset:
+Evaluation of patch segmentation on the ABC-NEF dataset (Precision/Recall/F1):
 
 | Method | Input | Prec ↑ | Rec ↑ | F1 ↑ |
-|--------|-------|--------|-------|------|
-| ParSeNet | GT point cloud | 0.511 | 0.265 | 0.349 |
-| PCER-Net | GT point cloud | 0.876 | 0.912 | 0.894 |
-| SED-Net | GT point cloud | 0.949 | 1.000 | 0.974 |
-| ParSeNet | Densified point cloud | 0.623 | 0.236 | 0.343 |
-| PCER-Net | Densified point cloud | 0.536 | 0.792 | 0.639 |
-| **BRepGaussian** | **Multi-view images** | **0.890** | **0.918** | **0.904** |
+|------|------|--------|-------|------|
+| ParSeNet | GT Point Cloud | 0.511 | 0.265 | 0.349 |
+| PCER-Net | GT Point Cloud | 0.876 | 0.912 | 0.894 |
+| SED-Net | GT Point Cloud | 0.949 | 1.000 | 0.974 |
+| ParSeNet | Densified Point Cloud | 0.623 | 0.236 | 0.343 |
+| PCER-Net | Densified Point Cloud | 0.536 | 0.792 | 0.639 |
+| **BRepGaussian (Ours)** | **Multi-view Images** | **0.890** | **0.918** | **0.904** |
 
 CAD reconstruction quality comparison ($D_c$: Chamfer Distance $\times 10^{-2}$, $D_h$: Hausdorff Distance $\times 10^{-1}$):
 
 | Method | Input | CD(Surface) | CD(Curve) | HD(Surface) | HD(Curve) |
-|--------|-------|-------------|-----------|-------------|-----------|
-| Point2CAD | Ours labels | 3.38 | 5.42 | 2.413 | 3.858 |
+|------|------|-------------|-----------|-------------|-----------|
+| Point2CAD | Our Labels | 3.38 | 5.42 | 2.413 | 3.858 |
 | Point2CAD | PCER-Net | 7.08 | 20.45 | 3.394 | 7.276 |
 | Split-and-Fit | Densified | 6.23 | 13.98 | 3.523 | 4.962 |
-| **BRepGaussian** | **Ours point cloud** | 4.90 | **5.01** | **3.351** | **3.626** |
+| **BRepGaussian (Ours)** | **Our Point Cloud** | 4.90 | **5.01** | **3.351** | **3.626** |
 
 ### Ablation Study
 
-| Configuration | Result | Remarks |
-|---------------|--------|---------|
-| Two-stage training | Best | Geometry is not disrupted by patch learning |
-| Single-stage joint training | Degraded | Patch gradients interfere with geometry reconstruction |
-| Feature dimension d=16 | Best | Optimal feature space size for patch instances |
-| Center-only sampling | Degraded | Undersampling in edge regions |
-| Ellipse-adaptive sampling | Best | Sufficient edge coverage |
+| Configuration | Effect | Description |
+|------|------|------|
+| Two-stage Training | Optimal | Geometry is not degraded by patch learning |
+| Single-stage Joint Training | Decrease | Patch gradients interfere with geometry |
+| Feature Dim d=16 | Optimal | Best feature space size for patch instances |
+| Center-only Sampling | Decrease | Under-sampling in edge regions |
+| Elliptical Adaptive Sampling | Optimal | Sufficient edge coverage |
 
 ### Key Findings
 
-- BRepGaussian's patch segmentation F1 from images (0.904) surpasses PCER-Net's result using GT point clouds (0.894), demonstrating that features learned from multi-view images via contrastive learning are more effective than direct point cloud segmentation.
-- Curve reconstruction metrics are globally best (CD=5.01, HD=3.626), confirming that edge detection provides decisive guidance for subsequent parametric fitting.
-- Point2CAD using the paper's labels achieves a slightly lower surface CD (3.38 vs. 4.90), but qualitative analysis reveals redundant patches, making the actual reconstruction quality inferior to BRepGaussian's more compact output.
+- BRepGaussian's patch segmentation F1 (0.904) starting from images surpasses PCER-Net using GT point clouds (0.894), indicating that multi-view features learned via contrastive learning are more effective than direct point cloud segmentation.
+- Curve reconstruction metrics are overall optimal (CD=5.01, HD=3.626), as edge detection provides decisive guidance for parametric fitting.
+- While Point2CAD achieved a lower Surface CD (3.38) when using our labels, qualitative analysis shows it generates redundant patches, whereas BRepGaussian produces cleaner, more compact results.
 
 ## Highlights & Insights
 
-- **First end-to-end pipeline from images to B-rep**: The method entirely bypasses point cloud acquisition and extends the advantages of Gaussian splatting to structured 3D modeling. This paradigm shift demonstrates that GS is capable not only of rendering but also of engineering-grade parametric reconstruction.
-- **Two-stage strategy of frozen geometry and feature-only training**: A simple yet effective decoupling of geometric and semantic learning that avoids gradient conflicts in multi-task training. This approach is transferable to any GS task requiring semantic annotation on top of existing geometry.
-- **Judicious choice of 2DGS**: Flat, disk-shaped primitives are naturally aligned with the planar and low-curvature surfaces of CAD models, yielding surface sampling quality far superior to that of 3DGS.
+- **First image-to-B-rep end-to-end framework**: Completely skips the point cloud acquisition phase, extending the advantages of Gaussian Splatting to structured 3D modeling. This paradigm shift proves GS can do engineering-level parametric reconstruction.
+- **Freeze-geometry-train-feature strategy**: A simple yet effective decoupling of geometry and semantics that avoids gradient conflicts in multi-task learning.
+- **Selection of 2DGS**: The disk-like primitives naturally align with the planar/low-curvature surfaces of CAD models, providing surface sampling quality superior to 3DGS.
 
 ## Limitations & Future Work
 
-- Only three primitive types are supported (planes, cylinders, spheres); free-form surfaces such as B-splines and NURBS cannot be handled.
-- SAM mask quality on low-texture CAD images is limited and requires manual correction (~3 minutes per object), leaving room for improved automation.
-- Evaluation is conducted only on the ABC-NEF subset; generalization to real-world captured CAD parts has not been validated.
-- Primitive fitting relies on traditional RANSAC; differentiable fitting methods could be explored to enable end-to-end optimization.
+- Only supports planes, cylinders, and spheres; cannot handle freeform surfaces like B-splines/NURBS.
+- Mask quality from SAM on low-texture CAD images is not high and requires manual correction (~3 minutes/object).
+- Evaluated only on an ABC-NEF subset; generalization to real-world photographed CAD parts is yet to be verified.
+- Primitive fitting relies on traditional RANSAC; differentiable fitting for end-to-end optimization could be explored.
 
 ## Related Work & Insights
 
-- **vs. Point2CAD**: A pure fitting method that depends on external labels. When supplied with the paper's labels, it achieves the lowest surface CD but produces redundant patches; BRepGaussian's constraint-guided fitting yields cleaner results.
-- **vs. SED-Net**: Achieves the highest F1 (0.974) using GT point clouds but fails to generalize to densified point clouds reconstructed from images. BRepGaussian, starting from images, exhibits stronger generalization.
-- **vs. Curve-Aware GS**: That work recovers only parametric curves, whereas BRepGaussian further recovers complete face + edge + vertex + topology structures.
+- **vs Point2CAD**: A pure fitting method that relies on external labels. While it has lower Surface CD with our labels, it produces redundant patches; BRepGaussian’s constraint-guided fitting is cleaner.
+- **vs SED-Net**: Achieves the highest F1 (0.974) with GT point clouds but fails to generalize to densified point clouds from images. BRepGaussian is more robust for image-based inputs.
+- **vs Curve-Aware GS**: While that work only recovers parametric curves, BRepGaussian recovers the full face+edge+corner+topology structure.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First complete pipeline from images to B-rep; a pioneering contribution
-- Experimental Thoroughness: ⭐⭐⭐⭐ Thorough comparisons on ABC-NEF, but real-world validation is absent
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with an intuitive pipeline figure
-- Value: ⭐⭐⭐⭐⭐ Opens a new image-based paradigm for CAD reverse engineering
+- Novelty: ⭐⭐⭐⭐⭐ First complete pipeline from images to B-rep.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive comparison on ABC-NEF, though lacks real-world scene validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive pipeline diagrams.
+- Value: ⭐⭐⭐⭐⭐ Defines a new paradigm for CAD reverse engineering from images.
 
 <!-- RELATED:START -->
 
@@ -150,11 +154,11 @@ CAD reconstruction quality comparison ($D_c$: Chamfer Distance $\times 10^{-2}$,
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](unisplat_3d_representations_unposed.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction](mv-roma_from_pairwise_matching_into_multi-view_track_reconstruction.md)
-- [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
-- [\[ICLR 2026\] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting](../../ICLR2026/3d_vision/stylos_multi-view_3d_stylization_with_single-forward_gaussian_splatting.md)
+- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
+- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 
 </div>
 

@@ -2,83 +2,74 @@
 title: >-
   [Paper Note] 2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion models that aligns the second-order Jacobian matrix $J^\top J$ between the pruned and original mod…
+  [CVPR 2026][Image Generation][Diffusion Model] A fine-tuning framework named 2ndMatch is proposed. By aligning the second-order Jacobian matrix $J^\top J$ (inspired by Finite-Time Lyapunov Exponents) of the pruned model with the original model, it matches the temporal sensitivity to input perturbations, significantly narrowing the generation quality gap.
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Diffusion Model"
-  - "Pruning"
-  - "Jacobian Matching"
-  - "Finite-Time Lyapunov Exponent"
-  - "Knowledge Distillation"
-date: 2025-06-06
-content_hash: 8082ab6e4ad8eb46
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
+  - Knowledge Distillation
+date: 2026-05-08
+content_hash: 1a0a7ed05af90715
 ---
-
 # 2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching
 
 **Conference**: CVPR 2026  
 **arXiv**: [2506.05398](https://arxiv.org/abs/2506.05398)  
-**Code**: No  
-**Area**: Diffusion Model / Model Compression  
-**Keywords**: Diffusion Model, Pruning, Jacobian Matching, Finite-Time Lyapunov Exponent, Knowledge Distillation
+**Code**: None  
+**Area**: Diffusion Models / Model Compression  
+**Keywords**: Diffusion Models, Model Pruning, Jacobian Matching, Finite-Time Lyapunov Exponent, Knowledge Distillation
 
 ## TL;DR
-This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion models that aligns the second-order Jacobian matrix $J^\top J$ between the pruned and original models—inspired by finite-time Lyapunov exponents (FTLE)—to match their sensitivity to input perturbations over time, thereby significantly closing the generation quality gap.
+A fine-tuning framework named 2ndMatch is proposed. By aligning the second-order Jacobian matrix $J^\top J$ (inspired by Finite-Time Lyapunov Exponents) of the pruned model with the original model, it matches the temporal sensitivity to input perturbations, significantly narrowing the generation quality gap.
 
 ## Background & Motivation
 
-**Background**: Diffusion models achieve excellent image generation quality but require hundreds of denoising steps at inference, incurring substantial computational costs. Model pruning is an effective strategy for reducing per-step computation.
+**Background**: Diffusion models achieve excellent results in image generation but suffer from high computational costs during inference due to hundreds of denoising steps. Model pruning is an effective strategy to reduce the computation per step.
 
-**Limitations of Prior Work**: Post-pruning fine-tuning typically reuses the original denoising score matching (DSM) objective, which is insufficient for capacity-reduced pruned models. Existing knowledge distillation approaches align outputs or intermediate features but overlook the model's **sensitivity**—i.e., how the score function responds to input perturbations. First-order Jacobian matching is essentially equivalent to KD for diffusion models (since inputs already contain noise perturbations) and cannot capture perturbation propagation across time steps.
+**Limitations of Prior Work**: Fine-tuning after pruning typically reuses the original Denoising Score Matching (DSM) objective, which is insufficient for reduced-capacity models. Existing knowledge distillation (KD) aligns outputs or intermediate features but overlooks model **sensitivity**—specifically, how the score function responds to input perturbations. First-order Jacobian matching is largely redundant for diffusion models (as inputs already contain noise) and fails to capture perturbation propagation across time.
 
-**Key Challenge**: Pruning reduces model capacity, causing the pruned model's sensitivity to perturbations to diverge from the original, leading to denoising trajectory drift and degraded generation quality. A method is needed to constrain the pruned model to maintain the same temporal dynamics as the original.
+**Key Challenge**: Reduced model capacity $\to$ sensitivity to perturbations deviates from the original model $\to$ denoising trajectory drift $\to$ degradation in generation quality. There is a need for a method to constrain pruned models to maintain the same temporal dynamical behavior.
 
-**Key Insight**: The paper views diffusion models as discrete-time dynamical systems and draws on FTLE theory, which quantifies the amplification/contraction rate of small perturbations over finite time horizons.
+**Key Insight**: Diffusion models are viewed as discrete-time dynamical systems. Drawing from Finite-Time Lyapunov Exponent (FTLE) theory, the framework quantifies the amplification/contraction rate of infinitesimal perturbations over finite time.
 
-**Core Idea**: Align the $J^\top J$ (second-order Jacobian metric) between pruned and original models, using random projections $v^\top J^\top J v$ to efficiently estimate directional expansion rates, enabling scalable second-order Jacobian matching.
+**Core Idea**: Align the $J^\top J$ (second-order Jacobian metric) of the pruned model with the original model. Directional expansion rates are efficiently estimated via random projection $v^\top J^\top J v$, enabling scalable second-order Jacobian matching.
 
 ## Method
 
 ### Overall Architecture
-The hybrid fine-tuning objective is: $\mathcal{L}_{total} = \lambda_{NP}\mathcal{L}_{NP} + \lambda_{KD}\mathcal{L}_{KD} + \lambda_{Jac}\mathcal{L}_{2nd\text{-}Jac}$, where the three complementary components handle noise prediction, output alignment, and temporal sensitivity matching respectively.
+The 2ndMatch framework addresses the problem that standard denoising objectives cannot recover generation quality for pruned models with reduced capacity. The fine-tuning process is viewed as aligning with the original (dense) model at three levels: prediction accuracy, output similarity, and consistency in "reaction" to input perturbations. The first two are standard, while the third is the novelty: keeping the amplification behavior of perturbations at each step consistent with the original model. These comprise a hybrid objective:
+
+$$\mathcal{L}_{total} = \lambda_{NP}\mathcal{L}_{NP} + \lambda_{KD}\mathcal{L}_{KD} + \lambda_{Jac}\mathcal{L}_{2nd\text{-}Jac}$$
 
 ### Key Designs
 
-1. **Noise Prediction**:
+**1. Noise Prediction: Foundation supervision for pruned models**
 
-    - Function: Standard DDPM objective that predicts the noise added during the forward process
-    - Mechanism: $\mathcal{L}_{NP} = \mathbb{E}_{\tilde{x},t,\epsilon}[\|s(\tilde{x},t;\theta) - \epsilon\|_2^2]$
-    - Design Motivation: Serves as the basic supervisory signal, but is insufficient alone for capacity-reduced pruned models
+This is the standard DDPM objective, where the model predicts the noise $\epsilon$ added during the forward process: $\mathcal{L}_{NP} = \mathbb{E}_{\tilde{x},t,\epsilon}[\|s(\tilde{x},t;\theta) - \epsilon\|_2^2]$. While essential for any diffusion training, fitting noise alone is insufficient for models with nearly half the parameters removed, leading to slow and biased convergence. It serves as the "base."
 
-2. **Knowledge Distillation**:
+**2. Knowledge Distillation: Using original model outputs as a smoother teacher**
 
-    - Function: Aligns the outputs of the pruned and original models
-    - Mechanism: $\mathcal{L}_{KD} = \mathbb{E}_{\tilde{x},t}[\|s(\tilde{x},t;\theta) - s_\mathcal{D}(\tilde{x},t;\theta_\mathcal{D})\|_2^2]$
-    - Design Motivation: Provides smoother supervision targets than raw noise, accelerating convergence
+This aligns the score outputs of the pruned and original models on the same input: $\mathcal{L}_{KD} = \mathbb{E}_{\tilde{x},t}[\|s(\tilde{x},t;\theta) - s_\mathcal{D}(\tilde{x},t;\theta_\mathcal{D})\|_2^2]$. Compared to the stochastic noise $\epsilon$, the teacher's score is a smoother and more informative target, accelerating convergence. However, it only manages "output values" and ignores dynamic responses to perturbations.
 
-3. **Second-Order Jacobian Matching (Core Innovation)**:
+**3. Second-Order Jacobian Matching: Aligning temporal sensitivity (Core Innovation)**
 
-    - Function: Aligns the local sensitivity of pruned and original models
-    - Mechanism: FTLE theory indicates that perturbation amplification is governed by $\|v_1\| \approx \sqrt{v_0^\top J^\top J v_0}$. Since computing the full Jacobian is intractable, random projections $v \sim \mathcal{N}(0,I)$ are used to estimate directional expansion rates:
-    $\mathcal{L}_{2nd\text{-}Jac} = \mathbb{E}_{\tilde{x},t,v}\left[(\|J\hat{v}\|_2^2 - \|J_\mathcal{D}\hat{v}\|_2^2)^2\right]$
-      where $\hat{v} = v/\|v\|$, and $J\hat{v}$ is efficiently computed via Jacobian-vector products (JVP) without forming the full Jacobian matrix
-    - Design Motivation: A Taylor expansion proof shows that first-order Jacobian matching under noisy inputs is equivalent to KD, yielding no additional benefit. Second-order matching captures perturbation propagation across time steps, better aligning dynamical system stability
+Denoising is a multi-step iterative dynamical system. Small perturbations at one step can be amplified or contracted along subsequent steps. If the pruned model deviates in this amplification rate, the trajectory drifts, causing quality collapse. The authors utilize the FTLE to characterize this—FTLE quantifies expansion over finite time, while the local expansion of a single step is determined by the second-order Jacobian metric $J^\top J$: $\|v_1\| \approx \sqrt{v_0^\top J^\top J v_0}$.
 
-### Why Does First-Order Jacobian Matching Fail?
-The paper provides a Taylor expansion proof: $\|s(x') - s_\mathcal{D}(x')\|_2^2 = \|s(x) - s_\mathcal{D}(x)\|_2^2 + \sigma^2\|J - J_\mathcal{D}\|_F^2 + \mathcal{O}(\sigma^4)$. Under noisy inputs, output alignment implicitly subsumes first-order Jacobian matching, so explicitly adding it only increases computational overhead.
+High-dimensional Jacobian construction is bypassed via random projection: sample a random direction $v\sim\mathcal{N}(0,I)$, normalize to $\hat{v}=v/\|v\|$, and compare directional expansion rates using Jacobian-Vector Products (JVP) $J\hat{v}$ without explicit Jacobian formation:
+
+$$\mathcal{L}_{2nd\text{-}Jac} = \mathbb{E}_{\tilde{x},t,v}\left[(\|J\hat{v}\|_2^2 - \|J_\mathcal{D}\hat{v}\|_2^2)^2\right]$$
+
+Second-order matching is chosen over first-order because the latter is redundant in diffusion. Taylor expansion of noisy inputs gives $\|s(x') - s_\mathcal{D}(x')\|_2^2 = \|s(x) - s_\mathcal{D}(x)\|_2^2 + \sigma^2\|J - J_\mathcal{D}\|_F^2 + \mathcal{O}(\sigma^4)$. Since the input already contains noise $\sigma$, output alignment (KD term) implicitly includes first-order Jacobian matching. The second-order term captures propagation across timesteps, corresponding to dynamical stability.
 
 ### Loss & Training
-- Architecture-agnostic: applicable to both U-Net and Transformer-based diffusion architectures
-- Pruning-method-agnostic: compatible with Diff-Pruning, BK-SDM, and other pruning methods
-- Uses PyTorch's JVP functionality to efficiently compute $J\hat{v}$
+The total objective is a weighted sum. The method is architecture-agnostic, applicable to both U-Net and Transformer backbones, and can be integrated with various pruning methods like Diff-Pruning or BK-SDM. PyTorch JVPs are used for efficient computation of $J\hat{v}$, avoiding memory explosions from explicit Jacobians.
 
 ## Key Experimental Results
 
 ### Main Results (LSUN + ImageNet 256×256, U-Net models)
 
-| Dataset | Method | Params | MACs | FID↓ | rFID↓ |
-|---------|--------|--------|------|------|-------|
+| Dataset | Method | Parameters | MACs | FID↓ | rFID↓ |
+|--------|------|--------|------|------|-------|
 | LSUN-Church | DDPM (Original) | 113.7M | 248.7G | 10.58 | - |
 | | Diff-Pruning | 63.2M | 138.8G | 13.90 | 4.09 |
 | | **2ndM (Ours)** | 63.2M | 138.8G | **11.25** | **2.08** |
@@ -89,12 +80,12 @@ The paper provides a Taylor expansion proof: $\|s(x') - s_\mathcal{D}(x')\|_2^2 
 | | Diff-Pruning | 175.8M | 43.2G | 10.23 | 9.28 |
 | | **2ndM (Ours)** | 175.8M | 43.2G | **5.68** | **4.11** |
 
-Stable Diffusion (COCO 512×512): Base+2ndM reduces FID from 15.76 to 13.84; Small+2ndM from 16.98 to 16.17.
+Stable Diffusion (COCO 512×512): Base+2ndM reduced FID from 15.76 to 13.84; Small+2ndM from 16.98 to 16.17.
 
 ### Ablation Study (CIFAR-10)
 
 | Config | FID↓ | FTLE |
-|--------|------|------|
+|------|------|------|
 | NP only | 5.29 | 0.413 |
 | NP + KD | 5.05 | 0.418 |
 | NP + KD + 1st JM | 5.14 | - |
@@ -102,32 +93,32 @@ Stable Diffusion (COCO 512×512): Base+2ndM reduces FID from 15.76 to 13.84; Sma
 | Dense (Original) | 4.19 | - |
 
 ### Key Findings
-- **First-order Jacobian matching is ineffective**: Adding first-order JM actually worsens FID from 5.05 to 5.14, validating the theoretical analysis
-- **Second-order matching is critical**: 2ndM reduces FID from 5.05 to 4.58, with FTLE values closer to the original model, confirming the effectiveness of temporal sensitivity alignment
-- 46% FID improvement on LSUN-Bedroom (17.90→9.68) and 55% rFID improvement on ImageNet
-- Also effective on Transformer architectures: U-ViT on CIFAR-10 FID drops from 4.63 to 4.05
+- **Ineffectiveness of 1st-order matching**: Adding 1st JM increased FID from 5.05 to 5.14, confirming the theoretical analysis.
+- **Criticality of 2nd-order matching**: 2ndM significantly reduced FID to 4.58. The FTLE became closer to the original model, proving the effectiveness of temporal sensitivity alignment.
+- **Gain**: FID improved by 46% on LSUN-Bedroom (17.90 to 9.68) and rFID improved by 55% on ImageNet.
+- **Transformer applicability**: Validated on U-ViT with FID dropping from 4.63 to 4.05 on CIFAR-10.
 
 ## Highlights & Insights
-- **Dynamical systems perspective**: Reformulating diffusion model fine-tuning as a dynamical system stability problem and using FTLE theory to guide loss design provides deep insights into diffusion model training and generation
-- **Elegant Taylor expansion proof**: Rigorously demonstrates the redundancy of first-order Jacobian matching in diffusion models, offering theoretical guidance for loss design in model compression
-- **Practical random projections**: Estimating $v^\top J^\top J v$ via random directions circumvents the high-dimensional Jacobian computation bottleneck, scaling the method to large models (Stable Diffusion with 1.04B parameters)
+- **Dynamical Systems Perspective**: Re-frames the fine-tuning of diffusion models as a stability problem in dynamical systems, using FTLE theory to guide loss function design.
+- **Theoretical Elegance**: Strictly proves the redundancy of first-order Jacobian matching in diffusion through Taylor expansion.
+- **Practicality**: Random projections $v^\top J^\top J v$ bypass the high-dimensional Jacobian bottleneck, making the method scalable to large models like Stable Diffusion.
 
 ## Limitations & Future Work
-- Currently uses step-wise matching to approximate multi-step Jacobian propagation, limiting the ability to capture long-range temporal dependencies
-- The trade-off between random projection efficiency and estimation accuracy is not thoroughly explored
-- Only validated on image generation; applications to video/3D and other complex diffusion model tasks remain unexplored
-- The FTLE concept could be extended to distillation (non-pruning) settings or used to guide sampler schedule design
+- Current step-wise matching approximates multi-step Jacobian propagation, which might limit the capture of long-range temporal dependencies.
+- The trade-off between random projection efficiency and estimation accuracy requires further investigation.
+- Evaluations are focused on image generation; applications to video or 3D diffusion models remain to be explored.
+- FTLE concepts could be extended to distillation (non-pruning) or used to design sampling schedulers.
 
 ## Related Work & Insights
-- **vs Diff-Pruning**: Diff-Pruning only uses DSM for post-pruning fine-tuning; 2ndM adds sensitivity alignment on top, achieving significantly better FID at the same parameter count
-- **vs DeepCache**: DeepCache accelerates inference by caching intermediate features without reducing parameters; it is complementary to pruning approaches
-- **vs BK-SDM**: BK-SDM is a pruning method designed for Stable Diffusion; 2ndM can be directly stacked on top to further improve quality
+- **vs Diff-Pruning**: Diff-Pruning uses only DSM; 2ndM adds sensitivity alignment, yielding significantly better FID at the same parameter count.
+- **vs DeepCache**: DeepCache accelerates via caching intermediate features without reducing parameters; it is complementary to 2ndM.
+- **vs BK-SDM**: A pruning method for Stable Diffusion; 2ndM can be applied on top to enhance performance.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Introducing FTLE theory into model compression; the second-order Jacobian matching formulation is elegant and theoretically grounded
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers U-Net and Transformer architectures, 5 datasets, multiple pruning methods, and thorough ablations
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations, clear motivation, and systematic experimental design
-- Value: ⭐⭐⭐⭐ A general fine-tuning framework, though limited to the model pruning scenario
+- Novelty: ⭐⭐⭐⭐⭐ Introduction of FTLE theory to model compression is elegant and theoretically grounded.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers U-Net/Transformer, 5 datasets, multiple pruning methods, and comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous derivations, clear motivation, and systematic experimental design.
+- Value: ⭐⭐⭐⭐ A versatile fine-tuning framework, though focused on model pruning scenarios.
 
 <!-- RELATED:START -->
 
@@ -136,10 +127,10 @@ Stable Diffusion (COCO 512×512): Base+2ndM reduces FID from 15.76 to 13.84; Sma
 ## Related Papers
 
 - [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
+- [\[CVPR 2025\] Efficient Fine-Tuning and Concept Suppression for Pruned Diffusion Models](../../CVPR2025/image_generation/efficient_fine-tuning_and_concept_suppression_for_pruned_diffusion_models.md)
+- [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
 - [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](../../ICLR2026/image_generation/hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
-- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](../../NeurIPS2025/image_generation/fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
-- [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] DFlash: Block Diffusion for Flash Speculative Decoding
 description: >-
-  [ICML 2026][Image Generation][Speculative Decoding] DFlash replaces the autoregressive drafter of EAGLE-3 with a lightweight "block diffusion" draft model. By injecting multi-layer hidden features from the target model a…
+  [ICML 2026][Image Generation][Paper Note] DFlash replaces autoregressive drafters like EAGLE-3 with a lightweight "Block Diffusion" drafter. By injecting multi-layer hidden features of the target model as KV into every layer of the draft model, it enables parallel drafting of an entire block of tokens in a single forward pass, achieving up to 6× lossless accel
 tags:
-  - "ICML 2026"
-  - "Image Generation"
-  - "Speculative Decoding"
-  - "Block Diffusion"
-  - "Draft Model"
-  - "KV Injection"
-  - "Parallel Drafting"
+  - ICML 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 65eac57d8609c897
+content_hash: 9d814a851f2d40f6
 ---
-
 # DFlash: Block Diffusion for Flash Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -24,48 +18,60 @@ content_hash: 65eac57d8609c897
 **Keywords**: Speculative Decoding, Block Diffusion, Draft Model, KV Injection, Parallel Drafting
 
 ## TL;DR
-DFlash replaces the autoregressive drafter of EAGLE-3 with a lightweight "block diffusion" draft model. By injecting multi-layer hidden features from the target model as KV into every layer of the draft model, it enables parallel drafting of an entire block of tokens in a single forward pass. DFlash achieves up to 6× lossless acceleration end-to-end, approximately 2.5× faster than EAGLE-3.
+DFlash replaces autoregressive drafters like EAGLE-3 with a lightweight "Block Diffusion" drafter. By injecting multi-layer hidden features of the target model as KV into every layer of the draft model, it enables parallel drafting of an entire block of tokens in a single forward pass, achieving up to 6× lossless acceleration—approximately 2.5× faster than EAGLE-3.
 
 ## Background & Motivation
 
-**Background**: Autoregressive LLM inference is constrained by "token-by-token serial generation," resulting in extremely low GPU utilization. Speculative decoding has become a mainstream acceleration scheme by "quickly guessing a segment with a small draft model and verifying in parallel with a large target model." EAGLE-3 is the current SOTA, but its drafter remains autoregressive—merely with fewer layers and shorter sequences.
+**Background**: Autoregressive LLM inference is limited by "token-by-token serial" generation, leading to extremely low GPU utilization. Speculative decoding has become the mainstream acceleration scheme by having a "small draft model quickly guess a segment and a large target model verify in parallel." EAGLE-3 is the current SOTA, but its drafter remains autoregressive—just with fewer layers and shorter sequences.
 
-**Limitations of Prior Work**: Autoregressive drafting faces two inherent issues: (1) Drafting time $T_{\text{draft}}=\gamma\cdot t_{\text{step}}$ grows linearly with the speculative budget $\gamma$, forcing the drafter to use extremely shallow (1-layer Transformer) structures; (2) Shallow models lack sufficient capacity, causing the acceptance length $\tau$ to saturate quickly. These factors clamp overall acceleration at a 2–3× ceiling.
+**Limitations of Prior Work**: Autoregressive drafting faces two inherent issues: (1) Drafting latency $T_{\text{draft}}=\gamma\cdot t_{\text{step}}$ grows linearly with the speculative budget $\gamma$, forcing the drafter to use extremely shallow structures (e.g., 1-layer Transformer); (2) Shallow models lack capacity, causing the acceptance length $\tau$ to saturate quickly. These factors cap overall acceleration at a 2–3× ceiling.
 
-**Key Challenge**: The "quality" and "latency" of the drafting phase are strongly coupled via $\gamma$. To increase $\tau$, one needs a larger $\gamma$, but a larger $\gamma$ causes the drafting latency to explode.
+**Key Challenge**: The "quality" and "latency" of the drafting phase are strongly coupled via $\gamma$. Achieving a larger $\tau$ requires a larger $\gamma$, which in turn causes the drafting time to explode.
 
-**Previous Diffusion Drafting Attempts**: DiffuSpec and SpecDiff-2 utilize 7B dLLMs as drafters; while drafting quality is high, the parameter count is too large, and the drafting latency consumes the speedup. PARD trains small models to mimic diffusion-style parallel generation, but acceptance length remains low due to limited capacity. Consequently, "diffusion drafting" sounds promising but falls into a "too large or too weak" dilemma in practice.
+**Existing Diffusion Drafting Attempts**: DiffuSpec / SpecDiff-2 utilize 7B dLLMs as drafters; while quality is high, the parameter count is too large, and drafting latency negates the acceleration. PARD trains small models to mimic diffusion-style parallel generation, but its capacity is too small to achieve high acceptance lengths. Thus, "diffusion drafting" sounds promising but falls into the "either too large or too weak" dilemma in practice.
 
 **Goal**: Develop a diffusion drafter that is both lightweight (5-layer Transformer), capable of achieving long acceptance lengths ($\tau\!\ge\!6$), and deeply conditioned on the target model.
 
-**Key Insight**: The authors observe that the hidden features of the target model already "implicitly" encode information about multiple future tokens (echoing Samragh et al. 2025). Therefore, the drafter does not need to "infer from scratch" but rather acts as a lightweight "diffusion adapter" to translate the hidden features computed by the target model during prefill into future block tokens.
+**Key Insight**: The authors observe that the hidden features of the target model already "implicitly" encode information about multiple future tokens (echoing Samragh et al. 2025). Therefore, the drafter does not need to "reason from scratch" but only needs to act as a lightweight "diffusion adapter" to translate the hidden features computed by the target model during prefill into future block tokens.
 
-**Core Idea**: Use block diffusion for parallel drafting combined with injecting multi-layer hidden features of the target model as KV into each layer of the draft model. This allows "drafting time remaining nearly independent of $\gamma$" and "acceptance length scaling steadily with the number of draft layers" to occur simultaneously.
+**Core Idea**: Use block diffusion for parallel drafting and inject multi-layer hidden features of the target model as KV directly into every layer of the draft model. This allows "drafting time to remain nearly independent of $\gamma$" and "acceptance length to scale stably with the number of draft layers" to occur simultaneously.
 
 ## Method
 
 ### Overall Architecture
-DFlash modifies only the drafting side within the standard "draft → verify" speculative decoding cycle. Given a prompt, the target model $\mathcal{M}_t$ performs a standard prefill, producing the first bonus token while extracting hidden states from several uniformly sampled layers (defaulting to 5 layers, from the 2nd to the 3rd-to-last layer). These cross-layer hidden states are fused through a lightweight projection layer into a compact target context feature, which is then injected into the KV cache of every layer of the draft model $\mathcal{M}_d$ (defaulting to 5 layers, block size 16). $\mathcal{M}_d$ then predicts all tokens of the next block in parallel via block diffusion in a **single forward pass**, which are passed to $\mathcal{M}_t$ for parallel verification. Subsequent drafting rounds reuse the same target context feature (cached in KV).
+DFlash addresses the dilemma where autoregressive drafters bind "quality" and "latency" through the speculative budget $\gamma$. It replaces only the draft side of the standard speculative decoding loop, leaving the verification side unchanged. Given a prompt, the target model first performs prefill to produce the first bonus token while extracting hidden features from several intermediate layers as "future token hints." These are fused and injected into the KV cache of each layer in a lightweight draft model. The draft model then uses block diffusion to produce the entire block in a single parallel forward pass, which is then passed back to the target model for one-time verification. Drafting quality comes from deep conditioning on target features, and speed comes from a single parallel forward pass.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Prompt"] --> B["Target model prefill<br/>Produces bonus token + extracts multi-layer hidden features"]
+    B --> C["Target hiddens injected as persistent KV into each layer<br/>Fused into target context features and written to draft KV"]
+    C --> D["Block diffusion parallel drafting<br/>Predicts whole block in one forward pass with anchor + mask"]
+    D --> E["Target model verifies the entire block in one pass"]
+    E -->|Accept first τ tokens, reject others| F["Net output of τ tokens<br/>Last accepted token becomes the next anchor"]
+    F -->|KV reuse, enter next round| D
+    G["Training: Random anchor sampling + Early-position weighted loss<br/>Flex Attention stitches multi-blocks, early-pos exponential decay weight"] -.Offline training of drafter.-> D
+```
 
 ### Key Designs
 
-1. **Target Model Hidden Features as Persistent KV Injection into Every Draft Layer**:
-    - **Function**: Continuously injects the "future token information implicit in the large model's mind" into every layer of the draft Transformer.
-    - **Mechanism**: Extracts hidden states from 5 uniformly distributed layers of the target model, concatenates them, and fuses them into a target context feature through a projection layer. Unlike EAGLE-3, which concatenates these with draft token embeddings only at the input, DFlash **separately projects this feature into the Key/Value matrices of every layer** and writes them into the draft model's KV cache, reusing them across multiple drafting rounds. This way, every attention layer can directly access target features.
-    - **Design Motivation**: Ablations show that EAGLE-3's "input fusion" causes the conditioning signal to dilute as the draft model deepens, preventing $\tau$ from increasing with more layers. KV injection allows $\tau$ to scale steadily with layer count, which is the fundamental prerequisite for DFlash to utilize 5-layer or even 8-layer drafters. Table 9 shows that for a 5-layer drafter, input fusion yields a GSM8K $\tau$ of 3.5, which increases to 4.2 with KV injection.
+**1. Target Hidden Features as Persistent KV in Every Layer: Allowing Drafter Depth to Increase Acceptance Length**
 
-2. **Block Diffusion Parallel Drafting Replacing Autoregressive Drafting**:
-    - **Function**: Decodes the mask tokens of an entire block in parallel in a single forward pass, decoupling drafting time from $\gamma$.
-    - **Mechanism**: The draft model follows a block-diffusion style. Given an anchor within the block (the bonus token from the previous target model step), the remaining $\text{block\_size}-1$ positions are initialized as mask tokens. A single forward pass predicts tokens for all mask positions simultaneously. Drafting time is approximately $T_{\text{draft}}\!\approx\!t_{\text{parallel}}$, which is nearly independent of block size (Figure 3 shows a 5-layer DFlash drafting 16 tokens is faster than a 1-layer EAGLE-3 drafting 8 tokens).
-    - **Design Motivation**: The linear growth of autoregressive drafting cost $T_{\text{draft}}=\gamma\cdot t_{\text{step}}$ locks drafters into shallow structures. By switching to parallel drafting, "using deeper/stronger draft models" and "using longer draft blocks" become compatible, pushing the Pareto frontier toward the top-right.
+EAGLE-3 also uses target hiddens but concatenates features with draft token embeddings only at the input layer. As the draft model deepens, this conditioning signal is diluted through layers, preventing the acceptance length $\tau$ from scaling. DFlash instead extracts hidden states from uniformly sampled layers of the target model (default 5 layers, from the 2nd to the 3rd-to-last layer). These are fused via a projection layer into a compact "target context feature," which is then **independently projected into the Key/Value matrices of each draft Transformer layer** and written to the KV cache, reused across multiple drafting rounds. This way, every attention layer directly accesses the target features. This is the foundation for DFlash using 5-layer or even 8-layer drafters—Table 9 shows that under a 5-layer drafter, input fusion yields GSM8K $\tau$=3.5, while KV injection increases it to 4.2.
 
-3. **Random Anchor Sampling + Early Position Weighted Loss during Training**:
-    - **Function**: Aligns the training distribution with the inference behavior of "drafting at random positions with a bonus token as anchor" and ensures early positions, which facilitate acceptance length, are well-trained.
-    - **Mechanism**: During training, instead of fixed block slicing as in standard block diffusion, several anchor tokens are randomly sampled from the response. Each anchor serves as the start of a block, with subsequent positions masked, and the draft model predicts the following $\text{block\_size}-1$ tokens. Multiple blocks are packed into a single sequence using Flex Attention and trained simultaneously with sparse attention masks (intra-block bidirectional + looking at target features; inter-block invisible). An exponentially decaying position weight $w_k=\exp(-\tfrac{k-1}{\gamma})$ is applied to the loss for position $k$ within the block, as errors in early positions invalidate the entire block.
-    - **Design Motivation**: Random anchors expose the drafter to more diverse target context features. Table 13 reports this strategy significantly increases acceptance length and acceleration. Early position weighting directly addresses the bottleneck, as speculative decoding's acceptance length is determined by the "first rejected position."
+**2. Block Diffusion Parallel Drafting Replacing Autoregressive Drafting: Decoupling Drafting Time from Speculative Budget**
+
+The cost of autoregressive drafting is $T_{\text{draft}}=\gamma\cdot t_{\text{step}}$, which grows linearly with the speculative budget, forcing drafters into 1-layer shallow structures. DFlash's draft model is block-diffusion style: given an anchor in the block (the bonus token from the previous target step), the remaining $\text{block\_size}-1$ positions are initialized as mask tokens. All mask positions are predicted in a single forward pass. Thus, drafting time is approximately $T_{\text{draft}}\!\approx\!t_{\text{parallel}}$, which is nearly independent of the block size—Figure 3 shows that a 5-layer DFlash drafting 16 tokens is faster than 1-layer EAGLE-3 drafting 8 tokens. Once drafting time is decoupled, "deeper/stronger draft models" and "longer draft blocks" can coexist, pushing the speed-quality Pareto front to the top-right.
+
+**3. Random Anchor Sampling + Early-Position Weighted Loss: Aligning Training with Inference and Optimizing Bottleneck Tokens**
+
+During inference, the drafter starts from an arbitrary bonus token as an anchor at a random position. Thus, training cannot use fixed blocks like standard block diffusion. DFlash randomly samples anchor tokens from the response; each anchor acts as the first position of a block with subsequent positions masked. The draft model predicts the following $\text{block\_size}-1$ tokens. Multiple blocks are stitched into one sequence using Flex Attention and trained simultaneously with sparse masks (bidirectional visibility within blocks, visibility of target features, no visibility between blocks). This exposes the drafter to diverse target context features. For the loss, an exponential decay weight $w_k=\exp(-\tfrac{k-1}{\gamma})$ is applied to position $k$ within the block, as speculative decoding success is determined by the "first rejected position." Errors at early positions render the entire subsequent block wasted. Table 13 reports that this strategy significantly improves acceptance length and speedup.
+
+### Mechanism Example
+Take Qwen3-8B, block size 16, and a 5-layer drafter: After the target model prefills the prompt, it provides bonus token $x_0$ and extracts hiddens from 5 layers, fused into target context features and written to the drafter's KV. The drafter treats $x_0$ as an anchor, masks the next 15 positions, and predicts candidates $\hat{x}_1\dots\hat{x}_{15}$ in one forward pass. The target model verifies these 16 positions in one parallel pass. If the first 6 are accepted and the 7th is rejected, 6 tokens are produced. The 6th accepted token becomes the new bonus/anchor, and the target context feature is reused in the KV without re-extraction. The round cost is one draft forward pass + one target verification.
 
 ### Loss & Training
-The base objective is cross-entropy with the aforementioned $w_k$ position weights. The draft model's token embeddings and LM head are **shared and frozen** with the target model, training only the draft Transformer layers. This reinforces the role of the draft model as a lightweight diffusion adapter. Training uses approximately 800K samples (NVIDIA Nemotron Post-Training V2 + CodeAlpaca), with responses regenerated by the target model to align distributions. For long context, only 1.6K LongAlign samples are needed for 3 epochs of fine-tuning to extend from 4K to 32K.
+The base objective is cross-entropy with the aforementioned $w_k=\exp(-\tfrac{k-1}{\gamma})$ position weights. Drafter token embeddings and the LM head are **shared and frozen** with the target model; only the draft Transformer layers are trained, reinforcing the "lightweight diffusion adapter" role. Training data includes ~800K samples (NVIDIA Nemotron Post-Training V2 + CodeAlpaca), with responses regenerated by the target model to align distributions. For long context, 1.6K LongAlign samples are fine-tuned for 3 epochs to extend from 4K to 32K.
 
 ## Key Experimental Results
 
@@ -73,53 +79,54 @@ The base objective is cross-entropy with the aforementioned $w_k$ position weigh
 
 | Model / Task | Method | Speedup | $\tau$ |
 |---|---|---|---|
-| Qwen2-7B GSM8K (T=0) | EAGLE-3 (tree=16) | 1.94× | 3.23 |
-| Qwen2-7B GSM8K (T=0) | EAGLE-3 (tree=60) | 2.23× | 3.71 |
-| Qwen2-7B GSM8K (T=0) | **DFlash (block=16)** | **5.15×** | **6.54** |
-| Qwen2-7B HumanEval (T=0) | EAGLE-3 (tree=60) | 2.17× | 3.65 |
-| Qwen2-7B HumanEval (T=0) | **DFlash (block=16)** | **5.14×** | **6.50** |
-| Qwen2-1.5B 8-Task Avg (T=0) | EAGLE-3 (tree=16) | 1.81× | 3.05 |
-| Qwen2-1.5B 8-Task Avg (T=0) | **DFlash (block=16)** | **4.91×** | **6.54** |
-| Qwen2-7B Math500 SGLang(B200) C=1 | Baseline → DFlash | **5.1×** | 8.01 |
-| Qwen2-Coder-32B HumanEval SGLang C=32 | DFlash | **3.1×** | 8.09 |
+| Qwen3-8B GSM8K (T=0) | EAGLE-3 (tree=16) | 1.94× | 3.23 |
+| Qwen3-8B GSM8K (T=0) | EAGLE-3 (tree=60) | 2.23× | 3.71 |
+| Qwen3-8B GSM8K (T=0) | **DFlash (block=16)** | **5.15×** | **6.54** |
+| Qwen3-8B HumanEval (T=0) | EAGLE-3 (tree=60) | 2.17× | 3.65 |
+| Qwen3-8B HumanEval (T=0) | **DFlash (block=16)** | **5.14×** | **6.50** |
+| Qwen3-4B Avg 8 Tasks (T=0) | EAGLE-3 (tree=16) | 1.81× | 3.05 |
+| Qwen3-4B Avg 8 Tasks (T=0) | **DFlash (block=16)** | **4.91×** | **6.54** |
+| Qwen3-8B Math500 SGLang(B200) C=1 | Baseline → DFlash | **5.1×** | 8.01 |
+| Qwen3-Coder-30B-A3B HumanEval SGLang C=32 | DFlash | **3.1×** | 8.09 |
 
-Key Points: Under an equitable drafting budget (EAGLE-3 tree=16 vs. DFlash block=16), DFlash nearly doubles $\tau$ and increases speedup by 2.4–2.7×. Even when EAGLE-3 is relaxed to tree=60 (maximizing verification cost), DFlash remains superior. On production-grade SGLang + FA4 backends with a single B200, it consistently achieves 4–5× acceleration.
+Key Points: Under equal drafting budgets (EAGLE-3 tree=16 vs DFlash block=16), DFlash's $\tau$ nearly doubles and speedup increases by 2.4–2.7×. Even when EAGLE-3 is relaxed to tree=60, DFlash maintains a total lead. On production-grade SGLang + FA4 backends on a single B200, it consistently achieves 4–5×.
 
 ### Ablation Study
 
-| Configuration | Key Finding |
-|---|---|
-| Draft layers 3 / 5 / 8 (Table 6) | Speedup 4.69× / 4.71× / 4.64×; 8 layers has highest $\tau$ but slower drafting; 5 layers is the optimal balance. |
-| Target hidden layers 3 / 5 (Table 7) | Math500 $\tau$ 5.38 → 5.64; extracting more target feature layers steadily increases $\tau$ at the cost of doubling training cache. |
-| Train BS 16 / Test BS 8 (Table 8) | Speedup 3.87× vs 3.97× for Train=Test=8; models trained with large blocks can generalize downward, but not vice versa. |
-| Input fusion vs KV Injection (Table 9, 5 layers) | GSM8K $\tau$ 3.5 → 4.2; KV injection is key to "deepening the drafter to increase $\tau$." |
+| Configuration | Key Observation | Description |
+|---|---|---|
+| Draft Layers 3 / 5 / 8 (Table 6) | speedup 4.69× / 4.71× / 4.64× | 8 layers have highest $\tau$ but slower draft; 5 is optimal |
+| Target Hiddens 3 / 5 (Table 7) | Math500 $\tau$ 5.38 → 5.64 | More target layers improve $\tau$ at the cost of training cache |
+| Train BS 16 / Test BS 8 (Table 8) | speedup 3.87× vs 3.97× | Models trained on large blocks generalize to smaller blocks |
+| Input fusion vs KV Injection (Table 9) | GSM8K $\tau$ 3.5 → 4.2 | KV injection is key to deepening the drafter effectively |
 
 ### Key Findings
-- What distinguishes DFlash from EAGLE-3 is not "diffusion" alone but the combination of **KV Injection + Block Parallelism**: Ablating diffusion for autoregressive + KV injection (DFlash-AR) still exceeds EAGLE-3-5L in $\tau$, but its speedup is far inferior to the full DFlash. This indicates KV injection contributes quality while block diffusion contributes speed; both are indispensable.
-- The hardware-level fact that drafting time is nearly independent of block size (Figure 3) is the "enabler" for the entire paper—it allows the drafter to become both deeper ($\rightarrow$ high $\tau$) and wider ($\rightarrow$ long block), breaking the Pareto frontier of autoregressive drafters.
-- Training on 4K base models + 3 epochs of LongAlign fine-tuning supports up to 32K (Table 4), suggesting that target hidden features already possess long-context representations, and the drafter only needs to learn short-range adaptation.
+- The real differentiator for DFlash over EAGLE-3 is not "diffusion" itself but the combination of **KV Injection + Block Parallelism**: Ablations replacing diffusion with autoregression + KV injection (DFlash-AR) still exceed EAGLE-3-5L in $\tau$ but fail to match DFlash's speedup. KV injection provides quality; block diffusion provides speed.
+- The hardware reality that drafting time is nearly independent of block size (Figure 3) allows the drafter to grow both deep ($\tau$) and wide (block length), breaking the autoregressive Pareto front.
+- 4K base training + 3 epochs of LongAlign fine-tuning supports 32K context, suggesting target hiddens already possess long-context representations; the drafter only needs short-range adaptation.
 
 ## Highlights & Insights
-- **Redefining the Position of Diffusion Language Models**: Rather than competing head-on with autoregressive LLMs in end-to-end generation, it is better to treat dLLMs as "parallel accelerators dedicated to drafting." This reframing justifies "minimizing diffusion steps (ideally 1)" and "guaranteeing quality through verification," providing a solid foothold for the diffusion paradigm in LLM inference.
-- **KV Injection is Transferable**: Scenarios where "small models depend on large model hidden states" (distillation drafting, parallel heads, early-exit fallback verification, etc.) can benefit from this—stuffing condition information into KV rather than input prevents signal dilution in deeper small models.
-- **Specific Targeting of Acceptance Length with Position-Weighted Loss**: Identifying that "acceptance length is determined by the earliest error" and using exponentially decaying weights to attack this bottleneck is a clever and effective training technique. This idea is applicable to all parallel generation tasks where prefix correctness determines suffix validity.
+- **Redefining Diffusion Language Models**: Rather than competing with autoregressive LLMs on end-to-end generation, dLLMs are positioned as "parallel accelerators dedicated to drafting." This framing justifies minimal diffusion steps (even 1 step) and relies on verification for quality.
+- **Portability of KV Injection**: Scenarios where "small models are conditioned on large model hiddens" (distillation drafting, parallel heads, early-exit validation) can benefit from putting conditional info into KV rather than input to prevent signal dilution in deep small models.
+- **Targeted Weighted Loss for Acceptance Length**: By identifying that overall success is limited by the first error, attacking this bottleneck with exponential decay weights is a simple yet effective training trick for prefix-dependent parallel generation tasks.
 
 ## Limitations & Future Work
-- The authors acknowledge a lack of direct code-level comparison with other diffusion drafting methods like DiffuSpec / SpecDiff-2 / TiDAR (citing a lack of open-source implementations). Thus, DFlash's SOTA status is primarily compared against EAGLE-3; horizontal positioning within diffusion drafters awaits third-party replication.
-- Training costs are non-trivial: 800K samples + mandatory regeneration of responses by the target model for alignment, and hidden feature cache grows linearly with the number of extracted layers. Scaling to 70B+ target models will impose significantly higher storage and compute pressure than the 8–30B settings in the paper.
-- Block size selection remains an offline decision. The paper notes that reducing block size is better for large batch/compute-bound scenarios but leaves this for future work; an ideal next step is an online scheduler that dynamically adjusts block size based on batch size and acceptance history.
-- Speedup on open-domain dialogue tasks like MT-Bench / Alpaca is significantly lower than on Code/Math (Q3-8B MT-Bench only 2.75× vs HumanEval 5.14×). This suggests the core assumption that "target hidden contains future token info" is weaker in open generation, requiring more targeted training data or conditioning methods.
+- Lack of direct code-level comparisons with some diffusion draft methods (e.g., DiffuSpec / TiDAR) due to missing open-source implementations; SOTA claims are primarily against EAGLE-3.
+- Training costs are non-trivial: ~800K samples with target model regeneration and hidden feature caching that grows linearly with layers. Storage and compute overhead for 70B+ target models would be significant.
+- Block size selection is currently offline. While smaller blocks are better for large batch/compute-bound scenarios, an online scheduler that dynamically adjusts block size based on history is left for future work.
+- Speedup on open-ended chat tasks (MT-Bench) is significantly lower than on code/math (2.75× vs 5.14×), suggesting the assumption that target hiddens contain future token info is weaker in open generation.
 
 ## Related Work & Insights
-- **vs EAGLE-3**: Both utilize target hidden features, but EAGLE-3 concatenates them with token embeddings only at the input layer and remains autoregressive. DFlash treats features as KV injected into every layer ($\rightarrow$ deepening the drafter works) and replaces autoregressive with block diffusion ($\rightarrow$ drafting time doesn't scale with $\gamma$). Consequently, under equal tree=block=16, speedup increases by >2.4× and exceeds EAGLE-3 even with tree=60.
-- **vs PARD**: PARD uses small autoregressive models to mimic diffusion parallel generation but remains limited by capacity. DFlash uses true diffusion parallelism + deep KV injection, raising the ceiling of diffusion drafting from 3× to 6×.
-- **vs DiffuSpec / SpecDiff-2**: These methods use 7B-class dLLMs for drafting; $\tau$ is high, but drafting latency negates the speedup. DFlash uses a 5-layer (~30M) specialized diffusion adapter, shifting from "quality from self" to "quality from target hidden conditioning," turning the diffusion drafter from a "heavy asset" into a "light asset."
+- **vs EAGLE-3**: Both use target hiddens, but EAGLE-3 fuses them only at the input layer and uses autoregressive drafting. DFlash uses KV injection in every layer and block diffusion, doubling $\tau$ and providing >2.4× speedup under fair settings.
+- **vs PARD**: PARD uses small autoregressive models to mimic diffusion; DFlash uses true diffusion + deep KV injection, raising the acceleration ceiling from 3× to 6×.
+- **vs DiffuSpec / SpecDiff-2**: These use ~7B dLLMs, where drafting latency offsets $\tau$ gains. DFlash uses a ~30M parameter diffusion adapter, shifting from "self-reliant quality" to "conditioned quality" to make the drafter lightweight.
+- **vs Samragh et al. (LoRA Parallel Draft)**: Both observe that target hiddens contain future info. However, Samragh et al. use LoRA to make the target model draft itself; DFlash decouples this to an independent drafter, which is more modular and allows for more thorough KV injection.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Block diffusion for drafting is not entirely novel, but the "KV injection per layer + block parallel + position weighting" combination makes diffusion drafting production-ready with clear insights.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers Qwen2-1.5B/7B/Coder-32B, LLaMA-3.1-8B across Math/Code/Chat tasks, T=0/T=1, and Transformers/SGLang/vLLM backends, including long context and comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ The narrative (autoregressive bottleneck $\rightarrow$ diffusion temptation $\rightarrow$ prior failure $\rightarrow$ DFlash solution) is very smooth, with well-integrated formulas and charts.
-- Value: ⭐⭐⭐⭐⭐ Provides ~6× lossless acceleration and integration into SGLang. This has high practical value for reducing inference costs and offers a new answer for the role of diffusion models in LLM pipelines.
+- Novelty: ⭐⭐⭐⭐ Block diffusion for drafting isn't entirely new, but the "KV Injection + Block Parallel + Weighted Loss" combo makes it production-ready.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers Qwen3-4B/8B/30B, LLaMA-3.1-8B, multiple domains (Math/Code/Chat), T=0/1, and varied backends (SGLang/vLLM).
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative flow from autoregressive bottlenecks to DFlash solutions.
+- Value: ⭐⭐⭐⭐⭐ Provides 6× lossless acceleration and integrates into SGLang; offers a new answer for the role of dLLMs in the LLM pipeline.
 
 <!-- RELATED:START -->
 
@@ -130,8 +137,8 @@ Key Points: Under an equitable drafting budget (EAGLE-3 tree=16 vs. DFlash block
 - [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](../../CVPR2026/image_generation/sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
-- [\[ICLR 2026\] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching](../../ICLR2026/image_generation/flowcast_trajectory_forecasting_for_scalable_zero-cost_speculative_flow_matching.md)
 
 </div>
 

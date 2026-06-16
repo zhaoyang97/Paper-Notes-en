@@ -83,7 +83,7 @@ item_total: 117
 
 **🤖 AAAI2026** · **117** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (70)](../../ICLR2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (33)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (145)](../../CVPR2026/others/index.md) · [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (1)](../../ACL2026/others/index.md) · [🔬 ICLR2026 (70)](../../ICLR2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (33)](../../ICCV2025/others/index.md)
 
 🔥 **Top topics:** Agents ×9 · Adversarial Robustness ×5 · Diffusion Models ×4 · Layout & Composition ×2 · Alignment/RLHF ×2
 

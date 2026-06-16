@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation
 description: >-
-  [ACL2026][Recommender Systems][Personalized RAG] ClusterRAG introduces collaborative filtering into personalized RAG: it first constructs user representations using historical documents and clusters them with HDBSCAN…
+  [ACL 2026][Recommender Systems][HDBSCAN] ClusterRAG introduces collaborative filtering into personalized RAG: it first constructs user representations from historical documents and performs clustering using HDBSCAN, then hierarchically retrieves profile documents from both the target user and similar users to form the prompt. On the LaMP multi-task benchmark,
 tags:
-  - "ACL2026"
-  - "Recommender Systems"
-  - "Personalized RAG"
-  - "Collaborative Filtering"
-  - "User Clustering"
-  - "HDBSCAN"
-  - "LaMP"
+  - ACL 2026
+  - Recommender Systems
+  - HDBSCAN
+  - LaMP
 date: 2026-05-08
-content_hash: 951522e3c7b32777
+content_hash: a4b203d26a9534b1
 ---
-
 # ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation
 
 **Conference**: ACL2026  
@@ -24,52 +20,71 @@ content_hash: 951522e3c7b32777
 **Keywords**: Personalized RAG, Collaborative Filtering, User Clustering, HDBSCAN, LaMP
 
 ## TL;DR
-ClusterRAG introduces collaborative filtering into personalized RAG: it first constructs user representations using historical documents and clusters them with HDBSCAN, then performs hierarchical retrieval of profile documents from both the target and similar users to form prompts. On the LaMP multi-task benchmark, the hybrid mode consistently outperforms vanillaRAG, LaMP-IPA, ROPG, and CFRAG.
+ClusterRAG introduces collaborative filtering into personalized RAG: it first constructs user representations from historical documents and performs clustering using HDBSCAN, then hierarchically retrieves profile documents from both the target user and similar users to form the prompt. On the LaMP multi-task benchmark, the hybrid mode consistently outperforms vanillaRAG, LaMP-IPA, ROPG, and CFRAG.
 
 ## Background & Motivation
-**Background**: RAG has become a mainstream paradigm for reducing hallucinations and enhancing factuality. The standard approach involves retrieving external documents based on the current query and prepending them to the generation model's context. Personalized RAG further incorporates user history to align responses with user preferences, writing styles, or long-term interests.
+**Background**: RAG has become a mainstream paradigm for reducing hallucinations and enhancing factuality. The typical approach involves retrieving external documents based on the current query and prepending them to the generation model's context. Personalized RAG further incorporates user history to align outputs with user preferences, writing styles, or long-term interests.
 
-**Limitations of Prior Work**: Many personalized RAG methods rely solely on the target user's own profile, which is fragile when user history is sparse, noisy, or when the current query does not perfectly match historical records. On the other hand, non-personalized RAG completely ignores long-term user preferences. Existing collaborative approaches attempt to find similar users but face high costs when calculating pairwise similarities in large-scale user sets. There is also a lack of systematic design for selecting and mixing documents from similar users with the target user’s profile.
+**Limitations of Prior Work**: Many personalized RAG methods focus solely on the target user's own profile, which is fragile when user history is sparse, noisy, or when the current query does not align well with historical records. Alternatively, non-personalized RAG completely ignores long-term preferences. Existing collaborative methods attempt to find similar users but face high costs from pairwise similarity calculations across large user sets. Furthermore, there is a lack of systematic design for selecting and mixing documents from similar users with the target user’s profile.
 
-**Key Challenge**: Personalization requires full utilization of the target user's history, yet individual histories are often incomplete. While collaborative filtering can compensate for sparsity, it introduces retrieval complexity, privacy concerns, and noisy neighbors. A scalable Personalized RAG must find a controllable way to mix "individual signals" with "similar group signals."
+**Key Challenge**: Personalization requires full utilization of the target user's history, but individual histories are often incomplete. Collaborative filtering can compensate for sparsity but introduces retrieval complexity, privacy concerns, and noise from "dissimilar" neighbors. A scalable Personalized RAG needs a controllable way to mix "individual signals" and "similar group signals."
 
-**Goal**: ClusterRAG aims to build a model-agnostic RAG pipeline with replaceable retrievers that leverages collaborative signals without strong dependence on model parameter fine-tuning. It addresses three issues: user representation, efficient search for similar users, and the combined integration of target and similar user documents into the generation prompt.
+**Goal**: ClusterRAG aims to build a model-agnostic, retriever-replaceable RAG pipeline that leverages collaborative signals without relying heavily on model fine-tuning. It addresses three problems: user representation, efficient search for similar users, and the integration of target and similar user documents into the generation prompt.
 
-**Key Insight**: The authors transfer cluster-based collaborative filtering from recommendation systems to the RAG retrieval front-end. Users are organized into semantically consistent cohorts, and similar users are ranked only within the same cluster. Document retrieval also employs profile document clustering to select thematic clusters before fine-grained reranking.
+**Key Insight**: The authors transfer clustering-based collaborative filtering from recommendation systems to the RAG retrieval front-end. Users are organized into semantically consistent cohorts, and similar users are searched only within the same cluster. Document retrieval also employs thematic clustering of profile documents to select topic clusters before performing fine-grained reranking.
 
-**Core Idea**: Use HDBSCAN to build a hierarchical retrieval space for users/documents and employ hybrid profile retrieval to inject evidence from both the target and similar users, enabling LLMs to generate more stable personalized outputs.
+**Core Idea**: Use HDBSCAN to construct a hierarchical retrieval space for users and documents, then use hybrid profile retrieval to inject evidence from both the target user and similar users, enabling LLMs to generate more stable personalized outputs.
 
 ## Method
 
 ### Overall Architecture
-ClusterRAG consists of three stages: user representation and similar user retrieval, profile document retrieval, and personalized generation. First, the system encodes each user's historical documents into dense embeddings and averages them to obtain a user representation. Subsequently, HDBSCAN clusters users into variable-density cohorts. Within each cluster, ColBERTv2 calculates fine-grained user similarity to identify the top-$k$ nearest neighbors for each user. Given a query, the system can retrieve documents from only the target user, only similar users, or a hybrid of both. Finally, candidate documents are clustered into thematic groups; the system selects relevant clusters and reranks the top-$m$ documents within them to concatenate into an IPA prompt for the generator.
+ClusterRAG comprises three stages: user representation and similar user retrieval, profile document retrieval, and personalized generation. First, the system encodes each user's historical documents into dense embeddings and computes the mean to obtain a user representation. HDBSCAN is then used to group users into variable-density clusters, within which ColBERTv2 calculates fine-grained user similarity to retain the top-$k$ nearest neighbors. Given a query, the system can retrieve documents from only the target user, only similar users, or a hybrid of both. Finally, candidate documents are clustered into thematic groups; the most relevant clusters are selected, and top-$m$ documents are reranked for inclusion in the IPA prompt for the generation model.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["User Historical Documents"] --> B["User Representation<br/>Mean of profile doc embeddings"]
+    subgraph S1["User-level HDBSCAN Clustering & Intra-cluster Ranking"]
+        direction TB
+        C["HDBSCAN clusters users by density"] --> D["Intra-cluster ColBERTv2 Reranking<br/>Keep top-k similar neighbors"]
+    end
+    B --> S1
+    Q["Current query"] --> E["Three profile retrieval modes<br/>User-only / Collaborative / Hybrid candidate pool"]
+    S1 --> E
+    subgraph S3["Doc Topic Cluster Retrieval & IPA Generation"]
+        direction TB
+        F["HDBSCAN groups candidate docs into clusters"] --> G["Compare query & cluster centers to pick top-B clusters"]
+        G --> H["Intra-cluster rerank for top-m docs"]
+        H --> I["IPA Template concatenates query & docs"]
+    end
+    E --> S3
+    S3 --> J["LLM generates personalized output"]
+```
 
 ### Key Designs
-1. **User-level HDBSCAN Clustering and Intra-cluster Ranking**:
 
-	- **Function**: Finding behaviorally similar users without global pairwise comparisons.
-	- **Mechanism**: The representation of each user $u$ is the average of their profile document embeddings $\mathbf{z}_u=\frac{1}{n_u}\sum_i f(d_i)$. HDBSCAN automatically discovers variable-density user clusters. For users in the same cluster, a similarity matrix is constructed using ColBERTv2 as $R^C_{u,v}=ColBERTv2(\mathbf{z}_u,\mathbf{z}_v)$ to keep top-$k$ neighbors.
-	- **Design Motivation**: Global user similarity computation is expensive in large-scale scenarios and prone to introducing noisy neighbors with inconsistent themes; clustering before ranking restricts comparisons to cohorts with more consistent behavior.
+**1. User-level HDBSCAN Clustering & Intra-cluster Ranking: Clustering before ranking to avoid global pairwise comparison**
 
-2. **Three Profile Retrieval Modes**:
+Pairwise similarity calculations across massive user sets are computationally expensive and risk introducing noise from irrelevant users. ClusterRAG represents each user $u$ as the mean of their profile document embeddings $\mathbf{z}_u=\frac{1}{n_u}\sum_i f(d_i)$ and uses HDBSCAN to automatically discover variable-sized user clusters based on density. Fine-grained similarity $R^C_{u,v}=ColBERTv2(\mathbf{z}_u,\mathbf{z}_v)$ is then computed only within the same cluster to find the top-$k$ neighbors. This limits computation to consistent cohorts, reducing overhead and filtering out cross-topic noise.
 
-	- **Function**: Controlling the sources of individual and collaborative signals.
-	- **Mechanism**: The User-only mode uses only the target user's profile; the Collaborative mode fetches documents from the top-$k$ similar users' profiles; the Hybrid mode merges both sets into a candidate pool. By default, $k=1$ and $m=2$, testing the effectiveness of collaborative signals even with minimal profile documents.
-	- **Design Motivation**: A single user's profile is insufficient for cold-start or sparse users, while pure collaborative signals might dilute individual preferences; the hybrid approach allows the system to retain personal history supplemented by similar users.
+**2. Three Profile Retrieval Modes: Explicitly controlling the ratio of individual and collaborative signals**
 
-3. **Document Thematic Cluster Retrieval and IPA Generation**:
+Relying solely on the target user is fragile during cold-starts or with sparse history, while relying purely on similar users can dilute personal preferences. ClusterRAG offers three modes: User-only (target user profile), Collaborative (top-$k$ similar users' profiles), and Hybrid (merging both). The paper uses a minimal setting of $k=1$ and $m=2$ to test if collaborative signals help even under extreme constraints—hybrid mode leads significantly, showing that personalization is improved by supplementing context with similar user evidence rather than simple replacement.
 
-	- **Function**: Selecting the most relevant and suitable context from candidate profile documents for the prompt.
-	- **Mechanism**: Candidate documents are encoded by a dense retriever and formed into thematic clusters via HDBSCAN. The query embedding is compared against cluster centroids to select the top-$B$ clusters, followed by intra-cluster reranking to select the top-$m$ documents. The generation stage uses In-Prompt Augmentation (IPA), concatenating the query and retrieved documents according to task templates. The profile length in the prompt is controlled by $|U_p|=\mathcal{G}_t(L_{max}-\min(|q|,\lfloor \gamma L_{max}\rfloor))$, with a default $\gamma=0.55$.
-	- **Design Motivation**: Directly feeding all user documents into the prompt wastes context length and introduces irrelevant history; hierarchical retrieval reduces complexity to $\mathcal{O}(K+B\cdot N/K)$ while ensuring the prompt contains only the most relevant evidence.
+**3. Document Topic Cluster Retrieval & IPA Generation: Hierarchical pruning to optimize prompt length**
+
+Feeding all historical documents of candidate users into a prompt wastes context space and introduces irrelevant noise. ClusterRAG encodes candidate profile documents with a dense retriever and clusters them via HDBSCAN. For a given query, it compares the query embedding with cluster centers to select the top-$B$ clusters, then reranks within those clusters for the top-$m$ documents. During generation, In-Prompt Augmentation (IPA) uses task-specific templates to concatenate the query and retrieved documents. Prompt length for profiles is controlled by $|U_p|=\mathcal{G}_t(L_{max}-\min(|q|,\lfloor \gamma L_{max}\rfloor))$ (default $\gamma=0.55$). This hierarchical retrieval reduces complexity to $\mathcal{O}(K+B\cdot N/K)$ while ensuring only the most relevant evidence enters the prompt.
+
+### A Complete Example
+Using the LaMP personalized headline generation task with default settings ($k=1$, $B$ topic clusters, $m=2$): Alice has a sparse profile. The system computes $\mathbf{z}_{\text{Alice}}$ and locates her cluster. Inside the cluster, ColBERTv2 identifies Bob as the most similar neighbor ($k=1$). In Hybrid mode, Alice's and Bob's profile documents are merged into a pool (e.g., 40 documents). These are clustered by topic; the query identifies the top-$B$ relevant clusters (narrowing candidates to ~10-15 docs). The top-2 documents are then reranked from these clusters. Finally, these 2 documents and the query are formatted via the IPA template and passed to FlanT5-base to generate the headline. This pipeline shrinks the search space from "40 docs → 15 docs → 2 docs," filling Alice's history gap without crowding the prompt.
 
 ### Loss & Training
-ClusterRAG is a retrieval and prompt organization framework and does not require architectural changes to the generator. The main experiments use fine-tuned FlanT5-base, while extended experiments use FlanT5-XXL and Qwen2-7B-Instruct for zero-shot personalized testing. Training utilizes AdamW with a learning rate of $5\times10^{-5}$, weight decay of $10^{-4}$, warm-up ratio of 0.05, for up to 30 epochs with a batch size of 16. The maximum prompt length is 512, maximum output length is 128, and beam size is 4. Experiments were conducted on a Quadro RTX 8000 48GB, taking approximately 10-24 hours per task.
+ClusterRAG is a retrieval and prompt organization framework and does not require modifying the generation model architecture. Main experiments utilize fine-tuned FlanT5-base; extension experiments include FlanT5-XXL and Qwen2-7B-Instruct for zero-shot personalized testing. Training uses AdamW with a learning rate of $5\times10^{-5}$, weight decay of $10^{-4}$, warm-up ratio of 0.05, up to 30 epochs, batch size 16, max prompt length 512, max output length 128, and beam size 4. Experiments were conducted on Quadro RTX 8000 48GB GPUs, taking 10-24 hours per task.
 
 ## Key Experimental Results
 
 ### Main Results
-The LaMP benchmark includes tasks such as personalized citation, movie tagging, product rating, headline/title generation, and tweet paraphrasing. The table below excerpts representative metrics; higher is better for classification tasks, while lower is better for LaMP-3 (MAE/RMSE).
+The LaMP benchmark includes tasks like personalized citation, movie tagging, product rating, headline/title generation, and tweet paraphrasing. Representative metrics are extracted below; higher is better for classification, while lower MAE/RMSE is better for LaMP-3.
 
 | Method | LaMP-1 Acc/F1 | LaMP-2 Acc/F1 | LaMP-3 MAE/RMSE | LaMP-7 R-1/R-L |
 |------|---------------|---------------|-----------------|----------------|
@@ -83,43 +98,43 @@ The LaMP benchmark includes tasks such as personalized citation, movie tagging, 
 ### Ablation Study
 | Variant | LaMP-3 MAE | LaMP-3 RMSE | LaMP-7 R-1 | LaMP-7 R-L | Description |
 |------|-----------:|------------:|-----------:|-----------:|------|
-| w/o user clustering | 0.320 | 0.637 | 0.458 | 0.371 | Random similar users; noisy collaborative signals |
-| w/o intra-cluster sim | 0.329 | 0.639 | 0.501 | 0.442 | No intra-cluster reranking; lower neighbor quality |
-| w/o doc ranking | 0.331 | 0.642 | 0.462 | 0.413 | Document-level evidence not effectively ranked |
-| Centroids only | 0.400 | 0.643 | 0.472 | 0.438 | Uses only centroid representations; loses specific evidence |
+| w/o user clustering | 0.320 | 0.637 | 0.458 | 0.371 | Random neighbors make collaborative signals noisy |
+| w/o intra-cluster sim | 0.329 | 0.639 | 0.501 | 0.442 | No intra-cluster ranking reduces neighbor quality |
+| w/o doc ranking | 0.331 | 0.642 | 0.462 | 0.413 | Document-level evidence is not effectively ranked |
+| Centroids only | 0.400 | 0.643 | 0.472 | 0.438 | Using only centroid representations loses specific evidence |
 | k-means | 0.291 | 0.610 | 0.502 | 0.453 | Clustering is replaceable but weaker than HDBSCAN |
 | ClusterRAG | 0.270 | 0.594 | 0.521 | 0.470 | Full method |
 
 ### Key Findings
-- The Hybrid mode achieves the best performance across all LaMP tasks, indicating strong complementarity between target user profiles and similar user profiles.
-- Using only 2 profile documents allows it to surpass baselines requiring more documents, suggesting that "selecting the right documents" is more important than "including more documents."
-- ColBERTv2 is the strongest retriever: achieving 0.690/0.690, 0.661/0.620, and 0.521/0.470 on LaMP-1/2/7; Random, Recency, and BM25 lag significantly, while BGE and Contriever perform in between.
-- Zero-shot LLMs also benefit from ClusterRAG: pFlan improved from 0.546/0.540 to 0.648/0.647 on LaMP-1, and pQwen2 improved from 0.521/0.521 to 0.610/0.606 on LaMP-2.
+- The Hybrid mode achieves the best results across all LaMP tasks, demonstrating strong complementarity between the target user profile and similar user profiles.
+- Utilizing only 2 profile documents outperforms baselines requiring more documents, suggesting that selecting the "right" documents is more critical than quantity.
+- ColBERTv2 is the strongest retriever: achieving 0.690/0.690, 0.661/0.620, and 0.521/0.470 on LaMP-1/2/7 respectively; Random, Recency, and BM25 significantly lag behind.
+- Zero-shot LLMs also benefit: pFlan improved from 0.546/0.540 to 0.648/0.647 on LaMP-1, and pQwen2 improved from 0.521/0.521 to 0.610/0.606 on LaMP-2.
 
 ## Highlights & Insights
-- **Collaborative Filtering as a RAG Front-end**: Instead of modifying LLM architectures, this approach makes it easier to integrate into existing personalized generation systems and avoids per-user model fine-tuning.
-- **Hierarchical correspondence of User and Document Clustering**: User clustering addresses "whom to borrow signals from," while document clustering addresses "which evidence to borrow," resulting in a clear structure.
-- **Hybrid Retrieval as the Core Gain**: Experiments show that while both user-only and collaborative-only modes are useful, the hybrid mix is most stable, proving that personalization is about supplementing context rather than just replacing it.
-- **Practical Significance for Cold-start**: When a target user's history is sparse, similar users' documents can fill the gap; if collaborative signals are untrustworthy, the framework can fall back to user-only mode.
+- **Collaborative Filtering as a RAG Front-end**: The method integrates into existing personalized generation systems without modifying the LLM or fine-tuning per user.
+- **Hierarchical Responsibility**: User clustering solves "from whom to borrow signals," while document clustering solves "which evidence to borrow."
+- **Core Benefit from Hybrid Retrieval**: Results show that while user-only and collaborative-only modes are effective, the hybrid mixture is most robust, proving personalization needs supplemental context.
+- **Cold-start Significance**: When target user history is sparse, similar user documents fill the gap; if collaborative signals are unreliable, the framework reverts to user-only mode.
 
 ## Limitations & Future Work
-- The generation side depends on IPA prompts, and the authors acknowledge that the prompt formulation is not yet optimal; more structured prompts or joint retrieval-generation optimization may further improve results.
-- LaMP-1 and LaMP-5 only contain paper abstracts rather than full texts, limiting the information ceiling for citation/title tasks.
-- Experiments are restricted to English and text data, with multi-lingual, multi-modal user history, or cross-platform recommendation scenarios yet to be verified.
-- Performance still depends on the underlying LLM and retriever; collaborative filtering might amplify group biases if user or document embeddings contain inherent bias.
-- Future work could investigate incremental clustering, online user reassignment, privacy-preserving embedding aggregation, and feeding generation feedback back into retrieval ranking.
+- The generation side relies on IPA prompts; the authors acknowledge prompt formulation is not yet optimal. Structured prompts or joint retrieval-generation optimization could improve results.
+- LaMP-1 and LaMP-5 contain only abstracts rather than full papers, limiting the information ceiling for citation/title tasks.
+- Experiments are restricted to English and text datasets; multi-lingual, multi-modal, or cross-platform scenarios remain unverified.
+- Performance depends on the underlying LLM and retriever; any bias in user or document embeddings could be amplified by collaborative filtering.
+- Future work could explore incremental clustering, online user reassignment, privacy-preserving embedding aggregation, and feeding generation feedback back into retrieval ranking.
 
 ## Related Work & Insights
-- **vs vanillaRAG / Self-RAG**: Traditional RAG retrieves shared knowledge based on the current query; ClusterRAG further incorporates long-term user history and similar users' histories into the context.
-- **vs LaMP-IPA / ROPG**: These personalized methods focus more on the target user's own profile; ClusterRAG's incremental value lies in explicitly modeling cross-user collaborative signals.
-- **vs CFRAG**: CFRAG uses contrastive learning to find similar users; ClusterRAG utilizes HDBSCAN and intra-cluster ColBERTv2 ranking, emphasizing scalable cohort retrieval and document-level reranking.
-- **Insights**: In enterprise knowledge assistants, learning assistants, or long-cycle writing assistants, historical interactions of similar users or projects can serve as "collaborative memory," though retrieval scope must be constrained by clustering and permission controls.
+- **vs vanillaRAG / Self-RAG**: Traditional RAG retrieves shared knowledge based on queries; ClusterRAG incorporates long-term and similar-user histories.
+- **vs LaMP-IPA / ROPG**: These methods focus primarily on the target user's profile; ClusterRAG contributes explicit modeling of cross-user collaborative signals.
+- **vs CFRAG**: CFRAG uses contrastive learning for neighbor search; ClusterRAG uses HDBSCAN and intra-cluster ColBERTv2 ranking for scalable cohort retrieval and document-level reranking.
+- **Insight**: In enterprise or educational assistants, historical interactions of similar users/projects can serve as "collaborative memory," provided retrieval is constrained by clustering and permission controls.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Systematically combines collaborative filtering with Personalized RAG; individual modules are familiar, but the integration is complete.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers many LaMP tasks with analyses of retrievers, LLMs, and ablations; real-world large-scale online latency and privacy evaluations are still needed.
-- Writing Quality: ⭐⭐⭐⭐☆ Method decomposition is clear and tables are comprehensive; some notation and prompt details are slightly dense.
-- Value: ⭐⭐⭐⭐☆ Highly insightful for engineering personalized RAG, especially suitable for scenarios with sparse user histories but available group behavior.
+- Novelty: ⭐⭐⭐⭐☆ Combines CF and Personalized RAG systematically; individual modules are known, but the combination is comprehensive.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Diverse LaMP tasks, multiple retrievers, and LLM analyses are provided; real-world large-scale latency and privacy assessments are still needed.
+- Writing Quality: ⭐⭐⭐⭐☆ Methods are clearly decomposed; some notation and prompt details are somewhat dense.
+- Value: ⭐⭐⭐⭐☆ Highly instructive for personalized RAG engineering, particularly for scenarios with sparse user history and available group behavior.
 
 <!-- RELATED:START -->
 

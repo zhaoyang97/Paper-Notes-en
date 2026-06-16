@@ -23,7 +23,7 @@ item_total: 2
 
 **🤖 AAAI2026** · **2** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/earth_science/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (3)](../../CVPR2026/earth_science/index.md) · [🧪 ICML2026 (1)](../../ICML2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
 
 **[MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)**
 

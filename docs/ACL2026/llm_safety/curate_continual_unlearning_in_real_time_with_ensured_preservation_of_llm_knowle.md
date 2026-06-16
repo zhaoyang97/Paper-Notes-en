@@ -2,115 +2,124 @@
 title: >-
   [Paper Note] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 description: >-
-  [ACL 2026][LLM Safety][Continual Unlearning] CURaTE proposes a behavior unlearning framework based on sentence embedding matching: a general unlearning embedder is trained pre-deployment (without using any unlearning set…
+  [ACL 2026][LLM Safety][Paper Note] CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: it trains a general unlearning embedder during pre-deployment (without using any forget set), stores new unlearning requests as embeddings in a database in real-time post-deployment, and determines whether to answer or refuse via co
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Continual Unlearning"
-  - "Real-time Unlearning"
-  - "Behavior Unlearning"
-  - "Sentence Embedding"
-  - "Knowledge Preservation"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 0b51c5303587aa7a
+content_hash: 238f10fe4c7e0ece
 ---
-
 # CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.14644](https://arxiv.org/abs/2604.14644)  
 **Code**: [GitHub](https://github.com/bsu1313/CURaTE)  
 **Area**: Information Retrieval  
-**Keywords**: Continual Unlearning, Real-time Unlearning, Behavior Unlearning, Sentence Embedding, Knowledge Preservation
+**Keywords**: Continual unlearning, real-time unlearning, behavioral unlearning, sentence embedding, knowledge preservation
 
 ## TL;DR
-CURaTE proposes a behavior unlearning framework based on sentence embedding matching: a general unlearning embedder is trained pre-deployment (without using any unlearning sets); post-deployment, new unlearning requests are embedded and stored in a database in real-time. During inference, cosine similarity determines whether to answer or refuse, achieving near-perfect knowledge preservation by strictly avoiding any modifications to LLM weights.
+CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: it trains a general unlearning embedder during pre-deployment (without using any forget set), stores new unlearning requests as embeddings in a database in real-time post-deployment, and determines whether to answer or refuse via cosine similarity during inference, achieving near-perfect knowledge preservation by avoiding any modification to LLM weights.
 
 ## Background & Motivation
 
-**Background**: Current LLM unlearning methods primarily include parameter-modifying approaches such as Gradient Ascent (GA), Gradient Difference (GradDiff), and Preference Optimization (PO/NPO), alongside continual unlearning methods like GUARD, O3, and UniErase.
+**Background**: LLM unlearning methods primarily include parameter modification methods such as Gradient Ascent (GA), Gradient Difference (GradDiff), and Preference Optimization (PO/NPO), as well as continual unlearning methods like GUARD, O3, and UniErase.
 
-**Limitations of Prior Work**: All methods that modify LLM weights suffer from catastrophic forgetting—the model's performance on the retain set drops sharply as unlearning requests accumulate. Furthermore, existing methods require training or optimization processes for each unlearning request, leaving sensitive information exposed during processing.
+**Limitations of Prior Work**: All methods that modify LLM weights suffer from catastrophic forgetting—as unlearning requests accumulate, model performance on the retain set drops sharply. Furthermore, existing methods require a training/optimization process to handle unlearning requests, leading to continuous exposure of sensitive information during the processing period.
 
-**Key Challenge**: Unlearning requires "changing model behavior," but modifying weights inevitably leads to "losing other knowledge"—these two objectives are fundamentally in conflict within the parameter space.
+**Key Challenge**: Unlearning requires "changing model behavior," yet modifying weights inevitably leads to "losing other knowledge"—these two objectives are fundamentally in conflict within the parameter space.
 
-**Goal**: Achieve real-time continual unlearning without modifying LLM weights, supporting an arbitrary number of sequential unlearning requests without compromising model utility.
+**Goal**: To achieve real-time continual unlearning without modifying LLM weights, supporting an arbitrary number of consecutive unlearning requests without degrading model utility.
 
-**Key Insight**: The unlearning objective is redefined—shifting from "parameter unlearning" (erasing knowledge) to "behavior unlearning" (preventing the output of flagged information). This opens a solution space that does not require weight modifications.
+**Key Insight**: The unlearning objective is redefined—relaxing it from "parameter unlearning" (erasing knowledge) to "behavioral unlearning" (preventing the output of flagged information). This opens a solution space that does not require weight modification.
 
-**Core Idea**: A task-agnostic sentence embedder is trained for semantic similarity judgment—if a query is similar to an unlearning request, the model refuses to answer; otherwise, it generates normally.
+**Core Idea**: A task-agnostic sentence embedder is trained for semantic similarity judgment—if a query is similar to an unlearning request, the response is refused; otherwise, generation proceeds normally.
 
 ## Method
 
 ### Overall Architecture
-CURaTE consists of two phases: (1) Pre-deployment training: Training data containing paraphrase positive pairs and contrastive negative pairs is generated from a seed QA dataset to fine-tune a sentence embedder $U$ using contrastive loss; (2) Post-deployment inference: When an unlearning request arrives, it is immediately embedded and stored in database $F$. During a user query, the maximum cosine similarity with all embeddings in $F$ is calculated. If it exceeds a threshold $\delta$, the response is refused.
+CURaTE completely shifts "unlearning" from model weights to a semantic gate before inference. The pipeline is divided into two phases. In the pre-deployment phase, a sentence embedder $U$ is trained on a seed QA dataset unrelated to any specific unlearning task using contrastive loss, learning to determine if "two sentences are asking the same thing." After deployment, whenever a new unlearning request arrives, the system simply encodes it into a vector and inserts it into database $F$ in $O(1)$ time, without touching the LLM. When a user query arrives, the maximum cosine similarity between the query and all unlearning vectors in $F$ is calculated. If it exceeds a threshold, a refusal response is sampled; otherwise, the query is passed to the LLM for normal generation. The LLM remains a read-only black box throughout the process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Task-Agnostic Unlearning Embedder (Trained once pre-deployment)"]
+        direction TB
+        A["Seed QA Dataset<br/>(No forget set included)"] --> B["Construct Type-1/2/3 paired samples<br/>Positive=Paraphrase, Hard Negative=Lexically similar but semantically different"]
+        B --> C["Embedder U trained with contrastive loss"]
+    end
+    C --> E["Real-time Unlearning Embedding Database<br/>New request f_m encoded by U is written to F in O(1)"]
+    P["User Query p"] --> G["U encodes p to get embedding"]
+    E --> H["Max Cosine Similarity<br/>s_max = max cos(p, f_i)"]
+    G --> H
+    H -->|"s_max ≥ δ: Identified as unlearning request"| I["Sample response from refusal set R"]
+    H -->|"s_max < δ: Allow generation"| J["LLM Generation<br/>(Black box, weights unchanged → Perfect preservation)"]
+```
 
 ### Key Designs
 
-1. **Task-Agnostic Unlearning Embedder Training**:
-    - **Function**: Learns a general capability for semantic similarity judgment, requiring no retraining post-deployment.
-    - **Mechanism**: Three types of training data are generated from a seed QA dataset (e.g., Natural Questions): Type-1 (original question + paraphrase, positive), Type-2 (original question + contrastive question, hard negative—lexically similar but semantically different), and Type-3 (paraphrase + its contrastive question, hard negative). The embedder is trained with contrastive loss $\mathcal{L} = y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2$.
-    - **Design Motivation**: Hard negative pairs ensure the embedder distinguishes between "asking the same thing in different words" and "looking similar but asking different things." This is core to unlearning—blocking paraphrase variants without mis-intercepting unrelated queries.
+**1. Task-Agnostic Unlearning Embedder: Distinguishing "Paraphrases" from "Hard Negatives"**
 
-2. **Real-Time Unlearning via Embedding Database**:
-    - **Function**: Enables unlearning requests to take effect immediately without any optimization process.
-    - **Mechanism**: When an unlearning request $f_m$ arrives, its embedding $f_m^{emb} = U(f_m)$ is computed and appended to set $F$, which is an $O(1)$ operation. For a user query, $s_{max} = \max_{i} \text{cos}(p^{emb}, f_i^{emb})$ is calculated. If $s_{max} \geq \delta$, a response is sampled from a predefined refusal set $R$.
-    - **Design Motivation**: Parameter unlearning requires gradient computation taking minutes to hours, during which sensitive information remains accessible. Embedding storage achieves true "instant unlearning."
+The success of behavioral unlearning depends entirely on one judgment: whether the query and an unlearning request are asking the same thing. Thus, the embedder must handle two extremes: identifying "paraphrased variants" as similar to prevent bypasses, while not misidentifying "lexically similar but semantically different" queries as similar to avoid over-refusal. CURaTE constructs three types of paired samples from seed sets like Natural Questions to define this decision boundary: Type-1 pairs an original question with its paraphrase (positive); Type-2 pairs an original question with a lexically similar but semantically different contrast question (hard negative); Type-3 pairs a paraphrase with its contrast question (another hard negative). Training utilizes contrastive loss:
+$$\mathcal{L} = y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2$$
+where $d_U$ is the cosine distance between embeddings and $m$ is the negative margin. Positive examples are pushed toward zero distance, while negatives are pushed beyond $m$. This data requires no real forget set; the learned capability is a general "same question" judgment, allowing cross-domain reuse without retraining after deployment.
 
-3. **Knowledge Preservation via Zero Weight Modification**:
-    - **Function**: Maintains perfect knowledge retention after any number of unlearning requests.
-    - **Mechanism**: Since LLM parameters are never modified, all knowledge unrelated to unlearning is fully preserved—catastrophic forgetting is impossible. The only risk is false refusals (misidentifying unrelated queries as unlearning requests), which is minimized through hard negative training.
-    - **Design Motivation**: Catastrophic forgetting is the fundamental bottleneck of parameter unlearning; bypassing parameter modification entirely is the most thorough solution.
+**2. Real-time Unlearning Database: Reducing Request Activation to $O(1)$ Writes**
+
+The danger of parameter unlearning lies not only in knowledge loss but also in the "processing window"—gradient optimization takes minutes to hours, during which sensitive information remains accessible. CURaTE eliminates this window: when an unlearning request $f_m$ arrives, its embedding $f_m^{emb} = U(f_m)$ is appended to set $F$. This is a pure write operation with no gradients or training, becoming effective immediately. During inference, for query $p$, $s_{max} = \max_{i} \cos(p^{emb}, f_i^{emb})$ is computed. If $s_{max} \geq \delta$, a response is drawn from a predefined refusal set $R$; otherwise, generation is delegated to the LLM. The threshold $\delta$ is the only tuning knob: if too loose, unlearning is incomplete; if too tight, false refusals increase. Hard negative training ensures this boundary is sharp enough for a single $\delta$ to balance both.
+
+**3. Preservation Through Parameter Stability: Eliminating Catastrophic Forgetting by Design**
+
+The fundamental bottleneck of parameter unlearning is catastrophic forgetting—modifying weights inevitably affects unrelated knowledge. As unlearning requests accumulate, retain set performance collapses. CURaTE bypasses this entirely: LLM parameters remain unchanged, so all knowledge unrelated to unlearning is naturally preserved. The only risk is false refusal—misidentifying an unrelated query as an unlearning request—which is mitigated by the precision of the hard-negative training. Consequently, "perfect preservation + controlled false refusal" becomes the essential trade-off offered by behavioral unlearning over parameter-based approaches.
 
 ### Loss & Training
-Contrastive loss: $\mathcal{L} = \frac{1}{2|T|}\sum [y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2]$, using cosine distance as the metric. Training is completed once on the seed dataset and requires no additional training after deployment.
+The complete contrastive loss is $\mathcal{L} = \frac{1}{2|T|}\sum [y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2]$, using cosine distance as the metric and averaging over $|T|$ sample pairs. Training occurs only once on the seed dataset; no further training or fine-tuning is required post-deployment.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Forget Effectiveness (10 stages) | Knowledge Preservation (10 stages) | Real-time Capability |
-|------|-----------------|-----------------|---------|
-| GA | Effective but over-forgets | Severe drop (~0) | No |
-| GradDiff | Over-forgets | Severe drop | No |
-| NPO | Moderate | Moderate drop | No |
+| Method | Forget Effect (After 10 Stages) | Knowledge Preservation (After 10 Stages) | Real-time Capability |
+| :--- | :--- | :--- | :--- |
+| GA | Effective but over-unlearning | Severe decline (~0) | No |
+| GradDiff | Over-unlearning | Severe decline | No |
+| NPO | Moderate | Moderate decline | No |
 | O3 | Insufficient unlearning | Partial preservation | No |
 | UniErase | Insufficient unlearning | Partial preservation | No |
-| **Ours** | Effective unlearning | Near-perfect preservation | Yes |
+| **Ours (CURaTE)** | **Effective unlearning** | **Near-perfect preservation** | **Yes** |
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Description |
-|------|---------|------|
-| W/O Hard Negatives | High False Refusal Rate | Hard negative pairs are critical for decision boundary precision |
-| Fixed Threshold $\delta$ | Stable Performance | Threshold shows some sensitivity to different tasks |
-| Paraphrase Evaluation | **Ours** remains effective | Embedder is robust against paraphrasing |
+| Configuration | Key Metric | Description |
+| :--- | :--- | :--- |
+| Without hard negative training | High false refusal rate | Hard negatives are critical for decision boundary precision |
+| Fixed threshold $\delta$ | Stable performance | Threshold shows some sensitivity across different tasks |
+| Evaluation with paraphrases | CURaTE remains effective | The embedder is robust against paraphrased variations |
 
 ### Key Findings
-- **Ours** is the only method that maintains near-perfect knowledge preservation after 10 stages of continual unlearning.
-- Parameter unlearning methods (GA, GradDiff) experience severe utility collapse after 3-5 stages.
-- An embedder trained on a single seed dataset can transfer across domains to entirely different unlearning tasks.
-- The system is robust to paraphrase attacks due to the design of positive pairs during training.
+- CURaTE is the only method to maintain near-perfect knowledge preservation after 10 stages of continual unlearning.
+- Parameter unlearning methods (GA, GradDiff) suffer from complete utility collapse after 3–5 stages.
+- The embedder trained on a single seed dataset generalizes across domains to completely different unlearning tasks.
+- The system is robust against paraphrase attacks due to the positive-pair design during training.
 
 ## Highlights & Insights
-- The **redefinition of "Behavior Unlearning"** is a key contribution—shifting the goal from "erasing knowledge" to "blocking output" fundamentally changes the solution space.
-- An extremely simple method (embedding similarity + thresholding) achieves the best results, revealing the over-complexity of parameter unlearning methods.
-- The approach generalizes to any scenario requiring "selective refusal," such as copyright protection, privacy preservation, and information filtering.
+- **Redefinition of "Behavioral Unlearning"** is the key contribution—relaxing the goal from "erasing knowledge" to "preventing output" fundamentally changes the solution space.
+- An extremely simple method (embedding similarity + threshold) achieves the best results, revealing the excessive complexity of parameter unlearning methods.
+- The approach can be generalized to any scenario requiring "selective refusal," such as copyright protection, privacy preservation, and information filtering.
 
 ## Limitations & Future Work
-- Behavior unlearning is not true knowledge erasure; knowledge still resides in LLM weights and might be bypassed via indirect prompting.
-- The selection of threshold $\delta$ is a performance bottleneck; too loose leads to incomplete unlearning, while too tight increases false refusals.
-- The unlearning database $F$ grows with requests; large-scale scenarios will require approximate nearest neighbor search.
-- Not applicable to legal requirements that mandate "true erasure" of knowledge (e.g., the right to be forgotten under GDPR).
+- Behavioral unlearning is not true knowledge erasure—knowledge still exists in LLM weights and might be bypassed via indirect questioning.
+- The selection of threshold $\delta$ is a performance bottleneck; if too loose, unlearning is incomplete, and if too tight, false refusals increase.
+- The unlearning database $F$ grows with requests; large-scale scenarios may require approximate nearest neighbor (ANN) search.
+- It may not satisfy legal requirements for "true erasure" (e.g., GDPR's Right to be Forgotten).
 
 ## Related Work & Insights
-- **vs GUARD**: GUARD also trains a classifier, but each unlearning set requires retraining; **Ours** is trained once and is cross-domain universal.
-- **vs O3**: O3 trains orthogonal LoRA adapters and OOD detectors, still modifying parameters; **Ours** does not touch weights at all.
-- **vs UniErase**: UniErase uses model editing to inject unlearning tokens; as a parameter-modifying approach, catastrophic forgetting remains inevitable.
+- **vs GUARD**: GUARD also trains a classifier, but it requires retraining for each forget set; CURaTE is trained once and is cross-domain universal.
+- **vs O3**: O3 trains orthogonal LoRA adapters and an OOD detector, which still modifies parameters; CURaTE avoids weight modifications entirely.
+- **vs UniErase**: UniErase uses model editing to inject unlearning tokens, which remains a parameter-based modification where catastrophic forgetting is inevitable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Behavior unlearning" concept and minimalist design are novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four benchmarks, 10-stage continual unlearning, and comparison with multiple baselines.
+- Novelty: ⭐⭐⭐⭐ The "behavioral unlearning" concept and minimalist solution are novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four benchmarks, 10 stages of continual unlearning, and multiple baseline comparisons.
 - Writing Quality: ⭐⭐⭐⭐ Clear motivation and straightforward methodology.
 
 <!-- RELATED:START -->
@@ -119,11 +128,11 @@ Contrastive loss: $\mathcal{L} = \frac{1}{2|T|}\sum [y \cdot d_U^2 + (1-y) \cdot
 
 ## Related Papers
 
+- [\[ACL 2025\] Real-time Factuality Assessment from Adversarial Feedback](../../ACL2025/llm_safety/real-time_factuality_assessment_from_adversarial_feedback.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
-- [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](../../ICLR2026/llm_safety/inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](../../CVPR2026/llm_safety/which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
+- [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
+- [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
 
 </div>
 

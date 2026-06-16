@@ -2,170 +2,178 @@
 title: >-
   [Paper Note] Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification
 description: >-
-  [ACL2026][LLM/NLP][Defense mechanism identification] This system paper for the BioNLP 2026 PsyDefDetect shared task treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited ann…
+  [ACL 2026][LLM (Other)][Paper Note] This BioNLP 2026 PsyDefDetect shared task system paper treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited annotation consistency. It utilizes an ensemble of 9 voters across different granularities, training paradigms, and base models, achieving an F1=.420 on the hidden
 tags:
-  - "ACL2026"
-  - "LLM/NLP"
-  - "Defense mechanism identification"
-  - "Mental health dialogue"
-  - "Model ensemble"
-  - "Class imbalance"
-  - "Shared task system"
+  - ACL 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 32061b987aaaa7a8
+content_hash: 6f0f136dde9665a9
 ---
-
 # Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification
 
 **Conference**: ACL2026  
 **arXiv**: [2605.07606](https://arxiv.org/abs/2605.07606)  
 **Code**: https://github.com/th-nuernberg/nuernberg-nlp-psydefdetect  
 **Area**: NLP Understanding / Mental Health NLP  
-**Keywords**: Defense mechanism identification, Mental health dialogue, Model ensemble, Class imbalance, Shared task system
+**Keywords**: Defense Mechanism Identification, Mental Health Dialogue, Model Ensemble, Class Imbalance, Shared Task System
 
 ## TL;DR
-This system paper for the BioNLP 2026 PsyDefDetect shared task treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited annotation consistency. By employing an ensemble of 9 voters across different granularities, training objectives, and base models, the system achieved an F1 of .420 on the hidden test set, ranking first among 21 registered teams.
+This BioNLP 2026 PsyDefDetect shared task system paper treats psychological defense mechanism classification as a problem with fuzzy boundaries and limited annotation consistency. It utilizes an ensemble of 9 voters across different granularities, training paradigms, and base models, achieving an F1=.420 on the hidden test set and ranking 1st among 21 registered teams.
 
 ## Background & Motivation
-**Background**: Mental health NLP is evolving from sentiment recognition and risk assessment toward fine-grained clinical concept identification. The PsyDefDetect task requires models to identify the level of psychological defense mechanisms in a seeker's target utterance within emotional support dialogues. Labels are derived from the Defense Mechanism Rating Scale (DMRS), encompassing 8 positive defense levels and a "No Defence" (C0) category.
+**Background**: Mental Health NLP is evolving from sentiment recognition, risk assessment, and counseling dialogue assistance toward finer-grained clinical concept identification. The PsyDefDetect task requires models to determine the psychological defense mechanism hierarchy of a seeker's target utterance within emotional support conversations. Labels are derived from the Defense Mechanism Rating Scale (DMRS), including 8 positive defense levels and a No Defence category.
 
-**Limitations of Prior Work**: This task is not a simple semantic classification. Many defense mechanisms appear similar on the surface—such as rationalization, explanation, reflection, or self-consolation—while their true differences are hidden in pragmatic functions and contextual intent. The paper notes that even trained annotators achieve only moderate agreement, with a Cohen's $\kappa=.639$, indicating unstable label boundaries.
+**Limitations of Prior Work**: This task is not a simple semantic classification problem. Many defense mechanisms appear linguistically identical to rationalization, explanation, reflection, or self-consolation; the true distinctions often lie in pragmatic functions and contextual intentions. The paper notes that even trained annotators achieve only moderate consistency (Cohen's $\kappa=.639$), indicating that the label boundaries themselves are unstable.
 
-**Key Challenge**: A single large model easily develops fixed biases at these fuzzy boundaries. Even stronger models may not resolve confusion between mid-to-high levels like C5, C6, and C7, as they share numerous "mature, restrained, and reflective" expressions. The truly valuable signal lies not in the absolute strength of one model, but in the fact that different models make different mistakes on specific samples.
+**Key Challenge**: A single large model easily develops fixed biases on these fuzzy boundaries. Scaling to stronger models does not necessarily resolve confusion between middle-to-high levels like C5, C6, and C7, as they share common "mature, restrained, reflective" expressive forms. The valuable signal lies not in the absolute strength of a single model, but in the fact that different models make different errors on various samples.
 
-**Goal**: The authors aimed to build a shared task system capable of identifying the highly separable "No Defence" class while minimizing the absorption of samples into majority classes across the 8 defense levels. The system also had to handle realistic constraints such as extreme class imbalance in the training set, an invisible hidden test set, and limited validation signals.
+**Goal**: The authors aim to construct a shared task system that can distinguish the highly separable No Defence category while minimizing majority class attraction among the 8 defense categories, all while handling real-world constraints like extreme class imbalance, an invisible hidden test set, and limited validation signals.
 
-**Key Insight**: Starting from the concept of "error independence," the authors designed the system as a multi-axis voter ensemble rather than a single-path fine-tuning pipeline. Representation space analysis confirmed that C0 No Defence is the most separable, while the 8 defense categories overlap significantly. Consequently, C0 detection is assigned to 9-class gatekeepers, while internal defense classification is handled by 8-class specialists.
+**Key Insight**: Starting from "error independence," the system is designed as a multi-axis voter ensemble rather than a single-path fine-tuning approach. The authors first use representation space analysis to confirm that C0 (No Defence) is the most separable, while the 8 defense categories overlap significantly. They then assign C0 judgment to a 9-class "gatekeeper" and internal defense classification to 8-class "specialists."
 
-**Core Idea**: Replace a single-model classifier with a voter ensemble spanning across category granularities, training objectives, and base models to transform independent errors on fuzzy psychological defense boundaries into voting gains.
+**Core Idea**: Use a voter ensemble across category granularity, training objectives, and base models to replace a single-model classifier, converting independent errors on fuzzy psychological defense boundaries into ensemble gains.
 
 ## Method
-The methodology resembles a system engineering solution for a shared task: it uses synthetic data to alleviate minority class issues, trains multiple groups of complementary models, and fuses them through a voting rule with a C0 override. The focus is not on proposing a new neural architecture but on designing "which model combinations generate useful disagreements."
+The method in this paper is more of a system engineering solution for a shared task rather than a new network architecture: first, use synthetic data to alleviate minority class scarcity; then, train several sets of "complementary models that fail on different samples"; finally, fuse them using a voting rule with a C0 override. Its true design focus is selecting axes around "which model combinations produce useful disagreements."
 
 ### Overall Architecture
-The input is an emotional support dialogue and one target seeker utterance.
 
-The output is a DMRS defense mechanism label: C0 for No Defence, and C1 to C8 for the eight defense levels.
+The system input is an emotional support dialogue and a specific seeker target utterance, and the output is a DMRS defense mechanism label—C0 for No Defence, and C1 to C8 for the 8 defense levels. The core is a three-axis ensemble consisting of 9 voters: the first axis features 3 Min-SFT 9c gatekeepers (generative SFT fine-tuning of Ministral-8B, retaining all 9 classes); the second axis features 3 Min-LR 8c specialists (8-class Logistic Regression trained on Ministral-8B adapted representations for C1–C8 only); the third axis features 3 Phi4-LR 8c specialists (8-class LR trained on Phi-4-14B representations to provide cross-base diversity). Each branch undergoes 5-fold cross-validation, and the top-3 folds per branch are selected for the final system based on internal CV performance.
 
-The system consists of 9 voters in total.
+Inference follows a two-stage rule: "Gatekeeping followed by refinement." Gatekeepers first collectively decide if a sample is C0. If the majority votes for C0, the system outputs C0 directly. Otherwise, all 9 voters perform majority voting on C1–C8, with ties broken by favoring the majority class C7 (High-Adaptive). This way, the high separability of No Defence, the fine-grained confusion within the 8 defense classes, and the complementarity of different models are unified within a single framework.
 
-The first group consists of three **Min-SFT 9c gatekeeper voters**, fine-tuned via generative SFT on Ministral-8B, retaining all 9 classes.
-
-The second group consists of three **Min-LR 8c specialist voters**, which use adapted representations from Ministral-8B to train 8-class logistic regression classifiers, processing only C1 to C8.
-
-The third group consists of three **Phi4-LR 8c specialist voters**, training 8-class logistic regression classifiers on Phi-4-14B representations to provide cross-model error diversity.
-
-Each branch was trained using 5-fold cross-validation, and the top-3 folds based on internal CV performance were selected for the final system.
-
-During inference, the gatekeepers first determine if a sample belongs to C0.
-
-If a majority of gatekeepers predict C0, the system outputs C0 directly.
-
-Otherwise, all 9 voters perform majority voting across C1 to C8.
-
-In the case of a tie, the system defaults to the majority class in the training set, C7 High-Adaptive.
-
-This workflow handles the separability of No Defence, the fine-grained confusion of the 8 defense levels, and the complementarity of different models within a single voting framework.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Dialogue + Target Utterance"]
+    IN --> G["C0 gatekeeper (9-class Gen-SFT)<br/>Ministral-8B QLoRA"]
+    IN --> S1["8-class specialist (Disc-LR)<br/>Ministral-8B Frozen Rep."]
+    IN --> S2["Cross-base 3rd Axis (Diversity)<br/>Phi-4-14B 8-class LR"]
+    G --> CV["5-fold CV → Select top-3 folds (9 voters total)"]
+    S1 --> CV
+    S2 --> CV
+    CV --> Q{"Gatekeeper majority C0?"}
+    Q -->|Yes| C0["Output C0 No Defence"]
+    Q -->|No| MV["9-voter majority vote for C1–C8<br/>Tie-break favors C7"]
+    MV --> OUT["Output DMRS Label C1–C8"]
+```
 
 ### Key Designs
-1.  **Granularity Split between C0 Gatekeeper and 8-class Specialists**:
-    *   **Function**: Splits the problem into "Is there a defense mechanism?" and "Which defense mechanism is it?"—two sub-problems better suited for modeling.
-    *   **Mechanism**: The authors performed t-SNE on the hidden states of the 9-class SFT model and found that C0 No Defence formed the only relatively distinct cluster, whereas C1 to C8 showed heavy overlap. Thus, 9-class models serve as gatekeepers to trigger the C0 override, while 8-class specialists focus their capacity on the subtle differences within the defense categories.
-    *   **Design Motivation**: If all models handle 9 classes simultaneously, the clear boundary of C0 and the fuzzy boundaries of the defense levels are mixed in the same decision space. By splitting them, the system leverages the high separability of C0 while preventing specialists from wasting decision capacity on No Defence.
+**1. Granularity Split between C0 gatekeeper and 8-class specialist: Dividing "Defense Presence" and "Defense Type" into sub-problems of varying difficulty.**
 
-2.  **Complementary Training via Generative SFT and Discriminative LR**:
-    *   **Function**: Creates useful error independence through differences in training objectives.
-    *   **Mechanism**: The SFT branch fine-tunes LLMs via QLoRA to generate label digits. The LR branch reuses the LLM representations after ClsHead adaptation, discards the original classification head, and trains an L2-regularized multinomial logistic regression on the frozen last-token hidden states. LR adds almost no computational overhead but allows for rapid screening of model and granularity combinations.
-    *   **Design Motivation**: The paper did not simply choose the 9-class LR with the highest CV score as the gatekeeper. Instead, it retained the generative SFT because, when paired with 8-class LR specialists, the two training paradigms fail on different samples. Experiments support this: pairing SFT gatekeepers with LR specialists improved hidden test F1 from .373 to .391, whereas pairing them with SFT specialists showed no gain.
+The authors performed t-SNE on the hidden states of the 9-class SFT model and found that C0 (No Defence) was the only relatively clear cluster, while C1–C8 overlapped significantly. Forcing all models into flat 9-class classification would cause the clear C0 boundary to interfere with the fuzzy internal boundaries of the defense classes. Thus, they retained the 9-class models solely as gatekeepers to trigger C0 override, while training dedicated specialists for C1–C8 to focus their capacity entirely on the subtle differences between defense categories.
 
-3.  **Third Axis Voting via Cross-Model Ensembling**:
-    *   **Function**: Introduces a different base model alongside the Ministral branch to handle samples where internal Ministral opinions are split.
-    *   **Mechanism**: The authors tested 8-class LR specialists on Phi-4-14B, Llama-3.1-8B, and PsychoCounsel-Llama3-8B. Complementarity was measured by the correlation of their F1 profiles across 5 folds with Min-LR 8c. Phi4-LR 8c exhibited the most inverse profile and was selected as the third branch.
-    *   **Design Motivation**: The third branch cannot overturn a strong majority from the 6 Ministral voters; it only influences samples where Ministral is divided. This makes it an arbitrator rather than a simple addition of model counts. Flip analysis showed that Phi4-LR flips were concentrated on the C6/C7 boundary—the most frequent area of confusion.
+**2. Complementarity between Generative SFT and Discriminative LR: Manually creating useful "error independence" via differing training objectives.**
+
+Ensemble gains require members to fail on different samples. This system runs two branches with entirely different paradigms: the SFT branch uses QLoRA for generative supervised fine-tuning (LLM generates label digits directly); the LR branch reuses representations from a fine-tuned ClsHead but discards the original head, training a multinomial Logistic Regression with L2 regularization on frozen hidden states. This adds negligible compute but allows for rapid exploration of "model × granularity" combinations. Crucially, instead of selecting the 9-class LR with the highest CV, they kept the generative SFT gatekeeper because it exhibits different failure modes compared to the 8-class LR specialists. Experiments confirmed this: pairing SFT gatekeepers with SFT specialists yielded no gain, but pairing them with LR specialists increased hidden test F1 from .373 to .391.
+
+**3. Cross-base 3rd Axis Voting: Adding a different model lineage to resolve Ministral's internal disagreements.**
+
+The first two axes are both based on Ministral, meaning their error patterns are likely correlated. The authors tested several 8-class LR specialists (Phi-4-14B, Llama-3.1-8B, PsychoCounsel-Llama3-8B) and calculated the complementarity based on their F1 profile correlation across 5 folds. The Phi4-LR 8c was selected for the third branch as it showed the most inverse profile. Its role is not to overpower the 6 Ministral voters through sheer numbers but to act as an arbitrator when Ministral is split. Flip analysis showed its influence was concentrated on the C6/C7 boundary, precisely where the most critical errors occurred.
 
 ### Loss & Training
-All fine-tuning utilized 4-bit NF4 QLoRA applied to all linear projection layers, with a dropout of 0.05, a cosine schedule, 10% warm-up, for 10 epochs, an effective batch size of 8, and a maximum sequence length of 4096.
+All fine-tuning utilized 4-bit NF4 QLoRA on all linear projection layers, with a dropout of 0.05, cosine schedule, 10% warm-up, 10 epochs, a batch size of 8, and a max sequence length of 4096. SFT used LoRA rank 32, $\alpha=64$, targeting generative cross-entropy of label digits. ClsHead used LoRA rank 16, $\alpha=32$, and focal loss with class weights $w_c=N/(K n_c)$. LR was trained on frozen hidden states using multinomial logistic regression with L2 regularization and balanced class weights, with the regularization strength $C$ swept within each fold.
 
-SFT used LoRA rank 32, $\alpha=64$, with generative cross-entropy of label digits as the objective.
+For data augmentation, GPT-5.2 was used on a dialog-stratified 80/20 split to generate dialogues for minority classes. The budget was set to a maximum of 200 samples per class, not exceeding 75% of the original class count. C0 and C7 were not augmented due to sufficient samples. A total of 738 synthetic dialogues were generated and used only in the training folds; the validation and hidden test sets remained strictly original human annotations. Final voting rule: if the count of gatekeepers predicting C0 reaches a majority, $\hat{y}=0$; otherwise, $\arg\max_c \sum_j \mathbf{1}[v_j=c]$ across all voters.
 
-ClsHead used LoRA rank 16, $\alpha=32$, trained with focal loss using class weights $w_c=N/(K n_c)$.
-
-LR was trained on frozen hidden states using multinomial logistic regression with L2 regularization and balanced class weights, with the regularization intensity $C$ swept within each fold.
-
-For data augmentation, GPT-5.2 was used to generate minority class synthetic dialogues on a dialog-stratified 80/20 split.
-
-The augmentation budget was capped at 200 samples per class, and synthetic samples did not exceed 75% of the original class count. No augmentation was performed for C0 and C7. A total of 738 synthetic dialogues were generated and added only to the training folds; validation and hidden tests remained original human-annotated data.
-
-The final voting rule: if the count of gatekeepers predicting C0 reaches a majority, $\hat{y}=0$; otherwise, $\arg\max_c \sum_j 1[v_j=c]$ for all voters.
+> ⚠️ Model names like GPT-5.2 are based on the original text.
 
 ## Key Experimental Results
 
 ### Main Results
-The main results focus on the macro-F1 of the hidden test set, calculated only for C1-C8.
+The main results focus on macro-F1 on the hidden test set, calculated only for classes C1 to C8.
 
-| System | Diversity Axes Activated | Hidden Test F1 | Gain vs Baseline |
-| :--- | :--- | :--- | :--- |
+| System | Diversity Axes Activated | Hidden Test F1 | Gain over Baseline |
+|------|----------------|-------------|---------------|
 | Organizer Baseline: Min-SFT 9c, no aug | Single Model | .315 | - |
 | Min-SFT 9c full-train, aug, single model | Augmentation only | .307 | -0.008 |
-| 5V Min-SFT 9c | 5-fold ensemble | .373 | +0.058 |
-| 6V Min-SFT 9c + Min-LR 8c | Granularity + Training | .391 | +0.076 |
-| 9V Min-SFT 9c + Min-LR 8c + Phi4-LR 8c | + Base Model axis | **.420** | **+0.105** |
+| 5V Min-SFT 9c | 5-fold Voting | .373 | +0.058 |
+| 6V Min-SFT 9c + Min-LR 8c | Granularity + Paradigm | .391 | +0.076 |
+| 9V Min-SFT 9c + Min-LR 8c + PCounsel-LR 8c | + Model Axis | .414 | +0.099 |
+| 9V Min-SFT 9c + Min-LR 8c + Llama-LR 8c | + Model Axis | .417 | +0.102 |
+| 9V Min-SFT 9c + Min-LR 8c + Phi4-LR 8c | + Model Axis | **.420** | **+0.105** |
 
-The largest jump came from voting itself: 5-fold Min-SFT 9c improved from around .315/.307 to .373. Adding LR specialists further improved it to .391, proving the complementarity of training paradigms. After adding the third base model, all candidates improved performance, with Phi4-LR 8c reaching .420. This represents a 33.4% relative improvement over the baseline and the first-place result in the shared task.
+The largest jump comes from voting itself: 5-fold Min-SFT 9c improves from around .315/.307 to .373.
+
+Adding the LR specialist further improves results to .391, proving that training paradigm differences provide complementarity.
+
+The addition of the third base model continues the trend, with Phi4-LR 8c reaching .420.
+
+This represents a relative improvement of approximately 33.4% over the baseline and is the first-place result reported for the shared task.
 
 ### Ablation Study
-The most insightful ablation involves synthetic data augmentation.
+The most insightful ablation is on synthetic data augmentation.
 
 | System | With GPT-5.2 Aug | Without Aug | Difference | Note |
-| :--- | :--- | :--- | :--- | :--- |
+|------|----------------|--------|------|------|
 | Min-SFT 9c Single Model | .307 | .315 | -0.008 | Synthetic data alone introduces noise |
 | 5V Min-SFT 9c | .373 | .319 | +0.054 | Voting averages out synthetic noise |
-| 6V + Min-LR 8c | .391 | .369 | +0.022 | Augmentation gain persists |
-| 9V + Phi4-LR 8c | .420 | .378 | +0.042 | Contribution of aug is clear in final system |
+| 6V + Min-LR 8c | .391 | .369 | +0.022 | Gain from augmentation persists |
+| 9V + Phi4-LR 8c | .420 | .378 | +0.042 | Augmentation contribution is clear in the final system |
 
-This table shows that augmentation is not an "independent module" where more is always better. Single models were degraded by synthetic samples, but the voting system combined the recall gains from augmentation with noise cancellation. Thus, augmentation and voter diversity are intertwined.
+This table shows that augmentation is not a "more is better" independent module.
+
+While single models are dragged down by synthetic noise, the ensemble combines the recall gains with noise cancellation.
+
+### Models vs Training Comparison
+The CV5 table in the Appendix explains why the LR specialist was chosen.
+
+| Model | SFT 8c | SFT 9c | ClsHead 8c | ClsHead 9c | LR 8c | LR 9c |
+|------|--------|--------|------------|------------|-------|-------|
+| Ministral-8B | .321 | .306 | .333 | .311 | **.342** | .315 |
+| Phi-4-14B | - | .293 | .337 | - | **.337** | - |
+| Llama-3.1-8B | .251 | .279 | .246 | .284 | **.312** | .284 |
+| Qwen2.5-7B | .266 | .256 | .302 | .268 | **.307** | .283 |
+| PsychoCounsel-8B | - | - | **.316** | - | .301 | - |
+| PsyLLM-8B | - | - | **.295** | - | .289 | - |
+| GPT-OSS-20B | .212 | .183 | .278 | - | **.292** | - |
+
+LR outperforms or matches ClsHead on most models with lower training costs.
 
 ### Key Findings
-*   Voting is more critical than a single model. A 5-fold isomorphic ensemble raised the F1 from .315 to .373, suggesting that variance and boundary uncertainty are the core issues in this task.
-*   The gain from the third model axis comes from critical boundary arbitration. Phi4-LR primarily flips samples where Ministral is inconsistent, with 33 out of 39 flips involving the C6/C7 boundary.
-*   Synthetic data must be tied to voting. While a single model's performance decreased with augmentation, the 9V system's F1 increased by .042, indicating that the ensemble provides tolerance for synthetic noise.
-*   Class imbalance still dominates error patterns. C7 accounts for 52% of the training set and absorbed many misclassified mid-level samples, meaning model performance does not directly equate to clinical utility.
+- Voting is more critical than the single model. 5-fold isomorphic voting improved F1 from .315 to .373, confirming that variance and boundary uncertainty are core issues in this task.
+- The 3rd model axis gain comes from critical boundary arbitration. Phi4-LR only flips samples where Ministral lacks internal agreement; 33 of the 39 actual flips involved the C6/C7 boundary.
+- Synthetic data requires coupling with voting. Single-model performance dropped with augmentation, but the 9V system gained .042, suggesting ensemble robustness against synthetic noise.
+- Class imbalance still dominates error patterns. C7 accounts for 52% of the training set and absorbs many misclassified samples from intermediate levels; performance is not equivalent to clinical utility.
 
 ## Highlights & Insights
-*   The paper frames the shared task solution as a story of "error complementarity" rather than just climbing a leaderboard. It uses t-SNE, CV profile correlation, and flip analysis to justify why voting works.
-*   The C0 gatekeeper design is practical. Many real-world classification tasks involve an "easy-to-separate external class" and a "group of fuzzy internal classes." Separating them is often more stable than flat multi-class classification.
-*   The LR specialist is a high-efficiency trick. Training a linear head on frozen LLM representations allows for rapid exploration of base models and creates different error patterns compared to generative SFT.
-*   The class-level analysis shows clinical alertness. The authors did not just report the top score but pointed out that misclassifying C5 as C7 underestimates intervention needs, demonstrating a responsible approach to clinical NLP.
+- The paper frames the system as a story of "error complementarity" rather than leaderboard chasing. It uses t-SNE, CV profile correlation, Krippendorff's $\alpha$, and flip analysis to explain why voting works.
+- The C0 gatekeeper design is practical. Many real-world classification tasks have a "clear external class" and a "difficult internal set"; separating them is often more stable than flat multi-classification.
+- The LR specialist is a high-efficiency trick. Training linear heads on frozen LLM representations allows rapid exploration of multiple bases and generates different error patterns from generative SFT.
+- Honesty regarding augmentation: The paper does not pitch synthetic data as a panacea, noting it harms single models and only provides value when noise is averaged out by the ensemble.
+- Clinical awareness in per-class analysis: Instead of just reporting the top score, the authors highlight that misclassifying C5 as C7 underestimates intervention needs, a more responsible approach than purely chasing F1.
 
 ## Limitations & Future Work
-*   Statistical support remains limited. The PSYDEFCONV training set has only 1,864 original samples. The .029 gain of 9V over 6V is based on a single hidden test observation.
-*   The choice of top-3 folds and C0 override thresholds are somewhat heuristic and lack rigorous validation.
-*   The annotation upper bound is low. With an inter-annotator agreement of only $\kappa=.639$, small classes like C2, C5, and C8 fall into highly subjective zones, and macro-F1 is likely capped by label noise.
-*   The inference cost is high. An ensemble of nine voters is unsuitable for real-time deployment; a 5V or 6V system might be a more reasonable cost-benefit trade-off.
-*   Clinical ethical risk is significant. An F1 of .420 means most defense utterances are still misclassified. The system should only serve as a supplementary signal in a supervised workflow.
+- Statistical support remains limited. The PSYDEFCONV training set has only 1,864 original samples. The +.029 gain of 9V over 6V comes from a single hidden test observation, not proving Phi4 is universally optimal.
+- Decisions like top-3 fold selection and C0 override thresholds are heuristic and lack rigorous validation.
+- Hard ceiling on annotation quality. Annotator consistency is only $\kappa=.639$. Small classes like C2, C5, and C8 are in zones of high subjective judgment, potentially capping macro-F1 due to label noise.
+- Narrow scope. Experiments were conducted only on English ESConv/PSYDEFCONV in simulated support scenarios, which differ from real clinical sessions.
+- Ethical risk is significant. An F1 of .420 means most defense utterances are still misclassified. This system can only serve as a supportive signal in supervised workflows and cannot be used independently for diagnosis.
 
 ## Related Work & Insights
-*   **vs PSYDEFCONV / PsyDefDetect baseline**: The baseline uses a 9-class generative SFT on Ministral-8B. This paper improves the F1 from .315 to .420 through data augmentation, CV voter pools, and multi-axis ensemble strategies.
-*   **vs Traditional Ensemble Methods**: Following Dietterich’s principle that ensembles require accurate and diverse classifiers, this work applies these concepts to LLM mental health tasks and proves diversity's effectiveness at high-confusion boundaries.
-*   **vs Single-model Fine-tuning**: While single-model tuning seeks an optimal representation, this work shows that multiple partially inconsistent decision boundaries are more reliable when labels are ambiguous and classes overlap.
+- **vs PSYDEFCONV / PsyDefDetect baseline**: The baseline uses Ministral-8B for 9-class SFT. This work follows the task and prompt setup but improves F1 from .315 to .420 via augmentation, CV voter pools, granularity splitting, training paradigm splitting, and cross-model specialists.
+- **vs Classical Ensemble Methods**: Dietterich’s ensemble theory emphasizes diverse and accurate classifiers. This work applies this principle to LLM mental health classification and uses flip analysis to prove diversity works on the C6/C7 confusion boundary.
+- **vs Single-model LLM Fine-tuning**: While fine-tuning seeks an optimal representation, this work shows that multiple imperfect decision boundaries are more reliable when labels are ambiguous and categories overlap.
+- **Insight for other tasks**: Tasks like medical triage or risk assessment often have one clear negative class and multiple fuzzy positive classes. One can adapt the gatekeeper-specialist design to separate "risk trigger" from "risk level/type" modeling.
 
 ## Rating
-*   Novelty: ⭐⭐⭐(⭐)☆ The core technique is not a new architecture, but the systematic application of multi-axis voter diversity to psychological defense detection is well-designed.
-*   Experimental Thoroughness: ⭐⭐⭐⭐☆ Main results, ablation studies, and flip analyses are complete, though limited by the small data and the hidden test evaluation.
-*   Writing Quality: ⭐⭐⭐⭐⭐ The system paper is clearly written, with a closed loop between motivation, design, and error analysis.
-*   Value: ⭐⭐⭐⭐☆ Highly valuable for shared tasks and small-sample clinical NLP; the ensemble diagnostic approach is widely applicable.
+- Novelty: ⭐⭐⭐⭐☆ Not a new architecture, but a systematic application of multi-axis voter diversity to defense mechanism detection with targeted design.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive main results, augmentation ablation, model selection, and error analysis, though limited by sample size.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear system paper with a closed loop of motivation, design, and failure analysis.
+- Value: ⭐⭐⭐⭐☆ Highly relevant for shared tasks and small-sample clinical NLP; great reference for ensemble diagnostics despite the current F1 being insufficient for high-risk applications.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification](evaluating_customized_vs_generalist_transformer-based_models_for_legal_contract_.md)
-- [\[ACL 2026\] Wait, There's a Way Out: A Decision Mechanism for Conversational Derailment Prediction](wait_theres_a_way_out_a_decision_mechanism_for_forecasting_conversational_derail.md)
-- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
+- [\[ICML 2025\] Theoretical Limitations of Ensembles in the Age of Overparameterization](../../ICML2025/llm_nlp/theoretical_limitations_of_ensembles_in_the_age_of_overparameterization.md)
+- [\[ACL 2025\] The Nature of NLP: Analyzing Contributions in NLP Papers](../../ACL2025/llm_nlp/the_nature_of_nlp_analyzing_contributions_in_nlp_papers.md)
+- [\[ACL 2025\] Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights](../../ACL2025/llm_nlp/unintended_harms_of_value-aligned_llms_psychological_and_empirical_insights.md)
+- [\[ACL 2025\] Computation Mechanism Behind LLM Position Generalization](../../ACL2025/llm_nlp/computation_mechanism_behind_llm_position_generalization.md)
 
 </div>
 

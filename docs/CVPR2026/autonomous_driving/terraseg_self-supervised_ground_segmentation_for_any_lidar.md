@@ -2,83 +2,96 @@
 title: >-
   [Paper Note] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 description: >-
-  [CVPR 2026][Autonomous Driving][Ground Segmentation] This paper proposes TerraSeg, the first self-supervised, domain-agnostic LiDAR ground segmentation model. By constructing the large-scale unified OmniLiDAR dataset (12…
+  [CVPR 2026][Autonomous Driving][Self-Supervised Learning] This paper proposes TerraSeg, the first self-supervised domain-agnostic LiDAR ground segmentation model. By constructing a unified large-scale OmniLiDAR dataset (12 public benchmarks, 15 sensors, nearly 22 million scans) and an innovative PseudoLabeler self-supervised pseudo-label generation module, it achieves SOTA re
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Ground Segmentation"
-  - "Self-Supervised Learning"
-  - "Cross-Sensor Generalization"
-  - "LiDAR Perception"
-  - "Pseudo Labels"
+  - CVPR 2026
+  - Autonomous Driving
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: 215eea8130c63215
+content_hash: a52446cf5a6b933d
 ---
-
 # TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27344](https://arxiv.org/abs/2603.27344)  
-**Code**: Public (Apache 2.0)  
-**Area**: Autonomous Driving / 3D Point Cloud Segmentation
-**Keywords**: Ground Segmentation, Self-Supervised Learning, Cross-Sensor Generalization, LiDAR Perception, Pseudo Labels
+**Code**: Available (Apache 2.0)  
+**Area**: Autonomous Driving / 3D Point Cloud Segmentation  
+**Keywords**: Ground segmentation, self-supervised learning, cross-sensor generalization, LiDAR perception, pseudo-label
 
 ## TL;DR
 
-This paper proposes TerraSeg, the first self-supervised, domain-agnostic LiDAR ground segmentation model. By constructing the large-scale unified OmniLiDAR dataset (12 public benchmarks, 15 sensor types, ~22 million scans) and a novel PseudoLabeler self-supervised pseudo-label generation module, TerraSeg achieves state-of-the-art performance on nuScenes, SemanticKITTI, and Waymo without any human annotation.
+This paper proposes TerraSeg, the first self-supervised domain-agnostic LiDAR ground segmentation model. By constructing a unified large-scale OmniLiDAR dataset (12 public benchmarks, 15 sensors, nearly 22 million scans) and an innovative PseudoLabeler self-supervised pseudo-label generation module, it achieves SOTA results on nuScenes, SemanticKITTI, and Waymo without using any manual annotations.
 
 ## Background & Motivation
 
-**Background**: LiDAR ground segmentation is a foundational task in the autonomous driving perception stack, serving object discovery, free-space estimation, and localization/mapping. Existing methods fall into two categories: hand-crafted geometric methods (e.g., RANSAC, PatchWork++) and supervised learning methods (e.g., GndNet).
+**Background**: LiDAR ground segmentation is a fundamental task in autonomous driving perception stacks, used for object discovery, free space estimation, and localization mapping. Existing methods are divided into two categories—manual geometric methods (e.g., RANSAC, PatchWork++) and supervised learning methods (e.g., GndNet).
 
-**Limitations of Prior Work**: Hand-crafted methods are fast and annotation-free but rely on simplistic terrain assumptions (e.g., global planarity) and sensor-specific parameter tuning, requiring re-tuning for new environments or sensors and offering poor generalization. Supervised learning methods generalize better but depend on expensive per-point manual annotations, making them highly unscalable.
+**Limitations of Prior Work**: Manual methods, while fast and requiring no annotation, rely on simple terrain assumptions (e.g., global planes) and sensor-specific parameter tuning. Transitioning to new environments or sensors requires re-tuning, leading to poor generalization. Supervised learning methods generalize better but depend on expensive point-wise manual annotations, making them poorly scalable.
 
-**Key Challenge**: Fast, annotation-free hand-crafted methods lack generalization, while generalizable learning-based methods require costly annotations. The ideal solution should simultaneously be annotation-free, achieve zero-shot cross-sensor generalization, and run in real time.
+**Key Challenge**: Rapid and annotation-free manual methods lack generalization, while generalizable learning methods require expensive annotations—the ideal solution should combine annotation-free training, zero-shot cross-sensor generalization, and real-time execution.
 
-**Goal**: (1) How to train a high-quality ground segmentation model without any human annotation; (2) How to enable a single model to generalize across different sensors, scenes, and weather conditions.
+**Goal**: (1) Training a high-quality ground segmentation model entirely without manual annotations; (2) enabling a single model to generalize across different sensors, scenes, and weather conditions.
 
-**Key Insight**: Inspired by the success of large-scale pre-training in NLP/CV, but rather than pursuing a multi-task general-purpose system, this work follows a single-task, domain-agnostic approach—training self-supervisedly on highly diverse geometric data to achieve zero-shot cross-domain transfer.
+**Key Insight**: Inspired by the success of large-scale pre-training in NLP and CV, this work pursues a single-task domain-agnostic route rather than a multi-task general system—training in a self-supervised manner on highly diverse geometric data to achieve zero-shot cross-domain transfer.
 
-**Core Idea**: Aggregate ~22 million scans from 12 datasets and 15 sensor types to construct OmniLiDAR, and use self-supervised pseudo labels (PseudoLabeler) to train a domain-agnostic ground segmentation model based on Point Transformer v3.
+**Core Idea**: Aggregate nearly 22 million scans from 12 datasets and 15 sensors to build OmniLiDAR, and train a domain-agnostic ground segmentation model based on Point Transformer v3 using self-supervised pseudo-labels from a PseudoLabeler.
 
 ## Method
 
 ### Overall Architecture
 
-The TerraSeg framework consists of three core components: (1) the OmniLiDAR dataset—unifying and standardizing raw LiDAR scans from 12 public driving datasets; (2) the PseudoLabeler—generating per-frame ground/non-ground pseudo labels via self-supervised runtime optimization; and (3) the TerraSeg model—a real-time, domain-agnostic ground segmentation network based on Point Transformer v3, trained on pseudo labels. The input is raw 3D point cloud coordinates; the output is per-point ground/non-ground confidence scores.
+TerraSeg addresses the contradiction where ground segmentation must be both annotation-free and sensor-agnostic, while prior methods could only achieve one. The solution involves shifting "generalization" to data and priors rather than manual labels. The pipeline consists of three stages: first, normalizing raw scans from 12 public driving datasets into a unified format (OmniLiDAR); second, using an annotation-free geometric optimization module (PseudoLabeler) to calculate frame-by-frame ground/non-ground pseudo-labels; and finally, using these pseudo-labels to train a domain-agnostic TerraSeg model that "forgets sensor identity." The model inputs raw 3D point cloud coordinates and outputs a ground confidence score for each point. Notably, the PseudoLabeler is slow but accurate and is only used offline, while the trained TerraSeg model performs real-time inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph OMNI["OmniLiDAR Unified Dataset"]
+        direction TB
+        A["12 public datasets · 15 sensors<br/>Nearly 22 million raw scans"] --> B["Downsample to 0.2Hz → Align coordinate systems by model<br/>Remove ego-vehicle points → Keep (x,y,z) only"]
+    end
+    OMNI --> PL
+    subgraph PL["PseudoLabeler Self-Supervised Generation (Offline · Slow but Accurate)"]
+        direction TB
+        C["Preprocessing: Remove multi-path negative noise points"] --> D["Runtime optimization: MLP fits BEV elevation surface<br/>Asymmetric loss suppresses vertical growth"]
+        D --> E["Post-processing: Pillar refinement<br/>Recover misclassified points at vehicle bottom/tires"]
+    end
+    PL --> F["Ground / Non-ground Pseudo-labels"]
+    F --> G["TerraSeg Domain-Agnostic Model<br/>PTv3 Backbone + Disable Dataset Norm / GN replaces BN / Geometry features only"]
+    G -->|Real-time Inference| H["Per-point Ground Confidence"]
+```
 
 ### Key Designs
 
-1. **OmniLiDAR Unified Dataset**:
+**1. OmniLiDAR Unified Dataset: Pursuing geometric generalization through extreme sensor diversity**
 
-    - **Function**: Provides unprecedented sensor diversity to support cross-domain generalization training.
-    - **Mechanism**: Aggregates ~22 million raw scans from 12 public driving datasets—including nuScenes, SemanticKITTI, Waymo, and Argoverse 2—covering 15 distinct LiDAR hardware configurations. All data undergo a three-step normalization: (1) downsampling to 0.2 Hz to ensure diversity; (2) aligning coordinate frames via sensor-specific transforms such that $z=0$ approximates ground level and the $x$-axis points forward; (3) removing ego-vehicle points according to sensor model. Only normalized $(x, y, z)$ coordinates and metadata labels are retained.
-    - **Design Motivation**: The sensor and scene diversity of any single dataset is insufficient to train a generalizable model; large-scale aggregation is required to cover diverse terrain, weather, and sensor configurations.
+Individual datasets often have specific sensor types, terrains, and weather conditions, leading models to memorize sensor artifacts as ground features. TerraSeg counters this by aggregating 12 public datasets (nuScenes, SemanticKITTI, Waymo, Argoverse 2, etc.) covering 15 LiDAR models and 22 million scans. Three standardization steps are performed: downsampling sequences to 0.2Hz to ensure frame diversity; aligning coordinate systems so that $z=0$ approximates the ground and the $x$-axis points forward; and removing ego-vehicle points. After normalization, only $(x,y,z)$ coordinates and metadata labels remain, stripping away sensor-specific fingerprints and forcing the model to learn universal geometric patterns.
 
-2. **PseudoLabeler Self-Supervised Pseudo Label Generation**:
+**2. PseudoLabeler Self-Supervised Pseudo-Label Generation: Ground segmentation as annotation-free elevation fitting**
 
-    - **Function**: Generates high-quality ground/non-ground labels for each raw LiDAR scan without human annotation.
-    - **Mechanism**: Ground segmentation is reformulated as a surrogate task of bird's-eye-view elevation map estimation. An MLP parameterizes an elevation map $g_\theta: \mathbb{R}^2 \to \mathbb{R}$, and the vertical residual for each point is computed as $\Delta d_i = z_i - g_\theta(x_i, y_i)$. Leveraging the geometric prior that the ground is the lowest continuous surface in the scene, an asymmetric loss is designed: points below the predicted surface incur a quadratic penalty, while points above incur a Huber loss. The pipeline consists of three stages: preprocessing (removing negative noise) → runtime optimization (SiLU activation + AdamW + EMA early stopping) → postprocessing (columnar refinement to recover object base points misclassified as ground).
-    - **Design Motivation**: The simple yet powerful geometric prior that "the ground is the lowest surface" enables fully self-supervised training. Carefully designed pre- and post-processing steps address practical issues such as multipath reflection noise and vehicle tire misclassification.
+To achieve annotation-free training, the PseudoLabeler utilizes the geometric prior that the ground is the lowest continuous surface in a scene. Segmentation is converted into a bird's-eye view (BEV) elevation map estimation task, using an MLP $g_\theta: \mathbb{R}^2 \to \mathbb{R}$ to fit the ground height at horizontal position $(x,y)$. The vertical residual $\Delta d_i = z_i - g_\theta(x_i, y_i)$ determines the label. To prevent objects from pulling the elevation surface upward, an asymmetric loss is used:
 
-3. **TerraSeg Domain-Agnostic Model Design**:
+$$
+\ell(\Delta d_i) = \begin{cases} \Delta d_i^2, & \Delta d_i < 0 \ (\text{below surface}) \\ \mathrm{Huber}(\Delta d_i), & \Delta d_i \ge 0 \ (\text{above surface}) \end{cases}
+$$
 
-    - **Function**: Real-time inference with zero-shot cross-sensor ground segmentation.
-    - **Mechanism**: Built on the Point Transformer v3 backbone with three key domain-agnostic adaptations: (1) dataset-specific normalization is disabled, forcing the model to learn universal geometric priors; (2) Batch Normalization is replaced with Group Normalization to handle distributional instability in mixed-sensor batches; (3) only three input features are used—a constant feature of 1, normalized height, and normalized horizontal distance—with raw coordinates used solely for voxel grid construction. Both Base (accurate) and Small (efficient) variants are provided.
-    - **Design Motivation**: By constraining input features and disabling domain-specific modules, the model is forced to learn only universal geometric criteria rather than sensor-specific artifact patterns.
+Points below the surface are penalized quadratically to ensure the surface fits the true floor, while points above use a saturated Huber loss to avoid being distorted by vehicles or pedestrians. This frame-wise optimization is supported by a three-stage pipeline: preprocessing to remove negative noise from multi-path reflections, runtime optimization using AdamW and EMA early stopping, and pillar refinement to recover points incorrectly classified as ground (e.g., tires).
+
+**3. TerraSeg Domain-Agnostic Model Design: Actively depriving the model of sensor identity**
+
+To prevent the model from memorizing sensor artifacts, TerraSeg restricts input information. Using Point Transformer v3 as the backbone, it implements three domain-agnostic modifications: disabling dataset-specific normalization, replacing Batch Normalization with Group Normalization (since batch statistics are unstable across mixed sensors), and using only 3D geometric features as input (constant 1, normalized height, and normalized horizontal distance). The model cannot identify the specific LiDAR model, and as a result, must rely on cross-domain invariant spatial relationships. The paper provides Base (accuracy-focused) and Small (speed-focused) variants.
 
 ### Loss & Training
 
-The training loss is Binary Cross-Entropy combined with symmetric Lovász-Softmax loss: $\mathcal{L} = \mathcal{L}_{BCE} + \lambda \mathcal{L}_{Lovász}$ ($\lambda = 1.0$). The BCE term uses dynamic positive class weights (tracked via EMA of ground/non-ground point ratios) to adaptively handle class imbalance across scenes. The AdamW optimizer is used (lr = 2e-3, weight decay = 5e-3) with linear warm-up followed by cosine decay. Voxelization resolution is 0.05, effective batch size is 256, and a custom epoch length of 20,000 frames is employed.
+The training loss combines Binary Cross-Entropy and Symmetric Lovász-Softmax loss: $\mathcal{L} = \mathcal{L}_{BCE} + \lambda \mathcal{L}_{Lovász}$ ($\lambda=1.0$). BCE uses dynamic positive weights tracked via EMA to handle class imbalance. The AdamW optimizer is used (lr=2e-3, weight decay=5e-3) with linear warm-up and cosine decay. Voxel resolution is 0.05, and effective batch size is 256.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Results on the nuScenes validation set (trained without human annotation):
+Results on the nuScenes validation set (trained without manual annotations):
 
 | Method | Annotation | Ground IoU | Non-Ground IoU | mIoU | Throughput (Hz) |
-|--------|-----------|-----------|---------------|------|----------------|
+|------|------|-----------|---------------|------|-----------|
 | RANSAC | None | 89.14 | 83.97 | 86.55 | 255.0 |
 | PatchWork++ | None | 86.19 | 81.42 | 83.80 | 30.0 |
 | TRAVEL | None | 89.76 | 87.16 | 88.46 | 365.7 |
@@ -92,45 +105,45 @@ Results on the nuScenes validation set (trained without human annotation):
 Ablation of PseudoLabeler components (nuScenes):
 
 | Configuration | Effect |
-|---------------|--------|
-| Without preprocessing | Negative noise causes elevation map to sink, leading to over-segmentation of ground |
-| Without postprocessing | Vehicle bases/tires are misclassified as ground |
-| Full PseudoLabeler | mIoU 90.63 (TerraSeg trained on these labels achieves 92.47) |
+|------|------|
+| No Preprocessing | Negative noise causes elevation map to sink, causing ground over-segmentation |
+| No Post-processing | Bottom of vehicles/tires misclassified as ground |
+| Full PseudoLabeler | mIoU 90.63 (reaching 92.47 when training TerraSeg) |
 
 ### Key Findings
 
-- **Self-supervised surpasses supervised baselines**: TerraSeg-B (no annotation) achieves mIoU 92.47, far exceeding GndNet trained with annotations (80.62).
-- **Near supervised upper bound**: The gap with the fully supervised variant (95.31) is only ~3 percentage points.
-- **Cross-dataset consistency**: State-of-the-art results are achieved consistently across nuScenes, SemanticKITTI, and Waymo.
-- **Real-time inference**: TerraSeg-S reaches ~50 Hz and TerraSeg-B ~28 Hz, satisfying online deployment requirements.
-- **Student surpasses teacher**: The TerraSeg model (mIoU 92.47) outperforms its pseudo-label source, PseudoLabeler (90.63), demonstrating the model's ability to generalize and denoise.
+- **Self-supervised performance exceeds supervised baselines**: TerraSeg-B (92.47 mIoU) significantly outperforms the supervised GndNet (80.62).
+- **Close to supervised upper bound**: The gap between self-supervised and fully supervised versions (95.31) is only ~3%.
+- **Cross-dataset consistency**: Achieves SOTA on nuScenes, SemanticKITTI, and Waymo simultaneously.
+- **Real-time inference**: TerraSeg-S reaches ~50Hz while TerraSeg-B reaches ~28Hz.
+- **Student superior to teacher**: The TerraSeg model (92.47 mIoU) outperforms its pseudo-label source (90.63), demonstrating powerful denoising and generalization capabilities.
 
 ## Highlights & Insights
 
-- **Large-scale aggregation strategy**: Unifying 12 datasets across 15 sensor types is a substantial engineering contribution; OmniLiDAR itself is a significant artifact.
-- **Elegant self-supervised formulation**: Recasting ground segmentation as elevation map estimation is a clever use of a simple geometric prior to enable annotation-free training.
-- **Student-surpasses-teacher phenomenon**: This demonstrates that large-scale diverse data combined with neural network generalization can effectively filter noise from pseudo labels.
-- **High practical value**: Requires no annotation data, supports any LiDAR sensor, runs in real time, and is open-sourced—making this an immediately deployable contribution.
+- **Large-scale aggregation strategy**: Aggregating 12 datasets and 15 sensors into OmniLiDAR is a significant engineering contribution.
+- **Clever self-supervised design**: Converting ground segmentation into a proxy task of elevation map estimation utilizes simple geometric priors for annotation-free training.
+- **"Student superior to teacher" phenomenon**: Diverse data mixed with neural network generalization effectively filters noise in pseudo-labels.
+- **Highly practical**: Requires no manual labels, supports any LiDAR sensor, runs in real-time, and is open-source.
 
 ## Limitations & Future Work
 
-- Only single-frame point clouds are processed; temporal information is not exploited, which may limit performance on complex terrain.
-- Pseudo-label quality may degrade in extreme scenarios such as steep slopes or dense vegetation.
-- Only binary classification (ground/non-ground) is produced, with no semantic information (e.g., traversability level).
-- Extension to semantic ground segmentation (distinguishing road, grass, dirt, etc.) is a natural future direction.
+- Currently processes single-frame point clouds; temporal information remains unused.
+- Pseudo-label quality may degrade in extreme scenarios (e.g., steep slopes, dense vegetation).
+- Provides only binary classification; does not provide semantic levels (e.g., traversability).
+- Future work could extend to semantic ground segmentation (differentiating road, grass, dirt, etc.).
 
 ## Related Work & Insights
 
-- The concentric zone polar grid concept from PatchWork++ could be combined with learning-based methods.
-- The self-supervised runtime optimization of Chodosh et al. is the direct predecessor of PseudoLabeler; this work introduces key improvements upon that foundation.
-- The successful application of Point Transformer v3 as a backbone validates its general applicability to point cloud tasks.
+- The concentric zone polar grid idea from PatchWork++ can be integrated with learning-based methods.
+- Chodosh et al.’s self-supervised runtime optimization is a direct predecessor to the PseudoLabeler, which this work improves significantly.
+- The use of Point Transformer v3 validates its status as a versatile backbone for point cloud tasks.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Both the OmniLiDAR dataset and the self-supervised domain-agnostic training paradigm are pioneering contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive validation across three mainstream benchmarks, detailed ablation studies, and complete baseline comparisons.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure with well-articulated relationships among the three core components.
-- **Value**: ⭐⭐⭐⭐⭐ — Extremely high practical value, directly addressing annotation bottlenecks and sensor generalization challenges in autonomous driving ground segmentation.
+- **Novelty**: ⭐⭐⭐⭐ — The OmniLiDAR dataset and self-supervised domain-agnostic training paradigm are pioneering.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Extensive validation across three major benchmarks with detailed ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and well-defined relationships between core components.
+- **Value**: ⭐⭐⭐⭐⭐ — Extremely high practical value, solving annotation and generalization bottlenecks in autonomous driving.
 
 <!-- RELATED:START -->
 
@@ -139,10 +152,10 @@ Ablation of PseudoLabeler components (nuScenes):
 ## Related Papers
 
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
+- [\[CVPR 2025\] Exploring Scene Affinity for Semi-Supervised LiDAR Semantic Segmentation](../../CVPR2025/autonomous_driving/exploring_scene_affinity_for_semi-supervised_lidar_semantic_segmentation.md)
 - [\[CVPR 2026\] Le MuMo JEPA: Multi-Modal Self-Supervised Representation Learning with Learnable Fusion Tokens](le_mumo_jepa_multi-modal_self-supervised_representation_learning_with_learnable_.md)
-- [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
 - [\[CVPR 2026\] HorizonForge: Driving Scene Editing with Any Trajectories and Any Vehicles](horizonforge_driving_scene_editing_with_any_trajectories_and_any_vehicles.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](../../NeurIPS2025/autonomous_driving/self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
+- [\[CVPR 2025\] PSA-SSL: Pose and Size-aware Self-Supervised Learning on LiDAR Point Clouds](../../CVPR2025/autonomous_driving/psa-ssl_pose_and_size-aware_self-supervised_learning_on_lidar_point_clouds.md)
 
 </div>
 

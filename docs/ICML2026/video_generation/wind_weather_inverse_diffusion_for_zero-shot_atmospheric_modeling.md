@@ -2,122 +2,126 @@
 title: >-
   [Paper Note] WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling
 description: >-
-  [ICML2026][Video Generation][Meteorological foundation models] WIND models the global atmospheric sequence as an unconditional video diffusion prior. During inference, it formulates forecasting, downscaling…
+  [ICML 2026][Video Generation][diffusion forcing] WIND models global atmospheric sequences as an unconditional video diffusion prior. During inference, it treats forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios as differentiable inverse problems, enabling a single frozen model to solve multiple weather and climate tasks zero-sh
 tags:
-  - "ICML2026"
-  - "Video Generation"
-  - "Meteorological foundation models"
-  - "inverse problems"
-  - "diffusion forcing"
-  - "posterior sampling"
-  - "physical constraints"
+  - ICML 2026
+  - Video Generation
+  - diffusion forcing
+  - posterior sampling
 date: 2026-05-08
-content_hash: 0e984e0ee9950f2f
+content_hash: e3b433c1901596db
 ---
-
 # WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling
 
 **Conference**: ICML2026  
 **arXiv**: [2602.03924](https://arxiv.org/abs/2602.03924)  
-**Code**: No public code available  
+**Code**: No public code found  
 **Area**: Scientific Computing / Atmospheric Modeling / Diffusion Models  
-**Keywords**: Meteorological foundation models, inverse problems, diffusion forcing, posterior sampling, physical constraints  
+**Keywords**: Weather Foundation Models, Inverse Problems, Diffusion Forcing, Posterior Sampling, Physical Constraints  
 
 ## TL;DR
-WIND models the global atmospheric sequence as an unconditional video diffusion prior. During inference, it formulates forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios as differentiable inverse problems, solving multiple meteorological and climate tasks zero-shot using a single frozen model.
+WIND models global atmospheric sequences as an unconditional video diffusion prior. During inference, it treats forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios as differentiable inverse problems, enabling a single frozen model to solve multiple weather and climate tasks zero-shot.
 
 ## Background & Motivation
-**Background**: AI weather forecasting has established an efficient alternative to traditional numerical weather prediction (NWP), with models like GraphCast and GenCast providing strong results for specific prediction tasks. Meanwhile, downstream demands in atmospheric science extend far beyond medium-range forecasting, including spatial downscaling, temporal downscaling, sparse observation completion, long-term climate scenarios, and physical conservation constraints.
+**Background**: AI weather forecasting has established an efficient alternative to traditional numerical weather prediction (NWP). Models like GraphCast and GenCast provide strong results on specific prediction tasks. Meanwhile, downstream needs in atmospheric science extend far beyond medium-range forecasting to include spatial downscaling, temporal downscaling, sparse observation completion, long-term climate scenarios, and physical conservation constraints.
 
-**Limitations of Prior Work**: The current model ecosystem is fragmented. Models are often trained for a single task: forecasting models for prediction, downscaling models for resolution enhancement, and reconstruction models for observation completion. Switching tasks requires retraining or fine-tuning, which is costly and fails to guarantee a shared atmospheric physical prior across different tasks.
+**Limitations of Prior Work**: The current ecosystem is fragmented. Models are typically trained for a single task: forecasting models for prediction, downscaling models for resolution enhancement, and reconstruction models for data completion. Every new task requires retraining or fine-tuning, which is not only costly but also makes it difficult to ensure a shared atmospheric physical prior across different tasks.
 
-**Key Challenge**: Atmospheric systems require both strong probabilistic generative capabilities and the ability to be stably guided by external physical or observational constraints. Purely autoregressive models suffer from error accumulation during long rollouts; standard sequence diffusion models struggle with mixing the "clean" frames of the previous window with the "noisy" future frames; and conditional diffusion loses the unity of a foundation model if trained separately for each task.
+**Key Challenge**: Atmospheric systems require strong probabilistic generative capabilities while needing stable guidance from external physical or observational constraints. Pure autoregressive models suffer from error accumulation in long rollouts; standard full-sequence diffusion models struggle to combine clean frames from previous windows with future noisy frames; and conditional diffusion losing the universality of foundation models if trained separately for each task.
 
-**Goal**: The authors aim to train a single atmospheric generative prior that performs various weather/climate tasks during the inference phase solely through changes in the forward operator, without task-specific fine-tuning. In other words, the model learns "what a reasonable atmospheric sequence looks like" during training, and is told "what observations or physical conditions must be met this time" during inference.
+**Goal**: The authors aim to train a single atmospheric generative prior that performs various weather/climate tasks through changes in the forward operator during the inference stage, rather than through task-specific fine-tuning. In other words, the model learns "what a reasonable atmospheric sequence looks like" during training, and is told "what observation or physical conditions must be met" during inference.
 
-**Key Insight**: Atmospheric data is treated as video, where variables are channels, timesteps are frames, and the global grid represents spatial dimensions. Training employs *diffusion forcing*, allowing each frame to have an independent noise level. Inference utilizes *moment matching posterior sampling* (MMPS) to estimate the likelihood gradient of observations, injecting arbitrary differentiable constraints into the reverse diffusion process.
+**Key Insight**: The paper treats atmospheric data as a video: variables are channels, time steps are frames, and the global grid represents spatial dimensions. Training employs diffusion forcing, where each frame has an independent noise level. Inference uses moment matching posterior sampling (MMPS) to estimate observation likelihood gradients, injecting arbitrary differentiable constraints into the reverse diffusion process.
 
-**Core Idea**: Train an atmospheric video diffusion prior using diffusion forcing that can mix clean and noisy frames, then unify all downstream tasks as inverse problems defined by $Y = \mathcal{A}(X) + \eta$, with constraints imposed by MMPS during the sampling process.
+**Core Idea**: Train an atmospheric video diffusion prior capable of mixing clean and noisy frames using diffusion forcing, then unify all downstream tasks as inverse problems of the form $Y=\mathcal{A}(X)+\eta$, with constraints applied via MMPS during sampling.
 
 ## Method
-The WIND approach resembles "learning an atmospheric world model first, then writing tasks as observation equations." The model itself does not know whether a specific task is called forecasting, downscaling, or sparse reconstruction; these differences are encapsulated in the operator $\mathcal{A}$ during inference.
+The WIND approach resembles learning an atmospheric "world model" and subsequently formulating tasks as observation equations. The model itself remains agnostic to whether a specific task is forecasting, downscaling, or sparse reconstruction; these differences are encapsulated within the operator $\mathcal{A}$ during inference.
 
 ### Overall Architecture
-The training data comes from ERA5. The paper uses a 1.5-degree resolution, 70 atmospheric variables, and sequences of length 5 at 6-hour intervals. The backbone is a UViT, where inputs and outputs are atmospheric state sequences of shape $T \times C \times H \times W$. During training, noise levels are sampled independently for each frame, transforming clean atmospheric sequences into sequences with varying levels of corruption, from which the UViT recovers the clean sequence.
+Training data is sourced from ERA5, using a 1.5-degree resolution, 70 atmospheric variables, and sequences of length 5 at 6-hour intervals. The backbone is a UViT, where inputs and outputs are atmospheric state sequences of shape $T\times C\times H\times W$. During training, noise levels are sampled independently for each frame, transforming clean atmospheric sequences into sequences with varying degrees of corruption, which the UViT then reconstructs.
 
-During inference, given a task observation $Y$ and a forward operator $\mathcal{A}$—for instance, $\mathcal{A}$ is average pooling in spatial downscaling, a temporal mean in temporal downscaling, a binary mask in sparse reconstruction, and a nonlinear global dry air mass calculation in mass conservation—each step of the reverse diffusion begins with a prior score from WIND, followed by a likelihood score from MMPS based on the difference between $\mathcal{A}(\hat X)$ and the target $Y$. The sample is updated by the sum of both.
+During inference, given a task observation $Y$ and a forward operator $\mathcal{A}$. For example, $\mathcal{A}$ is average pooling in spatial downscaling, a temporal mean operator in temporal downscaling, a binary mask in sparse reconstruction, and a nonlinear global dry air mass (DAM) calculation in mass conservation. In each step of the reverse diffusion, WIND first provides a prior score, then MMPS provides a likelihood score based on the discrepancy between $\mathcal{A}(\hat X)$ and the target $Y$. The sample is updated by combining both.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Diffusion Forcing Training for Unified Atmospheric Prior (Design 1)"]
+        direction TB
+        A["ERA5 Atmospheric Sequence<br/>T×C×H×W"] --> B["Independent Noise Levels per Frame<br/>Mixed Clean/Noisy Frames"]
+        B --> C["UViT Denoising Reconstruction<br/>Without Explicit Noise Level"]
+    end
+    C --> D["Frozen Atmospheric Generative Prior WIND"]
+    D --> E["Task Operator 𝒜<br/>Downscaling/Mask/Mass Conservation (Design 2)"]
+    E --> F["Reverse Diffusion DDIM Step"]
+    F --> G["Prior Score + MMPS Likelihood Score<br/>Weighted by Uncertainty (Design 3)"]
+    G -->|Not Converged| F
+    G -->|Converged| H["Zero-Shot Multi-Task Output<br/>Forecasting/Downscaling/Sparse Recon/Conservation/Warming"]
+```
 
 ### Key Designs
-1. **Unifying Atmospheric Priors with Diffusion Forcing**:
-    - **Function**: Enables the model to process clean context frames and noisy future frames simultaneously within the same sequence, supporting stable rollouts of arbitrary length.
-    - **Mechanism**: While standard video diffusion typically assigns the same noise level to all frames, WIND independently samples $k^t$ for each timestep to generate $z^t = \alpha(k^t)x^t + \beta(k^t)\epsilon^t$. The model does not explicitly receive the noise levels and instead must infer the uncertainty of each frame from the input state.
-    - **Design Motivation**: Autoregressive weather generation requires the last frame of the previous window to serve as the clean context for the next. If the model has never seen clean/noisy mixed states during training, out-of-distribution inputs occur; independent noise levels resolve this.
 
-2. **Formulating Downstream Tasks as Differentiable Inverse Problems**:
-    - **Function**: Avoids training separate conditional models for each weather task, allowing a frozen model to adapt via different operators.
-    - **Mechanism**: During inference, $Y = \mathcal{A}(X) + \eta$ is uniformly set. Spatial downscaling uses $\mathcal{A}(X) = \mathrm{AvgPool}(X)$, temporal downscaling uses $\mathcal{A}(X) = \frac{1}{T}\sum_t x^t$, sparse reconstruction uses $\mathcal{A}(X) = M \odot X$, and physical conservation uses the nonlinear integral formula for dry air mass.
-    - **Design Motivation**: Weather tasks often essentially involve "recovering a complete state satisfying atmospheric priors from partial observations." By compressing task differences into $\mathcal{A}$, the model achieves zero-shot transfer via a single set of priors and samplers.
+**1. Diffusion Forcing Training for Unified Atmospheric Prior**: Autoregressive weather generation requires appending the last frame of the previous window (clean context) to the front of the next window. However, standard video diffusion assigns the same noise level to all frames. When the model encounters "mixed clean + noisy" inputs, it falls out-of-distribution, leading to divergence in long rollouts. WIND adopts diffusion forcing: noise levels $k^t$ are sampled independently for each time step, with the forward process $z^t=\alpha(k^t)x^t+\beta(k^t)\epsilon^t$. This ensures the model sees arbitrary "clean/noisy" combinations during training. During inference, historical context is treated as clean frames and future frames as noisy frames for seamless concatenation, supporting stable rollouts of arbitrary length. Crucially, the model **does not explicitly receive noise levels**; it must infer uncertainty per frame from the input state, learning more robust spatiotemporal representations rather than relying on a fixed noise schedule.
 
-3. **Inference with MMPS Guidance instead of Point-Estimate Constraints**:
-    - **Function**: More stably incorporates observational/physical constraints during reverse diffusion, specifically avoiding strong misleading gradients during high-noise stages.
-    - **Mechanism**: While standard diffusion posterior sampling often approximates $p(X|Z)$ as a Dirac delta at the current prediction, WIND uses MMPS to approximate $p(X|Z)$ as a Gaussian with covariance, using Tweedie covariance to estimate uncertainty. The prior dominates when noise is high, and likelihood guidance strengthens as noise decreases and predictions become more reliable.
-    - **Design Motivation**: Atmospheric task constraints can be high-dimensional, low-dimensional, or nonlinear. Without considering the model's current uncertainty, observation gradients in early high-noise stages can easily distort samples and destroy the generative prior.
+**2. Formulating Downstream Tasks as Differentiable Inverse Problems**: Traditional approaches train specialized models for forecasting, downscaling, and sparse reconstruction. WIND unifies all tasks into a single inverse problem $Y=\mathcal{A}(X)+\eta$—recovering a full state $X$ that satisfies the atmospheric prior from partial observations $Y$. Task differences are shifted into the forward operator $\mathcal{A}$: $\mathcal{A}(X)=\mathrm{AvgPool}(X)$ for spatial downscaling, $\mathcal{A}(X)=\frac{1}{T}\sum_t x^t$ for temporal downscaling, $\mathcal{A}(X)=M\odot X$ for sparse reconstruction, and nonlinear integral formulas for physical conservation. Thus, the same frozen model can zero-shot transfer to various tasks simply by changing $\mathcal{A}$.
+
+**3. MMPS Guided Sampling instead of Point Estimation Constraints**: Injecting constraints into reverse diffusion is difficult because the likelihood term $p(X|Z)$ lacks a closed-form solution. Standard Diffusion Posterior Sampling (DPS) approximates it as a Dirac delta at the current prediction point, effectively ignoring model uncertainty. Consequently, at high noise levels, observation gradients can overly distort samples and destroy the generative prior. WIND utilizes Moment Matching Posterior Sampling (MMPS): approximating $p(X|Z)$ as a Gaussian distribution with covariance and using Tweedie covariance to estimate prediction uncertainty. This ensures the prior dominates when noise is high and predictions are unreliable, while likelihood guidance strengthens as noise decreases, allowing stable application of high-dimensional, low-dimensional, or nonlinear atmospheric constraints.
 
 ### Loss & Training
-The training target is denoising score matching / clean sequence reconstruction. The model learns to recover atmospheric states from sequences with various noise level combinations. The paper uses a 5-frame window, 6-hour intervals, 70 variables, and a 1.5-degree ERA5 grid. The inference phase uses DDIM-like updates, adding the MMPS likelihood score for tasks requiring constraints. Meteorological forecasting, downscaling, and physical constraints are all completed during inference without task-specific fine-tuning.
+The training objective is denoising score matching / clean sequence reconstruction. The model learns to recover atmospheric states from sequences with varied noise levels. The study uses 5-frame windows, 6-hour intervals, 70 variables, and a 1.5-degree ERA5 grid. The inference stage employs DDIM-like updates, adding the MMPS likelihood score for constrained tasks. All meteorological forecasting, downscaling, and physical constraints are performed during inference without task-specific fine-tuning.
 
 ## Key Experimental Results
 
 ### Main Results
-The primary results demonstrate that the same model can work across various tasks. In medium-range forecasting, WIND's absolute CRPS on WeatherBench2 does not aim to surpass specialized models due to its coarser resolution, but it is more stable than autoregressive diffusion baselines. In downscaling and sparse reconstruction, WIND's advantages lie in spectral fidelity, physical consistency, and the lack of task-specific training.
+The main results demonstrate that the same model can work across different tasks. In medium-range forecasting, due to the coarser resolution, WIND's absolute CRPS on WeatherBench2 does not seek to outperform specialized models but is more stable than autoregressive diffusion baselines. In downscaling and sparse reconstruction, WIND's advantages lie in power spectra, physical consistency, and the lack of task-specific training.
 
-| Task | Evaluation Setup | WIND Results | Baseline | Conclusion |
-| :--- | :--- | :--- | :--- | :--- |
-| 14-day Probabilistic Forecast | 24 initials from 2021, 10 member ensemble, CRPS/SSR | CRPS better than AR-UViT after several days; SSR approaches 1 | AR-UViT (Autoregressive Diffusion) | Diffusion forcing is more stable, avoiding overshoot in humidity/precipitation variables |
-| WeatherBench2 24h T2m | CRPS ↓ | 0.286 | GenCast: 0.209, IFS ENS: 0.396 | Low-res general prior is weaker than specialized GenCast but better than IFS ENS |
-| Spatial Downscaling | 6° to 1.5°, RMSE/PSD | Temp: 0.63, Geopotential: 45.17, MSLP: 42.68 | Specialized UViT/FNO models | RMSE often lower than UViT, high-frequency spectral detail better than FNO, no task training needed |
-| Sparse Reconstruction (1%) | Only 1% observation points, RMSE | Temp: 0.65, Geopotential: 48.64, MSLP: 47.12 | UViT/Kriging | Better than specialized UViT for most variables; significantly less over-smoothing than Kriging |
-| 4-year DAM Constrained Rollout | Dry air mass stability | Strictly maintains target DAM throughout | Unconstrained WIND | Physical constraints prevent mass drift after approx. 200 days |
+| Task | Evaluation Setting | WIND Result | Baseline | Conclusion |
+|------|----------|----------|----------|------|
+| 14-day Probabilistic Forecast | 24 initials in 2021, 10-member ensemble, CRPS/SSR | CRPS better than AR-UViT after several days; SSR approaches 1 | AR-UViT (Autoregressive Diffusion) | Diffusion forcing is more stable, avoiding humidity/precipitation variable overshoot |
+| WeatherBench2 24h T2m | CRPS ↓ | 0.286 | GenCast 0.209, IFS ENS 0.396 | Low-res general prior is weaker than specialized GenCast but better than IFS ENS |
+| Spatial Downscaling | 6° to 1.5°, RMSE/PSD | Temp 0.63, Geopotential 45.17, MSLP 42.68 | Specialized UViT/FNO | RMSE often lower than UViT; high-frequency spectral details better than FNO without task training |
+| Sparse Recon 1% | 1% observation points, RMSE | Temp 0.65, Geopotential 48.64, MSLP 47.12 | UViT / Kriging | Outperforms specialized UViT on most variables; much less prone to oversmoothing than Kriging |
+| 4-year DAM Constrained Rollout | Dry air mass stability | Strictly maintains target DAM throughout | Unconstrained WIND | Physical constraints prevent mass drift after ~200 days |
 
 ### Ablation Study
-| Configuration | Key Metrics | Description |
-| :--- | :--- | :--- |
-| No DAM guidance | DAM drift after ~200 days in 4-year rollout | Purely data-driven generation deviates from physical conservation long-term |
-| DAM guidance | Target DAM maintained throughout 4-year rollout | MMPS imposes hard physical constraints without retraining |
-| Warming Free Run | Storm Bernd +2K/+14% humidity, only 50.3% precip signal retained | Model diffuses OOD thermal anomalies back to the training climate state |
-| Warming Guided Run | Mean peak precipitation enhancement +13.9% | Close to the Clausius-Clapeyron expectation of ~+14% |
-| Spatial Downscaling UViT | Lowest RMSE for most variables | Task-specific models prioritize pixel-wise error |
-| WIND Spatial Downscaling | PSD closer to ERA5, Pearson consistency 0.96 | General prior preserves high-frequency and physical statistical structures better |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| No DAM guidance | DAM drift after ~200 days in 4-year rollout | Pure data-driven generation eventually deviates from physical conservation |
+| DAM guidance | Maintain target DAM throughout 4-year rollout | MMPS can enforce hard physical constraints without retraining |
+| Warming Free Run | Storm Bernd +2K/+14% humidity, only 50.3% precip enhancement signal | Model diffuses OOD thermal anomalies back to the training climate state |
+| Warming Guided Run | Mean peak precip enhancement +13.9% | Close to the Clausius-Clapeyron expectation of ~+14% |
+| Spatial Downscaling UViT | Lowest RMSE for most variables | Specialized models hold an advantage in pixel-wise error |
+| WIND Spatial Downscaling | PSD closer to ERA5, Pearson consistency 0.96 | General prior better preserves high frequencies and physical statistical structure |
 
 ### Key Findings
-- A single frozen model can cover multiple task categories by changing $\mathcal{A}$, proving that "meteorological foundation model + inverse problem inference" is more flexible than "one specialized model per task."
-- While WIND does not always beat specialized UViT in RMSE, its spectra and distributions are closer to the ground truth ERA5, particularly reducing high-frequency smoothing issues common in deterministic models.
-- Sparse reconstruction best highlights the value of a foundation prior: when input is only 1% of observations, specialized conditional models struggle to generalize, whereas WIND utilizes the global atmospheric prior to complete unobserved regions.
-- Physical constraints are plug-and-play guidance during inference rather than soft regularization during training, making long-term mass conservation and warming scenarios controllable.
+- A single frozen model can cover multiple task types by changing $\mathcal{A}$, proving that "Atmospheric Foundation Model + Inverse Problem Inference" is more flexible than task-specific models.
+- While WIND does not always win on RMSE against specialized UViT, its power spectra and distributions are closer to real ERA5, specifically reducing high-frequency smoothing issues seen in deterministic models.
+- Sparse reconstruction highlights the value of a foundation prior: with only 1% observations, specialized conditional models struggle to generalize, whereas WIND uses the global atmospheric prior to complete unobserved regions.
+- Physical constraints are plug-and-play guidance during inference rather than soft regularization during training, making long-term mass conservation and warming scenario simulations controllable.
 
 ## Highlights & Insights
-- The most elegant aspect of the paper is its unity: forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios are not separate modules but different operators within the same posterior sampling framework.
-- Diffusion forcing aligns perfectly with the needs of meteorological rollouts. It addresses a specific but critical problem in video diffusion: how to naturally accept a mixed noise state of "past knowns and future unknowns."
-- The role of MMPS is not just to make the diffusion obey conditions, but to incorporate uncertainty into the guidance strength. For chaotic atmospheric dynamics, this is more rational than simple point-estimate DPS.
-- This paper serves as a reminder for scientific machine learning not to focus solely on single-task SOTA. For climate scenarios, the ability to impose new physical constraints zero-shot may be more important than minor RMSE leads on a fixed benchmark.
+- The most elegant aspect of the paper is unification: forecasting, downscaling, sparse reconstruction, mass conservation, and warming scenarios are not separate modules but different operators within the same posterior sampling framework.
+- Diffusion forcing aligns perfectly with the requirements of meteorological rollouts. It addresses a specific but critical issue in video diffusion: how to naturally accept a mixed noise state of "known past, unknown future."
+- The role of MMPS is not just making diffusion obey conditions, but incorporating uncertainty into guidance strength. For chaotic atmospheric dynamics, this is more principled than simple point-estimate DPS.
+- This paper serves as a reminder for SciML not to focus solely on single-task SOTA. In climate contexts, the ability to impose new physical constraints zero-shot may be more important than marginal RMSE gains on a fixed benchmark.
 
 ## Limitations & Future Work
-- WIND uses 1.5-degree ERA5; the authors acknowledge it is not intended to compete directly with 0.25-degree operational forecasting SOTA. Practical deployment would require higher resolution, more variables, and larger model scales.
-- Many results are illustrated through plots and spectra; RMSE is not always superior to specialized models. Systematic quantitative evaluations for extreme events, local risks, and energy/moisture closures are still needed.
-- MMPS guidance introduces additional inference costs, especially for constraints requiring conjugate gradient solvers. While the paper analyzes costs, optimization for multi-task, large ensembles, and long climate simulations is required.
-- Warming experiments use simplified global thermal perturbations (+2K, +14% humidity), which is suitable for mechanism validation but still distant from realistic regional climate change scenarios.
+- WIND uses 1.5-degree ERA5; the authors acknowledge they are not competing directly with 0.25-degree operational forecasting SOTA. Deployment would require higher resolution, more variables, and larger model scales.
+- Many results are illustrated via plots and spectra; RMSE does not always outperform specialized models. Systematic quantitative evaluation is still needed for extreme events, local risks, and energy/moisture closures.
+- MMPS guidance introduces additional inference costs, particularly for constraints requiring conjugate gradient solves. While costs are analyzed, optimization is needed for large ensembles or long climate simulations.
+- Warming experiments use simplified global thermal perturbations (+2K, +14% humidity). This is suitable for mechanism verification but remains distant from realistic regionalized climate change scenarios.
 
 ## Related Work & Insights
-- **vs. GenCast/GraphCast**: These models are optimized for medium-range forecasting and are stronger on WeatherBench2 absolute metrics; WIND’s advantage is unified inverse inference and zero-shot task transfer.
-- **vs. full-sequence diffusion**: Full-sequence diffusion struggles to naturally continue from a clean context in long rollouts; WIND’s per-frame independent noise training is better suited for rolling generation.
-- **vs. FNO/UViT downscaling**: Specialized models may have better RMSE but often produce smoothed predictions; WIND emphasizes physical realism in spectra and probabilistic distributions.
-- **vs. Physics-Informed Neural Networks**: Conventional methods often write conservation laws into the loss or architecture; WIND chooses to impose constraints via operator guidance during inference, offering higher flexibility.
+- **vs GenCast/GraphCast**: These models are optimized for medium-range forecasting and are stronger on absolute WeatherBench2 metrics; WIND's advantage lies in unified inverse problem inference and zero-shot task transfer.
+- **vs full-sequence diffusion**: Standard full-sequence diffusion struggles to connect clean contexts in long rollouts; WIND's independent noise training is better suited for rolling generation.
+- **vs FNO/UViT downscaling**: Specialized models might achieve better RMSE but often produce smooth predictions via pixel losses; WIND emphasizes physical realism in spectra and distributions.
+- **vs Physics-Constrained Neural Networks**: While traditional methods embed conservation laws into losses or architectures, WIND applies constraints via operator guidance during inference, offering higher flexibility.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Unifies diffusion forcing, MMPS, and atmospheric multi-task inverse problems naturally with high conceptual integrity.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers many tasks with long rollouts and OOD warming cases, though resolution and some metrics remain proof-of-concept.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology and helpful diagrams; however, results are scattered between the main text and appendix.
-- Value: ⭐⭐⭐⭐☆ Highly inspiring for scientific foundation models and climate AI; currently more of a research framework, requiring high-resolution scaling for engineering deployment.
+- Novelty: ⭐⭐⭐⭐⭐ Naturally unifies diffusion forcing, MMPS, and atmospheric multi-task inverse problems with high conceptual integrity.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers many tasks, including long rollouts and OOD warming cases, though resolution remains proof-of-concept.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear methodology and helpful diagrams; however, results are somewhat scattered between the main text and appendix.
+- Value: ⭐⭐⭐⭐☆ Highly insightful for scientific foundation models and climate AI; currently more of a research framework than a production tool.
 
 <!-- RELATED:START -->
 
@@ -125,11 +129,11 @@ The primary results demonstrate that the same model can work across various task
 
 ## Related Papers
 
+- [\[CVPR 2025\] Zero-1-to-A: Zero-Shot One Image to Animatable Head Avatars Using Video Diffusion](../../CVPR2025/video_generation/zero-1-to-a_zero-shot_one_image_to_animatable_head_avatars_using_video_diffusion.md)
 - [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/video_generation/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
-- [\[AAAI 2026\] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion](../../AAAI2026/video_generation/filmweaver_weaving_consistent_multi-shot_videos_with_cache-guided_autoregressive.md)
-- [\[NeurIPS 2025\] Seeing the Wind from a Falling Leaf](../../NeurIPS2025/video_generation/seeing_the_wind_from_a_falling_leaf.md)
-- [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](olaf-world_orienting_latent_actions_for_video_world_modeling.md)
-- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
+- [\[CVPR 2026\] Are Image-to-Video Models Good Zero-Shot Image Editors?](../../CVPR2026/video_generation/are_image-to-video_models_good_zero-shot_image_editors.md)
+- [\[ECCV 2024\] DreamMotion: Space-Time Self-Similar Score Distillation for Zero-Shot Video Editing](../../ECCV2024/video_generation/dreammotion_space-time_self-similar_score_distillation_for_zero-shot_video_editi.md)
+- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 
 </div>
 

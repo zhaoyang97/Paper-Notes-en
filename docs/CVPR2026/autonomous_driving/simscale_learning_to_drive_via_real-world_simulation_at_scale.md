@@ -2,21 +2,13 @@
 title: >-
   [Paper Note] SimScale: Learning to Drive via Real-World Simulation at Scale
 description: >-
-  [CVPR 2026 (Oral)][Autonomous Driving][simulation data] This paper proposes the SimScale framework, which generates large-scale, high-fidelity simulation data by applying trajectory perturbations to existing driving logs…
+  [CVPR 2026][Autonomous Driving][Paper Note] The authors propose SimScale, a framework that generates large-scale, high-fidelity simulation data by applying trajectory perturbation to existing driving logs, followed by reactive environment simulation and neural rendering. Combined with pseudo-expert trajectory supervision and a sim-real co-training strategy, the
 tags:
-  - "CVPR 2026 (Oral)"
-  - "Autonomous Driving"
-  - "simulation data"
-  - "end-to-end planning"
-  - "sim-to-real"
-  - "data scaling"
-  - "pseudo-expert trajectory"
-  - "neural rendering"
-  - "co-training"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 263ad85f9d2f17da
+content_hash: 877771fec7c24c1a
 ---
-
 # SimScale: Learning to Drive via Real-World Simulation at Scale
 
 **Conference**: CVPR 2026 (Oral)  
@@ -24,62 +16,73 @@ content_hash: 263ad85f9d2f17da
 **Code**: [OpenDriveLab/SimScale](https://github.com/OpenDriveLab/SimScale)  
 **Authors**: Haochen Tian, Tianyu Li, Haochen Liu, Jiazhi Yang et al. (CASIA, OpenDriveLab@HKU, Xiaomi EV)  
 **Area**: Autonomous Driving  
-**Keywords**: simulation data, end-to-end planning, sim-to-real, data scaling, pseudo-expert trajectory, neural rendering, co-training
+**Keywords**: Simulation Data, End-to-End Planning, Sim-to-Real, Data Scaling, Pseudo-expert Trajectories, Neural Rendering, co-training
 
 ## TL;DR
-This paper proposes the SimScale framework, which generates large-scale, high-fidelity simulation data by applying trajectory perturbations to existing driving logs, simulating reactive environment responses, and synthesizing sensor observations via neural rendering. Combined with pseudo-expert trajectory supervision and a sim-real co-training strategy, SimScale achieves substantial gains on NAVSIM v2 (navhard +8.6 EPDMS), with performance scaling smoothly with the volume of simulation data.
+The authors propose SimScale, a framework that generates large-scale, high-fidelity simulation data by applying trajectory perturbation to existing driving logs, followed by reactive environment simulation and neural rendering. Combined with pseudo-expert trajectory supervision and a sim-real co-training strategy, the end-to-end planner achieves significant improvements on NAVSIM v2 (+8.6 EPDMS on navhard), with performance scaling smoothly with the volume of simulated data.
 
 ## Background & Motivation
 
-Fully autonomous driving requires learning sound decisions across a broad spectrum of scenarios, including safety-critical and out-of-distribution (OOD) cases. However:
+Fully autonomous driving requires learning reasonable decision-making across a wide range of scenarios, including safety-critical and out-of-distribution (OOD) cases. However:
 
-- **Data distribution bias**: Real-world data collected by human experts is dominated by routine driving; safety-critical scenarios (hard braking, near-misses) and OOD scenes are severely underrepresented.
-- **Demonstration bias**: Imitation learning policies are only exposed to states within the expert distribution and cannot learn to recover from deviations.
-- **Limitations of existing simulation approaches**:
-    - Traditional simulators (CARLA/MetaDrive): insufficient rendering realism, large sim-to-real gap.
-    - NeRF/3DGS-based neural rendering: high visual quality but lacks scene interactivity (non-reactive environments).
-    - Pure trajectory perturbation: generates new states but lacks corresponding high-quality sensor observations.
+- **Data Distribution Bias**: Real-world data collected by human experts is dominated by routine driving; safety-critical scenarios (emergency braking, hazardous avoidance) and OOD cases are severely underrepresented.
+- **Demonstration Bias**: Imitation learning (IL) policies are exposed only to states within the expert distribution, preventing them from learning how to recover from deviated states.
+- **Limitations of Prior Work**:
+    - Traditional simulators (CARLA/MetaDrive): Lack photorealism, leading to a significant sim-to-real gap.
+    - Neural rendering (NeRF/3DGS): Professional quality but lacks scene interactivity (non-reactive environments).
+    - Pure trajectory perturbation: Generates new states but lacks corresponding high-quality sensor observations.
 
-**Mechanism**: Ego trajectories are perturbed on existing real driving logs to produce new states; a reactive environment model simulates responses from other traffic participants; neural rendering generates high-fidelity multi-view images for each new state; and pseudo-expert supervision trajectories are generated for the perturbed states — enabling scalable synthesis of large training datasets.
+**Mechanism**: The framework perturbs ego trajectories in existing real driving logs to create new states, simulates responses from other agents to maintain environment reactivity, utilizes neural rendering for high-fidelity multi-view images, and generates pseudo-expert trajectories for supervision, thereby synthesizing massive training data in a scalable manner.
 
 ## Method
 
-### Overall Architecture: Perturb → React → Render → Annotate
+### Overall Architecture
 
-The SimScale simulation data generation pipeline comprises three core modules:
+SimScale addresses a specific problem: IL policies only encounter states within the expert distribution and fail to correct themselves once they deviate. Real logs lack safety-critical scenarios, and collecting such data is costly. The core idea is to move "data augmentation" into simulation without falling into the sim-to-real gap of traditional simulators. It processes **existing real logs** through four steps, allowing each frame of real data to propagate into numerous supervised samples.
 
-### 1. Trajectory Perturbation
+The pipeline operates as follows: First, perturb the ego trajectory in a real log to "push" the vehicle into unencountered deviated states. Since these states disrupt interaction consistency, the environment's agents (vehicles, pedestrians) are simulated reactively. As the states and scene change, original camera frames become obsolete, so neural rendering is used to redraw distorted multi-view observations. Finally, pseudo-expert trajectories are generated as labels for these new states. These "sensor-observation + action-label" sim samples are then mixed with real data for co-training. The process accumulates over rounds, scaling the data volume.
 
-Perturbations are applied to the ego vehicle's original trajectory over the interval $[T, T+H]$, producing new state sequences that deviate from normal driving. Perturbation types include lateral offsets and speed variations, driving the ego into states absent from the original data.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    L["Real Driving Logs"] --> P["Trajectory Perturbation<br/>Lateral/Speed shifts to push ego into unseen states"]
+    P --> R["Reactive Environment Simulation<br/>Surrounding agents re-simulate reactions"]
+    R --> N["Neural Rendering<br/>3DGS redraws perturbed multi-view observations"]
+    N --> E["Pseudo-expert Trajectory Generation<br/>Action supervision for unlabeled new states"]
+    E -->|Recovery DAgger: Teaches error correction| S["Sim-Real Co-Training<br/>Direct mixing of sim + real without domain adaptation"]
+    E -->|Planner-based PDM: Seeks optimality| S
+    D["Real Driving Data"] --> S
+    S --> O["End-to-End Planner<br/>Regression/Diffusion/Scoring-based"]
+    S -.->|Multi-round accumulation 65K→236K tokens| L
+```
 
-### 2. Reactive Environment Rollout
+### Key Designs
 
-Following ego perturbation, other traffic participants (vehicles, pedestrians, etc.) must respond accordingly. A reactive simulation engine (based on MTGS and related work) is employed to ensure physical plausibility and interaction consistency, preventing artifacts such as clipping or unrealistic collisions.
+**1. Trajectory Perturbation: Actively Pushing Ego into Unseen State Spaces**
 
-### 3. Neural Rendering
+The blind spot of IL is that experts never demonstrate "what to do after making a mistake," meaning training data naturally lacks off-policy states. SimScale applies lateral offsets and velocity changes to the original ego trajectory within a time window $[T, T+H]$, forcing the vehicle out of the normal route into states not captured in original logs. This is the starting point: creating "non-expert states" to teach the model how to recover.
 
-High-fidelity multi-view camera observations are synthesized using 3D Gaussian Splatting (3DGS), conditioned on the perturbed ego pose and the reactive environment state, providing visual inputs for the end-to-end model.
+**2. Reactive Environment Simulation: Dynamic Scene Response**
 
-### 4. Pseudo-Expert Trajectory Generation
+Once the ego trajectory deviates, the original trajectories of other agents become inconsistent—they were recorded based on the original ego behavior. Directly reusing them leads to physical impossibilities like clipping or collisions. SimScale uses a reactive simulation engine (based on MTGS, etc.) to re-calculate the reactions of surrounding vehicles and pedestrians, ensuring interaction consistency. This distinguishes it from "high-fidelity but static playback" solutions like standard NeRF/3DGS.
 
-Action supervision labels are provided for simulated states. Two strategies are compared:
+**3. Neural Rendering: Realistic Multi-view Observations for New States**
 
-- **Recovery-based**: At the perturbation endpoint $T+H$, a trajectory is planned directly from the current deviated state back to a reasonable driving state. Analogous to DAgger, this teaches the model "how to correct after an error."
-- **Planner-based**: A rule-based planner (PDM) replans the optimal trajectory within the simulated environment, providing higher-quality action supervision.
+With changed states and environments, the end-to-end model requires camera images corresponding to the new poses. SimScale utilizes 3D Gaussian Splatting (3DGS) to re-render multi-view observations based on the perturbed ego pose and reactive environment state. This high-fidelity rendering is the physical reason the sim-real gap is minimized, removing the need for auxiliary domain adaptation.
 
-### 5. Sim-Real Co-Training Strategy
+**4. Pseudo-expert Trajectory Generation: Supervision for Unlabeled States**
 
-Simulation and real data are mixed for joint training using a straightforward co-training strategy without complex domain adaptation. The approach is compatible with multiple end-to-end planner types:
+Perturbed states lack expert actions. The paper compares two routes: **Recovery-based** plans a trajectory from the deviated state back to the normal route at $T+H$ (DAgger philosophy), specifically teaching "how to recover." **Planner-based** uses a rule-based planner (PDM) to re-plan an optimal trajectory in the simulation. While planner-based actions are more optimal, the recovery-based approach provides better diversity for error correction.
 
-- **Regression-based** (LTF / Transfuser): directly regresses trajectory waypoints.
-- **Diffusion-based** (DiffusionDrive): generates trajectory distributions via diffusion models.
-- **Scoring-based** (GTRS-Dense): ranks candidate trajectories by score. This paradigm additionally supports a **rewards-only** mode, where simulation data provides only reward signals rather than imitation learning supervision.
+**5. Sim-Real Co-Training: Direct Mixing without Domain Adaptation**
 
-## Key Experimental Results
+Simulation and real data are mixed for joint training without domain randomization or adaptation techniques, as neural rendering minimizes the visual gap. This strategy is compatible with various end-to-end planners: regression-based (LTF/Transfuser), diffusion-based (DiffusionDrive), and scoring-based (GTRS-Dense). Notably, scoring-based models support a "rewards only" mode where simulation data provides reward signals rather than IL labels, bypassing the quality ceiling of pseudo-experts.
 
-Evaluation is conducted on the NAVSIM v2 benchmark, comprising two splits: **navhard** (high-difficulty safety-critical scenarios) and **navtest** (standard test set).
+### Key Experimental Results
 
-### Table 1: Model Zoo Main Results (EPDMS Metric)
+Evaluation is conducted on the NAVSIM v2 benchmark, including the `navhard` (safety-critical) and `navtest` (standard) splits.
+
+**Table 1: Model Zoo Main Results (EPDMS Metric)**
 
 | Model | Backbone | Co-Train Mode | navhard EPDMS | navhard Gain | navtest EPDMS | navtest Gain |
 |---|---|---|---|---|---|---|
@@ -91,56 +94,52 @@ Evaluation is conducted on the NAVSIM v2 benchmark, comprising two splits: **nav
 | GTRS-Dense | V2-99 | rewards only | 48.0 | **+6.1** | 84.8 | **+0.8** |
 
 **Key Findings**:
-- All planner types benefit from simulation data, with particularly pronounced gains on navhard (+5.1 ~ +8.6).
-- GTRS-Dense + rewards only achieves the largest navhard gain (+8.6), indicating that scoring-based planners can fully leverage simulation data through reward signals alone, without pseudo-expert trajectory labels.
-- Consistent improvements on navtest (+0.5 ~ +2.9) confirm that simulation data also enhances generalization.
+- All strategy types benefit from simulation data, with `navhard` showing the most significant gains (+5.1 to +8.6).
+- GTRS-Dense + rewards only achieves the highest gain (+8.6), suggesting scoring-based strategies can leverage sim data via reward signals without requiring explicit pseudo-labels.
+- Consistent improvements on `navtest` (+0.5 to +2.9) indicate enhanced generalization.
 
-### Table 2: Scalability Analysis — Simulation Data Volume vs. Performance
+**Table 2: Scaling Analysis — Sim Data Volume vs. Performance**
 
-| Simulation Rounds | Sim Tokens | GTRS navhard (pseudo-expert) | GTRS navhard (rewards only) | LTF navhard |
+| Sim Rounds | Sim Token Count | GTRS navhard (pseudo-expert) | GTRS navhard (rewards only) | LTF navhard |
 |---|---|---|---|---|
-| 0 (real data only) | 0 | 38.3 | 38.3 | 23.4 |
-| 1 round (round 0) | ~65K | 42.5 | 43.1 | 27.8 |
-| 3 rounds (round 0–2) | ~166K | 44.8 | 45.6 | 29.5 |
-| 5 rounds (round 0–4) | ~236K | 46.1 | 46.9 | 30.3 |
+| 0 (Real Only) | 0 | 38.3 | 38.3 | 23.4 |
+| Round 1 | ~65K | 42.5 | 43.1 | 27.8 |
+| Round 3 | ~166K | 44.8 | 45.6 | 29.5 |
+| Round 5 | ~236K | 46.1 | 46.9 | 30.3 |
 
-**Scalability Insights**:
-- Performance improves smoothly with increasing simulation data volume, with no clear saturation.
-- Expanding simulation data alone — without adding real data — consistently yields further gains.
-- Different planner architectures exhibit distinct scaling characteristics: scoring-based planners scale best, followed by diffusion-based planners.
+**Key Findings**:
+- Performance scales smoothly with sim data volume without clear saturation.
+- Different architectures show different scaling behaviors: scoring-based scales best, followed by diffusion-based.
 
 ## Highlights & Insights
 
-- **CVPR 2026 Oral**: Selected for oral presentation, reflecting high recognition from the community.
-- **Complete simulation-training closed loop**: The pipeline from perturbation to reaction to rendering to annotation to training forms a fully scalable data augmentation framework.
-- **Pseudo-experts should be exploratory**: Recovery-based pseudo-experts teach the model to recover from mistakes, outperforming planner-based supervision in certain scenarios — suggesting that data diversity matters more than trajectory optimality.
-- **Multimodal modeling enables scaling**: Diffusion-based and scoring-based planners leverage expanded simulation data more effectively than regression-based planners, as they model trajectory distributions rather than point estimates.
-- **Reward is All You Need**: GTRS-Dense achieves its best performance in rewards-only mode, demonstrating that for scoring-based planners, imitation learning supervision on simulation data is unnecessary — reward signals suffice.
-- **Sim-to-real gap is manageable**: A straightforward co-training strategy is sufficient; complex domain adaptation or domain randomization techniques are unnecessary, attributable to the high fidelity of neural rendering.
-- **Fully open-sourced**: TB-scale simulation data, training code, and model weights are all publicly released, enabling strong reproducibility.
+- **CVPR 2026 Oral**: High recognition for the scalable data pipeline.
+- **Closed-loop Simulation-Training**: A complete pipeline from perturbation to rendering and training.
+- **Exploratory Pseudo-experts**: Recovery-based pseudo-experts teach error correction more effectively than pure optimal planners in specific scenarios, emphasizing diversity over optimality.
+- **Scaling via Multimodal Modeling**: Diffusion and scoring-based planners better utilize scaled sim data because they model trajectory distributions rather than single-point estimates.
+- **Reward is All You Need**: GTRS-Dense performs best in "rewards only" mode, showing simulation can provide value solely via reward signals for scoring planners.
+- **Controllable Sim-Real Gap**: Neural rendering is realistic enough that simple co-training suffices without complex domain adaptation.
 
 ## Limitations & Future Work
 
-- **Infrastructure dependency**: High-quality 3DGS neural rendering (MTGS) and a reactive simulation engine are prerequisites, incurring significant upfront cost.
-- **Large simulation data footprint**: Five rounds of simulation produce several TB of sensor data, resulting in substantial storage and I/O overhead.
-- **Scene diversity bounded by original logs**: Perturbations can only generate variants in the neighborhood of existing scenes; entirely new scenario types (e.g., snowy conditions absent from the original data) cannot be synthesized.
-- **Evaluation scope**: Validation is primarily conducted on NAVSIM v2 closed-loop evaluation; generalization to other benchmarks (e.g., nuPlan, CARLA closed-loop) remains unverified.
-- **Pseudo-expert quality ceiling**: The quality of pseudo-expert trajectories is fundamentally limited by the performance ceiling of the PDM planner.
-- **Longer simulation horizons unexplored**: The current simulation window is fixed at 6 seconds; longer rollouts and accumulated error handling have not been addressed.
+- **Infrastructure Dependency**: Requires high-quality 3DGS neural rendering and reactive simulation engines, involving high pre-processing costs.
+- **Sim Data Scale**: 5 rounds of simulation generate several terabytes of sensor data, posing significant storage and I/O challenges.
+- **Log-Bound Diversity**: Perturbations generate variations within the neighborhood of existing scenes; it cannot create entirely new environmental types (e.g., generating snow if the logs only contain clear weather).
+- **Evaluation Scope**: Primarily validated on NAVSIM v2; testing on other benchmarks like nuPlan or CARLA closed-loop is needed.
+- **Pseudo-expert Ceiling**: The quality of the rule-based planner (PDM) limits the potential of the pseudo-labels.
 
 ## Related Work & Insights
 
-- **End-to-end autonomous driving**: Methods such as UniAD, VAD, and Transfuser enable direct sensor-to-trajectory planning but are constrained by insufficient safety-critical scenarios in training data.
-- **Driving scene simulation**: The field has progressed from traditional rendering (CARLA/MetaDrive) to high-fidelity neural rendering (NeRF/3DGS, which remains static) and further to reactive simulation (e.g., DriveArena, MTGS). SimScale builds on reactive simulation and adds scalable pseudo-expert generation.
-- **Data scaling and co-training**: DAgger-style methods (online interaction) and large-scale collection efforts (DROID/Scaling-up) pursue data scaling through real-world collection; SimScale instead scales via simulation, avoiding the cost of additional data acquisition.
-- **Scoring-based planning**: Reward-based trajectory selection paradigms such as GTRS demonstrate a unique advantage in sim-real settings (rewards-only mode), as validated in this work.
+- **End-to-End Planning**: Methods like UniAD and VAD are limited by the scarcity of safety-critical data in human logs.
+- **Driving Simulation**: SimScale bridges the gap between traditional simulators (CARLA) and static neural rendering by adding reactivity and labels.
+- **Data Scaling**: Unlike DAgger which requires online interaction, SimScale focuses on offline simulation scaling to reduce real-world collection costs.
 
 ## Rating
 
-- **Novelty**: 4/5 — Formalizes a complete closed-loop framework integrating trajectory perturbation, reactive simulation, neural rendering, and pseudo-expert generation; provides the first systematic study of simulation data scaling laws for end-to-end planners.
-- **Experimental Thoroughness**: 5/5 — Covers 3 planner architectures × 2 backbones × 2 pseudo-expert strategies × 5 scaling rounds with comprehensive ablations; data and code are fully open-sourced.
-- **Writing Quality**: 4/5 — Well-structured with clearly articulated core insights (three scaling findings); meets CVPR Oral standards.
-- **Value**: 5/5 — Establishes a scalable simulation data augmentation paradigm for end-to-end autonomous driving with a mature open-source ecosystem and strong practical utility.
+- Novelty: 4/5
+- Experimental Thoroughness: 5/5
+- Writing Quality: 4/5
+- Value: 5/5
 
 <!-- RELATED:START -->
 
@@ -148,11 +147,11 @@ Evaluation is conducted on the NAVSIM v2 benchmark, comprising two splits: **nav
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
+- [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
 - [\[CVPR 2026\] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos](learning_to_drive_is_a_free_gift_large-scale_label-free_autonomy_pretraining_fro.md)
-- [\[ICCV 2025\] LookOut: Real-World Humanoid Egocentric Navigation](../../ICCV2025/autonomous_driving/lookout_real-world_humanoid_egocentric_navigation.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[ICLR 2026\] EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](../../ICLR2026/autonomous_driving/egodex_learning_dexterous_manipulation_from_large-scale_egocentric_video.md)
-- [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
+- [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
+- [\[CVPR 2026\] Real-World On-Vehicle Evaluation of Embedding-Based Anomaly Detection](real-world_on-vehicle_evaluation_of_embedding-based_anomaly_detection.md)
 
 </div>
 

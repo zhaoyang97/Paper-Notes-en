@@ -2,156 +2,149 @@
 title: >-
   [Paper Note] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars
 description: >-
-  [CVPR 2026][Image Generation][real-time digital human] This paper proposes a two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) that converts a bidirectional human video…
+  [CVPR 2026][Image Generation][Diffusion Model] A two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) is proposed to transform bidirectional human video diffusion models into real-time streaming generators. By utilizing Reference Sink, RAPR positional re-encoding, and a consistency-aware discriminator to ensure long-v
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "real-time digital human"
-  - "streaming video generation"
-  - "autoregressive distillation"
-  - "speaking-listening interaction"
-  - "diffusion models"
+  - CVPR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: e2c2046eac651976
+content_hash: 8b1de30423843f95
 ---
-
 # StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.22065](https://arxiv.org/abs/2512.22065)  
 **Code**: [https://streamavatar.github.io](https://streamavatar.github.io)  
-**Area**: Image Generation
-**Keywords**: real-time digital human, streaming video generation, autoregressive distillation, speaking-listening interaction, diffusion models
+**Area**: Image Generation  
+**Keywords**: Real-time digital human, streaming video generation, autoregressive distillation, talk-listen interaction, diffusion models
 
 ## TL;DR
-This paper proposes a two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) that converts a bidirectional human video diffusion model into a real-time streaming generator. Reference Sink, RAPR positional re-encoding, and a consistency-aware discriminator are introduced to ensure long-video stability, realizing the first full-body real-time digital human that supports both speaking and listening interactions.
+A two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) is proposed to transform bidirectional human video diffusion models into real-time streaming generators. By utilizing Reference Sink, RAPR positional re-encoding, and a consistency-aware discriminator to ensure long-video stability, it achieves the first full-body real-time digital human supporting both talking and listening interactions.
 
 ## Background & Motivation
 
-1. **Background**: Diffusion models have achieved remarkable success in audio-driven talking avatar generation, enabling high-quality talking videos from a single image. Representative works include Hallo3, OmniAvatar, and HunyuanVideo-Avatar.
+1.  **Background**: Diffusion models have achieved significant success in audio-driven talking avatar generation, producing high-quality videos from single images. Representative works include Hallo3, OmniAvatar, and HunyuanVideo-Avatar.
 
-2. **Limitations of Prior Work**: Three major challenges hinder practical deployment:
-    - **Real-time streaming generation**: The iterative denoising (25–50 steps) and long-context bidirectional attention in diffusion models are computationally prohibitive, and bidirectional attention is inherently incompatible with streaming. Existing methods require 7–74 minutes to generate a 5-second video.
-    - **Long-term stability**: Streaming interaction demands continuous generation of long videos, but autoregressive approaches tend to accumulate errors, leading to identity drift and quality degradation.
-    - **Speaking–listening interaction**: Existing methods model only the speaking behavior and ignore the listening state. In conversational scenarios, neglecting the listening state renders interactions unnatural. The few methods that do model listening are limited to the head-and-shoulder region, lacking gesture expressiveness and full-body representation.
+2.  **Limitations of Prior Work**: Three major challenges hinder practical application:
+    *   **Real-time Streaming Generation**: Iterative denoising (25-50 steps) and long-context bidirectional attention in diffusion models require immense computation, and bidirectional attention inherently lacks streaming support. Existing methods require 7-74 minutes to generate 5 seconds of video.
+    *   **Long-term Stability**: Streaming interactions require continuous generation of long videos, but autoregressive methods tend to accumulate errors, leading to identity drift and quality degradation.
+    *   **Talk-Listen Interaction**: Current methods primarily model speaking behavior, neglecting the listening state. In conversational scenarios, failing to model listening makes interactions appear unnatural. The few methods that model listening are limited to the head-and-shoulder region and lack gesture/full-body expressiveness.
 
-3. **Key Challenge**: High quality requires powerful bidirectional diffusion models, whereas real-time streaming demands lightweight causal models. The tension between quality and speed is the central conflict.
+3.  **Key Challenge**: High quality requires powerful bidirectional diffusion models, whereas real-time streaming requires lightweight causal models. The contradiction between quality and speed is the core problem.
 
-4. **Goal**: To efficiently convert a high-fidelity but non-causal human video diffusion model into a real-time, streaming, interaction-capable generator.
+4.  **Goal**: Efficiently transform high-fidelity but non-causal human video diffusion models into real-time, streaming, and interaction-ready generators.
 
-5. **Key Insight**: A strong bidirectional teacher model supporting speaking–listening interaction is trained first, then compressed into a 3-step causal autoregressive student model via two-stage distillation and adversarial refinement. Dedicated attention mechanisms and positional encoding improvements are proposed to address long-video stability.
+5.  **Key Insight**: First train a powerful bidirectional teacher model (supporting talk-listen interaction), then compress it into a 3-step causal autoregressive student model through two-stage distillation and adversarial refinement. Specialized attention mechanisms and positional encoding improvements are proposed for long-video stability.
 
-6. **Core Idea**: Autoregressive distillation compresses the denoising process from 40+ steps to 3 steps; Reference Sink and RAPR address identity drift; together they enable generation of a 5-second 720p video in 20 seconds.
+6.  **Core Idea**: Denoising steps are compressed from 40+ to 3 via autoregressive distillation. Reference Sink and RAPR are introduced to resolve identity drift, enabling the generation of 5 seconds of 720p video in 20 seconds.
 
 ## Method
 
 ### Overall Architecture
-Built upon Wan2.2-TI2V-5B as the backbone (30 DiT blocks), the framework first trains a bidirectional teacher model supporting speaking–listening interaction, then converts it into a real-time streaming student model in two stages:
-- **Stage 1**: Autoregressive distillation — bidirectional attention is converted to block-wise causal attention, and Score Identity Distillation reduces denoising steps from 40+ to 3.
-- **Stage 2**: Adversarial refinement — a consistency-aware discriminator is used in adversarial training to repair quality degradation caused by distillation.
+The core contradiction addressed is that high-fidelity human video requires heavy bidirectional diffusion models (40+ denoising steps, sequence-wide bidirectional attention), while real-time streaming requires lightweight causal models. StreamAvatar adopts a "heavy-to-light" strategy: a bidirectional diffusion model supporting talk-listen interaction is first trained as a teacher, which is then compressed into a causal student capable of per-frame generation through two stages.
+
+The backbone is Wan2.2-TI2V-5B (30 DiT blocks). The workflow consists of: Stage 1, where autoregressive distillation replaces bidirectional attention with block-wise causal attention and uses Score Identity Distillation (SiD) to cut denoising from 40+ steps to 3, resulting in a streaming student with some quality loss; Stage 2, where adversarial refinement uses a consistency-aware discriminator to restore the lost quality. During generation, the model is conditioned on a "reference frame + rolling context" and outputs frames in chunks ($C=3$), maintaining stability via Reference Sink and RAPR.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    T["Bidirectional Teacher Model<br/>Wan2.2-TI2V-5B (Supports Talk-Listen)"] --> S1["Autoregressive Distillation<br/>Block-wise Causal Attn + SiD (40+ to 3 steps)"]
+    S1 --> S2["Adversarial Refinement<br/>Consistency-aware Discriminator"]
+    S2 --> ST["3-step Causal Student Model"]
+    ST --> GEN
+    subgraph GEN["Streaming Generation (Rolling 3-frame chunks)"]
+        direction TB
+        C1["Read Rolling KV-cache"] --> C2["Reference Sink + RAPR<br/>Permanent Anchor + Truncated Re-encoding"]
+        C2 --> C3["3-step Causal Denoising"]
+        C3 --> C4["Talk-Listen Modeling<br/>Audio Mask Selection"]
+        C4 -->|Write KV, Evict Oldest| C1
+    end
+    GEN --> OUT["Real-time Full-body Avatar Video"]
+```
 
 ### Key Designs
 
-1. **Autoregressive Distillation (Stage 1)**:
+**1. Autoregressive Distillation: Compressing 40+ steps to 3-step Causal Generation**
 
-    - **Function**: Converts the bidirectional diffusion model into a real-time causal autoregressive generator.
-    - **Mechanism**: The generation window is divided into a reference frame chunk (1 frame) and generation chunks (each containing $C=3$ frames). Causal attention is applied across chunks while bidirectional attention is retained within each chunk. A rolling KV-cache stores context over a finite window. Distillation proceeds in two steps: (a) ODE initialization — the teacher model generates videos with recorded denoising trajectories, and the student is trained to predict $\{x_t^0\}$ from $\{x_t^n\}$; (b) Score Identity Distillation — a student-forcing scheme is adopted where the student predicts the next chunk conditioned on its own previous outputs, mitigating the train–test mismatch. It is found that skipping the KV-cache update step (conditioning on noisy $\{x_t^1\}$ rather than clean $\{x_t^0\}$) incurs negligible quality loss while saving one forward pass.
-    - **Design Motivation**: Directly applying the bidirectional model for streaming is infeasible (requiring the full sequence), and 40+ denoising steps are too slow. Block-causal attention preserves local bidirectional dynamics while enabling autoregressive generation.
+Bidirectional models require the full sequence for calculation, preventing streaming. In this approach, the generation window is divided into a reference chunk (1 frame) and several generation chunks (each $C=3$ frames). Causal attention is used between chunks, while bidirectional attention is kept within chunks to preserve local dynamics. A rolling KV-cache manages finite context.
 
-2. **Reference Sink + RAPR (Positional Encoding Improvement)**:
+Distillation involves two steps: First, ODE initialization, where the student learns to predict clean frames $\{x_t^0\}$ from noisy frames $\{x_t^n\}$ based on teacher trajectories. Second, Score Identity Distillation with student-forcing ensures the student predicts the next chunk based on its own previous outputs, aligning training and inference distributions. It was discovered that skipping KV-cache updates for clean predictions $\{x_t^0\}$ in favor of noisy $\{x_t^1\}$ as conditions saves a forward pass without quality loss.
 
-    - **Function**: Addresses identity drift and quality degradation in long video generation.
-    - **Mechanism**: **Reference Sink**: The KV pairs of the reference frame are permanently retained in the rolling KV-cache, ensuring the model can always attend to the original identity. The KV pairs of the first generated chunk are additionally retained to further improve consistency. **RAPR (Reference-Anchored Positional Re-encoding)**: Resolves two problems with standard RoPE — (1) train–test mismatch (the model sees only short sequences during training but encounters out-of-distribution large position indices at inference), and (2) the inherent long-range attention decay of RoPE reducing attention to reference frames. RAPR stores un-encoded keys, and when generating the current frame $x_t$, computes a capped distance $\min(t, D)$ (where $D < T$) to the reference frame as the RoPE index, simultaneously adjusting the relative positions of all cached keys, then applies RoPE uniformly. This (a) bounds the maximum distance to prevent attention decay, and (b) keeps both training and inference within a bounded position space, eliminating the OOD problem.
-    - **Design Motivation**: Without Reference Sink, the model loses identity information as frames are evicted from the cache. Without RAPR, even with Sink, RoPE's decay characteristics and OOD position indices still cause instability in long videos. A key elegance of RAPR is that short videos can simulate the positional offsets of long-video inference during training, without requiring actual long video generation.
+**2. Reference Sink + RAPR: Anchoring Identity in Long Videos**
 
-3. **Consistency-Aware Discriminator (Stage 2 Adversarial Refinement)**:
+Rolling KV-caches suffer from identity drift as old reference information is evicted. Reference Sink permanently retains KV pairs of the reference frame and the first generated chunk in the cache. 
 
-    - **Function**: Repairs quality degradation after distillation (blurriness, hand/teeth artifacts) and enhances temporal consistency.
-    - **Mechanism**: The discriminator is initialized from the pretrained teacher backbone, with $N_Q=3$ Q-Former modules inserted at intermediate layers to extract deep features. Two output branches: (a) **Local authenticity branch** — a linear projection over per-frame features produces frame-wise logits evaluating single-frame quality; (b) **Global consistency branch** — cross-attention between reference frame features and all subsequent frame features outputs a single logit penalizing deviation from the reference identity. Relativistic adversarial loss with R1/R2 gradient penalties is used. Crucially, the adversarial stage trains on real video data to directly push the generated distribution toward the real distribution.
-    - **Design Motivation**: Distillation inevitably degrades quality. A conventional discriminator focuses only on per-frame authenticity and cannot resolve inter-frame consistency issues. The global consistency branch explicitly constrains all frames to remain identity-consistent with the reference frame.
+To address RoPE limitations (OOD indices in long sequences and long-distance decay), RAPR (Reference-Anchored Positional Re-encoding) is proposed. Raw keys are stored in the cache. When generating frame $x_t$, the distance to the reference is truncated to $\min(t, D)$ for some limit $D$. All cached key relative positions are adjusted accordingly before applying RoPE. This ensures the maximum distance is capped, preventing attention decay and OOD issues.
 
-4. **Speaking–Listening Interaction Model**:
+**3. Consistency-aware Discriminator: Dual-branch Refinement**
 
-    - **Function**: Enables digital humans to speak and listen naturally.
-    - **Mechanism**: An **Audio Mask** distinguishes speaking and listening phases — obtained via TalkNet (joint audio-visual detection), which is more accurate than audio-separation-based approaches. The audio mask is applied after Wav2Vec 2.0 feature extraction (rather than before), avoiding waveform modification that would cause feature distribution shift. Two audio attention modules are added within each DiT block: Talk Audio Attention injects speaking audio to drive expressions and gestures, while Listen Audio Attention injects listening audio to drive natural reactive movements. The text prompt is fixed as "a person is speaking and listening."
-    - **Design Motivation**: Audio separation modifies the waveform, causing Wav2Vec-extracted features to deviate from the pretrained distribution. Ablation experiments (Pre-Mask vs. Ours) confirm that post-Wav2Vec masking outperforms pre-masking on all metrics.
+To restore quality lost during 3-step distillation (e.g., blurring, hand/teeth distortion), a discriminator is initialized from the teacher backbone. $N_Q=3$ Q-Formers extract deep features for two branches: a local authenticity branch for per-frame realism and a global consistency branch that uses cross-attention between reference and frame features to penalize identity deviation.
 
-### Loss & Training
-- Teacher model: fine-tuned from Wan2.2-TI2V-5B for 20,000 steps, batch size 32, lr 5e-6.
-- Student Stage 1: ODE initialization for 5,000 steps (bs 8, lr 2e-6) + SiD distillation for 6,000 steps (bs 16, lr 3e-6).
-- Student Stage 2: Adversarial refinement for 1,400 steps (bs 32, lr 5e-6).
-- Training data: ~200 hours of 720p video (SpeakerVid-5M + self-collected), with speaking/listening samples balanced according to TalkNet-detected listening ratios.
-- At inference, the DiT and VAE decoder are pipelined across two H800 GPUs, with a latency of 1.2 seconds.
+**4. Talk-Listen Interaction Modeling: Post-Wav2Vec Audio Masking**
 
-## Key Experimental Results
+Interaction stages are distinguished using an Audio Mask provided by TalkNet. To preserve feature quality, the mask is applied *after* Wav2Vec 2.0 feature extraction. The model incorporates dual audio attention modules: Talk Audio Attention for speech-driven expressions/gestures, and Listen Audio Attention for natural reactive movements.
 
-### Main Results (Talking Video Generation)
+### Key Experimental Results
 
-| Method | FID ↓ | FVD ↓ | IQA ↑ | Sync-C ↑ | HKV (Gesture) | HA ↑ | Steps | Resolution | Time (5s) |
-|--------|-------|-------|-------|----------|--------------|------|-------|------------|-----------|
-| StableAvatar | 75.20 | 603.54 | 4.66 | 4.24 | 42.92 | 0.909 | 40 | 480p | 12 min |
-| OmniAvatar | 87.24 | 851.93 | 4.45 | 7.60 | 8.64 | 0.974 | 25 | 480p | 36 min |
-| HY-Avatar | 76.49 | 557.46 | 4.67 | 6.71 | 54.31 | 0.947 | 50 | 720p | 74 min |
-| EchoMimicV3 | 78.65 | 724.29 | 4.66 | 3.10 | 25.53 | 0.969 | 25 | 480p | 7 min |
-| **Ours** | **74.21** | **707.34** | **4.68** | **7.06** | 48.35 | **0.974** | **3** | **720p** | **20 s** |
+#### Main Results (Talking Avatar Generation)
 
-### Ablation Study (Incremental Component Addition)
+| Method | FID ↓ | FVD ↓ | IQA ↑ | Sync-C ↑ | HKV (Gesture) | HA ↑ | Steps | Res | 5s Speed |
+|------|-------|-------|-------|----------|-----------|------|------|--------|---------|
+| StableAvatar | 75.20 | 603.54 | 4.66 | 4.24 | 42.92 | 0.909 | 40 | 480p | 12min |
+| OmniAvatar | 87.24 | 851.93 | 4.45 | 7.60 | 8.64 | 0.974 | 25 | 480p | 36min |
+| HY-Avatar | 76.49 | 557.46 | 4.67 | 6.71 | 54.31 | 0.947 | 50 | 720p | 74min |
+| EchoMimicV3 | 78.65 | 724.29 | 4.66 | 3.10 | 25.53 | 0.969 | 25 | 480p | 7min |
+| **Ours** | **74.21** | **707.34** | **4.68** | **7.06** | 48.35 | **0.974** | **3** | **720p** | **20s** |
+
+#### Ablation Study
 
 | Configuration | FID ↓ | IQA ↑ | Sync-C ↑ | HA ↑ |
-|---------------|-------|-------|----------|------|
+|------|-------|-------|----------|------|
 | Baseline (Self Forcing) | 96.58 | 4.29 | 7.04 | 0.948 |
 | + Reference Sink | 88.75 | 4.55 | 7.03 | 0.950 |
 | + RAPR | 81.63 | 4.64 | 7.06 | 0.956 |
-| + GAN w/o consistency discriminator | 79.68 | 4.65 | 7.05 | 0.947 |
+| + GAN w/o Consistency Disc. | 79.68 | 4.65 | 7.05 | 0.947 |
 | **Full (Ours)** | **74.21** | **4.68** | **7.06** | **0.974** |
 
-### Interaction Capability (Listening-Phase Motion Dynamics)
-
-| Method | LBKV (Body) | LHKV (Hand) | LFKV (Face) |
-|--------|-------------|-------------|-------------|
-| Baseline (silent audio) | 6.05 | 4.53 | 2.39 |
-| **Ours** | **15.88** | **16.24** | **7.11** |
-
 ### Key Findings
-- The speed improvement is dramatic: 3 steps vs. 25–50 steps; generating a 5-second video takes only 20 seconds vs. 7 minutes for the fastest baseline (21× speedup), at a higher resolution of 720p.
-- Reference Sink is critical for identity preservation (FID drops from 96.58 to 88.75); RAPR further improves long-video stability (FID to 81.63).
-- The global branch of the consistency-aware discriminator is essential — removing it causes significant HA degradation compared to a standard discriminator on long-video data.
-- Listening-state motion richness (LHKV) is 3.6× that of the baseline, demonstrating that the model has learned natural listening reactions.
+*   Significant speedup: 3 steps vs. 25-50 steps allows generating 5s of video in 20s (21x faster than the fastest baseline) at 720p resolution.
+*   Reference Sink and RAPR are critical for identity maintenance (FID improved from 96.58 to 81.63).
+*   Global consistency branch in the discriminator explicitly constrains identity alignment across frames.
+*   Listening state motion richness (LHKV) is 3.6x higher than the baseline, indicating successful learning of reactive movements.
 
 ## Highlights & Insights
-- RAPR is an elegant positional encoding solution — by capping the maximum distance and dynamically re-encoding all cached keys, it simulates long-video inference positional offsets using short videos during training, without requiring actual long video generation. This idea is broadly applicable to other RoPE-based models requiring long-sequence inference.
-- The finding that "skipping the KV-cache update step during training" is practically useful — conditioning the next chunk on noisy outputs rather than clean ones does not affect quality but saves one forward pass, suggesting that autoregressive generation is robust to mild noise.
-- Applying the audio mask after Wav2Vec rather than before is a subtle but important design choice — preserving the original waveform yields substantially higher-quality Wav2Vec features, an insight relevant to all works employing pretrained audio features.
+*   RAPR is an elegant RoPE solution that simulates long-video inference environments during training by limiting the distance to reference anchors.
+*   The discovery that skipping KV-cache updates for self-conditioning does not affect quality suggests autoregressive diffusion generation is robust to slight noise.
+*   Applying audio masks post-Wav2Vec preserves pre-trained feature distribution, a better practice than modifying raw waveforms.
 
 ## Limitations & Future Work
-- Limited temporal context may cause inconsistent content in regions that remain occluded for extended periods.
-- Distillation inevitably constrains the range of motion.
-- Text input handling is simplistic (fixed prompt), lacking fine-grained semantic control.
-- VAE decoding accounts for more than half of total latency and is the primary bottleneck for further latency reduction.
-- Only single-person interaction is currently supported; multi-person conversational scenarios are worth exploring.
+*   Finite temporal context may cause inconsistencies in long-duration occluded regions.
+*   Distillation inherently limits extremes of motion range.
+*   Lack of fine-grained semantic control via text input.
+*   VAE decoding remains a bottleneck, accounting for over half of the total latency.
 
 ## Related Work & Insights
-- **vs. CausVid/Self-Forcing**: StreamAvatar augments the autoregressive distillation framework with Reference Sink, RAPR, and a consistency-aware discriminator, specifically addressing identity stability in digital human scenarios.
-- **vs. Hallo3/EchoMimicV3**: These methods achieve reasonable quality but are slow (7–32 minutes per 5 seconds) and suffer from hand artifacts and identity drift in long sequences. StreamAvatar achieves better quality while being 21× faster.
-- **vs. INFP/ARIG**: These methods support speaking–listening interaction but are limited to the head-and-shoulder region. StreamAvatar is the first real-time model supporting full-body speaking–listening interaction.
+*   **vs CausVid/Self-Forcing**: StreamAvatar adds Reference Sink, RAPR, and consistency-aware discriminators to solve identity stability.
+*   **vs Hallo3/EchoMimicV3**: These are significantly slower and exhibit identity drift in long sequences.
+*   **vs INFP/ARIG**: Previous talk-listen models were restricted to head/shoulders; StreamAvatar is the first full-body real-time model.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The two-stage framework is well-motivated; RAPR is a novel positional encoding improvement; the full-body speaking–listening interactive model is the first of its kind.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive comparisons, detailed ablations, user studies, and real-time performance analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with precise technical descriptions.
-- Value: ⭐⭐⭐⭐⭐ — Real-time interactive digital humans address a pressing practical need; 20 seconds per 5-second clip makes real-world deployment feasible.
+*   **Novelty**: ⭐⭐⭐⭐ Solid two-stage framework, novel RAPR, and first full-body talk-listen model.
+*   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive comparisons, detailed ablation, and real-time performance analysis.
+*   **Writing Quality**: ⭐⭐⭐⭐ Clear structure and technical detail.
+*   **Value**: ⭐⭐⭐⭐⭐ High demand for interactive avatars; achieves practical deployment speeds.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICCV 2025\] StreamDiffusion: A Pipeline-level Solution for Real-time Interactive Generation](../../ICCV2025/image_generation/streamdiffusion_a_pipeline-level_solution_for_real-time_interactive_generation.md)
-- [\[CVPR 2026\] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)
-- [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
-- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
-- [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
+- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
+- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
+- [\[CVPR 2025\] SemanticDraw: Towards Real-Time Interactive Content Creation from Image Diffusion](../../CVPR2025/image_generation/semanticdraw_towards_real-time_interactive_content_creation_from_image_diffusion.md)
+- [\[CVPR 2026\] PortraitDirector: A Hierarchical Disentanglement Framework for Controllable and Real-time Facial Reenactment](portraitdirector_a_hierarchical_disentanglement_framework_for_controllable_and_r.md)
+- [\[CVPR 2025\] MobilePortrait: Real-Time One-Shot Neural Head Avatars on Mobile Devices](../../CVPR2025/image_generation/mobileportrait_real-time_one-shot_neural_head_avatars_on_mobile_devices.md)
 
 </div>
 

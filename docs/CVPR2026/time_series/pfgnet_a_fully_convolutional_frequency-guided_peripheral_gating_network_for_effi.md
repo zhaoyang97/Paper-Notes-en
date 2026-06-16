@@ -2,171 +2,167 @@
 title: >-
   [Paper Note] PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 description: >-
-  [CVPR 2026][Time Series][spatiotemporal predictive learning] This paper proposes PFGNet, a fully convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses…
+  [CVPR 2026][Time Series][Paper Note] PFGNet is a pure convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via Pixel-level Frequency-guided Gating (PFG) and applies learnable center suppression. Mimicking the center-surround band-pass filtering mechanism of biological vision, it achieve
 tags:
-  - "CVPR 2026"
-  - "Time Series"
-  - "spatiotemporal predictive learning"
-  - "large-kernel convolution"
-  - "frequency-guided gating"
-  - "center-surround inhibition"
-  - "fully convolutional architecture"
+  - CVPR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: 22a356785711b444
+content_hash: 1e99ce274aa96c4f
 ---
-
 # PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.20537](https://arxiv.org/abs/2602.20537)  
 **Code**: [fhjdqaq/PFGNet](https://github.com/fhjdqaq/PFGNet)  
-**Area**: Time Series
-**Keywords**: spatiotemporal predictive learning, large-kernel convolution, frequency-guided gating, center-surround inhibition, fully convolutional architecture
+**Area**: Time Series  
+**Keywords**: Spatiotemporal predictive learning, Large kernel convolution, Frequency-guided gating, center-surround suppression, Pure convolutional architecture  
 
 ## TL;DR
 
-This paper proposes PFGNet, a fully convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via pixel-wise frequency-guided gating (PFG) while applying learnable center inhibition, thereby simulating the biological center-surround bandpass filtering mechanism of the visual system. PFGNet achieves state-of-the-art or near state-of-the-art performance on four benchmarks—Moving MNIST, TaxiBJ, KTH, and Human3.6M—with remarkably few parameters and low computational cost.
+PFGNet is a pure convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via Pixel-level Frequency-guided Gating (PFG) and applies learnable center suppression. Mimicking the center-surround band-pass filtering mechanism of biological vision, it achieves SOTA or near-SOTA performance on Moving MNIST, TaxiBJ, KTH, and Human3.6M benchmarks with minimal parameters and computational cost.
 
 ## Background & Motivation
 
-**Spatiotemporal predictive learning (STPL)** aims to predict future frames from historical frames, with broad applications in weather nowcasting, autonomous driving, traffic flow forecasting, and human motion prediction.
+**Spatiotemporal Predictive Learning (STPL)** aims to predict future frames from historical sequences, widely applied in weather nowcasting, autonomous driving, traffic flow prediction, and human motion forecasting.
 
-**Recurrent models** (ConvLSTM, PredRNN series, SwinLSTM, VMRNN) offer strong temporal modeling capability but suffer from poor parallelism and high latency due to autoregressive inference.
+**Recurrent models** (ConvLSTM, PredRNN series, SwinLSTM, VMRNN) possess strong temporal modeling capabilities, but their autoregressive inference leads to poor parallelism and high latency.
 
-**Fully convolutional models** (SimVP, TAU, STLight) are fully parallelizable and scalable, yet their fixed, uniform receptive fields cannot adapt to spatially varying motion patterns.
+**Pure convolutional models** (SimVP, TAU, STLight) offer full parallelism and scalability, but fixed uniform receptive fields (RF) cannot adapt to spatially varying motion patterns.
 
-**Large-kernel convolutional networks** (RepLKNet, SLaK, UniRepLKNet) demonstrate that sufficiently large receptive fields enable CNNs to approximate global context, but still employ uniform kernels that ignore the pixel-level need for varying receptive field sizes.
+**Large kernel convolutional networks** (RepLKNet, SLaK, UniRepLKNet) demonstrate that sufficiently large RFs allow CNNs to approximate global context, yet they still employ uniform kernels, ignoring the need for pixel-level variation in RF size.
 
-**Biological inspiration**: Center-surround antagonistic receptive fields in the retina and primary visual cortex are inherently spatial bandpass filters that selectively enhance mid-frequencies (edges, textures) while suppressing low frequencies (uniform regions) and high frequencies (noise).
+**Biological inspiration**: The center-surround antagonistic RFs in the retina and primary visual cortex are essentially spatial band-pass filters that selectively enhance mid-frequencies (edges, textures) while suppressing low-frequencies (uniform regions) and high-frequencies (noise).
 
-**Core gap**: Existing methods lack pixel-wise frequency guidance and explicit center inhibition. Channel-level or frequency-band-level gating cannot adapt to local texture; uniform large kernels waste computation in homogeneous regions. No prior work has unified biological center-surround mechanisms, frequency-domain filtering, and adaptive large-kernel fusion within a fully convolutional STPL framework.
+**Key Challenge**: Existing works lack pixel-level frequency guidance and explicit center suppression. Channel-level or band-level gating cannot adapt to local textures; uniform large kernels waste computation in uniform regions. No prior work has unified biological center-surround mechanisms, frequency-domain filtering, and adaptive large-kernel fusion within a pure convolutional STPL framework.
 
 ## Method
 
 ### Overall Architecture
 
-PFGNet follows a SimVP-style Encoder–Translator–Decoder pipeline:
+PFGNet addresses specific limitations: while pure convolutional predictors are parallel and fast, their uniform RFs fail to adapt to non-uniform spatial motion. Dense textures require large RFs for long-range context, while flat backgrounds waste computation and amplify redundant low-frequency signals using large kernels. PFGNet adopts the "Encoder-Translator-Decoder" backbone of SimVP, placing all innovation within the Translator. Specifically, input frames are processed by a shared spatial encoder $\mathbf{F}_t = \text{Enc}(\mathbf{I}_t)$ and concatenated along the time dimension to form $\mathbf{Z} \in \mathbb{R}^{C' \times H' \times W'}$ ($C' = T_{\text{in}} \cdot C$). The Translator first uses **MSInit** to provide a multi-scale foundation covering low/mid/high frequencies, followed by $N_t$ **PFG modules** for frequency-guided adaptive spatiotemporal modeling. Finally, a symmetric decoder restores resolution to output the future sequence. The core innovation lies in the PFG module's ability to "select the receptive field based on the frequency characteristics of each pixel."
 
-- **Encoder**: A shared spatial encoder extracts per-frame features $\mathbf{F}_t = \text{Enc}(\mathbf{I}_t)$, which are concatenated along the temporal dimension to form $\mathbf{Z} \in \mathbb{R}^{C' \times H' \times W'}$ (where $C' = T_{\text{in}} \cdot C$).
-- **Translator**: Multi-scale initialization features are first generated by the MSInit module, then processed by $N_t$ stacked PFG blocks for frequency-guided adaptive spatiotemporal modeling.
-- **Decoder**: A symmetric decoder restores the original resolution and outputs the predicted frame sequence.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Frame Sequence<br/>Shared Encoder extracts features → Concatenate Z"] --> B["MSInit Multi-scale Initialization<br/>Separable 1D kernels prepare low/mid/high frequency materials"]
+    B --> P
+    subgraph P["PFG Module ×N_t"]
+        direction TB
+        C["Pixel-level Frequency Descriptor + Gating Network<br/>Sobel / Laplacian / Local Variance → Softmax pixel-wise weight α_k"]
+        C --> D["Multi-scale Peripheral Response + Learnable Center Suppression<br/>Peripheral P_k − tanh(β)·Center, convex combination by α_k"]
+        D --> E["GLU Channel Mixing + GRN<br/>1×1 Expanded gating for channel interaction"]
+    end
+    P --> F["Symmetric Decoder<br/>Restore resolution, output future frames"]
+```
 
-### Key Design 1: Lightweight Multi-Scale Initialization (MSInit)
+### Key Designs
 
-- **Function**: Provides multi-scale response foundations covering low, mid, and high frequencies prior to the PFG blocks.
-- **Mechanism**: For each scale $m$, a $k_m \times k_m$ convolution is approximated via separable 1D kernels ($1 \times k_m$ + $k_m \times 1$), supplemented by a $3 \times 3$ depthwise convolution for enhanced mid-frequency sensitivity and an identity connection for stable gradient flow. Branch outputs are projected via $1 \times 1$ convolution and concatenated; in practice $k_m \in \{3, 5, 7\}$.
-- **Design Motivation**: Without structured multi-scale initialization, PFG either operates on uniform single-scale features lacking long-range context, or must trigger full-scale computation at high cost. MSInit provides rich multi-scale material for downstream gating at minimal overhead.
+**1. Multi-scale Initialization (MSInit): Preparing multi-scale materials at minimal cost**
 
-### Key Design 2: Pixel-Wise Frequency-Guided Peripheral Gating (PFG Block)
+The PFG module selects among responses at different scales. If only single-scale features are provided, the gating mechanism face a dilemma: either lack sufficient context or trigger full-scale computation every time. MSInit is designed to cheaply prepare low, mid, and high-frequency responses before the PFG module. It approximates $k_m \times k_m$ convolutions using pairs of separable 1D kernels ($1 \times k_m$ followed by $k_m \times 1$) for each scale $m$, with an auxiliary $3 \times 3$ depthwise convolution to enhance mid-frequency sensitivity and an identity connection to preserve gradient flow. Branches for $k_m \in \{3, 5, 7\}$ are projected via $1 \times 1$ convolutions and concatenated. This ensures the subsequent gating receives pre-segmented frequency materials with negligible overhead.
 
-- **Function**: Adaptively fuses multi-scale large-kernel peripheral responses according to each pixel's local frequency characteristics.
-- **Mechanism**:
-    - **Frequency descriptors**: Three spectral cues are extracted using fixed depthwise convolutions and averaged across channels—Sobel gradient magnitude $\mathbf{f}_1$ (edge strength), absolute Laplacian $\mathbf{f}_2$ (curvature), and $3 \times 3$ local variance $\mathbf{f}_3$ (texture complexity)—concatenated into $\mathbf{F} \in \mathbb{R}^{3 \times H' \times W'}$.
-    - **Gating network**: A $1 \times 1$ convolution maps the frequency descriptors to per-pixel per-scale logits, normalized via softmax to produce weights $\alpha_k(h,w)$, ensuring a convex combination over $K$ scales at each pixel.
-- **Design Motivation**: Texture-rich regions require wide receptive fields for long-range integration, while homogeneous regions should suppress redundant low-frequency responses. The three complementary frequency cues provide stable pixel-level frequency-awareness signals for the gating mechanism.
+**2. Pixel-level Frequency Descriptor and Gating Network: Letting each pixel "request its own RF size"**
 
-### Key Design 3: Multi-Scale Peripheral Responses with Learnable Center Inhibition
+Texture-rich regions require wide RFs for long-range information, while uniform regions should suppress redundant low-frequency responses. This requirement varies per pixel, making channel-level or band-level gating too coarse. PFG calculates a 3D frequency descriptor for each pixel: fixed depthwise convolutions extract Sobel gradient magnitude $\mathbf{f}_1$ (edge intensity), Laplacian absolute value $\mathbf{f}_2$ (curvature), and $3 \times 3$ local variance $\mathbf{f}_3$ (texture complexity). Channel means are concatenated into $\mathbf{F} \in \mathbb{R}^{3 \times H' \times W'}$, providing a stable frequency-aware signal. The gating network uses a $1 \times 1$ convolution to map this into per-pixel, per-scale logits, followed by softmax to obtain normalized weights $\alpha_k(h,w)$. This forces a differentiable, per-pixel soft selection (convex combination) among $K$ scales.
 
-- **Function**: Computes center-inhibited peripheral responses at each scale $k \in \mathcal{K} = \{9, 15, 31\}$ and fuses them via gating weights.
-- **Mechanism**:
-    - Large kernels are decomposed into separable 1D convolutions: $\mathbf{P}_k = \mathbf{v}_k * (\mathbf{h}_k * \mathbf{X})$, reducing complexity from $\mathcal{O}(k^2)$ to $\mathcal{O}(2k)$.
-    - A $3 \times 3$ depthwise convolution extracts the center response $\mathbf{C} * \mathbf{X}$.
-    - Peripheral response: $\mathbf{Y}_k = \mathbf{P}_k - \tanh(\boldsymbol{\beta}_k) \odot (\mathbf{C} * \mathbf{X})$, where $\boldsymbol{\beta}_k \in \mathbb{R}^{C'}$ is a learnable per-channel parameter.
-    - Final output: $\text{PFG}(\mathbf{X}) = \sum_{k \in \mathcal{K}} \boldsymbol{\alpha}_k \odot \mathbf{Y}_k$.
-- **Design Motivation**: Subtracting a smaller kernel from a larger kernel yields an annular bandpass filter (analogous to DoG), amplifying mid-frequency motion components in the frequency domain while suppressing DC low-frequency backgrounds and high-frequency noise. $\tanh$ is preferred over $\sigma$ because feature maps contain both positive and negative values requiring bidirectional modulation (empirically validated).
+**3. Multi-scale Peripheral Response with Learnable Center Suppression: Large kernels as motion-amplifying band-pass filters**
 
-### Key Design 4: GLU Channel Mixing and GRN Normalization
+This is where the biological center-surround concept is implemented. For each scale $k \in \mathcal{K} = \{9, 15, 31\}$, the peripheral response is calculated via separable 1D convolutions $\mathbf{P}_k = \mathbf{v}_k * (\mathbf{h}_k * \mathbf{X})$, reducing complexity from $\mathcal{O}(k^2)$ to $\mathcal{O}(2k)$. A $3 \times 3$ depthwise convolution captures the center response $\mathbf{C} * \mathbf{X}$, and the modulated center is subtracted from the periphery:
 
-- **Function**: Performs channel-level feature interaction following spatial adaptation.
-- **Mechanism**: A $1 \times 1$ convolution expands channels from $C'$ to $2E$ ($E = 4C'$), split equally into $\mathbf{U}$ and $\mathbf{V}$; GLU-style gating $\sigma(\mathbf{U}) \odot \text{DW}_{3\times3}(\mathbf{V})$ is applied, followed by projection back to $C'$. GRN normalization and LayerScale are incorporated for training stability.
-- **Design Motivation**: GLU provides lightweight channel selection that is complementary to the spatial adaptation performed by PFG.
+$$\mathbf{Y}_k = \mathbf{P}_k - \tanh(\boldsymbol{\beta}_k) \odot (\mathbf{C} * \mathbf{X})$$
 
-## Loss & Training
+where $\boldsymbol{\beta}_k \in \mathbb{R}^{C'}$ is a per-channel learnable parameter. The "large kernel minus small kernel" structure serves as a circular band-pass filter (similar to Difference of Gaussians - DoG), amplifying mid-frequency motion components while suppressing DC low-frequency backgrounds and high-frequency noise. Using $\tanh$ instead of sigmoid allows for bi-directional modulation of feature maps containing both positive and negative values. Finally, responses are fused:
 
-- Follows the OpenSTL unified evaluation framework with standard MSE loss.
-- Optimizer: Adam; learning rates vary per dataset (Moving MNIST: 1e-3, TaxiBJ: 2e-3, KTH: 2e-4/1e-4, Human3.6M: 1.5e-3).
-- DropPath regularization (rate 0.1 for TaxiBJ/KTH/Human3.6M).
-- All large kernels are decomposed into separable 1D convolutions; at $k=31$, kernel parameters and multiply-add operations are reduced by a factor of 15.
+$$\text{PFG}(\mathbf{X}) = \sum_{k \in \mathcal{K}} \boldsymbol{\alpha}_k \odot \mathbf{Y}_k$$
+
+A pixel on a sharp edge will favor large kernels for long-range context, while a pixel in a flat background will favor smaller kernels and be further pruned by center suppression.
+
+**4. GLU Channel Mixing and GRN Normalization: Complementary channel interaction**
+
+After spatial adaptation via PFG, channel-wise feature reorganization is performed. A $1 \times 1$ convolution expands channels from $C'$ to $2E$ ($E = 4C'$), split into $\mathbf{U}$ and $\mathbf{V}$. A GLU-style gating $\sigma(\mathbf{U}) \odot \text{DW}_{3\times3}(\mathbf{V})$ is applied before projecting back to $C'$, stabilized by Global Response Normalization (GRN) and LayerScale. GLU provides lightweight channel selection that complements the spatial adaptation of PFG.
+
+### Loss & Training
+
+Following the OpenSTL evaluation framework, the training target is the standard MSE loss. Specifically, the Adam optimizer is used with varying learning rates (Moving MNIST 1e-3, TaxiBJ 2e-3, KTH 2e-4/1e-4, Human3.6M 1.5e-3). DropPath regularization (0.1) is applied for TaxiBJ, KTH, and Human3.6M. Speed efficiency stems from decomposing all large kernels into separable 1D convolutions; for $k=31$, parameters and MACs are reduced by 15x compared to standard 2D convolutions.
 
 ## Key Experimental Results
 
-### TaxiBJ Dataset (Core Results)
+### TaxiBJ Dataset
 
 | Method | Type | Params | FLOPs | MSE ↓ | MAE ↓ | SSIM ↑ |
-|--------|------|--------|-------|-------|-------|--------|
+|------|------|--------|-------|-------|-------|--------|
 | VMRNN | Recurrent | 2.6M | 0.9G | 0.2887 | 14.69 | 0.9858 |
 | SwinLSTM | Recurrent | 2.9M | 1.3G | 0.3026 | 15.00 | 0.9843 |
 | SimVP | Non-recurrent | 13.8M | 3.6G | 0.3282 | 15.45 | 0.9835 |
 | TAU | Non-recurrent | 9.6M | 2.5G | 0.3108 | 14.93 | 0.9848 |
-| **PFGNet** | **Non-recurrent** | **1.9M** | **0.6G** | **0.2881** | **14.75** | **0.9857** |
+| **PFGNet** | **Ours** | **1.9M** | **0.6G** | **0.2881** | **14.75** | **0.9857** |
 
-PFGNet surpasses all recurrent and non-recurrent baselines with only **1.9M parameters and 0.6G FLOPs**—approximately 1/7 the parameters of SimVP and 1/5 those of TAU.
+PFGNet outperforms both recurrent and non-recurrent baselines with only **1.9M parameters and 0.6G FLOPs**, using roughly 1/7 the parameters of SimVP and 1/5 of TAU.
 
-### Moving MNIST + Human3.6M (Cross-Dataset Generalization)
+### Moving MNIST + Human3.6M
 
 | Method | Moving MNIST MSE ↓ | Moving MNIST SSIM ↑ | H3.6M Params | H3.6M FLOPs | H3.6M MAE ↓ | H3.6M SSIM ↑ |
-|--------|---------------------|---------------------|--------------|-------------|-------------|--------------|
+|------|---------------------|---------------------|--------------|-------------|-------------|--------------|
 | SimVP | 23.8 | 0.948 | 41.2M | 197.0G | 1511.5 | 0.9822 |
 | TAU | 19.8 | 0.957 | 37.6M | 182.0G | 1390.7 | 0.9839 |
 | VMRNN | 16.5 | 0.965 | — | — | — | — |
 | **PFGNet** | **15.2** | **0.967** | **7.3M** | **58.3G** | **1392.4** | **0.9838** |
 
-PFGNet achieves the best MSE of 15.2 on Moving MNIST; on Human3.6M it reaches near state-of-the-art performance with only 7.3M parameters (1/5 of TAU).
+On Moving MNIST, PFGNet achieves the best MSE of 15.2. On Human3.6M, it reaches near-SOTA performance with only 7.3M parameters (1/5 of TAU).
 
 ### Ablation Study
 
-| Ablation | TaxiBJ MSE ↓ | Finding |
-|----------|--------------|---------|
-| Remove MSInit | 0.3119 | Multi-scale initialization is critical for effective gating |
-| Mean fusion instead of softmax | 0.3033 | Pixel-wise adaptive weighting outperforms fixed weights |
-| Fixed $\beta=0$ (no center inhibition) | 0.2993 | Center inhibition further reduces error |
-| Fixed $\beta=\pm1$ | 0.3209 / 0.3286 | Learnable $\beta$ substantially outperforms fixed values |
-| Sigmoid instead of tanh | 0.3142 | Bidirectional modulation of tanh is better suited to feature maps |
-| Full PFGNet | **0.2881** | All components work synergistically at optimum |
+| Ablation Item | TaxiBJ MSE ↓ | Key Insight |
+|--------|--------------|------|
+| W/o MSInit | 0.3119 | Multi-scale initialization is critical for gating effectiveness |
+| Mean fusion instead of softmax | 0.3033 | Pixel-level adaptive weighting is superior to fixed weighting |
+| Fixed β=0 (No suppression) | 0.2993 | Center suppression further reduces error |
+| Fixed β=±1 | 0.3209/0.3286 | Learnable β is significantly better than fixed values |
+| Sigmoid instead of tanh | 0.3142 | tanh's dual-directional modulation fits feature maps better |
+| **Complete PFGNet** | **0.2881** | Optimal synergy of all components |
 
 ## Highlights & Insights
 
-1. **Biological–mathematical unification**: The paper formalizes large-kernel center inhibition as a learnable annular bandpass filter (DoG approximation), providing a rigorous frequency-domain theoretical foundation for CNN receptive field design—supported by formal spectral analysis rather than mere bio-inspired intuition.
-2. **Extreme efficiency**: All large kernels (up to 31×31) are fully decomposed into 1D convolutions, reducing parameters and computation by 15× at $k=31$. PFGNet achieves top performance on TaxiBJ with only 1.9M parameters and 0.6G FLOPs.
-3. **Complementary triple frequency cues**: Gradient magnitude, Laplacian, and local variance capture edge strength, curvature, and texture complexity respectively; ablations confirm that each cue is indispensable.
-4. **Fully convolutional without attention**: No attention mechanisms or recurrent structures are employed, enabling full parallelism and suitability for real-time deployment.
-5. **Best SSIM on KTH**: Although PSNR is marginally below SwinLSTM, the highest SSIM indicates superior structural preservation of body contours and joint trajectories, which the paper analyzes in detail.
+1.  **Bio-Mathematical Unity**: Formulates large-kernel center suppression as a learnable circular band-pass filter (DoG approximation), providing a frequency-domain theoretical basis for CNN RF design beyond simple bio-inspiration.
+2.  **Extreme Efficiency**: All large kernels (up to 31×31) are decomposed into 1D convolutions, reducing parameters and MACs by 15x at $k=31$.
+3.  **Complementary Frequency Cues**: Gradient magnitude, Laplacian, and local variance capture edge intensity, curvature, and texture complexity respectively; ablation confirms all are necessary.
+4.  **Pure Convolution without Attention**: No attention mechanisms or recurrent structures are used, allowing full parallelism for real-time deployment.
+5.  **Best SSIM on KTH**: While PSNR is slightly lower than SwinLSTM, the highest SSIM indicates better structural preservation (limb outlines, joint trajectories).
 
 ## Limitations & Future Work
 
-1. **Fixed frequency cue operators**: Sobel, Laplacian, and local variance are all hand-crafted fixed operators; future work may explore learnable frequency feature extraction.
-2. **Limited to four benchmarks**: Validation on more complex real-world scenarios such as weather forecasting (WeatherBench) and autonomous driving (nuScenes) is absent.
-3. **Fixed center kernel size**: The ablation only compares $3\times3$ and $5\times5$; dynamic center kernel sizes remain unexplored.
-4. **Long-horizon prediction untested**: KTH evaluation covers at most 40 frames; performance on longer sequences (100+ frames) is unknown.
-5. **Insufficient comparison with Transformer/SSM hybrid architectures**: Only VMRNN's Mamba component is compared; direct comparisons with the latest SSM-based spatiotemporal models are lacking.
-6. **Limited interpretability of frequency gating**: Although argmax visualizations are provided, in-depth quantitative analysis of gating behavior across different scene types is absent.
+1.  **Fixed Frequency Cues**: Sobel, Laplacian, and local variance are hand-crafted operators; learnable frequency feature extraction could be explored.
+2.  **Limited Benchmarks**: Lacks validation on more complex real-world scenarios like WeatherBench or nuScenes.
+3.  **Fixed Center Kernel Size**: Only compared 3×3 and 5×5; dynamic center kernel sizes were not explored.
+4.  **Long-term Prediction**: Performance on very long sequences (100+ frames) beyond the 40 frames in KTH remains unverified.
+5.  **Comparison with SSMs**: Lacks direct comparison with the latest State Space Models for STPL beyond the Mamba components in VMRNN.
+6.  **Interpretability**: While argmax visualizations are provided, deeper quantitative analysis of gating behavior across different scenes is needed.
 
 ## Related Work & Insights
 
-- **SimVP** [Gao et al., 2022]: The foundational pipeline of PFGNet, demonstrating that a strong spatial backbone can implicitly model temporal dynamics. PFGNet extends this with frequency-guided adaptive receptive fields.
-- **UniRepLKNet** [Ding et al., 2024]: Establishes the "see wide without going deep" design philosophy, showing that large kernels can approximate global attention with linear complexity. PFGNet further introduces pixel-level dynamic adaptation.
-- **PeLK** [Chen et al., 2024]: Peripheral convolution extends kernels beyond 100×100 but lacks frequency guidance. The PFG module fills this gap.
-- **Octave Convolution** [Chen et al., 2019]: Processes features grouped by frequency but requires explicit frequency-domain transforms. PFGNet extracts frequency cues entirely in the spatial domain via fixed filters, avoiding the overhead of additional transforms.
-- **DoG model**: The classical center-surround receptive field model; PFGNet generalizes it from fixed parameters to per-channel learnable, per-pixel adaptively selected responses.
+- **SimVP** [Gao et al., 2022]: The base pipeline for PFGNet, proving strong spatial backbones can implicitly model temporal evolution.
+- **UniRepLKNet** [Ding et al., 2024]: The "see wide without going deep" philosophy, verifying large kernels approximate global attention with linear complexity.
+- **PeLK** [Chen et al., 2024]: Demonstrates peripheral convolutions can extend kernels to 100+, but lacks frequency guidance.
+- **Octave Convolution** [Chen et al., 2019]: Processes features by frequency groups but requires explicit frequency domain transforms.
+- **DoG Model**: Classic center-surround model; PFGNet generalizes it to per-channel learnable and per-pixel adaptive selection.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The integration of biological center-surround mechanisms with frequency-domain bandpass theory is novel; pixel-wise frequency-guided gating is a first in STPL.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Four standard benchmarks with detailed ablations and efficiency comparisons under the fair OpenSTL framework; however, more complex real-world scenarios are absent.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The narrative arc from biological motivation through mathematical formalization to experimental validation is coherent and complete, with rigorous frequency-domain analysis.
-- **Value**: ⭐⭐⭐⭐ — A fully convolutional approach reaching SOTA with extremely low computation has strong practical utility; the PFG module is a promising plug-and-play component.
+- **Novelty**: ⭐⭐⭐⭐ — Combining bio-inspired center-surround mechanisms with band-pass filtering theory is novel; pixel-level frequency gating is a first in STPL.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive benchmarks, detailed ablations, and efficiency comparisons using the OpenSTL framework.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Smooth narrative from biological motivation to mathematical formulation and experimentation.
+- **Value**: ⭐⭐⭐⭐ — High practicality due to pure convolution and extreme efficiency; the PFG module is a potential plug-and-play component.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](../../NeurIPS2025/time_series/simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
+- [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ECCV 2024\] Semantically Guided Representation Learning For Action Anticipation](../../ECCV2024/time_series/semantically_guided_representation_learning_for_action_anticipation.md)
 - [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](../../AAAI2026/time_series/beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
-- [\[ICML 2026\] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series](../../ICML2026/time_series/hepa_a_self-supervised_horizon-conditioned_event_predictive_architecture_for_tim.md)
-- [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](../../NeurIPS2025/time_series/diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
 
 </div>
 

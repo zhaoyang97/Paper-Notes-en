@@ -31,26 +31,26 @@ item_total: 5
 
 **💬 ACL2026** · **5** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (125)](../../ICML2026/image_generation/index.md) · [📷 CVPR2026 (194)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (138)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (218)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (449)](../../CVPR2026/image_generation/index.md) · [🧪 ICML2026 (125)](../../ICML2026/image_generation/index.md) · [🔬 ICLR2026 (138)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (218)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
 
 🔥 **Top topics:** LLM ×3 · Multimodal/VLM ×2
 
 **[ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis](anchor_llm-driven_subject_conditioning_for_text-to-image_synthesis.md)**
 
-:   This paper introduces the ANCHOR dataset, utilizing over 70K abstract captions from 5 news media organizations to expose the failures of T2I models in handling multiple subjects, contextual reasoning, and fine-grained grounding; it proposes SAFE, which leverages LLMs to extract key subjects and reinforces subject representations at the embedding level to improve text-image consistency.
+:   This paper introduces the ANCHOR dataset, which utilizes 70K+ abstractive captions from five news media outlets to expose the failures of T2I models in multi-subject scenarios, context reasoning, and fine-grained grounding. It further proposes SAFE, which employs an LLM to extract key subjects and reinforces subject representations at the embedding layer to improve image-text consistency.
 
 **[From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons](from_ar_to_diffusion_efficiently_adapting_large_language_models_with_strictly_ca.md)**
 
-:   This paper proposes FLUID, which effectively adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves performance in reasoning and code generation close to strong AR models and superior to existing diffusion baselines.
+:   This paper proposes FLUID, which efficiently adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves inference and code generation performance close to strong AR models and superior to existing diffusion baselines.
 
 **[MENTOR: Efficient Autoregressive Image Generation with Balanced Multimodal Control](mentor_efficient_multimodal-conditioned_tuning_for_autoregressive_vision_generat.md)**
 
-:   MENTOR utilizes a unified autoregressive decoder and two-stage multimodal training to align reference images and text instructions into the same generation prefix. With a limited training budget of only 3M data points and approximately 1.5 days on 8 A100 GPUs, it achieves a superior balance between concept preservation and prompt following.
+:   MENTOR utilizes a unified autoregressive decoder and two-stage multimodal training to align reference images and text instructions into a single generation prefix. With only 3M training data and a training budget of approximately 1.5 days on 8 A100 GPUs, it achieves an effective balance between concept preservation and prompt following.
 
 **[Multimodal Large Language Models for Multi-Subject In-Context Image Generation](multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)**
 
-:   This paper proposes MUSIC, which introduces the visual reasoning capabilities of multimodal large language models into multi-subject in-context image generation. By automatically synthesizing training data, employing visual CoT, and utilizing semantic-driven spatial layout planning, it significantly mitigates problems such as subject omission, identity blending, and semantic drift during the simultaneous generation of multiple reference subjects.
+:   This paper proposes MUSIC, which introduces the visual reasoning capabilities of Multimodal Large Language Models (MLLMs) into multi-subject in-context image generation. Through automated training data synthesis, visual CoT, and semantic-driven spatial layout planning, it significantly mitigates issues of subject omission, identity confusion, and semantic drift when generating multiple reference subjects simultaneously.
 
 **[Think Bright, Diffuse Nice: Enhancing T2I-ICL via Inductive-Bias Hint Instruction and Query Contrastive Decoding](think_bright_diffuse_nice_enhancing_t2i-icl_via_inductive-bias_hint_instruction_.md)**
 
-:   This paper proposes TBDN, a training-free framework that utilizes Hint Instruction to focus the LVLM on the final query and Query Contrastive Decoding to suppress prior-dominated hallucinations. By delivering more accurate text descriptions to a diffusion model, TBDN significantly improves text-to-image in-context learning performance on CoBSAT and T2I Fast Mini-ImageNet.
+:   This paper proposes the training-free TBDN framework, which uses Hint Instruction to focus Large Vision-Language Models (LVLMs) on the final query and Query Contrastive Decoding to suppress prior-dominated hallucinations. By delivering more accurate text descriptions to a diffusion model, it significantly improves text-to-image in-context learning performance on CoBSAT and T2I Fast Mini-ImageNet.

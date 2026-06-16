@@ -2,77 +2,94 @@
 title: >-
   [Paper Note] Stake the Points: Structure-Faithful Instance Unlearning
 description: >-
-  [CVPR 2026][Human Understanding][machine unlearning] This paper proposes Structguard, which leverages semantic anchors to preserve the semantic relational structure among retained instances during the forgetting process…
+  [CVPR 2026][Human Understanding][machine unlearning] Structguard is proposed to maintain the semantic relationship structure between retained instances during the unlearning process through semantic anchors, preventing structural collapse. It achieves average improvements of 32.9%, 19.3%, and 22.5% in image classification, face recognition, and retrieval tasks, respectiv
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "machine unlearning"
-  - "instance-level unlearning"
-  - "structural preservation"
-  - "semantic anchors"
-  - "CLIP"
+  - CVPR 2026
+  - Human Understanding
+  - machine unlearning
+  - instance-level unlearning
+  - structural preservation
+  - semantic anchors
+  - CLIP
 date: 2026-05-08
-content_hash: b197a5d46f6e0b01
+content_hash: 6f4d5a660846286c
 ---
-
 # Stake the Points: Structure-Faithful Instance Unlearning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.12915](https://arxiv.org/abs/2603.12915)  
 **Code**: To be confirmed  
-**Area**: Human Understanding
+**Area**: Human Understanding  
 **Keywords**: machine unlearning, instance-level unlearning, structural preservation, semantic anchors, CLIP
 
 ## TL;DR
 
-This paper proposes Structguard, which leverages semantic anchors to preserve the semantic relational structure among retained instances during the forgetting process, thereby preventing structural collapse. The method achieves average improvements of 32.9% / 19.3% / 22.5% across image classification, face recognition, and retrieval tasks.
+Structguard is proposed to maintain the semantic relationship structure between retained instances during the unlearning process through semantic anchors, preventing structural collapse. It achieves average improvements of 32.9%, 19.3%, and 22.5% in image classification, face recognition, and retrieval tasks, respectively.
 
 ## Background & Motivation
 
-1. **Data protection regulations**: Regulations such as GDPR require models to remove the influence of specific user data. Retraining from scratch is prohibitively expensive, motivating the study of Machine Unlearning (MU).
-2. **Instance-level unlearning is more practical**: Real-world deletion requests typically target specific individuals rather than entire classes, making instance-level unlearning more realistic than class-level unlearning.
-3. **Existing methods neglect semantic structure**: Prior MU methods (e.g., Neggrad, Adv, L2UL) disrupt the semantic relationships among retained instances when erasing target instances, leading to progressive structural collapse in the representation space.
-4. **Structural collapse negatively correlates with performance**: Experiments reveal a significant negative correlation between the degree of structural collapse and the forget–retain accuracy balance; better structure preservation leads to better unlearning performance.
-5. **No retain set required**: In real-world scenarios, the original training data is often inaccessible due to policy or storage constraints; the proposed method relies solely on the pretrained model and the data to be forgotten.
-6. **Knowledge is encoded in relationships**: Knowledge in deep models is not stored in isolation but organized through semantic relationships; the unlearning process must therefore protect this relational structure.
+1.  **Driven by Data Protection Regulations**: Regulations such as GDPR require models to remove the influence of specific user data. Since retraining from scratch is prohibitively expensive, research into Machine Unlearning (MU) has emerged.
+2.  **Instance-level Unlearning is More Practical**: Real-world deletion requests typically target specific individuals rather than entire categories, making instance-level unlearning more practically significant than class-level unlearning.
+3.  **Prior Work Neglects Semantic Structure**: Existing MU methods (e.g., Neggrad, Adv, L2UL) destroy the semantic relationships between retained instances while deleting target instances, leading to progressive structural collapse of the representation space.
+4.  **Negative Correlation Between Structural Collapse and Performance**: The authors experimentally found a significant negative correlation between the degree of structural collapse and the balance accuracy of deletion-retention. Better structural preservation leads to better unlearning performance.
+5.  **No Retain Set Required**: In real-world scenarios, original training data is often inaccessible due to policy or storage constraints. This method relies solely on the pre-trained model and the data to be forgotten.
+6.  **Knowledge is Encoded in Relationships**: Knowledge in deep models is not stored in isolation but is organized through semantic relationships. The unlearning process must protect this relational structure.
 
 ## Method
 
-### Overall Architecture: Structguard
+### Overall Architecture
 
-**Core Idea**: Semantic anchors (stakes) are introduced as fixed reference points for retained instances. During unlearning, each instance is bound to an anchor to prevent semantic drift and maintain the structured organization of knowledge.
+Structguard aims to address an overlooked side effect in instance-level machine unlearning: while deleting, the semantic relationships between retained instances are also destroyed, causing progressive structural collapse in the representation space. The core observation is that model knowledge exists not in isolated samples but is encoded in the relational structure between instances. Therefore, this structure must be treated as an explicit object of protection during unlearning.
 
-### 1. Anchor Generation
+The Mechanism is as follows: first, a set of fixed "semantic anchors" (stakes) is created for each category to serve as markers. The affinity between retained instance embeddings and these anchors is recorded as the "original structure." During unlearning, negative cross-entropy is used to erase the discriminative information of the forget samples, while the affinity between the erased embeddings and the anchors is forced to align back to the original structure. Simultaneously, regularization is applied to parameters most critical to the structure. Since common retain sets are often inaccessible in practical scenarios, retained instance embeddings are approximated using adversarial variants generated from the forget samples. The entire process depends only on the pre-trained model and the forget data, with no retain set required.
 
-- For each class $c$, GPT-4o is used to generate attribute descriptions (texture, shape, typical context, etc.).
-- The concatenated descriptions are fed into a frozen semantic encoder $T(\cdot)$ (CLIP ViT-B/32) to obtain class-level anchor $a_c$.
-- All anchors form the matrix $A \in \mathbb{R}^{b \times d}$, which remains fixed throughout the unlearning process.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["Category Attribute Description (Generated by GPT-4o)"] --> ENC["Frozen Semantic Encoder<br/>CLIP ViT-B/32"]
+    ENC --> A["Semantic Anchors A (Frozen throughout)"]
+    D["Forget Data"] --> DEL["Deletion Loss (Negative Cross-Entropy)<br/>Erases forget sample discriminative info"]
+    D --> PROXY["Adversarial Variant Proxy Set<br/>Approximates inaccessible retain instance embeddings"]
+    PROXY --> SORI["Original Structure Affinity Matrix<br/>Relative proximity between proxy embeddings and anchors"]
+    A --> SORI
+    D --> SUNL["Unlearning Structure Affinity Matrix<br/>Projector-mapped embeddings and anchors"]
+    A --> SUNL
+    SORI --> ALIGN["Structure-aware Alignment<br/>Maximizes cosine similarity of affinity"]
+    SUNL --> ALIGN
+    ALIGN -->|Alignment gradient estimates parameter importance| REG["Structure-aware Regularization<br/>Weighted braking on structure-critical parameters"]
+```
 
-### 2. Structure Definition and Proxy Set
+### Key Designs
 
-- **Original structure** $S^{\text{ori}} = V^{\text{ori}} \cdot A^\top$: affinity matrix between retained instance embeddings and anchors.
-- **Proxy set**: Since the retain set is inaccessible, adversarial variants of the forget samples are generated to approximate the embeddings of retained instances.
-- **Unlearned structure** $S^{\text{unl}} = V^{\text{unl}} \cdot A^\top$: affinity matrix between embeddings projected through a learnable projector $p_\omega$ and the anchors.
+**1. Semantic Anchors: Creating data-independent fixed reference stakes to anchor the unlearning process**
 
-### 3. Structure-Preserving Constraints
+Collapse occurs because unlearning gradients lack external references, allowing embeddings to drift freely. Structguard uses GPT-4o to generate attribute descriptions (texture, shape, typical context, etc.) for each category $c$. These descriptions are concatenated and fed into a frozen semantic encoder $T(\cdot)$ (CLIP ViT-B/32) to obtain class-level anchors $a_c$. All anchors are stacked into a matrix $A \in \mathbb{R}^{b \times d}$ and frozen. Language is chosen over images for anchors because attribute descriptions are naturally data-independent and stable. Ablation shows semantic anchors perform 7.84% higher than visual prototype anchors on CIFAR-10, confirming language-guided reference points are more robust.
 
-**Structure-aware Alignment**:
+**2. Structure Definition and Proxy Set: Quantifying "knowledge structure" as an embedding-anchor affinity matrix and filling the missing retain set with adversarial samples**
+
+With anchors, the "structure" is concretized into an affinity matrix: the original structure $S^{\text{ori}} = V^{\text{ori}} \cdot A^\top$ records the relative proximity of retain instance embeddings $V^{\text{ori}}$ to anchors, while the unlearning structure $S^{\text{unl}} = V^{\text{unl}} \cdot A^\top$ represents the affinity after mapping through a learnable projector $p_\omega$. Given the key constraint that $V^{\text{ori}}$ is unavailable, the authors generate adversarial variants of forget samples to approximate the embedding distribution of retain instances, forming a proxy set to calculate $S^{\text{ori}}$ as the alignment target without real retain data.
+
+**3. Structure-aware Alignment: Maximizing the cosine similarity of structure before and after unlearning**
+
+While erasing information is easy, doing so without affecting relationships is difficult. The alignment loss expresses this as a direct constraint, forcing the affinity vectors of each instance before and after unlearning to be as collinear as possible:
 
 $$\mathcal{L}_{\text{align}} = -\frac{1}{b} \sum_{i=1}^{b} \cos(S_i^{\text{ori}}, S_i^{\text{unl}})$$
 
-This maximizes the cosine similarity between pre- and post-unlearning structures to preserve relative anchor–instance patterns.
+It maximizes the cosine similarity between $S^{\text{ori}}$ and $S^{\text{unl}}$, preserving the "pattern" of instances relative to anchors rather than absolute positions. Thus, unlearning can change the category assignment of a sample without disrupting the relative geometry of retained instances. Ablation shows this is the most critical component.
 
-**Structure-aware Regularization**:
+**4. Structure-aware Regularization: Weighted braking for structure-critical parameters**
+
+While alignment constrains output structure, regularization provides security at the parameter level:
 
 $$\mathcal{L}_{\text{reg}} = \frac{1}{2} \sum_i I_i \cdot (\psi_i^{\text{unl}} - \psi_i^{\text{ori}})^2$$
 
-where $I_i$ is the structural importance score of the $i$-th parameter (estimated via the absolute gradient of the alignment loss), which suppresses large updates to structurally critical parameters.
+Here, $I_i$ is the structural importance score of the $i$-th parameter, estimated by the absolute gradient of the alignment loss—higher gradients indicate parameters more vital for maintaining structure. The update $(\psi_i^{\text{unl}} - \psi_i^{\text{ori}})^2$ is penalized by weight, restricting structure-critical parameters while allowing more freedom for irrelevant parameters, focusing erasure in directions that do not destroy the structure.
 
-### 4. Overall Loss
+### Loss & Training
 
-- **Retention loss** $\mathcal{L}_{\text{ret}}$: cross-entropy through the projector to preserve semantic relationships.
-- **Deletion loss** $\mathcal{L}_{\text{del}}$: negative cross-entropy bypassing the projector to achieve effective erasure.
-- Total loss $= \mathcal{L}_{\text{del}} + \mathcal{L}_{\text{ret}} + \mathcal{L}_{\text{align}} + \mathcal{L}_{\text{reg}}$
+The total loss splits "erasure" and "retention" into separate paths: the deletion loss $\mathcal{L}_{\text{del}}$ bypasses the projector to erase forget sample discriminative information using negative cross-entropy; the retention loss $\mathcal{L}_{\text{ret}}$ uses cross-entropy through the projector to maintain semantic relationships. These are combined with the alignment and regularization losses:
+
+$$\mathcal{L} = \mathcal{L}_{\text{del}} + \mathcal{L}_{\text{ret}} + \mathcal{L}_{\text{align}} + \mathcal{L}_{\text{reg}}$$
 
 ## Key Experimental Results
 
@@ -82,69 +99,69 @@ where $I_i$ is the structural importance score of the $i$-th parameter (estimate
 |------|:---:|:---:|:---:|:---:|
 | L2UL | 45.44 | 48.71 | 31.19 | 100.0 |
 | Adv | 36.69 | 46.45 | 21.27 | 100.0 |
-| **Structguard** | **56.32** | **56.91** | **41.15** | **100.0** |
+| **Ours** | **56.32** | **56.91** | **41.15** | **100.0** |
 
-- On CIFAR-10 (k=256), Structguard surpasses Oracle by 17.73% ($\mathcal{A}_{\text{test}}$) and 21.77% ($\mathcal{A}_r$).
-- On ImageNet-1K, Structguard outperforms all baselines by an average of 21.57% ($\mathcal{A}_{\text{test}}$).
-- As $k$ increases, Structguard degrades far less than L2UL (on CIFAR-100, L2UL drops 22.21% vs. Structguard's 9.68%).
+- Surpasses Oracle by 17.73% ($\mathcal{A}_{\text{test}}$) and 21.77% ($\mathcal{A}_r$) on CIFAR-10 (k=256).
+- Surpasses all baselines by an average of 21.57% ($\mathcal{A}_{\text{test}}$) on ImageNet-1K.
+- As k increases, the degradation of Ours is much lower than L2UL (22.21% drop for L2UL vs 9.68% for Ours on CIFAR-100).
 
 ### Face Recognition (Lacuna-10)
 
 | Method | k=3 $\mathcal{A}_{\text{test}}$ | k=64 $\mathcal{A}_{\text{test}}$ | $\mathcal{A}_f$ |
 |------|:---:|:---:|:---:|
 | L2UL | 75.37 | 12.26 | 100.0 |
-| **Structguard** | **77.29** | **27.71** | **100.0** |
+| **Ours** | **77.29** | **27.71** | **100.0** |
 
-Structguard outperforms L2UL by an average of 5.92% ($\mathcal{A}_{\text{test}}$) and 5.23% ($\mathcal{A}_r$).
+Surpasses L2UL by an average of 5.92% ($\mathcal{A}_{\text{test}}$) and 5.23% ($\mathcal{A}_r$).
 
 ### Ablation Study
 
 | SA | SR | CR | CIFAR-10 $\mathcal{A}_{\text{test}}$ | CIFAR-100 $\mathcal{A}_{\text{test}}$ |
 |:---:|:---:|:---:|:---:|:---:|
-| ✗ | ✓ | ✓ | Largest drop | Largest drop |
-| ✓ | ✗ | ✓ | Slight drop | Moderate drop |
-| ✓ | ✓ | ✗ | Moderate drop | Slight drop |
+| ✗ | ✓ | ✓ | Max decrease | Max decrease |
+| ✓ | ✗ | ✓ | Small decrease | Large decrease |
+| ✓ | ✓ | ✗ | Large decrease | Small decrease |
 | ✓ | ✓ | ✓ | **Best** | **Best** |
 
-- **SA (Structure-aware Alignment)** is the most critical component; its removal causes the largest performance degradation.
-- On CIFAR-10, CR > SR (classifier regularization is more important when there are fewer classes); on CIFAR-100, SR > CR (parameter constraints are more important when there are more classes).
-- Anchor type: semantic anchors outperform visual prototype anchors (+7.84% on CIFAR-10), demonstrating that language-guided semantic anchors provide superior structured reference.
+- **SA (Structure-aware Alignment)** is the most critical component; performance drops the most when removed.
+- On CIFAR-10, CR > SR (classifier regularization matters more with fewer classes). On CIFAR-100, SR > CR (parameter constraints matter more with many classes).
+- Anchor Type: Semantic anchors outperform visual prototype anchors (+7.84% on CIFAR-10), indicating language-guided anchors provide better structural reference.
 
 ## Highlights & Insights
 
-- **Conceptual novelty**: This work is the first to formalize "structure preservation" as a core objective of MU, revealing a causal relationship between structural collapse and the forget–retain accuracy balance.
-- **Elegant semantic anchor design**: LLM-generated attribute descriptions encoded via CLIP construct stable, data-independent reference points.
-- **Comprehensive three-task validation**: Significant improvements across classification, recognition, and retrieval demonstrate the generalizability of the method.
-- **Excellent representation consistency**: Grad-CAM and cosine similarity analyses show that representations of retained samples are nearly unaffected by the unlearning process.
-- **No retain set required**: The method relies solely on the pretrained model and the forget set, making it more applicable to real-world scenarios.
+- **Novel Concept**: First to formalize "structural preservation" as a core goal of MU, revealing the causal link between structural collapse and the deletion-retention balance.
+- **Sophisticated Anchor Design**: Leverages LLM attribute descriptions + CLIP encoding to build stable, data-independent reference points.
+- **Comprehensive Validation**: Significant gains across classification, recognition, and retrieval tasks demonstrate the versatility of the mechanism.
+- **Excellent Representation Consistency**: Grad-CAM and representation cosine similarity analysis show that retained sample representations are nearly unaffected by the unlearning process.
+- **No Retain Set Required**: Operates using only the pre-trained model and forget set, aligning better with real-world application scenarios.
 
 ## Limitations & Future Work
 
-- Dependence on CLIP and GPT-4o for anchor generation may be sensitive to model and prompt choices, and increases deployment cost.
-- The proxy set approximates the retain set via adversarial samples; approximation quality may degrade when the number of forget samples is small.
+- Dependency on CLIP and GPT-4o for anchor generation may affect performance based on model/prompt choice and increases deployment costs.
+- The proxy set approximates the retain set via adversarial samples; quality might be insufficient when the number of forget samples is small.
 - The projector $p_\omega$ introduces additional parameters and computational overhead.
-- Evaluation is limited to the ResNet architecture; effectiveness on Transformer architectures such as ViT remains unverified.
-- Sequential unlearning scenarios (i.e., whether anchors need to be updated across multiple rounds) are not discussed.
-- Class-level anchors have limited capacity to capture intra-class diversity; fine-grained scenarios may require sub-class anchors.
+- Only ResNet architectures were evaluated; effectiveness on Transformer architectures like ViT remains unproven.
+- Multi-round sequential unlearning requests were not discussed (e.g., whether anchors need updating).
+- Class-level anchors have limited capability to describe intra-class diversity; fine-grained scenarios might require sub-class anchors.
 
 ## Related Work & Insights
 
-| Method | Objective | Granularity | Retain Set Required | Structure Preserved |
+| Method | Goal | Granularity | Requires Retain Set | Structural Preservation |
 |------|------|------|:---:|:---:|
-| Fisher [Golatkar'20] | undo | instance | ✓ | ✗ |
-| UNSIR [Tarun'23] | undo | class | ✓ | ✗ |
-| L2UL [Chen'24] | misclassify | instance | ✗ | ✗ |
-| LoTUS [Kim'24] | undo | instance | ✓ | ✗ |
-| **Structguard** | misclassify | instance | ✗ | **✓** |
+| Fisher [Golatkar'20] | undo | Instance | ✓ | ✗ |
+| UNSIR [Tarun'23] | undo | Class | ✓ | ✗ |
+| L2UL [Chen'24] | misclassify | Instance | ✗ | ✗ |
+| LoTUS [Kim'24] | undo | Instance | ✓ | ✗ |
+| **Ours** | misclassify | Instance | ✗ | **✓** |
 
-Structguard is the first instance-level unlearning method that simultaneously satisfies "no retain set required" and "structure preservation." It shares the misclassification objective and retain-set-free setting with L2UL, but explicitly maintains knowledge structure via semantic anchors, achieving comprehensive improvements across all tasks.
+Ours is the first instance-level unlearning method to simultaneously satisfy "No Retain Set" and "Structural Preservation." Like L2UL, it uses a misclassification goal without a retain set but comprehensively outperforms it across all tasks by explicitly maintaining knowledge structure via semantic anchors.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The structure preservation perspective is novel, and the semantic anchor design is particularly innovative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive evaluation across three tasks with rich ablation studies, visualizations, and anchor analyses.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear figures and rigorously reasoned motivation.
-- **Value**: ⭐⭐⭐⭐ — Introduces a new structure-preserving paradigm for the MU field with strong practical applicability.
+- Novelty: ⭐⭐⭐⭐ — The structural preservation perspective is novel; semantic anchor design is ingenious.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive triple-task evaluation with rich ablation, visualization, and anchor analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear illustrations and rigorous logical motivation.
+- Value: ⭐⭐⭐⭐ — Provides a new paradigm for structural preservation in the MU field with high practicality.
 
 <!-- RELATED:START -->
 
@@ -152,11 +169,11 @@ Structguard is the first instance-level unlearning method that simultaneously sa
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
+- [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
+- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
+- [\[CVPR 2025\] Structure-Aware Correspondence Learning for Relative Pose Estimation](../../CVPR2025/human_understanding/structure-aware_correspondence_learning_for_relative_pose_estimation.md)
+- [\[CVPR 2026\] BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition](barbiegait_an_identity-consistent_synthetic_human_dataset_with_versatile_cloth-c.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
 
 </div>
 

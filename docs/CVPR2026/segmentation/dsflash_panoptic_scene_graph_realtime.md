@@ -2,157 +2,132 @@
 title: >-
   [Paper Note] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
 description: >-
-  [CVPR 2026][Segmentation][panoptic scene graph generation] DSFlash combines a unified segmentation/relation backbone, a gated bidirectional relation head…
+  [CVPR 2026][Segmentation][panoptic scene graph generation] DSFlash improves panoptic scene graph generation speed to 56 FPS on an RTX 3090 while achieving SOTA performance with $mR@50=30.9$ on the PSG dataset by merging segmentation and relation prediction backbones, employing a bidirectional relation prediction head, and utilizing dynamic patch pruning.
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "panoptic scene graph generation"
-  - "real-time inference"
-  - "bidirectional relation prediction"
-  - "token pruning"
-  - "EoMT"
+  - CVPR 2026
+  - Segmentation
+  - panoptic scene graph generation
+  - real-time inference
+  - bidirectional relation prediction
+  - token pruning
+  - low-latency
 date: 2026-05-08
-content_hash: 9d1abbba39752a1a
+content_hash: 277c252e0a1e9476
 ---
-
 # DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.10538](https://arxiv.org/abs/2603.10538)  
-**Code**: not yet released (authors will release upon acceptance)  
+**Code**: TBD (Authors state release after acceptance)  
 **Area**: Scene Graph Generation / Visual Scene Understanding  
-**Keywords**: panoptic scene graph generation, real-time inference, bidirectional relation prediction, token pruning, EoMT
+**Keywords**: panoptic scene graph generation, real-time inference, bidirectional relation prediction, token pruning, low-latency  
 
 ## TL;DR
-
-DSFlash combines a unified segmentation/relation backbone, a gated bidirectional relation head, and mask-based dynamic patch pruning to deliver SOTA panoptic scene graph generation on PSG at mR@50=30.9 with only 18 ms latency (56 FPS).
+DSFlash improves panoptic scene graph generation speed to 56 FPS on an RTX 3090 while achieving SOTA performance with $mR@50=30.9$ on the PSG dataset by merging segmentation and relation prediction backbones, employing a bidirectional relation prediction head, and utilizing dynamic patch pruning.
 
 ## Background & Motivation
+Scene Graphs (SGs) structure images into nodes (instances) and edges (relations), which are widely used in tasks such as VQA, reasoning, and image captioning. Existing PSGG methods focus little on latency; a single inference often takes hundreds of milliseconds, making them difficult to deploy on edge devices or real-time systems. While DSFormer achieves SOTA performance, its inference time is 458 ms, and it uses two independent backbones (MaskDINO + ResNet), resulting in significant resource waste. The **Key Insight** of this paper is that two-stage methods can achieve ultra-low latency without losing (or even while improving) scene graph quality by sharing backbone features, reducing the number of forward passes, and pruning irrelevant tokens.
 
-**Background**: Scene graph generation (SGG) structures an image into nodes (instances) and edges (relations), forming (subject, predicate, object) triplets that have proven valuable for downstream tasks such as VQA, image captioning and embodied reasoning. Panoptic scene graph generation (PSGG) further replaces bounding boxes with segmentation masks for more precise spatial localization.
-
-**Limitations of Prior Work**: Existing PSGG methods almost entirely ignore inference efficiency. DSFormer reaches SOTA accuracy (mR@50=30.7) but takes 458 ms per frame and uses two independent backbones (MaskDINO for segmentation and ResNet for relation prediction), wasting compute. One-stage methods such as HiLo claim to be more efficient but still incur 427 ms latency with poor accuracy. The only speed-oriented work, REACT, reduces latency to 19 ms but performs bbox detection with YOLOv8 instead of panoptic segmentation, achieving only mR@50=19.0 — a large quality gap.
-
-**Key Challenge**: There is a sharp tension between high-quality panoptic scene graph generation and real-time inference: existing methods are either accurate but extremely slow, or fast but solve a simplified task (bbox detection rather than segmentation, or only salient-relation prediction rather than a comprehensive scene graph).
-
-**Goal**: Make panoptic scene graph generation real-time without sacrificing graph quality, and compute a comprehensive scene graph (all relations between all instances) rather than only a few salient ones.
-
-**Key Insight**: Build on top of the two-stage paradigm and exploit a modern efficient segmentation backbone (EoMT) that simultaneously yields segmentation masks and feature representations, eliminating the redundant backbone forward pass; halve the number of relation-classification forwards via a gating mechanism for bidirectional prediction; and prune irrelevant patch tokens using mask-coverage as a task prior.
-
-**Core Idea**: Reuse a frozen efficient segmentation backbone's features + gated bidirectional relation head + task-prior-driven token pruning = real-time comprehensive panoptic scene graph generation.
+## Core Problem
+How can panoptic scene graph generation reach real-time inference speeds without sacrificing the quality of the scene graph?
 
 ## Method
 
 ### Overall Architecture
+DSFlash addresses the neglected latency issue in PSGG—where the SOTA DSFormer takes 458 ms for a single inference and wastes resources by using separate MaskDINO and ResNet backbones. The **Core Idea** is that two-stage methods can compress latency to real-time by sharing backbone features, reducing forward passes, and pruning irrelevant tokens without performance degradation. Specifically, the first stage uses a frozen EoMT (Encoder-only Mask Transformer) segmentation model to extract masks and features. The second stage directly reuses intermediate EoMT features (extracting patch tokens from blocks 2/5/8/11 and concatenating them into a $768 \times 40 \times 40$ tensor). It encodes subject-object positions using mask embeddings, processes them through a lightweight Transformer neck, and outputs bidirectional relations in a single forward pass via a gated relation head. Within the backbone, ToMe-SD token merging is integrated to further reduce attention overhead.
 
-DSFlash adopts a two-stage design. Stage one uses a frozen EoMT (Encoder-only Mask Transformer) as the segmentation backbone, producing panoptic masks and intermediate features. Concretely, patch tokens from EoMT blocks 2/5/8/11 (S/B variants) or 5/11/17/23 (L variant) are concatenated into a 768×40×40 feature tensor. Stage two iterates over each mask pair (S₀, S₁): mask embedding encodes subject/object positions into the feature patches, ViT patch embedding produces 13×13 patch tokens (384-dim), a lightweight Transformer neck processes them, and finally the gated bidirectional relation head outputs predictions for both directions in one forward. Ground-truth masks are used during training and EoMT-predicted masks at inference.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image 640×640"] --> BB
+    subgraph BB["Merged Backbone (Frozen EoMT + Token Merging)"]
+        direction TB
+        B["Reuse EoMT intermediate features<br/>Extract block 2/5/8/11 patch tokens<br/>Concat to 768×40×40"]
+        T["Token Merging (ToMe-SD)<br/>Merge before attention, unmerge after"]
+        B --> T
+    end
+    BB --> S["EoMT outputs segmentation masks"]
+    BB --> M["Raw-resolution mask embedding<br/>Calculate patch overlap at low resolution"]
+    S --> M
+    M --> P["Dynamic patch pruning<br/>Discard patches not overlapping with sub/obj"]
+    P --> N["Lightweight Transformer neck"]
+    N --> R["Gated bidirectional relation head<br/>Gated split t→ / t←, shared MLP forward"]
+    R --> O["Subject-Object bidirectional relations"]
+```
 
 ### Key Designs
 
-1. **Merged Backbone (Unified Backbone)**:
+**1. Merged Backbone: Reusing EoMT features to eliminate one forward pass**
+The greatest waste in two-stage methods is using separate backbones for segmentation and relation prediction. DSFlash no longer runs a separate relation backbone; instead, it reuses the EoMT already running for segmentation. It extracts patch tokens from blocks 2/5/8/11 (or 5/11/17/23 for the L-version), concatenating them along the channel dimension into a $768 \times 40 \times 40$ feature tensor for subsequent modules. This eliminates an entire backbone forward pass. By replacing the heavy MaskDINO with EoMT, it achieves comparable segmentation quality with much lower latency. The EoMT remains frozen; only the neck and head are trained, allowing training to complete in under 24 hours on a single GTX 1080.
 
-    - Function: eliminate the redundancy of separate backbones for segmentation and relation prediction, cutting inference latency by an order of magnitude.
-    - Mechanism: directly tap multi-scale patch tokens from EoMT's intermediate layers as the input features for relation prediction, removing the extra ResNet backbone. EoMT remains frozen throughout; only the neck and head are updated during training.
-    - Design Motivation: DSFormer's two independent backbones (MaskDINO + ResNet) require two full forward passes and dominate latency (the segmentation share alone consumes most of the 445 ms). EoMT, being encoder-only, drops the feature adapter, pixel decoder and transformer decoder, achieving 4× faster inference than Mask2Former while preserving feature quality through DINO/EVA-02 large-scale self-supervised pretraining.
+**2. Raw-resolution Masks: Direct overlap calculation at low resolution**
+Masks are integrated into patch tokens based on the area ratio of each patch covered by the subject/object mask. DSFormer bilinearly upsampled EoMT's $160 \times 160$ mask logits to the original resolution to calculate coverage, which is computationally expensive. DSFlash observes that only $13 \times 13$ patch granularity is needed, so it calculates overlap ratios directly at the low resolution, avoiding expensive upsampling.
 
-2. **Gated Bidirectional Relation Prediction**:
+**3. Mask-based Dynamic Patch Pruning: Zero-overhead irrelevant token removal**
+Processing more patch tokens in the neck increases latency. Patches that do not overlap with either the subject or object mask contribute nothing to relationship determination. DSFlash discards these zero-overlap patches during the mask embedding stage before sending them to the neck. Since overlap ratios are already calculated, identifying patches to prune incurs almost zero extra cost. The neck can handle variable token sequences as the final prediction only depends on the classification token.
 
-    - Function: predict both S₀→S₁ and S₁→S₀ relations in a single forward pass, halving the number of forwards.
-    - Mechanism: from the encoded feature $x$, a sigmoid-gated MLP produces a gate vector $g = \sigma(\text{gate\_mlp}(x))$, splitting $x$ into $t_\rightarrow = g \odot x$ and $t_\leftarrow = (1-g) \odot x$; a shared MLP relation head outputs predictions for both directions. During training each mask pair is processed twice (with S₀/S₁ swapped) and an MSE consistency loss enforces that the intermediate features swap when the inputs are swapped ($t_\rightarrow \approx t'_\leftarrow$, $t_\leftarrow \approx t'_\rightarrow$), guaranteeing direction equivariance.
-    - Design Motivation: the authors observe that positive labels in PSG appear 3× more often in the forward direction than in the reverse, and the model exploits this statistical bias as a shortcut. The shared MLP head plus the consistency loss force balanced treatment of both directions; the additional bidirectional supervision also boosts mR@50 from 25.0 to 28.8.
+**4. Gated Bidirectional Prediction: Bidirectional relations in one forward pass**
+Relations between a mask pair $(S_0, S_1)$ are directional. DSFormer required two forward passes for $S_0 \to S_1$ and $S_1 \to S_0$. DSFlash splits the encoded feature $x$ via a sigmoid gate $g$ into two branches, $t_\to = g \odot x$ and $t_\leftarrow = (1-g) \odot x$ (inspired by GRU gating), and passes both through the same shared MLP relation head. To prevent the model from exploiting data bias (where forward labels are 3x more common in PSG), an MSE consistency loss (Eq. 7) is used during training to ensure that flipping the input mask order result in swapped intermediate features ($z_\to = z'_\leftarrow$). This supervision improved $mR@50$ from 25.0 to 28.8.
 
-3. **Mask-based Dynamic Patch Pruning**:
-
-    - Function: discard patch tokens that overlap with neither the subject nor object mask, reducing the model neck's compute.
-    - Mechanism: mask embedding already requires computing the overlap ratio between each patch and the subject/object masks. Patches with zero overlap to both produce a pure-background mask embedding that contains no useful localization signal and can be dropped directly. Since the final prediction depends only on the classification token, the model naturally supports variable-length inputs.
-    - Design Motivation: the overlap ratio is computed regardless, so the pruning decision is essentially free. The benefit is most pronounced on low-end GPUs (GTX 1080), where latency drops from 230 ms to 205 ms.
+**5. Token Merging (ToMe-SD): Further optimization for legacy GPUs**
+This is an orthogonal optimization applied to the backbone: ToMe-SD merges similar tokens before each attention layer and unmerges them afterward to reduce computation. ToMe-SD is preferred over standard ToMe because it restores tokens, better preserving the backbone's segmentation capability. This significantly reduces latency on older GPUs like the GTX 1080 (from 230 ms to 173 ms).
 
 ### Loss & Training
-
-- **Relation classification loss**: Binary Cross Entropy applied independently to both directions: BCE($z_\rightarrow$, $y_\rightarrow$) and BCE($z_\leftarrow$, $y_\leftarrow$).
-- **Feature consistency loss**: an MSE term enforcing that the intermediate features swap when the inputs are swapped: Consistency = (1/D)Σ[($t_\rightarrow^i$ − $t'^i_\leftarrow$)² + ($t_\leftarrow^i$ − $t'^i_\rightarrow$)²].
-- **Negative sampling**: 1 negative per 5 positives.
-- **Data augmentation**: DeiT III style — random horizontal flip + colour jitter + one of {grayscale, solarization, Gaussian blur}.
-- **Optimizer**: AdamW, lr=1e-5, cosine schedule with warmup, gradient clipping at norm ≤ 1, 20 epochs.
-- **Training efficiency**: backbone is frozen throughout; only the neck and head are trained, finishing in under 24 hours on a single GTX 1080.
+- Relation Classification: Binary Cross Entropy
+- Bidirectional Consistency: MSE consistency loss (Eq. 7) to constrain feature equivariance.
+- Augmentation: DeiT III style (random flip, color jitter, choice of grayscale/blur/solarization).
+- Optimizer: AdamW, $lr=1e-5$, cosine schedule + warmup, gradient clipping $norm \leq 1$, 20 epochs.
+- Sampling: 1 negative sample for every 5 positive samples.
 
 ## Key Experimental Results
 
-### Main Results
-
-Evaluated on PSG with the SGDet protocol, batch size 1, RTX 3090:
-
-| Method | mR@50 ↑ | Latency (ms) ↓ | Params |
-|--------|---------|----------------|--------|
-| MotifNet-R50 | 9.56 | 100 | 109M |
-| VCTree-R50 | 10.14 | 116 | 105M |
-| MotifNet-MD | 16.32 | 504 | 332M |
-| VCTree-MD | 17.58 | 520 | 327M |
-| HiLo-R50 | 16.34 | 277 | 59M |
-| HiLo-L | 19.08 | 427 | 230M |
-| REACT | 19.00 | 19 | 43M |
+| Method | mR@50 | Latency (ms) | Params |
+|------|-------|-----------|--------|
 | DSFormer | 30.70 | 458 | 330M |
-| **DSFlash-S*** | 25.05 | **18** | **40M** |
-| **DSFlash-B*** | 28.50 | 23 | 116M |
+| REACT | 19.00 | 19 | 43M |
+| HiLo-L | 19.08 | 427 | 230M |
 | **DSFlash-L** | **30.90** | 50 | 340M |
+| DSFlash-B* | 28.50 | 23 | 116M |
+| DSFlash-S* | 25.05 | **18** | **40M** |
+
+- DSFlash-L outperforms DSFormer in $mR@50$ (30.9 vs 30.7) with only 1/9 the latency.
+- DSFlash-S* achieves 56 FPS (18ms) with only 40M parameters, still outperforming REACT and HiLo.
 
 ### Ablation Study
-
-Cumulative effect of the proposed optimizations (RTX 3090, batch size 1):
-
-| Step | mR@50 ↑ | Latency (ms) ↓ | RPS ↑ |
-|------|---------|----------------|-------|
-| Baseline (DSFormer) | 30.7 | 445 | 435 |
-| + Unified Backbone | 25.0 | 41 (-91%) | 5,745 |
-| + Efficient Mask Embedding | 25.0 | 37 (-10%) | 7,132 |
-| + Gated Bidirectional Prediction | 28.8 | 29 (-22%) | 11,491 |
-| + Skip Mask Upsampling | 28.5 | 23 (-21%) | 12,928 |
-| + Switch to EoMT-S | 25.1 | 18 (-22%) | 17,897 |
-| + Switch to EoMT-L (replaces previous row) | 30.9 | 50 (+72%) | 5,996 |
-
-Effect of pruning and token merging across GPUs:
-
-| Prune | ToMe | H100 | RTX 3090 | GTX 1080 | mR@50 |
-|-------|------|------|----------|----------|-------|
-| ✗ | 0% | 19 ms | 29 ms | 230 ms | 28.80 |
-| ✓ | 0% | 20 ms | 29 ms | 205 ms | 26.67 |
-| ✓ | 30% | 20 ms | 30 ms | 173 ms | 26.51 |
-| ✗ | 50% | 20 ms | 29 ms | 167 ms | 24.87 |
-| ✗ | 60% | 21 ms | 29 ms | 155 ms | 21.93 |
-
-### Key Findings
-
-- The unified backbone is the largest source of speedup, dropping latency from 445 ms to 41 ms (-91%), at a cost of 5.7 mR@50 points — primarily because EoMT segmentation quality is slightly below MaskDINO.
-- Gated bidirectional prediction not only halves the forward count (RPS from 7,132 to 11,491) but also lifts mR@50 from 25.0 to 28.8 thanks to the additional bidirectional supervision signal.
-- The correlation between mR@50 and the segmentation model's Panoptic Quality is as high as 0.99, indicating that segmentation quality is the decisive factor for scene graph performance.
-- Pruning and token merging yield almost no latency benefit on high-end GPUs (already saturated) but are very effective on the GTX 1080, where stacking both reduces latency from 230 ms to 173 ms.
-- EoMT-B with low-resolution masks beats EoMT-S with high-resolution masks (faster and more accurate), suggesting that backbone capacity matters more than mask resolution.
+- Unifying the backbone reduced latency from 458ms to 41ms (-91%), though $mR@50$ dropped from 30.7 to 25.0.
+- Efficient mask embedding: Latency reduced to 37ms (-10%) with no change in $mR@50$.
+- Gated bidirectional prediction: Latency reduced to 29ms (-22%), while $mR@50$ rose from 25.0 to 28.8 due to additional supervision.
+- Skipping mask upsampling: Latency reduced to 23ms (-21%), $mR@50=28.5$ (slight decrease).
+- $mR@50$ performance shows a 0.99 correlation with the Panoptic Quality of the segmentation model.
 
 ## Highlights & Insights
-
-- **First real-time comprehensive panoptic scene graph generation system**: DSFlash is not only fast (56 FPS) but also computes all relations between all instances (a comprehensive scene graph) rather than predicting only a few salient ones. This unique combination of speed and completeness fills a gap for edge deployment and real-time applications in PSGG.
-- **Elegant gated bidirectional prediction**: the sigmoid-gated split of features into two directional branches with a shared MLP head produces both-direction predictions in a single forward. Even more elegantly, the consistency loss not only fixes the dataset's forward/backward labelling imbalance but also acts as additional supervision that *improves* accuracy (25.0 → 28.8 mR@50) — a true win-win of "less compute and better accuracy".
-- **Zero-overhead pruning by exploiting task priors**: mask-based patch pruning leverages the fact that the overlap ratio is already needed for mask embedding, so the prune decision adds essentially no compute. This pattern of turning task-specific priors into acceleration is broadly transferable.
+- Implemented the first truly real-time PSGG system, capable of running at ~6 FPS even on a GTX 1080.
+- The bidirectional relation prediction is clever, outputting both directions weighted by a gate while using consistency loss to improve quality.
+- The design is simple and practical: frozen backbone + lightweight neck + shared head, resulting in extremely low training costs.
+- Rigorous evaluation: Strictly followed SingleMPO to avoid $R@k$ inflation via multi-masking.
 
 ## Limitations & Future Work
-
-- **Frozen backbone caps the ceiling**: the fully frozen EoMT means relation prediction cannot back-propagate into the features, potentially limiting peak performance. End-to-end fine-tuning or partially unfreezing the later layers may yield further gains.
-- **Small dataset scale**: PSG only has 49k images and 56 predicate classes; behaviour at larger scale and with more diverse scenes is unknown.
-- **Subject/object confusion**: the authors note that subject/object confusion is a common failure mode; the gating mechanism alleviates but does not eliminate it. Instance-level contrastive learning could be explored to sharpen the distinction.
+- Freezing the backbone means relation prediction cannot influence feature extraction, potentially limiting the performance ceiling.
+- The PSG dataset is relatively small (49k images); performance on larger datasets is unknown.
+- Low-resolution masks may provide insufficient granularity for small objects.
+- Shared MLP heads in bidirectional prediction might cause information confusion for highly directional predicates.
+- Subject-object confusion remains a common failure mode; contrastive learning could be a solution.
 
 ## Related Work & Insights
+- vs. DSFormer: Inherits mask embedding and strictly decoupled ideas but reduces latency by 9x through backbone merging and bidirectional prediction.
+- vs. REACT: REACT uses YOLOv8 for bbox detection rather than panoptic segmentation; DSFlash outperforms it by 12 $mR@50$ points in the PSGG setting.
+- vs. HiLo: A one-stage method whose performance (19.08 $mR@50$) is far inferior to DSFlash, with higher latency.
 
-- **vs DSFormer**: inherits the mask embedding and strictly decoupled two-stage philosophy, but the merged backbone and bidirectional prediction cut latency from 458 ms to 50 ms (9× speedup) while slightly improving mR@50 (30.7 → 30.9).
-- **vs REACT**: previously the only speed-oriented SGG method, REACT uses YOLOv8 + bbox detection; DSFlash reaches comparable speed (19 ms vs 18 ms) but is 6–12 mR@50 points higher in the PSGG setting.
-- **vs HiLo**: a one-stage method that claims to be efficient but is actually 427 ms with only 19.08 mR@50, echoing recent scepticism about the "one-stage is better" narrative.
-- EoMT's encoder-only design and frozen-reuse pattern can be transferred to other two-stage vision tasks.
+## Related Work & Insights
+- Reusing intermediate features from a frozen backbone can be generalized to other two-stage vision tasks.
+- Bidirectional prediction + consistency loss can be applied to directional relation modeling in detection.
+- Dynamic patch pruning leverages task priors (mask coverage) for zero-overhead acceleration in mask-conditioned architectures.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ gated bidirectional prediction and zero-overhead mask-based pruning are clever; first real-time comprehensive PSGG.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ three backbone variants × three GPUs, step-by-step ablations, pruning/merging cross-experiments — analysis is very comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ clear structure; the rigorous discussion of evaluation protocols (SingleMPO) is a notable strength; complete derivations.
-- Value: ⭐⭐⭐⭐ fills the real-time PSGG gap; the 40M-param / 18-ms configuration is highly attractive for edge deployment.
+- Novelty: ⭐⭐⭐⭐ Bidirectional prediction and mask-based pruning are new for PSGG; system-level optimization is thorough.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-GPU latency evaluation, detailed ablations, and fair evaluation protocols.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rich diagrams, and valuable discussion on evaluation issues.
+- Value: ⭐⭐⭐⭐ Brings PSGG into the real-time domain with high practicality, especially for resource-constrained scenarios.
 
 <!-- RELATED:START -->
 
@@ -160,11 +135,11 @@ Effect of pruning and token merging across GPUs:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Learning 4D Panoptic Scene Graph Generation from Rich 2D Visual Scene](../../CVPR2025/segmentation/learning_4d_panoptic_scene_graph_generation_from_rich_2d_visual_scene.md)
+- [\[ECCV 2024\] OpenPSG: Open-set Panoptic Scene Graph Generation via Large Multimodal Models](../../ECCV2024/segmentation/openpsg_open-set_panoptic_scene_graph_generation_via_large_multimodal_models.md)
 - [\[ICCV 2025\] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation](../../ICCV2025/segmentation/spade_spatial-aware_denoising_network_for_open-vocabulary_panoptic_scene_graph_g.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 - [\[CVPR 2026\] GenMask: Adapting DiT for Segmentation via Direct Mask Generation](genmask_adapting_dit_for_segmentation_via_direct_mask_generation.md)
-- [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
-- [\[CVPR 2026\] Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance](efficient_rgb-d_scene_understanding_via_multi-task_adaptive_learning_and_cross-d.md)
-- [\[AAAI 2026\] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries](../../AAAI2026/segmentation/vista_scene-aware_optimization_for_streaming_video_question_answering_under_post.md)
 
 </div>
 

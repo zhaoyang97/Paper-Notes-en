@@ -2,127 +2,132 @@
 title: >-
   [Paper Note] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality
 description: >-
-  [ICML 2026][Interpretability][Unified visual tokenizer] MUSE attributes the "understanding-generation" zero-sum dilemma of unified visual tokenizers to manifold misalignment…
+  [ICML 2026][Interpretability][Paper Note] MUSE attributes the "understanding-generation" zero-sum dilemma in unified visual tokenizers to manifold misalignment. It proposes the Gradient Orthogonality Hypothesis—injecting semantics into $W_V$ while routing structural gradients through $W_{Q,K}$. Through Synergistic Blocks, DINOv3 topological alignment, and NCE
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Unified visual tokenizer"
-  - "manifold alignment"
-  - "gradient orthogonality"
-  - "topological alignment"
-  - "multimodal understanding-generation"
+  - ICML 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 739b078b3297dc56
+content_hash: b78fe9b72e588f4f
 ---
-
 # MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.05646](https://arxiv.org/abs/2605.05646)  
-**Code**: Available (GitHub link noted in the paper, see main text for repository)  
+**Code**: Available (GitHub noted in paper; repository address requires main text lookup)  
 **Area**: Interpretability / Multimodal / Visual Tokenizer  
 **Keywords**: Unified visual tokenizer, manifold alignment, gradient orthogonality, topological alignment, multimodal understanding-generation
 
 ## TL;DR
-MUSE attributes the "understanding-generation" zero-sum dilemma of unified visual tokenizers to manifold misalignment, proposing the gradient orthogonality hypothesis—injecting semantics into $W_V$ while structural gradients flow through $W_{Q,K}$. Through Synergistic Block + DINOv3 topological alignment + NCE semantic anchoring, the two are fully decoupled. As a result, gFID 3.08 and linear probing 85.2% (even surpassing the InternViT-300M teacher at 82.5%) coexist, achieving genuine "mutual reinforcement" rather than trade-off for the first time.
+MUSE attributes the "understanding-generation" zero-sum dilemma in unified visual tokenizers to manifold misalignment. It proposes the Gradient Orthogonality Hypothesis—injecting semantics into $W_V$ while routing structural gradients through $W_{Q,K}$. Through Synergistic Blocks, DINOv3 topological alignment, and NCE semantic anchoring, it achieves complete decoupling. Consequently, gFID 3.08 and 85.2% linear probing (surpassing the InternViT-300M teacher's 82.5%) coexist, marking the first instance of true "mutual reinforcement" rather than trade-off.
 
 ## Background & Motivation
 
-**Background**: As large multimodal models move toward unification, the community seeks a unified visual tokenizer to serve both understanding (CLIP-style semantic encoding) and generation (VQ-VAE/diffusion latent). Approaches like UniTok, TokenFlow, UniLIP, and VTP attempt to fit both objectives into a single codebook or shared latent space.
+**Background**: As multimodal large models move toward unification, the industry attempts to use a single unified visual tokenizer to serve both understanding (CLIP-style semantic encoding) and generation (VQ-VAE/diffusion latent). Methods like UniTok, TokenFlow, UniLIP, and VTP attempt to fit both objectives into the same codebook or shared latent space.
 
-**Limitations of Prior Work**: Despite architectural unification, the objectives remain in conflict—pixel reconstruction prefers a "spread-out" manifold (preserving high-frequency details), while semantic alignment prefers a "compressed" manifold (filtering out irrelevant textures). This leads to "perceptual polarization" in representations: attention becomes either fragmented (as in VA-VAE) or overly blurred (as in UniLIP), with loss of mid-frequency structural information.
+**Limitations of Prior Work**: Although architectures are unified, objectives remain contradictory. Pixel reconstruction prefers "expanded" manifolds (preserving high-frequency details), while semantic alignment prefers "compressed" manifolds (filtering irrelevant textures). This leads to "perceptual polarization": attention is either fragmented (VA-VAE types) or excessively blurred (UniLIP types), resulting in missing mid-frequency structural information.
 
-**Key Challenge**: The two objectives directly compete within shared parameters (especially self-attention's $W_Q, W_K, W_V$), with gradient directions often negatively correlated ($\cos\theta_g \ll 0$, see Fig. 2a), resulting in "destructive interference"—one pulls while the other pushes, so neither learns well. The authors term this Manifold Misalignment.
+**Key Challenge**: The two objectives directly compete within shared parameters (specifically self-attention $W_Q, W_K, W_V$). Gradient directions even exhibit negative cosine similarity ($\cos\theta_g \ll 0$, Fig. 2a), causing "destructive interference"—one pulling while the other pushes. Neither objective is learned well, a phenomenon the authors term Manifold Misalignment.
 
-**Goal**: (1) Eliminate the generation-understanding trade-off without increasing architectural overhead; (2) Make "structural information" a bridge serving both objectives; (3) Empirically validate that the gradient orthogonality hypothesis can turn "parameter sharing = gradient conflict" into "subspace separation = gradient synergy".
+**Goal**: (1) Eliminate the zero-sum trade-off between generation and understanding without increasing architectural overhead; (2) Use "structural information" as a bridge to serve both objectives; (3) Empirically verify that the gradient orthogonality hypothesis can transform "parameter sharing = gradient conflict" into "subspace division = gradient synergy."
 
-**Key Insight**: From a manifold geometry perspective, understanding requires a "compressed" manifold $\mathcal M_S$ (semantic invariance), generation requires an "expanded" manifold $\mathcal M_T$ (structural equivariance), and a missing $S$ (Structural State) is needed as the geometric foundation. In Transformer blocks, $W_{Q,K}$ control routing topology, $W_V$ controls content values—naturally forming two orthogonal subspaces.
+**Key Insight**: From a manifold geometry perspective, understanding requires $\mathcal M_S$ (semantic invariance) to "compress" the manifold, while generation requires $\mathcal M_T$ (structural equivariance) to "expand" the manifold. A Structural State ($S$) is missing as a geometric foundation. In a Transformer block, $W_{Q,K}$ controls routing topology and $W_V$ controls content values, naturally forming two orthogonal subspaces.
 
-**Core Idea**: Route semantic gradients to $W_V$ and structural gradients to $W_{Q,K}$; use DINOv3 attention distillation for topological alignment and NCE to anchor content to the vision-language manifold, enabling the two objectives to be physically isolated and optimized within the Transformer.
+**Core Idea**: Route semantic gradients to $W_V$ and structural gradients to $W_{Q,K}$. Use DINOv3 attention distillation to align topology and NCE to anchor content to the vision-language manifold, allowing both objectives to be optimized in physically isolated spaces within the Transformer.
 
 ## Method
 
 ### Overall Architecture
-$f_\theta: \mathcal X \to \mathcal Z$ learns to map images to latents with both semantic invariance $\mathcal M_S$ and structural equivariance $\mathcal M_T$. MUSE uses six Synergistic Blocks as a connector, with InternVL3's InternViT as the visual backbone and DC-AE as the pixel decoder. Training proceeds in three stages: (1) **Topology warmup**: freeze the encoder, use only $\mathcal L_{topo}$ to align student attention topology with the DINOv3 teacher; (2) **Semantic injection**: while maintaining topology, use $\mathcal L_{ITC}$ to anchor token values to the vision-language manifold; (3) **Synergistic tuning**: unfreeze the backbone for end-to-end joint training of reconstruction, semantics, and topology, using stop-gradient to isolate the semantic branch from reconstruction gradients.
+MUSE addresses the conflict between two types of gradients when a tokenizer serves both understanding and generation. It splits the encoder $f_\theta: \mathcal X \to \mathcal Z$ into two physically isolated gradient paths—structural gradients only traverse $W_{Q,K}$, while semantic gradients only traverse $W_V$. This ensures the latent resides on both the semantic invariant manifold $\mathcal M_S$ and the structural equivariant manifold $\mathcal M_T$. Architecturally, a connector is formed by six Synergistic Blocks, with InternViT from InternVL3 as the visual backbone and DC-AE as the pixel decoder. Training follows a three-stage curriculum: "learn where to look, learn what it is, and finally end-to-end synergy," using stop-gradients to prevent reconstruction gradients from polluting the semantic branch.
+
+```mermaid
+graph TD
+    A["Image → InternViT Backbone + 256 learnable queries"] --> B
+    subgraph B["Synergistic Block ×6: Physical Decoupling of W_V and W_QK"]
+        direction TB
+        T["Topology Stream (W_Q, W_K)<br/>A = Softmax(QKᵀ/√d): Determines how to look"]
+        S["Semantic Stream (W_V)<br/>H = A·V_sem: Determines what is seen (with stop-grad)"]
+        T --> S
+    end
+    B --> C["Structural Topology Alignment<br/>DINOv3 attention KL distillation · Gradients only to W_QK"]
+    B --> D["Active Semantic Anchoring<br/>NCE anchoring vision-language manifold · Gradients only to W_V"]
+    B --> E["DC-AE Decoder + Reconstruction Loss (Scaffold)"]
+    C --> F["Gradient Cosine ≈ 0 · Mutual Reinforcement<br/>gFID 3.08 / linear probe 85.2%"]
+    D --> F
+    E --> F
+```
 
 ### Key Designs
 
-1. **Synergistic Block: Physical Decoupling of $W_V$ and $W_{Q,K}$**:
+**1. Synergistic Block: Physical Decoupling of $W_V$ and $W_{Q,K}$**
 
-    - **Function**: Ensures structural gradients update only routing parameters, and semantic gradients update only value parameters, eliminating "parameter sharing → gradient conflict" at the architectural level.
-    - **Mechanism**: For input $H_l\in\mathbb R^{N\times D}$, the **Topology Stream** uses $W_Q, W_K$ to compute the adjacency matrix $A = \text{Softmax}(Q_{topo}K_{topo}^T/\sqrt{d_k})$ ("where to look"); the **Semantic Stream** uses an independent $W_V$ to project $V_{sem}=H_l W_V$, then aggregates via $A$ as $H_{attn}=A\cdot V_{sem}$ ("what is seen"). Structural loss backpropagates only to $W_{Q,K}$, semantic loss only to $W_V$. A stop-gradient is applied to the semantic branch (/// in Fig. 3 lower right), preventing reconstruction gradients from contaminating the topology routing.
-    - **Design Motivation**: Violin plots (Fig. 2c-d) empirically show that, under natural training, semantic gradients concentrate on $W_V$ and structural gradients on $W_{Q,K}$; standard optimizers forcibly mix them, causing negative cosine conflicts. The Synergistic Block leverages this intrinsic functional specialization for physical isolation, adding minimal parameter overhead but shifting gradient cosine from negative to ≈ 0.
+The pain point is that in classic self-attention, $W_Q, W_K, W_V$ share parameters, forcing reconstruction and semantic gradients to mix, often with negative cosine similarity. MUSE follows the natural division of labor within attention, splitting it into two streams: the Topology Stream uses $W_Q, W_K$ to calculate the adjacency matrix $A = \text{Softmax}(Q_{topo}K_{topo}^T/\sqrt{d_k})$, determining "how to look"; the Semantic Stream uses an independent $W_V$ to project values $V_{sem}=H_l W_V$, then aggregates them via $A$ for $H_{attn}=A\cdot V_{sem}$, determining "what is seen." Consequently, structural loss only backpropagates to $W_{Q,K}$, and semantic loss only to $W_V$. A stop-gradient is added to the semantic branch to prevent reconstruction gradients from passing through and polluting the routing. This is effective because the authors' violin plots (Fig. 2c-d) show that under natural training, semantic gradients concentrate in $W_V$ and structural gradients in $W_{Q,K}$. The Synergistic Block formalizes this internal specialization without increasing parameters, reducing gradient cosine from negative to $\approx 0$.
 
-2. **Structural Topology Alignment**:
+**2. Structural Topology Alignment: Distilling Structure via DINOv3 Attention**
 
-    - **Function**: Maximizes $I(Z;S)$ by distilling the object geometry emerging in DINOv3 teacher attention maps into the student routing.
-    - **Mechanism**: DINOv3 and similar self-supervised models' attention maps naturally reveal object-level segmentation. MUSE introduces a 4D interpolation function $\Psi(\cdot)$ for resolution alignment, then uses KL divergence to align student and teacher attention for each layer and head: $\mathcal L_{topo} = \frac{1}{LH}\sum_l\sum_h D_{KL}(\Psi(A_T^{(l,h)})\,\|\,A_S^{(l,h)})$. This loss is architecturally guaranteed to backpropagate only to $W_{Q,K}$.
-    - **Design Motivation**: The authors argue that in the mutual information chain decomposition $I(Z;X,Y)\approx I(Z;S)+I(Z;Y|S)+I(Z;X|S,Y)$, $S$ is the geometric foundation; learning "where to look" first, then "what it is", is more information-theoretically sound than optimizing all terms simultaneously (curriculum justification). DINOv3's attention map provides free, high-quality topological supervision.
+Both understanding and generation lack mid-frequency structural information. The attention maps of self-supervised models like DINOv3 naturally exhibit object-level segmentation geometry, serving as free topological supervision. MUSE uses a 4D interpolation function $\Psi(\cdot)$ to align teacher-student resolutions, then applies KL divergence per layer and head: $\mathcal L_{topo} = \frac{1}{LH}\sum_l\sum_h D_{KL}(\Psi(A_T^{(l,h)})\,\|\,A_S^{(l,h)})$. The architecture ensures this loss only updates $W_{Q,K}$, aiming to maximize $I(Z;S)$. Learning topology first follows the chain rule of mutual information $I(Z;X,Y)\approx I(Z;S)+I(Z;Y|S)+I(Z;X|S,Y)$—where structural state $S$ is the foundation. Learning "where to look" before "what it is" is information-theoretically more sound than simultaneous optimization.
 
-3. **Active Semantic Anchoring**:
+**3. Active Semantic Anchoring: Nailing Token Values to the Vision-Language Manifold**
 
-    - **Function**: Physically anchors token values to the vision-language manifold, preventing reconstruction gradients from "squeezing out" semantics.
-    - **Mechanism**: Introduces a projector $g_\phi(\cdot)$ to map pooled token $\bar z$ into the vision-language joint space, using an NCE upper bound $\mathcal L_{anchor} = \mathcal L_{NCE}(g_\phi(\bar z), t) \approx -I_{LB}(Z;Y|S)$, where $t$ is the paired text embedding. This loss is architecturally guaranteed to update only $W_V$ and the projector.
-    - **Design Motivation**: Previous distillation-based semantic alignment (e.g., UniLIP) is "passive distillation" and easily overridden by reconstruction gradients; using NCE as an information-theoretic lower bound plus stop-gradient isolates the semantic branch from reconstruction gradients, equivalent to a Lagrangian constraint on $W_V$, forcing value parameters to remain close to $\mathcal M_S$.
+Previous semantic alignment methods (e.g., UniLIP) used passive distillation, which is easily eroded by reconstruction gradients. MUSE employs active anchoring: a projector $g_\phi(\cdot)$ maps pooled tokens $\bar z$ to the joint vision-language space, using an NCE upper bound $\mathcal L_{anchor} = \mathcal L_{NCE}(g_\phi(\bar z), t) \approx -I_{LB}(Z;Y|S)$ (where $t$ is the paired text embedding) to nail content to the manifold. This loss only updates $W_V$ and the projector. NCE, acting as an information-theoretic lower bound combined with stop-gradients, acts as a Lagrangian constraint on $W_V$, preventing value parameters from drifting away from $\mathcal M_S$.
 
 ### Loss & Training
-Three-stage curriculum: Stage 1 (topology warmup, 50k steps, 224×224, lr 4e-4, frozen backbone) → Stage 2 (semantic injection, 50k steps, lr 2e-4, add NCE) → Stage 3 (synergistic fine-tuning, 50k steps, lr 1e-5, enable adversarial training). MUSE-1B/3B variants are based on InternVL3-1B + SANA-0.6B and InternVL3-2B + SANA-1.6B, respectively. The connector uses six Synergistic Blocks and $N=256$ learnable queries. Pretraining corpus: 36M image-text pairs (27M Qwen2.5-VL-7B recaption + 5M CC12M + 4M JourneyDB).
+A three-stage curriculum is used: Stage 1 (Topology warmup, 50k steps, 224×224, lr 4e-4, frozen backbone, $\mathcal L_{topo}$ only) → Stage 2 (Semantic injection, 50k steps, lr 2e-4, added NCE) → Stage 3 (Synergistic fine-tuning, 50k steps, lr 1e-5, adversarial training enabled, joint end-to-end reconstruction + semantic + topology). MUSE-1B/3B variants are based on InternVL3-1B + SANA-0.6B and InternVL3-2B + SANA-1.6B respectively. The connector uses 6 Synergistic Blocks with $N=256$ learnable queries. Pre-training uses 36M image-text pairs.
 
 ## Key Experimental Results
 
 ### Main Results
-Table 1 (ImageNet-1K + ADE-20K; all unified methods retrained on the same BLIP3-o corpus for fairness):
+Table 1 (ImageNet-1K + ADE-20K, all unified methods retrained on the same BLIP3-o corpus for fairness):
 
 | Method | rFID↓ | gFID↓ | PSNR↑ | Zero-Shot↑ | Linear Probe↑ | mIoU↑ |
-|--------|-------|-------|-------|------------|---------------|-------|
-| InternViT-300M (teacher, understanding only) | – | – | – | 77.4 | 82.5 | 40.2 |
-| VA-VAE-d32 (generation only) | 0.52 | 4.56 | 26.2 | – | – | 19.6 |
+|------|-------|-------|-------|------------|---------------|-------|
+| InternViT-300M (Teacher, Und. only) | – | – | – | 77.4 | 82.5 | 40.2 |
+| VA-VAE-d32 (Gen. only) | 0.52 | 4.56 | 26.2 | – | – | 19.6 |
 | TokenFlow | 1.37 | 7.66 | 21.6 | 65.4 | 72.4 | 17.4 |
 | UniTok | 0.76 | 6.45 | 24.1 | 68.6 | 74.3 | 19.5 |
 | UniLIP | 0.79 | 5.73 | 23.0 | 73.5 | 76.2 | 15.4 |
 | VTP-L-d64 | 0.75 | 3.01 | 24.7 | 71.2 | 80.5 | 36.8 |
 | **MUSE (Ours)** | 0.62 | 3.08 | 24.9 | **76.1** | **85.2** | **46.5** |
 
-Key numbers: linear probing 85.2% > teacher 82.5%, with gFID on par with VTP and much higher mIoU (46.5 vs 36.8).
+Key figures: linear probing 85.2% > Teacher 82.5%, with gFID comparable to VTP and significantly higher mIoU (46.5 vs 36.8).
 
 ### Ablation Study
 
-| Configuration | Key Phenomenon | Description |
-|---------------|---------------|-------------|
-| Full MUSE | best | Three-stage + Synergistic Block |
-| naive shared $W_{Q,K,V}$ + multi-objective sum | $\cos\theta_g \ll 0$ | Classic destructive interference, both gFID/Zero-Shot drop |
-| remove stop-gradient | semantic drift | Reconstruction gradients pollute $W_V$, Zero-Shot drops significantly |
-| remove $\mathcal L_{topo}$ | mIoU drops sharply | Attention degrades to fragmentation |
-| remove NCE / switch to passive distillation | Zero-Shot degrades | Semantics squeezed out by reconstruction gradients |
-| reverse curriculum order (semantic before topology) | no convergence/degradation | Without geometric foundation, $I(Z;Y\|S)$ is hard to maximize |
+| Configuration | Key Phenomenon | Explanation |
+|------|---------|------|
+| Full MUSE | Best | Three-stage + Synergistic Block |
+| Naive shared $W_{Q,K,V}$ + sum of objectives | $\cos\theta_g \ll 0$ | Classic destructive interference; gFID/Zero-Shot both drop |
+| W/o stop-gradient | Semantic drift | Reconstruction gradients pollute $W_V$; Zero-Shot drops significantly |
+| W/o $\mathcal L_{topo}$ | mIoU sharp drop | Attention degrades into fragmentation |
+| W/o NCE / Passive distillation | Zero-Shot degradation | Semantics squeezed out by reconstruction gradients |
+| Reversed curriculum (Semantic first) | Divergence/degradation | $I(Z;Y\|S)$ is hard to maximize without geometric foundation |
 
 ### Key Findings
-- Gradient cosine shifts from negative to ≈ 0 (Fig. 2a-b), and split violin plots show semantic/structural gradients naturally specialize to different parameters (Fig. 2c-d), empirically supporting the Gradient Orthogonality Hypothesis.
-- "Student surpasses teacher": MUSE linear probing 85.2% > InternViT-300M 82.5%; authors attribute this to structural topology constraints preventing attention degradation (mIoU rises from 15.4–36.8 to 46.5), indirectly enhancing semantic interpretability.
-- Reconstruction and understanding are no longer zero-sum: with gFID close to generation specialists (VTP 3.01), the understanding side (MMVP 74.8) improves significantly over UniLIP.
+- Gradient cosine is reduced from negative to $\approx 0$ (Fig. 2a-b), and split violins show semantic/structural gradients naturally specialize to different parameters (Fig. 2c-d), empirically supporting the Gradient Orthogonality Hypothesis.
+- "Student surpasses teacher" phenomenon: MUSE linear probing 85.2% > InternViT-300M 82.5%. Authors explain that structural topology constraints prevent attention degradation (mIoU increases from 15.4-36.8 to 46.5), indirectly strengthening semantic readability.
+- Reconstruction and understanding are no longer zero-sum: while maintaining gFID close to the generation expert (VTP 3.01), understanding performance (MMVP 74.8) is significantly better than UniLIP.
 
 ## Highlights & Insights
-- **Causal attribution from "manifold misalignment → gradient orthogonality"**: The work connects visualization (gradient cosines and violin plots in Fig. 2), theory (mutual information chain decomposition), and architecture (Synergistic Block), turning what appears to be an "engineering trick" into a theoretical inevitability—a template for any multi-objective shared-parameter scenario.
-- **Precise use of stop-gradient in multi-objective settings**: While many multi-task works use stop-gradient heuristically, this paper clearly specifies which gradient paths should be cut, with architectural $W_V$/$W_{Q,K}$ separation justified both theoretically and practically.
-- **Structure as a bridge**: Topological information is often overlooked; here, DINOv3 attention distillation serves as free geometric supervision, suggesting that self-supervised models' implicit geometric priors are underutilized resources in unified systems.
+- **Causal attribution from "Manifold Misalignment" to "Gradient Orthogonality"**: The trajectory from visualization (Fig. 2 gradient cosine and violins) $\to$ theory (mutual information chain decomposition) $\to$ architecture (Synergistic Block) transforms ad-hoc engineering tricks into theoretical necessities. This serves as a template for shared-parameter multi-objective scenarios.
+- **Precise use of stop-gradient in multi-objective learning**: Unlike many multi-task works that use stop-gradients heuristically, this work explicitly identifies which gradient path should be severed. Combined with $W_V$/$W_{Q,K}$ separation, it is theoretically and empirically sound.
+- **Structure as a bridge**: Topological information is often ignored. This paper uses DINOv3 attention distillation as free geometric supervision, suggesting that geometric priors latent in self-supervised models are undervalued resources for unified systems.
 
 ## Limitations & Future Work
-- The topology teacher must be a model like DINOv3/iBOT with "attention spontaneously exhibiting segmentation ability"; if the teacher's attention is degraded, $\mathcal L_{topo}$ may mislead.
-- The three-stage curriculum is sensitive to hyperparameters (lr decay, stage steps); while the paper provides details, reproduction cost is nontrivial.
-- Multimodal extension to video and audio is not addressed; currently only image tokens are validated, and whether "mutual reinforcement" holds in the temporal dimension remains to be seen.
-- The physical separation of $W_V$ and $W_{Q,K}$ is a property of vanilla self-attention; applicability to attention variants with RoPE, grouped-query, or shared-projection requires separate evaluation.
+- The topological teacher must be a model where "attention has spontaneously gained segmentation capability" like DINOv3 or iBOT. If teacher attention is degraded, $\mathcal L_{topo}$ will mislead the student.
+- The three-stage curriculum is sensitive to hyperparameters (lr decay, stage duration). While details are provided, reproduction costs are non-trivial.
+- Multimodal expansion to video and audio is not yet explored. Currently verified only on image tokens, the "mutual reinforcement" effect remains to be tested across temporal dimensions.
+- The physical isolation of $W_V$ and $W_{Q,K}$ assumes vanilla self-attention. Applicability to variants like RoPE, grouped-query, or shared-projection attention requires individual evaluation.
 
 ## Related Work & Insights
-- **vs UniLIP / Tang 2025**: UniLIP uses passive distillation to inject CLIP semantics into the tokenizer, but is continually eroded by reconstruction gradients; MUSE uses stop-gradient + NCE for active anchoring, fundamentally avoiding erosion.
-- **vs VTP-L-d64**: VTP uses more aggressive pixel supervision to push gFID to 3.01, but Zero-Shot drops to 71.2; MUSE achieves similar gFID while raising Zero-Shot to 76.1, truly breaking the trade-off.
-- **vs UniTok / TokenFlow**: Early unified methods rely on codebook/Q-Former for coarse alignment, lacking architectural-level gradient routing; MUSE's fine-grained routing within the Transformer is a new paradigm.
-- **vs DINOv3 / DINOv2**: This work elevates their attention maps to topological supervision for unified tokenizers, highlighting self-supervised attention as a free source of geometric priors.
+- **vs UniLIP / Tang 2025**: UniLIP uses passive distillation to inject CLIP semantics into the tokenizer, but it is eroded by reconstruction gradients. MUSE uses stop-grad + NCE active anchoring to fundamentally prevent erosion.
+- **vs VTP-L-d64**: VTP uses aggressive pixel supervision to reach gFID 3.01, but Zero-Shot drops to 71.2. MUSE achieves nearly the same gFID while pulling Zero-Shot to 76.1, effectively breaking the trade-off.
+- **vs UniTok / TokenFlow**: Early unified methods relied on codebooks or Q-Formers for coarse-grained alignment, lacking architecture-level gradient routing. MUSE's fine-grained routing within the Transformer is a new paradigm.
+- **vs DINOv3 / DINOv2**: This work elevates their attention maps to topological supervision for unified tokenizers, highlighting self-supervised attention as a source of free geometric priors.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Gradient orthogonality hypothesis + structural bridge, the first theoretically consistent and empirically supported solution in this line of work.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task coverage (ImageNet/ADE/MMVP/WISE/Editing) + strong baseline retraining + gradient visualization, but lacks video/audio.
-- Writing Quality: ⭐⭐⭐⭐⭐ Figures 1–3 clearly explain motivation, validation, and method, with theory and architecture tightly aligned.
-- Value: ⭐⭐⭐⭐⭐ Provides a feasible "mutual reinforcement" path for unified multimodal systems, with direct guidance for future UMM design.
+- Novelty: ⭐⭐⭐⭐⭐ Gradient orthogonality hypothesis + structural bridge; the first solution in this line with theoretical consistency and empirical support.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers ImageNet/ADE/MMVP/WISE/Editing; strong baseline retraining + gradient visualization; however, video/audio are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Figs. 1-3 clearly explain motivation, validation, and method; theoretical decomposition corresponds perfectly with architecture.
+- Value: ⭐⭐⭐⭐⭐ Provides a viable "mutual reinforcement" path for unified multimodal systems; directly guides future UMM designs.
 
 <!-- RELATED:START -->
 

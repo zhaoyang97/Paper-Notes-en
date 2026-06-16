@@ -2,86 +2,98 @@
 title: >-
   [Paper Note] ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering
 description: >-
-  [CVPR 2026][Reinforcement Learning][KB-VQA] This paper proposes ReAG, a reasoning-augmented multimodal RAG framework that combines coarse- and fine-grained retrieval with a Critic filtering model to reduce noise…
+  [CVPR 2026][Reinforcement Learning][KB-VQA] ReAG is proposed as a reasoning-augmented multimodal RAG method that combines coarse and fine-grained retrieval with a Critic filtering model to reduce noise. It employs GRPO reinforcement learning to train the generator for explicit reasoning, achieving a new SOTA on knowledge-intensive VQA tasks.
 tags:
-  - "CVPR 2026"
-  - "Reinforcement Learning"
-  - "KB-VQA"
-  - "RAG"
-  - "Reasoning Augmentation"
-  - "Multimodal Retrieval"
+  - CVPR 2026
+  - Reinforcement Learning
+  - KB-VQA
+  - RAG
 date: 2026-05-08
-content_hash: 3fcff8c723193eed
+content_hash: ccdd5a88f9ac0211
 ---
-
 # ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22715](https://arxiv.org/abs/2511.22715)  
 **Code**: [aimagelab.github.io/ReAG](https://aimagelab.github.io/ReAG)  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: KB-VQA, RAG, Reinforcement Learning, Reasoning Augmentation, Multimodal Retrieval
 
 ## TL;DR
 
-This paper proposes ReAG, a reasoning-augmented multimodal RAG framework that combines coarse- and fine-grained retrieval with a Critic filtering model to reduce noise, and trains a generator via GRPO reinforcement learning to perform explicit reasoning, achieving new state-of-the-art performance on knowledge-intensive VQA.
+ReAG is proposed as a reasoning-augmented multimodal RAG method that combines coarse and fine-grained retrieval with a Critic filtering model to reduce noise. It employs GRPO reinforcement learning to train the generator for explicit reasoning, achieving a new SOTA on knowledge-intensive VQA tasks.
 
 ## Background & Motivation
 
-Knowledge-based visual question answering (KB-VQA) requires models to answer domain-specific questions that go beyond visual content alone, necessitating retrieval of relevant information from external knowledge bases (e.g., Wikipedia). Even state-of-the-art multimodal large language models (MLLMs) underperform on domain knowledge that is underrepresented in pretraining data.
+Knowledge-intensive Visual Question Answering (KB-VQA) requires models to answer domain-specific questions that exceed the scope of visual content alone, necessitating the retrieval of relevant information from external knowledge bases (e.g., Wikipedia). Even state-of-the-art Multimodal Large Language Models (MLLMs) perform poorly when facing domain knowledge that is underrepresented in their pre-training data.
 
-Existing retrieval-augmented methods suffer from two core issues:
+Existing retrieval-augmented methods face two core challenges:
 
-**High retrieval noise**: User queries are highly heterogeneous, and external knowledge bases can contain millions of documents, resulting in low recall, substantial noise, and irrelevant passages being fed to the MLLM.
+**High Retrieval Noise**: User queries are highly heterogeneous, and external knowledge bases can contain millions of documents. This leads to low retrieval recall and excessive noise, providing MLLMs with numerous irrelevant passages.
 
-**Weak reasoning capability**: Even when relevant documents are retrieved, extracting the correct information and reasoning toward an answer is non-trivial; existing methods lack explicit reasoning over retrieved content.
+**Weak Reasoning Ability**: Even with relevant documents retrieved, extracting correct information and reasoning to an answer is difficult. Existing methods lack the capacity for explicit reasoning over retrieved content.
 
-The core mechanism of ReAG follows a **filter-then-reason** paradigm: multi-level retrieval combined with Critic filtering reduces noisy inputs, while reinforcement learning trains the generator to perform explicit reasoning over retrieved content.
+The Core Idea of ReAG is to **"filter first, then reason"**: reducing noise via multi-level retrieval and Critic filtering, and then training the generator through reinforcement learning to possess explicit reasoning capabilities over the retrieved content.
 
 ## Method
 
 ### Overall Architecture
 
-ReAG consists of four main stages:
-1. Multi-level retrieval (coarse-grained + fine-grained)
-2. Critic model filtering
-3. Generator cold-start SFT
-4. Reinforcement learning training
+ReAG aims to solve two long-standing problems in KB-VQA: noisy retrieved documents and the generator's inability to reason from evidence. These issues are addressed separately: a "coarse+fine dual-level retrieval → Critic filtering" pipeline suppresses noise before reaching the generator, and a two-stage "SFT Cold Start → GRPO Reinforcement Learning" training process forces the generator to learn explicit reasoning over high-quality evidence. The data flow for a complete Q&A session involves: the query image and question undergo multi-level retrieval to obtain a set of candidate passages $\mathcal{P}^{noisy}$; the Critic model judges relevance passage-by-passage to produce a refined $\mathcal{P}^{relevant}$; finally, the generator reasons within `<think>` tags and provides the answer within `<answer>` tags. The generator itself is trained offline via SFT cold start and GRPO reinforcement learning.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Query Image I_q + Question q"]
+    subgraph RET["Multi-level Retrieval"]
+        direction TB
+        CG["Coarse-grained Retrieval: EVA-CLIP-8B encodes whole image<br/>Top-k by cosine similarity"]
+        FG["Fine-grained Retrieval: GroundingDINO crops question regions<br/>Individual retrieval for those regions"]
+    end
+    Q --> RET
+    RET --> NOISY["Merge dual-path top-k → Candidate set P_noisy"]
+    NOISY --> CRITIC["Critic Filtering Model<br/>Judge Yes/No per passage, retain above threshold"]
+    CRITIC --> REL["Refined relevant passages P_relevant"]
+    REL --> GEN["Generator Reasoning<br/>think explicit reasoning + answer output"]
+    GEN --> OUT["Final Answer"]
+    subgraph TRAIN["Two-stage Generator Training"]
+        direction TB
+        SFT["Cold Start SFT<br/>Learn think/answer reasoning format"]
+        RL["GRPO Reinforcement Learning<br/>Rule-based rewards polish reasoning quality"]
+        SFT --> RL
+    end
+    TRAIN -.Offline Training.-> GEN
+```
 
 ### Key Designs
 
-1. **Multi-level Retrieval**:
+**1. Multi-level Retrieval: Supplementing global retrieval with fine-grained region details**
 
-    - **Coarse-grained retrieval**: EVA-CLIP-8B encodes the full query image and retrieves top-k documents from the knowledge base via cosine similarity, producing candidate passage set $\mathcal{P}^{cg}$.
-    - **Fine-grained retrieval**: GroundingDINO detects visual entities mentioned in the question; cropped regions of interest are used for a second retrieval pass to obtain $\mathcal{P}^{fg}$, compensating for details missed by whole-image retrieval.
-    - Results from both stages are merged and re-ranked by relevance; all passages from the top-k documents form $\mathcal{P}^{noisy}$.
-    - **Design Motivation**: Single coarse-grained retrieval yields insufficient recall; fine-grained retrieval focused on question-relevant visual regions improves recall.
+Relying solely on global image retrieval often yields insufficient recall, as the question may pertain to an inconspicuous local detail that is obscured by global embedding similarity. ReAG stacks two levels of retrieval: coarse-grained retrieval uses EVA-CLIP-8B to encode the entire query image and retrieves the top-k from the knowledge base to form $\mathcal{P}^{cg}$; fine-grained retrieval uses GroundingDINO to detect visual subjects mentioned in the question, crops the regions of interest, and retrieves separately for those regions to form $\mathcal{P}^{fg}$. The two paths are merged by relevance to retain the top-k passages, forming the $\mathcal{P}^{noisy}$ set for filtering. The value of the fine-grained path lies in shifting the retrieval focus from the "entire image" to the "specific regions of interest," recalling relevant documents that would otherwise be buried.
 
-2. **Critic Filtering Model**:
+**2. Critic Filtering Model: Eliminating irrelevant passages before the generator**
 
-    - An autoregressive MLLM fine-tuned from Qwen2.5-VL-3B that takes $(I_q, q, p)$ as input and predicts whether passage $p$ is relevant to the question.
-    - Only passages whose predicted "Yes" probability exceeds a threshold are retained, forming $\mathcal{P}^{relevant}$.
-    - **Design Motivation**: Increasing $k$ improves recall but degrades precision; the Critic model effectively removes noisy passages and is decoupled from the retrieval backbone, making it adaptable to any retrieval engine.
+The dilemma of retrieval is that increasing $k$ improves recall but sacrifices precision, flooding the MLLM with irrelevant passages. ReAG's solution is to insert a specialized relevance judge between retrieval and generation. Based on a fine-tuned Qwen2.5-VL-3B, this autogressive MLLM takes $(I_q, q, p)$—the query image, question, and a single candidate passage—and judges only if the passage is relevant to the question. Passages with a "Yes" prediction probability above a certain threshold are kept, resulting in a refined $\mathcal{P}^{relevant}$. This allows for high recall during initial retrieval as the Critic handles noise reduction; furthermore, the Critic is agnostic to the specific retrieval backbone.
 
-3. **Generator Cold Start (SFT)**:
+**3. Cold Start SFT: Training the model to reason using the `<think>/<answer>` format**
 
-    - A multi-stage training strategy inspired by DeepSeek-R1; SFT is applied first to establish initial reasoning capability.
-    - High-quality reasoning trajectories $tr$ are collected from an MLLM, with reasoning processes and final answers delimited by `<think>` and `<answer>` special tokens.
-    - Loss function: $\mathcal{L}_{SFT} = \alpha \mathcal{L}_A + (1-\alpha)\mathcal{L}_T$, where $\alpha=0.8$ assigns higher weight to the answer.
+Direct reinforcement learning is difficult to initiate because the model lacks a basic reasoning format and reward signals are sparse. ReAG adopts a multi-stage approach inspired by DeepSeek-R1, starting with a round of SFT for a cold start. High-quality reasoning trajectories $tr$ are collected from MLLMs, using `<think>` and `<answer>` tags to separate the reasoning process from the final answer. The training objective weights these parts separately:
 
-4. **GRPO Reinforcement Learning Training**:
+$$\mathcal{L}_{SFT} = \alpha \mathcal{L}_A + (1-\alpha)\mathcal{L}_T$$
 
-    - Built on the GRPO framework with improvements from DAPO (removal of KL divergence penalty, token-level loss computation).
-    - At each iteration, $N=8$ completions are generated per $(I_q, q, p)$ sample, and advantage values are computed via rule-based rewards.
-    - **Design Motivation**: SFT serves only as a cold start; RL further improves the quality and robustness of the model's reasoning over retrieved evidence.
+where $\mathcal{L}_A$ and $\mathcal{L}_T$ are the losses on answer and reasoning tokens, respectively. $\alpha=0.8$ places more weight on the answer to ensure the reasoning format is learned without diluting the answer's correctness with the high volume of reasoning tokens.
+
+**4. GRPO Reinforcement Learning: Polishing reasoning quality beyond the cold start**
+
+While SFT establishes reasoning behavior, reinforcement learning is required to ensure evidence is used effectively and the model is robust to noise. ReAG implements RL within the GRPO framework, incorporating two modifications from DAPO: removing KL divergence penalties and using token-level loss calculations. For each $(I_q, q, p)$, $N=8$ completions are sampled, and the policy is updated using the relative advantage within the group calculated via rule-based rewards. The reward is a weighted sum of task and format scores:
+
+$$R_i = \gamma R_{task}(o_i) + \delta R_{fmt}(o_i),\quad \gamma=1.0,\ \delta=0.2$$
+
+The task reward $R_{task}$ validates correctness by parsing the output based on question type (numeric/text, single/multiple answers). The format reward $R_{fmt}$ checks adherence to the `<think>...<answer>...` template. Unlike pure SFT, this step uses answer correctness as a direct signal to optimize the reasoning process, providing the final performance boost observed in benchmarks.
 
 ### Loss & Training
 
-- **Reward design**: $R_i = \gamma R_{task}(o_i) + \delta R_{fmt}(o_i)$, where $\gamma=1.0$, $\delta=0.2$.
-    - Task reward: parses and verifies correctness according to question type (numerical/textual, single/multi-answer).
-    - Format reward: checks adherence to the `<think>...<answer>...` template.
-- The visual encoder is frozen; only the MLP adapter and LLM weights are updated.
-- The RL stage uses the Adam optimizer with a learning rate of $1 \times 10^{-6}$, 128 prompts per batch, and 8 completions per prompt.
+The vision encoder is frozen throughout training, with only the MLP adapter and LLM weights being updated. The RL stage utilizes the Adam optimizer with a learning rate of $1 \times 10^{-6}$, a batch size of 128 prompts, and 8 completions per prompt. SFT and RL objective functions and reward weights are as specified in the corresponding sections above.
 
 ## Key Experimental Results
 
@@ -100,55 +112,55 @@ Results using EVA-CLIP-8B as the retriever:
 | E-VQA (All) | Accuracy | 47.0 | 39.2 | +7.8 |
 | InfoSeek (All) | Accuracy | 47.2 | 42.5 | +4.7 |
 
-Using the OMGM retriever yields further gains: ReAG (7B) achieves 52.5% on E-VQA and 49.2% on InfoSeek.
+Performance improves further with the OMGM retriever: ReAG (7B) reaches 52.5% on E-VQA and 49.2% on InfoSeek.
 
-Using Oracle Wikipedia pages (upper-bound experiment): ReAG (7B) achieves 81.5% on E-VQA and 59.7% on InfoSeek.
+Using Oracle Wikipedia pages (upper bound experiment): ReAG (7B) achieves 81.5% on E-VQA and 59.7% on InfoSeek.
 
 ### Ablation Study
 
-| Configuration | E-VQA (Single-Hop) | InfoSeek (All) | Note |
+| Configuration | E-VQA (Single-Hop) | InfoSeek (All) | Description |
 |------|-------|---------|------|
-| No retrieval (zero-shot) | 21.9 | 18.3 | Relies on internal knowledge only |
-| Coarse-grained retrieval | 19.2 | 10.1 | Noisy passages degrade performance |
-| Coarse + Fine + Critic | 40.2 | 27.1 | Filtering yields substantial gains |
-| + SFT | 39.3 | 37.5 | Reasoning capability greatly improves InfoSeek |
-| + SFT + Reasoning Trajectories | 38.1 | 41.3 | Explicit reasoning further improves performance |
-| + SFT + RL (ReAG Full) | 41.3 | 43.3 | RL provides final performance gains |
+| No Retrieval (Zero-shot) | 21.9 | 18.3 | Internal knowledge only |
+| Coarse Retrieval | 19.2 | 10.1 | Noisy passages degrade performance |
+| Coarse+Fine+Critic | 40.2 | 27.1 | Filtering provides significant boost |
+| +SFT | 39.3 | 37.5 | Reasoning significantly boosts InfoSeek |
+| +SFT + Trajectory | 38.1 | 41.3 | Explicit reasoning further improves performance |
+| +SFT + RL (Full ReAG) | 41.3 | 43.3 | RL provides final gain |
 
 ### Key Findings
 
-1. **Critic filtering is critical**: Without the Critic, noisy passages from coarse-grained retrieval reduce performance below the zero-shot baseline, underscoring noise management as a key factor in RAG systems.
-2. **RL outperforms pure SFT**: The reinforcement learning stage yields significant gains on both benchmarks, validating the effectiveness of reward-based reasoning optimization.
-3. **Reasoning trajectories are interpretable**: The generated reasoning chains reveal the usefulness of retrieved passages and the derivation steps, providing full explainability.
-4. **ReAG is retrieval-backbone-agnostic**: The Critic model can be seamlessly placed on top of any retrieval engine.
+1. **Critic filtering is essential**: Without the Critic, noisy passages from coarse retrieval lead to performance lower than zero-shot, highlighting noise management as critical to RAG systems.
+2. **RL outperforms pure SFT**: The reinforcement learning stage brings significant gains across both benchmarks, validating the effectiveness of reward-based reasoning optimization.
+3. **Reasoning trajectories are interpretable**: The reasoning process reveals the utility of retrieved passages and derivation steps, providing full interpretability.
+4. **ReAG is agnostic to retrieval backbones**: The Critic model can be seamlessly integrated with any retrieval engine.
 
 ## Highlights & Insights
 
-- **Filter-first design philosophy**: Unlike most RAG methods that train the generator to handle noise, ReAG reduces noise at the source via the Critic, allowing the generator to focus on high-quality reasoning.
-- **Multi-stage SFT → RL training strategy**: Drawing inspiration from DeepSeek-R1, SFT serves only as a cold start to establish initial reasoning behavior, while RL is responsible for genuinely improving reasoning quality.
-- **Complementarity of fine-grained retrieval**: Detecting visual entities in the question and cropping relevant image regions yields retrieval results more closely aligned with the question, effectively complementing coarse-grained retrieval.
-- **Quantitative validation of noise severity in RAG**: Ablation experiments clearly demonstrate that unfiltered retrieval results can degrade performance.
+- **Filter-First Philosophy**: Unlike most RAG methods that attempt to teach the generator to handle noise, ReAG reduces noise at the source via the Critic, allowing the generator to focus on high-quality reasoning.
+- **SFT → RL Multi-stage Training Strategy**: Inspired by DeepSeek-R1, SFT serves as a cold start to establish initial reasoning behavior, while RL is responsible for truly refining reasoning quality.
+- **Complementarity of Fine-Grained Retrieval**: Detecting visual subjects and cropping images captures retrieval results more relevant to the question, effectively complementing coarse-grained retrieval.
+- **Quantitative Validation of Noise in RAG**: Ablation experiments clearly demonstrate that unfiltered retrieval results can actually degrade performance.
 
 ## Limitations & Future Work
 
-1. The Critic model may produce misjudgments; a finer-grained relevance assessment (e.g., passage quality scoring rather than binary classification) may be more effective.
-2. The retrieval stage uses a fixed top-k; adaptive retrieval count selection could further improve efficiency.
-3. Evaluation is currently limited to the Wikipedia knowledge base; generalization to other domains (e.g., medical, legal) remains unexplored.
-4. Generating reasoning trajectories increases inference time, requiring a trade-off between reasoning depth and latency in deployment.
+1. The Critic model itself may make misjudgments; more granular relevance assessments (e.g., passage quality scores instead of binary classification) may be superior.
+2. The retrieval phase uses a fixed top-k; adaptive retrieval quantities could further improve efficiency.
+3. Currently validated only on the Wikipedia knowledge base; generalization to other domains (e.g., medicine, law) is unknown.
+4. Reasoning trajectory generation increases inference time; practical deployment requires balancing reasoning depth with latency.
 
 ## Related Work & Insights
 
-- **ReflectiVA**: Uses control tokens to guide retrieval and knowledge assessment, but lacks explicit reasoning.
-- **VLM-PRF**: Employs external tools for knowledge filtering, conceptually similar to ReAG's Critic but with a different implementation.
+- **ReflectiVA**: Uses control tokens to guide retrieval and knowledge assessment but lacks explicit reasoning.
+- **VLM-PRF**: Utilizes external tools for knowledge filtering, sharing the Critic concept but with a different implementation.
 - **DeepSeek-R1 / GRPO**: Provides the methodological foundation for RL-enhanced reasoning.
-- **Search-R1**: Integrates retrieval and reasoning for complex queries, inspiring ReAG's multimodal extension.
+- **Search-R1**: Integrates retrieval and reasoning for complex queries, providing inspiration for the multimodal extension of ReAG.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (The combination of Critic filtering and RL-based reasoning is effective, though individual components are not entirely novel)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Two standard benchmarks, multiple retrievers, detailed ablations, oracle upper-bound experiments)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, comprehensive ablations, intuitive figures and tables)
-- Value: ⭐⭐⭐⭐⭐ (Provides a complete and effective solution for knowledge-augmented VQA)
+- Novelty: ⭐⭐⭐⭐ (Combining Critic filtering and RL reasoning is effective, though components are not entirely new)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Two standard benchmarks, multiple retrievers, detailed ablations, oracle upper bounds)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, comprehensive ablation, intuitive figures)
+- Value: ⭐⭐⭐⭐⭐ (Provides a complete and efficient solution for knowledge-augmented VQA)
 
 <!-- RELATED:START -->
 
@@ -160,7 +172,7 @@ Using Oracle Wikipedia pages (upper-bound experiment): ReAG (7B) achieves 81.5% 
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](../../AAAI2026/reinforcement_learning/tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
 - [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
-- [\[CVPR 2026\] AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization](anydoc_enhancing_document_generation_via_large-scale_htmlcss_data_synthesis_and_.md)
+- [\[CVPR 2026\] CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation](cme-cad_heterogeneous_collaborative_multi-expert_reinforcement_learning_for_cad_code_gen.md)
 
 </div>
 

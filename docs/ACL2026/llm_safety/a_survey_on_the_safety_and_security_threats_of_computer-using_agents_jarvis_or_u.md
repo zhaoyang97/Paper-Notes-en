@@ -2,71 +2,67 @@
 title: >-
   [Paper Note] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?
 description: >-
-  [ACL 2026][LLM Safety][Computer-Using Agent] This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)"…
+  [ACL 2026][LLM Safety][Computer-Using Agent] This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Intrinsic Threats $\times$ Extrinsic Threats $\times$ Defense $\times$ Evaluation." It identifies the lack of UI grounding robustness and cross-platf
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Computer-Using Agent"
-  - "GUI Agent"
-  - "safety threats"
-  - "prompt injection"
-  - "defense taxonomy"
+  - ACL 2026
+  - LLM Safety
+  - Computer-Using Agent
+  - prompt injection
+  - defense taxonomy
 date: 2026-05-08
-content_hash: 46c17c03afe251e9
+content_hash: 344f86ce7a82f322
 ---
-
 # A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.10924](https://arxiv.org/abs/2505.10924)  
 **Code**: None  
 **Area**: Multimodal VLM (Survey)  
-**Keywords**: Computer-Using Agent, GUI Agent, safety threats, prompt injection, defense taxonomy
+**Keywords**: Computer-Using Agent, GUI Agent, Security Threats, prompt injection, defense taxonomy
 
 ## TL;DR
-This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)", organizing 124 relevant papers into a four-dimensional classification framework of "intrinsic threats $\times$ extrinsic threats $\times$ defense $\times$ evaluation." It highlights that the most significant gaps in current CUA research are UI grounding robustness and cross-platform adversarial evaluation.
+This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Intrinsic Threats $\times$ Extrinsic Threats $\times$ Defense $\times$ Evaluation." It identifies the lack of UI grounding robustness and cross-platform adversarial evaluation as the biggest gaps in current CUA research.
 
 ## Background & Motivation
-**Background**: CUAs, represented by OpenAI's o3/o4-mini, PC-Agent, AppAgent, and SeeAct, combine multimodal perception, reasoning, and GUI automation. They can autonomously complete complex tasks such as "online shopping, booking flights, and filling forms" and are being rapidly deployed in industry.
+**Background**: Represented by OpenAI's o3/o4-mini, PC-Agent, AppAgent, and SeeAct, CUAs combine multimodal perception, reasoning, and GUI automation. They can autonomously complete complex tasks such as "online shopping, booking flights, and filling forms," and are being rapidly deployed in industry.
 
-**Limitations of Prior Work**: CUAs aggregate "inherent LLM vulnerabilities + GUI control permissions + multimodal inputs," significantly expanding the attack surface. Visual grounding errors, response delays, and HTML parsing traps can be exploited as entry points for data leakage or target hijacking. Current safety research remains scattered across isolated directions like prompt injection, jailbreak, and backdoors, lacking a unified perspective.
+**Limitations of Prior Work**: CUAs simultaneously overlay "LLM inherent vulnerabilities + GUI control permissions + multimodal input," drastically expanding the attack surface. Visual grounding errors, response delays, and HTML parsing traps can all be exploited as entry points for data leakage or goal hijacking. Current safety research remains scattered across isolated directions like prompt injection, jailbreak, and backdoors, lacking a unified perspective.
 
-**Key Challenge**: Safety research for standalone LLMs cannot be directly transferred. CUAs introduce the "environment" (GUI states, external APIs) as an untrusted channel, giving rise to unique attack surfaces such as environment injection, reasoning gaps, and web hacking. Furthermore, "autonomous operation rights" mean successful attacks lead directly to physical world consequences, such as fund transfers or file deletion.
+**Key Challenge**: Safety research for standalone LLMs cannot be directly migrated—CUAs introduce the "environment" (GUI states, external APIs) as an untrusted channel, giving rise to many previously non-existent attack surfaces (environment injection, reasoning gap, web hacking). Meanwhile, "autonomous operation rights" mean any successful attack leads directly to physical-world consequences (fund transfers, file deletions).
 
-**Goal**: (i) Provide a unified definition of CUA suitable for safety analysis; (ii) Systematically enumerate all intrinsic and extrinsic threats; (iii) Align existing defense solutions with these threats; (iv) Summarize evaluation benchmarks, metrics, and datasets.
+**Goal**: (i) Provide a unified definition of CUA suitable for safety analysis; (ii) systematically enumerate all intrinsic/extrinsic threats; (iii) align existing defense solutions with threats; (iv) summarize evaluation benchmarks, metrics, and datasets.
 
-**Key Insight**: Starting from the architectural view of "Agent = Perception/Brain/Action + Environment," each component is treated as an attack surface to enumerate threats, followed by a reverse mapping of corresponding defenses. This "component-centric" perspective is more robust against missing new types of attacks compared to traditional "attack-name-based" classification.
+**Key Insight**: Starting from an architectural view of "Agent = Perception/Brain/Action Triad + Environment," this work enumerates threats by treating each component as an attack surface, then reversely organizes corresponding defenses. This "component-centric" perspective is less likely to miss novel attacks than "classification by attack name."
 
-**Core Idea**: Utilize a scalable three-axis classification framework of "threat source $\times$ affected component $\times$ threat model" to unify fragmented CUA safety research and expose critical security gaps.
+**Core Idea**: An extensible classification framework with three axes—"Threat Source $\times$ Affected Component $\times$ Threat Model"—is used to unify fragmented CUA safety research and expose genuine security gaps.
 
 ## Method
 
 ### Overall Architecture
-The paper unfolds around a three-layer threat-defense comparison system: it defines CUA (including OS Agent, GUI Agent, Web Agent, and Device Control Agent), lists 8 categories of intrinsic threats and 8 categories of extrinsic threats, details 14 types of defense methods, and provides a comprehensive panorama of benchmarks/metrics categorized by platform (Web, Mobile, General).
+This survey addresses the problem of fragmented CUA safety research by organizing 124 papers into a three-layer threat-defense correspondence system. It first provides a unified definition of CUA suitable for safety analysis—deconstructing the agent into a "Perception / Brain / Action" triad with an untrusted "Environment" channel, and categorizing sub-types into OS Agents, GUI Agents, Web Agents, and Device Control Agents. It then enumerates 8 types of intrinsic threats and 8 types of extrinsic threats anchored to components, reversely mapping 14 types of defense methods. Finally, it presents a landscape of benchmarks and metrics categorized by platform (Web / Mobile / General). The main line of reasoning is: "Define attack surfaces $\rightarrow$ Enumerate threats $\rightarrow$ Align defenses $\rightarrow$ Map evaluations."
 
 ### Key Designs
-1.  **Three-axis Threat Taxonomy** (Section 3):
-    - **Function**: Labels each threat using a matrix taxonomy of "Threat Source (Env/Prompt/Model/User) $\times$ Affected Component (Perception/Brain/Action) $\times$ Threat Model."
-    - **Mechanism**: Intrinsic threats originate from agent defects tied to components: Perception (UI understanding and grounding difficulties); Brain (scheduling errors, goal mismatch, hallucinations, context length, bias, response delay); and Action (API call errors). Extrinsic threats originate from attackers, including adversarial attacks, prompt injection (direct and indirect), jailbreak, memory attacks (extraction and injection), backdoors, reasoning gap attacks (multimodal signal conflict), system sabotage, and web hacking.
-    - **Design Motivation**: Traditional surveys categorize by "attack name," requiring expansion for every new attack; this component-based labeling allows new attacks to be categorized into existing components, keeping the taxonomy stable.
 
-2.  **Defense-Threat Alignment Matrix** (Section 4):
-    - **Function**: Aligns 14 defense methods (environmental constraints, input validation, defensive prompts, data sanitization, adversarial training, output monitoring, model auditing, cross-verification, continual learning, transparency, topology-guided, perceptual synergy, planning architecture enhancement, and compliance rules) with specific intrinsic/extrinsic threats.
-    - **Mechanism**: Each defense is labeled with three axes: target component (Env/Prompt/Model/User), reinforced framework element (Perception/Brain/Action), and corresponding threat ID (In./Ex.X). For instance, "environmental constraints" primarily target extrinsic threats by limiting agent permissions.
-    - **Design Motivation**: Enables researchers to quickly identify available methods for specific attacks and evaluate the coverage of various defenses.
+**1. Three-Axis Threat Taxonomy: Using "Source $\times$ Component $\times$ Threat Model" instead of "Classification by Attack Name" for a future-proof taxonomy.**
 
-3.  **Cross-Platform Benchmark/Metric Panorama** (Section 5):
-    - **Function**: Organizes CUA safety benchmarks by Web, Mobile, and General-purpose platforms, categorizing metrics into task completion (TSR, Helpfulness), intermediate steps (SSR, Total Correct Prefix), and safety robustness (ASR, CuP, F1, RR, LR, AR, TS).
-    - **Design Motivation**: CUAs face vastly different platform challenges (Mobile screen constraints, dynamic Web text, complex Desktop APIs); a unified panorama facilitates the selection of appropriate evaluation environments.
+Traditional security surveys categorize by attack names (jailbreak, backdoor, etc.), requiring new categories for every new attack. This paper instead tags each threat with three axes—Threat Source (Env / Prompt / Model / User) $\times$ Affected Component (Perception / Brain / Action) $\times$ Threat Model, plus a stage label for "when it occurs" (development / deployment / architecture / training). In this matrix, intrinsic threats stem from the agent's own defects: the perception layer faces "UI understanding and grounding difficulties"; the brain layer concentrates six types including "scheduling errors, goal mismatch, hallucination, long context issues, socio-cultural bias, and response delay"; the action layer involves "API call errors." Extrinsic threats come from attackers: adversarial attacks, direct/indirect prompt injection, jailbreak, memory extraction and injection, backdoor, reasoning gap attacks (multimodal signal conflict), system sabotage, and web hacking. Since labels are anchored to components rather than attack names, new attacks can simply be categorized into the corresponding component without restructuring the taxonomy.
+
+**2. Defense-Threat Alignment Matrix: Explicitly mapping 14 defense types to 16 threat types for engineering selection.**
+
+Enumerating threats alone is insufficient for engineering; practitioners need to know "which methods defend against attack X" or "how many threats a defense covers." This paper tags 14 defense types (environmental constraints, input validation, defensive prompts, data sanitization, adversarial training, output monitoring, model auditing, cross-verification, continuous learning, transparency, topology-guided, perception synergy, planning architecture enhancement, compliance rules) with the same three axes—target component, reinforced framework element, and corresponding threat ID (In./Ex.X). For instance, "environmental constraints" mainly defend against extrinsic threats (limiting agent permissions for GUI interaction), while "planning architecture enhancement" mitigates both intrinsic scheduling errors and extrinsic reasoning-gap attacks. This allows practitioners to directly select combinations like "environmental constraints + input validation + cross-verification" for web applications.
+
+**3. Cross-Platform Benchmark/Metric Panorama: Presenting an evaluation map by platform and grouping mixed metrics into three sets.**
+
+CUA platform differences are significant—Mobile has screen constraints, Web has dynamic text, and Desktop has complex APIs. This paper organizes safety benchmarks into Web / Mobile / General-purpose platforms and groups scattered metrics into three categories: Task Completion (TSR, Helpfulness), Intermediate Steps (SSR, Total Correct Prefix), and Safety Robustness (ASR, CuP, F1, RR, LR, AR, TS). Measurement methods are also classified into Rule-based, LLM-as-a-judge, and Manual. This map allows researchers to quickly select appropriate evaluation environments based on target platforms and dimensions of interest.
 
 ### Loss & Training
-As a survey, this paper does not propose independent training. However, it summarizes core training objectives on the defense side: adversarial training (injecting adversarial samples), data sanitization (removing poisoned samples), continual learning and self-evolution (updating policies online based on environmental feedback), and compliance rule learning (encoding SOPs and ethical norms into training objectives).
+As a survey, this work does not involve independent training. The authors summarize core training objectives from the defense side for reference: adversarial training (injecting adversarial samples to improve robustness), data sanitization (removing poisoned samples), continuous learning and self-evolution (online policy updates based on environmental feedback), and compliance rule learning (encoding SOP / ethical norms into training objectives).
 
 ## Key Experimental Results
 
-### Main Results: CUA Safety Benchmark Panorama (Selected)
+### Main Results: Panorama of CUA Safety Benchmarks (Excerpt)
 
-| Benchmark | Platform | Primary Threat Focus | Evaluation Method |
+| Benchmark | Platform | Main Threat Focus | Evaluation Method |
 |-----------|------|-------------|----------|
 | ST-WebAgentBench | Web | safety + trustworthiness | Rule-based |
 | BrowserART | Web | jailbreak | LLM-as-judge |
@@ -80,12 +76,12 @@ As a survey, this paper does not propose independent training. However, it summa
 | RedTeamCUA | Hybrid Web/OS | red-teaming | LLM-as-judge |
 | AgentHazard | General | harmful behaviors | LLM-as-judge |
 
-### Ablation Study: Threat-Component Impact Matrix (Simplified)
+### Ablation Study: Threat-Component Influence Matrix (Simplified)
 
-| Threat Category | Primary Source | Primarily Affected Component | Trigger Phase |
+| Threat Category | Main Source | Primary Affected Component | Trigger Stage |
 |----------|----------|-------------|---------|
 | UI Grounding Difficulty | Env | Perception | Development |
-| Scheduling Errors | Prompt | Brain | Development |
+| Scheduling Error | Prompt | Brain | Development |
 | Goal Mismatch | Prompt | Brain | Deployment |
 | Hallucination | Prompt/Model | Brain | Deployment |
 | Adversarial Attack | Env | Perception | Runtime |
@@ -96,31 +92,31 @@ As a survey, this paper does not propose independent training. However, it summa
 | Web Hacking | Env | Action | Runtime |
 
 ### Key Findings
-- **The Brain component is the most critical vulnerability**: 6 out of 8 intrinsic threats and 5 out of 8 extrinsic threats either target or pass through the Brain, indicating that the LLM's reasoning/planning layer is the weak core of CUAs.
-- **Environment injection is a CUA-specific attack surface**: Indirect prompt injection (polluting webpages, files, or UI elements) is almost exclusively valid in CUA settings and is completely missed by traditional LLM benchmarks.
-- **Evaluations are over-concentrated on Web platforms**: Most benchmarks focus on Web settings; Mobile and hybrid environments are severely underrepresented, and there is a lack of consistent cross-platform safety evaluation standards.
+- **Brain Component is the Highest Risk Position**: Out of 8 intrinsic and 8 extrinsic threat types, 6 and 5 respectively directly attack or pass through the Brain, indicating that the LLM reasoning/planning layer is the weak core of CUA.
+- **Environment Injection is a CUA-Specific Attack Surface**: Indirect prompt injection (contaminating webpages, files, UI elements) is almost exclusively valid in CUA settings and is completely missed by traditional LLM benchmarks.
+- **Evaluation is Overly Concentrated on Web Platforms**: Most benchmarks listed are Web-based; Mobile and hybrid environments are severely under-represented, lacking consistent safety assessment standards across platforms.
 
 ## Highlights & Insights
-- **Component-Centric Taxonomy**: Anchoring threats to Perception/Brain/Action rather than specific attack names is a future-proof design.
-- **Ready-to-use Defense-Threat Matrix**: The explicit mapping between 14 defense types and 16 threat types allows engineers to select combinations based on specific applications (e.g., for web apps: environmental constraints + input validation + cross-verification).
-- **Formal Inclusion of "Reasoning Gap Attack"**: Attacks that induce errors through multimodal signal conflict (e.g., pop-up text in a screenshot inconsistent with the HTML code) are unique to CUAs and require multimodal alignment-based defenses.
-- **Transparency as a Governance Bottleneck**: The authors point out that vendors like OpenAI have not disclosed safety policies or full evaluation results, calling for the establishment of independent auditing and disclosure frameworks.
+- **Component-Centric Taxonomy**: Anchoring threats to "Perception/Brain/Action" rather than attack names is a "evergreen" design; new attacks can simply be mapped to existing components.
+- **Actionable Defense-Threat Matrix**: The explicit mapping of 14 defenses to 16 threats allows engineers to select combinations (e.g., for web apps: environmental constraints + input validation + cross-verification).
+- **"Reasoning Gap Attack" Formally Included**: Inducing agent errors through multimodal signal conflicts (e.g., pop-up text in screenshots inconsistent with HTML) is unique to CUAs, requiring future multimodal alignment-based defenses.
+- **Transparency as a Governance Bottleneck**: The authors note that providers like OpenAI have not disclosed safety policies or evaluation results, calling for independent audit and disclosure frameworks.
 
 ## Limitations & Future Work
-- **Ours acknowledges**: The survey only covers public English literature up to the submission deadline, potentially missing emerging attacks and internal industrial research. It provides architectural analysis without empirical evaluation of different defenses' relative effectiveness.
-- **Additional Limitations**: The labeling of "affected components" in the threat matrix depends on manual judgment, leading to potential definition overlaps for complex attacks like reasoning gaps.
-- **Future Directions**: Future work should involve end-to-end empirical testing—running all defense combinations on a unified benchmark to identify the Pareto frontier—and establishing cross-cultural safety evaluation extensions, as current benchmarks are almost entirely based on English GUIs.
+- **Limitations**: Coverage is limited to public English literature; potential omission of emerging attacks and internal industrial research. Architectural analysis is provided without empirical evaluation of the relative effectiveness of defenses.
+- **Additional Constraints**: "Affected component" labels rely on manual judgment; definitions for ambiguous attacks (e.g., reasoning gaps affecting both Perception and Brain) may overlap. The alignment matrix does not distinguish between primary and secondary coverage levels.
+- **Future Work**: End-to-end empirical testing across a unified benchmark to provide a Pareto frontier of defense combinations. Expansion to multilingual and cross-cultural safety evaluations, as current benchmarks are almost entirely based on English GUIs.
 
 ## Related Work & Insights
-- **vs. LLM Safety Surveys** (Shi 2024, Ma 2025): These focus on model-layer threats (jailbreak, hallucination). Ours expands the perspective to the "Model + Environment + Multimodal" coupling, revealing CUA-unique environmental injection surfaces.
-- **vs. OS Agent Surveys** (Hu 2024): These focus on capability (architecture, memory, planning). Ours specializes in safety, acting as a complement.
-- **vs. Sager et al. 2025** (Survey on AI Agents for Computer Use): They organize GUI agent capabilities; Ours provides the "security checklist" essential before deployment.
+- **vs LLM Safety Surveys** (Shi 2024, Ma 2025): They focus on model-layer threats (jailbreak, hallucination); this work expands the scope to "Model + Environment + Multimodal" coupling, revealing the environment injection surface unique to CUA.
+- **vs OS Agent Surveys** (Hu 2024): They focus on capabilities (architecture, memory, planning); this work specializes in the safety dimension, forming a complementary relationship.
+- **vs Sager et al. 2025** (AI Agents for Computer Use Survey): They organize GUI agent capabilities and implementation; this work provides the "safety checklist" necessary before deployment.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First safety survey specifically for CUAs; the "component-centric" taxonomy and the discussion of reasoning gap attacks are original.
-- **Experimental Thoroughness**: ⭐⭐⭐ A review-based work covering 124 papers but lacking original empirical experiments; defense comparisons lack end-to-end evidence.
-- **Writing Quality**: ⭐⭐⭐⭐ The three-axis matrix and alignment tables are very engineer-friendly; the JARVIS/Ultron metaphor makes safety research more engaging.
-- **Value**: ⭐⭐⭐⭐⭐ A must-read manual for engineering teams deploying CUAs; it clearly identifies mobile/cross-platform evaluation and transparency governance as major research gaps for scholars.
+- Novelty: ⭐⭐⭐⭐ First safety survey specifically for CUA; the "component-centric" taxonomy and introduction of reasoning gap attacks are original.
+- Experimental Thoroughness: ⭐⭐⭐ A survey work covering 124 papers but lacking original experiments; lacks empirical comparison of defense efficacy.
+- Writing Quality: ⭐⭐⭐⭐ The three-axis matrix and alignment table are very engineering-friendly; the JARVIS/Ultron metaphor is effective for dissemination.
+- Value: ⭐⭐⭐⭐⭐ A must-read manual for engineering teams deploying CUAs; clearly identifies mobile/cross-platform evaluation and transparency governance as empty academic directions.
 
 <!-- RELATED:START -->
 

@@ -2,131 +2,142 @@
 title: >-
   [Paper Note] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia
 description: >-
-  [CVPR 2026][Multilingual & Machine Translation][Multilingual benchmark] This paper introduces SEA-Vision, a benchmark that unifies evaluation of document parsing (15,234 pages) and text-centric VQA (7…
+  [CVPR 2026][Multilingual & Translation][Paper Note] The authors introduce the SEA-Vision benchmark, which provides a unified evaluation for document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. By employing a re-rendering strategy to eliminate visual-text misalignment in multilingual VQA, the study reveals a 3–7x perf
 tags:
-  - "CVPR 2026"
-  - "Multilingual & Machine Translation"
-  - "Multilingual benchmark"
-  - "Southeast Asia"
-  - "document parsing"
-  - "text VQA"
-  - "low-resource languages"
-  - "MLLM evaluation"
+  - CVPR 2026
+  - Multilingual & Translation
 date: 2026-05-08
-content_hash: f002f6c454f8a36f
+content_hash: 0a895f819b6d978e
 ---
-
 # SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.15409](https://arxiv.org/abs/2603.15409)  
 **Code**: None  
 **Area**: Multilingual Document Understanding  
-**Keywords**: Multilingual benchmark, Southeast Asia, document parsing, text VQA, low-resource languages, MLLM evaluation
+**Keywords**: Multilingual Benchmark, Southeast Asia, Document Parsing, Text VQA, Low-resource Languages, MLLM Evaluation
 
 ## TL;DR
 
-This paper introduces SEA-Vision, a benchmark that unifies evaluation of document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. A re-rendering strategy eliminates visual–textual misalignment in multilingual VQA, revealing severe performance degradation of 3–7× for MLLMs on low-resource SEA languages.
+The authors introduce the SEA-Vision benchmark, which provides a unified evaluation for document parsing (15,234 pages) and text-centric VQA (7,496 QA pairs) across 11 Southeast Asian languages. By employing a re-rendering strategy to eliminate visual-text misalignment in multilingual VQA, the study reveals a 3–7x performance degradation in MLLMs when handling low-resource Southeast Asian languages.
 
 ## Background & Motivation
 
-**Background**: Multilingual document and scene text understanding has become a core capability in search, finance, and public services. Leading MLLMs such as GPT-4o and the Qwen-VL series perform well on English and Chinese, yet existing benchmarks (DocVQA, TextVQA, MTVQA, etc.) are heavily skewed toward high-resource languages.
+**Background**: Multilingual document and scene text understanding have become core capabilities in fields such as search, finance, and public services. While MLLMs like GPT-4o and the Qwen-VL series perform exceptionally well in English and Chinese, existing benchmarks (e.g., DocVQA, TextVQA, MTVQA) are heavily biased toward high-resource languages.
 
-**Limitations of Prior Work**: (1) Document parsing and text-centric VQA are typically evaluated independently, precluding unified measurement of combined OCR and reasoning ability. (2) Multilingual VQA datasets commonly rely on OCR/translation-based annotation, where the text referenced by translated questions does not exist in the original image, causing severe visual–semantic misalignment. (3) The 11 SEA languages span four major script families—Latin, Brahmic, Arabic, and logographic—yet existing benchmarks provide extremely sparse coverage.
+**Limitations of Prior Work**: (1) Document parsing and text-centric VQA are typically evaluated independently, making it impossible to unify the measurement of text recognition and reasoning; (2) Multilingual VQA datasets often adopt OCR/translation-based annotation strategies—where translated questions reference text that does not exist in the original image, causing severe visual-semantic misalignment; (3) The 11 Southeast Asian (SEA) languages span four major writing systems (Latin, Brahmic, Arabic, and Ideographic), yet existing benchmarks provide minimal coverage.
 
-**Key Challenge**: Southeast Asia is one of the most linguistically diverse regions in the world. Real-world applications involve dense text layouts, complex scripts, and heterogeneous document types coexisting, yet no benchmark simultaneously covers the major SEA languages or supports cross-task and cross-script evaluation. MTVQA covers only 9 languages (2 low-resource) and only VQA; CC-OCR covers 10 languages but only 1 low-resource language.
+**Key Challenge**: Southeast Asia is one of the most linguistically diverse regions globally. Practical applications involve dense layouts, complex scripts, and heterogeneous document types. However, no existing benchmark covers major SEA languages while supporting cross-task and cross-script evaluation. MTVQA includes only 9 languages (2 low-resource) and focuses solely on VQA, while CC-OCR covers 10 languages but only 1 low-resource case.
 
-**Goal**: (1) Construct the first benchmark that jointly evaluates document parsing and TEC-VQA for SEA multilingual settings. (2) Design an annotation methodology that resolves visual–textual misalignment. (3) Quantify the true capabilities of MLLMs on low-resource SEA languages.
+**Goal**: (1) Construct the first unified Southeast Asian multilingual benchmark for document parsing and TEC-VQA; (2) Design an annotation methodology that resolves visual-text misalignment; (3) Quantify the actual capabilities of MLLMs in low-resource SEA languages.
 
-**Key Insight**: Design a hybrid annotation pipeline (automatic filtering + MLLM-assisted annotation + native-speaker verification) and employ a re-rendering strategy that "paints" translated text back into images, eliminating visual–textual misalignment at the source.
+**Key Insight**: A hybrid annotation pipeline (automatic filtering + MLLM-assisted annotation + native speaker verification) is designed. A re-rendering strategy is used to "paint" translated text back into images, eliminating visual-text misalignment at the source.
 
-**Core Idea**: By ensuring that visible text and QA language are fully consistent through re-rendering, construct a high-quality benchmark covering 11 SEA languages that unifies evaluation of document parsing and scene text VQA.
+**Core Idea**: By using re-rendering to ensure consistent visual text and QA language, the authors build a high-quality benchmark covering 11 SEA languages for unified evaluation of document parsing and scene text VQA.
 
 ## Method
 
 ### Overall Architecture
 
-SEA-Vision comprises two sub-tasks: (1) **Document Parsing**—extracting structured content from document images; 15,234 pages across 9 document types (academic papers, books, exam papers, magazines, newspapers, notes, research reports, slides, and textbooks), annotated with hierarchical page/block/line-level labels totaling 243,643 region annotations; (2) **TEC-VQA**—1,839 scene images with 7,496 QA pairs covering five reasoning capabilities (text recognition, numerical computation, comparative analysis, logical reasoning, and spatial understanding). The 11 languages are: EN, ZH, VI, TH, FIL, MS, ID, LO, KM, MY, and PT.
+SEA-Vision consists of two sub-tasks: (1) Document Parsing—structured content extraction from document images (15,234 pages across 9 types: academic papers, books, exam papers, magazines, newspapers, notes, research reports, slides, textbooks), with 243,643 hierarchical region annotations (page/block/line levels); (2) TEC-VQA—1,839 scene images and 7,496 QA pairs covering five reasoning dimensions (text recognition, numerical calculation, comparative analysis, logical reasoning, and spatial understanding). The 11 languages include EN, ZH, VI, TH, FIL, MS, ID, LO, KM, MY, and PT. The benchmark is produced via two parallel annotation pipelines (Document Parsing and TEC-VQA) and integrated into a unified evaluation framework to compare various model types.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DOC["Four-Stage Doc Parsing Pipeline (Design 1)"]
+        direction TB
+        A1["~3M Crawled PDFs"] --> A2["Metadata Annotation<br/>Layout Detection + MLLM Block-level Lang/Type Identification"]
+        A2 --> A3["Rule Scoring + Grouped Quota<br/>Top-200 per Lang × Page Type (19,800 pages)"]
+        A3 --> A4["Region Correction<br/>MLLM Text Correction / UniMERNet Formula / API Tables"]
+        A4 --> A5["Native Speaker Human Verification<br/>→ 15,234 pages"]
+    end
+    subgraph VQA["TEC-VQA Re-rendering + Multi-turn Verification (Design 2)"]
+        direction TB
+        B1["Scene Images"] --> B2["Re-rendering<br/>OCR Detection + Translation + Font Matching Inpainting"]
+        B2 --> B3["MLLM Generated EN QA → Translated ZH QA<br/>Cross-lingual Consistency Filtering"]
+        B3 --> B4["Translated to Image Language + Back-translation Verification<br/>Native Audit → 7,496 QA pairs"]
+    end
+    DOC --> C["Unified Evaluation Framework (Design 3)<br/>Parsing: End-to-end NED↓ / VQA: Zero-shot Acc<br/>Comparing 13 Models (Pipeline/Expert/General)"]
+    VQA --> C
+```
 
 ### Key Designs
 
-1. **Four-Stage Document Parsing Annotation Pipeline**
+**1. Four-Stage Document Parsing Pipeline: Selecting Balanced and Reliable Pages from ~3M PDFs**
 
-    - **Function**: Filter high-quality multilingual pages from approximately 3M web-crawled PDFs and produce fine-grained annotations.
-    - **Mechanism**: Four stages — (i) *Metadata annotation*: a layout detection model segments 10 region categories, followed by MLLM-based block-level language identification and page-type classification; (ii) *Rule-based scoring and ranking*: a weighted composite score $\text{Score} = 30 \cdot S_1 + 30 \cdot S_2 + 20 \cdot S_3 + 10 \cdot S_4 + 10 \cdot S_5$, where $S_1$ is block count, $S_2$ is text area ratio, $S_3$ is type diversity, and $S_4/S_5$ indicate the presence of figures/tables; the top 200 pages are selected per language × page-type group (200 × 11 × 9 = 19,800 pages total); (iii) *Region correction*: MLLM corrects OCR errors, UniMERNet re-parses formulas, and Intsig API corrects table structure; (iv) *Human verification*: inspects layout completeness, OCR reliability, sensitive content filtering, and cross-validates table and formula re-rendering.
-    - **Design Motivation**: Balances large-scale automatic annotation with language balance for low-resource languages; after human filtering, 15,234 pages are retained to ensure annotation quality.
+The difficulty with low-resource languages lies not in the lack of web documents, but in their inconsistent quality and messy layouts. SEA-Vision employs a four-stage pipeline to handle large-scale automatic annotation and linguistic balance simultaneously. Stage 1 involves metadata annotation: layout detection models segment pages into 10 region types, and MLLMs perform block-level language identification and page classification. Stage 2 uses rule-based scoring to calculate a weighted score for each page:
 
-2. **TEC-VQA Re-rendering and Multi-round Verification Pipeline**
+$$\text{Score} = 30 \cdot S_1 + 30 \cdot S_2 + 20 \cdot S_3 + 10 \cdot S_4 + 10 \cdot S_5$$
 
-    - **Function**: Resolve visual–textual misalignment in multilingual VQA annotation.
-    - **Mechanism**: (i) OCR detection extracts text regions from images → translate to target language → **font-matched inpainting renders translated text back into the image**, ensuring full consistency between visible text and QA language; (ii) MLLM generates English QA → translated to Chinese QA → independently answered → cross-lingual consistency check (pairs with inconsistent answers are discarded) → translated into the image-language version; (iii) back-translation verification + native-speaker review (removing unanswerable/trivial questions, standardizing numbers/units, checking language–image alignment, and annotating capability labels).
-    - **Design Motivation**: Prior translation-based VQA extension only translates text without modifying images, causing QA-referenced text to be absent from the visible image. Re-rendering fundamentally eliminates this misalignment.
+where $S_1$ is the number of blocks, $S_2$ is the text area ratio, $S_3$ is type diversity, and $S_4/S_5$ indicate the presence of images/tables. Crucially, the authors select the **Top-200 pages per Language × Page Type** (200 × 11 languages × 9 types = 19,800 pages), using grouped quotas to flatten the language distribution. Stage 3 performs region correction using MLLMs for OCR errors, UniMERNet for formulas, and Intsig APIs for table structures. The final stage involves native speaker verification of layout integrity, OCR reliability, sensitive content, and cross-validation of re-rendered tables/formulas, resulting in the final 15,234 pages.
 
-3. **Unified Evaluation Framework**
+**2. TEC-VQA Re-rendering + Multi-turn Cross-lingual Verification: Aligning QA References with Visual Text**
 
-    - **Function**: Evaluate document parsing and TEC-VQA within a single framework.
-    - **Mechanism**: Document parsing uses end-to-end NED (Normalized Edit Distance, ↓ lower is better) across 13 models spanning Pipeline, Expert, and General paradigms; TEC-VQA uses a zero-shot accuracy protocol.
-    - **Design Motivation**: Each paradigm has distinct strengths and weaknesses; a unified framework enables fair comparison and precise bottleneck identification.
+This design addresses a long-standing issue in multilingual VQA: typically, images remain unchanged while only QA text is translated, leading to misalignments where referenced text is absent from the original image. SEA-Vision's **re-rendering strategy** detects text regions via OCR, translates them, performs font matching, and uses inpainting to render the text back into the image. This ensures the visible text matches the QA language. To suppress hallucinations, MLLMs generate English QA pairs, which are translated into Chinese for independent answering. Only pairs passing this cross-lingual consistency check are translated into the final target language. Native speakers then perform back-translation and final audits to standardize numbers, units, and alignment.
+
+**3. Unified Evaluation Framework: Measuring Recognition and Reasoning on a Single Scale**
+
+Previously, text recognition and text-based reasoning were measured by separate benchmarks, making it difficult to determine if a model failed due to "reading" or "reasoning." SEA-Vision unifies these: document parsing is measured by end-to-end NED (Normalized Edit Distance, lower is better), comparing 13 models across three paradigms (Pipeline, Expert, General). TEC-VQA uses a standard zero-shot accuracy protocol. This allows for fair comparisons and precise localization of performance gaps across specific languages and capability dimensions.
 
 ### Loss & Training
 
-This is a benchmark paper; no model training is conducted. Standardized evaluation protocols and publicly released datasets are provided for community use.
+This is a benchmark paper; no model training was performed. The authors provide a standardized evaluation protocol and public datasets for community use.
 
 ## Key Experimental Results
 
 ### Document Parsing (End-to-End NED ↓)
 
-| Model Type | Model | EN | KM | LO | MY | Avg (11 languages) |
-|------------|-------|-----|-----|-----|-----|------|
+| Model Type | Model | EN | KM | LO | MY | Avg (11 Lang) |
+|----------|------|-----|-----|-----|-----|------|
 | Pipeline | PaddleOCR-VL | 0.108 | 0.634 | 0.648 | 0.456 | 0.238 |
 | Expert | dots.ocr | 0.144 | 0.311 | 0.386 | 0.313 | **0.186** |
 | General | Qwen3-VL-32B | 0.133 | 0.727 | 0.406 | 0.479 | 0.225 |
 | General | Gemini2.5-Pro | 0.154 | 0.278 | 0.195 | 0.214 | **0.159** |
 | General | GPT-4o | 0.197 | 0.611 | 0.610 | 0.423 | 0.313 |
 
-### Cross-Dimensional Analysis
+### Cross-dimensional Analysis
 
-| Comparison Dimension | Observation |
-|----------------------|-------------|
-| High-resource vs. Low-resource | EN/ZH accuracy ≈ 60–70%; KM/MY/LO only 10–20%; gap of **5–7×** |
-| Script type | Latin/Chinese scripts NED < 0.2; Brahmic/Burmese/Khmer scripts NED > 0.5; gap of **3–5×** |
-| Document type | Newspapers hardest (NED = 0.313); academic papers moderate (0.244); slides easiest (0.159) |
-| Capability dimension | Spatial understanding and logical reasoning substantially weaker than text recognition |
+| Dimension | Observation |
+|----------|----------|
+| High- vs. Low-resource | EN/ZH accuracy is ~60–70%, while KM/MY/LO is only 10–20% (**5–7× gap**) |
+| Script Impact | Latin/Chinese script NED < 0.2; Brahmic/Burmese/Khmer script NED > 0.5 (**3–5× gap**) |
+| Document Type | Newspapers (NED=0.313) are most difficult; Slides (0.159) are easiest |
+| Capability Dimension | Spatial understanding and logical reasoning are significantly weaker than text recognition |
 
 ### Key Findings
 
-- Gemini2.5-Pro achieves the best overall performance (Avg NED 0.159) with a clear advantage on low-resource languages such as LO and KM.
-- Even the strongest closed-source models exhibit substantial performance gaps on KM and MY.
-- Models transfer reasonably well to Latin-script languages but show almost no effective generalization to languages with unique writing systems.
+- Gemini2.5-Pro performs best overall (Avg NED 0.159), showing a clear advantage in low-resource languages like LO/KM.
+- Even the strongest closed-source models exhibit massive performance gaps in KM and MY.
+- Models generalize well to Latin-script languages but show almost no effective generalization to unique writing systems.
 
 ## Highlights & Insights
 
-- **First unified benchmark for document parsing and scene VQA across SEA multilingual settings**: covers 11 languages including 7 low-resource ones, whereas the closest prior work CC-OCR includes only 1 low-resource language, filling a significant evaluation gap.
-- **The re-rendering methodology contributes beyond the dataset itself**: font-matched inpainting of translated text back into images is directly transferable to data construction for other multilingual vision tasks.
-- **Multi-round cross-lingual consistency verification**: independent answering in English and Chinese → consistency filtering → back-translation → native-speaker review effectively suppresses MLLM hallucinations and translation errors.
-- **Quantifies multilingual bottlenecks of MLLMs**: NED gaps of 3–5× and accuracy gaps of 5–7× provide clear direction for model improvement.
+- **First Unified SEA Multilingual Benchmark**: Covers 11 languages including 7 low-resource cases, filling a critical gap left by benchmarks like CC-OCR (only 1 low-resource language).
+- **Methodological Contribution of Re-rendering**: Using font-matched inpainting to re-render translated text into images is a strategy that can be extended to other multilingual vision data construction tasks.
+- **Multi-turn Cross-lingual Consistency Verification**: The filter-verification loop (EN-ZH consistency → Back-translation → Native audit) effectively suppresses MLLM hallucinations and translation errors.
+- **Quantifying the Multilingual Bottleneck**: The 3–5× NED gap and 5–7× accuracy gap provide clear targets for future model improvements.
 
 ## Limitations & Future Work
 
-- For extremely low-resource languages (LO/KM/MY), approximately 100–200 pages per language per type may yield insufficiently precise statistical estimates.
-- Typographic artifacts introduced by re-rendering may affect evaluation fairness; this bias is not analyzed.
-- Only 9 printed document types are covered; handwriting, receipts, and other categories are not included.
-- As a purely evaluative benchmark, no training set is provided, precluding direct use for training low-resource models.
-- No model improvement strategies or data augmentation approaches targeting low-resource SEA languages are proposed.
+- Sample sizes for ultra-low resource languages (LO/KM/MY) are ~100–200 pages per type, which may lack statistical precision.
+- Re-rendering artifacts (font/layout differences) might introduce bias; this was not quantified.
+- The benchmark covers 9 printed document types but ignores handwritten text, receipts, and invoices.
+- As an evaluation benchmark, it lacks a training set for direct model fine-tuning.
+- No specific model architectural improvements or data augmentation strategies for low-resource SEA languages are proposed.
 
 ## Related Work & Insights
 
-- **vs. MTVQA**: 9 languages / 2 low-resource / 6,778 QA / VQA only. SEA-Vision: 11 languages / 7 low-resource / 7,496 QA + 15,234 document pages / dual tasks — substantially broader coverage.
-- **vs. CC-OCR**: 10 languages but only 1 low-resource / 800 parsing pages. SEA-Vision: 7 low-resource / 15K parsing pages.
-- **vs. OmniDocBench/Fox**: EN+ZH bilingual only, with no low-resource language coverage.
-- The re-rendering strategy can inspire large-scale construction of multilingual document pre-training data—re-rendering English documents into multilingual versions for continual pre-training of models.
+- **vs MTVQA**: Covers 9 languages (2 low-resource) and 6,778 QA pairs for VQA only. SEA-Vision covers 11 languages (7 low-resource), 7,496 QA pairs, and 15,234 pages for dual-task evaluation.
+- **vs CC-OCR**: Covers 10 languages but only 1 low-resource, with only 800 parsing pages.
+- **vs OmniDocBench/Fox**: Limited to EN+ZH, with no low-resource language coverage.
+- The re-rendering strategy provides inspiration for large-scale multilingual document pre-training—rendering English documents into multiple languages for continual pre-training.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ — Primarily a benchmark contribution; methodological innovation lies in the annotation pipeline design (re-rendering + cross-lingual consistency verification); no new model is proposed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 13 models across Pipeline/Expert/General paradigms with comprehensive evaluation across 11 languages.
-- **Writing Quality**: ⭐⭐⭐⭐ — Scoring mechanism and annotation pipeline are described clearly; statistical analysis is thorough.
-- **Value**: ⭐⭐⭐⭐⭐ — Fills a major gap in multilingual document understanding evaluation for Southeast Asia.
+- Novelty: ⭐⭐⭐ (Benchmark-focused, innovation lies in the pipeline design).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Covers 13 models across 3 paradigms in 11 languages).
+- Writing Quality: ⭐⭐⭐⭐ (Clear scoring mechanisms and pipeline descriptions).
+- Value: ⭐⭐⭐⭐⭐ (Fills a major void in SEA multilingual evaluation).
 
 <!-- RELATED:START -->
 
@@ -135,10 +146,10 @@ This is a benchmark paper; no model training is conducted. Standardized evaluati
 ## Related Papers
 
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[ACL 2025\] CruxEval-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution](../../ACL2025/multilingual_mt/cruxeval-x_a_benchmark_for_multilingual_code_reasoning_understanding_and_executi.md)
 - [\[ACL 2026\] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents](../../ACL2026/multilingual_mt/indotabvqa_a_benchmark_for_cross-lingual_table_understanding_in_bahasa_indonesia.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
-- [\[ACL 2026\] Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](../../ACL2026/multilingual_mt/is_human-like_text_liked_by_humans_multilingual_human_detection_and_preference_a.md)
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](../../ACL2026/multilingual_mt/the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[ACL 2025\] EXECUTE: A Multilingual Benchmark for LLM Token Understanding](../../ACL2025/multilingual_mt/execute_a_multilingual_benchmark_for_llm_token_understanding.md)
+- [\[ACL 2025\] MTVQA: Benchmarking Multilingual Text-Centric Visual Question Answering](../../ACL2025/multilingual_mt/mtvqa_benchmarking_multilingual_text-centric_visual_question_answering.md)
 
 </div>
 

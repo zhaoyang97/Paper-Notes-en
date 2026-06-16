@@ -2,139 +2,131 @@
 title: >-
   [Paper Note] Differentially Private Preference Data Synthesis for Large Language Model Alignment
 description: >-
-  [ICML 2026][LLM Safety][Differential Privacy] DPPrefSyn replaces "DP fine-tuning on private preference data" with "learning a DP preference reward model distribution and then synthesizing DP preference data using public…
+  [ICML 2026][LLM Safety][Bradley-Terry] DPPrefSyn replaces "direct DP fine-tuning on private preference data" with "learning a private reward model distribution via DP and synthesizing DP preference data using public prompts." By leveraging the geometric structure of Bradley-Terry linear rewards + DP-PCA + DP-KMeans clustering to capture user preference hete
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Differential Privacy"
-  - "Preference Data Synthesis"
-  - "Bradley-Terry"
-  - "DP-PCA"
-  - "DPO/RLHF"
+  - ICML 2026
+  - LLM Safety
+  - Bradley-Terry
+  - DP-PCA
+  - DPO/RLHF
 date: 2026-05-08
-content_hash: b4c68c46169a3835
+content_hash: 2daddc03960482b0
 ---
-
 # Differentially Private Preference Data Synthesis for Large Language Model Alignment
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.30808](https://arxiv.org/abs/2605.30808)  
 **Code**: https://github.com/gfengyu/Differentially-Private-Preference-Data-Synthesis  
-**Area**: LLM Security / Differential Privacy / Preference Alignment  
+**Area**: LLM Safety / Differential Privacy / Preference Alignment  
 **Keywords**: Differential Privacy, Preference Data Synthesis, Bradley-Terry, DP-PCA, DPO/RLHF
 
 ## TL;DR
-DPPrefSyn replaces "DP fine-tuning on private preference data" with "learning a DP preference reward model distribution and then synthesizing DP preference data using public prompts." By leveraging the geometric structure of Bradley-Terry linear rewards + DP-PCA + DP-KMeans clustering to capture user preference heterogeneity, it achieves a 56.5% GPT-4o win-rate on Anthropic-HH at $\varepsilon=2$, outperforming both non-private fine-tuning (55.95%) and DP-FT (37.0%).
+DPPrefSyn replaces "direct DP fine-tuning on private preference data" with "learning a private reward model distribution via DP and synthesizing DP preference data using public prompts." By leveraging the geometric structure of Bradley-Terry linear rewards + DP-PCA + DP-KMeans clustering to capture user preference heterogeneity, it achieves a 56.5% GPT-4o win-rate on Anthropic-HH at $\varepsilon=2$. This outperforms non-private fine-tuning (55.95%) and DP-FT (37.0%).
 
 ## Background & Motivation
 
-**Background**: LLM preference alignment (RLHF / DPO) relies on triplet data consisting of a prompt, a pair of responses, and human preference labels. These datasets (e.g., Anthropic-HH, OpenAssistant, TL;DR) often contain sensitive information such as health, identity, and political orientation in prompts, and annotations themselves may leak annotator preferences.
+**Background**: LLM preference alignment (RLHF / DPO) relies on triplet data consisting of a prompt, a pair of responses, and a human preference label. These datasets (e.g., Anthropic-HH, OpenAssistant, TL;DR) often contain sensitive information in prompts—such as health, identity, or political leanings—and the annotations themselves may leak the preferences of the annotators.
 
-**Limitations of Prior Work**: Existing DP alignment works fall into three categories: (1) Label-DP (Chowdhury 2024, Zhang 2025), which only protects labels while prompts remain exposed; (2) Private fine-tuning for specific algorithms like DP-PPO (Wu 2023a), which is incompatible with DPO; (3) DP synthesis for instructions (Yu 2024) that does not target preference pairs. All three offer "partial protection" or are "algorithm-specific" and suffer from limited private data volume—human preference annotation is extremely expensive.
+**Limitations of Prior Work**: Existing DP alignment works fall into three categories: (1) Label-DP (Chowdhury 2024, Zhang 2025), where prompts remain exposed; (2) Private fine-tuning of specific algorithms like DP-PPO (Wu 2023a), which is incompatible with DPO; and (3) DP synthesis of instructions (Yu 2024) that does not target preference pairs. All three provide "partial protection" or are "algorithm-specific" and are constrained by limited private data, as human preference labels are extremely expensive.
 
-**Key Challenge**: Preference data exhibits strong heterogeneity (different users value different aspects: accuracy, politeness, creativity), but DP-SGD has extremely low sample efficiency in high-dimensional embedding spaces. Furthermore, it is desirable for the DP-protected output to be reusable for DPO / RLHF / various downstream LLMs without further budget consumption.
+**Key Challenge**: Preference data exhibits strong heterogeneity (different users value different aspects: accuracy, politeness, or creativity), yet DP-SGD is highly sample-inefficient on high-dimensional embeddings. Furthermore, it is desirable for the DP product to be reusable for DPO, RLHF, or various downstream LLMs without further consumption of the privacy budget.
 
-**Goal**: (1) Protect all private signals including prompt + response + label; (2) Maintain compatibility with any alignment algorithm like DPO or RLHF; (3) Surpass the utility baseline of DP fine-tuning on private data.
+**Goal**: (1) Protect all private signals including prompts, responses, and labels; (2) remain compatible with arbitrary alignment algorithms like DPO or RLHF; and (3) surpass the utility of baselines that only perform DP fine-tuning on private data.
 
-**Key Insight**: Transform the task from "privately fine-tuning an alignment model" to "using DP to learn a preference reward model distribution → and using it to construct synthetic preference pairs on public prompts." Public prompts do not consume budget; all budget is used to build preference models. Synthetic data can be reused arbitrarily through the DP post-processing property.
+**Key Insight**: Shift the task from "privately fine-tuning an alignment model" to "learning a preference reward model distribution via DP $\rightarrow$ constructing synthetic preference pairs using public prompts." Public prompts do not consume the budget; all budget is allocated to building the preference model. Synthetic data can be reused indefinitely via DP post-processing.
 
-**Core Idea**: Bradley-Terry + Linear Reward $\rightarrow$ preference = sign of $\langle \theta, \phi(x, a^+) - \phi(x, a^-) \rangle$; cluster based on $\phi$ difference vectors to capture heterogeneous preferences; use DP-PCA for dimension reduction to save samples, DP-KMeans for clustering, and DP-SGD to learn linear rewards for each cluster; finally, sample across the cluster distribution on public prompts and use the corresponding reward models to select best/worst pairs.
+**Core Idea**: Bradley-Terry + Linear Reward $\rightarrow$ preference is the sign of $\langle \theta, \phi(x, a^+) - \phi(x, a^-) \rangle$. Use DP-PCA for dimension reduction to save samples, DP-KMeans for clustering to capture heterogeneous preferences, and DP-SGD to learn linear rewards for each cluster. Finally, sample reward models according to the cluster distribution on public prompts and use them to select best/worst pairs for synthesis.
 
 ## Method
 
 ### Overall Architecture
 
-DPPrefSyn consists of three steps:
-1.  **Preference Representation + Clustering**: For each $(x_i, a_i^+, a_i^-)$, calculate $d_i = \psi(x_i, a_i^+) - \psi(x_i, a_i^-)$; apply DP-PCA to reduce to $p=20$ dimensions (consumes $\varepsilon_0$); use DP-KMeans to partition into $K=5$ clusters (consumes $\varepsilon_1$).
-2.  **DP Reward Model Training**: Learn a linear $\theta_k \in \mathbb{R}^p$ for each cluster using DP-SGD; the parallel composition theorem (disjoint clusters) ensures the total budget is $\varepsilon - \varepsilon_0 - \varepsilon_1$.
-3.  **Synthetic Generation**: Compute DP histogram $\bm p \leftarrow \bm h / |\mathcal{D}_{\text{priv}}|$. For each public prompt $\tilde x_j$, the LLM generates $L=5$ candidates; sample cluster $k \sim \bm p$, calculate rewards using $\theta_k$, and select the max/min as $(\tilde a^+, \tilde a^-)$; pairs with reward differences too small (< 0.5) are discarded to ensure quality.
+DPPrefSyn avoids direct DP fine-tuning of alignment models on private preference triplets. Instead, it uses the privacy budget to "compress human preferences into a family of low-dimensional linear reward models," which are then used to synthesize preference pairs on public prompts. The pipeline consists of three steps: first, calculating feature difference vectors for each private triplet $(x_i, a_i^+, a_i^-)$ followed by DP-PCA dimension reduction and DP-KMeans clustering (splitting heterogeneous users into $K=5$ clusters); second, training a linear reward $\theta_k$ for each cluster via DP-SGD; third, generating candidates for public prompts (which do not consume budget), sampling a reward model based on cluster distribution for scoring, and picking the best/worst responses to form synthetic preference pairs. Since the synthetic data is a post-processing product of DP outputs, it can be reused for DPO/RLHF across different models without additional budget costs.
 
-A PRV accountant is used for tight composition of DP-SGD steps; the post-processing property allows the synthetic data to be reused indefinitely.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Private Preference Triplets<br/>(x, a⁺, a⁻)"] --> B["Feature Difference Vector<br/>φ(x,a⁺)−φ(x,a⁻)"]
+    subgraph PRIV["DP Preference Modeling (3-stage budget split)"]
+        direction TB
+        B --> C["DP-PCA Dim Reduction<br/>1024 → 20 dims"]
+        C --> D["DP-KMeans Clustering<br/>Heterogeneous preferences K=5"]
+        D --> E["Cluster-specific DP-SGD<br/>Learn linear reward θ_k"]
+    end
+    E --> F["Public Prompt Set<br/>Alpaca/SafeRLHF/XSum"]
+    F --> G["LLM High-Temp Gen (L=5 candidates)"]
+    G --> H["Sample θ_k by cluster distribution<br/>Pick best/worst pairs"]
+    H -->|"Discard if reward diff < 0.5" | I["Synthetic DP Preference Pairs"]
+    I --> J["Reuse for DPO/RLHF<br/>(Zero extra budget)"]
+```
 
 ### Key Designs
 
-1.  **Bradley-Terry Linear Reward $\rightarrow$ Geometric Clustering**:
-    - **Function**: Capture heterogeneous user preferences in a low-dimensional space, replacing a single global reward with a family of cluster rewards.
-    - **Mechanism**: Under the BT model, $\mathbb{P}[a^+ \succ a^-] = \sigma(\langle \theta, \phi(x,a^+) - \phi(x,a^-)\rangle)$. Users with similar preferences have aligned $\phi$ difference vectors, allowing clustering by difference vectors to approximate cluster-specific $\theta_k$. Discovered clusters are interpretable (e.g., "focus on factuality" vs. "focus on politeness").
-    - **Design Motivation**: A single reward cannot represent heterogeneous preferences; clustering avoids high-dimensional multi-model issues; the linear structure balances expressivity and DP-friendliness (DP-SGD sample efficiency is much higher for linear models than deep models).
+**1. Bradley-Terry Linear Reward + Geometric Clustering: Expressing heterogeneous preferences through cluster rewards**
 
-2.  **Budget Configuration for DP-PCA + DP-KMeans + DP-SGD**:
-    - **Function**: Improve DP-SGD sample efficiency through dimension reduction and phased budget consumption.
-    - **Mechanism**: Original embeddings are 1024D; training a reward model directly via DP-SGD at this dimension requires massive samples. DP-PCA projects difference vectors to $p=20$ to retain primary signals. Budget is allocated as $\varepsilon_0$ (PCA) + $\varepsilon_1$ (KMeans) + remaining for DP-SGD. Disjoint clusters $\rightarrow$ DP parallel composition, where budget is only affected by the smallest cluster.
-    - **Design Motivation**: Dimension reduction is a standard technique for high-dimensional DP training. PCA is more targeted than random projection; KMeans ensures intra-cluster preference homogeneity so linear models suffice.
+A single global reward cannot capture the heterogeneity of users who value different aspects (e.g., accuracy vs. creativity). However, modeling each user individually faces high-dimensional multi-model challenges. This work breaks through via the geometric structure of the Bradley-Terry model: the preference probability $\mathbb{P}[a^+ \succ a^-] = \sigma(\langle \theta, \phi(x,a^+) - \phi(x,a^-)\rangle)$ is determined solely by the sign of the inner product between $\theta$ and the feature difference vector $\phi(x,a^+) - \phi(x,a^-)$. Users with similar preference orientations naturally have aligned difference vector directions. Clustering these vectors allows each cluster to correspond to a homogeneous preference type, approximated by a cluster-specific linear $\theta_k$. Linear rewards are chosen over deep rewards to balance expressiveness and DP-friendliness: DP-SGD's sample efficiency is much higher on linear models, and once preferences are homogenized within a cluster, a linear structure suffices.
 
-3.  **Public Prompts to Save Budget + Candidate Scoring for Pair Construction**:
-    - **Function**: Spend all DP budget on "building preferences" rather than "synthesizing prompts."
-    - **Mechanism**: Use public prompt sets (Alpaca / SafeRLHF / XSum); for each prompt, an LLM generates 5 candidates with high temperature. Draw cluster $k$ per the DP histogram, calculate rewards with $\theta_k$, and form preference pairs from the highest/lowest. Discard pairs with reward diffs < 0.5 to avoid noisy pairs.
-    - **Design Motivation**: Synthesizing prompts consumes budget and yields poor quality. Using public prompts saves this budget; distribution shifts are mitigated by $\theta_k$ capturing preference invariance (as preferences typically do not change with prompts).
+**2. Phased Budget Allocation (DP-PCA + DP-KMeans + DP-SGD): Trading dimension for sample efficiency**
+
+Original embeddings reach 1024 dimensions, where direct DP-SGD training would require an unrealistic sample size, given the high cost of preference labels. The solution uses DP-PCA to project difference vectors onto $p=20$ dimensions, retaining primary preference signals while discarding noise. The total privacy budget is split: $\varepsilon_0$ for PCA, $\varepsilon_1$ for KMeans, and $\varepsilon - \varepsilon_0 - \varepsilon_1$ for DP-SGD. Since cluster samples are disjoint, DP-SGD training follows the parallel composition theorem, where the total budget is constrained by the smallest cluster rather than linear accumulation. PCA was selected over random projection to specifically preserve preference signals, while KMeans ensures intra-cluster homogeneity for linear fitting. DP-SGD compositions are tightly tracked using a PRV accountant.
+
+**3. Public Prompts + Candidate Scoring for Preference Pairs: Concentrating budget on "preference modeling"**
+
+Synthesizing prompts themselves consumes budget and often yields poor quality. Consequently, the authors use public prompt sets (Alpaca / SafeRLHF / XSum), dedicating the entire DP budget to preference modeling. For each public prompt $\tilde x_j$, an LLM generates $L=5$ candidates under high temperature. A cluster $k$ is sampled according to a DP histogram $\bm p \leftarrow \bm h / |\mathcal{D}_{\text{priv}}|$ (representing private cluster proportions), and the corresponding $\theta_k$ scores the candidates. The highest and lowest scoring responses form the pair $(\tilde a^+, \tilde a^-)$. Pairs with a reward difference $< 0.5$ are discarded to ensure signal quality. The distribution shift between public and private prompts is not fatal, as the authors argue that user preferences are decoupled from prompt distributions—captured preference invariance via $\theta_k$ allows for consistent rank reproduction across different prompt sources.
 
 ## Key Experimental Results
 
 ### Main Results: GPT-4o Win-rate (Pythia-2.8B + SFT+DPO)
 
 | Task | $\varepsilon=0$ (base) | DP-FT $\varepsilon=2$ | **DPPrefSyn $\varepsilon=2$** | DP-FT $\varepsilon=\infty$ (Non-private) |
-| :--- | :--- | :--- | :--- | :--- |
+|------|---------|-------------|---------------|-----------|
 | OpenAssistant | 2.11 | 6.18 | **11.04** | 8.20 |
 | Anthropic-HH | 12.14 | 37.02 | **56.48** | 38.72 |
 | TL;DR | 11.64 | 35.2 | **53.8** | 39.5 |
 
-Under strong privacy ($\varepsilon = 2$), DPPrefSyn significantly outperforms DP-FT and even exceeds fully non-private DP-FT ($\varepsilon = \infty$)—**DP is no longer just a utility cost, but acts as a regularizer**.
-
-### Privacy vs. Performance (Anthropic-HH)
-
-| $\varepsilon$ | DP-FT win-rate | DPPrefSyn win-rate |
-| :--- | :--- | :--- |
-| 0.5 | 35.00 | **55.08** |
-| 1 | 36.27 | **55.96** |
-| 2 | 37.02 | **56.48** |
-| 4 | 36.74 | **56.51** |
-| 8 | 36.94 | **56.86** |
-| ∞ | 38.72 | 57.53 |
-
-DPPrefSyn remains stable at 55%+ across almost all $\varepsilon$, while DP-FT is stuck at 35-37%. DPPrefSyn is insensitive to the budget because it is only used on low-dimensional linear rewards, which is much more efficient than training an entire LLM.
+Under strong privacy ($\varepsilon = 2$), DPPrefSyn significantly outperforms DP-FT and even surpasses the completely non-private DP-FT baseline ($\varepsilon = \infty$). **DP is no longer just a utility cost, but acts as a regularizer.**
 
 ### Ablation Study (OpenAssistant, $\varepsilon = 2$)
 
-| Configuration | win-rate |
-| :--- | :--- |
+| Configuration | Win-rate |
+|------|---------|
 | Full DPPrefSyn | 11.04 |
-| w/o DP-PCA (Direct 1024D DP-SGD) | 6.32 |
-| w/o KMeans (Single global reward) | 8.41 |
-| DP synthesized prompts instead of public | 7.95 |
-| GPT-2 fine-tuned reward instead of linear | 11.21 |
+| Without DP-PCA (Direct 1024D DP-SGD) | 6.32 |
+| Without KMeans Clustering (Global Reward) | 8.41 |
+| Using DP Synthetic Prompts instead of Public | 7.95 |
+| GPT-2 Fine-tuned Reward instead of Linear | 11.21 |
 
-DP-PCA contributes the most (-4.7 points), followed by clustering for heterogeneity (-2.6 points). Linear rewards perform similarly to full GPT-2, proving the linear structure is sufficient.
+DP-PCA contributes most (−4.7 points), followed by clustering for heterogeneity (−2.6 points). Linear rewards perform nearly identical to full GPT-2, validating the linear structure.
 
 ### Key Findings
-- **DP Synthetic Data > Direct DP Fine-tuning**: DPPrefSyn beats DP-FT at all $\varepsilon$, challenging the common belief that synthetic data loses information.
-- **Dimension Reduction is Vital for High-D DP**: Dropping DP-PCA causes a 4.7-point drop, indicating DP-SGD learns almost nothing in 1024D.
-- **Heterogeneous Preference Modeling works**: Clustering provides a 2.6-point boost, confirming human preferences are multimodal.
-- **Post-processing Reusability**: Once the synthetic dataset is generated, it can be used for different models/algorithms (SFT, DPO, RLHF) with zero additional budget.
+- **DP Synthetic Data > Direct DP Fine-tuning**: DPPrefSyn wins over DP-FT across all $\varepsilon$, challenging the common belief that synthetic data necessarily loses information.
+- **Dimension Reduction is Crucial for DP**: Removing DP-PCA causes a 4.7-point drop, indicating that direct DP-SGD in 1024 dimensions learns almost nothing.
+- **Heterogeneous Preference Modeling works**: Clustering provides a 2.6-point boost, confirming that human preferences are indeed multimodal.
+- **Post-processing Reusability**: The synthetic dataset can be reused for different models or algorithms (SFT, DPO, RLHF) with zero additional budget.
 
 ## Highlights & Insights
-- **Elegant "Trio" of DP-PCA + Linear Reward + Clustering**: Each component solves a specific pain point of high-dimensional DP training (sample efficiency / expressivity / heterogeneity). The combination crosses the utility-privacy boundary.
-- **Maximizing Post-processing Property**: Synthesis detaches the data from DP control, allowing for arbitrary reuse—a fundamental advantage of DP synthesis over DP fine-tuning that this paper fully exploits.
-- **"DP as Regularization" Phenomenon**: DPPrefSyn at $\varepsilon=2$ outperforms the non-private baseline, suggesting DP noise acts as a regularizer on heterogeneous data, mitigating overfitting to specific annotator biases.
-- **Insight on Public vs. Private Prompts**: The authors argue that "user preference decouples from prompt distribution," allowing public prompts to carry private preferences—a logic applicable to other preference tasks (recommendation, advertising).
+- **Sophisticated Combination of the "Trio" (DP-PCA + Linear Reward + Clustering)**: Each component addresses a specific pain point of high-dimensional DP training (sample efficiency, expressiveness, or heterogeneity).
+- **Maximizing Post-processing**: Once synthesis is complete, it is free from DP constraints and can be reused—a fundamental advantage over DP fine-tuning that the authors exploit thoroughly.
+- **"DP-as-Regularization" Phenomenon**: DPPrefSyn outperforming the non-private baseline at $\varepsilon=2$ suggests that DP noise acts as a regularizer on heterogeneous data, mitigating overfitting to specific annotator biases.
+- **Insight on Public vs. Private Prompts**: The decoupling of user preference from prompt distribution allows public prompts to carry private preference signals, a concept applicable to other tasks like recommendation.
 
 ## Limitations & Future Work
-- The linear reward assumption might be too strong; it lacks expressivity for non-linear preferences (e.g., compositional or long-range dependency judgments).
-- The choice of $K=5$ clusters lacks a principled method and relies on heuristics; too many or too few clusters hurt performance.
-- If public prompt distributions deviate severely from private ones, coverage may be insufficient; there is a lack of quantitative analysis on distribution shift.
-- Validation is limited to Pythia-2.8B; biases from DP-PCA dimension reduction might be amplified in larger models (e.g., 13B+).
+- The linear reward assumption may be too strong for non-linear preferences (e.g., complex logic or long-range dependencies).
+- The choice of $K=5$ clusters is empirical; too many or too few clusters can harm performance.
+- If public prompt distributions deviate severely from private ones, coverage may be insufficient; a quantitative analysis of distribution shift is lacking.
+- Evaluation was limited to Pythia-2.8B; biases from DP-PCA dimension reduction might be amplified in larger models (13B+).
 
 ## Related Work & Insights
-- **vs DP-FT / DP-PPO / DP-RLHF**: These fine-tune the alignment model directly; budgets must be re-spent for every algorithm or model change. DPPrefSyn: DP once, reuse many times.
-- **vs label-DP (Chowdhury / Zhang)**: Protections are label-only; prompts are still leaked. DPPrefSyn protects everything.
-- **vs DP synthetic instructions (Yu 2024)**: General instruction synthesis isn't optimized for preference. DPPrefSyn synthesizes preference pairs directly for better alignment.
-- **vs Aug-PE (Xie 2024)**: Generic text synthesis via LLM API iterations. DPPrefSyn is more specialized for preference pairs using the BT geometric structure.
-- **Insight**: Replacing "DP direct training" with "DP learn abstraction $\rightarrow$ Synthetic data $\rightarrow$ Reuse" can be generalized to many supervised tasks requiring label protection (medical, legal, recommendation).
+- **vs. DP-FT / DP-PPO / DP-RLHF**: These perform direct DP fine-tuning on alignment models, requiring budget for every new algorithm or model. DPPrefSyn offers a "one-time DP, multiple reuse" paradigm.
+- **vs. Label-DP**: Earlier works only protected labels while prompts leaked; DPPrefSyn protects the entire triplet.
+- **vs. Aug-PE (Xie 2024)**: While Aug-PE focuses on general text synthesis via LLM API iterations, DPPrefSyn targets preference pairs specifically by leveraging BT geometric structures.
+- **Insight**: The paradigm of "DP learning an abstraction $\rightarrow$ synthetic data $\rightarrow$ reuse" can be generalized to all supervised tasks requiring label protection (e.g., medical, legal, recommendations).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First dedicated DP preference pair synthesis; systematic strategy combining BT geometry + DP-PCA + clustering.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3 tasks × 5 $\varepsilon$ values × multiple models × detailed ablation; comprehensive head-to-head with DP-FT.
-- Writing Quality: ⭐⭐⭐⭐ Clear three-step algorithm; budget allocation well-explained; Fig 1 is intuitive; geometric arguments for BT-clustering could be deeper.
-- Value: ⭐⭐⭐⭐⭐ DP alignment is a compliance necessity for enterprise LLM deployment; providing a pipeline ready for industry adoption.
+- Novelty: ⭐⭐⭐⭐⭐ First to perform DP preference pair synthesis; systematic combination of BT geometry + DP-PCA + clustering.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three tasks across five $\varepsilon$ values with detailed ablations and head-to-head comparisons against DP-FT.
+- Writing Quality: ⭐⭐⭐⭐ Clear three-step algorithm and budget explanation; geometric arguments for BT-clustering could be deeper.
+- Value: ⭐⭐⭐⭐⭐ DP alignment is a regulatory necessity for enterprise LLM deployment; providing a ready-to-use pipeline is highly valuable.
 
 <!-- RELATED:START -->
 
@@ -143,9 +135,9 @@ DP-PCA contributes the most (-4.7 points), followed by clustering for heterogene
 ## Related Papers
 
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
+- [\[ICML 2025\] POPri: Private Federated Learning using Preference-Optimized Synthetic Data](../../ICML2025/llm_safety/popri_private_federated_learning_using_preference-optimized_synthetic_data.md)
 - [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 - [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
-- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](../../NeurIPS2025/llm_safety/on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 
 </div>

@@ -2,127 +2,144 @@
 title: >-
   [Paper Note] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards
 description: >-
-  [ACL 2026][LLM Safety][Multi-turn Jailbreak Attack] This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By utilizing two heuristic process rewards…
+  [ACL 2026][LLM Safety][Reinforcement Learning] This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By utilizing two heuristic process rewards (excessive harmfulness penalty and semantic relevance progression), it alleviates the sparse supervision issue inherent in outcome rewards, significant
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Multi-turn Jailbreak Attack"
-  - "Trajectory-Level Optimization"
-  - "Process Rewards"
-  - "Reinforcement Learning"
-  - "Red Teaming"
+  - ACL 2026
+  - LLM Safety
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: bb10a6b4ccbbe30d
+content_hash: 26f411a010c9cf1a
 ---
-
 # TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards
 
 **Conference**: ACL 2026  
 **arXiv**: [2512.07761](https://arxiv.org/abs/2512.07761)  
 **Code**: [GitHub](https://github.com/xxiqiao/TROJail)  
 **Area**: AI Safety / LLM Reasoning  
-**Keywords**: Multi-turn Jailbreak Attack, Trajectory-Level Optimization, Process Rewards, Reinforcement Learning, Red Teaming
+**Keywords**: multi-turn jailbreak attacks, trajectory-level optimization, process rewards, reinforcement learning, red teaming
 
 ## TL;DR
 
-This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By utilizing two heuristic process rewards (over-harm penalization and semantic relevance progression), it alleviates the sparse supervision issue inherent in outcome rewards, significantly improving attack success rates across multiple models and benchmarks.
+This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By utilizing two heuristic process rewards (excessive harmfulness penalty and semantic relevance progression), it alleviates the sparse supervision issue inherent in outcome rewards, significantly improving attack success rates across multiple models and benchmarks.
 
 ## Background & Motivation
 
-**Background**: LLMs face safety threats from jailbreak attacks. Multi-turn jailbreak attacks have gained attention as they reflect real-world interaction scenarios. Existing training-based methods use DPO or rejection sampling fine-tuning to optimize the attacker LLM independently at each turn.
+**Background**: LLMs face security threats from jailbreak attacks. Multi-turn jailbreak attacks have gained attention as they reflect real interaction scenarios. Existing training-based methods use DPO or rejection sampling fine-tuning to optimize the attacker LLM independently at each turn.
 
-**Limitations of Prior Work**: (1) Turn-wise optimization is short-sighted—it maximizes the immediate harmfulness of each response but fails to learn long-term attack strategies across turns; (2) Early prompts that appear harmless but are strategically crucial are undervalued because they do not trigger immediate harmful responses; (3) Tuning-free methods rely on manually designed strategies, require extensive trials, and are prone to failure when the victim model deviates from expectations.
+**Limitations of Prior Work**: (1) Turn-by-turn optimization is short-sighted—maximizing the immediate harmfulness of each response fails to learn long-term cross-turn attack strategies; (2) Seemingly harmless but strategically critical early prompts are undervalued because they do not trigger immediate harmful responses; (3) Training-free methods rely on human-designed strategies, requiring numerous trials and often collapsing when victim models deviate from expectations.
 
-**Key Challenge**: Trajectory-level optimization is a natural solution, but relying solely on the harmfulness of the final response as an outcome reward faces a severe sparse supervision problem—the attacker cannot infer how intermediate prompts contribute to the final attack success.
+**Key Challenge**: Trajectory-level optimization is a natural solution, but relying solely on the harmfulness of the final response as an outcome reward faces severe sparse supervision—the attacker cannot infer how intermediate prompts contribute to the final attack success.
 
 **Goal**: Design richer intermediate feedback signals to estimate the utility of intermediate prompts, thereby supporting the learning of long-term attack strategies.
 
-**Key Insight**: Controlled experiments reveal two empirical patterns—(1) Moderately harmful intermediate prompts are the most effective; excessively harmful ones trigger refusal mechanisms and lead to failure; (2) Semantic relevance of responses in successful trajectories increases progressively, whereas failed trajectories do not exhibit this pattern.
+**Key Insight**: Controlled experiments reveal two empirical patterns—(1) Moderately harmful intermediate prompts are most effective, while excessively harmful ones trigger refusal mechanisms and lead to failure; (2) Semantic relevance of responses in successful trajectories increases progressively, a pattern not exhibited in failed trajectories.
 
-**Core Idea**: Introduce two process rewards—over-harm penalization $r_{h_1}$ and semantic relevance progression $r_{h_2}$—into a multi-turn GRPO framework. These are integrated into advantage estimation to provide fine-grained training signals for intermediate prompts.
+**Core Idea**: Introduce two process rewards—excessive harmfulness penalty $r_{h_1}$ and semantic relevance progression $r_{h_2}$—into a multi-turn GRPO framework. Integrating these into advantage estimation provides fine-grained training signals for intermediate prompts.
 
 ## Method
 
 ### Overall Architecture
 
-TROJail is based on multi-turn GRPO. For each harmful prompt $x_0$, the attacker $\pi_\theta$ interacts with the victim model $\pi_\phi$ for up to $T$ turns to generate $G$ trajectories. The outcome reward $r_o$ represents the harmfulness of the final response. Two process rewards $r_{h_1}$ and $r_{h_2}$ evaluate the utility of intermediate prompts. The final advantage $\hat{A}_{i,t} = \hat{A}_{i,t}^o + \lambda \hat{A}_{i,t}^h$ combines outcome and process advantages, optimizing $\pi_\theta$ via a PPO-style clipped objective.
+TROJail treats "automated multi-turn jailbreaking" as a multi-turn reinforcement learning problem to train the attacker. Given a harmful target $x_0$, the attacker $\pi_\theta$ and victim model $\pi_\phi$ engage in a dialogue for up to $T$ turns, sampling $G$ trajectories. The harmfulness of the final response serves as the outcome reward $r_o$. The problem is that only the last turn receives this reward; intermediate prompts that are "seemingly harmless yet strategically critical" receive no credit, leading to extremely sparse supervision. TROJail's solution is to incorporate two **process rewards**, $r_{h_1}$ and $r_{h_2}$, to score intermediate prompts. These are converted into process advantages and combined with the outcome advantage: $\hat{A}_{i,t} = \hat{A}_{i,t}^o + \lambda \hat{A}_{i,t}^h$. Optimization is performed using a multi-turn GRPO with a PPO-style clipped objective—targeting final success while providing fine-grained gradients for every step.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Harmful target x₀"] --> B["Attacker π_θ ↔ Victim π_φ<br/>Multi-turn dialogue up to T turns, G trajectories sampled"]
+    B --> C["Outcome Reward r_o<br/>Final response harmfulness only (sparse)"]
+    subgraph PR["Process Rewards (scoring intermediate prompts)"]
+        direction TB
+        D1["Excessive Harmfulness Penalty r_h1<br/>0 if refused, else direct harmfulness"]
+        D2["Semantic Relevance Progression r_h2<br/>Turn-weighted cosine similarity between response and target"]
+    end
+    B --> PR
+    C --> E["Advantage Estimation & Integration<br/>Â = Âᵒ + λÂʰ"]
+    PR --> E
+    E --> F["Multi-turn GRPO updates Attacker<br/>PPO clipped objective + KL regularization"]
+    F -.->|Iteration| B
+```
 
 ### Key Designs
 
-1.  **Over-Harm Penalization ($r_{h_1}$)**:
-    - **Function**: Prevents intermediate prompts from being too harmful and triggering the victim model's refusal mechanism.
-    - **Mechanism**: If an intermediate response triggers a refusal, $r_{h_1} = 0$; otherwise, it equals the harmfulness of the direct response $r(x_0, y_t)$. This encourages the attacker to maintain a moderate level of malice—advancing the attack without alerting the model.
-    - **Design Motivation**: Controlled experiments show an inverted U-shaped relationship between intermediate prompt harmfulness and final attack success—moderate harmfulness is optimal, while excessive harmfulness leads to a sharp drop in outcome rewards.
+**1. Excessive Harmfulness Penalty $r_{h_1}$: Preventing early detection by learning "moderation"**
 
-2.  **Semantic Relevance Progression ($r_{h_2}$)**:
-    - **Function**: Encourages intermediate responses to gradually guide the model toward target harmful content.
-    - **Mechanism**: Calculates the cosine similarity between the sentence embeddings of the intermediate response and the original harmful prompt, weighted by the turn ratio: $r_{h_2}(x_t) = \frac{t}{|\tau|} \cdot \text{cosine}(e(x_0), e(y_t))$. Later turns receive higher weights, encouraging steadily increasing semantic alignment.
-    - **Design Motivation**: In successful trajectories, semantic relevance increases steadily, while harmfulness rewards surge only in the final turn—semantic relevance provides a more reliable and gradual intermediate feedback signal.
+A common issue with turn-by-turn optimization is pushing every response toward maximum harmfulness. This causes intermediate prompts to be too explicit, triggering the victim model's refusal mechanism and causing the attack to fail immediately. The authors' controlled experiments show an **inverted U-shape** relationship between intermediate prompt harmfulness and final success—moderate harmfulness is optimal. $r_{h_1}$ encodes this: if an intermediate response triggers a refusal, $r_{h_1} = 0$; otherwise, it equals the direct harmfulness $r(x_0, y_t)$. This encourages the attacker to maintain a level of harmfulness that progresses the attack without alerting safety guardrails.
 
-3.  **Process Advantage Estimation and Integration**:
-    - **Function**: Integrates process rewards into the advantage estimation of trajectory-level optimization.
-    - **Mechanism**: Normalized process advantages $\hat{A}_{i,t}^h = \sum_{s=t}^{|\tau_i|} \frac{r_h(x_{i,s}) - \text{mean}(\mathcal{D}_h)}{\text{std}(\mathcal{D}_h)}$ are calculated for the set of heuristic rewards $\mathcal{D}_h$ across all trajectories and turns, using prefix sums to accumulate future rewards. The final advantage is $\hat{A}_{i,t} = \hat{A}_{i,t}^o + \lambda \hat{A}_{i,t}^h$.
-    - **Design Motivation**: Outcome advantages provide global guidance while process advantages provide local guidance—the two are complementary, both optimizing the final objective and providing gradient signals for intermediate steps.
+**2. Semantic Relevance Progression $r_{h_2}$: Successive jailbreaks steer the topic toward the target**
+
+Harmfulness alone is insufficient because it only spikes in the final turn, providing little guidance for intermediate steps. The authors observed a more reliable signal in successful trajectories: the semantic relevance between responses and the original harmful target **increases steadily**. $r_{h_2}$ calculates the cosine similarity between the sentence embeddings of the intermediate response and the original harmful prompt, weighted by the turn ratio:
+
+$$r_{h_2}(x_t) = \frac{t}{|\tau|} \cdot \text{cosine}(e(x_0), e(y_t))$$
+
+Later turns receive higher weights, forcing the attacker to steadily align the semantics with the target. Compared to outcome rewards, this signal provides gradual, differentiable intermediate guidance across the entire trajectory.
+
+**3. Process Advantage Estimation and Integration: Converting heuristic rewards into "future-cumulative" advantages**
+
+After defining $r_{h_1}$ and $r_{h_2}$, they must be integrated into trajectory-level optimization. TROJail aggregates heuristic rewards from all trajectories and turns into a set $\mathcal{D}_h$ for normalization. It then computes the prefix sum of future rewards from each position to obtain normalized process advantages:
+
+$$\hat{A}_{i,t}^h = \sum_{s=t}^{|\tau_i|} \frac{r_h(x_{i,s}) - \text{mean}(\mathcal{D}_h)}{\text{std}(\mathcal{D}_h)}$$
+
+The final advantage $\hat{A}_{i,t} = \hat{A}_{i,t}^o + \lambda \hat{A}_{i,t}^h$ allows the outcome advantage to handle global direction while the process advantage manages local tactics, with $\lambda$ balancing the two. This "future-cumulative" formulation allows early, seemingly harmless setup prompts to receive positive credit for the semantic progression they enable, allowing the model to learn long-term "setup-then-trigger" strategies.
 
 ### Loss & Training
 
-A PPO-style clipped objective for multi-turn GRPO is used with KL regularization. The attacker is based on Qwen2.5-3B-Instruct. Victim models include Llama-3.1-8B, Qwen2.5-7B, Gemma-2-9B, Mistral-7B, etc.
+The method adopts multi-turn GRPO using a PPO-style clipped objective with KL regularization. The attacker is based on Qwen2.5-3B-Instruct, while victim models include Llama-3.1-8B, Qwen2.5-7B, Gemma-2-9B, and Mistral-7B.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Comparison of Average Attack Success Rate (ASR) across models**
+**Comparison of Average Attack Success Rate (ASR) Across Models**
 
 | Method | Type | Average ASR |
 |------|------|---------|
-| ActorAttack | Tuning-free multi-turn | ~60% |
-| HARM | Training-based turn-wise | ~58% |
-| Siren (DPO) | Training-based turn-wise | ~65% |
-| **TROJail** | Training-based trajectory-level | **~72%** |
+| ActorAttack | Training-free Multi-turn | ~60% |
+| HARM | Training-based Turn-by-turn | ~58% |
+| Siren (DPO) | Training-based Turn-by-turn | ~65% |
+| **TROJail** | Training-based Trajectory-level | **~72%** |
 
 ### Ablation Study
 
-**Ablation of Process Rewards**
+**Process Reward Ablation**
 
 | Configuration | Description |
 |------|------|
 | w/o Both process rewards | Degenerates to pure MT-GRPO; ASR drops significantly |
-| w/o Over-harm penalization | Attacker tends to generate overly aggressive prompts, triggering more refusals |
-| w/o Semantic progression | Intermediate turns easily deviate from the target harmful content |
+| w/o Excessive harmfulness penalty | Attacker tends to generate overly aggressive prompts, triggering more refusals |
+| w/o Semantic progression | Intermediate turns drift away from the target harmful content |
 
 ### Key Findings
 
-- TROJail consistently outperforms turn-wise optimization methods across all victim models and benchmarks.
-- Both process rewards contribute substantially to performance, but semantic progression is more critical for long trajectories.
-- Controlled experiments validate the inverted U-shaped relationship of over-harmfulness—intermediate prompts at L3-L4 levels are most effective.
-- Trajectory visualization shows that TROJail learns a "paving first, triggering later" long-term strategy pattern.
+- TROJail consistently outperforms turn-by-turn optimization methods across all victim models and benchmarks.
+- Both process rewards contribute equally to performance, though semantic progression is more critical for longer trajectories.
+- Controlled experiments validate the inverted U-shape relationship—intermediate prompts at L3-L4 levels of harmfulness are most effective.
+- Trajectory visualizations reveal that TROJail effectively learns long-term "setup-then-trigger" strategic patterns.
 
 ## Highlights & Insights
 
-- The discovery of two empirical patterns is the cornerstone of the paper—quantifying intermediate prompt utility through carefully designed controlled experiments.
-- Modeling multi-turn jailbreaking as a multi-turn RL problem is natural and elegant, and the design of process rewards is supported by both theory and empirical evidence.
-- Although the study focuses on attacks, its findings directly serve defense—only by understanding attack strategies can better safety mechanisms be designed.
+- The discovery of the two empirical patterns is the cornerstone of the paper, quantifying the utility of intermediate prompts through rigorous controlled experiments.
+- Modeling multi-turn jailbreaking as a multi-turn RL problem is a natural and elegant perspective, with process reward designs supported by both theory and empirical evidence.
+- While focusing on attacks, the findings directly inform defense; understanding attack strategies is essential for designing better security mechanisms.
 
 ## Limitations & Future Work
 
-- Judgment of attack success relies on external harmfulness evaluators, which may themselves be imperfect.
-- Evaluated only on victim models in the 7-9B range; larger or newer models were not tested.
-- Process rewards are heuristic designs; better intermediate feedback signals may exist.
-- Ethical considerations—public disclosure of attack methods could be misused; responsible disclosure is required.
+- Success evaluation relies on external harmfulness classifiers, which may themselves be imperfect.
+- Evaluations were conducted only on 7-9B scale victim models, without testing larger or newer models.
+- Process rewards are heuristic designs; more effective intermediate feedback signals may exist.
+- Ethical considerations—the disclosure of attack methods could be misused and requires responsible handling.
 
 ## Related Work & Insights
 
-- **vs Siren/MTSA (DPO Turn-wise Optimization)**: The latter optimizes each turn independently and cannot learn cross-turn strategies; TROJail’s trajectory-level optimization discovers long-term "paving-then-triggering" patterns.
-- **vs ActorAttack (Tuning-free Multi-turn)**: The latter relies on preset strategies and easily collapses when the victim model deviates from expectations; TROJail automatically learns strategies via RL.
-- **vs MT-GRPO**: Pure outcome rewards face sparse supervision; TROJail’s process rewards provide critical intermediate guidance.
+- **vs Siren/MTSA (DPO Turn-by-turn)**: These optimize each turn independently and cannot learn cross-turn strategies; TROJail’s trajectory-level optimization discovers long-term "setup-then-trigger" patterns.
+- **vs ActorAttack (Training-free)**: The latter relies on preset strategies and may fail when victim models deviate from expectations; TROJail automatically learns strategies via RL.
+- **vs MT-GRPO**: Pure outcome rewards suffer from sparse supervision; TROJail’s process rewards provide critical intermediate guidance.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The approach of modeling multi-turn jailbreaks as multi-turn RL and designing process rewards is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 victim models × 3 benchmarks + controlled experiments + detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic from empirical patterns to method design.
-- Value: ⭐⭐⭐⭐ Significantly advances LLM safety research with insights for both attack and defense.
+- Novelty: ⭐⭐⭐⭐ Modeling multi-turn jailbreaking as multi-turn RL with process rewards is an innovative approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 4 victim models, 3 benchmarks, controlled experiments, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from empirical patterns to methodological design is clear.
+- Value: ⭐⭐⭐⭐ Significant contribution to LLM security research with insights relevant to both attack and defense.
 
 <!-- RELATED:START -->
 
@@ -131,10 +148,10 @@ A PPO-style clipped objective for multi-turn GRPO is used with KL regularization
 ## Related Papers
 
 - [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](multi-component_causal_tracing_in_large_language_models.md)
-- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 - [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](../../ICML2026/llm_safety/prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
+- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 - [\[ACL 2026\] Instant Personalized Large Language Model Adaptation via Hypernetwork](instant_personalized_large_language_model_adaptation_via_hypernetwork.md)
-- [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
+- [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](../../NeurIPS2025/llm_safety/learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
 
 </div>
 

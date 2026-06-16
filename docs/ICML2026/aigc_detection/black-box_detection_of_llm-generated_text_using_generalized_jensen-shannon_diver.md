@@ -2,75 +2,87 @@
 title: >-
   [Paper Note] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence
 description: >-
-  [ICML 2026][AIGC Detection][Black-box AI text detection] SurpMark reformulates "AI text detection" as a likelihood-free hypothesis testing problem: it uses a proxy LM to compute token surprisal…
+  [ICML 2026][AIGC Detection][Paper Note] SurpMark reformulates "AI text detection" as a likelihood-free hypothesis testing problem: it uses a proxy LM to compute token surprisal, discretizes it into $k$ states via k-means, estimates a first-order Markov transition matrix, and compares it against pre-established "human-written vs. machine-generated" reference
 tags:
-  - "ICML 2026"
-  - "AIGC Detection"
-  - "Black-box AI text detection"
-  - "surprisal discretization"
-  - "Markov transition"
-  - "Generalized JS Divergence"
+  - ICML 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: a7971962d8a296c7
+content_hash: 92297fca32006989
 ---
-
 # Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.07500](https://arxiv.org/abs/2510.07500)  
 **Code**: Not yet public  
 **Area**: AIGC Detection / NLP / Hypothesis Testing  
-**Keywords**: Black-box AI text detection, surprisal discretization, Markov transition, Generalized JS Divergence
+**Keywords**: Black-box AI text detection, surprisal discretization, Markov state transitions, generalized JS divergence
 
 ## TL;DR
-SurpMark reformulates "AI text detection" as a likelihood-free hypothesis testing problem: it uses a proxy LM to compute token surprisal, discretizes it into $k$ states via k-means, and estimates a first-order Markov transition matrix. By comparing this matrix against pre-built "human-written / machine-written" reference matrices using Generalized Jensen-Shannon divergence (GJS), it provides a black-box, training-free, and per-instance sampling-free discrimination score in a single forward pass.
+SurpMark reformulates "AI text detection" as a likelihood-free hypothesis testing problem: it uses a proxy LM to compute token surprisal, discretizes it into $k$ states via k-means, estimates a first-order Markov transition matrix, and compares it against pre-established "human-written vs. machine-generated" reference matrices using Generalized Jensen-Shannon (GJS) divergence. This provides a black-box, training-free, and per-instance resampling-free discrimination score in a single forward pass.
 
 ## Background & Motivation
-**Background**: AI text detection mainly follows two paths: (1) **Classifier-based** (e.g., GPTZero, OpenAI Detector), which requires training specialized models for each domain/generator, incurring high labeling costs and failing under domain shift; (2) **Statistical-based**, subdivided into global statistics (likelihood, log-rank, entropy), which are sensitive to calibration mismatch and domain drift, and distributional statistics (e.g., DetectGPT, DNA-GPT, Fast-DetectGPT), which require perturbations/sampling for each test instance, causing computational costs to explode linearly with the number of calls.
+**Background**: AI text detection mainly follows two paths: (1) **Classifier-based** (e.g., GPTZero, OpenAI Detector) which requires training specific models for each domain/generator, leading to high labeling costs and failure when shifting domains; (2) **Statistic-based**, divided into global statistics (likelihood, log-rank, entropy) which are heavily affected by calibration mismatch, length, or domain drift, and distributional statistics (DetectGPT, DNA-GPT, Fast-DetectGPT) which require perturbations/sampling/completions for each test text to reconstruct neighborhood distributions, resulting in linear computational explosion with the number of calls.
 
-**Limitations of Prior Work**: In black-box scenarios, inconsistency between the scoring model (proxy LM) and the actual generator leads to systematic offsets in likelihood-based metrics. Perturbation-based methods are difficult to deploy in high-throughput or resource-constrained scenarios due to their dependence on per-input re-generation. Neither path simultaneously achieves "training-free + single-inference + cross-domain robustness."
+**Limitations of Prior Work**: In black-box scenarios, inconsistency between the scoring model (proxy LM) and the actual generator leads to systematic shifts in likelihood-based metrics. Perturbation-based methods cannot be deployed in high-throughput or resource-constrained scenarios due to their dependence on per-input regeneration. Neither path simultaneously achieves "training-free + single inference + cross-domain robustness."
 
-**Key Challenge**: Absolute likelihood values are untrustworthy under black-box proxy mismatch, and per-instance resampling is too expensive. However, **fundamental differences exist between human and machine text at the token dynamics level**—LLMs tend to "recover" to highly predictable tokens immediately after a high-surprisal token (a side effect of perplexity minimization). This "recovery pattern" is stable and calibration-robust.
+**Key Challenge**: Absolute likelihood values are unreliable in black-box settings, and per-instance resampling is too expensive. However, **human/machine texts exhibit fundamental differences in token dynamics**: LLMs tend to "recover" to highly predictable tokens immediately after a high-surprisal token (a side effect of perplexity minimization). This "recovery pattern" is stable and calibration-robust.
 
-**Goal**: (1) Design a black-box detector that requires no classifier training, no per-instance resampling, and can transfer across domains and generators; (2) Provide theoretical guidance for the optimal scaling of the bin number $k$ and explain why GJS is the appropriate statistic.
+**Goal**: (1) Design a black-box detector that requires no classifier training, no per-instance resampling, and is transferable across domains and generators; (2) Provide statistical optimal scaling for the number of bins $k$ and explain why GJS is the appropriate statistic.
 
-**Key Insight**: Treat the task as a **two-reference likelihood-free hypothesis test**. Both human and machine corpora are publicly available for one-time offline reference building; for each test text, one only needs to extract a "summary" and compare distances to the two references, avoiding any dependence on absolute likelihood.
+**Key Insight**: Treat the task as a **two-reference likelihood-free hypothesis test**. Since public corpora exist for both human-written and machine-generated text, references can be built offline once. For each test text, only "summarization" and "distance comparison with two references" are needed, avoiding any dependence on absolute likelihood.
 
-**Core Idea**: Discretize continuous surprisal into $k$ interpretable states ("Predictable / Slightly Surprising / Significantly Surprising / Highly Surprising"), compress the text into a first-order Markov transition matrix, and use $\Delta\text{GJS}_n = \text{GJS}(\hat M_P, \hat M_T, \alpha) - \text{GJS}(\hat M_Q, \hat M_T, \alpha)$ as the score. It is proven that this is equivalent to the normalized log-likelihood ratio under the two hypotheses.
+**Core Idea**: Discretize continuous surprisal into $k$ interpretable states ("Predictable / Slightly Surprising / Significantly Surprising / Highly Surprising"), compress the text into a first-order Markov transition matrix, and use $\Delta\text{GJS}_n = \text{GJS}(\hat M_P, \hat M_T, \alpha) - \text{GJS}(\hat M_Q, \hat M_T, \alpha)$ as the score. It is proven that this is equivalent to the normalized log-likelihood ratio under two hypotheses.
 
 ## Method
 
 ### Overall Architecture
-**Offline Phase**: Use a proxy LM $F_\theta$ to compute surprisal on a large-scale human corpus; learn a shared quantizer $q_k$ via k-means to map continuous surprisal to $\{1,\dots,k\}$. Then, compute surprisal → discretize → count transition frequencies on both human and machine corpora to obtain two reference matrices $\hat M_Q$ (human) and $\hat M_P$ (machine).
+**Offline Phase**: Use a proxy LM $F_\theta$ to compute surprisal on a large-scale human-written corpus, learn a shared quantizer $q_k$ via k-means to map continuous surprisal to $\{1,\dots,k\}$; then compute surprisal → discretize → count transition frequencies for both human and machine corpora to obtain two reference matrices $\hat M_Q$ (human) and $\hat M_P$ (machine).
 
-**Online Phase**: For a test text $\mathbf{t}$, compute surprisal via $F_\theta$, discretize using the same $q_k$, and estimate the transition matrix $\hat M_T$. Classification is performed by comparing $\Delta\text{GJS}_n$ with a threshold $\tau$.
+**Online Phase**: The test text $\mathbf{t}$ similarly has its surprisal computed by $F_\theta$, discretized by the same $q_k$, and its transition matrix $\hat M_T$ summarized. Finally, $\Delta\text{GJS}_n$ is calculated and compared with a threshold $\tau$.
 
-This design requires no classifier training, uses a completely black-box proxy LM (only token probabilities are needed), and involves only one forward pass during testing.
+The entire design requires no classifier training, the proxy LM remains a complete black box (only token probabilities are required), and only one forward pass is needed at test time.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph OFF["Offline Reference Building"]
+        direction TB
+        QK["Proxy LM computes surprisal<br/>k-means learns shared quantizer q_k<br/>Bin scaling law: k*≈N^(1/5)"]
+        QK --> MQ["Human corpus discretization<br/>First-order transition matrix M_Q"]
+        QK --> MP["Machine corpus discretization<br/>First-order transition matrix M_P"]
+    end
+    T["Test text t"] --> ST["Surprisal Discretization + First-order Markov Summary<br/>Discretize with same q_k → Transition matrix M_T"]
+    ST --> GJS["Two-reference GJS Hypothesis Test<br/>ΔGJS = GJS(M_P, M_T) − GJS(M_Q, M_T)"]
+    MQ --> GJS
+    MP --> GJS
+    GJS -->|"ΔGJS ≤ τ"| MACH["Classify as Machine"]
+    GJS -->|"ΔGJS > τ"| HUM["Classify as Human"]
+```
 
 ### Key Designs
 
-1.  **Surprisal Discretization + First-order Markov Summary**:
-    - **Function**: Compresses each text into a "dynamic structure" summary, basing detection decisions on relative structure rather than absolute likelihood.
-    - **Mechanism**: First, compute the surprisal $s_t=-\log p_\theta(x_t \mid x_{1:t-1})$ for the token sequence $\mathbf{x}=(x_1,\dots,x_n)$. Use k-means clustering to obtain $k$ states ($k=4$ corresponds to "Predictable / Slightly Surprising / Significantly Surprising / Highly Surprising") and convert the continuous surprisal sequence into a discrete state sequence $\{a_t\}$. Then, calculate the first-order transition matrix $\hat M(j\mid i)=\frac{\sum_{t}\mathbf{1}\{a_t=i, a_{t+1}=j\}}{\sum_t \mathbf{1}\{a_t=i\}}$.
-    - **Design Motivation**: The "recovery phenomenon" during LLM generation—returning to a predictable state immediately after a highly surprising token—is a significant signature in the transition matrix. Absolute likelihood is unstable under proxy mismatch, but the transition matrix, as a relative structure, is naturally robust to calibration drift. Experiments on Markov order show that higher orders suffer from state space explosion ($k^{n+1}$ states) and data sparsity, making first-order the sweet spot.
+**1. Surprisal Discretization + First-order Markov Summary: Compressing text into comparable "dynamic structures"**
 
-2.  **GJS Hypothesis Testing Based on Two References**:
-    - **Function**: Reformulates detection as a likelihood-free hypothesis test, providing an interpretable LLR-equivalent statistic.
-    - **Mechanism**: Generalized JS divergence is defined as $\text{GJS}(M_A, M_B, \alpha) = \frac{\alpha}{1+\alpha}D_{\text{KL}}(M_A, M_\alpha) + \frac{1}{1+\alpha}D_{\text{KL}}(M_B, M_\alpha)$, where $M_\alpha = \frac{\alpha}{1+\alpha}M_A + \frac{1}{1+\alpha}M_B$ and $\alpha$ is the reference-to-test length ratio. The detection score is $\Delta\text{GJS}_n = \text{GJS}(\hat M_P, \hat M_T, \alpha) - \text{GJS}(\hat M_Q, \hat M_T, \alpha)$. If $\Delta\text{GJS}_n \leq \tau$, it is classified as machine-written. Proposition 3.4 proves that $\Delta\text{GJS}_n$ is strictly equal to the generalized log-likelihood ratio $\Lambda_{n,N}$, serving as a natural extension of Gutman's universal test from single-reference to dual-reference.
-    - **Design Motivation**: Traditional LFHT only compares against a single reference, losing discriminative information from the alternative hypothesis. Dual-reference GJS provides a two-sided comparison with stronger discriminative power, and the GJS = LLR equivalence ensures statistical optimality.
+This addresses the pain point that absolute likelihood systematically drifts when the proxy LM and true generator are inconsistent. SurpMark does not use likelihood directly. Instead, it computes surprisal $s_t=-\log p_\theta(x_t \mid x_{1:t-1})$ for the sequence $\mathbf{x}=(x_1,\dots,x_n)$, clusters the continuous surprisal into $k$ interpretable states via k-means (e.g., $k=4$ corresponds to "Predictable / Slightly Surprising / Significantly Surprising / Highly Surprising"), converts the text into a discrete state sequence $\{a_t\}$, and calculates the first-order transition matrix $\hat M(j\mid i)=\frac{\sum_{t}\mathbf{1}\{a_t=i,\,a_{t+1}=j\}}{\sum_t \mathbf{1}\{a_t=i\}}$.
 
-3.  **Discretization–Estimation Tradeoff and Bin Scaling Law**:
-    - **Function**: Provides theoretical guidance for choosing $k$.
-    - **Mechanism**: Error is decomposed into (i) **discretization error** $|\mathcal{D}_f(\mathcal{S}_P,\mathcal{S}_Q)-\mathcal{D}_f(M_P,M_Q)|$, bounded by $\leq C/k$ per Proposition 3.1; and (ii) **statistical estimation error** $|\mathcal{D}_f(\hat M_P,\hat M_Q)-\mathcal{D}_f(M_P,M_Q)|$, bounded by $\leq C(\log N \cdot \sqrt{k^3 \log(kN)/N} + k^3/N \cdot \log(1+N/k) + k/\sqrt{N})$ per Theorem 3.2. Balancing $O(1/k)$ and the dominating term $O(k^{3/2}/\sqrt{N})$ yields $k^* = \Theta(N^{1/5})$ (up to polylog factors).
-    - **Design Motivation**: Eliminates the "magic number" approach to bin selection and provides a principled guide for adaptive $k$ selection across datasets. Empirical tests show $I(a_t; a_{t-2}\mid a_{t-1}) \approx 0.0076$ bit/token and only a +0.528% perplexity gain for second-order vs. first-order models, validating that "first-order is enough."
+The transition matrix is chosen over likelihood because LLMs exhibit a significant "recovery phenomenon"—high surprisal tokens are immediately followed by low surprisal tokens. This pattern is a stable signature in the transition matrix, and "relative structures" are naturally robust to calibration drift. The order is fixed to one; higher orders expand the state space to $k^{n+1}$, leading to sparse counts and degradation. First-order is the sweet spot.
 
-### Loss & Training
-This method is **training-free**. Reference matrices $\hat M_P, \hat M_Q$ are computed via one-time offline statistics. The k-means quantizer is clustered once on a human corpus. The proxy LM is completely frozen and used only as a surprisal scorer.
+**2. Two-reference GJS Hypothesis Test: Turning detection into a likelihood ratio with optimality guarantees**
+
+Traditional likelihood-free tests only compare against a single reference, losing discriminative information carried by the "other hypothesis." SurpMark uses Generalized Jensen-Shannon divergence for two-reference comparison: $\text{GJS}(M_A, M_B, \alpha) = \frac{\alpha}{1+\alpha}D_{\text{KL}}(M_A, M_\alpha) + \frac{1}{1+\alpha}D_{\text{KL}}(M_B, M_\alpha)$, where the mixed matrix $M_\alpha = \frac{\alpha}{1+\alpha}M_A + \frac{1}{1+\alpha}M_B$, and $\alpha$ is the reference-to-test length ratio. The detection score is the difference between individual GJS values: $\Delta\text{GJS}_n = \text{GJS}(\hat M_P, \hat M_T, \alpha) - \text{GJS}(\hat M_Q, \hat M_T, \alpha)$. If $\Delta\text{GJS}_n \leq \tau$, it is machine-generated.
+
+This two-sided comparison is not only more discriminative but is backed by theory—Proposition 3.4 proves that $\Delta\text{GJS}_n$ is strictly equal to the generalized log-likelihood ratio $\Lambda_{n,N}$, effectively extending Gutman’s (1989) universal test. This provides a statistical optimality answer for using GJS rather than just an ad-hoc heuristic.
+
+**3. Discretization–Estimation Tradeoff and Bin Scaling Law: Determining the optimal value for $k$**
+
+SurpMark decomposes the total error into two terms: Discretization error $|\mathcal{D}_f(\mathcal{S}_P,\mathcal{S}_Q)-\mathcal{D}_f(M_P,M_Q)|$ decreases as bins increase (bounded by $\leq C/k$ in Proposition 3.1); statistical estimation error $|\mathcal{D}_f(\hat M_P,\hat M_Q)-\mathcal{D}_f(M_P,M_Q)|$ becomes noisier as bins increase (bounded by $O(k^{3/2}/\sqrt{N})$ in Theorem 3.2).
+
+Balancing these results in an optimal bin number $k^* = \Theta(N^{1/5})$, turning the selection of $k$ from trial-and-error into a closed-form formula. Table 1 further confirms that first-order is sufficient: the second-order conditional mutual information $I(a_t; a_{t-2}\mid a_{t-1}) \approx 0.0076$ bit/token, with only a +0.528% perplexity gain for a second-order model.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of detection AUROC across multiple datasets (SQuAD, XSum, WritingPrompts) and 9 generators (GPT2-XL, GPT-J-6B, GPT-Neo-2.7B, GPT-NeoX-20B, OPT-2.7B, Llama-2-13B, Llama-3-8B, Llama-3.2-3B, Gemma-7B) (Selected):
+Detection AUROC across multiple datasets (SQuAD, XSum, WritingPrompts) and 9 generators (GPT2-XL, GPT-J-6B, Llama-2-13B, Llama-3-8B, Gemma-7B, etc.):
 
 | Method | GPT2-XL | GPT-J-6B | Llama-2-13B | Llama-3-8B | Gemma-7B | Avg |
 |------|---------|----------|-------------|------------|----------|-----|
@@ -79,61 +91,51 @@ Comparison of detection AUROC across multiple datasets (SQuAD, XSum, WritingProm
 | DetectLRR | 91.1 | 85.8 | 96.4 | 94.9 | 75.5 | 86.79 |
 | Lastde | 96.0 | 85.9 | 93.3 | 94.3 | 69.5 | 85.56 |
 | Lastde++ | **99.5** | 91.5 | 95.5 | 95.9 | 76.9 | 90.04 |
-| **SurpMark (Ours)** | Comparable to or higher than Lastde++ | — | — | — | — | Robust Performance |
+| **SurpMark (Ours)** | Comparable | — | — | — | — | Robust |
 
-In the full comparison, SurpMark **consistently matches or surpasses baselines** across various datasets, generators, and scenarios, with a particularly notable advantage in cross-domain generalization (where the reference and test corpora come from different domains).
+SurpMark **consistently matches or surpasses baselines**, especially in cross-domain generalization scenarios where reference corpora and test texts come from different domains.
 
 ### Ablation Study
 
-| Configuration | Key Phenomenon | Explanation |
+| Configuration | Key Observation | Description |
 |------|----------|------|
-| Markov order = 1 | Highest AUROC | Sweet spot |
-| Markov order = 2 | Slightly Lower | State space $k^3$ expansion, sparse transition counts |
-| Markov order = 3+ | Significant Drop | Estimation variance explosion |
-| Bin count $k$ scan | Concave AUROC w.r.t $k$ | Validates $k^* = \Theta(N^{1/5})$ |
-| Dual-reference (PP+QQ) | Full SurpMark | LLR-equivalent |
-| Single-reference (PP or QQ only) | Significant Drop | Loss of two-sided discriminative power |
-| Unified Quantizer (Shared $q_k$) | Standard | Necessary |
-| Per-text Quantization | Drop | Incomparable across texts |
-
-I^(2nd-order conditional MI) Experiment:
-
-| Source | $\hat{I}=I(a_t; a_{t-2}\mid a_{t-1})$ (bits/token) | Rel. PP gain (2nd vs 1st) |
-|------|----------|---------|
-| GPT-5-chat | 0.0076 | +0.528% |
-| Human | 0.0045 | +0.314% |
+| Markov order = 1 | Highest AUROC | The sweet spot |
+| Markov order = 2 | Slightly lower | State space $k^3$ expansion leads to sparse counts |
+| Markov order = 3+ | Significant drop | Estimation variance explosion |
+| Bin count $k$ sweep | Concave AUROC w.r.t $k$ | Validates $k^* = \Theta(N^{1/5})$ |
+| Two-reference | Full SurpMark | LLR-equivalent |
+| Single-reference | Significant drop | Loss of two-sided discriminative power |
+| Consistent Quantizer | Standard | Essential for comparability |
 
 ### Key Findings
-- First-order Markov information captures nearly all available signals; higher orders merely "use more parameters to learn sparser statistics," as shown by theory and experiments.
-- Bin count $k=4$ is near-optimal for common data scales and corresponds to interpretable semantic states.
-- Cross-proxy model transfer (e.g., using GPT-2 as a proxy to detect Llama text) maintains good AUROC, verifying the model-agnostic nature of surprisal transition structures.
-- The "Recovery pattern" (high-surprisal → low-surprisal transition probability) is significantly higher in LLM text than in human writing, serving as the core source of SurpMark's discriminative power.
+- First-order Markov information captures nearly all available signals; higher orders simply "use more parameters to learn sparser statistics."
+- Bin count $k=4$ is near-optimal for common data sizes and corresponds to interpretable semantic states.
+- Cross-proxy model transfer (e.g., using GPT-2 as a proxy to detect Llama text) maintains high AUROC, verifying the model-agnostic nature of surprisal transition structures.
+- The "Recovery pattern" is significantly higher in LLM text than in human text, serving as the core source of SurpMark’s discriminative power.
 
 ## Highlights & Insights
-- **Mathematical formulation as LFHT**: Directly applying classic results from Gutman (1989) to prove $\Delta\text{GJS}_n$ = LLR provides a principled answer to "why GJS is the optimal statistic," rather than just another ad-hoc heuristic.
-- **Proxy LM mismatch robustness**: The discretization + transition matrix "relative structure" allows absolute likelihood drift to be naturally mitigated, a key engineering advantage for black-box deployment.
-- **Discretization–estimation tradeoff of $k^* = N^{1/5}$**: This elegant scaling law provides a closed-form formula for bin selection in practice.
-- **One-time offline reference + single online inference**: Compared to methods like DetectGPT that require 100 perturbations per text, inference cost is reduced by two orders of magnitude.
+- **Mathematical Formalization of Detection as LFHT**: Applying classical results from Gutman (1989) proves $\Delta\text{GJS}_n = \text{LLR}$, providing principled justification for GJS as the optimal statistic.
+- **Robustness to Proxy LM Mismatch**: The "relative structure" summary of discretized transition matrices naturally smooths out absolute likelihood drift, a critical engineering advantage for black-box deployment.
+- **Scaling Law $k^* = N^{1/5}$**: This elegant scaling law provides a principled guide for adaptive $k$ selection across datasets.
+- **Efficiency**: One-time offline reference building + single online inference. Compared to methods like DetectGPT which require 100+ regenerations per text, inference cost is reduced by two orders of magnitude.
 
 ## Limitations & Future Work
-- **Ceiling of first-order assumptions**: While 2nd-order MI is small, first-order Markov cannot capture global structures at the "paragraph" or "discourse" level (e.g., topic drift patterns in machine writing).
-- **Dependence on reference corpus representativeness**: Requires large-scale "human" and "machine" reference texts; if an attacker uses a new generation paradigm (e.g., Claude 3.7 with RLHF), references may need updating.
-- **Sensitivity to short text**: Theoretically, $k^* = N^{1/5}$ degrades when $N$ is small (<200 tokens); detection capability for tweets or single sentences may decrease.
-- **Inability to detect "mixed text"**: Human-edited LLM outputs will result in Markov distributions between the two references, leading to misclassifications near the single threshold $\tau$.
-- **Fixed quantizer**: Once $q_k$ is fixed, it cannot adapt online; significant domain shifts or proxy LM updates require re-clustering.
+- **Ceiling of First-order Markov Assumption**: While local MI is low, first-order Markov models cannot capture "paragraph-level" or "discourse-level" global structures (e.g., topic drift patterns in machine writing).
+- **Dependence on Reference Corpus**: Requires pre-existing large-scale reference text; if an attacker uses a new generation paradigm (e.g., Claude 3.7 with new RLHF alignment), references may need rebuilding.
+- **Sensitivity to Short Text**: Theoretical $k^* = N^{1/5}$ degrades for very small $N$ (<200 tokens); detection capability for tweets or single sentences may drop.
+- **Hybrid Text Detection**: Human-edited LLM outputs will result in distributions between references, causing potential misclassifications near the threshold $\tau$.
 
 ## Related Work & Insights
-- **vs. DetectGPT / Fast-DetectGPT**: These rely on likelihood curvature via perturbations, which is computationally expensive and perturbation-model dependent; SurpMark is two orders of magnitude cheaper due to its offline-reference/single-inference design.
-- **vs. Lastde++**: Lastde++ also uses surprisal discretization but relies on a single global statistic; SurpMark elevates this to a dual-reference LFHT framework with theoretical optimality.
-- **vs. R-Detect**: R-Detect uses kernel-based relative tests but requires optimizing kernel parameters on a reference corpus; SurpMark uses lightweight k-means with zero-parameter training.
-- **vs. DNA-GPT**: DNA-GPT compares n-gram divergence, which is sensitive to vocab drift; SurpMark operates in the vocab-free surprisal state space.
-- **Insight**: Reformulating ML tasks as classical statistical tests (hypothesis testing, change-point detection, goodness-of-fit) allows one to inherit a suite of statistical optimality results. This LFHT framework is broadly applicable to black-box scenarios where "likelihood is untrustworthy but summary statistics are reliable" (e.g., OOD detection, distribution shift).
+- **vs DetectGPT / Fast-DetectGPT**: These rely on perturbation to estimate likelihood curvature, which is computationally expensive and model-dependent; SurpMark is two orders of magnitude faster.
+- **vs Lastde++**: Lastde++ uses surprisal discretization but relies on single global statistics; SurpMark elevates this to a two-reference LFHT framework with theoretical optimality.
+- **vs R-Detect**: R-Detect uses kernel-based relative tests but requires optimizing kernel parameters on reference corpora; SurpMark uses lightweight k-means.
+- **Insight**: Reformulating ML tasks as classical statistical tests (hypothesis testing, goodness-of-fit) allows the inheritance of statistical optimality results.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Formalizing detection as two-reference LFHT and deriving $k^* = N^{1/5}$ provides genuine theoretical contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 9 generators and multiple datasets; could benefit from more in-the-wild testing (e.g., multilingual).
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivations and strict alignment between theory and experiments.
-- Value: ⭐⭐⭐⭐ Training-free, single-inference, and cross-domain robust; a directly deployable solution for AI detection systems.
+- Novelty: ⭐⭐⭐⭐ Formalizing detection as two-reference LFHT and providing $k^* = N^{1/5}$ are significant theoretical contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage of 9 generators and multiple datasets.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivations with strictly corresponding experimental results.
+- Value: ⭐⭐⭐⭐ Training-free, single-inference, and cross-domain robust, making it highly practical for deployment.
 
 <!-- RELATED:START -->
 
@@ -142,10 +144,10 @@ I^(2nd-order conditional MI) Experiment:
 ## Related Papers
 
 - [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](../../ACL2026/aigc_detection/mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
+- [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
 - [\[ICML 2026\] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective](on_the_salience_of_low-probability_tokens_for_ai-generated_text_detection_a_mult.md)
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](../../ACL2026/aigc_detection/detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
-- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
 
 </div>
 

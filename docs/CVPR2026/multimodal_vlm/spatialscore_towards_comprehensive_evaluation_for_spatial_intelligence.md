@@ -2,69 +2,73 @@
 title: >-
   [Paper Note] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 description: >-
-  [CVPR 2026][Multimodal VLM][Spatial Intelligence] This paper introduces SpatialScore, currently the most comprehensive multimodal spatial intelligence benchmark (5K samples / 30 tasks)…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes SpatialScore, the most comprehensive multimodal spatial intelligence benchmark to date (5K samples / 30 tasks), and enhances the spatial understanding capabilities of MLLMs through two complementary paths: a data-driven SpatialCorpus (331K QA) fine-tuning scheme and a training-free SpatialAgent (12
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Spatial Intelligence"
-  - "Multimodal Evaluation"
-  - "Spatial Reasoning"
-  - "Agent Systems"
-  - "Spatial Corpus"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 52e5beba7d04c378
+content_hash: f20652738af28eee
 ---
-
 # SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 
 **Conference**: CVPR 2026 Highlight  
 **arXiv**: [2505.17012](https://arxiv.org/abs/2505.17012)  
 **Code**: [https://github.com/haoningwu3639/SpatialScore/](https://github.com/haoningwu3639/SpatialScore/)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Spatial Intelligence, Multimodal Evaluation, Spatial Reasoning, Agent Systems, Spatial Corpus
 
 ## TL;DR
-This paper introduces SpatialScore, currently the most comprehensive multimodal spatial intelligence benchmark (5K samples / 30 tasks), and proposes two complementary approaches to enhance spatial understanding in MLLMs: a data-driven fine-tuning scheme via SpatialCorpus (331K QA pairs) and a training-free SpatialAgent system equipped with 12 specialized tools.
+This paper proposes SpatialScore, the most comprehensive multimodal spatial intelligence benchmark to date (5K samples / 30 tasks), and enhances the spatial understanding capabilities of MLLMs through two complementary paths: a data-driven SpatialCorpus (331K QA) fine-tuning scheme and a training-free SpatialAgent (12 tools).
 
 ## Background & Motivation
-1. **Background**: Multimodal large language models (MLLMs) have demonstrated strong performance on semantic QA and mathematical reasoning, yet evaluation of spatial intelligence remains fragmented and limited in scope.
-2. **Limitations of Prior Work**: Existing spatial benchmarks suffer from two major deficiencies: (i) tasks are overly simplistic, focusing primarily on coarse-grained spatial relations (e.g., object existence/location) while neglecting rigorous visual-geometric perception (e.g., camera pose estimation, dynamic scene understanding); (ii) evaluation coverage is narrow, relying on simple true/false questions, unimodal inputs, or single-skill assessments that fail to comprehensively measure spatial intelligence.
-3. **Key Challenge**: Classical computer vision has established mature geometric optimization tools and mathematical foundations, yet these advances remain confined to the purely visual paradigm and lack tight integration with language as well as a unified evaluation protocol.
-4. **Goal**: (i) Construct the most comprehensive spatial intelligence benchmark to date; (ii) Conduct extensive evaluation of 49 representative MLLMs; (iii) Improve spatial reasoning capability through both data-driven and agent-based approaches.
-5. **Key Insight**: The fusion of semantic understanding and spatial perception is identified as the next frontier, motivating a systematic investigation of the extent to which existing MLLMs possess spatial intelligence.
-6. **Core Idea**: A comprehensive benchmark spanning 30 tasks is proposed, accompanied by large-scale training corpora and a multi-tool agent system, advancing spatial intelligence from both evaluation and enhancement perspectives.
+1. **Background**: Multimodal Large Language Models (MLLMs) perform excellently in tasks such as semantic Q&A and mathematical reasoning, but evaluations of spatial intelligence remain fragmented and limited in scope.
+2. **Limitations of Prior Work**: Existing spatial benchmarks face two major issues: (i) tasks are overly simplistic, primarily focusing on coarse-grained spatial relations (e.g., object existence/location) while neglecting rigorous visual geometric perception (e.g., camera pose, dynamic perception); (ii) the evaluation scope is narrow, relying only on simple true/false questions, single-modality inputs, or individual skills, failing to comprehensively measure spatial intelligence.
+3. **Key Challenge**: Traditional computer vision has mature geometric optimization tools and mathematical foundations, but these advances remain within the pure vision paradigm and lack tight integration with language and a unified evaluation protocol.
+4. **Goal**: (i) To construct the most comprehensive spatial intelligence benchmark; (ii) to extensively evaluate 49 representative MLLMs; and (iii) to enhance spatial reasoning capabilities via both data-driven and Agent-based paths.
+5. **Key Insight**: Integrating semantic understanding with spatial perception is viewed as the next frontier, requiring a systematic investigation into the extent to which existing MLLMs possess spatial intelligence.
+6. **Core Idea**: Propose a comprehensive benchmark covering 30 tasks, coupled with a large-scale training corpus and a multi-tool Agent system, to drive the development of spatial intelligence from both evaluation and enhancement dimensions.
 
 ## Method
 
 ### Overall Architecture
-The paper comprises three contributions: (1) **SpatialScore** benchmark — 5,025 manually verified samples covering diverse data types (real/simulated/AIGC), input modalities (image/video), and QA formats (true/false/multiple-choice/open-ended); (2) **SpatialCorpus** — a 331K multimodal QA training resource; (3) **SpatialAgent** — a multi-agent system equipped with 12 specialized spatial perception tools.
+This paper addresses a fundamental question: how well do current MLLMs understand space? To this end, it introduces three interlocking components. First is SpatialScore, the "ruler"—comprising 5,025 human-verified samples across real, simulated, and AIGC data sources, image and video modalities, and three Q&A formats (judgment, selection, and open-ended), decomposing spatial intelligence into 10 major categories and 30 specific tasks. Recognizing that a ruler alone is insufficient, the paper provides two paths to "elevate" model performance: a data-driven SpatialCorpus consisting of 331K spatial QA pairs for fine-tuning, and a training-free SpatialAgent that provides "scaffolding" for existing models using 12 spatial perception tools. Notably, the SpatialScore benchmark and SpatialCorpus share a common 3D annotation data foundation and question-generation pipeline, ensuring that training distributions and evaluation criteria are naturally aligned. Both enhancement paths (corpus fine-tuning and training-free Agent) are ultimately re-evaluated on SpatialScore, forming a closed "evaluation-enhancement" loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 22, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 420}}}%%
+flowchart TD
+    D["3D Annotation Foundation<br/>ScanNet++ / Omni3D / WildRGB-D / PointOdyssey, etc."] --> G["Generation Pipeline<br/>Sample 500 scenes → Template + LLM rewriting to generate QA"]
+    G --> B["SpatialScore Benchmark<br/>Integrated 23 datasets → GPT filtering → Human selection → 5025 samples / 30 tasks"]
+    G --> C["SpatialCorpus<br/>Same geometric resources scaled to 331K spatial QA"]
+    B --> E["Evaluate 49 MLLMs<br/>Revealing huge gaps with human performance"]
+    C -->|Data-driven Path| H["SFT Fine-tuning Qwen3-VL"]
+    A["SpatialAgent System<br/>12 Spatial Perception Tools · Plan-Execute / ReAct Paradigms"] -->|Training-free Path| I["Plug-and-play enhancement for existing MLLMs"]
+    H --> E
+    I --> E
+```
 
 ### Key Designs
 
-1. **SpatialScore Benchmark Construction**:
-    - **Function**: Provides comprehensive and diverse evaluation of spatial intelligence.
-    - **Mechanism**: 500 scenes are randomly sampled from existing 3D datasets (ScanNet++, Omni3D, etc.), and precise 3D annotations are used to generate open-ended QA pairs, which are subsequently paraphrased via LLMs to increase linguistic diversity. Spatially relevant samples from 23 existing datasets are further integrated. After GPT-based filtering and manual screening by five volunteers, 5,025 high-quality samples are retained, covering 30 specific tasks across 10 broad categories.
-    - **Design Motivation**: Existing benchmarks are either overly simplistic or too narrow in scope to comprehensively measure spatial intelligence. By combining newly constructed data with existing datasets, this benchmark achieves a balance between task diversity and evaluation coverage.
+**1. SpatialScore Benchmark: Comprehensive measurement using ground-truth 3D annotations**
 
-2. **SpatialCorpus Training Resource**:
-    - **Function**: Provides large-scale spatial reasoning fine-tuning data for MLLMs.
-    - **Mechanism**: A 2D simulator and existing 3D annotations (ScanNet++, WildRGB-D, Omni3D, PointOdyssey, etc.) are leveraged to construct 331K multimodal spatial QA samples. The corpus supports supervised fine-tuning of models such as Qwen3-VL, yielding significant performance improvements on spatial reasoning tasks.
-    - **Design Motivation**: Evaluation alone cannot improve model capability; training data of sufficient scale and quality is required to close the gap between models and humans in spatial understanding.
+Previous benchmarks suffered from shallow tasks and narrow scopes, mostly asking "is the object there?" or "is it on the left or right?" which avoids the "hard" geometric problems like camera pose or dynamic perception. SpatialScore leverages 3D data dividends: it randomly samples 500 scenes from datasets with precise 3D annotations like ScanNet++ and Omni3D, automatically generates open-ended QA based on real geometric ground truth, and uses an LLM to rewrite the questions for linguistic diversity. Simultaneously, it integrates spatial-related samples from 23 existing datasets. Finally, 5,025 high-quality samples were retained after GPT filtering and human screening by 5 volunteers. This approach preserves the geometric rigor of self-generated questions while expanding task coverage through existing datasets.
 
-3. **SpatialAgent Multi-Agent System**:
-    - **Function**: Enhances spatial reasoning in existing MLLMs in a training-free manner.
-    - **Mechanism**: Twelve specialized spatial perception tools (depth estimator, camera pose estimator, motion estimator, etc.) are orchestrated under two reasoning paradigms — **Plan-Execute** (hierarchical subtask decomposition with sequential tool invocation) and **ReAct** (interleaved reasoning-action with iterative tool interaction). Dynamic tool orchestration improves spatial understanding without any additional training.
-    - **Design Motivation**: Data-driven approaches incur additional training costs, whereas the agent scheme offers a plug-and-play lightweight alternative; the two approaches are complementary.
+**2. SpatialCorpus Training Data: A path to real capability improvement**
+
+Measuring without training leaves the performance gap unaddressed. SpatialCorpus scales the question-generation geometric resources to a training scale: 2D simulators are used alongside existing 3D annotations from ScanNet++, WildRGB-D, Omni3D, and PointOdyssey to batch-generate 331K multimodal spatial QA pairs. These are used for Supervised Fine-Tuning (SFT) of models like Qwen3-VL. Since it shares the same 3D data foundation as the benchmark, the training distribution is aligned with the evaluation criteria, resulting in substantial gains in spatial reasoning tasks rather than simple overfitting.
+
+**3. SpatialAgent Multi-Agent System: Patching geometric weaknesses via tools without retraining**
+
+While fine-tuning is effective, it is computationally expensive. SpatialAgent offers a plug-and-play alternative: it does not train any weights but equips existing MLLMs with 12 specialized spatial perception tools—such as depth estimators, camera pose estimators, and motion estimators—allowing the model to "outsource" geometric calculations it cannot perform accurately. Tool invocation is managed by two reasoning paradigms: Plan-Execute decomposes tasks into hierarchical sub-tasks to call tools sequentially (suitable for clear workflows), while ReAct interleaves reasoning and action to call tools iteratively (suitable for tasks requiring active perception). Dynamically switching between these paradigms enhances spatial understanding without weight updates, complementing the "thorough but heavy" SpatialCorpus approach.
 
 ### Loss & Training
-SpatialCorpus fine-tuning follows the standard supervised fine-tuning paradigm. SpatialAgent is a training-free framework and therefore involves no additional loss function design.
+SpatialCorpus fine-tuning follows the standard Supervised Fine-Tuning (SFT) paradigm. SpatialAgent is a training-free solution and does not involve additional loss function design.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Overall | Mental Anim. | Counting | Depth Est. | Obj-Dist | Camera |
-|-------|---------|-------------|----------|------------|----------|--------|
+|------|---------|-------------|----------|------------|----------|--------|
 | Human | 86.60 | 96.87 | 89.72 | 82.33 | 78.96 | 86.89 |
 | GPT-5 (Text-only) | 30.62 | 18.79 | 20.34 | 29.36 | 24.20 | 32.01 |
 | Qwen3-VL-2B | 41.41 | 35.35 | 52.74 | 34.64 | 35.42 | 30.59 |
@@ -72,37 +76,37 @@ SpatialCorpus fine-tuning follows the standard supervised fine-tuning paradigm. 
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Qwen3-VL + SpatialCorpus | Significant overall improvement | Data-driven fine-tuning is effective |
-| SpatialAgent (Plan-Execute) | Substantially outperforms base model | Training-free paradigm is viable |
-| SpatialAgent (ReAct) | Complementary to Plan-Execute | Better suited for tasks requiring iterative reasoning |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Qwen3-VL + SpatialCorpus | Significant Overall Increase | Data-driven fine-tuning is effective |
+| SpatialAgent (Plan-Execute) | Significantly outperforms base model | Training-free paradigm is feasible |
+| SpatialAgent (ReAct) | Complementary to Plan-Execute | Suitable for iterative reasoning scenarios |
 
 ### Key Findings
-- Even the strongest existing models fall far short of human-level performance on SpatialScore (86.60 vs. ~50+), indicating that spatial intelligence remains a formidable challenge.
-- Text-only GPT-5 performs near chance level (30.62 vs. 28.29), confirming the necessity of visual information for spatial reasoning.
-- Both SpatialCorpus fine-tuning and SpatialAgent yield significant performance gains and are mutually complementary.
-- Camera pose and motion estimation tasks are the most challenging, with the largest gap between model and human performance.
+- Even the strongest existing models fall far short of human performance on SpatialScore (86.60 vs. ~50+ max), indicating that spatial intelligence remains a major challenge.
+- Text-only GPT-5 performs near random levels (30.62 vs. 28.29), confirming the necessity of visual information for spatial reasoning.
+- Both SpatialCorpus fine-tuning and the SpatialAgent system significantly improve performance and are complementary.
+- Camera pose and motion-related tasks are the most challenging, showing the largest gap between models and humans.
 
 ## Highlights & Insights
-- **Unprecedented evaluation scale**: A systematic evaluation spanning 30 tasks, 5,025 samples, and 49 models establishes a solid foundation for spatial intelligence research.
-- **Dual-path enhancement strategy**: Data-driven and training-free agent approaches are complementary and can be flexibly selected based on deployment requirements.
-- **Transferable 3D data repurposing pipeline**: The pipeline for converting 3D annotations into QA format is generalizable to other domains.
+- **Unprecedented Evaluation Scale**: Systematic evaluation across 30 tasks, 5,025 samples, and 49 models provides a solid foundation for spatial intelligence research.
+- **Dual-path Enhancement Strategy**: The data-driven and training-free Agent schemes complement each other and can be chosen flexibly based on the scenario.
+- **3D Data Reuse Pipeline**: The workflow for converting 3D annotations into QA formats is transferable to other domains.
 
 ## Limitations & Future Work
-- The benchmark remains primarily focused on static evaluation, lacking assessment of interactive spatial reasoning.
-- The agent system depends on the accuracy of external tools, and tool failures may have cascading effects on downstream results.
-- Future work could extend evaluation to embodied AI and autonomous navigation in real-world settings.
+- The benchmark primarily focuses on static evaluation and lacks assessment of interactive spatial reasoning.
+- The Agent system depends on the accuracy of external tools; tool failures can cause cascading errors.
+- Future work could extend to real-world scenario evaluation for embodied AI and autonomous navigation.
 
 ## Related Work & Insights
-- **vs. VSI-Bench/STI-Bench**: These benchmarks cover only a limited number of tasks and formats; SpatialScore substantially surpasses them in both scale and diversity.
-- **vs. OmniSpatial**: Although OmniSpatial covers more tasks (50), its sample size is considerably smaller (1,533); SpatialScore is superior in terms of quality and task balance.
+- **vs. VSI-Bench/STI-Bench**: These benchmarks cover only a small number of tasks and formats; SpatialScore comprehensively surpasses them in scale and diversity.
+- **vs. OmniSpatial**: While OmniSpatial has many tasks (50), its sample size is small (1,533). SpatialScore is superior in terms of quality and balance.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Systematic integration with newly constructed evaluation benchmark represents a major contribution, though core technical innovation is limited.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluation of 49 models with human baselines and validation of multiple enhancement approaches.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure with comprehensive and detailed data presentation.
-- **Value**: ⭐⭐⭐⭐⭐ An important infrastructure contribution to the spatial intelligence research community.
+- Novelty: ⭐⭐⭐⭐ Significant contribution through systematic integration and a newly constructed benchmark, though core technical innovation is incremental.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluation of 49 models plus human baselines and multi-path verification.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure and detailed data.
+- Value: ⭐⭐⭐⭐⭐ Important infrastructural work for the field of spatial intelligence.
 
 <!-- RELATED:START -->
 
@@ -110,11 +114,11 @@ SpatialCorpus fine-tuning follows the standard supervised fine-tuning paradigm. 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
 - [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/multimodal_vlm/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
-- [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](../../ICLR2026/multimodal_vlm/on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
-- [\[ICML 2026\] Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](../../ICML2026/multimodal_vlm/thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/multimodal_vlm/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[CVPR 2026\] SpatialTree: How Spatial Intelligence Branches Out in MLLMs](spatialtree_how_spatial_intelligence_branches_out_in_mllms.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 
 </div>
 

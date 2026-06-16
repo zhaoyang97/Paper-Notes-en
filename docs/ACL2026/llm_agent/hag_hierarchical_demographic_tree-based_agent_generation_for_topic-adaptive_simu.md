@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 description: >-
-  [ACL 2026][LLM Agent][Agent Generation] The HAG framework is proposed to formalize group agent generation as a two-stage hierarchical decision-making process—utilizing a World Knowledge Model to construct a topic-adaptiv…
+  [ACL 2026][LLM Agent][Agent-Based Modeling] The HAG framework is proposed to formalize group agent generation as a two-stage hierarchical decision-making process. It first utilizes a World Knowledge Model to construct a topic-adaptive population distribution tree for macro-distribution alignment, and then employs real-world data retrieval combined with agent aug
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Agent Generation"
-  - "Population Simulation"
-  - "Hierarchical Decision-making"
-  - "Topic-Adaptive"
-  - "Agent-Based Modeling"
+  - ACL 2026
+  - LLM Agent
+  - Agent-Based Modeling
 date: 2026-05-08
-content_hash: 62f8a3d12486c2cd
+content_hash: 4f4383fa67031ad6
 ---
-
 # HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 
 **Conference**: ACL 2026  
@@ -24,54 +19,73 @@ content_hash: 62f8a3d12486c2cd
 **Keywords**: Agent Generation, Population Simulation, Hierarchical Decision-making, Topic-Adaptive, Agent-Based Modeling
 
 ## TL;DR
-The HAG framework is proposed to formalize group agent generation as a two-stage hierarchical decision-making process—utilizing a World Knowledge Model to construct a topic-adaptive demographic distribution tree for macro-distribution alignment, followed by real-data retrieval and agent augmentation to ensure micro-individual consistency. It reduces group alignment error by an average of 37.7% and improves sociological consistency by 18.8% across multi-domain benchmarks.
+The HAG framework is proposed to formalize group agent generation as a two-stage hierarchical decision-making process. It first utilizes a World Knowledge Model to construct a topic-adaptive population distribution tree for macro-distribution alignment, and then employs real-world data retrieval combined with agent augmentation to ensure micro-individual consistency. Across multi-domain benchmarks, HAG reduces group alignment error by an average of 37.7% and improves sociological consistency by 18.8%.
 
 ## Background & Motivation
 
-**Background**: Agent-Based Modeling (ABM) is increasingly critical in fields such as computational social science, economic modeling, and personalized recommendation. These simulation systems depend heavily on user agents to simulate preferences and interaction behaviors. The quality of these agents directly determines the fidelity of the simulation.
+**Background**: Agent-Based Modeling (ABM) is increasingly vital in fields such as computational social science, economic modeling, and personalized recommendation. These simulation systems rely heavily on user agents to simulate preferences and interaction behaviors. The quality of these agents directly determines the fidelity of the simulation system.
 
-**Limitations of Prior Work**: Existing agent generation methods fall into two categories: (1) Data retrieval methods construct agent pools from real user logs but are inherently static and fail to adapt to unseen or data-scarce topics; (2) LLM generation methods create agent personas via pre-defined schemas or textual reasoning but lack explicit modeling of multi-dimensional attribute joint distributions. Independent generation results in group distributions that do not reflect reality.
+**Limitations of Prior Work**: Existing agent generation methods fall into two categories: (1) Data retrieval methods construct agent pools from real user logs but are inherently static and cannot adapt to unseen or data-scarce topics; (2) LLM-based generation methods create agent personas via pre-defined schemas or textual reasoning but lack explicit modeling of the joint distribution of multi-dimensional attributes, resulting in group distributions that do not match reality due to independent agent generation.
 
-**Key Challenge**: No existing method simultaneously achieves "topic-adaptive group macro-distribution modeling" and "sociological plausibility of micro-individual attributes." Independently generated agents often exhibit attribute contradictions (e.g., mismatch between age and occupation), while static retrieval cannot cover new topics.
+**Key Challenge**: No existing method simultaneously achieves "topic-adaptive group macro-distribution modeling" and "sociological plausibility of micro-individual attributes." Independently generated agents may exhibit attribute contradictions (e.g., mismatch between age and occupation), while static retrieval fails to cover new topics.
 
-**Goal**: Design an agent population generation framework that satisfies both macro-distribution alignment and micro-individual consistency.
+**Goal**: To design an agent population generation framework that satisfies both macro-distribution alignment and micro-individual consistency.
 
-**Key Insight**: The authors observe that demographic structures are topic-dependent (e.g., the user distribution for technology discussions differs significantly from that of elderly care). Consequently, they model population generation as a hierarchical conditional probability inference problem.
+**Key Insight**: The authors observe that demographic structure is topic-dependent (e.g., the user distribution for technology discussions differs significantly from that of retirement topics). Thus, population generation is modeled as a hierarchical conditional probability inference problem.
 
-**Core Idea**: A World Knowledge Model (WKM) is used to build a topic-adaptive demographic distribution tree top-down, capturing joint distributions of multi-dimensional attributes through hierarchical conditional probabilities. The final population is then generated by combining real-data filling with LLM augmentation.
+**Core Idea**: A World Knowledge Model (WKM) is utilized to construct a topic-adaptive population distribution tree top-down. The joint distribution of multi-dimensional attributes is captured through hierarchical conditional probabilities. Finally, the population is generated using a combination of real-world data filling and LLM-based augmentation.
 
 ## Method
 
 ### Overall Architecture
-The HAG framework consists of two stages: (1) Topic-adaptive distribution tree construction—given a target topic, the WKM infers hierarchical conditional probabilities of demographic attributes to generate a distribution tree from topic to complete personas; (2) Real-data instantiation and augmentation—real users are retrieved from the World Values Survey database based on leaf node distributions, and LLM-based constrained augmentation is performed for nodes with insufficient data.
+HAG addresses two interdependent challenges: ensuring group macro-distributions are topic-adaptive while maintaining the sociological plausibility of micro-attributes. The process is modeled as a top-down hierarchical conditional probability inference: given a target topic, the WKM first infers the hierarchical order of demographic attributes and the layer-wise conditional probabilities. This produces a distribution tree branching from the topic root to complete persona leaves, where each path from root to leaf corresponds to a demographic group and its target proportion. Using these leaf proportions as quotas, instances are retrieved from the World Values Survey user database. For leaf nodes with insufficient data, LLMs are used for augmented generation under the constraints of that specific path. This workflow chains "Topic → Distribution → Individual" into an interpretable link rather than sampling each agent independently. After generation, the PACE framework is used to quantify quality via group distribution alignment and micro-sociological consistency.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Target Topic t"] --> S1
+    subgraph S1["Topic-Adaptive Distribution Tree Construction"]
+        direction TB
+        B["WKM Infers Dimension Order<br/>(e.g., Age > Gender > Education)"] --> C["Layer-wise Conditional Probability Expansion<br/>P(Current | Path, t)"]
+        C --> D["Distribution Tree: Root to Leaf Persona<br/>Leaf Proportion = Product of Path Edge Weights"]
+    end
+    S1 --> S2
+    subgraph S2["Real Data Instantiation & Agent Augmentation"]
+        direction TB
+        E["Calculate Quota by Leaf Proportion<br/>n = Round(N · W)"] --> F["World Values Survey Retrieval"]
+        F -->|Data HIT| G["Sample Real Samples"]
+        F -->|Data MISS| H["LLM Augmentation via Path Constraints"]
+    end
+    G --> I["Agent Population"]
+    H --> I
+    I --> J["PACE Evaluation<br/>Distribution Alignment (JSD/KL) + Sociological Consistency"]
+```
 
 ### Key Designs
 
-1. **Topic-adaptive distribution tree construction**:
+**1. Topic-Adaptive Distribution Tree Construction: Translating Abstract Topics into Joint Distributions**
 
-    - **Function**: Transforms abstract topics into specific joint distributions of multi-dimensional demographic attributes.
-    - **Mechanism**: The WKM first identifies and ranks relevant demographic dimensions (e.g., Age > Gender > Education) based on the topic to form the tree hierarchy. It then expands top-down: the node values and edge weights at each level are derived from WKM-inferred conditional probabilities $P(f^{(l)}=v^{(l)} | f^{(1:l-1)}=v^{(1:l-1)}, t)$. Each leaf node corresponds to a complete persona, with its target proportion being the product of all edge weights along the path from the root.
-    - **Design Motivation**: Modeling dependencies between attributes through hierarchical conditional probabilities rather than independent sampling ensures that the macro joint distribution matches the topic.
+The fundamental problem with direct LLM persona generation is independent sampling without explicit modeling of joint distributions, leading to deviations from real-world distributions. HAG uses a distribution tree to carry attribute dependencies: WKM first identifies and ranks relevant demographic dimensions based on the topic (e.g., Age > Gender > Education for technology), establishing the tree hierarchy, then expands it top-down. 
 
-2. **Real-data instantiation and Agent augmentation**:
+The values and edge weights of each layer are determined by the conditional probability $P(f^{(l)}=v^{(l)} \mid f^{(1:l-1)}=v^{(1:l-1)}, t)$ inferred by the WKM. Consequently, each leaf node represents a complete persona, and its target proportion is the cumulative product of edge weights along the path. Modeling via conditional probability chains ensures that real-world dependencies (e.g., Age-Occupation-Education) are explicitly characterized.
 
-    - **Function**: Converts the distribution tree into specific agent populations while ensuring micro-individual realism.
-    - **Mechanism**: For each leaf node persona, the required number of individuals is calculated as $n(\mathbf{v}) = \text{Round}(N \cdot W(\mathbf{v}|t))$. Matching real users are retrieved from the World Values Survey database (HIT nodes are sampled directly). For MISS nodes (insufficient data), an LLM generates personas under the constraints of the specific tree path.
-    - **Design Motivation**: Real data is prioritized to ensure micro-consistency, while LLM augmentation is constrained by tree paths to avoid generating incompatible attribute combinations.
+**2. Real-world Data Instantiation and Agent Augmentation: Ensuring Micro-Realism**
 
-3. **PACE Evaluation Framework**:
+Once the tree is constructed, it must be instantiated without creating "Frankenstein Agents" with contradictory attributes. HAG calculates the required count $n(\mathbf{v}) = \text{Round}(N \cdot W(\mathbf{v}\mid t))$ for each leaf persona and retrieves matching real users from the World Values Survey. HIT nodes (sufficient data) sample real instances directly, while MISS nodes (insufficient data) use LLMs to generate agents constrained by the full persona path. 
 
-    - **Function**: Evaluates generation quality across two complementary dimensions: group alignment and sociological consistency.
-    - **Mechanism**: Group alignment is measured via JSD/KL divergence for distribution fidelity and the Gini-Simpson index for diversity error. Sociological consistency evaluates typicality by clustering mainstream prototypes and performs internal consistency and contextual rationality checks for individuals.
-    - **Design Motivation**: Existing evaluations lack quantitative frameworks specifically for agent population generation, necessitating a system that considers both statistical alignment and semantic plausibility.
+This priority ensures micro-consistency is grounded in real data, with LLMs filling gaps under strict path constraints to prevent incompatible attribute combinations.
 
-### Loss & Training
-HAG is a training-free framework that utilizes pre-trained LLMs as WKMs for inference, combined with retrieval and augmentation from existing databases.
+**3. PACE Evaluation Framework: Quantifying Quality via Alignment and Consistency**
+
+Agent population generation lacked a specialized quantitative metric. PACE splits evaluation into two complementary axes: Group Alignment measures the fidelity of the generated distribution to reality using JSD/KL divergence and diversity via the Gini-Simpson index; Sociological Consistency evaluates typicality by clustering mainstream archetypes and checks internal self-consistency and contextual rationality per individual.
+
+## Loss & Training
+HAG is a training-free framework. It directly calls pre-trained LLMs as WKMs for conditional probability inference and performs retrieval and on-demand augmentation from existing databases without parameter updates.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluations were conducted across three domains: Bluesky (social simulation), Amazon (product recommendation), and IMDB (movie reviews).
+Evaluated across three domains: Bluesky (social simulation), Amazon (product recommendation), and IMDB (movie reviews).
 
 | Method | Bluesky JSD↓ | Bluesky KL↓ | Bluesky ArchRel↑ | Bluesky IndCon↑ |
 |------|-------------|-------------|-------------------|-----------------|
@@ -85,49 +99,49 @@ Evaluations were conducted across three domains: Bluesky (social simulation), Am
 
 | Configuration | JSD↓ | KL↓ | Description |
 |------|------|-----|------|
-| HAG (Full) | 0.345 | 1.657 | Complete model |
-| HAG-Flat | 0.401 | 2.436 | Hierarchical tree removed; flattened generation |
+| HAG (Full) | 0.345 | 1.657 | Full model |
+| HAG-Flat | 0.401 | 2.436 | Flat generation without hierarchical tree |
 | LLM Generate | 0.539 | 2.487 | Direct LLM generation without tree structure |
 
 ### Key Findings
-- HAG achieves an average reduction in group alignment error of 37.7% and an 18.8% improvement in sociological consistency across all three domains.
-- The hierarchical tree structure is vital: HAG-Flat (without hierarchical conditional probabilities) shows a ~16% degradation in JSD compared to the full HAG.
-- The real-data retrieval + augmentation strategy effectively solves the "Frankenstein Agent" problem (pieced-together agents with contradictory attributes).
+- HAG reduces group alignment error by an average of 37.7% and improves sociological consistency by 18.8% across three domains.
+- The hierarchical tree structure is critical: HAG-Flat (no hierarchical conditional probability) shows a ~16% degradation in JSD compared to the full model.
+- The real data retrieval + augmentation strategy effectively avoids the "Frankenstein Agent" problem (attributes contradiction).
 
 ## Highlights & Insights
-- Formalizing group agent generation as a hierarchical decision-making process is an elegant modeling choice that combines conditional probability decomposition with tree structures, balancing interpretability and generation quality.
-- The PACE evaluation framework fills a significant gap in the assessment of agent population generation, providing a systematic scheme for both statistical and semantic dimensions.
-- Leveraging the world knowledge of WKMs to infer topic-related demographic distributions avoids the bottleneck of manual expert design.
+- Formalizing agent population generation as a hierarchical decision process is an elegant choice, combining conditional probability chaining with tree structures to balance interpretability and quality.
+- The PACE evaluation framework fills a gap in assessing agent populations, providing a systematic approach across statistical and semantic dimensions.
+- Leveraging WKM for world knowledge inference of topic-related distributions avoids bottlenecks associated with manual expert design.
 
 ## Limitations & Future Work
-- Tree construction quality depends on the WKM; it may be less accurate for highly rare or emerging topics.
-- Reliance on the World Values Survey as the sole real-data source results in limited cultural and regional coverage.
-- Dimension ordering impacts results, yet the theoretical optimality of automatic ordering remains unproven.
-- Future research could explore dynamic tree structure updates to adapt to real-time evolving social trends.
+- Tree construction depends on WKM quality; inferences may be inaccurate for extremely rare or emerging topics.
+- Reliance on the World Values Survey limits cultural and geographical coverage.
+- Dimension ordering affects results, but the optimality of automated ordering lacks theoretical guarantees.
+- Future work could explore dynamic updates to tree structures to adapt to real-time evolving social trends.
 
 ## Related Work & Insights
-- **vs LLM Generate (Direct Generation)**: Direct generation ignores group joint distributions; HAG explicitly models attribute dependencies via its tree structure.
-- **vs Topic-Retrieval**: Retrieval is constrained by historical data coverage; HAG enables adaptation to data-scarce topics through WKM inference and LLM augmentation.
-- **vs WorldValuesBench**: HAG adopts its attribute system but extends it with dynamic topic-adaptive capabilities.
+- **vs LLM Generate**: Direct generation ignores group joint distributions; HAG explicitly models attribute dependencies via tree structures.
+- **vs Topic-Retrieval**: Retrieval is limited by existing data coverage; HAG achieves topic adaptation via WKM inference and LLM augmentation.
+- **vs WorldValuesBench**: HAG inherits its attribute system but extends it with dynamic topic-adaptive capabilities.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The hierarchical distribution tree approach is a novel application of conditional probability inference to population generation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Broad coverage across three domains with a well-designed PACE evaluation framework.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with logically coherent problem definitions and methodology.
-- **Value**: ⭐⭐⭐⭐ Practical utility for agent-based simulation; the evaluation framework is generalizable.
-- **Summary**: ⭐⭐⭐⭐ Clear problem definition with a rational design and robust experimental validation.
+- Novelty: ⭐⭐⭐⭐ The hierarchical distribution tree modeling is innovative, merging group generation with conditional probability inference.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Wide coverage across three domains; PACE framework is well-designed.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with logical flow in problem definition and methodology.
+- Value: ⭐⭐⭐⭐ Practical value for agent simulation; the evaluation framework is generalizable.
+- Overall: ⭐⭐⭐⭐ Clearly defined problem, rational design, and strong experimental validation.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
 - [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
+- [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
 - [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
-- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
-- [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
+- [\[CVPR 2025\] ATA: Adaptive Transformation Agent for Text-Guided Subject-Position Variable Background Generation](../../CVPR2025/llm_agent/ata_adaptive_transformation_agent_for_text-guided_subject-position_variable_back.md)
+- [\[ACL 2026\] OPeRA: A Dataset of Observation, Persona, Rationale, and Action for Evaluating LLMs on Human Online Shopping Behavior Simulation](opera_a_dataset_of_observation_persona_rationale_and_action_for_evaluating_llms_.md)
 
 </div>
 

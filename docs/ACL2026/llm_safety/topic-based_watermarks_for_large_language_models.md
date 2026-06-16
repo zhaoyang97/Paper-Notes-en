@@ -2,75 +2,95 @@
 title: >-
   [Paper Note] Topic-Based Watermarks for Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Text Watermarking] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. B…
+  [ACL 2026][LLM Safety][Paper Note] This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. By selecting a semantically aligned topic list for logit biasing based on the input prompt, it maintains perplexity comparable to unwatermarked
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Text Watermarking"
-  - "Topic Alignment"
-  - "Semantic Partitioning"
-  - "Paraphrase Robustness"
-  - "Lightweight Detection"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 877dfc5a7096ee8d
+content_hash: 9c422e43a9f0be50
 ---
-
 # Topic-Based Watermarks for Large Language Models
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2404.02138](https://arxiv.org/abs/2404.02138)  
 **Code**: [GitHub](https://github.com/ANCP2021/Topic-Based-Watermarks)  
-**Area**: AI Security / Text Watermarking  
-**Keywords**: Text Watermarking, Topic Alignment, Semantic Partitioning, Paraphrase Robustness, Lightweight Detection
+**Area**: AI Safety / Text Watermarking  
+**Keywords**: Text Watermarking, Topic Alignment, Semantic Partitioning, Paraphrastic Robustness, Lightweight Detection
 
 ## TL;DR
 
-This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. By selecting a semantically aligned topic list for logit biasing based on the input prompt, TBW maintains perplexity comparable to unwatermarked text while significantly enhancing robustness against paraphrase and lexical perturbation attacks.
+This paper proposes TBW, a lightweight topic-based watermarking scheme that clusters the vocabulary into "green lists" based on semantic topics rather than random partitioning. By selecting a semantically aligned topic list for logit biasing based on the input prompt, it maintains perplexity comparable to unwatermarked text while significantly enhancing robustness against paraphrasing and lexical perturbation attacks.
 
 ## Background & Motivation
 
-**Background**: LLM-generated text is nearly indistinguishable from human writing, posing risks such as misinformation spread, copyright infringement, and model collapse (AI training on AI). Watermarking techniques identify AI-generated text by embedding detectable signatures during the generation process. The mainstream KGW method randomly partitions the vocabulary into "green" and "red" lists, biasing sampling toward green tokens.
+**Background**: LLM-generated text is nearly indistinguishable from human writing, posing risks such as misinformation spread, copyright infringement, and model collapse (AI training on AI). Watermarking techniques identify AI-generated text by embedding detectable signatures during the generation process. A mainstream method, KGW, randomly partitions the vocabulary into "green" and "red" lists, biasing sampling towards green tokens.
 
-**Limitations of Prior Work**: (1) **Vulnerability of random partitioning**: KGW's random splits mean green tokens may be irrelevant to the current semantic context, allowing attackers to significantly reduce the green token ratio through paraphrasing; (2) **Quality-robustness trade-off**: Computationally intensive methods (EXP-Edit, ITS-Edit) improve robustness via multiple decodings but severely increase latency; lightweight methods like SynthID are efficient but weak against paraphrasing; (3) **Deployment hurdles for semantic watermarking**: Methods like SIR that introduce semantic information require decoder modifications or prompt access, hindering deployment in large-scale commercial LLMs.
+**Limitations of Prior Work**: (1) **Fragility of Random Partitioning**: In KGW, tokens in the green list are semantically unrelated to the current context, allowing attackers to drastically reduce the green token ratio through paraphrasing. (2) **Quality-Robustness Trade-off**: Computationally intensive methods (EXP-Edit, ITS-Edit) improve robustness via multiple decodings at the cost of high latency; lightweight methods like SynthID are efficient but vulnerable to paraphrasing. (3) **Deployment Barriers**: Semantic watermarking schemes like SIR require decoder modifications or access to prompts, hindering deployment in large-scale commercial LLMs.
 
-**Key Challenge**: Existing methods struggle to balance robustness, text quality, and computational efficiency—lightweight methods are weak against attacks, while robust methods are expensive and degrade text quality.
+**Key Challenge**: Existing methods struggle to balance robustness, text quality, and computational efficiency; lightweight methods are weak against attacks, while robust methods are computationally expensive and degrade text quality.
 
 **Goal**: Design a lightweight semantic-aware watermarking scheme that enhances both robustness and text quality without adding significant computational overhead.
 
-**Key Insight**: Integrate semantic information into vocabulary partitioning—instead of random green/red list assignment, cluster tokens semantically based on predefined topics. Tokens substituted during paraphrasing likely remain within the same topic list, making the watermark signal harder to destroy.
+**Key Insight**: Incorporate semantic information into vocabulary partitioning. Instead of random green/red lists, tokens are semantically clustered according to predefined topics. Tokens replaced during paraphrasing are highly likely to remain within the same topic list, preserving the watermark signal.
 
-**Core Idea**: Topic-aligned vocabulary partitioning naturally possesses "semantic cohesion"—tokens under the same topic are synonyms or near-synonyms. Lexical replacements during paraphrase attacks are highly likely to fall within the same green list, thereby preserving the watermark signal.
+**Core Idea**: Topic-aligned vocabulary partitioning possesses "semantic cohesion." Tokens under the same topic are often synonyms or near-synonyms. Lexical substitutions in paraphrasing attacks are likely to fall into the same green list, thereby maintaining the watermark.
 
 ## Method
 
 ### Overall Architecture
 
-TBW consists of three phases: (1) **Offline vocabulary partitioning**—allocating all tokens into $K$ topic lists based on semantic similarity; (2) **Online watermark embedding**—extracting topics from the input prompt to select the corresponding green list and applying a logit bias $\delta$ during generation; (3) **Watermark detection**—using a $z$-score statistical test to determine if the text is watermarked, supporting three detection schemes.
+TBW consists of three phases: (1) **Offline Vocabulary Partitioning**—tokens are assigned to $K$ topic lists based on semantic similarity; (2) **Online Watermark Embedding**—topics are extracted from the input prompt to select a corresponding green list, followed by logit biasing with $\delta$ during generation; (3) **Watermark Detection**—a $z$-score statistical test determines if the text is watermarked, supporting three detection strategies.
+
+```mermaid
+graph TD
+    subgraph S1["Topic-Aligned Vocabulary Partitioning (Offline)"]
+        direction TB
+        A["Vocabulary + K Predefined Topics"] --> B["Compute token-topic cosine similarity via Sentence Embeddings<br/>Assign to green list if sim > τ"]
+        B --> C["Residual tokens below threshold<br/>Distributed via round-robin"]
+    end
+    S1 --> G["K Semantically Cohesive Green Lists"]
+    subgraph S2["Topic-Based Watermark Embedding (Online)"]
+        direction TB
+        D["Input Prompt"] --> E["Extract topics via KeyBERT<br/>Select list if hit; else k-means fallback"]
+        E --> F["Apply logit bias +δ to selected list and softmax sample"]
+    end
+    G --> E
+    F --> H["Watermarked Text"]
+    subgraph S3["Three-Level Watermark Detection (z-score)"]
+        direction TB
+        I["Candidate Text"]
+        I -->|Strict Match / Sliding Window| J["Extract topic from text to select list"]
+        I -->|Max z-score| K["Iterate all lists to find max z<br/>Detection rate ≈ 100%"]
+    end
+    H --> I
+```
 
 ### Key Designs
 
-1.  **Token-to-Topic Mapping**:
-    *   Function: Assigns all tokens in the vocabulary to semantically consistent topic lists.
-    *   Mechanism: Defines $K$ high-level topics (e.g., {animals, technology, sports, medicine}). A sentence embedding model (all-MiniLM-L6-v2) computes the cosine similarity $\text{sim}(v, t_i) = e_v \cdot e_{t_i} / (\|e_v\| \|e_{t_i}\|)$ for each token $v$ and topic $t_i$. If the maximum similarity exceeds threshold $\tau$, the token is assigned to the corresponding topic list $G_{t_i}$; the remaining tokens are distributed across all lists via round-robin to ensure full coverage. $K=4$ corresponds to an effective green list ratio of approximately 0.25.
-    *   Design Motivation: Compared to KGW's random partitioning, topic partitioning ensures tokens within the same list are semantically related—synonyms used in paraphrasing are likely to stay in the same green list, making the watermark harder to break.
+**1. Topic-Aligned Vocabulary Partitioning: Semantic "Green Lists" Instead of Random Noise**
 
-2.  **Topic-Based Watermark Embedding**:
-    *   Function: Embeds a topic-aligned watermark signal during text generation.
-    *   Mechanism: Given an input prompt $x^{\text{prompt}}$, KeyBERT extracts key topics. If the extracted topic matches the predefined set, the corresponding list $G_{t^*}$ is selected; otherwise, $k$-means clustering is applied to the extracted topic embeddings to select the most similar predefined topic. During generation, a bias $\delta$ is added to the logits of $v \in G_{t^*}$ at each step, followed by standard softmax sampling. This process requires only one topic extraction and step-wise biasing, involving no extra decoding or re-ranking.
-    *   Design Motivation: Semantically aligned green lists make the biased sampling distribution closer to the natural distribution—the model is already inclined to select topic-related tokens. The additional bias has less impact, resulting in lower perplexity.
+**Mechanism**: KGW splits the vocabulary randomly, making green list tokens semantically disjoint. TBW instead predefines $K$ high-level topics (e.g., {animals, technology, sports, medicine}) and uses the sentence embedding model all-MiniLM-L6-v2 to calculate the cosine similarity between each token $v$ and topic $t_i$: $\text{sim}(v, t_i) = e_v \cdot e_{t_i} / (\|e_v\| \|e_{t_i}\|)$. Tokens exceeding threshold $\tau$ are assigned to topic list $G_{t_i}$, while others are distributed via round-robin ($K=4$ results in a green list ratio of $\gamma \approx 0.25$).
 
-3.  **Three-level Detection**:
-    *   Function: Performs detection with varying trade-offs between robustness and accuracy across different scenarios.
-    *   Mechanism: All schemes share the $z$-score statistical test $z = (g - \gamma \cdot n) / \sqrt{n \cdot \gamma \cdot (1-\gamma)}$, where $g$ is the count of green tokens and $n$ is the total token count. (1) **Strict Topic Matching**: Extracts topics from the candidate text to select the green list for $z$-score calculation; (2) **Sliding Window Detection**: Partitions text into windows, performs independent topic extraction, and uses majority voting for the global topic; (3) **Max $z$-score Detection**: Calculates the $z$-score for every predefined topic list and takes the maximum $t^* = \arg\max_{t_i} z_i$—completely independent of topic extraction.
-    *   Design Motivation: The Max $z$-score scheme eliminates the risk of topic extraction failure, achieving nearly perfect performance (99.6%-100%) in practice, making it the most viable deployment option.
+**Design Motivation**: This ensures "semantic cohesion." Tokens within the same topic are synonyms or related. If an attacker replaces a green token with a synonym during paraphrasing, the new word likely falls into the same $G_{t_i}$, preserving the signal.
 
-### Loss & Training
+**2. Topic-Based Watermark Embedding: Context-Aware List Selection**
 
-TBW requires no training and only performs logit biasing at inference time. Primary hyperparameters: $K=4$ (number of topics), $\delta=2.0$ (bias strength, unified for comparison with KGW), $\tau=0.7$ (similarity threshold).
+**Mechanism**: Given an input prompt $x^{\text{prompt}}$, KeyBERT extracts key topics. If a topic matches the predefined set, the corresponding $G_{t^*}$ is chosen; otherwise, $k$-means clustering on extracted embeddings selects the nearest predefined topic. During generation, only logits for $v \in G_{t^*}$ are biased by $\delta$ before softmax sampling. This requires only one topic extraction step and no additional decoding or re-ranking.
+
+**Design Motivation**: Since the green tokens are aligned with the prompt's topic, the model is naturally inclined to select them. The logit bias causes minimal distribution perturbation, keeping perplexity close to unwatermarked baselines.
+
+**3. Three-Level Watermark Detection: Eliminating Topic Extraction Failure**
+
+The detection utilizes the statistical test $z = (g - \gamma \cdot n) / \sqrt{n \cdot \gamma \cdot (1-\gamma)}$ (where $g$ is the green token count and $n$ is total tokens).
+- **Strict Topic Matching**: Extracts topics directly from the candidate text to select the list.
+- **Sliding Window Detection**: Uses window-based extraction and majority voting for global topic selection.
+- **Max $z$-score Detection**: Calculates $z$-scores for every predefined topic list and picks the maximum: $t^* = \arg\max_{t_i} z_i$.
+
+The **Max $z$-score** strategy is critical as it allows the watermark signal to "identify" the correct list, bypassing topic extraction errors. This improves detection rates from 57.4% (strict) to nearly 100%.
 
 ## Key Experimental Results
 
-### Main Results — Paraphrase Attack Robustness (ROC-AUC)
+### Main Results — Paraphrasing Robustness (ROC-AUC)
 
 | Model | Attack | TBW | KGW | DiP | Unigram | SynthID | SIR |
 |------|------|-----|-----|-----|---------|---------|-----|
@@ -80,63 +100,63 @@ TBW requires no training and only performs logit biasing at inference time. Prim
 | Gemma-7B | PEGASUS | 0.981 | 0.983 | 0.836 | **0.985** | 0.912 | 0.952 |
 | Gemma-7B | DIPPER | 0.871 | 0.825 | 0.546 | **0.911** | 0.656 | 0.822 |
 
-### Detection Scheme Comparison (OPT-6.7B)
+### Ablation Study: Detection Comparison (OPT-6.7B)
 
 | Detection Scheme | Detection Rate | Avg z-score | Topic Accuracy |
-|---------|--------|-------------|----------|
-| Strict K-means | 54.0% | 6.32±10.80 | 54.2% |
-| Strict Embedding | 57.4% | 7.05±10.68 | 62.4% |
-| Sliding Window | 56.6% | 6.91±10.67 | 60.2% |
-| **Max z-score** | **99.6%** | **15.88±3.03** | **100%** |
+|------------------|----------------|-------------|----------------|
+| Strict K-means   | 54.0%          | 6.32±10.80  | 54.2%          |
+| Strict Embedding | 57.4%          | 7.05±10.68  | 62.4%          |
+| Window Embedding | 56.6%          | 6.91±10.67  | 60.2%          |
+| **Max z-score**  | **99.6%**      | **15.88±3.03** | **100%**    |
 
 ### Key Findings
 
-- **Text Quality**: TBW perplexity is close to the unwatermarked baseline, representing an improvement of approximately 42% (OPT-6.7B) and 48% (Gemma-7B) over Unigram.
-- **Paraphrase Robustness**: Under PEGASUS attacks, TPR@1%FPR reaches 91.0% (OPT-6.7B), significantly outperforming KGW's 57.8%.
-- **Lexical Perturbation**: TBW maintains high detection scores under both random and targeted perturbations. While Unigram is robust against paraphrasing, it is vulnerable to simple lexical perturbations.
-- **Max z-score Detection**: This scheme is nearly perfect (99.6%/100%) and removes the need for topic extraction steps.
-- **Computational Efficiency**: TBW generation time is nearly identical to the unwatermarked baseline, whereas EXP-Edit and SIR significantly increase latency.
-- **Topic Scalability**: Increasing $K$ from 4 to 32 results in a graceful decline of $z$-scores from ~11 to ~7, remaining competitive.
+- **Text Quality**: Perplexity of TBW is near the unwatermarked baseline, improving over Unigram by ~42% (OPT-6.7B) and ~48% (Gemma-7B).
+- **Paraphrasing Robustness**: TPR@1%FPR reaches 91.0% under PEGASUS (OPT-6.7B), far exceeding KGW's 57.8%.
+- **Lexical Perturbation**: TBW maintains high detection scores under random and targeted perturbations, whereas Unigram is more fragile to simple perturbations despite its paraphrasing resistance.
+- **Efficiency**: TBW generation time is almost identical to the unwatermarked baseline, while EXP-Edit and SIR significantly increase latency.
+- **Scalability**: Increasing $K$ from 4 to 32 reduces $z$-scores gracefully from ~11 to ~7 while remaining competitive.
 
 ## Highlights & Insights
 
-- The design of the Max $z$-score detection scheme is ingenious: it entirely bypasses the unreliable topic extraction step, allowing the watermark signal to "self-select" the correct topic list. This "try all possibilities and pick the best" strategy is simple yet effective, boosting detection rates from 57.4% to 99.6%.
-- Semantic cohesion is the linchpin of TBW's robustness: tokens replaced by synonyms remain within the same topic list, a property that random partitioning schemes lack. This insight is transferable to any watermarking scenario requiring edit-resistance.
-- TBW has an extremely low deployment barrier: it requires no modifications to model architecture, no multiple decodings, and no access to internal decoder parameters—only a logit-level bias.
+- The **Max $z$-score detection scheme** is brilliant: it completely bypasses the unreliable topic extraction step during detection, allowing the signal to "auto-select" the correct list.
+- **Semantic Cohesion** is the cornerstone of TBW's robustness: synonym replacement likely keeps tokens within the same list.
+- **Ease of Deployment**: TBW requires no architectural changes, no multiple decodings, and no access to internal decoder parameters; it only applies bias at the logit level.
 
 ## Limitations & Future Work
 
-- Using only four broad topics (animals, technology, sports, medicine) limits topic matching precision for domain-specific texts.
-- The use of secret random seeds when assigning residual tokens via round-robin increases security but adds a key management burden.
-- Robustness against stronger semantic attacks, such as meticulous human rewriting, remains untested.
-- Detection requires knowledge of parameters like bias strength $\delta$ and topic configurations, limiting cross-provider interoperability.
-- While topic drift in long texts is mitigated by the Max $z$-score scheme, more fine-grained paragraph-level detection is worth exploring.
+- Using only four broad topics (animals, technology, sports, medicine) may limit precision for specific domain texts.
+- The use of a random seed for round-robin distribution of residual tokens adds a security parameter but increases key management complexity.
+- Robustness against human-expert paraphrasing remains untested.
+- Detection requires knowledge of bias intensity $\delta$ and topic configurations, limiting cross-provider interoperability.
+- Topic drift in long texts is partially addressed by sliding windows, but finer-grained paragraph-level detection is worth exploring.
 
 ## Related Work & Insights
 
-- **vs KGW**: KGW uses random partitioning, forcing semantically unrelated tokens into the same list. TBW clusters by semantics, ensuring natural correlation within green lists; this yields a TPR@1%FPR of 91.0% under PEGASUS attack compared to KGW's 57.8%.
-- **vs SynthID-Text**: SynthID uses tournament sampling for efficiency but has weak paraphrase resistance (ROC-AUC 0.650 under DIPPER); TBW is equally lightweight but achieves a ROC-AUC of 0.945.
-- **vs Unigram**: Unigram's paraphrase resistance is comparable to TBW, but it is more vulnerable to simple lexical perturbations. TBW performs well under both classes of attack.
-- **vs SIR**: SIR uses user context to enhance robustness but require specific decoder modifications and prompt access; TBW requires no model changes.
+- **vs KGW**: KGW uses random partitioning; TBW uses semantic clustering. Under PEGASUS, TBW achieves 91.0% TPR@1%FPR compared to KGW's 57.8%.
+- **vs SynthID-Text**: Both are lightweight, but SynthID is weak against paraphrasing (ROC-AUC 0.650 under DIPPER), while TBW reaches 0.945.
+- **vs Unigram**: While Unigram handles paraphrasing well, it is more fragile under simple lexical perturbations than TBW.
+- **vs SIR**: SIR requires user context and decoder modifications; TBW is a "drop-in" logit-level solution.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing semantic topics into watermark partitioning is a natural but effective improvement; the Max $z$-score detection is particularly clever.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across text quality, paraphrase/perturbation robustness, detection comparisons, efficiency, and scalability.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with well-defined threat models and detection hierarchies, though some content is repetitive.
-- Value: ⭐⭐⭐⭐ Low deployment threshold provides a practical solution for AI text provenance.
+- **Novelty**: ⭐⭐⭐⭐ Introducing semantic topics into partitioning is a natural yet effective improvement; Max $z$-score detection is particularly clever.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage of quality, robustness, efficiency, and scalability.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and well-defined threat models, though some redundant details exist.
+- **Value**: ⭐⭐⭐⭐ Practical with a low deployment threshold for AI text provenance.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
+- [\[ACL 2025\] Ensemble Watermarks for Large Language Models](../../ACL2025/llm_safety/ensemble_watermarks_llm.md)
 - [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
+- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
 - [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](multi-component_causal_tracing_in_large_language_models.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
-- [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
 
 </div>
 

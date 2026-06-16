@@ -2,77 +2,84 @@
 title: >-
   [Paper Note] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints
 description: >-
-  [ACL 2026][LLM Safety][Safety Drift] This paper proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning. It theoretically and experimentally demo…
+  [ACL 2026][LLM Safety][Paper Note] Ours proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning, demonstrating theoretically and experimentally that constraining weights or activations alone is insufficient to prevent LLM safety drift.
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Safety Drift"
-  - "Harmful Fine-tuning"
-  - "Sparse Autoencoders"
-  - "Weight Subspace"
-  - "Activation Constraints"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 0cc389d1e876df76
+content_hash: 087b37b1839b96f0
 ---
-
 # Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.12384](https://arxiv.org/abs/2604.12384)  
 **Code**: No public code  
 **Area**: Model Compression / LLM Safety  
-**Keywords**: Safety Drift, Harmful Fine-tuning, Sparse Autoencoders, Weight Subspace, Activation Constraints
+**Keywords**: safety drift, harmful fine-tuning, sparse autoencoder, weight subspace, activation constraints
 
 ## TL;DR
 
-This paper proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning. It theoretically and experimentally demonstrates that constraining either weights or activations alone is insufficient to prevent LLM safety drift.
+Ours proposes CWAC, which simultaneously constrains weight update directions and safety-critical activation features during fine-tuning, demonstrating theoretically and experimentally that constraining weights or activations alone is insufficient to prevent LLM safety drift.
 
 ## Background & Motivation
 
-**Background**: Safety-aligned models are fragile during downstream fine-tuning. Even when the fine-tuning data appears to be benign tasks such as sentiment classification, news categorization, or mathematical reasoning, the original refusal capabilities can be compromised. Existing defenses include freezing safety layers, incorporating safety samples, limiting weight drift, activation steering, or post-finetuning repairs.
+**Background**: Safety-aligned models are fragile during downstream fine-tuning. Even when fine-tuning data appears to be benign tasks like sentiment classification, news categorization, or mathematical reasoning, the original refusal capability can be undermined. Existing defenses include freezing safety layers, adding safety samples, limiting weight drift, activation steering, or post-finetuning repair.
 
-**Limitations of Prior Work**: Many methods focus on a single level: either restricting parameter updates to prevent the model from deviating from original weights or constraining activations to maintain safe internal representations on harmful inputs. The paper points out that both single-point constraints have vulnerabilities, as the model can generate bypasses through the unconstrained side.
+**Limitations of Prior Work**: Many methods focus on only one level: either limiting parameter updates to keep the model close to the original weights, or constraining activations to keep internal representations safe on harmful inputs. This paper argues that such single-point constraints have vulnerabilities, as the model can create bypasses through the unconstrained side.
 
-**Key Challenge**: Safety behavior results from the coupled outcome of weights and activations. Minimal changes in weights do not guarantee that activations will not be shifted by the fine-tuned task distribution; similarly, stable activations on reference samples do not guarantee that weights will not cause dangerous outputs on unseen harmful inputs.
+**Key Challenge**: Safety behavior results from the coupling of weights and activations. Minimal weight change does not guarantee that activations will not be shifted by the fine-tuned task distribution; similarly, stable activations on reference samples do not guarantee that weights will not produce dangerous outputs on unseen harmful inputs.
 
-**Goal**: To construct a defense mechanism during fine-tuning that preserves the base model's refusal capability for harmful prompts while maintaining downstream task accuracy, ensuring robustness across multiple models, tasks, and scenarios with harmful sample injection.
+**Goal**: Construct a defense mechanism during fine-tuning that maintains downstream task accuracy while preserving the original model's refusal capability for harmful prompts, remaining robust across multiple models, tasks, and scenarios containing harmful samples.
 
-**Key Insight**: The authors first use a first-order approximation to decompose layer output drift into a weight drift term and an activation drift term. Based on this, they design a dual protection mechanism consisting of a "weight safety subspace" and "activation safety constraints."
+**Key Insight**: The authors first decompose layer output drift into a weight drift term and an activation drift term using a first-order approximation, subsequently designing a dual protection of "weight safety subspace + activation safety constraints."
 
-**Core Idea**: Project weight gradients onto a safety subspace that does not affect refusal outputs for harmful prompts, while simultaneously using Sparse Autoencoders (SAEs) to lock refusal-related sparse activation features. This ensures that fine-tuning only adapts to tasks within regions that do not destroy safety representations.
+**Core Idea**: Project weight gradients into a safety subspace that does not affect refusal outputs for harmful prompts, while using a Sparse Autoencoder (SAE) to lock safety-related sparse activation features, ensuring fine-tuning occurs only within regions that do not destroy safety representations.
 
 ## Method
 
 ### Overall Architecture
 
-The input for CWAC includes downstream task data, a set of harmful prompts, pre-computed weight projection matrices for each layer, and safety-critical SAE features of the base model on harmful prompts. During fine-tuning, the model minimizes task loss while re-forwarding harmful prompts to extract safety features, pulling current safety features back to the base model's features. Simultaneously, gradients of specific FFN output projection layers are right-multiplied by a projection matrix to ensure weight updates fall within the safety subspace.
+The input for CWAC includes downstream task data, a set of harmful prompts, precomputed weight projection matrices for each layer, and safety-critical SAE features of the base model on harmful prompts. During fine-tuning, the model minimizes task loss while re-performing forward passes on harmful prompts to extract safety features, pulling current safety features back to the base model features. Simultaneously, gradients of specific FFN output projection layers are right-multiplied by a projection matrix to ensure weight updates fall within the safety subspace.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: Downstream task data + Harmful prompt set<br/>+ Precomputed projection matrix Π + Base model safety SAE features"]
+    IN --> DEC["Safety Drift Decomposition<br/>Δy ≈ f′·(ΔW·h₀ + W₀·Δh): Coupled weight and activation terms causing drift"]
+    DEC --> ACT["SAE-based Activation Safety Constraint<br/>Harmful prompt forward → Extract top-100 safety latents → Regularize back to baseline for L_safety"]
+    ACT --> LOSS["Total Loss L_total = L_task + λ·L_safety"]
+    LOSS --> GRAD["Backpropagation to find gradients"]
+    GRAD --> WT["Weight Safety Subspace Projection<br/>FFN down_proj gradient right-multiplied by Π=ÛÛᵀ, forced into directions with minimal harmful output impact"]
+    WT --> UPD["Update Weights: Adapt to downstream tasks while preserving refusal capability"]
+```
 
 ### Key Designs
 
-1.  **Safety Drift Decomposition**:
-    - **Function**: Explains why constraining either weights or activations alone is insufficient.
-    - **Mechanism**: For a layer output $y=f(Wh)$, the drift after fine-tuning is approximated as $$\Delta y\approx f'(W_0h_0)\odot(W_0\Delta h+\Delta W h_0)$$. Here, $W_0\Delta h$ is the drift caused by activation changes, and $\Delta W h_0$ is the drift caused by weight changes. If only $\Delta W$ is constrained, activations can still shift; if only $\Delta h$ is constrained, weights can still cause drift on unseen inputs.
-    - **Design Motivation**: This decomposition transforms "safety drift" from an empirical phenomenon into an analyzable upper bound on error, providing a theoretical basis for the dual constraint design.
+**1. Safety Drift Decomposition: Formalizing "Why single constraints fail" into two error terms**
 
-2.  **SAE-based Activation Safety Constraint**:
-    - **Function**: Preserves internal safety features related to refusal during the fine-tuning process.
-    - **Mechanism**: The authors train TopK Sparse Autoencoders to decompose residual stream activations into sparse, interpretable features. The SAE training corpus consists of approximately 100 million tokens, with 30% from OpenWebText2 and 70% from harmful prompts correctly refused by the base model. Before fine-tuning, safety-critical features $z^{baseline}$ on harmful prompts are recorded. During fine-tuning, a safety loss is added: $L_{safety}=\frac{1}{B}\sum_b\|z_b^{current}-z_b^{baseline}\|^2$, which only constrains top safety-critical latents.
-    - **Design Motivation**: Directly constraining the entire activation vector would hinder downstream task adaptation. SAEs allow the method to lock only the sparse dimensions related to refusal, decoupling safety preservation from task learning as much as possible.
+Many defenses focus only on weights or activations; this paper clarifies why this is insufficient. It uses a first-order approximation of a layer's output $y=f(Wh)$ to decompose the fine-tuned output drift into two terms: $\Delta y\approx f'(W_0h_0)\odot(W_0\Delta h+\Delta W h_0)$. Here, $\Delta W h_0$ represents drift caused by weight changes, while $W_0\Delta h$ represents drift caused by activation changes. This decomposition exposes the vulnerability of single-point constraints—if only $\Delta W$ is suppressed, activations can still be shifted by the task distribution; if only $\Delta h$ on reference samples is suppressed, weights can still cause dangerous outputs on unseen harmful inputs. Since both terms jointly determine safety behavior, both must be controlled—forming the theoretical basis for CWAC’s dual constraints.
 
-3.  **Weight Safety Subspace Projection**:
-    - **Function**: Restricts weight updates from altering the model's safe outputs on harmful prompts.
-    - **Mechanism**: For each FFN output projection layer, the input matrix $X_l$ is collected when the base model processes harmful prompts, with the goal that updates satisfy $\Delta W_lX_l\approx0$. Since processing $X_l$ directly is costly, the covariance $C_l=X_lX_l^T$ is calculated, and SVD is performed to retain directions corresponding to small eigenvalues to form $\hat U_l$. The projection matrix is defined as $\Pi_l=\hat U_l\hat U_l^T$. During fine-tuning, gradient updates are projected as $\Delta W_l\leftarrow\Delta W_l\Pi_l$.
-    - **Design Motivation**: Directions with small eigenvalues have the least impact on safe outputs for harmful prompts. Restricting updates to these directions preserves the space for downstream task learning while minimizing damage to refusal behavior.
+**2. SAE-based Activation Safety Constraint: Locking refusal-related sparse dimensions without freezing entire activations**
+
+To preserve safety representations at the activation level during fine-tuning, directly constraining the entire activation vector would likely hinder downstream task learning. CWAC uses a Sparse Autoencoder for precise localization: it first trains a TopK SAE to decompose residual stream activations into sparse interpretable features (SAE corpus includes ~100M tokens, 30% from OpenWebText2, 70% from harmful prompts correctly refused by the base model). Before fine-tuning, it records the base model's safety-critical features $z^{baseline}$ on harmful prompts. During fine-tuning, a regularization term pulls current features back to the baseline:
+
+$$L_{safety}=\frac{1}{B}\sum_b\|z_b^{current}-z_b^{baseline}\|^2$$
+
+Crucially, this term only constrains the top safety-critical latents (defaulting to the top 100) rather than the entire activation. By compressing "safety preservation" into a few refusal-related dimensions, the task learning can still adapt freely in other dimensions, decoupling safety preservation and task adaptation.
+
+**3. Weight Safety Subspace Projection: Squeezing gradient updates into directions with minimal impact on harmful prompt outputs**
+
+While activation constraints manage reference samples, the weight side must also be secured to prevent drift on unseen inputs. CWAC collects the input matrix $X_l$ for each FFN output projection layer when the base model processes harmful prompts. The goal is for updates to satisfy $\Delta W_lX_l\approx0$, meaning weight changes should not occur in directions that alter safety outputs for harmful prompts. Operating directly on $X_l$ is computationally expensive, so the method instead computes the covariance $C_l=X_lX_l^T$. After SVD, the directions corresponding to small eigenvalues form $\hat U_l$. Defining the projection matrix as $\Pi_l=\hat U_l\hat U_l^T$, gradients are right-multiplied during training: $\Delta W_l\leftarrow\Delta W_l\Pi_l$. The subspace of small eigenvalues has the least impact on safety outputs for harmful prompts. Limiting updates to this space preserves learning capacity for downstream tasks while avoiding the destruction of refusal behavior. Selecting the FFN down_proj for projection is intentional—it acts as the bottleneck for writing back to the residual stream, making it more direct than gate/up projections and more efficient than full-layer projection.
 
 ### Loss & Training
 
-The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subspace projection applied to gradients of FFN down_proj before updates. Default experiments use full-parameter fine-tuning, AdamW, 3 epochs, batch size of 1, maximum sequence length of 512, and a learning rate of $2\times10^{-5}$, with 5,000 samples per benign task. The activation constraint retains the top 100 safety-critical latents with $\lambda=0.5$. Offline costs include ~6.5 hours for SAE training and ~18 minutes for SVD pre-computation on Llama-2-7B. Fine-tuning takes about 44-46 minutes per epoch, an overhead of less than 10% compared to standard SFT (42 minutes).
+The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subspace projection applied to FFN down_proj gradients before updates. Default experiments use full-parameter fine-tuning, AdamW, 3 epochs, batch size of 1, max sequence length of 512, and a learning rate of $2\times10^{-5}$, with 5,000 samples per benign task. Activation constraints retain the top 100 safety-critical latents with $\lambda=0.5$. Offline costs include ~6.5 hours for SAE training and ~18 minutes for SVD precomputation on Llama-2-7B. Fine-tuning takes ~44-46 minutes per epoch, representing less than a 10% overhead compared to standard SFT (~42 minutes).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Average Performance on SST-2 / AGNEWS / GSM8K: Higher FA is better, lower HS is safer**
+**Average performance across SST-2 / AGNEWS / GSM8K: Higher FA is better, Lower HS is safer**
 
 | Model | Method | Avg FA↑ | Avg HS↓ |
 |------|------|----------|----------|
@@ -89,7 +96,7 @@ The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subs
 | Gemma-2-9B | ASFT | 86.43 | 29.49 |
 | Gemma-2-9B | CWAC | 91.59 | 10.05 |
 
-**Generalization Experiments on PubMedQA and AlpacaEval**
+**Generalization on PubMedQA and AlpacaEval**
 
 | Model | Method | FA↑ | HS↓ | AE↑ |
 |------|------|-----|-----|-----|
@@ -112,7 +119,7 @@ The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subs
 | ASFT | 38.50 | 39.90 | 43.60 | 45.82 | 38.22 | 93.22 |
 | CWAC | 10.50 | 20.03 | 22.57 | 30.78 | 18.73 | 94.35 |
 
-**Component Ablation for Weight and Activation Constraints, Average Results**
+**Component ablation of weight and activation constraints, Average results**
 
 | Model | Method | Avg FA↑ | Avg HS↓ |
 |------|------|----------|----------|
@@ -127,43 +134,47 @@ The total objective is $L_{total}=L_{task}+\lambda L_{safety}$, with safety subs
 | Gemma-2-9B | CWAC | 87.67 | 10.07 |
 
 ### Key Findings
-- CWAC maintains or improves downstream FA across four 7B-9B models while significantly reducing HS; most notably, for Llama-3-8B, average HS drops from 66.03 (SFT) to 9.77.
-- Compared to defenses like ASFT, SafeInstr, and SPPFT, the advantage of CWAC is not just higher safety, but a better balance between safety and task performance.
-- When the ratio of harmful samples increases to 0.5, CWAC's HS is 30.78, which is still lower than ASFT's 45.82, while maintaining FA around 94.06.
-- Component ablation shows that both weight-only and activation-only methods are effective, but full CWAC is required to consistently achieve the lowest HS, supporting the core argument that "coupled constraints are necessary."
+- CWAC maintains or improves downstream FA across four 7B-9B models while significantly reducing HS. Most notably, on Llama-3-8B, the average HS drops from 66.03 (SFT) to 9.77.
+- Compared to defenses like ASFT, SafeInstr, and SPPFT, CWAC’s advantage lies in its balance between safety and task performance rather than just safety alone.
+- When the ratio of harmful samples increases to 0.5, CWAC maintains an HS of 30.78, remaining lower than ASFT’s 45.82 while keeping FA around 94.06.
+- Component ablation shows that while both weight-only and activation-only constraints are effective, the full CWAC is required to consistently achieve the lowest HS, supporting the core argument that coupled constraints are necessary.
 
 ## Highlights & Insights
-- The most valuable part of the paper is the safety drift decomposition: it explains why "weight preservation" and "activation preservation" individually leave gaps in defense, showing that CWAC is more than just an engineering combination.
-- The choice to lock only safety-critical latents via SAEs instead of the entire activation vector is crucial; otherwise, safety regularization would likely impede downstream task learning.
-- Selecting FFN down_proj for projection is reasonable as it serves as a bottleneck for FFN writes to the residual stream, making it more direct than intervening in gate/up projections and more efficient than full-layer projection.
-- CWAC's form is well-suited for integration with PEFT: although the paper defaults to full-parameter fine-tuning, the concept of "projection updates + activation regularization" can be transferred to LoRA subspaces or adapter updates.
+- The most valuable part of the paper is the safety drift decomposition: it explains why weight-only and activation-only approaches fail individually, ensuring CWAC is more than just an empirical combination.
+- The use of SAE constraints to lock only safety-critical latents instead of the entire activation vector is critical; otherwise, safety regularization would likely stifle downstream task learning.
+- Selecting the FFN down_proj for projection is justifiable, as it is the bottleneck for writing back to the residual stream, offering a more direct intervention than gate/up projections and being more efficient than full-layer projection.
+- The design of CWAC is well-suited for integration with PEFT: although the paper defaults to full-parameter fine-tuning, the concept of "projection update + activation regularization" can be transferred to LoRA subspaces or adapter updates.
 
 ## Limitations & Future Work
 - The method requires white-box access to weights, gradients, and intermediate activations, making it inapplicable to closed-source API models.
-- Activation constraints depend on SAE quality; poor SAE reconstruction or non-interpretable safety features would affect the effectiveness of protection.
-- Experiments primarily cover 7B-9B instruction-tuned models and have not yet verified stability on larger models, MoE models, or different alignment pipelines.
-- Current safety evaluations focus on explicit harmful prompts and refusal capabilities, with insufficient coverage of indirect jailbreaks, hidden violations, or safety drift within agentic toolchains.
+- Activation constraints depend on SAE quality; poor reconstruction or uninterpretable safety features will affect protection when choosing top latents.
+- Experiments primarily cover 7B-9B instruction-tuned models and have yet to verify stability on larger models, MoE architectures, or different alignment pipelines.
+- Current safety evaluations focus on explicit harmful prompts and refusal capabilities, with insufficient coverage of indirect jailbreaks, stealthy violations, or safety drift in agentic toolchains.
 
 ## Related Work & Insights
-- **vs ASFT**: ASFT restricts fine-tuning drift through safety direction anchoring; this work adds activation-level SAE regularization to cover activation bypasses that weight constraints cannot handle.
-- **vs SPPFT / Safety Layer Freezing**: Freezing safety layers is simple but may lose task adaptability. CWAC allows updates but projects them in directions that have minimal impact on safety prompts.
-- **vs activation steering**: Many steering methods modify activations during inference, whereas CWAC use activation regularization during training to maintain refusal features, making it more suitable for scenarios requiring fine-tuned deployment.
-- **Insights**: If capabilities such as privacy, honesty, and copyright compliance are mapped to interpretable SAE features, a similar "weight subspace + activation locking" framework could be extended to more alignment properties.
+- **vs ASFT**: ASFT limits fine-tuning drift via safety direction anchoring. Ours further adds activation-level SAE regularization, covering activation bypasses that weight constraints alone cannot handle.
+- **vs SPPFT / Safety Layer Freezing**: Freezing safety layers is simple but may lose task adaptability. CWAC allows updates but projects them into directions with minimal impact on safety prompts.
+- **vs Activation Steering**: Many steering methods modify activations during inference. CWAC uses activation regularization during training to preserve refusal features, making it more suitable for scenarios requiring fine-tuned deployment.
+- **Insight**: If properties like privacy, honesty, and copyright compliance can be mapped to interpretable SAE features, the "weight subspace + activation locking" framework could be extended to more alignment attributes.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of theoretical decomposition and dual-layer constraints is solid; despite borrowing from SAE and subspace projection, the integrated objective is clear.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across four models, multiple downstream tasks, generalization tasks, harmful ratios, learning rates, and component ablations.
-- Writing Quality: ⭐⭐⭐⭐ The methodological chain is clear, and the derivation serves the design, though some experimental details and table explanations are quite dense.
-- Value: ⭐⭐⭐⭐ Directly valuable for the safe fine-tuning of open-source models, particularly for enterprises or research deployments needing to preserve refusal capabilities.
+- Novelty: ⭐⭐⭐⭐ Theoretical decomposition combined with dual-level constraints is solid; while borrowing from SAE and subspace projection, the combined goal is clear.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across four models, multiple downstream tasks, generalization tasks, harmful ratios, learning rates, and component ablations.
+- Writing Quality: ⭐⭐⭐⭐ The methodological chain is clear and the derivations serve the design, though some experimental details and table explanations are dense.
+- Value: ⭐⭐⭐⭐ Direct value for safe fine-tuning of open-source models, especially for those needing to retain refusal capabilities in enterprise or research deployments.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ICML 2025\] Learning Safety Constraints for Large Language Models](../../ICML2025/llm_safety/learning_safety_constraints_for_large_language_models.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
 - [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
 - [\[ACL 2026\] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)

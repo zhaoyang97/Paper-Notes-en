@@ -2,121 +2,122 @@
 title: >-
   [Paper Note] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][zero-shot segmentation] This paper proposes DSS, a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot…
+  [CVPR 2026][Segmentation][SAM] The proposed DSS is a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot training-free camouflaged object segmentation. It discovers the target (FOD) via self-supervised visual features and Leiden clustering, generates candidate masks with SAM, and selects the optimal mask through heuris
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "zero-shot segmentation"
-  - "camouflaged object detection"
-  - "SAM"
-  - "MLLM"
-  - "training-free pipeline"
-  - "clustering-based localization"
+  - CVPR 2026
+  - Segmentation
+  - SAM
+  - MLLM
 date: 2026-05-08
-content_hash: 319723303b86c732
+content_hash: f69b1f9e2b216d3a
 ---
-
 # DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19944](https://arxiv.org/abs/2602.19944)  
 **Code**: To be confirmed  
-**Area**: Zero-shot Camouflaged Object Segmentation
-**Keywords**: [zero-shot segmentation, camouflaged object detection, SAM, MLLM, training-free pipeline, clustering-based localization]
+**Area**: Zero-shot Camouflaged Object Segmentation  
+**Keywords**: [Zero-shot segmentation, Camouflaged object detection, SAM, MLLM, Training-free pipeline, Clustering localization]  
 
 ## TL;DR
-This paper proposes DSS, a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot, training-free camouflaged object segmentation by: discovering foreground regions via self-supervised visual encoders and Leiden clustering (FOD); generating candidate masks using SAM; and selecting the optimal mask through heuristic scoring combined with iterative pairwise MLLM comparison. The method demonstrates particularly strong performance in multi-instance camouflage scenarios.
+The proposed DSS is a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot training-free camouflaged object segmentation. It discovers the target (FOD) via self-supervised visual features and Leiden clustering, generates candidate masks with SAM, and selects the optimal mask through heuristic scoring and iterative MLLM pairwise comparisons. It significantly outperforms existing methods, particularly in multi-instance scenarios.
 
 ## Background & Motivation
-Camouflaged object segmentation (COS) requires detecting and segmenting concealed targets that blend highly with their backgrounds. Existing zero-shot COS methods predominantly adopt a two-stage paradigm of "MLLM localization → SAM segmentation": a multimodal large language model (MLLM) first generates location prompts (e.g., bounding boxes), which are then fed into SAM for pixel-level segmentation. However, the visual grounding capability of MLLMs degrades severely in camouflaged scenes—where targets and backgrounds share highly similar colors and textures—leading to inaccurate target localization and large bounding box errors. The problem is further compounded in multi-instance scenarios, where MLLMs tend to localize only the most salient target while missing the rest.
+Camouflaged Object Segmentation (COS) requires detecting and segmenting hidden targets that are highly integrated with their background. Current zero-shot COS methods typically follow an "MLLM localization → SAM segmentation" two-stage paradigm: a Multimodal Large Language Model (MLLM) generates target prompts (e.g., bounding boxes), which are then fed into SAM for pixel-level segmentation. However, the visual grounding capability of MLLMs degrades significantly in camouflaged scenes where targets share high color/texture similarity with the background, leading to inaccurate bounding boxes. Furthermore, in multi-instance scenarios, MLLMs often focus only on the most prominent target while ignoring others.
 
 ## Core Problem
-In zero-shot COS, inaccurate MLLM localization constrains SAM segmentation quality, particularly in multi-instance camouflage scenarios where MLLMs cannot reliably discover all targets. A training-free approach is needed that does not rely on MLLM localization, can automatically discover multiple camouflaged objects, and selects the optimal result from a pool of candidate masks.
+The inaccurate localization of MLLMs in zero-shot COS limits the quality of SAM segmentation. Specifically, in multi-instance camouflaged scenes, MLLMs fail to reliably discover all targets. There is a need for a training-free solution that can automatically discover multiple camouflaged targets and select the optimal results from candidate masks without relying on MLLM localization.
 
 ## Method
 
 ### Overall Architecture
-DSS is a three-stage pipeline: **Discover**—replaces MLLM localization with clustering over self-supervised visual features to identify camouflaged object regions and generate bounding box prompts; **Segment**—feeds bounding boxes into SAM to generate a candidate mask set; **Select**—iteratively selects the final mask through heuristic scoring and pairwise MLLM comparison. The entire pipeline is zero-shot and training-free, requiring no fine-tuning or annotated data.
+DSS aims to circumvent the bottleneck of "inaccurate MLLM localization" in zero-shot camouflaged segmentation. Since MLLMs struggle with the high similarity between targets and backgrounds, DSS decomposes the task into a three-stage progressive pipeline: **Discover** (Feature-consistent Foreground Discovery, FOD) uses clustering of self-supervised visual features instead of MLLMs to detect targets and generate bounding boxes; **Segment** feeds these boxes into SAM to produce candidate masks; **Select** (Semantic-driven Mask Selection, SMS) uses heuristic scoring for initial filtering followed by MLLM pairwise comparisons to select the best mask. The entire process is zero-shot and training-free, requiring no fine-tuning or annotations.
 
-### Stage 1: Discover (FOD — Foreground Object Discovery)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image"] --> B
+    subgraph FOD["Discover: Feature-consistent Foreground Discovery (FOD)"]
+        direction TB
+        B["Self-supervised encoder extracts patch features<br/>Leiden clustering for initial FG/BG split"] --> C["Part Composition (PC)<br/>Iterative refinement via FG/BG centroid distance<br/>Stop at energy convergence"]
+        C --> D["Similarity-based Box Gen (SBG)<br/>Similarity map thresholding for boxes<br/>Pearson (τ=0.95) redundancy removal"]
+    end
+    D --> E["Segment: Bboxes to SAM<br/>Generates candidate masks per box → Candidate set M_FOD"]
+    E --> F
+    subgraph SMS["Select: Semantic-driven Mask Selection (SMS)"]
+        direction TB
+        F["Heuristic Scoring<br/>Similarity consistency + boundary penalty → Top-K"] --> G["Iterative MLLM Pairwise Comparison<br/>Compare pairs from low to high scores"]
+    end
+    G --> H["Optimal Camouflaged Object Mask"]
+```
 
-1. **Patch-level feature extraction**: A self-supervised pretrained visual encoder (e.g., DINOv2) extracts patch-level feature matrix $X \in \mathbb{R}^{N \times D}$, where $N$ is the number of patches and $D$ is the feature dimension.
+### Key Designs
 
-2. **Leiden clustering initialization**: Patch features are clustered using the Leiden community detection algorithm to obtain an initial coarse foreground/background partition. Based on graph modularity optimization, Leiden automatically discovers natural cluster structures in feature space without requiring a predefined number of categories.
+**1. Discover (FOD): Clustering as a surrogate for MLLM localization**
 
-3. **Part Composition (PC) iterative refinement**: The initial clustering result is iteratively refined. At each iteration, the foreground/background membership probability of each patch is computed as:
-$$y_i^{(t)} = \sigma\left(\|x_i - \mu_b\|_2 - \|x_i - \mu_f\|_2\right)$$
-where $\mu_f$ and $\mu_b$ are the feature centroid of current foreground and background patches, respectively, and $\sigma$ denotes the sigmoid function. Intuitively, patches closer to the foreground centroid and farther from the background centroid are more likely to be foreground. Iteration continues until the energy function $E$, which measures the overall consistency of the current partition, converges.
+Given the degradation of MLLM localization in camouflaged scenes, DSS leverages the intrinsic structure of self-supervised visual features. It first extracts patch-level features $X \in \mathbb{R}^{N \times D}$ using DINOv2 and applies Leiden community detection (based on graph modularity optimization) for initial foreground/background partitioning. This is followed by Part Composition (PC) refinement, where the foreground probability for each patch is iteratively calculated based on its distance to foreground and background centroids: $y_i^{(t)} = \sigma(\|x_i - \mu_b\|_2 - \|x_i - \mu_f\|_2)$, where $\mu_f, \mu_b$ are the current means. This continues until the energy function $E$ converges. Finally, Similarity-based Box Generation (SBG) creates an affinity map using the cosine similarity between the foreground centroid and all patches, extracts candidate regions via thresholding, and removes duplicates using Pearson correlation ($\tau=0.95$). This allows the automated discovery of multiple targets, overcoming the limitations of MLLMs.
 
-4. **Similarity-based Box Generation (SBG)**: Cosine similarity between the foreground centroid and all patches across the image is computed to produce an affinity map. Candidate regions are extracted via thresholding and connected component analysis on the affinity map. **Pearson correlation deduplication** (threshold $\tau = 0.95$) is then applied—regions with correlation above 0.95 are merged as the same target to avoid redundant bounding boxes. The resulting bounding boxes serve as SAM prompts.
+**2. Segment: Bbox prompts for SAM candidate generation**
 
-### Stage 2: Segment
-All bounding box prompts generated by FOD are fed into SAM (Segment Anything Model), which generates a set of candidate masks per bounding box. These are aggregated into the candidate mask set $M_\text{FOD}$. As a general-purpose segmentation foundation model, SAM produces high-quality pixel-level masks from given location prompts.
+With improved localization, segmentation is handled by a general foundation model. All bounding box prompts generated by FOD are sent to SAM. Each box generates a set of candidate masks, which are aggregated into a candidate set $M_{FOD}$. This step leverages SAM’s ability to generate high-quality pixel-level masks from location prompts without additional training.
 
-### Stage 3: Select (SMS — Segment Mask Selection)
+**3. Select (SMS): Repurposing MLLM from "localizer" to "judge"**
 
-1. **Heuristic scoring**: A quality score is computed for each candidate mask $m_i$:
-$$s_i = \text{corr}(m_i, \text{sim}_i) + (1 - \text{BC}(m_i))$$
-where $\text{corr}(m_i, \text{sim}_i)$ is the Pearson correlation between the mask and the affinity map—measuring whether the mask region is consistent with the foreground feature distribution—and $\text{BC}(m_i)$ is the boundary complexity of the mask, penalizing overly fragmented masks. A high-quality mask should simultaneously exhibit high feature consistency and low boundary complexity.
-
-2. **Top-K filtering**: Candidates are ranked by score, and the top-$K$ masks are retained for the selection stage.
-
-3. **Iterative pairwise MLLM comparison**: Starting from the lowest-scoring mask, pairs of masks are submitted to the MLLM for pairwise comparison—"Which mask better segments the camouflaged object?" MLLM judgments in pairwise comparisons are substantially more reliable than direct localization (the task is simpler). Comparisons proceed iteratively from low-scoring to high-scoring candidates, and the final winner is taken as output. This bottom-up comparison order allows the MLLM to progressively understand what constitutes a better mask, reducing accumulated errors from individual judgments.
+To find the best mask among candidates, DSS first calculates a heuristic quality score: $s_i = \text{corr}(m_i, \text{sim}_i) + (1 - \text{BC}(m_i))$. The first term is the Pearson correlation between the mask and the affinity map (feature consistency), and the second term uses Boundary Complexity ($\text{BC}$) to penalize over-fragmentation. High-quality masks should be feature-consistent and have clean boundaries. After ranking and keeping the Top-K, an Iterative Pairwise MLLM Comparison is performed: starting from the lowest-scoring masks, the MLLM is asked "which one segments the camouflaged object better?". Comparing from low-to-high scores allows the MLLM to establish a baseline for superior masks and reduces the accumulation of misjudgments.
 
 ### Loss & Training
-The pipeline is entirely training-free and inference-only. Hyperparameters include: the resolution parameter for Leiden clustering, the convergence threshold for PC iteration, the Pearson deduplication threshold $\tau = 0.95$, and the Top-$K$ value for heuristic scoring.
+The entire pipeline is training-free and operates only during inference. Tunable hyperparameters include the resolution parameter for Leiden clustering, convergence thresholds for PC, the Pearson redundancy threshold ($\tau=0.95$) for SBG, and the Top-K value for SMS heuristic scoring.
 
 ## Key Experimental Results
 
-| Benchmark | Metric | DSS | Prev. SOTA (ZS methods) | Gain |
-|-----------|--------|-----|-------------------------|------|
-| CHAMELEON | $S_m$↑ | Significantly superior | MLLM+SAM baseline | Large |
-| CAMO | $S_m$↑ | Significantly superior | MLLM+SAM baseline | Large |
-| COD10K | $S_m$↑ | Significantly superior | MLLM+SAM baseline | Large |
-| NC4K | $S_m$↑ | Significantly superior | MLLM+SAM baseline | Large |
+| Benchmark | Metric | DSS | Prev. SOTA (ZS) | Gain |
+|-----------|------|-----|------------|------|
+| CHAMELEON | S_m↑ | Significant Lead | MLLM+SAM baseline | +Large |
+| CAMO | S_m↑ | Significant Lead | MLLM+SAM baseline | +Large |
+| COD10K | S_m↑ | Significant Lead | MLLM+SAM baseline | +Large |
+| NC4K | S_m↑ | Significant Lead | MLLM+SAM baseline | +Large |
 
-- The performance advantage is greatest in multi-instance camouflage scenarios, as FOD can automatically discover multiple target regions while MLLM baselines typically localize only a single target.
-- DSS achieves state-of-the-art performance among zero-shot COS methods on all benchmarks.
-- Training-free; requires no COS annotation data.
+- Demonstrates the greatest advantage in multi-instance camouflaged scenarios because FOD discovers multiple target regions where MLLMs typically find only one.
+- Achieves SOTA across all COS benchmarks compared to zero-shot methods using MLLM localization.
+- Training-free, requiring no COS-specific annotated data.
 
 ### Ablation Study
-- FOD vs. MLLM localization: FOD discovers substantially more targets than MLLMs in multi-instance scenarios.
-- PC iterative refinement contributes significantly; removing PC noticeably degrades bounding box quality.
-- Pearson deduplication ($\tau = 0.95$) in SBG effectively reduces redundant bounding boxes.
-- MLLM pairwise comparison in SMS outperforms using heuristic scores alone as the final selection criterion.
-- Bottom-up comparison order (low-to-high score) outperforms random ordering.
+- FOD vs. MLLM Localization: FOD discovers significantly more targets in multi-instance scenes.
+- Part Composition (PC): PC refinement significantly improves bounding box quality.
+- SBG Pearson Deduplication: $\tau=0.95$ effectively reduces redundant bboxes.
+- SMS MLLM Comparison: Pairwise MLLM judgment outperforms using heuristic scores alone.
+- Comparison Order: Sorting from low-to-high scores yields better results than random ordering.
 
 ## Highlights & Insights
-- The paper cleverly repositions the MLLM from a "localizer" to a "judge"—self-supervised visual features and clustering handle localization (more reliably), while the MLLM performs only pairwise comparison (a task it excels at), resulting in a well-suited task allocation.
-- The PC iterative refinement formula is concise and interpretable: the sigmoid of the foreground/background distance difference directly yields a membership probability.
-- Pearson correlation deduplication is a lightweight yet effective approach to redundancy removal.
-- The three-stage progressive design is hierarchically clear, with each stage having a well-defined and independently evaluable objective.
-- The zero-shot, training-free setting confers strong generalization capability and deployment flexibility.
+- Ingeniously switches the MLLM role from "localizer" to "judge," using self-supervised clustering for reliable localization and MLLM for easier pairwise comparisons.
+- The Part Composition (PC) refinement formula is elegant; the sigmoid of the distance difference directly represents foreground probability.
+- Pearson correlation serves as a lightweight and effective method for duplicate detection.
+- The three-stage progressive design is clear, with independently evaluable objectives for each stage.
+- Zero-shot and training-free characteristics ensure strong generalization and deployment flexibility.
 
 ## Limitations & Future Work
-- The pipeline relies on two large models (SAM and MLLM), incurring non-trivial inference overhead, particularly due to multiple MLLM calls in the SMS stage.
-- Leiden clustering and PC refinement assume foreground and background are separable in feature space, which may fail under extreme camouflage with near-zero feature contrast.
-- The Top-$K$ setting and number of iterations in pairwise MLLM comparison involve an efficiency–quality trade-off that requires tuning.
-- The impact of different self-supervised backbones (e.g., MAE, CLIP) on FOD performance is not explored.
-- The Pearson deduplication threshold $\tau = 0.95$ is fixed and not adaptively optimized.
+- High inference overhead due to the use of both SAM and MLLM (especially multiple MLLM calls in the SMS stage).
+- Relies on the assumption that foreground/background are separable in feature space; may fail in extreme camouflage with near-zero feature variance.
+- The trade-off between efficiency and quality in Top-K settings and MLLM iterations requires careful tuning.
+- Impact of different self-supervised backbones (e.g., MAE, CLIP) on FOD remains unexplored.
+- Fixed Pearson threshold $\tau=0.95$ could be improved via adaptive optimization.
 
 ## Related Work & Insights
-- **vs. GenSAM/LAKE-RED and other MLLM+SAM methods**: These methods rely on MLLM-generated prompts to guide SAM, making MLLM localization accuracy the bottleneck in camouflaged scenes. DSS replaces MLLM localization with FOD, addressing localization failure at its source.
-- **vs. fully supervised COS methods (e.g., SINet)**: Fully supervised methods depend on large amounts of pixel-level annotations and exhibit limited cross-domain generalization. Although DSS as a zero-shot method may not surpass fully supervised SOTA in accuracy, it offers clear advantages in generalizability and annotation cost.
-- **vs. general zero-shot segmentation methods (e.g., Matcher)**: General methods are not optimized for camouflaged scenes and perform poorly when foreground–background similarity is very high. The FOD module in DSS is specifically designed for camouflage scenarios, leveraging fine-grained patch-level feature clustering to overcome visual similarity.
+- **vs. GenSAM/LAKE-RED**: These methods rely on MLLM-generated prompts, which are the bottleneck in COS. DSS replaces MLLM localization with FOD to solve this at the source.
+- **vs. Supervised COS (e.g., SINet)**: Supervised methods provide high accuracy but are limited by annotation costs and domain shifts. DSS offers better generalization as a zero-shot method.
+- **vs. General Zero-shot Segmentation (e.g., Matcher)**: General methods lack optimization for camouflage and fail when similarity is high. DSS's FOD is specifically designed to break through visual similarity using fine-grained patch clustering.
 
-## Highlights & Insights (Extended)
-- **Idea**: The FOD clustering-and-iterative-refinement paradigm is transferable to other "difficult localization" scenarios, such as underwater object detection and nighttime target discovery.
-- **Idea**: The SMS heuristic scoring + MLLM pairwise comparison framework can serve as a general-purpose "mask quality selector" embedded in the post-processing stage of other segmentation pipelines.
-- **Idea**: The paradigm of repositioning the MLLM as a judge rather than a localizer is broadly applicable—large models can be similarly employed in their preferred role of comparison and judgment across other vision tasks.
-- DSS is complementary to unsupervised COS approaches such as EReCu: EReCu requires training but operates in a fully unsupervised setting, whereas DSS is entirely training-free but depends on SAM and an MLLM.
-- The energy convergence mechanism in PC can be combined with active inference to enable adaptive control over the depth of foreground discovery.
+## Related Work & Insights
+- **Key Idea**: The clustering + iterative refinement paradigm of FOD can be transferred to other difficult localization tasks like underwater detection or nocturnal object discovery.
+- **Key Idea**: The SMS combination of heuristic scoring and MLLM pairwise comparison could act as a general "mask quality selector" for post-processing in other segmentation pipelines.
+- **Key Idea**: Shifting large models to "judgment" roles rather than "execution" roles is a scalable strategy for other vision tasks.
+- Complements unsupervised COS schemes like EReCu: while EReCu requires training, DSS is entirely training-free but relies on foundation models like SAM and MLLM.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The three-stage pipeline design is novel, and the insight of repositioning the MLLM's role is valuable.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multiple COS benchmarks, ablation studies, and multi-instance analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ The three-stage naming is intuitive and the motivation is articulated clearly.
-- **Value**: ⭐⭐⭐⭐ The zero-shot pipeline design paradigm is highly referenceable; the FOD and SMS modules are modularly reusable.
+- **Novelty**: ⭐⭐⭐⭐ The three-stage pipeline and MLLM role transformation are high-value insights.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Extensive benchmarking across multiple datasets with specific multi-instance and ablation analyses.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and intuitive nomenclature for the three stages.
+- **Value**: ⭐⭐⭐⭐ The zero-shot pipeline paradigm and the modular FOD/SMS components are highly reusable.
 
 <!-- RELATED:START -->
 
@@ -124,11 +125,11 @@ The pipeline is entirely training-free and inference-only. Hyperparameters inclu
 
 ## Related Papers
 
-- [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
+- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
+- [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
+- [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
 - [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
-- [\[ICCV 2025\] ZIM: Zero-Shot Image Matting for Anything](../../ICCV2025/segmentation/zim_zero-shot_image_matting_for_anything.md)
-- [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](../../ICCV2025/segmentation/object-level_correlation_for_few-shot_segmentation.md)
-- [\[CVPR 2026\] SAP: Segment Any 4K Panorama](sap_segment_any_4k_panorama.md)
+- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
 
 </div>
 

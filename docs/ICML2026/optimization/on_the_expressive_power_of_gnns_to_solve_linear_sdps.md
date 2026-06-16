@@ -2,117 +2,127 @@
 title: >-
   [Paper Note] On the Expressive Power of GNNs to Solve Linear SDPs
 description: >-
-  [ICML 2026][Optimization][Semidefinite Programming] This paper characterizes the minimum GNN expressivity required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman hierarchy for the first t…
+  [ICML 2026][Optimization & Theory][Weisfeiler-Leman] This paper characterizes for the first time the minimum GNN expressive power required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman (WL) hierarchy. It proves that standard variable-constraint bipartite message passing (VC-WL) and higher-order VC-2-WL are insufficient. In contrast, the
 tags:
-  - "ICML 2026"
-  - "Optimization"
-  - "Semidefinite Programming"
-  - "GNN Expressivity"
-  - "Weisfeiler-Leman"
-  - "PDHG"
-  - "warm-start"
+  - ICML 2026
+  - Optimization & Theory
+  - Weisfeiler-Leman
+  - PDHG
+  - warm-start
 date: 2026-05-08
-content_hash: afb1233f6a77e399
+content_hash: 58f48163fddf16f2
 ---
-
 # On the Expressive Power of GNNs to Solve Linear SDPs
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.27786](https://arxiv.org/abs/2604.27786)  
-**Code**: Not disclosed  
+**Code**: Not available  
 **Area**: Optimization / Graph Neural Networks / Learning to Optimize  
-**Keywords**: Semidefinite Programming, GNN Expressivity, Weisfeiler-Leman, PDHG, warm-start
+**Keywords**: Semidefinite Programming, GNN Expressive Power, Weisfeiler-Leman, PDHG, warm-start
 
 ## TL;DR
-This paper characterizes the minimum GNN expressivity required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman hierarchy for the first time. It demonstrates that standard variable-constraint bipartite message passing (VC-WL) and higher-order VC-2-WL are insufficient, whereas the VC-2-FWL architecture, equivalent to 2-FWL, is sufficient to simulate the update steps of a PDHG solver. Using high-quality predictions as warm-starts on synthetic datasets and SDPLIB achieves speedups of up to approximately 80%.
+This paper characterizes for the first time the minimum GNN expressive power required to learn solutions for linear SDPs from the perspective of the Weisfeiler–Leman (WL) hierarchy. It proves that standard variable-constraint bipartite message passing (VC-WL) and higher-order VC-2-WL are insufficient. In contrast, the VC-2-FWL architecture, equivalent to 2-FWL, is shown to be sufficient for simulating the update steps of the PDHG solver. Using high-quality predictions as a warm-start on synthetic data and SDPLIB benchmarks results in speedups of up to approximately 80%.
 
 ## Background & Motivation
 
-**Background**: Learning to optimize (L2O) for Linear Programming (LP) and Mixed-Integer Linear Programming (MILP) using GNNs is relatively mature. The mainstream approach constructs a bipartite graph of constraints and variables and employs message passing equivalent to 1-WL (e.g., GNNs aligned with IPM/PDHG by Gasse et al.), which can approximate optimal solutions or significantly accelerate IPM on small-to-medium scale problems.
+**Background**: Applying GNNs to learn solutions (learning-to-optimize, L2O) for Linear Programming (LP) and Mixed-Integer Linear Programming (MILP) is relatively mature. The dominant approach constructs a bipartite graph of constraints and variables and employs message passing equivalent to 1-WL (e.g., GNNs aligned with IPM/PDHG by Gasse et al.). This approach can approximate optimal solutions or significantly accelerate IPM for small-to-medium-scale problems.
 
-**Limitations of Prior Work**: Directly applying the same logic to **Semidefinite Programming (SDP)** fails. The core variable in SDP is not a vector of components but an entire symmetric positive semidefinite matrix $X \in S^n_+$, where the entries $X_{ij}$ are equivariant under simultaneous row and column permutations. Traditional V-C bipartite graphs cannot represent this second-order symmetry, preventing GNNs from fitting the optimal solution regardless of training duration.
+**Limitations of Prior Work**: Directly applying the same logic to **Semidefinite Programming (SDP)** fails. The core variable in SDP is not a vector of components but an entire symmetric positive semidefinite matrix $X \in S^n_+$, where entries $X_{ij}$ are equivariant under simultaneous row and column permutations. Traditional Variable-Constraint (V-C) bipartite graphs cannot represent this second-order symmetry, preventing GNNs from fitting the optimal solution regardless of training duration.
 
-**Key Challenge**: Prior L2O literature has only investigated the expressivity thresholds for LP/QP/SOCP (where 1-WL often suffices), but the "constraint-variable-entry" structure of SDP constitutes a third-order tensor structure. The question of **which level of WL is sufficient to recover the optimal solution** remains unanswered, which has stalled the development of "neural SDP solvers."
+**Key Challenge**: While existing L2O literature defines the expressive power thresholds for LP/QP/SOCP (where 1-WL is mostly sufficient), the "Constraint-Variable-Entry" structure of SDP involves a third-order tensor structure. The question of **which level of WL is sufficient to recover the optimal solution** remains unanswered, which has stalled the development of "Neural SDP Solvers."
 
-**Goal**: 1) Formalize the minimum expressivity required for the mapping from SDP instances to the optimal matrix solution $X^*$; 2) Prove the impossibility of standard GNN-like architectures; 3) Propose a sufficient architecture and validate it experimentally; 4) Use predictions as warm-starts for classical solvers.
+**Goal**: 1) Formalize the minimum expressive power required for the mapping from an SDP instance to the optimal matrix solution $X^*$; 2) Prove the impossibility of standard GNN-like architectures; 3) Propose a sufficient architecture and validate it experimentally; 4) Utilize predictions as a warm-start for classical solvers.
 
-**Key Insight**: The SDP is formulated as a "hypergraph" composed of constraint matrices $A_k$, the objective matrix $C$, and the variable matrix $X$. By applying the hash updates of 1-WL/2-WL/2-FWL to this tensor graph, VC-WL, VC-2-WL, and VC-2-FWL are constructed respectively. Sufficiency is then proven by simulating the first-order solver PDHG—if a GNN can simulate one iteration of the solver, it can necessarily approximate the converged solution.
+**Key Insight**: The authors represent the SDP as a "hypergraph" composed of constraint matrices $A_k$, the objective matrix $C$, and the variable matrix $X$. By applying 1-WL/2-WL/2-FWL hash updates to this tensor graph, they construct VC-WL, VC-2-WL, and VC-2-FWL respectively. Sufficiency is proven by simulating the First-Order Solver PDHG—if a GNN can simulate a single iteration of the solver, it can necessarily approximate the converged solution.
 
-**Core Idea**: Standard message passing is replaced by "pairwise node joint aggregation" equivalent to 2-FWL, ensuring that the stable coloring of the GNN is finer than the trajectory partition under PDHG iterations, thereby establishing a sufficient condition for expressivity.
+**Core Idea**: By replacing standard message passing with "Pairwise Node Joint Aggregation" (equivalent to 2-FWL), the GNN's stable coloring becomes finer than the partition of trajectories under PDHG iterations, thereby satisfying the sufficient conditions for expressive power.
 
 ## Method
 
 ### Overall Architecture
-The input is an SDP instance $(C, \{A_k\}_{k=1}^m, \{b_k\}_{k=1}^m)$. The authors encode it as a **graph with two types of nodes**: variable nodes corresponding to the entries $(i,j) \in [n]\times[n]$ of the matrix $X$, and constraint nodes corresponding to each $A_k$. "Second-order interactions" between variable nodes are weighted by $A_{k,ij}$. After $T$ rounds of permutation-equivariant message passing, variable embeddings are decoded into a predicted matrix $\hat X$ and supervised against the unique minimum Frobenius norm optimal solution $X^*$ (proven unique in Proposition 1.1). Finally, $\hat X$ is utilized as a warm-start initial point for the PDHG solver to accelerate convergence.
+The input is an SDP instance $(C, \{A_k\}_{k=1}^m, \{b_k\}_{k=1}^m)$. The authors encode this into a **graph with two types of nodes**: variable nodes corresponding to the entries $(i,j) \in [n]\times[n]$ of the matrix $X$, and constraint nodes corresponding to each $A_k$. Interactions between variable nodes are weighted by $A_{k,ij}$. After $T$ rounds of permutation-equivariant message passing, the variable embeddings are decoded into a predicted matrix $\hat X$, which is supervised against the unique minimum Frobenius norm optimal solution $X^*$ (uniqueness proven in Proposition 1.1). Finally, $\hat X$ is used as the initial point for the PDHG solver to accelerate convergence.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["SDP Instance<br/>Obj C, Constraints A_k, b_k"] --> B["Encode as Bi-typed Graph<br/>Var Nodes (i,j) + Constr Nodes A_k, weighted by A_k,ij"]
+    B --> C{"Which level of WL?探索"}
+    C -->|"1-WL/2-WL Equivalent<br/>VC-WL, VC-2-WL"| X["Impossibility: Same color for isomorphic instances<br/>Cannot distinguish different optimal solutions"]
+    C -->|"2-FWL Equivalent"| D["VC-2-FWL: Pairwise joint aggregation<br/>T rounds, simulates PDHG iteration"]
+    D --> E["Decode predicted matrix X̂<br/>Supervised by min-norm X*"]
+    E --> F["Warm-start: X̂ as PDHG initial point"]
+    F --> G["PDHG converges to optimal solution<br/>Up to ~80% iteration reduction"]
+```
 
 ### Key Designs
 
-1.  **Impossibility Results (VC-WL / VC-2-WL are insufficient)**:
-    - **Function**: Defines "which GNNs definitely cannot learn SDPs."
-    - **Mechanism**: The authors construct a family of SDP instances that are structurally isomorphic but possess different optimal solutions. They prove that VC-WL (1-WL equivalent) yields identical node representations after stable coloring; thus, any GNN based on it must produce identical outputs, failing to distinguish different optimal solutions. This conclusion remains valid when extended to VC-2-WL (a variant of standard 2-WL).
-    - **Design Motivation**: This transfers the classic "WL identical colors $\Rightarrow$ GNN identical outputs" argument from GNN expressivity research to the SDP setting to provide a **clear lower bound**, warning against wasting computational resources on 1-WL-like architectures.
+**1. Impossibility Results: Defining Which GNNs Cannot Learn SDP**
 
-2.  **Sufficient Architecture VC-2-FWL (Simulating PDHG)**:
-    - **Function**: Provides a realizable architecture capable of learning the optimal solutions of linear SDPs.
-    - **Mechanism**: Colors are assigned to node pairs $(u,v)\in V^2$, with update rules following folklore 2-FWL: $c^t_{uv} := \text{hash}(c^{t-1}_{uv}, \{\!\{(c^{t-1}_{wv}, c^{t-1}_{uw}) \mid w\in V\}\!\})$. The key proof explicitly maps one iteration of PDHG (including matrix-matrix products and eigendecomposition structural information in PSD projection) to several hash steps of VC-2-FWL. Provided the embedding dimension is sufficient, updates of both dual and primal variables can be precisely simulated. This implies that the stable coloring of VC-2-FWL is finer than the state partition of the PDHG convergence trajectory.
-    - **Design Motivation**: Proving "convergence to the optimal solution" directly is difficult. Instead, proving "the ability to simulate a solver known to converge" is a standard L2O technique (the SDP version of the work on IPM by Qian et al.). This establishes VC-2-FWL as the **weakest known GNN architecture capable of solving SDPs**.
+To determine "how strong a GNN needs to be," the simplest starting point is excluding architectures that are insufficiently powerful. The authors construct a family of SDP instances that are structurally isomorphic but have different optimal solutions. They prove that VC-WL (1-WL equivalent) assigns identical node representations to isomorphic instances after stable coloring; thus, any GNN based on it must output the same results, failing to distinguish between different optima. The same conclusion holds for VC-2-WL (a variant of standard 2-WL). This argument follows the classic "WL same color $\Rightarrow$ GNN same output" template but is applied to the SDP setting for the first time, establishing a clear lower bound—effectively warning researchers not to waste compute on 1-WL/2-WL architectures.
 
-3.  **Warm-start Integration**:
-    - **Function**: Transitions learned predictions $\hat X$ into practical acceleration.
-    - **Mechanism**: After training, $\hat X$ is used as the initial point $X^{(0)}$ for PDHG, allowing the classical solver to begin closer to the optimum. The remaining optimization is handled by PDHG to ensure precision. This addresses the deployment issue where "GNN outputs may not be strictly feasible": feasibility and optimality are guaranteed by PDHG, while the GNN provides a high-quality starting point.
-    - **Design Motivation**: Pure neural solvers are unsuitable for high-precision scientific computing; warm-starting is the most robust paradigm for combining ML with traditional optimization, translating theoretical expressivity ($\hat X \approx X^*$) into "reduced wall-clock time" engineering benefits.
+**2. Sufficient Architecture VC-2-FWL: Simulating PDHG via Pairwise Aggregation**
+
+Having excluded weak architectures, the authors provide one that is demonstrably capable. VC-2-FWL assigns colors to node pairs $(u,v)\in V^2$ and updates them via folklore 2-FWL:
+
+$$c^t_{uv} := \text{hash}\big(c^{t-1}_{uv},\ \{\!\{(c^{t-1}_{wv},\, c^{t-1}_{uw}) \mid w\in V\}\!\}\big)$$
+
+The key to proving sufficiency is not approximating the optimal solution directly, but proving that "the GNN can simulate a solver known to converge to the optimal solution"—a standard L2O technique. Specifically, one iteration of PDHG (matrix-matrix products, structural information of eigenvalue decomposition in PSD projection) is explicitly mapped to several hash steps of VC-2-FWL. Provided the embedding dimension is large enough, updates for both primal and dual variables can be replicated exactly. This implies the stable coloring of VC-2-FWL is finer than the state partition of PDHG convergence trajectories, granting it the capability to fit the optimal solution. This makes it the weakest known GNN architecture capable of solving linear SDPs.
+
+**3. Warm-start Integration: Translating Expressive Power into Wall-clock Time**
+
+Pure neural solvers are often unsuitable for high-precision scientific computing because GNN outputs may not be strictly feasible. This work treats the trained prediction $\hat X$ as the initial point $X^{(0)}$ for PDHG. By starting the classical solver closer to the optimum, feasibility and optimality are still guaranteed by PDHG, while the GNN provides a superior starting point. This avoids the deployment difficulty of "infeasible outputs" and converts the theoretical $\hat X \approx X^*$ into a practical reduction in iteration count, representing a robust paradigm for combining ML with traditional optimization.
 
 ### Loss & Training
-The supervised objective is the Frobenius error between the predicted matrix and the minimum Frobenius norm optimal solution $\|\hat X - X^*\|_F$, with the objective gap $|\langle C, \hat X\rangle - \langle C, X^*\rangle|$ as an auxiliary metric. Training data consist of synthetic SDP instances (covering randomly generated symmetric matrix families) and various SDP types from SDPLIB (e.g., max-cut relaxation, $\theta$-function).
+The supervision objective is the Frobenius error between the predicted matrix and the minimum Frobenius norm optimal solution $\|\hat X - X^*\|_F$, supplemented by the objective gap $|\langle C, \hat X\rangle - \langle C, X^*\rangle|$ as an auxiliary metric. Training data consists of synthetic SDP instances (covering families of randomly generated symmetric matrices) and various SDP types from SDPLIB (e.g., max-cut relaxations, $\theta$-functions).
 
 ## Key Experimental Results
 
 ### Main Results
-On synthetic SDPs and multiple SDPLIB benchmarks, the VC-2-FWL architecture **consistently outperforms** theoretically weaker baselines such as VC-WL and VC-2-WL in both prediction error and objective gap.
+Across synthetic SDPs and multiple SDPLIB benchmarks, the VC-2-FWL architecture **consistently outperforms** theoretically weaker baselines like VC-WL and VC-2-WL in both prediction error and objective gap.
 
 | Setting | Metric | VC-WL | VC-2-WL | VC-2-FWL |
-| :--- | :--- | :--- | :--- | :--- |
+|------|------|------|------|------|
 | Synthetic SDP | $\|\hat X - X^*\|_F$ | Highest | Medium | Lowest |
 | SDPLIB | Objective Gap | Largest | Medium | Smallest |
-| Warm-start PDHG | Convergence Time Reduction | Minimal | Moderate | **Up to 80%** |
+| Warm-start PDHG | Convergence Time Reduction | Minimal | Average | **Up to 80%** |
 
 ### Ablation Study
 
 | Configuration | Key Phenomenon | Explanation |
-| :--- | :--- | :--- |
-| VC-WL (1-WL equivalent) | Highest fitting error; unable to distinguish certain instances | Validates Impossibility Theorem |
-| VC-2-WL (2-WL equivalent) | Better than VC-WL but still deviates from optimum | Standard 2-WL is insufficient |
-| VC-2-FWL (2-FWL equivalent) | Lowest error and smallest objective gap | Satisfies sufficiency |
+|------|---------|------|
+| VC-WL (1-WL eq.) | Highest fitting error; completely fails to distinguish some instances | Validates Impossibility Theorem |
+| VC-2-WL (2-WL eq.) | Better than VC-WL, but still deviates from optimum | Standard 2-WL is insufficient |
+| VC-2-FWL (2-FWL eq.) | Lowest error, smallest objective gap | Satisfies sufficiency |
 | Cold-start PDHG only | Baseline convergence time | Control group |
-| VC-2-FWL warm-start | Max convergence time reduction ~80% | Expressivity $\rightarrow$ Practical Acceleration |
+| VC-2-FWL warm-start | Max convergence time reduction ~80% | Expressive power → Practical speedup |
 
 ### Key Findings
-- The expressivity hierarchy strictly aligns with "actual fitting quality": The theoretical relationship VC-WL $\sqsubset$ VC-2-WL $\sqsubset$ VC-2-FWL translates to a strict decrease in prediction error on both synthetic and real benchmarks.
-- There is a clear leverage effect where "reducing GNN error slightly" results in "significantly fewer solver iterations"—as long as the prediction falls within the basin of attraction of the optimal solution, the remaining iterations for PDHG are drastically reduced.
-- Error mode analysis shows that VC-WL primarily fails on "highly symmetric constraint matrix families," which is the classic blind spot of 1-WL discriminative power, consistent with theoretical predictions.
+- Expressive power levels strictly align with "fitting quality": the theoretical hierarchy VC-WL $\sqsubset$ VC-2-WL $\sqsubset$ VC-2-FWL translates to a strict decrease in prediction error across both synthetic and real benchmarks.
+- There is a significant leverage effect when converting "GNN error reduction" into "solver iteration reduction"—as long as the prediction falls within the basin of attraction of the optimal solution, the remaining PDHG iterations decrease sharply.
+- Error pattern analysis shows that VC-WL primarily fails on "highly symmetric families of constraint matrices," which is exactly the classic blind spot of 1-WL's discriminative power, consistent with theoretical predictions.
 
 ## Highlights & Insights
-- **First characterization of SDP-GNN expressivity**: This work extends the established "WL hierarchy as GNN expressivity" framework from LP/QP to SDP, filling a major gap in L2O theory. This analysis template can be directly transferred to broader conic programming beyond SOCP.
-- **Elegant "solver simulation equals expressivity" paradigm**: Rather than proving direct convergence of $\hat X$, the authors prove the GNN can simulate one step of PDHG—converting the "optimal solution recovery" problem into a "discrete dynamical system simulation" problem, which is more tractable.
-- **Theory-guided architecture**: Future efforts to train neural SDP solvers can bypass the "trial-and-error" phase of 1-WL/2-WL architectures and start directly from 2-FWL-equivalent designs.
-- **Finite threshold upper bound**: Proving VC-2-FWL is "sufficient" does not imply it is "necessary," but impossibility results suggest 1-WL/2-WL are inadequate. The remaining gap (e.g., 3-WL?) presents an opportunity for future exploration.
+- **First characterization of SDP-GNN expressive power**: The work extends the mature framework of "WL hierarchy as GNN expressive power" from LP/QP to SDP, filling a significant gap in L2O theory. This analysis template can be directly migrated to broader conic programming beyond SOCP.
+- **Elegant "Simulation-based Sufficiency" paradigm**: Rather than proving convergence of $\hat X$ directly, the authors prove the GNN can simulate one step of PDHG. This transforms the "approximation of optimal solution" problem into a "simulation of a discrete dynamical system" problem, which is more tractable.
+- **Typical case of theory-guided architecture**: Future researchers aiming to train neural SDP solvers can bypass the failure mode of 1-WL/2-WL architectures and start directly with 2-FWL equivalent designs.
+- **Upper bound on finite threshold**: While proving VC-2-FWL is "sufficient" does not mean it is "necessary," the impossibility results imply 1-WL/2-WL are not enough, leaving an interesting gap (3-WL? 3-FWL?) for future exploration.
 
 ## Limitations & Future Work
-- Experiments were mainly conducted on synthetic data and medium-sized SDPLIB. **In actual large-scale SDPs (e.g., $n>10^4$ in combinatorial optimization), the memory cost of VC-2-FWL ($O(n^2)$ node pairs) explodes rapidly**, and a scalable implementation has yet to be provided.
-- Sufficiency proofs only address "linear SDP + unique minimum norm optimal solution," without covering non-unique solution sets, degenerate solutions, or semi-infinite SDPs.
-- Warm-start benefits depend on PDHG as the downstream solver; compatibility with more precise solvers like IPM or ADMM remains to be validated.
-- Future directions: Sparsification or subgraph sampling to scale VC-2-FWL, extending analysis to second-order cones or mixed-integer SDPs, and integration with modern low-rank SDP algorithms.
+- Experiments focused on synthetic data and medium-scale SDPLIB. **In large-scale SDPs (e.g., $n>10^4$ in combinatorial relaxations), the memory cost of VC-2-FWL ($O(n^2)$ node pairs) explodes**, and scalable implementations are not yet provided.
+- Sufficiency proofs are restricted to "linear SDPs with a unique minimum-norm optimal solution," leaving non-unique solution sets, degenerate solutions, and semi-infinite SDPs unaddressed.
+- Warm-start gains are dependent on PDHG as the downstream solver; compatibility with more precise solvers like IPM or ADMM remains to be verified.
+- Future directions: Sparsification or subgraph sampling to make VC-2-FWL scalable; extending analysis to second-order cone or mixed-integer SDPs; integration with modern low-rank SDP algorithms.
 
 ## Related Work & Insights
-- **vs Qian et al. (PDHG-GNN for LP)**: They proved that 1-WL-like GNNs suffice to simulate PDHG for LP; this paper proves SDP requires an upgrade to 2-FWL, revealing the correspondence between "cone dimension" and "WL level."
-- **vs Yau et al. (GNN for low-rank SDP relaxation of Max-CSP)**: While they analyzed GNNs as approximation algorithms for CSP, this paper targets general linear SDPs directly to study whether GNNs can recover the optimal matrix solution.
-- **vs Chen et al. (GNN expressivity for QP / SOCP)**: This work continues their research line of "WL hierarchy $\leftrightarrow$ convex optimization solution recovery," placing SDP precisely on the expressivity map.
+- **vs. Qian et al. (PDHG-GNN for LP)**: While they proved 1-WL GNNs are sufficient to simulate PDHG for LP, this work proves SDP requires a shift to 2-FWL, revealing a correspondence between "cone dimension" and "WL hierarchy."
+- **vs. Yau et al. (GNN for low-rank SDP relaxation of Max-CSP)**: While they analyzed GNNs as approximation algorithms for CSP, this work targets general linear SDPs directly to study whether GNNs can recover the optimal matrix solution.
+- **vs. Chen et al. (GNN for QP / SOCP Expressiveness)**: This work continues the research line of "WL Hierarchy $\leftrightarrow$ Convex Optimization Solution Recovery," placing SDP precisely on the expressive power map.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First work to link SDP solution recovery to WL levels.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers synthetic + SDPLIB, but lacks ultra-large-scale and multi-solver comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical sections are clear; warm-start engineering details could be more substantial.
-- Value: ⭐⭐⭐⭐ Benchmark significance for the "neural convex optimization" theory community; industrial application still requires scaling.
+- Novelty: ⭐⭐⭐⭐⭐ First to link SDP solution recovery to the WL hierarchy.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered synthetic and SDPLIB, though lacking ultra-large-scale and multi-solver comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Theory is clear; warm-start engineering details could be more substantial.
+- Value: ⭐⭐⭐⭐ A landmark for the "Neural Convex Optimization" theoretical community; industrial deployment requires scaling.
 
 <!-- RELATED:START -->
 
@@ -120,9 +130,9 @@ On synthetic SDPs and multiple SDPLIB benchmarks, the VC-2-FWL architecture **co
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](../../ICLR2026/optimization/learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
 - [\[ICML 2026\] Provably Data-Driven Lagrangian Relaxation for Mixed Integer Linear Programming](provably_data-driven_lagrangian_relaxation_for_mixed_integer_linear_programming.md)
+- [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](../../CVPR2026/optimization/the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
 - [\[ICML 2026\] Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic](distilling_linearized_behavior_into_non-linear_fine-tuning_for_effective_task_ar.md)
 - [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
 

@@ -1,72 +1,83 @@
 ---
 title: >-
-  [Paper Note] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching
+  [Paper Note] MoMa QL: 用矩匹配加速扩散/流匹配策略的离线 + 离线-在线 RL
 description: >-
-  [ICML 2026][Reinforcement Learning][Offline RL] MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few…
+  [ICML 2026][Reinforcement Learning][Flow Matching] MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few-step "marginal-preserving interpolation" sampler. It achieves a Gym normalized score of 95.5 on D4RL, significantly leading Diffusion-QL (87.9). Du
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Offline RL"
-  - "Diffusion Policy"
-  - "Flow Matching"
-  - "Maximum Mean Discrepancy"
-  - "Stochastic Interpolants"
-  - "Consistency Models"
+  - ICML 2026
+  - Reinforcement Learning
+  - Flow Matching
 date: 2026-05-08
-content_hash: 13fb533c7ad19c79
+content_hash: 96f8cbcc106803fb
 ---
-
 # MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.29033](https://arxiv.org/abs/2605.29033)  
-**Code**: Not yet public  
+**Code**: Not yet released  
 **Area**: Reinforcement Learning / Offline RL / Diffusion Policy  
-**Keywords**: Offline RL, Diffusion Policy, Flow Matching, Maximum Mean Discrepancy, Stochastic Interpolants, Consistency Models  
+**Keywords**: Offline RL, Diffusion Policy, Flow Matching, Maximum Mean Discrepancy, Stochastic Interpolants, Consistency Models
 
 ## TL;DR
-MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few-step "marginal-preserving interpolation" sampler. It achieves a leading average normalized Gym score of 95.5 on D4RL, comprehensively outperforming Diffusion-QL (87.9). Due to significantly faster sampling, it shows greater gains during offline-to-online fine-tuning compared to Consistency-AC and Diffusion-QL.
+MoMa QL replaces the standard BC loss with Maximum Mean Discrepancy (MMD), compressing the multi-step sampling of diffusion/flow matching policies into a single-step or few-step "marginal-preserving interpolation" sampler. It achieves a Gym normalized score of 95.5 on D4RL, significantly leading Diffusion-QL (87.9). Due to much faster sampling, it shows greater gains in offline-to-online fine-tuning compared to Consistency AC and Diffusion-QL.
 
 ## Background & Motivation
 
-**Background**: Offline RL aims to learn an optimal strategy from static datasets. The challenge lies in unreliable value estimation for OOD actions and increasingly complex multimodal behavior distributions. Limited expressivity in GMMs or VAEs has led to the adoption of generative policies (Diffusion-QL, IDQL, FQL), which excel at representing arbitrary multimodal behaviors.
+**Background**: Offline RL aims to learn an optimal policy from static datasets. The difficulty lies in unreliable value estimation for OOD actions and increasingly complex multi-modal behavior distributions. Generative policies based on diffusion or flow matching (Diffusion-QL, IDQL, FQL) have become mainstream as they can represent arbitrary multi-modal behaviors more effectively than GMMs or VAEs.
 
-**Limitations of Prior Work**: Sampling from diffusion/flow matching policies is iterative—inference requires dozens to hundreds of denoising steps. For actor-critic training in offline RL, each actor update requires online sampling of actions to input into the critic, causing training costs to explode. More critically, online rollouts in the offline-to-online stage require step-by-step sampling, where sampling latency severely hinders diffusion policies in real environments.
+**Limitations of Prior Work**: Sampling in diffusion/flow matching policies is iterative—inference requires dozens to hundreds of denoising steps. For actor-critic training in offline RL, every actor update requires online sampling of actions to input into the critic; iterative sampling leads to explosive training costs. More critically, during the offline-to-online phase, online rollouts require sampling at almost every time step, causing diffusion policies to be bottlenecked by sampling latency in real environments.
 
-**Key Challenge**: There is a natural conflict between expressivity (multi-step iteration) and computational efficiency (single-step sampling). Consistency models suggest a solution (learning a "any time $\to$ clean sample" mapping), but they primarily focus on distillation and are difficult to learn jointly with critic signals within an actor-critic framework.
+**Key Challenge**: There is a natural conflict between expressivity (multi-step iteration) and computational efficiency (single-step sampling). While consistency models offer a solution (learning a mapping from "any time → clean sample"), they are primarily for distillation and are difficult to train jointly with critic signals within an actor-critic framework.
 
-**Goal**: To find a sampler $p^\theta_{s|t}(\mathbf{x}|\mathbf{x}_t)$ that can jump from any time $t$ in a diffusion trajectory to any earlier time $s$ in one step, while being directly optimizable via the critic's Q-signal and maintaining training stability.
+**Goal**: To find a sampler $p^\theta_{s|t}(\mathbf{x}|\mathbf{x}_t)$ that can jump from any time $t$ in a diffusion trajectory to any earlier time $s$ in a single step, while being directly optimizable by the critic's Q-signal with training stability.
 
-**Key Insight**: Align the "target distribution the sampler aims to approximate" with the "intermediate distribution of the diffusion process" using MMD. MMD is a distance measure based on RKHS that implicitly captures all moments in the feature space. It is more stable than single-moment constraints (like the log-likelihood in BC) and more friendly to generative models than likelihood-based constraints such as KL/JS.
+**Key Insight**: Align the "target distribution the sampler aims to approximate" with the "intermediate distribution of the diffusion process" using MMD. MMD is a distribution distance based on RKHS that implicitly captures all orders of moments in the feature space. It is more stable than single-moment constraints (like BC log-likelihood) and more friendly to generative models than likelihood-based constraints like KL/JS.
 
-**Core Idea**: Replace the BC loss in the BRAC framework with the MMD between marginal distributions $p^{\theta^-}_{s|r}$ and $p^\theta_{s|t}$ for different intermediate steps $r<s<t$. This allows the policy to learn one-step denoising from any noise level to any cleaner level. Combined with Q-loss for synchronous critic training, the process functions as a hybrid of consistency training and actor-critic.
+**Core Idea**: Replace the BC loss in the BRAC framework with the "MMD between the marginal distributions $p^{\theta^-}_{s|r}$ and $p^\theta_{s|t}$ originating from two different intermediate steps $r<s<t$." This allows the policy to learn to denoise from any noise level to any cleaner level in a single step, while training the critic synchronously with Q-loss. This process functions as a hybrid of consistency training and actor-critic.
 
 ## Method
 
 ### Overall Architecture
 
-Built upon a dual Q-learning structure within BRAC: the critic uses classic TD($\lambda=0$) + double Q, while the actor consists of two components: (1) Q-loss: recursively generates actions $\mathbf{a}^\pi$ from a prior using the learned sampler and inputs them into the critic to maximize $-\eta Q$; (2) BC-loss: utilizes MMD consistency constraints to ensure sampler self-consistency across different intermediate time steps. The sampling phase follows a DDIM-style recursion: starting from $\mathbf{a}_N \sim \mathcal{N}(0,\sigma_d^2 I)$, the learned $f_\theta(t_{i-1}, t_i, \mathbf{a}_{t_i})$ is called at each step to jump to the next time step.
+Built on BRAC as a dual Q-learning framework: the critic uses classic TD($\lambda=0$) + double Q, while the actor includes two components—(1) Q-loss: recursively generating actions $\mathbf{a}^\pi$ from a prior using the learned sampler and feeding them into the critic for $-\eta Q$; (2) BC-loss: utilizing MMD consistency constraints to make the sampler self-consistent across different intermediate time steps. The sampling stage directly follows a DDIM-style recursion: starting from $\mathbf{a}_N \sim \mathcal{N}(0,\sigma_d^2 I)$, the learned $f_\theta(t_{i-1}, t_i, \mathbf{a}_{t_i})$ is called at each step to jump to the next time step. The training is a loop of "sampling batch → critic update → actor update (both losses share the same sampler) → EMA target update." Few-step sampling makes this loop efficient and prevents online rollouts from being stalled by sampling latency.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Offline Dataset D: Sample batch (s, a, r, s′)"] --> B["Dual Q Critic Update<br/>TD error + min(Q₁,Q₂) to mitigate overestimation"]
+    B --> C
+    subgraph ACT["Actor Update: Total Loss L_π = −η·Q_φ + L_D"]
+        direction TB
+        C["Marginal-preserving single-step sampler f_θ<br/>Recursive denoising from prior noise"]
+        C --> D["Q-loss: Use sampled action a^π to take −η·Q_φ(s, a^π)<br/>Push policy towards high-value actions"]
+        C --> E["MMD Self-consistency Loss L_D<br/>Align denoising distributions of short and long jumps (Replacing BC)"]
+    end
+    D --> F["EMA Target Network Update<br/>θ^T, φ^T ← α·old + (1−α)·new"]
+    E --> F
+    F -->|Loop until convergence| A
+```
 
 ### Key Designs
 
-1.  **Marginal-Preserving Stochastic Interpolant + Cross-time One-step Sampler**:
-    - **Function**: Transitions the diffusion process from "step-by-step denoising" to a learnable mapping that jumps from any intermediate time $t$ to any earlier time $s$.
-    - **Mechanism**: Defines marginal interpolants $q_t(\mathbf{x}_t) = \iint q_t(\mathbf{x}_t|\mathbf{x}, \boldsymbol{\varepsilon}) q(\mathbf{x}) p(\boldsymbol{\varepsilon}) d\mathbf{x} d\boldsymbol{\varepsilon}$ and conditions $q_{s|t}(\mathbf{x}_s|\mathbf{x}, \mathbf{x}_t) = \mathcal{N}(I_{s|t}(\mathbf{x}, \mathbf{x}_t), \gamma^2_{s|t} I)$ based on stochastic interpolants. It requires "marginal preservation"—for any $s \le t$, $q_s = \iint q_{s|t} q_t(\mathbf{x}|\mathbf{x}_t) q_t(\mathbf{x}_t) d\mathbf{x}_t d\mathbf{x}$. The model learns an implicit sampler $p^\theta_{s|t}(\mathbf{x}|\mathbf{x}_t) = \delta(\mathbf{x} - G_\theta(\mathbf{x}_t, s, t))$, which predicts a clean sample $\tilde{\mathbf{x}}$ given $\mathbf{x}_t$, followed by DDIM interpolation to obtain $\tilde{\mathbf{x}}_s$.
-    - **Design Motivation**: Traditional diffusion/flow matching only learns $t \to t-1$ mappings, making multi-step sampling expensive. Learning an "any $t \to s$ mapping" is equivalent to learning a consistency model. By using a marginal-preserving framework within stochastic interpolants, this method naturally supports both single-step and multi-step inference modes, adapting to different compute budgets in online/offline scenarios.
+**1. Marginal-preserving Stochastic Interpolants + Cross-time Single-step Sampler: Changing Diffusion from "Step-by-step Denoising" to "Single-step Jump from any $t$ to any earlier $s$"**
 
-2.  **MMD Self-Consistency Loss**:
-    - **Function**: Replaces log-likelihood/KL constraints in BC to provide a stable training signal with high-order moment alignment for the sampler.
-    - **Mechanism**: Directly matching $q_s(\mathbf{x}_s)$ and $p^\theta_{s|t}(\mathbf{x}_s)$ is unstable when $t$ and $s$ are far apart. Borrowing from consistency training, a middle time $r$ ($s < r < t$) is introduced, and the loss $\mathcal{L}_D(\theta) = \mathbb{E}_{s,r,t}[\mathrm{MMD}^2(p^{\theta^-}_{s|r}(\mathbf{x}_s), p^\theta_{s|t}(\mathbf{x}_s))]$ is used to self-consistently bridge "short jumps" and "long jumps." The RBF kernel $k(x,y) = e^{-\|x-y\|^2 / (2\sigma^2)}$ is characteristic and implicitly captures all moments, being more robust than log-likelihood. MMD is calculated using an unbiased estimator, requiring no density estimation.
-    - **Design Motivation**: (1) High-order moment matching accurately captures multimodal behavior, unlike Gaussian-likelihood BC which only matches the first moment. (2) MMD is sample-based and density-free, naturally compatible with implicit generative models like diffusion. (3) The self-consistency form is homologous to consistency models; theoretically, CM is a special case of this framework as $r \to s$.
+Traditional diffusion/flow matching only learns $t\to t-1$ mapping, leading to high multi-step sampling costs. MoMa QL defines marginal interpolants $q_t(\mathbf{x}_t)=\iint q_t(\mathbf{x}_t|\mathbf{x},\boldsymbol{\varepsilon})q(\mathbf{x})p(\boldsymbol{\varepsilon})d\mathbf{x}d\boldsymbol{\varepsilon}$ and condition $q_{s|t}(\mathbf{x}_s|\mathbf{x},\mathbf{x}_t)=\mathcal{N}(I_{s|t}(\mathbf{x},\mathbf{x}_t),\gamma^2_{s|t}I)$ based on stochastic interpolants, requiring "marginal preservation"—where for any $s\le t$, $q_s=\iint q_{s|t}q_t(\mathbf{x}|\mathbf{x}_t)q_t(\mathbf{x}_t)d\mathbf{x}_t d\mathbf{x}$. The model learns an implicit sampler $p^\theta_{s|t}(\mathbf{x}|\mathbf{x}_t)=\delta(\mathbf{x}-G_\theta(\mathbf{x}_t,s,t))$: given $\mathbf{x}_t$, it directly predicts a clean sample $\tilde{\mathbf{x}}$, then applies DDIM interpolation to obtain $\tilde{\mathbf{x}}_s$. This is equivalent to learning a consistency model, but under the unified perspective of stochastic interpolants, both single-step and multi-step inference modes are naturally supported. Offline training can use multi-step to preserve expressivity, while online rollouts switch to single-step for acceleration.
 
-3.  **Consistency Induction + Dual Q for Overestimation Mitigation**:
-    - **Function**: Jointly trains for "short-jump consistency" and "stable Q-estimation."
-    - **Mechanism**: The critic uses dual Q from TD3+BC: $\mathcal{L}(\phi) = \mathbb{E}[(\,r + \gamma \min_{i \in \{1,2\}} Q_{\phi^T_i}(\mathbf{s}', \mathbf{a}') - Q_{\phi_i}(\mathbf{s}, \mathbf{a}))^2]$, where $\mathbf{a}' \sim \pi_{\theta^T}(\cdot|\mathbf{s}')$ is sampled via the actor's inference algorithm. The actor uses an EMA target $\theta^T \leftarrow \alpha\theta^T + (1-\alpha)\theta$. The target $\theta^-$ is a stop-gradient EMA policy, providing a stable reference for the MMD consistency constraint.
-    - **Design Motivation**: During actor training, actions $\mathbf{a}^\pi$ must be sampled frequently. If sampling requires 100 steps, a single actor update requires 100 forward passes. This framework significantly reduces this overhead through few-step sampling, allowing the "actor update + critic update" cycle to converge within a reasonable timeframe.
+**2. MMD Self-consistency Loss: Replacing Likelihood Constraints of BC with Maximum Mean Discrepancy for Stable, Higher-order Moment Alignment**
+
+BC using Gaussian log-likelihood only matches first-order moments, failing to characterize multi-modal behaviors in offline data. Directly matching $q_s(\mathbf{x}_s)$ and $p^\theta_{s|t}(\mathbf{x}_s)$ is unstable—when $t$ and $s$ are far apart, the difference between $q_t$ and $q_s$ is large and hard to estimate. Borrowing from consistency training, the authors introduce an intermediate time $r$ ($s<r<t$) and enforce self-consistency by minimizing the distance between "short jumps" and "long jumps":
+
+$$\mathcal{L}_D(\theta)=\mathbb{E}_{s,r,t}\big[\mathrm{MMD}^2(p^{\theta^-}_{s|r}(\mathbf{x}_s),\,p^\theta_{s|t}(\mathbf{x}_s))\big].$$
+
+Using the RBF kernel $k(x,y)=e^{-\|x-y\|^2/(2\sigma^2)}$ (which is characteristic and implicitly captures all orders of moments) with the unbiased estimator by Gretton et al., density estimation is avoided. This choice offers three benefits: higher-order moment matching characterizes multi-modal behaviors accurately, the sample-based nature is compatible with implicit generative models like diffusion, and the self-consistency form shares roots with consistency models—the paper proves in the Appendix that CM is a special case of this framework at the $r\to s$ limit.
+
+**3. Consistency Induction + Dual Q Overestimation Mitigation: Jointly Training "Short-jump Consistency" and "Stable Q Estimation"**
+
+Every actor update requires sampling actions $\mathbf{a}^\pi$ for the critic. If sampling takes 100 steps, a single update requires 100 network forward passes; this framework reduces this overhead by one or two orders of magnitude through few-step sampling. The critic uses classic TD3+BC dual Q $\mathcal{L}(\phi)=\mathbb{E}[(r+\gamma\min_{i\in\{1,2\}}Q_{\phi^T_i}(\mathbf{s}',\mathbf{a}')-Q_{\phi_i}(\mathbf{s},\mathbf{a}))^2]$ to mitigate overestimation, where $\mathbf{a}'\sim\pi_{\theta^T}(\cdot|\mathbf{s}')$ is sampled by the actor's inference algorithm. The actor's target $\theta^-$ is an EMA stop-gradient policy providing a stable reference for the MMD consistency constraint, with the target network updated as $\theta^T\leftarrow\alpha\theta^T+(1-\alpha)\theta$. Few-step sampling allows "actor update + critic update" to converge within a reasonable time, which is key to enabling diffusion policies for offline-to-online fine-tuning.
 
 ### Loss & Training
 
-The total actor loss is $\mathcal{L}_\pi(\theta) = -\eta \mathbb{E}[Q_\phi(\mathbf{s}, \mathbf{a}^\pi)] + \mathcal{L}_D(\theta)$, where $\mathbf{a}^\pi$ is generated by recursively calling $f_\theta(t_{i-1}, t_i, \mathbf{a}_{t_i})$. $\eta$ controls the trade-off between the Q-signal and MMD consistency. The critic follows standard dual Q TD learning. The training loop progresses through critic updates, actor updates, and EMA target updates, synchronized as in BRAC.
+The total actor loss is $\mathcal{L}_\pi(\theta) = -\eta \mathbb{E}[Q_\phi(\mathbf{s}, \mathbf{a}^\pi)] + \mathcal{L}_D(\theta)$, where $\mathbf{a}^\pi$ is generated by recursively calling $f_\theta(t_{i-1}, t_i, \mathbf{a}_{t_i})$ as per Algorithm 2. $\eta$ controls the trade-off between the Q-signal and MMD consistency. The critic is standard dual Q TD. The overall training loop includes critic updates → actor updates → EMA target updates, synchronized with BRAC.
 
 ## Key Experimental Results
 
@@ -79,9 +90,9 @@ The total actor loss is $\mathcal{L}_\pi(\theta) = -\eta \mathbb{E}[Q_\phi(\math
 | Adroit (12 tasks) | 48.3 | — | — | — | 53.4 | — | 42.9 | **56.7** |
 | Kitchen (3 tasks) | — | — | — | 48.2 | 53.3 | 69.0 | 45.3 | **73.1** |
 
-On Gym BC, Ours improves by 1.18× over Diffusion-BC (76.3) and 1.73× over vanilla BC (51.9). On Gym Offline RL, Ours improves by 1.09× over Diffusion-QL (87.9), with a 14% lead in HalfCheetah and 8.5% in Walker2D. Performance on Adroit matches or slightly exceeds ReBRAC (55.4), ranking first on the door task (38.5).
+On Gym BC, it shows a 1.18× improvement over Diffusion-BC (76.3) and 1.73× over vanilla BC (51.9). On Gym Offline RL, it improves by 1.09× over Diffusion-QL (87.9), leading by 14% on HalfCheetah and 8.5% on Walker2D. On Adroit, it slightly outperforms ReBRAC (55.4) and ranks first in the door task (38.5).
 
-### Offline-to-Online Fine-tuning
+### Key Experimental Results (Offline-to-Online Fine-tuning on Gym)
 
 | Task | Offline Score | Online Score | Gain |
 |------|-------|-------|------|
@@ -90,42 +101,42 @@ On Gym BC, Ours improves by 1.18× over Diffusion-BC (76.3) and 1.73× over vani
 | Walker2d-m | 95.6 | 99.1 | +3.5 |
 | HalfCheetah-mr | 63.3 | 80.9 | +17.6 |
 
-The largest improvement is seen in medium-replay tasks (HalfCheetah-mr +28% relative), confirming the causal chain: "fast sampling $\to$ efficient online interaction $\to$ more thorough fine-tuning."
+The largest improvement occurs in medium-replay tasks (HalfCheetah-mr +28% relative), validating the causal chain: "Fast sampling → efficient online interaction → more thorough fine-tuning."
 
 ### Key Findings
 
-- **Multimodal Behavior Capture**: MoMa QL shows the greatest relative advantage on medium-replay data (the most multimodal). Walker2d-mr leads the strongest baseline by 1.26×, and HalfCheetah-m leads by 1.44×, validating the advantage of MMD high-order moment matching for multimodal distributions.
-- **Trading Sampling Efficiency for Online Capability**: Diffusion-QL is strong offline but often suffers from performance degradation during online fine-tuning due to slow sampling. MoMa QL's single-step sampling makes online interaction nearly as fast as Gaussian policies, allowing "continuous growth" during the offline-to-online transition.
-- **Anomaly on Hopper-me**: MoMa QL achieved 67.9 while BC-based baselines reached 100+. This suggests that on data already near optimal, overly strong high-order moment matching might turn the MMD self-consistency constraint into noise interference; this represents a trade-off in actor signal design.
-- **Discriminative vs. Generative**: On Adroit, ReBRAC is slightly stronger on expert datasets, but MoMa QL is more stable in settings with varied data quality, indicating its advantage lies in "covering multimodal behavior distributions" rather than "pure expert imitation."
+- **Multimodal Behavior Capture**: MoMa QL shows the greatest relative advantage on medium-replay (most multi-modal) data, leading the strongest baseline by 1.26× on walker2d-mr and 1.44× on halfcheetah-m, verifying the advantage of MMD higher-order moment matching for multi-modal distributions.
+- **Trading Sampling Efficiency for Online Capability**: Diffusion-QL performs strongly in the offline phase but often suffers from performance degradation during online fine-tuning due to slow sampling. MoMa QL's single-step sampling makes online interaction almost as fast as Gaussian policies, allowing offline-to-online performance to maintain a "continuous upward" trend.
+- **Anomaly on hopper-me**: MoMa QL scored 67.9 while BC-based baselines were at 100+. This suggests that on data already close to optimal behavior, excessively strong higher-order moment matching turns MMD self-consistency into noise. This is a trade-off in actor signal design.
+- **Discriminative vs. Generative**: On Adroit, ReBRAC is slightly stronger on expert datasets, but MoMa QL is more stable in settings with mixed data quality, indicating its advantage lies more in "covering multi-modal behavior distributions" than "pure expert imitation."
 
 ## Highlights & Insights
 
-- **MMD as a Tool-Object Match**: The high-order moment properties of MMD precisely address the needs of multimodal behavior distributions in offline RL, while its sample-based nature aligns with implicit generative models like diffusion. This "natural fit" makes the method's selling point more than just performance numbers—it is a paradigm alignment.
-- **Fusion of Consistency Training and Actor-Critic**: Previously, consistency models were mainly used for unsupervised accelerated sampling. This work integrates them into the Q-learning loop and proves CM is a special case, providing a unified path for "accelerating generative policies = consistency distillation + RL signal joint training."
-- **Flexibility of Marginal-Preserving Interpolation**: This enables switching between single-step and multi-step sampling within a unified framework—multi-step for expressivity during offline training, and single-step for speed during online rollouts. This decoupling of "precise training, fast inference" is very deployment-friendly.
-- **Stability from Kernel Functions**: The boundedness of the RBF kernel and the non-negativity of MMD prevent the actor loss from exploding. Compared to the numerical issues of KL-based positive/negative infinity, it is better suited for RL scenarios where rewards fluctuate across orders of magnitude.
+- **MMD as a Dual Match for Tools and Objects**: The higher-order moment properties of MMD align perfectly with the multi-modal requirements of offline RL, while its sample-based nature aligns with implicit generative models like diffusion. This "natural fit" makes the methodology more than just performance numbers; it is a paradigmatic alignment.
+- **Unification of Consistency Training and Actor-Critic**: Previously, consistency models were mainly used for unsupervised accelerated sampling. This paper incorporates them into the Q-learning training loop and proves CM is a special case, providing a unified path for "accelerating generative policies = consistency distillation + RL signal joint training."
+- **Flexibility of Marginal-preserving Interpolation**: Supports switching between single-step and multi-step sampling within a unified framework—using multi-step during offline training to ensure expressivity and switching to single-step for online rollout acceleration. This decoupling of "accurate training vs. fast inference" is very deployment-friendly.
+- **Stability from Kernel Functions rather than Hyperparameter Tuning**: The boundedness of the RBF kernel and the non-negativity of MMD ensure the actor loss does not explode. Compared to the numerical issues of KL-divergence (positive/negative infinity), it is better suited for RL scenarios where rewards fluctuate across orders of magnitude.
 
 ## Limitations & Future Work
 
-- **Dependence on Kernel Selection**: Experiments primarily use RBF with adaptive bandwidth, but kernel choice significantly affects MMD performance. The optimal kernel may vary by task, a strategy not deeply discussed.
-- **Q-Signal vs. MMD Trade-off**: The hyperparameter $\eta$ controls the balance between Q and MMD. The appendix shows sensitivity to this value; the anomaly in hopper-me may be a side effect of $\eta$ lacking adaptive scaling on expert data.
-- **MMD Estimation Variance**: Sample-based MMD has high variance with small batches, which might require larger batches or more complex unbiased estimators for high-dimensional action tasks (e.g., robotics).
-- **Asymptotic Theoretical Convergence**: The conclusion that CM is a special case as $r \to s$ requires more refined discretization error analysis under finite step sizes.
+- **Dependence on MMD Kernel**: Experiments primarily use RBF with adaptive bandwidth, but the choice of kernel significantly affects MMD performance. Optimal kernels might vary by task, and the paper does not deeply discuss kernel selection strategies.
+- **Trade-off between Q-signal and MMD**: Hyperparameter $\eta$ controls the balance between Q-dominance and MMD-dominance; the appendix indicates sensitivity to this value. The anomaly on hopper-me might be a side effect of $\eta$ not scaling adaptively on expert data.
+- **Variance of MMD Estimation**: Sample-based MMD has high variance with small batches, which might require larger batches or more complex unbiased estimators for high-dimensional action tasks (e.g., robotics). Experiments were focused on medium dimensions.
+- **Asymptotic Theoretical Convergence**: The conclusion that CM is a special case at the $r \to s$ limit requires more detailed discretization error analysis for finite step sizes.
 
 ## Related Work & Insights
 
-- **vs. Diffusion-QL / IDQL**: These use full multi-step diffusion sampling, offering high expressivity but high training/online costs. MoMa QL uses MMD consistency to compress sampling to single/few steps, often with better performance.
-- **vs. Consistency-AC / FQL**: Also target accelerated generative policies—CAC uses CM distillation and FQL uses flow matching distillation, but both separate "acceleration" from the "RL signal." This work joins them in a single MMD self-consistency loss, achieving superior training efficiency and final performance.
-- **vs. QGPO / EDP / QIPO**: Energy-guided diffusion treats the RL objective as reward weighting. Ours follows an "explicit multi-step distribution matching" route, which does not rely on energy importance sampling and is more stable during training.
-- **Inspiration**: This three-part approach (marginal-preserving interpolation + MMD consistency + task loss) can be applied to any scenario requiring "iterative multi-step generation + task signals," such as robotic control, text generation RL, or visual agents.
+- **vs. Diffusion-QL / IDQL**: These use full multi-step diffusion sampling, providing high expressivity but at high training/online costs. MoMa QL uses MMD consistency to compress sampling to single or few steps, leading to better performance.
+- **vs. Consistency-AC / FQL**: Also aiming to accelerate generative policies—CAC uses CM distillation and FQL uses flow matching distillation, but they separate "acceleration" from "RL signal." This paper jointly trains both within an MMD self-consistency loss, achieving superior training efficiency and final performance.
+- **vs. QGPO / EDP / QIPO**: Energy-guided diffusion treats RL objectives as reward weighting. This paper follows the "explicit multi-step distribution matching" route, which does not rely on energy importance sampling and is more stable during training.
+- **Insight**: For any scenario requiring "multi-step iterative generation + task signals" (robotics control, text generation RL, visual agents), this three-part formula of "marginal-preserving interpolation + MMD consistency + task loss" can be applied.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Unifying MMD, consistency training, and actor-critic via stochastic interpolants is a novel paradigm synthesis. The proof regarding CM as a special case is a theoretical contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers three major D4RL suites, offline/offline-to-online transitions, and matches up against strong baselines. Ablations on kernels and $\eta$ are slightly lean.
-- **Writing Quality**: ⭐⭐⭐⭐ Derivations are clear with a complete notation system. The correspondence between "training-inference" in Algorithms 1 and 2 is slightly compressed and requires some attention to follow.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a practical solution to the deployment bottleneck (slow online rollouts) of diffusion-based policies. Leads the D4RL boards and the method is transferable to other generative RL scenarios.
+- Novelty: ⭐⭐⭐⭐ Unifying MMD, consistency training, and actor-critic via stochastic interpolants is a novel paradigmatic synthesis, and the proof of CM as a special case provides theoretical value.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers three major D4RL suites, offline, and offline-to-online with multiple strong baselines; however, ablation on kernel functions and $\eta$ is slightly thin.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivations and complete notation. The correspondence between Algorithm 1 and Algorithm 2 is somewhat condensed in the main text and requires the appendix for full clarity.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical solution for the deployment bottlenecks of diffusion policies (slow online rollouts), leads the D4RL leaderboard, and the methodology is transferable to other generative RL scenarios.
 
 <!-- RELATED:START -->
 
@@ -133,11 +144,11 @@ The largest improvement is seen in medium-replay tasks (HalfCheetah-mr +28% rela
 
 ## Related Papers
 
-- [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](adaptive_bandit_algorithms_for_contextual_matching_markets.md)
-- [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICLR2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](../../ICLR2026/reinforcement_learning/reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
+- [\[ICML 2026\] RL-SPH: Learning to Achieve Feasible Solutions for Integer Linear Programs](rl-sph_learning_to_achieve_feasible_solutions_for_integer_linear_programs.md)
+- [\[ICML 2026\] MFPO: 用 Few-step MeanFlow Policy 把 MaxEnt RL 跑到接近 Gaussian policy 的速度](mean_flow_policy_optimization.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](../../AAAI2026/reinforcement_learning/chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
+- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](../../ICLR2026/reinforcement_learning/transitive_rl_value_learning_via_divide_and_conquer.md)
 
 </div>
 

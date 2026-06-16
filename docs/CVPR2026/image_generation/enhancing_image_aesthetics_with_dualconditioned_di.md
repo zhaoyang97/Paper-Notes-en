@@ -2,129 +2,146 @@
 title: >-
   [Paper Note] Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception
 description: >-
-  [CVPR 2026][Image Generation][Image Aesthetic Enhancement] DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour maps + text). I…
+  [CVPR 2026][Image Generation][ControlNet] DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour + text). It constructs an "imperfectly-paired" dataset IIAEData for weakly-supervised training with a dual-branch framework, achieving content-consistent enhancement with a 1
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Image Aesthetic Enhancement"
-  - "Multimodal Aesthetic Perception"
-  - "Weakly Supervised Diffusion Models"
-  - "Imperfectly Paired Data"
-  - "ControlNet"
+  - CVPR 2026
+  - Image Generation
+  - ControlNet
 date: 2026-05-08
-content_hash: baeedf73f54bb6f1
+content_hash: f8fbea6ee860018a
 ---
-
 # Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception
 
 **Conference**: CVPR 2026  
 **arXiv**: [2603.11556](https://arxiv.org/abs/2603.11556)  
 **Code**: None  
 **Area**: Image Generation / Image Aesthetic Enhancement  
-**Keywords**: Image Aesthetic Enhancement, Multimodal Aesthetic Perception, Weakly Supervised Diffusion Models, Imperfectly Paired Data, ControlNet
+**Keywords**: Image Aesthetic Enhancement, Multimodal Aesthetic Perception, Weakly-supervised Diffusion Models, Imperfectly-paired Data, ControlNet
 
 ## TL;DR
 
-DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour maps + text). It constructs a "imperfectly paired" dataset, IIAEData, and utilizes a dual-branch supervision framework for weakly supervised training, achieving content-consistent aesthetic enhancement with a 17.4% improvement in LAION aesthetic scores.
+DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour + text). It constructs an "imperfectly-paired" dataset IIAEData for weakly-supervised training with a dual-branch framework, achieving content-consistent enhancement with a 17.4% LAION aesthetic score improvement.
 
 ## Background & Motivation
 
-**Background**: Image aesthetic enhancement requires models to possess aesthetic perception capabilities to identify deficiencies in color, composition, and lighting for corresponding editing. While diffusion models have succeeded in image editing, existing methods focus on semantic editing and lack aesthetic perception.
+**Background**: Image aesthetic enhancement requires models to possess aesthetic perception to identify deficiencies in color, composition, and lighting for targeted editing. While diffusion models have succeeded in semantic image editing, existing methods lack aesthetic awareness.
 
-**Limitations of Prior Work**: (1) **Difficulty in understanding aesthetic instructions**—evaluations like "low saturation" or "rule of thirds" are highly abstract, and simple text encoders cannot translate them into generative directions; (2) **Lack of training data**—enhancement requires "perfectly paired" images with identical content but different aesthetic quality, which is extremely costly to annotate.
+**Limitations of Prior Work**: (1) **Difficulty in understanding aesthetic instructions**—evaluations like "low saturation" or "rule-of-thirds composition" are highly abstract, making it difficult for simple text encoders to translate them into generation directions; (2) **Lack of training data**—aesthetic enhancement requires "perfectly-paired" images with consistent content but different aesthetic quality, which are extremely costly to annotate.
 
-**Key Challenge**: Aesthetics is a high-level human visual capability influenced by culture and experience, lacking paired data for supervised learning. Artificial degradations (blur, noise) in quality assessment datasets reflect technical quality rather than aesthetics.
+**Key Challenge**: Aesthetics is a high-level human visual capability influenced by culture and experience. Furthermore, there is a lack of paired data for supervised learning. Traditional image quality assessment datasets focus on artificial degradations (blur, noise) rather than aesthetics.
 
-**Goal**: (1) Enable diffusion models to understand and execute vague aesthetic instructions; (2) Train aesthetic enhancement models without perfectly paired data.
+**Goal**: (1) Enable diffusion models to understand and execute vague aesthetic instructions; (2) Train aesthetic enhancement models without perfectly-paired data.
 
-**Key Insight**: Decomposing aesthetic perception into color and structure dimensions, using HSV color maps and HED contour maps as visual representations combined with text descriptions. For data, weakly supervised training is conducted using "imperfectly paired" images with same semantics but different aesthetics.
+**Key Insight**: Aesthetic perception is decomposed into color and structure dimensions, represented by HSV color maps and HED contour maps, respectively. These, combined with text descriptions, form multimodal control signals. For data, "imperfectly-paired" images with similar semantics but different aesthetic quality are used for weak supervision.
 
-**Core Idea**: Materialize vague aesthetic instructions using multimodal visual representations (HSV + contour) and achieve weakly supervised enhancement using "imperfectly paired" data with a dual-branch supervision framework.
+**Core Idea**: Reify vague instructions through multimodal visual representations (HSV + contour) and achieve weakly-supervised enhancement using "imperfectly-paired" data with a dual-branch supervision framework.
 
 ## Method
 
 ### Overall Architecture
 
-Three main components: (1) IIAEData construction—pairing high/low quality images from datasets like AVA/TAD66K using LLaVA for semantic matching and UNIAA-LLaVA for aesthetic text generation; (2) MAP Multimodal Aesthetic Perception—converting aesthetic evaluations into HSV maps + contour maps + text control signals injected via ControlNet; (3) Dual-branch supervision framework—input images supervise semantics (early denoising), while reference images supervise aesthetics (throughout), enabling weakly supervised training.
+DIAE addresses the challenge of enabling diffusion models to understand abstract aesthetic evaluations like "low saturation" and "rule-of-thirds" to enhance images without altering content. The pipeline consists of three layers: offline construction of an "imperfectly-paired" dataset IIAEData by matching high/low-quality images from existing benchmarks; a MAP module that translates aesthetic evaluations into HSV, HED, and text control signals injected via ControlNet; and a dual-branch supervision framework where the input image maintains semantics and the reference image guides aesthetics.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Imperfectly-paired Dataset IIAEData"]
+        direction TB
+        A["High/Low MOS Sources<br/>AVA·TAD66K·KonIQ·FLICKR"] --> B["LLaVA Caption + Semantic Pairing<br/>UNIAA Aesthetic Text + Expert Review → 47.5K Pairs"]
+    end
+    DATA --> C["Low Aesthetic Input + Aesthetic Evaluation Text"]
+    subgraph MAP["Multimodal Aesthetic Perception MAP"]
+        direction TB
+        D["HSV Color Map + HED Contour Map<br/>Dual CNN Visual Features"]
+        E["CLIP Text Feature Extraction"]
+    end
+    C --> MAP
+    MAP --> F["Combined Control cond<br/>Injected via ControlNet into UNet"]
+    subgraph SUP["Dual-Branch Supervision"]
+        direction TB
+        G["Input Image Semantic Supervision L_inp<br/>Late Stage t ≤ t_s Locating Content"]
+        H["Ref Image Full Aesthetic Supervision L_ref"]
+    end
+    F --> SUP
+    SUP --> I["Content-Consistent Aesthetic Enhancement"]
+```
 
 ### Key Designs
 
-1. **Multimodal Aesthetic Perception (MAP)**:
+**1. Imperfectly-paired Dataset (IIAEData): Weak supervision signals from existing data**
 
-    - **Function**: Converts vague aesthetic instructions into explicit control signals understandable by the diffusion model.
-    - **Mechanism**: Splits aesthetic evaluation into color attributes (saturation, lighting) and structural attributes (focus, composition). Color attributes use HSV maps (more intuitive for color perception than RGB), and structural attributes use HED contour maps to emphasize focus/composition. Two CNN branches $\Phi_i$ extract visual features $F_{col}^I, F_{str}^I$, while a CLIP text encoder extracts $F_{col}^T, F_{str}^T$. These are combined into control signals $\{cond_h, cond_c\}$ for UNet via ControlNet.
-    - **Design Motivation**: Abstract aesthetic text is hard for simple encoders to parse, but HSV and contour maps are intuitive representations of aesthetic attributes. Both lose some semantic info, which is supplemented by text.
+Ideal training data consists of "perfect pairs" where only aesthetic attributes differ. Since these are unavailable, IIAEData selects high-MOS images as references and low-MOS images as inputs from AVA, TAD66K, etc. LLaVA-13b generates captions for semantic matching, ensuring pairs have "similar content but different aesthetics." UNIAA-LLaVA generates standardized aesthetic evaluations, followed by expert review to filter mismatches, resulting in 47.5K samples (45K training, 1.5K testing).
 
-2. **Imperfectly Paired Dataset (IIAEData)**:
+**2. Multimodal Aesthetic Perception (MAP): Translating abstract text into visual signals**
 
-    - **Function**: Builds an aesthetic enhancement dataset for weakly supervised training.
-    - **Mechanism**: Selects high MOS images as references and low MOS images as inputs from AVA, TAD66K, etc. (excluding median scores). LLaVA-13b matches pairs based on captions. UNIAA-LLaVA generates standardized aesthetic text. Experts filter incorrect pairs. Result: 47.5K samples (45K training + 1.5K testing).
-    - **Design Motivation**: Perfect pairs are nearly impossible to obtain. Imperfect pairs provide "semantic-consistent but aesthetic-different" signals sufficient for weakly supervised learning.
+Vague terms like "low saturation" are difficult for text encoders to ground. MAP decomposes aesthetic evaluations into color (saturation, illumination) and structure (focus, composition). Color is represented via HSV maps (closer to human perception), and structure via HED contours. Dual CNN branches $\Phi_i$ extract visual features $F_{col}^I, F_{str}^I$, while a CLIP text encoder extracts $F_{col}^T, F_{str}^T$. These are combined into $\{cond_h, cond_c\}$. Multimodal signals compensate for the info loss in individual representations.
 
-3. **Dual-Branch Supervision Framework**:
+**3. Dual-Branch Supervision Framework: Safe use of inconsistent reference images**
 
-    - **Function**: Solves training issues when input and reference image contents are inconsistent.
-    - **Mechanism**: Leverages frequency stratification in diffusion denoising—early steps build semantics, later steps create aesthetic attributes. Given threshold $t_s$ (default 900), steps $t \leq t_s$ use input image for semantic consistency $L_{inp}$, while the high-MOS reference image supervises aesthetic attributes $L_{ref}$ throughout. Total loss $L = L_{ref} + \lambda L_{inp}$.
-    - **Design Motivation**: Using inconsistent reference images as the sole supervision causes content drift. The dual-branch design maintains input semantics while learning reference aesthetics.
+Imperfectly-paired reference images may cause content drift if used for full supervision. Leveraging the frequency-hierarchy of diffusion (semantics at early stages, details at late stages), a threshold $t_s$ (default 900) is used. For $t \leq t_s$, the input image supervises semantic consistency $L_{inp}$. The high-MOS reference image supervises aesthetic attributes $L_{ref}$ throughout. The total loss is:
+
+$$L = L_{ref} + \lambda L_{inp}$$
+
+This decouples "content" and "aesthetics" along the time axis, allowing the model to learn aesthetics from the reference without losing the input's content.
 
 ### Loss & Training
 
-Based on SD-v1.5; UNet and ControlNet are trainable, CLIP text encoder is frozen. $t_s=900$, AdamW optimizer, learning rate 1e-5, trained on 4×A800 for 100K iterations.
+Based on SD-v1.5, UNet and ControlNet are trainable, while the CLIP text encoder is frozen. $t_s=900$. AdamW optimizer with learning rate 1e-5. Trained on 4×A800 for 100K iterations.
 
-## Main Experiments
+## Key Experimental Results
 
 ### Main Results
 
-| Method | LAION Score (256) | LAION Score (512) | MLLM Score (256) | MLLM Score (512) | CLIP-I (256) | CLIP-I (512) |
+| Method | LAION (256) | LAION (512) | MLLM (256) | MLLM (512) | CLIP-I (256) | CLIP-I (512) |
 |------|-------------|-------------|------------|------------|----------|----------|
-| Original Image | 4.962 | 5.123 | 3.243 | 3.300 | 1.000 | 1.000 |
+| Original | 4.962 | 5.123 | 3.243 | 3.300 | 1.000 | 1.000 |
 | ControlNet | 4.979 | 5.522 | 3.271 | 3.415 | 0.628 | 0.617 |
 | InstructPix2Pix | 4.991 | 5.396 | 3.264 | 3.325 | 0.764 | 0.690 |
 | MGIE | 4.947 | 5.519 | 3.045 | 3.411 | 0.557 | 0.770 |
 | DOODL | 5.102 | 5.140 | 3.255 | 3.297 | 0.775 | 0.703 |
-| **Ours (DIAE)** | **5.324** | **6.012** | **3.339** | **3.662** | **0.772** | **0.784** |
+| **DIAE (Ours)** | **5.324** | **6.012** | **3.339** | **3.662** | **0.772** | **0.784** |
 
 ### Ablation Study
 
-| Configuration | LAION Score | MLLM Score | CLIP-I | Note |
+| Config | LAION Score | MLLM Score | CLIP-I | Description |
 |------|----------|---------|--------|------|
-| DIAE (w/o v) | 5.250 | 3.343 | 0.623 | Removed visual modality (degrades to ControlNet) |
-| DIAE (w/o t) | 5.428 | 3.410 | 0.792 | Removed text modality |
-| DIAE (Full) | 5.668 | 3.501 | 0.778 | Text + Visual |
+| DIAE (w/o v) | 5.250 | 3.343 | 0.623 | No visual modality (ControlNet-like) |
+| DIAE (w/o t) | 5.428 | 3.410 | 0.792 | No text modality |
+| **DIAE (Full)** | **5.668** | **3.501** | **0.778** | Text + Visual |
 
 ### Key Findings
 
-- At 512 resolution, DIAE's LAION score improved by 17.4% (5.123→6.012) and MLLM score by 11.0%, while CLIP-I remained at 0.784, indicating content preservation.
-- Improvement is most significant for low-aesthetic quality images (MOS < 4.0), effectively correcting color and lighting flaws.
-- Removing visual modalities caused CLIP-I to drop to 0.623, highlighting that HSV/contour maps are critical for content consistency.
-- A larger $t_s$ retains more input semantics—this parameter provides explicit control over content preservation vs. aesthetic enhancement.
+- Gain: LAION score improved by 17.4% (5.123→6.012) and MLLM score by 11.0% at 512 resolution, with CLIP-I maintained at 0.784.
+- Most significant improvements observed in low-aesthetic cases (MOS < 4.0), specifically in color and brightness correction.
+- Removing visual modality dropped CLIP-I to 0.623, indicating HSV/contour maps are vital for content consistency.
+- Increasing $t_s$ retains more input semantics, offering explicit control over the content-enhancement trade-off.
 
 ## Highlights & Insights
 
-- **Decomposing aesthetic perception into color + structure**: Using HSV maps for color and contour maps for composition ground abstract aesthetic concepts into concrete visual signals. This approach can be transferred to other tasks needing materialization of abstract controls.
-- **Clever weakly supervised strategy**: Utilizing the frequency stratification of the denoising process to apply different supervision signals at different timesteps essentially decouples "content" and "style" in the time dimension.
-- **IIAEData construction**: Using existing aesthetic datasets + LLM semantic matching to build weakly paired data is low-cost and scalable, providing a template for tasks lacking paired data.
+- **Decomposition of aesthetics into color and structure**: By mapping abstract concepts to HSV and contour maps, the model grounds vague instructions in concrete visual signals, a strategy transferable to other abstract attribute control tasks.
+- **Clever weak-supervision strategy**: Using the frequency layering of the diffusion denoising process to apply different supervision signals at different time steps effectively decouples content and style.
+- **IIAEData construction logic**: Leveraging existing datasets with LLM-based semantic matching provides a low-cost, scalable paradigm for tasks lacking perfectly-paired data.
 
 ## Limitations & Future Work
 
-- Portrait/crowd scenes are not covered—facial features and poses are key aesthetic factors but were excluded.
-- Based on SD-v1.5 rather than newer models (e.g., SD3.5), limiting generative capacity.
-- Quality of IIAEData depends on LLaVA's matching accuracy; mismatch issues may exist.
-- Aesthetic evaluation is limited to color and structure, missing micro-attributes like texture or lighting gradients.
-- $t_s$ is fixed; adaptive adjustment might be needed for different images.
+- Portrait and crowd scenes are not covered (facial/postural aesthetics excluded during data filtering).
+- Built on SD-v1.5; generation capacity is limited compared to newer models like SD3.5.
+- "Imperfect pairing" in IIAEData depends on LLaVA matching accuracy; potential for mismatches exists.
+- Aesthetic evaluation is limited to two dimensions; micro-attributes like texture and complex lighting gradients are missing.
+- $t_s$ is a fixed scalar rather than being adaptively adjusted per image.
 
 ## Related Work & Insights
 
-- **vs InstructPix2Pix**: IP2P focuses on semantic editing; it lacks aesthetic understanding and shows limited results on aesthetic tasks.
-- **vs DOODL**: DOODL uses aesthetic classifier gradients during sampling but only changes the overall score without correcting specific attributes.
-- **vs ControlNet**: ControlNet provides structural control but lacks aesthetic semantic understanding; DIAE adds aesthetic perception capabilities on top of it.
+- **vs InstructPix2Pix**: IP2P focuses on semantic editing and lacks specific aesthetic understanding.
+- **vs DOODL**: DOODL uses aesthetic classifier gradients for guidance during sampling but does not address specific aesthetic attributes.
+- **vs ControlNet**: ControlNet provides structural control but lacks aesthetic semantic awareness; DIAE adds aesthetic perception on top of its architecture.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The combination of multimodal aesthetic perception + weakly supervised paired data + dual-branch training is novel, though individual components are technically standard.
-- **Experimental Thoroughness**: ⭐⭐⭐ Lacks user studies; CLIP-I does not fully reflect human perception of content consistency; ablation is not deep enough.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear problem definition, smooth motivation derivation, and rich charts.
-- **Value**: ⭐⭐⭐⭐ Aesthetic enhancement is a practical task, and the weakly supervised data construction idea has generalizable value.
+- Novelty: ⭐⭐⭐⭐ Combination of multimodal perception and dual-branch weak supervision is novel, though individual components are established.
+- Experimental Thoroughness: ⭐⭐⭐ Lacks user studies; CLIP-I may not fully capture human-perceived consistency.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and logical motivation.
+- Value: ⭐⭐⭐⭐ Addresses a practical demand with a scalable weak-supervision data strategy.
 
 <!-- RELATED:START -->
 
@@ -133,10 +150,10 @@ Based on SD-v1.5; UNet and ControlNet are trainable, CLIP text encoder is frozen
 ## Related Papers
 
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
-- [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](../../ICLR2026/image_generation/dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
+- [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
+- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
+- [\[CVPR 2026\] Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features](diffusion-based_makeup_transfer_with_facial_region-aware_makeup_features.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 
 </div>
 

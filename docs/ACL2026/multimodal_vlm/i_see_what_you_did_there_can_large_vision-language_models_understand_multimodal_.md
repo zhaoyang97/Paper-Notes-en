@@ -2,85 +2,86 @@
 title: >-
   [Paper Note] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?
 description: >-
-  [ACL 2026][Multimodal VLM][Multimodal puns] This paper introduces MultiPun—the first multimodal pun benchmark featuring "adversarial non-pun distractors" (445 puns + 890 non-puns…
+  [ACL 2026][Multimodal VLM][MultiPun benchmark] Ours proposes MultiPun—the first multimodal pun benchmark with "adversarial non-pun distractors" (445 puns + 890 non-puns, covering homophonic and homographic types). Systematic evaluation of 11 VLMs across detection, localization, and explanation tasks reveals that **all models tend to treat non-puns as puns** (TNR ge
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Multimodal puns"
-  - "Homophonic/Homographic puns"
-  - "VLM evaluation"
-  - "MultiPun benchmark"
-  - "Pun-CoT"
+  - ACL 2026
+  - Multimodal VLM
+  - MultiPun benchmark
+  - Pun-CoT
 date: 2026-05-08
-content_hash: df081d16ff9afc79
+content_hash: 447c15efcd425023
 ---
-
 # "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.05930](https://arxiv.org/abs/2604.05930)  
-**Code**: TBD (Not explicitly provided in the paper)  
-**Area**: Multimodal VLM Evaluation / Humor Understanding / Puns  
-**Keywords**: Multimodal puns, Homophonic/Homographic puns, VLM evaluation, MultiPun benchmark, Pun-CoT
+**Code**: TBD (not explicitly provided in the paper)  
+**Area**: Multimodal VLM Evaluation / Humor Understanding / Pun  
+**Keywords**: Multimodal Puns, Homophonic/Homographic Puns, VLM Evaluation, MultiPun benchmark, Pun-CoT
 
 ## TL;DR
-This paper introduces MultiPun—the first multimodal pun benchmark featuring "adversarial non-pun distractors" (445 puns + 890 non-puns, covering both homophonic and homographic types). By systematically evaluating 11 VLMs on pun detection, localization, and explanation, the study finds that **all models tend to misidentify non-puns as puns** (TNR generally < 0.4). The authors propose a Pun-CoT prompting strategy and a Pun-Tuning fine-tuning strategy, achieving an average F1 improvement of 16.5%.
+Ours proposes MultiPun—the first multimodal pun benchmark with "adversarial non-pun distractors" (445 puns + 890 non-puns, covering homophonic and homographic types). Systematic evaluation of 11 VLMs across detection, localization, and explanation tasks reveals that **all models tend to treat non-puns as puns** (TNR generally < 0.4). Ours introduces the Pun-CoT prompting strategy and Pun-Tuning fine-tuning strategy, achieving an average F1 improvement of 16.5%.
 
 ## Background & Motivation
 
-**Background**: A pun is a rhetorical device that creates humor by exploiting polysemy (homography) or homophones (homophony). While textual pun detection, localization, and generation have been well-studied since SemEval-2017 Task 7, multimodal pun research (where image and text simultaneously carry literal and figurative meanings) remains a gap, despite recent evaluations of memes, sarcasm, and comics.
+**Background**: Puns are rhetorical devices that create humor through polysemy (homographic) or homophones (homophonic), serving as classic subjects in linguistics and computational humor. Textual pun detection, localization, and generation have been well-studied since SemEval-2017 Task 7. Recently, multimodal evaluations for memes, irony, cartoons, and Chinese pun rebuses have emerged, but multimodal puns (where image + text simultaneously carry literal + figurative meanings) remain unexplored.
 
-**Limitations of Prior Work**: The authors identify three critical deficiencies:
-- **Unimodal confinement**: Prior pun research is almost exclusively text-based, ignoring the core role of visual modalities in creating ambiguity.
-- **Deficiencies in benchmarks**: Existing multimodal pun datasets lack negative samples (non-puns), making it impossible to verify whether a model truly understands puns or simply labels any "humorous scene" as a pun.
-- **Conflation of preference and comprehension**: Current evaluations only ask "Is this a pun?", failing to distinguish true reasoning from affirmative language bias.
+**Limitations of Prior Work**: The authors identify three critical flaws:
+- **Unimodal confinement**: Previous pun research is almost exclusively text-based, ignoring the pivot role of visual modality in creating ambiguity.
+- **Deficiencies in benchmarks**: Existing sparse multimodal pun datasets lack negative non-pun samples, failing to verify whether models truly understand the pun mechanism or simply label "funny scenes" as puns.
+- **Conflation of preference and comprehension**: Current evaluations only ask "Is this a pun?", failing to ask the reverse "Is this not a pun?", which prevents distinguishing genuine reasoning from the model's affirmative language bias.
 
-**Key Challenge**: Puns require **cross-modal reasoning** (aligning the quadruple of visual object $S_p$ + textual literal $w_p$ + implicit semantics $w_a$ + figurative action $S_a$). However, the superficial pattern of "image + text = humor" is so common in VLM training data that models easily overfit to surface cues, treating any "anthropomorphic fruit" image as a pun.
+**Key Challenge**: Puns require **cross-modal reasoning** (aligning the quadruple: visual object $S_p$ + textual literal $w_p$ + hidden semantics $w_a$ + figurative action $S_a$). Superficial patterns like "image + text = humor" are common in VLM training data, leading models to overfit surface cues and categorize any "anthropomorphic fruit" image as a pun.
 
-**Goal**: (1) Construct a multimodal pun benchmark with negative samples; (2) Design an evaluation protocol that distinguishes "comprehension" from "response bias"; (3) Provide effective enhancement solutions.
+**Goal**: (1) Construct a multimodal pun benchmark with negative samples; (2) Design an evaluation protocol to distinguish comprehension from sycophancy; (3) Provide effective enhancement solutions.
 
-**Key Insight**: Puns are formalized as a quadruple $\mathcal{P} = \langle w_p, w_a, S_p, S_a \rangle$. Two types of adversarial negative samples are created—Explicative Substitution (ES) and Random Substitution (RS)—to force models to differentiate between "cross-modal synergy" and "lack of synergy."
+**Key Insight**: Formalize the pun as a quadruple $\mathcal{P} = \langle w_p, w_a, S_p, S_a \rangle$ and construct two types of adversarial negative samples (ES replaces the pun with a direct description; RS replaces entities randomly) to force models to differentiate between "cross-modal synergy" and "lack of synergy."
 
-**Core Idea**: Use adversarial negatives to expose the over-interpretation tendency of VLMs, then address it through the dual approach of Pun-CoT (visual grounding + lexical anchoring + cross-modal verification) and Pun-Tuning (SFT using data containing non-puns).
+**Core Idea**: Expose the over-interpretation tendency of VLMs using adversarial negatives, then address it via both Pun-CoT (visual grounding + lexical anchoring + cross-modal verification) and Pun-Tuning (SFT with data containing non-puns).
 
 ## Method
 
 ### Overall Architecture
-MultiPun is a suite consisting of a benchmark, an evaluation protocol, and enhancement methods:
+MultiPun establishes a closed loop of benchmark + evaluation protocol + enhancement methods. A 4-step pipeline generates data with adversarial negatives, followed by a bi-directional prompt protocol to decouple genuine understanding from "sycophancy." Finally, improvement paths are provided for both inference (Pun-CoT) and training (Pun-Tuning).
 
-1.  **Data Construction Pipeline** (4 steps):
-    -   Step 1 **Pun Tuples Generation**: For homophonic puns, the CMU dictionary is used to find homophones, followed by five filters (Zipf frequency, WordNet senses, visualizability, etc.). For homographic puns, WordNet is used for polysemy, requiring senses to be in different lexical files with path similarity < 0.1 to avoid metonymy.
-    -   Step 2 **Positive Sample Generation**: GPT-4o generates (caption, image description, pun explanation) based on the pun tuple. GPT-image-1 generates images, followed by manual filtering and embedding-based deduplication.
-    -   Step 3 **Negative Sample Generation**: Each pun is paired with two adversarial non-puns: ES (Explicative Substitution, replacing $w_p$ with a direct description of $S_a$) and RS (Random Substitution, replacing $w_p$ with an irrelevant entity and regenerating the image).
-    -   Step 4 **Evaluation Tasks**: Detection (binary classification) / Localization (identifying $w_p$ and $w_a$) / Explanation (providing the complete quadruple + explanation).
-2.  **Evaluation Protocol**: Each question is asked twice—biased-to-pun ("Is this a pun?") and biased-to-non-pun ("Is this not a pun?"). Prompt-induced bias is measured using $\Delta$TPR/$\Delta$TNR, and consistency is measured using Cohen's Kappa $\kappa$. This identifies true understanding versus following the prompt.
-3.  **Enhancement Methods**: Pun-CoT (a three-step reasoning constraint) and Pun-Tuning (fine-tuning on MultiPun data).
+The data pipeline first generates pun quadruples $\mathcal{P}=\langle w_p, w_a, S_p, S_a\rangle$: homophonic puns use the CMU dictionary to find homophone pairs, filtered through Zipf frequency, WordNet senses, visual depictability, and morphology; homographic puns use WordNet to find polysemous words requiring senses to fall in different lexical files with path similarity < 0.1 to avoid metonymy. GPT-4o then generates (caption, image description, pun explanation), and GPT-image-1 generates images, followed by manual and embedding-based deduplication. Each positive sample is paired with two adversarial non-puns. Evaluation spans three tasks: Detection, Localization, and Explanation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pun Sources<br/>Homophonic(CMU + 5 filters) / Homographic(WordNet Polysemy, low similarity)"] --> B["Pun Quadruple ⟨w_p, w_a, S_p, S_a⟩"]
+    B --> C["GPT-4o writes caption/desc/explanation<br/>GPT-image-1 Image Gen → Manual+Embedding Deduplication"]
+    C --> D["Adversarial Non-pun Construction<br/>ES(Language only) + RS(Image+Language)"]
+    D --> E["Three Task Categories<br/>Detection / Localization / Explanation"]
+    E --> F["Bi-directional Prompt + Δ/κ Eval<br/>Ask both directions to expose sycophancy"]
+    F -->|Inference| G["Pun-CoT<br/>Visual Grounding → Lexical Anchoring → Cross-Modal Verification"]
+    F -->|Training| H["Pun-Tuning<br/>SFT with non-puns"]
+```
 
 ### Key Designs
 
-1.  **Adversarial Non-Pun Construction (ES + RS Strategies)**:
-    -   **Function**: Generates negative samples that are superficially similar but lack the pun mechanism, targeting the "anthropomorphic fruit = pun" superficial mode.
-    -   **Mechanism**: ES replaces $w_p$ in the caption with a direct description of $S_a$ (e.g., "We make a great pear" → "We make a great couple") while keeping the image constant, breaking the phonetic bridge. RS replaces $w_p$ with an irrelevant entity and redraws the image, breaking the entire pun quadruple. Both maintain scene coherence but sever the pun mechanism.
-    -   **Design Motivation**: Random image-text pairs are too easy to distinguish. Adversarial negatives force the model to judge whether the phonetic or semantic bridge actually exists.
+**1. Adversarial non-pun construction (ES + RS strategies): Creating traps where mechanisms are broken but surfaces look similar.**
 
-2.  **Biased Prompting + $\Delta$ / $\kappa$ Evaluation**:
-    -   **Function**: Separates true reasoning from compliance with prompt wording, revealing alignment-induced sycophancy.
-    -   **Mechanism**: Asking twice with different biases allows calculating the shift $\Delta$. A large $|\Delta|$ indicates that model decisions rely heavily on prompt wording rather than content.
-    -   **Design Motivation**: LLaVA-V1.6-Vicuna-13B's $\Delta$TPR = $-0.923$ reveals it treats "is not a pun" as a command to answer "no," regardless of the content.
+Existing multimodal pun datasets lack negative samples; models often shout "pun" whenever they see "anthropomorphic fruit + funny scene." MultiPun pairs each pun with two adversarial negatives. ES (Explicative Substitution) replaces $w_p$ in the caption with a direct description of $S_a$ (e.g., "We make a great pear" $\rightarrow$ "We make a great couple"), keeping the image constant but removing the phonetic bridge. RS (Random Substitution) replaces $w_p$ with an irrelevant entity and redraws the image (e.g., pears $\rightarrow$ apples), breaking the entire quadruple. 
 
-3.  **Pun-CoT: Visual Grounding + Lexical Anchoring + Cross-Modal Verification**:
-    -   **Function**: Forces a three-step check—image observation, word extraction, and bridge verification—to mitigate four types of hallucinations.
-    -   **Mechanism**: Step 1 (Visual Grounding) avoids visual object hallucinations. Step 2 (Lexical Anchoring) prevents hallucinating "pun words" not present in the caption. Step 3 (Cross-Modal Verification) checks for valid phonetic or semantic bridges to reject forced associations.
-    -   **Design Motivation**: Error analysis (§4.1) identified 4 hallucination categories; Pun-CoT steps are designed to address each one specifically.
+Both strategies retain scene coherence, so the shortcut of "text-image mismatch = non-pun" fails. Models must truly judge if the "phonetic or semantic bridge" holds. Comparing ES and RS allows localizing model failures to either the "linguistic" or "visual" level.
+
+**2. Bi-directional biased prompt + $\Delta$ / $\kappa$ evaluation: Separating reasoning from sycophancy.**
+
+Asking only "Is this a pun?" cannot distinguish comprehension from affirmative bias. MultiPun asks about the same sample twice: one inducing a pun answer ("Is this a pun?") and one inducing a non-pun answer ("Is this not a pun?"). The difference in TPR/TNR ($\Delta$) and Cohen’s Kappa ($\kappa$) are calculated. A larger $|\Delta|$ indicates that the decision relies more on prompt wording than content. This protocol exposes sycophancy in models like LLaVA-V1.6-Vicuna-13B, which has a $\Delta$TPR $\approx -0.923$, effectively interpreting "is not a pun" as a command to answer "no."
+
+**3. Pun-CoT: Visual Grounding $\rightarrow$ Lexical Anchoring $\rightarrow$ Cross-Modal Verification.**
+
+Error analysis (§4.1) categorizes VLM failures into 4 hallucinations: Pun word, Phonetic, Semantic, and Visual object. Pun-CoT uses a target-driven three-step check: Step 1 Visual Grounding forces the model to describe specific objects (fixing visual object hallucinations); Step 2 Lexical Anchoring extracts the literal $w_p$ from the caption (fixing pun word hallucinations); Step 3 Cross-Modal Verification checks for a valid phonetic or semantic bridge and explicitly rejects "forced association" (fixing phonetic/semantic hallucinations).
 
 ### Loss & Training
--   **Benchmark Construction**: Unsupervised generation with human-in-the-loop quality control.
--   **Pun-Tuning** (Model-level): SFT using MultiPun data following three principles: (i) inclusion of non-puns to suppress hallucinations; (ii) high-quality explanation samples; (iii) inclusion of both pun-biased and non-pun-biased prompt pairs to mitigate sycophancy.
--   **Evaluation**: 11 VLMs evaluated, using LLM-as-judge for explanation quality.
+- **Benchmark Construction**: Unsupervised generation + manual in-the-loop QC.
+- **Pun-Tuning** (model-level): SFT using MultiPun data with three principles: (i) include non-puns to suppress hallucinations; (ii) high-quality pun explanations to enhance recall; (iii) include both biased-to-pun and biased-to-non-pun prompt pairs to mitigate sycophancy.
+- **Evaluation**: 11 VLMs including GPT-5.1, GPT-4o, Gemini-3-Pro, Qwen3-VL Thinking, etc. LLM-as-judge is used for explanation quality.
 
 ## Key Experimental Results
 
-### Main Results (F1 on Explanation Task, TPR/TNR/F1 use biased-to-pun prompt)
+### Main Results (F1 for Explanation task, biased-to-pun prompt)
 
 | Type | Model | Homophonic F1 | Homographic F1 | Homophonic TNR | Homographic TNR |
 |------|------|---------------|----------------|----------------|-----------------|
@@ -89,62 +90,71 @@ MultiPun is a suite consisting of a benchmark, an evaluation protocol, and enhan
 | Closed | Gemini-3-Pro | 0.746 | 0.718 | 0.686 | 0.625 |
 | Closed | Claude-Sonnet-4.5 | 0.594 | 0.560 | 0.353 | 0.235 |
 | Open | Qwen3-VL-30B-Instruct | 0.535 | 0.511 | 0.209 | 0.125 |
-| Open | LLaVA-V1.6-13B | 0.057 | 0.051 | 0.972 | 0.966 |
+| Open | LLaVA-V1.6-Vicuna-13B | 0.057 | 0.051 | 0.972 | 0.966 |
 | Open-Reason | Qwen3-VL-30B-Thinking | 0.618 | 0.631 | 0.399 | 0.414 |
 
-GPT-5.1 is the strongest, but an F1 of 0.80 shows **multimodal puns are challenging for all VLMs**; LLaVA-13B fails significantly on explanation; Claude-Sonnet-4.5 exhibits typical over-interpretation (TPR 0.969 but TNR 0.353).
+GPT-5.1 is the strongest, but an F1 of 0.80 indicates that **multimodal puns remain challenging for all VLMs**. LLaVA-13B fails the explanation task (answering non-pun for almost everything), while Claude-Sonnet-4.5 shows extreme over-interpretation (TPR 0.969 but TNR 0.353).
 
-### Ablation Study (Pun-CoT Improvements, Explanation Task)
+### Ablation Study (Pun-CoT Gains, Explanation Task)
 
 | Model | Vanilla F1 (Homo) | Pun-CoT F1 (Homo) | $\Delta$F1 | Vanilla TNR | Pun-CoT TNR |
 |------|-------------------|-------------------|------------|-------------|-------------|
 | GPT-5.1 | 0.804 | 0.836 | +3.2% | 0.910 | 0.915 |
 | GPT-4o | 0.741 | 0.794 | +5.3% | 0.786 | 0.835 |
 | Claude-Sonnet-4.5 | 0.594 | 0.641 | +4.7% | 0.353 | **0.495** |
-| **LLaVA-V1.6-13B** | 0.057 | **0.501** | **+44.4%** | 0.972 | 0.036 |
+| Qwen3-VL-8B-Instruct | 0.505 | 0.569 | +6.4% | 0.881 | 0.495 |
+| **LLaVA-V1.6-Vicuna-13B** | 0.057 | **0.501** | **+44.4%** | 0.972 | 0.036 |
 | Qwen3-VL-8B-Thinking | 0.595 | **0.807** | **+21.2%** | 0.387 | **0.776** |
 
 ### Key Findings
--   **VLMs generally over-interpret puns**: Most models show TPR ≈ 0.95+ but TNR ≈ 0.1-0.4 and $\kappa$ < 0.4—they are "guessing pun" for almost everything.
--   **Closed-source >> Open-source**: Prompt robustness shows a massive gap. Smaller open-source models exhibit severe sycophancy.
--   **Explanation task has a grounding effect**: Requiring an explanation significantly improves TNR because it forces the model to expose the lack of a reasonable alternative.
--   **Homophonic puns are harder than homographic**: $w_a$ does not appear in text and requires phonetic reasoning.
--   **Reasoning models are not always better**: For small models, "thinking" can sometimes amplify over-interpretation.
+- **VLMs universally over-interpret puns**: Most models show TPR $\approx$ 0.95+ but TNR $\approx$ 0.1-0.4 and $\kappa$ < 0.4—they are "labeling every image as a pun" rather than understanding them.
+- **Closed-source >> Open-source**: Prompt robustness differs significantly; LLaVA-13B’s sycophancy is severe, with $\Delta$TPR reaching -0.923.
+- **Explanation task has internal grounding effects**: Requiring an explanation significantly improves TNR (GPT-5.1 TNR: detection 0.379 $\rightarrow$ explanation 0.910), as forcing the model to state $w_a$ exposes the lack of a valid alternative sense.
+- **Homophonic puns are harder than homographic**: $w_a$ is not in the text and requires phonetic reasoning. Qwen3-VL-8B mention ratio for $w_a$ is 40.7% (homophonic) vs 96.2% (homographic).
+- **Reasoning models are not necessarily better**: Thinking features in small models like Qwen3-VL-8B can worsen TNR (0.193 $\rightarrow$ 0.054), potentially amplifying over-interpretation.
 
 ## Highlights & Insights
--   The **biased prompt protocol** reveals sycophancy as a hidden confounding variable in VLM evaluation, applicable to various binary classification tasks.
--   **Adversarial Negatives (ES + RS)**: Forcing models beyond surface patterns by using "traps" can be generalized to other figurative language evaluations like sarcasm or irony.
--   **Pun-CoT Methodology**: This represents a targeted approach to CoT design—analyzing error patterns first and then designing specific check-steps to address them.
--   The gap in **phonetic reasoning** suggests that future VLM training may need more audio-grounded or phonetic-aware data.
+- The **bi-directional biased prompt protocol** is a major contribution, exposing sycophancy as a hidden confounder in VLM evaluations.
+- **Adversarial non-puns (ES + RS)** force models beyond surface patterns; this approach is generalizable to irony, metaphors, and idioms.
+- **Pun-CoT** demonstrates a methodology of "target-driven error analysis followed by customized CoT," which is more effective than generic "think step by step" prompts for specialized tasks.
+- The identified **4 types of hallucinations** provide a clear taxonomy for future architecture or data-level fixes.
 
 ## Limitations & Future Work
--   The dataset is relatively small (445 puns) and limited to English; homophonic puns are highly language-dependent.
--   There is an **LLM bias circularity**: Using GPT to generate data and then evaluate GPT might favor models within that distribution.
--   LLaVA-13B's improvement under Pun-CoT might reflect a shift in decision bias rather than a true increase in comprehension.
--   The role of external tools (e.g., dictionaries for homophones) was not explored.
+- The dataset (445 puns) is relatively small and English-centric; phonetic puns are highly language-dependent.
+- **LLM bias circularity**: Using GPT-4o to generate both data and evaluations might favor closed-source models.
+- Pun-CoT is manually designed; automated reflective error analysis for CoT generation is a future direction.
+- Small model "improvements" under CoT sometimes represent a shift in decision bias rather than a genuine increase in comprehension.
 
 ## Related Work & Insights
--   **vs SemEval-2017**: Extends textual pun formalization to multimodal contexts with adversarial negatives.
--   **vs PunMeme**: Unlike prior humor datasets, MultiPun includes structured negative samples to test mechanism understanding.
--   **vs General VLM Benchmarks**: Fills the gap in evaluating figurative language and humor, which are overlooked by knowledge- or math-centric benchmarks.
+- **SemEval-2017 Task 7**: Provides the foundation for textual pun detection; MultiPun extends this to the multimodal domain with adversarial samples.
+- **Xu et al. 2024b**: Ours adopts their quadruple formalization $\langle w_p, w_a, S_p, S_a \rangle$ and generalizes it.
+- **General VLM Benchmarks**: Unlike MM-Vet or MMMU which focus on knowledge/logic, MultiPun addresses the gap in figurative language and humor.
 
 ## Rating
--   Novelty: ⭐⭐⭐⭐ First multimodal pun benchmark with adversarial negatives.
--   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 11 VLMs and multiple task types.
--   Writing Quality: ⭐⭐⭐⭐ Clear framework and progression; excellent illustrative examples.
--   Value: ⭐⭐⭐⭐ Directly applicable benchmark and methodology for improving figurative language understanding.
+- Novelty: ⭐⭐⭐⭐ First multimodal pun benchmark with adversarial negatives.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 11 models and multiple tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework with intuitive examples.
+- Value: ⭐⭐⭐⭐ Highlighted fundamental weaknesses in VLM figurative reasoning.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **SemEval-2017 Task 7**: Homographic and Homophonic Pun Detection.
+- **PunMeme**: A Dataset for Multimodal Pun Understanding in Memes.
+- **Visual Pun Rebus**: Chinese Multimodal Pun Understanding.
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding](revisit_what_you_see_revealing_visual_semantics_in_vision_tokens_to_guide_lvlm_d.md)
 - [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/multimodal_vlm/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
-- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
-- [\[CVPR 2026\] See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/see_hear_and_understand_benchmarking_audiovisual_human_speech_understanding_in_mul.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
+- [\[ACL 2025\] Can Multimodal Large Language Models Understand Spatial Relations?](../../ACL2025/multimodal_vlm/spatialmqa_mllm_spatial_relations.md)
+- [\[ACL 2025\] Can Vision Language Models Understand Mimed Actions?](../../ACL2025/multimodal_vlm/can_vision_language_models_understand_mimed_actions.md)
+- [\[ICCV 2025\] Vision-Language Models Can't See the Obvious](../../ICCV2025/multimodal_vlm/vision-language_models_cant_see_the_obvious.md)
 
 </div>
 

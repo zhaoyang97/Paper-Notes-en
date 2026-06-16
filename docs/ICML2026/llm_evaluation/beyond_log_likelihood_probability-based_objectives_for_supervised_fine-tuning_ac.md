@@ -2,72 +2,67 @@
 title: >-
   [Paper Note] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum
 description: >-
-  [ICML 2026][LLM Evaluation][Supervised Fine-Tuning] This paper systematically investigates the behavior of probability-based objective functions in SFT…
+  [ICML 2026][LLM Evaluation][Paper Note] This paper systematically investigates the behavior of probability-based objective functions in SFT, discovering that the standard NLL is not universally optimal: on tasks where the model has a strong prior, prior-leaning objectives like $-p$ significantly outperform NLL (with gains up to 16%). Conversely, NLL remains
 tags:
-  - "ICML 2026"
-  - "LLM Evaluation"
-  - "Supervised Fine-Tuning"
-  - "Loss Functions"
-  - "Model-Capability Continuum"
-  - "Probability Objectives"
-  - "Prior Bias"
+  - ICML 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 4e9a38e6b373951b
+content_hash: 73f5f70fa6d2ea0c
 ---
-
 # Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.00526](https://arxiv.org/abs/2510.00526)  
 **Code**: https://github.com/GaotangLi/Beyond-Log-Likelihood  
 **Area**: LLM Training  
-**Keywords**: Supervised Fine-Tuning, Loss Functions, Model-Capability Continuum, Probability Objectives, Prior Bias  
+**Keywords**: Supervised Fine-Tuning, Loss Functions, Model Capability Continuum, Probability Objectives, Prior Leaning  
 
 ## TL;DR
-This paper systematically investigates the behavior of probability-based objective functions in SFT, finding that standard NLL is not universally optimal. On tasks where the model has a strong prior, prior-leaning objectives such as $-p$ significantly outperform NLL (up to 16% improvement). Conversely, NLL remains superior for tasks with weak priors. This reveals a selection principle for objective functions driven by the model-capability continuum.
+This paper systematically investigates the behavior of probability-based objective functions in SFT, discovering that the standard NLL is not universally optimal: on tasks where the model has a strong prior, prior-leaning objectives like $-p$ significantly outperform NLL (with gains up to 16%). Conversely, NLL remains superior on tasks with weak priors, revealing an objective selection principle governed by the model-capability continuum.
 
 ## Background & Motivation
 
-**Background**: Supervised Fine-Tuning (SFT) is the standard paradigm for LLM post-training, with Negative Log-Likelihood (NLL, $-\log p$) as the default objective. NLL has been proven optimal in classical learning-from-scratch theories.
+**Background**: Supervised Fine-Tuning (SFT) is the standard paradigm for LLM post-training, where the default training objective is Negative Log-Likelihood (NLL, $-\log p$). NLL has been proven optimal in the classic theory of training from scratch.
 
-**Limitations of Prior Work**: Extensive practice has found that the generalization capability of SFT is limited. This deficiency may not stem from the imitation learning paradigm itself, but rather from the NLL objective. Post-training differs fundamentally from learning from scratch: models already encode substantial task-related priors, and supervision sequences often span thousands of tokens and may contain noise. NLL forces the model to replicate reference answers token-by-token and applies excessive gradient signals to low-probability tokens, potentially harming generalization.
+**Limitations of Prior Work**: Extensive practice has found that SFT generalization remains limited. This deficiency may not stem from the imitation learning paradigm itself but rather from the NLL objective function. Post-training differs fundamentally from training from scratch: the model has already encoded substantial task-related priors, and supervision sequences often reach thousands of tokens and may contain noise. NLL forces the model to copy reference answers token-by-token, tokens imposing excessive gradient signals on low-probability tokens, which can harm generalization.
 
-**Key Challenge**: The optimality assumption of NLL (IID, learning from scratch) is violated in post-training scenarios, where models possess existing priors whose strength varies by task domain. By extending NLL to a parameterized family of objectives $f^\alpha(p) = (1-p^\alpha)/\alpha$ (recovering NLL as $\alpha \to 0$), it is observed that $\alpha=1$ (i.e., $-p$) and $\alpha=10$ significantly outperform NLL in mathematical reasoning.
+**Key Challenge**: The optimality assumptions of NLL (IID, learning from scratch) are violated in post-training scenarios—the model possesses existing priors, and the prior strength varies across task domains. By generalizing NLL to a parametric family of objectives $f^\alpha(p) = (1-p^\alpha)/\alpha$ (which degrades to NLL as $\alpha \to 0$), it is observed that $\alpha=1$ (i.e., $-p$) and $\alpha=10$ significantly surpass NLL in mathematical reasoning.
 
-**Goal**: The objective is not to promote a "universal" loss, but to systematically characterize under what conditions specific objectives are optimal, establishing an analytical framework based on the "model-capability continuum."
+**Goal**: Instead of promoting a single "universal" loss, this study aims to systematically characterize under what conditions each objective is optimal, establishing an analytical framework for the "model-capability continuum."
 
-**Key Insight**: The authors observe that the effectiveness of an objective function is closely related to the strength of the base model's prior for the task. When the prior is strong (e.g., mathematics, where 25% of pre-training tokens are math-related), prior-leaning objectives perform better. When the prior is weak (e.g., figfont anagrams, entirely unseen during pre-training), NLL remains superior.
+**Key Insight**: The effectiveness of an objective function is closely related to the base model's prior strength for the task. When the prior is strong (e.g., mathematics, where 25% of tokens in pre-training are math-related), prior-leaning objectives perform better; when the prior is weak (e.g., figfont riddles, entirely unseen during pre-training), NLL dominates.
 
-**Core Idea**: The selection of the SFT objective should match the model capability—replacing the "one-size-fits-all" NLL with the model-capability continuum.
+**Core Idea**: The selection of SFT objectives should match model capabilities—replacing the "one-size-fits-all" NLL with a model-capability continuum.
 
 ## Method
 
 ### Overall Architecture
-Given a pre-trained model $p_\theta$ and an SFT dataset $T$, standard SFT minimizes the NLL $\mathcal{L}_{-\log p}$. This work extends it to a general probability objective $\mathcal{L}_{f(p)}(\theta) = \mathbb{E}_{(x,\tilde{y})\sim T}[\sum_t f(p_\theta(y_t|y_{<t},x))]$, where $f:[0,1]\to\mathbb{R}$ is a non-increasing differentiable function. By analyzing the shape of the gradient weights of different functions $f$, objectives are categorized into prior-leaning and prior-averse types, with their performance validated across different positions on the model-capability continuum.
+Given a pre-trained model $p_\theta$ and an SFT dataset $T$, standard SFT minimizes the NLL $\mathcal{L}_{-\log p}$. This work generalizes it into a universal probability objective $\mathcal{L}_{f(p)}(\theta) = \mathbb{E}_{(x,\tilde{y})\sim T}[\sum_t f(p_\theta(y_t|y_{<t},x))]$ (where $f:[0,1]\to\mathbb{R}$ is non-increasing and differentiable). Different $f$ are categorized into "prior-leaning" and "prior-averse" classes based on the shape of their gradient weights, and the sweet spot for each category is identified along the "model-capability continuum."
 
 ### Key Designs
 
-1.  **Unified Probability Objective Family $f^\alpha(p)$**:
-    - **Function**: Provides a continuously adjustable family of objectives covering the spectrum from NLL to $-p$.
-    - **Mechanism**: Defined as $f^\alpha(p) = (1-p^\alpha)/\alpha$. As $\alpha \to 0$, it converges to $-\log p$ (NLL); at $\alpha=1$, it becomes $1-p$ (maximizing mean predicted probability). The function is concave for $\alpha \geq 1$ and convex for $0 \leq \alpha \leq 1$. The gradient weight for the correct logit is $W_f(p) = p^\alpha(1-p)$: larger $\alpha$ values lead to faster decay of gradient signals for low-probability tokens, thus "respecting" the model prior more.
-    - **Design Motivation**: Uses a single parameter $\alpha$ to unify the degree of prior-leaning, making convexity/concavity a proxy for analyzing prior utilization and supporting continuous interpolation.
+**1. Unified Probability Objective Family $f^\alpha(p)$: Integrating NLL and $-p$ into a Single Knob**
 
-2.  **Model-Capability Continuum**:
-    - **Function**: Establishes a diagnostic framework for "when to use which objective."
-    - **Mechanism**: Divides tasks into three intervals based on the base model's prior strength. **Model-Strong (MS)**: Domains well-covered by pre-training (e.g., math), where the average prediction probability is high (0.81 for Qwen2.5-Math-7B); prior-leaning objectives are optimal. **Model-Weak (MW)**: Domains uncovered by pre-training (e.g., figfont anagrams), where the average prediction probability is extremely low (~0.01); NLL is optimal. **Model-Intermediate (MI)**: Partially covered domains (e.g., medical reasoning, ~0.50), where both types of objectives perform similarly.
-    - **Design Motivation**: Quantitatively explains why the same loss function behaves oppositely across different tasks and provides a practical diagnostic method based on prediction probabilities.
+NLL is the default choice because classic theory for training from scratch deems it optimal; however, in post-training where models have priors and sequences are long and noisy, this optimality assumption is violated. Instead of proposing a separate loss, this work defines a family of objectives $f^\alpha(p) = (1-p^\alpha)/\alpha$, where a single scalar parameter $\alpha$ continuously controls "how much to respect the prior." As $\alpha \to 0$, it converges to $-\log p$ (NLL); $\alpha=1$ yields $1-p$ (equivalent to maximizing average prediction accuracy). The function is concave for $\alpha \geq 1$ and convex for $0 \leq \alpha \leq 1$. Crucially, the gradient weight for the correct logit is $W_f(p) = p^\alpha(1-p)$: as $\alpha$ increases, gradient signals for low-probability tokens decay faster—meaning the model is not forced to rigidly replicate tokens it already deems unlikely. Thus, convexity/concavity serves as a natural proxy for "prior utilization."
 
-3.  **Gradient Weights and Prior-Leaning Classification**:
-    - **Function**: Explains differences in learning behavior from a gradient perspective.
-    - **Mechanism**: Lemma 3.1 derives the gradient weight $W_f(p) = -f'(p) \cdot p(1-p)$ for any objective $f$ relative to the correct token logit. Proposition 3.2 proves that for convex functions, the peak of $W_f$ is in $[0, 0.5]$ (prior-averse, emphasizing low-probability tokens), while for concave functions, the peak is in $[0.5, 1]$ (prior-leaning, emphasizing high-probability tokens). Accordingly, $-\log p$ (convex) is classified as prior-averse, while $-p$ and $-p^{10}$ (concave) are prior-leaning.
-    - **Design Motivation**: Quantifies the intuition that "NLL focuses too much on low-probability tokens" into a rigorous mathematical characterization. Theorem 6.4 proves via gradient flow theory that the risk of prior-leaning objectives decreases faster on the MS end, while NLL decreases faster on the MW end.
+**2. Model Capability Continuum: Determining Objectives via Prediction Probability**
+
+The variable determining why a single loss succeeds in math but fails in riddles is the "prior strength of the base model for the task." This work arrays tasks along a continuum based on the average prediction probability on the training set, divided into three diagnostic segments. **Model-Strong (MS)** includes domains well-covered in pre-training (e.g., math, where Qwen2.5-Math-7B has an average probability of $0.81$). Here, prior-leaning objectives are optimal because low-probability tokens are mostly noise. **Model-Weak (MW)** includes domains almost unseen (e.g., figfont riddles, average prob $\approx 0.01$), where NLL is optimal as the prior cannot assist. **Model-Intermediate (MI)** covers partially represented domains (e.g., medical reasoning, $\approx 0.50$), where both types of objectives perform similarly. The average prediction probability serves as a direct diagnostic metric: if $> 0.5$, consider prior-leaning; if $< 0.1$, stick with NLL.
+
+**3. Gradient Weights and Prior-Leaning Classification: Formalizing NLL's Focus on Low-Probability Tokens**
+
+Lemma 3.1 provides the gradient weight of any objective $f$ with respect to the correct token logit:
+
+$$W_f(p) = -f'(p) \cdot p(1-p),$$
+
+Proposition 3.2 proves that the peak of $W_f$ for convex functions falls in $[0, 0.5]$, implying gradients are primarily directed at low-probability tokens ("prior-averse"). For concave functions, the peak falls in $[0.5, 1]$, concentrating gradients on already high-probability tokens ("prior-leaning"). Consequently, $-\log p$ (convex) is prior-averse, while $-p$ and $-p^{10}$ (concave) are prior-leaning. Finally, Theorem 6.4 uses gradient flow theory to show that risk decreases faster for prior-leaning objectives in the MS regime and faster for NLL in the MW regime.
 
 ## Key Experimental Results
 
 ### Main Results: Model-Strong (Mathematical Reasoning)
 
 | Model | Objective | Math500 | Minerva | OlympiadBench | AIME24 | AMC23 | Mean |
-|-------|-----------|---------|---------|---------------|--------|-------|------|
+|------|------|---------|---------|---------------|--------|-------|------|
 | Qwen2.5-Math-1.5B | Base | 30.71 | 8.81 | 14.88 | 2.49 | 17.97 | 14.97 |
 | | $-\log p$ (NLL) | 42.52 | 12.71 | 12.09 | 0.62 | 17.03 | 17.00 |
 | | $-\log p \cdot \mathbf{1}_{p \geq 0.2}$ | 63.95 | 24.79 | 26.08 | 7.09 | 38.28 | **32.04** |
@@ -77,37 +72,37 @@ Given a pre-trained model $p_\theta$ and an SFT dataset $T$, standard SFT minimi
 | | $-\log p \cdot \mathbf{1}_{p \geq 0.2}$ | **67.85** | **32.47** | **33.90** | **8.76** | **47.81** | **38.16** |
 | | $-p$ | 68.47 | 31.99 | 32.26 | 8.75 | 41.09 | 36.51 |
 
-### Model-Weak and Continuum Summary
+### Model-Weak End and Continuum Summary
 
 | Dimension | Model-Strong (MS) | Model-Intermediate (MI) | Model-Weak (MW) |
-|-----------|-------------------|------------------------|-----------------|
-| Representative Domain | Math Reasoning | Medical Reasoning | figfont Anagrams |
-| Prediction Prob. | 0.76–0.81 | ~0.50 | ~0.01 |
-| Optimal Objective | $-p$ / Threshold NLL | Similar | NLL ($-\log p$) |
-| $-p$ vs NLL Gap | $-p$ wins by up to +16% | Gap <2% | NLL wins ($-p$ near 0) |
-| Root Cause | NLL over-focuses on noise | Prior neither strong nor weak | $-p$ reinforces wrong high-prob |
+|------|-------------------|------------------------|-----------------|
+| Representative Domains | Math Reasoning | Medical Reasoning | Figfont Riddles |
+| Model Prediction Prob | 0.76–0.81 | ~0.50 | ~0.01 |
+| Optimal Objective | $-p$ / Thresholded NLL | Similar performance | NLL ($-\log p$) |
+| $-p$ vs NLL Gain | $-p$ wins by up to +16% | Difference < 2% | NLL wins ($-p$ near 0) |
+| Root Cause | NLL over-fits low-prob noise | Mixed prior strength | $-p$ reinforces error |
 
 ### Key Findings
-- On the MS end, training only on the top 10% high-probability tokens exceeds full-token NLL, proving low-probability tokens are essentially noise when priors are strong.
-- As $\alpha$ increases from 0.1 to 10.0, accuracy monotonically increases on the MS end and decreases on the MW end, forming a perfect "X-shaped" crossover.
-- In general instruction tuning (Qwen2.5-3B/7B/14B), the advantage of $-p$ gradually emerges as model size increases, validating that the continuum holds within the same data distribution.
-- Coding tasks also belong to the MS end ($-p$ > NLL), while low-resource multilingual tasks belong to the MW end (NLL > $-p$), confirming the continuum's cross-domain generalization.
+- In the MS regime, training only on the top 10% high-probability tokens outperforms full-token NLL, proving that low-probability tokens are essentially noise when the prior is strong.
+- As $\alpha$ increases from 0.1 to 10.0, accuracy increases monotonically in the MS regime and decreases monotonically in the MW regime, forming a perfect "X-shaped" crossover.
+- In general instruction tuning (Qwen2.5-3B/7B/14B), the advantage of $-p$ gradually emerges as model size increases, verifying that the continuum holds even within the same data distribution.
+- Coding tasks also belong to the MS regime ($-p$ > NLL), while low-resource multilingual tasks belong to the MW regime (NLL > $-p$), demonstrating cross-domain generalization of the continuum.
 
 ## Highlights & Insights
-- The core insight is remarkably simple: a single scalar parameter $\alpha$ controls prior utilization, and the optimal $\alpha$ is determined by the model's prior strength for the task. This is more elegant than designing complex adaptive losses.
-- Thresholding NLL ($-\log p \cdot \mathbf{1}_{p \geq 0.2}$) serves as a practical intermediate solution; it achieves performance close to $-p$ without changing the loss shape, merely by filtering low-probability tokens, making the implementation cost near-zero.
-- The average predicted probability on the training set serves as a quantitative diagnostic for objective selection—use prior-leaning objectives above 0.5, and NLL below 0.1. This rule can be directly migrated to any SFT scenario.
+- The core insight is remarkably concise: a single scalar $\alpha$ controls the degree of prior utilization, and the optimal $\alpha$ is determined by the model's task-specific prior strength. This is more elegant than designing complex adaptive losses.
+- Thresholded NLL ($-\log p \cdot \mathbf{1}_{p \geq 0.2}$) serves as a practical intermediate solution; it gains benefits close to $-p$ by simply filtering low-probability tokens without changing the loss shape, incurring nearly zero cost.
+- The average prediction probability on the training set is a quantitative diagnostic tool—use prior-leaning objectives above 0.5 and NLL below 0.1. This rule is directly transferable to any SFT scenario.
 
 ## Limitations & Future Work
-- Objective selection remains static: while model capability changes during training, this study uses fixed objectives throughout, leaving adaptive scheduling of $\alpha$ unexplored.
-- The measure of model capability relies on prediction probabilities, which may mislead objective selection if the model is severely miscalibrated or generates confident hallucinations.
-- In the MI region (e.g., medical reasoning), neither objective type shows a clear advantage; improvements may require directions beyond loss functions, such as data quality or domain knowledge injection.
-- Theoretical analysis is based on simplified assumptions (e.g., uniform distribution predictions on the MW end); real-world scenarios are more complex.
+- Objective selection remains static: model capability changes during training, but this work uses a fixed objective throughout and does not explore adaptive scheduling of $\alpha$.
+- The measure of model capability depends on prediction probabilities, which may mislead objective selection if the model is severely miscalibrated or exhibits confident hallucinations.
+- In the MI region (e.g., medical reasoning), neither class of objectives shows a distinct advantage; improvements here may require approaches beyond loss functions (e.g., data quality or domain knowledge injection).
+- Theoretical analysis is based on simplified assumptions (e.g., uniform distributions for MW models), which are more complex in real-world scenarios.
 
 ## Related Work & Insights
-- The uniform gradient reweighting proposed by Wu et al. (2026) is essentially equivalent to the $-p$ objective; this paper incorporates it into a unified framework and identifies its failure conditions.
-- Focal loss is categorized under this framework as a "more prior-averse than NLL" objective, while Huber-like probability losses are prior-leaning.
-- Insight: Post-training should not blindly apply NLL. Evaluating the base model's prior strength before choosing a matching objective may be the simplest and most effective way to improve SFT.
+- Wu et al. (2026) proposed uniform gradient reweighting, which is essentially equivalent to the $-p$ objective; this work integrates it into a unified framework and identifies its failure conditions.
+- Focal loss is categorized as "more prior-averse than NLL" within this framework, while Huber-like probability losses are prior-leaning.
+- Insight: Post-training should not blindly adopt NLL. Evaluating the base model's prior strength to select a matching objective may be the simplest and most effective method for SFT improvement.
 
 <!-- RELATED:START -->
 

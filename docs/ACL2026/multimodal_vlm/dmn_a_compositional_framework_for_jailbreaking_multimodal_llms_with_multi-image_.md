@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs
 description: >-
-  [ACL2026][Multimodal VLM][Multi-image input] This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence…
+  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence, and digital chain auxiliary tasks. It demonstrates that current MLLMs supporting multi-image inputs have significant weaknesses in cross-image safety alignment and provides a multi-image-aw
 tags:
-  - "ACL2026"
-  - "Multimodal VLM"
-  - "Multi-image input"
-  - "MLLM safety"
-  - "Jailbreak evaluation"
-  - "Multimodal defense"
-  - "Safety alignment"
+  - ACL 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 9d11bb0a5a9ac02d
+content_hash: 93f1d937a01c5bf9
 ---
-
 # DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs
 
 **Conference**: ACL2026  
@@ -24,95 +18,106 @@ content_hash: 9d11bb0a5a9ac02d
 **Keywords**: Multi-image input, MLLM safety, Jailbreak evaluation, Multimodal defense, Safety alignment
 
 ## TL;DR
-This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence, and numerical chain auxiliary tasks. It demonstrates that current MLLMs supporting multi-image inputs have significant weaknesses in cross-image safety alignment and provides a multi-image-aware filter as a preliminary defense.
+This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence, and digital chain auxiliary tasks. It demonstrates that current MLLMs supporting multi-image inputs have significant weaknesses in cross-image safety alignment and provides a multi-image-aware filter as a preliminary defense.
 
 ## Background & Motivation
-**Background**: Multimodal Large Language Models (MLLMs) can simultaneously process text and images, and an increasing number of commercial models support multi-image inputs. Existing research on MLLM jailbreaking focuses mostly on single-image settings, such as rendering harmful intents into typographic images, using relevant images for prompt assistance, or adding irrelevant tasks to distract the model.
+**Background**: Multimodal Large Language Models (MLLMs) can simultaneously process text and images, and an increasing number of commercial models support the input of multiple images at once. Existing MLLM jailbreak research has mostly focused on single-image settings, such as rendering harmful intentions into typographic images, using relevant images for auxiliary prompting, or adding irrelevant tasks to distract the model's attention.
 
-**Limitations of Prior Work**: The attack space for single-image jailbreaking is limited: a single image struggle to carry full context or decompose intent into multiple local fragments. Simultaneously, current safety alignment and filtering for MLLMs are largely designed for single images or single-turn text, lacking specialized protection against compositional semantics across multiple images.
+**Limitations of Prior Work**: The attack space for single-image jailbreaking is limited: a single image struggle to carry complete context or split intentions into multiple local segments. Meanwhile, current safety alignment and filtering for MLLMs are mostly designed for single images or single-turn text, lacking specialized protection against the combined semantics across multiple images.
 
-**Key Challenge**: While multi-image inputs improve model usability, safety mechanisms do not necessarily perform global aggregate judgments across the entire set of images. If a harmful intent is dispersed across multiple images, each image may appear benign individually, posing a risk only when combined. This is precisely where existing safety filters are most likely to fail.
+**Key Challenge**: While multi-image inputs improve model utility, safety mechanisms may not perform global aggregation judgments on the entire set of images. If dangerous intentions are scattered across multiple images, each image may appear innocuous on its own, with risks only emerging upon combination. This is precisely where existing safety filters are most likely to fail.
 
-**Goal**: The paper aims to systematically characterize the jailbreak risks introduced by multi-image inputs, evaluate success rates across different MLLMs, datasets, and defense mechanisms, and analyze whether the success stems from the "increase in image count" or modular information composition.
+**Goal**: The paper aims to systematically characterize the jailbreak risks brought by multi-image inputs, evaluate success rates across different MLLMs, datasets, and defense mechanisms, and analyze whether success stems from the "increase in the number of images" or "modular information composition."
 
-**Key Insight**: The authors view multi-image jailbreaking as a compositional problem: dispersing instructions across images reduces intent visibility, multimodal evidence increases response detail, and auxiliary reasoning tasks distract safety attention. Superimposing these three factors exposes the model's weakness in cross-image safety reasoning.
+**Key Insight**: The authors treat multi-image jailbreaking as a compositional problem: cross-image distributed instructions reduce intent visibility, multimodal evidence increases response detail, and auxiliary reasoning tasks distract safety attention. The superposition of these three factors exposes the vulnerabilities of cross-image safety reasoning in models.
 
-**Core Idea**: Instead of simply repeating a single dangerous image, different images are assigned different functions, and a text prompt requires the model to process them jointly. This tests whether MLLMs can recognize the overall risk after cross-image composition.
+**Core Idea**: Instead of simply repeating single dangerous images, different images are assigned different functions. Then, text prompts are used to require the model to process them jointly, thereby testing whether the MLLM can recognize the overall risk after cross-image combination.
 
 ## Method
-DMN is a safety evaluation framework rather than a conventional generative model. It constructs a sequence of images and a text prompt in a single-turn black-box setting to observe if the target MLLM outputs a response judged harmful by an evaluator. To avoid translating the method into executable operations, only the research-level modular mechanisms and evaluation logic are preserved.
+DMN is a safety evaluation framework rather than a conventional generative model. It constructs a sequence of images and text prompts in a single-turn black-box setting and observes whether the target MLLM outputs responses judged as harmful. To avoid describing the method as an executable operation, only the research-level modular mechanisms and evaluation logic are retained.
 
 ### Overall Architecture
-Given an original harmful request, DMN generates multiple images with different roles: some images disperse textual fragments of the request, some provide scenario-related multimodal evidence, and others form a number chain task requiring additional parsing. The target MLLM receives this set of images and a general text prompt. Researchers then use a judge like GPT-4 to determine if the response crosses safety boundaries. The paper evaluates 10 multi-image-supporting MLLMs on SafeBench, HADES, and MM-SafetyBench, comparing with methods like FigStep, CS-DJ, HADES, QRA, and VideoJail.
+Given an original harmful request, DMN generates multiple images serving different roles: some images are used to dispersedly present textual fragments of the request, some provide multimodal evidence relevant to the scenario, and others compose a digital chain task requiring additional model parsing. The target MLLM receives this set of images and a global text prompt to respond, after which researchers use a judge like GPT-4 to determine if the response crosses safety boundaries. The paper evaluates 10 MLLMs supporting multi-image inputs on SafeBench, HADES, and MM-SafetyBench, comparing with methods like FigStep, CS-DJ, HADES, QRA, and VideoJail.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Original Harmful Request"] --> B["Distributed Instruction<br/>Rendered as multiple typographic images, each containing partial segments"]
+    A --> C["Multimodal Evidence<br/>Auxiliary LLM generates scenario evidence → T2I draws images"]
+    A --> D["Number Chain Task<br/>Each frame contains a number + next frame index"]
+    B --> E["Multi-image Sequence + Global Text Prompt"]
+    C --> E
+    D --> E
+    E --> F["Target MLLM Joint Response"]
+    F --> G["GPT-4 judge determines boundary crossing → ASR"]
+```
 
 ### Key Designs
-1.  **Distributed Instruction**:
-    - **Function**: Decomposes the original harmful intent into multiple typographic images to reduce the explicit risk of any single image.
-    - **Mechanism**: Each image carries only partial words or fragments of the instruction; the model can only recover the full semantics after cross-image aggregation. The paper compares this with single-image instruction to test if "dispersed presentation" bypasses safety mechanisms more easily.
-    - **Design Motivation**: Many safety filters are better at identifying explicit harmful intents within a single image or text segment but fail at global semantic detection for cross-image combinations.
 
-2.  **Multimodal Evidence**:
-    - **Function**: Constructs richer visual and textual backgrounds for the request, making it easier for the target model to generate detailed responses.
-    - **Mechanism**: The paper packages image generation as a construction process for real-world case materials. An auxiliary LLM first generates scenario-based evidence, which is then converted into image descriptions for T2I models. Prompt rewriting is used if generation fails.
-    - **Design Motivation**: Directly asking T2I models to generate harmful images often results in refusal; using a case-based, indirect evidence generation process improves image generation success rates and provides more context.
+**1. Distributed Instruction: Splitting dangerous intent across multiple images so no single image appears problematic**
 
-3.  **Number Chain Task**:
-    - **Function**: Adds an extra cross-image reasoning task to distract the model's attention and increase input processing complexity.
-    - **Mechanism**: Each number chain frame contains a number and an index pointing to the next frame. The model is required to recover the number chain in the specified order. The paper compares blank frame indexing, cat/dog frame indexing, and number chains, finding that higher information density per frame correlates with higher ASR.
-    - **Design Motivation**: Complex auxiliary tasks may occupy the model's cross-image attention, weakening its overall safety scrutiny of the integrated semantics.
+Safety filters are generally adept at identifying explicit harmful intents within a single image or text segment but lack the capability to detect global semantics that "only hold true after cross-image combination." Targeting this, DMN renders the original request into a set of typographic images, where each image carries only local words or fragments of the instruction. The model must aggregate all images to recover the full semantics—viewed individually, risk signals are diluted below the filter's threshold. The paper specifically compares this with single-image instructions to verify if "distributed presentation" is systematically more effective than "single-image presentation" at bypassing alignment; in ablations, DI alone increased ASR from 7.32% (plain text) to 51.58%, establishing it as the foundation of the compositional attack.
+
+**2. Multimodal Evidence: Using case-based indirect generation to provide visual evidence that the model is willing to expand upon**
+
+Directly asking a T2I model to draw images related to danger is usually rejected, making it difficult for single-image jailbreaks to include rich context, often resulting in vague responses. DMN repackages image generation as a construction process for "real-world case materials": an auxiliary LLM (Gemini-2.5-flash) first generates scenario-based evidence, which is then translated into image descriptions suitable for T2I models. This indirect path bypassing direct requests improves image generation success rates (reaching 93.36% / 96.68% on HADES / SafeBench using GPT Image 1 in a fair single-attempt setting) and allows multi-image inputs to carry more detailed backgrounds, inducing the target model to provide more refined and operational answers. In ablations, adding ME to DI further increased ASR to 79.40%.
+
+**3. Number Chain Task: Inserting a cross-image reasoning task to crowd out the model's safety attention**
+
+Complex auxiliary tasks occupy a model's limited cross-image attention, causing it to focus on problem-solving while weakening its scrutiny of overall safety semantics. DMN constructs a number chain for this purpose: each frame contains a number and an index pointing to the next frame, and the model is required to recover the full chain in the specified order. The paper compares three forms: blank frame indexing, cat/dog frame indexing, and number chain. It found that the higher the information density and cognitive load per frame, the higher the ASR—increasing task complexity (PFIR) from 1 to 3 raised ASR from 83.18% to 89.32%. This evidence suggests that the attack Gain comes from the controllable variable of "cognitive load" rather than simply adding more images; the complete DI + ME + NC combination eventually pushed average ASR to 89.32%.
 
 ### Loss & Training
-DMN does not train the target MLLM nor does it require access to model parameters; it is a single-turn black-box evaluation. Implementation-wise, it uses Gemini-2.5-flash as the auxiliary LLM and GPT Image 1 as the T2I model, typically generating 5 pairs of multimodal evidence and inserting 5 number chain frames. The evaluation metric is the Attack Success Rate (ASR), the proportion of responses judged harmful. Other evaluation methods are used for bias checking.
+DMN itself does not train the target MLLM nor does it require access to model parameters; it is a single-turn black-box evaluation. The implementation uses Gemini-2.5-flash as the auxiliary LLM and GPT Image 1 as the T2I model, default generating 5 pairs of multimodal evidence and inserting 5 number chain frames. The evaluation metric is Attack Success Rate (ASR), defined as the proportion of responses judged harmful; the paper also uses other evaluation methods for bias checking.
 
 ## Key Experimental Results
 
 ### Main Results
 | Dataset / Model Group | Metric | DMN | Strongest or Main Baseline | Gain / Conclusion |
-| :--- | :--- | :--- | :--- | :--- |
-| SafeBench, Avg. of 10 MLLMs | ASR | 89.32% | CS-DJ 30.18%, FigStep 20.22% | Multi-image composition significantly outperforms single-image structural attacks |
-| HADES dataset, Avg. of 10 MLLMs | ASR | 93.09% | VideoJail 8.77%, HADES method 4.53% | Redundant video frames are insufficient; compositional information is key |
+|--------|------|------|----------------|-------------|
+| SafeBench, Avg. of 10 MLLMs | ASR | 89.32% | CS-DJ 30.18%, FigStep 20.22% | Multi-image composition is significantly higher than single-image structural attacks |
+| HADES dataset, Avg. of 10 MLLMs | ASR | 93.09% | VideoJail 8.77%, HADES method 4.53% | Multi-image but redundant video frames are insufficient; compositional information is key |
 | MM-SafetyBench, Avg. of 10 MLLMs | ASR | 86.24% | QRA 21.30% | High success rate maintained across datasets |
-| GPT-4o / SafeBench | ASR | 92.8% | FigStep 19.8%, CS-DJ 42.6% | Strong closed-source models still expose multi-image safety vulnerabilities |
-| Gemini-2.5-pro / SafeBench | ASR | 95.2% | FigStep 18.8%, CS-DJ 27.2% | High capability does not equate to multi-image safety |
-| Claude Sonnet 4 / SafeBench | ASR | 94.2% | FigStep 13.0%, CS-DJ 39.6% | Safety-aligned models are also affected by compositional inputs |
+| GPT-4o / SafeBench | ASR | 92.8% | FigStep 19.8%, CS-DJ 42.6% | Strong closed-source models still expose multi-image safety weaknesses |
+| Gemini-2.5-pro / SafeBench | ASR | 95.2% | FigStep 18.8%, CS-DJ 27.2% | High-capability models do not equal multi-image safety |
+| Claude Sonnet 4 / SafeBench | ASR | 94.2% | FigStep 13.0%, CS-DJ 39.6% | Safe models are also affected by compositional inputs |
 
 ### Ablation Study
 | Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| Plain text | ASR 7.32% | Low success rate with text alone |
-| DI | ASR 51.58% | Distributed instructions significantly increase ASR independently |
+|------|---------|------|
+| Plain text | ASR 7.32% | Low success rate with text only |
+| DI | ASR 51.58% | Distributed instructions alone provide significant improvement |
 | DI + ME | ASR 79.40% | Further improvement after adding multimodal evidence |
 | DI + ME + NC | ASR 89.32% | Full DMN is the strongest |
-| DI + ME + NC padding control | Similar to original | Gains come from modular functionality, not the count of blank images |
-| Multi-image-aware filter | ASR reduced to 28.86% | Filters explicitly warning of cross-image jailbreak risks are most effective |
+| DI + ME + NC padding control | Close to original version | Gain comes from modular functionality rather than the number of blank images |
+| Multi-image-aware filter | ASR reduced to 28.86% | Filters explicitly reminding of cross-image jailbreak risks are most effective |
 
 ### Key Findings
-- The image generation success rate reflects DMN's indirectness: In a fair setting with single attempts, DMN achieved 93.36% and 96.68% success rates on HADES and SafeBench using GPT Image 1, significantly higher than QRA and the HADES method.
-- Number chain task complexity is positively correlated with ASR: As PFIR increased from 1 to 3, ASR rose from 83.18% to 89.32%, indicating that cognitive load from auxiliary tasks is a critical variable.
-- Existing defenses only moderately reduce ASR: Self-Reminder stays at 72.02%, Adashield-S at 65.20%, ECSO at 66.18%, and QwenGuard at 78.46%.
+- The image generation success rate itself reflects the indirectness of DMN: in a fair single-attempt setting, DMN's success rates using GPT Image 1 on HADES and SafeBench were 93.36% and 96.68%, respectively, significantly higher than QRA and the HADES method.
+- Number chain task complexity is positively correlated with ASR: as PFIR increased from 1 to 3, ASR rose from 83.18% to 89.32%, indicating cognitive load is an important variable.
+- Existing defenses only moderately reduce ASR: after Self-Reminder it remains 72.02%, Adashield-S is 65.20%, ECSO is 66.18%, and QwenGuard is 78.46%.
 
 ## Highlights & Insights
-- The true value of the paper lies not in proposing another single jailbreak trick, but in decomposing multi-image input into three ablatable modules: "dispersed intent, supplementary evidence, and increased cognitive load," making safety weaknesses more analyzable.
-- The padding control is vital: it rules out the explanation that it is "just because there are more images," proving that functional image composition is key.
-- The results of the multi-image-aware filter suggest that defense should not rely solely on better OCR or single-image detection, but should explicitly model cross-image compositional semantics within the model or pre-filter.
+- The true value of the paper lies not in proposing another single-point jailbreak trick, but in decomposing multi-image input into three ablatable modules: "scattering intent, supplementing evidence, and increasing cognitive load," making safety weaknesses more analyzable.
+- The padding control is crucial: it rules out the explanation that "it is more effective simply because there are more images," proving that functional image composition is the key.
+- The results of the multi-image-aware filter suggest that defense should not rely solely on stronger OCR or single-image detection, but must explicitly model cross-image compositional semantics within the model or a pre-filter.
 
 ## Limitations & Future Work
-- The authors acknowledge that DMN is only applicable to MLLMs that support multi-image inputs and has limited applicability to single-image models or web interfaces with strict image upload limits.
-- DMN requires more processing time, input tokens, and image generation costs than single-image methods, resulting in higher actual evaluation overhead.
-- Part of the analysis relies on attention metrics from open-source models, such as KFAR, which may not fully represent the internal attention mechanisms of closed-source commercial models.
-- A promising future direction is defense benchmarks: e.g., training/evaluating safety judges that can aggregate risks across images, or conducting image-group-level safety summarization and conflict detection at the MLLM input stage.
+- The authors acknowledge that DMN is only applicable to MLLMs supporting multi-image inputs and has limited applicability to single-image models or web scenarios that strictly limit the number of uploaded images.
+- DMN requires more processing time, input tokens, and image generation costs than single-image methods, leading to higher practical evaluation overhead.
+- Parts of the analysis rely on attention metrics of open-source models, such as KFAR, which may not fully represent the internal attention mechanisms of closed-source commercial models.
+- Future work worth pursuing includes defense benchmarks: for instance, training/evaluating safety judges capable of aggregating risks across images, or performing image-group level safety summarization and conflict detection at the MLLM input stage.
 
 ## Related Work & Insights
-- **vs FigStep / typographic jailbreak**: FigStep primarily places harmful instructions in a single image; DMN splits instructions across multiple images to test cross-image aggregation safety.
-- **vs QRA / HADES image-based attacks**: These methods rely on a single relevant image; DMN constructs multiple images through realistic case-based evidence, offering higher information density and generation success rates.
-- **vs VideoJail**: While VideoJail uses multi-image/video formats, redundancy between frames is high; each category of image in DMN serves a different function, thus better exposing multi-image compositional risks.
-- **Insights**: Multimodal safety evaluation should move beyond single-image prompts to construct compositional tests across images, tasks, and semantic levels, especially for commercial MLLMs supporting multi-image input.
+- **vs FigStep / typographic jailbreak**: FigStep mainly places dangerous instructions in one image; DMN splits instructions across multiple images to test cross-image safety aggregation.
+- **vs QRA / HADES image-based attacks**: These methods rely on a single relevant image; DMN constructs multiple images through real-world case-based evidence, providing more information and higher generation success rates.
+- **vs VideoJail**: While VideoJail uses multi-image/video formats, redundancy between frames is high; each type of image in DMN serves a different function, thus better exposing multi-image compositional risks.
+- **Insight**: Multimodal safety evaluation should not just look at single-image prompts but should construct compositional tests across images, tasks, and semantic levels, especially for commercial MLLMs that support multi-image inputs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The multi-image compositional framework and modular ablation are clear; the research question identifies the safety blind spots created by new MLLM capabilities.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 3 datasets, 10 MLLMs, multiple baselines, defenses, and ablations, providing comprehensive evidence.
-- Writing Quality: ⭐⭐⭐⭐☆ Direct structure with ample experimental tables; as it contains safety-sensitive content, one must distinguish between research evaluation and actionable details.
-- Value: ⭐⭐⭐⭐☆ Highly cautionary for multi-image MLLM safety assessment and provides a clear direction for defense design.
+- Novelty: ⭐⭐⭐⭐☆ The multi-image compositional framework and modular ablation are clear, and the research problem targets safety blind spots brought by new MLLM capabilities.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 3 datasets, 10 MLLMs, multiple categories of baselines, defenses, and ablations; the evidence is complete.
+- Writing Quality: ⭐⭐⭐⭐☆ Structure is direct with sufficient experimental tables; contains many safety-sensitive topics, requiring a distinction between research evaluation and operational details during reading.
+- Value: ⭐⭐⭐⭐☆ Highly significant for the safety assessment of multi-image MLLMs and provides clear directions for defense design.
 
 <!-- RELATED:START -->
 
@@ -121,10 +126,10 @@ DMN does not train the target MLLM nor does it require access to model parameter
 ## Related Papers
 
 - [\[ACL 2026\] Jailbreaking Multimodal Large Language Models using Multi-Clip Video](jailbreaking_multimodal_large_language_models_using_multi-clip_video.md)
-- [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
-- [\[AAAI 2026\] Exploring LLMs for Scientific Information Extraction using the SciEx Framework](../../AAAI2026/multimodal_vlm/exploring_llms_for_scientific_information_extraction_using_the_sciex_framework.md)
+- [\[CVPR 2025\] Playing the Fool: Jailbreaking LLMs and Multimodal LLMs with Out-of-Distribution Strategy](../../CVPR2025/multimodal_vlm/playing_the_fool_jailbreaking_llms_and_multimodal_llms_with_out-of-distribution_.md)
+- [\[ECCV 2024\] Eyes Closed, Safety On: Protecting Multimodal LLMs via Image-to-Text Transformation](../../ECCV2024/multimodal_vlm/eyes_closed_safety_on_protecting_multimodal_llms_via_image-to-text_transformatio.md)
+- [\[ACL 2025\] Exploring Compositional Generalization of Multimodal LLMs for Medical Imaging](../../ACL2025/multimodal_vlm/exploring_compositional_generalization_of_multimodal_llms_for_medical_imaging.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
-- [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
 
 </div>
 

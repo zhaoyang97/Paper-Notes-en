@@ -2,71 +2,82 @@
 title: >-
   [Paper Note] Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets
 description: >-
-  [ACL2026][LLM Safety][Code Data Protection] This paper proposes FunPoison, which injects inert weak-use fragments into real execution paths while ensuring Java code remains compilable, executable…
+  [ACL 2026][LLM Safety][CodeLLM] This paper proposes FunPoison, which injects execution-lazy weak-use fragments into real execution paths while keeping Java code compilable, executable, and functionally equivalent. Poisoning only 10% of the data significantly reduces the gains from unauthorized CodeLLM fine-tuning, demonstrating strong robustness agai
 tags:
-  - "ACL2026"
-  - "LLM Safety"
-  - "Code Data Protection"
-  - "Data Poisoning"
-  - "Functionality Preserving"
-  - "CodeLLM"
-  - "Unauthorized Fine-tuning"
+  - ACL 2026
+  - LLM Safety
+  - CodeLLM
 date: 2026-05-08
-content_hash: 12a80152d1647ece
+content_hash: f730638c296a70b4
 ---
-
 # Train in Vain: Functionality-Preserving Poisoning to Prevent Unauthorized Use of Code Datasets
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2604.22291](https://arxiv.org/abs/2604.22291)  
-**Code**: To be confirmed (The paper claims open-source, but the local cache does not provide the repository URL)  
+**Code**: To be confirmed (The paper claims open-source, but the repository URL is not provided in the local cache)  
 **Area**: Code Large Language Models / Data Governance  
 **Keywords**: Code Data Protection, Data Poisoning, Functionality Preserving, CodeLLM, Unauthorized Fine-tuning
 
 ## TL;DR
-This paper proposes FunPoison, which injects inert weak-use fragments into real execution paths while ensuring Java code remains compilable, executable, and functionally equivalent. Poisoning only 10% of the data significantly weakens the gains of unauthorized CodeLLM fine-tuning and demonstrates strong robustness against formatting, rewriting, static analysis, and detection-based cleaning.
+This paper proposes FunPoison, which injects execution-lazy weak-use fragments into real execution paths while keeping Java code compilable, executable, and functionally equivalent. Poisoning only 10% of the data significantly reduces the gains from unauthorized CodeLLM fine-tuning, demonstrating strong robustness against formatting, rewriting, static analysis, and detection-based cleaning.
 
 ## Background & Motivation
-**Background**: The capabilities of CodeLLMs largely stem from large-scale public code datasets, such as CodeSearchNet and The Stack. Many data authors have not authorized model training, but once data is scraped and used for fine-tuning, ex-post accountability, copyright litigation, or watermark attribution often involve high costs, long cycles, and unstable results.
+**Background**: The capabilities of CodeLLMs largely stem from large-scale public code datasets, such as CodeSearchNet and The Stack. Many authors do not authorize their data for model training; however, once data is crawled and used for fine-tuning, post-hoc accountability, copyright litigation, or watermark attribution often involves high costs, long cycles, and unstable results.
 
-**Limitations of Prior Work**: Data poisoning can serve as proactive protection to prevent unauthorized training from yielding benefits. However, code data has specific requirements: ordinary users still need to compile, run, test, and integrate this code. Existing methods like CoProtector either damage syntax or semantics, leading to near-total failure in compilability, or only modify comments, resulting in weak poisoning effects that often require 100% poisoning to be noticeable.
+**Limitations of Prior Work**: Data poisoning can serve as proactive protection to prevent unauthorized training from yielding benefits. However, code data has specific requirements: ordinary users still need to compile, run, test, and integrate this code. Existing methods like CoProtector either break grammar or semantics, leading to a collapse in compilability, or only modify comments, resulting in weak poisoning effects that often require 100% poisoning to be effective.
 
-**Key Challenge**: Protective poisoning must make model training "learn poorly" without making human usage "work poorly." This requires poisoning fragments to generate distributional interference in the training token sequence while not altering observable program behavior, all while evading common cleaning and static analysis.
+**Key Challenge**: Protective poisoning must cause the model training to "learn incorrectly" without causing "failures" for human users. This requires poisoning fragments to generate distributional interference in the training token sequences while avoiding changes to observable program behavior and evading common cleaning and static analysis.
 
-**Goal**: The authors aim to construct a functionality-preserving poisoning framework that suppresses unauthorized fine-tuning in a realistic partial poisoning setting, while ensuring that normal code quality, compilation success rates, and runtime behavior remain unaffected.
+**Goal**: Ours aims to construct a functionality-preserving poisoning framework that can suppress unauthorized fine-tuning under realistic partial poisoning settings, while ensuring that normal code quality, compilation success rates, and execution behaviors remain unaffected.
 
-**Key Insight**: FunPoison does not insert dead code or obviously "bad" code. Instead, it places short, compilable, side-effect-free template fragments into the execution path and uses type-aware weak-use statements to ensure these fragments remain after static analysis and formatting. The key assumption is: fragments are inert at runtime but are not inert during autoregressive training because the model still must learn these tokens.
+**Key Insight**: FunPoison does not insert dead code or obviously "bad" code. Instead, it places short, compilable, and side-effect-free template fragments into the execution path and uses type-aware weak-use statements to ensure these fragments persist after static analysis and formatting. The key assumption is: fragments are lazy at runtime but not lazy during auto-regressive training, as the model must still learn these tokens.
 
-**Core Idea**: Transform "program-harmless" code fragments into "unauthorized-model-harmful" training signals, allowing functionality preservation and training disruption to coexist.
+**Core Idea**: Transforming "program-harmless" code fragments into "unauthorized model-harmful" training signals, allowing functionality preservation to coexist with training disruption.
 
 ## Method
 
 ### Overall Architecture
-The threat model of FunPoison assumes that data owners publish code for normal use but do not authorize large-scale training; attackers can collect this data, control the training process, and use methods like cleaning, formatting, static analysis, LLM rewriting, or supervised detection. The defense goal is not to make poisoning undetectable, but to make it difficult for attackers to clear enough poisoning signals under reasonable false positive rates, semantic preservation, and cost constraints, thereby preventing unauthorized fine-tuning from significantly exceeding the base model.
+The threat model of FunPoison involves a data owner who releases code for normal use but does not authorize large-scale training. Attackers may collect this data, control the training process, and employ cleaning, formatting, static analysis, LLM rewriting, or supervised detection. The defense goal is not to make the poisoning undetectable, but to make it difficult for attackers to remove enough signals under reasonable false positive rates, semantic preservation, and cost constraints, thereby preventing unauthorized fine-tuning from significantly outperforming the base model.
 
-The method consists of two main stages. The first stage constructs a template pool: statement-level fragments are extracted from real code, processed through compilation repair, minimal context completion, type parsing, variable anonymization, and conflict metadata recording to retain portable templates. The second stage involves controlled injection: a subset of data is selected based on the poisoning ratio, templates undergo safety filtering, safe execution positions are identified within the host code, type-aware weak-uses are synthesized, and injection occurs after resolving naming conflicts. The resulting code remains compilable and behaviorally equivalent but exposes additional structural patterns to the model during training.
+The method consists of two main stages. Stage 1: Construction of a template pool. Statement-level fragments are extracted from real code, subjected to compilation repair, minimal context completion, type parsing, variable anonymization, and conflict metadata logging to retain portable templates. Stage 2: Controlled injection. A subset of data is selected based on the poisoning ratio, templates undergo safety filtering, execution-safe positions are identified in the host code, type-aware weak-uses are synthesized, and injection occurs after resolving naming conflicts. The resulting code remains compilable and functionally equivalent but exposes extra structural patterns to the model during training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Real Code (CodeSearchNet Java)"] --> S1
+    subgraph S1["Compiler-driven Code Template Generation"]
+        direction TB
+        B["Extract statement-level fragments"] --> C["RepairToCompile<br/>Add min context + construct stub"]
+        C --> D["Javac validation<br/>Record metadata"]
+    end
+    D --> E["Template Pool"]
+    E --> S2
+    subgraph S2["Functionality-Preserving Controlled Injection"]
+        direction TB
+        F["Select subset by poisoning ratio"] --> G["Two-layer safety filter<br/>Exclude CFG disruption / side effects"]
+        G --> H["Select execution-safe locations<br/>Avoid return/throw/break"]
+    end
+    H --> S3
+    subgraph S3["Type-aware Weak-use & Execution Path Supervision"]
+        direction TB
+        I["Synthesize weak-use by variable type<br/>Lazy consumption, no side effects"] --> J["Inject into real execution path<br/>Not dead branches"]
+    end
+    J --> K["Poisoned Dataset<br/>Compilable / Behaviorally Equivalent"]
+    K -->|Unauthorized Fine-tuning| L["Fine-tuning gain suppressed<br/>Effective at 10% poisoning"]
+```
 
 ### Key Designs
-1. **Compile-Driven Code Template Generation**:
+1. **Compiler-driven Code Template Generation: Extracting compilable, transferable short fragments from real code.**
+Simply copying code fragments often leads to compilation failure due to context dependencies; however, over-normalization makes patterns highly repetitive and easily detectable. FunPoison strikes a balance by extracting statement-level fragments from method bodies (rather than full functions) and using RepairToCompile to provide the necessary minimal context—importing standard library types, constructing lightweight stubs for non-JDK types, and rewriting isolated object constructions into forms received by variables. Finally, the fragments are verified using Javac. After verification, metadata such as variable/method/class names and placeholders are recorded for handling naming conflicts during injection. This ensures templates retain a realistic style while being capable of cross-project migration.
 
-	- **Function**: Obtain reusable, compilable, and naturally styled short code fragments from real code corpora to serve as injection material.
-	- **Mechanism**: Systematically extracts statement-level fragments from method bodies rather than complete functions or type declarations. For incomplete fragments, RepairToCompile adds the minimum necessary context, such as importing standard library types, constructing lightweight stubs for non-JDK types, or rewriting isolated object constructions into forms with variable receivers, and validates them via Javac. Variables, method names, class names, and placeholder information are then recorded for handling naming conflicts during injection.
-	- **Design Motivation**: Directly copying real code fragments often results in compilation failure due to context dependence; excessive normalization makes patterns repetitive and easy to detect. Compilation repair allows templates to maintain real code style while possessing cross-project portability.
+2. **Functionality-Preserving Controlled Injection: Inserting templates into host programs without altering observable behavior.**
+Code data protection has a hard constraint: poisoning must not sacrifice the experience of developers. Compilation and runtime behavior must remain stable. FunPoison uses a two-layer safety filter: the conceptual layer excludes control-flow interruptions, reflection dependencies, and shared states, while the procedural layer excludes I/O, concurrency, process control, container mutations, and non-local assignments. Injection sites are chosen only in syntactically stable and semantically lazy locations within method bodies, avoiding `return`, `throw`, `break`, `continue`, boundary positions, or any observable side effects, with scope tracking and variable renaming implemented during injection.
 
-2. **Functionality-Preserving Controlled Injection**:
-
-	- **Function**: Insert templates into the host program without altering control flow, output, exceptions, I/O, or global state.
-	- **Mechanism**: FunPoison uses two layers of safety filters to exclude risky templates: conceptually excluding patterns like control flow disruption, reflection dependence, and shared state; and at the program level, excluding side effects like I/O, concurrency, process control, container mutation, and non-local assignments. Injection positions are chosen only at syntactically stable and semantically inert locations within method bodies, avoiding return, throw, break, continue, boundary positions, and vicinity of observable side effects. Scope tracking and variable renaming are also performed during injection.
-	- **Design Motivation**: Code data protection should not sacrifice the experience of normal developers. Only when compilation and runtime behavior are stable can poisoning be discussed as a viable data governance mechanism.
-
-3. **Type-Aware Weak-use and Execution Path Supervision**:
-
-	- **Function**: Ensure injected fragments are visible during training but are not easily deleted as dead code by compilers, formatters, or static analysis.
-	- **Mechanism**: The system synthesizes weak-use statements based on variable types, performing inert consumption like identity, metadata, or security queries, avoiding changes in I/O, concurrency, and global state. These fragments are placed in the real execution path rather than in always-false branches. Mechanism analysis shows that weak-use and template signatures highly co-occur in failed generations; DeadBranchInsertion using the same template pool but placed in dead branches yields almost no performance degradation compared to FunPoison.
-	- **Design Motivation**: The poisoning effect comes from the autoregressive model's learning interference with token distributions in the execution path, not simply from "seeing certain template text." This is the key distinction between FunPoison and dead code insertion or comment perturbation.
+3. **Type-aware Weak-use & Execution Path Supervision: Evading cleaning while interfering with training.**
+If injected fragments are deleted as dead code by compilers, formatters, or static analysis, the poisoning fails. Conversely, if placed in `always-false` dead branches, the model cannot learn them. FunPoison synthesizes weak-use statements based on variable types, performing only lazy consumption (e.g., identity, metadata, or safety queries) to avoid side effects, and places these fragments in the real execution path. The underlying assumption is that the poisoning effect comes from the interference of the auto-regressive model's learning of the execution path's token distribution, rather than simply "seeing" template text. Mechanistic analysis supports this: weak-uses and template signatures highly co-occur in failed generations, whereas DeadBranchInsertion using the same template pool in dead branches fails to replicate the performance degradation.
 
 ### Loss & Training
-FunPoison itself does not involve training a model; thus, there is no new optimization loss. In experiments, attackers fine-tune CodeLLMs like DeepSeek-Coder, StarCoderBase, and CodeLlama, evaluating whether the poisoned dataset prevents the fine-tuned model from gaining benefits over the base model on HumanEval-X and MBPP. The primary metric is $Delta Pass@k$, the difference in Pass@k between the fine-tuned model and the base model; if clean fine-tuning provides significant improvement while FunPoison fine-tuning results in dissipated or negative gains, the defense is considered effective.
+FunPoison itself does not involve training a new model and thus lacks a new optimization loss. Experiments involve attackers fine-tuning CodeLLMs like DeepSeek-Coder, StarCoderBase, and CodeLlama. The evaluation assesses whether the poisoned dataset prevents the fine-tuned model from gaining improvements over the base model on HumanEval-X and MBPP. The primary metric is $\Delta Pass@k$, the difference in $Pass@k$ between the fine-tuned and base models; if the clean fine-tuning improvement disappears or becomes negative after FunPoison, the defense is considered effective.
 
 ## Key Experimental Results
 
@@ -74,71 +85,68 @@ FunPoison itself does not involve training a model; thus, there is no new optimi
 
 | Setting | Metric | Base | Clean FT | FunPoison | Conclusion |
 |--------|------|------|------|------|------|
-| DeepSeek-Coder-1.3B / HumanEval-X | Pass@1, T=0.0 | 0.31 | 0.38 | 0.20 (10% poisoning) | 10% poisoning turns FT gain into significant degradation |
-| CodeLlama-7B / HumanEval-X | Pass@1, T=0.0 | 0.29 | 0.31 | 0.23 (10% poisoning) | Gains still suppressed at 7B scale |
-| CodeLlama-7B-Instruct / HumanEval-X | Pass@1, T=0.0 | 0.30 | 0.38 | 0.30 (10% poisoning) | Clean FT gains essentially neutralized on instruct models |
+| DeepSeek-Coder-1.3B / HumanEval-X | Pass@1, T=0.0 | 0.31 | 0.38 | 0.20 (10% poisoning) | 10% poisoning turns gains into degradation |
+| CodeLlama-7B / HumanEval-X | Pass@1, T=0.0 | 0.29 | 0.31 | 0.23 (10% poisoning) | Gains suppressed at 7B scale |
+| CodeLlama-7B-Instruct / HumanEval-X | Pass@1, T=0.0 | 0.30 | 0.38 | 0.30 (10% poisoning) | Gains essentially neutralized on instruct models |
 | DeepSeek-1.3B / MBPP | Pass@1, T=0.0 | 0.31 | 0.41 | 0.16 (10% poisoning) | Strong degradation persists across benchmarks |
 
 ### Ablation Study
 
-| Configuration | Poisoning Rate | Pass@1 | Description |
+| Configuration | Poisoning Ratio | Pass@1 | Description |
 |------|------|------|------|
-| Base | - | 0.31 | Unfrozen model |
+| Base | - | 0.31 | Non-fine-tuned model |
 | Clean fine-tuned | 0% | 0.38 | Normal fine-tuning yields gains |
-| FunPoison | 10% | 0.20 | Weak-use fragments in execution path lead to significant degradation |
-| DeadBranchInsertion | 1% | 0.37 | Same templates in dead branches; nearly equivalent to clean FT |
-| DeadBranchInsertion | 10% | 0.38 | Indicates template exposure alone is not critical |
+| FunPoison | 10% | 0.20 | Significant degradation due to weak-use fragments |
+| DeadBranchInsertion | 1% | 0.37 | Equivalent to clean FT with templates in dead branches |
+| DeadBranchInsertion | 10% | 0.38 | Suggests template exposure alone is not the key |
 | DeadBranchInsertion | 50% | 0.34 | High ratio still much weaker than FunPoison |
-| DeadBranchInsertion | 100% | 0.35 | Full dead branch insertion cannot replicate FunPoison effect |
+| DeadBranchInsertion | 100% | 0.35 | Full dead branch poisoning fails to replicate result |
 
-| Functionality Preservation Metrics | Clean | FunPoison | Interpretation |
+| Functionality Metrics | Clean | FunPoison | Interpretation |
 |------|------|------|------|
-| Compilation success | 984/984 | 984/984 | Compilation success rate maintained at 100% |
-| p95 time overhead | Baseline | mean 2.29%, p95 25% | Average time overhead is small |
-| p95 memory overhead | Baseline | mean 0.09%, p95 2.41% | Memory impact is very low |
-| Line coverage | 100% | 100% | Execution coverage remains unchanged |
-| Execution jitter | 8.17% | 8.12% | Stability remains essentially consistent |
-| Behavior consistency | Preserved | Preserved | Output, exceptions, and I/O behavior remain identical |
+| Compilation success | 984/984 | 984/984 | 100% compilability maintained |
+| p95 time overhead | Baseline | mean 2.29%, p95 25% | Low average time overhead |
+| p95 memory overhead | Baseline | mean 0.09%, p95 2.41% | Minimal memory impact |
+| Line coverage | 100% | 100% | Execution coverage unchanged |
+| Execution jitter | 8.17% | 8.12% | Stability remains consistent |
+| Behavior consistency | Preserved | Preserved | Outputs, exceptions, I/O remain identical |
 
-| Defense/Cleaning Method | Key Results | Implications for FunPoison |
+| Defense/Cleaning Method | Key Results | Impact on FunPoison |
 |------|------|------|
-| LLM rewriting / CodeLlama | ACC 0.07, CodeBLEU 0.70, avg 76.42s | Low rewriting success rate and high cost |
-| LLM rewriting / GPT-4 | ACC 0.06, CodeBLEU 0.56, avg 70.07s | Even stronger models struggle to reliably clear it |
+| LLM rewriting / CodeLlama | ACC 0.07, CodeBLEU 0.70, avg 76.42s | Low success rate and high cost |
+| LLM rewriting / GPT-4 | ACC 0.06, CodeBLEU 0.56, avg 70.07s | Difficult even for stronger models to remove |
 | CodeQL static analysis | Similar to clean, Rule 32: 4.3% | Standard rules cannot isolate poisoned samples |
-| CodeBERT adaptive detector | FPR 100%, Accuracy 10.39% | Supervised detection tends to excessively misclassify benign code |
-| clang-format | Remains lower than clean FT and base | Simply changing layout cannot remove training signals |
+| CodeBERT adaptive detector | FPR 100%, Accuracy 10.39% | Detector tends to over-report benign code |
+| clang-format | Remains lower than clean FT and base | Layout changes do not remove training signals |
 
 ### Key Findings
-- The most critical empirical result of FunPoison is its effectiveness in partial poisoning. While CoProtector's disruptive transformations usually only become evident at 100%, FunPoison significantly suppresses fine-tuning gains at 10%.
-- The DeadBranchInsertion ablation is very convincing: same templates placed outside the execution path result in performance close to clean fine-tuning, indicating that training interference comes from execution path supervision rather than template text itself.
-- Evidence for functionality preservation is comprehensive: all 984 tasks compiled and ran, and all 57,764 unit tests for Apache Commons Lang passed, showing the method does not succeed by destroying code quality.
-- Robustness experiments cover detection, cleaning, LLM rewriting, static analysis, formatting, and adaptive supervised detection. While not proving it is unremovable, they show common low-cost cleaning strategies have limited effectiveness.
+- The most significant empirical result of FunPoison is the effectiveness of partial poisoning. While CoProtector usually requires 100% poisoning, FunPoison significantly suppresses fine-tuning gains at 10%.
+- The DeadBranchInsertion ablation is compelling: identical templates placed outside the execution path lead to results similar to clean fine-tuning, proving that interference stems from execution-path supervision rather than the template text itself.
+- Functionality preservation is thoroughly proven: all 984 tasks compile and run, and all 57,764 unit tests for Apache Commons Lang pass, showing the method does not rely on degrading code quality.
+- Robustness experiments cover detection, cleaning, LLM rewriting, static analysis, and formatting. While they do not prove "irremediability," they show that common low-cost cleaning strategies have limited effects.
 
 ## Highlights & Insights
-- The strongest point of the paper is optimizing the often-conflicting goals of "poisoning effectiveness" and "code usability" together. For code data governance, maintaining the normal user experience is a prerequisite for a method's adoption.
-- The mechanism explanation regarding execution path supervision is important. Fragments are harmless at runtime but remain under token supervision during autoregressive training, thus affecting the code distribution learned by the model—a more nuanced observation than simply inserting "bad" code.
-- The experiments look beyond Pass@1, incorporating dynamic analysis, real-world project testing, rewriting attacks, static analysis, and adaptive detector evaluations, making the paper resemble a complete defense system assessment.
-- FunPoison also raises a broader question: if data owners want to allow human use but restrict model training, technical mechanisms, licensing governance, and transparent disclosure must be designed in tandem.
+- The strongest point of the paper is the simultaneous optimization of "poisoning effectiveness" and "code availability." For code data governance, maintaining the experience of human users is a prerequisite for any mechanism.
+- The explanation of the execution path supervision mechanism is vital. Fragments are harmless at runtime but serve as token supervisors during auto-regressive training, thereby affecting the code distribution learned by the model.
+- The evaluation goes beyond $Pass@1$ to include dynamic analysis, real-project testing, rewriting attacks, and adaptive detectors, making it a comprehensive defense system assessment.
 
 ## Limitations & Future Work
-- The paper systematically evaluates only Java; other languages require different parsers, compilers, weak-use designs, and side-effect filtering rules. Portability to Rust, Go, JavaScript, or C/C++ cannot yet be directly assumed.
-- FunPoison depends on available insertion points. The paper notes that 80.3% of functions in CodeSearchNet Java have valid positions under full coverage settings, but highly compact or heavily optimized code may lack space.
-- It is not theoretically unremovable. More aggressive training pipelines, pre-training from scratch, data deduplication, semantic normalization, strong human auditing, or RL-based adaptation might alter the effects.
-- The method is clearly dual-use. Responsible deployment requires transparent disclosure in dataset cards, READMEs, or license addendums, and providing clean data for authorized training users; it is unsuitable for default deployment in open collaborative ecosystems.
-- Current evaluations mainly focus on executable code generation. Whether code retrieval, completion, repair, test generation, or code understanding tasks are similarly affected requires task-level research.
+- The paper systematically evaluates only Java. Other languages would require different parsers, compilers, weak-use designs, and side-effect filters. Transferability to Rust, Go, or C++ cannot be assumed.
+- FunPoison depends on available insertion sites. While 80.3% of functions in CodeSearchNet Java had valid positions, highly compact or optimized code might lack space.
+- The method is not theoretically unremovable. More aggressive training, pre-training from scratch, deduplication, semantic normalization, or RL-based adaptation might mitigate the effects.
+- The method has dual-use potential. Responsible deployment requires transparent disclosure (e.g., via dataset cards or licenses), and it is not suitable for default deployment in open collaborative ecosystems.
 
 ## Related Work & Insights
-- **vs CoProtector**: CoProtector disrupts code or comments through CC/CS/CR/CSR transformations, often sacrificing compilability or relying on 100% poisoning; FunPoison treats functionality preservation as a hard constraint and is effective at 10% partial poisoning.
-- **vs Code Watermarking / Attribution**: Watermarking and attribution are typically used to prove data was used ex-post; FunPoison aims to reduce unauthorized fine-tuning gains ex-ante. The two are complementary.
-- **vs Backdoor Attacks / General Data Poisoning**: Many poisoning studies pursue targeted misbehavior or label corruption; this work focuses on untargeted deterrence while requiring program behavior to remain unchanged.
-- **vs Cleaning and Rewriting Defenses**: KillBadCode, DeCoMa, CodeQL, formatters, and LLM rewriting are tools attackers might use; this paper treats them as robustness tests rather than direct method comparisons.
-- **Insights**: For datasets constrained by copyright and licensing, legal text alone is hard-pressed to stop model training. Future data usage governance may need to combine access control, data provenance, transparent disclosure, and technical perturbation into a finer-grained system.
+- **vs CoProtector**: CoProtector disrupts code or comments via various transformations, often sacrificing compilability or requiring 100% poisoning; FunPoison treats functionality as a hard constraint and is effective at 10%.
+- **vs Code Watermarking/Attribution**: Watermarking is typically post-hoc; FunPoison is a proactive deterrent to reduce fine-tuning gains.
+- **vs Backdoor Attacks**: Many poisoning studies target specific misbehaviors; ours is untargeted deterrence with preserved code behavior.
+- **Insight**: Technical disruption must be combined with access control and legal licensing to form a comprehensive data governance framework.
 
 ## Rating
-- Novelity: ⭐⭐⭐⭐☆ Functionality-preserving code poisoning and the execution path supervision mechanism are highly distinct from destructive code perturbations.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of models, benchmarks, defenses, real projects, and dynamic analysis; ablations capture key mechanisms.
-- Writing Quality: ⭐⭐⭐⭐☆ Structure is clear, with a complete description of the threat model and responsibility boundaries; some code link information in the cache is unclear.
-- Value: ⭐⭐⭐⭐☆ Insightful for code data governance, protection against unauthorized fine-tuning, and CodeLLM training security, though deployment must be highly cautious.
+- Novelty: ⭐⭐⭐⭐☆ Functionality-preserving code poisoning and execution path supervision are highly distinct from destructive methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of models, benchmarks, defenses, real projects, and dynamic analysis.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure with well-defined threat models and responsibility boundaries.
+- Value: ⭐⭐⭐⭐☆ Provides significant insights into code data governance and unauthorized fine-tuning protection, though deployment requires caution.
 
 <!-- RELATED:START -->
 
@@ -146,11 +154,11 @@ FunPoison itself does not involve training a model; thus, there is no new optimi
 
 ## Related Papers
 
+- [\[ACL 2025\] Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?](../../ACL2025/llm_safety/llm_watermark_distillation_robustness.md)
 - [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](../../NeurIPS2025/llm_safety/imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
 - [\[ACL 2026\] PARASITE: Conditional System Prompt Poisoning to Hijack LLMs](parasite_conditional_system_prompt_poisoning_to_hijack_llms.md)
 - [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
-- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](../../ICML2026/llm_safety/optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
 
 </div>
 

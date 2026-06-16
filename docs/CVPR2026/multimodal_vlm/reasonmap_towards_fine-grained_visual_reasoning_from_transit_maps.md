@@ -2,95 +2,81 @@
 title: >-
   [Paper Note] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 description: >-
-  [CVPR2026][Multimodal VLM][Multimodal reasoning] This paper introduces the ReasonMap benchmark, which constructs 1,008 QA pairs from high-resolution transit maps of 30 cities and proposes a two-level evaluation framework…
+  [CVPR 2026][Multimodal VLM][benchmark] Ours proposes the ReasonMap benchmark, which utilizes high-resolution transit maps from 30 cities to construct 1,008 QA pairs. Through a two-level evaluation framework (correctness + quality), the fine-grained visual reasoning capabilities of 16 MLLMs are systematically evaluated. The study reveals that among open-sour
 tags:
-  - "CVPR2026"
-  - "Multimodal VLM"
-  - "Multimodal reasoning"
-  - "visual reasoning"
-  - "spatial reasoning"
-  - "metro maps"
-  - "benchmark"
-  - "reinforcement fine-tuning"
-  - "GRPO"
+  - CVPR 2026
+  - Multimodal VLM
+  - benchmark
 date: 2026-05-08
-content_hash: 99ec5ccfbaf93de1
+content_hash: 91c6b232de17292b
 ---
-
 # ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2505.18675](https://arxiv.org/abs/2505.18675)  
 **Code**: [fscdc/ReasonMap](https://fscdc.github.io/ReasonMap)  
-**Area**: Multimodal VLM
-**Keywords**: Multimodal reasoning, visual reasoning, spatial reasoning, metro maps, benchmark, reinforcement fine-tuning, GRPO
+**Area**: Multimodal VLM  
+**Keywords**: Multimodal Reasoning, Visual Reasoning, Spatial Reasoning, Transit Maps, Benchmark, RLHF, GRPO
 
 ## TL;DR
 
-This paper introduces the ReasonMap benchmark, which constructs 1,008 QA pairs from high-resolution transit maps of 30 cities and proposes a two-level evaluation framework (correctness + quality) to systematically assess fine-grained visual reasoning capabilities of 16 MLLMs. A key finding is that among open-source models, base models outperform reasoning models, while the opposite holds for closed-source models.
+Ours proposes the ReasonMap benchmark, which utilizes high-resolution transit maps from 30 cities to construct 1,008 QA pairs. Through a two-level evaluation framework (correctness + quality), the fine-grained visual reasoning capabilities of 16 MLLMs are systematically evaluated. The study reveals that among open-source models, base models outperform reasoning models, whereas the opposite is true for closed-source models.
 
 ## Background & Motivation
 
-**Insufficient visual reasoning evaluation for MLLMs**: Existing multimodal reasoning benchmarks (MathVQA, MMMU, MathVerse) primarily assess symbolic/mathematical reasoning with limited emphasis on visual understanding, lacking joint evaluation of fine-grained visual comprehension and spatial reasoning.
+**Insufficient MLLM Visual Reasoning Evaluation**: Existing multimodal reasoning benchmarks (MathVQA, MMMU, MathVerse) primarily evaluate symbolic/mathematical reasoning where the role of visual understanding is limited, lacking a joint evaluation of fine-grained visual comprehension and spatial reasoning.
 
-**Coarse granularity of existing benchmarks**: VisuLogic and VisualPuzzles focus on fine-grained perception but do not involve spatial planning; CityBench and MapBench address spatial reasoning but lack fine granularity and rely on external tools (map APIs) to complete tasks, thereby circumventing genuine visual reasoning.
+**Coarse Granularity of Existing Benchmarks**: Benchmarks like VisuLogic and VisualPuzzles focus on fine-grained perception but do not involve spatial planning. CityBench and MapBench involve spatial reasoning but lack sufficient granularity and often rely on external tools (Map APIs) to complete tasks, bypassing genuine visual reasoning.
 
-**Maps as ideal evaluation vehicles**: Transit maps, as structured and information-dense visual artifacts, inherently demand precise spatial interpretation, making them well-suited for evaluating fine-grained visual reasoning.
+**Maps as Ideal Test Carriers**: Transit maps, as structured and information-dense visual products, naturally demand precise spatial interpretation capabilities, making them highly suitable for evaluating fine-grained visual reasoning.
 
-**Questionable performance of reasoning models**: While reasoning-oriented MLLMs excel at mathematical and logical tasks, whether they are equally effective on spatial reasoning tasks requiring visual grounding has not been systematically validated.
+**Questionable Performance of Reasoning Models**: While reasoning-oriented MLLMs excel in mathematical and logical tasks, their effectiveness in spatial reasoning tasks requiring visual grounding remains without systematic verification.
 
-**Visual dependency vs. linguistic priors**: Prior work has noted that MLLMs may rely on internal knowledge priors rather than genuinely attending to visual inputs, necessitating validation through visual-masking experiments.
+**Visual Dependency vs. Language Prior**: Existing research suggests that MLLMs may rely on internal knowledge priors rather than truly attending to visual inputs, necessitating verification through visual masking experiments.
 
-**Lack of training baselines**: The absence of RL training baselines for fine-grained visual reasoning scenarios hinders subsequent research comparisons and exploration.
+**Lack of Training Baselines**: There is a lack of RL training baselines in fine-grained visual reasoning scenarios, hindering subsequent research comparisons and exploration.
 
 ## Method
 
 ### Overall Architecture
 
-The ReasonMap construction pipeline consists of three stages:
+ReasonMap is a benchmark for evaluating fine-grained visual reasoning, using transit/subway maps—structured, information-dense products—as the core medium. The pipeline consists of three stages: first, collecting high-resolution maps from 30 cities and structuring them into unified Metro Data; next, automatically generating short and long QA pairs with reference routes; finally, performing quality control to remove non-visually traceable or erroneous questions. On the evaluation side, a two-level framework (correctness then quality score) is used to assess 16 MLLMs; the metrics of this same framework are adapted into rewards to drive a GRPO reinforcement learning fine-tuning baseline.
 
-**Stage 1: Data Collection and Preprocessing**
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BUILD["Three-Stage Data Construction Pipeline"]
+        direction TB
+        A["30 High-res City Subway Maps<br/>(Avg. 5839×5449)"] --> B["Data Collection & Pre-processing<br/>GPT-4o Extracts Lines/Stations + Manual Correction → Metro Data"]
+        B --> C["QA Pair Construction<br/>Random Station Pairs → Short/Long Questions + API Reference Routes + Difficulty Labels"]
+        C --> D["Quality Control<br/>Correctness/Diversity/Difficulty Balance, Remove Non-Traceable Questions"]
+    end
+    D --> E["ReasonMap Benchmark<br/>1008 QA Pairs"]
+    E -->|Test Set| F["16 MLLMs Completion"]
+    F --> G["Two-Level Evaluation Framework<br/>Correctness Acc + Quality Map Score"]
+    E -->|Training Set| H["GRPO Training Baseline<br/>Qwen2.5-VL-3B/7B, Cross-City Split"]
+    G -->|accuracy + format rewards| H
+```
 
-- High-resolution metro maps from 30 cities (13 countries) are collected from public sources.
-- Average resolution is 5,839×5,449, far exceeding existing visual reasoning datasets (typically <1,000×1,000).
-- GPT-4o is used to extract line and station names, which are manually corrected and stored in a unified JSON format (Metro Data).
-- Special cases (transfer stations, branch line terminals) are annotated separately in a standardized format.
+### Key Designs
 
-**Stage 2: QA Pair Construction**
+**1. Three-Stage Data Construction Pipeline: Transforming Maps into Traceable, Scorable QA**
 
-- Two stations are randomly selected and questions are generated in both short and long forms using predefined templates.
-- Short questions use one fixed template; long questions are randomly drawn from two templates (one asking for the number of intermediate stops, one requiring enumeration of specific stops).
-- Reference routes are obtained via the Amap API (Chinese cities) or Google Maps API (other cities).
-- Question difficulty is divided by the number of transfers (0=easy, 1=medium, ≥2=hard).
-- Map difficulty is divided by the number of lines and transfer stations (easy/medium/hard, 10 maps each).
-- Each map has a fixed quota of 20:15:5 (easy:medium:hard), yielding 40 questions per map.
+To measure genuine visual reasoning, it must be ensured that every question can be visually traced on the map and that the answers are consistent with the visual content. The pipeline is divided into three parts: (a) **Data Collection and Pre-processing**—collecting high-resolution subway maps (average $5,839 \times 5,449$, far exceeding the $<1,000 \times 1,000$ typical of existing datasets) from 30 cities across 13 countries. GPT-4o extracts lines and station names, followed by manual correction into a unified JSON format, with special cases like transfer stations or branch termini labeled separately. (b) **QA Pair Construction**—randomly selecting two stations. Short questions use one fixed template; long questions use two templates (one asking for the number of intermediate stops, one for the specific stops). Reference routes are obtained via Amap (Chinese cities) or Google Maps (other cities) APIs. Question difficulty is categorized by transfers (0 easy / 1 medium / $\ge 2$ hard), and map difficulty by line count (easy/medium/hard). Each map has a 20:15:5 quota for 40 questions total. (c) **Quality Control**—checking for correctness, diversity, and difficulty balance, with erroneous questions corrected or discarded and non-traceable routes removed.
 
-**Stage 3: Quality Control**
+**2. Two-Level Evaluation Framework: Assessing Accuracy and Differentiating via Quality Scores**
 
-- QA pairs are inspected for correctness, diversity, and difficulty balance.
-- Erroneous QA pairs are manually corrected or discarded.
-- Routes that cannot be visually traced on the map are discarded to ensure consistency with visual content.
+Simple accuracy is too coarse to distinguish subtle model differences. ReasonMap layers two levels: **Correctness (Accuracy)** verifies departure/arrival stations $\rightarrow$ existence of line names $\rightarrow$ validity of segment stations $\rightarrow$ consistency of transfer stations between segments. All must pass to be correct. **Quality (Map Score)** compares answers segment-by-segment against the reference. Matching stop1/stop2 grants 1 point, line name 2 points, and segment departure/arrival 1 point each, capped at 10 with bonus points for total correctness. Long questions add intermediate stop count evaluation (num_via_stop_score, absolute error mapped to a 4-point scale) or specific stop evaluation (via_stop_score, average of IoU and exact match truncated to 10 points). Harder samples are assigned higher weights to reflect robustness.
 
-### Two-Level Evaluation Framework
+**3. GRPO Training Baseline: Providing an RL Starting Point for Fine-Grained Visual Reasoning**
 
-- **Accuracy Evaluation**: Verifies correctness of departure/arrival stations → existence of each route segment name → validity of departure/arrival stations in each segment → consistency of transfer stations between adjacent segments; all checks must pass for a response to be deemed correct.
-- **Quality Evaluation (Map Score)**:
-    - **Short questions**: Compares answer and reference route segment pairs, awarding points for stop1/stop2 match (1 pt), route name match (2 pts), and departure/arrival stations within a segment (1 pt each), capped at 10 pts, with bonus points for correct answers.
-    - **Long questions**: Extends short-question scoring with evaluation of the number of intermediate stops (num_via_stop_score, mapping absolute error to a 4-point scale) or specific intermediate stops (via_stop_score, averaging IoU and exact match then truncating to 10 pts).
-- **Difficulty weighting**: Higher-difficulty samples are assigned greater weights to more accurately reflect model robustness.
-
-### GRPO Training Baseline
-
-- Reinforcement fine-tuning is applied to Qwen2.5-VL-3B/7B-Instruct using GRPO (Group Relative Policy Optimization).
-- **Reward design**: (1) accuracy reward — binary signal based on the correctness evaluation; (2) format reward — encourages parseable output format.
-- Training configuration: AdamW, lr=1e-6, KL coefficient 1e-3, 8 responses sampled per query, global batch size 16.
-- Cross-city splits (training and test cities are completely disjoint) are adopted to validate generalization.
+As this field lacked an RL baseline for comparison, the paper performs reinforcement fine-tuning on Qwen2.5-VL-3B/7B-Instruct using GRPO (Group Relative Policy Optimization). Rewards consist of a binary accuracy reward based on the correctness evaluation and a format reward to encourage parsable output. Training uses AdamW, $lr=1e-6$, KL coefficient $1e-3$, 8 samples per query, global batch size 16, and a cross-city split where training and testing cities are disjoint to test generalization.
 
 ## Experiments
 
 ### Main Results
 
-| Model | Type | Short Weighted Acc | Long Weighted Acc | Map Score (S/L) |
+| Model | Type | Weighted Acc (Short) | Weighted Acc (Long) | Map Score (S/L) |
 |---|---|---|---|---|
 | Qwen2.5-VL-72B | Base | 26.65% | 24.22% | 5.09 / 8.80 |
 | InternVL3-78B | Base | 25.35% | 19.62% | 4.80 / 7.50 |
@@ -100,7 +86,7 @@ The ReasonMap construction pipeline consists of three stages:
 | OpenAI 4o | Base | 41.15% | 42.80% | 6.84 / 13.57 |
 | Gemini-2.5-Flash | Reasoning | 46.09% | 29.86% | 7.64 / 9.98 |
 
-### Ablation Study on RL Training Baseline
+### Ablation Study (RL Baseline)
 
 | Model | Short Acc Gain | Long Acc Gain | Map Score Gain (S/L) |
 |---|---|---|---|
@@ -109,42 +95,42 @@ The ReasonMap construction pipeline consists of three stages:
 
 ### Key Findings
 
-1. **Open-source base > reasoning; closed-source reasoning > base**: Open-source reasoning models introduce visual confusion during their chain-of-thought (initially correct answers are subsequently self-negated), whereas closed-source reasoning models possess stronger visual grounding and can self-correct visual confusion within the reasoning chain.
-2. **Scaling laws still hold**: Larger models within the same family achieve higher accuracy with fewer tokens (Qwen2.5-VL-72B short-question Acc of 26.65% vs. 8.68% for the 3B variant).
-3. **Visual-masking experiments**: Removing visual input degrades performance for most models, with more pronounced degradation for closed-source models (Doubao-415 short-question Acc drops by 21.61%), indicating effective utilization of visual information; Qwen2.5-VL-3B shows minimal change or even slight improvement, suggesting smaller models rely more heavily on linguistic priors.
-4. **RL fine-tuning is consistently effective**: Under the cross-city setting, the 7B model's short-question Acc improves from 13.28% to 26.22% and long-question Acc from 7.12% to 26.04%, with concurrent reduction in token usage.
-5. **Error type analysis**: Primary errors include visual confusion (misidentification of similarly colored lines), format errors, hallucinations (repetition of correct answers or generation of irrelevant content), and refusals. Multiple error types can co-occur within a single response.
-6. **Large inter-city variation**: Even for maps of comparable difficulty, model performance varies substantially across cities, closely correlated with city prominence and the language of station names.
+1. **Open-source base > reasoning, closed-source reasoning > base**: Open-source reasoning models introduce visual confusion through trial-and-error in their thought process (correct then self-negated), while closed-source reasoning models possess stronger visual grounding, allowing them to self-correct within the chain of thought.
+2. **Scaling Laws Remain Valid**: Larger models in the same series yield higher accuracy with fewer tokens (Qwen2.5-VL-72B short problem 26.65% vs. 8.68% for 3B).
+3. **Visual Masking Experiment**: Most models' performance drops without visual input, with closed-source models seeing a more significant drop (Doubao-415 short Acc dropped 21.61%), indicating effective use of visual information. Qwen2.5-VL-3B remained nearly unchanged, suggesting smaller models rely more on language priors.
+4. **RL Fine-tuning is Consistently Effective**: The 7B model Improved short problem Acc from 13.28% to 26.22% and long problems from 7.12% to 26.04% in cross-city settings, while reducing token usage.
+5. **Error Type Analysis**: Dominant errors include visual confusion (misidentifying similar-colored lines), formatting errors, hallucinations (repeating correct answers or generating irrelevant content), and rejection. Multiple errors can co-occur in one response.
+6. **Significant Variation Across Cities**: Even with comparable map difficulty, performance varies significantly by city, which is closely related to city popularity and station name languages.
 
 ## Highlights & Insights
 
-- The first high-resolution map benchmark targeting fine-grained visual reasoning, with resolutions far exceeding existing datasets (5,839×5,449 vs. typically <1,000×1,000).
-- The two-level evaluation framework (correctness + quality) is elegantly designed; Map Score differentiates models more effectively than simple accuracy.
-- Reveals counterintuitive performance discrepancies between open-source/closed-source base/reasoning models, with plausible explanations supported by case analysis.
-- A semi-automated and scalable data construction pipeline that facilitates future expansion to additional cities.
-- Visual-masking experiments validate the necessity of visual grounding.
+- First high-resolution map benchmark for fine-grained visual reasoning, with resolutions far exceeding existing datasets ($5,839 \times 5,449$ vs. usually $<1,000 \times 1,000$).
+- The two-level evaluation framework (Correctness + Quality) is elegantly designed; Map Score distinguishes model differences better than simple Acc.
+- Revealed counter-intuitive performance gaps between open/closed-source base/reasoning models and provided explanations via case analysis.
+- Semi-automated, scalable data construction pipeline facilitates future city expansion.
+- Visual masking experiments verified the necessity of visual grounding.
 
 ## Limitations & Future Work
 
-- Limited data scale (1,008 QA pairs, 30 cities) with restricted city coverage and linguistic diversity.
-- Restricted to metro/transit maps; more complex map types (e.g., road networks, floor plans) are not addressed.
-- Reference routes depend on Google Maps/Amap APIs, which may introduce coverage biases.
-- Evaluation relies on strict format parsing; directly penalizing format errors may underestimate the true reasoning ability of certain models.
-- RL training baselines are validated only on Qwen2.5-VL, without coverage of additional architectures.
+- Data scale is relatively small (1,008 QA pairs, 30 cities), with limited city coverage and language diversity.
+- Restricted to subway/transit maps, not addressing more complex map types (e.g., road networks, floor plans).
+- Reference routes depend on Google Maps/Amap APIs, which may have coverage bias.
+- Evaluation relies on strict format parsing; format errors lead to automatic failure, potentially underestimating the true reasoning of some models.
+- RL training baseline only validated on Qwen2.5-VL, not covering more architectures.
 
 ## Related Work & Insights
 
-- **Multimodal reasoning benchmarks**: MMMU, MathVerse, VisuLogic, VisualPuzzles, VGRP-Bench — focus on mathematical/logical or abstract visual reasoning.
-- **Map/spatial reasoning**: CityBench, MapBench, MapEval, GeoNav — address spatial reasoning but with coarse granularity or reliance on external tools.
-- **Reasoning-oriented MLLMs**: Kimi-VL-Thinking, QvQ, Skywork-R1V (open-source); OpenAI o3, Gemini-2.5-Flash, Doubao-415 (closed-source).
-- **Reinforcement fine-tuning**: Successful applications of GRPO in LLM reasoning are transferred to the multimodal domain.
+- **Multimodal Reasoning Benchmarks**: MMMU, MathVerse, VisuLogic, VisualPuzzles, VGRP-Bench — focus on mathematical/logical or abstract visual reasoning.
+- **Map/Spatial Reasoning**: CityBench, MapBench, MapEval, GeoNav — spatial reasoning but coarse or reliant on external tools.
+- **Reasoning MLLMs**: Kimi-VL-Thinking, QvQ, Skywork-R1V (Open Source); OpenAI o3, Gemini-2.5-Flash, Doubao-415 (Closed Source).
+- **Reinforcement Fine-tuning**: Successes of GRPO in LLM reasoning are migrated to the multimodal domain.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First benchmark focused on fine-grained spatial reasoning over high-resolution maps; novel topic selection.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive comparison across 16 models, visual-masking experiments, RL baselines, and error analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with rigorous description of the evaluation framework.
-- Value: ⭐⭐⭐⭐ — Provides an important benchmark for fine-grained visual reasoning; the open-source/closed-source performance gap is an insightful finding.
+- Novelty: ⭐⭐⭐⭐ — First to focus on fine-grained spatial reasoning evaluation via high-res maps.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive 16-model comparison + visual masking + RL baseline + error analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure with rigorous evaluation framework descriptions.
+- Value: ⭐⭐⭐⭐ — Provides a critical benchmark for fine-grained visual reasoning with insightful open/closed-source findings.
 
 <!-- RELATED:START -->
 
@@ -152,11 +138,11 @@ The ReasonMap construction pipeline consists of three stages:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
 - [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
 - [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
+- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
+- [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
 
 </div>
 

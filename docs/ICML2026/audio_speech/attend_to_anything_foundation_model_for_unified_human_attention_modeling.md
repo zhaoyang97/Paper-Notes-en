@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Attend to Anything: Foundation Model for Unified Human Attention Modeling
 description: >-
-  [ICML2026][Audio & Speech][Human Attention] AAM unifies image, video, and audio-visual saliency prediction into an attention foundation model with text conditioning, hyperbolic hierarchical constraints…
+  [ICML 2026][Audio & Speech][Paper Note] AAM unifies image, video, and audio-visual saliency prediction into a single attention foundation model incorporating text-conditioning, hyperbolic hierarchical constraints, and Fokker-Planck temporal dynamics. It outperforms specialized models across 16 benchmarks and increases video inference speed to approximately 1
 tags:
-  - "ICML2026"
-  - "Audio & Speech"
-  - "Human Attention"
-  - "Visual Saliency"
-  - "Hyperbolic Representation"
-  - "Fokker-Planck Dynamics"
-  - "Multimodal Foundation Model"
+  - ICML 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 200604457ceb1064
+content_hash: 3452fb424b7191e1
 ---
-
 # Attend to Anything: Foundation Model for Unified Human Attention Modeling
 
 **Conference**: ICML2026  
@@ -24,55 +18,65 @@ content_hash: 200604457ceb1064
 **Keywords**: Human Attention, Visual Saliency, Hyperbolic Representation, Fokker-Planck Dynamics, Multimodal Foundation Model  
 
 ## TL;DR
-AAM unifies image, video, and audio-visual saliency prediction into an attention foundation model with text conditioning, hyperbolic hierarchical constraints, and Fokker-Planck temporal dynamics. It consistently outperforms specialized models across 16 benchmarks and improves video inference speed to approximately 111 FPS.
+AAM unifies image, video, and audio-visual saliency prediction into a single attention foundation model incorporating text-conditioning, hyperbolic hierarchical constraints, and Fokker-Planck temporal dynamics. It outperforms specialized models across 16 benchmarks and increases video inference speed to approximately 111 FPS.
 
 ## Background & Motivation
-**Background**: Human attention modeling is traditionally bifurcated into sub-fields such as image saliency, video saliency, and audio-visual attention. Each branch maintains distinct datasets, model architectures, and training protocols. Image-based methods rely on CNNs or Transformers for static maps; video methods add optical flow, 3D convolutions, or temporal Transformers; and audio-visual methods employ supplemental audio branches to capture speakers or sound sources.
+**Background**: Human attention modeling is typically split into several branches: image saliency, video saliency, and audio-visual attention. Each branch possesses its own datasets, model architectures, and training protocols. Image methods often rely on CNNs or Transformers to predict static maps; video methods add optical flow, 3D convolutions, or temporal Transformers; and audio-visual methods use supplementary audio branches to capture speakers, sound sources, or event cues.
 
-**Limitations of Prior Work**: This fragmentation enables high performance within single datasets but hinders cross-scenario generalization. The paper notes that even when scaling model capacity and data, existing models suffer significant performance degradation in cross-dataset testing. This suggests the bottleneck is not merely lack of samples, but the problem definition itself, which segments a unified human cognitive mechanism into disconnected local tasks.
+**Limitations of Prior Work**: This task fragmentation allows models to achieve high metrics within single datasets but limits cross-scenario generalization. The paper notes that even when scaling model capacity and data, existing models suffer significant performance drops in cross-dataset testing. This suggests the bottleneck is not merely a lack of training samples, but rather a problem definition that segments the same human cognitive mechanism into disconnected local tasks.
 
-**Key Challenge**: Human attention is a unified cognitive process, yet current modeling treats scenario differences, task intentions, and modal variations as isolated statistical biases. Models need to express both "universal attention priors" and "task-specific conditions" while integrating static images and dynamic videos into a single inferable framework rather than separate branches for each input form.
+**Key Challenge**: Human attention involves a unified cognitive process, yet current modeling approaches treat scenario differences, task intentions, and modal variations as isolated statistical biases. A model needs to represent both a "general attention prior" and "task-specific conditions" while placing static images and dynamic videos into a single inferable framework, rather than building separate branches for every input format.
 
-**Goal**: The authors aim to construct a reusable attention foundation model for image, video, and audio-visual tasks. It must support text-conditioned control, cross-dataset generalization, frame-by-frame prediction of arbitrary-length video, and reduced redundant computation in video models without sacrificing accuracy.
+**Goal**: The authors aim to construct an attention foundation model reusable across image, video, and audio-visual tasks. It must support text-conditioned control, cross-dataset generalization, frame-by-frame prediction for arbitrary video lengths, and reduced redundant computation in video models without sacrificing accuracy.
 
-**Key Insight**: The paper interprets attention differences as a hierarchical entailment relationship from "universal attention" to "task-specific attention," localized within a hyperbolic space. It treats temporal changes in video attention as the transport, diffusion, and correction of probability densities, using the Fokker-Planck equation to bridge static saliency maps and dynamic attention.
+**Key Insight**: The paper interprets attention differences as hierarchical entailment relationships from "general attention" to "specific task attention," utilizing hyperbolic space to host this general-to-specific structure. Simultaneously, changes in attention over time in videos are viewed as probability density transport, diffusion, and correction processes, connected via the Fokker-Planck equation to link static saliency with dynamic attention.
 
-**Core Idea**: By unifying scenarios and task conditions via hyperbolic hierarchical semantics and bridging image and video attention through physics-inspired temporal dynamics, the authors reformulate fragmented saliency prediction into a single multimodal conditional foundation model.
+**Core Idea**: By using hyperbolic hierarchical semantics to unify scenarios and task conditions, and physics-inspired temporal dynamics to unify image and video attention, the fragmented saliency prediction task is reformulated as a multimodal conditional foundation model.
 
 ## Method
-AAM accepts images, video sequences, and audio signals as input and outputs corresponding spatial attention maps. Rather than concatenating specialized models, it maps different datasets, modalities, and tasks into a unified conditional attention space. Visual inputs use a frozen DINOv3 backbone adapted via LoRA; text prompts are encoded by CLIP to describe cognitive conditions; audio is encoded by Wav2CLIP and mapped to visual semantics; videos utilize a Fokker-Planck Dynamics (FPD) module for temporal evolution on top of frame-wise visual representations.
 
 ### Overall Architecture
-The model extracts visual features, text conditions, and optional audio features. Text and visual representations are lifted into a Lorentz hyperbolic space, where the model learns partial order relations between a universal attention anchor, text condition points, and visual instance points. A hyperbolic decoder regulates multi-scale features and spatial focus weights based on the hierarchical depth of the text condition and the relative direction of the visual instance. For video input, the FPD module performs drift, diffusion, and observation correction on the attention distribution of each frame, ensuring the output preserves current evidence while absorbing temporal consistency. Training utilizes KLD, CC, and SIM saliency losses alongside a hyperbolic entailment loss.
+AAM addresses the disconnected nature of saliency prediction tasks by mapping them into a unified text-conditioned attention space, bonded by hierarchical geometry and temporal dynamics. Visual inputs are processed by a frozen DINOv3 backbone with LoRA adaptation; text prompts are encoded by CLIP to describe cognitive conditions; audio is mapped to the visual semantic space via Wav2CLIP. Visual and text representations are lifted to the Lorentz hyperbolic space to learn hierarchical relationships. A hyperbolic decoder سپس translates conditions back to pixel-level saliency maps. For videos, a Fokker-Planck dynamics module handles frame-by-frame evolution. The model is trained jointly using saliency loss and hyperbolic entailment loss.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Visual Input (Image/Video)<br/>DINOv3 Frozen + LoRA"] --> H
+    T["Text Prompt<br/>CLIP Encoding Task/Dataset Conditions"] --> H
+    A["Audio<br/>Wav2CLIP Mapping to Visual Semantics"] --> H
+    H["Hyperbolic Hierarchical Modeling<br/>Lorentz Space: Anchor → Task Text → Instance Hierarchy"] --> D
+    D["Geometry-aware Hyperbolic Decoder<br/>Depth for Scaling, Direction for Spatial Focus"] --> S["Pixel-level Saliency Map"]
+    S -->|Video Frame-by-frame| F["Fokker-Planck Dynamics<br/>Drift + Diffusion + Correction"]
+    F --> O["Per-frame Saliency Output"]
+    S -->|Image| O
+```
 
 ### Key Designs
-1. **Hyperbolic Hierarchical Entailment Modeling**:
-    - **Function**: Organizes universal attention, task text conditions, and specific visual instances into a hierarchy from general to specific.
-    - **Mechanism**: The model learns partial order relations $z_{img} \preceq z_{txt} \preceq z_{anc}$ in a Lorentz hyperbolic space, where $z_{anc}$ is the universal anchor, $z_{txt}$ is the task/dataset text condition, and $z_{img}$ is the visual instance. Through hyperbolic entailment cone constraints, text conditions must fall within the cone permitted by the universal anchor, and visual instances must remain hierarchically consistent with the text condition.
-    - **Design Motivation**: Attention conditions are hierarchical cognitive modulations rather than unordered labels. The exponential volume growth of hyperbolic space is better suited for tree-like hierarchical semantics, supporting cross-scenario generalization better than independent parameters for each dataset.
 
-2. **Geometry-Aware Hyperbolic Decoder**:
-    - **Function**: Translates hierarchical conditions from hyperbolic space back to pixel-level saliency maps, allowing granular conditions to control different scales and spatial regions.
-    - **Mechanism**: The hyperbolic distance from the text point to the origin represents condition specialization depth, used to select multi-scale operator weights $w_k=softmax_k(-d_L(z_{txt},\mu_k))$. The geodesic direction $\Delta$ of the visual instance relative to the text condition is used to calculate spatial focus weights.
-    - **Design Motivation**: By mapping hierarchical depth to scale modulation and semantic offset to spatial focus, the geometric decoder better approximates the way human attention narrows or expands based on task objectives compared to simple feature concatenation.
+**1. Hyperbolic Hierarchical Entailment: Representing Dataset and Task Differences as Cognitive Hierarchies**
 
-3. **Fokker-Planck Video Attention Dynamics**:
-    - **Function**: Extends static frame attention to continuous-time evolution for arbitrary-length video, avoiding the high redundancy of fixed-window models.
-    - **Mechanism**: The video attention distribution $u_t$ is treated as a probability density over the spatial domain. Its temporal change consists of drift (aggregating information via bidirectional temporal self-attention), diffusion (smoothing high-frequency noise via second-order central differences), and correction (an adaptive compromise between dynamic prediction and current observation $u_t^{obs}$ via a Kalman-like gain).
-    - **Design Motivation**: Visual attention in video shifts with moving targets while requiring temporal continuity and robustness against error propagation. The Fokker-Planck perspective decomposes these requirements into interpretable physical processes that are more efficient than stacked Transformers.
+In prior methods, different datasets and tasks are often treated as independent statistical domains with separate parameters, leading to poor generalization. AAM reformulates this as a hierarchical relationship: learning a partial order $z_{img} \preceq z_{txt} \preceq z_{anc}$ in Lorentz hyperbolic space. Here, $z_{anc}$ is a shared general attention anchor, $z_{txt}$ is a text condition for a task/dataset, and $z_{img}$ represents visual instances. Through hyperbolic entailment cone constraints, text conditions must fall within the cone of the general anchor, and visual instances within the text condition cone. This enforces an abstract-to-concrete chain of "General Attention $\rightarrow$ Task Attention $\rightarrow$ Instance Attention." Hyperbolic space is chosen over Euclidean concatenation because its volume grows exponentially with radius, naturally accommodating tree-like hierarchical semantics where subordination is explicitly encoded.
+
+**2. Geometry-aware Hyperbolic Decoder: Driving Scale and Spatial Focus via Geometric Properties**
+
+Simply concatenating text vectors as conditions makes it difficult for models to distinguish between "generalized task descriptions" and "fine-grained scenario intents." Here, geometric quantities directly participate in decoding. The hyperbolic distance from a text point to the origin represents the specialization depth, used to select multi-scale operator weights $w_k=\mathrm{softmax}_k(-d_L(z_{txt},\mu_k))$; more specific conditions favor finer scales. Simultaneously, the geodesic direction $\Delta$ of the visual instance relative to the text condition determines spatial focus weights, identifying which regions the decoder should emphasize. This ensures hierarchical depth corresponds to scale modulation and semantic offset direction to spatial focus, mirroring how human attention expands or contracts based on task goals.
+
+**3. Fokker-Planck Video Attention Dynamics: Modeling Saliency Evolution as Probability Density Transport**
+
+Fixed-window video models process multiple frames to output only the last, resulting in high redundancy and an inability to perform arbitrary-length frame-by-frame prediction. AAM views the video attention distribution $u_t$ as a probability density over the spatial domain, with its temporal evolution governed by drift, diffusion, and correction terms. The drift term uses bidirectional temporal self-attention to aggregate evidence, allowing attention to migrate with moving targets; the diffusion term uses second-order central differences to smooth high-frequency noise for temporal continuity; the correction term acts like a Kalman gain to adaptively balance dynamic predictions and the current frame observation $u_t^{obs}$, preventing error propagation. Decomposing temporal consistency into these physically meaningful actions is more interpretable than stacking temporal Transformers and enables the high throughput of 111 FPS.
 
 ### Loss & Training
-The model is trained on Attention-1.75M, comprising 8 image, 4 video, and 6 audio-visual datasets totaling 1.75 million human fixation instances. Training proceeds in stages: starting with image and video data using a free-viewing warm-start for the universal anchor, followed by audio-visual data after 10 epochs. The visual backbone is frozen, with adaptation via LoRA and task-specific heads.
+The model is trained on Attention-1.75M, a collection of 8 image, 4 video, and 6 audio-visual datasets totaling over 1.75 million human fixation instances. Training follows a staged strategy: initial training on image and video data with a warm-start for the general attention anchor using free-viewing data, followed by the addition of audio-visual data after 10 epochs. The visual backbone remains frozen, adapted only via LoRA and task heads.
 
-The total loss is $L_{total}=L_{KLD}-L_{CC}-L_{SIM}+L_{HAE}$. $L_{HAE}$ constrains the anchor-to-text and text-to-image entailment relationships. Audio-visual fusion employs correlation-gated cross-attention, strengthening audio contributions only when audio cues align with visual semantics.
+The total loss combines traditional saliency losses with hierarchical entailment loss: $L_{total}=L_{KLD}-L_{CC}-L_{SIM}+L_{HAE}$. The $L_{HAE}$ term constrains both anchor-to-text and text-to-image entailment. Audio-visual fusion utilizes a correlation-gated cross-attention mechanism, reinforcing audio contributions only when cues align with visual semantics.
 
 ## Key Experimental Results
 
 ### Main Results
-AAM is evaluated across 16 benchmarks. It achieves stable improvements in natural images, webpages, e-commerce, video, and audio-visual scenarios.
+AAM was evaluated across 16 benchmarks. Representative results show that AAM achieves consistent improvements across natural images, webpages, e-commerce, video, and audio-visual scenarios.
 
-| Task/Dataset | Metric | Ours (AAM) | Prev. Strong Baseline | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Task/Dataset | Metric | Ours (AAM) | Prev. SOTA | Gain |
+|--------|------|------|----------|------|
 | MIT1003 Image | CC ↑ | 0.831 | SUM 0.768 | +0.063 |
 | CAT2000 Image | SIM ↑ | 0.769 | SUM 0.754 | +0.015 |
 | SALICON Image | KLD ↓ | 0.163 | SUM 0.192 | -0.029 |
@@ -83,55 +87,58 @@ AAM is evaluated across 16 benchmarks. It achieves stable improvements in natura
 | UCF Video | CC ↑ | 0.736 | VSSM 0.705 | +0.031 |
 
 ### Ablation Study
+Ablations covered joint training, backbones, temporal modules, and hyperbolic components.
 
-| Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| Single-dataset training | Weak cross-dataset generalization | Learns local distributions only; fails to express unified hierarchy. |
-| Image joint training | Improved average image results | Shared hierarchical conditions stabilize natural image and e-commerce tasks. |
-| Full multimodal training | Stable gains across all tasks | Multimodal data does not disrupt existing tasks, indicating mitigated modal conflict. |
-| W/o temporal module | Decreased video results | Frame-wise static prediction lacks temporal transport and smoothing. |
-| Standard temporal self-attention | Better than none, worse than FPD | Aggregates information but lacks diffusion/correction structural constraints. |
-| FPD temporal module | Best video ablation | Drift, diffusion, and correction jointly improve dynamic stability. |
-| W/o hyperbolic learning | Significant drop in complex scenes | Linear features fail to represent general-to-specific cognitive relations. |
-| Hyperbolic loss + decoder | Best hyperbolic ablation | Constrains representation structure and injects geometry into decoding. |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Single Dataset | Significantly weaker generalization | Learns only local distributions; fails to express unified hierarchy |
+| Image Joint Training | Better average image results | Unified hierarchical conditions stabilize cross-scenario performance |
+| Full Multimodal Training | Stable gains across all modalities | Audio-visual data does not conflict with existing tasks |
+| w/o Temporal Module | Lower average video results | Lacks temporal transport and smoothing |
+| Standard Temporal Attention | Better than none, worse than FPD | Aggregates info but lacks structural constraints (diffusion/correction) |
+| FPD Temporal Module | Best video ablation | Drift, diffusion, and correction enhance dynamic stability |
+| w/o Hyperbolic Learning | Drop in complex hierarchical scenarios | Standard features struggle to represent general-to-specific relations |
+| Hyp. Loss + Hyp. Decoder | Best hyperbolic ablation | Constrains both representation and pixel-level decoding |
 
 ### Efficiency Comparison
-AAM utilizes frame-by-frame prediction and FPD evolution, avoiding the overhead of multi-frame windowed inputs.
+AAM achieves significant throughput through frame-by-frame prediction and FPD evolution.
 
-| Method | Backbone | Input Length | FPS | Trainable Parameters |
-| :--- | :--- | :--- | :--- | :--- |
+| Method | Backbone | Input Length | FPS | Trainable Params |
+|------|----------|----------|-----|-----------|
 | TASED | 3D Conv | Fixed Window | 17 | 82M |
 | STSANet | Video Swin | Fixed Window | 28 | 643M |
 | TMFI-Net | Video Swin | Fixed Window | 30 | 234M |
-| AAM | DINOv3 | Arbitrary | 111 | 21.4M |
+| AAM (Ours) | DINOv3 | Arbitrary | 111 | 21.4M |
 
 ### Key Findings
-- Average gains are balanced across tasks (~5.2% for image, 5.8% for audio-visual, 6.0% for video), suggesting the unified modeling is not biased toward a specific modality.
-- FPD provides benefits in both accuracy and throughput, increasing video inference speed to 111 FPS with only 21.4M trainable parameters.
-- Condition generalization tests show that correct task conditions outperform generalized ones, which in turn outperform incorrect ones; low standard deviation across prompt rewordings (CC SD < 0.01) indicates the model responds to semantics rather than specific phrasing.
-- As prompt granularity moves from general to specific, some tasks plateau early, reflecting that dominant task contexts are sufficient to determine major fixation patterns.
+- Average gains are balanced across tasks (Image: 5.2%, Audio-Visual: 5.8%, Video: 6.0%), indicating no bias toward specific input types.
+- FPD provides both accuracy and throughput benefits, yielding 111 FPS with only 21.4M trainable parameters.
+- Condition generalization tests show that correct task conditions significantly outperform generalized ones, which in turn outperform incorrect ones.
+- As prompt granularity moves from general to specific, performance plateaus earlier for dynamic or task-driven datasets, suggesting dominant task contexts suffice for fixation patterns.
 
 ## Highlights & Insights
-- The primary value of this work is re-framing saliency prediction from "dataset-specific regression" to a "unified attention process under cognitive conditioning." This re-formulation is more significant than scaling, as it explains why increased capacity alone fails to solve generalization.
-- Hyperbolic space is not merely decorative; it directly maps to the hierarchical hypothesis of attention. It creates an interpretable link between text abstraction, visual instance specialization, and decoding scale.
-- The Fokker-Planck module decomposes temporal consistency into drift, diffusion, and correction. This approach is transferable to tasks like video segmentation or dynamic depth estimation requiring continuous temporal smoothing.
+- The primary value lies in reframing saliency prediction from "dataset-specific regression" to a "unified attention process under cognitive conditions." This reformulation explains why increased capacity alone failed to solve cross-scenario generalization.
+- Hyperbolic space is not merely aesthetic; it maps directly to the hierarchical hypothesis of attention, linking condition abstraction and visual specialization to decoding scales.
+- The Fokker-Planck module decomposes temporal consistency into drift, diffusion, and correction, providing physical intuition implementable as neural modules. This is transferable to tasks like video segmentation or dynamic depth estimation.
+- The standardization of Attention-1.75M is crucial; without it, verifying the value of multimodal joint training and hierarchical conditions would be impossible.
 
 ## Limitations & Future Work
-- The "foundation" aspect is currently limited to the attention modeling family; its direct transferability to broader human-computer interaction or robot policy learning remains to be proven.
-- Text conditions are derived from dataset protocols; real-world user intent may be more ambiguous or conflict with visual evidence, necessitating robust testing of open-ended text.
-- FPD provides a physical intuition, but its drift and diffusion terms are discrete neural approximations, which may still differ from actual neural eye-movement mechanisms.
-- Future work could utilize AAM outputs as attention priors for downstream models, such as region-based VLM prompting or active perception in robotics.
+- The "foundation" aspect is currently limited to the attention modeling family; transferability to HCI, driving decisions, or robotic policy learning remains unproven.
+- Text conditions primarily derive from dataset protocols; real-world user intent might be more ambiguous or conflict with visual evidence, requiring more robust open-text testing.
+- While FPD is efficient, its discrete neural approximation likely still differs from the biological neural mechanisms of eye movement.
+- While 16 benchmarks are covered, some ablation results are presented as average curves; full numerical tables for cross-domain zero-shot matrices would be beneficial.
 
 ## Related Work & Insights
-- **vs UNISAL**: While UNISAL attempted to unify image and video saliency, it relied on task-specific training. AAM extends this to text conditions, hyperbolic hierarchies, and audio-visual data.
-- **vs SUM**: AAM interprets cross-dataset differences as a cognitive hierarchy rather than independent statistical domains, avoiding the need for parameter isolation.
-- **vs Video Swin/3D Conv models**: Traditional models use fixed windows with heavy computation. FPD formulates temporal change as probability distribution evolution, making arbitrary-length frame-by-wise inference an intrinsic part of the architecture.
+- **vs UNISAL**: Earlier attempts at unifying image and video saliency relied more on task-specific training. AAM extends this to text-conditioning and audio-visual data.
+- **vs SUM**: SUM uses parameter isolation for multi-dataset differences. AAM treats these as cognitive hierarchies, avoiding the need to treat each dataset as an isolated statistical domain.
+- **vs TAVDiff/CASP**: These focus on audio-visual fusion. AAM integrates this capability into a broader unified foundation model.
+- **vs Video Swin/3D Conv Models**: Traditional models use fixed windows for context, which is computationally heavy. FPD treats temporal changes as distribution evolution, making arbitrary-length reasoning intrinsic to the architecture.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Strong problem re-formulation using hyperbolic semantics and Fokker-Planck dynamics.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evidence across 16 benchmarks and multiple modalities.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, though some information density in figures is quite high.
-- Value: ⭐⭐⭐⭐⭐ Offers a clear unified paradigm for saliency and cognitive-inspired vision models.
+- Novelty: ⭐⭐⭐⭐⭐ Strong reformulation of unified attention using hyperbolic semantics and Fokker-Planck dynamics.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of 16 benchmarks, three modalities, and extensive efficiency and ablation analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and narrative, though high information density in charts requires careful reading.
+- Value: ⭐⭐⭐⭐⭐ Offers a clear unified paradigm for saliency prediction and cognitive-inspired vision models.
 
 <!-- RELATED:START -->
 
@@ -143,7 +150,7 @@ AAM utilizes frame-by-frame prediction and FPD evolution, avoiding the overhead 
 - [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
 - [\[ICLR 2026\] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition](../../ICLR2026/audio_speech/pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni.md)
 - [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](../../ACL2026/audio_speech/unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
+- [\[ACL 2026\] UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions](../../ACL2026/audio_speech/unisonate_a_unified_model_for_speech_music_and_sound_effect_generation_with_text.md)
 
 </div>
 

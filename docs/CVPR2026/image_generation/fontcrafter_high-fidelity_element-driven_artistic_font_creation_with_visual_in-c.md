@@ -2,119 +2,126 @@
 title: >-
   [Paper Note] FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 description: >-
-  [CVPR 2026][Image Generation][artistic font generation] FontCrafter reframes artistic font generation as a visual in-context generation task. By horizontally concatenating reference element images with a blank canvas and…
+  [CVPR 2026][Image Generation][Paper Note] FontCrafter reformulates artistic font generation as a visual in-context generation task. By concatenating reference element images with a blank canvas and feeding them into a pre-trained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "artistic font generation"
-  - "element-driven"
-  - "visual in-context generation"
-  - "image inpainting"
-  - "style control"
+  - CVPR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 5315867c2acf2fc8
+content_hash: e275d2cb0f4aa4d6
 ---
-
 # FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22054](https://arxiv.org/abs/2603.22054)  
-**Code**: N/A  
-**Area**: Diffusion Models / Image Generation
-**Keywords**: artistic font generation, element-driven, visual in-context generation, image inpainting, style control
+**Code**: None  
+**Area**: Diffusion Models / Image Generation  
+**Keywords**: Artistic Font Generation, Element-driven, Visual In-context Generation, Image Inpainting, Style Control
 
 ## TL;DR
-FontCrafter reframes artistic font generation as a visual in-context generation task. By horizontally concatenating reference element images with a blank canvas and feeding the result into a pretrained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods in both texture and structural fidelity.
+FontCrafter reformulates artistic font generation as a visual in-context generation task. By concatenating reference element images with a blank canvas and feeding them into a pre-trained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods in texture and structural fidelity.
 
 ## Background & Motivation
 
-1. **Background**: Artistic font generation aims to synthesize stylized glyphs conditioned on reference styles. Existing approaches fall into two major paradigms: GAN-based feature fusion methods and zero-shot diffusion model methods augmented with adapters (e.g., IP-Adapter).
-2. **Limitations of Prior Work**: GAN-based methods suffer from limited model capacity and training on small-scale, simple-texture datasets, resulting in poor generalization. Diffusion-based methods with style adapters capture only global features, ignoring pixel-level details, making it difficult to precisely match the reference style. Both paradigms support only coarse-grained control (color/overall style).
-3. **Key Challenge**: Faithfully preserving both texture and structural information from reference elements while balancing style diversity and fine-grained control remains an open challenge.
-4. **Goal**: (a) How to achieve pixel-level element style transfer rather than merely transferring global semantics? (b) How to control glyph shape in a lightweight manner? (c) How to prevent hallucinated strokes in background regions?
-5. **Key Insight**: The authors draw inspiration from the "context propagation" capability of inpainting models (FLUX.1-Fill)—inpainting models can propagate visual cues from visible regions into masked regions. Leveraging this property, the reference element image serves as the visible context and the glyph region serves as the masked area, naturally enabling style transfer.
-6. **Core Idea**: Reformulate artistic font generation as a visual in-context inpainting task, allowing reference elements to directly "fill" glyph regions in pixel space.
+1. **Background**: Artistic font generation aims to synthesize stylized glyphs based on a reference style. Existing methods primarily follow two paradigms: GAN-based feature fusion methods and zero-shot methods based on diffusion models with adapters (e.g., IP-Adapter).
+2. **Limitations of Prior Work**: GAN methods are limited by model capacity and small-scale training data with simple textures, leading to poor generalization. Diffusion methods capture only global features through Style Adapters, ignoring pixel-level details and making it difficult to precisely match the reference style. Both paradigms only support coarse-grained control (color/overall style).
+3. **Key Challenge**: Preserving both the texture and structural information of reference elements with high fidelity while balancing style diversity and fine-grained control.
+4. **Goal**: (a) How to achieve pixel-level element style transfer instead of just global semantic transfer? (b) How to control glyph shapes in a lightweight manner? (c) How to avoid hallucinated strokes in background regions?
+5. **Key Insight**: The authors leverage the "context propagation" capability of image inpainting models (FLUX.1-Fill)—the model's ability to propagate visual cues from visible regions to masked regions. Using this property, the element image serves as the visible context and the glyph region as the masked area, naturally enabling style transfer.
+6. **Core Idea**: Formulate artistic font generation as a visual context inpainting task, allowing reference elements to directly "fill" the glyph region in pixel space.
 
 ## Method
 
 ### Overall Architecture
-The inputs are a reference element image and a glyph mask. The element image is horizontally concatenated with a blank canvas in pixel space to form the input image; the glyph mask is similarly concatenated with an all-zero region. The overall framework is built upon the FLUX.1-Fill inpainting model, enhanced by three additional components: a Context-aware Mask Adapter (CMA) that injects glyph structure, Attention Redirection (AR) that suppresses hallucinated strokes and enables region-aware style blending, and Edge Repainting that refines glyph boundaries.
+This paper addresses "element-driven artistic font generation": given a reference element image (e.g., a cluster of flowers, a stone) and a glyph mask, the goal is to "grow" the element's texture and structure into the glyph with high fidelity. The core insight of FontCrafter is to treat this as an image inpainting problem—inpainting models (FLUX.1-Fill) are inherently skilled at propagating visual cues from visible regions to masked areas. Thus, the reference element is treated as the visible context, and the glyph region as the mask to be filled, allowing the style to be "filled in" directly in pixel space.
+
+Specifically: The reference element image and a blank canvas are horizontally concatenated in pixel space to form an input image; the corresponding glyph mask is also concatenated with an all-zero region in the same layout. This concatenated pair is fed into FLUX.1-Fill. During inpainting, the texture from the element side is propagated into the glyph mask on the blank side. On top of this base, three additional components address specific weaknesses: CMA injects glyph structure, Attention Redirection suppresses hallucinated strokes in the background, and Edge Repainting refines glyph boundaries for a more natural look.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Reference Element Image + Glyph Mask"] --> B["Visual Context Concatenation<br/>Element side visible · Glyph side to be filled"]
+    B --> C["FLUX.1-Fill Inpainting Base<br/>Texture propagates from element to glyph mask"]
+    CMA["Context-aware Mask Adapter (CMA)<br/>Fuses mask + context features to inject glyph structure"] --> C
+    C --> AR["Attention Redirection<br/>Inhibits cross-region attention to suppress hallucinated strokes"]
+    AR --> D["Initial Artistic Glyph"]
+    D -->|Amorphous elements require edging| ER["Edge Repainting<br/>LoRA reconstructs glyph boundaries (Optional post-processing)"]
+    D -->|Object elements| E["High-fidelity Artistic Font"]
+    ER --> E
+```
 
 ### Key Designs
 
-1. **Context-aware Mask Adapter (CMA)**:
+**1. Context-aware Mask Adapter (CMA): Making shape control signals "aware" of reference elements**
 
-    - **Function**: Injects glyph shape information to control the structure of the generated glyph.
-    - **Mechanism**: A lightweight module is inserted at the end of each MM-DiT block, consisting of two linear layers with a GELU activation in between. The downsampled glyph mask is concatenated with the MM-DiT block's output features along the channel dimension as input. The first layer reduces the channel dimension to 64, and the second layer restores the original dimension. By fusing contextual features with the glyph mask, CMA adaptively generates control signals conditioned on different reference elements.
-    - **Design Motivation**: If the control signal were derived from the glyph mask alone, it would be independent of the reference element. However, even for the same glyph, different elements should produce different structural characteristics (e.g., a flower element vs. a stone element). Fusing contextual features endows the control signal with element-awareness. CMA accounts for only 0.5% of the model parameters (22.4M vs. ControlNet's 743.81M).
+The glyph mask itself only describes the outline. If the generation control signal is derived solely from the mask, it would have no relationship with the reference element—yet, the same glyph should grow completely different structural textures when using flower elements versus stone elements. CMA inserts a lightweight module (two linear layers with a GELU) at the end of each MM-DiT block. It concatenates the downsampled glyph mask with the output features of that block along the channel dimension. The first layer reduces the channels to 64, and the second restores the original dimension. Crucially, it fuses "contextual features"—the control signal thus gains element-awareness, adaptively providing structural guidance for different reference elements. This design accounts for only 0.5% of the model parameters (22.4M), yet controls shape more accurately than a standalone ControlNet (743.81M), proving that "task-specific information + context awareness" is more efficient than "stacking a large control network."
 
-2. **Attention Redirection**:
+**2. Attention Redirection: "Pushing" hallucinated strokes back into the mask during inference**
 
-    - **Function**: Suppresses hallucinated strokes in background regions and enables region-aware style blending.
-    - **Mechanism**: An attenuation matrix $M_{attenuate} \in \mathbb{R}^{L \times L}$ is defined, where entry $(i, j)$ is set to 1 when token $i$ belongs to the glyph background region and token $j$ belongs to the reference foreground region. The attention logits are modified during self-attention computation as: $\hat{A} = A + M_{attenuate} \cdot \log_e(\lambda)$, where $\lambda \in (0,1)$ is an attenuation factor. This reduces the attention weight from reference foreground tokens to glyph background tokens by a factor of $\lambda$.
-    - **Design Motivation**: The model occasionally generates extraneous content outside the glyph region (hallucinated strokes). By suppressing cross-region interactions from the reference foreground to the glyph background, style transfer is confined to the masked stroke regions. This mechanism requires no training and is applied directly at inference time.
+Inpainting models occasionally generate redundant content outside the glyph region, known as hallucinated strokes. AR cures this during inference without training by modifying attention: define an attenuation matrix $M_{attenuate} \in \mathbb{R}^{L \times L}$, marking positions as 1 where token $i$ falls in the glyph background and token $j$ falls in the reference foreground. The logits in self-attention are rewritten as:
 
-3. **Edge Repainting**:
+$$\hat{A} = A + M_{attenuate} \cdot \log_e(\lambda),\quad \lambda \in (0,1)$$
 
-    - **Function**: Refines glyph boundaries so that they more naturally reflect the characteristics of the reference element.
-    - **Mechanism**: A narrow mask region is defined around the glyph contour, and a fine-tuned FLUX.1-Fill LoRA model reconstructs this region. The model leverages surrounding visual context to recover boundary details consistent with the reference style.
-    - **Design Motivation**: At inference time, glyph masks are derived from standard font libraries and have uniformly clean contours. For amorphous elements (e.g., clouds, flames), the model adheres too strictly to mask boundaries, producing edges that are overly smooth and unnatural.
+This effectively multiplies the cross-region attention weights from "reference foreground $\rightarrow$ glyph background" by a factor $\lambda$. As $\lambda$ decreases, the channel through which the background absorbs the reference style is cut off, restricting style transfer to the masked region where strokes should exist. This toggle also enables region-aware style mixing by adjusting the attention strength of different reference areas.
+
+**3. Edge Repainting: Restoring the "natural texture edges" of the reference elements**
+
+The glyph masks used during inference are from standard font libraries, which are uniform and clean. However, if the reference elements are amorphous objects like clouds or fire, the edges appear artificially smooth if the model strictly follows the clean boundary. Edge Repainting defines a narrow mask around the glyph outline and uses a fine-tuned FLUX.1-Fill LoRA to reconstruct only this area. This allows the boundary details to be restored to match the reference style (e.g., rough edges) using the surrounding visual context. It is an optional post-processing step specifically for amorphous elements.
 
 ### Loss & Training
-The model is trained with a flow matching loss at a learning rate of $1 \times 10^{-4}$. LoRA fine-tuning is applied to the linear layers of all MM-DiT blocks, and CMA modules are trained jointly with LoRA. Because amorphous elements and object elements differ substantially, separate LoRA and CMA parameters are used for each category. Text inputs are left empty during training, as the reference image already provides sufficient style conditioning. Training data is constructed by randomly cropping texture patches (amorphous elements) or concatenating segmented object instances (object elements), with glyph composition and rotation augmentation to increase structural diversity.
+The model is trained using flow matching loss with a learning rate of $1 \times 10^{-4}$. LoRA fine-tuning is applied to the linear layers of all MM-DiT blocks, and the CMA module is trained jointly with LoRA. Due to the significant differences between amorphous and object elements, independent LoRA and CMA parameters are used for each category. Text inputs are kept empty during training (as the reference image provides sufficient stylistic conditioning). Training data is constructed by randomly cropping texture patches (for amorphous elements) or concatenating segmented object instances (for object elements), with glyph composition and rotation augmentation to increase structural diversity.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Type | FID↓ | CLIPIm↑ | FIDp↓ | Consistency↑ | Readability↑ | SR↑ |
-|--------|------|------|---------|-------|-------------|-------------|-----|
+| Method | Type | FID↓ | CLIPIm↑ | FIDp↓ | Consistency↑ | Legibility↑ | SR↑ |
+|------|------|------|---------|-------|---------|---------|------|
 | StyleAligned | Object | 200.3 | 0.70 | 291.2 | 78.8 | 2.5 | 73.2 |
 | FontStudio | Object | 205.4 | 0.75 | 271.3 | 80.6 | 4.0 | 72.6 |
-| **FontCrafter** | **Object** | **127.5** | **0.91** | **190.6** | **94.2** | **93.5** | **92.0** |
+| **Ours (FontCrafter)** | **Object** | **127.5** | **0.91** | **190.6** | **94.2** | **93.5** | **92.0** |
 | StyleAligned | Amorphous | 227.9 | 0.74 | 304.2 | 82.6 | 4.0 | 85.2 |
 | FontStudio | Amorphous | 225.2 | 0.73 | 283.1 | 89.4 | 6.5 | 84.8 |
-| **FontCrafter** | **Amorphous** | **128.3** | **0.92** | **193.4** | **92.4** | **89.5** | **96.6** |
+| **Ours (FontCrafter)** | **Amorphous** | **128.3** | **0.92** | **193.4** | **92.4** | **89.5** | **96.6** |
 
 ### Ablation Study
 
-| Control Method | Type | Params | FID↓ | CLIPIm↑ | FIDp↓ | Consistency↑ | Readability↑ |
-|----------------|------|--------|------|---------|-------|-------------|-------------|
+| Control Mode | Type | Params | FID↓ | CLIPIm↑ | FIDp↓ | Consistency↑ | Legibility↑ |
+|---------|------|--------|------|---------|-------|---------|---------|
 | w/ ControlNet | Object | 743.81M | 193.2 | 0.74 | 252.1 | 68.4 | 82.2 |
 | w/ T2I-Adapter | Object | 79.03M | 183.1 | 0.75 | 246.2 | 81.2 | 86.8 |
 | w/ IP-Adapter | Object | - | 213.2 | 0.71 | 283.2 | 62.2 | 89.0 |
 | **Ours (CMA)** | **Object** | **22.4M** | **127.5** | **0.91** | **190.6** | **92.0** | **94.2** |
 
 ### Key Findings
-- CMA surpasses ControlNet (743.81M) and T2I-Adapter (79.03M) with only 22.4M parameters, achieving a 33× improvement in parameter efficiency.
-- IP-Adapter provides only coarse-grained control (color and category features) and fails to preserve fine-grained texture and structure; the visual in-context generation strategy leads by 0.20 on CLIPIm.
-- In Attention Redirection, decreasing the attenuation factor $\lambda$ progressively eliminates hallucinated strokes without affecting legitimate strokes.
-- The method naturally supports cross-category style blending, with the style ratio controllable by adjusting element density in the reference region.
+- CMA achieves 33x better parameter efficiency, surpassing ControlNet (743.81M) and T2I-Adapter (79.03M) with only 22.4M parameters.
+- IP-Adapter only provides coarse-grained control (color and category features) and cannot preserve fine-grained texture and structure; the visual in-context strategy leads by 0.20 in CLIPIm.
+- Reducing the inhibition factor $\lambda$ in Attention Redirection progressively eliminates hallucinated strokes without affecting legitimate strokes.
+- The method naturally supports cross-category style mixing, and the style proportion can be controlled by adjusting the density of elements in the reference area.
 
 ## Highlights & Insights
-- **Elegant formulation via visual in-context generation**: Recasting font generation as an inpainting task exploits the context propagation capability of inpainting models for pixel-level style transfer, circumventing the reliance on text descriptions or global features inherent in traditional approaches.
-- **Lightweight CMA design**: By fusing contextual features with mask information, CMA achieves shape control superior to ControlNet with far fewer parameters, demonstrating that "task-specific information + context-awareness" is more effective than large-scale independent control networks.
-- **Training-free Attention Redirection**: Manipulating the attention matrix at inference time resolves both hallucination and region-level style control, and is transferable to other generation tasks requiring region-specific control.
-- **ElementFont dataset**: Covering 6,000 element types and 19,000 glyphs, the dataset is built through a systematic pipeline (LLM generates element names → DALL·E 3 generates images → SAM segments → GPT quality-checks) and can serve as a standard benchmark for future research.
+- **Ingenious Visual In-Context Design**: Transforming font generation into an inpainting task leverages the propagation capabilities of inpainting models for pixel-level style transfer, avoiding the limitations of global features or text descriptions.
+- **Lightweight CMA**: By fusing context features with mask information, it achieves superior shape control than ControlNet with minimal parameters, proving "context-aware" designs are more effective than monolithic "large control networks."
+- **Training-free Attention Redirection**: Manipulating the attention matrix during inference solves hallucination and enables regional style control, a strategy transferable to other tasks requiring spatial control.
+- **ElementFont Dataset**: Covering 6,000 element types and 19,000 glyphs, the systematic construction (LLM generation → DALL·E 3 generation → SAM segmentation → GPT quality check) provides a standard dataset for future research.
 
 ## Limitations & Future Work
-- The method relies on FLUX.1-Fill as the backbone, resulting in a large model size and potentially slow inference speed.
-- Amorphous elements and object elements require separate LoRA parameters, precluding unified processing.
-- The paper does not provide large-scale quantitative evaluation on complex scripts such as Chinese characters (only qualitative results are shown).
-- Edge Repainting as an optional post-processing step increases pipeline complexity.
-- The ElementFont dataset is generated using DALL·E 3, which may introduce model-specific generation biases.
-- The paper does not evaluate resolution limitations or per-glyph inference time.
+- Currently relies on FLUX.1-Fill as the base model, which is large and may result in slow inference.
+- Amorphous and object elements require independent LoRA parameters; a unified treatment has not been achieved.
+- Large-scale quantitative evaluation for complex glyphs like Chinese characters was not discussed (only qualitative results shown).
+- Edge Repainting as an optional post-processing step increases the complexity of the pipeline.
+- ElementFont uses DALL·E 3-generated images, which may contain model-specific generation biases.
+- Evaluation of resolution limits and per-glyph inference time was not provided.
 
 ## Related Work & Insights
-- **vs. FontStudio**: FontStudio employs a shape-adaptive diffusion model but relies on a Style Adapter that captures only global style; FontCrafter achieves fine-grained control via pixel-space concatenation.
-- **vs. Anything2Glyph**: Anything2Glyph controls style via text prompts, supporting only coarse-grained object category control with cluttered backgrounds (FID as high as 297.8); FontCrafter uses reference images for precise control (FID reduced to 213.6).
-- **vs. IP-Adapter**: IP-Adapter injects global features through cross-attention and cannot preserve pixel-level details; the visual in-context strategy directly propagates visual cues in pixel space.
+- **vs. FontStudio**: FontStudio uses shape-adaptive diffusion but relies on Style Adapters that only capture global style; FontCrafter achieves fine-grained control through pixel-space concatenation.
+- **vs. Anything2Glyph**: Anything2Glyph uses text prompts for style control, supporting only coarse object categories and suffering from messy backgrounds (FID up to 297.8); FontCrafter provides precise control via reference images (FID reduced to 213.6).
+- **vs. IP-Adapter**: IP-Adapter injects global features via cross-attention, failing to preserve pixel-level details; the visual in-context strategy propagates visual cues directly in pixel space.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Applying the context propagation capability of inpainting models to font generation is a novel perspective, though the core technical components are relatively standard.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage including main experiments, ablations, user studies, style blending, and generalization experiments.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, methods are presented intuitively, and the ElementFont dataset construction is described in detail.
-- Value: ⭐⭐⭐⭐ Significant contribution to the artistic font generation field; both the dataset and the method have practical utility.
+- Novelty: ⭐⭐⭐⭐ Using the context propagation of inpainting models for font generation is a novel perspective, though technical components are relatively standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Main experiments, ablations, user studies, style mixing, and generalization tests are comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, intuitive method presentation, and detailed documentation of the ElementFont dataset.
+- Value: ⭐⭐⭐⭐ Significant contribution to the artistic font generation field; both the dataset and method have practical utility.
 
 <!-- RELATED:START -->
 
@@ -122,11 +129,11 @@ The model is trained with a flow matching loss at a learning rate of $1 \times 1
 
 ## Related Papers
 
-- [\[CVPR 2026\] CognitionCapturerPro: Towards High-Fidelity Visual Decoding from EEG/MEG via Multi-modal Information and Asymmetric Alignment](cognitioncapturerpro_towards_highfidelity_visual_d.md)
-- [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
-- [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
-- [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
+- [\[CVPR 2026\] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)
+- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
+- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
+- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
+- [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
 
 </div>
 

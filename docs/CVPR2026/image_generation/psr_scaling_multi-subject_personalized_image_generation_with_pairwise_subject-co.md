@@ -2,72 +2,85 @@
 title: >-
   [Paper Note] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 description: >-
-  [CVPR 2026][Image Generation][Multi-subject personalized generation] To address poor subject consistency and insufficient text adherence in multi-subject personalized image generation…
+  [CVPR 2026][Image Generation][Reinforcement Learning] To address poor subject consistency and insufficient text compliance in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through a two-stage training process (SFT + RL), the method comprehensively outperf
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Multi-subject personalized generation"
-  - "subject consistency"
-  - "reinforcement learning"
-  - "pairwise reward"
-  - "positional encoding"
+  - CVPR 2026
+  - Image Generation
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 8cd8c2d48d91e0fb
+content_hash: 474ad1c849c03564
 ---
-
 # PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.01236](https://arxiv.org/abs/2512.01236)  
 **Code**: [https://github.com/wang-shulei/PSR](https://github.com/wang-shulei/PSR)  
-**Area**: Diffusion Models / Personalized Generation
-**Keywords**: Multi-subject personalized generation, subject consistency, reinforcement learning, pairwise reward, positional encoding
+**Area**: Diffusion Models / Personalized Generation  
+**Keywords**: Multi-subject personalized generation, subject consistency, reinforcement learning, pairwise rewards, positional encoding
 
 ## TL;DR
-To address poor subject consistency and insufficient text adherence in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through two-stage training (SFT + RL), the method comprehensively outperforms existing state-of-the-art methods on the self-constructed PSRBench.
+To address poor subject consistency and insufficient text compliance in multi-subject personalized image generation, this paper proposes a scalable multi-subject data construction pipeline and Pairwise Subject-Consistency Rewards (PSR). Through a two-stage training process (SFT + RL), the method comprehensively outperforms existing SOTA on the self-constructed PSRBench.
 
 ## Background & Motivation
 
-1. **Background**: Single-subject personalized generation models (e.g., FLUX.1 Kontext, Qwen-Image-Edit) have demonstrated strong capabilities in generating subject-consistent images in novel scenes conditioned on reference images.
-2. **Limitations of Prior Work**: When scaling to multi-subject scenarios, existing models face two key challenges: (a) poor subject consistency—generated subjects are dissimilar to or entirely missing from the reference; and (b) poor text adherence—models fail to correctly bind attributes, e.g., given the prompt "dog wearing a chef's hat, cat wearing a scarf," the model may produce swapped attributes.
-3. **Key Challenge**: Two underlying issues are identified: the absence of high-quality multi-subject training datasets (existing datasets such as OmniGen's X2I-subject-driven data focus primarily on faces with low general object consistency), and the lack of fine-grained post-training strategies (SFT optimizes only at the global image level and cannot guarantee per-subject consistency).
-4. **Goal**: (1) How to construct large-scale, high-quality multi-subject training data? (2) How to achieve subject-level fine-grained alignment during training? (3) How to comprehensively evaluate multi-subject personalized generation?
-5. **Key Insight**: Leveraging existing strong single-subject personalization models (e.g., FLUX.1 Kontext) to "reverse-engineer" multi-subject data construction, and employing pairwise reward mechanisms within reinforcement learning to achieve subject-level fine-grained alignment.
-6. **Core Idea**: Constructing multi-subject data using single-subject models, combined with post-training via Pairwise Subject-Consistency Rewards (PSR), to achieve scalable, high-quality multi-subject personalized generation.
+1. **Background**: Single-subject personalized generation models (e.g., FLUX.1 Kontext, Qwen-Image-Edit) have demonstrated excellent capabilities in generating images that maintain subject consistency in new scenarios based on reference images.
+2. **Limitations of Prior Work**: When scaling to multi-subject scenarios, existing models face two major challenges: (a) poor subject consistency—generated subjects are dissimilar to reference subjects or some subjects are lost; (b) poor text compliance—failure to correctly bind attributes, such as generating swapped attributes when prompted with "dog wearing a chef hat, cat wearing a scarf."
+3. **Key Challenge**: The root causes are twofold: a lack of high-quality multi-subject training datasets (existing datasets like OmniGen's X2I-subject-driven focus mainly on faces with low consistency for general objects) and a lack of fine-grained post-training strategies (SFT optimizes only at the global image level, failing to guarantee individual subject consistency).
+4. **Goal**: (1) How to construct high-quality multi-subject training data at scale? (2) How to achieve fine-grained subject-level alignment during training? (3) How to comprehensively evaluate multi-subject personalized generation?
+5. **Key Insight**: Utilize existing powerful single-subject personalized models (e.g., FLUX.1 Kontext) to "reverse-construct" multi-subject data and achieve fine-grained subject-level alignment via a pairwise reward mechanism in reinforcement learning.
+6. **Core Idea**: High-quality multi-subject data construction via single-subject models + Pairwise Subject-Consistency Reward (PSR) post-training to achieve scalable high-quality multi-subject personalized generation.
 
 ## Method
 
 ### Overall Architecture
-The proposed method comprises three main components: (1) a scalable multi-subject data construction pipeline producing approximately 350K high-quality samples; (2) two-stage training—Stage 1 SFT enables a single-subject model to acquire multi-subject generation knowledge, and Stage 2 RL applies PSR rewards for fine-grained alignment; and (3) PSRBench, a comprehensive evaluation benchmark.
+The two persistent problems in multi-subject personalized generation—subject leakage (generated cats/dogs not resembling references or missing entirely) and incorrect attribute binding (swapping hats and scarves)—are essentially due to the lack of data and subject-level supervision. PSR addresses this by first borrowing a strong single-subject model to reverse-engineer 350,000 pairs of multi-subject training data, followed by two-stage training. SFT teaches the model to "place multiple subjects simultaneously," while the RL stage uses a reward that scores subjects individually to refine consistency. Finally, PSRBench is used to measure subject consistency, semantic alignment, and aesthetics.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["Multi-Subject Data Construction Pipeline"]
+        direction TB
+        A["Sample n classes from Objects365<br/>LLM writes T2I instructions"] --> B["T2I synthesizes multi-subject images<br/>GroundingDINO crops single subjects"]
+        B --> C["Single-subject model generates reference images<br/>MLLM re-describes (hiding subject appearance)"]
+    end
+    DATA --> D["350k Multi-subject training pairs"]
+    D --> E["Scalable Frame-wise Positional Encoding<br/>Temporal offset only PO=(i,h,w)"]
+    E --> F["SFT Stage<br/>Learn to place multiple subjects simultaneously"]
+    F --> G["RL Stage (Flow-GRPO)"]
+    G --> H["Pairwise Subject-Consistency Reward<br/>Per-subject decoupling + DINO similarity"]
+    H -->|"Weighted with semantic Rs + aesthetic Rh"| I["Multi-subject Personalized Model<br/>PSRBench Evaluation"]
+```
 
 ### Key Designs
 
-1. **Scalable Multi-Subject Data Construction Pipeline**:
+**1. Scalable Multi-Subject Data Construction Pipeline: Reversing "solved single-subject personalization" into multi-subject data**
 
-    - **Function**: Constructing a large-scale, high-quality multi-subject paired dataset from scratch.
-    - **Mechanism**: The pipeline operates in two stages. Stage 1 (Image Generation): $n$ categories are sampled from the Objects365 category pool; an LLM generates T2I instructions; a T2I model synthesizes a multi-subject output image $I_{out}$; GroundingDINO detects and crops individual subject images $I_{crop}$; and a single-subject personalization model generates new reference images $I_{ref}$. Stage 2 (Instruction Generation): Seven predefined task types (attribute, background, action, position, complex scene, three-subject, four-subject) are used; an MLLM re-describes the generated images to prevent direct appearance leakage in the text; and a "re-editing" step is introduced to enhance attribute and action diversity.
-    - **Design Motivation**: Directly using T2I models to generate multi-subject consistent data yields low quality (as in UNO), whereas leveraging mature single-subject personalization models ensures high consistency. Preventing textual appearance leakage discourages the model from taking shortcuts that ignore the reference images.
+Directly generating paired multi-subject data using T2I models (as in UNO) results in poor consistency. However, existing single-subject personalized models (like FLUX.1 Kontext) excel at "preserving one subject." The pipeline reverses this capability in two steps. Image phase: Sample $n$ classes from the Objects365 pool, have an LLM write a T2I instruction, synthesize a multi-subject image $I_{out}$ using a T2I model, detect and crop each subject into $I_{crop}$ using GroundingDINO, and finally have a single-subject personalized model generate a new reference image $I_{ref}$—ensuring high consistency between the reference and target. Instruction phase: Define seven task types (attributes, background, action, position, complex scenes, three-subject, four-subject) and use an MLLM to re-describe the target image while intentionally omitting physical descriptions of the subjects. This forces the model to attend to reference images rather than text shortcuts. A "re-editing" step further enhances attribute and action diversity.
 
-2. **Scalable Frame-wise Positional Encoding**:
+**2. Scalable Frame-wise Positional Encoding: Allowing single-subject models to consume multiple references without spatial bias**
 
-    - **Function**: Enabling single-subject models to accept multi-image inputs while avoiding spatial position bias.
-    - **Mechanism**: For each input reference image, the latent tokens receive an offset only along the temporal (frame) dimension, $PO_i = (i, h, w)$, without any offset along the spatial $h/w$ dimensions. During training, a multi-image joint training strategy is adopted, sampling 2/3/4 reference images with probabilities of 0.9/0.05/0.05 respectively.
-    - **Design Motivation**: Methods such as UNO apply offsets along the $h/w$ spatial dimensions, introducing a spatial prior that "the second image is to the right/below," which restricts text-based positional control and produces excessively large offsets when scaling to three or four images, deviating from the pre-training distribution. Offsetting only along the frame dimension avoids these issues.
+Single-subject models typically recognize only one reference image. To feed multiple images, a position must be assigned to the latent tokens of each. Methods like UNO add offsets in the $h/w$ spatial dimensions, which inadvertently injects spatial priors (e.g., "the second image is on the right"). This interferes when text specifies "cat on the left, dog on the right," and offsets accumulate as more subjects are added, deviating from the pre-trained distribution. PSR offsets only in the temporal (frame) dimension while keeping spatial dimensions fixed: the $i$-th reference image uses $PO_i = (i, h, w)$. This informs the model "which image this is" without dictating "where it should be placed," returning spatial control to the text. Training samples 2/3/4 reference images with probabilities 0.9/0.05/0.05 to naturally support varying subject counts.
 
-3. **Pairwise Subject-Consistency Reward (PSR)**:
+**3. Pairwise Subject-Consistency Reward (PSR): Decomposing "global similarity" into "per-subject similarity" in RL**
 
-    - **Function**: Providing subject-level fine-grained supervision signals during the RL stage.
-    - **Mechanism**: The core idea is "subject disentanglement." For a generated image $I_{out}$, an open-vocabulary detector localizes and crops each subject region by category $c_i$: $I_{dec}^i = g(I_{out}, c_i)$. The same disentanglement is applied to the input reference images to obtain $I_{gt}^i$. Pairwise DINO feature similarity is then computed as: $R_{PSR} = \frac{1}{N}\sum_{i=1}^{N} f(I_{dec}^i, I_{gt}^i)$. The total reward is $R = w_1 R_{PSR} + w_2 R_s + w_3 R_h$, where $R_s$ is an MLLM semantic alignment reward and $R_h$ is the HPSv3 aesthetic preference reward. Training is conducted under the Flow-GRPO framework.
-    - **Design Motivation**: SFT optimizes only at the global image level and cannot guarantee per-subject consistency. RL with per-subject disentangled rewards directly optimizes local objectives. The multi-reward combination also mitigates reward hacking from any single reward signal (e.g., relying solely on PSR tends to produce copy-paste behavior).
+SFT optimizes only at the whole-image level, failing to detect if one of several subjects is inconsistent. The PSR reward in the RL stage follows a "decouple then compare" approach: an open-vocabulary detector extracts each subject $I_{dec}^i = g(I_{out}, c_i)$ from the generated image $I_{out}$ based on class $c_i$, performs the same for the reference image to obtain $I_{gt}^i$, and calculates the average DINO feature similarity:
+
+$$R_{PSR} = \frac{1}{N}\sum_{i=1}^{N} f(I_{dec}^i, I_{gt}^i)$$
+
+This places supervision directly on individual subjects. To prevent the model from "copy-pasting" reference subjects to game the reward, the total reward is weighted with an MLLM semantic alignment reward $R_s$ and an HPSv3 aesthetic preference reward $R_h$:
+
+$$R = w_1 R_{PSR} + w_2 R_s + w_3 R_h$$
+
+This balance ensures identity consistency without sacrificing text compliance or image quality. The RL is optimized using the Flow-GRPO framework.
 
 ### Loss & Training
-- **Stage 1 SFT**: Learning rate 1e-4, LoRA rank 512, trained at 512×512 resolution.
-- **Stage 2 RL**: Learning rate 1e-5, LoRA rank 64, GRPO group size 6, reward weights $w_1=0.4, w_2=0.4, w_3=0.2$, sampling and training over the original 28 diffusion timesteps.
+- Phase 1 (SFT): Learning rate 1e-4, LoRA rank 512, trained at 512×512 resolution.
+- Phase 2 (RL): Learning rate 1e-5, LoRA rank 64, GRPO group size 6, reward weights $w_1=0.4, w_2=0.4, w_3=0.2$, sampled and trained on 28 original diffusion steps.
 
 ## Key Experimental Results
 
 ### Main Results
-PSRBench comprises 7 subsets and evaluates three dimensions: Subject Consistency (SC), Aesthetic Preference (HPS), and Semantic Alignment (SA).
+PSRBench includes 7 subsets, evaluated across three dimensions: Subject Consistency (SC), Aesthetic Preference (HPS), and Semantic Alignment (SA).
 
 | Model | SC Overall | HPS Overall | SA Overall |
 |------|-----------|-------------|------------|
@@ -79,7 +92,7 @@ PSRBench comprises 7 subsets and evaluates three dimensions: Subject Consistency
 | **Ours (PSR)** | **0.673** | **1.124** | **0.783** |
 
 ### Ablation Study
-Comparison of positional encoding strategies (semantic alignment scores):
+Comparison of Positional Encoding strategies (Semantic Alignment scores):
 
 | Method | 2-subjects | 3-subjects | 4-subjects | Position |
 |------|-----------|-----------|-----------|----------|
@@ -89,32 +102,32 @@ Comparison of positional encoding strategies (semantic alignment scores):
 | **w/ ours (frame)** | **0.922** | **0.870** | **0.821** | **0.508** |
 
 ### Key Findings
-- The introduction of PSR rewards substantially improves subject consistency from 0.559 (SFT) to 0.673, a 20.4% gain, with particularly pronounced advantages on the Three/Four subsets (0.615/0.571 vs. the previous best of 0.552/0.508).
-- The resolution reduction (1024→512) during SFT degrades aesthetic scores, but the PSR RL stage effectively recovers and surpasses the original model.
-- Frame-wise positional encoding outperforms the second-best method by 0.039 on the Position subset, demonstrating that alternative encodings introduce fixed spatial layout biases.
-- In user studies, PSR achieves the highest ratings across all three dimensions (SC 0.92, SA 0.80, HPS 0.82).
+- The introduction of the PSR reward significantly improved subject consistency from 0.559 (SFT) to 0.673, a 20.4% increase, with notable gains in the Three/Four-subject subsets (0.615/0.571 vs previous best 0.552/0.508).
+- While aesthetic scores dropped during SFT due to lower resolution training (1024→512), the PSR RL stage effectively recovered and exceeded the original model's performance.
+- Frame-wise PE outperformed the runner-up by 0.39 in the Position subset, indicating that other encoding methods introduce fixed spatial layout biases.
+- User studies show PSR achieved the highest ratings across all three dimensions (SC 0.92, SA 0.80, HPS 0.82).
 
 ## Highlights & Insights
-- **Elegant closed-loop data construction pipeline**: The T2I → detection & cropping → single-subject personalization model pipeline cleverly repurposes the already-solved capability of single-subject personalization as a tool for multi-subject training data construction. This paradigm is highly transferable—any task lacking paired data can adopt a similar approach.
-- **Subject disentanglement + pairwise rewards**: Using a detector within RL to decompose global images into subject-level reward signals follows a "divide-then-compare" strategy that is more precise than comparing global features directly, and is transferable to any generation task requiring fine-grained alignment.
-- **Subtractive thinking in positional encoding**: Removing $h/w$ offsets yields better results, as it avoids the introduction of unnecessary spatial priors.
+- **Clever Closed-loop Data Construction**: Using the T2I → detection/cropping → single-subject personalization flow creates a loop that transforms "solved single-subject" capabilities into tools for "multi-subject data synthesis." This strategy is highly transferable to other tasks lacking paired data.
+- **Subject Decoupling + Pairwise Rewards**: Using a detector in RL to decompose the global image into subject-level reward signals is more precise than global feature comparison and can be applied to any generation task requiring fine-grained alignment.
+- **Subtraction Logic in Positional Encoding**: Removing $h/w$ offsets proved superior by avoiding unnecessary spatial priors.
 
 ## Limitations & Future Work
-- Training resolution is limited to 512×512, constraining the detail quality of generated images.
-- Identity preservation for small-scale subjects remains challenging (acknowledged failure cases by the authors).
-- The accuracy of the detector directly affects PSR reward quality—detection failures introduce noise into the reward signal.
-- Validation is currently limited to FLUX.1 Kontext; transferability to other architectures (e.g., DiT, U-Net) remains unexplored.
+- Training resolution is limited to 512×512, restricting fine detail quality.
+- Identity preservation for small-scale subjects remains challenging (acknowledged failure cases).
+- Reward quality is dependent on detector accuracy; detection failures introduce noisy reward signals.
+- Currently validated only on FLUX.1 Kontext; transferability to other architectures (DiT, U-Net) remains unexplored.
 
 ## Related Work & Insights
-- **vs. UNO**: UNO constructs training data by directly generating diptychs with T2I models, yielding low consistency; PSR leverages single-subject personalization models for higher-quality data construction. UNO's spatial $h/w$ offset introduces positional bias, whereas PSR offsets only along the frame dimension.
-- **vs. OmniGen2**: OmniGen2 is competitive in text adherence but falls significantly behind PSR in subject consistency, demonstrating that SFT alone struggles to guarantee both simultaneously.
-- **vs. Flow-GRPO/DanceGRPO**: These works apply RL to general T2I model improvement; PSR is the first to apply RL to the multi-subject personalization setting and introduces subject-level reward design.
+- **vs UNO**: UNO uses T2I models to directly generate diptychs, resulting in low consistency; PSR uses single-subject models for higher quality data. UNO's $h/w$ offsets introduce spatial bias, whereas PSR uses temporal frame offsets.
+- **vs OmniGen2**: OmniGen2 is competitive in text compliance but lags significantly in subject consistency compared to PSR, showing that SFT alone struggles to satisfy both simultaneously.
+- **vs Flow-GRPO/DanceGRPO**: While these apply RL for general T2I improvements, PSR is the first to apply RL to multi-subject personalization with subject-level reward design.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The data construction pipeline and PSR reward design are elegant, though the overall SFT+RL two-stage framework follows a conventional paradigm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Self-constructed benchmark with comprehensive evaluation, thorough ablations, and user studies.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-organized with rich figures and tables.
-- **Value**: ⭐⭐⭐⭐ Provides a complete data + training + evaluation solution for multi-subject personalized generation.
+- Novelty: ⭐⭐⭐⭐ Clever data pipeline and PSR reward, though the SFT+RL framework is standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation on self-built benchmark, thorough ablations, and human studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and rich visualizations.
+- Value: ⭐⭐⭐⭐ Provides a complete data + training + evaluation solution for multi-subject personalization.
 
 <!-- RELATED:START -->
 
@@ -122,11 +135,11 @@ Comparison of positional encoding strategies (semantic alignment scores):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
+- [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[CVPR 2026\] When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization](when_identities_collapse_a_stress-test_benchmark_for_multi-subject_personalizati.md)
 - [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
-- [\[CVPR 2026\] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation](disentangling_to_re-couple_resolving_the_similarity-controllability_paradox_in_s.md)
-- [\[CVPR 2026\] DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](dreamvideo-omni_omni-motion_controlled_multi-subject_video_customization_with_la.md)
+- [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
 
 </div>
 

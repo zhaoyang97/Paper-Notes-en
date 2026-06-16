@@ -25,16 +25,16 @@ item_total: 3
 
 **🧪 ICML2026** · **3** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (12)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (67)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
 
 **[Any2Any: Unified Arbitrary Modality Translation for Remote Sensing](any2any_unified_arbitrary_modality_translation_for_remote_sensing.md)**
 
-:   Any2Any transforms remote sensing (RS) translation between sensors like RGB, SAR, NIR, MS, and PAN from a collection of paired models into a unified latent diffusion model within a shared latent space. Leveraging the million-scale RST-1M dataset and target-modality residual adapters, the model achieves superior fidelity and generalization across 14 seen translation directions and multiple unseen modality combinations.
+:   Any2Any transforms remote sensing inter-modal translation (RGB, SAR, NIR, MS, PAN, etc.) from a collection of pairwise models into a unified latent diffusion model within a shared latent space. Utilizing the million-scale RST-1M dataset and target-modality residual adapters, it achieves superior fidelity and generalization across 14 seen translation directions and multiple unseen modality combinations.
 
 **[Localized, High-resolution Geographic Representations with Slepian Functions](localized_high-resolution_geographic_representations_with_slepian_functions.md)**
 
-:   This paper constructs a geographic positional encoder using spherical Slepian functions to concentrate representation capacity on a Region of Interest (ROI). It proposes a Slepian-spherical harmonic hybrid encoding to simultaneously account for local high-resolution and global coarse-grained context, consistently outperforming mainstream baselines such as SH, Wavelet, and RFF across five classification, regression, and image enhancement prediction tasks.
+:   This paper constructs a geographic positional encoder using spherical Slepian functions to concentrate representation capacity within a Region of Interest (ROI). It proposes a hybrid Slepian-Spherical Harmonic encoding to balance local high resolution with global coarse-grained context, consistently outperforming mainstream baselines such as SH, Wavelet, and RFF across five classification, regression, and image-enhanced prediction tasks.
 
 **[The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench](the_perception-physics_paradox_probing_scientific_alignment_with_tc-bench.md)**
 
-:   The authors point out that Vision Foundational Models (VFMs) "seem" proficient at predicting from satellite images but collapse along physical axes in extreme physical regimes. Consequently, this work formalizes the concept of "Scientific Alignment" via "Structural Isomorphism" and releases TC-Bench, a global tropical cyclone benchmark. Through a three-layered suite of linear probes (Static, Dynamic, and Constrained), the authors systematically reveal representation collapse in frozen backbones like DINO, CLIP, SigLIP, and MAE during intense cyclone regimes ($P_c < 980$ hPa).
+:   The authors observe that Vision Foundation Models (VFMs) "appear" to predict satellite imagery well but collapse along physical axes in extreme regimes. By formalizing "scientific alignment" as "structural isomorphism," they release TC-Bench—a global tropical cyclone benchmark—and a three-tier linear probing suite (Static/Dynamic/Constraint) to reveal representation collapse in frozen backbones like DINO, CLIP, SigLIP, and MAE for intense cyclones where $P_c<980$ hPa.

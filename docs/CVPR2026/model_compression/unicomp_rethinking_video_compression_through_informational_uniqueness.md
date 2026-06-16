@@ -2,81 +2,98 @@
 title: >-
   [Paper Note] UniComp: Rethinking Video Compression Through Informational Uniqueness
 description: >-
-  [CVPR 2026][Model Compression][visual token compression] This paper proposes UniComp, a video token compression framework grounded in informational uniqueness rather than attention scores. Through three modules—Frame Gro…
+  [CVPR 2026][Model Compression][Paper Note] Ours proposes UniComp, a video token compression framework based on informational uniqueness (rather than attention). By utilizing frame group fusion, token allocation, and spatial dynamic compression, it maximizes the preservation of unique information across temporal, spatial, and global dimensions. It outperforms un
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "visual token compression"
-  - "informational uniqueness"
-  - "video understanding"
-  - "MLLM efficiency"
-  - "plug-and-play"
+  - CVPR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: b66936232e66de1a
+content_hash: 11f1393ed1a50336
 ---
-
 # UniComp: Rethinking Video Compression Through Informational Uniqueness
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.03575](https://arxiv.org/abs/2512.03575)  
 **Code**: [TimeMarker-LLM/UniComp](https://github.com/TimeMarker-LLM/UniComp)  
-**Area**: Model Compression
-**Keywords**: visual token compression, informational uniqueness, video understanding, MLLM efficiency, plug-and-play
+**Area**: Model Compression  
+**Keywords**: Visual token compression, informational uniqueness, video understanding, MLLM efficiency, plug-and-play
 
 ## TL;DR
 
-This paper proposes UniComp, a video token compression framework grounded in informational uniqueness rather than attention scores. Through three modules—Frame Group Fusion, Token Allocation, and Spatial Dynamic Compression—UniComp maximally preserves unique information across temporal, spatial, and global dimensions, surpassing the uncompressed baseline even when retaining only 10% of tokens.
+Ours proposes UniComp, a video token compression framework based on informational uniqueness (rather than attention). By utilizing frame group fusion, token allocation, and spatial dynamic compression, it maximizes the preservation of unique information across temporal, spatial, and global dimensions. It outperforms uncompressed baselines even when retaining only 10% of tokens.
 
 ## Background & Motivation
 
-**Background**: Multimodal large language models face severe computational bottlenecks when processing video—32 frames can generate thousands of visual tokens. Existing compression methods such as VisionZip and HoliTom rely primarily on attention scores for importance estimation and token selection.
+**Background**: Multimodal Large Language Models (MLLMs) encounter significant computational bottlenecks when processing video, as a 32-frame video can generate thousands of visual tokens. Existing compression methods like VisionZip and HoliTom primarily rely on attention scores for importance evaluation and token selection.
 
-**Limitations of Prior Work**: Attention-based methods suffer from three issues: (1) saliency bias causes selected tokens to be highly redundant with each other; (2) fine-grained details tend to be overlooked; (3) information loss becomes severe under aggressive compression ratios. Moreover, FastVid and HoliTom require tuning 5+ hyperparameters, while DyCoke and similar methods require modifications to the internal attention layers of the LLM, making cross-architecture transfer difficult.
+**Limitations of Prior Work**: Attention-based methods face three issues: (1) Saliency bias leads to high redundancy among selected tokens; (2) They tend to overlook fine-grained details; (3) Information loss is severe under aggressive compression. Furthermore, FastVid and HoliTom require tuning over 5 hyperparameters, while DyCoke requires modifying internal LLM attention layers, hindering cross-architecture migration.
 
-**Key Challenge**: High attention score does not imply informational uniqueness. Highly attended tokens may be mutually similar, and retaining them does not maximize information fidelity. The essence of compression should be preserving irreplaceable information, not the most salient.
+**Key Challenge**: High attention does not equate to informational uniqueness. Tokens with high attention may be highly similar; retaining them does not maximize information fidelity. The essence of compression should be to preserve irreplaceable information rather than the most salient information.
 
-**Goal**: Given a limited computational budget, select a token subset that best represents the overall visual information, such that the information of discarded tokens can be reconstructed from the retained ones.
+**Goal**: Under a limited computational budget, how to select the token subset that best represents the overall visual information, such that the information of discarded tokens can be reconstructed from the retained tokens.
 
-**Key Insight**: The problem is formulated from an information-theoretic perspective, modeling compression as minimizing the conditional entropy $H(\mathcal{X}|\mathcal{S})$, and deriving a theoretical connection between reconstruction error upper bounds and token uniqueness.
+**Key Insight**: From an information theory perspective, compression is modeled as minimizing conditional entropy $H(\mathcal{X}|\mathcal{S})$. This derives a theoretical connection between the reconstruction error upper bound and token uniqueness.
 
-**Core Idea**: Replace attention scores with "informational uniqueness" measured by cosine distance as the token importance criterion, and achieve information-optimal compression via greedy selection combined with neighborhood fusion.
+**Core Idea**: Replace attention scores with "informational uniqueness" measured by cosine distance as the token importance metric, combined with greedy selection and neighborhood fusion to achieve optimal information compression.
 
 ## Method
 
 ### Overall Architecture
 
-UniComp consists of three cascaded modules: (1) Frame Group Fusion (FGF), which adaptively merges semantically similar frames along the temporal dimension; (2) Token Allocation (TA), which globally distributes the token budget based on frame-level uniqueness; and (3) Spatial Dynamic Compression (SDC), which greedily selects and fuses tokens within each frame based on token-level uniqueness. The input is the visual tokens from the ViT encoder output, and the compressed token sequence is passed directly to the LLM.
+UniComp aims to solve the problem where 32-frame videos generate thousands of visual tokens for MLLMs, necessitating significant reduction while avoiding the redundancy issues of traditional attention-based selection. The pipeline is placed after the ViT encoder and before the LLM, handling compression across temporal, global, and spatial levels: Frame Group Fusion (FGF) merges temporally redundant frames, Token Allocation (TA) distributes the token budget based on "group uniqueness," and Spatial Dynamic Compression (SDC) selects the most irreplaceable tokens within each frame and fuses their neighbors. The resulting compressed token sequence is fed directly to the LLM without modifying internal structures.
+
+The unified metric across all modules is "informational uniqueness"—features that are more orthogonal (lower cosine similarity) are considered more unique. The theoretical starting point models compression as minimizing conditional entropy $H(\mathcal{X}|\mathcal{S})$. The retention set $\mathcal{S}$ must allow the information of discarded tokens to be reconstructed as accurately as possible. The reconstruction error upper bound is controlled by the "minimum uniqueness distance from each discarded token to the retention set," providing a theoretical basis for the greedy strategy of "selecting the most unique and fusing the most similar." The serial relationship of the modules is as follows:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["32-frame Video → ViT Encoder<br/>Thousands of visual tokens"] --> B["Frame Group Fusion (FGF)<br/>Merges temporal approximations, cuts at semantic shifts"]
+    B --> C["Token Allocation (TA)<br/>Distributes budget via frame group uniqueness softmax"]
+    C --> D["Spatial Dynamic Compression (SDC)<br/>Greedy selection of unique tokens + neighbor fusion"]
+    D --> E["Compressed Token Sequence → LLM"]
+```
 
 ### Key Designs
 
-1. **Frame Group Fusion (FGF)**:
+**1. Frame Group Fusion (FGF): Merging temporally redundant frames**
 
-    - **Function**: Adaptively merge temporally redundant frames.
-    - **Mechanism**: A global feature is obtained via average pooling for each frame. The frame sequence is scanned sequentially; if the uniqueness $u(f_t, f_r) < U_f$ between the current frame and the group's reference frame falls below threshold, the frame is assigned to the current group; otherwise, a new group is created. Each group is fused into a representative feature via mean pooling.
-    - **Design Motivation**: Consecutive frames in static scenes are aggressively merged, while semantically abrupt transitions are preserved at fine granularity, enabling adaptive temporal compression.
+Videos contain many adjacent frames describing the same static scene. FGF performs average pooling on each frame to obtain a global descriptor and scans the sequence: if the uniqueness $u(f_t, f_r) < U_f$ (sufficiently similar) between the current frame and the group leader, it is merged. Once the threshold is exceeded, a new group is started. Each group is represented by a mean-pooled feature. This allows static shots to be compressed into a few groups while preserving fine-grained details at semantic shifts (cuts or actions).
 
-2. **Token Allocation (TA)**:
+**2. Token Allocation (TA): Distributing budget by group uniqueness**
 
-    - **Function**: Dynamically allocate the token budget per frame based on frame-level uniqueness.
-    - **Mechanism**: The uniqueness of each fused frame is computed as $U_t = 1 - \frac{1}{K_f}\sum_s \cos(f_t, f_s)$. After mean normalization, the scores are amplified by $\sqrt{K_f}$ to accentuate differences, and softmax yields the allocation ratio $K_t = \lfloor \frac{e^{U_t}}{\sum e^{U_s}} \cdot \text{TOKEN}_{max} \rfloor$.
-    - **Design Motivation**: Frames with higher uniqueness are more critical for video understanding and should receive a larger token budget.
+After fusion, the total budget $\text{TOKEN}_{max}$ must be distributed. TA quantifies the uniqueness of each fused frame relative to others:
 
-3. **Spatial Dynamic Compression (SDC)**:
+$$U_t = 1 - \frac{1}{K_f}\sum_s \cos(f_t, f_s)$$
 
-    - **Function**: Greedily select the most representative tokens within each frame based on token-level uniqueness.
-    - **Mechanism**: The intra-frame token uniqueness matrix is computed, and tokens are greedily selected in descending order: the most unique token is selected first, tokens with a uniqueness gap $< U_c$ are marked as redundant, and neighborhood fusion is applied to merge them. This is theoretically equivalent to minimizing the reconstruction error upper bound $\mathcal{E}(\mathcal{S}) \leq 2\sum_j \min_{i \in \mathcal{S}} u_{ij}$.
-    - **Design Motivation**: Fusing rather than discarding redundant tokens preserves aggregated information.
+$U_t$ is mean-normalized and multiplied by $\sqrt{K_f}$ to amplify inter-group differences. Finally, it is converted to a budget ratio via softmax:
+
+$$K_t = \left\lfloor \frac{e^{U_t}}{\sum_s e^{U_s}} \cdot \text{TOKEN}_{max} \right\rfloor$$
+
+Unique scenes critical for video understanding receive more tokens, while repetitive background frames receive fewer.
+
+**3. Spatial Dynamic Compression (SDC): Selecting irreplaceable spatial tokens**
+
+After receiving the token quota, SDC decides which spatial tokens to retain within a frame. It calculates an intra-frame uniqueness matrix and performs greedy selection: the most unique token is added to the retention set, and tokens with uniqueness distance $< U_c$ are marked as redundant and merged into the retained token. This process minimizes the reconstruction error upper bound:
+
+$$\mathcal{E}(\mathcal{S}) \leq 2\sum_j \min_{i \in \mathcal{S}} u_{ij}$$
+
+Selecting unique tokens and absorbing neighbors greedily lowers this bound, minimizing information loss.
+
+### A Complete Example
+
+> ⚠️ The following numbers are for illustrative purposes and not directly from the text.
+
+Assume an input of 32 frames with 196 tokens per frame (6272 total), targeting 10% retention. FGF scans and finds the first 12 frames are static, merging them into 1 group, while the middle action segment is cut into 5 groups, and the end into 2 groups—32 frames contract to 8 fused frames. TA calculates uniqueness: action groups get high $U_t$ and are allocated hundreds of tokens, while the static opening gets fewer. SDC then picks the most unique tokens in each frame and fuses similar neighbors until the quota is filled. The 6272 tokens are reduced to ~600 for the LLM.
 
 ### Loss & Training
 
-UniComp is a training-free, plug-and-play method. Only 2 hyperparameters are required: the frame group fusion threshold $U_f$ and the spatial compression threshold $U_c$, whose default values transfer across different ViT and LLM architectures. Uniqueness is computed using the Key features from the last attention layer of the ViT.
+UniComp is a training-free, plug-and-play method with only 2 hyperparameters: the frame group fusion threshold $U_f$ and the spatial compression threshold $U_c$. Default values are transferable across ViT and LLM architectures. Uniqueness is computed using the Key features from the last layer of ViT attention.
 
 ## Key Experimental Results
 
 ### Main Results (32-frame input, LLaVA-OneVision-7B)
 
-| Method | Retention Ratio | LongVideoBench | EgoSchema | MLVU | VideoMME | Avg. | vs. Baseline |
-|--------|----------------|---------------|-----------|------|---------|------|-------------|
+| Method | Retention Ratio | LongVideoBench | EgoSchema | MLVU | VideoMME | Average | Relative to Baseline |
+|------|---------|---------------|-----------|------|---------|------|---------|
 | Vanilla | 100% | 56.3 | 60.4 | 64.7 | 58.4 | 59.95 | 100% |
 | VisionZip | 25% | 56.5 | 60.3 | 64.8 | 58.2 | 59.95 | 100% |
 | HoliTom | 25% | 56.7 | 61.2 | 64.7 | 58.6 | 60.30 | 100.6% |
@@ -85,42 +102,42 @@ UniComp is a training-free, plug-and-play method. Only 2 hyperparameters are req
 
 ### Ablation Study
 
-| Configuration | LongVideoBench | VideoMME | Note |
-|--------------|---------------|---------|------|
+| Configuration | LongVideoBench | VideoMME | Description |
+|------|---------------|---------|------|
 | Full UniComp | 57.6 | 58.9 | Complete model |
-| w/o FGF | 56.8 | 58.2 | Removing FGF: −0.8 |
-| w/o TA | 57.0 | 58.5 | Removing TA: −0.6 |
-| w/o SDC fusion | 56.5 | 57.8 | Removing neighborhood fusion: −1.1 |
+| w/o FGF | 56.8 | 58.2 | Removing FGF drops performance by 0.8 |
+| w/o TA | 57.0 | 58.5 | Removing TA drops performance by 0.6 |
+| w/o SDC fusion | 56.5 | 57.8 | Removing neighborhood fusion drops performance by 1.1 |
 
 ### Key Findings
 
-- UniComp surpasses the uncompressed baseline at 25% retention (101.4%), suggesting that compression removes redundant information that interferes with the LLM.
-- At 10% retention, UniComp maintains approximately 100% of baseline performance, while VisionZip drops to 91.9%.
-- As a plug-and-play method, UniComp is effective across three architectures: LLaVA-OV, LLaVA-Video, and Eagle2.5.
+- UniComp exceeds the uncompressed baseline (101.4%) at 25% retention, suggesting compression removes redundant information that interferes with the LLM.
+- It maintains ~100% baseline performance at 10% retention, while VisionZip drops to 91.9%.
+- The method is plug-and-play and effective across LLaVA-OV, LLaVA-Video, and Eagle2.5 architectures.
 
 ## Highlights & Insights
 
-- **Informational Uniqueness vs. Attention**: The perspective shift is compelling—highly attended tokens may be mutually redundant, while tokens with high uniqueness guarantee diverse information coverage. The visualizations clearly illustrate the difference between the two criteria.
-- **Theory-Practice Loop**: The greedy algorithm is derived from minimizing conditional entropy, establishing a theoretical connection between reconstruction error and the uniqueness upper bound. This theory-driven design is elegant and principled.
-- **Compression Surpassing Baseline**: This finding implies that LLMs are disturbed by redundant visual tokens when processing too many inputs, and that selective filtering is beneficial.
+- **Informational Uniqueness vs. Attention**: The perspective shift is significant—high-attention tokens may be similar, while high-uniqueness tokens ensure diverse information coverage.
+- **Theory-Practice Loop**: Deriving the connection between reconstruction error and uniqueness from conditional entropy minimization provides an elegant, theory-driven design.
+- **Compression Outperforming Baseline**: This suggests that redundant visual tokens can act as noise, and selective filtering can be beneficial.
 
 ## Limitations & Future Work
 
-- Uniqueness is measured by cosine distance, which may misidentify tokens that are directionally similar yet semantically distinct.
-- Frame group fusion relies on sequential scanning, which may not handle flashbacks or non-linear narratives appropriately.
-- The two hyperparameters may require fine-tuning in extreme scenarios.
+- Uniqueness based on cosine distance might misjudge tokens with similar directions but different semantics.
+- Sequential scanning in FGF may not handle flashbacks or non-linear narratives optimally.
+- Only 2 hyperparameters might require fine-tuning in extreme scenarios.
 
 ## Related Work & Insights
 
-- **vs. VisionZip**: Selects tokens based on attention; drops to 91.9% at 10% retention, while UniComp maintains ~100%—uniqueness demonstrates a clear advantage under aggressive compression.
-- **vs. HoliTom/DyCoke**: These methods require modifications to the LLM's internal structure; UniComp operates after the ViT output, making it more architecturally general.
+- **vs. VisionZip**: VisionZip selects tokens by attention and drops to 91.9% at 10% retention; UniComp remains at ~100%, showing the advantage of uniqueness in extreme compression.
+- **vs. HoliTom/DyCoke**: These require modifying internal LLM structures, whereas UniComp operates on ViT outputs, making it more universal.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The informational uniqueness perspective is an entirely new theoretical contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model, multi-ratio, multi-benchmark evaluation with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear and the motivation is compelling.
-- Value: ⭐⭐⭐⭐⭐ Plug-and-play with compression exceeding baseline; strong practical and academic value.
+- Novelty: ⭐⭐⭐⭐⭐ Informational uniqueness perspective is a new theoretical contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and detailed ablations across multiple models.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivation and compelling motivation.
+- Value: ⭐⭐⭐⭐⭐ Plug-and-play capability combined with performance gains makes it highly practical.
 
 <!-- RELATED:START -->
 
@@ -128,11 +145,11 @@ UniComp is a training-free, plug-and-play method. Only 2 hyperparameters are req
 
 ## Related Papers
 
+- [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
 - [\[ICLR 2026\] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation](../../ICLR2026/model_compression/taming_momentum_rethinking_optimizer_states_through_low-rank_approximation.md)
-- [\[CVPR 2026\] PriVi: Towards a General-Purpose Video Model for Primate Behavior in the Wild](privi_towards_a_general-purpose_video_model_for_primate_behavior_in_the_wild.md)
-- [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
-- [\[ICLR 2026\] Cut Less, Fold More: Model Compression through the Lens of Projection Geometry](../../ICLR2026/model_compression/cut_less_fold_more_model_compression_through_the_lens_of_projection_geometry.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
 
 </div>
 

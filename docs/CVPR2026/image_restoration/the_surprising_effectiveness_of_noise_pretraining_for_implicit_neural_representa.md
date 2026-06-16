@@ -2,83 +2,72 @@
 title: >-
   [Paper Note] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 description: >-
-  [CVPR 2026][Image Restoration][Implicit Neural Representations] Through systematic experimental analysis, this paper demonstrates that pretraining INRs on unstructured noise (uniform/Gaussian distributions) achieves a su…
+  [CVPR 2026][Image Restoration][Denoising] This paper discovers through systematic experimental analysis that pretraining INRs with unstructured noise (Uniform/Gaussian distributions) achieves a surprising ~80dB PSNR in image fitting, significantly outperforming all data-driven initialization methods. Meanwhile, noise with a spectral structure of $1/|f^\alpha|$
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Implicit Neural Representations"
-  - "Noise Pretraining"
-  - "Parameter Initialization"
-  - "Signal Fitting"
-  - "Denoising"
+  - CVPR 2026
+  - Image Restoration
+  - Denoising
 date: 2026-05-08
-content_hash: 79849c0cf19e3709
+content_hash: d8ac000c128d41ec
 ---
-
 # The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.29034](https://arxiv.org/abs/2603.29034)  
-**Code**: Available (project page is public)  
-**Area**: Image Restoration / Implicit Neural Representations
+**Code**: Yes (Project page public)  
+**Area**: Image Restoration / Implicit Neural Representations  
 **Keywords**: Implicit Neural Representations, Noise Pretraining, Parameter Initialization, Signal Fitting, Denoising
 
 ## TL;DR
 
-Through systematic experimental analysis, this paper demonstrates that pretraining INRs on unstructured noise (uniform/Gaussian distributions) achieves a surprising ~80 dB PSNR in image fitting, far surpassing all data-driven initialization methods. Noise with the natural image $1/|f^\alpha|$ spectral structure achieves the best balance between signal fitting and denoising, matching state-of-the-art data-driven initialization performance without requiring any real data.
+This paper discovers through systematic experimental analysis that pretraining INRs with unstructured noise (Uniform/Gaussian distributions) achieves a surprising ~80dB PSNR in image fitting, significantly outperforming all data-driven initialization methods. Meanwhile, noise with a spectral structure of $1/|f^\alpha|$, matching natural images, achieves the best balance between signal fitting and denoising, matching SOTA data-driven initialization performance without requiring any real data.
 
 ## Background & Motivation
 
-**Background**: Implicit Neural Representations (INRs) use MLPs to map spatial coordinates to signal values, and are widely applied in compression, inverse imaging, and neural rendering. The convergence performance of INRs is highly dependent on parameter initialization strategies—data-driven methods (e.g., meta-learning, Strainer) have been shown to significantly outperform standard random initialization.
+**Background**: Implicit Neural Representations (INRs) use MLPs to map spatial coordinates to signal values and are widely used in compression, inverse imaging, and neural rendering. The convergence performance of INRs depends heavily on parameter initialization strategies—data-driven methods (e.g., meta-learning, Strainer) have proven far superior to standard random initialization.
 
-**Limitations of Prior Work**: Despite the effectiveness of data-driven initialization, the fundamental reasons for their success remain unclear—do they encode classical statistical signal priors, or more complex data-specific features? This ambiguity limits their applicability in domains such as scientific imaging where domain data is scarce.
+**Limitations of Prior Work**: Despite the significant effectiveness of data-driven initialization, the fundamental reason for its success remains unclear—is it encoding classic statistical signal priors, or more complex data-specific features? This lack of clarity limits applications in scenarios such as scientific imaging where domain data is scarce.
 
-**Key Challenge**: Data-driven initialization requires prior access to real signals, yet many application domains (e.g., scientific imaging) lack sufficient domain data. Understanding the underlying mechanism of successful initialization could reveal efficient alternatives that do not rely on real data.
+**Key Challenge**: Data-driven initialization requires prior ground-truth signals, but many application domains lack sufficient domain data. Understanding the fundamental mechanism behind initialization success might lead to efficient alternatives that do not rely on real data.
 
-**Goal**: (1) What level of signal properties accounts for the performance gains of data-driven INR initialization? (2) Can noise without real data substitute for data-driven initialization? (3) How do different types of noise pretraining differently affect signal fitting and inverse problem solving?
+**Goal**: (1) Identify what level of signal characteristics drive the performance gains in data-driven INR initialization. (2) Determine if noise containing no real data can replace data-driven initialization. (3) Analyze how pretraining on different types of noise affects signal fitting and inverse problem solving differently.
 
-**Key Insight**: Inspired by work on noise pretraining for visual classification networks, the paper pretrains INRs on various categories of noise and uses controlled experiments to reveal the underlying mechanisms of successful initialization—each noise category has precisely defined properties that serve as control variables for analysis.
+**Key Insight**: Inspired by work on noise pretraining for visual classification networks, this paper pretrains INRs with different categories of noise. Comparative experiments reveal the underlying mechanisms of initialization success, as each noise category has precisely defined properties that serve as controlled variables for analysis.
 
-**Core Idea**: By replacing real data with noise for INR pretraining, the paper finds that unstructured noise excels at signal fitting while spectral noise achieves the best overall balance, enabling efficient INR initialization without any real data.
+**Core Idea**: By replacing real data with noise for INR pretraining, the paper finds that unstructured noise is the "king of signal fitting," while spectral noise is an "all-rounder," enabling efficient INR initialization without real data.
 
 ## Method
 
 ### Overall Architecture
 
-The paper adopts Strainer's INR framework: a 6-layer MLP with sine activations ($\omega=30$), where the first 5 layers form a shared encoder and the last layer is a signal-specific decoder. During pretraining, the network is jointly trained for 5,000 steps on $N=10$ noise samples. At test time, the encoder weights are retained while a single decoder head is randomly initialized and trained for 2,000 steps on a new signal. This noise pretraining variant is referred to as Snp (Strainer Noise Pretraining).
+The paper addresses "why data-driven initialization is useful and whether real data can be avoided" rather than "how to train INRs better." The experimental vehicle follows the Strainer INR framework: a 6-layer MLP (sine activation, $\omega=30$), where the first 5 layers are an encoder shared across all signals, and the last layer is an individual decoder head for each signal. During pretraining, the encoder is jointly trained on $N=10$ samples for 5000 steps to create a good "starting point." During testing, the encoder is frozen, a new decoder head is randomly initialized for a new signal, and it is trained for 2000 steps for fitting. The pipeline remains unchanged; only the pretraining data is replaced—real images are substituted with various types of noise. This variant is named Snp (Strainer Noise Pretraining).
 
 ### Key Designs
 
-1. **Multi-Category Noise Pretraining (Snp)**:
+**1. Multiple Noise Categories as Controlled Variables: Decoupling "Initialization Priors"**
 
-    - **Function**: Replace real data with noise of varying statistical properties for INR parameter initialization.
-    - **Mechanism**: Two major categories of noise are examined—unstructured (uniform $\mathcal{U}(0,1)$, Gaussian $\mathcal{N}(0.5, 0.2)$) and structured (Dead Leaves variants: block/oriented/mixed/texture, and statistical model variants: spectral/$1/|f^\alpha|$, spectral+color, wavelet edge model). Structured noise is generated by imposing natural image statistics onto random noise. Only 10 samples per noise category are required for pretraining.
-    - **Design Motivation**: Each noise category has precisely defined statistical/spectral properties, enabling them to serve as control variables to isolate the contributions of different signal characteristics to initialization performance.
+The reason data-driven initialization is hard to explain is that real images contain a mixture of low-level statistics, spectral structures, and semantic features. This paper uses noise with precisely known statistical properties as controlled variables: at one end is **unstructured noise** (Uniform $\mathcal{U}(0,1)$, Gaussian $\mathcal{N}(0.5,0.2)$), containing almost no spatial structure; at the other end is **structured noise**, including the Dead Leaves series and statistical models (Spectral $1/|f^\alpha|$, Spectral+Color, Wavelet Edge Models). The latter are generated by imposing natural image spectra or edge statistics on random noise. Since the "priors" in each noise type are predefined, comparing their effects allows for the attribution of convergence gains to specific signal characteristics.
 
-2. **Trade-off Between Signal Fitting and Inverse Problems**:
+**2. Simultaneous Assessment of Signal Fitting and Denoising: The Trade-off Between Capacity and Priors**
 
-    - **Function**: Reveal the fundamental trade-off between signal fitting capacity and deep prior strength in INR initialization.
-    - **Mechanism**: After pretraining with unstructured noise (Uniform/Gaussian), signal fitting reaches a remarkable ~80 dB PSNR, yet denoising performance is worst (23–24 dB). Structured spectral noise ($1/|f^\alpha|$) achieves the best balance between the two tasks—fitting approaches Strainer (56.4 vs. 57.8 dB) while denoising approaches Siren (27.6 vs. 28.3 dB). This reveals a fundamental trade-off: functional capacity and deep prior strength cannot be simultaneously maximized.
-    - **Design Motivation**: Evaluating signal fitting alone fails to reflect the actual capability of INRs as inverse problem solvers; both dimensions must be considered.
+If only fitting PSNR is considered, one might conclude that "less structure in noise is better." However, this overlooks the INR's role as an inverse problem solver. The paper evaluates both dimensions, revealing a clear trade-off curve: unstructured noise pushes fitting to a shocking ~80dB PSNR but performs worst in denoising (23–24dB). Conversely, structured spectral noise $1/|f^\alpha|$ occupies the "sweet spot"—fitting performance approaches Strainer (56.4 vs 57.8 dB), and denoising approaches Siren (27.6 vs 28.3 dB). This suggests a fundamental trade-off in INR initialization: **functional capacity** (how fast/accurately it fits targets) and **deep prior strength** (inductive preference for clean signals) are inversely related.
 
-3. **Mechanistic Explanation via NTK and Local Complexity**:
+**3. NTK and Local Complexity: Explaining Divergent Behaviors**
 
-    - **Function**: Provide a theoretical explanation for why different noise pretraining strategies lead to substantially different behaviors.
-    - **Mechanism**: NTK analysis shows that Snp:Uniform captures target signal energy with the fewest eigenvalues (explaining its rapid convergence). Local complexity analysis reveals that Snp:Uniform's initial layers produce highly nonlinear pseudo-random input-space partitions, analogous to the hash encoding of Instant-NGP—high capacity but lacking structural priors. Snp:Spectrum and Strainer exhibit similar loss landscapes, explaining their comparable performance.
-    - **Design Motivation**: Beyond observing phenomena, understanding the underlying mechanism provides theoretical guidance for future method design.
+Neural Tangent Kernel (NTK) analysis shows that Snp:Uniform covers most of the target signal energy using very few eigenvalues, explaining its fast and accurate convergence. Local complexity analysis reveals that the initial layers of Snp:Uniform partition the input space into highly non-linear, nearly pseudo-random regions. Functionally, this is similar to the hash encoding in Instant-NGP: extremely high capacity but no structural prior, leading to unmatched fitting but poor denoising. In contrast, Snp:Spectrum and real-data-trained Strainer show nearly identical loss landscapes, explaining why spectral noise can replicate data-driven initialization without real data.
 
 ### Loss & Training
 
-Both pretraining and fitting use the L2 loss with the Adam optimizer (lr=1e-4). Pretraining runs for 5,000 steps; test-time fitting runs for 2,000 steps. The optimal iteration count for denoising tasks is determined via early stopping. Video fitting uses the ResFields framework with per-frame learnable residual updates, trained for 100k steps.
+Both pretraining and fitting phases use L2 loss and the Adam optimizer ($lr=1e-4$). Pretraining lasts 5000 steps, and test fitting lasts 2000 steps. For denoising tasks, early stopping is used to select the optimal iteration and prevent the INR from overfitting to noise. Video experiments utilize the ResFields framework with learnable residual updates per frame for 100k steps; structured spectral noise remains effective here.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Image fitting PSNR (dB), T=2000 steps:
+Image Fitting PSNR (dB), T=2000 steps:
 
 | Method | CelebA-HQ | AFHQ | OASIS-MRI |
-|--------|-----------|------|-----------|
+|------|----------|------|-----------|
 | Siren | 44.9 | 45.1 | 53.0 |
 | Strainer | 57.8 | 58.0 | 62.8 |
 | TransINR | 51.9 | 49.0 | 55.5 |
@@ -89,20 +78,20 @@ Image fitting PSNR (dB), T=2000 steps:
 
 ### Ablation Study
 
-Denoising PSNR (dB) and optimal iteration count (CelebA-HQ):
+Denoising PSNR (dB) and Best Steps (CelebA-HQ):
 
-| Method | PSNR | Optimal Steps |
-|--------|------|--------------|
+| Method | PSNR | Best Steps |
+|------|----------|---------|
 | Siren | **28.3** | 139 |
 | Strainer | 27.3 | 70 |
 | Snp: Spectrum | 27.6 | 78 |
 | Snp: Uniform | 23.0 | 73 |
 | Snp: Gaussian | 23.8 | 70 |
 
-Video fitting and denoising (Pexels, 100k steps):
+Video Fitting and Denoising (Pexels, 100k steps):
 
-| Task | Method | Avg. PSNR |
-|------|--------|-----------|
+| Task | Method | Mean PSNR |
+|------|------|----------|
 | Fitting | Vanilla ResFields | 29.5 |
 | Fitting | **ResFields + Snp:Spectrum** | **31.1** |
 | Denoising | Vanilla ResFields | 27.0 |
@@ -110,39 +99,39 @@ Video fitting and denoising (Pexels, 100k steps):
 
 ### Key Findings
 
-- **Surprising fitting capacity of unstructured noise**: Snp:Uniform achieves 85.7 dB, nearly 28 dB higher than the strongest data-driven method Strainer (57.8 dB)—an unexpectedly striking result.
-- **Trade-off between signal fitting and denoising**: Unstructured noise yields the strongest fitting but worst denoising; spectral noise achieves the best balance between the two.
-- **Spectral noise ≈ real data**: Pretraining with $1/|f^\alpha|$ noise nearly matches the performance of Strainer pretrained on real face data.
-- **Analogy to hash encoding**: The functional geometry of Snp:Uniform is analogous to Instant-NGP's hash encoding, with high capacity arising from pseudo-random input-space partitioning.
-- **Different trend in video**: Spectral noise slightly outperforms uniform noise in video fitting, possibly because the spatiotemporal continuity of video benefits more from structured priors.
+- **Surprising Fitting Capacity of Unstructured Noise**: Snp:Uniform reaches 85.7dB, nearly 28dB higher than the strongest data-driven method, Strainer (57.8dB).
+- **Fitting vs. Denoising Trade-off**: Unstructured noise is best for fitting but worst for denoising; spectral noise offers the best balance.
+- **Spectral Noise ≈ Real Data**: $1/|f^\alpha|$ noise pretraining performance almost matches Strainer pretrained on real face data.
+- **Analogy to Hash Encoding**: The functional geometry of Snp:Uniform resembles Instant-NGP's hash encoding, where high capacity stems from pseudo-random input space partitioning.
+- **Different Trends in Video**: Spectral noise slightly outperforms uniform noise in video fitting, likely because spatio-temporal continuity benefits more from structured priors.
 
 ## Highlights & Insights
 
-- **Strong discovery contribution**: The paper reveals the core mechanism of INR initialization through carefully designed controlled experiments, representing a rare work that explains *why* rather than merely *what*.
-- **Clear practical value**: $1/|f^\alpha|$ noise is easy to generate and can fully replace real data for INR initialization—particularly valuable in data-scarce scientific imaging domains.
-- **Deep insight into trade-offs**: The incompatibility between signal fitting capacity and deep prior strength serves as an important warning for the INR community.
-- **Cross-domain generalization**: Findings hold across images and video, and across faces and MRI, suggesting they reflect general properties of INRs rather than dataset-specific phenomena.
-- **NTK and loss landscape analysis**: Provides a theoretical explanatory framework that goes beyond empirical observation.
+- **Strong Discovery-Driven Contribution**: Reveals the core mechanism of INR initialization through meticulously designed controlled experiments.
+- **Clear Practical Value**: $1/|f^\alpha|$ noise is easy to generate and can completely replace real data for INR initialization—especially valuable for data-scarce scientific imaging.
+- **Deep Trade-off Insight**: The inverse relationship between signal fitting capacity and deep prior strength is a critical takeaway for the INR community.
+- **Cross-Domain Generalization**: Findings hold across images to videos and faces to MRI, indicating a general property of INRs rather than data-specific phenomena.
+- **NTK/Loss Landscape Analysis**: Provides a theoretical explanatory framework rather than staying at empirical observation.
 
 ## Limitations & Future Work
 
-- Only sinusoidal activations and fixed network depth are examined; conclusions may differ for other activation functions (ReLU, Gaussian, Wavelet).
-- The interaction between different network depths and noise types is not explored.
-- Denoising experiments are relatively simple (Gaussian noise only); more complex inverse problems (e.g., super-resolution, CT reconstruction) warrant validation.
-- Adaptive mixing of different noise types during pretraining could be explored to jointly optimize fitting capacity and prior strength.
+- Only investigated sine activation functions and a fixed number of layers; conclusions might vary with other activations (ReLU, Gaussian, Wavelet).
+- Did not explore the interaction between network depth and noise types.
+- Denoising experiments were simple (Gaussian noise only); complex inverse problems (e.g., Super-Resolution, CT reconstruction) warrant verification.
+- Could explore adaptive mixing of different noise types during pretraining to optimize both fitting and priors.
 
 ## Related Work & Insights
 
-- Strainer demonstrated the effectiveness of cross-domain INR initialization (faces→animals→MRI); this paper further shows that real data is not even necessary.
-- The Looking at Noise dataset provides a systematic taxonomy of structured noise, serving as the foundation for this paper's controlled experiments.
-- The analogy between Instant-NGP's hash encoding and the functional geometry of Snp:Uniform provides a unified perspective for understanding both approaches.
+- Strainer proved the effectiveness of cross-domain INR initialization (Face → Animal → MRI); this paper proves real data is not even necessary.
+- The "Looking at Noise" dataset provided a systematic classification of structured noise, forming the basis for the controlled experiments.
+- The analogy between Snp:Uniform and Instant-NGP's hash encoding provides a unified perspective for understanding both methods.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The counterintuitive finding of noise pretraining is highly inspiring and challenges conventional understanding in the INR community.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers multiple noise types, datasets, tasks, and interpretability analyses; experimental design is highly systematic.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Narrative is fluid, figures are intuitive, and the logical chain from experiments to mechanistic explanation is complete.
-- **Value**: ⭐⭐⭐⭐ — Offers profound theoretical guidance for the INR community, with particular practical value for data-scarce scientific imaging scenarios.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The counter-intuitive discovery of noise pretraining is highly inspiring and challenges conventional wisdom in the INR community.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers multiple noise types, datasets, tasks, and interpretability analyses; the design is exceptionally systematic.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Smooth narrative, intuitive visualizations, and a complete logical chain from experiment to mechanism.
+- **Value**: ⭐⭐⭐⭐ — Significant theoretical guidance for the INR community, with practical utility in data-scarce scientific settings.
 
 <!-- RELATED:START -->
 
@@ -151,10 +140,10 @@ Video fitting and denoising (Pexels, 100k steps):
 ## Related Papers
 
 - [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
-- [\[NeurIPS 2025\] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution](../../NeurIPS2025/image_restoration/implicit_augmentation_from_distributional_symmetry_in_turbulence_super-resolutio.md)
-- [\[ICML 2026\] Semi-Supervised Neural Super-Resolution for Mesh-Based Simulations](../../ICML2026/image_restoration/semi-supervised_neural_super-resolution_for_mesh-based_simulations.md)
-- [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
+- [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
 
 </div>
 

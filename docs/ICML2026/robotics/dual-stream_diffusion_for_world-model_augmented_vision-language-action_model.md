@@ -2,81 +2,101 @@
 title: >-
   [Paper Note] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
 description: >-
-  [ICML 2026][Robotics][VLA] DUST utilizes a "dual-stream" Multimodal Diffusion Transformer (MMDiT) to process action streams and future visual embedding streams in parallel. By relying on shared attention for cross-modal…
+  [ICML 2026][Robotics & Embodied AI][VLA] DUST employs a "dual-stream" Multimodal Diffusion Transformer (MMDiT) that aligns action streams alongside future vision embedding streams. Utilizing shared attention for cross-modal fusion, independent noise scheduling, and asynchronous action-vision sampling, DUST enables the VLA to simultaneously learn "what action
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "VLA"
-  - "world model"
-  - "multimodal diffusion"
-  - "flow matching"
-  - "asynchronous sampling"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - VLA
+  - World Models
+  - flow matching
 date: 2026-05-08
-content_hash: a829d7c9484178d7
+content_hash: db86b270f2ccfb80
 ---
-
 # Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.27607](https://arxiv.org/abs/2510.27607)  
-**Code**: Project page public (given as "Project page here" in the paper)  
-**Area**: robotics  
-**Keywords**: VLA, world model, multimodal diffusion, flow matching, asynchronous sampling  
+**Code**: Project page released (Given as "Project page here" in the paper)  
+**Area**: Robotics  
+**Keywords**: VLA, World Model, Multimodal Diffusion, Flow Matching, Asynchronous Sampling  
 
 ## TL;DR
-DUST utilizes a "dual-stream" Multimodal Diffusion Transformer (MMDiT) to process action streams and future visual embedding streams in parallel. By relying on shared attention for cross-modal fusion, paired with independent noise scheduling and asynchronous action-vision sampling, DUST enables the VLA to simultaneously learn "what action to take" and "what the consequences will be," outperforming GR00T-N1.5+FLARE on RoboCasa, GR-1, and Franka real-world platforms.
+DUST employs a "dual-stream" Multimodal Diffusion Transformer (MMDiT) that aligns action streams alongside future vision embedding streams. Utilizing shared attention for cross-modal fusion, independent noise scheduling, and asynchronous action-vision sampling, DUST enables the VLA to simultaneously learn "what action to take" and "what consequences the action will produce," consistently outperforming GR00T-N1.5+FLARE on RoboCasa, GR-1, and Franka physical robots.
 
 ## Background & Motivation
-**Background**: Diffusion-based Vision-Language-Action models (such as $\pi_0$ and GR00T-N1.5) are currently the mainstream for general-purpose robot policies. These typically use a VLM as a perception head and a diffusion action expert as the action head, using flow matching to learn action distributions.
+**Background**: Diffusion-based Vision-Language-Action models (such as $\pi_0$, GR00T-N1.5) are currently the mainstream for general-purpose robot policies—using a VLM as the perception head and a diffusion action expert as the execution head, learning action distributions via flow matching.
 
-**Limitations of Prior Work**: Pure VLA models only learn the "observation $\rightarrow$ action" mapping without explicit modeling of "how the action changes the world," leading to poor physical common sense and failures in novel scenarios. Previous attempts to integrate world-model objectives follow two main patterns, both with structural flaws: (a) **Unified joint diffusion** (PAD/EnerVerse) concatenates action and visual tokens into the same diffusion model—but low-dimensional, temporally smooth action trajectories are often dominated by high-dimensional, spatially complex visual latent spaces; (b) **Causal diffusion** (Video Policy/VPP) splits into two models with a unidirectional vision $\rightarrow$ action condition—avoiding modality conflicts but completely severing the reverse information flow, where actions cannot influence visual representation learning.
+**Limitations of Prior Work**: Pure VLAs only learn the "observation $\rightarrow$ action" mapping without explicit modeling of "how the action changes the world," leading to a lack of physical common sense and failures in novel scenarios. Previous methods incorporating world-model objectives fall into two categories, both with structural flaws: (a) **Unified joint diffusion** (PAD/EnerVerse) concatenates action and vision tokens into a single diffusion model—however, actions are low-dimensional, temporally smooth trajectories, while vision consists of high-dimensional, spatially complex images, causing the single latent space to be dominated by vision; (b) **Causal diffusion** (Video Policy/VPP) splits them into two models with a unidirectional vision $\rightarrow$ action condition—avoiding modal interference but completely severing the reverse information flow, which prevents actions from influencing vision representation learning.
 
-**Key Challenge**: The zero-sum trade-off between cross-modal fusion (learning causal coupling together) and modality-specific fidelity (handling vastly different statistical properties).
+**Key Challenge**: The zero-sum trade-off between cross-modal fusion (learning together to extract causal coupling) and modality-specific fidelity (handling drastically different statistical properties).
 
-**Goal**: (1) Support two token streams in a single model, each following its own denoising path; (2) Explicitly learn the bidirectional causal dependency between "action $\leftrightarrow$ future state"; (3) Allocate compute power based on modality requirements during inference to convert additional world-model overhead into test-time scaling gains.
+**Goal**: (1) Support two parallel token streams within a single model, allowing them to follow their own denoising paths; (2) Explicitly learn bidirectional causal dependencies between "action $\leftrightarrow$ future state" rather than unidirectional conditioning; (3) Allocate compute power based on modal requirements during inference, converting the world model's overhead into test-time scaling benefits.
 
-**Key Insight**: The authors draw inspiration from the MMDiT architecture in Stable Diffusion 3—where two token streams branch out most of the time and merge only in attention layers—and overlay diffusion-forcing style independent noise. This forces the model to predict correct velocity fields under all combinations of "clean action / noisy vision" and "noisy action / clean vision," thereby explicitly performing both forward dynamics (action $\rightarrow$ state) and inverse dynamics (state $\rightarrow$ action) reasoning.
+**Key Insight**: Inspired by the MMDiT approach in Stable Diffusion 3, the authors allow the two token streams to remain branched most of the time, merging only at attention layers. By overlaying modal-independent noise in the style of diffusion forcing, the model is compelled to predict correct velocity fields under all combinations of "clean action / noisy vision" and "noisy action / clean vision," thereby explicitly performing both forward dynamics (action $\rightarrow$ state) and inverse dynamics (state $\rightarrow$ action) reasoning.
 
-**Core Idea**: Treat actions and vision as parallel diffusion streams, using shared attention for communication, independent noise to force bidirectional causality, and asynchronous sampling to manage the computational cost of high-dimensional vision.
+**Core Idea**: Treat action and vision as two parallel diffusion streams, communicating through shared attention, forcing bidirectional causality via independent noise, and absorbing the computational cost of high-dimensional vision through asynchronous sampling.
 
 ## Method
-DUST modifies the standard "frozen VLM + trainable diffusion action expert" architecture (like GR00T-N1.5), where the diffusion module simultaneously outputs action chunks and future visual embeddings. The pipeline is divided into architecture, training, and inference.
+DUST modifies the standard "frozen VLM + trainable diffusion action expert" framework (like GR00T-N1.5). The diffusion module simultaneously outputs action chunks and future vision embeddings. The pipeline is divided into architecture, training, and inference.
 
 ### Overall Architecture
-**Input**: Current visual observation $o_t^v$, proprioceptive state $o_t^s$, and language instruction $I$. The diffusion process additionally takes noisy actions $A_t^{\tau_A}$ and noisy future visual embeddings $\tilde{o}_{t+k}^{\tau_o}$.
+**Input**: Current visual observation $o_t^v$, proprioceptive state $o_t^s$, language instruction $I$; the diffusion process additionally takes noisy action $A_t^{\tau_A}$ and noisy future vision embedding $\tilde{o}_{t+k}^{\tau_o}$.
 
-**Backbone**: Features $\Phi_t$ from the 12th layer of a frozen Eagle-2 VLM serve as the condition. The diffusion module $\pi_\theta$ consists of 12 shared MMDiT blocks and 4 modality-specific DiT blocks for each stream.
+**Backbone**: A frozen Eagle-2 VLM extracts 12th-layer semantic features $\Phi_t$ as conditions; the diffusion module $\pi_\theta$ consists of 12 shared MMDiT blocks and 4 modality-specific DiT blocks for each stream.
 
-**Output**: Action chunk $A_t = (a_t, \ldots, a_{t+k-1})$ ($k=16$) and future visual embedding $\tilde{o}_{t+k}$ (in the SigLIP-2 representation space, reduced from 256 tokens to 64 tokens via $2 \times 2$ average pooling).
+**Output**: Action chunk $A_t=(a_t,\ldots,a_{t+k-1})$ ($k=16$) + future vision embedding $\tilde{o}_{t+k}$ (in SIGLIP-2 representation space, 256 tokens downsampled to 64 tokens via $2\times 2$ average pooling).
 
-**Goal**: Jointly minimize action flow matching loss and visual flow matching loss during training; perform joint sampling during inference, controlling the denoising step ratio $q$ between vision and action to achieve test-time scaling.
+**Goal**: Jointly minimize action flow matching loss and vision flow matching loss during training; perform joint sampling during inference, achieving test-time scaling by controlling the vision/action denoising step ratio $q$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    I["Input: Visual observation o_t^v + Proprioception o_t^s + Instruction I<br/>+ Noisy action A_t^τA + Noisy future vision õ_t+k^τo"] --> VLM["Frozen Eagle-2 VLM<br/>Extract 12th-layer features Φ_t as condition"]
+    VLM --> ARCH
+    subgraph ARCH["1. Dual-stream MMDiT Architecture"]
+        direction TB
+        MM["12× MMDiT blocks: Action/Vision streams branch off<br/>Concat only at cross-modal attention, then split"]
+        MM --> DA["4× DiT Action Stream: Refines low-level control"]
+        MM --> DV["4× DiT Vision Stream: Reconstructs future embedding"]
+    end
+    ARCH --> TWO["Dual Velocity Fields V_θ^A / V_θ^o"]
+    TWO -->|Training| TRAIN["2. Decoupled Flow Matching Training<br/>Independent τ_A, τ_o → Forward/Inverse Dynamics"]
+    TWO -->|Inference| SAMPLE["3. Asynchronous Joint Sampling<br/>Vision N_o=q·N_A steps, Action uses fewer steps → Test-time scaling"]
+    TRAIN --> OUT["Action chunk A_t (k=16) + Future vision õ_t+k (64 tokens)"]
+    SAMPLE --> OUT
+```
 
 ### Key Designs
 
-1.  **Dual-stream MMDiT Architecture**:
-    - **Function**: Maintains two independent token streams within the same weights, avoiding the "high-dimensional vision drowning out low-dimensional action" issue in unified joint diffusion and removing the "unidirectional conditioning wall" of causal diffusion.
-    - **Mechanism**: Within each MMDiT block, the action and vision streams pass through their own FFN/LayerNorm and only temporarily concatenate for self-attention in the cross-modal attention layer before splitting back. Each stream receives an AdaLN timestep embedding corresponding to its own $\tau_A$ or $\tau_o$, decoupling dynamics from the base level. Four modality-specific DiT blocks follow to refine outputs: the visual stream focuses on semantic consistency, while the action stream focuses on low-level control.
-    - **Design Motivation**: Cross-modal information must flow to learn coupling, but latent spaces should not be forcibly shared to prevent vision dominance. Compressing "communication" into the attention layer while keeping other computations separate allows for fine-grained scheduling of fusion.
+**1. Dual-stream MMDiT Architecture: Merging at attention while branching elsewhere**
 
-2.  **Decoupled Flow Matching Joint Training**:
-    - **Function**: Forces the network to predict velocity fields for each modality under all $(\tau_A, \tau_o)$ noise combinations, explicitly learning forward and inverse dynamics.
-    - **Mechanism**: $\tau_A$ and $\tau_o$ are sampled independently from $[0, 1]$ to construct $A_t^{\tau_A} = \tau_A A_t + (1 - \tau_A) \epsilon_A$ and $\tilde{o}_{t+k}^{\tau_o} = \tau_o \tilde{o}_{t+k} + (1 - \tau_o) \epsilon_o$. The network outputs two velocities $[V_\theta^A, V_\theta^o]$, optimized via: $\mathcal{L}_A = \mathbb{E}\|V_\theta^A - (A_t - \epsilon_A)\|^2$, $\mathcal{L}_{WM} = \mathbb{E}\|V_\theta^o - (\tilde{o}_{t+k} - \epsilon_o)\|^2$. The joint objective is $\mathcal{L}_{Joint} = \mathcal{L}_A + \lambda_{WM} \mathcal{L}_{WM}$ with $\lambda_{WM} = 1.0$. When the model encounters "nearly clean vision + nearly pure noise action," it is forced to solve "which action leads to this state" (inverse dynamics).
-    - **Design Motivation**: Traditional joint diffusion uses a single $\tau$, training only on the "both dirty / both clean" diagonal, failing to learn causal asymmetry. Independent noise expands the training distribution to the entire 2D grid, effectively multi-tasking all dynamic reasoning directions.
+Cross-modal fusion and modality-specific fidelity are at odds: unified joint diffusion suppresses low-dimensional actions with high-dimensional vision, while causal diffusion severs reverse information flow. DUST adopts the MMDiT from Stable Diffusion 3 as a compromise: within each MMDiT block, action and vision streams use their own FFN/LayerNorm but temporarily concatenate for self-attention at the cross-modal layer before splitting. Each stream receives its own AdaLN timestep embedding (corresponding to $\tau_A$ or $\tau_o$), decoupling dynamics from the start. Post-MMDiT, 4 modal-specific DiT layers refine the output—vision labels focus on semantically consistent reconstruction, while action layers focus on low-level motion.
 
-3.  **Vision-action Asynchronous Joint Sampling**:
-    - **Function**: Allows high-dimensional vision to use more denoising steps while low-dimensional actions use fewer, converting world-model compute surplus into test-time scaling gains.
-    - **Mechanism**: Let $N_A$ be action steps and $N_o = q \cdot N_A$ ($q \in \mathbb{N}$) be visual steps. Using a global visual step $\Delta \tau_o = 1/N_o$, visual tokens $\tilde{o}_{t+k}$ are updated at every step, while action tokens are updated with a larger step $\Delta \tau_A = q \Delta \tau_o$ only when $(\tau_A N_o) \bmod q = 0$. When $q=1$, it reduces to synchronous sampling; when $q>1$, the world model iterates more frequently, providing finer future signals to the action stream.
-    - **Design Motivation**: Visual diffusion requires many steps to converge, whereas excessive steps in action diffusion can degrade performance. Asynchronous sampling decouples these requirements, creating a knob for inference-time scaling.
+The core idea is to compress "information exchange" into the attention bottleneck while keeping other computations separate, allowing modal communication without the high-dimensional vision dominating the shared latent space.
+
+**2. Decoupled Flow Matching Joint Training: Forcing bidirectional causality via independent noise**
+
+Traditional joint diffusion uses a single synchronous $\tau$, training the model only on the diagonal where both modalities are equally noisy/clean. DUST independently samples $\tau_A\in[0,1]$ for actions and $\tau_o\in[0,1]$ for vision, constructing $A_t^{\tau_A}=\tau_A A_t+(1-\tau_A)\epsilon_A$ and $\tilde{o}_{t+k}^{\tau_o}=\tau_o\tilde{o}_{t+k}+(1-\tau_o)\epsilon_o$. The network outputs dual velocity fields $[V_\theta^A, V_\theta^o]$, optimized by their respective flow matching losses:
+
+$$\mathcal{L}_A=\mathbb{E}\|V_\theta^A-(A_t-\epsilon_A)\|^2,\quad \mathcal{L}_{WM}=\mathbb{E}\|V_\theta^o-(\tilde{o}_{t+k}-\epsilon_o)\|^2,\quad \mathcal{L}_{Joint}=\mathcal{L}_A+\lambda_{WM}\mathcal{L}_{WM}\ (\lambda_{WM}=1.0).$$
+
+Independent noise expands the training distribution to the entire 2D grid: when "vision is clean + action is noisy," the model is forced to solve "what action leads to this state" (inverse dynamics); the reverse case solves forward dynamics. A single loss function encapsulates all directions of dynamical reasoning.
+
+**3. Vision-action Asynchronous Joint Sampling: Scaling with world model compute dividends**
+
+Vision diffusion requires many steps to converge, whereas too many action steps can degrade performance due to dimensionality differences. DUST decouples them: given action steps $N_A$ and vision steps $N_o=q\cdot N_A$ ($q\in\mathbb{N}$), the process advances with a global vision step size $\Delta\tau_o=1/N_o$. Vision tokens update every step, but action tokens update only when $\tau_A N_o \bmod q=0$ using the larger step $\Delta\tau_A=q\Delta\tau_o$. When $q>1$, the world model performs more iterations, allowing the action stream to benefit from more refined future vision signals.
+
+This provides an inference-time scaling knob—increasing vision steps yields a 2–6 pp improvement, acting as a nearly "free lunch."
 
 ### Loss & Training
-- Joint loss $\mathcal{L}_{Joint} = \mathcal{L}_A + 1.0 \cdot \mathcal{L}_{WM}$, with timestep sampling following $\tau \sim \mathrm{Beta}((s-\tau)/s; 1.5, 1.0)$, $s=0.999$.
-- VLM backbone is frozen; the diffusion expert is trained from scratch. 16 action tokens, 1 state token, and 64 future visual tokens enter the MMDiT.
-- The world model objective uses SigLIP-2 embeddings as supervision (not pixels) to avoid wasteful modeling of texture and lighting.
+- Joint loss $\mathcal{L}_{Joint}=\mathcal{L}_A+1.0\cdot\mathcal{L}_{WM}$ with timestep sampling $\tau\sim\mathrm{Beta}((s-\tau)/s;1.5,1.0)$, where $s=0.999$.
+- The VLM backbone is frozen; the diffusion expert is trained from scratch. 16 action tokens, 1 state token, and 64 future vision tokens enter the MMDiT.
+- The world model objective uses SIGLIP-2 embeddings (not pixels) to avoid wasteful modeling of texture/lighting.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on RoboCasa (24 tasks), GR-1 (24 tasks), and Franka Research 3 (7 tasks). Baselines include GR00T-N1.5, $\pi_0$, $\pi_0$-FAST, and FLARE.
+Testing on RoboCasa (24 tasks), GR-1 (24 tasks), and Franka Research 3 (7 tasks) with baselines GR00T-N1.5, $\pi_0$, $\pi_0$-FAST, and FLARE.
 
 | Dataset | Setting | Metric | Ours (GR00T+DUST) | Prev. SOTA (GR00T+FLARE) | Gain |
 |--------|------|------|------|------|------|
@@ -87,48 +107,47 @@ Evaluated on RoboCasa (24 tasks), GR-1 (24 tasks), and Franka Research 3 (7 task
 | GR-1 | 1000 demos/task | Avg. success (%) | 42.0 | 36.3 | +5.7 |
 | Franka Real | 7-task Avg. | Success (%) | 59.9 | 49.5 | +10.4 |
 
-DUST consistently outperforms FLARE across all demo scales. The gain relative to vanilla GR00T-N1.5 is particularly significant (e.g., +8.4% on RoboCasa 100 demos). On real hardware, improvements are seen across PnP, Insert, and Tool-Use, with the difficult "Cord-insertion" task jumping from 12.5% to 29.2%.
+DUST consistently outperforms FLARE across all demo scales. The gain over vanilla GR00T-N1.5 is particularly significant (+8.4 pp on RoboCasa 100 demos). On real hardware, it demonstrates improvement across PnP, Insert, and Tool-Use tasks, with Cord-insertion jumping from 12.5% to 29.2%.
 
 ### Ablation Study
-| Configuration | Key Metric | Note |
+| Configuration | Key Metric | Description |
 |------|----------|------|
 | Full DUST | Avg. 58.5 (RoboCasa 300 demos) | Complete model, $q=1$ |
 | + test-time scaling ($q>1$) | +2~6 pp | Doubling vision steps yields "free" accuracy |
-| w/o dual-stream (unified joint) | Significant drop | Modalities forced together; action drowned by vision |
-| w/o decoupled noise (sync $\tau$) | Significant drop | Loss of forward/inverse dynamics signals |
-| Pixel-level target instead of embedding | Drop | Capacity wasted on texture/lighting |
-| Joint training (RoboCasa+GR-1+EgoDex) | RoboCasa Avg. ↑ | Benefits from heterogeneous data; DUST supports multi-robot transfer |
+| w/o dual-stream (to unified joint) | Significant drop | Low-dim actions overwhelmed by high-dim vision |
+| w/o decoupled noise ($\tau_A=\tau_o$) | Significant drop | Loss of forward/inverse dynamics signals |
+| Pixel-level world-modeling | Drop | Capacity wasted on texture/lighting |
+| Joint training (RoboCasa+GR-1+EgoDex) | RoboCasa Avg. ↑ | Positive transfer from heterogeneous data |
 
 ### Key Findings
 - **Symmetric cross-modal coupling is critical**: The gain from "causal unidirectional $\rightarrow$ dual-stream bidirectional" is larger than "unified $\rightarrow$ causal," suggesting inverse dynamics supervision was previously undervalued.
-- **Asynchronous sampling is a "free lunch"**: Increasing vision steps improves results by 2–6 pp, whereas increasing action steps often degrades them. Decoupling these steps is essential.
-- **Strong compatibility with pre-training**: DUST can be pre-trained on action-free video (visual stream learns dynamics, action stream learns inverse dynamics from random noise).
-- **Real-world Gain > Sim Gain**: The +10% improvement on hardware vs. +5% in simulation suggests explicit world modeling is particularly effective against out-of-distribution physical perturbations.
+- **Asynchronous sampling is a free lunch**: Computing vision tokens more frequently improves accuracy by 2–6 pp, whereas increasing action steps can be detrimental.
+- **Heterogeneous data compatibility**: DUST can be pre-trained on action-free videos (vision stream learns, action stream with random noise still learns inverse dynamics), providing significant gains for downstream tasks.
+- **Real-world gains > Simulation gains**: +5% in simulation vs. +10% in real-world, indicating explicit world modeling helps handle OOD/physical perturbations.
 
 ## Highlights & Insights
-- **Clever Reuse of MMDiT**: Architecture originally for "image + text" in generation is naturally suited for "action + vision" in robotics with minimal engineering.
-- **Independent Noise as Implicit Curriculum**: Different $(\tau_A, \tau_o)$ combinations correspond to different sub-tasks (e.g., predict action given future), simplifying the design compared to multiple auxiliary heads.
-- **Transferable Asynchronous Sampling**: This idea can be applied to any multimodal diffusion task where modality dimensions differ significantly (e.g., video+audio), acting as a cost-effective test-time scaling knob.
-- **Embedding-level World Models Suffice**: Re-validates the DINO-WM/FLARE approach—predicting semantic embeddings rather than pixels provides sufficient physical constraints for the policy.
+- **Clever reuse of MMDiT**: Originally for image+text in generation, here it fits action+vision tokens naturally with minimal engineering changes.
+- **Independent noise as implicit curriculum**: Different $(\tau_A, \tau_o)$ combinations correspond to different sub-tasks (e.g., predict action given future), which is cleaner than designing multiple auxiliary heads.
+- **Transferable asynchronous sampling**: Any multimodal diffusion task with varying dimensional complexity (e.g., video+audio) can use the $q$ knob for free test-time scaling.
+- **Embedding-level world models are sufficient**: No need for pixel reconstruction; predicting VLM semantic embeddings provides enough physical constraint.
 
 ## Limitations & Future Work
-- The VLM backbone is frozen, locking the visual space to SigLIP-2, which may miss physical details not encoded by the VLM (e.g., subtle forces or contact states).
-- The asynchronous sampling ratio $q$ is a discrete integer and must be selected manually; adaptive schedules based on uncertainty remain an open problem.
-- Real-world experiments were limited to a Franka arm; more complex morphologies like dual-arms or dexterous hands are not yet covered.
+- The frozen VLM backbone locks the future vision embedding space to SIGLIP-2, potentially missing physical details not encoded by the VLM (e.g., fine-grained force or contact states).
+- The ratio $q$ is a discrete integer selected manually; adaptive scheduling based on uncertainty is a future direction.
+- Real-world verification was limited to a Franka arm; dual-arm, mobile, or dexterous configurations are not yet covered.
 - Increased training cost compared to vanilla VLA: calculating two flow matching losses with 4x more vision tokens doubles memory and compute per step.
-- No direct comparison yet with video generation routes (e.g., Cosmos Policy / Fast-WAM); the paths are orthogonal and fusion is a promising direction.
 
 ## Related Work & Insights
-- **vs FLARE (Zheng et al., 2025)**: Both use embedding targets, but FLARE uses unidirectional feature alignment in a single latent; DUST uses explicit bidirectional diffusion with independent noise, leading to stronger causal signals.
-- **vs PAD / EnerVerse (unified joint diffusion)**: These concatenate tokens into a single sequence with synchronous denoising; DUST uses MMDiT and asynchronous scheduling for "divide and conquer" with controlled fusion.
-- **vs Video Policy / VPP (causal diffusion)**: These use two models with unidirectional conditioning; DUST uses a single model with bidirectional coupling to avoid information bottlenecks.
-- **vs Diffusion Forcing (Chen et al., 2025a)**: DF proposed per-token noise for causality; DUST scales this to per-modality granularity, which is more suitable for vastly different modalities.
+- **vs FLARE (Zheng et al., 2025)**: Both use embedding targets for implicit world modeling, but FLARE is unidirectional. DUST uses explicit bidirectional diffusion + independent noise, leading to stronger causal signals.
+- **vs PAD / EnerVerse (Unified joint diffusion)**: DUST's branched architecture + asynchronous schedule avoids the information bottleneck where actions are overwhelmed by vision.
+- **vs Video Policy / VPP (Causal diffusion)**: Those use two models with unidirectional conditioning; DUST uses one model with bidirectional coupling.
+- **vs Diffusion Forcing (Chen et al., 2025a)**: DF proposed per-token noise for causality; DUST simplifies this to per-modality, which is more suitable for robot learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Innovative transfer of MMDiT to VLA; first appearance of independent noise + asynchronous sampling in robot learning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across simulation (RoboCasa/GR-1/CALVIN/LIBERO) and real hardware, plus thorough ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear architecture diagrams and derivations; a timeline diagram for asynchronous sampling would be a plus.
-- Value: ⭐⭐⭐⭐⭐ Provides a clean, strong baseline for "VLA + World Model" that can be directly applied to next-generation robot foundation models.
+- Novelty: ⭐⭐⭐⭐ Introducing MMDiT to VLA is creative; the combination of independent noise and asynchronous sampling is a first for robot learning.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across simulation (RoboCasa/GR-1/CALVIN/LIBERO) and real hardware.
+- Writing Quality: ⭐⭐⭐⭐ Clear diagrams and derivation; an additional timeline for sampling would be helpful.
+- Value: ⭐⭐⭐⭐⭐ Provides a clean, strong baseline for "VLA + World Model" that can be directly applied to next-gen robot foundation models.
 
 <!-- RELATED:START -->
 
@@ -136,11 +155,11 @@ DUST consistently outperforms FLARE across all demo scales. The gain relative to
 
 ## Related Papers
 
-- [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
+- [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](../../CVPR2026/robotics/global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
 - [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
-- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
-- [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](../../ICLR2026/robotics/autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
+- [\[CVPR 2026\] Motus: A Unified Latent Action World Model](../../CVPR2026/robotics/motus_a_unified_latent_action_world_model.md)
 
 </div>
 

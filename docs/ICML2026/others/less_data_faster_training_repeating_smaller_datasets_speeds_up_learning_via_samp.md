@@ -2,117 +2,111 @@
 title: >-
   [Paper Note] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases
 description: >-
-  [ICML 2026][small-vs-large gap] This paper systematically characterizes and explains the "small-vs-large gap" phenomenon, where repeating smaller datasets leads to faster convergence than training on larger datasets. The…
+  [ICML 2026][Others][small-vs-large gap] This paper systematically characterizes and explains the "small-vs-large gap" phenomenon—where repeating smaller datasets results in faster convergence than training on large datasets. The authors prove that this acceleration cannot be explained by existing theories such as CSQ-SQ gaps, gradient variance reduction, or
 tags:
-  - "ICML 2026"
-  - "small-vs-large gap"
-  - "sampling bias"
-  - "inter-layer norm"
-  - "feature learning"
-  - "multi-epoch training"
+  - ICML 2026
+  - Others
+  - small-vs-large gap
 date: 2026-05-08
-content_hash: cd97b958f478de0d
+content_hash: da8b9a46afcda431
 ---
-
 # Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.20314](https://arxiv.org/abs/2605.20314)  
 **Code**: TBD  
 **Area**: Optimization / Feature Learning / Training Dynamics  
-**Keywords**: small-vs-large gap, sampling bias, inter-layer norm, feature learning, multi-epoch training
+**Keywords**: small-vs-large gap, sampling bias, inter-layer norm, feature learning, repeated training
 
 ## TL;DR
-This paper systematically characterizes and explains the "small-vs-large gap" phenomenon, where repeating smaller datasets leads to faster convergence than training on larger datasets. The authors prove that this acceleration cannot be explained by the CSQ-SQ gap, gradient variance reduction, or input distribution bias. By providing a closed-form step complexity bound $T = O((Nd)^{1/4} \log(d/\varepsilon))$ for a 2-layer MLP with quadratic activation on 2-sparse parity and through intervention experiments (random labels, initialization scaling, layer-wise learning rates), they demonstrate that the true driver is the $O(N^{-1/2})$ sampling bias inherent in small datasets, which accelerates first-layer feature learning by speeding up second-layer norm growth.
+This paper systematically characterizes and explains the "small-vs-large gap" phenomenon—where repeating smaller datasets results in faster convergence than training on large datasets. The authors prove that this acceleration cannot be explained by existing theories such as CSQ-SQ gaps, gradient variance reduction, or input distribution bias. Instead, using a 2-layer quadratic MLP on 2-sparse parity, they derive a closed-form step bound $T = O((Nd)^{1/4} \log(d/\varepsilon))$. Through intervention experiments including random labels, initialization scaling, and inter-layer learning rates, they verify that the acceleration is driven by the $O(N^{-1/2})$ sampling bias inherent in small datasets, which speeds up first-layer feature learning by accelerating the growth of the second-layer norm.
 
 ## Background & Motivation
-**Background**: The mainstream doctrine in deep learning is "more data is better," supported by scaling laws and classical generalization theory. However, recent work (Charton & Kempe 2024; Zucchet et al. 2025; Kopiczko et al. 2026) has identified a counter-intuitive phenomenon: under a fixed compute budget (steps $\times$ batch size), repeatedly training on a small dataset can achieve better test performance than fresh-sample online training on a large dataset. This compute saving can reach two orders of magnitude on sparse parity tasks, a phenomenon termed the "small-vs-large gap."
+**Background**: A mainstream tenet of deep learning is "the more data, the better," supported by scaling laws and classical generalization theory. However, recent works (Charton & Kempe 2024; Zucchet et al. 2025; Kopiczko et al. 2026) have identified an anomaly: under a fixed compute budget (steps × batch size), repeatedly training on a small dataset can achieve better test performance than online training on a large "fresh-sample" dataset. In tasks like sparse parity, this compute saving can reach two orders of magnitude. The authors refer to this phenomenon as the "small-vs-large gap."
 
-**Limitations of Prior Work**: Existing explanations are insufficient. (1) Dandi et al. 2024 proposed that "repeated batches upgrade SGD from a CSQ algorithm to a stronger SQ algorithm," but this only applies to tasks with an SQ-CSQ lower bound gap (like single-index models) and fails for discrete tasks (sparse parity, modular addition) or full-batch GD where the gap persists. (2) Gradient variance reduction (Kotha 2025) cannot explain the full-batch setting where no stochastic variance exists. (3) The "input distribution bias" theory (Cornacchia et al. 2025) gives Fourier coefficients of $O(N^{-k/2})$, which are negligible for sparsity $k=6$; furthermore, the gap persists even after removing input bias ($\hat{\mathbb{E}}[x] = 0$).
+**Limitations of Prior Work**: Existing explanations are insufficient. (1) Dandi et al. (2024) proposed that repeated batches upgrade SGD from CSQ to SQ algorithms, but this only applies to tasks where such a gap exists (e.g., single-index models). On discrete tasks like sparse parity or modular addition where SQ = CSQ, the theory fails. Furthermore, the gap persists in full-batch GD where data is "repeated" in both cases. (2) Gradient variance reduction (Kotha 2025) cannot explain the full-batch setting since GD has no stochastic variance. (3) Cornacchia et al. (2025) proposed "input distribution bias," but their Fourier coefficients are $O(N^{-k/2})$, which vanishes for sparsity $k=6$; moreover, empirical evidence shows that removing input bias (forcing $\hat{\mathbb{E}}[x] = 0$) does not eliminate the gap.
 
-**Key Challenge**: The phenomenon is universal (mini-batch/full-batch, SIM/parity/ICL/mod-add, MLP/Transformer), but existing theories fail to explain at least one of these settings. A unified mechanism across all settings is required.
+**Key Challenge**: The phenomenon is universal across configurations (mini-batch/full-batch, SIM/parity/ICL/mod-add, MLP/Transformer), but no existing theory explains all settings. A unified mechanism across these configurations is required.
 
-**Goal**: (1) Systematically validate the gap across a broad matrix of tasks/architectures/optimizers; (2) Exclude three classes of candidate explanations; (3) Propose a new mechanism with an analyzable toy model and step complexity bounds; (4) Design intervention experiments to verify the mechanism.
+**Goal**: (1) Systematically verify the gap across a broad matrix of tasks/architectures/optimizers; (2) Exclude previous candidate explanations; (3) Propose a new mechanism with an analyzable model and closed-form bounds; (4) Design intervention experiments to verify the mechanism.
 
-**Key Insight**: In a 2-layer MLP learning parity, only the first layer (input layer) performs feature learning, while the second-layer norm $|a|$ directly controls the effective gradient of the first layer by multiplying into $\nabla_w L$. Any force that causes $|a|$ to rise early will accelerate first-layer feature learning. The authors hypothesize that the "sampling bias" of small datasets is exactly such a force.
+**Key Insight**: In a 2-layer MLP learning parity, the first layer (input layer) is the feature learning layer, while the second-layer norm $|a|$ directly controls the effective gradient of the first layer by multiplying $\nabla_w L$. Any force that causes $|a|$ to grow earlier will accelerate first-layer feature learning. The authors hypothesize that the "sampling bias" of small datasets is exactly such a force.
 
-**Core Idea**: The essence of the small-vs-large gap is not "seeing less data" or "repetition," but that the variance of empirical moments $\hat M = \frac{1}{N}\sum y x x^\top$ from population moments in small datasets is $\Theta(N^{-1/2})$, which is much larger than $1/d$. This pushes the second-layer norm faster in early training, indirectly accelerating first-layer feature learning—an induced inter-layer growth imbalance equivalent to an implicit layer-wise learning rate schedule.
+**Core Idea**: The essence of the small-vs-large gap is not "seeing less data" or "repetition," but rather that the variance of the small dataset's empirical moment $\hat M = \frac{1}{N}\sum y x x^\top$ from the population moment is $\Theta(N^{-1/2})$. This is much larger than $1/d$, which pushes the second-layer norm faster in early training, indirectly accelerating first-layer feature learning. This constitutes a passively induced inter-layer growth imbalance, equivalent to an implicit inter-layer learning rate schedule.
 
 ## Method
-The methodology consists of two parts: (a) providing a step complexity theorem on an analyzable toy model; (b) designing intervention experiments using "inter-layer norm growth" as an observable signal to verify the mechanism.
+The methodology consists of two components: (a) providing a step complexity theorem on an analyzable toy model; (b) designing intervention experiments using inter-layer norm growth as an observable signal to verify the mechanism.
 
 ### Overall Architecture
-- **Task Set**: Single-index models (SIM, Hermite link), $(d,k)$-sparse parity, in-context linear regression, and $(N,p)$-modular addition. Optimizers include mini-batch SGD and full-batch GD. Models use 2-layer MLPs (ReLU, no residual) and 2-layer Transformers (optional QK normalization).
-- **Data Strategy**: Besides standard single-set repetition, $T$-phase training is used: phase $i$ trains on a subset $\mathcal{S}_i \subset \mathcal{S}_{i+1}$ to achieve rapid non-trivial training performance on small sets before generalizing on larger ones.
-- **Analyzable Model**: $f(x) = a \sigma(w^\top x) - 1$ where $\sigma(z) = \frac{1}{2}z^2$, using correlation loss $\ell(y,y') = -yy'$ with projected updates ($a$ clipped to $[-1, 1]$, $w$ normalized to the unit sphere) on 2-sparse parity.
+- **Task Set**: Single-index models (SIM, Hermite link), $(d,k)$-sparse parity, in-context linear regression, and $(N,p)$-modular addition. Optimizers include mini-batch SGD and full-batch GD. Models used are 2-layer MLPs (ReLU, no residual) and 2-layer Transformers (optional QK normalization).
+- **Data Strategy**: In addition to standard single-set repetition, $T$-phase training is introduced (extending Charton & Kempe 2024), where phase $i$ trains on subset $\mathcal{S}_i \subset \mathcal{S}_{i+1}$. The heuristic is to achieve non-trivial training performance on small subsets early and use large subsets in the final stage for generalization.
+- **Analysis Model**: $f(x) = a \sigma(w^\top x) - 1$ where $\sigma(z) = \frac{1}{2}z^2$ and correlation loss $\ell(y,y') = -yy'$. Update with projection: $a$ is clipped to $[-1, 1]$, and $w$ is normalized to the unit ball at each step. For 2-sparse parity, $w^\star$ is non-zero only in the first two dimensions.
 
 ### Key Designs
 
-1.  **Closed-form Bound for 2-phase Training (Theorem 1)**:
-    - **Function**: Translates "small data acceleration" into a quantifiable step bound. Proves that for $d \le N \le d^2$, 2-phase training requires only $O((Nd)^{1/4} \log(d/\varepsilon))$ steps for $w$ to converge to $\|\hat w - w^\star\|_2 \lesssim \sqrt{\varepsilon}$, far fewer than the $O(m^{1/2}\log(d/\varepsilon))$ required for full population training (when width $m \gg d^2$).
-    - **Mechanism**: In Phase 1, projected GD on a subset of size $N$ runs until $|a| \ge a_\star$. The gradient of $a$ is determined by $q^{(t)} = (w^{(t)})^\top \hat M w^{(t)}$. Anti-concentration of $\hat M = \frac{1}{N}\sum y x x^\top$ gives $|q^{(t)}| = \Theta(N^{-1/2})$, much larger than the population gradient $\Theta(1/d)$. Thus, $|a|$ grows linearly at $N^{-1/2}$ on small data, reaching $a_\star$ in $T_1 \lesssim a_\star \sqrt{N}/\eta$ steps. Phase 2 switches to the population gradient, performing power iteration on the true matrix $M$ with a convergence rate controlled by $\eta a_\star$.
-    - **Design Motivation**: The two terms $T_1, T_2$ decouple the mechanism: $T_1$ is driven purely by sampling bias (mostly independent of label signal), while $T_2$ depends on the magnitude of $a_\star$. This implies any method that pushes $a$ early should yield equivalent acceleration.
+**1. Closed-form Bounds for 2-phase Training (Theorem 1): Quantifying Small Data Acceleration**
 
-2.  **Random Label Verification (Corollary 2 + Experiments)**:
-    - **Function**: Separates "sampling bias driving second-layer growth" from "task signal driving first-layer learning."
-    - **Mechanism**: Replacing Phase 1 with training on a small dataset with uniformly sampled $\pm 1$ random labels theoretically still yields an $O(N^{-1/2})$ growth rate for $|a|$. Experiments on MLPs and Transformers show that curves for random-label Phase 1 (green) nearly overlap with true-label small-set curves (yellow), both being significantly faster than large-set training (blue).
-    - **Design Motivation**: This is the cleanest "difference experiment." If acceleration were from task signals or input distribution bias, random labels would not help. Their success proves that the "sampling bias $\to$ fast second-layer growth" path is the primary driver.
+To prove acceleration exists, steps must be calculated for a toy model. The paper proves that for $d \le N \le d^2$, 2-phase training requires only $O((Nd)^{1/4} \log(d/\varepsilon))$ steps for $w$ to converge to $\|\hat w - w^\star\|_2 \lesssim \sqrt{\varepsilon}$. This is much smaller than the $O(m^{1/2}\log(d/\varepsilon))$ required for population training with width $m \gg d^2$. In Phase 1, projected GD on a subset of size $N$ runs until $|a| \ge a_\star$. The magnitude of the gradient of $a$ is determined by $q^{(t)} = (w^{(t)})^\top \hat M w^{(t)}$. The anti-concentration of $\hat M = \frac{1}{N}\sum y x x^\top$ yields $|q^{(t)}| = \Theta(N^{-1/2})$, which is much larger than the population gradient $\Theta(1/d)$. Thus $|a|$ grows at a rate of $N^{-1/2}$, reaching $a_\star$ in $T_1 \lesssim a_\star \sqrt{N}/\eta$ steps. Phase 2 switches to population gradients for power iteration on $M$, with convergence controlled by $\eta a_\star$, yielding $T_2 \lesssim \frac{2}{\eta a_\star}\log(d/\varepsilon)$. Optimizing for $a_\star$ gives the $(Nd)^{1/4}$ rate. The theorem decomposes the mechanism: $T_1$ is driven by sampling bias (independent of label signal), and $T_2$ depends solely on the magnitude of $a_\star$.
 
-3.  **Inter-layer Initialization & Learning Rate Interventions (Section 5.2)**:
-    - **Function**: Actively simulates the growth imbalance created by sampling bias to verify if reproducing this imbalance eliminates the gap.
-    - **Mechanism**: Experimental interventions include: (i) increasing the initialization scale of the second layer; (ii) using layer-wise learning rates ($\eta_a > \eta_w$); (iii) observing the role of QK normalization in Transformers. Any of these interventions significantly reduces or eliminates the gap between large and small dataset training.
-    - **Design Motivation**: Since the convergence rate depends on the relative growth speed between layers, any engineering means to balance this should be equivalent to using a smaller dataset.
+**2. Random Label Verification (Corollary 2 + Experiments): Separating Bias from Signal**
+
+If acceleration stems from task signals or input distribution bias, training with random labels should not show acceleration. This is the cleanest differential experiment. Replacing Phase 1 of Theorem 1 with "training on a small dataset with uniformly sampled $\pm 1$ random labels," the theory predicts $|a|$ still grows at $\Theta(N^{-1/2})$, leading to $T = O(\sqrt{N}/(\eta\sqrt{d}) + \sqrt{d}\log(d/\varepsilon)/\eta)$. Experiments on MLP-parity, MLP-SIM, and Transformer-modular addition show that curves for random-label Phase 1 (green) nearly overlap with small-set true labels (yellow), and both are faster than large-set training (blue). The measured $\|a\|_2 / \|W\|_F$ ratio rises faster under small/random labels. This proves "sampling bias $\rightarrow$ rapid second-layer growth" is the key path, while the label signal is secondary.
+
+**3. Inter-layer Initialization and LR Intervention (Section 5.2): Eliminating the Gap**
+
+If the mechanism is true, artificially reproducing the "inter-layer growth imbalance" caused by sampling bias should eliminate the gap on large datasets. Three interventions are tested on MLPs and Transformers: increasing the second-layer initialization scale $|a^{(0)}|$; using a higher inter-layer learning rate $\eta_a$ for the second layer; and observing QK normalization in Transformers. Results show that any of these interventions significantly reduces or eliminates the gap of large datasets relative to small ones. This suggests that these engineering techniques are equivalent to "using small datasets" by aligning the relative inter-layer growth speed, elevating the phenomenon from observation to a parameter-controlled optimization effect.
 
 ### Training Strategy
-All MLPs/Transformers use default PyTorch initialization ($W_{ij} \sim \text{Unif}[-1/\sqrt{d_{\text{in}}}, 1/\sqrt{d_{\text{in}}}]$). MLPs use SGD, and Transformers use AdamW. Learning rates are swept independently for each setting. Performance is averaged over multiple random seeds at fixed compute = batch $\times$ steps.
+All MLP/Transformer models use standard initialization ($W_{ij} \sim \text{Unif}[-1/\sqrt{d_{\text{in}}}, 1/\sqrt{d_{\text{in}}}]$). SGD is used for MLPs and AdamW for Transformers, with independent LR sweeps for each setting. Performance is averaged over multiple random seeds at fixed compute = batch × steps to represent success probability.
 
 ## Key Experimental Results
 
 ### Main Results
-| Task / Setting | Dataset Comparison | Observed Compute Saving | Note |
-| :--- | :--- | :--- | :--- |
-| (20,6)-sparse parity (Transformer) | Small set vs. Online | Yellow converges much earlier | Fig.1, universal phenomenon |
-| (20,6)-sparse parity (MLP, Full-batch) | $N = 2^{14}$ vs. $2^{20}$ | ~100x acceleration | Fig.2, refutes SQ/Variance theories |
-| SIM ($d=40$, Full-batch GD) | Small set vs. Population | Faster at every step | Fig.2 |
-| ICL / Mod Addition (Transformer) | Multi-phase training | Significant acceleration | Fig.1, cross-architecture |
+| Task / Setup | Dataset Comparison | Observed Compute Saving | Description |
+|--------------|--------------------|-------------------------|-------------|
+| (20,6)-sparse parity (mini-batch SGD, 2-layer Transformer) | Small set vs. Online | Yellow converges earlier than Blue | Fig. 1, universal phenomenon |
+| (20,6)-sparse parity (full-batch GD, 2-layer MLP) | $N = 2^{14}$ vs. $N = 2^{20}$ | ~100x compute acceleration | Fig. 2, refutes SQ-CSQ and variance hypothesis |
+| SIM ($d=40$, full-batch GD) | Small set vs. Population | Faster at every step | Similar to Fig. 2 |
+| ICL Linear Regression / Mod Addition (Transformer) | Multi-phase training | Significant acceleration | Fig. 1, cross-architecture |
 
 ### Ablation Study
 | Intervention | Key Metric | Conclusion |
-| :--- | :--- | :--- |
-| Forcing $\hat{\mathbb{E}}[x]=0$, $\hat{\mathbb{E}}[y]=0$ | Small-set still faster | Input bias is not the primary cause |
-| Injecting small-set bias into large set | Only matches at specific $m$ | Bias magnitude must be tiny to match Cornacchia theory |
-| Phase 1 with random labels | Acceleration matches true labels | Label signal is irrelevant; bias is key |
-| Scaling up 2nd-layer init / $\eta_a$ | Gap significantly shrinks/vanishes | Directly validates growth mechanism |
-| QK Norm in Transformers | Nuanced effect | Implicitly regulates inter-layer dynamics |
+|--------------|------------|------------|
+| Forcing $\hat{\mathbb{E}}[x]=0$, $\hat{\mathbb{E}}[y]=0$ | Small-set remains fast | Input bias is not the primary cause |
+| Injecting small-set bias into large-set ($m \in \{4..12\}$) | Only matched at $m=5$ | Bias must be small enough to stay unlearned, matching Cornacchia's theory |
+| Phase 1 with random labels on small set | Identical acceleration magnitude | Label signal irrelevant; sampling bias dominant |
+| Scaling up 2nd layer init / Inter-layer $\eta_a$ | Gap significantly reduced/disappeared | Directly verifies inter-layer growth mechanism |
+| Transformer QK Norm toggle | Nuanced effect | Implicitly regulates inter-layer dynamics |
 
 ### Key Findings
-- The gap persists under full-batch GD, providing the cleanest evidence against "stochasticity-driven" acceleration hypotheses.
-- The ratio $\|a\|_2 / \|W\|_F$ is an observable proxy for the mechanism; small data, random labels, and large second-layer init all correspond to a faster rise in this ratio.
-- Multi-phase training requires small subsets only in the early stages; later stages can use large subsets to ensure generalization.
-- The $(Nd)^{1/4}$ complexity suggests that for reasoning tasks (inherently discrete/combinatorial), repeating small data may be more efficient than scaling data.
+- The gap persists under full-batch GD, providing evidence against all "stochasticity-driven" acceleration hypotheses.
+- The ratio $\|a\|_2 / \|W\|_F$ serves as an observable proxy for the mechanism: small data, random labels, and large second-layer initialization all correspond to a faster rise in this ratio.
+- Multi-phase training requires small subsets only in the early stage; switching to large subsets later preserves generalization, offering a simple training schedule template.
+- The optimal choice of $a_\star$ leads to $(Nd)^{1/4}$ complexity, suggesting that for reasoning tasks (inherently discrete/combinatorial), repeating small data might be more efficient than scaling data.
 
 ## Highlights & Insights
-- The perspective of "Small data acceleration = Implicit layer-wise LR" is highly transferable, unifying data strategies and optimizer strategies under the fundamental variable of "relative inter-layer growth."
-- Using 2-sparse parity with quadratic activation allows for closed-form bounds for both $T_1$ and $T_2$ that precisely match the observable proxy variable (norm ratios).
-- Random label training provides a "layer-wise pre-warmup" equivalent to real pre-training, suggesting that seemingly "meaningless" warmup steps may be more significant than previously thought.
+- "Small data acceleration = implicit inter-layer learning rate" provides a transferable perspective, unifying data strategies and optimizer strategies through "relative inter-layer growth speed."
+- Using 2-sparse parity with quadratic activation as a toy model allows for calculating closed-form upper bounds for both phases, providing a paradigm for analyzing training dynamics.
+- Training with random labels can act as "inter-layer warming," suggesting that "seemingly meaningless" warm-up steps (e.g., using noise batches or random labels) may have significant optimization utility.
 
 ## Limitations & Future Work
-- Theory covers a highly controlled setting (2-sparse parity, quadratic MLP, correlation loss, projected updates); generalization to ReLU, deep networks, or cross-entropy remains open.
-- Experiments focus on synthetic tasks; while citing LLM post-training observations (Kopiczko 2026), the authors did not systematically replicate results on large-scale LLMs/ViTs.
-- The mechanism centers on the imbalance between two layers; whether relative growth remains critical in deeper networks and its interaction with various Norm layers needs further study.
-- The risk of overfitting when repeating small data in over-parameterized models was not deeply discussed.
+- The theory currently covers 2-sparse parity with 2-layer quadratic MLPs, correlation loss, and projected updates. Extension to ReLU, deeper networks, and cross-entropy remains open.
+- Experiments focus on synthetic tasks (parity/SIM/ICL/mod-add). While leveraging LLM post-training observations from Kopiczko (2026), the authors have not systematically reproduced this on large-scale LLMs/ViTs.
+- The mechanism centers on inter-layer imbalance in 2-layer networks; whether this remains critical for deeper networks or how it interacts with LayerNorm/RMSNorm/QK Norm requires further research.
+- Risks of overfitting in overparameterized or small models when repeating small data were not explored deeply.
 
 ## Related Work & Insights
-- **vs. Dandi et al. 2024 (SQ Theory)**: They explained acceleration in SIM for batch SGD, but were contradicted here by full-batch GD results and discrete tasks.
-- **vs. Kotha et al. 2025 (Variance Theory)**: Explained part of the mini-batch phenomenon, but the persistence of the gap in full-batch GD proves variance is not the only key.
-- **vs. Cornacchia et al. 2025 (Input Bias)**: Provides a signal of $O(\eta^k)$, which is an order of magnitude smaller than the $O(N^{-1/2})$ sampling bias.
-- **vs. $\mu$P / Tensor Programs**: Those works explicitly control inter-layer growth via parameterization; this paper shows that "data scale" itself acts on the same principle via sampling bias.
+- **vs. Dandi et al. 2024 / Lee et al. 2025 (CSQ $\rightarrow$ SQ)**: They explained acceleration for batch SGD on SIM, but this is challenged by full-batch GD results on discrete tasks in this paper.
+- **vs. Kotha et al. 2025 (Gradient Variance Reduction)**: This explains mini-batch effects, but the persistence of acceleration in full-batch GD proves variance is not the sole factor.
+- **vs. Cornacchia et al. 2025 (Input Distribution Bias)**: They propose $O(\eta^k)$ signals, which are an order of magnitude smaller than the $O(N^{-1/2})$ sampling bias found here.
+- **vs. Charton & Kempe 2024 / Kopiczko 2026**: These works provided heuristic schedules. This paper traces their effectiveness to a unified inter-layer growth mechanism.
+- **vs. µP / Tensor Programs (Yang & Hu 2020)**: Those works control inter-layer growth via parameterization; this paper shows data scale performs a similar role via sampling bias.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Unifies scattered anomalies into a single mechanism while refuting three existing theories.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Strong intervention designs across tasks/optimizers, though lacking large-scale LLM validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical chain; the "falsification-verification" structure between Sections 4 and 5 is elegant.
-- Value: ⭐⭐⭐⭐ Provides new training intuitions and suggests a new dimension for designing layer-wise learning rates and initializations.
+- **Novelty**: ⭐⭐⭐⭐⭐ Unifies the "small-vs-large gap" anomaly into a single mechanism and refutes three previous theories.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid intervention design and task coverage, though lacks large-scale LLM validation by the authors.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear argumentation chain; Section 4 (falsification) and Section 5 (verification) form a strong structure.
+- **Value**: ⭐⭐⭐⭐ Provides new training intuitions and a new dimension for thinking about inter-layer learning rates and initialization.
 
 <!-- RELATED:START -->
 
@@ -120,11 +114,11 @@ All MLPs/Transformers use default PyTorch initialization ($W_{ij} \sim \text{Uni
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Faster Path to Continual Learning](../../CVPR2026/others/a_faster_path_to_continual_learning.md)
 - [\[ICML 2026\] Coupled Training with Privileged Information and Unlabeled Data](coupled_training_with_privileged_information_and_unlabeled_data.md)
 - [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](../../AAAI2026/others/forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
+- [\[ACL 2025\] FastMCTS: A Simple Sampling Strategy for Data Synthesis](../../ACL2025/others/fastmcts_a_simple_sampling_strategy_for_data_synthesis.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](../../AAAI2026/others/sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
-- [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](../../ICLR2026/others/ano_faster_is_better_in_noisy_landscape.md)
-- [\[ICLR 2026\] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](../../ICLR2026/others/predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)
 
 </div>
 

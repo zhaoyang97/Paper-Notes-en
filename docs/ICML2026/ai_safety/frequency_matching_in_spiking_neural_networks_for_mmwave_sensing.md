@@ -2,74 +2,83 @@
 title: >-
   [Paper Note] Frequency Matching in Spiking Neural Networks for mmWave Sensing
 description: >-
-  [ICML 2026][AI Safety][LIF Neurons] This paper demonstrates from a "mechanism-data alignment" perspective that the LIF spiking neuron is equivalent to a first-order IIR low-pass filter. It proposes setting the membrane d…
+  [ICML 2026][AI Safety][Paper Note] This work proves from a "mechanism-data alignment" perspective that LIF spiking neurons are equivalent to first-order IIR low-pass filters. It proposes setting the membrane decay coefficient $\beta$ according to the discriminative spectrum of mmWave signals, enabling the SNN to achieve an average accuracy improvement o
 tags:
-  - "ICML 2026"
-  - "AI Safety"
-  - "LIF Neurons"
-  - "IIR Low-pass Filter"
-  - "mmWave Sensing"
-  - "Discriminative Spectrum"
-  - "Neural Dynamics-Data Alignment"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 2fc5cdc931c038d3
+content_hash: f995d34169363854
 ---
-
 # Frequency Matching in Spiking Neural Networks for mmWave Sensing
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.09983](https://arxiv.org/abs/2605.09983)  
 **Code**: [GitHub](https://github.com/yudi-mars/Soul)  
 **Area**: Edge Sensing / Spiking Neural Networks (SNN) / Wireless Sensing  
-**Keywords**: LIF Neurons, IIR Low-pass Filter, mmWave Sensing, Discriminative Spectrum, Neural Dynamics-Data Alignment
+**Keywords**: LIF neuron, IIR low-pass filtering, mmWave sensing, discriminative spectrum, neural dynamics-data alignment
 
 ## TL;DR
-This paper demonstrates from a "mechanism-data alignment" perspective that the LIF spiking neuron is equivalent to a first-order IIR low-pass filter. It proposes setting the membrane decay coefficient $\beta$ based on the discriminative spectrum of mmWave signals. On four common mmWave datasets, the proposed SNN improves accuracy by an average of 6.22% compared to ANNs while reducing theoretical energy consumption by 3.64×.
+This work proves from a "mechanism-data alignment" perspective that LIF spiking neurons are equivalent to first-order IIR low-pass filters. It proposes setting the membrane decay coefficient $\beta$ according to the discriminative spectrum of mmWave signals, enabling the SNN to achieve an average accuracy improvement of 6.22% and a theoretical energy reduction of 3.64× compared to ANNs across four common mmWave datasets.
 
 ## Background & Motivation
-**Background**: mmWave radar is a critical sensor for edge-side posture, gesture, and activity recognition due to its privacy-friendliness, light immunity, and penetration capabilities. Mainstream solutions use ANNs like CNNs or Transformers, relying on depth and manual preprocessing for robustness, which incurs significant energy and latency costs.
+**Background**: mmWave radar is a crucial sensor for edge-side posture, gesture, and activity recognition due to its privacy-friendly nature, light resistance, and penetration capabilities. Mainstream solutions utilize ANNs like CNNs or Transformers, relying on increased depth and handcrafted pre-processing for robustness at the cost of high energy consumption and latency.
 
-**Limitations of Prior Work**: mmWave signals are inherently sparse, irregular, and heavily contaminated by high-frequency noise from multipath effects and phase jitter. ANNs lack a built-in temporal filtering bias; they either require manual low-pass preprocessing (which may remove useful high-frequency discriminative information) or rely on deeper networks for brute-force fitting, leading to unsustainable energy and latency.
+**Limitations of Prior Work**: mmWave signals are inherently sparse, irregular, and heavily contaminated by high-frequency noise from multi-path effects and phase jitter. ANNs lack an inherent temporal filtering bias, necessitating either handcrafted low-pass pre-processing (which may discard useful high-frequency discriminative information) or deeper networks for brute-force fitting, leading to unsustainable energy and latency.
 
-**Key Challenge**: Discriminative information is often distributed in the "low-to-medium frequency bands," while noise is concentrated in high frequencies. Existing ANNs and low-pass preprocessing methods fail to distinguish between "useful high-frequency discriminative components" and "true high-frequency noise." While some SNN works show energy efficiency advantages, they rely on empirical hyperparameter tuning, leaving it unclear "when and why SNNs outperform ANNs."
+**Key Challenge**: Discriminative information is often distributed in the "low-to-medium frequency bands," while noise is concentrated in high frequencies. Existing ANNs and low-pass pre-processing fail to distinguish between "useful high-frequency discriminative components" and "true high-frequency noise." Although existing SNN works demonstrate energy efficiency advantages, they rely on empirical hyperparameter tuning without clarifying "when and why SNNs outperform ANNs."
 
-**Goal**: To answer two questions from a signal processing perspective: (1) What is the mechanistic advantage of SNNs in mmWave sensing? (2) How should the key hyperparameter, membrane decay $\beta$, be selected based on the data spectrum?
+**Goal**: To answer two questions from a signal processing perspective: (1) What is the mechanism behind the SNN's advantage in mmWave sensing? (2) How should the key hyperparameter, membrane decay coefficient $\beta$, be selected based on the data spectrum?
 
-**Key Insight**: Linearize the discrete dynamics of the LIF neuron into a first-order IIR low-pass filter and quantify the overlap between its cutoff frequency and the discriminative spectrum of the dataset. This transforms the task of "setting $\beta$" into a frequency-domain alignment problem.
+**Key Insight**: By linearizing the discrete dynamics of LIF neurons into first-order IIR low-pass filters and quantifying the overlap between their cutoff frequencies and the discriminative spectrum of the dataset, selecting $\beta$ is transformed into a frequency-domain alignment problem.
 
-**Core Idea**: Match the effective bandwidth $B_{\text{eff}}(\beta)$ of the LIF neuron to the discriminative spectrum $\Omega^\star$ of the mmWave data. "Frequency Matching" is the fundamental mechanism behind SNN superiority in such tasks and serves as the physical criterion for selecting $\beta$.
+**Core Idea**: Aligning the effective bandwidth $B_{\text{eff}}(\beta)$ of the LIF neuron with the discriminative spectrum $\Omega^\star$ of the mmWave data. "Frequency matching" is identified as the fundamental mechanism for SNN superiority in such tasks and serves as the physical criterion for selecting $\beta$.
 
 ## Method
 
 ### Overall Architecture
-The paper does not introduce a new network architecture but provides a frequency-domain mechanistic analysis and hyperparameter selection method for a "LIF neuron + LeNet-style SNN." The process consists of three steps: (1) Analyze each mmWave dataset along the time dimension using DFT and define a Fisher-style discriminative index $\mathrm{DI}(\omega_k)$, normalized as a probability distribution $\mathrm{DI}_{\text{norm}}$; (2) Formulate the LIF dynamics as $u_{t+1}=\beta u_t+(1-\beta)I_t-v_{\text{th}}O_t$, ignore the reset term to obtain the equivalent first-order IIR filter $H(\omega_k;\beta)=(1-\beta e^{-j\omega_k})^{-1}$, and define a DC-normalized power template $\tilde H(\omega_k;\beta)$ with a half-power cutoff $B_{\text{eff}}(\beta)$; (3) Measure the mechanism-data alignment using the dot product $\mathrm{FMS}_{\text{avg}}(\beta)=\sum_{\omega_k}\mathrm{DI}_{\text{norm}}(\omega_k)\tilde H(\omega_k;\beta)$, and identify the over-low-pass boundary $\beta^\dagger$ using a "maximum deviation from reference diagonal" rule to partition $\beta$ into "under-filter," "stability window," and "over-low-pass" regions.
+The paper maintains the network structure but equips "LIF neurons + LeNet-style SNN" with a set of frequency-domain analysis tools to address the empirical selection of $\beta$. The approach involves comparing both data and neurons in the frequency domain: first, measuring where discriminative information resides in each mmWave dataset using DFT; then, linearizing the LIF neuron into a low-pass filter whose bandwidth is controlled by $\beta$; and finally, using an alignment score to measure the overlap between the "filtered spectrum" and the "discriminative spectrum," categorizing the range of $\beta$ into three interpretable segments.
+
+```mermaid
+graph TD
+    subgraph D1["Discriminative Spectrum DI_norm"]
+        direction TB
+        A["mmWave Samples → 1D Time Series + DFT Magnitude Spectrum"] --> B["Inter-class / Intra-class Scatter → DI_norm"]
+    end
+    subgraph D2["LIF Low-pass Template (β as Inverse Bandwidth)"]
+        direction TB
+        E["LIF Neuron → 1st-order IIR + DC Normalized Template"] --> F["Half-power Point Defines Effective Bandwidth B_eff(β)"]
+    end
+    B --> H["FMS Alignment Score<br/>Inner Product of DI_norm and Template"]
+    F --> H
+    H --> I["β† Max Deviation Rule<br/>Furthest Point from Diagonal of logτ vs FMS"]
+    I --> J["Tri-segment Division<br/>under-filter / stability window / over-low-pass"]
+    J -->|Select β in stability window| K["Train SpikingLeNet"]
+```
 
 ### Key Designs
 
-1. **Data side: Discriminative Spectrum $\mathrm{DI}_{\text{norm}}(\omega_k)$**:
+**1. Discriminative Spectrum $\mathrm{DI}_{\text{norm}}$: Measuring where discriminative information resides**
 
-    - **Function**: Objectively quantifies the density of category-discriminative information at each frequency bin as the "data ground truth" for mechanism matching.
-    - **Mechanism**: For each sample $\mathbf{X}_i\in\mathbb{R}^{L\times C\times H\times W}$, non-temporal dimensions are averaged to obtain a 1D sequence $\mathbf{s}_i\in\mathbb{R}^L$. After sample-wise de-meaning and DFT, the magnitude spectrum $A_i[k]$ is obtained. Inter-class variance $S_B[k]=\sum_c\pi_c(\mu_c[k]-\bar\mu[k])^2$ and intra-class variance $S_W[k]=\sum_c\pi_c\,\mathrm{Var}_c[k]$ are estimated per class to define $\mathrm{DI}(\omega_k)=S_B[k]/(S_W[k]+\varepsilon)$, which is then normalized in the frequency domain.
-    - **Design Motivation**: Direct Fisher-style statistics of linear separability reflect both "signal energy distribution" and "category separability," serving as the intermediary between "data" and "mechanism."
+To discuss "frequency matching," a metric is required to define the frequency distribution of discriminative information in mmWave data. For each sample $\mathbf{X}_i\in\mathbb{R}^L\times C\times H\times W$, the non-temporal dimensions are averaged into a 1D time series $\mathbf{s}_i\in\mathbb{R}^L$. After sample-wise mean subtraction and one-sided DFT to obtain the magnitude spectrum $A_i[k]$, the inter-class scatter $S_B[k]=\sum_c\pi_c(\mu_c[k]-\bar\mu[k])^2$ and intra-class scatter $S_W[k]=\sum_c\pi_c\,\mathrm{Var}_c[k]$ are estimated per frequency band. The Discriminative Index is defined as $\mathrm{DI}(\omega_k)=S_B[k]/(S_W[k]+\varepsilon)$ and normalized in the frequency domain as a probability distribution $\mathrm{DI}_{\text{norm}}$. This Fisher-style linear separability statistic reflects both energy distribution and class separability, serving as the intermediary between data truth and neuronal mechanisms.
 
-2. **Mechanism side: LIF Low-pass Template and Monotonic Bandwidth Control (Lemma 3.2)**:
+**2. LIF Low-pass Template: Turning $\beta$ into a clean "inverse bandwidth" knob**
 
-    - **Function**: Translates the temporal integration behavior of spiking neurons into a "low-pass filter with bandwidth monotonically controlled by $\beta$," allowing direct alignment with the data spectrum.
-    - **Mechanism**: The LIF neuron ignoring the reset term is a first-order IIR with frequency response $H(\omega_k;\beta)=(1-\beta e^{-j\omega_k})^{-1}$. To eliminate global magnitude differences, a DC-normalized power template is defined as $\tilde H(\omega_k;\beta)=(1-\beta)^2/[(1-\beta)^2+2\beta(1-\cos\omega_k)]$. Lemma 3.2 proves: $\tilde H\in(0,1]$, $\tilde H(0;\beta)=1$, it is non-increasing w.r.t. $\omega_k$, and non-increasing w.r.t. $\beta$. The half-power point $\tilde H(\omega_c;\beta)=1/2$ defines the effective bandwidth $B_{\text{eff}}(\beta)=\omega_c$, making $\beta$ a clean "inverse bandwidth" knob.
-    - **Design Motivation**: Giving the hyperparameter $\beta$ a clear physical meaning (bandwidth control) turns "tuning" into "bandwidth-spectrum alignment" rather than empirical trial-and-error.
+Beyond the data spectrum, the LIF neuron's nature as a filter must be defined. By writing the LIF dynamics as $u_{t+1}=\beta u_t+(1-\beta)I_t-v_{\text{th}}O_t$ and ignoring the reset term, it functions as a first-order IIR filter with a frequency response $H(\omega_k;\beta)=(1-\beta e^{-j\omega_k})^{-1}$. To eliminate global magnitude differences and compare "shape" only, a DC-normalized power template is defined: $\tilde H(\omega_k;\beta)=(1-\beta)^2/[(1-\beta)^2+2\beta(1-\cos\omega_k)]$. Lemma 3.2 proves that $\tilde H\in(0,1]$, $\tilde H(0;\beta)=1$, and it is non-increasing with respect to both $\omega_k$ and $\beta$—meaning a larger $\beta$ results in a narrower passband. Using the half-power point $\tilde H(\omega_c;\beta)=1/2$ to define the effective bandwidth $B_{\text{eff}}(\beta)=\omega_c$, $\beta$ is transformed from a heuristic hyperparameter into a physical control for bandwidth.
 
-3. **Alignment side: FMS Score and $\beta^\dagger$ Max Deviation Rule**:
+**3. FMS Alignment Score and $\beta^\dagger$ Max Deviation Rule: Segmenting $\beta$ without training**
 
-    - **Function**: Provides a quantitative boundary $\beta^\dagger$ for the onset of over-low-passing, determined purely by the data spectrum and neural dynamics without relying on label accuracy.
-    - **Mechanism**: The dot product of the template and data spectrum yields $\mathrm{FMS}_{\text{avg}}(\beta)=\sum_{\omega_k}\mathrm{DI}_{\text{norm}}(\omega_k)\tilde H(\omega_k;\beta)\in[0,1]$, interpreted as the "quality of discriminative spectrum preserved by LIF under current $\beta$." Let $\tau=(1-\beta)^{-1}$; min-max normalization is applied to both $\log\tau$ and $\mathrm{FMS}_{\text{avg}}$ to get $(\phi_r,\psi_r)$. A reference diagonal $\hat L$ connects the endpoints. the point of maximum deviation $\beta^\dagger=\arg\max_r|\hat L(\phi_r)-\psi_r|$ is identified. Proposition 3.5 then defines three segments: under-filter ($\beta\to 0$, noise not suppressed), stability window ($0<\beta<\beta^\dagger$, where peak accuracy usually occurs), and over-low-pass ($\beta\geq\beta^\dagger$, where discriminative information is filtered out).
-    - **Design Motivation**: Traditional $\beta$ tuning requires dataset-specific accuracy sweeps, which are expensive and lack mechanistic explanation. Defining $\beta^\dagger$ via frequency-domain geometric features makes "tuning" as simple as "drawing a line based on the spectrum," which is highly valuable for edge SNN deployment.
+With the data spectrum and LIF template, "frequency matching" can be quantified by the inner product, yielding the alignment score $\mathrm{FMS}_{\text{avg}}(\beta)=\sum_{\omega_k}\mathrm{DI}_{\text{norm}}(\omega_k)\tilde H(\omega_k;\beta)\in[0,1]$. This score represents the "quality of discriminative spectrum preserved by the LIF at a given $\beta$." A critical issue is that if $\beta$ is too large, the passband becomes too narrow, discarding useful high-frequency discriminative components. A geometric rule is used to locate this critical point: let $\tau=(1-\beta)^{-1}$, apply min-max normalization to both $\log\tau$ and $\mathrm{FMS}_{\text{avg}}$ to obtain $(\phi_r,\psi_r)$, and connect the endpoints to form a reference diagonal $\hat L$. The furthest point from this line is defined as $\beta^\dagger=\arg\max_r|\hat L(\phi_r)-\psi_r|$. Proposition 3.5 divides $\beta$ into: under-filter ($\beta\to 0$, noise not suppressed), stability window ($0<\beta<\beta^\dagger$, where accuracy peaks typically reside), and over-low-pass ($\beta\geq\beta^\dagger$, discriminative information discarded). Notably, $\beta^\dagger$ is determined solely by data spectrum and neural dynamics, independent of label accuracy, allowing practitioners to avoid expensive dataset-specific accuracy sweeps.
+
+### Mechanism
+
+Taking the AOPHand gesture dataset as an example: First, DFT is applied to all samples, revealing that discriminative energy is concentrated in the low-to-medium frequency bands while high frequencies are dominated by noise, yielding $\mathrm{DI}_{\text{norm}}$. Then, a range of candidate $\beta$ values is swept to calculate the LIF's normalized bandwidth $B_{\text{eff}}(\beta)$ and alignment score $\mathrm{FMS}_{\text{avg}}(\beta)$. By plotting $\mathrm{FMS}_{\text{avg}}$ against $\log\tau$ and finding the point of maximum deviation from the diagonal, the critical $\beta^\dagger$ is identified. Selecting $\beta$ within the stability window before $\beta^\dagger$ for training SpikingLeNet results in an optimal accuracy corresponding to a $\beta^\ast$ located to the left of $\beta^\dagger$, improving accuracy from LeNet's 60.86% to 83.70%. The entire process avoids accuracy-based scanning for $\beta$ selection.
 
 ### Loss & Training
-Standard SNN training with surrogate gradients is employed. A simple LeNet-style SpikingLeNet (~4.19M parameters) is used. The only additional step is pre-selecting $\beta$ for each dataset using the aforementioned method.
+Standard SNN training with surrogate gradients is employed. The backbone is a simple LeNet-style SpikingLeNet (≈4.19M parameters). The only additional step is pre-selecting $\beta$ for each dataset using the aforementioned frequency matching method.
 
 ## Key Experimental Results
 
-### Main Results: Accuracy on 4 mmWave Datasets (%, Mean of 3 seeds)
+### Main Results: Accuracy across 4 mmWave Datasets (%, mean of 3 seeds)
 
 | Model | AOPHand | mmFiT | Pantomime | MMActivity | #Params (M) |
 |------|---------|-------|-----------|------------|-------------|
@@ -92,41 +101,41 @@ Standard SNN training with surrogate gradients is employed. A simple LeNet-style
 
 ### Ablation Study
 
-| Setting | Key Observation |
-|------|---------|
-| Explicit Low-pass + LeNet vs. SpikingLeNet | Adding filters improves LeNet but it still lags behind SpikingLeNet. Hard frequency truncation suppresses noise but also cuts high-freq discriminative info; LIF's "soft low-pass" is superior. |
-| $\beta$ sweep (Fig. 4) | Accuracy increases then decreases with $\beta$; the peak $\beta^\ast < \beta^\dagger$. This validates the stability window prediction of Proposition 3.5. |
-| $T$ sweep | Slight increases in $T$ lead to accuracy gains followed by saturation. Temporal steps primarily stabilize predictions; major improvements are driven by $\beta$. |
-| t-SNE (Fig. 3) | SNN feature separation is significantly better than ANN. The suppression of high-frequency noise through frequency matching makes the feature space more discriminative. |
-| Multi-platform Latency | ~4× slower than LeNet on Jetson GPUs, nearly matching on Darwin3. GPUs treat spikes as dense kernels; neuromorphic hardware is needed to realize sparsity benefits. |
+| Setup | Key Observation | Background |
+|------|---------|------|
+| Explicit LPF + LeNet vs SpikingLeNet | LeNet improves with filter but still lags behind | Hard frequency truncation suppresses noise but kills high-f discriminative info; LIF's "soft" LPF is superior |
+| $\beta$ sweep (Fig 4) | Accuracy rises then falls; peak $\beta^\ast < \beta^\dagger$ | Directly validates the stability window prediction of Proposition 3.5 |
+| $T$ sweep | Small $T$ increase $\rightarrow$ Accuracy gains then saturates | Moderate time steps stabilize predictions; primary driver is $\beta$ |
+| t-SNE (Fig 3) | SNN features show clearer inter-class separation | Noise suppression via frequency matching makes feature space more discriminative |
+| Multi-platform Latency | ~4× slower than LeNet on Jetson GPU; nearly matches on Darwin3 | Current GPUs treat spikes as dense kernels; neuromorphic hardware realizes sparsity benefits |
 
 ### Key Findings
-- SpikingLeNet, using the same LeNet backbone, outperforms the strongest ANN by an average of 6.22% across four datasets with identical parameter counts. This indicates that the performance difference stems from the temporal frequency bias provided by LIF, not model capacity.
-- In terms of energy, SpikingLeNet is ~3.64× more efficient than the next best model (RNN) and two to three orders of magnitude lower than VGG/ResNet. This method is highly suitable for always-on edge sensing devices given proper hardware support.
-- The optimal $\beta^\ast$ consistently appears before the theoretically determined $\beta^\dagger$, and $\mathrm{FMS}_{\text{avg}}$ correlates strongly with accuracy, proving the validity of the "frequency matching" hypothesis across all datasets.
-- Current SNN latency bottlenecks on GPUs are primarily system-level artifacts. Moving workflows to neuromorphic chips like Darwin3 can realize the hardware advantages of event-driven and sparse computation.
+- SpikingLeNet with the same LeNet backbone outperforms the strongest ANN by 6.22% on average across 4 datasets with identical parameter counts, indicating the performance gain stems from the temporal frequency bias provided by LIF, not capacity.
+- SpikingLeNet's energy consumption is ~3.64× lower than the next most efficient model (RNN) and orders of magnitude lower than VGG/ResNet. This is highly suitable for always-on edge sensing equipment with hardware support.
+- The optimal $\beta^\ast$ consistently appears before the theoretically derived $\beta^\dagger$, and $\mathrm{FMS}_{\text{avg}}$ is highly correlated with accuracy, confirming the "frequency matching" hypothesis across all datasets.
+- Current latency bottlenecks of SNNs on GPUs are primarily systems-level artifacts. Deploying the workflow on neuromorphic chips like Darwin3 realizes the "event-driven + sparse" hardware advantage.
 
 ## Highlights & Insights
-- The study elevates the explanation of why SNNs excel at mmWave sensing from empirical observation to the level of frequency-domain mechanisms, supplemented by provable lemmas and propositions.
-- By translating $\beta$ into "inverse bandwidth" and providing a graphical selection rule for $\beta^\dagger$, practitioners can achieve near-optimal $\beta$ without expensive sweeps. This mechanism-based tuning can be extended to other tasks with distinct frequency structures (EEG, IMU, radar tracking).
-- The introduction of the discriminative spectrum $\mathrm{DI}_{\text{norm}}$ provides a lightweight and universal tool for "data spectrum profiling," which can be used to inspect whether the "frequency bias" of various networks matches the target data—a new perspective for model design and selection.
+- Elevates the explanation of "why SNNs outperform ANNs on mmWave" from empirical observation to frequency-domain mechanisms, supplemented by provable lemmas and propositions.
+- Translates $\beta$ as "inverse bandwidth" and provides a graphic selection rule for $\beta^\dagger$, allowing practitioners to achieve near-optimal $\beta$ without expensive sweeps. This mechanism-based tuning can be extended to other tasks with distinct frequency structures (EEG, inertial sensing, radar tracking).
+- Introducing the discriminative spectrum $\mathrm{DI}_{\text{norm}}$ as a "data spectrum profiling" tool provides a lightweight yet universal method to inspect whether the "frequency bias" of various networks matches the target data, offering a new perspective for model design.
 
 ## Limitations & Future Work
-- The framework is built entirely on the IIR linearization of "LIF + ignoring reset." Frequency analysis would need to be re-derived for neurons with hard resets, adaptive thresholds, or multi-state spiking dynamics.
-- Experiments were conducted on small LeNet architectures; deep or multi-branch SNNs were not tested. It remains to be verified if "frequency matching" remains the primary bottleneck or if it is diluted by other hierarchical interactions in larger models.
-- $\beta^\dagger$ is a geometric selection on a discrete candidate set and depends on sweep density; the optimal $\beta^\ast$ still requires training to confirm. The paper does not provide an analytical solution for the "best $\beta$ without any training samples."
-- While latency issues are attributed to "system-level artifacts," practical deployment requires quantifiable hardware-algorithm co-design paths; a single case on Darwin3 may be insufficient.
+- The framework is entirely built on "LIF + ignoring reset" IIR linearization. For neurons with hard reset, adaptive thresholds, or multi-state spiking, frequency analysis must be revisited.
+- Experiments were conducted on a small LeNet-style backbone; whether "frequency matching" remains the primary bottleneck or is diluted by hierarchical interactions in deeper/multi-branch SNNs requires validation.
+- $\beta^\dagger$ is a geometric choice based on a discrete candidate set and depends on sweep density; the optimal $\beta^\ast$ still requires post-training confirmation, as an analytical solution for the optimal $\beta$ without training was not provided.
+- Latency is attributed to "system-level artifacts," but actual deployment requires quantifiable hardware-algorithm co-design paths; a single case on Darwin3 is insufficient.
 
 ## Related Work & Insights
-- **vs. Fang et al. (2025)**: The authors advance the "LIF ≈ IIR low-pass" conclusion from a formulaic level to a "spectrum-data alignment" framework, providing the first criterion directly applicable to tuning.
-- **vs. Arsalan et al. (2022/2023), Hu et al. (2025), etc.**: While previous works emphasized energy efficiency or engineering improvements, this paper explains *why* SNNs are suited for mmWave and offers reusable design principles.
-- **vs. Classic Low-pass Preprocessing**: Traditional hard frequency truncation removes high-frequency discriminative info; the LIF's soft low-pass suppression of noise while retaining discriminative components provides experimental evidence that "frequency matching > hard truncation."
+- **vs Fang et al. (2025)**: Advances the conclusion that "LIF ≈ IIR Low-pass" into a "spectrum-data alignment" framework, providing a directly applicable criterion for parameter tuning.
+- **vs Arsalan et al. 2022/2023, Hu et al. 2025, etc.**: Previous works emphasized energy efficiency or engineering improvements; this work explains the mechanism and provides reusable design principles.
+- **vs Classic Low-pass Pre-processing**: Traditional hard frequency truncation discards high-frequency discriminative information; LIF's soft low-pass suppression of noise while retaining discriminative components provides experimental evidence for "Frequency Matching > Hard Truncation."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Explains SNN advantages via frequency mechanisms and provides computable $\beta$ selection rules.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 common datasets and multi-platform testing, though limited to LeNet backbones.
+- Novelty: ⭐⭐⭐⭐ Explaining SNN advantages in mmWave via frequency mechanisms and providing calculable $\beta$ selection rules is a novel perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 common datasets and multi-platform latency, though limited to LeNet backbones.
 - Writing Quality: ⭐⭐⭐⭐ Clear lemmas and propositions with a complete mechanistic narrative.
-- Value: ⭐⭐⭐⭐ Directly guides parameter tuning for edge SNN deployment and provides a template for "mechanism-data alignment" research.
+- Value: ⭐⭐⭐⭐ Provides direct tuning guidance for edge SNN deployment and a template for "mechanism-data alignment" research.
 
 <!-- RELATED:START -->
 
@@ -134,11 +143,11 @@ Standard SNN training with surrogate gradients is employed. A simple LeNet-style
 
 ## Related Papers
 
-- [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
+- [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
 - [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](../../ICLR2026/ai_safety/time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 - [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 
 </div>
 

@@ -2,139 +2,131 @@
 title: >-
   [Paper Note] Whom to Query for What: Adaptive Group Elicitation via Multi-Turn LLM Interactions
 description: >-
-  [ICML 2026][Graph Learning][Adaptive elicitation] This paper extends multi-turn questionnaire-based elicitation from "what to ask" to a joint decision of "whom to ask" and "what to ask." It utilizes an LLM to estimate th…
+  [ICML 2026][Graph Learning][Paper Note] This paper extends multi-turn questionnaire-style elicitation from the decision of "what question to ask" to a joint decision of "whom to query and what to query." It utilizes LLMs to estimate the information gain of questions and heterogeneous GNNs to propagate and impute missing responses across a group relationship
 tags:
-  - "ICML 2026"
-  - "Graph Learning"
-  - "Adaptive elicitation"
-  - "Group preferences"
-  - "Heterogeneous graph neural networks"
-  - "Information gain"
-  - "Missing response imputation"
+  - ICML 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 2df67e922cb3f9ca
+content_hash: eff0ed5c19dd4edf
 ---
-
 # Whom to Query for What: Adaptive Group Elicitation via Multi-Turn LLM Interactions
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.14279](https://arxiv.org/abs/2602.14279)  
 **Code**: https://github.com/ZDCSlab/Group-Adaptive-Elicitation  
 **Area**: Graph Learning / LLM Interactive Group Modeling  
-**Keywords**: Adaptive elicitation, Group preferences, Heterogeneous graph neural networks, Information gain, Missing response imputation  
+**Keywords**: Adaptive Elicitation, Group Preferences, Heterogeneous Graph Neural Networks, Information Gain, Missing Response Imputation  
 
 ## TL;DR
-This paper extends multi-turn questionnaire-based elicitation from "what to ask" to a joint decision of "whom to ask" and "what to ask." It utilizes an LLM to estimate the information gain of questions and a heterogeneous GNN to propagate and impute missing responses on a group relationship graph, thereby recovering group preferences faster under a limited respondent budget.
+This paper extends multi-turn questionnaire-style elicitation from the decision of "what question to ask" to a joint decision of "whom to query and what to query." It utilizes LLMs to estimate the information gain of questions and heterogeneous GNNs to propagate and impute missing responses across a group relationship graph, thereby recovering group preferences faster under a limited respondent budget.
 
 ## Background & Motivation
-**Background**: Adaptive elicitation typically treats the objective as a step-by-step inquiry of latent variables, such as determining the most informative next question based on answers from previous rounds. LLMs make this process more natural as they can process natural language questions, predict subsequent answers based on historical responses, and measure question value using predictive entropy or expected information gain.
+**Background**: Adaptive elicitation typically views the goal as a sequential query process for a latent variable, where the next most informative question is determined by previous answers. LLMs make this process more natural as they can process natural language questions, predict subsequent responses based on interaction history, and use predictive entropy or expected information gain to measure the value of a question.
 
-**Limitations of Prior Work**: The bottleneck in real-world group surveys often lies not just in the number of questions, but in how many people can be reached in each round. Existing methods mostly assume a fixed set of respondents and only optimize question selection; even when using LLMs to impute unobserved responses, they often treat individuals independently without leveraging the structure of demographic attributes, group similarities, and partial observations.
+**Limitations of Prior Work**: The bottleneck in real-world group surveys is often not just the number of questions, but how many individuals can be contacted in each round. Existing methods mostly assume a fixed set of respondents and only optimize question selection. Even when using LLMs to impute unobserved responses, they often treat each individual independently, failing to exploit the structures within demographic attributes, group similarities, and partial observations.
 
-**Key Challenge**: Under a limited budget, a question is only truly useful when asked of the right person. Selecting only high-information questions wastes budget on easily predictable or redundant individuals; whereas performing only group imputation might over-propagate uncertain signals, particularly harming highly sensitive individuals who are difficult to explain via demographic attributes.
+**Key Challenge**: Under a limited budget, a question is only truly useful when asked of the right person. Selecting only high-information questions may waste the budget on individuals who are easy to predict or redundant. Conversely, performing group imputation alone might over-propagate uncertain signals, particularly harming high-sensitivity individuals whose opinions are difficult to explain by demographics alone.
 
-**Goal**: The authors aim to formalize adaptive group elicitation: simultaneously selecting a question and a small subset of respondents in each round, so that observed answers can both update the questioned individuals themselves and help predict the answers of unqueried individuals on target questions through the group structure.
+**Goal**: The authors aim to formalize adaptive group elicitation: simultaneously selecting a question and a small subset of respondents in each round, such that the observed responses can both update the queried individuals and help predict the responses of unqueried individuals on target questions through the group structure.
 
-**Key Insight**: The paper decouples the natural language prediction capability of LLMs from the group propagation capability of heterogeneous graphs. The LLM is responsible for evaluating "how much this question can reduce the uncertainty of future target questions," while the GNN is responsible for propagating observed answers among nodes representing respondents, demographic attributes, and "question-option" pairs.
+**Key Insight**: The paper decouples the natural language prediction capability of LLMs from the group propagation capability of heterogeneous graphs. The LLM is responsible for evaluating "how much a question reduces uncertainty about future target questions," while the GNN is responsible for propagating observed responses across nodes representing respondents, demographic attributes, and "question-option" pairs.
 
-**Core Idea**: Use an LLM for question-level Expected Information Gain (EIG) selection and a heterogeneous GNN for respondent selection and missing response imputation, coupling "what to ask" and "whom to ask" into a closed loop.
+**Core Idea**: Use LLMs for question-level expected information gain selection and heterogeneous GNNs for respondent selection and missing response imputation, coupling "what to ask" and "whom to ask" in a closed-loop.
 
 ## Method
-The proposed method can be understood as a multi-turn closed-loop system. During the training phase, two modules are learned: an LLM capable of predicting the next answer distribution based on an individual's historical answers, and a GNN capable of performing link prediction on a heterogeneous group graph. During the testing phase with a new group, the system first uses the LLM to score candidate questions each round, then uses individual embeddings from the GNN to select representative respondents. After receiving a small number of real answers, the GNN imputes answers for unqueried individuals and writes both real and imputed answers back to the history for the next round.
+The proposed method is a multi-turn closed-loop system. During the training phase, two modules are learned: an LLM capable of predicting the next answer distribution based on an individual's history, and a GNN capable of performing link prediction on a heterogeneous group graph. During the testing phase for a new group, the system first scores candidate questions using the LLM in each round, then selects representative respondents using the GNN's individual embeddings. After receiving a small number of real answers, the GNN imputes answers for unqueried individuals and writes both real and imputed answers back into the history for the next round.
 
 ### Overall Architecture
-The input includes a new group, a set of candidate questions, a set of target evaluation questions, and a respondent budget for each round. The system outputs the predicted answers of group members on target questions. Each round consists of four steps: first, estimate the group-level information gain for each candidate question based on existing history; second, use clusterings of member embeddings from the heterogeneous GNN to select the most representative respondents within the budget; third, collect real answers from these individuals; and finally, add new edges to the heterogeneous graph, update member embeddings through message passing, and impute unqueried answers.
+Input includes a new group, a set of candidate questions, a set of target evaluation questions, and a respondent budget per round. The system outputs the predicted answers of group members on the target questions. Each round consists of four steps: estimating group-level information gain for each candidate question based on existing history; using heterogeneous GNN member embedding clustering to select the most representative respondents within the budget; collecting real responses from these individuals; and finally adding new edges to the heterogeneous graph to update member embeddings and impute unqueried responses via message passing.
 
-In this design, the roles of the LLM and GNN are complementary. The LLM does not need to explicitly parameterize complex latent variables like political attitudes or economic preferences; it only needs to predict future answers from interaction history. The GNN does not need to generate natural language; it only needs to utilize "member-attribute" and "member-question-option" relationships for structural propagation to generalize sparse observations to the entire population.
+In this design, the roles of the LLM and GNN are complementary. The LLM does not need to explicitly parameterize complex latent variables like political attitudes or economic preferences; it simply predicts future answers from interaction histories. The GNN does not need to generate natural language; it only utilizes "member-attribute" and "member-question-option" relationships for structural propagation, generalizing sparse observations to the entire population.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: New Group + Candidate Questions<br/>Target Questions + Respondent Budget per Round"] --> B["LLM-based Group Expected Information Gain<br/>Score candidate questions, select next one"]
+    B --> C["Graph-Embedding Driven Respondent Selection<br/>GNN embedding clustering, select representatives"]
+    C --> D["Collect real responses from selected respondents"]
+    D --> E["Heterogeneous GNN Response Imputation & Member Update<br/>Add edges → Message passing → Impute unqueried"]
+    E -->|Write back to history, next round| B
+    E --> F["Output: Predicted answers of all members on target questions"]
+```
 
 ### Key Designs
-1.  **LLM-based Group Expected Information Gain**:
-    -   **Function**: Estimates how much a candidate question can reduce the uncertainty of group latent variables under the current history.
-    -   **Mechanism**: The authors adopt a de Finetti predictive perspective, transforming latent variable uncertainty into the conditional entropy of future target question answers. For member $v$, uncertainty is written as $H(U_v|\mathcal{H}_{t-1}^v)=\sum_{x\in\mathcal{X}_h}H(Y_x^v|X=x,\mathcal{H}_{t-1}^v)$. The EIG of a candidate question compares the entropy reduction before and after simulated questioning, summed across all members.
-    -   **Design Motivation**: This avoids manually defining prior distributions for group preferences, allowing the LLM to learn predictive distributions directly from natural language interaction histories while maintaining a clear information-theoretic objective.
 
-2.  **Heterogeneous GNN Response Imputation and Member Representation Update**:
-    -   **Function**: Predicts the responses of unqueried members to the current question when only a subset is queried, and continuously updates group structure representations.
-    -   **Mechanism**: The graph contains three types of nodes: member nodes, demographic attribute nodes, and question-option nodes. Members connect to their own attribute nodes and to selected question-options. The GNN learns $p(c|v,q)=\frac{\exp(\langle h_v,h_c\rangle/\tau)}{\sum_{c'}\exp(\langle h_v,h_{c'}\rangle/\tau)}$ via link prediction. During training, member-option edges are randomly masked, and masked answers are recovered using cross-entropy.
-    -   **Design Motivation**: Independent imputation by LLMs tends to treat weak signals as certain answers, whereas graph propagation explicitly incorporates demographic attributes and similar answer patterns, providing structural support for unobserved responses.
+**1. LLM-based Group Expected Information Gain: Replacing manual priors with "future answer entropy reduction"**
 
-3.  **Graph Embedding-driven Respondent Selection**:
-    -   **Function**: Decides "whom to query" under a limited budget each round, rather than querying respondents randomly or fixedly.
-    -   **Mechanism**: The system uses the GNN to obtain final embeddings for each member, assuming members with similar embeddings have similar response patterns. Given a budget $k$, it performs clustering in the embedding space and selects cluster centers as representative respondents. After collecting real answers, new edges are written into the graph for the next round of propagation and selection.
-    -   **Design Motivation**: This ensures the observation budget prioritizes high-information regions of the group, particularly aiding highly sensitive individuals who are difficult to impute via attributes alone, rather than wasting budget on those easily inferred from neighbors.
+This step addresses the "what to ask" problem within the framework—determining which candidate question best compresses group uncertainty without hard-coding prior distributions for group preferences. Following a de Finetti-style predictive view, the authors rewrite the uncertainty of a member $v$'s latent variable $U_v$ as the conditional entropy of future answers to a batch of target questions: $H(U_v|\mathcal{H}_{t-1}^v)=\sum_{x\in\mathcal{X}_h}H(Y_x^v|X=x,\mathcal{H}_{t-1}^v)$. The Expected Information Gain (EIG) of a candidate question is the "entropy before asking" minus the "entropy after simulated asking using LLM," summed over all group members. The question that maximizes the group EIG is selected. Consequently, the LLM only needs to learn predictive distributions from natural language interaction histories without explicit parameterization, while the objective function maintains clear information-theoretic meaning.
+
+**2. Graph-Embedding Driven Respondent Selection: Allocating budget to those hardest to infer from neighbors**
+
+After selecting a question, the system must decide "whom to query" to avoid wasting budget on individuals who are easily predicted or redundant. The system utilizes the final embeddings $h_v$ calculated by the heterogeneous GNN for each member, assuming that individuals with similar embeddings share similar response patterns. Given a budget $k$ per round, it clusters the members in the embedding space and selects the $k$ cluster centers as representative respondents. This ensures observations cover the most informative regions of the group. Upon receiving real answers, new edges are added to the graph, followed by re-propagation and re-selection in the next round. This is particularly valuable for high-sensitivity individuals—those who cannot be accurately imputed through demographic attributes alone and need to be directly queried.
+
+**3. Heterogeneous GNN Response Imputation & Member Representation Update: Generalizing sparse observations via group structure**
+
+Since only a small fraction of individuals are queried, the responses of others must be filled via imputation, which also continuously refreshes the group's structural representation. The graph contains three types of nodes: members, demographic attributes, and question-option pairs. Members are connected to their attributes and the specific question-options they have selected. The GNN learns $p(c|v,q)=\frac{\exp(\langle h_v,h_c\rangle/\tau)}{\sum_{c'}\exp(\langle h_v,h_{c'}\rangle/\tau)}$ via link prediction. During training, a portion of member-option edges are randomly masked, and the GNN recovers these responses using cross-entropy. compared to independent LLM imputation—which may treat weak signals as certainties—graph propagation explicitly incorporates demographics and similar response patterns, providing a structural safeguard for unobserved answers. This is the primary reason why gains in the experiments stem from GNN propagation rather than LLM imputation alone.
 
 ### Loss & Training
-The LLM is trained via an autoregressive prediction objective: maximizing the likelihood of the next answer in a member's history, i.e., learning $p_\theta(Y_{t+1}^v|X_{t+1}^v,\mathcal{H}_t^v)$. The GNN uses masked link prediction: randomly masking a portion of member-question-option edges, obtaining member and option embeddings via R-GCN message passing on the partially observed graph, and recovering masked options using softmax link prediction.
+The LLM is trained via autoregressive prediction to maximize the likelihood of the next answer in a member’s history: $p_\theta(Y_{t+1}^v|X_{t+1}^v,\mathcal{H}_t^v)$. The GNN uses masked link prediction: randomly masking member-question-option edges and obtaining member and option embeddings through R-GCN message passing on the partially observed graph, then recovering the masked options via softmax link prediction.
 
-In experiments, the LLM query strategy uses Llama-3.1-8B + LoRA for meta-training (trained on the South US region, tested on the West). The GNN uses a two-layer R-GCN with a hidden dimension of 64, evaluated in a cold-start setting where all user-question edges are removed from the message-passing graph at test time.
+In experiments, the LLM query strategy uses Llama-3.1-8B + LoRA for meta-training, with the training set from the South region of the US and the test set from the West. The GNN uses a two-layer R-GCN with a hidden dimension of 64, evaluated in a cold-start setting where all user-question edges are initially removed from the message-passing graph.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper evaluates on three real-opinion datasets: CES, OpinionQA, and Twin-2k. One question is asked per round, with a restricted percentage of respondents per round. The goal is to predict all members' answers on held-out target questions. The primary metric is accuracy, with Brier Score and Perplexity as additional metrics.
+The paper evaluates the method on three real opinion datasets: CES, OpinionQA, and Twin-2k. Only one question is asked per round, with a limit on the proportion of respondents allowed. The goal is to predict the answers of all members on held-out target questions. The primary metric is accuracy, supplemented by Brier Score and Perplexity.
 
 | Dataset / Setting | Metric | Ours | Strongest Baseline | Gain |
 | :--- | :--- | :--- | :--- | :--- |
-| CES, 10% respondent budget, round 1 | Relative Target Acc improvement | Highest | Better of Meta-Greedy / Meta-Greedy-Imp | +17.1% relative |
-| CES, 10% respondent budget, round 4 | Relative Target Acc improvement | Highest | Strongest baseline | +12.6% relative |
-| CES / OpinionQA / Twin-2k, 10%-50% budget | Accuracy curve | Overall highest | Meta-Random, Meta-Greedy, Meta-Greedy-Imp | Consistent lead |
+| CES, 10% respondent budget, round 1 | Relative Accuracy Gain | Highest | Meta-Greedy / Meta-Greedy-Imp | +17.1% relative |
+| CES, 10% respondent budget, round 4 | Relative Accuracy Gain | Highest | Strongest baseline | +12.6% relative |
+| CES / OpinionQA / Twin-2k, 10%-50% budget | Accuracy Curve | Overall highest | Meta-Random, Meta-Greedy, Meta-Greedy-Imp | Consistent lead |
 | CES / OpinionQA Calibration | Brier Score / Perplexity | Lowest after round 1 | Meta-Greedy-Imp often overconfident | Better calibration |
 
 ### Ablation Study
-The ablation focuses on two areas: checking if respondent selection is more valuable for high-sensitivity individuals and comparing greedy querying with multi-step planning. Key figures from round 4 are extracted below.
+The ablation focuses on two areas: whether respondent selection is more valuable for high-sensitivity groups, and a comparison between greedy querying and multi-step planning. Key figures from round 4 are presented below.
 
 | Configuration | Key Metric | Description |
 | :--- | :--- | :--- |
-| CES, 50% budget, Random selection | Global 0.793 / Hard 0.714 / Extreme 0.720 | Random selection benefits from more observations, but underperforms on high-sensitivity individuals. |
-| CES, 50% budget, Group-relational selection | Global 0.801 / Hard 0.780 / Extreme 0.826 | Largest gains in hard-to-predict groups, showing "whom to ask" is more critical than just more observations. |
-| OpinionQA, 50% budget, Random selection | Global 0.490 / Hard 0.473 / Extreme 0.465 | Multi-option opinion tasks are harder; random observations show limited improvement. |
-| OpinionQA, 50% budget, Group-relational selection | Global 0.496 / Hard 0.522 / Extreme 0.529 | Advantages are more pronounced in the most difficult groups. |
-| 10% budget, Greedy vs. Multi-step | Global 0.488 vs. 0.485, Extreme 0.322 vs. 0.336 | Multi-step planning only shows slight gains in few sensitive tiers. |
-| 50% budget, Greedy vs. Multi-step | Global 0.507 vs. 0.507, Extreme 0.561 vs. 0.542 | No stable benefit from multi-step planning at higher budgets; computational cost is not justified. |
+| CES, 50% budget, Random selection | Global 0.793 / Hard 0.714 / Extreme 0.720 | Random selection benefits from more observations but fails to recover high-sensitivity individuals |
+| CES, 50% budget, Group-relational selection | Global 0.801 / Hard 0.780 / Extreme 0.826 | Largest improvement in hard-to-predict groups, showing "whom to ask" is more critical than just more observations |
+| OpinionQA, 50% budget, Random selection | Global 0.490 / Hard 0.473 / Extreme 0.465 | Multi-choice opinion tasks are harder; random observation provides limited gains |
+| OpinionQA, 50% budget, Group-relational selection | Global 0.496 / Hard 0.522 / Extreme 0.529 | Advantage is more pronounced on the most difficult individuals |
+| 10% budget, Greedy vs. Multi-step | Global 0.488 vs. 0.485, Extreme 0.322 vs. 0.336 | Multi-step planning only shows slight gains in few sensitive tiers |
+| 50% budget, Greedy vs. Multi-step | Global 0.507 vs. 0.507, Extreme 0.561 vs. 0.542 | No stable gain for multi-step planning at high budget; not worth the computational cost |
 
 ### Key Findings
-- Model gains do not come from LLM imputation alone. Meta-Greedy-Imp does not consistently outperform Meta-Greedy, suggesting that direct LLM predictions as missing answers can propagate noise; GNN group structure propagation is a more reliable imputation mechanism.
-- Gains from respondent selection are concentrated in high-sensitivity individuals. Under 50% budget in CES, the Extreme tier improved from 0.720 (random) to 0.826, indicating that graph embedding selection effectively directs budget toward those hardest to explain by group means.
-- Greedy selection is sufficiently practical. Multi-step rollout shows minor improvements in the Extreme tier at 10% budget but is generally unstable and even reverses at higher budgets; this supports the authors' theoretical discussion on submodular information gain approximations.
+- Model gains do not come solely from independent LLM imputation. Meta-Greedy-Imp is not consistently better than Meta-Greedy, indicating that directly using LLM predictions as missing responses can propagate noise; GNN-based group structure propagation is a more reliable imputation mechanism.
+- The benefits of respondent selection are concentrated in high-sensitivity individuals. Under the 50% CES budget, the Extreme tier improved from 0.720 (random) to 0.826, proving that graph-embedding selection successfully targets those hardest to explain via group averages.
+- Greedy selection is sufficiently practical. While multi-step rollout shows minor improvements in the Extreme tier at 10% budget, it is overall unstable and sometimes reverses at high budgets; this aligns with the author's theoretical discussion on submodular information gain approximations.
 
 ## Highlights & Insights
-- This paper successfully splits the elicitation budget constraint into two dimensions: question budget and respondent budget. While many adaptive questioning papers only optimize question sequences, real-world surveys often find that "who is willing to answer and who is more valuable to ask" are the primary cost centers.
-- The division of labor between LLM and GNN is clear: the LLM handles linguistic prediction and information gain, while the GNN handles relational structure and missing edge recovery. This is more robust than delegating all tasks to an LLM and easier to interpret regarding why gains stem from group propagation.
-- The stratified analysis of high-sensitivity respondents is insightful. By decomposing the heterogeneity behind average accuracy, it demonstrates that a good elicitation strategy should prioritize repairing the most difficult-to-impute individuals rather than just improving everyone on average.
+- This paper splits the budget constraint of elicitation into two dimensions: question budget and respondent budget. Many adaptive querying papers only optimize question sequences, but in real surveys, "who is willing to answer and who is most valuable to ask" is often the actual cost center.
+- There is a clear division of labor: the LLM handles verbalized prediction and information gain, while the GNN handles relational structure and missing edge recovery. This is more robust than delegating all tasks to an LLM and makes it easier to explain why gains come from group propagation.
+- The stratified analysis of high-sensitivity respondents is insightful. It breaks down the heterogeneity behind average accuracy, showing that a good elicitation strategy should prioritize repairing the most difficult-to-impute individuals rather than just improving everyone on average.
 
 ## Limitations & Future Work
-- The method relies on the availability of demographic attributes or group relationships. If the deployment scenario lacks stable attributes, contains high attribute noise, or has weak correlations between group structure and target preferences, the advantage of GNN imputation may decrease.
-- Experiments are primarily offline replay-based evaluations. Real-world interaction issues such as non-response, fatigue, strategic answering, and variations in question wording have not yet been integrated into the closed loop.
-- The LLM query strategy requires meta-training, and current experiments mainly use regional transfer settings; future work could investigate generalization across countries, languages, or organizational contexts.
-- Respondent selection may introduce fairness issues. If the system constantly queries "high-information" populations, it might increase the burden on certain groups or lead to imbalanced sampling across sensitive attributes.
+- The method relies on available demographic attributes or group relationships. If the deployment scenario lacks stable attributes, contains high noise, or has a weak correlation between group structure and target preferences, the advantage of GNN imputation may decrease.
+- Experiments are primarily offline replay evaluations; real-world factors like non-response, fatigue, strategic answering, and wording variations have not yet been integrated into the loop.
+- The LLM query strategy requires meta-training, and current experiments focus on regional transfer; future research could explore generalization across countries, languages, or organizations.
+- Respondent selection may introduce fairness issues. If a system always queries "high-information" populations, it may increase the burden on certain groups or lead to imbalanced sampling of sensitive attributes.
 
 ## Related Work & Insights
-- **vs. Individual-level LLM Elicitation**: Existing methods often use LLMs to select the next question based on historical answers. This work extends latent variable inference from individuals to the group level and explicitly adds respondent selection.
-- **vs. Traditional Graph Models / CAR Models**: Traditional spatial or group graph models are usually heavily parameterized and struggle with natural language Q&A. This work uses a heterogeneous GNN to represent mixed relationships among members, attributes, and options, making it better suited for survey data.
-- **vs. LLM Agent Group Simulation**: Multi-agent social simulations focus on generating interaction processes. This work is more like a budget-constrained statistical inference task, where the core is not simulating dialogue but recovering group response distributions at minimum cost.
-- **Transferable Insights**: This paradigm of "LLM for question value estimation + graph model for population coverage estimation" can be transferred to user research, educational diagnostics, medical triage questionnaires, and corporate preference surveys.
+- **vs. Individual LLM Elicitation**: Existing methods use LLMs to select the next question for a single individual; this work extends latent variable inference to the group level and explicitly includes respondent selection.
+- **vs. Traditional Graph Models / CAR Models**: Traditional spatial or group graph models are often heavily parameterized and struggle with natural language; this work uses heterogeneous GNNs to represent mixed relationships of members, attributes, and options, fitting questionnaire data more naturally.
+- **vs. LLM Agent Group Simulation**: Multi-agent social simulations focus on generating interaction processes; this work is a budget-constrained statistical inference task where the core is restoring response distributions at minimum cost rather than simulating dialogue.
+- **Transferable Insights**: This paradigm of "LLM for question value estimation + graph model for population coverage" can be transferred to user research, educational diagnostics, medical triage questionnaires, and corporate preference surveys.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Unifying adaptive question selection and respondent selection using LLM + Heterogeneous GNN is a highly realistic problem setting.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid testing across three real datasets, budget curves, calibration metrics, and sensitive group ablations, though real-time online interaction validation is missing.
-- Writing Quality: ⭐⭐⭐⭐☆ Motivation is clear; theory and experiments correspond well. Some main results rely on curves, with slightly fewer tabulated numbers.
-- Value: ⭐⭐⭐⭐☆ Directly relevant for surveys, user modeling, and group decision systems; provides a clean exemplar for LLM and graph learning collaboration.
+- Novelty: ⭐⭐⭐⭐☆ Unifies adaptive question selection and respondent selection using an LLM+GNN approach; the problem setting is highly realistic.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Solid evaluation across three real datasets, budget curves, calibration metrics, and sensitivity ablations, though real-time online interaction validation is missing.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation; theory and experiments correspond well. Some results rely on curves, with fewer tabulated numbers.
+- Value: ⭐⭐⭐⭐☆ Directly applicable to surveys, user modeling, and group decision systems; provides a clean example of LLM and graph learning collaboration.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-## Related Papers
-
-- [\[AAAI 2026\] Relink: Constructing Query-Driven Evidence Graph On-the-Fly for GraphRAG](../../AAAI2026/graph_learning/relink_constructing_query-driven_evidence_graph_on-the-fly_for_graphrag.md)
-- [\[NeurIPS 2025\] Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems](../../NeurIPS2025/graph_learning/heterogeneous_swarms_jointly_optimizing_model_roles_and_weights_for_multi-llm_sy.md)
-- [\[ICML 2026\] MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation](medcog_maximizing_llm_inference_density_in_medical_reasoning_via_meta-cognitive_.md)
-- [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
-- [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](../../ICLR2026/graph_learning/improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
-
-</div>
-
-<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ECCV 2024\] GKGNet: Group K-Nearest Neighbor Based Graph Convolutional Network for Multi-Label Image Recognition](../../ECCV2024/graph_learning/gkgnet_group_k-nearest_neighbor_based_graph_convolutional_network_for_multi-labe.md)

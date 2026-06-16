@@ -2,80 +2,88 @@
 title: >-
   [Paper Note] Learning to Route Languages for Multilingual Policy Optimization
 description: >-
-  [ICML 2026][Reinforcement Learning][Multilingual RL] This paper proposes LRPO (Language-Routed Policy Optimization), which treats "which language to use for rollout generation" as a learnable variable. Using a contextual…
+  [ICML 2026][Reinforcement Learning][GRPO] This paper proposes LRPO (Language-Routed Policy Optimization), which treats the choice of language for rollouts as a learnable variable. Using a contextual bandit-style language router, it selects the most informative language combinations for each training sample under a fixed rollout budget. By integrating cross-lin
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Multilingual RL"
-  - "GRPO"
-  - "Language Router"
-  - "Multi-Armed Bandit"
-  - "Cross-lingual Reward Calibration"
+  - ICML 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: 92574f9ba8666b15
+content_hash: 0b4687b9760a469e
 ---
-
 # Learning to Route Languages for Multilingual Policy Optimization
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.25360](https://arxiv.org/abs/2605.25360)  
 **Code**: https://github.com/Guochry/LRPO (Available)  
 **Area**: Alignment RLHF / Multilingual LLM / Online Policy Optimization  
-**Keywords**: Multilingual RL, GRPO, Language Router, Multi-Armed Bandit, Cross-lingual Reward Calibration
+**Keywords**: Multilingual RL, GRPO, Language Router, Multi-Armed Bandit, Cross-lingual Reward Calibration  
 
 ## TL;DR
-This paper proposes LRPO (Language-Routed Policy Optimization), which treats "which language to use for rollout generation" as a learnable variable. Using a contextual bandit-style language router, the method selects the most informative language combination for each training sample under a fixed rollout budget. By combining cross-lingual similarity rewards (calibrated via offline estimation and online adjustment), the method aligns multilingual rollouts into a unified scale for GRPO. It consistently outperforms GRPO and various dominant-language baselines across Qwen/Llama/Gemma backbones on five multilingual benchmarks.
+This paper proposes LRPO (Language-Routed Policy Optimization), which treats the choice of language for rollouts as a learnable variable. Using a contextual bandit-style language router, it selects the most informative language combinations for each training sample under a fixed rollout budget. By integrating cross-lingual similarity rewards (calibrated via offline estimation and online adjustment), multilingual rollouts are mapped to a unified scale for GRPO. LRPO consistently outperforms GRPO and various dominant-language baselines across Qwen/Llama/Gemma backbones and five multilingual benchmarks.
 
 ## Background & Motivation
-**Background**: Existing RL approaches to extend LLMs to multilingual scenarios primarily follow two paths. One directly applies GRPO (shao2024deepseekmath): sampling a set of rollouts in the original language for each training question, scoring them with a reward model, and performing policy updates after intra-group normalization. The other explicitly constructs cross-lingual preference pairs (MAPO/LIDR/MPO), treating English (or other "dominant language") responses as naturally higher-quality anchors to which other languages are aligned.
+**Background**: Existing RL approaches for multilingual LLMs generally follow two paths. One directly applies GRPO (shao2024deepseekmath), sampling a set of rollouts in the original language of the prompt, scoring them with a reward model, and performing policy updates after intra-group normalization. The other explicitly constructs cross-lingual preference pairs (MAPO/LIDR/MPO), treating English (or other "dominant languages") as naturally higher-quality anchors to which responses in other languages should align.
 
-**Limitations of Prior Work**: The GRPO approach fixes each question to a single language, leaving the decision of "which language can more accurately answer this question" to the model's internal implicit mechanisms, thus wasting complementary knowledge encoded in different languages. The dominant-language approach assumes English is always a superior supervision source, but this assumption often fails for questions with strong regional knowledge or cultural context—for example, on a question about "Greek etiquette," an Arabic rollout might be closer to the correct answer than English/Chinese rollouts.
+**Limitations of Prior Work**: The GRPO approach locks each problem to a single language, leaving the decision of "which language best answers this question" to implicit internal mechanisms, thereby wasting complementary knowledge encoded across languages. The dominant-language approach assumes English is always a superior supervision source, an assumption that often fails for region-specific knowledge or cultural contexts—for instance, responses in Arabic might be closer to the correct answer for questions about "Greek etiquette" than those in English or Chinese.
 
-**Key Challenge**: Given a limited rollout budget ($K$ samples per question), "which languages to sample" is itself an online exploration-exploitation decision problem. However, existing methods either make no decision (monolingual) or use a fixed and often incorrect prior (English-first).
+**Key Challenge**: Under a limited rollout budget ($K$ samples per prompt), deciding "which languages to sample from" is an online exploration-exploitation problem. Existing methods either make no decision (monolingual) or rely on a fixed and often inaccurate prior (English-first).
 
-**Goal**: Within a fixed budget of $K$ rollouts, allow the model to learn "which languages should be sampled more for which themes/regions," and combine these multilingual rollouts into a unified GRPO framework for policy updates.
+**Goal**: To enable the model to learn which languages to sample for specific topics/regions under a fixed budget of $K$ rollouts, and to integrate these multilingual rollouts into a unified GRPO framework for policy updates.
 
-**Key Insight**: Explicitly model "language selection" as a contextual multi-armed bandit, where each question's theme $t(x)$ and optional region $g(x)$ serve as the context, and each language is an arm. The arm's return is the average GRPO reward generated by that language under that context. Simultaneously, cross-lingual similarity needs to be calibrated as a reward signal; otherwise, inconsistent physical scales of raw similarity between different language pairs will disrupt intra-group preferences.
+**Key Insight**: Language selection is explicitly modeled as a contextual multi-armed bandit. The prompt's topic $t(x)$ and optional region $g(x)$ serve as the context, while each language is an arm. The reward for an arm is the average GRPO reward generated by that language in that context. Simultaneously, cross-lingual similarity rewards are calibrated to resolve the inconsistency in raw similarity scales between different language pairs, which would otherwise distort intra-group preferences.
 
-**Core Idea**: Use a lightweight "Theme × Language + Region × Language" dual-matrix router for online language selection learning. Use offline statistics + online calibration to bring multilingual similarity rewards to the same scale, then feed them back into GRPO for joint optimization.
+**Core Idea**: A lightweight "Topic $\times$ Language + Region $\times$ Language" dual-matrix router learns the language selection strategy online. Multilingual similarity rewards are brought to a common scale through offline statistics and online calibration before being fed into GRPO for joint optimization.
 
 ## Method
-LRPO extends the traditional "Sample → Score → Update" three-stage process of GRPO into a four-stage process: the router first decides which languages to use for the current round, the policy generates rollouts in the specified languages, rewards are cross-lingually calibrated, and finally, GRPO updates the policy while the router is updated via EMA.
+LRPO extends the traditional GRPO "Sample $\rightarrow$ Score $\rightarrow$ Update" pipeline into a four-stage process: the router decides the languages, the policy generates rollouts, rewards are cross-lingually calibrated, and finally, GRPO updates the policy while the router is updated via EMA.
 
 ### Overall Architecture
-- **Input**: Training question $x$ (original language $\ell_x$, theme $t(x)$, optional region $g(x)$), policy $\pi_\theta$, routing parameters $(\mathbf{A},\mathbf{B})$, rollout budget $K$, on-policy quota $K_{\text{on}}$.
-- **Routing Phase**: Synthesize logits from a theme matrix $\mathbf{A}_{t(x)}$ and (if present) a region matrix $\mathbf{B}_{g(x)}$. Obtain a language distribution $p(\ell\mid x)$ via softmax with temperature $\tau$. Reserve $K_{\text{on}}$ samples for $\ell_x$ (to preserve on-policy nature); sample the remaining $K-K_{\text{on}}$ samples according to $p$ with $\epsilon$-greedy to ensure minimum exploration.
-- **Rollout Phase**: Use language tags or target-language system prompts to guide $\pi_\theta$ to generate $\{y_k\}$ according to the sampled $\{\ell_k\}$.
-- **Reward Phase**: Compute cross-lingual semantic similarity between each rollout and the reference answer using mmBERT, followed by mean-based or quantile-based calibration at the language-pair level. This is multiplied by an indicator for "whether the target language was actually generated" to form the final reward.
-- **Update Phase**: Perform GRPO gradient steps after intra-group normalization. Every $M$ steps, update $\mathbf{A}, \mathbf{B}$ using EMA with average rewards aggregated by $(t,g,\ell)$ buckets.
+- **Input**: Training problem $x$ (original language $\ell_x$, topic $t(x)$, region $g(x)$), policy $\pi_\theta$, routing parameters $(\mathbf{A}, \mathbf{B})$, rollout budget $K$, and on-policy quota $K_{\text{on}}$.
+- **Routing Phase**: Synthesize logits from the topic matrix $\mathbf{A}_{t(x)}$ and (if applicable) the region matrix $\mathbf{B}_{g(x)}$. After applying temperature $\tau$ and softmax, a language distribution $p(\ell\mid x)$ is obtained. $K_{\text{on}}$ samples are reserved for $\ell_x$ to maintain on-policy status, while the remaining $K-K_{\text{on}}$ samples are drawn from $p$ with $\epsilon$-greedy exploration.
+- **Rollout Phase**: Generate $\{y_k\}$ using $\pi_\theta$ guided by language tags or target-language system prompts according to the sampled $\{\ell_k\}$.
+- **Reward Phase**: Compute cross-lingual semantic similarity between each rollout and the reference answer using mmBERT. Apply language-pair-level mean or quantile calibration, and multiply by an indicator reflecting whether the target language was actually generated.
+- **Update Phase**: Perform GRPO gradient steps after intra-group normalization. Every $M$ steps, update $\mathbf{A}$ and $\mathbf{B}$ using EMA based on average rewards aggregated in $(t, g, \ell)$ buckets.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Training prompt x<br/>Lang ℓ_x · Topic t(x) · Region g(x)"] --> R
+    R["Dual-matrix Language Router (contextual bandit)<br/>A_t(x)+B_g(x) → softmax to get p(ℓ|x)"] -->|"K_on original + K−K_on from p + ε-greedy"| ROLL
+    ROLL["Policy π_θ generates multilingual rollouts {y_k} for {ℓ_k}"] --> CAL
+    CAL["Cross-lingual Similarity Calibration<br/>mmBERT sim → Offline est. + Online mean/quantile calib. → r^qual"] --> GATE
+    subgraph UP["Lang-Consistency Gating + GRPO Joint Update"]
+        direction TB
+        GATE["Language Consistency Gating<br/>r = r^qual · 𝕀[Lang(y_k)=ℓ_k]"] --> GRPO["GRPO Group Norm + Policy Gradient Update π_θ"]
+    end
+    GRPO -->|"Every M steps: EMA update via bucket average r̄"| R
+```
 
 ### Key Designs
 
-1. **Dual-Matrix Language Router (Contextual Bandit)**:
-    - **Function**: Selects a set of the most informative languages for each question under a fixed rollout budget.
-    - **Mechanism**: Utilizes two low-rank logit matrices—$\mathbf{A}\in\mathbb{R}^{T\times L}$ (Theme × Language) and $\mathbf{B}\in\mathbb{R}^{G\times L}$ (Region × Language). The distribution is $p(\ell\mid x)\propto\exp\!\big((A_{t(x),\ell}+\mathbb{I}[g(x)\neq\varnothing]B_{g(x),\ell})/\tau\big)$. It retains $K_{\text{on}}$ original language rollouts for on-policy consistency and samples the rest via $p$ + $\epsilon$-greedy. Every $M$ steps, the average reward $\bar r_{t,g,\ell}$ accumulated in $(t,g,\ell)$ buckets is written back to $\mathbf{A},\mathbf{B}$ via EMA ($A_{t,\ell}\leftarrow(1-\alpha)A_{t,\ell}+\alpha\bar r_{t,g,\ell}$). Simulated annealing is applied to $\epsilon$ and $\tau$ to emphasize exploration early and exploitation later.
-    - **Design Motivation**: Upgrades the determination of "which language provides the most informative rollout" from an implicit mechanism to a learnable contextual bandit. This avoids bias from fixed dominant-language assumptions and naturally handles structures like "regional knowledge requires local languages" (e.g., Greek questions are better suited for Greek, with regional logits providing an additional bias).
+**1. Topic/Region Dual-Matrix Language Router (Contextual Bandit): Transforming language selection into a learnable decision.**
 
-2. **Offline Estimation + Online Calibration of Cross-lingual Similarity Rewards**:
-    - **Function**: Calibrates raw mmBERT similarity—which has inconsistent scales across different language pairs—into a quality reward that is comparable within the group.
-    - **Mechanism**: In the offline phase, three types of response pairs—semantically equivalent (upper bound alignment), naturally mismatched, and hard negatives—are collected for each language pair $\langle\ell_i,\ell_j\rangle$ to form an empirical distribution $\mathcal{S}_{\ell_i,\ell_j}$. In the online RL phase, for each rollout $y^{(\ell_j)}$ and reference $z^{(\ell_i)}$, $s=\mathrm{sim}(y,z)$ is calculated followed by one of two calibrations: Mean Calibration $r^{\text{qual}}=s-\lambda(\mu_{\ell_i,\ell_j}-\mu_{\text{ref}})$, aligning the mean of equivalent pairs to a global reference mean; or Quantile Calibration $r^{\text{qual}}=\mathcal{Q}_{\ell_i,\ell_j}(s)$, mapping raw scores directly to cross-lingually comparable empirical quantiles.
-    - **Design Motivation**: Raw similarity contains systematic biases across language pairs (e.g., Chinese-English equivalent pairs mean $\approx 0.85$, while Chinese-Arabic $\approx 0.65$). Without calibration, rollouts in low-resource languages are always suppressed during intra-group normalization, and the "language utility" learned by the router becomes contaminated by this measurement bias, eventually degenerating into monolingual GRPO.
+While GRPO fixes the language and dominant-language methods favor English, LRPO formalizes language selection as a contextual bandit using two low-rank logit matrices: $\mathbf{A}\in\mathbb{R}^{T\times L}$ (Topic $\times$ Language) and $\mathbf{B}\in\mathbb{R}^{G\times L}$ (Region $\times$ Language). The distribution is defined as $p(\ell\mid x)\propto\exp\!\big((A_{t(x),\ell}+\mathbb{I}[g(x)\neq\varnothing]B_{g(x),\ell})/\tau\big)$. To ensure stability, $K_{\text{on}}$ rollouts remain in the original language, while others are sampled from $p$ with $\epsilon$-greedy exploration. Every $M$ steps, the matrices are updated via EMA: $A_{t,\ell}\leftarrow(1-\alpha)A_{t,\ell}+\alpha\bar r_{t,g,\ell}$, where $\bar r$ is the bucketed average reward. Simulated annealing is applied to $\epsilon$ and $\tau$ to transition from exploration to exploitation. The region matrix $\mathbf{B}$ allows the model to explicitly capture structural priors, such as "regional knowledge requires local languages."
 
-3. **Language Consistency Gating + GRPO Joint Update**:
-    - **Function**: Ensures the policy actually outputs the language specified by the router, making the "language channel" externally observable and internally capable of receiving learning signals.
-    - **Mechanism**: Uses a language identifier to compute $r^{\text{lang}}(y_k)=\mathbb{I}[\mathrm{Lang}(y_k)=\ell_k]$, which is multiplied by the quality reward to get the final reward $r_k=r^{\text{qual}}_k\cdot r^{\text{lang}}_k$. If the language is incorrect, the reward is zeroed. Policy gradient updates are performed using the GRPO objective with intra-group normalization. Router updates are delayed by $M$ steps using EMA of the recent window's reward bucket means to prevent single-step noise from misguiding the router.
-    - **Design Motivation**: Without $r^{\text{lang}}$, the policy might learn to "always answer in English regardless of the requested language" to bypass the router. Multiplicative gating turns "language compliance" into a hard constraint, ensuring that the $\bar r_{t,g,\ell}$ seen by the router accurately reflects the utility of generating in $\ell$ for that theme.
+**2. Cross-lingual Similarity Reward Calibration: Rescaling raw similarity across language pairs.**
+
+Raw similarity scores from mmBERT exhibit systematic biases across language pairs (e.g., Chinese-English pairs often average 0.85 while Chinese-Arabic pairs average 0.65). Without calibration, intra-group normalization in GRPO would penalize low-resource languages, and the router would fail to learn true utility. LRPO addresses this in two stages:
+- **Offline**: Collect semantic equivalence pairs (for upper-bound alignment) and mismatch pairs for each language pair $\langle\ell_i,\ell_j\rangle$ to form empirical distributions $\mathcal{S}_{\ell_i,\ell_j}$.
+- **Online**: For a given similarity $s = \mathrm{sim}(y, z)$, apply either **Mean Calibration** ($r^{\text{qual}}=s-\lambda(\mu_{\ell_i,\ell_j}-\mu_{\text{ref}})$) or **Quantile Calibration** ($r^{\text{qual}}=\mathcal{Q}_{\ell_i,\ell_j}(s)$), mapping raw scores to a cross-lingually comparable empirical quantile. This ensures rollouts in different languages are compared fairly within the GRPO group.
+
+**3. Language Consistency Gating + GRPO Joint Update: Hardware constraints for language compliance.**
+
+To prevent the model from defaulting to English regardless of the requested language, LRPO employs a language identifier to compute $r^{\text{lang}}(y_k)=\mathbb{I}[\mathrm{Lang}(y_k)=\ell_k]$. The final reward is the product $r_k=r^{\text{qual}}_k\cdot r^{\text{lang}}_k$. This elevates language compliance from a soft constraint to a hard gating mechanism. GRPO then uses these rewards for normalization and policy gradient updates. The router updates are delayed by $M$ steps using EMA of recent reward windows to mitigate single-step noise. This multiplicative gating ensures that the router's observed average reward $\bar r_{t,g,\ell}$ reflects the true utility of language $\ell$ for topic $t$.
 
 ### Loss & Training
-The policy follows the GRPO objective, performing reward normalization within each multilingual rollout group. The router does not use gradients but updates the logit matrices via EMA every $M$ policy steps. Training data includes 4,885 samples from HelpSteer3 + CARE, covering 14 languages. Themes are automatically categorized into 6 types (Regional Knowledge, General Knowledge, Chat, Reasoning, Safety, Translation) using gpt-oss-120b, with a 98% consistency rate compared to human annotation.
+The policy side follows the standard GRPO objective with reward normalization within multilingual rollout groups. The router is updated via EMA of the logit matrices every $M$ policy steps rather than via backpropagation. Training utilizes 4,885 samples from HelpSteer3 and CARE across 14 languages. Topics are automatically categorized into 6 classes (Regional Knowledge, General Knowledge, Chat, Reasoning, Safety, Translation) using gpt-os-120b, achieving 98% agreement with human labels.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing across five multilingual benchmarks (CARE / CARE-pro / mGSM-v2 / Global-MMLU-Lite / Include-Lite) with three backbones. Representative results on Qwen2.5-1.5b-it (mGSM-v2 average and Overall average) are shown below:
+Evaluation across five multilingual benchmarks (CARE, CARE-pro, mGSM-v2, Global-MMLU-Lite, Include-Lite) using three backbones. Representative results for Qwen2.5-1.5b-it (mGSM-v2 average and Overall average) are shown below:
 
 | Method | mGSM-v2 Avg. | Overall Avg. |
-|------|------|------|
+| :--- | :---: | :---: |
 | Vanilla | 24.87 | 28.64 |
 | DPO | 27.02 | 29.33 |
 | MAPO | 25.64 | 28.40 |
@@ -83,43 +91,44 @@ Testing across five multilingual benchmarks (CARE / CARE-pro / mGSM-v2 / Global-
 | GRPO | 32.33 | 30.42 |
 | **LRPO (Ours)** | **38.25** | **32.15** |
 
-On Qwen2.5-1.5b, LRPO improves mGSM-v2 from 24.87 to 38.25 (+13.38), and the Overall score improves by +1.73 over GRPO. The average seen-language improvement across benchmarks shows LRPO at +5.08 over the instruction-tuned baseline and +2.85 over GRPO. Even on the stronger Gemma3-4b-it, it maintains a lead (46.89 vs GRPO 46.67), indicating improvements are not limited to small models benefiting from multilingual signals.
+On Qwen2.5-1.5b, LRPO improves mGSM-v2 from 24.87 to 38.25 (+13.38), and the Overall score by +1.73 over GRPO. Across benchmarks for seen languages, LRPO shows a +5.08 gain over the instruction-tuned baseline and +2.85 over GRPO. On the larger Gemma3-4b-it, LRPO maintains a lead (46.89 vs. GRPO 46.67).
 
 ### Ablation Study
 
-| Router Variant | mGSM-v2 Avg. | Overall Avg. | Description |
-|------|------|------|------|
+| Router Variant | mGSM-v2 Avg. | Overall Avg. | Note |
+| :--- | :---: | :---: | :--- |
 | Monolingual | 32.33 | 30.42 | Degenerates to GRPO |
-| Input-dominant | 36.25 | 31.78 | Fixed routing, biased towards on-policy |
-| EN-dominant | 37.89 | — | Simulates MAPO-style dominant language |
-| **LRPO (Learned + Calibrated)** | **38.25** | **32.15** | Full Model |
+| Input-dominant | 36.25 | 31.78 | Fixed, favors on-policy |
+| EN-dominant | 37.89 | — | Simulates MAPO-style anchor |
+| **LRPO (Learnable + Calib)** | **38.25** | **32.15** | Full model |
 
-Fixed routing (whether biased towards the input language or English) is inferior to learnable routing. The EN-dominant variant is close to LRPO on mGSM-v2 but lags significantly on the regional knowledge-focused CARE series, confirming the failure of the "dominant language hypothesis" on region-grounded tasks.
+Learnable routing outperforms fixed routing. While the EN-dominant variant performs well on mGSM-v2, it falls significantly behind on the region-aware CARE series, confirming that the "English-dominant assumption" fails for regional tasks.
 
 ### Key Findings
-- **Router Contribution**: By expanding each question from "monolingual" to "router-assigned languages," GRPO's intra-group comparison can exploit cross-lingual complementary knowledge, serving as the main source of the +5.92 gain on mGSM-v2 (vs. GRPO).
-- **Necessity of Cross-Lingual Calibration**: Using raw mmBERT similarity directly leads to intra-group normalization being contaminated by language-pair biases. The router eventually collapses to the language same as the reference, degenerating into the Monolingual variant.
-- **Regional Matrix Benefits**: The gain from the regional matrix $\mathbf{B}$ for regional tasks like CARE or Include-Lite is significantly larger than for pure reasoning tasks like mGSM-v2, aligning with the prior that regional knowledge is best carried by local languages.
+- **Router Contribution**: Expanding rollouts from "monolingual" to "router-assigned languages" allows GRPO to leverage cross-lingual complementarity, accounting for the +5.92 gain on mGSM-v2 over vanilla GRPO.
+- **Calibration Necessity**: Without calibration, rewards are contaminated by language-pair biases, causing the router to collapse toward languages that naturally match the reference language's scale.
+- **Regional Matrix**: The $\mathbf{B}$ matrix provides significantly higher gains for region-specific tasks (CARE / Include-Lite) compared to pure reasoning tasks like mGSM-v2.
 
 ## Highlights & Insights
-- Formulating "language selection" as a contextual bandit is a clean approach. While traditional multilingual RL papers fix the language or default to English, this paper uses $\mathbf{A}+\mathbb{I}\cdot\mathbf{B}$ low-rank parameterization to learn "Theme × Language" and "Region × Language" priors online, yielding significant gains with near-zero extra computational overhead.
-- The two-stage cross-lingual similarity calibration (offline + online) is noteworthy: any multimodal/multilingual RLHF using embedding similarity as a reward (e.g., image-text, video-text, cross-domain code) will face the issue of inconsistent scale. Quantile calibration $\mathcal{Q}_{\ell_i,\ell_j}(s)$ provides a plug-and-play solution that does not rely on a parametric calibration model.
-- The multiplicative gate $r^{\text{qual}}\cdot r^{\text{lang}}$ simply handles the degenerate solution where the model ignores the requested language. This effectively upgrades the "language condition" from a soft constraint to a hard constraint, which is insightful for future RLHF tasks requiring specific styles, formats, or tool usage.
+- Formulating language selection as a contextual bandit is a clean abstraction. It allows the model to learn "Topic $\times$ Language" and "Region $\times$ Language" weights online with almost zero computational overhead.
+- The two-stage cross-lingual calibration is highly transferable. Any multimodal or multilingual RLHF using embedding similarity (e.g., image-text, code-cross-domain) faces the same scale inconsistency. Quantile calibration $\mathcal{Q}_{\ell_i,\ell_j}(s)$ offers a plug-and-play solution.
+- The $r^{\text{qual}}\cdot r^{\text{lang}}$ multiplicative gate effectively solves the "language cheating" problem. This transformation of a condition into a hard constraint is a valuable pattern for other RLHF tasks involving specific styles, formats, or tool-use.
 
 ## Limitations & Future Work
-- The router is tabular; the number of themes $T$ and regions $G$ rely on coarse classification (6 themes). With finer-grained themes or regions (thousands), embedding parameterization would be necessary to avoid instability in EMA estimation caused by data sparsity.
-- Cross-lingual calibration depends on mmBERT. The quality of "semantically equivalent pairs" in the offline $\mathcal{S}_{\ell_i,\ell_j}$ determines the calibration upper bound. For truly low-resource language pairs where parallel corpora are scarce, calibration remains an open problem.
-- Experiments cover the 1B–4B range for Qwen/Llama/Gemma but haven't been validated at the 30B+ scale. As larger models already achieve significant cross-lingual transfer via GRPO, the relative gains of LRPO might narrow.
-- Training data is limited to human preference sets (HelpSteer3 + CARE). The "language utility" learned by the router is biased by the data distribution—for instance, the language coverage of regional questions in CARE determines the learning range for $\mathbf{B}$. Moving to new regions requires a cold-start mechanism.
+- The tabular router depends on coarse categories for $T$ and $G$. Scaling to thousands of fine-grained topics would require embedding-based parameterization to avoid data sparsity issues.
+- Calibration quality depends on the mmBERT upper bound and the availability of semantic equivalence pairs. Calibration remains an open problem for extremely low-resource pairs lacking parallel corpora.
+- Experiments were conducted on 1B–4B models. The relative gains of LRPO might narrow on 30B+ models where stronger cross-lingual transfer is already present in the base model.
+- The router's learned behavior is biased by the training distribution (HelpSteer3 + CARE). Cold-start mechanisms would be needed when deploying to entirely new geographic regions.
 
 ## Related Work & Insights
-- **vs. MAPO / LIDR / MPO**: These methods assume English anchors are more reliable and align other languages to English via translation or log-odds. LRPO does the opposite—it does not presuppose a dominant language, allowing the data to reveal which language is most useful for which task, while avoiding the mixing of language identification errors and content quality errors through calibration and gating.
-- **vs. GRPO**: This method is a multilingual extension of GRPO. It expands rollout groups from monolingual to multilingual, adds cross-lingual calibration to the reward, and introduces a learnable language router. It is fully compatible with existing GRPO infrastructure and serves as a low-cost upgrade for multilingual SFT/RL pipelines.
-- **vs. Inference-time cross-lingual methods (CCL/CoT)**: Those methods perform cross-lingual Chain-of-Thought concatenation during inference. This paper pushes cross-lingual signals down to the training reward. The directions are orthogonal and theoretically can be combined.
+- **vs. MAPO / LIDR / MPO**: Unlike these methods, which assume an English anchor is always best, LRPO lets the data dictate which language is most useful for which topic, avoiding the merging of "language identification error" and "content quality error" into a single reward.
+- **vs. GRPO**: LRPO is essentially an "upgraded" multilingual GRPO. It expands the rollout group, calibrates rewards, and learns a router. It is fully compatible with existing GRPO infrastructure.
+- **vs. CCL/CoT**: While some methods use cross-lingual reasoning at inference, LRPO incorporates cross-lingual signals into the training rewards. The two approaches are orthogonal and potentially combinable.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

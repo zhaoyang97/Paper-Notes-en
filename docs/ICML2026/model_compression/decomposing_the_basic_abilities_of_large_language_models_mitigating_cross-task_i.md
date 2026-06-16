@@ -2,84 +2,101 @@
 title: >-
   [Paper Note] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning
 description: >-
-  [ICML 2026][Model Compression][Multi-Task Instruct-Tuning] This paper addresses the issue of cross-task gradient conflict in multi-task instruct-tuning by proposing Badit: first…
+  [ICML 2026][Model Compression][SVD-LoRA] This paper addresses the cross-task gradient conflict in multi-task instruction fine-tuning by proposing Badit. It first uses SVD to decompose pre-trained weights into naturally orthogonal high-singular-value LoRA "basic ability" experts. During training, it applies spherical K-means to dynamically group rank-1 compone
 tags:
-  - "ICML 2026"
-  - "Model Compression"
-  - "Multi-Task Instruct-Tuning"
-  - "Cross-Task Interference"
-  - "SVD-LoRA"
-  - "Spherical Clustering"
-  - "Orthogonal Basic Abilities"
+  - ICML 2026
+  - Model Compression
+  - SVD-LoRA
 date: 2026-05-08
-content_hash: d769944973bcdeba
+content_hash: 7aca28d3d05d0a58
 ---
-
 # Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.05676](https://arxiv.org/abs/2605.05676)  
 **Code**: https://github.com/wangbing1416/BADIT  
 **Area**: LLM Efficiency / Multi-Task Fine-Tuning / LoRA / MoE  
-**Keywords**: Multi-Task Instruct-Tuning, Cross-Task Interference, SVD-LoRA, Spherical Clustering, Orthogonal Basic Abilities
+**Keywords**: Multi-task Instruction Fine-tuning, Cross-task Interference, SVD-LoRA, Spherical Clustering, Orthogonal Basic Abilities
 
 ## TL;DR
-This paper addresses the issue of cross-task gradient conflict in multi-task instruct-tuning by proposing Badit: first, SVD is used to decompose pretrained weights into a set of naturally orthogonal, high-singular-value LoRA "basic ability" experts; then, during training, spherical K-means is used to dynamically orthogonally group rank-1 components, shifting the traditional paradigm of "parameter isolation by task" to "decoupling by basic ability." On six LLMs, Badit achieves an average improvement of 2.68 Rouge over GainLoRA.
+This paper addresses the cross-task gradient conflict in multi-task instruction fine-tuning by proposing Badit. It first uses SVD to decompose pre-trained weights into naturally orthogonal high-singular-value LoRA "basic ability" experts. During training, it applies spherical K-means to dynamically group rank-1 components orthogonally. This shifts the focus from "isolating parameters by task" to "decoupling by basic abilities," achieving an average improvement of 2.68 Rouge over GainLoRA across six LLMs.
 
 ## Background & Motivation
-**Background**: The strong multi-task capabilities of current LLMs mainly rely on multi-task instruct-tuning, but multi-task training inevitably leads to *cross-task interference*—different tasks generate opposing gradients on shared parameters, overwriting each other. Existing solutions fall into two categories: (1) task-specific neuron/parameter selection (e.g., Leng & Xiong 2025), using gradient attribution to identify a parameter subset unique to each task and only training those; (2) MoE-style expert isolation (LoRAMoE, OLoRA, etc.), assigning independent LoRA experts to each task and imposing orthogonality constraints.
+**Background**: The strong multi-task capabilities of current LLMs are primarily supported by multi-task instruction fine-tuning. However, multi-task training inevitably leads to *cross-task interference*—different tasks generate opposing gradients on shared parameters, causing mutual overriding. Existing solutions follow two main paths: (1) Task-specific neuron/parameter selection (e.g., Leng & Xiong 2025), which uses gradient attribution to identify and train only the parameter subsets dedicated to each task. (2) MoE-style expert isolation (LoRAMoE, OLoRA, etc.), which assigns independent LoRA experts to each task and applies orthogonality constraints.
 
-**Limitations of Prior Work**: Empirical analysis on 15 SuperNI tasks (Fig. 1, Fig. 2) reveals that both approaches fail: the vast majority of "task-activated neurons/parameters" or "experts routed in MoE" are **activated by multiple tasks simultaneously**—some neurons are even shared by all 15 tasks. In other words, the so-called "task-specificity" is an illusion; cross-task interference is never truly eliminated.
+**Limitations of Prior Work**: Empirical analysis on 15 SuperNI tasks (Fig. 1, Fig. 2) reveals that both categories of methods fall short. Whether it is "task-activated neurons/parameters" or "experts routed in MoE," **the vast majority are activated by multiple tasks simultaneously**—some neurons are even shared by all 15 tasks. In other words, "task-exclusive" parameters are largely an illusion, and cross-task interference is never truly eliminated.
 
-**Key Challenge**: Using "task" as the isolation granularity is inherently flawed—tasks are surface-level labels, not functionally distinct units at the parameter level. Forcibly grouping by task leads to parameter sharing due to overlapping abilities among tasks.
+**Key Challenge**: Using "tasks" as the granularity for isolation is inherently flawed because tasks are surface-level labels rather than functional segmentation units existing at the parameter level. Forcing groupings by task inevitably leads to parameter sharing due to the overlap in required abilities between tasks.
 
-**Goal**: (1) Identify a more fundamental, truly separable unit of ability than "task"; (2) Design an MoE structure that maintains orthogonality among these units throughout training.
+**Goal**: (1) Identify more fundamental, truly separable ability units than "tasks"; (2) Design an MoE structure where these units remain orthogonal throughout training.
 
-**Key Insight**: Fig. 1 also reveals a reverse signal—"certain neurons/parameters are consistently co-activated by multiple tasks," and these co-activation sets recur, forming a small number of "base groups." The authors propose a metaphor: LLMs encode several **orthogonal basic abilities**, and each task is a linear combination of these abilities. Therefore, parameters should be isolated by "basic ability" rather than by "task."
+**Key Insight**: Fig. 1 also reveals an inverse signal: "certain neurons/parameters are consistently **co-activated** across multiple tasks." these co-activation sets recur, forming a small number of "basis sets." The authors propose an analogy: LLMs encode several **orthogonal basic abilities**, and every task is a linear combination of these abilities. Therefore, parameters should be isolated by "basic ability" rather than by "task."
 
-**Core Idea**: Use SVD to decompose pretrained weights into multiple naturally orthogonal LoRA experts (each corresponding to a basic ability), and during training, use spherical clustering to continually regroup rank-1 components, enforcing orthogonality among expert gradient directions.
+**Core Idea**: Use SVD to decompose pre-trained weights into multiple naturally orthogonal LoRA experts (each corresponding to a basic ability). During training, use spherical clustering to continuously regroup rank-1 components, forcing the gradient directions of different experts to remain orthogonal.
 
 ## Method
 
 ### Overall Architecture
-Badit rewrites each LLM weight matrix $\mathbf{W}^0\in\mathbb{R}^{m\times n}$ as $\mathbf{W}^0 = \sum_{k=1}^{K}\alpha_k \mathbf{A}_k\mathbf{B}_k + \widehat{\mathbf{W}}$: $K$ LoRA experts cover the top $rK$ singular values (each with rank $r$), and the residual $\widehat{\mathbf{W}}$ contains the remaining small singular values. Each expert is interpreted as a "basic ability" expert, with a learnable routing coefficient $\alpha_k$; the residual is frozen throughout fine-tuning. The process consists of two steps: **BAD** provides the initial orthogonal decomposition, and **DOG** maintains orthogonality during training. The final routing weights allow the model to adaptively mix these basic abilities per task.
+Badit decomposes each LLM weight matrix $\mathbf{W}^0\in\mathbb{R}^{m\times n}$ as $\mathbf{W}^0 = \sum_{k=1}^{K}\alpha_k \mathbf{A}_k\mathbf{B}_k + \widehat{\mathbf{W}}$. The top $rK$ singular values are split into $K$ rank-$r$ LoRA experts, each interpreted as a "basic ability" with a learnable router $\alpha_k$, while the remaining small singular values form the residual $\widehat{\mathbf{W}}$, which is frozen. The workflow consists of two stages: **BAD** uses SVD to provide an initially orthogonal ability decomposition, and **DOG** periodically regroups components during training to restore orthogonality diluted by gradients, with routers adaptively mixing these abilities per task.
+
+```mermaid
+graph TD
+    W["Pre-trained Weight W⁰"]
+    subgraph BAD["BAD: Basic Ability Decomposition (One-time Orthogonal Init)"]
+        direction TB
+        S["SVD takes top rK singular values"]
+        S --> E["Split into K orthogonal LoRA experts<br/>Each = one basic ability + router α_k"]
+        S --> R["Lower singular values form residual Ŵ<br/>Frozen throughout"]
+    end
+    W --> S
+    E --> T["Multi-task SFT Training<br/>Update LoRA parameters only"]
+    T -->|Gradient updates cause drift| DOG
+    subgraph DOG["DOG: Dynamic Orthogonal Grouping (Triggered periodically)"]
+        direction TB
+        G["Normalize rank-1 component gradients"] --> KM["Spherical K-means soft clustering"]
+        KM --> SVD2["SVD on centroid matrix<br/>Obtain orthogonal target directions"]
+        SVD2 --> PI["Integer assignment Π regrouping<br/>Exactly r components per expert"]
+    end
+    DOG -->|Regrouped orthogonal experts| T
+    T --> O["Task-adaptive routing<br/>Mix basic abilities → Output"]
+```
 
 ### Key Designs
 
-1. **Basic Ability Decomposition (BAD)**:
+**1. Basic Ability Decomposition (BAD): Obtaining a Train-Free Orthogonal "Ability Dictionary" via SVD**
 
-    - **Function**: For each pretrained weight $\mathbf{W}^0$, perform SVD, take the top $rK$ singular values/vectors, and split them into $K$ rank-$r$ LoRA experts as the initialization of basic abilities.
-    - **Mechanism**: $\mathbf{U}_{[:rK]}\boldsymbol{\Sigma}_{[:rK]}\mathbf{V}_{[:rK]}^\top$ is partitioned column-wise into $K$ segments; the $k$-th segment constructs $\mathbf{A}_k = \mathbf{U}_{[r(k-1):rk]}\,\mathrm{diag}(\sqrt{\boldsymbol{\Sigma}_{[r(k-1):rk]}})$ and similarly for $\mathbf{B}_k$; the remaining low singular values form the residual, which is frozen. The paper proves (Appendix A) that these $K$ LoRA experts are **naturally pairwise orthogonal** at initialization—SVD's left/right singular vectors are in different subspaces, so each expert corresponds to a completely non-overlapping "ability direction." Each expert is assigned a learnable routing $\alpha_k$ (initialized to 1) for MoE compatibility.
-    - **Design Motivation**: Compared to traditional LoRA (zero matrix initialization) and traditional MoE (random expert-task assignment), BAD's key insight is that "basic abilities are not assigned post hoc, but are inherent directions in pretrained weights." SVD provides an orthogonal basic ability dictionary without training, shifting the burden of "expert differentiation" from training to initialization.
+To solve the issue where "task-based" experts share parameters due to overlapping abilities, the method seeks functional units already present in the parameters. BAD performs SVD on the pre-trained weights $\mathbf{W}^0$, takes the top $rK$ singular values/vectors, and splits them into $K$ segments. The $k$-th segment constructs $\mathbf{A}_k = \mathbf{U}_{[r(k-1):rk]}\,\mathrm{diag}(\sqrt{\boldsymbol{\Sigma}_{[r(k-1):rk]}})$ and its symmetric $\mathbf{B}_k$ to form a rank-$r$ LoRA expert. The remaining part is frozen as a residual. The paper (Appendix A) proves that these $K$ experts are **naturally orthogonal at initialization**—the left/right singular vectors of SVD reside in non-overlapping subspaces. The key insight is that basic abilities are not randomly assigned and trained like in LoRAMoE, but are principal directions already existing in the pre-trained weights. SVD effectively provides a free orthogonal dictionary, shifting the burden of "expert differentiation" from training to initialization.
 
-2. **Dynamically Orthogonal Grouping (DOG)**:
+**2. Dynamically Orthogonal Grouping (DOG): Transform Orthogonality into Discrete Optimization for Regrouping**
 
-    - **Function**: Gradient updates during training destroy expert orthogonality. DOG periodically regroups the $rK$ rank-1 components so that the new $K$ LoRA experts' gradient directions are again orthogonal.
-    - **Mechanism**: Each rank-1 component's concatenated gradient $[\mathbf{a}_i;\mathbf{b}_i^\top]$ is normalized to $\widehat{\mathbf{g}}_i$. The goal is to find a 0/1 assignment matrix $\boldsymbol{\Pi}\in\{0,1\}^{rK\times K}$ (each new expert gets exactly $r$ components), maximizing "intra-expert gradient similarity and inter-expert orthogonality": $\max_{\boldsymbol{\Pi}}\sum_k \|\sum_i \pi_{i,k}\widehat{\mathbf{g}}_i\|^2$. This is solved iteratively: (1) Spherical K-means gives an initial assignment; (2) compute each cluster centroid $\mathbf{c}_k^{(\tau)}=\sum_i \pi_{i,k}^{(\tau)}\widehat{\mathbf{g}}_i$, perform SVD on the centroid matrix $\mathbf{C}^{(\tau)}=\mathbf{U}_c\boldsymbol{\Sigma}_c\mathbf{V}_c^\top$ to get $\mathbf{Q}^{(\tau)}=\mathbf{U}_c\mathbf{V}_c^\top$, which are the enforced orthogonal target directions; (3) update $\boldsymbol{\Pi}$ by solving an integer assignment problem with the constraint $\sum_i \pi_{i,k}=r$ based on $\langle \widehat{\mathbf{g}}_i, \mathbf{q}_k^{(\tau)}\rangle$, iterating up to 10 steps or until convergence. Appendix C proves that MoE output is mathematically invariant before and after regrouping—crucial to avoid model disturbance from each regrouping.
-    - **Design Motivation**: SVD initialization orthogonality only holds at $t=0$; gradients quickly drift (Fig. 4 shows LoRAMoE's inter-expert angles deviate from 90° over time). DOG's "cluster then orthogonalize" approach avoids the pitfalls of directly penalizing gradient orthogonality (which distorts loss geometry), instead recasting orthogonality as a discrete optimization over direction grouping—maintaining end-to-end trainability and stably locking inter-expert angles near 90°, intra-expert angles near 60°.
+Orthogonality from SVD only holds at $t=0$ and drifts as gradients update (Fig. 4 shows LoRAMoE inter-expert angles deviating from 90°). Ablations show that "maintaining orthogonality throughout training" is more critical than a "good initialization." DOG triggers regrouping every few steps: first, the concatenated gradient $\mathbf{g}_i$ of each rank-1 component $[\mathbf{a}_i;\mathbf{b}_i^\top]$ is normalized to $\widehat{\mathbf{g}}_i$. Then, an assignment matrix $\boldsymbol{\Pi}\in\{0,1\}^{rK\times K}$ is found (ensuring each expert gets $r$ components) to maximize intra-expert gradient consistency and inter-expert orthogonality:
+
+$$\max_{\boldsymbol{\Pi}}\sum_k \Big\|\sum_i \pi_{i,k}\widehat{\mathbf{g}}_i\Big\|^2 .$$
+
+The solution is a three-step iteration: use spherical K-means for initial assignment; calculate centroids $\mathbf{c}_k^{(\tau)}=\sum_i \pi_{i,k}^{(\tau)}\widehat{\mathbf{g}}_i$ and perform SVD on the centroid matrix $\mathbf{C}^{(\tau)}=\mathbf{U}_c\boldsymbol{\Sigma}_c\mathbf{V}_c^\top$ to get $\mathbf{Q}^{(\tau)}=\mathbf{U}_c\mathbf{V}_c^\top$ as the target orthogonal directions; finally, solve an integer assignment problem with $\sum_i \pi_{i,k}=r$ constraints based on inner products $\langle \widehat{\mathbf{g}}_i, \mathbf{q}_k^{(\tau)}\rangle$. This avoids hard orthogonality penalties that destabilize training, converting it into discrete re-classification. Appendix C proves the MoE output remains mathematically invariant before and after regrouping, preventing model disturbance.
 
 ### Loss & Training
-Standard SFT loss $\mathcal{L}(\mathcal{F}(\mathbf{x};\boldsymbol{\theta}), y)$ is used, with no additional orthogonality regularization. Number of experts $K=8$, rank $r$ matches LoRAMoE. DOG is triggered periodically during training (clustering and integer optimization on CPU). Two evaluation paradigms: mixed training (15 tasks jointly) and sequential training (tasks trained in sequence, averaged over 5 orders, focusing on forgetting rate).
+The standard SFT loss $\mathcal{L}(\mathcal{F}(\mathbf{x};\boldsymbol{\theta}), y)$ is used without additional regularization. The number of experts is $K=8$, with rank $r$ aligned with LoRAMoE. DOG is triggered periodically (clustering and optimization are performed on CPU). Two evaluation paradigms: mixed training (15 tasks mixed) and sequential training (5 task orders averaged, focusing on forgetting).
 
 ## Key Experimental Results
 
 ### Main Results
-On 15 SuperNI tasks and 6 LLMs (Qwen3-8B/4B, Llama3-8B/3B, Gemma2-9B/2B), five baselines are compared. The table below summarizes Qwen3-8B and Llama3-8B results for both mixed and sequential paradigms:
+Comparison of 5 baselines across SuperNI (15 tasks) and 6 LLMs (Qwen3, Llama3, Gemma2). Results for Qwen3-8B and Llama3-8B:
 
 | Model / Setting | Method | Mixed Rouge↑ | Seq Rouge↑ | Seq Forget Rate↓ | Seq Backward↑ |
 |------|------|------|------|------|------|
 | Qwen3-8B | LoRA | 54.22 | 47.08 | 9.21 | -8.11 |
 | Qwen3-8B | LoRAMoE | 54.64 | 48.07 | 8.47 | -6.23 |
-| Qwen3-8B | GainLoRA (SOTA) | 54.33 | 48.44 | 8.96 | -6.42 |
-| Qwen3-8B | **Badit** | **55.87** | **50.86** | **6.95** | **-5.43** |
+| Qwen3-8B | GainLoRA (Prev. SOTA) | 54.33 | 48.44 | 8.96 | -6.42 |
+| Qwen3-8B | **Badit (Ours)** | **55.87** | **50.86** | **6.95** | **-5.43** |
 | Llama3-8B | LoRA | 52.58 | 44.88 | 12.41 | -10.23 |
 | Llama3-8B | GainLoRA | 52.71 | 45.04 | 12.70 | -10.94 |
-| Llama3-8B | **Badit** | **54.75** | **48.83** | **8.57** | **-3.49** |
+| Llama3-8B | **Badit (Ours)** | **54.75** | **48.83** | **8.57** | **-3.49** |
 
-Badit outperforms GainLoRA by an average of **2.68 Rouge** across 6 LLMs, with the best forgetting rate and backward transfer. On Llama3-8B, forget rate drops from over 12 to 8.57, and backward improves from -10 to -3.49, indicating catastrophic forgetting is significantly mitigated in sequential scenarios.
+Badit outperforms GainLoRA by an average of **2.68 Rouge** across 6 LLMs, showing the best performance in forgetting rates and backward transfer. On Llama3-8B, the forget rate dropped from 12+ to 8.57, and backward transfer improved from -10 to -3.49.
 
 ### Ablation Study
-The authors ablate BAD and DOG to assess their individual contributions (Δ is the total drop relative to full Badit):
+Breakdown of BAD and DOG contributions (Δ is the total drop relative to full Badit):
 
 | Model | Config | Seq Rouge | Seq Forget | Mixed Rouge | Δ |
 |------|------|-----------|------------|-------------|---|
@@ -92,34 +109,32 @@ The authors ablate BAD and DOG to assess their individual contributions (Δ is t
 | Llama3 | w/o DOG | 47.33 | 9.74 | 53.74 | 3.68 |
 
 ### Key Findings
-- **DOG is more important than BAD**: SVD initialization alone (w/o DOG) leads to a larger drop than dynamic grouping alone (w/o BAD), indicating that "maintaining orthogonality throughout training" is more critical than "good initialization"; initial orthogonality is diluted after a few epochs.
-- **Basic ability hypothesis directly validated by Fig. 4**: Badit's inter-expert gradient angles remain close to 90°, intra-expert angles around 60° (about 20° lower than LoRAMoE), confirming "inter-expert orthogonality, intra-expert consistency."
-- **Acceptable overhead**: Table 3 shows Badit's total training time is about $1.22\times$ that of LoRAMoE, with the extra cost mainly from DOG's spherical K-means and integer optimization (run on CPU); BAD may even accelerate convergence.
+- **DOG is more important than BAD**: Removing DOG causes a larger performance drop than removing BAD, indicating that maintaining orthogonality throughout training is more vital than the initialization itself.
+- **Support for Basic Ability Hypothesis (Fig. 4)**: Badit's inter-expert gradient angles remain close to 90°, and intra-expert angles are around 60° (roughly 20° lower than LoRAMoE), proving it effectively achieves inter-expert orthogonality and intra-expert consistency.
+- **Acceptable Overhead**: Total training time is approximately $1.22\times$ that of LoRAMoE, with the extra cost coming from CPU-based spherical K-means and integer optimization.
 
 ## Highlights & Insights
-- **Shifting isolation granularity from "task" to "ability"**: This is a conceptual leap. Traditional MoE assumes each task corresponds to an expert; the authors argue that tasks are linear combinations of abilities, and abilities are the atomic units. This perspective directly explains why task-based isolation always fails—tasks overlap in ability space.
-- **Using SVD as a "training-free expert differentiator"**: The challenge of "expert differentiation," which typically requires special loss terms, is shifted to a pure linear algebra operation (SVD), which is both efficient and provably orthogonal—an advance beyond PiSSA.
-- **DOG's "cluster then orthogonalize" approach is transferable**: Directly penalizing gradient orthogonality often destabilizes training; DOG uses K-means to group "nearby directions" and then orthogonalizes the groups, followed by discrete assignment—this "soft grouping + hard orthogonalization" can be generalized to any scenario requiring direction decoupling (continual learning, multi-domain adaptation, vision MoE, etc.).
-- **Clustering + integer assignment + invariance proof**: Appendix C proves MoE output is invariant before and after regrouping, which is crucial; otherwise, dynamic rearrangement would "swap heads" each time. This "surgical intervention on representations while maintaining end-to-end equivalence" is a valuable design.
+- **Shifting Isolation Granularity from "Tasks" to "Abilities"**: This is a conceptual leap. Traditional MoE assumes each task maps to an expert; this work argues tasks are linear combinations of abilities, which are the atomic units. This perspective explains why task-level isolation often fails—tasks overlap in the ability dimension.
+- **SVD as a "Train-Free Expert Differentiator"**: The difficult problem of expert differentiation is offloaded to a pure linear algebra operation (SVD), which is efficient and provably orthogonal, building upon PiSSA.
+- **The "Cluster-then-Orthogonalize" logic in DOG is transferable**: Direct orthogonal penalties often disturb the loss landscape. DOG's approach of grouping similar directions then orthogonalizing them as clusters while maintaining end-to-end training is a robust design for any scenario requiring directional decoupling.
+- **Invariance Proof**: The mathematical proof in Appendix C ensuring MoE output remains unchanged after regrouping is crucial, as it avoids disturbing the model during dynamic restructuring.
 
 ## Limitations & Future Work
-- The authors acknowledge DOG introduces a 1.22× training cost, but do not provide scaling curves for larger batch sizes or $K$; this overhead may increase in industrial settings.
-- Spherical K-means and integer assignment run on CPU, creating a synchronization bottleneck for GPU-bound training; more efficient GPU implementations or approximate algorithms are needed.
-- The assumption that "basic ability = SVD principal singular direction" is mathematically elegant, but whether these abilities correspond to interpretable semantics (e.g., arithmetic, reading comprehension) is not further validated—there may be a mismatch between "high singular value direction ≠ semantic basic ability."
-- Only validated on 15-task SuperNI; whether larger $K$ is needed for more tasks, cross-lingual/cross-modal settings, or if abilities saturate, remains open.
-- The residual $\widehat{\mathbf{W}}$ is completely frozen, discarding small singular value directions, which may be a hidden bottleneck for certain long-tail tasks; lightweight adaptation for the residual could be considered.
+- The 1.22× training cost might scale unfavorably with larger batches or larger $K$, potentially becoming a bottleneck in industrial settings.
+- CPU-based clustering and optimization may become a synchronization bottleneck for GPU-bound training; GPU implementations are required.
+- The assumption that "basic abilities = principal SVD directions" is mathematically elegant but lacks semantic interpretability (e.g., math, reasoning) via probing experiments.
+- The frozen residual $\widehat{\mathbf{W}}$ discards minor singular value directions, which might be a bottleneck for long-tail tasks.
 
 ## Related Work & Insights
-- **vs LoRAMoE / OLoRA**: These use randomly initialized LoRA experts and route by task, maintaining orthogonality via training penalties; Badit derives experts from SVD and maintains orthogonality via periodic regrouping. Advantages: orthogonal from the start, controllable throughout training; disadvantage: DOG adds ~22% training time.
-- **vs PiSSA**: PiSSA is single-expert SVD-LoRA, taking only the top singular values; Badit segments the SVD spectrum into $K$ parts for multiple experts, moving from single-expert acceleration to multi-expert decoupling.
-- **vs GainLoRA**: GainLoRA is also a SOTA MoE approach but still allocates parameters by task; the authors empirically refute its implicit "task separability" assumption, achieving a stable 2.68 Rouge improvement.
-- **Insights**: This two-stage approach—using algebraic structure (SVD/PCA) for training-free decoupled initialization, then maintaining properties dynamically—can be transferred to continual learning, domain adaptation, multi-modal expert routing, and other tasks requiring subspace decoupling.
+- **vs LoRAMoE / OLoRA**: These use randomly initialized LoRA experts with task-based routing and maintain orthogonality via penalties. Badit initializes with SVD and maintains orthogonality via regrouping.
+- **vs PiSSA**: PiSSA is a single-expert SVD-LoRA. Badit extends this by slicing the SVD spectrum into $K$ segments to serve as multiple experts for decoupling.
+- **vs GainLoRA**: GainLoRA is a SOTA MoE approach that still uses task-based parameter assignment. This paper provides empirical evidence against the "task-separable" assumption to achieve its gains.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Shifting "isolation granularity" from task to basic ability is an interesting conceptual change; the SVD + dynamic clustering combination is also relatively new, though building blocks like PiSSA and OLoRA already exist—this is "putting the right blocks together in the right place."
-- Experimental Thoroughness: ⭐⭐⭐⭐ 6 LLMs × 15 tasks × 2 training paradigms × 5 seeds, with broad coverage; includes auxiliary analyses such as gradient angle dynamics and time overhead.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is introduced via counterintuitive findings in Fig. 1/2, with a clear logical chain; method section is formula-dense but well-structured.
-- Value: ⭐⭐⭐⭐ Multi-task instruct-tuning is a core stage in LLM post-training; an average 2.68 Rouge improvement is directly attractive for industrial training pipelines, and code is open-sourced; the extra 22% training time is a cost to weigh for deployment.
+- Novelty: ⭐⭐⭐⭐ Shifting granularity to basic abilities is a compelling conceptual shift; SVD + clustering is a novel combination for this problem.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across 6 LLMs and multiple training paradigms.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation derived from counter-intuitive findings in Fig. 1/2; well-structured method section.
+- Value: ⭐⭐⭐⭐ Highly relevant for LLM post-training; the performance gains are attractive for industrial pipelines.
 
 <!-- RELATED:START -->
 
@@ -127,11 +142,11 @@ The authors ablate BAD and DOG to assess their individual contributions (Δ is t
 
 ## Related Papers
 
+- [\[CVPR 2026\] DuetMerging: Synergizing Dynamic and Static Strategies for Mitigating Task Interference in Model Merging](../../CVPR2026/model_compression/duetmerging_synergizing_dynamic_and_static_strategies_for_mitigating_task_interf.md)
+- [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](../../CVPR2026/model_compression/taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
+- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
 - [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
-- [\[ICML 2026\] Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models](jailbreak_to_protect_buffering_and_reinforcing_via_temporary_jailbreaking_for_sa.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
-- [\[ICML 2026\] The Shape of Addition: Geometric Structures of Arithmetic in Large Language Models](the_shape_of_addition_geometric_structures_of_arithmetic_in_large_language_model.md)
+- [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](../../CVPR2026/model_compression/discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
 
 </div>
 

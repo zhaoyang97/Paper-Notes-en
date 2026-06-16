@@ -2,131 +2,163 @@
 title: >-
   [Paper Note] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Test-time adaptation] This paper proposes the CD-Buffer framework, which drives complementary collaboration between a subtractive buffer (channel suppression) and an additive buffer (lightwe…
+  [CVPR 2026][Object Detection][Paper Note] The CD-Buffer framework is proposed, which achieves robust test-time object detection adaptation across varying adverse weather severities by driving the complementary collaboration of a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) through a unified domain discrepan
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Test-time adaptation"
-  - "adverse weather"
-  - "channel adaptation"
-  - "additive-subtractive complementarity"
+  - CVPR 2026
+  - Object Detection
 date: 2026-05-08
-content_hash: d0d295d670873126
+content_hash: 848d3cebe874abcf
 ---
-
 # CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.26092](https://arxiv.org/abs/2603.26092)  
 **Code**: [Website](https://wkfsksdl99.github.io/cd_buffer/)  
-**Area**: Object Detection
-**Keywords**: Test-time adaptation, adverse weather, object detection, channel adaptation, additive-subtractive complementarity
+**Area**: Object Detection  
+**Keywords**: Test-Time Adaptation, Adverse Weather, Object Detection, Channel Adaptation, Additive-Subtractive Complementarity
 
 ## TL;DR
 
-This paper proposes the CD-Buffer framework, which drives complementary collaboration between a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) via a unified domain discrepancy measure, enabling robust test-time object detection adaptation across adverse weather conditions of varying severity.
+The CD-Buffer framework is proposed, which achieves robust test-time object detection adaptation across varying adverse weather severities by driving the complementary collaboration of a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) through a unified domain discrepancy metric.
 
 ## Background & Motivation
 
-**Background**: Test-time adaptation (TTA) addresses domain shift by updating source-pretrained models online, without offline retraining or target labels. Existing TTA methods fall into two paradigms: additive methods (introducing lightweight modules to learn target-specific adjustments) and subtractive methods (removing domain-sensitive channels).
+**Background**: Test-time adaptation (TTA) addresses domain shifts by updating source-pre-trained models online without offline retraining or target labels. Existing TTA methods are categorized into additive methods (introducing lightweight modules to learn target-specific adjustments) and subtractive methods (removing domain-sensitive channels).
 
-**Limitations of Prior Work**: Additive methods (e.g., BufferTTA) perform well under moderate domain shift but struggle to recover under severe degradation; subtractive methods (e.g., PruningTTA) excel under severe shift but over-prune recoverable useful information under moderate shift. Each paradigm is effective only within a limited range of conditions.
+**Limitations of Prior Work**: Additive methods (e.g., BufferTTA) perform well under moderate domain shifts but struggle with severe degradation; subtractive methods (e.g., PruningTTA) excel under severe shifts but over-prune repairable useful information during moderate shifts. Each paradigm is effective only within a limited range.
 
-**Key Challenge**: In real-world scenarios, different feature channels within the same image may experience varying degrees of domain shift — some channels are severely degraded and require suppression, while others need only minor adjustment. Existing methods apply uniform treatment to all channels, failing to accommodate this heterogeneity.
+**Key Challenge**: In real-world scenarios, different feature channels within the same image may face varying degrees of domain shift—some channels are severely degraded and require suppression, while others only need fine-tuning. Existing methods treat all channels uniformly, failing to adapt to this heterogeneity.
 
-**Goal**: Design an adaptive mechanism that automatically balances "removal" and "compensation" strategies according to the degree of domain shift in each channel.
+**Goal**: To design an adaptive mechanism that automatically balances "removal" and "compensation" strategies based on the degree of domain shift in each channel.
 
-**Key Insight**: Measure channel-level domain discrepancy and use a unified metric to simultaneously drive two complementary operations.
+**Key Insight**: Measuring channel-level domain discrepancy and using a unified metric to simultaneously drive two complementary operations.
 
-**Core Idea**: Discrepancy-driven dual-buffer coupling — severely shifted channels are suppressed and receive strong compensation, moderately shifted channels are finely adjusted, and stable channels are largely left unchanged.
+**Core Idea**: Discrepancy-driven dual-buffer coupling—severely shifted channels are suppressed and receive strong compensation, moderately shifted channels are finely adjusted, and stable channels remain largely unaffected.
 
 ## Method
 
 ### Overall Architecture
 
-Built upon Faster R-CNN with a ResNet-50 backbone. A subtractive buffer (learnable mask scores) is placed at each BN layer, and an additive buffer (lightweight $1\times1$ + $3\times3$ convolutional adapter) is placed on the residual path. Both buffers are coupled through a unified channel discrepancy measure $D_c$.
+CD-Buffer addresses a practical contradiction: under adverse weather, the degradation levels of different feature channels in the same image vary significantly—some channels are completely contaminated by fog and must be removed, while others shifted slightly and remain usable. It integrates "removal" and "compensation" mechanisms into the same detector (Faster R-CNN + ResNet-50) and links them via a channel-level domain discrepancy metric $D_c$. Channels with large discrepancies are suppressed by the subtractive buffer and specifically compensated by the additive buffer; stable channels are minimally intervened. Specifically, a **subtractive buffer** (a set of learnable mask scores for suppressing bad channels) is attached to each BN layer, and an **additive buffer** (lightweight $1\times1 + 3\times3$ convolutional adapters for information compensation) is placed on the residual path. Both are updated online during testing without target domain labels. The data flow is as follows: after the discrepancy score is calculated, it simultaneously drives both buffers; the soft mask generated by the subtractive buffer is then fed to the additive buffer via inverse normalization to determine compensation intensity, and finally, the two modulated paths merge into new features for the detection head.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Features (BN Layer)"] --> B["Feature-level Domain Discrepancy Score Dc<br/>Sum of Image-level + Instance-level Shifts"]
+    B --> C["Subtractive Buffer<br/>Discrepancy-weighted Regularization Suppressing Mask Scores s<br/>Dynamic Percentile Threshold + Random Reactivation"]
+    B --> D["Additive Buffer<br/>1×1 & 3×3 Adapters × Scaling Factor α"]
+    C -->|Inverse Normalization of Soft Mask| E["Inverse Soft Mask<br/>Stronger Suppression, Stronger Compensation"]
+    E --> D
+    C --> F["Modulated Features"]
+    D --> F
+    F --> G["Faster R-CNN Detection Head"]
+```
 
 ### Key Designs
 
-1. **Feature-Level Domain Discrepancy**: Combines image-level and instance-level feature discrepancies:
-    $D^I = \frac{\sum_{n=1}^{N}\|X_t^c - \bar{X}_s^c\|_1}{NHW}, \quad D^O = \frac{\sum_{m=1}^{M}\|x_t^c - \bar{x}_s^c\|_1}{Mhw}$
-    $D = D^I + D^O$
-   where $X_s$ denotes source-domain precomputed mean features and $x_s$ denotes instance-level (via RoI Align) mean features. **Design Motivation**: Object detection requires simultaneous consideration of global scene and local instance domain shift. High $D$ indicates severe channel deviation requiring intervention; low $D$ indicates that only fine-tuning is needed.
+**1. Feature-level Domain Discrepancy Score: Quantifying individual channel deviation to determine processing strategy.**
 
-2. **Subtractive Buffer**: Introduces learnable mask scores $s \in \mathbb{R}^C$ (initialized from BN weights as $s_c = |\gamma_c|$), driving channel suppression via discrepancy-weighted regularization:
-    $\mathcal{L}_{mask} = \frac{1}{C}\sum_c \|D_c \cdot s_c\|_1$
-   Channels with high discrepancy have large $D_c$, producing stronger gradients that push $s_c$ down and cause those channels to be suppressed by a thresholded mask. A dynamic percentile threshold $\tau = \text{Percentile}(\{|s_c^{(l)}|\}, \rho_{target})$ controls the overall suppression rate (5%), with a straight-through estimator to ensure gradient flow. Stochastic reactivation prevents the permanent removal of useful channels.
+The "decision basis" for the entire framework is this score, which identifies the degree of channel degradation. Since detection tasks require both global scenes and local instances, the discrepancy is calculated at two levels: the image-level $D^I$ measures the deviation of the entire feature map relative to the source domain mean; the instance-level $D^O$ measures the shift of instance features extracted by RoI Align.
 
-3. **Additive Buffer**: A lightweight adapter $F_{add} = \frac{\text{Conv}_{1\times1}(F) + \text{Conv}_{3\times3}(F)}{2} \odot \boldsymbol{\alpha}$, with a learnable channel scaling factor $\boldsymbol{\alpha}$ (initialized to $10^{-2}$). The key innovation is the **inverse soft mask**:
-    $\hat{m}_{soft}^{-1} = k \cdot \text{Norm}(\mathbf{1} - \hat{m}_{soft})$
-   Channels strongly suppressed by the subtractive buffer (where $\hat{m}_{soft} \approx 0$) receive the strongest additive compensation (maximum $\hat{m}_{soft}^{-1}$), achieving automatic balance of "compensate as much as is removed." **Design Motivation**: While the subtractive buffer removes severely degraded features, it inevitably discards information; the inverse modulation of the additive buffer automatically provides the strongest compensation for precisely those channels.
+$$D^I = \frac{\sum_{n=1}^{N}\|X_t^c - \bar{X}_s^c\|_1}{NHW}, \quad D^O = \frac{\sum_{m=1}^{M}\|x_t^c - \bar{x}_s^c\|_1}{Mhw}, \quad D = D^I + D^O$$
+
+Here, $\bar{X}_s^c$ and $\bar{x}_s^c$ are pre-computed source domain mean features. A high $D$ indicates severe channel shift and a need for heavy intervention, while a low $D$ suggests fine-tuning. Combining both levels ensures that cases where "global statistics appear normal but instance regions have collapsed" are not missed.
+
+**2. Subtractive Buffer: Enabling high-discrepancy channels to self-suppress.**
+
+The subtractive buffer assigns a learnable mask score $s \in \mathbb{R}^C$ to each channel, initialized from BN weights ($s_c = |\gamma_c|$), and uses a **discrepancy-weighted** regularization term for suppression:
+
+$$\mathcal{L}_{mask} = \frac{1}{C}\sum_c \|D_c \cdot s_c\|_1$$
+
+The core innovation is using $D_c$ as a weight—channels with larger discrepancies face stronger gradients, pushing $s_c$ lower and making them more likely to be filtered by the threshold. Stable channels are barely affected. The threshold is a dynamic percentile $\tau = \text{Percentile}(\{|s_c^{(l)}|\}, \rho_{target})$, controlling the overall suppression rate at approximately 5%. Straight-through estimators allow mask binarization gradients to flow, while random reactivation prevents permanent erroneous deletion of temporarily suppressed channels.
+
+**3. Additive Buffer and Inverse Soft Mask: Compensating exactly what was removed.**
+
+To prevent information loss, the additive buffer handles compensation, using a lightweight adapter to extract features and a learnable channel scaling factor $\boldsymbol{\alpha}$ (initialized to $10^{-2}$) for magnitude control:
+
+$$F_{add} = \frac{\text{Conv}_{1\times1}(F) + \text{Conv}_{3\times3}(F)}{2} \odot \boldsymbol{\alpha}$$
+
+The buffers are coupled via the **inverse soft mask**, derived by normalizing the negation of the subtractive soft mask:
+
+$$\hat{m}_{soft}^{-1} = k \cdot \text{Norm}(\mathbf{1} - \hat{m}_{soft})$$
+
+Channels nearly closed by the subtractive buffer ($\hat{m}_{soft}\to 0$) result in a normalized inverse mask $\hat{m}_{soft}^{-1}$ that reaches its maximum, thus receiving the strongest compensation. This "compensation proportional to removal" occurs automatically. One $D_c$ drives the two opposing operations: high-discrepancy channels are simultaneously suppressed and prioritized for repair, while low-discrepancy channels remain largely unchanged.
+
+### Mechanism: The Fates of Three Channels
+
+Consider three channels in a BN layer, differentiated by their discrepancy scores:
+
+- **Channel A (Very high $D_c$, heavily polluted by fog)**: $\mathcal{L}_{mask}$ suppresses $s_A$ below threshold $\tau \to \hat{m}_{soft}\approx 0$, effectively closing it; however, $\hat{m}_{soft}^{-1}$ is maximized $\to$ the additive buffer provides peak compensation. The net effect is "metabolic replacement": the corrupted original response is discarded and reconstructed via the clean adapter.
+- **Channel B (Moderate $D_c$, slight shift)**: $s_B$ decreases but stays above $\tau \to$ channel is preserved; the inverse mask provides moderate compensation $\to$ adapter performs fine-tuning.
+- **Channel C (Very low $D_c$, stable)**: Gradients barely affect it $\to$ mask is preserved and compensation is near zero $\to$ original features pass through.
+
+This explains why CD-Buffer does not lag behind in either "moderate" or "severe" shifts: purely subtractive methods would prune repairable information like Channel B, while purely additive methods cannot recover heavily polluted info like Channel A.
 
 ### Loss & Training
 
 $$\mathcal{L} = \mathcal{L}_{align} + \lambda_{reg} \cdot \mathcal{L}_{mask}$$
-- $\mathcal{L}_{align}$: L1 alignment of source and target feature mean and variance
-- Layer-wise gradient scaling: additive buffer gradients are amplified according to layer discrepancy $D^l$
-- Joint optimization: additive buffer parameters, BN affine parameters, and mask scores
+
+$\mathcal{L}_{align}$ is the L1 alignment term for source and target feature means/variances. $\mathcal{L}_{mask}$ is the discrepancy-weighted mask regularization. During training, hierarchical gradient scaling is applied—amplifying additive buffer gradients based on layer-wise discrepancy $D^l$ to intensify repairs in more degraded layers. The additive buffer parameters, BN affine parameters, and mask scores are jointly optimized.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | KITTI Fog 50m | Fog 75m | Fog 150m | Rain 200mm | Rain 100mm |
-|--------|--------------|---------|----------|-----------|------------|
+|------|-------------|---------|----------|-----------|------------|
 | Direct Test | 21.27 | 30.84 | 50.45 | 47.11 | 65.32 |
 | BufferTTA (Additive) | 23.21 | 33.12 | 52.50 | 50.96 | 69.28 |
 | PruningTTA (Subtractive) | 33.97 | 42.83 | 58.58 | 50.94 | 65.42 |
 | ActMAD | 39.65 | 49.95 | 60.18 | 56.37 | 62.94 |
-| **CD-Buffer** | **44.80** | **56.06** | **68.42** | **63.22** | 71.40 |
+| **Ours (CD-Buffer)** | **44.80** | **56.06** | **68.42** | **63.22** | 71.40 |
 
 | Method | ACDC Fog | ACDC Snow | ACDC Rain | ACDC Night |
-|--------|---------|-----------|-----------|------------|
+|------|---------|-----------|-----------|------------|
 | Direct Test | 16.50 | 11.04 | 7.82 | 4.83 |
 | BufferTTA | 24.16 | 17.18 | 11.70 | 6.98 |
-| **CD-Buffer** | **24.45** | 15.41 | **13.71** | **8.92** |
+| **Ours (CD-Buffer)** | **24.45** | 15.41 | **13.71** | **8.92** |
 
 ### Ablation Study
 
-| Configuration | KITTI Fog 50m | Note |
-|---------------|--------------|------|
-| Additive buffer only | ~23.2 | Limited effectiveness under severe domain shift |
-| Subtractive buffer only | ~34.0 | Removes degraded features but loses information |
-| Dual buffer without coupling | Significantly below full method | Independent operations lack coordination |
-| Full CD-Buffer | 44.80 | Discrepancy-driven coupling is optimal |
+| Configuration | KITTI Fog 50m | Description |
+|------|-------------|------|
+| Additive Buffer Only | ~23.2 | Limited effect under severe domain shift |
+| Subtractive Buffer Only | ~34.0 | Removes degraded features but suffers info loss |
+| Dual-Buffer w/o Coupling | Significantly weaker | Independent operations lack coordination |
+| **Full CD-Buffer** | 44.80 | Optimal discrepancy-driven coupling |
 
 ### Key Findings
 
-1. **Complementarity Validation**: BufferTTA performs well under moderate shift (Rain 75mm) but poorly under severe shift (Fog 50m); PruningTTA exhibits the opposite pattern. CD-Buffer consistently outperforms across all severity levels.
-2. **Continual TTA Stability**: In continual adaptation experiments on KITTI Fog 50m→75m→150m, CD-Buffer adapts fastest and remains the most stable. ActMAD achieves rapid initial improvement but exhibits unstable convergence.
-3. The inverse soft mask coupling mechanism is the critical factor behind the performance gains — unifying two paradigms from independent strategies into a coordinated system.
+1. **Verification of Complementary Mode**: BufferTTA performs well in moderate shifts (Rain 75mm) but poorly in severe shifts (Fog 50m); PruningTTA shows the opposite. CD-Buffer is consistently superior across all severity levels.
+2. **Stability in Continual TTA**: In sequential adaptation (KITTI Fog 50m $\to$ 75m $\to$ 150m), CD-Buffer adapts the fastest and shows the most stable performance. ActMAD shows quick initial gains but unstable convergence.
+3. The coupling mechanism via the inverse soft mask is the key to performance gains—unifying the two paradigms from independent strategies into a coordinated system.
 
 ## Highlights & Insights
 
-- This work is the first to systematically reveal the complementary nature of additive and subtractive TTA paradigms, providing an intuitive explanatory framework.
-- The discrepancy-driven coupling design is elegant: a single measure $D_c$ simultaneously drives two opposing operations, automatically achieving channel-level differentiated processing.
-- The inverse soft mask is a highlight design: compensation intensity is derived directly from the subtractive buffer's mask scores, requiring no additional network.
-- Batch-size independence: unlike BN statistics-based methods that are sensitive to small batches, CD-Buffer achieves adaptation through structural modifications.
+- Systematically reveals the complementary characteristics of additive and subtractive TTA paradigms and provides an intuitive explanatory framework.
+- The discrepancy-driven coupling design is elegant and simple: a single metric $D_c$ simultaneously drives two opposite operations, automatically achieving channel-level differentiated processing.
+- The inverse soft mask is a standout design: it derives compensation intensity directly from the subtractive mask score without requiring an additional decision network.
+- Batch size independence: Unlike BN-based methods affected by small batch sizes, CD-Buffer adapts through structural modifications.
 
 ## Limitations & Future Work
 
-- Experiments are conducted only on Faster R-CNN + ResNet-50; applicability to end-to-end detectors such as DETR-based architectures has not been verified.
-- The channel suppression rate is fixed at 5%; adaptive determination could be explored.
-- Source-domain feature statistics must be precomputed and stored, increasing deployment complexity.
-- Integration with self-supervised objectives (e.g., contrastive learning) has not been explored.
+- Experiments were limited to Faster R-CNN + ResNet-50; validation on end-to-end detectors like DETR is missing.
+- The channel suppression rate is fixed at 5% and could potentially be determined adaptively.
+- Pre-calculation and storage of source domain statistics increase deployment complexity.
+- Integration with self-supervised objectives (e.g., contrastive learning) remains unexplored.
 
 ## Related Work & Insights
 
-- Unlike ActMAD's multi-layer feature alignment, CD-Buffer provides finer-grained adaptation through channel-level differentiated processing.
-- The inverse mask concept is generalizable to other scenarios requiring a balance between preservation and modification (e.g., knowledge distillation in model compression).
-- This work contributes an "additive vs. subtractive" taxonomic framework to the TTA field, which may facilitate understanding of future work.
+- Unlike the multi-layer feature alignment in ActMAD, CD-Buffer provides finer adaptation through channel-level differentiation.
+- The inverse mask concept could be generalized to other scenarios requiring a balance between retention and modification (e.g., knowledge distillation in model compression).
+- Provides a "Additive vs. Subtractive" classification framework for the TTA field, aiding the understanding of future work.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The additive/subtractive complementarity insight is novel; the discrepancy-driven coupling mechanism is elegantly designed
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset, multi-severity evaluation is comprehensive; continual TTA experiments are meaningful
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and method description is complete
-- Value: ⭐⭐⭐⭐ Offers a new paradigm integration perspective for TTA
+- Novelty: ⭐⭐⭐⭐⭐ The insight into additive/subtractive complementarity is novel, and the discrepancy-driven coupling is elegantly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive evaluation across multiple datasets and severities; continual TTA experiments are meaningful.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and complete description of the methodology.
+- Value: ⭐⭐⭐⭐ Provides a new paradigm integration approach for TTA.
 
 <!-- RELATED:START -->
 
@@ -134,11 +166,11 @@ $$\mathcal{L} = \mathcal{L}_{align} + \lambda_{reg} \cdot \mathcal{L}_{mask}$$
 
 ## Related Papers
 
+- [\[CVPR 2026\] InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection](inscal_calibrated_multi-source_fully_test-time_prompt_tuning_for_object_detectio.md)
 - [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
-- [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](../../AAAI2026/object_detection/correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
-- [\[CVPR 2026\] CompAgent: An Agentic Framework for Visual Compliance Verification](compagent_an_agentic_framework_for_visual_compliance_verification.md)
-- [\[AAAI 2026\] LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs](../../AAAI2026/object_detection/loretta_a_low_resource_framework_to_poison_continuous_time_dynamic_graphs.md)
+- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
+- [\[CVPR 2026\] BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network](bdnetbio-inspired_dual-backbone_small_object_detection_network.md)
 
 </div>
 

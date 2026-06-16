@@ -2,97 +2,120 @@
 title: >-
   [Paper Note] SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 description: >-
-  [CVPR 2026][Video Understanding][long video QA] This paper proposes SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations…
+  [CVPR 2026][Video Understanding][long video QA] The authors propose SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, utilizing DPP evidence selection, performing cross-modal consistency verification, and implementing iterative refinement, the framework achieves a
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "long video QA"
-  - "multi-agent"
-  - "storyline"
-  - "cross-modal reasoning"
-  - "DPP"
+  - CVPR 2026
+  - Video Understanding
+  - long video QA
+  - multi-agent
+  - storyline
+  - cross-modal reasoning
+  - DPP
 date: 2026-05-08
-content_hash: 7f9bff50ee4613e8
+content_hash: 88ece020a0ca2be6
 ---
-
 # SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.05079](https://arxiv.org/abs/2604.05079)  
 **Code**: None  
-**Area**: Video Understanding
+**Area**: Video Understanding  
 **Keywords**: long video QA, multi-agent, storyline, cross-modal reasoning, DPP
 
 ## TL;DR
 
-This paper proposes SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, employing DPP-based evidence selection, cross-modal consistency verification, and iterative refinement, SVAgent achieves performance gains of 5.5%–11.5% over baselines.
+The authors propose SVAgent, a storyline-guided cross-modal multi-agent framework for long video question answering. By progressively constructing narrative representations, utilizing DPP evidence selection, performing cross-modal consistency verification, and implementing iterative refinement, the framework achieves a performance improvement of 5.5%-11.5% over baselines.
 
 ## Background & Motivation
 
-Video question answering (VideoQA) requires integrating spatial, temporal, and semantic information. Existing methods suffer from three limitations: (1) lack of explicit mechanisms to preserve global temporal structure; (2) absence of reliability guarantees in evidence retrieval; and (3) lack of explicit verification, making models prone to errors caused by insufficient or inconsistent evidence.
+Video Question Answering (VideoQA) requires the integration of spatial, temporal, and semantic information. Existing methods suffer from three limitations: (1) a lack of explicit mechanisms to maintain global temporal structure; (2) no reliability guarantee in evidence acquisition; and (3) a lack of explicit verification, making them prone to errors due to insufficient or inconsistent evidence.
 
-Humans naturally comprehend videos through coherent storylines rather than by locating relevant frames in isolation. SVAgent simulates this cognitive process by constructing a global temporal scaffold, upon which hypothesis-driven reasoning and cross-modal verification are performed.
+Humans naturally understand videos through a coherent storyline rather than by isolating related frames in a vacuum. SVAgent simulates this human cognitive approach by building a global temporal scaffold upon which hypothesis-driven reasoning and cross-modal verification are performed.
 
 ## Method
 
 ### Overall Architecture
 
-Six interacting agents form a closed-loop system: Storyline Agent → Hypothesis Agent + DPP evidence selection → Text/Visual Decision Agents → Meta-Decision Agent → Suggestion Agent (iterative refinement).
+SVAgent mimics the human process of watching long videos—first establishing a storyline that runs through the entire film, then performing hypothesis-driven reasoning and cross-modal verification on top of it, rather than locating related frames in isolation. Six agents form a closed loop: The Storyline Agent first compresses the video into a narrative representation that preserves temporal-semantic cues. The Hypothesis Agent then proposes answer hypotheses and uses DPP to select evidence frames. Text and Visual Decision Agents independently perform reasoning, and the Meta-Decision Agent checks for consistency between them. If inconsistency or insufficient evidence is detected, the Suggestion Agent proposes new frames and the process iterates back to the previous step until consistency is reached or the iteration limit $T$ is hit.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Long Video Frames + Query + Options"] --> B["Storyline Agent<br/>Compresses sampled frames into query-oriented narrative S"]
+    B --> C["Hypothesis-driven Reasoning<br/>Proposes answer hypotheses + extracts evidence E"]
+    C --> D["DPP Evidence Selection<br/>Selects sets Yq, Ye based on query/evidence"]
+    D -->|"Intersection Ratio ≤ α"| H["Suggestion Agent<br/>Checks failure history to locate high-uncertainty regions for new frames"]
+    D -->|"Intersection Ratio > α or n=T"| E["Cross-modal Decision<br/>Text/Vision agents independently generate answers"]
+    E -->|"Answers Inconsistent"| H
+    E -->|"Answers Consistent"| F["Meta-decision Agent<br/>Cross-validates consistency"]
+    F --> G["Output Answer"]
+    H --> B
+```
 
 ### Key Designs
 
-1. **Storyline Agent**: Progressively constructs a narrative representation of the video conditioned on the query, compressing the video into a compact temporal abstraction that retains temporally and semantically relevant cues for reasoning. Supports incremental updates, revising incomplete narrative segments upon incorporating new frames.
+**1. Storyline Agent: Establishing a Global Temporal Scaffold instead of Isolated Frame Localization**
 
-2. **Hypothesis-Driven Reasoning + DPP Evidence Selection**: The Hypothesis Agent proposes answer hypotheses and identifies supporting or contradicting evidence. Determinantal Point Processes (DPP) are applied to select two frame sets $\mathcal{Y}_q$ and $\mathcal{Y}_e$ based on the query $\mathcal{Q}$ and evidence $\mathcal{E}$ respectively; the DPP kernel matrix ensures that selected frames are both diverse and relevant. A coarse verification step uses the intersection ratio $|\mathcal{Y}_q \cap \mathcal{Y}_e| / (|\mathcal{Y}_q| + |\mathcal{Y}_e|) > \alpha$: if the ratio exceeds threshold $\alpha$, the process proceeds to fine-grained cross-modal verification; otherwise, the Suggestion Agent proposes new frames for the next iteration.
+Addressing the "lack of explicit mechanisms to maintain global temporal structure," this agent progressively constructs a video narrative representation based on the query. It compresses the video into a compact temporal abstraction, retaining only the temporal and semantic cues relevant to reasoning. It also supports incremental updates, allowing the refinement of incomplete narrative segments after incorporating new frames.
 
-3. **Cross-Modal Decision Verification**: The Text and Visual Decision Agents independently produce answers. The Meta-Decision Agent checks for consistency — if consistent, the answer is confirmed; if inconsistent, the Suggestion Agent proposes new frames for the next round of refinement.
+**2. Hypothesis-driven Reasoning + DPP Evidence Selection: Making Evidence Acquisition Diverse and Credible**
+
+To address the "lack of reliability in evidence acquisition," the Hypothesis Agent proposes answer hypotheses and identifies supporting/refuting evidence. Determinantal Point Processes (DPP) are used to select two sets of frames, $\mathcal{Y}_q$ and $\mathcal{Y}_e$, based on the query $\mathcal{Q}$ and evidence $\mathcal{E}$, respectively. The DPP kernel matrix ensures that the selected frames satisfy both diversity and relevance. A coarse verification is performed using the intersection ratio $|\mathcal{Y}_q \cap \mathcal{Y}_e| / (|\mathcal{Y}_q| + |\mathcal{Y}_e|) > \alpha$: fine-grained cross-modal verification is only entered if the threshold $\alpha$ is exceeded; otherwise, the Suggestion Agent is triggered to propose new frames for the next iteration.
+
+**3. Cross-modal Decision Verification: Consistency as a Gate for Answer Reliability**
+
+Addressing the "lack of explicit verification and susceptibility to inconsistency errors," the Text Decision Agent processes only the storyline and subtitles, while the Visual Decision Agent processes only the storyline and frames. The two agents reason independently to produce separate answers. The answer $o$ from the hypothesis stage is intentionally withheld to prevent information leakage and the co-propagation of errors. The Meta-Decision Agent then checks both: if the answers are inconsistent, it reconciles them by weighting evidence based on frame importance; if they are consistent, a secondary cross-validation is performed to ensure the agreement is not a coincidence based on incomplete information. Any failure in this cycle triggers the Suggestion Agent for another iteration.
+
+**4. Suggestion Agent: Directed Exploration Based on Failure History instead of Blind Resampling**
+
+Addressing the issue of "not knowing where to look back when evidence is insufficient," the Suggestion Agent examines the frame indices already used and identifies periods that have not been fully utilized. It functions as a reasoning-driven directed retrieval strategy, prioritizing two types of frames: (1) unexplored or low-information intervals, and (2) intervals likely to contain evidence aligned with the query. It selects candidate frames that maximize expected information gain and minimize residual uncertainty. This replaces uniform sampling in subsequent rounds, feeding new frames back to the Storyline Agent for incremental updates—a closed loop that allows small models to approach the single-inference performance of larger models.
 
 ### Loss & Training
 
-No additional training is required. SVAgent operates as a zero-shot multi-agent collaboration built upon open-source Video MLLMs (e.g., Qwen2.5-VL). The maximum number of iterations $T$ controls computational overhead.
+Ours requires no additional training and is based on zero-shot multi-agent collaboration using open-source Video MLLMs (e.g., Qwen2.5-VL). The maximum number of iterations $T$ controls the computational cost.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Baseline → +SVAgent | LongVideoBench | MLVU | LVBench | VideoMME |
-|---------------------|---------------|------|---------|---------|
+|----------------|---------------|------|---------|---------|
 | Qwen2.5-VL 3B → +SVAgent | 53.0→**59.7** | 53.6→**61.2** | 31.6→**38.5** | 52.8→**60.7** |
 | Gain | +6.7 | +7.6 | +6.9 | +7.9 |
 
 ### Key Findings
 
-- Consistent improvements of 5.5%–11.5% across four long video benchmarks.
-- A small model (3B) augmented with SVAgent can approach or even surpass a large model (72B) under single-pass inference.
+- Consistent improvement of 5.5%-11.5% across four long video benchmarks.
+- Small models (3B) with SVAgent can approach or even exceed the single-inference performance of large models (72B).
 - Cross-modal consistency verification effectively identifies reasoning uncertainty.
-- Storyline construction is critical for maintaining temporal coherence.
-- The Storyline Agent supports incremental updates, revising incomplete narrative segments upon incorporating new frames.
-- The Suggestion Agent leverages historical failure records to propose new frames for targeted exploration rather than random sampling.
-- The Text and Visual Decision Agents independently produce answers; the Meta-Decision Agent checks consistency — confirming when consistent, and triggering refinement when not.
+- Storyline construction is crucial for maintaining temporal coherence.
+- The Storyline Agent supports incremental updates, correcting incomplete narrative segments as new frames are integrated.
+- The Suggestion Agent utilizes historical failure records for directed exploration rather than random sampling.
+- Independent reasoning by Text and Visual Decision Agents produces answers that the Meta-Decision Agent checks for consistency—confirming consensus or triggering refinement if they diverge.
 
 ## Highlights & Insights
 
-- Simulates human cognitive processes in video comprehension: construct storyline → form hypotheses → retrieve evidence → cross-validate → review as needed.
-- DPP-based evidence selection simultaneously ensures diversity and relevance.
-- The closed-loop iterative refinement mechanism adaptively determines when to terminate.
+- Simulates the human cognitive process of video understanding: Storyline construction → Hypothesis formation → Evidence searching → Cross-validation → Necessary look-back.
+- The use of DPP for evidence selection ensures both diversity and relevance.
+- The closed-loop iterative refinement mechanism adaptively decides when to terminate.
 
 ## Limitations & Future Work
 
-- Multi-agent invocations increase inference latency and API costs.
+- Multi-agent calls increase inference latency and API costs.
 - Storyline quality depends on the accuracy of frame captioning.
-- May introduce unnecessary complexity for simple questions.
-- The iteration limit $T$ requires balancing computational cost against answer quality.
-- The framework operates as zero-shot multi-agent collaboration on open-source Video MLLMs (e.g., Qwen2.5-VL) without additional training.
-- Extension to non-multiple-choice formats (e.g., open-ended QA) remains unexplored.
-- The comparison between Qwen2.5-VL 72B single-pass inference and 3B+SVAgent demonstrates the value of agent collaboration.
-- Frame captioning quality serves as an upstream bottleneck for storyline construction; stronger captioning models could be explored to further improve performance.
+- The framework may be overly complex for simple questions.
+- The maximum iteration limit $T$ requires a balance between computational overhead and answer quality.
+- Zero-shot multi-agent collaboration based on open-source Video MLLMs (e.g., Qwen2.5-VL) requires no extra training.
+- Extensions to non-multiple-choice formats (e.g., open-ended QA) have not been explored.
+- The comparison between Qwen2.5-VL 72B single-inference and 3B+SVAgent proves the value of agent collaboration.
+- Frame captioning quality remains an upstream bottleneck for the storyline; stronger captioning models could be explored to improve performance.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Storyline-driven multi-agent video reasoning
-- **Technical Depth**: ⭐⭐⭐⭐ — Six-agent closed-loop design with strong systematicity
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Consistent validation across four benchmarks and model scales from 3B to 72B
-- **Practical Value**: ⭐⭐⭐ — High inference overhead; best suited for high-quality application scenarios
+- Novelty: ⭐⭐⭐⭐ — Storyline-driven multi-agent video reasoning.
+- Technical Depth: ⭐⭐⭐⭐ — Systematic six-agent closed-loop design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Consistent validation across four benchmarks and model scales from 3B to 72B.
+- Value: ⭐⭐⭐ — Significant inference overhead; suitable for high-quality application scenarios.
 
 <!-- RELATED:START -->
 
@@ -102,9 +125,9 @@ No additional training is required. SVAgent operates as a zero-shot multi-agent 
 
 - [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
+- [\[CVPR 2026\] Progressive Cross-Modal Causal Intervention for Long-Term Action Recognition](progressive_cross-modal_causal_intervention_for_long-term_action_recognition.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
-- [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
 
 </div>
 

@@ -2,121 +2,135 @@
 title: >-
   [Paper Note] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 description: >-
-  [ACL 2026][Computational Biology][Virtual Cell Modeling] The AROMA framework is proposed, which achieves interpretable and precise genetic perturbation effect prediction through a multimodal architecture integrating text…
+  [ACL 2026][Computational Biology][Paper Note] Ours proposes the AROMA framework, a multimodal architecture that integrates textual evidence, knowledge graph (KG) topological information, and protein sequence features. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise prediction of genetic perturbation effects.
 tags:
-  - "ACL 2026"
-  - "Computational Biology"
-  - "Virtual Cell Modeling"
-  - "Genetic Perturbation Prediction"
-  - "Multimodal Fusion"
-  - "Knowledge Graph"
-  - "Reinforcement Learning Reasoning"
+  - ACL 2026
+  - Computational Biology
 date: 2026-05-08
-content_hash: e7a055c64fd4611e
+content_hash: d424e475c01dca47
 ---
-
 # AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20263](https://arxiv.org/abs/2604.20263)  
 **Code**: [github](https://github.com/blazerye/AROMA)  
 **Area**: Medical Imaging / Bioinformatics  
-**Keywords**: Virtual Cell Modeling, Genetic Perturbation Prediction, Multimodal Fusion, Knowledge Graph, Reinforcement Learning Reasoning
+**Keywords**: Virtual cell modeling, gene perturbation prediction, multimodal fusion, knowledge graph, RL reasoning
 
 ## TL;DR
 
-The AROMA framework is proposed, which achieves interpretable and precise genetic perturbation effect prediction through a multimodal architecture integrating textual evidence, knowledge graph (KG) topological information, and protein sequence features, combined with a two-stage training strategy (SFT + GRPO).
+Ours proposes the AROMA framework, a multimodal architecture that integrates textual evidence, knowledge graph (KG) topological information, and protein sequence features. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise prediction of genetic perturbation effects.
 
 ## Background & Motivation
 
-**Background**: Virtual cell modeling aims to predict molecular state changes following genetic perturbations, which is crucial for biological mechanism research. Existing methods include general LLMs, domain-fine-tuned language models, cell foundation models, and retrieval-augmented methods.
+**Background**: Virtual cell modeling aims to predict changes in molecular states following genetic perturbations, which is crucial for studying biological mechanisms. Existing methods include general LLMs, domain-specific fine-tuned language models, cellular foundation models, and retrieval-augmented methods.
 
-**Limitations of Prior Work**: (1) General LLMs lack biological constraints, making free-form reasoning unreliable; (2) Existing foundation models only output labels or differential expression scores, lacking human-interpretable reasoning processes; (3) Retrieval signals in current RAG methods are weakly aligned with regulatory topology and fail to model regulatory directionality and multi-step propagation.
+**Limitations of Prior Work**: (1) General LLMs lack biological constraints, making free-form reasoning unreliable; (2) Existing foundation models only output labels or differential expression scores, lacking human-interpretable reasoning processes; (3) Retrieval signals in retrieval-augmented methods are weakly aligned with regulatory topology and fail to model regulatory directionality and multi-step propagation.
 
-**Key Challenge**: Genetic perturbation effects are highly context-dependent and propagate through multi-step regulatory cascades. Simple text similarity retrieval cannot capture mechanistic paths from perturbed genes to target genes.
+**Key Challenge**: Genetic perturbation effects are highly context-dependent and propagate through multi-step regulatory cascades. Simple text-based similarity retrieval cannot capture the mechanistic paths from the perturbed gene to the target gene.
 
 **Goal**: To build a genetic perturbation prediction framework that provides both accurate predictions and interpretable reasoning.
 
 **Key Insight**: Anchor perturbation prediction on structured, query-specific biological evidence to explicitly model the dependencies between perturbed and target genes.
 
-**Core Idea**: Combine KG retrieval (topology evidence), Graph Neural Network encoders (structural representation), and protein sequence encoders (molecular representation). Model perturbation-target relationships through a cross-modal interaction attention mechanism, followed by two-stage training to optimize prediction and reasoning quality.
+**Core Idea**: Combine KG retrieval (topological evidence), Graph Neural Network encoders (structural representation), and protein sequence encoders (molecular representation). Model the perturbation-target relationship via a cross-modal interaction attention mechanism and optimize prediction and reasoning quality using a two-stage training approach.
 
 ## Method
 
 ### Overall Architecture
 
-AROMA consists of three stages: (1) Data stage—constructing Gene-KG, Path-KG, and the PerturbReason reasoning dataset; (2) Modeling stage—retrieval-augmented contextualization + multimodal interaction encoding; (3) Training stage—multimodal SFT + GRPO reinforcement learning.
+The mechanism of AROMA is to transform the task of "predicting target gene changes under specific perturbations" from simple text matching into reasoning anchored in structured biological evidence. The pipeline consists of: inputting a (perturbed gene, target gene) pair; retrieving gene functional descriptions, shortest regulatory paths, and cell line contexts from two KGs; using a multimodal encoder to feed KG topology, protein sequence features, and text into a language model; and finally, having the LLM output a readable reasoning process along with a directional prediction (upregulated/downregulated/no change). Training is conducted in two stages: large-scale Supervised Fine-Tuning (SFT) for domain knowledge injection, followed by Group Relative Policy Optimization (GRPO) reinforcement learning to refine reasoning quality.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: (Perturbed Gene, Target Gene)"] --> R
+    subgraph R["Dual-KG Retrieval"]
+        direction TB
+        R1["Gene-KG<br/>STRING+CORUM, direct gene-level associations"]
+        R2["Path-KG<br/>GO+Reactome, pathway-level propagation backbone"]
+    end
+    R --> C["Retrieved Evidence<br/>Functional descriptions + Shortest regulatory paths + Cell line context"]
+    C --> E
+    subgraph E["Multimodal Interaction Encoding"]
+        direction TB
+        E1["Dual GAT encoding KG subgraphs"]
+        E2["Frozen ESM-2 encoding protein sequences"]
+        E1 & E2 --> E3["Cross-Attention<br/>Perturbed Gene = Query, Target Gene = Key/Value"]
+        E3 --> E4["Projector injection into LLM input"]
+    end
+    E --> L["Language Model"]
+    T["Two-stage Optimization<br/>SFT Knowledge Injection → GRPO Reasoning Refinement"] -.Training.-> L
+    L --> O["Reasoning Process + Directional Prediction<br/>Up/Down/No Change"]
+```
 
 ### Key Designs
 
-1.  **Dual Knowledge Graph Construction and Retrieval-Augmented Contextualization**:
-    - **Function**: Provide structured biological evidence for perturbation prediction.
-    - **Mechanism**: Gene-KG integrates STRING and CORUM to build gene-level association networks (18k nodes, 700k edges); Path-KG integrates GO and Reactome to encode biological process structures (80k nodes, 400k edges). Retrieval includes gene function descriptions, BFS shortest paths ($\le 3$ steps), and cell line descriptions.
-    - **Design Motivation**: The two graphs are complementary—Gene-KG provides direct associations between genes, while Path-KG provides higher-level pathway structures, together covering multi-level evidence.
+**1. Dual-KG Retrieval: Capturing "Perturbation Propagation" with Complementary Structures**
 
-2.  **Multimodal Interaction Encoding Module**:
-    - **Function**: Explicitly model the cross-modal interaction between perturbed and target genes.
-    - **Mechanism**: Two pre-trained GAT encoders encode Gene-KG and Path-KG subgraphs respectively; ESM-2 is frozen to encode protein sequences. For each modality, cross-attention is used (perturbed gene as Query, target gene as Key/Value), with signals injected into the LLM input via lightweight projectors.
-    - **Design Motivation**: Unlike text-only methods, structural and molecular representations enrich the modeling of perturbation-target relationships.
+Simple text similarity retrieval fails to grasp mechanistic pathways between perturbed and target genes. AROMA constructs two complementary graphs: Gene-KG (integrating STRING and CORUM, 18k nodes, 700k edges) for direct associations, and Path-KG (integrating GO and Reactome, 80k nodes, 400k edges) for high-level biological processes. Retrieval simultaneously extracts functional descriptions, shortest paths (up to 3) calculated via BFS, and cell line descriptions. This dual-layer approach provides both direct edges and propagation backbones.
 
-3.  **Two-Stage Optimization Strategy (SFT + GRPO)**:
-    - **Function**: First align multimodal information, then optimize reasoning quality.
-    - **Mechanism**: The first stage performs multimodal SFT on PerturbReason (498k+ samples), freezing GNN and ESM-2 while using LoRA to fine-tune the LLM. The second stage uses Group Relative Policy Optimization (GRPO) to sample multiple reasoning trajectories, rewarding correct predictions (+5.0) and standard format adherence (+0.5).
-    - **Design Motivation**: SFT injects domain knowledge, while GRPO further optimizes the accuracy and consistency of the reasoning process through task-level feedback.
+**2. Multimodal Interaction Encoding: Explicitly Modeling Perturbation-Target Relationships**
+
+To capture precise relationships, AROMA uses two pre-trained GAT encoders for KG subgraphs and a frozen ESM-2 for protein sequences. For each modality, cross-attention is applied where the perturbed gene acts as the Query and the target gene acts as the Key/Value. A lightweight projector then injects these fused representations into the LLM. This asymmetric design reflects the biological directionality where the perturbation drives the target change.
+
+**3. Two-stage Optimization (SFT + GRPO): Knowledge Injection followed by Reasoning Refinement**
+
+The first stage performs multimodal SFT on PerturbReason (498k+ samples) with frozen GNN/ESM-2 and LoRA on the LLM to inject domain knowledge. The second stage uses GRPO reinforcement learning, sampling multiple trajectories per instance and scoring them based on task-level feedback. This separates "learning the answer" (SFT) from "optimizing the reasoning logic" (GRPO), reducing inconsistencies.
 
 ### Loss & Training
 
-The SFT stage uses standard autoregressive language modeling loss. The GRPO stage samples multiple reasoning trajectories per instance. The reward function considers: prediction correctness (5.0/-1.0), reasoning format compliance (+0.5), and answer category uniqueness (+0.5). Advantages are calculated using intra-group normalization.
+The SFT stage uses standard autoregressive loss. In the GRPO stage, multiple trajectories are sampled for each instance. The reward consists of three parts: prediction correctness (correct $+5.0$ / incorrect $-1.0$), format compliance ($+0.5$), and answer uniqueness ($+0.5$). Advantages are computed via intra-group normalization for policy updates.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | K562 Avg | HepG2 Avg | Jurkat Avg | RPE1 Avg | Total Avg F1 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Method | K562 Avg | HepG2 Avg | Jurkat Avg | RPE1 Avg | Overall Avg F1 |
+|------|---------|---------|---------|---------|----------|
 | DeepSeek-R1 | 0.32 | 0.34 | 0.33 | 0.31 | 0.33 |
 | SUMMER | 0.58 | 0.67 | 0.65 | 0.67 | 0.64 |
 | GAT | 0.59 | 0.67 | 0.63 | 0.65 | 0.64 |
-| **AROMA** | **0.66** | **0.76** | **0.75** | **0.77** | **0.73** |
+| **Ours (AROMA)** | **0.66** | **0.76** | **0.75** | **0.77** | **0.73** |
 
 ### Ablation Study
 
-| Configuration | Avg F1 | Description |
-| :--- | :--- | :--- |
-| Vanilla Qwen3-8B | 0.26 | Lacks domain knowledge |
+| Configuration | Avg F1 | Note |
+|------|---------|------|
+| Original Qwen3-8B | 0.26 | Lacks domain knowledge |
 | + SFT | 0.65 | Domain knowledge injection is key |
 | + SFT + GRPO | 0.68 | RL improves reasoning |
-| + RAG | 0.71 | Retrieval evidence complement |
-| Full Module (AROMA) | 0.73 | Synergistic gains from all components |
+| + RAG | 0.71 | Retrieval evidence supplementation |
+| Full Model (AROMA) | 0.73 | Synergistic gains from all components |
 
 ### Key Findings
-- AROMA consistently outperforms all baseline methods across all 4 cell lines, achieving an average F1 of 0.73, which is 9 percentage points higher than the strongest baseline, SUMMER.
-- Zero-shot generalization (RPE1) performance shows only a slight decrease (0.77 $\rightarrow$ 0.73), demonstrating strong cross-distribution generalization capabilities.
-- The performance drop on low-popularity and low-connectivity genes is significantly smaller than that of variants without retrieval and multimodal modules, indicating that gains stem from joint modeling rather than memorizing high-frequency genes.
+- AROMA consistently outperforms all baselines across 4 cell lines, with an average F1 of 0.73, exceeding the strongest baseline (SUMMER) by 9 percentage points.
+- Zero-shot generalization (on RPE1) shows only a slight performance drop, demonstrating strong cross-distribution robustness.
+- Performance on genes with low popularity or connectivity drops significantly less than variants without retrieval/multimodal modules, indicating gains come from joint modeling rather than memorizing high-frequency genes.
 - Performance improves steadily as the number of GRPO sampled trajectories increases from 4 to 16.
 
 ## Highlights & Insights
-- This is the first work to systematically integrate KG topology, protein sequences, and textual evidence for genetic perturbation prediction.
-- The dual KG design is noteworthy: Gene-KG provides local associations, while Path-KG provides global pathway structures.
-- The design intuition of the cross-attention mechanism—using the perturbed gene as Query and the target gene as Key/Value—is clear and effective.
-- The constructed PerturbReason dataset (498k samples) is a significant resource contribution to the community.
+- Systematically integrates KG topology, protein sequences, and textual evidence for the first time in gene perturbation prediction.
+- The Dual-KG design (Gene-KG for local associations, Path-KG for global pathways) provides a robust structural prior.
+- The cross-attention mechanism using the perturbed gene as the Query provides a clear biological intuition.
+- The construction of the PerturbReason dataset (498k samples) serves as a significant resource contribution to the community.
 
 ## Limitations & Future Work
-- Currently supports only single-gene perturbations; cannot handle multi-gene combinations or chemical interventions.
-- Each inference only predicts expression changes for a single target gene, rather than simultaneously predicting multiple downstream genes.
-- Dependence on KGs and external text resources implies that prediction quality may degrade for genes with sparse annotations.
+- Currently only supports single-gene perturbations; cannot handle combinatorial perturbations or chemical interventions.
+- Each inference predicts the expression change of only one target gene, rather than multiple downstream genes simultaneously.
+- Dependency on KGs and external text resources implies potential performance degradation for genes lacking annotations.
 - Future work could extend the framework to combinatorial perturbations and chemical intervention scenarios.
 
 ## Related Work & Insights
-- **vs SUMMER**: SUMMER uses text similarity retrieval; AROMA further introduces topological structure and protein sequences to model perturbation-target interactions.
-- **vs GEARS**: GEARS injects graph structure priors but lacks interpretable reasoning; AROMA provides both predictions and reasoning paths.
+- **vs SUMMER**: SUMMER uses text similarity retrieval; AROMA introduces topological structures and protein sequence modeling for perturbation-target interactions.
+- **vs GEARS**: GEARS injects graph priors but lacks interpretable reasoning; AROMA providing both predictions and reasoning paths.
 - **vs SynthPert/rBio-1**: These rely on synthetic reasoning trajectories for training, which may inherit supervisory noise; AROMA optimizes directly from task feedback via GRPO.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Multimodal fusion approach is clear; dual KG and interaction encoding designs are novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive analysis across multiple cell lines, zero-shot settings, ablations, and robustness.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure with well-designed illustrations.
-- **Value**: ⭐⭐⭐⭐ Significant advancement for the virtual cell modeling field with high resource contribution value.
+- Novelty: ⭐⭐⭐⭐ Clear multimodal fusion and innovative Dual-KG/interaction design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive analysis across cell lines, zero-shot scenarios, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with high-quality illustrations.
+- Value: ⭐⭐⭐⭐ Significant advancement for virtual cell modeling with valuable resource contributions.
 
 <!-- RELATED:START -->
 

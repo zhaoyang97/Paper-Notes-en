@@ -2,81 +2,93 @@
 title: >-
   [Paper Note] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 description: >-
-  [CVPR 2026][Segmentation][UAV reasoning segmentation] This paper formally defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark comprising 10K high-resolution UAV images with chain-of-thought reason…
+  [CVPR 2026][Segmentation][Paper Note] This paper defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark containing 10K high-resolution UAV images with Chain-of-Thought (CoT) annotations, and proposes a dual-path pixel-level multimodal large language model, PixDLM, as a baseline.
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "UAV reasoning segmentation"
-  - "multimodal large language model"
-  - "dual-path visual encoder"
-  - "chain-of-thought reasoning"
-  - "pixel-level prediction"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 6d2326a3291794d6
+content_hash: b93bd1acc504da67
 ---
-
 # PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation
 
 **Conference**: CVPR 2026 Highlight  
 **arXiv**: [2604.15670](https://arxiv.org/abs/2604.15670)  
 **Code**: [https://github.com/XIEFOX/PixDLM](https://github.com/XIEFOX/PixDLM)  
-**Area**: Semantic Segmentation
-**Keywords**: UAV reasoning segmentation, multimodal large language model, dual-path visual encoder, chain-of-thought reasoning, pixel-level prediction
+**Area**: Semantic Segmentation  
+**Keywords**: UAV Reasoning Segmentation, Multimodal Large Language Model, Dual-path Visual Encoder, Chain-of-Thought, Pixel-level Prediction
 
 ## TL;DR
 
-This paper formally defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark comprising 10K high-resolution UAV images with chain-of-thought reasoning annotations, and proposes the dual-path pixel-level multimodal large language model PixDLM as a strong baseline.
+This paper defines the UAV Reasoning Segmentation task, constructs the DRSeg benchmark containing 10K high-resolution UAV images with Chain-of-Thought (CoT) annotations, and proposes a dual-path pixel-level multimodal large language model, PixDLM, as a baseline.
 
 ## Background & Motivation
 
-**Background**: Reasoning Segmentation aims to identify regions in an image satisfying conditions described by free-form textual instructions. Models such as LISA and PixelLM have demonstrated the capacity of multimodal large language models (MLLMs) for implicit reasoning and pixel-level segmentation in ground-view scenarios.
+**Background**: Reasoning segmentation aims to identify regions in an image that satisfy specific conditions based on free-form text instructions. Models such as LISA and PixelLM have demonstrated the ability of multimodal large language models (MLLMs) to perform implicit reasoning and pixel-level segmentation in ground-view scenarios.
 
-**Limitations of Prior Work**: Existing reasoning segmentation models and datasets are predominantly built upon ground-view or nadir-view imagery, whose visual assumptions—moderate resolution, limited scale variation, stable camera orientation, and relatively large object sizes—are fundamentally inapplicable to UAV imagery. UAV images present three unique challenges: (1) high-altitude oblique perspectives continuously alter projective geometry; (2) extreme scale variation and densely packed small objects, with many critical targets spanning only tens of pixels; and (3) ultra-high-resolution scenes requiring simultaneous reasoning over global semantics and fine-grained high-frequency details.
+**Limitations of Prior Work**: Existing reasoning segmentation models and datasets are primarily based on ground-view or nadir-view images. Their visual assumptions (moderate resolution, limited scale variation, stable camera orientation, large target size) are inapplicable to UAV imagery. UAV images face three unique challenges: (1) perspective geometry continuously changing due to high-altitude oblique views; (2) extreme scale variations and dense small objects, where many critical targets occupy only dozens of pixels; (3) ultra-high-resolution scenes requiring simultaneous reasoning over global semantics and minute high-frequency details.
 
-**Key Challenge**: Existing MLLMs typically employ low-resolution visual tokenization, causing fine-grained UAV details to be lost during compression. Moreover, the absence of a reasoning segmentation benchmark specifically tailored to UAV scenarios impedes systematic research progress.
+**Key Challenge**: Existing MLLMs typically use low-resolution visual tokenization, causing fine-grained UAV details to be lost during compression. Furthermore, the lack of reasoning segmentation benchmarks specifically for UAV scenarios hinders systematic research progress.
 
-**Goal**: (1) Formally define the UAV Reasoning Segmentation task and construct a dedicated benchmark dataset; (2) propose a baseline model capable of jointly handling global semantics and local details.
+**Goal**: (1) Formally define the UAV Reasoning Segmentation task and construct a dedicated benchmark dataset; (2) Propose a baseline model capable of processing both global semantics and local details.
 
-**Key Insight**: The semantic reasoning requirements of UAV imagery are organized along three dimensions—spatial reasoning, attribute reasoning, and scene-level reasoning—corresponding to positional relationships, visual states, and global context, respectively.
+**Key Insight**: Semantic requirements for UAV reasoning are organized into three dimensions—spatial reasoning, attribute reasoning, and scene-level reasoning—corresponding to positional relationships, visual states, and global context, respectively.
 
-**Core Idea**: A dual-path visual encoder (global low-resolution path + high-resolution structural path) is employed to preserve small-object and boundary cues, which are then combined with LLM-driven reasoning for pixel-level segmentation.
+**Core Idea**: Use a dual-path visual encoder (global low-resolution path + high-resolution structural path) to preserve small objects and boundary cues, combined with LLM-driven reasoning for pixel-level segmentation.
 
 ## Method
 
 ### Overall Architecture
 
-PixDLM consists of four core components: (1) a dual-path visual encoder that extracts global semantic and fine-grained structural features; (2) a MultiPath Alignment module that fuses the dual-path features; (3) an LLM that performs instruction-conditioned reasoning; and (4) a multi-scale decoder that reconstructs the final segmentation mask. Given a UAV image and a natural language instruction, the model outputs a pixel-level mask satisfying the instruction.
+The core challenge PixDLM addresses is that critical objects in UAV images often occupy only a few dozen pixels. Mainstream MLLMs compress visual tokens to low resolutions, causing these small objects and fine boundaries to be erased. PixDLM establishes two complementary paths at the visual end: one for global semantics and another for high-resolution structural details. These features are aligned and fed into the LLM for instruction reasoning, followed by a decoder that restores the pixel-level mask.
+
+The overall workflow is: UAV images simultaneously enter the dual-path visual encoder; the CLIP path captures global semantics while the SAM path preserves structural details. MultiPath Alignment aligns these heterogeneous features into a unified representation. The LLM reads this visual representation alongside natural language instructions to perform implicit reasoning and outputs a mask token. Finally, a multi-scale decoder decodes this token into a segmentation mask satisfying the instruction. Training data is derived from the newly constructed DRSeg benchmark.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["UAV Image"] --> ENC
+    subgraph ENC["Dual-Path Visual Encoder"]
+        direction TB
+        CLIP["CLIP Path: Low-Res · Global Semantics"]
+        SAM["SAM Path: High-Res · Structural Details"]
+    end
+    ENC --> ALIGN["MultiPath Alignment<br/>Align heterogeneous features"]
+    INST["Language Instruction"] --> LLM
+    ALIGN --> LLM["LLM Implicit Reasoning<br/>Visual Rep + Instruction → mask token"]
+    LLM --> DEC["Multi-scale Decoder<br/>mask token → pixel-level mask"]
+    DEC --> OUT["Instruction-satisfied Mask"]
+    subgraph DATA["DRSeg Dataset Construction"]
+        direction TB
+        D1["Filter HR Complex Scenes"] --> D2["SAM2 Coarse Mask<br/>+ Manual Refinement"]
+        D2 --> D3["GPT-5 QA Generation<br/>with CoT Reasoning"] --> D4["Manual Audit"]
+    end
+    DATA -.->|SFT Training| LLM
+```
 
 ### Key Designs
 
-1. **Dual-Path Vision Encoder**:
+**1. Dual-Path Visual Encoder: Separating Semantics and Details via Off-the-shelf Encoders**
 
-    - **Function**: Simultaneously captures global semantic context and high-resolution structural details.
-    - **Mechanism**: The global path employs a CLIP visual encoder to process low-resolution inputs for semantic features; the structural path employs a SAM encoder to process high-resolution inputs, preserving small-object and boundary cues. The two paths are complementary—CLIP excels at semantic understanding while SAM excels at fine-grained structural perception.
-    - **Design Motivation**: A single low-resolution encoder loses densely distributed small-object information in UAV imagery, whereas a single high-resolution encoder incurs prohibitive computational costs. The dual-path design balances semantic understanding with detail preservation.
+A single path is insufficient in UAV scenarios: low-resolution encoders lose dense small objects during token compression, while high-resolution encoders entail prohibitive computational costs. PixDLM decomposes the task into two complementary off-the-shelf models: the CLIP visual encoder processes low-resolution input for semantic understanding, while the SAM encoder processes high-resolution input to preserve small object contours and boundary cues. CLIP excels at "what it is," and SAM excels at "where the boundaries are." This parallel approach captures semantics without sacrificing detail and avoids training an expensive high-resolution encoder from scratch.
 
-2. **MultiPath Alignment Module**:
+**2. MultiPath Alignment Module: Aligning Heterogeneous Features**
 
-    - **Function**: Lightweight fusion of global semantic and local structural features.
-    - **Mechanism**: The semantic features from CLIP and the structural features from SAM are aligned into a unified representation space via a controlled integration scheme, enabling subsequent LLM reasoning to leverage both.
-    - **Design Motivation**: The two paths produce features at different scales and semantic levels; an effective alignment mechanism is required for the LLM to simultaneously exploit the advantages of both paths.
+Features produced by CLIP and SAM reside at different scales and semantic levels. This lightweight module aligns and integrates semantic and structural features into a unified representation space. This allows the LLM to utilize both global semantic and local structural cues during reasoning, rather than biasing one path.
 
-3. **DRSeg Dataset Construction Pipeline**:
+**3. DRSeg Dataset Construction: Semi-automated Baseline with Reasoning Chains**
 
-    - **Function**: Provides 10K high-resolution UAV images with corresponding reasoning annotations.
-    - **Mechanism**: The construction follows four stages—manual selection of complex scene images → coarse mask generation via SAM2 followed by human refinement → GPT-5 generation of three-dimensional reasoning QA pairs (with CoT reasoning chains) conditioned on image, mask, and category → human review. The data are uniformly distributed across three reasoning dimensions: spatial, attribute, and scene (each approximately 33.3%).
-    - **Design Motivation**: Existing UAV datasets lack fine-grained annotations and reasoning-oriented textual supervision, making them insufficient to support systematic reasoning segmentation research.
+Existing UAV datasets lack both fine-grained mask annotations and reasoning-oriented text supervision. DRSeg fills this gap via a four-stage semi-automated process based on the CODrone dataset: (1) manual filtering of complex high-resolution images with significant scale variations, dense targets, occlusion, and oblique views; (2) converting CODrone rotated boxes to coarse masks via SAM2 and semi-autonomously refining boundaries using ISAT (specifically for small objects and slender structures); (3) using GPT-5 with custom prompts to generate QA pairs covering spatial, attribute, and scene dimensions (including natural language reasoning and distilled CoT chains); (4) manual auditing for logical consistency and semantic-mask alignment. The dataset is nearly uniformly distributed across the three reasoning dimensions (~33.3% each), totaling 10K high-resolution images, 10K instance masks, and paired reasoning QA, split into 3:2:5 for training, validation, and testing.
 
 ### Loss & Training
 
-The model follows the standard LISA training paradigm, employing mask tokens and an embedding-as-mask decoder. Supervised fine-tuning (SFT) mode is supported.
+Following the standard LISA training paradigm, a mask token is introduced with an embedding-as-mask decoder. The special token output by the LLM is decoded into segmentation results, supported by SFT fine-tuning on DRSeg.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Attribute gIoU | Scene gIoU | Spatial gIoU |
-|-------|---------------|------------|-------------|
+|------|---------------|------------|-------------|
 | LISA-13B (zero-shot) | 52.65 | 47.08 | 42.85 |
 | PixelLM-7B (zero-shot) | 46.87 | 43.07 | 41.28 |
 | LISA-7B (SFT) | 59.22 | 54.45 | 57.33 |
@@ -85,42 +97,42 @@ The model follows the standard LISA training paradigm, employing mask tokens and
 ### Ablation Study
 
 | Configuration | Attr gIoU | Scene gIoU | Spatial gIoU |
-|---------------|-----------|------------|-------------|
+|------|-----------|------------|-------------|
 | DRSeg + RRSIS-D + CoT | 61.13 | 55.60 | 60.55 |
 | DRSeg + CoT (w/o RRSIS-D) | **62.80** | **61.75** | **62.51** |
 | DRSeg (w/o CoT) | 62.51 | 61.67 | 61.98 |
 
 ### Key Findings
 
-- PixDLM consistently outperforms both zero-shot and SFT baselines across all three reasoning dimensions, with particularly notable gains in scene-level reasoning (+7.3 vs. SFT LISA).
-- Incorporating RRSIS-D data degrades performance, indicating that domain-specific UAV data is more critical than data volume.
-- CoT reasoning supervision yields relatively modest gains, suggesting that the model is robust to noisy reasoning chains.
+- PixDLM significantly outperforms zero-shot and SFT baselines across all three reasoning dimensions, with the most notable gain in scene reasoning (+7.3 vs. SFT LISA).
+- Mixing RRSIS-D data actually decreased performance, indicating the importance of domain adaptation for specialized UAV data.
+- The improvement brought by CoT reasoning supervision is relatively limited, though the model remains robust to noisy reasoning chains.
 
 ## Highlights & Insights
 
-- **Clear Task Definition**: The semantic requirements of UAV reasoning segmentation are systematically organized into spatial, attribute, and scene dimensions, providing a clear framework for future research.
-- **Mature Data Construction Pipeline**: The semi-automatic annotation pipeline combining GPT-5 generation with human review achieves a favorable balance between quality and scalability.
-- **Concise and Effective Dual-Path Design**: Leveraging off-the-shelf CLIP and SAM encoders avoids the need to train a high-resolution encoder from scratch.
+- **Clear Task Definition**: Systematizes UAV reasoning segmentation into spatial, attribute, and scene dimensions, providing a clear framework for future research.
+- **Mature Data Construction**: The semi-automated GPT-5 + manual audit annotation process ensures quality while maintaining scalability.
+- **Effective Dual-Path Design**: Utilizing off-the-shelf CLIP and SAM encoders avoids the cost of training high-resolution encoders from scratch while successfully capturing fine details.
 
 ## Limitations & Future Work
 
-- Approximately 58% of instances are small objects (area < 2%), leaving substantial room for improvement on extremely small targets.
-- Only a single target instance is annotated per image, precluding evaluation of multi-object reasoning scenarios.
-- The computational overhead of the dual-path encoder is non-trivial and may be insufficient for real-time UAV applications.
-- The dataset scale (10K images) is relatively limited; larger-scale data may yield further performance improvements.
+- 58% of instances are small objects (area < 2%), leaving significant room for improvement on extreme small targets.
+- Only one target instance is annotated per image, preventing the evaluation of multi-target reasoning scenarios.
+- The computational overhead of dual-path encoders is significant, potentially impacting efficiency for real-time UAV applications.
+- The dataset size (10K) is relatively limited; larger-scale data might further enhance performance.
 
 ## Related Work & Insights
 
-- **vs. LISA**: LISA relies on a single CLIP encoder, whereas PixDLM adds a SAM high-resolution path, yielding clear advantages in UAV small-object scenarios.
-- **vs. GeoPix/GeoPixel**: These remote sensing models exploit geographic priors but lack open-vocabulary reasoning capability and perform poorly on densely packed small objects.
-- **vs. LLaVA-HR**: LLaVA-HR similarly adopts a dual-path strategy for high-resolution processing, but PixDLM is specifically designed for pixel-level output.
+- **vs LISA**: LISA uses a single CLIP encoder, whereas PixDLM adds a high-resolution SAM path, showing clear advantages in UAV small object scenarios.
+- **vs GeoPix/GeoPixel**: These remote sensing models use geographic priors but lack open-vocabulary reasoning capabilities and perform poorly on dense small objects.
+- **vs LLaVA-HR**: While also using a dual-path approach for high resolution, PixDLM is specifically designed for pixel-level output.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First formal definition of the UAV reasoning segmentation task; the dataset and task formulation are pioneering contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive multi-baseline comparisons with well-designed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Task definition and dataset construction are described in thorough and clear detail.
-- **Value**: ⭐⭐⭐⭐ Provides an important benchmark and baseline for UAV visual understanding research.
+- Novelty: ⭐⭐⭐⭐ First formal definition of the UAV reasoning segmentation task; benchmark and task definition are pioneering.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive multi-baseline comparisons and reasonable ablation designs.
+- Writing Quality: ⭐⭐⭐⭐ Detailed and clear descriptions of task definitions and data construction.
+- Value: ⭐⭐⭐⭐ Provides an important benchmark and baseline for UAV visual understanding.
 
 <!-- RELATED:START -->
 
@@ -128,11 +140,11 @@ The model follows the standard LISA training paradigm, employing mask tokens and
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
+- [\[CVPR 2025\] GLUS: Global-Local Reasoning Unified into A Single Large Language Model for Video Segmentation](../../CVPR2025/segmentation/glus_global-local_reasoning_unified_into_a_single_large_language_model_for_video.md)
 - [\[ACL 2026\] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](../../ACL2026/segmentation/anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[CVPR 2026\] RecycleLoRA: Rank-Revealing QR-Based Dual-LoRA Subspace Adaptation for Domain Generalized Semantic Segmentation](recyclelora_rank-revealing_qr-based_dual-lora_subspace_adaptation_for_domain_gen.md)
-- [\[CVPR 2026\] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation](virst_video-instructed_reasoning_assistant_for_spatiotemporal_segmentation.md)
-- [\[CVPR 2026\] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation](brewing_stronger_features_dual-teacher_distillation_for_multispectral_earth_obse.md)
+- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
+- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](../../ICCV2025/segmentation/himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 
 </div>
 

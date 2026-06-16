@@ -2,89 +2,94 @@
 title: >-
   [Paper Note] TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law
 description: >-
-  [ACL2026][Multilingual & Machine Translation][Legal Translation] This paper constructs the first sentence-level parallel dataset for Hong Kong Court of Final Appeal (HKCFA) judgements (HKCFA Judgement 97-22) and proposes…
+  [ACL 2026][Multilingual & Translation][Multi-Agent] This paper constructs the first sentence-level parallel dataset, HKCFA Judgement 97-22, specifically for English-Chinese translation of Hong Kong Court of Final Appeal judgements. It proposes the TransLaw multi-agent system, which simulates professional legal translation workflows. TransLaw significantly outperforms si
 tags:
-  - "ACL2026"
-  - "Multilingual & Machine Translation"
-  - "Legal Translation"
-  - "Hong Kong Case Law"
-  - "Multi-Agent"
-  - "RAG Terminology Retrieval"
-  - "Human Evaluation"
+  - ACL 2026
+  - Multilingual & Translation
+  - Multi-Agent
 date: 2026-05-08
-content_hash: 08928eec271f5bca
+content_hash: 204c4a07d426dc1f
 ---
-
 # TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law
 
 **Conference**: ACL2026  
 **arXiv**: [2507.00875](https://arxiv.org/abs/2507.00875)  
-**Code**: No public link (the paper claims to release the HKCFA Judgement 97-22 dataset)  
-**Area**: Information Retrieval / Legal Machine Translation / Multi-Agent Systems  
-**Keywords**: Legal Translation, Hong Kong Case Law, Multi-Agent, RAG Terminology Retrieval, Human Evaluation
+**Code**: No public code link (the paper claims to release the HKCFA Judgement 97-22 dataset)  
+**Area**: Information Retrieval / Legal Machine Translation / Multi-agent Systems  
+**Keywords**: Legal Translation, Hong Kong Case Law, Multi-agent, RAG Terminology Retrieval, Human Evaluation
 
 ## TL;DR
-This paper constructs the first sentence-level parallel dataset for Hong Kong Court of Final Appeal (HKCFA) judgements (HKCFA Judgement 97-22) and proposes TransLaw, a multi-agent system simulating professional legal translation workflows. It significantly outperforms single-agent translators in automated metrics, human expert evaluations, and cost efficiency.
+This paper constructs the first sentence-level parallel dataset, HKCFA Judgement 97-22, specifically for English-Chinese translation of Hong Kong Court of Final Appeal judgements. It proposes the TransLaw multi-agent system, which simulates professional legal translation workflows. TransLaw significantly outperforms single-agent benchmarks in automatic metrics, professional legal translator evaluations, and cost-efficiency.
 
 ## Background & Motivation
-**Background**: Legal machine translation has evolved from general MT to LLM-assisted translation, yet most evaluations remain limited to general legal texts or cross-lingual corpora. Hong Kong case law involves a unique bilingual system, common law terminology, specific judgement structures, and citation formats, requiring translation to adhere to local judicial norms beyond mere semantic alignment.
+**Background**: Legal machine translation has transitioned from general MT to LLM-assisted translation. However, most evaluations remain focused on general legal texts or cross-lingual general corpora. Hong Kong case law involves a unique bilingual system, common law terminology, specific judgement structures, and citation formats. Translation quality requires not only semantic alignment but also adherence to local norms regarding terminology, case citations, and judicial style.
 
-**Limitations of Prior Work**: Regarding public data, there is a lack of high-quality sentence-level English-Chinese parallel corpora covering HKCFA judgements. Regarding systems, single LLM translators often bundle terminology understanding, translation, citation checking, and style polishing into a single generation, leading to mistranslations, factual omissions, non-compliant citations, and cross-paragraph inconsistencies.
+**Limitations of Prior Work**: At the data level, there is a lack of high-quality, English-Chinese sentence-level parallel corpora specifically covering Hong Kong Court of Final Appeal judgements. At the system level, single LLM translators typically consolidate terminology understanding, sentence translation, citation checking, and style polishing into a single generation pass, leading to terminology errors, factual omissions, non-compliant citation formats, and cross-paragraph inconsistencies.
 
-**Key Challenge**: Legal translation is a professional pipeline rather than a single generation task. A translator must consult official glossaries, refer to context, verify legal meanings, and check citation formats. Even strong single agents struggle to stabilize these conflicting quality dimensions simultaneously.
+**Key Challenge**: Legal translation is essentially a professional pipeline rather than a single-shot text generation task. A translator must consult official glossaries, refer to context, verify legal meanings, and check citation formats before refining the judicial style. Even with powerful models, a single agent struggles to stably cover these constrained quality dimensions simultaneously.
 
-**Goal**: To provide two infrastructures: a verifiable bilingual dataset for Hong Kong case law and a multi-agent benchmark that replicates professional division of labor, allowing systematic comparison of LLMs across different translation roles.
+**Goal**: The authors aim to bridge two infrastructure gaps: first, constructing an evaluable bilingual dataset for Hong Kong case law; second, establishing a multi-agent benchmark that replicates professional legal translation labor division, allowing for systematic comparison of different LLMs across various translation roles.
 
-**Key Insight**: Instead of simple prompt engineering, the professional translation process is decomposed into three layers: command, execution, and review. This separates terminology retrieval from translation and creates an iterative review loop to minimize error propagation.
+**Key Insight**: Instead of relying solely on prompt engineering, the paper decomposes the professional translation process into three layers: command, execution, and review. This separates terminology retrieval from sentence translation and creates an iterative closed-loop for review feedback, reducing the amplification of single-point errors.
 
-**Core Idea**: Utilize a role-based multi-agent collaboration—comprising a Project Manager, Terminology Expert, Court Translator, and Multi-dimensional Reviewers—to replace a single LLM translating entire judgement segments.
+**Core Idea**: Utilizing a role-based multi-agent collaboration—comprising a Project Manager, Terminology Expert, Court Translator, and Multi-dimensional Review Experts—to replace a single LLM in translating entire judgements.
 
 ## Method
-TransLaw contributes both a dataset and a system. The HKCFA Judgement 97-22 dataset provides high-quality alignment; the TransLaw system segments English judgements into manageable units, performs terminology-aware translation, and subjects them to four types of expert review (semantic, terminology, citation, style) before final synthesis by a command agent.
+The contributions of TransLaw are divided into two tracks: the dataset and the system. The HKCFA Judgement 97-22 dataset provides authentic, high-quality aligned English-Chinese judgement materials. The TransLaw system segments English judgements into manageable units, processed via terminology parsing and translation, followed by semantic, terminology, citation, and style reviews, finally consolidated by a command agent.
 
 ### Overall Architecture
-The input is an English HKCFA judgement. The system segments it into a sentence sequence $J=\{s_i\}$. The **Translation Command Agent** maintains the global workflow and translation memory. In the **Translation Execution Module**, a **Legal Terminology Agent** retrieves candidates from official glossaries via RAG, and a **Sentence Translation Agent** generates a draft using these terms and context. The **Expert Review Module** uses specialized agents to inspect dimensions. Feedback is mapped to revision suggestions for the next iteration until feedback is null or the iteration limit is reached.
+The input is an English HKCFA judgement. The system first segments it into a sequence of sentences $J=\{s_i\}$ based on semantic structure. The Translation Command Agent maintains the global workflow and translation memory. In the Translation Execution Module, the Legal Terminology Agent retrieves candidate terms from official Department of Justice (DOJ) glossaries, and the Sentence Translation Agent generates a draft using these terms and context. The Expert Review Module utilizes specialized agents to inspect semantics, terminology, citations, and style. If errors are found, feedback is mapped to revision suggestions for the next iteration until the feedback is empty or the iteration limit is reached.
 
 ```mermaid
-graph TD
-    A[English Judgement] --> B[Translation Command Agent]
-    B --> C[Sentence/Segment Units]
-    C --> D[Legal Terminology Agent - RAG]
-    D --> E[Sentence Translation Agent]
-    E --> F[Expert Review Module]
-    F --> G{Feedback Empty?}
-    G -- No --> H[Iterative Revision]
-    H --> E
-    G -- Yes --> I[Command Agent Merging]
-    I --> J[Final Chinese Translation]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["English Judgement"] --> B["Command Layer: Command Agent<br/>Sentence Segmentation + Translation Memory"]
+    subgraph EXEC["Execution Layer (Term Retrieval + Translation)"]
+        direction TB
+        C["Legal Terminology Agent<br/>RAG Retrieval from Official Glossaries"] --> D["Sentence Translation Agent<br/>Term Injection & Draft Generation"]
+    end
+    subgraph REVIEW["Review Layer: Semantic / Term / Citation / Style Experts"]
+        direction TB
+        E["Four Expert Agents Review Separately"]
+    end
+    B --> C
+    D --> E
+    E -->|"Feedback F≠∅ & Limit Not Reached"| F["Iterative Revision based on Feedback<br/>Feedback Mapped to Revision Increments"]
+    F --> B
+    E -->|"Feedback Empty or Limit Reached"| G["Consolidated Final Judgement Translation"]
 ```
 
 ### Key Designs
-1.  **HKCFA Judgement 97-22 Dataset**:
-    *   **Function**: Provides a reproducible benchmark for HK case law translation.
-    *   **Mechanism**: Extracts 344 high-quality official bilingual judgements from 1997-2022, utilizing the original HTML structure for alignment rather than automated alignment tools.
-    *   **Design Motivation**: Reliable reference targets are crucial for legal MT evaluation. Official translations ensure trustworthy terminology and style.
 
-2.  **3-Layer 7-Role Multi-Agent Pipeline**:
-    *   **Function**: Decomposes professional translation into coordination, execution, and review phases.
-    *   **Mechanism**: Command agents handle task dispatch and memory; Execution includes terminology RAG (using DOA Glossaries) and translation agents; Review involves semantic alignment, terminology verification, citation checking, and judicial style polishing agents.
-    *   **Design Motivation**: Legal errors are often multidimensional. Role specialization allows agents to focus on verifiable dimensions and generate structured feedback.
+**1. HKCFA Judgement 97-22 Sentence-Level Parallel Dataset: Solving Evaluation Challenges with Official Judgements**
 
-3.  **Iterative Revision Mechanism**:
-    *   **Function**: Refines drafts through expert feedback loops.
-    *   **Mechanism**: Given feedback set $\mathcal{F}_i^{(k)}$ from iteration $k$, the Command agent updates the translation from $\hat{s}_i^{(k)}$ to $\hat{s}_i^{(k+1)}=\hat{s}_i^{(k)}\oplus\Psi(\mathcal{F}_i^{(k)})$.
-    *   **Design Motivation**: Iteration controls errors at a local level, mimicking real-world professional review processes.
+Legal translation evaluation suffers when the "gold reference" itself is unreliable. If the reference contains terminology or citation errors, metrics become noise. The authors bypassed automatic alignment tools, extracting 344 high-quality official translations from 1997-2022 HKCFA judgements and performing alignment using the original paragraph and sentence structures of government webpages. Despite the smaller scale compared to general corpora, the official nature of the terminology and style makes it a high-precision benchmark.
+
+**2. Three-Layer Seven-Role Multi-Agent Pipeline: Decomposing Monolithic Generation into Verifiable Steps**
+
+Single LLM translators often mix terminology, translation, citation, and style, making it difficult to locate errors. TransLaw segments the workflow into Coordination, Execution, and Review layers. The command agent handles segmentation and task dispatch. The Legal Terminology Agent uses RAG to retrieve candidates from the *Combined DOJ Glossaries of Legal Terms*, which are then injected by the Sentence Translation Agent. The review module employs four expert agents focusing on semantic alignment, terminology verification, citation checking, and judicial style polishing. This isolation allows for structured, actionable feedback.
+
+**3. Iterative Revision Mechanism based on Review Feedback: Converging Drafts to Publishable Quality**
+
+Since single-pass generation rarely meets all legal requirements, the system closes the loop for each sentence. After the $k$-th review round summarizes feedback $\mathcal{F}_i^{(k)}$, the command agent maps it to specific text revision increments, updating the translation from $\hat{s}_i^{(k)}$ to:
+
+$$\hat{s}_i^{(k+1)}=\hat{s}_i^{(k)}\oplus\Psi(\mathcal{F}_i^{(k)})$$
+
+where $\Psi$ converts review opinions into modification operations, and $\oplus$ denotes applying modifications to the current translation. This continues until feedback is empty or the limit is reached, mimicking a real translation agency's "translate-review-revise" rhythm.
+
+### Mechanism: A Complete Example
+Using a judgement containing common law terms, the command agent segments the text into $J=\{s_i\}$. For $s_i$, the Legal Terminology Agent retrieves official Chinese equivalents for specific terms. The Sentence Translation Agent produces draft $\hat{s}_i^{(0)}$. The review module provides feedback: the semantic agent finds a weakened legal meaning, the term agent notes a non-official term, the citation agent flags a format error, and the style agent suggests more formal phrasing, forming $\mathcal{F}_i^{(0)}$. The command agent maps these to updates, producing $\hat{s}_i^{(1)}$. Once all agents approve ($\mathcal{F}_i^{(1)}=\varnothing$), the final version is written to translation memory for consistency.
 
 ### Loss & Training
-No new models are trained. Optimization is achieved via process control: RAG from official databases, context-constrained translation, and iterative feedback loops. Automated evaluation uses **xCOMET-XL** and **wmt22-unite-da** with 1,000 bootstrap runs. Human evaluation uses a Legal ACS metric: $I=0.6A+0.3C+0.1S$ (A: Accuracy, C: Coherence, S: Style).
+The study does not train a new model but constructs evaluation data and agent workflows. "Optimization" is reflected in process control: terminology candidates are retrieved from official databases, drafts are constrained by global context memory, and review feedback iteratively refines the text. Evaluation uses xCOMET-XL and wmt22-unite-da with 1,000 bootstrap iterations (95.45% CI). Human evaluation uses the Legal ACS metric $I=0.6A+0.3C+0.1S$, where A is Accuracy, C is Coherence, and S is Style.
 
 ## Key Experimental Results
 
 ### Main Results
-The comparison between the same LLM in the TransLaw multi-agent system versus a Single Translator Agent shows significant gains across all models.
+The paper compares the same LLMs as TransLaw multi-agent systems versus Single Translator Agents. All models see significant improvements under the multi-agent framework, suggesting benefits stem from task division rather than specific closed-source models.
 
-| Model | TransLaw xCOMET-XL | TransLaw Avg. | Single Agent Avg. | Gain (Avg.) |
-| :--- | ---: | ---: | ---: | ---: |
+| Model | TransLaw xCOMET-XL | TransLaw Avg. | Single Agent Avg. | Avg. Gain |
+|------|-------------------:|--------------:|--------------:|----------:|
 | GPT-4o | 85.12 | 88.45 | 72.65 | +15.80 |
 | GPT-4 | 84.24 | 87.15 | 71.17 | +15.98 |
 | ChatGPT | 82.29 | 85.41 | 69.12 | +16.29 |
@@ -93,40 +98,43 @@ The comparison between the same LLM in the TransLaw multi-agent system versus a 
 | ChatLaw-13B | 76.26 | 79.43 | 61.65 | +17.78 |
 
 ### Ablation Study
-Experimental analysis covers dataset scale, role allocation, human evaluation, and cost.
+The study analyzes data scale, agent role allocation, human evaluation, and costs. A key observation: stronger models provide more stable gains as command/review agents, but multi-agent workflows outperform single agents even with weaker open-source models.
 
-| Analysis Item | Key Data/Observation | Note |
-| :--- | :--- | :--- |
-| **Dataset Scale** | 344 judgements, 11,099 segments, 811k EN tokens, 1.31M CN tokens | High-precision alignment using official HTML structures. |
-| **Role Allocation** | xCOMET-XL 85.12 (GPT-4o execution/review) | Strong command agents ensure stability; replacing roles with weaker models leads to gradual degradation. |
-| **Human Eval** | 200 paragraphs, 10 certified legal translators | TransLaw leads in accuracy; official human translation still wins in coherence and style. |
-| **Cost Analysis** | Manual: \$1,390.20; TransLaw API: \$0.35 | TransLaw API cost is nearly 4,000x lower than pure manual translation. |
+| Analysis Item | Key Data | Description |
+|--------|----------|------|
+| Dataset Scale | 344 judgements, 11,099 sentence samples | 811k English tokens / 1.3M Chinese tokens; 1997-2022 HKCFA coverage. |
+| Agent Allocation | GPT-4o execution/review: 85.12 xCOMET-XL | High-quality command agents stabilize the process. |
+| Human Evaluation | 200 paragraph samples, 10 certified translators | TransLaw leads in accuracy; official translations remain superior in coherence and style. |
+| Cost Analysis | Human: ~$1,390.20; TransLaw API: ~$0.35 | TransLaw API cost is nearly 4,000x lower than human translation. |
 
 ### Key Findings
-*   **Workflow over Model**: Gains are consistent (15-18 points) across varying model strengths, proving the effectiveness of the division of labor.
-*   **Legal LLMs vs. General LLMs**: Specialized legal LLMs like ChatLaw underperform compared to general strong models (GPT, DeepSeek) on this benchmark, suggesting "legal pre-training" does not equate to translation proficiency.
-*   **Human-in-the-Loop**: While TransLaw excels in accuracy and cost, humans remain superior in stylistic nuance. TransLaw is best suited as a high-quality "first draft" for human editing.
+- **Multi-agent benefits are generalized**: Improvements across various models (GPT, DeepSeek, Qwen) range between 15-18 points, indicating the effectiveness of workflow division.
+- **Legal-specific LLMs are not inherently superior**: ChatLaw lags behind general strong models (GPT, DeepSeek), suggesting that specialized pre-training does not automatically grant refined translation capabilities.
+- **Human translation still holds an edge in style and coherence**: TransLaw's primary advantages are accuracy and cost; production-level scenarios still require human review.
 
 ## Highlights & Insights
-*   The paper shifts legal MT evaluation from "can it translate" to "can it execute a professional workflow," addressing terminology and citations which are more critical than BLEU scores.
-*   The dataset construction is pragmatic, leveraging official HTML structures to avoid noises inherent in automated sentence aligners for complex legal texts.
-*   The role-based agent boundaries are well-defined, turning unstructured LLM generation into a supervised, multi-stage professional pipeline.
+- The paper advances legal MT evaluation from "can it translate" to "can it complete a professional workflow," prioritizing details like terminology and citation.
+- The dataset construction is pragmatic, leveraging official HTML structures to avoid the noise common in automatic alignment for long legal sentences.
+- The role-based agent division is well-defined, partitioning responsibilities based on professional workflows so that each output is verifiable by the subsequent step.
+- The cost analysis includes human editing costs, providing a more honest perspective than just reporting API call prices.
 
 ## Limitations & Future Work
-*   **Jurisdiction Specificity**: High localization to Hong Kong law means knowledge bases and review rules would need reconstruction for other regions.
-*   **Metric Gaps**: Automated metrics might miss fine-grained legal risks (e.g., a citation error leading to legal misinterpretation).
-*   **Future Direction**: Utilizing expert feedback as signals for preference optimization (RLHF) to teach models which reviews are most critical.
+- The focus on Hong Kong case law means terminology and styles are highly localized; migration to other jurisdictions or legal types may requires rebuilding knowledge bases.
+- Automatic metrics may not capture fine-grained legal risks, such as whether a citation error leads to interpretive bias.
+- Human evaluation scale is limited to a subset of FACC 1/2021; broader diversity in case types is needed.
+- Future work could transform expert feedback into training or preference optimization signals for the model.
 
 ## Related Work & Insights
-*   Compared to **General MT**, TransLaw integrates legal-specific constraints (terminology/citation).
-*   Compared to **Single Agent Translation**, TransLaw externalizes error checking, making failures easier to locate and fix.
-*   Compared to **Legal LLMs**, TransLaw utilizes RAG and process control to externalize knowledge, offering better controllability than parameter-bound knowledge.
+- **vs. General MT Evaluation**: General MT focuses on semantic fluency; TransLaw integrates terminology, citation, and style.
+- **vs. Single Agent Legal Translation**: Single agents rely on one prompt; TransLaw externalizes error checking into verifiable steps.
+- **vs. Legal LLMs**: While dedicated models internalize knowledge, TransLaw externalizes it through RAG and workflows, offering better control.
+- **Transferable Insight**: High-risk domains (medical, patent, audit) could adopt this "RAG + Draft + Multi-review + Iteration" workflow.
 
 ## Rating
-*   **Novelty**: ⭐⭐⭐⭐☆ Tight integration of dataset and workflow.
-*   **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Broad model coverage and human evaluation.
-*   **Writing Quality**: ⭐⭐⭐⭐☆ Clear methodology, though role descriptions are somewhat formalized.
-*   **Value**: ⭐⭐⭐⭐⭐ High reference value for legal NLP and high-stakes agent design.
+- Novelty: ⭐⭐⭐⭐☆ (Strong integration of datasets and agent workflows, though multi-agent concepts exist elsewhere.)
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ (Covers 13 models and human evaluation, though the scope of cases for humans is narrow.)
+- Writing Quality: ⭐⭐⭐⭐☆ (Clear division of methods and rich data presentation.)
+- Value: ⭐⭐⭐⭐⭐ (Directly applicable to legal NLP and high-risk document agent design.)
 
 <!-- RELATED:START -->
 
@@ -136,17 +144,6 @@ Experimental analysis covers dataset scale, role allocation, human evaluation, a
 
 - [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation](fairqe_multi-agent_framework_for_mitigating_gender_bias_in_translation_quality_e.md)
-- [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
-- [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
-
-</div>
-
-<!-- RELATED:END -->
-## Related Papers
-
-- [\[ACL 2026\] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation](fairqe_multi-agent_framework_for_mitigating_gender_bias_in_translation_quality_e.md)
-- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
 - [\[ACL 2025\] Towards Global AI Inclusivity: A Large-Scale Multilingual Terminology Dataset (GIST)](../../ACL2025/multilingual_mt/towards_global_ai_inclusivity_a_large-scale_multilingual_terminology_dataset_gis.md)
 - [\[ACL 2025\] M-MAD: Multidimensional Multi-Agent Debate for Advanced Machine Translation Evaluation](../../ACL2025/multilingual_mt/m-mad_multidimensional_multi-agent_debate_for_advanced_machine_translation_evalu.md)

@@ -2,121 +2,132 @@
 title: >-
   [Paper Note] Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 description: >-
-  [ACL 2026][Audio & Speech][Audio Large Language Models] Reveals that the perception weakness of current AudioLLMs stems from the ASR-centric training paradigm (systematic suppression of paralinguistic and non-linguistic…
+  [ACL 2026][Audio & Speech][Perception Enhancement] This paper reveals that the perception weakness of current AudioLLMs stems from the ASR-centric training paradigm, which systematically suppresses paralinguistic and non-linguistic information. It proposes the Unified Audio Schema (UAS) to structure audio information into a JSON format across three dimensions: transcri
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Audio Large Language Models"
-  - "Perception Enhancement"
-  - "Unified Audio Schema"
-  - "Paralinguistic Information"
-  - "ASR"
+  - ACL 2026
+  - Audio & Speech
+  - Perception Enhancement
+  - Unified Audio Schema
+  - Paralinguistic Information
+  - ASR
 date: 2026-05-08
-content_hash: 956d9aae3e7153df
+content_hash: fee9e99e5c992e30
 ---
-
 # Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.12506](https://arxiv.org/abs/2604.12506)  
 **Code**: [GitHub](https://github.com/Tencent/Unified_Audio_Schema)  
-**Area**: Audio Processing  
+**Area**: Speech Processing  
 **Keywords**: Audio Large Language Models, Perception Enhancement, Unified Audio Schema, Paralinguistic Information, ASR
 
 ## TL;DR
-Reveals that the perception weakness of current AudioLLMs stems from the ASR-centric training paradigm (systematic suppression of paralinguistic and non-linguistic information). Proposes the Unified Audio Schema (UAS) to structure audio information into a JSON format across three dimensions: transcription, paralinguistic, and non-linguistic events. Achieving a $10.9\%$ perception accuracy improvement on the MMSU benchmark while maintaining reasoning capability.
+This paper reveals that the perception weakness of current AudioLLMs stems from the ASR-centric training paradigm, which systematically suppresses paralinguistic and non-linguistic information. It proposes the Unified Audio Schema (UAS) to structure audio information into a JSON format across three dimensions: transcription, paralinguistics, and non-linguistic events. This approach achieves a 10.9% improvement in perception accuracy on the MMSU benchmark while maintaining reasoning capabilities.
 
 ## Background & Motivation
 
-**Background**: AudioLLMs exhibit a paradox—performing well on complex reasoning tasks (~$70\%$), but dropping sharply on basic acoustic perception tasks (~$40\%$). For instance, a model might correctly transcribe "I'm fine" while completely ignoring the distress implied by a trembling voice, or failing to notice a door slamming.
+**Background**: AudioLLMs exhibit a paradoxical phenomenon: they perform excellently on complex reasoning tasks (~70%) but drop sharply on basic acoustic perception tasks (~40%). For example, a model might correctly transcribe "I'm fine" while completely ignoring the distress implied by a trembling voice or failing to notice a door slamming.
 
-**Limitations of Prior Work**: This perception defect persists across model scales and architectures, indicating the issue lies in the training methodology rather than model capacity. The vast majority of AudioLLMs use ASR as the core training signal, and ASR is inherently selective—it deliberately normalizes out prosody, speaker identity, emotion, and acoustic context to recover canonical text.
+**Limitations of Prior Work**: This perceptual deficit persists across different model scales and architectures, indicating that the problem lies in the training methodology rather than model capacity. The vast majority of AudioLLMs utilize ASR as the core training signal. ASR is inherently selective; to recover canonical text, it deliberately normalizes prosody, speaker identity, emotion, and acoustic context.
 
-**Key Challenge**: ASR training creates a fundamental asymmetry—the model is continuously rewarded for reasoning about "what was said," while being implicitly punished for focusing on "how it was said" and "what other sounds exist." Perception is not under-trained; it is systematically de-emphasized.
+**Key Challenge**: ASR training creates a fundamental asymmetry. The model is continuously rewarded for reasoning about "what was said" while being implicitly penalized for attending to "how it was said" and "what other sounds exist." Perception is not undertrained; it is systematically de-emphasized.
 
-**Goal**: Design a training supervision format that explicitly preserves acoustic perception information without sacrificing semantic alignment.
+**Goal**: To design a training supervision format that explicitly preserves acoustic perception information without sacrificing semantic alignment.
 
-**Key Insight**: Starting from Laver's semiotic framework of speech signals, the audio signal is decomposed into three information layers: linguistic, paralinguistic, and extralinguistic.
+**Key Insight**: Drawing from Laver’s semiotic framework for speech signals, the audio signal is decomposed into three information layers: linguistic, paralinguistic, and extralinguistic.
 
-**Core Idea**: Use a structured JSON schema to explicitly encode the three information layers of audio as training targets, turning the "implicit discarding" of ASR into "explicit preservation."
+**Core Idea**: Use a structured JSON schema to explicitly encode the three information layers of audio as training targets, converting the "implicit discard" of ASR into "explicit retention."
 
 ## Method
 
 ### Overall Architecture
-UAS defines a three-layer JSON schema → an automated pipeline generates UAS annotations from existing ASR corpora → UAS data is inserted into standard multi-stage training workflows → The UAS-Audio model possesses both perception and reasoning capabilities.
+
+This paper addresses the "can transcribe but cannot hear" perception defect of AudioLLMs. The core idea is to modify the supervision format rather than the architecture. All information to be perceived from an audio clip is defined in a three-layer JSON schema (what was said / how it was said / other sounds). An automated pipeline then converts existing ASR corpora into UAS annotations and generates complementary QA data. Finally, this data is integrated into a standard multi-stage training process, forcing the model to retain acoustic details while learning transcription.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Existing ASR Corpora + Raw Audio"] --> P
+    SCHEMA["Unified Audio Schema (UAS)<br/>Transcription / Paralinguistics / Non-linguistic Events (3-layer JSON)"] -.Define Structure.-> P
+    subgraph P["Scalable UAS Generation Pipeline"]
+        direction TB
+        P1["Acoustic Description Model<br/>Generate Paralinguistics + Environment"] --> P2["LLM Synthesis<br/>Desc + Trans → Structured JSON"]
+        P2 --> P3["Multi-level Auto-verification<br/>Ontology / Integrity / Consistency / Alignment"]
+    end
+    P --> ANN["UAS Annotated Data<br/>What to perceive"]
+    ANN --> QA["UAS-QA Dataset<br/>Direct QA / MCQs / Binary, How to apply"]
+    ANN --> TRAIN
+    QA --> TRAIN
+    TRAIN["Multi-stage Training<br/>Alignment → Adaptation → SFT → GRPO"] --> OUT["UAS-Audio<br/>Perception-aware & Reasoning-capable"]
+```
 
 ### Key Designs
 
-1. **Unified Audio Schema Three-Layer Structure Definition**:
+**1. Unified Audio Schema: Explicitly Encoding Acoustic Information Discarded by ASR**
 
-    - **Function**: Explicitly encode acoustic information discarded during ASR training.
-    - **Mechanism**: **Transcription**: Verbatim text equivalent to ASR output. **Paralinguistics**: Six sub-fields—age, gender, emotion, accent, prosody, and timbre. **Non-linguistic Events**: Environmental descriptions, discrete sound events (e.g., door slam), and continuous background noise (e.g., engine roar). Transcription and paralinguistic fields are set to null for non-speech audio.
-    - **Design Motivation**: (1) Decoupled learning: Decomposes "holistic understanding" into explicit sub-tasks to prevent feature confusion; (2) Syntactic invariance: The JSON format provides a consistent low-entropy supervision target, easier to learn than unstructured descriptions; (3) Programmatic accessibility: Downstream applications can reliably extract acoustic attributes.
+The fundamental problem with ASR training is that it only rewards "canonical text recovery," leaving prosody, emotion, and environment sounds without a supervision anchor. UAS addresses this by assigning a fixed-structure JSON to each audio segment, splitting information into three layers: Transcription (verbatim text), Paralinguistics (six sub-fields: age, gender, emotion, accent, prosody, timbre), and Non-linguistic Events (environmental descriptions, discrete events like door slams, continuous background sounds). For purely non-speech audio, transcription and paralinguistic fields are set to null. This design decouples "holistic understanding" into explicit sub-tasks, prevents feature confusion, and provides a low-entropy target that is easier for models to learn stably than free-form text.
 
-2. **Scalable UAS Data Generation Pipeline**:
+**2. Scalable UAS Generation Pipeline: Zero-shot Conversion of ASR Corpora**
 
-    - **Function**: Automatically generate UAS labels from existing ASR corpora without manual annotation.
-    - **Mechanism**: Three stages—(1) Use acoustic description models to generate paralinguistic and environmental descriptions from raw audio; (2) Use an LLM to synthesize descriptions with original transcriptions into a structured UAS JSON; (3) Multi-level automated verification (ontology constraints, transcription integrity, logical consistency, duration-content alignment). Manual audits of 400 samples show accuracy $>95\%$ for most attributes.
-    - **Design Motivation**: Avoid expensive manual labeling, leveraging existing models to transform standard ASR datasets into perception-aware supervision.
+To make the schema viable, massive labeling is required, yet manual annotation for six paralinguistic dimensions is prohibitively expensive. The pipeline automates annotation in three steps: first, an acoustic description model generates paralinguistic and environmental descriptions from raw audio; second, an LLM synthesizes these with the original transcription into a structured UAS JSON; finally, a multi-level verification check ensures ontology constraints, transcription integrity, logical consistency, and duration-content alignment. Manual auditing of 400 samples showed over 95% accuracy for most attributes.
 
-3. **UAS-QA Supplementary Dataset**:
+**3. UAS-QA Supplemental Dataset: Teaching the Application of Acoustic Knowledge**
 
-    - **Function**: Train the model to utilize structured acoustic knowledge to answer downstream questions.
-    - **Mechanism**: Automatically generate three types of QA pairs based on UAS annotations: Direct QA (querying specific fields), Multiple Choice, and Yes/No questions. Covers all UAS fields.
-    - **Design Motivation**: UAS annotations teach the model "what to perceive," while UAS-QA teaches "how to apply this knowledge."
+If only schema annotations are provided, the model learns "what to perceive" but may not invoke this information when queried. UAS-QA automatically generates three types of question-answer pairs based on UAS annotations: Direct QA, Multiple Choice, and Yes/No questions. While annotations define "what to perceive," the QA pairs define "how to apply" it.
 
 ### Loss & Training
-Standard four stages: (1) Discrete token alignment (vocabulary expansion) → (2) Audio-LLM adaptation (freeze LLM and encoder, train projection layer only using UAS data) → (3) Full-parameter instruction fine-tuning (ASR/TTS + UAS + UAS-QA mixture) → (4) GRPO reinforcement.
+
+A standard four-stage workflow is followed, with UAS data injected in the middle stages: (1) Discrete token alignment (vocabulary expansion); (2) Audio-LLM adaptation, where the LLM and encoder are frozen while the projection layer is trained on UAS data; (3) Full-parameter SFT, mixing ASR/TTS + UAS + UAS-QA; (4) GRPO reinforcement learning.
 
 ## Key Experimental Results
 
 ### Main Results (MMSU / MMAR / MMAU Benchmarks)
 
-| Model | MMSU Perception | MMSU Reasoning | MMSU Overall | MMAR | MMAU | Avg. of 3 Benchmarks |
+| Model | MMSU Perception | MMSU Reasoning | MMSU Overall | MMAR | MMAU | Mean |
 |------|----------|----------|----------|------|------|-----------|
 | Qwen2.5-Omni | 42.0 | 70.0 | ~56 | 55.8 | 64.2 | ~58.7 |
 | Kimi-Audio | ~38 | ~68 | ~53 | 56.3 | 65.0 | ~58.1 |
 | Step-Audio2-mini | ~40 | ~69 | ~55 | 57.2 | 63.8 | ~58.7 |
-| **UAS-Audio** | **52.9** | **70.1** | **~61** | **60.1** | **65.2** | **~62.1** |
+| **UAS-Audio (Ours)** | **52.9** | **70.1** | **~61** | **60.1** | **65.2** | **~62.1** |
 
 ### Ablation Study
 
-| Configuration | MMSU Perception | MMSU Reasoning | Description |
+| Configuration | MMSU Perception | MMSU Reasoning | Note |
 |------|----------|----------|------|
-| W/O UAS (ASR only) | ~40 | ~70 | Weak perception, normal reasoning |
-| UAS Labels only | ~48 | ~69 | Partial perception gain |
-| UAS-QA only | ~45 | ~69 | QA alone is insufficient |
-| **UAS + UAS-QA** | **52.9** | **70.1** | Best performance, complementary |
+| w/o UAS (ASR only) | ~40 | ~70 | Weak perception but normal reasoning |
+| UAS Annotation Only | ~48 | ~69 | Partial perception gain |
+| UAS-QA Only | ~45 | ~69 | QA alone is insufficient |
+| **UAS + UAS-QA** | **52.9** | **70.1** | Best result through complementarity |
 
 ### Key Findings
-- **UAS-Audio achieves an absolute gain of approximately $11\%$ in MMSU Perception**, while fully maintaining reasoning performance.
+- **UAS-Audio achieves an ~11% absolute gain in MMSU perception** while fully maintaining reasoning performance.
 - **UAS is applicable to both continuous and discrete AudioLLM architectures**, proving the issue lies in supervision rather than architecture.
-- **UAS labels and UAS-QA provide complementary supervision**: labels teach "what to perceive," while QA teaches "how to use."
-- **Achieved SOTA on the MMAR reasoning benchmark ($60.1\%$)**, indicating perception enhancement does not harm reasoning.
-- **Data validation confirms high pipeline quality**: Manual audit of 400 samples shows $>95\%$ accuracy for most attributes.
+- **UAS annotations and UAS-QA provide complementary supervision**: annotations teach "what to perceive," while QA teaches "how to use" it.
+- **SOTA performance on the MMAR reasoning benchmark (60.1%)** demonstrates that perception enhancement does not impair reasoning.
+- **High-quality pipeline validation**: Manual auditing confirms >95% accuracy for most attributes.
 
 ## Highlights & Insights
-- **Diagnosing the root cause of AudioLLM perception weakness** as "systematic de-emphasis" rather than "under-training" in ASR-centric training—this insight is more valuable than the method itself, providing direction for the field.
-- **Using a JSON structured schema as a training target** can be generalized to any multi-dimensional perception task—decomposing implicit "holistic understanding" into explicit structured sub-tasks.
-- **The pipeline requires no additional manual annotation**, making the method highly scalable and capable of transforming any ASR dataset into perception-enhanced data.
+- **The diagnosis of the fundamental cause**—that AudioLLM perception weakness is due to "systematic de-emphasis" in ASR-centric training rather than "under-training"—is a vital insight that points the way for the field.
+- **The use of a structured JSON schema as a training target** can be generalized to any multi-dimensional perception task by decomposing implicit holistic understanding into explicit structured sub-tasks.
+- **The pipeline requires no additional manual labeling**, making the approach highly scalable as it can convert any ASR dataset into perception-enhanced data.
 
 ## Limitations & Future Work
-- The six paralinguistic sub-fields of UAS are hand-defined and may miss important dimensions (e.g., breathing patterns, speaking rate variation).
-- The pipeline depends on the quality of acoustic description models and may degrade in low-resource languages.
-- Validated only at the 7B scale; performance on larger or smaller models remains to be confirmed.
-- Detection accuracy for non-linguistic events may decrease in complex acoustic scenarios.
-- Could explore allowing the model to automatically decide whether to output UAS instead of always generating it.
+- The six paralinguistic sub-fields are manually defined and might miss dimensions like breathing patterns or speech rate variance.
+- The pipeline reliability depends on the quality of the acoustic description models and may degrade in low-resource languages.
+- Validated only at the 7B scale; effects on larger/smaller models remain to be confirmed.
+- Detection accuracy for non-linguistic events might decrease in complex acoustic scenarios.
+- Future work could explore allowing the model to decide when to output UAS instead of always generating it.
 
 ## Related Work & Insights
-- **vs Qwen2.5-Omni**: Qwen2.5-Omni is a multimodal model but still ASR-centric in training, leading to weak perception. UAS solves this by changing the supervision method.
-- **vs Caption-based methods**: Unstructured descriptions have high-entropy variability (the same sound can be described in many ways); the JSON format of UAS provides a low-entropy, consistent target.
-- **vs Specialized Perception Models**: Specialized models for emotion or speaker recognition are accurate but narrow. UAS achieves all-dimensional perception within a unified model.
+- **vs Qwen2.5-Omni**: While a multimodal model, it remains ASR-centric in training and is perception-weak. UAS fixes this by changing the supervision method.
+- **vs Caption-based methods**: Unstructured descriptions have high-entropy variability. The UAS JSON format provides low-entropy, consistent targets.
+- **vs Specialized perception models**: Specialized models for emotion or speaker ID are precise but narrow. UAS achieves multi-dimensional perception within a unified model.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The core insight (ASR-centric training suppresses perception) is more innovative than the method itself.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three major benchmarks + ablations + manual validation, validated across architectures.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem diagnosis, solid theoretical foundation (Laver framework).
-- Value: ⭐⭐⭐⭐⭐ Identifies a directional issue and solution path for the AudioLLM field.
+- Novelty: ⭐⭐⭐⭐ The diagnosis (ASR-centricity) is more innovative than the method itself.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three major benchmarks + ablation + manual validation across architectures.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem diagnosis and solid theoretical foundation (Laver’s framework).
+- Value: ⭐⭐⭐⭐⭐ Provides a clear direction and solution path for the AudioLLM field.
 
 <!-- RELATED:START -->
 
@@ -125,10 +136,10 @@ Standard four stages: (1) Discrete token alignment (vocabulary expansion) → (2
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Transcripts: A Renewed Perspective on Audio Chaptering](beyond_transcripts_a_renewed_perspective_on_audio_chaptering.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](../../CVPR2026/audio_speech/have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[ACL 2026\] Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception](speech-hands_a_self-reflection_voice_agentic_approach_to_speech_recognition_and_.md)
-- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-mixed Synthesis](univocal_unified_speech-singing_code-switching_synthesis.md)
-- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
-- [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](../../ICML2026/audio_speech/two-dimensional_quantization_for_geometry-aware_audio_coding.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](../../CVPR2026/audio_speech/omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
 
 </div>
 

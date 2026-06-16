@@ -2,141 +2,150 @@
 title: >-
   [Paper Note] Distilling Balanced Knowledge from a Biased Teacher
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] To address the head-class bias of teacher models in knowledge distillation under long-tailed distributions…
+  [CVPR 2026][Model Compression][Knowledge Distillation] To address the issue of teacher models skewing toward head classes in knowledge distillation under long-tail distributions, this paper decomposes the traditional KL divergence loss into cross-group and within-group components. By rebalancing the cross-group loss to calibrate group-level predictions and reweighting the
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "Knowledge Distillation"
-  - "Long-Tail Distribution"
-  - "KL Divergence Decomposition"
-  - "Class Imbalance"
+  - CVPR 2026
+  - Model Compression
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 58d6f4958889e2fc
+content_hash: 0c8dc11fe31675b1
 ---
-
 # Distilling Balanced Knowledge from a Biased Teacher
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2506.18496](https://arxiv.org/abs/2506.18496)  
-**Code**: N/A  
-**Area**: Model Compression
-**Keywords**: Knowledge Distillation, Long-Tail Distribution, Model Compression, KL Divergence Decomposition, Class Imbalance
+**Code**: None  
+**Area**: Model Compression  
+**Keywords**: Knowledge Distillation, Long-tail Distribution, Model Compression, KL Divergence Decomposition, Class Imbalance
 
 ## TL;DR
 
-To address the head-class bias of teacher models in knowledge distillation under long-tailed distributions, this paper decomposes the conventional KL divergence loss into a cross-group component and a within-group component. By rebalancing the cross-group loss to calibrate the teacher's group-level predictions and reweighting the within-group loss to ensure equal contribution across groups, the proposed method consistently outperforms existing approaches on CIFAR-100-LT, TinyImageNet-LT, and ImageNet-LT — and even surpasses the teacher model itself.
+To address the issue of teacher models skewing toward head classes in knowledge distillation under long-tail distributions, this paper decomposes the traditional KL divergence loss into cross-group and within-group components. By rebalancing the cross-group loss to calibrate group-level predictions and reweighting the within-group loss to ensure equal contributions, the proposed method outperforms existing techniques on CIFAR-100-LT/TinyImageNet-LT/ImageNet-LT, even exceeding the teacher model's own performance.
 
 ## Background & Motivation
 
-Knowledge distillation (KD) is a standard technique for transferring knowledge from a large teacher model to a lightweight student model. Conventional KD methods **implicitly assume that training data are class-balanced**.
+Knowledge Distillation (KD) is a standard technique for transferring knowledge from large teacher models to lightweight student models. Traditional KD methods **implicitly assume that training data is class-balanced**.
 
-In practice, however, real-world data typically follow a **long-tailed distribution**: head classes are abundant while tail classes are scarce. Teacher models trained under such distributions exhibit severe head-class bias. Directly applying standard KD to have the student mimic a biased teacher is not only ineffective but potentially harmful — the student inherits the bias and performs even worse on tail classes.
+However, real-world data often follows a **long-tail distribution**: head classes are data-rich, while tail classes are data-scarce. Teacher models trained on such distributions exhibit severe head-class bias. Directly applying standard KD forces students to mimic biased teachers, which is not only ineffective but harmful: students inherit the bias and perform worse on tail classes.
 
-The key question is: **Can balanced knowledge be distilled from a biased teacher?**
+**Core Problem**: Can balanced knowledge be distilled from a biased teacher?
 
-- **Key Insight**: The KL divergence loss is mathematically decomposed into cross-group and within-group components. Each component is shown to be affected differently by teacher bias — the cross-group term inflates head-class probabilities, while the weighting mechanism of the within-group term allows head groups to dominate the gradients.
-- **Core Idea**: **Rather than modifying the teacher model, the bias introduced by the teacher is corrected directly within the distillation objective.**
+**Key Insight**: By mathematically decomposing the KL divergence loss into cross-group and within-group components, it is observed that both are differently affected by teacher bias—the cross-group term leads to overestimating head probabilities, while the within-group weighting mechanism allows the head group to dominate the gradient.
+
+**Core Idea**: Instead of modifying the teacher model, **correct the impact of teacher bias within the distillation objective function**.
 
 ## Method
 
 ### Overall Architecture
 
-LTKD partitions classes into three groups: Head (33%), Medium (34%), and Tail (33%). The standard KL divergence KD loss is decomposed into a cross-group loss and a within-group loss, each subject to rebalancing and reweighting corrections, respectively. The final loss is the sum of the rebalanced cross-group KL and equally weighted within-group KL terms.
+This paper addresses the problem where a teacher trained on long-tailed data biases toward head classes, causing the student to inherit this bias via standard KD. LTKD decomposes the distillation objective without altering the teacher. It first ranks classes into three groups based on sample count—Head, Medium, and Tail (approx. 33%/34%/33%). It then decomposes the standard KL divergence loss into "cross-group" and "within-group" parts: the former manages probability allocation between the three groups, while the latter manages allocation within each group. After identifying how bias affects each part, the method rebalances the cross-group term and reweights the within-group term, combining the corrected cross-group KL and the equally-weighted within-group KL into a new distillation loss.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Biased Teacher + Student<br/>(Trained on Long-Tailed Data)"] --> B
+    subgraph DEC["Cross-group & Within-group KL Decomposition"]
+        direction TB
+        B["Grouping by sample count<br/>Head / Medium / Tail"] --> C["Precise decomposition of standard KD KL loss"]
+        C --> D["Cross-group KL: Inter-group probability"]
+        C --> E["Within-group KL: Intra-group probability"]
+    end
+    D --> F["Rebalanced Cross-Group Loss<br/>Scaling to align with uniform distribution"]
+    E --> G["Reweighted Within-Group Loss<br/>Unified weights for equal contribution"]
+    F --> H["LTKD Distillation Loss<br/>Corrected Cross-group KL + Equal Within-group KL"]
+    G --> H
+    H --> I["+ Cross Entropy → Train Student"]
+```
 
 ### Key Designs
 
-1. **Cross-Group and Within-Group Decomposition of KL Divergence**
+**1. Cross-group and Within-group KL Decomposition: Separating bias propagation paths**
 
-    - **Function**: Reveals the failure mechanism of standard KD under long-tailed settings.
-    - **Mechanism**: Group-level probability $p_\mathcal{G} = \sum_{i \in \mathcal{G}} p_i$ and within-group probability $\tilde{p}_{\mathcal{G}_i} = p_i / p_\mathcal{G}$ are defined. Using the identity $p_i = p_\mathcal{G} \cdot \tilde{p}_{\mathcal{G}_i}$, the KL divergence is exactly decomposed into a cross-group KL term plus a sum of within-group KL terms weighted by the teacher's cross-group probabilities.
-    - **Design Motivation**: This is a mathematical identity that introduces no approximation error, yet separates two distinct pathways through which bias manifests.
+Standard KD loss is the KL divergence between the overall probability distributions of the teacher and student, where bias is entangled. Using a mathematical identity, it is decomposed: defining cross-group probability for group $\mathcal{G}$ as $p_\mathcal{G} = \sum_{i \in \mathcal{G}} p_i$ and the within-group conditional probability as $\tilde{p}_{\mathcal{G}_i} = p_i / p_\mathcal{G}$, any class probability is $p_i = p_\mathcal{G} \cdot \tilde{p}_{\mathcal{G}_i}$. Substituting this into the KL divergence decomposes the total loss into the "Cross-group KL" plus the "sum of each group's within-group KL weighted by the teacher's cross-group probability $p_\mathcal{G}^{T}$." This exact decomposition separates two bias effects: first, the cross-group term overestimates the head group's overall probability; second, the weighting coefficient $p_\mathcal{G}^{T}$ causes the head group to dominate gradients.
 
-2. **Rebalanced Cross-Group Loss**
+**2. Rebalanced Cross-Group Loss: Pulling the skewed group distribution back to uniform**
 
-    - **Function**: Calibrates the teacher's skewed group-level probability distribution.
-    - **Mechanism**: Within each batch, the teacher's group-level probability sums are aggregated, and scaling factors are computed to align all three groups toward a uniform distribution. Per-sample probabilities are scaled and renormalized to maintain valid probability distributions.
-    - **Design Motivation**: Empirical observation shows that a biased teacher outputs approximately uniform predictions $[22.54, 20.76, 20.70]$ on balanced data, but skewed predictions $[27.88, 19.28, 16.83]$ on long-tailed data.
+The cross-group term suffers from the teacher overestimating head group probabilities. Empirical evidence shows that a biased teacher fed with balanced data yields nearly uniform average group probabilities, but long-tailed data skews this significantly. Since this skew is a systematic shift caused by data distribution, the method calculates scaling factors per batch to align the teacher's group probabilities with a uniform distribution, then applies this scaling to sample probabilities and re-normalizes them. This ensures the student learns a "group-equivalent" goal rather than the teacher's head-heavy version.
 
-3. **Reweighted Within-Group Loss**
+**3. Reweighted Within-Group Loss: Ensuring equal contributions from all groups**
 
-    - **Function**: Eliminates imbalanced weighting of within-group KL divergence terms.
-    - **Mechanism**: Unequal weights (i.e., the teacher's cross-group probabilities) are replaced by a uniform constant, ensuring each group contributes equally to the total loss.
-    - **Design Motivation**: Prevents head groups from dominating gradient flow, enabling tail groups to receive sufficient supervision signals.
+The within-group term's issue lies in the weighting coefficient: each group's KL is multiplied by the teacher's cross-group probability $p_\mathcal{G}^{T}$, which is naturally higher for the head group. Consequently, tail group supervision is diminished. The correction is straightforward: replace the unequal weights with a uniform constant, allowing within-group KLs from all three groups to be summed with equal weight. This ensures the fine-grained distinctions within tail classes (the useful "dark knowledge") are not drowned out by the head group.
 
 ### Loss & Training
 
-- **Total Loss**: Cross-entropy + temperature-scaled LTKD loss (with hyperparameters $\alpha$ and $\beta$ balancing the cross-group and within-group terms).
-- **Class Partitioning**: Classes are sorted by sample count; the top 33% form the Head group, the next 34% the Medium group, and the bottom 33% the Tail group.
-- **Imbalance Factors**: $\{10, 20, 100\}$ for CIFAR-100-LT and TinyImageNet-LT; $\{5, 10, 20\}$ for ImageNet-LT.
-- **Test sets remain class-balanced.**
+- Total loss: Cross Entropy + temperature-scaled LTKD loss, the latter using hyperparameters $\alpha$ and $\beta$ to balance cross-group and within-group terms.
+- Class grouping: Sorted by sample count; top 33% labeled Head, next 34% Medium, bottom 33% Tail.
+- Imbalance factors: {10, 20, 100} for CIFAR-100-LT and TinyImageNet-LT; {5, 10, 20} for ImageNet-LT.
+- Test set remains balanced to avoid evaluation bias.
 
 ## Key Experimental Results
 
-### Main Results: CIFAR-100-LT ($\gamma=100$, Most Extreme Imbalance)
+### Main Results: CIFAR-100-LT (gamma=100, extreme imbalance)
 
-| Teacher → Student | Method | Tail Accuracy (%) | Overall Accuracy (%) |
-|---|---|---|---|
-| ResNet32x4 → ResNet8x4 | DKD | 13.25 | 46.11 |
+| Teacher to Student | Method | Tail Accuracy (%) | Overall Accuracy (%) |
+|-------------------|------|-----------------|---------------------|
+| ResNet32x4 to ResNet8x4 | DKD | 13.25 | 46.11 |
 | | ReviewKD | 15.09 | 45.91 |
-| | **LTKD** | **27.21** | **51.08** |
+| | **Ours** | **27.21** | **51.08** |
 | | Gain | **+12.12** | **+4.97** |
-| ResNet50 → MobileNetV2 | DKD | 12.45 | 39.21 |
-| | **LTKD** | **21.04** | **42.45** |
+| ResNet50 to MobileNetV2 | DKD | 12.45 | 39.21 |
+| | **Ours** | **21.04** | **42.45** |
 | | Gain | **+8.59** | **+3.24** |
 
 ### Ablation Study
 
-| Configuration | Tail (%) | All (%) | Note |
-|---|---|---|---|
+| Configuration | Tail (%) | All (%) | Description |
+|------|----------|---------|------|
 | Standard KD | 13.38 | 42.48 | Inherits teacher bias |
-| Cross-group rebalancing only | ~20 | ~48 | Effective for group-level calibration |
-| Within-group reweighting only | ~18 | ~47 | Effective for gradient balancing |
-| LTKD (both components) | 27.21 | 51.08 | Significant synergistic effect |
+| Cross-group rebalancing only | ~20 | ~48 | Effective group calibration |
+| Within-group reweighting only | ~18 | ~47 | Effective gradient balancing |
+| **LTKD** (Combination) | 27.21 | 51.08 | Significant synergy |
 
 ### Key Findings
 
-- **LTKD surpasses the teacher itself in nearly all settings**: at $\gamma=100$, the teacher achieves only 15.28% Tail accuracy, while the student reaches 27.21%.
-- The method remains effective across heterogeneous architecture pairs (WRN-40-2 → ShuffleNetV1, ResNet50 → MobileNetV2).
-- The advantage grows with greater imbalance: Tail accuracy improves by +12.12% at $\gamma=100$ and +6.58% at $\gamma=10$.
-- DKD's target/non-target decomposition yields only marginal improvements under long-tailed settings.
+- **Ours exceeds the teacher's own performance in nearly all settings**: At gamma=100, the teacher's Tail accuracy is only 15.28%, while the student reaches 27.21%.
+- Effective across heterogeneous architecture pairs (e.g., WRN-40-2 to ShuffleNetV1, ResNet50 to MobileNetV2).
+- Advantage grows with imbalance: Tail Gain is +12.12% at gamma=100 and +6.58% at gamma=10.
+- DKD's target/non-target decomposition offers limited improvement in long-tailed scenarios.
 
 ## Highlights & Insights
 
-- **Math-decomposition-driven design**: The method first uses exact mathematical identities to expose the root cause of failure, then applies targeted corrections accordingly.
-- **Counter-intuitive "student outperforms teacher" results**: The teacher's dark knowledge contains useful information that is obscured by bias.
-- **Minimal design with substantial gains**: Only the loss function is modified — no architectural changes, no additional modules, and no data augmentation strategies.
+- **Mathematically-driven design**: Problems are revealed via exact mathematical identities before targeted corrections are designed.
+- **Counter-intuitive "Student > Teacher" result**: Teacher's dark knowledge contains useful information previously masked by bias.
+- **Minimalist yet effective**: Modifies only the loss function without changing architecture, adding modules, or requiring data augmentation.
 
 ## Limitations & Future Work
 
-- The three-group partition is fixed (33% each); adaptive grouping may yield further improvements.
-- Validation is limited to CNN architectures; ViT and larger-scale models remain untested.
-- The rebalancing factors are estimated from batch statistics, which may be unstable under small batch sizes.
-- No combination experiments with long-tail debiasing strategies such as logit adjustment are reported.
+- Fixed grouping (33% each); adaptive grouping might be superior.
+- Validated primarily on CNNs; ViT or larger models remain untested.
+- Rebalancing factors based on batch statistics may be unstable with small batch sizes.
+- Not compared in combination with other de-biasing strategies like logit adjustment.
 
 ## Related Work & Insights
 
-- DKD's target/non-target decomposition served as one source of inspiration, though the decomposition dimension differs.
-- Logit adjustment performs calibration at inference time, whereas LTKD calibrates the teacher distribution during training; the two approaches may be complementary.
-- The grouping-and-reweighting paradigm is generalizable to any scenario in which the teacher exhibits systematic bias.
+- DKD's target/non-target decomposition served as inspiration, though the decomposition dimension differs.
+- While logit adjustment calibrates during inference, LTKD calibrates the teacher distribution during training; they may be complementary.
+- The grouping and reweighting approach can be generalized to any scenario where the teacher has systematic bias.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The KL decomposition perspective is novel; the loss correction strategy, though simple, is mathematically grounded.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 3 datasets × 3 imbalance factors × 4 architecture pairs.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical chain is complete and the mathematical derivations are clear.
-- **Value**: ⭐⭐⭐⭐ Addresses a key pain point of KD in realistic imbalanced settings; the method is simple and directly applicable.
+- Novelty: ⭐⭐⭐⭐ The KL decomposition perspective is novel, and correction strategies are mathematically grounded.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 datasets x 3 imbalance levels x 4 architecture pairs.
+- Writing Quality: ⭐⭐⭐⭐⭐ Complete logical chain with clear mathematical derivations.
+- Value: ⭐⭐⭐⭐ Addresses a practical pain point in KD for real-world imbalanced scenarios with a simple, deployable method.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
+- [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
+- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](../../AAAI2026/model_compression/distilling_cross-modal_knowledge_via_feature_disentanglement.md)
-- [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](../../NeurIPS2025/model_compression/single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
-- [\[ACL 2026\] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../../ACL2026/model_compression/find_your_optimal_teacher_personalized_data_synthesis_via_router-guided_multi-te.md)
-- [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](../../ICLR2026/model_compression/efficient_reasoning_with_balanced_thinking.md)
+- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
 
 </div>
 

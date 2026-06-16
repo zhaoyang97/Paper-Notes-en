@@ -2,64 +2,56 @@
 title: >-
   [Paper Note] Elastic Weight Consolidation Done Right for Continual Learning
 description: >-
-  [CVPR 2026][Model Compression][Continual Learning] This paper systematically analyzes the fundamental flaws in EWC and its variants regarding weight importance estimation from a gradient perspective—specifically…
+  [CVPR 2026][Model Compression][Paper Note] This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation,
 tags:
-  - "CVPR 2026"
-  - "Model Compression"
-  - "Continual Learning"
-  - "Catastrophic Forgetting"
-  - "Elastic Weight Consolidation"
-  - "Fisher Information Matrix"
-  - "Weight Regularization"
+  - CVPR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 813e0a6f0fc2c59f
+content_hash: 8968738d9f6bbebe
 ---
-
 # Elastic Weight Consolidation Done Right for Continual Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.18596](https://arxiv.org/abs/2603.18596)  
 **Code**: [https://github.com/scarlet0703/EWC-DR](https://github.com/scarlet0703/EWC-DR)  
-**Area**: LLM Safety
+**Area**: LLM Safety  
 **Keywords**: Continual Learning, Catastrophic Forgetting, Elastic Weight Consolidation, Fisher Information Matrix, Weight Regularization
 
 ## TL;DR
-This paper systematically analyzes the fundamental flaws in EWC and its variants regarding weight importance estimation from a gradient perspective—specifically, gradient vanishing in EWC and redundant protection in MAS—and proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix computation, achieving substantial improvements over vanilla EWC and all its variants on exemplar-free class-incremental learning and multimodal continual instruction tuning tasks.
+This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation, significantly outperforming the original EWC and its variants in exemplar-free class-incremental learning and multimodal continual instruction tuning tasks.
 
 ## Background & Motivation
-Continual Learning requires models to sequentially learn multiple tasks, but neural networks catastrophically forget previously acquired knowledge when learning new tasks. One mainstream approach to address this is weight regularization: estimating the importance of each parameter to old tasks and penalizing modifications to important parameters during new task training.
+Continual learning requires models to learn multiple tasks sequentially, but neural networks suffer from catastrophic forgetting of old task knowledge when learning new ones. A mainstream solution is weight regularization: estimating the importance of each parameter for old tasks and penalizing modifications to important parameters during new task training.
 
-EWC (Elastic Weight Consolidation) is the foundational work in this family, estimating parameter importance via the Fisher Information Matrix (FIM), and has been widely applied to image classification, instruction tuning, object detection, and other scenarios. However, EWC has consistently underperformed in practice, and while several studies have noted inaccuracies in its FIM approximation, **no prior work has fundamentally analyzed the true cause of EWC's poor performance**.
+EWC (Elastic Weight Consolidation) is a foundational method in this category, using the Fisher Information Matrix (FIM) to estimate parameter importance. It is widely used in image classification, instruction tuning, and object detection. However, EWC consistently performs poorly in actual experiments. While studies have noted that its FIM approximation is inaccurate, **none have fundamentally analyzed the true reason for EWC's poor performance**.
 
-The core insight of this paper is that EWC's problems go beyond "inaccurate FIM approximation"—there are two structural defects: **gradient vanishing** causes important parameters to be underestimated, and **redundant protection** introduced by variants such as MAS leads to over-constraining irrelevant parameters. The proposed fix—Logits Reversal—requires only negating the logits during FIM computation to simultaneously address both issues.
+The core insight of this paper is that EWC's problem is not just "inaccurate FIM approximation" but the existence of two structural defects: **Gradient Vanishing**, which leads to underestimating important parameters, and **Redundant Protection** introduced by variants like MAS, which leads to over-constraining irrelevant parameters. The proposed fix—Logits Reversal—simply negates the logits during FIM calculation to resolve both issues simultaneously.
 
 ## Method
 
 ### Overall Architecture
-EWC-DR follows the standard EWC learning pipeline: after training on task $t-1$, a parameter importance matrix $\Omega^{t-1}$ is computed from the training data, and a regularization loss $\mathcal{L}_{reg} = \frac{\lambda}{2} \sum_i \Omega_i^{t-1}(\theta_i^{t-1} - \theta_i^t)^2$ is added when learning new task $t$. The contribution of this paper lies solely in **how $\Omega$ is computed**.
+EWC-DR follows the standard EWC learning workflow: after training task $t-1$, the parameter importance matrix $\Omega^{t-1}$ is calculated using training data. When learning new task $t$, a regularization loss is added: $\mathcal{L}_{reg} = \frac{\lambda}{2} \sum_i \Omega_i^{t-1}(\theta_i^{t-1} - \theta_i^t)^2$. The improvement in this paper lies solely in **how to calculate $\Omega$**.
 
 ### Key Designs
 
-1. **Gradient Vanishing Analysis (Core Defect of EWC)**:
+**1. Gradient Vanishing Analysis: Revealing why EWC systematically underestimates parameter importance**
 
-    - Function: Analyze why FIM values are underestimated in EWC.
-    - Mechanism: EWC computes the FIM based on squared gradients of the cross-entropy loss. For FC layer weight $w_k$, the importance is $\Omega_{w_k}^{EWC} = \mathbb{E}[(p_k - y_k)^2 \cdot (\frac{\partial z_k}{\partial w_k})^2]$. When the model's predicted probability for the correct class $c$ approaches $p_c \to 1$, $(p_c - 1) \to 0$, causing the corresponding gradient to approach zero; meanwhile, $p_k \to 0$ for other classes, and their gradients vanish as well.
-    - Design Motivation: Models typically exhibit high confidence on training samples at the end of training—precisely when the FIM is computed. Consequently, EWC systematically underestimates the importance of all parameters and fails to effectively retain old task knowledge.
+EWC's FIM is derived from the square of the gradient of the cross-entropy loss with respect to parameters. For a fully connected layer weight $w_k$, it is expanded as $\Omega_{w_k}^{EWC} = \mathbb{E}[(p_k - y_k)^2 \cdot (\frac{\partial z_k}{\partial w_k})^2]$. The issue arises from the $(p_k - y_k)^2$ factor: as training nears convergence, the model is usually confident, so the predicted probability for the correct class $c$ is $p_c \to 1$, leading to $(p_c - 1) \to 0$. For other classes, $p_k \to 0$ and $y_k=0$, causing the difference to also approach zero. This collapse at both ends means the better a model is trained, the closer the calculated FIM is to zero. Since EWC estimates importance right at the end of task training, the importance of all parameters is suppressed, making the regularization term ineffective and failing to preserve old knowledge. This explains why EWC has long performed poorly in practice—it is not that the FIM approximation is coarse, but that it vanishes exactly when it is most needed.
 
-2. **Redundant Protection Analysis (Core Defect of MAS)**:
+**2. Redundant Protection Analysis: Pointing out that the MAS "patch" introduces another bias**
 
-    - Function: Analyze why MAS over-protects irrelevant parameters.
-    - Mechanism: MAS uses an $\ell_2$ norm loss in place of cross-entropy, with importance $\Omega_{w_k}^{MAS} = \frac{|z_k|}{\|\mathbf{z}\|_2} \cdot |\frac{\partial z_k}{\partial w_k}|$. Since logits are unbounded, a large negative logit $z_k$ (corresponding to a very low predicted probability) can produce a high importance score.
-    - Design Motivation: These extreme negative logits have negligible influence on the output probabilities. Protecting the corresponding parameters is unnecessary and instead limits the model's plasticity for learning new tasks.
+MAS attempts to bypass gradient vanishing by using the $\ell_2$ norm of the output instead of cross-entropy, making the importance $\Omega_{w_k}^{MAS} = \frac{|z_k|}{\|\mathbf{z}\|_2} \cdot |\frac{\partial z_k}{\partial w_k}|$. While this avoids dependence on the collapsing $(p_k-y_k)$, it introduces a new problem: logits are unbounded. A negative logit with a large absolute value (corresponding to a category with extremely low predicted probability) will receive a high importance score due to the magnitude of $|z_k|$. However, such extreme negative logits contribute almost nothing to the final softmax probability. Protecting them is meaningless for avoiding forgetting and unnecessarily freezes parameters that could be used for learning new tasks, weakening model plasticity. Thus, MAS shifts from "protecting nothing" to "protecting the wrong things."
 
-3. **Logits Reversal (Core Method of This Paper)**:
+**3. Logits Reversal: A single reversal to eliminate both pathologies**
 
-    - Function: Negate the logits $z_k$ to $\tilde{z}_k = -z_k$ during FIM computation.
-    - Mechanism: The softmax output after negation is $\tilde{p}_k = \frac{e^{-z_k}}{\sum_j e^{-z_j}}$, and the resulting importance becomes $\Omega_{w_k}^{LR} = \mathbb{E}[(y_k - \tilde{p}_k)^2 \cdot (\frac{\partial \tilde{z}_k}{\partial w_k})^2]$. The key property is $\frac{\partial \tilde{p}_k}{\partial z_k} < 0$: when $z_c$ increases (high-confidence correct prediction), $\tilde{p}_c$ decreases and $(1 - \tilde{p}_c)$ increases, thereby **amplifying the importance of the correct class**.
-    - Design Motivation: LR simultaneously resolves both issues—(1) gradients no longer vanish under high-confidence predictions, allowing the FIM to accurately reflect parameter importance; (2) $\tilde{p}_k$ remains small for incorrect classes, producing no redundant protection signal. The entire modification requires only a single line of code change.
+The proposed fix is surprisingly simple: when calculating the FIM, the logits are negated $\tilde{z}_k = -z_k$ before proceeding with softmax and cross-entropy. The resulting output is $\tilde{p}_k = \frac{e^{-z_k}}{\sum_j e^{-z_j}}$, and the importance becomes
+
+$$\Omega_{w_k}^{LR} = \mathbb{E}\big[(y_k - \tilde{p}_k)^2 \cdot (\tfrac{\partial \tilde{z}_k}{\partial w_k})^2\big].$$
+
+The key is that $\frac{\partial \tilde{p}_k}{\partial z_k} < 0$: the more confident the model was originally (larger $z_c$), the smaller the reversed $\tilde{p}_c$ becomes, making $(1-\tilde{p}_c)$ larger. Consequently, the importance of the correct class is amplified rather than flattened—solving the gradient vanishing problem. Simultaneously, for incorrect classes, the reversed $\tilde{p}_k$ is very small, which prevents inflating the importance of extreme negative logits as in MAS, thus eliminating redundant protection. This single line of code shift focuses the FIM's highlights back onto the parameters that truly determine correct predictions.
 
 ### Loss & Training
-The training loss retains the standard EWC form: $\mathcal{L}_{total} = \mathcal{L}_{CE} + \frac{\lambda}{2} \sum_i \Omega_i^{LR}(\theta_i^{t-1} - \theta_i^t)^2$. The only change is the computation of $\Omega$.
+The training loss maintains the standard EWC form: $\mathcal{L}_{total} = \mathcal{L}_{CE} + \frac{\lambda}{2} \sum_i \Omega_i^{LR}(\theta_i^{t-1} - \theta_i^t)^2$. The only modification is the calculation of $\Omega$.
 
 ## Key Experimental Results
 
@@ -72,43 +64,43 @@ The training loss retains the standard EWC form: $\mathcal{L}_{total} = \mathcal
 | ImageNet-Sub | Big-start T=5 | $A_{last}$ | 11.44 | 23.56 | 21.06 | **66.18** | +54.74 |
 | ImageNet-Sub | Big-start T=5 | $A_{avg}$ | 26.57 | 46.68 | 42.59 | **76.00** | +49.43 |
 | Tiny-ImageNet | Big-start T=5 | $A_{last}$ | 9.74 | 27.02 | 25.53 | **38.24** | +28.50 |
-| MCIT (after VCR) | Incremental Acc $A_t$ | — | 42.99 | — | — | **52.59** | +9.60 |
+| MCIT (After VCR) | Incr. Acc. $A_t$ | — | 42.99 | — | — | **52.59** | +9.60 |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| EWC (original FIM) | FC layer importance matrix nearly all black | Gradient vanishing causes extremely low importance across all classes |
-| MAS ($\ell_2$ norm) | Both GT and non-GT classes highlighted | Redundant protection on class 0 and class 4 |
-| EWC-DR (LR) | Only GT class (class 2) highlighted | Selective and discriminative importance estimation |
-| MCIT: EWC forgetting rate | NLVR2 task 90.66% | Severe catastrophic forgetting |
-| MCIT: EWC-DR forgetting rate | NLVR2 task 27.48% | Forgetting substantially reduced, plasticity preserved |
+| EWC (Original FIM) | FC Importance Matrix almost black | Gradient vanishing leads to extremely low importance for all classes |
+| MAS (ℓ2 norm) | Highlighting both GT and non-GT classes | Produces redundant protection for class 0 and class 4 |
+| EWC-DR (LR) | Highlighting only GT class (class 2) | Selective and discriminative importance estimation |
+| MCIT: EWC Forgetting Rate | 90.66% on NLVR2 task | Severe catastrophic forgetting |
+| MCIT: EWC-DR Forgetting Rate | 27.48% on NLVR2 task | Forgetting significantly reduced while maintaining plasticity |
 
 ### Key Findings
-- EWC-DR achieves the best results across all 18 EFCIL settings, with maximum gains of $A_{last}$ +53.18% and $A_{avg}$ +55.47%.
-- Critical Difference (CD) analysis confirms that EWC-DR's improvements are statistically significant (CD=1.438, significance level 0.05).
-- In multimodal continual instruction tuning, EWC-DR substantially reduces forgetting without compromising new task learning capability.
+- EWC-DR achieves the best results across all 18 EFCIL settings, with a maximum gain of +53.18% in $A_{last}$ and +55.47% in $A_{avg}$.
+- Critical Difference (CD) analysis confirms that the improvement of EWC-DR is statistically significant (CD=1.438 at 0.05 significance).
+- In multimodal continual instruction tuning, EWC-DR significantly reduces forgetting rates without sacrificing the ability to learn new tasks.
 
 ## Highlights & Insights
-- The analytical framework is particularly elegant: EWC family defects are examined uniformly from a gradient perspective, uncovering two fundamental issues previously overlooked.
-- The fix is remarkably concise: a single line of code (negating logits) yields substantial performance gains, embodying the principle that "identifying the right problem matters more than engineering complex solutions."
-- The visualization of importance matrices is highly intuitive: EWC produces near-zero maps, MAS over-highlights, and EWC-DR focuses precisely—making the differences immediately apparent.
+- Extremely elegant analytical framework: Unified examination of EWC family defects from a gradient perspective reveals two previously overlooked fundamental issues.
+- Minimally invasive solution: Significant performance gains achieved with just one line of code (negating logits), demonstrating that identifying the correct problem is more important than designing complex solutions.
+- Intuitive visualization: Visual analysis of the importance matrices shows EWC as all black, MAS as over-highlighted, and EWC-DR as precisely focused.
 
 ## Limitations & Future Work
-- The theoretical analysis focuses on FC layer weights; the effect on intermediate layer parameters is mediated indirectly through backpropagation, without direct analysis.
-- Comparisons are limited to the EWC family (EWC, Online EWC, SI, MAS), without systematic comparison against other CL paradigms such as knowledge distillation or architectural expansion.
-- The theoretical optimality of Logits Reversal is not rigorously proven, and superior logit transformations may exist.
+- Theoretical analysis focuses on FC layer weights; the impact on intermediate layer parameters is only handled indirectly via backpropagation and lacks direct analysis.
+- Comparison is limited to the EWC family (EWC, Online EWC, SI, MAS), and lacks systematic comparison with other CL categories like knowledge distillation or architecture expansion.
+- Theoretical optimality of Logits Reversal is not strictly proven; more optimal logit transformations might exist.
 
 ## Related Work & Insights
-- Comparison with Online EWC demonstrates that online accumulation of importance weights does not fundamentally resolve the gradient vanishing problem.
-- While MAS avoids gradient vanishing, it introduces a new issue (redundant protection), indicating that the choice of loss function requires more careful consideration.
-- This work suggests that poor performance of classical methods may not reflect inherently flawed methodology, but rather implementation-level deficiencies—revisiting from first principles may uncover simple yet effective improvements.
+- Comparisons with Online EWC show that online accumulation of importance weights does not fundamentally solve the gradient vanishing problem.
+- While MAS avoids gradient vanishing, its introduction of redundant protection suggests that the choice of loss function requires more scrutiny.
+- This work suggests that the poor performance of classic methods may not be due to a "bad method" but rather a "flawed implementation"—re-examining fundamental principles can lead to simple and efficient improvements.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The analytical perspective is novel, though the technical contribution of the solution (logit negation) is lightweight.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets × three task splits × two settings + MCIT experiments + statistical significance testing.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logic flows clearly from analysis to method to experiments, with excellent visualizations.
-- Value: ⭐⭐⭐⭐ Provides important reference for the EWC research community; the method is simple and easy to adopt.
+- Novelty: ⭐⭐⭐⭐ Innovative analytical perspective, though the solution (reversing logits) is technically lightweight.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets × three task partitions × two settings + MCIT experiments + statistical testing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, seamless transition from analysis to method to experiments, and excellent visualization.
+- Value: ⭐⭐⭐⭐ High reference value for the EWC research community; simple and easy to implement.
 
 <!-- RELATED:START -->
 
@@ -119,8 +111,8 @@ The training loss retains the standard EWC form: $\mathcal{L}_{total} = \mathcal
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
 - [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 - [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](../../ICLR2026/model_compression/ider_idempotent_experience_replay_for_reliable_continual_learning.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[ICML 2026\] Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video](../../ICML2026/model_compression/causal_forcing_autoregressive_diffusion_distillation_done_right_for_high-quality.md)
+- [\[CVPR 2026\] ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference](thinkingvit_matryoshka_thinking_vision_transformer_for_elastic_inference.md)
 
 </div>
 

@@ -2,108 +2,94 @@
 title: >-
   [Paper Note] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 description: >-
-  [CVPR 2026][Human Understanding][Micro-Gesture Recognition] This paper proposes the UAAI framework, which for the first time introduces Active Inference into micro-gesture recognition. By combining EFE-guided temporal fr…
+  [CVPR 2026][Human Understanding][Micro-Gesture Recognition] Ours proposes the UAAI framework, which introduces Active Inference to micro-gesture recognition for the first time. Through EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, it achieves 63.47% on the RGB modality of the SMG dataset, significantly outperforming traditional
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Micro-Gesture Recognition"
-  - "Active Inference"
-  - "Expected Free Energy"
-  - "POMDP"
-  - "Uncertainty-Aware Augmentation"
+  - CVPR 2026
+  - Human Understanding
+  - Micro-Gesture Recognition
+  - Active Inference
+  - Expected Free Energy
+  - POMDP
 date: 2026-05-08
-content_hash: f18cd4295086a4d2
+content_hash: b86ccbe647688e32
 ---
-
 # Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.07559](https://arxiv.org/abs/2603.07559)  
-**Authors**: Weijia Feng et al. (Tianjin Normal University, Shenzhen University, Zhejiang University, Tianjin University)
-**Area**: Medical Imaging
+**Authors**: Weijia Feng et al. (Tianjin Normal University, Shenzhen University, Zhejiang University, Tianjin University)  
+**Area**: Medical Imaging  
 **Keywords**: Micro-Gesture Recognition, Active Inference, Expected Free Energy, POMDP, Uncertainty-Aware Augmentation
 
 ## TL;DR
 
-This paper proposes the UAAI framework, which for the first time introduces Active Inference into micro-gesture recognition. By combining EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, UAAI achieves 63.47% on the SMG dataset (RGB modality), substantially outperforming conventional RGB-based methods.
+Ours proposes the UAAI framework, which introduces Active Inference to micro-gesture recognition for the first time. Through EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, it achieves 63.47% on the RGB modality of the SMG dataset, significantly outperforming traditional RGB methods.
 
 ## Background & Motivation
 
-Micro-gestures refer to subtle, unconscious body movements produced during communication, such as light finger tapping or slight head tilting. Compared to conventional gesture recognition, micro-gesture recognition presents unique challenges:
+Micro-gestures refer to subtle bodily movements produced unconsciously during communication, such as slight finger taps or minor head tilts. Unlike conventional gesture recognition, micro-gestures present several unique challenges:
 
-**Extremely short duration**: Typically <0.5 seconds, occupying a negligible proportion of long videos.
+**Extremely Short Duration**: Usually <0.5 seconds, accounting for a very low proportion of long videos.
 
-**Minimal amplitude**: Motion scale is far smaller than everyday gestures, making signals easily overwhelmed by noise.
+**Miniscule Amplitude**: The magnitude of motion is much smaller than daily gestures and is easily submerged in noise.
 
-**High inter-subject variability**: The same micro-gesture category manifests very differently across individuals.
+**High Individual Variability**: The same category of micro-gesture manifests differently across individuals.
 
-**Spatiotemporal sparsity**: Informative content exists only in a small number of specific frames and local regions.
+**Spatiotemporal Sparsity**: Critical information only exists in specific subsets of frames and localized regions.
 
-Existing methods (e.g., C3D, TSM, SlowFast) are designed for conventional action recognition and lack targeted modeling for such fleeting signals. The core problem is: **how to precisely capture these transient, weak signals along both temporal and spatial dimensions?**
+Existing methods (e.g., C3D, TSM, SlowFast) are designed for general action recognition and lack specific modeling for these "fleeting" signals. The **Core Problem** is: **How to accurately capture these fleeting and weak signals in both temporal and spatial dimensions?**
 
-Active Inference is a cognitive framework grounded in the Bayesian Brain hypothesis, where an agent selects actions by minimizing Expected Free Energy (EFE)—simultaneously pursuing epistemic value (information gain) and pragmatic value (goal achievement). This naturally aligns with the demand for actively searching key frames and key regions in micro-gesture recognition.
+Active Inference is a cognitive framework under Bayesian Brain theory where an agent selects actions by minimizing "Expected Free Energy" (EFE)—pursuing both information gain (epistemic value) and goal fulfillment (pragmatic value). This naturally aligns with the need to "actively search for key frames and regions" in micro-gesture recognition.
 
 ## Method
 
 ### Overall Architecture
 
-The UAAI (Uncertainty-Aware Active Inference) framework consists of three core modules:
+UAAI (Uncertainty-Aware Active Inference) is designed to handle "fleeting" micro-gesture signals—characterized by <0.5s duration, minimal amplitude, and spatiotemporal sparsity. Utilizing the cognitive framework of Active Inference, it treats the decision of "where to look" (in terms of frames and regions) as active actions. EFE is used to select the most informative frames and spatial areas, while an uncertainty-aware data augmentation stabilizes training. The overall architecture connects three modules: EFE-guided temporal frame selection for "which frames to watch," EFE-guided spatial attention for "which regions to watch," and UMIX for "how to learn robustly from noisy samples."
 
-1. **EFE-Guided Temporal Selection**: POMDP-based temporal frame selection.
-2. **EFE-Guided Spatial Selection**: EFE decomposition-driven spatial attention.
-3. **UMIX**: Uncertainty-aware data augmentation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Video<br/>Micro-gesture signals (short/weak/sparse)"] --> B
+    subgraph B["EFE-Guided Temporal Frame Selection (POMDP)"]
+        direction TB
+        B1["Maintain category posterior q(s_t)"] --> B2["Calculate EFE for candidate frames<br/>pragmatic value + epistemic value"]
+        B2 --> B3["Select next frame with minimum EFE"]
+        B3 -->|"Bayesian update of posterior after observation"| B1
+    end
+    B --> C["EFE-Guided Spatial Attention<br/>Decompose informativeness → spatial weight mask M"]
+    C --> D["Spatio-temporal enhanced features → Classification"]
+    E["UMIX Uncertainty-Aware Augmentation<br/>MC Dropout estimates uncertainty → Adaptive intensity + loss weighting"] -. Training .-> D
+```
 
 ### Key Designs
 
-**Module 1: EFE-Guided Temporal Frame Selection**
+**1. EFE-Guided Temporal Frame Selection: Modeling "Finding Key Frames" as an Active Decision Problem**
 
-Frame selection is formulated as a Partially Observable Markov Decision Process (POMDP):
+Critical information for micro-gestures resides in very few frames; uniform or random sampling is likely to miss them (dropping 5–6% in ablation). UAAI models frame selection as a POMDP: the state is the hidden belief about the micro-gesture category, the observation is the visual feature of the current frame, and the action is selecting the next frame to observe. At each timestep $t$, the category posterior $q(s_t)$ is maintained. A likelihood matrix $A_{a_t}$, parameterized by an MLP, maps observations to state updates. EFE is calculated for each candidate action:
 
-- **State**: The latent semantic state of the video (current belief over micro-gesture categories).
-- **Observation**: Visual features of the current frame.
-- **Action**: Selection of the next frame to observe.
+$$G(a) = \underbrace{-D_{KL}[q(o|a) \| \tilde{p}(o)]}_{\text{pragmatic value}} - \underbrace{E_{q(o|a)}[H[q(s|o,a)]]}_{\text{epistemic value}}$$
 
-Core mechanism:
-- At each timestep $t$, the agent maintains a posterior distribution $q(s_t)$ over micro-gesture categories (Bayesian belief).
-- An MLP-parameterized likelihood matrix $A_{a_t}$ maps observations to state updates.
-- The EFE for each candidate action is computed as: $G(a) = \underbrace{-D_{KL}[q(o|a) \| \tilde{p}(o)]}_{\text{pragmatic value}} - \underbrace{E_{q(o|a)}[H[q(s|o,a)]]}_{\text{epistemic value}}$
-- The action minimizing EFE (i.e., the most informative next frame) is selected.
-- Bayesian update: upon observing a new frame, the posterior belief is updated via the likelihood matrix.
+The action with the minimum EFE is chosen—favoring frames that are both goal-oriented (pragmatic) and uncertainty-reducing (epistemic). After observing the new frame, the posterior is updated via Bayesian inference. Unlike post-hoc attention selection, EFE is forward-looking: it predicts which frame will best reduce category confusion. This module contributes the most in ablation studies (a 3.64% drop without it).
 
-**Module 2: EFE-Guided Spatial Attention**
+**2. EFE-Guided Spatial Attention: Allocating Informativeness Scores to Spatial Locations**
 
-- EFE is decomposed along the spatial dimension to yield an informativeness score for each spatial location.
-- A learnable spatial weight mask is generated: $M = \sigma(\text{Conv}([F_{\text{avg}}; F_{\text{max}}]))$
-- where $F_{\text{avg}}$ and $F_{\text{max}}$ are channel-wise average-pooled and max-pooled features, respectively.
-- The spatial mask enhances local regions where micro-gestures occur while suppressing irrelevant background.
+Even with the correct frames, micro-movements can be buried in the background. This module decomposes EFE along spatial dimensions to obtain informativeness scores for each location, generating a learnable spatial weight mask $M = \sigma(\text{Conv}([F_{\text{avg}}; F_{\text{max}}]))$, where $F_{\text{avg}}$ and $F_{\text{max}}$ are average and max-pooled features across channels. The mask enhances local regions where micro-gestures actually occur and suppresses irrelevant backgrounds, complementing temporal selection (dropping 2.45% individually; 6.21% if both temporal and spatial modules are removed, indicating synergy).
 
-**Module 3: UMIX Uncertainty-Aware Augmentation**
+**3. UMIX Uncertainty-Aware Augmentation: Differentiated Treatment Based on Sample Uncertainty**
 
-- Per-sample predictive uncertainty is estimated via Monte Carlo Dropout.
-- High-uncertainty samples → stronger augmentation + reduced loss weight (to avoid noisy gradients).
-- Low-uncertainty samples → weaker augmentation + normal loss weight (to avoid over-perturbing confident samples).
-- The mixing ratio $\lambda$ is adaptively adjusted based on uncertainty: $\lambda = \text{Beta}(\alpha(u), \beta(u))$
+Micro-gesture data is noisy and ambiguous; treating all samples equally with augmentation can amplify noise gradients. UMIX uses Monte Carlo Dropout to estimate predictive uncertainty for each sample: samples with high uncertainty receive higher augmentation intensity but lower loss weights (to avoid noisy gradients), while low-uncertainty samples receive less augmentation and maintain normal weights. The mixing ratio is adaptively sampled from $\lambda = \text{Beta}(\alpha(u), \beta(u))$. This ensures augmentation intensity follows confidence levels, expanding diversity for hard samples without letting noise derail training (dropping 1.93% without it).
 
 ### Loss & Training
 
-The total loss is based on minimizing Variational Free Energy (VFE):
-
-$$L = L_{\text{accuracy}} + \beta \cdot L_{\text{complexity}}$$
-
-- **$L_{\text{accuracy}}$**: Cross-entropy classification loss to ensure correct predictions.
-- **$L_{\text{complexity}}$**: KL divergence between posterior and prior, preventing overfitting and encouraging compact representations.
-
-Training strategy:
-- Alternating optimization: the base feature extractor is first warmed up, followed by end-to-end training of the spatiotemporal selection modules.
-- UMIX computes per-sample uncertainty online within each mini-batch to adjust augmentation.
-- EFE computation is made differentiable via reparameterization.
+The total loss is based on Variational Free Energy (VFE) minimization: $L = L_{\text{accuracy}} + \beta \cdot L_{\text{complexity}}$, where $L_{\text{accuracy}}$ is cross-entropy for correct prediction and $L_{\text{complexity}}$ is the KL divergence between posterior and prior to prevent overfitting and encourage compact representations. Training involves alternating optimization: first warming up the base feature extractor, then end-to-end training of the spatio-temporal selection modules. UMIX calculates uncertainty online per mini-batch. EFE calculation is made differentiable via reparameterization.
 
 ## Key Experimental Results
 
 ### Main Results (SMG Dataset, RGB Modality)
 
 | Method | Backbone | Top-1 Acc (%) |
-|--------|----------|---------------|
+|------|----------|---------------|
 | C3D | 3D CNN | 45.90 |
 | I3D | Inception | 50.23 |
 | TSM | ResNet-50 | 58.69 |
@@ -113,12 +99,12 @@ Training strategy:
 | **UAAI (Ours)** | **ResNet-50** | **63.47** |
 | MS-G3D (Skeleton) | GCN | 64.75 |
 
-UAAI achieves 63.47% on the RGB modality, substantially outperforming all other RGB-based methods and approaching MS-G3D, which requires skeleton annotations.
+UAAI reaches 63.47% in the RGB modality, significantly outperforming other RGB methods and approaching the skeleton-based MS-G3D.
 
 ### Ablation Study
 
-| Configuration | Top-1 Acc (%) | Change |
-|---------------|---------------|--------|
+| Configuration | Top-1 Acc (%) | Gain/Drop |
+|------|---------------|------|
 | Full UAAI | 63.47 | — |
 | w/o EFE Temporal | 59.83 | -3.64 |
 | w/o EFE Spatial | 61.02 | -2.45 |
@@ -129,58 +115,59 @@ UAAI achieves 63.47% on the RGB modality, substantially outperforming all other 
 
 ### Key Findings
 
-1. **EFE temporal selection contributes most** (−3.64%), confirming that identifying key frames is the central bottleneck in micro-gesture recognition.
-2. **Spatial attention is complementary** (−2.45%), further focusing on body regions where micro-movements occur.
-3. **UMIX stabilizes training** (−1.93%), with uncertainty-aware augmentation effectively combating noise and ambiguity in micro-gesture data.
-4. **Removing both temporal and spatial modules causes a sharp drop** (−6.21%), indicating synergistic rather than additive interaction.
-5. **EFE significantly outperforms random/uniform sampling** (by 6.56/5.35 points), demonstrating the clear advantage of active inference-based frame selection over heuristic approaches.
+1. **EFE temporal selection contributes most** (-3.64%), validating that finding key frames is the primary bottleneck.
+2. **Spatial attention is complementary** (-2.45%), further focusing on relevant body parts.
+3. **UMIX stabilizes training** (-1.93%), effectively countering noise and ambiguity in micro-gesture data.
+4. **Joint spatio-temporal removal causes a sharp decline** (-6.21%), indicating synergistic effects.
+5. **EFE significantly outperforms random/uniform sampling** (by 6.56/5.35 points), proving the superiority of Active Inference over heuristic sampling.
 
 ## Highlights & Insights
 
-1. **Cross-disciplinary fusion of cognitive science and computer vision**: Active Inference originates from the Free Energy Principle in neuroscience; its introduction to micro-gesture recognition is theoretically elegant.
-2. **POMDP formulation of frame selection**: Unlike attention- or sampling-based post-hoc methods, EFE is forward-looking—it selects frames anticipated to maximally reduce uncertainty.
-3. **Uncertainty as a unified guiding signal**: From epistemic value in EFE to adaptive augmentation in UMIX, uncertainty permeates the entire framework.
-4. **RGB approaching skeleton performance**: The pure RGB method achieves 63.47%, nearly matching skeleton-based MS-G3D (64.75%), thereby avoiding the overhead of skeleton estimation in deployment.
+1. **Cross-disciplinary Fusion**: Merges cognitive science (Free Energy Principle) with CV, providing a sophisticated theoretical motivation.
+2. **POMDP for Frame Selection**: Unlike posterior attention, EFE is forward-looking, selecting frames expected to maximize uncertainty reduction.
+3. **Global Uncertainty Awareness**: From information gain in EFE to adaptive augmentation in UMIX, uncertainty serves as a unified guiding signal.
+4. **RGB Chasing Skeleton Performance**: Achieving 63.47% with pure RGB avoids the computational overhead of skeleton estimation in deployment.
 
 ## Limitations & Future Work
 
-1. **Computational efficiency**: EFE computation requires a forward pass for each frame-action pair; complexity may be substantial when the number of timesteps is large.
-2. **POMDP approximation**: True EFE requires integrating over future trajectories; the implementation uses a single-step approximation, which may miss long-range dependencies.
-3. **Limited dataset coverage**: Validation is primarily on the SMG dataset, with no cross-dataset generalization experiments (e.g., iMiGUE).
-4. **Area classification concern**: Micro-gesture recognition more strictly belongs to behavior understanding rather than medical imaging, though the methodology is transferable to medical video analysis.
-5. **No multimodal fusion**: Skeleton modality is not incorporated; combining modalities could yield further improvements.
-6. **Uncertainty estimation overhead**: UMIX relies on multiple MC Dropout forward passes, increasing training time.
+1. **Computational Efficiency**: EFE calculation requires forward passes for multiple actions, which may be heavy for long sequences.
+2. **POMDP Approximation**: Practical implementation uses single-step approximations, potentially missing long-range dependencies.
+3. **Dataset Diversity**: Primarily validated on SMG; cross-dataset generalization (e.g., iMiGUE) is needed.
+4. **Domain Classification**: Strictly, micro-gesture recognition is behavior understanding rather than medical imaging, though the methodology is transferable.
+5. **Multimodal Fusion**: Integration with skeleton modalities could yield further improvements.
+6. **Uncertainty Overhead**: UMIX relies on multiple MC Dropout passes, increasing training time.
 
 ## Related Work & Insights
 
-- **Free Energy Principle (Friston)**: The theoretical foundation of Active Inference; agents perceive and act by minimizing free energy.
-- **AdaFrame / SCSampler**: Frame sampling methods for video understanding, but based on reinforcement learning rather than active inference.
-- **MS-G3D**: A strong skeleton-based GCN baseline for micro-gesture recognition, nearly matched by UAAI's RGB approach.
-- **Mixup / CutMix**: Classic data augmentation techniques; UMIX's uncertainty-adaptive extension is a meaningful contribution.
-- **Inspiration**: The EFE-guided spatiotemporal selection framework is generalizable to other tasks requiring precise spatiotemporal localization, such as micro-expression analysis, pain detection, and surgical step recognition.
+- **Free Energy Principle (Friston)**: The theoretical origin of Active Inference.
+- **AdaFrame / SCSampler**: Frame sampling methods in video understanding, but based on RL rather than Active Inference.
+- **MS-G3D**: A strong skeleton-based baseline nearly matched by the proposed RGB method.
+- **Mixup / CutMix**: UMIX provides a meaningful uncertainty-aware extension to these classic augmentations.
+- **Insight**: The EFE-guided selection framework can be generalized to other tasks requiring precise spatio-temporal localization (e.g., micro-expressions, pain detection, surgical step recognition).
 
 ## Rating
 
-| Dimension | Score (1–5) | Notes |
-|-----------|-------------|-------|
-| Novelty | 4.5 | First application of active inference to micro-gesture recognition; strong cross-disciplinary innovation. |
-| Technical Depth | 4 | Coherent system integrating POMDP, EFE, and Bayesian updates. |
-| Experimental Thoroughness | 3.5 | Thorough ablations, but limited to a single dataset. |
-| Value | 3.5 | Practical RGB-only deployment, but narrow application scope. |
-| Writing Quality | 4 | Balances formal derivations with intuitive explanations. |
-| **Overall** | **3.9** | Unique cognitive science perspective; framework holds general transferability. |
+| Dimension | Score (1-5) | Description |
+|------|-----------|------|
+| Novelty | 4.5 | First introduction of Active Inference to this field; highly creative. |
+| Technical Depth | 4 | Complete system including POMDP, EFE, and Bayesian updates. |
+| Experimental Thoroughness | 3.5 | Detailed ablation, but restricted to few datasets. |
+| Value | 3.5 | Practical RGB-only approach, despite the specialized niche. |
+| Writing Quality | 4 | Balanced theoretical derivation and intuitive explanation. |
+| **Overall Score** | **3.9** | Unique cognitive perspective with a high-value framework. |
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
 - [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
-- [\[AAAI 2026\] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition](../../AAAI2026/human_understanding/new_synthetic_goldmine_hand_joint_angle-driven_emg_data_generation_framework_for.md)
-- [\[CVPR 2026\] Miburi: Towards Expressive Interactive Gesture Synthesis](miburi_towards_expressive_interactive_gesture_synthesis.md)
-- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
+- [\[CVPR 2026\] Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)
+- [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
 
 </div>
 

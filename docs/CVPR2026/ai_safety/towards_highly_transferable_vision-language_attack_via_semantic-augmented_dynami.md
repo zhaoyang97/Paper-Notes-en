@@ -2,116 +2,112 @@
 title: >-
   [Paper Note] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 description: >-
-  [CVPR 2026][AI Safety][Adversarial Attack] This paper proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts cross-modal semantic consistency between adversarial images and texts via a…
+  [CVPR 2026][AI Safety][Vision-Language Model] Ours proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts the cross-modal semantic consistency between adversarial images and text through a dynamic contrastive interaction mechanism and a semantic augmentation module. It significantly improves adversarial transferability against V
 tags:
-  - "CVPR 2026"
-  - "AI Safety"
-  - "Adversarial Attack"
-  - "Vision-Language Models"
-  - "Adversarial Transferability"
-  - "Contrastive Learning"
-  - "Semantic Augmentation"
+  - CVPR 2026
+  - AI Safety
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 8df94e8265fc8091
+content_hash: a76d5b87ab798dc1
 ---
-
 # Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.04839](https://arxiv.org/abs/2603.04839)  
 **Code**: [GitHub](https://github.com/LiYuanBoJNU/SADCA)  
-**Area**: AI Security
+**Area**: AI Security  
 **Keywords**: Adversarial Attack, Vision-Language Models, Adversarial Transferability, Contrastive Learning, Semantic Augmentation
 
 ## TL;DR
 
-This paper proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts cross-modal semantic consistency between adversarial images and texts via a dynamic contrastive interaction mechanism and a semantic augmentation module. SADCA significantly improves adversarial transferability against vision-language pre-training (VLP) models, surpassing existing SOTA methods in both cross-model and cross-task attack settings.
+Ours proposes SADCA (Semantic-Augmented Dynamic Contrastive Attack), which iteratively disrupts the cross-modal semantic consistency between adversarial images and text through a dynamic contrastive interaction mechanism and a semantic augmentation module. It significantly improves adversarial transferability against Vision-Language Pre-trained (VLP) models, outperforming existing SOTA methods in both cross-model and cross-task attacks.
 
 ## Background & Motivation
 
-**Security Concerns in VLP Models**: Vision-language pre-training models such as CLIP, ALBEF, and TCL achieve strong performance on tasks including image-text retrieval (ITR), image captioning (IC), and visual grounding (VG) through large-scale image-text joint training. However, their adversarial robustness remains a significant concern. Investigating adversarial attacks is essential for evaluating and improving the security of VLP models.
+**Security Risks of VLP Models**: Vision-Language Pre-trained models such as CLIP, ALBEF, and TCL perform excellently on tasks like Image-Text Retrieval (ITR), Image Captioning (IC), and Visual Grounding (VG) due to large-scale joint training. However, their adversarial robustness is concerning. Researching adversarial attacks is crucial for evaluating and enhancing the security of VLP models.
 
-**Limitations of Prior Work — Static Interaction**: Existing VLP attack methods (e.g., SGA, SA-AET) rely on static cross-modal interaction — performing only one or two interactions on the original image-text pairs. Adversarial examples deviate from the semantic center along a fixed direction, lacking the ability to explore diverse attack directions in the semantic space, which leads to poor cross-model transferability.
+**Limitations of Static Interaction**: Existing VLP attack methods (e.g., SGA, SA-AET) rely on static cross-modal interaction—performing only one or two interactions on the original image-text pair. Adversarial samples deviate from the semantic center along a fixed direction, lacking the ability to explore diverse attack directions in the semantic space, which leads to poor cross-model transferability.
 
-**Limitations of Prior Work — Neglect of Negative Samples**: Existing methods utilize only positive image-text pairs, overlooking the role of negative samples in shaping semantic decision boundaries. With only a "push" force (away from positive samples) and no "pull" force (toward negative samples), adversarial examples are insufficiently separated from benign samples in the embedding space.
+**Limitations of Prior Work regarding Negative Samples**: Existing methods primarily use positive image-text pairs, ignoring the role of negative samples in shaping semantic decision boundaries. Having only a "push" force (away from positive samples) without a "pull" force (toward negative samples) results in insufficient separation of adversarial samples from benign samples in the embedding space.
 
-**Limitations of Prior Work — Insufficient Input Diversity**: Input transformations are an effective strategy for improving transferability in conventional image attacks (e.g., SIA, BSR), yet existing VLP attack methods largely neglect this aspect, considering only limited scale invariance, resulting in insufficient semantic diversity.
+**Insufficient Input Diversity**: Input transformation is an effective strategy to improve transferability in traditional image attacks (e.g., SIA, BSR), but existing VLP attack methods almost ignore this, considering only limited scale invariance, which leads to insufficient semantic diversity.
 
 ## Method
 
 ### Overall Architecture
 
-SADCA comprises two core components:
-1. **Dynamic Contrastive Interaction**: Iteratively updates adversarial images and texts, continuously disrupting cross-modal semantic consistency using contrastive losses over positive and negative samples at each iteration.
-2. **Semantic Augmentation Module**: Enriches semantic diversity during the attack via local semantic image augmentation and mixed semantic text augmentation.
+SADCA addresses the transferability challenge where "adversarial samples only deviate along a fixed direction and fail to attack different models." The core idea is to treat adversarial optimization as an iterative process of continuous direction recalibration: first, a clean semantic anchor is found for the benign image; then, the adversarial image and text pull each other and update iteratively in each round. Simultaneously, semantic augmentations are injected into both modalities so that the attack direction at each step is based on the latest cross-modal semantic state rather than a predefined fixed direction.
 
-The attack pipeline first obtains a positive image $v_p$ via semantic alignment, then performs $I$ rounds of dynamic interaction. In each round, the adversarial text is updated first, followed by $J$ PGD iterations to update the adversarial image, with contrastive losses over positive and negative samples and semantic augmentation applied at each step.
+Specifically, the attack first achieves a positive image $v_p$ closer to the semantic center through semantic alignment, followed by $I$ rounds of dynamic contrastive interaction. In each round, the adversarial text $t'$ is updated first, and then the adversarial image $v'$ is updated via $J$-step PGD iterations using the updated text. Each step incorporates positive-negative contrastive loss and semantic augmentation. Two major components—the Dynamic Contrastive Interaction mechanism for "direction follows semantic state" and the Semantic Augmentation module for "more diverse semantic perspectives per step"—work together to push adversarial samples away from correct semantics and pull them toward incorrect semantics.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Benign Image + Multiple Text Descriptions"] --> B["Semantic-Centered Positive Alignment<br/>Search v_p in neighborhood + Randomly sample negative set"]
+    subgraph LOOP["Dynamic Contrastive Interaction (I=5 iterations)"]
+        direction TB
+        C["Update Adversarial Text t'<br/>Semantic Augment: Random concatenation of two texts"]
+        C --> D["J=10 step Momentum PGD Update Adversarial Image v'<br/>Semantic Augment: Local Crop + Random Transform"]
+    end
+    B --> C
+    D -->|"Round < I: Recalibrate direction based on latest state"| C
+    D -->|"Complete I rounds"| E["Adversarial Image-Text Pair"]
+```
 
 ### Key Designs
 
-1. **Semantic-Center Positive Sample Alignment**
+**1. Semantic-Centered Positive Alignment: Aligning the anchor before deviation**
 
-    - **Function**: Aligns the benign image with multiple textual descriptions in the semantic space to obtain a positive image $v_p$ closer to the semantic center.
-    - **Design Motivation**: The feature embedding of the original image contains abundant redundant information irrelevant to the text. Directly using biased image-text pairs as positive samples impedes the adversarial example from moving away from the correct semantic center.
-    - **Mechanism**: $v_p = \arg\max_{v_p \in B[v,\epsilon_v]} \sum_{m=1}^{M} Cos(v, t_m)$, where $T = \{t_1, ..., t_M\}$ denotes multiple textual descriptions paired with the benign image. Negative sample sets $V_n, T_n$ are constructed by randomly sampling $K$ mismatched samples from the dataset.
-    - **Novelty**: Whereas SGA directly uses the original image-text pair, SADCA performs semantic alignment first to obtain a more accurate positive anchor.
+The first step of the attack defines "deviation relative to what." Directly using the original pair as the positive sample is intuitive, but the original image embedding contains redundant information unrelated to the text. This biased anchor prevents adversarial samples from moving cleanly away from the true semantic center. SADCA searches for a positive image $v_p$ within the $\epsilon_v$ neighborhood that is better aligned with multiple text descriptions: $v_p = \arg\max_{v_p \in B[v,\epsilon_v]} \sum_{m=1}^{M} Cos(v, t_m)$, where $T = \{t_1, ..., t_M\}$ represents paired texts. Negative sets $V_n, T_n$ are randomly sampled from $K$ mismatched samples in the dataset. Compared to SGA which uses original pairs, this step aligns the "semantic center" as a proper reference frame.
 
-2. **Dynamic Contrastive Interaction Mechanism**
+**2. Dynamic Contrastive Interaction: Recalibrating direction per round**
 
-    - **Function**: Alternately updates adversarial texts and adversarial images at each iteration of the adversarial optimization, continuously exploiting the current adversarial state for cross-modal semantic disruption.
-    - **Design Motivation**: Static interaction can only shift the adversarial example along a fixed direction. Dynamic interaction allows gradient directions to be recalibrated at each round based on the latest semantic state, enabling exploration of a broader attack direction space.
-    - **Mechanism**:
-        - Adversarial image loss (with dynamic term): $\mathcal{L}_v = \sum_m Cos(v'_i, t_{pm}) - \lambda \sum_k Cos(v'_i, t_{nk}) + \sum_m Cos(v'_i, t'_{im}) - \lambda \sum_k Cos(v'_i, t_{nk})$
-        - Adversarial text loss (with dynamic term): $\mathcal{L}_t = Cos(v_p, t'_i) - \lambda \sum_k Cos(v_{nk}, t'_i) + Cos(v'_i, t'_i) - \lambda \sum_k Cos(v_{nk}, t'_i)$
-        - In each round, the text $t'_{i+1}$ is updated first, then the image $v'_{i+1}$ is updated via $J$ PGD steps using the updated text.
-    - **Key Formula**: Gradient update $g_{i(j+1)} = \mu \cdot g_{ij} + \nabla\mathcal{L}_v / \|\nabla\mathcal{L}_v\|$, $v'_{i(j+1)} = clip(v'_{ij} + \alpha \cdot sign(g_{i(j+1)}))$
-    - **Novelty**: Compared to SGA's single interaction and SA-AET's two static interactions, SADCA performs $I=5$ rounds of dynamic interaction, each with a distinct semantic state.
+The Key Challenge addressed here is that static interaction only allows deviation along a fixed direction. SGA uses one interaction and SA-AET uses two static interactions; once the direction is set, it is followed to the end, which fails on other models. SADCA changes interaction into a dynamic process of $I=5$ rounds. In each round, the adversarial text is updated first, followed by the image using that text. A contrastive term with the "current adversarial state" is added to the loss to recalibrate the direction. The image loss is: $\mathcal{L}_v = \sum_m Cos(v'_i, t_{pm}) - \lambda \sum_k Cos(v'_i, t_{nk}) + \sum_m Cos(v'_i, t'_{im}) - \lambda \sum_k Cos(v'_i, t_{nk})$. The text loss is: $\mathcal{L}_t = Cos(v_p, t'_i) - \lambda \sum_k Cos(v_{nk}, t'_i) + Cos(v'_i, t'_i) - \lambda \sum_k Cos(v_{nk}, t'_i)$. The first two terms are static contrasts with positive/negative samples, and the latter two are dynamic terms. Image updates use Momentum PGD:
 
-3. **Semantic Augmentation Module**
+$$g_{i(j+1)} = \mu \cdot g_{ij} + \frac{\nabla\mathcal{L}_v}{\|\nabla\mathcal{L}_v\|}, \quad v'_{i(j+1)} = clip\big(v'_{ij} + \alpha \cdot sign(g_{i(j+1)})\big)$$
 
-    - **Function**: Enriches the diversity of semantic representations during the attack through augmentation along both image and text modalities.
-    - **Design Motivation**: Conventional input transformations (e.g., SIA) operate only at the perceptual level, neglecting the cross-modal semantic alignment mechanism of VLP models. Richer semantic gradients reduce overfitting to a single semantic viewpoint.
-    - **Mechanism**:
-        - **Local Semantic Image Augmentation**: Random cropping (ratio $r_s \sim U(0.4, 0.8)$) + random augmentation (rotation/brightness/flipping) → $V'_{sa} = \{A_s(Resize(Crop(v'; r_s)))\}_{s=1}^S$
-        - **Mixed Semantic Text Augmentation**: Randomly select and concatenate two texts from the adversarial text set → $T'_{sa} = \{Concat(t'_i, t'_j) | i \neq j\}_{s=1}^S$
-    - **Novelty**: SGA employs only limited scale invariance; SADCA augments both image and text modalities simultaneously, with local cropping focusing on fine-grained semantics rather than global transformations.
+Since adversarial states differ each round, gradient directions refresh, allowing the sample to explore wider attack directions. Unlike existing methods that only provide "push" force, this mechanism uses negative samples to provide a "pull" force toward incorrect semantics.
+
+**3. Semantic Augmentation: Injecting diversity in both modalities**
+
+SADCA applies augmentations to both modalities. For images, local semantic augmentation is used: random cropping (ratio $r_s \sim U(0.4, 0.8)$) followed by random transformations (rotation, brightness, etc.), $V'_{sa} = \{A_s(Resize(Crop(v'; r_s)))\}_{s=1}^S$. Local cropping focuses on fine-grained regions rather than global transforms. For text, mixed semantic augmentation concatenates two random adversarial texts: $T'_{sa} = \{Concat(t'_i, t'_j) \mid i \neq j\}_{s=1}^S$. By generating $S$ augmented views to calculate loss, the gradient aggregates from richer cross-modal perspectives, reducing overfitting to a single view.
 
 ### Loss & Training
 
-- Total image attack loss: $\mathcal{L}_v = \mathcal{L}(V'_{sa}, T_p, T_n) + \mathcal{L}(V'_{sa}, T'_{sa}, T_n)$ (contrastive loss over positive/negative samples after semantic augmentation + contrastive loss with dynamic adversarial texts)
-- Total text attack loss: $\mathcal{L}_t = \mathcal{L}(t'_m, v'_i, V_n) + \mathcal{L}(t'_m, v_p, V_n)$
-- Key hyperparameters: step size $\alpha = 2/255$, momentum $\mu = 1.0$, dynamic interaction rounds $I = 5$, image attack iterations $J = 10$, number of negative samples $K = 20$, negative sample weight $\lambda = 0.2$, augmentation count $S = 10$
-- Image perturbation constraint: $\ell_\infty$ norm, $\epsilon_v = 8/255$; text perturbation: BERT-Attack, $\epsilon_t = 1$
+- **Image Attack Total Loss**: $\mathcal{L}_v = \mathcal{L}(V'_{sa}, T_p, T_n) + \mathcal{L}(V'_{sa}, T'_{sa}, T_n)$
+- **Text Attack Total Loss**: $\mathcal{L}_t = \mathcal{L}(t'_m, v'_i, V_n) + \mathcal{L}(t'_m, v_p, V_n)$
+- **Key Hyperparameters**: Step size $\alpha = 2/255$, momentum $\mu = 1.0$, dynamic interaction rounds $I = 5$, image attack iterations $J = 10$, negative samples $K = 20$, negative weight $\lambda = 0.2$, augmentation count $S = 10$.
+- **Constraints**: Image $\ell_\infty$ norm with $\epsilon_v = 8/255$; Text perturbation via BERT-Attack with $\epsilon_t = 1$.
 
 ## Key Experimental Results
 
-### Main Results (Cross-Model Transferability — Flickr30K ITR Task)
+### Main Results (Cross-model Transferability - Flickr30K ITR)
 
-| Source→Target | Metric | SADCA | SA-AET(LI)+SIA | Gain |
-|---------------|--------|-------|----------------|------|
-| ALBEF→CLIPViT | TR R@1 ASR | **81.10** | 75.71 | +5.39 |
-| ALBEF→CLIPCNN | IR R@1 ASR | **86.11** | 80.41 | +5.70 |
-| TCL→CLIPViT | TR R@1 ASR | **78.28** | 77.04 | +1.24 |
-| TCL→CLIPCNN | IR R@1 ASR | **88.71** | 84.05 | +4.66 |
-| CLIPViT→ALBEF | TR R@1 ASR | **87.07** | 79.04 | +8.03 |
-| CLIPViT→TCL | IR R@1 ASR | **87.98** | 82.57 | +5.41 |
-| CLIPCNN→CLIPViT | TR R@1 ASR | **49.43** | 38.69 | +10.74 |
+| Source $\rightarrow$ Target | Metric | SADCA | SA-AET(LI)+SIA | Gain |
+|-------------|------|-------|----------------|------|
+| ALBEF $\rightarrow$ CLIPViT | TR R@1 ASR | **81.10** | 75.71 | +5.39 |
+| ALBEF $\rightarrow$ CLIPCNN | IR R@1 ASR | **86.11** | 80.41 | +5.70 |
+| TCL $\rightarrow$ CLIPViT | TR R@1 ASR | **78.28** | 77.04 | +1.24 |
+| TCL $\rightarrow$ CLIPCNN | IR R@1 ASR | **88.71** | 84.05 | +4.66 |
+| CLIPViT $\rightarrow$ ALBEF | TR R@1 ASR | **87.07** | 79.04 | +8.03 |
+| CLIPViT $\rightarrow$ TCL | IR R@1 ASR | **87.98** | 82.57 | +5.41 |
+| CLIPCNN $\rightarrow$ CLIPViT | TR R@1 ASR | **49.43** | 38.69 | +10.74 |
 
-SADCA significantly outperforms the SOTA (SA-AET(LI)+SIA) across all four source models in cross-model transfer, with an average ASR improvement of approximately 5–10%.
+SADCA significantly outperforms SOTA across all source models, with an average ASR gain of 5-10%.
 
-### Cross-Task Transferability (ALBEF → Other Tasks)
+### Cross-task Transferability (ALBEF $\rightarrow$ Other Tasks)
 
 | Task | Metric | SADCA | SA-AET | Gain |
-|------|--------|-------|--------|------|
-| VG (Val) | Acc ↓ | **46.78** | 47.44 | −0.66 |
-| IC (B@4) | ↓ | **17.4** | 21.0 | −3.6 |
-| IC (CIDEr) | ↓ | **50.3** | 65.7 | −15.4 |
-| IC (SPICE) | ↓ | **10.7** | 13.6 | −2.9 |
+|------|------|-------|--------|------|
+| VG (Val) | Acc ↓ | **46.78** | 47.44 | -0.66 |
+| IC (B@4) | ↓ | **17.4** | 21.0 | -3.6 |
+| IC (CIDEr) | ↓ | **50.3** | 65.7 | -15.4 |
+| IC (SPICE) | ↓ | **10.7** | 13.6 | -2.9 |
 
-### Attack Against LVLMs (ALBEF → Large Vision-Language Models)
+### Attacks on LVLMs (ALBEF $\rightarrow$ Large Vision-Language Models)
 
 | Target Model | Clean | SADCA | SA-AET(LI)+SIA |
-|--------------|-------|-------|----------------|
+|----------|-------|-------|----------------|
 | LLaVA-1.5-7B | 3.46 | **40.34** | 35.20 |
 | Qwen3-VL-8B | 14.4 | **86.34** | 80.14 |
 | GPT-5 | 23.88 | **78.61** | 68.08 |
@@ -120,39 +116,39 @@ SADCA significantly outperforms the SOTA (SA-AET(LI)+SIA) across all four source
 
 ### Key Findings
 
-- **Dynamic interaction is the core driver**: Moving from SGA's single interaction to SADCA's 5-round dynamic interaction yields substantial ASR improvements (e.g., ALBEF→CLIPCNN TR increases from 39.59% to 85.44%).
-- **Input transformations are also effective for VLP attacks**: Integrating SIA into SGA/SA-AET yields significant performance gains, validating the importance of input diversity in VLP attacks.
-- **Contribution of negative samples**: Introducing negative contrastive samples enables more thorough semantic-space deviation; the full SADCA outperforms its variant without negative samples by approximately 3–5% ASR.
-- **Effectiveness against closed-source commercial models**: SADCA achieves an attack success rate of 78.61% against GPT-5, highlighting the pervasive adversarial security risks in VLP models.
+- **Dynamic Interaction is the Core Driver**: Moving from SGA's single interaction to SADCA's 5 rounds increases ASR drastically (e.g., ALBEF $\rightarrow$ CLIPCNN TR from 39.59% to 85.44%).
+- **Input Transformation works for VLP**: Integrating SIA into SGA/SA-AET improves performance, confirming the importance of input diversity in VLP attacks.
+- **Negative Sample Contribution**: Contrastive learning with negative samples leads to more thorough deviation, improving ASR by ~3-5% compared to variants without negative samples.
+- **Effectiveness against Closed-source Models**: SADCA achieves a 78.61% success rate on GPT-5, highlighting universal security risks.
 
 ## Highlights & Insights
 
-1. **Dynamic vs. Static Interaction**: Static methods apply a one-time push in a fixed direction, whereas the dynamic approach continuously adjusts the push direction — after each interaction round, the semantic state of both adversarial texts and images changes, causing gradient directions to update accordingly and naturally enabling exploration of a broader attack direction space.
-2. **Effective Application of Positive-Negative Contrastive Learning**: The contrastive learning paradigm is applied to adversarial attacks — positive samples provide a "push" force while negative samples provide a "pull" force, jointly driving adversarial examples across semantic decision boundaries.
-3. **Dual-Modality Design of Semantic Augmentation**: Local cropping focuses on fine-grained semantic regions, while text concatenation generates richer semantic representations; the two strategies jointly reduce overfitting to a single semantic viewpoint.
-4. **Natural Extension to LVLM Attacks**: Although primarily designed for VLP models, SADCA demonstrates strong attack capability against LVLMs including GPT-5.
+1. **Dynamic vs. Static Interaction**: While static methods push along one direction, dynamic methods continuously adjust—each round refreshes the gradient based on new semantic states, exploring a broader space.
+2. **Push-Pull Strategy**: Using contrastive learning principles—positive samples for "push" and negative samples for "pull"—allows adversarial samples to cross semantic boundaries more effectively.
+3. **Dual-modal Semantic Augmentation**: Local cropping for fine-grained image semantics and text concatenation for mixed representations work together to reduce overfitting to specific views.
+4. **Generalization to LVLMs**: Although designed for VLP models, it demonstrates strong attack power against LVLMs, including GPT-5.
 
 ## Limitations & Future Work
 
-1. Dynamic interaction introduces additional computational overhead (total iterations $I \times J = 50$ steps), which is approximately 5× slower than SGA's 10 steps.
-2. Random selection of negative samples may be suboptimal; negative mining strategies based on semantic distance or adversarial difficulty could further improve performance.
-3. Text perturbation relies on the word substitution strategy of BERT-Attack, which offers limited preservation of semantic coherence for long texts.
-4. Only the $L_\infty$ norm constraint is evaluated; performance under other constraints such as $L_2$ remains unexplored.
-5. The effect of defense strategies (e.g., adversarial training, input denoising) on suppressing SADCA is not discussed.
+1. Dynamic interaction increases computational overhead (50 steps vs. SGA's 10), approximately 5x slower.
+2. Random selection of negative samples might be suboptimal; mining negatives based on semantic distance could yield better results.
+3. Text perturbations depend on BERT-Attack word replacement, which has limited semantic coherence for long texts.
+4. Performance under $L_2$ or other constraints is unexplored.
+5. Suppression effects of defense strategies (e.g., adversarial training, denoising) were not discussed.
 
 ## Related Work & Insights
 
-- **SGA (ICLR 2023)**: The first VLP attack method to propose expanding image-text pair diversity using multiple textual descriptions, but limited to a single static interaction.
-- **SA-AET**: Introduces contrastive feature space optimization to improve adversarial trajectories, but remains constrained to two static interactions.
-- **SIA (CVPR 2024)**: Structure-Invariant Attack — a general input transformation strategy; SADCA validates its effectiveness in VLP attacks and further proposes semantic-level augmentation.
-- **Insights**: The contrastive learning framework can be more broadly applied to other adversarial attack settings (e.g., 3D vision, speech models); the dynamic interaction paradigm is also applicable to the defense side in adversarial training.
+- **SGA (ICLR 2023)**: First to use multiple text descriptions for diversity, but limited to static interaction.
+- **SA-AET**: Introduced contrastive feature space optimization but remains limited to two static interactions.
+- **SIA (CVPR 2024)**: Structure Invariant Attack—a general input transform. SADCA confirms its utility in VLP and adds semantic-level enhancement.
+- Insight: Contrastive frameworks can be applied to other adversarial scenarios (3D vision, audio), and the dynamic interaction concept is applicable to the defense side in adversarial training.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The dynamic contrastive interaction mechanism is novel; the integration of positive and negative samples in VLP attacks is a first.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 4 VLP models, 2 task categories, multiple LVLMs (including GPT-5), cross-model and cross-task evaluations, and comprehensive ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated; comparison figures with prior work are intuitive; algorithm pseudocode is complete.
-- **Value**: ⭐⭐⭐⭐ — Exposes the cross-modal attack vulnerability of VLP models and provides a stronger attack baseline for adversarial robustness research.
+- **Novelty**: ⭐⭐⭐⭐ — Dynamic contrastive interaction and push-pull logic are innovative in the VLP context.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Extensive testing across 4 VLP models, 2 tasks, multiple LVLMs (including GPT-5), and comprehensive ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, intuitive comparisons, and complete pseudocode.
+- **Value**: ⭐⭐⭐⭐ — Reveals cross-modal vulnerabilities and provides a stronger benchmark for adversarial robustness.
 
 <!-- RELATED:START -->
 
@@ -160,11 +156,11 @@ SADCA significantly outperforms the SOTA (SA-AET(LI)+SIA) across all four source
 
 ## Related Papers
 
+- [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
-- [\[ACL 2026\] UniVid: A Unified Vision-Language Model for Video Moderation](../../ACL2026/ai_safety/univid_unified_vision-language_model_for_video_moderation.md)
-- [\[AAAI 2026\] Transferable Hypergraph Attack via Injecting Nodes into Pivotal Hyperedges](../../AAAI2026/ai_safety/transferable_hypergraph_attack_via_injecting_nodes_into_pivotal_hyperedges.md)
-- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
-- [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](../../ICCV2025/ai_safety/semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
+- [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
+- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 
 </div>
 

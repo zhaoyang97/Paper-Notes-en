@@ -2,121 +2,128 @@
 title: >-
   [Paper Note] Learning to Bet for Horizon-Aware Anytime-Valid Testing
 description: >-
-  [ICML 2026][Reinforcement Learning][Test Martingales] This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space…
+  [ICML 2026][Reinforcement Learning][DQN] This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space $(t,\log W_t)$. It theoretically proves a three-zone "phase portrait"—optimal Kelly betting in the "on-schedule" middle band, aggressive betting when fal
 tags:
-  - "ICML 2026"
-  - "Reinforcement Learning"
-  - "Test Martingales"
-  - "Kelly Betting"
-  - "Confidence Sequences"
-  - "Phase Portrait"
-  - "DQN"
-  - "Finite-Horizon Decision Making"
+  - ICML 2026
+  - Reinforcement Learning
+  - DQN
 date: 2026-05-08
-content_hash: eb409cc0376dbda2
+content_hash: 65a7c97be585449d
 ---
-
 # Learning to Bet for Horizon-Aware Anytime-Valid Testing
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.19551](https://arxiv.org/abs/2603.19551)  
 **Code**: https://github.com/egetaga/learning-to-bet (Available)  
 **Area**: Sequential Hypothesis Testing / Anytime-Valid Inference / Finite-Horizon Optimal Control  
-**Keywords**: Test Martingales, Kelly Betting, Confidence Sequences, Phase Portrait, DQN, Finite-Horizon Decision Making  
+**Keywords**: Testing martingales, Kelly betting, Confidence sequences, Phase portrait, DQN, Finite-horizon decision-making  
 
 ## TL;DR
-This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space $(t, \log W_t)$. It theoretically proves a three-zone "phase portrait" where Kelly betting is optimal in an "on-schedule" middle band, aggressive betting is required when trailing, and conservative betting is preferred when ahead. A unified DQN agent, trained on various synthetic Beta distributions, automatically learns state-dependent policies consistent with this phase portrait. It achieves higher rejection rates within deadlines and narrower confidence sequences on both synthetic and real data while maintaining anytime-validity via Ville’s inequality.
+This paper reformulates the design of anytime-valid sequential tests under a strict observation limit $N$ as a finite-horizon optimal control problem with state space $(t,\log W_t)$. It theoretically proves a three-zone "phase portrait"—optimal Kelly betting in the "on-schedule" middle band, aggressive betting when falling behind, and conservative betting when ahead. A unified DQN agent, trained on various synthetic Beta distributions, automatically learns state-dependent strategies consistent with this phase portrait, achieving higher rejection rates within the deadline and narrower confidence sequences on both synthetic and real data while maintaining anytime-validity via Ville’s inequality.
 
 ## Background & Motivation
-**Background**: The framework of e-processes and test martingales based on "testing by betting" (Shafer 2019/2021; Waudby 2024) has become the mainstream for constructing power-one tests and confidence sequences. Given $H_0: \mu_X = m$, a predictable bet $\lambda_n(m) \in [-1/(1-m), 1/m]$ is defined such that the wealth process $W_n(m) = W_{n-1}(m)(1 + \lambda_n(m)(X_n - m))$ is a non-negative martingale under $H_0$. By Ville’s inequality $\mathbb P(\exists n: W_n \ge 1/\alpha) \le \alpha$, it follows that $\tau_m = \inf\{n: W_n \ge 1/\alpha\}$ is a level-$\alpha$ stopping time. PrPlEB (Waudby 2024), universal portfolios (Orabona 2023), and STaR-Bets (Voravcek 2025) all refine betting strategies within this framework.
+**Background**: The e-process / testing-by-betting framework (shafer2019game/2021; waudby2024estimating) has become mainstream for constructing power-one tests and confidence sequences. Given a hypothesis $H_0:\mu_X=m$, one defines a predictable bet $\lambda_n(m)\in[-1/(1-m),1/m]$ such that the wealth process $W_n(m)=W_{n-1}(m)(1+\lambda_n(m)(X_n-m))$ is a non-negative martingale under $H_0$. By Ville’s inequality $\mathbb P(\exists n: W_n\ge 1/\alpha)\le \alpha$, $\tau_m=\inf\{n: W_n\ge 1/\alpha\}$ is immediately a level-$\alpha$ stopping time. Recent works like PrPlEB (waudby2024estimating), universal portfolios (orabona2023tight), and STaR-Bets (voravcek2025star) have refined betting strategies within this framework.
 
-**Limitations of Prior Work**: Most mainstream works assume an infinite stream of observations $\{X_n\}$, but real-world scenarios (online A/B testing, adaptive experiments, resource-constrained research) almost always have a hard deadline $N$. Pure anytime strategies in the style of Doob/Robbins remain too conservative for large $N$, while tests tuned for a fixed $N$ violate type-I error under continuous monitoring. Neither approach directly addresses "continuous monitoring with a deadline."
+**Limitations of Prior Work**: Most mainstream approaches assume the observation stream $\{X_n\}$ is infinite. However, real-world scenarios (online A/B testing, adaptive experiments, resource-constrained research) almost always have a hard deadline $N$. Doob/Robbins-style anytime strategies remain too conservative for large $N$, while tests tuned for a fixed $N$ violate type-I error under continuous monitoring. These methods fail to address "continuous monitoring with a deadline."
 
-**Key Challenge**: To maximize rejection probability within the deadline $N$, the required "drift per step" $(b - \log W_t)/(N - t)$ is non-stationary and changes dynamically with current progress and remaining time. However, to maintain anytime-validity, the bet must remain $\mathcal F_{t-1}$-measurable and satisfy the martingale constraint $\lambda \in \Lambda_m$. The only previous work addressing this, STaR-Bets (Voravcek 2025), uses a STaR (Sequential Target-Recalculating) heuristic without optimality characterization or adaptation to distribution shapes.
+**Key Challenge**: Maximizing the rejection probability within a deadline $N$ requires a "per-step drift" $(b-\log W_t)/(N-t)$ that is non-stationary, changing dynamically with current progress and remaining time. However, to maintain anytime-validity, the bet must consistently satisfy the martingale constraint—being $\mathcal F_{t-1}$-measurable and valued within $\Lambda_m$. STaR-Bets (voravcek2025star), the only prior work directly addressing this, relies on a Sequential Target-Recalculating heuristic without optimality guarantees or adaptation to distribution shapes.
 
-**Goal**: (1) Formulate "horizon-aware betting" as an optimal control (Dynamic Programming, DP) problem; (2) Provide provable sufficient conditions for when to deviate from Kelly betting and in which direction; (3) Translate this theory into a distribution-agnostic betting strategy that can be learned online.
+**Goal**: (1) Formalize "horizon-aware betting" as a dynamic programming (DP) problem; (2) Provide provable sufficient conditions for when to deviate from Kelly betting and in which direction; (3) Translate this theory into an online-learning, distribution-agnostic betting strategy.
 
-**Key Insight**: The Bellman state is fully determined by $(t, \log W_t)$, and the action is $\lambda$. This is a typical finite-horizon discrete DP, albeit with a continuous action space and an unknown transition distribution $P_X$. Local analysis of the DP allows partitioning the state plane into a "phase portrait" (Kelly/Aggressive/Conservative zones), which a DQN can then implement by absorbing distribution information from empirical features.
+**Key Insight**: The Bellman state is fully determined by $(t,\log W_t)$, and the action is $\lambda$. This is a classic finite-horizon discrete DP, albeit with a continuous action space and unknown transition distribution $P_X$. Local analysis of the DP allows partitioning the state plane into a "Kelly/Aggressive/Conservative" phase portrait, which a DQN can then implement by absorbing distributional information from empirical features.
 
-**Core Idea**: Treat anytime-valid testing as an optimal control problem to characterize the phase portrait, then use a cross-distribution DQN to implement the portrait as an executable policy, combining theoretical guarantees with learned strategies.
+**Core Idea**: Treat anytime-valid testing as an optimal control problem characterized by a phase portrait, then implement the portrait as an executable policy via a cross-distribution DQN. This combines theoretical guarantees with learned efficiency.
 
 ## Method
-The authors first formalize the problem using Bellman recursion, prove three complementary "phase portrait theorems," and then constrain the action space to $\{\widehat\lambda_t/2, \widehat\lambda_t, \lambda_{\max}\}$ to train a universal DQN. Crucially, policy learning is transparent to anytime-validity: validity only requires $\lambda_t \in \Lambda_m$ and predictability, regardless of how the policy is derived.
+The authors first formalize the problem using Bellman recursion, prove three complementary "phase portrait theorems," and then constrain the action space to $\{\widehat\lambda_t/2,\widehat\lambda_t,\lambda_{\max}\}$ to train a universal DQN. Crucially, policy learning is transparent to anytime-validity: validity only requires $\lambda_t\in\Lambda_m$ and predictability, regardless of how the strategy is derived.
 
 ### Overall Architecture
-- **DP State**: $(t, \log W_t)$, with termination conditions $W_t \ge 1/\alpha$ or $t = N$.
-- **Action**: $\lambda_t(m) \in \Lambda_m = [-1/(1-m), 1/m]$; discretized into three levels: $\{\widehat\lambda_t/2, \widehat\lambda_t, \lambda_{\max}\}$ ("Half-Kelly / Kelly / All-in").
-- **Reward**: $R = \mathbb I\{\max_{1 \le t \le N} \log W_t \ge \log(1/\alpha)\}$ (sparse terminal reward), where $\mathbb E[R] = \mathbb P(\tau_m \le N)$ directly equals the rejection rate within the deadline.
-- **Bellman Recursion**: $V_t(y) = \max_{\lambda \in \Lambda_m} \mathbb E_{X \sim P_X} \big[\mathbb I\{y + h_m(\lambda, X) \ge b\} + \mathbb I\{y + h_m(\lambda, X) < b\} V_{t+1}(y + h_m(\lambda, X))\big]$, where $h_m(\lambda, x) = \log(1 + \lambda(x - m))$ and $b = \log(1/\alpha)$.
-- **Confidence Sequences**: $C_n = \{m \in [0, 1]: W_n(m) < 1/\alpha\}$, derived automatically from the horizon-aware coverage guarantee of each $\tau_m$.
+- **DP State**: $(t,\log W_t)$, with termination conditions $W_t\ge 1/\alpha$ or $t=N$.
+- **Action**: $\lambda_t(m)\in\Lambda_m=[-1/(1-m),1/m]$, discretized into three levels: "Half-Kelly / Kelly / All-in ($\lambda_{\max}$)".
+- **Reward**: $R=\mathbb I\{\max_{1\le t\le N}\log W_t\ge \log(1/\alpha)\}$ (sparse terminal reward), where $\mathbb E[R]=\mathbb P(\tau_m\le N)$ directly equals the rejection rate within the deadline.
+- **Bellman Recursion**: $$V_t(y)=\max_{\lambda\in\Lambda_m}\mathbb E_{X\sim P_X}\big[\mathbb I\{y+h_m(\lambda,X)\ge b\}+\mathbb I\{y+h_m(\lambda,X)<b\}V_{t+1}(y+h_m(\lambda,X))\big]$$, where $h_m(\lambda,x)=\log(1+\lambda(x-m))$ and $b=\log(1/\alpha)$.
+- **Confidence Sequence**: $C_n=\{m\in[0,1]:W_n(m)<1/\alpha\}$, providing horizon-aware coverage guarantees derived automatically from $\tau_m$.
+
+The workflow is: formulate as DP → use theorems to characterize the optimal policy shape → discretize actions → use an oracle phase portrait as a baseline → train a cross-distribution DQN to learn switching logic. Anytime-validity is independently guaranteed by Ville's inequality.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 22, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Finite-horizon Optimal Control DP<br/>State (t, log W_t), Action λ∈Λ_m<br/>Sparse terminal reward R (1 if trigger 1/α)"] --> B["Phase Portrait & 3 Sufficient Conditions<br/>Central Kelly band / Aggressive if behind / Conservative if ahead"]
+    B --> C["Oracle Phase Portrait<br/>Bellman back-induction for optimal actions on known P_X"]
+    B --> D["3-tier Action Set<br/>Half-Kelly / Kelly / All-in λ_max"]
+    D --> E["DQN Betting Agent<br/>State features φ_t → Q-network → Greedy action selection"]
+    C -.Comparison.-> E
+    E --> F["Online Loop: Select λ_t → Update W_t → t increment"]
+    F -->|Not triggered & t < N| E
+    F -->|Triggered or t = N| G["Inner-deadline Rejection Rate + Confidence Sequence<br/>Anytime-validity guaranteed by Ville's Inequality"]
+```
 
 ### Key Designs
 
-1. **$(t, \log W_t)$ Plane Phase Portrait and Three Sufficient Conditions**:
-    - **Function**: Characterizes when to deviate from Kelly betting at the optimal control level, turning vague "schedule-based adjustment" intuitions into provable propositions.
-    - **Mechanism**: Let $T = N - t$ and $\Delta = TL_{\max} - (b - y)$ (where $L_{\max} = \mathbb E[h_m(\lambda_m^{\text{Kelly}}, X)]$) represent the "surplus drift" relative to Kelly. **Theorem 3.1 (Central Band)**: If $\Delta \ge B\sqrt{8T\log T}$, pure Kelly hits the threshold with probability $\ge 1 - 1/T$. Conversely, if the policy deviates from Kelly by $\ge \delta$ for a proportion $\rho$ of time and $\Delta \le \rho\epsilon T - B\sqrt{8T\log 2}$, the rejection probability is $\le 1/2$. **Proposition 3.4 (Trailing Aggression)**: When $r = (b - y)/T > \max\{L_{\max}, B_K/2\}$ (Kelly drift is insufficient), if an aggressive $\lambda^{\text{agg}} > \lambda^{\text{Kelly}}$ satisfies a specific KL rate condition, its rejection probability strictly exceeds Kelly's. **Proposition 3.6 (Leading Conservatism)**: When $B_K/2 < r < L_{\max}$, a conservative $\lambda^{\text{def}} < \lambda^{\text{Kelly}}$ exists with a lower failure probability than Kelly.
-    - **Design Motivation**: Provides a provable structure for the optimal policy—Central Kelly zone + Trailing Aggressive zone + Leading Conservative zone—justifying the DQN action set.
+**1. $(t,\log W_t)$ Plane Phase Portrait and Three Sufficient Conditions: Formalizing "progress-aware" betting**
 
-2. **Oracle Phase Portrait (DP Backward Induction)**:
-    - **Function**: Computes "theoretical optimal actions" on synthetic distributions where $P_X$ is known to serve as ground truth.
-    - **Mechanism**: Discretizes the $(t, \log W_t)$ plane and performs Bellman backward induction for $V_t(y)$. Results confirm the three-zone structure. As the problem difficulty increases ($m$ closer to $\mu_X$), the conservative zone disappears, the Kelly zone narrows, and the aggressive zone expands, matching theory.
-    - **Design Motivation**: Validates the theoretical shape and provides a visual benchmark for the DQN "modal action map."
+While the Bellman recursion lacks a general analytical solution, it exhibits a provable regional structure. Defining $T=N-t$ and $\Delta=TL_{\max}-(b-y)$ (where $L_{\max}=\mathbb E[h_m(\lambda_m^{\text{Kelly}},X)]$) as the "remaining drift margin beyond Kelly," three theorems define the regions. **Theorem 3.1 (Central Band)**: If $\Delta\ge B\sqrt{8T\log T}$, pure Kelly hits the boundary with probability $\ge 1-1/T$; conversely, deviating significantly from Kelly when the margin is narrow reduces success probability—meaning Kelly is optimal when on schedule. **Proposition 3.4 (Aggressive if behind)**: When $r=(b-y)/T>\max\{L_{\max},B_K/2\}$ (Kelly drift is insufficient), if an aggressive bet $\lambda^{\text{agg}}>\lambda^{\text{Kelly}}$ exists with a smaller KL rate penalty, it strictly outperforms Kelly. **Proposition 3.6 (Conservative if ahead)**: When $B_K/2<r<L_{\max}$, a defensive bet $\lambda^{\text{def}}<\lambda^{\text{Kelly}}$ yields a lower failure probability. These zones justify the DQN’s 3-tier action set.
 
-3. **Cross-Distribution Universal DQN Betting Agent**:
-    - **Mechanism**: Each test is an episode of length $\le N$ with reward $R = \mathbb I\{\max_t \log W_t \ge b\}$. State features are $\mathcal F_{t-1}$-measurable vectors (empirical moments, time left $N-t$, distance to threshold $b - \log W_t$, $m$, empirical Kelly $\widehat\lambda_t(m)$, etc.). Actions are discretized into three levels: $\{\widehat\lambda_t/2, \widehat\lambda_t, \lambda_{\max}\}$. Trained once on 500,000 synthetic episodes (Beta/Beta-mixtures) across randomized $(\mu_X, m, N)$.
-    - **Design Motivation**: Since the phase portrait boundaries depend on unknown $P_X$, the DQN learns to internalize distribution sensitivity into its policy. Validity is guaranteed by Ville’s inequality, remaining agnostic to the policy's source.
+**2. Oracle Phase Portrait (DP backward induction): Computing theoretical optima for known distributions**
+
+Since theoretical theorems only provide relative relationships between regions, the authors compute an oracle version as a reference using known $P_X$. By discretizing the $(t,\log W_t)$ plane and performing Bellman backward induction from $t=N-1$, they map optimal actions. On Beta-mixtures, the oracle indeed shows three bands: "Central Kelly / Upper Half-Kelly / Lower All-in." As the problem difficulty increases ($m$ approaches $\mu_X$), the conservative band disappears, the Kelly band narrows, and the aggressive band expands, aligning with Proposition 3.4.
+
+**3. Cross-Distribution Universal DQN Betting Agent: Learning "when to switch" via RL**
+
+Phase portrait boundaries depend on the unknown $P_X$. Moreover, empirical Kelly estimates $\widehat\lambda_t(m)$ suffer from high variance at small $t$. The authors treat each test as an episode ($\le N$ steps) with a sparse reward $R$. The state features are $\mathcal F_{t-1}$-measurable (empirical moments, remaining time $N-t$, distance to threshold $b-\log W_t$, $m$, empirical Kelly $\widehat\lambda_t(m)$, etc.). The DQN learns $Q(s,a)$ once across 500,000 synthetic episodes (Beta/Beta-mixtures with randomized $\mu_X,m,N$). Crucially, this black-box learning does not compromise statistical rigor: anytime-validity relies only on predictability and $\lambda_t\in\Lambda_m$, which are maintained regardless of the DQN's output.
 
 ### Loss & Training
-Standard DQN (Mnih 2015) with sparse terminal reward $R \in \{0, 1\}$. Two reward shaping variants were explored: DQN-EB (reward $= 1 + (1 - t/N)$) and DQN-U ($= 1 - t/N$) to encourage earlier rejections.
+The DQN uses standard Q-learning (mnih2015human) with sparse terminal rewards $R\in\{0,1\}$. Two reward shaping variants, DQN-EB ($1+(1-t/N)$) and DQN-U ($1-t/N$), were explored to incentivize early rejection.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison with STaR-Bets/STaR-Hoeffding (Voravcek 2025) and PrPlEB (Waudby 2024).
+Baselines: STaR-Bets / STaR-Hoeffding (voravcek2025star) and PrPlEB (horizon-agnostic).
 
 | Setting | Metric | DQN | STaR-Bets | PrPlEB |
-|------|------|------|------|------|
-| Beta-mix conc=6, $N=100$, $m=0.45$ | $\mathbb P(\tau \le N)$ | **Highest** | Second | Lowest |
-| Beta-mix conc=1, $N=100$, $m=0.45$ | $\mathbb P(\tau \le N)$ | **Highest** | Second | Lowest |
-| Three Beta-mix types, $N=100$ | $C_N$ Width | **Narrowest** | Mid | Widest |
-| Real Data (DNA & Humidity, 6 sources) | $\mathbb P(\text{reject})$ | **5/6 Highest** | — | — |
+|:---|:---|:---|:---|:---|
+| Beta-mix conc=6, $N=100$, $m=0.45$ | $\mathbb P(\tau\le N)$ | **Highest** | Runner-up | Lagging |
+| Beta-mix conc=1, $N=100$, $m=0.45$ | $\mathbb P(\tau\le N)$ | **Highest** | Runner-up | Lagging |
+| Three Beta-mix families, $N=100$ | $C_N$ Width | **Narrowest** | Medium | Wide |
+| Real Data (DNA & Humidity, 6 sources) | $\mathbb P(\text{reject})$ | **Highest (5/6)** | — | — |
 
-The DQN, trained only on synthetic Beta data, maintains lead performance on OOD logit-normal, Bernoulli, and real-world datasets while keeping type-I error calibrated.
+The DQN, trained only on synthetic Beta distributions, maintains dominance across OOD logit-normal, Bernoulli, and 6 real data sources, with valid type-I calibrated error.
 
 ### Ablation Study
 
-| Configuration | Key Observation |
-|------|------|
-| 3 actions vs 9 actions | Similar performance; 3 actions aligned with theory are sufficient. |
-| DQN (Original Reward) | Strongest terminal power; directly optimizes $\mathbb P(\tau \le N)$. |
-| DQN-EB ($1 + (1 - t/N)$) | Earlier rejections at the cost of slight terminal power. |
-| $N \in \{250, 300, 350\}$ (Unseen) | Generalizes well to longer horizons without retraining. |
-| $\alpha = 0.01$ (Retrained) | Successfully improves power; $\alpha$ requires specific training. |
+| Configuration | Key Observation | Description |
+|:---|:---|:---|
+| 3 actions vs 9 actions | Similar Performance | Aligning action set with the 3 theoretical zones is sufficient. |
+| DQN (Original Reward) | Strongest terminal power | Directly optimizes $\mathbb P(\tau\le N)$. |
+| DQN-EB ($1+(1-t/N)$) | Med. power, earlier rejection | Early bonus shifts rejection time forward. |
+| DQN-U ($1-t/N$) | Earliest rejection, lower power | Extreme time bias through urgency rewards. |
+| $N\in\{250,300,350\}$ (Zero-shot) | Still outperforms baselines | Demonstrates generalization to longer horizons. |
+| $\alpha=0.01$ (Retrained) | Improved power | Strategies are $\alpha$-dependent and require specific training. |
 
 ### Key Findings
-- The DQN's "modal action map" visually replicates the oracle phase portrait: central Kelly band, upper half-Kelly band, and lower all-in band.
-- Early conservatism is correct but counter-intuitive: because $\widehat\lambda_t(m)$ has high variance at small $t$, the DQN avoids aggressive bets that could lead to irrecoverable wealth loss due to estimation noise.
-- Cross-distribution transfer is successful: training on Beta generalizes to various OOD families and real data.
+- The "modal action map" learned by the DQN visually replicates the oracle phase portrait: a central Kelly band, upper half-Kelly band, and lower all-in band, with boundaries shifting automatically based on distribution shape.
+- Early conservatism is counter-intuitive for Kelly but correct: since $\widehat\lambda_t(m)$ has high variance for small $t$, early aggression risks non-recoverable low wealth due to estimation noise.
+- Cross-distribution transfer is robust: training on synthetic Beta leads to high performance on logit-normal, Bernoulli, and real DNA/humidity data, with anytime-validity remaining independent and legal throughout.
 
 ## Highlights & Insights
-- The "optimal control + DQN" bridge is elegant: all statistical validity comes from the martingale constraint, allowing the policy to be a complex black box without compromising rigor.
-- Theoretical guidance (Phase Portrait Theorems) simplifies the RL design (action space discretization).
-- Generalization suggests that using geometric features ($t/N$, distance to threshold) captures distributionally robust patterns.
+- Formulating anytime-valid testing as finite-horizon optimal control with a DQN agent provides a clean bridge: validity is derived from the martingale property ($\lambda_t\in\Lambda_m$ + predictability), allowing for complex black-box strategies without sacrificing statistical rigor.
+- The three phase portrait theorems (Central Kelly, Aggressive behind, Conservative ahead) use fundamental tools like Sanov’s theorem and KL rates to justify a simplified 3-tier action space, which significantly eases RL design.
+- The DQN's ability to generalize to real OOD data suggests that using distribution-invariant "geometric" features ($t/N$, $(b-y)/T$, empirical Kelly) allows the policy to internalize distributional robust logic rather than memorizing samples.
 
 ## Limitations & Future Work
-- **OOD Sensitivity**: Performance on heavy-tailed or highly discrete distributions remains an open question.
-- **Action Space**: Limited to 3 levels; continuous actions or asymmetric negative betting ($\lambda < 0$) could further tighten confidence bounds.
-- **Accountability**: DQN is a black box, which may require an additional explanation layer for regulated environments (e.g., clinical trials).
-- **Alpha Dependency**: A different $\alpha$ requires retraining; future work could treat $\alpha$ as a state input.
-- **Scope**: Current work covers bounded $[0, 1]$ means; extending this to variances, quantiles, or CATE requires new control-theoretic analysis.
+- Training is currently restricted to Beta/Beta-mixtures; generalization to heavy-tailed or discrete mass distributions remains an open question.
+- The action set is limited to 3 discrete tiers; exploring continuous action spaces or asymmetric negative betting ($\lambda<0$) could further tighten two-sided tests.
+- As a black-box strategy, the DQN lacks the auditability of hand-crafted rules, which may be required in highly regulated fields like clinical trials.
+- Strategies are sensitive to $\alpha$ and require retraining; future work could include $\alpha$ as a state input for a "universal $\alpha$ policy."
+- The scope is currently limited to testing the mean on $[0,1]$; extending phase portrait analysis to other functionals (variance, quantiles, CATE) is a promising direction.
 
 ## Related Work & Insights
-- **vs. STaR-Bets (Voravcek 2025)**: The DQN approach provides a more formal optimality framework and better cross-distribution performance than the STaR heuristic.
-- **vs. PrPlEB (Waudby 2024)**: While reusing the same e-process framework, this work corrects PrPlEB's inherent conservatism in finite-horizon scenarios.
-- **vs. Universal Portfolios (Orabona 2023)**: Universal portfolios provide strong regret guarantees for anytime-tightness, whereas DQN is optimized for maximizing power within a specific deadline.
+- **vs voravcek2025star (STaR-Bets)**: The first horizon-aware betting work using a target-recalculating heuristic. Ours provides an optimal control formulation, phase portrait theory, and DQN implementation, yielding better cross-distribution performance.
+- **vs waudby2024estimating (PrPlEB)**: The standard anytime betting strategy. It assumes infinite horizon and is naturally conservative for deadline scenarios; Ours modifies the strategy within the same e-process framework.
+- **vs orabona2023tight (Universal Portfolio)**: Uses universal portfolios for strong regret guarantees in horizon-agnostic settings. Ours is a complementary route for horizon-aware power maximization using DRL.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers

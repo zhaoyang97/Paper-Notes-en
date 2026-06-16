@@ -2,136 +2,139 @@
 title: >-
   [Paper Note] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 description: >-
-  [CVPR 2026][Image Generation][Deepfake attribution] This paper proposes LIDA, which reformulates AI-generated image attribution from a classification problem into a retrieval problem. By leveraging low-bit-plane fingerpr…
+  [CVPR 2026][Image Generation][deepfake attribution] The attribution of AI-generated images is redefined from a classification paradigm to an instance retrieval paradigm. A model-agnostic framework, LIDA, based on low-bit plane fingerprints is proposed. Through unsupervised pre-training and few-shot attribution adaptation, SOTA performance in Deepfake detection and image
 tags:
-  - "CVPR 2026"
-  - "Image Generation"
-  - "Deepfake attribution"
-  - "image forensics"
-  - "retrieval-based"
-  - "bit-plane"
-  - "model-agnostic"
+  - CVPR 2026
+  - Image Generation
+  - deepfake attribution
+  - image retrieval
+  - bit-plane
+  - model-agnostic
+  - few-shot
 date: 2026-05-08
-content_hash: 356310698327c931
+content_hash: 0754c89c1ed0167f
 ---
-
 # Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.10583](https://arxiv.org/abs/2603.10583)  
-**Code**: [GitHub](https://github.com/hongsong-wang/LIDA)  
-**Area**: Image Forensics / AI Safety
-**Keywords**: Deepfake attribution, image forensics, retrieval-based, bit-plane, model-agnostic
+**Code**: [https://github.com/hongsong-wang/LIDA](https://github.com/hongsong-wang/LIDA)  
+**Area**: Image Forensics / AI-Generated Image Attribution  
+**Keywords**: deepfake attribution, image retrieval, bit-plane, model-agnostic, few-shot
 
 ## TL;DR
-This paper proposes LIDA, which reformulates AI-generated image attribution from a classification problem into a retrieval problem. By leveraging low-bit-plane fingerprints to capture generator-specific artifacts, combined with unsupervised pre-training and few-shot adaptation, LIDA achieves state-of-the-art Deepfake detection and image attribution under zero-shot and few-shot settings.
+The attribution of AI-generated images is redefined from a classification paradigm to an instance retrieval paradigm. A model-agnostic framework, LIDA, based on low-bit plane fingerprints is proposed. Through unsupervised pre-training and few-shot attribution adaptation, SOTA performance in Deepfake detection and image attribution is achieved under zero-shot and few-shot settings.
 
 ## Background & Motivation
-**Background**: With the rapid advancement of AIGC technologies, Deepfake detection has seen considerable progress; however, attribution of AI-generated images to specific generative models remains an open problem. Existing approaches fall into two categories: generative watermarking (requiring access to the generative model) and classification-based attribution.
+**Background**: With the rapid development of AIGC technology, synthetic images are becoming increasingly realistic. Detecting and attributing AI-generated images has become a critical security research direction. Existing methods are divided into two categories: generative image watermarking (requiring access to the generation model) and AI-generated image attribution (independent of the generation process).
 
-**Limitations of Prior Work**: (1) Generative watermarking requires full access to the generative model and modification of its architecture, lacking flexibility and generality; (2) closed-set attribution assumes all generators are known at training time, making it unable to handle emerging models; (3) open-set attribution, while accounting for unknown generators, still follows a classification paradigm and requires large amounts of unlabeled generated images for retraining, resulting in slow adaptation to new models.
+**Limitations of Prior Work**: Existing attribution methods treat the problem as a classification task, which has three core flaws: (1) Model dependence—requiring access to the generation models themselves; (2) Lack of universality—difficult to extend to new, unseen generators; (3) Closed-set assumption—requiring all generators to be known during training, leading to poor performance in open-set scenarios.
 
-**Key Challenge**: New generative models continue to emerge (e.g., Midjourney, DALL-E, Stable Diffusion), and the classification paradigm requires retraining each time to extend categories and collecting large amounts of data from new models—which is impractical in real-world scenarios.
+**Key Challenge**: AI image generators iterate and evolve rapidly, while attribution systems require frequent retraining to adapt to new generators. This "train-deploy-retrain" cycle severely limits practical utility.
 
-**Goal**: To design a model-agnostic, scalable attribution framework that generalizes to unseen generators and requires only a small number of examples to rapidly adapt to new models.
+**Goal**: Design a model-agnostic attribution framework that does not require access to any generation models, eliminates the need for retraining on new generators, and can incorporate new generators into the system using only a few samples.
 
-**Key Insight**: Attribution is redefined as an instance retrieval problem (rather than classification). A registration database is maintained, and new models can be added with just a few example images without retraining. Low-bit-plane fingerprints are used in place of raw RGB as input to explicitly capture generator-specific noise.
+**Key Insight**: Redefine the attribution problem from classification to instance retrieval—train a universal feature encoder and determine the source by retrieving the most similar images for a query image within a registration database.
 
-**Core Idea**: Low-bit-plane fingerprints + retrieval paradigm = model-agnostic, scalable, few-shot-friendly AI image attribution.
+**Core Idea**: Utilize low-bit planes of images as generative fingerprints, learn noise structure representations through unsupervised pre-training, and perform attribution adaptation using a few samples to achieve retrieval-based open-set attribution.
 
 ## Method
 
 ### Overall Architecture
-LIDA consists of three modules: (1) Low-Bit Fingerprint Generation—extracting low-bit-plane fingerprints from RGB images as input; (2) Unsupervised Pre-Training—pre-training on real image fingerprints from ImageNet to learn general noise structure representations; (3) Few-Shot Attribution Adaptation—fine-tuning the encoder with a small set of registered database samples using center loss and real-prototype contrastive loss. At inference, cosine similarity is used to retrieve the nearest neighbor from the registration database.
+LIDA aims to solve a realistic dilemma: AI image generators emerge continuously, while attribution systems that treat "which generator this image comes from" as a classification task must be retrained for every new generator. The breakthrough is to rewrite attribution as retrieval—training a universal feature encoder, encoding query images into vectors during inference, and searching for the nearest neighbor in a registration database. The pipeline consists of three steps: first, extracting low-bit planes from RGB images as generative fingerprints; second, unsupervised pre-training of the encoder on large-scale real images; and third, performing few-shot adaptation using a handful of images from each generator. Adding a new generator only requires inserting a few samples into the database without modifying the encoder itself.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["RGB Image"] --> B["Low-bit Fingerprint Generation<br/>Take lowest 3 bit planes and binarize"]
+    B --> C["Unsupervised Pre-training<br/>Pretext: ImageNet fingerprint classification"]
+    C --> D["Few-shot Attribution Adaptation<br/>Center loss + real prototype contrastive loss"]
+    D --> E["Registration Database<br/>Generator centroids + real prototype"]
+    Q["Query Image → Low-bit Fingerprint → Encoder"] -->|"Far from real prototype: classified as AI"| F["Retrieve Nearest Centroid"]
+    E --> F
+    F --> G["Attribution Result"]
+```
 
 ### Key Designs
 
-1. **Low-Bit Fingerprint Generation**:
+**1. Low-bit Fingerprint Generation: Extracting generator "signatures" from image content**
 
-    - Function: Removes semantic content from images while retaining generator-specific noise patterns as attribution cues.
-    - Mechanism: Bit-plane decomposition is applied to each channel of the RGB image: $\mathbf{x}_c = \sum_{k=0}^{7} 2^k \cdot \mathbf{b}_c^k$. The lowest 3 bit-planes are extracted and thresholded: $\tilde{\mathbf{x}}_c = 255 \cdot \text{sgn}(\sum_{k=0}^{2} 2^k \cdot \mathbf{b}_c^k)$. The resulting fingerprint image strips away nearly all semantic information while preserving the distinct noise fingerprints of individual generators.
-    - Design Motivation: PCA visualization shows that images from different generators are intermixed in RGB space, whereas in the low-bit-plane fingerprint space, images from the same generator cluster distinctly, with clear separation between real and generated images.
+Directly using RGB images for attribution fails because real/fake images and images from different generators overlap in the feature space—visual content dominates the representation, drowning out the subtle traces left by generators. The observation here is that the inherent artifacts of generators are primarily hidden in the low-bit planes. Thus, bit-plane decomposition is performed on each channel $\mathbf{x}_c = \sum_{k=0}^{7} 2^k \cdot \mathbf{b}_c^k$, taking only the lowest 3 bit planes and binarizing them:
 
-2. **Unsupervised Pre-Training**:
+$$\tilde{\mathbf{x}}_c = 255 \cdot \text{sgn}\Big(\sum_{k=0}^{2} 2^k \cdot \mathbf{b}_c^k\Big)$$
 
-    - Function: Learns general representations of the fingerprint space on large-scale real images.
-    - Mechanism: A modified ResNet-50 (with low-level downsampling removed to preserve spatial information) is trained on ImageNet low-bit-plane fingerprints using image classification as the pretext task. The loss is standard cross-entropy: $\mathcal{L}_P = -\sum_{b=1}^{B} \sum_{c=1}^{C} s_b^c \log q_b^c$.
-    - Design Motivation: Unsupervised pre-training provides robust weight initialization, enabling the model to learn transferable noise structural features and enhancing generalization to unseen generators.
+High-bit planes carry content visible to the human eye and are discarded. The remaining low-bit fingerprints contain almost no semantics but amplify the noise structures unique to the generator. In this fingerprint space, real and AI images are clearly separated, and images from the same generator naturally cluster—a prerequisite for retrieval to work. The extraction process involves only a few bitwise operations and introduces no extra parameters.
 
-3. **Few-Shot Attribution Adaptation**:
+**2. Unsupervised Pre-training: Learning transferable noise structure representations**
 
-    - Function: Rapidly adapts to new generators using a minimal number (1–10 images per generator) of registered samples.
-    - Mechanism: Rather than using cross-entropy (which disrupts the pre-trained feature space structure), center loss is adopted as the attribution loss $\mathcal{L}_A = \sum_{i=1}^{m} \|x_i - c_{y_i}\|_2^2$ to encourage intra-class compactness. The detection loss employs a real-prototype contrastive loss $\mathcal{L}_D$ that pulls real images toward the real prototype and pushes generated images away. The overall loss is $\mathcal{L} = \mathcal{L}_A + \lambda \mathcal{L}_D$ with $\lambda = 0.9$. Inference follows a two-stage process: real/fake detection first, followed by retrieval-based attribution.
-    - Design Motivation: Center loss acts as a regularizer to preserve the structure of the pre-trained feature space, preventing feature drift under few-shot fine-tuning; contrastive loss enhances real/fake separation.
+During the few-shot adaptation phase, only a few images are available per generator. Training an encoder from scratch would lead to overfitting, necessitating a good weight initialization. The encoder is pre-trained on large-scale real images (ImageNet fingerprints) using image classification as a pretext task with standard cross-entropy loss $\mathcal{L}_P = -\sum_{b=1}^{B} \sum_{c=1}^{C} s_b^c \log q_b^c$. A ResNet-50 backbone is used, but low-level downsampling is intentionally removed to preserve spatial structures within the fingerprints. Notably, pre-training uses only real images and never touches generator samples, yet the "inherent noise structures" learned are transferable to downstream forensic tasks, leading to faster convergence and more stable performance during fine-tuning.
+
+**3. Few-shot Attribution Adaptation: Fine-tuning with few images while preserving structures**
+
+The adaptation phase follows a two-stage attribution paradigm—first distinguishing real from fake, then attributing to a specific generator, using two complementary losses. The first is center loss $\mathcal{L}_A = \sum_{i=1}^{m} \|x_i - c_{y_i}\|_2^2$, which pulls features from the same generator toward their respective centroids. Centroids $c_j$ are updated via a sliding window based on samples within each batch:
+
+$$c_j^{t+1} = c_j^t - \alpha \cdot \frac{\sum_{i=1}^{m} \delta(y_i = j) \cdot (c_j^t - x_i)}{1 + \sum_{i=1}^{m} \delta(y_i = j)}$$
+
+The second is a real prototype contrastive loss $\mathcal{L}_D$, which pulls real images toward a real prototype and pushes AI images away, handling the detection stage. The total loss is $\mathcal{L} = \mathcal{L}_A + \lambda \mathcal{L}_D$. A critical choice is the **intentional exclusion of cross-entropy**: cross-entropy forces features to align with classification boundaries, disrupting the feature space structures learned during pre-training. Center loss acts more like a regularizer, constraining intra-class compactness without forcibly rearranging the entire space, which is more stable in extreme few-shot scenarios.
+
+### A Complete Example
+Suppose a database contains 3 registered generators (SD, Midjourney, DALL·E), each adapted with 1 image, plus a set of real image prototypes. When a query image arrives, its low-bit fingerprint is extracted and encoded into a feature vector. The real prototype learned via $\mathcal{L}_D$ first determines if it is real—if it is sufficiently far from the real prototype, it is classified as AI and proceeds to attribution. Its distance to the three generator centroids is then compared; if it falls closest to the SD centroid, it is attributed to SD. If a 4th generator emerges, the encoder does not need retraining; its samples are simply encoded and registered into the database, allowing it to be retrieved in future queries—this is the open-set scalability provided by "attribution as retrieval."
 
 ### Loss & Training
-The detection loss $\mathcal{L}_D$ is based on a real-prototype contrastive loss: the average feature of all ImageNet images from the pre-training phase serves as the real class prototype $p_r$. Sigmoid and cosine similarity are used to attract real images and repel generated images, with temperature parameter $\tau$ controlling distribution sharpness. Fine-tuning uses batch size 32, learning rate $1 \times 10^{-4}$, and trains for 100 epochs.
+- Pre-training phase: Classification cross-entropy $\mathcal{L}_P$ on ImageNet fingerprint images (pretext task only).
+- Fine-tuning phase: Center loss $\mathcal{L}_A$ (intra-class attribution clustering) + Real prototype contrastive loss $\mathcal{L}_D$ (real/fake detection), combined as $\mathcal{L} = \mathcal{L}_A + \lambda \mathcal{L}_D$.
+- Centroids are updated in a sliding manner based on intra-batch samples of the same class (formula provided above).
 
 ## Key Experimental Results
 
 ### Main Results
-Cross-architecture attribution on the GenImage dataset (8 generator categories, Rank-1 / mAP):
+Attribution results (Rank-1 / mAP %) for 1-shot and 5-shot settings on the GenImage dataset:
 
-| Shot | Method | Avg Rank-1 | Avg mAP |
-|------|--------|-----------|---------|
-| 1-shot | ResNet | 17.4 | 37.5 |
-| 1-shot | DIRE | 14.3 | 34.8 |
-| 1-shot | ESSP | 17.0 | 36.0 |
-| 1-shot | **LIDA** | **40.4** | **61.5** |
-| 10-shot | ResNet | 21.4 | 22.4 |
-| 10-shot | DIRE | 17.2 | 28.8 |
-| 10-shot | ESSP | 22.4 | 23.0 |
-| 10-shot | **LIDA** | **54.0** | **51.6** |
-
-Zero-shot Deepfake detection on GenImage (Accuracy):
-
-| Method | BigGAN | Mid | WuK | SDv4 | SDv5 | ADM | GLIDE | VQ | Avg |
-|--------|--------|-----|-----|------|------|-----|-------|-----|-----|
-| RIGID | 53.0 | 94.1 | 87.8 | 87.0 | 87.2 | 51.4 | 45.9 | 52.2 | 69.8 |
-| FSD | 62.1 | 75.1 | 88.0 | 88.0 | 88.0 | 74.1 | 93.9 | 69.1 | 77.1 |
-| **LIDA** | **91.0** | 85.9 | 86.2 | 86.3 | 86.8 | **85.5** | 83.9 | **84.5** | **86.3** |
+| Method | 1-shot Rank-1 | 1-shot mAP | 5-shot Rank-1 | 5-shot mAP |
+|------|-------------|-----------|-------------|-----------|
+| ResNet | 17.4 | 37.5 | 19.4 | 25.0 |
+| DIRE | 14.3 | 34.8 | 18.7 | 24.8 |
+| ESSP | 17.0 | 36.0 | 17.5 | 23.7 |
+| **LIDA (Ours)** | **40.4** | **61.5** | **76.9** | **54.5** |
 
 ### Ablation Study
 
-| BF | $\mathcal{L}_P$ | $\mathcal{L}_A$ | $\mathcal{L}_D$ | Avg mAP Change |
-|----|------|------|------|----------------|
-| ✗ | ✗ | ✗ | ✗ | baseline (RGB + ImageNet) |
-| ✓ | ✗ | ✗ | ✗ | +10.6% |
-| ✓ | ✓ | ✗ | ✗ | +12.1% (additional +1.5%) |
-| ✓ | ✓ | ✓ | ✗ | +15.8% (additional +3.7%) |
-| ✓ | ✓ | ✓ | ✓ | +24.0% (additional +8.2%) |
-
-Replacing both center loss and contrastive loss with cross-entropy reduces mAP by 3.9%.
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| RGB Input | Real/Fake mixed in feature space | PCA visualization cannot distinguish between different generators |
+| Low-bit Fingerprint Input | Clear clustering in feature space | Real and AI images are separated; same-generator images cluster together |
+| No pre-training (direct fine-tuning) | Performance drops significantly | Lack of universal noise structure representation |
+| Cross-entropy replacing center loss | Performance drops | Disrupts the pre-trained feature space structure |
 
 ### Key Findings
-- Low-bit-plane fingerprints are the single largest contributing factor to attribution performance (+10.6% mAP).
-- The detection loss $\mathcal{L}_D$ contributes the most among training components (+8.2%), effectively increasing the feature distance between real and generated images.
-- Zero-shot accuracy on BigGAN reaches 91%, validating the strong discriminability of bit-plane fingerprints for GAN-generated content.
-- The method exhibits strong robustness under JPEG compression; even when Gaussian blur disrupts the low-bit-plane distribution, the fingerprint features still outperform raw RGB.
+- Low-bit plane fingerprints are key to distinguishing generators—different generators produce significantly different noise patterns in low bits.
+- The retrieval paradigm naturally supports open-sets—adding a new generator only requires adding a few samples to the database without retraining.
+- In the 1-shot setting, LIDA's mAP is already 24 points higher than the ResNet baseline.
+- In the 5-shot setting, performance jumps significantly, with Rank-1 rising from 40.4% to 76.9%.
 
 ## Highlights & Insights
-- The paradigm shift of "attribution as retrieval" is elegant and principled—new models require only a few images added to the registration database, with zero retraining overhead.
-- The physical intuition behind low-bit planes is compelling: high-order bits carry semantic content, while low-order bits carry noise and artifacts; bit-level decomposition cleanly isolates generator fingerprints.
-- The design choice to replace cross-entropy with center loss is critical—it preserves the structure of the pre-trained feature space under few-shot fine-tuning.
-- The method is extremely lightweight: a ResNet-50 backbone with millisecond-level inference.
+- Paradigm Innovation: Shifting attribution from classification to retrieval solves the scalability problem for new generators.
+- Low-bit planes as fingerprints are simple yet effective—extracted with just a few lines of bitwise operations.
+- Avoiding cross-entropy is a subtle but critical design choice—preserving the pre-trained feature space structure is vital for few-shot learning.
+- Provides "evidence-based attribution"—the retrieved similar images themselves serve as evidence for the attribution decision.
 
 ## Limitations & Future Work
-- Robustness to Gaussian blur is limited, as it directly disrupts the low-bit-plane distribution.
-- Single-threshold zero-shot detection may lack flexibility in practical deployment.
-- Evaluation is limited to GenImage and WildFake; assessment on the latest video generative models is absent.
-- The robustness of the bit-plane approach to real-world image post-processing pipelines (e.g., social media compression chains) requires further validation.
+- The robustness of low-bit planes against post-processing such as JPEG compression needs further verification.
+- The scale and quality of the registration database directly affect attribution accuracy.
+- Currently limited to image-level attribution; not yet extended to video generators.
+- Discriminatory power between highly similar generators in the same family (e.g., SD v1.4 vs v1.5) may be limited.
 
 ## Related Work & Insights
-- Generative watermarking methods (Tree-Ring, Gaussian Shading) require model modification; the proposed method is entirely model-agnostic.
-- Closed-set method RepMix is restricted to known GANs; the proposed framework naturally supports open-set scenarios.
-- The retrieval paradigm is extensible to video generator attribution by expanding 2D fingerprints into the temporal dimension.
-- The technique of preserving feature space structure via center loss during few-shot fine-tuning is a transferable insight for related tasks.
+- **Yu et al. (GAN fingerprint)**: The first to systematically study GAN fingerprints, but limited to closed-set classification.
+- **Tree-Ring/Gaussian Shading**: Generative watermarking methods requiring access to the generation model.
+- **DIRE**: Uses diffusion reconstruction error for detection, but has weak attribution capabilities.
+- Insight: Other forensic tasks (e.g., deepfake video detection, AI text detection) could also explore the "detection as retrieval" paradigm.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Redefining attribution as retrieval is a clear paradigm innovation; the low-bit-plane fingerprint is concise and effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage across two datasets, multiple shot settings, and detection + attribution + ablation experiments.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated and the method is presented fluently.
-- Value: ⭐⭐⭐⭐ Provides a highly practical new paradigm for AI-generated image attribution, particularly well-suited to the rapidly evolving generative model ecosystem.
+- Novelty: ⭐⭐⭐⭐ Mapping attribution to retrieval is a significant paradigm shift; low-bit fingerprints are elegant inputs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation on two large-scale datasets (GenImage and WildFake) across zero-shot and few-shot settings.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological descriptions and logical experimental design.
+- Value: ⭐⭐⭐⭐ High practicality; the model-agnostic and few-shot adaptation features address key real-world requirements.
 
 <!-- RELATED:START -->
 
@@ -139,11 +142,11 @@ Replacing both center loss and contrastive loss with cross-entropy reduces mAP b
 
 ## Related Papers
 
+- [\[CVPR 2026\] IncreFA: Breaking the Static Wall of Generative Model Attribution](increfa_breaking_the_static_wall_of_generative_model_attribution.md)
 - [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](../../AAAI2026/image_generation/aedr_training-free_ai-generated_image_attribution_via_autoen.md)
+- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 - [\[ICML 2026\] Barriers to Counterfactual Credit Attribution for Autoregressive Models](../../ICML2026/image_generation/barriers_to_counterfactual_credit_attribution_for_autoregressive_models.md)
 - [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
-- [\[CVPR 2026\] Diffusion Probe: Generated Image Result Prediction Using CNN Probes](diffusion_probe_generated_image_result_prediction_using_cnn_probes.md)
-- [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](../../NeurIPS2025/image_generation/fast_data_attribution_for_text-to-image_models.md)
 
 </div>
 

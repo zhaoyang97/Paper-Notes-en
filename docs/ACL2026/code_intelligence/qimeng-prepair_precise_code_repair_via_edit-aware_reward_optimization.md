@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization
 description: >-
-  [ACL 2026][Code Intelligence][Precise Code Repair] This paper identifies the "over-editing" problem in LLM-based code repair—where models tend to rewrite substantial portions of code instead of precisely locating and fix…
+  [ACL 2026][Code Intelligence][GRPO] This paper identifies the "over-editing" problem in LLM code repair—where models tend to rewrite large portions of code instead of precisely locating and fixing bugs. It proposes the PRepair framework, which uses Self-Breaking (diverse bug injection) and Self-Repairing (edit-aware GRPO training) to significantly improv
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Precise Code Repair"
-  - "Over-editing"
-  - "Edit-Aware Reward"
-  - "GRPO"
-  - "Speculative Editing"
+  - ACL 2026
+  - Code Intelligence
+  - GRPO
 date: 2026-05-08
-content_hash: d8b3cffa5d6c1950
+content_hash: 209d18b6088283a7
 ---
-
 # QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization
 
 **Conference**: ACL 2026  
@@ -25,48 +20,65 @@ content_hash: d8b3cffa5d6c1950
 
 ## TL;DR
 
-This paper identifies the "over-editing" problem in LLM-based code repair—where models tend to rewrite substantial portions of code instead of precisely locating and fixing bugs. It proposes the PRepair framework, which employs Self-Breaking (diverse bug injection) and Self-Repairing (edit-aware GRPO training) to significantly enhance repair precision while maintaining correctness, further accelerating speculative decoding inference.
+This paper identifies the "over-editing" problem in LLM code repair—where models tend to rewrite large portions of code instead of precisely locating and fixing bugs. It proposes the PRepair framework, which uses Self-Breaking (diverse bug injection) and Self-Repairing (edit-aware GRPO training) to significantly improve repair precision while maintaining correctness, and accelerates speculative decoding inference.
 
 ## Background & Motivation
 
-**Background**: LLMs demonstrate excellent performance in program repair. Current training methods (SFT and RL) typically optimize only for repair correctness, treating code repair as a pure correctness objective.
+**Background**: LLMs exhibit excellent performance in program repair. Existing training methods (SFT and RL) usually optimize only for repair correctness, treating code repair as a pure correctness objective.
 
-**Limitations of Prior Work**: (1) During GRPO training, as correctness improves, the edit cost also increases—models do not learn precise repair but rather "guess" the correct solution through massive modifications; (2) Over-editing destroys the original code structure and increases the burden of code review for developers; (3) Over-editing fails to accurately locate bugs, limiting the actual effectiveness and maintainability of repairs.
+**Limitations of Prior Work**: (1) In GRPO training, as correctness improves, the editing cost also increases—the model does not learn precise repair but rather "stumbles upon" the correct solution through massive modifications; (2) Over-editing destroys the original code structure and increases the review burden for developers; (3) Over-editing fails to locate bugs, limiting the actual effectiveness and maintainability of the repair.
 
-**Key Challenge**: There is a tension between repair correctness and edit minimality—optimizing only for correctness allows the model to take the "rewriting" shortcut instead of learning to understand and precisely locate bugs.
+**Key Challenge**: A tension exists between repair correctness and editing minimality—optimizing only for correctness leads the model to take "rewriting" shortcuts rather than learning to understand and precisely locate bugs.
 
-**Goal**: To design a Precise Repair framework that maximizes the reuse of original code while maintaining repair correctness.
+**Goal**: Design a Precise Repair framework that maximizes the reuse of original code while maintaining repair correctness.
 
-**Key Insight**: It is observed that edit cost grows synchronously with correctness during GRPO training (Figure 2), suggesting the need to explicitly introduce edit constraints into the reward function.
+**Key Insight**: It is observed that editing cost grows synchronously with correctness during GRPO training (Figure 2), indicating the need to explicitly introduce editing constraints into the reward.
 
-**Core Idea**: Edit-Aware GRPO (EA-GRPO)—where edit penalties are applied to correct samples only when the group-level accuracy exceeds a certain threshold, balancing correctness and edit minimality.
+**Core Idea**: Edit-Aware GRPO (EA-GRPO)—editing penalties are applied to correct samples only when the group-level accuracy exceeds a threshold, balancing correctness and editing minimality.
 
 ## Method
 
 ### Overall Architecture
 
-PRepair consists of two stages: (1) Self-Breaking—the model injects diverse bugs into correct code, utilizing a min-max sampling strategy to maximize bug diversity; (2) Self-Repairing—training the model on the generated bug-prone code using EA-GRPO, where an edit-aware reward dynamically balances correctness and edit cost. Evaluation is performed using the newly proposed $\text{fix}_p@k$ metric.
+PRepair decomposes "precise repair" into a closed-loop pipeline of self-constructed data and self-consistent rewards. First, the model is prompted to inject diverse bugs into correct code (**Self-Breaking**), creating a large number of training samples that are "mostly logically correct but locally flawed." Then, the model is trained on these bug-ridden codes using edit-aware GRPO (**Self-Repairing**), where the reward adds an editing penalty only after correctness reaches a certain standard. The entire link from input bug code to output repair patch does not rely on human annotation. Finally, the newly proposed $\text{fix}_p@k$ metric is used to measure both correctness and editing efficiency.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Correct Code + Description"] --> SB
+    subgraph SB["Self-Breaking: Self-generating diverse bug data"]
+        direction TB
+        B1["Prompt model to inject bugs<br/>Generate m candidates"] --> B2["Min-max sampling<br/>Pick k most dispersed samples"]
+    end
+    SB --> C["Bug Code Dataset"]
+    C --> EA
+    subgraph EA["EA-GRPO: Edit-aware reward training"]
+        direction TB
+        D1["Sample a set of rollout repair patches"] --> D2["Group accuracy > threshold α?"]
+        D2 -->|"No"| D3["Reward correctness only"]
+        D2 -->|"Yes"| D4["Apply normalized edit penalty<br/>to correct samples"]
+    end
+    EA --> E["Repair Patch"]
+    E --> F["fix_p@k Evaluation<br/>Pass tests AND Edit ≤ p * MinEdit"]
+```
 
 ### Key Designs
 
-1.  **$\text{fix}_p@k$ Precise Repair Metric**:
-    - **Function**: Jointly evaluates repair correctness and the degree of editing.
-    - **Mechanism**: Adds an edit constraint to pass@k—a repair is successful only if the generated code passes all tests and the edit cost does not exceed $p$ times the theoretical minimum edit. Edit cost $\mathbf{D}_{\text{EC}}(X,Y) = \mathbf{D}(X,Y)/|X|$ is normalized using line-level Levenshtein distance.
-    - **Design Motivation**: pass@k only considers correctness and fails to reflect repair quality—rewriting the entire code might pass tests but does not constitute a good repair.
+**1. $\text{fix}_p@k$ Precise Repair Metric: Monitoring correctness and editing simultaneously**
 
-2.  **Self-Breaking (Diverse Bug Injection)**:
-    - **Function**: Generates large-scale precise repair training data without manual annotation.
-    - **Mechanism**: The model is provided with correct code and a description, then prompted to inject bugs. From $m$ candidates, $k$ most diverse ones are selected via min-max sampling: $\mathcal{X}_s = \min_{\mathcal{X}' \subset \mathcal{X}, |\mathcal{X}'|=k} \max_{X_i,X_j \in \mathcal{X}', i \neq j} (1 - \mathbf{D}_{\text{EC}}(X_i, X_j))$.
-    - **Design Motivation**: Precise repair requires training data with substantial correct logic and only local errors, which is extremely scarce in reality. Min-max sampling prevents the over-concentration of bug patterns.
+The pass@k metric only asks "is it fixed," ignoring "bad repairs" that pass tests by rewriting the entire code block, thus failing to reflect real repair quality. $\text{fix}_p@k$ adds an editing gate on top of pass@k: a generation is successful only if it passes all tests and the editing cost does not exceed $p$ times the theoretical minimum edit. Here, the editing cost is normalized using line-level Levenshtein distance, $\mathbf{D}_{\text{EC}}(X,Y) = \mathbf{D}(X,Y)/|X|$, converting the "number of lines changed" into a ratio proportional to the original code size, making samples of different lengths comparable.
 
-3.  **EA-GRPO (Edit-Aware Group Relative Policy Optimization)**:
-    - **Function**: Encourages minimal and correct repairs during RL training.
-    - **Mechanism**: Accuracy $\text{Acc}_{\mathcal{G}^t}$ is calculated for each rollout group, and the edit penalty is activated only when it exceeds threshold $\alpha$. For correct samples in the group, a normalized edit penalty is calculated: $\mathcal{P}_i^{\mathcal{G}} = \sigma(\frac{\mathbf{D}_{\text{EC}}(X_t, o_i) - \text{mean}}{\text{std}})$. Final reward: $\mathcal{R}_i = 1 - \mathcal{T}(\mathcal{G}) \cdot \beta \cdot \mathcal{P}_i^{\mathcal{G}}$ (if correct) or 0 (if incorrect).
-    - **Design Motivation**: Prematurely penalizing edits harms the learning of correctness—edit constraints are introduced only when group-level correctness is sufficiently high, achieving a "correct first, then precise" strategy.
+**2. Self-Breaking: Self-generating diverse bug data via min-max sampling**
+
+Training data for precise repair requires code with "mostly correct logic and only local errors," which is extremely scarce in reality. PRepair provides the model with correct code and descriptions, prompting it to actively inject bugs, and then selects the $k$ most dispersed samples from $m$ candidates: $\mathcal{X}_s = \min_{\mathcal{X}' \subset \mathcal{X}, |\mathcal{X}'|=k} \max_{X_i,X_j \in \mathcal{X}', i \neq j} (1 - \mathbf{D}_{\text{EC}}(X_i, X_j))$. This min-max criterion deliberately minimizes the maximum similarity within the selected set to avoid bug pattern clustering, ensuring the model encounters a rich variety of error types.
+
+**3. EA-GRPO: Edit-aware reward, learning correctness before precision**
+
+Directly penalizing editing volume in RL can be counterproductive—the model might fail to learn how to repair if editing constraints are applied before correctness is established. EA-GRPO introduces a "switch" for the penalty: it first calculates the accuracy of each rollout group $\text{Acc}_{\mathcal{G}^t}$, and activates the editing penalty only when it exceeds a threshold $\alpha$. Once activated, a normalized edit penalty $\mathcal{P}_i^{\mathcal{G}} = \sigma(\frac{\mathbf{D}_{\text{EC}}(X_t, o_i) - \text{mean}}{\text{std}})$ is calculated for correct samples in the group. The final reward is $\mathcal{R}_i = 1 - \mathcal{T}(\mathcal{G}) \cdot \beta \cdot \mathcal{P}_i^{\mathcal{G}}$ for correct samples and $0$ for incorrect ones. This allows the model to first stabilize its group-level accuracy before being guided to compress the editing volume.
 
 ### Loss & Training
 
-EA-GRPO utilizes a PPO-style clipped objective + KL regularization. Reward calculation does not require gold-standard code; it uses only the edit cost between the bug input and the generated output. Evaluation is conducted on Python (HumanEvalFix) and Verilog (self-constructed benchmark).
+EA-GRPO follows the PPO-style clipped objective with KL regularization. Reward calculation does not require ground-truth code throughout the process, relying solely on the editing cost between the bug input and the generated output. The trained model is evaluated on both Python (HumanEvalFix) and Verilog (self-built benchmark).
 
 ## Key Experimental Results
 
@@ -75,53 +87,53 @@ EA-GRPO utilizes a PPO-style clipped objective + KL regularization. Reward calcu
 **Comparison of Precise Repair Metrics**
 
 | Metric | Description |
-| :--- | :--- |
+|------|------|
 | $\text{fix}_1@1$ Gain | Up to +31.4% |
 | pass@k Maintenance/Gain | Correctness does not decrease |
 | Cross-language Validity | Effective on both Python and Verilog |
 
 ### Ablation Study
 
-**EA-GRPO vs. Standard GRPO**
+**EA-GRPO vs Standard GRPO**
 
 | Configuration | Description |
-| :--- | :--- |
-| Standard GRPO | Correctness increases but edit cost grows continuously |
-| EA-GRPO | Correctness increases and edit cost is controlled |
-| Speculative Editing Acceleration | Lower edit cost → higher speculative decoding acceptance rate → inference acceleration |
+|------|------|
+| Standard GRPO | Correctness improves but editing cost continues to grow |
+| EA-GRPO | Correctness improves and editing cost is controlled |
+| Speculative Edit Acceleration | Lower editing cost → Higher speculative decoding acceptance → Inference acceleration |
 
 ### Key Findings
 
-- **Ours** achieves a gain of up to 31.4% in $\text{fix}_1@1$ while maintaining or improving pass@k.
-- The dynamic activation design of EA-GRPO is crucial—penalizing edits too early significantly damages correctness.
-- Min-max sampling in Self-Breaking ensures training bug diversity, outperforming random sampling.
+- PRepair achieves up to a 31.4% improvement on $\text{fix}_1@1$ while maintaining or improving pass@k.
+- The dynamic activation design of EA-GRPO is crucial—penalizing editing too early significantly harms correctness.
+- Min-max sampling in Self-Breaking ensures bug diversity for training, outperforming random sampling.
 - The model learns implicit error localization capabilities—precise repair forces the model to focus on the lines containing bugs.
-- When combined with speculative editing, reduced edit cost directly translates to inference acceleration—providing significant practical value.
+- When combined with speculative editing, reduced editing costs directly translate into inference acceleration—offering significant practical value.
 
 ## Highlights & Insights
 
-- The identification and quantification of the over-editing problem is a major contribution—revealing systematic flaws in RL training that optimizes only for correctness.
-- The "correct first, then precise" strategy of EA-GRPO is elegant—avoiding a hard conflict between correctness and precision.
-- Natural synergy with speculative decoding—precise repair reduces edits → more n-gram matches → higher inference throughput—transforming training improvements into inference acceleration.
+- The identification and quantification of the over-editing problem is a major contribution—revealing a systematic flaw in RL training that only optimizes for correctness.
+- The "learn correctness before precision" strategy of EA-GRPO is elegant—avoiding a hard conflict between correctness and precision.
+- Natural synergy with speculative decoding—precise repair reduces edits → more n-gram matches → higher inference throughput—translating training improvements into deployment speedups.
 
 ## Limitations & Future Work
 
-- Evaluated only on Python and Verilog; does not cover a broader range of programming languages.
-- The selection of threshold $p$ for $\text{fix}_p@k$ significantly impacts evaluation results.
-- Self-Breaking relies on the model's own bug injection capability, which may not cover all real-world bug types.
-- Edit cost is based on line-level Levenshtein distance, which may not capture edit minimality at the semantic level.
+- Evaluation is limited to Python and Verilog; more programming languages remain to be covered.
+- The choice of threshold $p$ in $\text{fix}_p@k$ significantly impacts evaluation results.
+- Self-Breaking depends on the model's own bug injection capability, which may not cover all real-world bug types.
+- Editing cost is based on line-level Levenshtein distance, which may not capture semantic-level minimal editing.
 
 ## Related Work & Insights
 
-- **vs. Standard GRPO (Shao et al., 2024)**: The latter optimizes only for correctness, leading to over-editing; EA-GRPO resolves this via dynamic edit penalties.
-- **vs. HumanEvalFix (Muennighoff et al., 2023)**: The latter only uses pass@k for evaluation; the proposed $\text{fix}_p@k$ in **Ours** is more comprehensive.
+- **vs Standard GRPO (Shao et al., 2024)**: The latter only optimizes correctness leading to over-editing; EA-GRPO resolves this via dynamic edit penalties.
+- **vs HumanEvalFix (Muennighoff et al., 2023)**: The latter only evaluates using pass@k; the $\text{fix}_p@k$ in this paper is more comprehensive.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The identification of over-editing and the design of EA-GRPO are both novel and practical.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Python + Verilog cross-language analysis + speculative decoding acceleration analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and well-justified metric design.
-- **Value**: ⭐⭐⭐⭐⭐ Directly impacts code repair practices, with deployment value through speculative decoding synergy.
+- Novelty: ⭐⭐⭐⭐ Identification of over-editing and the design of EA-GRPO are novel and practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Python + Verilog cross-language + speculative decoding acceleration analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem motivation and reasonable metric design.
+- Value: ⭐⭐⭐⭐⭐ Direct impact on code repair practice; speculative decoding synergy has deployment value.
 
 <!-- RELATED:START -->
 
@@ -130,10 +142,10 @@ EA-GRPO utilizes a PPO-style clipped objective + KL regularization. Reward calcu
 ## Related Papers
 
 - [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](../../NeurIPS2025/code_intelligence/qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
-- [\[ACL 2026\] Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?](precise_debugging_benchmark_is_your_model_debugging_or_regenerating.md)
 - [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](../../ICML2026/code_intelligence/nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
-- [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
 - [\[ICML 2026\] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](../../ICML2026/code_intelligence/boostapr_boosting_automated_program_repair_via_execution-grounded_reinforcement_.md)
+- [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
+- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 
 </div>
 

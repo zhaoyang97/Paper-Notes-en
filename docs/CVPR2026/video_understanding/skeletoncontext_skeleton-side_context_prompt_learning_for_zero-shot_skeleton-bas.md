@@ -2,74 +2,93 @@
 title: >-
   [Paper Note] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Zero-shot action recognition] This paper proposes SkeletonContext, a framework that recovers the missing environmental and object context semantics in skeleton data from pretrained langua…
+  [CVPR 2026][Video Understanding][Paper Note] Ours proposes the SkeletonContext framework, which reconstructs missing environmental and object contextual semantics from pre-trained language models via a cross-modal context prompt module. It further enhances the discriminativeness of motion-critical joints through a key part decoupling module, achieving SOTA perfor
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Zero-shot action recognition"
-  - "skeleton sequences"
-  - "context prompt learning"
-  - "cross-modal alignment"
-  - "key part decoupling"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 68d8c338a5f332ad
+content_hash: 57e93b0508239dd2
 ---
-
 # SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.29692](https://arxiv.org/abs/2603.29692)  
 **Code**: [https://github.com/NingWang2049/skeletoncontext](https://github.com/NingWang2049/skeletoncontext)  
-**Area**: Video Understanding / Action Recognition
-**Keywords**: Zero-shot action recognition, skeleton sequences, context prompt learning, cross-modal alignment, key part decoupling
+**Area**: Video Understanding / Action Recognition  
+**Keywords**: Zero-Shot Action Recognition, Skeleton Sequences, Contextual Prompt Learning, Cross-modal Alignment, Key Part Decoupling
 
 ## TL;DR
 
-This paper proposes SkeletonContext, a framework that recovers the missing environmental and object context semantics in skeleton data from pretrained language models via a cross-modal context prompt module, and enhances the discriminability of motion-critical joints through a key part decoupling module. The method achieves state-of-the-art performance on NTU-60/120 and PKU-MMD under both zero-shot (ZSL) and generalized zero-shot (GZSL) settings.
+Ours proposes the SkeletonContext framework, which reconstructs missing environmental and object contextual semantics from pre-trained language models via a cross-modal context prompt module. It further enhances the discriminativeness of motion-critical joints through a key part decoupling module, achieving SOTA performance on NTU-60/120 and PKU-MMD under Zero-Shot (ZSL) and Generalized Zero-Shot (GZSL) settings.
 
 ## Background & Motivation
 
-1. **Background**: Zero-shot skeleton-based action recognition (ZSSAR) identifies unseen action categories by aligning skeleton features with text embeddings in a shared space. Existing methods primarily focus on improving skeleton encoders, data augmentation, or external knowledge augmentation.
-2. **Limitations of Prior Work**: Skeleton sequences contain only joint coordinates, lacking contextual cues such as objects and environments. The skeletal motions of "typing on a keyboard" and "writing on paper" are highly similar, yet cannot be distinguished without the context of "keyboard" and "paper."
-3. **Key Challenge**: Skeleton modality inherently lacks contextual information, while semantic descriptions are rich in such context. This fundamental semantic gap makes direct alignment between the two modalities limited in effectiveness.
-4. **Goal**: Inject language-driven contextual semantics into skeleton representations to bridge the semantic gap in cross-modal alignment.
-5. **Key Insight**: Use an LLM to generate structured contextual descriptions (environment + used object + target object), then train the model to "reconstruct" these contexts from skeleton motion, enabling the skeleton encoder itself to acquire context-aware representations.
-6. **Core Idea**: Train the skeleton encoder to infer contextual semantics (e.g., interacted objects and environments) from motion patterns via masked reconstruction.
+1. **Background**: Zero-Shot Skeleton-based Action Recognition (ZSSAR) recognizes unseen classes by aligning skeleton features with text embeddings in a shared space. Existing methods focus on better skeleton encoders, data augmentation, or external knowledge enhancement.
+2. **Limitations of Prior Work**: Skeleton sequences only contain joint coordinates and lack contextual cues such as objects and environments. Actions like "typing on a keyboard" and "writing on paper" exhibit highly similar skeleton motions, making them indistinguishable without contextual information like "keyboard" or "paper."
+3. **Key Challenge**: There is an inherent semantic gap between the skeleton modality (naturally lacking context) and semantic descriptions (rich in context), which limits the effectiveness of direct alignment.
+4. **Goal**: Inject language-driven contextual semantics into skeleton representations to bridge the cross-modal semantic gap.
+5. **Key Insight**: Generate structured context descriptions (environment + object used + target object) using LLMs, and then train the model to "reconstruct" these contexts from skeleton motion, enabling the skeleton encoder to acquire context-awareness.
+6. **Core Idea**: Enable the skeleton encoder to infer contextual semantics (e.g., interacting objects and environments) from motion patterns through masked reconstruction.
 
 ## Method
 
 ### Overall Architecture
 
-Skeleton sequences are first encoded by Shift-GCN, and the resulting features are fed into two modules in parallel: (1) the **Cross-Modal Context Prompt module**, which obtains fine-grained skeleton features via a differential joint encoder, performs bidirectional cross-attention with BERT-processed masked context prompts, and reconstructs the masked context words (environment, objects) to produce context-enhanced skeleton features; and (2) the **Key Part Decoupling module**, which predicts a joint importance map to highlight motion-critical joints. Each branch is aligned with its corresponding semantic embedding via a contrastive loss.
+This paper addresses the issue where skeleton sequences only contain joint coordinates without object or environment information, making actions with similar motions indistinguishable. The core idea is to let the skeleton encoder learn to "hallucinate" the missing context.
+
+The workflow begins with a Shift-GCN extracting features from the skeleton sequence, followed by two branches. The **Cross-modal Context Prompt Module** captures fine-grained representations via a Differential Joint Encoder, which then interacts with masked context prompts (processed by BERT) through bi-directional cross-attention. A BERT mask prediction head is used to infer the missing context words (environment, objects), resulting in "context-enhanced skeleton features." Simultaneously, the **Key Part Decoupling Module** predicts a joint importance map to highlight key joints carrying the action. Finally, features from both branches are aligned with their respective semantic embeddings via contrastive learning.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Skeleton Sequence"] --> B["Shift-GCN Feature Extraction Fx"]
+    B --> CTX
+    B --> K["Key Part Decoupling (KPD)<br/>Predict joint importance, reweight key joints"]
+    subgraph CTX["Cross-modal Context Prompt Module"]
+        direction TB
+        C["Differential Joint Encoder (DJE)<br/>Joint pair difference for pose fingerprint"] --> E["Bi-cross Attention + BERT Mask Head<br/>Reconstruct masked env/object words (SCG)"]
+        D["Progressive Partial Masking (PPM)<br/>Curriculum-based masking of LLM context slots"] --> E
+    end
+    E --> F["Context-enhanced Skeleton Feature"]
+    K --> G["Key Part Feature"]
+    F -->|Align Contextual Semantic Embedding| H["Cross-modal Alignment + Calibrated Stacking<br/>Zero-Shot Action Recognition"]
+    G -->|Align Action Semantic Embedding| H
+```
 
 ### Key Designs
 
-1. **Cross-Modal Context Prompt (CMCP) Module**:
+**1. Cross-modal Context Prompt Module: Inferring Objects and Environments**
 
-    - **Function**: Equips the skeleton encoder with the ability to infer contextual semantics (interacted objects, environments).
-    - **Mechanism**: An LLM (ChatGPT-4) first generates structured descriptions for each action class in the format "In [environment], [body part] uses [object] to [sub-action] on [target object]," with 10 descriptions generated per class. During training, the three slots—environment, used object, and target object—are replaced with [MASK] tokens. Skeleton features interact with BERT token representations via bidirectional cross-attention, and BERT's masked prediction head reconstructs the masked context words. The context reconstruction loss $\mathcal{L}_{ccr}$ drives the skeleton features to encode contextual information.
-    - **Design Motivation**: Unlike methods such as SCoPLe that enhance the text encoder, this approach directly enriches the skeleton-side representation so that skeleton features themselves carry contextual information.
+While previous works (SCoPLe, Neuron) enhanced the text encoder to match the skeleton, they failed to fill the information gap on the skeleton side. Ours directly injects contextual semantics into the skeleton encoder. LLMs (ChatGPT-4) generate structured descriptions for each category: "In [environment], [body part] uses [object] to [sub-action] on [target object]". During training, slots for environment, object used, and target object are replaced with `[MASK]`. The skeleton features interact with BERT tokens via bi-directional cross-attention, and the BERT head reconstructs the masked words, supervised by a reconstruction loss $\mathcal{L}_{ccr}$. This mechanism, termed Semantic Context Grounding (SCG), forces contextual semantics into the skeleton representation.
 
-2. **Differential Joint Encoder (DJE)**:
+**2. Differential Joint Encoder (DJE): Extracting Pose Fingerprints**
 
-    - **Function**: Captures subtle inter-joint differences to model pose-specific spatial dependencies.
-    - **Mechanism**: Skeleton features are pooled to the topology level and projected into queries and keys. A differential topology representation is computed as $A^{diff} = \phi(\mathcal{T}_1(H_x^Q) - \mathcal{T}_2(H_x^K))$, i.e., a difference matrix over all joint pairs. This difference matrix is then used to reweight and aggregate the original features into a topology-enhanced embedding $F_x^{diff}$.
-    - **Design Motivation**: The "fingerprint" of different poses lies in inter-joint differences—"bending forward" implies a desk-level scene, while "raising a hand" implies head-level interaction. Differential encoding implicitly reflects such contextual cues.
+Fine-grained relative relationships between joints are crucial for contextual inference. This module pools skeleton features to a topological level, projects them as query and key, and calculates differential topological representations for all joint pairs:
 
-3. **Progressive Partial Masking (PPM)**:
+$$A^{diff} = \phi(\mathcal{T}_1(H_x^Q) - \mathcal{T}_2(H_x^K))$$
 
-    - **Function**: A curriculum learning strategy that progressively increases the difficulty of context reconstruction.
-    - **Mechanism**: The masking ratio is defined as $r_t = \min(1, t/T)$, growing linearly with training steps. In early training, only a small proportion of context slots are masked (e.g., only the environment slot), making reconstruction relatively easy. As training progresses, the masking ratio increases until all slots are masked, forcing the model to infer the complete context solely from skeleton motion and BERT's language priors.
-    - **Design Motivation**: The structured prompt format differs substantially from the natural language seen during BERT pretraining, and full masking from the start makes reconstruction too difficult, leading to unstable training. The progressive strategy bridges this distributional gap.
+The resulting difference matrix weights the original features to output a topologically enhanced embedding $F_x^{diff}$. Differential encoding explicitly extracts patterns like "bent waist" (implying a desk) or "hand to head" (implying head interaction).
+
+**3. Progressive Partial Masking (PPM): Curriculum Learning for Reconstruction**
+
+Reconstructing three slots simultaneously from skeletons is difficult and creates a distribution gap between structured prompts and BERT's natural language pre-training. A masked ratio $r_t$ that increases linearly with training steps is introduced:
+
+$$r_t = \min(1, t/T)$$
+
+Initially, $r_t$ is small, masking fewer slots to let the model rely on BERT's language prior. As training progresses, all slots are masked, forcing the model to infer the full context entirely from skeleton motion and language priors.
+
+**4. Key Part Decoupling Module (KPD): Discriminativeness for Context-Free Actions**
+
+For actions like "waving" or "bowing" that lack object interactions, context reconstruction might introduce noise. KPD serves as a backup for these "context-independent" actions. Given skeleton feature $F_x$, it predicts a joint importance map $K_{out}$ and produces part-level features $F_x^p = K_{out} \odot F_x$. A calibration loss $\mathcal{L}_{kpd} = \sum_t \lVert K_{out,t} - K_{gt} \rVert_2$ aligns predictions with a prior distribution $K_{gt}$ derived from LLM descriptions. This captures category-agnostic motion-part relationships that generalize to unseen classes.
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_{align} + \mathcal{L}_{ccr} + \mathcal{L}_{kpd}$:
-- $\mathcal{L}_{align}$: Contrastive cross-entropy loss that aligns the context-enhanced skeleton features with context semantic embeddings, and the key part features with action semantic embeddings, respectively.
-- $\mathcal{L}_{ccr}$: Masked context reconstruction loss that supervises BERT in recovering the masked context words.
-- $\mathcal{L}_{kpd}$: Joint importance calibration loss that guides joint weight learning using LLM-generated body part priors $K_{gt}$.
+Total loss: $\mathcal{L} = \mathcal{L}_{align} + \mathcal{L}_{ccr} + \mathcal{L}_{kpd}$:
+- $\mathcal{L}_{align}$: Contrastive cross-entropy loss aligning context-enhanced features and key part features with their respective embeddings.
+- $\mathcal{L}_{ccr}$: Masked context reconstruction loss supervising BERT to recover masked words.
+- $\mathcal{L}_{kpd}$: Joint importance calibration loss guided by LLM-generated body part priors $K_{gt}$.
 
-At inference, calibrated stacking is applied to mitigate domain shift in GZSL by aggregating predictions from the context branch and the key part branch.
+Inference utilizes calibrated stacking to mitigate domain shift in GZSL, aggregating predictions from both context and part branches.
 
 ## Key Experimental Results
 
@@ -78,7 +97,7 @@ At inference, calibrated stacking is applied to mitigate domain shift in GZSL by
 ZSL Accuracy (%):
 
 | Method | NTU-60 55/5 | NTU-60 48/12 | NTU-120 110/10 | NTU-120 96/24 |
-|--------|-------------|--------------|----------------|---------------|
+|------|-------------|--------------|----------------|---------------|
 | STAR (ACMM24) | 81.4 | 45.1 | 63.3 | 44.3 |
 | Neuron (CVPR25) | 86.9 | 62.7 | 71.5 | 57.1 |
 | FS-VAE (ICCV25) | 86.9 | 57.2 | 74.4 | 62.5 |
@@ -87,7 +106,7 @@ ZSL Accuracy (%):
 GZSL Harmonic Mean H (%):
 
 | Method | NTU-60 55/5 | NTU-60 48/12 | NTU-120 110/10 | NTU-120 96/24 |
-|--------|-------------|--------------|----------------|---------------|
+|------|-------------|--------------|----------------|---------------|
 | ScoPLe (CVPR25) | 70.8 | 57.9 | 52.2 | 52.2 |
 | Neuron (CVPR25) | 71.4 | 59.1 | 63.3 | 53.6 |
 | FS-VAE (ICCV25) | 75.7 | 52.1 | 63.3 | 54.7 |
@@ -105,37 +124,36 @@ GZSL Harmonic Mean H (%):
 
 ### Key Findings
 
-- **Context reconstruction is the primary contribution**: Introducing SCG yields the largest single improvement (81.4→83.9 ZSL), and PPM further stabilizes gains to 87.4.
-- On hard, visually similar action classes (Hard Level), the proposed method achieves 55.8% GZSL, outperforming Neuron by 12.0 points and FS-VAE by 5.1 points, validating the critical role of context inference in fine-grained discrimination.
-- Removing $\mathcal{L}_{ccr}$ (i.e., removing context reconstruction supervision) drops ZSL from 89.6 to 86.4, confirming the necessity of LLM-generated context for cross-modal alignment.
-- Object-related slots (Use Object + Target Object) contribute more than the environment slot (87.0 vs. 84.4), as skeleton actions are primarily defined by hand-object interactions.
-- On PKU-MMD, the proposed method achieves a GZSL harmonic mean of 71.4%, surpassing the second-best method Neuron by 2.2 points.
+- **Context reconstruction is the primary contribution**: SCG provides the largest jump (81.4→83.9 ZSL), and PPM stabilizes it further to 87.4.
+- **Superior on Hard-Level similar classes**: Ours achieves 55.8% GZSL, outperforming Neuron by 12.0% and FS-VAE by 5.1%, validating the role of context inference in fine-grained discrimination.
+- **Object-related slots (Use Object + Target Object) contribute more than the environment slot** (87.0 vs 84.4), as skeleton actions are largely defined by hand-object interactions.
+- Performance on PKU-MMD (GZSL H-mean: 71.4%) surpasses the second-best (Neuron) by 2.2%.
 
 ## Highlights & Insights
 
-- **Reverse thinking—enhancing the skeleton side rather than the text side**: Prior methods (SCoPLe, Neuron) predominantly enhance the text encoder to better match skeleton features. SkeletonContext takes the opposite direction by enriching skeleton representations to carry contextual semantics, fundamentally addressing the information asymmetry.
-- **Masked reconstruction as a bridge for cross-modal knowledge transfer**: The approach draws inspiration from masked reconstruction in vision-language pretraining (e.g., VL-BEiT), but innovatively applies it to the skeleton modality—which has no visual component—enabling BERT's linguistic knowledge to "flow into" the skeleton encoder.
-- **Convincing qualitative analysis**: At inference, the model infers contextual objects such as "keyboard" or "pen/paper" from skeleton motion without any text input, intuitively demonstrating that the model has genuinely learned motion-to-context mappings.
+- **Inverse Design - Enhancing Skeleton instead of Text**: Unlike prior works (SCoPLe, Neuron), SkeletonContext enhances the skeleton representation to carry contextual semantics, addressing information asymmetry at the source.
+- **Knowledge Transfer via Masked Reconstruction**: Adapts masked reconstruction from vision-language pre-training (e.g., VL-BEiT) to the vision-less skeleton modality, allowing BERT's language knowledge to "flow" into the skeleton encoder.
+- **Qualitative Interpretability**: The model can infer contextual objects like "keyboard" or "pen/paper" directly from skeletons during inference without any text input, demonstrating a learned motion-to-context mapping.
 
 ## Limitations & Future Work
 
-- The approach depends on the quality of ChatGPT-4-generated descriptions and the validity of the structured template; different LLMs may yield varying results.
-- Only three slots (environment, used object, target object) are considered, without accounting for fine-grained body part interaction patterns.
-- Shift-GCN is no longer the strongest skeleton encoder; adopting more powerful alternatives (e.g., CTR-GCN, InfoGCN) could yield further improvements.
-- On the NTU-120 110/10 split, the proposed method does not surpass FS-VAE (74.2 vs. 74.4), suggesting that the marginal benefit of context augmentation may diminish when the number of seen classes is large.
+- Dependency on the quality and template of LLM-generated descriptions.
+- Only three context slots are considered, potentially missing fine-grained body-part interaction nuances.
+- Shift-GCN is used as the base encoder; more advanced encoders (e.g., CTR-GCN, InfoGCN) might yield better results.
+- On the NTU-120 110/10 split, it does not surpass FS-VAE (74.2 vs 74.4), suggesting diminishing returns for context enhancement in seen-class-heavy scenarios.
 
 ## Related Work & Insights
 
-- **vs. SCoPLe (CVPR25)**: Achieves data-driven semantic alignment by jointly tuning text and skeleton prompts, but introduces no additional contextual information. SkeletonContext fundamentally compensates for the informational deficiency of skeletons through reconstruction.
-- **vs. Neuron (CVPR25)**: Uses multi-round LLM-generated side information to dynamically guide skeleton-semantic co-learning, but still operates at the alignment level. SkeletonContext directly injects context into the skeleton encoder.
-- **vs. FS-VAE (ICCV25)**: Models skeleton motion as high- and low-frequency components via frequency-semantic decomposition, representing a complementary direction—frequency decomposition and context injection could potentially be combined.
+- **vs SCoPLe (CVPR25)**: SCoPLe uses joint text-skeleton prompts but does not introduce external context. SkeletonContext fills the information gap via reconstruction.
+- **vs Neuron (CVPR25)**: Neuron uses multi-turn side information to guide alignment but operates at the alignment level. SkeletonContext injects context directly into the encoder side.
+- **vs FS-VAE (ICCV25)**: FS-VAE decomposes frequency components, which is complementary to the contextual injection of this work.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Applying masked reconstruction for cross-modal context injection from language into skeleton representations is a novel perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three datasets, multiple splits, ZSL + GZSL evaluation, hard-class analysis, and comprehensive ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ Logically clear, though some notation in the formulations is slightly redundant.
-- **Value**: ⭐⭐⭐⭐ A clear contribution to zero-shot skeleton-based action recognition; the paradigm of "enhancing the skeleton side rather than the text side" merits broader adoption.
+- Novelty: ⭐⭐⭐⭐ Using masked reconstruction for skeleton-side contextual injection is a novel perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive splits across three datasets, GZSL+ZSL, hard-class analysis, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic, though some mathematical notation is slightly redundant.
+- Value: ⭐⭐⭐⭐ Significant push for ZSSAR; the "enhance skeleton-side" strategy is highly generalizable.
 
 <!-- RELATED:START -->
 
@@ -144,10 +162,10 @@ GZSL Harmonic Mean H (%):
 ## Related Papers
 
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](../../ICCV2025/video_understanding/frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
-- [\[ICML 2026\] SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition](../../ICML2026/video_understanding/skelhcc_a_hyperbolic_clip-driven_cache_adaptation_framework_for_skeleton-based_o.md)
-- [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
+- [\[ECCV 2024\] SA-DVAE: Improving Zero-Shot Skeleton-Based Action Recognition by Disentangled Variational Autoencoders](../../ECCV2024/video_understanding/sa-dvae_improving_zero-shot_skeleton-based_action_recognition_by_disentangled_va.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
+- [\[CVPR 2026\] Metadata-Aware Multi-Prompt Reasoning for Zero-Shot Accident Understanding](metadata-aware_multi-prompt_reasoning_for_zero-shot_accident_understanding.md)
+- [\[CVPR 2026\] Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition](protect_to_adapt_orthogonal_subspace_control_with_ranked_negative-prompt_curricu.md)
 
 </div>
 

@@ -2,71 +2,92 @@
 title: >-
   [Paper Note] Free-Grained Hierarchical Visual Recognition
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Hierarchical Classification] This paper proposes *free-grained hierarchical recognition*, a setting in which training labels may appear at any level of a taxonomy. Two complementary…
+  [CVPR 2026][Self-Supervised Learning][Paper Note] Ours proposes "free-grained" hierarchical visual recognition, allowing training labels to appear at any level of the taxonomy, and introduces text-guided pseudo-attributes and taxonomy-guided semi-supervised learning to compensate for missing supervision; during inference, the model adaptively selects prediction depth.
 tags:
-  - "CVPR 2026"
-  - "Self-Supervised Learning"
-  - "Hierarchical Classification"
-  - "Mixed-Granularity Annotation"
-  - "Semi-Supervised Learning"
-  - "Text Guidance"
-  - "Taxonomy"
+  - CVPR 2026
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: a9c74cb2565f409f
+content_hash: 103991145682819e
 ---
-
 # Free-Grained Hierarchical Visual Recognition
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2510.14737](https://arxiv.org/abs/2510.14737)  
 **Code**: [FreeGrainLearning](https://github.com/seulkipark/FreeGrainLearning)  
-**Area**: LLM Evaluation
-**Keywords**: Hierarchical Classification, Mixed-Granularity Annotation, Semi-Supervised Learning, Text Guidance, Taxonomy
+**Area**: Self-Supervised  
+**Keywords**: Hierarchical Classification, Mixed-Granularity Labeling, Semi-Supervised Learning, Text-Guided, Taxonomy
 
 ## TL;DR
 
-This paper proposes *free-grained hierarchical recognition*, a setting in which training labels may appear at any level of a taxonomy. Two complementary methods are introduced to compensate for missing supervision — text-guided pseudo-attributes (Text-Attr) and taxonomy-guided semi-supervised learning (Taxon-SSL) — while at inference time the model adaptively selects its prediction depth.
+Ours proposes "free-grained" hierarchical visual recognition, allowing training labels to appear at any level of the taxonomy, and introduces text-guided pseudo-attributes and taxonomy-guided semi-supervised learning to compensate for missing supervision; during inference, the model adaptively selects prediction depth.
 
 ## Background & Motivation
 
-- **Background**: Conventional hierarchical classification assumes that every training image is fully annotated at all levels of the taxonomy (e.g., Bird → Bird of prey → Bald eagle). In practice, however, annotations are frequently incomplete.
-- **Limitations of Prior Work**: Labels may be absent for intrinsic reasons (insufficient visual evidence to support fine-grained assignment, e.g., a distant bird identifiable only as "bird") or extrinsic reasons (annotation cost, annotator expertise, or labeling protocols).
-- **Key Challenge**: Existing SOTA hierarchical classification methods (e.g., H-CAST) assume complete label paths; their performance degrades catastrophically when labels are available only at coarser levels.
-- **Goal**: The paper formalizes the **free-grained learning** setting, in which training labels may appear at any taxonomy level and annotation depth may vary across samples. The model must learn consistent hierarchical predictions from this incomplete, mixed-granularity supervision.
-- **Key Insight**: Experiments show that H-CAST, when transferred from full-label to free-grained settings, suffers a Full-Path Accuracy (FPA) drop of 19–40 percentage points (e.g., iNat21-mini: 64.9% → 25.6%), confirming the difficulty of this setting.
+Traditional hierarchical classification assumes every training image has full labels across all taxonomic levels (e.g., Bird → Bird of prey → Bald eagle). However, in reality, labels are often inconsistent:
+- **Intrinsic Reasons**: Images might lack sufficient visual evidence for fine-grained labels (e.g., a distant bird where species cannot be identified).
+- **Extrinsic Reasons**: Labeling is restricted by cost, expertise, or annotation protocols.
+
+This paper defines the **free-grained learning** setting: training labels can appear at any taxonomic level, and annotation depth can vary across samples. The model must learn consistent hierarchical predictions from such incomplete, mixed-granularity supervision.
+
+Experiments show that the current Prev. SOTA hierarchical classification method (H-CAST) suffers a Full-Path Accuracy drop of 19-40 percentage points (e.g., iNat21-mini drops from 64.9% to 25.6%) when moving from full labels to the free-grained setting, proving the challenge of this task.
 
 ## Method
 
 ### Overall Architecture
 
-The work comprises three main components:
-1. **Benchmark dataset construction**: adapting existing hierarchical datasets to the free-grained setting.
-2. **Two training methods**: Text-Attr and Taxon-SSL.
-3. **Free-grained inference**: adaptive selection of prediction depth at test time.
+This paper addresses "free-grained" hierarchical recognition—where labels can be at any level and depths vary—requiring the model to learn consistent predictions from incomplete supervision. The framework consists of three parts: transforming existing datasets into free-grained benchmarks (including newly built ImageNet-3L and pruning to simulate mixed-granularity), using text-guided pseudo-attributes (Text-Attr) and taxonomy-guided semi-supervised learning (Taxon-SSL) to recover missing supervision, and performing adaptive inference to decide the prediction depth.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BENCH["Benchmark Construction (Free-Grained Data)"]
+        direction TB
+        A["ImageNet-3L<br/>Cognitive Hierarchical Reorganization"]
+        A --> B["Foundation-based Pruning<br/>Zero-shot Layer-wise Pruning via CLIP/BioCLIP"]
+    end
+    BENCH --> C["Mixed-Granularity Annotated Data<br/>ImageNet-F / iNat21-mini-F / CUB-F"]
+    C --> D["Hierarchical Backbone H-ViT / H-CAST<br/>Supervising only Labeled Levels (Free-Grained Loss)"]
+    D --> E["Text-Attr<br/>Frozen VLM generates attributes<br/>Vision-Language Alignment for Fine-grained Supervision"]
+    D --> F["Taxon-SSL<br/>Missing labels as Unlabeled<br/>All-level Consistency Affinity Graph filters noise"]
+    E --> G["Free-Grained Inference<br/>Consistency Stopping · Adaptive Depth Selection"]
+    F --> G
+```
 
 ### Key Designs
 
-1. **ImageNet-3L Dataset Construction**: The original ImageNet WordNet hierarchy is irregular (depths of 5–19 levels, 30% of classes with multiple paths) and unsuitable for hierarchical evaluation. This work reorganizes it into a clean three-level taxonomy (20 basic / 127 subordinate / 505 fine-grained classes) following principles from cognitive psychology. Design criteria include: removing single-child paths, maximizing intra-group diversity, refining ambiguous categories, and validation via LLM-assisted human review.
+**1. ImageNet-3L Dataset Construction: Creating a Clean 3-Level Taxonomy for Hierarchical Evaluation**
 
-2. **Foundation-based Pruning**: Zero-shot predictions from CLIP/BioCLIP are used to simulate realistic mixed-granularity annotation. Starting from coarse levels and proceeding to fine levels, each prediction is checked for correctness: the subordinate label is retained if the prediction at that level is correct, and the fine-grained label is further retained if correct. Incorrect level labels are removed. In ImageNet-F, 32.6% of samples retain all three levels, 28.0% retain two levels, and 39.4% retain only the basic level.
+The native WordNet hierarchy in ImageNet is messy and deep (5-19 levels, 30% categories have multiple paths), making clean consistency evaluation impossible. Ours reorganizes it into a regular three-level taxonomy based on cognitive psychology principles (20 basic / 127 subordinate / 505 fine-grained). It removes single-child paths, maximizes intra-group diversity, refines ambiguous categories, and uses LLM + manual audit as a safety net, resulting in a large-scale clean benchmark for hierarchical evaluation.
 
-3. **Text-Attr (Text-Guided Pseudo-Attributes)**: The core observation is that many visual attributes (e.g., "short legs," "pointed ears") are consistent across taxonomy levels even when class labels differ. A frozen VLM (Llama-3.2-11B) generates textual descriptions for each image; these are encoded by a CLIP text encoder and aligned with image features via contrastive learning. This text-based supervision is independent of class labels and provides additional semantic cues when fine-grained annotations are absent.
+**2. Foundation-based Pruning: Simulating Realistic Mixed-Granularity Labels with Zero-Shot Models**
 
-4. **Taxon-SSL (Taxonomy-Guided Semi-Supervised Learning)**: Missing-level labels are treated as unlabeled data. The key innovation is a **taxonomy-aligned affinity graph**: two samples are treated as a positive pair only when their pseudo-labels agree at **all** levels (Equation 3). This effectively filters noisy pseudo-labels and enforces hierarchical consistency. A contrastive loss then pulls positive pairs together and pushes negative pairs apart.
+To study free-grained learning, "unevenly labeled" data is required. Instead of random dropping, ours uses zero-shot predictions from CLIP/BioCLIP to check layers from coarse to fine: labels are kept if the subordinate prediction is correct, and further kept if the fine-grained prediction is also correct; otherwise, incorrect levels are pruned. In the resulting ImageNet-F, 32.6% keep all three levels, 28.0% keep two, and 39.4% keep only the basic level, which is closer to the real distribution where "insufficient visual evidence leads to missing fine-grained labels."
+
+**3. Text-Attr: Recovering Fine-grained Supervision via Level-Consistent Visual Attributes**
+
+**Core Insight**: While category names differ across levels, many visual attributes ("short legs", "pointed ears") are consistent. A frozen VLM (Llama-3.2-11B) generates text descriptions for images, which are encoded by CLIP's text encoder. Contrastive learning aligns image features with text embeddings. Since this supervision does not rely on category labels, it provides extra semantic cues when fine-grained labels are missing, proving particularly effective on large-scale datasets with sparse labels.
+
+**4. Taxon-SSL: Treating Missing Labels as Unlabeled Data with Taxonomy-Aligned Affinity Graphs**
+
+Another path is to treat missing labels as unlabeled data for semi-supervised learning. The **Mechanism** is the taxonomy-aligned affinity graph: two samples are considered a positive pair only when their pseudo-labels match across **all levels** (Eq. 3). This "all-level consistency" gate effectively filters noisy pseudo-labels and ensures hierarchical consistency. Using contrastive loss to pull positive pairs and push negative ones makes it more stable than Text-Attr on fine-grained biological data with similar appearances.
+
+**5. Free-Grained Inference: Adaptive Prediction Depth via Consistency Stopping**
+
+After recovering supervision, inference must determine "how deep to predict"—since a correct coarse label is often more useful than an incorrect fine one. Ours compares two strategies: confidence-based stopping stops when softmax confidence is below a threshold ($\tau=0.9$), but similar sibling classes often split the probability, leading to premature stops. Consistency-based stopping stops only when the fine-level prediction conflicts with its coarse-level ancestor, breaking taxonomy consistency. The latter requires no threshold tuning and reliably explores deeper correct levels.
 
 ### Loss & Training
 
-- **Free-grained hierarchical loss**: $\mathcal{L}_{hier} = \sum_l \mathbb{1}_{y_l \text{ exists}} \cdot \mathcal{L}(f_l(x), y_l)$, applying supervision only at levels where labels exist.
-- **Text contrastive loss**: InfoNCE loss for image–text embedding alignment.
-- **Taxonomy-aligned contrastive loss**: contrastive learning based on pseudo-labels consistent across all hierarchy levels.
-- Backbone: ViT-Small (H-ViT) or H-CAST; trained for 100 epochs (200 epochs on ImageNet-F).
+- **Free-grained Hierarchical Loss**: $\mathcal{L}_{hier} = \sum_l \mathbb{1}_{y_l \text{ exists}} \cdot \mathcal{L}(f_l(x), y_l)$, where supervision is applied only to levels with existing labels.
+- **Text Contrastive Loss**: InfoNCE loss aligning image-text embeddings.
+- **Taxonomy-aligned Contrastive Loss**: Contrastive learning based on all-level consistent pseudo-labels.
+- Backbone: ViT-Small (H-ViT) or H-CAST; trained for 100 epochs (200 for ImageNet-F).
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Method | FPA ↑ | Fine ↑ | Sub ↑ | Basic ↑ | TICE ↓ |
-|---------|--------|-------|--------|-------|---------|--------|
+|--------|------|-------|--------|-------|---------|--------|
 | ImageNet-F | H-CAST (full→free) | 57.59 | 59.02 | 82.69 | 93.53 | 21.81 |
 | ImageNet-F | Text-Attr (H-CAST) | **63.20** | 64.91 | 84.47 | 93.56 | 18.58 |
 | ImageNet-F | Taxon-SSL | 48.40 | 52.34 | 65.74 | 82.96 | 19.87 |
@@ -76,51 +97,51 @@ The work comprises three main components:
 
 ### Ablation Study
 
-| Setting | Key Metric | Notes |
-|---------|-----------|-------|
-| H-CAST full → free (CUB) | FPA: 84.9% → 45.1% | Missing annotations cause a 39.8 pp drop |
-| H-CAST full → free (iNat) | FPA: 64.9% → 25.6% | Missing annotations cause a 39.3 pp drop |
-| Text-Attr under sparse labels | Outperforms Taxon-SSL | Text bridges supervision gap when labels are scarce |
-| Taxon-SSL under sufficient labels | Outperforms Text-Attr | SSL is more effective when data is abundant |
+| Setting | Key Indicator | Description |
+|------|---------|------|
+| H-CAST full → free (CUB) | FPA: 84.9% → 45.1% | Missing labels cause 39.8pp drop |
+| H-CAST full → free (iNat) | FPA: 64.9% → 25.6% | Missing labels cause 39.3pp drop |
+| Text-Attr Sparse Labels | Better than Taxon-SSL | Text compensates for supervision when labels are scarce |
+| Taxon-SSL Abundant Labels | Better than Text-Attr | SSL is more effective given enough data |
 
 ### Key Findings
 
-1. **Severe degradation of existing methods under the free-grained setting**: H-CAST's FPA drops by 19–40 pp, establishing the necessity of dedicated research for this setting.
+1. **Severe Degradation of Existing Methods**: H-CAST's FPA drops by 19-40 pp in the free-grained setting, justifying the need for this research.
 
-2. **Complementary strengths of Text-Attr and Taxon-SSL**: Text-Attr performs better on large-scale diverse datasets (ImageNet-F), where textual descriptions provide rich semantic cues; Taxon-SSL is superior on fine-grained biological datasets (iNat21-mini-F), where inter-class visual similarity makes visual consistency more critical.
+2. **Complementarity of Text-Attr and Taxon-SSL**: Text-Attr is stronger on large diverse datasets (ImageNet-F) due to rich semantic cues in text; Taxon-SSL excels in fine-grained biological data (iNat21-mini-F) where visual consistency is more critical due to inter-class similarity.
 
-3. **Consistency-based stopping outperforms confidence-based stopping**: Halting prediction when hierarchical consistency breaks yields more reliable and deeper correct predictions than halting based on a softmax confidence threshold, and requires no threshold tuning.
+3. **Consistency over Confidence for Inference**: Consistency-based stopping (stopping when hierarchical consistency is broken) yields more reliable and deeper correct predictions than confidence-based stopping, without requiring threshold tuning.
 
-4. **Text guidance improves semantic focus**: Saliency maps show that Text-Attr directs model attention toward semantically relevant regions (e.g., musical instruments rather than people), whereas Taxon-SSL can be misled by visually salient but semantically irrelevant regions.
+4. **Text-guided Semantic Focus**: Saliency maps show Text-Attr helps the model focus on semantically relevant regions (e.g., an instrument instead of the person), whereas Taxon-SSL might be misled by visually salient but irrelevant regions.
 
 ## Highlights & Insights
 
-- The paper formalizes an important new problem setting — free-grained hierarchical recognition — that is more realistic than the conventional assumption of complete hierarchical annotation.
-- The construction of the ImageNet-3L benchmark is itself a significant contribution, providing a large-scale, clean evaluation platform for hierarchical classification.
-- The complementarity of the two methods reflects a deep insight: external semantic knowledge (text) compensates for supervision when labels are scarce, while structured SSL exploits hierarchical consistency when labels are moderately available. This offers practical guidance for strategy selection.
-- Consistency-based inference is an elegant, parameter-free stopping strategy.
+- Defines a significant new setting: Free-grained hierarchical recognition, which is more realistic than traditional full-label assumptions.
+- The construction of the ImageNet-3L benchmark is a valuable contribution, providing a large-scale, clean platform for hierarchical evaluation.
+- The complementarity of the two methods is a deep insight: use external semantics (text) when labels are scarce, and use structured SSL for consistency when labels are moderate.
+- Consistency-based inference is an elegant parameter-free strategy.
 
 ## Limitations & Future Work
 
-- Class-level and level-wise imbalance are not explicitly addressed.
-- Label pruning relies on CLIP, which may introduce bias; improved pruning strategies (e.g., multi-model ensemble) remain to be explored.
-- The gains of both proposed methods are modest (5–25%), indicating substantial room for improvement in free-grained learning.
-- The methods are not extended to deeper taxonomies (beyond three levels).
-- Inference considers only when to "stop predicting," without accounting for cross-level information propagation or error correction.
+- Class-level and level-level imbalances are not explicitly addressed.
+- Label pruning relies on CLIP, which may introduce bias; better pruning methods (e.g., ensemble-based) remain to be explored.
+- The Gain remains limited (5-25%), indicating significant room for improvement in free-grained learning.
+- The method has not been extended to deeper taxonomies (beyond 3 levels).
+- Inference only considers "when to stop," neglecting information propagation and error correction between levels.
 
 ## Related Work & Insights
 
-- H-CAST (CVPR'23) is the hierarchical classification SOTA, encouraging consistent visual grouping across levels.
-- HRN (CVPR'22) handles multi-level supervision by maximizing marginal probabilities within a tree-constrained space.
-- CHMatch leverages coarse labels to improve pseudo-labels, but is limited to a two-level setting.
-- This paper unifies long-tail recognition, semi-supervised learning, weakly supervised learning, and hierarchical consistency within a single framework.
+- H-CAST (CVPR'23) is a SOTA for hierarchical classification, encouraging consistent grouping across levels.
+- HRN (CVPR'22) handles multi-level supervision by maximizing marginal probability in tree-constrained spaces.
+- CHMatch uses coarse labels to improve pseudo-labels but is limited to two-level settings.
+- Ours unifies long-tail recognition, semi-supervised learning, weakly-supervised learning, and hierarchical consistency within a single framework.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Defines an important new problem setting; contributions in both dataset construction and methodology)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Multiple datasets, diverse settings, thorough analysis and visualization)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear problem formulation, excellent figures, well-organized structure)
-- Value: ⭐⭐⭐⭐⭐ (Opens a new research direction; provides benchmarks and baselines with strong practical relevance)
+- Novelty: ⭐⭐⭐⭐⭐ (Defines new problem; innovative datasets and methods)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Multi-dataset, multi-setting, detailed analysis and visualization)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear problem definition, excellent charts, well-organized)
+- Value: ⭐⭐⭐⭐⭐ (Opens new research direction, provides benchmarks and baselines)
 
 <!-- RELATED:START -->
 
@@ -128,11 +149,11 @@ The work comprises three main components:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
 - [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](../../ICCV2025/self_supervised/scaling_languagefree_visual_representation_learning.md)
-- [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
-- [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
-- [\[CVPR 2026\] SpHOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Neural Networks](sphor_a_representation_learning_perspective_on_open-set_recognition_for_identify.md)
-- [\[AAAI 2026\] FineXtrol: Controllable Motion Generation via Fine-Grained Text](../../AAAI2026/self_supervised/finextrol_controllable_motion_generation_via_fine-grained_text.md)
+- [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
+- [\[CVPR 2026\] Learning to See Through a Baby's Eyes: Early Visual Diets Enable Robust Visual Intelligence in Humans and Machines](learning_to_see_through_a_babys_eyes_early_visual_diets_enable_robust_visual_int.md)
+- [\[CVPR 2026\] Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)
 
 </div>
 

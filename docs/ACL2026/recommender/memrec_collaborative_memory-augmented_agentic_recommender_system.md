@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] MemRec: Collaborative Memory-Augmented Agentic Recommender System
 description: >-
-  [ACL 2026][Recommender Systems][Collaborative Memory] MemRec employs a **lightweight LLM specifically to manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via inter…
+  [ACL 2026][Recommender Systems][Agentic RS] MemRec employs a **lightweight LLM to specifically manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via interaction edges), and feeds distilled "collaborative facets" to a heavy-duty reasoning LLM for final recommendation. By utilizing a "Curate-then-Synthesize"
 tags:
-  - "ACL 2026"
-  - "Recommender Systems"
-  - "Collaborative Memory"
-  - "Agentic RS"
-  - "Memory Graph"
-  - "Decoupled Architecture"
-  - "Label Propagation"
+  - ACL 2026
+  - Recommender Systems
+  - Agentic RS
 date: 2026-05-08
-content_hash: 1e1485f13daab4e3
+content_hash: 0afe19d5674afe78
 ---
-
 # MemRec: Collaborative Memory-Augmented Agentic Recommender System
 
 **Conference**: ACL 2026  
@@ -24,59 +19,72 @@ content_hash: 1e1485f13daab4e3
 **Keywords**: Collaborative Memory, Agentic RS, Memory Graph, Decoupled Architecture, Label Propagation
 
 ## TL;DR
-MemRec employs a **lightweight LLM specifically to manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via interaction edges), and then feeds distilled "collaborative memory facets" to a heavyweight reasoning LLM for the final recommendation. Through a "Curate-then-Synthesize" de-noising strategy and asynchronous $O(1)$ label propagation updates, it achieves a **+15% to +29%** H@1 improvement over the SOTA i2Agent across four benchmarks. For data-sparse users, it shows a **+91.4%** improvement relative to a Vanilla LLM.
+MemRec employs a **lightweight LLM to specifically manage a dynamic "Collaborative Memory Graph"** (connecting semantic memories of multiple users and items via interaction edges), and feeds distilled "collaborative facets" to a heavy-duty reasoning LLM for final recommendation. By utilizing a "Curate-then-Synthesize" denoising strategy and asynchronous $O(1)$ label propagation updates, it achieves a relative H@1 improvement of **+15% to +29%** over the SOTA i2Agent across four benchmarks, with a significant **+91.4%** gain over Vanilla LLMs for sparse users.
 
 ## Background & Motivation
-**Background**: The "memory form" of recommender systems has undergone three waves of evolution: (1) sparse rating memory in the Matrix Factorization era; (2) dense embedding memory in the Deep Learning era; and (3) "semantic memory" in the LLM Agentic RS era—where user preferences and item descriptions are written as natural language text for LLM reasoning. Recent research further classifies semantic memory into three levels: "Memory-less → Static Memory → Dynamic Self-reflective Memory" (e.g., i2Agent, AgentCF, RecBot that self-reflect to update user/item profiles).
+**Background**: The "form of memory" in recommender systems has undergone three stages of evolution: (1) sparse rating memory in the matrix factorization era; (2) dense embedding memory in the deep learning era; and (3) "semantic memory" in the LLM agentic RS era—where user preferences and item descriptions are written as natural language text for LLM reasoning. Recent research further categorizes semantic memory into three levels: "no memory → static memory → dynamic self-reflective memory" (e.g., i2Agent, AgentCF, RecBot for self-reflective updates of user/item profiles).
 
-**Limitations of Prior Work**: All existing agentic RS rely on **"Island Memory"**—where the $M_u$ of each user and the $M_i$ of each item are maintained independently. When making a recommendation for user $u$, the system only considers $M_u$, completely losing the core signals of the Collaborative Filtering era: **peer signals from similar users** and **transfer signals from co-occurring items**. This leading to extremely poor performance for sparse users and cold-start items; while the GNN/LightGCN era relied on user-item graphs to succeed, the LLM agent era has regressed to purely personal memory.
+**Limitations of Prior Work**: All existing agentic RS rely on **"island memory"**—where the $M_u$ of each user and $M_i$ of each item are maintained independently. Recommendations for user $u$ only consider $M_u$, completely losing the core signals of the collaborative filtering era: **peer signals from similar users** and **transfer signals from co-occurring items**. This leads to poor performance for sparse users and cold-start items—reverting to pure individual memory whereas the GNN/LightGCN era successfully leveraged user-item graphs.
 
-**Key Challenge**: Directly concatenating "all neighbor memories into the prompt" seems like a solution, but it immediately hits two walls: (1) **Cognitive Overload**—stuffing massive amounts of text into the LLM context causes the model to be overwhelmed by noise (the "Lost in the Middle" phenomenon), which actually decreases ranking quality; (2) **Update Bottleneck**—every new interaction requires cascading updates to the semantic memories of all neighbors. A naive implementation would require $O(|N_k|)$ LLM calls, which is cost-prohibitive for industrial deployment.
+**Key Challenge**: Simply concatenating "all neighbor memories into the prompt" seems to fill the gap but immediately hits two walls: (1) **Cognitive Overload**: After stuffing massive text into the LLM context, the model is overwhelmed by noise (refer to the "Lost in the Middle" phenomenon), leading to a decline in ranking quality; (2) **Update Bottleneck**: Every new interaction requires cascading updates to the semantic memories of all neighbors. A naive implementation requires $O(|N_k|)$ LLM calls, which is cost-prohibitive for industrial deployment.
 
 **Goal**: Re-inject "collaborative signals" into the agentic memory system while bypassing cognitive overload and update bottlenecks.
 
-**Key Insight**: Inspired by Information Bottleneck theory, since raw neighbor information is excessive, one should **distill a "compressed-but-task-relevant" sub-representation**. Furthermore, drawing from the Label Propagation algorithm, "reflective updates to neighbors" can be packaged into asynchronous batches.
+**Key Insight**: The authors draw inspiration from the Information Bottleneck theory—since raw neighbor information is excessive, a **compressed-but-task-relevant sub-representation** should be distilled. Furthermore, drawing on Label Propagation concepts, the "reflective updates for neighbors" are packaged into batch asynchronous tasks.
 
-**Core Idea**: **Architectural Decoupling**—letting a lightweight $\text{LM}_{\text{Mem}}$ maintain the collaborative memory graph and perform curate-then-synthesize distillation in the background, while the foreground heavyweight $\text{LLM}_{\text{Rec}}$ only observes the distilled high-concentration signals for reasoning. This resolves overload and batches all updates into a single asynchronous LLM call ($O(1)$ per interaction).
+**Core Idea**: **Architectural Decoupling**—utilizing a lightweight $\text{LM}_{\text{Mem}}$ in the background to maintain the collaborative memory graph and perform curate-then-synthesize distillation, while a high-capacity foreground $\text{LLM}_{\text{Rec}}$ performs reasoning based only on the distilled high-concentration signals. This addresses overload while batching all updates into a single asynchronous LLM call ($O(1)$ per interaction).
 
 ## Method
 
 ### Overall Architecture
-MemRec maintains a unified memory graph $G = (\mathcal{V}, E)$, where each node $\mathcal{V} = \mathcal{U} \cup \mathcal{I}$ stores an evolving semantic memory $M_v$, and edges $E$ encode interactions and derivative relationships. The pipeline consists of three stages:
+The core strategy of MemRec is to split "memory management" and "recommendation reasoning" between two LLMs of different scales, communicating only through a narrow channel. The system maintains a unified memory graph $G = (\mathcal{V}, E)$, where nodes $\mathcal{V} = \mathcal{U} \cup \mathcal{I}$ (users and items) store evolving semantic memories $M_v$, and edges $E$ record interactions and derivations. For each recommendation for $u$, the lightweight $\text{LM}_{\text{Mem}}$ first prunes and distills $u$'s neighbors into a small set of high-concentration "collaborative facets" $M_{\text{collab}}$ in the background. The heavy $\text{LLM}_{\text{Rec}}$ then processes these facets and candidates to generate scores and explanations. After an interaction, $\text{LM}_{\text{Mem}}$ asynchronously propagates the impact to relevant nodes in the graph. The stages are: Collaborative Retrieval (Stage-R), Grounded Inference (Stage-ReRank), and Asynchronous Collaborative Propagation (Stage-W).
 
-1. **Collaborative Memory Retrieval (Stage-R)**: $\text{LM}_{\text{Mem}}$ uses LLM-generated domain rules to prune the neighbors $N(u)$ of $u$ to top-$k=16$, and then synthesizes a compact collaborative memory $M_{\text{collab}}$ (a set of structured facets).
-2. **Grounded Reasoning (Stage-ReRank)**: $\text{LLM}_{\text{Rec}}$ receives $(\mathcal{I}_u, M_{\text{collab}}, C_{\text{info}})$ to assign scores $s_i$ to candidates and generate rationales $r_i$.
-3. **Async Collaborative Propagation (Stage-W)**: After an interaction occurs, $\text{LM}_{\text{Mem}}$ asynchronously and batch-updates $M_u^t, M_{i_c}^t$ and the neighbor increments $\{\Delta M_{\text{neigh}}\}$ in a single LLM call.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    G["Collaborative Memory Graph G<br/>Nodes store semantic memory M_v; edges record interactions"]
+    subgraph R["Stage-R Collaborative Retrieval · Curate-then-Synthesize (LM_Mem)"]
+        direction TB
+        C["Curate<br/>Sifting top-k=16 neighbors via LLM-generated domain rules"]
+        S["Synthesize<br/>Distilling into N_f=7 collaborative facets"]
+        C --> S
+    end
+    G --> R
+    R -->|"Narrow Channel M_collab (≤1800 tokens)"| K["Stage-ReRank Grounded Inference (LLM_Rec)<br/>Reads facets + candidates to score and generate rationales"]
+    K --> O["Recommendation + Explanation"]
+    O -->|"User generates new interaction"| W["Stage-W Asynchronous Propagation (LM_Mem)<br/>One O(1) call updates M_u, M_ic, and neighbor ΔM"]
+    W -.->|"Write back to graph; signals flow to neighbors"| G
+```
 
 ### Key Designs
 
-1. **Architectural Decoupling: $\text{LM}_{\text{Mem}}$ vs $\text{LLM}_{\text{Rec}}$ (Core Innovation)**:
-    - **Function**: Physically separates "memory management" from "recommendation reasoning," allowing each function to use a model of appropriate scale and enabling decoupling of update frequencies and trigger conditions.
-    - **Mechanism**: $\text{LM}_{\text{Mem}}$ can be gpt-4o-mini or even local models like Qwen-2.5-7B / Llama-3-8B, specialized in ingesting raw graph context and performing curation, synthesis, and propagation. $\text{LLM}_{\text{Rec}}$ is a heavyweight model (gpt-4o-mini or gpt-4o) that only reads distilled high-signal $M_{\text{collab}}$ for final ranking and rationales. Communication occurs via the narrow $M_{\text{collab}}$ channel, following the $T = \arg\max I(T; Y) - \beta I(T; X)$ logic of the Information Bottleneck.
-    - **Design Motivation**: Experiments in Figure 6 show that a "Naive Agent" (single model for both ingestion and ranking) quickly hits a performance plateau because LLMs fail to balance "compression-reasoning" within long raw contexts, creating an internal cognitive bottleneck. Decoupling assigns each function its role, effectively separating System 1 (fast filtering) and System 2 (deep reasoning), yielding an absolute H@1 improvement of **+34%** on the Books dataset compared to the single-model approach.
+**1. Dual LLM Architecture Decoupling: Specialized Roles**
 
-2. **LLM-Guided Context Curation + Synthesis (Curate-then-Synthesize)**:
-    - **Function**: Compresses the raw semantics of dozens of neighbors into a set of structured facets under a restricted token budget ($\tau = 1800$), adaptive to different domains.
-    - **Mechanism**: First, $\text{LM}_{\text{Mem}}$ is used offline to observe domain statistics $\mathcal{D}_{\text{domain}}$ and automatically generate interpretable heuristic rules $R_{\text{domain}} \leftarrow \text{LM}_{\text{Mem}}(\mathcal{D}_{\text{domain}} \| P_{\text{meta}})$ (e.g., "prioritize by genre/theme similarity" for Books, and "prioritize by cuisine + price + recent visits" for Yelp). Online, these rules act as high-speed filters to select top-$k$ neighbors $N_k'(u)$ in milliseconds. In the synthesis stage, the target user's **full $M_u^{t-1}$** and the neighbors' **lightweight tiered representations** (truncated memory for item neighbors, and the last 3 interaction titles as a dense proxy for user neighbors) are fed to $\text{LM}_{\text{Mem}}$, which outputs $N_f = 7$ structured facets (each with a theme, confidence level, and neighbor evidence).
-    - **Design Motivation**: Traditional graph pruning is either rule-based (like random-walk, which lacks semantics) or GNN-based (trained and uninterpretable), neither of which suits LLM agents. Using "LLM-as-Rule-Generator" maintains the speed of rules while gaining LLM semantic understanding as a zero-shot middle ground. Tiered representation is a clever engineering choice—using recent interactions for users and truncated memories for items prevents redundancy while compressing tokens.
+Concatenating all neighbor memories into a single model's prompt creates a cognitive bottleneck—LLMs struggle to balance "compression" and "inference" within a long raw context. Figure 6 demonstrates that a "Naive Agent" (a single model for both ingestion and ranking) quickly reaches a performance plateau. MemRec physically separates these roles: $\text{LM}_{\text{Mem}}$ ingests raw graph context for curation, synthesis, and propagation (using cost-effective models like gpt-4o-mini or local Qwen-2.5-7B / Llama-3-8B); $\text{LLM}_{\text{Rec}}$ is a heavy-duty model (gpt-4o-mini or gpt-4o) that only reads the distilled $M_{\text{collab}}$ for final ranking and rationale.
 
-3. **Asynchronous Collaborative Propagation ($O(1)$ Update Bottleneck Elimination)**:
-    - **Function**: Maintains the dynamic evolution of the memory graph with interactions while triggering only 1 $\text{LM}_{\text{Mem}}$ call per interaction (instead of $|N_k'|$ calls).
-    - **Mechanism**: When $u$ and $i_c$ interact at time $t$, a unified prompt $P_{\text{update}}$ is constructed for $\text{LM}_{\text{Mem}}$ to simultaneously produce $(M_u^t, M_{i_c}^t, \{\Delta M_{\text{neigh}}\})$—updating the full memory of both parties and outputting "incremental update segments" $\Delta M$ for each neighbor. This process is asynchronous (not blocking the online ranking path), inspired by Label Propagation: treating the interaction as a "new label" propagating to neighbors along similarity relationships.
-    - **Design Motivation**: Naive synchronous schemes run an LLM call for every neighbor, repeatedly stuffing the user context into prompts (huge token redundancy). The batched and asynchronous approach achieves $O(1)$ call complexity and significantly compresses total tokens. More importantly, this "batched incremental" modeling ensures collaborative signals actually flow to neighbors rather than just the interacting parties.
+The two sides communicate only via the $M_{\text{collab}}$ narrow channel, aligning with the Information Bottleneck principle $T = \arg\max I(T; Y) - \beta I(T; X)$, where task-irrelevant $X$ is compressed while goal-relevant $Y$ is retained. This effectively separates System 1 (fast filtering) from System 2 (deep reasoning) and decouples their update frequencies. In the Books dataset, this decoupling yields a absolute **+34%** H@1 improvement over single-model solutions.
 
-### Loss & Training
-**Entirely training-free**. All LLM calls use zero-shot prompting with hyperparameters $k=16$ neighbors, $N_f=7$ facets, $\tau=1800$ token budget, and temperature=0. $\text{LLM}_{\text{Rec}}$ and $\text{LM}_{\text{Mem}}$ default to gpt-4o-mini; the "Ceiling" configuration uses gpt-4o. The "Local" configuration uses vLLM to deploy Qwen-2.5-7B/Llama-3-8B. The "Vector" configuration replaces $\text{LLM}_{\text{Rec}}$ with an all-MiniLM-L6-v2 Sentence Transformer for direct similarity ranking. This "pluggable architecture" allows MemRec to run across various deployments from cloud APIs to on-premise setups.
+**2. Curate-then-Synthesize: Rule-Based Filtering and Facet Distillation**
 
-## Key Experimental Results
+Neighbors can number in the dozens, but the token budget for $\text{LLM}_{\text{Rec}}$ is limited to $\tau = 1800$. Traditional pruning methods like random-walk (lacking semantics) or GNN attention (requiring training/lacking interpretability) are unsuitable for zero-shot LLM agents. MemRec uses "LLM-as-Rule-Generator" as a compromise: $\text{LM}_{\text{Mem}}$ analyzes domain statistics $\mathcal{D}_{\text{domain}}$ offline to generate interpretable heuristic rules $R_{\text{domain}} \leftarrow \text{LM}_{\text{Mem}}(\mathcal{D}_{\text{domain}} \| P_{\text{meta}})$. For example, for "Books," it generates "prioritize similarity in genre/theme"; for "Yelp," "prioritize cuisine + price + recent visits." Online, these rules act as high-speed filters to sift $N(u)$ down to top-$k$ $N_k'(u)$ in milliseconds.
+
+In the synthesize phase, the target user's **complete $M_u^{t-1}$** and the neighbors' **lightweight tiered representations** are fed to $\text{LM}_{\text{Mem}}$. It outputs $N_f = 7$ structured facets (each containing a theme, confidence score, and neighbor evidence). The tiered representation saves tokens by using truncated memories for item neighbors and only the titles of the last 3 interacted items as dense proxies for user neighbors.
+
+**3. Asynchronous Collaborative Propagation: Compressing Complexity to $O(1)$**
+
+The memory graph evolves with interactions. A naive synchronous approach—calling the LLM for each neighbor and repeatedly stuffing user context into prompts—results in $O(|N_k'|)$ calls and massive token redundancy. Borrowing from Label Propagation, MemRec treats an "interaction" as a "new label" spreading through similarity relations. When $u$ interacts with $i_c$ at time $t$, a unified prompt $P_{\text{update}}$ enables $\text{LM}_{\text{Mem}}$ to produce $(M_u^t, M_{i_c}^t, \{\Delta M_{\text{neigh}}\})$ in **a single call**. This updates the memories of both parties while outputting "incremental update segments" $\Delta M$ for every neighbor.
+
+This process is asynchronous and does not block the online ranking path, reducing call complexity to $O(1)$ per interaction and significantly compressing total token usage. Crucially, "batch incremental" modeling ensures collaborative signals actually flow to neighbors.
+
+### Key Experimental Results
 
 ### Main Results
 
 **H@1 and N@5 across 4 benchmarks (Amazon Books / Goodreads / MovieTV / Yelp, N=10 candidates)**:
 
 | Dataset | Method | H@1 | N@5 | H@1 Gain |
-|--------|------|-----|-----|---------|
-| **Books** | i2Agent (Prev. SOTA) | 0.4453 | 0.6138 | — |
+|---------|--------|-----|-----|----------|
+| **Books** | i2Agent (SOTA) | 0.4453 | 0.6138 | — |
 | | LightGCN | 0.1753 | 0.3592 | — |
 | | **Ours (MemRec)** | **0.5117** | **0.6601** | **+14.91%** |
 | **Goodreads** | i2Agent | 0.3099 | 0.5481 | — |
@@ -86,50 +94,46 @@ MemRec maintains a unified memory graph $G = (\mathcal{V}, E)$, where each node 
 | **Yelp** | i2Agent | 0.4205 | 0.6007 | — |
 | | **Ours (MemRec)** | **0.4868** | **0.6463** | **+15.77%** |
 
-All improvements are statistically significant at $p < 0.05$. The most sparse datasets (Books / Goodreads) show the largest gains, validating the value of collaborative signals for sparse users.
+All improvements are statistically significant ($p < 0.05$). The largest gains are observed in the sparsest datasets (Books / Goodreads).
 
 ### Ablation Study (Books Dataset)
 
 | Configuration | H@1 | H@5 | N@5 | H@1 Drop |
-|------|-----|-----|-----|----------|
+|---------------|-----|-----|-----|----------|
 | MemRec (Full) | 0.527 | 0.803 | 0.670 | — |
 | w/o Collab. Write (Disable async propagation) | 0.505 | 0.814 | 0.665 | **−4.2%** |
-| w/o LLM Curation (Generic vs. domain rules) | 0.498 | 0.788 | 0.648 | **−5.5%** |
-| **w/o Collab. Read (Disable collab retrieval)** | **0.475** | 0.769 | 0.624 | **−9.9%** |
+| w/o LLM Curation (Replace domain with general rules) | 0.498 | 0.788 | 0.648 | **−5.5%** |
+| **w/o Collab. Read (Disable collab. retrieval)** | **0.475** | 0.769 | 0.624 | **−9.9%** |
 
 ### Key Findings
-- **Collab Read > Collab Write > LLM Curation > Solo Memory**: The H@1 drop order clearly indicates that "introducing neighbor information into the reasoning path" provides the highest gain; dynamic propagation follows; and curation accuracy/adaptivity also contributes significantly.
-- **Data-sparse users benefit most**: For the low-activity user subgroup, MemRec shows a **+91.4%** H@1 gain over Vanilla LLM, proving neighbor signals are exactly what isolated agents lack.
-- **Robust under 30% noise injection**: Even with 30% malicious items injected into user history, MemRec maintains H@1=0.491, thanks to LLM curation acting as a "semantic filter" to remove irrelevant peers.
-- **Significant expansion of the Pareto frontier**: Standard (4o-mini) config yields H@1=0.524 / N@5=0.663 / ~16.5s latency; Cloud-OSS (gpt-oss-120B) yields H@1=0.561 / N@5=0.699; Ceiling (gpt-4o) yields H@1=0.580 / N@5=0.722. The Vector config can reduce latency to sub-milliseconds.
-- **Token I/O Ratio of 3.9:1**: MemRec's token distribution is naturally heavy on input and light on output (input ~5,100 / output ~1,300), perfectly exploiting commercial LLM pricing where outputs are 3-4x more expensive than inputs.
-- **Rationale quality improves**: GPT-4o-as-judge evaluations show significant improvements in specificity and relevance ($p<0.001$), with minor gains in factuality, proving collaborative memory enhances both ranking and explanation quality.
+- **Collaborative Read > Collaborative Write > LLM Curation > Memory Alone**: The H@1 drop sequence confirms that "introducing neighbor information into the inference path" is the most beneficial design.
+- **Sparse Users Benefit Most**: For low-activity users, MemRec achieves a **+91.4%** H@1 gain over Vanilla LLM, proving collaborative signals are the missing link for isolated agents.
+- **Robustness to Noise**: MemRec maintains H@1=0.491 even under 30% noise injection, as LLM curation acts as a "semantic filter" to exclude irrelevant peers.
+- **Pareto Frontier Expansion**: Standard (4o-mini) H@1=0.524 / ~16.5s latency; Ceiling (gpt-4o) H@1=0.580. The "Vector" configuration offers sub-millisecond latency.
+- **Token I/O Ratio (3.9:1)**: MemRec exploits asymmetric commercial LLM pricing (output tokens are 3-4x more expensive) by keeping outputs concise and inputs detailed.
+- **Rationale Quality**: specificity and relevance significantly improved ($p<0.001$) under GPT-4o-as-judge evaluation.
 
 ## Highlights & Insights
-- **"Dual-model decoupling + IB channel" is a universal architecture**: The idea of physically separating memory management from reasoning can be applied to any scenario where agents handle overloaded contexts (e.g., long-form QA, code repo agents, long video agents). The combination of a lightweight steward and a heavyweight reasoner is highly attractive for industrial deployment.
-- **LLM-as-Rule-Generator**: Using an LLM once to generate interpretable rules for millisecond-level online filtering preserves the LLM's semantic understanding while avoiding online call costs. This can be generalized to the paradigm of "using LLMs to distill rules for other systems."
-- **$O(1)$ complexity of async batched propagation**: This makes "collaborative updates" industrially viable for the first time in the LLM era. Label propagation is a classic algorithm, but packaging it as "one LLM call for both self-reflection and incremental neighbor updates" is a brilliant migration of GNN ideas to agents.
-- **91% gain for sparse users**: This is a staggering figure, suggesting that collaborative memory nearly doubles recommendation quality for long-tail users—revisiting the very reason traditional CF was successful, now rediscovered for the agent era.
-- **Engineering optimization via asymmetric token pricing**: Compressing expensive output while allowing for cheaper input is a crucial engineering dimension often overlooked in LLM product design.
+- **Decoupled Architecture as a Paradigm**: The separation of memory management and reasoning is applicable to any agent scenario involving overloaded context (e.g., long-form QA, code repository agents).
+- **LLM-as-Rule-Generator**: Generating interpretable rules for offline sifting combines LLM semantic understanding with rule-based speed.
+- **$O(1)$ Propagation Complexity**: This makes "collaborative updates" industrially viable for the first time in the LLM era by treating updates as label propagation.
+- **Engineering for Token Pricing**: Optimizing for high input and low output volume is a crucial, often overlooked dimension of LLM product design.
 
 ## Limitations & Future Work
-- **Author Acknowledgments**: (1) Collaborative propagation is limited to 1-hop; multi-hop propagation introduces noise and costs. (2) Domain rules are generated once offline; highly dynamic domains (e.g., news) require online adaptation. (3) "Ceiling" performance still relies on commercial models like gpt-4o.
-- **Observations**: (1) Evaluations primarily used a 1,000-user subset (except for main tables); whether advantages hold at full scale requires caution. (2) Cross-domain transfer and user profile drift were not explored. (3) Privacy—collaborative memory encodes neighbor signals into prompts, posing leakage risks as identified in recent MIA papers. (4) Memory graph expansion over time; no discussion of forgetting or compaction mechanisms.
-- **Future Directions**: (1) Introducing differentially private federated memory updates. (2) Learning adaptive $k, N_f$ instead of fixed values. (3) Multi-hop propagation with trust-score gating. (4) Training $\text{LM}_{\text{Mem}}$ as a reward-tuned small model to further reduce costs. (5) Testing in streaming scenarios with shifting user profiles.
+- **Limitations**: (1) Collaborative propagation is limited to 1-hop; (2) Domain rules are generated offline and may struggle with highly dynamic fields like news; (3) Ceiling performance still relies on commercial models like gpt-4o.
+- **Future Directions**: (1) Federated memory updates with differential privacy; (2) Adaptive learning for $k$ and $N_f$; (3) Multi-hop propagation with trust-score gating; (4) Distilling $\text{LM}_{\text{Mem}}$ into a reward-tuned small model.
 
 ## Related Work & Insights
-- **vs i2Agent / AgentCF / RecBot (Isolated dynamic memory agents)**: These involve self-reflection to modify $M_u$ or $M_i$, with updates strictly limited to the interacting parties. MemRec is the first to propagate updates along a collaborative graph.
-- **vs Vanilla LLM / iAgent (No memory / Static memory)**: This work proves that memory levels from None → Static → Dynamic → Collaborative provide incremental gains in H@1 at each step.
-- **vs LightGCN / SASRec (Traditional CF)**: Traditional CF fails on sparse data (Books) but works on dense data (Yelp). This paper "reactivates" CF's graph ideas with LLM reasoning, beating traditional methods across the board by integrating semantic understanding.
-- **vs MemGPT / Generative Agents (General agent memory)**: They also use decoupled memory managers, but target factual memory and dialogue rather than graph structures and collaborative propagation. MemRec ports this paradigm to the RS domain.
-- **vs Graph RAG**: Graph RAG uses KGs for structured retrieval at the retrieval end; MemRec goes further by using the graph as a dynamic, writable semantic memory.
-- **Insights**: (1) Any scenario requiring an agent to "view many contexts + reflect" should consider a decoupled memory manager. (2) "LLM generates rules; rules filter online" is a general paradigm for reducing LLM reasoning costs. (3) Classic graph algorithms (label propagation, PageRank, community detection) are worth revisiting in the agent era.
+- **vs. i2Agent / AgentCF / RecBot**: These are "isolated" dynamic memory agents where updates are restricted to the interacting pair.
+- **vs. LightGCN / SASRec**: Traditional CF fails on sparse data; MemRec reactivates collaborative graph ideas using LLM reasoning.
+- **vs. MemGPT / Generative Agents**: These use decoupled memory but lack graph structures and collaborative propagation.
+- **Insight**: Transitioning from No → Static → Dynamic → Collaborative memory levels leads to consistent H@1 gains. Classic graph algorithms (Label Propagation, PageRank) are valuable in the agent era.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of "Collaborative Memory" + Decoupled Dual LLM + Async Batched Propagation represents a clear new paradigm in agentic RS. Individual components (IB, label propagation) are not original, but the synthesis is effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ High coverage across 4 datasets, 8 baselines, and 5 configurations, plus ablation, niche-user groups, noise robustness, GPT-4o-as-judge rationales, hyperparameter heatmaps, large candidate sets (N=20), and cost/latency analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Figure 1's "Island vs. Collaborative" comparison is extremely clear. The method section combines formulas, logic, and intuition. Prompts in the appendix are complete and case studies are detailed. Highly structured.
-- **Value**: ⭐⭐⭐⭐⭐ Provides an industrially deployable solution for key bottlenecks of LLM-based RecSys (sparse users, cold start, explanation quality). With open code and a project page, the barrier to reproduction is low; this is a milestone work for the recommendation community.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -138,8 +142,8 @@ All improvements are statistically significant at $p < 0.05$. The most sparse da
 ## Related Papers
 
 - [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
-- [\[ICML 2026\] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](../../ICML2026/recommender/learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)
 - [\[NeurIPS 2025\] Radial Neighborhood Smoothing Recommender System](../../NeurIPS2025/recommender/radial_neighborhood_smoothing_recommender_system.md)
+- [\[ICML 2026\] Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](../../ICML2026/recommender/learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)
 - [\[ICML 2026\] Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System](../../ICML2026/recommender/incentivized_exploration_with_stochastic_covariates_a_two-stage_mechanism_design.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
 

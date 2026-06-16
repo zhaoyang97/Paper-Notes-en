@@ -2,81 +2,103 @@
 title: >-
   [Paper Note] DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics
 description: >-
-  [ICML 2026][Robotics][Deformable Linear Objects] DLO-Lab develops a differentiable simulator on the Genesis platform using Taichi, featuring a Discrete Elastic Rods (DER) kernel that supports bidirectional coupling…
+  [ICML 2026][Robotics & Embodied AI][Discrete Elastic Rods] DLO-Lab develops a differentiable simulator on the Genesis platform using Taichi, featuring a Discrete Elastic Rods (DER) core that supports bidirectional coupling, bending plasticity, and closed-loop topologies. It provides 10 benchmark tasks (rope/cable/rubber band) and a specialized agent using VLM for "grasp propos
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "Deformable Linear Objects"
-  - "Differentiable Simulation"
-  - "Robot Benchmark"
-  - "Discrete Elastic Rods"
-  - "Grasp Proposal"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - Discrete Elastic Rods
 date: 2026-05-08
-content_hash: 49bcfdd2029daa42
+content_hash: 8a5793d28f50b906
 ---
-
 # DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.04206](https://arxiv.org/abs/2606.04206)  
 **Code**: Project Page https://dlo-lab-26.github.io/  
-**Area**: robotics  
+**Area**: Robotics  
 **Keywords**: Deformable Linear Objects, Differentiable Simulation, Robot Benchmark, Discrete Elastic Rods, Grasp Proposal  
 
 ## TL;DR
-DLO-Lab develops a differentiable simulator on the Genesis platform using Taichi, featuring a Discrete Elastic Rods (DER) kernel that supports bidirectional coupling, bending plasticity, and closed-loop topology. It includes 10 benchmark tasks for ropes, cables, and rubber bands, alongside a specialized agent using VLMs for "grasp proposal + task decomposition." The framework facilitates a unified comparison of policy learning algorithms including PPO, SAC, SHAC, SAPO, CMA-ES, and GD, with sim-to-real validation via system identification.
+DLO-Lab develops a differentiable simulator on the Genesis platform using Taichi, featuring a Discrete Elastic Rods (DER) core that supports bidirectional coupling, bending plasticity, and closed-loop topologies. It provides 10 benchmark tasks (rope/cable/rubber band) and a specialized agent using VLM for "grasp proposal + task decomposition," enabling a unified evaluation of PPO, SAC, SHAC, SAPO, CMA-ES, and GD algorithms, with sim-to-real validation via system identification.
 
 ## Background & Motivation
-**Background**: Manipulation of Deformable Linear Objects (DLOs, such as ropes, cables, and rubber bands) is a long-standing robotic challenge. Prior work has either hard-coded single tasks (unknotting, wiring, shaping) or relied on real-world data, which lacks scalability and universality.
+**Background**: Manipulation of Deformable Linear Objects (DLOs, e.g., ropes, cables, rubber bands) is a long-standing robotics challenge. Prior work either hard-coded specific tasks (untangling, wiring, shaping) or relied on real-world data, which lacks scalability and generality.
 
-**Limitations of Prior Work**: Existing DLO simulators have various gaps: neural-network-based ones (Bi-LSTM, GNN, DEFORM) are differentiable but lack physical fidelity; PBD-based ones (SoftGym, XPBD) are fast but have coarse elastic potential modeling; DER-based models (Elastica, C-IPC, IMC) are high-fidelity but non-differentiable, preventing gradient-based policy optimization; MPM/Spring-Mass differentiable solutions (DaXBench, PhysTwin) struggle with bidirectional coupling with rigid/soft bodies or closed-loop topologies. No single platform simultaneously provides "elastic potential + bending plasticity + closed-loop topology + bidirectional coupling + differentiability," all of which are essential for realistic DLO manipulation.
+**Limitations of Prior Work**: Existing DLO simulators have significant gaps—neural-network-based ones (Bi-LSTM, GNN, DEFORM) are differentiable but lack physical fidelity; PBD-based ones (XPBD, SoftGym) are fast but use coarse elastic potential models; physical DER models (Elastica, C-IPC, IMC) are high-fidelity but non-differentiable, preventing gradient-based policy optimization; MPM/Spring-Mass differentiable solutions (DaXBench, PhysTwin) struggle with bidirectional coupling between rigid/soft bodies or closed-loop topologies. Consequently, no platform simultaneously offers "elastic potential + bending plasticity + closed-loop topology + bidirectional coupling + differentiability," all of which are essential for realistic DLO manipulation.
 
-**Key Challenge**: The engineering contradiction between physical fidelity (DER/FEM) and differentiability/coupling (automatic differentiation + MPM/SDF bidirectional contact). The former favors implicit timestepping and hard-constraint solvers, while the latter requires explicit timestepping and differentiable contact models.
+**Key Challenge**: The engineering contradiction between physical fidelity (DER/FEM) and differentiability combined with multi-material coupling (autodiff + MPM/SDF bidirectional contact). The former favors implicit timestepping and hard-constraint solvers, while the latter requires explicit timestepping and differentiable contact models.
 
-**Goal**: (1) Build a DLO differentiable simulator possessing all five core characteristics; (2) design a benchmark task set reflecting unique DLO challenges (topological constraints, grasp sensitivity, long horizons); (3) provide a "DLO-specialized agent" using VLM physical common sense for automatic grasp selection and sub-task decomposition to enable standard RL/optimization for long-horizon tasks; (4) conduct a horizontal evaluation of MFRL, FO-MBRL, trajectory optimization, and evolutionary algorithms to establish baselines.
+**Goal**: (1) Build a DLO differentiable simulator possessing all five key characteristics; (2) Design benchmark tasks reflecting unique DLO challenges (topological constraints, grasp sensitivity, long horizons); (3) Provide a "DLO-specific agent" using VLM physical priors for grasp selection and sub-task decomposition to enable RL/optimization for complex tasks; (4) Conduct a cross-evaluation of MFRL, FO-MBRL, trajectory optimization, and evolutionary algorithms on a unified benchmark.
 
-**Key Insight**: Utilizing the Genesis physical engine as a base with Taichi for automatic differentiation. DLOs are represented via DER (centerline vertices + adapted frames), soft-coupled with rigid bodies via SDF, and bidirectionally coupled with MPM soft bodies via Eulerian grids. Explicit gradient checkpointing enables differentiability over "arbitrarily long horizons." VLMs provide physical priors for "where to grasp and how many steps to take," which are difficult for end-to-end policies.
+**Key Insight**: Leveraging the Genesis physical engine with Taichi for automatic differentiation. DLOs are represented via DER (midline vertices + adapted frames), soft-coupled with rigid bodies via SDF, and bidirectionally coupled with MPM soft bodies via Eulerian grids. Explicit gradient checkpointing enables differentiability over "arbitrarily long horizons." VLM provides physical priors for "where to grasp and how to decompose" to assist end-to-end policies.
 
-**Core Idea**: By combining a "differentiable DER kernel + bidirectional coupling + gradient checkpointing + VLM agent," DLO manipulation—a highly structured problem—is systematically benchmarked for the first time.
+**Core Idea**: By combining a "differentiable DER core + bidirectional coupling + gradient checkpointing + VLM agent," this work systematizes DLO manipulation as a structured benchmark for the first time.
 
 ## Method
-DLO-Lab is divided into three layers: the underlying physics simulator (Section 3), the mid-level benchmark task suite (Section 4.1-4.2), and the high-level DLO agent (Section 4.3).
+DLO-Lab is structured into three layers: the underlying physical simulator (Section 3), the middle-layer benchmark task suite (Section 4.1-4.2), and the top-layer DLO agent (Section 4.3).
 
 ### Overall Architecture
-**Input**: Initial DLO state for each task (centerline vertices + frames), target conditions (e.g., S-shape, looping a ring, bypassing a post), robot arm configuration, and end-effector.
+**Input**: Initial DLO state (vertices + frames), target conditions (e.g., S-shape, looping a ring, bypassing a pillar), and robot configuration/grippers.
 
-**Mechanism**: A self-developed DLO solver runs DER dynamics; bidirectional coupling is performed with Genesis's rigid body solver (SDF) and MPM solver (fluids/elastoplasticity); gradients are calculated throughout via Taichi autodiff, with gradient checkpointing used across timesteps.
+**Mechanism**: A self-developed DLO solver runs DER dynamics, performing bidirectional coupling with Genesis's rigid body solver (SDF) and MPM solver (fluids/elastomers). Gradients are calculated via Taichi autodiff, with gradient checkpointing managing long horizons.
 
-**Policy Interface**: Standard MDP interface where state $\mathbf{S}=(\mathbf{x},\dot{\mathbf{x}},\mathbf{r},\mathbf{M},\dot{\mathbf{M}})$ includes all DLO vertex poses, rest configurations, and robot joint states. Observations consist of $(\mathbf{x},\dot{\mathbf{x}})\in\mathbb{R}^{N_v\times 6}$ and end-effector poses/joint configurations. Actions are Cartesian target poses for the end-effector (resolved via IK).
+**Policy Interface**: Standard MDP interface where state $\mathbf{S}=(\mathbf{x},\dot{\mathbf{x}},\mathbf{r},\mathbf{M},\dot{\mathbf{M}})$ includes DLO vertex poses, rest configurations, and robot joint states. Observations consist of $(\mathbf{x},\dot{\mathbf{x}})\in\mathbb{R}^{N_v\times 6}$ and end-effector poses. Actions are Cartesian target poses (resolved via IK).
 
-**Output**: Differentiable rewards and trajectory gradients $\partial r/\partial a_{0:T}$ for GD/SHAC/SAPO; the platform also supports sampling-based RL (PPO/SAC) and black-box optimization (CMA-ES).
+**Output**: Differentiable rewards and trajectory gradients $\partial r/\partial a_{0:T}$ for GD/SHAC/SAPO, while also supporting sampling-based RL (PPO/SAC) and black-box optimization (CMA-ES).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input<br/>Initial State + Target + Robot Config"]
+    subgraph SIM["Differentiable DER Solver + Coupling (Design 1)"]
+        direction TB
+        DER["DER Dynamics<br/>Stretch/Bend/Twist + Plasticity + Topology"]
+        COUP["Bidirectional Coupling<br/>Rigid SDF Contact · MPM Grid Collision"]
+        DER --> COUP
+    end
+    CKPT["Gradient Checkpointing (Design 2)<br/>Reduce memory from O(T) to O(√T)"]
+    MDP["MDP Policy Interface<br/>State/Obs/Action + Differentiable Reward/Grads"]
+    ALGO["Policy Learning Benchmark<br/>PPO/SAC · SHAC/SAPO · GD · CMA-ES"]
+    subgraph AGENT["VLM-driven DLO Agent (Design 3)"]
+        direction TB
+        GRASP["Grasp Proposal<br/>Candidate / Coefficient / Marker"]
+        DECOMP["Task Decomp + Closed-loop Planning<br/>Sub-task Trajectory Optimization"]
+        GRASP --> DECOMP
+    end
+    OUT["Output<br/>Policy / Trajectory + Sim-to-real ID"]
+
+    IN --> SIM
+    SIM --> CKPT
+    CKPT --> MDP
+    MDP --> ALGO
+    ALGO --> OUT
+    MDP -->|Long-horizon Tasks| AGENT
+    AGENT -->|Short-horizon Sub-tasks| ALGO
+```
 
 ### Key Designs
 
-1. **Differentiable DLO Solver based on DER + Bidirectional Coupling**:
-    - **Function**: Merges "high-fidelity DER dynamics" and "differentiability + bidirectional interaction with rigid/MPM soft bodies" into a single solver as the platform's physical foundation.
-    - **Core Idea**: DLOs are represented by centerline vertices $\mathbf{x}=\{\mathbf{x}_i\in\mathbb{R}^3\}$ and adapted orthonormal frames $\mathbf{d}=\{(\mathbf{d}_1,\mathbf{d}_2,\mathbf{d}_3)^j\}$ for each edge, where $\mathbf{d}_3^j\equiv \mathbf{e}^j/|\mathbf{e}^j|$. Potential energy consists of stretching $U_s$, bending $U_b$, and twisting $U_t$. Gradients are derived and advanced via symplectic Euler. Bending plasticity is implemented by adjusting rest curvature using a yield threshold $\sigma_y$ and creep rate $r_c$. Closed-loop topology is handled by connecting the head and tail of the centerline. For rigid body coupling, DLO sample points query the rigid SDF; penetration depth $d(\mathbf{p})=r(\mathbf{p})-\mathrm{SDF}(\mathbf{p})$ is processed through a soft exponential factor $f_i=\min(\exp(d/\epsilon_s),1)$ for impulse-based friction response, with reaction forces applied to the rigid body. For MPM coupling, collisions between grid nodes and DLO vertices/edges are detected within the Eulerian grid loop, and repulsive impulses are applied based on relative velocity, normals, and mass ratios.
-    - **Design Motivation**: DER is the most physically accurate discretization for slender rod geometries. Previous DER implementations (C-IPC, IMC) relied on implicit solvers and were non-differentiable. This work makes it explicit and runs on Taichi, marking the first time DER is both high-fidelity and differentiable while being compatible with heterogeneous materials.
+**1. DER-based Differentiable DLO Solver + Bidirectional Coupling: Reconciling high-fidelity physics with differentiability and coupling.**
 
-2. **Gradient Checkpointing for Long-Horizon Backpropagation**:
-    - **Function**: Enables "thousands of simulation steps + full differentiability" within limited GPU memory, determining whether first-order policy optimizers like GD/SHAC can utilize full trajectory gradients.
-    - **Core Idea**: Following FluidLab, the trajectory is segmented during the forward pass. States are cached to CPU memory at the end of each segment, discarding intermediate GPU computation graphs. During the backward pass, checkpoints are traversed in reverse order; each segment re-runs a forward pass to reconstruct its local graph for backpropagation. This reduces memory consumption from $\mathcal{O}(T)$ to $\mathcal{O}(\sqrt{T})$ (optimal at segment length $\sim\sqrt{T}$), decoupling memory usage from the number of simulation steps.
-    - **Design Motivation**: DLO tasks such as unknotting or wiring often reach thousands of steps. Standard autodiff causes immediate memory overflow. Checkpointing trades 1x extra forward computation for $\sqrt{T}$ memory savings, which is acceptable for policy optimization and makes first-order MBRL feasible for long-horizon DLO tasks.
+This is the physical foundation where previous solvers failed—DER implementations (C-IPC, IMC) are physically accurate but use non-differentiable implicit solvers, while differentiable schemes (MPM) struggle with coupling and topologies. DLO-Lab represents DLOs as midline vertices $\mathbf{x}=\{\mathbf{x}_i\in\mathbb{R}^3\}$ and adapted frames. The potential energy comprises stretching $U_s$, bending $U_b$, and twisting $U_t$, integrated via symplectic Euler. Bending plasticity is achieved via yield threshold $\sigma_y$ and creep rate $r_c$ adjusting rest curvature. Coupling is bidirectional: DLO points query rigid body SDFs to compute impulse-based friction responses via a soft exponential factor $f_i=\min(\exp(d/\epsilon_s),1)$, while collisions with MPM soft bodies are handled in the Eulerian grid.
 
-3. **VLM-driven DLO Agent (Grasp Proposal + Task Decomposition)**:
-    - **Function**: Adds structural priors for "where to grasp" and "how many steps to take"—which are difficult for end-to-end policies to learn—reducing long-horizon, topologically constrained tasks into multiple short-horizon sub-tasks.
-    - **Core Idea**: Grasp proposal uses three prompting modes: (a) Candidate mode: VLM chooses from uniformly sampled candidate points rendered on the DLO; (b) Coefficient mode: VLM outputs a $[0,1]$ scalar representing the position along the DLO; (c) Marker mode: VLM clicks pixel coordinates based on visual markers. Candidate mode proved most reliable. For task decomposition, the VLM generates an initial plan including reward functions and horizons for each sub-task. Each sub-task is then solved via differentiable trajectory optimization. After execution, the VLM evaluates the state to decide whether to continue or re-plan, forming a closed loop.
-    - **Design Motivation**: DLO manipulation possesses two fatal challenges for RL: grasping the wrong point can make a task kinematically infeasible (e.g., pulling the wrong strand in a knot), and long-horizon rewards are too sparse for end-to-end PPO/SAC exploration. Offloading symbolic and physical reasoning to VLMs allows the system to combine the semantic layer of world models with the numerical layer of optimizers.
+**2. Gradient Checkpointing: Enabling "thousands of steps" of differentiability under finite memory.**
+
+DLO tasks like untangling involve thousands of simulation steps. Standard autodiff saves all intermediate states, causing $\mathcal{O}(T)$ memory explosion. DLO-Lab splits the trajectory into segments, caching the state at the end of each segment to CPU. During the backward pass, it re-simulates segments to reconstruct the local computational graph, reducing memory from $\mathcal{O}(T)$ to $\mathcal{O}(\sqrt{T})$. 
+
+**3. VLM-driven DLO Agent: Outsourcing "where to grasp and how to split" to VLM.**
+
+DLO manipulation suffers from two RL killers: incorrect grasp points make tasks kinematically infeasible, and long horizons lead to sparse rewards. The DLO agent uses VLM for grasp proposals (Candidate mode: selecting from sampled points) and task decomposition (generating a sub-task plan with specific rewards). This combines the semantic/symbolic reasoning of world models with the numerical precision of downstream optimizers.
 
 ### Loss & Training
-- The simulator is differentiable, and all reward functions are designed to be smooth (contact smoothing, SDF distance smoothing). It supports both sampling-based RL and first-order optimization.
-- The platform evaluates PPO, SAC (MFRL), SHAC, SAPO (FO-MBRL using analytical gradients from Taichi for actor optimization), GD (trajectory gradient descent on actions), and CMA-ES (gradient-free evolution strategies).
-- Sim-to-real transfer utilizes the differentiable simulator for system identification: simulated rope projections are compared against real binary masks from video, and gradients are backpropagated to optimize material parameters (stretching/bending stiffness).
+- The simulator is fully differentiable; rewards are designed to be smooth (e.g., smooth contact, smooth SDF distance).
+- Benchmarked algorithms: PPO, SAC (MFRL), SHAC, SAPO (FO-MBRL using analytic gradients), GD (trajectory gradient descent), and CMA-ES (gradient-free evolution).
+- Sim-to-real transfer: System identification uses the differentiable simulator to minimize the pixel-level difference between simulated and real binary masks, backpropagating gradients to calibrate material parameters (stiffness).
 
 ## Key Experimental Results
 
 ### Main Results
-8 fixed-horizon tasks (Coiling, Gathering, Lifting, Separation, Slingshot, Unknotting, Wiring-post, Wrapping) + 2 long-horizon tasks (Letter Art, Wiring-ring). Results for fixed-horizon tasks report the max episodic return ± std over 3 seeds; long-horizon tasks are evaluated with the DLO agent.
+8 fixed-horizon tasks and 2 long-horizon tasks. Values represent max episodic return.
 
 | Task | PPO | SAC | SHAC | SAPO | GD | CMA-ES |
 |------|-----|-----|------|------|-----|--------|
@@ -89,50 +111,46 @@ DLO-Lab is divided into three layers: the underlying physics simulator (Section 
 | Wiring-post | 62.17 | 62.07 | 36.42 | 36.13 | 36.40 | **64.31** |
 | Wrapping | 131.08 | 161.85 | 129.90 | 144.36 | 139.98 | **162.68** |
 
-CMA-ES achieved the best results in 6/8 tasks. FO-MBRL (SHAC/SAPO) significantly outperformed PPO/SAC on the topological Unknotting task (46 vs 3), proving the necessity of differentiable gradients in contact-intensive tasks. GD performed well on smooth-reward tasks but failed in local optima for Unknotting and Wiring-post.
+CMA-ES achieved the best results in 6/8 tasks. FO-MBRL (SHAC/SAPO) significantly outperformed PPO/SAC in contact-rich tasks like Unknotting.
 
 ### Ablation Study
-| Configuration | Key Finding | Description |
-|------|----------|------|
-| MFRL (PPO/SAC) vs Traj. Opt. | Traj. Opt. is significantly more sample-efficient | RL involves extra overhead for exploration and network fitting, which is penalized by sparse rewards and high-dimensional vertex states. |
-| FO-MBRL vs MFRL (Unknotting) | 46 vs 3 | Analytical gradients allow SHAC/SAPO to find optimization directions at contact switches where PPO/SAC get stuck. |
-| CMA-ES vs GD (Lifting/Slingshot) | CMA-ES leads by a wide margin | When DLO has no contact, gradients are zero; GD fails without warm-starting, while CMA-ES skips local optima via parallel sampling. |
-| Grasp proposal: Candidate / Coefficient / Marker | Candidate mode is most stable | Discrete candidates best match VLM vision-language reasoning; numerical precision suffers in other modes. |
-| Task decomposition (Letter Art, Wiring-ring) | Closed-loop re-planning boosts success | Single-phase optimization cannot handle serial dependencies like "bend into D, then re-grasp to bend into L." |
-| System ID + Real-world Transfer | Differentiable sim optimized rope parameters | Open-loop success with zero-shot deployment; closed-loop Wiring-ring achieved 7/12 (≈58%) trials. |
+| Configuration | Key Finding |
+|------|----------|
+| MFRL vs Traj Opt | Trajectory optimization is significantly more sample-efficient as RL struggles with sparse rewards and high-dim vertex states. |
+| FO-MBRL vs MFRL | Analytic gradients allow SHAC/SAPO to maintain optimization direction at contact switches where PPO/SAC fail. |
+| CMA-ES vs GD | GD fails in zero-gradient regions (before contact); CMA-ES skips local optima via parallel sampling. |
+| Grasp Proposal | "Candidate" mode is the most stable for VLM reasoning. |
+| Task Decomp | Closed-loop replanning is essential for multi-phase tasks like Letter Art. |
 
 ### Key Findings
-- **Differentiability acts as a "contact penetrator"**: On purely topological tasks like Unknotting, analytical gradients improve SHAC/SAPO performance by 15x over MFRL. However, when rewards depend on contacts that haven't occurred (Lifting/Slingshot), gradients vanish, and CMA-ES takes the lead.
-- **Closed-loop policies are harder to learn than open-loop trajectories**: Under the same sample budget, PPO/SAC lose to CMA-ES. This is not a failure of RL algorithms, but a reflection that learning a robust policy while navigating exploration is inherently harder. Future DLO research must distinguish between open-loop and closed-loop baselines.
-- **Robustness of CMA-ES**: Derived from (1) independence from local gradients, avoiding zero-gradient dead zones, and (2) large-scale parallel sampling that jumps out of local optima in non-smooth reward landscapes. Differentiable simulation does not replace sampling; they should be selected based on gradient availability.
-- **VLM Synergy**: The combination of Candidate mode and task decomposition makes multi-stage topological tasks (Letter Art) solvable, whereas end-to-end RL is nearly impossible within reasonable budgets.
-- **System Identification is key for Sim-to-Real**: Using the differentiable simulator to calibrate stiffness parameters allowed a 58% success rate in closed-loop Wiring-ring and zero-shot deployment for open-loop tasks, a level of validation often missing in previous DLO simulators.
+- **Differentiability acts as a "contact penetrator"**: For topological tasks like Unknotting, analytic gradients improve performance by 15x over MFRL. However, if rewards depend on yet-to-occur contacts, gradients vanish, allowing CMA-ES to take the lead.
+- **Closed-loop policies are harder to learn than open-loop optimization**: PPO/SAC underperform CMA-ES not due to algorithm flaws, but because learning a robust closed-loop policy while exploring is inherently more difficult.
+- **CMA-ES robustness** comes from its gradient-free nature and large-scale parallel sampling, which effectively traverses non-smooth reward landscapes.
+- **VLM + Decomposition** enables tasks that are otherwise impossible for end-to-end RL.
 
 ## Highlights & Insights
-- **The "DER + Autodiff + Coupling + Checkpoint" stack**: While individual components have appeared elsewhere, DLO-Lab is the first to integrate all five, providing a comprehensive "reference implementation" for DLO benchmarks.
-- **Differentiable sim for System ID is highly effective**: Rather than relying on gradients to solve the entire policy, using gradients to calibrate physical parameters for sim-to-real deployment appears to be a more robust path than "end-to-end differentiable policy" optimization.
-- **VLM as a Structural Prior**: Instead of direct action output, using VLMs for semantic/topological labels (where and when to re-grasp) is a pragmatic approach that avoids the numerical precision pitfalls of current VLMs.
-- **Method Selection Guide**: Smooth reward + low contact $\rightarrow$ GD; Dense contact + gradient availability $\rightarrow$ SHAC/SAPO; Sparse contact / non-smooth / topological $\rightarrow$ CMA-ES; Generalist closed-loop policy $\rightarrow$ Requires 10x more samples.
+- **First comprehensive integration of "DER + Autodiff + Coupling + Checkpoint"**: Provides a gold-standard reference for DLO simulation.
+- **Differentiable Sim for System ID**: Using gradients to calibrate physical parameters for sim-to-real transfer is often more impactful than using them solely for policy optimization.
+- **VLM as a Structural Prior**: Outsourcing semantic tasks (where to grasp) to VLM while keeping numerical optimization in the simulator avoids VLM's precision weaknesses.
+- **Method Selection Heuristic**: Smooth reward/few contacts $\to$ GD; Dense contact/reachable gradient $\to$ SHAC; Sparse contact/topology $\to$ CMA-ES.
 
 ## Limitations & Future Work
-- DER remains a discretization of rods; extremely fine cables or soft ribbons may require higher resolution, hitting performance bottlenecks in the Taichi kernel.
-- Bidirectional coupling currently covers rigid bodies (SDF) and MPM (soft/fluids) but excludes textiles (cloth) or granular materials (sand).
-- VLM agent reliability depends on external APIs and prompt engineering; the agent's self-error correction analysis is currently insufficient.
-- The 58% real-world success rate for Wiring-ring indicates a gap; robustness tests against simultaneous shifts in perception and physical parameters are needed.
-- Tasks are currently limited to tabletop single/dual-arm parallel grippers; dexterous hands and mobile platforms are not yet included.
+- DER discretization might require higher resolution for extremely thin cables, hitting performance bottlenecks.
+- Bidirectional coupling is limited to rigid and MPM bodies; coupling with textiles or granular media is needed.
+- VLM reliability depends on prompt engineering and external APIs; failure case analysis for agents is lacking.
+- Sim-to-real gap remains (58% success on Wiring-ring); robust testing against perception drift is required.
 
 ## Related Work & Insights
-- **vs DaXBench (Chen et al., 2023)**: DaXBench uses MPM for everything; DLOs are viewed as particles. DLO-Lab uses DER to respect the 1D geometry, leading to lower parameter dimensions and higher fidelity.
-- **vs PhysTwin (Jiang et al., 2025)**: PhysTwin uses spring-mass systems and lacks bending plasticity/topological constraints. DLO-Lab's DER core captures plasticity in copper wires and rubber bands.
-- **vs C-IPC / IMC**: These are physically accurate but non-differentiable due to implicit solvers. DLO-Lab offers a compromise via explicit symplectic Euler for first-order policy optimization.
-- **vs SoftGym / XPBD**: PBD is fast but lacks precision and closed-loop support. DLO-Lab uses PBD only for friction sub-modules, leaving the core dynamics to DER.
-- **vs DEFORM (Chen et al., 2024)**: DEFORM approximates DER with NNs; DLO-Lab uses analytical DER + autodiff, avoiding generalization risks from training data.
+- **vs DaXBench**: DaXBench uses MPM for everything; DLO-Lab uses DER for linear geometry, which is more physically faithful for "slender rods."
+- **vs PhysTwin**: PhysTwin lacks bending plasticity and topological constraints, which DLO-Lab handles via the DER core.
+- **vs C-IPC / IMC**: These are non-differentiable; DLO-Lab offers a compromise between fidelity and first-order optimization.
+- **vs SoftGym / XPBD**: PBD lacks accuracy and closed-loop topology; DLO-Lab uses PBD only for contact while DER handles the main dynamics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combining the five-component stack has significant engineering and research value.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 algorithms × 10 tasks, VLM prompt ablation, and real-world deployment covers all necessary bases.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure; Table 1 effectively highlights differences with existing simulators.
-- Value: ⭐⭐⭐⭐⭐ Directly provides a unified infrastructure, baseline evaluations, and sim-to-real recipes for the DLO field.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -141,10 +159,10 @@ CMA-ES achieved the best results in 6/8 tasks. FO-MBRL (SHAC/SAPO) significantly
 ## Related Papers
 
 - [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
 - [\[AAAI 2026\] Distributionally Robust Online Markov Game with Linear Function Approximation](../../AAAI2026/robotics/distributionally_robust_online_markov_game_with_linear_function_approximation.md)
-- [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](../../ICLR2026/robotics/d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
-- [\[AAAI 2026\] Object-Centric Latent Action Learning](../../AAAI2026/robotics/object-centric_latent_action_learning.md)
+- [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
+- [\[ACL 2025\] Vulnerability of LLMs to Vertically Aligned Text Manipulations](../../ACL2025/robotics/vulnerability_of_llms_to_vertically_aligned_text_manipulations.md)
+- [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](../../CVPR2026/robotics/agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
 
 </div>
 

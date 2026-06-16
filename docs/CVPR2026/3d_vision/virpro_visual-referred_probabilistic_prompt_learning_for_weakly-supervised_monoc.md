@@ -2,189 +2,146 @@
 title: >-
   [Paper Note] VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection
 description: >-
-  [CVPR 2026][3D Vision][Weakly-supervised monocular 3D detection] This paper proposes VirPro—an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision signals for weakly-supervised monocu…
+  [CVPR 2026][3D Vision][CLIP] VirPro is proposed as an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision for weakly-supervised monocular 3D detection through visual-guided probabilistic prompts (Adaptive Prompt Bank + Multi-Gaussian Prompt Modeling). It can be seamlessly integrated into existing WS-M3D framewo
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Weakly-supervised monocular 3D detection"
-  - "probabilistic prompt learning"
-  - "multimodal pre-training"
-  - "visual-language alignment"
-  - "CLIP"
+  - CVPR 2026
+  - 3D Vision
+  - CLIP
 date: 2026-05-08
-content_hash: 6fff74583fcee1b9
+content_hash: 1524142d55030bc7
 ---
-
 # VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.17470](https://arxiv.org/abs/2603.17470)  
 **Code**: To be confirmed  
-**Area**: 3D Vision
-**Keywords**: Weakly-supervised monocular 3D detection, probabilistic prompt learning, multimodal pre-training, visual-language alignment, CLIP
+**Area**: 3D Vision  
+**Keywords**: Weakly-Supervised Monocular 3D Detection, Probabilistic Prompt Learning, Multimodal Pre-training, Vision-Language Alignment, CLIP
 
 ## TL;DR
 
-This paper proposes VirPro—an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision signals for weakly-supervised monocular 3D detection via visually guided probabilistic prompts (Adaptive Prompt Bank + Multi-Gaussian Prompt Modeling). VirPro can be seamlessly integrated into existing WS-M3D frameworks, achieving up to 4.8% AP improvement on KITTI.
+VirPro is proposed as an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision for weakly-supervised monocular 3D detection through visual-guided probabilistic prompts (Adaptive Prompt Bank + Multi-Gaussian Prompt Modeling). It can be seamlessly integrated into existing WS-M3D frameworks, achieving up to a 4.8% AP improvement on KITTI.
 
 ## Background & Motivation
 
-Monocular 3D object detection relies heavily on expensive 3D annotations due to the absence of explicit depth information. Existing weakly-supervised methods follow three main directions:
+Monocular 3D object detection relies heavily on expensive 3D annotations due to the lack of explicit depth information. Existing weakly-supervised methods mainly follow three routes:
 
-1. **Pseudo 3D label generation**: Aligning 2D bounding boxes with LiDAR point clouds to generate 3D pseudo-labels
-2. **3D knowledge distillation**: Transferring knowledge from strong models to monocular detectors
-3. **Text-visual alignment**: Borrowing ideas from CLIP to use deterministic text descriptions as auxiliary weak supervision signals
+1.  **Pseudo 3D Label Generation**: Aligning 2D boxes with LiDAR point clouds to generate 3D pseudo-labels.
+2.  **3D Knowledge Distillation**: Transferring knowledge from strong models to monocular detectors.
+3.  **Text-Visual Alignment**: Borrowing from CLIP by using deterministic text descriptions as auxiliary weak supervision signals.
 
-Representative methods such as CAW3D adopt **hand-crafted static text prompts** (e.g., "a photo of a car") as weak supervision. However, such **deterministic, scene-agnostic** text descriptions fail to capture the visual diversity of object appearance and spatial layout across different scenes, limiting the model's ability to learn scene-aware representations.
+Methods like CAW3D use **hand-crafted static text prompts** (e.g., "a photo of a car") as weak supervision. However, these **deterministic, scene-independent** text descriptions cannot capture the visual diversity of object appearance and spatial position across different scenes, limiting the ability of the model to learn scene-aware representations.
 
-**Core Insight**: If prompts can adaptively reflect visual diversity across scenes, more robust scene-aware representations can be achieved without requiring additional manual annotations.
+**Key Insight**: Robust scene-aware representations can be achieved without additional manual annotation if prompts are allowed to adaptively reflect cross-scene visual diversity.
 
 ## Core Problem
 
-How to design prompt supervision signals that embrace cross-scene visual diversity, enabling robust scene-aware representations without additional manual annotations?
+How to design prompt supervision signals that embrace cross-scene visual diversity to achieve robust scene-aware representations without additional manual labeling?
 
 ## Method
 
-VirPro adopts a **two-stage training pipeline**: Stage 1 performs pre-training of probabilistic prompts and visual-text alignment; Stage 2 transfers the learned scene-aware priors to the monocular encoder via knowledge distillation.
+### Overall Architecture
 
-### 3.1 Adaptive Prompt Bank (APB)
+VirPro addresses a specific pain point in weakly-supervised monocular 3D detection: the inability of static text prompts (as used in CAW3D) to express visual diversity. The framework follows a **two-stage** approach. Stage 1 uses a set of learnable probabilistic prompts for vision-text alignment, embedding "scene-aware" semantic priors into the prompt distribution. Stage 2 transfers these priors to the monocular encoder via knowledge distillation, with no additional overhead during inference. The data flow during pre-training involves: generating learnable prompt templates (APB) for each RoI $\rightarrow$ modeling each template as a Gaussian distribution and sampling diverse embeddings (MGPM) $\rightarrow$ performing RoI-level image-text contrastive alignment.
 
-**Design Motivation**: Relying solely on visual features and a single category prompt is insufficient to model diverse scene contexts in weakly-supervised monocular 3D detection. Multiple diverse prompts provide complementary semantic cues that enhance language-visual alignment.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image + 2D Detector RoI"] --> B
+    subgraph S1["Stage 1: Probabilistic Prompt Vision-Text Pre-training"]
+        direction TB
+        B["Adaptive Prompt Bank (APB)<br/>Generate learnable templates for each RoI<br/>Random target token insertion"]
+        B --> C["Multi-Gaussian Prompt Modeling (MGPM)<br/>Text decoder estimates mean (Category Semantics)<br/>Cross-modal decoder estimates variance (Visual Uncertainty)<br/>Reparameterization sampling"]
+        C --> D["RoI Contrastive Matching<br/>Max pooling of text embeddings vs Image embeddings"]
+    end
+    D --> E
+    subgraph S2["Stage 2: Knowledge Distillation to Monocular Detector"]
+        direction TB
+        E["Knowledge Distillation (D2OD)<br/>Semantic prior transfer to monocular encoder"] --> F["Monocular 3D Detector<br/>No extra inference overhead"]
+    end
+```
 
-**Design**: For the $i$-th target query token $o_i$, $N_p$ probabilistic prompt templates are generated:
+### Key Designs
 
-$$p_i^t = \{a_1^t, a_2^t, \ldots, a_L^t \mid o_i\}, \quad t = 1, \ldots, N_p$$
+**1. Adaptive Prompt Bank (APB): Self-learning Prompts with Random Positioning**
 
-where $\{a_1^t, \ldots, a_L^t\}$ are $L$ **learnable scenario descriptors**, randomly initialized and jointly optimized during training.
+A single category prompt is insufficient for diverse contexts in weakly-supervised scenarios. VirPro avoids hard-coded text and instead generates $N_p$ probabilistic prompt templates $p_i^t = \{a_1^t, a_2^t, \ldots, a_L^t \mid o_i\}$ for the $i$-th target query token $o_i$. The $L$ elements $\{a_1^t, \ldots, a_L^t\}$ are **learnable scene descriptors** that are randomly initialized and jointly optimized. Multiple templates provide complementary semantic cues.
 
-**Key Design—Random Position Insertion Strategy**: Unlike ProDA, which fixes the target token position (beginning/middle/end), VirPro allows target-related tokens to be **randomly placed** within the template, encouraging the model to capture more robust contextual associations—particularly critical under weak supervision.
+Unlike ProDA, which fixes the target token position, APB allows the target token to be **randomly inserted** into the template. This forces the model to capture more robust contextual associations, which is crucial under label-scarce weak supervision. In practice, 32 learnable prompts are initialized per RoI, and 8 are randomly sampled and normalized to form RoI-specific text embeddings.
 
-In practice, 32 learnable prompts are initialized per RoI, and 8 are randomly sampled and normalized to form RoI-specific text embeddings.
+**2. Multi-Gaussian Prompt Modeling (MGPM): Mean for Semantics, Variance for Visual Uncertainty**
 
-### 3.2 Multi-Gaussian Prompt Modeling (MGPM)
+Learnable templates alone are deterministic. MGPM models each scene prompt as an independent isotropic Gaussian distribution $\mathcal{P}(z_i^{(1:N_p)} \mid p_i) \sim \{\mathcal{N}(\boldsymbol{\mu}_i^{(t)}, (\boldsymbol{\sigma}_i^{(t)})^2 \mathbf{I})\}_{t=1}^{N_p}$ to decouple semantic stability from visual variation.
 
-This is the core module of VirPro, which models each scene prompt as an **independent isotropic Gaussian distribution**, enabling semantic diversity and structured disentanglement.
+The mean and variance are estimated from two different sources. The **text prompt decoder** uses self-attention within the prompt set to obtain the mean $\mu_i^t = \phi_\mu(q_i^t) + \text{SelfAttn}_\mu(q_i^t; P_i)$, capturing canonical category semantics. The **cross-modal vision-text decoder** injects variance $\sigma_i^t = \phi_\sigma(q_i^t) + \text{CrossAttn}_\sigma(q_i^t; F)$ via cross-attention from vision-language features $F$, allowing the variance to represent visual uncertainty. Each scene is sampled using the reparameterization trick $\hat{z}_{i,j}^{(t)} = \boldsymbol{\mu}_i^{(t)} + \boldsymbol{\sigma}_i^{(t)} \odot \boldsymbol{\epsilon},\ \boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ to ensure end-to-end differentiability.
 
-**Probabilistic Modeling**: For the $i$-th target and its $N_p$ scene prompts, the distribution is defined as:
+**3. RoI Contrastive Matching: Intra-scene Consistency and Inter-scene Separability**
 
-$$\mathcal{P}(z_i^{(1:N_p)} \mid p_i) \sim \left\{\mathcal{N}\left(\boldsymbol{\mu}_i^{(t)}, (\boldsymbol{\sigma}_i^{(t)})^2 \mathbf{I}\right)\right\}_{t=1}^{N_p}$$
+VirPro performs **max pooling** on the sampled prompt distribution $\hat{z}_{i,j}^{(t)}$ to obtain the text embedding $\mathbf{e}_i^{\text{txt}}$. This forms a positive pair with the image embedding $\mathbf{e}_i^{\text{img}}$ extracted by the monocular 3D encoder (spatially aligned with the 2D detector). Object-level contrastive learning is applied: $\mathcal{L}_{\text{contrast}} = \frac{1}{N}\sum_{i=1}^N \ell_i$. Ablations show that parameter-free max pooling outperforms MLP fusion, adhering to the "less is more" principle.
 
-**Dual-Decoder Parameter Estimation**:
+### Loss & Training
 
-| Component | Function | Computation | Input Source |
-|-----------|----------|-------------|--------------|
-| Textual Prompt Decoder | Estimates Gaussian mean $\boldsymbol{\mu}$ | $\mu_i^t = \phi_\mu(q_i^t) + \text{SelfAttn}_\mu(q_i^t; P_i)$ | Self-attention within the prompt set |
-| Cross-Modal Visual-Text Decoder | Estimates Gaussian variance $\boldsymbol{\sigma}$ | $\sigma_i^t = \phi_\sigma(q_i^t) + \text{CrossAttn}_\sigma(q_i^t; F)$ | Cross-attention over visual-language features $F$ |
+The probabilistic prompt learning loss consists of two parts: a **diversity loss** based on orthogonality $\mathcal{L}_{\text{div}} = \frac{1}{K}\sum_{i=1}^K \|\tilde{P}_i \tilde{P}_i^\top - \mathbf{I}\|_2^2$ to differentiate scene prompt semantics, and a **KL divergence regularization** to prevent variance collapse by constraining the prompt distribution toward a standard Gaussian prior: $\mathcal{L}_{\text{prompt}} = \mathcal{L}_{\text{div}} + \frac{1}{N_p}\sum_{t=1}^{N_p}\text{KL}(\mathcal{P}(\hat{\boldsymbol{z}}_i^{(t)} \mid p_i^{(t)}) \| \mathcal{N}(\mathbf{0}, \mathbf{I}))$.
 
-**Core Idea**: The mean is produced by text-side self-attention, capturing canonical semantics; the variance is injected from visual features via cross-attention, expressing **visual uncertainty**. This allows prompts to maintain stability in category semantics while adapting to scene-level visual variation.
-
-**Stochastic Sampling and Reparameterization**: For each scene $t$, $N_s$ random samples are drawn from the learned distribution:
-
-$$z_{i,j}^{(t)} \sim \mathcal{N}\left(\boldsymbol{\mu}_i^{(t)}, (\boldsymbol{\sigma}_i^{(t)})^2 \mathbf{I}\right), \quad j = 1, \ldots, N_s$$
-
-The reparameterization trick is used to ensure end-to-end differentiability:
-
-$$\hat{z}_{i,j}^{(t)} = \boldsymbol{\mu}_i^{(t)} + \boldsymbol{\sigma}_i^{(t)} \odot \boldsymbol{\epsilon}, \quad \boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$$
-
-### 3.3 RoI Contrastive Matching
-
-Object-level image-text contrastive learning is employed to ensure all targets within the same scene share a consistent global context while remaining distinguishable from targets in different scenes.
-
-- **Text embedding** $\mathbf{e}_i^{\text{txt}}$: Obtained via **max pooling** over sampled prompt distributions $\hat{z}_{i,j}^{(t)}$
-- **Image embedding** $\mathbf{e}_i^{\text{img}}$: Extracted from the monocular 3D encoder, spatially aligned with the 2D detector
-- Positive pairs: $(\mathbf{e}_i^{\text{txt}}, \mathbf{e}_i^{\text{img}})$ for the same target
-
-Contrastive loss:
-
-$$\mathcal{L}_{\text{contrast}} = \frac{1}{N} \sum_{i=1}^{N} \ell_i$$
-
-Four RoIs are randomly selected per scene to construct contrastive pairs, with temperature parameter initialized at $\tau = 0.07$.
-
-### 3.4 Learning Objectives
-
-The **probabilistic prompt learning loss** consists of two components:
-
-1. **Diversity loss**—encourages semantic differentiation among scene prompts via orthogonality:
-$$\mathcal{L}_{\text{div}} = \frac{1}{K} \sum_{i=1}^{K} \|\tilde{P}_i \tilde{P}_i^\top - \mathbf{I}\|_2^2$$
-
-2. **KL divergence regularization**—prevents variance collapse by constraining prompt distributions toward a standard Gaussian prior:
-$$\mathcal{L}_{\text{prompt}} = \mathcal{L}_{\text{div}} + \frac{1}{N_p} \sum_{t=1}^{N_p} \text{KL}\left(\mathcal{P}(\hat{\boldsymbol{z}}_i^{(t)} \mid p_i^{(t)}) \| \mathcal{N}(\mathbf{0}, \mathbf{I})\right)$$
-
-**Two-stage losses**:
-
-| Stage | Loss Function | Description |
-|-------|---------------|-------------|
-| Stage 1 | $\mathcal{L}_{\text{stage1}} = \mathcal{L}_{\text{contrast}} + \alpha \mathcal{L}_{\text{prompt}}$ | Probabilistic prompt learning + RoI contrastive alignment |
-| Stage 2 | $\mathcal{L}_{\text{stage2}} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{3D}$ | Knowledge distillation (MSE) + pseudo-label 3D supervision |
-
-Stage 2 adopts the Dual-to-One Distillation (D2OD) from CAW3D, introducing no additional inference overhead.
-
-### Overall Pipeline Summary
-
-1. **APB stage**: Multiple learnable prompt templates are generated per RoI, with target tokens randomly inserted
-2. **MGPM stage**: The text decoder estimates Gaussian means; the visual-text cross-modal decoder estimates variances; diverse prompt embeddings are generated via sampling
-3. **RoI contrastive matching**: Max-pooled aggregations are used for object-level contrastive learning, reinforcing intra-scene consistency and inter-scene discriminability
-4. **Knowledge distillation**: Scene-aware priors learned during pre-training are distilled into the monocular encoder
+The objectives for the two stages are $\mathcal{L}_{\text{stage1}} = \mathcal{L}_{\text{contrast}} + \alpha \mathcal{L}_{\text{prompt}}$ and $\mathcal{L}_{\text{stage2}} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{3D}$ (knowledge distillation MSE + pseudo-label 3D supervision). Stage 2 utilizes Dual-to-One Distillation (D2OD) from CAW3D without introducing extra inference cost.
 
 ## Key Experimental Results
 
 ### KITTI Val Set (Car Category, AP @ IoU=0.5, $R_{40}$)
 
 | Method | Supervision | $\text{AP}_{\text{BEV}}$ Easy | $\text{AP}_{\text{BEV}}$ Mod | $\text{AP}_{\text{BEV}}$ Hard | $\text{AP}_{\text{3D}}$ Easy | $\text{AP}_{\text{3D}}$ Mod | $\text{AP}_{\text{3D}}$ Hard |
-|--------|-------------|------|------|------|------|------|------|
-| WeakM3D | Weak (w/o 2D GT) | 58.20 | 38.02 | 30.17 | 50.16 | 29.94 | 23.11 |
+|------|----------|------|------|------|------|------|------|
+| WeakM3D | Weak (No 2D GT) | 58.20 | 38.02 | 30.17 | 50.16 | 29.94 | 23.11 |
 | **VirPro+WeakM3D** | - | **55.09** | **38.76** | **31.12** | **50.97** | **31.95** | **24.27** |
-| GGA+PGD | Weak (w/ 2D GT) | 57.20 | 40.11 | 34.96 | 51.48 | 35.73 | 30.49 |
+| GGA+PGD | Weak (With 2D GT) | 57.20 | 40.11 | 34.96 | 51.48 | 35.73 | 30.49 |
 | **VirPro+GGA+PGD** | - | **60.11** | **42.95** | **37.50** | **54.72** | **39.49** | **33.32** |
 
-VirPro+GGA+PGD outperforms GGA+PGD by **+3.76 $\text{AP}_{\text{3D}}$** on Moderate and **+2.83 $\text{AP}_{\text{3D}}$** on Hard.
+VirPro+GGA+PGD improves GGA+PGD by **+3.76 $\text{AP}_{\text{3D}}$** on Moderate and **+2.83 $\text{AP}_{\text{3D}}$** on Hard.
 
 ### KITTI Test Set (Car Category)
 
 | Method | $\text{AP}_{\text{BEV}}$ Easy | Mod | Hard | $\text{AP}_{\text{3D}}$ Easy | Mod | Hard |
-|--------|------|------|------|------|------|------|
+|------|------|------|------|------|------|------|
 | WeakM3D | 11.82 | 5.66 | 4.08 | 5.03 | 2.26 | 1.63 |
 | **VirPro+WeakM3D** | **12.23** | **5.92** | **4.33** | **5.41** | **2.52** | **1.81** |
 | GGA+PGD | 14.87 | 9.26 | 7.09 | 7.09 | 4.27 | 3.26 |
 | **VirPro+GGA+PGD** | **15.59** | **9.58** | **7.29** | **7.95** | **4.96** | **3.64** |
 
-### Ablation Study
+### Ablation Study Highlights
 
-- **Prompt design**: Multi-probabilistic prompts (M.P.P) > single probabilistic prompt (S.P.P) > hand-crafted prompts (H.C.P)
-- **Prompt aggregation strategy**: Max pooling significantly outperforms MLP / Concat+MLP / Add, leading by 1.15+ in $\text{AP}_{\text{3D}}$ Hard
-- **Image-text fusion strategy**: Cross-attention achieves best performance ($\text{AP}_{\text{3D}}$ Hard: 25.05), substantially outperforming Add (22.37) and Concat (21.88)
-- **Latent space structure**: VirPro achieves higher Calinski-Harabasz and Silhouette scores than CAW3D, indicating more compact intra-scene and more separable inter-scene RoI embeddings
+- **Prompt Design**: Multi-probabilistic prompt (M.P.P) > Single-probabilistic prompt (S.P.P) > Hand-crafted prompt (H.C.P).
+- **Prompt Fusion Strategy**: Max pooling significantly outperforms MLP / Concat+MLP / Add, leading by 1.15+ in $\text{AP}_{\text{3D}}$ Hard.
+- **Image-Text Fusion**: Cross-attention is optimal ($\text{AP}_{\text{3D}}$ Hard 25.05), far exceeding Add (22.37) and Concat (21.88).
+- **Latent Space Structure**: VirPro's Calinski-Harabasz and Silhouette indices outperform CAW3D, indicating more compact intra-scene and more separable inter-scene RoI embeddings.
 
 ## Highlights & Insights
 
-1. **Plug-and-play**: VirPro, as a pre-training paradigm, can be seamlessly integrated into multiple WS-M3D frameworks (WeakM3D, GGA+PGD, etc.) without additional inference overhead
-2. **Probabilistic modeling of visual uncertainty**: The disentangled design—mean capturing canonical semantics and variance encoding visual uncertainty—is elegant and principled
-3. **Simplicity of max pooling**: The parameter-free max pooling over probabilistic prompts outperforms complex MLP-based fusion, reflecting a "less is more" design philosophy
-4. **Latent space visualization**: Inter-scene centroid distance distributions and clustering metrics quantitatively demonstrate the improved latent space structure resulting from probabilistic prompts
+1.  **Plug-and-play**: As a pre-training paradigm, VirPro seamlessly integrates into various WS-M3D frameworks without increasing inference cost.
+2.  **Probabilistic Uncertainty Modeling**: The decoupled design where mean captures canonical semantics and variance encodes visual uncertainty is elegant.
+3.  **Simplicity of Max Pooling**: Using parameter-free max pooling for probabilistic prompts outperforms complex MLP fusion, validating the "less is more" philosophy.
+4.  **Latent Space Validation**: Quantitative clustering metrics and inter-scene centroid distance distributions demonstrate improvement in latent space structure.
 
 ## Limitations & Future Work
 
-1. **RoI quality bottleneck**: Probabilistic prompt quality is constrained by the accuracy of the 2D detector; inaccurate 2D detections introduce biased visual cues
-2. **Rectangular box assumption**: RoI feature extraction using rectangular crops inevitably introduces background noise, as real objects are rarely perfectly rectangular
-3. **Fixed resolution constraint**: RoI feature extraction is subject to fixed image resolution and predefined cropping strategies, limiting cross-domain robustness
-4. **Evaluation limited to KITTI**: Experiments are conducted solely on KITTI; generalization to larger-scale datasets such as nuScenes remains unverified
-5. **Computational cost**: The two-stage training requires 25 epochs of Stage 1 pre-training, incurring higher training costs compared to end-to-end approaches
+1.  **RoI Quality Bottleneck**: Probabilistic prompt quality depends on the accuracy of the 2D detector; inaccurate 2D detection leads to biased visual cues.
+2.  **Rectangular Box Assumption**: Cropping RoI features with rectangular boxes introduces background noise; real objects are rarely perfect rectangles.
+3.  **Fixed Resolution Constraints**: RoI feature extraction is limited by fixed image resolution and predefined cropping strategies, affecting cross-domain robustness.
+4.  **KITTI-only Validation**: Experiments were only conducted on KITTI; generalization to larger datasets like nuScenes is unverified.
+5.  **Computational Overhead**: The two-stage training requires 25 epochs of Stage 1 pre-training, increasing training costs compared to end-to-end methods.
 
 ## Related Work & Insights
 
-- **vs. CAW3D**: CAW3D employs hand-crafted static prompts; VirPro replaces them with learnable probabilistic prompts that provide richer scene-aware semantics
-- **vs. ProDA**: ProDA first models prompts as multivariate Gaussians in the output space for zero-shot classification; VirPro focuses on RoI-level individualized modeling tailored for weakly-supervised 3D detection
-- **vs. APP**: APP models prompt uncertainty in the input space, constrained by the sparsity of natural language; VirPro operates in the output space with injected visual features
-- **vs. GGA**: GGA uses static text prompts generated by LLMs; VirPro's visually guided probabilistic prompts offer greater adaptability
-
-The probabilistic prompt modeling approach is generalizable to other weakly-supervised visual tasks (e.g., weakly-supervised semantic and instance segmentation). The disentanglement of "mean = semantics + variance = visual uncertainty" has broad applicability in multimodal learning. The scene-aware contrastive learning design is transferable to other 3D perception tasks in autonomous driving.
+- **vs CAW3D**: CAW3D uses static hand-crafted prompts; VirPro replaces them with learnable probabilistic prompts for richer scene-aware semantics.
+- **vs ProDA**: ProDA models prompt uncertainty in the output space for zero-shot classification; VirPro focuses on tailored RoI-level individual modeling for weak 3D detection.
+- **vs APP**: APP models prompt uncertainty in the input space, limited by natural language sparsity; VirPro operates in the output space with visual feature injection.
+- **vs GGA**: GGA uses static prompts from LLMs; VirPro's visual-guided probabilistic prompts are more adaptive.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The design of probabilistic prompt modeling with visually guided variance is novel; introducing probabilistic prompt learning into weakly-supervised 3D detection is a first
-- **Experimental Thoroughness**: ⭐⭐⭐ — Ablation studies are thorough, but evaluation is limited to KITTI; validation on nuScenes and Waymo is absent
-- **Writing Quality**: ⭐⭐⭐⭐ — Mathematical derivations are clear, figures are intuitive, and the overall logic is coherent
-- **Value**: ⭐⭐⭐⭐ — The plug-and-play pre-training paradigm has strong practical utility, though its impact is limited by the relatively niche area of weakly-supervised 3D detection
+- Novelty: ⭐⭐⭐⭐ — The combination of probabilistic prompt modeling and visual-guided variance is novel in the context of weakly-supervised 3D detection.
+- Experimental Thoroughness: ⭐⭐⭐ — Sufficient ablations, but validation is restricted to a single dataset (KITTI).
+- Writing Quality: ⭐⭐⭐⭐ — Clear derivations, intuitive diagrams, and logical flow.
+- Value: ⭐⭐⭐⭐ — A practical pre-training paradigm, though restricted to the niche of weakly-supervised 3D detection.
 
 <!-- RELATED:START -->
 
@@ -193,10 +150,10 @@ The probabilistic prompt modeling approach is generalizable to other weakly-supe
 ## Related Papers
 
 - [\[CVPR 2026\] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation](rewis3d_reconstruction_improves_weaklysupervised_s.md)
+- [\[ECCV 2024\] TCC-Det: Temporarily Consistent Cues for Weakly-Supervised 3D Detection](../../ECCV2024/3d_vision/tcc-det_temporarily_consistent_cues_for_weakly-supervised_3d_detection.md)
 - [\[AAAI 2026\] VPN: Visual Prompt Navigation](../../AAAI2026/3d_vision/vpn_visual_prompt_navigation.md)
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
+- [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
 
 </div>
 

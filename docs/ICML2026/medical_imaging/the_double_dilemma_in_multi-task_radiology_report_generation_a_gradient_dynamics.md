@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution
 description: >-
-  [ICML 2026][Medical Imaging][Radiology Report Generation] This paper uses an SDE framework to analyze the "double dilemma" of gradient conflict between "report generation vs. clinical constraints" in Radiology Report Gen…
+  [ICML 2026][Medical Imaging][Paper Note] This paper utilizes an SDE framework to analyze the dual nature of gradient conflicts between "report generation vs. clinical constraints" in Radiology Report Generation (RRG) — drift term deviation from Pareto optimality and diffusion term decay failing to escape local optima. The authors propose the CAME-Grad optimiz
 tags:
-  - "ICML 2026"
-  - "Medical Imaging"
-  - "Radiology Report Generation"
-  - "Multi-task Learning"
-  - "Gradient Conflict"
-  - "SDE Analysis"
-  - "Plug-and-play Optimizer"
+  - ICML 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: b8123869bffaf257
+content_hash: b4532c8c4dea0634
 ---
-
 # CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution
 
 **Conference**: ICML 2026  
@@ -24,53 +18,54 @@ content_hash: b8123869bffaf257
 **Keywords**: Radiology Report Generation, Multi-task Learning, Gradient Conflict, SDE Analysis, Plug-and-play Optimizer
 
 ## TL;DR
-This paper uses an SDE framework to analyze the "double dilemma" of gradient conflict between "report generation vs. clinical constraints" in Radiology Report Generation (RRG) multi-task learning—specifically, drift term deviation from Pareto optimality and diffusion term decay preventing escape from local optima. The authors propose the CAME-Grad optimizer (direction rectification + energy injection + adaptive fusion) as a linear scaling plug-and-play alternative, achieving an average clinical efficacy gain of +2.3% / +1.9% across 8 RRG methods on MIMIC-CXR / IU X-Ray datasets.
+This paper utilizes an SDE framework to analyze the dual nature of gradient conflicts between "report generation vs. clinical constraints" in Radiology Report Generation (RRG) — drift term deviation from Pareto optimality and diffusion term decay failing to escape local optima. The authors propose the CAME-Grad optimizer (Direction Rectification + Energy Injection + Adaptive Fusion) as a plug-and-play alternative to linear scaling, achieving average gains of +2.3% and +1.9% in clinical efficacy across 8 RRG methods on MIMIC-CXR and IU X-Ray.
 
 ## Background & Motivation
 
-**Background**: RRG (automated generation of radiology reports) has evolved from single-task learning (NLL supervision only) to multi-task learning—simultaneously learning report generation $\mathcal{L}_{rg}$ (language modeling requiring a smooth semantic manifold) and auxiliary tasks (disease classification / image-text alignment / retrieval augmentation requiring discrete rigid structures). While architectural innovations abound, the **optimization side remains largely stuck with static linear weighting** $\mathcal{L}_{joint} = \sum_i \omega_i \mathcal{L}_i$.
+**Background**: RRG (Automated Radiology Report Generation) has evolved from single-task objectives (NLL supervision only) to multi-task learning, simultaneously learning report generation $\mathcal{L}_{rg}$ (language modeling requiring smooth semantic manifolds) and auxiliary tasks (disease classification / image-text alignment / retrieval augmentation requiring discrete rigid structures). Despite numerous architectural innovations, the **optimization end remains largely dependent on static linear weighting** $\mathcal{L}_{joint} = \sum_i \omega_i \mathcal{L}_i$.
 
-**Limitations of Prior Work**: (1) The need for smooth generation and "hard" clinical constraints creates an inherent conflict—strengthening clinical supervision decreases report quality, and vice versa. (2) Linear scaling ignores gradient dynamics, leading tasks to "pull" against each other after weighted aggregation. (3) Existing multi-task optimization methods (CAGrad / PCGrad / MGDA) primarily focus on correcting direction but overlook insufficient exploration caused by magnitude collapse—if the magnitude is too low, the model fails to reach flat minima.
+**Limitations of Prior Work**: (1) Report generation requires smoothness while clinical constraints require hard boundaries; this inherent conflict causes report quality to drop when clinical supervision is strengthened and vice versa. (2) Linear scaling ignores gradient dynamics, leading to task interference after weighting. (3) Existing multi-task optimization methods (CAGrad / PCGrad / MGDA) primarily correct directions but overlook insufficient exploration caused by amplitude collapse — preventing the model from reaching flat minima.
 
-**Key Challenge**: From the perspective of the SDE framework, SGD optimization $d\Theta_t = -\bm g_{joint}(\Theta_t) dt + \sqrt{\eta \Sigma}d\bm W_t$ is composed of a drift term (first moment, determining convergence direction) and a diffusion term (second-order covariance, providing exploration to escape local optima). Gradient conflicts simultaneously lead to **drift deviation** (direction deviating from the Pareto front) and **diffusion decay** (energy collapse, failing to escape sharp minima). Correcting direction or increasing amplitude in isolation is insufficient; both must be addressed.
+**Key Challenge**: From an SDE perspective, SGD optimization $d\Theta_t = -\bm g_{joint}(\Theta_t) dt + \sqrt{\eta \Sigma}d\bm W_t$ consists of drift (first moment, determining convergence direction) and diffusion (second-order covariance, providing exploration to escape local traps). Gradient conflicts lead to both **drift deviation** (direction deviating from Pareto optimality) and **diffusion decay** (energy collapse, failing to escape sharp minima). Simply correcting the direction or increasing amplitude alone is insufficient; both must be addressed simultaneously.
 
-**Goal**: (1) Uncover the root causes of linear scaling failure in RRG through the SDE lens; (2) design a unified optimizer for simultaneous direction correction and amplitude enhancement; (3) implement this as a backbone-agnostic plug-and-play solution.
+**Goal**: (1) Reveal the root cause of linear scaling failures in RRG from an SDE perspective; (2) Design a unified optimizer that rectifies directions and enhances amplitude; (3) Develop a backbone-agnostic plug-and-play solution without architectural changes.
 
-**Key Insight**: Observations reveal that the proportion of negative gradient inner products between RRG tasks is as high as 53.8% (Figure 3), confirming the "inherent conflict" hypothesis. Since both direction and amplitude are compromised, the approach integrates direction rectification (CAGrad-like) with energy injection (gradient magnitude amplification), followed by adaptive fusion to prevent total deviation from the original direction and loss of task-specific inductive bias.
+**Key Insight**: Observations show that the proportion of negative gradient inner products between RRG tasks reaches 53.8% (Figure 3), confirming the "intrinsic conflict" hypothesis. Since both direction and amplitude are compromised, the authors combine direction rectification (CAGrad-like) with energy injection (gradient magnitude amplification), followed by adaptive fusion to prevent deviating entirely from original directions and losing task-specific inductive biases.
 
-**Core Idea**: A three-stage optimizer—Conflict-Averse Direction Rectification (maximizing worst-case improvement within a trust region) → Magnitude-Enhanced Energy Injection (amplifying gradient magnitude to escape sharp minima) → Adaptive Gradient Fusion (soft fusion between the rectified direction and the original direction to maintain task priors).
+**Core Idea**: A three-stage optimizer: Conflict-Averse Direction Rectification (maximizing worst-case improvement within a trust region) → Magnitude-Enhanced Energy Injection (amplifying gradient magnitude to escape sharp minima) → Adaptive Gradient Fusion (soft fusion between rectified and original directions to preserve task priors).
 
 ## Method
 
 ### Overall Architecture
 
-At each step, CAME-Grad performs the following:
-1. Calculates individual task gradients $\bm g_i$, the weighted joint gradient $\bm g_{joint}$, and the mean gradient $\bm \mu$.
-2. **Stage 1**: Solves the dual problem to obtain the rectified direction $\bm u^*_{rect}$ (maximizing the worst-case improvement within a trust region).
-3. **Stage 2**: Scales the amplitude of $\bm u^*_{rect}$ to $\kappa \|\bm g_{joint}\|$ to obtain the energy-injected gradient $\bm u_{en}$.
-4. **Stage 3**: Computes $\bm g_{final} = (1-\nu)\bm u_{en} + \nu(\kappa \bm g_{joint})$, fusing it with the original direction.
-5. Updates parameters via SGD: $\Theta \leftarrow \Theta - \eta \bm g_{final}$.
+CAME-Grad is a plug-and-play gradient optimizer that replaces static linear weighting in multi-task RRG training. At each step, it calculates individual task gradients $\bm g_i$, the weighted gradient $\bm g_{joint}$, and the mean $\bm \mu$. It then proceeds through three stages: first, rectifying task interference into a direction that improves even the "worst-performing" task (addressing drift deviation); second, amplifying the amplitude of this direction to restore exploration energy (addressing diffusion decay); and finally, performing a soft fusion with the original $\bm g_{joint}$ to preserve task priors. The final $\bm g_{final}$ is used for a standard SGD update $\Theta \leftarrow \Theta - \eta \bm g_{final}$. This logic corresponds to the SDE diagnosis that "direction + amplitude must be treated together."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Task Gradients g_i<br/>Weighted g_joint, Mean μ"] --> B["Conflict-Averse Direction Rectification<br/>max-min u*_rect in Trust Region (Fix drift deviation)"]
+    B --> C["Magnitude-Enhanced Energy Injection<br/>Scale to τ_mag = κ·‖g_joint‖ u_en (Fix diffusion decay)"]
+    C --> D["Adaptive Gradient Fusion<br/>g_final = (1−ν)·u_en + ν·κ·g_joint"]
+    D --> E["SGD Update<br/>Θ ← Θ − η·g_final"]
+```
 
 ### Key Designs
 
-1. **Conflict-Averse Direction Rectification (Stage 1)**:
-    - **Function**: Find a direction that maximizes the "worst-case improvement" among all task gradients to ensure geometric validity.
-    - **Mechanism**: Formulated as a trust region problem $\max_{\bm u} \min_i \bm g_i^\top \bm u$ s.t. $\|\bm u - \bm \mu\| \leq \rho \|\bm \mu\|$ (centered at the mean $\bm \mu$ with radius $\rho \|\bm \mu\|$); converted to the dual problem $\min_{\bm \alpha \in \Delta^{K+1}} \mathcal{F}(\bm \alpha) = \bm g_{\bm \alpha}^\top \bm \mu + \sqrt{\xi}\|\bm g_{\bm \alpha}\|$ where $\xi = \rho^2 \|\bm \mu\|^2$. The closed-form solution is $\bm u^*_{rect} = \bm \mu + \frac{\sqrt{\xi}}{\|\bm g_{\bm \alpha^*}\|} \bm g_{\bm \alpha^*}$.
-    - **Design Motivation**: CAGrad-style but with an added trust region constraint to ensure convergence stability; the dual problem is solvable in low dimensions on the simplex (near-zero GPU overhead), avoiding high-dimensional primal problems while remaining Pareto-compatible.
+**1. Conflict-Averse Direction Rectification: Finding the "Maximized Worst-Case Improvement" among all tasks**
 
-2. **Magnitude-Enhanced Energy Injection (Stage 2)**:
-    - **Function**: Compensate for diffusion decay, providing the model with sufficient exploration energy to escape sharp minima.
-    - **Mechanism**: The target magnitude is set as $\tau_{mag} = \kappa \|\bm g_{joint}\|$ (where $\kappa > 1$ is the gain); the enhanced gradient is $\bm u_{en} = \bm u^*_{rect} \cdot \tau_{mag} / (\|\bm u^*_{rect}\| + \epsilon)$.
-    - **Design Motivation**: Pure direction correction (like CAGrad) causes amplitude collapse during conflict, trapping the model in sharp minima. Amplifying the amplitude effectively recovers the diffusion coefficient in the SDE to normal levels, restoring the implicit regularization effect of SGD (favoring flat minima); $\kappa$ controls the degree of energy surplus.
+Linear weighting fails because gradients of report generation and clinical constraints conflict 53.8% of the time, causing tasks to pull against each other. Instead of blind weighting, this stage finds a direction within a trust region around the mean gradient $\bm \mu$ that maximizes the improvement of the worst-performing task: $\max_{\bm u} \min_i \bm g_i^\top \bm u$ s.t. $\|\bm u - \bm \mu\| \leq \rho \|\bm \mu\|$, where the center is the mean $\bm \mu$ and the radius is $\rho \|\bm \mu\|$. To avoid high costs in high-dimensional space, this is converted to the dual form $\min_{\bm \alpha \in \Delta^{K+1}} \mathcal{F}(\bm \alpha) = \bm g_{\bm \alpha}^\top \bm \mu + \sqrt{\xi}\|\bm g_{\bm \alpha}\|$ (where $\xi = \rho^2 \|\bm \mu\|^2$), where optimization occurs over a $K{+}1$ dimensional simplex. The rectified direction has a closed-form solution $\bm u^*_{rect} = \bm \mu + \frac{\sqrt{\xi}}{\|\bm g_{\bm \alpha^*}\|} \bm g_{\bm \alpha^*}$. Compared to CAGrad, the trust region constraint ensures convergence stability and Pareto compatibility with minimal GPU overhead.
 
-3. **Adaptive Gradient Fusion (Stage 3)**:
-    - **Function**: Perform soft fusion between the rectified direction and the original $\bm g_{joint}$ to avoid total deviation from the original direction and loss of task-specific inductive bias.
-    - **Mechanism**: $\bm g_{final} = (1-\nu) \bm u_{en} + \nu (\kappa \bm g_{joint})$, where $\nu \in [0,1]$ adjusts the weight of task-specific priors.
-    - **Design Motivation**: Purely rectified directions might lose task structure information (e.g., specific pre-trained knowledge); fusion preserves task bias. $\nu$ allows users to balance "full Pareto optimization" and "task prior preservation."
+**2. Magnitude-Enhanced Energy Injection: Restoring collapsed exploration energy**
+
+Correcting direction alone risks "amplitude collapse" during conflicts, corresponding to energy decay in the SDE diffusion term. This causes the model to get stuck in sharp minima, missing rare disease details. This stage rescales $\bm u^*_{rect}$ to an amplified target amplitude $\tau_{mag} = \kappa \|\bm g_{joint}\|$ (with gain $\kappa > 1$), yielding $\bm u_{en} = \bm u^*_{rect} \cdot \tau_{mag} / (\|\bm u^*_{rect}\| + \epsilon)$. This restores the diffusion coefficient in the SDE, recovering the implicit regularization of SGD for flat minima and allowing the optimizer to escape local optima.
+
+**3. Adaptive Gradient Fusion: A knob between rectified and original directions**
+
+Total adoption of the rectified direction may erase task-specific structural information. The final step performs soft fusion: $\bm g_{final} = (1-\nu) \bm u_{en} + \nu (\kappa \bm g_{joint})$, where $\nu \in [0,1]$ is the task prior weight. As $\nu \to 0$, the update is fully Pareto-optimized; as $\nu \to 1$, it retains original task biases, allowing users to balance based on the scenario.
 
 ## Key Experimental Results
 
-### Main Results on MIMIC-CXR (8 RRG methods + CAME-Grad)
+### Main Results on MIMIC-CXR (8 RRG Methods + CAME-Grad)
 
 | RRG Method | Baseline CE↑ | + CAME-Grad CE↑ | Gain |
 |---------|---------|-------------|---|
@@ -84,54 +79,53 @@ At each step, CAME-Grad performs the following:
 | RECAP | 44.6 | 46.9 | +2.3 |
 | **Average Gain** | – | – | **+2.3** |
 
-All 8 methods benefited consistently (each +2.1 to +2.7 CE), proving plug-and-play versatility.
+Consistency across 8 methods (+2.1 to +2.7 CE) proves plug-and-play versatility.
 
-### IU X-Ray average gain of +1.9% (similar distribution)
+### IU X-Ray average gain of +1.9%
 
 ### Ablation Study (MIMIC-CXR, PromptMRG Baseline)
 
 | Configuration | CE | Gain |
 |------|----|---|
-| Linear Scaling Only (Baseline) | 43.7 | – |
+| Linear Scaling only (No CAME) | 43.7 | – |
 | + Direction Rectification | 44.6 | +0.9 |
 | + Magnitude Injection | 45.4 | +0.8 |
-| + Adaptive Fusion (Complete) | **46.0** | +0.6 |
+| + Adaptive Fusion (Full) | **46.0** | +0.6 |
 
-Each stage contributes +0.6 to +0.9 CE, indicating that all three are indispensable.
+Each stage contributes roughly +0.6 to +0.9 CE, indicating that all three are indispensable.
 
 ### Gradient Conflict Quantification (Figure 3)
-
-Across multiple epochs, the inner product between $\bm g_0$ (generation) and $\bm g_k$ (clinical) was measured—**negative 53.8% of the time**, validating the "inherent conflict" hypothesis.
+Measuring the inner product between $\bm g_0$ (generation) and $\bm g_k$ (clinical) across epochs reveals they are **negative 53.8% of the time**, validating the "intrinsic conflict" hypothesis.
 
 ### Key Findings
-- **Simultaneous treatment of drift + diffusion is effective**: Correcting direction (CAGrad) or increasing amplitude alone is suboptimal. The proposed method yields +2.3 CE, whereas direction only yields +0.9 and amplitude only yields +0.8—the synergy (+2.3) exceeds the sum (+1.7).
-- **Plug-and-play universality**: 8 RRG methods with different architectures benefited consistently, suggesting the issue is optimization-level rather than architectural.
-- **53.8% negative correlation time**: Quantitative evidence of the prevalence of conflict provides empirical justification for modifying RRG optimizers.
-- **Consistency between MIMIC-CXR and IU X-Ray**: Performance gains across large and small datasets (+2.3 / +1.9) demonstrate stability.
+- **Treating drift + diffusion simultaneously is essential**: Correcting direction (CAGrad) or increasing amplitude alone is suboptimal; the synergistic effect (+2.3 CE) exceeds the sum of individual gains (+1.7).
+- **Plug-and-play universality**: 8 different RRG architectures benefited equally, suggesting the problem is at the optimization level rather than the architecture.
+- **53.8% Negative Correlation**: Quantitative evidence of the prevalence of conflict provides empirical justification for modifying the RRG optimizer.
+- **Consistency between MIMIC-CXR and IU X-Ray**: Gains across small and large datasets (+2.3 / +1.9) demonstrate stability.
 
 ## Highlights & Insights
-- **SDE framework formalizes the "double dilemma"**: Whereas previous works treated multi-task conflict as either a "direction problem" or an "amplitude problem," this work uses SDE to derive drift deviation and diffusion decay as two sides of the same conflict that must be treated together. This framework can be extended to all multi-task/multi-objective RL/RLHF scenarios.
-- **Trust region + closed-form solution + GPU-friendly**: The dual method of CAGrad in low-dimensional simplex space avoids $\mathcal{O}(d)$ high-dimensional operations. Adding trust region constraints ensures both stability and GPU efficiency.
-- **Plug-and-play is highly practical**: No architecture changes or retraining is required—simply swap the optimizer. This is friendly for upgrading existing RRG systems.
-- **Medical diagnostic significance of gradient conflict**: The conflict between generation and clinical constraints maps to the clinical reality of "fluent natural language vs. rare disease details." Resolving this conflict algorithmically reconciles the two clinical requirements of medical narratives.
+- **SDE framework formalizes the "double dilemma"**: While previous works treated multi-task conflict as either a "direction" or "amplitude" issue, this work derives drift deviation + diffusion decay as two sides of the same conflict, requiring a unified solution. This framework is extensible to any multi-task or multi-objective RL/RLHF scenario.
+- **Trust region + Closed-form + GPU friendly**: The dual optimization on a simplex avoids high-cost $\mathcal{O}(d)$ operations. The trust region ensures stability while remaining efficient.
+- **Practical utility of plug-and-play**: Improving systems without altering architectures or retraining from scratch makes it highly practical for upgrading existing RRG pipelines.
+- **Clinical diagnostic significance of gradient conflict**: The conflict between generation and clinical constraints mirrors the real-world tension between "fluent natural language" and "rare disease details," harmonizing these two requirements algorithmically.
 
 ## Limitations & Future Work
 - $\rho, \kappa, \nu$ remain manual hyperparameters; adaptive scheduling based on current conflict intensity would be superior.
-- Validated only on RRG; transferability to other multi-task medical applications (e.g., joint CT-report + segmentation) is untested.
-- The center of the trust region is the mean gradient $\bm \mu$, which might be biased for highly imbalanced task numbers (e.g., 1 generation + 10 clinical tasks); weighted means could be considered.
-- The SDE analysis is a continuous-time approximation; specific biases under discrete updates were not quantified.
-- Training time overhead reports are sparse; while the dual solution is GPU-friendly, there is still an extra forward pass; costs on ultra-large models need assessment.
+- Validated only on RRG; transferability to other multi-task medical applications (e.g., CT-Report + Segmentation joint training) is untested.
+- The trust region center is the mean gradient $\bm \mu$, which might be biased for highly imbalanced task numbers; weighted means could be considered.
+- SDE analysis is a continuous-time approximation; specific biases under discrete updates were not quantified.
+- Training overhead reports are sparse; while GPU-friendly, the dual solution involves an extra forward pass. Costs on extremely large models need evaluation.
 
 ## Related Work & Insights
-- **vs. CAGrad / PCGrad / MGDA**: Those methods only correct direction without addressing magnitude; CAME-Grad treats both.
-- **vs. GradNorm / Uncertainty Weighting**: Those methods only adjust magnitude without addressing direction; similarly limited.
-- **vs. Task Prioritization methods (Liu 2021 / Jeong 2024)**: Those assume static priorities; CAME is dynamically adaptive.
-- **Insight**: Any training involving "multi-objective and structurally conflicting goals" (RLHF + KL, safety RL, multi-modal alignment) can be diagnosed using the SDE framework; the CAME-Grad template is directly transferable.
+- **vs CAGrad / PCGrad / MGDA**: These only rectify direction while ignoring amplitude; CAME-Grad treats both.
+- **vs GradNorm / Uncertainty Weighting**: These only adjust amplitude while ignoring direction.
+- **vs Task Prioritization (Liu 2021 / Jeong 2024)**: These assume static priorities; CAME is dynamic and adaptive.
+- **Inspiration**: Training involving "multi-objective and structurally conflicting targets" (RLHF + KL, Safety RL, Multi-modal alignment) can use the SDE framework for diagnosis; the CAME-Grad template is highly transferable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The SDE "double dilemma" framing is a new perspective, and treating direction and amplitude together is systematically novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 2 datasets × 8 RRG methods × three-stage ablation × gradient conflict visualization yields consistent conclusions.
-- Writing Quality: ⭐⭐⭐⭐⭐ The chain from SDE derivation → algorithm → experiments is clear; Figure 1 provides an intuitive explanation of the "double dilemma."
+- Novelty: ⭐⭐⭐⭐ SDE double-dilemma framing is a fresh perspective; treating direction and amplitude systematically is a first.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 2 datasets × 8 RRG methods × three-stage ablation × conflict visualization provide consistent conclusions.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear chain from SDE derivation to algorithm to experiment; Figure 1 intuitively explains the "double dilemma."
 - Value: ⭐⭐⭐⭐ RRG is a high-value clinical NLP task; optimizer-level improvements benefit all RRG work; the theoretical framework is generalizable.
 
 <!-- RELATED:START -->
@@ -141,10 +135,10 @@ Across multiple epochs, the inner product between $\bm g_0$ (generation) and $\b
 ## Related Papers
 
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
-- [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](../../CVPR2026/medical_imaging/orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
 - [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
-- [\[ICML 2026\] Learning Multi-Scale Hypergraph for High-Order Brain Connectivity Analysis](learning_multi-scale_hypergraph_for_high-order_brain_connectivity_analysis.md)
-- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
+- [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](../../CVPR2026/medical_imaging/tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
+- [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](../../CVPR2026/medical_imaging/orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
+- [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 
 </div>
 

@@ -2,123 +2,125 @@
 title: >-
   [Paper Note] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment
 description: >-
-  [ICML 2026][LLM Pretraining][Elastic models] FlexRank performs activation-aware low-rank decomposition (DataSVD) on each linear layer of pre-trained large models and uses dynamic programming to select a set of **strictly…
+  [ICML 2026][Pretraining][Knowledge Distillation] FlexRank performs activation-aware low-rank decomposition (DataSVD) for each linear layer of a pre-trained large model. It employs dynamic programming to select a set of **strictly nested** sub-models corresponding to different computational budgets within $O(L\cdot K)$ time. These shared weights are jointly trained vi
 tags:
-  - "ICML 2026"
-  - "LLM Pretraining"
-  - "Elastic models"
-  - "low-rank decomposition"
-  - "nested submodels"
-  - "knowledge distillation"
-  - "Pareto frontier"
+  - ICML 2026
+  - Pretraining
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 4018a1bd2858362c
+content_hash: 331702ba6d3197c2
 ---
-
 # FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.02680](https://arxiv.org/abs/2602.02680)  
 **Code**: https://github.com/RickZack/FlexRank  
 **Area**: Model Compression / Elastic Inference / Low-Rank Decomposition  
-**Keywords**: Elastic models, low-rank decomposition, nested submodels, knowledge distillation, Pareto frontier
+**Keywords**: Elastic Models, Low-Rank Decomposition, Nested Sub-models, Knowledge Distillation, Pareto Frontier
 
 ## TL;DR
-FlexRank performs activation-aware low-rank decomposition (DataSVD) on each linear layer of pre-trained large models and uses dynamic programming to select a set of **strictly nested** submodels corresponding to different compute budgets in $O(L\cdot K)$ time. These submodels are jointly trained via knowledge distillation with shared weights. Finally, Gauge-Aligned Reparametrization is used to translate rank savings into actual FLOPs savings—obtaining a "family" of deployable models for LLMs and ViTs that approach the true Pareto frontier with a single training run.
+FlexRank performs activation-aware low-rank decomposition (DataSVD) for each linear layer of a pre-trained large model. It employs dynamic programming to select a set of **strictly nested** sub-models corresponding to different computational budgets within $O(L\cdot K)$ time. These shared weights are jointly trained via knowledge distillation. Finally, Gauge-Aligned Reparametrization is used to translate rank savings directly into FLOPs savings. A single training process yields a "family" of deployable models on LLMs and ViTs that approach the true Pareto frontier.
 
 ## Background & Motivation
 
-**Background**: LLMs and ViTs have expanded to billions of parameters, making training from scratch affordable only for a few institutions. The mainstream approach in the community is to reuse pre-trained weights for downstream adaptation with PEFT (e.g., LoRA) or to reduce deployment costs using quantization/pruning.
+**Background**: LLMs and ViTs have expanded to billions of parameters, making training from scratch affordable for only a few institutions. The mainstream practice involves reusing pre-trained weights, adapting them via PEFT (e.g., LoRA), or reducing deployment costs through quantization/pruning.
 
-**Limitations of Prior Work**: PEFT only modifies a small portion of parameters, leaving the compute structure of the backbone unchanged, thus deployment costs remain "one-size-fits-all." While quantization and pruning reduce computation, quantization-aware training requires pipeline modifications, and structural sparsity depends on hardware kernels. More importantly, these methods typically produce a **single compression ratio**; different hardware (e.g., a phone vs. a server) requires repeated retraining or maintaining multiple sets of weights.
+**Limitations of Prior Work**: PEFT only modifies a small subset of parameters while the backbone's computational structure remains unchanged, leading to "one-size-fits-all" deployment costs. Quantization and pruning reduce computation but often require pipeline changes for quantization-aware training or depend on hardware kernels for structured sparsity. Crucially, these methods produce models with a **single compression ratio**, requiring repeated retraining or maintenance of multiple weight sets for different hardware budgets.
 
-**Key Challenge**: Existing elastic solutions follow two paths: (i) Post-hoc subnetwork selection (PTS) after training a full model—Theorem 4.1 proves the probability of obtaining a Pareto optimal submodel this way is "zero"; or (ii) Joint training of all submodels (ASL), where all subnets **compete for the same representation capacity**. Theorem 4.2 proves the suboptimality gap for each rank in ASL is strictly greater than zero. Neither path yields a family of submodels truly close to the Pareto frontier.
+**Key Challenge**: Existing elastic solutions either (i) train a full model first and then perform post-hoc sub-network extraction (PTS)—where Theorem 4.1 proves the probability of obtaining a Pareto-optimal sub-model is zero; or (ii) jointly train all sub-models (ASL), where all sub-networks **compete for the same representational capacity**. Theorem 4.2 proves the sub-optimality gap for each rank is strictly greater than zero. Neither path provides a sub-model family that truly touches the Pareto frontier.
 
-**Goal**: Starting from a pre-trained model, construct **a set of shared weights $\theta$** and a sequence of **strictly nested** masks $\mathbf{m}_1 \preceq \mathbf{m}_2 \preceq \dots \preceq \mathbf{m}_K$, such that submodels extracted under $K$ different compute budgets $\beta_k$ simultaneously approach the true Pareto frontier.
+**Goal**: Starting from a pre-trained model, construct **a single set of shared weights $\theta$** and a sequence of **strictly nested** masks $\mathbf{m}_1 \preceq \mathbf{m}_2 \preceq \dots \preceq \mathbf{m}_K$, such that the sub-models extracted under $K$ different computational budgets $\beta_k$ are as close to the true Pareto frontier as possible.
 
-**Key Insight**: The authors observe that SVD provides a natural "importance order" for weights in each layer (singular values from largest to smallest). The seemingly more restrictive constraint of **nesting** actually prevents the mutual interference seen in ASL: the $(r+1)$-th column only needs to learn the residual $A_{r+1}-A_r$ between the $(r+1)$-th and $r$-th rank SVD truncations, avoiding competition for capacity with smaller submodels.
+**Key Insight**: The authors observe that SVD naturally provides an "importance order" for each layer weight (singular values from largest to smallest). The seemingly stricter constraint of **nesting** actually prevents interference in ASL: the $(r+1)$-th column only needs to learn the residual $A_{r+1}-A_r$ between the $(r+1)$-th and $r$-th rank SVD truncations, avoiding capacity competition with smaller sub-models.
 
-**Core Idea**: Use layer-wise activation-aware SVD to determine local importance, employ DP to aggregate local orders into a global nested submodel family, use distillation to transform "independent layer decompositions" into a "collaborative end-to-end elastic model," and finally use gauge reparametrization during inference to convert $r$-th rank truncation into $\mathcal{O}((m+n-r)r)$ FLOPs.
+**Core Idea**: Utilize layer-wise activation-aware SVD to provide local importance. Use DP to aggregate local orders into a global nested sub-model family. Employ distillation to consolidate independent layer decompositions into a collaborative end-to-end elastic model. Finally, use GAR during inference to transform $r$-rank truncation into actual $\mathcal{O}((m+n-r)r)$ FLOPs.
 
 ## Method
 
 ### Overall Architecture
-The input consists of a pre-trained model $f(\cdot; \theta_{\mathrm{orig}})$, a small calibration set $\mathcal{Z}$ (approx. $10^3$ samples), and a set of target budgets $\mathcal{B}=\{\beta_k\}_{k=1}^K$. The output is a single set of shared parameters $\theta=\{(U_l, V_l)\}_{l=1}^L$ and a sequence of nested masks $\mathcal{M}^\star=\{\mathbf{m}_k^\star\}$. At deployment, given a budget $\beta$, the corresponding submodel $\theta_\beta$ can be assembled in $O(L)$ time without additional training.
+FlexRank starts from a pre-trained model $f(\cdot;\theta_{\mathrm{orig}})$, using a small calibration set $\mathcal{Z}$ of approximately $10^3$ samples and a set of target budgets $\mathcal{B}=\{\beta_k\}_{k=1}^K$. The final output is a **single set** of shared parameters $\theta=\{(U_l,V_l)\}_{l=1}^L$ and a sequence of strictly nested masks $\mathcal{M}^\star=\{\mathbf{m}_k^\star\}$. During deployment, given a budget $\beta$, the corresponding sub-model $\theta_\beta$ can be assembled in $O(L)$ time without additional training. The pipeline consists of three steps: performing activation-aware SVD on each layer independently to obtain factors $(U_l,V_l)$ with an importance order; using dynamic programming to search for $K$ nested sub-models among $K^L$ global rank combinations; and performing joint distillation training by sampling masks to align with teacher logits. Finally, GAR is applied to translate rank reduction into FLOPs reduction.
 
-The pipeline consists of three stages: (1) **Layer Decomposition** — Activation-aware SVD is performed independently for each layer to obtain ordered factors $(U_l, V_l)$; (2) **Nested Submodel Search** — Under the additive-error assumption, DP compresses the $K^L$ possible combinations of $K$ ranks per layer into $O(L\cdot K)$; (3) **Knowledge Distillation Consolidation** — Shared weights are trained by sampling from the $K$ nested masks and distilling from teacher logits.
+```mermaid
+graph TD
+    A["Pre-trained Model + Calib Set + Budgets β_k"] --> B["DataSVD<br/>Layer-wise Activation-aware Decomposition → U_l, V_l and Importance Order"]
+    B --> C["Nested Sub-model Search + DP<br/>O(L·K) Selection of K Strictly Nested Masks m_1⪯…⪯m_K"]
+    C --> D["Distillation Joint Training<br/>Sample Mask m_k with weight α_k, Align with Teacher Logits to Consolidate θ"]
+    D --> E["GAR Reparametrization<br/>Gauge Alignment Sets Top r×r Block to I_r, Translating Rank to FLOPs Linear Savings"]
+    E --> F["Deploy Sub-model for Budget β in O(L) Time"]
+```
 
 ### Key Designs
 
-1. **DataSVD: Activation-aware Layer Decomposition**:
-    - **Function**: Decomposes each layer weight $W_l$ into $U_l V_l^\top$. The objective is not to minimize $\|W_l - U_l V_l^\top\|_F^2$, but to minimize the **output error** $\mathbb{E}_{\mathbf{x}_l}\bigl[\|(W_l-U_l V_l^\top)\mathbf{x}_l\|_2^2\bigr]$. Thus, singular directions are determined by the activation covariance "truly important to the task" rather than the weights themselves.
-    - **Mechanism**: Captures activation matrices $\mathbf{X}_l$ using the calibration set and performs closed-form SVD on the weighted problem. The authors prove implementation can achieve space complexity $\mathcal{O}(n_l^2)$ independent of sample size $N$. This step serves as initialization, providing the "importance order" for DP (Remark 3.1 notes SVD alone is insufficient and requires distillation).
-    - **Design Motivation**: Pure SVD often leads to severe performance drops in LLMs (Fig. 4 shows collapse at 20% compression) because large weights do not necessarily represent large contributions to real inputs. Activation-awareness aligns "important directions" with the "real input distribution."
+**1. DataSVD: Aligning Decomposition with Real Inputs**
 
-2. **Nested Submodel Search + Dynamic Programming**:
-    - **Function**: Selects $K$ **strictly nested** submodels $\mathbf{m}_1 \preceq \dots \preceq \mathbf{m}_K$ from $K^L$ possible rank combinations to approximate the Pareto optimum for each budget $\beta_k$.
-    - **Mechanism**: Enumerates $K$ candidate ranks for each layer $l$, calculating the cost reduction $\Delta c$ and error increase $\Delta e$ from truncation to obtain a local Pareto table $\mathcal{Q}_l$. Assuming **additivity of layer errors**, DPRankSelection combines these local tables into a global nested mask sequence in $\mathcal{O}(L\cdot K)$ time. The additivity assumption's ranking fidelity was validated in small-scale enumerable settings.
-    - **Design Motivation**: The nesting constraint is derived theoretically: Thm 4.1 says the probability of PTS finding Pareto optimality is 0; Thm 4.2 says ASL leaves a suboptimality gap of at least $\frac{1}{k}(r\lambda-\sum_{i\le r}\sigma_i)^2$; Thm 4.3 proves nested training (NSL) makes the gap exactly 0 for each rank because the $(r+1)$-th column only learns the residual. This is the core theoretical contribution.
+Direct SVD on $W_l$ causes significant performance drops in LLMs (Fig. 4 shows collapse at 20% parameter reduction) because weight magnitude does not represent contribution to real inputs. DataSVD shifts the objective from minimizing weight reconstruction error $\|W_l - U_l V_l^\top\|_F^2$ to minimizing **output error** $\mathbb{E}_{\mathbf{x}_l}\bigl[\|(W_l-U_l V_l^\top)\mathbf{x}_l\|_2^2\bigr]$. Thus, singular directions are determined by the activation covariance, aligning "important directions" with the real input distribution. This is implemented using a closed-form SVD on the weighted problem via the calibration set $\mathbf{X}_l$. The space complexity is $\mathcal{O}(n_l^2)$, independent of sample size $N$. Remark 3.1 notes that this is only an initialization; subsequent distillation is essential.
 
-3. **Gauge-Aligned Reparametrization (GAR)**:
-    - **Function**: Further reduces actual inference cost from $\mathcal{O}(mr+nr)$ to $\mathcal{O}((m+n-r)r)$ for rank-$r$ truncation, making it strictly cheaper than dense $\mathcal{O}(mn)$ and ensuring $r$ reduction translates **linearly** into FLOPs reduction.
-    - **Mechanism**: Exploits the non-uniqueness of $UV^\top$ decomposition. By introducing a gauge $G=U_{1:r,:}^{-1}$, one gets $UV^\top = (UG)(G^{-1}V^\top) = \tilde{U}\tilde{V}^\top$, where the top $r\times r$ block of $\tilde{U}$ is **aligned to $I_r$**. Thus, the top part requires neither storage nor multiplication, leaving only $(m-r)\times r$ of $\hat{U}$ for calculation. GAR preprocessing is a one-time $\mathcal{O}(r^3)$ inversion.
-    - **Design Motivation**: In the original $(U, V)$ form, FLOPs only become competitive with dense kernels when $r \ll \min(m, n)$. GAR eliminates this threshold, ensuring immediate benefits for any $r < \min(m, n)$.
+**2. Nested Sub-model Search + DP: Taming Combinatorial Explosion to $O(LK)$**
+
+Selecting $K$ **strictly nested** sub-models $\mathbf{m}_1 \preceq \dots \preceq \mathbf{m}_K$ from $K^L$ global rank combinations is intractable. FlexRank first enumerates $K$ candidate ranks for each layer $l$, calculating the cost saving $\Delta c$ and error increase $\Delta e$ to form a local Pareto table $\mathcal{Q}_l$. Under the additivity assumption that errors across layers are additive, `DPRankSelection` is used to combine these local tables into a global nested sequence in $\mathcal{O}(L\cdot K)$ time.
+
+The theoretical justification for the "nesting" constraint is the core contribution: Thm 4.1 proves the probability of finding the Pareto optimum via "post-hoc sub-network extraction" (PTS) is zero. Thm 4.2 proves that "jointly training all sub-networks" (ASL) leaves an sub-optimality gap of at least $\frac{1}{k}(r\lambda-\sum_{i\le r}\sigma_i)^2$ at each rank due to capacity competition. Thm 4.3 proves that nested training (NSL) allows the gap for each rank to be exactly zero, as the $(r+1)$-th column learns only the residual between rank levels.
+
+**3. Gauge-Aligned Reparametrization (GAR): Translating Rank Gains to FLOPs Gains**
+
+Low-rank forms $(U,V)$ only outperform dense kernels in FLOPs if $r\ll\min(m,n)$. GAR exploits the non-uniqueness of $UV^\top$ decomposition by introducing a gauge $G=U_{1:r,:}^{-1}$. The decomposition is rewritten as $UV^\top = (UG)(G^{-1}V^\top) = \tilde{U}\tilde{V}^\top$, making the first $r\times r$ block of $\tilde{U}$ **exactly equal to $I_r$**. This block requires no storage or computation, leaving only the $(m-r)\times r$ part of $\hat{U}$ for actual calculation. Inference cost drops from $\mathcal{O}(mr+nr)$ to $\mathcal{O}((m+n-r)r)$, ensuring any reduction in $r$ translates **linearly** into FLOPs reduction.
 
 ### Loss & Training
-With fixed $\mathcal{M}^\star$, a mask $\mathbf{m}_t^\star$ is sampled with weight $\alpha_k$ at each step. The submodel output is aligned with the original teacher $f(\cdot; \theta_{\mathrm{orig}})$:
+After fixing $\mathcal{M}^\star$, each step samples a mask $\mathbf{m}_t^\star \in \mathcal{M}^\star$ with weight $\alpha_k$ and aligns the sub-model output with the original teacher $f(\cdot;\theta_{\mathrm{orig}})$:
 
 $$\ell_k(\theta)=\mathbb{E}_{\mathbf{d}}\bigl[\mathcal{L}_{\text{KD}}(f(\mathbf{d};\mathcal{T}_{\mathbf{m}_k^\star}(\theta)), f(\mathbf{d};\theta_{\mathrm{orig}}))\bigr]$$
 
-The objective is $\min_\theta \sum_k \alpha_k \ell_k(\theta)$, solved via standard gradient descent. On Llama-3.2-1B, using only 5B tokens (167× less than LayerSkip's 839B), it matches or exceeds heavier baselines.
+The total objective is $\min_\theta \sum_k \alpha_k \ell_k(\theta)$, optimized via standard gradient descent. On Llama-3.2-1B, using only 5B tokens (167× less than LayerSkip's 839B) matches or exceeds heavy baselines across various budgets.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Configuration | Evaluation | FlexRank | SOTA Comparison | Description |
+| Setup | Evaluation | FlexRank | Prev. SOTA Comparison | Description |
 |------|------|----------|-----------|------|
-| Llama-3.2-1B/3B/8B, 5B tokens | avg acc on commonsense lm-eval-harness | Consistently leads at 20–80% budgets | SVD/DataSVD collapse at 20% parameters; ACIP is outperformed at low budgets | Fig. 4-top |
-| DINOv3 ViT-L/16 → ViT-7B/16, ImageNet-1K | top-1 acc | Remains close to full model at 30% | Baselines significantly lag at all budgets | Fig. 4-bottom |
-| Llama-3.2-1B, LoRA fine-tuned on Math/Code | math/code avg acc | Smooth decline from base→1×→0.8×→0.4× (math: 25.7→25.0→20.5→13.6) | — | Tab. 1, submodels support downstream LoRA adaptation |
+| Llama-3.2-1B/3B/8B, 5B tokens | Avg accuracy on commonsense lm-eval-harness | Leads consistently across 20–80% budgets | SVD/DataSVD collapse at 20% reduction; ACIP (SOTA elastic low-rank) outperformed at low budgets | Fig. 4-top |
+| DINOv3 ViT-L/16 → ViT-7B/16, ImageNet-1K | Top-1 acc | Remains close to full model at 30% budget | Baselines lag significantly across all budgets | Fig. 4-bottom; gap < 5% at 70% budget |
+| Llama-3.2-1B, LoRA fine-tuning for math/code | Math/code avg acc | Smooth degradation: base→1×→0.8×→0.4× (math: 25.7→25.0→20.5→13.6) | — | Tab. 1; sub-models support LoRA for downstream tasks |
 
 ### Ablation Study
 
-| Configuration | Key Findings | Value |
+| Configuration | Key Findings | Meaning |
 |------|----------|------|
-| PTS (Post-hoc selection) | Pareto gap always > 0 (Thm 4.1) | Post-hoc subnet extraction is inherently suboptimal |
-| ASL (Joint training) | Strictly positive gap $\ge \frac{1}{k}(r\lambda-\sum\sigma_i)^2$ (Thm 4.2) | Subnets interfere and compete for capacity |
-| NSL (Ours: Nested training) | gap = 0 (Thm 4.3) | Nesting is sufficient to recover the Pareto frontier |
-| Independent layer training | Consistently poor performance (Fig. 7b) | End-to-end distillation is necessary for non-linear flow |
-| DataSVD calibration samples | Saturates at 128 samples (Fig. 7a) | Minimal calibration overhead |
-| Hierarchical compression heatmap | Middle attention layers (c_proj) pruned last (Fig. 6) | DP allocates budget based on importance variability |
+| PTS (Post-hoc) | Pareto gap always > 0 (Thm 4.1) | Post-hoc sub-network extraction is inherently sub-optimal |
+| ASL (Joint All) | Strictly positive gap $\ge \frac{1}{k}(r\lambda-\sum\sigma_i)^2$ (Thm 4.2) | Sub-networks interfere and compete for capacity |
+| NSL (Nest-aware) | Gap = 0 (Thm 4.3) | Nesting is a sufficient condition for recovering the Pareto frontier |
+| Independent Training | Performance remains poor (Fig. 7b) | End-to-end distillation is necessary to consolidate non-linear information flow |
+| DataSVD Samples | Saturates at 128 samples (Fig. 7a) | Minimal calibration overhead |
+| GPT-2 Heatmap | Middle attention layer `c_proj` is pruned last (Fig. 6) | DP allocates budget based on importance rather than uniform truncation |
 
 ### Key Findings
-- **Nesting is a "necessity" for Pareto elasticity, not a heuristic**: The theoretical framework (Thm 4.1/4.2/4.3) narrows down the optimal route to "nesting + joint training."
-- **GAR enables "immediate FLOPs savings" for low-rank compression**: By eliminating the threshold where low-rank exceeds dense compute costs, GAR is the key engineering trick to translate theoretical savings into runtime speedup.
-- **Amortized training cost**: While training requires the full rank (approx. 2× VRAM and slower than dense forward), obtaining $K$ deployable models from one run is much more efficient than separate retraining.
+- **Nesting is a requirement for Pareto elasticity, not a heuristic**: Theorems 4.1/4.2/4.3 bracket the optimality gaps of PTS, ASL, and NSL, concluding that "nesting + joint training" is the only way for all ranks to reach the Pareto optimum simultaneously.
+- **GAR enables immediate FLOPs savings**: Traditional low-rank decomposition requires very small $r$ to be efficient; GAR eliminates this threshold and is key to translating theoretical rank reduction to actual wall-clock speedup.
+- **Amortized training cost**: While training uses full ranks (approx. 2× VRAM and 2× slower forward pass), it yields $K$ deployable models in one run, proving more efficient than retraining for each budget.
 
 ## Highlights & Insights
-- **"Theory-first" design**: The paper uses Thm 4.1/4.2 to "rule out" the two most intuitive paths (PTS and ASL) before proving Thm 4.3. This rigorous approach is more convincing than empirical "trial and error."
-- **Decoupled universal trick (GAR)**: GAR was applied to all low-rank baselines in experiments, ensuring the comparison focused on the "algorithm" rather than "engineering optimization gaps."
-- **Taming combinatorial explosion with DP**: The additivity assumption allows for a tractable $\mathcal{O}(LK)$ search instead of an impossible $K^L$ search, a strategy transferable to any layer-independent scoring scenario.
+- **Structure of "Theory First, Design Second"**: Section 4 utilizes Thm 4.1/4.2 to "invalidate" the most intuitive paths (PTS and ASL) before proving nesting as a sufficient condition for Pareto recovery. This "proof-driven design" is more compelling than empirical-only methods.
+- **GAR as a Decoupled Trick**: The authors apply GAR to all low-rank baselines, ensuring comparisons reflect algorithmic superiority rather than engineering optimizations.
+- **DP + Additivity for Tractability**: While additivity is a strong assumption, its "ranking fidelity" is verified in small-scale experiments. This turns an intractable $K^L$ search into a solvable $O(LK)$ algorithm.
+- **Extensibility**: The Nesting + KD paradigm can be applied to depth elasticity (layer counts), width elasticity (heads), or bit-width elasticity, provided an importance order exists.
 
 ## Limitations & Future Work
-- The additivity assumption is strictly speaking invalid for deep non-linear networks; its impact on 8B+ models beyond the validated small networks remains unquantified.
-- Training requires full-rank $(U,V)$ storage (~2× VRAM), which may be prohibitive for 70B+ models without sharded factors.
-- Input-adaptive routing (dynamically selecting budget per token) is not evaluated, though FlexRank naturally supports this.
-- Combinations with quantization, depth-elasticity, and MoE are yet to be explored.
+- The additivity assumption (additive errors across layers) may not strictly hold for very deep non-linear networks; the impact of this bias on 8B+ models is not fully quantified.
+- Training requires storing full-rank $(U,V)$, leading to ~2× VRAM overhead, which might be challenging for ultra-large models (70B+).
+- Input-adaptive routing (dynamic budget per token) was not evaluated, though FlexRank naturally provides the necessary sub-models for such an application.
+- Evaluations focused on the same family (rank-based) or a few cross-family baselines; combinations with quantization or MoE remain unexplored.
 
 ## Related Work & Insights
-- **vs ACIP (Genzel et al., 2025)**: ACIP uses SVD+LoRA with frozen bases, which is a hybrid of PTS+ASL. FlexRank's direct update of shared weights with mandatory nesting is theoretically superior and shows advantages at low budgets.
-- **vs SVD-LLM / DRONE**: These are single-ratio compression methods; FlexRank produces a family of models with one training run.
-- **vs MatFormer / Once-For-All**: These focus on width/depth/architecture; FlexRank is the first to establish elasticity in the **factorization space** with theoretical backing.
-- **vs LLM-Pruner / LayerSkip**: FlexRank outperforms structured pruning and early-exit methods on Llama-3.2-1B while using significantly fewer training tokens (5B vs 839B).
+- **vs ACIP (Genzel et al., 2025)**: ACIP uses SVD + LoRA adapters, but joint optimization of adapters/pruning scores is essentially a PTS/ASL hybrid. FlexRank updates shared $(U,V)$ weights with nesting, proving theoretically superior and more robust at full budgets.
+- **vs SVD-LLM / DRONE / ASVD**: These focus on activation-aware low-rank compression but only output a single model version. FlexRank provides a family of models from a single training run.
+- **vs MatFormer / Once-For-All**: These are elasticity schemes for width/depth/architecture. FlexRank is the first to establish elasticity in the **factorization space** with theoretical backing.
+- **vs LLM-Pruner / LayerSkip**: FlexRank outperforms structured pruning and early-exit methods on Llama-3.2-1B with significantly fewer training tokens (167× less than LayerSkip), highlighting the efficiency of low-rank elasticity.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Elevates "nested submodel training" to a theoretical proof and combines it with DP and GAR.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers GPT-2 to Llama 3.1-8B and ViT-7B; downstream LoRA validation is a plus.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated through three theorems; logical flow is exemplary.
-- **Value**: ⭐⭐⭐⭐⭐ "Train-once, deploy-everywhere" addresses a real pain point in heterogeneous deployment.
+- Novelty: ⭐⭐⭐⭐⭐ Elevates "nested sub-model training" to a theoretical proof, complemented by DP and GAR.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage (Llama, ViT) and fair training volume, though cross-family comparisons could be expanded.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent motivation via three theorems. Paradigm-setting structure for this sub-field.
+- Value: ⭐⭐⭐⭐⭐ Real-world "train-once, deploy-everywhere" solution for heterogeneous hardware with solid theoretical grounding.
 
 <!-- RELATED:START -->
 
@@ -127,10 +129,10 @@ The objective is $\min_\theta \sum_k \alpha_k \ell_k(\theta)$, solved via standa
 ## Related Papers
 
 - [\[ICLR 2026\] Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank](../../ICLR2026/llm_pretraining/implicit_bias_and_loss_of_plasticity_in_matrix_completion_depth_promotes_low-ran.md)
-- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](../../NeurIPS2025/llm_pretraining/breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
-- [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
+- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
+- [\[ICML 2026\] SPARe: Stacked Parallelism with Adaptive Reordering for Fault-Tolerant LLM Pretraining Systems with 100k+ GPUs](spare_stacked_parallelism_with_adaptive_reordering_for_fault-tolerant_llm_pretra.md)
+- [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
 
 </div>
 

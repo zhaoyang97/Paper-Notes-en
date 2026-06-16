@@ -2,19 +2,15 @@
 title: >-
   [Paper Note] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks
 description: >-
-  [ACL 2026][LLM Reasoning][Sequence-Level PPO] SPPO reformulates RLVR in long-chain CoT reasoning from a token-level MDP into a sequence-level contextual bandit. By using a scalar critic that solely observes the prompt to…
+  [ACL 2026][LLM Reasoning][Sequence-Level PPO] SPPO reformulates RLVR in long-chain CoT reasoning from element-wise token-level MDP to sequence-level contextual bandit. By using a scalar critic that observes only the prompt to estimate task solvability, it achieves stability and performance comparable to or exceeding GRPO using single-sample PPO, while providing ap
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Sequence-Level PPO"
-  - "Long-Horizon Reasoning"
-  - "RLVR"
-  - "Scalar Value Function"
-  - "Contextual Bandit"
+  - ACL 2026
+  - LLM Reasoning
+  - Sequence-Level PPO
+  - RLVR
 date: 2026-05-08
-content_hash: 7b8f2b7e01e0af97
+content_hash: d8ee275404772d60
 ---
-
 # SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks
 
 **Conference**: ACL 2026  
@@ -24,51 +20,70 @@ content_hash: 7b8f2b7e01e0af97
 **Keywords**: Sequence-Level PPO, Long-Horizon Reasoning, RLVR, Scalar Value Function, Contextual Bandit
 
 ## TL;DR
-SPPO reformulates RLVR in long-chain CoT reasoning from a token-level MDP into a sequence-level contextual bandit. By using a scalar critic that solely observes the prompt to estimate problem solvability, it achieves stability and performance comparable to or exceeding GRPO with single-sample PPO, while delivering approximately 5.9x training acceleration and lower memory consumption.
+SPPO reformulates RLVR in long-chain CoT reasoning from element-wise token-level MDP to sequence-level contextual bandit. By using a scalar critic that observes only the prompt to estimate task solvability, it achieves stability and performance comparable to or exceeding GRPO using single-sample PPO, while providing approximately 5.9x training acceleration and lower memory consumption.
 
 ## Background & Motivation
-**Background**: Mathematical reasoning, code reasoning, and verifiable QA tasks frequently employ RLVR to enhance large models, where rewards are typically based on final answer correctness. Standard PPO utilizes a token-level critic and GAE to propagate final rewards token-by-token along long CoT sequences; GRPO eliminates the critic, estimating a baseline through the relative performance of multiple samples for the same prompt.
+**Background**: Tasks such as mathematical reasoning, code generation, and verifiable QA commonly use RLVR to enhance large models, where rewards typically reflect whether the final answer is correct. Standard PPO utilizes a token-level critic and GAE to propagate final rewards token-by-token along long CoTs; GRPO removes the critic and estimates the baseline through the relative performance of multiple samples under the same prompt.
 
-**Limitations of Prior Work**: Standard PPO is unstable given long-chain sparse rewards, as the critic often perceives answer clues only at the sequence tail, causing advantage signals to vanish or become misaligned during the reasoning process. Although GRPO bypasses token-level critics, it requires multiple samples per prompt to estimate a group baseline, which limits training throughput.
+**Limitations of Prior Work**: Standard PPO is unstable under long-chain sparse rewards, as the critic often observes answer cues only at the end of the sequence, causing advantage signals to disappear or misalign during the actual reasoning steps. Although GRPO bypasses the token-level critic, it requires sampling multiple responses per prompt to estimate the group baseline, which limits training throughput.
 
-**Key Challenge**: The reward for long-chain reasoning is binary (success or failure of the whole reasoning), but token-level PPO forces this into credit assignment per timestep. Conversely, group-based methods treat sequences as a whole but exchange stability for high-cost multi-sampling.
+**Key Challenge**: The reward for long-chain reasoning is "whether the entire reasoning process succeeded," yet token-level PPO forces this into per-step credit assignment. Conversely, group-based methods treat the sequence as a whole but exchange stability for high-cost multi-sampling.
 
-**Goal**: The authors aim to maintain the single-sample efficiency of PPO while achieving the stability of "sequence-level updates" similar to GRPO, specifically targeting verifiable mathematical reasoning tasks such as AIME, AMC, MATH500, and Minerva Math.
+**Goal**: The authors aim to retain the single-sample efficiency of PPO while achieving the stability of "sequence-level updates" seen in GRPO, particularly for verifiable mathematical reasoning tasks such as AIME, AMC, MATH500, and Minerva Math.
 
-**Key Insight**: The paper reinterprets the success of GRPO: the critical factor is not the absence of a critic, but rather the implicit treatment of the reasoning process as a sequence-level contextual bandit—where the prompt is the context, the entire response is a single action, and the final reward is the action return.
+**Key Insight**: The paper reinterprets the success of GRPO: the key is not the "absence of a critic," but rather that it implicitly treats the reasoning process as a sequence-level contextual bandit, where the prompt is the context, the entire response is an action, and the final reward is the action return.
 
-**Core Idea**: Explicitly adopt a sequence-level bandit perspective using a scalar value model to estimate prompt success probability, then feed $A=R-V_\phi(s_p)$ back into PPO as a shared advantage signal for all tokens in the response.
+**Core Idea**: Explicitly adopt a sequence-level bandit perspective. Use a scalar value model to estimate the success probability of a prompt, and then feed $A=R-V_\phi(s_p)$ back to PPO as a shared advantage signal for the entire response.
 
 ## Method
-The core of SPPO is not a mere change in the loss function name, but a shift in the semantics of the value function. While a standard PPO critic attempts to determine "future rewards given the token at step $t$," the SPPO critic answers "how likely is the current policy to solve this prompt." This task is closer to problem difficulty estimation and is significantly simpler than token-by-token reasoning state valuation.
+The core of SPPO is not simply changing a loss name, but altering the semantics of the value function. A standard PPO critic attempts to answer "what is the future return given the current $t$-th token," whereas the SPPO critic answers "how likely is the current policy to solve this prompt." This task is closer to task difficulty estimation and is significantly simpler than token-by-token reasoning state valuation.
 
 ### Overall Architecture
-Given a prompt $s_p$, the policy samples a full response sequence $a_{seq}=(y_1,\dots,y_T)$, and an external verifier returns a binary reward $R\in\{0,1\}$. The value model $V_\phi(s_p)$ outputs a prompt-level success probability. SPPO constructs a sequence-level advantage using $R-V_\phi(s_p)$ and distributes this identical advantage to every token in the sequence within the PPO clipped objective.
+Given a prompt $s_p$, the policy samples a complete response sequence $a_{seq}=(y_1,\dots,y_T)$, and an external verifier returns a binary reward $R\in\{0,1\}$. The value model $V_\phi(s_p)$ outputs a prompt-level success probability. SPPO constructs a sequence-level advantage using $R-V_\phi(s_p)$ and distributes this same advantage to all tokens in the sequence within the clipped PPO objective.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BANDIT["Sequence-Level Contextual Bandit Modeling"]
+        direction TB
+        P["Prompt s_p: Static Context"] --> POL["Policy samples complete response<br/>Entire sequence = One atomic action"]
+        POL --> VER["Verifier checks final answer<br/>Returns binary reward R ∈ {0,1}"]
+    end
+    subgraph VAL["Scalar Value Function & Advantage Estimation"]
+        direction TB
+        VM["Scalar critic V_φ(s_p)<br/>BCE fitting, estimates solvability"]
+        ADV["Sequence-level advantage A = R − V_φ(s_p)<br/>Shared across the sequence"]
+        VM --> ADV
+    end
+    P --> VM
+    VER --> ADV
+    ADV --> PPO["Sequence-Level PPO with Decoupled Critic<br/>Retains token-level clipping"]
+    PPO -.->|1.5B critic aligns 7B policy| VM
+    PPO -.->|Resample after policy update| POL
+```
 
 ### Key Designs
-1.  **From token-level MDP to sequence-level contextual bandit**:
-    - Function: Eliminates temporal credit assignment noise from sparse rewards in long CoT.
-    - Mechanism: Conceptually compresses the horizon to 1, where the prompt is a static context, the full response is an atomic action, and the reward solely evaluates whether the correct answer was reached.
-    - Design Motivation: Mathematical verifiers usually only judge final answers. Forcing a critic to value intermediate tokens introduces positional bias. Sequence-level modeling aligns with the actual reward granularity.
 
-2.  **Scalar value function and advantage estimation**:
-    - Function: Lowers the variance of single-sample returns using a learned prompt baseline.
-    - Mechanism: The value model fits binary outcomes via BCE with the objective $L_V=-E[R\log V_\phi(s_p)+(1-R)\log(1-V_\phi(s_p))]$; the policy uses $A(s_p,a)=R-V_\phi(s_p)$. Rare successes on difficult problems yield strong positive advantages, while failures on easy problems yield strong negative advantages.
-    - Design Motivation: GRPO's group baseline requires multi-sampling for stability. SPPO uses a calibratable scalar critic to directly approximate solvability, avoiding multi-sampling overhead.
+**1. From token-level MDP to sequence-level contextual bandit: Compressing the horizon to 1 to align modeling granularity with reward granularity**
 
-3.  **Sequence-level PPO and decoupled critic**:
-    - Function: Retains PPO's stable update mechanism while reducing memory pressure during LLM RL training.
-    - Mechanism: The clipped probability ratio is still calculated per token, but the advantage is invariant across the sequence tokens. The authors also validate a configuration using a 1.5B critic for a 7B policy, as "estimating problem difficulty" is easier than "generating reasoning chains."
-    - Design Motivation: Leverage mature PPO engineering and clipping stability while avoiding the GAE tail effect under sparse rewards.
+The pain point of long CoT is sparse rewards—the verifier gives a 0/1 only at the end, yet token-level PPO forces this terminal signal back across thousands of tokens. This results in advantages for intermediate steps filled with temporal credit assignment noise. SPPO abandons step-by-step modeling: treating the prompt $s_p$ as static context and the entire response $a_{seq}$ as an atomic action. The reward $R$ evaluates the action as a whole. The horizon is conceptually compressed to 1, and the problem reduces from an MDP to a contextual bandit. This is effective because mathematical verifiers only judge the final answer; once modeling granularity aligns with actual reward granularity, position bias introduced by "forced valuation of intermediate tokens" is eliminated.
+
+**2. Scalar value function and advantage estimation: Using a prompt-only critic to estimate solvability as a substitute for multi-sample baselines**
+
+Since the action is the entire sequence, the baseline only needs to estimate a scalar for the prompt. The SPPO value model $V_\phi(s_p)$ fits binary outcomes via BCE, with the objective $L_V=-E[R\log V_\phi(s_p)+(1-R)\log(1-V_\phi(s_p))]$. The output represents "the probability the current policy solves this prompt," i.e., task difficulty. The policy advantage is $A(s_p,a)=R-V_\phi(s_p)$: solving a difficult problem correctly yields a strong positive advantage, while failing a simple problem yields a strong negative advantage. This replaces the expensive requirement in GRPO to sample $N$ responses per prompt to estimate a group baseline—a calibrated scalar critic approximates the same "problem difficulty" information.
+
+**3. Sequence-level PPO and decoupled critic: Retaining PPO clipping while sharing advantages across the sequence with smaller critics**
+
+The modeling changes, but the implementation remains stable: the clipped probability ratio is still calculated per token, preserving PPO's stability. The difference is that the advantage $A(s_p,a)$ is uniform for all tokens in the sequence. This avoids the "tail effect" typical of token-level GAE under sparse rewards (where signals are clear only at the end). Furthermore, the authors verify that a decoupled configuration using a 1.5B critic to align with a 7B policy remains effective—since the critic's task is "estimating difficulty," which is simpler than "generating reasoning chains," the actor and critic do not need to be the same size, reducing memory pressure.
 
 ### Loss & Training
-Experiments utilize DeepSeek-R1-Distill-Qwen-1.5B and 7B, fine-tuned on DeepScaleR and DAPO-17K respectively. Rewards are 1 if the boxed answer is correct and 0 otherwise. Learning rates are 1e-6 for the actor and 5e-6 for the critic. PPO parameters $\gamma=1, \lambda=1$ are used to match sparse terminal rewards. 1.5B experiments were conducted on 4×A100, and 7B on 4×H100.
+Experiments utilize DeepSeek-R1-Distill-Qwen-1.5B and 7B, fine-tuned on DeepScaleR and DAPO-17K respectively. Rewards are binary ($R=1$ if the boxed answer is correct, 0 otherwise). Actor learning rate is 1e-6, critic learning rate is 5e-6. In PPO, $\gamma=1, \lambda=1$ is set to match sparse terminal rewards. 1.5B experiments used 4×A100; 7B experiments used 4×H100.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model Scale | Method | AIME24 | AIME25 | AMC23 | MATH500 | Minerva | Avg |
+| Model Size | Method | AIME24 | AIME25 | AMC23 | MATH500 | Minerva | Avg |
 |--------|------|------|------|------|------|------|------|
 | 1.5B | Base | 27.50 | 21.67 | 71.56 | 83.73 | 20.35 | 44.96 |
 | 1.5B | PPO | 27.50 | 20.83 | 70.63 | 81.38 | 19.89 | 44.06 |
@@ -83,38 +98,38 @@ Experiments utilize DeepSeek-R1-Distill-Qwen-1.5B and 7B, fine-tuned on DeepScal
 
 | Analysis Item | Key Metric | Description |
 |------|------|------|
-| PPO + BCE | Performance collapse around 500 steps | Simply adding BCE loss to token-level PPO does not replicate SPPO, indicating gains come from the sequence-level bandit formulation. |
-| Training Efficiency | ~22 hours for 7B to reach ~58 avg | Single-sample updates converge faster than GRPO/RLOO multi-sample baselines. |
-| Value Calibration | Pearson 0.642, Spearman 0.664 | Prompt-level critic distinguishes problem difficulty; although predictions are conservative, it serves as an effective baseline. |
-| Memory Efficiency | Decoupled critic reduces memory by ~12.8% | 1.5B critic with 7B policy still achieves the highest average score. |
+| PPO + BCE | Performance collapse around 500 steps | Adding BCE loss to token-level PPO does not replicate SPPO, indicating gains come from the sequence-level bandit formulation. |
+| Training Efficiency | 7B model reaches ~58 average in ~22 hours | Single-sample updates converge faster than multi-sample baselines like GRPO/RLOO. |
+| Value Calibration | Pearson 0.642, Spearman 0.664 | Prompt-level critic distinguishes problem difficulty; though conservative, it serves as an effective baseline. |
+| Memory Efficiency | Decoupled critic reduces VRAM by ~12.8% | Using a 1.5B critic with a 7B policy still achieved the highest average score. |
 
 ### Key Findings
 - SPPO outperforms the average score of GRPO at both 1.5B and 7B scales while requiring only single-sample updates, suggesting "sequence-level advantage" is a more fundamental source of stability than "multi-sample normalization."
-- A small critic does not hinder the 7B policy; rather, it achieved the highest Avg (58.56), supporting the hypothesis that prompt solvability estimation is simpler than generative reasoning.
-- In sparse binary control tasks (Precision CartPole, MountainCar, etc.), SPPO is more stable than standard PPO, indicating the findings are not solely due to verl engineering optimizations.
+- Smaller critics do not hinder the 7B policy; instead, they achieved the highest Avg (58.56), supporting the hypothesis that prompt solvability estimation is simpler than generative reasoning.
+- In sparse binary control tasks such as Precision CartPole, MountainCar, Hopper, LunarLander, and Pendulum, SPPO is more stable than standard PPO, indicating the conclusion is not merely an artifact of verl engineering optimizations.
 
 ## Highlights & Insights
-- The most valuable contribution is the re-interpretation of GRPO: its success may stem from "treating the response as a holistic action" rather than just the absence of a critic. This links the strengths and weaknesses of PPO and GRPO.
-- SPPO does not abandon PPO entirely but shifts the advantage granularity to the sequence level, making it easier to integrate into existing RLHF/RLVR frameworks.
-- Small critic insights: LLM RL does not strictly require same-scale actors and critics. If the critic's role is difficulty estimation, a smaller model suffices, lowering training barriers.
+- The most valuable contribution of this paper is the reinterpretation of GRPO: its success may not stem from "having no critic," but rather from "treating the response as a holistic action." This perspective bridges the advantages and disadvantages of PPO and GRPO.
+- SPPO does not completely discard PPO; it modifies the advantage granularity to the sequence level, making it easier to integrate into existing RLHF/RLVR frameworks.
+- The small critic results are enlightening: LLM RL does not necessarily require the actor and critic to be at the same scale. If the critic's task is estimating task difficulty, a smaller model can suffice, lowering training barriers.
 
 ## Limitations & Future Work
-- SPPO depends on verifiable outcomes to train the value model, making it ideal for math, code, and logical tasks; open-ended writing and dialogue lack objective verifiers, making transfer non-trivial.
-- Sequence-level advantage reinforces/punishes the entire reasoning chain, still failing to isolate which specific steps within a sequence contributed to the correct answer.
-- Value model calibration is vital. The paper indicates good correlation but conservative distribution; future research could focus on stronger calibration or uncertainty estimation.
-- Experiments focused on the DeepSeek-R1-Distill-Qwen series and math tasks; more model families, code tasks, and multi-turn agent tasks require further verification.
+- SPPO relies on verifiable outcomes to train the value model, making it naturally suited for math, code, and logic tasks. Transferring this to open-ended writing or dialogue quality is not direct due to the lack of objective verifiers.
+- Sequence-level advantages reinforce the entire successful reasoning chain and punish the entire failed chain, still failing to distinguish which specific steps within a sequence contributed to the correct answer.
+- The calibration quality of the value model is critical. While correlation is good, the predicted distribution is conservative; future work could explore stronger calibration or uncertainty estimation.
+- Experiments focused on the DeepSeek-R1-Distill-Qwen series and math tasks; further validation is needed for other model families, code tasks, and multi-turn agent scenarios.
 
 ## Related Work & Insights
-- **vs Standard PPO**: Standard PPO uses token-level value and GAE for long-range credit assignment; SPPO uses prompt-level scalar values to avoid tail effects and improve stability.
-- **vs GRPO**: GRPO constructs group baselines via N=8 multi-sampling; SPPO replaces this with a learned critic, enabling higher throughput.
-- **vs ReMax / RLOO**: These REINFORCE variants also focus on whole-sequence rewards, but SPPO retains PPO clipping and uses value baselines to reduce variance.
-- **vs DAPO / Dr.GRPO**: These methods focus on group-relative sampling or gradient patching; SPPO targets the underlying modeling granularity by rewriting the environment as a sequence-level bandit.
+- **vs Standard PPO**: Standard PPO uses token-level values and GAE for long-range credit assignment. SPPO uses prompt-level scalar values to avoid the tail effect, improving stability.
+- **vs GRPO**: GRPO constructs a group baseline through N=8 multi-sampling. SPPO replaces the multi-sample baseline with a learned critic, achieving higher throughput.
+- **vs ReMax / RLOO**: These sequence-level REINFORCE variants also focus on total sequence rewards, but SPPO retains PPO clipping and uses a value baseline to reduce variance.
+- **vs DAPO / Dr.GRPO**: These methods often patch group-relative sampling and gradient dynamics. SPPO focuses on the underlying modeling granularity: rewriting the reasoning environment as a sequence-level bandit.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Not just parameter tuning, but a clear reconstruction of RLVR credit assignment granularity.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers math benchmarks, efficiency, value calibration, and control tasks; open-ended tasks are still missing.
-- Writing Quality: ⭐⭐⭐⭐☆ Problem definition, intuition, and empirical evidence are clearly linked; formulas and diagrams are well-integrated.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for reasoning model teams aiming to reduce RLVR training costs.
+- Novelty: ⭐⭐⭐⭐☆ Not simple hyperparameter tuning; provides a clear restructuring of credit assignment granularity in RLVR.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers math benchmarks, efficiency, value calibration, and control tasks; lacks experiments on open-ended tasks.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear problem definition, intuition, and empirical chain; formulas and diagrams support each other well.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for teams aiming to reduce RLVR training costs for reasoning models.
 
 <!-- RELATED:START -->
 

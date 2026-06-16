@@ -2,114 +2,87 @@
 title: >-
   [Paper Note] FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 description: >-
-  [CVPR 2026][LLM Safety][visual jailbreaking] This work identifies the root cause of poor transferability in visual jailbreak attacks as their residence in high-sharpness loss regions — arising from shallow-layer over-rel…
+  [CVPR 2026][LLM Safety][visual jailbreaking] Analysis reveals that the root cause of poor transferability in visual jailbreak attacks is that the attack resides in a high-sharpness loss region—stemming from an over-reliance of shallow features on model-specific representations and the excessive influence of high-frequency information. This work proposes the FORCE
 tags:
-  - "CVPR 2026"
-  - "LLM Safety"
-  - "visual jailbreaking"
-  - "adversarial attacks"
-  - "transferability"
-  - "loss landscape"
-  - "MLLM safety"
-  - "red-teaming"
+  - CVPR 2026
+  - LLM Safety
+  - visual jailbreaking
+  - loss landscape
+  - MLLM safety
 date: 2026-05-08
-content_hash: 7ee119449d9ade60
+content_hash: bce2b18250d30363
 ---
-
 # FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 
-**Conference**: CVPR 2026
+**Conference**: CVPR2026  
 **arXiv**: [2509.21029](https://arxiv.org/abs/2509.21029)  
 **Code**: [tmllab/2026_CVPR_FORCE](https://github.com/tmllab/2026_CVPR_FORCE)  
-**Area**: Robotics
-**Keywords**: visual jailbreaking, adversarial attacks, transferability, loss landscape, MLLM safety, red-teaming
+**Area**: Robotics  
+**Keywords**: visual jailbreaking, adversarial attack, transferability, loss landscape, MLLM safety, red-teaming
 
 ## TL;DR
 
-This work identifies the root cause of poor transferability in visual jailbreak attacks as their residence in high-sharpness loss regions — arising from shallow-layer over-reliance on model-specific representations and excessive influence of high-frequency information. FORCE is proposed to address this via layer-aware regularization that broadens the shallow-layer feasible region, and spectral rescaling that suppresses high-frequency non-semantic components, guiding attacks into flatter loss landscapes and substantially improving cross-model transferability.
+Analysis reveals that the root cause of poor transferability in visual jailbreak attacks is that the attack resides in a high-sharpness loss region—stemming from an over-reliance of shallow features on model-specific representations and the excessive influence of high-frequency information. This work proposes the FORCE method, which expands the feasible region of shallow layers through layer-aware regularization and suppresses high-frequency non-semantic components via spectral rescaling, guiding the attack into a flatter loss landscape to significantly improve cross-model transferability.
 
 ## Background & Motivation
 
-Multimodal large language models (MLLMs) introduce additional security vulnerabilities when integrating visual and other new modalities. The current landscape of visual jailbreak attacks is as follows:
+Multimodal Large Language Models (MLLMs) introduce additional security vulnerabilities when integrating new modalities like vision. Current status of visual jailbreak attacks:
 
-1. **Text jailbreaks are increasingly constrained**: As the intensity of text alignment (RLHF, DPO) grows, purely text-based attacks against MLLMs continue to decline in effectiveness.
-2. **Visual jailbreaks are effective but localized**: Optimization-based visual attacks (PGD and its variants) can reliably bypass the safety mechanisms of open-source MLLMs with imperceptible perturbations, achieving near 100% success rates on source models.
-3. **Transferability is extremely poor**: Visual attacks generated on a source model almost never transfer to other MLLMs, especially closed-source commercial models — 93% of attacks fail even after exhausting 100 queries.
+1.  **Textual jailbreak is limited**: As text alignment strength increases (RLHF, DPO), the effectiveness of pure text attacks on MLLMs continues to decline.
+2.  **Visual jailbreak is effective but local**: Optimization-based visual attacks (PGD and its variants) can reliably bypass the safety defenses of open-source MLLMs with imperceptible perturbations, achieving nearly 100% success rates on the source model.
+3.  **Extremely poor transferability**: Visual attacks generated on a source model rarely transfer to other MLLMs, especially closed-source commercial models, where 93% of attacks still fail after exhausting 100 queries.
 
-Core motivation: To conduct meaningful red-teaming evaluations of security vulnerabilities in closed-source MLLMs, the **cross-model transferability** of optimization-based visual jailbreak attacks must be improved. As one of the first works to study this problem, this paper conducts an in-depth analysis of transfer failure from the geometric perspective of loss landscapes.
+Core Motivation: To perform practical red-teaming and evaluate security holes in closed-source MLLMs, the **cross-model transferability** of optimization-based visual jailbreak attacks must be improved. As one of the first works to study this problem, this paper provides a deep analysis of transfer failure from the perspective of loss landscape geometry.
 
 ## Core Problem
 
-- Why do visual jailbreak attacks succeed on source models but fail to transfer?
-- How does the shape of the attack's loss landscape affect transferability?
-- Which factors in feature representations lead to model-specific dependencies?
+-   Why do visual jailbreak attacks succeed on the source model but fail to transfer?
+-   How does the shape of the attack's loss landscape affect transferability?
+-   Which factors in feature representation lead to model-specific reliance?
 
 ## Method
 
-### Diagnostic Analysis: Loss Landscape
+### Overall Architecture
 
-Using LLaVA-v1.5-7B as the source model with standard PGD (step size 2/255, budget 32/255, target "Sure, here is"):
+Visual jailbreak attacks succeed almost 100% on the source model but fail to transfer to other MLLMs, particularly closed-source ones. FORCE first diagnoses the cause and then prescribes a solution. The core diagnosis is that transfer failure occurs because the attack is trapped in an extremely sharp (high-sharpness) loss region—a perturbation of only 0.03 pixels in the input space can raise the loss from approximately 0 to over 0.28, causing the attack to fail. Furthermore, a perturbation of only 0.0002 in the weight space (simulating model switching) pushes the attack out of the feasible region. Two main culprits create these sharp regions: over-reliance of shallow features on model-specific representations and an increasing reliance on high-frequency non-semantic shortcuts during late-stage optimization. To address this, FORCE integrates two components—layer-aware regularization to broaden the feasible regions of shallow layers and spectral rescaling to suppress high-frequency components—into each iteration of standard PGD, guiding the attack toward a flatter loss landscape and significantly enhancing cross-model transferability.
 
-**Input loss landscape**: Pixel perturbations are introduced along the gradient direction and a random direction. The attack is found to reside in an extremely sharp local optimum — a perturbation of merely 0.03 pixels raises the loss from ~0 to above 0.28, rendering the attack ineffective.
+```mermaid
+graph TD
+    A["Input: Clean Image + Perturbation δ, Text Instruction, Malicious Target y"] --> STEP["FORCE-PGD Iteration (per step)"]
+    STEP --> R["Layer-Aware Regularization<br/>Sample N reference points in neighborhood; use depth-decreasing λ_l to widen shallow feasible regions"]
+    STEP --> S["Spectral Rescaling<br/>Apply FFT to δ → 10 bands; suppress high-frequency non-semantic components → IFFT"]
+    R --> U["Combine Loss BP + PGD Update δ<br/>(jailbreak loss + hierarchical regularization ℓ_reg)"]
+    S --> U
+    U -->|If not converged| STEP
+    U -->|Attack Success, Flatter Landscape| OUT["Transferable Visual Jailbreak Attack"]
+```
 
-**Weight loss landscape**: Small parameter changes simulating model transfer are applied. A weight perturbation of just 0.0002 is sufficient to push the attack out of the feasible region.
+### Key Designs
 
-**Conclusion**: The attack is trapped in a high-sharpness region, exhibiting extreme sensitivity to any minor perturbation — this is the direct manifestation of transfer failure.
+**1. Layer-Aware Regularization: Widening the narrow and brittle feasible regions of shallow layers**
 
-### Diagnostic Analysis: Feature Representations Across Layers
+Diagnosis shows that the problem is concentrated in shallow layers: when performing convex combination interpolation between "adversarial features ↔ natural features" as $(1-\mu) \cdot f_{\theta}(\text{jail}) + \mu \cdot f_{\theta}(\text{nat})$, attacks remain effective in deep layers (e.g., layer 31) even with 40% natural features. However, shallow layers (e.g., layer 11) require maintaining 90%+ adversarial features; the loss spikes to 1.2+ with just 30% natural features—meaning the shallow feasible region is extremely narrow. FORCE samples $N=10$ reference points within the neighborhood $\eta=4/255$ of the jailbreak sample and maximizes the $L_2$ distance $d_l = \|f_{\theta,l}(\mathbf{x}_{\text{img}}+\delta, \mathbf{x}_{\text{txt}}) - f_{\theta,l}(\mathbf{x}_{\text{img}}+\delta+\eta, \mathbf{x}_{\text{txt}})\|_2^2$ between the sample and reference features at each layer $l$, while constraining the reference points to also fall within the feasible region (ensuring their loss $\ell_{\text{ref}} = \ell(p_\theta(\mathbf{x}_{\text{img}}+\delta+\eta, \mathbf{x}_{\text{txt}}), \mathbf{y})$ remains low).
 
-Features of jailbreak samples and natural images are extracted layer by layer, and interpolated via convex combination $(1-\mu) \cdot f_{\theta}(\text{jail}) + \mu \cdot f_{\theta}(\text{nat})$:
-
-- **Deep layers (e.g., layer 31)**: The attack remains effective even when 40% of natural features are injected — the feasible region is broad.
-- **Shallow layers (e.g., layer 11)**: The attack must retain 90%+ of adversarial features to succeed; injecting only 30% natural features causes the loss to surge sharply above 1.2 — the feasible region is extremely narrow.
-
-**Conclusion**: Shallow layers over-rely on model-specific features → narrow and fragile feasible region → attack trapped in high-sharpness zone.
-
-### Diagnostic Analysis: Frequency Dependency in the Spectral Domain
-
-A Fourier transform is applied to the perturbation $\delta$, divided into $M=10$ equal-width frequency bands; each band is masked in turn and attack degradation is evaluated:
-
-- **Early iterations (150–250)**: Low-frequency components (semantically rich) are critical for attack success; removing them causes failure — consistent with the prior that natural image semantics reside in low frequencies.
-- **Later iterations (350–750)**: High-frequency influence progressively surpasses low-frequency; by iteration 750, removing the third-highest frequency band alone suffices to defeat the attack.
-
-**Conclusion**: The optimization process drives the attack toward increasing reliance on high-frequency (semantically weak) shortcuts → attack becomes model-specific → fails to generalize.
-
-### FORCE Method
-
-Based on the above analysis, two complementary components are proposed:
-
-**Component 1: Layer-Aware Regularization**
-
-$N=10$ reference points are sampled within a neighborhood $\eta=4/255$ of the jailbreak sample. For each layer $l$, the $L_2$ distance $d_l$ between the features of the jailbreak sample and those of the reference points is maximized, while constraining reference points to also reside in the feasible region (i.e., their loss must also be low):
-
-$$d_l = \|f_{\theta,l}(\mathbf{x}_{\text{img}}+\delta, \mathbf{x}_{\text{txt}}) - f_{\theta,l}(\mathbf{x}_{\text{img}}+\delta+\eta, \mathbf{x}_{\text{txt}})\|_2^2$$
-
-$$\ell_{\text{ref}} = \ell(p_\theta(\mathbf{x}_{\text{img}}+\delta+\eta, \mathbf{x}_{\text{txt}}), \mathbf{y})$$
-
-Key design — **gradually decreasing regularization strength**, stronger in shallow layers and weaker in deep layers, consistent with diagnostic findings:
+Crucially, the regularization strength decreases with depth—stronger in shallow layers and weaker in deep layers—matching the diagnosis that the "problem is in the shallow layers":
 
 $$\lambda_l = \lambda \cdot \max(1 - (2l/L)^2, 0)$$
 
-Regularization loss: $\ell_{\text{reg}} = \frac{1}{N}\sum_{n=1}^{N}\sum_{l=1}^{L} \lambda_l \cdot \frac{\ell_{\text{ref}}}{d_l}$
+The total regularization term is $\ell_{\text{reg}} = \frac{1}{N}\sum_{n=1}^{N}\sum_{l=1}^{L} \lambda_l \cdot \frac{\ell_{\text{ref}}}{d_l}$. It encourages the attack to maintain a "consistently usable" flat neighborhood in the shallow layers. Once the feasible region is widened, the attack is less likely to fail when switching models.
 
-**Component 2: Spectral Rescaling**
+**2. Spectral Rescaling: Cutting off high-frequency shortcuts learned during optimization**
 
-An FFT is applied to the perturbation $\delta$, divided into $M=10$ equal-width frequency bands. When the influence of band $m$ exceeds $\beta$ times that of the adjacent lower-frequency band, it is rescaled:
+Another root cause comes from the frequency domain: after applying Fourier transforms and masking bands, it was found that early optimization (150-250 iterations) relies on low-frequency semantic components, while later stages (350-750 iterations) increasingly rely on high frequencies. By 750 iterations, removing the third highest frequency band causes the attack to fail. High frequencies are semantically weak, model-specific shortcuts—the poison of transferability. FORCE applies FFT to the perturbation $\delta$, dividing it into $M=10$ equal-width frequency bands. When the influence of the $m$-th band exceeds the adjacent lower frequency band by a factor of $\beta$, it is suppressed:
 
-$$w_m = \min\left(\beta, \frac{\ell_{m-1}}{\ell_m} \cdot \beta\right)$$
+$$w_m = \min\left(\beta, \frac{\ell_{m-1}}{\ell_m} \cdot \beta\right), \qquad S = \sum_{m=1}^{M} (w_m \cdot \mathbb{1}_{B_m})$$
 
-$$S = \sum_{m=1}^{M} (w_m \cdot \mathbb{1}_{B_m})$$
-
-The frequency rescaling matrix $S$ is multiplied with the FFT amplitude spectrum, and the perturbation is reconstructed via IFFT: $\delta_{\text{rescaled}} = \text{IFFT}((A \odot S) \odot e^{i\Phi})$.
-
-Both components are integrated into the standard PGD pipeline: spectral rescaling is applied first, followed by layer-aware regularization.
+The frequency scaling matrix $S$ is then multiplied by the FFT amplitude spectrum, and the perturbation is reconstructed via IFFT: $\delta_{\text{rescaled}} = \text{IFFT}((A \odot S) \odot e^{i\Phi})$. This forces the attack to rely more on low-frequency semantics and less on high-frequency shortcuts, resulting in a flatter and more generalizable landing point. The two components are integrated into standard PGD: each step first performs spectral rescaling, followed by layer-aware regularization.
 
 ## Key Experimental Results
 
-### Transfer Across Adapter-Based MLLMs (Source: LLaVA-v1.5-7B, Multiple Queries)
+### Transfer across Adapter-Based MLLMs (Source: LLaVA-v1.5-7B, Multiple Queries)
 
 | Target Model | Method | MaliciousInstruct ASR | AdvBench ASR | HADES ASR |
-|---|---|---|---|---|
+|--------------|------|-----------------------|--------------|-----------|
 | LLaVA-v1.6-mistral | PGD | 61.0 | 35.2 | 70.0 |
 | | FORCE | **69.0** (+12.3%) | **43.8** (+24.6%) | **72.7** (+3.8%) |
 | InstructBLIP-Vicuna | PGD | 84.0 | 25.6 | 48.7 |
@@ -117,19 +90,19 @@ Both components are integrated into the standard PGD pipeline: spectral rescalin
 | Idefics3-8B | PGD | 53.0 | 29.8 | 63.1 |
 | | FORCE | **64.0** (+20.8%) | **36.0** (+20.6%) | **66.0** (+4.6%) |
 
-### Transfer Across Early-Fusion MLLMs
+### Transfer across Early-Fusion MLLMs
 
 | Target Model | Method | MaliciousInstruct ASR | AdvBench ASR | HADES ASR |
-|---|---|---|---|---|
+|--------------|------|-----------------------|--------------|-----------|
 | LLaMA-3.2-11B | PGD | 1.0 | 1.2 | 6.3 |
 | | FORCE | **2.0** (+100%) | **2.3** (+101%) | **10.3** (+63.6%) |
 | Qwen2.5-VL-7B | PGD | 5.0 | 1.5 | 25.3 |
 | | FORCE | **11.0** (+120%) | **2.7** (+74.7%) | **28.1** (+11.1%) |
 
-### Transfer Across Commercial MLLMs
+### Transfer across Commercial MLLMs
 
 | Target Model | Method | MaliciousInstruct ASR | HADES ASR |
-|---|---|---|---|
+|--------------|------|-----------------------|-----------|
 | Claude-Sonnet-4 | PGD | 1.0 | 3.0 |
 | | FORCE | **2.0** (+100%) | **5.0** (+66.7%) |
 | GPT-5 | PGD | 1.0 | 1.0 |
@@ -138,59 +111,65 @@ Both components are integrated into the standard PGD pipeline: spectral rescalin
 ### Ablation Study (Idefics3, MaliciousInstruct)
 
 | Layer Reg | Spectral Rescaling | ASR | Query ↓ |
-|---|---|---|---|
+|-----------|-------------------|-----|---------|
 | ✗ | ✗ | 53.0 | 50.7 |
 | ✓ | ✗ | 55.0 (+3.8%) | 48.5 (+4.7%) |
 | ✗ | ✓ | 59.0 (+11.3%) | 44.0 (+15.2%) |
 | ✓ | ✓ | **64.0** (+20.6%) | **39.6** (+28.1%) |
 
-The two components exhibit synergistic effects, with their combined performance exceeding the sum of individual contributions.
+The two components exhibit a synergistic effect, with combined results exceeding the sum of individual parts.
 
 ### Computational Overhead
 
 | Method | Time (s/iter) | Memory (GB) |
-|---|---|---|
+|------|--------------|----------|
 | PGD | 2.17 | 32.64 |
 | FORCE | 2.73 (+26%) | 36.48 (+12%) |
 
-The additional overhead is minimal, as the regularization terms leverage intermediate variables from the standard forward pass, and multi-sample computation can be parallelized.
+Additional overhead is minimal as the regularization term utilizes intermediate variables from standard forward passes, and multi-sampling can be parallelized.
 
 ## Highlights & Insights
 
-- **In-depth and compelling analysis**: The root cause of poor transferability is progressively revealed across three dimensions — loss landscape geometry, layer-wise feature space, and spectral domain — forming a complete analytical chain.
-- **Method design closely tied to analysis**: Each component directly corresponds to a specific diagnostic finding (narrow feasible region in shallow layers → layer-aware regularization; excessive high-frequency dependence → spectral rescaling), with no unmotivated components.
-- **Elegant decaying regularization design**: Stronger regularization in shallow layers and weaker in deep layers, consistent with the diagnosis that the problem is concentrated in shallow layers, implemented via a concise quadratic decay formula.
-- **Broad evaluation coverage**: Three architecture types (adapter-based, early-fusion, commercial) × three datasets × multiple settings (multi-query / zero-shot / blank initialization).
+-   **Deep and Persuasive Analysis**: Progresses through loss landscape geometry → layer space → spectral domain to reveal the root causes of poor transferability. The logic chain from analysis to method is complete.
+-   **Design Closely Tied to Analysis**: Each component directly addresses an analytical finding (narrow feasible region in shallow layers → layer-aware reg; high-frequency over-reliance → spectral rescaling), avoiding unmotivated components.
+-   **Elegant Gradually Decreasing Regularization**: Strong regularization in shallow layers and weak in deep layers aligns with the "problem concentrated in shallow layers" diagnosis, implemented via a concise quadratic decay formula.
+-   **Comprehensive Evaluation**: Covers three architecture types (adapter-based, early-fusion, commercial) × three datasets × various settings (multi-query / zero-shot / blank init).
 
 ## Limitations & Future Work
 
-- Absolute ASR on early-fusion MLLMs and commercial models remains low (e.g., only 2–3% on GPT-5); while relative gains are substantial, the gap to practical red-teaming utility persists.
-- Validation is limited to LLaVA-v1.5-7B and InstructBLIP as source models, offering limited source model diversity.
-- Sensitivity analysis of hyperparameters — specifically the number of frequency bands $M=10$ and the rescaling factor $\beta=0.95$ in spectral rescaling — is insufficient.
-- The method assumes white-box gradient access to the source MLLM and is not applicable to purely black-box settings.
-- Robustness against image preprocessing defenses (e.g., JPEG compression, image resizing) is not explored — only random noise is tested.
-- Early-fusion MLLMs use tokenized image representations; perturbations in pixel space cover only a subset of vulnerabilities in token space, representing a fundamental methodological limitation.
+-   Absolute ASR for early-fusion MLLMs and commercial models remains very low (e.g., only 2-3% for GPT-5); while relative improvements are significant, they are still far from practical for real-world red-teaming.
+-   Only verified on two source models (LLaVA-v1.5-7B and InstructBLIP), showing limited source model diversity.
+-   Insufficient sensitivity analysis for hyperparameters such as the number of frequency bands $M=10$ and scaling factor $\beta=0.95$ in spectral rescaling.
+-   The method assumes white-box gradient optimization on the source MLLM is possible, making it inapplicable to pure black-box scenarios.
+-   Does not explore robustness against image preprocessing defenses (e.g., JPEG compression, resizing), only testing random noise.
+-   Early-fusion MLLMs use tokenized image representations; perturbations in the pixel space cover only a subset of vulnerabilities in the token space, which is an inherent methodological limitation.
 
 ## Related Work & Insights
 
 | Dimension | Standard PGD | Ensemble Opt | MI-FGSM/DI-FGSM | FORCE |
-|---|---|---|---|---|
-| Strategy | Direct gradient optimization | Multi-model joint optimization | Momentum / input diversity | Feature reliance correction |
-| Requires multiple models | ✗ | ✓ | ✗ | ✗ |
-| Theoretical basis | None | None | Classification transferability | Loss landscape analysis |
-| Idefics3 ASR | 53.0 | 60.0 | 62–66 | **64.0** |
-| Qwen2.5-VL ASR | 5.0 | 4.0 | 3–9 | **11.0** |
+|------|-------------|--------------|-----------------|-------|
+| Strategy | Direct Gradient Opt | Multi-model Joint Opt | Momentum/Input Diversity | Feature Reliance Correction |
+| Requires Multi-models | ✗ | ✓ | ✗ | ✗ |
+| Theoretical Basis | None | None | Classification Transferability | Loss Landscape Analysis |
+| Idefics3 ASR | 53.0 | 60.0 | 62-66 | **64.0** |
+| Qwen2.5-VL ASR | 5.0 | 4.0 | 3-9 | **11.0** |
 
-FORCE requires no additional models and achieves transferability comparable to or better than ensemble-based methods by correcting feature dependencies on a single source model alone. Compared to transferability-enhancement methods developed for the classification domain, FORCE is specifically designed for the characteristics of jailbreak attacks and yields superior results.
+FORCE achieves transferability comparable to or better than ensemble methods using only a single source model by correcting feature reliance. Compared to transferability enhancement methods in classification, FORCE is specifically designed for jailbreak attacks and performs better.
 
-The relationship between loss landscape flatness and transferability has been studied in the classification adversarial attack literature (e.g., SAM); this paper is among the first to bring this perspective to visual jailbreaking, revealing a consistent underlying nature of the problem. The finding that shallow layers exhibit over-reliance on model-specific features resonates with the feature visualization and probing literature — inter-model differences in shallow-layer representations are greater than in deep layers. The spectral rescaling approach (suppressing high-frequency shortcuts during optimization) is generalizable to other adversarial robustness research. Although the method is framed as an attack, it also offers guidance for defense — strengthening cross-model consistency of shallow-layer features may improve the robustness of safety alignment. This work belongs to the AI safety red-teaming direction, exposing security vulnerabilities in the visual modality of MLLMs and offering direct value to the community's security evaluation practices.
+## Related Work & Insights
+
+-   The relationship between loss landscape flatness and transferability has been studied in classification adversarial attacks (e.g., SAM). This work is the first to introduce this perspective to visual jailbreaking, revealing similarity in the problem's essence.
+-   The finding that "shallow layers rely on model-specific features" resonates with feature visualization and probing literature—shallow representations across different models differ more than deep ones.
+-   The idea of spectral rescaling (suppressing high-frequency shortcuts during optimization) can be extended to other adversarial robustness research.
+-   While starting from an attack perspective, the method also informs defense—strengthening the cross-model consistency of shallow features may improve the robustness of safety alignment.
+-   This work belongs to the AI safety red-teaming direction, exposing safety vulnerabilities in MLLM visual modalities and providing direct value to the community's safety assessment practices.
 
 ## Rating
 
-- **Novelty**: 8/10 — Among the first to analyze visual jailbreak transferability through the lens of loss landscapes and feature reliance; both the analytical depth and method design are innovative.
-- **Experimental Thoroughness**: 8/10 — Covers multiple architectures, datasets, and settings with clear ablations; source model diversity and hyperparameter sensitivity analysis could be further strengthened.
-- **Writing Quality**: 9/10 — The logical chain from analysis to motivation to method is exceptionally clear, with intuitive figures and strong readability.
-- **Value**: 7/10 — Identifies an important problem and provides effective mitigation, but the low absolute attack success rates limit practical red-teaming utility.
+-   Novelty: 8/10 — First analysis of visual jailbreak transferability from loss landscape and feature reliance perspectives; both depth of analysis and method design are innovative.
+-   Experimental Thoroughness: 8/10 — Covers multiple architectures, datasets, and settings with clear ablations; however, source model diversity and hyperparameter analysis could be expanded.
+-   Writing Quality: 9/10 — The logic chain from analysis → motivation → method is extremely clear, with intuitive illustrations and high readability.
+-   Value: 7/10 — Identifies an important problem and provides effective mitigation, but absolute attack success rates remain low, limiting practical red-teaming application value.
 
 <!-- RELATED:START -->
 
@@ -199,10 +178,10 @@ The relationship between loss landscape flatness and transferability has been st
 ## Related Papers
 
 - [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](../../ACL2026/llm_safety/jailbreaking_large_language_models_with_morality_attacks.md)
-- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
+- [\[ICML 2025\] X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP](../../ICML2025/llm_safety/x-transfer_attacks_towards_super_transferable_adversarial_attacks_on_clip.md)
 - [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
+- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
 - [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](../../ICLR2026/llm_safety/model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
-- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
 
 </div>
 

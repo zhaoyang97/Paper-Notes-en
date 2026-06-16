@@ -2,76 +2,88 @@
 title: >-
   [Paper Note] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective
 description: >-
-  [ICML 2026][LLM Efficiency][KV cache eviction] The authors formalize the empirical question of "which KV cache entries are critical" as an optimization problem of minimizing attention output perturbation. They derive an…
+  [ICML 2026][LLM Efficiency][KV cache eviction] The authors reformulate the empirical problem of "which KV cache entries are critical" as an optimization problem of "minimizing attention output perturbation." They derive an analytical upper bound for the perturbation (involving both attention weights and value norms projected by $W^O$) and design a plug-and-play two
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "KV cache eviction"
-  - "output perturbation upper bound"
-  - "long-sequence inference"
-  - "attention weights"
-  - "projected value norm"
+  - ICML 2026
+  - LLM Efficiency
+  - KV cache eviction
 date: 2026-05-08
-content_hash: c14b3b9c2a0d8b4b
+content_hash: 5361a6da42dba54d
 ---
-
 # CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective
 
 **Conference**: ICML 2026  
 **arXiv**: [2502.03805](https://arxiv.org/abs/2502.03805)  
 **Code**: https://github.com/FFY0/DefensiveKV (Available)  
 **Area**: LLM Efficiency / KV Cache Compression / Model Inference Optimization  
-**Keywords**: KV cache eviction, output perturbation upper bound, long-sequence inference, attention weights, projected value norm  
+**Keywords**: KV cache eviction, output perturbation bound, long-sequence inference, attention weights, projected value norm  
 
 ## TL;DR
-The authors formalize the empirical question of "which KV cache entries are critical" as an optimization problem of minimizing attention output perturbation. They derive an analytical upper bound for perturbation (incorporating both attention weights and value norms projected via $W^O$) and design a plug-and-play two-stage greedy selection algorithm. This approach reduces the average compression loss of three SOTA methods—SnapKV, AdaKV, and HeadKV—by more than half across 29 long-context datasets.
+The authors reformulate the empirical problem of "which KV cache entries are critical" as an optimization problem of "minimizing attention output perturbation." They derive an analytical upper bound for the perturbation (involving both attention weights and value norms projected by $W^O$) and design a plug-and-play two-stage greedy selection algorithm. This approach reduces the compression loss of three SOTA eviction methods (SnapKV/AdaKV/HeadKV) by more than half on average across 29 long-context datasets.
 
 ## Background & Motivation
 
-**Background**: As context length grows, the KV cache of Transformer self-attention expands linearly, becoming a memory and I/O bottleneck for long-sequence inference. The mainstream mitigation strategy is KV cache eviction: selecting and retaining $b$ "critical" KV entries under a fixed budget $b$ while discarding the rest. H2O and Scissorhands observed power-law distributions in attention weights; SnapKV introduced "observation windows + max pooling" to accumulate weights stably; and AdaKV/HeadKV dynamically allocate budgets across different heads.
+**Background**: As context length increases, the KV cache of Transformer self-attention expands linearly, becoming a bottleneck for memory and I/O in long-sequence inference. The mainstream mitigation is KV cache eviction: selecting the $b$ most "critical" KV entries under a fixed budget $b$ and discarding the rest. H2O and Scissorhands observed power-law distributions in attention weights; SnapKV further introduced "observation windows + max pooling" to stably accumulate weights, while AdaKV/HeadKV dynamically allocate budgets across different heads.
 
-**Limitations of Prior Work**: All these methods essentially assume that "entries with high attention weights are critical." However, the definition of "critical" has never been formally established, relying instead on empirical observations like the power-law distribution. This leaves two questions unanswered: What is the selection criterion? Are attention weights sufficient?
+**Limitations of Prior Work**: All these methods essentially assume that "entries with high attention weights are critical," but the definition of "critical" has never been formally established, relying instead on empirical observations like the power-law. This leads to ambiguity: what is the selection criterion, and are attention weights alone sufficient?
 
-**Key Challenge**: Starting from the most fundamental goal—minimizing the perturbation of the attention output after eviction—the authors discovered that this perturbation is not determined solely by attention weights. From the structure of the output $o = AVW^O$, the impact of discarded entries on the final output depends simultaneously on the attention weight $A_i$ and the norm of the value projected by $W^O$, i.e., $\lVert (VW^O)_i \rVert$. Relying only on weights ignores half of the signal.
+**Key Challenge**: Starting from the most basic objective—minimizing the perturbation of the attention output after eviction—the authors found that this perturbation is not determined solely by attention weights. From the structure of the output $o = AVW^O$, the impact of discarded entries on the final output depends simultaneously on the attention weight $A_i$ and the norm of the value projected onto $W^O$, $\lVert (VW^O)_i \rVert$. Considering only weights ignores half of the signal.
 
-**Goal**: Formulate "critical entry identification" as an optimization problem minimizing output perturbation, derive a computable upper bound for this problem, and provide a selection algorithm that can be integrated into existing eviction pipelines without additional computational overhead.
+**Goal**: Formally define "critical entry identification" as an optimization problem to minimize output perturbation, derive a computable upper bound for this problem, and provide a selection algorithm that adds no extra computational overhead and fits into existing eviction pipelines.
 
-**Key Insight**: In the field of pruning, Wanda successfully guided weight pruning using a similar logic of "discarding what causes the least impact on output." This paper is the first to transfer the "perturbation analysis → selection metric" paradigm to the KV cache.
+**Key Insight**: Wanda in the pruning field has successfully used a similar "minimal impact on output" approach to guide weight pruning; this work is the first to transfer the "perturbation analysis $\rightarrow$ selection metric" paradigm to the KV cache.
 
-**Core Idea**: Select critical entries by minimizing the worst-case upper bound of output perturbation, using the product of "attention weight × projected value norm" as a new importance metric to replace pure attention weight scoring.
+**Core Idea**: Select critical entries by minimizing the worst-case upper bound of output perturbation, using "attention weight $\times$ projected value norm" as a new importance metric to replace pure attention weight scoring.
 
 ## Method
 
 ### Overall Architecture
-The output of single-head self-attention is denoted as $o = AVW^O$, where $A = \mathrm{softmax}(qK^\top/\sqrt{d})$. Given a cache budget $b$, the goal is to select $b$ KV entries from $n$ total entries to form $\langle \hat K, \hat V \rangle$, such that the $L_1$ distance between the approximated output $\hat o$ and the original output $o$, $\mathcal{L} = \lVert o - \hat o \rVert_1$, is minimized. The authors encode "which entries to discard" into a multiplicative mask $\mathcal{N} \in \{0,1\}^n$, derive an analytical perturbation upper bound $\theta$ for $\mathcal{N}$, and use a two-stage greedy algorithm to minimize $\theta$ within each head. This selection process directly replaces the "Top-K by weight" step in existing SnapKV/AdaKV/HeadKV pipelines.
+The output of single-head self-attention is $o = AVW^O$ (where $A = \mathrm{softmax}(qK^\top/\sqrt{d})$). CriticalKV reformulates the selection of $b$ entries from $n$ KV entries under budget $b$ as an optimization problem: minimizing the $L_1$ distance $\mathcal{L} = \lVert o - \hat o \rVert_1$ between the approximate output $\hat o$ and the original output $o$. It encodes the discarded entries as a multiplicative mask $\mathcal{N} \in \{0,1\}^n$, derives an analytical perturbation upper bound $\theta$ with respect to $\mathcal{\mathcal{N}}$, uses two-stage greedy selection within each head to minimize $\theta$, and finally treats this selection logic as a drop-in replacement for the "Top-K by weight" step in SnapKV/AdaKV/HeadKV pipelines.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["n KV entries + query<br/>Attention output o = A·V·W^O"] --> B["Rewrite as Optimization Problem<br/>Minimize output perturbation L = ‖o − ô‖₁"]
+    B --> C["Output Perturbation Upper Bound θ<br/>Expanded via triangle inequality, containing weight A<br/>and projected value norm ‖(V·W^O)‖₁"]
+    C --> TS
+    subgraph TS["Two-Stage Greedy Selection (Minimize θ)"]
+        direction TB
+        D["Stage 1: Top-b′ by Weight A<br/>Ensure cumulative weight σ > 0.5 to keep coefficient 2−1/σ non-negative"]
+        E["Stage 2: Top-b″ by Composite Score for remaining entries<br/>(A+ε)·‖(V·W^O)‖₁"]
+        D --> E
+    end
+    TS --> F["As General Plugin<br/>Replace weight-based selection in<br/>SnapKV/AdaKV/HeadKV pipelines"]
+    F --> G["Retain b Critical KV Entries"]
+```
 
 ### Key Designs
 
-1.  **Analytical Upper Bound $\theta$ of Output Perturbation**:
-    - **Function**: Translates "how far $\hat o$ is from $o$" into a scalar that depends only on $\mathcal{N}$, attention weights $A$, and projected value norms $\lVert \bm{\mathcal{V}}_{i,:} \rVert_1$, bypassing the difficulty of directly optimizing the norm of matrix differences.
-    - **Mechanism**: First proves that the remaining softmax entries undergo renormalization as $A' = (\mathcal{N} \odot A) / \sum_i \mathcal{N}_i A_i$. Then, using the triangle inequality, it derives $\mathcal{L} \leq \theta = C - (2 - 1/\sum_i \mathcal{N}_i A_i)\sum_i \mathcal{N}_i A_i \lVert \bm{\mathcal{V}}_{i,:} \rVert_1$, where $\bm{\mathcal{V}} = V W^O$ and $C$ is a constant independent of $\mathcal{N}$.
-    - **Design Motivation**: This bound simultaneously includes "attention weight + value norm projected by $W^O$" in the metric for the first time, theoretically demonstrating that $A_i$ alone is insufficient; $\lVert (VW^O)_i \rVert_1$ must be included to reflect the true output impact.
+**1. Analytical Upper Bound $\theta$ of Output Perturbation: Translating "what to drop" into a scalar for optimization**
 
-2.  **Two-Stage Greedy Selection Algorithm**:
-    - **Function**: Approximates the minimization of $\theta$ without exponential search while ensuring the second stage of optimization is valid.
-    - **Mechanism**: Splits the budget into $b' = \alpha b$ and $b'' = (1-\alpha) b$. Stage 1 selects Top-$b'$ entries based on pure attention weights $A$ (typically $\alpha=0.5$) to ensure the cumulative weight of selected entries $\sigma > 0.5$. Stage 2 selects the remaining Top-$b''$ entries using a composite score $\mathcal{A}_i = (A_i + \epsilon) \cdot \lVert \bm{\mathcal{V}}_{i,:} \rVert_1$. The two stages combined directly minimize the second-stage upper bound $\hat\theta$.
-    - **Design Motivation**: Stage 1 ensures that the cumulative weight exceeds half, so $1/\sigma < 2$, keeping the coefficients in the upper bound non-negative and the greedy direction valid. Stage 2 then allows "weight × projected norm" to serve as a unified score. The fixed value $\alpha=0.5$ satisfies the assumption in over 99% of heads and avoids the deployment complexity of hyperparameter searching.
+Directly optimizing $\mathcal{L} = \lVert o - \hat o \rVert_1$ is difficult because it is the norm of the difference between two matrix products. The authors first noted that after dropping some entries, softmax requires re-normalization, and the remaining weights become $A' = (\mathcal{N} \odot A) / \sum_i \mathcal{N}_i A_i$. By applying the triangle inequality, $\mathcal{L}$ is bounded by a closed-form upper bound $\theta$ that depends only on the mask $\mathcal{N}$, attention weights $A$, and projected value norms $\lVert \bm{\mathcal{V}}_{i,:} \rVert_1$:
 
-3.  **Integration as a General Plugin for Existing Eviction Pipelines**:
-    - **Function**: Replaces the original "Top-K based on cumulative attention weight" in SnapKV, AdaKV, and HeadKV with the two-stage selection described above, while keeping other components (observation window, max pooling, cross-head budget allocation) unchanged.
-    - **Mechanism**: The authors abstract SnapKV, AdaKV, and HeadKV into a unified template of "budget allocation + observation window weight accumulation + selection" (Algorithm 2 in the paper). The new method only modifies the "selection" step.
-    - **Design Motivation**: This ensures: (1) strict orthogonality to works like AdaKV and HeadKV which focus on "inter-head budget allocation," allowing for additive gains; (2) negligible overhead, as it only requires calculating the already existing $\lVert VW^O \rVert$; (3) drop-in replacement during inference without retraining or offline profiling.
+$$\mathcal{L} \leq \theta = C - \Big(2 - \frac{1}{\sum_i \mathcal{N}_i A_i}\Big)\sum_i \mathcal{N}_i A_i \lVert \bm{\mathcal{V}}_{i,:} \rVert_1,$$
+
+where $\bm{\mathcal{V}} = V W^O$ and $C$ is a constant independent of $\mathcal{N}$. This bound is critical because it simultaneously incorporates "attention weight" and "value norm after output projection $W^O$" into a single metric for the first time—theoretically showing that $A_i$ alone is insufficient and must be multiplied by $\lVert (VW^O)_i \rVert_1$ to reflect the true impact of an entry's removal on the final output.
+
+**2. Two-Stage Greedy Selection: Securing weight majority then scoring by "Weight $\times$ Projected Norm"**
+
+Solving for $\theta$ via global combinatorial search is exponential, so the authors use a greedy approximation across two stages. The budget is split into $b' = \alpha b$ and $b'' = (1-\alpha)b$ (typically $\alpha = 0.5$): In Stage 1, entries are selected by pure attention weight $A$ to reach Top-$b'$. The purpose is to ensure the cumulative weight of the selected set $\sigma = \sum_{\text{selected}} A_i > 0.5$. In Stage 2, the remaining entries are selected by the composite score $\mathcal{A}_i = (A_i + \epsilon)\cdot \lVert \bm{\mathcal{V}}_{i,:} \rVert_1$ to reach Top-$b''$. Stage 1 is necessary because the coefficient $2 - 1/\sigma$ in the upper bound remains non-negative only when $\sigma > 0.5$, ensuring that greedy selection in Stage 2 truly reduces $\theta$. The fixed value $\alpha = 0.5$ satisfies $\sigma > 0.5$ for over 99% of heads, avoiding the need for per-model hyperparameter tuning.
+
+**3. Integration as a General Plugin: Replacing only the "Selection" line**
+
+The authors abstract SnapKV, AdaKV, and HeadKV into a unified template of "budget allocation + observation window weight accumulation + selection." CriticalKV only replaces the "Top-K by cumulative weight" selection logic, while budget allocation and weight accumulation remain unchanged. This design provides three benefits: it is strictly orthogonal to works like AdaKV/HeadKV that focus on inter-head budget allocation (allowing for additive gains); the extra computation involves only taking the norm of rows in $VW^O$, which is negligible; and it is plug-and-play for inference without re-training or offline profiling.
 
 ### Loss & Training
-The method occurs entirely during inference and requires no training or fine-tuning of the model. The only additional runtime computation is the $L_1$ norm of each row in $\bm{\mathcal{V}} = V W^O$. The hyperparameter $\alpha$ is fixed at 0.5.
+The method occurs entirely at inference time with no training or fine-tuning required. The only additional runtime computation is the $L_1$ norm of the rows of $\bm{\mathcal{V}} = V W^O$. The hyperparameter $\alpha$ is fixed at 0.5.
 
 ## Key Experimental Results
 
 ### Main Results
-On 29 datasets from Ruler (13 tasks) and LongBench (16 tasks), integrated testing was performed with SnapKV, AdaKV, and HeadKV using Llama-3.1-8B, Mistral-7B, and Qwen2.5-32B at a fixed 40% cache budget. The following table shows representative Ruler average scores (Full Cache baseline is 100%, arrows indicate drop relative to Full Cache):
+Testing was integrated with SnapKV, AdaKV, and HeadKV across 29 datasets in Ruler (13 tasks) and LongBench (16 tasks), covering LLMs like Llama-3.1-8B, Mistral-7B, and Qwen2.5-32B, with a fixed 40% cache budget. The representative Ruler average scores (where Full Cache is 100%) are shown below (arrows indicate performance drop relative to Full Cache):
 
-| Model | Method | Ruler Avg ↑ | Drop relative to Full Cache ↓ |
-| :--- | :--- | :--- | :--- |
+| Model | Method | Ruler Avg ↑ | Drop vs Full Cache ↓ |
+|------|------|------|------|
 | Llama-3.1-8B | Full Cache | 91.05 | 0% |
 | Llama-3.1-8B | SnapKV | 67.93 | 25.4% |
 | Llama-3.1-8B | SnapKV + Ours | **76.89** | **15.6%** |
@@ -82,40 +94,40 @@ On 29 datasets from Ruler (13 tasks) and LongBench (16 tasks), integrated testin
 | Mistral-7B | AdaKV | 34.88 | 55.4% |
 | Mistral-7B | AdaKV + Ours | **69.17** | **11.6%** |
 
-Three Findings: (1) After integration, the performance drop is generally reduced by more than half; HeadKV + Ours reduces Llama's loss to 1.9%, nearly matching Full Cache. (2) Models like Mistral, which were previously crushed by SnapKV/AdaKV (55%+ drop), benefit most significantly, with AdaKV integration pulling the score from 34.88 back to 69.17. (3) Gains become more pronounced as the base method strengthens, indicating the perturbation perspective is truly orthogonal to the budget allocation perspective.
+Three findings: (1) Integrating this method generally halves the performance drop, with HeadKV + Ours reducing the loss on Llama to 1.9%, nearly approaching Full Cache. (2) Models like Mistral, which previously collapsed with SnapKV/AdaKV (55%+ drop), benefit most, with AdaKV+Ours pulling the score from 34.88 back to 69.17. (3) Gains become more pronounced as the base method becomes stronger, indicating that the perturbation perspective is truly orthogonal to budget allocation.
 
 ### Ablation Study
 
 | Configuration | Key Observation | Description |
-| :--- | :--- | :--- |
-| Attention Weight Only (Orig. SnapKV) | Baseline drop | Verifies that $A_i$ alone is insufficient in Stage 2. |
-| Stage 1 $\alpha=0.5$ + Stage 2 Weight × Norm | Consistently optimal | Complete two-stage method. |
-| Varying $\alpha \in \{0.25, 0.5, 0.75\}$ | Stable performance | Insensitive to $\alpha$ (Appendix C.1). |
-| Head-level Perturbation Stats | Over 92% of Llama heads show reduced perturbation | Consistent with theory. |
-| Layer-level Perturbation Accumulation | Hidden state perturbation in final layer significantly reduced | Advantages compound across layers. |
-| Different Cache Budgets | Consistent wins across all budgets | Benefits deployments under varying VRAM constraints. |
-| $L_2$ Distance instead of $L_1$ | Similar gains | Framework is robust to distance metrics (Appendix C.3). |
+|------|---------|------|
+| Attention weight only (Original SnapKV) | Baseline drop | Confirms using only $A_i$ is insufficient in Stage 2. |
+| Stage 1 $\alpha=0.5$ + Stage 2 Weight $\times$ Norm | Consistently Optimal | Full two-stage approach. |
+| Varying $\alpha \in \{0.25, 0.5, 0.75\}$ | Stable performance | Low sensitivity to $\alpha$ (Appendix C.1). |
+| Head-level perturbation statistics | Perturbation reduction in >92% of Llama heads | Aligns with theory. |
+| Layer-level perturbation accumulation | Significant reduction in final layer hidden state perturbation | Advantages accumulate across layers. |
+| Different cache budgets | Consistent superiority across budgets | Benefits actual deployment under various memory constraints. |
+| $L_2$ distance replacing $L_1$ | Similar gains | Robustness of the framework to distance metrics (Appendix C.3). |
 
 ### Key Findings
-- The composite score $A_i \cdot \lVert (VW^O)_i \rVert_1$ in Stage 2 is the core driver of performance gains, confirming that the "projected value norm" is a critical signal missed by existing methods.
+- The composite score $A_i \cdot \lVert (VW^O)_i \rVert_1$ in Stage 2 is the core driver of performance, confirming that "projected value norm" is a critical signal missed by existing methods.
 - The assumption $\sigma > 0.5$ is a very loose condition, satisfied by over 99% of heads in practical LLMs.
-- Improvements are quantifiable at both head and layer levels: 92% of heads show reduced perturbation, and final hidden state perturbation continues to decrease, indicating the method truly optimizes the theoretical objective rather than overfitting the dataset.
+- Improvements are quantifiable at both head and layer levels: 92% of heads show reduced perturbation, and final hidden state perturbation continues to decline, proving the method truly targets perturbation reduction rather than overfitting to datasets.
 
 ## Highlights & Insights
-- **KV Eviction from First Principles**: Elevates "entry criticality" from empirical power-law observations to an optimization objective of "minimizing output perturbation," providing a new theoretical starting point for the cache eviction roadmap.
-- **The Overlooked $W^O$ Projection**: While prior methods used $K$ and $V$ for scoring, this paper points out that the norm of the value after the output projection $W^O$ is what truly determines output impact. This insight can transfer to assigning bit widths for different tokens during quantization or pre-screening entries during the prefill phase.
-- **Orthogonal Plugin Stance**: By abstracting a three-stage template of "budget allocation + weight accumulation + selection," the new method only modifies the "selection" phase. This allows it to naturally stack with allocation-focused methods like AdaKV/HeadKV, proving that compression loss stems primarily from selection strategy rather than allocation strategy.
+- **First-principles rewriting of KV eviction**: Elevates the question of "which entries are critical" from empirical power-law observations to an optimization problem of "minimizing output perturbation," providing a new theoretical starting point for the cache eviction roadmap.
+- **The overlooked $W^O$ projection**: While all previous methods use $K$ and $V$ directly for scoring, this work points out that the norm of values after the output projection $W^O$ is what truly determines output impact. This insight can be migrated to quantization (allocating bit-widths for different tokens) or entry pre-screening during the prefill stage.
+- **Orthogonal Plugin nature**: By abstracting a three-stage template (allocation + accumulation + selection), the new method only modifies the selection part. This makes it naturally compatible with methods like AdaKV/HeadKV that focus on allocation, proving that compression loss stems primarily from selection strategy rather than allocation strategy.
 
 ## Limitations & Future Work
-- The upper bound $\theta$ is derived and optimized per head; inter-head coupling (e.g., perturbation in one head being compensated by another) is not part of the objective, leaving theoretical room for further tightening.
-- A fixed $\alpha = 0.5$ is used for Stage 1. The authors acknowledge that adapting $\alpha$ by model, budget, or head might yield better results, but the search cost is high.
-- Experiments are concentrated on English long-context models ≥ 7B; whether the perturbation assumptions hold for smaller models, multilingual contexts, or vision-language long contexts remains to be verified.
-- The method assumes the decoder sees the full KV at once. Solutions for "re-selection when new entries are added dynamically" in purely streaming or chunked prefill scenarios have not yet been provided.
+- The upper bound $\theta$ is derived and optimized per head; inter-head coupling (e.g., perturbation in one head being compensated by another) is not part of the objective, leaving room for a tighter bound.
+- Stage 1 uses a fixed $\alpha = 0.5$; the authors acknowledge that adaptive $\alpha$ per model/budget/head might yield better results, but the search cost is high and left for future work.
+- Current experiments focus on English long-context models $\geq$ 7B; whether the perturbation assumptions hold for smaller models, multilingual contexts, or vision-language long contexts remains to be verified.
+- The method assumes the full KV is visible during decoding; the strategy for "re-selection when new entries are added dynamically" in pure streaming or chunked prefill scenarios is not yet provided.
 
 ## Related Work & Insights
-- **vs SnapKV/AdaKV/HeadKV**: These only optimize "allocation + weight accumulation," while selection remains pure Top-K(A). This paper uses the same observation window weights to produce superior selection, yielding 5–40 point improvements when integrated.
-- **vs H2O / Scissorhands**: H2O uses cumulative attention weights to select heavy-hitters empirically. This work is the first to provide a formal definition (output perturbation minimization) and an optimizable upper bound for "critical entries."
-- **vs Wanda (Weight Pruning)**: Shared philosophy—"discard what causes the least impact on output." This paper transfers this perturbation metric from static weight pruning to dynamic KV cache selection and introduces the projected value norm as a new metric.
+- **vs SnapKV/AdaKV/HeadKV**: Each optimizes "allocation + weight accumulation," while selection remains pure Top-K(A). This work uses the same observation window weights for superior selection, yielding 5–40 point improvements when integrated.
+- **vs H2O / Scissorhands**: H2O uses cumulative attention weights to select heavy-hitters empirically; this work is the first to provide a formal definition (output perturbation minimization) and derive an optimizable upper bound for "critical entries."
+- **vs Wanda weight pruning**: Shares the philosophy of "minimizing impact on output." This work moves this metric from static weight pruning to dynamic KV cache selection and introduces projected value norms as a new metric.
 
 <!-- RELATED:START -->
 
@@ -126,8 +138,8 @@ Three Findings: (1) After integration, the performance drop is generally reduced
 - [\[AAAI 2026\] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction](../../AAAI2026/llm_efficiency/judge_q_trainable_queries_for_optimized_information_retention_in_kv_cache_evicti.md)
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICLR 2026\] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective](../../ICLR2026/llm_efficiency/randomization_boosts_kv_caching_learning_balances_query_load_a_joint_perspective.md)
-- [\[ICML 2026\] Do Transformers Need Three Projections? A Systematic Study of QKV Sharing Schemes](do_transformers_need_three_projections_systematic_study_of_qkv_variants.md)
-- [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
+- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ACL 2025\] KV-Latent: Dimensional-level KV Cache Reduction with Frequency-aware Rotary Positional Embedding](../../ACL2025/llm_efficiency/kv_latent_cache_reduction.md)
 
 </div>
 

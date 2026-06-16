@@ -2,70 +2,85 @@
 title: >-
   [Paper Note] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Spatial logical reasoning] This paper proposes SpatiaLQA, a benchmark comprising 9,605 QA pairs across 241 real-world indoor scenes…
+  [CVPR 2026][Multimodal VLM][Paper Note] The SpatiaLQA benchmark is proposed (9,605 QA pairs, 241 real indoor scenes) to systematically evaluate 41 VLMs on spatial logical reasoning. A Recursive Scene Graph-Aided Reasoning (RSGAR) method is designed to enhance the spatial logical reasoning capabilities of VLMs.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Spatial logical reasoning"
-  - "VLM benchmark"
-  - "scene graph"
-  - "indoor scene understanding"
-  - "multi-step reasoning"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: b21a64b7435cdada
+content_hash: 272e3c12b26e4fa8
 ---
-
 # SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 
 **Conference**: CVPR 2026  
 **arXiv**: [2602.20901](https://arxiv.org/abs/2602.20901)  
 **Code**: [https://github.com/xieyc99/SpatiaLQA](https://github.com/xieyc99/SpatiaLQA)  
 **Area**: Multimodal VLM  
-**Keywords**: Spatial logical reasoning, VLM benchmark, scene graph, indoor scene understanding, multi-step reasoning
+**Keywords**: Spatial Logical Reasoning, VLM Benchmark, Scene Graph, Indoor Scene Understanding, Multi-step Reasoning
 
 ## TL;DR
-This paper proposes SpatiaLQA, a benchmark comprising 9,605 QA pairs across 241 real-world indoor scenes, systematically evaluates 41 VLMs on spatial logical reasoning, and introduces a recursive scene graph-assisted reasoning method to enhance VLMs' spatial logical reasoning capabilities.
+The SpatiaLQA benchmark is proposed (9,605 QA pairs, 241 real indoor scenes) to systematically evaluate 41 VLMs on spatial logical reasoning. A Recursive Scene Graph-Aided Reasoning (RSGAR) method is designed to enhance the spatial logical reasoning capabilities of VLMs.
 
 ## Background & Motivation
-**Background**: VLMs have achieved strong performance on general VQA and logical reasoning tasks, yet remain inadequate in complex real-world scenarios that require the integration of spatial understanding and multi-step logical reasoning.
+**Background**: VLMs have achieved impressive results in general VQA and logical reasoning tasks. However, they still struggle with complex real-world scenarios that require a combination of spatial understanding and multi-step logical reasoning.
 
-**Limitations of Prior Work**: Existing benchmarks focus either on spatial understanding (e.g., SpatialRGPT-Bench) or logical reasoning (e.g., MathVista) in isolation, lacking an evaluation framework that integrates both. Furthermore, EQA tasks target action execution rather than purely visual-semantic reasoning.
+**Limitations of Prior Work**: Existing benchmarks either focus on spatial understanding (e.g., SpatialRGPT-Bench) or logical reasoning (e.g., MathVista), lacking an evaluation system that integrates both. Meanwhile, EQA tasks focus on action execution rather than pure vision-semantic reasoning.
 
-**Key Challenge**: Spatial logical reasoning demands that a model simultaneously possess precise spatial perception and rigorous multi-step causal reasoning; the fusion of these two capabilities has not been systematically studied in existing VLMs.
+**Key Challenge**: Spatial logical reasoning requires models to simultaneously possess precise spatial perception and rigorous multi-step causal reasoning. The fusion of these two capabilities has not been systematically studied in existing VLMs.
 
-**Goal**: (a) Construct a comprehensive spatial logical reasoning benchmark; (b) systematically evaluate existing VLMs on this task; (c) propose improvement methods.
+**Goal**: (a) Construct a comprehensive spatial logical reasoning benchmark; (b) Systematically evaluate the performance of existing VLMs on this task; (c) Propose improvement methods.
 
-**Key Insight**: Decompose complex scenes into task-relevant scene graphs, enabling VLMs to focus on the spatial context surrounding target objects.
+**Key Insight**: Decompose complex scenes into task-related scene graphs, allowing the VLM to focus on the spatial environment surrounding the target objects.
 
-**Core Idea**: A recursive scene graph construction method progressively decomposes complex indoor scenes into task-relevant spatial relation graphs, thereby enhancing VLMs' multi-step spatial reasoning capabilities.
+**Core Idea**: Use a recursive scene graph construction method to progressively decompose complex indoor scenes into task-related spatial relationship graphs, enhancing the multi-step spatial reasoning capabilities of VLMs.
 
 ## Method
 
 ### Overall Architecture
-Given an indoor scene image and a question requiring multi-step spatial reasoning, the method produces a sequence of logically coherent operation steps. The pipeline consists of three stages: (1) obtaining depth maps and segmentation maps via visual foundation models; (2) recursively constructing a scene graph centered on the target object; (3) feeding the scene graph together with the question into a VLM to generate the final answer.
+This paper addresses the question: when a VLM needs to both "accurately perceive" spatial layouts and "clearly reason" through multi-step causality, where does it fall short, and how can it be improved? To this end, it establishes a benchmark named SpatiaLQA to quantify this "spatial logical reasoning" capability and proposes an inference-time enhancement method to address the weaknesses exposed by the evaluation.
+
+The pipeline operates as follows: given an indoor scene image and a question requiring multi-step spatial reasoning, the system first extracts depth maps and segmentation maps as geometric cues using vision foundation models. It then recursively builds a scene graph using target objects in the question as anchors. Finally, this graph, along with the original question, is fed into the VLM to produce a sequence of logically coherent operation steps as the answer. The benchmark handles "question generation and scoring," while the method focuses on "helping the VLM solve the questions correctly."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph CONSTRUCT["SpatiaLQA Benchmark Construction"]
+        direction TB
+        A["Human Annotation of 2401 Seed Pairs"] --> B["Subgraph Extraction<br/>2251 Pairs along Dependency Chains"]
+        B --> C["Graph Expansion<br/>4953 Pairs along Dependency Edges"]
+    end
+    CONSTRUCT --> DATA["9605 QA Pairs / 241 Scenes<br/>Step Annotations with Preconditions"]
+    DATA --> EVAL
+    subgraph EVAL["Step-level Evaluation Metrics"]
+        direction TB
+        K["GPT-4o Semantic Matching<br/>Generate Matching Matrix"] --> L["Hungarian Algorithm<br/>Optimal One-to-One Alignment"]
+        L --> M["Calculate F_c (Content) / F_p (Precondition)"]
+    end
+    EVAL -->|VLM multi-step reasoning is weak, especially in preconditions| RSGAR
+    subgraph RSGAR["Recursive Scene Graph-Aided Reasoning (RSGAR)"]
+        direction TB
+        H["Depth Anything V2 + SAM<br/>Extract Depth + Seg Maps"] --> I["Target as Source Object<br/>VLM Constructs Local Scene Graph"]
+        I -->|Target becomes new source, iterate T rounds| I
+        I --> J["Scene Graph + Original Question<br/>→ VLM Outputs Step-wise Answer"]
+    end
+    J -.Prediction re-evaluated by metrics.-> EVAL
+```
 
 ### Key Designs
 
-1. **SpatiaLQA Benchmark Construction**:
+**1. SpatiaLQA Benchmark: Scaling Human Annotations via Logical Dependency Relations**
 
-    - **Function**: Constructs 9,605 QA pairs derived from 241 real-world indoor scenes.
-    - **Mechanism**: Three-stage data collection — 2,401 pairs annotated manually, 2,251 pairs obtained via subgraph extraction augmentation, and 4,953 pairs generated via graph expansion augmentation.
-    - **Design Motivation**: Directly constructing large-scale spatial logical reasoning data is prohibitively costly; subgraph extraction based on logical dependencies and graph expansion enable efficient augmentation.
+The cost of manual annotation for spatial logical reasoning QA is extremely high. Since the core of such problems is the logical dependency between steps, the authors use "dependencies" as a lever for augmentation. Data collection progresses in three stages: first, 2,401 seed pairs are manually annotated; then, subgraph extraction is used to cut self-consistent sub-reasoning chains from existing annotations to obtain 2,251 pairs; finally, graph expansion adds new nodes along dependency edges to generate 4,953 pairs, totaling 9,605 QA pairs across 241 real indoor scenes. Both subgraph extraction and graph expansion follow logical dependency structures, ensuring the augmented questions remain self-consistent in their step-wise relationships.
 
-2. **Evaluation Metric Design**:
+**2. Step-level Evaluation Metrics: Semantic Matching and Optimal Alignment for Open-ended Answers**
 
-    - **Function**: Step-level matching based on GPT-4o and the Hungarian algorithm.
-    - **Mechanism**: GPT-4o first generates a matching matrix between predicted steps and annotated steps; the Hungarian algorithm then determines the optimal one-to-one assignment; precision and recall are finally computed for both content and preconditions.
-    - **Design Motivation**: Open-ended multi-step answers cannot be evaluated with conventional accuracy metrics, necessitating step-level semantic matching.
+The answer to a spatial logical reasoning task is a sequence of open-ended operation steps where wording and order may vary, making traditional overall accuracy ineffective. The authors split scoring into two steps: first, GPT-4o generates a semantic matching matrix between predicted and annotated steps to determine which steps describe the same action; then, the Hungarian algorithm finds the optimal one-to-one matching on this matrix to avoid multiple hits on a single ground-truth step. After alignment, precision and recall are calculated for "step content" and "step preconditions," resulting in Content F1 ($F_c$) and Precondition F1 ($F_p$). Evaluating preconditions separately specifically tests whether the model understands dependencies between steps rather than just matching actions.
 
-3. **Recursive Scene Graph-Assisted Reasoning (RSGAR)**:
+**3. Recursive Scene Graph-Aided Reasoning (RSGAR): Decomposing Complex Scenes into Focused Local Subgraphs**
 
-    - **Function**: Leverages Depth Anything V2 and SAM to obtain depth and segmentation information, then recursively constructs a scene graph centered on the target object.
-    - **Mechanism**: The task-specified object serves as the initial source node; the VLM identifies objects in direct contact with it along with their spatial relations, forming scene graph nodes and edges; the process iterates until a maximum number of iterations is reached.
-    - **Design Motivation**: Directly processing complex scenes often causes VLMs to overlook critical spatial relations; progressive decomposition directs the model's attention to local spatial contexts.
+Feeding an entire complex scene to a VLM often leads to missing key spatial relationships. RSGAR allows the model to expand outward step-by-step along the spatial structure, similar to a Chain-of-Thought approach. It utilizes Depth Anything V2 and SAM for depth and segmentation information, starting with the object specified in the question as the initial source object. The VLM identifies target objects in direct contact with the current source and their spatial relationships, recording them as nodes and edges in a scene graph. The newly added objects then become source objects for the next round of expansion, continuing until a maximum number of iterations is reached. In each round, the model only focuses on a small sub-problem: the "local spatial neighborhood of the current object." For example, if a question is anchored on a "cup on the table," the first round might expand to "cup-on-table" and "table-against-wall," and the second round extends from the table to adjacent chairs and the floor. Experiments show that as the number of iterations $T$ increases, the scene graph covers more spatial information and $F_c$/$F_p$ scores improve (default $T=5$). The gains from RSGAR are most prominent in complex samples with many steps, validating that "step-wise decomposition" is more effective than processing the whole scene at once.
 
 ### Loss & Training
-RSGAR is an inference-time method that requires no additional training, augmenting reasoning directly using pretrained VLMs and visual foundation models.
+RSGAR is a pure inference-time method that requires no additional training. It leverages pre-trained VLMs and vision foundation models (Depth Anything V2, SAM) to enhance reasoning.
 
 ## Key Experimental Results
 
@@ -82,40 +97,40 @@ RSGAR is an inference-time method that requires no additional training, augmenti
 
 ### Ablation Study
 
-| Configuration | $F_c$ | $F_p$ | Note |
+| Configuration | $F_c$ | $F_p$ | Description |
 |------|-------|-------|------|
-| GPT-4o (baseline) | 52.5 | 19.2 | No scene graph assistance |
-| + Depth map | 53.8 | 20.1 | Depth information only |
-| + Segmentation map | 54.2 | 20.5 | Segmentation information only |
+| GPT-4o (baseline) | 52.5 | 19.2 | No scene graph aid |
+| + Depth Map | 53.8 | 20.1 | Depth info only |
+| + Seg Map | 54.2 | 20.5 | Segmentation info only |
 | + RSGAR (1 round) | 55.1 | 21.3 | Single-round scene graph |
-| + RSGAR (3 rounds) | 56.8 | 22.4 | 3 recursive rounds, best performance |
+| + RSGAR (3 rounds) | 56.8 | 22.4 | 3-round recursion, best performance |
 
 ### Key Findings
-- Even the strongest model, GPT-4o, achieves only approximately $F_c = 52.5\%$ on spatial logical reasoning, a substantial gap from the human score of 97.6%.
-- All VLMs perform considerably worse on precondition reasoning $F_p$, indicating that understanding inter-step dependencies is the core challenge.
-- Model performance degrades sharply as the number of answer steps increases, confirming that multi-step reasoning is the primary bottleneck.
-- RSGAR yields consistent improvements across multiple VLMs, validating the effectiveness of scene graph decomposition.
+- Even the strongest model, GPT-4o, achieves an $F_c$ of only ~52.5% on spatial logical reasoning, showing a huge gap compared to the human performance of 97.6%.
+- All VLMs perform significantly worse on precondition reasoning $F_p$, indicating that understanding dependencies between steps is a core challenge.
+- As the number of steps in the answer increases, model performance drops sharply, identifying multi-step reasoning as a bottleneck.
+- The RSGAR method provides consistent improvements across multiple VLMs, validating the effectiveness of scene graph decomposition.
 
 ## Highlights & Insights
-- **Evaluation Framework Design**: Combining GPT-4o for semantic matching with the Hungarian algorithm for optimal alignment elegantly addresses the challenge of evaluating open-ended multi-step responses. This two-stage evaluation paradigm is transferable to other multi-step reasoning tasks.
-- **Recursive Scene Graph Decomposition**: Transforming end-to-end complex spatial reasoning into progressively focused sub-problem solving is analogous to a spatial counterpart of chain-of-thought reasoning, and cleverly exploits the complementary strengths of visual foundation models.
-- **Data Augmentation Strategy**: Subgraph extraction and graph expansion efficiently generate large volumes of training data from limited annotations while preserving logical consistency.
+- **Ingenious Evaluation System**: Using GPT-4o for semantic matching combined with the Hungarian algorithm for optimal alignment solves the evaluation problem for open-ended multi-step answers. This two-stage paradigm is transferable to other multi-step reasoning tasks.
+- **Recursive Scene Graph Decomposition**: Converts end-to-end complex spatial reasoning into step-by-step focused sub-problem solving, functioning as a spatial version of Chain-of-Thought while utilizing complementary capabilities of vision foundation models.
+- **Data Augmentation Strategy**: Subgraph extraction and graph expansion efficiently generate large-scale training data from limited annotations while maintaining logical consistency.
 
 ## Limitations & Future Work
-- The benchmark covers only indoor scenes; complex outdoor environments (e.g., traffic scenarios, construction sites) are not addressed.
-- RSGAR depends on external visual models (SAM, Depth Anything), introducing additional computational overhead and error propagation.
-- The maximum number of iterations in scene graph construction is fixed, lacking an adaptive termination mechanism.
-- Incorporating spatial logical reasoning capabilities into VLM training has not been explored; the proposed method enhances reasoning only at inference time.
+- The benchmark only covers indoor scenes; complex outdoor scenarios (e.g., traffic, construction sites) are not included.
+- RSGAR relies on external vision models (SAM, Depth Anything), introducing additional computational overhead and potential error propagation.
+- The maximum number of iterations for the scene graph is fixed, lacking an adaptive termination mechanism.
+- The study does not explore how to inject spatial logical reasoning capabilities into VLM training, focusing only on inference-time enhancement.
 
 ## Related Work & Insights
-- **vs. SpatialRGPT-Bench**: SpatialRGPT focuses solely on spatial understanding without involving multi-step logical reasoning; SpatiaLQA extends this by incorporating step-level dependency relations.
-- **vs. EmbodiedBench**: EmbodiedBench targets embodied execution with a predefined action primitive output space; SpatiaLQA focuses on open-vocabulary reasoning processes.
+- **vs SpatialRGPT-Bench**: SpatialRGPT focuses solely on spatial understanding without multi-step logical reasoning; SpatiaLQA adds step-wise dependencies.
+- **vs EmbodiedBench**: EmbodiedBench focuses on embodied execution with a pre-defined action primitive output space; SpatiaLQA focuses on the reasoning process with an open vocabulary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Proposes a new task definition and large-scale benchmark, filling the gap in spatial logical reasoning evaluation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluates 41 VLMs covering mainstream models with comprehensive analysis.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured, though some descriptions are verbose.
-- Value: ⭐⭐⭐⭐ The benchmark resource is of significant value to the community; the proposed method has considerable room for improvement.
+- Novelty: ⭐⭐⭐⭐ Proposes a new task definition and a large-scale benchmark, filling a gap in spatial logical reasoning evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluates 41 VLMs across mainstream models with comprehensive analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, though some descriptions are slightly verbose.
+- Value: ⭐⭐⭐⭐ The benchmark resources are of high value to the community; the method leaves significant room for further improvement.
 
 <!-- RELATED:START -->
 
@@ -123,11 +138,11 @@ RSGAR is an inference-time method that requires no additional training, augmenti
 
 ## Related Papers
 
+- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
 - [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/multimodal_vlm/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
-- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
-- [\[CVPR 2026\] Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models](beyond_static_artifacts_a_forensic_benchmark_for_video_deepfake_reasoning_in_vis.md)
-- [\[CVPR 2026\] Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models](beyond_recognition_evaluating_visual_perspective_taking_in_vision_language_model.md)
+- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
+- [\[CVPR 2026\] Keep it SymPL: Symbolic Projective Layout for Allocentric Spatial Reasoning in Vision-Language Models](keep_it_sympl_symbolic_projective_layout_for_allocentric_spatial_reasoning_in_vi.md)
 
 </div>
 

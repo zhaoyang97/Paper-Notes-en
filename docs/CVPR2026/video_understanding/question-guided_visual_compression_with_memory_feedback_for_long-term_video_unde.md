@@ -2,95 +2,96 @@
 title: >-
   [Paper Note] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 description: >-
-  [CVPR2026][Video Understanding][long video understanding] This paper proposes QViC-MF, a framework that achieves state-of-the-art performance on MLVU, LVBench…
+  [CVPR 2026][Video Understanding][Paper Note] The QViC-MF framework is proposed, which achieves SOTA on multiple benchmarks including MLVU, LVBench, and VNBench using minimal visual tokens (16 per frame) through question-guided multi-frame visual compression (QMSA) and a context memory feedback mechanism.
 tags:
-  - "CVPR2026"
-  - "Video Understanding"
-  - "long video understanding"
-  - "visual compression"
-  - "memory feedback"
-  - "question-guided attention"
-  - "large multimodal models"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 0d5f9b973a1868bd
+content_hash: b6abeb7465873059
 ---
-
 # Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.15167](https://arxiv.org/abs/2603.15167)  
 **Code**: [FujitsuResearch/QViC-MF](https://github.com/FujitsuResearch/QViC-MF)  
-**Area**: Video Understanding
-**Keywords**: long video understanding, visual compression, memory feedback, question-guided attention, large multimodal models
+**Area**: Video Understanding  
+**Keywords**: Long-term video understanding, visual compression, memory feedback, question-guided attention, large multimodal models
 
 ## TL;DR
 
-This paper proposes QViC-MF, a framework that achieves state-of-the-art performance on MLVU, LVBench, and VNBench through question-guided multi-frame visual compression (QMSA) and a contextual memory feedback mechanism, using as few as 16 visual tokens per frame.
+The QViC-MF framework is proposed, which achieves SOTA on multiple benchmarks including MLVU, LVBench, and VNBench using minimal visual tokens (16 per frame) through question-guided multi-frame visual compression (QMSA) and a context memory feedback mechanism.
 
 ## Background & Motivation
 
-**Pressing need for long video understanding**: Real-world applications such as surveillance analysis and industrial process monitoring require models to comprehend videos spanning tens of minutes to several hours, yet the limited context windows of LMMs make processing full-length videos infeasible.
+**Requirement for Long Video Understanding**: Real-world applications such as surveillance analysis and industrial process monitoring require models to understand videos spanning tens of minutes to hours. However, the limited context window of LMMs makes it difficult to process complete long videos.
 
-**Limitations of Prior Work**: Transformer-based visual compressors and memory-augmented methods typically compress each frame independently, failing to capture cross-frame temporal dependencies and underperforming on tasks that require holistic event understanding, such as temporal ordering.
+**Limitations of Prior Work using Independent Frame Compression**: Transformer-based visual compressors and memory-enhanced methods typically compress each frame independently, failing to capture cross-frame temporal dependencies. This leads to poor performance in scenarios requiring understanding of complete events, such as temporal ordering tasks.
 
-**Unidirectional perception-to-memory pipeline**: Conventional frameworks compress visual information, store it in memory, and then perform inference sequentially; memory never feeds back to the perception stage, making the loss of question-relevant information irrecoverable.
+**Limitations of Unidirectional Perception $\to$ Memory Pipeline**: Traditional frameworks follow a pipeline where visual information is compressed, stored in memory, and then used for inference. Memory does not provide feedback to the perception layer. Once task-relevant information is missed during compression, it cannot be recovered.
 
-**Memory capacity constraints**: Fixed-capacity memory banks with suboptimal update strategies tend to discard visually critical frames related to the query, degrading final inference quality.
+**Memory Capacity Issues and Keyframe Loss**: Fixed-capacity memory under improper update strategies may lose visual details relevant to the question, affecting final inference quality.
 
-**Compression hallucination**: In naive self-attention designs, textual token information leaks into context embeddings, causing compressed representations to contain semantics absent from the visual input.
+**Compression Hallucination**: In naive self-attention designs, text token information leaks into context embeddings, causing compressed representations to include semantic content not present in the visual input.
 
-**Question-insensitive attention**: When visual and textual tokens are jointly fed into a self-attention module, context tokens cannot adaptively attend to question-relevant visual regions.
+**Question-Insensitive Attention**: When visual and text tokens are jointly fed into self-attention modules, context tokens struggle to adaptively focus on different visual regions based on the specific question.
 
 ## Method
 
-### Overall Architecture (QViC-MF)
+### Overall Architecture
 
-QViC-MF processes long videos in a clip-wise streaming fashion:
+QViC-MF addresses the challenge of fitting long videos into the LMM context window by moving beyond the unidirectional "compression $\to$ storage $\to$ inference" pipeline to a closed-loop system where memory informs perception. Videos are processed as a stream of clips. Each clip is represented by minimal tokens, and a memory feedback mechanism retrieves historical frames relevant to the question to assist the compressor for the current clip.
 
-1. **Visual Encoder**: Concatenates the current clip ($K$ frames) with $K_r$ frames recalled from the context memory, extracts visual features via SigLIP So400m/14-384px, and projects them through an MLP projector to obtain visual embeddings $\mathcal{E}_{v,n} \in \mathbb{R}^{K_v \times P \times D_e}$.
-2. **Visual Compressor**: A Transformer encoder centered on QMSA that compresses $P$ patch tokens per frame into $C$ context tokens ($C \ll P$); its input is the concatenation of visual embeddings, question embeddings, and learnable context seed embeddings.
-3. **Context Memory**: Stores the context embeddings, relevance scores, and global frame indices for each frame, with capacity $L$; entries with the lowest relevance scores are pruned when the buffer overflows.
-4. **Memory Feedback**: Retrieves the $K_r$ frames with the highest relevance scores from the current memory as recall frames for the next clip, forming a memory-to-perception feedback loop.
-5. **Decoder**: A Qwen2-7B LLM that generates answers by concatenating all context embeddings stored in memory with the text prompt.
+The process involves five steps: ① The **Visual Encoder** concatenates the current clip ($K$ frames) with $K_r$ frames recalled from memory, extracts features via SigLIP So400m/14-384px, and projects them into visual embeddings $\mathcal{E}_{v,n} \in \mathbb{R}^{K_v \times P \times D_e}$ via an MLP; ② The **Visual Compressor** (a Transformer encoder core with QMSA) compresses $P$ patch tokens per frame into $C$ context tokens ($C \ll P$), taking concatenated visual, question, and learnable context seed embeddings as input; ③ **Context Memory** stores context embeddings for each frame along with relevance scores and global frame indices. If capacity $L$ is exceeded, entries with the lowest relevance scores are pruned; ④ **Memory Feedback** selects the $K_r$ frames with the highest relevance scores to be recalled for the next clip; ⑤ The **Decoder** (Qwen2-7B) concatenates all context embeddings from memory with the text prompt to generate the answer. Steps ②, ④, and ③ correspond to the key designs: QMSA, memory feedback loop, and relevance scoring.
 
-### Key Designs: QMSA (Question-guided Multimodal Selective Attention)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Current clip K frames<br/>+ Recalled Kr frames"] --> ENC["Visual Encoder<br/>SigLIP + MLP Projection"]
+    ENC --> QMSA["QMSA Visual Compressor<br/>Logits + Mask / Block / Guide matrices<br/>P patches → C context tokens per frame"]
+    QMSA --> MEM["Context Memory (Capacity L)<br/>Stores context embeddings + relevance scores + indices<br/>Prunes low-score entries if over capacity"]
+    MEM -->|"Memory Feedback Loop: Recall highest relevance Kr frames"| ENC
+    MEM --> DEC["Decoder Qwen2-7B<br/>Concatenate context embeddings + prompt<br/>Generate Answer"]
+```
 
-QMSA applies three operator matrices $\mathbf{M}, \mathbf{B}, \mathbf{G}$ to the self-attention logits:
+### Key Designs
+
+**1. Memory Feedback Loop: Enabling historical memory to inform current frame compression**
+
+Traditional frameworks compress and store information without feedback to the perception layer. QViC-MF connects memory back to perception: after processing each clip, the most relevant $K_r$ frames are retrieved and encoded alongside the next clip. This ensures the current compression is aware of question-relevant clues found in history. Ablation studies show this is the largest source of gain—adding memory without feedback dropped MLVU from 48.8 to 42.4, while adding feedback increased it to 52.2.
+
+**2. QMSA: Addressing frame-level compression, hallucination, and question adaptation via logit manipulation**
+
+Naive self-attention mixing visual and text tokens causes blended cross-frame information, semantic leakage ("compression hallucination"), and non-adaptive focus. QMSA adds three operational matrices to the attention logits:
 
 $$\text{QMSA}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{QK}^\top}{\sqrt{D_e}} + \mathbf{M} + \mathbf{B} + \mathbf{G}\right)\mathbf{V}$$
 
-- **Masking ($\mathbf{M}$)**: Extends the causal mask across multiple frames to allow cross-frame temporal context, while restricting each frame's context tokens to attend only to visual/context tokens within the same frame, enabling frame-level compression.
-- **Blocking ($\mathbf{B}$)**: Blocks the attention pathway from context tokens to text tokens, preventing textual semantics from leaking into the visual compressed representations (addressing compression hallucination).
-- **Guiding ($\mathbf{G}$)**: Broadcasts the mean of text-to-visual attention logits as a guidance bias for context-to-visual attention, enabling the compression process to adaptively focus on question-relevant visual regions.
+Where **Masking ($\mathbf{M}$)** extends causal masks to multiple frames, allowing cross-frame context while ensuring each frame's context tokens only attend to its own patches, achieving frame-level compression; **Blocking ($\mathbf{B}$)** severs the "context token $\to$ text token" attention path to prevent text semantics from leaking into visual representations; **Guiding ($\mathbf{G}$)** averages "text $\to$ visual" attention logits and broadcasts them as a bias for "context $\to$ visual" attention, making compression adaptively focus on question-relevant regions. Blocking provided the highest single contribution (+4.9 MLVU), while Guiding significantly aided sparse event localization in VNBench Long (+2.0).
 
-### Relevance Scores and Memory Update
+**3. Relevance Score: Determining memory retention and recall**
 
-The relevance score $r_{n,i}$ is computed as the mean over the Top-$K_h$ heads of text-to-visual attention weights from intermediate compressor layers ($L_1$ to $L_2$), and is used for memory pruning and recall ranking.
+Relevance score $r_{n,i}$ is calculated as the mean of the Top-$K_h$ heads of the "text $\to$ visual" attention weights from intermediate layers ($L_1$ to $L_2$). It is used for memory pruning and feedback ranking with almost zero extra computational overhead.
 
 ### Loss & Training
 
-- Only the context seed embeddings and the visual compressor are trained; the base model is frozen.
-- The compressor is fine-tuned with LoRA on LLaVA-Video-7B-Qwen2.
-- Training data: 83K samples randomly drawn from LLaVA-Video-178K (domain-balanced, approximately 5%).
-- Training hardware: 8×H200 GPUs.
+Only the context seed embeddings and the visual compressor are trained, while the base models remain frozen. The compressor is fine-tuned using LoRA on LLaVA-Video-7B-Qwen2. Training uses 83K samples randomly sampled from LLaVA-Video-178K (maintaining domain balance) on 8×H200 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | LLM | Token/frame | MLVU test | LVBench | VideoMME Long | VNBench Long |
-|--------|-----|-------------|-----------|---------|---------------|--------------|
+| Method | LLM | Token/Frame | MLVU test | LVBench | VideoMME Long | VNBench Long |
+|------|-----|----------|-----------|---------|---------------|-------------|
 | LLaVA-Video | Qwen2-7B | 169 | 53.3 | 41.8 | — | 40.4 |
 | Flash-VStream | Qwen2-7B | 128 | — | 42.0 | 50.3 | — |
 | Video-XL | Qwen2-7B | 16 | 45.5 | — | — | — |
 | **QViC-MF (2fps)** | **Qwen2-7B** | **16** | **59.4** | **50.2** | **54.0** | **58.7** |
 
-Using only 16 tokens per frame, QViC-MF surpasses the previous state of the art by 6.1% on MLVU test, 8.2% on LVBench, 18.3% on VNBench Long, and 3.7% on VideoMME Long.
+Using only 16 tokens per frame, QViC-MF outperforms the Prev. SOTA by 6.1% on MLVU test, 8.2% on LVBench, 18.3% on VNBench Long, and 3.7% on VideoMME Long.
 
 ### Ablation Study
 
-| Configuration | MLVU test | VNBench Long |
-|---------------|-----------|--------------|
+| Setting | MLVU test | VNBench Long |
+|------|-----------|-------------|
 | Vanilla Compressor (64 frames) | 48.8 | 39.3 |
 | + Context Memory | 42.4 | 40.9 |
 | + Memory Feedback | 52.2 | 55.1 |
@@ -100,51 +101,52 @@ Using only 16 tokens per frame, QViC-MF surpasses the previous state of the art 
 
 ### Key Findings
 
-- **Memory feedback is the primary source of gain**: Adding memory alone (without feedback) actually degrades MLVU performance (48.8→42.4), whereas introducing feedback yields a substantial improvement to 52.2.
-- **QMSA components are incrementally effective**: Blocking contributes most on MLVU (+4.9), while Guiding contributes substantially on VNBench Long (+2.0).
-- **Extreme compression preserves high accuracy**: Even when compressed to a single token per frame, QMSA retains over 80% of the original accuracy on MLVU, far outperforming single-frame compression and average pooling baselines.
-- **MLVU sub-task analysis**: Gains are particularly pronounced on temporal reasoning tasks such as Ego Reasoning (71.7), Action Order (61.4), and Sports QA (58.3).
+- **Memory feedback is the core driver of performance**: Simply adding memory (without feedback) decreased MLVU performance (48.8 $\to$ 42.4), while adding feedback significantly boosted it to 52.2.
+- **QMSA components are synergistic**: Blocking provided the largest gain (+4.9 MLVU), while Guiding was particularly effective for VNBench Long (+2.0).
+- **High precision under extreme compression**: Even when compressed to 1 token per frame, QMSA retains 80%+ of the original accuracy on MLVU, significantly outperforming independent compression and pooling baselines.
+- **Task-specific gains**: Gains are most prominent in temporal reasoning tasks such as Ego Reasoning (71.7), Action Order (61.4), and Sports QA (58.3).
 
 ## Highlights & Insights
 
-- **Feedback-driven closed-loop perception–memory architecture**: By breaking the conventional unidirectional pipeline and allowing historical context stored in memory to inform the compression of current frames, QViC-MF represents an important paradigm shift in long video understanding framework design.
-- **Elegant QMSA design**: The three-matrix Mask/Block/Guide mechanism simultaneously addresses frame-level compression, compression hallucination, and question-adaptive attention in a unified and concise formulation.
-- **Exceptional token efficiency**: At 16 tokens per frame—far fewer than LLaVA-Video (169) or Flash-VStream (128)—the method achieves a superior balance between efficiency and accuracy.
-- **Substantial lead on VNBench (NIAH tasks)**: Outperforming LLaVA-Video by 18.3% on the Long subset demonstrates the effectiveness of the memory feedback mechanism in localizing sparse critical events.
+- **Feedback-driven perception-memory loop**: Breaks the traditional unidirectional pipeline, allowing historical context to inform visual compression. This represents a significant paradigm shift in long video understanding.
+- **Sophisticated QMSA design**: Simultaneously addresses frame-level compression, compression hallucination, and question adaptation through three unified matrix operations.
+- **Exceptional token efficiency**: Achieving state-of-the-art results with 16 tokens/frame, which is far lower than LLaVA-Video (169) and Flash-VStream (128), providing an excellent balance between efficiency and accuracy.
+- **SOTA performance on VNBench (NIAH targets)**: Leading by 18.3% on the Long subset proves the feedback mechanism is highly effective for locating sparse key events.
 
 ## Limitations & Future Work
 
-- Validation is limited to 7B-scale models; it remains unexplored whether larger LLMs (e.g., 13B/70B) would benefit further.
-- The streaming architecture relies on fixed clip sizes and a fixed number of recall frames, lacking an adaptive sampling strategy.
-- The sensitivity of hyperparameters such as memory capacity $L=256$ and recall frame count $K_r=32$ to different video lengths and types is not thoroughly discussed.
-- Training on only 83K samples leaves the generalization to larger data scales or more diverse tasks unverified.
-- Evaluation is restricted to multiple-choice question answering; more complex video understanding forms such as open-ended generation or grounding are not explored.
+- Validated only on 7B models; the benefit for larger LLMs (13B/70B) remains unexplored.
+- The streaming architecture relies on fixed clip sizes and recall counts, lacking adaptive sampling strategies.
+- Sensitivity to hyperparameters like memory capacity $L=256$ and recall frames $K_r=32$ for different video lengths is not fully discussed.
+- Training limited to 83K samples; generalization to larger or more diverse datasets requires further verification.
+- Evaluation focused on MCQ tasks; does not yet address open-ended generation or grounding.
 
 ## Related Work & Insights
 
-- **Memory-augmented LMMs**: MA-LMM, MovieChat, and Flash-VStream all adopt unidirectional memory strategies; QViC-MF is the first to introduce memory-to-perception feedback.
-- **Visual compression**: LLaMA-VID and LLaVA-Mini compress each frame independently; Video-XL compresses long videos with summary tokens but without question guidance.
-- **Question-aware encoding**: InstructBLIP's Q-Former, IQViC, and related methods explore question-guided compression for images or short videos, but all operate on single frames without cross-frame temporal modeling.
-- **Frame selection**: Methods such as Frame-Voyager reduce redundancy through keyframe selection, complementing QViC-MF's compression-based approach.
+- **Memory-augmented LMMs**: MA-LMM, MovieChat, and Flash-VStream use unidirectional memory strategies; QViC-MF introduces the memory-to-perception feedback loop.
+- **Visual Compression**: LLaMA-VID and LLaVA-Mini use independent frame compression; Video-XL uses summary tokens for long videos but lacks question-guidance.
+- **Question-aware Encoding**: Q-Former (InstructBLIP) and IQViC explore question-guided compression for images/short videos but lack cross-frame temporal modeling.
+- **Frame Selection**: Complementary strategies like Frame-Voyager reduce redundancy through keyframe selection.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The closed-loop design with memory feedback driving perception constitutes a new paradigm in the field; the triple-matrix manipulation in QMSA offers a novel perspective on visual compression.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive evaluation across four benchmarks, layer-wise ablation validating each component, with rich compression ratio comparisons and qualitative analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Problem formulation is clear, figures are intuitive (especially the visual diagnosis of compression hallucination), and technical descriptions are rigorous.
-- Value: ⭐⭐⭐⭐ — Achieves significant improvements across multiple long video benchmarks; the efficient 16-token-per-frame design is highly relevant to practical deployment.
+- Novelty: ⭐⭐⭐⭐ — The feedback loop is a new paradigm for long-video perception; QMSA offers a clever approach to attention manipulation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Extensive evaluation across four benchmarks with detailed ablation and case studies.
+- Writing Quality: ⭐⭐⭐⭐ — Clear problem definition, intuitive visualizations (notably regarding compression hallucination), and rigorous technical descriptions.
+- Value: ⭐⭐⭐⭐ — Significant performance leaps at high efficiency (16 tokens/frame) are highly relevant for practical deployment.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[CVPR 2026\] VSI: Visual-Subtitle Integration for Keyframe Selection to Enhance Long Video Understanding](vsi_visual-subtitle_integration_for_keyframe_selection_to_enhance_long_video_un.md)
+- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
-- [\[CVPR 2026\] VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking](videoseek_long-horizon_video_agent_with_tool-guided_seeking.md)
 
 </div>
 

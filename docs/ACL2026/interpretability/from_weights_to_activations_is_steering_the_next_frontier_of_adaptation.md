@@ -2,118 +2,104 @@
 title: >-
   [Paper Note] From Weights to Activations: Is Steering the Next Frontier of Adaptation?
 description: >-
-  [ACL 2026][Interpretability][Activation space intervention] This paper systematically argues that steering (inference-time activation space intervention) should be regarded as an independent model adaptation paradigm. It…
+  [ACL 2026][Interpretability][steering] This paper systematically argues that steering (inference-time activation space intervention) should be regarded as an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering with traditional methods such as fine-tuning, PEFT, and prompt engineering, positioning steer
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Activation space intervention"
-  - "Model adaptation taxonomy"
-  - "steering"
-  - "parameter-efficient"
-  - "inference-time behavior modification"
+  - ACL 2026
+  - Interpretability
+  - steering
 date: 2026-05-08
-content_hash: 61c45c8b9912d1dd
+content_hash: 2a47199c28d32514
 ---
-
 # From Weights to Activations: Is Steering the Next Frontier of Adaptation?
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.14090](https://arxiv.org/abs/2604.14090)  
 **Code**: None  
 **Area**: Model Compression  
-**Keywords**: Activation space intervention, Model adaptation taxonomy, steering, parameter-efficient, inference-time behavior modification
+**Keywords**: Activation space intervention, Model adaptation taxonomy, steering, parameter-efficiency, inference-time behavior modification
 
 ## TL;DR
 
-This paper systematically argues that steering (inference-time activation space intervention) should be regarded as an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering with traditional methods such as fine-tuning, PEFT, and prompt engineering, positioning steering as a local reversible behavior modification method based on activation space with unique advantages in computational efficiency, data efficiency, and reversibility.
+This paper systematically argues that steering (inference-time activation space intervention) should be regarded as an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering with traditional methods such as fine-tuning, PEFT, and prompt engineering, positioning steering as a locally reversible behavior modification method based on activation space, characterized by unique advantages in computational efficiency, data efficiency, and reversibility.
 
 ## Background & Motivation
 
-**Background**: Post-training adaptation methods for LLMs are diverse, including full-parameter fine-tuning, RLHF, adapters, LoRA, soft prompting, and ICL. Simultaneously, steering methods emerging from interpretability research modify internal activations during inference to change model behavior (e.g., tone, factuality, safety) and have demonstrated effectiveness across multiple tasks.
+**Background**: Post-training adaptation methods for LLMs are diverse, encompassing full-parameter fine-tuning, RLHF, adapters, LoRA, soft prompts, and ICL. Simultaneously, steering methods emerging from interpretability research change model behavior (such as tone, factuality, and safety) by modifying internal activations during inference, demonstrating effectiveness across multiple tasks.
 
-**Limitations of Prior Work**: (1) Although steering is increasingly used empirically, it is rarely analyzed within the same conceptual framework as traditional adaptation methods—it is often viewed as an interpretability tool rather than an adaptation method; (2) existing work primarily compares different steering methods with each other or with prompt baselines, lacking a systematic comparison with classical methods like fine-tuning and PEFT; (3) as model scales increase, even PEFT requires training pipelines and hyperparameter tuning, leading to a growing demand for fast and flexible behavior modification.
+**Limitations of Prior Work**: (1) Although steering is increasingly used empirically, it is rarely analyzed within the same conceptual framework as traditional adaptation methods; it is typically viewed as an interpretability tool rather than an adaptation method. (2) Existing work primarily compares different steering methods with each other or against prompting baselines, lacking a systematic comparison with classical methods like fine-tuning and PEFT. (3) As model scales increase, even PEFT requires training pipelines and hyperparameter tuning, leading to a growing demand for fast and flexible behavior modification.
 
-**Key Challenge**: Steering has functionally achieved model adaptation (changing behavior to meet new requirements), but it has not been conceptually integrated into a unified framework of adaptation methods—this leads to unclear advantages, limitations, and usage scenarios.
+**Key Challenge**: Steering functionally achieves model adaptation (changing behavior to meet new requirements), but it has not been conceptually integrated into the unified framework of adaptation methods. This leads to unclear advantages and limitations, and ill-defined usage scenarios.
 
-**Goal**: To establish a unified functional evaluation framework that places steering in the same coordinate system as traditional adaptation methods, clarifying its position as an independent adaptation paradigm.
+**Goal**: To establish a unified functional evaluation framework that places steering on the same coordinate system as traditional adaptation methods, clarifying its positioning as an independent adaptation paradigm.
 
-**Key Insight**: Propose eight functional criteria (reliability, generalization, specificity, computational efficiency, data efficiency, composability, usability, and reversibility) to compare various adaptation methods from a functional dimension rather than technical details.
+**Key Insight**: The paper proposes eight functional criteria (reliability, generalization, specificity, computational efficiency, data efficiency, composability, usability, and reversibility) to compare various adaptation methods from functional dimensions rather than technical details.
 
-**Core Idea**: Steering is the third adaptation paradigm—fine-tuning modifies the weight landscape, prompting changes the input trajectory, and steering intervenes in internal activations to deflect the trajectory—the three constitute a complete taxonomy of adaptation methods.
+**Core Idea**: Steering represents a third adaptation paradigm—where fine-tuning modifies the weight landscape and prompting changes the input trajectory, steering intervenes in internal activations to deflect the trajectory. Together, these three constitute a complete taxonomy of adaptation methods.
 
 ## Method
 
 ### Overall Architecture
 
-The paper defines three major categories of steering methods: (1) **Difference-based methods**—calculating the difference between activation vectors with/without target attributes as the steering vector (e.g., Representation Engineering, CAA); (2) **Optimization-based methods**—finding semantic directions through linear probes or classifier training (e.g., Probing + Intervention); (3) **Dictionary-based methods**—using Sparse Autoencoders (SAE) to decompose activations into interpretable feature directions, selectively enhancing or suppressing specific features.
+This paper does not propose a new model but rather constructs an analytical framework to incorporate steering into the model adaptation landscape. It first categorizes adaptation methods into three coordinate systems based on their "Mechanism": fine-tuning changes the behavioral landscape defined by weights (training-time, permanent); prompting changes the activation trajectory induced by inputs (inference-time, external); and steering directly deflects the internal activation trajectory (inference-time, internal, reversible). It further subdivides steering into three paradigms: differential, optimization, and dictionary. Finally, it uses eight functional criteria to perform a horizontal evaluation of all methods in a unified table. The logical conclusion is that steering is not merely an interpretability tool but a third adaptation paradigm alongside fine-tuning and prompting.
 
 ### Key Designs
 
-1.  **Eight Functional Evaluation Criteria**:
-    - **Function**: Provide a unified evaluation dimension for adaptation methods.
-    - **Mechanism**: (1) Reliability—stability under repeated trials and input variations; (2) Generalization—transfer capability to unseen settings; (3) Specificity—affecting only target behavior without interfering with other capabilities; (4) Computational Efficiency—computational cost of training/inference; (5) Data Efficiency—number of labels/examples required; (6) Composability—whether multiple adaptations can be applied simultaneously; (7) Usability—the degree to which it can be used without expert knowledge; (8) Reversibility—whether the adaptation can be easily undone.
-    - **Design Motivation**: Existing comparisons usually focus on a few isolated dimensions, lacking a comprehensive functional evaluation framework.
+**1. Eight Functional Evaluation Criteria: A unified scoring dimension for adaptation methods**
 
-2.  **Comparison of Three Steering Paradigms**:
-    - **Function**: Clarify methodological differences within steering.
-    - **Mechanism**: Difference-based (+: simple and efficient, strong specificity; -: depends on contrastive data selection); Optimization-based (+: strongest reliability and generalization; -: requires labeled data to train probes); Dictionary-based (+: finest-grained feature-level control; -: requires significant computation to train SAEs, interpretability depends on feature quality).
-    - **Design Motivation**: Different steering methods have different application scenarios and trade-offs, requiring subdivided discussion.
+Existing comparisons often focus on isolated dimensions like efficiency or accuracy, failing to address which scenario warrants a specific adaptation method. This paper decomposes evaluation into eight orthogonal dimensions: reliability (stability under repeated trials and input perturbations), generalization (transfer to unseen settings), specificity (modifying target behavior without affecting other capabilities), computational efficiency (training/inference costs), data efficiency (amount of required labels/examples), composability (whether multiple adaptations can be stacked), usability (accessibility without expert knowledge), and reversibility (ease of revocation). These eight dimensions cover both technical and practical attributes, allowing "method selection" to be based on systematic requirement analysis rather than empirical intuition.
 
-3.  **Unified Taxonomy of Adaptation Methods**:
-    - **Function**: Integrate steering into the complete map of model adaptation.
-    - **Mechanism**: Three mechanisms—(a) Fine-tuning changes the behavioral landscape defined by weights (training-time, permanent); (b) Prompting changes the activation trajectory induced by input (inference-time, external); (c) Steering directly deflects the internal activation trajectory (inference-time, internal, reversible).
-    - **Design Motivation**: A unified framework allows method selection to be based on systematic requirement analysis rather than empirical judgment.
+**2. Comparison of Three Steering Paradigms: Clarifying methodological differences within activation intervention**
 
-### Loss & Training
+Steering is not monolithic. The paper categorizes it into three types based on "how the steering vector is obtained" and highlights their respective trade-offs. Differential methods (e.g., Representation Engineering, CAA) calculate the difference between activation vectors with and without a target attribute as the direction; they are simple, efficient, and highly specific but depend on the choice of contrastive data. Optimization methods (e.g., linear probes + intervention) find semantic directions by training classifiers; they offer the strongest reliability and generalization but require labeled data to train the probes. Dictionary methods (e.g., SAE) decompose activations into interpretable features for selective enhancement or suppression, providing the finest-grained feature-level control, but require significant compute to train Sparse Autoencoders (SAEs), and their interpretability depends on feature quality. These three have distinct application scenarios and must be discussed separately to provide meaningful trade-off recommendations.
 
-Conceptual paper, no specific loss functions involved. However, it systematically compares the evaluation results of each method: steering is strongest in specificity and reversibility (+), performs well in computational and data efficiency, but lags behind prompting methods in usability.
+**3. Unified Adaptation Taxonomy: Integrating steering into the complete map**
 
-## Key Experimental Results
+This is the conceptual conclusion of the paper, condensing the aforementioned mechanisms into a single taxonomy: (a) Fine-tuning modifies the behavioral landscape defined by weights, representing training-time, permanent intervention; (b) Prompting changes the activation trajectory induced by input, representing inference-time, external intervention; (c) Steering directly deflects the internal activation trajectory, representing inference-time, internal, reversible intervention. These three form a clear spectrum in terms of "target of action" and "reversibility." Consequently, steering attains an equal status with fine-tuning and prompting, establishing the evolutionary narrative "From Weights to Activations": the focal point of adaptation is shifting from weights down to activations.
 
 ### Main Results
 
-**Summary of Functional Criteria Comparison**
+**Summary Comparison of Functional Criteria**
 
-| Method | Reliable | Generalization | Specificity | Comp. Eff. | Data Eff. | Composable | Usable | Reversible |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Method | Reliability | Generalization | Specificity | Comp. Efficiency | Data Efficiency | Composability | Usability | Reversibility |
+|------|------|------|------|---------|---------|--------|------|------|
 | Prompting/ICL | 0 | 0 | 0 | + | + | + | + | + |
 | Fine-tuning/RLHF | + | + | - | - | - | - | - | - |
 | LoRA/Adapter | + | + | 0 | + | 0 | + | - | + |
-| Steering-Diff | + | 0 | + | + | + | 0 | 0 | + |
-| Steering-Opt | + | + | + | 0 | 0 | 0 | 0 | + |
-| Steering-Dict | 0 | + | + | - | - | 0 | 0 | + |
+| Steering-Diff. | + | 0 | + | + | + | 0 | 0 | + |
+| Steering-Opt. | + | + | + | 0 | 0 | 0 | 0 | + |
+| Steering-Dict. | 0 | + | + | - | - | 0 | 0 | + |
 
 ### Key Findings
 
-- The greatest advantages of steering lie in **specificity** and **reversibility**—it can precisely modify a single behavioral dimension without affecting other capabilities and can be revoked at any time.
-- Fine-tuning/RLHF are strongest in reliability and generalization but weakest in specificity, efficiency, and reversibility—making them the "heaviest" adaptation methods.
-- Prompting methods are strongest in efficiency and usability but lack reliability and specificity—they are sensitive to phrasing and example ordering.
-- The main limitation of steering is **usability**—it requires an understanding of internal model mechanisms and lacks a standardized toolchain.
-- Difference-based steering methods are the simplest and most efficient but have limited generalization, while dictionary methods are the most precise but carry high computational costs.
+- The greatest advantages of steering lie in **specificity** and **reversibility**—it can precisely modify a single behavioral dimension without impacting other capabilities and can be revoked at any time.
+- Fine-tuning/RLHF are the strongest in reliability and generalization but the weakest in specificity, efficiency, and reversibility—making them the "heaviest" adaptation methods.
+- Prompting methods are strongest in efficiency and usability but lack reliability and specificity, as they are sensitive to phrasing and the order of examples.
+- The primary limitation of steering is **usability**—it requires an understanding of internal model mechanisms and lacks a standardized toolchain.
+- Differential steering methods are the simplest and most efficient but have limited generalization, while dictionary methods are the most refined but incur high computational costs.
 
 ## Highlights & Insights
 
 - The perspective shift of repositioning steering from an "interpretability tool" to an "adaptation paradigm" is a significant conceptual contribution.
-- The design of the eight criteria covers full dimensions from technical to practical, providing a practical guide for method selection.
-- The evolutionary narrative of "From Weights to Activations" clearly captures the development trend of adaptation methods.
+- The design of the eight criteria covers full dimensions from technical to practical, providing a pragmatic guide for method selection.
+- The "From Weights to Activations" narrative clearly captures the developmental trend of model adaptation methods.
 
 ## Limitations & Future Work
 
-- Mainly consists of conceptual analysis and literature synthesis, lacking large-scale experimental validation under a unified setting.
-- The ratings of functional criteria (+/0/-) are relatively coarse and lack quantitative metrics.
+- The paper consists primarily of conceptual analysis and literature synthesis, lacking large-scale experimental validation under a unified setting.
+- The ratings for functional criteria (+/0/-) are relatively coarse and lack quantitative metrics.
 - There is little discussion on the combined use of steering and PEFT (e.g., LoRA + steering).
-- The applicability of steering in multi-turn dialogues and complex agent scenarios is not discussed in depth.
+- The applicability of steering in multi-turn dialogues and complex agent scenarios is not explored in depth.
 
 ## Related Work & Insights
 
-- **vs Turner et al. (2023)**: Pioneeringly demonstrated that steering vectors can control model behavior; this paper integrates it into a broader adaptation framework.
-- **vs Arditi et al. (2024)**: Implemented safety steering via difference methods; this paper compares difference/optimization/dictionary paradigms.
-- **vs LoRA/PEFT Surveys**: Focused on parameter efficiency; this paper adds dimensions such as specificity and reversibility.
+- **vs Turner et al. (2023)**: Pioneeringly demonstrated that steering vectors can control model behavior; this paper incorporates it into a broader adaptation framework.
+- **vs Arditi et al. (2024)**: Implemented safety steering via differential methods; this paper compares the differential, optimization, and dictionary paradigms.
+- **vs LoRA/PEFT Surveys**: Those focus on parameter efficiency; this paper adds dimensions such as specificity and reversibility.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Positioning steering as an adaptation paradigm is a significant conceptual contribution, though no new method is proposed.
-- Experimental Thoroughness: ⭐⭐ Conceptual paper, relying on literature synthesis rather than independent experiments.
+- Novelty: ⭐⭐⭐⭐ Repositioning steering as an adaptation paradigm is an important conceptual contribution, though no new method is proposed.
+- Experimental Thoroughness: ⭐⭐ A conceptual paper that relies on literature synthesis rather than original experiments.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear framework, systematic comparison, and well-designed charts.
 - Value: ⭐⭐⭐⭐ Provides a much-needed positioning and comparison framework for the steering research community.
 
@@ -123,11 +109,11 @@ Conceptual paper, no specific loss functions involved. However, it systematicall
 
 ## Related Papers
 
-- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](similarity-distance-magnitude_activations.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models](embracing_anisotropy_turning_massive_activations_into_interpretable_control_knob.md)
-- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](../../CVPR2026/interpretability/from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
+- [\[ACL 2026\] Similarity-Distance-Magnitude Activations](similarity-distance-magnitude_activations.md)
+- [\[ICML 2025\] Concept-Based Unsupervised Domain Adaptation](../../ICML2025/interpretability/concept-based_unsupervised_domain_adaptation.md)
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
+- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
 
 </div>
 

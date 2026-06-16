@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction
 description: >-
-  [ACL 2026][NLP Understanding][Cross-Document Relation Extraction] The HCRE model is proposed to transform cross-document relation extraction from direct classification over a large relation set into layer-by-layer hierar…
+  [ACL 2026][NLP Understanding][Paper Note] The HCRE model is proposed to transform cross-document relation extraction from direct classification over large relation sets into layer-by-layer hierarchical classification by constructing a hierarchical relation tree. A predict-then-verify inference strategy is designed to mitigate inter-layer error propagation, sig
 tags:
-  - "ACL 2026"
-  - "NLP Understanding"
-  - "Cross-Document Relation Extraction"
-  - "Hierarchical Classification"
-  - "Large Language Models"
-  - "Error Propagation Mitigation"
-  - "Predict-then-Verify Strategy"
+  - ACL 2026
+  - NLP Understanding
 date: 2026-05-08
-content_hash: 7f471df840efc004
+content_hash: 831ebdd1191a0b45
 ---
-
 # HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction
 
 **Conference**: ACL 2026 Findings  
@@ -24,49 +18,59 @@ content_hash: 7f471df840efc004
 **Keywords**: Cross-Document Relation Extraction, Hierarchical Classification, Large Language Models, Error Propagation Mitigation, Predict-then-Verify Strategy
 
 ## TL;DR
-The HCRE model is proposed to transform cross-document relation extraction from direct classification over a large relation set into layer-by-layer hierarchical classification by constructing a hierarchical relation tree. A Predict-then-Verify reasoning strategy is designed to mitigate inter-layer error propagation, significantly outperforming SLM and LLM baselines on the CodRED dataset.
+The HCRE model is proposed to transform cross-document relation extraction from direct classification over large relation sets into layer-by-layer hierarchical classification by constructing a hierarchical relation tree. A predict-then-verify inference strategy is designed to mitigate inter-layer error propagation, significantly outperforming SLM and LLM baselines on the CodRED dataset.
 
 ## Background & Motivation
 
-**Background**: Cross-document relation extraction (RE) aims to identify relations between entities distributed across different documents. More than half of the relational facts in Wikidata span multiple documents. Existing methods primarily adopt the "Small Language Model (SLM) + Classifier" paradigm.
+**Background**: Cross-document relation extraction (RE) aims to identify relations between entities distributed across different documents. Over half of the relational facts in Wikidata span multiple documents. Existing methods primarily adopt the "Small Language Model (SLM) + Classifier" paradigm.
 
-**Limitations of Prior Work**: Constraints in the language understanding capabilities of SLMs hinder further improvements in cross-document RE. Preliminary experiments by the authors found that directly applying LLMs to cross-document RE yields unsatisfactory results, even underperforming strong SLM baselines. In-depth analysis reveals the root cause to be the excessive number of predefined relations (277 in CodRED): (1) Numerous semantically similar relations are difficult to distinguish; (2) Enumerating all relations leads to excessively long inputs, distracting the LLM's attention from key document information.
+**Limitations of Prior Work**: The limited linguistic understanding of SLMs constrains further improvements in cross-document RE. Preliminary experiments show that directly applying LLMs to cross-document RE yields suboptimal results, even underperforming strong SLM baselines. In-depth analysis reveals the root cause is the excessive number of predefined relations (277 in CodRED): (1) numerous semantically similar relations are difficult to distinguish; (2) enumerating all relations leads to excessive input length, distracting the LLM's attention from key document information.
 
-**Key Challenge**: LLMs possess powerful language understanding capabilities but cannot effectively handle large-scale relation option sets, while SLMs can handle the sets but lack sufficient understanding.
+**Key Challenge**: LLMs possess strong linguistic understanding but fail to effectively handle large-scale relation option sets, while SLMs can handle them but lack sufficient understanding.
 
-**Goal**: Reduce the number of relation options the LLM must consider during each inference step while avoiding the error propagation issues inherent in hierarchical classification.
+**Goal**: To reduce the number of relation options the LLM must consider during each inference while avoiding the error propagation issues inherent in hierarchical classification.
 
-**Key Insight**: Preliminary experiments demonstrate that reducing the number of relation options significantly improves LLM performance (see Figure 4), which inspired the design of hierarchical classification.
+**Key Insight**: Preliminary experiments demonstrate that reducing the number of relation options significantly improves LLM performance (see Figure 4), which inspires the design of hierarchical classification.
 
-**Core Idea**: Construct a hierarchical relation tree to allow the LLM to perform top-down reasoning for the target relation layer by layer, considering only a small number of options at each level. Simultaneously, a Predict-then-Verify strategy is used to mitigate inter-layer error propagation through multi-视角 verification.
+**Core Idea**: Construct a hierarchical relation tree allowing the LLM to perform top-down reasoning for target relations layer by layer, considering only a few options at each level. A predict-then-verify strategy is used to mitigate inter-layer error propagation through multi-view verification.
 
 ## Method
 
 ### Overall Architecture
-HCRE consists of two core components: (1) An LLM $\mathcal{M}_1$ used for relation prediction; (2) A hierarchical relation tree constructed from the predefined relation set. Guided by the tree, the LLM performs classification layer by layer until reaching a leaf node, which represents the target relation. During inference, a Predict-then-Verify strategy is used to enhance reliability at each layer.
+The core problem HCRE addresses is that while LLMs have strong linguistic capabilities, presenting all 277 relations from CodRED in a single prompt makes it difficult to distinguish similar relations and distracts the model. HCRE decomposes "1-out-of-277" into "top-down layer-wise selection": an advanced LLM is used offline to organize relations into a tree. Tree paths (root to leaf) are expanded to construct training data for layer-wise classification and verification, used to fine-tune the prediction LLM $\mathcal{M}_1$. During inference, $\mathcal{M}_1$ descends the tree, selecting from a few child nodes at each level. To prevent errors from propagating, a "Predict-then-Verify" strategy is executed at each layer, using fine-grained sub-node information to double-check decisions.
+
+```mermaid
+graph TD
+    A["Input: Cross-doc Entity Pair + 277 Relations"] --> B["Hierarchical Relation Tree Construction<br/>Advanced LLM organizes relations into a tree"]
+    B --> T["Training Data Construction<br/>Expand root-leaf paths for layer samples, simulate verification, fine-tune M1"]
+    T --> D["M1 Descends Top-Down<br/>Selects from child nodes at each layer"]
+    subgraph PtV["Predict-then-Verify Strategy (Per Layer)"]
+        direction TB
+        E["Predict: Select Top-1 and Top-2 nodes"] --> F["Verify: Expand sub-nodes to 3 verification sets"]
+        F -->|Majority consistent with Top-1| G["Confirm Layer"]
+        F -->|Otherwise discard Top-1| E
+    end
+    D --> E
+    G -->|Target not reached| D
+    G -->|Reach leaf node| I["Output: Target Relation"]
+```
 
 ### Key Designs
 
-1.  **Hierarchical Relation Tree Construction**:
+**1. Hierarchical Relation Tree Construction: Decomposing 277-way Classification** 
 
-    - **Function**: Organizes 277 predefined relations into a tree structure to reduce the number of options for classification at each layer.
-    - **Mechanism**: An advanced LLM (e.g., GPT-4o) is used to build the tree layer by layer. First, partition criteria $C_l$ (e.g., "by domain") are generated for each layer. Then, relations under each current node are grouped according to the criteria to generate and name child nodes. The second layer is specifically designed with two nodes: "Valid Relation" and "No Valid Relation," explicitly separating positive samples from NA to alleviate label imbalance. This process proceeds recursively until the maximum depth $L$ is reached.
-    - **Design Motivation**: The number of child nodes for each parent node is far smaller than the total number of relations, effectively reducing the LLM's classification difficulty.
+Directly handling 277 relations causes LLMs to struggle with near-synonyms and long option lists. HCRE uses an advanced LLM (e.g., GPT-4o) offline to organize relations into a tree. At each level, a partitioning criterion $C_l$ (e.g., "by domain") is generated to group relations. The second layer is specifically designed with "Valid Relation" and "No Valid Relation" (NA) branches to explicitly handle label imbalance. This ensures each parent has a small number of children, reducing classification difficulty.
 
-2.  **Predict-then-Verify Reasoning Strategy**:
+**2. Training Data Construction: Learning Layer-wise Classification and Verification**
 
-    - **Function**: Mitigates error propagation at each tree level through multi-view verification.
-    - **Mechanism**: Divided into two steps—Prediction step: The LLM selects the optimal node $\hat{r}_{1st}$ and the sub-optimal node $\hat{r}_{2nd}$ from the current layer's option set $\mathcal{R}_l$. Verification step: $\hat{r}_{1st}$ and $\hat{r}_{2nd}$ are replaced by their respective child nodes to construct three verification option sets $\mathcal{R}_l^{v_1}, \mathcal{R}_l^{v_2}, \mathcal{R}_l^{v_3}$. The LLM is then asked to choose the optimal node for each verification set. If more than half of the auxiliary verification nodes are semantically consistent with $\hat{r}_{1st}$, the prediction is confirmed; otherwise, $\hat{r}_{1st}$ is removed and the process repeats.
-    - **Design Motivation**: Verification option sets provide finer-grained semantic information (sub-node level), helping the LLM discern subtle differences between optimal and sub-optimal choices.
+Level-wise descent and verification are behaviors not inherent to $\mathcal{M}_1$. For each sample $(x, \mathcal{R}, r)$, HCRE identifies the root-to-leaf path and expands it into $L-1$ classification samples $\mathcal{D}_1$. Verification samples $\mathcal{D}_2$ are generated by simulating the inference process—replacing candidate nodes with their sub-nodes. Fine-tuning $\mathcal{M}_1$ on $\mathcal{D}_1 \cup \mathcal{D}_2$ teaches the model to use the tree hierarchy and leverage fine-grained information for verification.
 
-3.  **Training Data Construction**:
+**3. Predict-then-Verify (PtV) Inference Strategy: Mitigating Error Propagation**
 
-    - **Function**: Constructs training samples for hierarchical classification and verification steps.
-    - **Mechanism**: For an original training sample $(x, \mathcal{R}, r)$, the path from the root to the leaf is identified and expanded into $L-1$ layer-by-layer training samples to form $\mathcal{D}_1$. For each sample in $\mathcal{D}_1$, the verification step is simulated to generate three verification samples to form $\mathcal{D}_2$. The LLM is fine-tuned on the merged dataset $\mathcal{D}_1 \cup \mathcal{D}_2$.
-    - **Design Motivation**: Explicitly training the verification capability allows the LLM to learn how to effectively utilize fine-grained information for verification during inference.
+Hierarchical classification suffers from error propagation. HCRE splits decisions into prediction and verification. In the prediction step, $\mathcal{M}_1$ selects the top-1 node $\hat{r}_{1st}$ and top-2 node $\hat{r}_{2nd}$ from the current options $\mathcal{R}_l$. In the verification step, $\hat{r}_{1st}$ and $\hat{r}_{2nd}$ are expanded into their sub-nodes to create three verification sets $\mathcal{R}_l^{v_1}, \mathcal{R}_l^{v_2}, \mathcal{R}_l^{v_3}$. If the majority of verification results match the semantics of $\hat{r}_{1st}$, the prediction is confirmed; otherwise, $\hat{r}_{1st}$ is discarded. This leverages fine-grained sub-node semantics to distinguish subtle differences between the top candidates.
 
 ### Loss & Training
-Standard language model fine-tuning loss (cross-entropy) is used for supervised fine-tuning on $\mathcal{D}_1 \cup \mathcal{D}_2$.
+Standard supervised fine-tuning loss (cross-entropy) is used, training on $\mathcal{D}_1 \cup \mathcal{D}_2$.
 
 ## Key Experimental Results
 
@@ -78,46 +82,46 @@ Results on the CodRED dataset:
 | ECRIM (RoBERTa) | 42.54 | 49.47 | 23.39 | 27.60 |
 | NEPD (RoBERTa) | 42.96 | 52.67 | 30.12 | 37.04 |
 | Vanilla LLaMA | 38.14 | 41.43 | 15.19 | 17.00 |
-| **HCRE (LLaMA)** | **45.35** | **58.19** | **34.91** | **49.33** |
+| **Ours (LLaMA)** | **45.35** | **58.19** | **34.91** | **49.33** |
 
 ### Ablation Study
 
 | Configuration | micro F1 | binary F1 | Description |
 |------|---------|----------|------|
-| Full HCRE | 45.35 | 58.19 | Full model |
-| w/o multi-view | 39.37 | 49.63 | Using only a single verification set |
-| w/o PtV | 37.66 | 47.28 | Removing the Predict-then-Verify strategy |
-| w/o LTC | 43.18 | 56.60 | Directly generating the tree instead of layer-by-layer construction |
-| w/o HRT | 38.14 | 41.43 | No hierarchical tree, direct classification |
+| Full HCRE | 45.35 | 58.19 | Complete model |
+| w/o multi-view | 39.37 | 49.63 | Single verification set |
+| w/o PtV | 37.66 | 47.28 | Without Predict-then-Verify |
+| w/o LTC | 43.18 | 56.60 | Direct tree generation vs. layer-wise |
+| w/o HRT | 38.14 | 41.43 | No tree, direct classification |
 
 ### Key Findings
-- Compared to the strongest SLM baseline (NEPD), HCRE improves micro F1 by 2.39 and binary F1 by 5.52 in the closed setting.
-- The improvement is even more significant in the open setting (binary F1 jumping from 37.04 to 49.33), indicating that hierarchical classification is more effective for long documents.
-- The Predict-then-Verify strategy is the most critical component: removing it causes micro F1 to drop by 7.69 and binary F1 by 10.91.
-- Multi-view verification (3 sets vs. 1 set) brings an additional 1.71 micro F1 improvement.
-- Error propagation analysis shows that the PtV strategy effectively reduces the error propagation rate at every layer.
+- HCRE outperforms the strongest SLM baseline (NEPD) by 2.39 micro F1 and 5.52 binary F1 in the closed setting.
+- Improvements are even more significant in the open setting (binary F1 jumps from 37.04 to 49.33), indicating hierarchical classification is more effective for long documents.
+- The PtV strategy is the most critical component: removing it drops micro F1 by 7.69 and binary F1 by 10.91.
+- Multi-view verification (3 sets vs. 1) provides an additional 1.71 micro F1 gain.
+- Error propagation analysis shows that PtV effectively reduces error rates at every layer.
 
 ## Highlights & Insights
-- Preliminary experiments reveal that "excessive relation options" is the root cause of poor LLM performance in cross-document RE. This finding has general guiding significance—LLMs may face similar issues in any large-scale label classification task.
-- The Predict-then-Verify strategy, which constructs verification sets by "replacing parent nodes with sub-nodes," is ingeniously designed. It essentially uses finer-grained information to validate coarse-grained judgments.
-- Evaluation metric analysis (maximum F1 overestimating performance, P@K sensitivity to data scale) provides valuable methodological suggestions for the community.
+- The finding that "excessive relation options" cause LLM performance degradation in RE provides general guidance for applying LLMs to any large-scale classification task.
+- The PtV strategy's design of "replacing parents with sub-nodes" effectively utilizes fine-grained information to validate coarse-grained judgments.
+- The analysis of evaluation metrics (maximum F1 overestimating performance, P@K sensitivity) offers valuable methodological suggestions for the community.
 
 ## Limitations & Future Work
-- Tree construction relies on GPT-4o, which introduces dependency on tree quality and higher costs.
-- The verification steps increase inference overhead (multiple LLM calls required per layer).
-- Experiments were only validated on the CodRED dataset; generalizability needs further confirmation.
-- Future work could explore adaptive tree depth or dynamic adjustment of verification intensity to balance efficiency and accuracy.
+- Tree construction relies on GPT-4o, creating dependency on tree quality and incurring high costs.
+- Verification steps increase inference overhead due to multiple LLM calls per layer.
+- Experiments are limited to the CodRED dataset; generalization needs further verification.
+- Future work could explore adaptive tree depth or dynamic verification intensity to balance efficiency and accuracy.
 
 ## Related Work & Insights
-- **vs NEPD**: NEPD focuses on long-distance dependency modeling but is still limited by the upper bound of SLM capabilities. HCRE breaks this limitation by leveraging the strong language understanding of LLMs.
-- **vs Hierarchical Text Classification (HTC) methods**: Traditional HTC methods (DFS-L, BFS-L) lack verification mechanisms and suffer from severe error propagation in cross-document RE.
-- **vs Vanilla LLM**: Preliminary experiments clearly show that directly using LLMs to handle large relation sets performs poorly; hierarchy is necessary.
+- **vs. NEPD**: NEPD focuses on long-range dependency but is limited by the SLM capacity ceiling; HCRE breaks this using LLM linguistic power.
+- **vs. HTC Methods**: Traditional Hierarchical Text Classification (e.g., DFS-L, BFS-L) lacks verification mechanisms, leading to severe error propagation in cross-doc RE.
+- **vs. Vanilla LLM**: Preliminary experiments clearly show the necessity of hierarchy when dealing with large relation sets.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of hierarchical classification and the Predict-then-Verify strategy is novel and practical.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Ablations are thorough, and the initial motivation analysis is persuasive.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from problem discovery to analysis to solution is very clear.
-- Value: ⭐⭐⭐⭐ Provides practical guidance for LLM applications in large-scale classification tasks.
+- Novelty: ⭐⭐⭐⭐ Combination of hierarchical classification and PtV is novel and practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong ablation and convincing motivation analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain from problem discovery to solution.
+- Value: ⭐⭐⭐⭐ High practical value for applying LLMs to large-scale classification.
 
 <!-- RELATED:START -->
 
@@ -125,11 +129,11 @@ Results on the CodRED dataset:
 
 ## Related Papers
 
-- [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
 - [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
-- [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
-- [\[ACL 2026\] MSMO-ABSA: Multi-Scale and Multi-Objective Optimization for Cross-Lingual Aspect-Based Sentiment Analysis](msmo-absa_multi-scale_and_multi-objective_optimization_for_cross-lingual_aspect-.md)
+- [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
+- [\[ACL 2025\] Towards a More Generalized Approach in Open Relation Extraction](../../ACL2025/nlp_understanding/generalized_open_relation_extract.md)
+- [\[ACL 2025\] A Variational Approach for Mitigating Entity Bias in Relation Extraction](../../ACL2025/nlp_understanding/variational_approach_mitigating_entity_bias_relation_extraction.md)
 
 </div>
 

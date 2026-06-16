@@ -2,125 +2,125 @@
 title: >-
   [Paper Note] Reverse-Engineering Model Editing on Language Models
 description: >-
-  [ICML 2026][Knowledge Editing][locate-then-edit] The paper reveals that the parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "fingerprints" of edited subjects through th…
+  [ICML 2026][Knowledge Editing][locate-then-edit] The paper reveals that parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "edited subject" fingerprints through their row spaces. It proposes a two-stage attack, KSTER (recovering subjects via SVD, then prompts via relative entropy drop), and a defense called Subspace Ca
 tags:
-  - "ICML 2026"
-  - "Knowledge Editing"
-  - "locate-then-edit"
-  - "reverse-engineering attacks"
-  - "subspace reconstruction"
-  - "entropy reduction"
-  - "subspace camouflage defense"
+  - ICML 2026
+  - Knowledge Editing
+  - locate-then-edit
 date: 2026-05-08
-content_hash: 55c6d85d69e976a0
+content_hash: 438e5a2fa11ecd69
 ---
-
 # Reverse-Engineering Model Editing on Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.10134](https://arxiv.org/abs/2602.10134)  
 **Code**: https://github.com/reanatom/EditingAttack  
 **Area**: Knowledge Editing / LLM Security  
-**Keywords**: locate-then-edit, reverse-engineering attacks, subspace reconstruction, entropy reduction, subspace camouflage defense
+**Keywords**: locate-then-edit, reverse-engineering attack, subspace reconstruction, entropy drop, subspace camouflage defense
 
 ## TL;DR
-The paper reveals that the parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "fingerprints" of edited subjects through their row spaces. It proposes a two-stage attack KSTER (recovering subjects via SVD and prompts via entropy difference) and provides a Subspace Camouflage defense based on "semantic decoy" injection.
+The paper reveals that parameter update matrices of locate-then-edit knowledge editing methods (ROME/MEMIT/AlphaEdit) leak "edited subject" fingerprints through their row spaces. It proposes a two-stage attack, KSTER (recovering subjects via SVD, then prompts via relative entropy drop), and a defense called Subspace Camouflage based on "semantic decoy" injection.
 
 ## Background & Motivation
 
-**Background**: LLMs inevitably memorize massive amounts of sensitive information (personal privacy, copyrighted snippets) during pre-training. Since re-training is extremely costly, *model editing* has become the mainstream mitigation solution. Specifically, the **locate-then-edit** paradigm (ROME/MEMIT/AlphaEdit) is widely used as an "after-the-fact deletion/modification" tool for sensitive knowledge due to its interpretability, zero inference overhead, and ability to localize FFN parameters, often serving as a foundation for privacy protection.
+**Background**: LLMs inevitably memorize massive amounts of sensitive information (personal privacy, copyrighted snippets) during pre-training. Since retraining is extremely costly, *model editing* has become a mainstream mitigation solution. Specifically, the **locate-then-edit** paradigm (ROME/MEMIT/AlphaEdit) is widely used as an "after-the-fact deletion/modification" tool for sensitive knowledge due to its interpretability, zero inference overhead, and FFN parameter localization, often serving as privacy-preserving infrastructure.
 
-**Limitations of Prior Work**: Previous research focused on the *efficacy* and *generalization* of editing (e.g., accuracy after editing, whether other knowledge is preserved). However, few have systematically asked: does the editing action itself become a *leaking side channel*? If an attacker obtains both the pre- and post-edit weights $\theta$ and $\theta'$, can the erased content be reverse-engineered from the weight difference $\Delta\theta$?
+**Limitations of Prior Work**: Previous studies focused on editing *efficacy* and *generalization* (accuracy after editing and preservation of other knowledge), but few have systematically investigated whether the editing action itself creates a *leakage side channel*. If an attacker obtains both pre- and post-editing weights $\theta$ and $\theta'$, can the erased content be reconstructed from the weight difference $\Delta\theta$?
 
-**Key Challenge**: The core analytical solutions of locate-then-edit (rank-1 in ROME, low-rank least squares in MEMIT) naturally compress the "key vector of the edited subject" as a low-dimensional structure into $\Delta\mathbf{W}$. **The mechanism intended to protect privacy** becomes a high-fidelity signature of the edited information—the more precise the erasure, the purer the signature.
+**Key Challenge**: The core closed-form solutions of locate-then-edit (rank-1 for ROME, low-rank least squares for MEMIT) naturally compress the "key vector of the edited subject" into a low-dimensional structure within $\Delta\mathbf{W}$. **The mechanism intended to protect privacy** becomes a high-fidelity signature of the edited information—the more precise the erasure, the purer the signature.
 
-**Goal**: (1) Formally prove that $\Delta\mathbf{W}$ encodes recoverable "fingerprints" of edited subjects; (2) Design practical attacks to recover *subject + prompt template + original answer*; (3) Propose a defense strategy that does not compromise editing utility.
+**Goal**: (1) Formally prove that $\Delta\mathbf{W}$ encodes a recoverable "fingerprint" of the edited subject; (2) design practical attacks to recover the *subject + prompt template + original answer*; (3) propose a defense strategy that does not compromise editing utility.
 
-**Key Insight**: The authors observe that the "hidden states of the subject's last token at the edited layer" in FFNs possess strong **subject invariance**—the activation for the same subject is almost identical across different prompt templates (cos sim near 1), and attention focuses on the subject token. This means the $\mathbf{K}$ matrix encodes "subject identity" almost exclusively and decouples from prompt context, allowing attackers to lock onto a subject without guessing the prompt first.
+**Key Insight**: Authors observe that the "hidden state of the subject's last token at the edited layer" in FFNs exhibits strong **subject invariance**—the activation for the same subject across different prompt templates is nearly identical (cos sim near 1), and attention focuses on the subject tokens. This means the $\mathbf{K}$ matrix primarily encodes "subject identity" and is decoupled from the prompt context, allowing attackers to lock onto the subject without knowing the prompt beforehand.
 
-**Core Idea**: Use the Woodbury identity to rewrite the MEMIT update as $\Delta\mathbf{W} = \mathbf{R}(\mathbf{I}+\mathbf{K}^\top\mathbf{C}^{-1}\mathbf{K})^{-1}\mathbf{K}^\top\mathbf{C}^{-1}$, thereby proving $\mathrm{RowSpace}(\Delta\mathbf{W}\mathbf{C}) \subseteq \mathrm{ColSpace}(\mathbf{K})$. Performing SVD on $\Delta\mathbf{W}\mathbf{C}$ directly yields the "subject key subspace." Projecting candidate subject activations onto this subspace identifies the edited subject via the largest projection ratio. The second stage uses the overfitting phenomenon—where the post-edit model has nearly zero entropy for the true prompt—to recover the prompt through relative entropy reduction ranking.
+**Core Idea**: Using the Woodbury identity, the MEMIT update is rewritten as $\Delta\mathbf{W} = \mathbf{R}(\mathbf{I}+\mathbf{K}^\top\mathbf{C}^{-1}\mathbf{K})^{-1}\mathbf{K}^\top\mathbf{C}^{-1}$, proving that $\mathrm{RowSpace}(\Delta\mathbf{W}\mathbf{C}) \subseteq \mathrm{ColSpace}(\mathbf{K})$. Applying SVD to $\Delta\mathbf{W}\mathbf{C}$ directly retrieves the "subject key subspace." Candidate subject activations are projected onto this subspace, and those with the highest projection ratios are identified as the edited subjects. The second stage uses the "near-zero entropy on true prompts" overfitting phenomenon in the post-edited model to recover prompts via relative entropy drop ranking.
 
 ## Method
 
 ### Overall Architecture
-The threat model includes white-box and grey-box settings. White-box attackers possess $\theta$, $\theta'$, the editing algorithm, covariance $\mathbf{C}$, and a "Candidate Subject Set $\mathcal{S}_{\rm cand}$ × Candidate Prompt Set $\mathcal{R}_{\rm cand}$" (constructible from public domain knowledge). The attack pipeline consists of two stages: **Stage I — Subject Inference** reverse-engineers the subject using the algebraic structure of $\Delta\mathbf{W}$; **Stage II — Prompt Recovery** selects top-$N_r$ prompts for each recovered subject using the entropy difference between pre- and post-edit models. Combining these and performing a forward pass on the pre-edit model yields the original answer $o^{\rm ori}$. The defense, **Subspace Camouflage**, injects "semantic decoy" subjects during editing, crowding the row space of weight updates into a confused subspace where SVD sees an overlap of decoys and true subjects.
+The paper addresses the question of whether erased privacy can be reconstructed given two sets of weights. It decomposes this into a two-stage attack, KSTER, and a defense mechanism. The threat model assumes a white-box attacker possessing $\theta$, $\theta'$, the editing algorithm, the covariance $\mathbf{C}$, and a "candidate subject set × candidate prompt set" constructed from public knowledge. The attack first extracts the edited subject from the algebraic structure of $\Delta\mathbf{W}$ in Stage I and then identifies the true prompt for each subject using the entropy difference between models in Stage II. Feeding the "subject + prompt" back into the pre-edited model yields the original answer. The Subspace Camouflage defense actively injects "semantic decoy" subjects during editing to contaminate the subspace observed by the attacker's SVD.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    I["White-box Input: θ, θ', editing algorithm, covariance C<br/>+ Candidate Subject Set × Prompt Set"] --> S1
+    subgraph ATK["KSTER Two-stage Attack"]
+        direction TB
+        S1["Stage I: SVD-based Subject Inference<br/>Perform SVD on ΔW·C to get key subspace V_N<br/>Rank candidate activation projection ratio ρ and take top-N"] --> S2["Stage II: Entropy-drop-based Prompt Recovery<br/>Rank with relative entropy difference to lock true prompt"]
+        S2 --> S3["Feed (Subject + Prompt) to pre-edited model<br/>→ Recover original answer"]
+    end
+    D["Subspace Camouflage Defense<br/>Inject semantic decoy keys K_decoy<br/>Construct camouflage update ΔW_defense"] -. Contaminates SVD principal directions .-> S1
+```
 
 ### Key Designs
 
-1. **SVD-based Subject Inference (Stage I)**:
+**1. SVD-based Subject Inference (Stage I): Reducing "Subject Recovery" to Subspace Projection**
 
-    - **Function**: Accurately picks $N$ edited subjects from a candidate pool given only $\Delta\mathbf{W}$ and $\mathbf{C}$.
-    - **Mechanism**: First, the number of edits $N$ is estimated via $\mathrm{rank}(\Delta\mathbf{W})$ (strictly holds under full column rank assumptions for $\mathbf{R}$ and $\mathbf{K}$). Then, SVD is performed on $\mathbf{M}=\Delta\mathbf{W}\mathbf{C}$, taking the first $N$ columns of right singular vectors $\mathbf{V}_N$ as the reconstructed key subspace. For each candidate subject $s_i^c$, activation $\mathbf{k}_i^c=\mathcal{F}_\theta(s_i^c,\mathcal{T}_{\rm gen})$ is extracted using a generic template. Candidates are ranked by projection ratio $\rho_i^c = \|\mathbf{V}_N^\top \mathbf{k}_i^c\|_2 / \|\mathbf{k}_i^c\|_2$. For AlphaEdit, scoring is adjusted based on the null-space projection $\mathbf{P}$ (Lemma G.18).
-    - **Design Motivation**: Direct recovery of $\mathbf{K}$ is impossible (as $\mathbf{R}$ is unknown), but the *subspace* is sufficient. Activations from generic templates are extremely similar to those from true editing templates (subject invariance), so the projection ratio scalar distinguishes edited subjects. Multiplying by $\mathbf{C}$ removes geometric distortion of the original row space; robustness to $\mathbf{C}$ estimation noise is proved in Appendix G.16.
+The attacker seeks the edited subject's key vector $\mathbf{K}$, but since $\mathbf{R}$ in $\Delta\mathbf{W}$ is unknown, $\mathbf{K}$ cannot be solved directly. The breakthrough is that only the *subspace* spanned by $\mathbf{K}$ is needed: Woodbury rewriting proves $\mathrm{RowSpace}(\Delta\mathbf{W}\mathbf{C})\subseteq\mathrm{ColSpace}(\mathbf{K})$. First, the batch size $N$ is estimated from $\mathrm{rank}(\Delta\mathbf{W})$. Then, SVD is performed on $\mathbf{M}=\Delta\mathbf{W}\mathbf{C}$ to obtain the top-$N$ right singular vectors $\mathbf{V}_N$ as the reconstructed key subspace. To determine if a candidate subject $s_i^c$ was edited, its activation $\mathbf{k}_i^c=\mathcal{F}_\theta(s_i^c,\mathcal{T}_{\rm gen})$ is extracted from the pre-edited model using a generic template. The projection ratio is defined as $\rho_i^c = \|\mathbf{V}_N^\top \mathbf{k}_i^c\|_2 / \|\mathbf{k}_i^c\|_2$; ranking by $\rho$ identifies the subjects. This works due to subject invariance: activations under generic templates nearly overlap with those under true editing templates. Multiplying by $\mathbf{C}$ cancels geometric distortion of the row space. For AlphaEdit, which involves null-space projection $\mathbf{P}$, scores are calculated on a $\mathbf{P}$-adjusted version.
 
-2. **Entropy-reduction based Prompt Recovery (Stage II)**:
+**2. Entropy-drop-based Prompt Recovery (Stage II): Using "Editing Overfitting" as a Signal**
 
-    - **Function**: Picks the template most likely used for editing given the recovered subject $\hat{s}_i$.
-    - **Mechanism**: Editing essentially shapes the next-token distribution under the target prompt toward a one-hot distribution. Thus, *relative entropy reduction* is significantly larger on the true prompt. For each $(\hat{s}_i, r_j^c)$, Shannon entropy $H(\hat{s}_i,r_j^c;\theta)$ and $H(\hat{s}_i,r_j^c;\theta')$ are calculated. The score is defined as $\mathrm{Score}=\frac{H(\hat{s}_i,r_j^c;\theta)-H(\hat{s}_i,r_j^c;\theta')}{H(\hat{s}_i,r_j^c;\theta')+\epsilon}$, taking top-$N_r$. The denominator amplifies overfitted prompts pushed toward near-zero entropy.
-    - **Design Motivation**: Comparing logit cosine similarity suffers from interference in large batches. Entropy difference is sensitive only to the direction of "information collapse," aligning with the editing optimization goal, making it stable even at $N=100$.
+After locking the subject, the prompt template must be recovered. Direct logit comparison fails in large batches due to interference. The authors use a metric more sensitive to editing objectives: editing essentially compresses the next-token distribution of target prompts into a near one-hot distribution, causing Shannon entropy to collapse. For each candidate pair $(\hat{s}_i, r_j^c)$, the relative entropy drop is calculated: $\mathrm{Score}=\dfrac{H(\hat{s}_i,r_j^c;\theta)-H(\hat{s}_i,r_j^c;\theta')}{H(\hat{s}_i,r_j^c;\theta')+\epsilon}$. The denominator amplifies prompts pushed toward zero entropy, distinguishing the true prompt even in batches of $N=100$.
 
-3. **Subspace Camouflage Defense**:
+**3. Subspace Camouflage: Contaminating the Attacker's SVD with Semantic Decoys**
 
-    - **Function**: Allows editors to replace the row space of $\Delta\mathbf{W}$ from $\mathrm{ColSpace}(\mathbf{K})$ to a decoy-mixed subspace $\mathrm{ColSpace}(\tilde{\mathbf{K}})$ without losing editing efficacy.
-    - **Mechanism**: Decoy key matrices $\mathbf{K}_{\rm decoy}$ are sampled from irrelevant real subjects to construct a camouflaged key $\tilde{\mathbf{K}} = \mathbf{K} + \alpha \cdot \frac{\|\mathbf{K}\|_2}{\|\mathbf{K}_{\rm decoy}\|_2}\mathbf{K}_{\rm decoy}$. A unique defense update $\Delta\mathbf{W}_{\rm defense} = \Delta\mathbf{W}\mathbf{K}(\tilde{\mathbf{K}}^\top \mathbf{C}^{-1}\mathbf{K})^{-1}\tilde{\mathbf{K}}^\top \mathbf{C}^{-1}$ is solved to satisfy the row space constraint and original behavior ($\Delta\mathbf{W}_{\rm defense} \mathbf{K} = \Delta\mathbf{W}\mathbf{K}$).
-    - **Design Motivation**: Unlike random noise, **semantic decoys** correspond to real activations and "actively compete" to pull SVD directions toward decoys. Appendices H.3/H.4 prove that attackers cannot determine if the defense is active, nor can they reverse-engineer $\mathbf{K}$ from $\tilde{\mathbf{K}}$ without $\mathbf{R}$, which would require the protected knowledge itself, creating a circular dependency.
+The defense shifts the row space of $\Delta\mathbf{W}$ from the true $\mathrm{ColSpace}(\mathbf{K})$ to a decoy-contaminated $\mathrm{ColSpace}(\tilde{\mathbf{K}})$ without hurting utility. Decoy keys $\mathbf{K}_{\rm decoy}$ are sampled from irrelevant real subjects to construct $\tilde{\mathbf{K}} = \mathbf{K} + \alpha \cdot \frac{\|\mathbf{K}\|_2}{\|\mathbf{K}_{\rm decoy}\|_2}\mathbf{K}_{\rm decoy}$. A unique defense update $\Delta\mathbf{W}_{\rm defense} = \Delta\mathbf{W}\mathbf{K}(\tilde{\mathbf{K}}^\top \mathbf{C}^{-1}\mathbf{K})^{-1}\tilde{\mathbf{K}}^\top \mathbf{C}^{-1}$ is solved to satisfy "row space in $\mathrm{ColSpace}(\tilde{\mathbf{K}})$ while remaining equivalent on original keys" ($\Delta\mathbf{W}_{\rm defense}\mathbf{K}=\Delta\mathbf{W}\mathbf{K}$). Unlike random noise, decoys correspond to real activations and "compete" to pull the attacker's singular vectors toward themselves. Reconstruction of $\mathbf{K}$ from $\tilde{\mathbf{K}}$ requires $\mathbf{R}$, which is equivalent to knowing the protected knowledge, creating a circular dependency that blocks recovery.
 
-### Loss & Training
-No training involved. The attack uses geometry and information theory; the defense is a one-time equivalent rewrite of the closed-form editing algorithm with a scalar hyperparameter $\alpha$ (controlling protection strength, $\alpha\in[1,5]$ in experiments).
+The method involves no training: the attack is a one-time operation, and the defense is a reformulation of the closed-form solution with one hyperparameter $\alpha$ (typically $\alpha\in[1,5]$).
 
 ## Key Experimental Results
 
-Models: GPT-J (6B), Llama3-8B-Instruct, Qwen2.5-7B-Instruct; Methods: ROME / MEMIT / AlphaEdit; Datasets: CounterFact, zsRE; Batch size $N\in\{10,50,100\}$.
+Models: GPT-J (6B), Llama3-8B-Instruct, Qwen2.5-7B-Instruct. Methods: ROME / MEMIT / AlphaEdit. Batch size $N\in\{10,50,100\}$.
 
-### Main Results: Subject Inference top-N Recall (CounterFact)
+### Main Results: Subject Inference Top-N Recall (CounterFact)
 
 | Model | $N$ | MEMIT (KSTER White-box) | MEMIT Grey-box Baseline | AlphaEdit (KSTER White-box) | AlphaEdit Grey-box Baseline |
-|-------|-----|-------------------------|-------------------------|-----------------------------|-----------------------------|
+|-------|-----|-------------------------|-------------------------|------------------------------|-----------------------------|
 | GPT-J | 100 | **0.95** | 0.88 | **0.96** | 0.86 |
 | Llama3-8B-Instruct | 100 | **0.99** | 0.68 | **0.99** | 0.45 |
 | Qwen2.5-7B-Instruct | 100 | **0.94** | 0.59 | **0.95** | 0.51 |
 
-Prompt recovery (Llama3-8B-Instruct, CounterFact, $N=100$): top-1 0.51 / top-5 0.81 / top-20 0.94, semantic similarity 0.88; end-to-end original answer recovery reached 0.74 at top-20.
+Prompt Recovery (Llama3-8B-Instruct, $N=100$): top-1 0.51 / top-5 0.81 / top-20 0.94, semantic similarity 0.88. End-to-end original answer recovery top-20 reaches 0.74.
 
-### Ablation Study: Camouflage Intensity $\alpha$ (MEMIT, Llama3-8B-Instruct, CounterFact)
+### Ablation Study: Camouflage Intensity $\alpha$ (MEMIT, Llama3-8B-Instruct)
 
-| $\alpha$ | Avg. True Subject Rank (Higher is Safer) | Efficacy | Generalization | Fluency |
-|----------|------------------------------------------|----------|----------------|---------|
-| 0 (No Def) | 50.83 | 0.95 | 0.52 | 6.33 |
+| $\alpha$ | True Subject Avg Rank (Higher is safer) | Efficacy | Generalization | Fluency |
+|----------|-----------------------------------------|----------|----------------|---------|
+| 0 (None) | 50.83 | 0.95 | 0.52 | 6.33 |
 | 1 | 148.62 | 0.98 | 0.49 | 6.33 |
 | 3 | 206.47 | 0.96 | 0.52 | 6.34 |
 | **5** | **394.12** | 0.96 | 0.53 | 6.32 |
 | 7 | 634.39 | 0.91 | 0.42 | 6.26 |
 
-### Key Findings
-- **Grey-box vs. White-box gap widens with $N$**: At $N=10$, grey-box performance is comparable. At $N=100$, grey-box drops to 0.45–0.68 while white-box remains stable at 0.94–0.99, indicating $\Delta\mathbf{W}$ carries far more separable information than logit differences.
-- **Covariance estimation is robust**: While $\mathbf{C}$ is default estimated from 100k Wikipedia entries, 100 samples suffice for convergence. AlphaEdit remains stable even with 10 samples, signifying the attack doesn't require knowing the training distribution.
-- **Failure modes are bimodal**: Rank 6–100 results from *semantic generalization error* (subject misjudged as a broader category). Rank 700–1000 involves *optimization constraint conflicts* where post-edit entropy increases, failing the entropy-difference criterion.
-- **Defense sweet spot at $\alpha=5$**: True subject rank increases to 394 with negligible efficacy loss. However, at $\alpha=7$, AlphaEdit efficacy drops to 0.46 as small eigenvalues of $\mathbf{P}$ make matrix inversion ill-conditioned.
+## Key Findings
+- **Grey-box vs. White-box gap widens with $N$**: While grey-box matches white-box at $N=10$, it drops to 0.45–0.68 at $N=100$, while white-box remains at 0.94–0.99. This indicates that the algebraic structure of $\Delta\mathbf{W}$ contains far more separable information than logit differences.
+- **Covariance estimation is extremely robust**: While $\mathbf{C}$ is usually estimated using 100k Wikipedia samples, 100 samples are sufficient for convergence, showing the attack does not require knowing the exact training distribution.
+- **Failure modes are bimodal**: True prompt ranks in the 6–100 range are due to *semantic generalization errors* (model misidentifies subject category). Ranks in the 700–1000 range stem from *optimization constraint conflicts* where entropy increases after editing, breaking the entropy-drop score.
+- **Defense sweet spot at $\alpha=5$**: The true subject rank is pushed to 394 with negligible efficacy loss. However, at $\alpha=7$, AlphaEdit efficacy drops significantly due to matrix inversion instability caused by small eigenvalues.
 
 ## Highlights & Insights
-- **Elegant characterization of "security as a side channel"**: Using the Woodbury identity to rewrite the MEMIT solution into a subspace recovery problem transforms a weight diff problem into a clean SVD-plus-projection task.
-- **Independent utility of subject invariance**: The discovery that FFN activations for subjects are prompt-invariant is valuable for understanding LLM memory and designing future editing/interpretation methods beyond attacks.
-- **Entropy reduction exceeds logit difference**: By treating overfitting as a signal and amplifying near-zero entropy, the authors leverage the editing algorithm's own optimization goal as a discriminant.
-- **Clever circular dependency argument for defense**: Camouflage is robust because reverse-engineering the true $\mathbf{K}$ requires $\mathbf{R}$, but constructing $\mathbf{R}$ requires the original prompt and answer—the very goals of the attack.
+- **"Security mechanism as side channel"**: Using the Woodbury identity to rewrite the MEMIT solution transforms a weight difference problem into a standard subspace recovery problem. This elegantly reduces the attack to a single SVD and projection.
+- **Subject invariance as a reusable finding**: The discovery that subject activations in FFNs are nearly prompt-independent is valuable for understanding fact storage in LLMs beyond just attacks.
+- **Entropy drop as a robust signal**: Leveraging "overfitting" as a signal by tracking the collapse of distributions on target prompts is a perspective that can be transferred to other white-box analysis tasks.
+- **Circular dependency in defense**: The defense's robustness relies on the fact that reversing the camouflage requires the very information (prompt/answer) the attacker is trying to steal, effectively closing the backdoor.
 
 ## Limitations & Future Work
-- Dependency on "white-box + candidate pool containing truth": The ability to filter the pool determines attack cost; complexity in open-set scenarios is unquantified.
-- Coverage limited to single-layer batch editing (max $N=100$): Sequential editing and larger scales are only explored in the appendix.
-- Defense is specific to white-box locate-then-edit; no versions provided for memory-based (SERAC, GRACE) or meta-learning (MEND, KE) editors that don't modify FFN parameters.
-- Decoy subjects may cause *out-of-target hallucinations*: At $\alpha\ge 3$, decoy subject TFR drops and fluency declines, potentially eroding knowledge space over time.
+- The attack assumes a white-box setting with a candidate pool containing the ground truth; open-set complexity remains unquantified.
+- Experiments cover single-layer FFN editing with $N \le 100$; sequential editing and thousand-scale batches need further validation.
+- Defense is limited to locate-then-edit on FFNs; it does not cover external memory (SERAC) or meta-learning (MEND) methods.
+- Decoy subjects may introduce *out-of-target hallucinations*: at $\alpha \ge 3$, fluency and knowledge space stability slightly decline.
 
 ## Related Work & Insights
-- **vs. Youssef et al. (2025)**: They only recover pre-edit *behavior*, not prompts/answers. KSTER recovers all three without prompt assumptions.
-- **vs. Patil et al. (2024)**: They probe answers via intermediate logits but require known prompts; this work breaks that strong assumption and is stable for batch edits.
-- **vs. Membership Inference**: Traditional privacy attacks sample blindly from unedited models with low recall. This work proves "edited" models are paradoxically more vulnerable to precise targeted attacks.
-- **Insights**: The logic generalizes to any "low-rank update + analytical solution" (LoRA, prefix tuning diffs, unlearning). Any update falling in a low-dimensional subspace of "modified sample activations" faces similar subspace recovery risks.
+- **vs. Youssef et al. (2025)**: They recover pre-edit behavior, but KSTER recovers the prompt and the original answer.
+- **vs. Patil et al. (2024)**: Their method requires the attacker to know the original prompt; this work breaks that assumption.
+- **vs. Membership Inference**: Traditional privacy attacks have low recall on unedited models; this work proves that "edited" models are actually easier to target, defining a new "edit-aware privacy attack" direction.
+- **Insight**: This logic extends to any "low-rank update + closed-form" algorithm (LoRA, prefix tuning diffs, unlearning). Any update lying in a low-dimensional subspace spanned by sample activations poses a similar risk.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to systematically show locate-then-edit acts as a side channel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three LLMs × three algorithms × two datasets + robust covariance + camouflage sweep; lacks multi-layer and large-scale sequential evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Logical progression from theory to defense; complete proofs in the appendix.
-- Value: ⭐⭐⭐⭐⭐ Provides an "audit tool" and a warning for the knowledge editing community, likely impacting future privacy-preserving designs.
+- Novelty: ⭐⭐⭐⭐⭐ First to reveal locate-then-edit as a side channel with a self-consistent attack/defense/theory.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive model/algorithm coverage, but lacks large-scale sequential editing evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical flow from Woodbury rewriting to decoy defense is rigorous.
+- Value: ⭐⭐⭐⭐⭐ Provides an immediate security auditing tool and influences future privacy-preserving editing designs.
 
 <!-- RELATED:START -->
 

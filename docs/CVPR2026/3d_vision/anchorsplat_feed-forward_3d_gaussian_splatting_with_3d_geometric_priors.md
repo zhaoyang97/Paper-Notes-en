@@ -2,136 +2,140 @@
 title: >-
   [Paper Note] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverages 3D geometric priors (sparse point clouds) as anchors to predict Gaussians directly in 3D spa…
+  [CVPR 2026][3D Vision][Paper Note] AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that predicts Gaussians directly in 3D space using 3D geometric priors (sparse point clouds) as anchors. It achieves SOTA performance on ScanNet++ v2 (PSNR 21.48) with approximately 20x fewer Gaussians and half the reconstruction time, while providing s
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "feed-forward reconstruction"
-  - "anchor alignment"
-  - "geometric priors"
-  - "novel view synthesis"
+  - CVPR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 3c3cf6f671c92fb8
+content_hash: c04c735008d68e6b
 ---
-
 # AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.07053](https://arxiv.org/abs/2604.07053)  
 **Code**: Coming soon  
-**Area**: 3D Vision / Novel View Synthesis
-**Keywords**: 3D Gaussian Splatting, feed-forward reconstruction, anchor alignment, geometric priors, novel view synthesis
+**Area**: 3D Vision / Novel View Synthesis  
+**Keywords**: 3D Gaussian Splatting, Feed-forward reconstruction, Anchor-aligned, Geometric priors, Novel view synthesis
 
 ## TL;DR
-AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverages 3D geometric priors (sparse point clouds) as anchors to predict Gaussians directly in 3D space. Using approximately 20× fewer Gaussians and half the reconstruction time, it achieves state-of-the-art performance on ScanNet++ v2 (PSNR 21.48) with superior depth estimation accuracy.
+AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that predicts Gaussians directly in 3D space using 3D geometric priors (sparse point clouds) as anchors. It achieves SOTA performance on ScanNet++ v2 (PSNR 21.48) with approximately 20x fewer Gaussians and half the reconstruction time, while providing superior depth estimation accuracy.
 
 ## Background & Motivation
-**Background**: Scene-level 3D reconstruction is a core problem in computer vision. Optimization-based methods (3DGS, NeRF) achieve high quality but require per-scene iterative optimization, resulting in long processing times. Feed-forward 3DGS methods enable cross-scene generalization via a single forward pass.
+**Background**: Scene-level 3D reconstruction is a core problem in computer vision. Optimization-based methods (3DGS, NeRF) provide high quality but require long, per-scene iterative optimization. Feed-forward 3DGS methods enable cross-scene generalization via a single forward pass.
 
 **Limitations of Prior Work**:
-   - Existing feed-forward methods adopt pixel-aligned strategies: each 2D pixel is mapped to one 3D Gaussian, causing the Gaussian count $N = H \times W \times V$ to grow linearly with the number of views;
-   - Pixel-aligned representations are tied to 2D grids, leading to redundancy in flat regions and insufficient coverage in complex regions;
-   - These methods are sensitive to occlusion, low-texture regions, and motion parallax, with inconsistent cross-view sampling patterns;
-   - Feature interactions in 2D space are limited, lacking direct interaction among neighboring 3D points, which produces floaters and fragmented surfaces.
+   - Existing feed-forward methods adopt pixel-alignment strategies: each 2D pixel maps to one 3D Gaussian, making the number of Gaussians $N = H \times W \times V$ grow linearly with the number of views;
+   - Pixel-aligned representations are tied to 2D grids, leading to redundancy in flat areas and inadequacy in complex regions;
+   - Sensitive to occlusions, low-texture areas, and motion parallax, with inconsistent cross-view sampling patterns;
+   - Limited feature interaction in 2D space results in a lack of direct interaction between neighboring 3D points, producing floaters and fractured surfaces.
 
-**Key Challenge**: How to achieve geometrically consistent, high-fidelity 3D reconstruction under feed-forward efficiency constraints?
+**Key Challenge**: How to achieve geometrically consistent, high-fidelity 3D reconstruction under feed-forward efficiency?
 
-**Key Insight**: Starting from 3D anchors rather than 2D pixels — MVS-predicted depths and poses are used to construct sparse 3D anchors, upon which Gaussians are predicted.
+**Key Insight**: Start from 3D anchors instead of 2D pixels—utilize depth and poses predicted by MVS to construct sparse 3D anchors and predict Gaussians on those anchors.
 
-**Core Idea**: Anchor-aligned Gaussian representation + iterative refinement via Gaussian Refiner = fewer Gaussians, higher quality, independent of input resolution and number of views.
+**Core Idea**: Anchor-aligned Gaussian representation + Gaussian Refiner iterative refinement = fewer Gaussians, higher quality, independent of input resolution or view count.
 
 ## Method
 
 ### Overall Architecture
-Input: $V$ multi-view images → MapAnything MVS module predicts depths and poses → back-projection to 3D + FPS downsampling to $N$ anchors → 2D CNN feature extraction → projection onto anchors → Transformer Gaussian Decoder predicts anchor-aligned Gaussians → Gaussian Refiner refinement → rendering.
+Input: $V$ multi-view images → MapAnything MVS module predicts depth and poses → Back-projection to 3D + FPS downsampling to obtain $N$ anchors → 2D U-Net extracts features and projects them to anchors → Gaussian Decoder interacts between 3D anchors via Transformer and predicts anchor-aligned Gaussians → Gaussian Refiner refines via rendering error → Rendering.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: V Multi-view Images"] --> B["MapAnything MVS<br/>Predict Depth D / Intrinsics K / Extrinsics P"]
+    B --> C["Anchor Predictor<br/>Back-project to 3D + FPS Downsampling<br/>N≈247k Anchors (Independent of Res/Views)"]
+    subgraph DEC["Gaussian Decoder (3D Anchor Feature Interaction)"]
+        direction TB
+        D["2D U-Net Encoding<br/>Image + Depth + Camera Ray → Feature Map"]
+        D --> E["Feature Projection to Anchors + 16-layer Transformer Attention"]
+        E --> F["MLP Decodes Gaussian Attributes<br/>Pos = Anchor + Constrained Offset"]
+    end
+    C --> DEC
+    DEC --> G["Gaussian Refiner<br/>Rendering Error Flow → Attribute Increment Refinement"]
+    G --> H["Rendering: Novel View Synthesis"]
+```
 
 ### Key Designs
-1. **Anchor Predictor**:
 
-    - **Function**: Generates a sparse set of 3D anchors from multi-view images.
-    - **Mechanism**:
-        - Pretrained MapAnything predicts depth $D_i$, intrinsics $K_i$, and extrinsics $P_i$
-        - Back-projection to 3D: $P_w = R_i(D_i(u,v) K_i^{-1}[u,v,1]^\top) + T_i$
-        - FPS downsampling to $N \ll H \times W \times V$ anchors
-    - **Design Motivation**: Pixel-aligned methods produce $V \times H \times W$ Gaussians (e.g., 5.5M in AnySplat), whereas anchor alignment requires only ~247K, a reduction of ~20×. The anchor count is determined by scene complexity rather than image resolution.
+**1. Anchor Predictor: Shifting Gaussian "Mounting Points" from 2D Pixels to 3D Anchors**
 
-2. **Gaussian Decoder**:
+Previous feed-forward methods aligned Gaussians per pixel, where every pixel in every view generated a Gaussian. The total count $V \times H \times W$ expands linearly—AnySplat produces ~5.5M Gaussians for 32 views, creating redundancy on flat walls and insufficiency at complex edges. AnchorSplat bypasses pixels: it uses pre-trained MapAnything to predict depth $D_i$, intrinsics $K_i$, and extrinsics $P_i$, back-projecting each pixel to world coordinates:
 
-    - **Function**: Predicts Gaussian attributes from anchor features.
-    - **Mechanism**:
-        - 2D U-Net encodes image, depth, and camera rays: $F_i = E(I_i, D_i, \text{Ray}_i) \in \mathbb{R}^{h \times w \times C}$
-        - Projects 2D features onto 3D anchors to obtain anchor features
-        - 16-layer Transformer attention captures spatial interactions among anchors in 3D
-        - MLP predicts 4 sets of Gaussian attributes $\{\delta\mu, \alpha, s, r, sh\}$ per anchor
-        - Final Gaussian position: $\mu_j = A_j + \delta\mu_j$ (offset constrained within 10/128)
-    - **Design Motivation**: Feature interactions in 3D space (rather than 2D) enable neighboring points to interact directly, reducing floaters and geometric inconsistencies.
+$$P_w = R_i\big(D_i(u,v)\, K_i^{-1}[u,v,1]^\top\big) + T_i,$$
 
-3. **Gaussian Refiner**:
+followed by Farthest Point Sampling (FPS) to sparsify the dense cloud into $N \ll H \times W \times V$ anchors. Crucially, the anchor count depends on geometric complexity rather than resolution or view count—staying stable at ~247k whether given 3 or 128 views, which is ~20x fewer than pixel-alignment.
 
-    - **Function**: Refines Gaussian attributes via rendering error feedback, analogous to a single-step differentiable rendering "optimization."
-    - **Mechanism**:
-        - Pretrained ResNet-18 extracts multi-scale features from rendered and ground-truth images
-        - Per-view error is computed: $e_i = F_i - \hat{F}_i$
-        - Differentiable back-projection maps 2D errors to 3D Gaussian positions
-        - Transformer + Point Transformer combines current attributes, anchor features, and error features to predict attribute residuals
-        - $\hat{\mathcal{G}}_j = \mathcal{G}_j + \delta\mathcal{G}_j$
-    - **Design Motivation**: Feed-forward models with limited anchors may produce blurry or incomplete regions. The Refiner serves as a plug-and-play module that improves quality without retraining the full model.
+**2. Gaussian Decoder: Feature Interaction Between 3D Anchors Instead of 2D Grids**
+
+Pixel-alignment limits interaction to 2D views, causing spatially neighboring points from different views to be unaware of each other, resulting in fractured surfaces. The Decoder moves interaction to 3D: a 2D U-Net encodes images and rays into feature maps $F_i = E(I_i, D_i, \text{Ray}_i) \in \mathbb{R}^{h \times w \times C}$. These features are projected to anchors, followed by 16 Transformer layers for cross-anchor communication in 3D space. Each anchor decodes attributes $\{\delta\mu, \alpha, s, r, sh\}$ via MLP, with the final position being the anchor plus a constrained small offset:
+
+$$\mu_j = A_j + \delta\mu_j,$$
+
+where the offset is limited to approx. $10/128$. Since interaction happens in 3D neighborhoods rather than 2D grids, geometric consistency is significantly improved.
+
+**3. Gaussian Refiner: One-step Rendering Error Backflow for "Quasi-Optimization"**
+
+Feed-forward passes may leave holes or blurriness. The Refiner incorporates "one-step optimization": Multi-scale residuals $e_i = F_i - \hat{F}_i$ are calculated between rendered and ground-truth features using ResNet-18. This 2D error is back-projected to 3D Gaussian positions. A Transformer combined with a Point Transformer predicts attribute increments based on current attributes, anchor features, and error features:
+
+$$\hat{\mathcal{G}}_j = \mathcal{G}_j + \delta\mathcal{G}_j.$$
+
+This plug-and-play module can be attached to any feed-forward 3DGS to improve boundary sharpness and color consistency without retraining the entire core model.
 
 ### Loss & Training
-- **Two-stage training**:
-    - Stage 1: Train Gaussian Decoder (84M parameters), 5K steps
-    - Stage 2: Freeze Decoder, train Gaussian Refiner (31M parameters), 5K steps
-- Decoder loss: $L = \lambda_I \ell_I + \lambda_D \ell_D + \lambda_\alpha \ell_\alpha + \lambda_s \ell_s$
-    - Rendering loss: $\ell_I = \ell_1 + 0.2(1- \text{SSIM}) + 0.2 \text{LPIPS}$
-    - Depth loss, opacity regularization, volume regularization
-- Refiner uses rendering loss $\ell_I$ only
+- **Two-stage Training**:
+    - Stage 1: Train Gaussian Decoder (84M params), 5k steps.
+    - Stage 2: Freeze Decoder, train Gaussian Refiner (31M params), 5k steps.
+- **Decoder Loss**: $L = \lambda_I \ell_I + \lambda_D \ell_D + \lambda_\alpha \ell_\alpha + \lambda_s \ell_s$
+    - Rendering Loss: $\ell_I = \ell_1 + 0.2(1- \text{SSIM}) + 0.2 \text{LPIPS}$
+    - Depth loss, opacity regularization, volume regularization.
+- **Refiner**: Uses only rendering loss $\ell_I$.
 
 ## Key Experimental Results
 
-### Main Results (ScanNet++ v2, 32 input views, 4 novel views)
+### Main Results (ScanNet++ v2, 32 Input Views, 4 Novel Views)
 
-| Method | Type | PSNR↑ | SSIM↑ | δ₁↑ | AbsRel↓ | # Gaussians | Recon. Time |
-|--------|------|-------|-------|-----|---------|-------------|-------------|
+| Method | Category | PSNR↑ | SSIM↑ | δ₁↑ | AbsRel↓ | Gaussians | Recon Time |
+|------|------|-------|-------|-----|---------|--------|---------|
 | 3DGS | Optimization | 19.98 | 0.72 | 0.31 | 0.42 | 496K | 391s |
 | AnySplat | Feed-forward | 20.20 | 0.73 | 0.71 | 0.16 | **5.55M** | 6.83s |
 | AnchorSplat⋆ | Feed-forward | 20.96 | 0.78 | **0.94** | 0.068 | 247K | **3.11s** |
-| **AnchorSplat** | Feed-forward | **21.48** | **0.79** | **0.94** | **0.066** | 247K | 5.52s |
+| **Ours** | Feed-forward | **21.48** | **0.79** | **0.94** | **0.066** | 247K | 5.52s |
 
-### Ablation Study (varying number of input views)
+### Ablation Study (Varying Input View Counts)
 
-| Setting | Method | PSNR↑ | # Gaussians | Recon. Time |
-|---------|--------|-------|-------------|-------------|
-| 3 views | AnySplat | 19.51 | 544K | 1.34s |
-| 3 views | AnchorSplat⋆ | **19.99** | **247K** | 3.18s |
-| 128 views | AnySplat | 20.47 | 21.6M | 14.2s |
-| 128 views | AnchorSplat⋆ | **21.23** | **247K** | 3.94s |
+| Setting | Method | PSNR↑ | Gaussians | Recon Time |
+|------|------|-------|--------|---------|
+| 3 Views | AnySplat | 19.51 | 544K | 1.34s |
+| 3 Views | Ours⋆ | **19.99** | **247K** | 3.18s |
+| 128 Views | AnySplat | 20.47 | 21.6M | 14.2s |
+| 128 Views | Ours⋆ | **21.23** | **247K** | 3.94s |
 
 ### Key Findings
-- The Gaussian count remains constant at 247K regardless of the number of input views (AnySplat scales from 544K to 21.6M)
-- Depth accuracy substantially surpasses AnySplat (δ₁: 0.94 vs. 0.71), indicating stronger 3D geometric awareness from anchor alignment
-- The Refiner significantly improves boundary sharpness and color consistency
-- Performance remains stable under both extremely sparse (3 views) and extremely dense (256 views) settings
+- Gaussian count is constant at 247k, independent of view count (AnySplat grows from 550k to 21.6M).
+- Depth accuracy is significantly better than AnySplat (δ₁: 0.94 vs 0.71), reflecting stronger 3D-aware anchor alignment.
+- Refiner significantly improves boundary sharpness and color consistency.
+- Performance remains stable across extremely sparse (3 views) and extremely dense (256 views) settings.
 
 ## Highlights & Insights
-- **Anchor alignment is the key innovation**: it fundamentally decouples the Gaussian representation from 2D pixels, with count determined by scene complexity
-- The plug-and-play design of the Gaussian Refiner is elegant and can independently enhance any feed-forward 3DGS method
-- The substantial improvement in depth estimation (0.94 vs. 0.71) demonstrates that feature interaction in 3D space is critical for geometric understanding
+- **Anchor-alignment is the key innovation**: It decouples Gaussian representation from 2D pixels, with quantities determined by the scene geometry.
+- The Gaussian Refiner's plug-and-play design is elegant and can be used independently to enhance any feed-forward 3DGS method.
+- The massive gain in depth estimation (0.94 vs 0.71) proves that feature interaction in 3D space is critical for geometric understanding.
 
 ## Limitations & Future Work
-- Relies on the quality of MapAnything's depth and pose predictions; inaccurate MVS estimates degrade anchor quality
-- Spherical harmonics are limited to degree 0 (no view-dependent color), restricting expressiveness for reflective materials
-- SH degree 0 may be insufficient for scenes with complex illumination
+- Dependency on MapAnything's depth and pose quality; poor MVS predictions lead to degraded anchor quality.
+- Spherical harmonics (SH) are limited to degree 0 (no view-dependent color), restricting performance on specular materials.
+- SH degree 0 may be insufficient for scenes with complex lighting.
 
 ## Related Work & Insights
-- Compared to the voxel-aligned approach in AnySplat, anchor alignment more directly exploits 3D geometric priors
-- The rendering error feedback in the Refiner is conceptually similar to G3R but is more lightweight
+- Compared to voxel-alignment in AnySplat, anchor-alignment utilizes 3D geometric priors more directly.
+- The rendering error feedback in Refiner is conceptually similar to G3R but more lightweight.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The anchor-aligned paradigm represents a significant advance in feed-forward 3DGS
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation on ScanNet++ with multi-view ablations
-- Writing Quality: ⭐⭐⭐⭐ Method descriptions are clear and comparisons are fair
-- Value: ⭐⭐⭐⭐⭐ 20× efficiency gain combined with quality improvement yields strong practical utility
+- Novelty: ⭐⭐⭐⭐⭐ Anchor-alignment is a significant advancement for feed-forward 3DGS.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation on ScanNet++ with view count ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear method description and fair comparisons.
+- Value: ⭐⭐⭐⭐⭐ 20x efficiency gain with improved quality; highly practical.
 
 <!-- RELATED:START -->
 
@@ -139,11 +143,11 @@ Input: $V$ multi-view images → MapAnything MVS module predicts depths and pose
 
 ## Related Papers
 
-- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
-- [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
+- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
+- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
 
 </div>
 

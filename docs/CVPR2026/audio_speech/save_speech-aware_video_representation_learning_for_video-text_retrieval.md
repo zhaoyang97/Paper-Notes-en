@@ -2,66 +2,79 @@
 title: >-
   [Paper Note] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 description: >-
-  [Audio & Speech] This paper proposes SAVE, a speech-aware video representation learning method that introduces a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF visual-audio early alignment str…
+  [CVPR 2026][Audio & Speech][Paper Note] Ours proposes the SAVE method, which achieves speech-aware video representation learning by adding a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF vision-audio early alignment strategy, significantly outperforming the SOTA on five video-text retrieval benchmarks.
 tags:
-  - "Audio & Speech"
+  - CVPR 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 6fbae214ca89cd90
+content_hash: 3cc7a3a969e87680
 ---
-
 # SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 
-| Info | Content |
+| Information | Content |
 |------|------|
 | **Conference** | CVPR 2026 |
 | **arXiv** | [2603.08224](https://arxiv.org/abs/2603.08224) |
 | **Area** | Human Understanding |
-| **Keywords** | video-text retrieval, speech awareness, audio-visual fusion, soft-ALBEF, multimodal learning |
+| **Keywords** | Video-Text Retrieval, Speech-Aware, Audio-Visual Fusion, soft-ALBEF, Multimodal Learning |
 
 ## TL;DR
 
-This paper proposes SAVE, a speech-aware video representation learning method that introduces a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF visual-audio early alignment strategy, achieving comprehensive state-of-the-art performance across five video-text retrieval benchmarks.
+Ours proposes the SAVE method, which achieves speech-aware video representation learning by adding a dedicated speech branch (Whisper ASR + CLIP text encoder) and a soft-ALBEF vision-audio early alignment strategy, significantly outperforming the SOTA on five video-text retrieval benchmarks.
 
 ## Background & Motivation
 
-Video-text retrieval (VTR) methods commonly adopt CLIP as the backbone; however, since CLIP provides only image and text encoders, existing approaches naturally neglect the audio track of videos. Recent audio-visual methods (EclipSE, TEFAL, AVIGATE) incorporate audio encoders but suffer from two critical issues:
+In the field of Video-Text Retrieval (VTR), CLIP is commonly used as a foundation. However, since CLIP only provides image and text encoders, existing methods naturally ignore the audio track of videos. Recent audio-visual methods (EclipSE, TEFAL, AVIGATE) introduce audio encoders but face two critical issues:
 
-**Audio encoders fail to represent speech content effectively**: Existing audio encoders (ResNet-18, AST) are trained on environmental sound datasets and encode speech semantics poorly. The authors demonstrate this through an experiment showing that speech samples of different categories are completely intermixed in AST's feature space and thus indistinguishable.
+**Audio encoders cannot effectively represent speech content**: Existing audio encoders (ResNet-18, AST) are trained on environmental sound datasets and perform poorly in encoding speech semantics. The authors demonstrate through an experiment that speech samples from different categories are completely mixed in the feature space of AST and cannot be distinguished.
 
-**Lack of alignment prior to visual-audio fusion**: Visual features (CLIP image encoder) and audio features (AST) are never pre-aligned before fusion, which limits the effectiveness of direct fusion. Although ALBEF (align before fuse) has proven successful in vision-language pre-training, video-audio pairs often lack semantic correspondence (e.g., background music unrelated to video content), making direct application of hard ALBEF prone to introducing spurious correlations.
+**Lack of alignment before vision-audio fusion**: Visual features (CLIP image encoder) and audio features (AST) are never pre-aligned, limiting the effectiveness of direct fusion. Although ALBEF (align before fuse) has succeeded in vision-language pre-training, video-audio pairs often lack semantic correspondence (e.g., background music irrelevant to video content). Directly applying hard ALBEF introduces spurious correlations.
 
 ## Method
 
-### Overall Architecture: Three-Branch Network
+### Overall Architecture
 
-SAVE extends AVIGATE's dual-branch design (visual + audio) into a three-branch architecture:
+SAVE aims to solve a specific problem: existing audio-visual retrieval methods ignore the semantics of **what is being said** in the video. It incorporates a **speech branch** alongside the "vision + audio" dual branches of AVIGATE, fusing three signals into a "speech-aware" video representation for retrieval with text queries.
 
-1. **Visual branch**: CLIP ViT-B/32 extracts frame features $\{v_i\}$
-2. **Audio branch**: AST (frozen) extracts audio tokens, which are resampled and fused with visual tokens via Gated-Fusion to produce $\{\hat{a}_i\}$
-3. **Speech branch (new)**: Whisper large-v3 → ASR text → CLIP text encoder → speech tokens $\{s_i\}$, further processed via Gated-Fusion to yield $\{\hat{s}_i\}$
+The pipeline operates as follows: the vision branch extracts frame features $\{v_i\}$ using CLIP ViT-B/32; the audio branch processes audio tokens extracted by AST (frozen) through a Resampler and fuses them with visual tokens via Gated-Fusion to obtain $\{\hat{a}_i\}$; the new speech branch uses Whisper large-v3 for ASR, feeds the text into a CLIP text encoder to obtain speech tokens $\{s_i\}$, and similarly uses Gated-Fusion to obtain $\{\hat{s}_i\}$. Finally, the three paths are combined into a speech-aware video representation $\{\tilde{v}_i\} = \{v_i\} + (\{\hat{a}_i\} + \{\hat{s}_i\})/2$. Retrieval is completed within CLIP’s vision-text space.
 
-The final speech-aware video representation is: $\{\tilde{v}_i\} = \{v_i\} + (\{\hat{a}_i\} + \{\hat{s}_i\})/2$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Input Video"] --> VIS["Vision Branch<br/>CLIP ViT-B/32 frames → {v_i}"]
+    V --> MISS["Missing Data Handling<br/>Silent → Zero Mel; ASR fail → Zero vector"]
+    MISS --> AUD["Audio Branch<br/>AST(frozen) → Resampler → Audio tokens"]
+    MISS --> SPE["Speech Branch<br/>Whisper ASR → CLIP Text Encoder → Speech tokens"]
+    VIS -.->|Soft-ALBEF Early Alignment| AUD
+    AUD --> GFA["Gated-Fusion<br/>Fusion with vision tokens → {â_i}"]
+    SPE --> GFS["Gated-Fusion<br/>Fusion with vision tokens → {ŝ_i}"]
+    VIS --> FUSE["Three-branch Fusion & Weight Design<br/>{ṽ_i} = {v_i} + ({â_i}+{ŝ_i})/2"]
+    GFA --> FUSE
+    GFS --> FUSE
+    FUSE --> RET["Retrieval with Text Query<br/>(CLIP Vision-Text Space)"]
+```
 
-**Design Motivation**: The visual branch is treated as the primary signal (higher weight), while speech and audio are weighted equally (lacking prior knowledge). This simple fusion encourages Gated-Fusion to learn truly informative signals.
+### Key Designs
 
-### Soft-ALBEF Early Alignment
+**1. Three-branch fusion and weight design: Extracting speech semantics as a separate path without over-dominance**
 
-The key innovation is using ImageBind to compute a video-audio affinity matrix $M_0$ as soft labels, replacing the hard labels used in ALBEF.
+Existing audio encoders (ResNet-18, AST) are trained on ambient sounds and are nearly powerless regarding "what was said"—the authors' toy experiment shows speech categories are indistinguishable in AST's feature space. SAVE bypasses this by using Whisper to transcribe speech and encoding it with the CLIP text encoder, effectively mapping speech semantics back into the already aligned CLIP vision-text space. During fusion, visual features $\{v_i\}$ maintain dominance through original weighting, while speech and audio are averaged as $(\{\hat{a}_i\} + \{\hat{s}_i\})/2$: visual info is the primary signal for retrieval, and since the specific importance of speech vs. audio is unknown a priori, Gated-Fusion is used to learn which signal to amplify.
+
+**2. Soft-ALBEF Early Alignment: Avoiding spurious correlations with soft labels**
+
+Visual and audio features are never pre-aligned, limiting direct fusion. While ALBEF's "align before fuse" works for vision-language pre-training, direct application to video-audio fails because audio tracks (like background music) often lack semantic relevance to the visual content. Hard ALBEF would force these unrelated pairs together. SAVE uses soft labels by pre-calculating a video-audio affinity matrix $M_0$ via ImageBind to serve as supervision. The network's affinity matrix $M_1$ is driven to approximate the relative structure of $M_0$ rather than a 0/1 binary:
 
 $$\ell_{\text{pearson}} = \frac{1}{b}\sum_{i=1}^{b} d_p(\sigma(M_0[i,\cdot]), \sigma(M_1[i,\cdot])) + \frac{1}{b}\sum_{j=1}^{b} d_p(\sigma(M_0[\cdot,j]), \sigma(M_1[\cdot,j]))$$
 
-where $M_1$ is the affinity matrix produced by the current network, and $d_p$ denotes the Pearson distance. Pearson distance is preferred over MSE/Huber due to its invariance to scale and shift, allowing the network to focus on learning relative ranking structure.
+where $d_p$ is the Pearson distance. Pearson distance is chosen over MSE/Huber because it is insensitive to scale and shift; the network only needs to learn the ranking structure of "which video-audio pairs are more relevant," providing tolerance for noisy cross-modal correspondences and preventing fitting to noise as if it were a hard label.
 
-### Handling Missing Data
+**3. Missing data handling: Ensuring robustness for samples without sound or speech**
 
-- No audio track: Mel filterbank is set to zero
-- ASR failure: An empty string is used; the tokenizer pads it to a zero vector
+Real-world videos may lack audio or contain speech that ASR fails to recognize. SAVE provides zero-value placeholders for both: for silent videos, the Mel filterbank is set to zero; for ASR failures, an empty string is used, which the tokenizer converts to a zero vector. This ensures missing samples do not interrupt the batch or contribute misleading signals to the fusion.
 
-### Training Details
+### Loss & Training
 
-- The Pearson distance loss serves as an auxiliary objective combined with equal weight alongside AVIGATE's adaptive-margin contrastive loss
-- Backbone (CLIP) fine-tuning learning rate: 1e-7; other modules: 1e-4 (to prevent catastrophic forgetting)
-- 8× RTX 3090 GPUs
+The Pearson distance loss serves as an auxiliary objective, added with equal weight to AVIGATE's original adaptive margin contrastive loss. During fine-tuning, a very small learning rate (1e-7) is assigned to the CLIP backbone to prevent catastrophic forgetting, while other modules use 1e-4. Training is conducted on 8× RTX 3090.
 
 ## Key Experimental Results
 
@@ -72,18 +85,18 @@ where $M_1$ is the affinity matrix produced by the current network, and $d_p$ de
 | CLIP4Clip | 197.5 | 150.1 | 248.5 | 107.6 | 112.7 | 35.1 |
 | PIG | 203.0 | 157.1 | 252.1 | - | - | - |
 | AVIGATE | 207.7 | 162.7 | 249.3 | 110.6 | 125.7 | 37.9 |
-| **SAVE** | **216.2** | **165.8** | **255.5** | **121.4** | **128.3** | **39.6** |
+| **Ours** | **216.2** | **165.8** | **255.5** | **121.4** | **128.3** | **39.6** |
 
-SumR gains of SAVE over AVIGATE: MSRVTT-9k +8.5, VATEX +6.2, Charades +10.8.
+SAVE gains in SumR compared to AVIGATE: MSRVTT-9k +8.5, VATEX +6.2, Charades +10.8.
 
 ### Group Analysis (MSRVTT-9k)
 
-| Group | SAVE vs. AVIGATE SumR Difference |
+| Group | SAVE vs AVIGATE SumR Difference |
 |------|:---:|
-| Visually relevant (499 cases) | Positive gain |
-| Sound-relevant (226 cases) | +11.5 |
-| Speech-relevant (171 cases) | +12.9 |
-| Sound + speech relevant (104 cases) | **+16.4** |
+| Vision-related (499 cases) | Positive Gain |
+| Sound-related (226 cases) | +11.5 |
+| Speech-related (171 cases) | +12.9 |
+| Sound+Speech-related (104 cases) | **+16.4** |
 
 ### Efficiency Analysis
 
@@ -91,40 +104,40 @@ SumR gains of SAVE over AVIGATE: MSRVTT-9k +8.5, VATEX +6.2, Charades +10.8.
 |------|:---:|:---:|:---:|
 | TEFAL | $O(n_{\mathcal{A}} n_{\mathcal{T}} + n_{\mathcal{V}} n_{\mathcal{T}})$ | 140.57ms | 209.2 |
 | AVIGATE | $O(n_{\mathcal{A}} + n_{\mathcal{V}} + n_{\mathcal{T}})$ | 9.90ms | 207.7 |
-| **SAVE** | $O(n_{\mathcal{S}} + n_{\mathcal{A}} + n_{\mathcal{V}} + n_{\mathcal{T}})$ | **9.90ms** | **216.2** |
+| **Ours** | $O(n_{\mathcal{S}} + n_{\mathcal{A}} + n_{\mathcal{V}} + n_{\mathcal{T}})$ | **9.90ms** | **216.2** |
 
-SAVE maintains the same inference latency as AVIGATE (9.90ms), since video features can be extracted offline.
+SAVE maintains the same inference latency as AVIGATE (9.90ms) because video features can be extracted offline.
 
 ### Ablation Study: Speech Branch vs. Audio Branch
 
-- Without the speech branch: SumR −4.3
-- Without the audio branch: SumR −8.7
-- Both branches contribute; the audio branch has a larger impact because sound-relevant queries are more prevalent in the datasets.
+- Removing speech branch: SumR -4.3
+- Removing audio branch: SumR -8.7
+- Both contribute significantly; the audio branch has a larger impact due to more sound-related queries in the dataset.
 
 ## Highlights & Insights
 
-1. **Precise problem identification**: A toy experiment directly demonstrates AST's clustering failure in the speech feature space, providing highly convincing motivation.
-2. **Elegant speech branch design**: The Whisper ASR → CLIP text encoder pipeline cleverly leverages CLIP's text-visual alignment capability to encode speech content.
-3. **Strong generalizability of soft-ALBEF**: Using ImageBind to provide noise-tolerant soft supervision addresses the fundamental issue of missing semantic correspondence in visual-audio pairs.
-4. **Zero additional inference cost**: All newly introduced computations can be performed offline.
-5. **Remarkable gains on Charades**: Even though only 13.5% of videos contain ASR text, SumR still improves by 10.8, demonstrating that soft-ALBEF effectively leverages the audio modality.
+1.  **Precise Problem Insights**: The toy experiment demonstrating AST's clustering failure in speech space makes the motivation highly persuasive.
+2.  **Elegant Speech Branch**: The Whisper ASR → CLIP text encoder pipeline cleverly leverages CLIP's pre-aligned text-vision capabilities to encode speech.
+3.  **Strong Generalization of soft-ALBEF**: Using ImageBind to provide noise-tolerant soft supervision solves the fundamental issue of missing correspondences in vision-audio pairs.
+4.  **Zero Extra Inference Cost**: All added computations can be performed offline.
+5.  **Impressive Gains on Charades**: Despite only 13.5% of videos having ASR text, SumR improved by 10.8, proving that soft-ALBEF effectively utilizes the audio modality.
 
 ## Limitations & Future Work
 
-- Validated only on short video clips; ASR transcripts in long videos (e.g., e-commerce livestreams) tend to be longer and noisier.
+- Validated only on short video clips; ASR text in long videos (e.g., e-commerce live streams) is typically longer and noisier.
 - Dependent on Whisper's ASR quality; performance may vary for non-English languages.
-- Uses ViT-B/32 without exploring larger backbones due to GPU budget constraints.
-- Employing ImageBind for soft-ALBEF introduces additional offline computational cost.
-- Limited improvement headroom for entirely silent videos.
+- Uses ViT-B/32; larger backbones were not explored due to GPU budget constraints.
+- Using ImageBind for soft-ALBEF introduces additional offline computational costs.
+- Limited potential for improvement in entirely silent videos.
 
 ## Rating
 
 | Dimension | Score |
 |------|------|
 | Novelty | ⭐⭐⭐⭐ |
-| Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
-| Writing Quality | ⭐⭐⭐⭐⭐ |
-| Value | ⭐⭐⭐⭐ |
+| Experiments | ⭐⭐⭐⭐⭐ |
+| Writing | ⭐⭐⭐⭐⭐ |
+| Overall Value | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
 
@@ -132,11 +145,11 @@ SAVE maintains the same inference latency as AVIGATE (9.90ms), since video featu
 
 ## Related Papers
 
+- [\[ACL 2025\] ChildMandarin: A Comprehensive Mandarin Speech Dataset for Young Children Aged 3-5](../../ACL2025/audio_speech/childmandarin_a_comprehensive_mandarin_speech_dataset_for_young_children_aged_3-.md)
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](../../NeurIPS2025/audio_speech/levo_high-quality_song_generation_with_multi-processing_refined_supervision.md)
-- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
-- [\[ACL 2026\] MARQUIS: A Three-Stage Pipeline for Video Retrieval-Augmented Generation](../../ACL2026/audio_speech/marquis_a_three-stage_pipeline_for_video_retrieval-augmented_generation.md)
-- [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](../../ACL2026/audio_speech/immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
-- [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
+- [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](pavas_physics-aware_video-to-audio_synthesis.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
 
 </div>
 

@@ -2,129 +2,136 @@
 title: >-
   [Paper Note] Generating Robust Portfolios of Optimization Models using Large Language Models
 description: >-
-  [ICML 2026][AIGC Detection][Optimization modeling] This paper proposes a lightweight, training-free algorithm that utilizes a single LLM to perform roles as both a "stochastic generator" and a "scoring evaluator." By pac…
+  [ICML 2026][AIGC Detection][Paper Note] This paper proposes a lightweight, training-free algorithm: using the same LLM to simultaneously act as both a "stochastic generator" and a "scoring evaluator." Candidate optimization models are bundled into a portfolio by accumulating generation probabilities until a $1-\alpha$ threshold is reached. Theoretically, the
 tags:
-  - "ICML 2026"
-  - "AIGC Detection"
-  - "Optimization modeling"
-  - "candidate portfolios"
-  - "LLM evaluation"
-  - "human-in-the-loop"
-  - "coverage guarantees"
+  - ICML 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: c024354cc4cb7a0f
+content_hash: 4eae188bf31c32b0
 ---
-
 # Generating Robust Portfolios of Optimization Models using Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.27013](https://arxiv.org/abs/2605.27013)  
 **Code**: None  
 **Area**: Optimization Modeling / LLM-as-Generator / LLM-as-Judge  
-**Keywords**: Optimization modeling, candidate portfolios, LLM evaluation, human-in-the-loop, coverage guarantees
+**Keywords**: Optimization modeling, portfolio, LLM evaluation, human-in-the-loop, coverage guarantees
 
 ## TL;DR
-This paper proposes a lightweight, training-free algorithm that utilizes a single LLM to perform roles as both a "stochastic generator" and a "scoring evaluator." By packing candidate optimization models into a portfolio until their cumulative generation probability reaches a prefix sum of $1-\alpha$, it theoretically proves that if *either* the generator or the evaluator aligns with human preferences, the portfolio is guaranteed to contain a high-quality optimization model. Empirical results on NL4LP using GPT demonstrate that this portfolio-based approach consistently outperforms random sampling in worst-case scenarios.
+This paper proposes a lightweight, training-free algorithm: using the same LLM to simultaneously act as both a "stochastic generator" and a "scoring evaluator." Candidate optimization models are bundled into a portfolio by accumulating generation probabilities until a $1-\alpha$ threshold is reached. Theoretically, the paper proves that as long as either the "generator" or the "evaluator" aligns with human preferences, the portfolio will contain high-quality optimization models. Empirical validation on NL4LP using GPT demonstrates that the portfolio consistently outperforms random sampling in the worst-case scenario.
 
 ## Background & Motivation
-**Background**: Formalizing real-world decision problems (resource allocation, scheduling, planning) into mathematical optimization models is the most difficult bottleneck in Operations Research, as it requires expertise in both the business domain and optimization modeling itself. Recently, several works have emerged for automated optimization modeling using LLMs (OptiMUS, LLMOPT, Autoformulation, ORLM, etc.), typically focusing on end-to-end fine-tuning or designing reward/objective functions.
+**Background**: Formalizing real-world decision problems (resource allocation, scheduling, planning) into mathematical optimization models is the most significant bottleneck in Operations Research, as it requires expertise in both the business domain and optimization modeling. Recently, several works have emerged using LLMs to automatically generate optimization models (OptiMUS, LLMOPT, Autoformulation, ORLM, etc.), with approaches ranging from "end-to-end fine-tuning of an LLM for full models" to "using LLMs to design only the reward/objective functions."
 
-**Limitations of Prior Work**: These methods almost exclusively output a **single** optimization model. Due to the inherent randomness and hallucination rates of LLMs, single-model quality has no guarantee. Improving reliability often requires expensive retraining or RLHF. Consequently, decision-makers cannot judge the quality of the output model nor do they have secondary options as a backup.
+**Limitations of Prior Work**: Almost all these methods output a **single** optimization model. Since LLM outputs are inherently stochastic and prone to hallucinations, the quality of a single model is not guaranteed. Improving reliability often requires retraining or RLHF, which involves extremely high engineering costs. Furthermore, decision-makers are left with no way to judge the quality of a provided model or a fallback option.
 
-**Key Challenge**: LLMs possess two distinct capabilities for optimization modeling—as a **stochastic generator** (providing diverse candidates through multiple samplings) and as a **reasoning evaluator/judge** (scoring candidates based on world knowledge). Existing research tends to use only one (either sampling or judging), failing to unify them. If the generator is biased, the judge cannot recover the result, and vice versa.
+**Key Challenge**: LLMs possess two distinct capabilities for optimization modeling—acting as a **stochastic generator** (sampling multiple times to provide diverse candidates covering different trade-offs) and acting as a **reasoning evaluator/judge** (scoring candidates based on world knowledge). Existing works either use the former (picking one from multiple random samples) or the latter (letting a judge pick the best), but fail to unify them. If the generator is biased, the judge cannot recover, and vice versa.
 
-**Goal**: To output a set (portfolio) of optimization models without training or fine-tuning, while providing **theoretical coverage guarantees**: as long as either the generator or the evaluator is consistent with human rankings, the portfolio will contain a high-quality model, supporting a human-in-the-loop selection process.
+**Goal**: To output a set (rather than one) of optimization models without training or fine-tuning, providing **theoretical coverage guarantees**: as long as **either** the generator or the evaluator is consistent with human rankings, the portfolio will contain a high-quality model, supporting a "pick-one-from-many" human-in-the-loop decision process.
 
-**Key Insight**: The authors observe that the generation probability $p(o)$ from the generator and the rank $\pi_e(d)$ from the evaluator are **independent** signals. By combining them—specifically, by truncating based on cumulative generator probability while following the evaluator's ranking—the signals can back each other up.
+**Key Insight**: The authors observe that the probability $p(o)$ provided by the generator and the ranking $\pi_e(d)$ provided by the evaluator are two **independent** signals. Combining them into a portfolio—sorted by the evaluator and truncated by the generator's cumulative probability—allows the two signals to back each other up.
 
-**Core Idea**: Add candidates to the portfolio starting from the highest evaluator rank until the cumulative **generation probability** reaches $1-\alpha$. This truncation ensures the portfolio benefits from both "evaluator ranking coverage" and "generation probability coverage."
+**Core Idea**: Candidates are added to the portfolio sequentially based on the evaluator's ranking (from best to worst) until the cumulative **generation probability** reaches $1-\alpha$. This truncation ensures the portfolio benefits from the dual protection of "evaluator ranking coverage" and "generation probability coverage."
 
 ## Method
 
 ### Overall Architecture
-Given a natural language description $d$:
+The paper addresses the issue of unreliable single outputs in automated LLM optimization modeling. Given a natural language optimization task description $d$, the method no longer outputs a single model. Instead, the same LLM first acts as a "stochastic generator" to repeatedly sample a batch of candidates, then switches to the role of an "evaluator" to score them. Finally, a unified stopping rule bundles the most valuable candidates into a portfolio for decision-makers. The key lies in sewing the independent signals of "evaluator ranking" and "generation probability" into a single truncation criterion, ensuring that if either signal is reliable, quality is guaranteed.
 
-1.  **Generation Phase**: Treat the LLM as a generator $g$ and sample $N$ times (e.g., $N=50$). Each sample produces a candidate optimization model $o \in \mathcal{O}$ consisting of natural language explanation and Python code. The generation probability $p(o)$ is estimated using normalized token-level log-probabilities.
-2.  **Evaluation Phase**: Switch the same LLM to an evaluator role $e$. Execute the code for each candidate, feed the output and problem description back into the prompt, and let the LLM assign a score (1–100). Average the scores across multiple runs (e.g., 4 times) to get the rank $\pi_e(d) = (o_{(1)^e}, o_{(2)^e}, \ldots)$.
-3.  **Portfolio Construction**: Accumulate candidates into the portfolio based on the rank $\pi_e(d)$, stopping when the sum of their generation probabilities first $\geq 1-\alpha$. Formally, $\mathcal{P}(d;\alpha)=\{o_{(i)^e}\}_{i=1}^{k^*(\alpha)}$, where $k^*(\alpha)=\inf\{k:\sum_{i=1}^k p(o_{(i)^e}) \geq 1-\alpha\}$.
-4.  **Decision-maker Backup**: The decision-maker selects one model from these $k^*$ candidates, which is a manageable set with theoretical quality guarantees.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    D["Natural language optimization task description d"] --> GEN["LLM as Generator<br/>Sample N=50 candidates (NL + Python)<br/>Estimate gen probability p(o) via log-probs"]
+    GEN --> EXE["Execute candidate Python code"]
+    EXE --> EVAL["LLM as Evaluator<br/>(Description + Candidate + Execution result) Score → Ranking π_e"]
+    EVAL --> TRUNC["Probability Truncation + Rank Pruning<br/>Accumulate p(o) along π_e until ≥ 1−α"]
+    TRUNC --> PORT["Portfolio for human-in-the-loop selection"]
+```
 
 ### Key Designs
 
-1.  **Dual Cutoff via "Probability Truncation + Rank Pruning"**:
-    *   **Function**: Uses evaluator ranking to determine the "insertion order" and generator cumulative probability to determine the "stopping point."
-    *   **Mechanism**: Traverses candidates by evaluation rank while maintaining a cumulative sum $S_k=\sum_{i=1}^k p(o_{(i)^e})$. Once $S_k \geq 1-\alpha$, the process stops. The intuition is: if the evaluator is reliable, the top candidates contain a good model; if the evaluator is unreliable but the generator is reliable, top positions will likely contain good models due to their higher sampling probability.
-    *   **Design Motivation**: Traditional methods using only top-k scores or top-p probabilities are fragile if one component fails; this combination allows either signal to compensate for the other.
+**1. Probability Truncation + Rank Pruning: Unifying two signals into a single stopping rule**
 
-2.  **Unified Coverage Definition and "OR" Alignment Hypothesis**:
-    *   **Function**: Quantifies portfolio quality as coverage $c(\mathcal{P})=\frac{1}{k}\sum_{i=1}^k \mathbb{I}\{o_{(i)^*}\in \mathcal{P}\}$, measuring how many top-k human-ranked candidates are in the portfolio.
-    *   **Mechanism**: Defines **Evaluator Alignment** ($\pi_e(d)=\pi^*(d)$) and **Generator Alignment** ($i\leq j \Rightarrow p(o_{(i)^*})\geq p(o_{(j)*})$). It is proved that: (i) If the evaluator is aligned, $c(\mathcal{P})=1$ for any generator; (ii) If the generator is aligned, $c(\mathcal{P})>\frac{1-2\alpha}{k^*(\alpha)}>0$ even with a poor evaluator for $\alpha \in (0, 1/2)$.
-    *   **Design Motivation**: Earlier works required both components to be reliable (an "AND" condition). This work relaxes this to an "OR" condition—guarantees hold if at least one role (generation or evaluation) aligns with human preferences.
+The construction of the portfolio follows a single rule that incorporates both generation and evaluation information. First, the description $d$ is fed to generator $g$ for random sampling $N$ times (experimentally $N=50$), producing candidates $o\in\mathcal{O}$ in "natural language explanation + Python code" format. Generation probability $p(o)$ is estimated using normalized token-level log-probs. Then, the same LLM acts as an evaluator to provide a ranking from best to worst $\pi_e(d)=(o_{(1)^e}, o_{(2)^e}, \ldots)$. During construction, the candidates are traversed starting from the evaluator's top rank, maintaining a cumulative probability $S_k=\sum_{i=1}^k p(o_{(i)^e})$. The process stops as soon as $S_k\geq 1-\alpha$, yielding:
 
-3.  **Dual-Role Single Model + Code Execution Feedback**:
-    *   **Function**: Uses the same LLM for both generation and evaluation to minimize costs.
-    *   **Mechanism**: The generator outputs Python code; the evaluator first **executes** the code to get numerical results, then scores the model using "description + model + execution output."
-    *   **Design Motivation**: Optimization correctness must be verified by execution. Purely semantic evaluation can be deceived by syntactically correct but logically flawed models.
+$$\mathcal{P}(d;\alpha)=\{o_{(i)^e}\}_{i=1}^{k^*(\alpha)},\quad k^*(\alpha)=\inf\Big\{k:\sum_{i=1}^k p(o_{(i)^e})\geq 1-\alpha\Big\}.$$
+
+This rule is robust because traditional methods either use top-k by score (failing if the evaluator fails) or top-p by probability (failing if the generator fails). Here, the "evaluator ranking determines priority, while generation probability mass determines the stopping point" for mutual backup. If the evaluator is reliable, the top-ranked candidates contain good models; if the evaluator is unreliable but the generator is good, high-quality models will likely enter the cumulative sum due to their high generation probabilities. $\alpha\in(0,1)$ is a user-defined knob—smaller values provide safer coverage but larger portfolios.
+
+**2. Unified Coverage Definition and "OR"-type Alignment Hypothesis**
+
+To formalize the intuition, the quality of the portfolio is quantified using coverage $c(\mathcal{P})=\frac{1}{k}\sum_{i=1}^k \mathbb{I}\{o_{(i)^*}\in\mathcal{P}\}$, representing how many of the top $k$ human-preferred candidates fall into the portfolio ($o_{(i)}^*$ being the true human rank). Based on this, two types of alignment are defined: **Evaluator Alignment** (evaluator ranking matches human ranking $\pi_e(d)=\pi^*(d)$) and **Generator Alignment** (better candidates have higher generation probabilities, i.e., $i\leq j\Rightarrow p(o_{(i)^*})\geq p(o_{(j)^*})$). The truncation rule allows for two **independent** guarantees: if the evaluator is aligned, then $c(\mathcal{P})=1$ for any $\alpha\in(0,1)$ and any generator; if the generator is aligned, then $c(\mathcal{P})>\frac{1-2\alpha}{k^*(\alpha)}>0$ for any $\alpha\in(0,1/2)$ and any evaluator. This relaxes the previous "both components must be reliable" **AND**-type guarantee into an **OR**-type guarantee, fitting the empirical observation that LLM performance varies significantly across different prompts.
+
+**3. Dual Role for the Same Model + Execution Feedback for Evaluation**
+
+The generator and evaluator use the same LLM (both `gpt-5.4-nano` in experiments), switching identities via prompts to avoid doubling costs. The evaluation step is not purely text-based: it first **executes** the candidate's Python code to obtain results, then feeds the "problem description + candidate model + execution output" back into the LLM. Each candidate is scored 1–100 four times, and the average is used. Code execution acts as a factual verification filter, preventing the judge from being misled by "syntactically pretty but logically incorrect" models. The authors also implement a baseline: discarding the evaluator and using the generator's own probabilities for both ranking and truncation (pure top-p) to isolate the signal provided by the reasoning evaluator.
 
 ### Loss & Training
-The approach requires **no training, no fine-tuning, and no RLHF**. It relies entirely on prompted sampling. The only hyperparameter is $\alpha$, which controls the trade-off between coverage and portfolio size. Theoretical proofs rely on Lemma: under evaluator alignment, probability accumulation to $1-\alpha$ covers at least the top $k^*$ human choices. Lower bounds are derived in Appendix A.
+The entire process is **training-free, fine-tuning-free, and RLHF-free**—relying only on prompts and sampling. The only hyperparameter is the user-specified $\alpha$, which balances coverage and portfolio size. The theoretical components rely on a core lemma: when the evaluator is aligned, accumulating generation probability to $1-\alpha$ covers at least the top $k^*$ human-ranked candidates; when the generator is aligned, the lower bound $\frac{1-2\alpha}{k^*}$ is derived from $p(o_{(i)^*})\geq p(o_{(j)^*})\,(i\leq j)$. Full proofs are in Appendix A.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Synthetic Data**: Candidate space $|\mathcal{O}|=K \in \{10, 20, 50, 100\}$. Generator settings: Aligned / Weakly Aligned / Uniform / Misaligned. Evaluator error rates $\epsilon \in \{0, 0.3, 0.5, 0.7, 1\}$.
+**Synthetic Data (Theoretical Verification)**: Candidate space $|\mathcal{O}|=K\in\{10,20,50,100\}$, with true human ranking fixed at $(1,2,\ldots,K)$. Generators are categorized into four levels: Aligned / Weakly Aligned / Uniform / Misaligned. The evaluator is described by an error rate $\epsilon\in\{0,0.3,0.5,0.7,1\}$ ($\epsilon=0$ is perfect; $\epsilon=1$ is reversed). 40 seeds per $\alpha$.
 
-| Setting ($K=100$) | $\alpha$ Range | Empirical Coverage | vs. Theory ($\frac{1-2\alpha}{k^*}$) |
+| Setting ($K=100$) | $\alpha$ Range | Empirical Coverage | Comparison with Theory ($\frac{1-2\alpha}{k^*}$) |
 |---|---|---|---|
-| Weakly Aligned generator, $\epsilon=0$ | $(0, 0.5)$ | $\geq 1-\alpha$ | Far above theoretical bound |
-| Weakly Aligned generator, $\epsilon=0.5$ | $(0, 0.5)$ | $\approx 1-\alpha$ | Satisfies Prop. 3.6 |
-| Aligned generator, $\epsilon=1.0$ (worst judge) | $(0, 0.5)$ | High | High coverage at cost of larger size |
+| Weakly Aligned generator, $\epsilon=0$ | $(0, 0.5)$ | $\geq 1-\alpha$ (Above diagonal) | Much higher than theoretical lower bound |
+| Weakly Aligned generator, $\epsilon=0.5$ | $(0, 0.5)$ | $\approx 1-\alpha$ | Satisfies Proposition 3.6 |
+| Weakly Aligned generator, $\epsilon=1.0$ (Worst judge) | $(0, 0.5)$ | Still positive | Consistent with theory |
+| Aligned generator, $\epsilon=1.0$ (Worst judge) | $(0, 0.5)$ | Significantly higher than Uniform/Misaligned | Large portfolio for high coverage |
 
-**Real-world Data (NL4LP 25 Tasks)**: Generator = `gpt-5.4-nano` (50 samples); Judge = `gpt-5.4`. Quality measured by the **worst-case** score within the portfolio.
+**Real Data (NL4LP, 25 Problems)**: generator = `gpt-5.4-nano` (50 samples); judge = `gpt-5.4` using ground-truth solutions as reference; portfolio size $s\in\{2,4,6,8\}$. Comparison against random portfolios of the same size, with 30 random re-samplings per problem. The quality metric is the **lowest** score within the portfolio (worst-case perspective).
 
 | Portfolio Size $s$ | Ours (LLM-as-evaluator) | Ours (generator-prob-as-evaluator) | Random Portfolio |
 |---|---|---|---|
-| 2 | Significantly Superior | Moderately Superior | Baseline |
-| 4 | Significantly Superior | Moderately Superior | Baseline |
-| 8 | Significantly Superior | Moderately Superior | Baseline |
+| 2 | Significant Gain | Moderate Gain | Baseline |
+| 4 | Significant Gain | Moderate Gain | Baseline |
+| 6 | Significant Gain | Moderate Gain | Baseline |
+| 8 | Significant Gain | Moderate Gain | Baseline |
+
+> The results are presented via KDE distribution plots (Figure 5). Both versions of the proposed method's curves shift to the right; the reasoning evaluator version shifts **further** than the probability-only version, proving that LLM reasoning provides additional valuable signals.
 
 ### Ablation Study
 
 | Configuration | Coverage Behavior | Description |
 |---|---|---|
-| Full: reasoning evaluator + prob truncation | Highest worst-case score | Complete method |
-| w/o evaluator (rank by prob only) | Scores drop but still > random | Loses execution feedback but retains prob signal |
-| w/o prob truncation (fixed top-k) | No $\alpha$ slider, no guarantee | Equivalent to standard LLM-as-judge baseline |
-| Random Portfolio | Lowest worst-case score | Standard baseline, outperformed at all sizes $s$ |
+| Full: reasoning evaluator + generator prob truncation | Highest worst-case score on NL4LP | Complete Method |
+| w/o evaluator (Use generator prob for rank & truncate) | Score drops but remains above random | Loses "execution feedback" signal, though gen prob still provides alignment |
+| w/o prob truncation (Fixed top-k by judge) | No $\alpha$ knob, no coverage guarantee | Equivalent to existing LLM-as-judge baseline, significantly outperformed by this work |
+| Random portfolio (Sample $s$ candidates) | Lowest worst-case score | Strong baseline for NL4LP, outperformed by this work across all $s$ |
 
 ### Key Findings
-- **"OR" Alignment Hypothesis validated**: Even with a reversed evaluator ($\epsilon=1$), coverage remains strictly positive if the generator is at least weakly aligned.
-- **Coverage/Size Trade-off**: Stronger generator alignment leads to higher coverage for the same $\alpha$; stronger evaluator alignment minimizes portfolio size.
-- **Code Execution Improves Reasoning**: Reasoning evaluators outperform pure probability-based ranking, indicating that execution feedback provides critical signals beyond semantics.
+- **The "OR"-type alignment hypothesis is verified in synthetic experiments**: Even if the evaluator is completely reversed ($\epsilon=1$), as long as the generator is even Weakly Aligned, coverage remains strictly positive for $\alpha<0.5$—a level of robustness unattainable by simple top-k or top-p.
+- **Coverage/size trade-off is controlled by human alignment**: Highly aligned generators result in higher coverage but larger portfolios for a fixed $\alpha$; highly aligned evaluators result in higher coverage with smaller portfolios. This provides a clear "quality vs. option count" knob for decision-makers.
+- **Code Execution + Reasoning Evaluator > Pure Gen Probability**: In the NL4LP experiments, the reasoning evaluator shifted the score distribution further right than the probability-based version, proving LLM judges provide signals beyond mere generation likelihood.
+- **Empirical lower bounds are much tighter than theoretical ones**: Proposition 3.6 provides $c>\frac{1-2\alpha}{k^*}$, while measured lower bounds almost follow $1-\alpha$, suggesting room for theoretical tightening.
 
 ## Highlights & Insights
-- **Dual-role, Single Model, OR-type Guarantee**: The unification of generator and judge into a single stopping rule with minimal overhead is highly efficient and robust.
-- **Relaxed Alignment Requirements**: Switching from an "AND" to an "OR" requirement for component reliability is a significant methodological shift, applicable to code generation, SQL synthesis, and RL reward shaping.
-- **Execution-Informed Evaluation**: Integrating traditional solver outputs into the LLM evaluation process transforms the judge from "looking correct" to "calculating correct."
-- **User-tunable Interface**: The $\alpha$ parameter provides a clear interface for human-in-the-loop systems to balance risk (coverage) against effort (number of options).
+- **"Dual roles, same model, OR-type guarantee"** is the most elegant aspect of this method. Previous LLM-for-optimization works treated the generator and judge as separate pipelines. This work switches prompts on the same LLM and designs a unified stopping rule, minimizing engineering overhead while maximizing robustness.
+- **Relaxing coverage guarantees from "both aligned" to "either aligned"** has significant methodological implications. Given the volatility of LLM performance, an "OR"-type guarantee is far more practical and can be extended to code generation, SQL synthesis, and RL reward shaping.
+- **Incorporating code execution results into the evaluator** is an undervalued detail. Optimization modeling naturally includes an objective "referee" (the solver). This work elevates LLM scoring from "looks right" to "calculates correctly" by including execution logs. 
+- **The $\alpha$ knob provides a clear human-machine interface**: Unlike traditional LLM outputs that provide either one or multiple results without a quality vs. quantity trade-off, this method uses a scalar parameter to make "coverage vs. size" continuously adjustable.
 
 ## Limitations & Future Work
-- **Probabilistic Accuracy**: Estimating $p(o)$ via token log-probs may be inaccurate for long sequences or tail-end candidates.
-- **Loose Theoretical Bound**: The $\frac{1-2\alpha}{k^*}$ bound is much looser than empirical findings; tighter instance-dependent bounds are needed.
-- **Alignment Verification**: Defining "alignment" requires knowing human ground truth, which is unavailable in practice; cheaper proxies for alignment are needed.
-- **Benchmarking**: Direct head-to-head comparisons against end-to-end systems like OptiMUS on "best-in-portfolio" vs. "single-output" metrics would further strengthen the conclusions.
+- **Acknowledged Limitations**: $p(o)$ is estimated via normalized token-level log-probs, which may be inaccurate for long outputs or long-tail candidates. The NL4LP scale (25 problems, $N=50$) is also relatively small.
+- **Theoretical Bound $\frac{1-2\alpha}{k^*}$ is Loose**: When $k^*$ is large, the guarantee becomes nearly zero, offering limited guidance for hyperparameter selection. Future work should seek tighter instance-dependent bounds for weak generator alignment.
+- **Detecting "Alignment" is difficult**: The definition requires knowing the true human ranking $\pi^*$, which is unknown in practice. The guarantee is more of a "post-hoc verifiable" one; engineering needs a cheaper proxy for alignment.
+- **Lack of direct head-to-head with systems like OptiMUS/LLMOPT**: Since these systems typically optimize for a single model and solver pass rate, the metrics are inconsistent with the portfolio approach. Future comparisons should look at "worst model quality" vs "best model quality within portfolio."
+- **Potential Improvements**: Using an ensemble of evaluators (voting), replacing gen probs with self-consistency frequencies for more stable $p(o)$ estimation, or introducing solver-returned feasibility/gap metrics as hard filters.
 
 ## Related Work & Insights
-- **vs. OptiMUS / LLMOPT**: Those focus on single-model output through agent collaboration or tuning. Ours provides a set with robustness guarantees.
-- **vs. Eureka / Text2Reward**: Those use environment feedback to optimize single reward functions; we extend this to full optimization models and set-based outputs.
-- **vs. OPRO**: While OPRO uses LLMs as black-box optimizers, this work uses LLMs to **generate** models for traditional solvers, maintaining interpretability.
+- **vs OptiMUS / LLMOPT / Autoformulation (Ahmaditeshnizi 2024; Jiang 2024; Astorga 2024)**: These often fine-tune an LLM or use multi-agent collaboration to converge on a **single** model without quality guarantees. This work is the "lightweight + robust" alternative.
+- **vs Eureka / Text2Reward / DLM (Ma 2024; Xie 2024; Behari 2024)**: These use environmental feedback to iteratively optimize RL rewards. This work shifts the focus from reward design to full optimization models and from "iterative single-point optimization" to "one-shot portfolio generation."
+- **vs Verma 2025 (Balancing Act)**: Also observes the dual LLM role for reward prioritization but lacks coverage guarantees and a unified stopping rule.
+- **vs OPRO / "LLM as Optimizer" (Yang 2023)**: There, the LLM acts as a black-box optimizer. Here, the LLM **writes** the optimization model for a traditional solver, resulting in better interpretability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The cumulative truncation rule for "OR" alignment is a clean and elegant contribution.
-- Experimental Thoroughness: ⭐⭐⭐ Synthetic experiments are strong, but real-world benchmarks could be larger.
-- Writing Quality: ⭐⭐⭐⭐ Clear definitions, logical flow, and intuitive visualizations.
-- Value: ⭐⭐⭐⭐ The methodology is easily transferable to any structural generation task requiring validation.
+- Novelty: ⭐⭐⭐⭐ The "evaluator-rank + generator-prob truncation" is a clean and elegant combo.
+- Experimental Thoroughness: ⭐⭐⭐ Synthetic experiments cover theoretical corners well, but real-world experiments are limited in scale and lacks head-to-head baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear definitions, hypotheses, and propositions.
+- Value: ⭐⭐⭐⭐ The "OR-type guarantee + zero training" framework is valuable for any task requiring verifiable structures (Code, SQL, Protocols).
 
 <!-- RELATED:START -->
 
@@ -133,10 +140,10 @@ The approach requires **no training, no fine-tuning, and no RLHF**. It relies en
 ## Related Papers
 
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
-- [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
+- [\[CVPR 2025\] ProAPO: Progressively Automatic Prompt Optimization for Visual Classification](../../CVPR2025/aigc_detection/proapo_progressively_automatic_prompt_optimization_for_visual_classification.md)
 - [\[ICLR 2026\] CLARC: C/C++ Benchmark for Robust Code Search](../../ICLR2026/aigc_detection/clarc_cc_benchmark_for_robust_code_search.md)
+- [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
-- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 
 </div>
 

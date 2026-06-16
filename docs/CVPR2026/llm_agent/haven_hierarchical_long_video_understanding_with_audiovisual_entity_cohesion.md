@@ -2,107 +2,129 @@
 title: >-
   [Paper Note] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 description: >-
-  [CVPR 2026][LLM Agent][long video understanding] HAVEN proposes a unified framework combining audiovisual entity cohesion, hierarchical indexing…
+  [CVPR 2026][LLM Agent][Paper Note] HAVEN proposes a unified framework featuring audiovisual entity cohesion + hierarchical indexing + agentic search. By utilizing speaker identity as a cross-modal consistency signal, it constructs a four-level hierarchical database (Global-Scene-Clip-Entity), achieving SOTA with an overall accuracy of 84.1% on LVBench.
 tags:
-  - "CVPR 2026"
-  - "LLM Agent"
-  - "long video understanding"
-  - "hierarchical indexing"
-  - "entity cohesion"
-  - "agentic search"
-  - "audiovisual fusion"
+  - CVPR 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 0dfef1e66c930652
+content_hash: daa6ab7d3ab76a19
 ---
-
 # HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.13719](https://arxiv.org/abs/2601.13719)  
 **Code**: None  
-**Area**: LLM Agent
-**Keywords**: long video understanding, hierarchical indexing, entity cohesion, agentic search, audiovisual fusion
+**Area**: LLM Agent  
+**Keywords**: Long Video Understanding, Hierarchical Indexing, Entity Consistency, Agentic Search, Audiovisual Fusion
 
 ## TL;DR
-HAVEN proposes a unified framework combining audiovisual entity cohesion, hierarchical indexing, and agentic search. By leveraging speaker identity as a cross-modal coherence signal, it constructs a four-level hierarchical database (global → scene → clip → entity), achieving state-of-the-art 84.1% overall accuracy on LVBench.
+HAVEN proposes a unified framework featuring audiovisual entity cohesion + hierarchical indexing + agentic search. By utilizing speaker identity as a cross-modal consistency signal, it constructs a four-level hierarchical database (Global-Scene-Clip-Entity), achieving SOTA with an overall accuracy of 84.1% on LVBench.
 
 ## Background & Motivation
-1. **Background**: Long video understanding is a major challenge for VLMs; existing approaches (RAG, agent frameworks) remain severely limited when handling hour-long videos.
-2. **Limitations of Prior Work**: (i) Naïve chunk-based RAG causes information fragmentation and loss of global coherence; (ii) the absence of hierarchical video representations forces agents to perform inefficient multi-round retrieval to recover cross-clip continuity.
-3. **Key Challenge**: Events in long videos span extended time horizons and evolve across multiple scenes; local clip descriptions cannot capture global narrative structure or long-range entity associations.
-4. **Goal**: Transition from fragmented retrieval to coherent structured understanding—via offline hierarchical database construction and online adaptive agentic search.
-5. **Key Insight**: Speaker identity is exploited as a long-range cross-modal coherence signal that remains effective even when visual cues are unreliable, enabling robust entity representation.
-6. **Core Idea**: Audiovisual entity cohesion (integrating fragmented observations via speaker identity) + four-level hierarchical database + goal-driven multi-granularity agentic search.
+1. **Background**: Long video understanding is a significant challenge for VLMs. Existing solutions (RAG, Agent frameworks) remain insufficient when processing hour-long videos.
+2. **Limitations of Prior Work**: (i) Naive chunk-based RAG leads to information fragmentation and loss of global coherence; (ii) lack of hierarchical video representation forces Agents into inefficient multi-turn retrievals to recover cross-segment continuity.
+3. **Key Challenge**: Events in long videos span long time ranges and evolve through multiple scenes. Local segment descriptions fail to capture the global narrative structure and long-range entity associations.
+4. **Goal**: Shift from fragmented retrieval to coherent structured understanding—by constructing a hierarchical database offline and executing adaptive Agent search online.
+5. **Key Insight**: Utilize speaker identity as a long-range consistency signal across modalities (effective even when visual cues are unreliable) to build robust entity representations.
+6. **Core Idea**: Audiovisual entity cohesion (consolidating fragmented observations via speaker identity) + Four-level hierarchical database + Goal-driven multi-granularity Agent search.
 
 ## Method
 
 ### Overall Architecture
-**Offline**: Construct a four-level hierarchical database $\mathcal{D} = \{\tilde{\mathcal{C}}, \tilde{\mathcal{E}}, \tilde{\mathcal{S}}, \tilde{\mathcal{G}}\}$ (clip → entity → scene → global). **Online**: The agent initializes with the global summary and adaptively searches and reasons within the hierarchical database through a think-act-observe loop.
+
+HAVEN decomposes "understanding long videos" into two stages: offline and online. **Offline**, the raw video is processed once into a four-level hierarchical database $\mathcal{D} = \{\tilde{\mathcal{C}}, \tilde{\mathcal{E}}, \tilde{\mathcal{S}}, \tilde{\mathcal{G}}\}$—from fine to coarse: Clip, Entity, Scene, and Global. **Online**, during question answering, the Agent no longer re-scans the video. Instead, it obtains a "bird's-eye view" via the global summary and performs on-demand drilling into the database through a think-act-observe loop. The three designs below address: how fragmented characters are recognized as the same person, how information is organized hierarchically, and how the Agent navigates between layers.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Raw Long Video"] --> B["Segment-level Dual-track Annotation<br/>WhisperX Speaker Diarization+ASR / VLM Visual Description"]
+    B --> C["Audiovisual Entity Cohesion<br/>Embedding Clustering → LLM Normalization, Merge via Speaker Identity"]
+    C --> D["Four-level Hierarchical Database<br/>Clip → Entity → Scene → Global"]
+    D --> E["Online Query: Bird's-eye View via Global Summary"]
+    E --> F["Multi-granularity Agent Search<br/>Think-act-observe loop, 5 tool types for on-demand drilling"]
+    F -->|"Insufficient evidence, continue drilling"| F
+    F -->|"Sufficient evidence"| G["Output Answer"]
+```
 
 ### Key Designs
 
-1. **Audiovisual Entity Cohesion**:
-    - **Function**: Integrates fragmented entity observations across time and modalities into coherent canonical entities.
-    - **Mechanism**: For each clip, audio annotations (WhisperX speaker diarization + ASR) and visual descriptions (VLM-generated) are extracted to construct clip representations $C_i^t = [P_i'; T_i; V_i]$. Entity consolidation proceeds in two steps—(1) embedding clustering: entity descriptions are encoded and clustered into candidate groups; (2) LLM canonicalization: each cluster is validated and either confirmed as a canonical entity or split. Crucially, when multiple clips share the same speaker label, the corresponding character entities are preferentially merged, even when visual descriptions differ due to occlusion or viewpoint changes.
-    - **Design Motivation**: Speaker identity is a more stable long-range cue than visual appearance—occlusion, shot changes, and lighting variations do not affect vocal identity. This constitutes a powerful yet largely overlooked coherence signal.
+**1. Audiovisual Entity Cohesion: Using "Voice" as Cross-segment Glue**
 
-2. **Four-Level Hierarchical Database**:
-    - **Function**: Organizes video content at multiple granularities to support queries at different levels of abstraction.
-    - **Mechanism**: (1) Clip level $\tilde{\mathcal{C}}$: one clip per 30 seconds, containing textual and visual embeddings; (2) Entity level $\tilde{\mathcal{E}}$: canonical entities along with focused re-descriptions in each associated clip; (3) Scene level $\tilde{\mathcal{S}}$: semantically continuous clips are adaptively grouped by an LLM and summarized; (4) Global level $\tilde{\mathcal{G}}$: an overall overview generated from scene summaries.
-    - **Design Motivation**: Different query types require different granularities—"What is this video about?" requires the global level; "What happened at the 12-minute mark?" requires the clip level; "How does Sarah's expression change?" requires the entity level.
+The same person appears repeatedly in long videos, but occlusions, scene cuts, and lighting changes cause pure visual descriptions to misidentify "the same person" as different individuals. HAVEN's key insight is: **speaker identity is much more stable than visual appearance**—the voice does not change because a person turns their back or the lights dim.
 
-3. **Multi-Granularity Agentic Search**:
-    - **Function**: Goal-driven navigation and reasoning within the hierarchical database.
-    - **Mechanism**: The agent is equipped with five tool types—global scene browsing $T_{\text{scene}}$, clip caption search $T_{\text{caption}}$, clip visual search $T_{\text{visual}}$, entity search $T_{\text{entity}}$, and targeted inspection $T_{\text{inspect}}$ (both textual and visual modes). Initialized with the global summary, the agent iterates through a think-act-observe loop: selecting tools → executing queries → collecting evidence → reasoning → producing answers.
-    - **Design Motivation**: Different queries call for entry at different levels. The agent autonomously determines the most efficient search path, such as coarse-to-fine navigation or direct entity localization.
+Mechanism: Each segment first extracts dual-track annotations—audio side uses WhisperX for speaker diarization + ASR, visual side uses VLM for descriptions, combined into a segment representation $C_i^t = [P_i'; T_i; V_i]$. Entity consolidation then follows two steps: (1) **Embedding Clustering** encodes all entity descriptions into candidate groups; (2) **LLM Normalization** verifies clusters to decide whether to merge into a canonical entity or split. A priority rule is applied: if multiple segments share the same speaker label, the corresponding characters are preferentially merged, even if their visual descriptions differ due to occlusion/perspective. This embodies using "voice" as the consistency glue across segments.
+
+**2. Four-level Hierarchical Database: Information tailored to requirements**
+
+Different questions require varying granularities of information. HAVEN indexes content into four layers:
+
+- **Clip level $\tilde{\mathcal{C}}$**: 30-second segments containing text + visual embeddings, answering "What happened at minute 12".
+- **Entity level $\tilde{\mathcal{E}}$**: Canonical entities + focused re-descriptions in each associated segment, answering "How Sarah's expression changed".
+- **Scene level $\tilde{\mathcal{S}}$**: LLM adaptively groups semantically continuous segments and generates scene summaries, answering "What is this scene about".
+- **Global level $\tilde{\mathcal{G}}$**: A general overview synthesized from scene summaries, answering "What is the whole video about".
+
+This ensures "What is the video about / What happened at a specific minute / How a person changed" are addressed by the Global, Clip, and Entity layers respectively, without interference.
+
+**3. Multi-granularity Agent Search: On-demand drilling instead of full scans**
+
+The Agent is equipped with 5 tool types—Global Scene Browsing $T_{\text{scene}}$, Clip Description Search $T_{\text{caption}}$, Clip Visual Search $T_{\text{visual}}$, Entity Search $T_{\text{entity}}$, and Targeted Inspection $T_{\text{inspect}}$ (dual text/visual modes). Initialized with the global summary, it enters a think-act-observe loop: select tool → execute query → receive evidence → reasoning → decide to continue drilling or answer. Crucially, the path is autonomously planned by the Agent—it can go from "coarse to fine" or directly hit the entity layer when characters are known, avoiding unnecessary full scans.
+
+### A Complete Walkthrough ("Who did Sarah leave after arguing with?")
+1. **Bird's-eye View**: Agent reads Global Summary $\tilde{\mathcal{G}}$, locating scenes related to "arguing".
+2. **Locate Scene**: Call $T_{\text{scene}}$ to find scene-level entries containing the argument, narrowing the time window to approximately 3 segments.
+3. **Identify Entity**: Call $T_{\text{entity}}$ to retrieve Sarah’s canonical entity—because offline processing merged her across segments via speaker identity, she is correctly associated even if her back is to the camera here.
+4. **Gather Evidence**: In the target window, call $T_{\text{caption}}$/$T_{\text{visual}}$ to find another entity in the same frame with matching dialogue labels = "Mark".
+5. **Verification**: Call $T_{\text{inspect}}$ to confirm Sarah leaves the frame alone after the argument, outputting "Mark". The entire process only drills down through a single Scene → Entity → Clip path without scanning the full video.
+
+This chain integrates the three designs: the hierarchical database provides entry points, entity cohesion ensures characters are not misidentified, and Agent search determines the shortest path.
 
 ### Loss & Training
-The offline database construction requires no training. Agentic search employs a pretrained reasoning LLM with no additional training.
+The entire pipeline is **training-free**. Offline hierarchical database construction relies solely on VLM/LLM calls, and online search uses a pre-trained inference LLM without any parameter updates.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | LVBench Overall | LVBench Reasoning | EgoSchema | Notes |
-|--------|----------------|-------------------|-----------|-------|
-| HAVEN (2fps) | **84.1** | **80.1** | — | SOTA |
-| DVD w. subtitle | 76.0 | 68.7 | — | Prev. SOTA agent |
-| OpenAI o3 | 57.1 | 50.8 | 63.2 | Closed-source |
-| GPT-4o | 48.9 | 50.3 | 70.4 | Closed-source |
+| Method | LVBench Overall | LVBench Reasoning | EgoSchema | Description |
+|------|----------------|-------------------|-----------|------|
+| HAVEN (2fps) | **84.1** | **80.1** | - | SOTA |
+| DVD w. subtitle | 76.0 | 68.7 | - | Prev. Best Agent |
+| OpenAI o3 | 57.1 | 50.8 | 63.2 | Closed-source model |
+| GPT-4o | 48.9 | 50.3 | 70.4 | Closed-source model |
 
 ### Ablation Study
 
-| Configuration | Overall | Notes |
-|---------------|---------|-------|
+| Configuration | Overall | Description |
+|------|---------|------|
 | Full HAVEN | 84.1 | Complete framework |
-| w/o speaker identity | Drops | Degraded entity consolidation quality |
-| w/o hierarchical indexing | Significant drop | Degenerates to flat RAG |
-| w/o multi-granularity tools | Drops | Reduced search efficiency |
+| w/o Speaker Identity | Decrease | Lower quality of entity consolidation |
+| w/o Hierarchical Indexing | Significant Decrease | Degenerates into flat RAG |
+| w/o Multi-granularity Tools | Decrease | Lower search efficiency |
 
 ### Key Findings
-- HAVEN performs particularly strongly on the reasoning category (80.1%), indicating that hierarchical structure is especially beneficial for complex reasoning.
-- Speaker identity is an indispensable cue for entity consolidation in long videos.
-- Compared to DVD, HAVEN achieves improvements across all subcategories while requiring fewer search iterations.
+- HAVEN performs exceptionally well in the reasoning category (80.1%), suggesting the hierarchical structure is particularly helpful for complex reasoning.
+- Speaker identity is an irreplaceable cue for entity consolidation in long videos.
+- Compared to DVD, HAVEN shows Gains across all subcategories and requires fewer search iterations.
 
 ## Highlights & Insights
-- **Speaker identity as the "glue" for entity cohesion** is a largely overlooked yet highly effective innovation.
-- **The four-level hierarchical architecture** aligns with the cognitive pattern humans employ when understanding long videos—global context before fine-grained detail.
-- The offline construction + online search design eliminates the need to reprocess the video for repeated queries.
+- **Speaker identity as "glue" for entity cohesion** is a significantly overlooked yet highly effective innovation.
+- The **four-level hierarchical architecture** aligns with human cognitive patterns for understanding long videos (overview first, then details).
+- The offline construction + online search architecture ensures that repeated queries do not require re-processing the video.
 
 ## Limitations & Future Work
-- Offline hierarchical database construction incurs non-trivial computational cost due to multiple LLM calls.
-- The approach depends on the quality of WhisperX speaker diarization, limiting effectiveness on non-dialogue-heavy videos.
-- Fixed clip length (30 seconds) may not be optimal for all video types.
+- Offline construction of the hierarchical database incurs certain computational costs (multiple LLM calls).
+- Reliability depends on the quality of WhisperX speaker diarization, making it less effective for non-dialogue videos.
+- Fixed segment lengths (30s) may not be the optimal partition for all video types.
 
 ## Related Work & Insights
-- **vs. DVD**: DVD relies on simple clip descriptions and global entity registration without hierarchical structure. HAVEN's four-level hierarchy enables significantly more efficient navigation.
-- **vs. VideoRAG**: VideoRAG retrieves based on fragmented clips and lacks global coherence. HAVEN preserves narrative structure through hierarchical indexing.
+- **vs DVD**: DVD uses simple segment descriptions + global entity registration but lacks a hierarchical structure. HAVEN’s four-level hierarchy provides more efficient navigation.
+- **vs VideoRAG**: Based on fragmented segment retrieval, VideoRAG lacks global coherence. HAVEN maintains narrative structure through hierarchical indexing.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — Both audiovisual entity cohesion and four-level hierarchical indexing represent innovative designs.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — LVBench SOTA with multi-benchmark validation.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear framework presentation and systematic method description.
-- **Value**: ⭐⭐⭐⭐⭐ — A milestone contribution to the long video understanding field.
+- Novelty: ⭐⭐⭐⭐⭐ Audiovisual entity cohesion and four-level hierarchical indexing are innovative designs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ LVBench SOTA + multi-benchmark validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear framework and systematic methodology description.
+- Value: ⭐⭐⭐⭐⭐ A milestone work in the field of long video understanding.
 
 <!-- RELATED:START -->
 
@@ -111,10 +133,10 @@ The offline database construction requires no training. Agentic search employs a
 ## Related Papers
 
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](../../NeurIPS2025/llm_agent/deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
 - [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[CVPR 2026\] ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search](argos_agentic_multi_camera_person_search.md)
+- [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](../../NeurIPS2025/llm_agent/deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
+- [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
+- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
 
 </div>
 

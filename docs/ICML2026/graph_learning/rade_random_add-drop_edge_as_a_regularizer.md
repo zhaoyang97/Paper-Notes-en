@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] RADE: Random Add-Drop Edge as a Regularizer
 description: >-
-  [ICML 2026][Graph Learning][GNN Regularization] RADE performs simultaneous random edge dropping and adding during GNN training, utilizing "Expectation-Preserving" aggregation correction to align training and inference. I…
+  [ICML 2026][Graph Learning][Paper Note] RADE simultaneously performs random edge deletion and addition during GNN training, aligns training and inference through "expectation-preserving" aggregation correction, and adaptively tunes add/drop rates using GradNorm, allowing a single augmentation to mitigate both overfitting and over-squashing.
 tags:
-  - "ICML 2026"
-  - "Graph Learning"
-  - "GNN Regularization"
-  - "Overfitting"
-  - "Over-squashing"
-  - "Random Graph Augmentation"
-  - "Training-Inference Alignment"
+  - ICML 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 592f2c4bf7bb92b9
+content_hash: ebb583b9e2feb7a4
 ---
-
 # RADE: Random Add-Drop Edge as a Regularizer
 
 **Conference**: ICML 2026  
@@ -24,52 +18,68 @@ content_hash: 592f2c4bf7bb92b9
 **Keywords**: GNN Regularization, Overfitting, Over-squashing, Random Graph Augmentation, Training-Inference Alignment
 
 ## TL;DR
-RADE performs simultaneous random edge dropping and adding during GNN training, utilizing "Expectation-Preserving" aggregation correction to align training and inference. It further employs GradNorm to adaptively adjust the drop/add rates, allowing a single augmentation to mitigate both overfitting and over-squashing.
+RADE simultaneously performs random edge deletion and addition during GNN training, aligns training and inference through "expectation-preserving" aggregation correction, and adaptively tunes add/drop rates using GradNorm, allowing a single augmentation to mitigate both overfitting and over-squashing.
 
 ## Background & Motivation
 
-**Background**: The Message Passing Neural Network (MPNN) mechanism in GNNs naturally faces two pain points: first, **overfitting**, which is shared with all deep models; and second, **over-squashing**, which is unique to MPNNs—where the receptive field expands exponentially but representation dimensions remain finite, leading to the collapse or compression of long-range information. Mature solutions exist for each: random graph augmentations (e.g., DropEdge) use perturbations for implicit regularization against overfitting, while rewiring, virtual nodes, or Graph Transformers mitigate over-squashing by adding edges.
+**Background**: The message-passing mechanism of GNNs (MPNNs) inherently faces two major pain points: first, **overfitting**, which is shared with all deep models; and second, **over-squashing**, which is unique to MPNNs—where receptive fields expand exponentially while representation dimensions remain finite, causing long-range information to collapse. Mature solutions exist for each: random graph augmentations (e.g., DropEdge) use perturbations as implicit regularization for overfitting, while rewiring, virtual nodes, or Graph Transformers mitigate over-squashing by adding edges.
 
-**Limitations of Prior Work**: These two solutions are often used in isolation. DropEdge-style edge-dropping augmentations are unrelated to over-squashing (dropping edges only exacerbates bottlenecks) and suffer from **training-inference mismatch**—the sparse perturbed graph is used during training while the original graph is used during inference, leading to inconsistent aggregation expectations. Conversely, rewiring methods construct a deterministic dense graph without randomness, thus providing no regularization. Both approaches also suffer from an engineering burden: the perturbation intensity $p$ must be meticulously fine-tuned for each dataset.
+**Limitations of Prior Work**: These two approaches are used in isolation. DropEdge-style deletion augmentations are irrelevant to over-squashing (deleting edges exacerbates bottlenecks) and suffer from **training-inference mismatch**—train time uses perturbed sparse graphs while inference uses the original graph, leading to inconsistent aggregation expectations. Rewiring methods construct a single deterministic dense graph, lacking randomness and thus providing no regularization effect. Both paths also suffer from the engineering burden of manually tuning the perturbation rate $p$ per dataset.
 
-**Key Challenge**: Randomness and connectivity enhancement are perceived as separate tasks, but "adding edges" can both inject randomness (→ regularization) and create shortcuts (→ mitigating over-squashing). The problem is: if the perturbed graph changes constantly during training while a fixed graph is seen during inference, the aggregation expectations do not match. This distribution shift can harm generalization.
+**Key Challenge**: Randomness and connectivity enhancement are viewed as separate goals, but "adding edges" can both inject randomness (→ regularization) and create shortcuts (→ mitigating over-squashing). The problem is that constantly switching perturbed graphs during training while using a fixed graph during inference leads to mismatched aggregation expectations. This distribution shift harms generalization.
 
-**Goal**: (1) Design a unified graph augmentation that incorporates both the "regularization of dropping edges" and the "connectivity enhancement of adding edges"; (2) Derive explicit aggregation correction rules so that perturbed aggregation during training equals a target aggregation during inference in an expected sense; (3) Eliminate manual hyperparameter tuning for perturbation rates $p$ and $q$.
+**Goal**: (1) Design a unified graph augmentation that incorporates both "deletion for regularization" and "addition for connectivity enhancement"; (2) Derive explicit aggregation correction rules so that perturbed aggregation during training equals a target aggregation in expectation; (3) Eliminate manual tuning of perturbation rates $p$ and $q$.
 
-**Key Insight**: The authors characterize graph augmentation as a conditional distribution $\mathcal{Q}(\cdot \mid \mathcal{G})$ and propose "Expectation-Preserving Aggregation" as the alignment criterion: requiring $\mathbb{E}_{\mathcal{G}'}[\widetilde{\mathbf{a}}_i^{(\mathcal{G}',\ell)}] = \mathbf{a}_i^{(\mathcal{G},\ell)}$. Once this equality holds, random perturbations only contribute aggregation noise with a zero mean, falling into the "variance-type implicit regularization" framework of Fang et al.: $\mathbb{E}[\tilde{L}_{\mathrm{BCE}}] \approx L_{\mathrm{BCE}} + \tfrac{1}{2}\sum_i z_i(1-z_i)\mathrm{Var}(\delta_i)$.
+**Key Insight**: The authors characterize graph augmentation as a conditional distribution $\mathcal{Q}(\cdot \mid \mathcal{G})$ and propose "Expectation-Preserving Aggregation" as an alignment criterion: requiring $\mathbb{E}_{\mathcal{G}'}[\widetilde{\mathbf{a}}_i^{(\mathcal{G}',\ell)}] = \mathbf{a}_i^{(\mathcal{G},\ell)}$. Once this holds, random perturbations contribute only zero-mean aggregation noise, falling into the "variance-based implicit regularization" framework of Fang et al.: $\mathbb{E}[\tilde{L}_{\mathrm{BCE}}] \approx L_{\mathrm{BCE}} + \tfrac{1}{2}\sum_i z_i(1-z_i)\mathrm{Var}(\delta_i)$.
 
-**Core Idea**: Randomly add edges while dropping others, and perform explicit correction for each edge/non-edge message. The correction target can be the original graph aggregation (addressing only overfitting) or a modified aggregation with "added-edge expectation" (addressing both), thereby unifying both types of augmentation within a single view-sampling framework.
+**Core Idea**: Randomly add edges while deleting them, and apply explicit corrections to messages for each edge/non-edge. The correction target can be the original graph aggregation (mitigating only overfitting) or a modified aggregation including "addition expectations" (mitigating both), unifying both types of augmentation in a view-sampling framework.
 
 ## Method
 
 ### Overall Architecture
-RADE consists of two components: **perturbation** (how the perturbed graph $\mathcal{G}'$ is sampled) and **aggregation correction** (how messages are adjusted during training to align with the inference aggregation). The process is as follows: in each epoch, $\mathbf{A}'$ is obtained via Bernoulli sampling (existing edges are kept with $1-p$, non-edges are added with $q$). Weighted sum aggregation is performed on $\mathcal{G}'$ as $\widetilde{\mathbf{a}}_i^{(\mathcal{G}',\ell)} = \sum_{j\neq i} \alpha_{ij}^{\mathcal{G}'} \widetilde{\mathbf{m}}_{ij}^{(\ell-1)}$, where $\widetilde{\mathbf{m}}_{ij}$ is given by the correction rules. During inference, $\mathcal{G}$ or a modified aggregation with added-edge expectations is used. The drop/add rates themselves are updated online via GradNorm, so users do not need to specify $p$ or $q$.
+RADE addresses the dilemma where DropEdge's training-inference mismatch harms generalization and rewiring lacks regularization. RADE integrates both into one sampling framework: in each epoch, a perturbed adjacency matrix $\mathbf{A}'$ is obtained via Bernoulli sampling (existing edges kept with $1-p$, non-edges added with $q$). Weighted sum aggregation $\widetilde{\mathbf{a}}_i^{(\mathcal{G}',\ell)} = \sum_{j\neq i} \alpha_{ij}^{\mathcal{G}'} \widetilde{\mathbf{m}}_{ij}^{(\ell-1)}$ is performed on the perturbed graph $\mathcal{G}'$, but messages $\widetilde{\mathbf{m}}_{ij}$ undergo "expectation-preserving" correction so that training aggregation matches target aggregation in expectation. Rates $(p, q)$ are updated online using a GradNorm rule.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Original graph G (Adjacency matrix A)"] --> B["Random add-drop edge perturbation<br/>Perturbed graph G′ via Bernoulli sampling"]
+    B --> C["Expectation-preserving aggregation correction<br/>Correct messages to align E[aggregation]"]
+    C -->|"RADE-OF: align with original graph (mitigate overfitting)"| D["GNN forward pass + Supervised loss"]
+    C -->|"RADE-OFS: retain addition expectation (mitigate over-squashing)"| D
+    D --> E["GradNorm adaptive rate adjustment<br/>Match regularizer/supervised gradient magnitudes"]
+    E -->|"Online update of rates (p, q)"| B
+```
 
 ### Key Designs
 
-1. **Random Add-Drop Perturbation**:
-    - **Function**: Executes edge dropping and adding simultaneously in a single perturbation to construct a graph that provides both regularization and enhanced connectivity.
-    - **Mechanism**: Each element of the adjacency matrix is sampled independently—if $A_{ij}=1$, then $A_{ij}' \sim \mathrm{Bernoulli}(1-p)$; if $A_{ij}=0$, then $A_{ij}' \sim \mathrm{Bernoulli}(q)$. The matrix is symmetrized as $A_{ji}'=A_{ij}'$ with no self-loops. $q=0$ reduces to DropEdge, and $p=0$ reduces to pure random edge addition. To avoid enumerating all non-edges, $K = q|\overline{E}|$ non-edges are sampled without replacement via a hypergeometric distribution.
-    - **Design Motivation**: Drop and add operations are asymmetric (Proposition 4.4 proves that Drop-only and Add-only are generally not interchangeable as they scale different node-level statistics). Thus, they are complementary primitives that must be introduced together to achieve different variance spectra and open long-range communication.
+**1. Random Add-Drop Perturbation: Unified regularization and connectivity**
 
-2. **Expectation-Preserving Aggregation Correction (RADE-OF / RADE-OFS)**:
-    - **Function**: Converts training-inference alignment into a derivable equality constraint and provides two sets of correction rules for different alignment targets.
-    - **Mechanism**: **RADE-OF** (Fixing overfitting only) makes the training aggregation equal to the original graph aggregation in expectation. Correction messages are $\widetilde{\mathbf{m}}_{ij} = \frac{\alpha_{ij}^{\mathcal{G}}}{\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]} \mathbf{m}_{ij}$ (rescaling existing edges) and $\widetilde{\mathbf{m}}_{ij} = \mathbf{m}_{ij} - \boldsymbol{\mu}_i$ (subtracting the weighted mean of non-neighbors $\boldsymbol{\mu}_i = \tfrac{1}{Z_i}\sum_{j:A_{ij}=0}\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]\mathbf{m}_{ij}$), making the expected contribution of added edges zero. **RADE-OFS** (Fixing both) corrects only the edge-drop expectation and keeps the added-edge expectation, incorporating it into the modified inference aggregation $\widehat{\mathbf{a}}_i^{(\mathcal{G},\ell)} = \mathbf{a}_i^{(\mathcal{G},\ell)} + \sum_{j:A_{ij}=0}\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]\mathbf{m}_{ij}$, effectively allowing the model to see a "soft-densified" graph during inference. Propositions 4.1/4.2 prove both rules are expectation-preserving. For GIN (sum), the expectation terms are analytically solved as $\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}] = 1-p$ or $q$. For GCN (symmetric normalization) and GAT (attention), where the perturbed degree $d_i'$ enters the denominator, the authors use the delta-method expansion for approximation or empirical estimation.
-    - **Design Motivation**: Existing DropEdge only satisfies expectation preservation for global rescaling of sum aggregations; it does not automatically hold for weighted aggregations. Explicit correction provides a unified framework beyond sum and makes "whether added edges are utilized during inference" depend on the choice of correction target—this is key to the coexistence of OF and OFS.
+DropEdge only deletes edges, which can worsen bottlenecks and does not address long-range collapse. RADE's starting point is that adding edges injects randomness (→ regularization) and creates shortcuts (→ mitigating over-squashing). Both are done in a single perturbation. Each element of the adjacency matrix is sampled independently: for existing edges $A_{ij}=1$, $A_{ij}' \sim \mathrm{Bernoulli}(1-p)$; for non-edges $A_{ij}=0$, $A_{ij}' \sim \mathrm{Bernoulli}(q)$. The matrix is then symmetrized and self-loops are handled. This framework subsumes prior methods: $q=0$ recovers DropEdge, while $p=0$ recovers pure random edge addition. To avoid enumerating all $|\overline{E}|$ non-edges, $K = q|\overline{E}|$ edges are added via hypergeometric sampling. Proposition 4.4 proves that Drop-only and Add-only are generally not interchangeable, justifying the need for both to achieve diverse variance spectra and open long-range communication.
 
-3. **GradNorm Adaptive Rate Tuning**:
-    - **Function**: Adjusts $(p, q)$ online to make RADE truly "hyperparameter-free," avoiding per-dataset rate sweeps.
-    - **Mechanism**: The variance-type regularization term $R(B, p, q) = \tfrac{1}{2}\sum_{i\in B} z_i(1-z_i)\mathrm{Var}(\delta_i)$ is treated as an implicit loss. The required gradient magnitude on shared parameters $\boldsymbol{\theta}$, $G_{\mathrm{reg}}^B = \|\nabla_{\boldsymbol{\theta}} R\|_2$, is matched with the supervised loss gradient magnitude $G_{\mathrm{data}}^B$. After each mini-batch, one Adam step is taken on $\mathcal{J}(p, q) = \left[\log\frac{G_{\mathrm{reg}}^B + \epsilon}{G_{\mathrm{data}}^B + \epsilon}\right]^2 + \lambda \left(\frac{q}{D(\mathcal{G})}\right)^2$. The first term performs log-scale matching (avoiding absolute difference scale issues), and the second term penalizes excessive edge addition normalized by graph density $D(\mathcal{G})$. In practice, $\rho = q/D(\mathcal{G})$ is reparameterized for optimization to prevent density explosion from small $q$.
-    - **Design Motivation**: Traditional augmentation methods are highly sensitive to $p$—too weak is ineffective, too strong causes distortion, and the optimal value varies by dataset. The GradNorm approach binds "regularization strength" to gradients of the same scale as the supervised loss, providing a principled rather than empirical self-adjustment. $\lambda$ is fixed at the task level (node/graph classification) and does not introduce dataset-level hyperparameters.
+**2. Expectation-Preserving Aggregation Correction: Derivable alignment**
+
+The failure of random augmentation often stems from the training aggregation expectation not matching inference. RADE formalizes the alignment criterion: $\mathbb{E}_{\mathcal{G}'}[\widetilde{\mathbf{a}}_i^{(\mathcal{G}',\ell)}] = \mathbf{a}_i^{(\mathcal{G},\ell)}$. When this holds, perturbations act as zero-mean noise. Two sets of rules are provided based on the target graph. **RADE-OF** (overfitting only) aligns training with the original graph: existing edges are rescaled by $\widetilde{\mathbf{m}}_{ij} = \frac{\alpha_{ij}^{\mathcal{G}}}{\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]} \mathbf{m}_{ij}$, while non-edges subtract the weighted mean of non-neighbors $\widetilde{\mathbf{m}}_{ij} = \mathbf{m}_{ij} - \boldsymbol{\mu}_i$ (where $\boldsymbol{\mu}_i = \tfrac{1}{Z_i}\sum_{j:A_{ij}=0}\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]\mathbf{m}_{ij}$), making the expected contribution of added edges zero. **RADE-OFS** (over-squashing too) corrects only deletion expectations, intentionally retaining addition expectations in inference:
+
+$$\widehat{\mathbf{a}}_i^{(\mathcal{G},\ell)} = \mathbf{a}_i^{(\mathcal{G},\ell)} + \sum_{j:A_{ij}=0}\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]\mathbf{m}_{ij}$$
+
+Inference effectively sees a "soft-densified" graph with explicit long-range shortcuts. Proposition 4.1/4.2 prove both are expectation-preserving. Calculating $\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]$ depends on the aggregator: GIN (sum) is analytically $1-p$ or $q$, but GCN/GAT involve perturbed degrees $d_i'$ in denominators, requiring delta-method approximations or empirical estimation. This explains why DropEdge only succeeds with sum aggregation and fails with weighted types; explicit correction provides a general rule.
+
+**3. GradNorm Adaptive Rate Adjustment: Realizing "no-hyperparameter" tuning**
+
+Traditional augmentations are sensitive to $p$. RADE replaces manual tuning by treating the variance-based regularizer $R(B, p, q) = \tfrac{1}{2}\sum_{i\in B} z_i(1-z_i)\mathrm{Var}(\delta_i)$ as an implicit loss. It requires the gradient magnitude $G_{\mathrm{reg}}^B = \|\nabla_{\boldsymbol{\theta}} R\|_2$ to match the supervised loss gradient $G_{\mathrm{data}}^B$. After each mini-batch, it optimizes:
+
+$$\mathcal{J}(p, q) = \left[\log\frac{G_{\mathrm{reg}}^B + \epsilon}{G_{\mathrm{data}}^B + \epsilon}\right]^2 + \lambda \left(\frac{q}{D(\mathcal{G})}\right)^2$$
+
+The first term uses log-ratio matching; the second term punishes excessive addition normalized by graph density $D(\mathcal{G})$. By optimizing a reparameterized $\rho = q/D(\mathcal{G})$, regularization strength is principledly tied to supervised gradient scales rather than being an empirical guess. $\lambda$ is fixed at the task level, eliminating dataset-specific tuning.
 
 ### Loss & Training
-Supervised loss uses standard BCE / Cross-Entropy. Augmentation is not explicitly added to the loss but implicitly contributes a variance-type regularization term (Eq. 5) via randomly sampled perturbed graphs and corrected messages. The optimizer is Adam with a learning rate of 0.001, using a 2-layer backbone (node classification) or following standard protocols for each task (graph classification). RADE is consistently initialized with $p=0.5$ and $q = D(\mathcal{G})$, followed by adaptive updates with GradNorm, requiring no sweeping.
+Supervised loss uses standard BCE/Cross-Entropy. Augmentations contribute implicit variance-based regularization (Eq. 5) via sampled perturbed graphs and corrected messages. Optimization uses Adam with a learning rate of 0.001. RADE initializes $p=0.5$ and $q = D(\mathcal{G})$, adaptively updated via GradNorm thereafter.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Node Classification (GCN backbone, 8 datasets, average of 5 runs, Micro-F1 for Flickr, Accuracy % for others):
+Node Classification (GCN backbone, 8 datasets, 5-run average, Micro-F1 for Flickr, Accuracy % for others):
 
 | Method | Cora | CiteSeer | Computer | Physics | Flickr | ogbn-arxiv |
 |------|------|----------|----------|---------|--------|------------|
@@ -90,46 +100,45 @@ Graph Classification (GCN backbone, Accuracy % for TU, ROC-AUC % for ogbg-molhiv
 | RADE-OF | 86.16 | 75.62 | 76.20 | 76.09 | 56.12 |
 | **RADE-OFS** | **86.24** | **75.84** | **76.60** | **76.28** | **56.97** |
 
-### Ablation Study (Node Classification, RADE-OF / GCN backbone)
+### Ablation Study (Node classification, RADE-OF / GCN backbone)
 
 | Configuration | Cora | Flickr | ogbn-arxiv | Description |
 |------|------|--------|------------|------|
 | RADE-OF | **81.08** | **52.25** | **71.09** | Full model |
-| w/o GN | 80.90 | 51.42 | 70.52 | Remove GradNorm adaptivity → Flickr drops 0.83 |
-| w/o GN & EPC | 78.94 | 49.35 | 70.33 | Remove expectation-preserving correction → Cora drops 2.14, Flickr 2.90 |
+| w/o GN | 80.90 | 51.42 | 70.52 | Removing GradNorm → Flickr drops 0.83 |
+| w/o GN & EPC | 78.94 | 49.35 | 70.33 | Removing EPC → Cora drops 2.14, Flickr drops 2.90 |
 | RADE-OF-Lin | 80.42 | 50.65 | 69.92 | Linearized backbone |
-| RADE-OF-Lin w/o GN & EPC | 77.80 | 50.09 | 68.72 | All removed → Significant degradation across datasets |
+| RADE-OF-Lin w/o GN & EPC | 77.80 | 50.09 | 68.72 | Full removal → Significant degradation |
 | GCN-Lin (SGC) | 79.60 | 50.12 | 68.67 | Baseline reference |
 
 ### Key Findings
-- **Expectation-Preserving Correction (EPC) makes the largest contribution**: Removing EPC causes Cora to drop ~2 points and Flickr nearly 3 points, demonstrating that training-inference alignment is not a luxury but the actual mechanism through which RADE takes effect.
-- **GradNorm adaptivity outperforms fixed tuning**: On large graphs like Flickr and ogbn-arxiv, the "w/o GN" configuration consistently decreases performance by 0.5–0.8 points, while saving the cost of sweeping $p$.
-- **RADE-OFS excels in long-range tasks**: On peptides-func (an LRGB long-range benchmark), RADE-OFS improves over GCN by 1.83 AP and over RADE-OF by 0.85 AP, validating the effectiveness of "preserving added-edge expectations into inference" for mitigating over-squashing.
-- **Add and Drop are complementary, not interchangeable**: Proposition 4.4 provides a theoretical strong constraint for interchangeability; ablations show both "add-only" and "drop-only" are weaker than joint perturbation.
+- **EPC is the primary contributor**: Removing EPC drops performance significantly (~2 pts on Cora, ~3 pts on Flickr), proving training-inference alignment is the actual lever of RADE.
+- **GradNorm outperforms manual tuning**: On large graphs like Flickr, the w/o GN configuration drops 0.5–0.8 pts, while GN saves the cost of grid-searching $p$.
+- **RADE-OFS excels in long-range tasks**: On peptides-func (LRGB long-range benchmark), RADE-OFS improves AP by 1.83 over GCN and 0.85 over RADE-OF, validating the efficacy of retaining addition expectations for over-squashing.
+- **Add + Drop are complementary**: Proposition 4.4 confirms they aren't interchangeable as they scale different node-level statistics; add-only/drop-only are both weaker than joint perturbation.
 
 ## Highlights & Insights
-- **"Expectation-Preserving Aggregation" as an alignment criterion**: It serves as both an alignment criterion and a constructive principle for deriving correction rules from any weighted sum aggregation rule. It is more general than the DropEdge "global rescale" special case and explains why simple rescaling fails for GCN/GAT.
-- **The dual identity of adding edges**: The authors rediscover that "random edge addition" is both a noise source (regularization) and a shortcut (connectivity). By using OF/OFS correction targets, they explicitly control which aspect is utilized during inference—this design pattern of "embedding inductive bias in correction rules" can be transferred to any weighted sum graph operator.
-- **Using GradNorm for "Gradient Matching between Implicit and Explicit Loss"**: While the original GradNorm was for multi-task balancing, here it is adapted to match "supervised loss vs. variance regularization proxy," providing a clean automatic tuning paradigm for any random regularization with difficult-to-tune intensities.
+- **"Expectation-Preserving Aggregation" as a Principle**: It serves as both an alignment criterion and a constructive principle for deriving correction rules for any weighted-sum aggregator, generalizing beyond DropEdge's sum-only scaling.
+- **Dual Nature of Edge Addition**: The authors rediscover that random addition is both a noise source (regularization) and a shortcut (connectivity). Controlling which face is shown to inference via OF/OFS is a portable design pattern for GNN operators.
+- **GradNorm for Implicit-Explicit Gradient Matching**: Adapting GradNorm from multi-task balancing to "Supervised vs. Variance-Regularizer" matching provides a clean, automatic tuning paradigm for any stochastic regularization like DropMessage or Mixup.
 
 ## Limitations & Future Work
-- The expectation term $\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]$ lacks a closed-form solution for GCN/GAT and must be approximated via the delta-method or sampling, which may amplify errors for small graphs or high-variance nodes.
-- The theoretical derivation for non-linear GNNs is based on the approximation of "linear MPNN + ignoring bias introduced by non-linearity" (Footnote for Eq. 5); no strict bounds are provided for deep non-linear stacks.
-- The characterization of non-interchangeability is limited to sum aggregation; the authors do not fully characterize the variance spectra achievable by joint add-drop perturbations for other common aggregations.
-- In practice, each mini-batch requires GradNorm + re-sampling + EPC recalculation; the trade-off between complexity and marginal regularization gains remains to be verified on massive graphs (>10M nodes).
-- The potential for combination with explicit long-range modeling like Graph Transformers or virtual nodes was not discussed. Whether RADE-OFS can generalize to longer-range tasks like PCQM-Contact beyond small LRGB datasets remains to be answered.
+- Expectations $\mathbb{E}[\alpha_{ij}^{\mathcal{G}'}]$ for GCN/GAT lack closed-form solutions, requiring delta-method approximations or sampling, which may introduce errors on small graphs or high-variance nodes.
+- Theoretical derivations for non-linear GNNs rely on linear approximations (ignoring non-linear bias), lacking rigorous bounds for deep stacks.
+- The proof of non-interchangeability is limited to sum aggregation, leaving guidance for other aggregators incomplete.
+- Computational overhead of GradNorm, resampling, and EPC calculation per mini-batch may be a factor on giant graphs (>10M nodes).
 
 ## Related Work & Insights
-- **vs DropEdge (Rong et al., 2020)**: DropEdge only drops edges, lacks explicit expectation alignment (except where sum happens to allow global rescaling), and is unrelated to over-squashing. RADE-OF strictly encompasses DropEdge as a special case when $q=0$ and adds correction rules for general weighted aggregations.
-- **vs DropMessage (Fang et al., 2023)**: DropMessage perturbs messages rather than edges, sharing the variance regularization perspective but not addressing over-squashing or allowing added-edge expectations to carry into inference as RADE-OFS does.
-- **vs Rewiring / Virtual Node (Alon & Yahav, 2021; Topping et al., 2022)**: These methods perform one-time structural modifications on a deterministic graph without training randomness; RADE-OFS achieves the "added-edge expectation" indirectly through a random process, equivalent to soft rewiring while gaining regularization.
-- **vs GradNorm (Chen et al., 2018)**: Transferring multi-task gradient matching to "explicit loss vs. implicit regularization" matching is the key to RADE's "hyperparameter-free" nature and provides an inspiring paradigm for other random regularization methods.
+- **vs. DropEdge (Rong et al., 2020)**: DropEdge only deletes edges, lacks explicit alignment (only coincidentally works for sum aggregation), and ignores over-squashing. RADE-OF subsumes it as a $q=0$ case and generalizes corrections.
+- **vs. DropMessage (Fang et al., 2023)**: Both share the variance regularization perspective, but DropMessage cannot mitigate over-squashing or carry addition expectations into inference.
+- **vs. Rewiring (Alon & Yahav, 2021)**: Rewiring is deterministic with no regularization; RADE-OFS achieves "soft rewiring" in expectation through a random process, gaining regularization.
+- **vs. GradNorm (Chen et al., 2018)**: Porting gradient matching to the "loss vs. implicit regularizer" scale is the key to RADE's hyperparameter-free nature.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Unifying add-drop, expectation alignment, and adaptive tuning into a clean framework with a clear theoretical basis that solves long-standing generalization issues of DropEdge.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 8 node and 6 graph classification datasets across GCN/GIN/GAT backbones; ablation studies clearly decouple GN/EPC/linearization. Lacks comparison with Graph Transformers on PCQM benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Proposition statements and proofs are well-organized; the comparison table for OF and OFS (Table 1) is clear, and approximation strategies are well-cited.
-- Value: ⭐⭐⭐⭐ Provides a principled and hyperparameter-free solution to the common "random perturbation vs. deterministic graph" discrepancy; the GradNorm tuning paradigm is transferable.
+- Novelty: ⭐⭐⭐⭐ Unifies add/drop, expectation alignment, and adaptive tuning into a clean framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 14 datasets across node/graph tasks; though comparisons with Graph Transformers on LRGB are limited.
+- Writing Quality: ⭐⭐⭐⭐ Well-organized propositions, proofs, and clear comparative tables.
+- Value: ⭐⭐⭐⭐ Provides a principled solution to the training-inference mismatch in stochastic augmentations and is engineering-friendly.
 
 <!-- RELATED:START -->
 
@@ -138,10 +147,10 @@ Graph Classification (GCN backbone, Accuracy % for TU, ROC-AUC % for ogbg-molhiv
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](../../ACL2026/graph_learning/evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
+- [\[ICML 2025\] Mixed-Curvature Decision Trees and Random Forests](../../ICML2025/graph_learning/mixed-curvature_decision_trees_and_random_forests.md)
 - [\[AAAI 2026\] Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks](../../AAAI2026/graph_learning/kernelized_edge_attention_addressing_semantic_attention_blurring_in_temporal_gra.md)
-- [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
-- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
+- [\[ICML 2026\] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates](physics-informed_coarsening_for_multigrid_graph_neural_surrogates.md)
 
 </div>
 

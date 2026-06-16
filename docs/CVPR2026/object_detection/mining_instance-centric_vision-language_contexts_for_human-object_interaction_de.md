@@ -2,137 +2,147 @@
 title: >-
   [Paper Note] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 description: >-
-  [CVPR 2026][Object Detection][Human-object interaction detection] This paper proposes InCoM-Net, which extracts intra-instance, inter-instance, and global context features separately for each instance from VLM features…
+  [CVPR 2026][Object Detection][Vision-Language Model] This paper proposes InCoM-Net, which extracts three levels of context—intra-instance, inter-instance, and global—separately for each instance from VLM features. Through progressive context aggregation and fusion with detector features, it achieves SOTA results in HOI detection on HICO-DET (Full mAP 43.96) and V-COCO ($
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "Human-object interaction detection"
-  - "vision-language model"
-  - "instance-centric context"
-  - "multi-context features"
-  - "attention mechanism"
+  - CVPR 2026
+  - Object Detection
+  - Vision-Language Model
+  - Attention
 date: 2026-05-08
-content_hash: 9164050a4b52f3cf
+content_hash: b9eba9443818b838
 ---
-
 # Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.02071](https://arxiv.org/abs/2604.02071)  
 **Code**: [https://github.com/nowuss/InCoM-Net](https://github.com/nowuss/InCoM-Net)  
-**Area**: Object Detection / Human-Object Interaction Detection
-**Keywords**: Human-object interaction detection, vision-language model, instance-centric context, multi-context features, attention mechanism
+**Area**: Object Detection / Human-Object Interaction Detection  
+**Keywords**: HOI Detection, Vision-Language Models, Instance-level Context, Multi-context Features, Attention Mechanisms
 
 ## TL;DR
 
-This paper proposes InCoM-Net, which extracts intra-instance, inter-instance, and global context features separately for each instance from VLM features, and achieves state-of-the-art HOI detection on HICO-DET and V-COCO (HICO-DET Full mAP 43.96, V-COCO AP_role^S1 73.6) via progressive context aggregation and fusion with detector features.
+This paper proposes InCoM-Net, which extracts three levels of context—intra-instance, inter-instance, and global—separately for each instance from VLM features. Through progressive context aggregation and fusion with detector features, it achieves SOTA results in HOI detection on HICO-DET (Full mAP 43.96) and V-COCO ($AP_{role}^{S1}$ 73.6).
 
 ## Background & Motivation
 
-1. **Background**: HOI detection aims to localize human-object pairs in images and classify their interaction relationships, serving as a fundamental task in visual understanding. Recent Transformer- and VLM-based methods (e.g., CLIP, BLIP) have significantly advanced performance.
-2. **Limitations of Prior Work**: Existing VLM integration methods either use scene-level VLM features solely as global semantic priors (e.g., HOICLIP, UniHOI), or restrict VLM features to object bounding boxes via RoI alignment (e.g., ADA-CM, BCOM), failing to fully exploit contextual cues distributed across different levels of the scene.
-3. **Key Challenge**: HOI reasoning requires simultaneous understanding of an instance's own visual cues, its relationships with surrounding instances, and the global scene context. However, existing methods apply context information uniformly to all instances, lacking instance-specific context modeling.
-4. **Goal**: To extract multi-level contextual information from VLM features for each instance individually and effectively fuse it into the detector's instance features.
-5. **Key Insight**: The authors observe that human judgment of HOI relies on three types of cues—the visual features within the target instance, its relationships with other instances, and surrounding scene information—and accordingly design an instance-centric multi-context mining scheme.
-6. **Core Idea**: Extract three types of context (intra-instance, inter-instance, and global) from VLM features via masked self-attention, then progressively fuse them into detector queries.
+1.  **Background**: HOI detection aims to localize human-object pairs and classify their interactions, serving as a fundamental task for visual understanding. Recent methods based on Transformers and VLMs (e.g., CLIP, BLIP) have significantly improved performance.
+2.  **Limitations of Prior Work**: Existing VLM integration methods either use scene-level VLM features solely as global semantic priors (e.g., HOICLIP, UniHOI) or restrict VLM features within object bounding boxes via RoI alignment (e.g., ADA-CM, BCOM), failing to fully exploit multi-level contextual cues distributed across the scene.
+3.  **Key Challenge**: HOI reasoning requires a simultaneous understanding of the target instance's visual cues, its relationships with surrounding instances, and the global scene context. However, current methods apply context information uniformly to all instances, lacking instance-specific context modeling.
+4.  **Goal**: To extract multi-level contextual information from VLM features for each instance and effectively fuse them into the detector's instance features.
+5.  **Key Insight**: The authors observe that human judgment of HOI relies on three types of cues: the internal visual features of the target, its relationships with other instances, and the surrounding scene. Thus, they design an instance-centric multi-context mining scheme.
+6.  **Core Idea**: Extract intra-instance, inter-instance, and global contexts from VLM features via masked self-attention, then progressively fuse them into detector queries.
 
 ## Method
 
 ### Overall Architecture
 
-InCoM-Net adopts a dual-branch architecture: (1) a DETR detector branch that extracts instance-level features $q^l$; and (2) a CLIP visual encoder that extracts VLM features $V^l$. The core module is Instance-centric Context Mining, comprising two sub-modules—ICR (Instance-Centric Context Refinement) and ProCA (Progressive Context Aggregation)—processed iteratively across $L$ layers. Finally, an HO Pair Generator constructs human-object pair features, which are fed into an interaction decoder for HOI classification.
+The core problem InCoM-Net addresses is that while human reasoning for "what a person is doing with an object" depends on cues at different levels (appearance, relationships, scene), existing methods treat all instances identically. InCoM-Net employs a dual-branch architecture: a DETR detector branch outputting instance-level query features $q^l$ and a CLIP visual encoder outputting patch-level VLM features $V^l$. These are fed into the Instance-centric Context Mining (ICM) module, composed of Instance-centric Context Refinement (ICR) and Progressive Context Aggregation (ProCA), iterating over $L$ layers. ICR extracts the three context types from $V^l$, and ProCA progressively fuses them. Finally, the HO Pair Generator pairs refined features for the interaction decoder to output HOI classifications. Masked Feature Training (MFT) is used during training to randomly mask VLM or detector features, forcing the model to balance both heterogeneous sources.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Input Image"] --> DET["DETR Detector<br/>Instance Query q^l + Mask M^R / M^C"]
+    IMG --> CLIP["CLIP Visual Encoder<br/>Layer-wise VLM Feature V^l"]
+    DET --> ICR
+    CLIP --> ICR
+    subgraph ICM["Instance-centric Context Mining (Iterate L layers)"]
+        direction TB
+        ICR["ICR Instance-centric Context Refinement<br/>Masked Self-Attention → Global G / Intra R / Inter C"]
+        ICR --> PROCA["ProCA Progressive Context Aggregation<br/>q^l + f^(l−1) Tri-way Cross-Attention → f^l"]
+    end
+    DET -.->|q^l as query| PROCA
+    PROCA --> HO["HO Pair Generator<br/>q^L + f^L into Pairs"]
+    HO --> DEC["Interaction Decoder<br/>Cross-attention between F (CNN) and V^L (VLM)"]
+    DEC --> OUT["HOI Classification Output"]
+    MFT["MFT Masked Feature Training<br/>Equiprobable masking of VLM/Detector features (Training only)"] -.->|Constraint Training| HO
+```
 
 ### Key Designs
 
-1. **Instance-centric Context Refinement (ICR)**:
+**1. Instance-centric Context Refinement (ICR): Extracting three semantics from shared VLM features**
 
-    - **Function**: Generates three types of context features from VLM features for each instance individually.
-    - **Mechanism**: Masked self-attention is applied to VLM features $V^l$. For the $i$-th instance, an instance mask $M_i^R$ (marking the instance region) and a surrounding mask $M_i^C$ (the union of other instances) are constructed. Unmasked self-attention produces global context $G^l$; self-attention restricted by $M_i^R$ produces intra-instance context $R_i^l$; and self-attention restricted by $M_i^C$ produces inter-instance context $C_i^l$. Each output is encoded through a separate FFN.
-    - **Design Motivation**: Different levels of context provide complementary information—intra-instance features capture target appearance, inter-instance features model object relationships, and global features provide scene context. Separate encoding preserves semantic diversity.
+ICR uses masked self-attention on VLM features $V^l$. For instance $i$, it constructs two masks based on detection boxes: an instance mask $M_i^R$ for the instance itself and a surrounding mask $M_i^C$ for the union of all other instances. Three complementary contexts are generated: global context $G^l$ via unmasked attention, intra-instance context $R_i^l$ via $M_i^R$, and inter-instance context $C_i^l$ via $M_i^C$. Each is encoded by a separate FFN to maintain semantic diversity.
 
-2. **Progressive Context Aggregation (ProCA)**:
+**2. Progressive Context Aggregation (ProCA): Layer-wise fusion into detector queries**
 
-    - **Function**: Progressively fuses multi-context features produced by ICR into detector query features.
-    - **Mechanism**: The detector query $q_i^l$ is summed with the aggregated feature from the previous layer $f_i^{l-1}$ to form the query, which then performs cross-attention separately over $G^l$, $R_i^l$, and $C_i^l$. The three resulting outputs are concatenated and passed through an FFN to produce the current-layer aggregated feature $f_i^l$. This process iterates across $L$ layers, with each layer consuming features from a different VLM layer.
-    - **Design Motivation**: Progressive multi-layer aggregation enables the model to gradually integrate VLM information at different semantic levels, enhancing alignment between instance appearance and context.
+ProCA aligns the three contexts with the detector's instance features. In each layer, the detector query $q_i^l$ plus the previous layer's aggregation $f_i^{l-1}$ is used as a query for tri-way cross-attention over $G^l$, $R_i^l$, and $C_i^l$. The outputs are concatenated and passed through an FFN to obtain $f_i^l$:
 
-3. **Masked Feature Training (MFT)**:
+$$f_i^l = \mathrm{FFN}\big(\mathrm{Concat}[\,\mathrm{CA}(q_i^l{+}f_i^{l-1},\,G^l),\ \mathrm{CA}(q_i^l{+}f_i^{l-1},\,R_i^l),\ \mathrm{CA}(q_i^l{+}f_i^{l-1},\,C_i^l)\,]\big)$$
 
-    - **Function**: Balances the utilization of the two heterogeneous feature sources—VLM and detector.
-    - **Mechanism**: During training, three input configurations are constructed with equal probability—full input (VLM + detector), detector-only, and VLM-only. Features from the masked branch are set to zero and the corresponding cross-attention is disabled. The total loss is the sum of focal losses from all three configurations.
-    - **Design Motivation**: Two heterogeneous feature sources can cause the model to over-rely on a single source. Random masking forces the model to learn to exploit complementary information under varying conditions, improving robustness.
+This "progressive" approach ensures that information from shallower CLIP layers (texture-heavy) is transferred to deeper layers (semantic-heavy), facilitating alignment between appearance and context.
+
+**3. Masked Feature Training (MFT): Balancing heterogeneous feature sources**
+
+To prevent reliance on a single feature source, MFT applies a dropout-like strategy to multi-modal fusion. During training, three input configurations are sampled with equal probability (1/3 each): Full (VLM + Detector), Detector-only, and VLM-only. When a branch is masked, its features are zeroed and corresponding cross-attentions are disabled. The sum of focal losses from all configurations forces the model to learn complementary information.
 
 ### Loss & Training
 
-- Interaction classification uses focal loss.
-- Each of the three masked configurations (full / detector-only / VLM-only) produces its own focal loss; the total loss is their sum.
-- Both DETR and CLIP are frozen; only ICR, ProCA, the HO Pair Generator, and the interaction decoder are trained.
-- AdamW optimizer is used with an initial learning rate of $10^{-4}$, decayed by a factor of 5 every 10 epochs, with training completed in 30 epochs.
+Focal loss is used for interaction classification. MFT produces three focal losses corresponding to the mask configurations, which are summed for the total loss. DETR and CLIP remain frozen throughout training; only ICR, ProCA, HO Pair Generator, and the interaction decoder are trained. The AdamW optimizer is used with an initial learning rate of $10^{-4}$, decaying 5-fold every 10 epochs for 30 epochs total.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | InCoM-Net (ViT-L) | Prev. SOTA (NMSR) | Gain |
+| Dataset | Metric | InCoM-Net (ViT-L) | NMSR (prev SOTA) | Gain |
 |--------|------|------|----------|------|
 | HICO-DET | Full mAP | **43.96** | 42.93 | +1.03 |
 | HICO-DET | Rare mAP | **45.61** | 42.41 | +3.20 |
 | HICO-DET | Non-rare mAP | **43.46** | 43.11 | +0.35 |
-| V-COCO | AP_role^S1 | **73.6** | 69.8 | +3.8 |
-| V-COCO | AP_role^S2 | **75.4** | 72.1 | +3.3 |
+| V-COCO | $AP_{role}^{S1}$ | **73.6** | 69.8 | +3.8 |
+| V-COCO | $AP_{role}^{S2}$ | **75.4** | 72.1 | +3.3 |
 
-ViT-B version: HICO-DET Full 39.53 (surpassing HORP by +0.92), V-COCO S1 72.2 (surpassing SCTC by +5.1).
+ViT-B version: HICO-DET Full 39.53 (outperforms HORP by +0.92), V-COCO S1 72.2 (outperforms SCTC by +5.1).
 
 ### Ablation Study
 
 | Configuration | Full mAP | Rare mAP | Note |
 |------|---------|----------|------|
-| Baseline (no ICR/ProCA) | 36.17 | 33.11 | Detector features only |
-| + ICR | 37.42 | 34.47 | +1.25, multi-context is effective |
-| + ProCA | 38.42 | 36.80 | +1.00, progressive aggregation is effective |
-| + MFT | **39.53** | **38.87** | +1.11, balances heterogeneous features |
+| Baseline (No ICR/ProCA) | 36.17 | 33.11 | Detector features only |
+| + ICR | 37.42 | 34.47 | +1.25, Multi-context effectiveness |
+| + ProCA | 38.42 | 36.80 | +1.00, Progressive aggregation effectiveness |
+| + MFT | **39.53** | **38.87** | +1.11, Balancing heterogeneous features |
 
-Ablation on context types (with ICR + ProCA):
+Ablation of context types (based on ICR+ProCA):
 
-| Context Configuration | Full mAP | Rare mAP |
+| Context Config | Full mAP | Rare mAP |
 |-----------|---------|----------|
-| V only (raw VLM) | 38.30 | 37.31 |
-| + G (global) | 38.65 | 36.76 |
-| + R (intra-instance) | 39.19 | 38.78 |
-| + C (inter-instance) | **39.53** | **38.87** |
+| V only (Original VLM) | 38.30 | 37.31 |
+| + G (Global) | 38.65 | 36.76 |
+| + R (Intra-instance) | 39.19 | 38.78 |
+| + C (Inter-instance) | **39.53** | **38.87** |
 
 ### Key Findings
 
-- MFT contributes the largest gain (+1.11 mAP), especially on Rare categories (+2.07), indicating that balancing heterogeneous features is critical for low-frequency interactions.
-- Intra-instance context $R$ contributes most significantly to Rare categories (+2.02), suggesting that fine-grained instance information is particularly important for rare interaction inference.
-- InCoM-Net also achieves state-of-the-art results in zero-shot settings; Unseen mAP under RF-UC and NF-UC reaches 37.69/39.45 (ViT-L), demonstrating strong generalization.
-- ProCA performs best at 3 layers; gains from additional layers tend to saturate.
+- MFT contributes the most (+1.11 mAP), particularly for Rare classes (+2.07), showing that balancing heterogeneous features is vital for low-frequency interactions.
+- Intra-instance context $R$ significantly aids Rare classes (+2.02), indicating that fine-grained instance info is crucial for rare interaction reasoning.
+- In zero-shot settings, InCoM-Net achieves SOTA (37.69/39.45 for RF-UC/NF-UC Unseen).
+- ProCA performance plateaus after $L=3$ layers.
 
 ## Highlights & Insights
 
-- **Instance-level multi-context decomposition**: The masked mechanism adaptively extracts three types of context from shared VLM features in an elegant and effective manner. Separating context by semantic role before fusion captures finer-grained relationships than directly using global VLM features.
-- **MFT strategy**: The training strategy of randomly masking heterogeneous feature sources is a creative contribution—applying a dropout-like idea to multi-modal feature fusion to effectively prevent over-reliance on any single source.
-- **Transfer potential**: This instance-centric multi-context mining paradigm is transferable to tasks requiring instance-level relationship modeling, such as scene graph generation and relational reasoning.
+- **Instance-level context decomposition**: Adapting the mask mechanism to extract three types of context from shared VLM features is simple yet effective. Separating contexts by semantic role proves superior to using monolithic global features.
+- **MFT Strategy**: Applying dropout logic to multi-modal feature fusion effectively prevents model bias toward a single source.
+- **Transfer Potential**: This instance-centric mining approach is applicable to scene graph generation and other relationship reasoning tasks.
 
 ## Limitations & Future Work
 
-- Both DETR and CLIP are frozen, limiting the potential of end-to-end optimization; partial fine-tuning of the VLM encoder could be explored.
-- The quality of context masks depends on the detector's detection quality; missed or erroneous detections would degrade context accuracy.
-- Only static image context is considered; temporal action cues (e.g., video HOI) are not exploited.
-- The three masked configurations are sampled with equal probability; adaptive sampling strategies could be explored.
+- Frozen DETR and CLIP limit end-to-end optimization; partial fine-tuning of the VLM could be explored.
+- Mask accuracy depends entirely on detector quality; missed detections degrade context relevance.
+- Static image focus ignores temporal cues (e.g., video HOI).
+- Adaptive sampling could replace the equiprobable training configurations in MFT.
 
 ## Related Work & Insights
 
-- **vs. BCOM (CVPR24)**: BCOM employs a dual branch to encode RoI features and VLM features separately but lacks inter-instance context modeling. InCoM-Net unifies multi-level context extraction via ICR, outperforming BCOM by +4.62 mAP (ViT-L).
-- **vs. ADA-CM (ICCV23)**: ADA-CM injects detection signals via adapters and performs RoI pooling, but applies uniform context to all instances. Instance-specific context modeling is the key differentiator in InCoM-Net.
-- **vs. NMSR (ICCV25)**: The previous state of the art; InCoM-Net surpasses it by +1.03 on HICO-DET and +3.8 on V-COCO, with advantages primarily attributable to multi-context refinement and progressive aggregation.
+- **vs BCOM (CVPR24)**: BCOM encodes RoI and VLM features in dual branches but lacks inter-instance context. InCoM-Net outperforms BCOM by +4.62 mAP (ViT-L).
+- **vs ADA-CM (ICCV23)**: ADA-CM uses adapters for RoI pooling but applies a uniform context. InCoM-Net’s instance-specificity is the key differentiator.
+- **vs NMSR (ICCV25)**: The previous SOTA. InCoM-Net's gains (+1.03 on HICO-DET, +3.8 on V-COCO) derive primarily from multi-context refinement and progressive aggregation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The instance-level multi-context decomposition idea is novel, and the MFT strategy is creative; however, the overall framework remains a standard DETR + CLIP dual-branch design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two datasets, regular and zero-shot settings, detailed ablations, and visualizations—very comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, intuitive figures, and coherent motivation derivation.
-- Value: ⭐⭐⭐⭐ State-of-the-art HOI detection with a method design transferable to other relational reasoning tasks.
+- Novelty: ⭐⭐⭐⭐ Instance-level decomposition is novel; MFT is creative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive tests across datasets, zero-shot, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and coherent motivation.
+- Value: ⭐⭐⭐⭐ Achieves HOI SOTA with transferable design insights.
 
 <!-- RELATED:START -->
 
@@ -140,11 +150,11 @@ Ablation on context types (with ICR + ProCA):
 
 ## Related Papers
 
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] Learning to Track Instance from Single Nature Language Description](learning_to_track_instance_from_single_nature_language_description.md)
+- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
 - [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
-- [\[CVPR 2026\] PHAC: Promptable Human Amodal Completion](phac_promptable_human_amodal_completion.md)
+- [\[ICML 2025\] UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction](../../ICML2025/object_detection/ui-vision_a_desktop-centric_gui_benchmark_for_visual_perception_and_interaction.md)
 
 </div>
 

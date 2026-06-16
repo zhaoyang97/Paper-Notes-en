@@ -2,139 +2,150 @@
 title: >-
   [Paper Note] Active Timepoint Selection for Learning Measure-Valued Trajectories
 description: >-
-  [ICML 2026][Computational Biology][Active Sampling] This paper investigates the optimal timing for sampling a distribution snapshot. It employs Linearized Optimal Transport (LOT) to linearize measure trajectories in Wass…
+  [ICML 2026][Computational Biology][Linearized Optimal Transport] This paper investigates "when sampling a distribution snapshot is most valuable" by linearizing measure trajectories in Wasserstein space via Linearized Optimal Transport (LOT) and utilizing a multi-output GP with intrinsic time warping to provide epistemic uncertainty, thereby actively selecting timepoints that most e
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "Active Sampling"
-  - "Wasserstein Trajectory"
-  - "Linearized Optimal Transport"
-  - "Gaussian Process"
-  - "Single-Cell Time Series"
+  - ICML 2026
+  - Computational Biology
+  - Linearized Optimal Transport
+  - Gaussian Process
 date: 2026-05-08
-content_hash: 72598c5d155a6041
+content_hash: 8d94bc5909b822fc
 ---
-
 # Active Timepoint Selection for Learning Measure-Valued Trajectories
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.30625](https://arxiv.org/abs/2605.30625)  
 **Code**: https://github.com/nicolashuynh/active_wass  
 **Area**: Time Series / Measure-Valued Trajectory Learning  
-**Keywords**: Active Sampling, Wasserstein Trajectory, Linearized Optimal Transport, Gaussian Process, Single-Cell Time Series  
+**Keywords**: Active Sampling, Wasserstein Trajectories, Linearized Optimal Transport, Gaussian Process, Single-cell Time Series  
 
 ## TL;DR
-This paper investigates the optimal timing for sampling a distribution snapshot. It employs Linearized Optimal Transport (LOT) to linearize measure trajectories in Wasserstein space and utilizes multi-output Gaussian Processes (GPs) with time warping to provide epistemic uncertainty, thereby actively selecting timepoints that most effectively reduce trajectory reconstruction errors.
+This paper investigates "when sampling a distribution snapshot is most valuable" by linearizing measure trajectories in Wasserstein space via Linearized Optimal Transport (LOT) and utilizing a multi-output GP with intrinsic time warping to provide epistemic uncertainty, thereby actively selecting timepoints that most effectively reduce trajectory reconstruction error.
 
 ## Background & Motivation
-**Background**: In scenarios such as single-cell transcriptomics, fluid dynamics, and macroeconomics, the research objects are often probability distribution paths over time rather than single vector time series. Physical observations typically consist of empirical measures at discrete timepoints, and the task involves recovering continuous measure-valued trajectories from these sparse snapshots.
+**Background**: In scenarios such as single-cell transcriptomics, fluid dynamics, and macroeconomics, the research object is often a path of probability distributions evolving over time rather than a single vector time series. Actual observations typically consist of empirical measures at several discrete timepoints, and the task is to recover a continuous measure-valued trajectory from these sparse snapshots.
 
-**Limitations of Prior Work**: Generating high-quality snapshots is expensive, and experiments like single-cell sequencing often involve destructive sampling, preventing dense temporal observation. Traditional active learning assumes outputs reside in Euclidean space, allowing for direct use of GP posterior variance for sampling decisions. However, probability measures live in Wasserstein space, where linear averaging leads to "ghosting" effects (splitting mass), and standard GPs applied to density vectors violate transport geometry.
+**Limitations of Prior Work**: Acquiring high-quality snapshots is expensive, and single-cell experiments often involve destructive sampling, precluding dense observation along the time axis. Traditional active learning mostly assumes outputs in Euclidean space, where GP posterior variance can directly guide sampling decisions. However, probability measures reside in Wasserstein space; linear averaging leads to "mass splitting" artifacts, and modeling density vectors with standard GPs violates the underlying transport geometry.
 
-**Key Challenge**: Active sampling necessitates identifying areas of high uncertainty. Existing Wasserstein interpolation or flow methods generally yield a single deterministic trajectory, lacking available epistemic uncertainty. Furthermore, processes such as biological differentiation are highly non-stationary: they change slowly for long periods but bifurcate rapidly in narrow windows, which uniform sampling often fails to capture.
+**Key Challenge**: Active sampling requires quantifying "where the model is uncertain," yet existing Wasserstein interpolation or flow-based methods primarily yield a single deterministic trajectory, lacking usable epistemic uncertainty. Simultaneously, processes like biological differentiation are highly non-stationary: they remain stable for long periods but undergo rapid bifurcation in narrow windows, which uniform sampling easily misses.
 
-**Goal**: To select the most informative timepoints under a fixed observation budget to improve the accuracy of recovered probability paths in terms of Wasserstein error, specifically targeting regions of rapid change and transient branching.
+**Goal**: Select the most informative timepoints under a fixed observation budget to achieve higher accuracy in recovered probability paths (measured by Wasserstein distance), particularly covering regions of rapid change and transient bifurcations.
 
-**Key Insight**: The authors utilize Linearized Optimal Transport (LOT) to map each measure snapshot to the tangent space of a reference measure. PCA and GP are subsequently applied within this linear space. This approach preserves a first-order approximation of Wasserstein geometry while leveraging the GP posterior covariance to obtain the uncertainty required for active sampling.
+**Key Insight**: The authors utilize Linearized Optimal Transport (LOT) to map each measure snapshot to the tangent space of a reference measure, performing PCA and GP within this linear space. This approach preserves a first-order approximation of the Wasserstein geometry while leveraging the GP posterior covariance to obtain the uncertainty necessary for active sampling.
 
-**Core Idea**: The measure trajectory is first projected into the LOT tangent space, followed by constructing a warped GP on low-dimensional latent coefficients to select the next measurement time based on posterior variance.
+**Core Idea**: Project the measure trajectory into the LOT tangent space, construct a warped GP on low-dimensional latent coefficients, and utilize posterior variance to select the next measurement timepoint.
 
 ## Method
-The proposed method follows a cycle of "geometric linearization + probabilistic surrogate + active sampling." In each round, a Wasserstein barycenter of the existing snapshots is estimated as the reference measure to transform all snapshots into displacement fields relative to this reference. These high-dimensional displacements are compressed into low-dimensional coefficients, upon which a GP is fitted. The GP uncertainty is then used to select the next measurement time.
 
 ### Overall Architecture
-The input consists of a set of existing snapshots $\mathcal{D}=\{(t_i,\hat{\mu}_{t_i})\}_{i=1}^N$, a candidate time pool $\mathcal{T}_{pool}$, and a remaining sampling budget $B$. In each iteration, the algorithm updates the reference measure $\sigma$ and maps each snapshot $\hat{\mu}_{t_i}$ to $T_\sigma\mathcal{P}_2(\mathcal{X})$ via OT coupling to obtain a displacement matrix $\mathbf{V}_i$. Weighted PCA is then applied to derive low-dimensional coefficients $\mathbf{c}_i$, forming the GP training set $\{(t_i,\mathbf{c}_i)\}$.
+The method addresses the problem of deciding the next sampling timepoint to minimize the error of the reconstructed probability path, given a limited budget and expensive snapshots. Since the outputs are probability measures in Wasserstein space rather than Euclidean vectors, the difficulty lies in the fact that standard GP posterior variance cannot be directly applied. The authors map each measure snapshot to the tangent space of a reference measure via LOT, transforming measure regression into a low-dimensional vector regression suitable for GPs. In each iteration, the reference measure is updated, the probability surrogate is reconstructed, and the GP uncertainty is used to select the next timepoint until the budget is exhausted.
 
-To account for non-stationary dynamics, the authors estimate an intrinsic time $\tau=\Phi(t)$ rather than using stationary kernels on physical time $t$. $\Phi(t)$ approximates the cumulative Wasserstein arc length (the sum of transport distances between adjacent snapshots), extended to candidate times via monotonic cubic splines. The GP kernel is defined as $\mathbf{K}(t,t')=\mathbf{K}_{base}(\Phi(t),\Phi(t'))$, which automatically results in shorter effective lengthscales in regions of rapid change.
+The input consists of the existing snapshot set $\mathcal{D}=\{(t_i,\hat{\mu}_{t_i})\}_{i=1}^N$, a candidate time pool $\mathcal{T}_{pool}$, and the remaining budget $B$. In each round, the algorithm updates the reference measure $\sigma$, maps each snapshot $\hat{\mu}_{t_i}$ to the tangent space $T_\sigma\mathcal{P}_2(\mathcal{X})$ via OT coupling to obtain the displacement matrix $\mathbf{V}_i$. It then uses weighted PCA to compress this into low-dimensional coefficients $\mathbf{c}_i$, forming the GP training set $\{(t_i,\mathbf{c}_i)\}$. Finally, a multi-output GP with intrinsic time warping (re-scaling time by Wasserstein arc length to accommodate non-stationarity) is fitted to the mapping from time to coefficients. The timepoint $t^*$ with the highest posterior uncertainty is selected for the next measurement.
 
-For active sampling, the paper primarily uses point-wise uncertainty: $\alpha_{unc}(t;\mathcal{D})=\mathrm{Tr}(\mathbf{S}(\Phi(t)))$, though an expected integrated risk reduction version is also provided. After selecting $t^*$, a real measurement is performed, and the new snapshot is added to the dataset for the next round.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Existing snapshots D + Candidate pool + Budget B"] --> B["Update Reference Measure σ<br/>(Wasserstein barycenter)"]
+    B --> C["LOT Tangent Space Representation<br/>OT coupling → displacement field Vᵢ"]
+    subgraph G2["Low-dimensional GP Surrogate and Reconstruction"]
+        direction TB
+        D["Weighted PCA → Latent coefficients cᵢ"] --> E["Multi-output GP fits t→c(t)<br/>Provides mean and epistemic uncertainty"]
+    end
+    C --> G2
+    subgraph G3["Intrinsic Time Warping & Acquisition"]
+        direction TB
+        F["Re-scale time τ=Φ(t) via Wasserstein arc length"] --> H["Select t* with maximum posterior uncertainty"]
+    end
+    G2 --> G3
+    H -->|Measure t* and add to D, budget remaining| B
+    H -->|Budget exhausted| I["Output: Reconstructed probability path"]
+```
 
 ### Key Designs
-1. **LOT Tangent Space Representation**:
-    - **Function**: Transforms non-Euclidean probability measure outputs into regressible vector objects.
-    - **Mechanism**: Using reference measure $\sigma$ as an anchor, the OT coupling from $\sigma$ to the target snapshot $\hat{\mu}_{t_i}$ is computed, and an approximate transport map is obtained via barycentric projection. The displacement field $\mathbf{V}_i=\hat{\mathbf{Z}_i}-\mathbf{Z}_\sigma$ serves as the representation of the snapshot in the tangent space.
-    - **Design Motivation**: Applying GPs directly to densities "averages" mass into incorrect positions; LOT represents changes via transport displacement, which is more consistent with Wasserstein geometry.
 
-2. **Low-dimensional GP Surrogate and Distribution Reconstruction**:
-    - **Function**: Provides a posterior mean and epistemic uncertainty for the probability path across continuous time.
-    - **Mechanism**: PCA is performed on the weighted flattened displacements to extract latent coefficients $\mathbf{c}_i$. A multi-output GP is built for the mapping $t \mapsto \mathbf{c}(t)$. Predictions are back-projected from the GP posterior mean or samples to displacement fields and added back to the reference landmarks.
-    - **Design Motivation**: Performing GP directly on high-dimensional displacement fields is computationally expensive and data-scarce. PCA extracts the primary directions of variation, stabilizing uncertainty estimation.
+**1. LOT Tangent Space Representation: Transforming non-Euclidean measures into regressible vectors**
 
-3. **Intrinsic Time Warping and Acquisition**:
-    - **Function**: Sensitizes the sampling strategy to non-stationary trajectories, prioritizing coverage of high-velocity windows.
-    - **Mechanism**: The cumulative arc length $\Phi(t)$ is estimated using Wasserstein distances between adjacent snapshots, and the GP kernel computes correlations based on $\Phi(t)$. The acquisition function selects the timepoint with the maximum posterior covariance trace.
-    - **Design Motivation**: Assuming stationarity in physical time causes the model to underestimate uncertainty during short bifurcations or sudden transitions. With intrinsic time, rapidly changing regions are "stretched" within the model, making them more likely to be captured by active sampling.
+Active sampling requires an output representation that supports regression and uncertainty estimation. Because probability measures inhabit Wasserstein space, direct GP on density vectors results in quality "averaging" at incorrect locations, violating transport geometry. Using a reference measure $\sigma$ as an anchor, the authors compute the OT coupling from $\sigma$ to each target snapshot $\hat{\mu}_{t_i}$. Using barycentric projection, the snapshot is represented in the tangent space as a displacement field $\mathbf{V}_i=\hat{\mathbf{Z}}_i-\mathbf{Z}_\sigma$. This represents "how to move mass starting from the reference measure," providing a first-order linearization of Wasserstein geometry that aligns more closely with the problem structure than direct density modeling.
+
+**2. Low-dimensional GP Surrogate and Distribution Reconstruction: Providing continuous-time mean and epistemic uncertainty**
+
+Displacement fields are high-dimensional and snapshots are sparse, making direct GP modeling computationally expensive and unstable. The authors apply weighted PCA to the flattened displacement fields to extract principal directions, obtaining latent coefficients $\mathbf{c}_i$, and then model the mapping $t\mapsto\mathbf{c}(t)$ via a multi-output GP. To predict a distribution at any time, a latent coefficient is sampled or taken from the GP posterior mean and projected back to a displacement field, which is added to the reference landmarks to yield the predicted measure. This path provides both a posterior mean for reconstruction and a GP posterior covariance for epistemic uncertainty required for active sampling.
+
+**3. Intrinsic Time Warping and Acquisition: Preferentially monitoring high-velocity windows**
+
+Processes like biological differentiation are highly non-stationary—stable for long periods but bifurcating rapidly in transition windows. If a stationary kernel is assumed in physical time $t$, the model under-estimates uncertainty during rapid bifurcation phases. The authors instead estimate intrinsic time $\tau=\Phi(t)$, where $\Phi(t)$ approximates the cumulative Wasserstein arc length (accumulated transport distance between adjacent snapshots), extended to candidate times via monotonic cubic splines. The kernel is defined as $\mathbf{K}(t,t')=\mathbf{K}_{base}(\Phi(t),\Phi(t'))$, effectively "stretching" regions of fast change and shortening the effective lengthscale. Acquisition typically utilizes point-wise uncertainty $\alpha_{unc}(t;\mathcal{D})=\mathrm{Tr}(\mathbf{S}(\Phi(t)))$, selecting timepoints with the maximum posterior covariance trace to naturally direct the budget toward high-velocity regions.
 
 ### Loss & Training
-The method is not an end-to-end neural network but reconstructs a probabilistic surrogate in each round. Core optimizations include OT coupling, Wasserstein barycenter computation, PCA, and maximization of the GP marginal log-likelihood for hyperparameters. In default experiments, the multi-output GP is simplified to independent GPs for each latent dimension using a Matérn 5/2 kernel. Acquisition is calculated over a fixed candidate pool.
+The method is not an end-to-end neural network; instead, it reconstructs a probability surrogate in each round. Core optimizations include OT coupling, Wasserstein barycenters, PCA, and maximization of the GP marginal log-likelihood for hyperparameters. In default experiments, the multi-output GP is simplified to independent GPs for each latent dimension using a Matérn 5/2 kernel. Candidate acquisition is calculated over a fixed pool to select the timepoint with maximal uncertainty.
 
-Computational complexity is dominated by OT. Given $N$ snapshots with $n$ samples each and $M$ landmarks in the reference measure, LOT embedding and time warping require approximately $O(N \cdot \mathcal{C}_{OT}(M,n))$. GP computation is typically not a bottleneck given the low-dimensional latent space and small number of snapshots.
+The algorithmic complexity is dominated by OT. For $N$ snapshots with $n$ samples each and a reference measure with $M$ landmarks, LOT embedding and time warping require approximately $O(N\cdot \mathcal{C}_{OT}(M,n))$. GP computation is typically not a bottleneck in the low-dimensional, low-snapshot regime.
 
 ## Key Experimental Results
 
 ### Main Results
-The method was validated on synthetic branching trajectories, real-world single-cell fibroblast reprogramming data, and labor market data. Quantitative results indicate that active sampling outperforms uniform or random sampling, particularly as the branching window length decreases.
+The method is validated on synthetic branching trajectories, real-world fibroblast reprogramming single-cell data, and labor market data. Quantitative results in the synthetic sensitivity study demonstrate that active sampling achieves the most significant advantages over uniform/random sampling when bifurcation windows are short.
 
-| Branching Window Length | vs Uniform: Rel. W2 ↑ | vs Uniform: Rel. w-W2 ↑ | vs Random: Rel. W2 ↑ | vs Random: Rel. w-W2 ↑ | Interpretation |
+| Bifurcation Window Length | vs Uniform: Rel. W2 ↑ | vs Uniform: Rel. w-W2 ↑ | vs Random: Rel. W2 ↑ | vs Random: Rel. w-W2 ↑ | Interpretation |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 0.05 | 0.231 | 0.357 | 0.342 | 0.454 | Short bifurcations benefit most from active sampling with velocity weighting. |
-| 0.10 | 0.189 | 0.277 | 0.397 | 0.464 | Stable advantage maintained as the window widens. |
-| 0.20 | -0.172 | 0.071 | 0.118 | 0.295 | Uniform sampling covers wide windows well, but active sampling still prioritizes high-velocity regions. |
+| 0.10 | 0.189 | 0.277 | 0.397 | 0.464 | Stable advantage is maintained as the window widens. |
+| 0.20 | -0.172 | 0.071 | 0.118 | 0.295 | Uniform sampling covers wider windows well, but active sampling still prioritizes high-velocity regions. |
 
-In real single-cell reprogramming experiments, the active strategy achieved the lowest reconstruction error at low-to-medium budgets ($B \leq 12$). As the budget increases, the gap narrows as uniform/random sampling also covers most transient phases.
+In real single-cell reprogramming experiments, the active strategy yields the lowest reconstruction error at low to medium budgets (especially $B\leq 12$). As the budget increases, uniform and random sampling eventually cover most transient phases, narrowing the performance gap.
 
 ### Ablation Study
-The impact of four design components in the surrogate/acquisition pipeline was analyzed:
+The authors perform ablations on four components of the surrogate/acquisition pipeline. Based on the performance trends:
 
-| Configuration | Key Metric | Description |
+| Configuration | Key Metrics | Description |
 | :--- | :--- | :--- |
-| Full method | Lowest reconstruction error | LOT barycenter + sufficient PCA dims + time warping + Matérn GP. |
-| RBF kernel | Close to Full method | Suggests the method is not strictly dependent on a specific prior. |
-| Fixed reference $\sigma$ | Significant error increase | Failure to update the reference measure amplifies LOT linearization errors. |
-| PCA rank $K=2$ | Most significant decline | Low-dimensional latents cannot express complex transcriptomic variations. |
-| No warp | Degradation at low budgets | Proves intrinsic time is essential for non-stationary dynamics. |
+| Full method | Lowest reconstruction error | LOT barycenter + sufficient PCA rank + time warping + Matérn GP. |
+| RBF kernel | Close to Full method | Indicates the method is not strictly dependent on a single prior; kernels are replaceable. |
+| Fixed reference $\sigma$ | Significant error increase | Not updating the reference measure amplifies LOT linearization errors. |
+| PCA rank $K=2$ | Most significant degradation | Low-dimensional latent space cannot capture complex transcriptomic variations. |
+| No warp | Degradation at low budgets | Proves intrinsic time is critical for non-stationary dynamics. |
 
 ### Key Findings
-- The advantage of the active strategy stems from "allocating budget to high-velocity regions" rather than simply acquiring more samples. Visualizations show acquisition points concentrated near branching windows.
-- Localized events are most easily missed by uniform sampling. While uniform sampling's disadvantage diminishes for wider event windows, the velocity-weighted error still favors the active method.
-- PCA dimensionality is critical. Significant degradation at $K=2$ shows that primary variations in measure trajectories are not always representable by a very small number of components.
-- Dynamically updating the Wasserstein barycenter is crucial to minimize LOT approximation errors as the distribution drifts.
+- The advantage of active strategies stems from "allocating budget to high-velocity regions" rather than simply taking more samples. Visualizations show that later acquisitions concentrate around the two bifurcation windows.
+- When events are highly localized, uniform sampling is most likely to miss them; as the event window widens, the relative disadvantage of uniform sampling decreases, though the active method remains superior in velocity-weighted error.
+- PCA dimension is not a minor detail. Significant degradation at $K=2$ suggests that primary changes in measure trajectories cannot always be expressed by a very small number of components.
+- Maintaining a fixed reference measure degrades LOT approximations, especially under large distribution drifts; dynamically updating the Wasserstein barycenter is essential.
 
 ## Highlights & Insights
-- The paper adapts "uncertainty sampling" for active learning to Wasserstein space by identifying a computable uncertainty surrogate rather than attempting a direct Bayesian prior in measure space.
-- Intrinsic time warping is intuitive: biological physical time and geometric change velocity are often uncoupled. Re-scaling time using transport distance is more structurally sound than tuning kernel lengthscales.
-- The method is highly relevant for expensive experimental designs (e.g., "where to sample next" rather than high-frequency real-time sampling).
-- The LOT + GP combination is more interpretable than end-to-end deep models, as sampling decisions can be explained via posterior variance and trajectory velocity.
+- The paper successfully adapts "uncertainty sampling" from active learning to Wasserstein space by finding a computable uncertainty surrogate rather than attempting hard Bayesian priors directly in measure space.
+- Intrinsic time warping is a natural fit: biological processes do not evolve at a constant speed relative to physical time. Re-scaling time via transport distance aligns with the underlying problem structure better than simply tuning kernel lengthscales.
+- The method offers substantial practical value for expensive experimental design where the primary goal is to determine where to measure next under a strict budget.
+- The combination of LOT and GPs remains more interpretable than end-to-end deep models, as choices for specific timepoints can be explained via posterior variance and trajectory velocity.
 
 ## Limitations & Future Work
-- The tangent space approximation is a core assumption. If the trajectory deviates significantly from the reference or contains large jumps, a single tangent chart may be insufficient; multi-chart or atlas-like methods could be considered.
-- OT subproblems represent the primary computational cost. This is acceptable for expensive snapshots with $\sim 10^5$ samples but may require scalable OT approximations for million-point clouds.
-- The input is currently restricted to 1D time. Extension to multi-dimensional covariates (dosage, perturbation types, spatial location) is needed for broader scientific applications.
-- While reconstruction error is minimized, further work could connect the method to downstream tasks like fate prediction or critical state discovery.
+- The tangent space approximation is a core assumption. If the real trajectory deviates significantly from the reference measure or contains large distribution jumps, a single tangent chart may be insufficient; the authors suggest multi-chart or atlas-like approaches for future work.
+- OT subproblems constitute the primary computational cost. While acceptable for expensive experiments with sample sizes around $10^5$, million-scale point clouds would require more scalable OT approximations.
+- Current inputs are limited to 1D time. Many scientific experiments involve multi-dimensional covariates like dosage, perturbation type, and spatial location, necessitating extensions to multi-dimensional acquisition.
+- Experiments focus on reconstruction error; future work could connect directly to downstream scientific tasks such as differentiation fate prediction or critical state discovery.
 
 ## Related Work & Insights
-- **vs. Euclidean GP on densities**: Standard GP regression on density vectors leads to mass splitting; this work uses LOT displacement to preserve transport directionality.
-- **vs. Deterministic distribution interpolation/flow matching**: These methods fit trajectories from fixed snapshots but lack epistemic uncertainty; the GP posterior in this work enables active acquisition.
-- **vs. Single-cell timepoint selection**: Early methods focused on Euclidean gene-expression curves; this work directly processes empirical measures, better suited for population distribution shifts.
-- **Insight**: For active learning in non-Euclidean output spaces, mapping to a local linearization or low-dimensional chart before building an interpretable uncertainty model is an effective strategy.
+- **vs Euclidean GP on densities**: Standard GP regression on density vectors causes mass splitting; this work uses LOT displacement to preserve transport direction.
+- **vs Deterministic distribution interpolation/Flow Matching**: While those methods fit a trajectory from fixed snapshots, they lack epistemic uncertainty; the GP posterior in this work serves the purpose of active acquisition.
+- **vs Single-cell timepoint selection methods**: Early methods often selected points on Euclidean gene-expression curves; this work handles empirical measures directly, fitting population distribution shifts better.
+- **Insight**: For active learning in non-Euclidean output spaces, one should first identify a local linearization or low-dimensional chart, then build interpretable uncertainty models on that chart.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Combines LOT, GP uncertainty, and active timepoint selection for measure-valued trajectories; both the problem setting and approach are novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Includes synthetic, real single-cell, and supplementary data, though some ablations are limited to graphical representations.
-- **Writing Quality**: ⭐⭐⭐⭐ Geometric motivation is clear and algorithm details are complete, though requires background in OT/GP.
-- **Value**: ⭐⭐⭐⭐⭐ Highly insightful for expensive experimental design and Wasserstein trajectory modeling.
+- Novelty: ⭐⭐⭐⭐⭐ Combines LOT, GP uncertainty, and active selection for measure-valued trajectories; both the problem setting and the approach are novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Synthetic + real single-cell + appendix data are comprehensive, though some ablations are limited to graphical trends without raw tabular values.
+- Writing Quality: ⭐⭐⭐⭐ Clear geometric motivation and complete algorithmic details, though it requires a background in OT and GPs.
+- Value: ⭐⭐⭐⭐⭐ Highly insightful for expensive experimental design and Wasserstein trajectory modeling.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](../../NeurIPS2025/computational_biology/prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 - [\[ICLR 2026\] Controllable Sequence Editing for Biological and Clinical Trajectories](../../ICLR2026/computational_biology/controllable_sequence_editing_for_biological_and_clinical_trajectories.md)
-- [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](../../NeurIPS2025/computational_biology/amortized_active_generation_of_pareto_sets.md)
-- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
-- [\[NeurIPS 2025\] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow](../../NeurIPS2025/computational_biology/modeling_microenvironment_trajectories_on_spatial_transcriptomics_with_nicheflow.md)
+- [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](../../NeurIPS2025/computational_biology/prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
+- [\[ICML 2025\] Multivariate Conformal Selection](../../ICML2025/computational_biology/multivariate_conformal_selection.md)
+- [\[ICML 2025\] MF-LAL: Drug Compound Generation Using Multi-Fidelity Latent Space Active Learning](../../ICML2025/computational_biology/mf-lal_drug_compound_generation_using_multi-fidelity_latent_space_active_learnin.md)
 
 </div>
 

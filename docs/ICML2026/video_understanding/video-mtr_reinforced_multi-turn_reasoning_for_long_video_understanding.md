@@ -2,79 +2,89 @@
 title: >-
   [Paper Note] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding
 description: >-
-  [ICML 2026][Video Understanding][RL] Video-MTR is a reinforcement learning-based **multi-turn reasoning** framework. It guides MLLMs to iteratively select key video segments via a **Gated Dual-Level Reward** mechanism…
+  [ICML 2026][Video Understanding][Reinforcement Learning] Video-MTR is a reinforcement learning-based **multi-turn reasoning** framework. By guiding MLLMs through a **gated bi-level reward mechanism** to iteratively select key video segments, it achieves SOTA performance in long video understanding using only **8K data**, improving data efficiency by two orders of magnitude c
 tags:
-  - "ICML 2026"
-  - "Video Understanding"
-  - "RL"
-  - "Multi-turn Reasoning"
-  - "Long Video Understanding"
-  - "Keyframe Retrieval"
+  - ICML 2026
+  - Video Understanding
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: d0e1785a0b1f3007
+content_hash: fe6e2ad6b15441e5
 ---
-
 # Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding
 
 **Conference**: ICML 2026  
 **arXiv**: [2508.20478](https://arxiv.org/abs/2508.20478)  
-**Code**: To be confirmed  
+**Code**: TBD  
 **Area**: Video Understanding / Reinforcement Learning / Multimodal Reasoning  
-**Keywords**: RL, Multi-turn Reasoning, Long Video Understanding, Keyframe Retrieval
+**Keywords**: Reinforcement Learning, Multi-turn Reasoning, Long Video Understanding, Keyframe Retrieval
 
 ## TL;DR
-Video-MTR is a reinforcement learning-based **multi-turn reasoning** framework. It guides MLLMs to iteratively select key video segments via a **Gated Dual-Level Reward** mechanism, achieving SOTA performance in long video understanding using only **8K data**, outperforming baseline methods by two orders of magnitude in data efficiency (which require 257K to 4.4M samples).
+Video-MTR is a reinforcement learning-based **multi-turn reasoning** framework. By guiding MLLMs through a **gated bi-level reward mechanism** to iteratively select key video segments, it achieves SOTA performance in long video understanding using only **8K data**, improving data efficiency by two orders of magnitude compared to methods requiring 257K–4.4M samples.
 
 ## Background & Motivation
 
-**Background**: Long video understanding has become a critical application for MLLMs. Current approaches generally follow two paradigms: (1) Instruction fine-tuning, which relies on uniform sampling and large-scale data; (2) Agent-based paradigms, which integrate external VLM tools, introducing complex heterogeneous components.
+**Background**: Long video understanding is a critical application for MLLMs. Current approaches primarily fall into two categories: (1) Instruction-tuning paradigms, which rely on uniform sampling and large-scale data; (2) Agent paradigms, which integrate external VLM tools and introduce complex heterogeneous components.
 
 **Limitations of Prior Work**:
-- Uniform sampling strategies fail to handle information loss in long videos as they cannot adaptively locate key segments.
-- Reliance on external VLMs leads to high system complexity, suboptimal tool utilization strategies, and a lack of end-to-end training.
-- Existing RL methods mostly employ single-turn reasoning or sparse rewards based only on the final answer, making it difficult to guide multi-turn intermediate behaviors.
+- Uniform sampling strategies suffer from information loss in long videos and fail to adaptively locate key segments.
+- Dependence on external VLMs leads to high system complexity, suboptimal tool utilization strategies, and a lack of end-to-end training.
+- Existing RL methods often employ single-turn reasoning or sparse rewards based only on the final answer, making it difficult to guide multi-turn intermediate behaviors.
 
-**Key Challenge**: Long videos contain multiple events and long-term temporal dependencies. Existing methods either suffer from information loss due to fixed sampling or sacrifice efficiency due to external tool dependency. How can adaptive, multi-turn key segment retrieval be achieved within a limited computational budget?
+**Key Challenge**: Long videos contain multiple events and long-term temporal dependencies. Existing methods either suffer information loss due to fixed sampling or sacrifice efficiency by relying on external tools. How can adaptive, multi-turn key segment retrieval be achieved within a limited computational budget?
 
 **Goal**:
-1. Propose a pure RL post-training paradigm without the need for large-scale supervised fine-tuning.
-2. Design a fine-grained multi-turn reward mechanism to guide intermediate frame retrieval behaviors.
-3. Achieve SOTA performance with minimal data (8K vs. 257K–4.4M).
+1. Propose a pure RL post-training paradigm without the need for large-scale supervised fine-tuning (SFT).
+2. Design a fine-grained multi-turn reward mechanism to guide intermediate frame retrieval.
+3. Reach SOTA performance with minimal data (8K vs. 257K–4.4M).
 
-**Key Insight**: Reframe long video understanding as a **multi-turn interactive decision-making process**, where the MLLM acts as an agent, the video acts as the environment, and the model iteratively retrieves key segments to update the context. This simulates the natural human process of watching long videos: starting with a global understanding, followed by targeted reviews of details, and finally synthesizing evidence.
+**Key Insight**: Reframe long video understanding as a **multi-turn interactive decision process**, where the MLLM acts as an agent and the video as the environment. In each iteration, the model retrieves key segments and updates the context, simulating the natural human process of watching long videos: global understanding followed by targeted reviews of details for final synthesis.
 
-**Core Idea**: Use a **Gated Dual-Level Reward** (coupling goal rewards with intermediate frame rewards) combined with **Exploration Bootstrapping** (no cold-start SFT) to enable MLLMs to learn multi-turn evidence seeking via pure RL while significantly reducing data requirements.
+**Core Idea**: Utilize a **gated bi-level reward** (coupling target rewards with intermediate frame rewards) and **exploration bootstrapping** (eliminating cold-start SFT) to enable the MLLM to learn multi-turn evidence seeking via pure RL while significantly reducing data requirements.
 
 ## Method
 
 ### Overall Architecture
-Long video understanding is reframed as an MDP:
-- **State** $s_k = (\mathcal{F}_{k-w}, x_{k-w}, \ldots, \mathcal{F}_k, x_k)$: Past $w$ turns of interaction + current set of observed frames.
+Long video understanding is reframed as a Markov Decision Process (MDP):
+- **State** $s_k = (\mathcal{F}_{k-w}, x_{k-w}, \ldots, \mathcal{F}_k, x_k)$: Past $w$ interaction turns + current set of observed frames.
 - **Action** $a_k$: Retrieve a new segment (specifying a timestamp range) or output the final answer.
-- **Environment Response**: Returns a new sampled frame set $\mathcal{F}_{k+1}$ based on the retrieval action, or a reward based on answer correctness.
+- **Environment Response**: Returns a new set of sampled frames $\mathcal{F}_{k+1}$ based on the retrieval action, or a reward based on the correctness of the answer.
 - **Trajectory** $\tau = \{(\mathcal{F}_k, x_k, y_k)\}_{k=0}^K$.
 
-Initially, $n_0$ frames are uniformly sampled. Each subsequent turn allows up to $K_{\max} = 3$ retrievals. The model generates reasoning text + executable actions; the system determines whether to continue retrieval or conclude the answer.
+The process initializes with $n_0$ uniformly sampled frames, followed by a maximum of $K_{\max} = 3$ retrieval turns. The model generates reasoning text + executable actions; after parsing, the system decides whether to continue retrieval or provide the answer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Long Video + Question<br/>Initial uniform sampling of n₀ frames (50% budget)"] --> B["Multi-turn Reasoning Paradigm<br/>MLLM generates reasoning + actions based on evolving context"]
+    B -->|Retrieve new segment<br/>25% budget per turn · Max 3 turns| C["Environment returns new frames<br/>Update state within window w"]
+    C --> B
+    B -->|Output answer| D["Final Answer"]
+    D --> E["Gated Bi-level Reward Mechanism<br/>Intermediate frame/format rewards activated only on correct answer"]
+    E --> F["PPO Training<br/>Forward discount propagation via γ=0.95 across turns"]
+    G["Data-efficient Training Strategy<br/>8K curated data + Exploration bootstrapping (No SFT)"] --> F
+    F -.Policy Update.-> B
+```
 
 ### Key Designs
 
-1. **Multi-turn Reasoning Paradigm**:
-    - **Function**: Overcomes the information loss bottleneck of uniform sampling by iteratively retrieving and adaptively locating key segments.
-    - **Mechanism**: Differing from single-turn processing of fixed frame sets, the MLLM actively retrieves new segments based on evolving context (processed frames + reasoning progress). The first turn uses 50% of the sampling budget, and subsequent turns use 25% each, ensuring the total count stays below the limit—enabling dense sampling for complex regions and coarse sampling for simpler ones.
-    - **Design Motivation**: To solve the failure of uniform sampling in locating critical details; multi-turn gains grow with task complexity and video length (+3.8% overall, +8.1% for multi-detail tasks; +6.3% for long videos on VideoMME vs. +1.7% for short videos).
+**1. Multi-turn Reasoning Paradigm: Replacing fixed uniform sampling with "turn-based on-demand key segment retrieval"**
 
-2. **Gated Dual-Level Reward Mechanism (Core Innovation)**:
-    - **Function**: Guides multi-turn optimization using fine-grained, multi-level reward signals to prevent reward hacking.
-    - **Mechanism**: Reward is layered: **Trajectory-level** $R_{\text{acc}}$ is 1 for a correct final answer and 0 otherwise. **Turn-level** $R_{\text{fms}}^k$ is an IoU improvement reward (max 0.5, half of $R_{\text{acc}}$) between retrieved frames and ground truth, encouraging marginal improvement and penalizing redundancy. **Format-level** $R_{\text{format}}^k = 0.1$ rewards adherence to formatting. **Gating Mechanism**: Intermediate rewards $\sum_{k=0}^{K-1}(R_{\text{fms}}^k + R_{\text{format}}^k)$ are activated only if $R_{\text{acc}} > 0$, ensuring frame retrieval behavior is reinforced only when it leads to a correct answer. Final combination: $R(\tau) = \mathbb{1}_{\{R_{\text{acc}} > 0\}} \cdot \sum_{k=0}^{K-1}(R_{\text{fms}}^k + R_{\text{format}}^k) + R_{\text{acc}} + R_{\text{format}}^K$.
-    - **Design Motivation**: Absolute terminal rewards fail to guide intermediate segment selection (-4.4% on LVBench); unconstrained intermediate rewards lead to "gaming" for cumulative turn rewards rather than accuracy. Gating forces the coupling of frame retrieval and answer accuracy.
+Uniform sampling inevitably misses key details in long videos, and single-turn processing of fixed frames lacks adaptive positioning. Video-MTR allows the MLLM to actively retrieve new segments in each turn based on evolving context (processed frames + reasoning progress). It uses 50% of the sampling budget for a global overview in the first turn and 25% for each subsequent turn, ensuring total frames do not exceed the limit. This enables dense sampling in complex areas and sparse sampling in simple ones, mimicking the human process of global understanding followed by targeted detail review. Its benefits scale with task complexity and video length (e.g., +8.1% on multi-detail tasks; +6.3% on long videos in VideoMME vs. +1.7% on short videos).
 
-3. **Data-efficient Training Strategy**:
-    - **Function**: Enables RL post-training using only 8K samples.
-    - **Mechanism**: **Data Curation**: Reuses existing temporal localization datasets (NExT-GQA with native QA + timestamps, and QVHighlights converted via GPT-4o). Selection of samples with short key segments yields an 8K compact dataset. **Exploration Bootstrapping**: Since pre-trained MLLMs lack original active retrieval capabilities (cold start) without SFT warm-up, a small reward is automatically given per mini-batch if the retrieval rate falls below a threshold. Once retrieval becomes regular, this is disabled, and learning is driven by dual-level signals.
-    - **Design Motivation**: Large-scale SFT data is expensive; RL converges rapidly to multi-turn strategies via precise data curation (quality over quantity) and adaptive exploration.
+**2. Gated Bi-level Reward Mechanism: Guiding intermediate retrieval behaviors while preventing reward hacking**
 
-### Training Strategy
-PPO algorithm is used, treating multi-turn trajectories as a single token sequence. Two-tier discount factors are applied: inter-turn $\gamma_{\text{turn}} = 0.95$ (propagating final signals back to early decisions) and intra-turn $\gamma_{\text{token}} = 1.0$. Batch size is 32, actor $lr$ $1 \times 10^{-6}$, critic $lr$ $1 \times 10^{-5}$, using 8 A800-80GB GPUs.
+Pure terminal rewards fail to guide which intermediate segments to retrieve, while unconstrained intermediate rewards encourage models to optimize for turn count rather than accuracy. Video-MTR categorizes rewards into three layers: Trajectory layer $R_{\text{acc}}$ (1 for correct, 0 otherwise); Turn layer $R_{\text{fms}}^k$ (rewarding IoU improvements between retrieved frames and ground truth, capped at 0.5 to encourage marginal gains and forbid redundancy); and Format layer $R_{\text{format}}^k=0.1$ for compliant output. Crucially, intermediate rewards $\sum_{k=0}^{K-1}(R_{\text{fms}}^k+R_{\text{format}}^k)$ are activated only if $R_{\text{acc}}>0$, synthesized as:
+
+$$R(\tau)=\mathbb{1}_{\{R_{\text{acc}}>0\}}\cdot\sum_{k=0}^{K-1}(R_{\text{fms}}^k+R_{\text{format}}^k)+R_{\text{acc}}+R_{\text{format}}^K$$
+
+Retrieval behavior is reinforced only if the final answer is correct, binding "retrieval" to "accuracy" and preventing the model from farming rewards through excessive turns.
+
+**3. Data-efficient Training Strategy: Precise curation + exploration bootstrapping for SFT-free RL post-training**
+
+Video-MTR addresses the scarcity of SFT data through two methods. First, data curation: repurposing existing temporal localization datasets (e.g., NExT-GQA with QA + timestamps, and QVHighlights converted via GPT-4o) into an 8K compact set focusing on "quality over quantity." Second, cold-start resolution: Pre-trained MLLMs typically do not initiate retrieval. Instead of SFT warm-up, exploration bootstrapping is used—if the retrieval rate in a mini-batch falls below a threshold, a small auxiliary reward is applied to stimulate retrieval. Once retrieval becomes a regular behavior, this signal is disabled, returning control to the bi-level reward.
+
+### Loss & Training
+Using the PPO algorithm, multi-turn trajectories are treated as single token sequences with two discount factors: $\gamma_{\text{turn}} = 0.95$ across turns (propagating the final answer signal backward to encourage early correct decisions) and $\gamma_{\text{token}} = 1.0$ within turns. Training uses a batch size of 32, actor lr $1 \times 10^{-6}$, critic lr $1 \times 10^{-5}$, on 8x A800-80GB GPUs.
 
 ## Key Experimental Results
 
@@ -91,59 +101,60 @@ PPO algorithm is used, treating multi-turn trajectories as a single token sequen
 | **Video-MTR** | 7B | 64 | 62.2 | 49.8 | 54.8 | 41.8 | 63.4 |
 | **Video-MTR** | 7B | 80 | **62.7** | **50.4** | **57.1** | **42.3** | **68.8** |
 
-Under the same frame budget, Video-MTR significantly outperforms Qwen2.5-VL-7B (+5.4 to +6.3% at 32 frames). Video-MTR with 80 frames nearly matches Qwen2.5-VL-7B using 768 frames. Data efficiency is exceptional: 8K data vs. 2M for VideoChat2 or 260K for Video-R1.
+Under the same frame budget, Video-MTR consistently outperforms the Qwen2.5-VL-7B baseline (+5.4 to +6.3% with 32 frames). Video-MTR with 80 frames nearly matches the performance of Qwen2.5-VL-7B using 768 frames. **Data efficiency is exceptional**, requiring only 8K data vs. 2M for VideoChat2 or 260K for Video-R1.
 
 ### Ablation Study
 
-| Configuration | VideoMME Short | Mid | Long | Total | LVBench |
+| Configuration | VideoMME Short | Medium | Long | Total | LVBench |
 |------|-----------|-----|-----|-----|---------|
 | **Full Model** | 74.8 | 60.6 | 52.7 | 62.7 | 42.3 |
-| w/o Dual-Level Reward | 69.4 | 56.2 | 49.4 | 58.3 | 37.7 |
-| **Gain (Loss)** | -5.4 | -4.4 | -3.3 | -4.4 | **-4.6** |
+| w/o Bi-level Reward | 69.4 | 56.2 | 49.4 | 58.3 | 37.7 |
+| **Drop** | -5.4 | -4.4 | -3.3 | -4.4 | **-4.6** |
 | Single-turn Baseline | 68.8 | 54.8 | 47.9 | 57.2 | 35.3 |
-| **Gain (Loss)** | -6.0 | -5.8 | -4.8 | -5.5 | **-7.0** |
+| **Drop** | -6.0 | -5.8 | -4.8 | -5.5 | **-7.0** |
 
 ### Key Findings
-- **Differential Effects of Multi-turn Reasoning**: On MLVU, multi-turn gains show a linear relationship with task difficulty: +3.8% overall, +7.5% for single details, and +8.1% for multiple details.
-- **Scalability with Video Length**: On VideoMME (32-frame budget), gains are +4.6% for short, +5.3% for medium, and **+6.3% for long videos**, highlighting that multi-turn reasoning is most effective in long-form scenarios.
-- **Prevention of Reward Hacking**: Without gating, the model learns a false strategy of increasing turns just to accumulate rewards without improving accuracy. With gating, it learns to retrieve only as needed.
-- **Exploration Bootstrapping Effectiveness**: RL directly enables multi-turn capabilities without SFT warm-up. This was also successful on Qwen2.5-VL-3B, demonstrating paradigm scalability.
+- **Differential impact of multi-turn reasoning**: On MLVU, gains correlate linearly with task difficulty: +3.8% Overall, +7.5% Single-detail, +8.1% Multi-detail.
+- **Video length scalability**: On VideoMME (32-frame budget), gains are +4.6% for short, +5.3% for medium, and **+6.3% for long videos**, highlighting superiority in long-duration scenarios.
+- **Prevention of reward hacking**: Without gating, the model learns a false strategy of "accumulating rewards by increasing turns" (turns increase but QA accuracy does not); with gating, it learns to retrieve based on actual need.
+- **Effectiveness of exploration bootstrapping**: RL achieves multi-turn capabilities directly without SFT warm-up. This is also effective on smaller models (Qwen2.5-VL-3B).
 
 ## Highlights & Insights
-- **Paradigm Innovation**: Reframes long video understanding as a multi-turn MDP for the first time, breaking the single-turn sampling bottleneck. The coefficient of reward for multi-turn processes is significantly larger on complex tasks compared to single-turn RL.
-- **Ingenious Reward Design**: The combination of dual-level rewards and gating is elegant—preventing reward hacking while maintaining fine-grained supervision. Ablation proves both are essential (each contributing >4% drop if removed).
-- **Data Efficiency Breakthrough**: Utilizing 8K data to compete with million-scale methods proves that "high-quality data + refined rewards" can far exceed "large-scale low-quality" data. This is highly portable for RL post-training.
-- **Alignment with Human Cognition**: Iterative multi-turn reasoning aligns with natural human video consumption, enhancing interpretability (case studies show clear 3-turn reasoning trajectories).
+- **Paradigm Innovation**: First to formulate long video understanding as a multi-turn MDP, breaking the single-turn sampling bottleneck. Gains over single-turn RL are significantly larger in complex tasks.
+- **Clever Reward Design**: The combination of bi-level rewards and gating is elegant—preventing hacking while maintaining fine-grained supervision.
+- **Efficiency Breakthrough**: Achieving parity with million-scale methods using 8K data proves that "high-quality data + refined rewards" trumps "large-scale low-quality" datasets.
+- **Human Cognitive Alignment**: Iterative reasoning aligns with natural human viewing processes, enhancing interpretability (demonstrated via 3-turn reasoning trajectories in case studies).
 
 ## Limitations & Future Work
-- Due to compute constraints, training was limited to 80 frames; future work aims to expand to hundreds of frames.
+- Training is constrained to an 80-frame setting due to compute limits; future goals aim for hundreds of frames.
 - Focus is currently on Video QA; expansion to video captioning or event detection remains unexplored.
-- RL Training Instability: Despite dual-level rewards and gating, inherent RL variance may still affect stability across different seeds.
-- Dependence on Temporal Labels: Dual-level rewards require frame-level ground truth; transferability might decrease in new domains with low-quality labels.
-- Future directions: Explore weak supervision for dual-level rewards; research multi-task RL (QA + Caption + Detection); analyze marginal returns of the turn limit.
+- RL training instability: Despite the bi-level reward and gating, inherent RL variance may still affect stability across different seeds.
+- Dependence on localization labels: Bi-level rewards require frame-level ground truth; transferability may drop in domains with poor localization annotations.
+- Future improvements: Explore weak supervision for bi-level rewards; study multi-task RL; analyze marginal returns of maximum turn limits.
 
 ## Related Work & Insights
-- **vs. Uniform Sampling Methods** (VideoChat2 / Video-LLaVA): Fixed sampling lacks adaptivity. Video-MTR achieves dynamic localization via multi-turn retrieval + fine-grained rewards, improving long video accuracy by 23pp (39.3% → 57.1%).
-- **vs. External Tool Methods** (VideoAgent / VideoMemAgent): These require multiple external VLMs (captioning, tracking), leading to system complexity and poor end-to-end training. Video-MTR unifies reasoning within one model, eliminating tool coupling while remaining efficient.
-- **vs. RL Methods** (Video-R1): While both use RL, Video-R1 requires 260K SFT data to achieve multi-turn capabilities. Video-MTR's pure RL approach with 8K samples proves that multi-level rewards + gating act as a multiplier for data efficiency.
+- **vs. Uniform Sampling** (VideoChat2 / Video-LLaVA): These lack adaptive capacity. Video-MTR achieves dynamic localization through multi-turn retrieval and fine-grained rewards, increasing long video accuracy by 17.8pp (39.3% → 57.1%).
+- **vs. External Tools** (VideoAgent / VideoMemAgent): These require complex integration of multiple VLMs and lack end-to-end training. Video-MTR unifies reasoning within the model, eliminating tool coupling with comparable performance and much higher efficiency.
+- **vs. RL Methods** (Video-R1): While both use RL, Video-R1 requires 260K SFT samples for multi-turn capability. Video-MTR utilizes pure RL with only 8K samples, demonstrating the multiplier effect of bi-level rewards and gating on data efficiency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐  First to combine multi-turn reasoning with dual-level gated rewards for long videos; innovative paradigm with clever anti-hacking mechanisms.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Covers five major benchmarks (VideoMME / MLVU / LongVideoBench / LVBench / EgoSchema) with detailed ablation and stratified analysis.
-- Writing Quality: ⭐⭐⭐⭐  Clear logic, precise methodology, and intuitive visualizations; related work section is slightly concise.
-- Value: ⭐⭐⭐⭐⭐  8K data makes it ready for industrial application; the dual-level gated reward paradigm is transferable to other long-sequence RL tasks.
+- Novelty: ⭐⭐⭐⭐⭐  First to combine multi-turn reasoning with gated bi-level rewards for video understanding; ingenious anti-hacking mechanisms.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  Full coverage of five major benchmarks (VideoMME / MLVU / LongVideoBench / LVBench / EgoSchema) plus detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐  Clear logic and precise method descriptions; related work could be more extensive.
+- Value: ⭐⭐⭐⭐⭐  8K data makes industrial application viable; the paradigm is transferable to other long-sequence RL tasks. Data efficiency improved by two orders of magnitude.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](../../CVPR2026/video_understanding/a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/video_understanding/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[AAAI 2026\] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding](../../AAAI2026/video_understanding/reason_reinforced_causal_search_with_information_bottleneck_for_video_understand.md)
-- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/video_understanding/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
-- [\[ACL 2026\] Confidence Estimation for LLMs in Multi-turn Interactions](../../ACL2026/video_understanding/confidence_estimation_for_llms_in_multi-turn_interactions.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](../../CVPR2026/video_understanding/videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](../../CVPR2026/video_understanding/towards_sparse_video_understanding_and_reasoning.md)
+- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](../../CVPR2026/video_understanding/a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
 
 </div>
 

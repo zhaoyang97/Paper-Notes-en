@@ -2,76 +2,77 @@
 title: >-
   [Paper Note] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] The authors replace generic uniform/mask noise priors with family-specific Dirichlet priors derived from Ancestral Sequence Reconstruction (ASR). This allows Dirichlet fl…
+  [ICML 2026][Computational Biology][Flow Matching] The universal uniform/mask noise prior is replaced with a family-specific Dirichlet prior obtained via Ancestral Sequence Reconstruction (ASR). This allows Dirichlet flow matching to perform structured mutations starting from an "evolved scaffold," followed by a mutate–select–amplify rerouting at an intermediate timest
 tags:
-  - "ICML 2026"
-  - "Computational Biology"
-  - "Flow Matching"
-  - "Dirichlet Prior"
-  - "Ancestral Sequence Reconstruction (ASR)"
-  - "Protein Families"
-  - "Directed Evolution"
+  - ICML 2026
+  - Computational Biology
+  - Flow Matching
 date: 2026-05-08
-content_hash: 3e807811eb5c8282
+content_hash: f12c057eb0605c7c
 ---
-
 # LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation
 
 **Conference**: ICML 2026  
-**arXiv**: [2605.22252](https://arxiv.org/abs/2605.22252)  
+**arXiv**: [2605.22252](https://arxiv.org/abs/2205.22252)  
 **Code**: https://github.com/Jinx-byebye/LineageFlow (Available)  
 **Area**: Protein Generation / Flow Matching / Phylogenetic Priors  
-**Keywords**: Flow Matching, Dirichlet Prior, Ancestral Sequence Reconstruction (ASR), Protein Families, Directed Evolution
+**Keywords**: Flow Matching, Dirichlet Prior, Ancestral Sequence Reconstruction, Protein Family, Directed Evolution
 
 ## TL;DR
-The authors replace generic uniform/mask noise priors with family-specific Dirichlet priors derived from Ancestral Sequence Reconstruction (ASR). This allows Dirichlet flow matching to initiate structured mutations from an "evolved scaffold." By inserting a mutate–select–amplify rerouting step at an intermediate time, the model achieves a family recognition accuracy close to natural sequences (95.3% vs 96.6%) across 8,886 Pfam families, while maintaining high novelty and folding confidence.
+The universal uniform/mask noise prior is replaced with a family-specific Dirichlet prior obtained via Ancestral Sequence Reconstruction (ASR). This allows Dirichlet flow matching to perform structured mutations starting from an "evolved scaffold," followed by a mutate–select–amplify rerouting at an intermediate timestep. Across 8,886 Pfam families, this approach pushes family recognition accuracy close to natural sequences (95.3% vs. 96.6%) while maintaining high novelty and folding confidence.
 
 ## Background & Motivation
 
-**Background**: Protein sequence generation is currently dominated by two approaches: large-scale protein language models (e.g., ESM, ProtT5, ProGen) and discrete diffusion/flow matching models on the amino acid simplex (e.g., EvoDiff, DFM, ProtBFN). When the goal is to generate new sequences for a specific Pfam family, the standard practice is to condition the denoiser with a family label or an MSA prompt.
+**Background**: Protein sequence generation is dominated by two paradigms: large-scale protein language models (e.g., ESM, ProtT5, ProGen) and discrete diffusion/flow matching adapted to the amino acid simplex (e.g., EvoDiff, DFM, ProtBFN). When the goal is to "generate new sequences for a specific Pfam family," conventional methods typically provide a family label or an MSA prompt to the denoiser as a condition.
 
-**Limitations of Prior Work**: Existing discrete generative models typically default to a "universal prior"—either starting from a uniform distribution on the simplex or masking all positions. However, protein families are characterized by **site-specific** evolutionary constraints: some sites are highly conserved to maintain structure/catalysis, while others vary to accommodate functional diversity. Universal priors collapse this structure, forcing the denoiser to synthesize every conserved residue "from scratch" from a nearly random state, which places extreme pressure on early time steps. This contradiction is evident in experiments: even with explicit family labels, DFM and EvoDiff achieve **0%** family recognition accuracy using profile-HMMs, with pLDDT scores around 45. The MSA-prompt-based model PoET also yields 0% accuracy.
+**Limitations of Prior Work**: Nearly all these discrete generative models default to a "universal prior"—starting either from a uniform distribution on the simplex or masking all original residues. However, protein families are characterized by **site-specific** evolutionary constraints: certain sites are highly conserved to maintain structure and catalysis, while others are highly variable to accommodate functional diversity. Universal priors erase this structure, forcing the denoiser to synthesize every conserved residue "from scratch" from a near-random state, which places immense pressure on early timesteps. This contradiction is stark in the paper’s experiments: even when explicitly fed family labels, the family recognition accuracy (via profile-HMM) for DFM and EvoDiff remains at **0%**, with pLDDT around 45. PoET, which uses MSA prompts, also achieves 0% accuracy.
 
-**Key Challenge**: The absence of evolutionary structure in the prior $\leftrightarrow$ family information exists only as a label or prompt and does not penetrate the generative trajectory. The conditioning signal "stays outside," while the denoiser performs from-scratch synthesis internally.
+**Key Challenge**: The absence of evolutionary structure in the prior $\leftrightarrow$ Family information exists only as a label or prompt and does not penetrate the generative trajectory. The conditional signal "shouts from the outside," while the internal denoiser still performs from-scratch synthesis.
 
-**Goal**: To "bake" family conditions directly into the prior itself, ensuring that at $t=0$, the process already starts on the family manifold. The model then learns the mutation process from "ancestor $\to$ extant sequence" rather than a "noise $\to$ protein" synthesis process.
+**Goal**: To **bake family conditions into the prior itself**, ensuring that $t=0$ already resides on the family manifold. The model should only need to learn the mutation process from "ancestor $\to$ extant sequence" rather than the synthesis process from "noise $\to$ protein."
 
-**Key Insight**: Molecular evolution provides existing tools: building MSAs for homologous sequences, inferring phylogenetic trees with IQ-TREE, and performing Ancestral Sequence Reconstruction (ASR) at the root using PAML. This yields a site-specific amino acid posterior that is near one-hot at conserved sites and maintains high entropy at variable sites—effectively a "family scaffold."
+**Key Insight**: Molecular evolution provides existing tools: building MSAs for a family of homologous sequences, inferring phylogenetic trees with IQ-TREE, and performing Ancestral Sequence Reconstruction (ASR) at the root node using PAML. This yields a **site-wise** amino acid posterior. This posterior is near one-hot at conserved sites and maintains high entropy at variable sites—the exact "family scaffold" desired.
 
-**Core Idea**: Use the ASR root posterior as a family-specific Dirichlet prior $q_0^{(h)}$ at the start of the flow matching trajectory on the simplex toward extant sequences. An intermediate mutate–select–amplify step, mimicking directed evolution, is added for goal-oriented sampling.
+**Core Idea**: Use the ASR root posterior as a family-specific Dirichlet prior $q_0^{(h)}$ to initiate flow matching on the simplex towards extant sequences. Additionally, insert a mutate–select–amplify intermediate step, directly mimicking directed evolution, for goal-directed sampling.
 
 ## Method
 
 ### Overall Architecture
-LineageFlow interprets the generative trajectory $t \in [0, 1]$ as an evolutionary timeline from family ancestors to extant leaf nodes:
+LineageFlow addresses the generation of protein sequences that are both family-consistent and sufficiently novel. Its key transformation is mapping the flow matching generative timeline $t \in [0, 1]$ directly onto the evolutionary timeline from "family ancestor to extant leaf node." The starting point is no longer universal noise but a family scaffold calculated via Ancestral Sequence Reconstruction (ASR). The endpoint is an extant sequence, and the denoiser learns "how an ancestor mutates into an extant sequence" rather than "how noise is synthesized into a protein." In the preprocessing stage, MSAs are built for each family, phylogenetic trees are inferred using IQ-TREE, and ASR is performed at the root using PAML. During training, all families share a single denoiser that learns endpoint classification from intermediate states sampled from family-specific Dirichlet paths. During sampling, the base flow is run to the midpoint $t_{\mathrm{int}}=0.5$, where a particle-level mutate–select–amplify rerouting is inserted for goal-directed selection, followed by refined integration to the endpoint.
 
-- **Preprocessing**: For each of the 8,886 Pfam families $h$, an MSA is constructed, a maximum likelihood tree is inferred via IQ-TREE, and marginal ASR is performed at the root via PAML to obtain the amino acid posterior for each site $l$. This is encoded into Dirichlet concentration parameters $\boldsymbol{\alpha}^{(h,l)} \in \mathbb{R}^K_{>0}$ ($K=20$).
-- **Loss & Training**: All families share a single denoiser $\hat{p}_\theta(\mathbf{X}_1 \mid \mathbf{X}_t, t)$. For each training sequence, $t \sim \mathcal{U}[0,1]$ is sampled, and intermediate states are drawn from the family's Dirichlet path $p_t^{(h,l)}(\mathbf{x} \mid \mathbf{e}_i) = \mathrm{Dir}(\mathbf{x}; \boldsymbol{\alpha}^{(h,l)} + t_{\max} t \cdot \mathbf{e}_i)$. The model learns endpoint classification via sequence-averaged cross-entropy. $t_{\max}=6$.
-- **Mechanism (Sampling)**: ① Base flow ($t \in [0, t_{\mathrm{int}}]$): Start from $q_0^{(h)}$ and integrate along the learned vector field; ② Rerouting ($t = t_{\mathrm{int}}=0.5$): Maintain a swarm of particles and perform several rounds of mutate $\to$ select $\to$ amplify; ③ Refinement ($t \in [t_{\mathrm{int}}, 1]$): Continue integration from the selected particles to the endpoint.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Homologous Sequences → MSA<br/>Phylogenetic Tree (IQ-TREE)"] --> B["ASR Ancestral Dirichlet Prior<br/>Root posterior as site-wise Dirichlet α"]
+    B --> C["Family-Specific Vector Field<br/>Shared denoiser learns endpoint classification"]
+    C --> D["Sampling: Start from prior and run base flow<br/>Integrate to midpoint t=0.5"]
+    D --> E["Rerouting: Mutate–Select–Amplify<br/>Particle-level goal-directed selection"]
+    E --> F["Refine integration to t=1"]
+    F --> G["Family-Specific New Sequences"]
+```
 
 ### Key Designs
 
-1. **ASR Ancestral Dirichlet Prior**:
-    - **Function**: Directly embeds family evolutionary constraints into the starting point $q_0$ of the generation process.
-    - **Mechanism**: For each family $h$, site $l$ maintains Dirichlet concentrations $\boldsymbol{\alpha}^{(h,l)}$ encoding the ASR root posterior. The sequence-level family prior is a product of site-independent Dirichlets $q_0^{(h)}(\mathbf{X}) = \prod_l \mathrm{Dir}(\mathbf{x}^{(l)}; \boldsymbol{\alpha}^{(h,l)})$, and the global prior is a mixture of families $q_0 = \sum_h \pi_h q_0^{(h)}$. The conditional path is no longer the DFM path $\mathrm{Dir}(\mathbf{x}; \mathbf{1} + t_{\max} t \cdot \mathbf{e}_i)$ but $\mathrm{Dir}(\mathbf{x}; \boldsymbol{\alpha}^{(h,l)} + t_{\max} t \cdot \mathbf{e}_i)$. Consequently, the transport velocity $c_h^{(l)}(z, t)$ from the continuity equation becomes family- and target-residue-specific, with a closed-form solution involving the regularized incomplete Beta function.
-    - **Design Motivation**: Compared to MSA column frequencies, ASR root posteriors are corrected by the phylogenetic tree, removing sampling redundancy. Compared to picking an extant MSA sequence as a starting point, the root posterior preserves uncertainty at truly variable sites, preventing the generation from being locked to training samples. Experiment §6.3 uses a Bayes-oracle to prove that in the "difficulty zone" ($t \le 0.2$), the upper bound of recoverable signals under the ASR prior is significantly higher than under a uniform prior, raising the performance ceiling for any denoiser.
+**1. ASR Ancestral Dirichlet Prior: Embedding evolutionary constraints in the starting point**
 
-2. **Classifier-Parameterized Family-Specific Vector Field**:
-    - **Function**: Uses a shared denoising classifier to reconstruct specific continuous transport fields for every site in every family.
-    - **Mechanism**: The training objective is $\mathcal{L}(\theta) = \mathbb{E}[-\frac{1}{|\mathcal{V}|}\sum_l \log \hat{p}_\theta(\mathbf{x}_1^{(l)} \mid \mathbf{X}_t, t)]$, which is standard categorical cross-entropy. During inference, the drift is combined as $\hat{\mathbf{v}}^{(h,l)} = \sum_i \mathbf{u}_t^{(h,l)}(\mathbf{x}^{(l)} \mid \mathbf{e}_i) \cdot \hat{p}_\theta(\mathbf{x}_1^{(l)} = \mathbf{e}_i \mid \mathbf{X}, t)$. Gap columns in MSAs are masked (excluded from the alphabet and loss), and variable lengths are handled via empirical gap rate resampling.
-    - **Design Motivation**: By delegating "family specificity" to the analytical $\boldsymbol{\alpha}^{(h,l)}$ and $c_h^{(l)}$, the denoiser itself does not require family labels or family-specific heads. This allows training on the full Pfam set on a single machine (4×4090 for 26 hours per epoch). It also locates quality bottlenecks at specific time intervals where the classifier performs poorly (confirmed as $t \le 0.2$ in §6.3).
+Universal discrete flow matching (e.g., DFM) starts from a uniform Dirichlet $\mathrm{Dir}(\mathbf{1})$ on the simplex. Without evolutionary info in the prior, the denoiser is forced to synthesize conserved residues from zero. LineageFlow maintains a set of Dirichlet concentration parameters $\boldsymbol{\alpha}^{(h,l)} \in \mathbb{R}^K_{>0}$ ($K=20$) for each site $l$ of family $h$, encoding the ASR root posterior. The family prior for the entire sequence is the product of site-independent Dirichlets $q_0^{(h)}(\mathbf{X}) = \prod_l \mathrm{Dir}(\mathbf{x}^{(l)}; \boldsymbol{\alpha}^{(h,l)})$. The conditional path shifts from DFM's $\mathrm{Dir}(\mathbf{x}; \mathbf{1} + t_{\max} t \cdot \mathbf{e}_i)$ to the family-specific $\mathrm{Dir}(\mathbf{x}; \boldsymbol{\alpha}^{(h,l)} + t_{\max} t \cdot \mathbf{e}_i)$. The transport velocity $c_h^{(l)}(z, t)$ derived from the continuity equation thus takes a closed-form specific to both the family and target residue.
 
-3. **Rerouting: Intermediate Mutate–Select–Amplify**:
-    - **Function**: Pushes the particle swarm towards user-specified fitness goals at $t_{\mathrm{int}}$ without requiring gradients.
-    - **Mechanism**: The ODE is paused at $t_{\mathrm{int}}=0.5$. A swarm of particles undergoes (i) mutate: injecting diversity via a proposal kernel $\mathcal{K}$, (ii) select: reweighting by $\exp(\beta J)$, and (iii) amplify: resampling based on weights. The target distribution is the exponentially tilted $p^{\mathrm{sel}} \propto (p_{t_{\mathrm{int}}} \mathcal{K})(\mathbf{X}) \exp(\beta J(\mathbf{X}))$. Proposition 5.2 proves this is the optimal solution for the KL-constrained optimization $\max_q \mathbb{E}_q[J] - \frac{1}{\beta} \mathrm{KL}(q \| p^{\mathrm{mut}})$. After selection, particles continue integration to $t=1$.
-    - **Design Motivation**: Continuous guidance (classifier guidance, SMC) requires computing gradients or resampling at every Euler step, which is expensive and may push samples off the manifold. Inserting "artificial selection" only at the intermediate stage preserves the family trajectory while injecting target bias. $t_{\mathrm{int}}$ serves as a critical knob: too early, and samples are too noisy for meaningful selection; too late, and samples are near one-hot with no room for change. 0.5 offers the best compromise.
+**2. Classifier-parameterized family-specific vector field: A shared denoiser for all Pfam families**
+
+With family-specific analytical velocities $c_h^{(l)}$, the only remaining task is learning the endpoint distribution. The training objective is standard average cross-entropy $\mathcal{L}(\theta) = \mathbb{E}[-\frac{1}{|\mathcal{V}|}\sum_l \log \hat{p}_\theta(\mathbf{x}_1^{(l)} \mid \mathbf{X}_t, t)]$. During inference, the classifier posterior and family analytical velocity are combined into the drift $\hat{\mathbf{v}}^{(h,l)}$. Gap columns in MSAs are masked.
+
+This design delegates "family specificity" entirely to the analytical $\boldsymbol{\alpha}^{(h,l)}$ and $c_h^{(l)}$. The denoiser itself requires neither family labels nor family-specific heads; a single network covers all 8,886 families.
+
+**3. Rerouting: Intermediate mutate–select–amplify for goal-directed sampling**
+
+Unconditional base flow generates "family-like" sequences, but users often desire high-fitness variants. LineageFlow pauses the ODE at $t_{\mathrm{int}}=0.5$ and maintains a population of particles to perform: (i) **mutate**—injecting diversity via a proposal kernel $\mathcal{K}$; (ii) **select**—reweighting by $\exp(\beta J)$; and (iii) **amplify**—resampling according to weights. This is proven to be the optimal solution under KL constraints. Integration then continues to $t=1$. Placing this "artificial selection" at the midpoint ensures family trajectories are preserved while receiving a goal-oriented bias.
 
 ### Loss & Training
-The model uses sequence-averaged cross-entropy $\mathcal{L}(\theta)$ (Eq. 6) with $t$ sampled uniformly and $t_{\max}=6$. Training is conducted on Pfam-A RP35 (8,886 families, 8.94M aligned sequences) with a 5% within-family hold-out. Training took ~26 hours for 1 epoch on 4×RTX 4090 with a learning rate of $10^{-5}$ and an equivalent batch size of 128.
+A single average cross-entropy $\mathcal{L}(\theta)$ is used. $t \sim \mathcal{U}[0,1]$ is sampled uniformly with $t_{\max}=6$. Data consists of 8,886 Pfam-A RP35 families (8.94M aligned sequences), with 5% within-family hold-out. Training took 26 hours for 1 epoch on 4×RTX 4090 with a learning rate of $10^{-5}$ and an effective batch size of 128.
 
 ## Key Experimental Results
 
-### Main Results (Pfam unconditional, 1,024 sequences/method)
+### Main Results (Pfam unconditional, 1024 sequences/method)
 
 | Method | $\mathrm{Acc}_{\mathrm{fam}}$↑ | pLDDT↑ | scPPL↓ | Novelty@0.6↑ | Diversity↑ |
 |------|------|------|------|------|------|
@@ -79,52 +80,52 @@ The model uses sequence-averaged cross-entropy $\mathcal{L}(\theta)$ (Eq. 6) wit
 | DFM (Uniform Prior) | 0.0 | 46.2 | 12.62 | — | 90 |
 | EvoDiff (Mask Prior) | 0.0 | 45.4 | 12.60 | — | 54 |
 | PoET (MSA prompt) | 0.0 | 52.0 | 13.76 | — | 47 |
-| ProtBFN† (8× Larger Corpus) | — | 71.9 | 5.91 | 64.0 | 604 |
+| ProtBFN† (8× Corpus) | — | 71.9 | 5.91 | 64.0 | 604 |
 | ASR-PSSM iid (Prior only) | 92.8 | 70.8 | 7.08 | 32.0 | 378 |
 | LineageFlow w/o rerouting | 93.0 | 69.6 | 7.96 | 52.0 | 440 |
 | **LineageFlow (Full)** | **95.3** | **76.6** | **6.67** | **48.9** | **587** |
 
-### Ablation Study
-
-| Configuration | Key Observation | Description |
-|------|---------|------|
-| DFM / EvoDiff + Family Label | $\mathrm{Acc}_{\mathrm{fam}}=0$ | Family signals exist in labels but not priors $\to$ complete failure. |
-| ASR-PSSM iid | $\mathrm{Acc}_{\mathrm{fam}}=92.8$, pLDDT 70.8 | The prior alone carries strong family signals. |
-| w/o rerouting | pLDDT 69.6, Novelty@0.6 52.0 | Base flow maintains family identity but offers higher novelty/diversity than the pure prior. |
-| + rerouting | pLDDT 76.6 (+7), Acc 95.3 (+2.3) | Rerouting is the primary driver of plausibility. |
-| Token acc in difficulty zone (§6.3) | LF ≫ DFM | ASR prior raises the Bayes upper bound and denoising accuracy. |
-
 ### Key Findings
-- **Prior is Paramount**: DFM/EvoDiff fail at 0% family recognition even with labels. Simply replacing the prior with the ASR root posterior—without learning any flow—jumps recognition to 92.8%. This supports the core thesis: "Evolutionary structure in the prior is an irreplaceable conditioning signal."
-- **Rerouting as a Plausibility Lever**: While the base flow inherits family signals and improves novelty, it lacks folding confidence. Inserting mutate–select–amplify raises pLDDT by 7 points. PCA visualizations show the particle swarm shifting toward true sequence clusters.
-- **Sweet Spot at $t_{\mathrm{int}}=0.5$**: Earlier selection is meaningless due to unformed samples; later selection is restricted by one-hot convergence. 0.5 provides the best "plasticity $\times$ structure" trade-off.
-- **Zero-shot Enzyme Generation**: On three held-out enzyme families (2OG-FeII_Oxy, Trp_syntA, RNase_HII), $q_0^{(h)}$ was recalculated using MSAs without retraining $\theta$. Generated sequences retained catalytic motifs. Rerouting using ESM-2 pseudo-likelihood improved proxies for solubility and thermal stability (DeepSol/Meltome) even though rerouting did not optimize these specifically.
+- **Prior determines everything**: DFM/EvoDiff fail to recognize families even with labels. Simply replacing the prior with the ASR root posterior (without learning any flow) jumps family recognition to 92.8%.
+- **Rerouting acts as a plausibility lever**: The base flow inherits family signals but struggles with folding confidence. Inserting mutate–select–amplify increases pLDDT by 7 points.
+- **Midpoint $t_{\mathrm{int}}$ is optimal**: Selection is meaningless if too early (unformed samples) or too late (near one-hot). 0.5 provides the best trade-off between plasticity and structure.
+- **Zero-shot enzyme generation**: On held-out enzyme families (e.g., RNase_HII), Ours preserves catalytic motifs and improves predicted solubility and thermal stability.
 
 ## Highlights & Insights
-- **"Changing the Prior" is more fundamental than "Adding Guidance"**: For conditions with strong structure (like family-level conservation), embedding them into the prior is more effective than feeding them into the denoiser. This logic applies to any task where the prior itself has structure (e.g., codon usage, chemical reaction templates).
-- **Leveraging Classical Biological Tools**: IQ-TREE and PAML are mature phylogenetic packages. Instead of reinventing ancestral inference, the authors cleverly package the root posterior as Dirichlet concentrations—a great case of "importing external inductive bias into the prior."
-- **Formalizing Directed Evolution via Rerouting**: The one-time mutate–select–amplify step is equivalent to exponentially tilted sampling with KL regularization (Proposition 5.2). This provides both a theoretical framework and a practical particle filter algorithm for intermediate intervention.
-- **Diagnosing the Difficulty Zone**: §6.3 attributes generation bottlenecks to the Bayes upper bound at early time steps, which may inspire other diffusion models to focus on "prior engineering" rather than just "increasing network capacity."
+- **"Changing the Prior" is more fundamental than "Adding Guidance"**: For structured conditions like protein families, embedding the condition in the prior is more effective than feeding it to the denoiser.
+- **Leveraging Biological Toolchains**: Directly using PAML/IQ-TREE root posteriors as Dirichlet concentrations is a clever way to package evolutionary inductive biases.
+- **Rerouting Formalizes Directed Evolution**: The single-step mutate–select–amplify is equivalent to KL-regularized exponential tilting, providing a sample-efficient alternative to continuous guidance.
 
 ## Limitations & Future Work
-- **Dependency on MSA Quality**: Since all $\boldsymbol{\alpha}^{(h,l)}$ are derived from MSAs and phylogenetic trees, this method cannot handle single sequences, novel protein families, or orphan proteins. Open-world generation requires addressing the "no MSA" prerequisite.
-- **Fixed Alignment Coordinates**: Generation occurs within the coordinates of family-aligned columns, meaning length variations and indels are not explicitly modeled, making it unsuitable for domain recombination scenarios.
-- **Reliance on Computational Proxies**: Foldability is evaluated via OmegaFold pLDDT, and stability/solubility via ESM-2-based models, without wet-lab verification. Thermal stability proxy accuracy is cited at only ~50%, so zero-shot results should be interpreted cautiously.
-- **Rerouting Fitness Function Dependency**: Currently, ESM-2 pseudo-likelihood is used as $J$. While effective, this is a tautology for plausibility. Efficiency for more complex fitness functions (e.g., docking or binding specificity) remains to be seen.
-- **Sampling Overhead**: Rerouting increases the sampling time for 512 sequences from 759s to 1047s. While within the same order of magnitude, the swarm size and iterations are not yet optimized.
+- **Reliance on MSA Quality**: Family-specific parameters depend on MSAs and trees, making it inapplicable to orphan proteins or entirely de novo families.
+- **Fixed Alignment Coordinates**: Does not explicitly model indels, limiting generation to aligned column coordinates.
+- **Computational Proxies**: folding and fitness rely on pLDDT or ESM-2 scores rather than wet-lab validation.
+- **Increased Sampling Time**: Rerouting increases the 512-sequence sampling time from 759s to 1047s.
 
 ## Related Work & Insights
-- **vs DFM (Stark et al., 2024)**: DFM uses a uniform $\mathrm{Dir}(\mathbf{1})$ prior. This paper proves the prior is the bottleneck, as switching to $\mathrm{Dir}(\boldsymbol{\alpha}^{(h,l)})$ jumps family recognition from 0% to 95%.
-- **vs EvoDiff**: Mask-based discrete diffusion. Both suffer from the inability of labels to penetrate the prior. This work highlights the extreme importance of noise prior design in discrete generation.
-- **vs ProtBFN (Atkinson et al., 2025)**: BFN uses 71M sequences to achieve folding quality. LineageFlow achieves higher pLDDT on an 8× smaller corpus, proving "correct prior" > "more data."
-- **vs PoET (Truong & Bepler, 2023)**: MSA prompt method. Experiments show prompts don't necessarily translate to family recognition, whereas LineageFlow achieves this via the prior.
-- **vs Classifier Guidance / RL Fine-tuning**: Instead of step-by-step guidance or RL, rerouting offers a "single intermediate KL-constrained selection" paradigm that is both lightweight and theoretically grounded.
+- **vs. DFM (Stark et al., 2024)**: DFM uses a uniform prior. Ours proves the prior is the true performance bottleneck for family conditioning.
+- **vs. ProtBFN (Atkinson et al., 2025)**: BFN relies on 71M sequences. Ours achieves higher pLDDT on an 8× smaller corpus by using the "correct" prior.
+- **vs. Classifier Guidance**: Rerouting offers a lightweight alternative to step-wise guidance with theoretical KL-regularization guarantees.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Changing the paradigm by using ASR root posteriors as Dirichlet priors is a brilliant move; rerouting provides a clean non-gradient guidance framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Full Pfam training and comprehensive ablation studies across 5 research questions. Zero-shot enzyme cases are meaningful; lacks wet-lab validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear reasoning chain (noise prior collapses structure $\to$ ASR prior preserves it $\to$ difficulty zone ceiling raised), integrating method, theory, and experiments.
-- Value: ⭐⭐⭐⭐⭐ Directly valuable for protein engineering, with insights on prior-based conditioning applicable to all discrete generation tasks.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/computational_biology/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
+- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](../../NeurIPS2025/computational_biology/prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
+- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
+- [\[ICML 2025\] Improving Flow Matching by Aligning Flow Divergence](../../ICML2025/computational_biology/improving_flow_matching_by_aligning_flow_divergence.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -132,11 +133,11 @@ The model uses sequence-averaged cross-entropy $\mathcal{L}(\theta)$ (Eq. 6) wit
 
 ## Related Papers
 
-- [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/computational_biology/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
+- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
+- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
+- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](../../NeurIPS2025/computational_biology/prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
-- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
-- [\[ICML 2026\] Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models](temporal_score_rescaling_for_temperature_sampling_in_diffusion_and_flow_models.md)
+- [\[ICML 2026\] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling](demystifying_multimodal_biomolecular_co-design_with_intrinsic_geodesic_coupling.md)
 
 </div>
 

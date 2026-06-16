@@ -2,20 +2,18 @@
 title: >-
   [Paper Note] Few-shot Acoustic Synthesis with Multimodal Flow Matching
 description: >-
-  [CVPR2026][Image Generation][flow matching] This paper proposes FLAC, the first flow matching-based few-shot room impulse response (RIR) generation framework…
+  [CVPR 2026][Image Generation][flow matching] Ours proposes FLAC, the first few-shot Room Impulse Response (RIR) generation framework based on flow matching. It synthesizes spatially consistent acoustic responses in unseen scenes from a single recording and introduces AGREE joint embedding for geometric-acoustic consistency evaluation.
 tags:
-  - "CVPR2026"
-  - "Image Generation"
-  - "flow matching"
-  - "room impulse response"
-  - "few-shot acoustic synthesis"
-  - "diffusion transformer"
-  - "multimodal conditioning"
-  - "joint embedding"
+  - CVPR 2026
+  - Image Generation
+  - flow matching
+  - room impulse response
+  - few-shot acoustic synthesis
+  - diffusion transformer
+  - multimodal conditioning
 date: 2026-05-08
-content_hash: 76e9d9fe42cc2d35
+content_hash: 1707f5925c280f8c
 ---
-
 # Few-shot Acoustic Synthesis with Multimodal Flow Matching
 
 **Conference**: CVPR2026  
@@ -26,122 +24,131 @@ content_hash: 76e9d9fe42cc2d35
 
 ## TL;DR
 
-This paper proposes FLAC, the first flow matching-based few-shot room impulse response (RIR) generation framework, capable of synthesizing spatially consistent acoustic responses in unseen scenes from a single recording. It further introduces AGREE, a joint embedding for geometry–acoustic consistency evaluation.
+Ours proposes FLAC, the first few-shot Room Impulse Response (RIR) generation framework based on flow matching. It synthesizes spatially consistent acoustic responses in unseen scenes from a single recording and introduces AGREE joint embedding for geometric-acoustic consistency evaluation.
 
 ## Background & Motivation
 
-**Importance of room acoustic modeling**: Immersive virtual environments require spatial consistency between sound and space. Room impulse responses (RIRs) characterize sound propagation between a source and a receiver and are essential for spatial audio rendering.
+**Importance of Room Acoustic Modeling**: Immersive virtual environments require sound consistency with space. Room Impulse Response (RIR) describes sound propagation between source and receiver, which is key to spatial audio rendering.
 
-**Limitations of neural acoustic fields**: Existing neural acoustic field methods (e.g., NeRAF, AV-GS) achieve spatially continuous rendering within a single scene but require dense recordings and per-scene training, preventing generalization to new environments.
+**Limitations of Neural Acoustic Fields**: Existing methods (e.g., NeRAF, AV-GS) enable spatially continuous rendering in a single scene but require dense recordings and per-scene training, failing to generalize to new environments.
 
-**Insufficiency of few-shot methods**: Few-shot approaches such as FewShotRIR, MAGIC, and xRIR require 8–20 reference recordings and produce deterministic predictions, ignoring the inherent uncertainty of acoustic responses under sparse observations.
+**Limitations of Prior Work in Few-shot Methods**: Few-shot methods like FewShotRIR, MAGIC, and xRIR require 8-20 reference recordings and rely on deterministic prediction, ignoring the inherent uncertainty of acoustic responses under sparse observations.
 
-**Drawbacks of deterministic modeling**: With limited scene information, a single source–receiver configuration may correspond to multiple plausible RIRs (e.g., carpet versus hardwood floors yield significantly different acoustics); deterministic methods cannot capture this ambiguity.
+**Key Challenge of Deterministic Modeling**: With limited scene information, the same source-receiver configuration can correspond to multiple plausible RIRs (e.g., floor material differences like carpet vs. wood significantly alter acoustics). Deterministic methods fail to capture this ambiguity.
 
-**Potential of flow matching for audio generation**: Flow matching, as an efficient alternative to diffusion models, has demonstrated strong performance in text-to-speech and music generation, yet has not been applied to explicit RIR synthesis.
+**Goal with Flow Matching**: As an efficient alternative to diffusion models, flow matching has performed excellently in text-to-speech/music generation but has not yet been applied to explicit RIR synthesis.
 
-**Lack of geometry-consistency evaluation**: Conventional acoustic metrics (T60, C50, EDT) measure perceptual quality only and lack the means to assess the geometric consistency of generated RIRs with the scene.
+**Lack of Geometric Consistency Evaluation**: Traditional acoustic metrics (T60, C50, EDT) only measure perceptual quality, lacking means to measure the geometric consistency between generated RIRs and scene geometry.
 
 ## Method
 
 ### Overall Architecture
 
-FLAC is a conditional latent generative model comprising three core modules:
+FLAC addresses few-shot RIR synthesis—synthesizing spatially consistent acoustic responses in unseen rooms using only a single recording. The core insight is that under sparse observations, one source-receiver configuration may correspond to multiple reasonable RIRs; thus, probabilistic generation is used to model this ambiguity. The model is a conditional latent generator: a VAE encoder compresses the RIR waveform into a latent representation $\mathbf{z}_0$ with a bottleneck dimension of 32. A multimodal conditioner fuses acoustic (reference RIR), spatial (source position), and geometric (panoramic depth map) modalities. The DiT generates RIR latent representations from noise using a flow matching objective. Training uses rectified flow matching for linear interpolation between data and noise $\mathbf{z}_t = (1-t)\mathbf{z}_0 + t\boldsymbol{\epsilon}$, with the model predicting the velocity field $\mathbf{v}_t = \boldsymbol{\epsilon} - \mathbf{z}_0$. During inference, the ODE is solved from Gaussian noise to obtain the RIR.
 
-1. **VAE encoder**: Compresses RIR waveforms into a compact latent representation $\mathbf{z}_0$ with a bottleneck dimension of 32.
-2. **Multimodal conditioner**: Fuses acoustic (reference RIRs), spatial (source position), and geometric (panoramic depth map) conditioning.
-3. **Diffusion Transformer (DiT)**: Trained with a flow matching objective to generate RIR latent representations from noise.
-
-Training employs rectified flow matching with linear interpolation between data and noise: $\mathbf{z}_t = (1-t)\mathbf{z}_0 + t\boldsymbol{\epsilon}$, with the model predicting the velocity field $\mathbf{v}_t = \boldsymbol{\epsilon} - \mathbf{z}_0$. At inference, the ODE is solved in reverse from Gaussian noise to produce RIRs.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph COND["Multimodal Conditioning: Acoustic / Spatial / Geometric"]
+        direction TB
+        C1["Acoustic: K reference RIRs<br/>ResNet-18 → 512D Embedding"]
+        C2["Spatial: Source position<br/>Sinusoidal Positional Encoding"]
+        C3["Geometry: Panoramic depth map<br/>Reflection map + Fine-tuned DINOv3 ViT"]
+    end
+    N["Gaussian Noise ε"] --> D
+    COND --> D["DiT Generator (Flow Matching)<br/>AdaLN Pose/Timestep + Cross-Attention + RoPE"]
+    D -->|Guidance weight ω| E["RIR Latent Representation"]
+    E --> F["VAE Decoder → RIR Waveform"]
+    F --> G["AGREE Joint Embedding<br/>CLIP-style alignment of RIR & Geometry"]
+```
 
 ### Key Designs
 
-- **Timestep sampling strategy**: Sampled from $\alpha \sim \mathcal{N}(-1.2, 4)$ and mapped through sigmoid, concentrating on intermediate noise levels ($t \approx 0.7$–$0.8$) to improve training efficiency.
-- **Multimodal conditioning injection**:
-    - **Acoustic conditioning**: $K$ reference RIRs encoded by ResNet-18 into 512-dimensional embeddings.
-    - **Spatial conditioning**: Source position coordinates encoded via sinusoidal positional encoding followed by a linear projection.
-    - **Geometric conditioning**: Panoramic depth maps converted to 3D coordinates via equirectangular projection, reflection maps computed, and encoded by a fine-tuned DINOv3 ViT-S/16.
-- **DiT architecture**: 12-layer Transformer with 8-head attention and hidden dimension 256. Target pose and timestep are injected via AdaLN; multimodal context is fused via cross-attention. RoPE positional encoding is used.
-- **Classifier-free guidance**: Conditions are randomly dropped during training; guidance weight $\omega$ controls conditioning strength at inference.
-- **AGREE joint embedding**: A CLIP-style dual encoder aligning RIRs and scene geometry in a shared latent space, enabling zero-shot cross-modal retrieval.
+**1. Timestep Sampling Strategy: Biased toward medium noise levels for efficiency**
+
+The learning difficulty of flow matching varies across timesteps. FLAC samples from $\alpha \sim \mathcal{N}(-1.2, 4)$ mapped via sigmoid, concentrating samples on medium noise levels ($t \approx 0.7$-$0.8$). This focuses training on the most informative intervals, improving efficiency.
+
+**2. Multimodal Condition Injection: Acoustic / Spatial / Geometric strengths**
+
+No single modality is sufficient to determine RIR—local geometry lacks global reverberation context, and reference recordings lack spatial structure. FLAC encodes and injects three modalities: Acoustic conditions encode $K$ reference RIRs into 512D embeddings via ResNet-18; Spatial conditions use sinusoidal positional encoding of source coordinates; Geometric conditions convert panoramic depth maps to 3D coordinates via equirectangular projection to calculate reflection maps, followed by a fine-tuned DINOv3 ViT-S/16.
+
+**3. DiT Architecture: AdaLN injection + Cross-Attention fusion**
+
+The model uses a 12-layer Transformer with 8-head attention and a hidden dimension of 256. Target poses and timesteps are injected via AdaLN, multimodal contexts are fused via Cross-Attention, and RoPE is used for positional encoding.
+
+**4. Classifier-free guidance: Controlling condition strength**
+
+By randomly dropping conditions during training and adjusting the guidance weight $\omega$ during inference, the model balances between "strict adherence to observations" and "prior-based completion," which is vital for few-shot scenarios.
+
+**5. AGREE Joint Embedding: CLIP-style dual encoder for RIR-Geometry alignment**
+
+AGREE uses CLIP-style dual encoders to align RIR and scene geometry in a shared latent space. This fills the gap in geometric consistency evaluation and supports zero-shot cross-modal retrieval.
 
 ### Loss & Training
 
-- **Flow matching loss**: $\mathcal{L}_{\text{RFM}} = \mathbb{E}[\|u(\mathbf{z}_t, t, \boldsymbol{\tau}) - \mathbf{v}_t\|^2]$
-- **VAE training loss**: Multi-resolution STFT loss $\mathcal{L}_{\text{MR}}$ (spectral convergence + energy decay) + adversarial hinge loss $\mathcal{L}_{\text{adv}}$ + feature matching loss $\mathcal{L}_{\text{feat}}$ (Encodec multi-scale STFT discriminator) + KL divergence $\mathcal{L}_{\text{KL}}$
-- **AGREE contrastive loss**: Maximizes similarity for matched pairs and minimizes similarity for unmatched pairs.
+- **Flow Matching Loss**: $\mathcal{L}_{\text{RFM}} = \mathbb{E}[\|u(\mathbf{z}_t, t, \boldsymbol{\tau}) - \mathbf{v}_t\|^2]$
+- **VAE Training Loss**: Multi-resolution STFT loss $\mathcal{L}_{\text{MR}}$ + Adversarial hinge loss $\mathcal{L}_{\text{adv}}$ + Feature matching loss $\mathcal{L}_{\text{feat}}$ + KL divergence $\mathcal{L}_{\text{KL}}$
+- **AGREE Contrastive Loss**: Maximizes similarity for matched pairs and minimizes it for unmatched pairs.
 
 ## Key Experimental Results
 
-### Datasets & Setup
-
-- **AcousticRooms (AR)**: 260 rooms with 300k+ RIRs at 22,050 Hz, simulated via the wave equation; 243 seen / 17 unseen rooms.
-- **Hearing-Anything-Anywhere (HAA)**: 4 real rooms for sim-to-real transfer evaluation.
-- Training conducted on a single H100 GPU with AdamW optimizer, learning rate $5 \times 10^{-5}$, batch size 64, BF16 precision.
-
 ### Main Results
 
-**8-shot generation on unseen scenes (AcousticRooms)**:
+**Unseen Scene 8-shot Generation (AcousticRooms)**:
 
 | Method | K | T60 (%) ↓ | C50 (dB) ↓ | EDT (ms) ↓ | R@5 (%) ↑ |
-|--------|---|-----------|------------|------------|-----------|
+|------|---|-----------|------------|------------|-----------|
 | xRIR | 8 | 9.98 | 1.354 | 49.40 | 2.00 |
-| **FLAC** | **8** | **8.60** | **0.970** | **37.13** | **19.38** |
+| **Ours** | **8** | **8.60** | **0.970** | **37.13** | **19.38** |
 | xRIR | 1 | 14.47 | 1.961 | 74.45 | 1.36 |
-| **FLAC** | **1** | **9.95** | **1.046** | **40.04** | **18.92** |
+| **Ours** | **1** | **9.95** | **1.046** | **40.04** | **18.92** |
 
-**Sim-to-real transfer (HAA)**:
+**Sim-to-real Transfer (HAA)**:
 
 | Method | K | T60 (%) ↓ | C50 (dB) ↓ | EDT (ms) ↓ |
-|--------|---|-----------|------------|------------|
+|------|---|-----------|------------|------------|
 | Diff-RIR† | 12 | 3.74 | 2.067 | 88.09 |
-| **FLAC** | **8** | **3.10** | **2.167** | **84.52** |
-| **FLAC** | **1** | **3.45** | **2.170** | **90.02** |
+| **Ours** | **8** | **3.10** | **2.167** | **84.52** |
+| **Ours** | **1** | **3.45** | **2.170** | **90.02** |
 
 ### Ablation Study
 
-- **Conditioning modality ablation**: Geometry-only conditioning yields better C50 and EDT (early reflections determined by nearby surfaces); acoustic-only conditioning yields better T60 (global reverberation is difficult to infer from local geometry); combining both achieves the best performance.
-- **Geometric encoder**: Fine-tuned DINOv3 ViT-S/16 outperforms both training from scratch and frozen variants, as well as xRIR's ViT.
-- **DiT conditioning strategy**: AdaLN + Cross-Attention significantly outperforms In-Context and pure Cross-Attention approaches.
-- **Acoustic encoder**: A frozen VAE encoder generalizes slightly better across rooms than ResNet-18, at higher computational cost.
+- **Modality Ablation**: Geometry-only yields better C50/EDT (early reflections determined by nearby surfaces); Acoustic-only yields better T60 (global reverb). The combination is optimal.
+- **Geometric Encoder**: Fine-tuning DINOv3 ViT-S/16 outperforms training from scratch or frozen schemes and xRIR's ViT.
+- **DiT Conditioning Strategy**: AdaLN + Cross-Attention significantly outperforms In-Context and pure Cross-Attention.
 
 ### Key Findings
 
-- FLAC with 1-shot surpasses all 8-shot baselines; 93.01% of participants (n=46) in subjective listening tests preferred FLAC.
-- Uncertainty analysis: Low-frequency bands exhibit higher sample variance and longer durations, consistent with room acoustics theory — low-frequency responses are dominated by sparse boundary modes, while high frequencies stabilize above the Schröder frequency.
-- Intra-condition diversity ratio is 4.5% (1.03 vs. 22.96), indicating that the model introduces meaningful stochasticity while maintaining contextual consistency.
-- The deterministic variant (fixed noise) shows significantly degraded performance (+6% T60, +10% C50, −40% R@5), confirming that stochasticity is essential for few-shot acoustic synthesis.
+- Ours 1-shot exceeds all 8-shot baselines. 93.01% of participants in subjective listening tests preferred FLAC.
+- **Uncertainty Analysis**: Low-frequency samples show higher variance and longer duration, consistent with room acoustic theory where low-frequency responses are dominated by sparse modes while high frequencies stabilize above the Schröder frequency.
+- **Diversity**: The within-condition diversity ratio is 4.5% (1.03 vs 22.96), showing the model introduces meaningful stochasticity while maintaining context consistency.
 
 ## Highlights & Insights
 
-- **Pioneering contribution**: First application of flow matching to explicit RIR synthesis, framing few-shot acoustic synthesis as a probabilistic generative problem.
-- **Exceptional data efficiency**: 1-shot performance surpasses the previous 8-shot SOTA, reducing required recordings by 8×.
-- **AGREE evaluation framework**: Proposes a CLIP-style acoustic–geometry joint embedding that fills the gap in geometry-consistency evaluation and enables zero-shot cross-modal retrieval.
-- **Physically grounded uncertainty modeling**: Higher uncertainty at low frequencies and convergence at high frequencies align with room acoustics Schröder frequency theory.
-- **Practical applicability**: Trained on a single H100; inference requires only one step to obtain high-quality results; the few-shot method adapts to new scenes in minutes.
+- **Novelty**: First application of flow matching to explicit RIR synthesis, modeling few-shot synthesis as a probabilistic generation problem.
+- **Value**: High data efficiency where 1-shot performance exceeds previous 8-shot SOTA, reducing required recordings by $8\times$.
+- **Experimental Thoroughness**: Introduction of AGREE framework fills the gap in geometric consistency evaluation and supports zero-shot cross-modal retrieval.
+- **Mechanism**: Uncertainty modeling aligns with physical principles (high low-frequency uncertainty).
 
 ## Limitations & Future Work
 
-- **Inaccurate area classification**: This paper genuinely belongs to audio/acoustic synthesis; its classification under image generation is inappropriate.
-- **Limited real-scene generalization**: Geometric annotations in the HAA dataset are simplified (e.g., tables modeled as planes), and the VAE is not fine-tuned on real recordings, limiting sim-to-real transfer.
-- **Single sample rate constraint**: The current model supports only 22,050 Hz; high-fidelity applications require higher sample rates.
-- **Elevated FDG metric**: The generated distribution still diverges from the real distribution in AGREE space, particularly on real data.
-- **Scarcity of real data**: The absence of large-scale, diverse real audio-visual datasets constrains VAE and overall model performance in real-world scenarios.
-- **Monaural limitation**: Only monaural omnidirectional RIRs are handled; binaural and multichannel scenarios are not addressed.
+- **Background**: The task actually belongs to audio/acoustic synthesis; the image generation classification is slightly inaccurate.
+- **Limitations of Prior Work**: Geometric annotations in datasets like HAA are simplified, and the VAE has not been fine-tuned on real recordings, limiting sim-to-real transfer.
+- **Design Constraints**: Currently supports only 22050 Hz and single-channel omnidirectional RIRs, without extension to binaural or multi-channel scenarios.
+- **Data Scarcity**: Lack of large-scale diverse real-world audio-visual datasets restricts overall performance in real scenarios.
 
 ## Related Work & Insights
 
-- **Neural acoustic fields**: Per-scene training methods such as NeRAF and AV-GS achieve spatially continuous rendering but are non-generalizable.
-- **Few-shot acoustic synthesis**: FewShotRIR (20 samples) → MAGIC (semantic augmentation) → xRIR (8 samples + depth maps); all are deterministic methods.
-- **Audio diffusion and flow matching**: Diffusion models have succeeded in speech/music generation; flow matching improves efficiency; this paper is the first to introduce it to RIR synthesis.
-- **Joint embedding models**: CLIP → audio-visual/audio-text embeddings, but standard audio embeddings are unsuitable for RIRs; AGREE is the first to align RIRs with scene geometry.
+- **Neural Acoustic Fields**: NeRAF and AV-GS provide spatially continuous rendering but lack generalization across scenes.
+- **Few-shot Acoustic Synthesis**: Progression from FewShotRIR (20-shot) to MAGIC (semantic) and xRIR (8-shot + depth) relied on deterministic methods.
+- **Joint Embedding**: While CLIP exists for audio-visual/text, standard audio embeddings are unsuitable for RIR; AGREE is the first to align RIR with scene geometry.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (First application of flow matching to RIR synthesis; novel probabilistic modeling perspective; pioneering AGREE evaluation framework)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Two datasets, multiple baselines, comprehensive ablations, uncertainty analysis, subjective listening tests, cross-modal retrieval validation)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, rich figures, adequate physical intuition; notation is somewhat dense in places)
-- Value: ⭐⭐⭐⭐ (Opens a new direction for few-shot acoustic synthesis with exceptional practical data efficiency, though the field is relatively niche)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -149,11 +156,11 @@ Training employs rectified flow matching with linear interpolation between data 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration](v-bridge_bridging_video_generative_priors_to_versatile_few-shot_image_restoratio.md)
-- [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](../../ICML2026/image_generation/envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
-- [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
+- [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
+- [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
+- [\[ACL 2025\] OZSpeech: One-step Zero-shot Speech Synthesis with Learned-Prior-Conditioned Flow Matching](../../ACL2025/image_generation/ozspeech_one-step_zero-shot_speech_synthesis_with_learned-prior-conditioned_flow.md)
+- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
 
 </div>
 

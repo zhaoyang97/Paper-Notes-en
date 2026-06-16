@@ -2,86 +2,84 @@
 title: >-
   [Paper Note] On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation
 description: >-
-  [ICML 2026][LLM/NLP][LLM Annotation] Through large-scale experiments on toxicity detection (9 models × 5 datasets), the paper finds that LLM annotation performance is primarily determined by **definition alignment** rath…
+  [ICML 2026][LLM (Other)][Paper Note] Through large-scale experiments on toxicity detection (9 models × 5 datasets), the paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization; model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt correction—even w
 tags:
-  - "ICML 2026"
-  - "LLM/NLP"
-  - "LLM Annotation"
-  - "Model-Internalized Priors"
-  - "Decision Stickiness"
-  - "Prompt Steerability"
-  - "Confidence Calibration"
+  - ICML 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 5763dc06bf599ca4
+content_hash: 2750cf4c3fb8ecb5
 ---
-
 # On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation
 
 **Conference**: ICML 2026 Oral Spotlight  
 **arXiv**: [2606.00467](https://arxiv.org/abs/2606.00467)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Social Computing / LLM Reliability  
 **Keywords**: LLM Annotation, Model-Internalized Priors, Decision Stickiness, Prompt Steerability, Confidence Calibration
 
 ## TL;DR
-Through large-scale experiments on toxicity detection (9 models × 5 datasets), the paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization; model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt-based correction—even when provided with explicit definitions and examples, **two-thirds of errors** remain unfixable (rescue rate of only 34.8%), and confidence scores cannot be used to detect definition-related errors.
+Through large-scale experiments on toxicity detection (9 models × 5 datasets), the paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization; model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt correction—even with explicit definitions and examples, **two thirds of errors** remain unfixable (rescue rate of only 34.8%), and confidence cannot be used to detect definition errors.
 
 ## Background & Motivation
 
-**Background**: LLMs are widely used for zero-shot annotation and "LLM-as-a-judge" tasks. The traditional assumption is that the definitions provided by users through prompts will dominate model behavior, and that selecting larger or stronger models will improve annotation quality.
+**Background**: LLMs are widely used for zero-shot annotation and "LLM-as-a-judge" tasks. The traditional assumption is that definitions provided by users through prompts will dominate model behavior, and selecting larger or stronger models will improve annotation quality.
 
-**Limitations of Prior Work**: LLMs are not a blank slate—they develop an implicit understanding of common concepts (e.g., "toxicity") through pre-training, instruction tuning, and RLHF. However, the definition of the same concept can vary significantly across application scenarios (social media personal attacks vs. game-disruptive behavior vs. speech against protected groups), and the model's internalized prior concepts may not align with user intent.
+**Limitations of Prior Work**: LLMs are not a blank slate—they develop an implicit understanding of common concepts (e.g., "toxicity") through pre-training, instruction tuning, and RLHF. However, the definition of the same concept varies significantly across application scenarios (social media personal attacks vs. game disruptive behavior vs. speech against protected groups), and the priors internalized by the model may not align with user intent.
 
-**Key Challenge**: The mismatch between user definitions and model-internalized concepts is a deep-seated alignment problem. Existing research provides extensive knowledge of models' text memorization, but little is known about the extent to which models can override their internalized task understanding through prompts.
+**Key Challenge**: The mismatch between user definitions and model-internalized concepts is a deep alignment issue. Existing research provides a detailed understanding of the model's text memorization but knows little about the extent to which the model can override its internalized task understanding through prompts.
 
-**Goal**: Systematically investigate the interaction of three dimensions: (1) how model "familiarity" with data and task definitions affects performance; (2) whether additional prompt information can correct zero-shot errors ("decision stickiness"); and (3) the susceptibility of models to misaligned definitions.
+**Goal**: Systematically study the interaction of three dimensions—(1) how the model's "familiarity" with data and task definitions affects performance; (2) whether additional prompt information can correct zero-shot errors ("decision stickiness"); (3) the model's susceptibility to misaligned definitions.
 
-**Key Insight**: Instead of assuming user definitions are optimal, the study directly measures the degree of alignment between the model's internal concepts and the provided definitions; rather than focusing solely on text overlap, it examines conceptual boundaries.
+**Key Insight**: Rather than assuming user definitions are optimal, the study directly measures the degree of alignment between the model's internal concepts and the definitions; rather than looking only at text overlap, it examines the perspective of conceptual boundaries.
+
+**Core Idea**: Introduce the **Definition-Specific Familiarity (DSF)** metric to quantify the semantic alignment between the model's internal understanding and the dataset definition; reveal that high-confidence errors are nearly impossible to correct through prompts via the "decision stickiness" phenomenon; discover that models confidently apply misaligned definitions through definition replacement experiments.
 
 ## Method
 
 ### Overall Architecture
-Three research questions (RQs) are addressed progressively: RQ1 examines how familiarity with data and task definitions impacts annotation performance (DSF vs. text familiarity comparison); RQ2 investigates the extent to which external knowledge and advanced prompting can correct initial zero-shot errors (decision stickiness); RQ3 explores how LLMs behave when provided with misaligned or incorrect task definitions.
+This is a diagnostic study: the authors do not propose a new model but decompose "whether LLM annotation follows prompts" into three progressive Research Questions (RQ). RQ1 asks how the model's familiarity with data and task definitions affects annotation quality (proposing the DSF metric and comparing it with traditional text memorization metrics); RQ2 asks how many zero-shot errors can be corrected by additional definitions, examples, or expert prompts (proposing the "rescue rate" to characterize decision stickiness); RQ3 asks how the model reacts when provided with a **wrong** definition (definition misalignment experiments). The entire experimental suite is conducted on toxicity detection using 9 models across 5 datasets.
 
 ### Key Designs
 
-1. **Definition-Specific Familiarity (DSF) Metric**:
+**1. Definition-Specific Familiarity (DSF): Measuring the distance between the model's internal concept and the definition**
 
-    - **Function**: Quantifies the degree of alignment between the model's internal understanding of a target concept and the dataset's definition.
-    - **Mechanism**: The model is prompted to explain the target concept in its own words ("How do you understand what makes content toxic?"), then 6 different sentence encoders (MiniLM, MPNet, BGE-large, E5-large, Instructor-large, OpenAI text-embedding-3-small) are used to calculate the semantic similarity between the model's explanation and the dataset's full definition, with the average taken as the "consensus DSF". $$\text{DSF} = \frac{1}{6} \sum_{i=1}^6 \text{sim}(e_i(\text{model\_explanation}), e_i(\text{dataset\_definition}))$$.
-    - **Design Motivation**: Existing text memorization metrics (ROUGE-L, BERTScore) cannot explain why certain models perform better on specific tasks; DSF approaches the problem from the perspective of "concept alignment". Using a consensus of 6 encoders reduces the bias of any single embedding model, and the metric requires no labeled data.
+Traditional judgments of whether a "model understands a task" rely on text memorization metrics (ROUGE-L, BERTScore), but these only measure if the model has seen the original text and cannot explain why certain models are more accurate on certain tasks. DSF takes a different perspective—instead of asking "if the model memorized it," it asks "if the concept understood by the model aligns with the target definition." The approach involves asking the model to explain the target concept in its own words ("How do you understand what makes content toxic?"), then calculating the semantic similarity between this explanation and the full dataset definition using 6 different sentence encoders (MiniLM, MPNet, BGE-large, E5-large, Instructor-large, OpenAI text-embedding-3-small), and averaging them to obtain the "Consensus DSF":
 
-2. **Rescue Rate + Decision Stickiness**:
+$$\text{DSF} = \frac{1}{6} \sum_{i=1}^6 \text{sim}\big(e_i(\text{model\_explanation}),\, e_i(\text{dataset\_definition})\big)$$
 
-    - **Function**: Measures the ability of LLMs to correct their own errors via prompts, revealing the fundamental limitations of high-confidence errors.
-    - **Mechanism**: $\text{Rescue Rate} = P(\text{Correct} \mid \text{Prompted, Zero-Shot Wrong})$. A U-shaped curve was observed—rescue probability peaks at 51.8% at medium confidence (0.6-0.7) and drops sharply to 20.8% for high-confidence errors (> 0.9). This is quantified via mixed-effects logistic regression: for every one standard deviation increase in zero-shot confidence, the odds of rescue decrease by 16% (OR = 0.84).
-    - **Design Motivation**: While traditional views suggest that larger models or better prompt design can solve annotation issues, comparing 9 models reveals that larger models are not necessarily easier to correct—internalized priors set a fundamental ceiling on steerability, and exceeding this ceiling requires retraining rather than just prompt tuning.
+Using 6 encoders to reach a consensus mitigates the bias of any single embedding model. This metric requires no labeled data. In subsequent experiments, DSF proved to be the only familiarity metric that remains positively correlated with accuracy after controlling for dataset difficulty, proving that performance is driven by conceptual alignment rather than text overlap.
 
-3. **Definition Misalignment and Calibration Failure**:
+**2. Rescue Rate and Decision Stickiness: How many errors prompts can actually fix**
 
-    - **Function**: Tests model behavior when receiving misaligned definitions, revealing the critical weakness of "high-confidence application of incorrect definitions."
-    - **Mechanism**: Six definition misalignment conditions were designed (e.g., narrow definitions like "hate speech" requiring identity verification vs. broad definitions like "gaming toxicity" including any disruptive behavior). The study measures change rates, rescue rates, sabotage rates, and prediction bias. A key finding is that model confidence shows **no significant difference** between aligned and misaligned conditions—violating the basic calibration assumption. **Practitioners cannot use confidence thresholds to detect definition errors.**
-    - **Design Motivation**: Practitioners deploying LLM annotation often assume confidence can serve as a quality control signal, but this study demonstrates that such an assumption is flawed.
+It is often assumed that "using larger models or writing better prompts" can fix annotation errors. The authors use the rescue rate to directly test this assumption. The rescue rate is defined as the probability that an incorrect zero-shot sample is corrected after adding definitions, examples, or expert prompts:
+
+$$\text{Rescue Rate} = P(\text{Correct} \mid \text{Prompted},\ \text{Zero-Shot Wrong})$$
+
+The measurement shows an overall rate of only 34.8%—two-thirds of zero-shot errors cannot be rescued regardless of the prompt; this is "decision stickiness." Critically, it exhibits a U-shape relative to confidence: the rescue probability peaks at 51.8% for medium confidence (0.6–0.7), while for the most confident errors (confidence $>0.9$), the rescue rate plummets to 20.8%. The authors use mixed-effects logistic regression to confirm this trend—for every one standard deviation increase in zero-shot confidence, the odds of being rescued decrease by 16% ($\text{OR}=0.84$). Across 9 models, larger models are not significantly easier to steer, indicating that model-internalized priors set a ceiling for steerability, which may require re-training rather than prompt tuning to breach.
+
+**3. Definition Misalignment and Calibration Failure: Models confidently use incorrect definitions**
+
+The first two points assume the provided definition is correct; this point tests the reverse: what happens if the definition itself is inconsistent with the model's internalized concepts. The authors construct 6 misalignment conditions, ranging from narrow definitions (e.g., "hate speech" requiring targeting protected identities) to broad definitions (e.g., "gaming toxicity" including any disruptive behavior), measuring changes in prediction rates, rescue rates, destruction rates, and bias. The most critical finding is not in accuracy but in confidence—there is **no significant difference** in the model's confidence between aligned and misaligned definitions. This directly violates the calibration assumption: practitioners might want to use confidence as a quality signal to filter suspicious annotations, but since the model remains equally confident when using the wrong definition, confidence thresholds cannot detect definition errors, representing a dangerous blind spot during deployment.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Condition | Zero-Shot | Aligned Def | Few-Shot | FS+Def | DSPy | Misaligned Avg |
-|------|--------|---------|--------|--------|------|----------|
+|-----------|-----------|-------------|----------|--------|------|----------------|
 | Llama-3.1-70B | 79.8 | 82.1 | 81.2 | 82.1 | 79.9 | 78.1 |
 | Mistral-Small-24B | 78.0 | 81.0 | 80.8 | 82.3 | 79.3 | 80.7 |
 | DeepSeek-V3 | 81.3 | 83.0 | 82.6 | 83.8 | 80.9 | 80.7 |
 | GPT-4o-mini | 81.6 | 83.3 | 84.1 | 83.3 | 84.4 | 81.1 |
 | Qwen-2.5-72B | 83.3 | 82.2 | 83.8 | 83.2 | 82.5 | 81.2 |
-| **Condition Mean** | 80.3 | 82.0 | 81.5 | 81.6 | 80.2 | 80.3 |
+| **Condition Avg** | 80.3 | 82.0 | 81.5 | 81.6 | 80.2 | 80.3 |
 
-Aligned definitions only provided a +1.7% improvement—indicating limited room for improvement through prompting.
+Aligned definitions only improved performance by +1.7%—prompt improvement space is limited.
 
 ### Ablation Study
 
-| Familiarity Metric | Original Correlation r | Partial Correlation (Dataset Controlled) |
-|-----------|-----------|-------------------|
+| Familiarity Metric | Original Correlation r | Partial Correlation (Control Dataset) |
+|--------------------|------------------------|------------------------------------|
 | Text Memorization (ROUGE-L) | -0.80 | -0.19 |
 | Memorization (BERTScore) | -0.76 | -0.15 |
 | **Definition Alignment (DSF)** | +0.74 | **+0.41** (p=0.003) |
@@ -89,32 +87,32 @@ Aligned definitions only provided a +1.7% improvement—indicating limited room 
 DSF is the only metric that remains positively correlated with accuracy after controlling for dataset difficulty.
 
 ### Key Findings
-- **Decision Stickiness Dominant**: The rescue rate is only 34.8%, and for high-confidence errors, it is below 21%.
-- **Definition Impact > Model Selection**: Across all models and datasets, definition choice caused a 17% variation in accuracy, whereas model choice accounted for only ~5%.
-- **Familiarity vs. Memorization**: The positive correlation of DSF (+0.41) confirms that **concept alignment, rather than text alignment, drives performance**.
-- **Calibration Failure**: Model confidence remains unchanged even when the model applies an incorrect definition.
+- **Decision Stickiness Dominates**: The rescue rate is only 34.8%, and the rescue rate for high-confidence errors is less than 21%.
+- **Definition Influence > Model Choice**: Across all models and datasets, definition selection caused a 17% fluctuation in accuracy, while model selection caused only ~5%.
+- **Familiarity vs. Memorization**: The positive correlation of DSF (+0.41) confirms that **concept alignment, rather than text overlap, drives performance**.
+- **Confidence Calibration Failure**: The model's confidence remains unchanged when applying misaligned definitions.
 
 ## Highlights & Insights
-- **Innovation of the DSF Metric**: Approaching the problem via "whether the model understands your definition" is profound; it shifts focus from "defense" (detecting contamination) to "diagnosis" (measuring alignment).
-- **Systematic Characterization of Decision Stickiness**: The study not only identifies the phenomenon but also quantifies it via mixed-effects regression (OR = 0.84), proving it is a systematic internalized prior constraint rather than just a single-turn prompting issue.
-- **The "High-Confidence, High-Risk" Paradox of Misalignment**: The ability of models to confidently apply incorrect definitions is a major pitfall, providing direct warning value for practical deployments.
+- **Innovation of the DSF Metric**: Approaching the problem from "whether the model understands your definition" is profound, shifting from "defense" (checking contamination) to "diagnosis" (measuring alignment).
+- **Systematic Characterization of Decision Stickiness**: Beyond identifying the phenomenon, it is quantified through mixed-effects regression (OR = 0.84), proving this is not an issue of single-turn prompting but a systemic constraint of internalized priors.
+- **The "High Confidence, High Risk" Paradox of Definition Misalignment**: The model's ability to confidently apply incorrect definitions is its greatest pitfall—offering direct warning value for practical deployment.
 
 ## Limitations & Future Work
-- Experiments were limited to binary toxicity/hate speech classification; multi-class, span annotation, or open-ended judgment may exhibit different failure modes.
-- Since all models were instruction-tuned, it is difficult to determine whether the low rescue rate is a model capability limit or an intentional safety alignment design to limit steerability.
-- The findings demonstrate correlation rather than causation.
-- Future work: Test stronger forms of misalignment and multi-turn correction strategies; compare base models and fine-tuned versions to isolate the contributions of pre-training vs. instruction tuning vs. RLHF.
+- Experiments are limited to binary classification of toxicity/hate speech; multi-class classification, span annotation, and open-ended judgment may have different failure modes.
+- All models are instruction-tuned; it is impossible to distinguish if the low rescue rate is a model capability limit or an intentional steering restriction designed for safety alignment.
+- Findings are correlational rather than causal.
+- Future Work: Testing stronger forms of misalignment and multi-turn correction strategies; comparing base models with fine-tuned versions to isolate the contributions of pre-training vs. instruction tuning vs. RLHF.
 
 ## Related Work & Insights
-- **vs. LLM Steerability Work** (Chang et al. 2026): While prior work studied steerability in generative tasks, this paper adds a classification perspective and identifies entirely different failure modes.
-- **vs. Contamination Detection Work** (Min-K% Prob, BERTScore): Traditional contamination detection assumes memorization is the primary cause of performance variance; this paper uses DSF to show this is a misdiagnosis, proving concept alignment is the true driver.
-- **vs. Model Calibration Research**: The discovery of "high-confidence, high-risk" in annotation scenarios—where high confidence does not guarantee the correct definition is being applied—is novel and has direct safety implications for deployment.
+- **vs. LLM Steerability Work** (Chang et al. 2026): Studies steerability in generation tasks; this paper supplements the classification task perspective and finds completely different failure modes.
+- **vs. Contamination Detection** (Min-K% Prob, BERTScore): Traditional contamination detection assumes memorization is the culprit; this paper proves this is a misdiagnosis through the comparison of DSF and memorization, showing the true driver is conceptual alignment.
+- **vs. Model Calibration Research**: The "High Confidence, High Risk" finding in annotation scenarios—where high confidence does not mean the correct definition is applied—is new and has direct safety implications for deployment.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The DSF metric and the systematic characterization of "decision stickiness" are original, challenging the myth that prompt engineering is a universal solution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprising 9 models × 5 datasets × multiple conditions, supplemented by replication in non-toxicity domains to confirm generalizability.
-- Writing Quality: ⭐⭐⭐⭐⭐ The three RQs progress clearly, visualizations are intuitive, and practical implications are well-defined.
-- Value: ⭐⭐⭐⭐⭐ Provides direct insights for industrial deployment of LLM annotation, offering both a feasible diagnostic method (DSF) and clear warnings.
+- Novelty: ⭐⭐⭐⭐⭐ The DSF metric and the systematic characterization of the "decision stickiness" phenomenon are original and challenge the "prompt engineering is everything" myth.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 models × 5 datasets × multiple conditions, supplemented by replication in non-toxic domains to confirm generalizability.
+- Writing Quality: ⭐⭐⭐⭐⭐ The progression of the three RQs is clear, chart design is intuitive, and practical implications are explicit.
+- Value: ⭐⭐⭐⭐⭐ Provides direct insights for the industrial deployment of LLM annotation, offering a feasible diagnostic method (DSF) and clear warnings.
 
 <!-- RELATED:START -->
 
@@ -122,11 +120,11 @@ DSF is the only metric that remains positively correlated with accuracy after co
 
 ## Related Papers
 
+- [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
 - [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
 - [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](../../NeurIPS2025/llm_nlp/moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
 - [\[ICLR 2026\] Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors](../../ICLR2026/llm_nlp/breaking_the_correlation_plateau_on_the_optimization_and_capacity_limits_of_atte.md)
-- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)
 
 </div>
 

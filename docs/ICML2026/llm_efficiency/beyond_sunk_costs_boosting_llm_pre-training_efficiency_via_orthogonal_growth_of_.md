@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts
 description: >-
-  [ICML 2026][LLM Efficiency][MoE Model Growth] This work proposes an "orthogonal growth" strategy for converged MoE models—utilizing interpositional layer replication for the depth dimension and noisy expert cloning for t…
+  [ICML 2026][LLM Efficiency][Paper Note] The authors propose an "orthogonal growth" strategy for converged MoE models—using interpositional layer replication for depth and noisy expert cloning for width—scaling a 17B model to 70B. This achieve a 10.6% accuracy improvement over training from scratch under the same additional compute budget.
 tags:
-  - "ICML 2026"
-  - "LLM Efficiency"
-  - "MoE Model Growth"
-  - "Checkpoint Recycling"
-  - "Efficient Pre-training"
-  - "Orthogonal Expansion"
-  - "Sunk Costs"
+  - ICML 2026
+  - LLM Efficiency
 date: 2026-05-08
-content_hash: 39b05c3b03cbd4dd
+content_hash: dd74dd5f169905ab
 ---
-
 # Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -25,107 +19,114 @@ content_hash: 39b05c3b03cbd4dd
 
 ## TL;DR
 
-This work proposes an "orthogonal growth" strategy for converged MoE models—utilizing interpositional layer replication for the depth dimension and noisy expert cloning for the width dimension. By expanding a 17B model to 70B, it achieves a 10.6% accuracy improvement over training from scratch under the same additional computational budget.
+The authors propose an "orthogonal growth" strategy for converged MoE models—using interpositional layer replication for depth and noisy expert cloning for width—scaling a 17B model to 70B. This achieve a 10.6% accuracy improvement over training from scratch under the same additional compute budget.
 
 ## Background & Motivation
 
-**Background**: LLM pre-training follows scaling laws, necessitating continuous increases in model size and data volume to enhance performance. However, the computational cost of training from scratch is enormous. The industry generates numerous intermediate checkpoints and smaller models during training, which are typically discarded upon completion.
+**Background**: LLM pre-training follows scaling laws, continuously increasing model size and data volume to improve performance, but the computational cost of training from scratch is enormous. In industry, training processes generate numerous intermediate checkpoints and smaller models, which are typically discarded after training.
 
-**Limitations of Prior Work**: Most existing model growth research only performs expansion after brief training in the early stages, failing to fully utilize the "sunk costs" accumulated by fully trained models. Furthermore, with the popularity of Mixture-of-Experts (MoE) architectures, there is a lack of systematic research into MoE model growth strategies.
+**Limitations of Prior Work**: Most existing model growth research conducts expansion only after brief training in the early stages, failing to fully utilize the "sunk costs" accumulated by the model. Furthermore, with the proliferation of Mixture-of-Experts (MoE) architectures, there lacks a systematic study of growth strategies specifically for MoE models.
 
-**Key Challenge**: Pre-training checkpoints represent significant computational investment but cannot be directly reused for larger models due to architectural constraints. Existing stacking methods for layer cloning disrupt the learned inter-layer structures once a model has sufficiently converged, leading to performance degradation.
+**Key Challenge**: Pre-training checkpoints contain significant computational investment but cannot be directly reused for larger models due to architectural constraints. Existing stacking methods for layer replication disrupt the learned inter-layer structures once the model has fully converged, leading to performance loss.
 
-**Goal**: Design a parameter expansion framework suitable for fully converged MoE models that efficiently scales in both depth and width dimensions to maximize the recovery of sunk costs.
+**Goal**: Design a parameter expansion framework suitable for fully converged MoE models to efficiently scale them in both depth and width dimensions, maximizing the recovery of sunk costs.
 
-**Key Insight**: The authors observe that fully converged LLMs exhibit a characteristic layer-wise weight norm distribution—small and fluctuating in the initial layers, monotonically increasing in the middle layers, and slightly decreasing at the end. Stacking methods create a "norm cliff" at the splicing point, whereas interpositional methods maintain this smooth structure.
+**Key Insight**: The authors discovered that fully converged LLMs exhibit a characteristic layer-wise weight norm distribution—small and volatile in initial layers, monotonically increasing in middle layers, and slightly declining at the end. Stacking methods create a "norm cliff" at the concatenation points, whereas interpositional methods maintain this smooth structure.
 
-**Core Idea**: Use interpositional layer replication to increase depth (preserving weight norm continuity) and noisy expert cloning to increase width (breaking symmetry to promote expert specialization). These two dimensions are orthogonal and can be combined freely.
+**Core Idea**: Utilize interpositional layer replication to increase depth (maintaining weight norm continuity) and noisy expert cloning to increase width (breaking symmetry to promote expert differentiation). These two dimensions are orthogonal and can be combined freely.
 
 ## Method
 
 ### Overall Architecture
 
-Given a fully converged MoE model checkpoint, the model is expanded through two orthogonal dimensions: (1) Depth growth—cloning each layer in-place $k$ times to increase depth; (2) Width growth—doubling the number of experts and adding infinitesimal noise. These operations are order-independent and equivalently effective, resulting in a larger model for continued training.
+Given a fully converged MoE model checkpoint, it "grows" along two orthogonal dimensions: in the depth direction, each layer is replicated $k$ times in-place; in the width direction, the number of experts in each MoE layer is doubled and infused with a trace amount of noise. These two operations do not interfere with each other, and the sequence of operations does not affect the final result. The expanded large model then continues pre-training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Converged MoE Checkpoint<br/>Greater sunk cost leads to better expansion"] --> B["Interpositional Depth Growth<br/>In-place replication k times, maintaining smooth norm curve"]
+    A --> C["Noisy Expert Cloning<br/>Double experts + 1% Gaussian noise to break symmetry"]
+    B -->|"Orthogonal combination: Sequence does not affect result"| D["Expanded Large Model"]
+    C -->|"Orthogonal combination: Sequence does not affect result"| D
+    D --> E["Continue Pre-training (Fixed extra FLOPs)"]
+```
 
 ### Key Designs
 
-1.  **Interpositional Depth Growth**:
-    - **Function**: Increases model depth through layer cloning (e.g., $n$ layers $\rightarrow$ $kn$ layers).
-    - **Mechanism**: Unlike the stacking method that concatenates all layers end-to-end $k$ times ($l_1,...,l_n, l_1,...,l_n$), the interpositional method clones each layer in-place $k$ times ($l_1,l_1,..., l_2,l_2,..., l_n,l_n$). Fully converged LLMs possess a monotonically increasing layer-wise weight norm distribution. Stacking produces a norm cliff at the junction of the $n$-th and 1st layers, approximately $10\times$ the average inter-layer difference (e.g., 0.0356 $\rightarrow$ 0.0323), requiring extra compute to repair this discontinuity. Interpositional growth maintains a smooth transition.
-    - **Design Motivation**: When training FLOPs exceed the Chinchilla optimal value $F_c \approx 6 \cdot N_a \cdot 20N_a$, the layer-wise weight norms form a stable increasing pattern, at which point interpositional growth significantly outperforms stacking.
+**1. Interpositional Depth Growth: Replicating layers in-place rather than end-to-end stacking**
 
-2.  **Noisy Expert Cloning (Width Growth)**:
-    - **Function**: Expands the number of experts in MoE layers from $E$ to $2E$ and active experts from $k$ to $2k$.
-    - **Mechanism**: Original experts are cloned with the addition of slight Gaussian noise $\epsilon \sim \mathcal{N}(0, (\alpha \sigma_{\text{orig}})^2)$, where $\alpha = 0.01$. Router weights are similarly cloned and denoised. Direct cloning ($\alpha=0$) causes perfect symmetry where all copies receive identical gradients and fail to specialize; excessive noise (e.g., $\geq 50\%$ in upcycling) destroys learned knowledge. Infinitesimal noise breaks symmetry while preserving representations, allowing the router to gradually differentiate experts.
-    - **Design Motivation**: Unlike dense-to-MoE upcycling, this MoE-to-MoE expansion reuses existing pre-trained routers, necessitating only minimal noise.
+To deepen $n$ layers to $kn$ layers, the most intuitive method is stacking—concatenating the entire layer sequence $k$ times ($l_1,...,l_n, l_1,...,l_n$). However, this paper finds this problematic for fully converged models: the layer-wise weight norms of converged LLMs follow a monotonically increasing distribution. Stacking forces the $n$-th layer to connect back to the 1st layer, creating a "norm cliff" (e.g., a drop from 0.0356 to 0.0323, approximately $10\times$ the average inter-layer difference). This acts as a structural fracture in the middle of the network, requiring extra compute to repair the discontinuity. Interpositional growth replicates each layer in-place ($l_1,l_1,..., l_2,l_2,..., l_n,l_n$), where adjacent replicated layers have nearly identical norms, maintaining a smooth transition across the curve. This advantage is triggered when training FLOPs exceed the Chinchilla optimal value $F_c \approx 6 \cdot N_a \cdot 20N_a$, as the layer-wise norms only stabilize into an increasing pattern at that point.
 
-3.  **Orthogonal Combination and Growth Timing**:
-    - **Function**: Verifies that depth and width growth can be combined freely and analyzes optimal growth timing.
-    - **Mechanism**: Experiments show that depth-then-width and width-then-depth yield identical final performance (Adam first-moment cosine similarity $|\cos| < 0.04$), proving the two dimensions are nearly orthogonal in the optimization space. Regarding timing, larger sunk costs correlate positively with better final models, though marginal returns diminish after the learning rate annealing stage. Under fixed total FLOPs, growth methods perform equally to or slightly better than training from scratch.
-    - **Design Motivation**: Orthogonality allows for staged expansion and flexible computational budget planning.
+**2. Noisy Expert Cloning: Replicating experts and adding 1% noise to break symmetry**
+
+In the width dimension, the number of experts in MoE layers is increased from $E$ to $2E$ and the number of active experts from $k$ to $2k$. This is achieved by cloning existing experts (including router weights) and adding a trace amount of Gaussian noise $\epsilon \sim \mathcal{N}(0, (\alpha \sigma_{\text{orig}})^2)$, where $\alpha = 0.01$. The noise scale is critical: direct copying ($\alpha=0$) results in perfect symmetry where clones receive identical gradients and never differentiate; conversely, adding large noise ($\geq 50\%$) as in dense-to-MoE upcycling destroys learned knowledge. The 1% magnitude is the "sweet spot"—it preserves almost all knowledge while allowing clones to follow different trajectories as the router gradually differentiates them. This small noise suffices because the task is MoE-to-MoE expansion rather than dense-to-MoE; the original model already has trained routers that can be reused.
+
+**3. Orthogonal Combination and Growth Timing: Two dimensions can be ordered arbitrarily; higher sunk costs yield higher returns**
+
+Depth and width growth are nearly orthogonal in the optimization space—final performance of depth-then-width is consistent with width-then-depth. The cosine similarity of Adam's first moment along these two paths is $|\cos| < 0.04$, indicating they update nearly non-overlapping directions. Growth timing follows a clear pattern: the greater the sunk cost of the starting checkpoint, the better the final expanded model (positive correlation), with the sole exception being the marginal returns diminishing after entering the learning rate annealing phase. Under a fair comparison of fixed total FLOPs, this growth method matches or exceeds training from scratch—meaning checkpoint recycling is essentially "free gain."
 
 ## Key Experimental Results
 
-### Main Results (17B $\rightarrow$ 70B expansion, 1T tokens)
+### Main Results (17B → 70B Expansion, 1T tokens)
 
-| Model | Parameters | Extra FLOPs | Avg Accuracy | Relative Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Model | Parameters | Extra FLOPs | Avg Accuracy | Gain |
+|------|--------|-----------|-----------|---------|
 | 17B Baseline (Fully Trained) | 17B | — | 58.55 | — |
-| 70B From Scratch (Same extra compute) | 70B | Equivalent | 57.99 | -0.96% |
+| 70B From Scratch (Equal compute) | 70B | Equivalent | 57.99 | -0.96% |
 | 70B Orthogonal Growth (Ours) | 70B | Equivalent | 64.17 | **+10.6%** |
-| 35B Intermediate (After depth growth) | 35B | — | 61.96 | +5.8% |
+| 35B Intermediate Model (Post-depth) | 35B | — | 61.96 | +5.8% |
 
-### Ablation Study: Depth Growth Strategy (3B $\rightarrow$ 6B)
+### Ablation Study: Depth Growth Strategy (3B → 6B)
 
-| Growth Method | Post-convergence Training Loss | Downstream Avg Accuracy | Norm Continuity |
-| :--- | :--- | :--- | :--- |
-| Stacking | Higher | Lower | L19$\rightarrow$L20 Cliff (0.0356$\rightarrow$0.0323) |
+| Growth Method | Post-convergence Training Loss | Downstream Avg Acc | Norm Continuity |
+|---------|--------------|--------------|-----------|
+| Stacking | Higher | Lower | L19→L20 Cliff (0.0356→0.0323) |
 | Interpositional (Ours) | **Lower** | **Higher** | Smooth Transition |
-| From Scratch 6B | Reference | Reference | — |
+| 6B From Scratch | Reference | Reference | — |
 
-### Noise Scale Ablation for Width Growth
+### Ablation Study: Width Growth Noise Scale
 
-| Noise Scale $\alpha$ | Training Loss | Downstream Accuracy | Note |
-| :--- | :--- | :--- | :--- |
+| Noise Scale $\alpha$ | Training Loss | Downstream Acc | Description |
+|-------------------|---------|-----------|------|
 | 0 (Direct Clone) | Comparable | Baseline | Symmetry cannot be broken |
-| 0.01 (Ours) | Comparable | **+1%** | Optimal balance point |
-| Large Value | Higher | Decrease | Destruction of learned knowledge |
-| Random Init New Experts| Significantly Higher | Significantly Decrease | Loss of knowledge inheritance |
+| 0.01 (Ours) | Comparable | **+1%** | Optimal balance |
+| Large Value | Higher | Decrease | Destroys learned knowledge |
+| Random Init New Experts | Significantly Higher | Significantly Lower | Loss of knowledge inheritance |
 
-### Relationship between Sunk Costs and Final Performance
+### Relationship Between Sunk Cost and Final Performance
 
-| Growth Start Step | Starting Accuracy | Final Accuracy | Trend |
-| :--- | :--- | :--- | :--- |
+| Growth Start Step | Starting Acc | Final Acc | Trend |
+|------------|-----------|-----------|------|
 | 0k (Scratch) | 30.59 | 38.79 | Baseline |
 | 16k | 37.66 | 44.65 | ↑ |
 | 48k | 42.26 | 47.20 | ↑ |
-| 88k | 46.43 | 48.99 | ↑ Optimal range |
-| 96k (Annealing) | 46.19 | 48.52 | Diminishing marginal returns |
+| 88k | 46.43 | 48.99 | ↑ Optimal Range |
+| 96k (Annealing) | 46.19 | 48.52 | Marginal Decrease |
 
 ## Highlights & Insights
 
-- First systematic study of growth strategies for fully converged MoE models, revealing the fundamental reason why stacking fails on converged models: the weight norm cliff.
-- The proposed Chinchilla FLOPs boundary condition ($F_c$) serves as a practical criterion for selecting growth strategies: interpositional growth should be used when exceeding $1 \times F_c$.
-- Orthogonality verification is not merely about order independence; it is evidenced from an optimization dynamics perspective through Adam momentum cosine similarity and cumulative weight update analysis.
-- The discovery of positive correlation with sunk costs challenges the industry practice of "discarding checkpoints," providing a blueprint for sustainable LLM development.
+- This is the first systematic study of growth strategies for fully converged MoE models, revealing why stacking fails on such models: the weight norm cliff.
+- The proposed Chinchilla FLOPs boundary ($F_c$) provides a practical criterion for selecting growth strategies: use interpositional growth once beyond $1 \times F_c$.
+- Orthogonality is verified not just by order-independence, but also through evidence from optimization dynamics, including Adam momentum cosine similarity and cumulative weight update analysis.
+- The discovery of the positive correlation with sunk costs challenges the industry practice of "discarding checkpoints," providing a blueprint for sustainable LLM development.
 
 ## Limitations & Future Work
 
-- The growth factor is fixed at $k=2$; more flexible non-uniform growth ratios remain unexplored.
-- Width growth is less effective than depth growth in the short term, requiring more training steps to fully manifest its benefits.
-- When growing from checkpoints in the learning rate annealing stage, the learning rate for continued training requires additional tuning.
+- The growth factor is fixed at $k=2$; more flexible, non-uniform growth ratios have not been explored.
+- Width growth is less significant than depth growth in the short term and requires more training steps to be fully realized.
+- When growing from checkpoints in the LR annealing phase, the learning rate for continued training requires additional tuning.
 - Validated only on language models; not yet extended to multimodal or other modalities.
 
 ## Related Work & Insights
 
-- **Stacking Your Transformers** (Du et al., 2024): Proposed stacking but primarily for early-stage training; this work reveals its limitations on converged models.
+- **Stacking Your Transformers** (Du et al., 2024): Proposed stacking but primarily used it in early training stages; this paper reveals its limitations on converged models.
 - **LLaMA Pro** (Wu et al., 2024): Expands LLaMA by adding new layers but lacks systematic analysis.
-- **MoE Upcycling** (Komatsuzaki et al., 2023): Dense $\rightarrow$ MoE conversion requires 50%+ noise; this work's MoE $\rightarrow$ MoE expansion requires only 1%.
+- **MoE Upcycling** (Komatsuzaki et al., 2023): Dense → MoE conversion requires 50%+ noise, whereas this paper's MoE → MoE requires only 1%.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Systematic study of converged MoE growth; weight norm analysis and orthogonality verification provide original value.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Multi-scale validation from 3B to 70B, including scaling law analysis and extensive ablations.
+- Novelty: ⭐⭐⭐⭐ — First systematic study of converged MoE growth; weight norm analysis and orthogonality validation have original value.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Multi-scale validation from 3B to 70B, including scaling law analysis and extensive ablation studies.
 - Writing Quality: ⭐⭐⭐⭐ — Clear logic and rich visualizations.
 - Value: ⭐⭐⭐⭐ — Provides a practical methodology for the sustainable development of LLM pre-training.
 
@@ -139,7 +140,7 @@ Given a fully converged MoE model checkpoint, the model is expanded through two 
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
 - [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
-- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
+- [\[ACL 2025\] Decoding Knowledge Attribution in Mixture-of-Experts: A Framework of Basic-Refinement Collaboration and Efficiency Analysis](../../ACL2025/llm_efficiency/decoding_knowledge_attribution_in_mixture-of-experts_a_framework_of_basic-refine.md)
 
 </div>
 

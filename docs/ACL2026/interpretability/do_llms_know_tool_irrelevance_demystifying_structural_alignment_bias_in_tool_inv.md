@@ -2,64 +2,67 @@
 title: >-
   [Paper Note] Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 description: >-
-  [ACL 2026][Interpretability][Tool invocation] This paper identifies and formalizes "structural alignment bias" in LLM tool invocation—the tendency for LLMs to call a tool when query attributes can be mapped to tool param…
+  [ACL 2026][Interpretability][Paper Note] This paper discovers and formalizes "Structural Alignment Bias" (SAB) in LLM tool invocation—where LLMs tend to invoke a tool whenever query attributes can be effectively mapped to tool parameters, even if the tool's functionality is irrelevant to the user's goal. The authors construct the SABEval dataset to decouple s
 tags:
-  - "ACL 2026"
-  - "Interpretability"
-  - "Tool invocation"
-  - "Structural alignment bias"
-  - "Irrelevant tool refusal"
-  - "Attention attribution"
+  - ACL 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 3af94349af93cfe1
+content_hash: dbc3b5a4055943ef
 ---
-
 # Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.11322](https://arxiv.org/abs/2604.11322)  
 **Code**: [GitHub](https://github.com/along-l/irrelevant-tool)  
 **Area**: Interpretability  
-**Keywords**: Tool invocation, Structural alignment bias, Irrelevant tool refusal, Interpretability, Attention attribution
+**Keywords**: Tool invocation, Structural alignment bias, Irrelevant tool rejection, Interpretability, Attention attribution
 
 ## TL;DR
-This paper identifies and formalizes "structural alignment bias" in LLM tool invocation—the tendency for LLMs to call a tool when query attributes can be mapped to tool parameters, even if the tool's function is unrelated to the user's goal. The authors construct the SABEval dataset to decouple structural alignment from semantic relevance. Using Contrastive Attention Attribution (CAA), they reveal competing internal paths for semantic checking versus structural matching and propose a rebalancing strategy that achieves an 80% relative error reduction.
+This paper discovers and formalizes "Structural Alignment Bias" (SAB) in LLM tool invocation—where LLMs tend to invoke a tool whenever query attributes can be effectively mapped to tool parameters, even if the tool's functionality is irrelevant to the user's goal. The authors construct the SABEval dataset to decouple structural alignment from semantic relevance, reveal the internal competition between semantic check and structural match paths using Contrastive Attention Attribution (CAA), and propose a rebalancing strategy that achieves an 80% relative error reduction.
 
 ## Background & Motivation
 
-**Background**: The ability of LLMs to use external tools has become a critical capability. In real-world scenarios, models frequently encounter tools irrelevant to the user query, where the correct behavior is to refuse the invocation.
+**Background**: The ability of LLMs to use external tools has become a critical capability. However, in practical scenarios, models frequently encounter tools irrelevant to user queries—where the correct behavior is to reject the invocation.
 
-**Limitations of Prior Work**: (1) Previous research overlooked a systemic flaw: LLMs tend to invoke a tool as long as query attributes can fill its parameters (structural alignment), even when the tool function does not match the user's goal (semantic irrelevance); (2) Existing evaluations construct irrelevant scenarios by randomly pairing queries and tools, which usually introduces structural misalignment. This confuses evaluation results, as models might refuse simply because parameters cannot be filled rather than truly understanding semantic irrelevance.
+**Limitations of Prior Work**: (1) LLMs exhibit an overlooked systematic flaw: even when tool functionality does not match the user's goal (semantically irrelevant), the model tends to invoke the tool as long as query attributes can be effectively filled into tool parameters (structurally aligned); (2) Existing evaluations construct irrelevant scenarios by randomly pairing queries and tools, but such constructions typically introduce structural misalignment, confounding results—the model might reject simply because parameters cannot be filled, rather than truly understanding semantic irrelevance.
 
-**Key Challenge**: Do LLMs truly understand that "semantic relevance" is a prerequisite for tool invocation, or do they rely on "structural alignment" as a shortcut for decision-making?
+**Key Challenge**: Do LLMs truly understand that "semantic relevance" is a necessary condition for tool invocation, or do they merely rely on "structural alignment" as a shortcut for decision-making?
 
-**Goal**: (1) Identify and formalize structural alignment bias; (2) Build a dataset to decouple the two factors; (3) Reveal internal mechanisms; (4) Propose mitigation methods.
+**Goal**: (1) Identify and formalize Structural Alignment Bias; (2) Construct a dataset to decouple these two factors; (3) Reveal the underlying internal mechanisms; (4) Propose mitigation methods.
 
-**Key Insight**: Borrowing from the polymorphism principle in object-oriented programming—where different services can share a unified interface (structurally aligned but semantically distinct)—real-world evaluation data is constructed.
+**Key Insight**: Borrowing the polymorphism principle from object-oriented programming—where different services can share a unified interface (i.e., structurally aligned but semantically distinct)—to construct evaluation data for realistic scenarios.
 
-**Core Idea**: Structural alignment bias is a systemic shortcut where LLMs equate "parameter fillability" with "tool applicability." By uncovering two competing information flows (semantic check vs. structural matching), path rebalancing is proposed to mitigate the bias.
+**Core Idea**: Structural Alignment Bias is a systematic shortcut where LLMs treat "parameters can be filled" as "the tool should be called." By revealing two competing internal information flows (semantic check vs. structural match), the authors propose path rebalancing to mitigate this bias.
 
 ## Method
 
 ### Overall Architecture
-Problem identification → SABEval dataset construction (decoupling structural alignment and semantic relevance) → Behavioral analysis (quantifying bias severity) → Contrastive Attention Attribution (revealing internal mechanisms) → Path rebalancing (mitigating bias).
+The paper decomposes the problem of whether an LLM should invoke an irrelevant tool into controllable research objects: first, the SABEval dataset creates pure structural alignment scenarios where "parameters fit, but functionality is useless" to quantify model susceptibility; second, CAA decomposes the internal information flow during decision-making into competing "semantic check" and "structural match" paths; finally, rebalancing is performed on these two paths to suppress bias. The input is a user query and a semantically irrelevant but structurally aligned tool; the ideal output is a rejection of the invocation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph SAB["SABEval Dataset (Isolating pure structural alignment via polymorphism)"]
+        direction TB
+        A["Tool Templates"] --> B["Derived Sibling Tools<br/>Shared Parameter Interfaces"]
+        B --> C["Generate Queries"] --> D["Query paired with sibling tools<br/>Parameters fit, functionality does not"]
+    end
+    D --> E["Input: User query + semantically irrelevant but structurally aligned tool"]
+    E --> CAA["Contrastive Attention Attribution (CAA)<br/>Tracing invocation tokens back to input"]
+    CAA --> F["Semantic Check Path<br/>Semantic consistency: Function ↔ Goal"]
+    CAA --> G["Structural Match Path<br/>Structural mapping: Attribute ↔ Parameter"]
+    F --> H["Path Rebalancing<br/>Enhance Semantic Check / Dampen Structural Match"]
+    G --> H
+    H -->|Bias suppressed| I["Ideal Output: Reject Invocation"]
+```
 
 ### Key Designs
 
-1. **SABEval Dataset (Based on Polymorphism Principle)**:
-    - **Function**: Strictly isolates scenarios that are "structurally aligned but semantically irrelevant."
-    - **Mechanism**: A three-step construction: (1) Hierarchical tool construction—deriving sibling tools sharing the same parameter interface from tool templates (e.g., "Nintendo Game Query" and "PlayStation Game Query" both share `game_title` + `region` parameters); (2) Query generation for each tool; (3) Sibling pairing—pairing a query with its sibling tool to ensure structural alignment despite semantic irrelevance. It includes 101 tool templates, 5 queries per tool, and 10 sibling combinations, totaling 5,050 samples where no valid tool is available—any invocation is an error.
-    - **Design Motivation**: Random pairing in existing datasets causes structural misalignment, failing to distinguish if the model refuses due to "semantic irrelevance" or "unfillable parameters."
+**1. SABEval Dataset: Isolating pure structural alignment via polymorphism.** Existing evaluations use random pairing to create "irrelevant tools," but random pairings often fail even at the parameter level. Thus, model rejection could stem from "understanding semantic irrelevance" or simply "parameter misalignment." SABEval borrows the concept of polymorphism from software engineering—where different services share the same interface—to create structurally aligned but semantically distinct sibling tools. Sibling tools are derived from a tool template and share the same parameter interface (e.g., "Nintendo Game Search" and "PlayStation Game Search" both accept `$game_title$ + $region$`). Queries generated for one tool are then paired with its sibling tools. This ensures that parameters can be filled but the functionality is irrelevant, making any invocation an error. The dataset contains 101 tool templates, 5 queries per tool, and 10 sibling combinations, totaling 5,050 samples where no valid tool is available.
 
-2. **Contrastive Attention Attribution (CAA)**:
-    - **Function**: Reveals the information flow during tool invocation decision-making.
-    - **Mechanism**: Traces attribution from tool invocation tokens back to input tokens, identifying two competing paths: (1) **Semantic check path**—focuses on semantic consistency between tool descriptions and query goals; (2) **Structural matching path**—focuses on the structural mapping between query attributes and tool parameters. The relative strength of these paths determines the final invocation decision.
-    - **Design Motivation**: Traditional counterfactual analysis requires strict token-level correspondence, which is difficult in tool invocation due to varying lengths of descriptions and queries. CAA bypasses this limitation.
+**2. Contrastive Attention Attribution (CAA): Decomposing information flow into competing paths.** To explain why models are misled, counterfactual attribution is typically used. However, traditional counterfactual analysis requires token-level correspondence between compared inputs, which is impossible in tool invocation due to varying lengths of tool descriptions and queries. CAA bypasses this by directly tracing attention attribution from tool invocation tokens back to input tokens, identifying two competing paths: the **Semantic Check Path**, which focuses on the semantic consistency between tool descriptions and query goals, and the **Structural Match Path**, which focuses on the structural mapping between query attributes and tool parameters. Whether a tool is invoked depends on the relative strength of these two paths; SAB occurs when the structural match path overpowers the semantic check path.
 
-3. **Path Rebalancing Strategy**:
-    - **Function**: Mitigates structural alignment bias without compromising normal tool usage capabilities.
-    - **Mechanism**: Based on the two paths identified by CAA, it enhances the relative strength of the semantic check path (or suppresses the structural matching path) to achieve an 80% relative error reduction.
-    - **Design Motivation**: Eliminates the need for model retraining by precisely intervening in the discovered competition mechanism.
+**3. Path Rebalancing: Precise intervention on the competition mechanism.** Since the bias stems from an imbalance between the two paths, mitigation does not require retraining the entire model. Instead, interventions are applied to the mechanisms identified by CAA: enhancing the relative strength of the semantic check path or dampening the influence of the structural match path. This inference-time intervention achieves approximately an 80% relative reduction in errors and, because it only affects competing paths without altering model weights, essentially preserves normal tool-use capabilities.
 
 ## Key Experimental Results
 
@@ -78,38 +81,38 @@ Problem identification → SABEval dataset construction (decoupling structural a
 | Structural Alignment Degree | Error Invocation Rate |
 |------------|---------|
 | No Alignment (Random Pairing) | <0.2% |
-| Base Alignment (SABEval D0) | 41.9% |
-| Stronger Alignment (+4 Params) | **90.4%** |
+| Basic Alignment (SABEval D0) | 41.9% |
+| Stronger Alignment (+4 Parameters) | **90.4%** |
 
 ### Key Findings
-- **Structural alignment bias is highly severe**: Error rates are <0.2% without alignment but soar to 41.9% with structural alignment, reaching 90.4% under stronger alignment.
-- **All 5 mainstream tool-augmented LLMs are affected**, indicating a systemic issue.
-- **Counterfactual analysis confirms causality**: There is a strong causal link between structural alignment and erroneous invocations.
-- **CAA successfully identifies competing paths**: Specifically, the semantic check path and the structural matching path.
-- **Path rebalancing achieves 80% relative error reduction** without damaging normal tool invocation performance.
+- **Structural Alignment Bias is severe**: Error rates are <0.2% without alignment but spike to 41.9% with structural alignment and reach 90.4% with stronger alignment.
+- **All 5 mainstream tool-augmented LLMs are affected**, indicating a systematic issue.
+- **Counterfactual analysis confirms causality**: There is a strong causal link between structural alignment and erroneous invocation.
+- **CAA successfully identifies two competing paths**: The semantic check path and the structural match path.
+- **Path rebalancing achieves 80% relative error reduction** without compromising normal tool usage.
 
 ## Highlights & Insights
-- **Discovery and formalization of "structural alignment bias"** is the primary contribution, revealing a prevalent but overlooked safety risk with direct implications for deploying tool-augmented LLMs.
-- **The SABEval methodology** (based on object-oriented polymorphism) is ingenious—borrowing from software engineering to design realistic evaluation scenarios.
-- **The complete chain** from behavioral analysis to internal mechanisms and eventual mitigation demonstrates an interpretability-driven paradigm for safety improvement.
+- The **discovery and formalization of "Structural Alignment Bias"** is the primary contribution—revealing a widespread but overlooked safety risk with direct implications for deploying tool-augmented LLMs.
+- The **SABEval construction methodology** (based on the OOP polymorphism principle) is ingenious—borrowing from software engineering to design realistic evaluation data.
+- The **complete chain from behavioral analysis to internal mechanism to mitigation** demonstrates an interpretability-driven paradigm for safety improvement.
 
 ## Limitations & Future Work
 - SABEval construction relies on GPT-4o for generating additional parameters, which may introduce bias.
-- The effectiveness of path rebalancing might vary across model architectures.
-- Only verified on 5 models; performance of larger models (70B+) remains unknown.
-- Does not consider multi-tool selection scenarios (currently single-tool judgment).
-- The root of the bias likely lies in pre-training data, where the vast majority of tool invocation examples are positive instances.
+- The effectiveness of path rebalancing may vary across different model architectures.
+- Verified only on 5 models; the performance of larger-scale models (70B+) remains unknown.
+- Multi-tool selection scenarios were not considered (the focus was on single-tool judgment).
+- The root of the bias likely lies in pre-training data, where most tool invocation examples are positive instances.
 
 ## Related Work & Insights
-- **vs. Patil et al. (2025) / Existing Benchmarks**: Existing evaluations confound structural alignment and semantic relevance; this work decouples them for the first time.
-- **vs. Tool Selection Research**: Tool selection focuses on "which tool to pick," whereas this work focuses on "whether any tool should be invoked at all."
-- **vs. Attention Attribution Methods**: Traditional methods require token-level correspondence for counterfactual pairs; CAA relaxes this constraint.
+- **vs. Patil et al. (2025) / Existing Benchmarks**: Existing benchmarks confound structural alignment with semantic relevance; this work is the first to decouple them.
+- **vs. Tool Selection Research**: Tool selection focuses on "which tool to choose," while this work focuses on "whether any tool should be invoked."
+- **vs. Attention Attribution Methods**: Traditional methods require token-level correspondence between counterfactual pairs; CAA relaxes this constraint.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Problem identification + formalization + dataset + mechanism analysis + mitigation; full-chain innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 models + causal analysis + degree experiments + rebalancing verification.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 models + causal analysis + degree experiments + rebalancing validation.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition and rigorous experimental design.
-- Value: ⭐⭐⭐⭐⭐ Direct guidance for the secure deployment of tool-augmented LLMs.
+- Value: ⭐⭐⭐⭐⭐ Direct guiding significance for the secure deployment of tool-augmented LLMs.
 
 <!-- RELATED:START -->
 
@@ -119,9 +122,9 @@ Problem identification → SABEval dataset construction (decoupling structural a
 
 - [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
-- [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](../../AAAI2026/interpretability/hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
 - [\[ACL 2026\] Dual Alignment Between Language Model Layers and Human Sentence Processing](dual_alignment_between_language_model_layers_and_human_sentence_processing.md)
 - [\[NeurIPS 2025\] Distributional Autoencoders Know the Score](../../NeurIPS2025/interpretability/distributional_autoencoders_know_the_score.md)
+- [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](../../AAAI2026/interpretability/hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
 
 </div>
 

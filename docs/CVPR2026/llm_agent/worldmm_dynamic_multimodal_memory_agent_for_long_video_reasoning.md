@@ -2,79 +2,95 @@
 title: >-
   [Paper Note] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 description: >-
-  [CVPR 2026][LLM Agent][Multimodal Memory] This paper proposes WorldMM, a video reasoning agent based on multimodal memory, which constructs three complementary memory types: episodic memory (multi-temporal-scale textual…
+  [CVPR 2026][LLM Agent][Paper Note] This paper proposes WorldMM, a video reasoning agent based on multimodal memory. It constructs three complementary types of memory: episodic memory (multi-time-scale textual knowledge graph), semantic memory (continuously updated relational knowledge graph), and visual memory (frame-level retrieval library). Through an
 tags:
-  - "CVPR 2026"
-  - "LLM Agent"
-  - "Multimodal Memory"
-  - "Long Video Understanding"
-  - "Adaptive Retrieval"
-  - "Knowledge Graph"
-  - "Multi-Temporal Scale"
+  - CVPR 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: d1c96965319106a6
+content_hash: bab07f964e492b0b
 ---
-
 # WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.02425](https://arxiv.org/abs/2512.02425)  
 **Code**: [https://worldmm.github.io](https://worldmm.github.io)  
-**Area**: Video Understanding / LLM Agent / Long Video Reasoning
-**Keywords**: Multimodal Memory, Long Video Understanding, Adaptive Retrieval, Knowledge Graph, Multi-Temporal Scale
+**Area**: Video Understanding / LLM Agent / Long Video Reasoning  
+**Keywords**: Multimodal Memory, Long Video Understanding, Adaptive Retrieval, Knowledge Graph, Multi-time-scale
 
 ## TL;DR
-This paper proposes WorldMM, a video reasoning agent based on multimodal memory, which constructs three complementary memory types: episodic memory (multi-temporal-scale textual knowledge graphs), semantic memory (continuously updated relational knowledge graphs), and visual memory (frame-level retrieval stores). An adaptive multi-round retrieval agent dynamically selects the most relevant memory source and temporal granularity, achieving an average improvement of 8.4% over the previous state of the art across five long video QA benchmarks.
+This paper proposes WorldMM, a video reasoning agent based on multimodal memory. It constructs three complementary types of memory: episodic memory (multi-time-scale textual knowledge graph), semantic memory (continuously updated relational knowledge graph), and visual memory (frame-level retrieval library). Through an adaptive multi-round retrieval agent, it dynamically selects the most relevant memory sources and temporal granularities, outperforming the previous SOTA by an average of 8.4% across five long-video QA benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: Video LLMs have demonstrated strong capabilities on short video understanding, yet extending them to long videos spanning hours or even days remains highly challenging. Existing memory-augmented methods (e.g., EgoRAG, M3-Agent) alleviate context capacity limitations by constructing textual summaries of video segments for external memory retrieval.
-2. **Limitations of Prior Work**: Two core limitations exist: (a) over-reliance on textual representations—almost all existing methods convert events into text descriptions for retrieval and reasoning, discarding critical visual details required for attribute recognition, spatial reasoning, and similar tasks. Even M3-Agent, which uses visual input during memory construction, relies primarily on text at inference time. (b) Fixed temporal-scale retrieval—"where did I put my glasses" may require only a few seconds of video, while "what happened in the second half" demands a much longer temporal window, yet existing methods retrieve segments of a predetermined length (e.g., three 30-second clips) and cannot flexibly adapt to different queries.
-3. **Key Challenge**: The multimodal nature of information in long videos (text cannot fully express visual details) and its multi-scale temporal structure (different events span different time ranges) demand that memory and retrieval systems be adaptive in both modality and scale, whereas existing methods are fixed in both dimensions.
-4. **Goal**: (1) How can both textual and visual memory be leveraged simultaneously to support reasoning? (2) How can information be retrieved across multiple temporal scales? (3) How can the model autonomously decide when to consult text, when to consult images, and when to stop?
-5. **Key Insight**: By analogy with the human memory system—episodic memory stores specific events, semantic memory stores abstract knowledge, and visual memory retains sensory details—three complementary memory types are constructed and dynamically combined through an iterative retrieval agent.
-6. **Core Idea**: Three complementary multimodal memories (episodic + semantic + visual) combined with an adaptive multi-round retrieval agent enable on-demand selection of information modality and temporal granularity for reasoning over long videos.
+1. **Background**: Video LLMs have demonstrated strong capabilities in short video understanding, but extending them to long videos spanning hours or even days remains extremely challenging. Existing memory-augmented methods (e.g., EgoRAG, M3-Agent) mitigate context capacity limitations by performing external memory retrieval on textual summaries of video segments.
+2. **Limitations of Prior Work**: Two core limitations exist—(a) Over-reliance on textual representation: almost all existing methods convert events into textual descriptions for retrieval and reasoning, losing critical information such as attribute recognition and spatial reasoning that require visual details. Even if M3-Agent uses visual input during memory construction, it primarily relies on text during reasoning. (b) Fixed-scale retrieval: "Where were the glasses placed?" might only require a few seconds of video, whereas "What happened in the second half?" requires a longer time range. Existing methods retrieve segments of predefined lengths (e.g., three 30-second clips), failing to adapt flexibly to different queries.
+3. **Key Challenge**: The multimodality of information in long videos (text cannot fully express visual details) and multi-scale nature (different events span different time ranges) require memory and retrieval systems to possess modality and scale adaptivity, areas where existing methods remain static.
+4. **Goal**: (1) How to simultaneously utilize textual and visual memory to support reasoning? (2) How to retrieve information across multiple time scales? (3) How to allow the model to autonomously decide when to look at text, when to look at images, and when to stop?
+5. **Key Insight**: By analogy to the human memory system—where episodic memory stores specific events, semantic memory stores abstract knowledge, and visual memory retains sensory details—this work constructs three complementary memory types and combines them dynamically via an iterative retrieval agent.
+6. **Core Idea**: Three complementary multimodal memories (Episodic + Semantic + Visual) combined with an adaptive multi-round retrieval agent to achieve reasoning that selects information modality and temporal granularity on demand in long videos.
 
 ## Method
 
 ### Overall Architecture
-WorldMM operates in three stages: (1) multimodal memory construction—building episodic, semantic, and visual memories from the video stream; (2) adaptive memory retrieval—a retrieval agent iteratively selects memory sources and queries until sufficient information is gathered; (3) response generation—the retrieval history and original question are passed to a response agent to produce the final answer.
+WorldMM decomposes long video understanding into three phases: "Memory Construction → Memory Retrieval → Question Answering." **Phase 1** constructs three complementary memories offline from the video stream: episodic memory (factual events), semantic memory (high-level concepts), and visual memory (appearance details). **Phase 2** involves an online retrieval agent that adaptively decides "which memory to query and what to query" over multiple rounds until sufficient information is gathered. **Phase 3** delivers the retrieval history along with the original question to a response agent to generate the final answer. The core mechanism uses three heterogeneous memories to cover the information needs of "what specifically happened / what are the long-term patterns / what does it look like," scheduled by the agent as needed.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Long Video Stream"] --> MEM
+    subgraph MEM["Offline Construction of Three Complementary Memories"]
+        direction TB
+        B["Episodic Memory<br/>Multi-scale KG, capturing events at different granularities"]
+        C["Semantic Memory<br/>Incremental integration of long-term patterns"]
+        D["Visual Memory<br/>Retains appearance details (feature/timestamp retrieval)"]
+    end
+    Q["Question q"] --> R
+    MEM --> R["Adaptive Multi-round Retrieval Agent<br/>Selects (source, query) per round, continues as needed"]
+    R -->|Insufficient info, change source/query| R
+    R -->|STOP| RESP["Response Agent<br/>Generates answer based on retrieval history"]
+```
 
 ### Key Designs
 
-1. **Episodic Memory**:
+**1. Episodic Memory: Multi-scale KG for capturing events at different granularities**
 
-    - **Function**: Indexes factual events at multiple temporal resolutions.
-    - **Mechanism**: The video is first segmented at the finest temporal scale $t_0$, and captions are generated using a Video LLM. A set of multi-scale temporal resolutions $\mathcal{T} = \{t_0, t_1, ..., t_N\}$ (e.g., 30s / 3min / 10min / 1h) is defined; at each scale $t_i$, captions are converted into factual triples (entity–action–entity) to construct a knowledge graph $G_{t_i}$. The episodic memory is thus a set of multi-scale knowledge graphs $\mathcal{M}_e = \{G_{t_0}, ..., G_{t_N}\}$. Retrieval follows a coarse-to-fine strategy: Personalized PageRank (PPR) first retrieves top-$k$ candidates from graphs at each scale, after which an LLM serves as a cross-scale re-ranker to select the most relevant temporal range and content.
-    - **Design Motivation**: A fixed single temporal scale cannot capture events at different granularities ranging from seconds to hours. Multi-scale graphs ensure that both fine-grained event details and long-range narratives can be captured.
+A single time scale cannot accommodate both "second-level actions" and "hour-level narratives." Episodic memory therefore indexes events at **multiple temporal resolutions**: first, the video is segmented at the finest scale $t_0$ where a Video LLM generates captions. Then, a set of scales $\mathcal{T} = \{t_0, t_1, ..., t_N\}$ (e.g., 30s/3min/10min/1h) is defined. At each scale, captions are converted into factual triplets (entity-action-entity) to construct a knowledge graph $G_{t_i}$, resulting in a set of multi-scale graphs $\mathcal{M}_e = \{G_{t_0}, ..., G_{t_N}\}$. Retrieval follows a **coarse-to-fine** approach: Personalized PageRank (PPR) identifies top-k candidates from each scale graph, followed by LLM-based cross-scale reranking to select the most relevant time range and content.
 
-2. **Semantic Memory**:
+**2. Semantic Memory: Incremental integration of "long-term patterns"**
 
-    - **Function**: Continuously updated high-level conceptual knowledge (relationships, habits, etc.).
-    - **Mechanism**: The video is segmented at a coarse temporal scale $t_s$, and semantic triples (focusing on conceptual knowledge rather than specific events) are generated for each segment. A consolidation process incrementally merges new knowledge into an evolving semantic graph: embedding similarity is first used to identify overlapping or conflicting triples, and an LLM then determines which outdated triples $T_{remove}$ should be deleted and which $T_{update}$ should be updated or added: $Consolidate(G_{t_s}^k, T_{t_s}^{k+1}) = (G_{t_s}^k \setminus T_{remove}) \cup T_{update}$.
-    - **Design Motivation**: Episodic memory is composed of independent events and cannot maintain continuity across scenes or capture high-level knowledge (e.g., "the user habitually uses kitchen wipes"). Semantic memory addresses this gap through continuous consolidation.
+Episodic memory consists of independent events and fails to distill high-level knowledge across scenes, such as "the user typically uses kitchen wipes." Semantic memory segments the video at a coarser scale $t_s$, generating triplets focused on **concepts** rather than specific events. These are continuously merged into an evolving semantic graph via `Consolidate`: embedding similarity identifies overlapping or conflicting triplets, and an LLM determines outdated information $T_{remove}$ to be deleted and new/updated information $T_{update}$:
 
-3. **Visual Memory**:
+$$Consolidate(G_{t_s}^k, T_{t_s}^{k+1}) = (G_{t_s}^k \setminus T_{remove}) \cup T_{update}$$
 
-    - **Function**: Preserves spatial and appearance details that text cannot fully express.
-    - **Mechanism**: Two retrieval modes are supported. (a) Feature retrieval: the video is divided into short clips, each encoded into visual features $\mathcal{M}_v^f = \{f_v^1, ..., f_v^L\}$ using a multimodal encoder (VLM2Vec-V2), and matched against text queries via cosine similarity. (b) Timestamp retrieval: each frame is stored paired with its timestamp $\mathcal{M}_v^I = \{(t_i, I_i)\}$, enabling direct frame access once episodic retrieval has identified the relevant temporal segment.
-    - **Design Motivation**: When verifying visual details such as the type of baked goods or the color of an object, textual descriptions are insufficiently precise. The dual-mode design covers both "search by semantics" and "retrieve by timestamp" use cases.
+This step allows the memory to "forget the old and remember the new," rather than accumulating data blindly.
 
-4. **Adaptive Multi-Round Retrieval Agent**:
+**3. Visual Memory: Retaining appearance details beyond text**
 
-    - **Function**: Dynamically decides at each round which memory to query and what to query, and when to stop.
-    - **Mechanism**: The retrieval agent $\mathcal{R}$ takes the user question $q$ and prior retrieval history $r_{<i}$ as input, and at each round outputs a (memory source $m_i$, query $q_i$) pair or a STOP signal. The process iterates for at most $N$ rounds. Each round's retrieval result is appended to the history before the next round begins, until the agent determines that sufficient information has been gathered or the maximum number of rounds is reached.
-    - **Design Motivation**: Different questions require different types and amounts of information, and a fixed strategy cannot satisfy all cases. Iterative retrieval allows the model to revise its retrieval strategy when the first round is unsatisfactory, progressively refining results.
+For questions like "What was that baked item?" or "What color is the object?", textual descriptions are often imprecise. Visual memory provides two access modes: (a) **Feature Retrieval**—segmenting the video into short clips and encoding them with a multimodal encoder (VLM2Vec-V2) into $\mathcal{M}_v^f = \{f_v^1, ..., f_v^L\}$, matched against text queries via cosine similarity; (b) **Timestamp Retrieval**—storing each frame with a timestamp $\mathcal{M}_v^I = \{(t_i, I_i)\}$, directly retrieving frames once the episodic memory has locked onto a specific time segment. The former handles "semantic-based image search," while the latter handles "time-based frame extraction."
 
-### Loss & Training
-WorldMM is an inference-time framework and requires no additional training. Memory construction uses GPT-5-mini; the retrieval and response agents use GPT-5 or Qwen3-VL-8B respectively.
+**4. Adaptive Multi-round Retrieval Agent: Deciding whom to query and when to stop**
+
+The three memories are not queried simultaneously. Instead, they are scheduled by the retrieval agent $\mathcal{R}$. Taking the question $q$ and historical retrieval results $r_{<i}$ as input, it outputs a (memory source $m_i$, query $q_i$) pair or a STOP command in each round, iterating for a maximum of $N$ rounds. Each result is merged into the history for the next round—if unsatisfied with the first round, the agent can switch sources or refine the query. This is the source of the "dynamic" nature: fixed retrieval strategies cannot handle diverse questions.
+
+### A full walkthrough ("What color were the oven mitts I used last time?")
+1. **Round 1**: The Agent determines this requires "finding a specific event + observing appearance." It queries **Episodic Memory** first—PPR retrieves the "using oven mitts" event in multi-scale graphs, and cross-scale reranking pinpoints approximately the 38th minute.
+2. **Round 2**: The time segment is known, but the color is missing from the text. The Agent switches to **Visual Memory** timestamp retrieval to fetch frames around the 38th minute.
+3. **Round 3**: Visual discrimination on the retrieved frames yields "red." With sufficient info, the Agent issues STOP.
+4. **Response**: The Response Agent generates "Red" based on the retrieval history.
+
+If the question were "Where do I usually put the mitts?", the first round would instead query **Semantic Memory** to retrieve the consolidated habit triplets—demonstrating the Agent's ability to switch memory sources based on question type.
+
+### Training Strategy
+WorldMM is an inference-time framework and **requires no additional training**. Memory construction utilizes GPT-5-mini, while the retrieval and response agents use GPT-5 or Qwen3-VL-8B.
+
+> ⚠️ Data Note: The backbone names (e.g., GPT-5 / GPT-5-mini) in the original text have not been independently verified and are subject to the original paper's claims.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | EgoLifeQA | Ego-R1 Bench | HippoVlog | LVBench | Video-MME(L) | Avg. |
-|---|---|---|---|---|---|---|
+|------|-----------|-------------|-----------|---------|-------------|------|
 | GPT-5 (base) | 48.6 | 46.3 | 75.7 | 60.4 | 74.3 | 61.1 |
 | HippoRAG | 59.6 | 56.0 | 63.2 | 54.0 | 52.1 | 57.0 |
 | M3-Agent | 53.5 | 52.0 | 65.5 | 49.3 | 55.3 | 55.1 |
@@ -83,10 +99,10 @@ WorldMM is an inference-time framework and requires no additional training. Memo
 | **WorldMM-GPT** | **65.6** | **65.3** | **78.3** | **61.9** | **76.6** | **69.5** |
 
 ### Ablation Study
-Effect of different memory combinations:
+Effects of different memory combinations:
 
 | Configuration | EgoLifeQA | Ego-R1 | HippoVlog | LVBench | Video-MME | Avg. |
-|---|---|---|---|---|---|---|
+|------|-----------|--------|-----------|---------|-----------|------|
 | E only | 62.6 | 57.0 | 73.6 | 60.6 | 72.7 | 64.9 |
 | V only | 37.2 | 34.2 | 51.3 | 47.4 | 64.2 | 44.9 |
 | E+S | 63.4 | 61.0 | 73.8 | 58.8 | 74.1 | 66.8 |
@@ -94,34 +110,34 @@ Effect of different memory combinations:
 | **E+S+V** | **65.6** | **65.3** | **78.3** | **61.9** | **76.6** | **69.5** |
 
 ### Key Findings
-- **Complementarity of multimodal memories**: Each memory type contributes distinctively—episodic memory forms the foundation (standalone 64.9 vs. visual-only 44.9); visual memory substantially improves EntityLog/EventRecall question types; semantic memory substantially improves HabitInsight (+23%) and RelationMap question types.
-- **Necessity of adaptive retrieval**: Significant variation in memory utilization patterns across question categories is observed—EntityLog questions rely more heavily on visual memory, while HabitInsight questions rely more heavily on semantic memory, demonstrating that the model does dynamically select the most relevant memory source.
-- **Clear benefit of multi-round retrieval**: Allowing up to 5 retrieval rounds improves performance on EgoLifeQA by 9.3% compared to single-round retrieval, as the model can revise its strategy when the first round is suboptimal.
-- **Temporal localization accuracy far exceeds baselines**: WorldMM achieves a tIoU of approximately 10%, substantially outperforming the 2–4% of other methods, demonstrating that multi-scale retrieval significantly improves temporal segment localization.
-- **Efficiency advantage**: Through adaptive termination and selective retrieval, WorldMM achieves a superior latency–accuracy trade-off compared to all baselines.
+- **Complementarity of Multimodal Memory**: All three memories contribute—episodic memory is the foundation (64.9 alone vs. visual 44.9), visual memory significantly improves EntityLog/EventRecall questions, and semantic memory significantly boosts HabitInsight (+23%) and RelationMap questions.
+- **Necessity of Adaptive Retrieval**: Significant differences exist in memory utilization across question categories—EntityLog uses more visual memory, while HabitInsight uses more semantic memory, indicating the model dynamically selects the most relevant source.
+- **Multi-round Retrieval Gain**: Allowing up to 5 rounds of retrieval improves EgoLifeQA by 9.3% over single-round retrieval, as the model can correct strategies if the first round is sub-optimal.
+- **Superior Temporal Localization**: WorldMM achieves a tIoU of approximately 10%, far exceeding the 2-4% of other methods, indicating that multi-scale retrieval significantly improves temporal segment localization.
+- **Efficiency Advantages**: Through adaptive termination and selective retrieval, WorldMM outperforms all baselines in the latency-accuracy trade-off.
 
 ## Highlights & Insights
-- **Analogy-driven design based on the human memory system**: The division into episodic, semantic, and visual memory directly corresponds to memory classifications in cognitive psychology. This design possesses theoretical elegance, and experiments confirm the unique contribution of each memory type. The framework is transferable to any AI agent system requiring long-term memory management.
-- **Elegant design of multi-scale episodic memory**: Knowledge graphs at different scales provide event information at different granularities, and the coarse-to-fine retrieval strategy naturally supports information acquisition from macro to micro levels. This idea is transferable to document understanding (paragraph-level / sentence-level / word-level retrieval).
-- **Incremental consolidation mechanism for semantic memory**: Continuous knowledge updating via embedding matching followed by LLM arbitration provides a concise and effective solution to the long-term knowledge maintenance problem.
+- **Design Inspired by Human Memory**: The division into episodic, semantic, and visual memory directly corresponds to psychological memory classification. This design is theoretically elegant and experimentally proven to show unique contributions from each. It is transferable to any AI agent system requiring long-term memory management.
+- **Exquisite Multi-scale Episodic Memory**: Different scales of KGs provide event information at various granularities. The coarse-to-fine retrieval strategy naturally supports information acquisition from macro to micro levels. This approach can be transferred to document understanding (paragraph/sentence/word-level retrieval).
+- **Incremental Consolidation for Semantic Memory**: Implementing continuous knowledge updates through embedding matching + LLM adjudication effectively solves long-term knowledge maintenance in a concise and efficient manner.
 
 ## Limitations & Future Work
-- Visual memory alone performs poorly (Avg. 44.9), indicating that current visual indexing and retrieval techniques remain a bottleneck.
-- The memory construction stage relies on GPT-5-mini, incurring high cost and latency.
-- For questions requiring fine-grained temporal reasoning, the tIoU of multi-scale memory remains at approximately 10%, leaving substantial room for improvement.
-- The quality of semantic memory consolidation depends on the accuracy of LLM judgments, which may introduce error propagation.
-- The incorporation of RL or feedback mechanisms during memory construction to improve memory quality remains unexplored.
+- Visual memory performs poorly when used alone (Avg 44.9), indicating that current visual indexing and retrieval techniques remain a bottleneck.
+- The memory construction phase relies on GPT-5-mini, leading to high costs and latency.
+- For questions requiring precise temporal reasoning, even multi-scale memory tIoU is only about 10%, leaving significant room for improvement.
+- The consolidation quality of semantic memory depends on LLM judgment accuracy, risking error propagation.
+- Exploring the introduction of RL or feedback mechanisms during the memory construction phase to improve quality has not yet been attempted.
 
 ## Related Work & Insights
-- **vs. EgoRAG**: EgoRAG uses only hierarchical textual memory, whereas WorldMM adds visual memory and semantic memory and introduces adaptive retrieval, improving EgoLifeQA performance from 52.0 to 65.6.
-- **vs. M3-Agent**: M3-Agent constructs entity-centric long-term memory and supports iterative reasoning, but relies solely on textual representations. WorldMM achieves substantial gains under equivalent conditions through multimodal memory (55.1→69.5).
-- **vs. HippoMM**: HippoMM proposes dual-process memory (semantic summaries + multimodal cues), but its visual utilization is limited. WorldMM's adaptive retrieval strategy is more flexible, yielding significantly stronger performance (51.8→69.5).
+- **vs EgoRAG**: EgoRAG uses only hierarchical textual memory. WorldMM adds visual and semantic memories and introduces adaptive retrieval, improving EgoLifeQA from 52.0 to 65.6.
+- **vs M3-Agent**: M3-Agent builds entity-centric long-term memory and supports iterative reasoning but relies solely on textual representation. WorldMM achieves massive gains (55.1→69.5) under similar conditions via multimodal memory.
+- **vs HippoMM**: HippoMM proposes dual-process memory (semantic summary + multimodal cues), but visual utilization is limited. WorldMM's adaptive retrieval strategy is more flexible and significantly more powerful (51.8→69.5).
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The multimodal memory framework design is innovative, though the RAG + LLM agent paradigm is already mature.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Five benchmarks spanning hourly to weekly video lengths, extensive ablation studies, memory utilization analysis, and efficiency analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and intuitive conceptual diagrams, though notation is somewhat dense.
-- **Value**: ⭐⭐⭐⭐⭐ Provides an effective framework paradigm for long video understanding and AI agent memory management.
+- Novelty: ⭐⭐⭐⭐ The multimodal memory framework design is innovative, though the RAG + LLM agent paradigm is becoming mature.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five benchmarks (from hours to weeks), extensive ablation studies, memory utilization analysis, and efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive conceptual diagrams, though notation is slightly dense.
+- Value: ⭐⭐⭐⭐⭐ Provides an effective framework paradigm for long video understanding and AI agent memory management.
 
 <!-- RELATED:START -->
 
@@ -130,10 +146,10 @@ Effect of different memory combinations:
 ## Related Papers
 
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
+- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
+- [\[CVPR 2026\] ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory](vilomem_agentic_learner_with_grow-and-refine_multimodal_semantic_memory.md)
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
-- [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
-- [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
-- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
 
 </div>
 

@@ -2,87 +2,85 @@
 title: >-
   [Paper Note] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Narrative Reformulation] This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through s…
+  [ACL 2026][Code Intelligence][Paper Note] This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through structured reasoning with three narrative components—Task Overview, Constraints, and Examples—it achieves an average zero-shot pass@10 improvement of 18.7%
 tags:
-  - "ACL 2026"
-  - "Code Intelligence"
-  - "Narrative Reformulation"
-  - "Code Generation"
-  - "Prompt Engineering"
-  - "Structured Reasoning"
-  - "Algorithm Selection"
+  - ACL 2026
+  - Code Intelligence
 date: 2026-05-08
-content_hash: 73c39e2261c6435a
+content_hash: 45e1d092ed42cb2b
 ---
-
 # StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.14631](https://arxiv.org/abs/2604.14631)  
-**Code**: Available  
+**Code**: Yes  
 **Area**: Code Intelligence  
 **Keywords**: Narrative Reformulation, Code Generation, Prompt Engineering, Structured Reasoning, Algorithm Selection
 
 ## TL;DR
 
-This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through structured reasoning with three narrative components—task overview, constraints, and examples—it achieves an average improvement of 18.7% in zero-shot pass@10 across 11 models.
+This paper proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through structured reasoning with three narrative components—Task Overview, Constraints, and Examples—it achieves an average zero-shot pass@10 improvement of 18.7% across 11 models.
 
 ## Background & Motivation
 
-**Background**: The performance of code generation depends not only on model capability but also on how the problem is represented. Existing methods primarily enhance performance by adding reasoning steps (CoT, SCoT) or through repeated sampling, but they do not alter the problem description itself; fragmented and imperative problem conditions remain unchanged.
+**Background**: The performance of code generation depends not only on model capability but also on how the problem is represented. Existing methods primarily improve performance by increasing reasoning steps (CoT, SCoT) or through repeated sampling, but they do not alter the problem description itself; fragmented, imperative problem conditions remain unchanged.
 
-**Limitations of Prior Work**: Programming task descriptions are often incomplete or ambiguous, requiring the solver to infer missing details from context. CoT introduces reasoning steps without changing the input representation; repeated sampling expands the output space without improving understanding; while SCoT introduces program structure, none of these methods address the fundamental issue of fragmented problem statements.
+**Limitations of Prior Work**: Programming task descriptions are often incomplete or ambiguous, requiring the solver to infer missing details from context. CoT introduces reasoning steps without changing the input representation; repeated sampling expands the output but does not improve understanding; although SCoT introduces program structure, none of these methods address the fundamental issue of fragmented problem formulation.
 
-**Key Challenge**: Cognitive science research indicates that humans are more effective at understanding and reasoning when fragmented conditions are organized into coherent mental models. However, LLMs directly face fragmented problem descriptions, making it difficult to form a unified problem representation, which leads to disorganized reasoning paths.
+**Key Challenge**: Cognitive science research indicates that humans reason more effectively when organizing fragmented conditions into coherent mental models. However, LLMs directly confront fragmented problem descriptions, making it difficult to form a unified problem representation, which leads to confused reasoning paths.
 
 **Goal**: To design a narrative reformulation framework that transforms coding problems into coherent natural language descriptions, providing a richer contextual structure than simple paraphrasing.
 
-**Key Insight**: Inspired by analogical reasoning and mental model theories in cognitive science—humans reason better by organizing information into coherent structures. By transforming programming problems into "stories," the model can understand and solve problems within more natural language structures.
+**Key Insight**: Inspired by analogical reasoning and mental model theories in cognitive science—humans reason better by organizing information into coherent structures. By transforming programming problems into "stories," the model is encouraged to understand and solve problems within more natural language structures.
 
-**Core Idea**: The model first selects the appropriate algorithm category and narrative genre, then reformulates the programming problem into a three-part narrative consisting of a task overview, constraints, and examples. This structured natural language representation replaces the original fragmented description to guide code generation.
+**Core Idea**: The model first selects an appropriate algorithm category and narrative genre, then reformulates the programming problem into a three-part narrative containing a Task Overview, Constraints, and Examples. This structured natural language representation replaces the original fragmented description to guide code generation.
 
 ## Method
 
 ### Overall Architecture
 
-Given a programming problem $Q_i$: (i) The model first identifies the algorithm category $a_i$ (selected from 8 predefined categories) and chooses a narrative genre $g_i$; (ii) The problem is reformulated into a structured narrative $\mathcal{N}_i$, containing a task overview, constraints, and example inputs/outputs; (iii) The narrative is passed to a solver model to generate code, which is verified via test cases. Each problem generates $N=5$ narrative variants.
+StoryCoder is a pure inference-time prompting framework. Its core action is to rewrite the fragmented problem statement into a coherent natural language "story" before writing code. Given a programming problem $Q_i$, the model first identifies its algorithm category $a_i$ (selected from 8 predefined categories) and chooses a matching narrative genre $g_i$. Based on these, the problem is reformulated into a structured narrative $\mathcal{N}_i$ (containing Task Overview, Constraints, and Examples). $N=5$ narrative variants are generated for the same problem to cover different perspectives. Finally, the narratives are passed to a solver model to generate code, which is then verified using test cases.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Programming Problem Q_i (Fragmented Statement)"] --> A["Algorithm-guided Genre Selection<br/>Select a_i from 8 classes → Choose matching genre g_i"]
+    A --> N["Three-part Narrative Structure<br/>Task Overview TO + Constraints C + Examples E"]
+    N -->|"Temp 1.0 for Diversity"| S["Narrative Diversity Sampling<br/>N=5 Variants (Narr.-only / Prompt-concat)"]
+    S -->|"Temp 0.2 for Accuracy"| G["Solver Model Generates Code"]
+    G --> V["Test Case Verification"]
+    V --> O["Final Code"]
+```
 
 ### Key Designs
 
-1.  **Three-part Narrative Structure**:
-    - **Function**: Organizes fragmented programming problems into coherent natural language descriptions.
-    - **Mechanism**: The narrative $\mathcal{N}_i = \{\text{TO}_i, \text{C}_i, \text{E}_i\}$ consists of three parts: Task Overview (presenting the coding goal within a narrative frame, integrating scattered conditions into a coherent system), Constraints (reformulating input ranges/time limits/rules into natural limitations within the story), and Example inputs/outputs (embedding test cases into contextual scenarios).
-    - **Design Motivation**: Based on mental model theory, effective reasoning requires forming a coherent and complete problem representation before generating a solution. The three-part structure ensures all key information from the original problem is preserved.
+**1. Algorithm-guided Genre Selection: Aligning Narratives with the Algorithmic Essence of Problems**
 
-2.  **Algorithm-guided Genre Selection**:
-    - **Function**: Aligns the narrative with the algorithmic essence of the problem.
-    - **Mechanism**: The model first determines the most suitable category from 8 predefined algorithm categories (sorting, search, dynamic programming, etc.), then freely chooses a narrative genre that matches the problem and algorithm. Different narrative variants may select different combinations of algorithms and genres, providing diverse perspectives on problem representation.
-    - **Design Motivation**: Experiments prove that genre alignment is crucial—using mismatched genres leads to a significant performance drop. Narrative genres help the model infer the correct algorithmic strategy from fragmented descriptions.
+If the genre does not align with the algorithmic backbone of the problem, it may mislead the model; experiments show that using mismatched genres leads to a significant performance decline. Therefore, before reformulation begins, the model identifies the most appropriate category from 8 predefined algorithm classes (sorting, searching, dynamic programming, etc.) and freely selects a narrative genre that fits both the algorithm and the problem. Different narrative variants can fall into different combinations of algorithm judgments and genres, thereby providing multi-perspective problem representations. Conversely, an appropriate genre helps the model infer the correct algorithmic strategy earlier from fragmented descriptions.
 
-3.  **Narrative Diversity Sampling**:
-    - **Function**: Expands the model's representation space through multiple narrative variants.
-    - **Mechanism**: For each problem, $N$ narrative variants are generated, each potentially having different algorithm judgments, genre selections, and narrative developments. In experiments, 5 pure narrative variants and 5 narrative+original question concatenated variants are aggregated, totaling 10 responses. This differs from simple repeated sampling, as each narrative provides a different perspective for understanding the problem.
-    - **Design Motivation**: Diverse narrative variants explore the solution space more effectively than repeated sampling because each variant alters the input representation rather than merely sampling different outputs.
+**2. Three-part Narrative Structure: Integrating Fragmented Conditions into a Coherent Representation**
 
-### Loss & Training
+Programming problem statements are often fragmented and incomplete, requiring solvers to infer details from context, whereas CoT only adds reasoning steps without modifying the input itself. Once a genre is selected, StoryCoder rewrites the problem into three parts, $\mathcal{N}_i = \{\text{TO}_i, \text{C}_i, \text{E}_i\}$: the Task Overview (TO) presents the coding goal within a narrative framework, assembling scattered conditions into a coherent system; Constraints (C) restate input ranges, time limits, and rules as natural limitations within the story; Examples (E) embed test cases within the contextual scenario rather than simply appending them. This design aligns directly with mental model theory—effective reasoning requires forming a complete and coherent problem representation before execution. The three-part structure ensures that no critical information from the original problem is lost.
 
-A pure inference-time method requiring no training. Narrative generation temperature is set to 1.0 (to encourage diversity), and code generation temperature is set to 0.2 (to encourage accuracy).
+**3. Narrative Diversity Sampling: Expanding the Solution Space on the Input Side**
+
+$N$ variants of narratives are generated for each problem, each potentially having different algorithm judgments, genre selections, and developments. In experiments, 5 pure narrative variants and 5 "narrative + original prompt" concatenated variants are aggregated for a total of 10 responses. This is fundamentally different from simple repeated sampling; while repeated sampling only changes the random seed at the output stage, each variant here changes the input representation itself, thus exploring the solution space more effectively. The temperature settings are also clearly divided: temperature 1.0 is used for narrative generation to encourage diversity, while temperature 0.2 is used for code generation to ensure accuracy.
 
 ## Key Experimental Results
 
-### Main Results (pass@10, Average of Open-source Models)
+### Main Results (pass@10, average across open-source models)
 
 | Method | HumanEval | LiveCodeBench | CodeForces |
-| :--- | :--- | :--- | :--- |
+|------|-----------|---------------|------------|
 | Repeated Sampling (RS) | 81.31 | 26.36 | 18.96 |
 | CoT | 82.26 | 27.57 | 19.32 |
 | SCoT | 82.60 | 26.93 | 19.26 |
 | **StoryCoder** | **89.76** | **32.22** | **28.58** |
 
-Representative Closed-source Models (pass@10):
+Representative closed-source models (pass@10):
 
 | Model | Method | LiveCodeBench | CodeForces |
-| :--- | :--- | :--- | :--- |
+|------|-----------|---------------|------------|
 | Claude-3.5-Haiku | RS | 33.71 | 47.17 |
 | Claude-3.5-Haiku | **Narr.** | **38.29** | **50.95** |
 | Gemini-2.5-Flash | RS | 53.14 | 60.00 |
@@ -91,39 +89,39 @@ Representative Closed-source Models (pass@10):
 ### Ablation Study
 
 | Analysis Dimension | Finding |
-| :--- | :--- |
-| Algorithm Selection Accuracy | StoryCoder makes it easier for the model to choose the correct algorithm (+Significant Improvement) |
+|---------|------|
+| Algorithm Selection Accuracy | StoryCoder makes it easier for the model to select the correct algorithm (+Significant Improvement) |
 | Implementation Error Rate | Narrative reformulation reduces implementation errors |
 | Code Structure | Narrative guidance produces more modular code structures |
-| Genre Mismatch | Using mismatched genres leads to a significant performance drop |
+| Genre Mismatch | Using mismatched genres leads to significant performance degradation |
 
 ### Key Findings
-- Narrative reformulation consistently outperforms all baselines across all 11 models and 3 benchmarks, with an average pass@10 gain of 18.7%.
+- Narrative reformulation consistently outperforms all baselines across all 11 models and 3 benchmarks, with an average pass@10 improvement of 18.7%.
 - Improvements are particularly significant on difficult benchmarks (CodeForces), where open-source models improved from an average of 18.96% to 28.58% (+50.7% relative gain).
-- Narratives not only improve accuracy but also guide the model to select correct algorithmic strategies, reduce implementation errors, and produce more modular code.
-- The quality of narrative generation correlates with the model's instruction-following capability—Gemma-2 27B has a 96% valid narrative rate, while Llama-3.1 8B is only 36.7%.
+- Narratives not only improve accuracy but also guide the model to choose correct algorithmic strategies, reduce implementation errors, and produce more modular code.
+- Narrative generation quality correlates with the model's instruction-following capability—Gemma-2 27B has a 96% valid narrative rate, while Llama-3.1 8B has only 36.7%.
 
 ## Highlights & Insights
-- The idea of **"changing the problem representation instead of the reasoning process"** is highly novel: unlike CoT which adds reasoning steps, it improves understanding by reformulating the input. The link to mental model theory in cognitive science is compelling.
-- The **three-part narrative design** balances narrative coherence with computational rigor, particularly by embedding constraints and test cases within the narrative rather than simply appending them, ensuring organic integration of information.
-- Findings from the **cross-model setup** have practical value: narratives can be generated by models with strong instruction-following capabilities, while code can be generated by models with high coding proficiency, achieving complementarity.
+- The approach of **"changing the problem representation rather than the reasoning process"** is highly novel: unlike CoT, which adds reasoning steps, it improves understanding by reconstructing the input. The link to mental model theory in cognitive science is compelling.
+- The **three-part narrative design** balances narrative coherence with computational rigor, especially by embedding constraints and test cases into the narrative rather than simply appending them, ensuring organic information integration.
+- Findings from **cross-model configurations** have high practical value: a model with strong instruction-following capabilities can be used to generate narratives, while a model with strong coding capabilities generates the code, achieving complementarity.
 
 ## Limitations & Future Work
 - Narrative generation itself consumes extra tokens and inference time (although the authors consider it "free," there is practical overhead).
-- Narrative quality depends heavily on the instruction-following capability of the generating model; small models (e.g., Llama-3.1 8B) have very low valid narrative rates.
+- Narrative quality depends heavily on the instruction-following capability of the generating model; small models (like Llama-3.1 8B) have very low valid narrative rates.
 - The 8 predefined algorithm categories may not cover all types of programming problems.
-- The effectiveness of narrative reformulation on non-algorithmic programming tasks, such as mathematical proofs or system design, remains unknown.
-- The combination of narratives with other reasoning enhancement methods (e.g., self-consistency, reflection) has not been explored.
+- The effect of narrative reformulation on non-algorithmic programming tasks, such as mathematical proofs or system design, remains unknown.
+- Combinations of narratives with other reasoning enhancement methods (e.g., self-consistency, reflection) have not been explored.
 
 ## Related Work & Insights
-- **vs CoT/SCoT**: CoT adds reasoning steps without changing the input representation; SCoT introduces code structure but remains based on the original problem description. StoryCoder improves problem understanding from the input side, acting orthogonally and combinably with these methods.
-- **vs Repeated Sampling**: Repeated sampling increases diversity at the output stage, whereas StoryCoder increases diversity at the input stage through different narrative variants, the latter exploring the solution space more effectively.
+- **vs CoT/SCoT**: CoT adds reasoning steps without changing the input representation, while SCoT introduces code structure but still relies on the original problem description. StoryCoder improves problem understanding from the input side and is orthogonal to and combinable with these methods.
+- **vs Repeated Sampling**: Repeated sampling increases diversity on the output side, whereas StoryCoder increases diversity on the input side through different narrative variants, more effectively exploring the solution space.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of narrative reformulation is highly novel and grounded in cognitive science.
+- Novelty: ⭐⭐⭐⭐ The idea of narrative reformulation is highly novel and has a foundation in cognitive science.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 models, 3 benchmarks, and extensive analysis (algorithm selection, error types, code structure).
-- Writing Quality: ⭐⭐⭐⭐ Motivation and methods are clearly articulated, and the cognitive science connection is persuasive.
-- Value: ⭐⭐⭐⭐ Provides a new dimension for enhancing code generation with significant practical effects.
+- Writing Quality: ⭐⭐⭐⭐ Motivation and methodology are clearly articulated, and the cognitive science connection is persuasive.
+- Value: ⭐⭐⭐⭐ Provides a new dimension for improving code generation with significant practical results.
 
 <!-- RELATED:START -->
 
@@ -133,9 +131,9 @@ Representative Closed-source Models (pass@10):
 
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
 - [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
+- [\[ACL 2025\] Tree-of-Code: A Tree-Structured Exploring Framework for End-to-End Code Generation](../../ACL2025/code_intelligence/tree-of-code_a_tree-structured_exploring_framework_for_end-to-end_code_generatio.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/code_intelligence/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
-- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
+- [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](../../NeurIPS2025/code_intelligence/codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
 
 </div>
 

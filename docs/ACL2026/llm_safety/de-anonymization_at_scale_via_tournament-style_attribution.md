@@ -2,124 +2,131 @@
 title: >-
   [Paper Note] De-Anonymization at Scale via Tournament-Style Attribution
 description: >-
-  [ACL 2026][LLM Safety][Authorship Attribution] This paper proposes DAS (De-Anonymization at Scale), an LLM-based method for large-scale authorship de-anonymization. By employing a tournament-style elimination strategy co…
+  [ACL 2026][LLM Safety][Paper Note] This paper proposes DAS (De-Anonymization at Scale), an LLM-based large-scale author de-anonymization method. By employing a tournament-style elimination strategy, dense retrieval pre-filtering, and multi-round voting aggregation, it achieves author matching across tens of thousands of candidate texts, revealing the pr
 tags:
-  - "ACL 2026"
-  - "LLM Safety"
-  - "Authorship Attribution"
-  - "De-anonymization"
-  - "LLM Privacy Threats"
-  - "Tournament-Style Matching"
-  - "Peer Review"
+  - ACL 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 1873ce612e01aa1e
+content_hash: 3c4a2fe68e11e0f6
 ---
-
 # De-Anonymization at Scale via Tournament-Style Attribution
 
 **Conference**: ACL 2026 Oral  
 **arXiv**: [2601.12407](https://arxiv.org/abs/2601.12407)  
 **Code**: None  
-**Area**: AI Safety / Privacy  
-**Keywords**: Authorship Attribution, De-anonymization, LLM Privacy Threats, Tournament-Style Matching, Peer Review
+**Area**: AI Security / Privacy  
+**Keywords**: Author Attribution, De-anonymization, LLM Privacy Threats, Tournament-style Matching, Peer Review
 
 ## TL;DR
 
-This paper proposes DAS (De-Anonymization at Scale), an LLM-based method for large-scale authorship de-anonymization. By employing a tournament-style elimination strategy combined with dense retrieval pre-filtering and multi-round voting aggregation, it enables author matching across tens of thousands of candidate texts, revealing the privacy threats LLMs pose to anonymous platforms such as double-blind reviews.
+This paper proposes DAS (De-Anonymization at Scale), an LLM-based large-scale author de-anonymization method. By employing a tournament-style elimination strategy, dense retrieval pre-filtering, and multi-round voting aggregation, it achieves author matching across tens of thousands of candidate texts, revealing the privacy risks LLMs pose to anonymous platforms such as double-blind peer review systems.
 
 ## Background & Motivation
 
-**Background**: Traditional authorship attribution (AA) is typically studied in small-scale closed-set scenarios—given a few candidate authors and labeled samples, a classifier is trained for attribution. However, real-world anonymous systems (e.g., academic peer reviews) may involve tens of thousands of candidates without labeled data.
+**Background**: Traditional Author Attribution (AA) typically focuses on small-scale, closed-set scenarios where a limited number of candidate authors and labeled samples are provided to train classifiers. However, real-world anonymous systems (e.g., academic peer review) may involve tens of thousands of candidates without any labeled data.
 
-**Limitations of Prior Work**: (1) Traditional methods are infeasible in large-scale scenarios as they require building author profiles for every candidate; (2) Recent work using GPT-3/4 for authorship attribution remains limited to small-scale candidate sets; (3) The text analysis capabilities of LLMs may turn large-scale de-anonymization into a realistic threat.
+**Limitations of Prior Work**: (1) Traditional methods are impractical at scale, as they require constructing author profiles for every candidate. (2) Recent work using GPT-3/4 for author attribution remains restricted to small candidate sets. (3) The text analysis capabilities of LLMs suggest that large-scale de-anonymization could become a significant real-world threat.
 
-**Key Challenge**: Anonymous systems (e.g., double-blind reviews, whistleblower forums) rely on identity concealment to protect fairness and safety, but LLMs might identify anonymous authors by analyzing signals like writing patterns and domain expertise.
+**Key Challenge**: Anonymous systems (e.g., double-blind reviews, whistleblower forums) rely on identity concealment for fairness and safety. LLMs, however, can potentially identify anonymous authors by analyzing writing patterns, domain expertise, and other stylistic signals.
 
-**Goal**: To develop a practical LLM author matching method that can operate within a pool of tens of thousands of candidate texts and to evaluate the extent of the threat it poses to anonymous systems.
+**Goal**: To develop a practical LLM-based author matching method capable of operating on candidate pools of tens of thousands of texts and to assess the threat level to anonymous systems.
 
-**Key Insight**: Model large-scale author matching as a tournament-style elimination—randomly grouping candidates, having the LLM select the most likely match in each group, and advancing winners to the next round to produce a final ranking.
+**Key Insight**: Model large-scale author matching as a tournament-style elimination process, where candidates are randomly grouped, and the LLM selects the most likely matches in each group. Winners advance to the next round until a final ranking is produced.
 
 **Core Idea**: Progressive elimination + Dense retrieval pre-filtering + Multi-round voting aggregation = Large-scale de-anonymization within a constrained token budget.
 
 ## Method
 
 ### Overall Architecture
+DAS addresses scenarios beyond the reach of traditional author attribution: cases with tens of thousands of candidate authors and no labeled samples, where the candidate pool exceeds the LLM context window. The solution decomposes the "one-to-many" matching problem into a three-stage pipeline: "dense retrieval for coarse filtering, tournament for fine-grained comparison, and voting for final determination." First, dense retrieval compresses the candidate pool from $10^5$ to $10^3$. Next, the LLM performs iterative elimination within small groups to converge on the top-k candidates. Finally, multiple independent runs are aggregated based on win frequencies to yield stable rankings. These three stages progressively reduce searching space and uncertainty.
 
-DAS consists of three components: (1) Dense retrieval pre-filtering—using embedding retrieval to narrow the candidate pool from the $10^5$ level to the $10^3$ level; (2) Tournament-style elimination—partitioning candidates into fixed-size groups where the LLM selects the most likely match, with winners regrouped and compared repeatedly until a top-k ranking is generated; (3) Multi-round voting aggregation—conducting multiple independent runs (with different random groupings) and scoring candidates based on win counts to produce a final aggregated ranking.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Query Text + Candidate Pool (~10⁵)"] --> B["Dense Retrieval Pre-filtering<br/>Top-N by Embedding Similarity (~1000)"]
+    subgraph T["Tournament-style Progressive Elimination"]
+        direction TB
+        C["Divide into Random Groups (size ~5)"] --> D["LLM Intra-group Pairwise Comparison<br/>Select 1 winner per group"]
+        D -->|Candidates > top-k| C
+    end
+    B --> T
+    T -->|Converge to top-k| E["Multi-round Voting Aggregation<br/>Accumulate scores for winners"]
+    E -->|Rerun with different random groups| B
+    E --> F["Output Author Ranking by Total Score"]
+```
 
 ### Key Designs
 
-1.  **Tournament-Style Progressive Elimination**:
-    - **Function**: Decomposes one-to-many matching into multiple rounds of small-scale comparisons.
-    - **Mechanism**: Randomly divides candidates into fixed-size groups (e.g., 5 per group). The LLM compares the query text with all candidates in the group to select the most likely match. Winners advance to the next round for regrouping, repeating until converging to the top-k.
-    - **Design Motivation**: LLMs have limited context windows and cannot compare tens of thousands of candidates simultaneously; group comparisons reduce complexity to a logarithmic scale.
+**1. Dense Retrieval Pre-filtering: Reducing Search Space for LLM Feasibility**
 
-2.  **Dense Retrieval Pre-filtering**:
-    - **Function**: Reduces the search space to a scale manageable by LLMs.
-    - **Mechanism**: Employs an embedding model to encode the query and all candidates, retrieving the top-$N$ (e.g., 1000) via vector similarity as input for the subsequent tournament.
-    - **Design Motivation**: Reducing the search space from $10^5$ to $10^3$ makes subsequent LLM comparisons feasible within a token budget.
+Processing $10^5$ candidates directly with an LLM is impractical due to computational costs. DAS implements a vector-based coarse filter before the tournament. An embedding model encodes the query and all candidates, retrieving the top-$N$ (e.g., 1000) most similar items. This reduces the scale from $10^5$ to $10^3$, making subsequent LLM comparisons feasible. Beyond efficiency, removing highly dissimilar candidates provides cleaner input for the tournament, thereby improving matching quality.
 
-3.  **Multi-round Voting Aggregation**:
-    - **Function**: Improves ranking stability and precision.
-    - **Mechanism**: Runs the tournament multiple times independently (with different random groupings), assigning scores to winning candidates in each run. Aggregating scores across all rounds produces the final ranking. Candidates who consistently win across different groupings receive higher rankings.
-    - **Design Motivation**: A single random grouping might introduce bias due to unfair competition within a group; multi-round aggregation increases robustness.
+**2. Tournament-style Progressive Elimination: Decomposing Matching into Small Group Comparisons**
+
+Even with 1000 candidates, the LLM context window cannot accommodate simultaneous comparison. DAS adopts a tournament structure: candidates are randomly divided into fixed-size groups (e.g., 5 per group). The LLM compares the query against these candidates pairwise and selects the most likely one. Winners are regrouped for subsequent rounds until the pool converges to the top-k. Each step involves only small-scale intra-group comparisons, reducing the cost from linear scanning to logarithmic rounds while remaining within token limits.
+
+**3. Multi-round Voting Aggregation: Mitigating Randomness in Grouping**
+
+A single tournament run is susceptible to "bad luck" in grouping; if the true author is pooled with strong candidates early on, they might be eliminated prematurely. To counter this, DAS runs the entire tournament multiple times independently with different random groupings. Scores are assigned to winning candidates in each run, and final rankings are aggregated. Candidates who consistently win across diverse groups achieve higher scores, while accidental winners are filtered out, enhancing both stability and precision.
+
+### Function: Identifying an Anonymous Reviewer
+Consider identifying the author of an anonymous peer review among $10^5$ potential authors. First, dense retrieval filters the pool to the top-1000 based on stylistic similarity. Second, the tournament begins: 1000 candidates are grouped into sets of 5; the LLM selects the best match per group, reducing the pool to ~200, then ~40, then ~8 across rounds. Third, this retrieval and tournament process is repeated multiple times with different groupings. If an author consistently reaches the final rounds across most iterations, they rise to the top of the aggregated ranking and are identified as the author of the anonymous review.
 
 ### Loss & Training
-
-DAS is a training-free inference-time method that leverages the existing text analysis capabilities of LLMs. The core computation is derived from LLM pairwise (or groupwise) comparison prompts.
+DAS is a training-free inference-time method that does not update weights. Its capabilities rely entirely on the LLM's text analysis. The core computation consists of repeated prompt calls for pairwise comparisons.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**De-anonymization Performance on Anonymous Review Data**
+**De-anonymization Performance on Peer Review Data**
 
 | Scenario | Candidate Pool Size | DAS Accuracy | Random Baseline |
-| :--- | :--- | :--- | :--- |
-| Peer Review | Thousands | Far higher than random | ~0.01% |
+|----------|---------------------|--------------|-----------------|
+| Peer Review | Thousands | Significantly higher | ~0.01% |
 | Enron Emails | Standard Benchmark | Outperforms prior methods | - |
-| Blog Posts | Large Scale | Outperforms prior methods | - |
+| Blog Posts | Large-scale | Outperforms prior methods | - |
 
 ### Ablation Study
 
-| Component | Effect after Removal | Description |
-| :--- | :--- | :--- |
-| Dense Retrieval Pre-filtering | Infeasible to run | Candidate pool too large |
-| Multi-round Voting | Accuracy decreases | Single round is unstable |
-| Tournament Elimination | Accuracy decreases | Progressive comparison is necessary |
+| Component | Effect of Removal | Explanation |
+|-----------|-------------------|-------------|
+| Dense Retrieval | Infeasible | Candidate pool too large |
+| Multi-round Voting | Accuracy drop | Single round is unstable |
+| Tournament Elimination | Accuracy drop | Need for progressive comparison |
 
 ### Key Findings
 
-- DAS successfully identifies same-author texts in anonymous review data with thousands of candidates, achieving accuracy far exceeding the random baseline.
-- It outperforms previous direct LLM prompting methods on standard benchmarks (Enron, Blogs).
-- Multi-round voting significantly enhances ranking precision and stability.
-- Dense retrieval pre-filtering is not only an efficiency measure but also improves the quality of subsequent matching by narrowing the candidate pool.
+- DAS successfully identifies authors in peer review data with thousands of candidates, achieving accuracy far exceeding random baselines.
+- It outperforms previous direct LLM prompting methods on standard benchmarks (Enron, Blog).
+- Multi-round voting significantly improves ranking precision and stability.
+- Dense retrieval serves not only as an efficiency tool but also improves final matching quality by narrowing the candidate pool.
 
 ## Highlights & Insights
 
-- Reveals a serious privacy threat—LLMs make large-scale de-anonymization practically feasible.
-- The tournament-style design elegantly addresses the computational bottleneck of large-scale one-to-many matching.
-- The methodology is generalizable—it can be applied to any text attribution scenario requiring a match from a large candidate pool.
+- Reveals a serious privacy threat: LLMs make large-scale de-anonymization practically feasible.
+- The tournament-style design elegantly overcomes the computational bottleneck of large-scale one-to-many matching.
+- The methodology is general and can be applied to any text attribution scenario requiring matching from a large candidate pool.
 
 ## Limitations & Future Work
 
-- While accuracy is higher than random, it remains limited and may not constitute a practical threat in all specific scenarios.
-- The recall quality of dense retrieval may limit the final accuracy.
-- As a potential privacy attack tool, it necessitates corresponding defensive measures and ethical discussions.
-- The ability to distinguish between authors with similar styles (e.g., members of the same laboratory) may be limited.
+- While accuracy is higher than random, it remains limited; it might not constitute a practical threat in all specific scenarios.
+- The recall quality of dense retrieval may limit final accuracy.
+- As a potential privacy attack tool, it requires defensive measures and ethical discussion.
+- Ability to distinguish between authors with highly similar styles (e.g., members of the same lab) may be limited.
 
 ## Related Work & Insights
 
-- **vs Huang et al. (2024a)**: Prior work used GPT for small-scale attribution; DAS scales this to the tens-of-thousands level.
-- **vs Traditional AA**: Traditional methods require labeled data and small candidate sets; DAS is entirely zero-shot and large-scale.
-- **vs Stylometry**: DAS utilizes the implicit stylistic analysis capabilities of LLMs without requiring explicit feature engineering.
+- **vs. Huang et al. (2024a)**: Previous work used GPT for small-scale attribution; DAS scales this to tens of thousands.
+- **vs. Traditional AA**: Traditional methods require labeled data and small candidate sets, whereas DAS is zero-shot and large-scale.
+- **vs. Stylometry**: DAS utilizes the implicit stylistic analysis capabilities of LLMs without requiring explicit feature engineering.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The tournament-style large-scale attribution design is novel, and the privacy threat perspective is significant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes real review data and standard benchmarks, though the scale of anonymous review experiments could be even larger.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and systematic description of the method.
-- Value: ⭐⭐⭐⭐ Provides practical significance for the security assessment of anonymous systems.
+- Novelty: ⭐⭐⭐⭐ The tournament-style design for large-scale attribution is novel, and the privacy threat perspective is critical.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes real-world review data and standard benchmarks, though the scale of peer review experiments could be larger.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and systematic method description.
+- Value: ⭐⭐⭐⭐ Highly relevant for the security assessment of anonymous systems.
 
 <!-- RELATED:START -->
 

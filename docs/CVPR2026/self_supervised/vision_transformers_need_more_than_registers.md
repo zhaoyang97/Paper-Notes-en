@@ -2,225 +2,223 @@
 title: >-
   [Paper Note] Vision Transformers Need More Than Registers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that dense feature artifacts in ViTs trained under label supervision, text supervision…
+  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that prevalent dense feature artifacts in ViT under label, text, and self-supervision are not merely high-norm token issues, but a consequence of the model learning to use background patches as global semantic shortcuts under the combined influence of coarse-grained supervision and global attention. T
 tags:
-  - "CVPR 2026"
-  - "Self-Supervised Learning"
-  - "Vision Transformer"
-  - "Lazy Aggregation"
-  - "Register Token"
-  - "DINO"
-  - "Dense Feature Alignment"
+  - CVPR 2026
+  - Self-Supervised Learning
+  - Vision Transformer
+  - Lazy Aggregation
+  - Register Token
+  - DINO
+  - Dense Feature Alignment
 date: 2026-05-08
-content_hash: 4f7899f38fe6dca2
+content_hash: 2f524406ec51611d
 ---
-
 # Vision Transformers Need More Than Registers
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.22394](https://arxiv.org/abs/2602.22394)  
 **Code**: [https://github.com/ChengShiest/LAST-ViT](https://github.com/ChengShiest/LAST-ViT)  
-**Area**: Self-Supervised Learning
+**Area**: Self-supervised  
 **Keywords**: Vision Transformer, Lazy Aggregation, Register Token, DINO, Dense Feature Alignment
 
 ## TL;DR
-This paper argues that dense feature artifacts in ViTs trained under label supervision, text supervision, and self-supervision share a common root cause: rather than a simple high-norm token problem, models learn to exploit background patches as global semantic shortcuts, driven by coarse-grained supervision combined with global attention. The authors accordingly propose LaSt-ViT, which replaces standard CLS aggregation with frequency-domain stability-guided selective aggregation, yielding consistent improvements in localization, segmentation, and open-vocabulary tasks across 12 benchmarks.
+This paper argues that prevalent dense feature artifacts in ViT under label, text, and self-supervision are not merely high-norm token issues, but a consequence of the model learning to use background patches as global semantic shortcuts under the combined influence of coarse-grained supervision and global attention. To address this, the authors propose LaSt-ViT, which replaces original CLS aggregation with selective aggregation guided by frequency-domain stability, consistently improving localization, segmentation, and open-vocabulary tasks across 12 benchmarks.
 
 ## Background & Motivation
-ViTs have evolved well beyond classification backbones and now serve as general-purpose feature extractors for a broad range of downstream vision systems. However, when these features are applied to tasks requiring spatially aligned dense representations—such as localization, segmentation, and open-vocabulary detection—models frequently attend to incorrect regions.
+ViTs have evolved beyond classification backbones to become general feature extractors for downstream vision systems. However, when using these features for spatially aligned dense prediction tasks like localization, segmentation, and open-vocabulary detection, they often "attend to the wrong places."
 
-Prior work has addressed this issue from different angles.
-- Under label supervision, certain studies have noted that ViT dense features are insensitive to foreground content.
-- Under text supervision, patch-text alignment in CLIP-style ViTs is often poor, degrading zero-shot dense prediction.
-- Under self-supervision, the DINO family exhibits high-norm / artifact tokens that disrupt object discovery.
+Prior works have addressed this from different perspectives:
+- Under label supervision, studies noted that ViT dense features are insensitive to foreground objects.
+- Under text supervision, CLIP-based ViTs often show poor patch-text alignment, hindering zero-shot dense prediction.
+- Under self-supervision, the DINO series exhibits high-norm/artifact tokens that disrupt object discovery.
 
-The authors argue that despite their surface differences, these phenomena likely reflect a single underlying mechanism manifesting differently across training paradigms. Existing remedies largely apply patch-level fixes within a single setting—for instance, adding register tokens to DINO to offload some anomalous global information—without explaining why these artifact tokens arise in the first place, nor why analogous phenomena persist under text or label supervision.
+The authors contend that these phenomena, while seemingly different, likely stem from the same mechanism under different training paradigms. Existing methods often "patch" symptoms in specific settings—such as adding register tokens to DINO to offload abnormal global information—without explaining why these tokens appear or why similar issues persist in text- or label-supervised settings.
 
-The paper's core motivation comprises three layers.
-- First, the authors seek a unified, comparable definition of artifacts across supervised, text-supervised, and self-supervised settings, rather than allowing each community to operate with its own terminology.
-- Second, they aim to determine whether register tokens address the root cause or merely relocate the symptom.
-- Third, they seek a unified approach that suppresses artifacts during pretraining without depending on any particular training objective.
+The core motivation is summarized in three layers:
+- First, to establish a unified, comparable definition for artifacts across different supervision paradigms.
+- Second, to determine whether register tokens address the root cause or merely move the symptoms.
+- Third, to propose a unified solution that suppresses artifacts during pre-training without depending on specific loss functions.
 
-The authors' key observation is as follows: for a ViT receiving only image-level supervision, the CLS token must capture the overall image semantics but is never explicitly required to align with foreground semantics at the patch level. Under this setup, the path of least resistance is not to diligently extract global semantics from foreground patches, but rather to leverage global self-attention to diffuse sparse foreground information across many background patches and then aggregate global semantics from these "background shortcuts." The authors term this behavior **lazy aggregation**.
+The Key Insight is: for ViTs receiving only image-level supervision, the CLS token is responsible for whole-image semantics but lacks explicit constraints to ensure each patch aligns with foreground semantics. Under this setting, the most "efficient" path for the model is not extracting global semantics from foreground patches, but using global self-attention to diffuse foreground information into numerous background patches, allowing CLS to perform semantic aggregation from these "background shortcuts." This behavior is termed lazy aggregation.
 
-This explanation is compelling because it simultaneously accounts for two observations.
-- Background patches tend to receive high patch scores, because the model treats them as depositories of global semantics.
-- Register tokens mitigate but do not eliminate the problem, because they merely provide new storage locations for global information without altering the model's tendency toward shortcut aggregation.
+This explanation is compelling as it accounts for two phenomena:
+- Why background patches often have high patch scores: they serve as proxy storage for global semantics.
+- Why registers only alleviate the issue: they provide new storage locations but do not change the model's tendency to rely on shortcut aggregation.
 
-In short, the problem this paper addresses is not "how to relocate anomalous tokens" but rather "how to prevent ViTs from learning to use background content as global semantic shortcuts in the first place."
+In short, the problem is not "how to move abnormal tokens," but "how to stop the ViT from learning to use the background as a global semantic shortcut from the start."
 
 ## Method
-The proposed method consists of two components: a unified diagnostic tool that confirms the existence of lazy aggregation, followed by a new CLS aggregation mechanism designed to ground the global representation in patches that are genuinely stable and foreground-relevant.
-
-Rather than beginning by modifying the loss function, the authors first redefine the measurement framework. This step is essential, because without a unified metric it is impossible to analyze supervised, text-supervised, and self-supervised systems jointly.
+The method consists of two parts: a unified diagnostic toolset to prove the existence of lazy aggregation, and a redesigned CLS aggregation mechanism that forces global representations to depend on stable, foreground-related patches. The paper redefines the diagnostic metrics first, as comparing supervised, text-supervised, and self-supervised systems requires a unified measurement.
 
 ### Overall Architecture
-The overall pipeline can be summarized in four steps.
+The pipeline is as follows: it starts with a standard ViT encoder to obtain patch token representations $\mathbf{x}_{patch} \in \mathbb{R}^{N \times D}$. A Patch Score is defined to measure the similarity between each patch and the global CLS, identifying which locations the model treats as key patches. If high-scoring patches consistently fall in the background, this is quantified using the Point-in-Box (PiB) metric. Once diagnosed, the training mechanism is modified: instead of allowing CLS to absorb information from all patches indiscriminately, a stability score is calculated for each channel of every patch in the frequency domain. Top-K stable tokens are then selected channel-wise for aggregation to reassemble the CLS representation.
 
-1. A standard ViT encoder produces all patch token representations $\mathbf{x}_{patch} \in \mathbb{R}^{N \times D}$.
-2. A Patch Score is defined as the cosine similarity between each patch and the global CLS representation, measuring the degree to which the model treats that patch as a key carrier of whole-image semantics.
-3. Observing that high-scoring patches frequently fall in the background rather than the foreground, the authors further introduce the Point-in-Box (PiB) metric, which directly records whether the highest-scoring patch lies within the annotated bounding box.
-4. During training, CLS no longer aggregates from all patches indiscriminately. Instead, a per-channel stability score is computed for each patch, and only the Top-K most stable tokens per channel are used for aggregation, yielding a new CLS representation.
+LaSt-ViT does not rewrite the ViT backbone or add complex supervision branches; it redefines "where and how CLS retrieves information." This simplicity allows it to be applied to supervised, text-supervised, and self-supervised paradigms.
 
-From an input–output perspective, LaSt-ViT does not rewrite the ViT backbone or introduce an additional complex supervision branch. Its contribution is more precisely characterized as "redefining which patches CLS draws from and according to what principle," making it transferable to supervised, text-supervised, and self-supervised pretraining paradigms.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image"] --> B["ViT Encoder<br/>Get all patch tokens"]
+    B --> C["Patch Score & Point-in-Box<br/>CLS-patch cosine similarity +<br/>Top patch in foreground box check"]
+    D -->|Modify Aggregation| E["Frequency Stability Score<br/>Channel-wise FFT Low-pass filter →<br/>Per-channel stability score S"]
+    C --> D["Lazy Aggregation Hypothesis<br/>High-scored patches in background →<br/>Background used as semantic shortcut"]
+    E --> F["Channel-wise Top-K Aggregation<br/>Pick K stablest tokens per channel<br/>Mean → Reassemble CLS"]
+    F --> G["Vote Count Visualization<br/>Count times patch is selected →<br/>Verify attention shift to foreground"]
+```
 
 ### Key Designs
 
-1. **Patch Score and Point-in-Box: Unified Diagnostic for ViT Artifacts**
-    - *Function*: Uses CLS–patch cosine similarity as a unified probe to analyze whether the global semantics of a ViT fall on foreground or background regions.
-    - *Mechanism*: The patch score is defined as $\mathcal{S}_p = \frac{\mathbf{x}_{patch} \cdot Q_{CLS}}{\lVert \mathbf{x}_{patch} \rVert_2 \lVert Q_{CLS} \rVert_2}$. A higher score indicates that the patch is closer to the global semantic representation.
-    - *Design Motivation*: In a healthy dense feature space, the regions most representative of overall image semantics should typically coincide with the main object. If high-scoring patches consistently reside in the background, the model is taking shortcuts.
-    - Further quantification is provided by PiB, which records whether the highest patch score falls within the foreground bounding box. This metric is sufficiently direct and comparable across architectures and pretraining paradigms.
+**1. Patch Score & Point-in-Box: Unified Metrics Across Paradigms**
 
-2. **Lazy Aggregation Hypothesis: The Root Cause Is Background Shortcuts, Not Norm**
-    - *Function*: Validates the artifact formation mechanism through training dynamics, masking experiments, and structural interventions.
-    - *Mechanism*: The authors find that removing high-scoring patches does not harm classification accuracy—and occasionally produces marginal improvements—whereas removing low-scoring patches causes substantial accuracy drops. This indicates that high-scoring patches do not correspond to critical semantic regions.
-    - *Design Motivation*: If the highest-scoring patches were truly key foreground locations, removing them should degrade performance. The opposite result implies these positions function more as redundant but highly correlated background shortcuts.
-    - Further validation shows that ViT's PiB is already low very early in training and remains nearly constant throughout, even as classification accuracy continues to rise. This demonstrates that artifacts are a stable strategy adopted early in optimization, not a late-stage side effect.
+The lack of a unified definition for "abnormal" hindered comparison across paradigms. The authors use the cosine similarity between CLS and patches as a probe: $\mathcal{S}_p = \frac{\mathbf{x}_{patch} \cdot Q_{CLS}}{\lVert \mathbf{x}_{patch} \rVert_2 \lVert Q_{CLS} \rVert_2}$. Higher scores indicate patches closer to the global semantic representation. Ideally, for healthy dense features, high-scoring regions should align with the main object. PiB quantifies this by checking if the highest-scoring patch falls within the foreground box, providing a standardized metric across architectures and paradigms.
 
-3. **Frequency-Domain Stability Scoring: Identifying Foreground-Candidate Tokens via Channel Stability**
-    - *Function*: Assigns a stability score to each channel of each patch token, estimating which features remain stable after low-pass filtering.
-    - *Mechanism*: The intuition is that foreground regions exhibit more semantically consistent deep features, with smoother variation along the channel dimension, whereas background regions are semantically diverse and exhibit larger changes after low-pass filtering. A 1-D FFT is applied per patch along the channel dimension, multiplied by a Gaussian low-pass weight $\mathbf{g}$, and inverse-transformed to obtain a low-frequency version $\hat{\mathbf{x}}_{patch}$.
-    - Formally, the stability score is $\mathbf{S}_{i,j} = \frac{\hat{\mathbf{x}}_{patch}[i,j]}{|\hat{\mathbf{x}}_{patch}[i,j] - \mathbf{x}_{patch}[i,j]| + \varepsilon}$.
-    - *Design Motivation*: If a particular channel of a patch changes little after low-pass filtering, that channel's information is more "stable" and more likely to belong to continuously shared object semantics rather than scattered high-frequency background cues.
+**2. Lazy Aggregation Hypothesis: Root Cause is Background Shortcuts, not High-norms**
 
-4. **Channel-wise Top-K Aggregation: Restricting CLS to the Most Reliable Local Evidence**
-    - *Function*: Replaces uniform averaging over all patches and single attention pooling with per-channel selection of the K most stable patches, whose mean forms the corresponding channel of the new CLS representation.
-    - *Mechanism*: For the $j$-th channel, the set of indices with the highest stability scores $\mathcal{I}_K(j)$ is identified, and the aggregated value is $\mathcal{Q}_{CLS}[j] = \frac{1}{K}\sum_{i \in \mathcal{I}_K(j)} \mathbf{x}_{patch}[i,j]$.
-    - *Design Motivation*: A given patch need not be reliable across all channels; therefore, the authors perform channel-wise rather than token-wise selection. This preserves representational granularity while preventing global averaging from injecting substantial background noise into CLS.
-    - *Distinction from registers*: Register tokens provide additional storage slots; LaSt-ViT directly constrains the information sources of CLS. The former offers "a new container for the shortcut," while the latter "reduces the opportunity to take the shortcut."
+Through training dynamics, masking experiments, and structural interventions, the authors probe artifact formation. A key control experiment showed that removing high-scoring patches hardly hurts classification accuracy (sometimes improving it), whereas removing low-scoring patches leads to significant drops. This refutes the intuition that "high score = key foreground" and suggests these locations are redundant background proxies. PiB is low from the early training stages and remains constant while accuracy rises, indicating artifacts are an early-learned optimization strategy. Registers only provide a different "container" for shortcuts but do not change the underlying preference.
 
-5. **Vote Count Visualization: Interpreting Where CLS Actually Attends**
-    - *Function*: Counts how many channel-wise Top-K sets include each patch, yielding a vote count per token.
-    - *Mechanism*: $v_i = \sum_{j=1}^{D} \mathbf{1}\{i \in \mathcal{I}_K(j)\}$. A higher vote count indicates that the patch is considered reliable evidence in more semantic channels.
-    - *Design Motivation*: The authors aim to demonstrate that LaSt-ViT is not a black-box trick but genuinely shifts CLS attention back toward foreground regions. Visualization results show that high-vote patches are strongly aligned with foreground areas and adapt naturally to the amount of foreground evidence present.
+**3. Frequency Stability Score: Identifying Foreground Candidates via Channel Stability**
+
+Identifying foreground patches without extra supervision relies on a statistical observation: foreground regions show more semantic consistency and smoother changes across channel dimensions in deep features, while background semantics are noisier. A 1D FFT is applied per patch across the channel dimension, multiplied by a Gaussian low-pass weight $\mathbf{g}$, and inverse-transformed to get a low-frequency version $\hat{\mathbf{x}}_{patch}$. A stability score is then calculated for each channel $j$ of patch $i$:
+
+$$\mathbf{S}_{i,j} = \frac{\hat{\mathbf{x}}_{patch}[i,j]}{|\hat{\mathbf{x}}_{patch}[i,j] - \mathbf{x}_{patch}[i,j]| + \varepsilon}$$
+
+A small difference after low-pass filtering indicates "stable" information, more likely belonging to a shared object semantic rather than high-frequency background noise.
+
+**4. Per-channel Top-K Aggregation: Selective Local Evidence for CLS**
+
+The stability score replaces original CLS aggregation by introducing "selectivity." For the $j$-th channel, the set of tokens $\mathcal{I}_K(j)$ with the highest stability scores is selected. Only these $K$ tokens are averaged for that channel's CLS value: $\mathcal{Q}_{CLS}[j] = \frac{1}{K}\sum_{i \in \mathcal{I}_K(j)} \mathbf{x}_{patch}[i,j]$. Channel-wise selection is used because a patch may be reliable for some semantic subspaces but not others, preserving fine-grained representation while preventing background noise from flooding the CLS. This addresses the root cause by limiting the information sources of CLS.
+
+**5. Vote Count Visualization: Verifying Attention Shift**
+
+To verify the mechanism, the authors count how many channels select a specific patch: $v_i = \sum_{j=1}^{D} \mathbf{1}\{i \in \mathcal{I}_K(j)\}$. Higher vote counts indicate patches recognized as reliable across more semantic channels. Visualizations show high-vote patches align strongly with foreground regions and adaptively scale with the amount of foreground evidence, proving that LaSt-ViT pulls attention back to the subject.
 
 ### Loss & Training
-This paper introduces no new supervision objective; the original training paradigm is preserved, with modifications confined to the CLS aggregation mechanism.
+The paper maintains original training objectives, focusing changes on CLS aggregation:
 
-- Under fully supervised training, standard image classification supervision is retained.
-- Under text-supervised training, CLIP-style image–text contrastive learning is retained.
-- Under self-supervised training, DINO-style self-supervised training is retained.
+- In fully supervised scenarios: Standard cross-entropy image classification is used.
+- In text-supervised scenarios: CLIP-style image-text contrastive learning is used.
+- In self-supervised scenarios: DINO-style self-distillation is used.
 
-LaSt-ViT therefore functions more as a universal aggregation module than as a task-specific loss. This design is practically advantageous because it concentrates the method's benefit on foreground semantic alignment without requiring additional annotations or complex multi-task training.
+LaSt-ViT functions as a general aggregation module rather than a task-specific loss, focusing gains on foreground semantic alignment.
 
-The authors also conduct two key validation experiments to further support their motivation.
-- Increasing patch size to reduce the proportion of background tokens raises PiB from 0.44 to 0.52, but lowers classification top-1 accuracy from 62% to 55%. This confirms that coarse-grained supervision promotes background shortcuts, while also showing that simply coarsening patches is not a viable solution.
-- Replacing global attention with window attention consistently raises PiB but consistently lowers top-1 accuracy. For example, applying window attention in all layers of ViT-Small raises PiB from 50.1 to 59.8, while top-1 drops from 72.3 to 63.9. This indicates that global dependencies both benefit recognition and facilitate background absorption of foreground semantics.
+Validation support for the motivation:
+- Increasing patch size (reducing background tokens) improves PiB from 0.44 to 0.52 but drops top-1 accuracy from 62% to 55%, showing coarse supervision encourages shortcuts.
+- Replacing global attention with window attention increases PiB but consistently decreases top-1 accuracy, proving global dependency provides recognition gains but enables background shortcuts.
 
 ## Key Experimental Results
-The experiments span three training paradigms and multiple dense downstream tasks, rather than focusing on a single benchmark. The authors' primary goal is to demonstrate that suppressing artifacts leads to synchronous improvements across multiple tasks, not merely to report another state-of-the-art number.
 
 ### Main Results
-The most direct evidence that LaSt-ViT targets the root cause is provided by the Point-in-Box metric.
+The PiB metric demonstrates whether LaSt-ViT corrects the root cause:
 
-| Training Paradigm / Model | Baseline PiB | LaSt-ViT PiB | Gain |
-|---|---:|---:|---:|
+| Paradigm / Model | Baseline PiB | LaSt-ViT PiB | Gain |
+|------|------:|------:|------:|
 | Supervised ViT | 42.7 | 55.1 | +12.4 |
 | DINO-v1 | 44.5 | 69.7 | +25.2 |
 | CLIP ViT | 39.8 | 50.1 | +10.3 |
-| ResNet reference | 68.4 / 71.1 / 53.9 | — | — |
+| ResNet Reference | 68.4 / 71.1 / 53.9 | - | - |
 
-This result is significant for three reasons.
-- First, artifacts are not specific to any single training paradigm.
-- Second, LaSt-ViT delivers substantial corrections to foreground alignment, not marginal gains.
-- Third, the largest improvement is observed on DINO-v1, indicating that self-supervised ViTs are particularly susceptible to lazy aggregation in object-centric dense features.
+Findings: 
+1) Artifacts are universal. 2) LaSt-ViT significantly improves foreground alignment. 3) DINO-v1 benefits most, as self-supervised ViTs are particularly susceptible to lazy aggregation.
 
-The object discovery results, most directly relevant to the self-supervised setting, are as follows.
+Object discovery results in the self-supervised domain:
 
 | Method | FPS | VOC07 CorLoc | VOC12 CorLoc | COCO CorLoc |
-|---|---:|---:|---:|---:|
+|------|------:|------:|------:|------:|
 | DINO-seg | 29.4 | 45.8 | 46.2 | 42.1 |
 | LOST | 29.4 | 61.9 | 64.0 | 50.7 |
 | DINO + LaSt-ViT | 55.9 | 64.4 | 67.6 | 51.6 |
 
-This table demonstrates that the gains from LaSt-ViT translate into concrete improvements in unsupervised object discovery, not merely more interpretable patch scores. Notably, LaSt-ViT outperforms both DINO-seg and LOST while operating at higher speed, without requiring additional heavy feature decomposition steps.
+LaSt-ViT outperforms DINO-seg and LOST while being significantly faster by avoiding heavy feature decomposition.
 
-Improvements under fully supervised and text-supervised settings are also reported.
+Dense task improvements across supervised and text-supervised settings:
 
 | Task | Baseline | LaSt-ViT | Gain |
-|---|---:|---:|---:|
+|------|------:|------:|------:|
 | VOC12 coarse segmentation, ViT-B/16 supervised | 22.3 mIoU | 32.8 | +10.5 |
 | VOC12 coarse segmentation, ViT-S/16 supervised | 29.5 mIoU | 41.9 | +12.4 |
 | VOC12 coarse segmentation, ViT-S/16 DINO | 47.7 mIoU | 55.1 | +7.4 |
 | CLIP ViT-B/16 on VOC20 segmentation | 49.0 mIoU | 75.0 | +26.0 |
 | F-ViT ViT-B/16 on OV-COCO novel AP50 | 117.5 | 133.3 | +15.8 |
 
-Although these results span different tasks and metrics, they converge on a single conclusion: once CLS is no longer overly dependent on background shortcuts, ViT dense representations become substantially more useful across the board.
-
 ### Ablation Study
-The ablations address two questions: what value of K is optimal, and whether LaSt-ViT's improvements reduce to a particular pooling bias.
+Ablations focus on the value of $K$ and comparison with other pooling methods.
 
-K ablation under label-supervised training:
+Label-supervised $K$ ablation:
 
-| Configuration | IN1K Top-1 | VOC07 CorLoc | VOC12 CorLoc | Notes |
-|---|---:|---:|---:|---|
-| Attention-Pool | 59.1 | 14.1 | 28.7 | Original aggregation |
-| Mean-Pool | 64.3 | 15.3 | 29.6 | Simple average |
-| LaSt-ViT, K=1 | 64.6 | 30.4 | 35.6 | Extremely selective |
+| Configuration | IN1K Top-1 | VOC07 CorLoc | VOC12 CorLoc | Note |
+|------|------:|------:|------:|------|
+| Attention-Pool | 59.1 | 14.1 | 28.7 | Original |
+| Mean-Pool | 64.3 | 15.3 | 29.6 | Simple mean |
+| LaSt-ViT, K=1 | 64.6 | 30.4 | 35.6 | Aggressive filter |
 | LaSt-ViT, K=7 | 64.8 | 32.1 | 37.6 | Optimal trade-off |
-| LaSt-ViT, K=49 (Full) | 64.9 | 15.8 | 30.3 | Approaches full aggregation |
+| LaSt-ViT, K=49 (Full) | 64.9 | 15.8 | 30.3 | Near-full aggregate |
 
-The most informative observation is that localization gains degrade noticeably as K grows large. The method's effectiveness is therefore not attributable to a change in pooling formula but rather to selectivity itself: at large K, background tokens are reintroduced, and the gains disappear.
+When $K$ is too large, localization gains degrade significantly, proving that "selectivity" rather than the pooling formula itself is the key driver.
 
-K ablation under text-supervised training:
+Text-supervised $K$ ablation:
 
-| Configuration | IN1K | VOC mIoU | COCO mIoU | Notes |
-|---|---:|---:|---:|---|
-| Attention-Pool | 55.8 | 10.7 | 3.3 | Original CLIP aggregation |
-| Max-Pool | 53.1 | 71.9 | 12.2 | Naturally suppresses background, but classification degrades |
-| LaSt-ViT, K=1 | 53.5 | 72.7 | 13.5 | Overly aggressive |
+| Configuration | IN1K | VOC mIoU | COCO mIoU | Note |
+|------|------:|------:|------:|------|
+| Attention-Pool | 55.8 | 10.7 | 3.3 | Original CLIP |
+| Max-Pool | 53.1 | 71.9 | 12.2 | Suppresses background, low accuracy |
+| LaSt-ViT, K=1 | 53.5 | 72.7 | 13.5 | Too aggressive |
 | LaSt-ViT, K=49 | 55.8 | 75.8 | 18.5 | Optimal |
-| LaSt-ViT, K=98 | 56.2 | 75.9 | 18.0 | Near-optimal |
-| LaSt-ViT, K=196 (Full) | 55.3 | 13.5 | 4.8 | Near-complete failure |
-
-These results further demonstrate that LaSt-ViT is not simply performing sparser pooling. By filtering out unstable background tokens, it retains locally grounded evidence more valuable for dense prediction. The near-complete failure at K=196 confirms that full aggregation is itself the source of the problem.
+| LaSt-ViT, K=196 (Full) | 55.3 | 13.5 | 4.8 | Baseline failure |
 
 ### Key Findings
-- Removing high-scoring patches causes negligible harm to classification, confirming that high-scoring patches are not critical foreground regions but rather background shortcuts exploited by CLS.
-- Artifacts appear early in training, with PiB remaining nearly flat throughout—indicating that lazy aggregation is an early-acquired optimization habit, not a late-stage overfitting artifact.
-- Register tokens eliminate high-norm phenomena, yet PiB remains low, confirming that high-norm is a symptom of lazy aggregation rather than its cause.
-- Restricting global attention or reducing background tokens improves PiB but sacrifices classification accuracy, showing that the problem cannot be resolved by simply weakening model capacity; the aggregation mechanism must be reformed.
-- Top-K selection degrades significantly as K approaches the full token set, confirming that selectivity is the operative factor.
+- Removing high-score patches does little harm to classification, confirming they act as background shortcuts rather than key foreground features.
+- Artifacts appear early in training and persist, characterizing them as an early optimization bias rather than late-stage overfitting.
+- Register tokens resolve high-norm behavior but PiB remains low; high-norm is a symptom, not the root cause.
+- Limiting global dependency or reducing background patches improves PiB but sacrifices accuracy; a modified aggregation mechanism is required.
+- Selective aggregation is essential; dense task performance degrades when $K$ approaches the full token count.
 
 ## Highlights & Insights
-- The paper's greatest strength lies not in proposing a complex new module but in unifying previously scattered artifact phenomena across multiple communities under the single explanatory framework of lazy aggregation—a framework simple enough to simultaneously account for anomalies in supervised, CLIP, and DINO settings.
-- The authors reframe the question "does register work?" as "is the ViT still taking background shortcuts?" This perspective is more fundamental than focusing solely on high-norm tokens, as it directly concerns the mechanism by which representations are formed.
-- The frequency-domain stability approach is an elegant design choice. Rather than explicitly supervising foreground detection, it exploits the statistical regularity that foreground semantics tend to be more consistent and background semantics more diverse, providing a natural selection criterion for CLS aggregation.
-- Channel-wise Top-K selection is also worth noting. Many token selection methods score tokens holistically; this work highlights that different channels may correspond to different semantic subspaces, making per-channel selection a finer-grained alternative.
-- Methodologically, this paper exemplifies the "diagnose first, then model, then validate uniformly" paradigm, offering a relatively complete chain of reasoning and a useful structural reference for analytical paper writing.
+- The paper successfully unifies disparate artifact phenomena into the "lazy aggregation" framework, providing a consistent explanation for Supervised, CLIP, and DINO systems.
+- It shifts the perspective from "moving high-norm tokens" (Registers) to "preventing background shortcuts," focusing on the representation formation mechanism.
+- The use of frequency-domain stability is an elegant way to identify foreground tokens without explicit supervision, leveraging the statistical consistency of foreground vs. background semantics.
+- Channel-wise Top-K selection allows for a more nuanced approach than whole-token selection, acknowledging that different channels represent different semantic subspaces.
+- The research follows a rigorous "diagnose-model-verify" paradigm, making it an excellent template for analytical papers.
 
 ## Limitations & Future Work
-- The theoretical explanation remains primarily empirical. Although the authors support lazy aggregation with extensive observations, no rigorous optimization-level derivation is provided to explain why CLS preferentially converges to background shortcuts early in training.
-- The frequency-domain stability assumption presupposes that "foreground semantics are smoother and background semantics more diverse"—a generalization that typically holds for natural images but may not hold in texture-dominated or complex multi-instance scenes.
-- The method centers on CLS aggregation and is thus most directly applicable to ViT variants that rely on an explicit global token. Whether it transfers to architectures without a dedicated CLS token or with heavy token mixing remains to be verified.
-- Although the experiments are broad in scope, the core self-supervised results are primarily demonstrated on DINO-v1 object discovery. Coverage of stronger self-supervised backbones such as DINOv2, MAE, and iBOT would strengthen the case.
-- The paper argues that registers are insufficient, but does not systematically investigate whether "registers + LaSt-ViT" are complementary. A joint configuration might yield a stronger practical system.
+- The theoretical explanation is largely empirical; a formal optimization-level derivation of why CLS converges to background shortcuts early in training is missing.
+- The frequency stability assumption (vibrant background vs. consistent subject) may not hold in scenes dominated by complex textures or multiple instances.
+- The method focuses on CLS aggregation, potentially limiting applicability to ViT variants without explicit CLS or those using heavy token-mixing architectures.
+- While experimental breadth is high, coverage of more modern self-supervised backbones like DINOv2 or MAE would strengthen the case.
+- There is no systematic comparison of whether Registers and LaSt-ViT are complementary.
 
 ## Related Work & Insights
-- **vs. Register**: The register approach provides additional global storage slots to reduce anomalous high-norm tokens in the patch map; this paper argues that this merely relocates the symptom without altering the background-shortcut formation mechanism. LaSt-ViT modifies the sources from which CLS aggregates, and is thus more directly remedial.
-- **vs. CLIP dense alignment methods**: Many existing methods apply additional patch-text alignment or modify the final few attention layers at the downstream stage. This paper moves the intervention upstream to the pretraining representation formation stage, yielding a more fundamental and unified approach.
-- **vs. token pruning / token selection**: Pruning addresses redundancy and efficiency, whereas this paper addresses whether the semantic sources are healthy. The two perspectives are complementary: LaSt-ViT could correct semantic grounding first, enabling more reliable subsequent token pruning.
-- **Implications for self-supervised learning**: The object-centric performance of self-supervised ViTs is not determined solely by the teacher–student loss; how CLS aggregates from patches is equally important. Future DINO-style methods could treat aggregation bias as an independent design dimension.
-- **Personal takeaway**: If a backbone's global representation is formed via unhealthy shortcuts, then failures on dense downstream tasks are merely symptoms. When analyzing foundation models, one should first scrutinize where global semantics originate, rather than focusing exclusively on downstream head design.
+- **vs Register**: Registers provide storage slots to offload artifacts; LaSt-ViT modifies the aggregation source to prevent the shortcut mechanism.
+- **vs CLIP dense alignment**: Unlike methods that modify the final layers or add patch-text alignment losses, LaSt-ViT addresses the issue at the pre-training representation level.
+- **vs token pruning/selection**: While pruning focuses on efficiency, LaSt-ViT focuses on semantic integrity. The two can be combined.
+- **Insight for self-supervision**: Object-centric performance isn't just determined by the distilled loss; how the CLS token aggregates information is a critical, independent design dimension.
+- **Personal takeaway**: If a backbone's global representation is formed through unhealthy shortcuts, downstream dense task issues are merely symptoms. Analyzing "where global semantics come from" should take priority over head design.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Proposes lazy aggregation as a unified root-cause explanation, connecting the register phenomenon and cross-paradigm artifacts into a coherent narrative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Covers 12 benchmarks across three supervision paradigms; the self-supervised main line could benefit from additional modern backbones.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Diagnostic logic is clear and experimental organization is convincing; some methodological intuitions remain stronger than formal derivations.
-- **Value**: ⭐⭐⭐⭐⭐ Beyond a technique for improving dense features, this work provides an analytical framework for understanding how global semantics are formed in ViTs.
+- Novelty: ⭐⭐⭐⭐⭐ Unified "lazy aggregation" root cause explanation is highly insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive across 12 benchmarks and 3 paradigms; could benefit from more modern backbones.
+- Writing Quality: ⭐⭐⭐⭐☆ Logical diagnostic flow and persuasive organization.
+- Value: ⭐⭐⭐⭐⭐ Provides a foundational analysis framework for ViT global semantic mechanisms.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- Vision Transformers Need Registers. *Darcet et al.*, ICLR 2024.
+- Deep ViT Features as Dense Visual Descriptors. *Amir et al.*, arXiv 2021.
+- LOST: Localizing Objects with Self-Supervised Transformers and No Labels. *Siméoni et al.*, BMVC 2021.
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[CVPR 2026\] Zero-Ablation Overstates Register Content Dependence in DINO Vision Transformers](zero_ablation_overstates_register_content_dependence_in_dino_vision_transformers.md)
+- [\[CVPR 2026\] Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers](can_you_learn_to_see_without_images_procedural_warm-up_for_vision_transformers.md)
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
+- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
+- [\[CVPR 2025\] SATA: Spatial Autocorrelation Token Analysis for Enhancing the Robustness of Vision Transformers](../../CVPR2025/self_supervised/sata_spatial_autocorrelation_token_analysis_for_enhancing_the_robustness_of_visi.md)
 - [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)
-- [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
 
 </div>
 

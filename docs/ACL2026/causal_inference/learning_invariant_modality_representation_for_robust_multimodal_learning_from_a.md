@@ -2,107 +2,112 @@
 title: >-
   [Paper Note] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective
 description: >-
-  [ACL 2026][Causal Inference][Causal Invariant Representation] This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representation…
+  [ACL 2026][Causal Inference][Paper Note] This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function incorporating invariance constraints,
 tags:
-  - "ACL 2026"
-  - "Causal Inference"
-  - "Causal Invariant Representation"
-  - "Multimodal Sentiment Analysis"
-  - "Out-of-Distribution Generalization"
-  - "Feature Disentanglement"
-  - "Virtual Environments"
+  - ACL 2026
+  - Causal Inference
 date: 2026-05-08
-content_hash: 33b35ef1e34897e0
+content_hash: 7dd5cff38643110f
 ---
-
 # Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.18460](https://arxiv.org/abs/2604.18460)  
 **Code**: [GitHub](https://github.com/TmacMai/CmIR)  
-**Area**: Audio and Speech  
+**Area**: Audio & Speech  
 **Keywords**: Causal Invariant Representation, Multimodal Sentiment Analysis, Out-of-Distribution Generalization, Feature Disentanglement, Virtual Environments
 
 ## TL;DR
 
-This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function incorporating invariance, mutual information, and reconstruction constraints, it ensures that invariant representations maintain stable predictive relationships across environments. The method achieves SOTA performance in multimodal sentiment, humor, and sarcasm detection, particularly in OOD and noisy scenarios.
+This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function incorporating invariance constraints, mutual information constraints, and reconstruction constraints, it ensures that invariant representations possess stable predictive relationships across environments. It achieves SOTA on multimodal sentiment, humor, and sarcasm detection, showing particularly outstanding performance in OOD and noisy scenarios.
 
 ## Background & Motivation
 
-**Background**: Multimodal affective computing integrates linguistic, acoustic, and visual modalities for emotion prediction. Existing methods perform well on in-distribution tests but often learn spurious cross-modal correlations present in the training data.
+**Background**: Multimodal sentiment computing predicts emotions by integrating linguistic, acoustic, and visual modalities. Existing methods perform well on in-distribution tests but often learn spurious cross-modal correlations within the training data.
 
-**Limitations of Prior Work**: (1) Models may over-rely on consistent smiling of a speaker (a spurious visual feature) rather than semantic content; (2) Noisy modalities (e.g., background noise or low-resolution video) further disrupt these spurious correlations, widening the generalization gap; (3) Existing causal methods either lack theoretical guarantees or target only specific biases (such as speaker bias), lacking generality.
+**Limitations of Prior Work**: (1) Models may over-rely on a speaker's consistent smile (spurious visual feature) rather than semantic content; (2) Noisy modalities (e.g., background noise/low-resolution video) further undermine spurious correlations, exacerbating the generalization gap; (3) Existing causal methods either lack theoretical guarantees or target specific biases (e.g., speaker bias) and are not generalizable.
 
-**Key Challenge**: There is a need for a general framework to distinguish causal features from spurious ones without relying on prior assumptions about bias types or requiring pre-defined bias labels.
+**Key Challenge**: A general framework is needed to distinguish between causal and spurious features—without relying on prior assumptions about bias types or predefined bias labels.
 
-**Goal**: Establish a theoretically guaranteed general framework based on causal inference to disentangle each modality into causal invariant and environment-specific spurious components.
+**Goal**: Establish a general framework with theoretical guarantees based on causal inference to disentangle each modality into causal invariant and environmental spurious components.
 
-**Key Insight**: The core property of causal invariant representation is its predictive stability across environments—if $P(Y|Z_m^{\text{inv}}, E=e_1) = P(Y|Z_m^{\text{inv}}, E=e_2)$, then $Z_m^{\text{inv}}$ contains only causal features.
+**Key Insight**: The core property of causal invariant representations is predictive stability across environments—if $P(Y|Z_m^{\text{inv}}, E=e_1) = P(Y|Z_m^{\text{inv}}, E=e_2)$, then $Z_m^{\text{inv}}$ contains only causal features.
 
-**Core Idea**: Disentanglement is learned through a tri-constraint optimization: invariance constraints ensure consistent cross-environment predictions, mutual information constraints ensure independence between the two components, and reconstruction constraints prevent information loss. When explicit environment labels are missing, virtual environments are simulated by injecting different intensities of noise into the original features.
+**Core Idea**: Learn disentanglement via tri-constraint optimization: invariance constraints ensure consistent cross-environment prediction, mutual information constraints ensure the independence of the two components, and reconstruction constraints ensure no information loss. When explicit environment labels are missing, virtual environments are simulated by injecting noise of varying intensities into the original features.
 
 ## Method
 
 ### Overall Architecture
 
-Each modality $X_m$ is disentangled into $(Z_m^{\text{inv}}, Z_m^{\text{spu}})$ via an encoder $g_m$. Only the concatenation of invariant representations $\{Z_m^{\text{inv}}\}_{m=1}^M$ is used for prediction. During training, the prediction loss and three constraint terms are optimized simultaneously. A decoder $r_m$ reconstructs the original input from both components to prevent information loss.
+CmIR splits each modality into "causal invariant" and "environment spurious" halves, allowing only the former to participate in prediction, thereby blocking accidental cross-modal correlations in training data from decision-making. Given a modality input $X_m$, the encoder $g_m$ disentangles it into $(Z_m^{\text{inv}}, Z_m^{\text{spu}})$. The prediction head consumes only the concatenation of all modality-invariant representations $\{Z_m^{\text{inv}}\}_{m=1}^M$. Simultaneously, the decoder $r_m$ must reconstruct the original input from these two halves. During training, the model jointly optimizes through a "encoding disentanglement → invariant representation prediction + three constraints → decoding reconstruction" loop. The three constraints solidify the disentanglement from the perspectives of causality, purity, and completeness, ensuring that invariant representations only carry causal signals that are stable across environments.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Modality Input X_m (Linguistic / Acoustic / Visual)"] --> ENC["Encoder g_m Disentanglement"]
+    ENC --> ZINV["Causal Invariant Representation Z_inv"]
+    ENC --> ZSPU["Environment Spurious Representation Z_spu"]
+    ZINV --> PRED["Prediction Head: Concatenate Z_inv → Predict Y"]
+    ZINV --> D1["1. Virtual Environment Construction + Invariance Constraint<br/>Inject noise to create K virtual environments, forcing cross-environment Z_inv consistency"]
+    ZINV --> D2["2. Mutual Information Minimization via Orthogonality Approximation<br/>Weighted Frobenius penalty on correlation matrix"]
+    ZSPU --> D2
+    ZINV --> D3["3. Reconstruction Constraint<br/>Decoder r_m reconstructs X_m from both components"]
+    ZSPU --> D3
+```
 
 ### Key Designs
 
-1.  **Virtual Environment Construction + Invariance Constraint**:
-    - **Function**: Implements cross-environment invariance training in the absence of explicit environment labels.
-    - **Mechanism**: Each sample is randomly assigned a virtual environment label $e \in \{1,...,K\}$, and additive Gaussian noise with intensity $\alpha^{(e)} = \alpha^{(1)} \cdot e$ is injected. Invariant representations are extracted from these perturbed features, and the L1 norm is used to constrain consistency across different environments: $\mathcal{R}_{\text{inv}}^{(m)} = \sum_{e_1 \neq e_2} \|Z_m^{\text{inv},(e_1)} - Z_m^{\text{inv},(e_2)}\|_1$.
-    - **Design Motivation**: This is stronger than KL divergence constraints (matching inputs implies matching output distributions) and is applicable to both classification and regression tasks without requiring additional unimodal predictors.
+**1. Virtual Environment Construction + Invariance Constraint: Enforcing cross-environment invariance without environment labels**
 
-2.  **Mutual Information Minimization via Orthogonality Approximation**:
-    - **Function**: Ensures statistical independence between the invariant and spurious components.
-    - **Mechanism**: It computes the in-batch normalized correlation matrix $\bm{C}^m = \text{Nor}(\bm{Z}_m^{\text{inv}}) \cdot \text{Nor}(\bm{Z}_m^{\text{spu}})^\top$ and penalizes it using a weighted Frobenius norm: diagonal terms (within-sample orthogonality) have a weight of 1, while off-diagonal terms have a weight of $\alpha < 1$.
-    - **Design Motivation**: Since direct computation of mutual information is infeasible, orthogonality serves as a necessary condition for independence. Used alongside invariance and reconstruction constraints, it ensures semantic separation.
+The defining property of causal invariant representation is predictive stability across environments, but most multimodal datasets lack explicit environment labels. CmIR assigns a virtual environment $e\in\{1,\dots,K\}$ to each sample and creates environmental differences by injecting additive Gaussian noise with intensity $\alpha^{(e)}=\alpha^{(1)}\cdot e$, then requires invariant representations extracted under different environments to be consistent: $\mathcal{R}_{\text{inv}}^{(m)}=\sum_{e_1\neq e_2}\|Z_m^{\text{inv},(e_1)}-Z_m^{\text{inv},(e_2)}\|_1$. Compared to KL divergence, this L1 consistency is stronger—if representations are forced to be equal under different perturbations, the distributions naturally align—and it is applicable to both classification and regression without training unimodal predictors.
 
-3.  **Reconstruction Constraint to Prevent Degradation**:
-    - **Function**: Ensures that the two disentangled components retain all information from the original input.
-    - **Mechanism**: The decoder $r_m$ reconstructs original features from $(Z_m^{\text{inv}}, Z_m^{\text{spu}})$: $\mathcal{R}_{\text{rec}}^{(m)} = \|X_m - r_m(Z_m^{\text{inv}}, Z_m^{\text{spu}})\|_2^2$.
-    - **Design Motivation**: Without reconstruction constraints, the model might learn degenerate solutions where the invariant component contains all information while the spurious component is empty, or vice versa.
+**2. Mutual Information Minimization via Orthogonality Approximation: Using weighted Frobenius penalty of the correlation matrix**
+
+To ensure invariant and spurious components capture different semantics, the ideal goal is to minimize their mutual information, which is not directly computable. CmIR approximates this using orthogonality, a necessary condition for independence: it calculates a normalized correlation matrix $\bm{C}^m=\text{Nor}(\bm{Z}_m^{\text{inv}})\cdot\text{Nor}(\bm{Z}_m^{\text{spu}})^\top$ within each batch and penalizes it with the weighted Frobenius norm—diagonal terms (orthogonality of two components for the same sample) have a weight of 1, while off-diagonal weights are $\alpha<1$. This term works with invariance and reconstruction constraints to stably segment semantics.
+
+**3. Reconstruction Constraint to Prevent Degeneration: Forcing both components to jointly preserve all input information**
+
+Without invariance and orthogonality constraints, the model might fall into degenerate solutions where one component captures all information while the other collapses. CmIR introduces a decoder $r_m$ to reconstruct the original features: $\mathcal{R}_{\text{rec}}^{(m)}=\|X_m-r_m(Z_m^{\text{inv}},Z_m^{\text{spu}})\|_2^2$. The reconstruction term ensures disentanglement is a "division of labor" rather than "discarding," keeping the combined representation full, which blocks trivial solutions at the information level.
 
 ### Loss & Training
 
-The total objective is defined as: $\mathcal{L} = \mathcal{L}_{\text{pred}} + \sum_{m=1}^{M} \lambda_1 \mathcal{R}_{\text{inv}}^{(m)} + \lambda_2 \mathcal{R}_{\text{dec}}^{(m)} + \lambda_3 \mathcal{R}_{\text{rec}}^{(m)}$. The authors provide full proofs for three theorems: the existence of invariant representations, their extractability, and their OOD risk advantages.
+The total objective sums the prediction loss with three modality-level constraints: $\mathcal{L}=\mathcal{L}_{\text{pred}}+\sum_{m=1}^{M}\lambda_1\mathcal{R}_{\text{inv}}^{(m)}+\lambda_2\mathcal{R}_{\text{dec}}^{(m)}+\lambda_3\mathcal{R}_{\text{rec}}^{(m)}$, where $\lambda_1, \lambda_2, \lambda_3$ balance invariance, independence, and reconstruction. Theoretically, the authors provide proofs for three theorems: the existence and extractability of invariant representations, and their OOD risk advantage over spurious representations, providing formal support for the constraints.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluations were conducted on CMU-MOSI/MOSEI/CH-SIMS-v2 (sentiment) + UR-FUNNY (humor) + MUStARD (sarcasm). CmIR achieves SOTA performance in both standard and OOD settings.
+Evaluated on CMU-MOSI/MOSEI/CH-SIMS-v2 (sentiment) + UR-FUNNY (humor) + MUStARD (sarcasm). CmIR achieved SOTA in both standard and OOD settings.
 
 ### Key Findings
 
-- Under OOD settings (CMU-MOSI OOD), the performance gap of CmIR is more significant, confirming the generalization advantages of causal invariant representations.
-- In tests with noisy modalities, the performance degradation of CmIR is much smaller than that of baselines—the isolation of spurious components makes the model more robust to noise.
-- Ablations demonstrate that all three constraints are indispensable; removing any single constraint leads to a decrease in performance.
+- In OOD settings (CMU-MOSI OOD), CmIR's advantage is more pronounced—confirming the generalization benefit of causal invariant representations.
+- In noisy modality tests, CmIR's degradation is significantly smaller than baselines—the isolation of spurious components makes the model more robust to noise.
+- Ablation Study proves all three constraints are indispensable—removing any leads to performance drops.
 
 ## Highlights & Insights
 
-- The design of the tri-constraint framework is elegant—invariance ensures "causality," orthogonality ensures "purity," and reconstruction ensures "completeness."
-- Virtual environment construction is a practical compromise—while potentially less precise than real environment labels, it provides a viable solution for the reality that most datasets lack environment metadata.
-- Theoretical guarantees (the three theorems) provide a solid mathematical foundation for the framework.
+- The tri-constraint framework design is elegant—invariance ensures "causality," orthogonality ensures "purity," and reconstruction ensures "completeness."
+- Virtual environment construction is a practical compromise—while less precise than real environment labels, it provides a viable solution for datasets lacking such labels.
+- Theoretical guarantees (three theorems) provide a solid foundation for the framework.
 
 ## Limitations & Future Work
 
-- The construction of virtual environments relies on the assumption of additive Gaussian noise, which may not perfectly reflect real-world distribution shifts.
-- Hyperparameters (number of environments $K$, noise coefficient $\alpha$, and the three $\lambda$ values) require careful tuning.
-- Both encoders and decoders are simple MLPs; employing stronger architectures might yield further improvements.
+- Virtual environment construction relies on the additive Gaussian noise assumption, which may not fully reflect real-world distribution shifts.
+- Hyperparameters (number of environments $K$, noise coefficient $\alpha$, three $\lambda$ values) require tuning.
+- Encoders/decoders are simple MLPs; stronger architectures might further improve performance.
 
 ## Related Work & Insights
 
-- **vs IRM**: While Invariant Risk Minimization targets unimodal scenarios, CmIR extends the principle to multimodal feature disentanglement.
-- **vs existing multimodal causal methods**: Unlike methods targeting specific biases (such as speaker or modality-specific bias), CmIR is a general framework that does not rely on specific bias assumptions.
+- **vs IRM**: CmIR extends Invariant Risk Minimization from unimodal contexts to multimodal disentanglement.
+- **vs Existing Multimodal Causal Methods**: While others target specific biases (speaker/modality), CmIR is a general framework that does not rely on bias assumptions.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic integration of causal invariant representation learning with feature disentanglement in Multimodal Affective Computing.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 datasets + standard/OOD/noise settings + complete ablations + theoretical proofs.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations and comprehensive experimental analysis.
-- Value: ⭐⭐⭐⭐⭐ Represents a paradigm-level contribution to multimodal robustness research.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic combination of causal invariant representation learning with feature disentanglement in MAC.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 datasets + standard/OOD/noise settings + full ablation + theoretical proofs.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation and comprehensive experimentation.
+- Value: ⭐⭐⭐⭐⭐ Paradigmatic contribution to multimodal robustness research.
 
 <!-- RELATED:START -->
 
@@ -111,10 +116,10 @@ Evaluations were conducted on CMU-MOSI/MOSEI/CH-SIMS-v2 (sentiment) + UR-FUNNY (
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
+- [\[ECCV 2024\] Integrating Markov Blanket Discovery into Causal Representation Learning for Domain Generalization](../../ECCV2024/causal_inference/integrating_markov_blanket_discovery_into_causal_representation_learning_for_dom.md)
+- [\[ICML 2025\] Learning Time-Aware Causal Representation for Model Generalization in Evolving Domains](../../ICML2025/causal_inference/learning_time-aware_causal_representation_for_model_generalization_in_evolving_d.md)
 - [\[ACL 2026\] Function Words as Statistical Cues for Language Learning](function_words_as_statistical_cues_for_language_learning.md)
-- [\[NeurIPS 2025\] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features](../../NeurIPS2025/causal_inference/causality-induced_positional_encoding_for_transformer-based_representation_learn.md)
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/causal_inference/controllable_generative_sandbox_for_causal_inference.md)
-- [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](../../AAAI2026/causal_inference/learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
+- [\[ECCV 2024\] Learning Chain of Counterfactual Thought for Bias-Robust Vision-Language Reasoning](../../ECCV2024/causal_inference/learning_chain_of_counterfactual_thought_for_bias-robust_vision-language_reasoni.md)
 
 </div>
 

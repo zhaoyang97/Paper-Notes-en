@@ -2,136 +2,144 @@
 title: >-
   [Paper Note] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 description: >-
-  [CVPR2026][Reinforcement Learning][open-world classification] This paper proposes SpeciaRL—a specificity-aware reinforcement learning framework that guides reasoning-capable large multimodal models to simultaneously impr…
+  [CVPR 2026][Reinforcement Learning][GRPO] SpeciaRL is proposed — a specificity-aware reinforcement learning framework that simultaneously improves the specificity and correctness of predictions in open-world fine-grained image classification by guiding reasoning-based Large Multimodal Models (LMMs) with dynamic reward signals based on the best prediction from
 tags:
-  - "CVPR2026"
-  - "Reinforcement Learning"
-  - "open-world classification"
-  - "fine-grained recognition"
-  - "large multimodal models"
-  - "GRPO"
-  - "specificity-aware reward"
+  - CVPR 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: c69d5ab34a11fe88
+content_hash: 512d7589c52c85b4
 ---
-
 # Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.03197](https://arxiv.org/abs/2603.03197)  
 **Code**: [s-angheben/SpeciaRL](https://github.com/s-angheben/SpeciaRL)  
-**Area**: Reinforcement Learning
-**Keywords**: open-world classification, fine-grained recognition, reinforcement learning, large multimodal models, GRPO, specificity-aware reward
+**Area**: Reinforcement Learning  
+**Keywords**: Open-world Classification, Fine-grained Recognition, Reinforcement Learning, Large Multimodal Models, GRPO, Specificity-aware Reward
 
 ## TL;DR
 
-This paper proposes SpeciaRL—a specificity-aware reinforcement learning framework that guides reasoning-capable large multimodal models to simultaneously improve prediction specificity and correctness in open-world fine-grained image classification, via a dynamic reward signal derived from the best prediction among online rollouts.
+SpeciaRL is proposed — a specificity-aware reinforcement learning framework that simultaneously improves the specificity and correctness of predictions in open-world fine-grained image classification by guiding reasoning-based Large Multimodal Models (LMMs) with dynamic reward signals based on the best prediction from online rollouts.
 
 ## Background & Motivation
 
-**Growing demand for open-world classification**: Traditional image classification operates under a closed vocabulary, but real-world scenarios require handling emerging categories and novel concepts, rendering the fixed-vocabulary assumption invalid.
+**Growing demand for open-world classification**: Traditional image classification operates under a closed vocabulary. However, real-world scenarios require handling emerging categories and new concepts, rendering the fixed vocabulary assumption invalid.
 
-**LMMs are strong reasoners but tend to generalize**: State-of-the-art reasoning large multimodal models (e.g., Qwen2.5VL) exhibit strong visual understanding, yet tend to produce overly generic predictions on fine-grained classification tasks (e.g., outputting "flower" instead of "daisy").
+**LMMs have strong reasoning but tend to generalize**: Latest reasoning-based LMMs (e.g., Qwen2.5VL) exhibit robust visual understanding but often provide overly broad predictions (e.g., outputting "flower" instead of "daisy") when faced with fine-grained classification tasks.
 
-**Naively enforcing specificity hurts correctness**: Prompting models to "be more specific," or applying SFT/standard RFT fine-tuning, can improve specificity but simultaneously increases incorrect predictions, revealing a non-trivial trade-off between the two objectives.
+**Naive improvement of specificity hurts correctness**: Directly requesting "be more specific" in prompts or fine-tuning with SFT/standard RFT can increase specificity but simultaneously increases the proportion of incorrect predictions, representing a non-trivial trade-off.
 
-**Models do not lack knowledge**: A Best-of-N analysis shows that the best prediction of Qwen2.5VL-7B across 64 rollouts substantially surpasses single-pass inference in both correctness and specificity, indicating that models already possess fine-grained prior knowledge but fail to express it reliably in a single sample.
+**Models do not lack knowledge**: Best-of-N analysis shows that the correctness and specificity of the best predictions from Qwen2.5VL-7B in 64 rollouts far exceed those from single inference. This indicates that the model already possesses fine-grained prior knowledge but cannot reliably express it in a single sampling.
 
-**Existing RLVR methods are ill-suited for open-world settings**: Standard RLVR employs binary exact-match rewards, which cannot provide appropriate signals for predictions that are "correct but insufficiently specific," and risk driving models toward overconfidence.
+**Existing RLVR methods are unsuitable for the open world**: Standard RLVR uses binary rewards based on exact matches, which fails to provide appropriate signals for predictions that are "correct but insufficiently specific," easily pushing the model toward overconfidence.
 
-**Lack of systematic study**: How to improve specificity without sacrificing correctness in an open-world setting is a severely underexplored problem.
+**Lack of systematic research**: How to improve specificity without compromising correctness in an open-world setting is a significantly underestimated and nearly unexplored problem.
 
 ## Method
 
 ### Overall Architecture
 
-SpeciaRL is built upon the GRPO (Group Relative Policy Optimization) online policy optimization framework:
+SpeciaRL aims to resolve a specific contradiction in open-world fine-grained classification: reasoning-based multimodal models have sufficient knowledge but tend to provide overly broad predictions during a single sampling (saying "flower" instead of "daisy"), while forcing them to be "more specific" can degrade accuracy. It is based on GRPO online policy optimization: for each image $I$, the policy model (Qwen2.5VL-7B) generates $N=10$ open-ended predictions $\rightarrow$ an LLM discriminator (Llama3-72B) classifies each prediction into a six-level category system relative to the ground-truth $\rightarrow$ a "dynamic reference level" $c^*$ (the minimum specificity threshold) is adaptively set based on the best category among the $N$ rollouts $\rightarrow$ predictions reaching $c^*$ receive a positive reward, or zero otherwise $\rightarrow$ the policy is updated using GRPO to push the model toward the maximum specificity it can reliably express within its capability. The key lies in the threshold being adaptive per sample rather than a one-size-fits-all approach; the next round of rollouts is re-generated using the updated policy, forming a training loop.
 
-1. For each input image $I$, the policy model generates $N$ open-ended predictions $\{p_1, \dots, p_N\}$.
-2. An LLM judge (Qwen3-30B) classifies the relationship between each prediction and the ground truth into one of six categories $\mathcal{C} = \{W, A, G, S^-, S, S^+\}$ (wrong, abstain, generic, less specific, specific, more specific).
-3. A minimum specificity requirement $c^*$ is dynamically set based on the best prediction category $c_{best}$ among the current $N$ rollouts.
-4. Predictions that meet or exceed $c^*$ receive a positive reward; otherwise, the reward is zero.
-5. Policy parameters are updated via GRPO to reinforce maximally specific predictions within the model's capability.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image I"] --> B["Policy Model (Qwen2.5VL-7B)<br/>Online generation of N=10 open-ended predictions"]
+    B --> C["Six-level Prediction Classification System<br/>LLM Discriminator (Llama3-72B) classifies each prediction into<br/>W≺A≺G≺S⁻≺S≺S⁺"]
+    C --> D["Dynamic Reference Level c*<br/>Threshold adaptively set by best class c_best in this round"]
+    D --> E["Specificity-aware Reward<br/>1 if threshold c* is reached, 0 otherwise"]
+    E --> F["GRPO Policy Update<br/>group-relative advantage + KL regularization"]
+    F -->|Next round with updated policy| B
+```
 
-### Key Designs: Specificity-aware Dynamic Reward
+### Key Designs
 
-**Prediction categorization**: An ordered category set $W \prec A \prec G \prec S^- \prec S \prec S^+$ is defined, and an LLM-as-a-judge automatically evaluates which category each prediction belongs to.
+**1. Six-level Prediction Classification System: Quantifying "Correctness + Specificity"**
 
-**Dynamic reference level**: The minimum requirement $c^*$ is adaptively determined by the best category $c_{best}$ among the current rollouts:
+The binary rewards of standard RLVR only judge correctness and cannot distinguish "correct but too general." SpeciaRL defines an ordered set of categories $W \prec A \prec G \prec S^- \prec S \prec S^+$ (Wrong, Abstention, Generic, Less Specific, Specific, More Specific), and uses LLM-as-a-judge to automatically assign each prediction to a level, thus making specificity a comparable and rewardable metric.
+
+**2. Dynamic Reference Level: Aligning Thresholds with Current Model Capability**
+
+If maximum specificity is demanded for all samples, the model will be forced to guess blindly on difficult samples where it can only achieve a Generic level of correctness, thereby generating errors. SpeciaRL allows the minimum requirement $c^*$ to adapt according to the best category $c_{best}$ in the current round of rollouts:
 
 $$c^* = \begin{cases} S, & \text{if } c_{best} = S^+ \\ A, & \text{if } c_{best} = W \\ c_{best}, & \text{otherwise} \end{cases}$$
 
-**Reward function**:
+That is, if the model's best performance at the moment only reaches a certain level, that level (or slightly lower) is used as the criterion, without forcing unattainable specificity.
+
+**3. Specificity-aware Reward Function: Rewarding Maximum Specificity within Capability**
+
+With dynamic thresholds, the reward becomes simple—if the prediction category reaches or exceeds $c^*$, a reward of 1 is given; otherwise, it is 0:
 
 $$r_I^*(p, y) = \begin{cases} 1, & \text{if } c_y(p) \succeq c^* \\ 0, & \text{otherwise} \end{cases}$$
 
-Core intuition: if the best prediction for a given sample is itself Generic, penalizing other Generic predictions from that sample for insufficient specificity would push the model toward generating more incorrect outputs. The dynamic reward ensures that maximal specificity within the model's capability is encouraged.
+The core intuition behind this design is as follows: if the best prediction for a sample is inherently Generic, the model should not be penalized for being insufficiently specific, as this would push the model to output more errors. Dynamic rewards ensure that maximum specificity is encouraged only within the model's reach, allowing both specificity and correctness to improve simultaneously.
 
 ### Loss & Training
 
-The standard GRPO objective is adopted, embedding the dynamic reward into group-relative advantage estimation with a KL divergence regularization term ($\lambda = 0.01$) to prevent policy drift. During training, $N=10$ rollouts are used simultaneously for both reward computation and policy updates, incurring no additional inference overhead.
+The standard GRPO objective function is employed, embedding the aforementioned dynamic rewards into group-relative advantage estimation, with an additional KL divergence regularization term ($\lambda = 0.01$) to prevent policy drift. During training, $N=10$ rollouts are used simultaneously for reward calculation and policy updates, requiring no additional inference overhead.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Cross-domain fine-grained classification (training domain: CUB birds → test domains: flowers/food/pets/cars/aircraft)**:
+**Cross-domain fine-grained classification (Train: CUB Birds $\to$ Test: Flowers/Food/Pets/Cars/Aircraft)**:
 
 | Method | Specificity↑ | Correctness↑ | HM↑ |
-|--------|-------------|-------------|-----|
-| Qwen2.5VL-7B (zero-shot) | 0.742 | 0.846 | 0.790 |
+|------|---------|---------|-----|
+| Qwen2.5VL-7B (Zero-shot) | 0.742 | 0.846 | 0.790 |
 | Qwen2.5VL-7B ("Be specific") | 0.816 | 0.832 | 0.822 |
 | Qwen2.5VL-7B (SFT) | 0.935 | 0.807 | 0.866 |
 | Qwen2.5VL-7B (RFT) | 0.875 | 0.785 | 0.825 |
 | **SpeciaRL-7B** | **0.920** | **0.848** | **0.883** |
-| BoN-64 (upper bound) | 0.889 | 0.984 | 0.933 |
+| BoN-64 (Upper Bound) | 0.889 | 0.984 | 0.933 |
 
-On highly fine-grained datasets (StanfordCars, FGVCAircraft), SpeciaRL also achieves the best HM (0.830), outperforming SFT (0.814) and RFT (0.821).
+On ultra-fine-grained sets (StanfordCars, FGVCAircraft), SpeciaRL also achieves the best HM (0.830), surpassing SFT (0.814) and RFT (0.821).
 
 ### Ablation Study
 
-**Static vs. dynamic reward**: Compared against four static reward variants, SpeciaRL's dynamic reward achieves the best overall HM of 0.883. The standard binary reward yields only HM=0.825, demonstrating that graded rewards for "correct but insufficiently specific" predictions are critical.
+**Static vs. Dynamic Rewards**: Compared to 4 static reward schemes, SpeciaRL's dynamic reward achieves the best overall performance with HM=0.883. Standard binary reward only yields HM=0.825, indicating that providing graded rewards for "correct but insufficiently specific" predictions is crucial.
 
-**Number of rollouts $N$**: $N=5$ and $N=10$ perform comparably (HM=0.883), while performance degrades at $N=15$ (HM=0.824), possibly due to limitations of the batch-based grouping strategy.
+**Number of Rollouts $N$**: Performance for $N=5$ and $N=10$ is similar (HM=0.883), while performance decreases at $N=15$ (HM=0.824), likely due to limitations in the batch-based grouping strategy.
 
-**Compatibility across RL algorithms**: Across three online policy optimization algorithms—GRPO, Dr.GRPO, and DAPO—the SpeciaRL dynamic reward consistently improves HM (+1.5%~+5.8%), demonstrating the generality of the approach.
+**Cross-RL Algorithm Compatibility**: Across three online policy optimization algorithms—GRPO, Dr.GRPO, and DAPO—SpeciaRL's dynamic reward consistently improves HM (+1.5% to +5.8%), proving the method's universality.
 
 ### Key Findings
 
-- On the fine-grained datasets, SpeciaRL simultaneously improves both specificity (+0.178) and correctness (+0.002), being the only method to achieve joint improvement on both dimensions.
-- SFT achieves very high specificity (0.935) but at a severe cost to correctness (0.807), yielding a lower HM than SpeciaRL.
-- Training on only 3,000 samples from a single domain (birds) generalizes to completely different domains including flowers, food, pets, cars, and aircraft.
-- Under the general evaluation protocol of [10] (TI/LI/SS/CS), SpeciaRL achieves the best performance on 6 out of 8 metrics.
+- SpeciaRL simultaneously improves specificity (+0.178) and correctness (+0.002) on fine-grained sets, being the only method to achieve joint improvement in both.
+- While SFT exhibits extremely high specificity (0.935), its correctness significantly declines (0.807), resulting in an HM lower than that of SpeciaRL.
+- Training with only 3,000 samples from a single domain (Birds) allows for generalization to completely different domains such as flowers, food, pets, cars, and aircraft.
+- On the general evaluation protocol [10] (TI/LI/SS/CS), SpeciaRL achieves the best performance in 6 out of 8 metrics.
 
 ## Highlights & Insights
 
-1. **Clear and novel problem formulation**: This is the first work to systematically identify the specificity–correctness trade-off in open-world classification as an independent research problem.
-2. **Elegant dynamic reward design**: The reward threshold is adaptively adjusted based on online rollouts, leveraging GRPO's existing multi-sample mechanism without additional computational overhead.
-3. **Strong cross-domain generalization**: Training solely on bird data generalizes to entirely different domains such as food and cars, suggesting the method learns a reasoning strategy rather than domain-specific knowledge.
-4. **Practical six-level categorization scheme**: The $\{W, A, G, S^-, S, S^+\}$ taxonomy comprehensively covers possible prediction relationships in open-world settings and provides a reusable evaluation protocol.
+1. **Novel and Clear Problem Definition**: Successfully identifies the "specificity-correctness trade-off" in open-world classification as a distinct research problem for the first time.
+2. **Exquisite Dynamic Reward Design**: Adaptively adjusts reward thresholds based on online rollouts, leveraging existing multi-sampling in GRPO without additional computational overhead.
+3. **Excellent Cross-domain Generalization**: Training on bird data generalizes to disparate domains like food and cars, indicating the model learns reasoning strategies rather than domain-specific knowledge.
+4. **Practical Six-level Classification System**: The $\{W, A, G, S^-, S, S^+\}$ category system comprehensively covers possible relationships in open-world predictions, providing a reusable evaluation protocol.
 
 ## Limitations & Future Work
 
-1. **Dependence on LLM judge quality**: The reward signal relies on LLM-as-a-judge; if the judge makes errors in certain fine-grained domains (e.g., confusing closely related species), erroneous signals may propagate.
-2. **Validation limited to classification**: The approach has not been extended to more complex visual tasks such as detection or segmentation.
-3. **Restricted base model**: Validation is conducted solely on Qwen2.5VL-7B; larger models or different architectures remain unexplored.
-4. **Small training data scale**: With only 3,000 training samples, a gap remains between SpeciaRL and the BoN-64 upper bound on highly fine-grained datasets (HM 0.830 vs. 0.868).
-5. **Sensitivity to rollout count**: Performance degrades at $N=15$, indicating a degree of dependence on GRPO's batch grouping strategy.
+1. **Dependence on LLM Discriminator Quality**: Reward signals originate from LLM-as-a-judge; if the discriminator fails in certain fine-grained domains (e.g., confusing similar species), it may propagate erroneous signals.
+2. **Verification Limited to Classification**: Has not yet been extended to more complex vision tasks like detection or segmentation.
+3. **Restricted Base Models**: Verified only on Qwen2.5VL-7B, without exploring larger or different architectures.
+4. **Small Training Data Scale**: Trained with only 3,000 samples; a gap still exists compared to the BoN-64 upper bound on ultra-fine-grained sets (HM 0.830 vs. 0.868).
+5. **Sensitivity to Rollout Count**: Performance declines at $N=15$, suggesting the method relies on GRPO's batch grouping strategy.
 
 ## Related Work & Insights
 
-- **Visual-RFT [34]**: Applies RLVR to closed-set classification using binary exact-match rewards—SpeciaRL extends this to open-world settings and introduces graded rewards.
-- **Conti et al. [10]**: Proposes an open-world classification evaluation benchmark and reveals the generalization tendency of LMMs—this paper builds upon that foundation to propose a solution.
-- **DeepSeek-R1 [16]**: A canonical application of the GRPO algorithm—SpeciaRL integrates specificity-aware rewards into this framework.
-- **Hierarchical precision/recall [44]**: Evaluates prediction quality based on explicit taxonomic trees—this paper does not assume a predefined hierarchy, using an LLM judge instead.
-- **CaSED [9]**: CLIP retrieval-based open-world classification—exhibits good specificity but lower correctness compared to reasoning-based LMMs.
+- **Visual-RFT [34]**: Applies RLVR to closed-set classification using exact-match binary rewards—SpeciaRL extends this to the open world and introduces graded rewards.
+- **Conti et al. [10]**: Proposed an open-world classification benchmark revealing LMM generalization tendencies—Ours proposes a solution based on this foundation.
+- **DeepSeek-R1 [16]**: A classic application of the GRPO algorithm—SpeciaRL integrates specificity-aware rewards into this framework.
+- **Hierarchical precision/recall [44]**: Evaluates prediction quality based on an explicit taxonomy—Ours does not assume a predefined hierarchy and uses an LLM discriminator instead.
+- **CaSED [9]**: CLIP retrieval-based open-world classification—Good specificity but correctness is inferior to reasoning-based LMMs.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (novel dynamic reward design; clearly formulated problem)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (cross-domain evaluation + multiple ablations + multi-algorithm validation, but only one base model tested)
-- Writing Quality: ⭐⭐⭐⭐⭐ (complete and coherent logical chain from analysis → insight → method → validation)
-- Value: ⭐⭐⭐⭐ (practical framework for open-world fine-grained classification with strong cross-domain generalization)
+- Novelty: ⭐⭐⭐⭐ (Novel dynamic reward design, clear problem definition)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Cross-domain evaluation + multiple ablations + verification across RL algorithms, but limited to one base model)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Complete and smooth logical chain: analysis $\rightarrow$ insight $\rightarrow$ method $\rightarrow$ verification)
+- Value: ⭐⭐⭐⭐ (Practical framework for open-world fine-grained classification, strong cross-domain generalization)
 
 <!-- RELATED:START -->
 
